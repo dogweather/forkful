@@ -1,7 +1,7 @@
 ---
-title:                "Zamiana stringa na Wielkie Litery"
-html_title:           "Swift: Zamiana stringa na Wielkie Litery"
-simple_title:         "Zamiana stringa na Wielkie Litery"
+title:                "Zwielokrotnienie ciągu znaków"
+html_title:           "Swift: Zwielokrotnienie ciągu znaków"
+simple_title:         "Zwielokrotnienie ciągu znaków"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -10,58 +10,19 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co & Dlaczego?
+Kapitalizacja łańcucha znaków oznacza zmianę pierwszej litery tego łańcucha na jej wersję wielką. Programiści robią to, ponieważ chcą mieć spójność i estetykę w swoim kodzie oraz poprawność gramatyczną w swoich wyświetlanych tekście.
 
-Czasami będziesz musiał zmienić wielkość liter w ciągu znaków w swoim kodzie Swift. Może być to wymagane, na przykład, gdy chcesz wyświetlić imię i nazwisko w formacie z wielkimi literami. W takich sytuacjach używamy funkcji do zmiany wielkości liter w ciągu znaków.
-
-## Jak to zrobić
-
-Zmiana wielkości liter w ciągu zanaków w Swift jest bardzo prosta i możesz to zrobić na kilka różnych sposobów. Najprostszą metodą jest użycie wbudowanej funkcji `uppercased()`:
-
+## Jak to zrobić:
 ```Swift
-let name = "jan kowalski"
-
-let upperCaseName = name.uppercased()
-
-print(upperCaseName) // Wypisze "JAN KOWALSKI"
+let exampleString = "hello world"
+print(exampleString.capitalized) // wypisze "Hello World"
 ```
 
-Możesz również użyć funkcji `lowercased()` jeśli chcesz zmienić wszystkie litery na małe:
+## Głębszy zanurzenie:
+Kapitalizacja łańcucha znaków nie jest nowym konceptem i jest często używana w tekstowych językach programowania. Alternatywą może być ręczne zmienianie pierwszej litery na wielką lub wykorzystanie funkcji, która zrobi to za nas. W implementacji, programiści mogą używać różnych metod, ale najważniejsze jest osiągnięcie oczekiwanego efektu.
 
-```Swift
-let name = "JAN KOWALSKI"
+## Zobacz także:
+Sprawdź oficjalną dokumentację języka Swift dla więcej informacji o kapitalizacji łańcuchów znaków: https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#ID295.
 
-let lowerCaseName = name.lowercased()
-
-print(lowerCaseName) // Wypisze "jan kowalski"
-```
-
-Jeśli chcesz tylko zmienić pierwszą literę w ciągu na wielką, możesz użyć metody `capitalized()`:
-
-```Swift
-let name = "jan kowalski"
-
-let capitalizedName = name.capitalized()
-
-print(upperCaseName) // Wypisze "Jan Kowalski"
-```
-
-Wszystkie te funkcje mogą być również używane na dowolnym typie dziedziczącym po `String`, na przykład na zmiennej typu `NSString`:
-
-```Swift
-let name = NSString(string: "jan kowalski")
-
-let upperCaseName = name.uppercased()
-
-print(upperCaseName) // Wypisze "JAN KOWALSKI"
-```
-
-## Najważniejsze informacje
-
-Warto również wiedzieć, że funkcje `uppercased()`, `lowercased()` i `capitalized()` zwracają nowy ciąg znaków, a nie zmieniają oryginalnego. Możesz więc zapisywać te wartości do nowych zmiennych lub po prostu wykorzystywać je bezpośrednio w swoim kodzie.
-
-## Zobacz także
-
-- Dokumentacja Apple: [Working with Strings](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
-- Tutorial na YouTube: [String Manipulation in Swift](https://www.youtube.com/watch?v=XZYJv8TqKMg)
-- Przewodnik dla początkujących: [String Operations in Swift](https://www.geeksforgeeks.org/string-operations-in-swift/)
+Możesz również przeczytać artykuł o najlepszych praktykach w pisaniu kodu w języku Swift, w którym omówiono temat kapitalizacji: https://medium.com/livefront/9-najlepszych-praktyk-w-pisaniu-kodu-w-swift-df06e2c33abf.

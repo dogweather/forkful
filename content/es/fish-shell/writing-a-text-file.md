@@ -1,7 +1,7 @@
 ---
-title:                "Redactando un archivo de texto"
-html_title:           "Fish Shell: Redactando un archivo de texto"
-simple_title:         "Redactando un archivo de texto"
+title:                "Escribiendo un archivo de texto"
+html_title:           "Fish Shell: Escribiendo un archivo de texto"
+simple_title:         "Escribiendo un archivo de texto"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Files and I/O"
@@ -10,35 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué escribir un archivo de texto?
+## ¿Qué y por qué?
 
-Escribir un archivo de texto es una forma eficiente y organizada de almacenar información. Ya sea que estés creando un programa, tomado notas, o simplemente guardando datos, un archivo de texto puede ayudarte a mantener todo en un solo lugar y acceder a él fácilmente.
+Escribir un archivo de texto es simplemente crear un archivo que contenga texto y/o código. Los programadores lo hacen para guardar y organizar su código, así como para compartirlo con otros.
 
-## Cómo hacerlo
+## Cómo hacerlo:
 
-Para escribir un archivo de texto en Fish Shell, sigue estos sencillos pasos:
+```Fish Shell``` es una excelente opción para escribir archivos de texto ya que tiene comandos simples y fáciles de recordar. Primero, abre tu terminal y escribe ```fish```. Luego, utiliza el comando ```touch``` para crear un archivo de texto vacío:
 
-1. Abre tu terminal y ejecuta el comando `touch` seguido del nombre que quieras darle a tu archivo de texto. Por ejemplo: `touch datos.txt`
- 
+```
+$ touch mi_archivo.txt
+```
 
-2. Abre el archivo con el editor de texto de tu preferencia, puedes usar `vi` o `nano` si no tienes uno instalado. Por ejemplo: `nano datos.txt`
+Ahora, podemos utilizar el comando ```echo``` para agregar contenido a nuestro archivo:
 
-3. Escribe la información que desees almacenar en el archivo y guarda los cambios.
+```
+$ echo "Hola mundo!" >> mi_archivo.txt
+```
 
-4. Para acceder a la información en el archivo desde la terminal, utiliza el comando `cat` seguido del nombre del archivo. Por ejemplo: `cat datos.txt`
+Podemos usar el comando ```cat``` para ver el contenido de nuestro archivo:
 
-¡Y eso es todo! Ahora tienes un archivo de texto con la información que escribiste.
+```
+$ cat mi_archivo.txt
+Hola mundo!
+```
 
-## Profundizando en el tema
+## Profundizando:
 
-Los archivos de texto pueden ser una forma versátil de almacenar y acceder a información. Pueden contener texto plano, comandos, configuraciones y más. Además de escribir archivos de texto manualmente, también puedes utilizar comandos de la terminal para hacerlo.
+Antes de la llegada de Fish Shell, los programadores solían utilizar Bash Shell para escribir archivos de texto. Sin embargo, Fish Shell es más fácil de aprender y ofrece una sintaxis más limpia y fácil de recordar.
 
-Puedes usar el comando `echo` para agregar texto a un archivo de texto existente, o el comando `rm` para eliminar un archivo de texto. También puedes utilizar comandos de redirección, como `>` o `>>`, para agregar o sobrescribir información en un archivo de texto.
+Otra alternativa popular es el editor de texto Vim, que ofrece una amplia gama de comandos y funciones para escribir y editar archivos de texto.
 
-Recuerda que siempre es importante mantener tus archivos de texto organizados y nombrarlos adecuadamente para facilitar su acceso y comprensión.
+En términos de implementación, Fish Shell utiliza su propio lenguaje de scripting llamado FishScript para escribir y ejecutar comandos en la terminal.
 
-## Ver también
+## Ver también:
 
-- [Tutorial de Fish Shell](https://fishshell.com/docs/current/tutorial.html)
-- [Uso básico de la terminal en Linux](https://www.linux.com/learn/basic-commands/manipulating-files-linux-cli)
-- [Guía práctica de comandos de Fish Shell](https://fishshell.com/docs/current/cmds.html)
+- [Documentación oficial de Fish Shell](https://fishshell.com/docs/current/index.html)
+- [Tutorial de Fish Shell en español](https://www.linuxito.com/programacion/775-introduccion-a-fish-shell)
+- [Tutorial de Vim en español](https://www.linuxito.com/programacion/1195-vim-editor-texto)

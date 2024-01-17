@@ -1,7 +1,7 @@
 ---
-title:                "디버그 출력 출력하기"
-html_title:           "Bash: 디버그 출력 출력하기"
-simple_title:         "디버그 출력 출력하기"
+title:                "디버그 출력 출력"
+html_title:           "Bash: 디버그 출력 출력"
+simple_title:         "디버그 출력 출력"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Testing and Debugging"
@@ -10,28 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+## 무엇이고 왜?
 
-만약 당신이 Bash 프로그래밍을 하고 있다면, 디버그 출력을 적절히 활용하는 것은 중요한 기술입니다. 디버그 출력은 코드가 작동하는 방식을 디버깅하는 데 도움을 줄 뿐만 아니라, 코드를 이해하고 새로운 기능을 추가하는 데에도 유용합니다.
+디버그 출력을 프로그래밍용으로 사용하는 것이 무엇인지 그리고 프로그래머들이 이를 왜 하는지 알아봅시다.
 
-## 사용법
+디버그 출력은 코드를 검토하거나 디버그할 때 유용한 도구입니다. 프로그래머는 코드 내에서 변수나 조건문의 값을 확인하기 위해 디버그 출력을 사용합니다.
 
-디버그 출력을 사용하려면, "echo" 명령어를 사용하면 됩니다. 예를 들어, 만약 변수 "name"에 저장된 값이 무엇인지 출력하고 싶다면 아래와 같이 입력할 수 있습니다.
+## 하는 방법:
+
+아래 코드 블록에서 디버그 출력을 어떻게 활용할 수 있는지 살펴보세요.
 
 ```Bash
-echo "The name is $name"
+# 변수를 설정하고 디버그 출력을 해봅시다
+test_var="Hello World"
+echo "변수 값: $test_var"
 ```
 
-위 코드는 "The name is" 다음에 변수 "name"의 값을 출력합니다. 따라서 "The name is John" 과 같은 결과를 얻게 됩니다.
+위 코드를 실행하면 "변수 값: Hello World"라는 디버그 출력이 나오게 됩니다.
 
-## 심층 탐구
+## 깊게 들어가보기:
 
-디버그 출력은 디버깅을 위해 도움이 되는 간단한 방법이지만, 더 많은 정보를 얻기 위해서는 "set" 명령어를 사용해야 합니다. "set -x"를 입력하면 스크립트 실행중에 각 줄이 실행되는 과정을 모두 출력해줍니다. "set -v"를 입력하면 실행되는 명령어를 모두 출력해줍니다. 이를 활용하면, 코드가 작동하는 방식을 자세히 파악할 수 있습니다.
+디버그 출력은 수십 년 전부터 프로그래머들이 사용해왔습니다. 때때로 디버깅을 위해 프로그램을 중단하고 실제 실행 중인 값을 확인해야 할 때가 있었기 때문입니다.
 
-## 참고
+디버그 출력 외에도 다양한 디버깅 도구가 있으며, 프로그래머 개인의 취향과 필요에 따라 선택하여 사용할 수 있습니다.
 
-이 글에서 소개한 내용 외에도, Bash에서 디버깅을 위해 다양한 방법을 활용할 수 있습니다. 아래의 링크들에서 더 많은 정보를 찾아보세요.
+디버그 출력은 간단하게 echo 명령어를 사용하거나, 좀 더 복잡한 방식으로 함수를 만든 후 사용할 수 있습니다.
 
-- [Bash Reference Manual: Debugging](https://www.gnu.org/software/bash/manual/html_node/Debugging-Bash-Scripts.html)
-- [Bash programming cheatsheet](https://devhints.io/bash)
-- [Advanced Bash-Scripting Guide: Debugging](http://www.tldp.org/LDP/abs/html/debugging.html#DEBUGTRAP)
+## 참고 자료:
+
+디버그 출력에 대한 더 많은 정보를 알고 싶다면 아래 링크들을 참고해보세요.
+
+- [Bash Shell Scripting Tutorial](https://www.linode.com/docs/guides/bash-scripting/#debugging-your-script)
+- [Debugging Shell Scripts with Bashdb](https://kember.net/articles/bash-dbg/)
+- [The Art of Debugging](https://opensource.com/article/18/7/mental-map-debugging)

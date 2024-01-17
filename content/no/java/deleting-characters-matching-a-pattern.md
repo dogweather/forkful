@@ -10,36 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
-Enten man skal lage et program eller modifisere eksisterende kode, kan det hende man trenger å slette bestemte tegn som matcher et spesifikt mønster. Det kan være for å fjerne uønskede tegn eller for å utføre en annen type manipulasjon av teksten. Uansett årsak, er det nyttig å kunne slette tegn som matcher et bestemt mønster i Java.
+## Hva & Hvorfor?
+Sletting av tegn som matcher et mønster er en vanlig metode innen programmering for å fjerne uønskede tegn fra en tekststreng. Dette kan være nyttig for å filtrere ut uønsket informasjon eller for å formatere en tekst på en spesifikk måte. Det er en effektiv måte å manipulere tekst på og er derfor populært blant programmere.
 
-## Hvordan
-For å slette tegn som matcher et mønster i Java, kan man bruke metoden `replaceAll()` fra `String`-klassen. Denne metoden tar inn to parameter: det første parameteret er mønsteret man skal matche, og det andre parameteret er hva man vil bytte de matchende tegnene med. Her er et eksempel på bruk av `replaceAll()`:
-
-```Java
-String tekst = "Dette er en tekst.";
-String nyTekst = tekst.replaceAll("e", "a");
-System.out.println(nyTekst);
-```
-
-Dette vil gi følgende utskrift: "Datta ar an tastk." Som du kan se, har alle forekomster av "e" i teksten blitt erstattet med "a".
-
-Man kan også bruke regulære uttrykk i mønsteret for å slette flere tegn på én gang. For eksempel kan man bruke `[0-9]` for å matche alle tall, og `\\W` for å matche alle ikke-alfabetiske tegn. Her er et eksempel som sletter alle tall og ikke-alfabetiske tegn fra en tekst:
+## Hvordan:
+Det finnes ulike måter å implementere sletting av tegn basert på et mønster i Java. Et eksempel er ved å bruke metoden `replaceAll()` som tar inn et regulært uttrykk og erstatter alle tegn som matcher dette uttrykket med et annet tegn eller en tom streng. Se eksempelet nedenfor:
 
 ```Java
-String tekst = "Dette er en tekst123.";
-String nyTekst = tekst.replaceAll("[0-9\\W]", "");
+String tekst = "Hei, dette er en tekst med tall som jeg ønsker å fjerne: 1234567";
+String nyTekst = tekst.replaceAll("\\d", "");
 System.out.println(nyTekst);
 ```
+**Output:** Hei, dette er en tekst med tall som jeg ønsker å fjerne:
 
-Dette vil gi følgende utskrift: "Detteerentekst". Alle tall og ikke-alfabetiske tegn er blitt slettet fra teksten.
+Her bruker vi regulære uttrykket `\d`, som matcher alle tall i tekststrengen vår, og erstatter dem med en tom streng. Dette resulterer i at alle tallene blir fjernet fra teksten.
 
-## Dypdykk
-Når man bruker `replaceAll()` for å slette tegn som matcher et mønster, må man være oppmerksom på at den tar inn et regulært uttrykk som mønster. Det betyr at man må bruke escape-sekvenser som `\\` for å matche spesialtegn som `+`, `*` og `.`.
+En annen metode er å bruke `Pattern` og `Matcher` klassene. Dette gir mer kontroll over hvilke tegn som skal fjernes og hvordan mønsteret skal utformes. Se nedenfor for et eksempel:
 
-Det finnes flere metoder i Java som kan hjelpe med å slette tegn som matcher et mønster, som for eksempel `replace()`, `replaceFirst()` og `replaceLast()`. Disse kan også være nyttige å lære om for mer avansert tegnbehandling.
+```Java
+String tekst = "Denne teksten inneholder både tall og symboler! :) #hello";
+Pattern pattern = Pattern.compile("[^a-zA-Z\\s]");
+Matcher matcher = pattern.matcher(tekst);
+String renTekst = matcher.replaceAll("");
+System.out.println(renTekst);
+```
+**Output:** Denne teksten inneholder bde tall og symboler hello
 
-## Se også
-- [Java String replaceAll() method](https://www.javatpoint.com/java-string-replaceall)
-- [Regular Expressions in Java](https://www.baeldung.com/java-regex)
-- [Java String documentation](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
+Her bruker vi et regulært uttrykk som matcher alle tegn som ikke er bokstaver eller mellomrom. Disse tegnene erstattes så med en tom streng.
+
+## Deep Dive:
+Sletting av tegn basert på et mønster har vært en del av programmering i lang tid og er en viktig funksjon innen automatisering og tekstbehandling. I tillegg til Java, finnes det også alternative metoder for å håndtere tekstmanipulasjon i andre programmeringsspråk som for eksempel Python og C++. Ulike programmeringsmiljøer kan også gi ulike funksjonaliteter for å håndtere sletting av tegn. Det er derfor viktig å være bevisst på de forskjellige metodene som finnes og velge den som passer best for det spesifikke prosjektet.
+
+Når det gjelder implementasjonsdetaljer i Java, kan det være lurt å bruke `StringBuilder` i stedet for `String` når man skal gjøre større tekstmanipulasjoner. Dette kan være mer effektivt og har mindre overhead. Det kan også være lurt å utføre slettingen i en egen tråd for mer effektivitet i større programmer.
+
+## Se også:
+- [Java Pattern og Matcher dokumentasjon](https://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html)
+- [Java StringBuilder dokumentasjon](https://docs.oracle.com/javase/7/docs/api/java/lang/StringBuilder.html)

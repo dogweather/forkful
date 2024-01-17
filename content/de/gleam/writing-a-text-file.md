@@ -10,56 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+# Was & Warum?
 
-Schreiben einer Textdatei ist eine grundlegende Fähigkeit, die jeder Programmierer benötigt. Mit Gleam können wir diese Aufgabe effizient und intuitiv erledigen.
+Schreiben eines Textdatei ist eine gemeinsame Aufgabe, die Programmierer bei der Entwicklung von Software erledigen. Es bezieht sich auf das Speichern von Texten in einer Datei, um sie später wieder abrufen oder bearbeiten zu können. Dies ist ein grundlegender Bestandteil des Programmierens und ermöglicht es Entwicklern, Daten effizient zu speichern und zu organisieren.
 
-## Wie geht das?
+# Wie geht's?
 
-Um eine Textdatei mit Gleam zu schreiben, müssen wir zunächst die `File` Bibliothek importieren:
+Das Schreiben einer Textdatei ist in Gleam einfach und unkompliziert. Zunächst muss die benötigte Datei geöffnet werden. Dies kann mithilfe der "Open" Funktion und dem Dateipfad erfolgen. Anschließend kann mit der "Write" Funktion ein Text in die Datei geschrieben werden. Zum Beispiel:
+
+## Schreiben einer Textdatei in Gleam
 
 ```Gleam
-import gleam/io/file
+// Öffnen der Datei
+let file = File.open("test.txt")
+
+// Schreiben des Texts "Hallo Welt" in die Datei
+File.write(file, "Hallo Welt")
 ```
 
-Als nächstes erstellen wir eine Datei mit dem gewünschten Namen und Speicherort und öffnen sie im Schreibmodus:
-```Gleam
-let file = file.open("meine_datei.txt", gleam/io/file.Write)
-```
+Dieser Code öffnet eine Datei mit dem Namen "test.txt" und schreibt den Text "Hallo Welt" hinein. Die Datei wird automatisch gespeichert und kann später mit anderen Funktionen wie "Read" oder "Append" weiter bearbeitet werden.
 
-Anschließend können wir Inhalt in die Datei schreiben, indem wir die Funktion `write` aufrufen und den Text als Argument übergeben:
-```Gleam
-file.write("Dies ist ein Beispieltext für unsere Datei.")
-```
+# Tief tauchen
 
-Um sicherzustellen, dass der Inhalt in der Datei gespeichert wird, müssen wir den `commit` Befehl ausführen:
-```Gleam
-file.commit()
-```
+Das Schreiben von Textdateien ist seit den Anfängen der Programmierung von großer Bedeutung. Vor der Verbreitung von Datenbanken und anderen fortgeschrittenen Technologien war dies oft die einzige Methode, um Daten zu speichern. Heutzutage gibt es jedoch auch alternative Möglichkeiten, wie beispielsweise die Verwendung von Datenbanken oder Cloud-Speichern.
 
-Wenn wir fertig sind, müssen wir die Datei schließen, um Speicherressourcen freizugeben:
-```Gleam
-file.close()
-```
+In Gleam gibt es verschiedene Funktionen, die beim Schreiben von Textdateien helfen können, wie zum Beispiel die "Close" Funktion, um eine Datei zu schließen, oder die "Flush" Funktion, um sicherzustellen, dass alle Änderungen an der Datei gespeichert wurden.
 
-Die fertige Funktion könnte wie folgt aussehen:
-```Gleam
-pub fn write_to_file(content: String, file_name: String) {
-    let file = file.open(file_name, gleam/io/file.Write)
-    file.write(content)
-    file.commit()
-    file.close()
-}
-```
+# Siehe auch
 
-## Tiefer eintauchen
-
-Es ist auch möglich, den Inhalt einer Datei durch die Verwendung des `write_line` Befehls Zeile für Zeile zu schreiben. Dies kann nützlich sein, wenn wir eine Liste von Werten oder Objekten in die Datei schreiben möchten. Wir können auch zusätzliche Optionen wie das Hinzufügen von Leerzeichen oder den Zeilenumbruch anpassen.
-
-Weitere Details und Beispiele findest du in der offiziellen Dokumentation der `File` Bibliothek.
-
-## Siehe auch
-
-- Offizielle Dokumentation der `File` Bibliothek: https://gleam.run/modules/gleam_io_file/latest/
-- Einführung in Gleam: https://gleam.run/getting-started/
-- Weitere Gleam-Artikel: https://gleam.run/articles/
+Weitere Informationen zum Schreiben von Textdateien in Gleam finden Sie in der offiziellen Dokumentation unter [diesem Link](https://gleam.run/book/std-lib.html#file). Hier finden Sie auch Beispiele für das Lesen und Bearbeiten von Textdateien.

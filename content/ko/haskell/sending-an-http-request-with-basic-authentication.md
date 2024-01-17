@@ -1,7 +1,7 @@
 ---
-title:                "기본 인증으로 http 요청 보내기"
-html_title:           "Haskell: 기본 인증으로 http 요청 보내기"
-simple_title:         "기본 인증으로 http 요청 보내기"
+title:                "기본 인증을 사용하여 http 요청 보내기"
+html_title:           "Haskell: 기본 인증을 사용하여 http 요청 보내기"
+simple_title:         "기본 인증을 사용하여 http 요청 보내기"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "HTML and the Web"
@@ -10,46 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+## 무엇 & 왜?
 
-Haskell은 강력한 함수형 프로그래밍 언어로서, HTTP 요청을 보다 효율적으로 처리할 수 있도록 도와줍니다. 따라서 Haskell을 사용하여 기본 인증이 포함된 HTTP 요청을 보내면, 보다 빠르고 안정적인 앱을 개발할 수 있습니다.
+HTTP 요청을 기본 인증과 함께 보내는 것은 프로그래머들이 서버에서 보호된 리소스를 얻기 위해 사용하는 방법입니다. 기본 인증은 사용자 이름과 암호를 입력하는 가장 간단한 형태의 인증입니다.
 
-## 사용 방법
+## 방법:
 
-아래 코드 블록은 Haskell을 사용하여 기본 인증이 포함된 HTTP GET 요청을 보내는 간단한 예제입니다. 주어진 URL과 사용자 이름과 비밀번호를 사용하여 인증된 요청을 보내고, 결과를 받아옵니다.
+아래의 예제 코드는 기본 인증을 사용하여 HTTP 요청을 보내는 방법을 보여줍니다.
 
 ```Haskell
-import Network.HTTP
-import Network.HTTP.Auth
+import Network.HTTP.Simple
+import qualified Data.ByteString.Char8 as BC
 
--- 인증을 위한 사용자 정보 생성
-auth = AuthBasic {
-    auUsername = "username",
-    auPassword = "password"
-}
--- 요청을 보낼 URL 생성
-url = "http://example.com/api"
+main :: IO ()
+main = do
+    let request = setRequestMethod "GET"
+                  $ "http://example.com"
+                  $ setAuthBasic (BC.pack "username") (BC.pack "password")
+                  $ defaultRequest
 
--- 인증된 요청 생성 및 전송
-response <- simpleHTTP (getRequest url)
-reqAuth <- return $ applyBasicAuth auth response
-sendRequest reqAuth
+    response <- httpLBS request
 
--- 결과 출력
-putStrLn $ rspBody =<< sendRequest reqAuth
+    putStrLn $ "Status code: " ++ show (getResponseStatusCode response)
+    putStr "Response body: "
+    BC.putStrLn $ getResponseBody response
 ```
 
-아래는 위 코드를 실행한 결과입니다.
+위의 예제 코드에서, `Network.HTTP.Simple` 모듈을 사용하여 HTTP 요청을 보내고 응답을 받습니다. `setAuthBasic` 함수를 사용하여 기본 인증 정보를 요청에 추가하고, 사용자 이름과 암호를 문자열로 전달합니다. `getResponseStatusCode` 함수를 사용하여 응답의 상태 코드를 가져올 수 있고, `getResponseBody` 함수를 사용하여 응답의 본문을 가져올 수 있습니다.
 
-```
-{"user": "username", "message": "Hello world!"}
-```
+## 깊이 들어가기:
 
-## 심층 분석
+HTTP 요청을 보내는 데 사용되는 인증 형태 중 가장 간단한 형태는 기본 인증입니다. 이 방법은 인증 정보를 암호화하지 않고 텍스트 형태로 전송하기 때문에 보안에 취약할 수 있습니다. 따라서 보안이 중요한 경우에는 다른 형태의 인증을 사용하는 것이 좋습니다. 또한, `Network.HTTP.Simple` 모듈 대신 직접 소켓 연결을 이용하여 HTTP 요청을 보낼 수도 있지만, 이는 더 복잡하고 번거로운 작업이 될 수 있습니다.
 
-Haskell의 `Network.HTTP` 모듈을 사용하면 기본 인증이 포함된 HTTP 요청을 간단하게 처리할 수 있습니다. `AuthBasic` 함수의 매개변수로 사용자 이름과 비밀번호를 지정하고, 이를 `applyBasicAuth` 함수를 통해 요청 객체에 적용합니다. 이후, `simpleHTTP` 함수를 통해 전송된 인증된 요청을 `sendRequest` 함수로 처리하고, 결과를 받아옵니다.
+## 관련 자료:
 
-## 참고 자료
-
-- [Haskell을 사용한 함수형 프로그래밍 강좌](https://www.haskell.org/site-content/uploads//haskell/trw-2001-06.pdf)
-- [Haskell의 Network.HTTP 모듈 문서](https://hackage.haskell.org/package/HTTP)
+- [Network.HTTP.Simple 패키지 문서](https://hackage.haskell.org/package/http-client/docs/Network-HTTP-Simple.html)
+- [기본 인증에 대한 HTTP 스펙](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#Basic_authentication_scheme)

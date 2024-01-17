@@ -1,7 +1,7 @@
 ---
-title:                "Supprimer les caractères correspondant à un motif"
-html_title:           "Fish Shell: Supprimer les caractères correspondant à un motif"
-simple_title:         "Supprimer les caractères correspondant à un motif"
+title:                "Suppression de caractères correspondant à un modèle"
+html_title:           "Fish Shell: Suppression de caractères correspondant à un modèle"
+simple_title:         "Suppression de caractères correspondant à un modèle"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -10,29 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Quoi et pourquoi?
 
-Supprimer des caractères correspondant à un modèle peut être utile dans certaines situations lors de l'utilisation de Fish Shell. Par exemple, vous pouvez vouloir supprimer tous les emojis d'un texte ou toutes les lettres majuscules d'un nom de fichier.
+Lorsque vous programmez, il peut parfois arriver que vous souhaitiez supprimer des caractères spécifiques dans votre code. C'est là qu'intervient la fonction de suppression de caractères par motif. En utilisant cette fonction, vous pouvez facilement supprimer tous les caractères qui correspondent à un motif donné.
 
-## Comment faire
+Les programmeurs utilisent cette fonction pour nettoyer leur code et le rendre plus lisible et facile à comprendre. En supprimant les caractères inutiles, ils peuvent se concentrer sur l'essentiel et écrire un code plus efficace.
 
-Pour supprimer des caractères correspondant à un modèle, utilisez la commande `string replace` en indiquant le modèle à rechercher et le caractère de remplacement entre guillemets. Par exemple, pour supprimer tous les emojis d'un texte, vous pouvez utiliser la commande suivante :
+## Comment faire:
 
-```Fish Shell
-set texte "Bonjour 🌞 comment ça va 🤔"
-set nouveau_texte (string replace -- "🌞" "" $texte)
+Pour supprimer des caractères correspondant à un motif dans le Fish Shell, utilisez la commande `string replace`. Par exemple, si vous souhaitez supprimer tous les tirets d'un numéro de téléphone, vous pouvez utiliser la commande suivante:
+
+```
+fish_shell> string replace 555-1234 - ''
+5551234 
 ```
 
-La commande `string replace` renvoie une nouvelle chaîne de caractères avec le modèle remplacé par le caractère de remplacement. Dans cet exemple, le nouveau texte sera "Bonjour comment ça va".
+Vous pouvez également utiliser un motif plus complexe en utilisant des expressions régulières. Par exemple, pour supprimer tous les chiffres d'une chaîne de caractères, vous pouvez utiliser la commande suivante :
 
-## Approfondissement
+```
+fish_shell> string replace Hello123 my_pattern ''
+Hello 
+```
 
-La commande `string replace` accepte également des options pour effectuer des remplacements plus spécifiques. Par exemple, vous pouvez utiliser l'option `--all` pour remplacer toutes les occurrences du modèle au lieu de seulement la première. Vous pouvez aussi utiliser l'option `--ignore-case` pour ignorer la casse lors de la recherche du modèle.
+La fonction de suppression de caractères par motif utilise également des options telles que `--all` qui permet de supprimer toutes les occurrences du motif dans la chaîne.
 
-De plus, la commande `string replace` peut être combinée avec d'autres commandes telles que `grep` ou `sed` pour effectuer des remplacements plus complexes. Vous pouvez également utiliser des expressions régulières pour un contrôle plus précis sur le modèle à rechercher.
+## Plongée en profondeur:
 
-## Voir aussi
+Cette fonction est inspirée de la fonction `sed` de UNIX, qui permet également de supprimer des caractères correspondant à un motif. Dans d'autres shells, vous pouvez utiliser la commande `tr` pour effectuer cette tâche.
 
-- Documentation officielle de la commande [`string replace`](https://fishshell.com/docs/current/cmds/string-replace.html) 
-- Stack Overflow [réponse](https://stackoverflow.com/questions/59895/how-to-remove-the-emoji-code-from-a-string-in-python) sur la suppression des emojis avec Fish Shell 
-- Article [Medium](https://medium.com/@g7r/color-manipulation-in-fish-shell-a141b8afcfc1) sur la manipulation de couleurs avec Fish Shell.
+L'utilisation de l'expression régulière permet une plus grande souplesse dans la sélection des caractères à supprimer. Cependant, il est important de noter que cela peut également rendre la fonction plus complexe à utiliser.
+
+## Voir également:
+
+- [Documentation Fish Shell](http://fishshell.com/docs/current/cmds/string.html#string-replace)
+
+- [Explications sur les expressions régulières](https://www.regular-expressions.info/)

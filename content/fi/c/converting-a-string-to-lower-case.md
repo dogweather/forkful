@@ -1,7 +1,7 @@
 ---
-title:                "- Merkkijonon muuttaminen pieniksi kirjaimiksi"
-html_title:           "C: - Merkkijonon muuttaminen pieniksi kirjaimiksi"
-simple_title:         "- Merkkijonon muuttaminen pieniksi kirjaimiksi"
+title:                "Merkkijonon muuttaminen pieniksi kirjaimiksi"
+html_title:           "C: Merkkijonon muuttaminen pieniksi kirjaimiksi"
+simple_title:         "Merkkijonon muuttaminen pieniksi kirjaimiksi"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -10,57 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+Tervetuloa lukemaan C (nykyinen versio) ohjelmointiartikkelia, jossa käsitellään merkkijonon muuntamista pieniksi kirjaimiksi. Tässä artikkelissa selitetään lyhyesti, mitä tämä tarkoittaa ja miksi ohjelmoijat tekevät sitä. Artikkelin suoraviivaisessa tyylissä annetaan myös esimerkkejä koodista ja lisäinfoa aiheesta. Löydät myös linkkejä muihin asiaa liittyviin lähteisiin "See Also" osiosta.
 
-Stringin muuntaminen pieniksi kirjaimiksi on tärkeä osa ohjelmointia monissa tilanteissa. Se auttaa yhtenäistämään käyttäjien syötteitä, vertaillessa merkkijonoja tai vain yksinkertaisesti tulostuksessa.
+## What & Why?
 
-## Kuinka
+Merkkijonon muuntaminen pieniksi kirjaimiksi tarkoittaa sitä, että kaikki merkit muutetaan aakkosissa pieniksi kirjaimiksi. Ohjelmoijat tekevät tätä usein silloin, kun he haluavat tarkistaa tai vertailla merkkijonoja, mutta haluavat ohittaa mahdolliset suuret ja pienet erot kirjaimissa.
+
+## How to:
+
+Esimerkiksi, jos käytämme seuraavaa koodia:
 
 ```C
-#include <stdio.h>
-#include <ctype.h>
+char string[] = "KOODI ON KIVAA";
+char *ptr = string;
 
-void convertToLower(char* str);
-
-int main(void) {
-    char str[] = "TämÄ TeKsTi On KoRuPpTioToN";
-    
-    printf("Alkuperäinen merkkijono: %s\n", str);
-    
-    convertToLower(str);
-    
-    printf("Muunnettu merkkijono: %s\n", str);
-    
-    return 0;
+while (*ptr)
+{
+    *ptr = tolower(*ptr);
+    ptr++;
 }
 
-void convertToLower(char* str) {
-    int i = 0;
-    
-    // Loopataan merkkijono läpi
-    while (str[i]) {
-
-        // Muunnetaan jokainen merkki pieneksi
-        str[i] = tolower(str[i]); 
-
-        i++; 
-    }
-}
+printf("%s", string);
 ```
 
-Tulostus:
+Saamme seuraavan tulosteen:
+
 ```
-Alkuperäinen merkkijono: TämÄ TeKsTi On KoRuPpTioToN
-Muunnettu merkkijono: tämä teksti on korruptioton
+"koodi on kivaa" 
 ```
 
-## Deep Dive
+Koodissa ensin määrittelemme merkkijonon ja sen jälkeen luomme osoittimen merkkijonon alkuun. Sitten käytämme while-loopia, joka käy läpi kaikki merkit merkkijonossa ja muuttaa ne pieniksi kirjaimiksi käyttäen tolower-funktiota. Lopuksi tulostamme muunnetun merkkijonon.
 
-Merkkijonon muuntaminen pieniksi kirjaimiksi tapahtuu käyttämällä C:n `tolower()` -funktiota. Tämä funktio löytyy `ctype.h` -kirjastosta ja se hyväksyy parametrina merkin ja palauttaa saman merkin pienellä kirjaimella. Tarvittaessa merkin ASCII-arvo muunnetaan ensin suuresta pieneksi.
+## Deep Dive:
 
-Yllä olevassa esimerkissä `convertToLower()` -funktio käy läpi merkkijonon merkki kerrallaan ja käyttää `tolower()` -funktiota muuttaakseen jokaisen merkin pieneksi. Tämän jälkeen tulostamme muutetun merkkijonon ja huomaamme, että kaikki kirjaimet ovat nyt pieniä.
+Historiallisessa kontekstissa, merkkijonon muuttaminen pieniksi kirjaimiksi on tehty erilaisilla tavoilla eri ohjelmointikielillä. Esimerkiksi joissain kielissä on olemassa erikseen pienet ja suuret kirjaimet, kun taas toisissa kielissä ei ole. C kielen tolower-funktio ottaa huomioon kullakin ympäristössä käytössä olevan merkistön ja sen mukaan muuttaa merkit vastaaviksi pieniksi kirjaimiksi.
 
-## Katso myös
+On myös olemassa muita tapoja muuttaa merkkijonoja pieniksi kirjaimiksi, kuten käyttämällä kirjastoja tai kirjoittamalla oma tolower-funktio, mutta useimmiten C kielen tolower on nopea ja kätevä vaihtoehto.
 
-- [C:toupper() - Merkkijonon muuntaminen isoiksi kirjaimiksi](https://www.geeksforgeeks.org/c-toupper-function/)
-- [Merkkijonojen käsittely C-kielessä](https://www.tutorialspoint.com/cprogramming/c_strings.htm)
+## See Also:
+
+- C tolower man-sivu: https://linux.die.net/man/3/tolower
+- C String Library: https://www.programiz.com/c-programming/library-function/string.h/tolower

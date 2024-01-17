@@ -1,7 +1,7 @@
 ---
-title:                "「文字列を小文字に変換する」"
-html_title:           "Clojure: 「文字列を小文字に変換する」"
-simple_title:         "「文字列を小文字に変換する」"
+title:                "文字列を小文字に変換する"
+html_title:           "Clojure: 文字列を小文字に変換する"
+simple_title:         "文字列を小文字に変換する"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -10,37 +10,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## クロージャーで文字列を小文字に変換する理由
+## 何をして、なぜ？
+文字列を小文字に変換することは、単純に文字列のすべての文字を小文字に変換することです。プログラマーは、大文字と小文字を区別しない比較を行いたい場合や、文字列の外観を統一したい場合など、さまざまな理由でこれを行います。
 
-文字列を小文字に変換することは、コンピュータ上の文字列操作で非常に一般的です。例えば、ユーザーが入力した文字列を統一したフォーマットで処理するために、小文字に変換する必要があるかもしれません。または、検索エンジンやソート機能を実装する際に、文字列を小文字に変換してより柔軟な検索やソートができるようにするためです。
+## 方法：
+以下のコード例を使用して、文字列を小文字に変換する方法を示します。```Clojure
+(.toLowerCase "Hello World")
+;;=> "hello world"
 
-## クロージャーで文字列を小文字に変換する方法
+(.toLowerCase "APPLE")
+;;=> "apple"
+``` 
 
-変換したい文字列を `lower-case` 関数に渡すだけで簡単に文字列を小文字に変換することができます。以下のコード例を参考にしてください。
+## 深く掘り下げる：
+- 歴史的な文脈：文字列を大文字と小文字に分ける方法は、意外と難しい問題でした。コンピューター上で大文字と小文字を区別するのは、印刷機械の登場以前の古い印刷方法に遡ることができます。
+- 代替案：他のプログラミング言語では、文字列を小文字に変換するために専用のメソッドが利用可能です。Clojureでは、Javaのメソッドを使用することで文字列を小文字に変換することができます。
+- 実装の詳細：Clojureでは、Javaの文字列クラスのメソッド `.toLowerCase` を使用して、文字列を小文字に変換しています。
 
-```Clojure
-(lower-case "Hello, World!")
-```
-
-上記のコードを実行すると、出力は以下のようになります。
-
-```Clojure
-"hello, world!"
-```
-
-## クロージャーで文字列を小文字に変換する深堀り
-
-クロージャーの `lower-case` 関数は、文字列を小文字に変換するだけでなく、国際化や地域毎の文字列操作にも対応しています。また、多言語環境での文字列比較やパターンマッチングにも有用です。詳しくは公式ドキュメントをご覧ください。
-
-## 参考リンク
-
-- `lower-case` 関数の公式ドキュメント: https://clojure.org/reference/strings#clojure.string/lower-case
-- 国際化や地域毎の文字列操作に関する詳細: https://github.com/clojure/clojure/blob/master/src/clj/clojure/string.clj#L832-L910
-- マルチバイト文字列処理に関する記事 (英語): https://lambdaisland.com/blog/2019-04-11-how-to-compare-strings-in-clojure
-- パターンマッチングに関するチュートリアル (英語): https://www.braveclojure.com/functional-programming/#Pattern_Matching
-
-## 関連リンク
-
-- クロージャー公式ドキュメント: https://clojure.org/
-- クロージャーについて知りたい方への入門記事: https://qiita.com/t-watanabe/items/efd6e4d033dc7263afed
-- クロージャーを使った実践的なプログラミングの例: https://github.com/karad/aroha/blob/master/README.md
+## 関連情報へのリンク：
+- [Clojureドキュメント - `.toLowerCase`](https://clojuredocs.org/clojure.core/to-lower-case)
+- [Java文字列クラス - `.toLowerCase`](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#toLowerCase--)

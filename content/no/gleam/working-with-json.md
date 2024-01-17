@@ -10,38 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
-Hvis du jobber med webapplikasjoner eller backend-systemer, kommer du mest sannsynlig til å jobbe med dataformatet JSON. Det er en enkel og populær måte å lagre og utveksle data på, og å ha kunnskap om hvordan man håndterer JSON kan åpne opp for flere muligheter og utviklingsmuligheter.
+Hva & Hvorfor?
 
-## Hvordan gjøre det
+Å jobbe med JSON er en vanlig praksis blant programmører for å lagre og overføre data på en strukturert måte. JSON står for JavaScript Object Notation og er et format som tillater enkelt lesbarhet og behandling av data. Det er et populært valg på grunn av dets universalitet og effektiviteten for å kommunisere med applikasjoner og web-tjenester.
+
+Hvordan:
+
+For å arbeide med JSON i Gleam kan du bruke biblioteket gleam/json. Det inkluderer funksjoner for å lese, skrive og manipulere JSON-data. Her er et eksempel på hvordan du kan bruke det til å lese og skrive JSON-data:
+
 ```Gleam
-let data = """
-    {"navn": "Maria", "alder": 25, "jobb": "Programmerer"}
-    ```
+let data = "{ "name": "Gleam", "version": "0.9.0" }"
+let result = Json.deserialize(data)
+// result = Record { name: "Gleam", version: "0.9.0" }
 
-// Skriv ut navnet
-io.println(data.navn) // Output: Maria
-
-// Endre alder
-let nyData = data |> Json.set("alder", 26)
-
-// Konverter til JSON og skriv ut
-let nyJson = nyData |> Json.encode_pretty(2)
-io.println(nyJson)
-```
-Output: 
-```
-{
-  "navn": "Maria",
-  "alder": 26,
-  "jobb": "Programmerer"
-}
+let new_data = Json.serialize(result)
+// new_data = "{ "name": "Gleam", "version": "0.9.0" }"
 ```
 
-## Dykk dypere
-Å arbeide med JSON i Gleam er enkelt takket være Json-modulen. Den lar deg enkelt konvertere datastrukturer til JSON og vice versa ved hjelp av funksjoner som `encode` og `decode`. Du kan også bruke `encode_pretty` for å få en finere formatering på JSON-utdataen. Hvis du trenger å jobbe med større datastrukturer, kan du også bruke `save_to_file` og `load_from_file` for å lagre og hente JSON-filer.
+Dypere dykk:
 
-## Se også
-- [Gleam dokumentasjon om Json-modulen](https://gleam.run/documentation/json/)
-- [Offisiell JSON-nettside](https://www.json.org/json-en.html)
-- [En oversikt over Gleam funksjoner for å manipulere data](https://5t3ph.github.io/over-json-with-gleam.html)
+JSON har blitt en vanlig måte å lagre og overføre data på siden det ble introdusert i 2001. Den er utledet av JavaScript, men kan brukes med de fleste programmeringsspråk. Det finnes også alternative formater som XML som utfører samme oppgave, men JSON har blitt foretrukket for sin enkelhet og allsidighet. Implementasjonen av JSON i Gleam er basert på Gleam Records, en struktur som er optimal for å representere JSON-data.
+
+Se også:
+
+- Les mer om Gleam Records: https://gleam.run/documentation/standard_library/#record
+- Utforsk biblioteket gleam/json: https://github.com/gleam-lang/json
+- Finn mer informasjon om JSON på https://www.json.org/

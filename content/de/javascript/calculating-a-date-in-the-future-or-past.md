@@ -10,48 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was & Warum?
 
-Das Berechnen eines Datums in der Zukunft oder Vergangenheit kann nützlich sein, um bestimmte Aufgaben in einer Anwendung zu automatisieren, wie z.B. das Anzeigen von zukünftigen Terminen oder das Berechnen von Fristen. Es kann auch hilfreich sein, um Zeitbereiche zu bestimmen, wie z.B. eine Woche oder ein Monat in der Zukunft.
+Berechnen von Daten in der Zukunft oder Vergangenheit ist eine häufige Aufgabe in der Programmierung. Es handelt sich dabei um die Manipulation von Datumsangaben, um ein bestimmtes Datum oder eine bestimmte Zeit für einen bestimmten Zweck zu erhalten. Programmierer verwenden dies, um beispielsweise Kalender- oder Zeitfunktionen zu erstellen oder um zeitgesteuerte Aufgaben in ihren Programmen zu automatisieren.
 
-## So geht's
+## Wie geht's?
 
-Um ein Datum in der Zukunft oder Vergangenheit zu berechnen, muss zunächst das aktuelle Datum und die gewünschte Anzahl an Tagen hinzugefügt oder subtrahiert werden. Hier ist ein einfaches Beispiel:
+```Javascript 
+// Beispiel für die Berechnung eines Datums in der Zukunft
+const today = new Date();
+const futureDate = new Date();
+futureDate.setDate(today.getDate() + 7); // Fügt 7 Tage hinzu
+console.log(futureDate); // Ausgabe: 2021-05-28T00:00:00.000Z
 
-```Javascript
-// Aktuelles Datum
-let heute = new Date();
-
-// Berechnung von Datum in 7 Tagen in der Zukunft
-let zukunft = new Date(heute.getFullYear(), heute.getMonth(), heute.getDate() + 7);
-
-console.log(zukunft); // Ausgabe: Datum in 7 Tagen in der Zukunft
+// Beispiel für die Berechnung eines Datums in der Vergangenheit
+const today = new Date();
+const pastDate = new Date();
+pastDate.setDate(today.getDate() - 10); // Subtrahiert 10 Tage
+console.log(pastDate); // Ausgabe: 2021-05-11T00:00:00.000Z
 ```
-
-Zuerst wird das aktuelle Datum mit der JavaScript `Date()` Funktion abgerufen. Dann wird mithilfe der `getFullYear()`, `getMonth()` und `getDate()` Methoden das Datum in eine variable gespeichert. Schließlich wird mit `+ 7` die gewünschte Anzahl an Tagen hinzugefügt und das Ergebnis wird in einer neuen `Date` Variable gespeichert.
-
-Für die Berechnung von Daten in der Vergangenheit kann einfach `- 7` verwendet werden, um 7 Tage abzuziehen. Hier ist ein Beispiel:
-
-```Javascript
-// Aktuelles Datum
-let heute = new Date();
-
-// Berechnung von Datum vor 7 Tagen
-let vergangenheit = new Date(heute.getFullYear(), heute.getMonth(), heute.getDate() - 7);
-
-console.log(vergangenheit); // Ausgabe: Datum vor 7 Tagen
-```
-
-Es ist auch möglich, andere Zeiteinheiten wie Monate oder Jahre zu berechnen, indem man die entsprechenden Werte für `getMonth()` und `getFullYear()` anpasst.
 
 ## Tiefere Einblicke
 
-Die JavaScript `Date` Funktion bietet viele Methoden und Eigenschaften, die hilfreich sind, um ein Datum in der Zukunft oder Vergangenheit zu berechnen. Zum Beispiel kann man die verschiedenen `get` und `set`-Methoden verwenden, um einzelne Teile eines Datums wie Tag, Monat, Jahr oder sogar die Zeit zu modifizieren. Auch das Verwenden von `toLocaleDateString()` kann helfen, um ein Datum in verschiedenen Formaten auszugeben.
+Die genaue Implementierung der Datumsberechnung hängt von der Programmiersprache und der verwendeten Bibliothek ab. In der Vergangenheit mussten Entwickler manchmal komplexe Berechnungen durchführen, um ein Datum zu manipulieren. Mit der Einführung von modernen Datums- und Zeitfunktionen wie JavaScript's ```Date``` Objekt, ist es jedoch viel einfacher geworden, Daten in der Zukunft oder Vergangenheit zu berechnen.
 
-Es ist wichtig zu beachten, dass JavaScript die Zeitzone des verwendeten Geräts verwendet. Wenn das korrekte Datum und die korrekte Zeitzone wichtig sind, ist es besser, auf externe Bibliotheken oder APIs zurückzugreifen.
+Es gibt auch alternative Ansätze, die in bestimmten Fällen nützlich sein können, wie zum Beispiel die Verwendung von Zeitstempeln anstelle von Datumsangaben oder die Verwendung von Bibliotheken für spezifische Datums- und Zeitmanipulationen.
 
 ## Siehe auch
 
-- [MDN Web Docs - Date](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [W3Schools - JavaScript Date Object](https://www.w3schools.com/jsref/jsref_obj_date.asp)
-- [Hackernoon - Calculate Future Dates in JavaScript](https://hackernoon.com/calculate-future-dates-in-javascript-634eeeb23b21)
+- [Mozilla Developer Network: Date](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [W3Schools: JavaScript Date Objects](https://www.w3schools.com/js/js_date_objects.asp)
+- [Moment.js](https://momentjs.com/) - Eine beliebte JavaScript Bibliothek für das Manipulieren von Datums- und Zeitangaben.

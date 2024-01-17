@@ -10,38 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
-Regular expressions används för att söka efter och manipulera text på ett enkelt sätt. Det är ett kraftfullt verktyg för att hantera strängar av data och kan hjälpa till att effektivisera programmeringen.
+## Vad & Varför?
+Reguljära uttryck är ett sätt för programmerare att söka och manipulera textsträngar. Det kan vara användbart när du behöver hitta ett specifikt mönster i en text eller vill göra stora ändringar på flera textsträngar med en enda kodrad.
 
-## Så här gör du
-För att använda regular expressions i Arduino, behöver du inkludera "Regex.h" biblioteket. Sedan kan du skapa ett Regex-objekt och använda dess inbyggda funktioner för att söka, ersätta eller validera textsträngar. Här är ett enkelt exempel:
+## Så här:
+För att använda reguljära uttryck i Arduino behöver du först inkludera "Regex" biblioteket. Sedan kan du använda funktionen "match()" för att söka efter ett mönster i en textsträng.
 
-```Arduino
+```
 #include <Regex.h>
 
 void setup() {
-  Serial.begin(9600);
+  // Skapa en textsträng att söka i
+  String text = "Hej! Mitt namn är Bob.";
+  
+  // Skapa ett reguljärt uttryck
+  Regex pattern = Regex("[a-z]+!");
+  
+  // Använd match() för att söka efter mönstret i textsträngen
+  if (pattern.match(text)) {
+    // Om mönstret hittas, skriv ut matchningen
+    Serial.println(pattern.matched()); // Skriver ut "Hej!"
+  }
 }
 
 void loop() {
-  Regex regex("[0-9]+"); // Skapar ett Regex-objekt för att hitta siffror i en sträng
-  String text = "Det finns 10 katter i trädgården";
-  int count = regex.countMatches(text); // Använder countMatches() för att räkna siffrorna i texten
-  Serial.println(count); // Skriver ut resultatet (10) i seriell monitor
+  // Kör ingenting i loop
 }
 ```
 
-Output:
-```
-10
-```
+## Djupdykning:
+Reguljära uttryck har funnits sedan 1950-talet och används idag i många programmeringsspråk. Alternativ till RegEx är strängfunktioner som "find()" och "replace()", men de är mindre flexibla och kräver mer kodrad för att åstadkomma samma sak.
 
-Du kan också använda reguljära uttryck för att ersätta delar av en sträng, validera inmatade värden eller extrahera specifika delar av texten. Det finns många användbara funktioner som är tillgängliga i Regex-biblioteket, så det är väl värt att lära sig mer om dem om du arbetar med strängar i Arduino.
+## Se även:
+Läs mer om hur man använder reguljära uttryck i Arduino på officiella dokumentationen: https://www.arduino.cc/reference/en/language/functions/strings/match/
 
-## Fördjupning
-Reguljära uttryck är ett avancerat ämne och det kan ta tid att bli bekväm med dem. Det finns många olika tecken och operatorer som kan användas för att bygga specifika sökningar. Om du vill lära dig mer om hur du skriver effektiva och kraftfulla regular expressions, finns det många onlinekurser och resurser tillgängliga. Kom ihåg att det är en färdighet som kommer att ta tid och övning för att behärska, men det är en viktig del av programutveckling.
-
-## Se även
-- [RegExr](https://regexr.com/) - Ett onlineverktyg för att testa och lära sig regular expressions.
-- [Officiell dokumentation för Regex-biblioteket](https://www.arduino.cc/reference/en/libraries/regex/) - En detaljerad guide för att använda Regex i Arduino.
-- [Reguljära uttryck i Arduino](https://www.instructables.com/Using-Regular-Expressions-with-Arduino/) - En praktisk handledning för att använda regular expressions i dina Arduino-projekt.
+En praktisk guide för hur man använder reguljära uttryck på engelska: https://www.regular-expressions.info/arduino.html

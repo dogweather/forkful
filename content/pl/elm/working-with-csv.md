@@ -1,7 +1,7 @@
 ---
-title:                "Praca z plikami csv"
-html_title:           "Elm: Praca z plikami csv"
-simple_title:         "Praca z plikami csv"
+title:                "Praca z plikami CSV"
+html_title:           "Elm: Praca z plikami CSV"
+simple_title:         "Praca z plikami CSV"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Data Formats and Serialization"
@@ -10,36 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
-Dlaczego chciałbyś pracować z plikami CSV? Te pliki zawierają dane w formacie tabeli, który jest powszechnie stosowany w biznesie i naukach, więc znajomość ich obsługi jest kluczowa dla wielu zawodów. W tym artykule dowiesz się, jak w prosty sposób pracować z plikami CSV w języku Elm.
+## Czym jest i dlaczego to robimy?
+Praca z plikami CSV to popularna czynność dla programistów, polegająca na przetwarzaniu danych w formacie wartości rozdzielonych przecinkami. Zwykle wykorzystuje się to do przechowywania i przetwarzania tabelarycznych danych, takich jak arkusze kalkulacyjne. Dzięki wykorzystaniu tych prostych plików, możliwe jest łatwe zarządzanie i przesyłanie dużej ilości informacji.
 
-## Jak to zrobić
+## Jak to zrobić:
+Aby rozpocząć pracę z plikami CSV w Elm, musimy najpierw zaimportować odpowiedni moduł. Następnie możemy użyć funkcji `CSV.Decode.decode` w celu odczytania danych z pliku. Przykładowo, jeśli chcemy zdekodować dane w postaci tablicy wartości, możemy użyć następującego kodu:
+
 ```Elm
--- Odczytanie pliku CSV
-fileContent : String
-fileContent =
-  """
-  Imię,Nazwisko,Wiek
-  Maria,Kowalska,34
-  Jan,Nowak,42
-  """
+import CSV.Decode as Decode
 
-parseCSV : List (List String)
-parseCSV =
-  fileContent
-    |> String.split "\n"
-    |> List.map (String.split ",")
+csv = """
+imie,nazwisko,wiek
+Jan,Kowalski,30
+Anna,Nowak,25
+Piotr,Wójcik,35
+"""
+
+Decode.decode DecodedValue.csvValue csv
 ```
-Kod powyżej pokazuje, jak wczytać i sparsować plik CSV w języku Elm. Korzystając z funkcji String.split, możemy podzielić dane na odpowiednie kolumny i rzędy. Następnie, dzięki wykorzystaniu funkcji List.map, dane są mapowane na listy, co pozwala nam na łatwiejszą manipulację nimi.
 
-Aby zapisać zmiany w pliku CSV, możemy wykorzystać funkcję String.join, która pozwala na połączenie listy danych z rozdzielającym je separatorem, takim jak ",". Następnie możemy zapisać zmodyfikowany string do pliku.
+Wynikiem będzie `Ok [["imie", "nazwisko", "wiek"], ["Jan", "Kowalski", "30"], ["Anna", "Nowak", "25"], ["Piotr", "Wójcik", "35"]]`.
 
-## Głębszy zanurzenie
-W języku Elm istnieją również gotowe paczki, które ułatwiają pracę z plikami CSV, takie jak elm-csv i elm-csv-decode. Dzięki nim możemy wykorzystać zaawansowane funkcje, takie jak dekodowanie danych do odpowiednich typów.
+Możliwe jest także konwertowanie danych do innych formatów, takich jak `DecodedValue.dictValue` lub `DecodedValue.recordValue`. Wymaga to jednak wcześniejszego zdefiniowania właściwych typów danych przy użyciu `let`, `type` lub `type alias`.
 
-Ponadto, niektóre biblioteki, takie jak ohi/csv-decode, umożliwiają odczytanie i dekodowanie plików CSV bezpośrednio z linków internetowych, co może być przydatne podczas pracy z danymi z zewnętrznych źródeł.
+## Wnikliwszy przegląd:
+Praca z plikami CSV jest tak popularna, ponieważ jest to prosty sposób na przechowywanie i przetwarzanie danych w formie tabelarycznej. Format ten został wprowadzony w latach 70. i od tamtego czasu stał się standardem dla przechowywania informacji w programach biurowych. Alternatywą dla plików CSV są bazy danych, które oferują większą wydajność i możliwości filtrowania i sortowania danych.
 
-## Zobacz również
-- Dokumentacja języka Elm: https://elm-lang.org/docs
-- Paczka elm-csv: https://package.elm-lang.org/packages/elm/parser/latest/
-- Biblioteka ohi/csv-decode: https://package.elm-lang.org/packages/ohanhi/elm-csv-decode/latest/
+Implementacja działania z plikami CSV w języku Elm jest stosunkowo prosta i nie wymaga użycia zewnętrznych bibliotek. Dzięki wbudowanym funkcjom w module `CSV.Decode` możliwe jest szybkie odczytanie danych z pliku i przekształcenie ich do wybranego formatu.
+
+## Zobacz także:
+- Dokumentacja języka Elm: https://guide.elm-lang.org/
+- Przykładowy projekt wykorzystujący praca z plikami CSV w Elm: https://github.com/cwellsx/easy-csv-encoder

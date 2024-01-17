@@ -1,7 +1,7 @@
 ---
-title:                "Écrire sur la sortie d'erreur standard"
-html_title:           "Elixir: Écrire sur la sortie d'erreur standard"
-simple_title:         "Écrire sur la sortie d'erreur standard"
+title:                "Écrire vers l'erreur standard"
+html_title:           "Elixir: Écrire vers l'erreur standard"
+simple_title:         "Écrire vers l'erreur standard"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Files and I/O"
@@ -10,54 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+# Pourquoi & Comment écrire sur la sortie d’erreur standard en Elixir
 
-Écrire vers l'erreur standard (standard error) peut sembler être une tâche obscure et peu plaisante, mais c'est en fait un outil utile pour un programmeur Elixir. En comprenant comment écrire vers l'erreur standard, vous pouvez mieux gérer les erreurs de votre code et améliorer la qualité de votre programme.
+## Quoi & Pourquoi?
+Écrire sur la sortie d’erreur standard est une pratique courante pour les programmeurs en Elixir. Cela consiste à afficher des messages d'erreur de manière explicite et à les diriger vers la sortie d’erreur standard plutôt que vers la sortie standard. Cela peut aider les développeurs à identifier et à corriger rapidement les erreurs dans leur code.
 
-## Comment faire
-
-L'écriture vers l'erreur standard utilise une fonction appelée :error_logger.log/1. Cette fonction prend en paramètre un enregistrement d'erreur et le transmet à l'erreur standard.
-
+## Comment faire:
+Pour écrire sur la sortie d’erreur standard en Elixir, utilisez la fonction ```IO.puts/1``` en passant en paramètre le message d'erreur. Par exemple:
 ```Elixir
-:error_logger.log("Une erreur s'est produite!")
+IO.puts("Une erreur est survenue!")
+```
+Cela affichera le message dans la sortie d’erreur standard, généralement en rouge pour le différencier de la sortie standard.
+
+Vous pouvez également utiliser la fonction ```IO.inspect/1``` pour afficher un message d'erreur avec d'autres informations utiles telles que le contenu d'une variable. Par exemple:
+```Elixir
+a = 5
+IO.inspect("La valeur de a est #{a}")
 ```
 
-Lorsque vous utilisez cette fonction, vous verrez cet enregistrement apparaître dans votre terminal avec une étiquette `[error]` avant le message, indiquant qu'il a été écrit vers l'erreur standard.
+## Plongée en profondeur:
+Bien que l'utilisation de la sortie d’erreur standard soit courante en Elixir, il est important de savoir qu’il existe d'autres alternatives telles que la journalisation ou la gestion d'erreurs avec les mots-clés ```raise``` et ```try...rescue```. Ces alternatives peuvent être plus adaptées en fonction du contexte et des objectifs du programme.
 
-```
-[error] Une erreur s'est produite!
-```
+En ce qui concerne l'implémentation, la sortie d’erreur standard est gérée par le système d'exploitation plutôt que par Elixir lui-même. Cela signifie que le fonctionnement peut varier en fonction du système d'exploitation utilisé.
 
-Vous pouvez également spécifier le niveau de gravité de l'erreur en utilisant un tuple comme deuxième argument de la fonction. Par exemple, si vous voulez une erreur de niveau avertissement (warning) plutôt que d'erreur, vous pouvez utiliser le code suivant :
+## À voir:
+Pour en savoir plus sur l'utilisation de la sortie d’erreur standard en Elixir, consultez la documentation officielle sur [IO.puts/1](https://hexdocs.pm/elixir/IO.html#puts/1) et [IO.inspect/1](https://hexdocs.pm/elixir/IO.html#inspect/1).
 
-````elixir
-:error_logger.log("Une erreur de niveau avertissement s'est produite!", {:warning})
-```
-
-Le programme affichera alors `[warning] Une erreur de niveau avertissement s'est produite!` dans le terminal.
-
-## Plongée en profondeur
-
-En utilisant les fonctions :error_logger, vous pouvez également enregistrer des informations sur le processus et le module qui a provoqué l'erreur. Par exemple, le code suivant utilise :error_logger pour afficher une erreur avec des informations sur le module et le processus en cours :
-
-```elixir
-:error_logger.log(
-  "Une erreur s'est produite dans le module #{__MODULE__} avec le processus no #{self()}.",
-  {:error, %{module: __MODULE__, process: self()}}
-)
-```
-
-Cela permet de déboguer plus facilement votre code en identifiant précisément où l'erreur s'est produite. De plus, vous pouvez également spécifier des détails supplémentaires tels que la fonction et la ligne de code en utilisant les options `:function` et `:line`.
-
-```elixir
-:error_logger.log(
-  "Une erreur s'est produite dans la fonction #{__CALLER__.function} à la ligne #{__CALLER__.line}.",
-  {:error, %{function: __CALLER__.function, line: __CALLER__.line}}
-)
-```
-
-## Voir aussi
-
-- Documentation officielle sur les fonctions :error_logger (https://hexdocs.pm/elixir/ErrorLogger.html)
-- Un article détaillé sur les différents types de fonctions de journalisation en Elixir (https://elixircasts.io/writing-and-reading-logs-in-elixir)
-- Une discussion sur l'importance de la gestion des erreurs dans la programmation (https://www.justokay.co/elixir/error-handling-with-elixir)
+Vous pouvez également trouver des informations utiles sur les alternatives à la sortie d’erreur standard dans cet [article](https://elixirschool.com/en/lessons/basics/error-handling/) d'Elixir School.

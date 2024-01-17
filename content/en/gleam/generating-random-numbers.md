@@ -10,48 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-Generating random numbers is a fundamental task in programming that allows us to introduce unpredictability and variety into our code. Whether you need to create a random password or simulate a game, the ability to generate random numbers is a valuable skill for any programmer to have in their toolkit.
+## What & Why?
 
-## How To
-Generating random numbers in Gleam is a straightforward process that can be achieved using the `Random` module. Let's take a look at a simple example of generating a random number between 1 and 10:
+Generating random numbers is a common task in programming, where a program needs to generate a series of numbers that appear to be chosen randomly. This can be useful for simulations, games, and encryption. Programmers use random numbers to add unpredictability and variety to their programs.
 
+## How to:
+
+To generate a random number in Gleam, we can use the `random` module, specifically the `int` function. This function takes in a minimum and maximum value, and returns a random integer between those two values. For example, ```Gleam
+random.int(1, 10)
+``` 
+would produce a random number between 1 and 10. 
+
+If we want to generate a random floating-point number, we can use the `float` function in the `random` module. This function also takes in a minimum and maximum value, and returns a random decimal number between them. For example, ```Gleam
+random.float(0.0, 1.0)
 ```
-Gleam import Random
+would generate a random number between 0.0 and 1.0.
 
-let random_number = Random.int(1,10)
+We can also use the `bool` function in the `random` module to generate a random boolean value. This function takes no arguments and returns either `true` or `false`. For example, ```Gleam
+random.bool()
 ```
+would generate either `true` or `false` at random.
 
-In the code above, we first import the `Random` module and then use the `int` function to generate a random number between 1 and 10. We can also use the `float` function to generate a random floating-point number between 0 and 1. 
+## Deep Dive:
 
-If we want to generate a random number within a specific range, we can use the `Range` module. Here's an example of generating a random number between 50 and 100 using the `Range` module:
+Random number generation has been around since the early days of computing, with early algorithms using equations and patterns to generate seemingly random numbers. However, these algorithms were eventually found to not be completely random, leading to the development of more robust and cryptographically secure random number generators. Gleam's `random` module uses the Mersenne-Twister algorithm, which is a widely used and trustworthy method for generating random numbers.
 
-```
-Gleam import Random
-Gleam import Range
+While Gleam's `random` module is a convenient way to generate random numbers, there are other approaches such as using external sources of randomness like physical dice or coin flips. Additionally, some programming languages have built-in functions for generating random numbers, but Gleam's `random` module offers more control and versatility in choosing the range and type of numbers.
 
-let range = Range.new(50,100)
-let random_number = Random.int_in_range(range)
-```
+## See Also:
 
-We first create a `Range` object using the `new` function and then use the `int_in_range` function to generate a random number within that range.
-
-## Deep Dive
-When it comes to generating random numbers, it's important to understand that computers can't truly generate randomness. They use algorithms and seed values to create a sequence of numbers that appear random to us. This means that if we use the same seed value, we will get the same sequence of random numbers every time.
-
-To avoid this, it's recommended to use a different seed value each time you generate a random number. You can do this using the `Random.seed` function. Here's an example:
-
-```
-Gleam import Random
-
-let random_number = Random.int(1,10, Random.seed())
-```
-
-In the example above, we are using the `seed` function as the third argument of the `int` function. This will generate a new seed value each time we call the `int` function, giving us a different sequence of random numbers.
-
-It's also worth noting that the default seed value for the `Random` module is based on the current time. This means that if you call the `Random` module multiple times within a short period, you may get the same sequence of random numbers. To avoid this, you can explicitly set the seed value using the `set_seed` function.
-
-## See Also
-- Official Gleam documentation on `Random` module: https://gleam.run/modules/random/
-- Documentation on the `Range` module: https://gleam.run/modules/range/
-- A deep-dive article on random number generation in Gleam: https://thewiredfox.co.uk/blog/generating-random-numbers-in-gleam
+To learn more about Gleam's `random` module and its functions, check out the official documentation here: https://gleam.run/modules/random. You can also explore other modules and features of Gleam on the official website: https://gleam.run/.

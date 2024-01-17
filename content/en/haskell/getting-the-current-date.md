@@ -10,77 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why 
+## What & Why?
 
-Python has been the go-to programming language for many years for tasks such as web development, data analysis, and automation. However, Haskell, a lesser-known functional programming language, has been gaining popularity in recent years, especially in the world of finance and data science. One of the many useful features in Haskell is its ability to handle date and time operations efficiently. In this article, we will explore how to get the current date in Haskell and discuss the advantages of using this language for such operations.
+Getting the current date in Haskell simply means retrieving the current date and time from the computer's internal clock. This is a common task for programmers as it allows for timestamping events or data and keeping track of time-sensitive tasks.
 
-## How To
+## How to:
 
-To get the current date in Haskell, we first need to import the `Data.Time` module. This module provides functions and types for working with dates and times. Once imported, we can use the `getCurrentTime` function to get the current date and time. 
+To get the current date and time in Haskell, we can use the `getCurrentTime` function from the `Data.Time.Clock` module. This function returns a `UTCTime` value representing the current time in the UTC time zone. Here's an example of how to use it:
 
-```
-import Data.Time
+```Haskell
+import Data.Time.Clock
 
-getCurrentTime
-```
-
-This function returns a value of type `IO UTCTime`, which represents an absolute time in Universal Time. We can then convert this value into a more readable format using the `toLocalTime` function.
-
-```
-toLocalTime :: Timezone -> UTCTime -> IO ZonedTime
-```
-
-Here is an example of how we can get the current date and time in the UTC timezone:
-
-```
-import Data.Time
-
-printCurrentTime :: IO ()
-printCurrentTime = do
-  utcTime <- getCurrentTime
-  putStrLn $ show utcTime
- 
-main :: IO ()
 main = do
-  printCurrentTime
+    now <- getCurrentTime
+    putStrLn $ show now
 ```
 
-Output:
+The output will look something like this: `2021-04-25 12:00:00.000000000 UTC`
 
-```
-2021-12-04 13:23:47 UTC
-```
+If we want to work with a specific time zone, we can use the `getCurrentTimeZone` function to get a `TimeZone` value and then use the `utcToLocalTime` function to convert the `UTCTime` value to the desired time zone. Here's an example:
 
-We can also specify a different timezone by passing it as an argument to the `toLocalTime` function. For example, if we want to get the current date and time in the local timezone, we can do the following:
+```Haskell
+import Data.Time.Clock
+import Data.Time.LocalTime
 
-```
-import Data.Time
-
-printCurrentTime :: IO ()
-printCurrentTime = do
-  utcTime <- getCurrentTime
-  localTime <- toLocalTime defaultTimezone utcTime
-  putStrLn $ show localTime
- 
-main :: IO ()
 main = do
-  printCurrentTime
+    now <- getCurrentTime
+    timeZone <- getCurrentTimeZone
+    let localTime = utcToLocalTime timeZone now
+    putStrLn $ show localTime
 ```
 
-Output:
+The output will now be in the local time zone of the computer.
 
-```
-2021-12-04 07:23:47 EST
-```
+## Deep Dive:
 
-## Deep Dive
+In the past, getting the current date and time in Haskell was more complicated and required the use of libraries like `Time` or `Clock`. However, with the release of Haskell 2010, the `Data.Time` library was included in the standard library, making it easier to work with dates and times.
 
-One of the advantages of using Haskell for date and time operations is its robust type system. Unlike in other languages where variables can have any type, Haskell's type system ensures that values of the same type are used throughout the program. This helps avoid bugs and errors commonly encountered when working with dates and times in other languages. 
+There are a few alternatives to using the `Data.Time` library, such as the `System.Time` module, which is based on the old `Time` library. However, it is recommended to use the `Data.Time` library as it is more reliable and feature-rich.
 
-Moreover, Haskell's `Data.Time` module provides various functions for working with dates and times, such as adding or subtracting a certain number of days, months, or years, comparing different dates, and formatting dates into strings in different formats. These functions make it easier to perform complex date and time operations in a concise and readable manner.
+The `getCurrentTime` and `getCurrentTimeZone` functions are wrappers around low-level system calls, making them very efficient. However, they can only handle time down to the microsecond level, so if you need more precision, you will have to use a third-party library or implement your own solution.
 
-## See Also
+## See Also:
 
-- [Haskell Wiki - Date and Time](https://wiki.haskell.org/Date_and_time)
-- [Hackage - Data.Time](https://hackage.haskell.org/package/time)
-- [Learn You a Haskell for Great Good! - Souped-up Types: Typeclasses 102](http://learnyouahaskell.com/making-our-own-types-and-typeclasses#typeclasses-102)
+- [Data.Time.Clock documentation](https://hackage.haskell.org/package/time/docs/Data-Time-Clock.html)
+- [Time and Date in Haskell](https://wiki.haskell.org/Time_and_Date)
+- [HTime library for high-precision time handling](https://hackage.haskell.org/package/HTime)

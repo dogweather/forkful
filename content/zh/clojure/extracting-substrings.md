@@ -10,39 +10,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
+## 什么和为什么？
+提取子字符串是指从一个字符串中获取特定部分的操作。程序员通常之所以这样做，是因为他们需要对字符串进行分析或比较，而只对其中一部分感兴趣。
 
-Clojure是一种高效的编程语言，它采用了函数式编程的思想，让程序员能够以一种简洁而强大的方式来处理字符串。提取子字符串是一种常见的字符串操作，它可以帮助程序员快速地获取所需的信息，节省时间和精力。
-
-## 如何操作
-
-你可以使用`subs`函数来提取子字符串，它接受三个参数：字符串、开始索引和结束索引。例如，如果我们想要提取字符串`Clojure`的子字符串`oj`，我们可以这样编写代码：
-
+## 如何：
 ```Clojure
-(subs "Clojure" 2 4)
+; 使用`subs`函数提取子字符串
+(subs "你好，世界" 2 5) ; 输出 "好，世"
+
+; 使用`nth`函数提取单个字符
+(nth "HelloWorld" 5) ; 输出 "W"
+
+; 使用关键字寻找字符串中的特定部分
+(str/starts-with? "Clojure语言" :start) ; 输出 true
 ```
 
-运行以上代码，会得到输出`oj`。
+## 深入：
+提取子字符串的操作在编程语言中很常见，它可以追溯到早起的字符串处理函数，如BASIC语言中的`LEFT`和`RIGHT`。除了Clojure中的`subs`和`nth`函数外，还有一些其他方法可用于提取子字符串，如使用正则表达式和Java的`substring`函数。在实现上，Clojure使用乱序列表数据结构来存储字符串，这使提取子字符串的操作更有效率。
 
-你还可以使用`clojure.string`命名空间中的函数来操作字符串。例如，如果我们想要提取一个字符串中的某一个单词，我们可以使用`split`函数来拆分字符串并选择相应的元素，如下所示：
-
-```Clojure
-(require '[clojure.string :as str])
-(str/split "Hello world" #" ")[1]
-```
-
-运行以上代码，会得到输出`world`。
-
-## 深入了解
-
-除了以上提到的方法，Clojure还提供了更多操作字符串的函数，例如`take`、`drop`等。此外，考虑到字符串中可能存在中文、日语等多字节字符，Clojure也提供了相应的函数来处理这些情况，如`subs-updated`、`split-lines`等。
-
-了解更多关于Clojure中字符串操作的函数，请参考官方文档：https://clojure.org/reference/strings。
-
-## 参考链接
-
-- https://clojure.org/reference/strings
-- https://www.learn-clojure.com/strings/
-- https://repl.it/@learn_clojure/BriefTenseInductives
-- https://github.com/jafingerhut/clojure-string-cheatsheet
-- https://clojuredocs.org/clojure.core/subs
+## 参考链接：
+- [Clojure官方文档](https://clojure.org/)
+- [Java substring函数文档](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#substring(int,%20int))

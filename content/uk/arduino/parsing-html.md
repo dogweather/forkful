@@ -10,55 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Чому
+# Що і чому?
 
-Навіщо комусь спробувати розбирати HTML на Ардуіно? Парсинг HTML дозволяє отримати доступ до вмісту сторінки в Інтернеті і використовувати його у своїх проєктах на Ардуіно.
+Парсінг HTML - це процес, який дозволяє програмі помічати певні елементи наеб-сторінки і використовувати їх у своєму коді. Це дуже корисно для отримання даних з Інтернету, таких як ціни на товари або прогнози погоди.
 
-## Як
-
-Для початку, додайте бібліотеку "ESP8266WiFi.h" до свого проєкту та підключіть Ардуіно до Wi-Fi мережі. Потім використовуйте функцію "client.print()" для отримання вмісту HTML сторінки. Наприклад:
+# Як це зробити:
 
 ```
-#include <ESP8266WiFi.h>
-
-WiFiClient client;
-
+Arduino
 void setup() {
-  Serial.begin(115200);
-  delay(10);
-  WiFi.begin("Назва мережі", "Пароль");
-  while (WiFi.status() != WL_CONNECTED) {
-    delay(500);
-  }
-  client.connect("www.example.com", 80);
-  client.print("GET / HTTP/1.1\r\n");
-  client.print("Host: www.example.com\r\n\r\n");
+  Serial.begin(9600); // встановлюємо швидкість передачі даних
 }
 
 void loop() {
-  while (client.available()) {
-    String line = client.readStringUntil('\r');
-    Serial.print(line);
-  }
+  String html = "<html><body><h1>Hello, world!</h1></body></html>"; // приклад HTML сторінки
+  int start = html.indexOf("<h1>"); // шукаємо початок тегу <h1>
+  int end = html.indexOf("</h1>"); // шукаємо кінець тегу </h1>
+  String result = html.substring(start + 4, end); // вибираємо дані між тегами
+  Serial.println(result); // виводимо результат на монітор
+  delay(1000); // пауза 1 секунда
 }
 ```
 
-Цей код з'єднує Ардуіно з вибраною мережею Wi-Fi і виконує запит на вміст головної сторінки сайту "www.example.com". Після цього він виводить вміст сторінки в монітор серійного порту.
+Результат: "Hello, world!" - це те, що виведе ваш Arduino в монітор.
 
-## Deep Dive
+# Глибоке занурення:
 
-Щоб усунути зайві символи з тексту HTML, можна використовувати регулярні вирази. Наприклад, для видалення всіх тегів HTML з тексту, можна використовувати такий код:
+Парсінг HTML був розроблений в 1993 році Тімом Бернерсом-Лі. Існують різні бібліотеки, наприклад, `HTMLParser`, які полегшують процес парсінгу. Також існують інші способи отримання даних з Інтернету, наприклад, використання API або сканування QR-кодів. Навіть при наявності бібліотеки, важливо робити перевірку на наявність даних, щоб уникнути помилок у своєму коді.
 
-```
-String text = "<html><body>Привіт світ!</body></html>";
-text.replaceAll("<.*?>", "");
-Serial.print(text);   // Виводить "Привіт світ!"
-```
+# Дивись також:
 
-Це лише приклад можливих операцій з текстом HTML, які можна виконати на Ардуіно.
-
-## Дивіться також
-
-- Приклади використання бібліотеки "ESP8266WiFi.h": https://github.com/esp8266/Arduino/tree/master/libraries/ESP8266WiFi/examples
-- Документація з регулярних виразів для Ардуіно: https://www.arduino.cc/reference/en/language/functions/communication/client/ 
-- Офіційна документація з синтаксису HTML: https://www.w3schools.com/html/
+- Документація для бібліотеки `HTMLParser` (https://www.arduino.cc/reference/en/libraries/htmlparser/)
+- Робота з API на Arduino (https://www.arduino.cc/reference/en/libraries/two-wire/)
+- Приклад парсінгу HTML на Arduino (https://www.electronicwings.com/arduino/html-parsing-in-arduino-uno)

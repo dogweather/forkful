@@ -10,55 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+## O que e por que?
 
-Você provavelmente já se deparou com a situação de precisar remover alguns caracteres específicos de uma string. Isso pode ser útil, por exemplo, para limpar dados de um arquivo ou para validar entradas de usuário. Neste artigo, aprenderemos como deletar caracteres que correspondem a um determinado padrão em Python.
+Excluir caracteres que correspondem a um padrão é uma tarefa comumente realizada por programadores para limpar strings ou dados. Isso é particularmente útil ao lidar com entradas de usuário que podem conter caracteres desnecessários ou incorretos.
 
-## Como fazer
+## Como fazer:
 
-Para deletar caracteres que correspondem a um padrão em uma string, podemos utilizar o método `replace()` combinado com o método `filter()` da classe `str`. Veja um exemplo abaixo:
+Para excluir caracteres correspondentes a um padrão em Python, podemos utilizar a função `re.sub()` do módulo `re`. Esta função aceita três argumentos: o padrão a ser buscado, o novo valor a ser substituído e a string na qual a substituição deve ser feita. Aqui está um exemplo de como usá-la para remover todos os números de uma string:
 
-```Python
-# Definindo uma string
-texto = "ABCDE12345"
-
-# Utilizando replace() e filter()
-novo_texto = "".join(filter(lambda x: not x.isdigit(), texto.replace("A", "")))
-
-# Imprimindo o resultado
-print(novo_texto)
-
-# Resultado: BCDE
-```
-
-Neste exemplo, utilizamos o `replace()` para remover todas as ocorrências da letra "A" na string e, em seguida, combinamos com o `filter()` para remover todos os dígitos restantes. Por fim, utilizamos o `"".join()` para transformar os caracteres resultantes em uma nova string.
-
-Outra maneira de fazer isso é utilizando expressões regulares. Veja um exemplo:
-
-```Python
+```python
 import re
 
-# Definindo uma string
-texto = "ABCDE12345"
-
-# Utilizando regex
-novo_texto = re.sub("[A0-9]", "", texto)
-
-# Imprimindo o resultado
+texto = "abc 123 xyz"
+novo_texto = re.sub(r'\d+', '', texto)
 print(novo_texto)
 
-# Resultado: BCDE
+# saída: abc xyz
 ```
 
-Neste exemplo, utilizamos a função `sub()` do módulo `re` para substituir todas as ocorrências de letras e dígitos pela string vazia, resultando em uma string limpa apenas com as letras desejadas.
+## Profundando:
 
-## Mergulho profundo
+Deletar caracteres correspondentes a um padrão tornou-se mais fácil graças ao uso de expressões regulares. Essas são sequências de caracteres que definem um padrão de busca de texto. Além da função `re.sub()`, também podemos usar a função `re.findall()` para encontrar todas as correspondências de um padrão em uma string. Outra alternativa seria utilizar o método `replace()` das strings, mas ele só permite substituir uma sequência fixa de caracteres e não suporta expressões regulares.
 
-Ambos os métodos apresentados acima são eficientes para deletar caracteres que correspondem a um padrão em uma string. No entanto, é importante lembrar que o método `replace()` é sensível a maiúsculas e minúsculas, enquanto o uso de expressões regulares pode ser mais complexo e demandar um maior conhecimento sobre o assunto.
+Além disso, ao utilizar expressões regulares, podemos usar caracteres especiais como `*` e `+` para especificar se a correspondência deve ser encontrada uma ou várias vezes, respectivamente. Existem muitos recursos disponíveis no módulo `re` do Python para ajudar a criar padrões mais complexos e avançados.
 
-No caso do `filter()`, é importante destacar que ele retorna um objeto do tipo `filter`, não uma string. Por isso, é necessário utilizar o método `join()` para transformar os resultados em uma nova string.
+## Veja também:
 
-## Veja também
-
-- [Documentação oficial do Python](https://docs.python.org/3/howto/regex.html)
-- [Tutorial sobre expressões regulares em Python](https://realpython.com/regex-python/)
+- Documentação oficial do módulo `re`: https://docs.python.org/3/library/re.html
+- Tutorial sobre expressões regulares com Python: https://www.w3schools.com/python/python_regex.asp

@@ -1,7 +1,7 @@
 ---
-title:                "פירוק HTML"
-html_title:           "Swift: פירוק HTML"
-simple_title:         "פירוק HTML"
+title:                "פירוק האטמל"
+html_title:           "Swift: פירוק האטמל"
+simple_title:         "פירוק האטמל"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "HTML and the Web"
@@ -10,35 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## למה
-ניתן לחצות HTML כדי לקבל תוכן מהאינטרנט לשימוש פנימי באפליקציות שלכם. זה יכול להיות שימושי להציג מידע או לבצע פעולות מסוימות באופן אוטומטי.
+"שלום קוראים, במאמר הזה אני רוצה לספר לכם על הפעולה החשובה והאקטואלית של פיענוח HTML בשפת סוויפט. אם אתם תכנתים, אתם כנראה יודעים שפיענוח HTML הוא תהליך שבו קוד שנכתב ב-HTML נמצא ונפענך על-ידי המחשב לפירוקו לתבניות שניתן להבין ולעבד על ידי התכנתים.
 
-## איך לעשות זאת
-כדי לקבל תוכן מהאינטרנט, ניתן להשתמש בפקודה DataTask כדי לשלוח בקשת HTTP ולקבל מענה. לאחר מכן, ניתן להתמקד בחלק התגובה הרלוונטי ולחלץ ממנו את התוכן הרצוי באמצעות פירוק HTML. לדוגמה:
+## מה זה ולמה אנחנו עושים את זה?
+פיענוח HTML הוא תהליך חיוני בעולם התכנות, שבו ניתן להשתמש בכדי להפריק קוד שנכתב ב-HTML ליחידות קטנות יותר כדי לעבד אותן בקלות ולשלבן באפליקציות ואתרים. זה קריטי כאשר מעצבים צריך להציג מידע מרובה מקורות כמו תמונות, טקסטים ותגיות באתר או אפליקציה.
 
-```swift 
-if let url = URL(string: "https://www.example.com") {
-    let task = URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) in
-        if let data = data {
-            if let htmlString = String(data: data, encoding: .utf8) {
-                let parsedHtml = self.parseHTMLString(htmlString: htmlString)
-		print(parsedHtml)
-            }
-        }
-    })
-    task.resume()
-}
-
-func parseHTMLString(htmlString: String) -> String? {
-    if let doc = try? HTML(htmlString: htmlString, encoding: .utf8) {
-        let content = doc.css("div.content").first
-        return content?.text
+## איך לעשות זאת בעזרת סוויפט?
+אם תרצו להתחיל לפענח HTML בסוויפט, הנה דוגמא פשוטה לכך:
+ 
+```Swift
+let htmlString = "<h1>Hello, World!</h1>"
+if let data = htmlString.data(using: .utf8) {
+    do {
+        let attributedString = try NSAttributedString(data: data, options: [.documentType: NSAttributedString.DocumentType.html], documentAttributes: nil)
+        print(attributedString)
+    } catch {
+        print(error)
     }
-    return nil
 }
 ```
 
-כפי שאתם רואים בדוגמה, אנו שולחים בקשת HTTP לכתובת האתר המבוקשת ומחזירים את התוכן הנמצא בתווית div עם ה- class "content" בתוך התגובה.
+שורת הקוד הראשונה יוצרת מחרוזת שכוללת תגיות HTML. לאחר מכן, אנו ממירים את המחרוזת למידע מסוג NSData על-ידי שימוש בפעולת הקונסטרקטור מחרוזת שמשתמשת בקידוד utf8. לאחר מכן, אנו בודקים את המידע ואם הוא תקין, אנו משתמשים בפעולת NSAttributedString המאפשרת להמיר את המידע לפורמט שניתן לקריאה ועיצוב, ולאחר מכך אנו מדפיסים את התוצאה המעניינת שלנו.
 
-## חקירה מעמיקה
-היתרונות של פירוק HTML כוללים את היכולת להציג מידע מותאם אישית ולשלבו בתוך אפליקציה בצורה מתאימה לעיצוב האפליקציה. כמו כן, זה יכול להיות שימושי גם לפעולות אוטומטיות כגון מילוי טפסים או חיפוש מידע באתרים מרובים.
+## חדר עמוק
+כעת שאנו יודעים מהי פיענוח HTML וכיצד לבצע אותו בסוויפט, בואו נעמד רגע על ההיסטוריה של פיענוח HTML. מתחילתה של טכנולוגיית האינטרנט, פיענוח HTML היה חלק חשוב מאוד בעיצוב ובקידוד של אתרים ואפליקציות. אך כיום ישנם גם פתרונות אחרים כמו CSS ו-JavaScript שנועדו לקבץ את התצוגה והפונקציונליות של אתרים והופכים את פיענוח HTML למשמרת היסטורית. עם זאת, הכלי הזה עדיין נחשב לחיוני עבור בניית אתרים אינטרנטיים ואפליקציות.
+
+למען הוגנות, ישנן גם ספריות נוספות כגון SwiftSoup ו-TidyHTML שנועדו לסייע בפיענוח HTML בסוויפט. אבל מכיוון שהפעולה קצת מיושנת ואינה נדרשת כהרף עין בסביבת התכנות העכ

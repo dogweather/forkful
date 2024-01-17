@@ -10,49 +10,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+## Cosa e Perché?
+Generare numeri casuali è un processo che permette ai programmatori di generare numeri casuali in modo casuale, senza alcun ordine particolare. Questo è utile per creare giochi o applicativi dinamici, o per semplicemente aggiungere un elemento di casualità agli algoritmi.
 
-Generare numeri casuali è un'attività molto comune nella programmazione. Questo può essere utile per testare le funzioni, creare giochi o quiz, o semplicemente per divertimento.
+## Come:
+Generare numeri casuali in Clojure è molto semplice. Basta utilizzare la funzione ```rand```, e specificare il range all'interno del quale si desidera generare i numeri. Ad esempio:
 
-## Come fare
-
-Per generare un numero casuale in Clojure, puoi utilizzare la funzione predefinita "rand-int". Ad esempio:
-
-```Clojure
-(rand-int 10)
+```
+(clojure.rand/rand 10) => 3  //genera un numero casuale tra 0 e 10
+(clojure.rand/rand-nth [1 2 3 4 5]) => 4 //seleziona casualmente un elemento dall'array
 ```
 
-In questo caso, verrà generato un numero intero casuale compreso tra 0 e 10 (escluso). Per includere 10 nel range, è possibile utilizzare la funzione "rand-nth" con una sequenza che contiene il valore desiderato. Ad esempio:
+## Approfondimento:
+La generazione di numeri casuali è un processo utilizzato fin dall'inizio della programmazione. In precedenza, venivano utilizzati algoritmi elaborati per ottenere numeri che sembrassero casuali. Oggi, con l'avvento di linguaggi come Clojure, è possibile generare questi numeri in modo più semplice e veloce.
+Alternative a ```rand``` includono la funzione ```rand-int``` che restituisce un intero tra due estremi, e la libreria ```math.combinatorics``` che permette la generazione di combinazioni casuali.
+L'implementazione di ```rand``` in Clojure è basata sull'algoritmo di Java, che usa un generatore di numeri pseudo-casuali. Ciò significa che i numeri non sono veramente casuali, ma possono essere utilizzati a scopi pratici.
 
-```Clojure
-(rand-nth [1 2 3 4 5 6 7 8 9 10])
-```
-
-Ci sono anche altre funzioni disponibili per generare numeri casuali in Clojure, come ad esempio "rand", "rand-float" e "rand-nth". Ecco un esempio di come utilizzare "rand-float" per generare un numero casuale con due cifre decimali:
-
-```Clojure
-(rand-float 100)
-```
-Questo genererà un numero con due cifre decimali compreso tra 0 e 100 (escluso).
-
-## Approfondimento
-
-Molte volte, la generazione di numeri casuali richiede anche il controllo di alcune condizioni, come ad esempio l'esclusione di alcune cifre o la generazione di valori unici. In Clojure, puoi utilizzare la libreria "clojure.set" per eseguire queste operazioni in modo efficiente.
-
-Ad esempio, se vuoi generare 5 numeri casuali compresi tra 1 e 10 (esclusi), puoi utilizzare la funzione "clojure.set/shuffle" per mescolare una sequenza di numeri compresi tra 1 e 10 e poi utilizzare la funzione "take" per estrarre solo i primi 5 numeri dalla sequenza mescolata. Ecco un esempio di come farlo:
-
-```Clojure
-(require '[clojure.set :as set])
-
-(def numeri (range 1 10))
-(def numeri-shuffle (set/shuffle numeri))
-(take 5 numeri-shuffle)
-```
-
-Questo genererà una sequenza con 5 numeri casuali che puoi utilizzare a tuo piacimento.
-
-## Vedi anche
-
-- [Documentazione ufficiale di Clojure](https://clojure.org/)
-- [Clojure Cookbook](https://www.clojure-cookbook.com/)
-- [The Joy of Clojure](https://www.manning.com/books/the-joy-of-clojure)
+## Vedi anche:
+- [Documentazione ufficiale sulla funzione rand](https://clojuredocs.org/clojure.core/rand)
+- [Libreria math.combinatorics](https://github.com/clojure/math.combinatorics) per la generazione di combinazioni casuali
+- [Articolo sulle alternative alla funzione rand](http://hypirion.com/musings/replacing-clojures-random-number-generator)

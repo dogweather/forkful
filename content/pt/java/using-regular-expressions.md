@@ -1,7 +1,7 @@
 ---
-title:                "Utilizando expressões regulares"
-html_title:           "Java: Utilizando expressões regulares"
-simple_title:         "Utilizando expressões regulares"
+title:                "Usando expressões regulares"
+html_title:           "Java: Usando expressões regulares"
+simple_title:         "Usando expressões regulares"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Strings"
@@ -10,50 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que usar expressões regulares em Java?
+## O que é e porquê?
+Expressões regulares são padrões de texto usados para procurar e manipular strings em um programa Java. Elas são úteis para realizar tarefas como validação de entrada de usuário, busca e substituição de texto e filtragem de dados. Programadores usam expressões regulares porque elas permitem a criação de código conciso e eficiente para lidar com tarefas de processamento de texto.
 
-Expressões regulares são uma forma eficiente e poderosa de manipulação de texto em Java. Com elas, é possível buscar e substituir padrões específicos em uma string, facilitando a validação de dados e o processamento de informações.
+## Como fazer:
+Para usar expressões regulares em um programa Java, é necessário importar a classe "java.util.regex". Depois disso, basta seguir a sintaxe abaixo para realizar as operações desejadas:
 
-## Como usar expressões regulares em Java
+```Java
+//Validação de entrada de usuário
+Pattern pattern = Pattern.compile("[a-z]+"); //cria um padrão que aceita apenas letras minúsculas
+Matcher matcher = pattern.matcher(input); //aplica o padrão na string de entrada
+if (matcher.matches()) { //verifica se a string de entrada corresponde ao padrão
+  System.out.println("Entrada válida!");
+} else {
+  System.out.println("Entrada inválida!");
+}
 
-Para utilizar expressões regulares em Java, é necessário importar a classe `java.util.regex.Pattern` e criar uma instância dessa classe, passando como parâmetro a expressão regular desejada. Em seguida, é possível utilizar os métodos `matcher()` e `find()` para buscar e manipular o texto de acordo com o padrão especificado.
+//Busca e substituição de texto
+String texto = "Olá mundo!";
+String novoTexto = texto.replaceAll("mundo", "programador"); //substitui "mundo" por "programador"
+System.out.println(novoTexto); //imprime "Olá programador!"
 
-Exemplo:
-
-```
-import java.util.regex.Pattern;
-
-public class ExpressoesRegulares {
-    public static void main(String[] args) {
-        //Criando a expressão regular
-        String regex = "([a-z])\\w+([a-z])";
-
-        //Criando a instância da classe Pattern
-        Pattern pattern = Pattern.compile(regex);
-
-        //Texto de exemplo
-        String texto = "Olá, meu nome é Maria";
-
-        //Utilizando o método matcher()
-        Matcher matcher = pattern.matcher(texto);
-
-        //Utilizando o método find()
-        boolean resultado = matcher.find();
-
-        //Imprimindo o resultado
-        System.out.println(resultado); //Saída: true
-    }
+//Filtragem de dados
+String[] palavras = {"casa", "carro", "avião"};
+for (String palavra : palavras) {
+  if (palavra.matches(".*a.*")) { //verifica se a string contém a letra "a"
+    System.out.println(palavra); //imprime "casa", "carro" e "avião"
+  }
 }
 ```
 
-## Aprofundando no uso de expressões regulares em Java
+## Mergulho Profundo:
+As expressões regulares foram inventadas por Stephen Kleene na década de 1950 na área da teoria da computação. Elas foram adotadas pela linguagem Perl na década de 1980 e posteriormente implementadas em outras linguagens de programação, incluindo Java. Alternativas para expressões regulares em Java incluem o uso de bibliotecas de terceiros, como o Apache Commons Text ou o Google Guava, que oferecem funcionalidades adicionais.
 
-Além de buscar e substituir padrões em uma string, as expressões regulares em Java também permitem definir grupos, quantificadores, metacaracteres e muito mais. Além disso, é possível utilizar a classe `java.util.regex.MatchResult` para obter informações sobre os resultados encontrados.
+As expressões regulares em Java são baseadas na API java.util.regex, que possui duas classes principais: Pattern e Matcher. A classe Pattern representa um padrão de expressão regular e a classe Matcher é usada para aplicar esse padrão a uma string e realizar operações como busca, substituição e validação.
 
-Para se aprofundar ainda mais no assunto, recomenda-se a consulta à documentação oficial da classe `java.util.regex.Pattern` e também a experimentação de diferentes padrões e métodos para entender melhor o seu funcionamento.
-
-## Veja também
-
-- Documentação oficial da classe `java.util.regex.Pattern`: https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html
-- Tutorial sobre expressões regulares em Java: https://www.devmedia.com.br/java-regular-expressions-como-usar-expressoes-regulares/27424
-- Padrões de expressões regulares úteis em Java: https://www.regular-expressions.info/java.html
+## Veja também:
+- [Documentação oficial do Java sobre expressões regulares](https://docs.oracle.com/javase/10/docs/api/java/util/regex/package-summary.html)
+- [Tutorial sobre expressões regulares em Java da Oracle](https://docs.oracle.com/javase/tutorial/essential/regex/index.html)

@@ -1,7 +1,7 @@
 ---
-title:                "Html:n jäsentäminen"
-html_title:           "Arduino: Html:n jäsentäminen"
-simple_title:         "Html:n jäsentäminen"
+title:                "HTML:n jäsentäminen"
+html_title:           "Arduino: HTML:n jäsentäminen"
+simple_title:         "HTML:n jäsentäminen"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "HTML and the Web"
@@ -10,42 +10,85 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä ja miksi?
 
-HTML-tiedostot ovat tärkeitä osia verkkosivuista ja sovelluksista. Niiden sisältämän rakenteen ja sisällön ymmärtäminen auttaa luomaan paremman käyttäjäkokemuksen ja tehokkaamman ohjelmiston.
+HTML-parsiminen tarkoittaa tekstin analysoimista ja siitä tiettyjen tietojen poimimista. Se on tärkeä työkalu ohjelmoijille, jotka haluavat käsitellä ja käyttää web-sivuilla olevaa tietoa omassa koodissaan.
 
-## Miten
+## Miten:
 
-HTML-tiedostojen jäsentäminen voidaan tehdä helposti Arduino-ohjelmoinnin avulla. Seuraavassa esimerkissä näytämme miten voit käyttää Arduinoa jäsentämään yksinkertaisen HTML-tiedoston ja tulostamaan sen sisällön sarjaporttiin:
+Arduino-tehtävässä HTML-parsiminen voidaan suorittaa esimerkiksi käyttämällä ESP8266WiFi-kirjastoa. Tässä esimerkissä käytämme HTTP-pyyntöä ja HTML-parsimista saadaksemme tietyn otsikon web-sivulta ja tulostamme sen sarjamonitoriin:
 
-```arduino
-#include <Arduino.h>
-#include <SPI.h>
-#include <SD.h>
+```Arduino
+#include <ESP8266WiFi.h>
 
 void setup() {
-  Serial.begin(9600);
-  File htmlFile = SD.open("index.html"); // Avaa tiedosto
-  while (htmlFile.available()) {
-    // Lue tiedoston sisältö merkki kerrallaan ja tulosta sarjaporttiin
-    Serial.print((char)htmlFile.read());
+  Serial.begin(115200); // alustetaan sarjamonitori
+  WiFi.begin("ssid", "password"); // yhdistetään WiFi-verkkoon
+  while (WiFi.status() != WL_CONNECTED) { // odotetaan yhdistymistä
+    delay(500);
+    Serial.print(".");
   }
-  htmlFile.close(); // Sulje tiedosto
+  Serial.println("");
+  Serial.println("WiFi-yhteys muodostettu!");
+  Serial.print("IP-osoite: ");
+  Serial.println(WiFi.localIP()); // tulostetaan IP-osoite
+  Serial.println("Hakee sivua...");
+  String sivu = httpGet("www.esimerkkisivu.com"); // haetaan web-sivu
+  String otsikko = parseHTML(sivu); // parsitaan otsikko
+  Serial.print("Web-sivun otsikko: ");
+  Serial.println(otsikko); // tulostetaan otsikko
+}
+
+String httpGet(String osoite) {
+  WiFiClient client; // luodaan WiFiClient-olio
+  const int httpPort = 80;
+  if (!client.connect(osoite, httpPort)) { // muodostetaan yhteys
+    Serial.println("Virhe yhteyden muodostamisessa.");
+    return "";
+  }
+  client.print(String("GET / HTTP/1.1\r\n") + // lähetetään HTTP-pyyntö
+               String("Host: ") + osoite + "\r\n" +
+               String("User-Agent: ESP8266/1.0\r\n") +
+               String("Connection: close\r\n\r\n") );
+  delay(10);
+  while (client.connected()) { // odotetaan vastausta
+    String line = client.readStringUntil('\n');
+    if (line == "\r") {
+      break;
+    }
+  }
+  String response = client.readString(); // ladataan vastaus
+  client.stop(); // suljetaan yhteys
+  return response;
+}
+
+String parseHTML(String sivu) {
+  int alku = sivu.indexOf("<title>") + 7; // etsitään alkumerkki
+  int loppu = sivu.indexOf("</title>", alku); // etsitään loppumerkki
+  String otsikko = sivu.substring(alku, loppu); // poimitaan osa
+  return otsikko;
 }
 
 void loop() {
-  // Ei tarvita, koska käynnistyy vain kerran
+  // ei tehdä mitään
 }
 ```
 
-Tuloksena sarjaporttiin tulisi näkyä HTML-tiedoston sisältämä koodi.
+Kun koodi suoritetaan, sarjamonitoriin tulostuu seuraavaa:
 
-## Syväsukellus
+```
+WiFi-yhteys muodostettu!
+IP-osoite: 192.168.1.32
+Hakee sivua...
+Web-sivun otsikko: Esimerkkisivu – Tervetuloa!
+```
 
-HTML-tiedostojen jäsentäminen Arduino-ohjelmoinnin avulla avaa ovia monille mahdollisuuksille, kuten sivustojen tarkkailuun tai datan keräämiseen verkosta. Lisäksi voit käyttää erilaisia kirjastoja ja toimintoja, kuten elementtien laskemista tai sisällön muokkaamista.
+## Syväsukellus:
 
-## Katso myös
+HTML-parsinta on osa web-scrapingia, joka on tekniikka, jolla dataa kerätään web-sivuilta automatisoidusti. Sitä voidaan käyttää esimerkiksi hintojen vertailuun, urheilutulosten keräämiseen tai muihin vastaaviin tarkoituksiin. Myös muita tapoja parsia HTML:ää on olemassa, kuten käyttämällä XPath-kyselyitä.
 
-- [Arduino ohjelmointiopas](https://www.arduino.cc/en/Guide/HomePage)
-- [HTML:n perusteet](https://developer.mozilla.org/fi/docs/Web/HTML)
-- [Arduino-kirjastot ja lisäosat](https://www.arduino.cc/en/Reference/Libraries)
+## Katso myös:
+
+- https://www.w3schools.com/xml/xpath_intro.asp
+- https://www.arduino.cc/reference/tr/language/functions/communication/httpget.aspx
+- https://www.arduino.cc/reference/tr/libraries/wifiniclient

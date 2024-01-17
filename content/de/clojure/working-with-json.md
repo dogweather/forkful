@@ -1,7 +1,7 @@
 ---
-title:                "Arbeiten mit Json"
-html_title:           "Clojure: Arbeiten mit Json"
-simple_title:         "Arbeiten mit Json"
+title:                "Arbeiten mit JSON"
+html_title:           "Clojure: Arbeiten mit JSON"
+simple_title:         "Arbeiten mit JSON"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Data Formats and Serialization"
@@ -10,68 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+Beim Programmieren mit Clojure kann es manchmal nötig sein, mit JSON-Daten umzugehen. Aber was ist das überhaupt und warum machen Programmierer das?
 
-Warum sollte man sich mit JSON befassen?
+## Was & Warum?
 
-Die Antwort ist einfach: JSON ist ein beliebtes Format für den Austausch von Daten in Webanwendungen und APIs. Wenn man also mit Webentwicklung zu tun hat, ist es wichtig, sich mit JSON vertraut zu machen, um effektiv mit Daten umgehen zu können.
+JSON steht für "JavaScript Object Notation" und ist ein gängiges Format zum Austausch von Daten zwischen verschiedenen Anwendungen. Es ist lesefreundlicher als z.B. XML und wird von vielen Programmiersprachen unterstützt, einschließlich Clojure. Programmierer nutzen JSON, um Daten effizient zu speichern und weiterzugeben, z.B. in Webanwendungen oder bei der Verarbeitung von APIs.
 
-## Anleitung
+## Wie geht's?
 
-Das erste, was du tun musst, um mit JSON in Clojure zu arbeiten, ist das Hinzufügen der Bibliothek `clojure.data.json` zu deinem Projekt. Dies kannst du ganz einfach mit dem `require` Befehl tun:
+Um mit JSON in Clojure zu arbeiten, können wir die Bibliothek "clojure.data.json" verwenden. Diese stellt Funktionen zur Verfügung, um JSON-Dateien zu lesen, zu schreiben und zu verarbeiten. Schauen wir uns ein Beispiel an:
 
 ```Clojure
 (require '[clojure.data.json :as json])
+
+;; JSON-Datei lesen
+(def data (json/read-str "{\"name\": \"John\", \"age\": 30}"))
+
+;; JSON-Datei schreiben
+(json/write-str {:name "Jane", :age 25})
+
+;; JSON-Datei verarbeiten
+(def name (get data "name"))
+(def age (get data "age"))
 ```
 
-Als nächstes kannst du die `json/read` und `json/write` Funktionen verwenden, um Daten aus JSON-Dateien zu lesen oder JSON-Daten zu generieren. Zum Beispiel können wir eine JSON-Datei "data.json" erstellen, die folgendes enthält:
+## Tief eintauchen
 
-```json
-{"name": "Max", "age": 25, "hobbies": ["Programming", "Hiking"]}
-```
+JSON wurde Anfang der 2000er Jahre entwickelt und ist heute eines der am häufigsten verwendeten Datenformate. Eine alternative Möglichkeit, Daten in Clojure zu verarbeiten, ist die Verwendung von EDN (Extensible Data Notation), die in Clojure eingebaut ist. Im Gegensatz zu JSON ist EDN jedoch spezifisch für Clojure und keine universelle Lösung für den Austausch von Daten.
 
-Um diese Daten in Clojure zu lesen, verwenden wir die `json/read` Funktion:
-
-```Clojure
-(json/read-str (slurp "data.json"))
-;; => {:name "Max", :age 25, :hobbies ["Programming" "Hiking"]}
-```
-
- Umgekehrt können wir auch Clojure-Daten in JSON umwandeln mit der `json/write` Funktion:
-
-```Clojure
-(json/write-str {:name "Max", :age 25, :hobbies ["Programming" "Hiking"]})
-;; => "{\"name\":\"Max\",\"age\":25,\"hobbies\":[\"Programming\",\"Hiking\"]}"
-```
-
-Wie du siehst, gibt die `write-str` Funktion eine String-Repräsentation des JSON-Objekts aus.
-
-Weitere Informationen zu den Funktionen `read` und `write` findest du in der [offiziellen Clojure-Dokumentation](https://clojure.github.io/data.json/).
-
-## Tiefgründig
-
-Nun möchtest du vielleicht mehr über den Umgang mit komplexen JSON-Strukturen erfahren. Zum Beispiel, wie man auf bestimmte Werte zugreift oder wie man JSON-Objekte verändert.
-
-Zugriff auf Werte in einem JSON-Objekt können wir mit der `get-in` Funktion von Clojure machen, indem wir einfach den Schlüssel oder die Schlüssel, die wir auswählen möchten, als Argumente übergeben. Zum Beispiel können wir auf das Alter von Max zugreifen:
-
-```Clojure
-(get-in {:name "Max", :age 25, :hobbies ["Programming" "Hiking"]} [:age])
-;; =>  25
-```
-
-Um ein JSON-Objekt zu verändern, gibt es verschiedene Ansätze, je nach Komplexität der Struktur. Eine einfache Möglichkeit ist es, die `assoc` Funktion zu verwenden und einen neuen Schlüssel-Wert-Paar hinzuzufügen:
-
-```Clojure
-(assoc {:name "Max", :age 25, :hobbies ["Programming" "Hiking"]} :location "Berlin")
-;; => {:name "Max", :age 25, :hobbies ["Programming" "Hiking"], :location "Berlin"}
-```
-
-Andere Funktionen, die in diesem Zusammenhang nützlich sein können, sind `update`, `update-in` und `assoc-in`.
-
-Für weitere Informationen über das Arbeiten mit JSON in Clojure empfehle ich dir, die [Clojure for the Brave and True](https://www.braveclojure.com/clojure-for-the-brave-and-true/) und [Clojure Cookbook](https://github.com/clojure-cookbook/clojure-cookbook) Bücher zu lesen.
+Um mit komplexeren JSON-Strukturen umzugehen, gibt es auch die Möglichkeit, spezielle Bibliotheken wie "cheshire" oder "jsonista" zu verwenden. Diese bieten zusätzliche Funktionen, um z.B. JSON-Schemas zu validieren oder die Integration mit anderen Datenformaten zu erleichtern.
 
 ## Siehe auch
 
-- [Offizielle Clojure-Dokumentation über JSON](https://clojure.github.io/data.json/)
-- [Clojure for the Brave and True Buch](https://www.braveclojure.com/clojure-for-the-brave-and-true/)
-- [Clojure Cookbook](https://github.com/clojure-cookbook/clojure-cookbook)
+- Offizielle Clojure-Dokumentation für die "clojure.data.json" Bibliothek: https://clojuredocs.org/clojure.data.json 
+- Artikel über die Unterschiede zwischen JSON und EDN in Clojure: https://practicalli.github.io/blog/posts/edn-and-json-in-clojure/
+- Vergleich von verschiedenen JSON-Bibliotheken in Clojure: https://www.brianthicks.com/post/2015/01/31/json-processing-in-clojure/

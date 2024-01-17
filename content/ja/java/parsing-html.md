@@ -10,30 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-プログラミングにおいて、HTML（Hyper Text Markup Language）は最も一般的な言語の1つです。ウェブサイトやアプリケーションのデザインや構造を定義するために使用され、開発者はHTMLを理解しておくことが重要です。しかし、手動で大量のHTMLを読み解くのは非常に面倒で時間のかかる作業です。そのため、HTMLをパース（解析）することで、より効率的にコードを処理することができるようになります。
+## これは何ですか？
+HTMLパースとは、HTMLドキュメントのテキストコンテンツを構造化されたデータとして抽出することです。プログラマーがこれを行う理由は、HTMLドキュメントから必要な情報を取得し、それをプログラム内で処理するためです。
 
-## How To
-HTMLをパースする方法を見てみましょう。まずは、"Jsoup"と呼ばれるJavaのライブラリをインストールする必要があります。これは、HTMLドキュメントを解析するための強力なツールです。
-
+## 方法：
 ```Java
-import org.jsoup.*;
-import org.jsoup.nodes.*;
-import org.jsoup.select.*;
-
-Document doc = Jsoup.connect("https://example.com").get();
-Element contentDiv = doc.select("div.content").first();
-System.out.println(contentDiv.text());
+// HTMLドキュメントを読み込む
+Document doc = Jsoup.connect("https://www.example.com").get();
+// タグ名がtitleの要素を取得
+Elements titles = doc.getElementsByTag("title");
+// 要素のテキストコンテンツを出力
+System.out.println(titles.get(0).text());
 ```
+上記のコードでは、Jsoupと呼ばれるライブラリを使用してHTMLドキュメントをパースし、titleタグのテキストコンテンツを取得しています。出力される結果は、サイトのタイトルを表示します。
 
-上記のコードでは、URLを指定してHTMLページを取得し、"div.content"という要素を抽出しています。そして、その要素のテキストを出力しています。もちろん、使用する要素や出力の方法は自由にカスタマイズすることができます。
+## 詳細について：
+(1) HTMLパースは、Web開発の歴史において重要な役割を果たしてきました。ウェブページが表示される際に、ブラウザーはHTMLドキュメントをパースし、コンテンツやレイアウトを解析して表示します。プログラマーはこのメカニズムを使用して、必要な情報を抽出し、自分のプログラム内で処理することができます。
+(2) HTMLパースの代替手段としては、レガシーテキストベースのHTMLパーサーがあります。しかし、近年ではHTMLドキュメントの構造化されたデータの需要が高まっており、Jsoupなどのライブラリを使用することでより簡単にHTMLパースが可能になりました。
+(3) Jsoupでは、CSSセレクターを使用して特定の要素を取得することもできます。これにより、より柔軟なHTMLパースが可能になります。
 
-## Deep Dive
-HTMLパースの規則について詳しく見ていきましょう。HTMLはタグ、属性、テキストといった要素で構成されています。Jsoupでは、CSSセレクターを使用して要素を取得することができます。たとえば、"a[href]"というセレクターは、href属性を持つすべてのアンカータグを取得します。また、".class"というセレクターは、指定したクラスを持つ要素を取得します。
-
-さらに、HTMLの構造をより詳細に調べるために、開発者ツールを使用することもできます。これは、特定の要素がどのように配置され、どのような階層構造を持っているかを確認するのに役立ちます。
-
-## See Also
-- [Jsoup公式サイト](https://jsoup.org/)
-- [HTMLパースのチュートリアル](https://www.baeldung.com/java-string-html-parsing)
-- [開発者ツールの使用方法（Chrome）](https://developer.chrome.com/docs/devtools/)
+## 関連リンク：
+- Jsoup公式ウェブサイト：https://jsoup.org/
+- Oracleのドキュメント：https://docs.oracle.com/javase/tutorial/essential/io/file.html

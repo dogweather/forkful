@@ -1,7 +1,7 @@
 ---
-title:                "לעבוד עם json"
-html_title:           "Java: לעבוד עם json"
-simple_title:         "לעבוד עם json"
+title:                "עובדים עם json"
+html_title:           "Java: עובדים עם json"
+simple_title:         "עובדים עם json"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Data Formats and Serialization"
@@ -10,35 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# למה:
-JSON היא שפת תכנות נפוצה כידוף צורות מידע במיקוד על מדינות ומיצרות, וכן על מציאות."
+## מה זה ולמה?
+עבודה עם JSON היא תהליך תכנותי שמאפשר למפתחים לקרוא, להעביר ולהצטרף לנתונים בפורמט מסודר ויעיל. זה נמצא בשימוש נרחב על ידי מפתחי תוכנה, במיוחד כאשר מדובר בפיתוח אפליקציות ואתרים מרובי-קטעים.
 
-## איך לעבוד עם JSON:
-ראשית, ניתן להתקין ספריית JSON לפרויקט שלנו כדי לאפשר עבודה עם פעולות JSON. לאחר מכן, אנו יכולים ליצור אובייקט JSON חדש ולהכניס לו מידע באמצעות שדות וערכים מתאימים. לבסוף, ניתן להשתמש בפקודת toString () כדי להמיר את האובייקט שנוצר למחרוזת JSON.
+## איך לעשות זאת:
+תחת הקוד של ```Java ... ```, תוכלו למצוא דוגמאות איך לעבוד עם JSON כדי לקרוא, לכתוב ולהוסיף נתונים. להמשיך קריאת הדוגמאות כדי לראות את הפלט המתאים.
 
 ```Java
-// התקנת ספריית JSON לפרויקט
-import org.json.JSONObject;
-
-// יצירת אובייקט JSON חדש
-JSONObject json = new JSONObject();
-
-// הוספת שדות וערכים לאובייקט
-json.put("name", "John");
-json.put("age", 30);
-json.put("isMarried", true);
-
-// המרת האובייקט למחרוזת JSON והדפסת התוצאה
-System.out.println(json.toString());
+// קוראים מידע מקובץ JSON
+JSONObject json = new JSONObject(readFile("user.json"));
+// מדפיסים את המאפיינים של המשתמש
+System.out.println("שם: " + json.get("שם"));
+System.out.println("מין: " + json.get("מין"));
+System.out.println("גיל: " + json.get("גיל"));
 ```
 
-> פלט:
-> {"name":"John","age":30,"isMarried":true}
+```Java
+// כותבים נתונים לקובץ JSON חדש
+JSONObject json = new JSONObject();
+json.put("כינוי", "משתמש1");
+json.put("גיל", 30);
+json.put("מין", "זכר");
 
-## Deep Dive:
-כאשר אנחנו מתכנתים בג'אווה, עבודה עם JSON יכולה להיות חלק חשוב מהתהליך. אם אנחנו משתמשים בקבצי הגדרות כדי לאחסן נתונים, שימוש בפורמט JSON יכול להקל עלינו מאד בטיפול בנתונים האלה. כמו כן, עם התקדמות התכנות ניתן למצוא שימושים רבים נוספים לפורמט הזה כמו לפתוח ולסגל נתונים מכמה מקומות שונים בזמן ריצת הקוד.
+try (FileWriter file = new FileWriter("user.json")) {
+    file.write(json.toJSONString());
+}
+```
 
-# ראה גם:
-- [ספריית JSON בג'אווה](https://mvnrepository.com/artifact/org.json/json)
-- [מדריך לעבודה עם פורמט JSON](https://www.tutorialspoint.com/json/index.htm)
-- [מידע נוסף על JSON](https://www.json.org/json-he.html)
+## טפסים נעוצים:
+JSON נוצר בשנת 2001 כפתרון לבעיות קריאה וכתיבה של נתונים מורכבים בפורמט פשוט ובמהירות. פופולריות שלו עלתה עם התפתחות רחבה של טכנולוגיות האינטרנט ושימוש בו כפורמט אחד תקני עבור REST API. כיום, ישנם יישויות רבות אחרות המתכתבות עם JSON כמו XML ו-YAML.
+
+## ראו גם:
+- [JSON official website](https://www.json.org/json-en.html)
+- [Baeldung article about JSON in Java](https://www.baeldung.com/java-org-json)

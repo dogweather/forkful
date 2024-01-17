@@ -10,121 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
+CSV (Comma Separated Values) är ett vanligt filformat som används för att lagra strukturerad data i textform. Det är populärt bland programmerare eftersom det är lätt att läsa och behandla med kod. 
 
-Vi använder CSV-filer för att lagra och hantera stora mängder tabulär data på ett strukturerat sätt. Det är ett vanligt format som används för att dela data mellan olika applikationer och system.
+Förutom att vara lättläst av människor, är CSV också användbart eftersom det kan lagra olika datatyper, till exempel strängar och numeriska värden, i samma fil.
 
-## Så här gör du
-
-För att arbeta med CSV-filer i Python behöver du importera `csv`-modulen. Här är ett kort kodexempel som läser in en CSV-fil och skriver ut varje rad i konsolen:
+## Hur man gör:
+Att arbeta med CSV-filer i Python är enkelt och smidigt. Först måste vi importera det inbyggda csv-biblioteket. Sedan öppnar vi vår CSV-fil med hjälp av functionen "open" och anger dess läge. Därefter använder vi "csv.reader" för att läsa filen rad för rad och lägga till datan i en lista.
 
 ```Python
 import csv
 
-with open('data.csv', 'r') as csv_file:
-    csv_reader = csv.reader(csv_file)
-
-    for row in csv_reader:
+with open('exempelfil.csv', 'r') as f:
+    reader = csv.reader(f)
+    for row in reader:
         print(row)
 ```
 
 Output:
-
-``` 
-['Namn', 'Ålder', 'Stad']
-['Lisa', '25', 'Stockholm']
-['Erik', '30', 'Göteborg']
-['Maria', '27', 'Malmö']
-```
-
-För att skriva till en CSV-fil kan du använda `writer`-funktionen från `csv`-modulen. Se till att du öppnar filen i läge "append" (`a`) om du vill lägga till data till en befintlig fil.
-
 ```Python
-import csv
-
-with open('data.csv', 'a') as csv_file:
-    csv_writer = csv.writer(csv_file)
-
-    # Skriv en rad i taget
-    csv_writer.writerow(['Johan', '32', 'Uppsala'])
-
-    # Skriv flera rader på en gång
-    data = [
-        ['Alina', '29', 'Norrköping'],
-        ['Oskar', '24', 'Lund']
-    ]
-    csv_writer.writerows(data)
+['Namn', 'E-post', 'Telefon']
+['Sara', 'sara@mail.com', '0701234567']
+['Anna', 'anna@mail.com', '0734567891']
 ```
 
-Output i data.csv:
+## Deep Dive:
+CSV-formatet skapades på 1970-talet för att underlätta datautbyte mellan olika system. Det finns dock alternativ till CSV, som till exempel JSON och XML, som är mer utvecklade och kan hantera mer komplex data.
 
-```
-Namn,Ålder,Stad
-Lisa,25,Stockholm
-Erik,30,Göteborg
-Maria,27,Malmö
-Johan,32,Uppsala
-Alina,29,Norrköping
-Oskar,24,Lund
-```
+För att skriva till en CSV-fil från Python använder man "csv.writer" istället för "csv.reader" och använder en annan lägeparameter för att skriva till filen. CSV-filer kan också ha kommatecken eller andra separatorer som skiljetecken och inte bara komma.
 
-## Djupdykning
-
-CSV står för "Comma Separated Values" och det är just det - ett textbaserat format där varje rad med data separeras av ett kommatecken. I vissa fall används även andra separatorer, till exempel semikolon eller tabb, men i det här fallet kommer vi att fokusera på den vanligaste formen med kommatecken.
-
-Förutom att läsa och skriva data till CSV-filer, kan vi även manipulera data med hjälp av inbyggda funktioner som `split()` och `join()`. Till exempel:
-
-```Python
-import csv
-
-with open('data.csv', 'r') as csv_file:
-    csv_reader = csv.reader(csv_file)
-
-    for row in csv_reader:
-        # Dela upp namnet i för- och efternamn
-        name = row[0].split()
-        first_name = name[0]
-        last_name = name[1]
-
-        # Skapa ett användarnamn genom att sammanslå första bokstaven av förnamn med hela efternamnet
-        username = first_name[0] + last_name
-
-        # Spara det som en ny kolumn i varje rad
-        row.append(username)
-
-        print(row)
-```
-
-Output:
-
-```
-['Namn', 'Ålder', 'Stad', 'Användarnamn']
-['Lisa Andersson', '25', 'Stockholm', 'Landersson']
-['Erik Svensson', '30', 'Göteborg', 'Esvensson']
-['Maria Karlsson', '27', 'Malmö', 'Mkarlsson']
-```
-
-Det finns även möjlighet att läsa in CSV-data som en ordnad dictionary istället för en lista, genom att använda `DictReader`-funktionen. Detta gör det lättare att arbeta med data eftersom varje kolumn då blir en "nyckel" i dictionaryn.
-
-```Python
-import csv
-
-with open('data.csv', 'r') as csv_file:
-    csv_reader = csv.DictReader(csv_file)
-
-    for row in csv_reader:
-        print(row['Namn'] + " bor i " + row['Stad'])
-```
-
-Output:
-
-```
-Lisa bor i Stockholm
-Erik bor i Göteborg
-Maria bor i Malmö
-```
-
-## Se även
-
-- [Officiell dokumentation för CSV i Python](https://docs.python.org/3/library/csv.html)
-- [Lista med CSV-moduler för Python
+## Se även:
+- [Python's official documentation on CSV](https://docs.python.org/3/library/csv.html)
+- [A comparison of CSV vs JSON vs XML](https://www.computerhope.com/issues/ch001356.htm)
+- [Using CSV files in Python, a tutorial by Real Python](https://realpython.com/python-csv/)

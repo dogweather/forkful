@@ -1,7 +1,7 @@
 ---
-title:                "Geração de números aleatórios"
-html_title:           "TypeScript: Geração de números aleatórios"
-simple_title:         "Geração de números aleatórios"
+title:                "Gerando números aleatórios"
+html_title:           "TypeScript: Gerando números aleatórios"
+simple_title:         "Gerando números aleatórios"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Numbers"
@@ -10,41 +10,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+# O que e por que?
+Gerar números aleatórios é um processo em que um programa de computador produz um número sem seguir um padrão específico. Os programadores fazem isso para criar um elemento de aleatoriedade em seus programas e jogos, tornando-os mais interessantes e desafiadores.
 
-Gerar números aleatórios é uma funcionalidade essencial em muitas aplicações de software. Pode ser usado para criar senhas seguras, gerar dados de teste para programas e muito mais. Além disso, é uma ótima maneira de adicionar aleatoriedade e imprevisibilidade a um programa.
-
-## Como fazer
-
+# Como fazer:
 ```TypeScript
-// Importando a função de geração de números aleatórios do módulo Math
-import { random } from "math"
-
-// Gerando um número inteiro aleatório de 0 a 10
-let num = Math.floor(random() * 11)
-
-// Imprimindo o número gerado no console
-console.log(num)
+// Exemplo de geração de um número aleatório entre 1 e 10
+const num = Math.floor(Math.random() * 10) + 1;
+console.log(num);
+// Saída: 7
 ```
+Neste exemplo, usamos o método ```Math.random()``` para gerar um número decimal entre 0 e 1, multiplicamos por 10 e arredondamos para baixo usando ```Math.floor()```, e somamos 1 para obter um número aleatório entre 1 e 10. Este processo pode ser modificado para gerar números aleatórios em outros intervalos.
 
-Saída de exemplo: 7
+# Mergulho profundo:
+Gerar números aleatórios é uma tarefa importante na programação desde os primórdios da computação. Inicialmente, os programadores usavam algoritmos matemáticos complexos para gerar números aleatórios, mas hoje em dia, a maioria das linguagens de programação oferecem métodos nativos para essa finalidade, como o ```Math.random()``` em TypeScript.
 
-```TypeScript
-// Gerando um número decimal aleatório entre 0 e 1
-let num = Math.random()
+No entanto, é importante lembrar que, apesar de parecerem aleatórios, os números gerados pelos computadores são determinísticos e podem ser previstos por algoritmos matemáticos. Para aumentar a aleatoriedade, pode-se usar dados externos, como a hora do sistema, como semente para o algoritmo gerador.
 
-// Imprimindo o número gerado no console
-console.log(num)
-```
-
-Saída de exemplo: 0.628195612641899
-
-## Profundidade
-
-A geração de números aleatórios pode parecer simples, mas há algumas coisas importantes a serem consideradas ao usá-la em seus programas. A função `random()` do módulo Math retorna um número decimal entre 0 e 1, mas esse número pode ser multiplicado e arredondado para gerar diferentes tipos de números aleatórios, como no exemplo acima. Além disso, é importante ter em mente que os números gerados são pseudoaleatórios, o que significa que são criados a partir de um algoritmo matemático e não são verdadeiramente "aleatórios" no sentido estrito da palavra. Isso pode ser um problema ao lidar com questões de segurança, por exemplo.
-
-## Veja também
-
-- [Documentação do módulo Math do TypeScript](https://www.typescriptlang.org/docs/handbook/standard-library.html#math)
-- [Artigo "Random Numbers in JavaScript" (em inglês)](https://medium.com/@nitinpatel_20236/random-numbers-in-javascript-67d5a6935d4c)
-- [Vídeo "Generating Random Numbers in TypeScript" (em inglês)](https://www.youtube.com/watch?v=XNbJu7OELDw)
+# Veja também:
+- Documentação oficial do ```Math.random()```: https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+- Um artigo interessante sobre a geração de números aleatórios em programação: https://www.geeksforgeeks.org/pseudo-random-number-generator-prng/

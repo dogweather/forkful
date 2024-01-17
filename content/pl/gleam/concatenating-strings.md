@@ -10,42 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co & dlaczego?
+Większość programów, które są tworzone, muszą manipulować tekstami, np. łącząc różne słowa lub zdania w jedno. Do tego celu wykorzystywana jest operacja konkatenacji - czyli łączenie stringów (ciągów znaków).
 
-Czy kiedykolwiek zastanawiałeś się, dlaczego powinieneś używać konkatenacji (łączenia) strings w programowaniu? W tym artykule dowiesz się, dlaczego jest to ważna umiejętność i jak jej użyć w języku Gleam.
+Dlaczego programiści tak często korzystają z konkatenacji? Ponieważ pozwala to na tworzenie bardziej złożonych tekstów w prosty sposób. Zamiast ręcznie łączyć poszczególne elementy, można wykorzystać funkcję konkatenacji, która oszczędzi nam czas i wysiłek.
 
-## Jak To Zrobić
-
-Aby połączyć dwa lub więcej stringów w Gleam, użyj funkcji `string.concat/2`. Oto przykładowy kod, który zobrazuje to w praktyce:
-
-```Gleam
-let string1 = "Programowanie"
-let string2 = "jest"
-let string3 = "super!"
-
-let concat_strings = string.concat(string1, string2, string3)
-
-io.println(concat_strings)  // Wypisze "Programowanie jest super!"
-```
-
-Możesz również użyć tej samej funkcji, aby połączyć tablicę stringów w jeden:
+## Jak to zrobić:
+Istnieje kilka sposobów na konkatenację stringów, a w Gleam wykorzystujemy operator ```++```, który łączy dwa stringi w jeden. Przykłady użycia:
 
 ```Gleam
-let strings = ["Gleam", "to", "język", "programowania"]
-
-let concat_strings = string.concat(strings)
-
-io.println(concat_strings)  // Wypisze "Gleam to język programowania"
+let str1 = "Hello"
+let str2 = "world"
+let result = str1 ++ " " ++ str2
+IO.println(result)
 ```
 
-## Ciekawostki
+Wynik: ```Hello world```
 
-Pamiętaj, że funkcja `string.concat/2` jest dostępna tylko w module `string`, więc musisz importować moduł przed jej użyciem.
+Możemy również łączyć więcej niż dwa stringi:
 
-Możesz również użyć operatora `++` do konkatenacji dwóch stringów lub dwóch tablic stringów. Jednakże, dla bardziej czytelnego kodu, zaleca się używanie funkcji `string.concat/2`.
+```Gleam
+let str1 = "This"
+let str2 = "is"
+let str3 = "a"
+let str4 = "sentence."
+let result = str1 ++ " " ++ str2 ++ " " ++ str3 ++ " " ++ str4
+IO.println(result)
+```
 
-## Zobacz Również
+Wynik: ```This is a sentence.```
 
-- Dokumentacja Gleam o funkcji `string.concat/2`: https://gleam.run/modules/string#concat
-- Inny artykuł o konkatenacji stringów w Gleam: https://medium.com/gleam-lang/concatenating-strings-in-gleam-c2ec27a5c119
-- Przykłady zastosowania konkatenacji stringów w projektach w języku Gleam: https://github.com/search?q=language%3Agleam+string+concat&type=Code
+## Głębokie zanurzenie:
+Konkatenacja stringów jest powszechnie wykorzystywana w programowaniu, ale pierwotnie została wprowadzona w języku programowania Fortran w latach 50. Alternatywami są np. funkcje formatujące, które pozwalają na bardziej zaawansowane manipulacje stringami.
+
+Jeśli chodzi o implementację w Gleam, operacja konkatenacji jest niezwykle wydajna, ponieważ język ten jest zaprojektowany tak, aby działać szybko i skutecznie z różnymi strukturami danych.
+
+## Zobacz także:
+Jeśli chcesz dowiedzieć się więcej o konkatenacji stringów w Gleam, polecamy zapoznanie się z dokumentacją języka oraz przeglądnięcie dostępnych funkcji i operacji, które mogą ułatwić Ci pracę z tekstami.

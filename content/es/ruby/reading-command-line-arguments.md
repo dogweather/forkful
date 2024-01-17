@@ -1,7 +1,7 @@
 ---
-title:                "Leyendo argumentos de línea de comandos"
-html_title:           "Ruby: Leyendo argumentos de línea de comandos"
-simple_title:         "Leyendo argumentos de línea de comandos"
+title:                "Leyendo argumentos de línea de comando"
+html_title:           "Ruby: Leyendo argumentos de línea de comando"
+simple_title:         "Leyendo argumentos de línea de comando"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Files and I/O"
@@ -10,39 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué leer argumentos de línea de comandos?
+## ¿Qué es y por qué se utiliza la lectura de argumentos de línea de comando?
 
-Si eres un desarrollador de Ruby, es probable que hayas oído hablar de los argumentos de línea de comandos y su importancia en la programación. Son una forma de pasar información a un programa desde la línea de comandos y son extremadamente útiles en la automatización de tareas o en la configuración de programas. A continuación, te mostramos cómo leer los argumentos de línea de comandos en Ruby.
+La lectura de argumentos de línea de comando es una técnica en la programación que permite a los desarrolladores obtener información ingresada por el usuario en la línea de comando del sistema operativo. Esto puede ser útil para ingresar datos variables o parámetros al programa al momento de su ejecución, en lugar de tener que modificar el código fuente cada vez. Al utilizar la lectura de argumentos de línea de comando, los programadores pueden hacer que sus programas sean más interactivos y versátiles.
 
-## Cómo hacerlo
+## Cómo:
 
-Para leer los argumentos de línea de comandos en Ruby, utilizamos la variable global `$ARGV`, que almacena un array con los argumentos ingresados. Por ejemplo, si ejecutamos nuestro programa con `ruby mi_programa.rb hola adiós`, `$ARGV` se convierte en `["hola", "adiós"]`. Podemos utilizar un bucle `each` para iterar a través de los argumentos y realizar acciones en función de ellos.
+Para leer argumentos de línea de comando en Ruby, podemos utilizar el método `ARGV`. Aquí hay un ejemplo de cómo podemos obtener el primer argumento ingresado por el usuario:
 
 ```Ruby
-# Ejemplo de un programa que recibe dos argumentos e imprime un mensaje diferente para cada uno
+first_arg = ARGV[0]
+puts "El primer argumento ingresado fue: #{first_arg}"
+```
 
-argumentos = $ARGV
+Si ingresamos el comando `ruby arguments.rb Hola`, el programa imprimirá "El primer argumento ingresado fue: Hola".
 
-argumentos.each do |arg|
-  if arg == "hola"
-    puts "¡Hola! ¿Cómo estás?"
-  elsif arg == "adiós"
-    puts "¡Hasta luego! ¡Que tengas un buen día!"
-  end
+También podemos utilizar un bucle `each` para recorrer todos los argumentos ingresados por el usuario y realizar una acción con cada uno de ellos:
+
+```Ruby
+ARGV.each do |arg|
+  puts "Argumento ingresado: #{arg}"
 end
 ```
-La salida de este programa sería:
 
+Si ejecutamos el comando `ruby arguments.rb Hola Mundo`, el programa imprimirá:
 ```
-¡Hola! ¿Cómo estás?
-¡Hasta luego! ¡Que tengas un buen día!
+Argumento ingresado: Hola
+Argumento ingresado: Mundo
 ```
 
-## Profundizando
+## Profundizando:
 
-Además de `$ARGV`, también podemos utilizar la gema `optparse` para manejar los argumentos de línea de comandos en una forma más flexible y robusta. Esta gema nos permite definir opciones y argumentos específicos y también agregar mensajes de ayuda para que los usuarios puedan entender mejor cómo ejecutar nuestro programa. Puedes aprender más sobre `optparse` en su [documentación oficial](https://ruby-doc.org/stdlib-2.7.2/libdoc/optparse/rdoc/OptionParser.html).
+La lectura de argumentos de línea de comando no es una técnica exclusiva de Ruby, es utilizada en muchos otros lenguajes de programación como Python o Java. Sin embargo, cada lenguaje puede tener su propia sintaxis y métodos para leer estos argumentos.
 
-## Ver también
+Una alternativa a la lectura de argumentos de línea de comando puede ser la lectura de variables de entorno, que tienen un alcance más amplio y pueden ser accedidas desde cualquier parte del programa.
 
-- [Ruby's ARGV documentation](https://ruby-doc.org/core-2.7.2/ARGF.html)
-- [Getting Started with OptParse](https://www.rubyguides.com/2018/08/ruby-optparse/)
+En Ruby, también es posible utilizar la gem `optparse` para manejar argumentos de línea de comando de una manera más estructurada y fácil de entender.
+
+## Ver también:
+
+- [Documentación de Ruby sobre lectura de argumentos de línea de comando](https://ruby-doc.org/stdlib-2.7.1/libdoc/optparse/rdoc/OptionParser.html)
+- [Especificación del estándar POSIX sobre argumentos de línea de comando](https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap12.html)
+- [Tutorial en español sobre cómo leer argumentos de línea de comando en Ruby](https://ruby-doc.org/docs/ruby-doc-bundle/Tutorial/part_02/argf.html)

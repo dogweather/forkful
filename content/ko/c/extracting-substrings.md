@@ -10,49 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+# 무엇이고 왜?
 
-문자열에서 일부분을 추출하는 것은 많은 상황에서 유용합니다. 예를 들어, 특정 단어나 구를 검색하거나 다른 문자열에 일치하는 부분을 찾는 등 다양한 작업에 활용할 수 있습니다.
+부분 문자열 추출이란 무엇인지 알아보고, 왜 프로그래머들이 이를 하는지 알아보겠습니다. 부분 문자열 추출은 문자열에서 특정 부분을 추출하는 것을 말합니다. 프로그래머들은 이 작업을 수행하여 문자열 데이터를 더 쉽게 처리하고, 필요한 정보만 추출할 수 있기 때문에 이를 자주 사용합니다.
 
-## 하는 방법
+# 어떻게:
 
-C 언어에서 문자열을 추출하는 방법은 다음과 같습니다:
+다음은 C 프로그래밍에서 부분 문자열 추출을 하는 간단한 예제와 결과를 보여줍니다.
 
 ```C
-// 원본 문자열
-char str[] = "Hello World";
+#include <stdio.h> // printf 함수를 사용하기 위해 필요한 헤더 파일입니다.
+#include <string.h> // strndup 함수를 사용하기 위해 필요한 헤더 파일입니다.
 
-// 추출할 부분의 시작 인덱스와 길이
-int start = 6;
-int length = 5;
-
-// 추출된 부분을 저장할 문자열 변수 선언
-char substr[length + 1];
-
-// 길이만큼 문자를 복사하여 추출
-strncpy(substr, str + start, length);
-
-// 추출된 부분에 NULL 문자 추가
-substr[length] = '\0';
-
-// 추출된 부분 출력
-printf("추출된 부분: %s", substr);
+int main() {
+    char str[] = "Hello World"; // 추출할 문자열입니다.
+    int start = 0; // 추출을 시작할 인덱스입니다.
+    int length = 5; // 추출할 길이입니다.
+    char *substring = strndup(str + start, length); // 추출된 부분 문자열입니다.
+    printf("Substring: %s\n", substring); // 결과를 출력합니다.
+    return 0;
+}
 ```
 
-출력:
+출력은 다음과 같을 것입니다.
+
 ```
-추출된 부분: World
+Substring: Hello
 ```
 
-## 딥 다이브
+# 깊이 있는 정보:
 
-위 예시에서는 `strncpy()` 함수를 사용하여 문자열을 추출했습니다. 이 함수는 첫 번째 매개변수로 추출할 문자열을 저장할 변수를 받고, 두 번째 매개변수로 원본 문자열에서 추출할 부분의 시작 인덱스를 받습니다. 마지막 매개변수는 추출할 문자의 개수를 나타냅니다.
-하지만 이 함수는 추출한 문자열 마지막에 NULL 문자를 자동으로 추가하지 않으므로, 따로 처리해주어야 합니다. 또한, 원본 문자열과 추출한 문자열이 겹치지 않도록 주의해야 합니다.
+부분 문자열 추출은 문자열을 처리하는 데 있어 유용한 기능입니다. 예전에는 문자열에서 원하는 부분을 찾고 추출하는 작업이 까다로웠지만, 이제는 간단한 함수를 사용하여 쉽게 처리할 수 있게 되었습니다.
 
-추출된 부분의 시작 인덱스나 길이를 변수로 받아 동적으로 추출할 수도 있습니다. 또한, 여러 개의 부분을 추출하여 다른 문자열에 합칠 수도 있으며, 각각의 추출된 부분을 개별적으로 사용할 수도 있습니다.
+부분 문자열 추출을 위해 다른 방법도 있습니다. C 언어에서는 위와 비슷한 함수인 `strncpy`를 사용할 수 있습니다. 또는 `substr`라는 이름의 사용자 정의 함수를 만들어 사용할 수도 있습니다.
 
-## 그 밖에 알아볼만한 것들
+부분 문자열 추출을 구현하기 위해선, 문자열에서 인덱스를 이용해 원하는 부분을 잘라내는 방법을 사용합니다. 위의 예제에서는 `strndup` 함수를 사용하여 추출된 부분 문자열을 새로운 문자열로 만들어 주었습니다.
 
-- [C 문자열 관련 함수 레퍼런스](https://www.tutorialspoint.com/c_standard_library/string_h.htm)
-- [C 언어 문자열 기초 강좌](https://modoocode.com/136)
-- [문자열에서 특정 단어 찾기 예시](https://www.programiz.com/c-programming/examples/find-substring)
+# 참고하십시오:
+
+- [C substr 사용하기](https://www.tutorialspoint.com/c_standard_library/c_function_substr.htm)
+- [C 에서 strndup 사용하기](https://www.tutorialspoint.com/c_standard_library/c_function_strndup.htm)

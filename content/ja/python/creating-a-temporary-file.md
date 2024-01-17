@@ -10,44 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+## 何となぜ？
 
-一時ファイルを作成する理由は、一時的にデータを保存したり、プログラムの一部を一時的に実行するためです。一時ファイルはプログラミングにおいて非常に便利であり、メモリを効率的に使用することができます。
+一時ファイルを作成するとは何か、そしてなぜプログラマーがそれを行うのか、2〜3文で説明します。
 
-## 作り方
-
-Pythonの標準ライブラリーには、一時ファイルを作成するための `tempfile` モジュールがあります。`NamedTemporaryFile()` 関数を使用することで、一時ファイルを作成することができます。以下は例です。
+## 作り方：
 
 ```Python
 import tempfile
 
 # 一時ファイルを作成
-temp_file = tempfile.NamedTemporaryFile()
+with tempfile.TemporaryFile() as temp_file:
+  # ここで一時ファイルを使用するコードを実行
 
-# 一時ファイルにデータを書き込む
-temp_file.write("Hello, world!\n")
-temp_file.write("This is a temporary file.")
+# 一時ファイルを作成し、内容を書き込む
+with tempfile.NamedTemporaryFile() as temp_file:
+  temp_file.write(b"This is a temporary file.")
 
-# ファイルを読み込みモードで開く
-temp_file.seek(0)
-contents = temp_file.read()
+# 一時ファイルを作成し、そのファイルを開く
+with tempfile.SpooledTemporaryFile() as temp_file:
+  temp_file.write(b"This is a temporary file.")
+  temp_file.seek(0)
+  print(temp_file.read())
 
-# 出力
-print(contents.decode())
-
-# 一時ファイルを閉じる
-temp_file.close()
-
-# 出力
-# Hello, world!
-# This is a temporary file.
+# テンポラリディレクトリを作成し、その中に一時ファイルを作成
+with tempfile.TemporaryDirectory() as temp_dir:
+  temp_file = tempfile.NamedTemporaryFile(dir=temp_dir)
+  # ここで一時ファイルを使用するコードを実行
 ```
 
-## 深堀り
+## 深堀り：
 
-`tempfile` モジュールには、一時ファイルの作成方法をより細かく制御する方法もあります。例えば、 `NamedTemporaryFile()` 関数でファイルを作成する際に、 `delete=False` を指定することで、一時ファイルをプログラムが終了するまで削除しないようにすることができます。また、 `tempfile` モジュールには `TemporaryDirectory()` 関数もあり、一時的なディレクトリを作成することもできます。
+一時ファイルの作成は、主にデータを一時的に保存するために使用されます。ファイルを作成せずにデータを直接メモリに保持することもできますが、データ量が大きい場合や永続的な保存が必要ない場合には、一時ファイルの作成が効率的な方法となります。代替方法としては、メモリ上で作業するメモリマップドファイルや、操作の後にファイルを削除することもできます。一時ファイルの作成には、Pythonの標準ライブラリである`tempfile`モジュールが使用されます。
 
-## See Also
+## 関連情報を見る：
 
-- [Python公式ドキュメント - tempfileモジュール](https://docs.python.org/ja/3/library/tempfile.html)
-- [Real Python - Working with Temporary Files and Directories in Python](https://realpython.com/python-tempfile/)
+[Python公式ドキュメント: tempfile](https://docs.python.org/ja/3/library/tempfile.html)  
+[一時ファイルと一時ディレクトリを作成する方法 (Qiita)](https://qiita.com/mikiokubo/items/e56811a426b731a7ec11)  
+[tempfile — ディスク上の一時的なファイルを作成する (Python開発者ガイド)](https://docs.python.org/ja/3/library/tempfile.html#)

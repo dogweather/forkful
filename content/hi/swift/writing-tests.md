@@ -1,7 +1,7 @@
 ---
-title:                "Pustakon ka Lekhan"
-html_title:           "Swift: Pustakon ka Lekhan"
-simple_title:         "Pustakon ka Lekhan"
+title:                "आपलोग कोडिंग की शिक्षा देते हुए और टेस्ट केस बनाने के लिए जीवन और श्रम को निर्दोष रूप से संभालने की प्रक्रिया सीखें"
+html_title:           "Swift: आपलोग कोडिंग की शिक्षा देते हुए और टेस्ट केस बनाने के लिए जीवन और श्रम को निर्दोष रूप से संभालने की प्रक्रिया सीखें"
+simple_title:         "आपलोग कोडिंग की शिक्षा देते हुए और टेस्ट केस बनाने के लिए जीवन और श्रम को निर्दोष रूप से संभालने की प्रक्रिया सीखें"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Testing and Debugging"
@@ -10,43 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
+## Writing Tests: Kya Aur Kyun?
 
-टेस्ट कोडिंग ऐसे कामों में मदद करता है जो आप अपने स्वयं के कोड को सुनिश्चित करने के लिए या अपने कोड के साथ उपयोगित आसानियों को गुणवत्तापूर्ण बनाने के लिए कर रहे हों।
+Aajkal, har koi programmer testing ke baare mein baat karta hai. Lekin kya aapko pata hai ki testing kya hai aur iska kya maqsad hai? Hum apne code mein errors aur bugs ko pakadne ke liye tests likhte hain. Isse humare application ke functionality aur performance ko improve karne mein madad milti hai.
 
-## कैसे करें
+## Kaise Kare?
+
+Hum Swift mein tests likhne ke liye XCTest framework ka istemal karte hain. Ismein hum apne code ko simulate karte hain aur expected output ko compare karte hain. Yeh humare code ke different parts ko test karne mein madad karta hai.
+
+**Example:**
 
 ```Swift
-// 1. टेस्ट सीडिंग के लिए XCTest लाइब्रेरी इंपोर्ट करें
-import XCTest
-
-// 2. टेस्ट केस स्थापित करें
-class ExampleTests: XCTestCase {
-    // 3. अपने टेस्ट केस के लिए एक नाम दें
-    func testAddition() {
-        // 4. प्रत्याशा बनाएं
-        let a = 5
-        let b = 10
-        
-        // 5. परिणाम की प्रत्याशा हमारे अपेक्षित परिणाम से मिलते हैं
-        let expectedResult = 15
-        
-        // 6. टेस्ट के लिए कोड लिखें
-        let result = a + b
-        
-        // 7. अपेक्षित परिणाम की टेस्ट करें
-        XCTAssertEqual(result, expectedResult)
-    }
+// Function to add two numbers
+func addNumbers(num1: Int, num2: Int) -> Int {
+    return num1 + num2
 }
 
-// 8. टेस्ट को चलाएं और रिजल्ट देखें
-// आपको दिखाई देना चाहिए "Test Passed"
+// Test case for addNumbers function
+func testAddNumbers() {
+    let expectedResult = 5
+    let result = addNumbers(num1: 2, num2: 3)
+
+    // Assert statement to compare expected and actual result
+    assert(result == expectedResult, "Addition function is not working as expected")
+}
+
+// Calling the test function
+testAddNumbers()
 ```
 
-## गहराई में
+**Output:**
+No output means the test passed successfully.
 
-टेस्टिंग अपने स्वयं के कोड को सुनिश्चित करने के साथ-साथ एक अच्छा कोड क्वालिटी को भी आपके प्रोजेक्ट में जोड़ता है। सही टेस्ट केस को स्थापित करने और सही तरीके से टेस्ट कोड को लिखने के दौरान, आप अपने कोड को अधिक सुरक्षित बनाने में मदद मिल सकती है। साथ ही, टेस्ट कोड को बुनियादी बेसिक से शुरू करके आप इसे अपने कोड एक्सेस करने के लिए हमेशा उपयोग कर सकते हैं जो आपको अपने ऑब्जेक्ट्स के लिए एक लम्बे समय तक मौजूद रखने की जरूरत नहीं होती है।
+## Gehri Jhaank (Deep Dive)
 
-## देखें भी
+Testing ke concept mein sabse pehle parikalan ka naam aata hai. Puri tareh se validation ke liye, hume apne code ke har hisse ko test karna zaroori hai. Agar hum code ko manually test karenge, toh yeh ek bahut lamba aur mamooli kaam ban jayega. Isi liye hum automation testing ka istemal karte hain, jisse hume time aur effort ki bachat hoti hai. Kuch log third-party frameworks jaise ki Quick and Nimble ka istemal bhi karte hain test likhne ke liye.
 
-- [XCTest Documentation](https://developer.apple.com/documentation/xctest)
+## Juddhein (See Also)
+
+1. [XCTest Documentation](https://developer.apple.com/documentation/xctest/testing_with_xctest_without_xcode)
+2. [Quick Framework](https://github.com/Quick/Quick)
+3. [Nimble Framework](https://github.com/Quick/Nimble)

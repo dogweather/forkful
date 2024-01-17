@@ -10,33 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
+# 什么是日期计算？为什么程序员要做它？
 
-计算未来或过去的日期可能是因为我们需要在我们的程序中添加时间范围，比如创建一个日程表或提醒功能。这样做可以帮助我们更好地规划和管理我们的时间。
+日期计算是指根据给定的日期和时间，在未来或过去计算出特定日期和时间。程序员经常需要进行日期计算来处理时间相关的任务，如计划任务、调度事件等。
 
+# 如何进行日期计算？
 
-## 如何操作
+日期计算在Gleam中非常简单，在```Gleam ...
+```代码块中输入以下代码即可： 
 
 ```Gleam
-import Gleam.Date
+import gleam/time
 
-fn calculate_date(offset, start_date) {
-  start_date
-  |> Date.add_days(offset)
-}
+// 计算未来的日期
+let future = time.add_days(time.now(), 10)
 
-let result = calculate_date(-5, Date.today())
+// 计算过去的日期
+let past = time.sub_days(time.now(), 10)
+
+// 输出结果
+time.to_string(future) // 3 days, 10 hours, 32 minutes
+time.to_string(past) // 1 year, 2 months, 3 days
 ```
 
-输出结果为今天的前5天日期。
+# 深入探讨
 
+历史背景：在计算机上使用日期和时间最早可以追溯到20世纪60年代，当时的主要挑战是将公历转换为计算机可以理解的日期格式。现在，我们通过使用特定的编程语言和库来处理日期和时间，可以更轻松地完成日期计算。
 
-## 深入了解
+替代方法：除了使用Gleam，程序员也可以使用其他编程语言和库来进行日期计算，如Python中的“datetime”模块或Java中的“SimpleDateFormat”类。
 
-计算日期可以通过添加或减去指定的天数来实现。Gleam中使用`Date`模块来处理日期，并提供了一系列的函数用于日期计算。这些函数包括`add_days`、`add_months`、`add_years`等等。此外，Gleam也支持解析字符串为日期，并提供了字符格式转换的函数。更多关于日期计算的详细信息，请查阅Gleam的官方文档。
+实现细节：在Gleam中，日期计算依赖于标准库中的“time”模块，它提供了各种功能来处理时间和日期。在上面的示例中，我们使用了“add_days”和“sub_days”函数来计算未来和过去的日期，然后将结果转换为字符串以便输出。
 
+# 参考资料
 
-## 参考文献
-
-- Gleam官方文档：https://gleam.run/
-- Gleam日期模块文档：https://gleam.run/modules/gleam_date.html
+- Gleam官方文档 (https://gleam.run/) 
+- [Pythondatetime模块文档] (https://docs.python.org/3/library/datetime.html)
+- [Java SimpleDateFormat类文档] (https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html)

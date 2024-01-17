@@ -1,7 +1,7 @@
 ---
-title:                "Menneen tai tulevan päivämäärän laskeminen"
-html_title:           "Fish Shell: Menneen tai tulevan päivämäärän laskeminen"
-simple_title:         "Menneen tai tulevan päivämäärän laskeminen"
+title:                "Tulevan tai menneen päivämäärän laskeminen"
+html_title:           "Fish Shell: Tulevan tai menneen päivämäärän laskeminen"
+simple_title:         "Tulevan tai menneen päivämäärän laskeminen"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Dates and Times"
@@ -10,30 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+# Mitä ja miksi?
 
-On monia tilanteita, joissa saatat tarvita laskemaan tulevan tai menneen päivämäärän. Ehkä haluat suunnitella tulevia tapahtumia tai tarkistaa tietyn päivän sääennusteen. Fish Shellin avulla tämä on helppoa ja nopeaa tehdä.
+Päivämäärien laskeminen tulevaisuutta tai menneisyyttä varten tarkoittaa tietyn päivämäärän lisäämistä tai vähentämistä tietyn määrän päiviä. Ohjelmoijat tekevät tätä esimerkiksi laskiessaan tulevaa tapahtumaa tai tarkistaessaan ajastettujen tehtävien päivämääriä.
 
-## Miten
+# Miten?
 
-Voit käyttää `date`-komentoa laskemaan päivämäärän tulevaisuudessa tai menneisyydessä. Esimerkiksi, jos haluat tietää millainen päivämäärä on kahden viikon päästä, kirjoita komentoriville:
+```Fish Shell```-ohjelman avulla voit helposti laskea tulevaisuuden tai menneisyyden päivämääriä. Alla olevassa esimerkissä lisätään 30 päivää nykyiseen päivämäärään ja tuloksena saadaan 2.tammikuuta 2021.
 
 ```
-Fish Shell date -v +2w
+Fish Shell date -d "+30 days" +%d.%m.%Y
+02.01.2021
 ```
 
-Tämä tulostaa päivämäärän kahden viikon päässä nykyhetkestä. Voit myös käyttää `+` tai `-` merkkejä ilmaisemaan tulevaisuuden tai menneisyyden. Esimerkiksi `+2d` tarkoittaa kahden päivän päästä ja `-1m` tarkoittaa yhtä kuukautta sitten.
+Voit myös lisätä päiviä tai kuukausia suoraan haluamaasi päivämäärään, kuten seuraavassa esimerkissä, jossa lisätään 3 kuukautta 15 päivää 9.huhtikuuta 2020:
 
-Voit myös muuttaa formaattia lisäämällä `+`-merkin perään haluamasi formaatin. Esimerkiksi, `+2w %d-%m-%y` tulostaa päivämäärän kahden viikon päästä muodossa "päivä-kuukausi-vuosi".
+```
+Fish Shell date -d "09.04.2020 +3 months 15 days"
+24.07.2020
+```
 
-## Syvempi sukellus
+# Syvemmälle
 
-Fish Shellin `date`-komento perustuu POSIX-standardiin, joka määrittää päivämäärän laskemisen tietyn kaavan mukaan. Voit lukea lisää tästä kaavasta ja sen eri vaihtoehdoista `date`-komenton manuaalisivulta (`man date`).
+Päivämäärien laskeminen on yleinen tehtävä ohjelmoinnissa ja tästä syystä siihen löytyy useita eri tapoja. ```Fish Shell``` tarjoaa kuitenkin helpon ja nopean tavan laskea päivämääriä, joten sitä kannattaa ehdottomasti hyödyntää.
 
-Jos haluat lisätietoa päivämäärän laskemisesta, voit myös tutustua `date`-komenton lähdekoodiin Fish Shellin GitHub-sivustolla.
+## Vaihtoehtoja
 
-## Katso myös
+On olemassa monia muita ```Shell```-ohjelmia ja kielitietoja, jotka tarjoavat samanlaisia toimintoja päivämäärien laskemiseen, kuten esimerkiksi ```Bash``` ja ```Python```. Voit myös käyttää erilaisia tietokoneen kalenterisovelluksia, joissa on sisäänrakennettu päivämäärien laskenta-toiminto.
 
-- [Fish Shellin kotisivu](https://fishshell.com/)
-- [Fish Shellin manuaalisivu](https://fishshell.com/docs/current/index.html)
-- [Fish Shellin GitHub-sivu](https://github.com/fish-shell/fish-shell)
+## Taustatietoa
+
+Päivämäärien laskenta on tärkeä osa ohjelmointia, sillä se auttaa ohjelmoijia aikatauluttamaan tehtäviä ja hallitsemaan aikaa. Alun perin päivämäärien laskenta perustui maailmanlaajuiseen standardiin nimeltä Unix Time, joka määrittää päivämäärät sekunteina tietystä ajankohdasta lähtien.
+
+# Katso myös
+
+[Täältä](https://fishshell.com/docs/current/index.html) löydät lisätietoa ```Fish Shell```ista ja sen eri toiminnoista, mukaan lukien päivämäärien laskeminen. Voit myös tutustua erilaisiin päivämäärien laskentamenetelmiin ja niiden käyttöön eri ohjelmointikielillä.

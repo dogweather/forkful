@@ -10,45 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+Co i dlaczego?
 
-Jeśli kiedykolwiek pracowałeś z plikami i musiałeś je tworzyć lub edytować w swoim programie, na pewno spotkałeś się z problemem, że chcesz zachować oryginalną wersję pliku, ale jednocześnie potrzebujesz wykonać na nim jakieś zmiany. Tutaj wchodzi w grę tworzenie tymczasowych plików. Te pliki są stworzone tylko w celach tymczasowych i po zakończeniu pracy z nimi są usuwane automatycznie. W tej krótkiej instrukcji dowiesz się jak stworzyć tymczasowy plik w języku Haskell.
+Tworzenie pliku tymczasowego jest nieodłączną częścią programowania w Haskellu. Jest to plik, który jest tworzony i używany tylko na chwilę, a następnie usuwany. Programiści tworzą tymczasowe pliki w celu przechowywania tymczasowych danych, takich jak kawałki kodu, pliki tymczasowe do przetwarzania, itp.
 
-## Jak to zrobić
+Jak to zrobić:
 
-Aby stworzyć tymczasowy plik w Haskellu, musimy wykorzystać moduł System.IO.Temp i jego funkcję createTempFile. Najpierw musimy zaimportować ten moduł do naszego kodu za pomocą następującego polecenia:
-
-```Haskell
-import System.IO.Temp
-```
-
-Następnie, aby stworzyć tymczasowy plik, musimy podać ścieżkę do katalogu, w którym będzie przechowywany nasz plik oraz prefiks nazwy pliku. Na przykład, jeśli chcemy utworzyć plik o nazwie "tmpfile", który będzie przechowywany w bieżącym katalogu, możemy to zrobić w następujący sposób:
+Kodowanie w Haskellu jest proste i intuicyjne, a tworzenie plików tymczasowych nie jest wyjątkiem. Użyjemy funkcji ```openTempFile```, która przyjmuje dwa argumenty: ścieżkę do katalogu tymczasowego i nazwę pliku tymczasowego. Oto przykładowe użycie tej funkcji:
 
 ```Haskell
-createTempFile "." "tmpfile"
+import System.IO
+
+main :: IO ()
+main = do
+  (path, tempFileHandle) <- openTempFile "/tmp" "example.txt"
+  hPutStrLn tempFileHandle "To jest przykładowy tekst."
+  hClose tempFileHandle
+  putStrLn ("Stworzono tymczasowy plik w: " ++ path)
 ```
 
-Wynikiem wywołania tej funkcji będzie IO akcja zwracająca FilePath, czyli ścieżkę do naszego nowego tymczasowego pliku. Możemy teraz dalej pracować ze stworzonym plikiem, np. otwierać go i dokonywać na nim zmian.
+Po uruchomieniu tego programu, zobaczysz na ekranie wyjściowym komunikat o stworzeniu tymczasowego pliku w podanym katalogu, a w tym katalogu pojawi się plik "example.txt". Plik ten zostanie automatycznie usunięty po zakończeniu programu.
 
-```Haskell
-do
-  tempFile <- createTempFile "." "tmpfile"
-  putStrLn tempFile    -- wyświetli ścieżkę naszego nowego tymczasowego pliku
-```
+Głębsze zagadnienia:
 
-Po zakończeniu pracy z plikiem, możemy go usunąć za pomocą funkcji removeFile, przyjmując stworzoną ścieżkę jako argument:
+Sposoby tworzenia plików tymczasowych w Haskellu mogą się różnić w zależności od używanej biblioteki lub modułu. Inne dostępne funkcje to na przykład ```createTempFile```, ```withTempFile```, czy też ```withSystemTempFile```. Istnieją również alternatywne sposoby umieszczania tymczasowych danych, takie jak korzystanie z strumieni lub innych struktur danych w Haskellu. 
 
-```Haskell
-removeFile tempFile    -- usuwa nasz tymczasowy plik
-```
+Warto wspomnieć, że plik tymczasowy może również być dostępny w pamięci RAM, a nie tylko na dysku twardym. Wówczas będziemy mówić o "plikach tymczasowych w pamięci". W Haskellu możemy to osiągnąć przy użyciu funkcji ```openTempFile```, podając ścieżkę do katalogu w pamięci.
 
-## Głębsza analiza
+Zobacz też:
 
-Tworzenie tymczasowego pliku jest szczególnie przydatne, gdy pracujemy z niektórymi typami plików, np. konfiguracyjnych, i chcemy zachować oryginalną wersję w celu ewentualnego przywrócenia go. Użycie funkcji createTempFile zapewnia nam, że nie nadpiszemy przypadkowo istniejącego pliku i nie utracimy go w procesie pracy.
-
-Dodatkowo, moduł System.IO.Temp dostarcza także inne funkcje do pracy z tymczasowymi plikami, takie jak withSystemTempFile czy withTempDirectory, które pozwalają nam wykonać operacje na pliku lub katalogu, a następnie usunąć je automatycznie po zakończeniu.
-
-## Zobacz również
-
-- [Dokumentacja modułu System.IO.Temp](https://hackage.haskell.org/package/temporary/docs/System-IO-Temp.html)
-- [Tutorial dla początkujących w języku Haskell](https://wiki.haskell.org/Tutorials/Programming_Haskell/Beginners)
+Jeśli chcesz dowiedzieć się więcej o tworzeniu plików tymczasowych w Haskellu, warto zapoznać się z dokumentacją biblioteki ```System.IO```. Możesz również przeczytać o użyciu strumieni lub innych alternatywnych sposobów przechowywania danych w Haskellu.

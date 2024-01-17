@@ -1,7 +1,7 @@
 ---
-title:                "CSV 파일을 다루는 방법"
-html_title:           "Python: CSV 파일을 다루는 방법"
-simple_title:         "CSV 파일을 다루는 방법"
+title:                "CSV 처리하기"
+html_title:           "Python: CSV 처리하기"
+simple_title:         "CSV 처리하기"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Data Formats and Serialization"
@@ -10,50 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+## 무엇 & 왜?
 
-Python 프로그래밍은 많은 기능과 유연한 사용 방식으로 인해 많은 사람들이 즐겨 사용하는 언어입니다. CSV 파일은 데이터를 쉽게 저장하고 조작할 수 있는 일반적인 파일 형식입니다. 따라서 CSV 파일을 사용해 데이터를 처리하고 가공하는 법을 배우는 것은 굉장히 유용합니다.
+CSV 파일 작업이란 무엇일까요? 이는 Comma-Separated Values의 약자로, 쉼표로 구분된 텍스트 파일을 의미합니다. 프로그래머들은 이를 사용하는 이유는 데이터를 효율적으로 저장하고 불러오기 위해서입니다.
 
-## 방법
-
-```Python
-import csv
-
-# CSV 파일 열기
-with open('data.csv', 'r') as csvfile:
-    # csv.reader를 사용해 파일을 읽고 리스트로 저장
-    reader = csv.reader(csvfile)
-    # 첫 번째 행은 헤더로, 데이터는 두 번째 행부터
-    headers = next(reader)
-    # 데이터 출력
-    for row in reader:
-        print(headers[0], row[0])
-        print(headers[1], row[1])
-```
-
-위 코드는 CSV 파일을 읽고 데이터를 출력하는 간단한 예시입니다. `csv` 모듈을 사용해 파일을 열고 `csv.reader`를 이용해 데이터를 리스트 형태로 저장합니다. 그리고 첫 번째 행은 헤더로 처리하고, 두 번째 행부터 데이터가 저장된 다음 행들을 출력합니다.
+## 방법:
 
 ```Python
 import csv
 
-# CSV 파일 열기
-with open('data.csv', 'w') as csvfile:
-    # csv.writer를 사용해 데이터를 쓸 준비
+# CSV 파일 쓰기 예제
+with open('data.csv', 'w', newline='') as csvfile:
     writer = csv.writer(csvfile)
-    # 첫 번째 행에 헤더 작성
-    writer.writerow(['이름', '성별'])
-    # 데이터 쓰기
-    writer.writerow(['이지영', '여'])
-    writer.writerow(['김진수', '남'])
+    writer.writerow(['ID', 'Name', 'Age'])
+    writer.writerow(['1', 'John', '25'])
+    writer.writerow(['2', 'Jane', '29'])
+
+# CSV 파일 읽기 예제
+with open('data.csv', newline='') as csvfile:
+    reader = csv.reader(csvfile)
+    for row in reader:
+        print(row)
+```
+출력:
+```
+['ID', 'Name', 'Age']
+['1', 'John', '25']
+['2', 'Jane', '29']
 ```
 
-위 코드는 CSV 파일을 만들고 데이터를 쓰는 예시입니다. `csv.writer`를 사용해 파일을 쓸 준비를 하고, 첫 번째 행에는 헤더를 쓰고 그 다음 행부터 데이터를 씁니다. 이렇게 작성된 코드를 실행하면 `data.csv` 파일에 데이터가 쓰여집니다.
+## 딥 다이브:
 
-## 딥 다이브
+CSV 파일은 1972년 IBM에서 개발되었습니다. 기존에는 포터블 문서를 위해 많이 사용되었지만, 지금은 데이터 저장 및 전송을 위해 널리 사용됩니다. 그 외에도 XML, JSON 등의 다른 데이터 포맷이 있지만, 간단한 데이터를 다룰 때 CSV 파일이 더 유용합니다. Python에서는 csv 모듈을 통해 쉽게 CSV 파일을 다룰 수 있습니다.
 
-CSV 파일을 처리할 때 유용한 몇 가지 기능을 살펴보겠습니다. 첫 번째로 `csv.DictReader`와 `csv.DictWriter`입니다. 이 클래스들은 각각 파일을 딕셔너리 형태로 읽고 쓰는 기능을 제공합니다. 두 번째로 `csv.writer`의 `writerows()` 메소드를 사용하면 여러 행을 한 번에 쓸 수 있습니다. 그리고 `csv` 모듈의 `dialect` 매개변수를 사용해 다양한 CSV 파일 형식을 지원할 수도 있습니다.
+## 참고:
 
-## 또 다른 정보
-
-- [파이썬 공식 문서 - csv 모듈](https://docs.python.org/3/library/csv.html)
-- [Python으로 CSV 파일 다루기](https://velog.io/@yvvyoon/python-csv-file)
+- [CSV 파일 - 위키백과](https://ko.wikipedia.org/wiki/CSV_(%ED%8C%8C%EC%9D%BC_%ED%98%95%EC%8B%9D))
+- [Python csv 모듈 - 공식 문서](https://docs.python.org/3/library/csv.html)

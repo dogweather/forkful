@@ -10,64 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-In programming, debugging is a crucial step to ensure that your code is functioning properly. One way to aid in the debugging process is by printing out specific information about the execution of your code. This can help you identify any errors or unexpected behavior.
+Printing debug output refers to displaying information about a program's execution during development. This can be useful for debugging and understanding the flow of code. Programmers do this in order to identify and fix any errors or issues in their code.
 
-## How To
+## How to:
 
-To print debug output in Swift, we can use the `print()` function. Here is an example:
+Printing debug output in Swift is simple and can be done using the `print()` function. This function takes in a variable or expression and displays its value in the debug console.
 
-```Swift
-var num1 = 10
-var num2 = 5
-print("The sum of \(num1) and \(num2) is \(num1+num2)")
-```
-
-The output of this code will be: `The sum of 10 and 5 is 15`. We can also print the values of variables by passing them into the `print()` function, like this:
+Example:
 
 ```Swift
-var name = "John"
-print(name)
+let num = 5
+print(num)
+
+// Output: 5
 ```
 
-The output of this code will be: `John`.
+You can also print multiple variables or expressions on the same line by separating them with a comma.
 
-You can also print multiple values on the same line by separating them with a comma, like this:
+Example:
 
 ```Swift
-var num1 = 10
-var num2 = 5
-print("The sum of", num1, "and", num2, "is", num1+num2)
+let name = "John"
+let age = 25
+print("My name is \(name) and I am \(age) years old.")
+
+// Output: My name is John and I am 25 years old.
 ```
 
-The output of this code will be: `The sum of 10 and 5 is 15`.
+Adding a custom string before the variable or expression can also be helpful for understanding the output.
 
-## Deep Dive
-
-The `print()` function has several optional parameters that allow us to customize the output. One of these parameters is `separator`, which allows us to specify the separator between the values being printed. By default, the separator is a single space, but we can change it to any character or string we want.
-
-For example, if we want to print the values separated by a comma, we can do this:
+Example:
 
 ```Swift
-var num1 = 10
-var num2 = 5
-print(num1, num2, separator: ",")
+let sum = 10 + 5
+print("The sum of 10 and 5 is \(sum).")
+
+// Output: The sum of 10 and 5 is 15.
 ```
 
-The output of this code will be: `10,5`.
+## Deep Dive:
 
-The `terminator` parameter allows us to specify the character or string to be printed after all values have been printed. By default, the terminator is a new line character, but we can change it to any character or string we want.
+Printing debug output has been a common practice in programming for a long time. Before the `print()` function, programmers used functions like `printf` in C and `cout` in C++ for similar purposes.
 
-```Swift
-var name = "John"
-print(name, terminator: "")
-print(" Doe")
-```
+Apart from using the `print()` function, Swift also offers a rich debugging experience with the use of breakpoints and the debug console in Xcode. Breakpoints allow you to pause the code execution at a specific point and inspect the values of variables and expressions in that moment.
 
-The output of this code will be: `John Doe`.
+There are also alternative ways to output debug information, such as using the `NSLog` function in Swift, which displays the output in the console of the device. However, this should only be used for printing important messages as it can have a negative impact on performance.
 
-## See Also
+## See Also:
 
-- [Apple's documentation on the `print()` function](https://developer.apple.com/documentation/swift/1541053-print)
-- [Debugging in Swift](https://www.ralfebert.de/ios/tutorials/xcode-debugging/)
+- [Apple's Debugging Guide for Xcode](https://developer.apple.com/library/archive/documentation/DeveloperTools/Conceptual/debugging_with_xcode/chapters/debugging_tools.html)
+- [Using print() and NSLog() for debugging in Swift](https://fluffy.es/print-nslog-debugging-in-swift/)

@@ -1,7 +1,7 @@
 ---
-title:                "Criando um arquivo de texto"
-html_title:           "Fish Shell: Criando um arquivo de texto"
-simple_title:         "Criando um arquivo de texto"
+title:                "Escrevendo um arquivo de texto"
+html_title:           "Fish Shell: Escrevendo um arquivo de texto"
+simple_title:         "Escrevendo um arquivo de texto"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Files and I/O"
@@ -10,32 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que escrever um arquivo de texto?
+## O que & Porquê?
+ Escrever um arquivo de texto é simplesmente criar um documento que contém palavras e informações que podem ser lidas e interpretadas por um computador. Programadores frequentemente escrevem arquivos de texto como parte do processo de codificação de um programa ou script.
 
-Se você está iniciando no mundo da programação em Fish Shell, é importante entender a importância de escrever um arquivo de texto. Um arquivo de texto é uma forma de armazenar e organizar informações em um formato legível pelo computador. Além disso, ao escrever um arquivo de texto, você pode facilmente compartilhar e editar seus códigos com outras pessoas.
+## Como fazer:
+Existem várias maneiras de escrever um arquivo de texto no Fish Shell. Aqui estão três exemplos da sintaxe básica e seu output correspondente:
 
-## Como fazer?
+```
+# Exemplo 1: Escrevendo um único linha no arquivo de texto "meu_arquivo.txt"
+> set conteudo "Este é um exemplo de texto."
+> echo $conteudo > meu_arquivo.txt
 
-```Fish Shell
-#!/usr/bin/fish
-# Este é um exemplo de como escrever um arquivo de texto em Fish Shell.
-# Utilize o comando `echo` para escrever uma mensagem no arquivo de texto.
-echo "Olá, mundo!" > arquivo.txt
+# Output:
+> cat meu_arquivo.txt
+Este é um exemplo de texto.
 ```
 
-```Fish Shell
-# Para visualizar o conteúdo do arquivo, basta utilizar o comando `cat`.
-cat arquivo.txt
+```
+# Exemplo 2: Escrevendo múltiplas linhas no arquivo de texto "meu_arquivo.txt"
+> set linhas "Primeira linha\nSegunda linha\nTerceira linha"
+> echo -e $linhas > meu_arquivo.txt
+
+# Output:
+> cat meu_arquivo.txt
+Primeira linha
+Segunda linha
+Terceira linha
 ```
 
-O resultado deve ser uma nova linha com a mensagem "Olá, mundo!".
+```
+# Exemplo 3: Acrescentando conteúdo em um arquivo de texto existente
+> set novo_conteudo "Quarta linha"
+> echo $novo_conteudo >> meu_arquivo.txt
 
-## Aprofundando-se
+# Output:
+> cat meu_arquivo.txt
+Primeira linha
+Segunda linha
+Terceira linha
+Quarta linha
+```
 
-Ao escrever arquivos de texto em Fish Shell, é importante lembrar que o uso de aspas duplas ("") permite que variáveis sejam interpretadas e seu respectivo valor seja inserido no arquivo. Além disso, é possível utilizar o sinal de maior que (>) para sobrescrever o conteúdo do arquivo ou o sinal de duplo maior que (>>) para adicionar conteúdo ao final do arquivo.
+## Profundidade:
+Escrever arquivos de texto é uma prática comum entre programadores desde os primórdios da programação. Alternativas ao Fish Shell incluem Bash, Zsh e outras shells de linha de comando. O comando "echo" é usado para escrever conteúdo em um arquivo de texto, enquanto o sinal ">" é usado para criar um novo arquivo ou substituir o conteúdo de um arquivo existente e ">>" é usado para acrescentar conteúdo em um arquivo existente.
 
-## Veja também
-
-- [Documentação oficial do Fish Shell](https://fishshell.com/docs/current/index.html)
-- [Guia rápido de Fish Shell](https://linuxhint.com/fish_shell_beginners_guide/)
-- [Fórum de suporte do Fish Shell](https://www.reddit.com/r/fishshell/)
+## Ver também:
+- [Documentação oficial do Fish Shell sobre o comando "echo"](https://fishshell.com/docs/current/commands.html#echo)
+- [Tutorial do Linux sobre como escrever em arquivos de texto](https://linuxconfig.org/how-to-append-to-a-text-file-using-fish-shell-in-linux)
+- [Exemplos de uso do comando "echo" no Fish Shell](https://www.cyberciti.biz/faq/bash-append-text-to-a-file/)

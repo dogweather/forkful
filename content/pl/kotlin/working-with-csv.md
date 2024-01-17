@@ -1,7 +1,7 @@
 ---
-title:                "Praca z plikami csv"
-html_title:           "Kotlin: Praca z plikami csv"
-simple_title:         "Praca z plikami csv"
+title:                "Praca z plikami CSV"
+html_title:           "Kotlin: Praca z plikami CSV"
+simple_title:         "Praca z plikami CSV"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Data Formats and Serialization"
@@ -10,65 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Czemu CSV?
+## Co i dlaczego?
 
-CSV (Comma-Separated Values) jest popularnym formatem plików używanym do przechowywania danych tabelarycznych. Dzięki prostocie i wszechstronności, jest szeroko stosowany w różnych dziedzinach, takich jak biznes, nauka czy programowanie. Praca z plikami CSV może być niezbędna w wielu projektach, dlatego warto poznać podstawy tego formatu.
+Dokąd idą programiści, gdy potrzebują przechowywać i przetwarzać duże ilości danych? Do CSV! CSV, czyli Comma Separated Values, jest formatem plików, który pozwala na przechowywanie danych w postaci tabeli, w której wartości są oddzielane przecinkami. Programiści wybierają CSV ze względu na jego prostotę i łatwość przetwarzania w programach.
 
-## Jak to zrobić?
-
-Zanim przejdziemy do kodowania, musimy zaimportować potrzebne pakiety:
+## Jak to zrobić:
 
 ```Kotlin
-import java.io.File
-import com.github.doyaaaaaken.kotlincsv.dsl.csvReader
-```
+val csvData = "Imię,Nazwisko,Wiek\n
+               Anna,Kowalska,35\n
+               Jan,Nowak,42\n
+               Marta,Wójcik,27"
+               
+val lines = csvData.lines()
+val headers = lines.first().split(",")
+val people = lines.drop(1).map { it.split(",") }
+    .map { Person(it[0], it[1], it[2].toInt()) }
 
-Teraz możemy zacząć pracę z plikiem CSV. Przykładowy plik "dane.csv" wygląda następująco:
+data class Person(val firstName: String, val lastName: String, val age: Int)
 
-```
-imie,nazwisko,wiek
-Anna,Kowalska,29
-Paweł,Nowak,36
-Marta,Nowicka,42
-```
-
-Następnie otwieramy plik i wczytujemy jego zawartość używając pakietu csvReader:
-
-```Kotlin
-val plik = File("dane.csv")
-val zawartosc = csvReader().readAllWithHeader(plik)
-```
-
-Teraz mamy dostęp do danych z pliku, możemy je wykorzystać w naszym programie. Przykładowo, aby wyświetlić imiona z naszej listy, możemy użyć pętli for:
-
-```Kotlin
-for(item in zawartosc) {
-    println(item["imie"])
+// Przykładowe użycie:
+for (person in people) {
+    println("${person.firstName} ${person.lastName} ma ${person.age} lat.")
 }
+
+// Wyjście:
+Anna Kowalska ma 35 lat.
+Jan Nowak ma 42 lat.
+Marta Wójcik ma 27 lat.
 ```
 
-Powyższy kod wyświetli:
+## Głębsze nurkowanie:
 
-```
-Anna
-Paweł
-Marta
-```
+CSV jest formatem plików używanym od lat 70., a jego popularność ciągle rośnie ze względu na jego prostotę i powszechne wykorzystanie w różnych programach. Alternatywami dla CSV są między innymi JSON i XML, jednak CSV wciąż pozostaje jednym z najczęściej wybieranych formatów do przechowywania i przesyłania danych. Implementacja CSV w języku Kotlin jest prosta i wygodna dzięki wielu narzędziom dostępnym w języku, takim jak biblioteka oparta o standardową Java API lub biblioteki oparte o narzędzie Apache Commons CSV.
 
-Możemy również zapisywać zmiany w pliku CSV, używając metody "writeAll":
+## Zobacz także:
 
-```Kotlin
-csvWriter().open("nowy_plik.csv") {
-    writeAll(zawartosc)
-}
-```
-
-## Bardziej zaawansowane informacje
-
-Kotlin oferuje również inne sposoby na pracę z plikami CSV, takie jak wykorzystanie biblioteki "kotlin-csv" czy bezpośrednie wykorzystanie klas z pakietu java.io. Możliwości jest wiele, więc warto poszukać rozwiązań, które najlepiej pasują do naszego projektu.
-
-## Zobacz również
-
-- Dokumentacja pakietu java.io: https://developer.android.com/reference/java/io/package-summary.html
-- Biblioteka "kotlin-csv": https://github.com/doyaaaaaken/kotlin-csv
-- Szybki przewodnik po formatowaniu CSV: https://www.codecademy.com/articles/what-is-csv
+- Dokumentacja biblioteki Apache Commons CSV: https://commons.apache.org/proper/commons-csv/
+- Dokumentacja Java API dotycząca obsługi CSV: https://docs.oracle.com/javase/8/docs/api/java/io/BufferedReader.html#lines--
+- Reszta jest up to you – tak właśnie działa HTML!

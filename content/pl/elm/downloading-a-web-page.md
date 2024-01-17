@@ -10,32 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Dlaczego Pobieranie Strony Internetowej w Elm Jest Tym, co Potrzebujesz
+### Co & Dlaczego?
 
-Pobieranie strony internetowej jest niezbędne dla wielu aplikacji internetowych, takich jak aplikacje do przeglądania internetu czy platformy e-commerce. W Elm, możemy to zrobić w prosty i wydajny sposób, co pozwala nam na przenoszenie kodu na wiele platform, bez konieczności stosowania dodatkowych bibliotek. 
+Pobieranie stron internetowych jest procesem pozwalającym na pobieranie informacji lub danych z określonej strony internetowej. Programiści często wykonują tę czynność, aby uzyskać dostęp do potrzebnych informacji lub zasobów, aby móc wykorzystać je w swoich projektach.
 
-## Jak to Zrobić
+### Jak to zrobić:
 
-Aby pobrać stronę internetową w Elm, musimy najpierw użyć wbudowanej funkcji `Http.get`, która pozwala na wysłanie żądania HTTP do określonego adresu URL. Następnie, musimy określić rodzaj oczekiwanej odpowiedzi, na przykład dane tekstowe czy dane w formacie JSON.
+```Elm 
+import Http
 
-```
-Elm.Http.get "https://www.example.com/" stringDecoder
-```
+Http.getString "https://wyimaginowanastrona.com" 
+    |> Task.perform (\result ->
+        case result of
+            Ok response ->
+                Debug.log "Pobrane dane:" response.body
 
-W powyższym przykładzie, funkcja `Http.get` pobiera stronę internetową pod adresem `https://www.example.com/` i używa funkcji `stringDecoder` do przetworzenia odpowiedzi na tekst.
-
-## Deep Dive
-
-W Elm, pobieranie strony internetowej odbywa się asynchronicznie, co oznacza, że nie blokuje działania programu. Aby obsłużyć otrzymaną odpowiedź, musimy użyć funkcji `Http.send` wraz z odpowiednimi handlerami.
-
-```
-Http.send responseHandler (Elm.Http.get "https://www.example.com/" stringDecoder)
+            Err error ->
+                Debug.log "Wystąpił błąd:" error
+        )
 ```
 
-W powyższym przykładzie, funkcja `Http.send` oczekuje dwóch argumentów: handlera odpowiedzi i żądania `Http.get`. Handler odpowiedzi jest funkcją, która zostanie wywołana, gdy otrzymamy odpowiedź od serwera.
+### Głębszy zanurzenie:
 
-## Zobacz także
+Pobieranie stron internetowych jest powszechnie stosowane w celu uzyskania danych do analizy lub wykorzystania w aplikacjach internetowych. Alternatywnym sposobem na pobieranie stron internetowych jest wykorzystanie narzędzi takich jak Selenium lub Puppeteer, które symulują działanie przeglądarki i umożliwiają wypełnienie formularzy lub kliknięcie na interaktywne elementy. W Elm, proces pobierania stron internetowych jest wykonywany przy pomocy komendy Http.getString. Ta funkcja zwraca Task, który może być wykonany przy użyciu funkcji Task.perform.
 
-- [Dokumentacja Elm - Pobieranie zasobów](https://package.elm-lang.org/packages/elm/http/latest/Http)
-- [Poradnik wideo - Łączenie z internetem w Elm](https://www.youtube.com/watch?v=icE78nl3RD0)
-- [Kurs wideo - Elm - Pobieranie zasobów](https://egghead.io/lessons/elm-getting-resourceful-in-elm-with-http-get-and-decode)
+### Zobacz także:
+
+- Dokumentacja Elm, https://guide.elm-lang.org/
+- Elm HTTP Package, http://package.elm-lang.org/packages/elm-lang/http/latest/

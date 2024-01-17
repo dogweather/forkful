@@ -1,7 +1,7 @@
 ---
-title:                "עובדים עם YAML."
-html_title:           "Elm: עובדים עם YAML."
-simple_title:         "עובדים עם YAML."
+title:                "עבודה עם yaml"
+html_title:           "Elm: עבודה עם yaml"
+simple_title:         "עבודה עם yaml"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Data Formats and Serialization"
@@ -10,60 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# למה
+## מה ולמה?
 
-הכתבה הזו תענה לשאלה שלך - למה להתעסק עם עבודה עם קבצי YAML באלם? או למה בכלל להשתמש בפורמט YAML? קרא ותגלה!
+עבודה עם YAML היא דרך נוחה ויעילה להיכנס לתקשורת בין שפות תכנות שונות. תוכניות מסוימות משתמשות בפורמט זה כדי להתאים בין פלטפורמות שונות או לתכנן תצוגות שונות לאזורים שונים. זה נפוץ במיוחד ב JavaScript והשתתפות ו הפרימטיבים.
 
-# איך לעבוד עם YAML ב-Elm
+## איך לעשות?
 
-קוד ה- Elm מדהים וקל לקריאה, אבל ככל שפרק זמן עובר יש שליפותים של נתונים שעלינו לעבוד ולנהל מחויבת. YAML הוא פורמט פופולרי עבור שפות תיבת הכלים ומתבקש לעבוד איתו ב- Elm. במאמר הזה נראה כיצד לגשת לנתונים הממומות ב-YAML ישירות מתוך קוד ה- Elm.
+כדי לעבוד עם YAML ב־ Elm, ניתן להשתמש בחבילת קוד פתוח YAML שנקראת [`urtela/elm-yaml`](https://package.elm-lang.org/packages/urtela/elm-yaml/latest/). כדי להתחיל, נדרוש לייבא את החבילה:
 
-בואו נתחיל עם דוגמא פשוטה של קובץ YAML כדי להתחיל את התחביר היסודי שלו:
-
-```Elm
-users:
-- name: John
-  age: 25
-- name: Sarah
-  age: 30
-- name: Bob
-  age: 40
+```elm
+import YAML exposing (..)
 ```
 
-עכשיו, ניתן לגשת לנתונים האלה מתוך קוד ה- Elm על ידי שימוש בפונקציות של מיפוי (mapping) ורדוקציה (reducing). למשל, אם אנחנו רוצים לקרוא את כל השמות של המשתמשים, נצטרך לכתוב קוד כזה:
+כעת, ניתן להשתמש בפונקציות כמו `decode` לקריאת תצורת YAML שמכילה תבניות שונות והמרתה לפורמט מבנים.
 
-```Elm
-import YAML exposing (readString)
-import Result exposing (map, withDefault)
-
-getYAML : String -> Result String YAML.Value
-getYAML yamlString =
-    readString yamlString
-        |> map .1
-
-yamlToString : String -> String -> Result String String
-yamlToString dataPath mainField =
-  case getYAML dataPath of
-    Ok yaml ->
-      withDefault "No data" <| access (mainField |> String.split ".") yaml .|
-
-    Err err ->
-      Err err
-
-mainField : String
-mainField = "users"
-
-main : Html.Html Msg
-main =
-  let
-    users =
-      yamlToString "data.yml" mainField
-   in
-    div [] [ text users ]
+```elm
+decode """
+  language: Elm
+  version: "0.19"
+  date_created: "2020-01-01"
+"""
 ```
 
-כאן, אנו מדפיסים את כל שמות המשתמשים מתוך קובץ YAML לתוך תיבת ה HTML שלנו.
+פלט:
 
-# ייעול כלים
+```elm
+Ok (Dict.fromList [("language", "Elm"), ("version", "0.19"), ("date_created", "2020-01-01")])
+```
 
-כעת שאנחנו כבר משתמשים בפורמט YAML בקוד ה- Elm שלנו, אנחנו יכולים להשתמש בכלים נוספים כדי להקל עלינו את העבודה. למשל, כדי להימנע מטיפול ידני בנתונים, ניתן להשתמש בספריית [elm-yaml-decode](https://package.elm-lang.org
+בנוסף, ניתן להשתמש בפונקציות נוספות כמו `encode` להמרת פורמט מבנים לתצורת YAML, וגם לקרוא ולכתוב קבצי YAML חיצוניים.
+
+## חפירה עמוקה
+
+היסטורית מקור פורמט ה־YAML תחתום בשנת 2001 על ידי Clark Evans. פורמט זה תוכנן כדי להמיר פורמט אחר בשם `YAML Ain't Markup Language`. ישנן אלטרנטיבות אחרות לפורמט זה כמו JSON ו־ XML, אך YAML נחשב לפשוט יותר לקריאה ולכתיבה וכן קל יותר להבין מאשר פורמטים אחרים.
+
+כדי להשתמש בחבילת `elm-yaml`, נדרש להתקין את הגרסה המתאימה ל־ Elm. ניתן למצוא את החבילה וגם דוגמאות נוספות בכתובת [`https://package.elm-lang.org/packages/urtela/elm-yaml/latest/`](https://package.elm-lang.org/packages/urtela/elm-yaml/latest/).
+
+## ראה גם
+
+* [`https://www.yaml.info/`](https://www.yaml.info/) - אתר YAML הרשמי עם מידע נוסף ורשימת כל החבילות הקיימות לשפות תכנות שונות.
+* [`https://github.com/elm/compiler/tree/master/hints/0097-yaml-basics`](https://github.com/elm/compiler/tree/master/hints/0097-yaml-basics) - מדריך רשמי על פורמט ה־YAML ואיך לעבוד איתו בתוך קוד Elm.

@@ -1,7 +1,7 @@
 ---
-title:                "Konwersja ciągu znaków na małe litery"
-html_title:           "Java: Konwersja ciągu znaków na małe litery"
-simple_title:         "Konwersja ciągu znaków na małe litery"
+title:                "Konwersja ciągu znaków do małych liter"
+html_title:           "Java: Konwersja ciągu znaków do małych liter"
+simple_title:         "Konwersja ciągu znaków do małych liter"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Strings"
@@ -10,54 +10,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i dlaczego?
+Konwersja ciągu znaków na małe litery to proces zamiany wszystkich znaków w ciągu na ich odpowiedniki w małych literach. Programiści często wykonują tę operację, ponieważ ułatwia ona porównywanie i grupowanie tekstu bez względu na wielkość liter.
 
-Konwersja ciągu znaków na małe litery jest ważnym aspektem programowania w języku Java. Pozwala ona na porównywanie i analizowanie tekstu bez uwzględniania wielkości liter, co jest niezbędne w wielu przypadkach.
-
-## Jak to zrobić
-
-Przede wszystkim musimy zapewnić, że nasz kod będzie miał dostęp do klasy String, która zawiera metody do manipulowania tekstem. Następnie, możemy użyć metody `toLowerCase()` na naszym ciągu znaków, aby dokonać konwersji. Przykładowy kod poniżej:
-
+## Jak to zrobić:
 ```java
-String text = "HELLO WORLD";
+String text = "TEkST Do KoNWoErsji";
 System.out.println(text.toLowerCase());
 ```
+Wynik: "tekst do konwersji"
 
-To spowoduje, że na ekranie zostanie wyświetlony ciąg znaków "hello world". 
+## Głębsze zagłębienie:
+1. Kontekst historyczny: Konwersja na małe litery jest powszechnie stosowana w językach programowania od początku istnienia informatyki. Kiedyś znaki były przechowywane w komputerze jako liczby, a konwersja na małe litery ułatwiała porównywanie i manipulację ciągami znaków.
 
-Jeśli chcemy przeprowadzić konwersję na obiekcie typu String, możemy użyć metody `toLowerCase()` na zmiennej tego typu:
+2. Alternatywy: Istnieje kilka sposobów na dokonanie konwersji na małe litery, m.in. użycie metody `toLowerCase()` z klasy `String`, użycie metody `toLowerCase()` z klasy `Character` lub użycie pętli `for` i funkcji `toLowerCase()` z klasy `String`.
 
-```java
-String text = "HELLO WORLD";
-String lowercaseText = text.toLowerCase();
-```
+3. Szczegóły implementacji: W języku Java istnieje kilka metod konwertujących ciąg na małe litery, jednak korzystanie z metod klasy `String` jest zalecane ze względu na wygodę i czytelność kodu. Wewnętrznie metoda `toLowerCase()` wykorzystuje tabelę mapowania znaków na ich odpowiedniki w małych literach.
 
-W powyższym przykładzie, zmienna `lowercaseText` będzie zawierać ciąg znaków "hello world". 
-
-## Głębsze wyjaśnienie
-
-W języku Java istnieją dwa sposoby na konwersję ciągu znaków na małe litery. Możemy użyć metody `toLowerCase()`, która zwraca nowy obiekt typu String zawierający wynik konwersji. Lub, możemy użyć metody `toCharArray()`, która zwraca tablicę typu char zawierającą wynik konwersji. Przykładowy kod poniżej:
-
-```java
-String text = "HELLO WORLD";
-
-// metoda toLowerCase()
-String lowercaseText = text.toLowerCase();
-System.out.println(lowercaseText);
-
-// metoda toCharArray()
-char[] charArray = text.toCharArray();
-for (char c : charArray) {
-    if (c >= 'A' && c <= 'Z') {
-        c += 32; // dodajemy 32 do kodu ASCII znaku, aby zmienić go na właściwą małą literę
-    }
-    System.out.print(c);
-}
-```
-
-W powyższym przykładzie, wykorzystaliśmy fakt, że w ASCII, duże litery mają wyższe kody niż małe litery. Dlatego, dodając 32 do kodu ASCII znaku, zmieniamy go na odpowiednią małą literę. 
-
-## Zobacz też
-
-- [Dokumentacja Java String](https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/lang/String.html)
-- [Ciągi znaków w języku Java](https://www.geeksforgeeks.org/java-string/)
+## Zobacz także:
+- [Dokumentacja Javy - metoda toLowerCase()](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#toLowerCase())
+- [Tutorialspoint - Java Basic - String toLowerCase()](https://www.tutorialspoint.com/java/java_string_tolowercase.htm)
+- [HowToDoInJava - Java String toLowerCase and toUpperCase methods](https://howtodoinjava.com/java/string/tolowercase-touppercase/)

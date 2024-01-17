@@ -10,44 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que imprimir saída de depuração?
+## O que e por que?
 
-Você está programando em Fish Shell e provavelmente se deparou com a necessidade de depurar seu código em algum momento. Imprimir saída de depuração é uma maneira rápida e eficaz de identificar e corrigir erros em seu código.
+Debug é uma técnica usada por programadores para verificar e corrigir erros em seus códigos. Ao imprimir saídas de debug, os programadores podem visualizar informações importantes sobre variáveis, fluxo de execução e lógica de seus códigos. Isso permite uma depuração mais eficiente e eficaz do código.
 
-## Como fazer
+## Como fazer:
 
-O Fish Shell possui uma função integrada chamada `echo` que pode ser utilizada para imprimir saída de depuração. Veja um exemplo abaixo:
+O Fish Shell oferece uma variedade de maneiras de imprimir saídas de debug. Aqui estão alguns exemplos:
 
-```
-Fish Shell 3.1.2
-~> set variavel "Olá, mundo!"
+Dentro do código Fish Shell `` ` `
+`` `fish
+set variavel "valor"
+debug variavel
+`` `
+Saída:
+Variável: valor
 
-# Imprime a variável "variavel"
-~> echo $variavel
+É possível imprimir informações adicionais usando o comando `echo` seguido de uma variável, por exemplo:
 
-Olá, mundo!
-```
+Dentro do código Fish Shell `` ` `
+`` `fish
+set var1 "Hello "
+set var2 "World"
+echo $var1$var2
+`` `
+Saída:
+Olá Mundo
 
-Você também pode usar a opção `-n` junto com o `echo` para evitar a quebra de linha ao final da saída. Isso pode ser útil em certos casos, como quando você precisa imprimir várias linhas de saída em uma única linha. Veja um exemplo:
+Também é possível imprimir o valor de uma variável em um formato específico, como `tabela` ou `json`, usando o sinal de igual (=) após o nome da variável seguido do formato desejado:
 
-```
-Fish Shell 3.1.2
-~> set linha1 "Isso é uma"
-~> set linha2 "única linha"
+Dentro do código Fish Shell `` ` `
+`` `fish
+set variavel "valor"
+debug variavel = tabela
+`` `
+Saída:
+Variável = (valor)
 
-# Imprime as duas variáveis em uma única linha
-~> echo -n $linha1 $linha2
+## Mergulho profundo:
 
-Isso é uma única linha
-```
+A impressão de saída de debug é uma técnica amplamente utilizada em programação, e remonta aos primeiros dias da computação. Antes dos computadores modernos e das ferramentas avançadas de depuração, os programadores costumavam imprimir mensagens de texto simples como saída de debug para detectar erros em seus códigos.
 
-## Mais detalhes sobre a impressão de saída de depuração
+Além disso, existem outras alternativas para imprimir saídas de debug, como o uso de um depurador, que permite que os programadores acompanhem seu código passo a passo e visualizem informações sobre suas variáveis em tempo real.
 
-Ao imprimir saída de depuração, é importante ter em mente que ela deve ser usada apenas para fins de depuração e não deve ser incluída no código final. Isso garantirá que seu código permaneça limpo e conciso.
+O Fish Shell também oferece a opção de desativar a impressão de saída de debug usando o comando `set -q DEBUG_OUTPUT` e definindo o valor para `0`. Isso pode ser útil para remover a desordem de saída de debug em código mais complexo.
 
-Além disso, é possível redirecionar saídas de depuração para um arquivo de log, utilizando o operador `>` ou `>>`. Isso pode ser útil quando se depura um código em uma aplicação que não possui suporte para a exibição de saída de depuração.
+## Veja também:
 
-## Veja também
-
-- Documentação oficial da Fish Shell para a função `echo`: https://fishshell.com/docs/current/commands.html#echo
-- Artigo sobre técnicas de depuração: https://medium.com/@isaaclyman/debugging-in-the-fish-shell-c0f4e8dd3219
+Para saber mais sobre como usar e aproveitar ao máximo as funcionalidades de debug do Fish Shell, confira a documentação oficial em https://fishshell.com/docs/current/commands.html#printing-debug-output.

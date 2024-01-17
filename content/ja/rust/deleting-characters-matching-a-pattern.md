@@ -1,7 +1,7 @@
 ---
-title:                "文字のパターンに一致する文字を削除する"
-html_title:           "Rust: 文字のパターンに一致する文字を削除する"
-simple_title:         "文字のパターンに一致する文字を削除する"
+title:                "「パターンにマッチする文字を削除する」"
+html_title:           "Rust: 「パターンにマッチする文字を削除する」"
+simple_title:         "「パターンにマッチする文字を削除する」"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -10,53 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+## 何 & なぜ？
+「パターンにマッチする文字を削除する」とは、文字列内の特定のパターンに一致する文字を削除することを指します。プログラマーがこれを行う理由は、処理の高速化やデータの整理を目的とすることが多いです。
 
-あなたは何かの文字列から特定のパターンにマッチする文字を削除したい場合、効率的かつ正確な方法が必要になるでしょう。Rustの機能を使えば、簡単にそのような処理が行えます。
+## 方法：
+以下のように、「Rust ...」のコードブロック内にコーディングの例や出力サンプルを記載します。
 
-## 使い方
+```Rust
+let string = "Hello World!"; // 元の文字列
+let pattern = "llo"; // 削除するパターン
 
-### パターンにマッチする文字を削除する
+// 文字列からパターンに一致する文字を削除
+let new_string = string.replace(pattern, "");
 
-文字列から特定の文字パターンにマッチする文字を削除するには、正規表現を使用します。Rustには`regex`クレートがあり、それを使用することで簡単にパターンにマッチする文字を削除することができます。
-
-```
-Rust
-use regex::Regex;
-
-let input = "This is a 1234 test string 5678";
-let re = Regex::new("\\d").unwrap(); // 数字にマッチする正規表現を作成
-let output = re.replace_all(input, ""); // パターンにマッチする文字を空文字に置換
-println!(output); // "This is a test string"
-
+println!("{}", new_string); // "He World!"が出力される
 ```
 
-このように、`regex`クレートのメソッド`.replace_all()`を使用することで、簡単に文字列からパターンにマッチする文字を削除することができます。
+## 深堀り：
+このようなパターンにマッチする文字を削除する技術は、古くから存在していました。現在でも他の言語でも同様の機能を提供していますが、Rustは高速で安全な実行が可能です。また、より複雑なパターンに対応するための正規表現や、条件に合致する全ての文字を一度に削除することができる機能もあります。
 
-### 特定の文字を削除しないようにする
-
-もし、特定の文字を削除しないようにしたい場合は、マッチする文字を置換する文字列を指定すれば良いです。例えば、数字を削除せずに空白に置換する場合、以下のように書き換えることができます。
-
-```
-Rust
-use regex::Regex;
-
-let input = "This is a 1234 test string 5678";
-let re = Regex::new("\\d").unwrap(); // 数字にマッチする正規表現を作成
-let output = re.replace_all(input, " "); // パターンにマッチする文字を空白に置換
-println!(output); // "This is a   test string"
-
-```
-
-このように、`.replace_all()`の第2引数に置換したい文字列を指定することで、特定の文字を削除しないようにすることができます。
-
-## ディープダイブ
-
-上記のコードでは、`.replace_all()`メソッドを使用しましたが、実際は`.replace()`メソッドを使用しても同じ結果が得られます。`.replace_all()`メソッドは全てのマッチする箇所を置換するのに対して、`.replace()`メソッドは最初のマッチする箇所のみを置換します。
-
-また、正規表現に関する詳細な情報や、`regex`クレートの他の便利な機能についても学ぶことができます。詳しくは、[公式ドキュメント](https://docs.rs/regex/latest/regex/)や[チュートリアル](https://docs.rs/regex/1.4.3/regex/#quick-start)を参照してください。
-
-## See Also
-
-- [Regex Cheat Sheet](https://cheatography.com/davechild/cheat-sheets/regular-expressions/) - 正規表現の基本的なパターンや構文をまとめたチートシートです。
-- [Rust Regex Playground](https://play.rust-lang.org/?version=stable&mode=debug&edition=2018&gist=d76c6e4b2c4c8c1f1491b1a7eb00c2d6) - 上記で使用したコードを実際に動かすことができるオンラインのプレイグラウンドです。
+## 関連情報：
+ * [Rustの文字列操作に関する公式ドキュメント](https://doc.rust-lang.org/std/string/struct.String.html#method.replace)
+ * [正規表現の基礎](https://www.atmarkit.co.jp/ait/articles/2011/25/news137.html)
+ * [Rust以外の言語での文字列操作の比較](https://qiita.com/takl/items/986c041c6425e8b47c30)

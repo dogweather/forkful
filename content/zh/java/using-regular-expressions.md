@@ -10,45 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么要使用正则表达式
+## 什么是正则表达式？为什么程序员要使用它？
 
-正则表达式是一种强大的工具，可以让你在处理文本时更加高效。使用正则表达式可以轻松地在文本中查找和匹配特定模式的字符，从而节省大量的时间和精力。
+正则表达式是一种在编程中常用的文本匹配工具。它可以帮助程序员快速地找到和处理文本中的特定模式，比如电话号码、电子邮箱、文档中的关键字等等。程序员使用正则表达式可以节省大量的时间和精力，同时也提高了代码的整洁性和可维护性。
 
-## 如何使用正则表达式
+## 如何使用正则表达式？
 
-首先，我们需要导入Java中内置的正则表达式库：
-```Java
-import java.util.regex.*;
-```
-接下来，我们可以使用“Pattern”和“Matcher”类来创建和匹配正则表达式：
-```Java
-String text = "Hello 世界!"; //原始文本
-String pattern = "(\\w+)\\s(\\w+)"; //正则表达式，匹配文本中的两个单词
-Pattern p = Pattern.compile(pattern); //创建Pattern对象，将正则表达式编译
-Matcher m = p.matcher(text); //使用正则表达式匹配文本
-if(m.find()){ //判断是否匹配成功
-  System.out.println("匹配结果："+m.group(1)); //输出第一个单词
-  System.out.println("匹配结果："+m.group(2)); //输出第二个单词
+下面是一个例子，展示了如何用正则表达式在一个文本中查找所有的电子邮箱地址，并将其存储在一个字符串数组中：
+
+```java
+String text = "Please send the completed form to john@example.com or jane@example.com";
+
+//使用正则表达式查找所有的电子邮箱地址
+String regex = "[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,3}"; 
+Pattern pattern = Pattern.compile(regex);
+Matcher matcher = pattern.matcher(text);
+
+//将匹配的结果存储在字符串数组中
+List<String> emails = new ArrayList<>();
+while (matcher.find()) {
+    emails.add(matcher.group());
+}
+
+//输出结果
+System.out.println("匹配到的电子邮箱地址：");
+for (String email : emails) {
+    System.out.println(email);
 }
 ```
+
 输出结果：
 ```
-匹配结果：Hello
-匹配结果：世界
+匹配到的电子邮箱地址：
+john@example.com
+jane@example.com
 ```
-这里我们使用了“\\w+”来匹配一个或多个连续的字母、数字或下划线，对应的匹配结果会保存到“group”中。除此之外，正则表达式还有很多其他功能，如匹配特定的字符、搜寻重复字符、替换文本等等，可以根据需要进行学习和使用。
 
 ## 深入了解正则表达式
 
-正则表达式的语法非常庞大，可以满足各种各样的需求。在实际的开发中，我们常常需要借助一些网站或工具来生成和测试正则表达式，比如[Regex101](https://regex101.com/)和[Regexr](https://regexr.com/)等。同时，正则表达式的运行效率也是需要考虑的因素，因此在使用时需要注意优化和选择合适的表达式。
+正则表达式最早由Unix操作系统发明，用于文本搜索和替换。它是一个强大的工具，但也有一些替代方案，比如字符串函数和搜索库。在Java中，我们使用Java自带的java.util.regex包来实现正则表达式功能。除了基本的文本匹配，正则表达式还可以实现更复杂的匹配，比如捕获组、非贪婪匹配等等。
 
-## 推荐阅读
+## 更多资源
 
-- [Java 正则表达式教程](https://www.runoob.com/java/java-regular-expressions.html)
-- [正则表达式30分钟入门教程](https://deerchao.cn/tutorials/regex/regex.htm)
-- [正则表达式语法速查表](https://www.rexegg.com/regex-quickstart.html)
+想要了解更多关于正则表达式的知识，可以参考以下资源：
 
-## 参考资料
-
-- [Java官方文档 - 正则表达式](https://docs.oracle.com/javase/8/docs/api/java/util/regex/package-summary.html)
-- [阮一峰的网络日志 - 正则表达式入门教程](http://www.ruanyifeng.com/blog/2009/06/regex.html)
+- [Java正则表达式教程](https://docs.oracle.com/javase/tutorial/essential/regex/)
+- [正则表达式在线测试工具](https://regexr.com/)
+- [正则表达式语法参考](https://www.rexegg.com/regex-quickstart.html)

@@ -1,7 +1,7 @@
 ---
-title:                "Enviando uma solicitação http com autenticação básica"
-html_title:           "Swift: Enviando uma solicitação http com autenticação básica"
-simple_title:         "Enviando uma solicitação http com autenticação básica"
+title:                "Enviando uma requisição http com autenticação básica"
+html_title:           "Swift: Enviando uma requisição http com autenticação básica"
+simple_title:         "Enviando uma requisição http com autenticação básica"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "HTML and the Web"
@@ -10,43 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
-Você provavelmente está se perguntando por que alguém se importaria em enviar uma solicitação HTTP com autenticação básica. Bem, este é um método comum e seguro para se autenticar em um servidor e acessar informações protegidas por um nome de usuário e senha.
+## O que e por que?
 
-## Como
-Para enviar uma solicitação HTTP com autenticação básica em Swift, você precisará usar o `URLSession` e o `URLRequest`, além de adicionar as credenciais de autenticação no cabeçalho da solicitação. Confira o exemplo abaixo:
+Enviar uma solicitação HTTP com autenticação básica é uma forma de garantir que o acesso a certas informações ou recursos esteja restrito apenas àqueles que possuem as credenciais corretas. Programadores utilizam esse método para proteger suas APIs e serviços web de acessos não autorizados.
+
+## Como fazer:
 
 ``` Swift
-if let url = URL(string: "exemplo.com") {
-    var request = URLRequest(url: url)
-    let username = "seunome"
-    let password = "suasenha"
-    let loginString = "\(username):\(password)"
-    let loginData = loginString.data(using: .utf8)
-    guard let base64LoginString = loginData?.base64EncodedString() else { return }
+// Crie uma instância da URL com a URL da API
+let url = URL(string: "https://exemplo.com/api")!
 
-    request.setValue("Basic \(base64LoginString)", forHTTPHeaderField: "Authorization")
+// Crie uma solicitação HTTP com autenticação básica
+var request = URLRequest(url: url)
+request.httpMethod = "GET"
 
-    let task = URLSession.shared.dataTask(with: request) { data, response, error in
-        guard let data = data,
-            let response = response as? HTTPURLResponse,
-            error == nil else { return }
-        
-        if response.statusCode == 200 {
-            // Sucesso! Você está autenticado e pode acessar as informações protegidas.
-            print(data)
-        } else {
-            // Houve algum erro na autenticação. Verifique suas credenciais ou tente novamente mais tarde.
-        }
-    }
+// Crie as credenciais de acesso
+let username = "usuário"
+let password = "senha"
+let loginString = String(format: "%@:%@", username, password)
+let loginData = loginString.data(using: String.Encoding.utf8)!
+let base64LoginString = loginData.base64EncodedString()
 
-    task.resume()
+// Adicione o cabeçalho de autenticação à solicitação
+let authString = "Basic \(base64LoginString)"
+request.addValue(authString, forHTTPHeaderField: "Authorization")
+
+// Inicie a sessão de URL e envie a solicitação
+let session = URLSession.shared
+let task = session.dataTask(with: request) { data, response, error in
+    // Manipule a resposta ou o erro aqui
 }
+task.resume()
 ```
 
-## Deep Dive
-A autenticação básica é um método de autenticação que envolve o envio de um nome de usuário e senha no cabeçalho da solicitação HTTP. Essas credenciais são codificadas em base64 antes de serem enviadas, o que as torna mais seguras do que simplesmente passar o nome de usuário e senha em texto simples.
+## Detalhes adicionais:
 
-## Veja também
-- [Documentação oficial da Apple sobre `URLSession`](https://developer.apple.com/documentation/foundation/urlsession)
-- [Explicação detalhada da autenticação básica](https://pt.wikipedia.org/wiki/Basic_access_authentication)
+Autenticação básica é um método de autenticação que foi especificado na RFC 2617. É amplamente utilizado na web e é um dos métodos mais simples e fáceis de implementar. Outras alternativas incluem OAuth e JWT, que oferecem mais recursos e segurança.
+
+Ao enviar uma solicitação HTTP com autenticação básica, as credenciais de login são codificadas em string e adicionadas ao cabeçalho da solicitação. É importante notar que, apesar do nome "básico", esse método não é recomendado para uso em ambientes de produção, pois as credenciais são enviadas em texto simples e podem ser facilmente interceptadas. Portanto, é sempre recomendado utilizar protocolos de segurança mais avançados para proteger APIs e serviços web.
+
+## Veja também:
+
+- [RFC 2617](https://tools.ietf.org/html/rfc2617)
+- [Autenticação basic in Swift](https://developer.apple.com/documentation/foundation/url_loading_system/additional_authentication_schemes/basic_authentication_in_swift)

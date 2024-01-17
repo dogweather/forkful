@@ -10,29 +10,21 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Warum
+## Was & Warum?
+Die Länge eines Strings ist die Anzahl der Zeichen, aus denen er besteht. Programmierer müssen oft die Länge eines Strings herausfinden, um beispielsweise die korrekte Speicherzuweisung oder die richtige Verarbeitung von Eingaben zu gewährleisten.
 
-Die Länge eines Strings zu bestimmen, kann für viele Programmieraufgaben von großer Bedeutung sein. Zum Beispiel könnte es erforderlich sein, die Eingaben eines Benutzers auf eine bestimmte Anzahl von Zeichen zu begrenzen oder die Länge eines Passworts zu überprüfen. In diesem Artikel werden wir uns ansehen, wie man mit Gleam einfach die Länge eines Strings herausfinden kann.
-
-# Wie geht's
-
-Um die Länge eines Strings in Gleam zu bestimmen, können wir die built-in Funktion `String.length` nutzen. Diese Funktion nimmt als Argument einen String entgegen und gibt die Anzahl der Zeichen in diesem String als Integer zurück. Schauen wir uns ein Beispiel an:
+## Wie geht's?
+Um die Länge eines Strings in Gleam zu finden, können wir die eingebaute Funktion `String.len` verwenden. Hier ist ein Beispielcode, der die Länge eines Strings mithilfe dieser Funktion ausgibt:
 
 ```Gleam
-mein_string = "Hallo Welt!"
-länge = String.length(mein_string)
+let string = "Hallo, Welt!"
+let length = String.len(string)
 ```
 
-Hier haben wir zuerst einen String mit dem Inhalt "Hallo Welt!" in der Variable `mein_string` gespeichert. Dann nutzen wir die `String.length` Funktion, um die Länge des Strings zu bestimmen und das Ergebnis in der Variable `länge` zu speichern. Wenn wir nun den Wert von `länge` ausgeben, sehen wir, dass er 11 ist, da der String 11 Zeichen hat.
+Die Variable `length` enthält nun die Zahl 13, da das Wort "Hallo, Welt!" 13 Zeichen lang ist.
 
-# Deep Dive
+## Tiefer Einblick
+Die Idee, die Länge eines Strings zu finden, stammt aus einer Zeit, in der Computer noch nicht so leistungsfähig waren wie heute. Damals mussten Programmierer sorgfältig Ressourcen verwalten, um die effizientesten Programme zu schreiben. Heutzutage ist die Nutzung integrierter Funktionen wie `String.len` die bevorzugte Methode, um die Länge eines Strings zu finden. Eine alternative Möglichkeit ist die Verwendung von Schleifen mit der Zählung der Zeichen, die jedoch weniger effizient ist.
 
-Wenn wir uns den Code der `String.length` Funktion genauer anschauen, sehen wir, dass sie tatsächlich nur ein Wrapper um die eingebaute Funktion `erlang:length` ist. Dies bedeutet, dass Gleam Strings effizient und schnell verarbeitet, da Erlang eine eingebaute Funktion zum Zählen von Elementen in Listen hat.
-
-Ein wichtiger Punkt hier ist, dass die `String.length` Funktion die Länge des Strings in Charakteren und nicht in Bytes bestimmt. Dies ist wichtig, da einige Sonderzeichen in Unicode mehr als ein Byte belegen können und diese dann als ein Zeichen betrachtet werden. Gleam behandelt Unicode-Zeichen daher anders als die meisten anderen Sprachen und garantiert, dass die Länge eines Strings in Gleam immer der tatsächlichen Anzahl von Zeichen entspricht.
-
-# Siehe auch
-
-- [Die Gleam Standard Library](https://gleam.run/libraries/)
-- [Die Gleam String Dokumentation](https://gleam.run/docs/strings/)
-- [Der Gleam String Quellcode](https://github.com/gleam-lang/gleam_stdlib/blob/main/core/string.gleam)
+## Siehe auch
+Weitere Informationen zu Strings und deren Verarbeitung finden Sie in der offiziellen Gleam-Dokumentation unter [String functions](https://gleam.run/documentation/stdlib/String.html#functions).

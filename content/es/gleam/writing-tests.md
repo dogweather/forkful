@@ -10,31 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué escribir pruebas en Gleam?
+¿Qué es y por qué se hace la escritura de pruebas?
+Escribir pruebas es un proceso en el que los programadores escriben código adicional para verificar si sus programas funcionan correctamente. Este proceso se realiza para garantizar que los cambios o modificaciones en el código no rompan la funcionalidad existente. Los programadores hacen esto para asegurarse de que sus programas son confiables y funcionan correctamente.
 
-Escribir pruebas en Gleam es una forma eficiente de verificar el correcto funcionamiento de nuestro código. Nos permite encontrar errores y realizar modificaciones de forma rápida y sencilla, asegurándonos de que nuestro código esté lo más libre de errores posible.
-
-## Cómo escribir pruebas en Gleam
-
-Escribir pruebas en Gleam es sencillo y no requiere demasiado esfuerzo. A continuación, se mostrará un ejemplo básico de una prueba en Gleam:
-
+Cómo hacerlo:
 ```Gleam
+//Escribiendo una prueba básica
 test "Suma de dos números" {
-  expect(Number.add(2, 3)) == 5
+  assert.equal(2 + 2, 4)
 }
 ```
 
-En este ejemplo, estamos probando la función `Number.add` para asegurarnos de que su resultado sea igual a 5 cuando se le pasan los valores 2 y 3 como argumentos. Para ejecutar esta prueba, simplemente debemos utilizar el comando `gleam test` en la terminal y veremos el resultado en la consola.
+```Gleam
+//Ejemplo de una prueba que falla
+test "División por cero" {
+  assert.equal(10 / 0, 5)
+}
+//Salida: La prueba falló debido a una división por cero.
+```
 
-Otro aspecto importante al escribir pruebas en Gleam es utilizar el módulo `gleam/assert` para realizar nuestras afirmaciones. Este módulo nos proporciona funciones como `expect` y `assert` que nos permiten comparar valores y verificar si se cumplen nuestras condiciones.
+```Gleam
+//Uso de "assert.not_equal" para probar si dos valores no son iguales
+test "Valores no iguales" {
+  assert.not_equal(3, 4)
+}
+```
 
-## Profundizando en la escritura de pruebas en Gleam
+Más información:
+La escritura de pruebas se ha vuelto cada vez más importante en la programación moderna debido al aumento de la complejidad del código. Otro enfoque para garantizar la calidad del código es la revisión manual por parte de otros programadores, pero esto puede ser muy lento y propenso a errores. La escritura de pruebas automatizadas ayuda a detectar cualquier problema en el código de manera rápida y eficiente.
 
-Escribir pruebas en Gleam no solo nos permite verificar el correcto funcionamiento de nuestro código, sino que también nos ayuda a mantenerlo organizado y documentado. Al escribir pruebas, estamos obligados a pensar en todas las posibles situaciones y a documentar nuestro código para que sea más legible y comprensible.
-
-Además, Gleam utiliza un enfoque de programación funcional, lo que significa que nuestras pruebas deben ser puras, es decir, no deben tener efectos secundarios y su resultado debe ser siempre el mismo para los mismos argumentos. Esto nos obliga a escribir código más limpio y fácil de probar.
-
-## Ver también
-
-- [Documentación de pruebas en Gleam](https://gleam.run/book/intro.html#testing)
-- [Escribiendo pruebas en Gleam](https://bloggleam.com/writing-tests-in-gleam/) (en inglés)
+Véase también:
+- Documentación oficial de Gleam sobre escritura de pruebas: https://gleam.run/book/testing.html
+- Pruebas unitarias vs pruebas de integración: https://blog.testlodge.com/unit-testing-vs-integration-testing/
+- Principales marcos de prueba para programadores de Gleam: https://medium.com/@taylorwrogers/7-testing-frameworks-for-gleam-programmers-6099f5b10542

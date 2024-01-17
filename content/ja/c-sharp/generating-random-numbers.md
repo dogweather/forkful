@@ -1,7 +1,7 @@
 ---
-title:                "乱数の生成"
-html_title:           "C#: 乱数の生成"
-simple_title:         "乱数の生成"
+title:                "「ランダム数字の生成」"
+html_title:           "C#: 「ランダム数字の生成」"
+simple_title:         "「ランダム数字の生成」"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Numbers"
@@ -10,53 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+## 何をするのか & なぜ?: 
+ランダムな数値を生成するとは何か、そしてなぜプログラマーがそれを行うのかを説明します。
 
-ランダムな数字を生成することの利点はたくさんあります。ゲームやシミュレーション、暗号学などのさまざまな分野で使用されます。 
-
-## 使い方
+## 方法: 
+下記は、C#でランダムな数値を生成する方法の例と、その出力結果を```C# ...```のコードブロックで示します。
 
 ```C#
-// 1から10までのランダムな整数を生成する
-int num = new Random().Next(1, 11);
-Console.WriteLine(num);
-// Output: 7
+// ランダムな整数を生成する方法
+Random rnd = new Random();
+int randomNumber = rnd.Next();
 
-// 0から1未満のランダムな小数を生成する
-double decimal = new Random().NextDouble();
-Console.WriteLine(decimal);
-// Output: 0.562914183
-
-// ランダムな文字列を生成する
-// ASCII文字の範囲内から10文字をランダムに選択して生成する
-char[] chars = "abcdefghijklmnopqrstuvwxyz0123456789".ToCharArray();
-Random random = new Random();
-string str = "";
-for (int i = 0; i < 10; i++)
-{
-    int index = random.Next(0, chars.Length);
-    str += chars[index];
-}
-Console.WriteLine(str);
-// Output: rcv80wup7z
-
-// ランダムな整数の配列を生成する
-int[] nums = new int[5];
-Random rand = new Random();
-for (int i = 0; i < nums.Length; i++)
-{
-    nums[i] = rand.Next(1, 101);
-}
-Console.WriteLine(string.Join(", ", nums));
-// Output: 64, 32, 91, 10, 53
+// 結果: 574575
 ```
 
-## 詳しく見る
+```C#
+// 指定した範囲内のランダムな整数を生成する方法
+Random rnd = new Random();
+int randomNumber = rnd.Next(1, 100);
 
-ランダムな数字を生成する方法はさまざまありますが、その生成方法にはいくつかの種類があります。C#では、`System.Random`クラスを使用してランダムな数字を生成することができます。多くの場合、`Next()`メソッドを使用して指定した範囲内のランダムな整数を生成しますが、小数や文字列を生成することも可能です。また、`Random`クラスには双方向性を持つ`NextBytes()`メソッドがあるため、暗号学的用途にも使用することができます。 
+// 範囲: 1以上100未満 
+// 結果: 52
+```
 
-## 関連リンク
+```C#
+// ランダムな小数を生成する方法
+Random rnd = new Random();
+double randomDecimal = rnd.NextDouble();
 
-- [C#のランダムな数字の生成方法のドキュメント](https://docs.microsoft.com/ja-jp/dotnet/api/system.random)
-- [C#のRandomクラスの公式チュートリアル](https://docs.microsoft.com/ja-jp/dotnet/core/tutorials/using-with-xplat-cli)
-- [C#で文字列をランダムに生成する方法](https://stackoverflow.com/questions/1344221/how-can-i-generate-random-alphanumeric-strings)
+// 結果: 0.326147509218492
+```
+
+## 詳細: 
+ランダムな数値を生成することは、プログラムの機能が実行される順番を制御するために使用されます。これにより、プログラムが予測できないように、毎回異なる結果を生成します。この機能は、ゲームや暗号化など幅広い用途で使用されています。生成する数値の種類や範囲を指定することもできます。
+
+生成する数値には、疑似乱数と真の乱数の2種類があります。疑似乱数は、事前に決められた計算式によって生成されるため、厳密な意味でのランダムではありません。一方で、真の乱数は、外部の物理的要因（例：熱雑音や放射性崩壊）によって生成されるため、よりランダムな結果を得ることができます。
+
+C#では、```Random```クラスを使用してランダムな数値を生成することができます。```Next()```メソッドを使用すると、指定の範囲内のランダムな整数を生成することができます。```NextDouble()```メソッドを使用すると、倍精度のランダムな小数を生成することができます。
+
+## 関連情報: 
+- [C# Randomクラスのドキュメント](https://docs.microsoft.com/ja-jp/dotnet/api/system.random?view=net-5.0)
+- [プログラムのランダム性](https://ja.wikipedia.org/wiki/%E3%83%A9%E3%83%B3%E3%83%80%E3%83%A0%E6%80%A7)

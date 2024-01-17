@@ -10,47 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+## O que é isso e por que fazer?
 
-Existem várias razões pelas quais alguém pode querer fazer o download de uma página da web. Pode ser para ter acesso offline a um conteúdo importante, para arquivar informações ou para fins de análise de dados.
+Baixar uma página da web é o processo de fazer o download de um arquivo HTML da internet. Isso é feito por programadores para acessar e usar o conteúdo de uma página da web em seu próprio aplicativo ou software. Isso pode ser útil para criar web scrapers, feito para extrair dados específicos de um site para uso em outras aplicações.
 
-## Como fazer
+## Como fazer:
 
-Fazer o download de uma página da web em Kotlin é muito simples. Basta seguir os passos abaixo:
+```Kotlin
+val url = URL("https://example.com")
+val conexao = url.openConnection() as HttpURLConnection
+conexao.requestMethod = "GET"
+conexao.connect()
 
-1. Primeiro, importe a biblioteca "kotlin.io" no seu projeto:
-    ```Kotlin
-    import kotlin.io.*
-    ```
+val resposta = conexao.inputStream.bufferedReader().use { it.readText() }
+println(resposta)
+```
 
-2. Em seguida, defina uma URL para a página que deseja fazer o download:
-    ```Kotlin
-    val url = "https://www.example.com"
-    ```
+**Output:**
+```
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Example Domain</title>
 
-3. Use o método "readText" da classe "URL" para fazer o download do conteúdo da página:
-    ```Kotlin
-    val pageContent = URL(url).readText()
-    ```
+        <meta charset="utf-8" />
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <style type="text/css">
+        body {
+            background-color: #f0f0f2;
+            margin: 0;
+            padding: 0;
+            font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            
+        ...
+```
 
-4. E, por fim, salve o conteúdo em um arquivo utilizando o método "writeText" da classe "File":
-    ```Kotlin
-    File("filename.html").writeText(pageContent)
-    ```
+## Detalhes mais profundos:
 
-Ao executar esses passos, você terá feito o download da página da web em um arquivo HTML.
+Fazer o download de uma página da web é uma tarefa comum e essencial para muitos programadores. Existem diversas ferramentas e bibliotecas disponíveis para fazer isso em diferentes linguagens de programação, incluindo Kotlin. Além disso, existem várias técnicas e abordagens para baixar o conteúdo de uma página da web, dependendo das necessidades do projeto. 
 
-## Mergulho profundo
+## Veja também:
 
-Existem várias classes e métodos dentro da biblioteca "kotlin.io" que podem ser úteis ao fazer o download de uma página da web. Alguns deles incluem:
-
-- "readBytes()" - este método lê os bytes da página da web e os retorna como um array.
-- "readLines()" - este método lê as linhas da página da web e as retorna como uma lista de strings.
-- "URLStreamHandler" - esta classe permite a implementação de um manipulador personalizado para lidar com conexões de URL.
-
-Além disso, existem outras bibliotecas disponíveis em Kotlin que podem ser úteis para aprofundar seus conhecimentos sobre o download de páginas da web, como a biblioteca "kotlinx.html" para lidar com documentos HTML de forma fácil e a biblioteca "kotlin-stdlib-js" para manipulação de dados em JavaScript.
-
-## Veja também
-
-- [Documentação oficial do Kotlin sobre download de URLs](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.net.-u-r-l/index.html)
-- [Exemplo de download de página da web em Kotlin](https://github.com/kotlin-examples/internet/blob/master/src/download.kt)
+- Documentação do Kotlin sobre classes URL e HttpURLConnection: [https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.net/java.net.-u-r-l/](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.net/java.net.-u-r-l/)
+- Tutorial sobre web scraping com Kotlin: [https://medium.com/kotlin-th/kotlin-for-android-tutorial-lesson-7-web-scraping-with-kotlin-efdb7fe3af68](https://medium.com/kotlin-th/kotlin-for-android-tutorial-lesson-7-web-scraping-with-kotlin-efdb7fe3af68)
+- Alternativas para baixar conteúdo da web em Kotlin: [https://github.com/KotlinBy/awesome-kotlin#networking](https://github.com/KotlinBy/awesome-kotlin#networking)

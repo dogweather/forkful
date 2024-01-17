@@ -10,49 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why 
+## What & Why?
 
-Are you tired of constantly clicking the refresh button on your browser to keep up with the latest updates on your favorite website? Look no further, because with Elixir programming, you can easily download web pages with just a few lines of code. No more manual refreshing, just sit back and let your program do the work for you.
+Downloading a web page means retrieving the HTML code and resources of a website from a remote server to display it on a local device. Programmers do this to access website content, scrape data, or automate tasks such as filling out web forms.
 
-## How To 
+## How to:
 
-First, we need to install the HTTPoison library, which is a popular Elixir HTTP client. Open your terminal and run the following command: 
+Using Elixir, downloading a web page can be done in just a few lines of code. First, we need to install the `HTTPoison` dependency. Then, we can use the `get` function to specify the URL of the webpage we want to download.
 
-```Elixir
-mix deps.get 
+```
+Elixir
+def deps do
+  [
+    {:httpoison, "~> 1.8"}
+  ]
+end
 ```
 
-Next, we will use the `HTTPoison.get/2` function to make a GET request to the desired web page. 
-
-```Elixir 
-[status, body] = HTTPoison.get("https://example.com")
+```
+Elixir
+url = "https://www.example.com"
+response = HTTPoison.get(url)
 ```
 
-The `status` variable will contain the response status code, while the `body` variable will contain the HTML content of the page. 
+The `response` variable will now contain the HTML code of the webpage as well as information about the response, such as status code and headers. We can access the HTML code by using `response.body` in our code.
 
-We can also specify additional options, such as headers or query parameters, using a keyword list as the third argument. For example: 
+## Deep Dive:
 
-```Elixir
-options = [headers: [{"User-Agent", "Elixir"}]]
-[status, body] = HTTPoison.get("https://example.com", options)
-```
+Downloading web pages has long been an essential task for programmers, especially for those involved in web scraping or automation. Before Elixir, it was primarily done using languages such as Python, JavaScript, or Ruby.
 
-Once we have the HTML content, we can use any Elixir library such as `Floki` or `Scrape` to retrieve specific information from the webpage. 
+In Elixir, besides `HTTPoison`, there are other libraries available for downloading web pages, such as `Mint`, `Finch`, and `Crawly`. Each offers different features, and it's up to the programmer to choose the most suitable one for their project.
 
-```Elixir
-# Using Floki
-html = Floki.parse_document(body)
-links = Floki.find(html, "a")
-```
+Behind the scenes, Elixir uses the Erlang-based `httpc` client to handle the requests. This client supports features such as redirects, authentication, and HTTPS.
 
-## Deep Dive 
+## See Also:
 
-Behind the scenes, `HTTPoison` uses the Erlang library `hackney` for low-level HTTP operations. This allows us to take advantage of `hackney`'s features such as connection pooling, SSL support, and streaming responses. To learn more about `hackney`, check out its documentation [here](https://github.com/benoitc/hackney).
-
-Additionally, `HTTPoison` also has built-in support for parallel requests using Elixir's `Task` module. This allows us to make multiple requests at the same time, improving the performance of our application.
-
-## See Also 
-
-- [HTTPoison Documentation](https://hexdocs.pm/httpoison/) 
-- [`hackney` Documentation](https://github.com/benoitc/hackney) 
-- [Elixir Task Module](https://hexdocs.pm/elixir/Task.html)
+- Documentation for `HTTPoison`: https://hexdocs.pm/httpoison/1.0.3/HTTPoison.html
+- Comparison of web scraping libraries in Elixir: https://akoutmos.com/post/comparing-web-scraping-libraries-in-elixir/

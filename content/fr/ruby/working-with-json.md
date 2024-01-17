@@ -1,7 +1,7 @@
 ---
-title:                "Travailler avec json"
-html_title:           "Ruby: Travailler avec json"
-simple_title:         "Travailler avec json"
+title:                "Travailler avec JSON"
+html_title:           "Ruby: Travailler avec JSON"
+simple_title:         "Travailler avec JSON"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Data Formats and Serialization"
@@ -10,40 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+# Quoi et Pourquoi?
+JSON, ou JavaScript Object Notation, est un format standard pour échanger des données entre applications. Les programmeurs utilisent JSON car il est facile à lire et à écrire pour les humains et à traiter pour les ordinateurs. Il est également léger et largement pris en charge par les langages de programmation.
 
-Si vous travaillez avec des données dans un format lisible par les humains, comme une liste de contacts ou un tableau de données, vous pourriez avoir besoin de convertir ces données en un format lisible par les machines. C'est là qu'entre en jeu JSON.
-
-## Comment faire
-
-Pour utiliser JSON en Ruby, vous devez d'abord importer la bibliothèque standard "json". Ensuite, vous pouvez utiliser la méthode `JSON.parse()` pour convertir une chaîne en un objet Ruby et la méthode `JSON.generate()` pour convertir un objet Ruby en une chaîne JSON. Voici un exemple de code :
+# Comment faire:
+Voici un exemple de code Ruby pour convertir un objet en JSON et vice versa:
 
 ```Ruby
-require "json"
+require 'json'
 
-# Convertir une chaîne JSON en un objet Ruby
-data_string = '{"id":1, "name":"John", "age":25}'
-data_object = JSON.parse(data_string)
+# convertir un objet en JSON
+obj = { nom: "Jean", age: 25 }
+json_string = obj.to_json
 
-# Convertir un objet Ruby en une chaîne JSON
-person = {"id" => 2, "name" => "Jane", "age" => 28}
-person_string = JSON.generate(person)
+# convertir du JSON en objet
+obj = JSON.parse(json_string)
 
-puts data_object["name"]
-# Output: John
-
-puts person_string
-# Output: {"id":2, "name":"Jane", "age":28}
+puts obj[:age] # affiche 25
 ```
 
-## Plongée en profondeur
+# Plongée dans le sujet:
+JSON a été créé en 2001 par Douglas Crockford pour remplacer XML en tant que format léger pour échanger des données. Bien que JSON soit principalement utilisé avec JavaScript, il est largement pris en charge par d'autres langages de programmation tels que Ruby, Python et Java. Il existe également des alternatives à JSON telles que YAML et CSV pour stocker et échanger des données structurées.
 
-JSON (JavaScript Object Notation) est un format de données léger et facile à comprendre pour les humains et les machines. Il est basé sur la syntaxe JavaScript et utilise des paires clé-valeur pour stocker les données. Les fichiers JSON ont généralement l'extension .json et sont couramment utilisés pour échanger des données entre différentes applications et services en ligne.
-
-En utilisant la méthode `JSON.parse()`, vous pouvez également convertir des chaînes JSON en objets Ruby avec une structure de données complexe, y compris des tableaux et des objets imbriqués.
-
-## Voir aussi
-
-- ["Utilisez JSON avec Ruby"](https://www.rubyguides.com/2015/09/ruby-json-tutorial/)
-- ["Manipuler des données JSON en Ruby"](https://stackify.com/json-ruby-beginners-guide/)
-- ["Différences entre les formats JSON et XML"](https://www.sitepoint.com/javascript-json-xml-serialization/)
+# Voir aussi:
+- Documentation officielle de la gem Ruby JSON: https://github.com/flori/json
+- Site web officiel de JSON: https://www.json.org/

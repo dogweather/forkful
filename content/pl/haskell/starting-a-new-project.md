@@ -1,7 +1,7 @@
 ---
-title:                "Rozpoczęcie nowego projektu"
-html_title:           "Haskell: Rozpoczęcie nowego projektu"
-simple_title:         "Rozpoczęcie nowego projektu"
+title:                "Rozpoczynając nowy projekt"
+html_title:           "Haskell: Rozpoczynając nowy projekt"
+simple_title:         "Rozpoczynając nowy projekt"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Getting Started"
@@ -10,36 +10,22 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i Dlaczego?
 
-Dlaczego ktoś powinien zainteresować się rozpoczynaniem nowego projektu w języku Haskell? Po pierwsze, Haskell jest językiem programowania o silnym typowaniu i statyczne typy pozwalają unikać wielu błędów w trakcie pisania kodu. Po drugie, dzięki swojej funkcjonalnej naturze, Haskell jest łatwy do testowania i utrzymywania.
+Rozpoczęcie nowego projektu odnosi się do stworzenia nowego programu lub aplikacji od podstaw. Programiści często decydują się na rozpoczęcie nowego projektu z powodów takich jak ulepszenie istniejącego kodu, dodanie nowych funkcji lub optymalizacja wydajności. 
 
-## Jak to zrobić
+## Jak Stworzyć Nowy Projekt:
 
-Programowanie w Haskell polega na tworzeniu funkcji i aplikowaniu ich do danych. Na przykład, aby obliczyć sumę dwóch liczb:
+~~~Haskell
+main = putStrLn "Witaj, świecie!"
+~~~
 
-```Haskell
-sum a b = a + b
-```
+W powyższym przykładzie wykorzystujemy funkcję `putStrLn`, aby wyświetlić napis "Witaj, świecie!". Aby uruchomić nasz program, wystarczy go skompilować i uruchomić.
 
-Możemy wywołać tę funkcję z dowolnymi liczbami, np.:
+## Głębsza Analiza
 
-```Haskell
-sum 5 7 = 12
-```
+W przeszłości, rozpoczynanie nowego projektu wymagało więcej pracy, ponieważ należało napisać cały kod od podstaw. Obecnie istnieje wiele narzędzi i bibliotek w języku Haskell, które mogą ułatwić ten proces. Alternatywą dla rozpoczynania nowego projektu może być również modyfikacja istniejącego kodu, zwłaszcza jeśli jest on dobrze udokumentowany i łatwy w modyfikacji.
 
-Wynik zawsze będzie zgodny, ponieważ funkcje w Haskellu są czyste i nie mają efektów ubocznych.
+## Zobacz Również
 
-## Głębszy zanurzenie
-
-Podczas rozpoczynania nowego projektu w Haskellu, ważne jest, aby wybrać właściwe narzędzia i biblioteki. Na szczęście społeczność Haskell jest bardzo aktywna i istnieje wiele narzędzi i bibliotek, które mogą pomóc w procesie tworzenia oprogramowania. Warto również skorzystać z doświadczenia innych programistów i zapoznać się z dobrymi praktykami w języku Haskell.
-
-## Zobacz również
-
-[The Haskell Programming Language](https://www.haskell.org/)
-
-[A Tour of the Haskell Syntax](https://www.cs.ukata.edu.pl/~pkr/edu/wms/tour.pdf)
-
-[Haskell for Beginners](https://mmhaskell.com/)
-
-[Hoogle - Haskell API Search Engine](https://hoogle.haskell.org/)
+Jeśli szukasz więcej informacji o rozpoczynaniu nowego projektu w języku Haskell, warto przeczytać dokumentację i tutoriale dostępne online. Możesz także zapoznać się z innymi artykułami o tym temacie, aby poznać różne podejścia i techniki używane przez innych programistów.

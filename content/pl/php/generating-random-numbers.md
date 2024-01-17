@@ -1,7 +1,7 @@
 ---
-title:                "Generowanie liczb losowych"
-html_title:           "PHP: Generowanie liczb losowych"
-simple_title:         "Generowanie liczb losowych"
+title:                "Tworzenie losowych liczb"
+html_title:           "PHP: Tworzenie losowych liczb"
+simple_title:         "Tworzenie losowych liczb"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Numbers"
@@ -10,53 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+# Co i dlaczego?
 
-Generowanie losowych liczb jest bardzo przydatne w programowaniu, szczególnie w sytuacjach, gdzie potrzebujemy losowych danych, takich jak generowanie losowych haseł, identyfikatorów lub testowania algorytmów. Jest to również popularna funkcja w grach i aplikacjach, które wymagają losowego zachowania.
+Generowanie losowych liczb jest procesem polegającym na wygenerowaniu liczby całkowitej lub rzeczywistej w sposób losowy. Programiści często stosują tę technikę do symulacji losowych zdarzeń lub do generowania unikalnych identyfikatorów.
 
-## Jak to zrobić
+# Jak to zrobić?
 
- Istnieje wiele sposobów na generowanie losowych liczb w PHP. Jednym z najprostszych sposobów jest użycie funkcji `rand()`, która zwraca losową liczbę całkowitą w określonym zakresie. Przykładowy kod wykorzystujący tę funkcję wygląda następująco:
+W PHP możemy wykorzystać funkcję `rand()` do generowania losowych liczb całkowitych w określonym zakresie. Przykładowy kod wygląda następująco:
+```
+$x = rand(1, 10);
+echo $x;
+```
+Wynik zostanie wyświetlony jako liczba całkowita z zakresu od 1 do 10.
 
-```PHP
-$randomNumber = rand(1, 10); // zwraca losową liczbę z zakresu 1-10
-echo $randomNumber; // wypisze np. 7
+Aby generować losowe liczby rzeczywiste, możemy użyć funkcji `mt_rand()`, która korzysta z algorytmu Mersenne Twister. Przykładowy kod dla wygenerowania liczby zmiennoprzecinkowej z zakresu od 0 do 1 wygląda tak:
+```
+$x = mt_rand() / mt_getrandmax();
+echo $x;
 ```
 
-Możemy również wygenerować losowe liczby zmiennoprzecinkowe, używając funkcji `mt_rand()`, która jest szybsza i bardziej niezawodna. Przykładowy kod używający tej funkcji wygląda tak:
+# Wnikliwy przegląd
 
-```PHP
-$randomFloat = mt_rand() / mt_getrandmax(); // zwraca losową liczbę zmiennoprzecinkową z zakresu 0-1
-echo $randomFloat; // wypisze np. 0.765821436
-```
+Generowanie losowych liczb jest nieodłączną częścią wielu programów i aplikacji. Początkowo, programiści korzystali z funkcji `rand()` w PHP, która wykorzystywała generator liczb pseudolosowych. Jednakże, dla zadań wymagających większej losowości, zaleca się używanie funkcji `mt_rand()`, która jest wydajniejsza i zapewnia lepsze rozkłady losowych wartości.
 
-Możemy również wykorzystać funkcję `random_int()`, która jest jeszcze bardziej bezpieczna i zalecana do generowania losowych liczb wrażliwych na bezpieczeństwo, takich jak hasła. Przykładowy kod z użyciem tej funkcji wygląda następująco:
+Alternatywą dla wewnętrznych funkcji PHP jest wykorzystanie zewnętrznych bibliotek, takich jak RandomLib czy PhpSecLib, które oferują bardziej zaawansowane opcje generowania losowych liczb.
 
-```PHP
-$secureNumber = random_int(1000, 9999); // zwraca losową liczbę całkowitą z zakresu 1000-9999
-echo $secureNumber; // wypisze np. 5683
-```
+Ważnym aspektem generowania losowych liczb jest ziarno (ang. seed), które jest używane do inicjalizacji generatora liczb pseudolosowych i określenia początkowego punktu wyjścia. W przypadku PHP, ziarno jest wybierane automatycznie, ale można je także ustalić ręcznie za pomocą funkcji `srand()`.
 
-Możemy również wygenerować losowe znaki, wykorzystując gotową funkcję `str_shuffle()`, która losowo modyfikuje podany ciąg znaków. Przykładowy kod wygląda tak:
+# Zobacz też
 
-```PHP
-$characters = 'abcdefghijklmnopqrstuvwxyz'; // nasz alfabet
-$shuffled = str_shuffle($characters); // losowo modyfikuje kolejność liter
-echo $shuffled; // wypisze np. eqrpzmlsitjndxwocbhgaykfuv
-```
-
-Są oczywiście także inne sposoby na generowanie losowych liczb w PHP, ale te są najpopularniejsze i wystarczające dla większości projektów.
-
-## Deep Dive
-
-Funkcje `rand()` i `mt_rand()` korzystają z generatora liczb pseudolosowych, który generuje ciąg liczb na podstawie ziarna (seed). Z tego powodu, jeśli nie podamy ziarna ręcznie, każde wywołanie funkcji zwróci inne liczby. Dzięki temu możemy zapewnić, że wygenerowane liczby będą naprawdę losowe.
-
-Funkcja `random_int()`, w przeciwieństwie do poprzednich dwóch, wykorzystuje generator liczb kryptograficznych, który jest jeszcze bardziej bezpieczny i zwraca liczby o wysokiej entropii. Wymaga ona jednak większych zasobów i może być wolniejsza w działaniu.
-
-Możemy także zastosować funkcję `shuffle()` do losowego przemieszczenia elementów w tablicy. Jest to przydatne, jeśli chcemy losowo ułożyć elementy w celu losowego wyboru lub generowania losowych kombinacji.
-
-## Zobacz także
-
-- Dokumentacja PHP dla funkcji rand(): https://www.php.net/manual/en/function.rand.php
-- Dokumentacja PHP dla funkcji mt_rand(): https://www.php.net/manual/en/function.mt-rand.php
-- Dokumentacja PHP dla funkcji random_int(): https://www.php.net/manual/en/function.random-int.php
+- Dokumentacja PHP dotycząca funkcji `rand()` i `mt_rand()`: https://www.php.net/manual/en/function.srand.php
+- Biblioteka RandomLib: https://github.com/ircmaxell/RandomLib
+- Biblioteka PhpSecLib: https://github.com/phpseclib/phpseclib

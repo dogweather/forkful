@@ -10,43 +10,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+## Cosa & Perché?
+Convertire una stringa in minuscolo è un'operazione comune nella programmazione, che permette di rendere uniforme il testo all'interno di un programma. Questo può essere utile per l'elaborazione di input dell'utente, la comparazione di stringhe o la creazione di interfacce più intuitive.
 
-Sai quel momento in cui devi confrontare due stringhe e vuoi essere sicuro che la loro differenza non sia solo una questione di lettere maiuscole e minuscole? Ecco, qui è dove la conversione di una stringa in caratteri minuscoli può essere di grande aiuto.
-
-## Come fare
-
-È molto semplice convertire una stringa in caratteri minuscoli in Haskell. Basta usare la funzione `toLower` del modulo `Data.Char`.
-
+## Come fare:
 ```Haskell
-import Data.Char
+import Data.Char (toLower)
 
--- Esempio 1
-toLower "CIAO" -> "ciao"
-
--- Esempio 2
-toLower "HeLLo WoRlD" -> "hello world"
+lowercase :: String -> String
+lowercase str = map toLower str
 ```
+Esempio di input: "Ciao mondo"
+Output: "ciao mondo"
 
-## Approfondimento
+## Deep Dive:
+La conversione di stringhe in minuscolo ha origine dal concetto di codifica dei caratteri, dove ogni lettera è rappresentata da un codice numerico univoco. In passato, diverse codifiche di caratteri portavano a risultati diversi quando si tentava di convertire una stringa in minuscolo. Oggi, la maggior parte delle implementazioni di questa operazione utilizzano il formato UTF-8 per garantire la corretta conversione del testo.
 
-Per coloro che sono interessati a sapere come funziona la conversione delle stringhe in Haskell, esiste un concetto chiamato "ricorsione" che è utilizzato per iterare attraverso una stringa e applicare la funzione `toLower` a ogni singolo carattere.
+Ci sono anche alternative per la conversione di stringhe in minuscolo, come l'utilizzo di espressioni regolari o la creazione di una funzione personalizzata. Tuttavia, la funzione "toLower" del modulo Data.Char di Haskell è uno dei modi più semplici e affidabili per ottenere questo risultato.
 
-La funzione `toLower` è definita nel seguente modo:
-
-```Haskell
-toLower :: Char -> Char
-
--- Se il carattere è già minuscolo, viene restituito così com'è
-toLower c | c >= 'a' && c <= 'z' = c
-          -- Se è maiuscolo, viene sottratto 32 (la differenza tra i codici ASCII di "A" e "a")
-          | c >= 'A' && c <= 'Z' = chr(ord c - 32)
-          | otherwise = c -- Se è un altro tipo di carattere, viene restituito così com'è
-```
-
-Inoltre, esistono anche altre funzioni utili per la conversione delle stringhe, come `toUpper` e `toTitle`, che trasformano rispettivamente tutti i caratteri in maiuscolo o solo la prima lettera di ogni parola.
-
-## Vedi anche
-
-- [Funzioni di conversione delle stringhe in Haskell](https://www.haskell.org/hoogle/?hoogle=String+-%3E+String)
-- [Modulo `Data.Char` su Hackage](https://hackage.haskell.org/package/base-4.15.0.0/docs/Data-Char.html)
+## Vedi anche:
+- Documentazione del modulo Data.Char di Haskell: https://hackage.haskell.org/package/base/docs/Data-Char.html
+- Tutorial su come gestire le stringhe in Haskell: https://blog.fossasia.org/handling-strings-in-haskell/

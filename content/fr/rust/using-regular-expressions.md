@@ -1,7 +1,7 @@
 ---
-title:                "Utilisation des expressions régulières"
-html_title:           "Rust: Utilisation des expressions régulières"
-simple_title:         "Utilisation des expressions régulières"
+title:                "Utiliser les expressions régulières"
+html_title:           "Rust: Utiliser les expressions régulières"
+simple_title:         "Utiliser les expressions régulières"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -10,63 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Quoi & Pourquoi ?
 
-Si vous travaillez avec du texte dans vos projets de programmation, vous avez sûrement rencontré des situations où vous devez rechercher et manipuler des motifs de caractères spécifiques dans une chaîne de texte. Les expressions régulières peuvent vous aider à accomplir cette tâche de manière simple et efficace.
+L'utilisation des expressions régulières est un outil essentiel pour les programmeurs. Cela leur permet de trouver et de manipuler facilement des motifs spécifiques dans des chaînes de caractères. Les expressions régulières sont particulièrement utiles pour les tâches de détection de données, de validation de saisie ou de filtrage de résultats.
 
-## Comment faire
+## Comment faire :
 
-Les expressions régulières sont supportées nativement par Rust grâce au crate "regex" qui peut être inclus dans votre projet en ajoutant la ligne suivante dans votre fichier "Cargo.toml":
+Voici un exemple de code en Rust pour utiliser des expressions régulières :
 
-```Rust
-[dependencies]
-regex = "1.4"
 ```
-
-Dans l'exemple suivant, nous allons utiliser des expressions régulières pour valider et extraire une adresse email à partir d'une chaîne de texte:
-
-```Rust
 use regex::Regex;
 
 fn main() {
-    // Définir le motif de l'adresse email recherché
-    let email_pattern = Regex::new(r"[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}").unwrap();
-
-    // Déclarer la chaîne de texte à analyser
-    let text = "Mon adresse email est contact@exemple.com";
-
-    // Utiliser la méthode "find" pour rechercher le motif dans la chaîne de texte
-    if let Some(email) = email_pattern.find(text) {
-        println!("Email trouvé: {}", email.as_str()); // Obtenir la correspondance sous forme de texte
-    } else {
-        println!("Aucune adresse email trouvée.");
+    // Définir le motif
+    let re = Regex::new(r"([a-z]+) ([0-9]+)").unwrap();
+    
+    // La chaîne de caractères à tester
+    let text = "hello 123";
+    
+    // Rechercher la correspondance
+    if let Some(captures) = re.captures(text) {
+        // Afficher les résultats
+        println!("Mot trouvé : {}", captures.get(1).unwrap().as_str());
+        println!("Nombre trouvé : {}", captures.get(2).unwrap().as_str());
     }
 }
 ```
 
-Sortie:
+Sortie :
+
 ```
-Email trouvé: contact@exemple.com
+Mot trouvé : hello
+Nombre trouvé : 123
 ```
 
-## Plongée en profondeur
+## Plongée en profondeur :
 
-Les motifs de recherche dans les expressions régulières sont définis à l'aide de caractères spéciaux et de symboles qui ont des significations particulières. Voici quelques-uns des symboles les plus couramment utilisés:
+Les expressions régulières ont été inventées dans les années 1950 par un mathématicien américain, Stephen Kleene, pour décrire certains motifs dans les langages formels. Les alternatives à l'utilisation des expressions régulières incluent l'utilisation de boucles et de méthodes de chaîne de caractères telles que `find` et `replace`. Les expressions régulières en Rust sont implémentées avec la bibliothèque standard `regex`, qui offre une syntaxe similaire à celle des autres langages.
 
-- `.` : correspond à n'importe quel caractère unique
-- `*` : correspond à zéro ou plusieurs occurrences du caractère précédent
-- `+` : correspond à une ou plusieurs occurrences du caractère précédent
-- `?` : correspond à zéro ou une occurrence du caractère précédent
-- `[]` : correspond à un ensemble de caractères possibles
-- `()` : permet de regrouper des caractères pour former un motif plus complexe
-- `|` : permet de définir des alternatives entre les motifs
+## Voir aussi :
 
-Il existe également des séquences d'échappement qui permettent d'utiliser des caractères spéciaux dans des motifs qui ont une signification différente. Par exemple, `\d` correspond à un chiffre et `\w` correspond à un caractère alphanumérique.
-
-Il est recommandé de tester et de valider vos expressions régulières à l'aide d'outils en ligne comme regex101.com avant de les utiliser dans votre code.
-
-## Voir aussi
-
-- La documentation officielle du crate "regex" : https://docs.rs/regex/1.4.2/regex/
-- Un tutoriel complet sur les expressions régulières en Rust : https://docs.rs/regex/1.4.2/regex/#getting-started
-- Le crate "lazy_static" qui peut améliorer les performances lors de l'utilisation d'expressions régulières : https://docs.rs/lazy_static/1.4.0/lazy_static/
+- [Documentation officielle sur les expressions régulières en Rust](https://doc.rust-lang.org/std/regex/index.html)
+- [Tutoriel en français sur les expressions régulières en Rust](https://www.azriel.dev/rust_regex_tuto/)
+- [Site de référence pour tester et expérimenter des expressions régulières en temps réel](https://regex101.com/)

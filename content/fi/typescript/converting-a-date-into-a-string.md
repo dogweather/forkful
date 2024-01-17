@@ -1,7 +1,7 @@
 ---
-title:                "Päivämäärän muuttaminen merkkijonoksi."
-html_title:           "TypeScript: Päivämäärän muuttaminen merkkijonoksi."
-simple_title:         "Päivämäärän muuttaminen merkkijonoksi."
+title:                "Päivämäärän muuttaminen merkkijonoksi"
+html_title:           "TypeScript: Päivämäärän muuttaminen merkkijonoksi"
+simple_title:         "Päivämäärän muuttaminen merkkijonoksi"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Dates and Times"
@@ -10,41 +10,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä & Miksi?
+Päivämäärän muuntaminen merkkijonoksi tarkoittaa päivämäärän muuttamista lukuarvoksi, joka voidaan helposti esittää merkkijonona. Tätä tehdään, jotta päivämäärää voidaan käsitellä ja näyttää helposti eri muodoissa. Ohjelmoijat tekevät tämän helpottaakseen sovelluksiensa käyttäjän päivämäärätietojen hallintaa ja näyttämistä.
 
-On monia tilanteita, joissa tarvitaan muuntaa päivämäärä merkkijonoksi TypeScript-ohjelmassa. Tämä voi olla tarpeellista esimerkiksi käsiteltäessä käyttäjän antamia tietoja tai tallentaessa tietoja tietokantaan.
-
-## Miten
-
-Muuntaaksesi päivämäärän merkkijonoksi TypeScript-ohjelmassa, voit käyttää Date-tyyppisen muuttujan toLocaleDateString()-metodia. Tämä metodi palauttaa päivämäärän ja ajan käyttäjän sijaintiin ja aikavyöhykkeeseen perustuen.
+## Miten:
+Esimerkiksi TypeScriptin avulla voi muuntaa päivämäärän merkkijonoksi käyttämällä Date-luokan toLocaleString()-metodia. Tämä metodi hyväksyy parametreikseen kielikoodin ja vaihtoehdot, kuten päivämäärän muodon tai aikavyöhykkeen. Alla on esimerkki koodista ja sen tulostamasta merkkijonosta:
 
 ```TypeScript
-let today = new Date();
-let dateString = today.toLocaleDateString();
-console.log(dateString); // esimerkkilähtö: "04/12/2021"
+const date = new Date();
+console.log(date.toLocaleString("fi-FI", {  
+    day: "numeric", 
+    month: "long", 
+    year: "numeric"
+}));
+//tulostaa esimerkiksi: "1. maaliskuuta 2022"
 ```
 
-Voit myös käyttää toLocaleString()-metodia, joka palauttaa päivämäärän ja kellonajan.
+## Syväsukellus:
+Päivämäärän muuntaminen merkkijonoksi on tapahtunut jo vuosikymmenien ajan. Ennen oli yleistä käyttää erillisiä kirjastoja tai lisäohjelmia muuntamiseen, mutta nykyään suurin osa ohjelmointikielistä sisältää valmiita toimintoja päivämäärän käsittelyyn. Päivämäärän muuntamisessa on myös useita erilaisia tapoja ja formaatteja, joista ohjelmoijat voivat valita sopivimman. Toisin kuin monissa muissa kielissä, TypeScriptin Date-luokan toLocaleString()-metodi hyväksyy myös vaihtoehtoja aikavyöhykkeelle.
 
-```TypeScript
-let dateAndTimeString = today.toLocaleString();
-console.log(dateAndTimeString); // esimerkkilähtö: "4/12/2021, 10:25:49 AM"
-```
-
-## Syvällinen sukellus
-
-Voit määrittää toLocaleString()-metodille parametreja, joiden avulla voit muokata palautettavan merkkijonon muotoa. Esimerkiksi voit määrittää sijainnin ja aikavyöhykkeen sijasta eri kielen ja kellonajan muodon.
-
-```TypeScript
-let options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-let germanDateString = today.toLocaleDateString('de-DE', options);
-console.log(germanDateString); // esimerkkilähtö: "Montag, 12. April 2021"
-```
-
-Voit myös käyttää moment.js-kirjastoa mukautettujen päivämäärän muotoilujen toteuttamiseen.
-
-## Katso myös
-
-- [MDN: Date.prototype.toLocaleDateString()](https://developer.mozilla.org/fi/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleDateString)
-- [MDN: Date.prototype.toLocaleString()](https://developer.mozilla.org/fi/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleString)
-- [moment.js](https://momentjs.com/)
+## Katso myös:
+Microsoftin TypeScript-dokumentaatio: https://www.typescriptlang.org/docs/handbook/standard-library.html#date

@@ -1,7 +1,7 @@
 ---
-title:                "Bruk av regulære uttrykk."
-html_title:           "Arduino: Bruk av regulære uttrykk."
-simple_title:         "Bruk av regulære uttrykk."
+title:                "Å bruke regulære uttrykk"
+html_title:           "Arduino: Å bruke regulære uttrykk"
+simple_title:         "Å bruke regulære uttrykk"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Strings"
@@ -10,29 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor 
-Bruk av regulære uttrykk, også kjent som regex, kan være en effektiv måte å søke, filtrere og manipulere tekstbaserte data på. Dette er spesielt nyttig når man jobber med store datasett eller kompleks tekstbehandling, slik som i programmering. Ved å lære å bruke regex, kan du gjøre arbeidet ditt mer effektivt og effektivt.
+Hva & Hvorfor?
 
-## Hvordan 
-Først må du inkludere innebygd funksjonalitet for regulære uttrykk i koden din ved å skrive: ```Arduino	
-#include <regex.h>```
-Nå kan du begynne å bruke regex i koden din. For eksempel, hvis du ønsker å finne alle tall i en tekststreng og lagre dem i en variabel, kan du bruke følgende kode:
+Å bruke regulære uttrykk er en metode for å søke og manipulere tekster ved hjelp av spesielle mønstre. Dette gjøres ofte av programmerere for å effektivt behandle store mengder tekst og utføre komplekse søk. Det kan også bidra til å redusere koden og gjøre den mer fleksibel.
+
+Hvordan:
+
+Arduino har et innebygd bibliotek, kalt "Regexp", som lar deg bruke regulære uttrykk i koden din. For å bruke dette, må du først inkludere biblioteket i koden din ved å skrive ```#include <Regexp.h>```. Deretter kan du opprette et nytt Regexp-objekt og definere mønsteret du vil søke etter. Her er et eksempel på hvordan du kan finne alle tall i en tekst og skrive dem ut:
+
 ```
-Arduino
-char string[] = "I dag er det 25. september 2021";
-regex_t regex;
-int status = regcomp(&regex, "[0-9]+", 0);
-regmatch_t matches[1];
-status = regexec(&regex, string, 1, matches, 0);
-char numbers[matches[0].rm_eo - matches[0].rm_so + 1];
-strncpy(numbers, string + matches[0].rm_so, matches[0].rm_eo - matches[0].rm_so);
+Regexp pattern("(\d+)");
+String tekst = "Det er 123 epler i kurven";
+if (pattern.find(tekst)) {
+  Serial.println(pattern.group(0)); // Skriver ut hele teksten som matcher mønsteret
+  Serial.println(pattern.group(1)); // Skriver ut kun tallene som matcher mønsteret
+}
 ```
-Nå vil variabelen numbers inneholde tallet "25". Her har vi brukt regex-uttrykket "[0-9]+" som betyr at vi ønsker å finne alle tall som består av en eller flere sifre i den gitte teksten. Dette er bare ett eksempel, og det finnes mange forskjellige regex-uttrykk som kan brukes avhengig av hvilken tekst du jobber med og hva du ønsker å oppnå.
 
-## Dypdykk 
-Regex kan være en utfordrende konsept å lære fordi det er mange ulike symboler og uttrykk å huske. Det kan også være vanskelig å teste regex i sanntid siden det ofte krever å følge en bestemt syntaks. Derfor kan det være lurt å bruke en online regex tester som [regex101](https://regex101.com/) når du skal utvikle og teste regex-uttrykk for å sikre at de fungerer som forventet. Det finnes også mange ressurser på nettet som kan hjelpe deg med å lære mer om regex og hvordan du kan bruke det på en effektiv måte i koden din.
+Dette eksempelet vil skrive ut "123" to ganger.
 
-## Se også 
-- [regex101](https://regex101.com/)
-- [Arduino reference for regex](https://www.arduino.cc/reference/en/language/variables/utilities/regex/)
-- [The Absolute Minimum Every Software Developer Absolutely, Positively Must Know About Unicode and Character Sets (No Excuses!)](https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/)
+Du kan også bruke regulære uttrykk til å endre teksten din. Her er et eksempel som erstatter alle forbudte ord med "*censor*":
+
+```
+Regexp pattern("forbudt ord");
+String tekst = "Tekst med ett eller flere forbudte ord.";
+tekst = pattern.replace(tekst, "*censor*");
+Serial.println(tekst); // Skriver ut: Tekst med ett eller flere *censor*.
+```
+
+Dypdykk:
+
+Konseptet med regulære uttrykk ble oppfunnet av matematikeren Stephen Kleene i 1951, og har blitt brukt i programmering siden 1960-tallet. Det finnes også andre måter å søke og manipulere tekster på, som for eksempel string funksjoner og strtok() funksjonen i Arduino. Men regulære uttrykk kan være mer fleksible og kraftige når det kommer til komplekse søk og manipulasjoner.
+
+Se også:
+
+Her er noen ressurser for å lære mer om regulære uttrykk:
+- [Regexp bibliotekets dokumentasjon](https://www.arduino.cc/reference/en/libraries/regexp/)
+- [RegExr - en interaktiv regulære uttrykk tester](https://regexr.com/)
+- [Google Sheets RegEx funksjoner for å behandle tekst](https://www.benlcollins.com/formula-examples/google-sheets-regex-functions/)

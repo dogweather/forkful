@@ -1,7 +1,7 @@
 ---
-title:                "문자열 길이 찾기"
-html_title:           "Ruby: 문자열 길이 찾기"
-simple_title:         "문자열 길이 찾기"
+title:                "문자열의 길이 찾기"
+html_title:           "Ruby: 문자열의 길이 찾기"
+simple_title:         "문자열의 길이 찾기"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Strings"
@@ -10,32 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
-문자열의 길이를 찾는 것이 왜 중요한지에 대해 궁금하신가요? 이 글에서는 Ruby를 사용해 문자열의 길이를 찾는 방법을 알려드릴 것입니다.
+## 무엇이고 왜?
 
-## 어떻게
-Ruby에서 문자열의 길이를 찾는 방법은 매우 간단합니다. 먼저, `length` 메소드를 사용하여 문자열의 길이를 확인할 수 있습니다. 아래의 예시를 확인해보세요.
+문자열의 길이를 찾는 것은 문자열에 있는 문자의 개수를 결정하는 것입니다. 이것은 문자열의 크기 또는 길이를 알고 싶을 때 유용합니다. 프로그래머들은 이것을 자주 사용하는데, 예를 들어서 사용자의 입력값이 특정 길이와 일치하는지 확인할 때 사용할 수 있습니다.
 
-```ruby
-string = "안녕하세요"
-puts string.length
+## 어떻게?
+
+```Ruby
+puts "Hello, world!".length # 13
 ```
-출력 결과는 `5`가 됩니다. 이는 한글 5글자와 같으며, 영어의 경우 문자 하나당 1이 됩니다.
+위의 코드에서는 "Hello, world!" 문자열의 길이를 찾아서 출력하는 예제를 볼 수 있습니다.
 
-## 깊게 들어가보기
-`length` 메소드는 실제로는 `size` 메소드와 같습니다. 이 둘은 동일한 값을 반환하지만, 약간의 차이가 존재합니다. `length`는 문자열의 길이를 반환하며, `size`는 문자열 내의 문자의 개수를 반환합니다. 따라서, 문자열에 숫자나 기호가 포함되어 있을 경우 두 메소드의 결과가 다를 수 있습니다.
-
-또한, Ruby에서는 `unicode_normalize` 메소드를 사용하여 유니코드 정규화를 수행할 수 있습니다. 이는 다른 언어로 작성된 문자열의 경우, 길이를 올바르게 계산하기 위해 필요한 단계입니다. 아래의 예시를 참고하세요.
-
-```ruby
-string = "こんにちは"
-puts string.length
-puts string.unicode_normalize.length
+```Ruby
+my_string = "This is a sample string"
+puts my_string.length # 23
 ```
-두 번째 줄에서 사용된 `unicode_normalize` 메소드를 사용하면, `length` 메소드의 결과가 `length` 메소드보다 1 글자 더 많게 나오게 됩니다. 이는 Ruby에서는 모든 문자를 유니코드 단일 문자로 취급하기 때문입니다.
+또한 위의 예제와 같이 변수에 문자열을 할당하고 그 변수의 길이를 찾아서 출력할 수도 있습니다.
 
-## 더 학습하기
-더 많은 Ruby 관련 정보를 얻고 싶다면 아래의 링크들을 참고해보세요.
-- [Ruby 공식 홈페이지](https://www.ruby-lang.org/ko/)
-- [Ruby 입문서](https://www.slideshare.net/ihoneymon/ss-46247190)
-- [RubyKorea 커뮤니티](https://rubykorea.github.io/)
+## 깊이 파고들기
+
+**역사적 배경**: 문자열의 길이를 찾는 방법은 프로그래밍 언어에 따라 다를 수 있습니다. 오래된 프로그래밍 언어들은 문자열 길이를 찾기 위해서 여러가지 방법을 사용했습니다. 하지만 현재의 Ruby 언어에서는 쉽고 간단한 `.length` 메소드를 이용하여 문자열의 길이를 찾을 수 있습니다.
+
+**대안들**: Ruby 뿐만 아니라 다른 언어들에서도 문자열의 길이를 찾는 메소드 혹은 함수가 존재합니다. 예를 들어서 Python에서는 `len()` 함수를 이용하여 문자열의 길이를 찾을 수 있습니다.
+
+**구현 세부사항**: Ruby의 `String` 클래스 내부에서 `.length` 메소드가 어떻게 구현되었는지를 알고 싶다면, Ruby 소스 코드를 참고해보시길 바랍니다.
+
+## 관련 자료
+
+- [Ruby 문서 - String 클래스](https://ruby-doc.org/core-2.7.0/String.html)
+- [Ruby 소스 코드](https://github.com/ruby/ruby)

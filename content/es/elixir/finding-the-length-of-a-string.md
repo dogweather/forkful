@@ -1,7 +1,7 @@
 ---
-title:                "Encontrando la longitud de una cadena."
-html_title:           "Elixir: Encontrando la longitud de una cadena."
-simple_title:         "Encontrando la longitud de una cadena."
+title:                "Encontrando la longitud de una cadena"
+html_title:           "Elixir: Encontrando la longitud de una cadena"
+simple_title:         "Encontrando la longitud de una cadena"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -10,40 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué?
+## ¿Qué y por qué?
 
-¿Alguna vez te has preguntado cuántos caracteres tiene una cadena en particular? Saber la longitud de una cadena es un concepto básico pero esencial en cualquier lenguaje de programación. Te permite manipular y trabajar con cadenas de manera eficiente y efectiva.
+En programación, encontrar la longitud de una cadena significa determinar la cantidad de caracteres que contiene dicha cadena. Los programadores suelen hacerlo para realizar ciertas operaciones o validaciones en sus programas.
 
-## Cómo hacerlo
+## Cómo:
 
 ```elixir
-# Definir una cadena
-cadena = "Hola mundo"
+IO.puts String.length("Hola mundo!")
+```
+Salida: 11
 
-# Utilizar la función `String.length` para obtener la longitud
-String.length(cadena) #=> 10
+En el ejemplo anterior, utilizamos la función `String.length` en Elixir para encontrar la longitud de la cadena "Hola mundo!" y luego utilizamos la función `IO.puts` para imprimir el resultado en la consola.
 
-# También puede aplicarse a variables o expresiones
-variable = "¡Elixir es increíble!"
-String.length(variable) #=> 20
+## Profundizando:
 
-# Incluso puede utilizarse en cadenas multilínea
-otra_cadena = """
-Esta es una cadena
-con varias líneas
-"""
-String.length(otra_cadena) #=> 28```
+### Contexto histórico:
+La idea de encontrar la longitud de una cadena ha existido desde los primeros lenguajes de programación. Inicialmente, esto se hacía mediante operaciones matemáticas y algoritmos complejos, pero con el tiempo han surgido funciones específicas para facilitar esta tarea.
 
-Puedes ver que la función `String.length` es fácil de usar y nos brinda rápidamente la longitud de cualquier cadena que le pasemos como argumento.
+### Alternativas:
+Existen varias alternativas para encontrar la longitud de una cadena en Elixir. Además de la función `String.length`, también se puede utilizar el operador `length` como en `IO.puts "Hola" | length`, o la función `byte_size` para obtener la cantidad de bytes que ocupa la cadena.
 
-## Deep Dive
+### Detalles de implementación:
+En Elixir, las cadenas son representadas como listas de caracteres ASCII y la función `String.length` simplemente cuenta el número de elementos en la lista. Sin embargo, es importante tener en cuenta las diferencias entre caracteres ASCII y Unicode al trabajar con cadenas en Elixir.
 
-Ahora que ya sabemos cómo obtener la longitud de una cadena de manera básica, es importante entender cómo funciona internamente. En Elixir, las cadenas son caracteres codificados en la tabla de caracteres Unicode. Los caracteres pueden tener diferentes longitudes, dependiendo del conjunto de caracteres que esté utilizando. Por lo tanto, la función `String.length` cuenta el número de caracteres, no el número de bytes.
-
-Además, es importante tener en cuenta que la función `String.length` solo cuenta los caracteres visibles. Por ejemplo, si tenemos una cadena que contenga un carácter de control especial, como un carácter de nueva línea, esa longitud no se contará. Esto se debe a que en la mayoría de los casos, estos caracteres no son visibles en la cadena.
-
-## Ver también
+## Ver también:
 
 - [Documentación oficial de Elixir sobre cadenas](https://hexdocs.pm/elixir/String.html)
-- [Otra forma de obtener la longitud de una cadena en Elixir](https://stackoverflow.com/questions/30630131/how-can-i-find-the-length-of-a-string-in-elixir)
-- [Ejercicios prácticos con cadenas en Elixir](https://github.com/ElixirCasts/strings)
+- [Artículo sobre cadenas en Elixir](https://hackernoon.com/strings-and-elixir-part-1-7f6930f4d330)
+- [Explicación detallada de cómo funcionan las cadenas en Elixir](https://underjord.io/how-string-works-in-elixir.html)

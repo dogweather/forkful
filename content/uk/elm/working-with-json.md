@@ -10,57 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Чому
+## Що & Чому?
 
-Написання програм на Elm за допомогою JSON - простий і ефективний спосіб працювати з даними у веб-додатках. Використання Json в Elm дозволяє легко читати та зберігати дані в структурованому форматі, що є необхідним у сучасному програмуванні.
+Робота з JSON - це процес обробки та збереження даних у форматі, який зручний для обміну між різними програмами. Програмісти часто використовують JSON оскільки це простий та широко підтримуваний формат.
 
-## Як це зробити
+## Як:
 
-Для роботи з JSON у програмі Elm, спочатку потрібно встановити дані залежності за допомогою команди `elm-package install package-name`. Потім можна здійснювати JSON запити, використовуючи пакет `elm-lang/http`, а результат отримувати у вигляді Json за допомогою функції `Http.expectJson`. Нижче наведений приклад отримання та обробки Json у Elm:
+```Elm
+import Json.Decode as Decode
 
-```
-import Json.Decode exposing (..)
-import Http
+-- Декодування JSON у структуру з типом "мова":
+Decode.decodeString Decode.string """ "Ukrainian" """
+--> Ok "Ukrainian"
 
-type alias User =
-    { id : Int
-    , name : String
-    }
-
-userDecoder : Decoder User
-userDecoder =
-    map2 User (field "id" int) (field "name" string)
-
-getUser : Int -> Cmd Msg
-getUser userId =
-    Http.get { url = "https://example.com/users/" ++ toString userId, expect = expectJson userDecoder }
-
-update : Msg -> Model -> ( Model, Cmd Msg )
-update msg model =
-    case msg of
-        UserFetched result ->
-            case result of
-                Ok user ->
-                    ( { model | user = Just user }, Cmd.none )
-                Err _ ->
-                    ( { model | user = Nothing }, Cmd.none )
-        _ ->
-            ( model, Cmd.none )
+-- Кодування структури з типом "мова" у формат JSON:
+Decode.encode 1.2 "Ukrainian"
+--> "\"Ukrainian\""
 ```
 
-Отримані дані можна далі використовувати для рендерингу елементів веб-сторінки і багатьох інших задач.
+## Розглянути детальніше:
 
-## Поглиблене дослідження
+- **Історичний контекст**: JSON був створений у 2001 році та швидко став популярним у світі розробки програмного забезпечення.
+- **Альтернативи**: Інші формати даних, такі як XML та CSV, також використовуються для збереження та обміну даними.
+- **Деталі реалізації**: Elm має вбудовану підтримку для роботи з JSON через модуль ```Json.Decode```.
 
-JSON (JavaScript Object Notation) - це формат обміну даними, який використовується для передачі структурованих даних між різними системами. Elm надає зручний спосіб роботи з даними у цьому форматі за допомогою пакету `elm-lang/json`. Імпортувати цей пакет можна за допомогою модуля `Json`.
-
-В Elm є два типи, які використовуються для роботи з JSON: `Decoder` і `Encoder`. `Decoder` використовується для декодування Json у структури даних Elm, тоді як `Encoder` - для кодування даних Elm у Json формат. Для цього використовуються функції `decode` і `encode`.
-
-Крім того, Elm надає операції для роботи з різними типами даних у Json, такими як об'єкти, масиви, рядки та числа. Наприклад, для отримання значення з об'єкта використовується функція `field`, а для отримання значення з масиву - `index`.
-
-Більш детальну інформацію про роботу з JSON у Elm можна знайти у [документації Elm](https://guide.elm-lang.org/effects/json.html).
-
-## Дивись також
-
-- [Офіційна документація Elm](https://elm-lang.org/docs)
-- [Приклади використання JSON в Elm](https://github.com
+## Дивись також:
+- [Офіційна документація Elm для роботи з JSON](https://guide.elm-lang.org/json/)
+- [Стаття про переваги використання JSON у програмуванні](https://www.itpro.co.uk/network-internet/30494/what-is-json-everything-you-need-to-know)

@@ -1,7 +1,7 @@
 ---
-title:                "Å finne lengden av en streng"
-html_title:           "Bash: Å finne lengden av en streng"
-simple_title:         "Å finne lengden av en streng"
+title:                "Å finne lengden på en streng"
+html_title:           "Bash: Å finne lengden på en streng"
+simple_title:         "Å finne lengden på en streng"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Strings"
@@ -10,43 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hva og hvorfor?
+Å finne lengden på en streng er en vanlig oppgave for programmerere. Det innebærer å telle antall tegn i en tekst eller en variabel. Dette kan være nyttig for å validere brukerinput, lage begrensninger for tekstinput eller å formatere utdata på en bestemt måte.
 
-Har du noen gang lurt på hvor mange tegn en tekststreng inneholder? Kanskje du jobber med dataanalyse eller programmering, og trenger å vite lengden på en streng for å kunne behandle den riktig. Uansett årsak, å kunne finne lengden på en streng er en nyttig ferdighet å ha i verktøykassen din.
-
-## Hvordan
-
-Det finnes flere måter å finne lengden på en streng i Bash på. En av de vanligste metodene er å bruke kommandoen `expr length`, som tar inn en streng og returnerer antall tegn i den. La oss se på et eksempel:
+# Hvordan:
+For å finne lengden på en streng i Bash, kan vi bruke kommandoen "echo" sammen med parameteren "-n" for å ikke legge til et nytt linjeskift i utdataen. Vi kan deretter bruke "wc" (word count) kommandoen med parameteren "-c" for å telle antall tegn i strengen. Her er et eksempel:
 
 ```Bash
-streng="Hei, verden!"
-echo `expr length $streng`
+echo -n "Hei, verden!" | wc -c
 ```
+Output: 12
 
-Dette vil returnere verdien 12, siden tekststrengen består av 12 tegn. Merk at vi først må sette strengen i en variabel (`streng=`) og så bruke variabelen i kommandoen med `$`. Ellers vil kommandoen ikke vite hvilken streng den skal telle antall tegn i.
-
-En annen metode er å bruke parameterutvidelsen `${#string}`, som også returnerer lengden på en streng. Her er et eksempel:
+Vi kan også bruke "expr" kommandoen sammen med "length" funksjonen for å finne lengden på en variabel. Her er et eksempel på dette:
 
 ```Bash
-streng="Hei, verden!"
-echo ${#streng}
+hello="Hei, verden!"
+echo "Lengden på strengen hello er $(expr length $hello)"
 ```
+Output: Lengden på strengen hello er 12
 
-Dette vil også gi oss verdien 12 som output. Forskjellen her er at vi ikke trenger å bruke `expr` kommandoen, bare parameterutvidelsen `${#}`.
+# Dypdykk:
+Å finne lengden på en streng er en vanlig oppgave som går langt tilbake i programmeringshistorien. I eldre programmeringsspråk, som for eksempel C, må programmet selv håndtere å telle lengden på en streng. I moderne språk som Bash, har vi mer effektive kommandoer for å gjøre dette. Alternativet til å bruke "wc" kommandoen, er å bruke "expr" kommandoen med "length" funksjonen, som vi så i eksempelet.
 
-## Dypdykk
-
-Visste du at det også er mulig å telle antall tegn i en fil ved hjelp av Bash? For å gjøre dette, kan du bruke kommandoen `wc`, som står for "word count". Siden denne kommandoen er ment for å telle ord, må du bruke parameterutvidelsen `${#}` for å bare telle tegn. Her er et eksempel:
-
-```Bash
-fil="eksempel.txt"
-tegn=$(wc -m < $fil)
-echo $tegn
-```
-
-I dette tilfellet vil variabelen `tegn` inneholde antall tegn i filen `eksempel.txt` og output vil være det samme tallet. Igjen, merk at vi må bruke parameterutvidelsen for å bare få antall tegn.
-
-## Se også
-
-- [Bash parameterutvidelser](https://wiki.bash-hackers.org/syntax/pe)
-- [Kommandoen `wc`](https://www.hostinger.com/tutorials/linux-wc-command)
+# Se også:
+- [Unix lengde kommandodokumentasjon](https://linux.die.net/man/1/length)
+- [Bash man-side for "expr" kommandoen](https://linux.die.net/man/1/expr)

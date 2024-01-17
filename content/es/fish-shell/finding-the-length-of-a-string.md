@@ -10,29 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué?
+## ¿Qué y por qué?
 
-Si estás programando en Fish Shell, es posible que en algún momento necesites saber la longitud de una cadena de texto. Esta información puede ser útil para realizar acciones específicas en tu programa o simplemente para mostrar información al usuario. En este artículo te explicaremos cómo puedes hacerlo de manera sencilla.
+En programación, encontrar la longitud de una cadena de caracteres (string) es simplemente contar cuántos caracteres tiene esa cadena. Los programadores a menudo necesitan hacer esto para realizar operaciones y manipulaciones en las cadenas de texto, como cortar o concatenar partes específicas. 
 
-## Cómo hacerlo
+## ¡Cómo hacerlo!
 
-Para obtener la longitud de una cadena de texto en Fish Shell, utilizaremos el comando `string length`. Este comando toma como argumento la cadena de texto de la cual queremos obtener la longitud, y devuelve un número que representa dicha longitud. Veamos un ejemplo en el que declaramos una variable con una cadena de texto y utilizamos el comando `string length` para obtener su longitud:
+El Fish Shell tiene una función incorporada llamada "string length" que nos permite encontrar la longitud de una cadena. Aquí hay un ejemplo con una cadena de prueba llamada "Hola Mundo":
 
-```Fish Shell
-set cadena "¡Hola mundo!"
-echo (string length $cadena)
+```
+Fish Shell> string length "Hola Mundo"
+11
 ```
 
-La salida de este código será `12`, ya que la cadena de texto "¡Hola mundo!" tiene 12 caracteres. Fácil, ¿verdad?
+Como puedes ver, la cadena tiene 11 caracteres, incluyendo el espacio entre las palabras. También puedes usar esta función con variables que contengan cadenas de caracteres:
+
+```
+Fish Shell> set saludo "¡Hola a todos!"
+Fish Shell> string length $saludo
+14
+```
 
 ## Profundizando
 
-Es importante mencionar que Fish Shell cuenta con una serie de comandos y atajos que facilitan la manipulación de cadenas de texto. Algunos de ellos son `string sub`, que nos permite obtener una subcadena de una cadena original, y `string replace`, que nos permite reemplazar una parte de una cadena por otra. Además, Fish Shell también nos ofrece la posibilidad de utilizar expresiones regulares para manipular cadenas de texto de manera más avanzada.
+En la historia de la programación, encontrar la longitud de una cadena de caracteres fue una tarea tediosa y propensa a errores. Los programadores tenían que contar manualmente cada caracter o escribir códigos complejos para resolver el problema. Sin embargo, hoy en día, con la ayuda de herramientas como el Fish Shell, esta tarea se ha vuelto mucho más sencilla y eficiente.
 
-En resumen, conocer la longitud de una cadena de texto puede ser de gran ayuda en nuestras tareas de programación, y gracias a los comandos y atajos de Fish Shell podemos hacerlo de manera rápida y sencilla.
+Otra forma de encontrar la longitud de una cadena de caracteres es usando el comando "wc" (word count) en la línea de comandos del sistema operativo. Sin embargo, esto solo funciona si hay una sola palabra en la cadena, de lo contrario, se contarán todas las palabras.
+
+En términos de implementación, la función "string length" del Fish Shell utiliza la función "strlen" de C para encontrar la longitud de una cadena. Esta función cuenta cada caracter en una cadena hasta llegar al final indicado por el caracter nulo '\0'. 
 
 ## Ver también
 
-- [Documentación oficial de Fish Shell](https://fishshell.com/docs/current/index.html)
-- [Tutorial de Fish Shell en español](https://medium.com/@guillermo_andreu/tutorial-de-fish-shell-en-espa%C3%B1ol-c5ae22ba9a28)
-- [Expresiones regulares en Fish Shell](https://fishshell.com/docs/current/cmds/string.html#string-replace)
+- [Fish Shell: Functions](https://fishshell.com/docs/current/index.html#functions)
+- [C String Functions](https://www.tutorialspoint.com/c_standard_library/string_h.htm)
+- [Using the "wc" command](https://www.computerhope.com/unix/uwc.htm)

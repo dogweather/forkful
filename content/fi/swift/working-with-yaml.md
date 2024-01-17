@@ -1,7 +1,7 @@
 ---
-title:                "Työskentely yaml:n kanssa"
-html_title:           "Swift: Työskentely yaml:n kanssa"
-simple_title:         "Työskentely yaml:n kanssa"
+title:                "Yhteistyössä YAML:n kanssa"
+html_title:           "Swift: Yhteistyössä YAML:n kanssa"
+simple_title:         "Yhteistyössä YAML:n kanssa"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Data Formats and Serialization"
@@ -10,45 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+Mitä ja miksi?:
+YAML on tapa tallentaa ja välittää tietoa tekstimuodossa. Ohjelmoijat käyttävät sitä mm. mahdollistamaan helpon konfiguroinnin ja tiedon jakamisen eri sovellusten välillä.
 
-Miksi sinun pitäisi käyttää YAML-formaattia ohjelmoinnissa? YAML (YAML Ain't Markup Language) on helppolukuinen ja selkeä formaatti, joka on suosittu varsinkin ohjelmistokehittäjien keskuudessa. Se säästää aikaa ja vaivaa tiedostojen käsittelyssä ja tekee koodista helpommin ylläpidettävää.
+Miten: 
+Esimerkiksi, jos haluat tallentaa listan käyttäjänimiä ja salasanoja, voit käyttää YAML-muotoa seuraavasti: 
 
-## Kuinka
-
-Jos haluat aloittaa käyttämään YAML-formaattia Swiftissä, seuraavassa on muutamia esimerkkejä siitä, kuinka voit tallentaa ja lukea tietoja YAML-muodossa:
-
-```Swift
-// Esimerkki YAML-tiedoston tallentamisesta
-let dictionary = ["nimi": "Matti", "ikä": 25, "mieliharrastukset": ["lukeminen", "lenkkeily"]]
-let data = try YAMLSerialization.data(withYAMLObject: dictionary)
-try data.write(to: URL(fileURLWithPath: "tiedosto.yml"))
-
-// Esimerkki YAML-tiedoston lukemisesta
-let filePath = Bundle.main.path(forResource: "tiedosto", ofType: "yml")
-let data = try Data(contentsOf: URL(fileURLWithPath: filePath))
-let dictionary = try YAMLSerialization.yamlObject(with: data) as? [String: Any]
-print(dictionary["nimi"]) // Tulostaa "Matti"
+```
+Swift
+# Lista käyttäjänimistä ja salasanoista
+käyttäjä1:
+  käyttäjänimi: "käyttäjä1"
+  salasana: "salasana1"
+käyttäjä2:
+  käyttäjänimi: "käyttäjä2"
+  salasana: "salasana2"
 ```
 
-## Syvemmälle
+Tällöin tiedot tallentuvat helposti luettavaan muotoon ja niitä on helppo käsitellä esimerkiksi ohjelmointikielellä. 
 
-YAML-formaatti koostuu avaimista ja arvoista, kuten monissa muissakin ohjelmointikielissä. Avaimet ja arvot erotetaan kaksoispisteellä ja jokainen avain-arvo pari alkaa omalla rivillään. Alla olevassa esimerkissä näet, kuinka YAML-muodossa voi tallentaa monimutkaisempia tietorakenteita, kuten listoja ja sisäkkäisiä tietorakenteita.
+Syväluotaus: 
+YAML on syntynyt XML-formaatin haasteiden ja muun monimutkaisuuden vuoksi. Se on myös joustavampi kuin JSON, mutta vaatii hieman enemmän työtä kuin esimerkiksi CSV. On myös olemassa muita tekstipohjaisia formaatteja, kuten TOML ja INI. YAML:n tärkein etu on kuitenkin sen helppolukuisuus ja -kirjoitettavuus. 
 
-```Swift
-kotieläimet: # Tämä on avain
-  - nimi: Haukku # Sisäkkäinen tietorakenne
-    ikä: 3
-  - nimi: Katti
-    ikä: 5
-    lempiruoka: kala
-```
-
-Lisätietoja YAML-formaatista ja sen syntaksista löytyy YAML-spesifikaatiosta. Voit myös käyttää monia erilaisia kirjastoja, kuten YAMLSerialization, SwiftyYAML tai Yams, helpottaaksesi YAML-tiedostojen käsittelyä Swiftissä.
-
-## Katso myös
-
-- [YAML-spesifikaatio](https://yaml.org/spec/)
-- [YAMLSerialization-dokumentaatio](https://developer.apple.com/documentation/foundation/yamlserialization)
-- [SwiftyYAML-repositorio](https://github.com/BeauNouvelle/SwiftyYAML)
-- [Yams-repositorio](https://github.com/jpsim/Yams)
+Katso myös: 
+- [YAML.org](https://yaml.org/) – YAML:n viralliset verkkosivut
+- [YAML: Wikipedia](https://fi.wikipedia.org/wiki/YAML) – Lyhyt kuvaus YAML:stä
+- [JSON vs YAML](https://medium.com/swlh/yaml-vs-json-41680258ab92) – Vertailu YAML:n ja JSON:n välillä

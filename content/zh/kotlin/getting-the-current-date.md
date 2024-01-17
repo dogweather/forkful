@@ -10,42 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
+# 什么是获取当前日期？为什么程序员要这么做？
 
-获取当前日期是一个常见的编程需求，它可以帮助开发者跟踪时间相关的任务，比如记录日志或者执行定时任务。
+获取当前日期是指从计算机系统中获取当前的日期和时间的操作。程序员经常需要使用当前日期来记录程序的创建时间、交易时间或者记录事件发生的时间。因此，获取当前日期对于程序员来说是非常重要的。
 
-## 如何
+# 如何获取当前日期？
 
-在 Kotlin 中，获取当前日期可以通过使用 `LocalDate` 类来实现。首先，我们需要导入 `java.time.LocalDate` 包，然后在代码中创建一个 `LocalDate` 实例：
-
-```Kotlin
-import java.time.LocalDate
-
-val currentDate = LocalDate.now()
+```
+Kotlin val currentDate = LocalDate.now()
 ```
 
-我们也可以通过提供特定的日期 `year`, `month`, `dayOfMonth` 参数来创建一个自定义的 `LocalDate` 实例：
+这个简单的代码可以帮助你获取当前的日期。你也可以使用其他的日期格式，例如：
 
-```Kotlin
-val customDate = LocalDate.of(2021, 10, 31)
+```
+Kotlin val currentDate = LocalDateTime.now()
+val formattedDate = currentDate.format(DateTimeFormatter.BASIC_ISO_DATE)
 ```
 
-要格式化日期并以特定的格式输出，我们可以使用 `format` 方法：
+这样可以将当前日期转换为基本的ISO格式，也就是“yyyymmdd”。
 
-```Kotlin
-val formattedDate = currentDate.format(DateTimeFormatter.ISO_DATE)
-println(formattedDate)
-```
+# 深入了解
 
-输出为 `2021-11-06`。
+## 历史背景
 
-## 深入了解
+在编程的早期，程序员们需要手动编写代码来获取当前日期。随着计算机技术的发展，现在已经有很多内置的函数和库来帮助程序员简便地获取当前日期。
 
-除了使用 `LocalDate` 类，Kotlin 还提供了 `LocalDateTime` 类来获取当前日期和时间的详细信息。此外，还有 `ZonedDateTime` 类来转换日期和时间为特定的时区。
+## 其他方法
 
-如果需要处理不同的时区或者日期和时间的计算，可以使用 `java.time` 包中提供的各种方法和类来实现。更多相关内容，可以查看 [Java 日期时间 API 文档](https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/time/package-summary.html)。
+除了使用内置函数来获取当前日期，程序员还可以使用第三方库。例如，Joda-Time是用于处理日期和时间的流行开源库。
 
-## See Also
+## 实现细节
 
-- [Java 日期时间 API 文档](https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/time/package-summary.html)
-- [官方 Kotlin 文档](https://kotlinlang.org/docs/home.html)
+在计算机系统中，时间是以整数来表示的。从1970年1月1日开始，每秒钟会增加一个整数值，这就是我们所说的“时间戳”。程序员可以通过获取时间戳来计算当前日期。
+
+# 参考文献
+
+- [Java Doc - LocalDate](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
+- [Joda-Time Docs](https://www.joda.org/joda-time/)
+- [Timestamps Explained](https://www.digitalocean.com/community/tutorials/understanding-date-and-time-in-java)

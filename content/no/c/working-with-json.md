@@ -10,56 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hva og hvorfor?
+${DET} {å arbeide} med JSON er en viktig del av moderne programmering. JSON står for JavaScript Object Notation, og er et format for å lagre og utveksle data. {DET} er spesielt nyttig når {programmerere} trenger å sende data over internett eller lagre data i en fil. JSON er også lett å lese og skrive for både mennesker og datamaskiner.
 
-Hvorfor ville du jobbe med JSON i C? Det er enkelt: JSON er den vanligste formen for datautveksling på nettet, og ved å lære å jobbe med det i C kan du gjøre programmene dine mer fleksible og robuste.
-
-## Hvordan
-
-La oss se på et eksempel på hvordan du kan jobbe med JSON i C. Først må vi inkludere "json-c/json.h" biblioteket og definere en variabel for å holde JSON-dataen:
+## Hvordan: 
+For å arbeide med JSON i C, kan du bruke et bibliotek som [cJSON](https://github.com/DaveGamble/cJSON). Her er et eksempel på hvordan du kan lage og behandle et JSON-objekt i C:
 
 ```C
-#include <json-c/json.h>
-json_object *jobj;
+#include <stdio.h>
+#include "cJSON.h"
+
+int main() {
+  // Lager et nytt JSON-objekt
+  cJSON *root = cJSON_CreateObject();
+  // Legger til en nøkkel og verdi
+  cJSON_AddStringToObject(root, "navn", "Ole");
+  // Konverterer JSON-objektet til en streng
+  char *json_str = cJSON_Print(root);
+  // Skriver ut strengen
+  printf("%s", json_str);
+  // Frigjør minne
+  free(json_str);
+  cJSON_Delete(root);
+  return 0;
+}
+
+// Output:
+// {"navn":"Ole"}
 ```
 
-Vi kan bruke en annen funksjon fra biblioteket for å lage en ny JSON-objekt:
+## Dykk ned:
+JSON ble opprinnelig utviklet av Douglas Crockford på slutten av 90-tallet som et alternativ til XML. Det har blitt et populært format for å lagre og utveksle data, særlig innen webutvikling. Det finnes også andre biblioteker for å arbeide med JSON i C, som [Jansson](https://github.com/akheron/jansson) og [jsmn](https://github.com/zserge/jsmn). Det er også viktig å huske på at sikkerhetsrisikoer kan oppstå når du behandler JSON-data, spesielt hvis de kommer fra eksterne kilder. Det er derfor viktig å validere og sanitisere dataene før du bruker dem i programmet ditt.
 
-```C
-jobj = json_object_new_object();
-```
-
-For å legge til data i JSON-objektet vårt, kan vi bruke følgende kode:
-
-```C
-json_object_object_add(jobj, "name", json_object_new_string("Sara"));
-json_object_object_add(jobj, "age", json_object_new_int(25));
-```
-
-Til slutt kan vi bruke en funksjon for å konvertere JSON-objektet til en streng og skrive den ut:
-
-```C
-printf("%s\n", json_object_to_json_string(jobj));
-```
-
-Koden vår vil produsere følgende utdata:
-
-```C
-{"name": "Sara", "age": 25}
-```
-
-Vær oppmerksom på at dette bare er et enkelt eksempel på hvordan du kan jobbe med JSON i C. Det finnes mange flere funksjoner og metoder som kan hjelpe deg med å lese og manipulere JSON-data.
-
-## Dypdykk
-
-For å jobbe mer effektivt med JSON i C, kan det være nyttig å forstå noen grunnleggende konsepter. JSON består av nøkler og verdier, der nøklene er strenger og verdiene kan være av forskjellige typer (strenger, tall, objekter, osv.). Det er viktig å forstå denne strukturen når du leser og skriver JSON-data.
-
-En annen ting å vurdere er hvordan du håndterer feil når du jobber med JSON i C. Biblioteket har funksjoner for å sjekke om et gitt nøkkel eller verdi eksisterer, og for å håndtere eventuelle feil som måtte oppstå under lesing eller skriving av JSON-data.
-
-Et godt sted å starte for å lære mer om å jobbe med JSON i C er selve dokumentasjonen til "json-c" biblioteket, som har en liste over alle tilgjengelige funksjoner og hvordan de kan brukes.
-
-## Se også
-
-- [json-c dokumentasjon](https://linux.die.net/man/3/json-c)
-- [JSON offisiell nettside](https://www.json.org/json-en.html)
-- [C-programmering kurs (på norsk)](https://www.ntnu.no/wiki/display/ieg/5.+C-Programmering)
+## Se også:
+- [cJSON dokumentasjon](https://github.com/DaveGamble/cJSON/blob/master/README.md)
+- [Jansson dokumentasjon](https://jansson.readthedocs.io/en/2.12/)
+- [jsmn dokumentasjon](https://github.com/zserge/jsmn/blob/master/docs/usage.md)

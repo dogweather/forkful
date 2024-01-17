@@ -10,30 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué deberías calcular una fecha en el futuro o pasado?
+## ¿Qué y por qué?
 
-Irás a una fiesta en dos semanas y quieres saber qué día será dentro de un mes. O tal vez estás planificando un viaje y necesitas saber qué día cae en tu cumpleaños en tres años. Sea cual sea tu razón, el cálculo de fechas en el futuro o pasado es una habilidad útil para tener en tu caja de herramientas de programación.
+Calcular una fecha en el futuro o en el pasado es una tarea común en la programación, ya sea para programar eventos, notificaciones o simplemente para realizar cálculos en una aplicación. Los programadores necesitan esta funcionalidad para hacer sus aplicaciones más dinámicas y útiles.
 
-## Cómo hacerlo
+## Cómo hacerlo:
 
-Usando Elixir, calcular una fecha en el futuro o pasado es realmente sencillo. Simplemente tienes que usar la función ```Date.add```, que toma tres argumentos: la fecha inicial, el número de días a añadir o restar, y la unidad de tiempo (días, semanas, meses, años). Aquí hay un ejemplo de código que calcula la fecha dentro de 2 semanas:
+El lenguaje de programación Elixir tiene una función útil llamada Date.add/2 que permite agregar o restar una cantidad específica de días, meses o años a una fecha dada. Aquí hay un ejemplo de cómo usarlo:
 
 ```Elixir
-initial_date = Date.today() # Esta será la fecha inicial
-future_date = Date.add(initial_date, 14, :days) # 14 días en el futuro
-IO.puts(future_date) # Imprime el resultado: 2020-08-05
+Date.add(date, days)
 ```
 
-Como puedes ver, simplemente añadimos 14 días a la fecha inicial y obtuvimos la fecha dentro de 2 semanas. También puedes cambiar la unidad de tiempo a semanas, meses o años según tus necesidades.
+donde `date` es la fecha de inicio y `days` es el número de días que desea agregar o restar. Por ejemplo, si queremos obtener la fecha de 5 días después de la fecha actual, podemos llamar a la función de esta manera:
 
-## Profundizando
+```Elixir
+Date.add(Date.utc_today(), 5)
+```
 
-Aunque la función ```Date.add``` es útil para calcular fechas en el futuro o pasado, también hay otras funciones que se pueden utilizar para hacer cálculos más complejos. Por ejemplo, la función ```Date.diff``` te permite obtener la diferencia entre dos fechas en días, semanas, meses o años. También hay funciones para obtener el primer o último día del mes y funciones para validar si una fecha es válida o no.
+Esto nos dará la fecha en formato `{year, month, day}`. También podemos utilizar los módulos `DateTime` y `Timex` para obtener resultados más detallados y formateados.
 
-En resumen, el cálculo de fechas en el futuro o pasado en Elixir es muy fácil y hay varias funciones útiles que puedes utilizar para hacer cálculos más complejos. ¡Ahora tienes una nueva habilidad para sorprender a tus amigos en la próxima fiesta!
+## Profundizando:
 
-## Ver También
+Calcular fechas en el futuro o en el pasado ha sido una necesidad constante en la programación. Antes de la invención de las computadoras, las fechas y el tiempo se calculaban manualmente. Con el avance de la tecnología, se han desarrollado diferentes algoritmos y funciones para hacer este proceso más eficiente y preciso. Además de la función `Date.add/2`, también se pueden utilizar otras bibliotecas como `Chronic` y `Calendar` para realizar cálculos de fechas.
 
-- Documentación de Elixir sobre fechas: https://hexdocs.pm/elixir/Date.html
-- Tutorial de Elixir sobre fechas: https://elixir-lang.org/getting-started/dates-times-and-strings.html#dates-and-times-in-elixir
-- Ejemplos de código para calcular fechas en Elixir: https://gist.github.com/aaronrenner/155add21f5d572ccd193c5c6bd0a4bb5
+## Ver también:
+
+- Documentación oficial de Elixir sobre Date: https://hexdocs.pm/elixir/Date.html#add/2
+- Ejemplos de uso de funciones de fechas en Elixir: https://blog.appsignal.com/2019/04/23/how-to-work-with-dates-in-elixir.html
+- Alternativas a la función `Date.add/2`: https://stackoverflow.com/questions/54711915/how-do-i-add-days-to-date-in-elixir

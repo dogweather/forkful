@@ -1,7 +1,7 @@
 ---
-title:                "नए प्रोजेक्ट की शुरुआत"
-html_title:           "Rust: नए प्रोजेक्ट की शुरुआत"
-simple_title:         "नए प्रोजेक्ट की शुरुआत"
+title:                "किसी नए परियोजना की शुरुआत करना।"
+html_title:           "Rust: किसी नए परियोजना की शुरुआत करना।"
+simple_title:         "किसी नए परियोजना की शुरुआत करना।"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Getting Started"
@@ -10,31 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Kyun
+## Kya & Kyu?
+Ek naye project ko shuru karna kya hai aur programmers kyu iska intezar karte hai?
 
-Agar aap ek naya project shuru karne ke liye tayyar hai aur aap ek powerful, fast, aur safe programming language ke jariye apne code ko likhna chahte hai, to Rust aapke liye ek badiya option ho sakta hai. Rust, Java aur C++ ki tarah high-level programming language hai jiski madad se aap apne project ko efficient tarike se develop kar sakte hai.
+Jab ek programmer ko koi naya project mile, jaise ki ek software ya web application ka development, woh usko shuru karta hai. Yeh project ek nayi creative journey hai, jisme woh apne skills aur knowledge ko use karke kuch naya banata hai. Programmers isliye naye project ke liye excited hote hai, kyunki woh apne expertise ko showcase kar sakte hai aur apne creative ideas ko reality mei convert kar sakte hai.
 
-## Kaise Kare
+## Kaise:
+Ab aate hai hume actual coding ki taraf aur dekhte hai ki kaise hum ek naya project shuru kar sakte hai Rust programming language mei.
 
-Rust language ko install karne ke liye sabse pehle aapko www.rust-lang.org website par jana hoga. Yaha par aapko Rust language ke official compiler aur development tools mil jayenge. Uske baad aap apne terminal mein "rustc" command ka use karke simple hello world program ko run kar sakte hai.
-
-```
-Rust
+```Rust
 fn main() {
-    println!("Hello, World!");
+    println!("Namaste Duniya!"); // Output: Namaste Duniya!
 }
 ```
+Jaise ki aap dekh sakte hai, humne ek basic "Hello World!" program likha hai Rust mei. Yeh program hume terminal par "Namaste Duniya!" print kar dega.
 
-Is code block mein "fn" keyword se aap apne function ko define kar sakte hai aur "println!" function ke jariye console par output print kar sakte hai. Rust mein variables mutable ya immutable ho sakte hai. Mutable variables mein value change kar sakte hai, jabki immutable variables mein value change nahi kar sakte.
+## Gahre Khadir:
+Ab chaliye hum kuch gahre khadir jante hai, jaise ki naye project shuru karne ka kaaran aur Rust mei iska implementation.
 
-## Lambi Yatra
+### Itihaas ka context:
+Rust programming language 2010 mei Mozilla Research team dwara develop kiya gaya tha. Iska goal tha ek safe, concurrent aur practical language banna. Yeh initially C++ ki jagah use kiya jata tha, lekin ab iska use web development, embedded systems aur data science mei bhi hota hai.
 
-Rust language ke jitne bhi features hai uske peeche Ek tarah ka philosophy hai jo ki "safety" aur "performance" se related hai. Rust language ko banane wale developers ne isme kai security checks aur optimizer algorithms include kiye hai, jiski madad se aapke code mein errors aur bugs kam ho jate hai aur execution speed improve ho jata hai.
+### Vikalp:
+Rust ke alawa bhi kayi programming languages hai jinse aap naye project shuru kar sakte hai, jaise ki C++, Java, Python. In languages mei se har ek ki apni pros aur cons hai, lekin Rust ka unique selling point hai uska focus on safety, speed aur memory management.
 
-Ek important feature hai Rust ka 'Ownership' concept, jisme memory management ka kaam ho jata hai. Is concept ke through, jab bhi aap ek variable ko define karte hai, to usme kitni bhi memory allocate karne ke baad, wo variable ke scope ke bahar jate hi automatically deallocate ho jati hai. Isse memory leaks aur dangling pointers jaise issues se bacha jata hai.
+### Implementation:
+Rust mei naye project shuru karne ke liye, aapko pehle Rust compiler aur Cargo package manager install karna padega. Iske baad aap ek source file (jiska extension .rs hota hai) create karke usme apna code likh sakte hai. Uske baad aapko terminal mei "rustc name.rs" command se apna code compile karna hoga aur "cargo run" command se run karna hoga.
 
-## Dekhe Bhi
-
-- [Rust language official documentation](https://www.rust-lang.org/learn)
-- [Rust language tutorials on Youtube](https://www.youtube.com/playlist?list=PLVvjrrRCBy2JSHf9tGxGKJ-bYAN_uDCUL)
-- [Rust language Github repository](https://github.com/rust-lang/rust)
+## Dekhiye Bhi:
+- [Official Rust website](https://www.rust-lang.org/)
+- [Rust documentation](https://doc.rust-lang.org/)

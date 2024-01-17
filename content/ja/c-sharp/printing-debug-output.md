@@ -1,7 +1,7 @@
 ---
-title:                "デバッグ出力の印刷"
-html_title:           "C#: デバッグ出力の印刷"
-simple_title:         "デバッグ出力の印刷"
+title:                "デバッグ出力の表示"
+html_title:           "C#: デバッグ出力の表示"
+simple_title:         "デバッグ出力の表示"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Testing and Debugging"
@@ -10,42 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+## 何が何故？
+デバッグの出力をプリントするとは何かを説明し、プログラマーがそれを行う理由を２、３文で説明します。
 
-デバッグ出力を行う理由は、コードの実行中に起きている問題やバグを特定し、修正するためです。
+デバッグの出力は、プログラムを実行中に表示されるメッセージや変数の値などの情報を指します。プログラムの実行中に何が起こっているかを確認するためや、バグを見つけるためなど、プログラマーはデバッグの出力を利用します。
 
-## 方法
-
-デバッグ出力を行うには、`Console.WriteLine()`メソッドを使用します。以下のコードは、変数`num`の値を出力する例です。
-
-```C#
-int num = 10;
-Console.WriteLine("numの値は" + num + "です。");
+## 方法：
+```C# 
+Console.WriteLine("Hello World"); 
 ```
-実行結果は、`numの値は10です。`となります。
-
-また、配列やオブジェクトの内容を出力することもできます。以下のコードは、配列`numbers`の要素を出力する例です。
-
+このように、Consoleクラスを使用して、デバッグの出力を印刷することができます。また、変数の値を確認するには、次のように書くこともできます。
 ```C#
-int[] numbers = { 1, 2, 3, 4, 5 };
-Console.WriteLine("numbersの要素は" + string.Join("、", numbers) + "です。");
+Console.WriteLine("変数 x の値は " + x + "です。"); 
 ```
-実行結果は、`numbersの要素は1、2、3、4、5です。`となります。
+注意：デバッグの出力はプログラムが完成した後は不要なので、最終的なコードには削除する必要があります。
 
-## 深堀り
+## 詳細：
+デバッグの出力は非常に便利ですが、本番環境では不要な情報を表示するため、パフォーマンスにも影響します。そのため、デバッグモードとリリースモードでは別々の方法でデバッグの出力を処理することが推奨されています。
 
-デバッグ出力を行う際には、`Console.WriteLine()`メソッドの代わりに`Debug.WriteLine()`メソッドを使用することもできます。このメソッドを使用すると、コンパイル時にデバッグ出力が無視されるようになります。
+また、デバッグの出力を記録するには、ログファイルを使用したり、デバッグツールを利用することもできます。
 
-また、特定の条件下でのみデバッグ出力を行いたい場合は、`if`文を使用して条件を設定することもできます。例えば以下のように、変数`debugMode`が`true`の場合のみデバッグ出力を行うように設定することができます。
+## 他にも見てみて：
+デバッグの出力にはさまざまな使い方がありますので、より詳細な情報を知りたい方は以下のリンクを参考にしてみてください。
 
-```C#
-if(debugMode)
-{
-    Console.WriteLine("デバッグメッセージを出力します。");
-}
-```
-
-## 参考リンク
-
-- [Console.WriteLine()の使用方法](https://docs.microsoft.com/ja-jp/dotnet/api/system.console.writeline)
-- [Debug.WriteLine()の使用方法](https://docs.microsoft.com/ja-jp/dotnet/api/system.diagnostics.debug.writeline)
+- [C#でデバッグを行う方法](https://docs.microsoft.com/ja-jp/visualstudio/debugger/overview-of-debugging-in-visual-studio?view=vs-2019)
+- [デバッグツールの使い方](https://docs.microsoft.com/ja-jp/visualstudio/debugger/choose-the-debugger-for-your-app?view=vs-2019)
+- [ログファイルの記録の方法](https://docs.microsoft.com/ja-jp/dotnet/core/extensions/logging?tabs=command-line)

@@ -10,63 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-Text files are a common way to store and transfer data in the programming world. Understanding how to write a text file in Python opens up possibilities for organizing and manipulating data within a program.
+##
+## What & Why?
 
-## How To
-Writing a text file in Python is a simple process that can be accomplished in just a few lines of code. 
+Writing a text file is the process of creating a new file on your computer and filling it with text data. Programmers often use this method to store and organize important information that can be easily accessed and modified later on.
 
-First, the `open()` function is used to create a file object, which is then assigned to a variable. The `open()` function takes two arguments: the name of the file to be created, and the mode in which it should be opened. The `w` mode indicates that the file will be opened for writing.
-
-```Python
-file = open("my_file.txt", "w")
-```
-
-Next, the `write()` method is called on the file object, with the text to be written as the argument. This method adds the specified text to the file.
+## How to:
 
 ```Python
-file.write("This is my first text file.")
+# Creating/opening a text file
+myfile = open("sample.txt", "w")
+
+# Write to the file
+myfile.write("Hello Python!")
+
+# Close the file
+myfile.close()
+
+# Reading the contents
+with open("sample.txt", "r") as myfile:
+    data = myfile.read()
+    print(data)
 ```
 
-Finally, the `close()` method is used to close the file. This step is important as it frees up system resources that were used to manipulate the file.
-
-```Python
-file.close()
+Output:
+```
+Hello Python!
 ```
 
-To ensure that the file has been successfully created and written to, we can use the `read()` method to read the contents of the file and print it out.
+## Deep Dive:
 
-```Python
-file = open("my_file.txt", "r")
-print (file.read())
-```
+Writing text files has been a fundamental practice in computer programming for decades. Before the rise of databases and other advanced data storage methods, text files were the go-to option for storing and organizing data. They are also useful for creating log files to track program activities and errors. Other methods like databases or document formats, such as XML or JSON, have their advantages in terms of structure and organization, but plain text files remain simple, lightweight, and easy to manipulate.
 
-Running this code will produce the following output in the console:
+To create a new text file, the `open()` function is used, which takes in two arguments: the name of the file and the mode in which it will be opened. The `write()` method is used to add content to the file, and the `close()` method closes the file once the writing is complete. To read from a file, the `open()` function is again used, this time in read mode ("r"), and the `read()` method is used to retrieve the contents.
 
-```
-This is my first text file.
-```
+## See Also:
 
-## Deep Dive
-There are a few different modes in which a file can be opened for writing in Python. The `w` mode, as used in the example above, will create a new file if one with the specified name doesn't already exist. If a file with the same name does exist, it will be overwritten with the new content.
-
-If we wanted to append new text to an existing file, we would use the `a` mode instead. This will add the new text to the end of the existing file, rather than overwriting it.
-
-```Python
-file = open("my_file.txt", "a")
-file.write(" This is an appended line of text.")
-file.close()
-```
-
-Running the same `read()` and `print()` code as before will now produce the following output:
-
-```
-This is my first text file. This is an appended line of text.
-```
-
-It's also worth noting that the `open()` function can take an optional third argument to specify the encoding of the file. This is important when dealing with different character sets and languages.
-
-## See Also
-- Python documentation on [Reading and Writing Files](https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files)
-- [Understanding File Handling in Python](https://realpython.com/read-write-files-python/)
-- A tutorial on [Working with Text Files in Python](https://www.programiz.com/python-programming/file-operation)
+- [Python Text File Operations](https://www.w3schools.com/python/python_file_handling.asp)
+- [Working with Files in Python](https://realpython.com/read-write-files-python/)
+- [Understanding the open() function](https://www.programiz.com/python-programming/built-in-function/open)

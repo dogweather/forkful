@@ -10,51 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜパースするのか
+## 何 & なぜ？
+HTML解析とは、プログラマーがWebページを読み取り、それらをデータとして取り出すことを意味します。プログラマーがHTMLを解析する理由は、Web開発やデータ収集など、さまざまなアプリケーションで必要とされるためです。
 
-パースはプログラミングにおいて、特にWeb開発において重要な機能です。HTMLという言語は非常に人間にとってわかりやすいものですが、コンピューターにとっては理解しにくいため、パースを行うことでコンピューターでも理解できる形式に変換する必要があります。
-
-## パースの方法
-
-まず、HaskellでHTMLをパースするためには、**html-conduit**というライブラリを使用する必要があります。次に、**http-conduit**を使用してHTMLを取得し、**select**関数を用いて特定の要素を抽出してパースすることができます。
+## 方法：
+下記のようなコードブロックで、Haskellを使用してHTMLを解析する方法を示します。
 
 ```Haskell
-import Control.Monad (void)
-import Network.HTTP.Conduit (simpleHttp)
-import Text.HTML.DOM (parseLBS)
-import Text.XML.Cursor (Cursor, fromDocument, ($//), (&//), element, content)
+import Text.HTML.TagSoup --パーサーをインポート
 
-main :: IO ()
+--解析したいURLを指定してタグを取得する
+tags :: IO [Tag String]
+tags = getTags "https://example.com"
+
+--特定のタグを指定して、そのタグ内の内容を取得する
+links :: [Tag String] -> [String]
+links ts =
+    [fromAttrib "href" lnk | TagOpen "a" [("href",lnk)] <- ts]
+
+--例：リンクを取得する
 main = do
-    -- HTMLを取得
-    doc <- simpleHttp "https://example.com"
-
-    -- 全てのpタグの中身を取得
-    let cursor = fromDocument $ parseLBS doc
-        paragraphs = cursor $// element "p" &// content
-
-    -- 結果の表示
-    mapM_ putStrLn paragraphs
-```
-
-上記のコードでは、**mapM_**関数を使用して抽出した要素を一つずつ表示しています。また、**&//**を用いることで、pタグのように特定の要素をネストして抽出することもできます。
-
-### 出力例
+    ts <- tags
+    print $ links ts
 
 ```
-テキスト
-テキスト
-画像
-```
 
-## 深堀り
+このコードでは、URLからタグを取得し、その中からリンクを取り出しています。
 
-前述したように、HTMLは人間にとってわかりやすい言語ですが、コンピューターにとっては扱いづらいものです。そのため、パースを行うことで、特定の要素を抽出するだけではなく、データを加工したり、データベースに保存したりすることができます。
+## 深く掘り下げる：
+HTML解析は、Webの発展とともに非常に重要な技術となりました。他の言語やツールもありますが、Haskellは強力なパーサーコンビネーターライブラリであるであることから、HTML解析には最適な言語の一つと言えます。実装の詳細や、より高度な解析方法については、ぜひ公式ドキュメントを参照してください。
 
-また、HTML以外にも、JSONやXMLなどの形式もパースすることができます。これらの形式はWeb開発においてよく使用されるため、パースの知識は非常に役立つものです。
-
-## 関連リンク
-
-- [html-conduit](https://hackage.haskell.org/package/html-conduit)
-- [http-conduit](https://hackage.haskell.org/package/http-conduit)
-- [select](https://hackage.haskell.org/package/select)
+## 関連情報：
+- [Haskell公式ドキュメント](https://www.haskell.org/documentation/)
+- [HTML解析ライブラリ「TagSoup」GitHubリポジトリ](https://github.com/ndmitchell/tagsoup)

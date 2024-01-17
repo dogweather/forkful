@@ -1,7 +1,7 @@
 ---
-title:                "Obliczanie daty w przyszłości lub w przeszłości"
-html_title:           "C#: Obliczanie daty w przyszłości lub w przeszłości"
-simple_title:         "Obliczanie daty w przyszłości lub w przeszłości"
+title:                "Obliczanie daty w przyszłości lub przeszłości"
+html_title:           "C#: Obliczanie daty w przyszłości lub przeszłości"
+simple_title:         "Obliczanie daty w przyszłości lub przeszłości"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Dates and Times"
@@ -10,35 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co & Dlaczego?
+Obliczanie daty w przyszłości lub przeszłości to jedna z ważnych czynności, które programiści wykonują w swojej pracy. Pozwala to na szybkie wyliczenie daty na podstawie odpowiednich parametrów, co przyspiesza proces tworzenia aplikacji. W ten sposób można wyświetlić daty, zmieniać ustawienia kalendarza lub wyliczyć przyszłe wydarzenia.
 
-Planowanie jest ważną częścią naszego życia. Czasami musimy przewidzieć przyszłe daty, na przykład datę kolejnego spotkania lub ważne wydarzenie. W takich sytuacjach pomocne może być obliczanie daty w przyszłości lub przeszłości. Dzięki temu możemy lepiej zorganizować nasze obowiązki i uniknąć niepotrzebnego stresu.
+## Jak to zrobić:
 
-## Jak to zrobić
-
-Obliczanie daty w przyszłości lub przeszłości jest możliwe dzięki wykorzystaniu klasy ```DateTime``` w C#. Aby przewidzieć datę w przyszłości, należy dodać określoną ilość dni, tygodni, miesięcy lub lat do aktualnej daty. Natomiast, aby otrzymać datę w przeszłości, musimy odjąć odpowiednią ilość czasu. Przykładowy kod wyglądałby następująco:
-
-```C#
-// Przykład obliczenia daty za 7 dni
-DateTime dzisiaj = DateTime.Today;
-DateTime zaTydzien = dzisiaj.AddDays(7); 
-Console.WriteLine("Data za 7 dni to: " + zaTydzien);
-// Wynik: Data za 7 dni to: 10.06.2021 00:00:00
-```
+Można obliczyć datę w przyszłości lub przeszłości przy użyciu klasy `DateTime` w języku C#. W poniższym przykładzie wyliczymy datę 30 dni od dzisiaj:
 
 ```C#
-// Przykład obliczenia daty przed 1 miesiącem
-DateTime dzisiaj = DateTime.Today;
-DateTime przedMiesiacem = dzisiaj.AddMonths(-1); 
-Console.WriteLine("Data przed 1 miesiącem to: " + przedMiesiacem);
-// Wynik: Data przed 1 miesiącem to: 04.05.2021 00:00:00
+DateTime dzis = DateTime.Now;
+DateTime przyszlosc = dzis.AddDays(30);
+Console.WriteLine(przyszlosc);
 ```
+**Wynik:** 
 
-## Deep Dive
+2021-09-06 10:30:00
 
-Klasa ```DateTime``` oferuje również wiele innych metod, dzięki którym możemy precyzyjnie manipulować datami. Na przykład, możemy użyć metody ```AddHours()``` aby dodać lub ```SubtractMinutes()``` aby odjąć konkretne godziny lub minuty. W przypadku bardziej zaawansowanych obliczeń, możemy skorzystać z klasy ```TimeSpan```, która pozwala na określenie dokładnego interwału czasu, jaki chcemy dodać lub odjąć od daty.
+Aby zmienić date w przeszłości, należy użyć metody `AddDays()` z wartością ujemną, np. `-30`, co pozowli na wyliczenie daty 30 dni wstecz.
 
-## Zobacz też
+## Głębszy wgląd:
+Obliczanie daty w przyszłości lub przeszłości jest możliwe dzięki liczbom całkowitym, które są przypisane do konkretnych dat. W ten sposób można obliczać daty na podstawie ustalonych algorytmów. Alternatywnym sposobem jest użycie biblioteki `DateTimeOffset`, która pozwala na obliczenia z uwzględnieniem strefy czasowej.
 
-- [Dokumentacja klasy DateTime w C#](https://docs.microsoft.com/pl-pl/dotnet/api/system.datetime?view=net-5.0)
-- [Artykuł: Podstawy programowania w C#](https://codecademy.com/articles/learn-c-sharp)
+Warto również wspomnieć o metodzie `Add()` umożliwiającej dodanie różnych okresów czasu, takich jak tygodnie, lata czy minuty, do wybranej daty. W ten sposób można wyliczyć daty w bardziej precyzyjny sposób.
+
+## Zobacz także:
+- [Dokumentacja klasy DateTime w języku C#](https://docs.microsoft.com/pl-pl/dotnet/api/system.datetime?view=net-5.0)
+- [Poradnik dotyczący operacji na dacie w C#](https://www.codecademy.com/articles/date-time-operations-csharp)
+- [Przykłady użycia biblioteki DateTimeOffset](https://docs.microsoft.com/pl-pl/dotnet/standard/datetime/examples-of-using-datetimeoffset)

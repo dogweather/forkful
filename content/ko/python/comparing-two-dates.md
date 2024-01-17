@@ -10,45 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
-두 날짜를 비교하는 데에는 왜 관심을 가질까요?
-두 날짜를 비교하면서 우리는 두 날짜가 같은지, 어느 쪽이 앞선 날짜인지 혹은 두 날짜 사이의 차이가 얼마나 있는지 등을 알 수 있습니다. 이것은 우리 일상에서 날짜를 다룰 때 매우 유용한 기능이 됩니다.
+## 무엇 & 왜?
 
-## 어떻게
-Python에서는 날짜를 비교하기 위해 datetime 모듈을 사용합니다. 이번에는 datetime 모듈을 활용하여 두 날짜를 비교하는 방법을 알아보겠습니다. 아래의 코드를 따라해보세요.
+두 날짜를 비교한다는 것은 일반적으로 두 날짜 중 보다 빠른 혹은 늦은 날짜를 찾는 작업을 말합니다. 이는 프로그래머들이 코드를 작성하고 데이터를 정렬하거나 분석하기 위해서 자주 사용되는 작업입니다.
+
+## 하는 방법:
 
 ```Python
-from datetime import date
+# 두 날짜 비교
+date1 = "2021-10-01"
+date2 = "2021-09-01"
 
-# 비교하고 싶은 두 날짜를 변수로 정의합니다.
-first_date = date(2020, 5, 20)
-second_date = date(2020, 6, 15)
-
-# 두 날짜가 같은지 비교합니다.
-if first_date == second_date:
-    print("두 날짜는 같습니다.")
+if date1 > date2:
+    print("date1이 더 늦은 날짜입니다.")
+elif date1 < date2:
+    print("date2가 더 늦은 날짜입니다.")
 else:
-    print("두 날짜는 다릅니다.")
-
-# 두 날짜 중 어느 날짜가 앞선 날짜인지 비교합니다.
-if first_date < second_date:
-    print("first_date가 second_date보다 앞섭니다.")
-else:
-    print("first_date가 second_date보다 뒤에 있습니다.")
-
-# 두 날짜 사이의 차이를 계산합니다.
-difference = second_date - first_date
-print("두 날짜 사이의 차이는 {}일입니다.".format(difference.days))
-```
-출력 결과:
-```
-두 날짜는 다릅니다.
-first_date가 second_date보다 앞섭니다.
-두 날짜 사이의 차이는 26일입니다.
+    print("두 날짜는 같은 날짜입니다.")
 ```
 
-## 딥 다이브
-비교하는 두 날짜의 형식이 다를 경우, Python에서는 datetime 모듈의 `strptime()` 함수를 활용하여 문자열로 된 날짜를 datetime 객체로 변환할 수 있습니다. 또한, 비교할 때 두 날짜의 시간도 고려할 수 있습니다. 자세한 내용은 [문서](https://docs.python.org/3/library/datetime.html)를 참고하세요.
+```
+Output:
+date1이 더 늦은 날짜입니다.
+```
 
-## 확인해보세요
-[파이썬에서 날짜 다루는 법](https://www.datacamp.com/community/tutorials/python-datetime-tutorial) - datetime 모듈의 다양한 기능을 소개하는 자습서입니다.
+## 더 깊이 파보기:
+두 날짜를 비교하는 것은 오래전부터 사용되어온 개념입니다. 오늘날에는 다양한 프로그래밍 언어와 라이브러리에서 이를 지원하고 있으므로 쉽게 구현할 수 있습니다. 다른 방법으로는 날짜를 숫자로 변환하여 비교하는 것이 있습니다. 이는 특정 날짜를 기준으로 해서 그보다 늦은 날짜는 양수, 그보다 빠른 날짜는 음수로 나타내는 방식입니다.
+
+## 더 알아보기:
+- [Python date comparison](https://www.tutorialspoint.com/python/python_date_time.htm)
+- [날짜 비교 관련 라이브러리](https://pypi.org/project/dateparser/)
+- [날짜와 시간을 다루는 팁과 트릭](https://www.digitalocean.com/community/tutorials/how-to-work-with-date-and-time-in-python-3)
+
+## 관련 자료:
+- [Python 공식 문서](https://docs.python.org/3/library/datetime.html#datetime.date)

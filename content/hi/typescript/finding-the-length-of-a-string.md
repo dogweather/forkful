@@ -1,7 +1,7 @@
 ---
-title:                "स्ट्रिंग की लंबाई का पता लगाना"
-html_title:           "TypeScript: स्ट्रिंग की लंबाई का पता लगाना"
-simple_title:         "स्ट्रिंग की लंबाई का पता लगाना"
+title:                "स्ट्रिंग की लंबाई खोजना"
+html_title:           "TypeScript: स्ट्रिंग की लंबाई खोजना"
+simple_title:         "स्ट्रिंग की लंबाई खोजना"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -10,38 +10,19 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
+## क्या और क्यों?
+लगभग हर प्रोग्राम, हम स्ट्रिंग की लंबाई को जानने के लिए कोडिंग करते हैं। स्ट्रिंग की लंबाई हमें यह बताती है कि उसमें कितने अक्षर होते हैं। इससे हमें बहुत सारे टास्क्स को सुलझाने में सहायता मिलती है।
 
-कभी-कभी हमें किसी भी प्रोग्रामिंग भाषा में अपने कोड की आवश्यकता होती है ताकि हम डेटा की लंबाई को जान सकें। इसी तरह, TypeScript में भी स्ट्रिंग की लंबाई जानने के लिए एक विशेष तरीका है।
-
-## कैसे करें
-
+## कैसे करें?
 ```TypeScript
-let string = "Hello World";
-
+let string = "Hello World!";
 console.log(string.length);
-// आउटपुट: 11
 ```
+उपरोक्त कोड से हम स्ट्रिंग "Hello World!" की लंबाई 12 अक्षरों में बता सकते हैं। स्ट्रिंग की लंबाई को जानने के लिए `.length` उपकरण का इस्तेमाल किया जाता है।
 
-यहां हमने `string` नाम की एक चर बनाई और उसकी लंबाई को `length` फंक्शन की मदद से प्रिंट किया। हम इस तरह से `.` नोटेशन का भी उपयोग कर सकते हैं:
+## गहराई में जाएं
+स्ट्रिंग की लंबाई की तरह, इसे मापने के लिए बहुत से अन्य तरीके भी हैं। जैसे इसका इस्तेमाल कई भाषाओं में किया जा सकता है और कुछ मामूली फ़ंक्शन के रूप में भी उन रूटीनों को किया गया है जो स्ट्रिंग की लंबाई को पकड़ते हैं। इस विषय पर अधिक जानने के लिए इन लिंक्स का इस्तेमाल करें।
 
-```TypeScript
-console.log("Hello World".length);
-// आउटपुट: 11
-```
-
-## गहराई में जाएँ
-
-जब हम `length` फंक्शन को इस्तेमाल करते हैं, तो वह दरअसल `string` के `length` प्रोपर्टी को रिटर्न करती है। अगर हम इसके साथ `.` नोटेशन का उपयोग न करें तो हम `TypeError` देखेंगे।
-
-इससे बाहर, हम `length` को स्ट्रिंग के सभी चरों को जोड़ने के लिए इस्तेमाल भी कर सकते हैं, जैसे:
-
-```TypeScript
-console.log("Hello".length + "World".length);
-// आउटपुट: 10
-```
-
-## देखें भी
-
-- [JavaScript Strings](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
-- [TypeScript Documentation](https://www.typescriptlang.org/docs/home.html)
+## और भी देखें
+[विकिपीडिया: स्ट्रिंग](https://hi.wikipedia.org/wiki/स्ट्रिंग_(कंप्यूटिंग))
+[MDN वेब डेवलपमेंट के लिए स्ट्रिंग फ़ंक्शन्स](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)

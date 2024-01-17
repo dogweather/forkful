@@ -1,7 +1,7 @@
 ---
-title:                "Att arbeta med yaml"
-html_title:           "Java: Att arbeta med yaml"
-simple_title:         "Att arbeta med yaml"
+title:                "Arbeta med YAML"
+html_title:           "Java: Arbeta med YAML"
+simple_title:         "Arbeta med YAML"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Data Formats and Serialization"
@@ -10,69 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad och varför?
 
-Om du är en Java-utvecklare som jobbar med konfigurationsfiler, vill lära dig mer om YAML-formatet eller bara behöver en enkel och lättanvändbar syntax för att hantera datastrukturer, så är detta artikeln för dig! YAML är ett populärt format för att läsa och skriva datastrukturer, och medan det finns andra alternativ som JSON och XML, så skiljer sig YAML genom sin läsbara syntax och stöd för kommentarer.
+Att arbeta med YAML är ett sätt för programmerare att strukturera och lagra information på ett enkelt och läsbart sätt. Det används ofta för konfigurationsfiler och dataöverföring. Genom att använda YAML kan du organisera din kod på ett mer intuitivt sätt och göra den mer lättillgänglig för andra utvecklare.
 
-## Hur man gör det
+## Hur gör man?
 
-För att använda YAML i din Java-kod, behöver du först lägga till en beroende i ditt projekt. Du kan antingen använda en byggverktyg som Maven eller lägga till beroendet manuellt. För Maven-projekt, lägg till följande kod i din pom.xml fil:
-
-```
-<dependency>
-  <groupId>org.yaml</groupId>
-  <artifactId>snakeyaml</artifactId>
-  <version>1.27</version>
-</dependency>
-```
-
-Med beroendet tillagt, kan du nu börja använda YAML i din Java-kod. Här är ett exempel som läser in en YAML-fil och sparar datan i en Map:
+För att arbeta med YAML i Java behöver du använda en YAML-parser. Det finns flera olika alternativ, men ett av de mest populära är SnakeYAML. Här är ett exempel på hur du kan använda SnakeYAML för att läsa och skriva YAML-filer i din kod:
 
 ```Java
-// Importera nödvändiga bibliotek
+// Importera SnakeYAML-biblioteket
 import org.yaml.snakeyaml.Yaml;
-import java.io.InputStream;
-import java.util.Map;
 
-// Skapa en inläsningsström
-InputStream inputStream = this.getClass().getClassLoader().getResourceAsStream("config.yaml");
-
-// Använd Yaml-biblioteket för att läsa in datan
+// Skapa en ny instans av Yaml-klassen
 Yaml yaml = new Yaml();
-Map<String, String> data = yaml.load(inputStream);
 
-// Nu kan du jobba med datan som en vanlig Map i din kod
-System.out.println(data.get("server"));
+// Läs från en YAML-fil och spara datan i en HashMap
+HashMap<String, Object> data = yaml.load(new FileInputStream("data.yaml"));
+
+// Skriv till en YAML-fil från data i en HashMap
+yaml.dump(data, new FileWriter("ny_data.yaml"));
 ```
 
-### Exempel på YAML-fil
+## Djupdykning
 
-```
-server: localhost
-port: 8080
-database:
-  name: testdb
-  username: admin
-  password: secret
-```
+YAML (YAML Ain't Markup Language) är ett mänskligt läsbart dataformat som ursprungligen skapades för Perl-programmering. Det är inspirerat av andra språk som Python och Tcl. YAML är ett alternativ till XML och JSON, men skiljer sig genom att ha en mer naturlig och intuitiv syntax.
 
-### Exempel på utmatning
+Det finns flera olika sätt att arbeta med YAML i Java, inklusive SnakeYAML, Jackson och JavaBeans. Det bästa valet beror på dina specifika behov och preferenser.
 
-```
-localhost
-```
-
-## Utforska djupare
-
-YAML-formatet är mer än bara en enkel syntax för att lagra data, det har också stöd för mer avancerade funktioner som jag listar här:
-
-- Möjlighet att inkludera andra filer med "mergade" data
-- Variabler som kan återanvändas i hela filen
-- Kommentarer för att förklara datatypen eller funktionaliteten hos dina datastrukturer
-- Användning av specialtecken för att ange datatyper som strängar, booleans och datum
-- Möjlighet att lägga till metadata som t.ex. version och skapare av filen
+För mer information om hur du arbetar med YAML och utveckling i Java, se gärna följande källor:
 
 ## Se även
 
-- [SnakeYAML dokumentation](https://bitbucket.org/asomov/snakeyaml/wiki/Documentation)
-- [Java YAML-biblioteket på GitHub](https://github.com/BizBoard/java-yaml)
+- [SnakeYAML](https://bitbucket.org/asomov/snakeyaml)
+- [Jackson](https://github.com/FasterXML/jackson-dataformat-yaml)
+- [JavaBeans](https://docs.oracle.com/javase/8/docs/api/java/beans/package-summary.html)
+- [YAML.org](https://yaml.org)
+- [Java](https://www.java.com/sv/)

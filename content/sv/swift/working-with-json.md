@@ -1,7 +1,7 @@
 ---
-title:                "Att arbeta med json"
-html_title:           "Swift: Att arbeta med json"
-simple_title:         "Att arbeta med json"
+title:                "Arbeta med json"
+html_title:           "Swift: Arbeta med json"
+simple_title:         "Arbeta med json"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Data Formats and Serialization"
@@ -10,98 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
+Att arbeta med JSON är ett vanligt förekommande uppgift för programmerare. JSON (JavaScript Object Notation) är ett format för att representera datastrukturer i en läsbar och kompakt form. Det används ofta för att överföra data mellan en server och en webbapplikation.
 
-Om du arbetar med webbutveckling, mobilapplikationer eller backend-system är det troligt att du kommer att stöta på JSON-filer. JSON, eller JavaScript Object Notation, är ett populärt format för att överföra och lagra data. Genom att lära dig hur man arbetar med JSON i Swift kommer du kunna hantera data på ett mer effektivt sätt och skapa mer dynamiska applikationer.
-
-## Hur man gör det
-
-Att arbeta med JSON i Swift är ganska enkelt och det finns många användbara inbyggda funktioner som hjälper till att hantera JSON-data. Först behöver du importera Foundation-ramverket, som innehåller de nödvändiga klasserna för att hantera JSON.
+## Så här gör du:
+Ett vanligt användningsområde för JSON inom Swift är att hämta och hantera data från en webbtjänst. Här är ett enkelt exempel på hur man kan läsa in JSON-data från en URL:
 
 ```Swift
-import Foundation
-```
+let url = URL(string: "http://example.com/data.json")
 
-För att läsa en JSON-fil och omvandla den till en Swift-dictionary kan du använda `JSONSerialization`-klassen. Låt oss säga att vi har en JSON-fil som innehåller information om olika böcker:
-
-```Swift
-let jsonFile = "{
-  \"books\": [
-    {
-      \"title\": \"Sagan om ringen\",
-      \"author\": \"J.R.R. Tolkien\",
-      \"genre\": \"Fantasy\"
-    },
-    {
-      \"title\": \"Hundraåringen som klev ut genom fönstret och försvann\",
-      \"author\": \"Jonas Jonasson\",
-      \"genre\": \"Humor\"
+if let jsonData = try? Data(contentsOf: url!) {
+    let json = try? JSONSerialization.jsonObject(with: jsonData, options: [])
+    
+    if let data = json as? [String: Any] {
+      // gör något med datan här
     }
-  ]
-}"
-```
-
-För att läsa in denna fil och omvandla den till en dictionary kan du använda följande kod:
-
-```Swift
-let data = jsonFile.data(using: .utf8)!
-do {
-  if let jsonDictionary = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: Any] {
-    let books = jsonDictionary["books"] as! [[String: Any]]
-    for book in books {
-      let title = book["title"] as! String
-      let author = book["author"] as! String
-      let genre = book["genre"] as! String
-      print("Title: \(title), Author: \(author), Genre: \(genre)")
-    }
-  }
-} catch {
-  print("Error parsing JSON: \(error)")
 }
 ```
 
-Detta kommer att ge följande utmatning:
-
-```
-Title: Sagan om ringen, Author: J.R.R. Tolkien, Genre: Fantasy
-Title: Hundraåringen som klev ut genom fönstret och försvann, Author: Jonas Jonasson, Genre: Humor
-```
-
-För att konvertera en Swift-dictionary till JSON kan du använda `JSONSerialization` igen:
+Ett annat vanligt scenarium är att skicka data till en server i JSON-format. Här är ett exempel på hur man kan konvertera en Swift-dictionary till JSON och skicka det som en HTTP-request:
 
 ```Swift
-let bookDictionary: [String: Any] = [
-  "title": "Harry Potter och de vises sten",
-  "author": "J.K. Rowling",
-  "genre": "Fantasy"
-]
+let data = ["namn": "Lisa", "ålder": 25]
+let jsonData = try? JSONSerialization.data(withJSONObject: data, options: [])
 
-do {
-  let jsonData = try JSONSerialization.data(withJSONObject: bookDictionary, options: .prettyPrinted)
-  if let jsonString = String(data: jsonData, encoding: .utf8) {
-    print(jsonString)
-  }
-} catch {
-  print("Error converting dictionary to JSON: \(error)")
+// skapar en HTTP-request 
+let url = URL(string: "http://example.com/submit")
+var request = URLRequest(url: url!)
+request.httpMethod = "POST"
+
+// sätter JSON-data som body för requesten 
+request.httpBody = jsonData
+
+// skickar requesten
+let task = URLSession.shared.dataTask(with: request) { data, response, error in
+    // responsehantering här
 }
+task.resume()
 ```
 
-Detta kommer att ge följande utmatning:
+## Djupdykning:
+JSON är ett populärt format för att representera data eftersom det är läsbart för både människor och datorer. Det är också lätthanterligt i många olika språk och plattformar. Alternativ till JSON är t.ex. XML och CSV, men dessa anses ofta som mer komplicerade och mindre flexibla.
 
-```Swift
-{
-  "title": "Harry Potter och de vises sten",
-  "author": "J.K. Rowling",
-  "genre": "Fantasy"
-}
-```
+I Swift finns det inbyggda metoder för att konvertera mellan JSON och Swift-datastrukturer, vilket gör det enkelt att integrera med andra system och plattformar. Det finns också ett flertal tredjepartsbibliotek som tillhandahåller mer avancerade funktioner för att hantera JSON-data.
 
-## Djupdykning
-
-Det finns många andra användbara funktioner och klasser för att arbeta med JSON i Swift, som till exempel `Codable`-protokollet som gör det enklare att omvandla mellan Swift-objekt och JSON. Det är också möjligt att arbeta med JSON över nätverk genom att använda `URLSession` och `DataTask`.
-
-Se även:
-
-- [Working with JSON in Swift](https://developer.apple.com/swift/blog/?id=37)
-- [Codable in Swift: Beyond the Basics](https://www.raywenderlich.com/1168358-codable-in-swift)
-- [Using Codable with URLRequests and URLSessions in Swift 4](https://medium.com/@nimjea/using-codable-with-urlrequests-and-urlsessions-in-swift-4-b332f7c5e10e)
+## Se även:
+- [Apple's dokumentation om JSONSerialization](https://developer.apple.com/documentation/foundation/jsonserialization)
+- [SwiftyJSON - ett populärt tredjepartsbibliotek för att hantera JSON-data i Swift](https://github.com/SwiftyJSON/SwiftyJSON)
+- [JSON vs XML vs CSV - en jämförelse av olika dataformat](https://www.guru99.com/json-vs-xml.html)

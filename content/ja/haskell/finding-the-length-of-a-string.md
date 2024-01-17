@@ -10,33 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ文字列の長さを求めるか
+## 何となぜ？
 
-文字列の長さを求めると、プログラムの機能を拡張することができます。例えば、ユーザーからの入力の長さを制限したり、文字列を分割する際の基準として利用したりすることができます。
+文字列の長さを見つけることは、プログラマーにとって非常に重要なタスクの一つです。プログラムで使用される文字列の長さを知ることで、データの処理や編集がより簡単になります。また、文字列の長さがプログラムの実行に影響を与える場合もあります。そのため、文字列の長さを見つけることは、プログラミングにおける基本的なスキルの一つです。
 
-## 使い方
+## 方法：
 
-文字列の長さを求めるためには、`length`関数を使用します。以下の例では、`str`という文字列の長さを求め、結果をコンソールに出力しています。
+Haskellでは、文字列の長さを見つけるために、`length`関数を使用します。この関数は、文字列を引数として受け取り、その文字列の長さを返します。以下は、`length`関数を使用したサンプルコードと出力の例です。
 
 ```Haskell
-str = "Hello World!"
-putStrLn ("Length of str: " ++ show (length str))
+length "Haskell" -- 出力結果: 7
+length "こんにちは" -- 出力結果: 5
 ```
 
-出力結果:
+## 深く掘り下げる：
 
-```
-Length of str: 12
-```
+文字列の長さを見つける方法は、プログラミング言語によって異なります。しかし、Haskellの`length`関数は、非常に簡単で使いやすい方法です。また、Haskellでは他にも、文字列を扱うための様々な関数が提供されています。例えば、`concat`関数を使用すると、複数の文字列を結合することができます。
 
-## 詳細を掘り下げる
+また、長い文字列の場合、`length`関数はパフォーマンスの面で注意が必要です。そのため、より高速な方法を使用したい場合は、`Data.Text`モジュールをインポートし、`length`関数の代わりに`Data.Text.length`関数を使用することができます。
 
-`length`関数は、`String`型の引数を受け取り、その文字列の長さを返します。`String`型は、本質的に`[Char]`型のエイリアスです。つまり、文字列は文字のリストとして表現されます。
+## 関連情報：
 
-`length`関数は、再帰的アルゴリズムを使用して実装されています。つまり、与えられた文字列を1文字ずつチェックして、その数を数え上げるという方法を取っています。そのため、文字列の長さが長くなるほど計算量も増えていきます。
-
-## 参考リンク
-
-- [Haskellの公式ドキュメント](https://www.haskell.org/documentation/)
-- [Haskell入門](https://qiita.com/tanakh/items/0ba42c7ca36cd29d0ac8)
-- [文字列を操作するHaskell関数の一覧](https://wiki.haskell.org/Strings)
+- [Haskellのドキュメンテーション: String関数](https://hackage.haskell.org/package/base-4.14.1.0/docs/Data-String.html)
+- [Haskell Wikiの文字列処理に関する記事](https://wiki.haskell.org/Strings)
+- [Haskellの基本的な文字列操作についての記事](https://souenzzo.github.io/posts/taotal-haskell-string-function/)

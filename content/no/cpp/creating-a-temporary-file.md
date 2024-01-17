@@ -10,50 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hva & Hvorfor?
 
-Å lage midlertidige filer kan være nyttig når man trenger å lagre data midlertidig, for eksempel ved kjøring av et program eller når man leser eller skriver data til en fil.
+Å opprette en midlertidig fil i programmering betyr å opprette en midlertidig lagringsplass for data som kan brukes senere i koden. Dette is en vanlig praksis blant programmere for å organisere og håndtere data på en effektiv måte.
 
-## Hvordan lage midlertidige filer i C++
+## Hvordan:
 
-Måten å lage en midlertidig fil på i C++ er ved å bruke standardbiblioteket <fstream>. Vi må inkludere dette biblioteket i koden vår for å kunne lage og manipulere filer. Deretter bruker vi funksjonen "tmpfile()" for å opprette vår midlertidige fil, som vil bli lagret i operativsystemets midlertidige mappe.
+For å opprette en midlertidig fil i C++, kan du bruke funksjonen "tmpfile()" som er tilgjengelig i standardbiblioteket. Denne funksjonen vil automatisk opprette en midlertidig fil og returnere en filpeker som du kan bruke til å lese eller skrive til filen. Her er et eksempel på hvordan du kan bruke denne funksjonen:
 
 ```C++
-#include <fstream>
-using namespace std;
+#include <stdio.h>
+#include <stdlib.h>
 
 int main() {
-  // Opprett en midlertidig fil
-  FILE *fp = tmpfile();
-  
-  // Skriv tekst til filen
-  fprintf(fp, "Dette er en midlertidig fil.");
-  
-  // Les fra filen
-  fseek(fp, 0, SEEK_SET);
-  char buffer[100];
-  fgets(buffer, 100, fp);
-  
-  // Print ut teksten
-  cout << buffer << endl;
-  
+  FILE *tmp = tmpfile(); // Oppretter en midlertidig fil og lagrer filpekeren i variabelen "tmp"
+  fprintf(tmp, "Dette er innholdet i den midlertidige filen"); // Skriver data til den midlertidige filen
+  fclose(tmp); // Lukker filen når den ikke lenger er i bruk
   return 0;
 }
 ```
 
 Output:
+-Ingen output vil vises, men filen vil bli opprettet i et midlertidig område på datamaskinen og data vil bli skrevet til den.
 
-```Dette er en midlertidig fil.```
+## Dykk dypere:
 
-I dette eksemplet oppretter vi en midlertidig fil ved hjelp av "tmpfile()", skriver teksten "Dette er en midlertidig fil." til filen og leser deretter teksten fra filen og skriver den ut på skjermen. For å sikre at filen blir slettet når programmet er ferdig, kan vi bruke funksjonen "fclose()" for å lukke filen.
+Å opprette midlertidige filer har vært en vanlig praksis blant programmerere siden begynnelsen av 1960-tallet. Det ble først introdusert i programmeringsspråket "BCPL" og har siden blitt adoptert i mange andre språk, inkludert C++. Det finnes også alternative måter å opprette midlertidige filer på, som for eksempel å bruke en fil med et tilfeldig navn som blir slettet når den ikke lenger er i bruk.
 
-## Dypdykk i oppretting av midlertidige filer
+Når en midlertidig fil blir opprettet, vil systemet automatisk generere et unikt navn for filen som vil være forskjellig fra andre eksisterende filer. I tillegg vil systemet sørge for å slette filen når programmet termineres, slik at man unngår å få igjenliggende midlertidige filer på datamaskinen.
 
-Når vi bruker funksjonen "tmpfile()" for å opprette en midlertidig fil, vil filen bli lagret i operativsystemets midlertidige mappe. Dette er vanligvis i "/tmp" for Linux og "/var/tmp" for macOS. Operativsystemet vil generere et unikt filnavn for den midlertidige filen og returnere en peker til filen som vi kan bruke i koden vår.
+## Se også:
 
-Det er også verdt å merke seg at når programmet vårt avsluttes, vil filen automatisk bli slettet fra den midlertidige mappen. Dette er nyttig for å spare plass på harddisken og unngå rot med unødvendige midlertidige filer.
-
-## Se også
-
-- https://www.cplusplus.com/reference/cstdio/tmpfile/
-- https://en.cppreference.com/w/c/io/tmpfile
+Hvis du vil lære mer om håndtering av filer i C++, kan du se vår artikkel "Hvordan lese og skrive til filer i C++". Eller hvis du vil vite mer om C++ funksjoner, kan du sjekke ut vår "C++ Funksjoner Guide" for en oversikt over ulike funksjoner og hvordan du bruker dem i koden din.

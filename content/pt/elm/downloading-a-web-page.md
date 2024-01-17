@@ -1,7 +1,7 @@
 ---
-title:                "Fazendo o download de uma página da web"
-html_title:           "Elm: Fazendo o download de uma página da web"
-simple_title:         "Fazendo o download de uma página da web"
+title:                "Baixando uma página da web"
+html_title:           "Elm: Baixando uma página da web"
+simple_title:         "Baixando uma página da web"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "HTML and the Web"
@@ -10,59 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+## O que & Porque?
 
-Se você está interessado em desenvolver páginas da web eficazes e eficientes, saber como fazer o download de uma página da web é essencial. Com a linguagem de programação Elm, você pode aprender a fazer isso de maneira simples e eficiente.
+Baixar uma página da web é o processo de transferir um documento HTML de um servidor para um dispositivo, permitindo que o usuário visualize o conteúdo do site em seu navegador. Os programadores geralmente fazem isso para acessar informações de sites externos ou adicionar funcionalidades a seus próprios aplicativos.
 
-## Como Fazer
+## Como:
 
-Para começar, é importante ter o Elm instalado no seu computador. Em seguida, você pode seguir os seguintes passos:
+Para baixar uma página da web usando Elm, você pode usar a função `Http.get` e passar a URL desejada como argumento. Aqui está um exemplo de código:
 
-1. Importe o módulo `Http` para acessar as funções necessárias para fazer o download de uma página da web.
-2. Crie uma função que utilize a função `send` do módulo `Http`. Esta função é responsável por fazer a requisição HTTP para o URL da página que você deseja fazer o download.
-3. Atribua a função `send` a uma tarefa e utilize a função `Http.expectString` para especificar o tipo de resposta que você espera receber.
-4. Use a função `Task.attempt` para lidar com a resposta da tarefa e convertê-la em um `Cmd Msg` que possa ser processado pela sua aplicação. Lembre-se de incluir esta `Cmd Msg` na função de atualização do seu modelo.
-5. Para fazer o download da página, utilize a função `Http.send` na função `init` do seu programa.
-
-
-```Elm
+````Elm
 import Http
-import String
 
-type Msg = DownloadPage | ReceiveResponse (Result Http.Error String)
+Http.get "https://www.example.com" 
+    |> Task.perform PageLoaded FailedToLoad
+````
 
-init : (Model, Cmd Msg)
-init =
-    ( initialModel, Http.send ReceiveResponse (Http.get "https://example.com") )
-    
-update : Msg -> Model -> (Model, Cmd Msg)
-update msg model =
-    case msg of
-        DownloadPage ->
-            ( model, Http.send ReceiveResponse (Http.get "https://example.com") )
-        
-        ReceiveResponse (Result.Ok response) ->
-            let
-                pageContent =
-                    response
-                        |> String.lines
-                        |> String.join " "
-            in
-                ( { model | page = pageContent }, Cmd.none )
-                
-        ReceiveResponse (Result.Err error) ->
-            ( model, Cmd.none )
-```
+Neste exemplo, estamos usando a função `get` da biblioteca padrão `Http` e passando a URL "https://www.example.com" como argumento. Em seguida, usamos o operador de pipeline `|>` para encadear a função `Task.perform` que irá lidar com o resultado da solicitação. Se a solicitação for bem-sucedida, a função `PageLoaded` será executada com o conteúdo da página como argumento. Caso contrário, a função `FailedToLoad` será executada com uma mensagem de erro.
 
-Com estes passos, sua aplicação será capaz de fazer o download de uma página da web e manipular seus dados como desejar.
+## Deep Dive:
 
-## Profundidade
+O processo de baixar páginas da web é uma parte essencial do desenvolvimento web e é usado em uma variedade de aplicações, como aplicativos de busca, agregadores de notícias e muito mais. Além disso, as funções `Http.get` podem aceitar argumentos adicionais, como headers e parâmetros, para permitir uma personalização ainda maior na solicitação.
 
-O módulo `Http` em Elm oferece várias funções e tipos de dados para lidar com requisições e respostas HTTP. Para uma maior compreensão sobre como essas funções e tipos trabalham juntos, é importante ler a documentação oficial do Elm sobre o módulo `Http` e experimentar com diferentes códigos e respostas.
+Alternativas para baixar páginas da web em Elm incluem o uso da extensão `port` para se comunicar com JavaScript ou a utilização de outras bibliotecas de terceiros que ofereçam mais funcionalidades para lidar com solicitações HTTP.
 
-Vale ressaltar que é importante ter conhecimento prévio sobre os conceitos básicos de requisições e respostas HTTP antes de tentar fazer o download de uma página da web em Elm.
+## See Also:
 
-## Veja Também
-
-- Documentação oficial do módulo `Http` em Elm: https://package.elm-lang.org/packages/elm/http/latest/
-- Um exemplo de aplicação que faz o download de uma página da web em Elm: https://github.com/elm/http/blob/0.19.1/examples/src/Characters.elm
+- Documentação oficial de Elm sobre funções Http.get: https://package.elm-lang.org/packages/elm/http/latest/Http#get
+- Tutorial sobre como baixar páginas da web em Elm: https://dev.to/elmuniversity/downloading-web-pages-with-elm-2eni

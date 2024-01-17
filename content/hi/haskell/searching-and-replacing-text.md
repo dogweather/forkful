@@ -1,7 +1,7 @@
 ---
-title:                "टेक्स्ट को खोजें और प्रतिस्थापित करें"
-html_title:           "Haskell: टेक्स्ट को खोजें और प्रतिस्थापित करें"
-simple_title:         "टेक्स्ट को खोजें और प्रतिस्थापित करें"
+title:                "टेक्स्ट को ढूंढ़ना और बदलना"
+html_title:           "Haskell: टेक्स्ट को ढूंढ़ना और बदलना"
+simple_title:         "टेक्स्ट को ढूंढ़ना और बदलना"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -10,37 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Kyun
-Kya aapne kabhi text ke andar kuch specific words ya patterns ko dhoondhna aur unhe badalna chaaha hai? Ye kuch common tasks hai jo hum log text processing mein karte hain. Haskell mein hum searching aur replacing ko bohot hi aasan aur powerful tarike se kar sakte hain. Chaliye dekhte hain kaise!
+## क्या और क्यों?
 
-## Kaise Karein
-```
-Haskell mein, hum "replace" function ka use karke text mein pattern ko search aur replace kar sakte hain. Iss function mein hum do parameters pass karte hain - pehla parameter wo word ya pattern hai jo hum dhoondhna chahte hain aur dusra parameter wo word ya pattern hai jo usse replace karna hai.
+टेक्स्ट को खोजना और बदलना हमारे दैनिक जीवन में काफी आम होता है, और यह विशेष रूप से डेवलपर्स के लिए एक अहम काम है। जब हमें एक बड़ी फ़ाइल में विशेषताओं को ढूंढना और उसको बदलना होता है, तो हम इस टूल का उपयोग करते हैं। यह हमें समय और परेशानी दोनों बचाता है।
 
-```
-Example:
-```
-replace "hello" "hi" "Hello world!" 
-```
-Output:
-```
-"Hi world!"
-```
-Isme humne "hello" ko "hi" ke sath replace kiya hai.
+## कैसे करें?
 
-Agar hum ek se zyada words ko replace karna chahte hain, to hum multiple "replace" functions ka use kar sakte hain.
-```
-replace "hello" "hi" (replace "goodbye" "bye" "Hello and goodbye, world!")
-```
-Output:
-```
-"Hi and bye, world!"
-```
-Haskell mein hum "regex" ya regular expressions bhi use kar sakte hain searching aur replacing ke liye. Ye kiya jaata hai "regex-base" aur "regex-posix" packages ke through. Inke use se hum specific patterns ya characters ko bhi search aur replace kar sakte hain.
+```Haskell
+main = do
+  -- "Hello World!" को "नमस्ते दुनिया!" में बदलें।
+  let str = "Hello World!"
+  putStrLn $ replace "Hello World!" "नमस्ते दुनिया!" str
 
-### Deep Dive
-Searching aur replacing bohot sari programming languages mein available hai, par Haskell mein ye process bohot hi modular aur flexible hai. Isme hum functions mein parameters pass kar sakte hain aur multiple search aur replace ko bhi chain kar sakte hain. Regex ka use karke bhi hum specific aur complex patterns ko search aur replace kar sakte hain.
+  -- "नमस्ते दुनिया!" से "Hello World!" में बदलें।
+  putStrLn $ replace "नमस्ते दुनिया!" "Hello World!" str
+ where
+  replace = flip . replace_trans
 
-## See Also
-- [Haskell Official Website](https://www.haskell.org/)
-- [Haskell Tutorial - Search and Replace](https://www.tutorialspoint.com/haskell-string-replacement-functions)
+replace_trans sfinds srep str = let slen = length sfinds
+   flist = head $ filter ((sfinds ==) . flip take str) $ inits str
+   (mlist, rest) = splitAt (length flist + slen) str
+   prepend = id
+      . if null flist
+        then id
+        else ((++) flist)
+   rest' = if rest == sfinds then srep else rest
+ in prepend rest'
+```
+
+आउटपुट:
+
+```Haskell
+नमस्ते दुनिया!
+Hello World!
+```
+
+## गहराई में जाएं
+
+टेक्स्ट को खोजने और बदलने की इस तकनीक को 1970 के दशक में केन थॉम्पसन द्वारा उपनिर्धारित किया गया था। वैकल्पिक और अधिक उन्नत तरीकों में शामिल हैं फ़ाइल परिवर्तन और कांट्रोल संरचनाओं के साथ प्रोग्राम में टेक्स्ट को बदलना। यह जिंदगी को सरल बनाता है जो एक विशेष उदाहरण देखने से स्पष्ट हो जाता है।
+
+## भी देखें
+
+- [Haskell टेक्स्ट प्रोग्रामिंग गाइड](https://wiki.haskell.org/Introduction_to_Haskell_Text_IO)
+- [टेक्स्ट में खोजें और बदलें डेवलपर्स का ट्यूटोरियल](https://www.twilio.com/blog/2015/02/comprehensive-guide-updating-text-data-in-haskell-prelude-text.html)

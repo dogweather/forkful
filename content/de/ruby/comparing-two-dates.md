@@ -10,41 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+# Was & Warum?
 
-Vergleichen von zwei Daten ist ein grundlegender Teil der Datentransformation und -analyse, sowohl in der Webentwicklung als auch in der allgemeinen Programmierung. Durch das Vergleichen von zwei Daten können Entwickler herausfinden, ob eine zeitliche Abhängigkeit besteht oder ob eine bestimmte Bedingung erfüllt ist.
+Vergleichen Sie zwei Termine ist eine häufige Aufgabe in der Programmierung. Dabei werden zwei Datumswerte miteinander verglichen, um festzustellen, welches davon größer oder kleiner ist. Programmierer verwenden dies oft, um Bedingungen in ihren Programmen zu überprüfen oder um Daten zu sortieren.
 
-## Wie man es macht
+# Wie geht das?
 
-Der Vergleich von zwei Daten in Ruby ist relativ einfach. Zunächst müssen die beiden Daten in einem geeigneten Format gespeichert werden. Dann kann die `Date` Klasse von Ruby verwendet werden, um die Daten zu vergleichen.
-
+Vergleichen von zwei Terminen in Ruby ist ziemlich einfach. Nehmen wir an, wir haben zwei Termine als String-Werte:
+```Ruby
+date_one = "2021-05-18"
+date_two = "2020-03-15"
 ```
-require 'date'
-
-date1 = Date.new(2020, 01, 01)
-date2 = Date.new(2020, 01, 15)
-
-if date1 == date2
-  puts "Die beiden Daten sind gleich."
-elsif date1 < date2
-  puts "Die erste Datum ist vor dem zweiten Datum."
-else
-  puts "Die erste Datum ist nach dem zweiten Datum."
-end
+Um diese beiden Termine miteinander zu vergleichen, können wir den eingebauten Vergleichsoperator ```<=>``` verwenden:
+```Ruby
+date_one <=> date_two
 ```
+Dies gibt uns entweder 1, 0 oder -1 zurück, je nachdem welches Datum größer ist. Wenn ```date_one``` größer ist als ```date_two```, erhalten wir eine 1, wenn sie gleich sind eine 0 und wenn ```date_one``` kleiner ist als ```date_two```, erhalten wir eine -1.
 
-Die Ausgabe dieses Codes wird `Die erste Datum ist vor dem zweiten Datum.` sein.
+# Tiefere Einblicke
 
-## Tiefer eintauchen
+Das Vergleichen von zwei Terminen stammt aus der Programmiersprache ALGOL 68 und wurde seitdem von vielen Sprachen übernommen, einschließlich Ruby. Alternativ können Programmierer auch die ```Date```-Klasse in Ruby verwenden, um eine breitere Palette von Vergleichsoperationen durchzuführen.
 
-Beim Vergleichen von Daten sollten Entwickler auch die Zeitzone berücksichtigen. In Ruby kann dies mit der `DateTime` Klasse durchgeführt werden. Ein weiterer wichtiger Aspekt ist, dass Daten unter Umständen in verschiedenen Formaten vorliegen können. In solchen Fällen kann die `parse` Methode verwendet werden, um Daten aus unterschiedlichen Formaten in ein einheitliches Format umzuwandeln.
+Der Vergleichsoperator ```<=>``` vergleicht nicht nur zwei Zeichenfolgen, sondern auch Objekte, die das Modul ```Comparable``` implementieren. Dies ermöglicht es Programmierern, benutzerdefinierte Klassen und Objekte miteinander zu vergleichen.
 
-[Dieser Artikel](https://www.rubyguides.com/2018/10/ruby-date-and-time/) bietet eine umfassende Übersicht über die Arbeit mit Daten und der `DateTime` Klasse in Ruby.
+# Siehe auch
 
-[Hier](https://www.rubyguides.com/2015/12/ruby-date-time/) findest du eine detailliertere Erklärung der `Date` Klasse und ihrer Funktionalitäten.
-
-## Siehe auch
-
-- [Dokumentation für die `Date` Klasse](https://ruby-doc.org/stdlib-2.4.1/libdoc/date/rdoc/Date.html)
-- [Dokumentation für die `DateTime` Klasse](https://ruby-doc.org/stdlib-2.4.1/libdoc/date/rdoc/DateTime.html)
-- [Einen Zeitstempel in Ruby erstellen](https://www.rubyguides.com/2019/01/ruby-timestamp/)
+- [Ruby-Dokumentation: Vergleichsoperatoren](https://ruby-doc.org/core-3.0.0/doc/syntax/precedence_rdoc.html#label-Comparison+Operators)
+- [Ruby-Dokumentation: Datumsklasse](https://ruby-doc.org/stdlib-3.0.0/libdoc/date/rdoc/Date.html)
+- [Geschichte von Vergleichsoperatoren](https://en.wikipedia.org/wiki/Comparison_of_programming_languages_(syntax)#Comparison)

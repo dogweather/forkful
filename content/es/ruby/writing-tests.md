@@ -1,7 +1,7 @@
 ---
-title:                "Escribir pruebas"
-html_title:           "Ruby: Escribir pruebas"
-simple_title:         "Escribir pruebas"
+title:                "Escribiendo pruebas"
+html_title:           "Ruby: Escribiendo pruebas"
+simple_title:         "Escribiendo pruebas"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Testing and Debugging"
@@ -10,38 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Por qué escribir pruebas en Ruby
+## ¿Qué y Por qué?
+Escribir pruebas (tests) es un proceso en el que los programadores crean pequeños bloques de código para verificar si su código principal funciona correctamente. Esto les ayuda a detectar y solucionar errores antes de que su código se implemente en producción. 
 
-Escribir pruebas en Ruby es una práctica común en el desarrollo de software. Nos permite asegurarnos de que nuestro código funcione correctamente, validar cambios y detectar errores antes de que lleguen a producción. Además, nos ayuda a mejorar la calidad y estabilidad de nuestras aplicaciones.
+## ¿Cómo hacerlo?
+A continuación se muestran dos ejemplos de pruebas escritas con Ruby. Estos ejemplos asumen que ya tienes el entorno de desarrollo de Ruby y la gema (gem) RSpec instalados.
 
-## Cómo escribir pruebas en Ruby
-
-Para escribir pruebas en Ruby, utilizamos una biblioteca de pruebas llamada RSpec. Esta biblioteca nos permite escribir pruebas de una manera legible y fácil de entender. Primero debemos instalarla en nuestro proyecto utilizando el comando `gem install rspec`. Luego, creamos un archivo de pruebas con la extensión `.rb` y escribimos nuestras pruebas utilizando la sintaxis de RSpec.
-
-Un ejemplo de una prueba en RSpec se vería así:
-
-```Ruby
-describe "Calculadora" do
-  it "debe sumar correctamente dos números" do
-    expect(Calculadora.sumar(2,2)).to eql(4)
+```
+# Ejemplo 1: Prueba de suma
+require 'rspec/autorun'
+ 
+RSpec.describe "Suma" do
+  it "debe sumar dos números correctamente" do
+    expect(1+2).to eq(3)
   end
 end
 ```
 
-En este caso, estamos probando si el método `sumar` de nuestra calculadora funciona correctamente al sumar dos números.
+```
+# Ejemplo 2: Prueba de división
+require 'rspec/autorun'
+ 
+RSpec.describe "División" do
+  it "debe dividir dos números correctamente" do
+    expect(10/2).to eq(5)
+  end
+end
+```
 
-Si ejecutamos esta prueba con el comando `rspec nombre_archivo_spec.rb`, deberíamos obtener un resultado de éxito o fallo, dependiendo si nuestro código cumple con la prueba o no.
+La salida de estas pruebas debe ser ```0 failures``` si se ejecutan correctamente.
 
-## Profundizando en la escritura de pruebas
+## Profundizando
+Las pruebas se han vuelto una parte fundamental del desarrollo de software en la actualidad. Detectar y solucionar errores desde el principio del proceso ahorra tiempo y dinero a largo plazo. 
 
-Existen diferentes tipos de pruebas que podemos escribir en Ruby, como pruebas unitarias, de integración o de aceptación. También existen otras bibliotecas de pruebas como Minitest o Test::Unit que utilizan una sintaxis diferente. Cada equipo puede elegir qué tipo de pruebas escribir y qué biblioteca utilizar, pero es importante asegurarse de cubrir la mayor cantidad de casos posibles para tener un código robusto y confiable.
+Existen otras herramientas para escribir pruebas en Ruby, como Minitest y Test::Unit. Además, también se pueden escribir pruebas para otros lenguajes de programación, como Java y Python. 
 
-También es importante tener en cuenta que las pruebas no garantizan que nuestro código sea perfecto, pero nos ayudan a identificar y solucionar problemas antes de que lleguen a producción.
+Para implementar pruebas en un proyecto, se recomienda seguir un enfoque conocido como TDD (Test-Driven Development). Este consiste en escribir las pruebas primero y luego el código que las cumpla. 
 
-# Ver también
-- [Documentación oficial de RSpec](https://rspec.info/)
-- [Ejemplo de proyecto de prueba con RSpec](https://github.com/rspec/rspec-core)
-- [Tutorial de pruebas en Ruby](https://www.sitepoint.com/rspec-basics-ruby-testing/)
-- [Minitest vs RSpec: ¿cuál elegir?](https://semaphoreci.com/blog/minitest-vs-rspec)
-
-¡Ahora es tu turno de empezar a escribir pruebas en Ruby para mejorar la calidad de tus proyectos!
+## Ver también
+- [RSpec documentation](https://rspec.info/)
+- [Minitest documentation](https://github.com/seattlerb/minitest)
+- [Test::Unit documentation](https://apidock.com/ruby/Test/Unit)

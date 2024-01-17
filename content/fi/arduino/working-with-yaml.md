@@ -1,7 +1,7 @@
 ---
-title:                "Yamlin kanssa työskentely"
-html_title:           "Arduino: Yamlin kanssa työskentely"
-simple_title:         "Yamlin kanssa työskentely"
+title:                "Työskentely yaml:n kanssa"
+html_title:           "Arduino: Työskentely yaml:n kanssa"
+simple_title:         "Työskentely yaml:n kanssa"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Data Formats and Serialization"
@@ -10,53 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Miksi
+## Mikä on YAML ja miksi ohjelmoijat käyttävät sitä?
 
-Miksi kenenkään pitäisi kiinnostua YAML:n kanssa työskentelystä? Yksinkertaisesti sanottuna, YAML on käytännöllinen ja helppokäyttöinen tapa tallentaa ja jakaa tietoa tietokoneohjelmien kanssa. Se on erityisen hyödyllinen ohjelmointirobotiikan ja elektroniikan maailmassa, kuten Arduino.
+YAML on ihmisen luettava tietokielto, jota käytetään tallentamaan ja jakamaan tietoa eri ohjelmistojen välillä. Se on yksinkertainen ja helppokäyttöinen muoto, joka helpottaa tiedonhallintaa ja tiedonsiirtoa ohjelmien välillä. Ohjelmoijat käyttävät YAML-kieltoa, koska se mahdollistaa tietojen organisoinnin ja tallentamisen käyttäen helposti ymmärrettävää syntaxia.
 
-# Kuinka
+## Kuinka käyttää YAML:ia Arduino-ohjelmoinnissa
 
-YAML:n käyttö Arduinoilla on helppoa ja suoraviivaista. Aloita lisäämällä tarvittavat kirjastot koodiisi.
+YAML-tiedostoja voidaan käyttää Arduino-ohjelmoinnissa mm. tallentamaan konfiguraatioasetuksia tai lukemaan antureiden lukemia. Alla on esimerkkejä YAML-kielen käytöstä Arduino-koodissa.
 
-```Arduino
-#include <SPI.h>
-#include <SD.h>
-#include <YAMLCPP.h>
+```
+Arduino LiquidCrystal library#include <LiquidCrystal.h>
+
+// Esimerkki YAML-tiedoston käytöstä LCD-näytön tekstin tallentamiseen
+void setup() {
+  YAML::Load("LCD_config.yml");
+  LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
+  for (int i = 0; i < lines_to_write; i++) {
+    lcd.write(lcd_text[i]);
+  }
+}
 ```
 
-Seuraava vaihe on luoda YAML-tiedosto, joka sisältää tarvittavat tiedot. Voit käyttää esimerkiksi tekstieditoria tai YAML-editoria, kuten YAML-lint, luodaksesi YAML-tiedoston. Muista tallentaa se Arduino-projektin kansioon.
+```
+Arduino Serial library#struct Color {
+  int red;
+  int blue;
+  int green;
+};
 
-YAML-tiedoston luomisen jälkeen voit käyttää sitä koodissasi. Aloita avaamalla ja lukemalla YAML-tiedosto:
-
-```Arduino
-File configFile = SD.open("config.yml");
-String yamlData = configFile.readString();
+// Esimerkki YAML-tiedoston lukemisesta ja sen tietojen tallentamisesta structiin
+void setup() {
+  YAML::Load("color_config.yml");
+  Color main_color = YAML::Get<Color>("main_color");
+  Serial.println("Main color values:");
+  Serial.println(main_color.red);
+  Serial.println(main_color.blue);
+  Serial.println(main_color.green);
+}
 ```
 
-Sitten voit käyttää YAMLCPP-kirjastoa purkamaan YAML-tiedoston sisältö:
+## Syvemmälle YAML-kieleen
 
-```Arduino
-YAMLTree tree = YAML::Parse(yamlData);
-```
+YAML-kielen historian juuret juontavat juurensa vuoteen 2001, jolloin se kehitettiin Ruby-ohjelmointikielen yhteydessä. Se on saavuttanut suosiota erityisesti web-sovellusten, kuten Ruby on Railsin, käytössä. YAML-kieltoon on myös olemassa vaihtoehtoja, kuten JSON-kieli, mutta YAML-kielen yksinkertainen syntax ja ihmisläheinen formaatti ovat tehneet siitä suositun vaihtoehdon.
 
-Voit nyt käyttää tree-muuttujaa saatavilla olevien tietojen käsittelyyn. Esimerkiksi voit käyttää "get" -funktiota saadaksesi arvon tietystä avaimesta:
+## Katso myös
 
-```Arduino
-String name = tree.get("nimi").as<String>();
-```
+[Official YAML Website](https://yaml.org/)
 
-Lopuksi, voit käyttää näitä tietoja haluamallasi tavalla koodissasi, esimerkiksi näyttämällä ne LCD-näytöllä tai lähettämällä ne verkkoon.
+[YAML Tutorial for Beginners](https://www.guru99.com/yaml-tutorials.html)
 
-# Deep Dive
-
-YAML (Yet Another Markup Language) on ihmisen luettavissa oleva tiedostoformaatti, joka on suunniteltu tallentamaan ja jakamaan tietorakenteita ja -tietoja eri ohjelmistojen välillä. Se käyttää yksinkertaista ja intuitiivista syntaksia, joka muistuttaa paljon taulukkoa ja listaa.
-
-YAML:n käyttö on yleistynyt erityisesti CI/CD (Continuous Integration/Continuous Delivery) -prosesseissa, mutta se soveltuu myös hyvin Arduino-ohjelmointiin. Se tarjoaa yksinkertaisen tavan tallentaa muuttujia ja tietorakenteita sekä tehokkaan tavan niiden käsittelyyn.
-
-YAMLCPP-kirjasto Arduinoille tarjoaa kätevän tavan purkaa YAML-tiedostoja ja saada niistä tietoja käytettäväksi koodissa.
-
-# Katso myös
-
-- [YAML-lint](https://yamlint.com/) – Työkalu YAML-tiedostojen luomiseen ja validointiin.
-- [YAMLCPP-kirjasto Arduinoille](https://github.com/jdevesa/YAMLCPP-Arduino) – Tarkempaa tietoa kirjaston toiminnasta ja käyttötavoista.
-- [YAML-opas](https://yaml.org/) – Lisätietoa YAML:n rakenteesta, syntaksista ja käytöstä.
+[Comparison of YAML and JSON](https://yaml-multiline.info/)

@@ -10,56 +10,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co to jest i po co? 
+Odczytywanie argumentów wiersza poleceń to proces pobierania danych podanych przez użytkownika podczas uruchamiania programu w terminalu. Programiści wykorzystują tę funkcję, aby umożliwić interakcję z użytkownikiem lub dostosować działanie swojego kodu w zależności od otrzymanych argumentów.
 
-W dzisiejszych czasach coraz więcej programów wymaga wprowadzania argumentów wiersza poleceń. Jeśli jesteś programistą Clojure i chcesz nauczyć się jak czytać argumenty wiersza poleceń w swoich programach, to ten artykuł jest dla Ciebie!
-
-## Jak to zrobić
-
+## Jak to zrobić: 
 ```Clojure
-(defn parse-args [args]
-  (split-with #(not= % "--") args))
+(def args (rest *command-line-args*))
+(println "Podano argumenty:" args)
+```
+W tym przykładzie używamy funkcji ```rest``` w celu odrzucenia pierwszego argumentu, który zawsze jest nazwą pliku wykonywalnego. Następnie korzystamy z ```println``` do wyświetlenia otrzymanych argumentów.
 
-(defn get-flags [args]
-  (->> args
-       (drop 1)
-       (map first)))
-
-(defn get-args [args]
-  (->> args
-       (drop 1)
-       (partition 2)
-       (map second)
-       (into {})))
-
-(defn parse-cmd-args [args]
-  (let [[flags args] (parse-args args)
-        flags (into #{} (get-flags flags))
-        args (get-args args)]
-    (merge args {:flags flags})))
-
-(defn -main [& args]
-  (let [{:flags flags :args args} (parse-cmd-args args)]
-    (println "Flags:" flags)
-    (println "Arguments:" args)))
-
+#### Przykładowy output:
+```
+Podano argumenty: ["argument1" "argument2" "argument3"]
 ```
 
-Po uruchomieniu powyższego kodu z argumentami `--debug --name John` otrzymamy następujący wynik:
+## Deep Dive:
+Odczytywanie argumentów z wiersza poleceń jest popularną funkcją w wielu językach programowania, a także w samej Clojure. Wcześniej, np. w języku C, wymagało to ręcznego parsowania napisów, jednak dzięki funkcji ```*command-line-args*``` w Clojure jest to o wiele prostsze. Istnieją również alternatywne biblioteki, takie jak ```clj-argparse```, które oferują bardziej rozbudowane możliwości odczytywania argumentów.
 
-```
-Flags: #{:debug}
-Arguments: {:name "John"}
-```
-
-## Deep Dive
-
-Do obsługi argumentów wiersza poleceń w Clojure możemy wykorzystać funkcje `parse-args`, `get-flags` i `get-args`, które są odpowiedzialne za podzielenie argumentów na flagi i wyodrębnienie wartości pomiędzy nimi. Następnie funkcja `parse-cmd-args` łączy ze sobą wszystkie wcześniej zdefiniowane funkcje, aby zwrócić mapę zawierającą wszystkie podane argumenty oraz flagi.
-
-Możemy również dodać własne funkcje do obsługi konkretnych argumentów. Na przykład, jeśli chcemy, aby nasz program przyjmował tylko liczby jako argumenty, możemy napisać funkcję, która będzie sprawdzać, czy wartość podana w argumencie jest liczbą. Dzięki takiemu podejściu uzyskujemy pełną kontrolę nad obsługą argumentów w naszym programie.
-
-## Zobacz także
-
-- Dokumentacja Clojure: https://clojure.org/documentation
-- Przewodnik po języku Clojure: https://clojure.org/guides
-- Blog Clojure: https://clojure.com/blog
+## Zobacz też:
+[Oficjalna dokumentacja Clojure dla *command-line-args*](https://clojuredocs.org/clojure.core/*command-line-args*)
+[Biblioteka clj-argparse](https://github.com/flatland/clj-argparse)

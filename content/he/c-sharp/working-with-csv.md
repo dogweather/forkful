@@ -1,7 +1,7 @@
 ---
-title:                "עובדים עם קבצי CSV"
-html_title:           "C#: עובדים עם קבצי CSV"
-simple_title:         "עובדים עם קבצי CSV"
+title:                "עבודה עם קבצי CSV"
+html_title:           "C#: עבודה עם קבצי CSV"
+simple_title:         "עבודה עם קבצי CSV"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Data Formats and Serialization"
@@ -10,40 +10,62 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-"## למה" "הדרך לעשות את זה"
-"## שופט הגבולות"
+מה ולמה?
 
-### למה
+עבודה עם CSV היא כלי חשוב בתכנות שמשמש לטעינה ושמירת נתונים בפורמט טקסטואלי. התיקיות הגדולות והמורכבות של נתונים, כמו מערכות מידע וקבצי Excel, יכולות להיות לא ידידותיות לתכנותנים, ולכן נעשה שימוש נרחב בכתיבת קוד לטעינה ושמירה של CSV.
 
-ישנם מספר סיבות נהדרות לעבוד עם CSV בכתיבת קוד C#. בין היתר, זה מאפשר לנו להעביר נתונים בפורמט אשר ניתן לקריאה ונוח לעריכה על ידי משתמשים, תוכניות ומערכות אחרות. כמו כן, זה יכול להיות רב תכליתי ולשמש למגוון שימושים, כגון יציאה לקובץ או יבוא נתונים ממקורות שונים.
+איך לעשות:
 
-## הדרך לעשות את זה 
-
-ניתן לעבוד עם CSV בכמה שיטות שונות באמצעות קוד C#. לדוגמה, נוכל להשתמש במחלקות תומכות הנמצאות בתוך הספריה המובנית של .NET, כמו `File` ו-`Stream`. ניתן גם להוריד חבילות חיצוניות כמו "CSV Helper" או "CsvReader" ולהשתמש בהם לטיפול בנתונים בפורמט CSV.
-
-במקרה שאנחנו רוצים ליצור קובץ CSV, נוכל להשתמש במחלקות `StreamWriter` ו- `StringBuilder` כדי ליצור טקסט בפורמט המתאים. ניתן להשתמש בלולאות ותנאים כדי לעצב את הנתונים לפי הצורך. לדוגמה:
+לפניכם כמה דוגמאות לשימוש בקוד C# עבור עבודה עם CSV ופלט המתאים:
 
 ```C#
-// יצירת קובץ CSV חדש
-using (StreamWriter writer = new StreamWriter("new_file.csv"))
+//טעינת CSV
+using (var reader = new StreamReader("test.csv"))
 {
-    StringBuilder sb = new StringBuilder();
-    // הוספת כותרת העמודות לקובץ
-    sb.AppendLine("שם,תאריך לידה,מין");
-    // יצירת נתונים עבור שני משתמשים
-    string[] user1 = { "דוד", "15/05/1987", "גבר" };
-    string[] user2 = { "אנה", "03/09/1991", "נקבה" };
-    // הוספת נתוני המשתמשים לתוך הקובץ
-    for (int i = 0; i < user1.Length; i++)
+    var data = new DataTable();
+
+    bool firstRow = true;
+    while (!reader.EndOfStream)
     {
-        sb.Append(user1[i]);
-        sb.Append(",");
-        sb.Append(user2[i]);
-        sb.Append(",");
+        var line = reader.ReadLine();
+        var values = line.Split(',');
+
+        if (firstRow)
+        {
+            foreach (var value in values)
+            {
+                data.Columns.Add(value);
+            }
+
+            firstRow = false;
+        }
+        else
+        {
+            data.Rows.Add(values);
+        }
     }
-    // כתיבת הנתונים לקובץ
-    writer.WriteLine(sb.ToString());
+}
+
+//שמירת נתונים לקובץ CSV
+using (var writer = new StreamWriter("output.csv"))
+{
+    foreach (DataRow row in data.Rows)
+    {
+        var values = row.ItemArray.Select(i => i.ToString()).ToArray();
+        var line = string.Join(",", values);
+        writer.WriteLine(line);
+    }
 }
 ```
 
-במקרה שאנחנו רוצים לטפל בנתונים שמ
+יכול גם להיות שדרך טובה להטעין CSV היא להשתמש בספריות חיצוניות כמו CsvHelper או FastCSV, אשר מעניקות כלים נוחים לעזור בטיפול בנתונים בפורמט CSV בקוד.
+
+עוד עומק:
+
+CSV הוא פורמט פשוט ונפוץ מאוד לשיתוף נתונים בין תכניות שונות, וככל שהטכנולוגיות מתקדמות יותר, אפשרויות רבות יותר נפתחות לעבודה עם נתונים במבנה גמיש יותר כמו JSON ו-XML. אולם, CSV עדיין נשמרת כמקור פופולרי לעבודה עם נתונים מכיוון שהיא פשוטה לשימוש, קלה לקריאה ויכולה להתאים למגוון רחב של יישומים מתחום התכנות.
+
+ראו גם:
+
+- [CsvHelper](https://joshclose.github.io/CsvHelper/)
+- [FastCSV](https://fastcsv.codeplex.com/)
+- [JSON vs XML vs CSV: איזה פורמט יישום טוב לנכם?](https://www.datasciencecentral.com/profiles/blogs/json-xml-csv-which-one-is-better-for-data-interchange)

@@ -10,43 +10,22 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
+#什么是打印调试输出
+打印调试输出是编程中很常见的一种方法，它可以帮助程序员在程序运行过程中查看变量的值和程序的执行流程。说得简单一点，就是在程序中添加一些输出来帮助我们理解程序的运行情况。程序员们经常这样做是为了方便调试和排除错误。
 
-通常，程序员需要从代码中查找错误或调试问题。在这种情况下，打印调试输出是非常重要的，它可以帮助我们了解程序的运行过程，发现潜在的错误，从而加速问题的解决。
+#如何打印调试输出
+在Fish Shell中，打印调试输出可以通过使用内置的`echo`命令来实现。我们可以使用`-n`选项来去掉行末的换行符，以及使用`-e`选项来解析特殊字符。例如：
 
-## 如何使用
-
-使用Fish Shell打印调试输出非常简单。只需使用`echo`命令，并将要打印的内容放在引号中即可。例如：
-
-```Fish Shell
-echo "Hello World!"
+```
+echo -ne "当前的值是："
+echo $current_value
 ```
 
-这条命令会在终端输出`Hello World!`。在打印数组等复杂类型时，我们可以使用`print`命令来获得更有用的调试信息。例如：
+这样就可以在控制台上打印出当前变量的值。另外，我们也可以使用`printf`命令来实现类似的功能，但需要注意的是，它并不会自动添加换行符。
 
-```Fish Shell
-print (ls)
-```
+#深入了解
+打印调试输出并非一种新概念，它早在计算机编程发展的早期就被广泛使用了。虽然现在也有很多其它的调试方法，比如使用调试器，但打印调试输出仍然是一种简单且有效的方法。另外，不同的编程语言也会有各自的调试输出方法，例如在C语言中我们可以使用`printf`函数来打印调试信息。
 
-上面的命令会打印当前目录下的所有文件和文件夹的详细信息。
-
-## 深入了解
-
-除了基本的`echo`命令和`print`命令外，Fish Shell还提供了更多打印调试输出信息的功能。我们可以通过`set -l`命令来设置一个本地变量，然后使用这个变量来打印输出，从而避免重复的代码。例如：
-
-```Fish Shell
-set -l name "John"
-echo $name
-```
-
-上面的代码会将变量`name`设置为`John`，然后打印出来。我们也可以通过多个命令来打印不同格式的信息，例如使用`printf`命令来格式化字符串。
-
-## 参考资料
-
-- [Fish Shell官方文档](https://fishshell.com/docs/current/)
-- [深入理解Fish Shell中的调试输出](https://dev.to/ydlrgn/debugging-output-in-fish-shell-1je4)
-
-## 参见
-
-- [Fish Shell常用快捷键](https://www.rainymood.com.cn/fish-shell-keyboard-shortcuts/)
-- [Fish Shell命令提示符设置](https://www.digitalocean.com/community/tutorials/how-to-customize-the-fish-shell-prompt-on-a-linux-system)
+#相关资料
+- [Fish官方文档](https://fishshell.com/docs/current/index.html)
+- [使用printf格式化输出](https://fishshell.com/docs/current/commands.html#printf)

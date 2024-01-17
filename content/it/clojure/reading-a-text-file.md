@@ -1,7 +1,7 @@
 ---
-title:                "Lettura di un file di testo"
-html_title:           "Clojure: Lettura di un file di testo"
-simple_title:         "Lettura di un file di testo"
+title:                "Leggere un file di testo"
+html_title:           "Clojure: Leggere un file di testo"
+simple_title:         "Leggere un file di testo"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Files and I/O"
@@ -10,33 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+## Cosa & Perchè?
 
-Se sei un programmatore che lavora con linguaggi di programmazione funzionali o sei semplicemente curioso di esplorare nuovi paradigmi di programmazione, la lettura di un file di testo potrebbe risultare interessante. Inoltre, è una skill fondamentale per chi vuole automatizzare alcune attività legate alla gestione dei dati.
+Lettura di un file di testo è il processo di estrarre il contenuto di un file di testo, che può contenere una varietà di informazioni, come testo, numeri, o immagini. I programmatori spesso usano la lettura di un file di testo per estrarre dati da un file e utilizzarlo nel loro programma.
 
-## Come fare
+## Come fare:
 
-Per leggere un file di testo in Clojure, puoi utilizzare la funzione `slurp` che prende come argomento il percorso del file e restituisce una stringa con tutto il contenuto del file. Ad esempio:
-
-```clojure
-(def testo (slurp "testo.txt"))
+```Clojure
+(with-open [file (clojure.java.io/reader "file.txt")]
+  (doall (line-seq file)))
 ```
-La variabile `testo` conterrà il contenuto del file "testo.txt". Ora puoi utilizzarla per eseguire qualsiasi operazione su di esso.
 
-## Approfondimento
-
-In Clojure, è anche possibile utilizzare la libreria `clojure.java.io` per lavorare con i file. In particolare, la funzione `with-open` ti permette di leggere un file e chiuderlo automaticamente una volta finito, garantendo una gestione sicura delle risorse.
-
-```clojure
-(defn leggi-file [nome-file]
-  (with-open [reader (clojure.java.io/reader nome-file)]
-    (doseq [line (.readLines reader)]
-      (println line))))
+Output:
 ```
-Il codice sopra utilizza la funzione `readLines` per leggere ogni riga del file e stamparla a schermo. Una volta terminato, il file viene chiuso automaticamente grazie alla funzione `with-open`.
+("Prima riga del file" "Seconda riga del file" "Terza riga del file")
+```
 
-## Vedi anche
+## Approfondimento:
 
-- Clojure.io: https://clojure.org/reference/io
-- Documentazione di Clojure.java.io: https://clojure.github.io/clojure/clojure.java.io-api.html
-- Esempi di codice per leggere file in Clojure: https://gist.github.com/gregsexton/4445674
+La lettura di un file di testo è un processo comune nella programmazione e ha origini nel mondo dell'informatica. Alcune alternative alla lettura di un file di testo includono utilizzare un database o un formato di dati strutturato come JSON o XML. L'implementazione del codice per la lettura di un file di testo può variare a seconda del linguaggio di programmazione utilizzato.
+
+## Vedi anche:
+
+- [Documentazione ufficiale di Clojure](https://clojure.org/reference/io)
+- [Esempio di lettura di un file di testo in Clojure](https://www.guru99.com/clojure-file-handles-read-write.html)
+- [Altro approfondimento sulla lettura di file di testo in diversi linguaggi di programmazione](https://www.w3schools.in/c-programming/read-file/)

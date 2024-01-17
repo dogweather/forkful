@@ -1,7 +1,7 @@
 ---
-title:                "Regulaarilausekkeiden käyttö"
-html_title:           "TypeScript: Regulaarilausekkeiden käyttö"
-simple_title:         "Regulaarilausekkeiden käyttö"
+title:                "Säännöllisten lausekkeiden käyttö"
+html_title:           "TypeScript: Säännöllisten lausekkeiden käyttö"
+simple_title:         "Säännöllisten lausekkeiden käyttö"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -10,42 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi Regular Expressioneita Kannattaa Käyttää?
+## Mitä ja miksi?
+Säännöllisiä lausekkeita käytetään tekstin haun, muokkauksen ja korvaamisen helpottamiseen. Ne ovat voimakas työkalu ohjelmoijille, jotka haluavat tehdä tiettyjen merkkijonojen käsittelystä nopeampaa ja tehokkaampaa.
 
-Regular expressioneilla eli säännöllisillä lausekkeilla on monia käyttötarkoituksia ohjelmoinnissa, mutta ne ovat erityisen hyödyllisiä tekstin käsittelyssä. Ne mahdollistavat tehokkaan ja monipuolisen tavan löytää, muokata ja etsiä tekstistä tiettyjä merkkijonoja.
-
-## Miten Käyttää Regular Expressioneita TypeScriptissä?
-
-Regular expressioneita voi käyttää TypeScriptissä sisäänrakennetun RegExp-luokan avulla. Tämä luokka tarjoaa kattavan valikoiman metodeja ja ominaisuuksia, jotka mahdollistavat erilaisten säännöllisten lausekkeiden käytön. Alla on esimerkki siitä, miten voit etsiä kaikki puhelinnumerot tekstistä ja tulostaa ne konsoliin:
+## Miten:
+## Miten:
+ES7 standardin myötä TypeScript-tuki säännöllisille lausekkeille tuli mahdolliseksi. Voit luoda uusia säännöllisiä lausekkeita käyttämällä RegExp-konstruktoria, ja sitten käyttää erilaisia metodeja, kuten `test()` ja `exec()`, tekstin käsittelyyn. Esimerkiksi:
 
 ```TypeScript
-// Alustetaan regular expression puhelinnumeroiden etsimiseen
-let regex = new RegExp("[0-9]{3}-[0-9]{3}-[0-9]{4}");
-
-// Esimerkkiteksti, josta etsitään puhelinnumerot
-let teksti = "Mun puhelinnumero on 555-123-4567 ja toinen numero on 123-456-7890";
-
-// Etsitään ja tulostetaan löydetyt puhelinnumerot
-console.log(teksti.match(regex));
+let regex: RegExp = /t[ea]st/;
+let str: string = "test";
+regex.test(str); // Output: true
 ```
 
-Tämä koodi tuottaa seuraavan tulosteen:
+## Syvempi sukellus:
+Ennen ES7-standardia, TypeScript-tuki säännöllisille lausekkeille oli mahdollista vain toteuttamalla lisäosana. Säännölliset lausekkeet ovat myös yleinen tapa käsitellä merkkijonoja muissa ohjelmointikielissä, kuten JavaScriptissa ja Perlissä.
 
-```
-['555-123-4567', '123-456-7890']
-```
+Vaihtoehtoja säännöllisille lausekkeille ovat esimerkiksi tietokannat tai muut erityisesti merkkijonojen käsittelyyn tarkoitetut kirjastot. TypeScriptissä tärkeä asia on myös ymmärtää, että säännölliset lausekkeet ovat vain yksi työkalu monien joukossa ja niitä ei välttämättä tarvitse käyttää jokaisessa ohjelmassa.
 
-## Syvempi Sukellus Regular Expressioneihin
+Säännölliset lausekkeet toimivat käytännössä haku- tai korvausmallina, jonka avulla voit muokata merkkijonoja nopeammin ja tehokkaammin kuin manuaalisesti etsimällä ja korvaamalla tiettyjä merkkijonoja.
 
-Regular expressionit koostuvat erilaisista merkeistä ja erityisistä komentoketjuista, joita käytetään tietynlaisen merkkijonon löytämiseen. Niitä voi käyttää esimerkiksi haku- ja korvausoperaatioissa, jolloin ne mahdollistavat tehokkaan ja tarkan tekstin käsittelyn.
-
-Regular expressioneilla on myös erilaisia metakaraktereita, jotka edustavat erilaisia merkkejä tai merkkijonoja. Esimerkiksi piste-merkki (.) edustaa yhtä merkkiä ja tähti (*) edustaa yhtä tai useampaa esiintymää edellisestä merkistä.
-
-Tämän lisäksi säännöllisissä lausekkeissa voi olla myös erilaisia määritteitä, kuten `{n}`, jossa n määrittää tietyn merkin tai merkkijonon toistojen määrän. Esimerkiksi `{3}` tarkoittaa, että etsitään kolme peräkkäistä esiintymää edellisestä merkistä.
-
-Jos haluat syventyä tarkemmin regular expressioneihin, suosittelemme lukemaan lisää TypeScriptin [RegExp-luokasta](https://developer.mozilla.org/fi/docs/Web/JavaScript/Reference/Global_Objects/RegExp) ja [säännöllisistä lausekkeista yleisesti](https://fi.wikipedia.org/wiki/S%C3%A4%C3%A4nn%C3%B6llinen_lauseke).
-
-## Katso Myös
-- [TypeScriptin virallinen dokumentaatio](https://www.typescriptlang.org/docs/)
-- [W3Schools Regular Expression Tutorial](https://www.w3schools.com/jsref/jsref_obj_regexp.asp)
-- [Regular Expressions Cheat Sheet](https://cheatography.com/davechild/cheat-sheets/regular-expressions/)
+## Katso myös:
+- [MDN Web Docs: Regular Expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
+- [TypeScript Documentation: Regular Expressions](https://www.typescriptlang.org/docs/handbook/declarations.html#regular-expressions)
+- [Stack Overflow: How do Regular Expressions work in TypeScript](https://stackoverflow.com/questions/60829990/how-do-regular-expressions-work-in-typescript)

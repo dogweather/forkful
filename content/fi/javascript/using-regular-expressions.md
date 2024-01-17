@@ -1,7 +1,7 @@
 ---
-title:                "Säännöllisten ilmaisujen käyttö"
-html_title:           "Javascript: Säännöllisten ilmaisujen käyttö"
-simple_title:         "Säännöllisten ilmaisujen käyttö"
+title:                "Säännöllisten lausekkeiden käyttö"
+html_title:           "Javascript: Säännöllisten lausekkeiden käyttö"
+simple_title:         "Säännöllisten lausekkeiden käyttö"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Strings"
@@ -10,36 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi käyttää säännöllisiä lausekkeita?
+## Mikä & Miksi?
+Säännöllisten lausekkeiden käyttäminen on olennainen osa nykyaikaista ohjelmointia. Se on menetelmä, joka mahdollistaa tekstin käsittelyn ja löytämisen tietyn säännön mukaan. Näin ollen säännöllisten lausekkeiden avulla voidaan helposti etsiä ja korvata tiettyjä merkkijonoja tai suorittaa monimutkaisia tiedonhakutehtäviä. Ohjelmoijat käyttävät säännöllisiä lausekkeita tehdäkseen koodistaan tehokkaampaa ja luotettavampaa.
 
-Säännölliset lausekkeet ovat voimakas työkalu, jota voi käyttää Javascriptissä tiedonkäsittelyssä. Ne tarjoavat yksinkertaisen ja tehokkaan tavan hakea ja manipuloida merkkijonoja. Joten, jos haluat säästää aikaa ja vaivaa tiedonkäsittelyssä, säännölliset lausekkeet ovat loistava apuväline.
-
-## Kuinka käyttää säännöllisiä lausekkeita?
+## Miten?
+Käytettäessä säännöllisiä lausekkeita Javascriptissä, käytetään RegExp-olioita ja niiden metodeja. Alla on yksinkertainen esimerkki säännöllisen lausekkeen käytöstä. Tässä tapauksessa säännöllisen lausekkeen avulla tarkistetaan, löytyykö merkkijonosta tiettyjä numeroita:
 
 ```Javascript
-// Luo säännöllinen lauseke, joka etsii sanoja "Javascript" ja "ohjelmointi"
-const regex = /Javascript|ohjelmointi/;
-
-// Luo merkkijono, jossa haetaan säännöllisen lausekkeen avulla
-const text = "Javascript on loistava ohjelmointikieli.";
-
-// Käytä test-metodia tarkistamaan, löytyykö merkkijonosta haettuja sanoja
-console.log(regex.test(text)); // Output: true
-
-// Käytä replace-metodia vaihtaaksesi säännölliseen lausekkeeseen pohjautuvan merkkijonon uuteen
-console.log(text.replace(regex, "HTML ja CSS")); // Output: HTML ja CSS on loistava ohjelmointikieli.
+let string = "Tässä on 123 testimerkkijono";
+let regex = /\d+/; // \d+ tarkoittaa yhtä tai useampaa numeroa
+console.log(regex.test(string)); //tulostaa true, sillä merkkijonosta löytyy numeroita
 ```
 
-Säännöllisiä lausekkeita voi käyttää myös monimutkaisempien haun ja manipuloinnin tehtävien suorittamiseen. Voit mm. käyttää määriteltyä säännöllistä lauseketta hakuun, vaihtaa merkkejä ja tarkistaa syötteen oikeellisuuden.
+Tämä oli vain yksi yksinkertainen esimerkki säännöllisen lausekkeen käytöstä. Säännöllisiä lausekkeita voidaan myös käyttää esimerkiksi tarkistamaan, onko sähköpostiosoite oikeassa muodossa, suodattamaan tietyn muotoisia merkkijonoja tai etsimään tietoa suuresta tekstimäärästä.
 
-## Syvemmälle säännöllisiin lausekkeisiin
+## Syvemmälle
+Säännöllisten lausekkeiden historia juontaa juurensa 1950-luvulle, mutta niiden käyttö yleistyi vasta 1980-luvulla. Nykyään ne ovat osa lähes jokaista ohjelmointikieltä. Jotkut ohjelmoijat eivät kuitenkaan pidä säännöllisten lausekkeiden lukemisesta ja kirjoittamisesta, joten on olemassa myös muita vaihtoehtoja, kuten kirjastot ja ohjelmistot, jotka tekevät säännöllisten lausekkeiden käytöstä helpompaa ja intuitiivisempaa. 
 
-Säännöllisten lausekkeiden käyttö Javascriptissä on todella laaja-alaista. Voit käyttää erilaisia metodeja, kuten test, replace, search ja match, saadaksesi tarkemman käsityksen säännöllisten lausekkeiden toimintaperiaatteista ja mahdollisuuksista.
+Säännöllisten lausekkeiden käyttöliittymä Javascriptissä on suhteellisen yksinkertainen. Rakentaaksesi RegExp-olion käytät RegExp-konstruktoria, joka ottaa ensimmäisenä parametrina vastaan säännöllisen lausekkeen ja toisena parametrina mahdolliset asetukset. Sitten voit käyttää erilaisia metodeja, kuten test(), exec() ja match(), säännöllisten lausekkeiden käsittelyyn.
 
-On myös tärkeää ymmärtää eri merkitykset ja käyttötarkoitukset säännöllisiin lausekkeisiin liittyvistä erikoismerkeistä ja ilmauksista. Voit löytää lisätietoja säännöllisistä lausekkeista esimerkiksi MDN:n (Mozilla Developer Network) sivuilta.
-
-## Katso myös
-
-- [MDN: Säännölliset lausekkeet](https://developer.mozilla.org/fi/docs/Web/JavaScript/Guide/Regular_Expressions)
-- [W3Schools: Säännölliset lausekkeet](https://www.w3schools.com/jsref/jsref_obj_regexp.asp)
-- [JavaScript.info: Säännölliset lausekkeet](https://javascript.info/regular-expressions)
+## Lue Lisää
+- [MDN Web Docs - Säännölliset lausekkeet](https://developer.mozilla.org/fi/docs/Web/JavaScript/Guide/Regular_Expressions)
+- [Regex101 - Säännöllisten lausekkeiden testaaja ja selityksiä](https://regex101.com/)
+- [RegExr - Interaktiivinen säännöllisten lausekkeiden editori, jossa voit kokeilla erilaisia säännöllisiä lausekkeita](https://regexr.com/)

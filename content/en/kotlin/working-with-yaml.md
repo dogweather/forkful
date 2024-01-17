@@ -10,66 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+# What & Why?
+Working with YAML is a common practice among programmers as it allows for the better organization and storage of data. It is a data serialization language that uses a human-readable format, making it easier for developers to read and modify compared to other data formats. YAML is used for various purposes such as configuration files, data interchange, and more.
 
-If you're a developer working with configuration files, you've likely encountered YAML at some point. This human-readable data serialization language has gained popularity for its simple syntax and flexibility, making it a popular choice for configuration management in the tech industry.
+# How to:
+To start using YAML in Kotlin, the `yaml` library must be added as a dependency in your project. Then, import the library using `import org.yaml.snakeyaml.Yaml`.
 
-## How To
+To parse a YAML file, simply use the `load()` method and pass in the file's input stream as a parameter. This will return a `LinkedHashMap` object that contains the data from the YAML file. Here's an example:
 
-To get started with YAML in your Kotlin project, you first need to add the dependency to your project's build.gradle file:
+```Kotlin 
+val yaml = Yaml()
+val data = yaml.load(inputStream)
+println(data)
+```
+
+To create a YAML file, use the `dump()` method and pass in a `LinkedHashMap` object with the desired data. This will return a `String` containing the YAML data. Here's an example:
 
 ```Kotlin
-dependencies {
-    implementation("org.yaml:snakeyaml:1.28")
-}
+val yaml = Yaml()
+val data = linkedMapOf(
+    "name" to "John",
+    "age" to 25,
+    "city" to "New York"
+)
+val yamlData = yaml.dump(data)
+println(yamlData)
 ```
 
-Once the dependency is added, you can start working with YAML in your code. Here's how you can create a YAML document and write it to a file:
+The output for both code blocks would be:
 
-```Kotlin
-// create a YAML node
-val rootNode = Yaml.createYamlDocumentBuilder().build()
-
-// add key-value pairs
-rootNode.addNode("name", "John Doe")
-rootNode.addNode("age", 25)
-
-// write the YAML document to a file
-val file = File("person.yaml")
-file.writeText(rootNode.toString())
+```
+{name=John, age=25, city=New York}
 ```
 
-The resulting YAML file will look like this:
+# Deep Dive:
+Created in 2001, YAML stands for "YAML Ain't Markup Language" and was created by Clark Evans. It was designed as a human-readable data serialization language that is more readable and concise compared to XML and JSON. YAML is commonly used for configuration files and data interchange between systems.
 
-```yaml
-name: John Doe
-age: 25
-```
+An alternative to YAML is JSON, which is more widely used and has better support across different languages. However, YAML offers more functionality and is easier to read and maintain compared to JSON. 
 
-To read a YAML file into your Kotlin code, you can use the same Yaml class and its `load()` method:
+The `yaml` library in Kotlin uses the SnakeYAML implementation, which follows the YAML 1.2 specification. This library is actively maintained and supports various YAML features such as anchors and aliases, flow collections, and custom tags.
 
-```Kotlin
-// read YAML file into a string
-val yamlString = File("person.yaml").readText()
-
-// load the YAML into a YamlDocument object
-val document = Yaml.load(yamlString)
-
-// access data using keys
-println(document["name"]) // prints "John Doe"
-println(document["age"]) // prints "25"
-```
-
-## Deep Dive
-
-YAML stands for "YAML Ain't Markup Language" and was designed to be a human-friendly way to serialize data. It supports complex data structures like lists, maps, and even custom objects. 
-
-One of the key features of YAML is its ability to use anchors and aliases, allowing you to reference one piece of data from another. This can be useful when creating a large YAML document with repeating sections.
-
-Another advantage of YAML is its compatibility with various programming languages. You can easily parse YAML data in languages like Java, Python, and of course, Kotlin. This makes it a great choice for cross-platform projects.
-
-## See Also
-
-- [Official YAML website](https://yaml.org/)
-- [Kotlin documentation on using YAML](https://kotlinlang.org/docs/tutorials/serialization.html#yaml)
-- [SnakeYAML library on GitHub](https://github.com/snakeyaml-engine/snakeyaml)
+# See Also:
+- [YAML Official Website](https://yaml.org/)
+- [SnakeYAML GitHub Repository](https://github.com/snakeyaml/)
+- [Kotlin - Working with Configuration Files](https://kotlinlang.org/docs/tutorials/configuration.html)

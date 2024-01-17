@@ -10,52 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+## O que é e por que fazer isso?
 
-Imagine que você está editando um arquivo de código longo e precisa mudar o nome de uma variável em todo o documento. Em vez de passar manualmente por cada linha, a busca e substituição automatizada pode economizar tempo e evitar erros.
+Pesquisar e substituir texto é uma tarefa frequente no mundo da programação. Isso envolve encontrar uma determinada sequência de caracteres em um texto e substituí-la por outra. Programadores geralmente fazem isso para corrigir erros de digitação, alterar padrões de texto ou fazer alterações em um grande número de arquivos ao mesmo tempo.
 
-## Como fazer
+## Como fazer:
 
-Usando o Fish Shell, você pode facilmente realizar busca e substituição de texto usando o comando `sed`. Aqui está um exemplo:
-
-```
-Fish Shell - Busca e substituição de texto em um arquivo
-
-# Criar um arquivo com texto de amostra
-echo "Olá, mundo!" > texto.txt
-
-# Usar sed para substituir "mundo" por "universo" em texto.txt
-sed -i 's/mundo/universo/' texto.txt
-
-# Verificar se a substituição foi feita corretamente
-cat texto.txt
-
-# Saída: "Olá, universo!"
-```
-
-## Explorando mais a fundo
-
-O comando `sed` usado no exemplo é uma ferramenta poderosa para substituir texto em um arquivo. Ele usa expressões regulares para encontrar e substituir padrões específicos. Além disso, você também pode usar a opção `-i` para fazer a substituição diretamente no arquivo, em vez de imprimir a saída na tela.
-
-Outra opção é usar o comando `grep` para procurar por um padrão específico em um arquivo e o `sed` para substituí-lo. Por exemplo:
+Codificação de exemplo usando o Fish Shell:
 
 ```
-# Usar grep para encontrar linhas que contenham a palavra "mundo"
-grep -n "mundo" texto.txt
+# Substituindo um único caractere:
+echo "Olá, mundo!" | sed 's/m/J/'
 
-# Saída: 1:Olá, mundo!
+# Substituindo uma palavra inteira:
+echo "Eu gosto de peixes" | sed 's/peixes/cachorros/'
 
-# Usar sed para substituir "mundo" por "universo" apenas na linha encontrada
-sed -i '1s/mundo/universo/' texto.txt
-
-# Verificar se a substituição foi feita corretamente
-cat texto.txt
-
-# Saída: "Olá, universo!"
+# Substituindo várias ocorrências:
+echo "Tenho 10 maçãs e 5 bananas" | sed 's/10/20/g'
 ```
 
-## Veja também
+Output:
 
-- [Fish Shell documentação oficial](https://fishshell.com/docs/current/index.html)
-- [Guia de expressões regulares do sed](https://www.gnu.org/software/sed/manual/html_node/Regular-Expressions.html)
-- [Guia de comandos do grep](https://www.gnu.org/software/grep/manual/grep.html)
+```
+Olá, jundo!
+Eu gosto de cachorros
+Tenho 20 maçãs e 5 bananas
+```
+
+## Mergulho profundo:
+
+Historicamente, a função de pesquisa e substituição de texto foi introduzida no editor de texto Unix, chamado "ed". No entanto, com o tempo, surgiram alternativas mais avançadas, como o comando "sed" e o editor "vi". No Fish Shell, essas funções são incorporadas e oferecem mais opções, como substituições globais e expressões regulares.
+
+## Veja também:
+
+- [Documentação oficial do Fish Shell sobre substituições de texto](https://fishshell.com/docs/current/cmds/sed.html)
+- [Artigo sobre expressões regulares no Fish Shell](https://medium.com/@mlenne/fish-shell-regular-expressions-de32477abeb4)
+- [Tutorial de substituição de texto no Fish Shell](https://scriptingosx.com/fish-shell-101-pipes-and-substitutions/)

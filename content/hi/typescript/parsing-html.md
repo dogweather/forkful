@@ -1,7 +1,7 @@
 ---
-title:                "एचटीएमएल विश्लेषण"
-html_title:           "TypeScript: एचटीएमएल विश्लेषण"
-simple_title:         "एचटीएमएल विश्लेषण"
+title:                "HTML को विश्लेषण करना"
+html_title:           "TypeScript: HTML को विश्लेषण करना"
+simple_title:         "HTML को विश्लेषण करना"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "HTML and the Web"
@@ -10,30 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
+# पार्सिंग HTML क्या होता है और क्यों किया जाता है?
+पार्सिंग HTML का मतलब है HTML को समझना और उसमें से डेटा को अलग करना। वह कंप्यूटर भाषा होती है जिसका उपयोग वेब पेज्स को बनाने और प्रदर्शित करने के लिए होता है। पार्सिंग एक अहम् काम है क्यूंकि वह आमतौर पर अवधारणा होता है की कैसे कोड को समझा जाना चाहिए।
 
-HTML पार्सिंग क्यों करना उपयोगी हो सकता है? HTML परिवर्तन विन्यास करने या आवश्यक डेटा को उपयोग करने के लिए।
-
-## कैसे करें
-
+# कैसे करें:
 ```TypeScript
-// HTML पार्सिंग के लिए उपयोगी पुस्तकालय वार्तालाप करें
-import * as parser from 'htmlparser2';
+const html = `<!DOCTYPE html>
+<html>
+<head>
+<title>My Website</title>
+</head>
+<body>
+<h1>Welcome to my website!</h1>
+<p>This is a sample website made with HTML.</h1>
+</body>
+</html>`;
 
-// HTML से डेटा प्राप्त करें
-const htmlData = '<body><h1>Hello World!</h1></body>';
-// HTML पार्सर बनाएं
-const parsedData = parser.parseDOM(htmlData);
-// चाहे स्ट्रिंग या ऑब्जेक्ट फॉर्मैट में डेटा आउटपुट करें
-console.log(parsedData);
+const parser = new DOMParser();
+const doc = parser.parseFromString(html, 'text/html');
+
+console.log(doc.title); // Output: My Website
+console.log(doc.body.innerHTML); // Output: <h1>Welcome to my website!</h1> <p>This is a sample website made with HTML.</h1>
 ```
 
-## डीप डाइव
+# गहराई में पढ़ें:
+पार्सिंग HTML की शुरुआत 1993 में डीएमके (वर्ल्ड वाइड वेब) के संस्थान (CERN) द्वारा स्टेव बर्स और टिम बर्नर्स आदि द्वारा प्रयोजनों को संचित करने के लिए की गई। विकल्प हैं जो पार्सिंग HTML की जगह काम करते हैं, जैसे की एक्सएमएल बेस संस्थापित, साथ ही एक दूसरे प्रारंभिक पंजीयन संस्थापित। पार्सिंग HTML की विस्तृत जानकारी के लिए, फ़ायरफॉक्स, गूगल क्रोम और इंटरनेट एक्स्प्लोरर जैसे ब्राउज़र के उपयोग की अवधारणा को समझने में मदद की जा सकती है।
 
-HTML पार्सिंग में क्या ध्यान देना चाहिए? आपको सुनिश्चित करना होगा कि आपका पार्सिंग बिल्कुल सही रूप से काम कर रहा है और आप उचित विन्यास के लिए समर्थन दे रहे हैं। आपको अपने प्रोजेक्ट के लिए सबसे उपयुक्त पुस्तकालय चुनने की आवश्यकता हो सकती है, जो आपके कोड को अधिक सरल बनाता है।
-
-## देखिये भी
-
-- [HTML पार्सिंग के बारे में विवरण](https://www.tutorialspoint.com/html/html_parsing.htm)
-- [htmlparser2 पुस्तकालय का आधिकारिक डॉक्यूमेंटेशन](https://github.com/fb55/htmlparser2/wiki)
-- [HTML प्रोसेसिंग लाइब्रेरी का उपयोग](https://www.html5rocks.com/en/tutorials/internals/howbrowserswork/#The_Browser_Interpreter_Language_Processors)
+# देखें भी:
+- [MDN डॉक्यूमेंटेशन - HTML पार्सिंग](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction)
+- [पार्सिंग HTML के बारे में अधिक जानकारी के लिए कार्नेल विज्ञान ब्लॉग](https://www.kernel.org/blogs/)

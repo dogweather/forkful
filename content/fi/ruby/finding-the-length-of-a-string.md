@@ -10,40 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+# Mikä & Miksi?
 
-Miksi joku haluaisi löytää merkkijonon pituuden? Yksinkertaisesti sanottuna, merkkijonon pituuden löytäminen on tärkeää tietoa ohjelmoinnissa ja auttaa varmistamaan, että koodi toimii odotetulla tavalla.
+Mikä on merkkijonon pituuden selvittäminen? Se on yksinkertainen tapa mitata merkkijonon merkkien määrää, eli kuinka monta merkkiä merkkijono sisältää. Ohjelmoijat tekevät tätä usein, sillä merkkijonojen pituuden selvittäminen auttaa heitä käsittelemään ja analysoimaan tekstidataa.
 
-## Kuinka
+# Miten:
 
-Merkkijonon pituuden löytäminen Rubyssa on helppoa käyttämällä `length`-metodia. Seuraavassa esimerkissä käytämme `length`-metodia löytääksemme merkkijonon pituuden ja tulostamme sen konsoliin:
+```ruby
+string = "Tämä on esimerkki merkkijonosta"
 
-```Ruby
-string = "Hei maailma!"
 puts string.length
+# Output: 30
 ```
+Tässä yksinkertaisessa koodiesimerkissä luodaan muuttuja nimeltä `string` ja tallennetaan siihen tietty merkkijono. Sitten käytetään `length`-metodia, joka laskee kuinka monta merkkiä merkkijonossa on ja tulostaa sen konsoliin. Tässä tapauksessa merkkijonossa oli 30 merkkiä, minkä takia tulostettu luku on myös 30.
 
-Tämä koodi tulostaa "12", mikä on merkkijonon "Hei maailma!" pituus.
+# Syvempi sukellus:
 
-Voimme myös käyttää `size`-metodia saadaksemme saman tuloksen:
+Merkkijonojen pituuden selvittämisen historia juontaa juurensa takaisin vanhoihin tietokoneisiin, joissa se oli tärkeä osa tekstipohjaisten käyttöliittymien toimintaa. Nykyäänkin se on edelleen tärkeä osa ohjelmointia, sillä usein tarvitaan tietoa siitä, kuinka pitkä esimerkiksi käyttäjän antama syöte on.
 
-```Ruby
-string = "Hei maailma!"
-puts string.size
-```
+Merkkijonojen pituuden selvitettämisellä on myös useita vaihtoehtoisia tapoja, kuten `size`- ja `count`-metodit, jotka toimivat samalla periaatteella. Lisäksi monet ohjelmointikielillä sisältävät valmiita funktioita merkkijonojen pituuden selvittämiseen.
 
-Molemmat metodit toimivat samalla tavalla ja palauttavat merkkijonon pituuden.
+# Katso myös:
 
-## Syväsukellus
-
-Merkkijonojen pituuden löytäminen perustuu merkkien lukumäärän laskemiseen. Rubyssa, jokainen merkkiä vastaa yksi merkki. Tämä tarkoittaa, että erikoismerkit, kuten välilyönnit tai aksenttimerkit, lasketaan osaksi merkkijonon pituutta.
-
-Voimme myös käyttää `length`-metodia muilla tietotyypeillä, kuten taulukoilla tai hajautustauluilla. Taulukoiden tapauksessa metodi palauttaa taulukon pituuden, eli sen sisältämien elementtien määrän.
-
-On myös tärkeää huomata, että merkkijonon pituuden löytämisestä ei ole suoranaista hyötyä, jos käytämme vain kovakoodattuja merkkijonoja. Mutta jos käytämme muuttujia ja käyttäjän syötteitä, voimme käyttää tätä tietoa ohjelman toiminnan perustana.
-
-## Katso myös
-
-- [Ruby String -dokumentaatio](https://ruby-doc.org/core-2.7.2/String.html)
-- [Ruby Array -dokumentaatio](https://ruby-doc.org/core-2.7.2/Array.html)
-- [Ruby Hash -dokumentaatio](https://ruby-doc.org/core-2.7.2/Hash.html)
+- [Ruby String Documentation](https://ruby-doc.org/core-3.0.0/String.html)
+- [Ruby API - length](https://rubyapi.org/3.0/o/string#method-i-length)
+- [Difference between size and length in Ruby](https://dev.to/rpalo/ruby-quirk-size-vs-length-9lo)

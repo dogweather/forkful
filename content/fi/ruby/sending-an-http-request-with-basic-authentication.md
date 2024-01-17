@@ -1,7 +1,7 @@
 ---
-title:                "Lähettäminen http-pyyntö perusautentikoinnilla"
-html_title:           "Ruby: Lähettäminen http-pyyntö perusautentikoinnilla"
-simple_title:         "Lähettäminen http-pyyntö perusautentikoinnilla"
+title:                "Perusautentikointia käyttävän http-pyynnön lähettäminen"
+html_title:           "Ruby: Perusautentikointia käyttävän http-pyynnön lähettäminen"
+simple_title:         "Perusautentikointia käyttävän http-pyynnön lähettäminen"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "HTML and the Web"
@@ -10,37 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä & Miksi?
 
-HTTP-pyyntöjen lähettäminen perusautentikoinnin avulla on tärkeää, jos haluat suojata tietokannat ja resurssit salasanoilla. Tämä auttaa myös varmistamaan, että vain valtuutetut käyttäjät pääsevät tiettyihin sivustoihin tai sovelluksiin.
+HTTP-pyynnön lähettäminen perusautentikoinnin kanssa tarkoittaa sitä, että lähetämme pyynnön verkkopalvelimelle, joka vaatii todentamista käyttäjänimen ja salasanan avulla. Tämä on yleinen tapa lähettää turvallisia pyyntöjä ja se on tärkeää, koska se varmistaa, että vain oikeutetut käyttäjät voivat saada pääsyn palvelimen resursseihin.
 
-## Miten
+## Kuinka tehdä:
 
-```Ruby
+Käytämme Ruby-kieltä lähettääksemme HTTP-pyynnön perusautentikoinnin kanssa. Seuraavan esimerkin avulla näemme, miten se tehdään yksinkertaisella tavalla:
+
+```ruby
 require 'net/http'
-require 'uri'
-
-uri = URI.parse("example.com")
-http = Net::HTTP.new(uri.host, uri.port)
-request = Net::HTTP::Get.new(uri.request_uri)
-
-# Asenna käyttäjänimi ja salasana
-request.basic_auth("käyttäjänimi", "salasana")
-
-response = http.request(request)
-
-puts response.body
+uri = URI('http://esimerkkipalvelin.com/api')
+req = Net::HTTP::Get.new(uri)
+req.basic_auth('käyttäjänimi', 'salasana')
+res = Net::HTTP.start(uri.hostname, uri.port) {|http|
+  http.request(req)
+}
+puts res.body # tulosteessa näkyy vastauksen sisältö
 ```
 
-Tämä on esimerkki siitä, miten voit lähettää HTTP GET-pyynnön perusautentikoinnilla Ruby-kielellä. Käyttämällä `basic_auth`-metodia voit asettaa käyttäjänimen ja salasanan, jotka välitetään pyynnön mukana. Tämän jälkeen voit käyttää vastauksen `body` -attribuuttia nähdäksesi pyynnön vastauksen sisällön.
+## Syväsukellus:
 
-## Syventävä sukellus
+Perusautentikoinnin käyttö on yleinen tapa turvallisten HTTP-pyyntöjen lähettämiseen, mutta on myös muita vaihtoehtoja, kuten Digest-autentikointi. Perusautentikoinnissa käytetään Base64-koodea, joka salaa käyttäjänimen ja salasanan, mutta tämä ei ole vahvin mahdollinen turvallisuusmenetelmä. Tämän vuoksi sitä suositellaan käytettäväksi vain, jos muutautentikoinnin vaihtoehdot eivät ole käytettävissä.
 
-Perusautentikointi on yksi monista autentikointimenetelmistä, joita voit käyttää lähettämällä HTTP-pyyntöjä Ruby-kielellä. Se toimii lähettämällä käyttäjänimen ja salasanan tietokoneen tai palvelimen kanssa varmistaen, että vain oikeilla tunnistetiedoilla varustetut käyttäjät voivat käyttää resursseja.
+HTTP-pyynnön lähettämiseen perusautentikoinnin kanssa, tarvitsemme URI-osoitteen, käyttäjänimen ja salasanan. Voimme myös määrittää muita vaihtoehtoja, kuten pyyntötyypin (esimerkiksi GET, POST), päänimet ja pyynnön sisällön muodosti (esim. JSON).
 
-Voit myös käyttää muita autentikointimenetelmiä, kuten Digest-autentikointia tai OAuthia, joiden avulla voit lähettää pyyntöjä ja saada vastauksia turvallisesti. On tärkeää harkita, mikä autentikointimenetelmä sopii parhaiten käyttötarkoitukseesi ennen kuin aloitat ohjelmoinnin.
+## Katso myös:
 
-## Katso myös
-
-- [Ruby Net::HTTP -dokumentaatio](https://ruby-doc.org/stdlib/libdoc/net/http/rdoc/Net/HTTP.html)
-- [HTTP-vastauksen tutkiminen Ruby-kielellä](https://www.rubyguides.com/2018/07/ruby-http-request/#How_to_Inspect_HTTP_Responses)
+- [Ruby Net::HTTP Dokumentaatio](https://ruby-doc.org/stdlib-2.6.4/libdoc/net/http/rdoc/Net/HTTP.html)
+- [HTTP-autentikointi Wikipediassa](https://en.wikipedia.org/wiki/Basic_access_authentication)

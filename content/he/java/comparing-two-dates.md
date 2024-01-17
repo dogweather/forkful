@@ -1,7 +1,7 @@
 ---
-title:                "להשוות שתי תאריכים"
-html_title:           "Java: להשוות שתי תאריכים"
-simple_title:         "להשוות שתי תאריכים"
+title:                "השוואת שתי תאריכים"
+html_title:           "Java: השוואת שתי תאריכים"
+simple_title:         "השוואת שתי תאריכים"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Dates and Times"
@@ -10,45 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## למה
+## מה ולמה?
+השוואת שתי תאריכים היא תהליך שמשווה בין שני תאריכים כדי לקבוע מה אחד מתקרב לאחד ומי מהם גדול יותר. תהליך זה נחשב חשוב לתכנתנים מכיוון שניתן להשתמש בו במגוון רחב של מטרות, כגון מיון, חשבון גיל ועוד.
 
-כשאנו פותחים אפליקציות תוכנה, חווים עתים קרובים הצורך להשוות בין שתי תאריכים. השוואה זו מאפשרת לנו לבדוק אם תאריך מסוים קודם או אחרי תאריך אחרון, ולפעמים אפילו לחשב את הפרש זמן ביניהם. במאמר זה נלמד כיצד לבצע השוואה בין שתי תאריכים בשפת ג'אווה ונתנה דוגמאות מעשיות.
+## איך לעשות זאת:
+בכדי להשוות שתי תאריכים בתוך קוד ג'אבה, ניתן להשתמש בפונקציות מובנות כמו `isEqual()` או `compareTo()`. הנה כמה הדגמות לשימוש בפונקציות אלו ולקבלת תוצאות מתאימות:
 
-## איך לבצע השוואת תאריכים בשפת ג'אווה?
+```Java
+// השווה שני תאריכים גם כאשר נתונים כפרמטרים מסוג Date
+Date date1 = new Date(118, 8, 27); // 27/09/2018
+Date date2 = new Date(118, 8, 30); // 30/09/2018
+System.out.println(date1.compareTo(date2)); // הדפס את התוצאה שמחזירה אם התאריכים שווים או לא
 
-כדי לבצע השוואה בין שתי תאריכים בשפת ג'אווה נעשה שימוש ב- `LocalDate` ו- `ChronoUnit` מהחבילה `java.time`. נתחיל עם דוגמה פשוטה שמציגה איך לבדוק אם תאריך הוא קודם או אחרי תאריך אחר באמצעות הפעולה `isBefore` ו- `isAfter` בהתאמה.
-
-```java
-import java.time.LocalDate;
-import java.time.temporal.ChronoUnit;
-
-LocalDate firstDate = LocalDate.of(2021, 9, 1);
-LocalDate secondDate = LocalDate.of(2021, 10, 1);
-
-// הפעולה isBefore מחזירה אמת אם התאריך הראשון קודם מהתאריך השני
-System.out.println(firstDate.isBefore(secondDate)); // Output: true
-
-// הפעולה isAfter מחזירה אמת אם התאריך הראשון אחרי התאריך השני
-System.out.println(firstDate.isAfter(secondDate)); // Output: false
+// השווה שני תאריכים מוגדרים כמחרוזות בתבנית של 'yyyy-MM-dd'
+String dateStr1 = "2021-12-01";
+String dateStr2 = "2021-12-15";
+System.out.println(dateStr1.compareTo(dateStr2)); // הדפס את התוצאה שמחזירה אם התאריכים שווים או לא
 ```
 
-ניתן גם לחשב את הפרש הזמן בין שתי תאריכים באמצעות הפעולה `between` מתוך החבילה `ChronoUnit`.
+## טיפול עמוק:
+בעבר, התהליך של השוואת תאריכים היה נכתב באופן ידני ולא היה קיימת אפשרות להשתמש בפונקציות מובנות. היום, מגוון כלים זמינים שיכולים לפשט את התהליך ולתת תוצאות מדוייקות יותר, כמו רבע תאריך, שאינו יעדר מידע על יום השבוע או כנסים של ימים ספורים בחציות.
 
-```java
-import java.time.LocalDate;
-import java.time.temporal.ChronoUnit;
+## ראה גם:
+אם אתה מעוניין לקרוא עוד על השוואת תאריכים וכלים נוספים לניהול תאריכים בג'אבה, ניתן לקרוא את המקורות הבאים:
 
-LocalDate startDate = LocalDate.of(2021, 9, 1);
-LocalDate endDate = LocalDate.of(2021, 10, 1);
-
-// הפעולה between מחזירה את הפרש הימים בין שני התאריכים
-long daysBetween = ChronoUnit.DAYS.between(startDate, endDate);
-System.out.println("There are " + daysBetween + " days between " + startDate + " and " + endDate);
-// Output: "There are 30 days between 2021-09-01 and 2021-10-01"
-```
-
-כמו כן, ניתן להשתמש בפעולה `compareTo` כדי להשוות בין שתי תאריכים ולקבל תוצאה שלילית, אפס או חיובית.
-
-```java
-import java.time.LocalDate;
-import java.time.temporal.Chron
+- מדריך Java לניהול תאריכים: https://www.javatpoint.com/java-date
+- הנחיות לשימוש בכלים מובנים לניהול תאריכים בג'אבה: https://www.java67.com/2012/12/how-to-compare-dates-in-java.html
+- תיעוד רשמי על ממשק הפונקציות של Date בג'אבה: https://docs.oracle.com/javase/8/docs/api/java/util/Date.html

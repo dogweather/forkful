@@ -10,48 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Miksi
+## Mitä & Miksi?
+YAML on tiedostoformaatti, jota käytetään tietojen tallentamiseen ja siirtämiseen ohjelmistokehityksessä. Se on yksinkertainen ja helposti luettava formaatti, joka koostuu loogisista hierarkkisista rakenteista. Ohjelmoijat käyttävät YAML:ia säilyttääkseen tärkeitä tietoja, kuten konfiguraatiota ja tietokantayhteyksiä, jotta niitä voidaan käyttää ohjelmassa helposti.
 
- YAML on yleinen tiedostomuoto, jota käytetään tietojen tallentamiseen ja jakamiseen eri ohjelmistojen ja sovellusten välillä. Clojure-kehittäjänä sinun on tärkeää ymmärtää YAML:aa ja sen toimintaa, jotta voit integroida sen tehokkaasti projekteihisi ja helposti muokata tiedostoja tarpeen mukaan. 
+## Kuinka:
+```Clojure
+;; Lisää Clojure-yaml riippuvuus projektin pom.xml-tiedostoon
+[org.clojure/clojure-yaml "1.2.0"]
 
-# Miten käyttää YAML:aa Clojurella
+;; Tuodaan clojure-yaml kirjasto
+(require '[clojure-yaml.core :as yaml])
 
-YAML-tiedostot ovat luettavissa Clojuren avulla käyttämällä "clj-yaml" kirjastoa. Voit asentaa sen käyttämällä Leiningenin tai Mavenin kautta seuraavalla komennolla:
+;; Luodaan YAML-tiedosto
+(def yaml-data "---\nname: Jane\nage: 25")
 
-```
-[clj-yaml "0.5.0"]
-```
+;; Muutetaan YAML-muoto Clojure-muotoon
+(def clojure-data (yaml/read-string yaml-data))
 
-Tämän jälkeen voit ladata kirjaston käyttämällä "require" komentoa:
-
-```
-(ns your-namespace
-  (:require [clj-yaml.core :as yaml]))
-```
-
-YAML-tiedoston lukemiseksi voit käyttää "load" funktiota ja antaa tiedoston polun parametrina:
-
-```
-(yaml/load "path/to/file.yaml")
+;; Tulostetaan Clojure-data
+(:name clojure-data) ;; Jane
+(:age clojure-data) ;; 25
 ```
 
-Voit myös lukea YAML-tiedoston suoraan merkkijonona käyttämällä "parse" funktiota:
+## Syväsukellus:
+YAML kehitettiin vuonna 2001, ja siitä on tullut suosittu tiedostoformaatti ohjelmistokehittäjien keskuudessa sen yksinkertaisuuden ja selkeyden vuoksi. Toisin kuin muut tiedostoformaatit, kuten XML ja JSON, YAML ei vaadi erikoismerkkejä tai tagiksiä, mikä tekee siitä helpommin luettavan ihmisille. Lisäksi YAML tukee kommentteja, mikä tekee siitä hyödyllisen monimutkaisemmissa asetustiedostoissa.
 
-```
-(def yaml-string "--- \n name: John\n profession: Developer\n")
-(yaml/parse yaml-string)
-```
-
-Tulos tulostuu map-rakenteena, jossa YAML:n avaimet ovat Clojure-käsitteitä ja arvot vastaavat niitä merkkijonoina, numeroina tai muita Clojuren tietotyyppeinä.
-
-# Syvemmälle YAML:n maailmaan
-
-YAML:n luomiskyky ei rajoitu vain yksinkertaisiin arvoihin, vaan se tukee myös monimutkaisempia rakenteita, kuten listoja ja sisäkkäisiä mappeja. Voit myös käyttää YAML:n sisältämiä tyyppejä, kuten Boolean ja Null.
-
-YAML on myös erittäin muokattavissa. Voit määrittää oman muotoillun YAML-rakenteen käyttämällä "configure-parser" funktiota ja antamalla haluamasi asetukset parametreina. Voit esimerkiksi määrittää erilaisia sallittuja tietotyyppejä tai käyttää omia custom marshalling funktioita.
-
-# Katso myös
-
-- [Clojure YAML:en ohjelmallinen muotoilu](https://github.com/tmarble/clj-yaml)
-- [YAML.org - Tietoa YAML:sta ja sen käytöstä](https://yaml.org/)
-- [Clojure - Ohjelmointikieli ja kehitysympäristö](https://clojure.org/)
+## Katso myös:
+- [Clojure-yaml-kirjaston virallinen dokumentaatio](https://github.com/ninjudd/clojure-yaml)
+- [YAML-spesifikaatio](https://yaml.org/)
+- [Clojure-yaml-kirjaston lähdekoodi GitHubissa](https://github.com/ninjudd/clojure-yaml)

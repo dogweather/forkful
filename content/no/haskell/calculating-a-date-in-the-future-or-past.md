@@ -1,7 +1,7 @@
 ---
-title:                "Å beregne en dato i fremtiden eller fortiden"
-html_title:           "Haskell: Å beregne en dato i fremtiden eller fortiden"
-simple_title:         "Å beregne en dato i fremtiden eller fortiden"
+title:                "Beregning av dato i fremtiden eller fortiden"
+html_title:           "Haskell: Beregning av dato i fremtiden eller fortiden"
+simple_title:         "Beregning av dato i fremtiden eller fortiden"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Dates and Times"
@@ -10,45 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
-Visste du at du kan bruke Haskell til å enkelt beregne en dato i fortiden eller fremtiden? Uansett om du er glemsom og trenger å finne ut hvilken dag det var for to uker siden, eller om du ønsker å planlegge en spesiell begivenhet i fremtiden, kan du bruke Haskell til å gjøre det på en enkel og effektiv måte.
+## Hva & Hvorfor?
+Å beregne en dato i fremtiden eller fortiden er en vanlig oppgave for programmere. Dette kan være nyttig for å finne ut når noe skal skje, for eksempel å planlegge en hendelse eller vise tidsbestemte data.
 
-## Hvordan
-For å kunne beregne en dato i fremtiden eller fortiden trenger du to viktige funksjoner: `addDays` og `fromGregorian`. `addDays` lar deg legge til et bestemt antall dager til en dato, mens `fromGregorian` lar deg konvertere en dato fra å være på formen "år, måned, dag" til en `Day` datatype i Haskell.
-
-```Haskell
-import Data.Time.Calendar
-
--- Dato 7. juli 2021
-let currentDay = fromGregorian 2021 7 7
-
--- Legg til 10 dager til nåværende dato
-let futureDay = addDays 10 currentDay
-
--- Legg til 2 uker og 3 dager til nåværende dato
-let futureDay2 = addDays 17 currentDay
-
--- Skriver ut fremtidige datoer
-print currentDay --2021-07-07
-print futureDay --2021-07-17
-print futureDay2 --2021-07-24
-```
-
-## Dypdykk
-I eksemplene ovenfor la vi til et positivt antall dager til nåværende dato for å få en fremtidig dato. Men hva om vi ønsker å få en dato i fortiden? Det er enkelt, vi bruker bare et negativt antall dager i `addDays` funksjonen.
+## Hvordan:
+Det finnes mange måter å utføre dato beregninger i Haskell, men en enkel metode er å bruke "Data.Time" modulen. Her er et eksempel på hvordan du kan beregne en dato 30 dager i fremtiden:
 
 ```Haskell
--- Dato 7. juli 2021
-let currentDay = fromGregorian 2021 7 7
+import Data.Time
+import Data.Time.Calendar.OrdinalDate
 
--- Trekk fra 5 dager for å få en dato i fortiden
-let pastDay = addDays (-5) currentDay
-
--- Skriver ut dato i fortiden
-print pastDay --2021-07-02
+addDays 30 $ fromGregorian 2019 03 31 
+-- output: 2019-05-01
 ```
 
-Det er også mulig å legge til eller trekke fra et bestemt antall uker eller måneder ved å konvertere det til dager. For eksempel vil en uke tilsvare 7 dager og en måned vil variere avhengig av hvilken måned du befinner deg i.
+Her legger vi 30 dager til den nåværende datoen (31. mars 2019), ved hjelp av funksjonen "addDays" og "fromGregorian" som konverterer året, måneden og dagen til en "Day" datatype. Vi får da ut en ny dato (1. mai 2019).
 
-## Se også
-- https://devblogs.microsoft.com/haskell/calculating-dates-in-haskell/
+## Dypdykk:
+Å beregne datoer har vært en viktig oppgave innen programmering siden begynnelsen. Tidligere brukte man komplekse matematiske formler for å beregne datoer, men nå finnes det enkle og effektive funksjoner som gjør jobben enklere. Alternativt kan man også bruke tredjepartsbiblioteker som "time" eller "chronos" for å utføre dato beregninger. Implementasjonen av slike funksjoner er vanligvis basert på algoritmer og kalenderinformasjon.
+
+## Se også:
+- ["Data.Time" dokumentsjon](https://hackage.haskell.org/package/time)
+- ["chronos" bibliotek](https://hackage.haskell.org/package/chronos)

@@ -1,7 +1,7 @@
 ---
-title:                "Tiedoston lukeminen"
-html_title:           "Swift: Tiedoston lukeminen"
-simple_title:         "Tiedoston lukeminen"
+title:                "Tekstitiedoston lukeminen."
+html_title:           "Swift: Tekstitiedoston lukeminen."
+simple_title:         "Tekstitiedoston lukeminen."
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Files and I/O"
@@ -10,38 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mikä & miksi?
+Tekstin tiedoston lukeminen on toiminto, jossa ohjelmoija lataa tiedoston sisällön lukuun ja käyttöön. Tätä tehdään yleensä siksi, että ohjelma voi käsitellä ja näyttää tiedoston sisällön käyttäjälle.
 
-Jos olet kiinnostunut oppimaan miten lukea tekstitiedostoja Swift-ohjelmointikielellä, tämä artikkeli on juuri sinulle. Tekstitiedostojen lukeminen on tärkeä taito, joka helpottaa tietojen käsittelyä ja ohjelman suorittamista.
-
-## Miten tehdä se
+## Kuinka?
+Swift-koodilla on helppo ladata tekstitiedosto ja näyttää sen sisältö. Katso alla olevia esimerkkejä ja niiden tulosteita.
 
 ```Swift
-// Luodaan uusi tiedostopuskuri käyttäen tiedoston polkua ja nimeä 
-let tiedostopuskuri = FileHandle(forReadingAtPath: "polku/tiedosto.txt")
-
-// Tarkistetaan että tiedostopuskuri on olemassa ja voimme lukea tiedoston
-if tiedostopuskuri == nil {
-    print("Tiedostoa ei löydy!")
-} else {
-    // Luetaan tiedostosta kaikki rivit ja tallennetaan ne muuttujaan
-    let sisalto = String(data: (tiedostopuskuri?.readDataToEndOfFile())!, encoding: .utf8)
-    // Tulostetaan tiedoston sisältö
-    print(sisalto!)
+// Esimerkki 1: Tiedoston lukeminen ja tulostaminen
+if let text = try? String(contentsOfFile: "tekstitiedosto.txt") {
+    print(text)
 }
-
-// Muista sulkea tiedostopuskuri käytön jälkeen
-tiedostopuskuri?.closeFile()
+```
+```Swift
+// Esimerkki 2: Tiedoston luku ja käsittely riveittäin
+if let text = try? String(contentsOfFile: "tekstitiedosto.txt") {
+    let lines = text.components(separatedBy: "\n")
+    for line in lines {
+        print(line)
+    }
+}
+```
+Tuloste esimerkissä 1:
+```
+Tämä on esimerkki tekstitiedoston sisällöstä.
+Käytämme tätä tiedostoa näyttämään kuinka helppoa on lukea tekstitiedosto Swift-koodilla.
+```
+Tuloste esimerkissä 2:
+```
+Tämä on esimerkki tekstitiedoston sisällöstä.
+Käytämme tätä tiedostoa näyttämään kuinka helppoa on lukea tekstitiedosto Swift-koodilla.
 ```
 
-Esimerkissä luomme tiedostopuskurin, tarkistamme sen tilan ja lopulta luemme tiedoston sisällön ja tulostamme sen. Muista aina sulkea tiedostopuskuri, kun olet lopettanut sen käytön.
+## Syventävä sukellus
+Tekstitiedoston lukeminen on yleinen toiminto, joka on ollut käytössä ohjelmoinnissa jo pitkään. Aikaisemmin sitä tehtiin usein matalalla tasolla käyttäen C-kielestä peräisin olevia funktioita, mutta nykyään monet ohjelmointikielet, kuten Swift, tarjoavat helppokäyttöisiä työkaluja tekstitiedostojen käsittelyyn.
 
-## Syvempi sukellus
-
-Tekstitiedostojen lukeminen Swiftissä tapahtuu käyttämällä Foundation Frameworkin tarjoamaa FileHandle-luokkaa. Tämä luokka tarjoaa erilaisia metodeja tiedoston käsittelyyn, kuten lukemiseen, kirjoittamiseen ja selaamiseen. On tärkeää tarkistaa, että tiedostopuskuri on olemassa ennen sen käyttöä, jotta voimme välttää mahdolliset virheilmoitukset.
+Jos tekstitiedoston lukeminen ei sovellu sinun tarpeisiisi, voit harkita muiden tiedostomuotojen käyttöä, kuten CSV- tai JSON-tiedostoja.
 
 ## Katso myös
-
-- [Swiftin virallinen dokumentaatio](https://docs.swift.org/swift-book/LanguageGuide/BasicOperators.html)
-- [Tekstipuskurin lukeminen ja kirjoittaminen Swiftissä](https://www.swiftlondon.com/blog/2016/03/28/reading-writing-file-swift/)
-- [Swiftin perusteet: Tiedostojen käsittely](https://www.raywenderlich.com/875-tiedostojen-kasittely-swiftilla)
+- [Swiftin virallinen dokumentaatio tekstitiedoston käsittelyyn](https://developer.apple.com/documentation/foundation/filemanager/1407698-contents)
+- [Ohjelmointiopas tekstitiedoston lukemiseen ja kirjoittamiseen Swiftillä](https://www.hackingwithswift.com/example-code/strings/how-to-read-a-whole-file-into-a-string-with-contentsof)
+- [CS231n-opetusohjelma tekstitiedoston käsittelystä Pythonilla](https://cs231n.github.io/python-numpy-tutorial/#python-strings)

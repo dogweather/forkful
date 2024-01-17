@@ -1,7 +1,7 @@
 ---
-title:                "Analysera html"
-html_title:           "Fish Shell: Analysera html"
-simple_title:         "Analysera html"
+title:                "Analys av html"
+html_title:           "Fish Shell: Analys av html"
+simple_title:         "Analys av html"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "HTML and the Web"
@@ -10,38 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+Vad och varför?
 
-Att kunna parsa HTML är en viktig färdighet för alla som arbetar med webbutveckling, speciellt i dagens digitala värld där HTML är grunden för webbsidor. Genom att använda en Fish Shell kan du effektivt och enkelt parsa HTML och extrahera viktig information från webbsidor.
+Att "parsa" HTML är att extrahera och organisera information från en HTML-kodad webbsida. Detta är användbart för programmerare eftersom det gör det möjligt att automatiskt samla data från webbsidor, till exempel för webbskrapning eller webbsidetestning.
 
-## Så här gör du
+Hur man gör det:
 
-För att kunna parsa HTML med en Fish Shell, behöver du först installera ett tillägg som heter "Fisher". För att göra det, öppna Fish Shell och kör följande kommando:
-
-```Fish Shell
-fisher install jorgebucaran/autopair
-```
-
-När tillägget är installerat kan du använda kommandot "parsehtml" för att ta bort all HTML-formatering från en webbsida och bara behålla ren text. Till exempel kan du utföra följande:
+Fish Shell har ett inbyggt verktyg som heter "strings", som kan anvädas för att filtrera ut information från en HTML-kodad webbsida. Ett exempel kan se ut som följande:
 
 ```Fish Shell
-parsehtml https://www.example.com
+strings http://www.example.com | grep "title"
 ```
 
-Detta kommer att visa den rena texten från webbsidan och ignorera all HTML-kod.
+Detta kommando kommer att söka igenom sidan för all text som innehåller ordet "title" och visa den i terminalfönstret. Det är ett enkelt sätt att snabbt få ut specifik information från en webbsida.
 
-## Djupdykning
+Djupdykning:
 
-Det finns många andra kommandon och alternativ som kan användas för att parsa HTML med en Fish Shell. Till exempel kan du använda "csstidy" kommandot för att ta bort all icke-essentiell CSS-kod från en webbsida, eller "xpath" kommandot för att välja specifika element från en webbsida baserat på deras xpath.
+Att pars-koda HTML är en vanlig uppgift för webbutvecklare och kan också utföras med andra programmeringsspråk som Python eller Ruby. Andra alternativ till Fish Shell's "strings" inkluderar verktyg som "grep" eller "sed". Fish Shell's "strings" erbjuder en bekväm och lättanvändlig metod för att samla data från HTML-kodade webbsidor.
 
-Det är också möjligt att spara resultatet av en parsering till en fil genom att använda vertikala feltexter. Om du vill lära dig mer om de olika kommandona och deras användningsområden, kan du använda "man" kommandot i Fish Shell:
+Se även:
 
-```Fish Shell
-man parsehtml
-```
-
-## Se även
-
-- [Fisher tillägget](https://github.com/jorgebucaran/autopair)
-- [Mer information om Fish Shell](https://fishshell.com/)
-- [Alternativ tillägg för att parsa HTML](https://github.com/Fisherman/Fisherman)
+- Fish Shell's officiella dokumentation för "strings" kommandot: https://fishshell.com/docs/current/cmds/strings.html 
+- En introduktion till webbskrapning med Fish Shell: https://fishshell.com/blog/2020/01/10/web-scraping-with-fish.html

@@ -1,7 +1,7 @@
 ---
-title:                "Html-analyysi"
-html_title:           "Java: Html-analyysi"
-simple_title:         "Html-analyysi"
+title:                "Html-analysointi"
+html_title:           "Java: Html-analysointi"
+simple_title:         "Html-analysointi"
 programming_language: "Java"
 category:             "Java"
 tag:                  "HTML and the Web"
@@ -10,52 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##Why
-Miksi: 
-Jos haluat luoda Java-sovelluksen, joka voi lukea ja analysoi HTML-koodia, tarvitset taitoja parsia HTML:ä. Tämä prosessi voi auttaa sinua saamaan tarvittavat tiedot ja muokkaamaan HTML-sivuja haluamallasi tavalla.
+## Mitä & Miksi?
+HTML:n jäsentäminen (parseaminen) tarkoittaa HTML-koodin muuttamista selkeämmäksi ja helpommin käsiteltäväksi muodoksi. Tämä on tärkeää, koska monet ohjelmat käyttävät HTML-koodia ja haluavat saada siitä tietoa. Näiden tietojen avulla ohjelmat voivat tehdä asioita kuten näyttää verkkosivuja ja hakea tietoja.
 
-##How To
-Kuinka: 
-
-Parsia HTML:ää Javailla voi olla hyödyllistä monissa sovelluksissa. Tässä on esimerkki, miten voit tehdä sen helposti:  
+## Miten:
+Koodiesimerkki Java-kielellä ja sen tulosteet:
 
 ```Java
-// Ensiksi, sinun täytyy importoida tarvittavat kirjastot
-import org.jsoup.Jsoup; 
-import org.jsoup.nodes.Document; 
-import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
+// Luodaan HTML-lähtömerkkijono
+String html = "<p>Tervetuloa <strong>Java-ohjelmointimaailmaan!</strong></p>";
 
-// Sitten voit luoda Document-olion, joka edustaa HTML-sivua
-Document doc = Jsoup.connect("http://www.esimerkkisivu.com").get();
+// Jäsentäminen
+Document doc = Jsoup.parse(html);
 
-// Voit hakea tietoa tietystä elementistä antamalla CSS-selectori
-Elements title = doc.select("title"); 
+// Hae elementti id:n avulla
+Element element = doc.getElementById("firstElement");
 
-// Voit tulostaa elementin sisällön
-System.out.println(title.text()); 
+// Tulosta elementin sisältö
+System.out.println(element.text());
 
-// Voit myös etsiä tietoa useista elementeistä
-Elements links = doc.select("a[href]"); 
-for(Element link : links){ 
-    System.out.println(link.attr("href")); 
-}
-
+// Tulostus:
+// Tervetuloa Java-ohjelmointimaailmaan!
 ```
 
-Yllä oleva koodi esimerkiksi hakee HTML-sivulta otsikon ja kaikki linkit ja tulostaa ne konsoliin. Tämä on vain yksinkertainen esimerkki siitä, miten voit parsia HTML:ää Java-sovelluksessa. 
+Tämä koodi luo HTML-lähtömerkkijonon, jäsentää sen ja hakee tietyn elementin sisällön id:n avulla. Lopuksi tulostetaan elementin sisältö, joka tässä tapauksessa on teksti "Tervetuloa Java-ohjelmointimaailmaan!".
 
-##Deep Dive
-Syvällisempi tieto:
-HTML:n parsimisessa on paljon enemmän mahdollisuuksia. Voit esimerkiksi käyttää CSS- tai XPath-selectoreita hakeaksesi tiettyjä elementtejä tai attribuutteja sivulta. Voit myös käyttää erilaisia kirjastoja, kuten Jsoup tai HTMLParser, jotka tarjoavat erilaisia toimintoja parsimiseen. Parsiminen voi myös auttaa sinua luomaan web-sovelluksia, kuten web-skraping tai tiedon kerääminen. 
+## Syvemmälle:
+HTML parseamisella on pitkä historia, ja sitä käytetään laajasti web-ohjelmoinnissa. Java-kielessä on useita kirjastoja, kuten Jsoup, joka sallii helpomman tavan jäsentää HTML-koodia. On myös muita tapoja, kuten regular expressionien käyttäminen, mutta se ei ole yhtä luotettava ja voi olla hankalampi toteuttaa.
 
-##See Also
-Katso myös:
-
-https://jsoup.org/ - Lisätietoa Jsoup-kirjastosta
-
-https://www.w3schools.com/xml/xml_parsing.asp - Tietoa XML-parsimisesta
-
-https://www.tutorialspoint.com//java_xml/index.htm - Tutoriaali Java ja XML
-
-Nämä linkit tarjoavat lisää tietoa ja esimerkkejä HTML:n parsimisesta Java-sovelluksissa. Kun hallitset taidon parsia HTML:ää, se voi auttaa sinua luomaan monipuolisia ja tehokkaita sovelluksia.
+## Lue myös:
+- [Jsoup kirjaston dokumentaatio](https://jsoup.org/)
+- [Vinkkejä HTML:n jäsentämiseen Java-kielellä](https://dzone.com/articles/modern-way-of-parsing-html-in-java)

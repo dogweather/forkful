@@ -1,7 +1,7 @@
 ---
-title:                "Capitalizando uma string"
-html_title:           "C++: Capitalizando uma string"
-simple_title:         "Capitalizando uma string"
+title:                "Colocando as Letras em Maiúsculas: Uma Introdução à Programação de Computadores"
+html_title:           "C++: Colocando as Letras em Maiúsculas: Uma Introdução à Programação de Computadores"
+simple_title:         "Colocando as Letras em Maiúsculas: Uma Introdução à Programação de Computadores"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -10,51 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por Que
+## O Que & Por Que?
 
-Você já se deparou com a situação de precisar capitalizar uma string em C++, mas não saber como fazer isso da forma mais eficiente? Neste artigo, vamos explorar o porquê de capitalizar uma string e aprender como fazer isso de forma simples e prática.
+Capitalizar uma string é transformá-la em uma representação na qual a primeira letra de cada palavra é maiúscula. Os programadores fazem isso para facilitar a leitura e melhorar a organização do código.
 
-## Como Fazer
-Capitalizar uma string significa transformar todas as letras de uma palavra em maiúsculas. Para fazer isso em C++, podemos utilizar a função `toupper()` da biblioteca `<ctype.h>`. Veja abaixo um exemplo de como usar essa função em um programa que recebe uma string do usuário e a imprime capitalizada:
+## Como:
 
 ```C++
 #include <iostream>
-#include <ctype.h>
+#include <string>
+#include <algorithm>
 
 using namespace std;
 
-int main() {
-
-    string palavra;
-
-    // Obtém a palavra do usuário
-    cout << "Digite uma palavra: ";
-    cin >> palavra;
-
-    // Utiliza um loop para transformar cada letra em maiúscula
-    for (int i = 0; i < palavra.length(); i++) {
-        palavra[i] = toupper(palavra[i]);
+int main(){
+    string texto = "esse é um exemplo de string capitalizada";
+    
+    // usando a função transform da biblioteca algorithm
+    transform(texto.begin(), texto.end(), texto.begin(), ::toupper);
+    cout << texto << endl; // Saída: ESSE É UM EXEMPLO DE STRING CAPITALIZADA
+    
+    // também é possível usar um loop para percorrer a string 
+    // e modificar as letras individualmente
+    for (int i = 0; i < texto.length(); i++){
+        if (texto[i] >= 'a' && texto[i] <= 'z') // verificando se é uma letra minúscula
+            texto[i] = texto[i] - 32; // subtraindo 32 para obter a letra maiúscula correspondente
     }
-
-    // Imprime a palavra capitalizada
-    cout << "Palavra capitalizada: " << palavra << endl;
-
+    cout << texto << endl; // Saída: ESSE É UM EXEMPLO DE STRING CAPITALIZADA
+    
     return 0;
 }
 ```
 
-**Exemplo de Saída:**
+## Mergulho Profundo:
 
-```
-Digite uma palavra: programar
-Palavra capitalizada: PROGRAMAR
-```
+Capitalizar strings tem sua origem no estilo de escrita CamelCase, popularizado pela linguagem de programação Java. Ele foi introduzido para facilitar a leitura e tornar o código mais legível, visto que muitas palavras compostas são utilizadas na programação. Além disso, existem outras formas de capitalização, como a capitalização apenas da primeira letra da primeira palavra, ou a capitalização de todas as letras. A escolha depende da preferência do programador e do estilo adotado pelo projeto.
 
-## Detalhando
-O processo de capitalizar uma string pode ser feito manualmente, percorrendo cada letra da palavra e transformando-a em maiúscula. No entanto, a função `toupper()` é uma opção mais eficiente e prática. Ela faz parte da biblioteca padrão de C++ e pode ser utilizada facilmente em qualquer programa.
+## Veja Também:
 
-Além disso, é importante lembrar que a função `toupper()` também pode ser utilizada para capitalizar apenas a primeira letra de uma palavra, deixando as demais em minúsculo. Isso pode ser útil em situações específicas, como em nomes próprios.
-
-## Veja Também
-- [Documentação da função toupper() em C++](https://www.cplusplus.com/reference/cctype/toupper/)
-- [Como inverter uma string em C++](https://www.devmedia.com.br/como-inverter-uma-string-em-c/18986)
+- https://www.learncpp.com/cpp-tutorial/capitalization/
+- https://pt.wikipedia.org/wiki/CamelCase
+- https://docs.microsoft.com/pt-br/cpp/standard-library/toupper

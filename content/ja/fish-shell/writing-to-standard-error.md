@@ -1,7 +1,7 @@
 ---
-title:                "「標準エラーに書き込む」"
-html_title:           "Fish Shell: 「標準エラーに書き込む」"
-simple_title:         "「標準エラーに書き込む」"
+title:                "標準エラーへの書き込み - Writing to standard error"
+html_title:           "Fish Shell: 標準エラーへの書き込み - Writing to standard error"
+simple_title:         "標準エラーへの書き込み - Writing to standard error"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Files and I/O"
@@ -10,49 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+## やること & なぜやるの？
 
-なぜ、誰かが標準エラーに書き込む行為に参加するのでしょうか。Fish Shellの最新バージョンを使い、その理由を説明します。Fish Shellは、標準エラーの出力として利用されるシンプルでパワフルなコマンドラインシェルです。標準エラーを書き込むことで、エラーメッセージを素早く把握し、問題の解決に役立てることができます。
+標準エラーへの書き込みとは、プログラマーがコード実行中に発生したエラーメッセージを出力する仕組みです。これにより、コードの実行中に発生した問題をすばやく特定し、修正することができます。プログラマーたちは、標準エラーへの書き込みを行うことで、より効率的にコードをデバッグすることができます。
 
-## 使い方
+## 方法：
 
-### 標準エラーに書き込む基本的なコマンド
+```Fish Shell ... ```コードブロック内に、コーディングの例とサンプルの出力を記載しています。
 
-```fish
-# 標準エラーにメッセージを書き込むコマンド
-echo "エラーが発生しました" >&2
+```
+# 例1: Hello Worldを標準エラーへ出力する
+echo "Hello World" >&2
+
+# 例2: 変数を使ってメッセージを標準エラーへ出力する
+set error_msg "Something went wrong."
+echo $error_msg >&2
 ```
 
-コマンドの最後に`>&2`を追加することで、標準エラーにメッセージを書き込むことができます。
-
-### テキストファイルから標準エラーに書き込む方法
-
-```fish
-# 標準エラーにファイルの内容を書き込むコマンド
-cat file.txt 2>&1 >&2
+出力：
+```
+Hello World # 標準エラーへの出力
+Something went wrong. # 標準エラーへの出力
 ```
 
-`cat`コマンドを使用することで、ファイルの内容を標準エラーに書き込むことができます。`2>&1`を追加することで、標準エラーを標準出力にマージします。その後再度`>&2`を追加することで、標準出力を標準エラーにマージします。
+## 詳細を掘り下げる：
 
-### ログファイルに標準エラーを書き込む方法
+標準エラーへの書き込みは、通常、コード内で``` >&2 ```を使用することで実現されます。これは、Unixシステムで広く使用されている標準的な方法です。また、エラーメッセージをファイルに書き込む方法や、ログファイルへの書き込みなど、標準エラーへの書き込み以外の方法もあります。しかし、標準エラーへの書き込みは、コードのデバッグにおいて直感的で簡単な方法です。
 
-```fish
-# 標準エラーをログファイルに書き込むコマンド
-echo "エラーが発生しました" 2>> log.txt
-```
+## 関連情報：
 
-`>>`を使用することで、ログファイルに標準エラーを追記することができます。
-
-## 深堀り
-
-標準エラーを書き込むことは、エラー処理やデバッグ時に重要な役割を果たします。さまざまなコマンドや組み込み関数には、エラーメッセージを標準エラーに書き込むように設計されているものがあります。また、スクリプト内で明示的に標準エラーに書き込むことで、コードの可読性を向上させることもできます。しかし、過剰なエラーメッセージを出力してしまうと、読み手を混乱させる可能性があるため、慎重に使用することが重要です。
-
-## 参考リンク
-
-- [Fish Shell公式ドキュメント](https://fishshell.com/docs/current/index.html)
-- [標準出力と標準エラーについて理解する](https://qiita.com/mossan001/items/979b6148669a67ed9a8a)
-- [入門：標準入出力とパイプの仕組み](https://qiita.com/iwaseasahi/items/628e95860d87ffd8b840) 
-
-## 関連リンク
-
-- [ゼロから始めるFish Shell入門](https://qiita.com/Chanmoro/items/d88babe3f28092e0a1f6)
+- [Shell Scripting Tutorial - Standard Error](https://www.shellscript.sh/standard.html)
+- [Understanding Standard Error in UNIX / Linux](https://www.tutorialspoint.com/unix/unix-standard-error.htm)
+- [Bash Shell - Writing to Standard Error](https://bash.cyberciti.biz/guide/Writing_to_standard_error)

@@ -10,44 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
+## 什么是下载网页？为什么程序员需要它？
 
-下网页是一项常见的任务，它可以让我们轻松地获取网页上的信息。例如，我们可以使用Ruby来下载一个新闻网站的文章，以便我们可以在离线状态下阅读它们。
+下载网页是指从互联网下载并保存某个网页的过程。程序员通常会使用下载网页来获取特定的数据，例如网页上的文本或图像，以便在他们的程序中使用。
 
-## 如何
+## 如何使用
 
-使用Ruby下载网页非常简单。首先，我们需要安装一个名为"open-uri"的gem（gem是Ruby的库）。在安装完成后，我们需要使用这个gem提供的`open`方法来打开一个URL。
+### 使用Ruby下载网页的示例
 
-```Ruby
-require 'open-uri'
-
-url = "https://www.example.com/"
-html = open(url).read
+```
+require 'net/http'
+url = URI.parse("https://www.youtube.com/")
+http = Net::HTTP.new(url.host, url.port)
+http.use_ssl = (url.scheme == "https")
+response = http.get(url.path)
+puts response.body
 ```
 
-上面的代码将打开`https://www.example.com/`这个网址，并把网页的内容读取到`html`变量中。
+### 示例输出
 
-我们也可以使用`open`方法来下载文件，例如图片：
-
-```Ruby
-require 'open-uri'
-
-url = "https://www.example.com/example_image.png"
-open(url) do |image|
-  File.open("example_image.png", 'wb') do |file|
-    file.write(image.read)
-  end
-end
 ```
-
-上面的代码将从指定的URL下载一张图片，并保存到本地文件夹中。
+<!DOCTYPE html><html><head> ... </head><body> ... </body></html>
+```
 
 ## 深入探讨
 
-`open-uri`其实是一个很强大的工具，它不仅可以下载网页，还可以发送HTTP请求，处理cookie等功能。它的文档提供了更多关于如何使用它的详细信息。此外，我们也可以使用其他的Ruby库，如`httparty`或`net/http`来完成下载网页的任务。深入了解这些库的功能，将帮助我们更好地处理网络请求。
+### 历史背景
 
-## 参考链接
+下载网页的概念可以追溯到早期的互联网时代，当时人们开始使用程序来从网络上获取信息。
 
-- open-uri文档：https://ruby-doc.org/stdlib-2.5.1/libdoc/open-uri/rdoc/OpenURI.html
-- HTTParty文档：https://github.com/jnunemaker/httparty
-- net/http文档：https://ruby-doc.org/stdlib-2.5.1/libdoc/net/http/rdoc/Net/HTTP.html
+### 其他方法
+
+下载网页并不是唯一的方法来获取网页上的信息。程序员也可以使用API接口或者爬虫来获取数据。
+
+### 实现细节
+
+在Ruby中，我们使用Net::HTTP类来创建HTTP连接并下载网页。首先，我们需要使用URI解析网页的URL，然后创建一个HTTP对象并指定要下载的URL。如果网页的协议是HTTPS，我们还需要设置`use_ssl`为`true`。最后，使用`get`方法来发送请求并获取网页的响应。再次感谢Ruby语言简洁易用的特性，我们可以轻松地实现这一过程。
+
+## 相关来源
+
+- [Net::HTTP RubyDoc](https://ruby-doc.org/stdlib-2.5.1/libdoc/net/http/rdoc/Net/HTTP.html)
+- [What is web scraping?](https://en.wikipedia.org/wiki/Web_scraping)

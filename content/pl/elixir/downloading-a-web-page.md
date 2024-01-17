@@ -10,38 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+"## Co i dlaczego?"
+Pobieranie strony internetowej to proces, w którym program pobiera zawartość strony internetowej i wyświetla ją użytkownikowi. Programiści często pobierają strony internetowe, aby analizować i przetwarzać dane lub wykorzystać je w swoich projektach.
 
-Jeśli chcesz pobrać stronę internetową, istnieje kilka możliwych powodów. Może chcesz przeglądać ją offline, odświeżić ją w celu uzyskania najnowszych informacji, albo po prostu nie masz dostępu do Internetu w danym momencie. Bez względu na powód, Elixir jest idealnym wyborem do tego zadania.
-
-## Jak to zrobić
-
-Aby pobrać stronę internetową w Elixir, musimy użyć modułu `HTTPoison` i funkcji `get`:
-
+"## Jak to zrobić:"
 ```Elixir
-response = HTTPoison.get("https://example.com")
+# Aby pobrać stronę internetową w Elixirze, należy użyć funkcji HTTPoison.get(), podając adres URL jako argument.
+strona = HTTPoison.get("https://example.com")
+
+# W celu uzyskania zawartości strony należy użyć funkcji HTTPoison.body() na zwróconym wyniku.
+zawartosc = HTTPoison.body(strona)
+
+# Następnie można wyświetlić pobraną zawartość za pomocą funkcji IO.puts().
+IO.puts(zawartosc)
+
+# Przykładowy wynik:
+# <html>
+#   <head>
+#     <title>Przykładowa strona</title>
+#   </head>
+#   <body>
+#     <h1>Witaj na przykładowej stronie!</h1>
+#   </body>
+# </html>
 ```
 
-W tym przykładzie używamy `example.com` jako przykładu, ale możesz podać dowolny adres URL. Gdy wywołasz tę funkcję, otrzymasz odpowiedź HTTP do wykorzystania. Możesz wyświetlić jej kod odpowiedzi i treść, używając:
+"## Deep Dive": 
+W przeszłości pobieranie stron internetowych było skomplikowanym procesem, jednak dzięki nowoczesnym językom programowania i bibliotekom takim jak HTTPoison jest to teraz proste i szybkie. Istnieją również inne sposoby na pobieranie strony internetowej, takie jak używanie biblioteki zewnętrznej CURL lub wykorzystanie wbudowanych funkcji przeglądarki.
 
-```Elixir
-IO.puts(response.status_code)
-IO.puts(response.body)
-```
-
-Gdy wklejasz ten kod do swojej aplikacji Elixir i uruchamiasz ją, powinieneś zobaczyć status 200 oraz treść strony internetowej `example.com` w konsoli.
-
-## Deep Dive
-
-Jeśli chcesz pobrać stronę internetową w formie tekstu, możesz wykorzystać funkcję `get_text` z modułu `HTTPoison`:
-
-```Elixir
-response = HTTPoison.get_text("https://example.com")
-```
-
-Ta funkcja zwraca tylko zawartość strony bez kodu HTML. Możesz również ustawić nagłówki, dane wysyłane, czas oczekiwania na odpowiedź i wiele innych opcji przy pomocy parametrów funkcji `get` i `get_text` oraz funkcji pomocniczych związanych z `HTTPoison`.
-
-## Zobacz też
-
-- Dokumentacja dla modułu `HTTPoison` - https://hexdocs.pm/httpoison/HTTPoison.html
-- Instrukcja użycia dla Elixir - https://hexdocs.pm/elixir/getting-started.html
+"## Zobacz też": 
+- Dokumentacja HTTPoison: https://hexdocs.pm/httpoison/HTTPoison.html
+- Biblioteka CURL dla Elixira: https://github.com/elixir-curl/curl

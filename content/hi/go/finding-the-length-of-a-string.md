@@ -1,7 +1,7 @@
 ---
-title:                "स्ट्रिंग की लंबाई का पता लगाना"
-html_title:           "Go: स्ट्रिंग की लंबाई का पता लगाना"
-simple_title:         "स्ट्रिंग की लंबाई का पता लगाना"
+title:                "अक्षरों की लंबाई ढूँढना"
+html_title:           "Go: अक्षरों की लंबाई ढूँढना"
+simple_title:         "अक्षरों की लंबाई ढूँढना"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Strings"
@@ -10,21 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
+## क्या और क्यों?
+Finding the length of a string क्या है और क्यों programmers इसे करते हैं।
 
-आपने कभी भी किसी स्ट्रिंग की लंबाई को जानने की जरूरत महसूस की है? शायद आपको उस स्ट्रिंग के साथ काम करना हो और आपको उसकी लंबाई का पता होना आवश्यक हो। ऐसे में, आपको गो लैंग्वेज के स्ट्रिंग डेटा टाइप के उपयोग का ज्ञान होना आवश्यक है। इस लेख में, हम आपको गो में स्ट्रिंग की लंबाई को कैसे जाना जाता है इसके बारे में समझाएंगे। 
+एक string की लंबाई को निकालना strings के लिए एक दिग्गज काम है। programmers इसका उपयोग करके उपयोगकर्ताओं के द्वारा प्रदान किए गए डेटा की प्रबंधन और प्रोग्रामिंग के साथ संबंधित कार्यों को सुनाई पड़ती है।
 
-## कैसे करें
-
-स्ट्रिंग की लंबाई को जानने के लिए, हम गो लैंग्वेज के `len()` फंक्शन का इस्तेमाल करते हैं। यह फंक्शन एक स्ट्रिंग को आर्ग्यूमेंट के रूप में लेता है और उसकी लंबाई को इंटीजर के रूप में उत्पन्न करता है। निम्न उदाहरण में, हम एक स्ट्रिंग के लंबाई को प्रिंट करेंगे।
-
+## कैसे करें?
 ```Go
-str := "Hello world!"
-fmt.Println(len(str)) // Output: 12
+func main() {
+    str := "Hello, world!" // string declared
+    fmt.Println("Length of string:", len(str)) // output: 13 (includes spaces)
+}
 ```
 
-इस उदाहरण में, हमने `len()` फंक्शन का उपयोग गो के `fmt` पैकेज के `Println()` फंक्शन के साथ किया है ताकि हम स्ट्रिंग की लंबाई को प्रिंट कर सकें। 
+```Go
+func main() {
+    str := "こんにちは、世界！" // string declared (Japanese translation of "Hello, world!")
+    fmt.Println("Length of string:", len(str)) // output: 15 (includes non-English characters)
+}
+```
 
-## गहराई तक जाएं
+## गहराई में खोजें
+1. इतिहास के संदर्भ में, strings की लंबाई को प्राप्त करना C language से लेकर शुरू हुआ। 
+2. अन्य भाषाओं में भी, strings की लंबाई को निकालने के लिए विभिन्न तरीको का प्रयोग किया जाता है। 
+3. Go language में, string की लंबाई को निकालने के लिए len() function का प्रयोग किया जाता है।
 
-गो में स्ट्रिंग की लंबाई को जानने के लिए `len()` फंक्शन सबसे आसान और सटीक तरीका है। इस फंक्शन के अलावा, पुराने स्टाइल में हम `for` लूप का उपयोग करके भी स्ट्रिंग की लंबाई को पता लगा सकते हैं। यह उपाय आजकल उपयोग करने के लिए अनुचित है क्योंकि यह समय और प्रोसेसिंग पर अधिक बोझ डालता ह
+## अन्य संबंधित स्रोत
+[The Go Programming Language](https://golang.org/)- Official Website 
+[Go By Example](https://gobyexample.com/strings)- String manipulation using Go 
+[GeeksforGeeks](https://www.geeksforgeeks.org) - Online resource for programming concepts and tutorials.

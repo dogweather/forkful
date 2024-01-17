@@ -10,26 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-为什么: 调试输出是一种非常有用的工具，它可以帮助程序员在开发时检查代码的执行过程，并找到可能出现的错误。它可以提高代码的可读性，减少调试时间。无论是初学者还是有经验的开发者都可以受益于打印调试输出。
+## 什么是打印调试输出？为什么程序员要这么做？
 
-如何操作: 在Ruby中，打印调试输出非常简单。只需使用"puts"命令，后跟要打印的变量或字符串，就可以在控制台输出调试信息。以下是一个简单的例子，演示如何打印出一个数组的元素：
+打印调试输出是指在程序中插入一些额外的代码，用来输出程序运行时的中间结果和变量的值，以便程序员能够更好地调试和排查问题。程序员经常会这么做，因为它能够帮助他们更快地找到错误并修复它们。
 
- ```Ruby
- array = [1, 2, 3, 4]
- puts array
- ```
-输出结果为：[1, 2, 3, 4]
+## 如何实现打印调试输出？
 
-深度讨论: 打印调试输出不仅仅局限于简单地输出变量或字符串。它还可以帮助开发者了解代码的执行流程，以及在特定情况下变量的值如何变化。例如，当程序出现错误时，打印调试输出可以帮助开发者找出导致错误的具体变量和值。
+以下是一个简单的Ruby代码示例，展示如何打印调试输出：
 
-另外，打印调试输出还可以帮助开发者在更复杂的程序中进行调试。通过在关键位置打印调试信息，开发者可以跟踪代码的执行流程，更有效地找出代码中的错误。
+```ruby
+def add(x, y)
+  puts "x的值为：#{x}"
+  puts "y的值为：#{y}"
 
-最后，打印调试输出还可以帮助开发者在不同环境中运行程序时，检查变量的值是否符合预期。如果出现意外的值，开发者可以通过打印调试输出来定位并修复问题。
+  result = x + y
+  puts "结果为：#{result}"
+end
 
-参考链接:
-- [Ruby official documentation](https://ruby-doc.org/core-2.7.1/doc/syntax/control_expressions_rdoc.html)
-- [Debugging in Ruby: A beginner’s guide](https://medium.com/@hwankaijung/debugging-in-ruby-a-beginners-guide-e2549e40eb0b)
-- [Debugging techniques in Ruby](https://www.sitepoint.com/debugging-techniques-ruby/)
+add(2, 5)
+```
 
-另见:
-相关阅读：[如何利用Ruby的调试工具提高程序开发效率](https://www.jianshu.com/p/6c2b389a50c6)
+运行上述代码后，你会得到以下输出：
+
+```
+x的值为：2
+y的值为：5
+结果为：7
+```
+
+在上面的代码中，我们使用了`puts`方法来打印调试输出。该方法会将我们想要输出的内容显示在控制台上。
+
+## 深入了解打印调试输出
+
+打印调试输出的历史可以追溯到早期的编程语言，如BASIC和Pascal。在那些年代，程序员只能通过编写代码来输出调试信息，而没有像今天这样方便的调试工具。
+
+除了使用`puts`方法之外，还有其他一些方法可以打印调试输出。比如使用`p`方法可以打印出对象的详细信息，`inspect`方法可以打印出对象的字符串表示。
+
+当然，打印调试输出并不是唯一的调试方法。现在有许多强大的调试工具，如调试器和日志记录器，可以帮助程序员更轻松地找到和修复错误。
+
+## 参考资料
+
+- [Ruby的`puts`方法文档](https://ruby-doc.org/core-3.0.1/IO.html#method-i-puts)
+- [Ruby的`p`方法文档](https://ruby-doc.org/core-3.0.1/Kernel.html#method-i-p)
+- [Ruby的`inspect`方法文档](https://ruby-doc.org/core-3.0.1/Object.html#method-i-inspect)

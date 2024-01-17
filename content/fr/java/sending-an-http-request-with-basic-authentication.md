@@ -1,7 +1,7 @@
 ---
-title:                "Envoyer une requête http avec une authentification de base"
-html_title:           "Java: Envoyer une requête http avec une authentification de base"
-simple_title:         "Envoyer une requête http avec une authentification de base"
+title:                "Envoyer une demande http avec authentification de base"
+html_title:           "Java: Envoyer une demande http avec authentification de base"
+simple_title:         "Envoyer une demande http avec authentification de base"
 programming_language: "Java"
 category:             "Java"
 tag:                  "HTML and the Web"
@@ -10,58 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Qu'est-ce que c'est et pourquoi?
+Une requête HTTP avec une authentification de base est une méthode pour sécuriser une communication entre un client et un serveur en utilisant des identifiants de connexion. Les programmeurs utilisent cette méthode pour empêcher l'accès non autorisé à leurs serveurs et pour garantir la confidentialité des données échangées.
 
-Vous vous demandez peut-être pourquoi il serait utile d'envoyer une demande HTTP avec une authentification de base en Java. Eh bien, dans un monde où la sécurité est de plus en plus importante, l'authentification de base offre une méthode simple et efficace pour protéger votre application contre les accès non autorisés.
-
-## Comment faire
-
-Tout d'abord, vous devez importer les packages nécessaires de Java pour envoyer une demande HTTP. Ensuite, vous devez créer un objet `URLConnection` en spécifiant l'URL de la demande et en l'ouvrant avec la méthode `openConnection()`. Enfin, vous devez définir les informations d'authentification en utilisant la méthode `setRequestProperty()` et envoyer la demande en utilisant la méthode `getInputStream()`.
-
-Voici un exemple de code pour envoyer une demande HTTP avec une authentification de base en Java :
+## Comment ça marche:
+Voici un exemple de code Java pour envoyer une requête HTTP avec une authentification de base:
 
 ```Java
-import java.io.*;
-import java.net.*;
-public class AuthentificationDeBase {
+URL url = new URL("https://exemple.com/api/endpoint");
 
-    public static void main(String[] args) throws IOException {
+String username = "utilisateur";
+String password = "motdepasse";
 
-        // Spécifiez l'URL de la demande
-        URL url = new URL("http://www.example.com");
+HttpURLConnection con = (HttpURLConnection) url.openConnection();
+con.setRequestMethod("GET");
+//Ajoute les identifiants dans l'en-tête de la requête
+String encodedCredentials = Base64.getEncoder().encodeToString((username + ":" + password).getBytes());
+con.setRequestProperty("Authorization", "Basic " + encodedCredentials);
 
-        // Ouvrez une connexion avec l'URL
-        URLConnection conn = url.openConnection();
-
-        // Définissez l'authentification de base
-        String authentication = "Basic " + javax.xml.bind.DatatypeConverter.printBase64Binary("utilisateur:motdepasse".getBytes());
-        conn.setRequestProperty("Authorization", authentication);
-
-        // Envoyez la demande et obtenez la réponse
-        InputStream in = conn.getInputStream();
-
-        // Affichez la réponse
-        int c;
-        while ((c = in.read()) != -1) {
-            System.out.write(c);
-        }
-    }
-}
+//Code pour lire et traiter la réponse de la requête
 ```
 
-L'exemple ci-dessus montre comment utiliser l'authentification de base pour envoyer une demande HTTP en Java. Notez que les identifiants de connexion doivent être encodés en base64 avant d'être envoyés.
+En utilisant la classe URL et HttpURLConnection de Java, nous pouvons établir une connexion avec un endpoint et spécifier un username et un mot de passe pour l'authentification. Ensuite, nous ajoutons ces informations dans l'en-tête de la requête en les encodant en base64.
 
-## Plongée en profondeur
+La réponse de la requête peut être lue et traitée grâce à la méthode "getInputStream" de HttpURLConnection.
 
-Maintenant que vous savez comment envoyer une demande HTTP avec une authentification de base en Java, parlons un peu plus en détail de cette méthode. L'authentification de base fonctionne en ajoutant un en-tête d'authentification à votre demande avec les identifiants de connexion encodés en base64. Cela signifie que vos identifiants seront visibles dans le texte de la demande, il est donc recommandé d'utiliser HTTPS pour une sécurité renforcée.
+## Plongée en profondeur:
+Cette méthode d'authentification a été introduite en 1999 dans la spécification HTTP/1.0 et est devenue une méthode très populaire pour sécuriser les communications sur le Web. Une alternative à cette méthode est l'utilisation du protocole HTTPS, qui chiffre toutes les données échangées entre le client et le serveur.
 
-Il est également important de noter que l'authentification de base n'est pas une méthode très sécurisée car les identifiants peuvent être facilement décryptés en utilisant des outils en ligne. Pour une sécurité renforcée, il est préférable d'utiliser d'autres méthodes comme l'authentification à clé publique ou l'authentification à jeton.
+En ce qui concerne l'implémentation, les identifiants peuvent être stockés en clair dans le code source, mais cela peut être dangereux en cas de vol ou d'accès non autorisé. Une meilleure pratique consiste à stocker les identifiants dans un fichier de configuration externe ou dans une variable d'environnement.
 
-## Voir aussi
-
-Maintenant que vous connaissez les bases de l'envoi d'une demande HTTP avec une authentification de base en Java, vous pouvez explorer d'autres façons de renforcer la sécurité de vos applications en utilisant des méthodes d'authentification plus avancées :
-
-- [Authentification à clé publique en Java](https://www.baeldung.com/java-public-key-authentication)
-- [Authentification à jeton en Java](https://developer.okta.com/blog/2018/09/13/build-a-secure-token-service-in-java-with-jwt)
-
-Vous pouvez également consulter la documentation officielle de Java pour en savoir plus sur les classes et les méthodes utilisées pour envoyer une demande HTTP.
+## Voir aussi:
+- [Java URL Class Documentation](https://docs.oracle.com/javase/10/docs/api/java/net/URL.html)
+- [Java HttpURLConnection Class Documentation](https://docs.oracle.com/javase/10/docs/api/java/net/HttpURLConnection.html)
+- [HTTP Basic Authentication](https://developer.mozilla.org/fr/docs/Web/HTTP/Authentication#Basic_authentication_scheme)

@@ -10,58 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-Do you ever find yourself wanting to combine multiple pieces of text into one cohesive string? If so, then concatenating strings in PHP is the solution for you! By using this simple function, you can easily manipulate and organize text to fit your needs within your PHP code.
+Concatenating strings in PHP refers to the process of joining multiple strings together into a single string. Programmers use this technique to combine different pieces of text, variables, or data into one readable output. It is a commonly used function in PHP and is essential for creating dynamic and versatile web applications.
 
-## How To
+## How to:
 
-In PHP, concatenating strings is achieved using the `.` operator, which joins two strings together. Let's take a look at an example:
+Concatenating strings in PHP is simple and can be done in multiple ways. One of the most common ways is by using the concatenation operator (.) to join two strings together. Let's take a look at an example:
 
-```PHP
-$string1 = "Hello";
-$string2 = "world!";
-$result = $string1 . " " . $string2; // The result will be "Hello world!"
 ```
-
-In the above example, we initialize two variables with strings and then use the `.` operator to combine them, including a space between them. This results in a new string, "Hello world!", being stored in the `$result` variable.
-
-But what if we want to concatenate more than two strings together? No problem! You can continue using the `.` operator to add as many strings as you need. Let's see another example:
-
-```PHP
+<?php
 $name = "John";
-$greeting = "Hello";
-$message = "Welcome to our website,";
-$result = $greeting . " " . $name . "! " . $message; // The result will be "Hello John! Welcome to our website,"
-```
-
-As you can see, we can concatenate multiple strings by simply adding the `.` operator in between them. Just make sure to include any desired spaces or punctuation within the strings themselves.
-
-## Deep Dive
-
-While the `.` operator is sufficient for most string concatenation needs, PHP also offers the `.= ` operator for more efficiency. This operator not only concatenates two strings together but also assigns the result back to the first string, saving memory and improving performance.
-
-```PHP
-$name = "Alice";
-$name .= " Smith"; // This is equivalent to $name = $name . " Smith";
-echo $name; // The output will be "Alice Smith"
-```
-
-Additionally, we can use the `sprintf()` function to concatenate strings in a more precise and organized way. This function accepts a format string and a variable number of arguments, and then replaces any placeholders within the format string with the given arguments. Let's take a look at an example:
-
-```PHP
-$name = "Bob";
 $age = 25;
-$result = sprintf("My name is %s and I am %d years old.", $name, $age);
-echo $result; // The output will be "My name is Bob and I am 25 years old."
+echo $name . " is " . $age . " years old.";
 ```
 
-In the above example, the `%s` acts as a placeholder for the first argument, `$name`, while the `%d` acts as a placeholder for the second argument, `$age`. This function allows for more control and flexibility when concatenating strings.
+The output of this code will be: "John is 25 years old." In this example, we use the concatenation operator to join the strings "John", " is ", and " years old." together, with the value of the variable $age in between.
 
-## See Also
+Another way to concatenate strings is by using the PHP `implode()` function. This function takes an array of strings and combines them into one string using a specified separator. Here's an example:
 
-To learn more about string concatenation and other PHP functions for manipulating strings, check out the following resources:
+```
+<?php
+$fruits = array("apple", "orange", "banana");
+echo implode(", ", $fruits);
+```
 
-- [PHP String Concatenation Manual](https://www.php.net/manual/en/language.operators.string.php)
-- [PHP String Functions Manual](https://www.php.net/manual/en/ref.strings.php)
-- [PHP sprintf() Function Manual](https://www.php.net/manual/en/function.sprintf.php)
+The output of this code will be: "apple, orange, banana." In this example, we use the `implode()` function to join the strings "apple", "orange", and "banana" together, with the separator ", " in between each string.
+
+## Deep Dive:
+
+Concatenating strings has been a fundamental feature of programming languages for a long time. In PHP, it is not only limited to strings but can also be used for merging arrays and objects.
+
+There are also alternative ways to concatenate strings in PHP, such as the `sprintf()` function, which allows for more control over the formatting of the output. It is also worth noting that using the concatenation operator is faster and more efficient than using the `sprintf()` function.
+
+Internally, string concatenation in PHP is implemented using a technique called temporary variables. This means that when strings are concatenated, a temporary variable is created to hold the new string, and then the original variable is replaced with the new one. This allows for more efficient memory management and better performance in large-scale applications.
+
+## See Also:
+
+To learn more about concatenating strings in PHP, here are some helpful resources:
+
+- [PHP Manual on string operators](https://www.php.net/manual/en/language.operators.string.php)
+- [W3Schools Concatenation Tutorial](https://www.w3schools.com/php/php_string_concatenation.asp)
+- [PHP Video Tutorial for Beginners](https://www.youtube.com/watch?v=2eebptXfEv0)

@@ -10,41 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##为什么
+# C 中的调试输出
 
-有时候在写代码的过程中，我们会遇到一些难以解决的bug或者错误。此时，我们通常会使用调试输出来帮助我们找出错误的来源。通过打印调试信息，我们可以更清楚地了解代码的执行过程，从而更有效地解决问题。
+## 什么是调试输出？为什么程序员要做它？
 
-##如何打印调试输出
+调试输出是程序员为了帮助他们调试代码而在程序中插入的一些额外信息，比如变量的值或者程序流程的跟踪。这样做的好处是能够更容易地发现代码中的问题，从而更快地解决它们。
 
-在C语言中，我们可以使用printf()函数来打印调试信息。这个函数可以将指定的字符串和变量的值输出到终端，从而方便我们调试代码。下面是一个使用printf()的示例代码：
+## 如何实现：
+
+下面是一个简单的例子，展示了如何在程序中使用调试输出来跟踪变量的值：
 
 ```C
-int num = 5;
-printf("The value of num is: %d", num);
+#include <stdio.h>
+
+void main(){
+    int num = 5;
+    printf("开始执行程序，num的值为：%d\n", num); // 调试输出
+    // 其他代码...
+    num = 10;
+    printf("执行到这里，num的值为：%d\n", num); // 调试输出
+    // 其他代码...
+    printf("结束程序，num的值为：%d\n", num); // 调试输出
+}
 ```
 
-运行上面的代码，我们会在终端看到这样的输出：
+运行这段代码后，你会发现控制台输出了三行带有变量值的信息，从而帮助你更容易地跟踪程序的执行过程。当然，你也可以根据自己的需求，在程序中插入更多的调试输出。
 
-```
-The value of num is: 5
-```
+## 深入解析
 
-这样，我们就可以知道num变量的值是多少，从而确定是否有问题。
+在 C 语言中，调试输出通常使用 `printf` 函数来实现。它可以接受一些格式化字符串和变量的值，从而将这些信息打印到控制台上。当然，还有其他的方式来调试程序，比如使用调试器，但对于简单的调试，嵌入式的调试输出是一个快速且有效的解决方案。
 
-##深入了解调试输出
+除了 `printf`，还有其他的一些函数可以用来实现调试输出，比如 `fprintf` 和 `sprintf`。它们的使用方式类似，但是可以指定输出的目标，比如写入文件而不是控制台。
 
-除了基本的printf()函数外，C语言还提供了一些其他的调试输出函数，比如fprintf()和sprintf()。这些函数可以将调试信息输出到文件或者指定的字符串中。另外，我们还可以通过宏定义来控制是否打印调试信息，在调试结束后可以将这些宏定义注释掉，从而减少代码的冗余。
+如果代码比较复杂，你也可以考虑使用宏来实现调试输出。这样可以让你一次性修改所有的调试输出，而不是在每个 `printf` 调用处都修改一遍。
 
-##度外阅读
+## 参考资料
 
-想要更深入地了解打印调试输出的技巧和方法，可以阅读以下文章：
-
-1. [如何使用调试输出找出程序中的错误](https://www.runoob.com/w3cnote/c-debugging-with-printf.html)
-2. [如何在C语言中实现调试输出](https://blog.csdn.net/sprithed/article/details/66449399)
-3. [C语言调试输出函数的使用及技巧](https://www.cnblogs.com/sshizhao/p/3655148.html)
-
-##参考文献
-
-1. [C语言标准库文档](https://zh.cppreference.com/w/c)
-2. [C语言调试技巧](https://www.runoob.com/w3cnote/debugging-techniques-in-c.html)
-3. [C语言调试输出宏定义的使用](https://blog.csdn.net/qq_41947293/article/details/90735650)
+- [C Tutorial - Debugging](https://www.programiz.com/c-programming/debugging)
+- [How to Debug Code in C Language?](https://www.technipages.com/debug-code-in-c-language)
+- [C Programming - Debugging Techniques](https://www.tutorialspoint.com/cprogramming/c_debugging_techniques.htm)

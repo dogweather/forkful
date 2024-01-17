@@ -10,29 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
-有时候，我们需要处理大量的文本数据，例如从网页中提取信息、验证用户输入或者匹配特定的文本模式。这时候，使用正则表达式就非常有用了。它可以帮助我们快速地在文本中找到需要的内容，节省我们大量的时间和精力。
+## 什么 & 为什么要用？
 
-## 如何使用
-我们来看一个简单的例子，假设我们要提取一段文本中的数字：
+正则表达式是一种强大的文本匹配工具，可以帮助程序员更有效地处理和操作文本数据。程序员使用正则表达式的原因通常是为了节省时间和精力，在处理大量文本数据时能够更快速地完成任务。
+
+## 如何：
 
 ```Gleam
-let text = "这篇文章有50个单词。"
-let regex = "\\d+" // 这个正则表达式表示匹配一个或多个数字
-let numbers = Regex.match_all(regex, text)
+import gleam/strings/regex
+"example1" |> Regex.match?("regex")
+// => false
+"example2" |> Regex.match?("ex")
+// => true
 ```
 
-打印出`numbers`的结果就可以得到`["50"]`，我们成功地提取出了数字。还可以使用正则表达式来验证邮箱、手机号等，也可以使用特定的标记来匹配不同类型的文本。
+```Gleam
+import gleam/strings/regex
+let pattern = Regex.compile("*example")
+let matches = pattern |> Regex.matches("some example")
+// => ["some example"]
+```
 
-## 深入了解
-正则表达式拥有强大的功能，多年来一直被广泛使用。它是一种特定的语法，通过使用不同的规则来匹配文本模式。在使用正则表达式时，可以使用不同的标记来指定特定的字符、范围、数量等。此外，还可以使用`match_all`和`replace`等函数来满足更多复杂的需求。
+## 深入探讨：
 
-## 参考资料
-- [Gleam官方网站](https://gleam.run/)
-- [正则表达式教程](https://regexone.com/)
-- [Gleam正则表达式文档](https://gleam.run/modules/regex.html)
+正则表达式最初是在20世纪50年代由美国数学家Stephen Kleene发明的，随着计算机的发展，它变得越来越流行。除了Gleam，许多编程语言都内置了对正则表达式的支持，例如Java，Python和JavaScript。对于某些任务，正则表达式可能会比其他方法（如循环）更高效。然而，过于复杂的正则表达式可能会导致性能下降或产生错误的匹配。
 
-## 了解更多
-- [Gleam语言入门指南](https://gleam.run/getting-started/)
-- [使用Gleam进行Web开发](https://dev.to/gleam/a-beginner-s-guide-to-web-development-with-gleam-5ehj) 
-- [Gleam社区论坛](https://forum.gleam.run/)
+## 参考链接：
+
+- [正则表达式维基百科页面](https://zh.wikipedia.org/zh-hans/正则表达式)
+- [Gleam官方文档中关于正则表达式的说明](https://gleam.run/stdlib/gleam_Std.Regex.html)
+- [Java官方文档中关于使用正则表达式的教程](https://docs.oracle.com/javase/tutorial/essential/regex/index.html)

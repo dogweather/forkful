@@ -10,43 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-Have you ever needed to display the current date in your web application? Look no further, because Elm has got you covered! In just a few simple steps, you can easily get the current date and use it to dynamically update your UI.
+## What & Why?
+Getting the current date means retrieving the current date and time from the system. Programmers often do this to display the current date and time on their applications or keep track of when certain events occurred.
 
-## How To
-Getting the current date in Elm is actually quite simple. First, we need to import the `Date` module.
-
-```Elm
-import Date exposing (Date)
+## How to:
+```
+Elm.Time.now
 ```
 
-Next, we can use the `now` function from the `Date` module to get the current date and time. This function returns a `Result` type, which means it can either be successful or it can fail. To handle this, we can use the `case` expression.
+This function from the Elm Time module returns the current date and time as a Timestamp value. It can be called on its own or combined with other functions to manipulate the current date and time.
 
-```Elm
-case Date.now of
-    Ok dateTime ->
-        -- do something with the current date and time
-    Err error ->
-        -- handle error
+Example:
 ```
-
-Once we have the `dateTime` value, we can use the `Date.toString` function to format it in whichever way we want. For example, if we want to display the date in the format of "Month Day, Year", we can use the following `case` expression.
-
-```Elm
-case Date.now of
-    Ok dateTime ->
-        Date.toString "%B %d, %Y" dateTime
-        -- this will give us something like "April 25, 2021"
-    Err error ->
-        -- handle error
+Elm.Time.now -- returns the current date and time
+|> Elm.Time.toDate -- converts the Timestamp value to a Date value
+|> Elm.Date.toIsoString -- converts the Date value to an ISO string
 ```
+Output: "2021-09-21T10:00:00.000Z" (output may vary depending on the current date and time)
 
-## Deep Dive
-When using the `now` function, there are a few things to keep in mind. Firstly, the current date and time returned is based on the user's system clock. This means that if the user has their system clock set to a different date or time, it will affect the value returned by the `now` function.
+## Deep Dive:
+### Historical Context:
+The concept of getting the current date and time has been around since the early days of computing. Originally, programmers had to manually enter the current date and time into their programs. With the development of operating systems, accessing the system's current date and time became possible.
 
-Also, the `Date` module provides many other functions that can be useful when working with dates and times. For example, you can use the `fromCalendarDate` function to create a `Date` value from a specific date, or the `fromInt` function to create a `Date` value from a Unix timestamp. Be sure to check out the official Elm documentation for more information on these functions.
+### Alternatives:
+Elm has a few alternative functions for retrieving the current date and time, such as `Elm.Time.millisToUtc`, `Elm.Date.toUtc`, and `Elm.Date.toIsoString`. However, `Elm.Time.now` is the simplest and most widely used method.
 
-## See Also
-- Official Elm Documentation on the Date module: https://package.elm-lang.org/packages/elm/time/latest/Date
-- How to Format Dates in Elm: https://www.youtube.com/watch?v=wK52UvkJbIY
-- Creating a Countdown Timer in Elm with Dates and Times: https://dev.to/johnrkeogh/creating-a-countdown-timer-in-elm-using-titles-1p99
+### Implementation Details:
+When you call `Elm.Time.now`, it makes a request to the system's clock and returns the current time as a Timestamp value. The Timestamp value is a record with fields for year, month, day, hour, minute, second, and millisecond. In order to get a more user-friendly date and time format, you can use additional functions to convert the Timestamp value to a Date value and then to a string.
+
+## See Also:
+- Elm Time module documentation: https://package.elm-lang.org/packages/elm/time/latest/
+- MDN Date object: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date

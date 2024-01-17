@@ -1,7 +1,7 @@
 ---
-title:                "임시 파일 만들기"
-html_title:           "Arduino: 임시 파일 만들기"
-simple_title:         "임시 파일 만들기"
+title:                "임시 파일 생성하기"
+html_title:           "Arduino: 임시 파일 생성하기"
+simple_title:         "임시 파일 생성하기"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Files and I/O"
@@ -10,31 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
-Temp 파일을 만드는 이유는 다음과 같습니다: 간단한 처리를 위해서 기존 파일에 영향을 주지 않고 원본 파일을 백업하는 것입니다.
+## 무엇이고 왜?
 
-## 작동 방법
-Temp 파일을 만드는 것은 아두이노에서 아주 쉽게 할 수 있습니다. 아두이노에서 제공하는 ```File``` 함수를 사용하여 다음과 같은 코드를 작성할 수 있습니다:
+임시 파일을 생성하는 것은 프로그래머들이 자주 하는 일입니다. 이는 일시적으로 사용할 파일을 만들기 위해서입니다. 임시 파일은 작업을 마치면 자동적으로 삭제되므로 시스템에 불필요한 파일이 남지 않습니다.
+
+## 하는 방법:
 
 ```Arduino
-File tempFile = SD.open("temp.txt", FILE_WRITE);
-if (tempFile) {
-  tempFile.println("Temp 파일에 쓰는 내용");
+void createTempFile() {
+  File tempFile = SD.open("temp.txt", FILE_WRITE);
+  tempFile.println("This is a temporary file.");
   tempFile.close();
 }
 ```
 
-위의 코드는 SD 카드에 temp.txt라는 파일을 생성하고, 쓰기 모드로 열어 "Temp 파일에 쓰는 내용"이라는 내용을 쓴 후 파일을 닫습니다.
+위의 예제는 SD 카드에 "temp.txt"라는 임시 파일을 만들고, 그 안에 "This is a temporary file."라는 내용을 쓰는 코드입니다. 이렇게 생성된 임시 파일은 다른 코드에서 사용하기 위해서 읽거나 쓸 수 있습니다.
 
-## 깊이 파헤치기
-위의 예제에서 사용된 ```SD.open()``` 함수는 SD 카드에 파일을 생성하고 열기 위한 함수입니다. 이 함수는 다음과 같은 매개 변수를 가질 수 있습니다:
+## 깊이 파고들기:
 
-- ```filename``` : 생성하고 열 파일의 이름입니다.
-- ```filemode``` : 파일을 열 때 사용할 모드를 나타내는 매개 변수입니다. 위의 예제에서 사용한 ```FILE_WRITE```는 쓰기 모드를 나타냅니다.
-- ```flags``` : 매개 변수에는 파일을 열 때 적용할 플래그를 지정할 수 있습니다. 예를 들어 파일을 생성하고 싶지 않을 때는 ```O_CREAT``` 플래그를 사용할 수 있습니다.
+상대적으로 오래된 기기인 아두이노에서는 SD 카드와 같은 외부 저장 장치를 다루는데 제한이 있습니다. 따라서 매번 새로운 파일을 생성할 때마다 원래의 파일을 삭제하고 새로 생성해야 합니다.
 
-위의 예제에서는 SD 카드를 사용하여 temp.txt 파일을 생성하고 열었지만, 다른 장치나 메모리에도 비슷한 방법으로 임시 파일을 생성할 수 있습니다. 각 장치나 메모리에 따라 조금씩 다를 수 있으니 관련 자료를 참고하시기 바랍니다.
+하지만 최신 버전의 아두이노는 기존 파일을 삭제하지 않고도 임시 파일을 생성할 수 있게 되었습니다. 이는 보다 간편하고 빠르게 작업을 할 수 있게 해줍니다.
 
-## 관련 자료
-- [Arduino SD 라이브러리 문서](https://www.arduino.cc/en/Reference/SD)
-- [OS X Developer Library - 임시 파일 생성 및 사용](https://developer.apple.com/library/content/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/FileSystemOverview/FileSystemOverview.html#//apple_ref/doc/uid/TP40010672-CH2-SW13)
+대안으로는 도구인 "temFile"가 있습니다. 이는 임시 파일을 생성하고 관리하는데 도움을 주는 라이브러리입니다. 하지만 최신 버전의 아두이노에서는 기본적으로 제공하는 기능으로 충분하기 때문에 별도의 라이브러리를 사용할 필요가 없습니다.
+
+## 관련 자료:
+
+https://www.arduino.cc/en/Reference/TemFile - Aruino 공식 사이트에서 제공하는 임시 파일 생성 관련 도움말 페이지입니다. 
+
+https://github.com/LowPowerLab/SdFat - SdFat 라이브러리는 외부 저장 장치를 다루는데 유용한 도구입니다. 해당 라이브러리에서도 임시 파일을 생성하고 사용하는 방법을 제공합니다.

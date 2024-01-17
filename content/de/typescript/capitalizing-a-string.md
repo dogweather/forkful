@@ -1,7 +1,7 @@
 ---
-title:                "Großschreibung eines Strings"
-html_title:           "TypeScript: Großschreibung eines Strings"
-simple_title:         "Großschreibung eines Strings"
+title:                "String großschreiben"
+html_title:           "TypeScript: String großschreiben"
+simple_title:         "String großschreiben"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -10,48 +10,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+"## Was & Warum?"
+Die Kapitalisierung eines Strings bedeutet, jeden Buchstaben in einem Wort in Großbuchstaben umzuwandeln. Programmer nutzen dies, um die Lesbarkeit von Variablen oder Ausgaben zu verbessern und die Konsistenz im Code zu wahren.
 
-Oft müssen wir mit Zeichenketten arbeiten, die nicht immer in der richtigen Schreibweise sind. Durch das Großschreiben der ersten Buchstaben können wir sicherstellen, dass unsere Zeichenketten lesbarer und professioneller aussehen.
-
-## So geht's
-
-Um eine Zeichenkette in TypeScript zu kapitalisieren, gibt es einige verschiedene Möglichkeiten.
-
-### Variante 1: Mit der toUpperCase() Methode
-
-Wir können die toUpperCase() Methode verwenden, um die gesamte Zeichenkette in Großbuchstaben zu verwandeln. Das sieht so aus:
+"## Wie geht's?"
+Ein Beispiel in TypeScript:
 
 ```TypeScript
-let str: string = "hallo welt";
-console.log(str.toUpperCase()); // Ausgabe: HALLO WELT
+const name = "max";
+const capitalizedName = name.toUpperCase();
+console.log(capitalizedName); // outputs "MAX"
 ```
 
-### Variante 2: Mit der substr() und toUpperCase() Methode
+"## Tiefgehende Informationen"
+Die Kapitalisierung von Strings hat in der Geschichte der Programmierung ihre Wurzeln in der ASCII-Kodierung, die nur Großbuchstaben unterstützt. Mit der Entwicklung von Unicode und UTF-8 steht Programmierern heute eine größere Auswahl an Zeichen und Buchstaben zur Verfügung.
 
-Eine andere Möglichkeit ist es, die substr() und toUpperCase() Methode zu kombinieren, um nur den ersten Buchstaben in eine Großbuchstabe zu verwandeln. Hier ist ein Beispiel:
+Eine Alternative zur direkten Anwendung der `toUpperCase()` Funktion ist die Verwendung von String Interpolation, um das erste Zeichen eines String in einen Großbuchstaben zu verwandeln. Dies kann nützlich sein, wenn der restliche String in Kleinbuchstaben bleiben soll.
 
-```TypeScript
-let str: string = "hallo welt";
-let capitalizedString: string = str.substr(0, 1).toUpperCase() + str.substr(1);
-console.log(capitalizedString); // Ausgabe: Hallo Welt
-```
+Die Implementierung der `toUpperCase()` Funktion in TypeScript folgt dem Unicode Standard, der die entsprechenden Codes für Großbuchstaben in der Kodierung definiert.
 
-## Deep Dive
-
-Wenn wir uns die beiden Varianten genauer ansehen, können wir feststellen, dass die zweite Variante etwas komplexer ist. Jedoch bietet sie auch mehr Flexibilität, da wir damit z.B. auch die ersten Buchstaben von Wörtern in einer Zeichenkette großschreiben können.
-
-Wir können auch eine Funktion erstellen, die diese Logik für uns kapselt und die erste Buchstabe jeder Zeichenkette großschreibt:
-
-```TypeScript
-function capitalize(str: string): string {
-  return str.substr(0, 1).toUpperCase() + str.substr(1);
-}
-
-console.log(capitalize("guten morgen")); // Ausgabe: Guten Morgen
-```
-
-## Siehe auch
-
-- [String Manipulation in TypeScript](https://www.typescriptlang.org/docs/handbook/2/template-literal-types.html#string-manipulation-types) 
-- [TypeScript Playground](https://www.typescriptlang.org/play)
+"## Siehe auch"
+[MDN web docs - String.prototype.toUpperCase()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase)

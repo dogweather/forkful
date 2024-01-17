@@ -10,50 +10,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ？
+何となく話が始まったとしても、何を言ってるのか全然わからないですよね。だからまず簡単に、Stringの連結というのが何かを説明しましょう。
 
-文字列を連結することの最大のメリットは、複数の変数やデータを一つの文字列にまとめることができる点です。これにより、プログラムのコードがスッキリとし、処理速度も向上します。
+## 何 & なんで？
+Stringの連結とは、文字列を結合することを指します。例えば、"Hello"と"World"という文字列を連結すれば、"HelloWorld"という新しい文字列ができます。プログラムでこれをやる理由は、より複雑な処理をする際に文字列をより効率的に扱えるようにするためです。
 
-## 方法
-
-```Ruby
-# 文字列を連結する方法
-first_name = "太郎"
-last_name = "山田"
-full_name = first_name + " " + last_name
-
-puts full_name
-#=> 太郎 山田
-```
+## 方法:
+Rubyで文字列を連結するには、`+`演算子を使います。例えば、以下のコードを実行すると、`HelloWorld`という文字列が出力されます。
 
 ```Ruby
-# 数値と文字列を連結する方法
-age = 23
-puts "年齢は" + age.to_s + "歳です。"
-#=> 年齢は23歳です。
+puts "Hello" + "World"
 ```
 
-```Ruby
-# 文字列の中に変数を入れる方法
-greeting = "こんにちは、私の名前は#{full_name}です。"
-puts greeting
-#=> こんにちは、私の名前は太郎 山田です。
-```
+他にも、`.concat`メソッドや`<<`演算子でも連結することができます。
 
-```Ruby
-# 文字列の中に式を入れる方法
-price = 1000
-tax_rate = 0.1
-total_price = "料金は#{price * (1 + tax_rate)}円です。"
-puts total_price
-#=> 料金は1100円です。
-```
+## 深層:
+文字列の連結は、プログラミング言語でよく使われる操作です。以前の言語では、文字列を結合するために特別な関数が必要でしたが、Rubyでは`+`演算子を使うことでより簡単に扱うことができます。また、文字列ではなくても、配列などのデータ型でも同じように連結することができます。
 
-## 深堀り
-
-文字列を連結する際に使用する`+`演算子は、Rubyにおいては`String`クラスの`concat`メソッドとして定義されています。また、`<<`演算子も同様に`concat`メソッドとして機能します。どちらも元の文字列を変更するため、注意が必要です。
-
-## See Also
-
-- [RubyのStringクラス](https://docs.ruby-lang.org/ja/latest/class/String.html)
-- [Stringクラスのconcatメソッド](https://docs.ruby-lang.org/ja/latest/method/String/i/concatMethod.html)
+## 関連リンク:
+- [Rubyドキュメント: String](https://docs.ruby-lang.org/en/2.6.0/String.html)
+- [プログラミング用語集: 文字列連結](https://wa3.i-3-i.info/word15905.html)
+- [Rubyで使える演算子一覧](https://docs.ruby-lang.org/ja/2.6.0/syntax/assignment_rdoc.html)

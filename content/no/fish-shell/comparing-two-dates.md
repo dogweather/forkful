@@ -10,33 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
-Hvis du noensinne har programmert i Fish Shell, har du kanskje hatt behov for å sammenligne to datoer. Dette kan være nyttig når man skal filtrere eller sortere data basert på datoer, eller når man trenger å utføre handlinger på data som befinner seg innenfor en bestemt tidsperiode. I denne artikkelen vil jeg vise deg hvordan du kan sammenligne to datoer ved hjelp av Fish Shell.
+# Hva & Hvorfor?
 
-## Hvordan
-For å sammenligne to datoer i Fish Shell, kan du bruke kommandoen `date -j -f`. La oss si at vi har to datoer, 19. juni 2021 og 25. juni 2021, og ønsker å finne ut om 25. juni er etter 19. juni. Dette kan gjøres ved å bruke følgende kommando:
+Datoer er en viktig del av programmering, da de brukes til å håndtere tidsrelaterte funksjoner som planlegging, informasjonsbehandling og begivenheter. Å sammenligne to datoer er en vanlig oppgave som hjelper utviklere med å få verdifull informasjon, slik som hvor mye tid som har gått mellom to hendelser, eller om en hendelse allerede har skjedd eller ikke. Det er derfor en nødvendig ferdighet for enhver programmerer å vite hvordan man kan sammenligne to datoer med Fish Shell.
 
-```Fish Shell
-date -j -f "%d.%m.%Y" 19.06.2021 +%s
-```
-Dette vil konvertere den første datoen til et tall som representerer antall sekunder siden 1. januar 1970. Deretter kan vi gjøre det samme for den andre datoen:
+# Hvordan:
+
+For å sammenligne to datoer med Fish Shell, kan du bruke kommandoen `date -f "%Y%m%d"`, hvor `date` er kommandoen som returnerer dagens dato, og `"%Y%m%d"` er et format som indikerer at datoene skal være i året-måned-dag format. 
 
 ```Fish Shell
-date -j -f "%d.%m.%Y" 25.06.2021 +%s
+# Oppretter to variabler med datoer
+set dato1 "20201201"
+set dato2 "20201215"
+
+# Sammenligner datoene ved å bruke kommandoen `date`
+if date -f "%Y%m%d" $dato1 -lt date -f "%Y%m%d" $dato2
+    # Skriver ut melding dersom dato1 er mindre enn dato2
+    echo "Dato1 ($dato1) er før Dato2 ($dato2)"
+end
+
+# Resultat:
+Dato1 (20201201) er før Dato2 (20201215)
+
 ```
 
-Til slutt kan vi sammenligne de to tallene, og hvis resultatet er positivt, vet vi at 25. juni er etter 19. juni.
+# Dypdykk:
 
-Du kan også bruke samme metode for å sammenligne klokkeslett i tillegg til datoer.
+Sammenligning av datoer har vært en viktig del av programmering siden de tidligste dager. Tidligere, før datamaskiner ble utbredt, ble datoer sammenlignet manuelt ved å skrive dem ned og telle dager og måneder på en kalender. Nå, takket være programmeringsspråk og verktøy som Fish Shell, kan denne prosessen automatiseres og gjøres mye mer nøyaktig og effektivt.
 
-## Deep Dive
-Hvis du ønsker å gå enda dypere i sammenligning av datoer i Fish Shell, finnes det flere metoder du kan bruke. En annen måte å sammenligne datoer på er å bruke `strftime` kommandoen. Denne kommandoen lar deg formatere datoer og klokkeslett på forskjellige måter, og deretter sammenligne dem.
+Som et alternativ til å bruke `date` kommandoen, kan du også bruke `strftime` funksjonen, som konverterer dato formatet enkelt og gir mer fleksibilitet i forhold til å inkludere timer, minutter og sekunder i sammenligningen.
 
-Du kan også bruke `set -l` kommandoen til å lagre datoen som en variabel, og deretter bruke `test` kommandoen til å utføre sammenligningen. Dette kan være nyttig hvis du trenger å sammenligne flere datoer eller klokkeslett i en løkke.
+Det er også viktig å merke seg at sammenligning av datoer kan være mer kompleks når det kommer til håndtering av ulike tids soner og skuddårsdager. Det er derfor viktig å sørge for å ha riktig informasjon og verktøy for å håndtere disse tilfellene.
 
-Det finnes også mange plugins tilgjengelig for Fish Shell som tilbyr mer avanserte funksjoner for å sammenligne datoer og klokkeslett. Utforsk gjerne disse hvis du vil ta dypdykk i emnet.
+# Se også:
 
-## Se også
-- [Fish Shell dokumentasjon](https://fishshell.com/docs/current/)
-- [Fish Shell GitHub repository](https://github.com/fish-shell/fish-shell)
-- [10 Fish Shell tips og triks](https://www.telegraph.co.uk/men/thinking-man/10-fish-shell-tips-tricks-getting-work-done-command-line/)
+For mer informasjon og eksempler på bruk av `date` og `strftime` kommandoer, kan du sjekke ut Fish Shell dokumentasjonen og brukerstøttesamfunnet som diskuterer ulike tilnærminger til å sammenligne datoer.

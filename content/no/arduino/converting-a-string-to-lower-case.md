@@ -10,29 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hva & Hvorfor?
+Å konvertere en streng til små bokstaver betyr å endre alle bokstavene i strengen til deres tilsvarende små bokstaver. Dette er nyttig fordi det gjør det lettere å sammenligne strenger og søke etter bestemte tegn eller ord. Programmere gjør dette for å gjøre koden mer effektiv og lesbart.
 
-Det å konvertere en streng til små bokstaver er en vanlig oppgave i programmering. Det kan være nyttig for å sammenligne strenger eller hvis man ønsker å lage en enhetlig utskrift. 
-
-## Slik gjør du det
-
-Arduino har en innebygd funksjon, `toLowerCase()`, som gjør nettopp dette. La oss se på et eksempel:
-
+# Hvordan:
 ```Arduino
-String tekst = "HEI DER!";
-tekst = tekst.toLowerCase();
-Serial.print(tekst); // vil skrive ut "hei der!"
+String tekst = "HEI, JEG ER EN TEKST";
+tekst.toLowerCase();
+Serial.println(tekst);
+```
+```Arduino
+String tekst = "Bygge roboten skrevNE store";
+tekst.toLowerCase();
+Serial.println(tekst);
+```
+Output:
+```
+hei, jeg er en tekst
+bygge roboten skrevne store
 ```
 
-Som du kan se, konverterte `toLowerCase()` funksjonen `tekst`-strengen vår til små bokstaver. Dette er en enkel og effektiv måte å konvertere en streng på. 
+# Dypdykk:
+Å konvertere en streng til små bokstaver har vært en vanlig praksis i programmering siden de tidlige dagene av datamaskiner. Det ble vanligvis gjort for å redusere kompleksiteten og størrelsen på koden. Alternativene til å bruke innebygde funksjoner som `toLowerCase()` i Arduino inkluderer å skrive en egen funksjon eller å bruke biblioteker som stringfuncs.h. For å implementere dette i koden kan en enkel `for`-løkke brukes til å iterere gjennom strengen og endre bokstavene.
 
-## Dypdykk
-
-Når det gjelder å konvertere en streng til små bokstaver, er det viktig å være oppmerksom på at siden Arduino er et C++ basert språk, vil det ta hensyn til forskjeller i store og små bokstaver. Dette vil si at "A" og "a" blir behandlet som forskjellige bokstaver.
-
-Det finnes også andre måter å konvertere en streng til små bokstaver på, som for eksempel å bruke en løkke for å gå gjennom hver enkelt bokstav og endre den til en små bokstav ved hjelp av ASCII-kode konvertering. Men dette kan være mer komplisert og krever en grundigere forståelse av programmering. 
-
-## Se også
-- [Arduino String Documentation](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/)
-- [C++ tolower() Documentation](https://www.cplusplus.com/reference/cctype/tolower/)
-- [ASCII Table](https://www.asciitable.com/)
+# Se også:
+- [String LowerCase()](https://www.arduino.cc/reference/en/language/variables/data-types/stringfunctions/lowercase/) - Dokumentasjon for `toLowerCase()` funksjonen i Arduino.
+- [StringFuncs](https://github.com/starkillerOG/stringfuncs) - Et bibliotek for å manipulere strenger i Arduino.

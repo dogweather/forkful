@@ -10,38 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
-あなたがテキストファイルを読む上で何が重要か気になりますか？テキストファイルを読むことで、プログラムやデータを扱う上で不可欠な情報を得ることができます。この記事では、Clojureを使ってテキストファイルを読む方法をご紹介します。
+## 何 & なぜ？
+「テキストファイルを読み込む」とは、プログラマーが記述されたテキスト情報をコンピューターに読み取らせることです。プログラマーは、データを扱うためにテキストファイルを読み込む必要があります。
 
-## 使い方
+## 方法：
 ```Clojure
-(with-open [reader (clojure.java.io/reader "sample.txt")]
-  (doseq [line (line-seq reader)]
-    (println line)))
+;; テキストファイルを読み込む
+(def file (slurp "test.txt"))
+
 ```
-
-これはClojureでテキストファイルを読み込む最も基本的な方法です。`sample.txt`というファイルを開いて、それぞれの行を順に取り出して出力することができます。
-
-```Clojure
-(with-open [reader (clojure.java.io/reader "sample.txt")]
-  (doall (take 5 (line-seq reader))))
-```
-
-さらに、ファイルから一部の行だけを取り出したい場合は、`take`関数を使って行数を指定することもできます。
+上記のコードでは、```slurp```関数を使用してテキストファイル「test.txt」を読み込んでいます。読み込んだファイルは「file」という変数に格納されます。
 
 ```Clojure
-(with-open [reader (clojure.java.io/reader "sample.txt")]
-  (doall (filter #(re-find #"Clojure" %) (line-seq reader))))
+;; 読み込んだファイルをプリントする
+(println file)
+
 ```
+上記のコードでは、```println```関数を使用して変数「file」の内容を表示します。実行すると、テキストファイルの全ての内容が表示されます。
 
-あるパターンにマッチする行を取り出したい場合は、`filter`関数を使って正規表現を指定することもできます。
+## 深堀り：
+テキストファイルを読み込むことは、コンピューターが読み取ることができる形式にデータを変換する必要があります。そのため、テキストファイルを読み込む方法は多種多様であり、それぞれの言語やフレームワークに特有の関数やメソッドが存在します。
 
-## 深く掘り下げる
-Clojureは標準ライブラリによって、テキストファイルを扱うための便利な関数を多数提供しています。例えば、`clojure.string`モジュールにはテキストの分割や結合を行う関数が含まれています。
+代替方法としては、```java.io```パッケージを使用してファイルを読み込むこともできます。しかし、この方法ではコードが冗長になる可能性があります。Clojureの```slurp```関数を使用することで、簡潔かつ効率的にファイルを読み込むことができます。
 
-また、Clojureにはデータ構造としてのシーケンスがあり、これを使ってテキストファイルを処理することができます。シーケンスを操作する関数を使えば、より高度なテキストファイルの処理が可能になります。
+テキストファイルを読み込む際に注意する点は、ファイルの形式やエンコーディングを指定することです。また、大きなファイルを読み込む場合は、メモリ消費量に注意する必要があります。
 
-## See Also (参考リンク)
-- [Clojure Documentation](https://clojure.org/)
-- [Clojure for the Brave and True](http://www.braveclojure.com/)
-- [Learn Clojure in Y Minutes](https://learnxinyminutes.com/docs/ja-jp/clojure-ja/)
+## 関連情報を参照：
+- [Clojureドキュメント](https://clojuredocs.org/clojure.core/slurp)
+- [java.ioパッケージの使用方法](https://docs.oracle.com/javase/tutorial/essential/io/file.html)
+- [Javaあるある？？](https://medium.com/@naoya_ito/java%E3%81%82%E3%82%8B%E3%81%82%E3%82%8B%EF%BC%9F%EF%BC%9F-fef83ec05e9a)

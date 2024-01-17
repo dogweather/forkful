@@ -1,7 +1,7 @@
 ---
-title:                "Usando expresiones regulares"
-html_title:           "TypeScript: Usando expresiones regulares"
-simple_title:         "Usando expresiones regulares"
+title:                "Utilizando expresiones regulares"
+html_title:           "TypeScript: Utilizando expresiones regulares"
+simple_title:         "Utilizando expresiones regulares"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -10,50 +10,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¿Qué y por qué?
+Las expresiones regulares son patrones utilizados para encontrar texto dentro de una cadena de caracteres. Los programadores las utilizan para buscar y manipular información de manera más eficiente en programas y aplicaciones. 
 
-Las expresiones regulares son una herramienta poderosa para buscar y manipular cadenas de texto de una manera precisa y eficiente. Son especialmente útiles en el desarrollo web, donde se pueden usar en validaciones de formularios, búsqueda y filtrado de datos, entre otros casos de uso.
-
-## Cómo usar expresiones regulares en TypeScript
-
-Las expresiones regulares se pueden crear utilizando el operador `RegExp()` o con la sintaxis literal `/patrón/`. Por ejemplo, podemos crear una expresión regular para validar un correo electrónico en TypeScript de la siguiente manera:
+## Cómo hacerlo:
+Las expresiones regulares en TypeScript se pueden crear utilizando el constructor `RegExp` o utilizando la notación `/expresión/`. Por ejemplo, para encontrar todas las letras mayúsculas en una cadena de texto, se puede utilizar el siguiente código:
 
 ```TypeScript
-const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+const texto = "Hola MUNDO";
+const expresion = /[A-Z]/g;
+const letrasMayusculas = texto.match(expresion);
+console.log(letrasMayusculas); // Output: ["H", "M"]
 ```
+El `g` al final de la expresión indica que se buscan todas las ocurrencias de las letras mayúsculas.
 
-Luego, podemos usar esta expresión regular para validar un correo electrónico ingresado por el usuario:
+## Profundizando:
+Las expresiones regulares tienen sus raíces en la teoría matemática y lógica, y han sido utilizadas en informática desde la década de 1950. Aunque pueden ser poderosas, también pueden ser complicadas de entender y escribir. Algunas alternativas a las expresiones regulares incluyen el uso de métodos de cadenas incorporados en TypeScript, como `includes()` o `replace()`. También hay bibliotecas de terceros disponibles que ofrecen funcionalidades y sintaxis más amigables para trabajar con patrones en cadenas de texto. 
 
-```TypeScript
-const email = "example@email.com";
-if (emailRegex.test(email)) {
-  console.log("El correo electrónico es válido.");
-} else {
-  console.log("El correo electrónico es inválido.");
-}
-```
-
-En el código anterior, utilizamos el método `test()` para verificar si el correo electrónico cumple con el patrón especificado por la expresión regular. Este método devuelve `true` si encuentra una coincidencia y `false` en caso contrario.
-
-También podemos usar expresiones regulares para buscar y reemplazar texto. Por ejemplo, si queremos reemplazar todas las vocales de una cadena de texto con un carácter específico, podemos hacerlo de la siguiente manera:
-
-```TypeScript
-const str = "Hola! ¿Cómo estás?";
-const modifiedStr = str.replace(/[aeiou]/gi, "x");
-console.log(modifiedStr); // Hxlx! ¿Cxmx xstxs?
-```
-
-En este caso, la expresión regular `/[aeiou]/gi` busca todas las vocales en la cadena `str` y las reemplaza con la letra "x" utilizando el método `replace()`.
-
-## Profundizando en el uso de expresiones regulares
-
-Las expresiones regulares en TypeScript tienen muchas más funcionalidades que las que se mencionaron en la sección anterior. Por ejemplo, podemos utilizar grupos de captura para extraer partes específicas de una cadena de texto, o usar metacaracteres para buscar patrones más complejos.
-
-También es importante tener en cuenta que las expresiones regulares pueden tener un impacto en el rendimiento de nuestra aplicación, por lo que es importante optimizarlas y tener en cuenta casos de borde en los que puedan generar errores.
-
-Para profundizar en el uso de expresiones regulares en TypeScript, te recomendamos consultar la documentación oficial y otros recursos en línea.
-
-## Ver también
-
-- [Documentación oficial sobre expresiones regulares en TypeScript](https://www.typescriptlang.org/docs/handbook/regular-expressions.html)
-- [Tutorial de expresiones regulares en TypeScript](https://www.tutorialspoint.com/typescript/typescript_regular_expressions.htm)
+## Ver también:
+- [Documentación de TypeScript sobre expresiones regulares](https://www.typescriptlang.org/docs/handbook/regular-expressions.html)
+- [Expresiones regulares en JavaScript (sintaxis similar a TypeScript)](https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Regular_Expressions)
+- [Biblioteca `XRegExp` para expresiones regulares mejoradas en JavaScript](https://xregexp.com/)

@@ -10,50 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+## 何？なんで？
 
-テキストファイルを読むという行為は、コンピュータープログラマーにとって非常に一般的な作業です。フィッシュシェルを使用している人であれば、より効率的にテキストファイルを読めるようになるため、この記事を読むことで時間を節約することができるでしょう。
+テキストファイルを読むとは、テキストデータを読み取ることです。プログラマーがこれをする理由は、テキストファイルに保存された情報を処理し、プログラムをより効率的に実行するためです。
 
-## 使い方
+## 方法：
 
-```Fish Shell```のコードブロックを使用して、テキストファイルを読むための基本的なステップを説明します。
+```Fish Shell```のコードブロック内に、コーディングの例とサンプルの出力を示します。
 
-#### テキストファイルを開く
 ```
-nano test.txt
+$ cat names.txt
+John
+Jane
+Mike
 ```
-
-#### ファイルの内容を表示する
-```
-cat test.txt
-```
-
-#### 特定の行を表示する
-```
-cat test.txt | grep "specific text"
+```Fish Shell
+$ while read -r name; echo "Hello $name"; end < names.txt
+Hello John
+Hello Jane
+Hello Mike
 ```
 
-#### ファイルの末尾を表示する
-```
-tail test.txt
-```
+## 詳細説明：
 
-#### ファイルの先頭を表示する
-```
-head test.txt
-```
+テキストファイルを読み取る機能は古くからあるもので、プログラミングにおいては重要な役割を果たします。代替手段として、二進数データを読み取るバイナリファイルの使用もあります。テキストファイルを読み取る際には、以下のような実装詳細があります。
 
-#### ファイルを閉じる
-```
-ctrl + x
-```
+1. ファイルのエンコーディングを指定する必要があります。
+2. ファイルを行ごとに読み取ることができます。
+3. パフォーマンスを考慮して、バッファリングの使用が推奨されます。
 
-## 深堀り
+## 関連情報：
 
-テキストファイルを読むというのは、プログラマーにとって非常に重要なスキルです。フィッシュシェルを使用すると、コマンドラインからさまざまなファイルを読むことができるだけでなく、その内容を変更することもできます。また、正規表現を使用することでより高度な検索が可能になります。
-
-## 参考リンク
-
-- <https://fishshell.com/>
-- <https://en.wikipedia.org/wiki/Fish_(Unix_shell)>
-- <https://www.digitalocean.com/community/tutorials/an-introduction-to-the-fish-shell>
+- [Fish Shell 公式ドキュメント](https://fishshell.com/docs/current/index.html)
+- [テキストファイルの仕様](https://ja.wikipedia.org/wiki/%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB)
+- [バイナリファイルとテキストファイルの違い](https://bbb-project.org/%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%81%AE%E5%BD%A2%E5%BC%8F/)

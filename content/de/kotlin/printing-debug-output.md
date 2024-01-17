@@ -1,7 +1,7 @@
 ---
-title:                "Debug-Ausgabe drucken"
-html_title:           "Kotlin: Debug-Ausgabe drucken"
-simple_title:         "Debug-Ausgabe drucken"
+title:                "Ausgabe von Debug-Informationen"
+html_title:           "Kotlin: Ausgabe von Debug-Informationen"
+simple_title:         "Ausgabe von Debug-Informationen"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Testing and Debugging"
@@ -10,57 +10,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was & Warum?
 
-Debugging ist eine wichtige Fähigkeit für jeden Programmierer, um Fehler in einem Code zu finden und zu beheben. Die Ausgabe von Debug-Informationen ist ein nützliches Werkzeug, um den Ablauf des Codes zu verfolgen und potenzielle Probleme zu erkennen. In diesem Artikel werden wir uns ansehen, wie man Debug-Informationen in Kotlin ausgeben kann.
+Das Drucken von Debug-Ausgaben ist ein Mittel, um während der Entwicklung eines Programms die verschiedenen Funktionen und Variablen zu überprüfen. Programmierer nutzen es, um Fehler zu finden und zu beheben sowie um das Programmverhalten zu verstehen.
 
-## Wie geht's
+## Wie geht's:
 
-Um in Kotlin Debug-Informationen auszugeben, können wir die Funktion `println()` verwenden. Diese Funktion gibt den Inhalt der Klammern in der Konsole aus. Schauen wir uns ein Beispiel an:
-
+**Beispiel 1:** Einfaches Drucken von Variablen:
 ```Kotlin
-fun main() {
-    val name = "Max"
-    println("Hallo $name, willkommen zu unserem Programm!")
-}
+val num = 5
+println(num)
+```
+Ausgabe:
+```
+5
 ```
 
-Die Ausgabe dieses Codes wird sein:
-
-```
-Hallo Max, willkommen zu unserem Programm!
-```
-
-Wie wir sehen können, verwenden wir die Interpolations-Syntax von Kotlin, um den Wert der Variable `name` in den String einzufügen.
-
-Wir können auch die `println()` Funktion verwenden, um den Wert von Variablen oder Ausdrücken auszugeben, die während der Laufzeit berechnet werden. Schauen wir uns ein Beispiel an:
-
+**Beispiel 2:** Verwendung von "string interpolation" für lesbare Debug-Ausgaben:
 ```Kotlin
-fun main() {
-    val x = 5
-    val y = 10
-    println("Die Summe von $x und $y ist ${x + y}")
+val name = "Anna"
+val age = 27
+println("Name: $name, Alter: $age")
+```
+Ausgabe:
+```
+Name: Anna, Alter: 27
+```
+
+**Beispiel 3:** Debug-Ausgaben in komplexeren Funktionen:
+```Kotlin
+fun calculateSum(num1: Int, num2: Int): Int {
+   println("Berechne Summe von $num1 und $num2")
+   return num1 + num2
 }
+val sum = calculateSum(3, 5)
+println("Summe: $sum")
+```
+Ausgabe:
+```
+Berechne Summe von 3 und 5
+Summe: 8
 ```
 
-Die Ausgabe dieses Codes wird sein:
+## Detaillierte Informationen:
 
-```
-Die Summe von 5 und 10 ist 15
-```
+**Historischer Kontext:** Debug-Ausgaben haben in der Programmierung eine lange Tradition und waren schon in frühen Programmiersprachen wie Fortran und COBOL weit verbreitet. Durch die Entwicklung von leistungsfähigeren Debugger-Tools haben sich jedoch alternative Methoden zur Fehlerbehebung etabliert.
 
-Somit können wir `println()` verwenden, um unseren Code während der Laufzeit zu überwachen und mögliche Fehler zu erkennen.
+**Alternative Methoden:** Neben dem Drucken von Debug-Ausgaben können Programmierer auch Breakpoints setzen und den Code Schritt für Schritt durchgehen, um Fehler zu finden. Es gibt auch spezielle Tools und Frameworks, die bei der Fehlerbehebung helfen können.
 
-## Tiefere Einblicke
+**Implementierungsdetails:** In Kotlin können Debug-Ausgaben mit der Funktion `println()` und der Verwendung von "string interpolation" einfach und schnell realisiert werden. Es ist jedoch wichtig, im fertigen Programm alle Debug-Ausgaben zu entfernen, da sie sonst die Performance beeinträchtigen können.
 
-Neben der `println()` Funktion gibt es noch weitere Möglichkeiten, Debug-Informationen in Kotlin auszugeben. Eine davon ist die Verwendung des `Logger` Objects aus der Java Standard Library. Dieses Object bietet verschiedene Methoden zum Ausgeben von Debug-Informationen, die je nach Schweregrad der Nachricht ausgewählt werden können.
+## Siehe auch:
 
-Ein weiteres nützliches Werkzeug ist die Verwendung der `Log` Klasse aus der Android SDK. Diese Klasse bietet auch eine Reihe von Methoden zum Ausgeben von Debug-Informationen, die speziell für die Entwicklung von Android-Apps optimiert sind.
-
-Es ist auch möglich, Debug-Informationen in einer externen Datei auszugeben, anstatt sie in der Konsole anzuzeigen. Hierfür können wir die `FileWriter` Klasse aus der Java Standard Library verwenden. Diese ermöglicht es uns, eine Datei zu erstellen und Inhalte in sie zu schreiben, einschließlich Debug-Informationen.
-
-## Siehe auch
-
-- [Offizielle Dokumentation zu Debugging in Kotlin](https://kotlinlang.org/docs/reference/debugging.html)
-- [Tutorial: Debugging in Kotlin](https://www.baeldung.com/kotlin/debugging)
-- [Medium-Artikel: Debugging in Kotlin](https://medium.com/@avigezerit/debugging-in-kotlin-777e7f082d0a)
+- [Debugging in Kotlin](https://kotlinlang.org/docs/reference/debugging.html)
+- [Debugging Techniques](https://www.c-sharpcorner.com/UploadFile/248e18/debugging-techniques-in-vb-net/)
+- [A Guide to Debugging](https://www.freecodecamp.org/news/a-guide-to-debugging-7fff44d7efa9/)

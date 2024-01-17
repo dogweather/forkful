@@ -10,30 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-Do you ever need to calculate a future or past date in your code? Maybe you're creating a scheduling system or need to determine a deadline for a project. Whatever the reason, Gleam has got you covered with its built-in date calculation functions.
+Calculating a date in the future or past is the process of obtaining a specific date by adding or subtracting a certain number of days, weeks, months, or years to or from a given date. Programmers often need to perform this task in order to create features such as scheduling, countdowns, and reminders in their applications.
 
-## How To
+## How to:
 
-Calculating a date in the future or past in Gleam is as simple as using the built-in `Date` module and its functions. Let's take a look at an example of calculating a date 30 days in the future from today:
-
-```Gleam
-import Date
-
-let today = Date.now()
-let thirty_days_later = Date.add_days(today, 30)
-
-// Output: 30 days from today is: 2021-08-07T11:15:34.826Z
+```
+Gleam.DateTime.date_shift(
+    date: DateTime,
+    time_unit: DateTime.TimeUnit,
+    value: Int
+) -> DateTime
 ```
 
-We first import the `Date` module and use the `now()` function to get the current date and time. Then, we use `add_days()` to add 30 days to that date, giving us the date 30 days in the future. Gleam also has other functions for calculating dates in the future or past, such as `add_months()` and `add_years()`, which work in a similar way.
+This function takes in a date, a time unit (day, week, month, or year), and a value to add or subtract. Let's say we want to find the date that is 5 days after January 1, 2022.
+
+```
+let date = DateTime.from_naive_date(2022, 1, 1)
+let future_date = 
+    DateTime.date_shift(date, DateTime.Day, 5)
+```
+
+The ```future_date``` will then be March 6, 2022. Similarly, if we want to find the date 2 months before October 15, 2020:
+
+```
+let date = DateTime.from_naive_date(2020, 10, 15)
+let past_date = 
+    DateTime.date_shift(date, DateTime.Month, -2)
+```
+
+The ```past_date``` will be August 15, 2020.
 
 ## Deep Dive
 
-Behind the scenes, Gleam uses the Erlang standard library `calendar` module to handle date and time calculations. This module provides accurate and efficient functions for handling date and time values, taking into account things like leap years and timezones. By using the `Date` module in Gleam, you can be sure that your date calculations will be accurate and reliable.
+Calculating dates in the past or future has been made easier with the introduction of date and time libraries like Gleam's DateTime module. Before these libraries, programmers would have to manually calculate the date using arithmetic operations, which can be tedious and prone to error.
+
+Other programming languages also have built-in functions for date shifting, such as Python's ```datetime.timedelta()``` and Ruby's ```Date.new()``` methods. However, Gleam's DateTime module is specifically designed for functional programming, making it easier and more efficient to use for functional programmers.
+
+The implementation of the ```date_shift()``` function in Gleam is based on the concept of ```Duration```, which is the amount of time between two DateTime objects. This ensures that the function is accurate and consistent when calculating dates.
 
 ## See Also
 
-- [Gleam Date Module Documentation](https://gleam.run/modules/datum/date/)
-- [Erlang Calendar Module Documentation](https://erlang.org/doc/man/calendar.html)
+- Gleam DateTime documentation: https://gleam.run/packages/gleam

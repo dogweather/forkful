@@ -1,7 +1,7 @@
 ---
-title:                "नई परियोजना शुरू करना"
-html_title:           "Haskell: नई परियोजना शुरू करना"
-simple_title:         "नई परियोजना शुरू करना"
+title:                "एक नई परियोजना शुरू करना"
+html_title:           "Haskell: एक नई परियोजना शुरू करना"
+simple_title:         "एक नई परियोजना शुरू करना"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Getting Started"
@@ -10,42 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Kyon: Naye project shuru karne ka *kyon* karein?
+# क्या और क्यों?
 
-Agar aap naye samay me kuch naya sikhna chahte hai aur tezi se grow karna chahte hai, toh naye project shuru karna ek accha vikalp ho sakta hai. Haskell se shuru karne me madad karega aur aapko functional programming aur strong typing concepts samjhne me help karega.
+नए परियोजना शुरू करना एक बहुत ही महत्वपूर्ण हिस्सा है हैस्केल ग्रामर की दुनिया में। यह उन प्रोग्रामर्स के लिए बहुत आसान है जो अपने कोड में अपनी प्रोग्रामिंग कौशल को बढ़ाना चाहते हैं।
 
-## Kaise Shuru Karein: Kood ke Udaaharan aur Sample Output
+## कैसे करें:
 
-Haskell me code likhna kaafi aasaan hai. Yaha kuch udaharan hai jo aapko help karenge naye project shuru karne me:
+आइए हम एक उदाहरण के माध्यम से देखें कि किस प्रकार आप नए प्रोजेक्ट को हैस्केल में शुरू कर सकते हैं।
 
-```
--- Hello World
-main = putStrLn "Namaste, duniya!"
-
--- Simple math operation
-add :: Int -> Int -> Int
-add x y = x + y
-
--- Output: 15
-add 5 10
+```Haskell
+main = do
+  putStrLn "नई प्रोजेक्ट को हैस्केल में शुरू करें"
 ```
 
-Yaha `main` function ko dekhein jo program ka entry point hai. `putStrLn` function string ko terminal me print karne ke liye use hota hai. Dusra udaharan me `add` function hai jo do integers ka sum return karta hai. Phir `add` function ko 5 aur 10 ke saath call kiya jata hai. Iska output 15 hoga.
+उपरोक्त उदाहरण में, हमने बस एक पट्टी में "नई प्रोजेक्ट को हैस्केल में शुरू करें" छापा है। आप अपनी प्रोजेक्ट के नाम के साथ इसे भी छाप सकते हैं।
 
-## Gehri Jhanjhavat
+## गहराई की तलाश:
 
-Naya project shuru karne se pehle kuch points ka dhyan rakhna important hai. Haskell me code likhte waqt type safety ka dhyan dena jaruri hai. Type errors ko handle karna kaafi aasan hai aur code ki quality aur maintainability ko improve karta hai. Haskell me mutable variables nahi hote jisse concurrency issues kam hote hai.
+- ऐतिहासिक संदर्भ: हैस्केल का विकास और उसके परियोजनाओं में से कुछ का महत्व 
+- वैकल्पिक विकल्प: हैस्केल के अलावा और कौन से प्रोग्रामिंग भाषाएं हैं जो आप उपयोग कर सकते हैं 
+- अनुमानित रंगीन विग्यापन: कैसे हम प्रोजेक्ट बनाने के लिए एक अनुमानित रंगीन विग्यापन का उपयोग कर सकते हैं
 
-Naya project shuru karne se pehle ek acchi design aur architecture plan karna bhi important hai. Functional programming ki philosophy me pure functions ka use kiya jata hai jo side-effects se door hote hai. Isse maintainability aur testing asaan hota hai.
+## और भी देखें:
 
-## Jahan Dekhein
-
-- [Haskell Tutorial](https://www.haskell.org/tutorial/)
-- [Learn You a Haskell](http://learnyouahaskell.com/)
-- [Real World Haskell](http://book.realworldhaskell.org/)
-
-## Dekhne ke liye
-
-- [Haskell Meets Github](https://haskellmeet.github.io/)
-- [Haskell Discord Server](https://discordapp.com/invite/CGDWfqT)
-- [Haskell Subreddit](https://www.reddit.com/r/haskell/)
+- ["हैस्केल ट्यूटोरियल" और अन्य संबंधित स्रोत](https://wiki.haskell.org/Haskell_tutorials_and_books)

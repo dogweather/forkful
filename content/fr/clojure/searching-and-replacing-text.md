@@ -10,45 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Qu'est-ce que c'est et pourquoi on le fait ?
 
-Si vous êtes un développeur ou un programmeur, vous savez que le traitement de texte est un élément clé de la programmation quotidienne. Que vous travailliez sur un projet personnel ou professionnel, il est souvent nécessaire de rechercher et de remplacer du texte pour effectuer des modifications ou optimiser votre code. Heureusement, Clojure offre des outils puissants pour gérer ces tâches de manière efficace et simple.
+Le remplacement de texte est une opération courante dans la programmation, qui consiste à trouver une chaîne de caractères dans un texte et à la remplacer par une autre chaîne. Les programmeurs le font souvent pour automatiser certaines tâches fastidieuses et pour effectuer des modifications en masse dans leur code.
 
-## Comment faire
+## Comment faire :
 
-Pour rechercher et remplacer du texte en Clojure, vous pouvez utiliser la fonction `replace` de la bibliothèque de base `clojure.string`. Elle prend trois arguments : la chaîne de caractères d'origine, le motif à rechercher et la chaîne de remplacement.
+Voici un exemple de code en Clojure pour effectuer un remplacement de texte :
 
-```
-(require '[clojure.string :as str])
-
-(str/replace "Bonjour le monde!" "le monde" "toi")
-;; Résultat: "Bonjour toi!"
+```Clojure
+(defn replace [text from to]
+  (clojure.string/replace text from to))
 ```
 
-Vous pouvez également utiliser des expressions régulières pour rechercher et remplacer du texte dans une chaîne de caractères en utilisant la fonction `re-find` de la bibliothèque `clojure.core`. Elle prend deux arguments : l'expression régulière et la chaîne de caractères dans laquelle rechercher.
+Lorsque nous appelons cette fonction avec le texte en premier argument, la chaîne à remplacer en deuxième argument et la chaîne de remplacement en troisième argument, la fonction retourne le texte avec toutes les occurrences de la chaîne remplacées.
 
-```
-(require '[clojure.core :refer [re-find]])
+Par exemple, si nous avons le texte suivant :
 
-(re-find #"a[b-z]+" "Bonjour tout le monde!")
-;; Résultat: "onjour"
-```
-
-Il est également possible de remplacer des correspondances en utilisant la fonction `repl` de la bibliothèque `clojure.core`.
-
-```
-(require '[clojure.core :refer [repl]])
-
-(repl #"bonjour" "salut" "Bonjour tout le monde!")
-;; Résultat: "salut tout le monde!"
+```Clojure
+(def texte "Bonjour le monde")
 ```
 
-## Plongée en profondeur
+Et que nous appelons notre fonction avec ces arguments :
 
-En plus des méthodes mentionnées ci-dessus, il existe des bibliothèques tierces telles que `clojure.data.xml` et `clojure.data.json` qui offrent des fonctions spécifiques pour rechercher et remplacer du texte dans des données structurées, comme du XML et du JSON. Vous pouvez également utiliser des fonctions plus avancées comme `replace-first` et `replace-every` disponibles dans la bibliothèque `clojure.walk` pour des opérations plus complexes de recherche et de remplacement.
+```Clojure
+(replace texte "Bonjour" "Hello")
+```
 
-## Voir aussi
+Le résultat sera :
 
-- [Documentation officielle de Clojure](https://clojure.org/)
-- [Guide de style de programmation en Clojure](https://github.com/bbatsov/clojure-style-guide)
-- [Clojure pour les débutants](https://clojure.org/guides/learn/syntax)
+```Clojure
+"Hello le monde"
+```
+
+## Approfondissement :
+
+Le remplacement de texte a été rendu populaire avec l'apparition des expressions régulières, un moyen puissant de rechercher et de remplacer des motifs dans un texte. Cependant, d'autres langages de programmation ont également des fonctions intégrées pour effectuer un remplacement de texte, comme la fonction ```str.replace``` de Python.
+
+En termes d'implémentation, Clojure utilise la bibliothèque de chaînes Java pour effectuer un remplacement de texte. Cela signifie que les mêmes règles et syntaxe s'appliquent que pour la manipulation de chaînes en Java.
+
+## Voir aussi :
+
+- [Documentation officielle de Clojure sur les chaînes](https://clojure.org/reference/java_interop#java-string-methods)

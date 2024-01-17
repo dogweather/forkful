@@ -10,52 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-Writing tests for code may seem like an extra and tedious step, but it can actually save you time and effort in the long run. By writing tests, you can catch errors and bugs early on, making it easier to fix them before they cause bigger issues. Additionally, tests can help ensure that new changes or updates to your code do not break existing features.
+When writing software, it's important to make sure your code is reliable and free of bugs. Writing tests is a way for programmers to ensure their code is functioning correctly and to identify and fix any issues before they become bigger problems. By writing tests, you can save yourself time and headaches in the long run by catching and addressing errors early on.
 
-## How To
+## How to:
 
-To write tests in Javascript, you can use a testing library like Jest or Mocha. These libraries provide a simple and efficient way to create and run tests for your code. Let's take a look at an example of how to write a basic test using Jest.
-
-```Javascript
-// Example function to be tested
-function addition(a, b) {
-  return a + b;
-}
-
-// Jest test
-test('adds 1 + 2 to equal 3', () => {
-  expect(addition(1, 2)).toBe(3);
-});
-```
-In this example, we have a simple function that adds two numbers together. We then use the `test()` function from Jest to create a test case. Inside the function, we provide a description of what the test is checking for and then use the `expect()` function to define the expected output of our function. In this case, we expect the result of adding 1 and 2 to be 3. If the output matches our expectation, the test will pass.
-
-You can also use `describe()` to group related tests together and make your test suite more organized. Here's a modified example of the previous test using `describe()`:
+To write tests in Javascript, we use a framework called Jest. Jest makes it easy to write and run tests for your code. Here's a simple example of a test that checks if the output of a function matches the expected result:
 
 ```Javascript
-// Example function to be tested
-function addition(a, b) {
+function addNums(a, b) {
   return a + b;
 }
-
-// Jest test
-describe('Addition', () => {
-  test('adds 1 + 2 to equal 3', () => {
-    expect(addition(1, 2)).toBe(3);
-  });
+test('adds 2 + 3 to equal 5', () => {
+  expect(addNums(2, 3)).toBe(5);
 });
 ```
-This time, we have added a `describe()` function to group our tests related to addition together. This makes it easier to identify which tests belong to which function.
 
-## Deep Dive
+In this example, we define a function called `addNums` that takes in two parameters and returns their sum. Then, we use `test` to define a test case, giving it a description and an arrow function that runs our code and uses `expect` to make an assertion about the result. In this case, we use `toBe` to check if the sum of 2 and 3 is equal to 5.
 
-When writing tests, it's important to consider edge cases and different inputs to ensure your code is robust. This means testing for unexpected input, extreme values, and any potential errors that may occur. You can also use mocking libraries like Sinon.js to simulate certain scenarios and test different code paths.
+Jest also provides a helpful feature called "mocking," which allows us to simulate certain values or behaviors for our tests. This can be especially useful when working with external APIs or databases that we don't want to actually call during testing. Here's an example of mocking an API call using `fetch`:
 
-It's also important to regularly review and update your tests as your code evolves. As new features are added or existing ones are modified, be sure to update your tests accordingly to ensure they accurately reflect the expected behavior of your code.
+```Javascript
+const fetchData = require('./utils');
+test('returns the correct data from the API', () => {
+  fetchData.mockImplementation(() => Promise.resolve('API data'));
+  return fetchData().then(data => expect(data).toBe('API data'));
+});
+```
 
-## See Also
+In this example, we use `mockImplementation` to define a function that will be used in place of the actual `fetch` call. This allows us to test our code without making any real API calls.
 
-- [Jest Documentation](https://jestjs.io/)
-- [Mocha Documentation](https://mochajs.org/)
-- [Sinon.js Documentation](https://sinonjs.org/)
+## Deep Dive:
+
+Writing tests has become an essential part of the software development process. In the early days of programming, testing was often an afterthought, with developers mainly focusing on writing the code itself. However, as software became more complex and critical, the need for reliable and bug-free code became increasingly important.
+
+There are alternative testing frameworks available for Javascript, such as Mocha or Jasmine, but Jest has gained popularity due to its simplicity and powerful features. Jest also has built-in support for code coverage, which measures how much of your code is being tested.
+
+When writing tests, it's important to follow best practices, such as keeping tests isolated and independent of each other, and using descriptive test names. It's also essential to regularly run tests and address any failing ones immediately to ensure the integrity of your code.
+
+## See Also:
+
+You can learn more about Jest and how to write tests by reading the official documentation:
+https://jestjs.io/
+
+For more information about software testing in general, check out this guide from TestLodge:
+https://blog.testlodge.com/what-is-software-testing

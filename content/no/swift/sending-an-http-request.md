@@ -10,58 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hva & Hvorfor?
+Noe som er viktig i programmering verden er å sende HTTP forespørsler. HTTP står for Hyper Text Transfer Protocol, og det er den protokollen som brukes for kommunikasjon på internett. Programmerere gjør dette for å hente eller sende data til en server, for eksempel å hente informasjon fra en nettside eller sende data til en database.
 
-HTTP-forespørsler er et viktig aspekt av webutvikling, som tillater kommunikasjon mellom klienter og servere. Ved å lære å sende HTTP-forespørsler i Swift, kan du lage applikasjoner som effektivt samhandler med forskjellige nettjenester og henter data som er nødvendig for dine behov.
-
-## Slik gjør du det
-
-Før du begynner å sende HTTP-forespørsler, må du først importere Foundation-rammeverket i prosjektet ditt. Dette er nødvendig for å bruke de innebygde klassene for å håndtere nettverksforespørsler i Swift. Dette gjøres ved å legge til følgende linje øverst i filen din:
+# Hvordan:
+For å sende en HTTP forespørsel i Swift, kan vi bruke den innebygde URLSession klassen. Først må vi opprette en URL, enten fra en nettside eller en annen kilde, og deretter opprette en URLRequest med denne URLen. Så kan vi bruke URLSession sin dataTask metode til å sende forespørselen og få tilbake en respons.
 
 ```Swift
-import Foundation
-```
-
-Nå kan du opprette en URL-objekt for å angi hvor forespørselen skal sendes. Dette kan gjøres ved hjelp av URL-klassen i Foundation-rammeverket. For eksempel, hvis vi skal sende en GET-forespørsel til Google sin søk API, kan URL-objektet se slik ut:
-
-```Swift
-let url = URL(string: "https://www.googleapis.com/books/v1/volumes?q=Swift")!
-```
-
-Merk at vi bruker "!" -symbolet for å sikre at URL-en alltid inneholder en gyldig verdi.
-
-Deretter oppretter vi en URLRequest-objekt med vår URL og angir forespørselsmetoden (GET i dette tilfellet) ved hjelp av URLRequest-klassen:
-
-```Swift
-var request = URLRequest(url: url)
-request.httpMethod = "GET"
-```
-
-Nå kan vi sende forespørselen ved hjelp av URLSession, som er en del av Foundation-rammeverket. Dette gjøres ved å opprette et URLSessionDataTask-objekt og deretter bruke "resume" -metoden for å starte forespørselen:
-
-```Swift
-let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-    if let error = error {
-        print("Error: \(error)")
-    } else if let response = response as? HTTPURLResponse, let data = data {
-        // Behandle data og svar her
+let url = URL(string: "https://www.example.com") // Opprette en URL for nettsiden
+var request = URLRequest(url: url!) // Opprette en URLRequest med denne URLen
+request.httpMethod = "GET" // Sette en HTTP metode, for eksempel GET eller POST
+let session = URLSession.shared // Opprette en URLSession
+let task = session.dataTask(with: request) { // Bruke dataTask metoden for å sende forespørselen
+    (data, response, error) in
+    if let result = NSString(data: data!, encoding: String.Encoding.utf8.rawValue) { // Konvertere dataen til en lesbar form
+        print(result) // Skrive ut resultatet
     }
 }
-task.resume()
+task.resume() // Starte forespørselen
+```
+Output:
+```
+<html>
+    <head>
+        <title>Example Domain</title>
+    </head>
+    <body>
+        <h1>Example Domain</h1>
+        <p>This domain is for use in illustrative examples in documents. You may use this domain in literature without prior coordination or asking for permission.</p>
+        <p><a href="https://www.iana.org/domains/example">More information...</a></p>
+    </body>
+</html>
 ```
 
-Når forespørselen er fullført, vil vi motta et svar og eventuelle data som er returnert av serveren. Dette kan behandles i "data, response, error" -blokken i vår dataoppgave.
+# Dypdykk:
+HTTP ble utviklet på 90-tallet, og er fortsatt den mest brukte protokollen for kommunikasjon på internett. Det finnes også alternative protokoller som HTTPS, som bruker kryptering for å sikre sikker kommunikasjon. Implementasjonen av HTTP i Swift er basert på Foundation frameworket, som er et sett med API-er for å håndtere nettverkskall og annen funksjonalitet.
 
-## Dypdykk
-
-Nå som du har lært hvordan du kan sende en HTTP-forespørsel i Swift, kan det være nyttig å vite mer om forskjellige typer forespørsler og hvordan de kan konfigureres. URLRequest-objektet har et bredt utvalg av egenskaper som kan tilpasses, for eksempel å legge til en HTTP-kropp, angi forespørselshodere og mer.
-
-I tillegg til GET-metoden, støtter URLRequest også andre metoder som POST, PUT, DELETE og mer. Disse kan spesifiseres ved å endre "httpMethod" -egenskapen til forespørselen.
-
-Det er også viktig å være oppmerksom på sikkerheten rundt å sende HTTP-forespørsler. Det er viktig å sørge for at sensitiv informasjon, som passord eller brukernavn, ikke sendes i klartekst gjennom en HTTP-forespørsel. I stedet bør du bruke HTTPS, som krypterer dataene dine for å sikre privatliv og sikkerhet.
-
-## Se også
-
-1. [Apple dokumentasjon for HTTP-forespørsler i Swift](https://developer.apple.com/documentation/foundation/url_loading_system)
-2. [Swift-ressurser fra Hacking with Swift](https://www.hackingwithswift.com/)
-3. [Stack Overflow for å stille spørsmål og søke etter hjelp](https://stackoverflow.com/)
+# Se også:
+- [Apple Documentation on HTTP requests in Swift](https://developer.apple.com/documentation/foundation/url_loading_system/making_http_and_https_requests)
+- [W3Schools tutorial on HTTP requests](https://www.w3schools.com/tags/ref_httpmethods.asp)
+- [Webopedia definition of HTTP](https://www.webopedia.com/TERM/H/HTTP.html)

@@ -10,90 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-Writing a text file is a common task in programming, especially in the context of file manipulation and data storage. It allows for the easy organization and storage of large amounts of text data in a computer-readable format.
+Text files are used for storing and retrieving data in a plain text format. Unlike other file formats, they can be easily read and edited by both humans and computers. Programmers often use text files to store configurations, data for their applications, and other important information.
 
-## How To
+## How to:
 
-Writing a text file in C++ is a relatively straightforward process. It involves the following steps:
+To write a text file in C++, you will need to use the standard library function `ofstream`, which stands for output file stream. Here is a simple code example:
 
-1. First, we need to include the necessary header file for file handling in C++, ```<fstream>```.
-
-2. Next, we need to create an output stream object using the ```ofstream``` class. This object will represent the file that we want to write to.
-
-    ```C++
-    ofstream outputFile;
-
-    outputFile.open("my_file.txt"); // creates or overrides existing file named "my_file.txt"
-    ```
-
-3. Now, we can use the ```<<``` operator to write data to the file. This operator is commonly used for outputting data to streams in C++. We can also use the ```write()``` function for more precise control over the data being written.
-
-    ```C++
-    outputFile << "This is a sample text file." << endl;
-    outputFile.write("Some more text", 12); // writes the first 12 characters of "Some more text" to the file
-    ```
-
-4. Once we have finished writing to the file, we need to close the output stream object to ensure that all the data has been successfully written to the file.
-
-    ```C++
-    outputFile.close();
-    ```
-
-5. Upon running the code, a new file named "my_file.txt" will be created (if it does not already exist) and the specified data will be written to it.
-
-Sample Output in "my_file.txt":
-
-<<<<<<< HEAD
 ```C++
 #include <iostream>
 #include <fstream>
 
 int main() {
-  // Create an instance of ofstream
-  std::ofstream file("output.txt", std::ios::out);
-  
-  if(file.is_open()) {
-    // Write to file using the insertion operator
-    file << "Hello world!" << std::endl;
-    file << "This is a sample text file." << std::endl;
-    
+    // Open a text file named "example.txt" to write to
+    std::ofstream file("example.txt");
+
+    // Write a line of text to the file
+    file << "This is an example text file.";
+
     // Close the file
     file.close();
     
-    // Output success message
-    std::cout << "Text file successfully written." << std::endl;
-  }
-  else {
-    std::cout << "Error opening file." << std::endl;
-  }
-  
-  return 0;
+    return 0;
 }
-=======
-```
-This is a sample text file.
-Some more text
->>>>>>> ca53d9f8 (better writing, new default title)
 ```
 
-## Deep Dive
+And here is the output in the "example.txt" file:
 
-There are a few important things to keep in mind when writing a text file in C++. Firstly, the ```open()``` function can take in an additional parameter to specify the file's writing mode. For example, using ```ios::app``` will append the data to the end of the existing file instead of overriding it.
+```
+This is an example text file.
+```
 
-Secondly, it is best practice to check if the file has been successfully opened before proceeding with the writing process. This can be done by using the ```is_open()``` function.
+## Deep Dive:
 
-Thirdly, we can also use the ```tellp()``` function to get the current position of the file pointer, which can be useful for seeking to specific locations in the file for writing.
+Historically, text files have been a common way of storing and sharing data since the early days of computing. Before the introduction of fancy database systems and complex file formats, a plain text file was often the go-to choice. It also played a significant role in the development of the internet as it allowed for easy sharing of information across different systems.
 
-Lastly, it is important to handle any potential errors that may occur during the writing process. This can be done using the ```fail()``` function and checking for any errors before proceeding.
+While there are other ways to store and organize data, using text files has its benefits. They are lightweight, easy to read and write, and do not require any special software to open. In fact, you can even use a simple text editor to view and modify a text file.
 
-## See Also
+However, as with everything else in programming, there are alternatives to writing a text file. You can also use binary files, which have a more specific format and are optimized for storage and retrieval of data. Additionally, there are libraries and frameworks available that can make the process of writing and reading text files easier for the programmer.
 
-<<<<<<< HEAD
-- [C++ file handling tutorial](https://www.programiz.com/cpp-programming/files-input-output)
-- [UTF-8 encoding](https://www.w3schools.com/charsets/ref_utf_basic_latin.asp)
-=======
-- [C++ File Handling](https://www.geeksforgeeks.org/file-handling-c-classes/) - A comprehensive guide on file handling in C++ from GeeksforGeeks.
-- [Writing Text Files in C++](https://www.learncpp.com/cpp-tutorial/185-file-io/) - A tutorial on writing text files in C++ from LearnCPP.com.
->>>>>>> ca53d9f8 (better writing, new default title)
+The implementation details of writing a text file may vary depending on the operating system and the specific programming language being used. However, the basic principles remain the same. You open a file, write or read from it, and then close it. It is essential to always close the file after you are finished with it to prevent any data loss or corruption.
+
+## See Also:
+
+- [C++ ofstream documentation](https://www.cplusplus.com/reference/fstream/ofstream/)
+- [Differences between text and binary files](https://www.cs.uregina.ca/Links/class-info/210/BinaryVsText.html)
+- [Creating and Writing to a File in C++](https://www.programiz.com/cpp-programming/files-input-output)

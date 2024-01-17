@@ -10,55 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mikä & Miksi?
+YAML on tietojen muotoilukieli, joka on suunniteltu helpottamaan tietojen tallentamista ja jakamista ohjelmien välillä. Se on suosittu valinta ohjelmoijille, koska se on helppo lukea ja kirjoittaa, mikä auttaa parantamaan koodin luettavuutta ja ylläpidettävyyttä.
 
-Kirjoittaminen ja lukeminen tiedostoja JSON-muodossa on raskasta ja hankalaa. YAML-tiedostot tarjoavat helpon ja ihmislähtöisen tavan tallentaa ja lukea dataa. Tämä tekee YAML:stä erittäin hyödyllisen työkalun Python-ohjelmointikielen käyttäjille.
+## Miten:
+YAML-tietoja käsitellään käyttämällä sarjaa avaimia ja arvoja, joita erotetaan kaksoispisteillä ja sisennettyä merkkijonoa. Koodin lukeminen ja kirjoittaminen tapahtuu käyttämällä YAML-kirjastoa, joka tarjoaa hyödyllisiä toimintoja tiedon lukemiseen ja kirjoittamiseen. Katso alla olevat esimerkit, jotka näyttävät, miten YAMLia käytetään Pythonissa.
 
-## Kuinka
-
-YAML-kirjaston asentamiseksi käytä pip-komentoa seuraavasti:
-```
-pip install pyyaml
-```
-
-Yksinkertaisen YAML-tiedoston lukeminen ja sen sisältämän datan tallentaminen muuttujaan voidaan tehdä seuraavasti:
 ```Python
 import yaml
 
-# avaa tiedosto
-with open("data.yaml", 'r') as f:
-    # lue data
-    data = yaml.load(f)
-    
-# tulosta data
-print(data)
+# Luetaan YAML-tiedosto
+with open("data.yml") as file:
+  data = yaml.load(file, Loader=yaml.FullLoader)
+
+# Tulostetaan tiedon arvo
+print(data["avain"])
+
+# Tallennetaan data uuteen YAML-tiedostoon
+data["uusi_avain"] = "uusi arvo"
+
+with open("uusi_data.yml", "w") as file:
+  yaml.dump(data, file)
 ```
 
-Tämän koodin tulosteena näkyy YAML-tiedoston sisältämä data. Samoin tiedoston luominen ja siihen datan tallentaminen on yhtä helppoa:
-```Python
-import yaml
+## Syvempi sukellus:
+YAML kehitettiin vuonna 2001, ja se oli alun perin suunniteltu helpottamaan tietojen konfigurointia ja tallentamista. Se on korvannut aiemmin suositun XML-muotoilukielen monissa ohjelmissa. Vaikka jotkut ohjelmoijat edelleen käyttävät XML:ää, YAML on tullut suosittu vaihtoehto sen helppokäyttöisyyden vuoksi. Vaikka se on pääasiassa suunniteltu Pythonia varten, sitä tukevat myös monet muut ohjelmointikielet, kuten Java ja Ruby.
 
-# luo data-sanakirja
-data = {
-    'nimi': 'Maija Meikäläinen',
-    'ikä': 30,
-    'harrastukset': ['uinti', 'valokuvaus', 'lukeminen']
-}
-
-# tallenna data YAML-tiedostoon
-with open("data.yaml", 'w') as f:
-    yaml.dump(data, f)
-```
-
-Tämän koodin suorittamisen jälkeen löydät luomasi YAML-tiedoston, joka sisältää annetun datan.
-
-## Syvemmälle
-
-YAML-tiedostoja käytetään yleensä konfiguraatiotiedostoina ohjelmoinnissa. Ne tarjoavat helpon ja selkeän tavan määritellä asetuksia ja vaihtoehtoja ohjelmalle. YAML-tiedostot ovat myös hyödyllisiä silloin, kun halutaan tallentaa ja lukea muuttuvaa dataa, kuten käyttäjien syöttämiä tietoja.
-
-YAML:n syntax on kevyt ja ihmislähtöinen. Se käyttää sisennyksiä erottaakseen tiedon loogisesti toisistaan, mikä tekee siitä helppolukuisen ja helppokäyttöisen. YAML-tiedostot ovat myös helposti luettavissa muille ohjelmointikielille, kuten JSON-muodossa.
-
-## Katso myös
-
-- [YAML-tutkimuskeskus](https://yaml.org/)
-- [Ohjeet YAML-tiedostojen käsittelyyn Pythonilla](https://realpython.com/python-yaml/)
+## Katso myös:
+- [YAML.org](https://yaml.org/) - YAML-kielen virallinen verkkosivusto
+- [Python YAML Library Documentation](https://pyyaml.org/wiki/PyYAMLDocumentation) - ohjeet YAML-kirjaston käytöstä Pythonissa
+- [XML vs. YAML: Which is More Flexible for Programming?](https://keepify.com/technical/xml-vs-yaml-comparison) - vertailu XML:n ja YAML:n välillä

@@ -10,67 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ？
+## 今回の記事の目的：今日の日付をPythonで取得する方法
 
-今日の日付を取得する理由は、多岐にわたります。例えば、ファイルを作成するときに現在の日付をファイル名に入れることで、一意の名前を付けることができたり、イベントの開催日を表示するために使用することができたりします。
+## 何となぜ？
+日付を取得することは、プログラマーにとって非常に便利です。日付を取得することにより、アプリケーションで現在の日付を表示したり、特定のタイムゾーンの日付を取得したりすることができます。
 
-## 使い方
-
-現在の日付を取得するには、```datetime```モジュールを使用します。例えば、以下のようにコードを記述します。
-
-```Python
-import datetime
-
-today = datetime.date.today()
-print(today)
-
-# Output: 2021-02-03
-```
-
-または、より詳細な日付と時刻を取得するためには、```datetime.now()```を使用します。
-
-```Python
-import datetime
-
-now = datetime.datetime.now()
-print(now)
-
-# Output: 2021-02-03 12:34:56.789012
-```
-
-さらに、フォーマットを指定して日付を表示することもできます。例えば、```strftime()```関数を使用すると、日付を特定の形式に変換することができます。
-
-```Python
-import datetime
-
-now = datetime.datetime.now()
-formatted_date = now.strftime("%Y/%m/%d")
-print(formatted_date)
-
-# Output: 2021/02/03
-```
-
-## 深堀り
-
-Pythonの```datetime```モジュールを使用することで、より柔軟に日付と時刻を取得することができます。```timedelta() ```関数を使うと、日付に対して特定の期間を加減することができます。
+## 方法：
+Pythonでは、日付を取得するための標準モジュールとして `datetime` を使用することができます。以下のようにコードを書くことで、現在の日付を取得することができます。
 
 ```Python
 import datetime
 
 today = datetime.date.today()
+
 print(today)
-
-# Output: 2021-02-03
-
-previous_week = today - datetime.timedelta(days=7)
-print(previous_week)
-
-# Output: 2021-01-27
 ```
 
-また、日付同士を比較することもできます。例えば、今日があるイベントの開催日より前か後かを判定することができます。詳しくは、Pythonの公式ドキュメントを参照してください。
+上記のコードを実行すると、今日の日付が `YYYY-MM-DD` の形式で出力されます。
 
-## 関連リンク
+## 深堀り：
+Pythonでは、 `datetime` モジュール以外にも日付を取得するための方法があります。例えば、 `calendar` モジュールの `timegm` 関数を使用することで UNIX タイムスタンプから日付を取得することができます。
 
-- Python公式ドキュメント：https://docs.python.org/ja/3/library/datetime.html
-- プログラミング入門サイト「Codecademy」：https://www.codecademy.com/learn/learn-python-3/modules/learn-python3-datetime/cheatsheet
+また、Python以外にも `moment.js` というJavaScriptのライブラリも使うことができます。このライブラリでは、日付のフォーマットやタイムゾーンの変更なども簡単に行うことができます。
+
+さらに、Pythonでは `datetime` モジュールを使って日付の他にも時刻やタイムゾーンの情報を取得することができます。詳細は公式ドキュメントを参照してください。
+
+## 関連リンク：
+- [Python 公式ドキュメント](https://docs.python.org/ja/3.8/library/datetime.html)
+- [moment.js ライブラリ](https://momentjs.com/)

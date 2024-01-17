@@ -10,57 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mikä ja Miksi?
 
-Miksi kukaan haluaisi käyttää säännöllisiä lausekkeita (regular expressions, tai lyhyemmin regex) Go-ohjelmoinnissa? 
+Säännöllisten lausekkeiden käyttö on tapa etsiä ja korvata tekstissä esiintyviä merkkijonoja tiettyjen sääntöjen mukaan. Ohjelmoijat käyttävät tätä työkalua parantaakseen koodin tehokkuutta ja tarkkuutta.
 
-Regexit ovat erittäin hyödyllisiä työkaluja tekstien käsittelyyn ja etsintään. Niiden avulla voit tarkasti määrätä, minkälaisia merkkijonoja haluat etsiä ja käsitellä. Kun olet oppinut käyttämään regexejä, saat suuren edun monimutkaisten tekstien käsittelyssä.
+## Kuinka tehdä:
 
-## Miten
-
-Käytännön esimerkki: Haluamme tarkistaa, onko annettu teksti sähköpostiosoite. Voimme tehdä sen käyttämällä regexiä "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}$".
+Koodiesimerkit ja näytetulosteet:
 
 ```Go
 package main
 
 import (
-  "fmt"
-  "regexp"
+    "fmt"
+    "regexp"
 )
 
 func main() {
-  // Luodaan regex-objekti
-  emailRegex := regexp.MustCompile("^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}$")
-
-  // Testataan esimerkkitekstiä
-  testiTeksti := "example@email.com"
-
-  // Testataan, täsmääkö regex annettuun tekstiin
-  if emailRegex.MatchString(testiTeksti) {
-    fmt.Println("Sähköpostiosoite on kelvollinen.")
-  } else {
-    fmt.Println("Virheellinen sähköpostiosoite.")
-  }
+    // Luodaan säännöllinen lauseke, joka etsii kaikki sanat, jotka alkavat kirjaimella "G"
+    pattern := regexp.MustCompile(`\bG\w+`)
+    phrase := "Go programming is great!"
+    // Etsitään lausekkeen avulla sana, joka alkaa kirjaimella "G" ja tulostetaan se
+    result := pattern.FindString(phrase)
+    fmt.Println(result)
+    // => "Go programming"
 }
 ```
 
-Tulostus:
+## Syväluotaus:
 
-```
-Sähköpostiosoite on kelvollinen.
-```
+Säännölliset lausekkeet ovat olleet olemassa jo vuosikymmeniä ja ne ovat edelleen suosittu työkalu ohjelmoinnissa. On myös vaihtoehtoja, kuten positiivisen ja negatiivisen katkelman tunnistimet, mutta säännölliset lausekkeet tarjoavat laajemman valikoiman ominaisuuksia.
 
-## Syvempää tietoa
+Go-kielessä säännölliset lausekkeet on toteutettu käyttäen pakettia "regexp", joka tarjoaa helpon ja tehokkaan tavan käsitellä tekstiä. Lausekkeet voivat sisältää erilaisia ​​operaattoreita ja metakaraktereita, jotka tekevät niistä erittäin monipuolisia työkaluja.
 
-Regexejä voi käyttää monella eri tavalla Go-ohjelmoinnissa, mutta yleisimmät käyttötarkoitukset ovat tekstin etsiminen, korvaaminen ja jaottelu. 
+## Katso myös:
 
-Regex-objektin luominen voidaan tehdä esimerkiksi `regexp.MustCompile()`-funktion avulla. Tämän funktion parametrina annetaan haluttu regex-kaava merkkijonona. 
-
-Regexin tarkistaminen annetusta tekstistä voidaan tehdä `MatchString()`-funktiolla. Tämä palauttaa totuusarvon, joka kertoo, täsmääkö regex annettuun tekstiin vai ei. 
-
-Jotta Go-ohjelmat voisivat käsitellä ja muokata tekstejä, on regexit ensin muutettava `Regexp`-tyyppisestä objektista `Match`-tyyppiseksi objektiksi, joka sisältää halutun tekstin osan. Tämä voidaan tehdä esimerkiksi `FindString()`- tai `FindStringSubmatch()`-funktioilla.
-
-## Katso myös
-
-- [Go:n regexp-paketti](https://golang.org/pkg/regexp/)
-- [Regex-tutoriaali](https://regexone.com/)
+- "regexp" -pakettidokumentaatio: https://golang.org/pkg/regexp/
+- Säännöllisten lausekkeiden opas: https://www.regular-expressions.info/

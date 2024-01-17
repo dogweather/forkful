@@ -1,7 +1,7 @@
 ---
-title:                "サブストリングの抽出"
-html_title:           "Go: サブストリングの抽出"
-simple_title:         "サブストリングの抽出"
+title:                "部分文字列を抽出する"
+html_title:           "Go: 部分文字列を抽出する"
+simple_title:         "部分文字列を抽出する"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Strings"
@@ -10,32 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
-Go言語を使って、サブストリング（部分文字列）を抽出する必要があるかというと、例えば文字列から特定の部分だけを取り出したい場合や、入力された文字列から特定のパターンを探したい場合に役立ちます。Go言語にはサブストリングを簡単に抽出するための便利な機能があるので、ぜひ使ってみてください。
+## 何？どうして？
 
-## 方法
-サブストリングを抽出するには、 `strings` パッケージ内の `Substring()` 関数を使います。例えば、文字列 `Hello World` から `World` の部分だけを抽出したい場合、以下のようにコードを書くことができます。
+抽出したい文字列とは、大きな文字列から特定の部分を取り出すことを指します。プログラマーたちは、情報を特定の部分に分割する必要があるため、この作業を行います。
 
-```Go
-str := "Hello World"
-sub := str[6:]
-fmt.Println(sub) // Output: "World"
-```
-
-また、文字列内に特定のパターンが含まれているかどうかを判断する際にもサブストリングを使用することができます。例えば、文字列 `Welcome to the Golang World` に `Golang` という単語が含まれているかどうかを判断する場合、以下のようにコードを書くことができます。
+## 方法：
 
 ```Go
-str := "Welcome to the Golang World"
-pattern := "Golang"
-if strings.Contains(str, pattern) {
-    fmt.Printf("%s is included in the string.", pattern) // Output: "Golang is included in the string."
+package main
+
+import "fmt"
+
+func main() {
+
+    str := "こんにちは、世界！"
+
+    // substringの抽出
+    subStr := str[3:6]
+    fmt.Println(subStr) // "んにち"
+
+    // 文字列の長さ
+    length := len(str)
+    fmt.Println(length) // 11
 }
 ```
 
-## ディープダイブ
-サブストリングを抽出する際には、文字列のインデックス番号を使って指定した部分を取り出すことができます。また、 `strings` パッケージには文字列内の指定したパターンの位置を検索する `Index()` 関数や、特定の文字列を置換する `Replace()` 関数など、さまざまな便利な関数が用意されています。詳しくは[公式ドキュメント](https://golang.org/pkg/strings/)を参考にしてください。
+## 詳細：
 
-## See Also
-- [Go言語チュートリアル](https://tour.golang.org/welcome/1)
-- [Effective Go](https://golang.org/doc/effective_go.html)
-- [Go言語で学ぶデータ構造とアルゴリズム](https://www.udemy.com/course/go-datastructures-algorithms/)
+文字列から抽出するというアイディアは古くから存在していましたが、正確なメソッドや言語によって異なります。Go言語では、スライス記法を使用して文字列の部分を指定できます。他の言語では、インデックスを使用することができます。
+
+代替案として、正規表現、置換（replace）や削除（delete）などの方法があります。しかし、抽出は最も一般的な方法です。また、Go言語では、実装の詳細をカスタマイズすることもできます。
+
+## 関連リンク：
+
+- [Go言語ドキュメント](https://golang.org/)
+- [Go言語ハブ](https://golanghub.com/learn/beginners-tutorial/strings)
+- [正規表現](https://www.regular-expressions.info/)

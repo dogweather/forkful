@@ -10,41 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Dlaczego
+## Co & Dlaczego?
 
-Tworzenie plików tymczasowych jest przydatnym narzędziem dla programistów Java, gdyż pozwala ono na przechowywanie danych tymczasowych i tym samym ułatwia proces tworzenia oprogramowania.
+Tworzenie pliku tymczasowego jest częstym zadaniem dla programistów. Polega ono na tworzeniu tymczasowych plików, które są potrzebne do wykonania określonych operacji lub do przechowywania danych, które nie są potrzebne na stałe. Najczęstszym powodem, dla którego programiści tworzą pliki tymczasowe, jest potrzeba przechowywania danych podczas wykonywania programu.
 
-# Jak to zrobić
+## Jak to zrobić:
 
-Aby utworzyć plik tymczasowy w Java, możemy skorzystać z klasy `File` i jej metody `createTempFile()`. Przykładowy kod wyglądałby następująco:
+```java
+// Tworzenie pliku tymczasowego i zapisywanie do niego tekstu
+File tempFile = File.createTempFile("temp", ".txt");
+Writer writer = new BufferedWriter(new FileWriter(tempFile));
+writer.write("To jest przykładowy tekst w pliku tymczasowym");
+writer.close();
 
-```Java
-// Importowanie klasy File
-import java.io.File;
-
-// Tworzenie pliku tymczasowego o nazwie temp i rozszerzeniu txt
-File temp = File.createTempFile("temp", ".txt");
-
-// Wypisanie ścieżki do utworzonego pliku
-System.out.println("Ścieżka pliku tymczasowego: " + temp.getAbsolutePath());
+// Odczytywanie danych z pliku tymczasowego
+Reader reader = new FileReader(tempFile);
+System.out.println(reader.read());
+reader.close();
 ```
 
-Po uruchomieniu powyższego kodu, w katalogu tymczasowym zostanie utworzony plik o nazwie "temp" i rozszerzeniu ".txt". Ponadto, jego ścieżka zostanie wypisana na konsolę.
-
-# Głębszy wgląd
-
-Podczas tworzenia pliku tymczasowego, możemy określić również ścieżkę, w której ma zostać on utworzony. W tym celu, należy skorzystać z przeciążonej metody `createTempFile()` z dwoma parametrami: prefiksem nazwy pliku oraz miejscem, gdzie ma zostać utworzony. Przykładowy kod wyglądałby następująco:
-
-```Java
-// Tworzenie pliku tymczasowego z prefiksem "myTemp" w podanej ścieżce
-File temp = File.createTempFile("myTemp", null, new File("C:/myFolder"));
+**Output:**
+``` 
+To jest przykładowy tekst w pliku tymczasowym
 ```
 
-Ponadto, przy tworzeniu pliku tymczasowego możemy określić również prefiks oraz sufiks nazwy pliku, a także katalog, w którym ma zostać utworzony.
+## Głębsze zagadnienia:
 
-Podsumowując, tworzenie plików tymczasowych jest przydatnym i prostym narzędziem w świecie programowania Java. Dzięki temu, możemy wygodnie przechowywać dane tymczasowe, co ułatwia proces tworzenia oprogramowania.
+Tworzenie pliku tymczasowego jest powszechną praktyką w programowaniu. Istnieje wiele powodów, dla których programiści mogą chcieć stworzyć tymczasowy plik, na przykład:
 
-# Zobacz również
+- Przechowywanie danych wykorzystywanych tylko w trakcie wykonywania programu, które nie są potrzebne na stałe.
+- Utworzenie bufora w celu przechowywania informacji w trakcie przetwarzania danych.
+- Przygotowanie pliku tymczasowego do zapisu lub odczytu danych z serwera lub innego urządzenia.
 
-- [Dokumentacja klasy File w języku Java](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/File.html)
-- [Poradnik tworzenia plików tymczasowych w Java](https://www.baeldung.com/java-temporary-file)
+Alternatywnym sposobem tworzenia tymczasowych plików jest użycie metody `File.createTempFile()`, jednak nie jest to zalecane, ponieważ zawiera ona pewne wady. Należy pamiętać, że plik tymczasowy może zostać usunięty przez system operacyjny w dowolnym momencie, więc należy go odpowiednio obsłużyć w kodzie programu.
+
+## Zobacz też:
+
+- [Dokumentacja Java SE - Tworzenie pliku tymczasowego](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/File.html)
+- [Poradnik dla programistów Java - Przechowywanie danych w plikach tymczasowych](https://www.baeldung.com/java-temporary-file)

@@ -1,7 +1,7 @@
 ---
-title:                "Zufallszahlen generieren"
-html_title:           "C#: Zufallszahlen generieren"
-simple_title:         "Zufallszahlen generieren"
+title:                "Erzeugung zufälliger Zahlen"
+html_title:           "C#: Erzeugung zufälliger Zahlen"
+simple_title:         "Erzeugung zufälliger Zahlen"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Numbers"
@@ -10,67 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was & Warum?
+Das Generieren von Zufallszahlen ist ein grundlegender Bestandteil der Programmierung. Es bezieht sich auf den Prozess, bei dem zufällige Zahlen innerhalb eines bestimmten Bereichs erzeugt werden. Programmierer nutzen dies für verschiedene Zwecke, wie zum Beispiel für die Erstellung von Passwörtern oder die Simulation von zufälligen Ereignissen.
 
-Es mag seltsam erscheinen, aber das Generieren von Zufallszahlen ist in der Programmierung sehr nützlich. Von der Erstellung von zufälligen Passwörtern bis hin zur Simulation von Daten, die Verwendung von Zufallszahlen ist eine häufige Anforderung in verschiedenen Anwendungsbereichen.
+## Wie geht das?
+In C# können wir die Klasse ```Random``` verwenden, um Zufallszahlen zu generieren. Zuerst müssen wir jedoch eine Instanz dieser Klasse erstellen und einen Seed-Wert übergeben. Der Seed-Wert dient als Startpunkt für die Berechnung der Zufallszahlen. Wenn wir keinen Seed-Wert angeben, wird standardmäßig die aktuelle Systemzeit verwendet.
 
-## Wie geht's
-
-Um zufällige Zahlen in C# zu generieren, gibt es zwei Hauptansätze: die Verwendung der `Random`-Klasse oder die Verwendung von kryptographischen Funktionen. Schauen wir uns beide an:
-
-### Verwendung der `Random`-Klasse
-
-Die `Random`-Klasse ist eine integrierte Klasse in C#, die uns bei der Generierung von Pseudo-Zufallszahlen hilft. Sie kann auf zwei Arten verwendet werden:
-
-1. Mit einem vorgegebenen Startwert:
-
-```C#
-// Initialisierung mit vorgegebenem Startwert
-Random rnd = new Random(42);
-
-// Generierung einer zufälligen Ganzzahl zwischen 0 und 100
-int randomNumber = rnd.Next(0, 101);
-
-// Generierung einer zufälligen Dezimalzahl zwischen 0 und 1
-double randomDouble = rnd.NextDouble();
+```
+Random random = new Random(); // Erstelle eine Instanz der Random Klasse
+int number = random.Next(1, 10); // Generiere eine zufällige ganze Zahl zwischen 1 und 10
+Console.WriteLine(number); // Gib die generierte Zahl aus
 ```
 
-2. Ohne vorgegebenen Startwert:
+Einige gängige Methoden der Random Klasse sind ```Next()```, ```NextDouble()``` und ```NextBytes()```, die jeweils verschiedene Typen von Zufallszahlen generieren. Wir können auch die Methode ```Next(min, max)``` verwenden, um eine Zufallszahl innerhalb einer bestimmten Bereichsgrenze zu generieren.
 
-```C#
-Random rnd = new Random();
+## Tiefer Einblick
+Das Generieren von Zufallszahlen hat eine lange Geschichte in der Mathematik und ist auch in der Informatik von großer Bedeutung. Früher wurden Zufallszahlen durch komplexe mathematische Algorithmen erzeugt, während heutzutage durch die Fortschritte in der Technologie schnellere und zuverlässigere Methoden entwickelt wurden.
 
-// Generierung einer zufälligen Ganzzahl zwischen 0 und 100
-int randomNumber = rnd.Next(0, 101);
+Alternativ zur Verwendung der Random Klasse können Programmierer auch externe Bibliotheken wie die Mersenne Twister-Engine nutzen, die eine höhere Performance und mehr Kontrolle über die generierten Zufallszahlen bieten.
 
-// Generierung einer zufälligen Dezimalzahl zwischen 0 und 1
-double randomDouble = rnd.NextDouble();
-```
-
-Es ist wichtig zu beachten, dass die Generierung von Zufallszahlen auf Basis von `Random` eigentlich nicht wirklich zufällig ist, sondern auf einem Algorithmus basiert, der einen Startwert verwendet. Wenn du also immer die gleiche Sequenz von Zahlen haben möchtest, kannst du die `Random`-Klasse mit einem spezifischen Startwert initialisieren.
-
-### Verwendung von kryptographischen Funktionen
-
-Wenn du hochsichere Zufallszahlen benötigst, z.B. für Passwörter oder kryptographische Schlüssel, ist es besser, kryptographische Funktionen zu verwenden. In der Klasse `RNGCryptoServiceProvider` gibt es eine Methode namens `GetBytes()`, die eine Byte-Array mit zufälligen Werten zurückgibt:
-
-```C#
-// Initialisierung der kryptographischen Klasse
-RNGCryptoServiceProvider rng = new RNGCryptoServiceProvider();
-
-// Erstellen eines Byte-Arrays mit 16 zufälligen Werten für ein sicheres Passwort
-byte[] randomNumber = new byte[16];
-rng.GetBytes(randomNumber);
-```
-
-Der Nachteil dieser Methode ist, dass sie wesentlich langsamer ist als die Verwendung der `Random`-Klasse.
-
-## Tiefergehende Infos
-
-Wie bereits erwähnt, ist die Zufallszahlengenerierung auf Basis von `Random` eigentlich nicht wirklich zufällig. Sie basiert auf mathematischen Algorithmen, die einen Startwert verwenden und eine deterministische Sequenz von Zahlen generieren. In den meisten Fällen ist dies ausreichend, aber wenn es um Sicherheit geht, ist es besser, kryptographische Funktionen zu verwenden.
-
-Eine gute Möglichkeit, zufällige Zahlen auf Basis von `Random` zu überprüfen, ist die Verwendung einer Statistikklasse, um die Verteilung der generierten Zahlen zu analysieren. Wenn die Verteilung gleichmäßig ist, bedeutet dies, dass der verwendete Algorithmus gute Ergebnisse liefert.
+Die Random Klasse in C# implementiert den Park-Miller-Algorithmus, der auch als "Lehmer RNG" (Linearer Kongruenzgenerator) bekannt ist. Dieser Algorithmus nutzt einfache mathematische Berechnungen, um effizient Zufallszahlen zu generieren.
 
 ## Siehe auch
+Weitere Informationen und Beispiele zur Verwendung der Random Klasse in C# finden Sie in der offiziellen Microsoft-Dokumentation: https://docs.microsoft.com/en-us/dotnet/api/system.random?view=netcore-3.1
 
-- [Offizielle Dokumentation zur Random-Klasse](https://docs.microsoft.com/de-de/dotnet/api/system.random?view=netcore-3.1)
-- [Artikel über das Generieren sicherer Passwörter in C#](https://blog.elmah.io/how-to-generate-random-password-in-c-sharp/)
+Eine Einführung in die Konzepte und Methoden des Generierens von Zufallszahlen finden Sie hier: https://www.geeksforgeeks.org/random-number-generator-in-c-sharp/

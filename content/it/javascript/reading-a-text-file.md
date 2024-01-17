@@ -1,7 +1,7 @@
 ---
-title:                "Leggere un file di testo"
-html_title:           "Javascript: Leggere un file di testo"
-simple_title:         "Leggere un file di testo"
+title:                "Lettura di un file di testo"
+html_title:           "Javascript: Lettura di un file di testo"
+simple_title:         "Lettura di un file di testo"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Files and I/O"
@@ -10,35 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
-Ci sono molte ragioni per cui si potrebbe voler leggere un file di testo in Javascript. Potresti aver bisogno di accedere ai dati contenuti nel file, di modificarli o di utilizzarli per creare una nuova funzionalità nel tuo progetto.
+## Che cos'è e perché?
 
-## Come fare
-Per leggere un file di testo in Javascript, è necessario utilizzare la funzione `readFile()` del modulo `fs` (file system). Ecco un esempio di codice che mostra come leggere un file di testo e stampare il suo contenuto sulla console:
+L'esecuzione di un file di testo è un'azione comune per i programmatori JavaScript. Ciò significa che il computer legge il contenuto di un file di testo e lo utilizza per eseguire un'azione, come stampare un messaggio sullo schermo o memorizzarlo in una variabile.
 
-```javascript
-const fs = require('fs');
+I programmatori leggono i file di testo per accedere a dati importanti o per integrare informazioni nei loro programmi. Ciò consente loro di creare programmi più dinamici e personalizzati per gli utenti.
 
-fs.readFile('nome_file.txt', 'utf8', (err, data) => {
-  if (err) throw err;
-  console.log(data);
-});
+## Come fare:
+
+Per leggere un file di testo in JavaScript, è necessario utilizzare la funzione integrata `fetch()`. Questa funzione consente di recuperare il contenuto di un file dal suo URL e di salvarlo in una variabile per l'utilizzo nel programma.
+
+```
+javascript
+fetch('testo.txt')
+  .then(response => response.text())
+  .then(text => console.log(text));
 ```
 
-Il primo parametro della funzione `readFile()` è il nome del file che si desidera leggere, mentre il secondo parametro indica il formato di codifica del file. In questo caso, stiamo utilizzando `utf8` per i file di testo. Il terzo parametro è una funzione di callback che viene eseguita una volta che il file è stato letto con successo. All'interno della funzione di callback, è possibile accedere ai dati del file tramite il parametro `data`.
+L'esempio sopra recupera il contenuto di un file di testo chiamato `testo.txt` e lo stampa nella console.
 
-Di seguito puoi trovare un esempio di output ottenuto utilizzando il codice sopra descritto con un file di testo di esempio chiamato `nome_file.txt`:
+## Approfondimenti:
 
-```javascript
-Questo è il contenuto del mio file di testo.
-```
+L'azione di leggere file di testo è stata introdotta in JavaScript attraverso il metodo obsoleto `readFile()` e ora viene utilizzata principalmente con la funzione `fetch()`. Tuttavia, ci sono anche alcune alternative in JavaScript, come l'uso della libreria `fs` o del framework `Node.js` per gestire file di testo più complessi.
 
-## Approfondimento
-Esistono diverse operazioni che è possibile effettuare dopo aver letto un file di testo in Javascript. Ad esempio, è possibile utilizzare la funzione `writeFile()` per scrivere i dati letti da un file su un nuovo file o su uno già esistente. Inoltre, è possibile anche utilizzare la funzione `split()` per suddividere i dati del file in array, utilizzando un carattere specifico come separatore.
+Quando si leggono file di testo, è importante prendere in considerazione la codifica del file, in modo da poter leggere il contenuto correttamente. Inoltre, se il file di testo è molto grande, è consigliabile utilizzare il metodo `readStream()` invece di `readFile()`, per evitare di occupare troppa memoria.
 
-Per ulteriori informazioni su come utilizzare il modulo `fs` e sulle varie funzioni disponibili per leggere e scrivere file in Javascript, si consiglia di consultare la documentazione ufficiale: [https://nodejs.org/api/fs.html](https://nodejs.org/api/fs.html).
+Per ulteriori informazioni su come leggere file di testo in JavaScript, puoi consultare la documentazione ufficiale di `fetch()` o cercare tutorial online su come utilizzare le librerie `fs` o `Node.js`.
 
-## Vedi anche
-- [Tutorial: Come leggere un file di testo in Javascript](https://www.html.it/pag/66363/javascript-leggere-file/)
-- [Funzioni di file system in Node.js](https://www.tutorialspoint.com/nodejs/nodejs_file_system.htm)
-- [Documentazione ufficiale sul modulo fs di Node.js](https://nodejs.org/api/fs.html)
+## Vedi anche:
+
+- [Digging into the JavaScript FileReader API](https://www.digitalocean.com/community/tutorials/how-to-handle-reading-files-in-javascript-with-the-filereader-api)
+- [Using Files API in Node.js](https://stackabuse.com/reading-and-writing-files-in-node-js/)
+- [MDN Web Docs on Reading Files in JavaScript](https://developer.mozilla.org/en-US/docs/Web/API/File/Using_files_from_web_applications)

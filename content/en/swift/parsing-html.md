@@ -10,75 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why 
-Many websites, especially those built with older technologies, still use HTML as their main language. By learning how to parse HTML, you can easily extract useful information from these websites and use it in your own applications or scripts.
+## What & Why?
 
-## How To 
-To parse HTML in Swift, we can use a popular library called SwiftSoup. First, install the library by adding the following line to your `Podfile`:
+Parsing HTML is the act of analyzing a webpage's source code and extracting specific information from it. Programmers often do this in order to scrape data from websites or to manipulate the webpage's content programmatically.
 
-```Swift
-pod 'SwiftSoup'
-```
+## How to:
 
-Next, import the library in your code:
+To parse HTML in Swift, we can use a library called "SwiftSoup." First, we need to import the library into our project. Then, we can create a `Document` object by passing in the URL of the webpage we want to parse. For example:
 
 ```Swift
 import SwiftSoup
-```
 
-Now, let's say we want to extract the title and description of a webpage. We can use the `get` function from SwiftSoup to get the HTML of the webpage:
-
-```Swift
-guard let url = URL(string: "https://www.example.com") else { return }
 do {
-    let html = try String(contentsOf: url)
-} catch {
-    print("Error: \(error)")
+  let url = "https://www.example.com"
+  let doc = try SwiftSoup.parse(url)
+} catch Exception {
+  print("Error: Could not parse webpage")
 }
 ```
 
-Next, we will use the `parse` function from SwiftSoup to parse the HTML and create a document object:
+Once we have the `Document` object, we can extract specific elements or data from it using CSS selectors. For example, if we want to get all the links on the webpage, we can use the `select` function and pass in the CSS selector for links, "a." This will return a `Elements` object, which we can then loop through to get each individual link. Here's how it looks:
 
 ```Swift
-do {
-    let doc: Document = try SwiftSoup.parse(html)
-} catch {
-    print("Error: \(error)")
+let links = try doc.select("a")
+for link in links {
+  print(link.attr("href"))
 }
 ```
 
-Now, we can use the `select` function from SwiftSoup to select specific elements from the HTML. For example, to get the title of the webpage, we can use the following code:
+## Deep Dive:
 
-```Swift
-do {
-    let titleElement: Element? = try doc.select("title").first()
-    let title = try titleElement?.text()
-    // Output: Example Domain
-} catch {
-    print("Error: \(error)")
-}
-```
+Parsing HTML has been a common practice since the early days of the internet. In fact, it was one of the main ways to scrap or extract data from webpages before API's became widely available. Alternatives to parsing HTML include using API's or web scraping services, but those may not always be feasible or available.
 
-We can also get the description of the webpage by selecting the `meta` element with the property `name=description`:
+SwiftSoup is built on top of the Java library Jsoup, which is a popular and well-maintained HTML parser. Implementing parsing HTML in Swift allows us to easily integrate it into our iOS or macOS projects.
 
-```Swift
-do {
-    let metaElement: Element? = try doc.select("meta[name=description]").first()
-    let description = try metaElement?.attr("content")
-    // Output: This is an example website.
-} catch {
-    print("Error: \(error)")
-}
-```
+## See Also:
 
-## Deep Dive
-HTML stands for Hypertext Markup Language and is the standard language used for creating webpages. It is made up of various tags and attributes that define the content and structure of a webpage. By understanding these tags and attributes, you can better manipulate and extract information from HTML.
-
-In SwiftSoup, the `select` function uses CSS selectors to select specific elements from the HTML document. CSS selectors are patterns used to select specific elements based on their tag name, class, id, or attributes. There are various types of CSS selectors, such as element selectors, class selectors, and attribute selectors, that can be used depending on your specific needs.
-
-It is important to note that while parsing HTML can be useful, it is also important to respect the website's terms of use and not abuse the information extracted. Make sure to always check the website's terms and conditions before using any data obtained through parsing.
-
-## See Also
-- [SwiftSoup Github Page](https://github.com/scinfu/SwiftSoup)
-- [HTML Parser in Swift: Parse, extract, modify and render HTML using SwiftSoup](https://medium.com/@ppoh71/html-parser-in-swift-parse-extract-modify-and-render-html-using-swiftsoup-c0ed4c2f31e8)
-- [CSS Selectors Guide](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors)
+- [SwiftSoup GitHub repository](https://github.com/scinfu/SwiftSoup)
+- [Jsoup website](https://jsoup.org/)

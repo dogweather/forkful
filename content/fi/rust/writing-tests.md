@@ -10,60 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+# Mitä & Miksi?
 
-Kirjoittaessa ohjelmia, testien kirjoittaminen voi tuntua ylimääräiseltä työltä ja hidastavan projektin etenemistä. Kuitenkin testien kirjoittamisella voi säästää aikaa ja vaivaa myöhemmin, kun ohjelmaa täytyy muokata tai korjata virheitä. Testien avulla voidaan myös varmistaa, että ohjelman eri osat toimivat oikein ja ennaltaehkäistä mahdollisia virheitä.
+Testien kirjoittaminen on yksinkertaisesti prosessi, jossa testataan ohjelmiston toimivuutta ja havaitaan mahdollisia virheitä. Ohjelmoijat tekevät sitä varmistaakseen, että heidän koodinsa toimii oikein ja estääkseen virheitä ja bugeja, jotka voivat aiheuttaa ongelmia käyttäjille.
 
-## Näin tehdään
+# Miten:
 
-Testien kirjoittaminen Rustissa on helppoa ja yksinkertaista. Ensimmäiseksi täytyy lisätä `#[cfg(test)]` merkintä moduulien yhteyteen, jotta testit voidaan suorittaa. Sen jälkeen testit voidaan kirjoittaa `#[test]` ja `assert!()` funktioiden avulla. Alla on esimerkki testin kirjoittamisesta `String` datatypea varten:
+```Rust
+fn sum(x: i32, y: i32) -> i32 {
+    x + y
+}
 
-```rust
 #[cfg(test)]
-mod test_string {
+mod tests {
+    use super::*;
+
     #[test]
-    fn test_string_contains() {
-        let my_string = String::from("Hello world");
-        assert!(my_string.contains("Hello"));
+    fn test_sum() {
+        assert_eq!(sum(2, 2), 4);
     }
 }
 ```
 
-Jokainen `#[test]` merkinnällä varustettu funktio on yksi testi, ja `assert!()` funktio tarkistaa, että annettu lauseke on tosi. Tässä tapauksessa testi on totta, sillä "Hello world" sisältää sanan "Hello". Nyt voimme ajaa testin käyttämällä `cargo test` komentoa, joka tulostaa seuraavan:
+## Syväsukellus
 
-```
-running 1 test
-test test_string_contains ... ok
+### Historiallinen konteksti
+Testaaminen on ollut osa ohjelmistokehitystä jo pitkään. Aikaisemmin testejä tehtiin manuaalisesti, mutta nykyään testaamiseen käytetään erilaisia ​​automaattisia työkaluja, kuten Rustin sisäänrakennettua testikehystä.
 
-test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 3 filtered out
-```
+### Vaihtoehtoinen lähestymistapa
+Vaikka on olemassa muita testausmenetelmiä, kuten integraatio- ja hyväksyntätestaus, yksikkötestaus on edelleen tärkeä osa ohjelmistokehitystä. Se auttaa ohjelmoijia tarkistamaan funktionaalisen logiikan pienissä yksiköissä ja vähentää mahdollisten virheiden määrää.
 
-Voit myös käyttää `assert_eq!()` funktiota tarkistaaksesi, että kaksi arvoa ovat yhtäsuuret. Alla on esimerkki siitä, miten voit testata kahden numeron summan:
+### Implementaation yksityiskohdat
+Rustin testikehys käyttää assert-makroja tarkistamaan, että odotetut tulokset vastaavat todellisia tuloksia. Testit voidaan myös suorittaa useissa ympäristöissä, kuten debug- ja release-tilassa, mikä auttaa havaitsemaan mahdollisia ongelmia.
 
-```rust
-#[cfg(test)]
-mod test_sum {
-    #[test]
-    fn test_sum_result() {
-        let a = 2;
-        let b = 3;
-        let result = a + b;
-        assert_eq!(result, 5);
-    }
-}
-```
+# Katso myös:
 
-Tässä tapauksessa testi on tosi, sillä 2 ja 3:n summa on 5. Voit nyt taas ajaa testin ja näet, että kaikki testit läpäisevät.
-
-## Syvemmälle aiheeseen
-
-Testien kirjoittaminen Rustissa voi olla erittäin hyödyllistä monilla eri tavoilla. Yksi tärkeimmistä eduista on se, että testien avulla voit olla varma, että kirjoittamasi koodi toimii oikein. Voit myös lisätä testejä jokaiseen muokattuun osaan koodia, jotta voit varmistaa, että uudet muutokset eivät riko toimivaa koodia.
-
-Testien avulla voit myös huomata mahdollisia virheitä ja ongelmakohtia koodissasi. Testien kirjoittaminen pakottaa sinut ajattelemaan ohjelmaasi eri näkökulmista ja löytämään mahdolliset virhetilanteet, joita käyttäjät saattavat kohdata.
-
-Lisäksi testien avulla voit helposti varmistaa, että ohjelmasi toimii oikein eri ympäristöissä ja platvormeilla. Rustin testauskehys tarjoaa mahdollisuuden suorittaa testeihin tarvittavat tapahtumat ja testata useita eri tilanteita.
-
-## Katso myös
-
-- [Rustin testausdokumentaatio](https://doc.rust-lang.org/rust-by-example/testing.html)
-- [Testauksen merkitys ohjelmoinnissa (englanniksi)](https://medium.com/@
+- Rustin testausdokumentaatio: [https://doc.rust-lang.org/book/ch11-00-testing.html](https://doc.rust-lang.org/book/ch11-00-testing.html)
+- Yksikkötestauksen merkitys: [https://www.geeksforgeeks.org/unit-testing-its-importance/](https://www.geeksforgeeks.org/unit-testing-its-importance/)

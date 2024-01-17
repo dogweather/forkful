@@ -1,7 +1,7 @@
 ---
-title:                "Arbeiten mit Yaml"
-html_title:           "Kotlin: Arbeiten mit Yaml"
-simple_title:         "Arbeiten mit Yaml"
+title:                "Arbeiten mit yaml"
+html_title:           "Kotlin: Arbeiten mit yaml"
+simple_title:         "Arbeiten mit yaml"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Data Formats and Serialization"
@@ -10,58 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was & Warum?
+YAML ist eine einfache, menschenlesbare Datenformatierungssprache, die häufig von Programmierern verwendet wird, um Konfigurationsdateien zu erstellen. Es ist eine großartige Alternative zu anderen Formaten wie JSON, da es weniger zeitaufwändig und weniger fehleranfällig ist.
 
-YAML ist eine einfache und intuitive Möglichkeit, Daten zu speichern und zu übertragen. Es kann in vielen Bereichen verwendet werden, wie z.B. Konfigurationsdateien, REST APIs und Datenbanken. Wenn du also in der Programmierung tätig bist, ist es wichtig zu verstehen, wie man mit YAML arbeitet.
-
-## Wie man mit YAML arbeitet
-
-Das Erstellen von YAML-Dateien ist einfach und kann mit jedem Texteditor erfolgen. Hier ein Beispiel, wie man eine Liste mit Namen und Alter erstellen kann:
-
+## So geht's:
 ```Kotlin
-- name: Max
-  age: 25
+// Erstellen einer YAML-Konfigurationsdatei
+val config = """
+    name: John
+    age: 25
+    hobbies:
+        - hiking
+        - reading
+    """.trimIndent()
 
-- name: Lisa
-  age: 30
+// Lesen einer YAML-Konfigurationsdatei
+val name = yaml["name"] // John
+val age = yaml["age"] // 25
+val hobbies = yaml["hobbies"] // [hiking, reading]
 ```
 
-Man kann auch komplexe Datenstrukturen wie verschachtelte Listen und Objekte erstellen:
+## Tiefere Einblicke:
+YAML wurde ursprünglich 2001 von Clark Evans für das Ruby-on-Rails-Projekt entwickelt. Es ist eine Alternative zu XML und anderen Formaten, die es ermöglicht, Daten in einer lesbareren und leichter zu schreibenden Art und Weise zu strukturieren. YAML ist auch bekannt für seine einfache Syntax und die Möglichkeit, Kommentare hinzuzufügen. Es ist in vielen Programmiersprachen verfügbar, einschließlich Java, Python und natürlich Kotlin.
 
-```Kotlin
-- name: John
-  age: 35
-  hobbies:
-    - hiking
-    - cooking
-  address:
-    street: Main Street
-    city: Berlin
-```
-
-Um auf diese Daten in einem Kotlin-Programm zuzugreifen, kann man die Bibliothek "Snakeyaml" verwenden. Hier ein Beispiel, wie man die Daten aus der obigen YAML-Datei auslesen kann:
-
-```Kotlin
-import org.yaml.snakeyaml.Yaml
-
-val yaml = Yaml()
-val data = yaml.load("example.yaml") // Lade YAML-Datei
-val name = data[0]["name"] // John
-val age = data[0]["age"] // 35
-val hobbies = data[0]["hobbies"] // [hiking, cooking]
-val address = data[0]["address"] // {street=Main Street, city=Berlin}
-```
-
-## Tiefergehende Informationen
-
-Wenn du tiefer in die Arbeit mit YAML einsteigen möchtest, gibt es einige wichtige Konzepte zu beachten. Zum Beispiel gibt es verschiedene Datentypen in YAML wie Strings, Zahlen, Listen und Objekte. Auch die Einrückung ist wichtig, um verschachtelte Datenstrukturen korrekt darzustellen.
-
-Es ist auch möglich, YAML-Dateien mit Kotlin nativ zu erstellen und zu bearbeiten, ohne eine externe Bibliothek zu verwenden. Dafür bieten die Standardbibliotheken "kotlinx-serialization-yaml" und "kotlinx-yaml" eine einfache Möglichkeit, YAML-Daten in Kotlin-Objekte zu konvertieren und umgekehrt.
-
-Es gibt auch fortgeschrittenere Themen wie das Verwenden von Anker und Aliase, um wiederkehrende Strukturen in einer Datei zu reduzieren, oder das Formatieren von YAML-Dateien mit speziellen Optionen.
-
-## Siehe auch
-
-- [Kotlin-Referenz zur Bibliothek "Snakeyaml"](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.properties/-script.html)
-- [Einführung in die Nutzung von YAML in Kotlin](https://blog.suitcasecode.com/working-with-yaml-in-kotlin/)
-- [Überblick über die Standardbibliotheken für die Verarbeitung von YAML in Kotlin](https://kotlinlang.org/api/latest/kotlinx-serialization-kotlinx-serialization-yaml/)
+## Siehe auch:
+- [YAML.org](https://yaml.org/)
+- [Kotlin Dokumentation](https://kotlinlang.org/docs/)
+- [YamlBeans Bibliothek für Kotlin](https://github.com/EsotericSoftware/yamlbeans)

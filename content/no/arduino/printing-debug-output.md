@@ -10,65 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hva & Hvorfor?
 
-Å printe debug output er en viktig del av å feilsøke og forbedre koden din. Det lar deg se nøyaktig hva som skjer under kjøring, slik at du kan identifisere og løse eventuelle problemer.
+Å skrive ut debug output er en måte for programmerere å få informasjon om hvordan programmet fungerer mens det kjører. Dette gjør det enklere å finne og feilsøke eventuelle problemer i koden.
 
-## Hvordan
+## Hvordan:
 
-For å printe debug output på din Arduino, kan du bruke funksjonen `Serial.print()`. Denne funksjonen tar inn en parameter, for eksempel en variabel eller en tekststreng, og sender den til seriell porten på Arduinoen din. Deretter kan du åpne seriell monitor i Arduino IDE for å lese og analysere outputen.
-
-```Arduino
-int sensorValue = 0;
-void setup() {
-  Serial.begin(9600); //åpner seriell port
-}
-void loop() {
-  sensorValue = analogRead(A0); //leser verdi fra analog pin A0
-  Serial.print("Sensoren leser: "); //printer teksten før variabelen
-  Serial.println(sensorValue); //printer variabelen og legger til linjeskift
-  delay(1000); //venter i 1 sekund før kode kjøres på nytt
-}
-```
-
-Outputen fra dette eksempelet vil se ut som dette:
+For å skrive ut debug output i Arduino, bruker vi funksjonen ```Serial.print()```. Dette lar oss skrive ut tekst eller variabler til seriell-monitoren i Arduino IDE. La oss se på et eksempel:
 
 ```
-Sensoren leser: 378
+int skole_timer = 5;
+Serial.print("Antall timer på skolen: ");
+Serial.print(skole_timer); // Printer variabelen skole_timer
 ```
 
-Dette lar deg se den aktuelle verdien som sensoren leser, og du kan gjøre endringer og se om verdien endres som forventet.
-
-## Deep Dive
-
-Det er også mulig å formatere outputen for å gjøre den mer lesbar. For eksempel kan du bruke `Serial.print()` flere ganger for å legge til flere variabler eller tekstrenger i samme linje. Du kan også bruke `Serial.println()` for å legge til linjeskift etter hver linje med output.
-
-```Arduino
-int temp = 25;
-float humidity = 50.3;
-void setup() {
-  Serial.begin(9600);
-}
-void loop() {
-  Serial.print("Temperatur: ");
-  Serial.print(temp);
-  Serial.print(" °C, Fuktighet: ");
-  Serial.print(humidity);
-  Serial.println("%");
-  delay(1000);
-}
-```
-
-Outputen fra dette eksempelet vil se ut som dette:
+Dette vil skrive ut følgende i seriell-monitoren:
 
 ```
-Temperatur: 25 °C, Fuktighet: 50.3%
+Antall timer på skolen: 5
 ```
 
-Dette gjør outputen mer forståelig og enklere å analysere.
+## Dypdykk:
 
-## Se Også
+Å skrive ut debug output har vært en viktig del av programmering siden begynnelsen. Det lar oss få et bedre forståelse av hvordan koden fungerer og identifisere eventuelle problemer. Alternativet til å skrive ut debug output er å bruke en debugger, men dette kan være mer komplisert og ikke alltid tilgjengelig. I tillegg kan seriell-monitoren til Arduino brukes til å kommunisere med annet utstyr, som for eksempel sensorer eller skjermer.
 
-- [Arduino Serial](https://www.arduino.cc/reference/en/language/functions/communication/serial/)
-- [How to Use Serial Print in Arduino?](https://maker.pro/arduino/tutorial/how-to-use-serial-print-in-arduino)
-- [Debugging Arduino Sketches with Serial.println()](https://learn.sparkfun.com/tutorials/debugging-arduino-sketches-with-serial-println)
+For å skrive ut tall i seriell-monitoren, må vi bruke ```Serial.println()``` i stedet for ```Serial.print()```. Dette vil legge til en linjeskift etter teksten eller variabelen. Det er også mulig å skrive ut tall i binær eller hexadecimal format ved å bruke hhv. ```Serial.print(BIN)``` og ```Serial.print(HEX)```.
+
+## Se også:
+
+- Docs for ```Serial.print()``` i [Arduino Reference](https://www.arduino.cc/reference/en/language/functions/communication/serial/print/)
+- Tutorial: [Skrive ut til seriell-monitoren med Arduino](https://www.arduino.cc/en/Tutorial/SerialPrint)

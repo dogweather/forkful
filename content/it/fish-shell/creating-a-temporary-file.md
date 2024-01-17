@@ -10,48 +10,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+## Cos'è e perché?
+Creare un file temporaneo è il processo di creazione di un file che viene utilizzato temporaneamente e poi eliminato. I programmatori spesso creano file temporanei per eseguire un'operazione specifica o memorizzare dati temporanei durante l'esecuzione di un programma.
 
-Creare un file temporaneo può essere utile in diverse situazioni, ad esempio quando si vuole memorizzare temporaneamente dei dati o quando si vuole eseguire un'operazione senza influenzare il contenuto di un file esistente. Inoltre, l'utilizzo di file temporanei può essere uno strumento utile nel processo di sviluppo e debugging di un programma.
+## Come fare:
+Per creare un file temporaneo in Fish Shell, è possibile utilizzare il comando `mktemp`. Questo comando genera un nome unico per il file temporaneo da utilizzare nel programma. Ad esempio:
 
-## Come fare
-
-Per creare un file temporaneo in Fish Shell, è possibile utilizzare il comando `mktemp`. Questo comando genera un file temporaneo con un nome univoco e restituisce il percorso completo del file appena creato. Ecco un esempio di come utilizzare il comando `mktemp`:
-
-```Fish Shell
-$ mktemp
-/tmp/tmp.oT9S2P6fxC
+```
+Fish Shell> set mio_file (mktemp) 
+Fish Shell> echo "Questo è un file temporaneo" > $mio_file
+Fish Shell> cat $mio_file
+Questo è un file temporaneo
 ```
 
-In questo esempio, viene creato un file temporaneo dal nome "tmp.oT9S2P6fxC" nella directory "/tmp". Possiamo anche specificare un percorso diverso per il file temporaneo utilizzando l'opzione `-p`. Ad esempio:
+## Approfondimento:
+La creazione di file temporanei è una pratica comune nei linguaggi di programmazione per gestire dati temporanei o effettuare operazioni specifiche. Tuttavia, esistono anche alternative come l'utilizzo di array o variabili temporanee. Inoltre, è importante tenere traccia dei file temporanei creati e rimuoverli in modo sicuro dopo averli utilizzati per evitare sprechi di memoria o problemi di sicurezza.
 
-```Fish Shell
-$ mktemp -p ~/Documents
-/Users/username/Documents/tmp.x7awIJsimf
-```
-
-In questo caso, il file temporaneo viene creato nella directory "Documents" della home directory dell'utente.
-
-## Approfondimento
-
-Il comando `mktemp` utilizza per default un template per generare il nome del file temporaneo, ma possiamo anche specificare il nome del file utilizzando l'opzione `-t`. Ad esempio:
-
-```Fish Shell
-$ mktemp -t mytempfile
-/tmp/mytempfile
-```
-
-In questo caso, il nome del file temporaneo verrà prefissato con il testo "mytempfile". Possiamo anche specificare un suffisso utilizzando l'opzione `-s`, ad esempio:
-
-```Fish Shell
-$ mktemp -t mytempfile -s .txt
-/tmp/mytempfile.txt
-```
-
-Inoltre, possiamo specificare più opzioni per personalizzare il nome e la posizione del file temporaneo desiderato.
-
-## Vedi anche
-
-Per ulteriori informazioni sul comando `mktemp`, puoi consultare la documentazione ufficiale di Fish Shell: https://fishshell.com/docs/current/cmds/mktemp.html.
-
-Puoi anche approfondire l'utilizzo dei file temporanei in Fish Shell e come possono essere utili durante lo sviluppo di script e programmi: https://fishshell.com/docs/current/tutorial.html#temporary-files.
+## Vedi anche:
+- Documentazione su `mktemp` in Fish Shell: https://fishshell.com/docs/current/cmds/mktemp.html
+- Un tutorial su come creare file temporanei in altri linguaggi di programmazione: https://www.geeksforgeeks.org/temporary-file-generation-in-c-programming/
+- Uno stack overflow thread sulla sicurezza dei file temporanei: https://stackoverflow.com/questions/4634209/how-to-guarantee-a-temporary-file-insecure-temporary-file-in-name-race-condition

@@ -1,7 +1,7 @@
 ---
-title:                "Tworzenie pliku tymczasowego"
-html_title:           "Rust: Tworzenie pliku tymczasowego"
-simple_title:         "Tworzenie pliku tymczasowego"
+title:                "Tworzenie tymczasowego pliku"
+html_title:           "Rust: Tworzenie tymczasowego pliku"
+simple_title:         "Tworzenie tymczasowego pliku"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Files and I/O"
@@ -10,57 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i Dlaczego?
 
-Stworzenie tymczasowego pliku może być przydatne w wielu sytuacjach podczas programowania w Rust. Może to pomóc w przechowywaniu danych tymczasowych, testowaniu kodu lub utrzymywaniu czystości w projekcie.
+Tworzenie pliku tymczasowego jest procesem tworzenia tymczasowego pliku w systemie operacyjnym, który służy jako tymczasowe miejsce przechowywania danych. Programiści często wykonują tę operację, ponieważ wymaga to przechowywania danych w krótkim czasie, na przykład podczas testowania lub przetwarzania danych tymczasowych.
 
-## Jak to zrobić
-
-Tworzenie tymczasowych plików w Rust jest stosunkowo proste. Wystarczy użyć funkcji `tempfile::tempdir()` lub `tempfile::tempfile()` z biblioteki `tempfile`. Następnie możemy wykonać operacje na tym pliku, na przykład zapisywać do niego dane lub odczytywać je z niego.
+## Jak to zrobić?
 
 ```Rust
-use tempfile::{tempdir, TempDir, TempFile};
-use std::io::{Read, Write};
+use std::fs::File; // importowanie modułu File z biblioteki standardowej
 
-// Tworzenie tymczasowego katalogu
-let tmp_dir: TempDir = tempdir().expect("Nie można utworzyć tymczasowego katalogu");
+let temp_file = File::create("example.txt")?; // tworzenie pliku tymczasowego o nazwie "example.txt" i zwracanie błędu, jeśli operacja się nie powiedzie
 
-// Tworzenie tymczasowego pliku
-let mut tmp_file: TempFile = tmp_dir
-    .create("example.txt")
-    .expect("Nie można utworzyć tymczasowego pliku");
-
-// Zapisywanie danych
-write!(tmp_file, "Przykładowe dane").expect("Nie można zapisać danych do pliku");
-
-// Odczytywanie danych
-let mut contents = String::new();
-tmp_file
-    .read_to_string(&mut contents)
-    .expect("Nie można odczytać zawartości pliku");
-
-// Zamykanie tymczasowego pliku i katalogu
-drop(tmp_file);
-drop(tmp_dir);
+temp_file.write_all(b"Hello, world!")?; // zapisywanie danych do pliku tymczasowego
 ```
 
-Możemy również użyć metody `persist()` w celu zachowania tymczasowego pliku po zakończeniu działania programu.
+## Wnikliwa analiza
 
-```Rust
-let tmp_file = tmp_dir
-    .create("example.txt")
-    .expect("Nie można utworzyć tymczasowego pliku");
-tmp_file.persist("new_name.txt").expect("Nie można zapisać pliku");
-```
+W przeszłości, programiści często używali plików tymczasowych do przechowywania danych, które nie potrzebowały długotrwałego przechowywania lub były potrzebne tylko w krótkim czasie. Jednak w dzisiejszych czasach, z wykorzystaniem pamięci RAM i innych technologii, korzystanie z plików tymczasowych nie jest już tak powszechne.
 
-## Wnikliwiej
+Alternatywą dla tworzenia plików tymczasowych w systemie operacyjnym są struktury danych w pamięci, takie jak tablice lub listy. Jednak w niektórych przypadkach tworzenie plików tymczasowych może być wydajniejsze lub niezbędne.
 
-Tworzenie tymczasowych plików z biblioteką `tempfile` jest bezpieczne dla wielowątkowości i odporniejsze na błędy niż samo używanie metod `File::create()` i `PathBuf::push()`. Ponadto, przy zakończeniu działania programu, wszystkie tymczasowe pliki zostaną automatycznie usunięte.
+Implementacja tworzenia plików tymczasowych jest różna w zależności od systemu operacyjnego i języka programowania. W języku Rust, możemy skorzystać z modułu `std::fs`, który zawiera metody do tworzenia i obsługi plików.
 
-Przy używaniu metod `persist()`, tworzymy kopię tymczasowego pliku z zachowaniem atrybutów i dat modyfikacji. Może to być pomocne, gdy chcemy zachować wyniki testów lub danych tymczasowych, aby analizować je później.
+## Zobacz także
 
-## Zobacz również
-
-- [Dokumentacja biblioteki `tempfile`](https://docs.rs/tempfile/latest/tempfile/)
-- [Porównanie tworzenia tymczasowego pliku z i bez biblioteki `tempfile`](https://deterministic.space/tempfile.html)
-- [Wzorcowy projekt wykorzystujący tworzenie i zachowywanie tymczasowych plików](https://github.com/Galli99/tempfile-example)
+- Dokumentacja dla modułu `std::fs` w języku Rust: https://doc.rust-lang.org/std/fs/index.html
+- Poradnik dotyczący zarządzania plikami w języku Rust: https://doc.rust-lang.org/1.1.0/book/files.html
+- Inne możliwe sposoby przechowywania danych tymczasowych w systemie operacyjnym: np. korzystanie z pamięci RAM, plików cookie w przeglądarkach internetowych.

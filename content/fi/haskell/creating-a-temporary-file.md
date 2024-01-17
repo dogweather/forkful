@@ -10,47 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Miksi: Miksi luoda väliaikainen tiedosto?
+## Mitä ja miksi?
+Luodessa ohjelmia, saattaa joskus olla tarpeen luoda väliaikaisia tiedostoja. Tämä voi tapahtua esimerkiksi silloin, kun ohjelmalle tarvitaan tallennustila väliaikaisille tiedoille tai kun halutaan kopioida tiedostoja ennen niiden muokkaamista. Väliaikaiset tiedostot ovat siis vain väliaikaisessa käytössä ja poistetaan yleensä lopuksi.
 
-Väliaikaisen tiedoston luominen on hyödyllistä silloin, kun tarvitaan väliaikaista tallennustilaa ohjelman suorituksen aikana. Se voi auttaa välttämään turhia tallennuksia pysyviin tiedostoihin ja mahdollistaa ohjelman suorituksen jälkeen tiedoston poistamisen varmistaen, ettei turhia tiedostoja jää jäljelle.
-
-## Kuinka: Väliaikaisen tiedoston luominen
-
-Väliaikaisen tiedoston luominen Haskellissa on helppoa käyttämällä 'System.IO.Temp' -kirjastoa. Esimerkiksi, seuraava koodi luo väliaikaisen tiedoston nimellä "temp.txt" ja kirjoittaa siihen tekstin "Tämä on väliaikainen tiedosto.":
+## Miten:
+Haskell-ohjelmassa väliaikaisen tiedoston luominen tapahtuu Functools-moduulin avulla käyttäen `withTempFile`-funktiota. Tämä avaa uuden väliaikaisen tiedoston ja palauttaa sen tiedostonimen sekä avaamisen yhteydessä luodun kahva-objektin. Tässä esimerkki koodista:
 
 ```Haskell
-import System.IO.Temp
+import System.IO.Temp (withTempFile)
 
-main = do
-    withSystemTempFile "temp.txt" $ \path handle -> do
-        hPutStrLn handle "Tämä on väliaikainen tiedosto."
+main = withTempFile "temporary.txt" $ \tempFilePath tempFileHandle -> do
+    putStrLn $ "Luotiin väliaikainen tiedosto: " ++ tempFilePath
+    hPutStrLn tempFileHandle "Tässä on väliaikaisen tiedoston sisältö."
 ```
 
-Mikäli haluat käyttää tiedostoa muissa funktioissa, voit sen sijaan käyttää 'withTempFile' -funktiota, joka palauttaa tiedoston polun. Esimerkiksi:
+Tämän koodin suorittamisen jälkeen prosessin juurikansioon luodaan tiedosto nimeltä `temporary.txt`, joka sisältää tekstirivin "Tässä on väliaikaisen tiedoston sisältö.".
+
+## Syvempi sukellus:
+Väliaikaisen tiedoston luomisesta on monta eri tapaa. Ennen `withTempFile`-funktion lisäämistä Functools-moduuliin, väliaikaisia tiedostoja luotiin yleensä system-kutsulla. Tässä on esimerkki koodista, joka käyttää system-kutsua luomaan väliaikaisen tiedoston:
 
 ```Haskell
-import System.IO.Temp
+import System.Process
 
 main = do
-    tmpFilePath <- withTempFile "temp.txt" $ \path handle ->
-        return path
-    putStrLn $ "Väliaikainen tiedosto luotu polkuun: " ++ tmpFilePath
+    (tempFilePath, tempFileHandle) <- readProcess "mktemp" ["-q", "temporaryXXXXXX.txt"] ""
+    putStrLn $ "Luotiin väliaikainen tiedosto: " ++ tempFilePath
+    writeFile tempFilePath "Tässä on väliaikaisen tiedoston sisältö."
 ```
 
-Output: Väliaikainen tiedosto luotu polkuun: /tmp/tmp11322.txt
+On hyvä huomata, että `withTempFile`-funktio huolehtii automaattisesti väliaikaisen tiedoston poistamisesta, kun taas system-kutsua käytettäessä tämä tulee tehdä itse koodin avulla.
 
-## Deep Dive: Väliaikaisen tiedoston luomisen mekanismi
-
-Väliaikaisen tiedoston luominen 'System.IO.Temp' -kirjaston avulla tapahtuu seuraavalla tavalla:
-
-1. Kirjasto luo väliaikaisen hakemiston käyttäen järjestelmän 'tmp' hakemistoa.
-2. Tiedoston nimi ja polku generoidaan käyttäen satunnaisgeneraattoria.
-3. Tiedosto avataan ja käyttäjän antama koodi suoritetaan.
-4. Ohjelman suorituksen jälkeen tiedosto poistetaan ja hakemisto tyhjennetään.
-
-Väliaikaisen tiedoston luominen on siis turvallinen tapa käyttää väliaikaista tallennustilaa ohjelmassa.
-
-## Katso myös
-
-- https://hackage.haskell.org/package/temporary - Toinen kirjasto väliaikaisen tiedoston luomiseen Haskellissa.
-- https://www.haskell.org/ - Virallinen Haskellin sivusto, jonka kautta voit löytää paljon lisätietoa ja resursseja kieleen liittyen.
+## Katso myös:
+- [Haskellin Functools-moduulin dokumentaatio](https://hackage.haskell.org/package/functools/docs/System-IO-Temp.html)
+- [Haskellin system-kutsun dokumentaatio](https://hackage.haskell.org/package/process/docs/System-Process.html)

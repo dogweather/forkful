@@ -10,45 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué trabajar con YAML en Clojure?
+## ¿Qué y por qué?
+Trabajar con YAML es una forma simple y estructurada de almacenar y transmitir datos. Los programadores utilizan YAML porque permite una fácil lectura y escritura, y es compatible con una amplia gama de lenguajes de programación.
 
-YAML es un lenguaje de formato de datos simple y legible por humanos que se utiliza ampliamente para representar estructuras de datos. En Clojure, su uso es especialmente útil para configurar aplicaciones y sistemas, ya que permite la definición de estructuras de datos complejas de manera sencilla.
-
-## Cómo trabajar con YAML en Clojure
-
-Para trabajar con YAML en Clojure, se utiliza la librería de código abierto "clj-yaml", que proporciona funciones para leer y escribir archivos YAML. A continuación, se presentan algunos ejemplos de cómo usar esta librería.
-
+## Cómo hacerlo:
 ```Clojure
-(ns my-app.core
-  (:require [clj-yaml.core :as yaml]))
+;; Importar la librería YAML
+(require '[yaml.core :as yaml])
 
-;; Leer un archivo YAML
-(def data (yaml/read-yaml "config.yml"))
-;; La variable "data" ahora contiene la estructura de datos definida en el archivo YAML
+;; Crear un mapa con datos
+(def datos {:nombre "Juan" :edad 25 :lenguajes ["Clojure" "Python" "Java"]})
 
-;; Convertir una estructura de datos a YAML
-(def user {:name "John", :age 25, :city "New York"})
-(yaml/generate-yaml user)
-;; Se obtiene la siguiente salida:
-;; "name: John\nage: 25\ncity: New York\n"
+;; Convertir el mapa a formato YAML
+(yaml/generate-string datos)
 
-;; Actualizar un archivo YAML existente
-(yaml/write-yaml "config.yml" {:mode "production"})
-;; El contenido del archivo "config.yml" ahora es:
-;; "mode: production\n"
-
+;; Salida: "nombre: Juan\nedad: 25\nlenguajes:\n - Clojure\n - Python\n - Java"
 ```
 
-## Profundizando en el uso de YAML en Clojure
+## Profundizando:
+YAML fue creado por Clark Evans en el 2001 para solucionar problemas comunes en la configuración de proyectos. Algunas alternativas a YAML son JSON y XML, pero YAML es más legible y fácil de escribir. En Clojure, YAML se implementa a través de la librería "yaml-clojure".
 
-La librería "clj-yaml" también proporciona algunas funciones adicionales para trabajar con YAML de manera más avanzada.
-
-- La función "generate-yaml-optimized" permite generar YAML más eficientemente al usar un mapa de códigos de caracteres en lugar de cadenas literales.
-- Se pueden utilizar las funciones "read-yaml-string" y "write-yaml-string" para trabajar con cadenas de texto en lugar de archivos.
-- Para manejar errores de manera adecuada, se pueden usar las funciones "load-reader" y "emit-writer" para obtener lectores y escritores personalizados.
-
-## Ver también
-
-- [Sitio oficial de YAML](https://yaml.org/)
-- [Librería "clj-yaml"](https://github.com/lancepantz/clj-yaml)
-- [Tutorial de YAML en Clojure](https://medium.com/@jacobobryant/working-with-yaml-in-clojure-2ef1f621f786)
+## Ver también:
+- [Documentación oficial de YAML](https://yaml.org/)
+- [YAML en Clojure](https://github.com/yaml-clojure/yaml-clojure)
+- [Diferencias entre YAML, JSON y XML](https://yaml.org/YAML_vs_XML.html)

@@ -1,7 +1,7 @@
 ---
-title:                "Eine Textdatei schreiben"
-html_title:           "C++: Eine Textdatei schreiben"
-simple_title:         "Eine Textdatei schreiben"
+title:                "Das Schreiben einer Textdatei"
+html_title:           "C++: Das Schreiben einer Textdatei"
+simple_title:         "Das Schreiben einer Textdatei"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Files and I/O"
@@ -10,77 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Warum
+# Was & Warum?
 
-Das Schreiben von Textdateien ist eine grundlegende Fähigkeit in vielen Programmiersprachen, einschließlich C++. Es ermöglicht Programmierern, Daten in einer Datei zu speichern und später wieder auf sie zuzugreifen. Dies ist besonders nützlich, um große Datenmengen zu organisieren und zu verwalten.
+Das Schreiben einer Textdatei ist im Grunde genommen das Verfassen von Text in einer Datei. Programmierer tun dies, um Informationen zu speichern und sie später wieder abrufen zu können, anstatt sie jedes Mal neu eingeben zu müssen.
 
-# Wie geht's
-
-Um eine Textdatei in C++ zu schreiben, müssen wir zuerst die Header-Datei `fstream` einbinden. Dann können wir ein Objekt der Klasse `ofstream` erstellen, das uns ermöglicht, die Datei zu öffnen und zu schreiben.
+# Wie?
 
 ```C++
+#include <iostream>
 #include <fstream>
 
+using namespace std;
+
 int main() {
-  // Öffne eine Datei mit dem Namen "example.txt" im Schreibmodus
-  std::ofstream datei("example.txt");
+  // Erstellen einer Textdatei
+  ofstream file;
+  file.open("textdatei.txt");
+
+  // Schreiben von Text in die Datei
+  file << "Dies ist ein Beispieltext.";
+
+  // Schließen der Datei
+  file.close();
   
-  // Schreibe eine Zeichenkette in die Datei
-  datei << "Hallo, Welt!";
-  
-  // Schließe die Datei
-  datei.close();
-  
+  // Öffnen der Datei und Ausgabe
+  ifstream read_file("textdatei.txt");
+  string text;
+  while (getline(read_file, text)) {
+      cout << text << endl;
+  }
+  read_file.close();
+
   return 0;
 }
 ```
 
-Um weitere Zeilen in die Datei zu schreiben, können wir die `<<` Operatorüberladung weiter verwenden oder die `write()` Funktion verwenden.
+Ausgabe:
 
-```C++
-// Weitere Zeilen schreiben
-datei << "Dies ist eine weitere Zeile.";
-datei.write("Noch eine Zeile!", 16);  // Schreibt die ersten 16 Charaktere der Zeichenkette
-```
+Dies ist ein Beispieltext.
 
-Nachdem wir die Datei geschrieben haben, müssen wir sicherstellen, dass wir sie schließen, um sie zu speichern und Ressourcen freizugeben.
+# Tiefere Einblicke
 
-# Tiefer eintauchen
+Das Schreiben von Textdateien gibt es schon seit Beginn der Programmierung. In der Vergangenheit wurden dafür sogenannte "Druckausgaben" verwendet, die auf einem Zettel oder einer Karte angebracht wurden. Heutzutage gibt es auch alternative Möglichkeiten, um Daten zu speichern, wie zum Beispiel Datenbanken.
 
-Um eine Textdatei effizienter zu schreiben, können wir die Datei im Binärmodus öffnen und die `write()` Funktion verwenden, um ganze Datenstrukturen zu schreiben. Dies ist nützlich, wenn wir beispielsweise eine Klasse haben, die wir in der Datei speichern möchten.
-
-```C++
-#include <fstream>
-
-class Person {
-  private:
-    std::string name;
-    int alter;
-    
-  public:
-    // Konstruktor, Getter und Setter
-};
-
-int main() {
-  // Öffne eine Datei im Binärmodus
-  std::ofstream datei("personen.txt", std::ios::binary);
-  
-  // Erstelle ein Objekt der Klasse Person
-  Person person("Max", 25);
-  
-  // Schreibe das Objekt in die Datei
-  datei.write((char*)&person, sizeof(person));
-  
-  // Schließe die Datei
-  datei.close();
-  
-  return 0;
-}
-```
-
-Dies zeigt, wie wir komplexe Datenstrukturen in einer Textdatei speichern können, anstatt nur Zeichenketten oder einfache Datentypen. Wir können dann die `read()` Funktion verwenden, um die Daten aus der Datei wiederherzustellen.
+Beim Schreiben einer Textdatei müssen Programme bestimmte Regeln und Formatierungen einhalten, um die Datei korrekt zu erstellen. Dazu gehören auch die Verwendung von Zeilenumbrüchen und die richtige Codierung.
 
 # Siehe auch
 
-- [Ein Blick auf die verschiedenen Dateimodi in C++](https://www.geeksforgeeks.org/different-modes-open-files-c/)
-- [C++-Referenz für die Header-Datei `fstream`](https://www.cplusplus.com/reference/fstream/)
+- [C++ ifstream & ofstream](https://www.geeksforgeeks.org/basic-input-output-c/)
+- [Textdatei speichern mit C++](https://www.programiz.com/cpp-programming/files-input-output)
+- [Verschiedene Dateiformate](https://www.digitalocean.com/pricing/#:~:text=Welcome-,to%20the%20World%2Drenowned%20Digital%20Ocean%20Network,-With%2012%20data)

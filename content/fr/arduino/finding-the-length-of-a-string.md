@@ -1,7 +1,7 @@
 ---
-title:                "Trouver la longueur d'une chaîne de caractères"
-html_title:           "Arduino: Trouver la longueur d'une chaîne de caractères"
-simple_title:         "Trouver la longueur d'une chaîne de caractères"
+title:                "Trouver la longueur d'une chaîne"
+html_title:           "Arduino: Trouver la longueur d'une chaîne"
+simple_title:         "Trouver la longueur d'une chaîne"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Strings"
@@ -10,59 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Quoi & Pourquoi?
+Trouver la longueur d'une chaîne de caractères est une tâche essentielle pour les programmeurs. Cela leur permet de vérifier et de manipuler facilement les textes dans leurs programmes. Cette opération est également utile pour les entrées utilisateur et les fonctions de traitement des chaînes de caractères.
 
-Vous vous êtes peut-être déjà demandé comment savoir la longueur d'une chaîne de caractères dans votre code Arduino. Cette information peut être utile pour effectuer certaines opérations ou pour vérifier si une entrée utilisateur est valide. Dans cet article, nous allons vous montrer comment trouver la longueur d'une chaîne de caractères en utilisant le langage de programmation Arduino.
-
-## Comment faire
-
-Pour trouver la longueur d'une chaîne de caractères en utilisant Arduino, nous allons utiliser une fonction appelée `strlen()`. Cette fonction n'est pas spécifique à Arduino, elle est disponible dans de nombreux langages de programmation.
-
-Voici un exemple de code utilisant la fonction `strlen()` pour trouver la longueur d'une chaîne de caractères :
-
+## Comment faire:
 ```
-Arduino Code :
-
-// Déclaration d'une chaîne de caractères
-char nom[] = "John";
-
-// Utilisation de la fonction strlen()
-int longueur = strlen(nom);
-
-// Affichage de la longueur de la chaîne
-Serial.println(longueur);
-
+Arduino
+char string[] = "Bonjour";
+int length = strlen(string);
+Serial.println(length);  // Output: 7
 ```
 
-Ce code va afficher la valeur 4, car la chaîne de caractères "John" contient 4 lettres.
-
-Il est important de noter que la longueur retournée par la fonction `strlen()` ne prend pas en compte le caractère de fin de chaîne (\0). Par exemple, si vous utilisez la chaîne "Bonjour!" avec la fonction `strlen()`, la longueur retournée sera de 7 et non de 8.
-
-## Plongeon en profondeur
-
-Il existe également une autre fonction disponible sur Arduino pour trouver la longueur d'une chaîne de caractères : `sizeof()`. Cette fonction renvoie le nombre total d'octets utilisé par la variable donnée, y compris le caractère de fin de chaîne.
-
-Prenons l'exemple suivant :
+Il est important de noter que la longueur d'une chaîne de caractères est comptée à partir de 0, ce qui signifie que la longueur de la chaîne "Bonjour" sera de 6 et non pas 7, car le premier caractère est compté comme 0.
 
 ```
-Arduino Code :
-
-// Déclaration d'une chaîne de caractères
-char nom[] = "John";
-
-// Utilisation de la fonction sizeof()
-int longueur = sizeof(nom);
-
-// Affichage de la longueur de la chaîne
-Serial.println(longueur);
-
+Arduino
+int length = sizeof(string);  // Output: 8
 ```
 
-Dans ce cas, la valeur affichée sera de 5, car la chaîne "John" utilise 5 octets en mémoire (4 pour les lettres du nom et 1 pour le caractère de fin de chaîne).
+La méthode ```sizeof()``` renvoie la taille en bytes d'une variable, donc la longueur de la chaîne "Bonjour" sera de 8, car elle inclut également l'espace pour le caractère de fin de chaîne.
 
-Cependant, il est important de noter que la fonction `sizeof()` ne fonctionne pas pour les chaînes de caractères dynamiques (déclarées à l'aide de la fonction `malloc()`). Elle ne fonctionne que pour les chaînes de caractères statiques (déclarées à l'aide de `char nom[]`).
+## Plongée en profondeur:
+Trouver la longueur d'une chaîne de caractères n'était pas une opération aussi simple dans les premiers langages de programmation. Les programmeurs devaient utiliser des boucles pour compter le nombre de caractères dans une chaîne. Cependant, avec l'introduction de la bibliothèque de fonctions standard, la fonction ```strlen()``` a été créée pour simplifier cette tâche.
 
-## Voir aussi
+Il existe également d'autres méthodes pour trouver la longueur d'une chaîne de caractères, telles que la méthode ```length()```, qui renvoie le nombre de caractères dans une chaîne et exclut le caractère de fin de chaîne, et la méthode ```size()```, qui renvoie la taille totale de la chaîne en bytes.
 
-- [Documentation officielle Arduino sur la fonction `strlen()`](https://www.arduino.cc/reference/en/language/functions/string/strlen/)
-- [Documentation officielle Arduino sur la fonction `sizeof()`](https://www.arduino.cc/reference/en/language/functions/general-functions/sizeof/)
+Il est important de noter que les chaînes de caractères sont des tableaux de caractères en mémoire, et la première adresse de la chaîne est utilisée pour stocker le nombre de caractères dans la chaîne.
+
+## Voir aussi:
+- [La fonction strlen() dans la bibliothèque de fonctions standard C](https://www.tutorialspoint.com/c_standard_library/string_h.htm)
+- [Comparaison de différentes méthodes pour trouver la longueur d'une chaîne en C++](https://www.geeksforgeeks.org/finding-length-of-a-string-in-cpp/)

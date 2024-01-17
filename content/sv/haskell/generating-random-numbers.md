@@ -1,7 +1,7 @@
 ---
-title:                "Generera slumpmässiga nummer"
-html_title:           "Haskell: Generera slumpmässiga nummer"
-simple_title:         "Generera slumpmässiga nummer"
+title:                "Generering av slumpmässiga nummer"
+html_title:           "Haskell: Generering av slumpmässiga nummer"
+simple_title:         "Generering av slumpmässiga nummer"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Numbers"
@@ -10,50 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
-Att generera slumpmässiga nummer är ett vanligt verktyg inom programmering och kan användas för allt från spel och simulationsprogram till kryptering och testning av kod. Genom att lära sig hur man genererar slumpmässiga nummer i Haskell, kan du öka din förståelse för språkets funktioner och skapa mer dynamiska och användbara program.
+## Vad & Varför?
+Generera slumpmässiga nummer är en vanlig uppgift bland programmerare. Det är helt enkelt processen att skapa en sekvens av nummer som verkar slumpmässigt. Detta kan vara användbart för att testa algoritmer, simuleringar eller spel, och det ger en annan dimension av variabilitet till en annars statisk kod.
 
-## Så här gör du
-För att generera slumpmässiga nummer i Haskell använder vi funktionen ```randomR``` från standardbiblioteket "System.Random". Denna funktion tar emot en intervall av värden och returnerar ett slumpmässigt nummer inom detta intervall. Låt oss titta på ett exempel:
-
-```Haskell
+## Så här:
+``` Haskell
 import System.Random
 
-main = do
-  num <- randomR (1, 10) --skapar ett slumpmässigt nummer mellan 1 och 10
-  putStrLn ("Ditt slumpmässiga nummer är: " ++ show num)
+-- Genererar ett slumpmässigt heltal från 1 till 10
+randomInt :: IO Int
+randomInt = randomRIO (1, 10)
+
+-- Genererar ett slumpmässigt flyttal från 0 till 1
+randomFloat :: IO Float
+randomFloat = randomIO
+
+-- Genererar en sekvens av 5 slumpmässiga heltal från 1 till 100
+randomList :: IO [Int]
+randomList = replicateM 5 (randomRIO (1, 100))
+
+-- Exempel på utskrift:
+-- 9
+-- 0.5977689417028006
+-- [77, 49, 20, 13, 82]
 ```
 
-### Resultat
+## Djupdykning:
+Att generera slumpmässiga nummer har varit en utmaning sedan de första elektroniska datorerna uppfanns. Historiskt sett har olika metoder använts, såsom att använda väderobservationer eller radioaktiv nedbrytning. Idag används vanligtvis pseudoslumpgeneratorer, vilket innebär att de genererar en sekvens av nummer som verkar slumpmässiga, men som i själva verket är deterministiska och baserade på en startpunkt kallad en seed. Det finns också andra metoder, som kryptografiska slumpgeneratorer, som ger högre kvalitet på slumpmässigheten. 
 
-```
-Ditt slumpmässiga nummer är: 7
-```
+Alternativet till att generera slumpmässiga nummer är att använda statiska värden eller fördefinierade listor. Detta kan vara tillräckligt i vissa fall, men kan inte replikera den dynamiska och oförutsägbara naturen hos slumpmässiga nummer.
 
-Genom att använda funktionen ```randomR``` kan vi också generera slumpmässiga tecken och strängar. Låt oss se hur det skulle se ut i kod:
+I Haskell implementeras slumpmässiga nummer med hjälp av en monad, vilket är en speciell typ av datatype som hanterar sidoeffekter. Detta ger en säker och enkel metod för att generera slumpmässiga nummer, samtidigt som det bibehåller programmets funktionella natur.
 
-```Haskell
-import System.Random
-
-main = do
-  char <- randomR ('a', 'z') --skapar ett slumpmässigt tecken mellan a och z
-  putStrLn ("Ditt slumpmässiga tecken är: " ++ [char])
-  
-  str <- sequence $ take 10 $ repeat (randomR ('a','z')) --skapar en slumpmässig sträng med 10 tecken
-  putStrLn ("Din slumpmässiga sträng är: " ++ str)
-```
-
-### Resultat
-
-```
-Ditt slumpmässiga tecken är: k
-Din slumpmässiga sträng är: divingngek
-```
-
-## Djupdykning
-Vid generering av slumpmässiga nummer använder Haskell en algoritm kallad "Mersenne Twister". Detta är en pseudoslumpgenerator som baseras på matematisk beräkning och inte på faktiska slumpmässiga händelser. Detta innebär att generatorn kan återskapa samma sekvens av slumpmässiga nummer om den ges samma startvärde, vilket kan vara användbart för testning av kod. Det finns också andra funktioner och metoder för att generera slumpmässiga nummer i Haskell, som exempelvis "random", "randomRs" och "getStdGen". Genom att utforska och experimentera med dessa funktioner kan du skapa mer avancerade och mångsidiga program.
-
-## Se även
-- [Haskell.org](https://www.haskell.org/)
-- [Haskell Standardbibliotek](https://hackage.haskell.org/package/base-4.16.0.0/docs/System-Random.html)
-- [Mersenne Twister](https://en.wikipedia.org/wiki/Mersenne_Twister)
+## Se även:
+- [Random number generation in Haskell - Hackage](https://hackage.haskell.org/package/random-1.2.0/docs/System-Random.html)
+- [Haskell Wiki - Random numbers](https://wiki.haskell.org/Random_numbers)

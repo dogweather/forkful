@@ -1,7 +1,7 @@
 ---
-title:                "将字符串转换为小写"
-html_title:           "Haskell: 将字符串转换为小写"
-simple_title:         "将字符串转换为小写"
+title:                "转换字符串为小写"
+html_title:           "Haskell: 转换字符串为小写"
+simple_title:         "转换字符串为小写"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -10,29 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
+## 什么是字符串转换为小写？为什么程序员要这么做？
 
-将字符串转换为小写形式可能是数据处理过程中的一个常见任务。例如，当需要将用户输入的用户名标准化为小写形式时，或者在进行字符串比较时忽略大小写，都会用到这个功能。
+字符串转换为小写是指将字符串中的所有字母都转换为小写。程序员通常会这么做是因为在编程中，字符串的大小写是敏感的，因此为了减少比较的复杂性，我们需要将字符串统一为同一种大小写形式。
 
-## 如何做
+## 如何操作：
 
-下面是一个示例代码，在Haskell中如何将字符串转换为小写形式：
+```Haskell
+import Data.Char (toLower)
 
+-- 将字符串中的所有字母转换为小写
+lowercaseString :: String -> String
+lowercaseString str = map toLower str
+
+-- 输出示例
+lowercaseString "HELLO, WORLD!"  
+-- "hello, world!" 
 ```
-Haskell
-toLower :: String -> String
-toLower = map toLower
-```
 
-输入："HELLO WORLD"
+## 深入了解：
+字符串转换为小写的思想源于计算机科学中的ASCII编码，ASCII编码规定了每个字符对应的十进制数值，大写字母和小写字母的数值相差32。因此，通过将字符的数值加上或减去32，就可以实现大小写的转换。除了使用```Data.Char```中的```toLower```函数外，我们还可以使用```ord```和```chr```函数来实现这种转换。
 
-输出："hello world"
-
-## 深入探讨
-
-在Haskell中，我们可以使用`map`函数将一个函数应用到一个列表中的每个元素上。在上面的例子中，我们将`toLower`函数应用到字符串的每个字符上，从而实现了字符串转换为小写的功能。另外值得注意的是，Haskell中的字符串实际上是由字符列表构成的，所以我们可以直接使用`map`函数，而不需要额外的处理。
-
-## 参考链接
-
-- [Haskell函数式编程入门](https://www.runoob.com/haskell/haskell-tutorial.html)
-- [Haskell官方文档](https://www.haskell.org/documentation/)
+## 相关资料：
+- [Haskell官方文档：Data.Char模块](https://hackage.haskell.org/package/base-4.14.1.0/docs/Data-Char.html)
+- [ASCII编码表](http://www.asciitable.com/)

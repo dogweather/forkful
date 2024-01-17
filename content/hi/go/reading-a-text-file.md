@@ -1,7 +1,7 @@
 ---
-title:                "टेक्स्ट फाइल को पढ़ना"
-html_title:           "Go: टेक्स्ट फाइल को पढ़ना"
-simple_title:         "टेक्स्ट फाइल को पढ़ना"
+title:                "एक पाठ फाइल को पढ़ना"
+html_title:           "Go: एक पाठ फाइल को पढ़ना"
+simple_title:         "एक पाठ फाइल को पढ़ना"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Files and I/O"
@@ -10,41 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Kyun
-Is article ka maksad aapko sikhana hai ki kaise aap Go programming language mein ek text file ko read kar sakte hain. Agar aap code karne mein interested hain ya fir aapko keval curiosity hai to bhi yeh article aapke liye helpful hoga.
+नमस्ते Hindi रीडर्स! आपके लिए एक गो (वर्तमान संस्करण) प्रोग्रामिंग लेख लेकर आया हूँ। यह लेख आधार पर है कि आपको हिंदी में एक सामान्य भाषा में एक अनुभव उपलब्ध होना चाहिए जो गो प्रोग्रामिंग के बारे में है। हम सामान्य और समानान्तर शैली को अपनाएंगे जो कि आपको हिंदी में एक सरल और अधिक असरकारक तरीके से गो का एक प्राथमिक ज्ञान दे देगी।
 
-## Kaise
+## यह क्या है और क्यों?
+तो, आप ने अपने कंप्यूटर पर टेक्स्ट फ़ाइल पढ़ने का विकल्प देखा होगा। शायद आपने एक नोटपैड या किसी अन्य साधन से उस फ़ाइल को खोला होगा। यह बहुत सारे प्रोग्रामर्स को इससे क्या फायदा हो सकता है पहचानने में मदद करता है की वह अपने संगठनों और प्रोजेक्ट्स से उन प्रतियोगी मुकाबलों को कैसे हासिल कर सकते हैं जो इस प्रकार की जानकारी का लाभ उठाते हैं।
+
+## कैसे:
+गो ऐसे सेटअप की अनुमति देता है जो कि आप आसानी से फ़ाइल पढ़ सकते हैं। नीचे दिए गए कोड ब्लॉक को सेटअप करने के बाद आप अपनी फ़ाइल के साथ कुछ काम कर सकते हैं।
+
 ```Go
 package main
 
 import (
-    "fmt"
-    "io/ioutil"
+	"fmt"
+	"io/ioutil"
 )
 
 func main() {
-    // Text file ka path define karna
-    path := "example.txt"
+	// फ़ाइल को खोलें
+	file, err := ioutil.ReadFile("example.txt")
+	if err != nil {
+		fmt.Println(err)
+	}
 
-    // File ko read karne ke liye ioutil ka use karna
-    content, err := ioutil.ReadFile(path)
-    if err != nil {
-        fmt.Println("Error while reading file:", err)
-    }
-
-    fmt.Println(string(content)) // File ke content ko print karna
+	// फ़ाइल का सामना करें
+	fmt.Println(string(file))
 }
 ```
 
-Output:
-```
-Hello, world!
-This is an example text file.
-```
+जैसा कि आप ऊपर देख सकते हैं, हमने "example.txt" नामक फ़ाइल को खोला है और उसकी सामग्री को प्रिंट किया है। यदि कोड में कोई त्रुटि आ जाती है, तो हम उसको विशेष रूप से पकड़ सकते हैं और सोच सकते हैं कि क्या हुआ है और उसे ठीक कैसे किया जा सकता है।
 
-## Deep Dive
-Text files ko read karna Go programming language mein kaafi easy aur efficient hai. Humne ioutil package ka use kiya hai kyunki yeh file ki content ko string format mein return karta hai. Lekin agar aapke paas file ka koi aur format hai, jaise CSV ya JSON, toh aapko corresponding package ka use karna hoga.
-
-## Dekhiye Bhi
-- [Official Go Documentation on File Input/Output](https://golang.org/pkg/io/ioutil/)
-- [Tutorial on Reading and Writing Files in Go](https://tutorialedge.net/golang/reading-and-writing-files-in-go/)
+## गहराई तक:
+आप शायद जानते हों कि गो का पहला आविष्कार १९९४ में रॉबर्ट ग्रामस के द्वारा किया गया था और यह आज भी अपने विशाल प्रयोग के लिए अभी तक प्रयुक्त हो रहा है। और जब बात होती है कोडिंग की तो गो कोड को निर्देशित करने के लिए एक अधिक उत्कृष्ट तरीका है जो दुनिया भर के प्रोग्रामर्स को लक्ष्यित करता है कि वे अपनी दया में कुशल और सरल तरीके से कोडिंग करने का समय बन सकते है

@@ -10,37 +10,74 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## למה
-המחשבתך תצטרך לחשב תאריכים בעתיד או בעבר משמשת בדרך כלל ליצירת לוחות זמנים או לתזמון אירועים. אם נחשב שיש תכניות לשינוי של מועד או להזזתו, יכולה להיות שעדיף לתכנן בשנים הבאות. 
+## מה ולמה?
+חישוב תאריך בעתיד או בעבר הוא תהליך שמאפשר למפתחים לחשב תאריך ספציפי בעתיד או בעבר, בהתאם לצורך. זה יכול להיות שימושי במגוון רחב של תחומי תכנות, כגון יישומי יעוץ פיננסי, לוחות שנה ועוד. 
 
-## כיצד לעשות זאת
-הבנה של החישובים הנכונים תלויה בקידומת של חומרה והחלטות כלליות אחרות כגון האיישור של ארגומנטים שונים לפונקציה. כדי לחשב תאריכים בעתיד או בעבר, עלינו להשתמש בפונקציות כמו `time.h` ו `locale.h`. הפונקציה `time` מציגה את תאריך ההחשבה הנוכחית הרצויה ו `mktime` ממירה את התאריך לערך בפורמט של פקודת הסיפור. לדוגמה:
+## איך לעשות:
+למפתחים יש כמה דרכים לחשב תאריך בעתיד או בעבר בשפת C. אחת הדרכים הפשוטות היא להשתמש בפונקציות מובנות כמו `mktime()` ו־`localtime()`. ניתן גם להשתמש במודול `time.h` על מנת לגשת לתכונות ולפונקציות נוספות בנושא תאריכים. להלן דוגמאות של קוד ופלט תוצאה עבור חישוב תאריך בעתיד ובעבר:
 
-```
+```C
+// תאריך בעתיד
 #include <stdio.h>
 #include <time.h>
 
-int main() {
-    time_t now = time(NULL);
-    printf("Time since epoch: %ld\n", now);
-    struct tm target;
-    strptime("2027 13;20;05", "%Y %H:%M:%S", &target);
-    // Buffer for strptime.
-    printf("Date: %s", asctime(&target));
-    printf("Target: %ld\n", (long) mktime(&target));
+int main()
+{
+    time_t current_time;
+    struct tm *future_tm;
+    char output[50];
+    
+    time(&current_time); // משיכת הזמן הנוכחי
+    future_tm = localtime(&current_time);
+    // הוספת 7 ימים להזמן הנוכחי
+    future_tm->tm_mday += 7;
+    mktime(future_tm); // חישוב תאריך חדש
+    
+    // הדפסת התאריך בפורמט ספציפי
+    strftime(output, 50, "תאריך בעתיד: %d/%m/%Y", future_tm);
+    printf("%s", output);
     
     return 0;
 }
 ```
-
-### תוצאה:
+פלט התוכנית: 
 ```
-Time since epoch: 1612180218
-Date: Mon Jan  1 13:20:05 2027
-Target: 1745294405
+תאריך בעתיד: 19/06/2021
 ```
 
-## לקרוא עוד
-- [תיעוד הנדל"ת C Function](https://www.codingame.com/playgrounds/14213/how-to-play-with-dates-and-times-in-c/2-calculations-using-c-functions)
-- [מראה נשלט באתר שימוש סיכום תאריך בשפת C](https://www.guru99.com/c-date-time.html)
-- [האינטרנט הבישוי לשפת C מכיל בצורת הדפדפן לקרוא עוד](https://www.tutorialspoint.com/c_standard_library/time_h.htm)
+```C
+// תאריך בעבר
+#include <stdio.h>
+#include <time.h>
+
+int main()
+{
+    time_t current_time;
+    struct tm *past_tm;
+    char output[50];
+    
+    time(&current_time); // משיכת הזמן הנוכחי
+    past_tm = localtime(&current_time);
+    // החלפת המשתנה של יום חודש ל־5
+    past_tm->tm_mday = 5;
+    mktime(past_tm); // חישוב תאריך חדש
+    
+    // הדפסת התאריך בפורמט ספציפי
+    strftime(output, 50, "תאריך בעבר: %d/%m/%Y", past_tm);
+    printf("%s", output);
+    
+    return 0;
+}
+```
+פלט התוכנית:
+```
+תאריך בעבר: 05/06/2021
+```
+
+## חפירה עמוקה:
+פיתוח תאריכים הוא תחום עתיק וחשוב בתחום התכנות. בין האפשרויות הנוספות לחישוב תאריכים בעתיד ובעבר ניתן להשתמש בפונקציות ומודולים ייעודיים כמו `difftime()` ו־`timelocal()` שמאפשרים להשוות בין שני תאריכים ולהמיר תאריך ממחרוזת לבנייה של `struct tm`. כדאי לעיין במקורות למידע נוסף על ניצול תאריכים בתוכנות שלכם.
+
+## ראו גם:
+- [תיעוד רשמי למודול time.h ב־C](https://www.tutorialspoint.com/c_standard_library/time_h.htm)
+- [פוסט בבלוג על חישוב תאריכים בעתיד ובעבר בקוד C](https://www.geeksforgeeks.org/old-date-todays-date-programming-tricks/)
+- [תיעוד לפונקציה mktime ב־C](https://www.cplusplus.com/reference/ctime/mktime/)

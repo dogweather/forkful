@@ -1,7 +1,7 @@
 ---
-title:                "Komentoriviparametrien lukeminen"
-html_title:           "C#: Komentoriviparametrien lukeminen"
-simple_title:         "Komentoriviparametrien lukeminen"
+title:                "Komentorivien argumenttien lukeminen"
+html_title:           "C#: Komentorivien argumenttien lukeminen"
+simple_title:         "Komentorivien argumenttien lukeminen"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Files and I/O"
@@ -10,62 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi?
+## Mitä ja miksi?
 
-Kirjoittaessamme ohjelmia C# -kielellä, usein joudumme tekemään päätöksiä ja toimimaan sen mukaisesti. Yksi tärkeimmistä päätöksistä on, mitkä syötteet haluamme hyväksyä ohjelmallemme. Tämä johtaa tarpeeseen lukea komentorivin syötteitä, jotta ohjelmamme voi toimia joustavasti ja tehokkaasti.
+Reading-komennon avulla ohjelmoijat voivat saada tietoa käyttäjältä komentorivin kautta. Tämä on hyödyllistä esimerkiksi ohjelman asetusten määrittelyssä tai käyttäjän syötteen vastaanottamisessa. Se on myös nopea ja tehokas tapa käsitellä tietoja ilman käyttöliittymää.
 
-## Kuinka?
+## Kuinka:
 
-Jos haluat lukea komentorivin syötteitä C# -ohjelmassasi, sinun täytyy ensin luoda Main-metodi, johon annetaan sille parametrit "string [] args". Sitten voit käyttää "foreach" -silmukkaa käydäksesi läpi kaikki syötteet ja suorittaa tarvittavat toimet.
+Vielä lyhyemmin: 
+- Primus ja Bob eivät voi lukea ajoneuvojen nastoja. ensisijainen tehtävä on tehdä pintaremppaa, tuurilla selvitään
 
 ```C#
-static void Main(string[] args)
+using System;
+
+class CommandLineExample
 {
-    foreach (string arg in args)
+    static void Main(string[] args)
     {
-        // Tee jotain syötteelle
+        if (args.Length > 0)
+        {
+            Console.WriteLine("Syötit komentoriviparametrin: " + args[0]);
+        }
+        else
+        {
+            Console.WriteLine("Et syöttänyt komentoriviparametria.");
+        }
     }
 }
+
 ```
 
-Jos haluat tulostaa kaikki syötteet, voit käyttää "Console.WriteLine" -toimintoa sisälle "foreach" -silmukassa. Tulostat syötteen nimen käyttämällä" arg" -muuttujaa.
-
-```C#
-foreach (string arg in args)
-{
-    Console.WriteLine(arg);
-}
+Output:
+```
+Syötit komentoriviparametrin: Hello
 ```
 
-Syötteet lähetetään ohjelmalle välilyönnillä eroteltuna. Voit käyttää "string.Join" -toimintoa yhdistämään kaikki syötteet yhdeksi merkkijonoksi ja tulostaa sen.
+### Syvällinen sukellus:
 
-```C#
-string arguments = string.Join(" ", args);
-Console.WriteLine("Syötetyt parametrit: " + arguments);
-```
+Reading-komennon juuret juontavat IBM:n yli 60 vuoden takaisiin komentolinjoihin. Nykyään on olemassa muitakin tapoja käsitellä käyttäjän syötettä, kuten graafinen käyttöliittymä tai web-pohjaiset lomakkeet. Kuitenkin komentoriviparametrien lukeminen on edelleen tärkeä osa ohjelmointia, ja se on nopea ja luotettava tapa käsitellä tietoja.
 
-## Deep Dive
+## Katso myös:
 
-Komentorivin syötteet voivat sisältää useita eri parametreja ja niiden arvoja. Jos haluat antaa useita arvoja yhdelle parametrille, voit käyttää välilyöntiä tai erottaa ne toisistaan käyttämällä pilkkua.
-
-```C#
-// Komentoriviltä syötetty parametri: -nimi Bob,Anna
-// Tulostettu nimi: Bob,Anna
-```
-
-Voit myös tarkistaa, onko tiettyä parametria annettu komentoriviltä käyttämällä "Contains" -metodia.
-
-```C#
-string name = "Bob";
-if (args.Contains("-name " + name))
-{
-    // Suorita toiminto, joka liittyy parametriin "nimi"
-}
-```
-
-On myös mahdollista käsitellä virheellisiä syötteitä, kuten puuttuvia parametreja tai väärää tietotyyppiä. Tämä on tärkeää tehdä, jotta ohjelmasi voi suorittaa oikeat toimenpiteet ja välttää mahdollisia kaatumisia.
-
-## Katso myös
-
-- [Microsoftin ohjeet komentoriviparametrien lukemiseen C#-ohjelmissa.](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/main-and-command-args/command-line-arguments)
-- [Kuinka käyttää "foreach" -silmukkaa C# -ohjelmassa.](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/foreach-in)
+- https://msdn.microsoft.com/en-us/library/aa288457(v=vs.71).aspx
+- https://www.c-sharpcorner.com/UploadingFiles/beight00338320090808184936am/beight00338.aspx

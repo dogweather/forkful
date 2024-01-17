@@ -10,80 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
+Generating random numbers is a process where a computer program generates a seemingly random sequence of numbers. Programmers do this for a variety of reasons such as creating randomized passwords, simulating realistic scenarios in games, or testing the performance of algorithms.
 
-Need to add some randomness to your program? Want to simulate real-world scenarios? Generating random numbers can add a touch of unpredictability and help you create more dynamic and realistic applications.
+## How to:
+To generate random numbers in C++, we can use the ```rand()``` function from the ```cstdlib``` library. This function takes no arguments and returns a pseudo-random integer between 0 and ```RAND_MAX```. We can also use the ```srand()``` function to set a seed value for the random number generator.
 
-## How To
-
-Generating random numbers in C++ is fairly straightforward. All you need is the `rand()` function from the standard library and some basic understanding of data types.
-
-To get a random integer between 0 and a specific number, say 10, you can use the following code:
-
-```C++
-int random_number = rand() % 11; // will generate a number between 0 and 10
+Example code:
 ```
-
-To generate a random float between 0 and 1, you can divide the output of `rand()` by `RAND_MAX` (a constant defined in the `cstdlib` library):
-
-```C++
-float random_float = static_cast<float>(rand()) / RAND_MAX;
-```
-
-You can also use the `srand()` function to set a seed for your random numbers. This can be useful if you want to produce the same sequence of random numbers each time you run your program. All you need to do is pass a specific value to `srand()` before calling `rand()`, like this:
-
-```C++
-srand(1234); // sets the seed to 1234
-int random_number = rand(); // will always generate the same output
-```
-
-You can also use the `time()` function to set a seed based on the current time, making your random numbers truly unpredictable:
-
-```C++
-srand(time(0)); // sets the seed based on the current time
-int random_number = rand(); // will produce different output every time you run the program
-```
-
-Here's a sample program to generate 10 random integers between 1 and 100 and print them out:
-
-```C++
+#include <cstdlib> // including the necessary library
 #include <iostream>
-#include <cstdlib>
-#include <ctime>
 
-using namespace std;
-
-int main()
-{
-    // set a seed based on the current time
-    srand(time(0));
-
-    // generate 10 random numbers and print them out
-    for (int i = 0; i < 10; i++)
-    {
-        int random_number = rand() % 100 + 1; // generate a number between 1 and 100
-        cout << random_number << " ";
-    }
-
-    return 0;
+int main() {
+  // setting the seed value to 42
+  srand(42);
+  
+  // generating a random number
+  int num = rand();
+  
+  // printing the number
+  std::cout << "A random number: " << num << std::endl;
+  
+  return 0;
 }
 ```
 
-Output:
+Sample output:
 ```
-37 89 5 72 12 44 61 33 15 97
+A random number: 465
 ```
 
-## Deep Dive
+## Deep Dive:
+The ```rand()``` function uses a pseudo-random number generator (PRNG) algorithm to generate the sequence of numbers. This means that the numbers are not truly random, but they appear to be random for most purposes. The algorithm used by ```rand()``` is not specified by the C++ standard, so it may vary depending on the compiler and implementation.
 
-Behind the scenes, the `rand()` function uses a pseudo-random number generator to generate random numbers. This means that the sequence of numbers it produces is actually deterministic and not truly random. It uses a mathematical algorithm to generate the numbers, starting with a specific initial value called a seed.
+There are also other ways to generate random numbers in C++, such as using the ```random``` library or using third-party random number generator libraries. These may provide different and potentially more robust methods for generating random numbers.
 
-When you use `srand()` to set a seed, you are essentially setting the starting point for the sequence of numbers. Different values for the seed will result in different sequences of numbers, but the same seed will always produce the same sequence.
-
-It's important to note that the `rand()` function is not suitable for cryptography or security-related purposes, as its pseudo-random nature can make it predictable. For such use cases, it's best to use a dedicated cryptographic library.
-
-## See Also
-
-- [C++ documentation on random numbers](https://en.cppreference.com/w/cpp/numeric/random)
-- [Generating pseudo-random numbers in C++](https://www.geeksforgeeks.org/rand-and-srand-in-ccpp/)
-- [Advanced random number generation in C++](https://www.martinbroadhurst.com/generating-random-numbers-in-c.html)
+## See Also:
+- [C++ Reference for rand() function](https://www.cplusplus.com/reference/cstdlib/rand/)
+- [C++ Reference for srand() function](https://www.cplusplus.com/reference/cstdlib/srand/)
+- [C++ Reference for random library](https://www.cplusplus.com/reference/random/)
+- [Third-party random number generator libraries for C++](https://www.slant.co/topics/1792/~c-libraries-for-random-number-generation)

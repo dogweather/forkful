@@ -10,40 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Kyun
-Aaj kal hum sab apne din ka schedule taiyaar karne ke liye laptop, phone, ya kisi dusre electronic device ka istemaal karte hai. In devices me current date ki jaankari lene ke liye PHP programming language ka upyog kiya jaata hai. Isse hum apne applications me tarik, samay, vaar, mahina, ya saal ko daal sakte hai. Aise me aaj hum janenge ki PHP me current date kaise paaya jaata hai.
+## क्या और क्यों?
+वर्तमान तिथि प्राप्त करना क्या है और प्रोग्रामर्स इसे क्यों करते हैं, इसके बारे में दो से तीन वाक्यों में बताएँ।
 
-## Kaise
-Sabse pehle, hume ```date()``` function ka upyog karne ki zaroorat hai. Is function me hum ```d-m-Y``` date format ko specify kar sakte hai. Agar hume sirf current date ki tarik chahiye to hum ```date("d")``` ka upyog kar sakte hai. Agar hum current time ki jaankari lena chahte hai to hum ```date("h:i:sa")``` ka upyog kar sakte hai.
+वर्तमान तिथि प्राप्त करने से, हम अपने एप्लीकेशन या वेबसाइट पर समय को प्रबंधित कर सकते हैं। प्रोग्रामर्स इसे यूजर्स को अपडेटेड समय प्रदान करने के लिए भी करते हैं। इससे हम अपने काम को आसानी से प्रारंभ और समाप्त कर सकते हैं।
 
+## कैसे करें:
 ```PHP
-$date = date("d-m-Y"); //output: 09-09-2020
-$time = date("h:i:sa"); //output: 09:25:29pm
-```
+<?php
+$date = date("Y-m-d");
+echo $date;
+?>
 
-Agar hume current date me timezone ka bhi pata karna hai to hum ```date_default_timezone_set()``` function ka upyog kar sakte hai. Is function me hum ek string ki value pass karke apne desired timezone ko set kar sakte hai. Jaise ki, ```date_default_timezone_set("Asia/Kolkata")``` hume current time India ki timezone ke hisab se dikhayega.
+उपरोक्त कोड में, हमने ```date()``` फंक्शन का उपयोग करके वर्तमान तिथि को प्राप्त किया है। साल, महीना, और दिन को ```Y-m-d``` फॉर्मेट में प्रदर्शित किया गया है। आप अपनी पसंद के अनुसार फॉर्मेट को बदल सकते हैं।
 
-## Deep Dive
-PHP me current date lene ke liye hum ```date()``` function ke alawa bhi kai aur functions ka upyog kar sakte hai. Jaise ki ```getdate()```, jisme hum current date ki jaankari ko associative array ke roop me le sakte hai. Is function me hum day, month, year, time, aur timezone ke saath-saath aur bhi kai properties ko retrieve kar sakte hai.
-
+यदि आप समय को भी प्राप्त करना चाहते हैं, तो आप निम्नलिखित कोड का उपयोग कर सकते हैं:
 ```PHP
-$current_date = getdate();
-echo $current_date["mday"]; //output: 09 (current day)
-echo $current_date["weekday"]; //output: Wednesday(current day of the week)
-echo $current_date["month"]; //output: September (current month)
-echo $current_date["year"]; //output: 2020 (current year)
-```
+<?php
+$date = date("Y-m-d H:i:s");
+echo $date;
+?>
 
-Iske alawa, PHP me hum ```DateTime``` class ka bhi upyog kar sakte hai current date lene ke liye. Is class me hum apne desired format ke according current date ko display kar sakte hai.
+इसमें, आपको उपलब्ध समय के साथ साथ घंटे, मिनट, और सेकंड भी प्राप्त होगा। आप इसको अपनी आवश्यकतानुसार बदल सकते हैं।
 
-```PHP
-$current_date = new DateTime(); 
-echo $current_date->format('d-m-Y'); //output: 09-09-2020
-```
+## गहराई जाँच:
+वर्तमान तिथि को प्राप्त करने के लिए ```date()``` फंक्शन 1984 में PHP में शामिल किया गया था। इससे पहले, यह date एबिलिटी मुमकिन नहीं थी। यूजर्स को वर्तमान तिथि प्रधान करने के लिए सामान्य तौर पर सीधे सर्वर समय का उपयोग किया जाता था।
 
-## See Also
-1. [PHP date format guide](https://www.php.net/manual/en/function.date.php)
-2. [PHP timezones](https://www.php.net/manual/en/timezones.php)
-3. [DateTime class in PHP](https://www.php.net/manual/en/class.datetime.php)
+अन्य विकल्पों के रूप में, आप ```strtotime()``` फंक्शन का भी उपयोग कर सकते हैं। इससे आप अनुमानित समय के लिए समर्थित तारीख या समय प्राप्त कर सकते हैं।
 
-Prakashit kinaron se bahar niklo, aur apne current date ko PHP ke madhyam se paaayega!
+PHP में वर्तमान तिथि प्राप्त करने का सबसे सही तरीका है ```DateTime``` फंक्शन का उपयोग करना। इससे आप विशेष तारीख और समय स्थापित कर सकते हैं और उसके बाद इसे अपनी आवश्यकता के अनुसार फॉर्मेट कर सकते हैं। मानव-पठनीय समय को समर्थन करने के लिए, हमेशा UTC समय का उपयोग करें।
+
+## भी देखे:
+वर्तमान तिथि प्राप्त करने से जुड़े और अधिक जानकारी के लिए, आप ```date()``` और ```DateTime``` फंक्शन के official PHP documentation पर जा सकते हैं। आप [w3schools](https://www.w3schools.com/php/func_date_date.asp) और [tutorials point](https://www.tutorialspoint.com/php/php_date_and_time.htm) क

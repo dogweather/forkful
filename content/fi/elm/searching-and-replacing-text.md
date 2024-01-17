@@ -10,37 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+Mikä & Miksi?
 
-Joskus ohjelmointiprojektissasi voi olla tarve etsiä tiettyä tekstiä koodistasi ja korvata se toisella tekstillä. Tämä voi johtua esimerkiksi vanhanaikaisten funktioiden tai muuttujien nimeämiskäytäntöjen päivittämisestä tai yksinkertaisesti virheellisen tekstikohdan korjaamisesta.
+Hakeminen ja tekstin korvaaminen tarkoittavat tekstin etsimistä ja sen vaihtamista jollain toisella tekstillä. Ohjelmoijat tekevät tätä esimerkiksi korjatessaan virheitä koodissaan tai muokatessaan tekstiä käyttöliittymissä.
 
-## Miten
+Miten:
 
-Voit käyttää Elm:n String-moduulin tarjoamia funktioita tekstinkäsittelyyn. Alla on esimerkki, jossa korvaamme kaikki "hello" sanat "hei".
-
-```Elm
-import String exposing (replace)
-
-sampleString = "Hello world!"
-
-sampleString |> replace "hello" "hei" |> toString -- output: "Hei world!"
-```
-
-Voit myös käyttää tarkempaa haku-toimintoa käyttämällä `Regex.replace` -funktiota. Tässä esimerkissä korvaamme kaikki sanat, jotka alkavat kirjaimilla "ha" ja loppuvat vokaaliin, sanalla "hauska".
+Elm tarjoaa meille muutamia tapoja suorittaa hakemista ja tekstin korvaamista. Voimme käyttää sisäistä funktiota ```String.replace```, kuten alla:
 
 ```Elm
-import Regex exposing (replace)
-
-sampleString = "Olen hajamielinen käyttäjä."
-
-sampleString |> replace (Regex.regex "(ha[a-z])*a") (\_ -> "hauska") |> toString -- output: "Olen hauska käyttäjä."
+String.replace "eka" "kaksi" "eka teksti"
 ```
 
-## Syventyvä tarkastelu
+Tämä palauttaa tekstin ```kaksi teksti```. Voimme myös käyttää säännöllisiä lausekkeita ```Regex.replace```, esimerkiksi:
 
-Mikäli haluat tutustua tarkemmin String-moduulin ja Regex-funktioiden käyttöön tekstinkäsittelyssä, voit lukea [virallisen dokumentaation](https://package.elm-lang.org/packages/elm/core/latest/String) tai tehdä harjoituksia [Elm:tut:lla](https://tut.elm-lang.org/). 
+```Elm
+Regex.replace (Regex.regex "a([\\w]*)i") (\match -> "x" ++ match) "Hei kaikki, mitä kuuluu?"
+```
 
-## Katso myös
+Tämä palauttaa tekstin ```Hei kxlli, mitä kuuluu?```.
 
-- [String-moduulin dokumentaatio](https://package.elm-lang.org/packages/elm/core/latest/String)
-- [Elm:tut](https://tut.elm-lang.org/)
+Deep Dive:
+
+Tekstin hakemisen ja korvaamisen historiassa on useita eri vaihtoehtoja ja algoritmeja. Yleisesti ottaen nämä toiminnot ovat olleet hyödyllisiä ohjelmistokehittäjille ja tekstilisäosien suunnittelijoille. Nykyään monilla ohjelmointikielillä, kuten Elmillä, on sisäänrakennettuja työkaluja näiden toimintojen suorittamiseksi.
+
+See Also:
+
+Lisätietoja hakemisesta ja korvaamisesta sekä siihen liittyviä resursseja löydät näistä linkeistä:
+
+- Elm String -moduuli: https://package.elm-lang.org/packages/elm/core/latest/String
+- Regex -moduuli: https://package.elm-lang.org/packages/elm/regex/latest/Regex
+- Tekstin hakeminen ja korvaaminen: https://www.w3schools.com/jsref/jsref_replace.asp

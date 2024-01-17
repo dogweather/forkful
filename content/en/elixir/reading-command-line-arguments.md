@@ -10,47 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-Reading command line arguments is a fundamental skill in programming that allows you to interact with your code in a more dynamic and customizable way. It also allows you to pass information and parameters to your code without hardcoding them, making your code more flexible and efficient.
+Reading command line arguments is the process of obtaining inputs from the user through the command line interface. Programmers do this in order to make their programs more dynamic and configurable, as it allows for user input to be passed in when the program is executed.
 
-## How To
-
-To read command line arguments in Elixir, we will use the `System.argv` function. This function returns a list of all the arguments passed to our script when it was executed. Let's see it in action:
+## How to:
 
 ```Elixir
-defmodule CommandLine do
-  def run(args) do
-    IO.inspect args
+# To read command line arguments, we first need to use the `System.argv/0` function from the `System` module.
+# It returns a list of strings, where each element represents an argument passed in by the user.
+
+args = System.argv
+
+# To access specific arguments, we can use list indexing as follows:
+
+first_arg = args[0]
+second_arg = args[1]
+
+# We can also use `length/1` function from the `Enum` module to get the total number of arguments passed in.
+
+args_length = Enum.length(args)
+
+# Let's try it out with a simple program that greets the user based on their input:
+
+defmodule Hello do
+  def main do
+    args = System.argv
+    name = args[0]
+    IO.puts("Hello #{name}, welcome to Elixir!")
   end
 end
 
-CommandLine.run(System.argv)
+# Let's compile and run this program with the following command:
+
+$ elixirc hello.ex
+$ elixir Hello world
+
+# Output:
+Hello world, welcome to Elixir!
 ```
 
-Save this code in a file called `command_line.exs` and run it with `elixir command_line.exs hello world`. You should see the output `["hello", "world"]` printed in your console. You can pass as many arguments as you want, and they will all be captured in the `args` variable as a list.
+## Deep Dive:
 
-We can also use pattern matching to access individual arguments. For example, if we want to assign the first argument to a variable called `greeting` and the second argument to a variable called `name`, we can do it like this:
+Reading command line arguments has been a standard feature in most programming languages for a long time. It allows for command line interfaces to be interactive and provide a more user-friendly experience. Other alternatives to reading command line inputs include using environment variables or configuration files.
 
-```Elixir
-defmodule CommandLine do
-  def run([greeting, name | _rest]) do
-    IO.puts "#{greeting} #{name}!"
-  end
-end
+Internally, the `System.argv/0` function makes a call to the `:init.get_argument/2` from the Erlang runtime system. This function is responsible for getting all the arguments passed in during program execution. Additionally, Elixir also provides the `OptionParser` module for more robust and structured argument parsing.
 
-CommandLine.run(System.argv)
-```
+## See Also:
 
-Now when we run our script with `elixir command_line.exs "Hello" "John"`, it will output `Hello John!` in the console.
-
-## Deep Dive
-
-The `System.argv` function is a part of the `System` module, which is a collection of functions that provides access to system-level operations. It also has a counterpart, `System.get_env`, that allows us to retrieve environment variables and use them in our code.
-
-We can also use the `System.argv` function in a mix project. In this case, the arguments will be passed to the `mix run` command, and the first argument will always be the path to the script being executed.
-
-## See Also
-
-- [Elixir Documentation on System](https://hexdocs.pm/elixir/System.html)
-- [Elixir Scripting](https://elixir-lang.org/getting-started/introduction.html#scripting)
+- [`System` module documentation](https://hexdocs.pm/elixir/System.html)
+- [`OptionParser` module documentation](https://hexdocs.pm/elixir/OptionParser.html)
+- [Erlang `:init` module documentation](http://erlang.org/doc/man/init.html)

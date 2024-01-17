@@ -1,7 +1,7 @@
 ---
-title:                "Satunnaislukujen luominen"
-html_title:           "Elixir: Satunnaislukujen luominen"
-simple_title:         "Satunnaislukujen luominen"
+title:                "Sattumanvaraisten lukujen luominen"
+html_title:           "Elixir: Sattumanvaraisten lukujen luominen"
+simple_title:         "Sattumanvaraisten lukujen luominen"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Numbers"
@@ -10,30 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä ja miksi?
+Satunnaislukujen generoiminen on prosessi, jossa tietokone luo numeroita sattumanvaraisesti. Tämä on tärkeä osa ohjelmointia monella eri tavalla - se voi olla hyödyllistä esimerkiksi arpajaisten tai pelien luomisessa tai testidatan tuottamisessa.
 
-Miksi joku haluaisi käyttää satunnaislukugeneraattoria? Satunnaisluvut ovat hyödyllisiä simulaatioissa, salaussovelluksissa, pelien ja arpajaisten piirtämisessä ja yleensä kaikissa tilanteissa, joissa tarvitaan sattumanvaraista arvoa.
-
-## Miten
-
-Globaalin satunnaislukugeneraattorin käyttö Elixirissä on helppoa. Käytämme siihen sisäänrakennettua :random -moduulia ja sen funktiota seed/3. Seuraavassa esimerkissä luomme 10 satunnaislukua välillä 1-100 ja tulostamme ne konsoliin:
-
-```elixir
-for _ <- 1..10 do
-  random = :random.seed(:erlang.now, :os.timestamp, :rand.uniform)
-  IO.inspect(:rand.uniform(1..100, random))
-end
+## Miten:
+Esimerkkejä ohjelmoinnista sekä näytöskuvia:
+```
+Elixir Enum.shuffle([1, 2, 3]) # => [2, 3, 1]
 ```
 
-Tämä koodi käyttää nykyistä aikaleimaa, järjestelmän aikaleimaa ja satunnaista numeerista siementä luomaan kunkin satunnaisluvun. Tätä kutsutaan myös pseudosatunnaislukujen generoinniksi, koska luvut eivät ole täysin satunnaisia, mutta niillä on riittävästi sattumanvaraista elementtiä, jotta ne toimisivat useimmissa käyttötarkoituksissa.
+```
+Elixir :random.uniform() # => 0.47548163296987905
+```
 
-## Syvällinen sukellus
+```
+Elixir Math.pow(2,3) # => 8
+```
 
-Satunnaislukugeneraattorit voivat olla erittäin monimutkaisia ja niillä on omat sääntönsä. Esimerkiksi :random-moduuli käyttää Mersenne Twister -algoritmia, joka on kehitetty erityisesti satunnaislukujen generointia varten. Tämä algoritmi on suhteellisen tehokas ja tuottaa laadukkaita satunnaislukuja.
+## Syväsukellus:
+Satunnaislukujen generoiminen on ollut tärkeä osa tietokoneiden historiaa jo pitkään, ja siihen liittyy monia mielenkiintoisia algoritmeja ja tekniikoita. Toimintaympäristöjen lisäksi on myös muita tapoja generoida satunnaislukuja - esimerkiksi käyttämällä ulkoisia laitteita, kuten hiirtä tai satelliittisignaaleja.
 
-Hyvä tapa parantaa satunnaislukugeneraattorisi laatua on antaa sille erityinen siemenarvo, joka määrittää sen aloitustilan. Tämä estää samojen lukujen toistumisen, mikä voisi aiheuttaa ennakoitavissa olevia tuloksia. Voit myös käyttää muita funktioita, kuten :rand.uniform/1 ja :rand.uniform/2, jotka antavat sinulle mahdollisuuden määrittää tulosten tyyppi ja alue, jolta luvut generoidaan.
-
-## Katso myös
-
-- Elixirin virallinen dokumentaatio :random-moduulista (https://hexdocs.pm/elixir/random.html)
-- "Real-Life Examples of the Mersenne Twister" (https://www.math.sci.hiroshima-u.ac.jp/~m-mat/MT/MT2002/emt19937ar.html) - Esimerkkejä Mersenne Twister -algoritmista käytännön sovelluksissa
+## Katso myös:
+- [Elixirin virallinen dokumentaatio](https://hexdocs.pm/elixir/Kernel.html#random-number-generation)
+- [Satunnaislukujen generoiminen pelien koodauksessa](https://www.gamasutra.com/blogs/HermanTulleken/20161014/282737/Random_number_generators_in_game_design.php)
+- [Random data generation with Elixir](https://pragmaticstudio.com/tutorials/random-data-generation-with-elixir)

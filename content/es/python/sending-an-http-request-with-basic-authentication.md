@@ -10,34 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¿Qué y por qué?
 
-Enviar una solicitud de HTTP con autenticación básica es una forma segura de acceder a recursos en línea protegidos por una contraseña. Esta autenticación se utiliza comúnmente en aplicaciones y servicios web para verificar la identidad del usuario y garantizar la privacidad y seguridad de la información.
+Enviar una solicitud HTTP con autenticación básica es una forma de enviar información a un servidor web de manera segura. Los programadores hacen esto para proteger la información confidencial que se envía a través de la red y garantizar que solo el usuario autorizado pueda acceder a ella.
 
-## Cómo hacerlo
+## Cómo hacerlo:
 
-Para enviar una solicitud de HTTP con autenticación básica en Python, necesitarás importar el módulo "requests" y usar el método "get" o "post", dependiendo de la acción que desees realizar. A continuación, proporciona la URL del recurso que deseas acceder y utiliza el parámetro "auth" para especificar las credenciales de autenticación.
+El siguiente código en Python muestra cómo enviar una solicitud HTTP con autenticación básica:
 
-```
+```python
 import requests
 
-url = "https://ejemplo.com/recursos"
+# Definir nombre de usuario y contraseña
+username = "mi_nombre_de_usuario"
+password = "mi_contraseña"
 
-resp = requests.get(url, auth=('usuario', 'contraseña'))
+# URL del servidor web que se desea acceder
+url = "https://mi_servidor_web.com"
 
-print(resp)
+# Enviar la solicitud HTTP con autenticación básica
+r = requests.get(url, auth=(username, password))
+
+# Imprimir el texto de la respuesta
+print(r.text)
 ```
 
-La respuesta de la solicitud mostrará un código de estado 200 si fue exitosa, o un código de error si hubo algún problema con la autenticación.
+El resultado de este código será el contenido de la página web a la que se accede, siempre y cuando las credenciales proporcionadas sean correctas.
 
-## Profundizando
+## Profundizando:
 
-Básicamente, la autenticación básica funciona enviando un encabezado "Authorization" con cada solicitud que contiene el nombre de usuario y la contraseña en formato "usuario:contraseña" codificado en base64. Esto se puede hacer manualmente usando la función "b64encode" del módulo "base64", pero en Python, se puede hacer más fácilmente utilizando el parámetro "auth" como se mostró anteriormente.
+- **Contexto histórico:** La autenticación básica es una de las primeras formas de autenticación utilizadas en Internet. Fue introducida en la versión 1.0 del protocolo HTTP en 1996 y sigue siendo ampliamente utilizada en la actualidad.
+- **Alternativas:** Aunque la autenticación básica sigue siendo una forma efectiva de proteger información en una solicitud HTTP, existen otras opciones más seguras como la autenticación digest y la autenticación OAuth.
+- **Detalles de implementación:** La autenticación básica utiliza el encabezado `Authorization` en la solicitud HTTP para enviar el nombre de usuario y la contraseña codificados en formato Base64. Sin embargo, es importante destacar que este método no encripta los datos, lo cual puede ser un riesgo si se envía información sensible.
 
-Además, hay otras formas de autenticación en HTTP, como OAuth y JSON Web Token (JWT), que proporcionan un nivel extra de seguridad. Sin embargo, la autenticación básica sigue siendo una opción simple y efectiva para muchos casos de uso.
+## Ver también:
 
-## Ver también
-
-- [Documentación de requests en Python](https://docs.python-requests.org/en/master/)
-- [Tutorial de autenticación básica en requests](https://requests.readthedocs.io/en/master/user/authentication/#basic-authentication)
-- [Ejemplo de autenticación básica en una API en línea](https://docs.ruby-lang.org/en/master/Net/HTTP.html#class-Net::HTTP-label-Basic+Authentication) (en Ruby)
+- [Documentación oficial de Python para el módulo `requests`](https://docs.python-requests.org/en/latest/)
+- [Más información sobre autenticación básica en HTTP](https://www.freeformatter.com/http-authentication.html)

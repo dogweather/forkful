@@ -1,7 +1,7 @@
 ---
-title:                "Yhdistävät merkkijonot"
-html_title:           "Elixir: Yhdistävät merkkijonot"
-simple_title:         "Yhdistävät merkkijonot"
+title:                "Jonojen yhdistäminen"
+html_title:           "Elixir: Jonojen yhdistäminen"
+simple_title:         "Jonojen yhdistäminen"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -10,53 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Miksi: Merkkijonojen yhdistäminen Elixirissä
+Näin yhdistät Elixir-merkkijonoja
 
-Merkkijonojen yhdistäminen on yleinen tehtävä ohjelmoinnissa, ja Elixirissä se sujuu helposti ja tehokkaasti. Yhdistetyt merkkijonot ovat hyödyllisiä esimerkiksi käyttöliittymien rakentamisessa, tekstimuotoisten tietojen muokkauksessa ja sisältöjen luomisessa.
+## Mitä ja miksi?
+Merkkijonojen yhdistäminen tarkoittaa kahden tai useamman merkkijonon yhdistämistä yhdeksi. Tämä on hyödyllistä, sillä se säästää aikaa ja parantaa koodin luettavuutta.
 
-Kun haluat yhdistää useita merkkijonoja yhdeksi, on Elixirin tarjoama `<>` operaattori nopein ja kätevin tapa tehdä se.
-
-## Miten tehdä se:
-
-Seuraavassa esimerkissä käytetään `<>` operaattoria yhdistämään kolme merkkijonoa yhdeksi:
-
-```elixir
-iex> "Tämä" <> " on" <> " esimerkki."
-```
-```elixir
-"Tämä on esimerkki."
+## Kuinka:
+```Elixir
+string1 = "Tervetuloa"
+string2 = "maailman"
+string3 = "paras"
+string4 = "ohjelmointikieli"
+neljännenMerkinjono = string1 <> " " <> string2 <> " " <> string3 <> " " <> string4
+IO.puts neljännenMerkinjono
 ```
 
-Voit myös yhdistää muuttujia merkkijonoihin, mikä tekee koodistasi joustavampaa ja dynaamisempaa. Esimerkiksi:
+Tulostaa: "Tervetuloa maailman paras ohjelmointikieli"
 
-```elixir
-iex> nimi = "Elina"
-iex> "Hei, nimeni on " <> nimi <> "."
-```
-```elixir
-"Hei, nimeni on Elina."
-```
+## Syväsukellus:
+Merkkijonojen yhdistäminen on tullut osaksi ohjelmointikieliä 1990-luvulta alkaen ja se on yksi perusteellisesti käytetystä ohjelmointipotentiaalista. Vaihtoehtoina on käyttää plusoperaattoria (+), mutta kun kyseessä on suuri määrä merkkijonoja, niin tämä ei ole optimaalinen ratkaisu. Elixir käyttää operaattoria <> yhdistämään merkkijonoja, mikä on tehokas ja helppo tapa tehdä se.
 
-Mikäli haluat lisätä merkkijonoon myös numeerisen arvon, sinun täytyy muuttaa se ensin merkkijonoksi `to_string()` -funktiolla. Esimerkiksi:
-
-```elixir
-iex> ikä = 28
-iex> "Olen " <> to_string(ikä) <> " vuotta vanha."
-```
-```elixir
-"Olen 28 vuotta vanha."
-```
-
-## Syvällinen sukellus:
-
-Elixirin `<>` operaattori on todella nopea, sillä se hyödyntää binäärihakemistojen tehokkuutta. Tämä tarkoittaa, että yhdistämisen aikana käytetään vähemmän muistia ja datan liikkuminen on nopeampaa kuin muissa kielissä, jotka käyttävät merkkijonojen yhdistämiseen `+` operaattoria.
-
-Tärkeä asia huomata on myös se, että Elixirissä merkkijonot eivät ole muutettavissa, eli vanhaa merkkijonoa ei muokata uuden lisäämisen yhteydessä, vaan uusi merkkijono luodaan.
-
-Tämä tekee Elixiristä erittäin hyvä valinta sovelluksiin, joissa työskennellään suuren määrän merkkijonojen kanssa, kuten palvelinsovelluksissa. Merkkijonojen muutokset eivät vaikuta muihin käytössä oleviin merkkijonoihin, joten on helpompi käsitellä tiettyjä muutoksia tai virheitä.
-
-# Katso myös:
-
-- [Elixirin virallinen verkkosivusto](https://elixir-lang.org/): Löydät täältä tietoa Elixiristä, sen syntaksista, asennuksesta ja muista tärkeistä asioista.
-- [Elixir School](https://elixirschool.com/): Interaktiivinen ja kattava opas Elixirin opiskeluun ja taitojen kehittämiseen.
-- [The Elixir Forum](https://elixirforum.com/): Suomenkielinen yhteisö, josta saat apua ja neuvoja Elixirin käytössä.
+## Katso myös:
+- [Elixirin virallinen dokumentaatio](https://elixir-lang.org/)
+- [Miksi merkkijonoja ei pitäisi koskaan yhdistää plusoperaattorilla](https://til.hashrocket.com/posts/6c7bdd033d-why-you-should-never-concatenate-strings-with-plus)
+- [Oppia lisää merkkijonojen käsittelystä Elixirissä](https://www.learnelixir.tv/p/a-deep-dive-into-working-with-strings-in-elixir)

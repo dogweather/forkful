@@ -1,7 +1,7 @@
 ---
-title:                "Http-pyynnön lähettäminen perusautentikoinnilla"
-html_title:           "Swift: Http-pyynnön lähettäminen perusautentikoinnilla"
-simple_title:         "Http-pyynnön lähettäminen perusautentikoinnilla"
+title:                "Lähetetään http-pyyntö perusautentikoinnilla"
+html_title:           "Swift: Lähetetään http-pyyntö perusautentikoinnilla"
+simple_title:         "Lähetetään http-pyyntö perusautentikoinnilla"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "HTML and the Web"
@@ -10,41 +10,63 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
-Miksi kukaan haluaisi lähettää HTTP-pyynnön käyttäen perusautentikointia? Perusautentikointi on yksi tapa suojata web-palveluita ja sen käyttö voi olla hyödyllistä esimerkiksi API-kutsuissa.
+## Mitä & Miksi?
 
-## Kuinka
+Perustason todennustietojen lähettäminen HTTP-pyynnössä tarkoittaa käyttäjän tunnistamisessa tarvittavan tiedon lähettämistä palvelimelle. Tieto sisältää yleensä käyttäjän käyttäjänimen ja salasanan. Tätä tehdään ohjelmoijien toimesta turvallisemman käyttökokemuksen varmistamiseksi.
+
+## Kuinka:
+
 ```Swift
-let urlString = "https://www.example.com"
-let url = URL(string: urlString)
-
-// Luodaan request ja lisätään otsikko "Authorization" käyttäen perusautentikointia
-var request = URLRequest(url: url!)
-let loginData = String(format: "%@:%@", "käyttäjänimi", "salasana").data(using: String.Encoding.utf8)!
-let base64LoginString = loginData.base64EncodedString()
-request.setValue("Basic \(base64LoginString)", forHTTPHeaderField: "Authorization")
-
-// Luodaan URLSession ja lähetetään pyyntö
-let session = URLSession.shared
-let task = session.dataTask(with: request) { (data, response, error) in
-  if let error = error {
-    print("Virhe: \(error)")
-  } else if let data = data {
-    // Tulostetaan vastaus ja pakataan se JSON-muotoon
-    print("Vastaus: \(String(data: data, encoding: .utf8)!)")
-    let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
-    print("JSON: \(json)")
-  }
+// Luodaan URLRequest-objekti ja annetaan sille osoite ja menetelmä
+let urlString = "https://www.example.com/login" 
+if let url = URL(string: urlString) {
+    var request = URLRequest(url: url)
+    request.httpMethod = "POST"
+    
+    // Lisätään käyttäjänimen ja salasanan Base64-enkoodattu versio Authorization-headeriin
+    let username = "käyttäjänimi"
+    let password = "salasana"
+    let loginString = String(format: "%@:%@", username, password)
+    if let loginData = loginString.data(using: String.Encoding.utf8) {
+        let base64LoginString = loginData.base64EncodedString()
+        request.setValue("Basic \(base64LoginString)", forHTTPHeaderField: "Authorization")
+    }
+    
+    // Luodaan ja lähetetään pyyntö käyttäen URLSession:ää
+    let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+        if let error = error {
+            print("Virhe: \(error)")
+        } else if let data = data {
+            print("Saatu data: \(data)")
+            if let responseString = String(data: data, encoding: .utf8) {
+                print("Vastaus: \(responseString)")
+            }
+        }
+    }
+    task.resume()
 }
-task.resume()
 ```
 
-Koodiesimerkissä näytetään, kuinka tehdä HTTP-pyyntö käyttäen perusautentikointia Swift-ohjelmointikielellä. Ensin luodaan URL ja sitten Request-objekti, johon lisätään otsikko "Authorization" käyttäen perusautentikointia. Lopuksi luodaan URLSession ja lähetetään pyyntö. Jos kaikki menee hyvin, vastaus tulostetaan ja pakataan JSON-muotoon.
+###Esimerkkilähtö ja -tulos:
 
-## Syventävää
-Perusautentikointi on yksi vanhimmista tavoista suojata web-palveluita. Se toimii lähettämällä käyttäjänimen ja salasanan Base64-muodossa pyynnön otsikossa. Vaikka se on helppo toteuttaa ja toimii useimmissa tapauksissa, se ei tarjoa kovin vahvaa suojaa, sillä Base64-muunnos voidaan purkaa helposti. Tästä syystä suositellaan käytettäväksi muita autentikointitapoja, kuten HTTPS ja OAuth.
+```Swift
+// Lähetetään POST-pyyntö osoitteeseen www.example.com/login käyttäjänimellä ja salasanalla ohjelman käyttäjän antamiksi.
+// Pyynnön vastauksena saadaan esimerkkidataa.
 
-## Katso myös
-- [HTTP-pyynnöt ja autentikointi Swift-kirjaston avulla](https://swift.org/server-apis/#http-authentication-with-swift)
-- [Peruskäyttäjäautentikointi - Wikipedia](https://fi.wikipedia.org/wiki/Perusk%C3%A4ytt%C3%A4j%C3%A4autentikointi)
-- [HTTP-pyynnöt ja autentikointi - Dokumentaatio](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
+Saatu data: Optional(18 bytes)
+Vastaus: HereIsYourData!
+
+```
+
+## Syväsukellus:
+
+Perustason todennustietojen lähettämisellä HTTP-pyynnössä on juurensa internetin alkuajoista, jolloin tarvittiin tapa varmistaa, että vain valtuutetut käyttäjät pystyivät käyttämään tiettyjä verkkosivustoja tai -palveluja.
+
+Vaihtoehtoisia tapoja lähettää perustasoisen todennustiedon lisäksi myös muitakin tietoja ovat esimerkiksi Digest Authentication ja OAuth. Perustasoinen todennus on kuitenkin edelleen käytössä monien verkkopalveluiden ja -sovellusten turvallisuuden varmistamiseksi.
+
+HTTP Basic Authentication toimii lähettämällä käyttäjänimen ja salasanan Base64-enkoodattuina pyynnön otsikkotietoina. Tämä tapahtuu käyttämällä määritettyä "Authorization" -headeria, joka sisältää merkinnän "Basic" ja enkoodatut tiedot.
+
+## Katso myös:
+
+- [URLSession Documentation](https://developer.apple.com/documentation/foundation/urlsession)
+- [Base64 Encoding in Swift](https://stackoverflow.com/questions/47645595/base64-encoding-in-swift-4/47645759)

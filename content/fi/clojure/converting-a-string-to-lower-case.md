@@ -1,7 +1,7 @@
 ---
-title:                "Muuntaminen merkkijonoksi pienellä kirjaimella"
-html_title:           "Clojure: Muuntaminen merkkijonoksi pienellä kirjaimella"
-simple_title:         "Muuntaminen merkkijonoksi pienellä kirjaimella"
+title:                "Merkkijonon muuntaminen pienaakkosiksi"
+html_title:           "Clojure: Merkkijonon muuntaminen pienaakkosiksi"
+simple_title:         "Merkkijonon muuntaminen pienaakkosiksi"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -10,24 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
-Hieman yli vuosi sitten Clojuren uusin versio 1.10 julkaistiin. Tämän päivityksen myötä eräs hyödyllinen ominaisuus lisättiin Clojureen: kyky muuttaa merkkijono pienaakkosiksi. Tässä artikkelissa tarkastelemme tarkemmin, miksi tämä ominaisuus on niin hyödyllinen ja miten sitä voi hyödyntää.
+## Miksi ja miten muuntaa merkkijono pieniksi kirjaimiksi Clojurella
 
-## Miten tehdä
-Merkkijonon muuttaminen pienaakkosiksi on yksinkertaista Clojuressa. Käytämme tähän ```clojure/format``` kirjastoa, joka tarjoaa toiminnallisuuden muuttaa merkkijono pienaakkosiksi. Katso esimerkki alla:
+## Miksi ja miten muuntaa merkkijono pieniksi kirjaimiksi?
 
-```clojure
-(require '[clojure.format :refer [lower-case]])
-(lower-case "MOI MAAILMA!")
+Merkkijonon muuttaminen pieniksi kirjaimiksi tarkoittaa, että kaikki merkit muutetaan pieniksi kirjaimiksi, jotta niitä voi käsitellä yhtenä kokonaisuutena. Tämä on tärkeää esimerkiksi hakutoiminnoissa, jolloin pienet ja isot kirjaimet eivät vaikuta tuloksiin. Ohjelmoijat käyttävät tätä toimintoa usein helpottaakseen merkkijonojen vertailua ja muokkaamista.
+
+## Miten tehdä se Clojurella:
+
+```Clojure
+(.toLowerCase "HELLO WORLD")
+; => "hello world"
 ```
 
-Tämä palauttaa tuloksena merkkijonon "moi maailma!".
+```Clojure
+;; Voit myös käyttää case stamenttia:
+(case "Hello World"
+  "Hello" "hello"
+  "World" "world")
+; => "hello world"
+```
 
-## Syvällisempi tarkastelu
-Yksi syy miksi tämä ominaisuus on hyödyllinen on se, että se helpottaa merkkijonojen vertailua. Pienaakkosiksi muuttaminen mahdollistaa samojen merkkijonojen vertailun, vaikka ne olisivat eri muodossa. Esimerkiksi tyypillinen tapaus voi olla tarkistaa onko käyttäjän syöttämä sana sama kuin tallennettu käyttäjänimi, eikä pienaakkosilla ole tässä tapauksessa merkitystä.
+## Syvempi katsaus
 
-Lisäksi pienaakkosiksi muuttaminen on myös hyödyllistä silloin, kun käsittelemme merkkijonoja tietokannassa tai tiedostoissa. Esimerkiksi jos haluamme hakea tietokannasta tietyn käyttäjän tiedot käyttäjänimen perusteella, on helposti määriteltävä käyttäjänimen olevan pienaakkosilla tai ilman.
+Historiallisessa kontekstissa, merkkijonon muuttaminen pieniksi kirjaimiksi on ollut tärkeää erityisesti ennen unicodea, jolloin kirjaimilla oli rajoitettu määrä erilaisia merkkejä ja koodaustyylejä. Nykyään sillä on edelleen merkitystä erityisesti tietokannoissa ja datan käsittelyssä.
+
+Vaihtoehtoisia tapoja muuntaa merkkijono pieniksi kirjaimiksi ovat esimerkiksi säännölliset lausekkeet ja string-funktiot kuten `substring` ja `replace`. Näitä ei kuitenkaan ole suunniteltu nimenomaan merkkijonon koon muuttamiseen, joten ne eivät välttämättä ole yhtä tehokkaita.
+
+Taustalla oleva Clojure-komento `toLowerCase` käyttää Java-standardikirjaston `String`-luokkaa, joten sen tarkempi toteutus riippuu käytettävästä Java-ympäristöstä. Se mahdollistaa myös argumenttina annetun merkkijonon muiden kirjainten muuttamisen pieniksi kirjaimiksi oikeilla kieliasetuksilla.
 
 ## Katso myös
-- [Clojuren uusin versio 1.10](https://github.com/clojure/clojure/releases/tag/clojure-1.10.0)
-- [Clojuren format-kirjasto](https://clojure.github.io/clojure/clojure.format-api.html#clojure.format/lower-case)
+
+[Clojure-dokumentaatio Java String-luokasta](https://clojuredocs.org/clojure.core/to-lower-case#example-572a4579e4b0059e0ea8d664)

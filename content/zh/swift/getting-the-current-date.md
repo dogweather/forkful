@@ -10,60 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
+## 简介
+获取当前日期是一个编程任务，它允许程序员在代码中使用当前的日期和时间信息。这对于管理时间相关的应用程序或记录数据的应用程序非常重要。
 
-获取当前日期是编写各种类型的应用程序或网站时必不可少的组成部分。它可以显示用户最新的活动记录，创建排行榜或计算过去的时间差等。
+## 如何：
+要在 Swift 中获取当前日期，我们可以使用内置的 Date 类。下面是一个简单的例子：
 
-## 如何
-
-### 使用Date(日期)类
-
-要获取当前日期，我们可以使用Swift内置的Date(日期)类。这个类可以表示一个日期和时间的值，并可以与其他日期和时间值一起进行比较和操作。
-
-```
-// 导入Date(日期)类
-import Foundation
-
-// 创建一个名为now的Date(日期)对象
-let now = Date()
-
-// 打印当前日期和时间
-print(now)
-
-// 输出示例：2021-09-01 16:00:00 +0000
-```
-
-### 格式化输出
-
-有时，我们需要以特定的格式显示日期。这时，我们可以使用Swift的DateFormatter(日期格式化)类来帮助我们格式化输出。
-
-```
-// 创建一个NSDate对象
-let date = NSDate()
-
-// 创建一个名为dateFormatter的DateFormatter(日期格式化)对象
-let dateFormatter = DateFormatter()
-
-// 设置输出格式
-dateFormatter.dateFormat = "yyyy.MM.dd"
-
-// 使用DateFormatter(日期格式化)对象来格式化输出
-let output = dateFormatter.string(from: date as Date)
-
-// 打印格式化后的输出
-print(output)
-
-// 输出示例：2021.09.01
+```Swift
+let currentDate = Date()
+print(currentDate) // 输出当前日期和时间信息
 ```
 
 ## 深入探讨
+#### 历史背景
+在过去，程序员可能需要使用操作系统的功能来获取当前日期。但是，这可能比较复杂并且依赖于操作系统的不同。因此，Swift 语言引入了内置的 Date 类来简化这项任务。
 
-获取当前日期可能看起来简单，但在背后，Swift做了很多工作来获取准确的当前日期。它会考虑到时区、夏令时和其他因素来确保返回最准确的日期和时间值。
+#### 替代方法
+除了使用内置的 Date 类，程序员还可以使用第三方库来获取当前日期。比如，第三方库 [SwiftyDate](https://github.com/jemmons/swiftydate) 提供了更多的方法来处理日期和时间。
+
+#### 实现细节
+Date 类是 Swift 中日期和时间的基本类型。它使用格林威治标准时间（GMT）来表示日期和时间信息，但是可以通过设置时区来调整显示的日期和时间。此外，Date 类还提供了一些方法来处理日期和时间，比如计算两个日期之间的差值。
 
 ## 参考链接
-
-- [Swift官方文档 - Date(日期)类](https://developer.apple.com/documentation/foundation/date)
-- [Swift官方文档 - DateFormatter(日期格式化)类](https://developer.apple.com/documentation/foundation/dateformatter)
-- [Swift编程语言 - 日期和时间](https://docs.swift.org/swift-book/LanguageGuide/DatesAndTimes.html)
-
-## 参见
+- [Date - Apple Developer Documentation](https://developer.apple.com/documentation/foundation/date)
+- [SwiftyDate - GitHub Repository](https://github.com/jemmons/swiftydate)

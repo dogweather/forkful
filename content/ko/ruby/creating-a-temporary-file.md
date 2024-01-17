@@ -10,40 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+## 임시 파일 생성하기
 
-임시 파일을 생성하는 것에 참여하는 이유는 다양합니다. 예를 들어, 사용자의 입력을 저장하거나 작업 중에 발생하는 임시 데이터를 처리하는 등 여러 가지 이유가 있을 수 있습니다.
+우리가 소프트웨어를 만들 때, 때때로 우리는 우리의 코드에 임시 파일을 만듭니다. 임시 파일은 일시적으로 사용되는 파일로, 프로그램이 실행되는 동안 필요하지만 사용이 끝난 후 삭제됩니다. 이것이 임시 파일을 만드는 이유입니다.
 
-## 방법
+## 어떻게 만드나요?
 
-Ruby에서는 `Tempfile` 클래스를 사용하여 임시 파일을 생성할 수 있습니다. 다음은 간단한 예제 코드입니다:
+Ruby에서는 `Tempfile` 클래스를 사용하여 임시 파일을 생성할 수 있습니다. 예를 들어, 다음 코드를 보세요:
 
 ```Ruby
 require 'tempfile'
 
-file = Tempfile.new('temp_file')
-file.write("This is a temporary file.")
-puts file.read
+file = Tempfile.new('temporary_file')
 
-file.close
+puts file.path
 ```
 
-위 코드에서는 `Tempfile` 클래스를 사용하여 `temp_file`이라는 이름의 임시 파일을 생성하고, 내용을 쓴 후 출력해주는 예제입니다. `file.close`를 통해 파일을 닫아주는 것을 잊지 않도록 주의해야 합니다.
+위의 코드를 실행하면, `Tempfile` 클래스가 제공하는 `#path` 메소드를 통해 임시 파일의 경로가 출력됩니다. 추가로, `Tempfile` 클래스는 생성된 임시 파일을 자동으로 삭제한다는 점이 특징입니다.
 
-## 깊게 들어가기
+## 깊이 파헤쳐보기
 
-`Tempfile` 클래스는 `File` 클래스의 서브클래스로, 임시 파일을 생성하고 관리하는 기능을 제공합니다. `Tempfile.new` 메서드를 호출할 때, 첫 번째 매개변수로는 파일의 이름을, 두 번째 매개변수로는 임시 파일을 저장할 디렉토리를 지정할 수 있습니다. 디렉토리를 지정하지 않는 경우에는 시스템의 기본 임시 디렉토리가 사용됩니다. 
+임시 파일은 주로 데이터를 일시적으로 저장할 때 사용됩니다. 예를 들어, 파일을 다운로드하기 전에 임시 파일에 다운로드 데이터를 저장하고, 다운로드가 완료되면 임시 파일을 삭제할 수 있습니다. 또한, 임시 파일은 메모리가 부족한 경우에 일시적으로 사용할 수 있도록 하는 용도로도 사용됩니다.
 
-또한, `Tempfile` 클래스의 인스턴스에는 여러 가지 유용한 메서드들이 있습니다. 예를 들어, `path` 메서드로 현재 파일의 경로를 가져오거나, `close` 메서드로 파일을 닫을 수 있습니다.
+이것 외에도 `Tempfile` 클래스를 사용하는 대신 우리가 직접 파일을 만들어서 임시 파일을 대신 사용할 수 있습니다. 하지만 이렇게 하면 파일의 삭제 관리를 직접 해야 하기 때문에, `Tempfile` 클래스를 사용하는 것이 더 편리합니다.
 
-## 참고
+## 관련 자료
 
-- [Ruby Tempfile 클래스 문서](https://ruby-doc.org/stdlib-2.7.1/libdoc/tempfile/rdoc/Tempfile.html)
-- [Ruby File 클래스 문서](https://ruby-doc.org/core-2.7.1/File.html)
-- [다른 언어들에서의 임시 파일 생성 방법 비교](https://stackoverflow.com/questions/3027737/how1-5]n-other-programming-languages-do-you-generate-temporary-files)
-
-## 참고 자료
-
-- [Ruby Tempfile 클래스 문서](https://ruby-doc.org/stdlib-2.7.1/libdoc/tempfile/rdoc/Tempfile.html)
-- [Ruby File 클래스 문서](https://ruby-doc.org/core-2.7.1/File.html)
-- [다른 언어들에서의 임시 파일 생성 방법 비교](https://stackoverflow.com/questions/3027737/how1-5]n-other-programming-languages-do-you-generate-temporary-files)
+- [Tempfile 클래스 문서](https://ruby-doc.org/stdlib-2.6.3/libdoc/tempfile/rdoc/Tempfile.html)
+- [Temporary file - Wikipedia](https://en.wikipedia.org/wiki/Temporary_file)

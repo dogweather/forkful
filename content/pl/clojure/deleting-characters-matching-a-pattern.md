@@ -1,7 +1,7 @@
 ---
-title:                "Usuwanie znaków pasujących do wzorca."
-html_title:           "Clojure: Usuwanie znaków pasujących do wzorca."
-simple_title:         "Usuwanie znaków pasujących do wzorca."
+title:                "Usuwanie znaków pasujących do wzorca"
+html_title:           "Clojure: Usuwanie znaków pasujących do wzorca"
+simple_title:         "Usuwanie znaków pasujących do wzorca"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -10,36 +10,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co & Dlaczego?
+Usuwanie znaków pasujących do wzorca to niewielka, ale przydatna funkcja, która pozwala programistom na szybkie i precyzyjne przetwarzanie tekstów. Może to być potrzebne, gdy chcemy usunąć specyficzne znaki z tekstu, np. w celu wyciągnięcia tylko liczb lub słów kluczowych.
 
-Często podczas pisania kodu w Clojure zdarza się, że potrzebujemy usunąć z ciągu znaków wszystkie wystąpienia pewnego wzorca. Może to być konieczne przy przetwarzaniu danych lub wstępnej obróbce tekstu. W tym artykule dowiesz się, dlaczego i jak można usuwać znaki pasujące do pewnego wzorca w Clojure.
-
-## Jak to zrobić
-
+## Jak to zrobić:
 ```Clojure
-;; Definiowanie funkcji do usuwania znaków pasujących do wzorca
-(defn delete-characters [pattern string]
-  (-> string
-      (clojure.string/replace pattern "")
-      (clojure.string/trim)))
+(let [text "1,235.57 tekst 8,899.87"
+      new-text (clojure.string/replace text #"\d+" "")]
+  (println new-text))
+
+;; Output: tekst
 ```
-```Clojure
-;; Przykładowe wywołanie funkcji
-(delete-characters #"[aeiou]" "Hedvig")
-;; Output: "Hdvg"
-```
+W tym przykładzie używamy funkcji `replace` z biblioteki `clojure.string`, aby usunąć wszystkie sekwencje cyfr z tekstu. Możemy także użyć wyrażenia regularnego, aby dopasować bardziej skomplikowane wzorce i zastąpić je pustym ciągiem znaków.
 
-Powyższy kod definiuje funkcję `delete-characters`, która przyjmuje dwa argumenty: wzorzec i ciąg znaków. Wywołuje ona funkcję `clojure.string/replace`, która zastępuje wszystkie wystąpienia wzorca pustym ciągiem znaków. Następnie, przy użyciu funkcji `clojure.string/trim`, usuwane są nadmiarowe spacje z początku i końca rezultatu. W przykładzie wywołujemy funkcję z wyrażeniem regularnym `#"[aeiou]"`, które oznacza, że zostaną usunięte wszystkie samogłoski z ciągu `Hedvig`.
+## Głębsze zagadnienia:
+Usuwanie znaków dopasowujących do wzorca jest często wykorzystywane przy przetwarzaniu danych lub generowaniu raportów. Często używamy wyrażeń regularnych do dokładnego określenia, które znaki chcemy usunąć. W alternatywnej metodzie możemy używać funkcji `filter` do podziału tekstu na pojedyncze znaki i wykluczania tych, które pasują do wzorca. Wewnętrznie, wyrażenia regularne są kompilowane do wyrażeń regulowanych przez maszyny stanowe.
 
-Przykładowy wynik wywołania funkcji to `Hdvg`, co potwierdza, że zostały usunięte wszystkie wystąpienia samogłosek. Dzięki temu prostemu kodowi, możemy łatwo usuwać znaki pasujące do dowolnego wzorca w różnych tekstach.
-
-## Wnikliwe spojrzenie
-
-Funkcja `clojure.string/replace` przyjmuje dwa argumenty: ciąg znaków i wzorzec. Pierwszy argument jest ciągiem znaków, w którym zostanie dokonana zamiana, a drugi jest wzorcem, który będzie znakiem lub wyrażeniem regularnym. W przypadku, gdy podamy wyrażenie regularne, może ono zawierać metaznaki, które określają ogólne wzorce znaków, np. `.` oznacza dowolny znak, `+` oznacza jeden lub więcej wystąpień, a `*` oznacza zero lub więcej wystąpień. Dzięki temu możemy precyzyjnie określić, jakie znaki chcemy usunąć.
-
-Możemy również wykorzystać funkcję `clojure.string/replace` do zamiany znaków pasujących do wzorca na inne znaki. W tym celu, wystarczy zmienić argument z pustego ciągu na dowolny inny.
-
-## Zobacz również
-
-- [Funkcja `replace` z biblioteki `clojure.string`](https://clojuredocs.org/clojure.string/replace)
-- [Wyrażenia regularne w Clojure](https://www.tutorialspoint.com/clojure/clojure_regular_expressions.htm)
+## Zobacz również:
+- [Dokumentacja biblioteki clojure.string](https://clojuredocs.org/clojure.string)
+- [Wyrażenia regularne w Clojure](https://clojuredocs.org/clojure.repl/source/clojure.repl/source/regexps.clj#%5E%5B%5E%3Aprivate%20%5D)
+- [Poradnik wyrażeń regularnych](https://regexr.com/)

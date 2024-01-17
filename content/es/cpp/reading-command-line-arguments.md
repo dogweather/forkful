@@ -10,50 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué leer argumentos de línea de comando
+## ¿Qué y por qué?
 
-Si estás trabajando en un proyecto de programación en C++, es posible que en algún momento necesites pasar información al programa desde la línea de comando. Para ello, es importante saber cómo leer argumentos de línea de comando correctamente. ¡Sigue leyendo para aprender cómo hacerlo!
+Leer argumentos de línea de comando es una técnica común en la programación que permite a los desarrolladores pasar información a sus programas directamente desde la línea de comandos. Esto es útil para personalizar la ejecución de un programa y realizar tareas específicas sin tener que modificar el código.
 
-## Cómo hacerlo
+## Cómo:
 
-Para leer argumentos de línea de comando en C++, utilizamos la función `main()`, que es donde comienza la ejecución del programa. Esta función toma dos parámetros, `argc` y `argv`, que representan el número de argumentos y un array de cadenas respectivamente.
+Para leer los argumentos de línea de comando en C++, se pueden seguir estos pasos:
 
-Por ejemplo, si tenemos un programa que calcula el área de un rectángulo, podemos pasar la base y la altura desde la línea de comando de la siguiente manera:
+1. Incluir la biblioteca `iostream` para poder utilizar las funciones de lectura.
+2. Declarar una función `main` que acepte dos parámetros: `argc` (que indica el número de argumentos) y `argv` (que contiene los argumentos en forma de una matriz de cadenas).
+3. Utilizar un bucle `for` para iterar a través de la matriz `argv` e imprimir el valor de cada argumento.
 
-```C++
+```
+#include <iostream>
+
 int main(int argc, char *argv[]) {
-    // verificamos que se hayan pasado los dos argumentos esperados
-    if (argc != 3) {
-        cout << "Se esperaban dos argumentos: la base y la altura." << endl;
-        return 1; // código de error
-    }
-
-    // convertimos las cadenas de caracteres a números
-    float base = atof(argv[1]);
-    float altura = atof(argv[2]);
-
-    // calculamos y mostramos el área del rectángulo
-    float area = base * altura;
-    cout << "El área del rectángulo es: " << area << endl;
-    return 0; // código de éxito
+  for (int i = 0; i < argc; i++) {
+    std::cout << argv[i] << std::endl;
+  }
 }
 ```
 
-Si ejecutamos este programa desde la línea de comando con los argumentos adecuados, obtendremos el siguiente resultado:
+Ejemplo de salida para el comando `./programa argumento1 argumento2`:
 
 ```
-$ ./area_rectangulo 5.5 3
-El área del rectángulo es: 16.5
+./programa
+argumento1
+argumento2
 ```
 
 ## Profundizando
 
-Cuando utilizamos la función `main()`, el primer argumento (`argv[0]`) siempre es el nombre del programa en sí. A partir del segundo argumento, podemos pasar la información que necesitemos al programa.
+La lectura de argumentos de línea de comando se ha utilizado desde los primeros días de la programación. Antes de su existencia, los usuarios tenían que ingresar la información directamente en el programa, lo que limitaba su flexibilidad. Hoy en día, existen alternativas más avanzadas como la configuración de archivos o la interacción con interfaces gráficas, pero la lectura de argumentos de línea de comando sigue siendo una opción popular debido a su simplicidad y eficiencia.
 
-Además, es importante mencionar que los argumentos de línea de comando siempre son tratados como cadenas de caracteres, por lo que si necesitamos utilizarlos como otros tipos de datos (como en el ejemplo anterior), tendremos que realizar conversiones.
+Para acceder a argumentos más específicos, se pueden utilizar funciones de biblioteca como `getopt` o bibliotecas externas como `Boost.Program_options`. Es importante tener en cuenta que los argumentos de línea de comando están limitados en tamaño y no se pueden utilizar para pasar información sensible o confidencial.
 
 ## Ver también
 
-- [Tutorial de programación C++ de Codecademy](https://www.codecademy.com/learn/learn-c-plus-plus)
-- [Documentación de la función `main()` en cplusplus.com](http://www.cplusplus.com/reference/cstdlib/main/)
-- [Artículo sobre argumentos de línea de comando en cplusplus.com](http://www.cplusplus.com/articles/DEN36Up4/)
+- [Documentación oficial de C++ sobre argumentos de línea de comando](https://en.cppreference.com/w/cpp/language/main_function)
+- [Ejemplos de uso de getopt en C++](https://www.geeksforgeeks.org/getopt-function-in-c-to-parse-command-line-arguments/)
+- [Boost.Program_options](https://www.boost.org/doc/libs/1_72_0/doc/html/program_options/tutorial.html)

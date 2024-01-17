@@ -1,7 +1,7 @@
 ---
-title:                "Kaavan mukaisten merkkien poistaminen"
-html_title:           "Go: Kaavan mukaisten merkkien poistaminen"
-simple_title:         "Kaavan mukaisten merkkien poistaminen"
+title:                "Kuvion mukaisten merkkien poistaminen"
+html_title:           "Go: Kuvion mukaisten merkkien poistaminen"
+simple_title:         "Kuvion mukaisten merkkien poistaminen"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Strings"
@@ -10,46 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mikä ja miksi?
+Merkinpoiston sovitusmallin mukaiset kirjoituksen poistaminen on yleinen ohjelmointitehtävä, jota käytetään tiettyjen merkkijonojen suodattamiseen tai muokkaamiseen. Tämä tehdään usein ohjelmia kehitettäessä tarkkuuden ja tehokkuuden maksimoimiseksi.
 
-## Miksi joku haluaisi poistaa tiettyä kaavaa vastaavat merkit?
-
-Poistaminen merkkejä, jotka vastaavat tiettyä kaavaa, voi olla hyödyllistä, kun käsitellään tekstimuotoista dataa. Tämä voi auttaa yksinkertaistamaan dataa tai löytämään tiettyjä avainsanoja tai lauseita.
-
-## Miten
-
-Poistaaksesi merkit, jotka vastaavat tiettyä kaavaa, sinun on ensin lueteltava merkit, joita haluat poistaa. Tämän jälkeen voit käyttää Go: n sisäänrakennettua `strings.ReplaceAll` -funktiota, jonka avulla voit korvata muodostetut merkit tyhjällä merkillä.
-
-Esimerkki löytyy alla olevasta koodilohkosta:
-
+## Näin teet sen:
 ```Go
 package main
 
 import (
-    "fmt"
-    "strings"
+	"fmt"
+	"regexp"
+	"strings"
 )
 
 func main() {
-    text := "Tämä on testiteksti, jossa on tarpeettomia merkkejä?"
-    poistettavat := "aieö?"
-    puhdasTeksti := strings.ReplaceAll(text, poistettavat, "")
+	// Luo uusi merkkijono
+	s := "Hei kaikille! Tervetuloa Go-ohjelmoijien joukkoon."
 
-    fmt.Println(puhdasTeksti)
+	// Käytä Regex-mallia etsimään halutut kirjoitukset
+	reg, _ := regexp.Compile("[aeiou]")
+
+	// Käytä korvaamistoimintoa korvataksemme löydetyt merkit tyhjällä
+	newStr := reg.ReplaceAllString(s, "")
+
+	fmt.Println(newStr) // Tulostaa "H ll! Trvl G-pgrmjn jkkn."
 }
 ```
 
-Tämän koodin tulos olisi: `Tm n tstmksn jssn trpttmla kkmrkj`
+## Syväsukellus:
+Merkinpoistomenetelmä on kehitetty jo varhaisessa ohjelmoinnin historiassa ja on tullut yhä kehittyneemmäksi ajan kuluessa. Joissakin muissa ohjelmointikielissä käytetään erilaisia menetelmiä merkkijonojen suodattamiseen tai muokkaamiseen, kuten säännölliset lausekkeet (regex) tai sisäänrakennetut merkkitaulukot. Merkinpoistoa käytetään myös usein osana tiedonkäsittelyä ja tietokantojen käsittelyä.
 
-## Syvällinen sukellus
-
-Vaikka `strings.ReplaceAll` -funktio on helppo ja tehokas tapa poistaa merkkejä, se voi myös aiheuttaa ongelmia joissakin tilanteissa. Esimerkiksi jos haluat poistaa tietyn kaavan mukaiset merkit, mutta tekstissä on useita esiintymiä samasta kaavasta, kaikki esiintymät poistetaan. Tämä voi johtaa ei-toivottuihin tuloksiin.
-
-Voit välttää tämän ongelman käyttämällä "regexp" -pakettia Go: ssa, joka tarjoaa laajempia toimintoja kaavojen ja merkkijonojen käsittelyyn. Tämän paketin avulla voit esimerkiksi käsitellä säännöllisiä lausekkeita ja tallentaa tulokset muuttujiin.
-
-Lisätietoja "regexp" -paketista ja sen käytöstä löydät Go: n virallisesta dokumentaatiosta.
-
-## Katso myös
-
-- [Go: n virallinen dokumentaatio](https://golang.org/doc/)
-- [Regexp-paketin dokumentaatio](https://golang.org/pkg/regexp/)
+## Katso myös:
+- [Go-kielen virallinen sivusto](https://golang.org/)
+- [Go-kielen dokumentaatio](https://golang.org/doc/)
+- [Säännöllisten lausekkeiden opas](https://regexone.com/lesson/introduction_abcs)

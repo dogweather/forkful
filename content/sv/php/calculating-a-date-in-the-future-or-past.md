@@ -1,7 +1,7 @@
 ---
-title:                "Beräkna ett datum i framtiden eller förflutna"
-html_title:           "PHP: Beräkna ett datum i framtiden eller förflutna"
-simple_title:         "Beräkna ett datum i framtiden eller förflutna"
+title:                "Beräkning av ett datum i framtiden eller det förflutna"
+html_title:           "PHP: Beräkning av ett datum i framtiden eller det förflutna"
+simple_title:         "Beräkning av ett datum i framtiden eller det förflutna"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Dates and Times"
@@ -10,46 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Varför
- Vill du lära dig hur man beräknar ett datum i framtiden eller det förflutna? Då har du kommit till rätt plats! Att kunna beräkna datum är en viktig färdighet inom programmering och kan hjälpa dig att bygga mer dynamiska och användbara webbapplikationer.
+## Vad & Varför?
+Att räkna ut datum i framtiden eller det förflutna är en vanlig uppgift för programmerare. Det handlar om att ange ett startdatum och sedan beräkna ett nytt datum baserat på en given tidsperiod, till exempel att lägga till eller dra av antal dagar, veckor eller månader. Detta kan vara användbart för att planera framtidshändelser eller för att spåra tidsbaserade aktiviteter.
 
-# Så här gör du
-För att beräkna ett datum i framtiden eller det förflutna behöver du först och främst ha kunskap om hur datum och tid representeras i PHP. Datumet lagras vanligtvis som ett heltal (Unix-timestamp) som representerar antalet sekunder som har gått sedan 1 januari 1970 00:00:00 UTC. Med hjälp av PHP Date-funktionen kan du sedan omvandla detta heltal till ett mer läsbart format.
+## Hur gör man:
+Kodexempel och resultat visas nedan för att demonstrera hur man beräknar datumet för fem dagar från idag i PHP och sedan för två veckor tillbaka från idag.
 
-```PHP
-// För att beräkna ett datum i framtiden, lägg till antalet sekunder till det aktuella datumet
-$nästaVecka = time() + (7 * 24 * 60 * 60); // 7 dagar * 24 timmar * 60 minuter * 60 sekunder
-echo date('Y-m-d', $nästaVecka); // Skriver ut datumet för nästa vecka i formatet YYYY-MM-DD
-```
+```PHP 
+<?php
+$startDate = date('Y-m-d');
+// räkna ut datum för fem dagar sedan
+$futureDate = date('Y-m-d', strtotime('+5 days'));
+echo "Nuvarande datum: ".$startDate."<br>";
+echo "Datum för 5 dagar från nu: ".$futureDate;
+?> 
 
-```PHP
-// För att beräkna ett datum i förflutna, dra av antalet sekunder från det aktuella datumet
-$igår = time() - (24 * 60 * 60); // 1 dag * 24 timmar * 60 minuter * 60 sekunder
-echo date('Y-m-d', $igår); // Skriver ut datumet för igår i formatet YYYY-MM-DD
-```
-Output:
-```
-2021-04-05
-```
+//Output:
+//Nuvarande datum: 2019-11-20
+//Datum för 5 dagar från nu: 2019-11-25```
 
-# Djupdykning
-Som du kanske märkte i kodexemplen ovan, används Date-funktionen för att omvandla Unix-timestamp till ett mer läsbart datumformat. Det finns också andra användbara funktioner som kan hjälpa dig att manipulera datum och tid i PHP, till exempel strtotime() och DateTime-klassen.
+```PHP 
+<?php
+$startDate = date('Y-m-d');
+// räkna ut datum för två veckor sedan
+$pastDate = date('Y-m-d', strtotime('-2 weeks'));
+echo "Nuvarande datum: ".$startDate."<br>";
+echo "Datum för 2 veckor tillbaka: ".$pastDate;
+?> 
 
-För att beräkna ett datum i en specifik tidszon kan du ange den som ett valfritt argument till Date-funktionen. Du kan också använda DateInterval-klassen för att lägga till eller dra av tidsintervall från ett datum, som i exemplet nedan där vi lägger till 10 dagar till det aktuella datumet.
+//Output:
+//Nuvarande datum: 2019-11-20
+//Datum för 2 veckor tillbaka: 2019-11-06```
 
-```PHP
-$datum = new DateTime();
-$datum->add(new DateInterval('P10D')); // P för period och 10D för 10 dagar
-echo $datum->format('Y-m-d'); // Skriver ut datumet 10 dagar från nu i formatet YYYY-MM-DD
-```
-Output:
-```
-2021-04-15
-```
+## Djupdykning:
+Beräkning av datum har varit en viktig del av programmering sedan tidiga dagar, speciellt i system för datum- och tidsstyrning. Idag finns det också flera alternativa sätt att utföra dessa beräkningar, såsom att använda olika PHP-funktioner (t.ex. mktime() eller strtotime()) eller att använda bibliotek som Carbon. Implementeringen av denna beräkning kan variera beroende på det specifika språket eller ramverket som används.
 
-# Se även
-Här är några användbara länkar för vidare läsning om datum och tidshantering i PHP:
-- [PHP Date-funktionen](https://www.php.net/manual/en/function.date.php)
-- [PHP strtotime() funktionen](https://www.php.net/manual/en/function.strtotime.php)
-- [PHP DateTime-klassen](https://www.php.net/manual/en/class.datetime.php)
-- [PHP DateInterval-klassen](https://www.php.net/manual/en/class.dateinterval.php)
+## Se även:
+För mer information och detaljerad dokumentation om date-funktionen i PHP, besök följande länkar:
+- https://www.php.net/manual/en/function.date.php
+- https://www.php.net/manual/en/datetime.formats.php

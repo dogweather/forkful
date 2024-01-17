@@ -10,42 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+Cześć programiści! Dzisiaj zanurzymy się w świecie pisania plików tekstowych w języku TypeScript. Dowiesz się, czym jest pisanie plików tekstowych i dlaczego programiści to robią, a także zobaczysz przykładowy kod i dowiesz się nieco więcej o tym temacie. Gotowi?
 
-Pisanie plików tekstowych jest nieodłączną częścią procesu programowania. Niezależnie od tego, czy jesteś doświadczonym programistą czy dopiero zaczynasz swoją przygodę z językiem TypeScript, znajomość pisania plików tekstowych jest niezbędnym umiejętnością.
+## Co to jest i dlaczego?
 
-## Jak to zrobić
+Pisanie plików tekstowych jest procesem tworzenia i zapisywania zawartości w pliku, który może być czytany jako zwykły tekst przez programy komputerowe. Programiści często piszą pliki tekstowe, aby przechowywać dane lub instrukcje, które mogą być łatwo odczytane i przetworzone przez inne programy.
 
-W celu napisania pliku tekstowego przy użyciu języka TypeScript, skorzystaj z funkcji `writeFile` z biblioteki `fs`. Poniżej znajduje się przykładowy kod, który wyjaśni krok po kroku, jak napisać plik tekstowy:
+## Jak to zrobić:
 
 ```TypeScript
-// Importowanie biblioteki fs
-import * as fs from 'fs';
+import fs from 'fs';
 
-// Utworzenie funkcji, która będzie zapisywać plik
-function writeToFile(filename: string, data: string) {
-    // Wywołanie funkcji writeFile z podaniem nazwy pliku oraz danych do zapisania
-    fs.writeFile(filename, data, (err: Error) => {
-        // W przypadku błędu, wyświetl komunikat
-        if (err) {
-            console.log(err);
-        } else {
-            console.log('Plik został zapisany.');
-        }
-    });
-}
+// Tworzenie nowego pliku tekstowego
+fs.writeFileSync('mojplik.txt', 'To jest zawartość mojego pliku.');
 
-// Wywołanie funkcji z podaniem nazwy pliku oraz danych do zapisania
-writeToFile('moj_plik.txt', 'To jest moj pierwszy plik tekstowy!');
+// Odczytywanie pliku tekstowego
+const zawartoscPliku = fs.readFileSync('mojplik.txt', 'utf-8');
+console.log(zawartoscPliku); // To jest zawartość mojego pliku.
 
+// Dodawanie nowych danych do pliku tekstowego
+fs.appendFileSync('mojplik.txt', '\nTo jest nowa linia tekstu.');
 ```
 
-Running the above code will write the specified data to a text file named "moj_plik.txt". To verify that the file was written successfully, you can navigate to the file location and open it to see the text inside.
+W powyższym przykładzie używamy modułu `fs` (od ang. file system) do operacji związanych z plikami. `writeFileSync()` tworzy nowy plik o podanej nazwie i zawartej w drugim argumencie zawartości. `readFileSync()` czyta zawartość istniejącego pliku i zwraca go jako ciąg znaków, który możemy przypisać do zmiennej i wykorzystać w programie. Aby dodać nowe dane do pliku, używamy `appendFileSync()`, który dodaje podaną zawartość na końcu pliku.
 
-## Zagłębienie się w temat
+## Głębszy zanurzenie:
 
-Tworzenie plików tekstowych jest jedną z podstawowych form komunikacji w programowaniu. Może być używane do przechowywania danych, jak również wyświetlania informacji dla użytkownika. Oprócz funkcji `writeFile`, biblioteka `fs` udostępnia również inne metody, takie jak `readFile` i `appendFile`, które pozwalają na odczytywanie i dopisywanie treści do istniejących plików tekstowych. Pozwala to na jeszcze większą kontrolę nad danymi przechowywanymi w plikach.
+### Kontekst historyczny
+Pisanie plików tekstowych jest jednym z podstawowych sposobów komunikacji między programami od wielu lat. Pliki tekstowe są nadal powszechnie używane w dzisiejszych czasach, ale istnieje wiele innych sposobów przesyłania i przechowywania danych.
 
-## Zobacz także
+### Alternatywy
+Istnieje wiele alternatywnych sposobów zapisywania danych w języku TypeScript, w szczególności z użyciem baz danych lub plików JSON. Jednak pisanie plików tekstowych jest nadal popularną opcją, ponieważ jest to prosty i czytelny sposób przechowywania danych.
 
-Jeśli chcesz dowiedzieć się więcej o pisaniu plików tekstowych w języku TypeScript, możesz zapoznać się z dokumentacją oficjalnej biblioteki `fs` na stronie [https://nodejs.org/api/fs.html](https://nodejs.org/api/fs.html). Możesz również zobaczyć przykładowy projekt na GitHubie, który wykorzystuje funkcje `fs` do tworzenia pliku tekstowego [https://github.com/username/repo](https://github.com/username/repo).
+### Szczegóły implementacji
+Podstawowym sposobem pisania danych do pliku tekstowego jest użycie funkcji `writeFileSync()` lub `appendFileSync()`, ale istnieją także inne metody, takie jak strumienie lub wykorzystanie bibliotek zewnętrznych.
+
+## Zobacz również:
+- [Dokumentacja Node.js o module fs](https://nodejs.org/api/fs.html)
+- [Inne sposoby przechowywania danych w TypeScript](https://www.telesurtv.net/english/analysis/4-Types-of-Data-Storage-in-TSCHS-20180519-0023.html)

@@ -1,7 +1,7 @@
 ---
-title:                "Génération de nombres aléatoires"
-html_title:           "Clojure: Génération de nombres aléatoires"
-simple_title:         "Génération de nombres aléatoires"
+title:                "Génération de nombres aléatoires."
+html_title:           "Clojure: Génération de nombres aléatoires."
+simple_title:         "Génération de nombres aléatoires."
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Numbers"
@@ -10,29 +10,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+# Aléatoire : Pourquoi et Comment?
 
-Générer des nombres aléatoires est utile dans de nombreuses situations en programmation. Cela peut être utilisé pour générer des données aléatoires pour des tests, créer des jeux ou même pour des problèmes d'optimisation.
+## Quoi & Pourquoi?
+Générer des nombres aléatoires est un processus informatique qui consiste à produire des nombres aléatoires de manière pseudo-aléatoire. Cela permet aux programmeurs de créer des jeux, des simulations et des outils statistiques qui nécessitent un élément de hasard.
 
-## Comment faire
+## Comment faire:
+Pour générer des nombres aléatoires en Clojure, on peut utiliser la fonction `rand` qui retourne un nombre aléatoire compris entre 0 inclus et 1 exclus. Par exemple, pour générer un nombre aléatoire entre 1 et 100, on peut utiliser l'expression `(+ 1 (int (* 100 (rand))))` qui multiplie le nombre aléatoire par 100 et l'arrondit à l'entier le plus proche avant d'ajouter 1. Voici un exemple de code et sa sortie :
 
 ```Clojure
-;; Générer un nombre aléatoire entre 0 et 10 inclus
-(rand-int 11) 
-;; -> 7
+(defn randomize [min max]
+  (+ min (int (* max (rand)))))
 
-;; Générer une liste de nombres aléatoires entre 1 et 100
-(repeatedly 10 #(rand-int 101)) 
-;; -> (86 47 76 11 53 34 65 45 78 82)
+(randomize 1 10)   ; Exemple de sortie : 7
 ```
 
-## Profonde plongée
+## Plongeon En Profondeur:
+Historiquement, la génération de nombres aléatoires était un problème difficile en informatique. Les premières méthodes utilisaient des formules mathématiques mais produisaient des résultats prévisibles. Avec l'avènement de l'informatique moderne, les ordinateurs utilisent des algorithmes complexes pour produire des nombres pseudo-aléatoires. Il existe également des alternatives à la fonction `rand` en Clojure, telles que `random-int` qui accepte une limite supérieure et retourne un entier aléatoire compris entre 0 et cette limite.
 
-Clojure utilise la fonction `rand` pour générer des nombres aléatoires entre 0 et 1, mais il existe également des fonctions spécialisées pour générer des nombres entiers aléatoires (`rand-int`), des nombres décimaux (`rand-double`) et même des nombres dans un certain intervalle (`rand-nth`).
-
-Il est important de noter que les nombres aléatoires générés par Clojure sont pseudo-aléatoires, ce qui signifie qu'ils suivent un algorithme déterministe mais produisent des résultats qui semblent aléatoires pour l'utilisateur. Cela garantit la reproductibilité des résultats en utilisant la même graine (`seed`) pour la fonction `rand` ou `rand-int`.
-
-## Voir aussi
-
-- Documentation officielle sur les fonctions de génération de nombres aléatoires en Clojure: https://clojuredocs.org/clojure.core/rand-int
-- Un guide pour la génération de nombres aléatoires en Clojure: https://github.com/pedrorgirardi/clojure-random-numbers-guide
+## A Voir Aussi:
+Pour en savoir plus sur la génération de nombres aléatoires en Clojure, vous pouvez consulter la documentation officielle à ce sujet : https://clojuredocs.org/clojure.core/rand. Vous pouvez également explorer les différentes alternatives mentionnées ci-dessus telles que `random-int` et `random-sample` pour découvrir leurs fonctionnalités respectives.

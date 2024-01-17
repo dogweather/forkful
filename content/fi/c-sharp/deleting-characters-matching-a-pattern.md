@@ -1,7 +1,7 @@
 ---
-title:                "Mallin perustuvien merkkien poistaminen"
-html_title:           "C#: Mallin perustuvien merkkien poistaminen"
-simple_title:         "Mallin perustuvien merkkien poistaminen"
+title:                "Kuvion mukaisten merkkien poistaminen"
+html_title:           "C#: Kuvion mukaisten merkkien poistaminen"
+simple_title:         "Kuvion mukaisten merkkien poistaminen"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Strings"
@@ -10,33 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Miksi & Mikä?
+Miksi ohjelmoijat poistavat merkkejä, jotka vastaavat tiettyä kuvioa? Se tehdään yleensä tietyn tuloksen saavuttamiseksi, esimerkiksi tietyn merkkijonon löytämiseksi tiedostosta tai tietokannasta. Tähän voi myös liittyä tiettyjen tietojen suodattaminen tai muokkaaminen.
 
-On monia syitä, miksi voisi haluta poistaa merkkejä, jotka vastaavat tiettyä kaavaa ohjelmointityössä. Yleisimpiä syitä ovat tiedon käsittely ja datan puhdistaminen ennen sen käyttöä.
-
-## Näin Tehdään
-
-Merkkijonon tiettyjen merkkien poistaminen voidaan tehdä monella eri tavalla C#-ohjelmoinnissa. Yksi tapa on käyttää Replace-metodia, joka korvaa halutut merkit tyhjällä merkillä. Toinen tapa on käyttää Regex-luokkaa, joka mahdollistaa monimutkaisempien kaavojen käytön.
+## Kuinka:
+Seuraavassa esimerkissä näytämme, kuinka voit poistaa kaikki sitaatimerkit merkkijonosta käyttämällä Regex.Replace-metodia:
 
 ```C#
-// Replace-metodin käyttö:
-string originalString = "Hello123World";
-string replacedString = originalString.Replace("123", "");
-Console.WriteLine(replacedString); // Tulostaa "HelloWorld"
-
-// Regex-luokan käyttö:
-string originalString = "Hello123World";
-string pattern = @"\d+"; // Merkkijono, jota halutaan poistaa
-string replacedString = Regex.Replace(originalString, pattern, "");
-Console.WriteLine(replacedString); // Tulostaa "HelloWorld"
+string lause = "Tämä on "testi" lause.";
+string korjattuLause = Regex.Replace(lause, "\"", "");
+Console.WriteLine(korjattuLause);
+//Tulostaa: Tämä on testi lause.
 ```
 
-## Syvemmälle
+## Syvällisemmin:
+Tässä tapauksessa olemme käyttäneet Regular Expression -kirjastoa (Regex) poistaaksemme kaikki merkit, jotka vastaavat " ja " -kuvioita. Tähän menetelmään liittyy kuitenkin myös muita vaihtoehtoja, kuten string.Replace-metodi tai Substring-metodi.
 
-Regex-luokka mahdollistaa monipuolisen tavan poistaa merkkejä, jotka vastaavat tiettyä kaavaa. Esimerkiksi, voit käyttää kaavassa sanaa "ja" osoittamaan, että merkkijonossa pitää olla sekä "a" että "j". Voit myös käyttää erilaisia metakaraktereja, kuten "[]" tai "()". Regex-luokkaa käyttäessä on hyvä olla perillä eri metakarakterien merkityksistä ja käyttötavoista.
+Regex-metodilla pystytään myös suorittamaan monimutkaisempia kuvioita, kuten säännöllisiä lausekkeita, jotka mahdollistavat tarkemman haun halutuista merkkijonoista.
 
-## Katso myös
+## Katso myös:
+Voit lukea lisää Regex-kirjastosta täältä: 
+[Microsoftin Regex-dokumentaatio.](https://docs.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-language-quick-reference)
 
-- [C# Replace-metodin dokumentaatio](https://docs.microsoft.com/en-us/dotnet/api/system.string.replace?view=netcore-3.1)
-- [C# Regex-luokan dokumentaatio](https://docs.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.regex?view=netcore-3.1)
-- [Regex-metakarakterit ja niiden käyttö C#-ohjelmoinnissa](https://www.regular-expressions.info/quickstart.html)
+Lisätietoa merkkijonojen muokkaamisesta löytyy täältä: [String.Replace-metodi dokumentaatio.](https://docs.microsoft.com/en-us/dotnet/api/system.string.replace?view=netcore-3.1)
+
+Voit myös harjoitella Regex-kuvion luomista ja testaamista täällä: [Regex-testeri.](https://regex101.com/)

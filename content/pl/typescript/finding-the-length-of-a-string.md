@@ -1,7 +1,7 @@
 ---
-title:                "Wyszukiwanie długości ciągu znaków"
-html_title:           "TypeScript: Wyszukiwanie długości ciągu znaków"
-simple_title:         "Wyszukiwanie długości ciągu znaków"
+title:                "Znajdowanie długości ciągu znaków"
+html_title:           "TypeScript: Znajdowanie długości ciągu znaków"
+simple_title:         "Znajdowanie długości ciągu znaków"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -10,28 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co to jest i dlaczego to robimy?
 
-Dlaczego ktoś może chcieć sprawdzić długość ciągu znaków? Niektóre zadania wymagają, aby programista mógł określić długość tekstu, np. dla celów walidacji lub obróbki danych. W takiej sytuacji znajomość sposobu na znalezienie długości ciągu jest niezbędna.
+Znalezienie długości ciągu znaków jest jedną z podstawowych operacji, które często wykonywane są przez programistów. Polega ona na określeniu liczby znaków znajdujących się w danym ciągu. Jest to przydatne w wielu sytuacjach, na przykład podczas pracy z tekstami lub analizy danych.
 
-## Jak to zrobić
-
-Sprawdzenie długości ciągu znaków może być wykonane w prosty sposób przy użyciu wbudowanej metody `.length`. Możemy to zobaczyć na przykładzie poniżej:
+## Jak to zrobić?
 
 ```TypeScript
-let text: string = "Przykładowy tekst";
-console.log(text.length);
+let string = "Hello World";
+
+console.log(string.length);
+
+// Output: 11
 ```
 
-Wynik powyższych działań będzie wynosił 18, ponieważ długość tekstu "Przykładowy tekst" wynosi właśnie 18 znaków.
+Możemy wykorzystać wbudowaną metodę ```length```, która jest dostępna dla każdego ciągu znaków w języku TypeScript. W powyższym przykładzie, używając słowa kluczowego ```let``` definiujemy zmienną ```string``` i przypisujemy jej wartość "Hello World". Następnie używamy metody ```length```, która zwraca nam długość ciągu znaków, czyli 11.
 
-## Głębsza analiza
+Możemy również wykorzystać pętlę ```for``` do iterowania po każdym znaku w ciągu i zwiększania licznika o 1, co będzie oznaczało długość ciągu.
 
-Długość ciągu znaków jest obliczana na podstawie liczby znaków w tekście. W przypadku wykorzystania metody `.length` dla zmiennych typu string, jest ona automatycznie pobierana zapisana długość tekstu. Jednocześnie, jeśli zmienna jest typu number, zostanie zwrócona ilość cyfr w liczbie.
+```TypeScript
+let string = "Hello World";
+let counter = 0;
 
-Metoda `.length` jest również użyteczna w przypadku wielu innych typów danych, takich jak tablice czy obiekty. W tym przypadku, zwracana jest ilość elementów lub właściwości w danym obiekcie. Ważne jest jednak, aby wiedzieć, że metoda `.length` nie jest dostępna dla typów danych takich jak number czy boolean.
+for (let i = 0; i < string.length; i++) {
+  counter++;
+}
+
+console.log(counter);
+
+// Output: 11
+```
+
+## Głębsze zagadnienia
+
+### Kontekst historyczny
+
+Wyliczanie długości ciągu znaków jest jedną z podstawowych operacji wykonywanych przez komputer. Pierwsze systemy operacyjne nie posiadały wbudowanej funkcji do tego celu i programiści musieli samodzielnie implementować tę funkcjonalność w swoich programach.
+
+### Alternatywy
+
+W języku TypeScript jest wiele wbudowanych metod pozwalających na manipulowanie ciągami znaków, takich jak ```substr```, ```substring``` czy ```slice```. Mogą one również zostać wykorzystane do określenia długości ciągu, jednak metoda ```length``` jest najprostszym i najczęściej używanym rozwiązaniem.
+
+### Szczegóły implementacji
+
+W języku TypeScript ciągi znaków przechowywane są jako tablice znaków, dlatego metoda ```length``` wykorzystuje właściwość ```length``` tablicy do określenia długości ciągu. W przypadku gdy ciąg jest pusty, metoda zwraca wartość 0.
 
 ## Zobacz także
 
-- [Dokumentacja TypeScript: String i array methods](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#string-and-array-methods)
-- [MDN: String.prototype.length](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length)
+Dokumentacja języka TypeScript: https://www.typescriptlang.org/docs/
+
+Wprowadzenie do podstawowych operacji na ciągach w TypeScript: https://www.tutorialspoint.com/typescript/typescript_strings.htm

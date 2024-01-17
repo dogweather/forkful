@@ -1,7 +1,7 @@
 ---
-title:                "Comenzando un nuevo proyecto"
-html_title:           "PHP: Comenzando un nuevo proyecto"
-simple_title:         "Comenzando un nuevo proyecto"
+title:                "Iniciando un nuevo proyecto"
+html_title:           "PHP: Iniciando un nuevo proyecto"
+simple_title:         "Iniciando un nuevo proyecto"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Getting Started"
@@ -10,37 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¿Qué es y por qué?
 
-Empezar un nuevo proyecto en PHP puede ser una manera emocionante de poner en práctica tus habilidades de programación y crear algo nuevo y útil. Además, PHP es uno de los lenguajes de programación más populares y ampliamente utilizados, por lo que aprenderlo puede abrirte muchas puertas en el mundo del desarrollo web.
+Comenzar un nuevo proyecto en programación significa iniciar un nuevo conjunto de código que cumpla con un propósito específico. Los programadores a menudo comienzan nuevos proyectos para abordar un problema o necesidad específica que no puede ser resuelta con el código ya existente.
 
-## Cómo hacerlo
-
-Para empezar, necesitarás tener un entorno de desarrollo configurado en tu computadora. Puedes utilizar una herramienta como XAMPP o WAMP, que incluyen un servidor web, una base de datos y todo lo necesario para ejecutar aplicaciones PHP.
-
-Una vez que tengas tu entorno listo, puedes comenzar a escribir tu código. Aquí hay un ejemplo sencillo de un "Hola Mundo" en PHP:
+## Cómo hacerlo:
 
 ```PHP
+//Para comenzar un nuevo proyecto en PHP, simplemente crea un archivo new_project.php y comienza a escribir tu código.
 <?php
-echo "¡Hola Mundo!";
+echo "¡Bienvenido a mi nuevo proyecto en PHP!";
+?>
+
+//Puedes agregar cualquier función o clase que necesites para que tu proyecto cumpla con su propósito.
+<?php
+function suma($a, $b){
+  return $a + $b;
+}
+
+echo suma(2, 3); //el resultado será 5
 ?>
 ```
 
-Este código imprimirá "¡Hola Mundo!" en la pantalla cuando se ejecute. Puedes experimentar con otras líneas de código para ver cómo funcionan y comenzar a familiarizarte con la sintaxis de PHP.
+## Profundizando:
 
-## Profundizando
+Comenzar un nuevo proyecto en PHP ha sido posible gracias al desarrollo continuo del lenguaje por parte de la comunidad de programadores. Aunque PHP es una opción popular, existen otras alternativas como Python o JavaScript. Sin embargo, PHP sigue siendo muy utilizado para el desarrollo web y ofrece una amplia documentación y recursos para ayudar a los programadores a comenzar nuevos proyectos.
 
-Ahora que ya tienes un entorno de desarrollo y conoces lo básico de PHP, es hora de profundizar en el proceso de empezar un nuevo proyecto. Aquí hay algunos consejos para ayudarte a tener un buen comienzo:
+## Ver también:
 
-- Planifica tu proyecto antes de empezar a escribir código. Esto te ayudará a tener una visión clara de lo que quieres lograr y evitará problemas más adelante.
-- Utiliza una estructura de archivos bien organizada para tu proyecto. Esto facilitará la navegación y el mantenimiento.
-- Aprende a utilizar frameworks y librerías populares de PHP para ahorrar tiempo y escribir código más eficiente.
-- Siempre asegúrate de tener un buen sistema de control de versiones para tu código, como Git, para mantener un registro de los cambios y trabajar en equipo de manera más eficiente.
-
-¡Recuerda siempre mantener una actitud positiva y estar dispuesto a seguir aprendiendo mientras trabajas en tu proyecto!
-
-## Ver también
-
-- [Documentación oficial de PHP](https://www.php.net/manual/es/)
-- [Tutorial de PHP de Codecademy](https://www.codecademy.com/learn/learn-php)
-- [Introducción a PHP de W3Schools](https://www.w3schools.com/php/)
+- [PHP Documentación oficial](https://www.php.net/manual/es/index.php)
+- [Alternativas a PHP](https://cultura-geek.com/5-alternativas-a-php/)

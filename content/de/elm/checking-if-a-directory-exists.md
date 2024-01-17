@@ -1,7 +1,7 @@
 ---
-title:                "Prüfen, ob ein Verzeichnis existiert"
-html_title:           "Elm: Prüfen, ob ein Verzeichnis existiert"
-simple_title:         "Prüfen, ob ein Verzeichnis existiert"
+title:                "Überprüfung, ob ein Verzeichnis existiert"
+html_title:           "Elm: Überprüfung, ob ein Verzeichnis existiert"
+simple_title:         "Überprüfung, ob ein Verzeichnis existiert"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Files and I/O"
@@ -10,36 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
-Warum sollte jemand überprüfen wollen, ob ein Verzeichnis existiert? Ganz einfach: Es ist ein wichtiger Schritt beim Umgang mit Dateien in der Programmierung. Wenn man sicherstellen möchte, dass ein bestimmtes Verzeichnis vorhanden ist, bevor man Dateien darin erstellt oder liest, kann man mit dieser Methode unnötige Fehler vermeiden.
+Was & Warum?:
+Das Überprüfen, ob ein Verzeichnis vorhanden ist, ist ein grundlegender Bestandteil der Programmierung. Es ermöglicht Programmierern, zu überprüfen, ob ein bestimmter Ordner bereits existiert, bevor sie weitere Aktionen ausführen. Dadurch können Probleme vermieden werden, die auftreten können, wenn ein Ordner mehrmals erstellt wird.
 
-## Wie
-Um in Elm zu überprüfen, ob ein Verzeichnis existiert, kann man die Funktion `directoryExists` aus dem Modul `File` verwenden. Diese Funktion nimmt als Argument ein `String` mit dem Pfad zum Verzeichnis und gibt ein `Task Bool` zurück. Innerhalb des `Task Bool` kann man dann überprüfen, ob das Verzeichnis existiert oder nicht. Hier ein Beispiel:
+Wie geht's:
+Zum Überprüfen, ob ein Verzeichnis vorhanden ist, können wir die Funktion `Directory.exists` verwenden. Diese Funktion akzeptiert eine Zeichenfolge als Eingabe und gibt ein Bool zurück, das angibt, ob das Verzeichnis vorhanden ist oder nicht. Hier ist ein Beispielcode:
 
-```Elm
-import File exposing (directoryExists)
-
-directoryExists "Pfad/zum/Verzeichnis"
-    |> Task.perform handleResult
-
-handleResult : Result x Bool -> _
-handleResult result =
-    case result of
-        Ok exists ->
-            if exists then
-                -- tue etwas, da das Verzeichnis existiert
-            else
-                -- tue etwas anderes, falls es nicht existiert
-        
-        Err error ->
-            -- handle Fehlerfall
+```
+Elm Directory.exists "/Users/me/Documents" 
+--> True 
 ```
 
-In diesem Beispiel nutzen wir die `Task.perform` Funktion, um das Ergebnis der `directoryExists` Funktion zu verarbeiten. Wenn das Verzeichnis existiert, wird `exists` den Wert `True` haben, ansonsten `False`. In unserem `handleResult`-Funktion können wir dann je nach Bedarf entsprechend handeln.
+Hier ist ein Beispiel für den Fall, dass das Verzeichnis nicht vorhanden ist:
 
-## Deep Dive
-Es ist wichtig zu beachten, dass die `directoryExists` Funktion nur überprüft, ob das Verzeichnis zum Zeitpunkt des Aufrufs existiert. Wenn man sicherstellen möchte, dass das Verzeichnis während der Ausführung des Programms existiert, sollte man stattdessen die Funktion `directoryExistsSync` aus dem Modul `File` verwenden. Diese Funktion gibt einfach einen `Bool` Wert zurück, je nachdem ob das Verzeichnis existiert oder nicht. Allerdings sollte man bedenken, dass dies eine synchrone Funktion ist und somit die Ausführung des Programms blockiert, während sie ausgeführt wird.
+```
+Elm Directory.exists "/Users/me/Images" 
+--> False
+```
 
-## Siehe auch
-- Offizielle Dokumentation zu `File.directoryExists`: https://package.elm-lang.org/packages/elm/file/latest/File#directoryExists
-- Weitere Informationen zu Dateioperationen in Elm: https://guide.elm-lang.org/effects/file.html
+Tiefere Einblicke:
+Das Überprüfen von Verzeichnissen ist ein wichtiger Bestandteil der Dateiverwaltung in der Programmierung. Früher war die Überprüfung von Verzeichnissen oft komplizierter und fehleranfälliger, da Programmierer eigene Methoden entwickeln mussten, um auf das Dateisystem zuzugreifen. Dank Funktionen wie `Directory.exists` ist dieser Prozess jedoch sehr viel einfacher geworden. Es gibt auch alternative Methoden zum Überprüfen von Verzeichnissen, z.B. die Verwendung von Dateisystem-Monad oder das Auslösen von Ausnahmen, wenn das Verzeichnis nicht gefunden wird.
+
+Siehe auch:
+- Elm-Dokumentation von `Directory.exists`: https://package.elm-lang.org/packages/elm/file/latest/Directory#exists
+- Alternative Methoden zum Überprüfen von Verzeichnissen in Elm: https://discourse.elm-lang.org/t/check-if-directory-exists/4809/3

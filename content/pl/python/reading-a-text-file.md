@@ -10,48 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co & Dlaczego?
+Czytanie pliku tekstowego jest jednym ze sposobów na odczytanie zawartości tekstu z systemu plików. Programiści często używają tej metody, aby przetwarzać duże ilości tekstu lub pliki z danymi, które muszą zostać wczytane do programu.
 
-Czy kiedykolwiek zastanawiałeś się, jak programy czytają pliki tekstowe? Czy chciałbyś nauczyć się, jak łatwo i skutecznie odczytać plik tekstowy w Pythonie? Jeśli tak, to ten artykuł jest dla Ciebie!
-
-## Jak to zrobić
+## Jak to zrobić:
+Przykłady kodu i wyników znajdziesz poniżej. Pamiętaj jednak, że może to się różnić w zależności od systemu operacyjnego i konfiguracji środowiska.
 
 ```Python
-# Otwieramy plik tekstowy w trybie odczytu
-file = open("tekstowy_plik.txt", "r")
+# Otwarcie pliku i odczytanie zawartości
+file = open("przykladowy_plik.txt", "r") # funkcja open() otwiera plik w trybie tylko do odczytu (read-only)
+print(file.read()) # funkcja read() wczytuje zawartość pliku i zwraca ją jako łańcuch znaków
+file.close() # pamiętaj o zamknięciu pliku po wykonaniu operacji
 
-# Czytamy całą zawartość pliku
-data = file.read()
+# Można także odczytywać plik linia po linii
+file = open("przykladowy_plik.txt", "r")
+for line in file:
+    print(line)
+file.close()
 
-# Wyświetlamy zawartość pliku
-print(data)
-
-# Zamykamy plik
+# Aby odczytać plik ze specjalnymi znakami, trzeba użyć modułu codecs
+import codecs
+file = codecs.open("przykladowy_plik.txt", "r", encoding="utf-8")
+print(file.read())
 file.close()
 ```
-Przykładowy plik tekstowy może wyglądać tak:
-```
-To jest przykładowy plik tekstowy, który będzie czytany przez nasz program. 
-Może zawierać różne linijki tekstu, symbole, liczby czy też puste linie. 
-To nie ma znaczenia, ponieważ nasz program jest w stanie odczytać go bez problemu. 
-```
 
-Po uruchomieniu powyższego skryptu, otrzymamy na konsoli następujące wyjście:
-```
-To jest przykładowy plik tekstowy, który będzie czytany przez nasz program. 
-Może zawierać różne linijki tekstu, symbole, liczby czy też puste linie. 
-To nie ma znaczenia, ponieważ nasz program jest w stanie odczytać go bez problemu. 
-```
+## Głębsze zanurzenie:
+Czytanie plików tekstowych jest powszechną czynnością w programowaniu już od początków. Wcześniej użycie funkcji open() wymagało określenia trybu dostępu do pliku, jednak w nowszych wersjach języka Python jest to opcjonalne. Alternatywnym sposobem na odczytanie pliku jest wykorzystanie metody readlines(), która zwraca listę zawierającą kolejne linie tekstu. Aby uzyskać dostęp do zawartości pliku, najlepiej używać kontekstowych menedżerów (ang. context managers), które automatycznie zamykają plik po wyjściu z bloku kodu.
 
-W ten sposób w prosty sposób możemy odczytać całą zawartość pliku tekstowego przy pomocy Pythona.
-
-## Deep Dive
-
-Podczas czytania pliku tekstowego przy pomocy Pythona, istnieją różne tryby dostępu, w których może on zostać otwarty. W przykładzie powyżej użyliśmy trybu "r", który oznacza "odczyt". Istnieją również inne tryby, takie jak "w" (zapis), "a" (dopisywanie), "x" (tworzenie), czy "rb" (odczyt w trybie binarnym). Więcej informacji o tych trybach można znaleźć w dokumentacji Pythona.
-
-Podczas czytania pliku tekstowego, możemy również ustalić punkt, w którym chcemy rozpocząć lub zakończyć czytanie. Dzieje się to za pomocą metody `read()`, w której jest możliwe podanie liczby bajtów, które chcemy odczytać. Na przykład, jeśli podamy `file.read(10)`, otrzymamy tylko pierwsze 10 bajtów pliku tekstowego.
-
-See Also
-- [Dokumentacja Pythona](https://docs.python.org/pl/3/tutorial/inputoutput.html#reading-and-writing-files)
-- [Wprowadzenie do czytania plików w Pythonie](https://realpython.com/read-write-files-python/#reading-files-in-python)
-- [Czytanie i zapisywanie plików tekstowych w Pythonie](https://www.w3schools.com/python/python_file_handling.asp)
+## Zobacz też:
+- Oficjalna dokumentacja Pythona: https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files
+- Przykładowe zadania związane z czytaniem plików: https://www.practicepython.org/exercise/2014/12/06/22-read-from-file.html

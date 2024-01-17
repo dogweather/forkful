@@ -10,28 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
- 
- Narzędzie Fish Shell jest niezbędne dla programistów, którzy chcą wysyłać żądania HTTP w swoich aplikacjach. Dzięki temu narzędziu, możemy szybko i łatwo przeprowadzać testy, debugować i weryfikować nasz kod bez konieczności korzystania z innych zewnętrznych narzędzi.
- 
-## Jak to zrobić
- 
-```Fish Shell``` jest potężnym narzędziem, które pozwala nam wysyłać żądania HTTP z poziomu naszej konsoli. Poniższy kod pokaże Ci, jak to zrobić w kilku prostych krokach.
- 
-1. Zacznij od uruchomienia Fish Shell na swoim komputerze.
-2. Następnie, zadeklaruj zmienną zawierającą nasze żądanie HTTP: ```set request "GET https://example.com"```
-3. Teraz, użyj komendy ```curl``` aby wysłać nasze żądanie i wyświetlić odpowiedź serwera: ```curl -I $request```
- 
-Tak prosto, w kilku linijkach kodu, możemy przetestować nasze żądanie i otrzymać odpowiedź serwera.
+## Co i dlaczego?
+Wysyłanie żądania HTTP jest procesem, w którym aplikacja komputerowa przesyła informacje do serwera internetowego i oczekuje odpowiedzi od serwera. Programiści często wykorzystują to do pobierania danych z internetu lub komunikacji z innymi aplikacjami.
 
-## Deep Dive
- 
-Powyższy przykład jest tylko małym wycinkiem możliwości, jakie daje nam Fish Shell w kontekście wysyłania żądań HTTP. W rzeczywistości, narzędzie to posiada szeroki zakres funkcji i opcji, które pozwalają nam na zaawansowane przetestowanie i debugowanie żądań oraz dostęp do bogatego zestawu danych odpowiedzi od serwera.
- 
-Należy jednak uważnie korzystać z tych funkcji i dobrze znać protokół HTTP, aby uniknąć błędów i niebezpiecznych sytuacji w naszych aplikacjach. Fish Shell posiada również wiele przydatnych poleceń związanych z zarządzaniem żądaniami HTTP, które warto zapoznać się i wykorzystywać w swojej pracy.
+## Jak to zrobić:
+W poniższych przykładach używając Fish Shell, przedstawione zostaną dwa sposoby na wysyłanie żądania HTTP.
 
-## Zobacz również
- 
-1. Dokumentacja Fish Shell: https://fishshell.com/docs/current/
-2. Poradnik dla początkujących w Fish Shell: https://dev.to/codeforests/a-beginners-guide-to-the-fish-shell-5ep3
-3. Lista popularnych poleceń Fish Shell: https://github.com/fish-shell/fish-shell/wiki/External-links
+```
+# Wysłanie żądania GET i wyświetlenie odpowiedzi w konsoli
+curl https://example.com
+
+# Używanie wstępnie zdefiniowanego aliasu, aby wysłać żądanie POST z danymi formularza
+alias post 'curl -d "username=user&password=pass" https://example.com/login'
+post
+```
+
+Aby wykonać te przykłady, należy mieć zainstalowane narzędzie `curl`.
+
+## Głębszy zanurzenie:
+Wysyłanie żądań HTTP jest nieodłączną częścią wielu skryptów i aplikacji internetowych. Jest to często wykorzystywana metoda do komunikacji z serwerami i pobierania lub wysyłania danych. Istnieje wiele innych narzędzi, takich jak `wget` czy `httpie`, które można również wykorzystać do wysyłania żądań HTTP.
+
+Funkcja `curl` została stworzona w 1997 roku przez szwedzkiego programistę Daniela Stenberg i jest wciąż jednym z najpopularniejszych narzędzi do wysyłania żądań HTTP.
+
+## Zobacz również:
+Dla bardziej szczegółowych informacji o wysyłaniu żądań HTTP w Fish Shell, polecamy odwiedzić oficjalną dokumentację tego narzędzia. Możesz również zapoznać się z naszym innym artykułem na temat tworzenia komunikacji między aplikacjami z wykorzystaniem Fish Shell.

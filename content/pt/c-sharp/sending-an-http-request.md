@@ -10,41 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que enviar uma solicitação HTTP?
+## O que e por que?
 
-Enviar uma solicitação HTTP é necessário para o funcionamento de muitos aplicativos e websites modernos. É uma forma de se comunicar com servidores e obter as informações necessárias para exibir conteúdo dinâmico, fazer login em contas, entre outros.
+Enviar um pedido HTTP (Hypertext Transfer Protocol) é uma maneira de um programador se comunicar com um servidor web. Isso significa que eles estão pedindo por algum tipo de informação ou serviço do servidor. Os programadores geralmente fazem isso para criar aplicativos e sites interativos para os usuários.
 
-## Como fazer?
-
-Existem várias maneiras de enviar uma solicitação HTTP em C#, mas vamos nos concentrar no método mais comum usando o objeto HttpClient. Primeiro, precisamos instalar o pacote `System.Net.Http` no nosso projeto. Em seguida, vamos utilizar o seguinte código:
+## Como fazer:
 
 ```C#
-// Importando o namespace necessário
-using System.Net.Http;
+var url = "https://www.exemplo.com/pedido"; // URL do servidor
+var client = new HttpClient(); // Inicializa o cliente HTTP
 
-// Criando uma instância do HttpClient
-var client = new HttpClient();
+// Envia um pedido GET para a URL do servidor e aguarda a resposta
+var response = await client.GetAsync(url);
+// Lê a resposta como uma string
+var result = await response.Content.ReadAsStringAsync();
 
-// Enviando a solicitação e obtendo a resposta
-HttpResponseMessage response = await client.GetAsync("https://exemplo.com");
-
-// Lendo o conteúdo da resposta
-string conteudo = await response.Content.ReadAsStringAsync();
-
-// Exibindo o conteúdo na tela
-Console.WriteLine(conteudo);
+// Imprime a resposta no console
+Console.WriteLine(result);
 ```
 
-O código acima envia uma solicitação GET para o endereço especificado e exibe o conteúdo da resposta. Mas é importante lembrar que, dependendo da API ou website que estamos utilizando, pode ser necessário enviar dados de autenticação ou parâmetros adicionais. Nesses casos, devemos utilizar a classe `HttpRequestMessage` para criar nossa solicitação personalizada.
+Output:
 
-## Aprofundando-se
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Exemplo</title>
+</head>
+<body>
+  <h1>Obrigado por enviar um pedido!</h1>
+  <p>Seu pedido foi processado com sucesso.</p>
+</body>
+</html>
+```
 
-Além do método `GetAsync` utilizado no exemplo anterior, o objeto `HttpClient` também possui métodos para enviar solicitações HTTP do tipo POST, PUT, DELETE, entre outros. Além disso, podemos especificar cabeçalhos de requisição, definir um timeout para a conexão e tratar eventuais erros na resposta.
+## Detalhes importantes:
 
-Também é importante mencionar que, em uma aplicação real, devemos sempre utilizar as melhores práticas de segurança ao enviar e receber solicitações HTTP. Isso inclui utilizar autenticação segura e criptografar os dados da requisição para evitar possíveis ataques.
+Antes de enviar um pedido HTTP, é importante conhecer os diferentes tipos de métodos de pedido, como GET, POST, PUT e DELETE, e quando cada um deve ser usado. Além disso, é necessário entender os códigos de status da resposta do servidor, como 200 para "OK" e 404 para "Não encontrado". Existem também várias bibliotecas e APIs que podem ser usadas em vez de codificar manualmente um pedido HTTP.
 
-## Veja também
+## Veja também:
 
-- [Documentação oficial da classe HttpClient em C#](https://docs.microsoft.com/pt-br/dotnet/api/system.net.http.httpclient)
-- [Tutorial sobre requisições HTTP em C#](https://www.tutlane.com/tutorial/csharp/csharp-httprequest-and-httpresponse)
-- [Como utilizar autenticação em requisições HTTP em C#](https://www.talkingdotnet.com/how-to-get-authentication-done-in-an-asp-net-core-api-after-upgrading-to-net-core-3-0/)
+- [Documentação oficial do HttpClient (em inglês)](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/http-requests?view=aspnetcore-3.1)
+- [Uma introdução ao HTTP (em português)](https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Overview)

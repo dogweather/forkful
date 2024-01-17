@@ -10,44 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+# Vad & Varför?
+Att starta ett nytt projekt är när en programmerare börjar skriva kod för ett nytt program eller en applikation. Det är i grunden den första etappen i att skapa något nytt och spännande som kan användas av andra. Programmerare gör detta för att lösa problem, visa upp sin kreativitet och förbättra tekniska färdigheter.
 
-Om du är ute efter ett nytt programmeringsspråk med moderna funktioner och enkel syntax, så är Gleam ett utmärkt val. Med bästa möjliga stöd för statisk typning och konkurrensprogrammering, är Gleam det perfekta valet för både små och stora projekt.
+# Hur gör man:
+För att starta ett nytt projekt i Gleam behöver du bara följa några enkla steg:
 
-## Så här gör du
+1. Skapa en ny mapp för ditt projekt och navigera till den i din terminal.
+2. Kör kommandot `gleam new <projektnamn>` för att skapa ett nytt projekt med det valda namnet.
+3. Öppna projektet i din favorit textredigerare och börja koda!
+4. När du är klar, kör kommandot `gleam build` för att bygga ditt projekt och skapa en exekverbar fil som kan köras.
 
-För att komma igång med Gleam behöver du först installera det på din dator. Detta kan göras enkelt med hjälp av pakethanteraren för ditt operativsystem. När Gleam är installerat kan du skapa ett nytt projekt med följande kommando:
+## Djupdykning:
+Gleam är ett funktionellt programmeringsspråk som är byggt för att vara enkelt att läsa och lätt att skriva korrekt kod i. Det är inspirerat av andra språk som Rust, Erlang och ML. Efter att ha startats av Louis Pilfold 2017, har Gleam vuxit i popularitet bland programmerare som letar efter ett alternativ till mer komplicerade språk.
 
-```Gleam new my_project```
+Ett annat alternativ för att starta ett nytt projekt i Gleam är att använda ett projekt-generatorverktyg som Jason Brown har skapat. Detta verktyg hjälper dig att snabbt komma igång med en ny Gleam-applikation och ger ett grundläggande skelett för ditt projekt.
 
-Detta kommer att skapa en grundläggande struktur för ditt projekt inklusive en src-mapp för alla källkodsfiler. För att bygga projektet, använd följande kommando:
+När det kommer till implementationen av Gleam, är språket byggt på kodbasen för Erlang och körs på BEAM-virtualmaskinen. Detta gör det möjligt att nyttja Erlangs robusta och stabila miljö, medan man får fördelarna av att använda ett modernare och mer välstrukturerat programmeringsspråk.
 
-```Gleam build```
-
-Du kan även köra alla dina tester med kommandot:
-
-```Gleam test```
-
-När ditt projekt är byggt och testat, kan du köra det med följande kommando:
-
-```Gleam run```
-
-Och om du vill distribuera ditt projekt, kan du använda kommandot:
-
-```Gleam release```
-
-Det finns även många andra kommandon och funktioner som du kan utforska när du arbetar med Gleam, såsom specifikationer, tolkning och användning av bibliotek.
-
-## Djupdykning
-
-När du startar ett nytt projekt med Gleam finns det några olika sätt att göra det på. Det enklaste sättet är att skapa en ny fil i src-mappen och börja skriva din kod. Du kan också använda flera filer och importera dem i ditt huvudprogram.
-
-Det är också möjligt att jobba med flera moduler i ett projekt med hjälp av modulpaket. En modulpaket är en samling av moduler som kan importeras och användas i ditt projekt. Detta gör det enklare att organisera och återanvända kod.
-
-När du skriver kod i Gleam, kommer du snabbt upptäcka att det är ett välstrukturerat och expressivt språk. Det finns en tydlig syntax som gör det enkelt för både programmerare och maskiner att förstå koden. Dessutom finns det ett brett utbud av bibliotek och en stark community som ständigt utvecklar och förbättrar Gleam.
-
-## Se även
-
-- [Gleam officiell hemsida](https://gleam.run/)
-- [Gleam dokumentation](https://gleam.run/book)
-- [Gleam på GitHub](https://github.com/gleam-lang/gleam)
+## Se även:
+- Officiell Gleam-hemsida: https://gleam.run/
+- Gleam-projektgenerator: https://github.com/jasonsbarr/gleam_new
+- Gleam på GitHub: https://github.com/gleam-lang/gleam

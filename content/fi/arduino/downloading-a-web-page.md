@@ -1,7 +1,7 @@
 ---
-title:                "Web-sivun lataaminen"
-html_title:           "Arduino: Web-sivun lataaminen"
-simple_title:         "Web-sivun lataaminen"
+title:                "Verkkosivun lataaminen"
+html_title:           "Arduino: Verkkosivun lataaminen"
+simple_title:         "Verkkosivun lataaminen"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "HTML and the Web"
@@ -10,63 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mikä ja miksi?
 
-Web-sivujen lataaminen on tärkeä osa nykyaikaista teknologiaa, ja Arduino tarjoaa helpon ja joustavan tavan toteuttaa tämä ominaisuus omassa projektissasi. Lataamalla web-sivuja voit esimerkiksi näyttää reaaliaikaista tietoa projektiisi liittyen tai saada päivityksiä ulkoisilta lähteiltä.
+Lataaminen ("downloading") tarkoittaa verkkosivun tallentamista internetistä omalle laitteelle. Ohjelmoijat käyttävät tätä toimintoa esimerkiksi hakeakseen tietoa erilaisilta sivustoilta, kuten säätiedoista tai uutisista.
 
-## Miten
+## Kuinka:
 
-Web-sivujen lataaminen Arduino-ohjelmassa onnistuu käyttämällä WiFi-yhteyttä ja HTTP GET -pyyntöjä. Ensiksi tarvitset WiFi-moduulin, kuten ESP8266, ja sen jälkeen voit käyttää esimerkiksi ESP8266WiFi-kirjastoa kommunikoidaksesi verkossa. Alla on yksinkertainen esimerkki, joka lataa ja tulostaa HTML-sisällön Arduino Serial Monitoriin.
-
-```Arduino
-#include <ESP8266WiFi.h>
-
-const char* ssid = "WiFi-verkon-nimi";
-const char* password = "WiFi-salasana";
-
-void setup() {
-  Serial.begin(9600);
-  WiFi.begin(ssid, password);
-  
-  while (WiFi.status() != WL_CONNECTED) {
-    delay(500);
-    Serial.println("Yhdistetään WiFi-verkkoon...");
-  }
-
-  Serial.println("WiFi-yhteys muodostettu!");
-}
-
-void loop() {
-  if (WiFi.status() == WL_CONNECTED) {
-    HTTPClient http;
-    http.begin("http://www.esimerkkisivu.fi/"); // Muuta osoite haluamaksesi
-    int httpCode = http.GET();
-
-    if (httpCode > 0) {
-      Serial.println("Web-sivu ladattu.");
-      String html = http.getString();
-      Serial.println(html); // Tulostaa sivun sisällön
-    }
-    else {
-      Serial.println("Virhe ladattaessa web-sivua.");
-    }
-    
-    http.end();
-  }
-  else {
-    Serial.println("WiFi-yhteys katkaistu.");
-  }
-
-  delay(5000); // Lataa web-sivua uudelleen 5 sekunnin välein
-}
+```
+ArduinoWiFiClient client;
+// Avataan yhteys url-osoitteeseen
+client.connect("www.example.com", 80);
+// Lähetetään HTTP-pyyntö
+client.println("GET /index.html HTTP/1.1");
+client.println("Host: www.example.com");
+client.println("Connection: close");
+client.println();
+// Luetaan vastaus ja tallennetaan se muuttujaan
+String response = client.readString();
+// Tulostetaan vastaus sarjamonitorille
+Serial.println(response);
+// Suljetaan yhteys
+client.stop();
 ```
 
-## Syvällisempi tarkastelu
+*Lopullinen tuloste:*
 
-HTTP GET -pyyntöä käytetään lähettämään tiettyä tietoa web-sivulta palvelimelle ja saamaan vastauksena tietoa palvelimen puolelta. Tämä toimii hyvin yksinkertaisten web-sivujen lataamisessa, mutta vaativammissa projekteissa voi olla tarpeen käyttää esimerkiksi REST API:a tai muita kommunikointitapoja. On myös tärkeää muistaa, että WiFi-yhteys voi olla epäluotettava ja pyyntöjä tulee käsitellä virheiden varalta.
+```
+HTTP/1.1 200 OK
+Date: Thu, 25 Feb 2021 00:00:00 GMT
+Server: Apache
+Last-Modified: Mon, 18 Jan 2021 00:00:00 GMT
+ETag: "123abc456"
+Accept-Ranges: bytes
+Content-Length: 2911
+Connection: close
+Content-Type: text/html
 
-## Katso myös
+<!DOCTYPE html>
+<html>
+<head><title>Esimerkkisivu</title></head>
+<body>
+Tervetuloa esimerkkisivulle!
+</body>
+</html>
+```
 
-- [Arduino HTTPClient library](https://github.com/arduino-libraries/ArduinoHttpClient)
-- [ESP8266WiFi library reference](https://arduino-esp8266.readthedocs.io/en/2.6.0/esp8266wifi/readme.html)
-- [REST API tutorial](https://www.restapitutorial.com/lessons/whatisrest.html)
+## Syvemmät vedet:
+
+Lataamista on käytetty jo pitkään eri ohjelmointikielillä. Arduino-kirjastoissa on käytettävissä erilaisia vaihtoehtoja lataamiseen, kuten WiFiClient ja EthernetClient. Myös ulkoiset kirjastot, kuten ESP8266WiFi, tarjoavat lisämahdollisuuksia.
+
+## Katso myös:
+
+- [WiFiClient - Arduino Reference](https://www.arduino.cc/en/Reference/WiFiClient)
+- [ESP8266WiFi Library - GitHub](https://github.com/esp8266/Arduino/tree/master/libraries/ESP8266WiFi)

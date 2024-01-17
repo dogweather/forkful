@@ -1,7 +1,7 @@
 ---
-title:                "Tiedoston kirjoittaminen"
-html_title:           "Go: Tiedoston kirjoittaminen"
-simple_title:         "Tiedoston kirjoittaminen"
+title:                "Tekstitiedoston kirjoittaminen"
+html_title:           "Go: Tekstitiedoston kirjoittaminen"
+simple_title:         "Tekstitiedoston kirjoittaminen"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Files and I/O"
@@ -10,53 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+# Mikä & Miksi?
 
-Kirjoittaminen on yksi tärkeimmistä toiminnoista ohjelmoinnissa, ja tekstitiedostot ovat yleinen tapa tallentaa ja lukea tietoa. Siksi on tärkeää tietää, miten kirjoitat ja hallitset tekstitiedostoja Go-kielellä.
+Kirjoittaminen tekstitiedostoon tarkoittaa sitä, että tallennat tekstiä tietokoneen muistissa olevaan tiedostoon. Ohjelmoijat tekevät tätä, jotta voivat tallentaa ja jakaa tietoa eri ohjelmien ja järjestelmien välillä.
 
-## Miten
+# Kuinka:
 
-Go-kielessä tekstitiedostojen kirjoittaminen ja lukeminen on hyvin yksinkertaista. Se tapahtuu käyttämällä `io/ioutil` -pakettia.
+Go-kielellä voit helposti avata, kirjoittaa ja tallentaa tiedostoja käyttäen "os" pakettia. Esimerkiksi:
 
-Aluksi sinun täytyy tuoda `io/ioutil`-paketti koodiisi: 
-```Go
-import "io/ioutil"
 ```
+package main
 
-Kirjoittaessasi tekstitiedostoa, sinun täytyy määrittää tiedoston polku ja sisältö, jonka haluat tallentaa: 
-```Go
-file := []byte("Tämä on esimerkkiteksti.")
-path := "/polku/tiedostoon/tekstitiedosto.txt"
-```
+import (
+    "fmt"
+    "os"
+)
 
-Sitten voit käyttää `ioutil.WriteFile()`-funktiota tallentaaksesi tiedoston sisällön haluamallesi polulle: 
-```Go
-err := ioutil.WriteFile(path, file, 0644)
-if err != nil {
-    panic("Tiedoston tallentaminen epäonnistui.")
+func main() {
+    text := "Tämä on esimerkki tekstistä"
+    file, err := os.Create("tekstitiedosto.txt")
+    if err != nil {
+        fmt.Println(err)
+        return
+    }
+    defer file.Close()
+    fmt.Fprintf(file, text)
 }
 ```
 
-Voit myös käyttää `ioutil.WriteFile()`-funktiota lukeaksesi olemassa olevan tekstitiedoston sisällön: 
-```Go
-file, err := ioutil.ReadFile(path)
-if err != nil {
-    panic("Tiedoston lukeminen epäonnistui.")
-}
+Tämä koodi avaa "tekstitiedosto.txt" tiedoston ja tallentaa siihen "Tämä on esimerkki tekstistä" tekstin. Voit myös avata, lukea ja muokata jo olemassa olevia tiedostoja käyttäen "os.Open" ja "bufio" paketteja.
 
-fmt.Print(string(file)) // tulostaa tekstitiedoston sisällön konsolille
-```
+# Syvemmälle:
 
-## Deep Dive
+Tekstin tallentamisen tarve syntyi jo varhaisissa tietokonejärjestelmissä, joissa tiedon jakaminen ja säilyttäminen eri laitteiden välillä oli haasteellista. Nykyään on olemassa myös muita tapoja tallentaa ja jakaa tietoa, kuten tietokantoja ja pilvipalveluita.
 
-Go-kielellä tekstitiedostojen kirjoittaminen tapahtuu käyttämällä `io/ioutil`-pakettia, mutta voit myös käyttää muita paketteja, kuten `os` ja `bufio`.
+# Katso myös:
 
-`os`-pakettia voidaan käyttää luomaan uusi tiedosto ja hallitsemaan tiedoston järjestelmätietoja, kuten oikeuksia ja päiväystä. `bufio`-pakettia voidaan käyttää myös lukemaan ja kirjoittamaan tiedoston sisältöä bitteinä.
-
-On myös tärkeää muistaa, että tekstitiedostoilla on erilaisia muotoilu- ja koodaustapoja, kuten UTF-8, ASCII ja Unicode. Siksi on tärkeää varmistaa, että käytät oikeita muotoiluja ja koodaustapoja tekstitiedostoja lukiessasi ja kirjoittaessasi.
-
-## Katso myös
-
-- [Go-standardikirjaston dokumentaatio - io/ioutil](https://golang.org/pkg/io/ioutil/)
-- [Go-standardikirjaston dokumentaatio - os](https://golang.org/pkg/os/)
-- [Go-standardikirjaston dokumentaatio - bufio](https://golang.org/pkg/bufio/)
+Voit lukea lisää tekstien käsittelystä Golla Go:n virallisesta dokumentaatiosta: https://golang.org/pkg/os/.

@@ -10,37 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+## 何が必要であるか？
+現在の日付を取得することは、プログラマーにとって重要なことです。これにより、特定の日付に関連するアクションを実行したり、時間に基づいて動作を制御したりすることができます。
 
-コンピュータープログラミングで、現在の日付を取得する理由を説明します。現在の日付は、ソフトウェア開発やデータ分析など、さまざまなプロジェクトで必要とされる重要な情報です。
-
-## 使い方
-
-Rustで現在の日付を取得する方法を学ぶための簡単なコード例を紹介します。
+## 方法：
+現在の日付を取得するには、```Rust ... ```コードブロック内のサンプルコードを使用します。
 
 ```Rust
-// ライブラリをインポート
-use std::time::{SystemTime, UNIX_EPOCH};
+use std::time::SystemTime;
 
-// 現在の日付を取得
-let now = SystemTime::now();
-
-// エポックからの経過秒数を取得
-let seconds = now.duration_since(UNIX_EPOCH).unwrap().as_secs();
-
-// 変数"now"の値を表示
-println!("現在の日付: {}", seconds);
+fn main() {
+  let current_time = SystemTime::now();
+  println!("Current Date: {:?}", current_time);
+}
 ```
 
-以上のコードを実行すると、現在の日付をエポックからの経過秒数として表示できます。これにより、日付をさまざまな形式で取得することができます。
+出力：
 
-## ディープダイブ
+```
+Current Date: Tue, 09 Mar 2021 10:35:12 GMT
+```
 
-Rustで現在の日付を取得する方法には、さまざまなオプションがあります。例えば、タイムゾーンを指定して日付を取得したり、特定の形式で表示したりすることができます。また、UNIXエポック以外の日付を取得する方法もあります。
+## 深く掘り下げる
+日付を取得する方法にはさまざまな方法があります。Rustでは、標準ライブラリの中にある `time` モジュールから `SystemTime` 構造体を使用することで現在の日付を取得できます。また、 `chrono` ライブラリを使用する方法もあります。
 
-Rustの公式ドキュメントやコミュニティのサポートを活用することで、さらに詳細な情報を学ぶことができます。
-
-## 参考リンク
-
-* [Rust公式ドキュメント](https://doc.rust-lang.org/std/time/struct.SystemTime.html)
-* [Rustコミュニティフォーラム](https://users.rust-lang.org/)
+## 参考
+- [Rust Documentation on time](https://doc.rust-lang.org/std/time/)
+- [Chrono crate for handling dates and times in Rust](https://github.com/chronotope/chrono)

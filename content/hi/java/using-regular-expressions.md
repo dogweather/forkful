@@ -10,39 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Why: Kyu Regular Expressions ka upyog karna hai?
+# क्या और क्यों?
 
-Regular Expressions ek bahut prabhavi aur prachalit tool hai jo sahi pattern ko dhoondhne aur manipulate karne mein madad karta hai. Ye programming mein bahut kaam aata hai jaise data validation, data extraction, aur string manipulation. Isse kaam karte waqt hume bahut time aur effort bachata hai.
+रेगुलर एक्सप्रेशन्स का उपयोग करके, डेवलपर्स अपने जवाकोड में गहराई से ताल्लुकियों (patterns) को खोजने और प्रसंस्कार लगाने के लिए करते हैं। यह तालाबंदियों को खोजने में आसानी प्रदान करता है और कोड को स्पष्ट और सुबद्र बनाने में मदद करता है।
 
-How To: Kaise Regular Expressions ka upyog karein?
+## कैसे करें?
 
-Jaise ki humne pehle bhi kaha, Regular Expressions ka upyog karne ke liye hume ek pattern dhoondhna hota hai. Is pattern ko hum regular expression ya regex kehte hain. Iske baad hum uss regex ko Java mein implement karte hain.
+रेगुलर एक्सप्रेशन्स का उपयोग करने के लिए, पहले आपको जवाकोड को एक एक्सप्रेशन के साथ संयुक्त करना होगा, जो आपकी तालाबंदी को दर्शाता है। यह एक्सप्रेशन स्ट्रिंग में छिपे हुए स्थान (matches) को खोजने के लिए, जैसे कि शब्दों, संख्याओं और अन्य वर्णन को दर्शाता है।
 
-```Java
-// Regex Example
-String regex = "a+[bc]{2}";
-```
-
-Iss code mein humne ek regex banaya hai jo "a" ke saath "bc" ya "bb" ko match karta hai. Ab hum ise kaise use kar sakte hain, ye dekhte hain.
+उदाहरण के लिए, हम दो स्ट्रिंग्स "abc" और "123" को तुलना कर सकते हैं और यदि एक तालाबंदी "a" के साथ मिलती है, तो हम एक बार सटीक (match) के लिए प्रदर्शित करते हैं, जैसे कि नीचे दिखाया गया है।
 
 ```Java
-String text = "abc";
-boolean isMatch = text.matches(regex); // returns true
+String str1 = "abc";
+String str2 = "123";
+
+// तालाबंदी बनाएं
+String regex = "a";
+
+// तालाबंदी से मिलती स्ट्रिंग्स ढूंढें
+System.out.println(str1.matches(regex));
+System.out.println(str2.matches(regex));
+
 ```
+लक्ष्य से प्यासा "true" और प्यासी "false" दर्शायेंगे।
 
-Is code mein humne `matches()` method ka upyog kiya hai jo humare text ko diye gaye regex ke saath match karta hai aur agar match ho jata hai to `true` return karta hai. Agar text me se "bc" hata kar "ab" banta hai to yeh match nahi karta aur `false` return karta hai.
+## गहराई खोजें
 
-Deep Dive: Regular Expressions ka upyog karte waqt hume kuch baato ka dhyan rakhna hota hai.
+रेगुलर एक्सप्रेशन्स का प्रयोग पहले से ही बहुत समय से किया जा रहा है, और इसके कई विकल्प भी हैं। एक विकल्प है, बहुत से विशेष शब्दों को खोजने और इसे जैसे कि फाइल्स या इंटरनेट डाटा से डालने के लिए इस्तेमाल करने के लिए "एक्सप्रेशन्स" को दूसरी मेजबान भाषा के रूप में उदय किया है।
 
-1. Escape Characters: Regex mein kuch characters special hote hain jaise `.` aur `*` jinki wajah se humare regex mein galti ho sakti hai. Isiliye hume en characters ke saath `\` ka use karna hota hai.
+इसके अलावा, रेगुलर एक्सप्रेशन्स का उपयोग निम्नलिखित कारणों से भी किया जाता है:
 
-2. Character Classes: Regex mein hum `[ ]` ke andar characters ya ranges ka use kar sakte hain jaise `[a-z]`. Isse humare regex me kewal lowercase letters hi match honge.
+1) कोड में प्रतियोगिता को कम करना
+2) कोड को स्पष्ट और सुबद्र बनाना
+3) समय बचाओ - बहुत से तालाबंदी लिखने से बेहतर है एक टोकन, जैसे कि "एक वर्ण" या "साइंटेक्स" को चुनना
 
-3. Quantifiers: Ye Regular Expressions ke sabse powerful part hain. Inse hum specify kar sakte hain ki hum kisi character ya pattern ko kitni baar match karna chahte hain, jaise `a{3}` ye "aaa" ko match karega.
+## जारी रखें
 
-See Also: Dekhiye Regular Expressions ka upyog karte samay hume in cheezo ka dhyan rakhna hota hai. Regular Expressions ke aur bhi bahut saare features hain jo aap khud explore kar sakte hain.
+रेगुलर एक्सप्रेशन्स को गहराई से समझने के लिए आप दोनों "नेत्र" और "ओ and कुछ अन्य वेबसाइट्स को देख सकते हैं।
 
-Links: 
-- [Tutorialspoint - Java Regular Expressions](https://www.tutorialspoint.com/java/java_regular_expressions.htm)
-- [GeeksforGeeks - Regular Expressions in Java](https://www.geeksforgeeks.org/regular-expressions-in-java/)
-- [Oracle Docs - Java SE - Regular Expressions](https://docs.oracle.com/javase/tutorial/essential/regex/index.html)
+उम्मीद है कि आप समझ गए होंगे कि रेगुलर एक्सप्रेशन्स क्या है और आपको यह

@@ -1,7 +1,7 @@
 ---
-title:                "두 날짜 비교"
-html_title:           "C#: 두 날짜 비교"
-simple_title:         "두 날짜 비교"
+title:                "두 날짜 비교하기"
+html_title:           "C#: 두 날짜 비교하기"
+simple_title:         "두 날짜 비교하기"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Dates and Times"
@@ -10,43 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜?
+## 무엇이며 왜?
+두 날짜를 비교하는 것은 일반적으로 한 날짜가 다른 날짜보다 이전인지, 이후인지 또는 동일한지를 확인하는 것을 말합니다. 프로그래머들은 이 작업을 자주 수행하며, 예를 들어 예약 시스템이나 알림 시스템에서 날짜를 비교하는 데 사용됩니다.
 
-날짜 비교는 두 가지 날짜가 얼마나 다른지를 확인하거나 두 날짜 사이의 경과 시간을 계산하는데 유용합니다.
-
-## 하는 방법
-
+## 방법:
 ```C#
-var date1 = new DateTime(2021, 7, 15);
-var date2 = new DateTime(2021, 7, 20);
+DateTime date1 = new DateTime(2021, 1, 1); // 첫 번째 날짜를 지정합니다.
+DateTime date2 = new DateTime(2020, 12, 25); // 두 번째 날짜를 지정합니다.
+ 
+if (date1 > date2) // 첫 번째 날짜가 두 번째 날짜보다 이후인지 확인합니다.
+{
+    Console.WriteLine("첫 번째 날짜가 두 번째 날짜보다 이후입니다.");
+}
+else if (date1 < date2) // 첫 번째 날짜가 두 번째 날짜보다 이전인지 확인합니다.
+{
+    Console.WriteLine("첫 번째 날짜가 두 번째 날짜보다 이전입니다.");
+}
+else // 두 날짜가 동일한지 확인합니다.
+{
+    Console.WriteLine("두 날짜가 동일합니다.");
+}
 
-// 두 날짜의 차이를 구하는 방법
-TimeSpan difference = date2 - date1;
-Console.WriteLine(difference.Days); // 출력: 5
-
-// 날짜가 미래인지 과거인지 확인하는 방법
-if (date1 > date2)
-{
-    Console.WriteLine("date1은 date2보다 미래입니다."); 
-}
-else if (date1 < date2)
-{
-    Console.WriteLine("date1은 date2보다 과거입니다."); 
-}
-else
-{
-    Console.WriteLine("date1과 date2는 같은 날짜입니다."); 
-}
+// 결과: 첫 번째 날짜가 두 번째 날짜보다 이후입니다.
 ```
 
-출력: date1은 date2보다 과거입니다.
+## 더 깊이 들어가기:
+일반적으로 응용 프로그램에서 두 날짜를 비교할 때는 날짜와 함께 시간도 고려해야 합니다. 예를 들어, "2021년 1월 1일 10시"와 "2021년 1월 1일 11시"를 비교할 때는 시간까지 고려해야 하며, 시간까지 동일하지 않으면 완전히 다른 날짜로 간주됩니다. 
 
-## 깊이 파고들기
+또 다른 방법으로는 날짜와 시간 모두를 포함하는 DateTime 형식을 사용하는 것입니다. 이를 사용하면 날짜 및 시간을 자유롭게 비교할 수 있습니다. 이전에는 문자열 형식의 날짜를 비교하는 경우가 많았지만, 현재는 DateTime 형식이 보다 정확하고 효율적인 방법입니다.
 
-날짜 비교에는 여러가지 방법이 있습니다. IsSameDay() 함수를 만들어서 두 날짜의 년, 월, 일이 모두 일치하는지 확인하는 방법도 있고, Compare() 함수를 사용하여 두 날짜를 비교하는 방법도 있습니다. 또한 DateTime 구조체의 메서드를 사용하여 특정 날짜의 요일이나 월의 일 수를 가져올 수도 있습니다.
-
-## 참고
-
-- [C# DateTime 클래스 문서](https://docs.microsoft.com/ko-kr/dotnet/api/system.datetime?view=net-5.0)
-- [C# TimeSpan 구조체 문서](https://docs.microsoft.com/ko-kr/dotnet/api/system.timespan?view=net-5.0)
-- [C# 비교 연산자](https://docs.microsoft.com/ko-kr/dotnet/csharp/language-reference/operators/comparison-operators)
+## 관련 자료:
+- [Microsoft Docs: 날짜 및 시간 값 비교하기](https://docs.microsoft.com/ko-kr/dotnet/csharp/programming-guide/dates-times/comparing-dates-and-times)

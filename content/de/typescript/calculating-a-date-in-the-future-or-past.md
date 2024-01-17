@@ -1,7 +1,7 @@
 ---
-title:                "Das Berechnen von Daten in der Zukunft oder Vergangenheit"
-html_title:           "TypeScript: Das Berechnen von Daten in der Zukunft oder Vergangenheit"
-simple_title:         "Das Berechnen von Daten in der Zukunft oder Vergangenheit"
+title:                "Berechnung eines Datums in der Zukunft oder Vergangenheit"
+html_title:           "TypeScript: Berechnung eines Datums in der Zukunft oder Vergangenheit"
+simple_title:         "Berechnung eines Datums in der Zukunft oder Vergangenheit"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Dates and Times"
@@ -10,42 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was & Warum?
+Das Berechnen eines Datums in der Zukunft oder Vergangenheit ist eine häufige Aufgabe für Programmierer. Diese Funktion ermöglicht es uns, das heutige Datum um eine bestimmte Anzahl von Tagen, Monaten oder Jahren zu ändern. Dies kann nützlich sein, um beispielsweise Fälligkeitsdaten für Aufgaben oder Ereignisse zu berechnen.
 
-Das Berechnen von zukünftigen oder vergangenen Daten kann in vielen Fällen nützlich sein. Beispielsweise für die Planung von Terminen oder um die Zeitangaben von Ereignissen zu überprüfen.
-
-## How To
-
-Die Berechnung von Datumsangaben in TypeScript kann mithilfe der integrierten Date Klasse erfolgen. Hier ein Beispiel, um das Datum von heute um einen bestimmten Zeitraum zu ändern:
+## Wie geht's:
+Codebeispiele und Beispiel-Ausgaben in ```TypeScript ...``` Codeblöcken.
 
 ```TypeScript
-let today: Date = new Date();
-// Heutiges Datum: 30. Mai 2021
-let futureDate: Date = today.setDate(today.getDate() + 7);
-// Datum in 7 Tagen: 06. Juni 2021
-```
+// Beispiel für ein Datum in der Zukunft berechnen
+const heute = new Date(); // Heutiges Datum 
+console.log(heute); // Ausgabe: 2021-03-24T14:19:37.840Z
 
-Eine weitere Möglichkeit ist die Nutzung von Moment.js, einer JavaScript-Bibliothek zur Manipulation von Daten und Zeiten. Hier ein Beispiel für die Berechnung eines Datums in der Vergangenheit:
+heute.setDate(heute.getDate() + 7); // Heutiges Datum um 7 Tage ändern
+console.log(heute); // Ausgabe: 2021-03-31T14:19:37.840Z
+```
 
 ```TypeScript
-import moment from 'moment';
+// Beispiel für ein Datum in der Vergangenheit berechnen 
+const heute = new Date(); // Heutiges Datum
+console.log(heute); // Ausgabe: 2021-03-24T14:19:37.840Z
 
-let pastDate: Date = moment().subtract(1, 'week').toDate();
-// Datum vor einer Woche: 23. Mai 2021
+heute.setFullYear(heute.getFullYear() - 5); // Heutiges Datum auf vor 5 Jahren setzen
+console.log(heute); // Ausgabe: 2016-03-24T14:19:37.840Z
 ```
 
-Um das Ergebnis übersichtlicher zu gestalten, kann das Datum auch in einem bestimmten Format ausgegeben werden. Hier ein Beispiel mit Hilfe von Moment.js:
+## Tief tauchen:
+Die Berechnung von Datumswerten hat eine lange Geschichte und ist in vielen verschiedenen Programmiersprachen implementiert. In TypeScript können wir verschiedene Methoden der Date-Klasse verwenden, um bestimmte Zeiteinheiten (Tage, Monate, Jahre) zu ändern. Alternativ können wir auch externe Bibliotheken wie Moment.js verwenden, um erweiterte Funktionen für das Manipulieren von Datumswerten zu nutzen.
 
-```TypeScript
-let futureDate: Date = moment().add(2, 'years').format('DD.MM.YYYY');
-// Datum in 2 Jahren im Format: 30.05.2023
-```
-
-## Deep Dive
-
-Die Datumsberechnung kann auch komplexer gestaltet werden, indem zum Beispiel auf Wochentage oder Monate geachtet wird. Die Date Klasse bietet dafür verschiedene Methoden wie `getDay()` oder `getMonth()` an. Zudem kann die Sprache und Zeitzone in Moment.js angepasst werden, um internationale Anforderungen zu erfüllen.
-
-## Siehe auch
-
+## Sieh auch:
 - [Moment.js Dokumentation](https://momentjs.com/docs/)
-- [TypeScript Date Klasse](https://www.typescriptlang.org/docs/handbook/dates-and-times.html)
+- [Date Klasse in TypeScript](https://www.typescriptlang.org/docs/handbook/2/functions.html#the-date-type)

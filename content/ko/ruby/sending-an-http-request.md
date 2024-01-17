@@ -10,45 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+## 무엇인가? 왜그렇게 하는가?
 
-HTTP 요청을 보내는 것에 대해 궁금하지 않은 사람은 없을 것입니다. 이것은 인터넷에서 정보를 가져오고 서비스와 상호 작용하는 매우 중요한 방법입니다. Ruby를 사용하여 간단하게 HTTP 요청을 보내는 방법에 대해 알아보겠습니다.
+HTTP 또는 HyperText Transfer Protocol은 인터넷에서 정보를 주고받는 데 사용되는 프로토콜입니다. HTTP 요청을 보내는 것은 당신이 웹 사이트를 방문하거나 정보를 가져오기 위해 인터넷을 사용할 때마다 발생합니다. 개발자들은 이를 프로그래밍해야 하는 이유는 HTTP 요청은 웹 애플리케이션의 핵심 기능 중 하나이기 때문입니다.
 
-## 하우 투 (How To)
+## 하는 방법:
 
+**HTTP 요청 보내기**
 ```Ruby
 require 'net/http'
+require 'json'
 
-# GET 요청 보내기
-url = URI.parse('https://www.example.com')
-req = Net::HTTP::Get.new(url.to_s)
-res = Net::HTTP.start(url.host, url.port,
-  :use_ssl => url.scheme == 'https') do |http|
-    http.request(req)
-end
-puts res.body # 요청의 내용 출력
-
-# POST 요청 보내기
-url = URI.parse('https://www.example.com/login')
-req = Net::HTTP::Post.new(url.to_s)
-req.set_form_data({username: 'username', password: 'password'})
-res = Net::HTTP.start(url.host, url.port,
-  :use_ssl => url.scheme == 'https') do |http|
-    http.request(req)
-end
-puts res.body # 요청의 내용 출력
+url = URI("https://example.com/api/users")
+response = Net::HTTP.get(url)
+puts JSON.parse(response)
 ```
+위의 예제 코드는 네트워크 요청을 만들고 응답을 가져와서 JSON으로 파싱하는 간단한 방법을 보여줍니다.
 
-```ruby
-# GET 요청의 경우, res.body에는 요청 결과로 받은 HTML 문서가 저장됩니다.
-# POST 요청의 경우, 서버에서 보낸 응답의 내용을 res.body에서 확인할 수 있습니다.
+**HTTP POST 요청 보내기**
+```Ruby
+require 'net/http'
+require 'json'
+
+url = URI("https://example.com/api/users")
+data = { username: "johnsmith", password: "password123" }
+response = Net::HTTP.post(url, data.to_json)
+puts response.body
 ```
+위의 코드는 POST 요청을 만들고 데이터를 JSON으로 변환하여 전송하는 방법을 보여줍니다.
 
-## 딥 다이브 (Deep Dive)
+## 깊게 파고들기:
 
-HTTP 요청은 네트워크를 통해 데이터를 전송하는 기본적인 방법 중 하나입니다. 다양한 메소드(GET, POST, PUT, DELETE 등)와 헤더(인증 정보, 쿠키 등)를 사용하여 요청을 구성할 수 있습니다. 또한 응답에는 상태 코드, 응답 헤더, 본문 내용 등 다양한 정보가 포함될 수 있습니다.
+HTTP는 World Wide Web의 기본 통신 규약으로, 웹 브라우저와 웹 서버 간의 통신을 조정합니다. HTTP 요청의 간단한 형식은 클라이언트가 서버로 데이터를 보내는 데 사용됩니다. 프로그래머들은 HTTP를 사용하여 웹 사이트에서 정보를 가져오거나 웹 애플리케이션의 기능을 활성화하는 등 다양한 기능을 구현할 수 있습니다.
 
-## See Also
-- [Ruby Net::HTTP 사용법](https://www.rubydoc.info/stdlib/net/Net/HTTP)
-- [HTTP 메소드](https://developer.mozilla.org/ko/docs/Web/HTTP/Methods)
-- [HTTP 응답 코드](https://developer.mozilla.org/ko/docs/Web/HTTP/Status)
+HTTP 요청을 보내는 방법에는 다양한 옵션이 있습니다. 위에서 예시로 든 코드는 Ruby의 `net/http` 라이브러리를 사용하여 간단하게 HTTP 요청을 보낸 것입니다. 하지만 프로그래머들은 `Faraday`나 `HTTParty`와 같은 다른 라이브러리를 사용하여 더 편리하고 간결하게 HTTP 요청을 보낼 수도 있습니다.
+
+## 관련 자료:
+
+- [Ruby `net/http` 라이브러리 문서](https://ruby-doc.org/stdlib-2.7.2/libdoc/net/http/rdoc/Net/HTTP.html)
+- [Faraday 라이브러리 문서](https://github.com/lostisland/faraday)
+- [HTTParty 라이브러리 문서](https://github.com/jnunemaker/httparty)

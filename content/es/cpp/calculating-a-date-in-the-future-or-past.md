@@ -10,87 +10,76 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué deberías calcular una fecha en el futuro o en el pasado?
+## ¿Qué es y por qué hacerlo?
 
-A veces, en programas de calendario o aplicaciones de planificación, es necesario calcular una fecha en el futuro o en el pasado. Por ejemplo, puede ser útil para programar recordatorios o citas, o para calcular la edad de alguien en una fecha específica.
+Calcular una fecha en el futuro o en el pasado es un proceso en el que los programadores utilizan un lenguaje de programación para determinar una fecha determinada en relación a otra fecha. Esto se puede hacer por diversas razones, como planear eventos futuros o realizar cálculos de tiempo.
 
-## Cómo realizar cálculos de fechas en C++
+## Cómo hacerlo:
 
-En C++, hay varias funciones y librerías que puedes utilizar para calcular fechas en el futuro o en el pasado. A continuación, se presentan algunos ejemplos de código y su salida correspondiente dentro de bloques de código "```C++ ... ```".
+A continuación se presentan ejemplos de código en C++ para calcular una fecha en el futuro y en el pasado:
 
-### Calcular una fecha en el futuro con la función *mktime()*
-
-La función *mktime()* toma una estructura *tm* y devuelve un *time_t* que representa esa fecha y hora. Utilizando esta función, podemos calcular una fecha en el futuro sumando un cierto número de segundos a una fecha de partida. Aquí hay un ejemplo de cómo podría ser eso:
-
-```C++
-
+```
+// Calcula una fecha 5 días en el futuro
 #include <iostream>
 #include <ctime>
+using namespace std;
 
 int main() {
-    // Se crea una fecha de partida utilizando la estructura *tm*
-    std::tm startDate = {0, 0, 12, 1, 0, 2019 - 1900};
-    // Se utiliza la función *mktime()* para obtener un *time_t* que representa la fecha de partida
-    std::time_t startTime = std::mktime(&startDate);
-
-    // Se calculan 30 días en segundos
-    int secondsIn30Days = 30 * 24 * 60 * 60;
-    // Se suma ese valor a la fecha de partida
-    std::time_t futureTime = startTime + secondsIn30Days;
-    // Se imprime la fecha en el futuro en un formato legible 
-    std::cout << "La fecha en 30 días será: " << std::asctime(std::localtime(&futureTime));
-    
-    return 0;
+  // Obtiene la fecha actual
+  time_t now = time(0);
+  
+  // Convierte la fecha actual a struct tm para manipulación de tiempo
+  tm* today = localtime(&now);
+  
+  // Agrega 5 días a la fecha actual
+  today->tm_mday += 5;
+  
+  // Convierte la nueva fecha a formato legible
+  time_t future = mktime(today);
+  cout << "La fecha 5 días en el futuro es: " << ctime(&future);
+  
+  return 0;
 }
 
 ```
+La salida de este ejemplo sería: "La fecha 5 días en el futuro es: (fecha en formato legible)".
 
-La salida de este programa sería:
+Ahora veamos cómo calcular una fecha en el pasado:
 
 ```
-La fecha en 30 días será: Thu Jan 31 12:00:00 2019
-```
-
-### Calcular una fecha en el pasado con la función *mktime()*
-
-De manera similar, también podemos utilizar la función *mktime()* para calcular una fecha en el pasado restando un número de segundos de una fecha de partida. Aquí hay un ejemplo de cómo podría verse ese código:
-
-```C++
-
+// Calcula una fecha 2 meses en el pasado
 #include <iostream>
 #include <ctime>
+using namespace std;
 
 int main() {
-    // Se crea una fecha de partida utilizando la estructura *tm*
-    std::tm startDate = {0, 0, 12, 1, 0, 2019 - 1900};
-    // Se utiliza la función *mktime()* para obtener un *time_t* que representa la fecha de partida
-    std::time_t startTime = std::mktime(&startDate);
-
-    // Se calculan 30 días en segundos
-    int secondsIn30Days = 30 * 24 * 60 * 60;
-    // Se resta ese valor a la fecha de partida
-    std::time_t pastTime = startTime - secondsIn30Days;
-    // Se imprime la fecha en el pasado en un formato legible 
-    std::cout << "La fecha hace 30 días fue: " << std::asctime(std::localtime(&pastTime));
-    
-    return 0;
+  // Obtiene la fecha actual
+  time_t now = time(0);
+  
+  // Convierte la fecha actual a struct tm para manipulación de tiempo
+  tm* today = localtime(&now);
+  
+  // Resta 2 meses a la fecha actual
+  today->tm_mon -= 2;
+  
+  // Convierte la nueva fecha a formato legible
+  time_t past = mktime(today);
+  cout << "La fecha 2 meses en el pasado es: " << ctime(&past);
+  
+  return 0;
 }
 
 ```
+La salida de este ejemplo sería: "La fecha 2 meses en el pasado es: (fecha en formato legible)".
 
-La salida de este programa sería:
+## Profundizando:
 
-```
-La fecha hace 30 días fue: Tue Nov 27 12:00:00 2018
-```
+- Contexto histórico: Calcular fechas en el futuro o en el pasado se ha vuelto más relevante con el avance de la tecnología y la necesidad de tener una visión precisa del tiempo en el mundo digital. Esto se ha vuelto especialmente importante en aplicaciones empresariales y de gestión del tiempo.
+- Alternativas: Además de C++, existen otros lenguajes de programación como Java, Python y JavaScript que también pueden ser utilizados para calcular fechas en el futuro o en el pasado.
+- Detalles de implementación: En C++, se pueden utilizar funciones como time() y mktime() para obtener y manipular fechas en forma de estructuras de tiempo (struct tm).
 
-## Más información sobre el cálculo de fechas en C++
+## Ver también:
 
-Esta es solo una pequeña muestra de cómo se pueden calcular fechas en el futuro o en el pasado en C++. También hay otras funciones y librerías disponibles, como *time.h* y *chrono*, que pueden ser útiles para realizar cálculos de fechas. Es importante investigar y elegir el método que mejor se adapte a las necesidades de tu programa.
-
-## También te puede interesar
-
-- [Documentación de la función *mktime()* en cplusplus.com](http://www.cplusplus.com/reference/ctime/mktime/)
-- [Tutorial sobre gestión de fechas y horas en C++](https://www.codeproject.com/Articles/6915/Date-Conversion-Functions-Revisited)
-- [Librería *time.h* en la documentación de C++ de Microsoft](https://msdn.microsoft.com/es-es/library/1y93248f.aspx)
-- [Introducción a la librería *chrono* en el sitio de Cppreference](https://en.cppreference.com/w/cpp/chrono)
+- [Funciones de tiempo en C++](https://es.cppreference.com/w/cpp/chrono/c/tm)
+- [Tutorial de fechas y tiempos en C++](https://www.tutorialspoint.com/cplusplus/cpp_date_time.htm)
+- [Ejemplos adicionales de cálculos de fechas en C++](https://www.w3schools.com/cpp/cpp_date_calculations.asp)

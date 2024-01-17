@@ -10,30 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Kyun
+## क्या और क्यों?
+एक स्ट्रिंग की लंबाई को ढूंढना वह तकनीक है जो एक फ़ंक्शनल प्रोग्रामिंग भाषा में एक स्ट्रिंग को प्रकारों में विश्लेषित करती है। प्रोग्रामर्स इसको अपनी कोडिंग की सुविधा के लिए करते हैं। 
 
-Ek aksar pucha jane wala sawal hai ki kisi bhi programming language mein string (shabd) ki lambai jaanana kyon zaroori hai? Iska jawab bahut simple hai - string lambai ko jaanane se hum apne code mein sahi tarah se kaam kar sakte hain aur sahi output hasil kar sakte hain. String lambai ko jaanana ek basic concept hai jo har programmer ko aana chahiye.
+## कैसे:
+जावास्क्रिप्ट में एक अपेक्षित संख्या की अनुमति देने वाली length प्रॉपर्टी का उपयोग स्ट्रिंग की लंबाई को जानने के लिए किया जा सकता है। नीचे दिए गए सुविधाओं का उपयोग करके यह संभव हो सकता है। 
 
-# Kaise karein
-
-Kisi bhi string ki lambai ko jaanane ke liye, hum Javascript ke built-in function "length" ka istemal kar sakte hain. Is function ko use karne ke liye, hum simply dot (.) operator ka istemal karenge aur uske baad "length" likhenge. Iske baad hum pehle string ka naam likhein aur uske baad "length" function ko call karein.
-
-```Javascript
-var name = "Hindi readers";
-console.log(name.length);
 ```
-Is code mein, "name" variable mein "Hindi readers" string assign kiya gaya hai aur phir console.log() function ki madad se uski length ko print kiya gaya hai. Yeh code output mein 13 dikhaega, kyun ki "Hindi readers" string mein 13 characters hote hain.
+// उदाहरण 1: एक सामान्य स्ट्रिंग की लंबाई को ढूंढना
+var str = "Welcome!";
+console.log(str.length);
 
-# Gehri Jhalak
+// उदाहरण 2: एक स्ट्रिंग में वर्णों की संख्या को ढूंढना
+var str = "Happy Holidays";
+console.log(str.length);
 
-String ki lambai ko jaanane ke peeche gehre concepts hain. Sabse pehle, humein yeh jaanna zaroori hai ki string ko computer mein binary code mein store kiya jata hai, jahan har character ko "0" aur "1" ko represent kiya jaata hai. Har character ka binary code mein ek fixed length hota hai, jis se string ki lambai bhi fixed ho jaati hai.
+// उदाहरण 3: रिटर्न स्टेटमेंट के साथ स्ट्रिंग की लंबाई को ढूंढना
+function getLength(str) {
+  return str.length;
+}
+console.log(getLength("Hello World!"));
+```
 
-Iske alawa, har programming language mein string ki length alag tarike se calculate kari jaati hai. Kuch languages mein string mein spaces aur special characters ko bhi consider kiya jaata hai jab ki kuch mein sirf alphabets aur numbers ko hi count kiya jaata hai.
+आउटपुट:
+```
+8
+14
+13
+```
 
-Yeh jaankari aapko programming mein aage badhne mein madad karegi, kyun ki aapko har language mein string ki length ko samajhna zaroori hai.
+## गहराई में:
+प्राचीन भाषाओं में, एक स्ट्रिंग खंडों में वर्गीकृत की जाती थी, जो उन्हें विशिष्ट अनुमतियों में विभाजित करती थी। आजकल इस तकनीक को सुनिश्चित करने के लिए अन्य अनुदित दृष्टिकोणों का उपयोग किया जाता है जो स्ट्रिंग का उपयोग करते हैं। जावास्क्रिप्ट में, अन्य अनुदित दृष्टिकोणों में से एक है length प्रॉपर्टी। 
 
-# Dekhein Bhi
-
-- [Javascript String Methods](https://www.w3schools.com/js/js_string_methods.asp)
-- [GeeksforGeeks - length() method in Javascript](https://www.geeksforgeeks.org/javascript-string-length/)
-- [MDN Web Docs - String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
+## इसके अलावा देखें:
+जावास्क्रिप्ट length प्रॉपर्टी सामान्यतः स्ट्रिंग तक सीमित होती है, तो अधिक जानकारी के लिए [String Object](https://developer.mozilla.org/hi/docs/Web/JavaScript/Reference/Global_Objects/String) को जाँचें।

@@ -10,60 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-Debugging is an essential part of any programming task. It helps find and fix errors in the code, making it easier to develop and maintain software. In some cases, it may be necessary to print out specific values or messages to track the flow of the program and identify potential issues. This is where printing debug output comes in handy.
+## What & Why?
 
-## How To
-To print debug output in Elm, we can use the built-in `Debug` module which provides functions for logging values and messages to the console. Let's take a look at some examples:
+Printing debug output is a way for programmers to see the values of variables and data structures while their code is running. This is often used for troubleshooting and understanding the flow of the code.
 
-```
-import Debug exposing (log)
+## How to:
 
--- Printing a value
-log "Hello, world!"
+To print debug output in Elm, you can use the built-in `Debug.log` function. It takes two arguments - a message to display and the value to be printed. For example:
 
--- Printing a message with a value
-log "The answer is" 42
-
--- Printing a list of values
-log "Fruits" ["apple", "banana", "orange"]
+```elm
+Debug.log "My variable is" myVariable
 ```
 
-The output for these examples will be displayed in the browser's developer console. If you're using Chrome, you can access it by pressing `Ctrl + Shift + J` on Windows or `Command + Option + J` on Mac.
+This will print "My variable is" followed by the value of `myVariable` in the console when the code is executed.
 
-```
-Hello, world!
-The answer is 42
-Fruits
-    ["apple","banana","orange"]
-```
+You can also use `Debug.toString` to convert any value into a string and then print it using `Debug.log`. For example:
 
-Additionally, we can use the `logMany` function to print multiple values or messages in a single line.
-
-```
-import Debug exposing (logMany)
-
-logMany [ "Name" "John", "Age" 26 ]
+```elm
+Debug.log "My list is" (Debug.toString myList)
 ```
 
-This will print out the following in the console:
-
-```
-Name | "John" -- Age | 26
-```
+This will print "My list is" followed by the string representation of `myList` in the console.
 
 ## Deep Dive
-The `Debug` module also provides an `crash` function which is useful for debugging unexpected errors in the code. It will cause the program to crash and display the error in the console.
 
-Another useful function is `todo` which can be used as a placeholder for unfinished code. It will print a warning in the console, reminding us to come back and complete the code later.
+Printing debug output has been a common practice in programming for a long time. It allows developers to understand what is happening in their code and quickly identify and fix any issues.
 
-We can also further customize the debug output by using `fancyLog` and `toString`. `fancyLog` allows us to add labels and colors to our messages, while `toString` converts complex data structures into a string representation for easier debugging.
+There are alternative methods to printing debug output, such as using a debugger or adding `Debug.todo` statements in code to mark areas that need attention. However, printing debug output is a simple and straightforward way to get insights into the code.
+
+Internally, the `Debug.log` function uses the `Debug.watch` command from the Elm runtime to print the message and value to the console. This command can also be used directly in code for more advanced debugging purposes.
 
 ## See Also
-For more information on debugging in Elm, check out the following resources:
 
-- [Elm Debug module documentation](https://package.elm-lang.org/packages/elm/core/latest/Debug)
-- [Elm official guide on debugging](https://guide.elm-lang.org/debugging/)
-- [Debugging Elm with VSCode](https://blog.noredink.com/post/121278106448/debugging-elm-in-vs-code)
-
-Keep in mind that excessive use of `Debug.log` can make the code harder to read and maintain. It should only be used for specific purposes and always removed before deploying to production. Happy debugging!
+- [Elm Debug module](https://package.elm-lang.org/packages/elm-lang/core/latest/Debug)
+- [Debugging in Elm](https://guide.elm-lang.org/debugging/)

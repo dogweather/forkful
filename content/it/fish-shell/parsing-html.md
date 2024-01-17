@@ -1,7 +1,7 @@
 ---
-title:                "Analisi sintattica dell'html"
-html_title:           "Fish Shell: Analisi sintattica dell'html"
-simple_title:         "Analisi sintattica dell'html"
+title:                "Analisi di html"
+html_title:           "Fish Shell: Analisi di html"
+simple_title:         "Analisi di html"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "HTML and the Web"
@@ -10,44 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+## Cos'è & Perché?
+Parsing HTML è il processo di analisi e interpretazione del codice HTML. I programmatori lo fanno per estrarre informazioni specifiche dai siti web o per manipolare il contenuto di una pagina.
 
-Stai cercando un modo semplice e veloce per estrarre informazioni da una pagina web? Forse devi analizzare una pagina HTML per un progetto di data scraping o semplicemente vuoi automatizzare una qualche azione sul web. In entrambi i casi, il parsing HTML può essere un'ottima soluzione.
+## Come Fare:
+Per eseguire il parsing di HTML con Fish Shell, è possibile utilizzare il comando `curl` per scaricare il contenuto della pagina web e passarlo al comando `html`. Vediamo un esempio:
 
-## Come Fare
-
-Per iniziare, devi assicurarti di avere Fish Shell installato sul tuo sistema. Se non l'hai ancora fatto, puoi seguir il tutorial di installazione sul sito ufficiale [fishshell.com](https://fishshell.com) o utilizzare il tuo gestore di pacchetti preferito.
-
-Una volta installato, puoi utilizzare Fish per eseguire il parsing di una pagina HTML usando il comando `curl` e la funzione `string split` integrata di Fish Shell.
-
-```
-Fish Shell
-curl <url> | string split "<tag>"
+```Fish Shell
+curl https://www.example.com | html
 ```
 
-Ad esempio, se volessi estrarre tutti i link presenti in una pagina web, potresti usare il seguente comando:
+Questo comando restituirà il codice HTML della pagina web in modo strutturato e facile da interpretare.
 
-```
-Fish Shell
-curl https://www.example.com/ |string split "<a"
-```
+## Approfondimento:
+Il parsing di HTML è diventato sempre più importante con lo sviluppo del web e delle pagine dinamiche. In passato, i programmatori dovevano utilizzare librerie esterne o altri linguaggi di programmazione per eseguire questa operazione. Tuttavia, con Fish Shell, è possibile farlo in modo semplice e diretto.
 
-Questo dividerà il contenuto della pagina HTML in base al tag `<a`, creando una lista di link facilmente accessibile e utilizzabile.
+Un'alternativa al comando `html` di Fish Shell è l'utilizzo di strumenti esterni come BeautifulSoup o RegEx. Tuttavia, incorporare il parsing di HTML direttamente in Fish Shell rende il processo più veloce ed efficiente.
 
-## Approfondimento
+Per quanto riguarda l'implementazione, Fish Shell utilizza il linguaggio di programmazione Go per eseguire il parsing di HTML. Questo garantisce una maggiore velocità e stabilità.
 
-Se vuoi ottenere risultati più precisi e dettagliati, puoi utilizzare una delle librerie di parsing HTML disponibili per Fish Shell. Ad esempio, puoi installare la libreria `crawler` usando il gestore di pacchetti `fisherman`, e poi utilizzarla per analizzare una pagina HTML, ad esempio per estrarre i titoli delle notizie da un sito di news.
+## Vedi Anche:
+- [Fish Shell documentation](https://fishshell.com/docs/current/)
 
-```
-Fish Shell
-set -l crawler (fisherman lilyball/crawler)
-curl https://www.newswebsite.com/ | $crawler 'div[class="news-title"]' | perl -pe's/<[^>]+>/ /g' | string trim
-```
-
-Questo esempio utilizza il comando `curl` per ottenere il contenuto della pagina, il comando `set` per definire una variabile contenente la libreria `crawler`, il filtro `perl` per rimuovere i tag HTML e infine la funzione `string trim` per pulire il risultato finale.
-
-## Vedi Anche
-
-- [Sito ufficiale di Fish Shell](https://fishshell.com)
-- [Guida all'installazione di Fish Shell](https://fishshell.com/docs/current/index.html#install)
-- [Libreria `crawler` per Fish Shell su GitHub](https://github.com/lilyball/crawler)
+- [html command documentation](https://fishshell.com/docs/current/commands.html#html)

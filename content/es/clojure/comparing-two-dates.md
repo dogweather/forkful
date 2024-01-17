@@ -10,74 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué comparar dos fechas en Clojure?
+## ¿Qué es y por qué comparar dos fechas?
 
-La comparación de dos fechas puede ser útil en varios casos, como en la programación de sistemas de reserva, planificación de tareas y análisis de datos temporales. En Clojure, podemos hacer esto fácilmente utilizando algunas funciones integradas.
+Comparar dos fechas es un proceso común en la programación, que consiste en determinar cuál de las dos fechas es mayor o si son iguales. Esto se utiliza para realizar cálculos de tiempo, ordenar eventos cronológicamente o para asegurarse de que un evento ocurra antes de otro.
 
-## Cómo comparar dos fechas
-
-Para comparar dos fechas en Clojure, podemos utilizar la función `compare` de la librería `java.time`. Esta función toma dos parámetros de tipo `LocalDate` y devuelve un número entero que representa la posición relativa de las fechas.
+## Cómo hacerlo:
 
 ```Clojure
-(require '[java.time :as time])
+(require '[clj-time.core :as time])
 
-;; Definimos dos fechas
-(def fecha-1 (time/LocalDate/of 2020 6 1))
-(def fecha-2 (time/LocalDate/of 2020 6 15))
+(def fecha1 (time/date-time 2021 1 15)) ;Definir una fecha usando la función date-time
+(def fecha2 (time/date-time 2020 12 25))
 
-;; Comparamos las fechas
-(time/compare fecha-1 fecha-2)
+(time/after? fecha1 fecha2) ;Compara si fecha1 es posterior a fecha2
+;Output: true
 
-;; Output: -1 (fecha-1 es anterior a fecha-2)
+(time/before? fecha1 fecha2) ;Compara si fecha1 es anterior a fecha2
+;Output: false
+
+(time/equal? fecha1 fecha2) ;Compara si fecha1 es igual a fecha2
+;Output: false
 ```
 
-El valor de salida de `compare` es:
+## Profundizando:
 
-- `-1` si la primera fecha es anterior a la segunda.
-- `0` si ambas fechas son iguales.
-- `1` si la primera fecha es posterior a la segunda.
+En el pasado, comparar fechas era una tarea complicada que requería cálculos manuales y conversiones de formatos de fecha. Sin embargo, con el uso de librerías como clj-time, ahora es un proceso sencillo y eficiente.
 
-También podemos utilizar las funciones `before?` y `after?` para comprobar si una fecha es anterior o posterior a otra.
+Alternativas a clj-time incluyen java.time, una librería incorporada en Java 8, y Joda-Time, la versión anterior de clj-time. Estas también ofrecen funciones para comparar fechas de manera similar a clj-time.
 
-```Clojure
-(time/before? fecha-1 fecha-2)
+Las fechas en Clojure se almacenan como objetos de tipo java.util.Date, que representan una cantidad de tiempo en milisegundos desde el 1 de enero de 1970. Al comparar fechas, se están comparando estos números para determinar cuál es mayor.
 
-;; Output: true (fecha-1 es anterior a fecha-2)
+## También te puede interesar:
 
-(time/after? fecha-1 fecha-2)
-
-;; Output: false (fecha-1 es anterior a fecha-2)
-```
-
-Además, podemos utilizar la función `between?` para comprobar si una fecha está entre dos fechas dadas.
-
-```Clojure
-(time/between? fecha-1 fecha-2 (time/LocalDate/of 2020 6 10))
-
-;; Output: true (fecha-1 está entre fecha-2 y 2020-06-10)
-```
-
-## Profundizando en la comparación de fechas
-
-La librería `java.time` también proporciona algunas funciones para realizar operaciones matemáticas en fechas, como `plus`, `minus` y `with`.
-
-```Clojure
-(time/plus fecha-1 (time/Period/ofDays 5))
-
-;; Output: 2020-06-06 (fecha-1 + 5 días)
-
-(time/minus fecha-1 (time/Duration/ofDays 10))
-
-;; Output: 2020-05-22 (fecha-1 - 10 días)
-
-(time/with fecha-1 (time/ChronoField/$mon (time/DayOfWeek/THURSDAY)))
-
-;; Output: 2020-06-04 (fecha-1 ajustada al jueves)
-```
-
-Para obtener más información sobre las funciones y tipos de datos relacionados con fechas en Clojure, puedes revisar la documentación oficial de `java.time` y la librería `clj-time`.
-
-## Ver también
-
-- [Documentación oficial de java.time](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
-- [Librería clj-time](https://github.com/clj-time/clj-time)
+- [Guía oficial de clj-time](https://github.com/clj-time/clj-time/wiki)
+- [Documentación de java.time](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
+- [Joda-Time en Clojure](https://github.com/clj-commons/java-time)

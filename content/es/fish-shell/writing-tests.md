@@ -10,49 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué escribir pruebas en Fish Shell?
+## ¿Qué y por qué?
 
-Escribir pruebas en Fish Shell es una forma eficaz de garantizar que nuestro código funcione correctamente y se mantenga libre de errores. Además, nos ayuda a detectar posibles problemas y a mejorar la calidad de nuestro código.
+Escribir pruebas es una forma de verificar si nuestro código funciona correctamente. Los programadores lo hacen para asegurarse de que su código no tenga errores y para garantizar que funcione de la manera esperada.
 
-## Cómo hacerlo
+## ¿Cómo?
 
-```Fish Shell
-function sum(number1, number2)
-    echo $number1 + $number2
-end
+Utilizando el Fish Shell, podemos escribir pruebas de una manera sencilla y eficiente. Podemos usar el comando `test` para evaluar expresiones y verificar si cumplen con nuestras expectativas.
 
-test "Sum function should return the correct result" -e (sum 2 3) 5
+Por ejemplo, si queremos verificar si una variable tiene el valor esperado, podemos escribir el siguiente código:
+
+```
+set variable "Hola"
+test "$variable" = "Hola"
 ```
 
-Para escribir pruebas en Fish Shell, podemos utilizar la función `test`, que nos permite verificar si un resultado es el esperado. También podemos crear funciones específicas para realizar pruebas en nuestro código, como en el ejemplo anterior.
+Este comando devolverá un valor verdadero si la variable realmente tiene el valor "Hola". En caso contrario, devolverá un valor falso.
 
-La sintaxis de `test` es la siguiente:
+Otra forma de escribir pruebas es utilizando `contains` para verificar si una cadena de texto contiene otra cadena específica:
 
-```Fish Shell
-test <mensaje> <comando que debe ejecutarse> <resultado esperado>
+```
+set mensaje "Hola, mundo"
+test (contains "$mensaje" "mundo")
 ```
 
-Donde:
+En este caso, `contains` devolverá un valor verdadero ya que la cadena "mundo" está dentro de la variable `mensaje`.
 
-- `<mensaje>`: Es una descripción del test que estamos realizando.
-- `<comando que debe ejecutarse>`: Es el comando (o función) que queremos probar.
-- `<resultado esperado>`: Es el resultado que esperamos obtener.
+## Profundizando
 
-## Profundizando en las pruebas en Fish Shell
+Escribir pruebas es una práctica común en el desarrollo de software. Además de utilizar Fish Shell, también existen otras herramientas populares para escribir pruebas como TAP, PHPUnit y JUnit.
 
-Además de la función `test`, también podemos utilizar los parámetros `-e` y `-x` para realizar pruebas más precisas. El parámetro `-e` nos permite verificar si el resultado es igual al esperado, mientras que `-x` nos permite verificar si el resultado es diferente al esperado.
-
-Por ejemplo:
-
-```Fish Shell
-test "Sum function should return the correct result" -e (sum 2 3) 5
-test "Sum function should not return the incorrect result" -x (sum 2 3) 8
-```
-
-En caso de que un test falle, Fish Shell nos mostrará un mensaje de error indicando cuál fue el resultado obtenido y cuál era el esperado.
+En cuanto a la implementación, Fish Shell utiliza un sistema interno llamado test harness para ejecutar las pruebas y generar los resultados. Este sistema también permite modificar el comportamiento de las pruebas mediante opciones adicionales como `-v` para mostrar información detallada de cada prueba o `-q` para ejecutarlas de forma silenciosa.
 
 ## Ver también
 
-- Documentación oficial de Fish Shell sobre pruebas: https://fishshell.com/docs/current/cmds/test.html
-- Ejemplos de pruebas en Fish Shell: https://github.com/fish-shell/fish-shell/tree/master/test
-- Artículo sobre cómo escribir pruebas en Fish Shell: https://dev.to/yeurch/write-some-fish-shell-tests-376e
+- [Documentación de Fish Shell](https://fishshell.com/docs/current/index.html)
+- [Introducción a la escritura de pruebas en Fish Shell](https://fishshell.com/docs/current/tutorial.html#sec-testing)
+- [Ejemplos de escribir pruebas con Fish Shell](https://github.com/fish-shell/fish-shell/tree/master/test)

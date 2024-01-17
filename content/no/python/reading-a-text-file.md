@@ -1,7 +1,7 @@
 ---
-title:                "Lese en tekstfil"
-html_title:           "Python: Lese en tekstfil"
-simple_title:         "Lese en tekstfil"
+title:                "Leser en tekstfil"
+html_title:           "Python: Leser en tekstfil"
+simple_title:         "Leser en tekstfil"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Files and I/O"
@@ -10,39 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hva & hvorfor?
+Lesing av en tekstfil er en måte for programmerere å få tilgang til informasjon som er lagret i en fil. Programmere bruker dette for å lese og behandle data uten å måtte skrive inn all informasjon manuelt.
 
-Å lese en tekstfil kan være nyttig i mange situasjoner. Det kan for eksempel være for å analysere data eller behandle store mengder informasjon.
-
-## Hvordan
-
-For å lese en tekstfil i Python, åpner vi først filen ved hjelp av "open" funksjonen. Vi må også spesifisere om vi vil lese filen ("r"), skrive til den ("w") eller legge til ny informasjon ("a"). Deretter kan vi bruke "read()" funksjonen for å lese innholdet i filen.
+## Hvordan:
+Du kan lese en tekstfil ved hjelp av ```Python```'s innebygde ```open()``` funksjon. Denne funksjonen tar inn to argumenter, filnavnet og modusen du ønsker å åpne filen i. For å lese en tekstfil, bruk modusen ```r```. Her er et eksempel på å lese en tekstfil og skrive ut innholdet:
 
 ```Python
 f = open("tekstfil.txt", "r")
 print(f.read())
 ```
 
-Dette vil skrive ut innholdet i tekstfilen til konsollen. Vi kan også lese innholdet linje for linje ved bruk av "readline()" funksjonen.
+Dette vil skrive ut hele innholdet i tekstfilen "tekstfil.txt".
+
+Du kan også lese en tekstfil linje for linje ved hjelp av en ```for``` løkke. Her er et eksempel som leser en tekstfil og skriver ut hver linje som et element i en liste:
 
 ```Python
 f = open("tekstfil.txt", "r")
-print(f.readline())
+lines = []
+for line in f:
+  lines.append(line)
+print(lines)
 ```
 
-For å lukke filen når vi er ferdig med å lese den, kan vi bruke "close()" funksjonen.
+Output:
 
 ```Python
-f.close()
+["Dette er linje 1\n", "Dette er linje 2\n", "Dette er linje 3\n"]
 ```
 
-## Dypdykk
+## Dypdykk:
+Lesing av tekstfiler har vært en grunnleggende funksjon i programmering siden begynnelsen. Det er ofte brukt for å lagre og behandle data, som for eksempel tekstfiler med informasjon om brukere eller produkter. Alternativet til å lese en tekstfil er å bruke en database, men dette kan være mer komplekst og kreve mer arbeid.
 
-Når vi leser en tekstfil i Python, leser vi den som en tekststreng. Derfor må vi være nøye med å håndtere forskjeller i formatering og spesialtegn. En annen ting å være oppmerksom på er at hvis filen er veldig stor, kan det være nødvendig å lese den innholdet i den bit for bit for å unngå å overbelaste minnet.
+Når du leser en tekstfil, er det viktig å huske på å lukke filen etterpå ved hjelp av ```close()``` funksjonen. Dette sikrer at all brukerdata blir lagret før filen lukkes. Det finnes også flere moduser for å åpne en tekstfil, som for eksempel ```w``` for å skrive til en fil, ```a``` for å legge til informasjon i en eksisterende fil, og ```x``` for å opprette en ny fil for skriving.
 
-Men vi trenger ikke å bekymre oss for mye om disse detaljene hvis vi bare skal lese en enkel tekstfil.
-
-## Se også
-
-- [Python sin offisielle dokumentasjon for å lese og skrive til filer](https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files)
-- [En tutorial om å arbeide med tekstfiler i Python](https://www.datacamp.com/community/tutorials/reading-writing-files-python)
+## Se også:
+- [Python Dokumentasjon for åpning av filer](https://docs.python.org/3/library/functions.html#open)
+- [W3Schools tutorial for å lese tekstfiler i Python](https://www.w3schools.com/python/python_file_handling.asp)

@@ -10,39 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Qu'est-ce que c'est et pourquoi devriez-vous écrire des tests?
 
-Ecrire des tests est souvent considéré comme une tâche fastidieuse et inutile par de nombreux développeurs. Cependant, c'est une pratique essentielle pour garantir la qualité et la fiabilité de votre code. Les tests vous permettent de détecter et de corriger rapidement les bugs, de faciliter les développements futurs et de maintenir un code cohérent et évolutif.
+Ecrire des tests est une pratique courante parmi les programmeurs pour s'assurer que leur code fonctionne comme prévu. Cela consiste à écrire du code qui vérifie le bon fonctionnement de chaque partie du code écrit.
 
-## Comment Faire
+Les programmeurs écrivent des tests pour s'assurer que leur code est exempt de bugs et pour améliorer la qualité et la stabilité de leur application. Cela garantit également que de nouvelles modifications ou mises à jour n'ont pas d'impact négatif sur le code existant.
 
-Pour commencer à écrire des tests en PHP, vous aurez besoin d'un framework de test tel que PHPUnit et d'un environnement de développement configuré pour les tests.
-
-Vous pouvez utiliser l'annotation `@test` pour marquer une méthode comme un test à exécuter. Ensuite, utilisez les assertions pour vérifier si le résultat de votre code correspond à celui attendu. Voici un exemple de test simple pour une fonction de multiplication :
+## Comment le faire:
 
 ```PHP
-/**
- * @test
- */
-public function testMultiplication()
-{
-  $result = multiply(2, 3);
-  $this->assertEquals(6, $result);
+Function addition($a, $b) {
+  return $a + $b;
 }
+
+echo addition(2, 3); // affiche 5
+echo addition(-2, 5); // affiche 3
 ```
 
-Une fois que vous avez écrit vos tests, exécutez-les en utilisant la commande `phpunit` dans votre terminal. Vous devriez voir les résultats des tests ainsi que les éventuels échecs et erreurs.
+Ce code est un exemple de test pour une fonction qui effectue une simple addition. Nous appelons la fonction avec différents paramètres et vérifions si la valeur de retour est correcte. Si elle correspond à ce que nous attendions, cela signifie que notre fonction fonctionne correctement.
 
-## Deep Dive
+## Approfondissement:
 
-Les tests sont généralement divisés en trois catégories : les tests unitaires, les tests fonctionnels et les tests d'intégration. Les tests unitaires visent à tester une seule unité de code, tandis que les tests fonctionnels vérifient le comportement d'une fonctionnalité complète de l'application. Les tests d'intégration, quant à eux, vérifient que toutes les parties de l'application fonctionnent correctement ensemble.
+La pratique d'écrire des tests a pris de l'importance ces dernières années avec l'essor des méthodes agiles de développement de logiciels. Elle est également étroitement liée à l'utilisation de la méthodologie de développement piloté par les tests (Test-Driven Development, ou TDD).
 
-Il est important de noter que les tests ne doivent pas seulement être exécutés une fois lors de la création d'une fonctionnalité, mais doivent également être régulièrement exécutés lors de modifications ou de mises à jour du code. Cela garantit que toutes les parties de votre application restent cohérentes et fonctionnelles malgré les changements.
+Il existe plusieurs outils pour écrire des tests en PHP, tels que PHPUnit et Codeception. Ces outils offrent une variété de fonctionnalités telles que l'exécution de tests automatisés, la couverture de code et la génération de rapports.
 
-Enfin, il est préférable de suivre une approche de développement pilotée par les tests (TDD) où les tests sont écrits avant le code afin de garantir une meilleure couverture des tests et une meilleure qualité de code.
+Il existe également des alternatives à l'écriture de tests en PHP, comme l'utilisation de langages de test dédiés tels que Cucumber ou Selenium. Ces langages sont largement utilisés pour des tests d'intégration ou de bout en bout.
 
-## See Also
+## A voir également:
 
-- [PHPUnit](https://phpunit.de/)
-- [Approche TDD en PHP](https://code.tutsplus.com/fr/tutorials/test-driven-development-in-php--net-25796)
-- [Tests en PHP : comprendre les types de tests](https://www.supinfo.com/articles/single/3994-tests-php-comprendre-types-tests)
+- [Documentation PHPUnit](https://phpunit.de/documentation.html)
+- [Documentation Codeception](https://codeception.com/docs/)
+- [Cucumber](https://cucumber.io/)
+- [Selenium](https://www.selenium.dev/)

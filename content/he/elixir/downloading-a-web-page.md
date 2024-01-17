@@ -1,7 +1,7 @@
 ---
-title:                "הורדת דף אינטרנט"
-html_title:           "Elixir: הורדת דף אינטרנט"
-simple_title:         "הורדת דף אינטרנט"
+title:                "הורדת עמוד אינטרנט"
+html_title:           "Elixir: הורדת עמוד אינטרנט"
+simple_title:         "הורדת עמוד אינטרנט"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "HTML and the Web"
@@ -10,38 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## למה
+## מה ולמה?
+להוריד עמוד אינטרנט היא פעולה שמתבצעת בעזרת תיכנות ומאפשרת לנו להציג תוכן מקוון במחשב שלנו. תכניתנים מבצעים זאת בכדי לאפשר למשתמשים לגשת לתוכן של אתרי אינטרנט ולייצר יישומים מתקדמים באמצעות תוכן מתוך אתרים.
 
-בעולם המודרני, כמעט כל תוכן נמצא באינטרנט. אם אתם מפתחים אפליקציה או מסתכלים לחקור אתר אינטרנט מסוים, אתם כנראה תצטרכו להוריד דף אינטרנט מסוים. במאמר זה אנחנו נלמד איך להוריד דף אינטרנט באמצעות פרוגרמה בשפת Elixir.
+## איך לעשות?
+```Elixir
+ defmodule DownloadPage do 
+  def main(url) do 
+    url
+    |> HTTPoison.get()
+    |> scrape_page()
+  end
+end
 
-## כיצד לעשות זאת
-
-כדי להוריד דף אינטרנט בשפת Elixir, יש להשתמש בפונקציה HTTPoison.get. באמצעות פונקציה זו, ניתן לשלוח בקשת HTTP ולקבל תגובה מהאתר הנמצא בכתובת המתאימה.
-
-```elixir
-response = HTTPoison.get("https://www.example.com")
-
-IO.inspect response
+def scrape_page({:ok, %HTTPoison.Response{status_code: 200, body: body}}) do
+  {:ok, body}
+end
 ```
+קוד זה משתמש בפונקציות מובנות ב-Elixir כדי להוריד את הדף מהאתר שנמצא בכתובת ה-URL שנתנו לתוכנית. תוצאת הפלט היא התוכן של הדף המורד. 
 
-פלט: 
-
-```elixir
-%HTTPoison.Response{
-  body: "...", # קוד HTML של הדף המבוקש
-  headers: [...], # כותרות הכותרת של הדף המבוקש
-  status_code: 200 # קוד סטטוס 200 מציין שהבקשה נקלטה בהצלחה
-}
-```
-
-## התעמולה העמוקה
-
-פונקצית HTTPoison.get היא חלק מספריית HTTPoison בשפת Elixir. ספריית זו מאפשרת למפתחים לתקשר עם שרתי HTTP ולבצע פעולות שונות על דפי אינטרנט. ישנם פונקציות נוספות בספרייה זו שמאפשרות לשלוח בקשות מתקדמות, להחזיר קבצים מהאינטרנט ועוד.
+## נכנסים עומק
+הבאסיס היסטורי להורדת עמודים מהאינטרנט היא בעיקר קשור לפיתוח תקשורת ורשתות ב-תכנות. תכניתנים משתמשים בפעולה זו כדי לאפשר גישה לתוכן גלובלי מתוך אתרי אינטרנט ולייצר יישומים מתקדמים כגון בקשות HTTP והנתונים המתקבלים. ישנם כמה פתרונות אחרים להורדת דפי אינטרנט כגון אוססכיפט, פייטון ופרל אך ה-Elixir הוא הפתרון המועדף והממוקד ביותר על ידי מגוון גדול של תכניתנים. 
 
 ## ראו גם
+למידע נוסף על שפת התכנות Elixir ומדריכים נוספים לפיתוח יישומים אינטרנטיים, ראו:
 
-כדי ללמוד עוד על ספריית HTTPoison ועל דרך שימוש בה, נדרשת יכולת בסיסית בשפת Elixir. אלו הם כמה מקישורי התאמץ המומלצים על הנושא:
+- המדריך הרשמי של Elixir
+https://elixir-lang.org/getting-started/introduction.html
 
-- הדף הרשמי של ספריית HTTPoison: https://hexdocs.pm/httpoison/HTTPoison.html
-- האתר הרשמי של שפת Elixir: https://elixir-lang.org/
-- אתר העזרה המקצועי של Elixir: https://elixir-lang.org/resources.html
+- הספר "Programming Elixir" של Dave Thomas 
+https://pragprog.com/titles/elixir16/programming-elixir-1-6/
+
+- הספר "Elixir in Action" של Sasa Juric 
+https://www.manning.com/books/elixir-in-action-second-edition

@@ -1,7 +1,7 @@
 ---
-title:                "Schreiben auf Standardfehler"
-html_title:           "Python: Schreiben auf Standardfehler"
-simple_title:         "Schreiben auf Standardfehler"
+title:                "Schreiben auf die Standardfehlerausgabe"
+html_title:           "Python: Schreiben auf die Standardfehlerausgabe"
+simple_title:         "Schreiben auf die Standardfehlerausgabe"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Files and I/O"
@@ -10,33 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was ist es und warum?
 
-Warum sollte man überhaupt die Standardfehlerausgabe in Python nutzen? Nun, es gibt verschiedene Gründe dafür. Zum einen kann es hilfreich sein, um während des Programmierens Fehler oder Warnungen anzuzeigen. Zum anderen kann es auch hilfreich sein, um die Funktionalität des Programms zu testen und zu überprüfen.
+In der Programmierung gibt es häufig Situationen, in denen wir Fehler- oder Debuginformationen ausgeben möchten, aber diese Ausgaben nicht den normalen Output stören sollen. Hier kommt das Schreiben auf den Standardfehler (englisch: standard error) ins Spiel. Es ist eine Möglichkeit, solche Informationen getrennt vom normalen Output auszugeben.
 
-## Wie
+Programmierer nutzen das Schreiben auf den Standardfehler, um diese zwei Arten von Ausgaben zu unterscheiden und gezielter zu verarbeiten. So können sie beispielsweise Fehlermeldungen an den Benutzer ausgeben, während sie gleichzeitig Debuginformationen für ihre eigenen Zwecke auf den Standardfehler schreiben.
 
-Der Befehl zum Schreiben in die Standardfehlerausgabe in Python ist "sys.stderr.write()". Um dies zu nutzen, müssen wir zunächst das "sys" Modul importieren. Hier ist ein Beispielcode:
+## Wie man es macht:
 
-```Python
-import sys
+Das Schreiben auf den Standardfehler ist in Python sehr einfach. Wir verwenden dafür das `sys` Modul und die Funktion `stderr`:
 
-sys.stderr.write("Das ist eine Fehlermeldung!")
-```
+    ```Python
+    import sys
 
-Der Output dieser Codezeile wird folgendermaßen aussehen:
+    sys.stderr.write("Diese Information wird auf den Standardfehler geschrieben.")
+    ```
 
-> Das ist eine Fehlermeldung!
+Die Ausgabe erscheint dann in roter Schrift, um sie von normalen Output zu unterscheiden. Hier ist ein Beispiel der Ausgabe:
 
-Es ist wichtig zu beachten, dass die Standardfehlerausgabe in der Regel nicht auf der Konsole angezeigt wird, sondern in einer speziellen Datei für Fehler und Warnungen. Somit können Sie die Ausgabe später überprüfen, auch wenn Ihr Programm bereits beendet ist.
+    ```
+Diese Information wird auf den Standardfehler geschrieben.
+    ```
 
-## Deep Dive
+## Tiefer eintauchen:
 
-Nun wollen wir uns etwas genauer anschauen, wie das Schreiben in die Standardfehlerausgabe funktioniert. Wie bereits erwähnt, müssen wir dafür das "sys" Modul importieren. Dieses Modul ist Teil der Standardbibliothek von Python und enthält eine Vielzahl von Funktionen und Variablen, die mit dem System und der Ausführung des Codes zusammenhängen.
+Das Schreiben auf den Standardfehler ist ein Teil des Streams-Konzepts in der Programmierung. Dabei gibt es drei Arten von Streams: `stdin`, `stdout` und `stderr`. `stdin` steht für die Standard-Eingabe, `stdout` für die Standard-Ausgabe und `stderr` für den Standardfehler.
 
-Die Funktion "sys.stderr.write()" nimmt einen String als Argument und schreibt diesen in die Standardfehlerausgabe. In unserem Beispiel haben wir einfach einen Text als String übergeben, aber Sie können natürlich auch Variablen und andere Werte verwenden. Es ist auch möglich, mehrere Strings hintereinander in die Standardfehlerausgabe zu schreiben, indem Sie die Funktion mehrmals aufrufen.
+Historisch gesehen wurde das Schreiben auf den Standardfehler in der UNIX-Philosophie eingeführt, um zwischen normaler und fehlerhafter Ausgabe zu unterscheiden. In Python gibt es auch die Möglichkeit, Fehlermeldungen auf den Standardfehler zu schreiben, indem man das `raise` Statement verwendet.
 
-## Siehe auch
+Als Alternative zum Schreiben auf den Standardfehler gibt es auch das Logging-Modul in Python, welches eine umfangreichere und strukturiertere Möglichkeit bietet, Informationen auszugeben.
 
-- Offizielle Dokumentation zu sys.stderr: https://docs.python.org/3/library/sys.html#sys.stderr
-- Weitere Informationen zu Standardfehlerausgabe: https://www.tutorialspoint.com/python3/python_standard_error.htm
+## Weitere Informationen:
+
+Wenn du mehr über das Schreiben auf den Standardfehler erfahren möchtest, kannst du diese Quellen konsultieren:
+
+- https://www.python.org/dev/peps/pep-0498/
+- https://docs.python.org/3/library/sys.html
+- https://docs.python.org/3/howto/logging.html

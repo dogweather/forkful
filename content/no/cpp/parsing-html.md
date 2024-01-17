@@ -1,7 +1,7 @@
 ---
-title:                "Analysering av HTML"
-html_title:           "C++: Analysering av HTML"
-simple_title:         "Analysering av HTML"
+title:                "Analysering av html"
+html_title:           "C++: Analysering av html"
+simple_title:         "Analysering av html"
 programming_language: "C++"
 category:             "C++"
 tag:                  "HTML and the Web"
@@ -10,61 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
-Hvis du noen gang har jobbet med å hente data fra et nettsted, har du sannsynligvis støtt på HTML. Dette språket brukes til å strukturere og formatere innholdet på nettsider. Ved å lære å parse HTML med C++, kan du hente ut spesifikke data fra nettsider og bruke det til å bygge applikasjoner, nettsteder eller automatisere oppgaver.
+## Hva & Hvorfor?
+Å parse HTML er prosessen med å analysere og forstå HTML-kode som brukes til å lage nettsider. Dette gjøres av programvare for å kunne vise nettsider korrekt på en enhet. Programvareutviklere gjør dette for å sørge for at deres nettsider fungerer som de skal, uavhengig av enheten det blir vist på.
 
-## Hvordan gjøre det
-For å parse HTML med C++, trenger du et bibliotek kalt `libxml2` som kan lastes ned fra nettet. Når du har lastet ned og installert biblioteket, kan du bruke følgende kode for å hente og parse HTML fra en nettside:
-
+## Hvordan:
+ Slik ser enkel HTML-kode ut:
 ```C++
-#include <stdio.h>
-#include <libxml/HTMLparser.h>
+<html>
+<head>
+<title>Min Nettside</title>
+</head>
+<body>
+<h1>Velkommen!</h1>
+<p>Dette er min første nettside.</p>
+</body>
+</html>
+```
+ 
+Til å begynne med, kan vi bruke et parser-bibliotek som heter **libxml** for å lese og tolke HTML-koden. Vi må først inkludere header-filen ```<libxml/HTMLParser.h>``` for å bruke dette biblioteket. Deretter kan vi bruke funksjonen ```htmlParseDoc``` for å lese og tolke HTML-koden. Her er et eksempel på hvordan man kan hente ut tittelen fra HTML-koden:
+ 
+```C++
+#include <iostream>
+#include <libxml/HTMLParser.h>
 
-int main()
-{
-    // Hent HTML-kildekode fra en nettside
-    const char* htmlKilde = "<html><body><h1>Velkommen</h1><p>Dette er en test</p></body></html>";
-
-    // Opprett en HTML-parserkontekst
-    htmlParserCtxtPtr parser = htmlCreateMemoryParserCtxt(htmlKilde, strlen(htmlKilde));
-
-    // Analyser HTML-kildekoden
-    htmlDocPtr doc = htmlCtxtReadDoc(parser, NULL, "UTF-8", HTML_PARSE_NOERROR | HTML_PARSE_NOWARNING);
-
-    // Hent dokumentets rotelement (html-taggen)
-    xmlNodePtr rotelement = xmlDocGetRootElement(doc);
-
-    // Hent og skriv ut innholdet i alle <p>-tagger
-    for (xmlNodePtr node = rotelement->children; node != NULL; node = node->next) 
-    {
-        if (node->type == XML_ELEMENT_NODE && xmlStrcmp(node->name, (const xmlChar *) "p") == 0) 
-        {
-            xmlChar *innhold = xmlNodeGetContent(node);
-            printf("%s\n", innhold);
-            xmlFree(innhold);
-        }
-    }
-    
-    // Frigjør minne
-    htmlFreeDoc(doc);
-    htmlFreeParserCtxt(parser);
-    
-    return 0;
+int main(){
+  htmlDocPtr doc = htmlParseDoc("<html><head><title>Min Nettside\
+</title></head><body></body></html>", NULL);
+  xmlChar* title = xmlNodeGetContent(doc->children->children->children->next->children->children);
+  std::cout << "Tittelen på nettsiden er: " << title;
+  xmlFreeDoc(doc);
+  return 0;
 }
 ```
-Dette enkle eksempelet viser hvordan du kan hente ut og skrive ut innholdet i alle `<p>`-tagger fra et HTML-dokument. Du kan bygge videre på dette eksempelet for å hente ut andre typer data eller for å bygge mer avanserte applikasjoner.
 
-## Dypdykk
-Parsing av HTML med C++ kan være en kompleks oppgave, spesielt hvis du ønsker å håndtere flere forskjellige typer HTML-dokumenter og tags. Du kan bruke `libxml2` til å håndtere en rekke forskjellige typer HTML, inkludert HTML5, XHTML og XML. Biblioteket har også mange funksjoner som kan hjelpe deg med å håndtere feil i HTML-dokumenter og konvertere data til forskjellige formater.
+**Output:**
+```
+Tittelen på nettsiden er: Min Nettside
+```
 
-Et viktig konsept å forstå når du jobber med parsing av HTML er DOM (Document Object Model). Dette er en representering av HTML-dokumentet som et tre av objekter, som gjør det enkelt å navigere gjennom dokumentet og hente ut ønsket data. `libxml2` bruker også DOM-prinsipper i sin parsing.
+## Dypdykk:
+Parsing av HTML har vært en viktig del av webutvikling helt siden starten av internett og HTML. Det finnes flere alternativer til **libxml**, som for eksempel **pugixml** og **TinyXML**, som også kan brukes for å lese og tolke HTML-kode. Disse alternativene kan ha forskjellige funksjoner og ytelse, så det er viktig å finne den som passer best for ditt prosjekt.
 
-Det kan også være lurt å sjekke ut følgende ressurser for å lære mer om parsing av HTML med C++:
+En viktig del av å parse HTML er å forstå hvordan HTML-koden er strukturert og å kunne navigere gjennom tags og elementer. Dette kan være utfordrende, spesielt for mer kompleks HTML-kode. Derfor er det viktig å bli kjent med de forskjellige parser-metodene som finnes og å øve seg på å lese og manipulere HTML-kode.
 
-- [libxml2 hjemmeside](http://www.xmlsoft.org/html/index.html)
-- [libxml2 dokumentasjon](http://www.xmlsoft.org/html/libxml-HTMLparser.html)
-- [W3Schools - HTML tutorial](https://www.w3schools.com/html/default.asp)
-- [Stack Overflow - "parsing html with c++"](https://stackoverflow.com/questions/5328911/parsing-html-with-c)
-
-## Se også
-- [Parsing JSON i C++](https://github.com/EtienneDepaulis/cpp-json-parsing-article)
+## Se også:
+https://github.com/leffavp/HTML-Parser - et komplett eksempelprosjekt for å lære mer om parsing av HTML i C++.

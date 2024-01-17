@@ -10,43 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+Was & Warum?
+Das Starten eines neuen Projekts ist der Prozess, bei dem man eine neue PHP-Anwendung erstellt. Programmierer starten neue Projekte, um neue Funktionen hinzuzufügen, vorhandene Anwendungen zu verbessern oder neue Ideen umzusetzen. Es ist ein wichtiger Schritt, um die Entwicklung von Software voranzutreiben und die Bedürfnisse von Benutzern zu erfüllen.
 
-Warum sollte man sich engagieren, ein neues Projekt zu starten? Nun, es gibt viele Gründe. Vielleicht haben Sie eine neue innovative Idee, die Sie umsetzen möchten. Oder Sie möchten Ihre Programmierfähigkeiten verbessern und neue Herausforderungen annehmen. Oder vielleicht möchten Sie einfach nur Spaß haben und etwas Eigenes kreieren. Egal aus welchem Grund, das Erstellen eines neuen Projekts kann eine lohnende und aufregende Erfahrung sein.
-
-## Wie geht man vor?
-
-Bevor Sie die Hände an die Tastatur legen und mit dem Programmieren beginnen, gibt es ein paar Dinge, die Sie im Hinterkopf behalten sollten.
-
-Als Erstes sollten Sie sicherstellen, dass Sie die neueste Version von PHP auf Ihrem Computer installiert haben. Dies gewährleistet, dass Sie alle aktuellen Funktionen und Verbesserungen nutzen können. Anschließend müssen Sie eine Entwicklungsumgebung einrichten, die Ihnen beim Erstellen und Testen Ihres Codes hilft. Es gibt viele verschiedene Optionen, wie z.B. XAMPP, WAMP oder MAMP. Wählen Sie diejenige aus, die am besten zu Ihren Bedürfnissen passt.
-
-Nun können Sie mit dem Codieren beginnen. Hier ist ein einfaches Beispiel, wie eine Grundstruktur für ein neues PHP-Projekt aussehen könnte:
+Wie geht's?
+Um ein neues Projekt in PHP zu starten, müssen Sie zunächst sicherstellen, dass Sie eine aktuelle Version von PHP installiert haben. Dann können Sie mit der Erstellung einer neuen PHP-Datei beginnen, indem Sie die Dateiendung ".php" verwenden. In dieser Datei können Sie dann Ihren Code schreiben und ausführen. Zum Beispiel:
 
 ```PHP
 <?php
-
-// Definieren Sie hier Ihre Funktionen und Variablen
-
-// Führen Sie Ihre Hauptfunktion aus
-main();
-
-// Definieren Sie Ihre Hauptfunktion
-function main(){
-    echo "Herzlich Willkommen zu meinem ersten PHP-Projekt!";
-}
+echo "Hallo Welt";
 ?>
+
+// Output: Hallo Welt
 ```
 
-Dieser Codeblock definiert eine Hauptfunktion, die den Satz "Herzlich Willkommen zu meinem ersten PHP-Projekt!" ausgibt. Sie können natürlich beliebige Funktionen und Variablen hinzufügen, je nachdem, was Ihr Projekt erfordert.
+Tiefer graben
+In der Vergangenheit haben Programmierer verschiedene Programmiersprachen verwendet, um Webanwendungen zu erstellen. Mit der Einführung von PHP im Jahr 1995 hat sich dies jedoch geändert. PHP ist eine serverseitige Skriptsprache, die speziell für die Erstellung von dynamischen Webseiten entwickelt wurde. Es ist eine Open-Source-Programmiersprache und wird von einer großen Entwicklergemeinde unterstützt. Alternativen zu PHP sind beispielsweise Java, Python oder Ruby.
 
-## Tiefgründiges Eintauchen
+Wenn Sie ein neues PHP-Projekt starten, ist es wichtig, die richtige Struktur zu verwenden. Dazu gehört die Verwendung von Verzeichnissen und das Aufteilen des Codes in Funktionen und Klassen. Dies erleichtert die Wartung und Erweiterung des Codes. Zusätzlich können Sie verschiedene Tools und Frameworks wie Composer oder Laravel verwenden, um die Entwicklung noch schneller und effizienter zu gestalten.
 
-Das Erstellen eines neuen PHP-Projekts ist eine großartige Möglichkeit, Ihre Programmierfähigkeiten zu verbessern und kreative Projekte zu schaffen. Wenn Sie sich intensiver mit PHP und seiner Syntax vertraut machen möchten, gibt es viele Ressourcen, die Ihnen dabei helfen können. Eine gute Anlaufstelle sind Tutorials, die Schritt für Schritt die Grundlagen von PHP erklären. Außerdem können Sie sich Foren und Communities anschließen, um mit anderen Entwicklern zu interagieren und Tipps und Tricks auszutauschen.
-
-Vergessen Sie nicht, dass das Erstellen eines Projekts nicht nur darum geht, den Code zu schreiben, sondern auch um die Planung und das Testen. Bevor Sie mit dem Codieren beginnen, sollten Sie sich Gedanken darüber machen, was Ihr Projekt tun soll und wie es funktionieren wird. Planen Sie die Struktur und Funktionalitäten im Voraus, um später mögliche Probleme zu vermeiden.
-
-## Siehe auch
-
-- [PHP-Handbuch](https://www.php.net/manual/de/) - offizielle Dokumentation für PHP
-- [PHP-Kochbuch](https://www.php-kochbuch.de/) - Sammlung von Lösungen für häufige Probleme und Aufgaben in PHP
-- [PHP-Entwickler Community](https://www.php-community.de/) - Austausch mit anderen PHP-Entwicklern und Diskussionen über aktuelle Themen
+Siehe auch
+- Offizielle PHP-Dokumentation: https://www.php.net/docs.php
+- Informationen zu Composer: https://getcomposer.org/
+- Informationen zu Laravel: https://laravel.com/

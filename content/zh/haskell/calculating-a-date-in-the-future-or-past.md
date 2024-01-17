@@ -1,7 +1,7 @@
 ---
-title:                "计算过去或未来的日期。"
-html_title:           "Haskell: 计算过去或未来的日期。"
-simple_title:         "计算过去或未来的日期。"
+title:                "算出在未来或过去的日期"
+html_title:           "Haskell: 算出在未来或过去的日期"
+simple_title:         "算出在未来或过去的日期"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Dates and Times"
@@ -10,39 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
-有时候我们需要计算过去或未来的日期，比如计算明天是几号，或者在几天后的日期。使用Haskell可以让我们轻松地进行这样的日期计算。
+# 什么是日期计算？
 
-## 如何
-要在Haskell中计算日期，我们可以使用"Data.Time"库中的函数。首先，我们需要导入这个库：
+日期计算是指根据给定的日期和时间，计算出未来或过去某一天的具体日期。这是程序员在日常工作中经常会遇到的问题，因为许多应用程序需要根据特定的日期来执行不同的操作。通过日期计算，程序员可以轻松地管理日期和时间，使得应用程序更加灵活和有效。
 
-```Haskell
+# 如何进行日期计算？
+
+首先，我们需要导入模块`Data.Time`来使用日期和时间函数。接着，我们可以使用`addDays`函数来计算指定日期的未来或过去多少天后的日期。下面是一个使用`addDays`函数的示例代码：
+
+```
 import Data.Time
+
+-- 计算今天往后10天的日期
+addDays 10 (fromGregorian 2021 10 15)
+
+-- 输出结果为：2021-10-25
 ```
 
-接下来，我们可以使用```UTCTime```和```addDays```函数来计算过去或未来的日期。比如，我们可以计算今天是几号：
+# 深入探讨
 
-```Haskell
-getCurrentTime >>= print . utctDay
-```
+历史背景：在计算机系统的早期，日期的表示和计算并不像现在这么简单，因此日期计算也是许多程序员必备的技能。随着计算机技术的发展，日期计算变得更加方便和精确。
 
-输出结果可能是："2020-04-01"，说明今天是4月1日。如果我们想计算明天的日期，可以使用```addDays```函数，传入1作为参数：
+替代方案：除了使用`Data.Time`模块，还可以使用其他一些第三方库来进行日期计算，例如`hdate`和`timecalc`等。
 
-```Haskell
-addDays 1 <$> getCurrentTime >>= print . utctDay
-```
+实现细节：在Haskell中，日期和时间通常以`UTCTime`类型的形式表示，它是从格林威治标准时间（GMT）开始计算的秒数。因此，在进行日期计算时，需要将日期转换为`UTCTime`类型，再进行计算。
 
-输出结果可能是："2020-04-02"，代表明天的日期。同理，如果我们想计算过去的日期，可以传入一个负数作为参数。比如，如果我们想计算5天前的日期，可以这样写：
+# 参考链接
 
-```Haskell
-addDays (-5) <$> getCurrentTime >>= print . utctDay
-```
-
-输出结果可能是："2020-03-27"，是5天前的日期。
-
-## 深入探讨
-除了```addDays```函数，"Data.Time"库还提供了其他函数来进行更复杂的日期计算，比如```addGregorianMonthsClip```、```addGregorianYearsClip```等。使用这些函数可以让我们更灵活地进行日期计算。同时，在处理日期的时候还要注意时区、闰年等因素，这些都可以通过该库中的函数来处理。
-
-## 参考
-- [Haskell官方文档](https://www.haskell.org/)
-- [Data.Time文档](https://hackage.haskell.org/package/time/docs/Data-Time.html)
+- [Hackage: Data.Time](https://hackage.haskell.org/package/time)
+- [Hackage: hdate](https://hackage.haskell.org/package/hdate)
+- [Hackage: timecalc](https://hackage.haskell.org/package/timecalc)

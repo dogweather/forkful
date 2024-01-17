@@ -10,63 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¡Qué es y por qué hacemos esto?
 
-Si estás interesado en el procesamiento de datos y análisis, trabajar con archivos CSV es una habilidad esencial para poder manipular y utilizar datos de manera eficiente. Además, muchas aplicaciones y proyectos utilizan archivos CSV como formato de almacenamiento de datos, por lo que conocer cómo trabajar con ellos es valioso para cualquier desarrollador.
+Trabajar con CSV (Comma Separated Values) en Ruby es una forma de manejar datos tabulares utilizando un formato simple de texto plano que separa los valores con comas. Los programadores a menudo utilizan esto para importar y exportar datos de manera eficiente, especialmente cuando se trata de grandes cantidades de datos.
 
-## Cómo hacerlo
-
-Para trabajar con archivos CSV en Ruby, necesitamos utilizar la clase `CSV` que es parte de la librería estándar. Primero, debemos requerir esta clase en nuestro código:
+## ¡Cómo hacerlo!
 
 ```Ruby
 require 'csv'
-```
+# Crear un archivo CSV
+CSV.open("archivo.csv", "w") do |csv|
+  csv << ["Nombre", "Edad", "Género"]
+  csv << ["María", 25, "Femenino"]
+  csv << ["Juan", 30, "Masculino"]
+end
 
-Una vez que tenemos la clase `CSV` disponible, podemos utilizar sus métodos para leer, escribir y manipular archivos CSV.
-
-### Leer archivos
-
-Para leer un archivo CSV, podemos usar el método `read` de la clase `CSV`, pasando como argumento la ruta al archivo CSV. Este método devolverá un arreglo con los datos del archivo.
-
-```Ruby
-data = CSV.read("archivo.csv")
-```
-
-Si queremos especificar un separador diferente del valor por defecto (coma), podemos pasar un segundo argumento con el separador como una cadena.
-
-```Ruby
-data = CSV.read("archivo.csv", ";")
-```
-
-Si nuestro archivo CSV contiene encabezados, podemos usar el método `read_headers` en lugar de `read`, que tomará la primera línea del archivo como los nombres de las columnas y devolverá un objeto `CSV::Table` que nos permite acceder a los datos por nombre de columna.
-
-```Ruby
-tabla = CSV.read_headers("archivo.csv")
-# Acceder a la fila 2, columna "nombre"
-puts tabla[1]["nombre"]
-```
-
-### Escribir archivos
-
-Para escribir en un archivo CSV, podemos usar el método `open` de la clase `CSV`, pasando como argumentos la ruta al archivo y el modo de escritura. Luego, podemos usar el método `<<` para agregar datos.
-
-```Ruby
-CSV.open("nuevo_archivo.csv", "w") do |csv|
-  csv << ["Nombre", "Apellido"]
-  csv << ["Juan", "Pérez"]
-  csv << ["María", "González"]
+# Leer un archivo CSV existente
+CSV.foreach("archivo.csv") do |row|
+  puts row # cada fila es un array de valores separados por comas
 end
 ```
 
-### Manipulación de datos
-
-La clase `CSV` también nos proporciona otros métodos útiles para manipular datos en archivos CSV, como `parse`, que nos permite convertir una cadena con formato CSV a un arreglo o `CSV.table`, que nos devuelve una tabla similar al método `read_headers` que mencionamos anteriormente.
+Salida:
+```
+Nombre, Edad, Género
+María, 25, Femenino
+Juan, 30, Masculino
+```
 
 ## Profundizando
 
-Si quieres profundizar en el trabajo con archivos CSV en Ruby, puedes consultar la documentación oficial de la clase `CSV` y la librería `csv` para obtener más información y conocer todas las opciones disponibles.
+El formato CSV fue creado en los años 70 como una forma de compartir datos entre diferentes aplicaciones. Aunque es ampliamente utilizado en la actualidad, también existen alternativas como JSON y XML para estructurar datos. En Ruby, el módulo CSV viene incluido en la biblioteca estándar, lo que significa que no es necesario instalar ninguna gema adicional para trabajar con este formato.
 
-## Ver también
+## Vea también
 
-- [Documentación oficial de la clase CSV en Ruby](https://ruby-doc.org/stdlib-2.7.2/libdoc/csv/rdoc/CSV.html)
-- [Página de la librería csv en RubyGems](https://rubygems.org/gems/csv)
+- [Documentación de Ruby sobre CSV](https://ruby-doc.org/stdlib-3.0.0/libdoc/csv/rdoc/CSV.html)
+- [The Basics of Working with CSV in Ruby](https://www.codementor.io/@nithinthomas/working-with-csv-files-in-ruby-46d8j4rh0)

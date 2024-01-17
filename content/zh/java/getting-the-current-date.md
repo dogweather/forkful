@@ -1,7 +1,7 @@
 ---
-title:                "请提供《获取当前日期》"
-html_title:           "Java: 请提供《获取当前日期》"
-simple_title:         "请提供《获取当前日期》"
+title:                "获取当前日期"
+html_title:           "Java: 获取当前日期"
+simple_title:         "获取当前日期"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Dates and Times"
@@ -10,74 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
+## 什么 & 为什么？
 
-人们经常需要获取当前日期，无论是记录事件、处理报表还是进行数据分析。Java提供了简单易用的方法来获取当前日期，并且可以根据自己的需要进行格式化输出。
+获取当前日期是指获取当前时间的代码。程序员这样做是因为日期和时间在编程中是非常重要的，它们可用于跟踪程序的执行时间，以及在日志记录和数据分析中起到关键作用。
 
-## 如何获取当前日期
+## 如何：
 
-获取当前日期的方法很简单，只需要使用Java内置的Date类和SimpleDateFormat类即可。首先，我们需要导入这两个类：
+使用Java可以轻松获取当前日期。只需使用内置的Java类“java.util.Date”，然后调用“Date（）”方法就可以了。让我们看一个简单的例子：
 
-```Java
+```
 import java.util.Date;
-import java.text.SimpleDateFormat;
-```
-然后，我们可以创建一个Date对象并使用SimpleDateFormat类来格式化输出日期，例如：
-
-```Java
+public static void main(String args[]) {
 Date currentDate = new Date();
-SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-String formattedDate = dateFormat.format(currentDate);
-System.out.println("当前日期是：" + formattedDate);
-```
-运行以上代码，您将会得到类似于以下的输出：
-
-```
-当前日期是：2021-06-08
+System.out.println(currentDate);
+}
 ```
 
-我们还可以根据自己的需要，使用不同的日期格式来输出，例如：
-
-```Java
-SimpleDateFormat longDateFormat = new SimpleDateFormat("yyyy年MM月dd日 HH时mm分ss秒");
-String longFormattedDate = longDateFormat.format(currentDate);
-System.out.println("当前日期和时间是：" + longFormattedDate);
-```
-输出结果为：
+输出应该是类似于这样的结果：
 
 ```
-当前日期和时间是：2021年06月08日 15时29分37秒
+Sat Feb 22 20:25:45 EST 2020
 ```
 
-除了日期以外，我们还可以获取当前时间的毫秒数，示例如下：
+## 深入探讨：
 
-```Java
-long currentTimeMillis = System.currentTimeMillis();
-System.out.println("当前时间的毫秒数是：" + currentTimeMillis);
-```
-输出结果为：
+在历史上，获取当前日期使用的是简单的数学运算。然而，在Java中，使用内置的“java.util.Date”类可以更加方便和精确地获取当前日期。另外，还有一些替代方法可以获取当前日期，比如使用“java.time.LocalDate”类，它在Java 8中被引入。
 
-```
-当前时间的毫秒数是：1623163286203
-```
+在实现时，我们需要注意的是获取的当前日期和时间是基于系统的本地时区。如果需要特定的时区，可以使用“java.time.ZoneDateTime”类来获取。
 
-## 深入了解
+## 参考链接：
 
-Java中Date类提供了许多方法来操作日期，例如可以比较两个日期的大小、判断一个日期是否在另一个日期之前或之后。在Java 8及以上版本，还可以使用新的LocalDate类来处理日期，它提供了更多的方法来操作日期和时间。
-
-另外，Java提供了众多的第三方日期库，如Joda-Time、java.time和Threeten Extra，它们提供了更多的功能和更丰富的API来处理日期。
-
-## 参考链接
-
-- [Java Date类文档](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html)
-- [Java SimpleDateFormat类文档](https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html)
-- [Java LocalDate类文档](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
-- [Joda-Time官方文档](https://www.joda.org/joda-time/)
-- [java.time官方文档](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/time/package-summary.html)
-- [Threeten Extra官方文档](https://www.threeten.org/threeten-extra/)
-
-## 参见
-
-- [Java教程（中文版）](https://docs.oracle.com/javase/tutorial/index.html)
-- [在线Java编译器](https://www.jdoodle.com/online-java-compiler)
-- [Java之道](https://www.javacodegeeks.com/)
+- [Java中的日期和时间](https://www.w3schools.com/java/java_date.asp)
+- [Java 8中的新日期和时间API](https://www.baeldung.com/java-8-date-time-intro)

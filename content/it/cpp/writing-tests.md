@@ -1,7 +1,7 @@
 ---
-title:                "Scrittura di test"
-html_title:           "C++: Scrittura di test"
-simple_title:         "Scrittura di test"
+title:                "Scrivere test"
+html_title:           "C++: Scrivere test"
+simple_title:         "Scrivere test"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Testing and Debugging"
@@ -10,66 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché scrivere test in C++
+Cosa e perché scrivere test
 
-Scrivere test è un'attività importante per garantire la qualità del codice. Ciò significa che eseguire test regolari è fondamentale per assicurarsi che il software funzioni correttamente e risponda alle aspettative degli utenti.
+Scrivere test è un processo attraverso il quale i programmatori verificano che il proprio codice funzioni correttamente. Questo processo è fondamentale per garantire la qualità e l'affidabilità del software. I programmatori scrivono test per essere sicuri che il loro codice funzioni come previsto e per individuare eventuali errori o bug.
 
-## Come scrivere test in C++
-
-Per scrivere test in C++, è necessario utilizzare un framework di test. Esistono diverse opzioni disponibili, tra cui Google Test, Catch e Boost.Test. Di seguito è riportato un esempio di test scritto utilizzando Google Test:
+Come fare:
 
 ```C++
-// include la libreria di Google Test
-#include <gtest/gtest.h>
-// includere il file sorgente del codice da testare
-#include "calculator.h"
+#include <iostream>
+using namespace std;
 
-// definire una suite di test per la classe Calculator
-TEST(CalculatorTest, Addition) {
-  // creare un'istanza di Calculator
-  Calculator calc;
-  // eseguire l'operazione di addizione utilizzando il metodo add()
-  int result = calc.add(2, 3);
-  // verificare che il risultato sia uguale a 5
-  ASSERT_EQ(result, 5);
+int somma(int num1, int num2) {
+  return num1 + num2;
 }
 
-// eseguire tutti i test
-int main(int argc, char** argv) {
-  // inizializzare Google Test
-  ::testing::InitGoogleTest(&argc, argv);
-  // eseguire tutti i test
-  return RUN_ALL_TESTS();
+int main() {
+  int num1 = 5;
+  int num2 = 10;
+
+  // Verifica che la funzione 'somma' restituisca il risultato corretto
+  if (somma(num1, num2) == 15) {
+    cout << "Test superato: la somma di 5 e 10 è 15." << endl;
+  } else {
+    cout << "Test fallito: la somma di 5 e 10 non è 15." << endl;
+  }
+  return 0;
 }
 ```
 
-L'output di questo test dovrebbe risultare:
+Uscita: Test superato: la somma di 5 e 10 è 15.
 
-```
-[==========] Running 1 test from 1 test suite.
-[----------] Global test environment set-up.
-[----------] 1 test from CalculatorTest
-[ RUN      ] CalculatorTest.Addition
-[       OK ] CalculatorTest.Addition (0 ms)
-[----------] 1 test from CalculatorTest (0 ms total)
-[----------] Global test environment tear-down.
-[==========] 1 test from 1 test suite ran. (0 ms total)
-```
+Deep Dive:
 
-## Approfondimento sui test in C++
+Scrivere test è una pratica comune nella programmazione moderna. È nato dal concetto di sviluppo guidato dai test (Test-driven development, TDD), che consiste nel scrivere i test prima di scrivere il codice effettivo. Questo aiuta i programmatori a concentrarsi sulle funzionalità del software e ad individuare eventuali problemi fin dalla fase iniziale di sviluppo.
 
-Scrivere test è un processo importante che richiede tempo e attenzione. La qualità dei test è fondamentale per garantire che il codice funzioni come previsto e che eventuali modifiche non causino regressioni o errori.
+Un'alternativa al TDD è lo sviluppo guidato dai test continuo (Continuous test-driven development, CTDD), che prevede l'esecuzione dei test in modo continuativo durante il processo di sviluppo.
 
-Quando si scrivono test, è importante avere una buona copertura dei casi limite e dei possibili scenari di utilizzo del software. Inoltre, i test dovrebbero essere ben strutturati e organizzati, in modo da essere facili da mantenere e aggiornare.
+Implementazione dei test:
 
-Oltre alla creazione di test, è importante anche eseguirli regolarmente durante lo sviluppo del software. Ciò consente di identificare tempestivamente eventuali problemi e di correggerli prima che possano causare problemi maggiori.
+Per scrivere test efficaci, è importante seguire alcune buone pratiche come scegliere i casi di test in modo oculato, limitare i test a singole funzionalità e prestare attenzione al codice di test stesso. È anche utile utilizzare strumenti di test automatizzati come Google Test o CppUnit per semplificare il processo di scrittura e esecuzione dei test.
 
-## Vedi anche
+Altro:
 
-Per ulteriori informazioni sulla scrittura e l'esecuzione di test in C++, consulta i seguenti link:
+Per saperne di più sullo sviluppo guidato dai test e sui diversi strumenti disponibili, si consiglia di consultare questi link:
 
-- [Google Test Documentation](https://github.com/google/googletest)
-- [Catch2 Tutorial](https://github.com/catchorg/Catch2/blob/master/docs/tutorial.md)
-- [Boost.Test Introduction](https://www.boost.org/doc/libs/1_76_0/libs/test/doc/html/index.html)
-- [Guida alle migliori pratiche per la scrittura di test in C++](https://www.viva64.com/en/t/b/0444/)
-- [Debugging and Testing in VS Code](https://code.visualstudio.com/docs/cpp/cpp-debug)
+* Guida introduttiva allo sviluppo guidato dai test in C++: https://www.ibm.com/developerworks/aix/library/au-introtdd/
+* Google Test: https://github.com/google/googletest
+* CppUnit: http://cppunit.sourceforge.net/

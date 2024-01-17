@@ -1,7 +1,7 @@
 ---
-title:                "Majusculation d'une chaîne de caractères."
-html_title:           "Javascript: Majusculation d'une chaîne de caractères."
-simple_title:         "Majusculation d'une chaîne de caractères."
+title:                "Capitaliser une chaîne de caractères"
+html_title:           "Javascript: Capitaliser une chaîne de caractères"
+simple_title:         "Capitaliser une chaîne de caractères"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Strings"
@@ -10,47 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+# Qu'est-ce que la mise en majuscule et pourquoi les programmeurs la font-ils?
 
-Vous avez peut-être déjà rencontré une situation où vous deviez capitaliser une chaîne de caractères en Javascript. Peut-être que vous traitiez des données utilisateur ou que vous aviez besoin d'afficher une phrase correctement dans votre application. Dans ces cas-là, il est utile de savoir comment capitaliser une chaîne en Javascript.
+La mise en majuscule est le fait de transformer toutes les lettres d'une chaîne de caractères en lettres majuscules. Les programmeurs le font souvent pour des raisons de lisibilité et de formatage dans leur code.
 
-## Comment Faire
-
-Capitaliser une chaîne de caractères en Javascript peut être fait de plusieurs manières, en utilisant différentes méthodes. Voici quelques exemples de code pour vous montrer comment le faire :
+# Comment faire:
 
 ```Javascript
-// Méthode 1 : Utilisation de la méthode toUpperCase()
-let string = "exEmPLe";
-string = string.toUpperCase();
-// Output : "EXEMPLE"
-
-// Méthode 2 : Utilisation de la méthode capitalize()
-String.prototype.capitalize = function() {
-  return this.charAt(0).toUpperCase() + this.slice(1);
-}
-let string = "exEmPLe";
-string = string.capitalize();
-// Output : "ExEmPLe"
-
-// Méthode 3 : Utilisation de la méthode replace()
-let string = "exEmPLe";
-string = string.replace(/^\w/, c => c.toUpperCase());
-// Output : "ExEmPLe"
+let string = "salut tout le monde";
+console.log(string.toUpperCase());
 ```
+Sortie: SALUT TOUT LE MONDE
 
-Vous pouvez également utiliser une combinaison de ces méthodes ou en créer une qui répond à vos besoins spécifiques. L'essentiel est de comprendre comment le processus de capitalisation fonctionne et de trouver la méthode ou la combinaison de méthodes qui fonctionne le mieux pour vous.
+```Javascript
+let phrase = "voici une phrase bien longue";
+console.log(phrase.toUpperCase());
+```
+Sortie: VOICI UNE PHRASE BIEN LONGUE
 
-## Plongée Profonde
+# Approfondissement:
 
-En Javascript, les chaînes de caractères sont des objets et peuvent donc avoir des méthodes et des propriétés. La méthode `toUpperCase()` que nous avons utilisée dans le premier exemple est une méthode intégrée qui convertit tous les caractères d'une chaîne en majuscules.
+La mise en majuscule vient de la convention d'écriture appelée "CamelCase", où les mots sont séparés par des majuscules au lieu d'espaces ou de tirets. Il existe également une méthode alternative pour mettre une chaîne de caractères en majuscules en utilisant la méthode .replace() en combinaison avec des expressions régulières.
 
-La deuxième méthode, `capitalize()`, est une méthode que nous avons créée en l'ajoutant au prototype de l'objet String. Cela signifie que cette méthode sera disponible pour toutes les chaînes de caractères que nous créons. Elle utilise la méthode `charAt()` pour obtenir le premier caractère de la chaîne et la méthode `slice()` pour obtenir le reste de la chaîne à partir du deuxième caractère. Ensuite, elle utilise la méthode `toUpperCase()` pour convertir la première lettre en majuscule et concatène le reste de la chaîne pour obtenir la chaîne capitalisée complète.
+# Voir aussi:
 
-Enfin, la troisième méthode utilise la méthode `replace()` pour remplacer le premier caractère de la chaîne en utilisant une expression régulière et la fonction fléchée ES6 pour convertir ce premier caractère en majuscule.
-
-Il est important de noter qu'en Javascript, les chaînes de caractères sont immuables, ce qui signifie qu'elles ne peuvent pas être modifiées directement. C'est pourquoi nous avons assigné les résultats de chaque méthode à une nouvelle variable dans les exemples ci-dessus.
-
-## Voir Aussi
-
-- Documentation MDN sur la méthode `toLowerCase()`: https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/String/toLowerCase
-- Tutoriel Codecademy sur les méthodes de manipulation de chaînes en Javascript: https://www.codecademy.com/learn/introduction-to-javascript/modules/learn-javascript-strings/cheatsheet
+- [MDN - toUpperCase](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase)
+- [W3Schools - JavaScript String Methods](https://www.w3schools.com/js/js_string_methods.asp)

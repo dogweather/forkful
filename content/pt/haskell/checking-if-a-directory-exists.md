@@ -10,37 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+## O que e por que?
 
-Se você está trabalhando em um projeto de programação que precisa acessar ou manipular arquivos dentro do sistema operacional, é importante verificar se um diretório existe antes de prosseguir. Isso garante que seu código não sofra erros e que o programa seja executado corretamente.
+Verificar se um diretório existe é uma tarefa comum na programação. Isso permite que os programadores verifiquem se um determinado diretório está presente no sistema de arquivos antes de executar ações que dependem dele. Isso pode ajudar a evitar erros e garantir que o código funcione corretamente.
 
-## Como fazer
+## Como fazer:
 
-A linguagem de programação Haskell oferece uma função para verificar se um diretório existe dentro do sistema operacional. Veja um exemplo de como usar esta função:
+Para verificar se um diretório existe em Haskell, podemos usar a função `doesDirectoryExist` do módulo `System.Directory`. Essa função recebe um caminho de diretório como argumento e retorna um valor booleano indicando se o diretório existe ou não.
+
+Exemplo de código:
 
 ```Haskell
 import System.Directory
 
 main = do
-    exists <- doesDirectoryExist "caminho/do/diretorio"
-    print exists
+    let dir = "/home/usuario/documentos"
+    exist <- doesDirectoryExist dir
+    if exist
+        then putStrLn "O diretório existe!"
+        else putStrLn "O diretório não existe."
 ```
 
-Neste exemplo, importamos o módulo System.Directory, que contém a função doesDirectoryExist. Em seguida, definimos uma função principal (main) utilizando a sintaxe do Haskell, que irá verificar se o diretório especificado existe e imprimir o resultado (True ou False) na tela.
+Saída:
 
-## Deep Dive
-
-Ao utilizar a função doesDirectoryExist, é importante entender como ela funciona e quais parâmetros podem ser adicionados para tornar a verificação mais precisa. A função possui a seguinte assinatura:
-
-```Haskell
-doesDirectoryExist :: FilePath -> IO Bool
+```
+O diretório existe!
 ```
 
-Ela recebe como parâmetro o caminho do diretório a ser verificado (FilePath) e retorna um valor do tipo IO Bool, que pode ser True (se o diretório existe) ou False (se o diretório não existe).
+## Profundidade:
 
-Além disso, a função também é capaz de verificar se o caminho fornecido é um diretório válido, ou seja, se ele está acessível pelo sistema operacional. Portanto, é importante garantir que o caminho informado esteja correto antes de utilizar a função.
+Verificar a existência de um diretório é uma tarefa que pode parecer trivial, mas é importante para garantir a estabilidade e funcionalidade do código. Antes do lançamento do Haskell 1.4 em 1997, não havia uma função embutida para verificar a existência de diretórios. Em vez disso, os programadores precisavam usar funções do sistema operacional, o que tornava o código menos portátil e mais propenso a erros.
 
-## Veja também
+Além da função `doesDirectoryExist`, o módulo `System.Directory` também possui outras funções para gerenciar diretórios, como `createDirectory` e `removeDirectory`. No entanto, existem outras bibliotecas disponíveis que oferecem funcionalidades semelhantes, como o pacote `directory-tree` e o módulo `System.Posix.Directory`, que é específico para sistemas POSIX.
 
-- Documentação oficial da função doesDirectoryExist: https://hackage.haskell.org/package/directory/docs/System-Directory.html#v:doesDirectoryExist
-- Tutorial básico sobre Haskell: https://www.haskell.org/tutorial/
+No nível de implementação, a função `doesDirectoryExist` usa a função `getFileStatus` internamente para obter informações sobre o caminho do diretório. Em seguida, é verificado se o tipo de arquivo é um diretório e o resultado é retornado como um valor booleano.
+
+## Veja também:
+
+- [Módulo `System.Directory`](https://hackage.haskell.org/package/directory/docs/System-Directory.html)
+- [Pacote `directory-tree`](https://hackage.haskell.org/package/directory-tree)
+- [Módulo `System.Posix.Directory`](https://hackage.haskell.org/package/unix/docs/System-Posix-Directory.html)

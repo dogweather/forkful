@@ -1,7 +1,7 @@
 ---
-title:                "디렉터리가 존재하는지 확인하는 방법"
-html_title:           "C: 디렉터리가 존재하는지 확인하는 방법"
-simple_title:         "디렉터리가 존재하는지 확인하는 방법"
+title:                "디렉토리가 존재하는지 확인하기"
+html_title:           "C: 디렉토리가 존재하는지 확인하기"
+simple_title:         "디렉토리가 존재하는지 확인하기"
 programming_language: "C"
 category:             "C"
 tag:                  "Files and I/O"
@@ -10,43 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
-디렉토리가 존재하는지 확인하는 것에 참여하는 이유는 환경 설정이나 파일 관리와 같은 애플리케이션 개발 프로세스에서 중요한 역할을 합니다.
+## 무엇인가요? 왜하는 거죠?
 
-## 방법
-C 프로그래밍에서 디렉토리가 존재하는지 확인하는 가장 간단한 방법은 `opendir()` 함수를 사용하는 것입니다. 만약 디렉토리가 존재하지 않으면 해당 함수는 `NULL` 값을 반환합니다. 다음은 이를 코드로 표현한 예시입니다.
+디렉토리가 존재하는지 확인하는 것은 프로그래머들이 자주 하는 작업 중 하나입니다. 이 작업을 하는 이유는 프로그램이 디렉토리를 사용하기 전에 그 디렉토리가 존재하는지 확인하고 필요한 조치를 취하기 위해서입니다.
 
-```
+## 방법:
+
+```C
 #include <stdio.h>
-#include <dirent.h>
+#include <stdbool.h>
+#include <sys/stat.h>
 
-int main() {
-    DIR *dir;
+bool directoryExists(const char *path) {
+    struct stat s;
+    return (stat(path, &s) == 0 && S_ISDIR(s.st_mode));
+}
 
-    // 존재하는 디렉토리 경로
-    dir = opendir("test_dir");
-    
-    // 디렉토리가 존재하지 않는 경우
-    if (dir == NULL) {
-        printf("디렉토리가 존재하지 않습니다.\n");
+int main(void) {
+    if (directoryExists("./my_directory")) {
+        printf("디렉토리가 존재합니다.");
     } else {
-        printf("디렉토리가 존재합니다.\n");
-        closedir(dir);
+        printf("디렉토리가 존재하지 않습니다.");
     }
-    
     return 0;
 }
 ```
 
-위 코드의 출력은 다음과 같습니다.
+위의 예시 코드는 디렉토리가 존재하는지 확인하는 함수와 해당 함수를 사용하는 예시를 보여줍니다. `sys/stat.h` 헤더 파일에 있는 `stat()` 함수를 사용하여 디렉토리의 속성을 확인하고, `S_ISDIR` 매크로를 이용하여 디렉토리인지 아닌지를 판별합니다.
 
-```
-디렉토리가 존재합니다.
-```
+## 깊이 들어가보기:
 
-## 깊게 파헤치기
-위의 예시에서 사용한 `opendir()` 함수는 `<dirent.h>` 라이브러리에서 제공합니다. 이 함수는 디렉토리가 존재하지 않는 경우에도 에러를 반환하지 않기 때문에 조금 더 안정적으로 디렉토리를 확인할 수 있습니다. 또한 `mkdir()` 함수를 사용하여 디렉토리를 생성하거나 `stat()` 함수를 사용하여 디렉토리와 관련된 정보를 확인할 수도 있습니다.
+디렉토리가 존재하는지 확인하는 기능은 유닉스 운영체제에서 비롯되었습니다. 유닉스에서는 파일이나 디렉토리의 속성을 확인하기 위해 `stat` 명령어를 사용했습니다. 이 명령어는 파일과 디렉토리의 속성을 아웃풋으로 제공하는데, 이 중 디렉토리의 속성을 나타내는 비트가 바로 `S_ISDIR` 매크로와 관련이 있습니다.
 
-## 참고
-- [C - Directory Operations](https://www.tutorialspoint.com/cprogramming/c_directory_handling.htm)
-- [C opendir() function](https://www.programiz.com/c-programming/library-function/dirent/opendir)
+또한 `access()` 함수를 사용하여 파일이나 디렉토리에 접근할 수 있는지를 확인할 수도 있습니다. 디렉토리의 존재 여부도 `access()` 함수로 확인할 수 있지만, 이 함수는 보다 광범위한 접근 권한을 확인하기 위한 용도로 사용하는 것이 더 바람직합니다.
+
+디렉토리가 존재하는지 확인하는 기능은 파일 시스템을 다루는 프로그램에서 필수적이므로, 운영체제 별로 조금씩 구현 방식이 다를 수 있습니다. 따라서 위 예제 코드는 유의미한 참고자료가 될 수 있지만, 각 운영체제에 따라서 변경되어야 하는 경우도 있을 수 있음을 유의해야 합니다.
+
+## 더 알아보기:
+
+- [stat() 함수의 매뉴얼 페이지](https://man7.org/linux/man-pages/man2/stat.2.html)
+- [access() 함수의 매뉴얼 페이지](https://man7.org/linux/man-pages/man2/access.2.html)
+- [파일과 디렉토리 속성 확인하기](https://www.ibm.com/docs/ssw_aix_72/filesbasedir/features.htm)

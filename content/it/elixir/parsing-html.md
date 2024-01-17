@@ -1,7 +1,7 @@
 ---
-title:                "Analisi di HTML"
-html_title:           "Elixir: Analisi di HTML"
-simple_title:         "Analisi di HTML"
+title:                "Analisi di html"
+html_title:           "Elixir: Analisi di html"
+simple_title:         "Analisi di html"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "HTML and the Web"
@@ -10,72 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+## Che cos'è e perché?
 
-Se sei un programmatore che lavora con dati da fonti web, probabilmente hai incontrato il problema di dover estrarre informazioni da pagine HTML. Ecco perché imparare a parsare l'HTML può aumentare la tua efficienza e facilitare la gestione dei dati estratti dai siti web.
+Il parsing HTML è il processo di analisi e interpretazione del codice sorgente HTML di una pagina web per identificare i vari elementi che la compongono, come testo, immagini e link. I programmatori lo fanno per manipolare estrarre informazioni specifiche da una pagina web o per creare strumenti automatizzati che possono analizzare e manipolare grandi quantità di dati provenienti da siti web.
 
-## Come Fare
+## Come fare:
 
-In Elixir, esistono diversi modi per parsare l'HTML, ma il più comune è utilizzare la libreria Floki. Per iniziare, installa la libreria con il comando `mix`:
+Ecco un esempio di come analizzare e manipolare il codice HTML di una pagina web utilizzando Elixir:
+```Elixir
+html = "<h1>Titolo della pagina</h1> <p>Questo è un paragrafo</p>"
 
-```elixir
-mix deps.get floki
+# Utilizziamo il modulo HTMLParser per analizzare il codice HTML
+parsed_html = HTMLParser.parse(html)
+
+# Possiamo accedere ai vari elementi HTML tramite le funzioni del modulo
+titolo = HTMLParser.get_tag(parsed_html, "h1")
+paragrafo = HTMLParser.get_tag(parsed_html, "p")
+
+# Possiamo quindi stampare il contenuto dei tag utilizzando la funzione get_text
+IO.puts("Il titolo della pagina è: #{HTMLParser.get_text(titolo)}")
+IO.puts("Il paragrafo contiene: #{HTMLParser.get_text(paragrafo)}")
+```
+Output:
+```
+Il titolo della pagina è: Titolo della pagina
+Il paragrafo contiene: Questo è un paragrafo
 ```
 
-Una volta installata, puoi utilizzare la funzione `Floki.parse` per caricare il codice HTML dal sito web che desideri parsare:
+## Approfondimento:
 
-```elixir
-html = Floki.parse("""
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Titolo Pagina</title>
-  </head>
-  <body>
-    <h1>Benvenuto!</h1>
-    <ul>
-      <li>Elemento 1</li>
-      <li>Elemento 2</li>
-      <li>Elemento 3</li>
-    <ul>
-  </body>
-</html>
-""")
-```
+Il parsing HTML è stato uno dei primi strumenti creati per analizzare e manipolare il contenuto web e ha contribuito in modo significativo alla crescita di internet e alla diffusione di informazioni. Alcune alternative al parsing HTML includono l'utilizzo di librerie di scraping o di framework di testing automatizzati.
 
-Una volta caricato, puoi utilizzare le funzioni di Floki per navigare all'interno dell'HTML e estrarre i dati di tuo interesse. Ad esempio, per estrarre tutti i titoli `h1` nella pagina, puoi utilizzare la funzione `Floki.find` e l'operatore `~>`:
+L'implementazione di Elixir per il parsing HTML è basata su un parser combinatore, una tecnica per creare parser funzionali e facilmente estendibili.
 
-```elixir
-Floki.find(html, "h1")
-# output: ["Benvenuto!"]
-```
+## Vedi anche:
 
-È anche possibile utilizzare selettori CSS per specificare esattamente quale elemento si desidera estrarre. Ad esempio, per ottenere tutti gli elementi `li` dalla lista, puoi utilizzare il selettore CSS `ul li`:
-
-```elixir
-Floki.find(html, "ul li")
-# output: ["Elemento 1", "Elemento 2", "Elemento 3"]
-```
-
-Inoltre, Floki offre funzioni per ottenere attributi specifici degli elementi, come l'attributo `href` di un link:
-
-```elixir
-Floki.attribute(html, "a", "href")
-# output: ["https://www.miopropriositoweb.com"]
-```
-
-## Deep Dive
-
-Una delle caratteristiche più potenti di Floki è la possibilità di utilizzare espressioni XPath per navigare all'interno dell'HTML. Invece di utilizzare selettori CSS, puoi utilizzare XPath per selezionare elementi in base al loro percorso nella struttura del documento HTML. Ad esempio, per ottenere la lista degli elementi `li` dalla lista, puoi utilizzare l'espressione XPath `//ul/li`:
-
-```elixir
-Floki.find(html, "//ul/li")
-# output: ["Elemento 1", "Elemento 2", "Elemento 3"]
-```
-
-In più, Floki offre anche funzioni per manipolare l'HTML, come ad esempio `Floki.parent` per ottenere il padre di un determinato elemento, o `Floki.html_to_text` per convertire il codice HTML in testo semplice.
-
-## Vedi Anche
-
-- [Documentazione ufficiale di Floki](https://hexdocs.pm/floki/Floki.html)
-- [XPath Tutorial su w3schools](https://www.w3schools.com/xml/xpath_intro.asp)
+Per ulteriori informazioni su Elixir e il suo utilizzo per il parsing HTML, puoi consultare la documentazione ufficiale: [https://hexdocs.pm/html/HTMLParser.html](https://hexdocs.pm/html/HTMLParser.html). Puoi anche fare riferimento a questo articolo per saperne di più sulle tecniche di parsing utilizzate in Elixir: [https://www.numacon.com/blog/introducing-parse-formula/](https://www.numacon.com/blog/introducing-parse-formula/).

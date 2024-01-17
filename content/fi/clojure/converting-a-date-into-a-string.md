@@ -10,30 +10,20 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä ja miksi?
+Päivämäärän muuttaminen merkkijonoksi on yleinen ohjelmointitehtävä, jossa päivämäärän arvo muuttuu helposti luettavaan muotoon esimerkiksi in ennen tallentamista tietokantaan tai tiedostoon. Ohjelmoijat käyttävät tätä tehtävää parantaakseen ohjelman käytettävyyttä ja muotoiluja.
 
-Joskus ohjelmoinnissa tarvitsee muuttaa päivämäärä merkkijonoksi, esimerkiksi tulostettaessa päivämäärää käyttäjälle näkyvässä muodossa. Clojurella tämä on helppoa ja nopeaa tehdä.
-
-## Miten tehdä se
-
-Merkkijonoksi muuttaminen vaatii ensin päivämäärän konvertoinnin Date-tyypiksi. Tämän jälkeen voi käyttää `format`-funktiota muuttaakseen päivämäärän halutussa muodossa olevaksi merkkijonoksi.
-
-```
-;; Konvertoi päivämäärän merkkijonosta Date-tyyppiin
-(def date (java.util.Date. "2021-02-01"))
-
-;; Muuttaa päivämäärän formaatissa "dd/MM/yyyy" merkkijonoksi (tulostaa "01/02/2021")
-(def formatted-date (format date "dd/MM/yyyy"))
+## Miten tehdä:
+```Clojure
+(require '[clojure.java-time :as t])
+(t/format (t/date-time 2021 1 1) "dd/MM/yyyy") ;;=> "01/01/2021"
 ```
 
-`format`-funktion ensimmäinen argumentti on muunnettava päivämäärä Date-tyypissä ja toinen argumentti on haluttu muoto merkkijonona. Muotoilussa voi käyttää erilaisia merkkejä, kuten esimerkiksi `dd` päivän numerona tai `MMM` lyhenteenä kuukaudelle.
+Voit käyttää `clojure.java-time`-kirjastoa päivämäärän muuntamiseen merkkijonoksi. Käytämme `format`-funktiota, joka ottaa parametreiksi päivämäärän ja halutun muotoilun. Voit myös muuttaa aikavyöhykkeen antamalla lisäparametrinä halutun aikavyöhykkeen.
 
-## Syvempi sukellus
+## Syväsukellus:
+On tärkeää huomata, että päivämäärämuotoilu on ollut haaste ohjelmoinnissa aina ennen kehittäjäyhteisöjen luomista. Nykyään on olemassa useita vaihtoehtoja päivämäärän muuttamiseksi merkkijonoksi, mutta `clojure.java-time` on yksi suosituimmista vaihtoehdoista Clojure-ohjelmoijille. Tämä kirjasto käyttää Javassa olevia luokkia päivämäärän käsittelyyn, joten se tarjoaa luotettavan ja tehokkaan tavan tehdä päivämäärään liittyviä toimintoja.
 
-Clojuren `format`-funktio hyödyntää Java Platform, Standard Edition (java.time) -kirjastoa, joten sen avulla voi myös käyttää Java-kirjaston muita toimintoja. Lisäksi `format` tukee myös paikallisia päivämäärämuotoiluja, eli päivämäärän voi esittää eri kielillä ja kulttuureissa hyödyntäen Clojuren `Locale`-tyyppiä.
-
-## Katso myös
-
-- [ClojureDocs: format-funktion dokumentaatio](https://clojuredocs.org/clojure.string/format)
-- [Java 8 SDK - java.time - Documentation](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
-- [Locale-tyypin dokumentaatio](https://docs.oracle.com/javase/8/docs/api/java/util/Locale.html)
+## Katso myös:
+- [Clojure.java-time GitHub-sivu](https://github.com/dm3/clojure-java-time)
+- [Virallinen Java-päivämääräkirjasto](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)

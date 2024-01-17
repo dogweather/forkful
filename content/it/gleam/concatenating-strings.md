@@ -10,46 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+## Cosa & Perché?
 
-Se sei nuovo a programmazione, potresti chiederti perché dovresti interessarti alla concatenazione di stringhe. In poche parole, la concatenazione di stringhe è un concetto fondamentale nella creazione di programmi per manipolare e visualizzare testo.
+La concatenazione di stringhe è il processo di unire più stringhe in una nuova stringa più lunga. I programmatori spesso fanno questo per costruire output leggibili e formattati o per creare stringhe dinamiche basate su input o variabili.
 
-## Come fare
-
-Per concatenare due stringhe usando Gleam, puoi utilizzare l'operatore ```++```, che unisce due stringhe in una sola. Ad esempio:
+## Come:
 
 ```Gleam
 let nome = "Maria"
 let cognome = "Rossi"
-let nome_completo = nome ++ " " ++ cognome
-
-io.println(nome_completo)
-
-// Output: Maria Rossi
+let saluto = "Ciao, " <> nome <> " " <> cognome
 ```
 
-Se vuoi concatenare più di due stringhe, puoi utilizzare l'operatore all'interno di un'espressione, come nell'esempio seguente:
+Questo codice combina tre stringhe in una nuova stringa, creando l'output "Ciao, Maria Rossi". 
 
-```Gleam
-let nome = "Maria"
-let cognome = "Rossi"
-let saluto = "Ciao, "
-let nome_completo = saluto ++ nome ++ " " ++ cognome ++ "!"
+## Approfondimento:
 
-io.println(nome_completo)
+La concatenazione di stringhe è un'operazione comune in molti linguaggi di programmazione e ha radici nell'informatica fin dagli anni '50. Alcuni linguaggi utilizzano il simbolo "+" per la concatenazione, mentre altri come Gleam utilizzano "<>" come operatore.
 
-// Output: Ciao, Maria Rossi!
-```
+In alcuni casi, concatenare stringhe può essere meno efficiente rispetto all'uso di altri metodi per gestire output e formattazione. È importante valutare le alternative e utilizzare la concatenazione solo quando necessario.
 
-## Approfondimento
+## Vedi anche:
 
-La concatenazione di stringhe è una delle operazioni più comuni nella programmazione e viene utilizzata per costruire nuove stringhe combinando parti di testo esistente. Questo può essere utile, ad esempio, per creare messaggi personalizzati, per l'elaborazione di dati o per generare output.
-
-Oltre all'operatore ```++```, Gleam offre anche altre funzioni utili per la manipolazione delle stringhe, come ```length```, che restituisce la lunghezza di una stringa, e ```slice```, che permette di estrarre una sottostringa da una stringa più grande.
-
-Inoltre, è importante notare che la concatenazione di stringhe può avere un impatto sulle prestazioni del tuo programma, poiché ogni volta che si crea una nuova stringa, il sistema deve allocare nuova memoria per essa. Perciò, è importante utilizzare le funzioni stringa in modo accurato e ottimizzare il tuo codice quando possibile.
-
-## Vedi anche
-
-- [Documentazione di Gleam su stringhe](https://gleam.run/documentation/std-lib-string/)
-- [Tutorial di Gleam per principianti](https://gleam.run/getting-started/basic-tutorial/)
+Per saperne di più sulla concatenazione di stringhe in Gleam, puoi consultare la documentazione ufficiale su [Gleam's strings module](https://gleam.run/modules/random) e [Gleam's operators](https://gleam.run/cheatsheet#operators).

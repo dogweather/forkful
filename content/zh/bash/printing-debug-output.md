@@ -10,47 +10,71 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
+## 什么 & 为什么
 
-当我们在编写Bash脚本时，经常会遇到一些错误和问题，而输出调试信息是一种快速有效的方法来找出问题所在。通过打印调试输出，我们可以查看变量的值、函数的执行顺序以及条件语句的分支情况，从而更容易定位和解决问题。
+打印调试输出是一种程序员经常做的事情，它可以帮助我们在程序执行的过程中发现错误。通过输出程序中特定的变量、值或者语句，我们可以更容易地排查问题，并使我们的代码更加可靠。
 
 ## 如何
 
-在Bash中，我们可以使用`echo`命令来输出调试信息。下面是一个例子：
+### 用变量打印调试输出
 
 ```Bash
-#!/bin/bash
-
-# 定义一个函数来计算两个数的和
-add() {
-  echo "计算开始"
-  echo "第一个数为 $1"
-  echo "第二个数为 $2"
-  sum=$(($1 + $2))
-  echo "计算结果为 $sum"
-}
-
-# 调用函数并传入两个参数来进行计算
-add 5 7
+name="John"
+echo "My name is $name."
 ```
 
-运行以上脚本后，我们会得到以下的输出：
+输出：
 
 ```
-计算开始
-第一个数为 5
-第二个数为 7
-计算结果为 12
+My name is John.
 ```
 
-通过打印调试输出，我们可以清楚地看到函数内的变量值和执行顺序，从而更容易理解程序的运行过程。除了使用`echo`命令外，我们还可以使用`set -x`命令来开启调试模式，让Bash在执行完每一行命令后自动输出它的命令名和对应的参数，以帮助我们更好地调试。
+### 打印整个数组
+
+```Bash
+fruit=("apple" "orange" "banana")
+echo "I like ${fruit[*]}s."
+```
+
+输出：
+
+```
+I like apples, oranges, and bananas.
+```
+
+### 使用条件语句打印调试输出
+
+```Bash
+age=25
+if [ "$age" -ge 18 ]; then
+  echo "You are an adult."
+else
+  echo "You are a minor."
+fi
+```
+
+输出：
+
+```
+You are an adult.
+```
 
 ## 深入了解
 
-除了`echo`命令和`set -x`命令外，Bash还提供了许多其他的调试方法，比如调用`trap`函数来设置一个陷阱，当脚本出现错误时，自动打印出错的文件名和行号；使用`/dev/stderr`来将调试信息输出到标准错误流中，从而不影响标准输出流的内容；以及使用`eval`函数来动态执行一段字符串命令，以方便在调试过程中修改和执行命令。想要深入了解这些调试方法，可以参考下面的链接。
+### 历史背景
 
-## 参考链接
+打印调试输出是一种早期的程序员调试技术。在没有现代的调试工具时，程序员通过手动输出特定的信息来发现错误，这也促进了代码的可读性。
 
-- [Bash Debugging Tips and Tricks](https://vaneyckt.io/posts/bash_debugging_tips_and_tricks/)
-- [Debugging Bash scripts](https://linuxconfig.org/debugging-bash-scripts)
-- [Bash Shell Debugging Techniques](https://www.baeldung.com/linux/bash-shell-debugging-techniques)
+### 替代方法
+
+除了打印调试输出，程序员还可以使用调试工具来检查程序的执行过程。这些工具可以提供更多详细的信息，并且更加方便和高效。
+
+### 实现细节
+
+在Bash中，我们可以使用echo命令来打印调试输出。它可以接受多个参数，或者通过使用字符串格式化来打印变量的值。
+
+## 参考
+
+- [Bash 脚本输出调试信息的方法](https://blog.csdn.net/u010571489/article/details/79268657)
+- [Bash 调试技巧](https://everyday.codes/bash-debugging-tips/)
+- [Bash 调试工具介绍](https://www.shellcheck.net/)

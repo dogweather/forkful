@@ -1,7 +1,7 @@
 ---
-title:                "Leyendo argumentos de línea de comandos"
-html_title:           "Gleam: Leyendo argumentos de línea de comandos"
-simple_title:         "Leyendo argumentos de línea de comandos"
+title:                "Leyendo argumentos de línea de comando."
+html_title:           "Gleam: Leyendo argumentos de línea de comando."
+simple_title:         "Leyendo argumentos de línea de comando."
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Files and I/O"
@@ -10,38 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué?
+## ¿Qué & Por qué?
+Leer argumentos de línea de comando es una forma de obtener información ingresada por el usuario en la línea de comandos de una aplicación. Los programadores lo hacen para permitir que los usuarios personalicen la ejecución de su programa, pasándole información específica al inicio.
 
-Si has estado programando en línea de comandos, probablemente hayas notado que a menudo puedes pasar argumentos al programa que estás ejecutando. Estos argumentos pueden ser útiles para personalizar la ejecución de tu programa, y en este artículo te explicaremos cómo leer y utilizar estos argumentos en tus programas escritos en Gleam.
+## Cómo:
+Para leer argumentos de línea de comando en Gleam, podemos usar la biblioteca estándar ```gleam/io``` que proporciona la función ```io.args```. Por ejemplo, si queremos pasar el nombre de un archivo al ejecutar nuestro programa, podemos hacerlo de la siguiente manera:
 
-## ¿Cómo hacerlo?
+```gleam
+import gleam/io
 
-Para leer los argumentos de línea de comandos en Gleam, utilizaremos la función `Gleam.App.args()` que nos devuelve una lista de cadenas de texto con los argumentos pasados al programa. A continuación, podemos utilizar la función `Gleam.List.get(idx: Int, list: list(a))` para obtener un argumento en particular a través de su índice en la lista.
-
-Veamos un ejemplo con un programa que acepta un nombre de usuario como argumento y lo imprime por pantalla:
-
-```Gleam
-import Gleam.App
-
-fn main() {
-  // Obtenemos una lista de argumentos
-  let args = Gleam.App.args()
-
-  // Obtenemos el primer argumento
-  let nombre = List.get(0, args)
-
-  // Imprimimos un saludo utilizando el argumento
-  Gleam.IO.print("Hola, #{nombre}!")
+fn main(args) {
+  file_name = case args {
+    []       -> "archivo.txt"
+    [arg]    -> arg
+    _        -> "error"
+  }
+  // Hacemos algo con el nombre del archivo...
 }
 ```
 
-Si ejecutamos este programa con el comando `Gleam run programa.gleam Juan`, el resultado sería `Hola, Juan!`.
+La función ```io.args``` devuelve una lista de argumentos de tipo cadena, que podemos analizar usando la función de coincidencia de patrones ```case```. En el caso de que se inserten varios argumentos, podemos acceder a ellos usando patrones más complejos en nuestra función ```case```.
 
-## Profundizando
+## Deep Dive:
+La práctica de leer argumentos de línea de comando es común en muchos lenguajes de programación y se remonta a los primeros días de las interfaces de línea de comandos. En Gleam, podemos usar la biblioteca estándar ```gleam/io``` para leer argumentos de línea de comando, pero también existen otras alternativas como la biblioteca ```gleam/cli```. Esta biblioteca proporciona una forma más estructurada de manejar argumentos complejos con opciones y valores predeterminados.
 
-La función `Gleam.App.args()` en realidad utiliza una llamada al sistema operativo para obtener los argumentos de línea de comandos, lo cual nos permite leer argumentos más complejos como banderas o opciones. También podemos utilizar la biblioteca `Gleam.OS.ArgParser` para analizar argumentos de línea de comandos de una manera más estructurada.
-
-## Ver también
-
-- [Documentación de Gleam sobre la función `Gleam.App.args()`](https://gleam.run/book/std.types.html#Gleam.App.args)
-- [Documentación de Gleam sobre la biblioteca `Gleam.OS.ArgParser`](https://gleam.run/book/stdlib.html#Gleam.OS.ArgParser)
+## See Also:
+- Documentación de Gleam para la biblioteca ```gleam/io```: https://gleam.run/lib/gleam/io
+- Documentación de Gleam para la biblioteca ```gleam/cli```: https://gleam.run/lib/gleam/cli

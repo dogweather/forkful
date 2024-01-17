@@ -1,7 +1,7 @@
 ---
-title:                "अस्थायी फ़ाइल बनाना"
-html_title:           "Fish Shell: अस्थायी फ़ाइल बनाना"
-simple_title:         "अस्थायी फ़ाइल बनाना"
+title:                "एक अस्थायी फाइल बनाना"
+html_title:           "Fish Shell: एक अस्थायी फाइल बनाना"
+simple_title:         "एक अस्थायी फाइल बनाना"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Files and I/O"
@@ -10,34 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Kyun
+# आप टेम्पोररी फ़ाइल क्या है और क्यों संग्रह करते हैं?
+एक टेम्पोररी फ़ाइल एक अस्थायी फ़ाइल होती है जो कि आपके प्रोग्राम के प्रयोगकर्ताओं के द्वारा संसाधित की जाती है। प्रोग्रामर्स इस तकनीक का उपयोग प्रोग्राम को स्थानीय मशीन पर भूमिका ग्रहण करने में करते हैं।
 
-Temporary files ko banane ka mukhya uddeshya hai ki hum ek temporary storage space prapt kar sakein apne program ke liye. Ye temporary files humare kam ke liye temporary storage provide karte hain jo ki humare program ke execution ke dauran require ho sakte hain.
+# कैसे करें:
+Fish Shell में टेम्पोररी फ़ाइल बनाने के लिए आप निम्नलिखित कोड को प्रयोग कर सकते हैं:
 
-## Kaise Karein
-
-```Fish Shell``` ko temporary file create karne ke liye ```touch``` command ka upyog karein. Command ke sath file ka naam specify karein, jaise ki ```touch temp.txt``` aur ye ek temporary file create kar degi. Agar hum ```ls``` command se dekhein to ye file ```temp.txt``` naam se list hogi.
-
-## Deep Dive
-
-```touch``` command ke alawa bhi temporary file create karne ke aur options available hain. Ismein hum ```mktemp``` command ka upyog kar sakte hain jo ki random naam se file create kar degi. Example ke liye, ```mktemp``` command ka upyog karke ```mktemp -p ~/Desktop``` karke hum ek temporary file create kar sakte hain jise humare desktop par save hoga.
-
-Temporary files create karne ke liye ek aur prakriya hai, jise "here document" kehte hain. Ismein hum ek temporary file ka content dynamically generate kar sakte hain. Example ke liye, neeche diye gaye code block mein humein ek temporary file create karna hai jiska naam "temp.txt" hoga aur usmein kuch text add karna hai.
-
-```Fish Shell
-cat > temp.txt << EOF
-This is a temporary file.
-EOF
+```
+set -l tmpfile (mktemp)
 ```
 
-Agar hum ```cat temp.txt``` command se dekhein to humein output mein "This is a temporary file." dikhega.
+अब आप आपसे बना टेम्पोररी फ़ाइल पर लिख सकते हैं और उसे समाप्त कर सकते हैं।
 
-## Dekhte Hain
+```
+echo "यह टेम्पोररी फ़ाइल है" > $tmpfile
+cat $tmpfile
+rm $tmpfile
+```
 
-Hum ```touch```, ```mktemp``` aur "here document" ka upyog karke temporary files create kar sakte hain. Inke alawa bhi aur bhi options hote hain jinhe aap explore kar sakte hain. Maine niche kuch links diye hain jinhe aap padhkar aur samajhkar apne projects mein temporary files ka upyog kar sakte hain.
+आपको उसी साथ चलने वाले उपकरणों को लिखना होगा जो आपके प्रोग्राम के दौरान उस फ़ाइल से जुड़े हो सकते हैं।
 
-## Dekhiye Bhi
+# गहरी खोज:
+टेम्पोररी फ़ाइल को सामान्यतः प्रोग्रामिंग की दुनिया में फ्रान्सीस गाय पर बनाया गया है। इसके अलावा, एक वैकल्पिक प्रक्रिया है जिसमें आप नयी फ़ाइल को बनाने के लिए ```touch``` के साथ फ़ाइल के नाम को देने के साथ बना सकते हैं, लेकिन यह उपयोगकर्ता के दृष्टिकोण से हर्टल है क्योंकि वे एक ही समय में दो उपकरणों को उपयोग नहीं कर सकते हैं।
 
-- [Linuxize - How to Create Temporary Files in Shell Scripting](https://linuxize.com/post/create-temporary-files-in-shell-scripting/)
-- [Geomajas - How to Create Temporary Files in the Shell](https://www.geomajas.org/tutorials/file-handling/how-to-create-temporary-files-in-the-shell/)
-- [ShellHacks - How to Create Temporary Files in Shell Scripts](https://www.shellhacks.com/create-temporary-file-shell-script-linux/)
+आपके टेम्पोररी फ़ाइल पर संसाधित सबमिशन वैकल्पिक हैं जैसे कि [tempfile](https://www.earthtechnica.com/code/tempfile) जो फ़ाइल से आगे ना जाने से टेम्पोररी फ़ाइलों को साफ़ करने के लिए अवधारणा का उपयोग करता है।
+
+# देखें भी:
+और जानें के लिए Tempfile को [आदेरा ज्ञानकोश](https://fishshell.com/docs/current/tempfile.html) पर देखें। यह आपको चुनौतियों को मिल सकते हैं जो कि आपके पास संग्रह करने के लिए समझना है।

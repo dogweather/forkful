@@ -10,20 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
-Tervetuloa lukemaan Bash-ohjelmoinnin artikkelia, jossa opit miten kirjoittaa standardivirheelle. Tämä taito on hyödyllinen, sillä se auttaa sinua havaitsemaan ja korjaamaan virheitä koodissasi.
+## Mitä & Miksi?
 
-## Miten
-```Bash
-echo "Tämä teksti tulostuu standardivirheelle" 1>&2
+Kirjoittaminen standardi virhevirtaan (STDERR) on tapa ilmoittaa käyttäjälle skriptin suorituksen aikaisista ongelmista tai virheistä. Tämä on hyödyllistä esimerkiksi silloin, kun haluat tulostaa vianmääritystietoja tai varoituksia erillään tavallisesta tulosteesta, joka menee standardi tulostevirtaan (STDOUT). Näin käyttäjä näkee selkeästi mitkä tulosteet ovat normaaleja ja mitkä ovat mahdollisia ongelmia.
+
+## Miten tehdä?
+
+Käytä komentoa `echo` tulostamaan haluamasi viesti STDERR:iin seuraavasti:
 ```
-
-Kun haluat kirjoittaa jotain standardivirheelle Bash-skriptissäsi, voit käyttää 1>&2 -merkintää. Tämä ohjaa tulostetun tiedon standardivirheen sijaan standarditulostevirtaan. Voit myös käyttää tätä tekniikkaa yhdistettynä muihin komentoihin, kuten grep-välin tai if-lauseiden kanssa.
+echo "Virhe on tapahtunut" >&2
+```
+Tämä ohjaa tulosteen STDOUT:sta STDERR:iin lisäämällä merkintä `>&2` komennon perään. Jos haluat tulostaa vain varoituksen, voit ohjata sen STDERR:iin komennolla `echo "Varoitus!" >&2`.
 
 ## Syväsukellus
-Standardivirhe on virta, joka kerää kaiken virheellisen tiedon Bash-skriptissäsi. Tämä auttaa sinua havaitsemaan ja korjaamaan virheet nopeasti ennen kuin ne aiheuttavat ongelmia. Voit myös ohjata standardivirheen uudelleen selkeämpään tiedostoon, jolloin voit helpommin tarkistaa virheet ja niiden syyt.
+
+Kirjoittaminen STDERR:iin on yksi tapa hallita ja havaita virheitä ohjelmoinnissa. Toinen tapa on käyttää `exit`-komentoa lopettamaan skriptin suoritus kokonaan ja antamaan sille virhekoodi. Tämä on hyödyllistä esimerkiksi automatisoiduissa tehtävissä, joissa haluat pysäyttää suorituksen jos jokin menee pieleen.
+
+STDERR:iin kirjoittamisella on myös historiallinen merkitys UNIX-järjestelmissä, joissa se on ollut käytössä jo vuodesta 1971 lähtien. Toinen vaihtoehto virheiden hallintaan on käyttää logitiedostoja, joihin kirjoitetaan tietoa skriptin suorituksen aikaisista tapahtumista.
 
 ## Katso myös
-- [Bash-skriptauksen perusteet](https://linux.die.net/man/1/bash)
-- [Standardivirheen hallintatekniikat](https://shapeshed.com/unix-exit-codes/)
-- [Bash-skriptien virheenhallintastrategiat](https://linuxcommand.org/lc3_writing_shell_scripts.php#standard_error_and_features_you_want)
+
+- [Bashin dokumentaatio](https://www.gnu.org/software/bash/manual/bash.html#redirections)
+- [UNIX-historia](https://www.tutorialspoint.com/unix/unix-what-is-shell.htm)
+- [Logging in Bash](https://www.loggly.com/blog/bash-shell-sh-how-to-control-your-command-line-scripts/)

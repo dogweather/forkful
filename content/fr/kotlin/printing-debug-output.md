@@ -1,7 +1,7 @@
 ---
-title:                "Afficher les sorties de débogage"
-html_title:           "Kotlin: Afficher les sorties de débogage"
-simple_title:         "Afficher les sorties de débogage"
+title:                "Afficher la sortie de débogage"
+html_title:           "Kotlin: Afficher la sortie de débogage"
+simple_title:         "Afficher la sortie de débogage"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Testing and Debugging"
@@ -10,46 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Qu'est-ce que c'est & pourquoi?
+L'impression de sortie de débogage dans la programmation est une méthode utilisée par les programmeurs pour tester et suivre l'exécution de leur code. Le code de débogage est généralement utilisé pour identifier et résoudre des erreurs et des bugs dans le programme.
 
-Vous êtes en train de coder avec Kotlin et vous rencontrez des problèmes dans votre code. Vous avez réussi à incorporer quelques fonctions et vous voulez maintenant les tester. L'impression de sorties de débogage peut vous aider à comprendre le comportement de votre code et à résoudre les problèmes plus rapidement.
-
-## Comment faire
-
-Les instructions suivantes vous montreront comment imprimer les sorties de débogage dans vos projets Kotlin :
+## Comment faire:
+```Kotlin
+val num1 = 5
+val num2 = 3
+println("Le résultat est: ${num1 + num2}")
+```
 
 ```Kotlin
-// Déclaration d'un message de débogage
-val message = "Ceci est un message de débogage"
-
-// Imprimer le message dans la console
-println(message)
-
-// Imprimer un message avec un argument
-val count = 5
-println("Il y a $count éléments dans la liste.")
+// Output:
+Le résultat est: 8
 ```
-```
-Output:
-Ceci est un message de débogage
-Il y a 5 éléments dans la liste.
-```
-Vous pouvez également utiliser la fonction de débogage intégrée de Kotlin pour imprimer les valeurs de variables :
+Pour imprimer la sortie de débogage dans Kotlin, il suffit d'utiliser la fonction `println()` en passant le texte ou la valeur que vous souhaitez imprimer. Vous pouvez également utiliser la concaténation de chaînes à l'aide de l'opérateur `$` pour imprimer des valeurs de variables dans le texte.
 
-```Kotlin
-val name = "Marie"
-val age = 25
-debug { "Le nom est $name et l'âge est $age" }
-```
-```
-Output:
-[app_name out] Le nom est Marie et l'âge est 25
-```
+## Plongée en profondeur:
+L'impression de sortie de débogage est une technique courante utilisée par les programmeurs depuis le début de l'informatique. Elle est notamment utile pour suivre le flux d'exécution du code et identifier les erreurs que l'on pourrait rencontrer. Dans Kotlin, il existe également une autre méthode pour imprimer la sortie de débogage à l'aide de la fonction `Log.d()` de la bibliothèque Log4j.
 
-## Deep Dive
-
-L'impression de sorties de débogage est utile pour afficher des informations sur votre programme en cours d'exécution, y compris les valeurs des variables et les messages de débogage. Cela peut vous aider à identifier les erreurs dans votre code, à suivre l'exécution de votre algorithme et à comprendre la logique de votre programme. Vous pouvez également personnaliser vos messages de débogage en y incluant des expressions Kotlin, comme nous l'avons montré dans notre deuxième exemple.
-
-## Voir aussi
-- [Kotlin Official Documentation](https://kotlinlang.org/docs/reference/)
-- [Debugging in Kotlin](https://www.raywenderlich.com/77235-debugging-on-android-studio-tutorial)
+## Voir aussi:
+- [Documentation officielle de Kotlin](https://kotlinlang.org/docs/reference/basic-types.html)
+- [Article sur l'impression de débogage dans Java](https://www.baeldung.com/java-print-debug-output)
+- [Article sur l'utilisation de la fonction Log.d() dans Kotlin](https://blog.mindorks.com/kotlin-log-a-guide-to-logging-b26c6415e4a5)

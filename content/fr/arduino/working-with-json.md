@@ -1,7 +1,7 @@
 ---
-title:                "Travailler avec json"
-html_title:           "Arduino: Travailler avec json"
-simple_title:         "Travailler avec json"
+title:                "Travailler avec le langage json"
+html_title:           "Arduino: Travailler avec le langage json"
+simple_title:         "Travailler avec le langage json"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Data Formats and Serialization"
@@ -10,61 +10,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+# Qu'est-ce que c'est et pourquoi est-ce important ?
 
-Vous êtes-vous déjà demandé comment votre smartphone est en mesure de communiquer avec d'autres appareils sans fil et afficher les informations exactes? La réponse réside dans l'utilisation de JSON, un format de données très populaire pour l'échange de données. En apprenant à travailler avec JSON sur Arduino, vous pourriez créer des projets impressionnants qui peuvent communiquer avec d'autres appareils et récupérer des données précises.
+JSON (JavaScript Object Notation) est un format de données couramment utilisé en programmation pour stocker et échanger des informations structurées. Les programmeurs utilisent JSON car il est simple et facile à lire et à écrire pour les ordinateurs, et il est également largement pris en charge par les différents langages de programmation.
 
-## Comment faire
+## Comment faire :
 
-Pour commencer à travailler avec JSON sur Arduino, vous aurez besoin de deux bibliothèques: Arduino JSON et ArduinoHttpClient. La première sera utilisée pour analyser les données JSON et la seconde pour communiquer avec un serveur web. Après avoir installé ces bibliothèques, voici un exemple de code pour vous montrer comment récupérer et afficher les données JSON:
+Pour travailler avec du JSON dans vos projets Arduino, vous devrez utiliser des bibliothèques telles que ArduinoJson ou ESP8266JSON pour convertir les données au format JSON en variables que le microcontrôleur Arduino peut traiter. Vous pouvez ensuite utiliser ces variables pour effectuer différentes tâches, telles que lire des données depuis un serveur Web ou les enregistrer sur une carte SD.
 
 ```Arduino
-#include <ArduinoJson.h>
-#include <ArduinoHttpClient.h>
+#include <ArduinoJson.h> // Inclure la bibliothèque nécessaire
+#include <ESP8266WiFi.h>
 
-HttpClient http;
-http.begin("https://monserveurweb.com/donnees.json"); // Remplacez l'URL par celle de votre serveur web
-int code = http.GET();
+void setup() {
+  Serial.begin(9600);
+  
+  // Se connecter à un réseau WiFi
+  WiFi.begin("Nom_du_Réseau_WiFi", "Mot_de_passe_du_Réseau_WiFi");
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.println("Connexion en cours...");
+  }
 
-if(code > 0) { // Vérifie si la requête est réussie
-    String data = http.getString(); // Stocke les données reçues dans une chaîne de caractères
-    DynamicJsonBuffer jsonBuffer; // Crée un tampon de mémoire pour stocker les données
-    JsonObject& root = jsonBuffer.parseObject(data); // Parse les données reçues en JSON
-    const char* temperature = root["temperature"]; // Récupère la valeur de la clé "temperature"
-    Serial.println(temperature); // Affiche la valeur dans le moniteur série
+  // Récupérer des données depuis une URL au format JSON
+  HTTPClient http;
+  http.begin("http://www.example.com/data.json");
+  int httpCode = http.GET();
+  
+  if (httpCode == HTTP_CODE_OK) {
+    // Convertir les données JSON en une variable
+    String response = http.getString();
+    DynamicJsonDocument doc(1024); // Créer un document JSON de 1024 octets
+    deserializeJson(doc, response); // Parcourir le JSON et le stocker dans le document
+    // Lire une valeur spécifique dans le document JSON
+    int temperature = doc["temperature"];
+    Serial.println("La température est de: " + String(temperature) + " degrés Celsius");
+  }
 }
-http.end(); // Termine la communication avec le serveur
+
+void loop() {
+  // Code de votre boucle principale
+}
 ```
 
-Voici un exemple de données JSON que vous pourriez recevoir et afficher à partir de ce code:
+## Plongée profonde :
 
-```JSON
-{
-  "temperature": "25.5C",
-  "humidite": "62%",
-  "pression": "1018.2hPa"
-}
-```
+JSON a été créé en 2001 par Douglas Crockford et est basé sur la syntaxe de JavaScript. Il est souvent utilisé comme alternative au XML pour stocker et transférer des données en raison de sa lisibilité et de sa taille de fichier plus petite. En plus de l'utilisation d'Arduino, JSON est également largement utilisé dans les applications Web et mobiles.
 
-En utilisant les bibliothèques et le code appropriés, vous pouvez récupérer différentes données de n'importe quel serveur web ou API et les utiliser dans vos projets Arduino.
+Il existe plusieurs alternatives à JSON, telles que YAML, XML et CSV. Chaque format a ses propres avantages et inconvénients, et le choix dépendra souvent du type de données que vous devez manipuler.
 
-## Plongée profonde
+Pour implémenter des fonctions de traitement JSON plus avancées, vous pouvez également utiliser des bibliothèques telles que ArduinoJson Assistant ou JSON Streaming Parser.
 
-Maintenant que vous avez appris les bases de la récupération et du traitement des données JSON sur Arduino, il est temps de plonger plus en profondeur. Voici quelques points importants à retenir:
+## À lire également :
 
-- N'oubliez pas de vérifier si la requête a réussi avant de commencer à analyser les données.
-- Utilisez un tampon de mémoire pour stocker les données JSON et évitez les dépassements de mémoire.
-- Les données JSON peuvent être de différents types (chaînes de caractères, nombres, tableaux, objets), assurez-vous d'utiliser les bonnes méthodes pour les analyser.
-- Vous pouvez également créer des objets JSON à l'aide de la bibliothèque Arduino JSON et les envoyer à un serveur ou une API.
-
-En apprenant les subtilités de la manipulation des données JSON, vous pourriez facilement étendre vos projets Arduino et leur ajouter des fonctionnalités de communication et de récupération de données en temps réel.
-
-## Voir aussi
-
-Maintenant que vous avez les bases pour travailler avec JSON sur Arduino, vous pourriez explorer davantage avec ces ressources:
-
-- [Documentation officielle d'Arduino JSON](https://arduinojson.org/)
-- [Documentation officielle d'ArduinoHttpClient](https://github.com/arduino-libraries/ArduinoHttpClient)
-- [Ce tutoriel par Hackster](https://www.hackster.io/qozenaq/wifi-iot-temperature-sensor-with-json-data-on-arduino-ide-7c4794) qui détaille l'utilisation d'Arduino JSON pour envoyer des données à une page web via Wi-Fi. 
-
-Maintenant, c'est à vous de jouer avec JSON et Arduino! Bonne chance!
+- Tutoriel sur la manipulation de données JSON avec Arduino : https://randomnerdtutorials.com/decoding-and-encoding-json-with-arduino-or-esp8266/
+- Détails sur la structure et la syntaxe JSON : https://www.json.org/
+- Comparaison entre JSON et XML : https://stackoverflow.com/questions/4862310/json-vs-xml-which-one-is-better-for-what

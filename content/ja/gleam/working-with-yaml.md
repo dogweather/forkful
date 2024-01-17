@@ -1,7 +1,7 @@
 ---
-title:                "「YAMLを使ったプログラミング」"
-html_title:           "Gleam: 「YAMLを使ったプログラミング」"
-simple_title:         "「YAMLを使ったプログラミング」"
+title:                "Yamlでの作業"
+html_title:           "Gleam: Yamlでの作業"
+simple_title:         "Yamlでの作業"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Data Formats and Serialization"
@@ -10,39 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ？
+## GleamでのYAMLの扱い方
 
-YAMLとは、人間にとって読みやすく、コンピューターにとっても解析しやすいテキスト形式のデータ保存方法です。GleamでYAMLを扱うことで、よりシンプルで効率的なコーディングが可能になります。
+## なに & なぜ?
+YAMLは、データを記述するためのファイルフォーマットです。プログラマーたちは、コードの設定や構成、データの保存など、さまざまな用途でYAMLを使います。
 
-## 使い方
-
+## 手順:
 ```Gleam
-import gleam/yaml.{decode, encode}
+import yaml
 
-// YAMLをデコードする例
-let yaml = "name: John\nage: 30"
-let person = yaml
-  |> decode
-  // Result<Person, DecodeError>型に変換
-  |> Result.map_err(fn err => err |> to_string |> yaml.error)
+// YAMLファイルを読み込む
+let data = yaml.decode_file("config.yaml")
 
-// YAMLをエンコードする例
-let user = %{
-  name: "Emily",
-  email: "emily@example.com"
-}
-user
-  |> encode
-  // Result<String, EncodeError>型に変換
-  |> Result.map_err(fn err => err |> to_string |> yaml.error)
-  // 結果は "name: Emily\nemail: emily@example.com" のようになります
+// YAMLデータを整形して出力
+let formatted_data = yaml.encode(data)
 ```
 
-## 詳細を深堀り
+## 詳細を掘り下げる:
+### 歴史的背景:
+YAMLは、2001年に開発されたマークアップフォーマットです。 XMLやJSONよりもシンプルで読みやすいため、人気があります。
 
-YAMLを使用することで、データを階層構造で表現することができ、複雑なオブジェクトやリストを簡潔に表現することができます。さらに、Gleamのパターンマッチング機能を使用することで、より複雑なデータのパースが可能になります。また、YAMLとJSONの相互変換もサポートしています。
+### 代替案:
+YAMLには、同じような目的で使われるJSONやXMLなどの代替案があります。しかし、YAMLのシンプルさと読みやすさは、プログラマーたちから支持されています。
 
-## See Also
+### 実装の詳細:
+Gleamでは、YAMLを扱うための標準ライブラリが用意されています。このライブラリを使用することで、簡単にYAMLファイルを読み込み、データを取得することができます。
 
-- YAMLの公式サイト: https://yaml.org/
-- Gleamの公式ドキュメント: https://gleam.run/
+## 関連リンク:
+- Gleam公式サイト: https://gleam.run/
+- GleamのYAMLライブラリのドキュメント: https://gleam.run/packages/yaml/

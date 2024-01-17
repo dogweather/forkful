@@ -10,65 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué obtener la fecha actual?
+## ¡Qué y Por Qué?
 
-Si estás trabajando en un proyecto que necesita utilizar la fecha actual, como un reloj o una alarma, es importante saber cómo obtener este dato en Arduino. Afortunadamente, hay funciones incorporadas en el lenguaje de programación de Arduino que permiten obtener la fecha y hora actuales de manera sencilla.
+Obtener la fecha actual en programación se refiere a obtener la información de la fecha y hora actuales. Los programadores suelen hacerlo para realizar acciones en función de la hora o fecha actual, como activar una alarma, registrar eventos o sincronizar dispositivos.
 
-## Cómo hacerlo
-
-Obtener la fecha actual en Arduino requiere el uso de la biblioteca "Time", que se encuentra incluida en el IDE de Arduino. Primero, debemos inicializar la biblioteca en nuestro código:
+## ¡Cómo hacerlo!
 
 ```Arduino
-#include <Time.h>
-```
-
-Luego, podemos utilizar la función `now()` para obtener la fecha y hora actuales. Esta función devuelve un objeto `tmElements_t`, el cual contiene los diferentes valores de tiempo, como año, mes, día, hora, entre otros. Por ejemplo, podemos imprimir la fecha actual en el monitor serial utilizando la función `Serial.println()`:
-
-```Arduino
-// Inicializamos la biblioteca
-#include <Time.h>
+#include <DateTime.h>
 
 void setup() {
-  // Inicializamos el monitor serial
-  Serial.begin(9600);
-  // Obtenemos la fecha actual
-  tmElements_t fecha_actual = now();
-  // Imprimimos la fecha en formato día/mes/año
-  Serial.println("Fecha actual: " + String(fecha_actual.Day) + "/" + String(fecha_actual.Month) + "/" + String(fecha_actual.Year));
+  Serial.begin(9600); // Iniciar la comunicación serial
+  DateTime now = DateTime(F(__DATE__), F(__TIME__)); // Asignar valores de fecha y hora actuales a una variable
+  int day, month, year, hour, minute;
+  day = now.day(); // Obtener el día actual
+  month = now.month(); // Obtener el mes actual
+  year = now.year(); // Obtener el año actual
+  hour = now.hour(); // Obtener la hora actual
+  minute = now.minute(); // Obtener los minutos actuales
+  Serial.print("Fecha actual: ");
+  Serial.print(day); // Imprimir el día
+  Serial.print("/"); // Imprimir una barra
+  Serial.print(month); // Imprimir el mes
+  Serial.print("/"); // Imprimir una barra
+  Serial.println(year); // Imprimir el año
+  Serial.print("Hora actual: ");
+  Serial.print(hour); // Imprimir la hora
+  Serial.print(":"); // Imprimir dos puntos
+  Serial.println(minute); // Imprimir los minutos
 }
 
 void loop() {
-  // El código en el bucle loop no se ejecutará ya que solo necesitamos obtener la fecha una vez
+  // código a ejecutar repetidamente
 }
 ```
 
-La salida en el monitor serial sería: `Fecha actual: 24/09/2021`
+## Inmersión Profunda
 
-## Un poco más profundo
+En el pasado, obtener la fecha actual en programación era una tarea compleja y requería mucho código. Sin embargo, gracias a bibliotecas como DateTime.h, esto se ha vuelto mucho más sencillo y eficiente.
 
-Si queremos personalizar el formato de la fecha y hora que obtenemos, podemos utilizar la función `makeTime()` de la biblioteca "Time". Esta función nos permite crear un objeto `time_t` utilizando los valores de tiempo que deseemos, por ejemplo:
+Una alternativa para obtener la fecha actual es utilizar un módulo de tiempo real (RTC) como el DS1307 o DS3231. Estos módulos tienen un reloj interno y se comunican con el Arduino a través de la interfaz I2C.
 
-```Arduino
-// Inicializamos la biblioteca
-#include <Time.h>
+Para implementar correctamente el código para obtener la fecha y hora actuales, es importante asegurarse de que el reloj del Arduino esté configurado correctamente. Además, es útil utilizar variables para almacenar los valores de la fecha y hora actuales para un acceso más fácil y legible en el código.
 
-void setup() {
-  // Inicializamos el monitor serial
-  Serial.begin(9600);
-  // Creamos un objeto time_t con la fecha y hora específica
-  time_t fecha_hora = makeTime(0, 0, 0, 24, 9, 2021);
-  // Imprimimos la fecha en formato día/mes/año hora:minutos:segundos
-  Serial.println("Fecha y hora específica: " + String(day(fecha_hora)) + "/" + String(month(fecha_hora)) + "/" + String(year(fecha_hora)) + " " + String(hour(fecha_hora)) + ":" + String(minute(fecha_hora)) + ":" + String(second(fecha_hora)));
-}
+## Véase También
 
-void loop() {
-  // El código en el bucle loop no se ejecutará ya que solo necesitamos obtener la fecha una vez
-}
-```
+- [DateTime.h - Documentación oficial](https://github.com/PaulStoffregen/DateTime)
+- [Arduino DS1307 RTC](https://www.arduino.cc/en/Tutorial/BuiltInExamples/DS1307RTC)
+- [DS3231 Real Time Clock](https://www.arduino.cc/en/Tutorial/RTC)
 
-La salida en el monitor serial sería: `Fecha y hora específica: 24/9/2021 0:0:0`
-
-## Ver también
-
-- [Documentación de la biblioteca Time en el sitio oficial de Arduino](https://www.arduino.cc/reference/es/libraries/time/)
-- [Tutorial de GeekyTheory sobre cómo obtener la fecha actual en Arduino](https://www.geekytheory.com/obtener-la-fecha-actual-con-arduino-y-otras-fechas-relevantes/)
+¡Ya está! ¡Ahora puedes obtener fácilmente la fecha y hora actuales en tus proyectos de Arduino usando la biblioteca DateTime.h! ¡Sigue explorando y descubriendo nuevas formas de utilizar esta funcionalidad en tus proyectos!

@@ -1,7 +1,7 @@
 ---
-title:                "Sända en http-begäran"
-html_title:           "Elm: Sända en http-begäran"
-simple_title:         "Sända en http-begäran"
+title:                "Skicka en http-begäran"
+html_title:           "Elm: Skicka en http-begäran"
+simple_title:         "Skicka en http-begäran"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "HTML and the Web"
@@ -10,58 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+Vad & Varför?
 
-Anledningen till att skicka en HTTP-begäran är för att hämta data från en extern källa, till exempel en API eller en webbsida. Detta är en viktig funktion inom programmering då det innebär att man kan hämta och bearbeta information från olika källor på internet.
+Att skicka en HTTP-förfrågan är när en dator begär information från en annan dator via internet. Programmerare använder detta för att få tillgång till data som till exempel webbsidor eller API:er.
 
-## Så här gör du
+Hur man gör:
 
-För att skicka en HTTP-begäran i Elm, behöver vi använda modulen `Http` som är en del av standardbiblioteket. Först måste vi importera denna modul i vårt program, sedan kan vi använda en av funktionerna inom modulen för att skapa och skicka vår begäran.
+Elm har ett inbyggt HTTP-paket som gör det enkelt att skicka förfrågningar. Nedan finns ett exempel på en GET-förfrågan till en API som returnerar en lista med användare i JSON-format.
 
-```Elm
-import Http
+```Elm http.get "https://example.com/users"``` 
 
-request : Http.Request String
-request =
-  Http.get "https://example.com"
-```
-
-I detta exempel skapar vi en HTTP GET-begäran till en fiktiv webbadress `https://example.com` och sparar den i en variabel. Därefter behöver vi skicka begäran genom att använda funktionen `Http.send` och ange vår begäran som ett argument. Vi måste också definiera en modul som ska hantera svaret från begäran.
+Några av de möjliga svar man kan få från detta API inkluderar en 200 statuskod för en lyckad förfrågan och en JSON-lista med användare i svaret:
 
 ```Elm
-type Msg
-  = FetchSuccess (Result Http.Error String)
-  | FetchError Http.Error
-
-update : Msg -> Model -> ( Model, Cmd Msg )
-update msg model =
-  case msg of
-    FetchSuccess result ->
-      case result of
-        Ok data ->
-          -- Handle successful response
-          ( model, Cmd.none )
-        
-        Err error ->
-          -- Handle error response
-          ( model, Cmd.none )
-    
-    FetchError error ->
-      -- Handle error message
-      ( model, Cmd.none )
-
-subscriptions : Model -> Sub Msg
-subscriptions model =
-  Http.send update request
+{ status = 200
+  body = "[{ \"name\": \"Alice\", \"age\": \"25\" }, { \"name\": \"Bob\", \"age\": \"30\" }, { \"name\": \"Charlie\", \"age\": \"40\" }]"
+}
 ```
 
-Vi kan se att vår `update`-funktion har en `Msg` som hanterar both framgångsrika och misslyckade svaren från vår begäran. Beroende på resultatet kan vi hantera datan eller hantera eventuella fel som uppstår. Slutligen måste vi också inkludera en `subscriptions`-modul som skickar vår begäran och väntar på ett svar.
+Djupdykning:
 
-## Djupdykning
+Skicka HTTP-förfrågningar har varit en viktig del av webbutveckling sedan dess början. Innan Elm fanns det många andra alternativ för att skicka förfrågningar, såsom jQuery eller XMLHttpRequest. Elm's HTTP-paket förenklar detta processen genom att hantera alla aspekter av HTTP-kommunikation, inklusive felhantering och parsning av JSON-svar.
 
-Det finns många olika funktioner och metoder som kan användas vid skickande av HTTP-begäran i Elm. Till exempel kan vi använda funktionen `Http.post` för att skicka en POST-begäran istället för en GET och skicka med data i begäran som argument. Vi kan också använda `Http.sendBinary` för att skicka en binär data i vår begäran som en Blob, fil eller ArrayBuffer.
+Se även:
 
-## Se även
+Läs mer om Elm's HTTP-paket i dokumentationen: https://package.elm-lang.org/packages/elm/http/latest/
 
-- [Elm API Dokumentation för `Http` modulen](https://package.elm-lang.org/packages/elm/http/latest/Http)
-- [Elm Guide för webbprogrammering](https://guide.elm-lang.org/webapps/)
+Lär dig mer om HTTP-protokollets historia och hur det används: https://developer.mozilla.org/en-US/docs/Web/HTTP
+
+Utforska andra alternativ för att skicka HTTP-förfrågningar, såsom Fetch API eller Axios: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API https://github.com/axios/axios

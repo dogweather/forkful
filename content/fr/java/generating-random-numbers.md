@@ -10,53 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi générer des nombres aléatoires?
+## Qu'est-ce que c'est et pourquoi le faisons-nous?
 
-Il existe de nombreuses raisons pour lesquelles vous voudriez générer des nombres aléatoires dans votre programme Java. Peut-être que vous développez un jeu et que vous avez besoin de dés ou de cartes aléatoires pour simuler un aspect du jeu. Ou peut-être que vous construisez un algorithme de chiffrement et que vous avez besoin d'une clé aléatoire pour sécuriser vos données. Quelle que soit la raison, la génération de nombres aléatoires est une compétence utile pour tout programmeur Java.
+Générer des nombres aléatoires est un moyen pour les programmeurs de produire des nombres aléatoires dans leurs programmes Java. Cela peut être utile pour simuler des situations aléatoires ou pour ajouter de l'incertitude à des jeux ou des algorithmes.
 
-## Comment le faire?
+## Comment faire:
 
-Générer des nombres aléatoires en Java peut se faire avec la classe `Random`. Voici un exemple de code:
-
-```Java
-// Importer la classe Random
-import java.util.Random;
-
-// Créer une instance de la classe Random
-Random rand = new Random();
-
-// Générer un entier aléatoire de 1 à 10
-int num = rand.nextInt(10) + 1;
-
-// Afficher le résultat
-System.out.println("Le nombre aléatoire est: " + num);
-```
-
-Output:
-```
-Le nombre aléatoire est: 7
-```
-
-Vous pouvez également utiliser la méthode `Math.random()` pour générer des nombres aléatoires en Java, mais cela produira des valeurs de type `double` plutôt que des entiers. Voici un exemple de code utilisant `Math.random()`:
+Voici un exemple de code en Java pour générer un nombre aléatoire entre 1 et 10 et l'afficher :
 
 ```Java
-// Générer un nombre décimal aléatoire entre 0 et 1
-double dec = Math.random();
+import java.util.Random; // importe la classe Random
 
-// Afficher le résultat
-System.out.println("Le nombre décimal aléatoire est: " + dec);
+Random rand = new Random(); // crée une instance de Random
+int randomNumber = rand.nextInt(10) + 1; // génère un nombre aléatoire entre 1 et 10
+
+System.out.println("Le nombre aléatoire est : " + randomNumber); // affiche le nombre aléatoire
 ```
 
-Output:
+Voici l'exemple de sortie pour ce code :
+
+```Java
+Le nombre aléatoire est : 6
 ```
-Le nombre décimal aléatoire est: 0.4534985887109746
-```
 
-## Plongeons plus profondément
+## Plongée en profondeur:
 
-La classe `Random` utilise un algorithme pseudo-aléatoire pour générer des nombres aléatoires. Cela signifie que les valeurs générées ne sont pas vraiment aléatoires, mais elles semblent l'être pour un utilisateur. Pour obtenir une vraie aléatoirité, vous pouvez utiliser la méthode `setSeed()` pour fournir une valeur initiale à l'algorithme, appelée "graine". En utilisant la même graine, vous obtiendrez toujours la même séquence de nombres aléatoires. Vous pouvez également utiliser `nextInt()` avec un argument pour spécifier la limite supérieure que vous voulez pour vos nombres aléatoires.
+Depuis la version 1.0 de Java, la classe Random a été utilisée pour générer des nombres aléatoires. Cependant, à partir de Java 8, la classe Random a été remplacée par une nouvelle classe appelée ThreadLocalRandom, qui offre de meilleures performances lors de la génération de nombreux nombres aléatoires.
 
-## Voir aussi
+Il existe également d'autres options pour générer des nombres aléatoires en Java, telles que la classe SecureRandom pour une plus grande sécurité dans les applications sensibles, ou la méthode Math.random() pour générer des nombres à virgule flottante entre 0 et 1.
 
-- [Documentation officielle Java sur `Random`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Random.html)
-- [Article sur la génération de nombres aléatoires en Java](https://www.baeldung.com/java-generating-random-numbers)
+La génération de nombres aléatoires en Java est basée sur un algorithme appelé algorithme de Lehmer, qui utilise des opérations mathématiques pour produire des séquences pseudo-aléatoires.
+
+## À voir également:
+
+Pour en savoir plus sur la génération de nombres aléatoires en Java, vous pouvez consulter la documentation officielle de Java sur les classes Random et ThreadLocalRandom :
+
+https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Random.html
+
+https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/concurrent/ThreadLocalRandom.html

@@ -1,7 +1,7 @@
 ---
-title:                "Att få den aktuella datumet"
-html_title:           "C++: Att få den aktuella datumet"
-simple_title:         "Att få den aktuella datumet"
+title:                "Hämta aktuellt datum"
+html_title:           "C++: Hämta aktuellt datum"
+simple_title:         "Hämta aktuellt datum"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Dates and Times"
@@ -10,61 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Varför
+## Vad & Varför?
 
-Att få den aktuella datumen är en viktig del av många C++ program. Det kan användas för att spåra utförda åtgärder eller för att visa aktuell tid för användaren. Det är också användbart för att kontrollera och jämföra datum inom ett program.
+Att få den nuvarande datumet är en vanlig uppgift för programmerare. Det innebär helt enkelt att hämta det aktuella datumet och tiden från systemets klocka. Detta behövs för att kunna spåra och logga tid för olika händelser eller för att visa datum och tid i användargränssnittet.
 
-# Hur du gör det
-
-För att få den aktuella datumen i ett C++ program, behöver du använda funktionen `std::chrono::system_clock::now()`. Denna funktion returnerar ett `std::chrono::time_point` objekt som innehåller aktuell tid. Du kan sedan använda olika metoder för att få årtal, månad, dag, timmar, minuter och sekunder från detta objekt. Här är ett exempel på hur du kan göra det:
+## Hur man gör:
 
 ```C++
-// Inkludera nödvändiga bibliotek
 #include <iostream>
-#include <chrono>
+#include <ctime>
+using namespace std;
 
-int main()
-{
-    // Hämta aktuell tidpunkten
-    auto now = std::chrono::system_clock::now();
+int main() {
+  // Hämta det nuvarande datumet och tiden
+  time_t nu = time(0);
 
-    // Få årtal från tidpunkten
-    auto year = std::chrono::year_month_day{now}.year();
+  // Konvertera till sträng
+  char* dt = ctime(&nu);
 
-    // Få månad från tidpunkten
-    auto month = std::chrono::year_month_day{now}.month();
+  // Skriv ut resultatet
+  cout << "Aktuellt datum och tid är: " << dt << endl;
 
-    // Få dag från tidpunkten
-    auto day = std::chrono::year_month_day{now}.day();
-
-    // Få timmar från tidpunkten
-    auto hours = std::chrono::hour{now};
-
-    // Få minuter från tidpunkten
-    auto minutes = std::chrono::minute{now};
-
-    // Få sekunder från tidpunkten
-    auto seconds = std::chrono::second{now};
-
-    // Skriv ut den aktuella datumen
-    std::cout << "Det är " << day << "/" << month << "/" << year
-              << " klockan " << hours << ":" << minutes << ":" << seconds << std::endl;
-
-    return 0;
+  return 0;
 }
 ```
-
-Output av koden:
-
-``` 
-Det är 9/3/2021 klockan 12:24:53
+**Output:**
+```
+Aktuellt datum och tid är: Thu Jan 28 11:38:54 2021
 ```
 
-# Fördjupning
+## Deep Dive:
 
-För att förstå mer om `std::chrono::system_clock::now()` funktionen, måste vi förstå hur den fungerar bakom kulisserna. `system_clock` är en del av den `chrono` namespace som tillhandahåller olika tidsrelaterade funktioner och typer i C++. `now()` funktionen använder den aktuella tiden på din dator som en referenspunkt för att få det aktuella datumet. Det används vanligtvis för att få datum och tid av systemet i UTC-tidszonen. Det finns också andra klockfunktioner i `chrono` namespace som kan användas för att få olika typer av tider.
+Att hämta det nuvarande datumet kan göras på olika sätt beroende på programvarulösningen och operativsystemet. I äldre versioner av C++ användes funktionen `getdate()` för att hämta det nuvarande datumet, men i den nuvarande versionen har detta ersatts av `ctime()`. Det finns också bibliotek som `chrono` som ger mer exakta och detaljerade funktioner för att hantera datum och tid. Det är viktigt att välja rätt metod beroende på dina specifika behov och användningsområden.
 
-# Se även
+## Se även:
 
-- En guide till `chrono` namespace: https://www.cplusplus.com/reference/chrono/
-- En djupdykning i `std::chrono::system_clock::now()` funktionen: https://en.cppreference.com/w/cpp/chrono/system_clock/now
+För mer information och exempel på hur man hanterar datum och tid i C++, se följande resurser:
+
+- [cppreference - time](https://en.cppreference.com/w/cpp/chrono)
+- [C++ Standard Library - Chrono](https://www.cplusplus.com/reference/chrono/)
+- [GeeksforGeeks - Datum och tid inklusive biblioteket Chrono i CPP](https://www.geeksforgeeks.org/datetime-including-calendar-in-cpp/)

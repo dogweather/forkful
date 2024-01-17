@@ -10,60 +10,21 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+## O que é e por que fazemos?
+Escrever em um arquivo de texto significa salvar informações em um formato legível por humanos, como palavras, números ou símbolos, em um documento de texto. Os programadores geralmente escrevem em arquivos de texto para armazenar e recuperar dados de maneira eficiente e organizada em seus programas.
 
-Escrever arquivos de texto é uma tarefa muito comum na programação e é essencial para armazenar e manipular dados. O Kotlin, como uma linguagem de programação moderna e versátil, possui recursos poderosos para tornar a escrita de arquivos de texto rápida e fácil.
-
-## Como fazer
-
-Você pode seguir o seguinte código para escrever um arquivo de texto usando o Kotlin:
-
+## Como fazer:
+Um arquivo de texto pode ser criado usando a função "writeText" que aceita uma string e o nome do arquivo como parâmetros. Veja um exemplo abaixo:
 ```Kotlin
-import java.io.File
-
 fun main() {
-    val file = File("myFile.txt")
-    file.writeText("Olá, este é um arquivo de texto escrito com Kotlin!")
+    val texto = "Olá, mundo!"
+    writeText("arquivo.txt", texto)
 }
 ```
+A saída esperada será um arquivo chamado "arquivo.txt" contendo o texto "Olá, mundo!".
 
-O código acima cria um objeto `File` com o nome "myFile.txt" e, em seguida, usa o método `writeText()` para escrever o conteúdo especificado no arquivo. Agora, se você verificar a pasta do seu projeto, encontrará o arquivo "myFile.txt" com o texto desejado.
+## Mergulho profundo:
+Esta prática de salvar dados em arquivos de texto acompanha o desenvolvimento da computação desde seus primórdios. Hoje, existem diversas alternativas, como bancos de dados e linguagens de marcação, mas os arquivos de texto ainda são amplamente utilizados por sua simplicidade e compatibilidade com várias linguagens de programação. Além disso, ao escrever em um arquivo de texto, também é possível controlar manualmente a formatação e a organização dos dados.
 
-Para escrever conteúdo em um arquivo de texto existente, você pode usar o método `appendText()` em vez de `writeText()`. Este método adicionará o texto ao final do arquivo.
-
-```Kotlin
-import java.io.File
-
-fun main() {
-    val file = File("myFile.txt")
-
-    // escrevendo no final do arquivo
-    file.appendText("Outro texto escrito com Kotlin!")
-}
-```
-
-Além disso, você também pode usar o método `printWriter()` para escrever conteúdo em um arquivo de texto de maneira mais flexível. Este método permite que você use métodos como `println()` para separar as linhas do texto.
-
-```Kotlin
-import java.io.File
-
-fun main() {
-    val file = File("myFile.txt").printWriter()
-
-    // texto escrito em linhas diferentes
-    file.println("Este é um")
-    file.println("exemplo de")
-    file.println("texto em linhas separadas")
-}
-```
-
-## Deep Dive
-
-Os exemplos acima abrangem a maioria dos casos de uso comuns para a escrita de arquivos de texto em Kotlin. No entanto, a linguagem oferece ainda mais recursos para lidar com tarefas mais complexas, como escrever em arquivos grandes ou processar dados na leitura e escrita de arquivos.
-
-Para saber mais sobre esses recursos e como usá-los adequadamente, consulte a documentação oficial do Kotlin sobre entrada/saída (I/O).
-
-## Veja também
-
-- Documentação do Kotlin sobre entrada/saída (I/O): https://kotlinlang.org/docs/reference/input-output.html
-- Tutorial sobre leitura e escrita de arquivos em Kotlin: https://kotlinlang.org/docs/tutorials/kotlin-for-py/reading-and-writing-files.html
+## Veja também:
+Para mais informações sobre como escrever em arquivos de texto em Kotlin, confira a documentação oficial: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/write-text.html

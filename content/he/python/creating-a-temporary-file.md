@@ -10,36 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## למה
+## מה ולמה?
+יצירת קובץ זמני היא תהליך שימושי לכתיבת קוד בפייתון. היא מאפשרת לנו ליצור קובץ שיימחק אוטומטית לאחר שהתהליך מסתיים. תהליך זה מקל עלינו לנהל זיכרון ולמנוע טעיות נוספות בקוד שלנו.
 
-למה ליצור קובץ זמני על ידי קוד Python?
-
-יצירת קובץ זמני יכול להיות מועילה כאשר אנו צריכים לשמור נתונים לזמן קצר בלבד, לדוגמה בעת עבודה עם קבצי מחשב שכבר קיימים או כשאנו רוצים לשמור גיבוי זמני של נתונים.
-
-## איך לעשות זאת
-
-באמצעות פונקציית `tempfile` בספריית הסטנדרטית של Python, יש אפשרות ליצור קובץ זמני בקוד שלנו. ניתן להשתמש בפונקציות כגון `tempfile.NamedTemporaryFile()` או `tempfile.TemporaryFile()` ליצירת קובץ זמני ולבצע פעולות כגון כתיבה וקריאה ממנו. הנה דוגמא של יצירת קובץ זמני וקריאה ממנו:
+## איך לעשות?
+להלן כמה דוגמאות לכיצד ליצור קובץ זמני בפייתון ואת הפלט המשוער שנקבל:
 
 ```Python
 import tempfile
 
-# יצירת קובץ זמני עם שם תיקייה וסיומת של TXT
-with tempfile.NamedTemporaryFile(suffix=".txt") as temp:
-    # כתיבת נתונים לקובץ זמני
-    temp.write(b'Hello, Hebrew readers!')
-    # קריאת נתונים מהקובץ זמני והדפסתם
-    temp.seek(0)
-    print(temp.read().decode())
+# דוגמא 1:
+with tempfile.TemporaryFile() as tmp:
+  tmp.write(b'Hello World!')
+  tmp.seek(0)
+  print(tmp.read()) # b'Hello World!'
+
+# דוגמא 2:
+with tempfile.TemporaryDirectory() as tmp:
+  print(tmp) # /var/folders/5q/dj4m_jj12_z0gzqmsrks3k980000gn/T/tmpfj_2_fa1
+
+# דוגמא 3:
+with tempfile.NamedTemporaryFile() as tmp:
+  tmp.write(b'This is a named temporary file!')
+  print(tmp.name) # /var/folders/5q/dj4m_jj12_z0gzqmsrks3k980000gn/T/tmptidl_62z
+
+# דוגמא 4:
+with tempfile.SpooledTemporaryFile(max_size=10) as tmp:
+  tmp.write(b'Temporary file overflow!')
+  print(tmp.spool.max_size) # 10
 ```
 
-הפלט של הדוגמא הנ"ל יהיה:
+## חפירה עמוקה
+יצירת קובץ זמני נחשבת לרעיון מתקדם של פרוגרמינג. הרעיון מופיע ראשונה בשפת תכנות C בשם mkstemp ובהמשך יובא לפייתון כדי לפשט את תהליך יצירת הקבצים הזמניים. אם אין צורך בשמירת נתונים מסוימים בקובץ, ניתן להשתמש בפונקציות חוברות כמו tempfile.TemporaryFile או tempfile.SpooledTemporaryFile כדי למנוע התקלות בזיכרון.
 
-```
-Hello, Hebrew readers!
-```
-
-פונקציות כמו `NamedTemporaryFile()` מאפשרות לנו ליצור קובץ זמני עם שם ותיקייה מותאמים אישית ובעלי הרשאות יחודיות. ניתן גם למחוק את הקובץ זמני בקידומת התוכניות דרך `tempfile` כך שהוא לא יישמר לאחר התוכנית תסתיים.
-
-## חקירה מהוקצעת
-
-לאחר יצירת קובץ זמני, ניתן לעיין בפרטים המלאים של הקובץ באמצעות פונקציות כמו `tempfile` ולמצוא את המיקום של הקובץ במחשב. ניתן גם לשנות את המיקום של הקובץ זמני כדי לסנכרן עם ת
+## ראה גם
+למידע נוסף על יצירת קבצים זמניים בפייתון ניתן לעיין בתיעוד הרשמי של פייתון או במאמר "Understanding the Temporary File" באתר GeeksforGeeks.

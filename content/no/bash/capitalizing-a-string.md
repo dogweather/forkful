@@ -1,7 +1,7 @@
 ---
-title:                "Store bokstaver i en streng"
-html_title:           "Bash: Store bokstaver i en streng"
-simple_title:         "Store bokstaver i en streng"
+title:                "Stor bokstav i en tekststreng"
+html_title:           "Bash: Stor bokstav i en tekststreng"
+simple_title:         "Stor bokstav i en tekststreng"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Strings"
@@ -10,37 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hva & Hvorfor?
+Å kapitalisere en streng betyr rett og slett å gjøre den første bokstaven stor, og alle de andre bokstavene små. Dette er vanligvis gjort for å gjøre en streng mer leselig og visuelt tiltalende.
 
-Å ha riktig utforming på tekst kan være viktig av ulike årsaker, enten det er for å gjøre den mer lesbar eller for å følge et bestemt format. En vanlig formateringsmetode er å ha store bokstaver i begynnelsen av ord, også kalt "Kapitalisering". I Bash kan du enkelt endre en streng til å bli kapitalisert ved hjelp av noen kodelinjer.
+Mange programmerere velger å kapitalisere strenger for å følge bestemte stilguider eller konvensjoner. Det kan også være nyttig når du jobber med data som skal sorteres eller sammenlignes.
 
-## Hvordan
-
-For å kapitalisere en streng i Bash, kan du bruke kommandoen `tr`. Her er et eksempel på hvordan du kan bruke den:
-
-```Bash
-input="dette er en test"
-output=$(tr '[:lower:]' '[:upper:]' <<< "$input")
-echo "$output"
+## Hvordan:
+Kodingseksempel: 
+```
+#!/bin/bash
+str="dette er en teststreng"
+echo "${str^}"
+```
+Utskrift:
+```
+Dette er en teststreng
 ```
 
-I dette eksempelet definerer vi en variabel `input` som inneholder en streng. Ved å bruke `tr` og spesifisere både små og store bokstaver, vil kommandoen kapitalisere alle bokstavene i strengen vår. Outputet blir deretter lagret i variabelen `output` og deretter skrevet ut ved hjelp av `echo` kommandoen.
-
-## Dypdykk
-
-Det er viktig å merke seg at `tr` kommandoen i Bash ikke bare kan kapitalisere en hel streng, men også bytte ut en bestemt del av en streng med en annen. Ved å bruke den riktige syntaksen, kan du endre en tekst til å oppfylle dine spesifikke behov.
-
-En annen nyttig kommando du kan bruke for å kapitalisere strenger er `sed`. Denne kommandoen er spesielt nyttig hvis du vil kapitalisere bare første bokstav i hvert ord i en streng. Her er et eksempel:
-
-```Bash
-input="dette er en test"
-output=$(sed -e 's/\b\(.\)/\u\1/g' <<< "$input")
-echo "$output"
+En annen metode er å bruke "tr" kommandoen:
 ```
+#!/bin/bash
+str="dette er en teststreng"
+echo $str | tr '[:lower:]' '[:upper:]'
+```
+Utskrift:
+```
+DETTE ER EN TESTSTRENG
+```
+## Dypdykk:
+Historisk kontekst:
+Kapitalisering av strenger kan spores tilbake til gamle dager med manuell skriving, der det var vanlig å gjøre alle bokstavene i en tittel eller overskrift store for å få det til å se mer formelt ut.
 
-Med denne kommandoen vil `sed` kapitalisere første bokstav i hvert ord i strengen vår, og returnere "Dette Er En Test".
+Alternativer:
+I tillegg til "tr" kommandoen og strengmanipulasjon med "echo", kan du også bruke "sed" kommandoen for å kapitalisere en streng. Det finnes også spesialverktøy som er dedikert til å formatere strenger, som "rev" og "awk".
 
-## Se også
+Implementeringsdetaljer:
+I Bash, er det en rekke innebygde variabler som du kan bruke til å manipulere en streng. For eksempel, ${str^} vil kapitalisere den første bokstaven i "str", mens ${str^^} vil kapitalisere alle bokstavene.
 
-- [Bash-siden på WikiBooks](https://en.wikibooks.org/wiki/Bash_Shell_Scripting)
-- [Offisiell dokumentasjon for Bash](https://www.gnu.org/software/bash/manual/bash.pdf)
+## Se også:
+- [Bash Manual](https://www.gnu.org/software/bash/manual/)
+- [tr kommandoen](https://www.gnu.org/software/coreutils/manual/html_node/tr-invocation.html)
+- [sed kommandoen](https://www.gnu.org/software/sed/manual/sed.html)
+- [rev verktøyet](https://www.gnu.org/software/coreutils/manual/html_node/rev-invocation.html)
+- [awk verktøyet](https://www.gnu.org/software/gawk/manual/gawk.html)

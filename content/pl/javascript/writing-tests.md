@@ -10,36 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i dlaczego?
 
-Pisanie testów w Javascript może wydawać się zbędne lub czasochłonne, ale rzeczywistość jest taka, że jest to bardzo ważny krok w procesie tworzenia aplikacji. Testy pozwalają zweryfikować poprawność kodu i upewnić się, że wszelkie zmiany nie wpłynęły negatywnie na działanie programu. Jest to szczególnie istotne w większych projektach, gdzie proste błędy mogą mieć poważne konsekwencje.
+Pisanie testów jest procesem polegającym na tworzeniu specjalnych skryptów w celu sprawdzenia poprawności kodu w trakcie jego tworzenia. Jest to ważna praktyka w świecie programowania, ponieważ pozwala ona uniknąć błędów i ustawić zagwarantować, że nasz kod jest niezawodny.
 
-## Jak to zrobić?
+## Jak to zrobić:
 
-```Javascript
-// Przykładowa funkcja do testowania
-function dodaj(a, b) {
-  return a + b
+Aby napisać testy w Javascript, używamy biblioteki o nazwie "Jest", która zapewnia nam narzędzia i funkcje do tworzenia testów. Poniżej znajdują się przykłady kodu i wyników dla testu funkcji ```add()```, która dodaje dwie liczby:
+
+```
+// importujemy metody "test" i "expect" z biblioteki 'jest'
+const { test, expect } = require('jest'); 
+
+// tworzymy funkcję do testowania - "add"
+function add(a, b) {
+  return a + b;
 }
 
-// Przykład testu dla powyższej funkcji
-describe("dodaj()", () => {
-  it("powinno prawidłowo zsumować dwie liczby", () => {
-    expect(dodaj(2, 4)).toBe(6)
-  })
-})
+// wywołujemy funkcję "test" do przetestowania funkcji "add"
+test('dodawanie działa poprawnie', () => {
+  expect(add(2, 3)).toBe(5); // oczekujemy, że wynik będzie równy 5
+  expect(add(-10, 10)).toBe(0); // oczekujemy, że wynik będzie równy 0
+  expect(add('2', '3')).toBe(5); // oczekujemy, że wynik będzie równy 5
+  // uwzględniamy też przypadki, w których mogą wystąpić błędy
+  expect(add('2', null)).toBe(NaN); // oczekujemy, że wynik będzie równy NaN (Not a Number)
+});
 ```
 
-W powyższym przykładzie użyliśmy biblioteki do testów o nazwie Jest, ale istnieje wiele innych narzędzi dostępnych dla języka Javascript. Testowanie funkcji może wydawać się proste, ale można także pisać testy dla bardziej skomplikowanych części kodu, takich jak interakcje z bazą danych czy funkcje asynchroniczne.
+Wynik testów powinien wyglądać następująco:
 
-## Deep Dive
+```
+PASS  __tests__/add.test.js
+ ✓ dodawanie działa poprawnie (2ms)
 
-Podczas pisania testów warto pamiętać o kilku rzeczach. Po pierwsze, testy powinny być jak najbardziej niezależne od siebie, aby można było w łatwy sposób je modyfikować i dodawać nowe. Dlatego dobrze jest podzielić testy na mniejsze jednostki, np. testowanie pojedynczych funkcji zamiast całych modułów. Po drugie, testy powinny sprawdzać poprawność działania kodu, a nie samą jego składnię. Nie jest to miejsce na poprawianie błędów, należy to zrobić w samym kodzie.
+Test Suites: 1 passed, 1 total
+Tests: 1 passed, 1 total
+Snapshots: 0 total
+```
 
-## Zobacz także
+## Głębszy wgląd:
 
-- [Jest](https://jestjs.io/)
-- [Mocha](https://mochajs.org/)
-- [Chai](https://www.chaijs.com/)
-- [Czym są testy jednostkowe i dlaczego są ważne](https://blog.devskiller.com/pl/testy-jednostkowe-w-javascript/)
-- [Javascript Testing Best Practices](https://medium.com/welldone-software/an-overview-of-javascript-testing-7ce7298b9870)
+Pisanie testów w programowaniu jest praktyką, która pojawiła się wraz z rozwojem technologii Agile i TDD (Test Driven Development). Jest to podejście, w którym testy pisane są przed napisaniem właściwego kodu, a programista koncentruje się na tym, aby przejść wszystkie testy i tylko wtedy implementuje funkcjonalność.
+
+Alternatywnym podejściem jest BDD (Behavior Driven Development), w którym testy pisane są w sposób bardziej zrozumiały dla nieprogramistów, korzystając z języka zbliżonego do języka naturalnego.
+
+Implementacja testów może różnić się w zależności od biblioteki, ale zazwyczaj praktyka ta polega na tworzeniu funkcji do testowania i wywoływaniu ich przy użyciu narzędzi dostarczonych przez bibliotekę testową.
+
+## Zobacz też:
+
+- [Dokumentacja biblioteki "Jest"](https://jestjs.io/docs/en/getting-started) - informacje o metodach i funkcjach dostępnych w bibliotece
+- [Kurs "Test-Driven Development z Javascript"](https://www.udemy.com/course/test-driven-development-with-javascript/) - kompleksowy kurs na platformie Udemy dotyczący pisania testów z użyciem Javascript i biblioteki "Jest"

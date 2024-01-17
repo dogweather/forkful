@@ -1,7 +1,7 @@
 ---
-title:                "Arbeide med json"
-html_title:           "Bash: Arbeide med json"
-simple_title:         "Arbeide med json"
+title:                "Å jobbe med json"
+html_title:           "Bash: Å jobbe med json"
+simple_title:         "Å jobbe med json"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Data Formats and Serialization"
@@ -10,31 +10,22 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hva & Hvorfor?
+JSON står for JavaScript Object Notation, og det er en enkel og utbredt måte å lagre og utveksle data på. Som et programmeringsspråk, er det praktisk å arbeide med JSON fordi det er lett å lese og skrive for mennesker, og kan enkelt tolkes av maskiner.
 
-Vi bruker JSON (JavaScript Object Notation) for å lagre, overføre og håndtere data i ulike programmeringsspråk. JSON er et lettvektsformat som er enkelt å lese og skrive for både mennesker og maskiner. Å jobbe med JSON i Bash kan være nyttig når du trenger å behandle data i skript eller automatisere oppgaver.
+# Hvordan:
+For å arbeide med JSON i Bash, trenger du kommandolinjeverktøyet "jq". Du kan installere dette ved å kjøre ```apt-get install jq``` på Ubuntu eller ```brew install jq``` på Mac.
 
-## Hvordan
+For å konvertere JSON til et format som er mer leselig for mennesker, kan du bruke ```jq . <json-fil>``` kommandoen. For eksempel, hvis du har en fil kalt "data.json", kan du skrive ```jq . data.json``` for å se innholdet på en mer strukturert måte.
 
-Å jobbe med JSON i Bash er enkelt og krever bare noen få verktøy. Først må du sørge for at du har installert det populære verktøyet `jq` som lar deg manipulere og lese JSON-data. Du kan installere det ved å kjøre følgende kommando:
+For å hente spesifikke deler av JSON-data, kan du bruke pipes i kombinasjon med "jq" kommandoen. For eksempel, hvis du bare vil ha verdien av attributtet "name" fra JSON-dataen, kan du bruke ```jq .name``` på slutten av din "jq" kommando.
 
-```Bash
-sudo apt-get install jq
-```
-Nå kan du håndtere JSON-data ved hjelp av `jq` kommandoen. La oss si at du har en JSON-fil som inneholder en liste over brukere og deres alder. Du kan bruke `jq` for å filtrere ut bare brukerne over 25 år, ved å kjøre følgende kommando:
+# Dypdykk:
+JSON ble opprinnelig utviklet av Douglas Crockford på slutten av 1990-tallet og ble senere standardisert i ECMA-262 i 2009. Det er nå en utbredt måte å strukturere og utveksle data på nettet.
 
-```Bash
-jq '.[] | select(.age > 25)' users.json
-```
-Dette vil vise resultatet i en lesbar JSON-format. Du kan også bruke `jq` for å velge spesifikke felter fra JSON-data, eller for å legge til og endre data. Se dokumentasjonen for mer detaljert informasjon om hvordan du bruker `jq`.
+Alternativer til JSON inkluderer XML og YAML, men JSON er ofte foretrukket på grunn av sin enkelhet og lesbarhet.
 
-## Dypdykk
+"jq" er skrevet i programmet "awk" og bruker regulære uttrykk for å tolke og manipulere JSON-data.
 
-Bash tilbyr også støtte for å konvertere JSON til bash-assosiative arrays (assosiativt tabell) ved hjelp av `declare` kommandoen. Dette kan være nyttig når du trenger å behandle data fra en annen kilde, for eksempel en nett-API, og bruke den til å sette variabler i Bash. 
-
-Et eksempel på dette er å bruke [cURL](https://curl.haxx.se/), et annet populært verktøy i Bash, til å hente data fra en API som returnerer JSON-data. Du kan da bruke `jq` til å filtrere ut spesifikke felter fra svaret, og deretter bruke `declare` til å sette variabler med verdiene.
-
-## Se også
-
-- [jq dokumentasjon](https://stedolan.github.io/jq/manual/)
-- [cURL homepage](https://curl.haxx.se/)
+# Se også:
+For mer informasjon og dokumentasjon om "jq", sjekk ut [jq's GitHub repository](https://github.com/stedolan/jq) og [jq's official website](https://stedolan.github.io/jq/).

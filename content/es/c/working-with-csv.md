@@ -1,7 +1,7 @@
 ---
-title:                "Trabajando con archivos csv"
-html_title:           "C: Trabajando con archivos csv"
-simple_title:         "Trabajando con archivos csv"
+title:                "Trabajando con csv"
+html_title:           "C: Trabajando con csv"
+simple_title:         "Trabajando con csv"
 programming_language: "C"
 category:             "C"
 tag:                  "Data Formats and Serialization"
@@ -10,77 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+¡Hola programadores! ¿Alguna vez has oído hablar de CSV? Es uno de los formatos de archivo más utilizados en la programación y hoy te contaré por qué y cómo trabajar con él en C.
 
-Si alguna vez has trabajado con hojas de cálculo o bases de datos, entonces probablemente estés familiarizado con el formato CSV. Este formato de archivo, que significa "valores separados por comas" en inglés, es una forma común de almacenar datos tabulares. En este artículo, veremos cómo trabajar con archivos CSV en el lenguaje de programación C y cómo puede ser útil para manipular grandes cantidades de datos.
+## ¿Qué y por qué?
 
-## Cómo hacerlo
+CSV significa "valores separados por comas" y se utiliza como un formato de archivo para almacenar datos en forma de tabla, donde cada valor se separa por una coma. Los programadores trabajan con archivos CSV porque es fácil de leer y escribir con herramientas de programación, además de ser compatible con muchos otros programas.
 
-Para trabajar con archivos CSV en C, primero debemos incluir la biblioteca estándar `stdio.h` y la biblioteca `string.h`, que nos proporcionan funciones para manejar archivos y cadenas de caracteres.
+## Cómo hacerlo:
 
-```C
-#include <stdio.h>
-#include <string.h>
+Para trabajar con archivos CSV en C, necesitarás la biblioteca estándar "stdlib.h". Primero, debes abrir el archivo CSV con la función "fopen" y especificar el modo de lectura o escritura. Luego, puedes usar la función "fscanf" para leer los datos en formato CSV y guardarlos en variables. Aquí hay un ejemplo de cómo leer una tabla de nombres y edades:
+
 ```
+FILE *archivo_csv = fopen("nombre_archivo.csv", "r"); // modo de lectura
+char nombre[20];
+int edad;
 
-Una vez que tenemos estas bibliotecas incluidas, podemos usar la función `fopen()` para abrir un archivo CSV en modo de lectura o escritura:
-
-```C
-FILE *archivo = fopen("datos.csv", "r");
-```
-
-En este ejemplo, estamos abriendo un archivo llamado "datos.csv" en modo de solo lectura. Si desea abrir el archivo en modo de escritura, usaríamos `"w"` como segundo argumento de la función `fopen()`.
-
-A continuación, utilizamos la función `fgetc()` para leer cada carácter del archivo CSV y almacenarlos en una variable de tipo `char`. Podemos usar un bucle while para leer el archivo hasta que alcancemos el final:
-
-```C
-int c;
-while ((c = fgetc(archivo)) != EOF) {
-    // hacer algo con cada carácter leído
+while (fscanf(archivo_csv, "%s, %d", nombre, &edad) != EOF) { // mientras no sea el final del archivo
+    printf("Nombre: %s, Edad: %d\n", nombre, edad); // imprimir los datos leídos
 }
+
+fclose(archivo_csv); // cerrar el archivo al terminar
 ```
 
-Ahora que hemos leído el archivo, necesitamos almacenar los datos de alguna manera. Una forma común de hacerlo es utilizando un array multidimensional para almacenar cada fila y columna del CSV. Para hacer esto, primero deben determinar el tamaño del array. Podemos calcular automáticamente el número de filas y columnas con un bucle while contando el número de comas encontradas en cada fila.
+## Profundizando:
 
-```C
-int filas = 0;
-int columnas = 0;
-c = 0;
-while ((c = fgetc(archivo)) != EOF) {
-    if (c == ',') {
-        columnas++;
-    }
-    else if (c == '\n') {
-        filas++;
-    }
-}
-```
+Los archivos CSV se originaron en los años 70 como una forma de compartir datos entre programas de hojas de cálculo. Aunque es un formato popular, también hay otras opciones, como JSON o XML, que son más legibles para los humanos. Sin embargo, CSV sigue siendo ampliamente utilizado debido a su simplicidad y compatibilidad con diferentes programas. En cuanto a la implementación, es importante tener en cuenta que los datos entre comas pueden ser fácilmente afectados por las comillas, espacios o saltos de línea, por lo que es necesario manejar estos casos en el código para evitar errores.
 
-Una vez que conocemos el número de filas y columnas, podemos declarar el array multidimensional y utilizar la función `fscanf()` para leer cada elemento del CSV y almacenarlo en el array:
+## Véase también:
 
-```C
-float datos[filas][columnas];
-rewind(archivo);
+Si quieres conocer más sobre cómo trabajar con archivos CSV en C, te recomiendo que le eches un vistazo a la documentación de las funciones "fopen" y "fscanf". También puedes explorar otros lenguajes de programación que te permiten manipular fácilmente archivos CSV, como Python o Java.
 
-int fila, columna;
-for (fila = 0; fila < filas; fila++) {
-    for (columna = 0; columna < columnas; columna++) {
-        fscanf(archivo, "%f,", &datos[fila][columna]);
-    }
-}
-```
-
-Finalmente, podemos imprimir los datos en pantalla o realizar cualquier operación que necesitemos con ellos.
-
-## Profundizando
-
-Si bien este es un ejemplo básico de cómo trabajar con archivos CSV en C, hay muchas formas de hacerlo y depende de cada situación particular. Por ejemplo, podemos utilizar la función `sscanf()` para leer una fila completa del CSV en una cadena de caracteres y luego dividir esa cadena en elementos individuales. También podemos utilizar la función `fprintf()` para escribir datos en un archivo CSV en lugar de leerlos.
-
-Además, dependiendo de los datos que estemos tratando, es posible que necesitemos hacer algunas validaciones y conversiones de tipo antes de almacenarlos en el array. Por ejemplo, podemos usar la función `isalpha()` para verificar si un carácter es alfabético antes de convertirlo a un tipo numérico.
-
-En resumen, trabajar con archivos CSV en C ofrece muchas posibilidades y puede ser una herramienta poderosa para manipular datos de manera eficiente.
-
-## Ver También
-
-- [Documentación oficial de la función `fopen()`](https://www.cplusplus.com/reference/cstdio/fopen/)
-- [Cómo trabajar con cadenas de caracteres en C](https://www.geeksforgeeks.org/strings-in-c-2/)
+¡Eso es todo por ahora! Espero que este artículo te haya ayudado a comprender mejor qué es y cómo utilizar archivos CSV en C. ¡Hasta la próxima!

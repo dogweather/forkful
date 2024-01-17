@@ -1,7 +1,7 @@
 ---
-title:                "Commencer un nouveau projet"
-html_title:           "Gleam: Commencer un nouveau projet"
-simple_title:         "Commencer un nouveau projet"
+title:                "Lancer un nouveau projet"
+html_title:           "Gleam: Lancer un nouveau projet"
+simple_title:         "Lancer un nouveau projet"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Getting Started"
@@ -10,44 +10,19 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi 
+## Quoi & Pourquoi?
+Démarrer un nouveau projet est le processus de création d'un nouveau programme informatique. Les programmeurs le font pour diverses raisons, allant de la résolution de problèmes à la création de nouveaux produits innovants.
 
-Si vous êtes un programmeur à la recherche d'une nouvelle aventure, Gleam pourrait être l'outil idéal pour vous. Il s'agit d'un langage de programmation fonctionnel moderne qui offre une syntaxe élégante, une forte typisation et une vérification statique des erreurs. Avec Gleam, vous pourrez créer des applications robustes et évolutives en toute simplicité.
-
-## Comment faire 
-
-Maintenant que vous êtes convaincu de l'utilité de Gleam, passons à la partie pratique. Voici quelques exemples de code pour vous aider à démarrer :
-
+## Comment faire:
 ```
-Gleam Début
-fn main () {
-  laisse s = "Bonjour, monde!"
-  imprimer (s)
-}
+Gleam new mon-projet
+cd mon-projet
+gleam build
 ```
+Ces quelques lignes de code sont tout ce dont vous avez besoin pour démarrer un nouveau projet en utilisant Gleam. La commande `new` crée un nouveau répertoire contenant tous les fichiers nécessaires pour votre projet. Ensuite, utilisez `cd` pour entrer dans ce répertoire et enfin `gleam build` pour construire votre projet.
 
-Dans ce petit programme, nous avons déclaré une variable "s" avec la chaîne de caractères "Bonjour, monde!" et l'avons imprimée à l'écran. Pour exécuter ce code, vous devez d'abord l'installer en suivant les instructions sur [le site officiel de Gleam](https://gleam.run/). Ensuite, vous pourrez le compiler et l'exécuter en utilisant les commandes suivantes :
+## Plongée en profondeur:
+Gleam est un langage de programmation statistique fonctionnel qui est relativement nouveau sur le marché, lancé en 2018 pour la première fois. Il se distingue des langages de programmation traditionnels grâce à son système de types solide et à sa capacité à gérer la concurrence efficacement. Alternativement, il existe d'autres langages de programmation fonctionnels tels que Haskell, OCaml et Scala mais Gleam se concentre sur la concurrence, ce qui en fait un excellent choix pour les projets nécessitant une exécution simultanée.
 
-```
-gleam construit main.gleam
-./ . / main
-```
-
-Et voilà, vous avez écrit et exécuté votre premier code Gleam !
-
-## Plongée en profondeur 
-
-Pour ceux d'entre vous qui souhaitent en savoir plus sur Gleam et comment commencer un nouveau projet, voici quelques conseils supplémentaires :
-
-1. Assurez-vous de comprendre les concepts de base de la programmation fonctionnelle, tels que les fonctions d'ordre supérieur, la composition et la récursivité.
-2. Familiarisez-vous avec les structures de données de base telles que les listes, les tuples et les dictionnaires.
-3. Explorez les bibliothèques standard de Gleam pour découvrir toutes les fonctionnalités qu'elles offrent.
-4. Utilisez un éditeur de code tel que VS Code avec le plugin Gleam pour une expérience de développement plus fluide.
-
-## Voir aussi 
-
-Si vous souhaitez en savoir plus sur Gleam, consultez les liens suivants pour plus d'informations utiles :
-
-- [Le site officiel de Gleam](https://gleam.run/)
-- [La documentation officielle de Gleam](https://gleam.run/learn/)
-- [Le dépôt GitHub officiel de Gleam](https://github.com/gleam-lang/gleam)
+## Voir aussi:
+Pour en savoir plus sur Gleam et son utilisation, vous pouvez consulter la documentation officielle sur [https://gleam.run/](https://gleam.run/) ainsi que le référentiel GitHub du projet [https://github.com/gleam-lang/gleam](https://github.com/gleam-lang/gleam). Vous pouvez également rejoindre la communauté des utilisateurs de Gleam sur Slack en vous inscrivant sur [https://gleamverse.now.sh/](https://gleamverse.now.sh/). N'hésitez pas à poser des questions et à partager vos projets !

@@ -10,37 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hva & hvorfor?
 
-Å skrive ut feilsøkningsutdata er en viktig del av programmering. Det hjelper deg med å identifisere og fikse feil i koden din, og sørger for at alt fungerer som det skal.
+Når vi koder, er det ofte nyttig å kunne se hva som skjer i programmet vårt i sanntid. Det kalles å printe ut feilsøkingsutdata (debug output), og det gjør programmererne for å forstå hvordan programmet fungerer og finne eventuelle feil.
 
-## Slik gjør du det
+## Slik gjør du det:
 
-Printe ut feilsøkningsutdata i Haskell er enkelt. Du trenger bare å bruke funksjonen "print" og gi den den verdien du vil skrive ut. La oss ta en titt på et enkelt eksempel:
+```Haskell 
+-- Definer en funksjon som printer ut en tekststreng
+printTekst :: String -> IO ()
+printTekst tekst = putStrLn tekst
 
-```Haskell
-resultat <- lengdeJustering 10 "Hei"
-print resultat
+-- Kjør funksjonen med en tekststreng som argument
+main = do
+  printTekst "Hei, verden!"
 ```
 
-Dette vil skrive ut verdien av variabelen "resultat", som i dette tilfellet vil være "5", siden "Hei" har en lengde på 3 og vi har angitt en maksimal lengde på 10.
+Output:
 
-En annen nyttig måte å printe ut feilsøkningsutdata på er å bruke "show" funksjonen. Denne funksjonen konverterer verdien til en streng, som deretter kan printes ut. La oss se på et eksempel:
-
-```Haskell
-verdi <- return 5
-print $ show verdi
+```Haskell 
+Hei, verden!
 ```
 
-Dette vil skrive ut strengen "5" som er konvertert fra verdien vi har gitt.
+## Dykk dypere:
 
-## Dypdykk
+Det å printe ut debug output har vært en del av programmering helt siden begynnelsen. Alternativene til å printe ut informasjon er å bruke en debugger eller å bruke assert uttrykk for å sjekke tilstanden av programmet på et visst punkt. Men å printe ut feilsøkingsutdata er ofte den enkleste og mest effektive måten å få en oversikt over hva som skjer i programmet vårt.
 
-Å printe ut feilsøkningsutdata i Haskell kan gjøres på forskjellige måter, avhengig av hvilken type data du ønsker å printe. Du kan også bruke flere funksjoner som "Debug.Trace.trace" for å printe ut en melding sammen med verdien, og "Debug.Trace.traceShow" for å printe ut en melding og verdien i strengformat.
+## Se også:
 
-En viktig ting å huske på er å kun bruke utskrift for feilsøkningsformål, og ikke som en permanent løsning. Du bør alltid slette utskriftsfunksjoner når du er ferdig med å feilsøke og har funnet den riktige løsningen.
-
-## Se også
-
-- [Haskell dokumentasjon](https://www.haskell.org/documentation/)
-- [Feilsøkningsverktøy i Haskell](https://wiki.haskell.org/Debugging)
+- [Debugging Techniques for Functional Programming Languages](https://www.cs.kuleuven.be/~gerda/Teaching/AP/08-09/201/slides/ap-W09.pdf)
+- [Debugging i Haskell ved bruk av print](https://wiki.haskell.org/Debugging)
+- [Haskell Debugging Tools](https://hackage.haskell.org/package/haskell-debug)

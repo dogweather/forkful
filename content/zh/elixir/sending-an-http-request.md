@@ -10,43 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
+# 什么 & 为什么？
+发送HTTP请求指的是向网络中的服务器发送一个请求，以获取所需的信息并接收相应的响应。程序员们常常会发送HTTP请求，因为它是构建网页和应用程序的重要组成部分。
 
-HTTP请求是现代网络通信中不可或缺的一部分。通过发送HTTP请求，我们可以获取信息，进行数据交换，甚至实现网页浏览。在Elixir编程中，使用HTTP请求可以轻松地与其他服务器或服务进行通信，为我们的应用程序带来更多功能。
+# 如何进行：
+这里有一些例子来演示如何用Elixir发送HTTP请求：
 
-## 如何使用
+```
+# 使用HTTPoison库来发送HTTP GET请求
+HTTPoison.get!("https://example.com")
 
-让我们来看一个简单的例子如何发送HTTP请求：
-
-```elixir
-url = "https://example.com/api/users/1"
-response = HTTPoison.get(url)
-
-IO.puts response.body
-# 输出："{ "id": 1, "name": "John Doe" }"
+# 发送带有请求体和请求头的POST请求
+HTTPoison.post!("https://example.com", %{body: "这是一个请求体"}, headers: [{"Content-Type", "application/json"}])
 ```
 
-上面的代码示例使用了第三方库HTTPoison来发送GET请求，并从服务器获取用户信息。首先，我们将请求的URL保存在变量中，然后使用HTTPoison库的`get/2`函数来发送请求。最后，我们通过输出响应的body属性来查看服务器返回的信息。
-
-除了GET请求外，我们还可以使用HTTPoison来发送POST、PUT、PATCH、DELETE等常见的HTTP请求，以及设置请求头和参数。通过查阅官方文档，我们可以发现更多丰富的功能和用法。
-
-## 深入探讨
-
-Elixir的标准库中也提供了`HTTP`模块，可以用来发送HTTP请求。和HTTPoison相比，`HTTP`模块更加灵活，可以自定义更多的请求参数。让我们来看一个使用`HTTP.get/3`函数的例子：
-
-```elixir
-url = "https://example.com/api/users"
-response = HTTP.get(url, headers: [{"Accept", "application/json"}])
-
-IO.puts response.body
-# 输出："[{ "id": 1, "name": "John Doe" }, { "id": 2, "name": "Jane Smith" }]"
+```
+# 执行以上HTTP GET请求会得到以下输出：
+{:ok, %HTTPoison.Response{status_code: 200, body: "<<响应体>>"}}
 ```
 
-在上面的例子中，我们通过在请求中设置header头来指定需要返回json格式的数据。这个功能可以在处理不同格式数据时非常有用。
+# 深入探讨：
+发送HTTP请求的概念始于1990年代初期，是一种用来获取远程资源的标准化方式。除了使用HTTPoison库之外，Elixir还提供了其他的HTTP请求库，如: ibrowse和hackney。
 
-另外，使用`HTTP.get!/3`函数可以在请求出错时抛出异常，从而更好地处理错误情况。
-
-## 参考链接
-
-- [HTTPoison官方文档](https://github.com/edgurgel/httpoison)
-- [Elixir官方文档 - HTTP模块](https://hexdocs.pm/elixir/HTTP.html)
+# 参考链接：
+- [Elixir官方文档：HTTPoison库](https://hexdocs.pm/httpoison/)
+- [Elixir官方文档：发送HTTP请求](https://elixir-lang.org/getting-started/mix-otp/introduction-to-mix.html#httprb)
+- [Elixir官方文档：其他的HTTP请求库](https://hexdocs.pm/elixir/HTTPoison.html#module-summary)

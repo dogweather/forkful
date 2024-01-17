@@ -1,7 +1,7 @@
 ---
-title:                "Analiza html"
-html_title:           "Elixir: Analiza html"
-simple_title:         "Analiza html"
+title:                "Szanowanie html-a"
+html_title:           "Elixir: Szanowanie html-a"
+simple_title:         "Szanowanie html-a"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "HTML and the Web"
@@ -10,73 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+# Co i Dlaczego?
 
-Parsing HTML jest niezbędnym narzędziem dla każdego programisty, który pracuje z danymi ze stron internetowych. Dzięki temu procesowi możliwe jest wyodrębnienie potrzebnych informacji i przetworzenie ich w bardziej czytelną i użyteczną formę.
+"Analiza HTML" to proces przetwarzania kodu HTML w celu wyodrębnienia informacji z strony internetowej. Programiści często wykonują ten proces w celu wykonania zautomatyzowanych zadań lub analizy danych.
 
-## Jak to zrobić
-
-Aby rozpocząć analizowanie HTML w języku Elixir, będziemy potrzebować jednego narzędzia - biblioteki Floki. Możemy ją zainstalować poprzez wykonanie poniższej komendy w terminalu:
+# Jak to zrobić:
 
 ```Elixir
-mix escript.install hex floki
+html = "<h1>Hello, World!</h1>"
+parsed_html = Elixir.HTML.parse(html)
+
+IO.puts parsed_html
 ```
 
-Następnie musimy zaimportować bibliotekę w naszym projekcie:
-
+Output:
 ```Elixir
-require Floki
+{:ok, [{"h1", [], ["Hello", ",", "World!"]}]}
 ```
 
-Aby pobrać i analizować kod HTML, użyjemy funkcji `Floki.parse/1`:
+# Dogłębna analiza:
 
-```Elixir
-html = """
-<html>
-  <head>
-    <title>Przykładowa Strona</title>
-  </head>
-  <body>
-    <h1>Witaj!</h1>
-    <p>To jest przykładowa strona internetowa.</p>
-    <ul>
-      <li>Pierwszy element</li>
-      <li>Drugi element</li>
-      <li>Trzeci element</li>
-    </ul>
-  </body>
-</html>
-"""
+- "Analiza HTML" jest procesem niezbędnym do ekstrakcji potrzebnych informacji z kodu HTML na stronie internetowej.
+Alternatywne metody, takie jak "skrapowanie" stron internetowych, może być bardziej złożone i skomplikowane.
+- W Elixir, analiza HTML jest przeprowadzana przez moduł Elixir.HTML, który wykorzystuje bibliotekę "html5ever" napisaną w języku Rust. Ta biblioteka zapewnia stabilne i wydajne parsowanie HTML.
+- Istnieją także inne metody analizy kodu HTML, takie jak wyrażenia regularne lub biblioteki oparte na DOM (Document Object Model), ale stosowanie Elixir.HTML jest powszechnie uznawane za najwygodniejsze i najbezpieczniejsze.
 
-Floki.parse(html)
-```
+# Zobacz także:
 
-Wykonanie powyższego kodu spowoduje zwrócenie reprezentacji drzewa DOM (Document Object Model). Teraz możemy wykorzystać różne funkcje z biblioteki Floki, aby wyodrębnić potrzebne nam informacje. Na przykład, aby pobrać tytuł strony, użyjemy funkcji `Floki.find/2`:
-
-```Elixir
-title = Floki.find(html, "title")
-# zwraca element <title>Przykładowa Strona</title>
-```
-
-Aby wyodrębnić wszystkie elementy listy, użyjemy funkcji `Floki.find_all/2`:
-
-```Elixir
-list_items = Floki.find_all(html, "li")
-# zwraca listę elementów <li>
-```
-
-## Pogłębiona analiza
-
-Parsing HTML jest zdecydowanie szczegółowym i zaawansowanym procesem, a biblioteka Floki oferuje wiele funkcji, które pomagają w jego dokładnym przetwarzaniu. Na przykład, możemy wykorzystać selektory CSS do precyzyjnego wyodrębniania potrzebnych nam elementów:
-
-```Elixir
-Floki.find(html, "body h1")
-# zwraca element <h1>Witaj!</h1>
-```
-
-Istnieją również funkcje do zmiany drzewa DOM i porównywania go z innymi drzewami. Warto zapoznać się z dokumentacją biblioteki Floki oraz eksperymentować z różnymi funkcjami, aby lepiej zrozumieć proces parsingu HTML.
-
-## Zobacz także
-
-- Dokumentacja biblioteki Floki: https://hexdocs.pm/floki/readme.html
-- Przewodnik po analizowaniu HTML w Elixir: https://dev.to/iansinnott/parsing-html-in-elixir-with-floki-23p4
+- [Dokumentacja modułu Elixir.HTML] (https://hexdocs.pm/elixir/HTML.html)
+- [Biblioteka html5ever dla Elixir] (https://github.com/myrridin/html5ever_elixir)
+- [Artykuł na temat analizy HTML w Elixir] (https://blog.appsignal.com/2019/02/26/parsing-html-in-elixir.html)

@@ -1,7 +1,7 @@
 ---
-title:                "Analizando html"
-html_title:           "Bash: Analizando html"
-simple_title:         "Analizando html"
+title:                "Analizando HTML"
+html_title:           "Bash: Analizando HTML"
+simple_title:         "Analizando HTML"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "HTML and the Web"
@@ -10,43 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué?
+## ¿Qué y por qué?
+Analizar HTML es el proceso de extraer, organizar y manipular información de código HTML. Los programadores a menudo lo hacen para automatizar tareas repetitivas, como extraer datos de una página web o verificar la validez de código HTML.
 
-Si alguna vez has navegado por internet, es muy probable que te hayas encontrado con páginas web cuyas estructuras y contenidos están escritos en lenguaje HTML. Aunque visualmente puedan ser atractivas, a veces necesitamos extraer información específica de estas páginas, ya sea para uso personal o para diferentes propósitos. Aquí es donde entra en juego el parsing de HTML en Bash, ya que nos permite analizar y extraer datos de estas páginas web de manera sencilla.
-
-## Cómo hacerlo
-
-El parsing de HTML en Bash puede ser realizado con diferentes herramientas, pero en este artículo nos enfocaremos en la librería `html-xml-utils`. Para empezar, debes asegurarte de tener instalada esta librería en tu sistema. Luego, puedes seguir los siguientes pasos:
-
-1. Descarga el código fuente de la página web que deseas analizar, por ejemplo `https://www.example.com/`.
-
+## Cómo hacerlo:
+### Ejemplo 1:
 ```Bash
-curl https://www.example.com/ > webpage.html 
+curl https://www.example.com | grep "<title>" | sed 's/<[^>]*>//g'
 ```
+Salida:
+```
+Example Domain
+```
+Este ejemplo usa el comando `curl` para obtener el código HTML de una página web y luego utiliza `grep` y `sed` para extraer y manipular el contenido dentro de la etiqueta `<title>`.
 
-2. Utilizando el comando `hxnormalize` de `html-xml-utils`, limpiamos y normalizamos el código HTML de la página web descargada.
-
+### Ejemplo 2:
 ```Bash
-hxnormalize -l 100 webpage.html > clean_webpage.html
+wget -qO- https://www.example.com | grep -oP '(?<=<a href=")[^"]*'
 ```
-
-3. Ahora, podemos utilizar el comando `hxselect` para filtrar y extraer las etiquetas y elementos específicos que deseamos de la página web. Por ejemplo, si queremos obtener el título de la página, podemos indicarle a `hxselect` que busque la etiqueta `title` dentro del archivo HTML limpio.
-
-```Bash
-hxselect -c 'title' clean_webpage.html 
+Salida:
 ```
-
-4. También es posible realizar búsquedas más específicas utilizando selectores de CSS. Por ejemplo, si queremos obtener todos los enlaces de una determinada sección de la página web, podemos utilizar el siguiente comando:
-
-```Bash
-hxselect -c 'div.section a' clean_webpage.html 
+https://www.iana.org/domains/example
 ```
+En este ejemplo, usamos `wget` para descargar el código HTML de una página web y `grep` con expresiones regulares para extraer todos los enlaces dentro del código.
 
-## Deep Dive
+## Profundizando:
+Analizar HTML ha sido una práctica común en la programación desde los primeros días de la web. Originalmente, se hacía manualmente, pero con el crecimiento de la web, se han desarrollado herramientas y lenguajes específicos para facilitar el proceso, como `grep` y `sed` en Unix/Linux.
 
-El comando `hxselect` utiliza selectores de CSS para filtrar y extraer información de una página HTML. Estos selectores son similares a los que se usan en lenguajes de estilo como CSS y pueden ser muy útiles para realizar búsquedas más precisas. Además, la librería `html-xml-utils` cuenta con otras herramientas como `hxtoxml` y `hxwls` que nos permiten convertir archivos HTML a XML y realizar operaciones en ellos de manera más avanzada.
+Existen varias alternativas a utilizar comandos de línea para analizar HTML, como utilizar lenguajes de programación como Python o JavaScript, o utilizar herramientas especializadas como Beautiful Soup o Cheerio.
 
-## Ver también
+El proceso de analizar HTML puede variar dependiendo de la estructura y complejidad del código, pero en general, se basa en trabajar con expresiones regulares y realizar acciones de filtrado y manipulación de texto.
 
-- [Documentación de `html-xml-utils`](https://www.w3.org/Tools/HTML-XML-utils/)
-- [Artículo sobre parsing de HTML con Bash en SitePoint (en inglés)](https://www.sitepoint.com/essential-command-line-tools-for-html-xml-and-xhtml/)
+## Ver también:
+- [Introducción a parsear HTML con Bash] (https://www.linuxjournal.com/content/bash-html-parsing-made-simple) 
+- [Beautiful Soup: una herramienta de análisis de documentos HTML] (https://www.crummy.com/software/BeautifulSoup/)

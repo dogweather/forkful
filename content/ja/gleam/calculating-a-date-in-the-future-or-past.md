@@ -1,7 +1,7 @@
 ---
-title:                "「未来または過去の日付を計算する」"
-html_title:           "Gleam: 「未来または過去の日付を計算する」"
-simple_title:         "「未来または過去の日付を計算する」"
+title:                "「将来または過去の日付の計算」"
+html_title:           "Gleam: 「将来または過去の日付の計算」"
+simple_title:         "「将来または過去の日付の計算」"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Dates and Times"
@@ -10,40 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜこれをするのか
-日付を未来や過去に計算する理由は様々ですが、特に永続性のあるアプリケーションでは、将来の予定や過去の出来事を正確に表示する必要があります。Gleamの日付計算の機能は、このようなアプリケーションを開発するために非常に便利です。
+＃＃ なに？なぜ？
+未来や過去の日付を計算するとは？なぜプログラマーがそれを行うのかを説明します。
 
-## 方法
-以下のコードブロックには、Gleamを使用して未来の日付を計算する方法の例が示されています。
+＃＃ 方法：
+以下のコード例とサンプル出力を使用して、計算方法を説明します。
+
 ```Gleam
-import gleam/time.{Month, Year}
+// 今日の日付を取得
+let today = Date.now()
 
-// 今日の日付
-let today = Time.now()
-
-// 100日後の日付を計算
-let future = Time.advance(today, days=100)
+// 1日後の日付を計算
+let future = Date.add_days(today, 1)
 
 // 結果を出力
-IO.print("100日後の日付は ", future)
-
-// もっと複雑な例
-let future_date = Time.advance(today, years=1, months=3, days=12)
-
-// 結果を出力
-IO.print("1年3ヶ月12日後の日付は ", future_date)
+IO.inspect(future) // 出力例: 2021-07-01T00:00:00Z
 ```
 
-上記のコードを実行すると、現在の日付から100日後の日付が表示されます。
-また、より複雑な例では、現在の日付から1年3ヶ月12日後の日付が計算されます。
+```Gleam
+// 今日の日付を取得
+let today = Date.now()
 
-## 深堀り
-日付の計算には様々なパラメーターを指定することができます。
-例えば、年や月だけでなく週や時間、分なども指定することができます。
-さらに、特定の時刻を基準にして計算することも可能です。
-詳細な使い方は、公式ドキュメントを参照してください。
+// 1ヶ月前の日付を計算
+let past = Date.add_months(today, -1)
 
-## 以下は参考になるリンクです。
+// 結果を出力
+IO.inspect(past) // 出力例: 2021-05-31T00:00:00Z
+```
 
-[公式ドキュメント](https://gleam.run/manual/standard-library.html#time)
-[GleamのGitHubリポジトリ](https://github.com/gleam-lang/gleam/blob/master/stdlib/time/README.md)
+＃＃ ディープダイブ：
+未来や過去の日付を計算する歴史的な背景、代替手段、および実装詳細について説明します。
+
+＃＃ 関連リンク：
+関連情報へのリンクを紹介します。

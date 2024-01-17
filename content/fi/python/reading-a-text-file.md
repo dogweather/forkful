@@ -1,7 +1,7 @@
 ---
-title:                "Tekstitiedoston lukeminen"
-html_title:           "Python: Tekstitiedoston lukeminen"
-simple_title:         "Tekstitiedoston lukeminen"
+title:                "Tiedoston lukeminen"
+html_title:           "Python: Tiedoston lukeminen"
+simple_title:         "Tiedoston lukeminen"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Files and I/O"
@@ -10,38 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+# Mikä ja Miksi?
 
-Tekstitiedoston lukeminen on yksi yleisimmistä ohjelmoinnin tehtävistä. Se avaa ovia tiedonkäsittelyyn ja tiedon analysointiin. Lukemalla tekstiä, voit hakea tiettyjä tietoja tai suorittaa muokkauksia tiedostoon liittyvien operaatioiden suorittamiseksi.
+Tekstitiedoston lukeminen on prosessi, jossa ohjelma lukee sisältöä tiedostosta ja käsittelee sitä. Tämä on tärkeä tehtävä monille ohjelmoijille, sillä tekstitiedostot ovat yleinen tiedostomuoto tietojen tallentamiseen ja jakamiseen.
 
-## Ohjeet
+# Kuinka toimia:
 
-```python
-# Avaa teksti-tiedosto lukemista varten
-file = open('tekstitiedosto.txt', 'r')
+```Python
+# Avaa tiedosto "tekstitiedosto.txt"
+f = open("tekstitiedosto.txt", "r")
 
-# Lue tiedosto rivi kerrallaan
-for line in file:
-  print(line)
+# Lue tiedoston sisältö ja tallenna se muuttujaan "sisalto"
+sisalto = f.read()
 
-# Sulje tiedosto
-file.close()
+# Tulosta sisältö
+print(sisalto)
+
+# Sulje tiedosto kun olet valmis
+f.close()
 ```
 
-```
-Tämä on ensimmäinen rivi.
-Tämä on toinen rivi.
-Tämä on kolmas rivi.
-```
+Tämä koodi avaa tekstitiedoston nimeltä "tekstitiedosto.txt" ja tallentaa sen sisällön muuttujaan. Sitten se tulostaa tiedoston sisällön ja lopuksi sulkee tiedoston. Tämän ansiosta voit lukea ja käsitellä tekstitiedoston sisältöä ohjelmassasi.
 
-Tässä esimerkissä käytämme `open()`-funktiota avaamaan halutun tekstitiedoston lukemista varten ja annamme `r` -parametrin, joka tarkoittaa "lue"-tilaa. Voit myös antaa `w` parametrin, joka tarkoittaa "kirjoitus"-tilaa, jos haluat muokata tai luoda uuden tekstitiedoston. Seuraavaksi käytämme `for`-silmukkaa lukeaksemme tiedoston rivi kerrallaan ja tulostamme sen näytölle. Lopuksi on tärkeää muistaa sulkea tiedosto `close()`-funktiolla, jotta vapautamme resurssit.
+# Syvällinen sukellus:
 
-## Syvällisempi sukellus
+Historiallisessa kontekstissa tekstitiedostojen lukeminen on ollut tärkeä osa tietokoneohjelmointia jo pitkään. Ennen graafisia käyttöliittymiä tekstitiedostot olivat yleisin tapa tallentaa ja jakaa tietoa tietokoneiden välillä.
 
-Tekstitiedoston lukemiseen on olemassa myös muita tapoja. Voit esimerkiksi määrittää tiedostopolun ja luoda `with`-lausekkeen käyttääksesi tiedostoa. Tämä tapa lukita ja sulkea tiedoston automaattisesti, kun `with`-lohko suoritetaan. Voit myös käyttää `read()`- ja `readlines()`-funktioita, jotka lukevat koko tiedoston tai kaikki rivit listana ja voit käsitellä tiedoston sisältöä haluamallasi tavalla.
+Vaikka tekstitiedostot ovat edelleen suosittu tiedostomuoto, on olemassa myös muita tapoja lukea tiedostojen sisältöä ohjelmassa. Esimerkiksi CSV-tiedostot (comma-separated values) ovat hyvä vaihtoehto, jos haluat käsitellä taulukkomuotoisia tietoja.
 
-## Katso myös
+Tekstitiedostojen lukeminen tapahtuu yleensä avulla "file" -olioita, jotka tarjoavat joukon käteviä metodeja tiedostojen käsittelyyn. Voit esimerkiksi käyttää "read()" -metodia lukeaksesi tiedoston sisällön tai "close()" -metodia sulkeaksesi tiedoston.
 
-- [Pythonin viralliset dokumentit - Tiedostojen käsittely](https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files)
-- [Real Python - Tiedostojen käsittely Pythonissa](https://realpython.com/read-write-files-python/)
-- [Tekstitiedoston merkistöongelmien ratkaiseminen Pythonissa](https://www.journaldev.com/23749/python-read-text-file)
+#Katso myös:
+
+Tässä artikkelissa esiteltyjä asioita kannattaa tutkia lisää Pythonin virallisesta dokumentaatiosta, jossa löytyy kattavat ohjeet ja esimerkit tiedostojen käsittelyyn. Voit myös kokeilla lukemista muista tiedostomuodoista kuten CSV:stä tai JSON:ista ja nähdä miten ne eroavat tekstitiedostoista.

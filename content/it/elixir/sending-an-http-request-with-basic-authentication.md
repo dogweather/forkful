@@ -10,37 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+## Che cos'è e perché?
 
-Molti servizi web richiedono una forma di autenticazione per accedere alle loro risorse. L'utilizzo di basic authentication con le richieste HTTP è un modo semplice ed efficace per fornire credenziali di accesso e garantire la sicurezza delle comunicazioni.
+In poche parole, inviare una richiesta HTTP con autenticazione di base significa includere nell'intestazione dell'HTTP request le credenziali dell'utente, come username e password, per accedere ad un servizio o una risorsa protetta. I programmatori fanno questo per garantire la sicurezza delle loro applicazioni e dei dati utente.
 
-## Come
-
-Per inviare una richiesta HTTP con basic authentication in Elixir, dobbiamo prima importare il modulo HTTPoison e creare una mappa con le nostre credenziali:
+## Come:
 
 ```Elixir
-params = %{username: "username", password: "password"}
+identifier = "username" 
+password = "password"
+
+request = HTTP.basic_auth(identifier, password) 
+response = HTTPc.post("https://www.example.com/", [], [body: "{}"], [request: request]) 
 ```
 
-Successivamente, possiamo utilizzare la funzione `get/3` per effettuare una richiesta GET a un determinato URL, passando la mappa come terzo argomento:
+Output:
 
 ```Elixir
-response = HTTPoison.get("https://www.example.com", params, [basic_auth: params])
+{:ok, %HTTPo.Request{id: ..., method: :post, headers: [..., {"Authorization", "Basic ..."}], ...}}
 ```
 
-Il risultato sarà un oggetto `{:ok, response}` contenente la risposta HTTP ricevuta dal server. Possiamo quindi accedere al corpo della risposta utilizzando la funzione `response.body`.
+## Approfondimento:
 
-## Deep Dive
+In passato, inviare una richiesta HTTP con autenticazione di base era uno dei metodi più comuni per proteggere le risorse web e garantire l'accesso solo agli utenti autorizzati. Al giorno d'oggi, ci sono alternative più sicure come OAuth o JSON Web Token (JWT), ma inviare una richiesta HTTP con autenticazione di base è ancora una pratica comune e supportata dai linguaggi di programmazione.
 
-Per inviare una richiesta con basic authentication, è necessario che il server supporti questo tipo di autenticazione. Inoltre, è importante notare che le credenziali vengono inviate in chiaro, quindi è consigliabile utilizzare sempre connessioni HTTPS per garantire la sicurezza delle comunicazioni.
+## Vedi anche:
 
-Inoltre, è possibile specificare il tipo di autenticazione utilizzando l'opzione `mode` nella chiamata alla funzione `get/3`, ad esempio:
-
-```Elixir
-HTTPoison.get("https://www.example.com", params, [basic_auth: params, mode: :digest])
-```
-
-## See Also
-
-- [Documentazione HTTPoison](https://hexdocs.pm/httpoison/)
-- [Specifiche basic authentication HTTP](https://www.rfc-editor.org/rfc/rfc2617)
+Per maggiori informazioni su come inviare una richiesta HTTP con autenticazione di base in Elixir, puoi consultare la documentazione ufficiale di Elixir o cercare su forum e siti di programmazione per ottenere consigli e suggerimenti da altri sviluppatori.

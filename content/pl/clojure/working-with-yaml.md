@@ -1,7 +1,7 @@
 ---
-title:                "Praca z yaml"
-html_title:           "Clojure: Praca z yaml"
-simple_title:         "Praca z yaml"
+title:                "Pracując z yaml"
+html_title:           "Clojure: Pracując z yaml"
+simple_title:         "Pracując z yaml"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Data Formats and Serialization"
@@ -10,45 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co & Dlaczego?
 
-Jeśli jesteś programistą bądź osobą pracującą w branży IT, na pewno spotkałeś się z formatem pliku YAML. Jest to popularna składnia używana do przechowywania i przesyłania danych. W tym artykule dowiesz się, dlaczego warto poznać YAML oraz jak możesz go wykorzystać w swoich projektach w języku Clojure.
+Praca z YAML jest niezwykle ważna dla programistów ze względu na to, że jest to format przechowywania danych, który jest czytelny zarówno dla ludzi, jak i dla maszyn. Dzięki YAML możemy łatwo przesyłać i odczytywać struktury danych, co ułatwia nam pracę z aplikacjami i kodem.
 
-## Jak to zrobić
-
-Przedstawię teraz kod w języku Clojure, który pokaże Ci, jak wykorzystać YAML w swoich projektach. Poniżej znajdziesz przykład wykorzystania biblioteki "clj-yaml" do parsowania pliku YAML:
+## Jak:
 
 ```Clojure
-(ns my-project.core
-  (:require [clj-yaml.core :as yaml]))
-
-(defn read-yaml [file]
-  (yaml/parse-file file))
-
-;; Przykładowy plik YAML
-;; country:
-;;  - Poland
-;;  - Germany
-;;  - France
-(def data (read-yaml "countries.yml"))
-
-(println (:country data)) ;; Wynik: ["Poland" "Germany" "France"]
+;; Przykładowe dane w formacie YAML
+{:imie "Jan"
+ :nazwisko "Kowalski"
+ :wiek 35
+ :miasto "Warszawa"}
 ```
 
-Kod ten pierwotnie odczytuje plik YAML, a następnie zwraca wynik w postaci mapy Clojure. Dzięki temu możesz wykorzystać tę mapę do dalszej pracy w swoim projekcie.
+```Clojure
+;; Załadowanie danych z pliku YAML przy użyciu biblioteki
+(clojure-yaml/read "dane.yaml")
+```
 
-## Wszczegóły
+## Głębsze zagadnienia:
 
-Jeśli chcesz wiedzieć więcej o pracy z YAML w języku Clojure, warto zwrócić uwagę na kilka kluczowych aspektów:
+W YAML możemy przechowywać różnego rodzaju dane, od tekstów i liczb po bardziej skomplikowane struktury. Format ten został stworzony przez Clarka Evansa w 2001 roku i jest często wykorzystywany w prostych bazach danych. Alternatywą dla YAML jest na przykład JSON lub XML.
 
-- Jeśli chcesz dokonać zmian w pliku YAML, musisz wczytać go do mapy i następnie przekształcić z powrotem do formatu YAML.
-- Jeśli potrzebujesz obsłużyć specjalne znaki, takie jak znak tabulacji lub nowa linia, możesz skorzystać z funkcji clojure.string/escape lub clojure.string/unescape.
-- Możesz również wykorzystać bibliotekę "yamlclj" do obsługi plików YAML w języku Clojure. Ta biblioteka oferuje wiele przydatnych funkcji i metod do pracy z YAML, takich jak parsowanie stringów lub sprawdzanie poprawności składni.
+Implementacja YAML w języku Clojure odbywa się dzięki bibliotece clojure-yaml, która umożliwia łatwe odczytywanie i zapisywanie danych w tym formacie. Dzięki niej możemy integrować nasze aplikacje z innymi systemami wykorzystującymi YAML.
 
-Teraz, gdy już wiesz, jak wykorzystać YAML w języku Clojure, możesz spróbować użyć go w swoich własnych projektach!
+## Zobacz też:
 
-## Zobacz również
-
-- Oficjalna dokumentacja języka Clojure - https://clojure.org/
-- Biblioteka "yamlclj" - https://github.com/alexanderkiel/yaml-clj
-- Biblioteka "clj-yaml" - https://github.com/lance-p/nippy
+- [Oficjalna strona formatu YAML](https://yaml.org)
+- [Dokumentacja biblioteki clojure-yaml](https://github.com/xsc/clojure-yaml)

@@ -1,7 +1,7 @@
 ---
-title:                "Utilizando expressões regulares"
-html_title:           "Swift: Utilizando expressões regulares"
-simple_title:         "Utilizando expressões regulares"
+title:                "Usando expressões regulares"
+html_title:           "Swift: Usando expressões regulares"
+simple_title:         "Usando expressões regulares"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -10,62 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que usar Expressões Regulares em Swift?
+## Sobre o que e por que?
+Expressões regulares são uma forma de trabalhar com padrões de texto. Eles permitem que os programadores procurem e manipulem cadeias de caracteres com base em regras específicas. Os programadores usam expressões regulares para realizar tarefas como validação de dados e filtragem de informações.
 
-Expressões regulares são uma ferramenta poderosa para manipulação de strings em qualquer linguagem de programação, incluindo Swift. Elas permitem que você procure e manipule padrões em um texto de maneira eficiente e precisa. Portanto, se você estiver lidando com strings em seu código Swift, aprender a utilizar expressões regulares pode tornar seu trabalho muito mais fácil e eficiente.
+## Como fazer:
+Usando expressões regulares em Swift é simples e direto ao ponto. Primeiro, importe o módulo "Foundation" para ter acesso às funcionalidades de expressões regulares. Em seguida, crie uma expressão regular utilizando a sintaxe ```try NSRegularExpression(pattern: "padrão")```, onde "padrão" é o padrão que você deseja buscar. Por fim, use a função ```firstMatch(in: opcoes, range: NSRange)``` para obter o primeiro resultado que corresponde à sua expressão.
 
-## Como usar Expressões Regulares em Swift
+Por exemplo, se quisermos encontrar o padrão de um endereço de email em uma string, poderíamos usar o seguinte código:
 
-Para utilizar expressões regulares em seu código Swift, primeiro é necessário importar o framework `Foundation`. Em seguida, você precisará criar uma instância da classe `NSRegularExpression`, passando a expressão regular como um parâmetro. Por exemplo, se você quiser verificar se uma string contém apenas números, pode usar a seguinte expressão regular: `^[0-9]+$`.
-
-```Swift
-import Foundation
-
-//Criando a instância da expressão regular
-let regex = try! NSRegularExpression(pattern: "^[0-9]+$")
-
-//String para ser verificada
-let string = "1234"
-
-//Verificando a string com a expressão regular
-let isMatch = regex.matches(in: string, range: NSRange(string.startIndex..., in: string))
-
-//Imprimindo o resultado
-print(isMatch) //Saída: [1 match]
 ```
-
-Excelente! Agora você sabe como utilizar expressões regulares em Swift. Mas, e se você quiser extrair uma parte específica do texto que corresponde ao padrão da expressão regular? Vamos ver como isso pode ser feito.
-
-```Swift
 import Foundation
 
-//Criando a instância da expressão regular
-let regex = try! NSRegularExpression(pattern: "[0-9]+")
+let string = "Meu endereço de email é exemplo@email.com"
 
-//String para ser verificada
-let string = "Alicia tem 25 anos"
-
-//Procurando por números na string e extraindo-os
-let matches = regex.matches(in: string, range: NSRange(string.startIndex..., in: string))
-
-//Iterando pelos resultados e imprimindo-os
-for match in matches {
-    print(String(string[Range(match.range, in: string)!])) //Saída: 25
+do {
+    let padrao = try NSRegularExpression(pattern: "[a-z0-9]+@[a-z0-9]+\\.[a-z]")
+    if let resultado = padrao.firstMatch(in: string, range: NSRange(string.startIndex..., in: string)) {
+        print(string[Range(resultado.range, in: string)!])
+    }
+} catch let error {
+    print("Erro: \(error.localizedDescription)")
 }
 ```
 
-## Explore mais sobre Expressões Regulares em Swift
+Isso resultaria em "exemplo@email.com" sendo impresso na tela.
 
-Aprender a utilizar expressões regulares em Swift é apenas o começo. Existem muitos recursos e recursos adicionais que podem ajudá-lo a se tornar um especialista em expressões regulares. Alguns tópicos que você pode explorar são:
+## Mergulho profundo:
+As expressões regulares existem há muito tempo e são usadas em várias linguagens de programação. Elas foram criadas pelo matemático norte-americano Stephen Cole Kleene, na década de 1950, como uma forma de trabalhar com padrões em linguagens formais. Em Swift, há também alternativas ao uso de expressões regulares, como funções como ```contains``` e ```filter```, que podem ser mais simples em casos simples.
 
-- Sintaxe de expressões regulares em Swift
-- Modificadores de expressão regular (como ignorar maiúsculas e minúsculas)
-- Como substituir partes de uma string com expressões regulares
-- Biblioteca de Expressão Regular Swift: [https://github.com/vermont42/RegularExpression](https://github.com/vermont42/RegularExpression)
-- Documentação oficial do framework Foundation: [https://developer.apple.com/documentation/foundation/nsregularexpression](https://developer.apple.com/documentation/foundation/nsregularexpression)
+Nós também podemos usar opções adicionais ao criar uma expressão regular, como ignorar maiúsculas e minúsculas ou tratar metacaracteres de forma literal. Além disso, podemos usar capturas de grupo para obter partes específicas de uma string que correspondem ao nosso padrão.
 
-## Veja também
-
-- [Site da Apple sobre Expressões Regulares](https://developer.apple.com/library/archive/documentation/Foundation/Conceptual/NSRegularExpressionsTutorial/)
-- [Tutorial de Expressões Regulares em Swift](https://www.raywenderlich.com/11580662-regular-expressions-tutorial-swift)
-- [Vídeo sobre Expressões Regulares em Swift](https://www.youtube.com/watch?v=39fOPZl190U)
+## Veja também:
+Para mais informações sobre como trabalhar com expressões regulares em Swift, você pode verificar a documentação oficial e o código-fonte do módulo Foundation. Além disso, existem ótimos tutoriais online que podem mostrar a você como utilizar expressões regulares em diferentes cenários.

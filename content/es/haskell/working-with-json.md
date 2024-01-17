@@ -10,75 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+# ¿Qué & Por qué?
 
-Si estás buscando una forma sencilla y eficiente de manejar datos en tus proyectos de programación, JSON es una excelente opción. Al ser un formato de datos ligero y fácil de entender, se ha vuelto muy popular en la industria.
+Trabajar con JSON significa manejar datos estructurados en formato de texto, que se pueden intercambiar entre diferentes lenguajes de programación y aplicaciones. Los programadores utilizan JSON para almacenar y transmitir información fácilmente legible y manipulable.
 
-## Cómo
-
-Para comenzar a trabajar con JSON en Haskell, primero debemos importar la librería "Data.Aeson". A continuación, podemos crear un objeto JSON usando la sintaxis de registros de Haskell:
+# ¿Cómo hacerlo?
 
 ```Haskell
-data Persona = Persona {
-  nombre :: String,
-  edad :: Int
-} deriving (Generic, Show)
+-- Importar el módulo JSON de Haskell
+import Data.Aeson
 
-instance FromJSON Persona
-instance ToJSON Persona
+-- Ejemplo de una lista de tareas en formato JSON
+tareasJSON = "[{\"descripcion\": \"Hacer la compra\", \"completado\": false}, {\"descripcion\": \"Llamar al dentista\", \"completado\": true}, {\"descripcion\": \"Hacer ejercicio\", \"completado\": false}]"
+
+-- Convertir el JSON a un valor de tipo Haskell
+tareasHaskell = decode tareasJSON :: Maybe [Value]
+
+-- Imprimir el resultado
+print tareasHaskell
 ```
 
-Luego, podemos usar la función `encode` para convertir nuestro objeto a una cadena de texto JSON:
+Resultado:
 
-```Haskell
-let persona = Persona "Juan" 25
-encode persona
--- Resultado: "{\"nombre\":\"Juan\",\"edad\":25}"
+```
+Just ["{\"descripcion\":\"Hacer la compra\",\"completado\":false}","{\"descripcion\":\"Llamar al dentista\",\"completado\":true}","{\"descripcion\":\"Hacer ejercicio\",\"completado\":false}"]
 ```
 
-Para decodificar una cadena de texto JSON a un objeto en Haskell, podemos usar la función `decode` y asegurarnos de manejar correctamente los posibles errores:
+# Profundizando
 
-```Haskell
-let json = "{\"nombre\":\"Maria\",\"edad\":\"30\"}"
-decode json :: Maybe Persona
--- Resultado: Just (Persona {nombre = "Maria", edad = 30})
-```
+El formato JSON fue diseñado en 2001 por Douglas Crockford, quien propuso su uso como una alternativa más ligera y sencilla al lenguaje de marcado XML. Además de su popularidad en la comunicación entre aplicaciones web, también es ampliamente utilizado en el almacenamiento de datos en bases de datos NoSQL.
 
-También podemos trabajar con listas de objetos JSON, utilizando las funciones `encode` y `decode` en su versión plural (`encodeList` y `decodeList` respectivamente). Y para trabajar con archivos JSON, podemos utilizar las funciones `encodeFile` y `decodeFile`.
+Otras formas de manejar datos estructurados en Haskell incluyen el uso de bibliotecas como CSV, YAML y XML. Sin embargo, JSON se ha consolidado como una de las opciones más utilizadas debido a su simplicidad y compatibilidad con múltiples lenguajes.
 
-## Deep Dive
+En Haskell, el tipo de datos utilizado para trabajar con JSON es `Value`, definido en el módulo `Data.Aeson`. Este tipo incluye constructores como `Object`, `Array`, `String`, `Number` y `Bool`, que se pueden utilizar para acceder y manipular diferentes tipos de datos JSON.
 
-Si queremos trabajar con campos opcionales en nuestros objetos JSON, podemos usar la función `(.=)` de la librería "Data.Aeson". Por ejemplo, si queremos que el campo "apellido" sea opcional en nuestra definición de "Persona", podemos hacer lo siguiente:
+# Ver También
 
-```Haskell
-data Persona = Persona {
-  nombre :: String,
-  edad :: Int,
-  apellido :: Maybe String
-} deriving (Generic, Show)
-
-instance FromJSON Persona where
-  parseJSON (Object v) = Persona
-    <$> v .: "nombre"
-    <*> v .: "edad"
-    <*> v .:? "apellido"
-
-instance ToJSON Persona where
-  toJSON (Persona nombre edad Nothing) = object [
-    "nombre" .= nombre,
-    "edad" .= edad
-  ]
-  toJSON (Persona nombre edad (Just apellido)) = object [
-    "nombre" .= nombre,
-    "edad" .= edad,
-    "apellido" .= apellido
-  ]
-```
-
-También podemos trabajar con tipos de datos más complejos, como por ejemplo, listas y mapas. Para ello, podemos utilizar la librería "Data.HashMap.Strict" y sus funciones `fromList` y `toList`.
-
-## Ver también
-
-- <https://hackage.haskell.org/package/aeson>
-- <https://hackage.haskell.org/package/hashmap-strict>
-- <https://www.haskell.org/learn/>
+- [Guía de Aeson de Haskell](https://artyom.me/aeson)
+- [Introducción a JSON](https://www.json.org/json-es.html)

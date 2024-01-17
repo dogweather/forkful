@@ -10,45 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué?
+## ¿Qué y por qué?
 
-Imagínate que estás escribiendo un programa para gestionar archivos. Es importante asegurarse de que los archivos se guarden en el lugar correcto y que no se sobrescriban accidentalmente. Una forma de garantizarlo es comprobar si un directorio existe antes de guardar un archivo, y eso es exactamente lo que aprenderemos en este artículo.
+Comprobar si un directorio existe es una acción común en la programación. Consiste en verificar si una carpeta o directorio específico está presente en el sistema de archivos. Los programadores suelen hacerlo para asegurarse de que el código funcione correctamente o para realizar acciones dependiendo de si el directorio existe o no.
 
-## ¿Cómo hacerlo?
+## Cómo hacerlo:
 
-En Gleam, existen varias formas de comprobar si un directorio existe. La forma más sencilla es utilizando la función `gleam/os/fs.exists` y pasando la ruta del directorio como argumento. Esta función devolverá `Ok` si el directorio existe y `Error` si no existe.
-
-```Gleam
-match os/fs.exists("ruta/al/directorio") {
-  Ok(_) -> "El directorio existe.";
-  Error(_) -> "El directorio no existe.";
-};
-```
-
-Otra forma de comprobar si un directorio existe es utilizando la función `gleam/os/fs.read_directory`. Esta función devolverá una lista con los nombres de todos los archivos y directorios que se encuentren en la ruta especificada. Si el directorio no existe, devolverá `Error`.
+Usando Gleam, podemos comprobar si un directorio existe utilizando la función `OS.exists` y pasándole como argumento el directorio que queremos verificar. A continuación, se muestra un ejemplo de código y su posible resultado:
 
 ```Gleam
-match os/fs.read_directory("ruta/al/directorio") {
-  Ok(lista) -> "Los archivos y directorios dentro del directorio son: {lista}.";
-  Error(_) -> "El directorio no existe.";
-};
+let directorio = "mi/carpeta"
+let existe = OS.exists(directorio)
+```
+```
+# resultado: `True` o `False`
 ```
 
-## Inmersión profunda
+## Inmersión profunda:
 
-Cuando utilizamos `gleam/os/fs.exists` para comprobar si un directorio existe, la función devuelve `Ok` sin importar si el directorio es accesible o no. Para una comprobación más precisa, podemos utilizar `gleam/os/fs.is_directory` que devuelve `Ok` solo si el directorio existe y es accesible.
+Antes de la existencia de sistemas de archivos, no había necesidad de comprobar si un directorio existía, ya que simplemente se asumía que estaba presente. Hoy en día, existen diferentes formas de implementar esta comprobación, como utilizar comandos del sistema operativo o bibliotecas específicas de lenguaje de programación.
 
-```Gleam
-match os/fs.is_directory("ruta/al/directorio") {
-  Ok(_) -> "El directorio existe y es accesible.";
-  Error(_) -> "El directorio no existe o no es accesible.";
-};
-```
+## Ver también:
 
-Además, podemos utilizar funciones como `gleam/os/fs.can_read` y `gleam/os/fs.can_write` para verificar si el directorio tiene permisos de lectura y escritura.
-
-## Véase también
-
-- Documentación de Gleam sobre `gleam/os/fs`
-- Ejemplos de código de Gleam en GitHub
-- Comunidad de Gleam en Discord
+Para más información sobre cómo trabajar con el sistema de archivos en Gleam, puedes consultar la [documentación oficial](https://gleam.run/book/standard-library.html#file-system). También puedes explorar otras fuentes para aprender sobre la importancia de comprobar la existencia de un directorio en la programación.

@@ -1,7 +1,7 @@
 ---
-title:                "랜덤 숫자 생성하기"
-html_title:           "Swift: 랜덤 숫자 생성하기"
-simple_title:         "랜덤 숫자 생성하기"
+title:                "랜덤 숫자 생성"
+html_title:           "Swift: 랜덤 숫자 생성"
+simple_title:         "랜덤 숫자 생성"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Numbers"
@@ -10,32 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜?
+## 무엇 & 왜?
+난수 생성이 무엇인지에 대해 설명하고, 프로그래머들이 이것을 왜 하는지에 대해 두세 문장으로 설명합니다.
 
-랜덤한 숫자를 생성하는 데 참여하려는 이유 중 하나는 게임이나 시뮬레이션 등의 프로그램에서 다양한 결과를 얻고자 하는 것일 수 있습니다.
+난수 생성은 순서가 없고 무작위로 생성된 숫자를 만드는 것을 말합니다. 프로그래머들은 난수를 사용하여 다양한 시나리오를 시도하고, 프로그램의 무작위성을 증가시키며, 보안을 강화하며, 그리고 게임에서 특정한 상황을 만들 때 사용합니다.
 
-## 하는 방법
+## 어떻게:
+ ```Swift
+ // Swift에서 난수 생성은 매우 간단합니다.
+ // arc4random() 함수를 사용하여 무작위로 생성된 숫자를 반환합니다.
+ let randomNum = arc4random()
+ print(randomNum) // 예시 출력: 4294967295
+ ```
+ ```Swift
+ // 만약 우리가 특정한 범위 내에서 난수를 생성하려면?
+ // 그것도 쉽습니다. arc4random_uniform() 함수를 사용하면 됩니다.
+ let randomInRange = arc4random_uniform(100)
+ print(randomInRange) // 예시 출력: 42
+ ```
 
-랜덤한 숫자를 생성하는 방법에 대한 몇 가지 예제를 살펴보겠습니다.
+## 깊게 들어가기:
+(1) 난수 생성에 대한 역사적인 배경
+난수 생성은 컴퓨터 과학에서 매우 중요한 주제이며 다양한 알고리즘과 기법이 발전하였습니다. 예를 들어, 소프트웨어 공학 분야에서는 난수 생성기의 특정한 속성을 검증하기 위해 많은 연구가 이루어져 왔습니다.
 
-```Swift
-// 1에서 10 사이의 랜덤한 정수 생성
-let randomInt = Int.random(in: 1...10)
-print(randomInt) // 예상 출력: 5
+(2) 대안들
+난수 생성은 무작위성과 효율성 측면에서 쉽게 접근할 수 있는 여러 가지 대안이 존재합니다. 일반적으로 프로그래밍 언어에서 기본적으로 제공하는 랜덤 함수를 사용하는 것이 가장 일반적이지만, 몇 가지 다른 방법들도 존재합니다.
 
-// 0에서 1 사이의 랜덤한 실수 생성
-let randomDouble = Double.random(in: 0.0...1.0)
-print(randomDouble) // 예상 출력: 0.587743148583387
-```
+(3) 구현 세부사항
+난수 생성은 엄밀한 정의가 필요한 분야입니다. 알고리즘 디자인, 동작, 적용 분야 등을 감안할 때, 작은 변화도 전혀 다른 결과를 초래할 수 있습니다. 따라서, 난수 생성은 보안과 같은 신뢰성이 중요한 분야에서 매우 신중하게 다루어져야 합니다.
 
-이 외에도 `Int.random(in: Range)`와 `Double.random(in: Range)` 같은 다양한 메소드를 사용해 원하는 범위 내에서 랜덤한 숫자를 생성할 수 있습니다.
-
-## 깊이 파헤치기
-
-랜덤한 숫자를 생성하는 기술로는 난수 발생기(pseudo-random number generator, PRNG)를 사용합니다. PRNG는 난수 시퀀스를 생성하기 위해 초기 값(seed)에 따라 동일한 순서로 숫자를 생성하며, 이를 통해 예측 불가능한 결과를 얻을 수 있습니다. 하지만 PRNG는 사실 진짜 랜덤한 숫자가 아니므로 보안적으로 안전하지 않은 용도에는 사용하지 않도록 주의해야 합니다.
-
-## 참고 자료
-
-- [Swift 공식 문서 - Random Numbers](https://docs.swift.org/swift-book/LanguageGuide/TheBasics.html#ID310)
-- [Swift 4.2: 난수 생성하기](https://zeddios.tistory.com/392)
-- [난수 발생기와 난수 분포](https://ko.wikipedia.org/wiki/%EB%82%9C%EC%88%98_%EB%B0%9C%EC%83%9D%EA%B8%B0%EC%99%80_%EB%82%9C%EC%88%98_%EB%B6%84%ED%8F%AC)
+## 관련 자료:
+- [Swift에서 난수 생성하기](https://developer.apple.com/documentation/gameplaykit/gkrandomsource)
+- [컴퓨터 과학에서의 난수 생성](https://www.educative.io/blog/random-number-generation-algorithms)

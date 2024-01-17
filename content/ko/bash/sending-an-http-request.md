@@ -10,40 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
-*왜 누군가가 HTTP 요청을 보내는지 설명하는 최대 2문장.*
+## 무엇과 왜?
 
-HTTP 요청은 인터넷 상에서 정보를 교환하는 가장 일반적인 방법 중 하나입니다. 여러분은 웹사이트, 앱, 또는 API와의 상호작용을 통해 다양한 정보를 얻거나 제공하기 위해 HTTP 요청을 보낼 수 있습니다.
+HTTP 요청을 보내는 것은 우리가 인터넷에서 정보를 가져오는 데에 매우 중요한 일입니다. 그것은 컴퓨터 프로그램이 서버에게 어떤 정보를 요청하고, 서버가 그에 따른 응답을 주는 과정을 말합니다. 프로그래머들은 HTTP 요청을 보내는 것으로 인터넷에서 정보를 가져오거나 전송하는 기능을 프로그램에 추가할 수 있습니다. HTTP 요청은 웹 브라우저로부터 이메일 클라이언트까지 다양한 인터넷 프로그램에서 사용될 수 있습니다.
 
-## 사용 방법
+## 하는 방법:
 
-* ```Bash
-  curl <URL>
-  ```
-  *주어진 URL로 특정 웹 페이지에 접근하는 간단한 방법입니다.
+HTTP 요청을 보내는 것은 Bash 스크립트에서 매우 간단한 일입니다. 다음 코드 블록 안에 코드를 작성하면 됩니다.
 
-* ```Bash
-  curl -X POST -H "Content-Type: application/json" -d '{"username": "John", "password": "123"}' <URL>
-  ```
-  *HTTP POST 요청을 보내는 더 복잡한 예제입니다. 헤더와 본문 내용을 함께 포함해야 할 때 유용합니다.
+```Bash
+curl http://example.com
+```
 
-### 출력 예시
+위의 코드는 서버에게 http://example.com 이라는 사이트에 대한 요청을 보냅니다. 이 코드를 실행하면, 서버로부터 해당 사이트의 HTML 코드가 출력될 것입니다.
 
-* ```Bash
-  <HTTP response>
-  ```
-  *서버로부터 받은 HTTP 응답을 출력하는 방법입니다. 응답에는 상태 코드, 헤더, 본문 등이 포함될 수 있습니다.
+HTTP 요청을 보내는 또 다른 방법은 wget을 사용하는 것입니다. 다음과 같은 코드로 특정 파일을 다운로드할 수 있습니다.
 
-## 깊이 파고들기
+```Bash
+wget http://example.com/sample.pdf
+```
 
-HTTP 요청은 다양한 메서드를 사용할 수 있으며 각 메서드는 다른 목적을 가지고 있습니다. GET 메서드는 웹페이지를 가져오는 데 사용되고, POST 메서드는 데이터를 서버에 제출하기 위해 사용됩니다. 또한 HTTP 요청은 헤더를 사용해 웹페이지로 전송되는 정보를 조절하는 것도 중요합니다.
+## 깊이 보기:
 
-## 참고자료
+HTTP 요청은 현대 인터넷에서 굉장히 중요한 개념입니다. 1990년대 이후, 웹 페이지를 볼 수 있고 이메일을 주고받을 수 있는 데에 HTTP 요청이 매우 큰 역할을 했습니다. 또한, HTTP 외에도 FTP, SMTP 등 다른 프로토콜을 사용하여 데이터를 주고받는 방법도 있지만, HTTP가 최신 웹애플리케이션에서 가장 보편적이며 인기 있는 방식입니다.
 
-* [curl 공식 문서](https://curl.se/docs/)
-* [HTTP 요청 메서드에 대한 설명](https://developer.mozilla.org/ko/docs/Web/HTTP/Methods)
-* [HTTP 헤더에 대한 자세한 정보](https://developer.mozilla.org/ko/docs/Web/HTTP/Headers)
+HTTP 요청을 보내는 방법은 Bash 뿐만 아니라 다른 프로그래밍 언어에서도 동일하게 사용됩니다. 이를 통해 프로그래머들은 인터넷과 상호작용하며 다양한 데이터를 가져오거나 전송할 수 있도록 도와줍니다.
 
-## 참고
+## 참고 자료:
 
-이 문서는 Bash의 현재 버전인 5.1 기준으로 작성되었습니다. 이외의 다른 버전에서는 결과가 다를 수 있습니다.
+- [HTTP 요청과 응답](https://developer.mozilla.org/ko/docs/Web/HTTP/Overview)
+- [Bash 스크립트란? (위키백과)](https://ko.wikipedia.org/wiki/Bash)

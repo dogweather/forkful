@@ -1,7 +1,7 @@
 ---
-title:                "Scaricare una pagina web"
-html_title:           "Clojure: Scaricare una pagina web"
-simple_title:         "Scaricare una pagina web"
+title:                "Scaricare una pagina web."
+html_title:           "Clojure: Scaricare una pagina web."
+simple_title:         "Scaricare una pagina web."
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "HTML and the Web"
@@ -10,40 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+## Cosa & Perché?
+Il download di una pagina web è semplicemente il processo di ottenere il contenuto di una pagina web da Internet. I programmatori spesso fanno questo per accedere a dati importanti o per automatizzare alcune attività.
 
-Scaricare una pagina web è un'operazione comune nella programmazione. Può essere utile per ottenere dati da un sito, analizzare informazioni o semplicemente mostrarlo all'utente.
-
-## Come fare
-
-Per scaricare una pagina web, abbiamo bisogno di utilizzare la libreria di Clojure chiamata `clj-http`. Quindi, prima di iniziare, assicurati di averla installata nel tuo progetto.
+## Come fare:
+Per effettuare il download di una pagina web in Clojure, è possibile utilizzare la libreria `clj-http`. Inizialmente, è necessario importare questa libreria all'interno del proprio codice usando la seguente direttiva:
 
 ```Clojure
-(require '[clj-http.client :as client])
-```
+(ns mia-app.core
+  (:require [clj-http.client :as client]))
 
-Ora che abbiamo importato la libreria, possiamo procedere a scaricare una pagina web. Utilizziamo la funzione `client/get`, che richiede l'URL della pagina che vogliamo scaricare.
+```
+A questo punto, è possibile utilizzare la funzione `client/get` per inviare una richiesta GET a una pagina web e ottenere il suo contenuto come stringa:
 
 ```Clojure
-(client/get "https://clojure.org/")
+(def pagina (client/get "https://www.example.com"))
 ```
 
-Questo ci darà come output un oggetto con i dati della pagina web. Possiamo visualizzarlo stampando il corpo della risposta:
+Il risultato sarà salvato nella variabile `pagina`. 
 
-```Clojure
-(client/get "https://clojure.org/")
-(:body response)
-```
+## Approfondimento:
+Il download di una pagina web è diventato una parte essenziale della programmazione moderna, poiché la maggior parte delle applicazioni web si basano su dati ottenuti dal web. Inoltre, esistono anche altre alternative per effettuare il download di una pagina web in Clojure, come ad esempio utilizzando la libreria `clojure.java.io` o utilizzando la JVM diretta.
 
-## Approfondimento
+È importante notare che il download di una pagina web può anche essere utilizzato per fini malevoli, quindi è sempre importante fare attenzione a quale pagina viene scaricata e come viene utilizzata.
 
-La funzione `client/get` ci offre la possibilità di specificare ulteriori parametri per personalizzare la nostra richiesta. Ad esempio, possiamo specificare un header personalizzato utilizzando il parametro `:headers`, o aggiungere dei parametri alla query string utilizzando il parametro `:query-params`. 
+Per ulteriori informazioni sulla libreria `clj-http`, è possibile consultare la sua documentazione ufficiale su GitHub: https://github.com/dakrone/clj-http
 
-Possiamo anche utilizzare `client/post` per fare una richiesta di tipo `POST` invece che `GET`, e specificare un corpo della richiesta utilizzando il parametro `:body`.
-
-Per maggiori informazioni, puoi consultare la documentazione della libreria `clj-http` su [GitHub](https://github.com/dakrone/clj-http).
-
-## Vedi anche
-
-- [Documentazione di `clj-http`](https://github.com/dakrone/clj-http)
-- [Esempi di utilizzo di `clj-http`](https://www.baeldung.com/http-client-clojure)
+## Vedi anche:
+- Guida completa su come utilizzare la libreria `clj-http`: https://github.com/dakrone/clj-http/wiki
+- Altre opzioni per effettuare il download di una pagina web in Clojure: https://medium.com/@draganrocksaca/web-scraping-in-clojure-c50fe40c0b9c

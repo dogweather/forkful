@@ -1,7 +1,7 @@
 ---
-title:                "Att arbeta med json"
-html_title:           "C++: Att arbeta med json"
-simple_title:         "Att arbeta med json"
+title:                "Arbeta med json"
+html_title:           "C++: Arbeta med json"
+simple_title:         "Arbeta med json"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Data Formats and Serialization"
@@ -10,77 +10,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Varför
+## Vilket och varför? 
+JSON (JavaScript Object Notation) är ett lättviktigt och enkelt format för att strukturera och lagra data. Det är särskilt populärt inom webbutveckling eftersom det enkelt kan läsas och skrivas av både människor och maskiner.
 
-JSON är enligt många utvecklare ett måste i deras toolkit. Det är ett populärt format för datautbyte på webben och används ofta i APIer och databaser. Genom att lära dig hur man arbetar med JSON, kommer du att kunna hantera och manipulera data på ett effektivt sätt.
+Programmerare använder JSON för att överföra och lagra data på ett enhetligt sätt, vilket gör det lättare att hantera och integrera data mellan olika system och applikationer.
 
-# Så här gör du
-
-Det första steget för att arbeta med JSON i C++ är att inkludera biblioteket "nlohmann/json" i ditt projekt. Sedan kan du enkelt skapa, tolka och manipulera JSON-objekt med hjälp av kodexempel nedan.
-
+## Så här gör du:
 ```C++
-// Skapa ett tomt JSON-objekt
-nlohmann::json min_json;
+#include <iostream>
+#include <nlohmann/json.hpp> // Header-fil för att arbeta med JSON-data
+using namespace std;
+using json = nlohmann::json; // Använda nlohmann biblioteket för att arbeta med JSON
 
-// Lägg till en nyckel och ett värde
-min_json["namn"] = "Lisa";
-min_json["ålder"] = 25;
-```
+int main() {
+   // Skapa ett JSON-objekt
+   json myObj = {
+      {"förnamn", "Anna"},
+      {"efternamn", "Andersson"},
+      {"ålder", 25},
+      {"intressen", {"programmering", "matlagning", "resor"}}
+   };
 
-För att få en strukturerad utskrift av ditt JSON-objekt kan du använda funktionen `dump()` som finns tillgänglig i biblioteket. Detta kommer att skriva ut hela ditt JSON-objekt med nycklar och värden.
+   // Utöka JSON-objektet med en array av favoritmat
+   myObj["favoritmat"] = {"sushi", "pizza", "sallad"};
 
-```C++
-// Skriv ut ditt JSON-objekt
-std::cout << min_json.dump() << std::endl;
+   // Skriv ut värdet på "förnamn"
+   cout << "Förnamn: " << myObj["förnamn"] << endl;
 
-// Output:
-// {
-//    "namn": "Lisa",
-//    "ålder": 25
-// }
-```
+   // Omvandla json-objektet till en sträng
+   string output = myObj.dump();
 
-För att läsa och tolka en JSON-fil i ditt projekt kan du använda funktionen `parse()` som finns i biblioteket. Detta kommer att översätta en JSON-fil till ett JSON-objekt som du kan använda som du vill.
+   // Skriv ut strängen
+   cout << "JSON-data: " << output << endl;
 
-```C++
-// Läs och tolka en JSON-fil
-nlohmann::json ny_json = nlohmann::json::parse("mitt_json.json");
-
-// Hämta ett värde från JSON-objektet
-std::string namn = ny_json["namn"];
-std::cout << "Välkommen " << namn << ", till din JSON-fil!" << std::endl;
-
-// Output:
-// Välkommen Lisa, till din JSON-fil!
-```
-
-# Djupdykning
-
-Ett annat sätt att lägga till nycklar och värden i ditt JSON-objekt är att använda funktionen `emplace()`. Detta gör att du kan lägga till en nyckel och ett värde i ett JSON-objekt utan att behöva använda `[]` operatorn.
-
-```C++
-// Lägg till en nyckel och ett värde med emplace()
-ny_json.emplace("jobb", "webbutvecklare");
-```
-
-För att komma åt specifika delar av ditt JSON-objekt kan du använda `find()` funktionen. Detta returnerar en iterator som pekar på nyckeln och värdet som du söker.
-
-```C++
-// Hitta specifikt värde med find()
-auto it = ny_json.find("jobb");
-
-// Skriv ut resultatet
-if (it != ny_json.end()) {
-    std::cout << "Ditt jobb: " << *it << std::endl;
+   return 0;
 }
-
-// Output:
-// Ditt jobb: webbutvecklare
 ```
 
-Genom att läsa på om nlohmann/json biblioteket och experimentera med olika funktioner och metoder, kan du utveckla dina kunskaper om hur man arbetar med JSON i C++.
+Output:
+```
+Förnamn: Anna
+JSON-data: {"förnamn":"Anna","efternamn":"Andersson","ålder":25,"intressen":["programmering","matlagning","resor"],"favoritmat":["sushi","pizza","sallad"]}
+```
 
-# Se även
+## Djupdykning:
+JSON skapades ursprungligen av Douglas Crockford 2001 och har sedan dess blivit ett populärt format för datautbyte inom webbutveckling. Innan JSON användes ofta XML för strukturerad data, men på grund av dess komplexitet och tunga syntax blev JSON ett mer attraktivt alternativ.
 
-* Officiell dokumentation för nlohmann/json: https://github.com/nlohmann/json
-* En tutorial om hur man använder JSON i C++: https://www.programiz.com/cpp-programming/library/json
+Det finns också andra format för datastrukturering, som till exempel YAML och BSON. Men JSON är fortfarande den mest använda inom webbapplikationer på grund av sin enkelhet och lätthet att integrera med olika programmeringsspråk.
+
+Implementeringen av JSON i C++ är möjlig genom olika bibliotek, som nlohmann/json som användes i exemplet ovan. Det finns också andra alternativ som JSON for Modern C++ och RapidJSON.
+
+## Se även:
+- [nlohmann/json bibliotekets hemsida](https://github.com/nlohmann/json)
+- [En introduktion till JSON](https://www.json.org/json-sv.html)
+- [XML vs JSON - What's the Difference?](https://www.webfx.com/blog/web-design/xml-vs-json/)

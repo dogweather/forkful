@@ -1,7 +1,7 @@
 ---
-title:                "Tekstin etsiminen ja korvaaminen"
-html_title:           "PHP: Tekstin etsiminen ja korvaaminen"
-simple_title:         "Tekstin etsiminen ja korvaaminen"
+title:                "Tekstin hakeminen ja korvaaminen"
+html_title:           "PHP: Tekstin hakeminen ja korvaaminen"
+simple_title:         "Tekstin hakeminen ja korvaaminen"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Strings"
@@ -10,38 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mikä & Miksi?
 
-Miksi joku haluaisi etsiä ja korvata tekstiä? Yksi syy voi olla, että he haluavat nopeasti ja tehokkaasti muuttaa suuria määriä tekstiä sivustollaan tai sovelluksessaan ilman manuaalista työtä.
+Tekstin etsiminen ja korvaaminen on yleinen ohjelmoinnin käsite, joka tarkoittaa tiettyjen merkkijonojen tai osien etsimistä ja niiden korvaamista toisilla. Tämä on tärkeä työkalu, jota ohjelmoijat käyttävät muun muassa tehokkaamman koodin luomiseen ja virheiden korjaamiseen.
 
-## Miten
+## Miten:
 
-Etsiminen ja korvaaminen tekstistä on helppoa PHP:llä. Sinun tarvitsee vain käyttää "preg_replace" -funktiota, joka etsii määrättyä tekstiä ja korvaa sen halutulla tekstillä. Katso alla oleva koodiesimerkki:
-
+Esimerkiksi, jos haluat etsiä tietyn sanan tai lauseen ja korvata sen toisella, voit käyttää PHP:n ```str_replace()``` funktiota. Tässä on yksinkertainen esimerkki koodista ja sen tulosteesta:
 ```
-PHP
-$text = "Tervetuloa maailmaan";
-$new_text = preg_replace("/Tervetuloa/", "Welcome", $text);
-echo $new_text;
-// Output: Welcome maailmaan
+$input = "Tervetuloa kurssille!";
+$output = str_replace("Tervetuloa", "Hei", $input);
+echo $output; // tulostaa "Hei kurssille!"
 ```
-Ensimmäisessä rivissä luodaan muuttuja "text", joka sisältää alkuperäisen tekstin. Toisessa rivissä käytetään "preg_replace" -funktiota, jossa ensimmäisessä parametrissa annetaan etsittävä teksti, toisessa parametrissa korvaava teksti ja kolmannessa parametrissa alkuperäinen teksti. Lopuksi koodi tulostaa uuden tekstin, jossa alkuperäinen teksti on korvattu halutulla tekstillä.
-
-## Syvällinen sukellus
-
-"Preg_replace" -funktion avulla voit myös käyttää säännöllisiä lausekkeita etsiessäsi tekstiä. Tämä antaa sinulle enemmän tarkkuutta ja joustavuutta korvataessa tekstiä. Voit esimerkiksi etsiä kaikki sanat, jotka alkavat "T" -kirjaimella ja korvata ne tekstillä "Hei". Katso alla oleva koodiesimerkki:
-
+Voit myös käyttää säännöllisiä lausekkeita tekstien etsimiseen ja korvaamiseen. Esimerkiksi, jos haluat korvata kaikki välimerkit tyhjillä, voit käyttää ```preg_replace()``` funktiota:
 ```
-PHP
-$text = "Tämä on vain esimerkki";
-$new_text = preg_replace("/(^|\W)T(\w*)/", "$1Hei$2", $text);
-echo $new_text;
-// Output: Hei on vain esimerkki
+$string = "Tämä on esimerkki: ääkkösiä!";
+$output = preg_replace("/[^\p{L}]/u", '', $string);
+echo $output; // tulostaa "TämäonEsimerkiääkkösiä"
 ```
 
-Tässä koodissa käytetään säännöllistä lauseketta "/(^|\W)T(\w*)/" ensimmäisessä parametrissa, mikä merkitsee kaikkia sanoja, jotka alkavat "T" -kirjaimella. Sitten korvaavassa tekstissä käytetään merkkijonoja "$1" ja "$2", jotka tarkoittavat ensimmäistä ja toista osumaa säännöllisestä lausekkeesta. Tämä tarkoittaa, että alkuperäiset välimerkit ja seuraava kirjain ovat edelleen uudessa tekstissä.
+## Syvemmälle:
 
-## Katso myös
+Tekstin etsiminen ja korvaaminen on ollut osa ohjelmointia jo vuosikymmenten ajan ja sitä on käytetty erilaisiin tarkoituksiin, kuten datan siirtoon ja käännöstyöhön. Lisäksi on olemassa muita vaihtoehtoisia tapoja toteuttaa tämä toiminto, kuten awk, sed ja Perl.
 
-- [PHP: preg_replace docs](https://www.php.net/manual/en/function.preg-replace.php)
-- [RegExp Tester](https://regex101.com/) - sivusto, jossa voit testata säännöllisiä lausekkeita ja niiden osumia.
+Tekstin etsiminen ja korvaaminen on myös mahdollista tehdä käyttäen PHP:n omia string funktioita, kuten ```str_replace()``` ja ```substr_replace()```. Näiden toimintojen ero on lähinnä siinä, että säännöllisiä lausekkeita voi käyttää vain ```preg_replace()``` funktion kanssa.
+
+## Katso myös:
+
+- [PHP:n virallinen dokumentaatio tekstien etsimisestä ja korvaamisesta](https://www.php.net/manual/en/function.preg-replace.php)
+- [Selitys regular expression säännöistä](http://www.rexegg.com/regex-quickstart.html)

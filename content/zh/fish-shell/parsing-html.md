@@ -10,41 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
+## 什么是HTML解析及其作用?
+HTML解析是将HTML代码转换成可读的文本格式的过程。程序员们常常需要进行HTML解析，是因为这样可以轻松地提取特定的文本内容或是数据，并且将其应用于其他的程序中。
 
-对于程序员来说，解析 HTML 是一个常见的任务。它可以让我们从网页中提取出有用的信息，帮助我们用更有效的方式处理数据。Fish Shell 正是为了方便我们处理这种任务而设计的。
+## 怎样实现?
 
-## 如何使用
-
-想要在 Fish Shell 中解析 HTML，你需要安装 `curl` 和 `pup` 工具。 `pup` 是一个用于解析 HTML 的命令行工具，它支持 CSS 选择器和 XPath 表达式。下面是一个基本示例：
-
-```fish
-curl -s https://www.example.com | pup 'h1 text{}'
-```
-
-这个命令会从指定网页中提取标题，并输出到终端。如果你想要提取多个元素，可以使用 `-f` 指定输出格式：
+使用Fish Shell 进行HTML解析非常简单，在以下的示例中我们将展示如何提取网页中的标题和链接。首先，我们需要安装一个名为“html-xml-utils”的工具，它可以帮助我们解析HTML代码。
 
 ```fish
-curl -s https://www.example.com |
-    pup '.card text{}' |
-    awk 'BEGIN{RS=""}{$1=$1}1' OFS=\n > output.txt
+#安装html-xml-utils
+brew install html-xml-utils
+
+#提取标题
+hxextract -s "<title>" "https://www.example.com"
+
+#提取链接
+hxselect -s "a" "https://www.example.com"
 ```
 
-这个命令会提取网页中所有带有 `.card` 类的元素，并将每个元素的内容以换行符分隔保存到 `output.txt` 文件中。
+我们可以在终端中运行以上代码，并且将会得到一个可读的文本输出，其中包括了网页中的标题和链接。
 
 ## 深入了解
 
-除了基本的 CSS 选择器和 XPath 表达式，`pup` 还支持一些高级功能，如条件选择和输出格式。你可以通过 `pup --help` 命令查看所有的选项和使用说明。
+### 历史背景
+HTML解析技术最早出现在上世纪90年代早期，当时，人们开始意识到需要一种方法来将HTML代码转换成可读的文本格式，从而使其更容易被处理和使用。
 
-另外，`pup` 还支持使用 JavaScript 对 HTML 文档进行修改和操作，这为解析复杂的页面提供了更多的灵活性。你可以通过在 `pup` 命令后加上 `-f` 参数来指定一个内联的 JavaScript 函数来实现这一功能。
+### 替代方法
+除了使用在Shell中使用工具进行HTML解析，也有其他替代方法。例如，可以使用Python中的Beautiful Soup库，或是JavaScript中的Cheerio库来实现同样的功能。
 
-## 参考资料
+### 实现细节
+在Fish Shell中，使用html-xml-utils工具进行HTML解析时，它实际上是调用了一个指令叫“htmltidy”。这个指令是一个开源的工具，通常用于将HTML代码转换成更加干净的格式。通过使用这个工具，我们可以获得更准确和有效的HTML解析结果。
 
-- [pup 官方文档](https://github.com/ericchiang/pup)
-- [示例代码](https://github.com/ericchiang/pup#bash-example)
-- [XPath 表达式简易教程](https://www.w3school.com.cn/xpath/xpath_syntax.asp)
-
-## 参见
-
-- [CSS 选择器简易教程](https://www.runoob.com/cssref/css-selectors.html)
-- [Fish Shell 官方文档](https://fishshell.com/docs/current/index.html)
+## 查看更多
+- [htmltidy GitHub page](https://github.com/htacg/tidy-html5)
+- [Beautiful Soup official documentation](https://www.crummy.com/software/BeautifulSoup/)
+- [Cheerio official website](https://cheerio.js.org/)

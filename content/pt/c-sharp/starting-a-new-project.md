@@ -10,41 +10,21 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+## O que e por que?
+Começar um novo projeto é quando os programadores iniciam um novo projeto de software ou desenvolvimento de aplicativo. Isso pode incluir a criação de um novo sistema do zero ou aprimorar e atualizar um existente. Os programadores fazem isso para atender a novas necessidades do mercado, melhorar a eficiência do sistema e fornecer novas funcionalidades aos usuários.
 
-Se você está pensando em iniciar um novo projeto em C#, pode haver várias razões para isso. Talvez você queira criar uma aplicação inovadora, aprimorar suas habilidades de programação ou até mesmo ser desafiado por um novo projeto. Independentemente do motivo, iniciar um novo projeto em C# pode ser empolgante e gratificante.
-
-## Como fazer
-
-Para começar um novo projeto em C#, você precisará seguir alguns passos simples. Primeiro, abra o Visual Studio e crie um novo projeto. Selecione o tipo de projeto que melhor se adapta às suas necessidades, como um aplicativo para desktop, aplicativo web ou biblioteca de classes.
-
-Em seguida, você precisará escrever seu código em C#. Aqui está um exemplo básico de código usando condicionais if-else:
-
-```C#
-// Exemplo de condicionais if-else 
-int x = 10;
-if (x > 5)
-{
-    Console.WriteLine("X é maior que 5.");
-}
-else
-{
-    Console.WriteLine("X é menor ou igual a 5.");
-}
+## Como fazer:
+```
+C# using System; 
+Console.WriteLine("Começando um novo projeto!"); 
+Console.WriteLine("Defina os requisitos do projeto e crie um plano de ação."); 
+Console.WriteLine("Escolha a linguagem de programação e estrutura de desenvolvimento apropriadas."); 
 ```
 
-Este código irá imprimir a frase "X é maior que 5." no console, pois a variável x tem o valor de 10, que é maior que 5.
+## Mergulho profundo:
+Quando os programadores começam um novo projeto, eles devem considerar muitos fatores, como o histórico da empresa, as necessidades dos usuários e as tendências de mercado. Além disso, eles podem optar por usar diferentes linguagens de programação, como Java ou Python, em vez de C# para o desenvolvimento do projeto. A implementação do projeto pode envolver várias etapas, como planejamento, codificação, teste e implantação.
 
-Você também pode experimentar outros recursos interessantes do C#, como loops, arrays, funções e muito mais. Não hesite em explorar o idioma e se divertir criando seu novo projeto.
-
-## Mergulho profundo
-
-Criar um novo projeto em C# pode parecer uma tarefa simples, mas há muitos detalhes que podem ser explorados. Por exemplo, é importante entender os diferentes tipos de projetos disponíveis no Visual Studio e quando usar cada um deles. Além disso, é essencial aprender sobre os recursos avançados do C# e como eles podem ajudá-lo a escrever um código mais eficiente e elegante.
-
-Uma ótima maneira de aprofundar seus conhecimentos em C# é participando de comunidades de programação online, lendo livros ou assistindo a tutoriais em vídeo. Isso permitirá que você aprenda com outros desenvolvedores experientes e descubra novas maneiras de escrever um código incrível.
-
-## Veja também
-
-- [Documentação oficial do C#](https://docs.microsoft.com/pt-br/dotnet/csharp/)
-- [Fórum de programação em C# da Microsoft](https://docs.microsoft.com/pt-br/answers/topics/csharp.html)
-- [Canal do YouTube "Programação em C#"](https://www.youtube.com/playlist?list=PLHz_AreHm4dkI2ZdjTwZA4mPMxWTfNSpR)
+## Veja também:
+- https://docs.microsoft.com/pt-br/dotnet/csharp/
+- https://www.devmedia.com.br/introducao-ao-desenvolvimento-de-software/840#:~:text=Desenvolvimento%20de%20software%20%C3%A9%20uma,software%20para%20solucionar%20um%20problema.&text=O%20desenvolvimento%20de%20um%20software,espec%C3%ADficos%20e%20nenhum%20restri%C3%A7%C3%B5es%20ocultas.
+- https://www.hostinger.com.br/tutoriais/o-que-%C3%A9-programa%C3%A7%C3%A3o

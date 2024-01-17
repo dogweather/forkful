@@ -1,7 +1,7 @@
 ---
-title:                "Encontrando o comprimento de uma string"
-html_title:           "TypeScript: Encontrando o comprimento de uma string"
-simple_title:         "Encontrando o comprimento de uma string"
+title:                "Encontrando o comprimento de uma string."
+html_title:           "TypeScript: Encontrando o comprimento de uma string."
+simple_title:         "Encontrando o comprimento de uma string."
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -10,31 +10,20 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+## O que é isso e por quê?
+Encontrar o comprimento de uma string significa determinar o número de caracteres que ela contém. Programadores frequentemente precisam fazer isso para executar tarefas como validar entradas de usuários ou manipular dados de forma eficiente.
 
-Em alguns casos, encontrar o comprimento de uma string pode ser uma tarefa importante em projetos de desenvolvimento. Por exemplo, ao validar uma entrada de usuário ou ao realizar operações matemáticas com base na string.
-
-## Como Fazer
-
-Existem algumas maneiras de encontrar o comprimento de uma string em TypeScript. Aqui estão duas opções:
-
+## Como fazer:
 ```TypeScript
-// Usando o método length
-const string = "Olá, mundo!";
-console.log(string.length); // output: 11
-
-// Usando a propriedade length da interface String
-const string2: String = "Hello, World!";
-console.log(string2.length); // output: 13
+const stringExemplo = "Ola, mundo!";
+console.log(stringExemplo.length);
+// Saída: 12
 ```
 
-## Mergulho Profundo
+## Profundidade:
+Para entender melhor a importância de encontrar o comprimento de uma string, é útil considerar seu contexto histórico. No passado, os programadores precisavam especificar o comprimento de uma string manualmente ao declará-la, o que podia levar a erros e código ineficiente. No entanto, com o surgimento de linguagens de programação modernas, como o TypeScript, essa tarefa agora é automatizada. Além disso, existem outras maneiras de encontrar o comprimento de uma string, como escrever uma função personalizada para percorrer cada caractere e incrementar um contador.
 
-Ao utilizar o método "length", a string é convertida para um array e, em seguida, o comprimento é calculado. Já ao utilizar a propriedade length da interface String, é feito um loop pela string em busca de caracteres, resultando em um pouco mais de processamento.
-
-Também é importante notar que, sendo TypeScript uma linguagem de tipagem estática, é possível utilizar apenas valores do tipo string ao encontrar o comprimento de uma string.
-
-## Ver também
-
-- [Documentação do método length (em inglês)](https://www.w3schools.com/jsref/jsref_length_string.asp)
-- [Documentação da interface String (em inglês)](https://www.typescriptlang.org/docs/handbook/variable-declarations.html#string)
+## Veja também:
+- [Documentação oficial do TypeScript sobre strings](https://www.typescriptlang.org/docs/handbook/basic-types.html#string)
+- [Outras formas de encontrar o comprimento de uma string em TypeScript](https://stackabuse.com/get-string-length-in-typescript/)
+- [Artigo sobre a história da manipulação de strings em programação](https://medium.com/@pisarenko99/the-history-of-string-manipulation-in-programming-779abb54166c)

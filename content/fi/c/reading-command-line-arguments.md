@@ -1,7 +1,7 @@
 ---
-title:                "Mainostoimiston tehtävä"
-html_title:           "C: Mainostoimiston tehtävä"
-simple_title:         "Mainostoimiston tehtävä"
+title:                "Lukemalla komentoriviparametreja"
+html_title:           "C: Lukemalla komentoriviparametreja"
+simple_title:         "Lukemalla komentoriviparametreja"
 programming_language: "C"
 category:             "C"
 tag:                  "Files and I/O"
@@ -10,59 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä ja miksi?
 
-Miksi haluaisit lukea komentorivin argumentteja? Yksinkertaisesti sanottuna, se on tärkeä taito, jota tarvitaan monissa C-ohjelmoinnin sovelluksissa. Komennen on mahdollista hyödyntää käyttäjän syötteitä ja parametreja, jotta ohjelma voi toimia eri tavoin kunkin tilanteen mukaan. Tämä tekee ohjelmasta joustavamman ja helpommin hallittavan.
+Komentoriviparametrien lukeminen tarkoittaa ohjelman argumenttien lukemista komentoriviltä. Tämä on tärkeää, jotta voidaan antaa ohjelmalle tarvittavat syötteet sen suorittamiseen. 
 
-## Kuinka tehdä se?
+Ohjelmoijat lukevat komentoriviparametreja, jotta he voivat mukauttaa ohjelmiaan käyttäjän antamilla arvoilla. Tämä tekee ohjelmista joustavampia ja käyttäjäystävällisempiä.
+
+## Miten tehdään?
+
+Voit lukea komentoriviparametreja hyödyntämällä **argc** ja **argv** -muuttujia, joiden avulla pääset käsiksi kaikkiin komentorivillä annettuihin argumentteihin. Käytämme **argc**-muuttujaa saadaksemme tiedon siitä, kuinka monta komentoriviparametria on annettu, ja **argv**-muuttujaa saadaksemme itse parametrien arvot.
 
 ```C
-#include <stdio.h>
-
-int main(int argc, char *argv[])
-{
-    // Tämä koodinpätkä tulostaa komentorivin argumentit
-    // yksi kerrallaan, alkaen ensimmäisestä argumentista (argv[1])
-    // argv[0] sisältää tiedoston nimen, joten se jätetään huomioimatta
-
-    printf("Sain %d argumenttia \n", argc - 1);
-
-    for (int i = 1; i < argc; i++)
-    {
-        printf("Argumentti %d: %s \n", i, argv[i]);
+int main(int argc, char* argv[]) {
+    // Käytä argc:ta parametrien lukumäärän tarkistamiseen
+    if (argc < 2) {
+        printf("Komentoriviparametreja ei annettu!\n");
+        return 0;
     }
-
+    
+    // Käytetään argv-muuttujaa tarkistamaan tiettyä parametria (esim. "tulosta")
+    for (int i = 0; i < argc; i++) {
+        if (strcmp(argv[i], "tulosta") == 0) {
+            printf("Parametri 'tulosta' annettu!\n");
+        }
+    }
     return 0;
 }
 ```
 
-**Syöte:**
+**Esimerkki syötteestä ja tulosteesta:**
 
 ```
-OhjelmanNimi argumentti1 argumentti2 argumentti3
+$ ./ohjelma tulosta lisää tuloste
+Parametri 'tulosta' annettu!
 ```
 
-**Tulos:**
+## Syvällisemmin
 
-```
-Sain 3 argumenttia
-Argumentti 1: argumentti1
-Argumentti 2: argumentti2
-Argumentti 3: argumentti3
-```
+Alunperin komentoriviparametreja käytettiin vain komentokehotteisiin, jotta voitaisiin helposti antaa tietoa ohjelmalle sen suorittamista varten. Nykyään käyttö on laajentunut muun muassa graafisten käyttöliittymien yhteydessä.
 
-Kuten koodista näkyy, ensimmäisessä argumentissa on tiedoston nimi, joten itse argumentit alkavat indeksistä 1. Nämä argumentit voidaan tallentaa muuttujiin ja käyttää halutulla tavalla ohjelmassa.
+Myös muita tapoja antaa ohjelmalle syötteitä on olemassa, kuten lataamalla ne tiedostoista tai käyttämällä ympäristömuuttujia. Jokaisella vaihtoehdolla on omat etunsa ja haittansa.
 
-## Syvemmälle aiheeseen
-
-Komennorivin argumentteja käsittelevä osa C-ohjelmoinnissa on osa standardikirjastoa stdlib.h. Tämä mahdollistaa argumenttien käsittelyn kaikissa C-ohjelmissa samantyyppisellä koodilla. 
-
-Lisäksi, komentorivin argumenttien lukumäärä ja tiedot voi tarkistaa esimerkiksi käyttämällä funktiota `argc` ja `argv`. `argc` sisältää argumenttien lukumäärän, ja `argv` on osoitin ensimmäiseen argumenttiin.
-
-Lisätietoja löytyy [C-kielen dokumentaatiosta](https://devdocs.io/c/).
+Komentoriviparametrien lukeminen perustuu ANSI C -standardiin, joten se on mahdollista kaikilla C-kielellä kirjoitetuilla ohjelmilla. Kuitenkin jokaisella käyttöjärjestelmällä voi olla omat toteutustapansa komentorivin käsittelyyn ja parametrien välittämiseen ohjelmalle.
 
 ## Katso myös
 
-[C-kielen dokumentaatio](https://devdocs.io/c/)
+[Lukemattomat komentoriviargumentit](https://linux.die.net/man/3/getopt) - C-kirjasto lukemiseen argumentteja komentoriviltä Linux-käyttöjärjestelmässä
 
-[Komentorivin argumenttien käsittely Bash-skripteillä](https://www.linode.com/docs/tools-reference/tools/how-to-use-arguments-in-a-bash-script/)
+[Komentoriviparametrien lukeminen Visual Studiolla](https://docs.microsoft.com/en-us/cpp/cpp/how-to-parse-command-line-arguments) - Ohjeita ja esimerkkejä lukemiseen komentoriviargumentteja Visual Studiolla.

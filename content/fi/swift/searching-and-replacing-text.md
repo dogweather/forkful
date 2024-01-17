@@ -10,46 +10,20 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä se on ja miksi?
+Etsiminen ja tekstin korvaaminen on tärkeä osa ohjelmointia. Kun koodaamme, me käsittelemme suurta määrää tekstiä, joka voi olla virheellistä tai muuttua usein. Joskus meidän täytyy etsiä tiettyjä sanoja tai lausekkeita ja korvata ne toisilla. Tämä auttaa meitä vähentämään virheitä ja tekee koodin muokkauksen helpommaksi.
 
-Ehkä olet huomannut, että vakioviestisi sisältösi tarvitsee päivittämistä tai haluat vaihtaa samankaltaiset lauseet toisiksi. Ei ole tarpeellista kirjoittaa jokaisen rivin uudestaan, silloin voit käyttää tekstinhakua ja korvausta. Se on yksinkertainen tapa säästää aikaa ja varmistaa, että viestisi on yhtenäinen ja ajantasainen.
-
-## Kuinka tehdä se
-
-Käytä tekstinhakufunktiota ja korvaa siihen haluamasi lause. Voit myös käyttää säännöllisiä lausekkeita tarkentamaan hakua. Tutustu esimerkkituloksiin alla olevissa Swift-koodilohkoissa.
-
+## Kuinka tehdä se:
+Voit etsiä ja korvata tekstiä Swiftissä käyttäen `replacingOccurrences(of:with:)` -metodia. Tämä metodi ottaa ensimmäisenä parametrina etsittävän tekstin ja toisena parametrina korvaavan tekstin. Esimerkiksi, jos haluat korvata kaikki "hello" -sanat "hei" -sanalla, käyttäisit seuraavaa koodia:
 ```Swift
-// Alustetaan vakioviesti
-var viesti = "Tervetuloa!"
-
-// Hakua ja korvausta käyttämällä muutetaan viesti
-viesti = viesti.replacingOccurrences(of: "Tervetuloa", with: "Hei")
-
-// Tulostetaan muokattu viesti
-print(viesti)
-
-// Tulostaa: Hei!
+let teksti = "Tervetuloa maailmaan!"
+let muokattuTeksti = teksti.replacingOccurrences(of: "Tervetuloa", with: "Hei")
+print(muokattuTeksti) // tulostaa "Hei maailmaan!"
 ```
+Voit myös käyttää `replacingOccurrences(of:with:options:)` -metodia, joka antaa sinulle enemmän vaihtoehtoja, kuten isot ja pienet kirjaimet huomioiminen. Voit lukea lisää näistä vaihtoehdoista [Swiftin dokumentaatiosta](https://developer.apple.com/documentation/foundation/nsstring/1410083-replacingoccurrences).
 
-```Swift
-// Toinen esimerkki
-var lause = "Pysy terveenä ja turvassa!"
+## Syvemmälle:
+Etsiminen ja korvaaminen on ollut osa ohjelmointia jo kauan ennen Swiftiä. Nykyään on olemassa myös muita tapoja etsiä ja korvata tekstiä, kuten käyttämällä säännöllisiä lausekkeita. Joissakin tapauksissa voit myös käyttää `replaceSubrange(_:with:)` -metodia, joka korvaa tietyn osan merkkijonosta toisella osalla.
 
-// Korvataan vain osa lauseesta
-lause = lause.replacingOccurrences(of: "turvassa", with: "onnellisena")
-
-// Tulostetaan muokattu lause
-print(lause)
-
-// Tulostaa: Pysy terveenä ja onnellisena!
-```
-
-## Syvemmälle aiheeseen
-
-Swiftin `replacingOccurrences(of:with:)` -metodilla voidaan korvata ei ainoastaan tekstiä, vaan myös merkkijonoja, vaihtaa osia merkkijonosta ja paljon muuta. Voit myös käyttää erilaisia säännöllisiä lausekkeita hakujen tarkentamiseen, kuten `[aeiou]` korvaamaan kaikki vokaalit haluamallasi merkillä. Älä epäröi kokeilla erilaisia vaihtoehtoja löytääksesi parhaan ratkaisun tarpeisiisi.
-
-## Katso myös
-
-- [Apple Developer Documentation: Text Searching and Replacement](https://developer.apple.com/documentation/foundation/nsstring/1417171-replacingoccurrences)
-- [Regular Expressions Tutorial in Swift](https://www.raywenderlich.com/86205/nsregularexpression-swift-tutorial)
-- [Swift Regular Expression Cheat Sheet](https://www.swiftbysundell.com/posts/regular-expressions-in-swift)
+## Katso myös:
+Swiftin [virallinen dokumentaatio](https://developer.apple.com/documentation/swift/string) sisältää lisätietoa tekstin etsimisestä ja korvaamisesta. Voit myös tutustua [säännöllisiin lausekkeisiin Swiftissä](https://www.hackingwithswift.com/articles/108/how-to-use-regular-expressions-in-swift).

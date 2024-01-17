@@ -10,87 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hva og hvorfor?
 
-Vi har sikkert alle vært i situasjoner der vi har kjørt en Bash-skript og ingen ting skjer. Det eneste vi får er en enkel feilmelding, uten noen hint om hva som går galt. Dette er når printing av debug output kan komme til unnsetning. Det lar oss se hva som skjer bak kulissene, og hjelper oss med å finne og løse feil.
+Printing debug output, eller utskrift av feilsøkingsinformasjon, er en essensiell del av programmering. Det refererer til å skrive ut informasjon om hva som skjer i programmet under kjøringen, som kan hjelpe utvikleren med å identifisere og fikse eventuelle feil. Dette gjøres vanligvis ved å bruke spesielle kommandoer for å sende ut spesifikke beskjeder til konsollen eller en fil.
 
-## Hvordan gjøre det
+## Slik gjør du det:
 
-For å printe debug output i Bash, bruk `echo`-kommandoen. Du kan enten skrive ut teksten direkte, eller bruke variabler for å få informasjon fra skriptet.
+For å skrive ut enkel tekst, kan du bruke kommandoen `echo` etterfulgt av teksten du ønsker å skrive ut mellom doble anførselstegn. For eksempel: 
 
-```
-#!/bin/bash
-
-# Printer ut teksten "Hello World!"
-echo "Hello World!" 
-
-# Bruker en variabel
-name="John"
-echo "Hei $name, velkommen til min skript!"
+```Bash
+echo "Dette er en debug-melding"
 ```
 
-Output:
+Du kan også bruke `printf` kommandoen for å formatere utskriften mer nøyaktig. For eksempel:
 
-```
-Hello World!
-Hei John, velkommen til min skript!
-```
-
-En annen måte å printe ut debug output er ved å bruke `set -x` kommandoen på toppen av skriptet. Dette vil vise hvert steg i skriptet og resultatet av hvert kommando.
-
-```
-#!/bin/bash
-
-set -x
-
-# Printer ut teksten "Hello World!"
-echo "Hello World!" 
-
-# Bruker en variabel
-name="John"
-echo "Hei $name, velkommen til min skript!"
+```Bash
+printf "Feilen skjedde på linje %d" "$LINENO"
 ```
 
-Output:
+## Dypdykk:
 
-```
-+ echo 'Hello World!'
-Hello World!
-+ name=John
-+ echo 'Hei John, velkommen til min skript!'
-Hei John, velkommen til min skript!
-```
+Printing debug output har vært en de facto standard i programmering siden de tidligste dagene av Unix og Linux-operativsystemer. Det er en rask og enkel måte å feilsøke på og kan hjelpe til med å finne årsaken til komplekse feil. Alternativer til å skrive ut feilsøkingsinformasjon inkluderer å bruke en debugger, som kan være mer effektivt, men også mer komplekst. Implementeringen av printing debug output varierer avhengig av programmeringsspråk, men de fleste språk har spesifikke kommandoer for å skrive ut informasjon til konsollen eller en fil.
 
-## Dypdykk
+## Se også:
 
-Når man printer debug output, er det viktig å huske på å ikke utsette sensitiv informasjon som passord, personlig informasjon eller systeminformasjon. Det kan også være nyttig å bruke en `if`-setning for å bare printe informasjonen hvis en bestemt betingelse er oppfylt.
-
-En annen måte å få mer detaljert debug output er ved å bruke `set -xv`kommandoen, som vil vise hvert trinn i skriptet, inkludert verdiene til variablene.
-
-```
-#!/bin/bash
-
-set -xv
-
-# Printer ut teksten "Hello World!"
-echo "Hello World!" 
-
-# Bruker en variabel
-name="John"
-echo "Hei $name, velkommen til min skript!"
-```
-
-Output:
-
-```
-+ echo 'Hello World!'
-Hello World!
-+ name=John
-+ echo 'Hei John, velkommen til min skript!'
-Hei John, velkommen til min skript!
-```
-
-## Se også
-
-- [Bash Guide for Nybegynnere](https://tldp.org/LDP/Bash-Beginners-Guide/html/)
-- [Bash-programmeringsreferanse](https://tldp.org/LDP/abs/html/)
+- [Unix Toolbox: Debugging](http://cb.vu/unixtoolbox.xhtml#debugging)
+- [The Art of Debugging](https://www.the-art-of-debugging.com/why-do-we-need-debugging/)

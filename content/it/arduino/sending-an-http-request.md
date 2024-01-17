@@ -10,76 +10,75 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
-In questo articolo scoprirai come utilizzare la tua scheda Arduino per inviare richieste HTTP. Questo può essere utile per comunicare con altri dispositivi o server remoti, ad esempio per controllare un dispositivo a distanza o ricevere dati.
+## Che cos'è e perché?
 
-## Come fare
-Per poter inviare una richiesta HTTP con Arduino, è necessario utilizzare un modulo WiFi o Ethernet. In questo esempio, utilizzeremo il modulo WiFi ESP8266 e una libreria apposita. Assicurati di avere già installato l'IDE di Arduino e di aver configurato correttamente il tuo modulo WiFi.
+In Arduino, il termine "HTTP request" si riferisce all'azione di inviare una richiesta ad un server web per ottenere informazioni o eseguire un'azione. I programmatori spesso utilizzano le HTTP request per comunicare con altri servizi o per ottenere informazioni da fonti esterne.
 
-Una volta pronti, segui questi passaggi:
+## Come fare:
 
-1. Includi la libreria "ESP8266WiFi.h" nel tuo sketch Arduino.
-```
-#include <ESP8266WiFi.h>
-```
+Ecco un esempio di codice per inviare una HTTP request in Arduino:
 
-2. Definisci il tuo SSID e la password della tua rete WiFi.
-```
-const char* ssid = "NOME_RETE_WIFI";
-const char* password = "PASSWORD_RETE_WIFI";
-```
+```Arduino
+#include <WiFiClient.h>
+int httpPort = 80; // specificare la porta del server web
+char server[] = "www.example.com"; // specificare l'indirizzo del server
 
-3. Inizializza la connessione WiFi nel metodo `setup()`:
-```
 void setup() {
-    Serial.begin(9600);
-    WiFi.begin(ssid, password);
-    while(WiFi.status() != WL_CONNECTED) {
-        delay(500);
-        Serial.print(".");
+  Serial.begin(9600); // inizializza la comunicazione seriale
+  WiFi.begin("", ""); // connettersi alla rete WiFi
+  while (WiFi.status() != WL_CONNECTED) { // attendi la connessione WiFi
+    delay(500);
+  }
+  Serial.println("Connesso alla rete WiFi!");
+}
+
+void loop() {
+  WiFiClient client; // crea un nuovo client WiFi
+  Serial.print("Connettendosi al server: ");
+  Serial.println(server);
+
+  if (client.connect(server, httpPort)) { // connetti il client al server
+    Serial.println("Connessione riuscita!");
+    client.println("GET / HTTP/1.1"); // invia la richiesta al server
+    client.println(); // fine della richiesta
+  } else {
+    Serial.println("Connessione fallita.");
+  }
+
+  while (client.connected()) { // leggi la risposta del server
+    if (client.available()) {
+      char c = client.read();
+      Serial.print(c);
     }
-    Serial.println("Connesso alla rete WiFi");
+  }
+
+  Serial.println("Fine della risposta del server.");
+  client.stop(); // chiudi la connessione
+  delay(30000); // attendi 30 secondi prima di inviare un'altra richiesta
 }
 ```
 
-4. Nel metodo `loop()`, crea una variabile `WiFiClient` e utilizzala per aprire una connessione TCP all'indirizzo del server e alla porta desiderati:
+Esempio di output:
 ```
-WiFiClient client;
-if(client.connect("INDIRIZZO_SERVER", PORTA)) {
-    Serial.println("Connesso al server");
-    // Qui puoi scrivere la tua richiesta HTTP
-}
+Connesso alla rete WiFi!
+Connettendosi al server: www.example.com
+Connessione riuscita!
+HTTP/1.1 200 OK
+Server: Apache
+Content-Type: text/html; charset=UTF-8
+Date: Mon, 12 Apr 2021 00:00:00 GMT
+Connection: close
+Content-Length: 50
+
+<html><body><h1>Benvenuti su www.example.com!</h1></body></html>
+Fine della risposta del server.
 ```
 
-5. Utilizza il metodo `client.println()` per scrivere la tua richiesta HTTP. Puoi anche utilizzare il metodo `client.print()` se vuoi inviare solo una parte della richiesta alla volta.
-```
-client.println("GET /pagina.html HTTP/1.1");
-client.println("Host: INDIRIZZO_SERVER");
-client.println("Connection: close");
-client.println();
-```
+## Approfondimenti:
 
-6. Leggi la risposta del server utilizzando il metodo `client.readStringUntil()` e stampala sulla seriale:
-```
-String response = client.readStringUntil('\r');
-Serial.println(response);
-```
+Le HTTP request sono un'importante componente della comunicazione web e sono state introdotte nel 1991 da Tim Berners-Lee, il creatore del World Wide Web. Oltre alla GET request mostrata sopra, ci sono altre tipi di richiesta come POST, PUT, DELETE che consentono di eseguire diverse azioni sui servizi web. Un'alternativa alla libreria Wi-FiClient di Arduino è l'utilizzo di cURL, un popolare strumento di linea di comando per effettuare HTTP request.
 
-7. Chiudi la connessione quando hai terminato di leggere la risposta:
-```
-client.stop();
-```
+## Vedi anche:
 
-## Approfondimento
-Per capire meglio il processo di invio di una richiesta HTTP con Arduino, è importante conoscere le diverse parti che compongono una richiesta HTTP. Queste sono:
-
-- il metodo della richiesta (GET, POST, PUT, ecc.)
-- il percorso della risorsa (es. /pagina.html)
-- l'Host (l'indirizzo del server a cui si sta inviando la richiesta)
-- l'header della connessione (per specificare informazioni aggiuntive sulla richiesta)
-
-Inoltre, è possibile inviare dati aggiuntivi tramite il corpo della richiesta, utilizzando ad esempio il metodo `client.print()`. Questo può essere utile per inviare informazioni al server o aggiungere parametri alla richiesta.
-
-## Vedi anche
-- [Libreria ESP8266WiFi](https://github.com/esp8266/Arduino/blob/master/libraries/ESP8266WiFi/src/ESP8266WiFi.h)
-- [Tutorial su inviare richieste HTTP con Arduino](https://randomnerdtutorials.com/esp8266-http-get-post-arduino/)
+- Documentazione di Arduino per le HTTP request: https://www.arduino.cc/en/Reference/HTTPClient
+- Maggiori informazioni sulle HTTP request e i diversi tipi: https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods

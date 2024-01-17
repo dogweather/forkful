@@ -10,76 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+## Cos'è e perché?
 
-Ci sono molte situazioni in cui potresti dover confrontare due date nel tuo codice in C. Ad esempio, potresti voler verificare se una data è successiva o precedente rispetto a un'altra, calcolare il numero di giorni tra due date o semplicemente stampare la data più recente o più vecchia. In questo articolo, impareremo come confrontare due date utilizzando il linguaggio di programmazione C.
+Comparare due date è l'azione di confrontare due date per determinare quale sia la maggiore o la minore delle due. I programmatori spesso lo fanno quando devono ordinare una lista di eventi temporali o quando devono implementare funzionalità per il confronto di date in un programma.
 
-## Come fare
-
-Per confrontare due date, dovremo utilizzare la struttura di dati `struct`. Non preoccuparti se non sei completamente familiare con le strutture in C, ti guideremo passo dopo passo attraverso un esempio pratico.
-
-Iniziamo definendo la nostra struttura data che conterrà il giorno, il mese e l'anno:
+## Come fare:
 
 ```C
-struct Data {
-    int giorno;
-    int mese;
-    int anno;
-};
-```
+#include <stdio.h>
+#include <time.h>
 
-Ora, dichiariamo due variabili di tipo `Data`:
+int main(void) {
+    // Definisce le due date da confrontare
+    struct tm date1 = { .tm_year = 121, .tm_mon = 6, .tm_mday = 25 }; // 25 Luglio 2021
+    struct tm date2 = { .tm_year = 121, .tm_mon = 10, .tm_mday = 11 }; // 11 Novembre 2021
 
-```C
-struct Data primaData, secondaData;
-```
+    // Converte le date in secondi
+    time_t seconds1 = mktime(&date1);
+    time_t seconds2 = mktime(&date2);
 
-Possiamo assegnare dei valori alle variabili utilizzando l'operatore di assegnazione `=`:
+    // Confronta le date e stampa il risultato
+    if (seconds1 < seconds2) {
+        printf("La prima data è antecedente alla seconda data.");
+    } else if (seconds1 == seconds2) {
+        printf("Le due date sono uguali.");
+    } else {
+        printf("La prima data è successiva alla seconda data.");
+    }
 
-```C
-primaData.giorno = 18;
-primaData.mese = 7;
-primaData.anno = 2021;
-
-secondaData.giorno = 10;
-secondaData.mese = 7;
-secondaData.anno = 2021;
-```
-
-Per confrontare queste due date, dovremo utilizzare l'operatore di confronto `>` (maggiore) o `<` (minore). Ad esempio, per verificare se la prima data è successiva rispetto alla seconda, possiamo scrivere:
-
-```C
-if (primaData.anno > secondaData.anno) {
-    printf("La prima data è successiva alla seconda\n");
-} else if (primaData.anno == secondaData.anno && primaData.mese > secondaData.mese) {
-    printf("La prima data è successiva alla seconda\n");
-} else if (primaData.anno == secondaData.anno && primaData.mese == secondaData.mese && primaData.giorno > secondaData.giorno) {
-    printf("La prima data è successiva alla seconda\n");
-} else {
-    printf("La prima data è precedente alla seconda\n");
+    return 0;
 }
 ```
 
-Questo codice controlla prima gli anni, poi i mesi e infine i giorni delle due date per determinare quale data è successiva. Naturalmente, questo esempio è basato sul supposto che le date siano inserite correttamente e siano valide.
-
-Per calcolare il numero di giorni tra due date, possiamo creare una funzione che accetta due parametri di tipo `Data` e restituisce un valore intero rappresentante il numero di giorni. Ad esempio:
-
-```C
-int calcolaNumeroGiorni(struct Data data1, struct Data data2) {
-    int giorni1 = data1.anno * 365 + data1.mese * 30 + data1.giorno;
-    int giorni2 = data2.anno * 365 + data2.mese * 30 + data2.giorno;
-    return abs(giorni1 - giorni2);
-}
+Sample output:
+```
+La prima data è antecedente alla seconda data.
 ```
 
-Questa funzione utilizza una semplice formula per calcolare il numero di giorni totali di una data e quindi restituisce il valore assoluto della differenza tra i due valori.
+## Approfondimento:
 
-## Approfondimento
+- Contesto storico:
+La data è uno dei concetti più antichi nella storia dell'umanità e i primi tentativi di creare un sistema per organizzarle risalgono all'antica civiltà egizia circa 5000 anni fa. Nel mondo della programmazione, i primi linguaggi come ALGOL, FORTRAN e COBOL non disponevano di una struttura dati nativa per gestire le date, rendendo questa operazione piuttosto complessa.
 
-Ci sono alcune cose da tenere a mente quando si lavora con date in C. In primo luogo, il formato di data predefinito è `mese/giorno/anno`. Inoltre, è importante ricordare che alcuni anni non sono bisestili e quindi non hanno un giorno in più come il 29 febbraio. Infine, puoi anche utilizzare la libreria `time.h` per lavorare con date in C.
+- Alternative:
+Esistono diverse librerie di terze parti, come ad esempio "libdate" e "datetime.h", che offrono funzionalità più avanzate per la manipolazione e il confronto di date, oltre a gestire diverse fusi orari.
 
-## Vedi anche
+- Dettagli di implementazione:
+La funzione `mktime()` è utilizzata per convertire una data nella sua rappresentazione in secondi dal 1 gennaio 1970, nota come "epoch time". Inoltre, la struttura `tm` è utilizzata per rappresentare una data, in particolare il suo campo `tm_year` indica l'anno a partire dal 1900 e il campo `tm_mon` indica il numero del mese (1-12). Per maggiori dettagli, è possibile consultare la documentazione ufficiale.
 
-- [Documentazione sulla struttura di dati `struct` in C](https://www.tutorialspoint.com/cprogramming/c_structures.htm)
-- [Tutorial su come utilizzare la libreria `time.h` in C](https://www.gnu.org/software/libc/manual/html_node/Time-Functions.html)
-- [Codice sorgente completo di esempio su GitHub](https://github.com/esempio/confronta-date-c)
+## Vedi anche:
+
+- [Funzioni per la manipolazione delle date in C](https://www.geeksforgeeks.org/c-function-to-leap-year/)
+- [Libreria libdate](https://sourceforge.net/projects/libdate/)
+- [Libreria datetime.h](https://github.com/realtazy/datetime.h)

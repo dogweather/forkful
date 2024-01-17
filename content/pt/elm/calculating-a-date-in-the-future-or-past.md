@@ -1,7 +1,7 @@
 ---
-title:                "Cálculo de uma data no futuro ou passado"
-html_title:           "Elm: Cálculo de uma data no futuro ou passado"
-simple_title:         "Cálculo de uma data no futuro ou passado"
+title:                "Calculando uma data no futuro ou passado"
+html_title:           "Elm: Calculando uma data no futuro ou passado"
+simple_title:         "Calculando uma data no futuro ou passado"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Dates and Times"
@@ -10,34 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que calcular uma data no futuro ou passado?
+## O que é e por quê?
+Calcular uma data no futuro ou no passado é a ação de criar uma nova data com base em uma data existente e um número de dias adicionados ou subtraídos. Programadores geralmente realizam essa tarefa para criar recursos como uma agenda, um cronograma ou cálculos financeiros.
 
-Existem muitas situações nas quais precisamos descobrir uma data específica no futuro ou passado. Pode ser para agendar um evento, criar um lembrete ou qualquer outra necessidade relacionada ao tempo. Felizmente, a linguagem Elm oferece uma maneira simples e eficiente de calcular datas.
-
-## Como fazer
-
-Para calcular uma data em Elm, primeiro precisamos importar o módulo `Time`:
-
-```Elm
+## Como fazer:
+````elm
 import Time exposing (..)
-```
 
-Em seguida, podemos usar a função `millisToPosix` para converter um número de milissegundos em um valor de data POSIX. Por exemplo, se quisermos calcular uma data 5 dias a partir de hoje, podemos fazer o seguinte:
+futureDate : Int -> Date -> Date
+futureDate days date =
+    date
+        |> toTime
+        |> Time.add (Time.days days)
+        |> toDate
 
-```Elm
-let
-    dataFutura = Date.millisToPosix (Time.millisToPosix 5)
-in
-    "A data daqui a 5 dias é " ++ Date.toString dataFutura
-```
+pastDate : Int -> Date -> Date
+pastDate days date =
+    date
+        |> toTime
+        |> Time.sub (Time.days days)
+        |> toDate
 
-Isso nos dará a seguinte saída: "A data daqui a 5 dias é 2021-10-10". Podemos fazer o mesmo para calcular uma data no passado, basta usar um número negativo de milissegundos.
+today : Date
+today =
+    Date.fromTime (Time.now)
 
-## Mergulho Profundo
+elmDates : String
+elmDates =
+    "Hoje é " ++ toString today ++ ", e daqui a 10 dias será " ++ toString (futureDate 10 today) ++ "."
 
-A função `millisToPosix` aceita um segundo argumento opcional que nos permite ajustar o fuso horário da data. Por padrão, ele assume o fuso horário padrão UTC, mas podemos especificar um fuso horário específico por meio da função `Time.millisToUtcPosix`. Além disso, o módulo `Time` também oferece outras funções úteis para manipulação de datas, como `calculate` e `since`.
+putStrLn elmDates -- Hoje é 2020-01-15, e daqui a 10 dias será 2020-01-25.
+````
+## Mergulho Profundo:
+Calcular datas no futuro ou no passado tem sido uma tarefa importante ao longo da história da computação, desde o desenvolvimento de calendários precisos até programas de agendamento. Uma alternativa para calcular datas no futuro ou no passado é usar bibliotecas de terceiros que podem fornecer uma funcionalidade mais abrangente. A implementação do cálculo pode depender do tipo de data, incluindo dias bissextos e fusos horários.
 
-## Veja também
-- Documentação oficial sobre o módulo `Time`: https://package.elm-lang.org/packages/elm/time/latest/
-- Como manipular e formatar datas em Elm: https://dev.to/mariyadomina/handling-dates-in-elm-3kii
-- Exemplos práticos de cálculos de datas em Elm: https://gist.github.com/rtfeldman/b71e0271d419dbdaff904b01bacd2475
+## Veja também:
+- Documentação de Time em Elm: <https://package.elm-lang.org/packages/elm/time/latest>
+- Biblioteca Date in Elm: <https://package.elm-lang.org/packages/elm-community/date-extra/latest/>

@@ -10,53 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-Debugging is an essential part of the coding process and being able to print debug output is a helpful tool in identifying and resolving issues. With Clojure's ability to easily print values, it becomes an efficient way to spot errors and track code execution.
+## What & Why?
 
-## How To
-To print debug output in Clojure, we can use the `println` function. This function allows us to print a given value to the console. Let's take a look at an example:
+Printing debug output is the act of displaying information during program execution to help identify and understand issues that may arise. Programmers use this technique to get a better understanding of the code's behavior and to troubleshoot errors or unexpected results.
 
-```
-Clojure
-(defn calculate [x y]
-  (println "Calculating..." x "+" y)
-  (+ x y))
+## How to:
 
-(calculate 5 5)
-```
-
-In the above code, we have defined a function `calculate` that takes in two parameters `x` and `y`. We have also added a `println` statement within the function that will print out the values of `x` and `y` along with the text "Calculating...". Finally, we call the function with the values 5 and 5, which will return 10 and print out "Calculating... 5 + 5" in the console.
-
-This simple yet powerful function can be used throughout your code to print out values, helping you track the flow of data and identify any issues.
-
-## Deep Dive
-In some cases, you may want to customize the output of the `println` function. Clojure provides additional options to achieve this, such as using the `format` function or the `str` function.
-
-The `format` function allows us to format our debug output according to a defined template, similar to `printf` in other programming languages. Let's see an example:
+To print debug output in Clojure, you can use the ```clojure/pprint``` library. This library provides functions that pretty-print data structures, making it easier to read and understand. Here's an example:
 
 ```
-Clojure
-(defn display [name age]
-  (println (format "My name is %s and I am %d years old." name age)))
-
-(display "John" 25)
+(clojure/pprint (range 5))
+;; Output: (0 1 2 3 4)
 ```
 
-In the above code, we have a function `display` which takes in a name and age as parameters. We use the `format` function to define a template and pass in the `name` and `age` parameters to be inserted into the template. This will result in the output "My name is John and I am 25 years old." being printed to the console.
-
-Another option is to use the `str` function, which allows us to concatenate multiple values and strings together. Let's see an example:
+You can also use the ```println``` function, which prints a line to the standard output. Here's an example:
 
 ```
-Clojure
-(defn display [name age]
-  (println (str "My name is " name " and I am " age " years old.")))
-
-(display "John" 25)
+(println "Hello World!")
+;; Output: Hello World!
 ```
 
-In this example, we use the `str` function to concatenate the strings and variables. The output will be the same as the previous example.
+## Deep Dive:
 
-## See Also
-- [Official Clojure Documentation](https://clojure.org/guides/learn/functions_and_datatypes)
-- [Debugging in Clojure](https://dev.to/victoria/debugging-clojure-5442)
-- [Mastering Clojure's `println` function](https://www.theserverside.com/blog/Coffee-Talk-Java-News-Stories-and-Opinions/Clojure-printing-for-your-debugging)
+Printing debug output has been a common practice in the programming world, and it remains relevant today. In the past, developers would often use debugging tools or print statements to troubleshoot issues. With the rise of unit testing and integrated development environments, the need for printing debug output has decreased. However, it is still a useful technique, especially for understanding the behavior of complex code or for debugging errors that are difficult to recreate.
+
+Apart from the ```clojure/pprint``` library and the ```println``` function, there are other ways to print debug output in Clojure. For example, you can use the ```prn``` function, which prints its arguments without a newline. Additionally, Clojure has a built-in ```print-dup``` function, which prints the serializable representation of data structures. These alternatives provide more flexibility depending on the debugging task at hand.
+
+Implementation-wise, printing debug output in Clojure is relatively straightforward. The ```clojure/pprint``` library uses the ```clojure.pprint``` namespace, which provides functions for pretty-printing. Similarly, the ```println``` function is defined in the ```clojure.core``` namespace. Understanding how these functions work under the hood can give you a better grasp of the debugging process.
+
+## See Also:
+
+To learn more about printing debug output in Clojure, check out the official documentation for the ```clojure/pprint``` library and the ```println``` and ```prn``` functions. You can also explore other debugging techniques and tools, such as unit testing and integrated development environments, to find the best approach for your development workflow. Happy debugging!

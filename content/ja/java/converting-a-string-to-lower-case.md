@@ -1,7 +1,7 @@
 ---
-title:                "文字列を小文字に変換する"
-html_title:           "Java: 文字列を小文字に変換する"
-simple_title:         "文字列を小文字に変換する"
+title:                "「文字列を小文字に変換する」"
+html_title:           "Java: 「文字列を小文字に変換する」"
+simple_title:         "「文字列を小文字に変換する」"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Strings"
@@ -10,24 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+## 何をするのか & なぜするのか？
+ストリングをローワーケースに変換するとは、その名の通り、文字列の大文字を小文字に変換することです。プログラマーがこの作業を行う理由は、文字列の大小を問わず比較するために、文字列の一貫性を保証することができるからです。
 
-文字列を小文字に変換することに興味を持つ理由はいくつかあります。例えば、データベースやファイル操作の際に大文字と小文字が区別されないため、文字列を比較する際に混乱を避けるためです。また、ユーザーからの入力を統一的に処理するためにも重要です。
-
-## 変換方法
-
+## 方法：
 ```Java
-String str = "Hello World";
-System.out.println(str.toLowerCase());
+String string = "Hello World";
+string = string.toLowerCase();
+System.out.println(string);
+// Output: hello world
 ```
-このコードの出力結果は "hello world" になります。また、JavaのStringクラスにはtoLowerCase()というメソッドがあり、これを使うことで文字列を小文字に変換することができます。
 
-## 深堀り
+## 詳細を調べる
+文字列をローワーケースに変換するメソッドは、JavaのStringクラスに既に存在しています。そのため、カスタムメソッドを作成する必要はありません。このメソッドは、現代のプログラミング言語では一般的な操作です。以前の古いプログラミング言語では、この機能がない場合もありましたが、今ではほとんどの言語で使えるようになっています。
 
-文字列を小文字に変換するメソッドであるtoLowerCase()は、実際にはStringクラスのインスタンス変数であるvalueにアクセスして、文字列の中の各文字を小文字に変換しています。また、多言語対応のために、ロケールという情報を考慮して変換を行うことができます。
+文字列をローワーケースに変換する代替手段としては、正規表現やループ処理を使用する方法もありますが、JavaのStringクラスのメソッドを使う方が簡単で効率的です。
 
-## 他に見る
+このメソッドの実装では、文字列内の各文字をASCIIコードを使って小文字に変換しています。そのため、英語や日本語のアルファベット以外の文字は変換されません。また、元の文字列は変更されず、変換後の文字列が新たに返されます。
 
-- [JavaのStringクラスの公式ドキュメント](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#toLowerCase())
-- [Javaで文字列を操作する方法](https://www.javatpoint.com/java-string)
-- [文字列の大小を無視して比較する方法](https://stackoverflow.com/questions/5901623/how-to-ignore-case-for-string-in-java)
+## 関連情報を見る
+- JavaのStringクラスのtoLowerCase()メソッドのドキュメント: https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#toLowerCase--
+- 文字列操作についてのより詳しい情報: https://www.geeksforgeeks.org/string-class-in-java/
+- Javaの正規表現について: https://www.javatpoint.com/java-regex

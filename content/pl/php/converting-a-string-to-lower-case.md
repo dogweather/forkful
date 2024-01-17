@@ -1,7 +1,7 @@
 ---
-title:                "Konwersja ciągu znaków na małe litery"
-html_title:           "PHP: Konwersja ciągu znaków na małe litery"
-simple_title:         "Konwersja ciągu znaków na małe litery"
+title:                "Konwertowanie ciągu znaków na małe litery"
+html_title:           "PHP: Konwertowanie ciągu znaków na małe litery"
+simple_title:         "Konwertowanie ciągu znaków na małe litery"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Strings"
@@ -10,41 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i dlaczego?
 
-Często zdarza się, że jako programiści musimy operować na różnego rodzaju danych, w tym również na tekście. Czasami potrzebujemy zmienić tekst na małe litery, np. dla ujednolicenia danych lub wygodniejszego porównania. W tym artykule dowiesz się, jak w szybki i prosty sposób skonwertować string na małe litery w języku PHP.
+Konwersja tekstu do małych liter to proces, w którym wszystkie znaki w danym ciągu są zamieniane na odpowiedniki z małych liter. Programiści często wykonują tę operację w celu ujednolicenia tekstu i ułatwienia porównywania ciągów znaków.
 
-## Jak to zrobić
+## Jak to zrobić?
 
-```PHP
-$string = "To Jest PRZyKłAd TeKstU";
-echo strtolower($string);
+Aby przekonwertować ciąg znaków na małe litery w PHP, można użyć funkcji `strtolower()`. Przykładowy kod wyglądałby następująco:
+
+```
+$string = "PRZYKŁADowy TEKST";
+$converted_string = strtolower($string);
+echo $converted_string;
+
+// Output: przykładowy tekst
 ```
 
-Wynikiem powyższego kodu będzie tekst: "to jest przykład tekstu". W celu konwersji stringa na małe litery wykorzystujemy wbudowaną funkcję `strtolower()` w języku PHP. Funkcja ta zwraca przekazany do niej string w postaci z małymi literami.
+## Głębszy zanurzenie
 
-Możemy także wykorzystać pętlę `for` w połączeniu z funkcją `strlen()` do iteracji po poszczególnych znakach w tekście i wywołania na nich funkcji `strtolower()`.
+Konwersja tekstu na małe litery jest często wykorzystywana do porównywania dwóch ciągów znaków bez względu na wielkość liter. Ułatwia to również sprawdzanie poprawności danych wprowadzanych przez użytkowników, ponieważ niektóre serwisy internetowe nie uwzględniają wielkości liter.
 
-```PHP
-$string = "String Do KOnWERSjI";
-$stringLength = strlen($string);
-for($i = 0; $i < $stringLength; $i++) {
-    echo strtolower($string[$i]);
-}
-```
+Alternatywą dla funkcji `strtolower()` jest `mb_strtolower()`, która jest bardziej wydajna przy obsłudze wielojęzycznych znaków. W celu ujednolicenia tekstu w całym dokumencie HTML, można użyć stylów CSS, takich jak `text-transform: lowercase`.
 
-Wynikiem będzie ponownie tekst: "string do konwersji". Możemy także wykorzystać funkcję `mb_strtolower()` dla tekstów w kilku językach lub `strtoupper()` do konwersji na wielkie litery.
+## Zobacz też
 
-## Deep Dive
+Dokumentacja PHP dotycząca funkcji `strtolower()`: https://www.php.net/manual/en/function.strtolower.php
 
-Konwersja stringa na małe lub wielkie litery może być również pomocna przy walidacji danych wprowadzonych przez użytkownika. Dzięki temu unikniemy problemów z różnicami w pisowni, co może prowadzić do błędów w systemie.
-
-PHP udostępnia także funkcję `lcfirst()` do zamiany pierwszej litery w tekście na małą oraz `ucfirst()` do zamiany pierwszej litery na wielką.
-
-Warto również pamiętać o ustawieniu domyślnego kodowania znaków w języku PHP za pomocą funkcji `mb_internal_encoding()`, aby uniknąć problemów z różnicami między systemami.
-
-## Zobacz również
-
-- [Dokumentacja PHP o `strtolower()`](https://www.php.net/manual/en/function.strtolower.php)
-- [Przykłady użycia funkcji `strtolower()`](https://www.w3schools.com/php/func_string_strtolower.asp)
-- [Inne funkcje do manipulacji tekstem w PHP](https://www.php.net/manual/en/ref.strings.php)
+Inne funkcje konwersji znaków w PHP: https://www.php.net/manual/en/ref.strings.php

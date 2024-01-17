@@ -10,34 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué imprimir la salida de depuración?
+## ¿Qué y por qué?
 
-Imprimir la salida de depuración puede ser una herramienta útil para solucionar problemas en nuestro código de Bash. Al imprimir información adicional, podemos analizar qué está sucediendo en nuestro programa y encontrar posibles errores o fallos en la lógica.
+Debug output printing, o impresión de salida de depuración, es una técnica utilizada por programadores para imprimir información útil durante el proceso de depuración de un programa. Esto puede ayudar a identificar y corregir errores en el código más fácilmente.
 
-## Cómo hacerlo
+Los programadores imprimen información de depuración para ver qué está sucediendo en su código en un momento determinado. Puede proporcionar pistas sobre dónde se está produciendo un error o por qué una sección de código no está funcionando como se espera.
 
-Imprimir la salida de depuración es muy sencillo en Bash. Simplemente necesitamos utilizar el comando `echo` y agregar el texto que queremos imprimir dentro de las comillas. Por ejemplo:
+## ¿Cómo hacerlo?
 
-```Bash
-echo "Imprimiendo salida de depuración"
-```
-
-Al ejecutar este comando, veremos el texto impreso en la consola. Sin embargo, también podemos utilizar el parámetro `-e` para imprimir variables o caracteres especiales. Por ejemplo:
+Para imprimir salida de depuración en Bash, puede usar el comando "echo" seguido de la información que desea imprimir. Por ejemplo:
 
 ```Bash
-numero=10
-echo -e "El número es: $numero \nFin de la salida de depuración"
+echo "Valor de la variable x: $x"
 ```
+Esto imprimirá el valor actual de la variable x en la pantalla. También puede utilizar el comando "printf" para imprimir valores con formato, como números decimales o cadenas de texto. Por ejemplo:
 
-Este comando imprimirá el valor de la variable `numero` y también añadirá una nueva línea al final del texto. Esto puede ser útil para una salida más organizada y legible.
+```Bash
+printf "El resultado es: %.2f" "$resultado"
+```
+Esto imprimirá el valor de la variable "$resultado" con dos decimales después del punto.
 
-## Profundizando en la impresión de salida de depuración
+## Profundizando
 
-Además de utilizar `echo`, también podemos utilizar otros comandos como `printf`, `print`, o `logger` para imprimir la salida de depuración en Bash. Cada uno de estos comandos tiene sus propias características y opciones adicionales que podemos utilizar según nuestras necesidades.
+La impresión de salida de depuración ha sido una técnica utilizada por los programadores desde los primeros días de la programación. Antes de que existieran herramientas específicas para depurar código, imprimir información en la pantalla era la forma más fácil de encontrar errores en el código.
 
-También es importante tener en cuenta que, al imprimir la salida de depuración, debemos tener cuidado de no incluir información confidencial o sensible. Una buena práctica es utilizar una variable especial como `DEBUG` que podamos activar o desactivar fácilmente en nuestro código, para no imprimir información innecesaria en producción.
+Hoy en día, también existen herramientas de depuración gráficas que pueden proporcionar una vista más detallada del proceso de ejecución del código. Sin embargo, imprimir salida de depuración sigue siendo una forma rápida y efectiva de obtener información sobre el código en tiempo real.
 
 ## Ver también
 
-- [Guía de usuario de Bash](https://www.gnu.org/software/bash/manual/bash.html)
-- [Documentación de comandos en GNU/Linux](https://www.tldp.org/LDP/abs/html/index.html)
+- [Debugging in Bash](https://bash.cyberciti.biz/guide/Debugging_bash_shell_script)
+- [Bash Debugging Tips](https://www.linuxtechi.com/how-to-debug-bash-scripts/)
+- [Guide to Debugging in Linux](https://opensource.com/article/19/3/debugging-linux)

@@ -1,7 +1,7 @@
 ---
-title:                "텍스트 파일 쓰는 방법"
-html_title:           "Elixir: 텍스트 파일 쓰는 방법"
-simple_title:         "텍스트 파일 쓰는 방법"
+title:                "텍스트 파일 작성하기"
+html_title:           "Elixir: 텍스트 파일 작성하기"
+simple_title:         "텍스트 파일 작성하기"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Files and I/O"
@@ -10,16 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
-텍스트 파일을 작성하는 것의 의의는 무엇일까요? 텍스트 파일은 컴퓨터에서 아주 중요한 역할을 합니다. 텍스트 파일을 작성하면 새로운 정보를 저장하고 다시 사용할 수 있게 해줍니다. 예를 들어, 코드를 작성할 때나 문서를 작성할 때에도 텍스트 파일은 필수적입니다.
+무슨 & 왜?
+새로운 파일을 만들기 위해 텍스트 파일을 작성하는 것은 매우 중요합니다. 프로그래머들은 이를 통해 데이터를 저장하고 읽을 수 있으며, 코드를 조직화하고 코드를 공유하는 데 도움이 됩니다.
 
-## 작성하는 법 
-작성하는 방법을 아시나요? Elixir에서는 간단한 방법으로 텍스트 파일을 작성할 수 있습니다. 먼저, 아래와 같은 형식으로 ```Elixir "파일이름.txt"```를 입력하여 새로운 파일을 만들 수 있습니다. 그런 다음, 내용을 작성하고 파일을 저장하면 끝이 납니다. 만약 이미 존재하는 파일에 내용을 추가하고 싶다면 ```Elixir "파일이름.txt" :append```를 입력하시면 됩니다.
+어떻게:
+```Elixir
+# 새로운 텍스트 파일 만들기
+File.write("new_file.txt", "Hello world!")
 
-## 깊이 파고들기
-텍스트 파일을 작성하는 것은 사실 매우 간단한 작업이지만, 조금 더 깊이 파고들어보면 다양한 방법으로 파일을 다룰 수 있습니다. Elixir에서는 파일을 생성하고, 내용을 수정하고, 삭제하는 등 다양한 파일 관리 기능을 제공합니다. 자세한 정보는 공식 Elixir 문서를 참고해주세요.
+# 기존 파일에 내용 추가하기
+File.append("existing_file.txt", "This is a new line!")
 
-## 더 알아보기
-- Elixir 공식 문서: https://elixir-lang.org/docs.html
-- 텍스트 파일 작성 예제: https://elixirschool.com/lessons/basics/file-io/
-- 파일 관리 기능: https://elixirschool.com/lessons/advanced/file-io/
+# 파일에서 데이터 읽어오기
+File.read("existing_file.txt")
+
+# 파일의 크기 확인하기
+File.stat("existing_file.txt").size 
+``` 
+
+심층 분석:
+- 텍스트 파일은 컴퓨터에서 문자열을 저장하는 데 사용됩니다.
+- 다른 프로그래밍 언어에서도 파일을 작성할 수 있지만, Elixir에서는 강력한 파일 관리 기능이 제공됩니다.
+- 파일을 작성할 때, 파일 이름과 쓸 내용을 지정하고, 기존 파일에 내용을 추가할 때는 파일 이름과 새로 추가할 내용을 지정합니다.
+- 파일 크기를 확인할 때에는 File.stat() 함수를 사용하고 해당 파일의 속성을 확인할 수 있습니다.
+
+관련 자료:
+- [Elixir 공식 문서 - 파일](https://hexdocs.pm/elixir/File.html)
+- [ElixirSchool - 파일 다루기](https://elixirschool.com/lessons/basics/basics/#files)

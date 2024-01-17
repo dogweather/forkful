@@ -1,7 +1,7 @@
 ---
-title:                "Analizando html"
-html_title:           "PHP: Analizando html"
-simple_title:         "Analizando html"
+title:                "Analizando HTML"
+html_title:           "PHP: Analizando HTML"
+simple_title:         "Analizando HTML"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "HTML and the Web"
@@ -10,35 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
-Si eres un desarrollador de PHP, probablemente hayas oído hablar de la técnica de "parsear" HTML. Pero, ¿por qué alguien querría hacer eso? La respuesta es simple: para extraer datos de una página web de forma automatizada.
+## ¿Qué y por qué?
+El análisis de HTML es una técnica utilizada por los programadores para extraer información específica de una página web. Esto se hace a través de un proceso de lectura y análisis del código HTML de la página para identificar elementos específicos que contengan la información deseada. Es una forma de automatizar el proceso de extracción de datos de una página web en lugar de hacerlo manualmente.
 
-Imagina que tienes un sitio web que recopila información de diferentes fuentes. Seria tedioso tener que copiar y pegar manualmente los datos de cada página. En su lugar, puedes utilizar un programa que haga el trabajo por ti, parseando el HTML y extrayendo los datos necesarios.
+## Cómo hacerlo:
+Para analizar HTML en PHP, utilizamos la función `file_get_contents()` para obtener el código HTML de la página web y luego lo pasamos como argumento a la función `DOMDocument::loadHTML()` para convertirlo en un objeto DOM. A continuación, podemos usar las funciones `getElementsByTagName()` y `getAttribute()` para extraer los elementos y atributos deseados. Aquí hay un ejemplo de cómo obtener el título y la descripción de una página web:
 
-## Cómo hacerlo
-La función principal para parsear HTML en PHP es `file_get_contents()`. Esta función recupera el contenido completo de una URL y lo almacena en una variable. A continuación, puedes utilizar la función `preg_match()` para buscar patrones específicos en el contenido y extraer los datos que necesitas.
+```PHP
+$html = file_get_contents("http://www.ejemplo.com");
+$dom = new DOMDocument();
+$dom->loadHTML($html);
 
-Veamos un ejemplo simple de cómo extraer el título de una página web utilizando estas funciones:
-
-```
-<?php
-// Obtener el contenido de la página
-$html = file_get_contents('https://www.ejemplo.com/');
-// Buscar el patrón del título
-preg_match('@<title>(.*)</title>@', $html, $title);
-// Imprimir el título
-echo "El título de la página es: " . $title[1];
-?>
+$title = $dom->getElementsByTagName("title")->item(0)->nodeValue;
+$description = $dom->getElementsByTagName("meta")->item(0)->getAttribute("content");
 ```
 
-En este caso, hemos utilizado expresiones regulares para buscar el texto que se encuentra entre las etiquetas `<title>` de la página web.
+El variable `$title` contendría entonces el título de la página y `$description` la descripción.
 
-## Profundizando
-Aunque este es solo un ejemplo básico, la técnica de parsear HTML puede ser utilizada para extraer cualquier tipo de datos de una página web. Puedes utilizar funciones como `preg_match_all()` para extraer múltiples ocurrencias de un patrón, o incluso crear tus propias clases para manejar el proceso de parsing de manera más eficiente.
+## Profundizando:
+El análisis de HTML se ha convertido en una técnica común en la era digital en la que la información está disponible en línea. Esto es especialmente útil para los desarrolladores de aplicaciones web que necesitan acceder a datos de múltiples fuentes y servicios web. Además de PHP, también hay otras herramientas disponibles para analizar HTML como Python y Node.js. Sin embargo, PHP sigue siendo una opción popular debido a su facilidad de uso y su compatibilidad con la mayoría de los servidores web.
 
-También es importante tener en cuenta que el parsing de HTML puede ser algo complicado, ya que el contenido de una página web puede variar mucho de una a otra. Por lo tanto, es recomendable tener un buen conocimiento de expresiones regulares y del formato en que se presenta el HTML para obtener resultados precisos.
-
-## Ver también
-- [Documentación oficial de PHP sobre la función `file_get_contents()`](https://www.php.net/manual/es/function.file-get-contents.php)
-- [Documentación oficial de PHP sobre la función `preg_match()`](https://www.php.net/manual/es/function.preg-match.php)
-- [Expresiones regulares en PHP](https://www.php.net/manual/es/book.pcre.php)
+## Ver también:
+- Documentación oficial de PHP sobre la función `DOMDocument::loadHTML()`: http://php.net/manual/es/domdocument.loadhtml.php
+- Tutorial sobre cómo analizar HTML con PHP: https://www.ibm.com/developerworks/library/os-php-parse/index.html
+- Alternativas a PHP para analizar HTML: https://www.toptal.com/php/parsing-html-with-php

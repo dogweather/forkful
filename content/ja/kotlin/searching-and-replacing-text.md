@@ -10,32 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+## なに & なぜ？
+検索と置換は、プログラマーがテキスト内で特定の語句を見つけ、それを新しい語句に置き換えることを指します。プログラマーは、コードやドキュメント内の特定の語句を一括で変更するために、この機能を使用します。
 
-テキストの検索と置換に取り組む理由は、よりスムーズなプログラミング体験を得るためです。新しい言語を学習することは、より多くの機能やツールを使いこなし、より高度なプログラミング技術を身に付けることを意味します。
-
-## 方法
-
-テキストの検索と置換を効率的に行うには、Kotlinの標準ライブラリで提供される`replace()`メソッドを使用することができます。このメソッドは、正規表現を使用してパターンにマッチした文字列を置換することができます。
-
+## 使い方：
+#### 文字列の置換：
 ```Kotlin
-val sentence = "I love coding in Kotlin!"
-val replacedSentence = sentence.replace(Regex("[a-z]"), "Kotlin")
-println(replacedSentence)
+val oldString = "Hello World"
+val newString = oldString.replace("World", "Universe")
+println(newString)
+
+// Output: Hello Universe
 ```
 
-上記のコードでは、まず`sentence`変数に文字列を格納し、`replace()`メソッドを使用して小文字のアルファベットを全て「Kotlin」と置換しています。結果として出力されるのは「Kotlin KotlinkoKotlin Kotlinkotlinkotlin Kotlin!」という文字列になります。
+#### 正規表現の置換：
+```Kotlin
+val sentence = "I have 10 cats and 5 dogs."
+val newSentence = sentence.replace(Regex("[0-9]+"), "3")
+println(newSentence)
 
-正規表現を使用することで、より複雑なパターンの文字列の検索と置換が可能になります。たとえば、文字列の一部が入れ替わったり、削除されたりするような場合でも、正規表現を使えば簡単に修正することができます。
+// Output: I have 3 cats and 3 dogs.
+```
 
-## 深堀り
+## 詳しく見ていきましょう：
+検索と置換は、テキスト処理において非常に重要な機能です。かつては、手作業で文書中の誤字や印刷ミスを修正する必要がありましたが、検索と置換を使うことで簡単に修正することができるようになりました。もしKotlinを使わない場合、Javaでは正規表現を使って実現することができます。
 
-Kotlinの標準ライブラリには、`replace()`メソッドの他にも多くの文字列操作用のメソッドがあります。例えば、`contains()`メソッドを使えば、文字列が特定のパターンを含んでいるかどうかをチェックすることができます。また、`split()`メソッドを使用すると、文字列を指定したデリミタで分割することができ、さらに`trim()`メソッドを使うことで、文字列の先頭や末尾の不要な空白を削除することができます。
-
-さらに、Kotlinでは文字列内に変数を埋め込むこともできます。例えば、`$"Hello, $name"`といった形で変数を指定することで、`name`変数の値を文字列に埋め込むことができます。これにより、動的なメッセージの作成が可能になります。
-
-## 関連リンク
-
-- [Kotlin公式ドキュメント](https://kotlinlang.org/docs/reference/)
-- [正規表現の基礎](https://programming-guide.net/programming/kotlin/regex)
-- [Kotlin Playground](https://play.kotlinlang.org/)
+## 参考リンク：
+- Kotlin Strings and Regular Expressions: https://kotlinlang.org/docs/reference/regular-expressions.html
+- Java Pattern Class: https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html
+- Online Regex Tester: https://regexr.com/

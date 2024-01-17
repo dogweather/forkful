@@ -1,7 +1,7 @@
 ---
-title:                "Extrahieren von Teilstrings"
-html_title:           "Arduino: Extrahieren von Teilstrings"
-simple_title:         "Extrahieren von Teilstrings"
+title:                "Unterscheiden von Teilstrings"
+html_title:           "Arduino: Unterscheiden von Teilstrings"
+simple_title:         "Unterscheiden von Teilstrings"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Strings"
@@ -10,27 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+# Was & Warum?
+Das Extrahieren von Teilzeichenfolgen bezieht sich darauf, einen Teil einer größeren Zeichenfolge zu isolieren. Programmierer tun dies, um bestimmte Informationen aus Texten oder Variablen zu extrahieren und für ihre Zwecke zu verwenden.
 
-Manchmal ist es notwendig, aus einem String in Ihrem Arduino-Code einen bestimmten Teil herauszuziehen, um damit zu arbeiten. Dies kann nützlich sein, um beispielsweise bestimmte Informationen aus einer seriellen Nachricht zu erhalten oder Daten aus einem Sensorwert zu extrahieren.
+# Wie geht's?
+Die Extraktion von Teilzeichenfolgen kann in Arduino mithilfe der Funktion `substring()` durchgeführt werden. Diese Funktion erfordert zwei Parameter - den Index des ersten und den Index des letzten Zeichens, die extrahiert werden sollen. Zum Beispiel:
 
-## Wie geht man vor
-
-Um Substrings aus einem String zu extrahieren, gibt es verschiedene Methoden in der Programmiersprache Arduino. Eine davon ist die Verwendung der Funktion `substring()`, die es ermöglicht, einen Teil des ursprünglichen Strings basierend auf der Startposition und der Anzahl der zu extrahierenden Zeichen zu erhalten. Schauen wir uns dazu ein Beispiel an:
-
-```Arduino
-String text = "Hallo, ich bin ein Arduino";
-String substring = text.substring(7, 16);
-Serial.println(substring); // Ausgabe: "ich bin ein"
+```
+Arduino void setup() {
+  String text = "Hallo Welt!";
+  String substring = text.substring(3,7);
+  Serial.println(substring);
+}
 ```
 
-In diesem Beispiel wird der Teil des Strings von der Position 7 bis zur Position 16 in der Variable `substring` gespeichert und dann über `Serial.println()` ausgegeben. Beachten Sie, dass die Positionen in Strings immer bei 0 beginnen.
+Dieses Beispiel verwendet die Zeichenfolge "Hallo Welt!" und extrahiert die Teilzeichenfolge "lo W", da der Index des ersten Zeichens "l" (3) und der letzte Index "t" (6) angegeben ist.
 
-## Tiefer Einblick
+# Tief eintauchen
+Die Funktion `substring()` wurde erstmals in der Programmiersprache Java eingeführt und ist auch in anderen Programmiersprachen wie C++, Python und JavaScript verfügbar. Alternativ können Entwickler auch die Funktionen `charAt()` und `split()` verwenden, um Teilzeichenfolgen in Arduino zu extrahieren. Es gibt auch Bibliotheken, wie z.B. die BearSSL-Bibliothek, die für die Extraktion von Teilzeichenfolgen in verschlüsselten Nachrichten verwendet werden kann.
 
-Die `substring()`-Funktion ist hilfreich, aber sie hat auch einige Einschränkungen. Zum Beispiel müssen Sie immer einen festen Startpunkt und eine feste Anzahl von Zeichen angeben, was in manchen Situationen unpraktisch sein kann. Eine weitere Möglichkeit ist die Verwendung von `indexOf()` und `lastIndexOf()`, um die Position von bestimmten Zeichen im String zu finden und dann `substring()` zu verwenden, um den gewünschten Teil zu extrahieren. Für eine detailliertere Erklärung dieser Methoden und weitere Optionen empfehle ich, sich mit der offiziellen Arduino-Dokumentation vertraut zu machen.
-
-## Siehe auch
-
-- Offizielle Arduino-Dokumentation zu Strings: https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/
-- Detaillierte Erklärung von `substring()`: https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/substring/
+# Siehe auch
+- Dokumentation zu `substring()`: https://www.arduino.cc/reference/de/language/variables/data-types/string/functions/substring/
+- Die BearSSL-Bibliothek: https://www.arduino.cc/reference/en/libraries/bearssl/
+- Eine Einführung in Strings in Arduino: https://www.arduino.cc/en/Tutorial/StringObject

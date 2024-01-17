@@ -10,67 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+## O que e por quê?
 
-Você já encontrou um bug difícil de entender em seu código Javascript? Ou talvez você esteja tentando entender o fluxo de seu programa e não sabe o que está acontecendo em uma determinada linha de código? Nesses casos, imprimir saídas de depuração é uma técnica muito útil para entender melhor o que está acontecendo em seu código. Além disso, pode ajudar a identificar onde exatamente o problema está ocorrendo, facilitando a depuração e o processo de correção.
+Imprimir saída de depuração é uma técnica comum usada por programadores para rastrear e solucionar problemas em seus códigos. Ao imprimir informações relevantes durante a execução de um programa, os programadores podem identificar onde e por que um erro ocorre.
 
-## Como Fazer
+## Como fazer:
 
-A impressão de saídas de depuração em Javascript é bastante simples e pode ser feita usando o comando `console.log ()`. Vamos dar uma olhada em alguns exemplos:
+Para imprimir saída de depuração em código Javascript, usamos a função `console.log()`. Esta função aceita qualquer tipo de dado como argumento e imprime-o no console do navegador. Veja o exemplo abaixo:
 
-```
-// Imprimindo uma mensagem simples
-console.log("Olá mundo!");
-
-// Imprimindo o valor de uma variável
-let nome = "Ana";
-console.log(`Olá ${nome}!`);
-
-// Imprimindo uma mensagem de erro
-console.error("Houve um erro no código.");
+```Javascript
+let num = 10;
+let str = "Hello";
+let arr = [1, 2, 3];
+console.log(num); // saída: 10
+console.log(str); // saída: Hello
+console.log(arr); // saída: [1, 2, 3]
 ```
 
-Agora, vamos ver como a saída desses comandos se parece no console do navegador:
+## Mergulho Profundo:
 
-```
-Olá mundo!
-Olá Ana!
-Houve um erro no código.
-```
+Imprimir saída de depuração existe há muito tempo e foi uma técnica amplamente utilizada por programadores antes da popularização das ferramentas de depuração. Hoje em dia, existem diferentes alternativas para imprimir saída de depuração, como usar um depurador integrado no navegador ou em um IDE. Além disso, a função `console.log()` tem uma versatilidade que permite mais do que simplesmente imprimir valores, ela também pode atribuir uma etiqueta ou um estilo específico para a saída. É importante remover todas as chamadas de `console.log()` antes de implementar o código em produção para evitar imprimir informações sensíveis ou desnecessárias.
 
-Além disso, com o uso de parâmetros, é possível imprimir múltiplos valores e formatar a saída de acordo com suas necessidades. Por exemplo:
+## Veja Também:
 
-```
-// Imprimindo múltiplos valores separados por vírgula
-console.log("Meu nome é", nome, "e eu tenho", 25, "anos.");
-
-// Imprimindo formatações diferentes
-console.log("Este é um número:", 123, "e este é um texto:", "exemplo", ".");
-```
-
-Depois de executar esses comandos, a saída será a seguinte:
-
-```
-Meu nome é Ana e eu tenho 25 anos.
-Este é um número: 123 e este é um texto: exemplo.
-```
-
-## Mergulho Profundo
-
-Existem outros comandos disponíveis para imprimir saídas de depuração, como `console.warn ()` para mensagens de aviso e `console.info ()` para informações adicionais. Além disso, você pode usar o método `console.table ()` para exibir valores em forma de tabela, facilitando a visualização e a análise de informações mais complexas.
-
-Além disso, é possível também configurar a quantidade de detalhes do registro exibidos pelo console. Por padrão, a quantidade de saída é configurada como "info", mas você pode alterá-la para exibir apenas erros com o comando `console.log(level, message)`. Por exemplo, se você só quiser ver mensagens de erro, pode usar:
-
-```
-console.log("error", "Houve um erro em algum lugar.");
-```
-
-Por fim, é importante lembrar que é uma boa prática remover ou desabilitar os comandos de impressão de saída de depuração ao terminar o processo de depuração e antes de publicar seu código. Isso evitará possíveis problemas e manterá seu código limpo e organizado.
-
-## Veja Também
-
-Aqui estão alguns links úteis para saber mais sobre impressão de saída de depuração em Javascript:
-
-- [MDN Web Docs: Console](https://developer.mozilla.org/pt-BR/docs/Web/API/Console)
-- [W3Schools: JavaScript Console](https://www.w3schools.com/js/js_console.asp)
-- [DevDocs: Console API](https://devdocs.io/console/)
+- [Documentação do Console no MDN](https://developer.mozilla.org/pt-BR/docs/Web/API/Console)
+- [Artigo sobre depuração em Javascript](https://www.digitalocean.com/community/tutorials/how-to-debug-javascript)
+- [Vídeo sobre como imprimir saída de depuração no navegador](https://www.youtube.com/watch?v=3ntPiEG0z2w)

@@ -10,54 +10,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+## 何となく知ってるけど…
+サーチ ＆ リプレース、複数のテキストを一括で検索し、別のテキストに置き換えること。プログラマーがそれをやる理由は簡単、大量のテキストを手作業で置き換えするのは面倒くさいから！
 
-テキストの検索と置換をすることの利点は、大量のテキストを簡単に変更し、特定のパターンに基づいた複数の変更を一度に行うことができることです。例えば、同じ文言を使用する複数のファイルを一度に変更したい場合などに役立ちます。
+## やり方:
+```Bash
+# テキストファイル内での文字列の置き換え
+sed -i 's/検索文字列/置き換え文字列/g' テキストファイル名
 
-## 方法
+# 再帰的にフォルダ内のテキストファイル全てで置き換える
+grep -lRZ '検索文字列' フォルダ名 | xargs -0 -l sed -i -e 's/検索文字列/置き換え文字列/g'
 
-まず、置換を行いたいファイルを開きます。次に、以下のコマンドを使用して、テキストを検索して置換します。
-
-```
-Bash
-sed -i 's/検索するテキスト/置換するテキスト/g' ファイル名
-```
-
-このコマンドは、ファイル内の全てのインスタンスで検索したテキストを置換することができます。`ファイル名`の部分には、置換を行うファイルの名前を指定します。
-
-例えば、`sample.txt`というファイルに出てくる`apple`を`orange`に置換する場合は、以下のようにコマンドを入力します。
-
-```
-Bash
-sed -i 's/apple/orange/g' sample.txt
+# 正規表現を使ってマッチする部分を置き換える
+sed -i 's/[0-9].*$/置き換え文字列/g' テキストファイル名
 ```
 
-これにより、`sample.txt`内の全ての`apple`が`orange`に置換されます。
+## 詳しく:
+その昔、テキスト編集を行う際には、手作業で単語を一つずつ置き換える必要がありました。しかし、今や私たちの助けには多様なツールやコマンドがあります。Bashコマンドでの検索と置き換えは、簡単で効率的な方法です。また、正規表現を使用することで、より柔軟にマッチングを行うことができます。代替として、sed、awk、perl、pythonなど、様々な言語でも同様の処理ができます。
 
-## ディープダイブ
-
-上記の例では、単純な置換の方法を紹介しましたが、プレースホルダーや正規表現を使用することで、より複雑な検索と置換を行うこともできます。
-
-例えば、ファイル内のすべての数字を増やしたい場合、以下のようにコマンドを入力します。
-
-```
-Bash
-sed -i 's/[0-9]/＆ + 1/g' sample.txt
-```
-
-これにより、ファイル内のすべての数字が1つずつ増えます。
-
-また、プレースホルダーと正規表現を組み合わせることで特定のパターンに基づいた置換を行うこともできます。例えば、ファイル内の`hello1`という文字列を全て`hello2`に置換する場合は、以下のようにコマンドを入力します。
-
-```
-Bash
-sed -i 's/hello[0-9]/＆2/g' sample.txt
-```
-
-これにより、`sample.txt`内の全ての`hello`に続く数字が2に置換されます。つまり、`hello1`は`hello2`に、`hello10`は`hello20`に置換されます。
-
-## See Also
-
-- [Bash Shell Scripting Basics](https://www.taniarascia.com/how-to-create-and-use-bash-scripts/)
-- [Sed - An Introduction and Tutorial](https://www.grymoire.com/Unix/Sed.html)
-- [Regular Expressions Cheat Sheet](https://cheatography.com/davechild/cheat-sheets/regular-expressions/)
+## 関連情報:
+- [Bashコマンドのサンプル](https://www.tldp.org/LDP/abs/html/textproc.html)
+- [正規表現チートシート](https://www.rexegg.com/regex-quickstart.html)

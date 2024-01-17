@@ -1,7 +1,7 @@
 ---
-title:                "Työskentely csv-tiedostojen kanssa"
-html_title:           "C: Työskentely csv-tiedostojen kanssa"
-simple_title:         "Työskentely csv-tiedostojen kanssa"
+title:                "Työskentely csv:n kanssa"
+html_title:           "C: Työskentely csv:n kanssa"
+simple_title:         "Työskentely csv:n kanssa"
 programming_language: "C"
 category:             "C"
 tag:                  "Data Formats and Serialization"
@@ -10,84 +10,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä & Miksi?
 
-Monet sovellukset ja ohjelmistot käyttävät CSV (Comma Separated Values) tiedostomuotoa tallentaakseen ja jakaa dataa. CSV on myös ihanteellinen muoto käsitellä taulukoita ja suuria määriä dataa. Siksi on tärkeää osata työskennellä CSV-tiedostojen kanssa C-ohjelmoinnissa. 
+CSV on yksinkertainen tiedostomuoto, jota käytetään datan tallentamiseen taulukkoihin. Se koostuu arvoista, jotka on erotettu pilkulla ja riveistä, jotka on erotettu rivinvaihdolla. Ohjelmoijat käyttävät CSV:tä, koska se on helppo luoda ja lukea, ja sitä voidaan käyttää erilaisiin tietojen tallennustarkoituksiin.
 
-## Miten
+## Kuinka:
 
-CSV-tiedostojen käsittely C-kielellä on melko yksinkertaista ja nopeaa. Suurin osa toiminnoista vaatii vain muutaman koodirivin. Alla on muutamia esimerkkejä CSV-tiedostojen lukuun ja kirjoitukseen käyttäen C-koodia:
+```C
+#include <stdio.h>
 
-### Lue CSV-tiedosto
-
-```
-FILE *file = fopen("tiedostonimi.csv", "r"); // Avataan tiedosto lukureetta
-if(file == NULL) { // Tarkistetaan, että tiedosto aukeaa
-  printf("Tiedoston avaus epäonnistui.");
-  return 1;
-}
-
-char line[256]; // Alustetaan taulukko riville
-while(fgets(line, sizeof(line), file)) { // Luetaan tiedoston kaikki rivit
-  char *token; // Määritetään muuttuja erotellun merkkijonon palauttamiseksi
-  token = strtok(line, ","); // Erotellaan rivi pilkulla
-  while(token != NULL) { // Käydään läpi kaikki erotellut merkkijonot
-    printf("%s\n", token); // Tulostetaan jokainen muuttuja omalle riville
-    token = strtok(NULL, ","); // Erotetaan seuraava merkkijono
+int main()
+{
+  FILE *csv_file;
+  int value;
+  
+  csv_file = fopen("data.csv", "r");
+  
+  if (csv_file == NULL)
+  {
+    printf("Tiedostoa ei voitu avata!");
+    return 1;
   }
+  
+  // Tulostetaan tiedoston sisältö
+  while (fscanf(csv_file, "%d,", &value) != EOF)
+  {
+    printf("%d ", value);
+  }
+  
+  fclose(csv_file);
+  
+  return 0;
 }
-fclose(file); // Suljetaan tiedosto
 ```
 
-Esimerkki CSV-tiedostosta:
+**Esimerkki sisäänmenosta:**
 
 ```
-Name, Age, City
-John, 25, Helsinki
-Lisa, 32, Tampere
+1,2,3
+4,5,6
 ```
 
-Output:
+**Esimerkki tulosteesta:**
 
 ```
-Name
-Age
-City
-John
-25
-Helsinki
-Lisa
-32
-Tampere
+1 2 3 4 5 6
 ```
 
-### Kirjoita CSV-tiedosto
+## Syvemmälle:
 
-```
-FILE *file = fopen("uusi_tiedosto.csv", "w"); // Avataan tiedosto kirjoitustilassa
-fprintf(file, "Name, Age, City\n"); // Lisätään ensimmäinen rivi otsikkoriviksi
-fprintf(file, "John, 25, Helsinki\n"); // Lisätään tietoja riveille
-fprintf(file, "Lisa, 32, Tampere\n");
-fclose(file); // Suljetaan tiedosto
-```
+CSV kehitettiin vuonna 1972, joten se on ollut käytössä yli 40 vuotta. Tänä päivänä on myös muita vaihtoehtoja, kuten JSON ja XML, jotka tarjoavat enemmän ominaisuuksia, mutta ovat monimutkaisempia käyttää. CSV on edelleen suosittu vaihtoehto yksinkertaisiin taulukkolaskentatarkoituksiin.
 
-### Lisää rivi CSV-tiedostoon
+CSV-tiedoston sisällä voi olla myös erilaisia erottimia, kuten puolipiste tai tabulaattori, ja se voi aiheuttaa ongelmia tiedoston lukemisessa. On tärkeää käsitellä näitä erikoistapauksia ja varmistaa, että CSV-tiedoston käsittely on joustavaa.
 
-```
-FILE *file = fopen("tiedostonimi.csv", "a"); // Avataan tiedosto lisäystilassa
-fprintf(file, "Bob, 40, Oulu\n"); // Lisätään uusi rivi
-fclose(file); // Suljetaan tiedosto
-```
+## Katso myös:
 
-Muista, että CSV-tiedostossa jokainen rivi tulee olla samassa muodossa ja eroteltu samalla merkillä, yleisimmin pilkulla.
-
-## Deep Dive
-
-Tässä osiossa sukellamme hieman syvemmälle CSV-tiedostojen maailmaan. Yksi hyödyllinen työkalu CSV-tiedostojen käsittelyssä C-kielellä on "csv" kirjasto, jonka avulla voit helposti lukea, kirjoittaa ja muokata CSV-tiedostoja.
-
-Toinen tärkeä asia muistaa on tiedostojen käsittelyn oikeaoppinen lopettaminen. Muista aina sulkea tiedostot sen jälkeen kun olet lopettanut niiden käsittelyn, jotta vältät mahdolliset ongelmat.
-
-See Also: 
-
-- [C CSV kirjasto](https://github.com/ryanwoodsmall/c-csv)
-- [Official C Documentation](https://www.gnu.org/software/gsl/doc/html/csv.html)
+- [CSV-tiedostomuodon Wikipedia-sivu](https://fi.wikipedia.org/wiki/CSV_(tiedostomuoto))
+- [C-kielen opas ja resurssit](https://finland.dev/c-kieli)

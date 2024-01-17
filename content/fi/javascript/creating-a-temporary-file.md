@@ -1,7 +1,7 @@
 ---
-title:                "Tilapäistiedoston luominen"
-html_title:           "Javascript: Tilapäistiedoston luominen"
-simple_title:         "Tilapäistiedoston luominen"
+title:                "Väliaikaisen tiedoston luominen"
+html_title:           "Javascript: Väliaikaisen tiedoston luominen"
+simple_title:         "Väliaikaisen tiedoston luominen"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Files and I/O"
@@ -10,45 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä ja miksi?
 
-Monissa tilanteissa, ohjelmoijan täytyy luoda tilapäisiä tiedostoja käsiteltäviksi tai tallennettaviksi väliaikaisesti. Tämä voi olla tarpeellista esimerkiksi ohjelman suorituskyvyn parantamiseksi tai työnkulun helpottamiseksi.
+Väliaikaisten tiedostojen luominen on tärkeä osa ohjelmointia, joka mahdollistaa ohjelmien tehokkaan toiminnan. Väliaikaiset tiedostot ovat tilapäisiä tiedostoja, jotka luodaan tiettyyn tarkoitukseen ja poistetaan sen jälkeen. Ohjelmoijat käyttävät väliaikaisia tiedostoja useisiin tarkoituksiin, kuten välimuistin hallintaan, väliaikaisten tietojen tallentamiseen ja ohjelman suorituksen optimointiin.
 
-## Miten
+## Kuinka se tehdään?
 
-Tilapäisten tiedostojen luominen Javascriptillä on helppoa. Käytämme tätä esimerkkinä fs-moduulia, joka on osa Node.js:ää. Ensimmäiseksi meidän täytyy tuoda tämä moduuli käyttöömme:
+Väliaikaisen tiedoston luominen Javascriptillä on helppoa. Käytä vain `fs` (file system) -moduulia ja sen `mktempSync`-toimintoa. Alla on yksinkertainen koodiesimerkki, joka luo väliaikaisen tiedoston ja tulostaa sen nimen konsoliin:
 
 ```Javascript
 const fs = require('fs');
+const tmpFile = fs.mktempSync('tmpfile-XXXXXX');
+console.log(tmpFile); 
 ```
 
-Sitten voimme luoda tilapäisen tiedoston käyttämällä `fs.mkdtemp()` -funktiota ja antamalla sille hakemistoja nimen. Tämä funktio palauttaa tiedoston nimen:
+Kun suoritat tämän koodin, saat tulosteena luodun väliaikaisen tiedoston nimen, kuten `tmpfile-nAsfzP`. Tämän jälkeen voit käyttää tätä tiedostoa ohjelmassasi tarpeen mukaan ja poistaa sen lopuksi.
 
-```Javascript
-const tempDir = fs.mkdtempSync('temp-');
-console.log(tempDir);
-// Output: temp-QJGcNp
-```
+## Syvempää tietoa
 
-Ja siinä se! Nyt meillä on oikea hakemisto, ja voimme käsitellä sitä tarpeen mukaan. Muista kuitenkin poistaa tämä tiedosto, kun sitä ei enää tarvita, jotta voit pitää järjestelmän puhtaana. Voit tehdä sen käyttämällä `fs.rmdirSync()` -funktiota:
+Väliaikaisten tiedostojen luominen on ollut osa ohjelmointia jo pitkään. Aiemmin ohjelmoijat joutuivat käsittelemään tiedostojen nimiä ja luomaan ne itse. Nykyään `fs` -moduulin avulla tiedoston luominen on yksinkertaistunut ja nopeutunut.
 
-```Javascript
-fs.rmdirSync(tempDir);
-```
+On myös olemassa muita tapoja luoda väliaikaisia tiedostoja, kuten käyttäen muita ohjelmointikieliä tai tietokantoja. Kuitenkin Javascript on yleisimmin käytetty ja moderni tapa luoda väliaikaisia tiedostoja.
 
-## Syventyvä tarkastelu
+## Katso myös
 
-`fs.mkdtemp()` -funktiossa on myös optio lisätä hakemiston sijainti parametrina. Tämä voi olla hyödyllistä, jos haluat tallentaa tilapäiset tiedostot tiettyyn paikkaan. Voit tehdä sen antamalla toisen parametrin funktiolle. Esimerkiksi:
-
-```Javascript
-const tempDir = fs.mkdtempSync('temp-', { dir: __dirname });
-console.log(tempDir);
-// Output: /Users/inariyama/temp-3ys5da
-```
-
-Tulostuksessa voit nähdä, että hakemisto sijaitsee tiedoston suoritushakemistossa. Voit myös antaa kolmannen parametrin, joka määrittää, käytätäänkö tämän hakemiston luomista. Oletuksena tämä on UTF-8, mutta voit vaihtaa sen haluamasi koodauksen mukaan. Tämä voi olla hyödyllistä, jos haluat varmistaa, että tiedostot tallennetaan oikeilla kirjoituskoneilla.
-
-See Also
-
-- [Node.js Documentation: fs module](https://nodejs.org/api/fs.html)
-- [W3Schools: Node.js File System](https://www.w3schools.com/nodejs/nodejs_filesystem.asp)
+- [fs - Node.js docs](https://nodejs.org/docs/latest-v12.x/api/fs.html)
+- [Creating a Temporary File in JavaScript](https://www.javascripttutorial.net/javascript-file/)

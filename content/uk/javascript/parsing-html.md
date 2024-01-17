@@ -10,47 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Чому
+Що і чому?
 
-Розбір HTML є важливою частиною розробки веб-додатків. Він дозволяє нам отримувати структуру інформації з HTML документу для подальшого використання в наших програмах.
+Парсинг HTML є процесом видобування даних з різноманітних веб-сайтів. Програмісти використовують цей процес, щоб автоматизувати збір необхідної інформації з веб-сторінок, що допомагає скоротити час та зусилля при роботі з великим обсягом даних.
 
-## Як
-
-### Використання розбору ланцюжків за допомогою `querySelectorAll`
-
+Як це зробити:
 ```Javascript
-const elements = document.querySelectorAll('tag-name');
-console.log(elements);
-```
-
-Вихідний код міститиме масив об'єктів, які відповідають тегам з потрібним ім'ям.
-
-### Використання бібліотеки Cheerio для серверного розбору HTML
-
-```Javascript
+const request = require('request');
 const cheerio = require('cheerio');
-const html = '<div><h1>Hello world</h1></div>';
-const $ = cheerio.load(html);
-console.log($('h1').text());
+
+// Використовуємо модуль request для отримання коду сторінки
+request('https://example.com', (error, response, html) => {
+    if (!error && response.statusCode == 200) {
+        // Використовуємо cheerio для отримання доступу до DOM сторінки
+        const $ = cheerio.load(html);
+
+        // Знаходимо елемент за допомогою CSS селектора та отримуємо його текст
+        const title = $('h1').text();
+
+        // Виводимо результат
+        console.log(title);
+    }
+});
 ```
 
-Вихідний результат буде містити текст "Hello world", який знаходиться всередині тега `<h1>`.
+Глибше вдивимося:
+(1) Історичний контекст: Парсинг HTML був розроблений для автоматизації збору даних з веб-сторінок, що спрощує життя програмістам.
+(2) Альтернативи: Замість використання бібліотеки cheerio, можна також використати Puppeteer або JSDOM для парсингу веб-сторінок.
+(3) Деталі виконання: Після отримання HTML-коду сторінки, бібліотека cheerio дозволяє шукати елементи за допомогою CSS селекторів та отримувати потрібну інформацію.
 
-### Використання вбудованих методів DOM для розбору HTML
-
-```Javascript
-const element = document.getElementById('element-id');
-console.log(element.innerHTML);
-```
-
-Вихідний результат буде містити HTML код, який належить елементу з вказаним ID.
-
-## Глибока занурення
-
-Розбір HTML може бути більш складним завданням, коли маємо справу зі складною структурою документу. У таких випадках, корисно ознайомитись з більш складними методами, такими як `XMLHttpRequest` або `fetch`, для отримання HTML коду із зовнішніх документів.
-
-## Дивіться також
-
-- MDN розділ про DOM: https://developer.mozilla.org/uk/docs/Web/API/Document_Object_Model
-- Офіційна документація Cheerio: https://github.com/cheeriojs/cheerio
-- Застосування розбору HTML у реальному веб-додатку: https://medium.com/@magnetikonline/responding-to-dynamic-dom-changes-when-scraping-ca3b20ad12d4
+Дивіться також:
+- [Модуль request] (https://www.npmjs.com/package/request)
+- [Бібліотека cheerio] (https://cheerio.js.org/)
+- [Підходи до парсингу веб-сторінок у Node.js] (https://hackernoon.com/a-guide-to-web-scraping-in-node-js/)

@@ -1,7 +1,7 @@
 ---
-title:                "串联字符串"
-html_title:           "C++: 串联字符串"
-simple_title:         "串联字符串"
+title:                "连接字符串"
+html_title:           "C++: 连接字符串"
+simple_title:         "连接字符串"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -10,87 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
-当我们需要将多个字符串连接在一起时，我们可以使用字符串连接来创建一个新的字符串。这可以用于构建更复杂的输出，比如打印出一个完整的句子，或者拼接一个 URL 地址。
+## 什么是字符串连接？
 
-## 如何
-使用 C++ 中的 `+` 运算符来完成字符串连接。下面是一个例子，展示了如何将两个字符串连接在一起并打印出结果：
+字符串连接是将两个或多个字符串合并为一个更长的字符串的过程。它是编程中常用的基本操作，可以将文本片段粘贴在一起，形成一个更完整的文本字符串。
 
-```C++
-#include <iostream>
-using namespace std;
+## 为什么要做字符串连接？
 
-int main() {
-    string first_name = "John";
-    string last_name = "Doe";
+程序员通常会通过字符串连接来构建更复杂的文本内容，这样可以更方便地操作文本数据。例如，在用户输入用户名和密码后，程序可以将它们连接起来，形成一个完整的登录凭证。另外，字符串连接也可以用来构造动态的文本消息，如发送电子邮件或短信。
 
-    string full_name = first_name + " " + last_name;
+## 如何进行字符串连接？
 
-    cout << full_name << endl;
-
-    return 0;
-}
-```
-
-输出结果为：
-```
-John Doe
-```
-
-这里我们使用`+`运算符将两个字符串 `first_name` 和 `last_name` 连接起来，并将结果赋值给 `full_name`。最后，我们使用 `cout` 来打印出完整的名字。
-
-## 深入了解
-除了使用`+`运算符外，我们还可以使用 `append()` 函数来拼接字符串。这个函数可以在一个已存在的字符串末尾添加新的内容。例如：
+在C++中，可以使用加号 `+` 运算符来连接两个字符串。例如：
 
 ```C++
-string sentence = "Today is a ";
-
-sentence.append("great day!");
-
-cout << sentence << endl;
+string str1 = "Hello";
+string str2 = "World";
+string result = str1 + str2;
 ```
 
-输出结果为：
-```
-Today is a great day!
-```
+此时 `result` 的值为 `HelloWorld`。注意，字符串连接只能在相同类型的字符串之间进行，即只能连接 `string` 型的字符串。
 
-除了拼接字符串，我们也可以使用 `insert()` 函数来在指定位置插入新的内容。例如：
+## 深入探讨
 
-```C++
-string sentence = "Today is a great day!";
+字符串连接的历史可以追溯到早期的编程语言，如BASIC。除了使用加号运算符，C++中还有其他方法来进行字符串连接，如使用 `string` 类中的 `append()` 方法。此外，还存在一些第三方库可供使用，如 `boost::algorithm::join()`，提供更多的灵活性和功能。在实现上，字符串连接涉及内存分配和复制，因此在处理大量字符串时，需要注意性能问题。
 
-sentence.insert(11, "very ");
+## 查看更多
 
-cout << sentence << endl;
-```
-
-输出结果为：
-```
-Today is a very great day!
-```
-
-当我们需要在字符串中替换某些内容时，可以使用 `replace()` 函数。例如：
-
-```C++
-string sentence = "Today is a very great day!";
-
-sentence.replace(11, 4, "not ");
-
-cout << sentence << endl;
-```
-
-输出结果为：
-```
-Today is not a very great day!
-```
-
-现在，你已经知道了如何使用 `+` 运算符、`append()`、`insert()` 和 `replace()` 函数来进行字符串连接，可以尝试用这些方法来拼接不同的字符串，创造出自己想要的输出。
-
-## 参考资料
-- [C++ 字符串教程](https://www.runoob.com/cplusplus/cpp-strings.html)
-- [C++ 字符串连接](https://www.geeksforgeeks.org/how-to-concatenate-two-strings-in-cpp/#:~:text=Strings%20can%20be%20concatenated%20using,in%20cpp%20%3D%20concatenation%20operator%20).)
-
-## 参见
-- [C++ 中的字符串函数](https://www.runoob.com/cplusplus/cpp-string-functions.html)
-- [字符串连接示例](https://www.programiz.com/cpp-programming/examples/concatenate-strings)
+- [C++ string concatenation](https://www.guru99.com/cpp-string.html)
+- [A deep dive into string concatenation in C++](https://www.learncpp.com/cpp-tutorial/6-9a-the-string-class-concatenation-and-repetition/)
+- [Boost string algorithms library](https://www.boost.org/doc/libs/1_72_0/doc/html/boost/algorithm/join.html)

@@ -1,7 +1,7 @@
 ---
-title:                "寻找字符串的长度"
-html_title:           "Clojure: 寻找字符串的长度"
-simple_title:         "寻找字符串的长度"
+title:                "寻找字符串的长度。"
+html_title:           "Clojure: 寻找字符串的长度。"
+simple_title:         "寻找字符串的长度。"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -10,30 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
+## 什么是字符串长度及为什么要找到它？
+字符串长度指的是字符串中包含的字符的数量。在编程中，我们经常需要找到一个字符串的长度，以便可以对其进行进一步的处理或比较。通过找到字符串的长度，我们可以更轻松地操作和处理各种文本数据。
 
-有时候，我们需要知道一个字符串的长度，例如在处理用户输入或者验证输入内容时。Clojure提供了简便的方法来获取字符串的长度，接下来我们将会介绍如何操作。
+## 如何找到字符串长度？
+```Clojure
+(defn string-length [str] 
+  "计算给定字符串的长度"
+  (count str))
 
-## 如何操作
-
-在Clojure中，我们可以使用 `count` 函数来获取字符串的长度，该函数接受一个字符串作为参数，并返回字符串的长度。
-
+(string-length "Hello World") ; 输出为 11
 ```
-Clojure
-(count "Hello World") ;; 输出 11
-```
 
-## 深入了解
+## 深入探讨
+### 历史背景
+在早期的计算机编程语言中，字符串的长度是通过特定的符号来标记的，如字符串的末尾需要用一个空字符来标记。随着编程语言的发展，出现了更加简洁和有效的方法来计算字符串的长度，如Clojure中的`count`函数。
 
-`count` 函数并不仅仅可以用于字符串，它也可以用于一个序列或者集合。如果传入一个序列，`count` 函数会返回序列的元素个数。如果传入一个集合，`count `函数会返回集合中的元素个数。
+### 其他方法
+除了使用`count`函数，我们也可以使用`reduce`函数来计算字符串的长度。这种方法比较复杂，但是可以对我们的思维带来一定的挑战。
 
-除了 `count` 函数，我们还可以使用 `(.length s)` 方法来获取字符串的长度，它会返回一个整数。 注意，`count` 函数和 `(.length s)` 方法都会返回字符串中的字符数，而不是字节数。
+### 实现细节
+在Clojure中，字符串被表示为一组字符的序列。通过使用`count`函数，我们遍历整个字符串并计算字符的数量，从而得到字符串的长度。这种方法的时间复杂度为O(n)，n为字符串的长度。
 
-## 查看更多
-
-可以参考Clojure官方文档 [字符串函数](https://clojuredocs.org/clojure.string/count) 来了解更多关于 `count` 函数的使用方法。
-
-# 也可以查看这些链接：
+## 参考资料
 - [Clojure官方文档](https://clojure.org/)
-- [Clojure教程](https://www.tutorialspoint.com/clojure/)
-- [Clojure中文网](https://clojure-cn.readthedocs.io/zh_CN/latest/index.html)
+- [字符串的长度](https://www.geeksforgeeks.org/count-the-number-of-characters-in-a-string-in-clojure/)
+- [使用reduce函数计算字符串的长度](https://stackoverflow.com/questions/23498029/finding-length-of-a-string-using-reduce-in-clojure)

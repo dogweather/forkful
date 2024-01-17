@@ -1,7 +1,7 @@
 ---
-title:                "לבדיקת קיום תיקייה בתוכנות מחשב"
-html_title:           "Swift: לבדיקת קיום תיקייה בתוכנות מחשב"
-simple_title:         "לבדיקת קיום תיקייה בתוכנות מחשב"
+title:                "בדיקת קיומו של ספרייה במחשב"
+html_title:           "Swift: בדיקת קיומו של ספרייה במחשב"
+simple_title:         "בדיקת קיומו של ספרייה במחשב"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Files and I/O"
@@ -10,31 +10,20 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## למה
-מחקר ובדיקת קבצים ותיקיות הם חלק חשוב בכתיבת תוכניות לפיתוח. בדיקת האם תיקייה קיימת תוכל להגן מפני תקלות כגון ניסיון גישה לתיקייה שלא קיימת ולמנוע קריסות בתוכניות שלנו. על כן, חשוב לדעת כיצד ניתן לבדוק אם תיקייה קיימת בשפת סוויפט.
+"מה ולמה?": בדיקת האם תיקייה קיימת היא פעולה שמאפשרת למתכנתים לבדוק אם תיקייה מסוימת קיימת במערכת הקבצים של האפליקציה. היא חשובה כדי לוודא שהקוד נכתב היטב ולמנוע תקלות בזמן ריצת האפליקציה.
 
-## איך לבדוק אם תיקייה קיימת
-הליכים נוספים בקוד כדי לבדוק אם תיקייה קיימת:
-``` Swift
-let fileManager = FileManager.default
-let directoryURL = URL(fileURLWithPath: "path/to/directory")
-
-var isDirectory: ObjCBool = false
-
-if fileManager.fileExists(atPath: directoryURL.path, isDirectory: &isDirectory) {
-    if isDirectory.boolValue {
-        print("\(directoryURL.path) היא תיקייה קיימת!")
-    } else {
-        print("\(directoryURL.path) היא לא תיקייה קיימת!")
-    }
+"איך לעשות?": כדי לבדוק אם תיקייה קיימת, ניתן להשתמש בפונקציה פנימית של שפת Swift "FileManager.default.fileExists(atPath:)" ולמסור את הנתיב של התיקייה. הפונקציה תחזיר "true" אם התיקייה קיימת ו-"false" אם היא לא קיימת. לדוגמא: 
+```Swift
+if FileManager.default.fileExists(atPath: "/Users/Desktop") {
+  print("התיקייה קיימת")
 } else {
-    print("תיקייה זו אינה קיימת!")
+  print("התיקייה לא נמצאת")
 }
 ```
 
-הקוד הראשוני יוצר אובייקט של מנהל הקבצים של המערכת. לאחר מכן, אנו יוצרים את נתיב התיקייה שאנו רוצים לבדוק. כאשר אנו משתמשים בפעולת `fileExists(atPath:isDirectory:)`, אנו מעבירים את הנתיב של התיקייה ומסמן לשיטה שנרצה לבדוק אם התיקייה היא באמת תיקייה אמיתית. הערך `isDirectory` משמש כמשתנה נוסף שאנו עוברים בהפעלה של הפעולה, כך שאנו יכולים לבדוק את הסוג של הפריט בהמשך.
+"כיוון עמוק": בדיקת קיומו של תיקייה היא חלק מהתתחום הגדול של ניהול קבצים ותיקיות במערכת ההפעלה. בעבר, בשפת C הייתה פונקציה פנימית נפוצה בשם "opendir()" ששימשה לבדוק אם תיקייה קיימת, אך בשפת Swift נעשה שיפור באופן הרצף וניתן להשתמש בפונקציה הפנימית שאותה זכרנו קודם. בנוסף, ניתן גם להשתמש בפרמטרים נוספים כמו "followSymlinks" כדי לבחור אם יש לעקוב אחרי קישורים סמליים.
 
-## מעמקים
-על מנת לעשות בדיקה מדויקת יותר, נוכל לדעת אם תיקייה קיימת על ידי שימוש בפעולת `contentsOfDirectory(at:includingPropertiesForKeys:options:)` של מנהל הקבצים. פעם שאנו מקבלים את רשימת הפריטים בדף העמוד הנותן של פעולת זאת, אנו יכולים להשוות את הפריטים המכילים בתיקייה לפריט שנכון לבדוק. 
-
-## ראה
+"ראה גם": למידע נוסף על ניהול קבצים ותיקיות בשפת Swift, ניתן לבדוק את הקישורים המובאים להלן:
+- "How to Manage Files and Directories in Swift": https://www.ralfebert.de/ios/tutorials/filemanager-directory-ios-apps/
+- "Working with Directories in Swift": https://www.avanderlee.com/swift/directory-structure-filemanager-swift/
+- "The Importance of Proper File and Directory Management in Programming": https://medium.com/@0xboiler/file-and-directory-management-in-software-development-a9b3c4f99606

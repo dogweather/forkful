@@ -1,7 +1,7 @@
 ---
-title:                "पदच्छेद से निस्कारण"
-html_title:           "Gleam: पदच्छेद से निस्कारण"
-simple_title:         "पदच्छेद से निस्कारण"
+title:                "सबस्ट्रिंग निकालना"
+html_title:           "Gleam: सबस्ट्रिंग निकालना"
+simple_title:         "सबस्ट्रिंग निकालना"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -10,25 +10,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
-चिंटियाँ आपके धीमे गेम में सबसे टेज क्राश हैं! ये स्ट्रिंग सब्स्ट्रिंग्स को निकालने का सबसे अनुकूल तरीका है, जो आपको गेम डेवलपमेंट के लिए शानदार परिणाम देगा।
+## क्या और क्यों? 
 
-## कैसे करें
+अक्सर हमारे प्रोग्राम में इस्तेमाल होने वाले स्ट्रिंग की अलग-अलग भागों को निकालना होता है। इस प्रकार की स्ट्रिंग के भागों को हम substrings कहते हैं। यहां हम स्ट्रिंग से substrings निकालने का तरीका जानेंगे।
+
+## कैसे करें: 
 ```Gleam
-let string = "हमारे घर में सबसे पहले दूरियां लगाई जाती हैं"
-let substring = String.substring(string, 11, 15)
-io.print(substring) // घर में सबसे पहले 
-io.print(string) // हमारे घर में सबसे पहले दूरियां लगाई जाती हैं
-
-let word = "मैं एक छोटी सी चिंटी हूँ"
-let substring = String.substring(word, 7)
-io.print(substring) // चिंटी हूँ
+let string = "Hello World"
+let substring = String.slice(string, 0, 5)
 ```
+उपरोक्त उदाहरण में, हमने पहले स्ट्रिंग ```Hello World``` को string नामक एक वेरिएबल में स्टोर किया है। फिर हमने ```String.slice``` मेथड का उपयोग करके इस स्ट्रिंग का सबसे पहला भाग (0 से 5 तक) निकाला है और उसे substring नामक वेरिएबल में स्टोर किया है। अब हम substring को प्रिंट कर सकते हैं और उसका आउटपुट होगा ```Hello```।
 
-## डीप डाइव
-स्ट्रिंग सब्स्ट्रिंग का उपयोग आपको विभिन्न विभिन्न स्थितियों में किया जा सकता है, जैसे कि टेक्स्ट प्रोसेसिंग, पाठ विश्लेषण और डाटा मैनिपुलेशन। आपको स्ट्रिंग सब्स्ट्रिंग का सही इस्तेमाल करके उसकी अधिक स्पष्टता और उपयोगिता को समझने के लिए एक गहराई से जानना चाहिए।
+## गहराई से जानें: 
+इस प्रकार से स्ट्रिंग से substrings निकालना आसान और उपयोगी है लेकिन क्या आप जानते हैं कि substrings निकालने का यह तरीका Elixir भाषा से लिया गया है? अन्य तरीकों में स्ट्रिंग से substrings निकालने के लिए Elixir के अलावा Python का उपयोग किया जाता है। substrings को निकालने का यह तरीका अक्सर स्ट्रिंग मैनिपुलेशन को सरल बनाता है। 
 
-## देखें भी
-- Official Gleam documentation (https://gleam.run)
-- Tutorial on string manipulation in Gleam (https://gleam.run/tutorials/strings/)
-- Example code for extracting substrings (https://github.com/gleam-lang/gleam/blob/master/examples/substring.gleam)
+## इससे जुड़े और भी कुछ: 
+यदि आप स्ट्रिंग मैनिपुलेशन के और तरीकों को सीखना चाहते हैं, तो आप निम्नलिखित स्रोतों को देख सकते हैं। 
+
+- [Gleam डॉक्यूमेंटेशन](https://gleam.run/documentation)
+- [Elixir डॉक्यूमेंटेशन](https://elixir-lang.org/getting-started/introduction.html)
+- [Python डॉक्यूमेंटेशन](https://www.python.org/about/gettingstarted/)

@@ -10,45 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-Have you ever wanted to download a web page and extract information from it? Maybe you want to create a web scraper or build a tool to analyze website data. By learning how to download a web page in Haskell, you can easily access and manipulate online content for various purposes.
+Downloading a web page refers to the process of retrieving the content of a webpage from the internet. Programmers often do this to extract information or data from a webpage for use in their own applications or systems.
 
-## How To
-
-In Haskell, we can use the `HTTP` library to send HTTP requests and retrieve web pages. First, we will need to import the necessary modules:
+## How to:
 
 ```Haskell
-import Network.HTTP.Simple -- for making HTTP requests
-import qualified Data.ByteString.Lazy.Char8 as L8 -- for working with byte strings
+import Network.HTTP.Conduit (simpleHttp)
+
+-- Download webpage
+pageContent <- simpleHttp "https://www.example.com"
 ```
 
-Next, we can use the `httpLBS` function to make a GET request to a specific URL. This will return a lazy byte string representing the web page content.
+Output: The variable `pageContent` will contain the content of the webpage as a `ByteString` data type.
 
-```Haskell
-response <- httpLBS "https://www.example.com"
-```
+## Deep Dive:
 
-We can then use the `getResponseBody` function to extract the byte string from the response.
+Downloading web pages has been a common practice since the early days of the internet. It has evolved over the years with various libraries and tools available to facilitate the process in different programming languages. Some alternatives to `simpleHttp` in Haskell include `curl` and `wget`. The `simpleHttp` function is part of the `http-conduit` package, which provides a high-level interface for making HTTP requests. Under the hood, it uses `http-client`, a low-level HTTP client library.
 
-```Haskell
-body <- getResponseBody response
-```
+## See Also:
 
-Here, `body` will contain the raw HTML of the web page. We can use the `L8.unpack` function to convert the byte string into a regular string for easier manipulation.
-
-```Haskell
-let html = L8.unpack body
-```
-
-We can then use tools like `regex` or `tagsoup` to extract specific information from the HTML.
-
-## Deep Dive
-
-When making an HTTP request, there are various options and parameters that can be set, such as setting headers or retrieving specific parts of the response. The `Network.HTTP.Simple` library provides many useful functions for handling these options. For a more in-depth tutorial on using this library, check out the [HTTP Simple documentation](https://hackage.haskell.org/package/http-client).
-
-See Also
-
-- [HTTP Simple Documentation](https://hackage.haskell.org/package/http-client)
-- [Haskell Regex Library](https://hackage.haskell.org/package/regex)
-- [Haskell TagSoup Library](https://hackage.haskell.org/package/tagsoup)
+- [http-conduit package documentation](https://hackage.haskell.org/package/http-conduit)
+- [http-client library documentation](https://hackage.haskell.org/package/http-client)
+- [Alternatives to simpleHttp in Haskell](https://wiki.haskell.org/Network.HTTP.Conduit-Alternatives)

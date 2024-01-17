@@ -10,27 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为何会阅读命令行参数？
+## 这是什么 & 为什么？
 
-在编程中，我们经常需要通过命令行传递一些参数给程序，这样就可以在不改变源代码的情况下根据需要修改程序的行为。阅读命令行参数可以让我们更灵活地使用程序，提高代码的可复用性和可调试性。
+读取命令行参数是程序员经常做的一件事情，它允许他们在运行程序时通过命令行输入一些参数。这样就可以改变程序的行为，让它更具有灵活性。
 
-## 如何阅读命令行参数
+## 如何：
 
 ```Ruby
-# 在Ruby中，我们可以使用ARGV数组来接收命令行参数
-# 例如，在命令行输入：ruby program.rb hello world
-# 则ARGV数组的元素为["hello", "world"]
-# 我们可以按照传入的参数顺序来使用ARGV数组中的元素
-puts "Hello #{ARGV[0]}!"  # 输出：Hello hello!
-puts "Welcome to #{ARGV[1]}!"  # 输出： Welcome to world!
+# 这是一个简单的示例，演示如何读取一个命令行参数并将其打印出来。
+
+# 首先，我们需要导入 Ruby 内置的 ARGV 模块，它可以帮助我们读取命令行参数。
+require 'ARGV'
+
+# 下一步是定义一个数组，用于存储我们读取到的命令行参数。
+args = []
+
+# 然后，我们可以使用 each 方法来遍历 ARGV 数组，并将每个参数添加到我们定义的 args 数组里面。
+ARGV.each do |arg|
+  args << arg
+end
+
+# 最后，我们可以使用 puts 方法将 args 数组里面的参数打印出来。
+puts "命令行参数为：#{args}"
 ```
 
-## 深入了解阅读命令行参数
+输出为：命令行参数为：[参数1, 参数2, 参数3]
 
-除了使用ARGV数组来接收参数外，我们还可以使用标准库中的OptionParser类来更灵活地处理命令行参数。通过定义不同的选项和参数，我们可以实现更复杂的命令行操作。同时，也可以使用环境变量来设置默认值，使我们的程序更加灵活。
+## 深入了解：
 
-## 参考链接
+读取命令行参数这个功能在很多编程语言中都有，它为程序员提供了一种方便的方式来交互式地控制程序的行为。除了使用 ARGV 模块，还有一种常用的方式是使用环境变量来读取命令行参数。另外，如果程序需要读取复杂的命令行参数，还可以使用 OptionParser 类来帮助处理。不管采用哪种方式，读取命令行参数都是让程序更加灵活实用的一种方法。
 
-- [Ruby官方文档 - Command Line Arguments](https://ruby-doc.org/core-2.7.0/doc/command_line_rdoc.html)
-- [Ruby官方文档 - OptionParser类](https://ruby-doc.org/stdlib-2.7.0/libdoc/optparse/rdoc/OptionParser.html)
-- [Ruby on Rails入门教程 - 阅读命令行参数](https://railstutorial-china.org/ruby-on-rails-tutorial-v4.0.0/chapters/command-line/#preparing_arguments)
+## 参考链接：
+
+- [Ruby 官方文档 - ARGV 模块](https://ruby-doc.org/core-3.0.2/ARGV.html)
+- [Ruby 官方文档 - OptionParser 类](https://ruby-doc.org/stdlib-3.0.2/libdoc/optparse/rdoc/OptionParser.html)
+- [Ruby 之家 - Ruby 命令行参数介绍](https://www.ruby-cn.org/articles/commandlineargs/)

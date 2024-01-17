@@ -1,7 +1,7 @@
 ---
-title:                "Skrive tester"
-html_title:           "Python: Skrive tester"
-simple_title:         "Skrive tester"
+title:                "Skriving av tester"
+html_title:           "Python: Skriving av tester"
+simple_title:         "Skriving av tester"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Testing and Debugging"
@@ -10,56 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hva & Hvorfor?
 
-Å skrive tester er en nødvendig del av å skrive god og pålitelig kode. Ved å skrive tester kan du sikre at koden din fungerer som forventet, og det gjør det også enklere å finne og fikse feil i koden.
+Å skrive tester er en viktig del av programmeringsprosessen. Det er en prosess der vi skriver kode for å teste koden vi allerede har skrevet og sikre at den fungerer som den skal. Dette hjelper programvareutviklere med å identifisere og fikse feil i koden sin, og sikrer at den fungerer som forventet.
 
-## Hvordan
+# Hvordan:
 
-For å skrive tester i Python, trenger du et testrammeverk som for eksempel `unittest` eller `pytest`. La oss se på et enkelt eksempel på hvordan du kan skrive og kjøre en test ved hjelp av `unittest`:
+Her er et enkelt eksempel på hvordan man kan skrive tester i Python bruker "assert" uttalelser:
 
 ```Python
-import unittest
+# Opprett en funksjon som legger sammen to tall
+def add(x, y):
+    return x + y
 
-# Definer en klasse for testene dine
-class TestKalkulator(unittest.TestCase):
-    
-    # Lag en testfunksjon som starter med "test_"
-    def test_addisjon(self):
-        # Definer input og forventet output
-        x = 5
-        y = 10
-        forventet_output = 15
-        
-        # Kjør funksjonen du vil teste
-        faktisk_output = addisjon(x, y)
-        
-        # Sjekk om faktisk output er lik forventet output
-        self.assertEqual(faktisk_output, forventet_output)
-        
-# Kjør testene ved å kjøre denne filen
-if __name__ == '__main__':
-    unittest.main()
+# Definer tester for funksjonen vår
+assert add(2, 3) == 5  # forventet resultat er 5
+assert add(5, -2) == 3 # forventet resultat er 3
+
+print("Alle tester kjørte uten feil, funksjonen fungerer som den skal!")
 ```
 
-Når du kjører denne filen, vil du se resultatet av testen din i terminalen:
+Her har vi skrevet en test for vår "add" funksjon ved hjelp av "assert" uttalelser. Hvis noe ikke fungerer som det skal, vil disse uttalelsene gi en feilmelding og hjelpe oss med å finne feilen.
 
-```
-.
-----------------------------------------------------------------------
-Ran 1 test in 0.000s
-OK
-```
+# Dykk dypere:
 
-Dette betyr at testen din bestod, og funksjonen `addisjon` fungerer som forventet.
+I en stadig mer kompleks IT-verden er det viktig å skrive tester for å sikre at koden vår fungerer som den skal. Å ha gode tester i stedet for å debugge koden etter at den allerede er skrevet, sparer oss for mye tid og frustasjon.
 
-## Dypdykk
+Et alternativ til å skrive tester er å bruke en teknikk som kalles "Test Driven Development" (TDD). Dette er en metode der tester skrives før selve koden, og dermed sikrer at koden som blir skrevet oppfyller de ønskede funksjonene.
 
-Når du skriver tester, er det viktig å sørge for at du tester alle mulige tilfeller, også grensetilfeller og ugyldige input. Du kan også bruke `assert`-setninger for å sjekke at verdier er `True` eller `False`, eller at de er av riktig type. Dette vil hjelpe deg med å fange opp eventuelle feil i koden din.
+Du kan også bruke spesielle programmer som "unittest" eller "pytest" for å skrive og kjøre tester i Python. Disse verktøyene tillater deg å skrive mer komplekse tester og kjøre dem automatisk.
 
-Husk også at tester bør skrives før koden din, slik at du kan følge en "test-drevet utvikling" (TDD) tilnærming. Dette betyr at du skriver tester først, og deretter skriver du koden for å få testene til å passere.
+# Se også:
 
-## Se også
-
-- [Dokumentasjon for Pythons `unittest`-rammeverk](https://docs.python.org/3/library/unittest.html)
-- [Dokumentasjon for `pytest`-rammeverket](https://docs.pytest.org/en/latest/)
+- [Hva er tester og hvorfor skal vi skrive dem?](https://www.techopedia.com/definition/27995/test)
+- [Test Driven Development - en oversikt](https://agilemanifesto.org/principles.html)
+- [Hvordan bruke unittest og pytest i Python](https://realpython.com/python-testing/)

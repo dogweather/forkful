@@ -1,7 +1,7 @@
 ---
-title:                "yaml से काम करना"
-html_title:           "Haskell: yaml से काम करना"
-simple_title:         "yaml से काम करना"
+title:                "YAML से काम करना"
+html_title:           "Haskell: YAML से काम करना"
+simple_title:         "YAML से काम करना"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Data Formats and Serialization"
@@ -10,47 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# क्यों
+## यह क्या है और क्यों लोग इसे करते हैं?
+YAML काम करने का एक तरीका है जिससे आप अपने डेटा को एक आसान और स्ट्रक्टर्ड फॉर्म में संग्रहीत कर सकते हैं। यह एक plaintext फाइल है जिसे आप आसानी से पार्स और रीड कर सकते हैं। यह इस्तेमाल करने में बहुत सरल है और यह आपके कोड को अत्यंत पारदर्शी बनाता है।
 
-यामल काम करना बेहतर अनुभव बनाने के लिए है। यह एक आसान और स्वचालित फॉर्मेट है जो डेटा को संरक्षित और संगठित रखने में मदद करता है। यहाँ हिन्दी में हम हैस्केल के साथ यामल पर काम करना सीखेंगे।
-
-# कैसे करें
-
-यामल की सबसे पहले आवश्यकता होती है, तो इसे इंस्टॉल करना है। आप आसानी से अपने सिस्टम में इसे इंस्टॉल कर सकते हैं - ```cabal इंस्टॉल यामल```। इसके बाद, आप हैस्केल में निम्न उदाहरण का पालन करके यामल फ़ाइल में से डेटा पढ़ सकते हैं:
+## कैसे करें:
+आप Haskell में YAML फ़ाइलों से डेटा पार्स कर सकते हैं और JSON या अन्य फॉर्मेट में डेटा बना सकते हैं। नीचे दिए गए उदाहरण में, हम पांच नए उदाहरण दिखाएंगे। आप इन्हें अपने खुद के कोड में उपयोग करके सीख सकते हैं।
 
 ```Haskell
-import Data.Yaml
+-- पार्सिंग YAML फ़ाइल से डेटा
+import Text.Libyaml
 
 main = do
-  fileContents <- decodeFileEither "example.yaml"
-  case fileContents of
-    Left err -> print err
-    Right result -> print result
-```
+    str <- parseYamlFile "example.yaml"
+    -- str अब एक Extended Data Type है, जो आपको संपूर्ण YAML फ़ाइल के डेटा को पार्स करके देगा
 
-इसका आउटपुट कुछ इस तरह हो सकता है:
-
-```
-Right (Object (fromList [("name",String "John"),("age",Number 25)]))
-```
-
-आप इसी प्रकार हैस्केल कोड का उपयोग करके यामल डेटा को लिख सकते हैं:
-
-```Haskell
-import Data.Yaml
+-- नए YAML फ़ाइल बनाना
+import Text.Libyaml
 
 main = do
-  let myData = object ["name" .= String "Jane", "age" .= Number 30]
-  encodeFile "newfile.yaml" myData
+    let data = [("name", "Alice"), ("age", "25"), ("city", "New York")]
+    let yamlStr = toYaml data
+    writeFile "new.yaml" yamlStr
+    -- new.yaml फ़ाइल अब आपके नए डेटा से बन गई है
+
+-- बूलियन वैल्यू से YAML फ़ाइल बनाना
+main = do
+    let data = [("isStudent", True), ("hasJob", False)]
+    let yamlStr = encodeYaml data
+    putStrLn yamlStr
+    -- isStudent: true
+    -- hasJob: false
+
+-- संख्याओं वाली YAML फ़ाइल बनाना
+main = do
+    let data = [("price", 19.99), ("quantity", 10)]
+    let yamlStr = encodeYaml data
+    putStrLn yamlStr
+    -- price: 19.99
+    -- quantity: 10
+
+-- मल्टीलाइन टेक्स्ट वाली YAML फ़ाइल बनाना
+main = do
+    let data = [("description", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque at nisi euismod, feugiat arcu et, porta risus. Donec gravida nibh vel erat dictum, non.</br>")]
+    let yamlStr = encodeYaml data
+    putStrLn yamlStr
+    -- description: |
+    --     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque at nisi euismod, feugiat arcu et, porta risus. Donec gravida nibh vel erat dictum, non.
+
 ```
 
-यह आपके नए फ़ाइल में डेटा को लिखेगा जिसमें शामिल होता है:
+## गहराई में जाइए:
+YAML का इतिहास 2001 में Clark Evans और Ingy döt Net द्वारा जन्म लिया गया था। इससे पहले, programmers ने अपने डेटा को संग्रहीत करने के लिए XML या JSON जैसे अन्य formats का उपयोग किया था। YAML उन सभी को आसान होने के साथ-साथ एक readable format भी प्रदान करता है। कुछ अन्य alternatives के रूप में TOML और Ini फ़ाइलें भी हैं।
 
-```
-name: Jane
-age: 30
-```
-
-# गहराई में दून
-
-यामल के साथ काम करने के दूराव या तकनीकी विवरण के बारे में और अधिक जानने के लिए, आप हैस्केल परियोजना के अधिकारियों द्वारा संचालित आधिकारिक दस्तावेज़ पढ़ सकते हैं। यामल और हैस्केल दोनों ही ओपन सोर्स परियोजनाओं हैं, तो आप यामल और इस तकनीक को समझने में मदद के लिए अन्य लोगों के संपर्क म
+YAML आमतौर पर इंडेंटेड होता है, यानि स्पेसकोईंग का इस्तेमाल करके visual ही दिखाई देता है। यह आवश्यकतानुसार multiline और सिंगललाइन वैल्यूज़ दोनों का समर्थन करता है। YAML एक बहुत ही लाइटवेट और सरल syntax है, जो आपको अपने कोड को अधिक maintain करन

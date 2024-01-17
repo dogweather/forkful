@@ -10,39 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+## 무엇 & 왜?
 
-날짜를 문자열로 변환하는 데에 어떤 이유로 참여할까요? JavaScript에서 날짜를 바로 출력하는 경우, 기본적으로 영문으로 표시되어 나오지만 TypeScript를 통해 날짜를 원하는 형태로 바꿀 수 있습니다.
+타입스크립트에서 날짜를 문자열로 변환하는 것이란 무엇일까요? 프로그래머들이 이를 하는 이유가 무엇일까요? 날짜를 문자열로 변환하는 것은 날짜를 보다 쉽게 다루기 위해 날짜를 컴퓨터가 이해할 수 있는 형식으로 변경하는 것입니다. 이를 통해 날짜와 관련된 계산이나 조작을 더욱 간편하게 할 수 있습니다.
 
-## 방법
+## 방법:
 
-```TypeScript
-const date = new Date(); // 현재 날짜 가져오기
+TypeScript에서 날짜를 문자열로 변환하는 방법을 알아보겠습니다.
 
-// 날짜와 시간을 원하는 형식으로 바꾸기
-const stringDate = date.toLocaleString(
-  'en-US', // 날짜 포맷 언어 설정
-  {
-    weekday: 'long', // 요일 긴 이름으로 표시
-    year: 'numeric',
-    month: 'long', // 월 긴 이름으로 표시
-    day: 'numeric',
-    hour: 'numeric',
-    minute: 'numeric',
-    hour12: true, // 12시간 형식으로 표시
-  }
-);
-console.log(stringDate); // 출력 예시: Friday, May 21, 2021, 7:23 PM
+#### Date 객체를 사용하는 방법:
+```
+const currentDate = new Date();
+const dateString = currentDate.toString();
+console.log(dateString);
+
+// Output: Wed Jan 26 2022 17:03:45 GMT+0900 (GMT Standard Time)
 ```
 
-위의 예시 코드에서는 `Date` 객체를 사용하여 현재 날짜와 시간을 가져오고, `toLocaleString` 메서드를 사용하여 원하는 형식으로 날짜를 변환합니다. 이때 옵션으로 언어와 포맷을 설정할 수 있습니다. 자세한 포맷 옵션은 [MDN 문서](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleString)를 참고하세요.
+#### toLocaleDateString() 메소드를 사용하는 방법:
+```
+const currentDate = new Date();
+const dateString = currentDate.toLocaleDateString();
+console.log(dateString);
 
-## 깊이 알아보기
+// Output: 1/26/2022
+```
 
-매년 다른 유저가 사용하는 다른 언어를 고려하여 날짜를 출력해야 하는 다국어 웹 애플리케이션을 개발하는 경우, `Date` 객체와 `toLocaleString` 메서드를 적절히 활용하여 다양한 언어로 날짜를 출력할 수 있습니다. 또한 날짜 포맷에 관한 자세한 정보는 [ECMA-262 (JavaScript 언어 사양의 코어)](https://www.ecma-international.org/publications-and-standards/standards/ecma-262/)를 참고할 수 있습니다.
+## 깊이 파고들기:
 
-## 관련 문서
+날짜를 문자열로 변환하는 것은 프로그래밍 분야에서 매우 일반적인 작업입니다. 특히 날짜를 다양한 형식으로 표현할 수 있는 JavaScript의 Date 객체를 사용하는 경우 더욱 쉽게 할 수 있습니다. 또한 Moment.js와 같은 라이브러리를 사용해 날짜를 포맷팅하는 방법도 존재합니다.
 
-- [MDN 문서: Date.prototype.toLocaleString()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleString)
-- [TypeScript 문서: Date](https://www.typescriptlang.org/docs/handbook/standard-library.html#date)
-- [ECMA-262 (JavaScript 언어 사양의 코어)](https://www.ecma-international.org/publications-and-standards/standards/ecma-262/)
+## 관련 자료:
+
+- [JavaScript Date 객체](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [Moment.js 라이브러리](https://momentjs.com/)

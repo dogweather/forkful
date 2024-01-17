@@ -10,37 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Qu'est-ce que c'est & Pourquoi? 
+La lecture d'un fichier de texte est l'action de parcourir le contenu d'un fichier contenant du texte en utilisant un programme informatique. Les programmeurs le font souvent lorsqu'ils doivent traiter de grandes quantités de données stockées dans des fichiers sous forme de texte.
 
-Si vous êtes nouveau dans le monde de la programmation, vous vous demandez peut-être pourquoi vous devriez vous intéresser à lire un fichier texte. Eh bien, la lecture de fichiers texte est une tâche courante en programmation, surtout si vous travaillez avec des données ou des fichiers de configuration. Comprendre comment lire des fichiers texte peut vous aider à automatiser des tâches et à manipuler des données plus facilement.
-
-## Comment faire
-
-Pour lire un fichier texte en Ruby, il suffit d'utiliser la méthode `File.readlines` et de lui passer le nom du fichier en tant qu'argument. Cette méthode renverra un tableau contenant chaque ligne du fichier en tant qu'élément. Voyons un exemple :
-
-```Ruby
-file = File.readlines("mon_fichier.txt")
-
-puts file # Affiche toutes les lignes du fichier
-puts file[0] # Affiche la première ligne du fichier
-```
-
-Vous pouvez également parcourir le tableau et effectuer des opérations spécifiques sur chaque ligne, par exemple :
-
-```Ruby
-file.each do |line|
-  puts line.capitalize # Affiche chaque ligne du fichier en majuscule
+## Comment faire:
+Voici un exemple de code en Ruby pour lire un fichier de texte et afficher son contenu: 
+```ruby
+File.foreach("fichier.txt") do |line|
+  puts line
 end
 ```
+Voici un exemple de sortie pour un fichier contenant du texte:
+```
+Ceci est une ligne de texte.
+Voici une autre ligne.
+Et une dernière pour la route.
+```
 
-## Plongée en profondeur
+## Plongée en profondeur:
+Lecture de fichiers texte remonte aux premiers jours de la programmation informatique lorsque les ordinateurs stockaient des données sous forme de texte dans des fichiers. De nos jours, il existe également d'autres manières de stocker et de lire des données telles que les bases de données ou les fichiers binaires. Cependant, la lecture de fichiers texte reste utile pour traiter des données simples et peut être réalisée avec une variété de langages de programmation.
 
-Lorsque vous lisez un fichier texte en Ruby, il est important de comprendre le mode d'ouverture du fichier par défaut. Par défaut, la méthode `File.readlines` ouvre le fichier en mode lecture seule. Cela signifie que vous ne pourrez pas écrire dans le fichier ou le modifier. Si vous voulez effectuer des modifications dans le fichier, vous devrez l'ouvrir en mode lecture et écriture avec la méthode `File.open`.
-
-De plus, il est important de noter que la méthode `File.readlines` renverra une erreur si le fichier n'existe pas ou si vous n'avez pas les permissions appropriées pour y accéder. Assurez-vous donc de gérer ces cas dans votre code.
-
-## Voir aussi
-
-- [Documentation officielle de Ruby sur la lecture de fichiers](https://ruby-doc.org/core-2.7.0/File.html#method-c-readlines)
-- [Tutoriel sur la lecture et l'écriture de fichiers en Ruby](https://www.tutorialspoint.com/ruby/ruby_input_output.htm)
-- [Exemple de projet pratique utilisant la lecture de fichiers en Ruby](https://medium.com/tech-tajawal/file-manipulation-in-ruby-reading-from-a-text-file-4773f7c6bb9b)
+## Voir aussi:
+- [Documentation officielle de Ruby sur la lecture de fichiers](https://ruby-doc.org/core-3.0.1/IO.html)
+- [Un tutoriel en français sur la lecture de fichiers en Ruby](https://zetcode.com/lang/rubytutorial/files/)
+- [Un article sur les différentes façons de stocker des données en informatique](https://www.vertabelo.com/blog/what-are-the-different-types-of-data-storage/)

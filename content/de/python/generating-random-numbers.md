@@ -1,7 +1,7 @@
 ---
-title:                "Erzeugung von Zufallszahlen"
-html_title:           "Python: Erzeugung von Zufallszahlen"
-simple_title:         "Erzeugung von Zufallszahlen"
+title:                "Erzeugen von zufälligen Zahlen"
+html_title:           "Python: Erzeugen von zufälligen Zahlen"
+simple_title:         "Erzeugen von zufälligen Zahlen"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Numbers"
@@ -10,75 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+# Was & Warum?
 
-Warum sollte man sich überhaupt die Mühe machen, Zufallszahlen zu generieren? Nun, es gibt viele Anwendungsfälle für zufällige Daten in der Programmierung. Einige Beispiele sind die Simulation von Ereignissen, die Wettbewerbe oder Spiele nachahmen, die Erstellung von Testdaten oder die Verschlüsselung von Daten.
+Das Erzeugen von zufälligen Zahlen ist ein häufiges Konzept in der Programmierung. Es bezieht sich auf das Erstellen von Zahlen, die zufällig ausgewählt wurden, ohne bestimmte Muster oder Vorhersehbarkeit aufzuweisen. Programmierer verwenden dieses Konzept aus verschiedenen Gründen, wie z.B. zur Erzeugung von Testdaten, zur Sicherheit oder zur Simulation von zufälligen Ereignissen.
 
-## Wie man Zufallszahlen generiert
+# Wie geht das?
 
-Das Generieren von Zufallszahlen in Python ist sehr einfach und erfordert nur wenige Zeilen Code. Zunächst müssen wir das random-Modul importieren:
+Um zufällige Zahlen in Python zu erzeugen, können Sie die Funktion `random.randint()` verwenden. Diese Funktion akzeptiert zwei Parameter: den Anfangs- und den Endwert des gewünschten Bereichs. Zum Beispiel erzeugt `random.randint(1, 10)` eine zufällige ganze Zahl zwischen 1 und 10. Wenn Sie eine Fließkommazahl benötigen, können Sie die Funktion `random.uniform()` verwenden, indem Sie den gewünschten Bereich als Parameter übergeben.
 
-```Python
+```python
 import random
+
+# Erzeugung einer zufälligen ganzen Zahl zwischen 1 und 10
+random_num = random.randint(1, 10)
+print(random_num)
+
+# Erzeugung einer zufälligen Fließkommazahl zwischen 0 und 1
+random_float = random.uniform(0, 1)
+print(random_float)
 ```
 
-Anschließend können wir die Funktionen des random-Moduls nutzen, um Zufallszahlen zu generieren. Hier sind einige Beispiele:
+Die Beispielausgabe könnte wie folgt aussehen:
 
-### Ganzzahlige Zufallszahlen
-
-Um eine zufällige ganze Zahl zwischen zwei bestimmten Zahlen zu generieren, können wir `random.randint(start, end)` verwenden:
-
-```Python
-random.randint(1, 10)
-# Ausgabe: 8
+```
+7
+0.489659782135
 ```
 
-Dieser Code generiert eine zufällige ganze Zahl zwischen 1 und 10 (einschließlich 1 und 10).
+# Tiefer Einblick
 
-### Fließkommazahlen
+Das Konzept des Erzeugens von Zufallszahlen gibt es schon seit langem und es wurde von verschiedenen Wissenschaftlern und Mathematikern wie Blaise Pascal, Pierre de Fermat und John von Neumann erforscht. Es gibt auch andere Möglichkeiten, zufällige Zahlen zu erzeugen, wie z.B. die Verwendung von Pseudozufallszahlengeneratoren. Diese verwenden einen bestimmten Algorithmus, um Zahlen zu erzeugen, die wie zufällige Zahlen aussehen, aber tatsächlich vorhersehbar sind. In Python können Sie den `random` Modul mit verschiedenen Funktionen verwenden, um zufällige Zahlen zu erzeugen.
 
-Wenn wir eine zufällige Fließkommazahl zwischen 0 und 1 generieren möchten, können wir `random.random()` verwenden:
+# Siehe auch
 
-```Python
-random.random()
-# Ausgabe: 0.536814023481
-```
-
-Um eine zufällige Fließkommazahl zwischen zwei bestimmten Zahlen zu erhalten, können wir `random.uniform(min, max)` nutzen:
-
-```Python
-random.uniform(1.5, 2.5)
-# Ausgabe: 1.83428640295
-```
-
-### Zufälliges Element aus einer Liste
-
-Mithilfe von `random.choice(list)` können wir ein zufälliges Element aus einer Liste auswählen:
-
-```Python
-fruits = ["Apfel", "Banane", "Orange", "Mango"]
-random.choice(fruits)
-# Ausgabe: Banane
-```
-
-### Zufällige Elemente ohne Wiederholung
-
-Um mehrere zufällige Elemente aus einer Liste auszuwählen, ohne dass diese sich wiederholen, können wir `random.sample(list, k)` verwenden. Hier ist `k` die Anzahl der Elemente, die ausgewählt werden sollen:
-
-```Python
-fruits = ["Apfel", "Banane", "Orange", "Mango"]
-random.sample(fruits, 2)
-# Ausgabe: ["Mango", "Banane"]
-```
-
-## Tiefere Einblicke
-
-Wenn es um das Generieren von Zufallszahlen geht, ist es wichtig zu verstehen, dass diese Zahlen in Wirklichkeit nicht wirklich zufällig sind. Sie basieren auf einem sogenannten "Pseudozufallszahlengenerator", der eine deterministische Reihenfolge von Zahlen verwendet, um scheinbar zufällige Ergebnisse zu erzeugen. Dieser Generator verwendet eine Startzahl, die als "Seed" bezeichnet wird, und eine festgelegte Berechnungsmethode, um die Zahlen zu generieren. Wenn dieselbe Seed-Zahl verwendet wird, wird derselbe Satz von "zufälligen" Zahlen erzeugt.
-
-Um sicherzustellen, dass die Ergebnisse für jeden Nutzer tatsächlich unterschiedlich sind, können wir den Seed-Wert ändern, indem wir `random.seed(seed)` vor dem Aufruf einer Funktion verwenden.
-
-## Siehe auch
-
-- [Python-Dokumentation zu random](https://docs.python.org/3/library/random.html)
-- [Random Number Generation in Python auf Real Python](https://realpython.com/python-random/)
-- [Understanding Randomness in Python auf DataQuest](https://www.dataquest.io/blog/randomness-in-python/)
+- [Python Dokumentation zu `random`](https://docs.python.org/3/library/random.html)
+- [Geschichte der Zufallszahlen](https://www.random.org/randomness/history-of-randomness/)

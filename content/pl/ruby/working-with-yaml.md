@@ -10,80 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i dlaczego?
 
-Dlaczego ktoś powinien zainteresować się pracą z YAML? Ponieważ jest to wygodny i intuicyjny format do przechowywania danych, szczególnie przydatny w programowaniu.
+Praca z YAML to po prostu inny sposób przechowywania i przesyłania danych w kodzie Ruby. Programiści często korzystają z formatu YAML ze względu na jego czytelność i łatwość w użyciu.
 
-## Jak to zrobić
+## Jak to zrobić:
 
-Najpierw musimy zainstalować bibliotekę yaml, używając jednego z menadżerów pakietów, takich jak Bundler lub Gem:
+### Tworzenie i odczytywanie pliku YAML:
 ```Ruby
-gem install yaml
+require 'yaml'
+
+# Tworzenie pliku YAML
+file = File.open("moj_plik.yaml", "w")
+yaml = YAML.dump({ imie: "Jan", wiek: 30 })
+file.write(yaml)
+file.close
+
+# Odczytywanie pliku YAML
+file = YAML.load(File.read("moj_plik.yaml"))
+puts file[:imie] # Output: Jan
+puts file[:wiek] # Output: 30
 ```
 
-Teraz możemy zacząć używać YAML w naszym kodzie. Przykładowo, możemy stworzyć plik YAML zawierający informacje o naszej firmie:
+### Konwersja obiektu do YAML:
 ```Ruby
-company = {
-  name: "MojaFirma",
-  employees: [
-    {
-      name: "Jan Kowalski",
-      position: "Inżynier",
-      salary: 5000
-    },
-    {
-      name: "Anna Nowak",
-      position: "Specjalista ds. marketingu",
-      salary: 4000
-    },
-    {
-      name: "Piotr Nowakowski",
-      position: "Księgowy",
-      salary: 4500
-    }
-  ]
-}
+require 'yaml'
+
+# Konwersja obiektu do YAML
+obj = { imie: "Anna", wiek: 25 }
+yaml = obj.to_yaml
+puts yaml # Output: 
+# ---
+# :imie: Anna
+# :wiek: 25
 ```
 
-Możemy zapisać ten obiekt do pliku YAML przy użyciu metody `to_yaml`:
-```Ruby
-File.open('company.yaml', 'w') do |file|
-  file.write(company.to_yaml)
-end
-```
+## Wnikliwa analiza:
 
-Następnie możemy odczytać zawartość pliku YAML i wyświetlić wynik na ekranie:
-```Ruby
-yaml_data = File.read('company.yaml')
-puts yaml_data
-```
+### Kontekst historyczny:
+YAML (Yet Another Markup Language) został stworzony w 2001 roku jako prosty i czytelny format do przechowywania danych. W porównaniu do XML, YAML jest znacznie bardziej czytelny dla człowieka i łatwiejszy w użyciu.
 
-Kod ten wyświetli następujący wynik:
-```
----
-:name: MojaFirma
-:employees:
-- :name: Jan Kowalski
-  :position: Inżynier
-  :salary: 5000
-- :name: Anna Nowak
-  :position: Specjalista ds. marketingu
-  :salary: 4000
-- :name: Piotr Nowakowski
-  :position: Księgowy
-  :salary: 4500
-```
+### Alternatywy:
+Podobną funkcjonalność co YAML oferują formaty JSON i XML. W zależności od potrzeb, różne formaty mogą okazać się bardziej odpowiednie dla konkretnego projektu.
 
-## Głębsza analiza
+### Szczegóły implementacji:
+W Ruby, moduł YAML może być wykorzystany do konwersji obiektów do formatu YAML oraz odczytywania danych z plików YAML. W celu uzyskania dodatkowych informacji oraz przykładowych implementacji, można przejrzeć dokumentację modułu.
 
-Format YAML jest oparty na języku przechowywania danych YAML (YAML Ain't Markup Language) i jest używany głównie do przechowywania konfiguracji lub danych. Jego struktura jest oparta na nadrzędnych kluczach i ich wartościach, które mogą być tablicami lub obiektami.
+## Zobacz też:
 
-Ważne jest również, aby zawsze przestrzegać składni YAML, ponieważ jest ona bardzo wrażliwa na wcięcia i używanie tabulatorów zamiast spacji może powodować błędy w działaniu kodu.
-
-Podczas pracy z YAML, warto również zapoznać się z różnymi bibliotekami dostępnymi dla języka Ruby, takimi jak `psych` lub `YAML.rb`, które oferują dodatkowe funkcje, takie jak walidacja danych lub konwersja pomiędzy formatami.
-
-## Zobacz także
-
-- [Dokumentacja YAML w języku Ruby](https://ruby-doc.org/stdlib-2.6.3/libdoc/yaml/rdoc/YAML.html)
-- [Kurs YAML na stronie Learn Ruby the Hard Way](https://learnrubythehardway.org/book/ex51.html)
-- [Poradnik na temat pracy z YAML w Ruby on Rails](https://pragmaticstudio.com/tutorials/working-with-yaml)
+Link do dokumentacji modułu YAML w Ruby: https://ruby-doc.org/stdlib-2.6.3/libdoc/yaml/rdoc/YAML.html

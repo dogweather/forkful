@@ -1,7 +1,7 @@
 ---
-title:                "Extraindo subcadeias"
-html_title:           "Go: Extraindo subcadeias"
-simple_title:         "Extraindo subcadeias"
+title:                "Extraindo substrings"
+html_title:           "Go: Extraindo substrings"
+simple_title:         "Extraindo substrings"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Strings"
@@ -10,45 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+## O que é e por que os programadores o fazem?
 
-Extrair substrings é uma tarefa comum na programação, especialmente se você está trabalhando com strings longas e complexas. É uma forma eficiente de obter exatamente a informação que você precisa sem ter que percorrer toda a string original.
+Extrair substrings é uma tarefa comum em programação, onde uma parte de uma string é separada e armazenada em uma nova variável. Os programadores fazem isso para obter apenas a informação necessária de uma string maior, permitindo que a manipulem ou usem em outros cálculos.
 
-## Como Fazer
-
-Extrair substrings em Go é simples e direto. Use o operador de slice, indicando o índice de início e fim da substring que você quer extrair. Veja o exemplo abaixo:
+## Como fazer:
 
 ```Go
-texto := "Esta é uma string de exemplo"
-substring := texto[5:12]
-fmt.Println(substring) // saída: é uma s
+// Defina uma string original
+original := "O artigo é sobre extrair strings em Go"
+
+// Use o pacote 'strings' para extrair uma substring
+substring := strings.Split(original, "extrair")[1]
+
+// Imprima a substring resultante
+fmt.Println(substring)
 ```
+Output: "strings em Go"
 
-Você também pode usar o método `substring()` da biblioteca `strings` para extrair substrings com base em um caractere específico. Por exemplo:
+## Mais detalhes:
 
-```Go
-texto := "www.example.com"
-substring := strings.TrimPrefix(texto, "www.")
-fmt.Println(substring) // saída: example.com
-```
+A prática de extrair substrings tem sido usada por programadores há muito tempo, com versões anteriores da linguagem Go como a C e C++. Alternativas para extrair substrings incluem utilizar operações de indexação de strings, no entanto, isso pode se tornar um processo mais trabalhoso para strings maiores.
 
-## Profundando
+O pacote "strings" em Go oferece funções específicas para extrair substrings com maior eficiência. Além disso, a linguagem permite manipulação e combinação de strings de forma simplificada, tornando a tarefa de extrair substrings ainda mais fácil.
 
-Além dos métodos mencionados acima, também é possível utilizar o pacote `regexp` para extrair substrings com base em padrões de expressões regulares. Isso pode ser útil quando a substring que você deseja extrair não tem um padrão fixo, mas segue um conjunto de regras.
+## Veja também:
 
-Por exemplo, se você quiser extrair todos os números de uma string de texto, você pode usar a função `FindAllStringSubmatch()` da `regexp` para localizar todos os padrões numéricos na string e, em seguida, extrair as substrings correspondentes. Veja um exemplo:
-
-```Go
-texto := "Meu número de telefone é (123) 456-7890."
-re := regexp.MustCompile(`\d+`)
-numeros := re.FindAllStringSubmatch(texto, -1)
-fmt.Println(numeros) // saída: [123 456 7890]
-```
-
-Existem muitas possibilidades quando se trata de extrair substrings em Go, e é importante entender como utilizar as diferentes técnicas disponíveis para escolher a melhor abordagem para a sua situação específica.
-
-## Veja também
-
-- [Documentação oficial do pacote `strings`](https://golang.org/pkg/strings/)
-- [Documentação oficial do pacote `regexp`](https://golang.org/pkg/regexp/)
-- [Tutorial sobre expressões regulares em Go](https://youtu.be/9hK-RRbAZDQ)
+- Documentação oficial do pacote "strings" em Golang: https://golang.org/pkg/strings/
+- Tutorial sobre extração de substrings em Go: https://www.golangprograms.com/how-to-extract-substring-from-string.html

@@ -1,7 +1,7 @@
 ---
-title:                "문자열을 소문자로 변환하기"
-html_title:           "C#: 문자열을 소문자로 변환하기"
-simple_title:         "문자열을 소문자로 변환하기"
+title:                "문자열 소문자로 변환하기"
+html_title:           "C#: 문자열 소문자로 변환하기"
+simple_title:         "문자열 소문자로 변환하기"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Strings"
@@ -10,47 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+## 무엇 & 왜?
+문자열을 소문자로 변환하는 것은 말 그대로 문자열을 모두 소문자로 바꾸는 것입니다. 프로그래머들은 이 작업을 자주 하게 됩니다. 이유는 간단합니다. 소문자로 된 문자열은 더 쉽게 처리할 수 있기 때문입니다.
 
-문자열을 소문자로 변환하는 것이 왜 필요한지 궁금하신가요? 문자열을 처리하는 많은 작업에서 대소문자를 구분할 필요가 없거나, 소문자로 통일해야 할 때가 있기 때문입니다.
-
-## 어떻게
-
-먼저, `ToLower()` 메서드를 사용하여 문자열을 소문자로 변환하는 방법을 알아보겠습니다. 아래의 예제 코드는 입력받은 문자열을 소문자로 변환한 뒤 출력하는 예제입니다.
-
+## 방법:
 ```C#
-string input = "Hello World!";
-string lowerCase = input.ToLower();
-Console.WriteLine(lowerCase);
+string str = "HELLO WORLD";
+string lowerCaseStr = str.ToLower();
+
+Console.WriteLine(lowerCaseStr);
+
+// Output: hello world
 ```
-출력 결과: `hello world!`
 
-또 다른 방법은 `ToLowerInvariant()` 메서드를 사용하는 것입니다. 이 메서드는 문화권에 따른 대소문자 규칙을 무시하고 소문자로 변환해줍니다. 예제 코드는 아래와 같습니다.
+위의 예시 코드를 보면, 우선 소문자로 변환할 문자열을 변수에 저장합니다. 그리고 그 변수를 `ToLower()` 함수를 사용하여 소문자로 변환한 후, 결과를 콘솔에 출력하는 식으로 작성하였습니다.
 
-```C#
-string input = "Hello World!";
-string lowerCase = input.ToLowerInvariant();
-Console.WriteLine(lowerCase);
-```
-출력 결과: `hello world!`
+## 깊이 파고들기:
+소문자로 변환하는 기능은 C# 3.0 버전에서 처음 도입되었습니다. 이전에는 `.ToLower()` 함수 대신 `ToLowerInvariant()` 함수를 사용하여 문자열을 소문자로 변환하였습니다. 이 함수는 엔진의 언어 설정에 상관없이 항상 같은 결과를 출력하므로, 이를 사용하는 것이 더 안정적입니다.
 
-마지막으로, LINQ를 활용하여 문자열의 모든 문자를 소문자로 변환할 수도 있습니다. 아래의 예제 코드는 `Select()` 메서드를 사용하여 문자열의 각 문자를 `char.ToLower()` 메서드를 이용해 소문자로 변환한 뒤 문자열로 다시 합치는 예제입니다.
+다른 언어나 라이브러리에서도 문자열의 대소문자를 변환하는 방법이 있지만, C#의 `ToLower()` 함수는 가장 간단하고 편리한 방법입니다. 이를 사용하면 프로그래머들이 간단하게 문자열의 대소문자를 다룰 수 있게 되었으며, 코드도 더 깔끔해졌습니다.
 
-```C#
-string input = "Hello World!";
-string lowerCase = string.Join("", input.Select(c => char.ToLower(c)));
-Console.WriteLine(lowerCase);
-```
-출력 결과: `hello world!`
-
-## 딥 다이브
-
-.NET Framework에서 문자열을 소문자로 변환할 때는 기본적으로 현재 문화권의 대소문자 규칙을 따르게 됩니다. 만약 다른 문화권의 규칙을 따르고 싶다면 `ToLower()` 메서드 대신 `ToLower(CultureInfo)` 메서드를 사용할 수 있습니다.
-
-또한, `ToLower()` 메서드는 문자열의 복사본을 반환하는 반면, `ToLowerInvariant()` 메서드는 원본 문자열을 변경하지 않고 새로운 문자열을 생성하여 반환합니다. 이는 메모리 관리 측면에서 주의해야 할 점입니다.
-
-## 관련 자료
-
-- [.NET Framework에서 문자열 변환 방법](https://docs.microsoft.com/ko-kr/dotnet/api/system.string.tolower?view=netframework-4.8)
-- [문자열 관련 LINQ 메서드](https://docs.microsoft.com/ko-kr/dotnet/csharp/programming-guide/concepts/linq/string-related-linq-methods)
-- [정규식을 사용한 문자열 전처리 방법](https://www.c-sharpcorner.com/blogs/working-with-regular-expression-in-c-sharp)
+## 더 알아보기:
+- [.NET 문자열 관련 문서](https://docs.microsoft.com/ko-kr/dotnet/api/system.string)
+- [C# 3.0 버전 소개](https://docs.microsoft.com/ko-kr/dotnet/csharp/whats-new/csharp-version-history#c-version-30)
+- [C# 전체 지원 문자 집합](https://msdn.microsoft.com/ko-kr/library/cww5e6k9(v=vs.90).aspx)

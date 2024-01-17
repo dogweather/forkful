@@ -1,7 +1,7 @@
 ---
-title:                "문자열 대문자로 변환하기"
-html_title:           "Elixir: 문자열 대문자로 변환하기"
-simple_title:         "문자열 대문자로 변환하기"
+title:                "문자열 대문자화"
+html_title:           "Elixir: 문자열 대문자화"
+simple_title:         "문자열 대문자화"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -10,43 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+## 무엇이고 왜?
+문자열의 첫 글자를 대문자로 변환하는 것을 문자열 대문자화 라고 합니다. 이 기능은 대소문자를 구분하는 프로그래밍 언어에서 많이 사용됩니다. 가독성을 높이고, 변수나 함수명을 명확하게 하기 위해서 이 기능을 사용해야 합니다.
 
-문자열을 대문자로 바꾸는 방법에 대해 알기 위해서는 Elixir 프로그래밍 언어를 알아야 합니다. 이는 Elixir에서 문자열을 조작하는 중요한 기술 중 하나이기 때문입니다.
-
-## 코딩 예제
-
-```Elixir
-string = "hello world"
-IO.puts String.upcase(string)
-```
-
-출력:
-
-```
-HELLO WORLD
-```
+## 방법:
+문자열 대문자화 기능을 사용하기 위해서는 문자열 모듈의 capitalize 함수를 사용하면 간단하게 구현할 수 있습니다. 적절한 매개변수를 전달하면 문자열의 첫 글자가 대문자로 변환됩니다. 예를 들어, 다음과 같이 코드를 작성할 수 있습니다.
 
 ```Elixir
-string = "I love elixir"
-IO.puts String.upcase(string)
+name = "jennifer"
+capitalize(name)
 ```
 
-출력:
+위 코드의 출력 결과는 다음과 같이 나타납니다.
 
+```Elixir
+"Jennifer"
 ```
-I LOVE ELIXIR
-```
 
-## 깊이 알아보기
+## 깊이있는 공부:
+이 기능은 대소문자를 구분하는 프로그래밍 언어에서 자주 사용됩니다. 예를 들어, C언어에서는 변수명에 대소문자를 구분하여 사용해야 합니다. 또한 대부분의 프로그래밍 언어에서는 변수나 함수명을 소문자로 작성하는 것이 관례입니다. 따라서 이 기능은 코드의 가독성을 높이고, 변수나 함수명을 명확하게 할 수 있습니다.
 
-Elixir에서 문자열을 조작하는 기능은 기본적으로 제공되지 않습니다. 다만, 라이브러리 함수인 `String.upcase/1`을 사용하면 간단하게 문자열을 대문자로 바꿀 수 있습니다. 또한, 대소문자를 구분하지 않는 `String.downcase/1` 함수도 있습니다.
+또한, 문자열 대문자화 기능은 문자열을 다루는 다양한 함수들 중 하나일 뿐입니다. 예를 들어, 대소문자를 구분하지 않는 비교 함수도 있습니다. 따라서 문자열 대문자화 외에도 다양한 방법으로 문자열을 다룰 수 있으며, 적절한 상황에 맞게 선택하여 사용해야 합니다.
 
-## 더 알아보기
+문자열 대문자화 기능의 구현 방법은 각 프로그래밍 언어마다 다를 수 있지만, 기본적으로 문자열의 첫 글자를 대문자로 변환하는 로직을 포함하고 있습니다. 이를 활용하여 직접 구현해 볼 수도 있습니다.
 
-Elixir에서 제공하는 문자열 조작 함수에 대해 더 알아보려면 [String 모듈 문서](https://hexdocs.pm/elixir/String.html)를 참고하시기 바랍니다.
-
-## 같이 참고하기
-
-- [Elixir Strings - learnbeautiful](https://www.learnbeautiful.org/blog/elixir-strings/)
-- [Elixir School - Strings](https://elixirschool.com/lessons/basics/string/)
+## 관련 자료:
+- [Elixir 문자열 모듈 공식 문서](https://hexdocs.pm/elixir/String.html#capitalize/1)
+- [많이 사용되는 프로그래밍 언어의 대소문자 관련 규칙](https://en.wikipedia.org/wiki/Letter_case#Programming_languages)

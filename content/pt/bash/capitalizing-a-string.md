@@ -1,7 +1,7 @@
 ---
-title:                "Capitalizando uma string"
-html_title:           "Bash: Capitalizando uma string"
-simple_title:         "Capitalizando uma string"
+title:                "Transformando uma string em maiúsculas"
+html_title:           "Bash: Transformando uma string em maiúsculas"
+simple_title:         "Transformando uma string em maiúsculas"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Strings"
@@ -10,47 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+## O que e por que?
 
-Você já se deparou com uma situação em que precisa capitalizar uma determinada string para que ela se encaixe no formato desejado? Ou talvez queira tornar seu código mais legível, deixando todas as palavras começando com letra maiúscula? Nesse caso, saber como capitalizar uma string pode ser uma habilidade muito útil em suas tarefas de programação.
+Capitalizar uma string em Bash significa transformar todas as letras em maiúsculas. Os programadores fazem isso para padronizar a formatação de saída ou para realizar comparações de strings sem se preocupar com a diferenciação entre letras maiúsculas e minúsculas.
 
-## Como fazer
+## Como fazer:
 
-Para capitalizar uma string em Bash, temos algumas opções que podem ser utilizadas de acordo com a situação em que estamos trabalhando. Vamos dar uma olhada em algumas delas:
+Para capitalizar uma string em Bash, você pode usar o comando `tr` combinado com `echo`. Aqui está um exemplo simples:
 
+```Bash
+texto="exemplo de capitalização de string"
+echo $texto | tr '[:lower:]' '[:upper:]'
 ```
-# Utilizando o comando "tr"
-string="texto em caixa baixa"
-capitalized_string=$(echo $string | tr '[:lower:]' '[:upper:]')
-echo $capitalized_string
-# Saída: TEXTO EM CAIXA BAIXA
+A saída será "EXEMPLO DE CAPITALIZAÇÃO DE STRING".
 
-# Utilizando o comando "sed"
-string="texto em caixa baixa"
-capitalized_string=$(echo $string | sed 's/\b\(.\)/\u\1/g')
-echo $capitalized_string
-# Saída: Texto Em Caixa Baixa
-```
+## Explore mais:
 
-## Explorando mais a fundo
+- Na história do Bash, o uso de `tr` para capitalizar uma string remonta ao Unix nos anos 70, mas também existem outras maneiras de fazer isso, como o comando `awk`.
+- Além de usar `tr` com o `echo`, você também pode usá-lo com entradas de arquivo ou comandos de substituição.
+- Para capitalizar apenas a primeira letra de uma string, você pode usar o comando `sed` combinado com `tr`.
 
-As duas opções apresentadas acima utilizam comandos externos do sistema operacional para realizar a capitalização da string. Entretanto, se desejarmos realizar essa tarefa diretamente no código Bash, podemos utilizar o recurso de substituição de padrões. Veja o exemplo abaixo:
+## Veja também:
 
-```
-string="texto em caixa baixa"
-capitalized_string="${string^}"
-echo $capitalized_string
-# Saída: Texto em caixa baixa
-
-capitalized_string="${string^^}"
-echo $capitalized_string
-# Saída: TEXTO EM CAIXA BAIXA
-```
-
-Com esse recurso, podemos escolher se queremos apenas a primeira letra de cada palavra em maiúsculo ou se queremos todas as letras em maiúsculo.
-
-## Veja também
-
-- [Documentação oficial do Bash](https://www.gnu.org/software/bash/)
-- [Guia de comandos do Linux](https://www.linuxcommand.org/index.php)
-- [Tutorial de Bash para iniciantes](https://linuxize.com/post/bash-scripting-tutorial/)
+- [Um guia rápido para comandos básicos do Bash](https://www.hostinger.com.br/tutoriais/comandos-linux-basicos)
+- [Documentação oficial do Bash](https://www.gnu.org/software/bash/manual/bash.html)
+- [Tutorial para iniciantes em Bash](https://www.devmedia.com.br/introducao-ao-shell-script-no-linux-linux/25778)

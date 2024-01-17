@@ -1,7 +1,7 @@
 ---
-title:                "Skriva till standardutskrift"
-html_title:           "Ruby: Skriva till standardutskrift"
-simple_title:         "Skriva till standardutskrift"
+title:                "Skriver till standardfel"
+html_title:           "Ruby: Skriver till standardfel"
+simple_title:         "Skriver till standardfel"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Files and I/O"
@@ -10,33 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##Varför
-Att skriva till standard error kan vara användbart för att lägga till felsökningsmeddelanden i ditt Ruby-program. Det kan också vara en bra idé att skriva till standard error istället för standard output för att hålla ditt program mer organiserat och lättläst.
+## Vad & Varför?
 
-##Hur man gör det
-Det är enkelt att skriva till standard error med Ruby. Allt du behöver göra är att använda `STDERR.puts` följt av det meddelande du vill skriva ut. Till exempel:
+Skrivning till standardfel är en metod som programmerare använder för att skicka felmeddelanden till konsolen istället för den vanliga utmatningsströmmen. Detta gör det möjligt för dem att separera felmeddelandena från vanlig utdata och gör det lättare att felsöka och identifiera problem i koden.
 
-```Ruby
-STDERR.puts "Detta är ett felmeddelande!"
-```
-
-Detta kommer att skriva ut "Detta är ett felmeddelande!" till standard error. Om du vill skriva ut flera meddelanden kan du använda `STDERR.print`, som fungerar på samma sätt som `puts` men utan att lägga till en ny rad efter varje meddelande.
-
-##Djupdykning
-När du skriver till standard error i Ruby, skrivs meddelandena ut i rött istället för i svart som standard output. Detta gör det enklare att särskilja felsökningsmeddelanden från vanliga utskrifter. Det är också viktigt att notera att när du skriver till standard error, kommer meddelandena skrivas ut oavsett om ditt program körs från terminalen eller från en fil.
-
-En annan användbar funktion är `STDERR.inspect`, vilket gör det möjligt att skriva ut en detaljerad representation av ett objekt eller en variabel till standard error. Till exempel:
+## Så här gör du:
 
 ```Ruby
-array = [1, 2, 3]
-STDERR.puts STDERR.inspect(array)
+# Skriv ut ett felmeddelande till standardfel
+$stderr.puts "Detta är ett felmeddelande."
+
+# Skriv ut flera felmeddelanden till standardfel
+$stderr.puts "Första felmeddelandet"
+$stderr.puts "Andra felmeddelandet"
+
+# Skriv ut ett felmeddelande med variabelvärde
+name = "John"
+$stderr.puts "Det finns ingen användare med namnet #{name}."
 ```
 
-Detta kommer att skriva ut `[1, 2, 3]` till standard error och du kan enkelt kontrollera värdet på dina variabler.
+Exempel på output:
 
-##Se även
-Läs mer om standard error i Ruby genom att utforska dessa länkar:
+```
+Detta är ett felmeddelande.
+Första felmeddelandet
+Andra felmeddelandet
+Det finns ingen användare med namnet John.
+```
 
-- https://ruby-doc.org/core-2.7.1/Kernel.html#method-i-STDERR
-- https://ruby-doc.org/core-2.7.1/IO.html#method-c-new-label-IO+to+Other
-- https://stackify.com/how-to-redirect-stdout-to-file-in-ruby/
+## Fördjupning:
+
+Historiskt sett har standardfel använts för att skriva ut felmeddelanden vid körning av kommandoradarprogram, men det används också i moderna programmeringsspråk som Ruby för att underlätta felsökning. Alternativ till att skriva till standardfel inkluderar att använda loggfiler eller att skicka felmeddelanden till en extern tjänst för övervakning. Implementationen av skrivning till standardfel varierar beroende på operativsystem, men i Ruby används motsvarande ```$stderr.puts``` som standardmetod.
+
+## Se även:
+
+- [Standard streams](https://en.wikipedia.org/wiki/Standard_streams)
+- [Logging in Ruby](https://www.rubyguides.com/2019/01/ruby-logging/)
+- [Error handling in Ruby](https://www.ruby-guides.com/2019/02/ruby-exception-handling/)

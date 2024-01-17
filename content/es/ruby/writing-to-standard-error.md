@@ -1,7 +1,7 @@
 ---
-title:                "Escribiendo en el error estándar."
-html_title:           "Ruby: Escribiendo en el error estándar."
-simple_title:         "Escribiendo en el error estándar."
+title:                "Write a titleEscritura en el error estándar"
+html_title:           "Ruby: Write a titleEscritura en el error estándar"
+simple_title:         "Write a titleEscritura en el error estándar"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Files and I/O"
@@ -10,28 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué escribir al error estándar?
+¿Qué y por qué?
 
-Escribir al error estándar es una herramienta útil en la programación de Ruby, ya que permite enviar mensajes de error y ayudar a detectar y solucionar problemas en el código. También puede ser útil para imprimir información de depuración durante el proceso de desarrollo.
+Escribir en el estándar de error (standard error) en Ruby es una forma de mostrar mensajes de error o información de depuración en la consola. Los programadores lo hacen para tener un registro de los errores que suceden durante la ejecución del programa.
 
-## Cómo hacerlo
+¿Cómo hacerlo?
 
-Para escribir al error estándar en Ruby, se utiliza el método `STDERR.puts` seguido por el texto que se desea imprimir. Por ejemplo:
+Para escribir en el estándar de error en Ruby, simplemente se utiliza el método `warn` y se pasa como argumento la cadena de texto que se desea mostrar. Por ejemplo:
 
 ```Ruby
-STDERR.puts "Error: No se ha podido abrir el archivo."
+warn "¡Algo salió mal!"
 ```
 
-Esto imprimirá el mensaje de error en la consola o terminal.
+Esto imprimirá en la consola la cadena "¡Algo salió mal!" con un formato diferente al que se obtendría con `puts` o `print`.
 
-## Profundizando
+¿Una mirada más profunda?
 
-El error estándar (STDERR) es una corriente de salida que se utiliza para mostrar mensajes de error en lugar de la salida estándar (STDOUT). Esto permite que los mensajes de error se destaquen y puedan ser fácilmente identificados durante la ejecución del programa.
+En el contexto histórico, escribir a la salida de error ha sido una práctica común en la programación desde hace décadas. Antes de que existieran herramientas más avanzadas de depuración, los programadores utilizaban esta técnica para encontrar y solucionar errores en sus programas.
 
-Además de `STDERR.puts`, también hay otros métodos que se pueden utilizar para escribir al error estándar en Ruby, como `STDERR.print` o `STDERR.write`. Estos métodos son similares al `puts`, pero no agregan un salto de línea al final del texto.
+Como alternativa al método `warn` en Ruby, también se puede utilizar el método `raise` para generar un mensaje de error y detener la ejecución del programa. Además, se puede redireccionar el flujo de error a un archivo para tener un registro detallado de todos los errores que suceden durante la ejecución.
 
-## Ver también
+¿Conocer más?
 
-- [Documentación de Ruby sobre STDERR](https://ruby-doc.org/core-2.7.2/IO.html#method-c-new-label-Standard+Streams)
-- [Artículo de Medium sobre el uso de STDERR en Ruby](https://medium.com/@felipecsl/using-stderr-in-ruby-71b0c47ad904)
-- [Video tutorial sobre manejo de errores en Ruby](https://www.youtube.com/watch?v=u_NU--xjmsg)
+Si quieres profundizar en el tema, puedes revisar la documentación oficial de Ruby sobre manejo de errores y excepciones (https://ruby-doc.org/core-3.0.2/doc/syntax/exceptions_rdoc.html).
+
+También puedes leer más sobre depuración en general y otras técnicas para encontrar errores en tu código (https://www.rubyguides.com/2015/05/error-handling-explained/).
+
+¡Eso es todo por ahora! Espero que esta información te sea útil en tus proyectos de Ruby. ¡Feliz programación!

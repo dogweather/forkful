@@ -1,7 +1,7 @@
 ---
-title:                "删除匹配模式的字符"
-html_title:           "Fish Shell: 删除匹配模式的字符"
-simple_title:         "删除匹配模式的字符"
+title:                "删除匹配模式的字符。"
+html_title:           "Fish Shell: 删除匹配模式的字符。"
+simple_title:         "删除匹配模式的字符。"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -10,39 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
+## 什么 & 为什么？
+在编程中，有时候我们需要删除特定模式的字符。这可以帮助我们更轻松地处理字符串数据，并提高我们的代码效率。所以，我们可以把它看作是一种工具，帮助我们做一些重复的事情。
 
-有时候我们需要从一段文本中删除特定模式的字符，比如删除所有的空格。这样可以使文本更加整洁和易于阅读。
-
-## 如何操作
-
-使用 Fish Shell 编写脚本来删除匹配特定模式的字符非常简单。首先，我们需要创建一个文本文件，比如 `text.txt`，并在其中填入一些文本内容。然后按照以下步骤操作：
-
+## 怎么做？
+要在Fish Shell中删除匹配特定模式的字符，我们可以使用内置的`string`命令。例如，我们有一个字符串`Hello World`，我们想要删除所有的小写字母，可以这样写：
 ```
-$ echo "这是一段有空格的文本" > text.txt
-$ cat text.txt
-这是一段有空格的文本
+set str Hello World
+string replace -r $str '[a-z]' ''
 ```
-
-接下来，我们可以使用 `sed` 命令来匹配并删除空格：
-
+这将把`Hello World`变成`H W`。我们也可以使用`string remove`命令来删除匹配模式的字符，但它只能删除第一个匹配项。上面的例子可以这样写：
 ```
-$ sed 's/ //g' text.txt
-这是一段有空格的文本
+set str Hello World
+string remove -r $str '[a-z]'
 ```
-
-在上面的例子中，我们使用了正则表达式 `s/ //g`，其中 `/` 之间的空格代表我们要删除的字符，`//` 之间的空格表示空字符，`g` 表示全局匹配。这样，我们就可以将文本中所有的空格删除了。
+输出将是同样的`H W`。
 
 ## 深入了解
+从历史的角度来看，匹配模式删除字符的概念来源于正则表达式，这是一个强大的工具，用于处理字符串。除了Fish Shell的`string`命令，我们也可以使用其他编程语言中的特殊函数来实现相同的功能，比如Python的`re`模块。
 
-你可能会想，为什么我们要使用 `sed` 命令来删除字符，而不是直接删除呢？其实，使用 `sed` 命令可以更灵活地匹配和删除不同的字符。比如，我们可以使用通配符 `.` 来匹配任意一个字符，或者使用 `[]` 来匹配一个字符集合。另外，我们还可以通过加上 `-i` 参数来直接修改源文件，而不是输出到终端。
-
-更多关于 `sed` 命令的使用，你可以参考以下链接：
-
-- [Fish Shell 官方文档](https://fishshell.com/docs/current/index.html)
-- [sed 命令教程](https://www.runoob.com/linux/linux-comm-sed.html)
-
-## 参考链接
-
-- [Fish Shell 官方文档](https://fishshell.com/docs/current/index.html)
-- [sed 命令教程](https://www.runoob.com/linux/linux-comm-sed.html)
+## 参考资料
+- Fish Shell文档：https://fishshell.com/docs/current/cmds/string.html
+- 正则表达式介绍：https://zh.wikipedia.org/wiki/正则表达式

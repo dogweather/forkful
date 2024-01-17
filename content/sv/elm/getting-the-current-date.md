@@ -1,7 +1,7 @@
 ---
-title:                "Att få dagens datum"
-html_title:           "Elm: Att få dagens datum"
-simple_title:         "Att få dagens datum"
+title:                "Hämta aktuellt datum"
+html_title:           "Elm: Hämta aktuellt datum"
+simple_title:         "Hämta aktuellt datum"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Dates and Times"
@@ -10,57 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
+Att få den aktuella datumen är en viktig del av programmering eftersom det gör det möjligt att hålla reda på tiden och datumet på ett exakt och tillförlitligt sätt. Detta kan vara användbart för att skapa tidstämplar, planera uppgiftsutföranden eller för att visa användaren det aktuella datumet i en applikation.
 
-Att få den nuvarande datumet kan vara användbart i många situationer, som att visa datumet på en hemsida eller att göra beräkningar baserat på dagens datum. Det är också ett bra sätt att öva på programmering i Elm och lära sig om tids- och datumfunktioner.
-
-## Så här gör du
-
-För att få den nuvarande datumet i Elm, behöver vi använda modulen `Time`. Först måste vi importera denna modul i början av vår kod. Sedan kan vi använda funktionen `now` för att få den nuvarande tidpunkten. Här är ett enkelt exempel:
-
+## Hur man gör:
+För att få den aktuella datumen i Elm används funktionen `Time.now`. Det returnerar ett `Task` som utförs asyncronously för att få nuvarande datum. Nedan finns ett exempel på hur man använder denna funktion och hur utdata kan se ut:
+ 
 ```Elm
-import Time exposing (..)
+import Time
 
-view : Html msg
-view =
-    div []
-        [ h1 [] [ text "Dagens datum:" ]
-        , text (toString (now |> toLocal |> toUtc |> toDate)) -- konverterar till lokal tidzon och sedan till datum
-        ]
+-- Funktionen som använder Time.now
+getCurrentDate : Task x Time.Posix
+getCurrentDate =
+    Time.now
+
+
+-- Anrop till funktionen och utskrift av resultatet
+Time.perform
+    (\_ -> Debug.log "Aktuellt datum är" (Time.format "%Y-%m-%d" (Time.now |> Time.toTime)))
+    (\_ -> getCurrentDate)
 ```
 
-Output: 
-Dagens datum: 2021-09-18
+Utskriften från koden ovan skulle se ut som följande:
 
-Vi kan också anpassa formatet på datumet genom att använda funktionen `format` och ge den ett önskat format som en strängparameter. Här är ett exempel där vi vill ha formatet "ÅÅÅÅ.MM.DD":
+`Aktuellt datum är "2021-10-20"` 
 
-```Elm
-text (now |> toTimezone +120 |> format "%Y.%m.%d") -- konverterar till en specifik tidzon och sedan formaterar datumet
-```
+## Djupdykning:
+Att få det aktuella datumet har varit en viktig funktion i programmering sedan dess början. Tidigare var det mycket svårare att få tag på detta eftersom det krävde manuell hantering och beräkningar. Idag finns det dock många olika möjligheter för att enkelt få den aktuella datumen, både i Elm och andra programmeringsspråk.
 
-Output:
-2021.09.19
+En alternativ metod för att få det aktuella datumet i Elm är att använda paketet `chronology` som erbjuder flera funktioner för att arbeta med datum och tider. Det är värt att undersöka olika alternativ för att hitta det som passar bäst för ditt specifika projekt och användningsområde.
 
-## Djupdykning
+När det kommer till implementationen av `Time.now` så använder sig Elm av Javascripts `Date` objekt under huven för att få tag på det aktuella datumet. Det är därför viktigt att notera att tiden som returneras är baserad på användarens aktuella tidszon och inställningar. Detta kan vara bra att tänka på vid utveckling av internationella applikationer eller när exakt tidszon är viktigt.
 
-För att förstå hur funktionerna `toLocal`, `toUtc`, `toTimezone` och `format` fungerar kan vi titta närmare på typdefinitionerna för tidsstämplarna som returneras av `now`-funktionen:
+## Se även:
+För mer information om `Time` biblioteket i Elm och hur man kan använda det mer avancerade `TimeZone` paketet, se dokumentationen på Elm hemsida [Elm Time Library](https://package.elm-lang.org/packages/elm/time/latest/).
 
-```Elm
-type Time.Posix = Milliseconds
-
-type alias Time.Zone = { hours : Int, minutes : Int }
-
-type alias Time.Date = { year : Int, month : Int, day : Int }
-
-type Time.Timestamp = Time.Zone -> Time.Date
-```
-
-`Time.Posix` representerar antalet millisekunder sedan 1 januari 1970. `Time.Date` innehåller information om år, månad och dag. `Time.Zone` representerar en tidzon i antal timmar och minuter från UTC. Och `Time.Timestamp` är en funktion som tar en tidzon som indata och returnerar ett `Time.Date`-värde.
-
-Genom att kombinera dessa funktioner kan vi manipulera och formatera datumet enligt våra behov.
-
-## Se även
-
-- Elm dokumentation för [Time-modulen](https://package.elm-lang.org/packages/elm/time/latest/)
-- Elm för Nybörjare: [Tids- och Datumbehandling](https://guide.elm-lang.org/effects/time.html)
-- [Datum och Tid i Elm](http://simonh1000.github.io/2016/05/elm-date-and-time-in-elm.html) av Simon Hampton
+För att lära dig mer om `Date` objektet i Javascript finns det många resurser tillgängliga online, bland annat på [Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date).

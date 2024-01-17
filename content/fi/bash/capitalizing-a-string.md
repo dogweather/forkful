@@ -1,7 +1,7 @@
 ---
-title:                "Merkkijonon muuttaminen isolla alkukirjaimella"
-html_title:           "Bash: Merkkijonon muuttaminen isolla alkukirjaimella"
-simple_title:         "Merkkijonon muuttaminen isolla alkukirjaimella"
+title:                "Merkkijonon muuttaminen isoin kirjaimin"
+html_title:           "Bash: Merkkijonon muuttaminen isoin kirjaimin"
+simple_title:         "Merkkijonon muuttaminen isoin kirjaimin"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Strings"
@@ -10,36 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+Mitä ja miksi?
+Kapitalisaatio tarkoittaa merkkijonon ensimmäisen kirjaimen muuttamista isommaksi ja muun tekstin säilyttämistä ennallaan. Ohjelmoijat tekevät tämän helpottaakseen lukemista ja tehdäkseen koodista paremmin luettavaa. 
 
-Välillä tarvitaan muuttaa tekstin muotoa siten, että ensimmäinen kirjain on isossa kirjaimessa ja loppu pienissä kirjaimissa. Tätä varten tarvitaan koodia, joka pystyy muokkaamaan merkkijonon muotoa. Bash tarjoaa yksinkertaisen ratkaisun tähän tehtävään.
-
-## Kuinka
-
-Käyttämällä ```Bash ``` koodiblokin sisällä olevaa ```tr``` komentoa, voit helposti muuttaa merkkijonon ensimmäisen kirjaimen isoksi ja loput pieniksi. Alla on esimerkkikoodi ja sen tulos.
-
+Kuinka:
 ```Bash
-# Luodaan muuttuja, jossa on pienet kirjaimet
-teksti="esimerkki teksti"
-# Käytetään tr-komentoa muokkaamaan merkkijono
-echo $teksti | tr '[:lower:]' '[:upper:]'
+# Esimerkkejä merkkijonon kapitalisaatiosta
+
+# Yksinkertainen esimerkki
+
+string="tämä on esimerkki"
+echo "Ennen kapitalisaatiota: $string"
+string="${string^}"
+echo "Jälkeen kapitalisaatiota: $string"
+
+# Toisessa esimerkissä käytetään pipea
+
+echo "exo kapitalisaatiota" | awk '{print toupper($1)}'
+
+# Output: EXO KAPITALISAATIOTA
 ```
 
-Tulos: *Esimerkki teksti*
+Deep Dive:
+Kapitalisaatio ei ole vain Bash-ominaisuus, vaan se on peräisin Unix-käyttöjärjestelmästä, joka Bash perustuu. Tähän kuuluu myös munanvälityskomento, joka tekee saman isolla merkillä ensimmäisen kirjaimen ja muun tekstin kanssa. Vaihtoehto kapitalisaatiolle on käyttää sed-komentoa tai käydä läpi merkkijono loopin kautta.
 
-## Syväsukellus
-
-Tr-komennon toiminta perustuu merkkijonojen muokkaamiseen yksinkertaisilla säännöillä. Tässä tapauksessa käytetään sääntöä, joka vaihtaa kaikki pienet kirjaimet suuriksi.
-
-Toinen tapa suorittaa sama tehtävä on käyttää ```bash ``` komentoa ```sed``` yhdessä merkkijonopalvelimen kanssa. Seuraavassa esimerkissä käytetään samaa muuttujaa ja tuloksena saadaan myös *Esimerkki teksti*.
-
-```Bash
-# Käytetään sed-komentoa muokkaamaan merkkijonoa
-echo $teksti | sed 's/.*/\u&/'
-```
-
-## Katso myös
-
-- Bash-ohjeet: https://www.gnu.org/software/bash/manual/
-- Tr-komento: https://www.gnu.org/software/coreutils/manual/html_node/tr-invocation.html
-- Sed-komento: https://www.gnu.org/software/sed/manual/sed.html
+## Katso myös:
+- [Bash-opas](https://www.gnu.org/software/bash/manual/bash.html)
+- [Komennot ja muuttujat - Bash-opas](https://www.tutorialspoint.com/unix/unix-shell-variables.htm)

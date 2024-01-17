@@ -10,52 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä & Miksi?
 
-Miksi testejä kannattaa kirjoittaa? Yksinkertaisesti siksi, että ne takaavat koodin toiminnan ja estävät mahdollisten virheiden syntymisen tuotantoympäristössä. Testien avulla voit myös tehdä muutoksia ja parannuksia koodiin luottavaisin mielin, sillä tiedät että kaikki tärkeimmät toiminnallisuudet on testattu ja toimiviksi todettu.
+Testaaminen on prosessi, jossa koodia tarkistetaan sen toiminnallisuuden ja virheettömyyden varmistamiseksi. Koodin testaaminen on tärkeä osa ohjelmointia, joka auttaa varmistamaan, että sovellus toimii oikein ja vähentää mahdollisten virheiden riskiä.
 
-## Kuinka
-
-Testien kirjoittaminen PHP:ssa voi vaikuttaa haastavalta, mutta se on oikeasti varsin helppoa. Alla on yksinkertainen esimerkki koodista ja sen tuottamasta tuloksesta. Kopioi koodilohkot ja kokeile itse!
+## Miten:
 
 ```PHP
 <?php
-require "laskin.php"; // Lataa laskimen toiminnallisuuden
-
-class LaskinTesti extends PHPUnit_Framework_TestCase { // Luo uusi testiluokka
-    public function testSummaus() { // Testifunktio summaukselle
-        $laskin = new Laskin(); // Luodaan uusi Laskin-olio
-        $tulos = $laskin->summaa(5, 3); // Kutsutaan summaa-funktiota
-        $this->assertEquals(8, $tulos); // Tarkistetaan, että tulos on oikea
-    }
+//Luodaan testi-luokka
+class Testi extends PHPUnit_Framework_TestCase
+{
+  //Testataan yhteenlaskua
+  public function testYhteenlasku()
+  {
+    $luku1 = 5;
+    $luku2 = 10;
+    $tulos = $luku1 + $luku2;
+    //Asserttestilla varmistetaan, että tulos on oikein
+    $this->assertEquals(15, $tulos);
+  }
 }
 ```
 
-Tulostus:
+Testin suorittamisen jälkeen saat odotetun tulosteen ilman virheitä:
 
 ```
-PHPUnit 5.7.21 by Sebastian Bergmann and contributors.
-
-.
-
-Time: 34 ms, Memory: 4.00MB
-
-OK (1 test, 1 assertion)
+OK (1 testi, 1 testattu)
 ```
 
-Testissä käytetään yksinkertaista laskinta, joka on kirjoitettu "laskin.php"-tiedostoon. Testiluokka perii PHPUnit_Framework_TestCase-luokan ja metodi testSummaus suoritetaan testinä. Testissä luodaan uusi Laskin-olio, kutsutaan sen summaa-funktiota ja tarkistetaan, että tulos on odotetunlainen.
+## Syväsukellus:
 
-## Syvältä
+Testien kirjoittamisessa on kaksi yleistä lähestymistapaa: yksikkötestaus ja integraatiotestaus. Yksikkötestauksessa testataan yksittäisiä toiminnallisuuksia ja niiden algoritmeja, kun taas integraatiotestauksessa testataan komponenttien yhteistoimivuutta.
 
-Testien kirjoittaminen on tärkeää, mutta vaatii hieman panostusta. Hyvien testien avulla voit varmistaa koodin toiminnallisuuden, mutta myös helpottaa sen ylläpitoa ja muokkaamista tulevaisuudessa. Joitakin hyviä käytäntöjä testien kirjoittamiseen ovat esimerkiksi:
+Muita ohjelmistotestauksen muotoja ovat esimerkiksi manuaaliset testit tai automatisointityökalujen käyttö. PHP:n lisäksi on mahdollista kirjoittaa testejä myös muilla ohjelmointikielillä, kuten JavaScriptillä tai Pythonilla.
 
-- Testaa vain yhtä asiaa kerrallaan: pidä testifunktiot mahdollisimman pieninä ja keskity testaamaan vain yhtä asiaa kerrallaan.
-- Käytä kuvaavia nimiä: testifunktioiden nimien tulee kertoa selkeästi, mitä ne testaavat.
-- Testaa reunatapaukset: varmista, että testit kattavat myös ääritapaukset ja testaavat esimerkiksi virheelliset syötteet.
-- Älä pelkää refaktorointia: hyvät testit mahdollistavat koodin jatkokehityksen ja parantamisen ilman pelkoa rikkovansa jotakin. Muista siis päivittää myös testit tarvittaessa.
+Testien kirjoittaminen voi myös auttaa tunnistamaan ja korjaamaan virheitä koodissa. Kannattaa myös muistaa, että testit eivät korvaa huolellista suunnittelua ja koodauksen tarkistamista.
 
-## Katso myös
+## Katso myös:
 
-- [PHPUnit-dokumentaatio](https://phpunit.de/documentation.html)
-- [PHP-virhetestaus PHP Unitillä](https://www.sitepoint.com/getting-started-phpunit/)
-- [TDD PHP:ssa - käytännön esimerkkejä](https://www.sitepoint.com/test-driven-development-phpunit/)
+- [PHPUnit dokumentaatio](https://phpunit.de/manual/current/en/writing-tests-for-phpunit.html)
+- [PHP:n sisäänrakennettu testaus](https://www.php.net/manual/en/intro.pdo.php)

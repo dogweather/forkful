@@ -10,30 +10,21 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i dlaczego?
+Znalezienie długości ciągu znaków to zwykła czynność wykonywana przez programistów, polegająca na obliczeniu liczby znaków w ciągu. Jest to ważna umiejętność, która pomaga w manipulowaniu i porównywaniu różnych ciągów znaków w programach.
 
-Jeśli pracujesz z ciągami znaków w Arduino, być może zadam sobie pytanie: "Jak mogę sprawdzić długość danego ciągu?". Jest to przydatna umiejętność, ponieważ może Ci pomóc w manipulowaniu i porównywaniu różnych ciągów, co może być użyteczne w wielu projektach Arduino.
-
-## Jak to zrobić
-
-Sprawdzenie długości ciągu w Arduino jest proste. Wystarczy użyć funkcji ```length()```, która zwraca liczbę znaków w danym ciągu. Możesz użyć tej funkcji w połączeniu z instrukcją ```Serial.println()``` do wyświetlenia wyniku.
-
-```Arduino
-// Przykładowy kod do wyświetlenia długości ciągu z domyślnego tekstu
-String tekst = "Przykładowy tekst";
-Serial.println(tekst.length()); // Wynik: 18
+## Jak to zrobić:
+Arduino ma wbudowaną funkcję `strlen()`, która zwraca długość ciągu znaków. Przykładowo, jeśli chcesz wyświetlić liczbę znaków w zmiennej `string`, użyj:
 ```
+Arduino
+Serial.println(strlen(string));
+```
+Ten kod zwróci liczbę całkowitą reprezentującą długość ciągu znaków.
 
-## Głębsza analiza
+## Zagłębienie się w temat:
+Znajdowanie długości ciągu znaków jest ważnym elementem w programowaniu, ponieważ pozwala na porównywanie i analizowanie różnych ciągów znaków w celu wykonywania odpowiednich operacji. Alternatywą dla funkcji `strlen()` w Arduino jest funkcja `sizeof()`, która zwraca rozmiar zmiennej w bajtach. Jednak `sizeof()` może zwrócić niewłaściwą wartość w przypadku zmiennych o typie danych `string`.
 
-W Arduino funkcja ```length()``` jest dostępna dla obiektów typu ```String```, dlatego musisz ustawić typ daty na ```String```, aby móc jej użyć. Jeśli chcesz wyświetlić długość ciągu liczbowego, musisz najpierw przekonwertować go na typ ```String```, a następnie wykorzystać funkcję ```length()```. 
-
-Funkcja ta jest również przydatna przy porównywaniu dwóch ciągów, ponieważ możesz użyć jej do sprawdzenia czy mają one taką samą długość. Jeśli chcesz porównać tylko część ciągu, możesz użyć funkcji ```substring()```, która zwraca podciąg o określonej długości.
-
-## Zobacz także
-
-Może zainteresować Cię również temat "Manipulowanie ciągami znaków w Arduino", który zawiera dodatkowe informacje na temat pracy z ciągami w Arduino.
-
-- [Manipulowanie ciągami znaków w Arduino - Dokumentacja Arduino](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/)
-- [Funkcja length() w Arduino - Instructables](https://www.instructables.com/Find-Character-Length-of-String-in-Arduino/)
-- [Działanie funkcji substring() w Arduino - Arduino Stack Exchange](https://arduino.stackexchange.com/questions/253/how-can-i-get-a-substring-from-a-string)
+## Zobacz również:
+- [Podstawy programowania w Arduino](https://www.arduino.cc/en/Tutorial/Foundations)
+- [Pełny podręcznik Arduino](https://www.arduino.cc/reference/en/)
+- [Jak zacząć z Arduino](https://www.arduino.cc/en/Guide/HomePage)

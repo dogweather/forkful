@@ -1,7 +1,7 @@
 ---
-title:                "Lähetetään http-pyyntö"
-html_title:           "Arduino: Lähetetään http-pyyntö"
-simple_title:         "Lähetetään http-pyyntö"
+title:                "Lähettäminen http-pyyntöä"
+html_title:           "Arduino: Lähettäminen http-pyyntöä"
+simple_title:         "Lähettäminen http-pyyntöä"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "HTML and the Web"
@@ -10,60 +10,69 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Miksi
+# Mitä ja miksi?
+Lähetettäessä HTTP-pyyntö, Arduino saa tai lähettää tietoja internetissä oleville palvelimille, kuten verkkosivuille tai sovelluksille. Ohjelmoijat käyttävät tätä ominaisuutta esimerkiksi IoT-projekteissa, jossa tietoja täytyy lähettää tai vastaanottaa internetin kautta.
 
-Miksi haluaisit lähettää HTTP-pyynnön Arduino-piirissä? Yksinkertaisesti sanottuna, se on kätevä tapa kommunikoida internetin ja muiden laitteiden kanssa ja saada tietoa tai suorittaa toimintoja kauko-ohjauksella.
-
-# Miten
+# Kuinka tehdä?
+Alla on kaksi esimerkkiä koodista, jolla voit lähettää HTTP-pyynnön ja nähdä vastauksen Serial Monitor-työkalussa.
 
 ```Arduino
 #include <WiFi.h>
-#include <HTTPClient.h>
 
-const char* ssid = "wifi-verkon-nimi";
-const char* password =  "wifi-verkon-salasana";
-const char* server = "murmeliporno.com";  // Vaihda osoite oman verkkosi mukaan
+const char* ssid = "WIFI_NIMI";
+const char* password = "WIFI_SALASANA";
 
 void setup() {
   Serial.begin(9600);
+
   WiFi.begin(ssid, password);
+
   while (WiFi.status() != WL_CONNECTED) {
-    delay(500);
-    Serial.print(".");
+    delay(1000);
+    Serial.println("Yritetään muodostaa yhteyttä...");
   }
 }
 
 void loop() {
-  if(WiFi.status() == WL_CONNECTED){ // varmistetaan, että WiFi-yhteys on aktiivinen
-    HTTPClient http; // luodaan HTTP-yhteysolio
-    String endpoint = "/api/temperature";
-    http.begin("http://" + String(server) + endpoint);  // yhdistetään osoite ja endpoint
+  WiFiClient client;
 
-    int httpCode = http.GET(); // lähetetään HTTP GET -pyyntö
-    if(httpCode == 200) { // vastaus 200 = OK
-      String response = http.getString(); // tallennetaan vastaus muuttujaan
-      Serial.println(response); // tulostetaan vastaus sarjaporttiin
-    } else {
-      Serial.println("Virhe pyynnössä"); // jos vastaus ei ole OK, tulostetaan virheilmoitus
-    }
-    http.end(); // suljetaan HTTP-yhteys
+  if (client.connect("osoite.com", 80)) {
+    Serial.println("Yhteys muodostettu!");
+    client.println("GET /polku HTTP/1.1");
+    client.println("Host: osoite.com");
+    client.println("Connection: close");
+    client.println();
+  } else {
+    Serial.println("Yhteyden muodostaminen epäonnistui.");
   }
-  delay(30000); // odotetaan 30 sekuntia ennen seuraavaa pyyntöä
+
+  while (client.available()) {
+    String line = client.readStringUntil('\r');
+    Serial.print(line);
+  }
+
+  client.stop();
+  delay(5000);
 }
 ```
 
-*Output:*
-
+Odotettu tulos:
 ```
-22.3 Celsius
+Yritetään muodostaa yhteyttä...
+Yhteys muodostettu!
+HTTP/1.1 200 OK
+Server: nginx/1.14.0
+Date: Mon, 01 Mar 2021 18:00:00 GMT
+Content-Length: 6
+Connection: close
+
+Terve!
 ```
 
-## Deep Dive
+# Syvemmälle
+HTTP-pyyntöjen lähettäminen on ollut tärkeä osa internetin kehittymistä, sillä se mahdollistaa tietojen välittämisen eri puolilta maailmaa. Arduinon lisäksi pyyntöjä voidaan lähettää myös muilla laitteilla, kuten tietokoneilla tai mobiililaitteilla. Lisäksi on olemassa muita protokollia, kuten MQTT, joilla voidaan lähettää ja vastaanottaa tietoa internetin kautta.
 
-HTTPClient-kirjasto tarjoaa meille helpon tavan lähettää HTTP-pyyntöjä ja vastaanottaa vastauksia. Koodissa ensin luodaan WiFi-yhteys ja varmistetaan, että se on aktiivinen. Sitten luodaan HTTPClient-olio ja käytetään sen begin() -metodia määrittämään yhteysosoite ja endpoint-polut. Lopuksi lähetetään pyyntö GET-metodilla ja tallennetaan vastaus string-muuttujaan. On myös tärkeää sulkea yhteys lopuksi end()-metodilla. 
-
-## Katso myös
-
-- [WiFi kirjasto](https://www.arduino.cc/en/Reference/WiFi)
-- [HTTPClient kirjasto](https://www.arduino.cc/en/Reference/HTTPClient)
-- [HTTP-pyyntöjen lähetys ja vastaanotto Arduino-piirillä](https://randomnerdtutorials.com/esp32-dht11-dht22-temperature-humidity-web-server-arduino-ide/)
+# Katso myös
+- [Arduino WiFi Client-kirjasto](https://www.arduino.cc/en/Reference/WiFiClient)
+- [Arduino WiFi-yhteysohjeet](https://www.arduino.cc/en/Guide/ArduinoWiFiNINA)
+- [HTTP-pyyntöjen perusteet](https://developer.mozilla.org/fi/docs/Web/HTTP/Overview)

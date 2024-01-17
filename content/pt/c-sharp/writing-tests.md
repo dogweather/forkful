@@ -10,51 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+## O que é e por que fazer testes de programação?
 
-Escrever testes em um projeto de programação pode parecer um trabalho chato e desnecessário, mas na verdade é uma parte crucial do processo de desenvolvimento de software. Os testes ajudam a garantir que o código esteja funcionando corretamente e previnem futuros erros, economizando tempo e esforço no longo prazo.
+Testes de programação são um conjunto de ações que os programadores realizam para verificar se o código que eles escreveram está funcionando corretamente. É uma forma de garantir que o software produzido seja de alta qualidade e atenda às expectativas do cliente. Além disso, os testes de programação ajudam a identificar e corrigir erros antes que o software seja lançado, economizando tempo e recursos no longo prazo.
 
-## Como fazer
-
-Escrever testes em C# é bastante simples, e pode ser feito usando a estrutura de testes integrada do Visual Studio ou uma biblioteca externa, como o NUnit. Veja abaixo um exemplo de teste de unidade simples usando NUnit:
+## Como fazer:
 
 ```C#
-using NUnit.Framework;
+// Criando um teste simples de soma
+int resultado = Soma(2, 3);
+int esperado = 5;
 
-[TestFixture]
-public class CalculatorTests
-{
-    [Test]
-    public void When_AddMethod_IsCalled_ReturnsCorrectSum()
-    {
-        // Arrange
-        int a = 10;
-        int b = 5;
-        Calculator calculator = new Calculator();
+// Verificando se o resultado é igual ao esperado
+if (resultado == esperado) {
+  Console.WriteLine("O teste passou!");
+} else {
+  Console.WriteLine("O teste falhou...");
+}
 
-        // Act
-        int result = calculator.Add(a, b);
-
-        // Assert
-        Assert.AreEqual(15, result);
-    }
+// Função para somar dois números
+int Soma(int a, int b) {
+  return a + b;
 }
 ```
 
-Neste exemplo, criamos um teste para a classe Calculator, que possui um método Add que recebe dois números e retorna a soma deles. Usando a sintaxe do NUnit, podemos testar se o resultado retornado pelo método é o esperado. 
+Saída: O teste passou!
 
-## Deep Dive
+## Profundidade:
 
-Escrever bons testes em C# envolve entender os principais conceitos e tecnologias da linguagem. Alguns pontos a serem considerados são: 
+Escrever testes de programação não é uma prática nova. Na verdade, ela tem suas raízes na metodologia de desenvolvimento de software conhecida como "Test Driven Development" (TDD), que foi introduzida por Kent Beck na década de 1990. Existem outras alternativas, como "Behavior Driven Development" (BDD) e "Acceptance Test Driven Development" (ATDD), que também enfatizam a importância de testes de programação no processo de desenvolvimento de software.
 
-- Testes de unidade vs testes de integração: enquanto os testes de unidade verificam a funcionalidade de uma unidade isolada de código, os testes de integração testam a interação entre diferentes unidades de código.
-- Cobertura de código: para garantir que todos os caminhos do código estejam sendo testados, é importante medir a cobertura de código de seus testes.
-- Testes automatizados: ter um conjunto de testes automatizados que podem ser executados sempre que houver uma alteração no código é essencial para garantir a qualidade do software.
+Para implementar testes em C#, é recomendado o uso de frameworks de testes, como NUnit, xUnit ou MSTest. Eles fornecem ferramentas e estruturas que facilitam a criação e execução de testes automatizados. Além disso, a plataforma Visual Studio possui suporte integrado para criação e execução de testes em C#, tornando o processo ainda mais fácil.
 
-Além disso, é importante seguir boas práticas ao escrever testes, como manter os testes independentes entre si e garantir que sejam facilmente entendidos pelos membros da equipe.
+## Veja também:
 
-## Veja também
-
-- [Documentação oficial do NUnit](https://docs.nunit.org/)
-- [Melhores práticas para escrever testes em C#](https://dev.to/j_pohl/melhores-praticas-para-escrever-testes-em-c-36m2)
-- [Artigo sobre testes automatizados em C#](https://www.c-sharpcorner.com/UploadFile/5b1f04/introduction-to-automated-testing-in-C-Sharp/)
+- [Artigo sobre TDD](https://www.devmedia.com.br/test-driven-development-conceitos/30770)
+- [Tutorial de testes com NUnit](https://code.tutsplus.com/pt/tutorials/common-unit-testing-scenarios-with-nunit--net-10458)

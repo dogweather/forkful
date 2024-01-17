@@ -10,42 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
+Working with CSV (Comma Separated Values) involves writing and reading data from a plain text file with values separated by a comma. Programmers use CSV as it is a simple and efficient way to store and transfer structured data.
 
-CSV (Comma Separated Values) files are a common data format used to store tabular data. Working with CSV files can be beneficial for developers as it allows for easy transfer and manipulation of data between different applications and systems. It is especially useful for handling large data sets, making it a key tool for data analysis, migration, and integration.
-
-## How To
-
-Working with CSV files in TypeScript is made easy with the use of external libraries such as `csv-parser` and `fs` (file system) provided by Node.js. First, install these dependencies using `npm` or `yarn`. Then, you can use the following code to parse a CSV file and access the data inside:
-
+## How to:
 ```TypeScript
-import fs from 'fs';
-import csv from 'csv-parser';
+//Reading CSV data into an array
+import * as fs from 'fs';
 
-const results = [];
+const csvData = fs.readFileSync('data.csv', 'utf-8').split('\n').map(row => row.split(','))
 
-fs.createReadStream('data.csv')
-    .pipe(csv())
-    .on('data', (data) => results.push(data))
-    .on('end', () => {
-        console.log(results);
-    });
+//Writing data to a CSV file
+csvData.forEach(row => fs.appendFileSync('newData.csv', row.join(',') + '\n'))
+
+//Sample CSV data
+Name, Age, Occupation
+John, 25, Developer
+Jane, 30, Designer
 ```
 
-The code above reads a CSV file named `data.csv` and pipes the data through the `csv-parser` library. Each row of the CSV file is then pushed into the `results` array as an object with the column names as keys. Finally, the `results` array is logged to the console, displaying the parsed data.
+## Deep Dive:
+CSV was first introduced in the 1970s and gained popularity as a way to store large amounts of data in a simple and readable format. It is widely used in data analysis, database management, and data transfer between different systems. Alternatives to CSV include XML and JSON, but CSV is more human-readable and lightweight.
 
-## Deep Dive
+Although CSV is a simple format, programmers should consider edge cases such as handling quotes and special characters, determining the correct encoding, and dealing with uneven columns in the data.
 
-CSV files come with a few considerations when it comes to handling and parsing the data. For example, some CSV files may have headers on the first row, while others may not. In this case, you can use the `headers` option of the `csv-parser` library to specify the names of the columns.
-
-Another important aspect is handling empty or missing data. CSV files can have empty cells, which may result in unexpected errors when parsing. To avoid this, you can use the `skipEmptyLines` option of the `csv-parser` library to ignore empty lines while parsing the file.
-
-Additionally, special characters and line breaks within the data can also cause issues. The `csv-parser` library has built-in methods to handle these situations, but they may require some customization depending on your specific data.
-
-Overall, working with CSV files requires some careful consideration and handling to ensure accurate and error-free data parsing. But with the right tools and techniques, it can prove to be a powerful and efficient data handling tool for developers.
-
-## See Also
-
-- [csv-parser documentation](https://www.npmjs.com/package/csv-parser)
-- [fs module documentation](https://nodejs.org/api/fs.html)
-- [Node.js installation guide](https://nodejs.org/en/download/)
+## See Also:
+- [Simple CSV node package](https://www.npmjs.com/package/simple-csv)
+- [Parsing CSV in TypeScript](https://www.digitalocean.com/community/tutorials/js-typescript-csv-parsing)
+- [CSV vs XML vs JSON](https://softwareengineering.stackexchange.com/questions/123947/comparison-of-data-interchange-formats)

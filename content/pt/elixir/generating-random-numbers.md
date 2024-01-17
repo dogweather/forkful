@@ -10,50 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que usar geradores de números aleatórios?
+## O que e por que?
 
-Há várias razões pelas quais gerar números aleatórios pode ser útil em projetos de programação. Algumas das principais razões incluem a necessidade de geração de dados de teste, jogos ou aplicações de sorteio, entre outros. Em geral, geradores de números aleatórios ajudam a adicionar uma camada de imprevisibilidade e diversão aos aplicativos.
+Gerar números aleatórios é o processo de produzir um número que não segue um padrão conhecido ou definido. Isso é comumente utilizado por programadores para diferentes fins, como criptografia, jogos e testes de software.
 
-## Como fazer isso em Elixir
-
-A linguagem de programação Elixir oferece várias maneiras de gerar números aleatórios. Um dos métodos mais comuns é usando a função `:random.uniform/1`, que retorna um número aleatório entre 0 e 1.
+## Como fazer:
 
 ```
-iex> :random.uniform() # exemplo de saída: 0.4755417463954648
+Elixir Math.random()
+#=> 0.23546374051340545
 ```
 
-Se quiser gerar um número dentro de um intervalo específico, você pode usar a função `:random.uniform/2`, passando o intervalo desejado como argumento.
+Existem duas formas principais de gerar números aleatórios em Elixir. A primeira é usando o módulo `:rand` e sua função `uniform/0`, que retorna um número aleatório no intervalo de 0 a 1. A segunda opção é usar a função `random/0` do módulo Math, que também retorna um número aleatório entre 0 e 1. Ambas as opções garantem que o número gerado seja uniformemente distribuído.
 
-```
-iex> :random.uniform(1, 10) # exemplo de saída: 6
-```
+## Mergulho Profundo:
 
-Outro método é usando a biblioteca `:rand` e suas funções `:uniform/0` e `:uniform/1` para gerar números aleatórios em diferentes formatos, como inteiros, floats e strings.
+Gerar números aleatórios tem sido uma preocupação constante na história da computação. Desde os primórdios, programadores tem usado diferentes algoritmos e métodos para produzir números aleatórios que atendam aos requisitos de diferentes aplicações. Além das opções mencionadas acima, Elixir também possui a biblioteca SecureRandom, que gera números criptograficamente seguros. Outra opção é a biblioteca Random, que permite controlar o seed utilizado para gerar números aleatórios.
 
-```
-iex> :rand.uniform() # exemplo de saída: 0.2076688796336488
-iex> :rand.uniform(100) # exemplo de saída: 56
-```
+## Veja também:
 
-É importante lembrar que, ao usar geradores de números aleatórios, é necessário inicializar a semente (seed) para garantir que os resultados sejam realmente aleatórios. Isso pode ser feito usando a função `:rand.seed/1` e passando um número inteiro como argumento.
-
-```
-iex> :rand.seed(123)
-:ok
-```
-
-Agora, ao gerar números aleatórios, eles serão baseados na semente inicializada.
-
-## Aprofundando
-
-É importante lembrar que os geradores de números aleatórios na programação não são realmente aleatórios, mas sim pseudoaleatórios. Ou seja, eles seguem um algoritmo para gerar uma sequência de números que parecem ser aleatórios, mas na verdade são predeterminados.
-
-Por causa disso, é importante escolher uma semente inicial não previsível, como um número randômico baseado no tempo atual ou em eventos imprevisíveis do sistema. Além disso, é recomendado não confiar totalmente em geradores de números aleatórios para fins de criptografia ou segurança, pois é possível prever a sequência gerada se a semente for conhecida.
-
-Para mais informações sobre geradores de números aleatórios em Elixir, consulte a documentação oficial: https://hexdocs.pm/elixir/1.13/Random.html
-
-## Veja também
-
-- https://hexdocs.pm/elixir/1.13/Random.html
-- https://elixirschool.com/lessons/basics/random/
-- https://www.youtube.com/watch?v=fqos5W4FS4c
+- Documentação do módulo Math em Elixir: https://hexdocs.pm/elixir/Math.html
+- Documentação da biblioteca SecureRandom em Elixir: https://hexdocs.pm/elixir_secure_random/SecureRandom.html
+- Documentação da biblioteca Random em Elixir: https://hexdocs.pm/elixir/Random.html

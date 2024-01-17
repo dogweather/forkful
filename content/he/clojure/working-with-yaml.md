@@ -1,7 +1,7 @@
 ---
-title:                "עבודה עם yaml"
-html_title:           "Clojure: עבודה עם yaml"
-simple_title:         "עבודה עם yaml"
+title:                "עבודה עם YAML"
+html_title:           "Clojure: עבודה עם YAML"
+simple_title:         "עבודה עם YAML"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Data Formats and Serialization"
@@ -10,46 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-שלום וברוכים הבאים לכתבה על Clojure! במאמר הזה אני אלמד לכם כיצד לעבוד עם YAML באמצעות השפה הזאת המפורסמת. אתם תגלו שעבודה עם YAML היא פשוטה ומהנה מאוד, וזהו מספיק כדי שתרצו להתחיל לעבוד עם זה כעת!
+## מה ולמה?
 
-## Why
+העבודה עם YAML היא דרך לארגן ולשכפל מידע על פני קבצים בפורמט קריא על ידי מכונה ואנושית כאחד. תוכנתנים עובדים עם YAML כדי ליצור קבצי תצורה ועבור קבצי תצורה תומכים.
 
-למה לעסוק בעבודה עם YAML? בקלות ניתן ליצור קבצי YAML מבלי להשתמש במעבדי קוד מיוחדים, וזהו דבר שנוצר במקור בשביל להקל על עבודת הקוד שלכם.
+## איך?
 
-## How To
-
-כדאי להתחיל בקריאת קבצי YAML כדי שתהיה לכם תמונה רחבה יותר של הפורמט. לדוגמה:
+כדי לעבוד עם YAML ב- Clojure, ניתן להשתמש בספריית clj-yaml. הנה דוגמא קצרה שמראה איך לקרוא קובץ YAML ולהחזיר את נתוניו כמחרוזת:
 
 ```Clojure
-;; קובץ YAML דוגמה:
+(ns my-project.yaml-parser
+  (:require [clj-yaml.core :refer [load-string]]))
 
-שם: גל
-גיל: 30
-עיר: תל אביב
-מקצוע: מתכנת
+(def yaml-data (load-string "
+name: John
+age: 30"))
+
+(print yaml-data)
 ```
 
-כדי שנוכל לעבוד עם YAML בקוד Clojure, נצטרך להתקין את הספרייה `yaml`, שאפשר לעשות באמצעות כמה פקודות פשוטות בטרמינל השליטה.
+פלט:
 
-```Clojure
-;; דוגמה להשתמש בספרייה YAML:
-
-(require '[yaml.core :as yaml])
-
-(def person-yaml
-    (slurp "person.yaml")) ;;person.yaml היא הקובץ המופעל
-
-(print person-yaml)
-
-;; פלט יהיה:
-
-;; "שם: גל\nגיל: 30\nעיר: תל אביב\nמקצוע: מתכנת"
+```
+{:name "John", :age 30}
 ```
 
-כפי שאתם רואים, הספרייה `yaml` מאפשרת לנו לקרוא ולהתמיד בין קבצי YAML ובין קוד Clojure בקלות ובאופן נוח.
+## שוקעת לתוך עומקים
 
-## Deep Dive
+פורמט YAML נוצר לראשונה בשנת 2001 ומשמש בעיקר כפורמט תיאור למידע קבוע תוך שימוש בכתיבת קוד פשוטה. ל- YAML ישנם ממשקים לשפות תכנות אחרות, כולל גם Clojure. אחת האלטרנטיבות לפורמט הזה היא JSON ועוד שניים פופולריים בשם XML ו- INI.
 
-עכשיו שיש לנו מושג טוב יותר על כיצד לקרוא ולעבוד עם קבצי YAML בקוד Clojure, אפשר לצאת לדרך ולנסות להתמודד עם קובץ YAML מעצמנו.
+## ראה גם
 
-כדי ליצור קובץ YAML, אנחנו נשתמש בפונקציה `dump`, שתאפשר לנו להמיר מידע מאוסף נתונים בקוד Clojure לפורמט YAML. לד
+[ספריית clj-yaml](https://github.com/lancepantz/clj-yaml)

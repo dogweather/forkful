@@ -1,7 +1,7 @@
 ---
-title:                "Substringien erottaminen"
-html_title:           "Haskell: Substringien erottaminen"
-simple_title:         "Substringien erottaminen"
+title:                "Alimerkkijonojen erottaminen"
+html_title:           "Haskell: Alimerkkijonojen erottaminen"
+simple_title:         "Alimerkkijonojen erottaminen"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -10,37 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä ja miksi?
+Haluatko jakaa merkkijonon pienempiin osiin? Tämä prosessi tunnetaan nimellä "alamerkkijonojen erottelu" ja se on hyödyllistä, kun haluat manipuloida tai analysoida tiettyjä osia tekstistä. Ohjelmoijat käyttävät tätä tekniikkaa monissa tilanteissa, kuten tekstinkäsittelyssä tai tiedon käsittelyssä.
 
-Oletko koskaan halunnut leikata osia merkkijonoista, mutta et tiennyt kuinka? Hyppää mukaan, sillä tänään opimme miten erottaa kauniisti ja tehokkaasti!
-
-## Miten tehdä niin
+## Näin teet sen:
+Haskellin "Data.List"-kirjastossa on valmis funktio nimeltä "take", joka ottaa listan tai merkkijonon sekä numeron ja palauttaa halutun määrän alkioita alusta lähtien. Voit käyttää tätä ominaisuutta redusoimaan merkkijonoa osaksi pienempiä osia. Katso alla oleva esimerkki:
 
 ```Haskell
+import Data.List (take)
 
--- Luodaan funktio, joka leikkaa alusta halutun määrän merkkejä
-otsikko :: String -> String
-otsikko x = take 10 x -- Voit vaihtaa 10 haluamaksesi määräksi
-
--- Käytetään funktiota
-otsikko "Tämä on esimerkki"
---Tämä on esi
-
--- Luodaan funktio, joka leikkaa lopusta halutun määrän merkkejä
-loppu :: String -> String
-loppu x = reverse (take 10 (reverse x))
-
--- Käytetään funktiota
-loppu "Tämä on esimerkki"
---i on esimer
+substring = take 5 "Tämä on yksi testi."
 ```
 
-## Syvä sukellus
+Tulostus: "Tämä "
 
-On hyödyllistä käyttää `take` ja `drop` funktioita leikkaamaan osia merkkijonoista, mutta nämä eivät anna täydellistä hallintaa leikattavan osan sijainnista. Haskell tarjoaa myös muita tehokkaita työkaluja, kuten `splitAt` ja `substring` funktioita, jotka antavat lisää joustavuutta leikkausprosessissa. Muista myös tarkistaa `Data.Text` kirjasto, joka tarjoaa erinomaisia toimintoja merkkijonojen käsittelyyn.
+## Syvä sukellus:
+"Substring" on tekniikka, joka esiintyy useissa ohjelmointikielissä ja se on ollut käytössä jo vuosikymmenten ajan. Joissain kielissä, kuten C: ssä, alamerkkijonot ovat oma tietotyyppi. On myös muita tapoja jakaa merkkijonoja, kuten käyttämällä listoja ja pätsien operaattoreita.
 
-## Katso myös
+Implementaatiomme käyttää takan funktiota, mutta voit myös käyttää muita tapoja, kuten subList-funktion tekemistä, joka ottaa listan ja alku- ja loppu-indeksin ja palauttaa välillä olevat alkiot. Voit myös kirjoittaa oman funktion, joka toimii samalla tavalla kuin takan funktio. Vaihtoehdot ja implementointitavat voivat vaihdella riippuen ohjelmointikielestä ja tilanteesta.
 
-- [Aloittelijan opas Haskelliin](https://wiki.haskell.org/Introductory_Haskell)
-- [Haskellin virallinen dokumentaatio](https://www.haskell.org/documentation)
-- [Haskelliin tutustuminen FUNctionalDELIGHT-kirjan avulla](https://www.cs.nott.ac.uk/~pszgmh/pih.html)
+## Katso myös:
+- Data.List - Haskellin virallinen dokumentaatio
+- Merkkijonon käsittely - Wikipedian artikkeli alamerkkijonoista ja niiden käytöstä.

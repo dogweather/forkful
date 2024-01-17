@@ -1,7 +1,7 @@
 ---
-title:                "Ekstrakcja podciągów"
-html_title:           "C#: Ekstrakcja podciągów"
-simple_title:         "Ekstrakcja podciągów"
+title:                "Wydobywanie podciągów"
+html_title:           "C#: Wydobywanie podciągów"
+simple_title:         "Wydobywanie podciągów"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Strings"
@@ -10,48 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+<h1> O co chodzi i dlaczego? </h1> 
 
-Jeśli programowanie jest Twoją pasją, prawdopodobnie lubisz eksplorować różne funkcje języków programowania, a dziś chcielibyśmy przyjrzeć się ekstrakcji podciągów w języku C#. Jest to przydatna umiejętność, która może pomóc Ci w pracy z tekstem i wykorzystać go w różnych zastosowaniach.
+W programowaniu pojęcie "wyodrębniania podciągów" odnosi się do pobrania części tekstu lub ciągu znaków z większego ciągu. Programiści często używają takiej operacji, aby manipulować danymi lub uzyskać potrzebne im informacje w łatwy i szybki sposób. 
 
-## Jak to zrobić
+<h1> Jak to zrobić: </h1>
 
-Aby wyciągnąć podciąg z ciągu tekstowego w C#, musimy użyć metody `Substring()`. Przyjmujemy dwa parametry - indeks początkowy i długość podciągu, który chcemy uzyskać. Przykładowy kod wyglądałby tak:
-
-```C#
-string tekst = "Lorem ipsum dolor sit amet";
-
-string podciag = tekst.Substring(6, 5); // wynikiem będzie "ipsum"
-```
-
-Pamiętaj, że indeksowanie w C# zaczyna się od zera, więc pierwszy znak w ciągu ma indeks 0.
-
-Jeśli chcesz wyciągnąć podciąg od danego indeksu do końca ciągu, możesz pominąć drugi parametr:
+Aby wyodrębnić podciągi w C#, istnieje kilka sposobów. Możemy użyć metody `Substring()` lub zastosować `Split()` wraz z odpowiednim separatorem. Poniżej znajdują się przykładowe kody, które ilustrują te dwie techniki:
 
 ```C#
-string tekst = "Lorem ipsum dolor sit amet";
+string imie = "Ania, Basia, Kasia, Ola";
+string[] imiona = imie.Split(','); //dzielimy tekst na podciągi rozdzielone przecinkiem
 
-string podciag = tekst.Substring(12); // wynikiem będzie "dolor sit amet"
+foreach (string imie in imiona)
+{
+    Console.WriteLine(imie);
+}
 ```
 
-Możemy także wyciągnąć podciąg od danego indeksu do końca ciągu, określając tylko długość:
+W rezultacie powinniśmy zobaczyć wydruk w konsoli z podanymi imionami w kolejności: Ania, Basia, Kasia, Ola. 
+
+Inną metodą jest użycie metody `Substring()` do wyodrębnienia fragmentu wybranego przez nas tekstu:
 
 ```C#
-string tekst = "Lorem ipsum dolor sit amet";
+string oryginalnyTekst = "Ten tekst jest bardzo długi.";
+string fragment = oryginalnyTekst.Substring(4, 10); //wybieramy fragment zaczynając od indeksu 4 i o długości 10 znaków
 
-string podciag = tekst.Substring(0, 5); // wynikiem będzie "Lorem"
+Console.WriteLine(fragment);
 ```
 
-Pamiętaj, że jeśli podamy indeks większy niż długość ciągu, zostanie zwrócony błąd. Możemy także użyć metody `Length` aby uzyskać długość ciągu i tym samym uniknąć błędu.
+Tym razem wynik powinien zawierać tylko wybrany fragment, czyli "tekst jest".
 
-## Deep Dive
+<h1> Rzuć okiem na: </h1>
 
-Metoda `Substring()` wykonuje wiele działań za nas, co warto wiedzieć. Otóż w tle odbywa się sprawdzanie poprawności indeksów i tworzony jest nowy obiekt `string`, który jest kopią podciągu z oryginalnego tekstu.
+Jeśli chcesz dowiedzieć się więcej o wyodrębnianiu podciągów w C#, zapoznaj się z dokumentacją Microsoft na temat metody `Substring()` i `Split()`. Możesz także przetestować różne kombinacje i zastosowania tych metod w celu lepszego zrozumienia działania. 
 
-Dzięki temu, jeśli chcesz pracować z dużymi danymi i wyciągać wiele podciągów, możesz to robić wydajniej, tworząc od razu obiekt `string` i później korzystać z niego przy użyciu metody `Substring()`. Dzięki temu unikniesz wielokrotnego tworzenia nowych obiektów i usprawnisz swoje działania.
+<h1> Głębszy zanurzenie: </h1>
 
-## Zobacz także
+Praktyka wyodrębniania podciągów jest stosowana od dawna w wielu językach programowania. W przypadku C#, ta operacja jest wykonywana na typie `string`, który jest niezmienny. Oznacza to, że każda operacja zmieniająca tekst, tak jak wyodrębnianie podciągów, tworzy nowy obiekt i alokuje dla niego nową pamięć. 
 
-- Dokumentacja Microsoft o metodzie `Substring()`: <https://docs.microsoft.com/pl-pl/dotnet/api/system.string.substring>
-- Przykłady użycia metody `Substring()` w C#: <https://www.tutorialspoint.com/substring-method-in-chash-net>
-- Wykorzystanie ekstrakcji podciągów w praktyce: <https://www.codeproject.com/Articles/1084535/Extracting-Substrings-from-a-String-NET-String-Po>
+Jeśli chcemy wydajniej pracować z wyodrębnianiem podciągów, możemy skorzystać z klasy `StringBuilder`, która jest zoptymalizowana do wykonywania wielu operacji na tekście bez tworzenia nowych obiektów przy każdej zmianie. Jest to szczególnie przydatne przy pracach na większych ciągach znaków. 
+
+<h1> Zobacz także: </h1>
+
+ - Dokumentacja przejrzystości kodu C# Microsoft: https://docs.microsoft.com/pl-pl/dotnet/csharp/programming-guide/concepts/coding-style 
+ - Przydatne porady dotyczące optymalizacji kodu w C#: https://stackify.com/optimize-c-sharp-code/
+ - Wideo tutorial dotyczące praktycznego zastosowania wyodrębniania podciągów: https://www.youtube.com/watch?v=rb2skyIuz2A

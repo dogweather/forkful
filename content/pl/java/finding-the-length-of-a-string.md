@@ -10,57 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+Co to jest i dlaczego to robić?
 
-Znajdowanie długości ciągu znaków jest ważną umiejętnością w programowaniu w Javie. Pozwala ona na manipulację i analizę tekstu oraz tworzenie funkcjonalności, takich jak sprawdzanie poprawności wprowadzonych danych czy generowanie unikalnych identyfikatorów.
+Znalezienie długości ciągu znaków (string) to po prostu znalezienie liczby znaków w danym ciągu. Programiści często muszą to robić, ponieważ jest to niezbędne przy manipulowaniu i przetwarzaniu danych tekstowych.
 
-## Jak to zrobić
-
-```Java
-String str = "Cześć, Java!";
-int length = str.length();
-System.out.println("Długość ciągu znaków \"" + str + "\": " + length);
-```
-
-**Output:**
-Długość ciągu znaków "Cześć, Java!": 11
-
-W powyższym kodzie użyliśmy metody `length()`, dostępnej dla obiektów typu `String`, aby zwrócić długość ciągu. Warto zauważyć, że metoda ta liczy również znaki białe, takie jak spacje czy tabulatory. Jeśli chcesz wykluczyć te znaki, możesz najpierw użyć metody `trim()`. Przykładowe wykorzystanie:
+Jak to zrobić:
 
 ```Java
-String str = "   Cześć, Java!   ";
-int length = str.trim().length();
-System.out.println("Długość ciągu znaków \"" + str + "\": " + length);
+String s = "Hello World!";
+int length = s.length();
+
+System.out.println(length); // Output: 12
 ```
 
-**Output:**
-Długość ciągu znaków "Cześć, Java!": 11
+Głębsze wyjaśnienie:
+ 
+1. Kontekst historyczny: Znalezienie długości ciągu znaków było jedną z podstawowych czynności w języku programowania C, a później także w Javie. Pozwalało to programistom na sprawdzanie czy dany ciąg jest pusty, a także na iterowanie przez dany ciąg znaków.
 
-## Deep Dive
+2. Alternatywy: W Javie istnieje także metoda ```String.length()```, która działa dokładnie w ten sam sposób. Jednak wyliczenie długości ciągu znaków za pomocą tej metody jest bardziej wydajne niż wywołanie ```String.length()```, ponieważ nie wymaga tworzenia obiektu typu String.
 
-W Javie ciągi znaków są traktowane jako obiekty, a nie jako tablice znaków. Dlatego też nie możemy używać operatora indeksowania `[]`, aby uzyskać dostęp do poszczególnych znaków. Zamiast tego, musimy skorzystać z metody `charAt()`:
+3. Szczegóły implementacji: W Javie, długość ciągu znaków jest domyślnie przechowywana jako liczba całkowita oznaczająca liczbę znaków. W przypadku ciągów o długości większej niż 2GB, używana jest zmienna typu long.
 
-```Java
-String str = "Hello, Java!";
-char firstChar = str.charAt(0);
-System.out.println("Pierwszy znak ciągu \"" + str + "\": " + firstChar);
-```
-
-**Output:**
-Pierwszy znak ciągu "Hello, Java!": H
-
-Dodatkowo, długość ciągu znaków w Javie jest ograniczona do wartości maksymalnej typu `int`, czyli 2,147,483,647. Jeśli chcesz sprawdzić długość ciągu większą niż ta wartość, możesz skorzystać z metody `length()` klasy `BigInteger`:
-
-```Java
-String longStr = "This is a very long string";
-BigInteger bigInteger = BigInteger.valueOf(longStr.length());
-System.out.println("Długość ciągu znaków \"" + longStr + "\": " + bigInteger.toString());
-```
-
-**Output:**
-Długość ciągu znaków "This is a very long string": 24
-
-## Zobacz też
-
-- [Dokumentacja Java - metody klasy String](https://docs.oracle.com/javase/10/docs/api/java/lang/String.html#length())
-- [Tutorial o długości ciągu znaków w Javie](https://www.javatpoint.com/java-string-length)
+Zobacz również:
+- [Java String Length Tutorial](https://www.w3schools.com/java/java_strings_length.asp)
+- [String length() method in Java](https://www.geeksforgeeks.org/string-length-method-in-java/)

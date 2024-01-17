@@ -1,7 +1,7 @@
 ---
-title:                "Tekstin etsiminen ja korvaaminen"
-html_title:           "Fish Shell: Tekstin etsiminen ja korvaaminen"
-simple_title:         "Tekstin etsiminen ja korvaaminen"
+title:                "Tekstin etsiminen ja vaihtaminen"
+html_title:           "Fish Shell: Tekstin etsiminen ja vaihtaminen"
+simple_title:         "Tekstin etsiminen ja vaihtaminen"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -10,32 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Miksi
+# Mitä & Miksi?
 
-Miksi joku haluaisi etsiä ja korvata tekstiä? Hyvä kysymys! Monissa tilanteissa saattaa olla tarpeellista tehdä suuria muutoksia tekstissä, olipa se sitten korjausvirhe tai tiettyjen sanojen vaihtaminen. Näin säästät aikaa ja vaivaa muutosten tekemisessä käsin.
+Hakeminen ja tekstin korvaaminen ovat kaksi yleistä toimintoa, joita ohjelmoijat tekevät koodinsa kanssa. Hakeminen tarkoittaa tietyn tekstin löytämistä tiedostosta tai koodista, kun taas korvaaminen tarkoittaa kyseisen tekstin vaihtamista johonkin toiseen. Nämä toiminnot ovat tärkeitä, sillä ne auttavat meitä muokkaamaan ja päivittämään koodiamme nopeammin ja tehokkaammin.
 
-# Miten
+# Miten tehdä:
 
-Fish Shell tarjoaa helpon ja tehokkaan tavan etsiä ja korvata tekstiä. Voit käyttää `sed` komentoa tai `string replace` toimintoa, ja molemmat toimivat samalla tavalla. Katso alla olevia esimerkkejä ja tuloskuvakaappauksia nähdäksesi, kuinka helppoa se on.
+```Fish Shell``` tarjoaa useita tapoja hakemisen ja korvaamisen toteuttamiseen. Tässä muutamia esimerkkejä:
 
-```Fish Shell
-# Käytä "sed" komentoa etsiäksesi ja korvataksesi tekstiä
-sed 's/vanha/uusi/g' tiedostonimi
+1. Hakeminen: Voit käyttää ```grep``` komentoa hakemaan tiettyä tekstiä tiedostosta tai koodista. Esimerkiksi ```grep "haku" tiedosto.txt``` hakee kaikki tiedoston sisältämät rivit, jotka sisältävät sanan "haku".
 
-# Käytä "string replace" funktiota korvataksesi tekstiä tietyn merkkijonon kanssa
-string replace "vanha" "uusi" tiedostonimi
-```
+2. Korvaaminen: Voit käyttää ```sed``` komentoa vaihtamaan tietyn tekstin toiseen tiedostossa tai koodissa. Esimerkiksi ```sed -i 's/vanha/uusi/' tiedosto.txt``` korvaa kaikki esiintymät sanasta "vanha" sanalla "uusi".
 
-Tässä ensimmäisessä esimerkissä käytetään `sed` komentoa korvaamaan kaikki "vanha" esiintymät tiedostossa "uusi" sanalla. Toisessa esimerkissä käytetään `string replace` funktiota korvaamaan vain ensimmäinen esiintymä "vanha" sanalla "uusi". Tuloksena molemmissa tapauksissa on sama muokattu tiedosto.
+3. Moniriviset korvaukset: Voit käyttää ```perl``` komentoa hakemaan ja korvaamaan monirivisiä lohkoja tiedostosta tai koodista. Esimerkiksi ```perl -0777 -pi -e 's/vanha/uusi/g' tiedosto.txt``` korvaa kaikki esiintymät sanasta "vanha" sanalla "uusi" koko tiedostossa.
 
-# Syvemmälle
+# Syväsukellus:
 
-Fish Shellin `sed` komento ja `string replace` funktio perustuvat samaan ideaan: löytää tietty merkkijono ja korvata se toisella. Voit myös käyttää "s/abc/def/" muotoa antaaksesi tarkan vaihtamisen vain tiettyyn osaan tiedostoa.
+Hakemista ja korvaamista on käytetty jo pitkään ohjelmointimaailmassa helpottamaan koodin muokkausta ja päivittämistä. Yleisimpiä vaihtoehtoja ```Fish Shell```n lisäksi ovat Bash, Zsh ja PowerShell. Nämä eri vaihtoehdot tarjoavat samankaltaisia toimintoja, mutta eroavat esimerkiksi syntaksin ja käytön suhteen.
 
-HUOM: Jos haluat tehdä muutoksia pysyvästi tiedostoon, käytä `-i` vaihtoehtoa `sed` komennossa.
+Hakemista ja korvaamista voidaan myös toteuttaa koodin sisällä muilla tavoilla, kuten Pythonin ```re``` kirjastolla. Lisäksi on olemassa useita ohjelmia ja sovelluksia, jotka on suunniteltu erityisesti tekstien hakemiseen ja korvaamiseen.
 
-# Katso myös
+Jos haluat tietää enemmän hakemisesta ja korvaamisesta ```Fish Shell```n ulkopuolella, voit tutustua artikkeleihin ja dokumentaatioihin, jotka käsittelevät tätä aihepiiriä.
 
-- [Fish Shell dokumentaatio](https://fishshell.com/docs/current/)
-- [Sed komento opetusohjelma](https://www.grymoire.com/Unix/Sed.html)
-- [String Replace funktio opetusohjelma](https://commandcenter.blogspot.com/2014/01/command-of-week-string-replace-utility.html)
+# Katso myös:
+
+- [Fish Shell käyttöohjeet](https://fishshell.com/docs/current/index.html)
+- [GREP-komennon opas](https://www.lifewire.com/uses-of-linux-command-grep-4058969)
+- [SED-komennon opas](https://www.grymoire.com/Unix/Sed.html)
+- [PERL-komennon opas](https://www.programiz.com/perl-programming/regex)

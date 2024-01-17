@@ -10,29 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
-Att kunna få den nuvarande datumet är en viktig komponent av programmering. Det tillåter dig att skapa dynamiska och tidsbaserade applikationer och är en viktig del av att hantera tidrelaterade data.
+## Vad & Varför?
+Att få dagens datum är ganska enkelt i Gleam, det är bara en fråga om att skriva några rader kod. Programmers vanligtvis använder denna funktion för att spåra tidsstämplar eller för att visa dagens datum i en användarvänlig format på en applikation.
 
-## Hur man
-Att få den nuvarande datumet i Gleam är enkelt. Först kan du importera 'Time' -modulen med `import Time`. Sedan kan du använda funktionen 'now' för att få den nuvarande tidpunkten som en sträng.
+## Hur gör man:
+```
+import Gleam.Date
 
-```Gleam
-import Time
+let today = Date.now()
 
-let currentDate = Time.now()
+println(today)
+// Output: 2021-05-06
 ```
 
-Om du vill anpassa hur datumet visas kan du använda funktionen `format`, som tar emot en sträng som ett argument och returnerar datumet i det önskade formatet. Till exempel:
+## Djupdykning:
+Att få det nuvarande datumet är en grundläggande funktion i alla programmeringsspråk, eftersom det är en viktig del av att hantera tidsbaserade operationer. I äldre språk som C och C++, lägger utvecklare vanligtvis in alla datum som en hel tidsstämpel i millisekunder, men i moderna språk som Gleam finns det inbyggda funktioner för att enkelt hämta dagens datum.
 
-```Gleam
-let formattedDate = Time.format("%A, %B %d, %Y")
-```
+Det finns flera alternativ för att få det nuvarande datumet i Gleam, till exempel genom att använda paket som 'gleam_time' eller genom att använda externa bibliotek som 'Lixir Date'. Men den inbyggda Date-modulen är det enklaste och mest effektiva sättet att göra det.
 
-Detta kommer att returnera datumet i formatet "dag, månad dag, år", till exempel "måndag, maj 14, 2021".
+Implementeringen av Gleam Date module baseras på Erlangs Calendar module, vilket gör det möjligt att få det nuvarande datumet i en rad olika format.
 
-## Deep Dive
-För de som är intresserade av att veta mer om hur datumet hanteras i Gleam finns det flera inbyggda funktioner som kan vara användbara. Som nämnts tidigare kan du använda `now` för att få den nuvarande tiden, men du kan också använda `utc_now` för att få den aktuella tiden i UTC-format. Du kan också använda `add_seconds` och `add_minutes` för att lägga till tidsenheter till din nuvarande tid. Slutligen, om du vill hantera specifika datum, kan du använda `from_utc` som tar emot år, månad, dag och tid som argument och returnerar en tidsstämpel.
-
-## Se även
-- Officiell Gleam-hemsida: https://gleam.run/
-- Gleam dokumentation: https://gleam.run/get-started/introduction.html
+## Se även:
+- Gleam Date Module Documentation: https://gleam.run/modules/Date.html
+- Gleam Time Package: https://github.com/kent375/gleam_time
+- Lixir Date Library: https://github.com/hexpm/libdate

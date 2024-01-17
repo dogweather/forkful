@@ -10,64 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
+YAML står för "YAML Ain't Markup Language" och det är ett format för att strukturera data på ett läsbart och enkelt sätt. Programmörer använder YAML för att läsa och skriva data på ett effektivt sätt, speciellt inom webbutveckling och konfigurationshantering.
 
-YAML är ett format för att strukturera data som är lätt att läsa och skriva. Det har blivit allt mer populärt och används ofta för konfigurationsfiler i mjukvaruprojekt. Genom att lära sig YAML kan du effektivt hantera och organisera din data i dina projekt.
+## Så här:
+Ett vanligt användningsområde för YAML inom Elm är för att definiera en lista av objekt. Till exempel:
 
-## Så här gör du
-
-För att kunna arbeta med YAML i Elm behöver du först installera paketet "elm-yaml" genom terminalen eller pakethanteraren. När paketet är installerat kan du börja använda YAML i ditt projekt.
-
-För att skapa ett nytt YAML-dokument i Elm använder du funktionen `Yaml.encode`, vilket tar ett Elm-värde (record, list etc.) som indata och returnerar ett YAML-dokument som en sträng. Här är ett exempel:
-
-```Elm
-import Yaml exposing (..)
-
-data =
-    { name = "John"
-    , age = 25
-    , hobbies = ["photography", "hiking"]
-    }
-
-yaml = Yaml.encode data
-
--- yaml innehåller nu:
--- name: John
--- age: 25
--- hobbies:
---   - photography
---   - hiking
+```
+listeAvObjekt : List { namn : String, ålder : Int }
+listeAvObjekt =
+    [ { namn = "Anna", ålder = 30 }
+    , { namn = "Peter", ålder = 25 }
+    , { namn = "Maria", ålder = 27}
+    ]
 ```
 
-För att läsa in ett befintligt YAML-dokument i Elm använder du funktionen `Yaml.decode`, som tar en YAML-sträng som indata och returnerar ett Elm-värde. Här är ett exempel:
+YAML tillåter oss att strukturera denna data på ett lättläst sätt:
 
-```Elm
-import Yaml exposing (..)
-
-yaml =
-name: Jane
-age: 30
-hobbies:
-    - painting
-    - baking
-
-result = Yaml.decode yaml
-
--- result innehåller nu:
--- { name = "Jane"
--- , age = 30
--- , hobbies = ["painting", "baking"]
--- }
+```
+- namn: "Anna"
+  ålder: 30
+- namn: "Peter"
+  ålder: 25
+- namn: "Maria"
+  ålder: 27
 ```
 
-## Djupdykning
+## Djupdykning:
+YAML utvecklades av Clark Evans och Ingy döt Net och först släpptes år 2001. Det används ofta för att skapa konfigurationsfiler för webbapplikationer, men det används även för andra ändamål som att strukturera data för API-anrop. En annan populär metod för att strukturera data är JSON (JavaScript Object Notation), men YAML erbjuder en mer läsbar syntax för människor.
 
-Genom att lägga till YAML-filer i ditt projekt kan du på ett effektivt sätt hantera konfigurationer och data som behövs för att ditt program ska fungera korrekt. Du kan också använda YAML för att generera statiska webbsidor eller som del av ditt byggscript. Ytterligare möjligheter med YAML inkluderar att samla och analysa data samt att skapa strukturerade dokument.
-
-För att lära dig mer om YAML kan du utforska dokumentationen för "elm-yaml" paketet och prova på olika funktioner och exempel. Det finns också många resurser online som ger en mer djupgående förståelse för YAML och dess användning i mjukvaruprojekt.
-
-## Se även
-
-- [elm-yaml paketet](https://package.elm-lang.org/packages/NoRedInk/elm-yaml/latest/)
-- [YAML.org](https://yaml.org/)
-- [Awesome Elm](https://github.com/sporto/awesome-elm) för fler resurser och verktyg för Elm-språket.
+## Se även:
+- [YAML Reference](https://yaml.org/spec/1.2/spec.html)
+- [Elm documentation för YAML](https://package.elm-lang.org/packages/NoRedInk/elm-decode-pipeline/latest/Decode-Pipeline-YAML)

@@ -1,7 +1,7 @@
 ---
-title:                "Convirtiendo un string a minúsculas"
-html_title:           "Swift: Convirtiendo un string a minúsculas"
-simple_title:         "Convirtiendo un string a minúsculas"
+title:                "Convirtiendo una cadena a minúsculas"
+html_title:           "Swift: Convirtiendo una cadena a minúsculas"
+simple_title:         "Convirtiendo una cadena a minúsculas"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -10,42 +10,22 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué?
+## ¿Qué y por qué?
+Convertir una cadena de texto a letras minúsculas es un proceso común en la programación que significa modificar todas las letras mayúsculas de una cadena por sus equivalentes en minúsculas. Esto puede ser útil para comparar cadenas de texto de manera más precisa o para asegurar una consistencia en el formato del texto. Los desarrolladores suelen hacerlo para facilitar el manejo y manipulación de los datos en sus programas.
 
-¿Alguna vez has tenido que trabajar con palabras o frases en un programa y te has dado cuenta de que algunas están escritas en mayúsculas y otras en minúsculas? Puede ser frustrante tener que lidiar con esta inconsistencia. Afortunadamente, en Swift tenemos la capacidad de convertir una cadena de texto a minúsculas, lo que nos permite uniformizar nuestros datos y facilitar su manipulación.
-
-## Cómo hacerlo
-
-Para convertir una cadena de texto a minúsculas en Swift, podemos utilizar el método `lowercased()` como se muestra en el siguiente ejemplo:
-
+## Cómo:
 ```Swift
-let cadena = "Hola Mundo"
-let cadenaEnMinusculas = cadena.lowercased()
-print(cadenaEnMinusculas)
+let cadena = "Este Es Un Ejemplo De Cadena"
+print(cadena.lowercased()) // salida: este es un ejemplo de cadena
 ```
 
-La salida de este código sería: `hola mundo`. Como se puede ver, el método `lowercased()` toma la cadena original y la convierte en una nueva cadena con todas las letras en minúsculas. Es importante destacar que este método no afecta a la cadena original, sino que crea una nueva cadena a partir de ella.
+## Profundizando:
+Este proceso de conversión de las letras mayúsculas a minúsculas se conoce como "lowercasing" y se ha utilizado en la programación desde los primeros días de los lenguajes de programación. En Swift, también existe el método `uppercased()` para convertir texto a letras mayúsculas, lo cual puede ser útil en ciertas situaciones.
 
-También podemos utilizar este método en conjunto con otras funciones de manipulación de cadenas, como por ejemplo:
+Otra alternativa a `lowercased()` es utilizar la propiedad `caseInsensitiveCompare()` para comparar cadenas de texto sin tener en cuenta las mayúsculas y minúsculas. Sin embargo, esto podría ser menos eficiente en términos de rendimiento y no es recomendable para cadenas de texto muy largas.
 
-```Swift
-let nombre = "Juan"
-let apellido = "García"
-let nombreCompleto = "\(nombre.lowercased()) \(apellido.lowercased())"
-print(nombreCompleto)
-```
+En cuanto a la implementación, la función `lowercased()` utiliza el Unicode Standard para determinar el equivalente en minúsculas de cada letra en la cadena de texto. Esto asegura una conversión adecuada para diferentes idiomas y caracteres especiales.
 
-En este caso, la salida sería `juan garcía`. Aquí vemos cómo podemos utilizar el método `lowercased()` para convertir cada parte del nombre en minúsculas antes de concatenarlas en una sola cadena.
-
-## Profundizando
-
-El método `lowercased()` es una propiedad de la clase `String` en Swift y es parte de la biblioteca estándar del lenguaje. Esto significa que podemos utilizarlo en cualquier cadena sin necesidad de importar librerías externas.
-
-Además de `lowercased()`, también tenemos el método `uppercased()` que convierte una cadena a mayúsculas y `capitalized()` que capitaliza la primera letra de cada palabra en la cadena. Estos métodos nos permiten tener un mayor control sobre cómo se muestran los datos en nuestra aplicación.
-
-Es importante mencionar que estos métodos utilizan las reglas de capitalización del idioma en el que se está corriendo el programa, lo que significa que si estamos trabajando en un programa en español, la cadena será convertida de acuerdo a las reglas de este idioma.
-
-## Ver también
-
-- [Documentación oficial de Swift sobre la clase String](https://developer.apple.com/documentation/swift/string)
-- [Tutorial sobre manipulación de cadenas en Swift](https://www.raywenderlich.com/5008164-swift-string-formatting-and-manipulation-cheat-sheet)
+## Vea También:
+- [Documentación de Apple sobre el método `lowercased()`](https://developer.apple.com/documentation/swift/string/1789658-lowercased)
+- [Comparación de cadenas de texto en Swift](https://www.hackingwithswift.com/articles/108/how-to-compare-strings-in-swift)

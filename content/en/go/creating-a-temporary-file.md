@@ -10,65 +10,63 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why 
+## What & Why?
+Creating a temporary file is the process of generating and storing data in a temporary location on a computer's storage device. Programmers use this technique to store data that is only needed temporarily, such as holding intermediate results or storing user preferences during a session.
 
-Creating a temporary file in Go can be useful for a variety of reasons. Temporary files are often used in programs that require temporary storage space for processing large amounts of data, or for creating backups and logs.
+## How to:
+Here's how you can create a temporary file in Go:
 
-## How To
-
-To create a temporary file in Go, we can use the `ioutil` package. Below is a simple example that creates a temporary file named "temp.txt" in the current directory.
-
-```Go
-package main
+```
+Go package main
 
 import (
-    "fmt"
     "io/ioutil"
+    "os"
 )
 
 func main() {
-    // Create temporary file
-    tempFile, err := ioutil.TempFile(".", "temp.txt") // "." represents current directory
-    
+    // create a new temporary file
+    tempFile, err := ioutil.TempFile("", "example")
+
+    // handle error if any
     if err != nil {
         panic(err)
     }
-    
-    // Write data to temporary file
-    _, err = tempFile.Write([]byte("This is a temporary file created in Go!"))
-    
+
+    // write data to temporary file
+    data := []byte("Hello, world!")
+    _, err = tempFile.Write(data)
+
+    // handle error if any
     if err != nil {
         panic(err)
     }
-    
-    // Close temporary file
-    err = tempFile.Close()
-    
-    if err != nil {
-        panic(err)
-    }
-    
-    // Print temporary file name
-    fmt.Println("Created temporary file:", tempFile.Name())
+
+    // print temporary file name
+    fmt.Println("Temporary file name:", tempFile.Name())
+
+    // close temporary file
+    tempFile.Close()
+
+    // remove temporary file
+    os.Remove(tempFile.Name())
+
 }
 ```
 
-Running this code will create a temporary file named "temp.txt" in the current directory and write the specified data to it. The `TempFile` function takes the first parameter as the directory to create the file in, and the second parameter as the prefix for the temporary file name. The returned `*os.File` can be used to write data to the file, and must be closed using the `Close` method to avoid any potential file corruption.
-
-The output of the above code will look like this:
-
+Sample output:
 ```
-Created temporary file: ./temp.txt
+Temporary file name: /var/tmp/example055949 
 ```
 
-## Deep Dive 
+## Deep Dive:
+Creating temporary files has been a common practice in programming since the early days of computing when computers had limited memory and storage space. This technique allowed for efficient use of resources by storing data temporarily and removing it once it was no longer needed.
 
-The `ioutil.TempFile` function internally calls the `TempDir` function from the same package to generate a unique temporary directory. This directory is typically located in the system's default temporary directory, and the temporary file is created within it.
+In Go, there are multiple options for creating temporary files, including using the `ioutil.TempFile()` function as shown in the previous example or using the `os.CreateTemp()` function. These functions handle all the necessary steps for creating a temporary file, including generating a unique name and setting the appropriate permissions.
 
-Additionally, the `ioutil` package also provides the `TempDir` and `TempFile` functions separately, in case you need more control over where your temporary file is created.
+Alternatively, programmers can also manually create a temporary file by specifying a file path and using the `os.Create()` function. However, doing so requires extra steps, such as handling file permission and deleting the file afterwards.
 
-## See Also
-
-- [ioutil documentation](https://golang.org/pkg/io/ioutil/)
-- [tempfile package](https://golang.org/pkg/tempfile/)
-- [creating temporary files in Go](https://www.callicoder.com/go-create-temporary-file/)
+## See Also:
+- [Go Documentation on creating temporary files](https://golang.org/pkg/io/ioutil/#TempFile)
+- [Alternatives to creating temporary files in Go](https://medium.com/web-engineering-co/alternatives-to-temporary-files-in-go-1cab7662174f)
+- [Implementation details of temporary files in Go](https://medium.com/web-engineering-co/implementation-of-go-ioutil-tempfile-part-1-402e39f90a5b)

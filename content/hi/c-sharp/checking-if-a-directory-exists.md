@@ -1,7 +1,7 @@
 ---
-title:                "डायरेक्टरी मौजूद है या नहीं जांच करना"
-html_title:           "C#: डायरेक्टरी मौजूद है या नहीं जांच करना"
-simple_title:         "डायरेक्टरी मौजूद है या नहीं जांच करना"
+title:                "डायरेक्टरी क्या है यह देखें"
+html_title:           "C#: डायरेक्टरी क्या है यह देखें"
+simple_title:         "डायरेक्टरी क्या है यह देखें"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Files and I/O"
@@ -10,32 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Kyun
+## क्या और क्यों?
 
-Kya aapne kabhi directory ki maujoodgi ko check karne ka anubhav kiya hai? Agar haan, to aap jaante honge ki directory ki maujoodgi ko check karna kyon mahatvapurna hai. Yeh humare code mein error aur bugs ko avoid karne mein madad karta hai aur sahi functionality ka assurance deta hai.
+डायरेक्टरी आवश्यकताओं की पुष्टि करना क्या है और कैसे प्रोग्रामर यह करते हैं? डायरेक्टरी की उपस्थिति की जांच आपको आपकी कंप्यूटर में वह निर्दिष्ट फ़ोल्डर (डायरेक्टरी) की जांच करने की अनुमति देती है जिसमें आप अपनी कोड या फ़ाइलें स्टोर करना चाहते हैं। प्रोग्रामर इसका उपयोग सुनिश्चित करने के लिए करते हैं कि एक डायरेक्टरी मौजूद है या नहीं जिसे वे चाहते हैं और अपने कोड को विफ़ल होने से बचाते हैं।
 
-## Kaise
+## कैसे करें:
+
+अगर आपको अपनी एप्लिकेशन में कोड या फ़ाइलें स्टोर करनी हैं और आप उन्हें किसी निर्दिष्ट डायरेक्टरी में स्टोर करना चाहते हैं, तो आपको पहले उस डायरेक्टरी की मौजूदगी को जांचना होगा। इस कार्य को C# में `Directory.Exists()` मेथड द्वारा किया जाता है। नीचे दिए गए उदाहरण में हम एक निर्दिष्ट डायरेक्टरी को जांच रहे हैं और अगर वह मौजूद है, तो उसके सभी फ़ाइलों को लिस्ट कर रहे हैं।
 
 ```C#
-if(Directory.Exists(@"C:\Users\Username\Documents"))
+if (Directory.Exists("C:\\Users\\Username\\Documents"))
 {
-    Console.WriteLine("Directory exists!");
-}
-else
-{
-    Console.WriteLine("Directory does not exist.");
+    string[] files = Directory.GetFiles("C:\\Users\\Username\\Documents");
+    // print list of files
+    foreach (string file in files)
+    {
+        Console.WriteLine(file);
+    }
 }
 ```
 
-Jab hum `Directory.Exists` function ko use karte hain, humein path provide karna hota hai jiske baare mein hume jaanna hai ki wah maujood hai ya nahi. Agar directory maujood hai, function `true` return karega aur hume "Directory exists!" ka message milega. Agar directory nahi maujood hai, function `false` return karega aur hume "Directory does not exist." ka message milega. 
+उपरोक्त कोड का नतीजा निम्न हो सकता है:
 
-## Deep Dive
+```
+C:\\Users\\Username\\Documents\\file1.txt
+C:\\Users\\Username\\Documents\\file2.txt
+C:\\Users\\Username\\Documents\\file3.txt
+```
 
-Directory ki maujoodgi ko check karne ka process bahut hi simple hai. Yeh `Directory` class mein ek built-in function hai jo `bool` data type return karta hai. Is function ko use karne se pehle humein `using System.IO;` namespace ko include kar lena chahiye. 
+## गहराईवार:
 
-Is process mein hum `Path` class se bhi madad le sakte hain, jiske through hum directory ka path validate kar sakte hain. Humein sirf `Directory.Exists` function use karna hota hai aur wah path ko check karta hai. Agar aapko aur zyada flexiblity chahiye, to aap `DirectoryInfo` class ka use kar sakte hain jo hume directory ki details provide karta hai.
+### ऐतिहासिक पृष्ठभूमि:
 
-## Dekhiye Bhi
+पहले, किसी भी फ़ाइल या डायरेक्टरी को जांचने के लिए, प्रोग्रामर द्वारा भाषा और ऑपरेटिंग सिस्टम के माध्यम से स्वयं से मुहैया किए गए कोड का उपयोग किया जाता था। लेकिन अब C# में `Directory.Exists()` मेथड की मदद से काम आसान हो गया है।
 
-- [Microsoft Docs: Directory.Exists Method (System.IO)](https://docs.microsoft.com/en-us/dotnet/api/system.io.directory.exists?view=netcore-3.1)
-- [C# Corner: How To Check If Directory Exists in C#](https://www.c-sharpcorner.com/article/how-to-check-if-directory-exists-in-C-Sharp/)
+### वैकल्पिक:
+
+पहले, प्रोग्रामर को अपनी एप्लिकेशन में अपना आप से कोड लिखना पड़ता था जो डायरेक्टरी मौजूदगी की जांच करता था। लेकिन आज विभिन्न लाइब्रेरी जैसे कि .NET और LINQ का उपयोग करके प्रोग्रामर अपने कोड को और अधिक अभिन्नता दे सकते हैं।
+
+### अभिलेखगामी विवरण:
+
+`Directory.Exists()` मेथड से भी अधिक जानकारी के लिए, आप इसके डेटा टाइप और विभिन्न विकल्पों को देख सकते हैं। इसका उपयो

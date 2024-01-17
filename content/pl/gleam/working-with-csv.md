@@ -10,27 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i dlaczego?
 
-Praca z plikami CSV jest powszechnym zadaniem w programowaniu i może się przydać w wielu sytuacjach, na przykład podczas importowania danych, przetwarzania raportów, czy w przypadku analizy danych. W Gleam, biblioteka CSV jest bardzo łatwa w użyciu i pozwala na szybkie i skuteczne operowanie na danych w tym formacie.
+Pracowanie z plikami CSV jest nieodłączną częścią pracy programisty. CSV (Comma Separated Values) to prosty format plików, w którym dane są przechowywane w postaci tabelarycznej, z wartościami oddzielonymi przecinkami. Programiści korzystają z tego formatu, ponieważ jest łatwy do czytania i przechowywania danych w formie zrozumiałej dla komputera.
 
-## Jak to zrobić
+## Jak to zrobić?
+
+Gleam to język programowania, który umożliwia nam łatwe wykonywanie operacji na plikach CSV. W poniższych przykładach przedstawimy prosty kod, który pomoże Ci w tym zadaniu. Pamiętaj, że w ramach przykładu mogą pojawić się błędy, które należy samodzielnie naprawić, aby kod zadziałał poprawnie.
 
 ```Gleam
+// Importowanie biblioteki CSV
 import gleam/csv
-csv.parse("data.csv")
-  |> json.toJson
-  |> io.print
+
+// Otworzenie pliku CSV
+let file = csv.open("data.csv")
+
+// Odczytanie danych z pliku
+let data = csv.read(file)
+
+// Wypisanie zawartości w konsoli
+csv.print(data)
 ```
 
-W powyższym przykładzie korzystamy z biblioteki CSV, aby sparsować plik CSV i przekonwertować go do formatu JSON. Następnie wyświetlamy wynik przy użyciu funkcji io.print. Możliwości manipulacji danymi są praktycznie nieograniczone dzięki łatwej i intuicyjnej składni Gleam.
+W rezultacie otrzymamy dane w tabelarycznej formie, gotowe do dalszej obróbki.
 
 ## Głębszy wgląd
 
-W bibliotece CSV znajdują się funkcje umożliwiające wczytywanie danych z różnych źródeł, takich jak URL, pliki lokalne czy dane w formacie binarnym. Poza tym, można również zmieniać separator kolumn oraz dostosowywać sposób konwersji danych. Biblioteka jest również często aktualizowana i ulepszana przez społeczność programistów, dzięki czemu jest jeszcze bardziej przyjazna dla użytkowników.
+Praca z plikami CSV jest bardzo popularna w programowaniu, ponieważ ten format był używany już od bardzo dawna i jest szeroko rozpoznawalny. Istnieją również alternatywne formaty takie jak JSON czy XML, jednak CSV jest często preferowany ze względu na prostotę i czytelność dla człowieka.
 
-## Zobacz także
+Jeśli chcesz dowiedzieć się więcej o tym, jak działają pliki CSV oraz jakie są ich możliwości i ograniczenia, koniecznie sprawdź linki w sekcji "Zobacz również".
 
-- [Oficjalna dokumentacja biblioteki CSV w Gleam](https://gleam.run/libraries/csv)
-- [Repozytorium GitHub z kodem źródłowym biblioteki CSV w Gleam](https://github.com/lpil/csv)
-- [Przykłady kodu i poradniki udostępniane przez społeczność użytkowników Gleam](https://gleam.run/community)
+## Zobacz również
+
+- [Gleam dokumentacja: CSV](https://gleam.run/documentation/stdlib/csv/)
+- [CSV na Wikipedii](https://pl.wikipedia.org/wiki/CSV)

@@ -1,7 +1,7 @@
 ---
-title:                "yamlを扱う"
-html_title:           "Javascript: yamlを扱う"
-simple_title:         "yamlを扱う"
+title:                "yamlを使用すること"
+html_title:           "Javascript: yamlを使用すること"
+simple_title:         "yamlを使用すること"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Data Formats and Serialization"
@@ -10,58 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-今日は最新のJavaScriptプログラミングについてお話しします！この記事では、YAMLというデータフォーマットについてご紹介します。読者の皆様がこの記事を読んで、YAMLを使ってのプログラミングが楽しくなることを願っています。
+## 何か？そしてなぜ？
+YAMLを使うこととは、プログラマーがどのようなことをすることでしょうか？プログラマーは、YAMLを使用してデータを構造化し、JSONやXMLなどの他の形式とやり取りすることができます。
 
-## なぜ
-
-YAMLは、データを簡潔かつわかりやすく表現するために開発されました。そのため、JavaScriptプログラミングにおいても、コードをより簡潔に書くことができます。また、YAMLは人間にとっても読みやすいため、チームでの開発やコミュニケーションにも役立ちます。
-
-## 使い方
-
+## 使い方：
 ```Javascript
-const yaml = require('yaml');
+// YAMLデータの定義
+let yamlData = `
+    name: John
+    age: 25
+    location: USA`;
 
-// オブジェクトをYAML形式に変換
-const myObject = {
-    name: 'John',
-    age: 26,
-    city: 'Tokyo'
-}
-const yamlObject = yaml.stringify(myObject);
-console.log(yamlObject);
+// YAMLデータをオブジェクトに変換
+let obj = jsyaml.load(yamlData);
 
-// YAML形式のデータをオブジェクトに変換
-const newYaml = `
-name: Emma
-age: 29
-city: Osaka
-`;
-const newObject = yaml.parse(newYaml);
-console.log(newObject);
+// オブジェクトのプロパティにアクセス
+console.log(obj.name); // 結果：John
 ```
 
-上記のコードを実行すると、次のような出力が得られます。
-
 ```Javascript
-name: John
-age: 26
-city: Tokyo
+// オブジェクトをYAMLに変換
+let json = {
+    name: "John",
+    age: 25,
+    location: "USA"
+};
 
-{ 
-  name: 'Emma',
-  age: 29,
-  city: 'Osaka'
-}
+let yaml = jsyaml.dump(json);
+console.log(yaml);
+// 結果：
+// name: John
+// age: 25
+// location: USA
 ```
 
-YAMLを使用することで、よりシンプルで読みやすいコードを書くことができるようになります。
+## ディープダイブ：
+YAMLは、データを人間が読みやすい形式で表現することができる軽量なデータフォーマットです。もともとはPerlユーザーのBrian Ingersonが作成しましたが、今ではさまざまなプログラミング言語でサポートされています。代替手段としては、JSONやXMLなどの他のデータフォーマットがあります。YAMLはインデントによってデータの階層を表現することができ、読みやすくフォーマットされたテキストファイルに保存することができます。
 
-## 深層を掘る
-
-YAMLは、データの階層構造を示すためにインデントを使用します。また、配列やオブジェクトを簡単に表現することができます。さらに、変数を使用することもできます。しかし、改行やインデントの数などの細かいルールがあり、正しい形式で書かなければエラーが起きることもあるので注意が必要です。
-
-## 併せて見る
-
+## さらに参考：
 - [YAML公式サイト](https://yaml.org/)
-- [YAML入門ガイド](https://docs.ansible.com/ansible/latest/reference_appendices/YAMLSyntax.html)
-- [JavaScriptでのYAMLの基本操作](https://www.npmjs.com/package/yaml)
+- [YAMLチュートリアル](https://www.tutorialspoint.com/yaml/index.htm)
+- [JavaScriptでYAMLを扱う](https://github.com/nodeca/js-yaml)

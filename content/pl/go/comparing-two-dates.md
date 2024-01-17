@@ -10,45 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i dlaczego?
+Porównywanie dwóch dat jest procesem polegającym na porównaniu dwóch różnych dat w celu określenia ich wzajemnego stosunku. Programiści często wykonują tę czynność w celu upewnienia się, że data jest odpowiednia lub aby ustalić kolejność wydarzeń w programie.
 
-Porównywanie dat jest niezwykle przydatną umiejętnością, szczególnie w przypadku skomplikowanych aplikacji, które wymagają obsługi różnych zdarzeń w różnych chwilach. Dzięki umiejętności porównywania dat możesz łatwo określić, które wydarzenia już się wydarzyły, a które dopiero nadejdą. W tym artykule dowiesz się, jak porównywać daty w języku Go i jak to może ułatwić Twoją pracę.
+## Jak to zrobić:
+Aby porównać dwie daty w Go, należy użyć funkcji `Equal()` z pakietu `time`. Przykład kodu:
 
-## Jak to zrobić
-
-Aby porównać dwie daty w języku Go, możesz użyć funkcji `Equal` z pakietu `time`. Przykładowy kod wyglądałby następująco:
-
-```Go
-package main
-
-import (
-	"fmt"
-	"time"
-)
-
-func main() {
-	dateOne := time.Date(2021, 9, 15, 0, 0, 0, 0, time.UTC)
-	dateTwo := time.Date(2021, 9, 16, 0, 0, 0, 0, time.UTC)
-	
-	if dateOne.Equal(dateTwo) {
-		fmt.Println("Podane daty są takie same!")
-	} else {
-		fmt.Println("Podane daty są różne.")
-	}
-}
+```
+data1 := time.Date(2021, time.December, 1, 0, 0, 0, 0, time.UTC)
+data2 := time.Date(2020, time.March, 15, 0, 0, 0, 0, time.UTC)
+fmt.Println(data1.Equal(data2))
 ```
 
-Oczekiwanym wynikiem tego kodu jest wypisanie na ekranie napisu "Podane daty są różne.", ponieważ wcześniej zdefiniowane daty są właśnie różne. Korzystając z funkcji `Equal`, możesz więc prosto i szybko porównać dwie daty w języku Go.
+Wyjście:
 
-## Deep Dive
+```
+false
+```
 
-Funkcja `Equal` porównuje dwie daty do sekundy, dlatego jeśli chcesz również uwzględnić milisekundy, musisz użyć funkcji `Equal` na typie `time.Time`. Ponadto, warto wspomnieć, że w języku Go daty są reprezentowane przez typ `time.Time`, który przechowuje informacje o dacie, czasie oraz strefie czasowej. Dzięki temu możesz porównywać nie tylko daty w jednej strefie czasowej, ale również w różnych, co jest przydatne w przypadku globalnych aplikacji.
+Funkcja `Equal()` zwraca wartość logiczną `true` lub `false` w zależności od tego, czy dwie podane daty są sobie równe czy nie. Do porównania używane są wartości dnia, miesiąca, roku, godziny, minuty, sekundy oraz lokalizacja czasowa.
 
-## Zobacz także
+## Zagłębienie się:
+Porównywanie dat jest ważnym aspektem przy tworzeniu programów, szczególnie jeśli pracujemy z czasem i datami. W przeszłości programiści musieli pamiętać o wielu szczegółach, takich jak przeliczanie stref czasowych czy uwzględnianie zmian w kalendarzu gregoriańskim. Dzięki odpowiednim funkcjom w Go, cały ten proces jest prostszy i mniej czasochłonny.
 
-Jeśli chcesz dowiedzieć się więcej na temat porównywania dat w języku Go, możesz zapoznać się z następującymi artykułami:
+Alternatywnym sposobem porównywania dat jest użycie funkcji `Before()` i `After()` z pakietu `time`, które zwracają wartość logiczną w zależności od kolejności dwóch dat.
 
-- [Porównywanie dat w języku Go](https://golangbyexample.com/time-comparison-in-golang/)
-- [Dokumentacja języka Go - pakiet time](https://golang.org/pkg/time/)
+W implementacji porównywania dat w Go wykorzystywany jest algorytm równoważny do porównywania wartości liczbowych, co pozwala na szybką i dokładną analizę.
 
-Dzięki umiejętności porównywania dat w języku Go, możesz ułatwić sobie pracę i uniknąć błędów związanych z obsługą różnych zdarzeń czasowych w swoich aplikacjach.
+## Zobacz także:
+- [Dokumentacja Go - pakiet `time`](https://golang.org/pkg/time/)
+- [Porównywanie dat w Java vs. Go](https://plus2net.com/java_tutorial/date-compare-java.php)

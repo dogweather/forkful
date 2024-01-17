@@ -1,7 +1,7 @@
 ---
-title:                "Ladda ner en webbsida"
-html_title:           "Bash: Ladda ner en webbsida"
-simple_title:         "Ladda ner en webbsida"
+title:                "Nerladdning av en webbsida"
+html_title:           "Bash: Nerladdning av en webbsida"
+simple_title:         "Nerladdning av en webbsida"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "HTML and the Web"
@@ -10,39 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
 
-Att ladda ner en webbsida kan vara användbart av flera anledningar. Du kanske vill spara en sida för senare läsning eller använda dess innehåll i ditt eget projekt.
+Att ladda ner en webbsida är helt enkelt att hämta innehållet från en viss webbadress och spara det på din dator. Det är en vanlig uppgift för programmerare, eftersom det kan vara användbart för att hämta information från en webbplats eller automatisera vissa uppgifter.
 
-## Så här gör du
-
-Ladda ner en webbsida med hjälp av Bash är enkelt. Först behöver du välja en lämplig URL som du vill ladda ner. Sedan kan du använda kommandot `wget` följt av URL-en i ett terminalfönster.
+## Hur man:
 
 ```Bash
-wget https://www.example.com
+# Hämta innehållet från en webbsida och spara det i en fil
+curl https://www.example.com > fil.html
+
+# Hämta bara innehållet från en webbsida och skriv ut det på skärmen
+curl https://www.example.com
+
+# Hämta filen till en specifik sökväg på din dator
+curl -o /path/to/file.html https://www.example.com
+
+# Hämta innehållet från flera webbplatser samtidigt
+curl -o fil1.html https://www.example1.com -o fil2.html https://www.example2.com
 ```
 
-Detta kommando kommer att ladda ner hela webbsidan till din nuvarande arbetskatalog. Om du vill ladda ner en specifik fil från webbsidan, kan du använda flaggan `-O` efter URL-en och ange önskat filnamn.
+För att kontrollera om din kod fungerar kan du använda `cat`kommandot för att visa innehållet i den hämtade filen. Till exempel `cat fil.html` för att visa innehållet i filen du hämtade ovan.
 
-```Bash
-wget https://www.example.com/image.jpg -O image.jpg
-```
+## Djupdykning:
 
-Du kan också använda flaggan `-P` för att ange en specifik sökväg för var du vill spara filen.
+Att ladda ner en webbsida är en viktig del av webbutveckling och automatisering. Tidigare var det vanligt att använda programmet `wget` för att ladda ner webbsidor, men idag är `curl`mer vanligt förekommande.
 
-```Bash
-wget https://www.example.com/image.jpg -P /hem/din_användare/bilder/
-```
+Det finns också alternativ till `curl`, till exempel programspråk som Python eller JavaScript har inbyggda bibliotek för att hämta webbsidor. Men `curl`är fortfarande vanligtvis det mest använda verktyget för denna uppgift, eftersom det är enkelt att använda och fungerar på många olika operativsystem.
 
-## Djupdykning
+## Se även:
 
-Bash kommandot `wget` används för att hämta filer från webben. Det fungerar genom att skicka en begäran till den angivna URL-en och hämta innehållet till din lokala enhet. Detta gör det möjligt att ladda ner filer, bilder och hela webbsidor.
-
-En av de mest användbara funktionerna i `wget` är dess möjlighet att återuppta avbrutna nedladdningar. Om din nedladdning blir avbruten av någon anledning, till exempel dålig internetanslutning, kan du använda flaggan `-c` för att fortsätta nedladdningen från där den slutade.
-
-Du kan också använda kommandot `curl` för att ladda ner webbsidor i Bash. Det fungerar på ett liknande sätt som `wget` och ger dig möjlighet att hämta innehållet från en URL.
-
-## Se även
-
-- [wget man page](https://www.gnu.org/software/wget/manual/wget.html)
-- [curl man page](https://curl.se/docs/manpage.html)
+- [Tutorial: Downloading Files with Curl](https://linuxize.com/post/curl-download-file/)
+- [Curl's Official Website](https://curl.haxx.se/)
+- [Curl's Manual Page](https://curl.haxx.se/docs/manpage.html)

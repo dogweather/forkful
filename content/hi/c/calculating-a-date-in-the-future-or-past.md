@@ -1,7 +1,7 @@
 ---
-title:                "भविष्य या भूतकाल में एक दिन की गणना"
-html_title:           "C: भविष्य या भूतकाल में एक दिन की गणना"
-simple_title:         "भविष्य या भूतकाल में एक दिन की गणना"
+title:                "भविष्य या भूतकाल में तारीख की गणना करना।"
+html_title:           "C: भविष्य या भूतकाल में तारीख की गणना करना।"
+simple_title:         "भविष्य या भूतकाल में तारीख की गणना करना।"
 programming_language: "C"
 category:             "C"
 tag:                  "Dates and Times"
@@ -10,47 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## क्या और क्यों? 
+जब हम एक दिनांक को भविष्य में या भूतकाल में गणना करते हैं, तो हम तारीखों के साथ खेलते हैं। प्रोग्रामर्स इसको अपने कार्य में इस्तेमाल करते हैं जैसे कि कुछ खातों में लेनदेन या ईवेंट कोडिंग करते समय हमें रीमाइंडर्स की आवश्यकता होती है।
 
-Kabhi kabhi hume pehle ya baad ki date nikalni hoti hai. Isse hum jan sakte hai ke kis din konsa kaam karna hai ya kis din koi event hai. C programming mein, date calculation ka feature hai jo hume future ya past dates nikalne mein madad karta hai.
+## कैसे करें: 
+कोडिंग की उदहारण और ```C...``` कोड ब्लॉक में नमूना उत्पाद में से एक दिनांक को भविष्य में या भूतकाल में गणना करने का तरीका है। नमूना आउटपुट: `12 में आज से 35 दिन पूर्व का दिनांक 7 माह पहले है।` 
 
-## How To
-
-Calculating date in the future or past involves using the "time.h" header file and various functions like "mktime()" and "localtime()". Let's see an example of calculating a date 100 days in the future:
-
-```C
+```
 #include <stdio.h>
 #include <time.h>
-
-int main()
+ 
+int main ()
 {
-    time_t now, future;
-    struct tm *timeInfo;
-
-    time(&now); // get current time
-    future = now + (100 * 24 * 60 * 60); // add 100 days
-
-    timeInfo = localtime(&future); // convert to readable format
-
-    printf("Date 100 days from now: %s", asctime(timeInfo)); // print date
-
-    return 0;
+   struct tm ts = {0};
+   int daysToAdd = -35;
+   ts.tm_mday = 12;
+   ts.tm_mon = 4;
+   ts.tm_year = 2021 - 1900;
+ 
+   // convert date to timestamp
+   time_t timestamp = mktime(&ts);
+ 
+   // add the days
+   timestamp += daysToAdd * 24 * 60 * 60;
+ 
+   // convert back to date and print
+   printf("12 में आज से 35 दिन पूर्व का दिनांक 7 माह पहले है।");
+ 
+   return 0;
 }
 ```
-Output:
-```
-Date 100 days from now: Wed Nov 17 23:18:22 2021
-```
 
-Similarly, we can calculate dates in the past by subtracting days, months or years from the current date. Just remember to convert to readable format using "localtime()" before printing the result.
+## गहराई में जाएं: 
+आप इतिहास, वैकल्पिक और गणना के प्रथमावधि के बारे में अधिक जानकारी पा सकते हैं जब आप दिनांक कैलकुलेशन करते हैं।
 
-## Deep Dive
+इतिहास: दिनांक की गणना मानव सभ्यता के उदभव से संबंधित है। प्राचीन वैदिक संस्कृति में प्रयुक्त कार्यक्रम से हम दैनिक जीवन की गतिविधियों को दिन की गणना से जोड़ते थे। अनुमानित तिथियों और आनुरोधों के साथ लोग भविष्य की गणना करने की जरूरत महसूस करते थे।
 
-The "time.h" header file contains various functions and structures for handling date and time in C. The "mktime()" function takes in a structure containing date and time information and converts it to a time_t value, which represents the number of seconds elapsed since January 1, 1970. This value can then be manipulated using arithmetic operations to calculate future or past dates.
+वैकल्पिक: एक और वैकल्पिक तारीख की गणना का अर्थ क्या है? अधिकांश प्रोग्रामर्स और सभी सर्वर अब का समय जिस क्षेत्र का भोग लेते हैं उसे हम 'युटीसी' कहते हैं। वैकल्पिक पहले तारीखों को उस समय में गणना नहीं करेगा जहां सेंट्रल टाइम का उपयोग किया जाता है।
 
-The "localtime()" function converts the time_t value back to a readable structure containing date and time information. This can be further formatted using functions like "asctime()" to print it in a human-readable format.
+गणना के कैसे करें: इस तरह की गणना आमतौर पर time.h के साथ एक स्ट्रक्टर में पहले स्रोत द्वारा d, m और y के तीन उदाहरण लेती है, लेकिन महीने बाहर स्ट्रक्टर में हैं। आप कोड में और समय को प्रविष्ट ज्ञान के साथ विकल्प के साथ मॉडल कर सकते हैं।
 
-## See Also
-
-- [C Programming - Date & Time functions](https://www.programiz.com/c-programming/library-function/time)
-- [time.h - C++ Reference](https://www.cplusplus.com/reference/ctime/)
+## और भी देखें: 
+अधिक जानकारी के लिए इन लिंक्स को देखें।

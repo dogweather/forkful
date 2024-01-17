@@ -1,7 +1,7 @@
 ---
-title:                "Transformer une date en chaîne de caractères"
-html_title:           "Gleam: Transformer une date en chaîne de caractères"
-simple_title:         "Transformer une date en chaîne de caractères"
+title:                "Conversion d'une date en chaîne de caractères"
+html_title:           "Gleam: Conversion d'une date en chaîne de caractères"
+simple_title:         "Conversion d'une date en chaîne de caractères"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Dates and Times"
@@ -10,44 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Qu'est-ce que c'est et pourquoi le faire?
 
-Vous vous demandez probablement pourquoi vous devriez prendre le temps de convertir une date en chaîne de caractères. Eh bien, cela peut sembler insignifiant, mais cette compétence est extrêmement utile dans la programmation moderne. Que vous souhaitiez afficher une date sur votre site web ou enregistrer une date dans une base de données, savoir comment convertir une date en chaîne de caractères est un élément clé de votre trousse à outils de développement.
+Convertir une date en chaîne de caractères est un processus fréquemment utilisé par les programmeurs pour transformer un objet de type date en une représentation textuelle. Cela peut être utile dans de nombreux scénarios, tels que l'affichage de la date dans un format spécifique ou l'enregistrement de données dans une base de données qui ne supporte que les chaînes de caractères.
 
-## Comment faire
+## Comment faire:
 
-La bonne nouvelle, c'est que Gleam rend cette tâche très simple. Voyons comment procéder en utilisant des exemples de code et une sortie d'exemple.
-
-```
-Gleam import time/datetime
-
-let date = time/now()
-let formatted_date = datetime/to_string(date)
+```Gleam
+import gleam/calendar
+MyDate |> calendar.format |> String.print
 ```
 
-La première ligne importe le module "time/datetime", qui contient toutes les fonctions nécessaires pour travailler avec des dates et des heures. Ensuite, nous utilisons la fonction "now()" du module "time" pour créer un objet de date et l'assigner à la variable "date". Enfin, nous utilisons la fonction "to_string()" du module "datetime" pour convertir notre objet de date en une chaîne de caractères.
+En utilisant la bibliothèque intégrée `calendar`, nous pouvons appliquer la fonction `format` pour convertir un objet `MyDate` en une chaîne de caractères. Ensuite, nous pouvons utiliser la fonction `print` du module `String` pour afficher le résultat dans la console.
 
-La sortie de notre exemple serait quelque chose comme ceci : "2021-04-21 17:30:00".
+Résultat: `2020-08-25`
 
-## Plongée en profondeur
+## Plongée en profondeur:
 
-Si vous souhaitez personnaliser le format de votre date, Gleam vous donne également la possibilité de spécifier un format en utilisant la fonction "format()" du module "datetime". Par exemple :
+La manipulation de dates a toujours été un élément vital de la programmation, car les applications ont souvent besoin de traiter des données datées. Avant l'introduction de bibliothèques telles que `calendar`, les programmeurs devaient écrire leur propre code pour convertir les dates en chaînes de caractères, ce qui pouvait être fastidieux et sujet à des erreurs.
 
-```
-Gleam import time/datetime
+Il existe également d'autres moyens de convertir des dates en chaînes de caractères, tels que l'utilisation de bibliothèques tiers ou des fonctions intégrées dans les langages de programmation. Cependant, la méthode utilisant `calendar` est souvent privilégiée pour sa simplicité et sa fiabilité.
 
-let date = time/now()
-let formatted_date = datetime/format(date, "%m/%d/%Y")
-```
+La bibliothèque `calendar` fonctionne en utilisant le standard ISO 8601 pour représenter les dates. Elle prend également en compte les différences de fuseaux horaires et les changements d'heure pour garantir la précision des données.
 
-Dans cet exemple, nous avons spécifié un format personnalisé "%m/%d/%Y", qui se traduit par "mois/jour/année". Ainsi, la sortie de notre code serait "04/21/2021".
+## Voir aussi:
 
-Vous pouvez également utiliser d'autres formats tels que "%H:%M:%S" pour afficher l'heure, ou "%A" pour afficher le jour de la semaine.
-
-## Voir aussi
-
-Si vous souhaitez en savoir plus sur la conversion des dates en chaînes de caractères en utilisant Gleam, consultez ces liens utiles :
-
-- [Documentation officielle de Gleam](https://gleam.run/documentation/)
-- [Module "time/datetime" de Gleam](https://gleam.run/modules/time#datetime)
-- [Liste complète des formats de date disponibles](https://gleam.run/documentation/stdlib/time/datetime.html#format)
+- Documentation officielle pour la bibliothèque `calendar`: https://gleam.run/modules/gleam_calendar.html
+- Article sur la manière de travailler avec les dates en Gleam: https://dev.to/larrymyperson/working-with-date-and-time-in-gleam-2ofc
+- Bibliothèque tierce pour la manipulation de dates en Gleam: https://github.com/Neamar/date-gleam

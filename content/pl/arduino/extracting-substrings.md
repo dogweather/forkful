@@ -1,7 +1,7 @@
 ---
-title:                "Ekstrakcja podłańcuchów"
-html_title:           "Arduino: Ekstrakcja podłańcuchów"
-simple_title:         "Ekstrakcja podłańcuchów"
+title:                "Wycinanie podciągów"
+html_title:           "Arduino: Wycinanie podciągów"
+simple_title:         "Wycinanie podciągów"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Strings"
@@ -10,31 +10,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego 
+## Co & Dlaczego?
+Wyodrębnianie podciągów to proces, w którym programista wybiera i wydobywa określony fragment tekstu lub danych z większego ciągu znaków lub danych. Jest to często wykorzystywane w programowaniu do analizowania i przetwarzania danych tekstowych lub ciągów znaków w celu uzyskania potrzebnych informacji. 
 
-Wyodrębnianie podciągów może być przydatne w wielu projektach związanych z programowaniem na Arduino. Na przykład, możesz chcieć odczytać tylko część danych ze zewnętrznego czujnika lub wyświetlić fragment tekstu na wyświetlaczu LCD. Wykorzystanie wyodrębniania podciągów pozwoli Ci na łatwiejsze i bardziej precyzyjne manipulowanie danymi.
+## Jak to zrobić:
+Aby wyodrębnić podciąg w Arduino, użyj funkcji substring () i podaj odpowiednie parametry. Funkcja ta zwróci wybrane znaki z określonego łańcucha. Przykładowy kod może wyglądać następująco:
 
-## Jak to zrobić
-
-Wyodrębnianie podciągów jest możliwe dzięki funkcji ```substring()```. Należy podać dwa parametry: indeks początkowy i końcowy. Indeksy te odpowiadają pozycjom znaków w oryginalnym ciągu. Przykładowy kod może wyglądać następująco:
-
+```Arduino
+String nazwa = "Arduino"; // zadany ciąg znaków
+int poczatek = 2;  // indeks początkowy podciągu (licząc od 0)
+int dlugosc = 4; // długość podciągu
+String podciag = nazwa.substring(poczatek, poczatek+dlugosc); // użycie funkcji substring
 ```
-Arduino String example = "Lorem ipsum dolor sit amet";
-String substring = example.substring(6,11);
-Serial.println(substring);
-```
-W powyższym przykładzie wykorzystaliśmy ciąg znaków "Lorem ipsum dolor sit amet" oraz wyodrębniliśmy podciąg zaczynający się od 6. znaku (pierwszy znak ma indeks 0) i kończący na 11. znaku. Jego wynikiem będzie "ipsum".
 
-Dodatkowo, funkcja ```substring()``` może być również wykorzystana w połączeniu z innymi funkcjami, takimi jak ```indexOf()```, aby znaleźć i wyodrębnić konkretne frazy lub słowa z ciągu znaków.
+W powyższym przykładzie wybrany zostanie podciąg "duin". 
 
-## Studium głębokie
+## Zagłębie:
+Funkcja substring () jest często używana w różnych językach programowania, w tym w Arduino. Alternatywnym sposobem wyodrębniania podciągów może być użycie pętli i funkcji do porównywania i analizowania znaków w ciągach tekstowych. Implementacja funkcji substring () w Arduino wykorzystuje wskaźnik do wybrania odpowiednich znaków z ciągu. 
 
-Wyodrębnianie podciągów jest możliwe dzięki temu, że ciągi znaków są faktami niezmienialnymi (immutable) w języku Arduino. Oznacza to, że funkcja ```substring()``` nie zmienia oryginalnego ciągu, ale zwraca nowy ciąg.
-
-Ponadto, funkcja ta może być wykorzystywana w połączeniu z innymi funkcjami dostępnymi w języku Arduino, takimi jak ```charAt()``` czy ```toCharArray()```, aby uzyskać jeszcze większą kontrolę nad manipulacją napisami.
-
-## Zobacz także
-
-- [Dokumentacja Arduino o funkcji substring()](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/substring/)
-- [Poradnik o manipulacji napisami na stronie Arduino Project Hub](https://create.arduino.cc/projecthub/The-dusty-corner/manipulating-strings-on-arduino-49ccb9)
-- [Videotutorial na YouTube o wyodrębnianiu podciągów w języku Arduino](https://www.youtube.com/watch?v=qK8t4emft24)
+## Zobacz też:
+- [Dokumentacja Arduino o funkcji substring ()](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/substring/)
+- [Wykorzystanie funkcji substring () w programowaniu](https://www.programiz.com/java-programming/library/string/substring)

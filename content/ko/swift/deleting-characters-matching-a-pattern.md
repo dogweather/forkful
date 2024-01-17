@@ -1,7 +1,7 @@
 ---
-title:                "패턴과 일치하는 문자 삭제"
-html_title:           "Swift: 패턴과 일치하는 문자 삭제"
-simple_title:         "패턴과 일치하는 문자 삭제"
+title:                "패턴과 일치하는 문자 삭제하기"
+html_title:           "Swift: 패턴과 일치하는 문자 삭제하기"
+simple_title:         "패턴과 일치하는 문자 삭제하기"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -10,30 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+# 무엇 & 왜?
+패턴과 일치하는 문자를 삭제하는 것은 프로그래머들이 특정 문자를 제거하고자 할 때 사용하는 방법입니다.
 
-패턴과 일치하는 문자를 삭제하는 것이 유용한 이유는 데이터 정제와 특정 문자를 필터링할 때 유용하고 코드를 간결하게 유지하는 데 도움이 될 수 있기 때문입니다.
-
-## 방법
-
+## 어떻게:
 ```Swift
-// 다음과 같은 문자열이 있다고 가정해봅시다.
-let str = "a1b2c3d4e5"
-
-// 패턴과 일치하는 문자를 삭제하기위해 NSRegularExpression을 사용합니다.
-let pattern = "[0-9]"
-let regex = try! NSRegularExpression(pattern: pattern, options: .caseInsensitive)
-let result = regex.stringByReplacingMatches(in: str, options: [], range: NSMakeRange(0, str.length), withTemplate: "")
-
-print(result)
-// 출력 결과: abcde
+let string = "Hello Swift!"
+let modified = string.replacingOccurrences(of: "l", with: "")
+print(modified)
+```
+```
+Heo Swift!
 ```
 
-## 깊은 곳을 들어가보기
+```Swift
+let array = ["apple", "banana", "cherry"]
+let modified = array.filter { $0 != "banana" }
+print(modified)
+```
+```
+["apple", "cherry"]
+```
 
-해당 패턴과 일치하는 문자를 삭제하는 데 사용되는 NSRegularExpression은 사용하기 전에 많은 작업을 거친다는 것을 알아야합니다. 옵션과 범위를 설정하는 방법과 함께 NSRegularExpression을 사용하는 것이 코드의 효율성을 높이는 데 도움이 될 수 있습니다.
+## 깊이 파고들기:
+(1) 이 기능의 역사적 배경 (2) 대안들 (3) 패턴과 일치하는 문자를 삭제하는 방법에 대한 구체적인 내용
 
-## 참고
+패턴과 일치하는 문자를 삭제하는 기능은 주로 문자열이나 배열에서 부분적으로 제거하고자 할 때 사용됩니다. 예를 들어, 특정 문자를 포함하지 않는 새로운 문자열을 만들거나 특정 항목을 제거한 새로운 배열을 생성하고 싶을 때 자주 사용됩니다.
 
-- [NSRegularExpression 공식 문서](https://developer.apple.com/documentation/foundation/nsregularexpression)
-- [Swift 문자열 다루기](https://developer.apple.com/library/archive/documentation/StringsTextFonts/Conceptual/TextAndWebiPhoneOS/WorkingwithStrings/WorkingwithStrings.html#//apple_ref/doc/uid/TP40009542-CH3-51633)
+```Swift
+let string = "Hello World!"
+let modified = string.replacingOccurrences(of: "o", with: "")
+print(modified)
+```
+```
+Hell Wrld!
+```
+
+대안으로는 ```filter``` 메서드를 사용하는 방법이 있습니다. 이 메서드는 배열에서 특정 조건을 만족하는 항목만을 남길 수 있도록 해줍니다. 위의 예시에서는 "banana"를 제외한 모든 항목을 남기는 방식으로 사용하였습니다.
+
+이 기능은 다양한 데이터 타입에서도 사용할 수 있습니다. 딕셔너리에서 값이나 키를 삭제하거나, 정규표현식을 사용하여 패턴과 일치하는 문자를 삭제하는 등의 다양한 방법으로 활용할 수 있습니다.
+
+## 관련 정보:
+- [Apple 공식 문서](https://developer.apple.com/documentation/foundation/nsstring/1412491-replacingoccurrences)
+- [Swift Standard Library 문서](https://developer.apple.com/documentation/swift/substring/1643114-replacingoccurrences)
+- [Swift by Sundell: 문맥 기반 문자열 검색](https://www.swiftbysundell.com/tips/contextual-string-searching/)

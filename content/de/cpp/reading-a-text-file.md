@@ -1,7 +1,7 @@
 ---
-title:                "Das Lesen einer Textdatei"
-html_title:           "C++: Das Lesen einer Textdatei"
-simple_title:         "Das Lesen einer Textdatei"
+title:                "Ein Textdokument lesen"
+html_title:           "C++: Ein Textdokument lesen"
+simple_title:         "Ein Textdokument lesen"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Files and I/O"
@@ -10,68 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was & Warum?
+Textdateien sind einfache Dateien, die Text als fortlaufende Zeichenfolge speichern. Programmierer verwenden Textdateien, um Daten zu speichern oder als Eingabequelle für ihre Programme zu nutzen.
 
-Beim Programmieren ist es oft notwendig, Textdateien zu lesen, um Daten zu verarbeiten oder auszugeben. In diesem Artikel werde ich erklären, wie man dies mit C++ auf einfache Art und Weise tun kann.
-
-## How To
-
+## Wie geht's:
+Die C++ Standardbibliothek enthält die Funktion "ifstream", die das Lesen von Textdateien ermöglicht. Sie muss in den Header `<fstream>` eingebunden werden. Mit dieser Funktion können Sie eine Verbindung zu einer Textdatei herstellen und dann Zeile für Zeile auslesen.
 ```C++
-#include <iostream>
-#include <fstream>
-#include <string>
-
-using namespace std;
-
-int main() {
-
-  // Öffnen einer Textdatei zum Lesen
-  ifstream file("beispiel.txt");
-
-  // Überprüfen, ob die Datei erfolgreich geöffnet wurde
-  if (file.is_open()) {
-
-    string line;
-
-    // Lesen und Ausgabe jeder Zeile der Datei
-    while (getline(file, line)) {
-      cout << line << endl;
-    }
-
-    // Schließen der Datei
-    file.close();
-  }
-  else {
-    // Fehlermeldung, falls die Datei nicht geöffnet werden konnte
-    cerr << "Fehler beim Öffnen der Datei" << endl;
-  }
-
-  return 0;
+#include <fstream> 
+#include <iostream> 
+using namespace std; 
+int main() { 
+   ifstream datei("textdatei.txt"); // Verbindung zur Datei herstellen 
+   if (!datei) { 
+     cout << "Fehler beim Öffnen der Datei!" << endl; 
+   } else { 
+     string line; 
+     while (!datei.eof()) { // solange die Datei nicht zu Ende ist 
+       getline(datei, line); // Zeile auslesen und in "line" speichern 
+       cout << line << endl; // Zeile ausgeben 
+     } 
+   } 
+   datei.close(); // Verbindung zur Datei schließen 
+   return 0; 
 }
 ```
-
-Beispieltextdatei "beispiel.txt":
-
+### Output:
 ```
-Hallo!
-Ich bin eine Textdatei.
-Danke fürs Lesen.
+Hello, world!
+This is a text file.
+Here are some numbers: 1, 2, 3.
 ```
+## Tief eintauchen:
+Textdateien existieren schon seit den Anfängen der Computersprachen und werden immer noch häufig verwendet. Eine alternative Möglichkeit, Text zu speichern, ist die Verwendung von Datenbanken. Beim Lesen einer Textdatei muss beachtet werden, dass die Formatierung der einzelnen Zeilen wichtig ist. Die meisten Textdateien verwenden ein bestimmtes Trennzeichen (z.B. ein Komma), um Daten in Spalten zu unterteilen.
 
-Output:
-
-```
-Hallo!
-Ich bin eine Textdatei.
-Danke fürs Lesen.
-```
-
-## Deep Dive
-
-In C++ gibt es die Header-Datei `fstream`, die Funktionen zum Lesen und Schreiben von Dateien enthält. Um eine Textdatei zum Lesen zu öffnen, verwenden wir den `ifstream` Konstruktor und geben den Dateinamen als Parameter an. Dann können wir die Datei Zeile für Zeile mit der Funktion `getline()` lesen und ausgeben. Zum Schluss ist es wichtig, die Datei mit `file.close()` zu schließen.
-
-## Siehe auch
-
-- [C++ Dateien einlesen](https://www.programiz.com/cpp-programming/library-function/fstream/ifstream)
-- [Tutorial zum Einlesen von Dateien](https://www.tutorialspoint.com/cplusplus/cpp_files_streams.htm)
-- [C++ Referenz zu `fstream`](https://en.cppreference.com/w/cpp/header/fstream)
+## Siehe auch:
+- [C++ Referenz - ifstream](http://www.cplusplus.com/reference/fstream/ifstream/)
+- [TutorialsPoint - Lesen von Dateien in C++](https://www.tutorialspoint.com/cplusplus/cpp_files_streams.htm)
+- [Wikipedia - Textdatei](https://de.wikipedia.org/wiki/Textdatei)

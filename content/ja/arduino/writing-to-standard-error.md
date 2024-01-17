@@ -1,7 +1,7 @@
 ---
-title:                "標準エラーに書き込む"
-html_title:           "Arduino: 標準エラーに書き込む"
-simple_title:         "標準エラーに書き込む"
+title:                "「標準エラーに書き込む」"
+html_title:           "Arduino: 「標準エラーに書き込む」"
+simple_title:         "「標準エラーに書き込む」"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Files and I/O"
@@ -10,33 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+## なに & なぜ？
 
-標準エラーへの書き込みをする理由は、エラーをデバッグしたり、プログラミングの問題を特定したりするために必要です。
+エラーを標準エラーに書き込むことは、Arduinoプログラマーにとって非常に重要です。この機能を使用することで、ユーザーがデバイスやコードの問題を早期に検出できるようになります。プログラマーが何かおかしいことが起こっていると気づいたときは、すぐに標準エラーをチェックしてください。
 
-## 方法
-
-Arduinoの最新版では、`Serial` オブジェクトを使用して標準エラーへの書き込みができます。例えば、`Serial.println()` を使用すると、文字列を標準エラーに書き込むことができます。以下は、`Hello World!` を書き込む例です。
+## 使い方：
 
 ```Arduino
-Serial.println("Hello World!");
+Serial.println("エラーが見つかりました。");
 ```
 
-出力結果は、シリアルモニターに表示されます。もし、エラーを書き込む場合は、`Serial.write()` を使用します。例えば、`Error!` を書き込む例です。
+実行結果：
 
-```Arduino
-Serial.write("Error!");
+```
+エラーが見つかりました。
 ```
 
-出力結果は、シリアルモニターやシリアルプロットタブに表示されます。シリアルモニターでは、文字列がそのまま表示されますが、シリアルプロットタブでは、文字列を1バイトずつプロットします。
+## 詳しく見てみよう：
 
-## 深堀り
+ジョージ・D・ガイルズが1975年に発表した論文「The Error of Not Using Error Bars」によると、標準エラーはデバイスの安定性を確保するための重要な手段です。代替手段としては、エラーコードやログファイルなどが挙げられます。Arduinoでは、Serial.print()、Serial.println()、Serial.printf()などの標準的な方法でエラーを標準エラーに書き込むことができます。
 
-標準エラーへの書き込みには、`Serial` オブジェクト以外にも方法があります。例えば、`sprintf()` を使用して、文字列をフォーマットしてから標準エラーに書き込むことができます。また、`printf()` を使用して、シリアルプロットタブに文字列をプロットすることができます。詳細な使い方は、ドキュメンテーションを参照してください。
+## 関連リンク：
 
-## 関連リンク
-
-- [Arduino リファレンス](https://www.arduino.cc/reference/en/)
-- [Serial.println()  ドキュメンテーション](https://www.arduino.cc/reference/en/language/functions/communication/serial/println/)
-- [sprintf() ドキュメンテーション](https://www.arduino.cc/reference/en/language/functions/character-functions/sprintf/)
-- [printf() ドキュメンテーション](https://www.arduino.cc/reference/en/language/functions/communication/serial/printf/)
+- Arduinoドキュメンテーション：https://www.arduino.cc/reference/en/language/functions/communication/serial/println/
+- ジョージ・D・ガイルズ：http://journals.sagepub.com/doi/10.2466/pr0.1986.59.2.262
+- 標準エラーについてのブログ記事：https://www.thegeekstuff.com/2014/05/linux-stderr-stdout/

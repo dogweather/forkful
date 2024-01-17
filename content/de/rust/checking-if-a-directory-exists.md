@@ -10,49 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was & Warum?
+Das Überprüfen, ob ein Verzeichnis vorhanden ist, ist ein wichtiger Bestandteil der Programmierung. Es ermöglicht Entwicklern, sicherzustellen, dass bestimmte Dateien oder Ordner vorhanden sind, bevor sie darauf zugreifen oder damit arbeiten.
 
-Das Überprüfen, ob ein Verzeichnis existiert, ist ein häufiger Teil des Programmierens. Es ist wichtig, um Fehler zu vermeiden und sicherzustellen, dass der Code wie erwartet funktioniert. In dieser Anleitung werden wir uns ansehen, wie man in Rust überprüft, ob ein Verzeichnis vorhanden ist.
+## Wie geht's:
+In Rust gibt es die Funktion ```std::fs::metadata()```, mit der überprüft werden kann, ob ein bestimmtes Verzeichnis vorhanden ist. Sie gibt eine ```std::fs::Metadata``` Struktur zurück, die Informationen über die Datei oder das Verzeichnis enthält.
 
-## Wie geht das?
-
-Die Überprüfung, ob ein Verzeichnis existiert, ist in Rust ziemlich einfach. Dazu verwenden wir die Funktion `metadata()` aus dem `std::fs` Modul. Schauen wir uns ein Beispiel an:
-
-```Rust
+Beispielcode:
+Rust
+```
 use std::fs;
 
 fn main() {
-    let directory = "Pictures"; // Verzeichnis, das überprüft werden soll
-
-    // Überprüfen, ob das Verzeichnis existiert
-    if let Ok(metadata) = fs::metadata(directory) {
-        // Wenn das Verzeichnis existiert, Ausgabe in der Konsole
-        println!("Das Verzeichnis {} existiert.", directory);
-    } else {
-        // Wenn das Verzeichnis nicht existiert, Ausgabe in der Konsole
-        println!("Das Verzeichnis {} existiert nicht.", directory);
+    if let Ok(metadata) = fs::metadata("mein_verzeichnis") {
+        if metadata.is_dir() {
+            println!("Das Verzeichnis ist vorhanden!");
+        }else{
+            println!("Das Verzeichnis existiert nicht.");
+        }
+    }else{
+        println!("Das Verzeichnis existiert nicht.");
     }
 }
 ```
 
-Die Ausgabe dieses Codes sollte sein:
-
+Beispieldatenausgabe:
 ```
-Das Verzeichnis Pictures existiert.
+Das Verzeichnis ist vorhanden!
 ```
 
-In diesem Beispiel verwenden wir die `if let` Syntax, um die `metadata()` Funktion auszuführen und das Ergebnis zu überprüfen. Wenn das Verzeichnis existiert, wird keine Fehlermeldung ausgegeben und es wird bestätigt, dass das Verzeichnis vorhanden ist.
+## Tiefere Einblicke:
+Die Funktionalität zum Überprüfen, ob ein Verzeichnis vorhanden ist, gibt es bereits seit den frühen Tagen der Programmierung. In Rust gibt es jedoch spezifische Funktionen, die nur für diese Aufgabe entwickelt wurden, was zu präziseren und effizienteren Ergebnissen führt.
 
-## Tiefere Einblicke
+Alternativ können Entwickler auch die "std::fs::read_dir()" Funktion verwenden, um alle Dateien und Verzeichnisse in einem bestimmten Ordner aufzulisten und somit auch zu überprüfen, ob ein bestimmtes Verzeichnis vorhanden ist.
 
-Wenn du tiefer in das Überprüfen von Verzeichnissen in Rust eintauchen möchtest, gibt es noch ein paar Dinge zu beachten. Zum Beispiel gibt die `metadata()` Funktion ein `Result` Objekt zurück, das entweder ein `Ok` Ergebnis (wenn das Verzeichnis existiert) oder ein `Err` Ergebnis (wenn das Verzeichnis nicht existiert oder ein Fehler aufgetreten ist) sein kann.
+Die Implementierung von "std::fs::metadata()" basiert auf dem Betriebssystem und der Dateisystem-Implementierung. Dies bedeutet, dass das Ergebnis je nach Plattform unterschiedlich sein kann.
 
-Um zu kontrollieren, ob das Verzeichnis vorhanden ist, könnten wir auch `unwrap()` verwenden, anstatt die `if let` Syntax zu verwenden. Dies würde dazu führen, dass das Programm abbricht, wenn ein Fehler auftritt. Eine weitere Option ist `expect()`, wo wir eine benutzerdefinierte Fehlermeldung angeben können, die ausgegeben wird, wenn ein Fehler auftritt.
+## Weitere Informationen:
+Rust Dokumentation zu "std::fs::metadata()": https://doc.rust-lang.org/std/fs/fn.metadata.html
 
-Schließlich gibt es auch die Funktion `canonicalize()`, die den Pfad eines Verzeichnisses bereinigt und normalisiert. Dies ist besonders nützlich, wenn du sicherstellen möchtest, dass der angegebene Pfad so ist, wie es für das Programm erwartet wird.
+Rust Dokumentation zu "std::fs::read_dir()": https://doc.rust-lang.org/std/fs/fn.read_dir.html
 
-## Siehe auch
-
-- [Rust Dokumentation zu Verzeichnissen](https://doc.rust-lang.org/std/fs/fn.metadata.html)
-- [Rust Dokumentation zu `Result`](https://doc.rust-lang.org/std/result/enum.Result.html)
-- [Rust Dokumentation zu `expect()` und `unwrap()`](https://doc.rust-lang.org/std/result/enum.Result.html#method.expect)
+Diskussion zu "std::fs::metadata()" auf Stack Overflow: https://stackoverflow.com/questions/39631576/what-is-the-preferred-way-to-check-for-file-directory-and-read-write-permission

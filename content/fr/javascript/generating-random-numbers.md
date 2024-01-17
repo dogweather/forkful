@@ -1,7 +1,7 @@
 ---
-title:                "Génération de nombres aléatoires"
-html_title:           "Javascript: Génération de nombres aléatoires"
-simple_title:         "Génération de nombres aléatoires"
+title:                "Production de nombres aléatoires"
+html_title:           "Javascript: Production de nombres aléatoires"
+simple_title:         "Production de nombres aléatoires"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Numbers"
@@ -10,43 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Qu'est-ce que c'est & Pourquoi?
 
-Générer des nombres aléatoires peut sembler inutile, mais cela peut en fait être très utile dans de nombreuses situations en programmation. Cela peut être utilisé pour générer des simulations, des jeux, des tests de performances, et bien plus encore. 
+Générer des nombres aléatoires est une pratique courante en programmation qui consiste à créer des nombres au hasard. Les programmeurs ont souvent besoin de nombres aléatoires pour simuler des situations aléatoires ou pour prendre des décisions aléatoires dans leur code.
 
-## Comment faire
-
-Il existe plusieurs façons de générer des nombres aléatoires en Javascript. Voici quelques exemples de code pour vous aider à démarrer : 
+## Comment faire:
 
 ```Javascript
-// Génère un nombre entier aléatoire entre 1 et 10
-let random1 = Math.floor(Math.random() * 10) + 1;
-console.log(random1); // Output: un nombre entier aléatoire entre 1 et 10
+// Utilisation de Math.random() pour générer un nombre aléatoire entre 0 et 1
+var randomNumber = Math.random();
+console.log(randomNumber); // Exemple de sortie: 0.824536235437
 
-// Génère un nombre à virgule aléatoire entre 0 et 1
-let random2 = Math.random();
-console.log(random2); // Output: un nombre à virgule aléatoire entre 0 et 1
-
-// Génère un nombre entier aléatoire entre 50 et 100
-let random3 = Math.floor(Math.random() * 51) + 50;
-console.log(random3); // Output: un nombre entier aléatoire entre 50 et 100
+// Utilisation de Math.floor() et Math.random() pour générer un nombre entier aléatoire entre 1 et 10
+var randomInteger = Math.floor(Math.random() * 10) + 1; 
+console.log(randomInteger); // Exemple de sortie: 7
 ```
 
-Il est également possible d'utiliser une librairie comme Lodash pour simplifier le processus de génération de nombres aléatoires :
+## Plongée profonde:
 
-```Javascript
-// Génère un nombre entier aléatoire entre 1 et 100
-let random = _.random(1, 100);
-console.log(random); // Output: un nombre entier aléatoire entre 1 et 100
-```
+L'utilisation de nombres aléatoires remonte aux débuts de l'informatique. Auparavant, les utilisateurs devaient saisir leurs propres valeurs aléatoires, mais maintenant, les programmeurs peuvent facilement générer des nombres aléatoires à l'aide de méthodes telles que Math.random(). Cependant, ces nombres ne sont pas complètement aléatoires, ils sont générés à l'aide d'algorithmes qui sont prévisibles. Pour une vraie aléatoire, des sources externes telles que l'horloge interne de l'ordinateur peuvent être utilisées.
 
-## Plongée en profondeur
+## Voir aussi:
 
-La méthode la plus courante pour générer des nombres aléatoires en Javascript est d'utiliser la fonction `Math.random()`. Cette fonction retourne un nombre à virgule aléatoire entre 0 et 1. Vous pouvez ensuite multiplier ce nombre par un certain nombre pour obtenir un résultat dans la plage souhaitée. Par exemple, si vous voulez générer un nombre aléatoire entre 1 et 10, vous multiplierez le résultat de `Math.random()` par 10 et vous arrondirez le résultat à l'aide de `Math.floor()` pour obtenir un nombre entier.
-
-Cependant, la méthode `Math.random()` n'est pas vraiment aléatoire car elle utilise un algorithme pour générer les nombres. Pour obtenir une plus grande aléatoire, vous pouvez utiliser la fonction `Math.random()` pour générer un nombre entier aléatoire et l'utiliser comme graine pour une fonction de hachage. Cette approche est généralement utilisée pour les simulations et les jeux.
-
-## Voir aussi
-
-- [Documentation de Math.random() sur MDN](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Math/random)
-- [Documentation de Lodash sur la génération de nombres aléatoires](https://lodash.com/docs/4.17.15#random)
+- [W3Schools - Math.random()](https://www.w3schools.com/js/js_random.asp)
+- [MDN Web Docs - Math.random()](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
+- [Stack Overflow - Generating random whole numbers in JavaScript in a specific range?](https://stackoverflow.com/questions/1527803/generating-random-whole-numbers-in-javascript-in-a-specific-range)

@@ -1,7 +1,7 @@
 ---
-title:                "Enviando uma requisição http"
-html_title:           "Javascript: Enviando uma requisição http"
-simple_title:         "Enviando uma requisição http"
+title:                "Enviando uma solicitação http"
+html_title:           "Javascript: Enviando uma solicitação http"
+simple_title:         "Enviando uma solicitação http"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "HTML and the Web"
@@ -10,32 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##Por que enviar uma solicitação HTTP?
+## O que é e por que fazer isso?
 
-Enviar uma solicitação HTTP é uma forma comum de interagir com servidores e obter informações deles. Isso permite que os sites se comuniquem com outras APIs, obtenham dados de um banco de dados ou executem outras operações no servidor.
+Sempre que você acessa um site, o seu navegador envia uma solicitação HTTP para o servidor do site. Em termos simples, enviar uma solicitação HTTP significa pedir para ter acesso a algum conteúdo ou interagir com um servidor web. Programadores usam isso para criar funcionalidades dinâmicas em seus aplicativos e fazer com que eles se comuniquem com outros servidores para acessar e enviar dados.
 
-##Como fazer:
+## Como fazer:
 
-Para enviar uma solicitação HTTP em Javascript, usamos o objeto XMLHttpRequest. Aqui está um exemplo de como podemos enviar uma solicitação GET para uma API e obter sua resposta:
-
-```Javascript
-const request = new XMLHTTPRequest();
-request.open('GET', 'https://api.exemplo.com/users');
-request.send();
-
-request.onload = () => {
-    console.log(request.response);
-}
+Você pode enviar uma solicitação HTTP usando a função `fetch()` no JavaScript. Por exemplo:
+```javascript
+fetch('https://api.example.com/users')
+  .then(response => response.json())
+  .then(data => console.log(data));
 ```
+Neste exemplo, estamos enviando uma solicitação para a URL `https://api.example.com/users` e usando o método `.json()` para formatar a resposta recebida em um objeto JSON.
 
-No código acima, criamos uma nova instância do objeto XMLHttpRequest e abrimos uma solicitação GET para a URL fornecida. Em seguida, enviamos a solicitação e, quando a resposta estiver pronta, o método onload é acionado. Podemos então acessar a resposta usando o atributo 'response' do objeto.
+## Mergulho profundo:
 
-##Aprofundando:
+A sigla HTTP significa "Hypertext Transfer Protocol" e foi desenvolvida em 1991 para permitir a troca de informações entre navegadores e servidores web. Antes da criação do HTTP, as comunicações eram feitas apenas através do protocolo de rede TCP/IP. Existem outras formas de enviar solicitações HTTP, como por exemplo, usando as bibliotecas `axios` ou `request` no Node.js.
 
-Além de enviar solicitações simples, podemos especificar o tipo de solicitação (GET, POST, PUT, DELETE), adicionar cabeçalhos personalizados e enviar dados no corpo da solicitação. Também podemos lidar com erros usando os métodos onerror ou ontimeout do objeto. Para saber mais sobre o objeto XMLHttpRequest e todas as suas propriedades e métodos, você pode consultar a documentação da MDN.
+## Veja também:
 
-##Veja também:
-
-- [Documentação MDN do objeto XMLHttpRequest](https://developer.mozilla.org/pt-BR/docs/Web/API/XMLHttpRequest)
-- [Artigo sobre métodos HTTP](https://www.treinaweb.com.br/blog/o-que-sao-os-metodos-http-e-para-que-servem/)
-- [Tutorial sobre como enviar solicitações HTTP em Javascript](https://www.digitalocean.com/community/tutorials/como-usar-a-api-web-http-com-javascript)
+- [MDN Web Docs: Como funciona o protocolo HTTP?](https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Overview)
+- [Axios](https://github.com/axios/axios)
+- [Request](https://github.com/request/request)

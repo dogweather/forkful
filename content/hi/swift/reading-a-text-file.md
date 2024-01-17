@@ -10,51 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Kyun
+# क्या और क्यों?
+टेक्स्ट फ़ाइल को पढ़ना क्या है और क्यों प्रोग्रामर यह करते हैं - यह बताने के लिए दो तीन सेंटेंस होंगे।
 
-Kisi bhi programmer ke liye text file padhna ek bahut mahatvapurna kaam hai. Text file se data retrieve karna, manipulate karna aur use karna bahut aasan hota hai. Is article mein hum dekhenge ki Swift mein text file ko kaise padha ja sakta hai.
+## क्या है और क्यों करें?
+टेक्स्ट फ़ाइल टेक्स्ट को होस्ट करती है जो सामान्य बाइनरी फ़ाइलों से भिन्न होती है। इसे प्रोग्रामर्स उनके कोड के साथ टेक्स्ट फ़ाइल से डेटा पढ़ने या सेव करने के लिए इस्तेमाल करते हैं।
 
-## Kaise Kare
-
-Text file ko Swift mein padhne ke liye, sabse pehle hum `String` datatype ka use karenge. Is datatype mein hum text file ka content store karenge.
-
-Sabse pehle, hum file URL object banayenge, jis URL pe humara text file stored hai. Iske liye hum `URL` class ka constructor function `init(fileURLWithPath:)` ka use karenge. Is function ko `fileURLWithPath:` ke saath ek file ka path argument dekar hum us file ka URL bana sakte hain. 
-
-```
-let fileURL = URL(fileURLWithPath: "/Users/Documents/file.txt")
-```
-
-Ab hum file URL se `String` object banayenge, jis mein hum text file ka content store karenge. Iske liye hum `String` class ka `init(contentsOfURL:)` method ka use karenge. Is method ko `contentsOfURL:` ke saath hum file URL object pass kar sakte hain.
-
-```
+## कैसे करें?
+```Swift
+let fileURL = Bundle.main.url(forResource: "textfile", withExtension: "txt") // फाइल का यूआरएल बनाएं
 do {
-    let fileContents = try String(contentsOf: fileURL)
-    // File ka content `fileContents` mein store hoga
-} catch {
-    // File ko padhne mein error aaya
-    print(error)
+  let content = try String(contentsOf: fileURL!, encoding: .utf8) // फाइल से सामग्री लें
+  print(content) // सामग्री को प्रिंट करें
+}
+catch {
+  print("Error reading file: \(error)") // अगर कोई त्रुटि सामग्री पढ़ते समय होती है, तो यह दिखाएँ।
 }
 ```
 
-Yeh humara pura code hoga Swift mein text file padhne ka. Agar humne kisi aur file format ka use kiya hai toh hum `encoding:` parameter bhi specify kar sakte hain `String` class ke constructor aur method mein. 
+## समावेश
+यह परिचय स्तंभ के लिए अत्यधिक हो सकते हैं, लेकिन यह थोड़े से प्रोग्रामिंग जानकारों के लिए उपयोगी हो सकता है। आपके पास अन्य विकल्प भी हैं जो टेक्स्ट फ़ाइल देख सकते हैं, जैसे कि कमांड लाइन उपयोगकर्ता इंटरफ़ेस (CLI) या किसी अन्य आधार आधारित लाइब्रेरी।
 
-## Deep Dive
-
-Humne dekha ki Swift mein text file ko padhna bahut aasan hai. Agar hume file ke content mein specific character set ka use karna hai, toh hum `encoding:` parameter specify kar sakte hain `String` class ke constructor aur method mein. Isse humare code mein koi encoding related error nahi aayega.
-
-Text file padhne ke alawa, hum `FileManager` class ka use karke bhi file ka content retrieve kar sakte hain. Iske liye hum `contents(atPath:)` method ka use kar sakte hain. Is method mein hume file ka path string pass karna hota hai. 
-
-```
-do {
-    let fileContentData = try FileManager.default.contents(atPath: "/Users/Documents/file.txt")
-    // File ka content binary data format mein hoga `fileContentData` mein store hoga
-} catch {
-    // File ko padhne mein error aaya
-    print(error)
-}
-```
-
-## See Also
-
-1. [Apple Developer Documentation on Reading and Writing Text Files](https://developer.apple.com/documentation/foundation/file_access_reading_and_writing)
-2. [Swift File Management Tutorial](https://www.raywenderlich.com/975/file-management-in-ios-tutorial-getting-started)
+## और भी देखें
+टेक्स्ट फ़ाइल और समान विषयों के लिए यहाँ दिए गए स्रोतों को देखें:
+- [How to Read a Text File in Swift (Hindi)](https://code4developers.com/how-to-read-a-text-file-in-swift/)
+- [Command Line Interface Tutorial (Hindi)](https://www.includehelp.com/command-line-interface-swift/)
+- [How to Read and Write Text Files in Swift](https://www.hackingwithswift.com/example-code/system/how-to-read-and-write-files-in-swift)

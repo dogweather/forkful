@@ -1,7 +1,7 @@
 ---
-title:                "Extraindo subseqüências"
-html_title:           "Fish Shell: Extraindo subseqüências"
-simple_title:         "Extraindo subseqüências"
+title:                "Extraindo subtrings"
+html_title:           "Fish Shell: Extraindo subtrings"
+simple_title:         "Extraindo subtrings"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -10,41 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que extrair substrings?
+## O que & Por quê?
 
-Extrair substrings é uma tarefa comum na programação, especialmente quando se trabalha com texto. Isso pode ser útil para filtrar informações específicas de uma grande string, como extrair um nome de usuário de um endereço de e-mail ou obter a data de um texto mais longo. A capacidade de extrair substrings também pode facilitar tarefas de manipulação de dados e formatação de textos.
+Extrair substrings é um processo de separação de uma string maior em partes menores. Isso é comumente usado pelos programadores para obter partes específicas de uma string, como uma palavra ou um caractere específico.
 
-## Como fazer isso com o Fish Shell
+Os programadores usam a extração de substrings para manipular e analisar dados de forma mais eficiente, permitindo que eles obtenham apenas a informação necessária para suas tarefas.
 
-O Fish Shell possui uma função interna chamada `string sub`, que permite a extração de substrings com base em um padrão específico. Veja alguns exemplos abaixo.
-
-```Fish Shell
-# Extrair o primeiro nome de um endereço de e-mail
-set email "joao.silva@gmail.com"
-echo $email | string sub -r "(\\w+)\\.\\w+@.+\\.(\\w+)" --repl '$1'
-# Output: joao
-
-# Extrair a data de uma string no formato DD/MM/AAAA
-set data "Hoje é dia 10/07/2021"
-echo $data | string sub -r "(\\d{2}/\\d{2}/\\d{4})" --repl '$1'
-# Output: 10/07/2021
-```
-
-## Mais informações e exemplos
-
-A função `string sub` pode ser usada de várias maneiras para extrair substrings de maneira eficiente. Além do padrão e da substituição, é possível especificar opções adicionais, como ignorar letras maiúsculas e minúsculas ou extrair todas as ocorrências em uma string.
-
-Um exemplo para extrair todas as ocorrências de uma palavra específica em um texto:
+## Como fazer:
 
 ```Fish Shell
-set texto "O rato roeu a roupa do rei de Roma"
-echo $texto | string sub -a -r "(r\\w+)" --repl '$1'
-# Output: rato roeu roupa rei Roma
+# Extrair caracteres específicos
+set string "Olá mundo"
+echo $string[2]
+
+# Resultado: "á"
+
+# Extrair palavras específicas
+set string "Eu amo programar em Fish Shell"
+echo $string[4..7]
+
+# Resultado: "programar em Fish"
+
+# Extrair partes de uma URL
+set url "https://github.com/nathaliairodrigues?tab=repositories"
+echo $url[8..21]
+
+# Resultado: "github.com"
+
 ```
 
-Para obter mais informações e exemplos sobre a função `string sub`, consulte a documentação do Fish Shell.
+## Mergulho Profundo:
 
-## Veja também
+A extração de substrings tem sido uma técnica essencial desde os primeiros dias da programação de computadores. Anteriormente, era feita manualmente usando funções específicas de cada linguagem de programação. No entanto, com o avanço da tecnologia, as linguagens de programação modernas, como Fish Shell, possuem funções integradas para facilitar a extração de substrings.
 
-- [Documentação da função `string sub` no Fish Shell](https://fishshell.com/docs/current/#string-sub)
-- [Tutorial sobre manipulação de strings com o Fish Shell](https://dev.to/benjamingroberts/fish-shell-how-to-manipulate-strings-2jk8)
+Algumas alternativas para a extração de substrings incluem o uso de expressões regulares ou de recursos específicos da linguagem, como o método "slice" em Python.
+
+A implementação da função de extração de substrings em Fish Shell é baseada no indexamento de strings, que é a capacidade de acessar caracteres específicos em uma string usando sua posição numérica. Isso significa que o primeiro caractere em uma string tem o índice 1, o segundo tem o índice 2 e assim por diante.
+
+## Veja também:
+
+- [Documentação oficial do Fish Shell](https://fishshell.com/docs/current/index.html)
+- [Tutorial de extração de substrings em Fish Shell](https://dev.to/nathaliairodrigues/how-to-extract-substrings-in-fish-shell-1kom)

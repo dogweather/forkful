@@ -1,7 +1,7 @@
 ---
-title:                "Å lese en tekstfil"
-html_title:           "Bash: Å lese en tekstfil"
-simple_title:         "Å lese en tekstfil"
+title:                "Lese en tekstfil"
+html_title:           "Bash: Lese en tekstfil"
+simple_title:         "Lese en tekstfil"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Files and I/O"
@@ -10,40 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hva og Hvorfor?
 
-Hvis du noen gang har brukt terminalen på datamaskinen din, har du kanskje lagt merke til at du kan gjøre mange ting ved hjelp av Bash-kommandoer. En vanlig oppgave i Bash er å lese en tekstfil. I denne artikkelen vil vi se på hvorfor du kanskje ønsker å lese en tekstfil, og hvordan du kan gjøre det.
+Lesing av tekstfiler er en vanlig oppgave for programmerere. Det innebærer å lese en tekstfil, som kan inneholde forskjellige typer data og informasjon, og behandle den på en måte som er nyttig for programmet vårt. Dette kan være nødvendig for å utføre en bestemt oppgave, hente informasjon fra en database eller for å behandle brukerinndata.
 
-## Hvordan gjøre det
+## Hvordan:
 
-Det er flere måter å lese en tekstfil på i Bash, avhengig av hva du vil gjøre med innholdet i filen. La oss ta en titt på noen eksempler ved hjelp av kodeblokker:
+```Bash
+# Les en tekstfil med navn "tekstfil.txt"
+cat tekstfil.txt
 
-```
-# Les hele filen
-cat fil.txt
+# Les en tekstfil og lagre den i en variabel
+tekst=$(cat tekstfil.txt)
 
-# Les de første 10 linjene i filen
-head -n 10 fil.txt
-
-# Les de siste 10 linjene i filen
-tail -n 10 fil.txt
-
-# Les en bestemt linje i filen, for eksempel linje 15
-sed -n '15p' fil.txt
-
-# Søk etter et bestemt mønster i filen og les linjene som matcher
-grep "søkeord" fil.txt
+# Les en tekstfil line by line og lagre hver linje i en variabel
+while read line; do
+  echo "Linje: $line"
+done < tekstfil.txt
 ```
 
-Disse er bare noen få eksempler på kommandoer du kan bruke for å lese en tekstfil i Bash. Du kan også kombinere kommandoer for å få mertraktive resultater, for eksempel å søke etter et bestemt mønster og deretter bare lese linjene som inneholder dette mønsteret. Det finnes mange flere muligheter avhengig av hva du prøver å oppnå.
+Eksempel på output:
 
-## Dypdykk
+```
+Dette er en tekstfil.
+Den inneholder litt tekst.
+Vi kan lese den med Bash.
+```
 
-Hvis du er interessert i å lære mer om hvordan Bash leser tekstfiler, er det viktig å forstå at Bash betrakter alle filer som en tekstfil. Det betyr at kommandoene vi brukte i forrige seksjon også kan brukes på andre typer filer, som for eksempel en CSV-fil. I tillegg til standardkommandoene finnes det også spesialkommandoer for å lese og behandle tekstfiler. Noen eksempler på disse er `awk`, `cut`, `sort` og `tr`.
+## Dykk dypere:
 
-Det kan også være lurt å ha en forståelse av hvordan Bash håndterer linjeskift (engelsk: line breaks) i tekstfiler. I Bash, og de fleste andre programmeringsspråk, betraktes linjeskift som en spesiell karakter som angir slutten på en linje i en tekstfil. Dette er viktig å være klar over når du leser og behandler tekstfiler.
+Lesing av tekstfiler har vært en viktig del av programmering i lang tid, helt siden den første datamaskinen ble utviklet. I dag finnes det flere alternative måter å lese tekstfiler på, for eksempel med andre programmeringsspråk eller ved hjelp av tredjepartsprogrammer. Implementeringsdetaljer og syntaks kan også variere avhengig av hvilket operativsystem man bruker.
 
-## Se også
+## Se også:
 
-- [Bash Manual](https://www.gnu.org/software/bash/manual/bash.html)
-- [Bash Cheatsheet](https://devhints.io/bash)
+- [Linux Kommandoer: Cat](https://www.linux.no/wiki/Kommandoer/cat)
+- [Bash Guide: Lesing av filer](https://mywiki.wooledge.org/BashGuide/InputAndOutput#Reading_files)

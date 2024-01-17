@@ -1,7 +1,7 @@
 ---
-title:                "Väliaikaisen tiedoston luominen"
-html_title:           "TypeScript: Väliaikaisen tiedoston luominen"
-simple_title:         "Väliaikaisen tiedoston luominen"
+title:                "Väliaikaistiedoston luominen"
+html_title:           "TypeScript: Väliaikaistiedoston luominen"
+simple_title:         "Väliaikaistiedoston luominen"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Files and I/O"
@@ -10,38 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi: Miksi luoda tilapäisiä tiedostoja?
+# Mitä ja miksi?
 
-Jotkut ohjelmoinnin tilanteet vaativat tilapäisen tiedoston luomista. Tämä voi olla tarpeen esimerkiksi silloin, kun halutaan tallentaa väliaikaisesti tietoa, ennen kuin se tallennetaan pysyvään tiedostoon, tai kun käsitellään suuria tietomääriä ja tarvitaan väliaikainen tallennustila.
+Luotaessa ohjelmia, kehittäjät voivat joutua luomaan väliaikaisia tiedostoja, jotka ovat tarpeellisia joko ohjelmantekijän tai ohjelman toiminnan kannalta.
 
-## Kuinka: Esimerkkejä koodista ja tulosteesta
+Väliaikainen tiedosto on lyhytaikainen tiedosto, jota käytetään ohjelman aikana ja se poistetaan käytön jälkeen. Tästä syystä luominen ja poistaminen tulee tehdä jokaisen käytön yhteydessä ja tämä on yleinen tapa käsitellä ohjelman tarvitsemia väliaikaisia tietoja.
+
+# Miten:
 
 ```TypeScript
-// Luodaan tilapäinen tiedosto käyttäen fs moduulia
-import { writeFileSync } from 'fs';
+import { tmpFile, writeFile, deleteFile } from 'fs';
 
-// Määritetään tiedoston nimi
-const tempFileName = 'temp.txt';
-
-// Kirjoitetaan tiedostoon tekstiä
-writeFileSync(tempFileName, 'Tämä on tilapäinen tiedosto');
-
-// Luetaan tiedoston sisältö ja tulostetaan konsoliin
-console.log(fs.readFileSync(tempFileName, 'utf-8'));
-
-// Poistetaan tiedosto
-fs.unlinkSync(tempFileName);
-
-// Tulostaa:
-// Tämä on tilapäinen tiedosto
+tmpFile((err, path) => {
+    if (err) throw err;
+    let data = "Tämä on väliaikainen tiedosto!";
+    writeFile(path, data, (err) => {
+        if (err) throw err;
+        console.log("Tiedoston kirjoittaminen onnistui!");
+        deleteFile(path, (err) => {
+            if (err) throw err;
+            console.log("Tiedoston poistaminen onnistui.");
+        });
+    });
+});
 ```
 
-## Syvemmälle: Tietoa tilapäisten tiedostojen luomisesta
+Tässä esimerkissä käytämme Node.js:ään kuuluvaa ```fs``` kirjastoa luodaksemme, kirjoittaaksemme ja poistaaksemme väliaikaisen tiedoston. Ensin käyttäjän täytyy koodissa määritellä polku, johon väliaikainen tiedosto tallennetaan ```tmpFile``` funktion avulla. Sitten voidaan kirjoittaa tiedostoon haluttu data ```writeFile``` funktion avulla. Lopuksi poistamme tiedoston ```deleteFile``` funktion avulla.
 
-Tilapäisten tiedostojen luominen on yleinen ohjelmoinnin käytäntö, joka helpottaa tiedon käsittelyä ja tallentamista. Tiedostojen nimet ovat yleensä uniikkeja, joten ne ei vaaranna muiden tiedostojen toimintaa. Lisäksi tilapäisiä tiedostoja voidaan käyttää myös monimutkaisempien tehtävien suorittamiseen, kuten ajastamiseen tai väliaikaiseen tallennustilaan.
+# Syvä sukellus:
 
-## Katso myös
+Väliaikaisten tiedostojen käyttö on ollut yleinen tapa ohjelmoidessa jo vuosikymmenten ajan. Ensimmäiset käyttöjärjestelmät käyttivät tätä metodia tiedostojenhallintaan ja viime vuosina tästä on tullut standardi tapa käsitellä väliaikaisia tietoja myös ohjelmointikielet, kuten TypeScript, maailmassa.
 
-- [FS moduuli TypeScriptissä](https://nodejs.org/api/fs.html)
-- [Tilapäisten tiedostojen luominen käyttäen os moduulia](https://www.npmjs.com/package/os-tmpdir)
-- [Tietoa tiedostojärjestelmien käytöstä ja hallinnasta TypeScriptissä](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-2.html)
+On myös muita tapoja luoda väliaikaisia tiedostoja, kuten käyttämällä ```tempfile``` kirjastoa tai hyödyntämällä tietokantoja, mutta ```fs``` kirjaston käyttö on yleinen ja toimiva tapa.
+
+Väliaikaisten tiedostojen luominen ja poistaminen voi myös vaatia käyttöjärjestelmän lupaa, erityisesti jos se tapahtuu jatkuvasti. On tärkeää huolehtia, että väliaikaiset tiedostot poistetaan asianmukaisesti, jotta ne eivät vie turhaan tilaa tai aiheuta turhia tietoturvariskejä.
+
+# Katso myös:
+
+[Lisätietoa TypeScript-kielestä](https://www.typescriptlang.org/)
+
+[Node.js ```fs``` kirjastodokumentaatio](https://nodejs.org/api/fs.html)
+
+["tempfile" kirjasto](https://www.npmjs.com/package/tempfile)

@@ -1,7 +1,7 @@
 ---
-title:                "Sprawdzanie czy istnieje katalog"
-html_title:           "Swift: Sprawdzanie czy istnieje katalog"
-simple_title:         "Sprawdzanie czy istnieje katalog"
+title:                "Sprawdzanie istnienia katalogu"
+html_title:           "Swift: Sprawdzanie istnienia katalogu"
+simple_title:         "Sprawdzanie istnienia katalogu"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Files and I/O"
@@ -10,32 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
-Sprawdzanie, czy katalog istnieje, jest ważną umiejętnością w programowaniu w Swift. Pozwala to na zapewnienie, że nasz kod działa poprawnie i świadczy o tym, że jesteśmy odpowiedzialnymi programistami.
+## Co i Dlaczego?
+Sprawdzanie, czy istnieje katalog, jest procesem, który pozwala programistom na potwierdzenie istnienia danego katalogu na komputerze. Jest to ważny krok w wielu aplikacjach, ponieważ pozwala na sprawdzenie, czy potrzebny katalog jest dostępny przed wykonaniem operacji na plikach wewnątrz niego.
 
-## Jak to zrobić
-W Swift, aby sprawdzić, czy katalog istnieje, możemy użyć klasy FileManager i jej metody fileExists(atPath). Przyjmie ona ścieżkę do naszego katalogu jako argument, a następnie zwróci wartość logiczną true lub false, w zależności od tego, czy katalog istnieje.
-
+## Jak to zrobić:
 ```Swift
-let fileManager = FileManager.default
-let path = "/ścieżka/do/katalogu"
-
-if fileManager.fileExists(atPath: path) {
-    print("Katalog istnieje")
+if FileManager.default.fileExists(atPath: "/Users/UserName/Desktop") { //dostosuj ścieżkę katalogu do swoich potrzeb
+    print("Katalog istnieje!")
 } else {
-    print("Katalog nie istnieje")
+    print("Katalog nie istnieje.")
 }
 ```
+Wyjście:
+```
+Katalog istnieje!
+```
 
-W powyższym przykładzie, na początku tworzymy obiekt klasy FileManager i przypisujemy go do stałej fileManager. Następnie definiujemy zmienną path jako ścieżkę do naszego katalogu, którego istnienie chcemy sprawdzić. W warunku if wywołujemy metodę fileExists(atPath:) na fileManagerze, przekazując do niej naszą zmienną path. W zależności od zwróconej wartości, wyświetlamy odpowiedni komunikat.
+## Głębszy przegląd:
+Sprawdzanie, czy istnieje katalog, jest często stosowane w aplikacjach do zarządzania plikami, na przykład w edytorach tekstu czy programach do przetwarzania obrazów. Innym sposobem na sprawdzenie istnienia katalogu jest użycie metody ```fileExists``` w klasie ```NSFileManager```. W nowych wersjach Swift używane jest po prostu ```FileManager``` zamiast ```NSFileManager```.
 
-## Deep Dive
-Klasa FileManager udostępnia również inne przydatne metody do sprawdzania katalogów, takie jak fileExists() czy fileExists(atPath: isDirectory:). Metoda fileExists() zwraca wartość logiczną określającą, czy podana ścieżka jest do pliku lub katalogu, natomiast fileExists(atPath: isDirectory:) pozwala na określenie, czy podana ścieżka wskazuje na plik czy katalog.
-
-Należy również pamiętać, że przy sprawdzaniu ścieżki do katalogu można użyć względnej lub absolutnej ścieżki. Względna ścieżka jest określona od aktualnego katalogu, w którym znajduje się nasz program, natomiast absolutna ścieżka jest pełną ścieżką do pliku lub katalogu. Ważne jest, aby dostarczyć odpowiednią ścieżkę do metody fileExists(), w przeciwnym razie zwrócona wartość może być niepoprawna.
-
-## Zobacz także
-- [Dokumentacja klasy FileManager](https://developer.apple.com/documentation/foundation/filemanager)
-- [Przewodnik po podstawach Swift](https://www.raywenderlich.com/4919757-a-swift-tutorial-for-complete-beginners)
-
-Dzięki temu artykułowi powinieneś być w stanie samodzielnie sprawdzać istnienie katalogów w Swifie. Pamiętaj, aby regularnie wykonywać takie sprawdzenia w swoim kodzie, aby zapewnić jego poprawność i niezawodność. Powodzenia!
+## Zobacz także:
+[Oficjalna dokumentacja Swift](https://docs.swift.org/swift-book/LanguageGuide/ClassesAndStructures.html#//apple_ref/doc/uid/TP40014097-CH13-ID82) - dostęp do wersji języka Swift w którym ogłoszono zmiany w klasach i strukturach.
+[NSFileManager w iOS](https://developer.apple.com/documentation/foundation/nsfilemanager) - dokumentacja Apple dla klas NSFileManager.

@@ -1,7 +1,7 @@
 ---
-title:                "स्ट्रिंग कैपिटलाइज़ बनाना"
-html_title:           "C#: स्ट्रिंग कैपिटलाइज़ बनाना"
-simple_title:         "स्ट्रिंग कैपिटलाइज़ बनाना"
+title:                "एक स्ट्रिंग को कैपिटलाइज़ करना"
+html_title:           "C#: एक स्ट्रिंग को कैपिटलाइज़ करना"
+simple_title:         "एक स्ट्रिंग को कैपिटलाइज़ करना"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Strings"
@@ -10,31 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
+# क्या और क्यों?
 
-कभी-कभी हमें एक स्ट्रिंग को कैपिटलाइज करने की जरूरत होती है ताकि यह पढ़ने में आसान हो और साथ ही यह दिखाई भी दे। इस लेख में हम सीखेंगे कि स्ट्रिंग को कैपिटलाइज कैसे किया जाता है और इसके दोनों तरीके क्या हैं।
+एक स्ट्रिंग को कैपिटलाइज करना मतलब उसमें हर शब्द के पहले अक्षर को बड़ा लिखना है। यह एक प्रोग्रामिंग टेक्निक है जिससे विशेष शब्दों पर ध्यान केंद्रित किया जाता है और लोग अपनी कोडिंग रिपोर्ट्स या लोगों को प्रभावी विश्वव्यापी स्ट्रिंग्स बनाते हैं।
 
-## कैसे करें
+# कैसे करें:
 
-```C#
-string str = "hello world";
-
-// Method 1: Using ToUpper() method
-Console.WriteLine(str.ToUpper());
-// Output: HELLO WORLD
-
-// Method 2: Using CultureInfo
-var cultureInfo = new CultureInfo("en-US", false);
-var textInfo = cultureInfo.TextInfo;
-Console.WriteLine(textInfo.ToTitleCase(str));
-// Output: Hello World
+``` C#
+string sentence = "hello world";
+string capitalizedSentence = sentence.ToUpper();
+Console.WriteLine(capitalizedSentence);
 ```
 
-## गहराई में जाएं
+आउटपुट:
+HELLO WORLD
 
-स्ट्रिंग कैपिटलाइज करने के दो साधारण तरीके हैं, जिनमें से पहला `ToUpper()` मेथड है जो स्ट्रिंग को ऑपरेशन करने के लिए मौजूद होता है। इसमें स्ट्रिंग को पूर्णत: अपरकेस में परिवर्तित किया जाता है। दूसरा तरीका `CultureInfo` का उपयोग करके किया जाता है, जिसमें हम `TextInfo` का उपयोग करके स्ट्रिंग को कैपिटलाइज कर सकते हैं। इससे स्ट्रिंग का पहला अक्षर हेडर केस में और बाकी लोअर केस में हो जाता है।
+```C#
+string sentence = "hello world";
+string capitalizedSentence = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(sentence);
+Console.WriteLine(capitalizedSentence);
+```
 
-## देखें भी
+आउटपुट:
+Hello World
 
-- [String.ToUpper() method documentation](https://docs.microsoft.com/en-us/dotnet/api/system.string.toupper)
-- [TextInfo.ToTitleCase() method documentation](https://docs.microsoft.com/en-us/dotnet/api/system.globalization.textinfo.totitlecase)
+# गहराई का खोज
+
+इस टेक्निक को लागू करने का इतिहास वास्तव में स्ट्रिंग्स पर काम करने का ही है। यह कई प्रायोगिक उदाहरण भी है जैसे कि प्रोग्रामिंग में कोडिंग रिपोर्ट्स और भाषाई टेक्स्ट को प्रभावी करने के लिए। इस टेक्निक का एक विकल्प है शब्द तरह का प्रसिद्धी। इसमें स्ट्रिंग्स को विशेष शब्दों पर बड़े अक्षरों या विशेष चिह्नों के साथ प्रस्तुत किया जाता है। इसके अलावा, कुछ प्रोग्रामिंग भाषाओं में यह कैपिटलाइज करने के लिए विशेष फंक्शन भी होते हैं।
+
+# भी देखें:
+
+https://www.c-sharpcorner.com/article/capitalize-a-string-with-C-Sharp/
+https://www.geeksforgeeks.org/capitalize-first-letter-string-java/
+https://www.tutorialspoint.com/uppercase-and-lowercase-string-characters-in-csharp

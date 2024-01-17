@@ -1,7 +1,7 @@
 ---
-title:                "Capitalisering av en streng"
-html_title:           "Java: Capitalisering av en streng"
-simple_title:         "Capitalisering av en streng"
+title:                "Stor bokstaver i en streng"
+html_title:           "Java: Stor bokstaver i en streng"
+simple_title:         "Stor bokstaver i en streng"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Strings"
@@ -10,47 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hva og hvorfor?
+I Java, er å capitalisere en streng å endre den første bokstaven til en stor bokstav og resten av bokstavene til små bokstaver. Dette gjøres ofte for å gjøre strenger mer leselig eller for å følge god programmeringspraksis.
 
-Hvorfor bry seg om å konvertere en streng til store bokstaver? Vel, vær ærlig - vi har alle vært der. Skrivefeil i navn, glemt å bruke Caps Lock, eller kanskje du bare vil gjøre en beskjed mer lesbar. Uansett grunn, å kunne konvertere en streng til store bokstaver er en nyttig ferdighet for enhver Java-utvikler.
-
-## Slik gjør du det
-
-Det er flere måter å konvertere en streng til store bokstaver i Java, men her er to enkle eksempler som bruker innebygde metoder:
+## Hvordan:
+Det er flere måter å capitalisere en streng på i Java. En vanlig metode er å bruke metoden "toUpperCase" og "toLowerCase" på karakterene i strengen, som vist i eksempelet nedenfor:
 
 ```Java
-// Opprett en streng som skal konverteres
-String tekst = "dette skal til store bokstaver";
-
-// Bruk toUpperCase() metoden
-String storeBokstaver = tekst.toUpperCase();
-System.out.println(storeBokstaver); // "DETTE SKAL TIL STORE BOKSTAVER"
-
-// Bruk toLocaleUpperCase() metoden med Locale argumentet
-String storeBokstaverNorsk = tekst.toLocaleUpperCase(new Locale("no"));
-System.out.println(storeBokstaverNorsk); // "DETTE SKAL TIL STORE BOKSTAVER"
+String str = "hallo verden";
+System.out.println(str.toUpperCase()); // output: HALLO VERDEN
+System.out.println(str.toLowerCase()); // output: hallo verden
 ```
 
-Som du kan se, begge metodene gir samme resultat, men den andre metoden lar deg angi et språk ved hjelp av Locale-objektet.
-
-## Dypdykk
-
-Hvis du vil dykke dypere inn i konvertering av strenger til store bokstaver, kan du bruke StringBuffer-klassen. Denne klassen inneholder en metode kalt toUpperCase(), som konverterer hver bokstav i en streng til store bokstaver. Her er et eksempel:
+En annen måte å gjøre dette på er å bruke metoden "substring" for å få tak i den første bokstaven og metoden "replaceFirst" for å endre den til stor bokstav, som vist nedenfor:
 
 ```Java
-StringBuffer sb = new StringBuffer(tekst);
-sb.setCharAt(0, Character.toUpperCase(sb.charAt(0)));
-sb.setCharAt(6, Character.toUpperCase(sb.charAt(6)));
-
-System.out.println(sb.toString()); // "Dette Skal til store bokstaver"
+String str = "hallo verden";
+String firstLetter = str.substring(0,1); // hentes ut første bokstav
+String newStr = str.replaceFirst(firstLetter, firstLetter.toUpperCase());
+System.out.println(newStr); // output: Hallo verden
 ```
 
-Denne metoden er nyttig hvis du bare vil konvertere enkelte bokstaver i en streng til store bokstaver.
+## Dypdykk:
+Capitalizing av strenger har vært en del av programmering siden tidligere språk som COBOL og FORTRAN. I dag er det fortsatt en viktig del av god programmeringspraksis for å gjøre koden mer leselig og for å følge konvensjonene i et språk. I tillegg til Java, finnes det også innebygde funksjoner for å capitalisere strenger i mange andre programmeringsspråk.
 
-## Se også
-
-For å lære mer om Java-strenger og innebygde metoder, sjekk ut disse ressursene:
-
-- [Java String klasse dokumentasjon](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
-- [Java StringBuffer klasse dokumentasjon](https://docs.oracle.com/javase/8/docs/api/java/lang/StringBuffer.html)
-- [Java Locale klasse dokumentasjon](https://docs.oracle.com/javase/8/docs/api/java/util/Locale.html)
+## Se også:
+- [String API Dokumentasjon](https://docs.oracle.com/javase/10/docs/api/java/lang/String.html)
+- [Capitalizing en String i Java - GeeksforGeeks](https://www.geeksforgeeks.org/capitalizing-first-letter-of-each-word-in-java/)

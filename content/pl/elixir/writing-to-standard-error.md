@@ -10,51 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i dlaczego?
 
-Pisanie do standardowego błędu jest nieodzownym elementem w wielu językach programowania, w tym również w Elixir. Jest to ważny aspekt w procesie debugowania i znajomość jego zastosowań może pomóc w rozwiązywaniu problemów w aplikacjach.
+Pisząc do standardowego błędu, programiści raportują błędy, ostrzeżenia lub inne informacje o wykonywaniu programu. Jest to przydatne podczas debugowania i monitorowania działania aplikacji.
 
-## Jak to zrobić
+## Jak to zrobić:
 
-Aby napisać do standardowego błędu w Elixir, użyjemy funkcji `IO.write(:stderr, "Tekst")`, gdzie `"Tekst"` jest wiadomością, którą chcemy wyświetlić. Możemy również użyć funkcji `IO.puts(:stderr, "Tekst")`, która dodaje znak nowej linii na końcu wiadomości.
-
-```
-Elixir
-
-IO.write(:stderr, "Błąd!") IO.puts(:stderr, "To jest tekst do wyświetlenia w błędzie.")
+```Elixir
+IO.write(:stderr, "Błąd krytyczny!")
 ```
 
-Będzie to wyglądać następująco w konsoli:
-
+Output:
 ```
-Błąd!
-To jest tekst do wyświetlenia w błędzie.
+Błąd krytyczny!
 ```
 
-## Deep Dive
+## Głębszy wgląd:
 
-W Elixir istnieje również możliwość wyświetlania błędów wraz z informacjami o stosie wywołań. Aby to zrobić, używamy funkcji `IO.inspect(:stderr, message, opts)` z opcją `:show_stacktrace` ustawioną na true. Może to być przydatne w przypadku, gdy potrzebujemy bardziej szczegółowych informacji o błędzie.
+Pisanie do standardowego błędu ma swoje korzenie w tradycji Unixowej, gdzie stanowiło część standardowych protokołów komunikacyjnych. Alternatywą dla tej metody może być wykorzystanie modułu `Logger`, jednakże pisanie do standardowego błędu jest prostszym i szybszym rozwiązaniem. W Elixir, pisanie do standardowego błędu jest obsługiwane przez funkcję `IO.write`.
 
-```
-Elixir
+## Zobacz także:
 
-opts = [show_stacktrace: true] IO.inspect(:stderr, "Błąd!", opts)
-```
-Będzie to wyglądać podobnie jak wcześniej, ale z dodatkowymi informacjami o stosie wywołań:
-
-```
-Błąd!
-stacktrace:
-[
-{Moduł, funkcja, argumenty, plik: wiersz},
-{Moduł2, funkcja2, argumenty2, plik2: wiersz2}
-...
-]
-```
-
-Możemy również użyć funkcji `IO.inspect(:stderr, message, opts)` z opcją `:label` ustawioną na `"Błąd"` lub inną wiadomość, aby uzyskać bardziej czytelną informację o błędzie.
-
-## Zobacz także
-
-- [Dokumentacja Elixir o obsłudze błędów](https://hexdocs.pm/elixir/Kernel.SpecialForms.html#%3C%3C%3E%2F1)
-- [Poradnik: Debugowanie w Elixir](https://blog.plataformatec.com.br/2016/04/debugging-elixir-processes/)
+Dokumentacja Elixir dla `IO.write`: https://hexdocs.pm/elixir/IO.html#write/2

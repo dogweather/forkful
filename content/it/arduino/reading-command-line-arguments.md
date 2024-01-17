@@ -10,63 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché 
+## Cosa & Perché?
+Leggere gli argomenti della riga di comando è il processo di estrarre e utilizzare le informazioni fornite dall'utente al momento dell'esecuzione di un programma. I programmatori lo fanno per personalizzare il comportamento del loro programma o per fornire input dinamici.
 
-Ci sono molte situazioni in cui è indispensabile per un programmatore leggere e comprendere gli argomenti della riga di comando. Questo articolo ti spiegherà come farlo utilizzando la programmazione di Arduino.
+## Come fare:
+Per leggere gli argomenti della riga di comando in Arduino, è possibile utilizzare la funzione ```main``` e l'array ```argv```. Di seguito è riportato un esempio di codice che stampa l'input fornito dall'utente:
 
-## Come Fare
-
-Per leggere gli argomenti della riga di comando in Arduino, è necessario utilizzare la funzione "Serial.readString()". Questa funzione legge e restituisce l'argomento come una stringa, che può essere successivamente elaborata dal programma. Ecco un esempio di codice che legge l'argomento e lo stampa sulla console seriale:
-
-```
-Arduino.setup() {
-  Serial.begin(9600); //inizializza la comunicazione seriale
+```Arduino
+void setup() {
+  Serial.begin(9600); // inizializza la comunicazione seriale a 9600 bps
 }
 
 void loop() {
-  if (Serial.available()) { //controlla se sono disponibili dati sulla porta seriale
-    String arg = Serial.readString(); //legge l'argomento e lo salva nella variabile "arg"
-    Serial.println(arg); //stampa l'argomento sulla console seriale
-  }
+  Serial.println(argv[1]); // stampa il primo argomento fornito dall'utente
 }
 ```
 
-Se si desidera utilizzare l'argomento per eseguire un'operazione specifica, è possibile utilizzare la funzione "analogWrite()" di Arduino. Ad esempio, se vogliamo controllare la luminosità di un LED utilizzando l'argomento della riga di comando, possiamo fare così:
+Se si esegue questo codice con l'input "Hello World", si otterrà l'output "Hello". Per leggere più argomenti, è possibile utilizzare un loop:
 
-```
-Arduino.setup() {
+```Arduino
+void setup() {
   Serial.begin(9600);
 }
 
 void loop() {
-  if (Serial.available()) {
-    String arg = Serial.readString();
-    int brightness = arg.toInt(); //converte la stringa in un valore numerico intero
-    analogWrite(LED_PIN, brightness); //imposta la luminosità del LED sul valore letto dalla riga di comando
+  for(int i = 0; i < argc; i++) {
+    Serial.println(argv[i]); // stampa ogni argomento fornito dall'utente
   }
 }
 ```
 
-## Approfondimento
+## Approfondimento:
+Leggere gli argomenti della riga di comando è un concetto comune nella programmazione e viene utilizzato in vari linguaggi di programmazione, come C e Java. Consente ai programmatori di rendere i loro programmi più personalizzabili e flessibili per l'utente finale.
 
-La funzione "Serial.readString()" legge solo il primo argomento della riga di comando. Se ci sono più argomenti separati da spazi, è possibile utilizzare la funzione "Serial.parseInt()" per leggerli uno per uno. Ad esempio, se abbiamo una riga di comando del tipo "led 255 100" dove il primo argomento è il nome dell'operazione da eseguire e gli altri due sono valori numerici, possiamo utilizzare questo codice per estrarre tutti e tre gli argomenti:
+Un'alternativa all'utilizzo di ```argv``` è l'utilizzo della funzione ```Serial.readString()```, che consente di leggere direttamente l'input dell'utente dalla porta seriale. Tuttavia, questo metodo richiede che l'utente interagisca con il programma attraverso un'interfaccia seriale.
 
-```
-Arduino.setup() {
-  Serial.begin(9600);
-}
-
-void loop() {
-  if (Serial.available()) {
-    String operation = Serial.readString(); //primo argomento: "led"
-    int value1 = Serial.parseInt(); //secondo argomento: 255
-    int value2 = Serial.parseInt(); //terzo argomento: 100
-    //qui è possibile eseguire un'operazione specifica in base al nome dell'operazione e ai valori numerici
-  }
-}
-```
-
-## Vedi Anche
-
-- [Reference della funzione Serial.readString()](https://www.arduino.cc/reference/en/language/functions/communication/serial/readstring/)
-- [Tutorial sul controllo dei LED con Arduino](https://www.arduino.cc/en/Tutorial/BuiltInExamples/Fade)
+## Vedi anche:
+- Documentazione ufficiale di Arduino su ```argv```: https://www.arduino.cc/reference/en/language/variables/environment/argc/
+- Tutorial su come leggere gli argomenti della riga di comando in Arduino: https://create.arduino.cc/projecthub/Aritra/how-to-read-commands-from-command-line-0cbe12

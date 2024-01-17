@@ -10,45 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+Hva & Hvorfor?
 
-Å lage midlertidige filer er en vanlig teknikk i programmering, spesielt i Javascript. Det kan være nyttig når du trenger å lagre midlertidige data eller operere på store datasett uten å påvirke den opprinnelige filen.
+Opprettelse av midlertidige filer er en vanlig praksis for programvareutviklere. Dette er prosessen med å opprette en fil som midlertidig lagrer data eller informasjon under kjøring av et program. Dette gjøres vanligvis for å organisere og behandle data på en mer effektiv måte.
 
-## Hvordan
-
-Oppretting av en midlertidig fil i Javascript kan gjøres ved å bruke fs modulen. Før du kan gjøre det, må du inkludere modulen i koden din ved å skrive ```const fs = require('fs')``` øverst i filen.
-
-Deretter kan du bruke ```fs.openSync()``` funksjonen for å opprette en fil. Denne funksjonen tar inn to parametere, filnavn og en flaggparameter som indikerer handlingen som skal utføres med filen. For å opprette en midlertidig fil, bruker du flagget ```'w'```.
-
-Etter å ha opprettet filen, kan du skrive data til den ved hjelp av ```fs.writeSync()``` funksjonen. Dette vil tillate deg å skrive til filen på en lignende måte som du ville gjort med vanlige filer.
-
-Etter å ha fullført operasjonene dine, må du huske å lukke filen ved å bruke ```fs.closeSync()``` funksjonen. Dette vil sørge for at midlertidig fil slettes når programmet avsluttes.
-
-Et eksempel på hvordan du oppretter og skriver data til en midlertidig fil:
+Hvordan:
 
 ```Javascript
-const fs = require('fs')
+// Opprett en midlertidig fil med Node.js
+var fs = require('fs');
+var tempFile = fs.writeFileSync('temp.txt', 'Dette er en midlertidig fil');
 
-// Oppretter en midlertidig fil
-fs.openSync('midlertidig.txt', 'w')
-
-// Skriver data til filen
-fs.writeSync('midlertidig.txt', 'Dette er midlertidige data.')
-
-// Lukker filen
-fs.closeSync('midlertidig.txt')
+// Slett filen etter bruk
+fs.unlinkSync('temp.txt');
 ```
 
-Etter å ha kjørt denne koden, vil du se at en ny fil med navnet "midlertidig.txt" er opprettet og den vil inneholde teksten "Dette er midlertidige data.".
+Eksempelutgang:
 
-## Dypdykk
+En midlertidig fil, kalt "temp.txt", vil bli opprettet og inneholde teksten "Dette er en midlertidig fil". Deretter vil filen bli slettet ved hjelp av fs.unlinkSync() funksjonen.
 
-Når du oppretter en midlertidig fil, er det viktig å huske at filen kun vil eksistere så lenge programmet kjører. Når programmet avsluttes, vil filen bli slettet automatisk. Dette er grunnen til at det er viktig å være forsiktig med å bruke midlertidige filer, spesielt når det gjelder lagring av viktig data.
+Dypdykk:
 
-En annen ting å merke seg er at navnet på den midlertidige filen kan være tilfeldig tildelt av operativsystemet. Så sørg for å ikke basere logikken din på å ha et bestemt navn på filen, men heller på å bruke operasjoner som å lese og skrive data til filen.
+Opprettelse av midlertidige filer har sine røtter fra tidlig på 1960-tallet da filsystemer ble utviklet. Denne teknikken var nyttig for å lage midlertidige kopier av data eller for midlertidig lagring av informasjon under kjøring av et program.
 
-## Se også
+Alternativer:
 
-- [Node.js fs modulen](https://nodejs.org/api/fs.html)
-- [W3Schools guide om hvordan du bruker fs i Node.js](https://www.w3schools.com/nodejs/nodejs_filesystem.asp)
-- [En guide til å håndtere midlertidige filer i Javascript](https://medium.com/@KaweesiJoseph/working-with-temporary-files-in-node-js-be6d5c75c851)
+Noen programmeringsspråk har innebygde funksjoner for å opprette midlertidige filer, som Java med File.createTempFile() eller Python med tempfile.mktemp(). Men i mange tilfeller kan det å bruke eksterne biblioteker eller moduler, som fs i Node.js, være enklere og mer fleksibelt.
+
+Se også:
+
+- https://nodejs.org/api/fs.html#fs_fs_writefilesync_file_data_options
+- https://docs.python.org/3/library/tempfile.html
+- https://docs.oracle.com/javase/7/docs/api/java/io/File.html#createTempFile()

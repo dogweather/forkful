@@ -10,34 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co & Dlaczego?
 
-Jeśli jesteś programistą i często spotykasz się z koniecznością przetwarzania plików konfiguracyjnych lub danych, to jest szansa, że napotkałeś format YAML. Pozostawienie ją wygodnym formatem z formatowaniem, który można odczytywać przez ludzi i maszyny. W ten sposób Jest to przydatne narzędzie do automatyzacji procesów, a także do przechowywania i przesyłania danych w sposób, który jest zrozumiały dla każdego.
+Praca z YAML jest często nieuniknionym wyzwaniem dla programistów. Jest to język formatowania, który został stworzony do przechowywania i przesyłania danych w sposób czytelny dla człowieka. Programiści wykorzystują go w swojej pracy, aby zorganizować i przechowywać informacje w sposób łatwy do przeczytania i zrozumienia.
 
-## Jak to zrobić
+## Jak to zrobić:
 
-### Tworzenie pliku YAML
+By pracować z formatem YAML w Bashu, musisz zainstalować narzędzie o nazwie "yq" za pomocą menedżera pakietów. Następnie możesz używać komendy "yq" w swoim skrypcie Bash, aby czytać lub zapisywać dane YAML.
+
 ```Bash
-touch plik.yaml
-```
-W powyższym przykładzie tworzymy nowy plik YAML przy użyciu polecenia "touch". Można również używać innego edytora tekstowego, na przykład Sublime lub Atom, aby utworzyć lub edytować plik YAML.
+# Przykładowe polecenie do odczytu danych YAML:
+yq r <nazwa_pliku.yaml> <ścieżka_do_elementu>
 
-### Wpisywanie danych w pliku YAML
+# Przykładowe polecenie do zapisu danych YAML:
+yq w -i <nazwa_pliku.yaml> <ścieżka_do_elementu> <wartość>
+```
+
+Wykorzystanie tego narzędzia pozwala na łatwą manipulację danymi YAML w skryptach Bash. Przykładowe wyjście z komendy odczytu może wyglądać tak:
+
 ```Bash
-open plik.yaml
+# Przykładowe wyjście z odczytu danych YAML:
+test:
+  - name: John
+    age: 25
+  - name: Anna
+    age: 30
 ```
-Użyj wybranego edytora tekstowego, aby otworzyć plik YAML i wpisać dane. Pamiętaj, że format YAML jest zależny od wcięć, więc ważne jest, aby zachować odpowiednią strukturę dokładając spację lub tabulację.
 
-### Przetwarzanie pliku YAML
-```Bash
-cat plik.yaml
-```
-Polecenie "cat" wyświetla zawartość pliku YAML. Można również przekazać dane z pliku do innych komend za pomocą potoku "|" lub użyć ich jako argumentów dla innych poleceń.
+## Głębszy wywód:
 
-## Wgląd w wykorzystywanie YAML
-YAML jest formatem danych zorientowanym na człowieka, co oznacza, że jest łatwiejszy w czytaniu niż formularz JSON. Można również umieszczać komentarze w plikach YAML, co czyni je jeszcze wygodniejszymi w użyciu. Wielu programistów wykorzystuje format YAML do przechowywania konfiguracji swoich aplikacji lub jako sposób na przechowywanie danych w plikach tekstowych.
+YAML (Yet Another Markup Language) został stworzony w 2001 roku jako alternatywa dla języka XML. Jego prosty i czytelny format szybko zyskał popularność wśród programistów, szczególnie tych, którzy pracują z konfiguracjami lub przekazują duże ilości danych.
 
-## Zobacz także
-- https://yaml.org
-- https://www.linux.com/training-tutorials/beginners-guide-yaml/
-- https://www.tutorialspoint.com/yaml/index.htm
+Alternatywą dla YAML jest m.in. język JSON (JavaScript Object Notation), który jest popularny w aplikacjach internetowych. Jednakże, JSON jest bardziej ograniczony w swojej składni i nie jest tak czytelny jak YAML.
+
+Implementacja komendy "yq" jest oparta o bibliotekę "jq", która jest wykorzystywana do manipulacji danych w formacie JSON. Jest to ważne dla programistów, ponieważ pozwalają one na łatwe przetwarzanie i konwertowanie danych pomiędzy formatami YAML i JSON.
+
+## Zobacz również:
+
+- Oficjalna dokumentacja narzędzia "yq": https://github.com/mikefarah/yq
+- Porównanie formatów YAML i JSON: https://yaml.org/start.html
+- Poradnik o składni YAML: https://docs.ansible.com/ansible/latest/reference_appendices/YAMLSyntax.html

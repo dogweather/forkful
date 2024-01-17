@@ -1,7 +1,7 @@
 ---
-title:                "Współpraca z yaml"
-html_title:           "Elixir: Współpraca z yaml"
-simple_title:         "Współpraca z yaml"
+title:                "Praca z językiem YAML"
+html_title:           "Elixir: Praca z językiem YAML"
+simple_title:         "Praca z językiem YAML"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Data Formats and Serialization"
@@ -10,53 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+Czym jest YAML i dlaczego programiści go używają?
 
-Istnieje wiele formatów plików konfiguracyjnych, ale YAML jest jednym z najbardziej popularnych dla programistów. Oferuje on prostą składnię, łatwość czytania i umożliwia przechowywanie danych w hierarchicznej strukturze. W tym artykule dowiesz się, dlaczego warto używać YAML w swoich projektach i jak to zrobić.
+YAML (Yet Another Markup Language) jest językiem do opisywania danych w sposób czytelny dla człowieka. Jest to format pliku używany do przechowywania i przesyłania informacji w prosty i zrozumiały sposób. Programiści najczęściej używają YAML do konfiguracji i przetwarzania struktury danych.
 
-## Jak to zrobić
+Jak to zrobić?
 
-Aby zacząć pracować z YAML w Elixir, musisz zainstalować bibliotekę `YAML` używając gestora pakietów Hex. Następnie musisz zaimportować funkcje z tej biblioteki do swojego pliku Elixir, aby móc wykorzystać jego możliwości.
+Aby pracować z YAML w Elixir, możemy skorzystać z biblioteki o nazwie YamlElixir. Najpierw musimy zainstalować tę bibliotekę przy użyciu narzędzia Mix, a następnie uruchomić komendę `mix deps.get` aby pobrać wymagane zależności. Następnie, zaimportujmy bibliotekę do naszego modułu i wywołajmy funkcję `YamlElixir.load()` aby załadować dane ze struktury YAML.
 
-```Elixir
-defp deps do
-  [{:yaml, "~> 0.2.2"}]
-end
-
-defmodule Example do
-  import Yaml
-
-  yaml = """
-  name: John
-  age: 30
-  favorite_foods:
-    - pizza
-    - tacos
-  """
-
-  data = load(yaml) # wczytuje YAML jako mapę danych
-
-  age = data["age"] # zwraca wartość klucza "age" jako integer
-
-  favorite_foods = data["favorite_foods"] # zwraca wartość klucza "favorite_foods" jako listę
-
+ ```Elixir
+defmodule MyModule do
+  import YamlElixir
+  data = YamlElixir.load("my_config.yml")
 end
 ```
 
-## Deep Dive
+Ponadto, możemy wykorzystać funkcję `YamlElixir.to_yaml()` aby utworzyć plik YAML z naszej struktury danych w Elixir.
 
-Jedną z najważniejszych funkcji YAML w Elixir jest funkcja `load/1`, która wczytuje YAML jako mapę danych. Jeśli chcesz skonwertować tę mapę na inny format, na przykład JSON, możesz użyć funkcji `encode/1`.
-
-```Elixir
-json = encode(data) # konwertuje mapę danych YAML na JSON
+ ```Elixir
+defmodule MyModule do
+  import YamlElixir
+  data = %{"name" => "John", "age" => 30, "job" => "developer"}
+  yaml = YamlElixir.to_yaml(data)
+end
 ```
 
-Ponadto, funkcja `load_file/1` pozwala na wczytanie danych bezpośrednio z pliku YAML. Jest to szczególnie przydatne, gdy masz duży plik YAML, który chcesz przetworzyć.
+Głębszy zanurzenie:
 
-Jeśli potrzebujesz przykładowych plików YAML, możesz skorzystać z stron takich jak YAML.org lub skorzystać z gotowych szablonów YAML dostępnych dla różnych języków programowania.
+YAML został wprowadzony w 2001 roku przez Clarka Evansa. Jest łatwy w użyciu i zrozumiały dla ludzi, co czyni go dobrym wyborem dla konfiguracji i przetwarzania danych. Alternatywą dla YAML jest JSON, jednak YAML jest bardziej przyjazny dla użytkownika dzięki możliwości formatowania tekstu i wsparciu dla komentarzy.
 
-## Zobacz także
+See Also:
 
-- Dokumentacja Elixir YAML: https://hexdocs.pm/yaml/api-reference.html
-- Przykłady YAML: https://yaml.org/start.html
-- Szablony YAML dla różnych języków: https://yamltemplates.com/
+• Oficjalna dokumentacja YamlElixir: https://hexdocs.pm/yaml_elixir
+
+• Przykładowy plik YAML: https://yaml.org/spec/1.2/spec.html
+
+• Porównanie między YAML a JSON: https://dzone.com/articles/yaml-vs-json-its-a-difference-of-roots-and-formati

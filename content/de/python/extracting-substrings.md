@@ -10,34 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was & Warum
 
-Wenn du jemals ein langes Wort oder einen Text hast, bei dem du nur an bestimmten Teilen interessiert bist, dann kann das Extrahieren von Teilen dieser Texte sehr nützlich sein. Dies kann besonders hilfreich sein, wenn es um das Manipulieren von Daten oder das Suchen nach bestimmten Mustern geht.
+Das Extrahieren von Teilzeichenketten ist eine häufig verwendete Funktion in der Programmierung. Es ermöglicht uns, einen Teil einer Zeichenkette, die aus mehreren Zeichen besteht, auszuwählen und zu isolieren. Programmierer verwenden dies oft, um spezifische Informationen aus einer größeren Zeichenkette zu extrahieren, um sie z.B. in andere Variablen oder Funktionen zu übergeben.
 
-## Wie man es macht
+## Wie:
 
-Das Extrahieren von Teilstrings in Python ist relativ einfach. Wir werden die `slice`-Methode verwenden, um den Teilstring zu definieren, den wir aus unserem ursprünglichen String extrahieren möchten.
-
-```Python
-# Erstellen eines Beispielstrings
-text = "Ich liebe Python!"
-
-# Extrahieren des Wortes "liebe"
-substring = text[3:8]
-
-# Ausgabe des Ergebnisses
-print(substring)
+```python
+# Beispiel 1
+string = "Hallo, mein Name ist Maria"
+print(string[6:10])
+# Ausgabe: m
+ 
+# Beispiel 2
+satz = "Heute ist ein schöner Tag in Deutschland"
+print(satz[27:37])
+# Ausgabe: schöner Tag
 ```
 
-Die Ausgabe des obigen Codes wäre "liebe". Es ist wichtig zu beachten, dass beim Extrahieren von Teilstrings in Python die Indizierung bei 0 beginnt. In unserem Beispiel haben wir den Bereich von Index 3 bis Index 8 ausgewählt, wobei der erste Index inklusive und der letzte Index exklusive ist.
+## Tiefer tauchen:
 
-## Tiefes Eintauchen
+Die Idee, Teilzeichenketten zu extrahieren, stammt ursprünglich aus der Sprache SNOBOL, die in den 1960er Jahren entwickelt wurde. Heutzutage gibt es einige alternative Möglichkeiten, Teilzeichenketten in Python zu extrahieren, wie z.B. die split() -Funktion, die eine Zeichenkette an einem bestimmten Zeichen in mehrere Teilzeichenketten aufteilt. Die Implementierung hinter dem Extrahieren von Teilzeichenketten basiert auf der Verwendung von Indizes oder möglicherweise sogar regulären Ausdrücken, je nachdem, welche Methode verwendet wird.
 
-Die `slice`-Methode in Python ermöglicht es uns, Teilstrings nicht nur von vorne, sondern auch von hinten zu extrahieren. Wir können dies tun, indem wir negative Indizes verwenden. Zum Beispiel würde der Ausdruck `text[:-4]` den Teilstring von Anfang bis vier Zeichen vor dem Ende zurückgeben.
+## Siehe auch:
 
-Ein weiteres nützliches Feature ist die Möglichkeit, Schritte anzugeben, um Teilstrings auszuschneiden. Zum Beispiel kann der Ausdruck `text[::2]` jedes zweite Zeichen des Strings ausgeben. Das kann besonders hilfreich sein, wenn wir nach Mustern in einem Text suchen, die sich wiederholen.
-
-## Siehe auch
-
-- Dokumentation zu Python-Strings: https://docs.python.org/3/library/stdtypes.html#str
-- Tutorials zu Python-Strings: https://www.w3schools.com/python/python_strings.asp
+- [Python-Dokumentation zur String-Indexierung](https://docs.python.org/3/tutorial/introduction.html#strings)
+- [Wikipedia-Artikel über SNOBOL](https://en.wikipedia.org/wiki/SNOBOL)
+- [Python split() -Funktion](https://www.w3schools.com/python/ref_string_split.asp)

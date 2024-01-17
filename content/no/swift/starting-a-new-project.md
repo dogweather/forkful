@@ -1,7 +1,7 @@
 ---
-title:                "Å starte et nytt prosjekt"
-html_title:           "Swift: Å starte et nytt prosjekt"
-simple_title:         "Å starte et nytt prosjekt"
+title:                "Å starte et nytt prosjekt."
+html_title:           "Swift: Å starte et nytt prosjekt."
+simple_title:         "Å starte et nytt prosjekt."
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Getting Started"
@@ -10,42 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hva & Hvorfor?
+Å starte et nytt prosjekt i programmering handler om å skape et nytt program eller applikasjon fra bunnen av. Programmere gjør dette for å løse et bestemt problem, forbedre en eksisterende løsning eller bare for å tilfredsstille sin egen nysgjerrighet og kreative ånd.
 
-Å starte et nytt prosjekt i Swift kan være en spennende og givende opplevelse for både nybegynnere og erfarne utviklere. Det gir mulighet til å eksperimentere, utvide kunnskapen og skape noe helt unikt som kan være nyttig for deg selv og andre.
-
-## Hvordan gjøre det
-
-For å starte et nytt Swift-prosjekt, følg disse enkle trinnene:
-
-- Åpne Xcode-programmet og velg "Create a new Xcode project" fra File-menyen.
-- Velg "Single View App" som prosjektmal og klikk "Next".
-- Gi prosjektet ditt et navn og velg en målmappe, deretter klikker du "Next".
-- Velg "Swift" som programmeringsspråk og relevante enheter for prosjektet ditt, deretter klikk "Next".
-- Endelig, velg en plassering for prosjektet ditt og klikk "Create".
-
-Nå er ditt nye Swift-prosjekt klart til å bli utviklet!
+## Hvordan:
+For å starte et nytt Swift-prosjekt, må du først åpne Xcode-appen og velge "Create a new Xcode project". Deretter velger du "Single View App" og klikker "Next". Gi prosjektet ditt et navn og velg hvor du vil lagre det. Xcode vil da generere grunnleggende filer og struktur for ditt nye prosjekt. Du kan nå begynne å skrive koden din i filen "ViewController.swift" for å skape den ønskede funksjonaliteten. Etter å ha skrevet koden, kan du trykke på "Run" -knappen for å se resultatet av ditt nye prosjekt.
 
 ```Swift
-func helloWorld() {
-  print("Hei verden!")
-}
+// Et eksempel på å printe en tekst til konsollen
+print("Hei norske lesere!")
 
-helloWorld() // Output: Hei verden!
+// Eksempel på en variabel og en konstant
+var alder = 25
+let navn = "Maren"
 ```
 
-Her er et enkelt eksempel på en funksjon som printer ut en melding, "Hei verden!", når den blir kalt. Dette viser den enkle og leselige syntaksen til Swift-programmeringsspråket.
+Output:
+```
+Hei norske lesere!
+```
 
-## Dypdykk
+## Dykk dypere:
+Å lage et nytt prosjekt kan være en spennende og kreativ prosess, men det bør også gjøres med en viss forståelse for historien og alternativene. Swift-programmeringsspråket ble introdusert av Apple i 2014 som en moderne erstatning for Objective-C. Det er nå et av de mest populære programmeringsspråkene som brukes til å utvikle iOS- og macOS-applikasjoner. Alternativer til å starte et prosjekt i Xcode inkluderer å bruke tredjepartsprogrammer eller skrive koden direkte i en tekstredigerer og kompilere gjennom terminalen.
 
-Når du starter et nytt prosjekt i Swift, er det viktig å ha en god forståelse av grunnleggende konsepter og strukturer i språket. Dette inkluderer ting som datatyper, kontrollstrukturer, funksjoner og klasser. Å lære disse konseptene vil hjelpe deg med å bygge et solid fundament for ditt prosjekt.
-
-En annen viktig ting å huske på er å organisere koden din på en måte som er leselig og forståelig for både deg selv og andre utviklere. Dette kan inkludere å dele opp koden din i moduler eller pakker, bruke kommentarer for å beskrive hva koden din gjør, og følge alminnelige konvensjoner for navngivning.
-
-## Se også
-
-Her er noen relevante ressurser for å hjelpe deg med å starte ditt nye Swift-prosjekt:
-
-- [Offisiell dokumentasjon for Swift](https://docs.swift.org/swift-book/)
-- [Apple's Swift-programmeringsguide](https://developer.apple.com/library/archive/documentation/Swift/Conceptual/Swift_Programming_Language/index.html)
-- [Utviklerforums for Swift på Stack Overflow](https://stackoverflow.com/questions/tagged/swift)
+## Se også:
+- [Swift documentation](https://docs.swift.org/swift-book/)
+- [Xcode tutorial for beginners](https://www.raywenderlich.com/3710347-xcode-tutorial-for-beginners)
+- [Swift Playgrounds for learning and experimenting with Swift](https://www.apple.com/swift/playgrounds/)

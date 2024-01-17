@@ -10,57 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué utilizar JSON en programación?
+# Qué es y por qué lo hacemos?
 
-JSON (JavaScript Object Notation) es un formato de datos popular en programación debido a su simplicidad y universalidad. Almacenar y transmitir datos en formato JSON permite una fácil lectura y manipulación por parte de los humanos y las máquinas. Además, es compatible con una gran cantidad de lenguajes de programación, lo que lo hace ideal para sistemas interconectados.
+Trabajar con JSON (JavaScript Object Notation) en Python es una forma sencilla y eficiente de almacenar y manejar datos estructurados. Los programadores utilizan JSON porque es fácil de leer y escribir, y es un formato comúnmente utilizado para intercambiar datos en aplicaciones web.
 
-## Cómo utilizar JSON en Python
+# Cómo hacerlo:
 
-Para trabajar con JSON en Python, primero debemos importar el módulo `json`:
+Python tiene una librería incorporada para trabajar con JSON, la cual incluye una función para convertir objetos Python en JSON, y otra para convertir JSON en objetos Python.
 
 ```Python
+# Convertir objeto Python en JSON
 import json
-```
-
-Podemos convertir un objeto de Python en formato JSON utilizando el método `dumps()`:
-
-```Python
-my_dict = {"name": "John", "age": 30}
+my_dict = {"nombre": "Juan", "edad": 30, "ciudad": "Madrid"}
 json_data = json.dumps(my_dict)
-print(json_data)
-```
-Output:
-```Python
-'{"name": "John", "age": 30}'
-```
 
-Para convertir una cadena de JSON en un objeto de Python, podemos utilizar el método `loads()`:
-
-```Python
-json_data = '{"name": "John", "age": 30}'
+# Convertir JSON en objeto Python
+import json
+json_data = '{"nombre": "Juan", "edad": 30, "ciudad": "Madrid"}'
 my_dict = json.loads(json_data)
-print(my_dict)
-```
-Output:
-```Python
-{'name': 'John', 'age': 30}
 ```
 
-También podemos trabajar con archivos JSON utilizando la función `load()` para cargar el contenido del archivo en un objeto de Python:
+# Profundizando:
 
-```Python
-with open('data.json') as f:
-    json_data = json.load(f)
-print(json_data)
-```
+Antes de JSON, los programadores solían utilizar formatos de texto como XML o CSV para intercambiar datos estructurados. Sin embargo, JSON es más ligero y fácil de leer y escribir, lo que lo hace ideal para aplicaciones web.
 
-## Profundizando en el trabajo con JSON en Python
+Además de la librería estándar de Python, también existen librerías de terceros que ofrecen características adicionales para trabajar con JSON, como la validación de esquemas o el manejo de grandes volúmenes de datos.
 
-Aparte de la conversión entre objetos de Python y JSON, el módulo `json` también ofrece funciones como `dump()` para guardar datos en formato JSON en un archivo y `update()` para actualizar un objeto de Python con datos de un archivo JSON. También podemos especificar opciones de formato al guardar los datos, como indentación y orden de las claves.
+# Referencias:
 
-En casos donde se requiere trabajar con datos más complejos, el módulo `json` también proporciona funciones para validar la estructura de los datos JSON, como `validate()` y `is_valid()`, así como opciones para personalizar la validación.
-
-## Ver también
-
-- Documentación oficial de Python sobre el módulo `json`: https://docs.python.org/es/3/library/json.html
-- Ejemplos de uso de JSON en Python: https://www.programiz.com/python-programming/json
+- Documentación oficial de Python para trabajar con JSON: https://docs.python.org/es/3/library/json.html
+- Paquete `jsonschema` para validar esquemas de JSON: https://pypi.org/project/jsonschema/
+- Paquete `ujson` para un rendimiento más rápido en la manipulación de datos JSON: https://pypi.org/project/ujson/

@@ -10,58 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+# Che cosa & Perché?
+Leggere gli argomenti della riga di comando è il processo di ottenere le informazioni inserite dall'utente durante l'esecuzione del programma attraverso la riga di comando. I programmatori spesso lo fanno per personalizzare il comportamento del programma o per ottenere input dall'utente più velocemente.
 
-Ciao a tutti! Se stai leggendo questo articolo, probabilmente hai sentito parlare di *command line arguments* (argomenti della riga di comando) e sei interessato a saperne di più. Beh, sei nel posto giusto! Continua a leggere per scoprire come leggere e utilizzare i *command line arguments* nella tua programmazione Kotlin!
-
-## Come fare
-
-Iniziamo con un semplice esempio di codice per leggere un *command line argument* e stamparlo sulla console:
-
-```
-Kotlin
+# Come fare:
+Un esempio di codice Kotlin per leggere gli argomenti della riga di comando potrebbe essere il seguente:
+```Kotlin
 fun main(args: Array<String>) {
-
-    // leggi il primo argomento dalla riga di comando
-    val arg = args[0]
-
-    // stampa l'argomento sulla console
-    println("Il tuo command line argument è: $arg")
+    println("I file inseriti sono ${args.size}")
+    for (arg in args) {
+        println(arg)
+    }
 }
 ```
-
-Se esegui questo codice con l'argomento "ciao" nella riga di comando, vedrai l'output "Il tuo command line argument è: ciao".
-
-Ora, passiamo a un esempio più complesso che legge più di un argument e li utilizza in un calcolo matematico:
-
+Output:
 ```
-Kotlin
-fun main(args: Array<String>) {
-
-    // leggi il primo e il secondo argomento come numeri interi
-    val num1 = args[0].toInt()
-    val num2 = args[1].toInt()
-
-    // esegui una semplice operazione matematica utilizzando gli argomenti
-    val sum = num1 + num2
-
-    // stampa il risultato sulla console
-    println("La somma dei tuoi argomenti è: $sum")
-}
+I file inseriti sono 3
+file1.txt
+file2.txt
+file3.txt
 ```
+Questo codice stampa il numero di argomenti inseriti e poi li stampa uno per uno. Possiamo quindi utilizzare gli argomenti ottenuti per eseguire azioni specifiche nel nostro programma.
 
-Se esegui questo codice con gli argomenti "5 10", vedrai l'output "La somma dei tuoi argomenti è: 15".
+# Approfondimento:
+La lettura degli argomenti della riga di comando è stata una funzionalità importante sin dai primi sistemi operativi. È diventata ancora più comune con l'avvento dei linguaggi di programmazione della riga di comando, come Bash e Perl. Tuttavia, ci sono alcune alternative per ottenere input dall'utente, come l'input da tastiera o la lettura da file.
 
-## Approfondimento
+Per leggere gli argomenti della riga di comando in Kotlin, utilizziamo l'array `args` passato al metodo `main`. Possiamo anche utilizzare la libreria `kotlin-argparser` per gestire in modo più efficiente gli argomenti della riga di comando.
 
-Ora che hai visto qualche esempio pratico, forse hai ancora alcune domande su cosa siano esattamente i *command line arguments* e come funzionano. In breve, i *command line arguments* sono valori inseriti nella riga di comando quando si esegue un programma, che vengono poi letti e utilizzati dal programma stesso. Sono spesso utilizzati per fornire input personalizzato al programma ogni volta che viene eseguito.
-
-In Kotlin, i *command line arguments* vengono passati al metodo `main()` come un array di stringhe (`Array<String>`). Puoi accedere a un singolo argomento utilizzando l'indice dell'array come abbiamo visto negli esempi di codice precedenti. Inoltre, puoi utilizzare il metodo `toInt()` per convertire una stringa in un numero intero, se necessario.
-
-Ora che hai una comprensione più profonda dei *command line arguments*, puoi utilizzarli per personalizzare i tuoi programmi Kotlin in base alle tue esigenze specifiche.
-
-## Vedi anche
-
-- [Documentazione Kotlin: Argomenti della riga di comando](https://kotlinlang.org/docs/reference/command-line.html)
-- [Tutorialspoint: Command Line Arguments in Kotlin](https://www.tutorialspoint.com/kotlin/kotlin_command_line_arguments.htm)
-- [Kotlin By Example: Working with command line arguments in Kotlin](https://www.kotlinbyexample.org/working-with-command-line-arguments-in-kotlin/)
+# Vedi anche:
+- Documentazione di Kotlin sulla lettura degli argomenti della riga di comando: https://kotlinlang.org/docs/command-line.html 
+- Esempi di utilizzo di Kotlin-argparser: https://github.com/xenomachina/kotlin-argparser-examples

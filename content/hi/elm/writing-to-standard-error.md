@@ -1,7 +1,7 @@
 ---
-title:                "स्टैंडर्ड त्रुटि में लिखना"
-html_title:           "Elm: स्टैंडर्ड त्रुटि में लिखना"
-simple_title:         "स्टैंडर्ड त्रुटि में लिखना"
+title:                "कॉम्प्यूटर प्रोग्रामिंग पर लिखना: स्टैण्डर्ड त्रुटि में।"
+html_title:           "Elm: कॉम्प्यूटर प्रोग्रामिंग पर लिखना: स्टैण्डर्ड त्रुटि में।"
+simple_title:         "कॉम्प्यूटर प्रोग्रामिंग पर लिखना: स्टैण्डर्ड त्रुटि में।"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Files and I/O"
@@ -10,26 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Kyun: Kaarn dwaara koi vyakti standard error kaa anuvaad karne me samay nikaalega, kaarn ki dushro gorvrn ki qurbaani karke hum apne code ko behtar tareeke se debug kar skte hain.
+## क्या और क्यों?
+वैसे तो कोई भी प्रोग्रामर हो सकता है कि वह अपनी दुर्भावनाएं स्टैण्डर्ड एरर में लिखने को ज़रूरी न समझे। लेकिन कभी-कभी, किसी गंभीर त्रुटि के कारण, हमें errors को प्रिंट करने के लिए उन्हें अपने standard error में लिखने की आवश्यकता होती है। इससे हम प्रोग्राम में त्रुटि की स्थिति को समझते हैं और समस्या का समाधान करने में मदद मिलती है।
 
-## Kaise Kare: Is prograaamig mee hmae adiaa  se standard errr ko kese likhaa?
+## कैसे:
+जब हम अपनी गंभीर त्रुटि को समझ लेते हैं, तो हमें इसको स्टैण्डर्ड एरर में लिखने के लिए उपलब्ध एक फ़ंक्शन है, `stderr`। इसका उपयोग करते हुए, हम अपनी त्रुटि को स्टैण्डर्ड एरर में लिख सकते हैं। इसका उदाहरण निम्न है:
 
-```Elm
-import Debug
+```elm
+import IO
 
-Debug.crash "Ye ek sample error hai"
+main = 
+    case 10 of
+        1 ->
+            IO.print "Case 1"
+        
+        2 ->
+            IO.print "Case 2"
+        
+        _ ->
+            IO.stderr "Invalid case"
 ```
 
-Output: `
+इस उदाहरण में, अगर हम अंतर्विरोधी मान घोषित करते हैं तो हम `Invalid case` को अपने standard error में प्रिंट करते हैं। यह अपनी प्रिंट करने का हमारा output है:
 
-Oops! Kuch galat ho gaya hai.
-- Vakya: Ye ek sample error hai
-- Lain: Null
+```
+Invalid case
+```
 
-## Gehraai Tak Jaayein: Dusra chizo mein samae bachakar lie, standard error ke baare mein adhik jaankari aapko bahut kaam aasakti hai. Isse, aap apne code ko behtar dhang se samajh sakte hain.
+## गहराई से:
+पहले, प्रोग्रामिंग में, हम `print` फ़ंक्शन का इस्तेमाल करते थे जिससे कि हम messages को console में प्रिंट कर सकें। `stderr` फ़ंक्शन इसी तरह काम करता है, लेकिन इसको console के बजाय स्टैण्डर्ड एरर में प्रिंट करता है। इससे हमारे प्रोग्राम में त्रुटि को समझने में मदद मिलती है और इससे हम समस्या का समाधान कर सकते हैं।
 
-## Dekhein Bhi: Unn logon ke liye jinke saath aap apne Elm programming skills ko sudhaarna chate hain, humne kuch aur bhi articles likhe hain!
+यदि हम `stderr` की बजाय सीधे `print` का इस्तेमाल करते हैं तो हमारा output console में दिखेगा। लेकिन इससे हमारी ख़ुद की प्रोग्रामिंग भाषा के बाहर कोई समस्या होने पर यह समझना मुश्किल हो सकता है। इसलिए बेहतर है कि हम अपनी त्रुटि को स्टैण्डर्ड एरर में ही लिखें।
 
-1. "Getting Started with Elm": [https://medium.com/@examplearticle1](https://medium.com/@examplearticle1)
-2. "Debugging Techniques in Elm": [https://medium.com/@examplearticle2](https://medium.com/@examplearticle2)
-3. "Elm Language Reference": [https://guide.elm-lang.org/](https://guide.elm-lang.org/)
+## देखें भी:
+जाने कैसे हम `stderr` का उपयोग करके अपनी गंभीर त्रुटियों को सामने ला सकते हैं [Elm documentation](https://package.elm-lang.org/packages/elm/core/1.0.0/IO#stderr) के माध्यम से।

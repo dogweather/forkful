@@ -1,7 +1,7 @@
 ---
-title:                "HTTP 요청 보내기"
-html_title:           "Fish Shell: HTTP 요청 보내기"
-simple_title:         "HTTP 요청 보내기"
+title:                "Http 요청 보내기"
+html_title:           "Fish Shell: Http 요청 보내기"
+simple_title:         "Http 요청 보내기"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "HTML and the Web"
@@ -10,51 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜?
+#%% 무엇 & 왜?
+HTTP 요청을 보내는 것은 네트워크를 통해 웹 서버에 데이터를 요청하는 것을 말합니다. 프로그래머들은 이를 통해 웹 애플리케이션과 상호작용하거나 데이터를 가져와서 사용할 수 있습니다.
 
-먼저, 우리는 수많은 웹 서비스를 사용합니다. 그리고 이 서비스들은 대부분 사용자와 상호작용하기 위해 HTTP 요청을 사용합니다. 따라서 우리는 이러한 통신을 가능하게 하는 Fish Shell을 배우고 사용하는 것이 중요합니다.
+#%% 어떻게:
+```Fish Shell``` 코드 블록 안에 코딩 예제와 샘플 출력이 있는 예시를 살펴보겠습니다:
 
-## Fish Shell로 HTTP 요청 보내기
-
-Fish Shell은 매우 강력한 명령 줄 쉘입니다. 이 쉘을 사용하여 쉽게 HTTP 요청을 보낼 수 있습니다. 먼저, `curl` 명령어를 사용하여 다음과 같이 요청을 보낼 수 있습니다.
-
+1. GET 요청 보내기:
 ```
-Fish Shell을 사용하여 HTTP 요청 보내기
+curl https://www.example.com
 ```
-
+2. POST 요청 보내기:
 ```
-curl https://example.com
-```
-
-위의 예제는 `https://example.com`으로 GET 요청을 보내고 응답을 받아옵니다. 만약 POST 요청을 보내고 싶다면 `-X` 옵션을 통해 다음과 같이 요청 메서드를 지정할 수 있습니다.
-
-```
-Fish Shell을 사용하여 HTTP POST 요청 보내기
+curl -d "username=test&password=test123" -X POST https://www.example.com/login
 ```
 
-```
-curl -X POST https://example.com
-```
+#%% 더 들어가보기:
+1. 역사적 배경: HTTP 요청은 하이퍼텍스트 전송 프로토콜(HTTP)의 방식 중 하나로, 웹 개발의 발전과 함께 생겨나게 되었습니다.
+2. 대안: Fish Shell을 사용하지 않는다면, Python의 requests 모듈이나 cURL 등으로도 HTTP 요청을 보낼 수 있습니다.
+3. 구현 세부사항: Fish Shell은 ```curl``` 명령어를 통해 HTTP 요청을 보낼 수 있습니다.
 
-또는 `--data` 옵션을 사용하여 요청 본문에 데이터를 추가할 수 있습니다.
-
-```
-Fish Shell을 사용하여 데이터가 포함된 HTTP POST 요청 보내기
-```
-
-```
-curl -X POST --data "username=example&password=1234" https://example.com/login
-```
-
-## 더 알아보기
-
-Fish Shell에서 HTTP 요청을 보내는 방법은 간단합니다. 그러나 좀 더 깊이 들어가보면 여러 가지 옵션을 사용하여 더욱 다양한 요청을 보낼 수 있습니다. 예를 들어, `curl` 명령어에 `-H` 옵션을 사용하여 요청 헤더를 추가할 수 있습니다. 이외에도 다양한 옵션을 사용할 수 있으며, 매뉴얼 페이지에서 자세한 내용을 확인할 수 있습니다.
-
-```
-Fish Shell로 HTTP 요청을 보내는 더 많은 방법에 대해서는 `curl` 매뉴얼 페이지를 참조하시기 바랍니다.
-```
-
-## 관련 링크
-
-- `curl` 매뉴얼 페이지: https://fishshell.com/docs/current/cmds/curl.html
-- HTTP 요청에 대한 더 자세한 내용: https://developer.mozilla.org/ko/docs/Web/HTTP/Overview
+#%% 관련 자료:
+- [Fish Shell 공식 문서](https://fishshell.com/docs/current/cmds/curl.html)
+- [Python requests 모듈 공식 문서](https://docs.python-requests.org/en/latest/)
+- [cURL 공식 문서](https://curl.se/docs/manpage.html)

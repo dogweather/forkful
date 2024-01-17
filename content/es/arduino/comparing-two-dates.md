@@ -10,78 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué comparar dos fechas?
+"¿Qué y Por qué?": Comparar dos fechas es cuando un programador quiere averiguar si una fecha es anterior o posterior a otra. Esto se usa a menudo en programas que requieren una lógica basada en el tiempo, como en un reloj o un cronómetro. Es una forma de calcular el paso del tiempo en un programa para tomar decisiones o realizar acciones específicas.
 
-Comparar fechas es una función importante en la programación, ya que nos permite realizar diferentes acciones basadas en la fecha actual o en fechas específicas. Por ejemplo, podemos utilizar la comparación de fechas para activar un sistema de riego solo en determinadas fechas o para mostrar un mensaje de felicitación en un día especial.
+"## Cómo hacerlo:"
 
-## Cómo hacerlo
+Para comparar dos fechas en Arduino, se pueden seguir los siguientes pasos:
 
-La comparación de fechas en Arduino se basa en el uso de la librería "Time". Para poder utilizar esta librería, debemos incluirla en nuestro código en la sección de librerías:
-
+1. Definir dos variables de tipo ```String``` que representen las fechas a comparar. Por ejemplo:
 ```
-#include <Time.h>
-```
-
-Una vez incluida la librería, podemos utilizar la función "time_t" para almacenar la fecha actual en una variable. Por ejemplo:
-
-```
-time_t fechaActual = now();
+String fecha1 = "2021-01-01";
+String fecha2 = "2021-02-01";
 ```
 
-También podemos utilizar la función "Time" para definir una fecha específica y almacenarla en una variable. Por ejemplo:
-
+2. Utilizar la función ```strcmp()``` para comparar las dos fechas. Esta función compara dos cadenas de texto y devuelve un valor numérico dependiendo del resultado de la comparación. En nuestro caso, si la primera fecha es anterior a la segunda, el valor devuelto será menor que cero. Si son iguales, el valor será igual a cero. Y si la primera fecha es posterior a la segunda, el valor será mayor que cero. Ejemplo de código:
 ```
-tmElements_t fechaEspecifica;
-fechaEspecifica.Year = 2020; //año
-fechaEspecifica.Month = 12; //mes
-fechaEspecifica.Day = 25; //día
-fechaEspecifica.Hour = 0; //hora
-fechaEspecifica.Minute = 0; //minuto
-fechaEspecifica.Second = 0; //segundo
-time_t fechaEspecificaSegundos = makeTime(fechaEspecifica);
+int resultado = strcmp(fecha1.c_str(), fecha2.c_str());
 ```
-En este ejemplo, hemos definido una fecha específica: 25 de diciembre de 2020 a las 0 horas. Utilizando la función "makeTime" podemos convertir esta fecha en segundos y almacenarla en la variable "fechaEspecificaSegundos".
 
-Ahora que tenemos ambas fechas almacenadas en variables distintas, podemos utilizar operadores de comparación para determinar si una fecha es más reciente que la otra. Por ejemplo:
-
+3. Utilizar una estructura condicional para tomar decisiones basadas en el resultado de la comparación. Por ejemplo, si la primera fecha es anterior a la segunda, imprimir un mensaje en la pantalla LCD. Ejemplo de código:
 ```
-if(fechaEspecificaSegundos > fechaActual){
-  //hacer algo si la fecha específica es más reciente
-}
-else if (fechaEspecificaSegundos < fechaActual){
-  //hacer algo si la fecha específica es anterior o igual a la fecha actual
+if (resultado < 0) {
+    // Imprimir mensaje en pantalla LCD
 }
 ```
 
-También podemos utilizar la función "timeStatus" para obtener el estado de la fecha y realizar acciones basadas en ese estado. Por ejemplo:
+"## Profundizando:"
 
-```
-if(timeStatus() == timeNotSet){
-  //hacer algo si la fecha no está configurada
-}
-else if (timeStatus() == timeSet){
-  //hacer algo si la fecha está configurada
-}
-```
+En la programación, las fechas se representan a menudo como cadenas de texto en un formato específico, como el usado en el ejemplo (año-mes-día). Esto permite una fácil comparación utilizando la función ```strcmp()```. Sin embargo, también existen otras formas de trabajar con fechas en Arduino, como utilizando la librería Time.
 
-## Profundizando
+Otra manera de comparar fechas es utilizando operadores lógicos, como los operadores de comparación (>, <, ==) o los operadores lógicos (&&, ||). Sin embargo, requiere más líneas de código y no es tan eficiente como utilizar la función ```strcmp()```.
 
-La librería "Time" también ofrece funciones adicionales que nos permiten trabajar con fechas y horas de una manera más avanzada. Algunas de estas funciones son:
+Es importante tener en cuenta que al comparar fechas, se deben tener en cuenta factores como los años bisiestos y la diferencia entre meses con diferente cantidad de días.
 
-- `second()` : devuelve los segundos actuales.
-- `minute()` : devuelve los minutos actuales.
-- `hour()` : devuelve la hora actual en formato de 24 horas.
-- `day()` : devuelve el día actual (del 1 al 31).
-- `month()` : devuelve el mes actual (del 1 al 12).
-- `year()` : devuelve el año actual desde 1970.
-- `dayOfWeek()` : devuelve el día de la semana actual (del 1 al 7, donde 1 es domingo).
-- `isLeapYear(year)` : devuelve un valor booleano que indica si el año es bisiesto o no.
+"## Ver también:"
 
-Con estas funciones, podemos realizar comparaciones más precisas y realizar diferentes acciones basadas en la fecha y hora actual.
-
-## Ver también
-
-- Documentación oficial de la librería "Time": https://www.arduino.cc/reference/en/libraries/time/
-- Tutoriales de comparación de fechas en Arduino: https://www.instructables.com/id/Arduino-Time-Library-Primer/ 
-y https://how2electronics.com/arduino-hows/simple-date-time-example-arduino/
-- Código de ejemplo: https://gist.github.com/as-ideas/0aeb932f8466f6a895d9e93460a39b21
+- Documentación oficial de Arduino sobre la función ```strcmp()```: https://www.arduino.cc/reference/es/language/variables/comparison/strcmp/
+- Librería Time para trabajar con fechas y tiempos en Arduino: https://www.pjrc.com/teensy/td_libs_Time.html
+- Tutorial sobre operadores lógicos en Arduino: https://learn.sparkfun.com/tutorials/arduino-operadores-logicos-y-de-comparacion/all

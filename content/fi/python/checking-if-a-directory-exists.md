@@ -1,7 +1,7 @@
 ---
-title:                "Tarkistetaan löytyykö hakemistoa"
-html_title:           "Python: Tarkistetaan löytyykö hakemistoa"
-simple_title:         "Tarkistetaan löytyykö hakemistoa"
+title:                "Tarkista, onko hakemisto olemassa."
+html_title:           "Python: Tarkista, onko hakemisto olemassa."
+simple_title:         "Tarkista, onko hakemisto olemassa."
 programming_language: "Python"
 category:             "Python"
 tag:                  "Files and I/O"
@@ -10,30 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mikä & Miksi?
+Tiedoston olemassaolon tarkistaminen on yksinkertainen, mutta tärkeä osa ohjelmoinnin arkea. Se tarkoittaa, että ohjelma kysyy, onko tietyllä polulla sijaitseva kansio olemassa vai ei. Ohjelmoijat tekevät tätä, jotta he voivat varmistaa, että heidän koodinsa toimii oikein ja estää mahdolliset virheet.
 
-Voit joutua tarkistamaan, onko hakemisto olemassa, jos haluat varmistaa, että tiettyä tiedostopolkua voidaan käyttää, ennen kuin suoritat tietyt koodirivit.
+## Miten:
+Esimerkki koodi, joka tarkistaa, onko kansio nimeltään "projekti" olemassa:
 
-## Kuinka
-
-```python
-# Tarkista, onko hakemisto olemassa
+```Python
 import os
-
-hakemisto = "/Users/kayttaja/Documents"
-if os.path.exists(hakemisto):
-  print("Hakemisto on olemassa.")
-else: 
-  print("Hakemistoa ei ole olemassa.")
+if os.path.exists("./projekti"):
+    print("Kansio nimeltä 'projekti' on olemassa.")
+else:
+    print("Kansiota nimeltä 'projekti' ei löytynyt.")
 ```
 
-Tämä yksinkertainen esimerkkikoodi käyttää Pythonin "os" -moduulia tarkistaakseen, onko hakemisto olemassa. Jos hakemisto on olemassa, koodi tulostaa viestin, joka ilmoittaa siitä. Muussa tapauksessa tulostetaan toinen viesti.
+#### Tulostus:
+```
+Kansio nimeltä 'projekti' on olemassa.
+```
 
-## Syvällinen perehtyminen
+Toinen tapa tarkistaa tiedoston olemassaolo on käyttää ```os.path.isdir()``` -funktiota:
 
-Tarkistaessamme, onko hakemisto olemassa, käytämme "os.path.exists" -funktiota, joka palauttaa True tai False, riippuen siitä, löytyykö määritetty polku. Tällä tavoin voimme ensin tarkistaa hakemiston olemassaolon ennen kuin käytämme sitä esimerkiksi tiedostojen avaamiseen tai tallentamiseen.
+```Python
+import os
+if os.path.isdir("./projekti"):
+    print("Tämä on kansio.")
+else:
+    print("Tämä ei ole kansio.")
+```
 
-## Katso myös
+#### Tulostus:
+```
+Tämä on kansio.
+```
 
-- Pythonin "os" -moduuli: https://docs.python.org/3/library/os.html
-- Tiedostopolun tarkistamisesta kohti hakemistoa: https://www.journaldev.com/20562/python-check-if-file-directory-exists
+## Syvemmälle:
+Ohjelmoijat ovat joutuneet tarkistamaan tiedoston olemassaolon jo vuosikymmenien ajan, mutta koodi on muuttunut hieman riippuen käytössä olevasta ohjelmointikielestä. Esimerkiksi C-kielessä käytetään funktiota ```fopen()``` tiedoston avaamiseen, ja sen palauttama arvo voi kertoa, onko tiedosto olemassa vai ei. Pythonissa sen sijaan voidaan käyttää ```os.path.exists()``` tai ```os.path.isdir()``` -funktioita.
+
+On myös muita tapoja tarkistaa tiedoston olemassaolo, kuten käyttämällä ```try/except``` -lohkoa tai ```os.stat()``` -funktiota. Nämä vaihtoehdot ovat käteviä, kun halutaan tehdä jotain erilaista, jos tiedostoa ei löydy.
+
+## Katso myös:
+- [Python os.path -dokumentaatio](https://docs.python.org/3/library/os.path.html)
+- [Os.path module ja tiedostojärjestelmä - Real Python](https://realpython.com/python-pathlib/)

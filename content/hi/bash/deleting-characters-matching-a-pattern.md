@@ -1,7 +1,7 @@
 ---
-title:                "पैटर्न मैचिंग करें उतारना"
-html_title:           "Bash: पैटर्न मैचिंग करें उतारना"
-simple_title:         "पैटर्न मैचिंग करें उतारना"
+title:                "मिलते आदर्श समान वर्ण हटाना"
+html_title:           "Bash: मिलते आदर्श समान वर्ण हटाना"
+simple_title:         "मिलते आदर्श समान वर्ण हटाना"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Strings"
@@ -10,29 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Kyun
-Kisi bhi programming language mein, humein kabhi kabhi pattern matching ka use karna padta hai. Pattern matching se humein specific characters, words ya phrases ko identify aur manipulate karne mein madad milti hai. Bash mein, hum kisi bhi pattern se match karne wale characters ko delete kar sakte hain, jo humari coding process ko aur efficient aur error-free bana deta hai.
+नमस्ते दोस्तो! आज हम बात करेंगे बैश (वर्तमान संस्करण) प्रोग्रामिंग के बारे में। आपने संभवत: कभी न कभी इस भाषा का नाम सुना होगा और यदि आप कोडिंग के बारे में हैंगरी है , तो आपको निश्चित रूप से बाश की जानकारी होनी चाहिए। आप शायद इसे नायूटन की बाश से जोड़ सकते हैं, लेकिन यह कुछ नहीं है। यह प्यारे से हमले पैटर्न मिलान है।
 
-## Kaise Karein
-Kabhi kabhi humare Bash scripts mein kuch galat characters ki wajah se errors ya unwanted output aata hai. Is problem ko solve karne ke liye hum `sed` command ka use kar sakte hain. Ye command humein ek specified pattern ke match karne wale sabhi characters ko delete karne mein help karti hai. Neeche diye gaye code blocks mein hum dekhenge ki kaise hum `sed` command ka use karke kisi bhi pattern se match karne wale characters ko delete kar sakte hain.
+## क्या और क्यों?
+
+अगर आपने कभी टेक्स्ट फाइल को खोला होगा, तो आपने शायद कई बार अपने टेक्स्ट सर्च और रिप्लेस किए होंगे। डिलीट करने हम चाहते हैं कि पता छूटों के साथ अन्य सभी मैचिंग पैटर्न भी हटा दें। यह हमारे कोड में सुधार करने का एक अच्छा तरीका है।
+
+## कैसे करें:
+
+आइए एक सरल उदाहरण से शुरू करें। हमें कुछ मैचिंग खानों को हटाना होगा:
+
+ ```Bash
+ # टेक्स्ट फाइल से मैचिंग पैटर्न हटाएं
+sed 's/matching_pattern//g' filename.txt
+ ```
+
+यह कोड `matching_pattern` को फाइल से हटा देगा और उसकी जगह पर कोई अन्य कुछ नहीं लिखेगा। दरअसल, हमने सेड कमांड इस्तेमाल किया है जो टेक्स्ट फाइल को संपादित करता है।
 
 ```Bash
-# Sample input
-echo "Hello Worlld" 
-
-# Output without using sed
-Hello Worlld 
-
-# Output using sed
-echo "Hello Worlld" | sed 's/l//g'
-He Wodd
+# विभिन्न फ़ाइलों में मैचिंग पैटर्न हटाएं
+grep -lir 'matching_pattern' dir/* | xargs sed -i 's/matching_pattern//g'
 ```
 
-Jaise hum dekh sakte hain, `sed 's/l//g'` command se humne "l" character ko delete kar diya hai. Is tarah hum kisi bhi pattern se match karne wale characters ko delete kar sakte hain. Agar humein sirf ek particular character ko delete karna hai, to hum `%` ka use karke bhi kar sakte hain. Chaliye deep dive section mein hum aur details ke baare mein jaante hain.
+इस उदाहरण में हमने ग्रेप कमांड इस्तेमाल किया है, जो हमें `matching_pattern` से हमारी फाइल के नामों को ढूँढने में मदद करता है। इसके बाद, हमने एक्सआर्ग्स सेड कमांड का उपयोग किया है जो सभी मैचिंग पैटर्न को हटा देता है और फाइलों को संपादित करता है।
 
-## Khulasa
-Bash mein `sed` command ka use text manipulation ke liye bahut common hai. Is command mein, hum `-e` option ka use karke multiple commands ko bhi ek sath run kar sakte hain. Iske alawa, hum `sed` command se specific characters ko delete karne ke liye `[range]d` ya `%d` ka use kar sakte hain, jaha `[range]` humein specific line ya character range provide karta hai. Is command mein, humein `s/search/replace/` ka use pattern ko replace karne ke liye bhi kar sakte hain.
+## गहराई में:
 
-## See Also
-- [How To Use the sed Command](https://www.digitalocean.com/community/tutorials/how-to-use-the-sed-command)
-- [Bash Scripting Tutorial for Beginners](https://linuxconfig.org/bash-scripting-tutorial-for-beginners)
+अब जब हमने कोड को समझ लिया है, आइए हम थोड़ा विस्तार में इसके बारे में जानते हैं। बाश के अलावा अन्य भाषाओं में भी आप ऐसे काम कर सकते हैं, जैसे ग्रेप कमांड जो विशिष्ट पैटर्न को खोजता है और सेड कमांड जो तेलने तार सामान की स्थिति संपादित करता है।
+
+कुछ विशेष संदर्भों के लिए आप `man sed` और `man grep` कमांड का उपयोग कर सकते हैं। यहां आपको संबंधित स्रोतों के लिंक मिल स

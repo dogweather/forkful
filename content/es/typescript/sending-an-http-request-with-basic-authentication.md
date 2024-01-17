@@ -10,47 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+## Qué y Por qué?
+En TypeScript, enviar una solicitud HTTP con autenticación básica se refiere a incluir credenciales de usuario en el encabezado de la solicitud con el fin de acceder a un recurso protegido. Los programadores lo hacen para asegurar que solo los usuarios autorizados tengan acceso a ciertas funciones o datos en una aplicación web.
 
-Existen varias razones por las cuales uno podría necesitar enviar una solicitud HTTP con autenticación básica utilizando TypeScript. Una de las principales razones es para acceder a una API que requiere autenticación para proteger datos sensibles.
-
-## Cómo hacerlo
-
-Para enviar una solicitud HTTP con autenticación básica en TypeScript, utilizamos la clase `http` de Node.js y la función `request` para crear la solicitud. Primero, debemos importar estas clases en nuestro archivo.
+## Cómo hacerlo:
+Para enviar una solicitud HTTP con autenticación básica en TypeScript, podemos utilizar la librería 'axios'. Primero, importamos la librería y luego creamos un objeto de configuración con las credenciales del usuario. A continuación, hacemos la llamada a la solicitud y manejamos la respuesta en una función de retorno de llamada. Aquí hay un ejemplo de código:
 
 ```TypeScript
-import * as http from 'http';
-```
+import axios from ‘axios’;
 
-Luego, creamos un objeto con las opciones de nuestra solicitud, incluyendo la URL, el método y los encabezados de autenticación.
-
-```TypeScript
-const options = {
-    hostname: 'www.ejemplo.com',
-    path: '/datos',
-    method: 'GET',
-    auth: 'usuario:contraseña'
+const config = {
+  auth: {
+    username: 'user',
+    password: 'password'
+  }
 };
+axios.get('https://api.example.com/resource', config)
+  .then(response => {
+    console.log(response.data);
+  })
+  .catch(error => {
+    console.log(error);
+  });
 ```
 
-En este ejemplo, estamos utilizando el método GET y agregando nuestras credenciales en la propiedad `auth` en formato de usuario:contraseña. Luego, creamos nuestra solicitud HTTP utilizando la función `request` y pasando nuestras opciones como parámetros.
+La respuesta del servidor estará disponible en la propiedad `data` del objeto de respuesta.
 
-```TypeScript
-const solicitud = http.request(options, respuesta => {
-    // Aquí podemos manejar la respuesta de la solicitud
-});
+## Profundizando:
+La autenticación básica HTTP se basa en un estándar muy antiguo y ha sido reemplazada por métodos más seguros como OAuth y JSON Web Tokens. Sin embargo, sigue siendo ampliamente utilizada debido a su simplicidad. Es importante tener en cuenta que enviar credenciales de usuario en texto plano a través de una solicitud HTTP no es completamente seguro, ya que podrían ser interceptadas por un tercero. Por lo tanto, se debe considerar el uso de métodos de autenticación más seguros en aplicaciones que manejan información delicada.
 
-solicitud.end(); // Terminamos la solicitud
-```
-
-Finalmente, podemos enviar la solicitud utilizando el método `end()` y manejar la respuesta en la función de callback utilizando el objeto `respuesta`.
-
-## Profundizando
-
-Enviar una solicitud HTTP con autenticación básica es una forma común de proteger el acceso a una API. La autenticación básica utiliza un esquema de autenticación simple donde las credenciales se envían en texto plano a través de los encabezados de la solicitud. Sin embargo, debido a que las credenciales no están encriptadas, se considera una forma débil de autenticación y se debe utilizar en combinación con otras medidas de seguridad.
-
-## Ver también
-
-- [Manejo de solicitudes HTTP en TypeScript](https://www.ejemplo.com/manejo-solicitudes-http-typescript/)
-- [Documentación de la clase HTTP de Node.js](https://nodejs.org/api/http.html)
-- [Tutorial de autenticación básica con Node.js](https://www.ejemplo.com/autenticacion-basica-nodejs/)
+## Ver también:
+- Documentación oficial de la librería `axios`: https://axios-http.com/docs/intro
+- Artículo de MDN sobre la autenticación básica HTTP: https://developer.mozilla.org/es/docs/Web/HTTP/Basic_access_authentication

@@ -1,7 +1,7 @@
 ---
-title:                "Calcul d'une date dans le futur ou le passé"
-html_title:           "Python: Calcul d'une date dans le futur ou le passé"
-simple_title:         "Calcul d'une date dans le futur ou le passé"
+title:                "Calculer une date dans le futur ou le passé"
+html_title:           "Python: Calculer une date dans le futur ou le passé"
+simple_title:         "Calculer une date dans le futur ou le passé"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Dates and Times"
@@ -10,45 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
-Il peut arriver que l'on ait besoin de calculer une date dans le futur ou dans le passé pour diverses raisons. Peut-être que vous planifiez un événement ou que vous retracez l'historique d'une série d'événements.
+Calculer une date dans le futur ou le passé en Python
 
-## Comment faire
-Pour calculer une date dans le futur ou dans le passé en Python, on peut utiliser le module `datetime`. Voici un exemple de code pour calculer la date dans 100 jours à partir d'aujourd'hui :
+## Quoi & Pourquoi? 
+Calculer une date dans le futur ou le passé est une tâche courante en programmation, consistant à trouver une date en ajoutant ou soustrayant un certain nombre de jours, semaines, mois ou années à une date donnée. Les programmeurs utilisent cette fonctionnalité pour des raisons pratiques, telles que planifier des événements, gérer des tâches récurrentes ou effectuer des opérations dans des bases de données.
 
-```Python
-from datetime import datetime, timedelta
+## Comment faire :
+La bibliothèque standard de Python offre plusieurs modules pour manipuler les dates et les horaires, tels que `datetime` et `time`. Voici un exemple de code qui vous permettra de calculer une date dans le futur en ajoutant 10 jours à la date d'aujourd'hui :
 
-today = datetime.today()
-future_date = today + timedelta(days=100)
+```python
+from datetime import date, timedelta
 
-print("La date dans 100 jours sera :", future_date)
+aujourdhui = date.today()
+futur = aujourdhui + timedelta(days=10)
+print(futur)
 ```
 
-Cela affichera : `La date dans 100 jours sera : 2021-10-15 12:00:00`.
+La sortie de ce code sera la date dans 10 jours à partir d'aujourd'hui au format `YYYY-MM-DD`.
 
-Si vous souhaitez calculer une date dans le passé, il suffit de changer l'opérateur `+` en `-` dans le code ci-dessus. Par exemple, pour obtenir la date il y a 30 jours, il suffit d'utiliser `- timedelta(days=30)`.
+Vous pouvez également soustraire des jours en utilisant la même méthode, ou utiliser d'autres unités de temps telles que `weeks` (semaines), `months` (mois) ou `years` (années) pour obtenir une date dans le futur ou le passé.
 
-Il est également possible de spécifier la date à partir de laquelle calculer en utilisant la méthode `strptime()` de l'objet `datetime`. Voici un exemple :
+## Plongée en profondeur :
+L'utilisation des dates dans les langages de programmation a évolué au fil du temps, des formats plus simples tels que les nombres de jours depuis une date de référence, jusqu'aux formats plus complexes et flexibles comme dans Python. D'autres bibliothèques tierces offrent également des fonctionnalités de manipulation des dates, telles que `python-dateutil`.
 
-```Python
-from datetime import datetime, timedelta
+Si vous n'utilisez pas Python, d'autres langages de programmation offrent des moyens similaires de calculer des dates dans le futur ou le passé. Par exemple, en JavaScript, vous pouvez utiliser la méthode `setDate()` pour modifier une date existante.
 
-date = datetime.strptime("2021-08-30", "%Y-%m-%d")
-past_date = date - timedelta(days=15)
-
-print("La date il y a 15 jours était :", past_date)
-```
-
-Cela affichera : `La date il y a 15 jours était : 2021-08-15 00:00:00`.
-
-## Approfondissement
-Le module `datetime` offre de nombreuses méthodes utiles pour manipuler et calculer des dates. Par exemple, la méthode `strftime()` permet de formater une date en une chaîne de caractères selon un modèle spécifié.
-
-Il est également possible de calculer des dates en utilisant d'autres mesures de temps, par exemple des heures ou des minutes, en utilisant les arguments `hours` ou `minutes` dans la méthode `timedelta()`.
-
-Pour plus d'informations sur le module `datetime` et ses fonctions, vous pouvez consulter la documentation officielle de Python.
-
-## Voir aussi
-- [Documentation officielle de Python sur le module datetime](https://docs.python.org/fr/3/library/datetime.html)
-- [Calculer des dates avec Python (en anglais)](https://realpython.com/python-datetime/)
+## Voir aussi :
+- [Documentation officielle de Python pour la manipulation des dates et horaires](https://docs.python.org/fr/3/library/datetime.html)
+- [Module python-dateutil](https://dateutil.readthedocs.io/en/stable/)
+- [Documentation JavaScript pour les objets Date](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Date)

@@ -10,38 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was & Warum?
+Das Drucken von Debug-Ausgaben ist ein Prozess, bei dem Programmierer zusätzlichen Code in ihre Anwendung einfügen, um bestimmte Variablen oder Funktionen während der Ausführung anzuzeigen. Dies kann hilfreich sein, um Fehler oder Probleme in einem Programm zu identifizieren und zu beheben.
 
-Debug-Ausgaben sind ein wichtiges Werkzeug für Programmierer, um Fehler in ihrem Code zu finden und zu beheben. Sie ermöglichen es uns, den genauen Ablauf einer Funktion oder Methode zu verfolgen und zu überprüfen, ob die erwarteten Werte zurückgegeben werden. Durch das Drucken von Debug-Ausgaben können wir effizienter und schneller Probleme in unserem Code lösen.
+## Wie geht's:
+Um Debug-Ausgaben in Elixir zu drucken, verwenden wir die Funktion `IO.inspect`. Dies erlaubt uns, eine beliebige Variable oder Funktion als Argument zu übergeben, die dann ausgegeben wird. Zum Beispiel:
 
-## Wie geht's
-
-Um Debug-Ausgaben in Elixir zu drucken, verwenden wir die Funktion `IO.inspect`. Diese Funktion nimmt einen beliebigen Ausdruck als Argument und gibt ihn in der Konsole aus. Wir können `IO.inspect` in unsere Funktionen oder Methoden einfügen, um zu überprüfen, welche Werte an bestimmten Stellen im Code vorhanden sind.
-
-Hier ist ein Beispiel, wie wir `IO.inspect` verwenden können:
-
-```elixir
-defp add_numbers(a, b) do
-  result = a + b
-  IO.inspect("The result is: #{result}")
-  result
-end
-
-add_numbers(2, 3)
+```Elixir
+a = 5
+IO.inspect(a)
 ```
 
-Der obige Code gibt `The result is: 5` in der Konsole aus. Auf diese Weise können wir überprüfen, ob unsere Funktion das erwartete Ergebnis zurückgibt.
+Dieser Code würde die Zahl 5 in der Konsole ausgeben. Wir können auch mehrere Argumente an `IO.inspect` übergeben, indem wir sie einfach mit Kommas trennen:
 
-Eine andere nützliche Funktion für Debugging-Zwecke ist `IO.puts`. Diese Funktion gibt einen String in der Konsole aus und fügt automatisch eine Zeilenumbruch am Ende hinzu. Wir können `IO.puts` ebenfalls verwenden, um informative Nachrichten in unseren Ausgaben hinzuzufügen.
+```Elixir
+IO.inspect(a, "Der Wert von A ist:")
+```
 
-## Tiefer tauchen
+Dies würde die Nachricht "Der Wert von A ist: 5" ausgeben.
 
-Es gibt noch ein paar weitere Funktionen, die wir für Debug-Ausgaben in Elixir verwenden können, wie zum Beispiel `IO.inspect` mit der Option `:label`, um unsere Ausgaben zu beschriften, oder `IO.inspect` mit der Option `:skip_io`, um das Drucken auf der Konsole zu überspringen und stattdessen den Wert zurückzugeben.
+## Tiefentauchen:
+Das Drucken von Debug-Ausgaben ist eine gemeinsame Praxis, die von Programmierern verwendet wird, um Probleme in ihrem Code zu diagnostizieren. Es ist oft eine einfachere und effektivere Methode als das klassische Debugging mit Breakpoints. Alternativ können Programmierer auch spezielle Debugging-Tools wie den Visual Studio Code Debugger oder den Elixir Debugging Tracer verwenden. Die `IO.inspect` Funktion ist ein eingebauter Teil der Elixir-Sprache, was bedeutet, dass sie immer verfügbar ist und keine zusätzlichen Abhängigkeiten erfordert.
 
-Es ist auch möglich, ausgefeiltere Debugging-Techniken in Elixir anzuwenden, wie z.B. die Verwendung von Libs wie [IEx](https://hexdocs.pm/iex/IEx.html), die es uns ermöglicht, in einer interaktiven Umgebung zu debuggen.
-
-## Siehe auch
-
-- [Elixir Dokumentation - IO.inspect](https://hexdocs.pm/elixir/IO.html#inspect/2)
-- [Elixir Dokumentation - IO.puts](https://hexdocs.pm/elixir/IO.html#puts/1)
-- [IEx Dokumentation](https://hexdocs.pm/iex/overview.html)
+## Siehe auch:
+Offizielle Elixir Dokumentation zu `IO.inspect`: https://hexdocs.pm/elixir/IO.html#inspect/2
+Ein Tutorial zur Verwendung von `IO.inspect`: https://elixirschool.com/lessons/advanced/io-inspect/

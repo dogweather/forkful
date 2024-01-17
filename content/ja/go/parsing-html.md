@@ -1,7 +1,7 @@
 ---
-title:                "HTMLの解析"
-html_title:           "Go: HTMLの解析"
-simple_title:         "HTMLの解析"
+title:                "「HTMLの解析」"
+html_title:           "Go: 「HTMLの解析」"
+simple_title:         "「HTMLの解析」"
 programming_language: "Go"
 category:             "Go"
 tag:                  "HTML and the Web"
@@ -10,74 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+## 何＆なぜ？
 
-HTML のパースを行うのか？
-アプリケーションでウェブサイトにアクセスしデータを取得する際に、HTML を解析して必要な情報を抽出する必要があります。Go はそのようなタスクに最適な言語であり、効率的かつ簡潔なコードを書くことができます。
+HTMLのパースとは、webページの構造や内容を読み取ることです。プログラマーがHTMLをパースする理由は、webスクレイピングやデータの収集、webクローラーの作成など様々です。
 
-## 手順
+## 方法：
 
 ```Go
 func main() {
-    // ウェブサイトからデータを取得するためのリクエストを作成
-    res, err := http.Get("https://example.com")
-
-    // エラー処理
+    // HTMLのパース方法
+    var doc *html.Node
+    resp, err := http.Get("https://example.com")
     if err != nil {
-        log.Fatal(err)
+        // HTTPリクエストが失敗した場合の処理
     }
-
-    // レスポンスの Body を読み取る
-    defer res.Body.Close()
-    body, err := ioutil.ReadAll(res.Body)
-
-    // エラー処理
+    // HTTPレスポンスのBodyをクローズ
+    defer resp.Body.Close()
+    doc, err = html.Parse(resp.Body)
     if err != nil {
-        log.Fatal(err)
+        // HTMLのパースが失敗した場合の処理
     }
-
-    // HTML をパースする
-    doc, err := html.Parse(strings.NewReader(string(body)))
-
-    // エラー処理
-    if err != nil {
-        log.Fatal(err)
-    }
-
-    // マッチするタグを抽出する
-    match := getElementsByTag(doc, "h1")[0] // h1 タグの最初の要素を抽出
-    fmt.Println(match.FirstChild.Data)     // h1 タグのテキストを出力
-}
-
-// 指定されたタグの要素を取得する
-func getElementsByTag(n *html.Node, tag string) []*html.Node {
-    var elements []*html.Node
-
-    // 子ノードをループして指定されたタグの要素を抽出する
-    for c := n.FirstChild; c != nil; c = c.NextSibling {
-        if c.Type == html.ElementNode && c.Data == tag {
-            elements = append(elements, c)
-        }
-        elements = append(elements, getElementsByTag(c, tag)...)
-    }
-
-    return elements
+    // パースしたHTMLを取得する
+    fmt.Println(doc)
 }
 ```
 
-出力:
+出力：
+
+```Go
+<body>
+    <h1>This is an example page</h1>
+    <p>Example paragraph.</p>
+</body>
 ```
-Hello, world!
-```
 
-## ディープダイブ
+## 深堀り：
 
-Go 言語では、`html` パッケージを使用して HTML をパースします。このパッケージには、HTML ドキュメントをノードツリーに変換する `html.Parse` 関数があります。そして、ノードツリーを操作することで、特定の要素や属性を取得することができます。
+HTMLのパースは、1993年に発明されたプログラミング言語である、メタラボ社のSGMLに基づいているXMLから派生したものです。Go言語では、標準ライブラリの"golang.org/x/net/html"パッケージを使用することでHTMLをパースすることができます。他の代替手段としては、サードパーティ製のライブラリやフレームワークを使用することもできます。
 
-また、`golang.org/x/net/html` パッケージを使用することで、HTML をより柔軟にパースすることができます。このパッケージには、CSS セレクタを使用した要素の抽出や、HTML ドキュメントのシリアライズなどの機能があります。
+## 関連リンク：
 
-## See Also
-
-- [Effective Go](https://golang.org/doc/effective_go.html)
-- [html パッケージ](https://golang.org/pkg/html/)
-- [golang.org/x/net/html パッケージ](https://godoc.org/golang.org/x/net/html)
+- [Golang.org/x/net/htmlパッケージドキュメント](https://pkg.go.dev/golang.org/x/net/html)
+- [Go言語ドキュメント](https://golang.org/doc/)

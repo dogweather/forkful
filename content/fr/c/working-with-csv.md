@@ -1,7 +1,7 @@
 ---
-title:                "Travailler avec des fichiers csv"
-html_title:           "C: Travailler avec des fichiers csv"
-simple_title:         "Travailler avec des fichiers csv"
+title:                "Travailler avec des fichiers CSV"
+html_title:           "C: Travailler avec des fichiers CSV"
+simple_title:         "Travailler avec des fichiers CSV"
 programming_language: "C"
 category:             "C"
 tag:                  "Data Formats and Serialization"
@@ -10,120 +10,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+# Quoi et Pourquoi?
+CSV (Comma-Separated Values) est un format de fichier couramment utilisÃ© pour stocker et Ã©changer des donnÃ©es tabulaires. Les programmeurs utilisent souvent CSV pour importer et exporter des donnÃ©es Ã partir de bases de donnÃ©es, de feuilles de calcul et d'autres applications. CSV est un format simple et universellement pris en charge, ce qui le rend idÃ©al pour la manipulation de donnÃ©es dans diverses applications de programmation.
 
-Vous vous demandez peut-être pourquoi vous devriez vous intéresser au CSV en tant que programmeur en C. Eh bien, le CSV (Comma Separated Values) est un format de fichier couramment utilisé pour stocker des données tabulaires telles que des feuilles de calcul. Maîtriser le CSV dans votre code C vous permettra de manipuler facilement et efficacement les données tabulaires.
-
-## Comment faire
-
-Le CSV peut être facilement manipulé en utilisant des fonctions de la bibliothèque standard de C telles que `fopen()` pour ouvrir un fichier CSV, `fscanf()` pour lire les données et `fclose()` pour fermer le fichier. Voici un exemple de code pour lire un fichier CSV et afficher les données:
+# Comment faire:
+Voici un exemple de code en C pour lire et afficher les donnÃ©es d'un fichier CSV:
 
 ```C
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
-int main() {
-    // Ouvrir le fichier CSV
-    FILE* fichier = fopen("donnees.csv", "r");
+int main(void) {
+    // Ouvrir le fichier CSV en mode lecture
+    FILE* fichier_csv = fopen("donnees.csv", "r");
 
-    // Créer des variables pour stocker les données lues
-    int age;
-    char nom[20];
-
-    // Lire les données du fichier CSV
-    fscanf(fichier, "%d,%s", &age, nom);
-
-    // Afficher les données lues
-    printf("Nom: %s\nAge: %d ans", nom, age);
-
-    // Fermer le fichier CSV
-    fclose(fichier);
-
-    return 0;
-}
-```
-
-### Output:
-
-```
-Nom: Jean
-Age: 25 ans
-```
-
-Vous pouvez également utiliser les fonctions `fprintf()` et `fputc()` pour écrire des données dans un fichier CSV. Voici un exemple de code pour écrire des données dans un fichier CSV:
-
-```C
-#include <stdio.h>
-
-int main() {
-    // Ouvrir le fichier CSV en mode écriture
-    FILE* fichier = fopen("nouvelles_donnees.csv", "w");
-
-    // Ecrire des données dans le fichier au format CSV
-    int age = 25;
-    char nom[20] = "Marie";
-    fprintf(fichier, "%d,%s", age, nom);
-
-    // Fermer le fichier CSV
-    fclose(fichier);
-
-    return 0;
-}
-```
-
-### Output (dans le fichier nouvelles_donnees.csv):
-
-```
-25,Marie
-```
-
-## Plongée en profondeur
-
-Si vous souhaitez travailler avec des fichiers CSV plus complexes, vous pouvez également utiliser la bibliothèque `libcsv` qui offre des fonctions avancées pour la manipulation de données CSV. Vous pouvez l'installer en utilisant `apt-get` ou `yum` selon votre distribution Linux.
-
-Voici un exemple de code pour lire un fichier CSV avec `libcsv`:
-
-```C
-#include <stdio.h>
-#include <csv.h>
-
-int main() {
-    // Ouvrir le fichier CSV
-    FILE* fichier = fopen("donnees.csv", "r");
-
-    // Initialiser la structure de données CSV
-    csv_parser* parser = csv_init(CSV_COL_DELIM, CSV_QUOTE_NONE, 0, NULL);
-
-    // Lire les données du fichier CSV
-    csv_parse_file(parser, fichier, NULL, 0, NULL, NULL, NULL);
-
-    // Afficher les données lues
-    int row_count = csv_get_row_count(parser);
-    int column_count = csv_get_col_count(parser);
-    for (int i = 0; i < row_count; i++) {
-        for (int j = 0; j < column_count; j++) {
-            printf("%s ", csv_get_cell_content(parser, i, j));
+    // Lire et afficher chaque ligne du fichier
+    char ligne[100];
+    while (fgets(ligne, 100, fichier_csv) != NULL) {
+        // SÃ©parer les donnÃ©es en utilisant la virgule comme dÃ©limiteur
+        char* donnees = strtok(ligne, ",");
+        while (donnees != NULL) {
+            printf("%s ", donnees);
+            donnees = strtok(NULL, ",");
         }
         printf("\n");
     }
 
-    // Libérer la mémoire et fermer le fichier CSV
-    csv_free(parser);
-    fclose(fichier);
+    // Fermer le fichier
+    fclose(fichier_csv);
 
     return 0;
 }
 ```
 
-### Output:
-
+Voici un exemple de donnÃ©es CSV dans le fichier "donnees.csv":
 ```
-Nom Age
-Jean 25
-Marie 30
+nom,prenom,age,ville
+Dupont,Paul,25,Paris
+Martin,Marie,30,Lyon
 ```
 
-Voir aussi
+Et voici la sortie correspondante du programme:
+```
+nom prenom age ville
+Dupont Paul 25 Paris
+Martin Marie 30 Lyon
+```
 
-- [Documentation de la bibliothèque libcsv](https://www.systutorials.com/docs/linux/man/3-csv_init/)
-- [Tutoriel sur le traitement de fichiers CSV en C](https://www.thinkprogramming.co.uk/c-tutorial-processing-csv-files/)
+# Le bain Ã  remous:
+CSV a Ã©tÃ© crÃ©Ã© dans les annÃ©es 1970 par des sociÃ©tÃ©s informatiques pour faciliter l'Ã©change de donnÃ©es entre diffÃ©rents systÃ¨mes. Il est Ã©galement souvent utilisÃ© pour migrer des donnÃ©es vers de nouveaux systÃ¨mes ou pour des opÃ©rations de sauvegarde. Bien qu'il soit souvent utilisÃ© pour une manipulation simple de donnÃ©es, il existe des bibliothÃ¨ques et des outils plus avancÃ©s pour manipuler les donnÃ©es CSV, tels que "libcsv" et "csvkit".
+
+# Voir aussi:
 - [Le format CSV sur Wikipedia](https://fr.wikipedia.org/wiki/Comma-separated_values)
+- [Documentation sur les fonctions de manipulation de chaÃ®nes en C](https://www.tutorialspoint.com/c_standard_library/string_h.htm)
+- [Libcsv: une bibliothÃ¨que en C pour la manipulation de CSV](https://github.com/aclements/libcsv)
+- [Csvkit: une suite d'outils en ligne de commande pour travailler avec les donnÃ©es CSV](https://csvkit.readthedocs.io/en/latest/)

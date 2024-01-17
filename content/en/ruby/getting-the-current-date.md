@@ -10,48 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
+Getting the current date is a common task in programming that involves retrieving the current date and time from the system. Programmers may need to do this for a variety of reasons, such as timestamping events, calculating time differences, or displaying the current date and time to the user.
 
-Getting the current date is a common task in programming and can be useful for various purposes such as timestamping events or scheduling tasks.
-
-## How To
-
-To get the current date in Ruby, we can use the `Date` and `Time` classes. First, let's require these classes in our code:
+## How to:
+To get the current date in Ruby, we can use the built-in `Time` class. Here's an example code for getting the current date and time:
 
 ```Ruby
-require 'date'
-require 'time'
+current_date = Time.now
+puts current_date
 ```
 
-### Using Date Class
+This will output the current date and time in the format `YYYY-MM-DD HH:MM:SS +TZ`, where TZ is the system's timezone. For example, `2021-05-14 12:30:00 +0800`.
 
-We can use the `Date` class to get the current date in various formats. Let's look at a few examples:
+If you only need to get the current date without the time, you can use the `Date` class instead. Here's an example code:
 
 ```Ruby
-# Get current date in YYYY-MM-DD format
-Date.today.to_s # => 2021-06-07 
-
-# Get current date in DD/MM/YYYY format
-Date.today.strftime("%d/%m/%Y") # => 07/06/2021 
-
-# Get current date in a custom format
-Date.today.strftime("%B %d, %Y") # => June 07, 2021
+current_date = Date.today
+puts current_date
 ```
 
-### Using Time Class
+This will output the current date in the format `YYYY-MM-DD`, without any time or timezone information.
 
-The `Time` class can also be used to get the current date and time. Let's see an example:
+## Deep Dive:
+Ruby has built-in libraries for working with dates and times, such as `Time`, `Date`, and `DateTime`. These classes provide various methods for manipulating and formatting date and time objects.
 
-```Ruby
-# Get current date and time in ISO 8601 format
-Time.now.iso8601 # => 2021-06-07T12:42:10+05:30
-```
+Before Ruby 1.9, developers had to use the `DateTime` class to work with time zones. However, the introduction of the `Time` class in Ruby 1.9 made it easier to handle time information, including time zones.
 
-## Deep Dive
+Aside from the built-in classes, there are also third-party gems available for more advanced date and time manipulations, such as `Chronic` and `ActiveSupport`.
 
-The `Date` and `Time` classes provide various methods for manipulating and formatting dates and times. To learn more about these classes and their methods, check out the official Ruby documentation for [Date](https://ruby-doc.org/stdlib-3.0.1/libdoc/date/rdoc/index.html) and [Time](https://ruby-doc.org/stdlib-3.0.1/libdoc/time/rdoc/index.html).
-
-## See Also
-
-- [Date Class Documentation](https://ruby-doc.org/stdlib-3.0.1/libdoc/date/rdoc/index.html)
-- [Time Class Documentation](https://ruby-doc.org/stdlib-3.0.1/libdoc/time/rdoc/index.html)
+## See Also:
+- [Ruby Time Class Documentation](https://ruby-doc.org/core-3.0.1/Time.html)
+- [Ruby Date Class Documentation](https://ruby-doc.org/stdlib-3.0.1/libdoc/date/rdoc/Date.html)
+- [Chronic Gem](https://github.com/mojombo/chronic)
+- [ActiveSupport Time Extension](https://api.rubyonrails.org/classes/ActiveSupport/TimeWithZone.html)

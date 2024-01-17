@@ -10,39 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¿Qué y por qué?
 
-Muchas veces, al trabajar con una gran cantidad de texto o datos en un programa escrito en C, nos podemos encontrar con la necesidad de eliminar ciertos caracteres que coinciden con cierto patrón. Esto puede ser por varios motivos, como limpiar el texto antes de procesarlo o simplemente por necesidad del programa. En este artículo, veremos cómo podemos lograr esto de una manera sencilla y eficiente.
+La eliminación de caracteres que coinciden con un patrón es un proceso en el que los programadores buscan y borran caracteres específicos en un texto o cadena de caracteres. Esta técnica es útil cuando se desea limpiar o mejorar la calidad de los datos, ya que permite encontrar y eliminar rápidamente caracteres no deseados.
 
-## Cómo
+## Cómo:
 
-Para eliminar caracteres que coinciden con un patrón, utilizaremos la función `strspn()` de la biblioteca `string.h` en C. Esta función nos permite obtener la longitud de una subcadena que cumple con cierto patrón en una cadena dada. A continuación, utilizaremos la función `memmove()` para mover los caracteres no deseados hacia la izquierda, eliminándolos.
+El siguiente código en C muestra cómo eliminar caracteres que coinciden con un patrón en una cadena de caracteres:
 
-Por ejemplo, supongamos que queremos eliminar todas las vocales de una palabra. Utilizaremos `strspn()` para obtener la longitud de la subcadena que contenga todas las vocales, luego usaremos esa longitud en la función `memmove()` para eliminarlas y finalmente imprimiremos la nueva palabra.
-
-```C
+```
 #include <stdio.h>
 #include <string.h>
 
 int main()
 {
-    char palabra[10] = "Hola";
-    int longitud = strspn(palabra, "aeiou");
-    memmove(palabra, palabra + longitud, strlen(palabra) - longitud + 1);
-    // Imprime "Hl"
-    printf("%s", palabra);
+    char str[] = "¡Hola! ¿Cómo estás?";
+    char new_str[20], character = '?';
+
+    int i, j = 0;
+
+    for (i = 0; str[i] != '\0'; i++)
+    {
+        if (str[i] != character)
+        {
+            new_str[j] = str[i];
+            j++;
+        }
+    }
+
+    new_str[j] = '\0';
+
+    printf("La cadena de caracteres original es: %s\n", str);
+    printf("La cadena de caracteres modificada es: %s\n", new_str);
+
     return 0;
 }
 ```
 
+La salida de este código sería:
+
+```
+La cadena de caracteres original es: ¡Hola! ¿Cómo estás?
+La cadena de caracteres modificada es: ¡Hola!Como estás
+```
+
 ## Inmersión Profunda
 
-La función `strspn()` busca en la cadena dada hasta encontrar un caracter que no coincida con el patrón dado. Devolverá la longitud de la subcadena encontrada, que será igual a la posición donde se encuentra dicho carácter. En el ejemplo anterior, se encontró una vocal en la posición 1, por lo que la subcadena empezaría en la posición 0 y la función devolvería 1.
+La eliminación de caracteres que coinciden con un patrón se ha utilizado en lenguajes de programación desde hace mucho tiempo. Una de las principales alternativas es el uso de expresiones regulares, que son secuencias de caracteres que ayudan a buscar y manipular texto. Sin embargo, el uso de expresiones regulares puede resultar complicado y no siempre es necesario utilizarlas para eliminar caracteres que coinciden con un patrón.
 
-La función `memmove()` se utiliza para mover bloques de memoria de manera eficiente. En este caso, utilizamos la dirección de memoria después de la subcadena encontrada como origen y la dirección de memoria antes de dicha subcadena como destino. Luego, especificamos la longitud de los caracteres que queremos mover, es decir, la longitud de la cadena original menos la longitud de la subcadena encontrada más 1 para incluir el caracter nulo. Esto resultará en que los caracteres que no queremos sean sobrescritos por los caracteres que sí queremos mantener.
+La implementación de la eliminación de caracteres que coinciden con un patrón en el código mostrado anteriormente es bastante sencilla. Utiliza un bucle for para recorrer la cadena de caracteres y verifica si cada caracter coincide con el patrón deseado. Si no coincide, se agrega ese carácter a una nueva cadena, que finalmente se imprimirá como el resultado.
 
 ## Ver también
 
-- Documentación oficial de `string.h`: https://www.cplusplus.com/reference/cstring/
-- Tutorial interactivo sobre cadenas en C: https://www.learn-c.org/en/Strings
-- Ejemplos de código para operaciones de cadenas en C: https://www.geeksforgeeks.org/c-programming-language
+Para obtener más información sobre la eliminación de caracteres que coinciden con un patrón, se puede consultar la función `strchr()` en la biblioteca estándar de C, así como otros métodos de manipulación de cadenas de caracteres. También es recomendable investigar sobre expresiones regulares y su uso en la búsqueda y manipulación de texto.

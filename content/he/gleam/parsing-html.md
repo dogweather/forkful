@@ -1,7 +1,7 @@
 ---
-title:                "ניתוח html"
-html_title:           "Gleam: ניתוח html"
-simple_title:         "ניתוח html"
+title:                "ניתוח שפת התכנות של האתרים HTML."
+html_title:           "Gleam: ניתוח שפת התכנות של האתרים HTML."
+simple_title:         "ניתוח שפת התכנות של האתרים HTML."
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "HTML and the Web"
@@ -10,40 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# מדוע
-אנו תמיד מגלים מידע חדש באינטרנט, וכאשר מתגוררים ליצור אפליקציות או אתרים, זה חשוב להבין ולהציג את המידע הנדרש בצורה ארגונית. לכן, לדעת איך לצרף תגי HTML יכול להיות מועיל מאוד עבור מפתחי אתרי אינטרנט ואפליקציות.
+## מה ולמה?
+פרצות קוד HTML הן קלות לקריאה עבורנו, אבל עבור מחשבים, הן לא כך פשוטות. חלק מתיקוני התקלות באפליקציות נמצאים באופן בו נרצה לפרק את קוד ה-HTML לאלמנטים נפרדים כדי לוודא שהוא תקין ונכון למטרת המשתמש. תכנות HTML יכול להסייע לנו לזהות ולתקן בעיות באפליקציות ומערכות.
 
-## איך לעשות זאת
-קוד Gleam נועד לעזור לך להפעיל תהליך זה בצורה יעילה ופשוטה. כאן נמצא דוגמאות של כיצד לצרף תגי HTML באמצעות קוד Gleam.
-
-```Gleam
-import gleam/http
-import gleam/html/parser as parser
-
-pub fn parse_html(body: http.ResponseBody) {
-    let doc = parser.parse(body)
-    let title = doc % "title" |> parser.text
-    let links = doc %% "a" |> parser.attr("href")
-    let images = doc %% "img" |> parser.attr("src")
-    let paragraphs = doc %% "p" |> parser.text
-}
-```
-
-### הפלט הצפוי:
+## איך לעשות זאת:
+כדי לבצע פרשנות של HTML בקוד, אנו ניצור משתנה מסוג רשימה ונשתמש בפונקציות כמו `parse_html` ו- `get_elements` כדי לפרש את הקוד ליחידי HTML ולתקן אותם אם נדרש. אם נרצה להדפיס הודעה שתוכל להכיל קוד HTML מעוצב, נוכל להשתמש בפונקציה `format_html` כדי להפוך את הבלוק שלנו לקוד נכון.
 
 ```Gleam
-title: "כותרת האתר"
-links: ["/about", "/contact", "/services"]
-images: ["/image1.jpg", "/image2.jpg", "/image3.jpg"]
-paragraphs: ["פרטים בנוגע לאתר", "כל הפרטים על הכתובת שלנו", "השירותים שאנו מציעים"]
+let html = "<strong>Hello, world!</strong>"
+get_elements(html)
 ```
 
-## Deep Dive
-כאשר משתמשים בקוד Gleam לצרף תגי HTML, כדאי לקחת בחשבון הבאים:
-- יש לוודא שהתגייה היא חוקית ותואם ל-Standards הנכונים.
-- ניתן לצרף את התגיות בכל מספר תוך כדי מציאת פרטי התוכן הטקסטואלי שלהם.
-- יש לשמור את הקוד שגוף (body) עבור כל תגית יחידה.
+הפלט של הקוד הבא יחזיר לנו את התוצאה הבאה:
 
-## ראה גם
-- [מדריך על השתמשות קוד Gleam לצרף תגי XML](https://gleam.run/documentation/guide/using-xml-code-gleam/)
-- [דוגמאות על מנת להתחיל בשימוש קוד Gleam לתחילת דרך](https://gleam.run/documentation/getting-started/examples/)
+```Gleam
+[ Element("strong", [], [ Text("Hello, world!") ]) ]
+```
+
+## לקח נעמוך:
+תכנות HTML התחיל כהשראת פרשנות הסימנים של מקדונלד כלן בתחילת שנות ה־60 כדי לסייע לסצנת מופע ואומנות להוריד את עמס העבודה בהנגשה עבור כולם. עבור תכניות אמיתיות, פרשנות HTML היא פעמים רבות כלי חשוב כדי להבין את התכנית המלאה שכתובה הקשורה לנראות של הדפדפן או האפליקציה המנדטית יתר על מה שמדוע נכתב כך.
+
+פרשנות תחבורה מעצבת ביד חשובה בפעילות תוכניות-א ותמכות תגיות אקסטראנים משחקים. אם חייבים B4 גם סנן, D4 נרתק להחלפת פעולות פחמימים ו Shard בפרטי רהוט,הכל גם זה באמצעות as릭.mixer/Jakase.haml.קורה במשתמשים יותר ויותר? לאט לאט, כי זה חשוב לתופס הלחם הגבוה הנלמד במרכז לווינג, למשל. שפה HTML נרתק באיטלה Un-כיום רפאת שפוחז מעיל לסקריפט לאקראיות (CSS), אשר מספקים נועזותsolution
+לפזמונאיות בתאריך היום.
+
+
+## ראה גם:
+- [Gleam HTML אתר שמע בניר ](https://gleam.run/news/html-the-highway-to-full-stack-development/)
+- [תיעוד ה-Torrent API של דקתהל](https://gleam.run/news/meta.html)

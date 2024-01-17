@@ -1,7 +1,7 @@
 ---
-title:                "Envoyer une demande http"
-html_title:           "TypeScript: Envoyer une demande http"
-simple_title:         "Envoyer une demande http"
+title:                "L'envoi d'une demande http"
+html_title:           "TypeScript: L'envoi d'une demande http"
+simple_title:         "L'envoi d'une demande http"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "HTML and the Web"
@@ -10,51 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+# Qu'est-ce que c'est et pourquoi on le fait?
 
-Il est souvent nécessaire pour les développeurs de communiquer avec un serveur à distance pour obtenir des données ou effectuer des actions au sein de leur application. Pour cela, il est essentiel de comprendre comment envoyer une requête HTTP en utilisant TypeScript.
+L'envoi d'une requête HTTP est une manière pour les programmeurs de communiquer avec un serveur Web. Cela leur permet d'obtenir des données ou d'envoyer des informations à un site Web.
 
-## Comment faire
+# Comment faire:
 
-Tout d'abord, il est important de noter que TypeScript peut être utilisé pour écrire des applications côté client et côté serveur. Pour envoyer une requête HTTP côté client, nous allons utiliser la bibliothèque axios qui permet de gérer les requêtes HTTP de manière simple et efficace.
+Voici comment on peut envoyer une requête HTTP en utilisant TypeScript :
 
-Nous pouvons commencer par installer axios dans notre projet à l'aide du gestionnaire de paquets npm en utilisant la commande suivante :
-
-```
-npm install axios
-```
-
-Ensuite, nous pouvons importer axios dans notre fichier TypeScript en utilisant la syntaxe suivante :
-
-```
-import axios from 'axios';
+```TypeScript
+const request = await fetch('https://www.mon-site-web.com/api/donnees'); 
+const data = await request.json(); 
+console.log(data); 
 ```
 
-Pour envoyer une requête GET en utilisant axios, nous pouvons utiliser la méthode `get()` en spécifiant l'URL de destination et en stockant la réponse dans une variable :
+Dans cet exemple, nous utilisons la fonction `fetch` pour envoyer une requête à l'URL spécifiée. Nous attendons ensuite que la réponse soit reçue et nous la convertissons en JSON pour pouvoir l'utiliser dans notre code. Enfin, nous affichons les données dans la console.
 
-```
-const response = await axios.get('https://exemple.com/donnees');
-```
+# Plongée en profondeur:
 
-Nous pouvons également spécifier des paramètres supplémentaires dans la requête, tels que des en-têtes ou des données à envoyer. Par exemple, pour envoyer une requête POST avec des données JSON, nous pouvons utiliser la méthode `post()` en spécifiant l'URL de destination et les données à envoyer :
+Les requêtes HTTP existent depuis longtemps et sont essentielles pour la communication entre les clients et les serveurs Web. Cependant, TypeScript offre une syntaxe plus facile à utiliser pour envoyer des requêtes que JavaScript.
 
-```
-const response = await axios.post('https://exemple.com/action', {
-  nom: 'Jean',
-  age: 25,
-});
-```
+Il existe également d'autres façons d'envoyer des requêtes HTTP en JavaScript, telles que l'utilisation de la bibliothèque Axios ou d'outils de développement tels que Postman.
 
-Une fois la requête envoyée, nous pouvons accéder à la réponse dans la variable `response` en utilisant des méthodes telles que `data` pour accéder aux données renvoyées par le serveur.
+L'implémentation détaillée de l'envoi d'une requête HTTP en TypeScript varie selon l'outil utilisé, mais en général, il s'agit de spécifier l'URL de la requête, les paramètres et les en-têtes nécessaires, ainsi que le type de méthode utilisée (GET, POST, etc.).
 
-## Plongée en profondeur
+# Voir aussi:
 
-Lors de l'envoi d'une requête HTTP en utilisant TypeScript, il est important de comprendre les différents verbes HTTP tels que GET, POST, PUT, DELETE et comment ils sont utilisés dans les différentes situations. Il est également essentiel de gérer les erreurs de manière appropriée en utilisant des blocs try/catch et en manipulant les codes d'état renvoyés par le serveur.
+Vous pouvez en apprendre plus sur l'envoi de requêtes HTTP en TypeScript en consultant la documentation officielle de TypeScript : https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-7.html.
 
-Il est également possible d'utiliser TypeScript pour écrire des serveurs et envoyer des requêtes HTTP vers d'autres serveurs. Pour cela, nous pouvons utiliser des bibliothèques telles que `http` ou `express` pour gérer les routes et les réponses aux requêtes.
-
-## Voir aussi
-
-- Documentation officielle d'axios : [https://axios-http.com/](https://axios-http.com/)
-- Tutoriel sur l'utilisation de TypeScript avec axios : [https://www.digitalocean.com/community/tutorials/how-to-use-axios-with-typescript](https://www.digitalocean.com/community/tutorials/how-to-use-axios-with-typescript)
-- Documentation sur les verbes HTTP : [https://developer.mozilla.org/fr/docs/Web/HTTP/Methods](https://developer.mozilla.org/fr/docs/Web/HTTP/Methods)
+Si vous souhaitez en savoir plus sur les différentes façons d'envoyer des requêtes HTTP en JavaScript, consultez cet article : https://www.digitalocean.com/community/tutorials/how-to-use-the-javascript-fetch-api-to-get-data.

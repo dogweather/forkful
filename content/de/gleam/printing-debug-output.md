@@ -10,38 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was & Warum?
+Debugging-Ausgaben sind Textnachrichten, die während der Ausführung eines Programms gedruckt werden und dabei helfen, Fehler oder Probleme zu identifizieren. Programmierer verwenden sie oft, um zu verstehen, was in ihrem Code passiert und warum bestimmte Probleme auftreten.
 
-Debuggen ist ein unverzichtbarer Bestandteil des Programmierens. Mit der Fähigkeit, Debug-Ausgaben zu drucken, können Entwickler schnell und einfach Fehler in ihrem Code finden und beheben. Lerne, wie du mit Gleam einfach und effizient Debug-Ausgaben drucken kannst.
-
-## Wie
-
-```Gleam
-// Ein einfaches Beispiel, um eine Debug-Ausgabe zu drucken
-fn main() {
-  let name = "Max Mustermann"
-  debug::print("Hallo, mein Name ist " ++ name)
-}
-
-// Ausgabe: Hallo, mein Name ist Max Mustermann
-```
-
-Um eine Debug-Ausgabe in Gleam zu drucken, verwende die `debug::print()` Funktion und übergebe den Wert, den du ausdrucken möchtest, als Argument. Du kannst auch Zeichenketten mit anderen Werten verketten, indem du das `++` Symbol verwendest. Dies ist nützlich, um Variablenwerte in einer aussagekräftigen Debug-Ausgabe zu zeigen.
-
-Um die `debug::print()` Funktion zu nutzen, musst du das `debug` Modul importieren. Dies kannst du tun, indem du am Anfang deiner Datei diese Zeile hinzufügst:
+## Wie geht es?
+Es gibt mehrere Möglichkeiten, Debugging-Ausgaben in Gleam zu erstellen. Eine Möglichkeit ist die Verwendung des `debug`-Moduls, das eine `debug.print`-Funktion bereitstellt. Zum Beispiel:
 
 ```Gleam
 import debug
+
+debug.print("Hello World")
 ```
 
-## Deep Dive
+Dies würde die Nachricht "Hello World" in der Konsole ausgeben. Eine andere Möglichkeit ist die Verwendung von `debug.expect`, um zu überprüfen, ob ein bestimmter Wert erwartet wird. Zum Beispiel:
 
-Das Drucken von Debug-Ausgaben kann auch dazu beitragen, die Leistung deines Codes zu verbessern. Indem du gezielt nur die wichtigen Informationen ausgibst, kannst du vermeiden, dass dein Code mit unnötigen Ausgaben überladen wird. Gleam bietet auch die Möglichkeit, zu bestimmten Debug-Ausgaben nur im Entwicklungsmodus zu gelangen, so dass sie im Produktionsmodus nicht ausgeführt werden. Dies kann helfen, die Geschwindigkeit und Speichernutzung deines Codes zu optimieren.
+```Gleam
+import debug
 
-Es gibt auch weitere Funktionen im `debug` Modul wie `print!()` und `println!()`, mit denen du Formatierungszeichen verwenden kannst, um deine Debug-Ausgaben noch aussagekräftiger zu machen. Um mehr darüber zu erfahren, empfehle ich dir, die offizielle Gleam-Dokumentation zu lesen.
+let a = 1 + 2
+debug.expect(a, 3)
+```
+
+Dies würde eine Fehlermeldung ausgeben, wenn `a` nicht den erwarteten Wert von 3 hat.
+
+## Tiefentauchen
+Das Drucken von Debugging-Ausgaben ist eine gängige Praxis beim Debuggen von Software und hat eine lange Geschichte. Eine Alternative zu diesem Ansatz ist das Verwenden von integrierten Debugging-Tools oder das Verfolgen von Logs. Die Implementierung von Debugging-Ausgaben in Gleam erfolgt durch die Verwendung von Funktionen aus dem `debug`-Modul, die eng mit dem Standardmodul `io` zusammenarbeiten.
 
 ## Siehe auch
-
-- Offizielle Gleam-Dokumentation: https://gleam.run/book/tour/debugging.html
-- Gleam Debugging-Tutorial: https://www.youtube.com/watch?v=RC46wrvDJKc
-- Gleam Forum: https://elixirforum.com/c/elixir-forum-announcements/gleam/35
+- [Gleam Handbuch zu Debugging](https://gleam.run/book/introduction.html#debugging)
+- [Gleam Dokumentation zu Debugging](https://gleam.run/packages/gleam_stdlib/latest/debug.html)
+- [Gleam Standardbibliothek: Debug-Modul](https://gleam.run/packages/gleam_stdlib/latest/debug.html)

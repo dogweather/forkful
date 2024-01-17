@@ -1,7 +1,7 @@
 ---
-title:                "Concatenando strings"
-html_title:           "C: Concatenando strings"
-simple_title:         "Concatenando strings"
+title:                "Juntando strings"
+html_title:           "C: Juntando strings"
+simple_title:         "Juntando strings"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -10,43 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+# O Que & Porquê?
 
-Existem muitas situações em que precisamos combinar várias strings em um único texto. Isso pode ser útil ao criar mensagens personalizadas, gerar relatórios dinâmicos ou construir URLs. A concatenação de strings nos permite unir diferentes partes de um texto em uma única variável para uso posterior.
+Concatenar strings em programação é quando você combina duas ou mais strings em uma só. Isso é útil quando você precisa unir pedaços de texto para criar uma nova string. Os programadores fazem isso para facilitar o uso de textos mais complexos, como mensagens de erro ou conteúdo gerado dinamicamente.
 
-## Como fazer
+# Como Fazer:
 
 ```C
+
 #include <stdio.h>
-#include <string.h>
+#include <string.h> 
 
 int main() {
 
-    // Definindo duas strings
-    char nome[] = "João";
-    char sobrenome[] = "Silva";
-
-    //Concatenando as strings
-    strcat(nome, sobrenome);
-
-    // Imprimindo o resultado
-    printf("%s\n", nome);
-
-    return 0;
+   // Exemplo 1: Usando strcat()
+   char str1[50] = "Olá, ";
+   char str2[] = "mundo!";
+   
+   strcat(str1, str2);
+   
+   printf("%s", str1); // Output: Olá, mundo!
+   
+   // Exemplo 2: Usando sprintf()
+   char str3[50];
+   int idade = 25;
+   
+   sprintf(str3, "Eu tenho %d anos.", idade);
+   
+   printf("%s", str3); // Output: Eu tenho 25 anos.
+   
+   return 0;
 }
+
 ```
 
-Output: João Silva
+# Mergulho Profundo:
 
-No exemplo acima, usamos a função `strcat()` da biblioteca `string.h` para concatenar as strings `nome` e `sobrenome` em uma única variável. É importante lembrar que a string de destino (no caso, `nome`) deve ter espaço suficiente para acomodar a string concatenada.
+Concatenar strings é uma técnica muito utilizada na programação, mas não é a única maneira de manipular textos. Existem outras opções, como o uso de ponteiros ou a utilização de bibliotecas de manipulação de strings. Além disso, é importante lembrar que, dependendo da linguagem de programação, a forma de concatenar strings pode variar. Por exemplo, em Java, a concatenação é feita com o operador "+".
 
-## Deep Dive
+# Ver Também:
 
-Além da função `strcat()`, também existem outras maneiras de concatenar strings em C. Por exemplo, podemos usar a função `sprintf()` para combinar strings com valores numéricos ou até mesmo utilizar operadores de atribuição, como o `+=`, para adicionar strings em variáveis já existentes.
-
-No entanto, é preciso ter cuidado ao manipular strings em C, pois a linguagem não possui um tipo de dado específico para esse fim. Isso significa que não podemos simplesmente somar ou subtrair strings como se fossem números, algumas funções específicas como `strcat()` devem ser usadas para garantir que a concatenação seja feita corretamente.
-
-## Veja também
-
-- [Tutorial sobre manipulação de strings em C](https://www.learn-c.org/en/Strings)
-- [Documentação oficial sobre a biblioteca string.h](https://www.tutorialspoint.com/c_standard_library/string_h.htm)
+https://www.geeksforgeeks.org/concatenate-string-integer-integer-strings-c/
+https://www.techopedia.com/definition/25963/concatenate
+https://www.tutorialspoint.com/c_standard_library/c_function_sprintf.htm

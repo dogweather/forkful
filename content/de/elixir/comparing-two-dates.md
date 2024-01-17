@@ -10,38 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was & Warum?
 
-Vertraust du darauf, dass die aktuelle Zeit korrekt angezeigt wird? Oder bist du schon einmal auf falsche oder ungewöhnliche Datumseinstellungen auf deinem Computer oder Gerät gestoßen? In diesem Artikel werden wir uns damit beschäftigen, wie du in Elixir zwei Daten vergleichen kannst, um sicherzustellen, dass sie korrekt sortiert und verglichen werden.
+Beim Vergleichen von zwei Daten geht es darum, festzustellen, ob zwei Datumsangaben gleich, größer oder kleiner sind als einander. Programmierer verwenden dies, um Daten in einer bestimmten Reihenfolge zu sortieren oder um zu überprüfen, ob ein Datum in einem bestimmten Zeitraum liegt.
 
-## Wie geht das?
+## Wie sollte man das machen:
 
-Um zwei Daten miteinander zu vergleichen, müssen wir sie zuerst in den richtigen Datentyp umwandeln. Dafür gibt es die Funktion `NaiveDateTime.from_iso8601`, die eine Zeichenkette im ISO8601-Format in ein Datum und eine Uhrzeit umwandelt. Zum Beispiel:
-
-```Elixir
-  NaiveDateTime.from_iso8601("2021-01-05T10:30:00")
-```
-
-Wir können auch die Funktion `DateTime.from_iso8601` verwenden, um ein Datum mit Zeitzoneninformationen zu erhalten. Zum Beispiel:
+Um zwei Daten in Elixir zu vergleichen, können wir die built-in Funktion `Date.compare/2` verwenden. Es akzeptiert zwei Daten als Argumente und gibt eine Zahl zurück, die den Vergleich zwischen den beiden Daten angibt. Eine positive Zahl bedeutet, dass das erste Datum größer ist, eine negative Zahl bedeutet, dass das zweite Datum größer ist und eine Null bedeutet, dass beide Daten gleich sind.
 
 ```Elixir
-  DateTime.from_iso8601("2021-01-05T10:30:00+0100")
+iex> Date.compare(~D[2021-01-01], ~D[2020-01-01])
+1
+iex> Date.compare(~D[2019-01-01], ~D[2020-01-01])
+-1
+iex> Date.compare(~D[2020-05-15], ~D[2020-05-15])
+0
 ```
 
-Sobald wir unsere Daten in den richtigen Datentyp umgewandelt haben, können wir sie einfach mit dem Vergleichsoperator `>` oder `<` vergleichen. Zum Beispiel:
+## Tieferer Einblick:
 
-```Elixir
-  date1 = NaiveDateTime.from_iso8601("2021-01-05T10:30:00")
-  date2 = NaiveDateTime.from_iso8601("2021-01-06T10:30:00")
+Das Vergleichen von Daten ist ein wichtiger Teil der Programmierung, da es uns hilft, Daten in einer sinnvollen Reihenfolge zu organisieren und zu verarbeiten. Vor Elixir gab es bereits zahlreiche Möglichkeiten zur Manipulation von Daten und zum Vergleichen von Datumsangaben, aber Elixir hat es geschafft, einen einfachen und effizienten Ansatz für diese Aufgabe zu bieten.
 
-  date1 < date2 # true
-```
+Eine Alternative zur `Date.compare/2` Funktion ist die Verwendung des `:calendar.compare/2` Moduls aus der Standardbibliothek. Dieses Modul bietet ähnliche Funktionen wie `Date.compare/2`, ist jedoch etwas allgemeiner, da es nicht nur mit Daten, sondern auch mit anderen Datentypen wie Zeit und Datumszeit arbeiten kann.
 
-## Tiefer eintauchen
+## Siehe auch:
 
-Wusstest du, dass hinter den Kulissen in Elixir alle Daten und Zeiten als Millisekunden seit dem 1. Januar 1970 gespeichert werden? Das bedeutet, dass das Vergleichen von zwei Daten letztendlich auf den Vergleich von Zahlen reduziert wird. Elixir ist auch in der Lage, mit Schaltjahren und Schaltsekunden umzugehen, was die Vergleichsfunktionen noch zuverlässiger macht.
-
-## Siehe auch
-
-- [Elixir-Dokumentation zur Funktion `NaiveDateTime.from_iso8601`](https://hexdocs.pm/elixir/NaiveDateTime.html#from_iso8601/1)
-- [Elixir-Dokumentation zur Funktion `DateTime.from_iso8601`](https://hexdocs.pm/elixir/DateTime.html#from_iso8601/1)
+- Offizielle Elixir Dokumentation für die `Date` Module: https://hexdocs.pm/elixir/Date.html
+- `:calendar.compare/2` Modul: https://hexdocs.pm/elixir/Calendar.html#compare/2

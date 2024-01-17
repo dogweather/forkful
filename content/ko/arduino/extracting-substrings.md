@@ -1,7 +1,7 @@
 ---
-title:                "부분 문자열 추출"
-html_title:           "Arduino: 부분 문자열 추출"
-simple_title:         "부분 문자열 추출"
+title:                "부분 문자열 추출하기"
+html_title:           "Arduino: 부분 문자열 추출하기"
+simple_title:         "부분 문자열 추출하기"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Strings"
@@ -10,21 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
-Substring 추출을 할 때 중요한 것은 문자열의 일부분을 뽑아내는 것입니다. 이를 통해 우리는 원하는 데이터를 더 쉽게 다룰 수 있고, 필요한 정보만 선별해서 사용할 수 있습니다.
+# 번역: Arduino 프로그래밍 기사
 
-## 방법
-Arduino에서 Substring 추출하는 방법은 간단합니다. 먼저 `substring()` 함수를 사용하여 추출할 부분의 인덱스 값을 지정한 다음, 해당 부분을 저장하고 원하는 작업을 수행하면 됩니다. 예제 코드와 출력 결과는 아래와 같습니다.
+## 무엇 & 왜?
+문자열 추출이란 무엇인지, 그리고 프로그래머들이 왜 이런 작업을 하는지에 대해서 간단히 설명합니다.
 
-```Arduino
-String str = "Greetings from Arduino";
-String sub = str.substring(10, 16); // 10번째부터 16번째까지의 문자를 추출하여 `sub` 변수에 저장
-Serial.println(sub); // "Arduino" 출력
+문자열 추출은 텍스트에서 원하는 부분을 추출하는 작업을 말합니다. 이를 통해 프로그래머는 필요한 정보만을 빠르게 얻을 수 있기 때문에 유용합니다.
+
+## 하는 방법:
+아두이노에서 문자열 추출을 하는 예제와 출력 결과를 ```Arduino ...``` 코드 블록 안에 넣어 설명합니다.
+
+```
+// 코드 예제
+String text = "Hello World";
+String subtext = text.substring(0, 5);
+// Hello를 출력
+Serial.println(subtext);
 ```
 
-## Deep Dive
-Substring 추출은 문자열 처리에서 매우 중요한 역할을 합니다. `substring()` 함수는 인덱스 값을 기준으로 문자열을 추출하기 때문에, 정확한 인덱스 값을 지정하는 것이 중요합니다. 또한, `substring()` 함수는 원본 문자열을 변경하지 않기 때문에 추출한 문자열을 저장할 변수를 별도로 선언해야 합니다. 따라서, 다양한 문자열 처리를 할 때 유용하게 사용할 수 있습니다.
+## 깊이 파고들기:
+문자열 추출에 대한 역사적 배경, 대안들 및 구현 세부 사항과 같은 더 자세한 정보를 제공합니다.
 
-## 더보기
-- [Arduino String 클래스 공식 문서](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/)
-- [Java substring() 메서드 공식 문서](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#substring(int,%20int))
+문자열 추출은 프로그래밍 언어의 기본 기능으로 매우 중요하며, 대부분의 프로그래밍 언어에서 지원하고 있습니다. 따라서 여러 언어를 배울 필요 없이 다양한 프로그래밍 작업에서 유용하게 사용할 수 있습니다.
+
+## 관련 자료:
+문자열 추출에 대한 관련 자료를 제공합니다.
+
+- 아두이노 공식 문서: https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/substring/
+- 해외 개발자 블로그: https://www.codementor.io/@garethdwyer/working-with-strings-in-arduino-cjo81fw1j

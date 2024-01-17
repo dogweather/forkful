@@ -1,7 +1,7 @@
 ---
-title:                "עבודה עם קובץ csv"
-html_title:           "Gleam: עבודה עם קובץ csv"
-simple_title:         "עבודה עם קובץ csv"
+title:                "עבודה עם קבצי CSV"
+html_title:           "Gleam: עבודה עם קבצי CSV"
+simple_title:         "עבודה עם קבצי CSV"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Data Formats and Serialization"
@@ -10,51 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# למה
+# מה ולמה?
+CSV הוא פורמט נתונים פשוט המשמש לאחסון נתונים בטבלה תחתונה. CSV נקרא גם "קובץ מופרד-בפסיקים" בגלל שנתוני הטבלה מופרדים על ידי פסיקים. פורמט זה משמש בדרך כלל להעברת נתונים בין יישומים שונים וכן לאחסון נתונים בחבילות תוכנה. התוכנית המקצועית Hubrise למדה את הכוחות כדי להנגיש חשיבת פריויוואליות למפתחים בעזרת CSV ומודולים בשפת ג'לאם.
 
-CSV היא אחת מסוגי הקבצים הנפוצים ביותר בעולם התכנות והניתוח נתונים. משתמשים בקובץ זה כדי לאחסן נתונים בפורמט מבוזר וקל לקריאה, מה שהופך אותו לפופולרי ביותר בהעברת נתונים בין מערכות שונות. 
-
-בפועל, עבודה עם קבצי CSV היא חלק מהיומיום של מתכנתים, מנתחי נתונים ומפתחי תוכנה. אם אתה רוצה לחקור נתונים שמאוחסנים בקובץ CSV או לתכנת פתרונות שיעזרו לך לנהל נתונים מבוזרים, העבודה עם CSV היא מומלצת ביותר.
-
-# איך לעבוד עם CSV
-
-כדי לעבוד עם CSV ב-Gleam, עלינו להתקין את הספרייה CSV של הקהילה ההודית. לאחר מכן, נוכל להתחיל לקרוא ולכתוב לקובץ בעזרת הפונקציות המתאימות.
-
-לדוגמה, ננסה לקרוא את קובץ ה-CSV הבא:
-
-```
-Name,Age,Country
-John,34,USA
-Sara,28,Canada
-Tom,42,Germany
-```
-
-לקרוא את הקובץ הזה, נצטרך להתשמש בפונקציית CSV.read. הנה דוגמה לשימוש בפונקציה זו כדי לקרוא את שם האישים מהקובץ הנתון:
-
+# כיצד לעשות:
 ```Gleam
 import gleam/csv
 
-let result = CSV.read("file.csv")
-case result {
-  Ok(csv) -> csv
-    |> List.map(fn(entry) -> entry[0] end)
-  Err(err) -> Err("Failed to read file")
-}
+csv_string = """
+name,age,city
+John,35,New York
+Jane,28,Boston
+"""
+
+gleam/csv.parse(csv_string)
+|> Ok(rows) -> gleam/csv.stringify(rows)
+|> Ok(csv_string) -> csv_string
+|> Debug 
+|> text 
+```
+פלט:
+```
+{name = "John", age = "35", city = "New York"}
+{name = "Jane", age = "28", city = "Boston"}
 ```
 
-הפלט של הקוד הזה יהיה רשימה עם השמות של האנשים. שנית, אם נרצה לכתוב נתונים חדשים לקובץ CSV, נוכל לעשות זאת באמצעות הפונקציה CSV.write כדלקמן:
+# צלילת עמוקה:
+CSV הומצא בשנת 1972 על ידי ראי סטון היי, בעלת ראי אפל, כדי לכתוב מסמכי מתעלה באמצעות תכנית Excel. בימינו, האחסון המבוסס טקסט הזה הוא אחד העתיקים ביותר שיופיע להנציח. כמובן ישנם למתכנתים אפשרויות אחרות לעבוד עם נתונים כגון XML ו- JSON, אך CSV נותן פתרון קל ומהיר לניהול נתונים מבוזרים. כך גם כשאתה עובד עם נתוני CSV, תוכל לשלוט בהם בקלות על ידי גילוי שגיאות וייתוב מהיר במקרים התקלות.
 
-```Gleam
-import gleam/csv
-
-let data = [["James", 32, "UK"], ["Lily", 35, "Australia"]]
-
-result = data |> CSV.write("new_file.csv")
-
-case result {
-  Ok(_) -> IO.print("Successfully wrote to file")
-  Err(err) -> IO.print("Failed to write to file")
-}
-```
-
-בדוגמה הזאת, אנחנו מדפיסים הודעה בהתא
+# ראה גם:
+[מדריך CSV של Hubrise](https://hubrise.com/en/csv-guide/)

@@ -1,7 +1,7 @@
 ---
-title:                "Invio di una richiesta http"
-html_title:           "Elm: Invio di una richiesta http"
-simple_title:         "Invio di una richiesta http"
+title:                "Inviare una richiesta http"
+html_title:           "Elm: Inviare una richiesta http"
+simple_title:         "Inviare una richiesta http"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "HTML and the Web"
@@ -10,44 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
-Se sei un programmatore Elm, ti chiederai sicuramente perché qualcuno dovrebbe inviare una richiesta HTTP tramite questo linguaggio. La risposta è semplice: l'invio di richieste HTTP è fondamentale per comunicare con server e risorse esterne, permettendoti di creare applicazioni web dinamiche e interattive.
+Cosa & Perché?
 
-## Come Fare
-Per inviare una richiesta HTTP in Elm, è necessario utilizzare la libreria `elm/http`. Una volta importata, puoi utilizzare la funzione `Http.send` per specificare il metodo di richiesta, l'URL e gli eventuali dati da inviare. Ad esempio:
+In poche parole, inviare una richiesta HTTP significa comunicare con un server per ottenere o inviare dati tramite Internet. I programmatori spesso utilizzano questo meccanismo per ottenere risorse esterne o per permettere alle loro applicazioni di comunicare con altri sistemi.
+
+Come si fa:
 
 ```Elm
 import Http
-import Json.Encode as Json
 
-sendRequest : Http.Request
-sendRequest =
-    Http.send
-        { method = "GET"
-        , url = "https://api.example.com/users"
-        , body = Http.emptyBody
-        , expect = Http.expectJson (Json.list userDecoder)
-        }
+Http.get {url = "https://www.example.com/api/users", expect = Http.expectJson decodeUsersList}
+
+decodeUsersList: Http.Decoder (List User)
+decodeUsersList = Http.list User.decodeUser
+
+type alias User = {id: Int, name: String}
+
+decodeUser: Http.Decoder User
+decodeUser = 
+    D.map2 User
+        (D.field "id" D.int)
+        (D.field "name" D.string)
 ```
 
-In questo esempio, stiamo inviando una richiesta `GET` all'URL specificato e ci aspettiamo una risposta in formato JSON. Inoltre, possiamo utilizzare la funzione `Http.post` per inviare dati a un server tramite una richiesta `POST`.
+Deep Dive:
 
-Una volta che la nostra richiesta è stata creata, dobbiamo ancora inviarla effettivamente utilizzando la funzione `Http.send` all'interno della funzione `update` del nostro modello.
+Per comprendere meglio il concetto di invio di richieste HTTP, è utile conoscere il suo contesto storico. In passato, il protocollo HTTP era utilizzato principalmente per il recupero di file HTML, ma con l'avvento delle applicazioni web, è diventato uno strumento fondamentale per lo scambio di dati tra client e server. Esistono anche alternative come WebSocket e MQTT, ma HTTP è ancora ampiamente utilizzato per il suo supporto per una vasta gamma di operazioni.
 
-```Elm
-update : Msg -> Model -> ( Model, Cmd Msg )
-update msg model =
-    case msg of
-        SendRequest ->
-            ( model, Http.send sendRequest )
-```
+Quando si invia una richiesta HTTP, bisogna tenere conto di diversi aspetti come il metodo di richiesta (ad esempio GET o POST), gli header e il body della richiesta. Inoltre, è importante gestire anche la gestione degli errori e la gestione delle risposte, utilizzando funzioni come `Http.expectJson` e `Http.expectString`.
 
-Quando la risposta viene ricevuta, la funzione `Http.expectJson` ci permette di utilizzare un decoder personalizzato per estrarre i dati che ci interessano dal payload.
-
-## Approfondimento
-In Elm, inviare una richiesta HTTP è un processo semplice e sicuro grazie al sistema di tipizzazione forte del linguaggio. Inoltre, la libreria `elm/http` gestisce automaticamente gli errori di connessione e ci fornisce un feedback strutturato sui possibili problemi durante l'invio o la ricezione di una richiesta.
-
-## Vedi Anche
-- Documentazione ufficiale di Elm su invio di richieste HTTP: https://guide.elm-lang.org/effects/http.html
-- Tutorial su invio di richieste HTTP in Elm: https://medium.com/@rtfeldman/your-first-web-app-in-elm-8e247744d5f3
-- Esempi di codice per inviare richieste HTTP in Elm: https://github.com/rtfeldman/elm-spa-example
+See Also:
+-Documentazione ufficiale di Elm: elm-lang.org/docs/http
+-Esempi di codice su GitHub: github.com/elm/http
+-Introduzione alle richieste HTTP con Elm: medium.com/@theburningmonk/elm-http-get-trace-step-down-ad6cd467cb5d

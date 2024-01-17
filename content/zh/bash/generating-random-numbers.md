@@ -10,42 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-你有过需要随机产生数字的情况吗？也许你在玩游戏时需要生成随机数来决定游戏的赢家，或者在进行统计实验时需要产生随机数据。无论什么情况，学习如何在Bash中生成随机数可以让你的工作更加便捷。在本文中，我将向你介绍如何使用Bash生成随机数字，并了解背后的原理。
+## 什么 & 为什么？
+生成随机数是指在编程中使用特定算法来产生随机的数值。这在程序中非常有用，例如用来产生随机密码、随机抽取数据等。程序员经常会使用随机数来增加程序的随机性，使其更加具有挑战性和真实性。
 
-## 为什么要生成随机数字
-
-随机数字在计算机科学中有着广泛的应用，它能够帮助我们进行随机实验和测试，同时也可以用于加密和安全领域。在日常生活中，它也能够帮助我们做出随机的选择，如抽奖或随机选取菜单。
-
-## 如何生成随机数字
-
-要在Bash中生成随机数字，我们可以使用内置的$RANDOM变量。它每次被调用时都会返回一个介于0和32767（$RANDOM的最大值）之间的随机整数。
-
+## 怎么做：
 ```Bash
-#!/bin/bash
-# 生成介于1和10之间的随机数
-echo $((RANDOM % 10 + 1))
-# 输出示例: 7
+# 使用$RANDOM来生成0到32767的随机数
+echo $RANDOM
+
+# 生成0到10之间的随机数
+echo $(( $RANDOM % 10 ))
+
+# 生成带小数位的随机数
+echo $(( $RANDOM % 100 ))".". $(( $RANDOM % 100 ))
 ```
 
-上面的代码中，我们使用了求余运算符来限制随机数的范围，并添加了1来让随机数从1开始。你也可以根据需要修改代码来生成不同范围的随机数。
-
-## 深入了解随机生成原理
-
-从计算机的角度来看，完全随机的数字是不可能存在的，因为计算机是基于算法来生成数字的。$RANDOM变量实际上使用了伪随机算法来生成数字，它以系统时钟为种子来进行计算，所以每次运行时产生的随机数都是不同的。如果想要更加安全的随机数，可以使用openssl命令来生成随机数。
-
-```Bash
-#!/bin/bash
-# 使用openssl生成20位随机数
-openssl rand -base64 20
-# 输出示例: voWC4992+/NGJ7uSUNj+
+输出示例：
+```
+23765
+3
+64.83
 ```
 
-## 参考链接
+## 深入探讨：
+生成随机数在计算机编程中是一个非常重要的概念。随机数生成算法具有复杂的数学基础，并且每一种编程语言都有不同的实现方式。除了使用Bash中提供的$RANDOM，程序员还可以选择使用其他语言中的随机数函数，如Python中的```random```模块。
 
-- [$RANDOM变量用法](https://www.gnu.org/software/bash/manual/html_node/Bash-Variables.html)
-- [openssl命令用法](https://www.openssl.org/docs/manmaster/man1/openssl-rand.html)
-
-## 查看更多
-
-- [Linux命令基础系列：Bash](https://www.runoob.com/linux/linux-shell.html)
-- [Bash教程](https://www.liaoxuefeng.com/wiki/1016959663602400)
+## 参考链接：
+- [Bash documentation for $RANDOM](https://www.gnu.org/software/bash/manual/html_node/Bash-Variables.html)
+- [Python documentation on random module](https://docs.python.org/3/library/random.html)

@@ -10,43 +10,21 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+## O que & Por quê?
+Calculando uma data no futuro ou no passado refere-se a adicionar ou subtrair uma quantidade específica de tempo a uma data existente. Programadores frequentemente realizam esse cálculo ao criar aplicativos que lidam com eventos futuros ou passados, como agendas ou lembretes.
 
-Você já teve a necessidade de calcular uma data no futuro ou passado? Pode parecer uma tarefa simples, mas pode se tornar complicada quando levamos em conta diferentes calendários, feriados e fuso horário. Felizmente, com a ajuda da linguagem de programação Clojure, podemos facilmente realizar essa tarefa.
-
-## Como fazer
-
-Para calcular uma data no futuro ou passado em Clojure, podemos usar a função `clj-time.core/plus` do pacote `clj-time`. Primeiro, devemos importar esse pacote no nosso código:
-
+## Como fazer:
 ```Clojure
-(require '[clj-time.core :as time])
+(require '[clj-time.core :as t])
+(t/->DateTime (t/now) 
+              (t/plus (t/days 10))) 
+;=> #object[org.joda.time.DateTime 0x7f3ee01 "2021-09-13T00:00:00.000Z"]
 ```
+O código acima mostra como usar a biblioteca "clj-time" para adicionar 10 dias à data atual e retornar o resultado. Você pode fazer cálculos semelhantes usando unidades de tempo como anos, meses, horas, minutos e segundos.
 
-Em seguida, podemos usar a função `plus` para adicionar uma unidade de tempo à data atual. Por exemplo, para calcular a data de amanhã, podemos usar a seguinte expressão:
+## Profundando mais:
+Existem diversas formas de lidar com datas em aplicativos de programação, mas calcular uma data no futuro ou no passado é uma tarefa comum e importante. Uma alternativa seria usar a biblioteca "java.time" que vem com o Java 8 e versões mais recentes. Além disso, a implementação de calcular datas envolve tentar manter o ajuste para regras de ajuste de horário de verão e fuso horário, o que pode ser uma tarefa desafiadora.
 
-```Clojure
-(time/plus (time/today) (time/days 1))
-```
-
-O resultado será a data de amanhã no mesmo horário da data atual. Podemos também especificar um fuso horário para obter a data correta, por exemplo:
-
-```Clojure
-(time/plus (time/today) (time/days 1) (time/time-zone-for-id "America/Sao_Paulo"))
-```
-
-Este código irá retornar a data de amanhã no fuso horário de São Paulo. Da mesma forma, podemos usar `time/days` para adicionar dias, `time/hours` para adicionar horas, entre outras unidades de tempo disponíveis. Também podemos usar valores negativos para calcular uma data no passado.
-
-## Aprofundando
-
-A função `plus` também aceita um argumento opcional que especifica o calendário a ser usado. Isso é útil quando precisamos levar em conta feriados ou outros eventos específicos para um determinado calendário. Podemos usar a função `clj-time.coerce/to-date` para converter uma string em uma data no formato desejado. Por exemplo:
-
-```Clojure
-(time/plus (time/today-time) (time/days 1) (time/time-zone-for-offset -3) (clj-time.coerce/to-date "2021-08-01T12:00:00Z" "yyyy-MM-dd'T'HH:mm:ss'Z'"))
-```
-
-Este código irá retornar a data de amanhã às 12h no fuso horário de Brasília.
-
-## Veja também
-
-- Documentação oficial do pacote `clj-time`: https://github.com/clj-time/clj-time
-- Outras funções úteis para trabalhar com datas em Clojure: https://clojureverse.org/t/functions-for-calculating-elapsed-time-using-clj-time/2860
+## Veja também:
+- [Documentação "clj-time"](https://cljdoc.org/d/clj-time/clj-time/0.14.4/doc/readme)
+- [Artigo sobre "java.time"](https://www.baeldung.com/java-8-date-time-intro)

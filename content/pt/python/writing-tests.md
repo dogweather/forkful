@@ -10,36 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que escrever testes em Python?
+## O que e Por que?
 
-Algumas das principais razões pelas quais é importante escrever testes em Python incluem a identificação e prevenção de erros, verificação da funcionalidade do código e a facilidade de manutenção do código.
+Escrever testes é uma prática comum entre programadores, pois ajuda a garantir que o código que eles escreveram funcione corretamente. Ao escrever testes, os programadores podem garantir que seu código está cumprindo todas as especificações e que não há erros em seu funcionamento. Isso economiza tempo e esforço no longo prazo, tornando o processo de desenvolvimento mais eficiente.
 
-## Como escrever testes em Python
+## Como fazer:
 
-Para escrever testes em Python, você pode usar a biblioteca integrada do Python, chamada de "unittest". Esta biblioteca permite que você crie testes de unidade para verificar a funcionalidade de funções ou módulos específicos em seu código.
+Escrever testes em Python é simples e pode ser feito com a ajuda de algumas bibliotecas úteis, como o Unittest e o Pytest. Um exemplo básico seria criar uma classe de teste que herda da classe TestCase do Unittest e, em seguida, definir alguns métodos para testar funções específicas. Em seguida, executar o teste garantirá que todas as funções estão funcionando como deveriam. Aqui está um exemplo de código:
 
-Exemplo de código para um teste de unidade em Python usando a biblioteca "unittest":
-
-```python
+```Python
 import unittest
 
-def soma(x, y):
-  return x + y
+def add_two_numbers(x, y):
+    return x + y
 
-class TestSoma(unittest.TestCase):
+class TestFunctions(unittest.TestCase):
+    def test_add_two_numbers(self):
+        self.assertEqual(add_two_numbers(2, 3), 5)
+        self.assertEqual(add_two_numbers(5, -2), 3)
 
-  # Definindo e executando o teste
-  def test_soma(self):
-    resultado = soma(3, 4)
-
-    # Verificando o resultado esperado
-    self.assertEqual(resultado, 7)
-
-# Executando todos os testes definidos
-unittest.main()
+if __name__ == '__main__':
+    unittest.main()
 ```
 
-Saída do teste:
+A saída desse teste seria:
 
 ```
 .
@@ -49,12 +43,14 @@ Ran 1 test in 0.000s
 OK
 ```
 
-## Mergulho Profundo
+O ponto no topo significa que o teste passou com sucesso.
 
-Quando se trata de escrever testes em Python, existem diferentes tipos de testes que podem ser usados, como testes unitários, testes de integração e testes funcionais. É importante escolher o tipo de teste certo para o seu código e certificar-se de que seus testes cubram todos os cenários possíveis. Além disso, a criação de testes antes de escrever o código pode ajudar a melhorar a qualidade do código e a reduzir o tempo gasto em depuração.
+## Aprofundamento:
 
-## Veja também
+A prática de escrever testes tem suas raízes na metodologia ágil e no desenvolvimento orientado a testes. Isso significa que os testes são escritos antes do código e são usados para orientar o processo de desenvolvimento. Além disso, existem outras bibliotecas de teste disponíveis para uso em Python, como o Robot Framework e o Behave. Essas bibliotecas fornecem recursos adicionais para testes de interface do usuário e testes de aceitação.
 
-- [Documentação oficial do Python para testes](https://docs.python.org/3/library/unittest.html)
-- [Tutorial de testes em Python](https://realpython.com/python-testing/)
-- [Como escrever testes eficazes em Python](https://medium.com/@vladbezden/how-to-write-tdd-tests-in-python-836bba1e09e7)
+## Veja também:
+
+- [The Art of Unit Testing: With Examples in Python](https://www.amazon.com.br/Art-Unit-Testing-Examples-Python/dp/1617295981)
+- [Documentação oficial do Unittest](https://docs.python.org/3/library/unittest.html)
+- [Documentação oficial do Pytest](https://docs.pytest.org/en/latest/)

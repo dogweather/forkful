@@ -1,7 +1,7 @@
 ---
-title:                "Analisi di codice html."
-html_title:           "Rust: Analisi di codice html."
-simple_title:         "Analisi di codice html."
+title:                "Analisi dell'html"
+html_title:           "Rust: Analisi dell'html"
+simple_title:         "Analisi dell'html"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "HTML and the Web"
@@ -10,40 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché Parsare l'HTML con Rust
+Cos'è e perché: Il parsing HTML è il processo di analizzare e interpretare il codice HTML di una pagina web. I programmatori lo fanno per estrarre informazioni utili dalla pagina, come ad esempio titoli, link e contenuti.
 
-Se stai cercando un modo veloce e sicuro per gestire il parsing dell'HTML, allora Rust è il linguaggio di programmazione ideale per te. Con la sua combinazione unica di prestazioni elevate, controllo dei tipi e gestione degli errori, Rust è la scelta perfetta per affrontare questa sfida.
-
-## Come Fare
-
-Per prima cosa, è necessario installare Rust sul tuo sistema. Puoi farlo seguendo le istruzioni dettagliate nel sito ufficiale di Rust. Una volta completata l'installazione, è possibile avviare un nuovo progetto Rust e importare la libreria "html-parsing" utilizzando il gestore di pacchetti Cargo. Dopo aver importato la libreria, puoi utilizzare le funzioni fornite per parsare l'HTML.
-
-Ecco un esempio di codice che utilizza la libreria "html-parsing" per ottenere il titolo di una pagina web:
-
+Come fare: Utilizzando il linguaggio di programmazione Rust e alcune librerie specifiche, è possibile eseguire facilmente il parsing di una pagina web. 
+Esempio di codice:
 ```Rust
-use html_parsing::parse;
-
-let html = "<html> <head> <title>Il mio sito web</title> </head> <body> <h1>Benvenuti nel mio sito web!</h1> </body> </html>";
-
-let result = parse(html);
-
-match result {
-    Ok(doc) => {
-        let title = doc.find("title").text().collect::<Vec<_>>();
-        println!("Il titolo della pagina è: {}", title[0]);
-    },
-    Err(_) => println!("Impossibile parsare l'HTML.")
+extern crate html5ever;
+use html5ever::rcdom::{RcDom, Handle};
+use html5ever::{parse_document, tendril::TendrilSink};
+use html5ever::{tendril::stream, QualName};
+ 
+let input = format!("<!DOCTYPE html><html><head></head><body>Hello, world!</body></html>");
+let mut dom = parse_document(RcDom::default(), Default::default())
+	.from_utf8()
+	.read_from(&mut input.as_bytes())
+	.unwrap();
+ 
+// Ottieni la gestione del nodo body
+let doc = dom.get_document();
+let html = doc.document_element().unwrap();
+let body = html.first_child().unwrap();
+let body_node = dom.nodes.borrow((body));
+ 
+// Stampa il contenuto del nodo body
+match body_node.data {
+    NodeData::Text { ref contents } => println!("Contenuto del nodo body: {:?}", contents.borrow()),
+    _ => ()
 }
 ```
 
-Questo codice utilizzerà la funzione `parse()` per creare un albero DOM a partire dall'HTML fornito, quindi utilizzando la funzione `find()` per trovare l'elemento "title" e la funzione `text()` per ottenere il testo all'interno di questo elemento. Utilizzando `collect::<Vec<_>>()` è possibile raccogliere il testo in un vettore. L'output di questo codice sarà "Il titolo della pagina è: Il mio sito web".
+Deep Dive: Il parsing HTML è diventato indispensabile con l'aumento del numero di pagine web e delle tecnologie web. Prima dell'introduzione di HTML5, molti programmatori utilizzavano librerie come BeautifulSoup per analizzare il codice HTML. Tuttavia, con l'arrivo di Rust e delle sue performance di parsing veloci e sicure, ci sono ora molte librerie specifiche per il parsing HTML, come html5ever e select.rs. Queste librerie consentono di estrarre facilmente informazioni da una pagina web e vengono utilizzate in molti progetti web.
 
-## Approfondimento
-
-Per coloro che desiderano saperne di più sul parsing dell'HTML con Rust, ci sono diverse risorse disponibili online. In particolare, la documentazione ufficiale di Rust offre una guida dettagliata sull'utilizzo della libreria "html-parsing", con esempi di codice e spiegazioni approfondite. Inoltre, ci sono anche numerose domande e risposte su Stack Overflow per ulteriori dubbi o problemi.
-
-## Vedi Anche
-
-- La documentazione ufficiale di Rust sulla libreria "html-parsing": [https://docs.rs/html-parsing](https://docs.rs/html-parsing)
-- Esempi di codice sull'utilizzo della libreria "html-parsing": [https://github.com/rust-lang/html-parsing/tree/master/examples](https://github.com/rust-lang/html-parsing/tree/master/examples)
-- Domande e risposte su Stack Overflow su parsing HTML con Rust: [https://stackoverflow.com/questions/tagged/rust+html-parsing] (https://stackoverflow.com/questions/tagged/rust+html-parsing)
+See Also: Per ulteriori informazioni su come utilizzare Rust per il parsing HTML, puoi consultare la documentazione ufficiale di Rust (https://www.rust-lang.org/) o la documentazione delle librerie specifiche come html5ever (https://docs.rs/html5ever/) e select.rs (https://docs.rs/select/). Inoltre, puoi trovare esempi di codice su come utilizzare queste librerie su siti come GitHub (https://github.com/).

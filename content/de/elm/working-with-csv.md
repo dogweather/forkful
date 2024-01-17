@@ -10,43 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was & Warum?
 
-Es gibt viele Gründe, warum man sich mit CSV beschäftigen möchte. Zum Beispiel kann man damit Daten in einem einfachen und strukturierten Format speichern und austauschen. Oder man möchte CSV-Dateien nutzen, um Daten in einer offline Umgebung zu bearbeiten und später wieder zu importieren. In jedem Fall bietet Elm eine benutzerfreundliche und effiziente Möglichkeit, mit CSV umzugehen.
+Arbeiten mit CSV, auch bekannt als "Comma Separated Values", bezieht sich auf das Lesen und Schreiben von tabellarischen Daten in einem einfachen Textformat. Programmierer nutzen oft CSV, um Daten aus externen Quellen zu importieren oder um Daten in einem Format zu speichern, das leicht von anderen Programmen gelesen werden kann. 
 
-## Wie
+## Wie geht's?
 
-Um mit CSV in Elm zu arbeiten, können wir die Module [elm-csv](https://package.elm-lang.org/packages/elm-tools/csv/latest/) und [elm-csv-decode](https://package.elm-lang.org/packages/elm-explorations/csv/latest/) verwenden. Zuerst müssen wir diese Module in unserem Code importieren:
-
-```Elm
-import Csv
-import Csv.Decode
-```
-
-Dann können wir eine CSV-Datei laden und die Daten entschlüsseln. Nehmen wir zum Beispiel an, dass wir eine Datei mit den Informationen unserer Kunden haben, in der jeder Kunde in einer Zeile gespeichert ist, mit Name, Alter und Adresse, getrennt durch ein Komma. Wir können die Daten dann wie folgt entschlüsseln:
+Hier sind einige Beispiele, um CSV-Dateien in Elm zu lesen und zu schreiben:
 
 ```Elm
-csvContent : Csv.FieldsDecoder Customer
-csvContent =
-    Decode.map4 Customer
-        (Decode.field Csv.string)
-        (Decode.field Csv.int)
-        (Decode.field Csv.string)
-        (Decode.field Csv.string)
+-- Lesen einer CSV-Datei
+import Csv.Decode as Decode
 
-customers : List Customer
-customers =
-    Csv.Decode.fromString customerscsv csvContent
+-- Daten dekodieren und ausgeben
+Decode.decodeString Decode.int """
+Name, Alter
+John, 25
+Jane, 30
+""" -- Ergebnis: Ok [ {name = "John", age = 25}, {name = "Jane", age = 30} ]
+
+-- Schreiben von CSV-Daten
+import Csv.Encode as Encode
+
+-- Daten kodieren und in eine Zeichenfolge umwandeln
+Encode.encode (Encode.list [ {name = "John", age = 25}, {name = "Jane", age = 30} ])
+  |> Encode.string -- Ergebnis: "Name, Alter\nJohn, 25\nJane, 30\n"
 ```
 
-Die Funktion `Decode.map4` erwartet eine Funktion, die mit vier Werten als Argument aufgerufen wird und einen neuen Wert zurückgibt. In unserem Fall haben wir die Funktion `Customer`, die wir selbst definieren müssen, um aus den decodierten CSV-Daten ein benutzerdefiniertes Datentyp zu erstellen.
+## Tiefentauchen
 
-## Deep Dive
-
-Es gibt noch viel mehr Möglichkeiten, CSV in Elm zu nutzen. Zum Beispiel können wir die Daten aus einer CSV-Datei in ein Modell umwandeln, um sie in einer komplexeren Anwendung zu verwenden. Oder wir können die enthaltene Funktion `Decode.log` verwenden, um Fehler beim Entschlüsseln von CSV-Daten zu finden und zu beheben. Mit Elm können wir CSV-Daten sogar in einem Browser rendern, um sie anzuzeigen oder zu bearbeiten.
+CSV wurde in den 1970er Jahren als einfaches Datenformat entwickelt, um den Austausch von tabellarischen Daten zwischen verschiedenen Programmen zu ermöglichen. Heutzutage gibt es viele Alternativen wie JSON oder XML, aber CSV bleibt aufgrund seiner Einfachheit und Lesbarkeit beliebt. Die Implementierung von CSV in Elm basiert auf dem Paket "Csv.Encode" und "Csv.Decode", die es ermöglichen, Daten in das entsprechende Format zu konvertieren und zu verarbeiten.
 
 ## Siehe auch
 
-- Offizielle Elm-Dokumentation zu [elm-csv](https://package.elm-lang.org/packages/elm-tools/csv/latest/)
-- Offizielle Elm-Dokumentation zu [elm-csv-decode](https://package.elm-lang.org/packages/elm-explorations/csv/latest/)
-- [elm-live](https://github.com/wking-io/elm-live) - Eine bequeme Möglichkeit, Elm-Code in Echtzeit zu testen und anzuzeigen
+- Die offizielle [Elm-Dokumentation](https://guide.elm-lang.org/effects/json.html), die weitere Informationen und Beispiele zu CSV in Elm bietet.
+- Das [Csv-Bibliothek](https://package.elm-lang.org/packages/elm-community/csv/latest/), das verschiedene Funktionen für das Lesen und Schreiben von CSV-Daten in Elm bereitstellt.

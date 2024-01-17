@@ -1,7 +1,7 @@
 ---
-title:                "Att få den nuvarande datumen"
-html_title:           "Python: Att få den nuvarande datumen"
-simple_title:         "Att få den nuvarande datumen"
+title:                "Få den aktuella datumet."
+html_title:           "Python: Få den aktuella datumet."
+simple_title:         "Få den aktuella datumet."
 programming_language: "Python"
 category:             "Python"
 tag:                  "Dates and Times"
@@ -10,50 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
+Att få den nuvarande datumet är en viktig del av programmering eftersom det möjliggör att spåra när en viss kod utfördes eller när data genererades. Det är också användbart för att hantera tidsrelaterade funktioner och funktioner för planerade uppgifter.
 
-Att få den aktuella datumet är en vanlig uppgift när man jobbar med Python-programmering. Det kan vara användbart för att spåra datumet för en händelse, göra tidstämplar för loggning eller helt enkelt visa den aktuella tiden i ditt program.
-
-## Så här gör du
-
-För att få den aktuella datumet i Python använder vi modulen `datetime`. Här är ett enkelt exempel på hur du kan få den aktuella datumet och skriva ut det i konsolen:
-
-```Python 
-import datetime
-
-aktuell_datum = datetime.date.today()
-
-print("Idag är det", aktuell_datum)
-```
-
-Output: `Idag är det 2020-08-20`
-
-Du kan också anpassa hur datumet visas genom att använda metoder som `strftime()` och ange det önskade formatet. Här är ett exempel på hur du kan få datumet att visas som en sträng med formatet DD/MM/ÅÅÅÅ:
+## Så här gör du:
+Det finns flera olika sätt att få den nuvarande datumet i Python. Ett sätt är att använda modulen "datetime" och dess funktion "now ()" för att returnera ett datumobjekt som representerar den nuvarande datum och tid. Detta kan göras enligt följande kod:
 
 ```Python
 import datetime
 
-aktuell_datum = datetime.date.today()
-
-formaterat_datum = aktuell_datum.strftime("%d/%m/%Y")
-
-print("Idag är det", formaterat_datum)
+current_date = datetime.datetime.now()
+print(current_date)
 ```
 
-Output: `Idag är det 20/08/2020`
+Output:
+`2021-05-10 10:17:09.158581`
 
-Det finns många andra metoder och funktioner i `datetime`-modulen som du kan utforska för att få den aktuella datumet på olika sätt.
+Ett annat sätt är att använda modulen "date" och funktionen "today ()" för att bara returnera datumet utan tid. Det kan åstadkommas så här:
 
-## Djupdykning
+```Python
+import datetime
 
-När vi använder `datetime`-modulen för att få den aktuella datumet, använder vi faktiskt en klass som kallas `date`. En klass är ett blåtryck eller en mall för att skapa objekt. Med andra ord skapar vi ett objekt av klassen `date` när vi använder `datetime.date.today()`.
+current_date = datetime.date.today()
+print(current_date)
+```
 
-Klassen date har attribut som `year`, `month` och `day` som ger specifik information om datumet. Det finns också metoder som `weekday()` som ger vilken veckodag datumet faller på.
+Output:
+`2021-05-10`
 
-Om du vill utforska mer om hur `datetime`-modulen fungerar och vilka andra möjligheter och funktioner det finns, kan du läsa mer i den officiella dokumentationen: https://docs.python.org/3/library/datetime.html
+## Djupdykning:
+Datum och tider är viktiga delar av programmering och har en lång historia av utveckling och standardisering. I Python används standardbiblioteket "datetime" för att hantera datum och tider. Alternativ till detta är externa bibliotek som "arrow" och "pendulum" som erbjuder mer avancerade funktioner för datumhantering.
 
-## Se även
+Det är också viktigt att förstå att den nuvarande datumet kan påverkas av olika faktorer som tidszoner och systemets inställningar. Därför är det bäst att använda en pålitlig tidsmodul som "datetime" för att få den korrekta nuvarande datumet.
 
-- https://www.geeksforgeeks.org/python-datetime-module-with-examples/
-- https://realpython.com/python-datetime/
-- https://www.programiz.com/python-programming/datetime
+## Se även:
+- [Datetime-modulen i Pythons officiella dokumentation](https://docs.python.org/3/library/datetime.html)
+- [Arrow-biblioteket för avancerad datumhantering i Python](https://arrow.readthedocs.io/en/latest/)
+- [Pendulum-biblioteket för mer intuitivt datum- och tidshantering](https://pendulum.eustace.io/)

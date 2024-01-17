@@ -1,7 +1,7 @@
 ---
-title:                "Korzystanie z wyrażeń regularnych"
-html_title:           "TypeScript: Korzystanie z wyrażeń regularnych"
-simple_title:         "Korzystanie z wyrażeń regularnych"
+title:                "Używanie wyrażeń regularnych"
+html_title:           "TypeScript: Używanie wyrażeń regularnych"
+simple_title:         "Używanie wyrażeń regularnych"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -10,37 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co & Dlaczego?
 
-Używanie wyrażeń regularnych jest niezbędne dla wszystkich programistów, którzy potrzebują wykonywać operacje takie jak wyszukiwanie, wyodrębnianie i zastępowanie tekstu w dużych ilościach danych. Wyrażenia regularne są szybkie, skuteczne i potrafią oszczędzić dużo czasu, dlatego warto nauczyć się ich używać.
+Używanie wyrażeń regularnych jest powszechne wśród programistów i służy do manipulacji i przetwarzania tekstu zgodnie z określonym wzorcem. Pozwala to na szybką i precyzyjną analizę tekstów oraz ułatwia pracę z danymi. Przydatne jest także w walidacji formularzy i filtrowaniu danych.
 
-## Jak to zrobić
+## Jak to zrobić:
 
-```TypeScript
-// Przykład 1
-const regexEmail = /\w+@\w+\.com/;
-const email = "janek@firma.com";
-
-console.log(email.match(regexEmail)); 
-// Output: ["janek@firma.com"]
-```
+Poniżej znajdują się przykłady kodu w języku TypeScript, które ilustrują działanie wyrażeń regularnych.
 
 ```TypeScript
-// Przykład 2
-const regexNumbers = /\d+/g;
-const text = "Ala ma 3 koty i 2 psy.";
-
-console.log(text.match(regexNumbers));
-// Output: ["3", "2"]
+let text = "Hello, World!";
+let pattern = /^Hello/;
+let result = pattern.test(text);
+console.log(result); // true
 ```
 
-Wyrażenie regularne tworzy się poprzez użycie specjalnych znaków i symboli, które określają wzorzec poszukiwanego tekstu. Główne metaznaki to: `+` - jeden lub więcej wystąpień, `*` - zero lub więcej wystąpień, `?` - zero lub jedno wystąpienie, `.` - dowolny znak, `^` - początek linii, `$` - koniec linii. Można również używać wyrażeń przeciwnych, np. `[^a-z]` - znak niebędący małym literą. Podczas używania wyrażeń regularnych, należy uważać na znaki specjalne, np. `\`,które trzeba dwukrotnie escape'ować. 
+W powyższym przykładzie, zmienna "result" zawiera wartość logiczną "true", ponieważ wyrażenie regularne sprawdza, czy tekst zaczyna się od słowa "Hello".
 
-## Wnikliwe spojrzenie
+```TypeScript
+let text = "I love TypeScript!";
+let pattern = /[a-z]+/;
+let result = pattern.exec(text);
+console.log(result); // ["love"]
+```
 
-Wyrażenia regularne są obsługiwane przez klasę `RegExp`, która zawiera metody takie jak `test()` - sprawdzająca czy dany tekst pasuje do wzorca, `exec()` - wyszukująca pierwsze dopasowanie do wzorca, `match()` - wyszukująca wszystkie dopasowania do wzorca w tekście, `replace()` - zamieniająca w tekście wszystkie dopasowania na nowy ciąg znaków. Istnieją również funkcje globalne, takie jak `search()` - szukająca pierwsze wystąpienie wzorca w tekście, `split()` - dzieląca tekst na podstawie wzorca. Wyrażenia regularne mogą również zawierać grupy, które można później odszukać po wykonaniu dopasowania.
+W tym przykładzie, wyrażenie regularne znajduje pierwsze wystąpienie ciągu znaków składającego się wyłącznie z małych liter i zwraca go jako rezultat.
 
-## Zobacz również
+## Głębsze zagębianie:
 
-- [Dokumentacja dla klasa `RegExp`](https://developer.mozilla.org/pl/docs/Web/JavaScript/Referencje/Obiekty/RegExp)
-- [Podstawy wyrażeń regularnych w TypeScript](https://www.typescriptlang.org/docs/handbook/regular-expressions.html)
+Wyrażenia regularne zostały stworzone w latach 50-tych przez matematyka Stephena Cole Kleene'a, a powszechnie wykorzystywane są w różnych językach programowania, m.in. JavaScript, Python czy Perl. Alternatywą dla wyrażeń regularnych jest użycie metod wbudowanych w język TypeScript, jednak zastosowanie wyrażeń regularnych jest zwykle bardziej wygodne i użyteczne w przypadku bardziej złożonych operacji.
+
+W TypeScript, wyrażenia regularne są obiektami typu RegExp i wykorzystują metody takie jak "test" czy "exec". Dostępne są również specjalne znaki, tzw. metaznaki, które pozwalają na zdefiniowanie reguł dopasowania, np. "." oznacza dowolny znak, a "^" i "$" określają początek i koniec wyrażenia.
+
+## Zobacz także:
+
+- [Dokumentacja TypeScript o wyrażeniach regularnych](https://www.typescriptlang.org/docs/handbook/regular-expressions.html)
+- [Tutorial wyrażeń regularnych w JavaScript](https://developer.mozilla.org/pl/docs/Web/JavaScript/Guide/Regular_Expressions)
+- [Online edytor do wyrażeń regularnych](https://regex101.com/)

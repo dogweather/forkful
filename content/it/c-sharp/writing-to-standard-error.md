@@ -1,7 +1,7 @@
 ---
-title:                "Scrivere su standard error"
-html_title:           "C#: Scrivere su standard error"
-simple_title:         "Scrivere su standard error"
+title:                "Scrivere sull'errore standard"
+html_title:           "C#: Scrivere sull'errore standard"
+simple_title:         "Scrivere sull'errore standard"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Files and I/O"
@@ -10,32 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##Perché
+## Che cos'è e perché si usa?
 
-Scrivere su standard error è un'abilità importante per ogni programmatore C#. Quando si stanno gestendo applicazioni di grandi dimensioni o in produzione, gli errori possono verificarsi e devono essere risolti il più rapidamente possibile. Scrivere su standard error aiuta a identificare e risolvere gli errori più velocemente, migliorando l'esperienza dell'utente finale e la qualità del codice.
+Scrivere su Standard Error (stderr) è una pratica comune tra i programmatori per segnalare eventuali errori o informazioni importanti durante l'esecuzione di un programma. A differenza della scrittura su Standard Output (stdout), i dati scritti su stderr non vengono visualizzati dall'utente ma possono essere salvati in un file di log per analisi future.
 
-##Come fare
+## Come fare:
 
-In C#, scrivere su standard error è semplice come utilizzare il comando Console.Error.WriteLine(). Ad esempio:
+Utilizzare la funzione ```Console.Error.WriteLine``` per scrivere un messaggio su stderr. Ad esempio:
 
-```
-C# Console.Error.WriteLine("Si è verificato un errore!");
-```
-
-Questo comando scriverà il messaggio sull'output standard error e apparirà in rosso nella console dell'applicazione. Inoltre, è possibile formattare il messaggio utilizzando i segnaposto come nel seguente esempio:
-
-```
-C# Console.Error.WriteLine("Attenzione: Valore {0} non valido", valore);
+```C#
+Console.Error.WriteLine("Errore: divisione per zero non consentita");
 ```
 
-Questo scriverà il messaggio "Attenzione: Valore [valore inserito] non valido" su standard error. In questo modo è possibile fornire informazioni più dettagliate sugli errori che si verificano nel codice.
+L'output sullo stderr sarà:
 
-##Approfondimento
+```
+Errore: divisione per zero non consentita
+```
 
-Scrivere su standard error ha alcuni vantaggi rispetto alla scrittura su standard output. In primo luogo, gli errori vengono visualizzati in modo più evidente nella console, rendendo più facile individuarli. Inoltre, gli errori scritti su standard error non vengono interrotti da eventuali output aggiuntivi, mantenendo la loro importanza e priorità. Infine, è possibile reindirizzare lo standard error in un file di log per tenere traccia e analizzare gli errori che si verificano durante l'esecuzione dell'applicazione.
+È possibile anche salvare il contenuto di stderr su un file di log utilizzando il simbolo ```2>```. Ad esempio:
 
-##Vedi anche
+```C#
+./myProgram > output.txt 2> error.log
+```
 
-- [Console.Error.WriteLine() Method](https://docs.microsoft.com/en-us/dotnet/api/system.console.error.writeline?view=net-5.0)
-- [Console Class](https://docs.microsoft.com/en-us/dotnet/api/system.console?view=net-5.0)
-- [Error and Output Streams in C#](https://www.codeproject.com/Articles/211365/Error-and-Output-Streams-in-Csharp)
+In questo modo, l'output dell'esecuzione del programma sarà salvato nel file "output.txt" e gli eventuali errori o messaggi scritti su stderr saranno salvati nel file "error.log".
+
+## Tuffo profondo:
+
+La pratica di scrivere su stderr è nata nei primi sistemi operativi Unix, dove era comune utilizzare lo standard output per la visualizzazione dei risultati e lo standard error per la segnalazione degli errori. Nei sistemi Windows, invece, è comune utilizzare la finestra dei messaggi di errore per visualizzare eventuali problemi durante l'esecuzione di un programma.
+
+Un'alternativa alla scrittura su stderr è l'utilizzo di log file, dove vengono salvate informazioni importanti o errori durante l'esecuzione del programma. È anche possibile utilizzare librerie di logging che offrono funzionalità più avanzate per gestire i log.
+
+Per quanto riguarda l'implementazione, la funzione ```Console.Error.WriteLine``` utilizza una chiamata di sistema per scrivere sullo stderr del sistema operativo, quindi è importante gestire gli errori e chiudere correttamente il flusso dopo la scrittura.
+
+## Vedi anche:
+
+- [Documentazione ufficiale di C# su System.Console](https://docs.microsoft.com/en-us/dotnet/api/system.console?view=net-5.0)
+- [Differenza tra stdout e stderr](https://unix.stackexchange.com/questions/23726/what-are-the-differences-between-stdout-and-stderr)
+- [Libreria di logging NLog](https://nlog-project.org/)

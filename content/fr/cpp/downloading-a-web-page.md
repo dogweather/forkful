@@ -1,7 +1,7 @@
 ---
-title:                "Telechargement d'une page web"
-html_title:           "C++: Telechargement d'une page web"
-simple_title:         "Telechargement d'une page web"
+title:                "Le téléchargement d'une page Web"
+html_title:           "C++: Le téléchargement d'une page Web"
+simple_title:         "Le téléchargement d'une page Web"
 programming_language: "C++"
 category:             "C++"
 tag:                  "HTML and the Web"
@@ -10,56 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Qu'est-ce que c'est et pourquoi le faire?
 
-Si vous êtes un développeur web ou que vous vous intéressez à la programmation, vous savez probablement que le téléchargement d'une page web peut être une tâche utile et importante. Que vous souhaitiez récupérer des informations à des fins de traitement ou simplement sauvegarder une page pour une utilisation ultérieure, savoir comment télécharger une page web est une compétence précieuse à avoir.
+Télécharger une page web signifie simplement récupérer son contenu à partir d'Internet. Les programmeurs le font souvent pour extraire des informations utiles à partir d'une page web et les utiliser dans leurs programmes.
 
-## Comment Faire
+## Comment faire:
 
-Le téléchargement d'une page web en C++ peut sembler compliqué, mais avec les bonnes techniques, cela peut être assez simple. La première étape consiste à inclure la bibliothèque " ```<iostream>``` " pour gérer les flux d'entrée et de sortie. Ensuite, vous devrez également inclure la bibliothèque "```<curl/curl.h>```" qui vous permettra d'établir une connexion avec le serveur web et de télécharger la page. Voici un exemple de code qui utilise ces bibliothèques :
-
-```
+```C++
 #include <iostream>
-#include <curl/curl.h>
+#include <curl/curl.h> // Bibliothèque pour le téléchargement
+
+using namespace std;
 
 int main()
 {
-  CURL* curl; //Déclaration de l'objet Curl
-  CURLcode res; //Déclaration de la variable pour stocker le code de réponse
+    CURL *curl; 
+    CURLcode res; 
+    string url = "https://www.example.com"; // URL à télécharger
 
-  //Initialisation de l'objet Curl
-  curl = curl_easy_init();
-  
-  //Vérification des erreurs lors de l'initialisation
-  if(curl)
-  {
-    //Définition de l'URL de la page à télécharger
-    curl_easy_setopt(curl, CURLOPT_URL, "https://www.example.com");
-    
-    //Téléchargement de la page
-    res = curl_easy_perform(curl);
-    
-    //Vérification du code de réponse
-    if(res != CURLE_OK)
+    curl = curl_easy_init(); // Initialiser l'objet curl
+    if(curl) 
     {
-      std::cout << "Erreur lors du téléchargement de la page : " << curl_easy_strerror(res) << std::endl;
+        curl_easy_setopt(curl, CURLOPT_URL, url.c_str()); // Définir l'URL à télécharger
+        res = curl_easy_perform(curl); // Exécuter la requête
+        curl_easy_cleanup(curl); // Nettoyer l'objet curl
     }
     
-    //Nettoyage de l'objet Curl
-    curl_easy_cleanup(curl);
-  }
-  return 0;
+    return 0;
 }
 ```
 
-Ce code utilise la fonction "```curl_easy_init()```" pour initialiser l'objet Curl, puis la fonction "```curl_easy_setopt()```" pour spécifier l'URL de la page à télécharger et enfin la fonction "```curl_easy_perform()```" pour effectuer le téléchargement. Si le téléchargement est réussi, le code de réponse sera "CURLE_OK". Sinon, vous pouvez utiliser la fonction "```curl_easy_strerror()```" pour afficher un message d'erreur.
+**Résultat:**
 
-## Deep Dive
+<img src="https://user-images.githubusercontent.com/73485858/119124235-07ec5e00-ba31-11eb-89cc-8651029d1535.png" width="450">
 
-Maintenant que vous savez comment télécharger une page web en utilisant C++, vous pouvez explorer d'autres options et paramètres pour personnaliser votre téléchargement. Par exemple, vous pouvez définir des en-têtes HTTP personnalisés à l'aide de la fonction "```CURLOPT_HTTPHEADER```" ou encore spécifier un délai d'attente à l'aide de la fonction "```CURLOPT_TIMEOUT```". Vous pouvez également utiliser la fonction "```CURLOPT_WRITEFUNCTION```" pour spécifier une fonction de rappel qui sera appelée pour écrire les données téléchargées dans un fichier. En explorant ces options et en expérimentant avec différents paramètres, vous pourrez télécharger des pages web de manière plus efficace et ciblée.
+## Plongée en profondeur:
 
-## Voir aussi
+Les programmeurs ont souvent besoin de télécharger des pages web pour extraire des données ou automatiser certaines tâches, telles que la mise à jour de leur base de données avec des informations récentes. Le téléchargement de pages web peut également être utilisé pour créer des "bots" ou des outils de surveillance basés sur le web. Il existe plusieurs bibliothèques disponibles en plus de cURL pour effectuer des téléchargements en C++, telles que libcurl et boost::asio.
 
-- [Documentation officielle de la bibliothèque Curl] (https://curl.haxx.se/libcurl/c/)
-- [Tutoriel pour le téléchargement de pages web en C++] (https://www.tutorialspoint.com/download-web-page-using-c-plus-plus)
-- [Code source complet pour télécharger une page web en C++] (https://gist.github.com/algorithmist/6a61dfac38c438c982fa)
+## Voir aussi:
+
+- [Curl documentation](https://curl.se/docs/)
+- [libcurl documentation](https://curl.se/libcurl/)
+- [boost::asio documentation](https://www.boost.org/doc/libs/1_76_0/doc/html/boost_asio.html)

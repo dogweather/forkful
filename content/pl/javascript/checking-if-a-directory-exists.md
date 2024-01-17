@@ -1,7 +1,7 @@
 ---
-title:                "Sprawdzanie istnienia katalogu"
-html_title:           "Javascript: Sprawdzanie istnienia katalogu"
-simple_title:         "Sprawdzanie istnienia katalogu"
+title:                "Prowadzenie sprawdzania istnienia katalogu"
+html_title:           "Javascript: Prowadzenie sprawdzania istnienia katalogu"
+simple_title:         "Prowadzenie sprawdzania istnienia katalogu"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Files and I/O"
@@ -10,33 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i dlaczego?
+Sprawdzanie, czy katalog istnieje, jest ważnym elementem programowania w języku Javascript. Pozwala to programistom na upewnienie się, że określona ścieżka jest poprawna i dostępna, co może pomóc uniknąć błędów i problemy z wykonywaniem innych operacji na plikach.
 
-Sprawdzanie, czy dany katalog istnieje, jest ważnym krokiem w procesie tworzenia aplikacji. Dzięki temu możemy mieć pewność, że nasz program będzie działał poprawnie i będzie mógł przechowywać i odczytywać potrzebne nam pliki.
-
-## Jak to zrobić
-
-Sprawdzenie istnienia katalogu w Javascript jest proste i wymaga użycia wbudowanej funkcji `fs.existsSync()`, która zwraca wartość boolean odpowiadającą na pytanie, czy dany katalog istnieje. Poniżej przedstawiam przykładowy kod oraz wynik działania funkcji:
+## Jak:
+Aby sprawdzić, czy katalog istnieje w Javascript, można skorzystać z funkcji ```fs.existsSync()```, która sprawdza, czy dany katalog lub plik istnieje. Należy jednak pamiętać, że ta funkcja jest dostępna tylko w środowisku Node.js. Poniższy przykład kodu pokazuje, jak użyć tej funkcji w praktyce:
 
 ```Javascript
 const fs = require('fs');
-// sprawdzenie istnienia katalogu "moj-katalog"
-if (fs.existsSync('moj-katalog')) {
-    console.log("Katalog istnieje!");
+const path = './myDirectory';
+
+if (fs.existsSync(path)){
+  console.log('Katalog istnieje');
 } else {
-    console.log("Katalog nie istnieje.");
+  console.log('Katalog nie istnieje');
 }
 ```
 
-W przypadku, gdy katalog istnieje, wyświetli się komunikat "Katalog istnieje!". W przeciwnym razie, wyświetli się komunikat "Katalog nie istnieje.".
+W przypadku, gdy funkcja ```fs.existsSync()``` zwraca wartość ```true```, oznacza to, że podana ścieżka istnieje. W przeciwnym razie, funkcja zwraca ```false```. W ten sposób, można wybrać odpowiednie działania w przypadku, gdy sprawdzany katalog istnieje lub nie.
 
 ## Deep Dive
+Funkcja ```fs.existsSync()``` została wprowadzona w wersji 0.8 języka Node.js w celu sprawdzenia, czy plik lub katalog istnieje. Alternatywnie, można również skorzystać z funkcji ```fs.stat()```, która pozwala na pobranie informacji o danym pliku lub katalogu, w tym czy istnieje.
 
-Podczas sprawdzania istnienia katalogu, należy pamiętać o kilku dodatkowych aspektach. Po pierwsze, funkcja `fs.existsSync()` sprawdza tylko istnienie katalogu w bieżącym katalogu lub w podanym ścieżce. Jeśli chcemy sprawdzić istnienie katalogu w innej lokalizacji, musimy podać pełną ścieżkę.
+Oprócz tego, pojęcie sprawdzania istnienia katalogu jest związane z obsługą błędów. W przypadku, gdy katalog nie istnieje, może pojawić się wyjątek, dlatego ważne jest odpowiednie obsłużenie takiej sytuacji w kodzie.
 
-Kolejną rzeczą wartą uwagi jest zachowanie funkcji w przypadku, gdy podamy niepoprawną ścieżkę. W takim przypadku, zostanie wyrzucony błąd `Error`. Dlatego ważne jest, aby upewnić się, że podana ścieżka jest prawidłowa przed wywołaniem funkcji `fs.existsSync()`.
-
-## Zobacz także
-
-- Dokumentacja funkcji `fs.existsSync()`: https://nodejs.org/dist/latest-v14.x/docs/api/fs.html#fs_fs_existssync_path
-- Przykładowy kod do sprawdzania istnienia katalogu: https://www.geeksforgeeks.org/node-js-fs-existssync-method/
+## Zobacz także:
+- Dokumentacja funkcji [fs.existsSync()](https://nodejs.org/api/fs.html#fs_fs_existssync_path)
+- Porównanie funkcji ```fs.existsSync()``` i ```fs.stat()``` [w tym artykule na Medium](https://medium.com/@bryanjenningz/how-to-check-if-a-file-or-directory-exists-in-node-js-1235aefc7fa0)
+- Inne metody obsługi plików i katalogów w Javascript, takie jak [listowanie plików](https://www.npmjs.com/package/lljkjj_a) czy [tworzenie katalogów](https://nodejs.org/api/fs.html#fs_fs_mkdir_path_options_callback)

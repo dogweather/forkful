@@ -1,7 +1,7 @@
 ---
-title:                "Sending en http-forespørsel"
-html_title:           "Clojure: Sending en http-forespørsel"
-simple_title:         "Sending en http-forespørsel"
+title:                "Å sende en http-forespørsel"
+html_title:           "Clojure: Å sende en http-forespørsel"
+simple_title:         "Å sende en http-forespørsel"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "HTML and the Web"
@@ -10,59 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor 
-Du lurer kanskje på hvorfor du skulle bry seg om å sende HTTP-forespørsler i Clojure. Vel, det er et veldig nyttig verktøy for å kommunisere med eksterne API-er eller hente data fra andre nettsteder. Det kan hjelpe deg med å bygge kraftige applikasjoner som er avhengige av å få og behandle informasjon fra ulike kilder.
+# Hva og hvorfor?
 
-## Hvordan 
-Så, la oss se på hvordan du kan sende en HTTP-forespørsel ved hjelp av Clojure. I eksemplene nedenfor vil vi bruke [clj-http](https://github.com/dakrone/clj-http) biblioteket, som gir en enkel og intuitiv måte å sende HTTP-forespørsler og behandle svarene på.
+Sending av HTTP forespørsler er en vanlig praksis i nettutvikling. Det lar programmerere kommunisere og hente data fra forskjellige nettsider og API-er. Dette gjør at man kan bygge interaktive og dynamiske applikasjoner som er effektive når det kommer til å hente og behandle informasjon fra ulike kilder.
 
-Først må du inkludere biblioteket i prosjektet ditt ved å legge til følgende avhengighet i din `project.clj` fil:
+# Hvordan:
 
-```
-[clj-http "3.11.0"]
-```
+```Clojure
+;; Enkel HTTP forespørsel
+(require '[clojure.http.client :as http])
 
-Deretter importerer du biblioteket i Clojure-filen din:
-
-```
-(ns min-app.core
-  (:require [clj-http.client :as client]))
+(http/get "https://www.example.com")
 ```
 
-For å sende en HTTP GET-forespørsel, bruker du `client/get` funksjonen og angir URL-en du vil sende forespørselen til:
+```Clojure
+;; HTTP forespørsel med tilleggsparametere og avansert håndtering av respons
+(require '[clojure.http.client :as http])
+(require '[clojure.data.json :as json])
 
-```
-(def res (client/get "https://www.example.com"))
-```
+;; Oppretter en map med tilleggsparametere
+(def params {:headers {"Content-Type" "application/json"}})
 
-Hvis forespørselen er vellykket, returnerer `client/get` funksjonen et map med følgende nøkler: `:status`, `:headers` og `:body`. Så vi kan for eksempel få tilgang til kroppen (body) av svaret ved å kalle `:body` nøkkelen på resultatmapet:
+;; Utfører en POST forespørsel og konverterer respons til en map
+(def response (http/post "https://www.example.com" {"key" "value"} params))
 
-```
-(:body res)
-```
+;; Henter ut og konverterer responsens body til en map
+(def result (json/read-str (:body response)))
 
-Du kan også inkludere eventuelle parametere eller tilpassede HTTP-headers i forespørselen ved å bruke `:query-params` og `:headers` argumenter i `client/get` funksjonen.
-
-## Dypdykk 
-Nå som du har lært det grunnleggende, la oss se på noen flere detaljer om å sende HTTP-forespørsler i Clojure.
-
-For å sende en POST-forespørsel, bruker du `client/post` funksjonen og angir URL-en og eventuelt kroppen (body) til forespørselen din:
-
-```
-(def res (client/post "https://www.example.com" 
-        {:body "data=123"}))
+;; Håndterer resultatet fra forespørselen
+(println (:key result))
 ```
 
-Du kan også bruke `client/post` funksjonen til å sende JSON-data ved å inkludere `content-type` header og legge til JSON-data i kroppen (body):
+# Dypdykk:
 
-```
-(def res (client/post "https://www.example.com" 
-        {:json {:key "value"}} 
-        {:headers {"content-type" "application/json"}}))
-```
+Sending av HTTP forespørsler har vært en viktig del av nettutvikling siden starten av internett. Det finnes diverse alternativer til å sende HTTP forespørsler, som for eksempel biblioteket cURL. Clojure har også ulike metoder for å håndtere HTTP forespørsler, inkludert den felles vanen å bruke funksjonen `GET` eller `POST` fra biblioteket `clojure.http.client`. Denne funksjonen inneholder også en rekke nyttige tilleggsparametere som kan justeres etter behov.
 
-Du kan også sende HTTP-forespørsler ved hjelp av andre funksjoner som `client/put`, `client/patch` og `client/delete` avhengig av hvilken type forespørsel du trenger å sende.
+# Se også:
 
-## Se Også 
-- [clj-http biblioteket](https://github.com/dakrone/clj-http)
-- [Clojure HTTP-forespørsler: Hvorfor og hvordan](https://www.braveclojure.com/quests/http-requests/)
+- Clojure HTTP client dokumentasjon: https://github.com/dakrone/clj-http

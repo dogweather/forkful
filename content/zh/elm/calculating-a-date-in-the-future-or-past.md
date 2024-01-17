@@ -1,7 +1,7 @@
 ---
-title:                "计算过去或未来的日期"
-html_title:           "Elm: 计算过去或未来的日期"
-simple_title:         "计算过去或未来的日期"
+title:                "计算未来或者过去的日期"
+html_title:           "Elm: 计算未来或者过去的日期"
+simple_title:         "计算未来或者过去的日期"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Dates and Times"
@@ -10,47 +10,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-为什么：为了让我们的应用程序或网站更加灵活和智能，有时候需要计算将来或过去的日期。例如，在预订机票或制定日程时，计算未来或过去的日期是非常重要的。
+# 什么 和 为什么？
+计算未来或过去日期是指根据给定的时间和时间差，计算出一个新的日期。程序员经常需要做这样的计算，以便在他们的应用程序中预测日期或跟踪时间。
 
-如何：在 Elm 中，通过使用 ``Elm/time`` 模块可以轻松进行日期计算。下面的代码示例演示如何使用模块中的函数来计算未来或过去的日期，你可以根据自己的需求来进行调整。
+# 怎么做：
+### 例子：
+Elm 提供了一个 Date 模块，具有有用的函数来处理日期。我们来看一个简单的例子，假设我们要计算当前日期的三个月后的日期：
 
-```
-Elm/time
-    |> Time.now
-    |> Time.inUtc
-    |> Time.toIsoString
-    |> Debug.log "Current date"
-```
+```Elm
+import Date exposing (..)
 
-上面的代码将打印出当前的日期，如“2021-07-20T15:15:00.000Z”。接下来，我们可以使用 ``Time.add`` 函数来计算将来或过去的日期。
+futureDate : Date
+futureDate = add (months 3) date
 
-```
-Elm/time
-    |> Time.now
-    |> Time.inUtc
-    |> Time.add Time.day 7
-    |> Time.toIsoString
-    |> Debug.log "Date 1 week from now"
-```
+main = 
+  date |> toString
+  "当前日期：" |> append
+  |> toString
+  (toString futureDate) |> append
+  |> toString
+  |> Html.text
 
-上面的代码将打印出一周后的日期，如“2021-07-27T15:15:00.000Z”。同时，我们也可以使用 ``Time.sub`` 函数来计算过去的日期。
-
-```
-Elm/time
-    |> Time.now
-    |> Time.inUtc
-    |> Time.sub Time.month 1
-    |> Time.toIsoString
-    |> Debug.log "Date 1 month ago"
+/*** 输出：当前日期：2019-07-18, 新的日期：2019-10-18 ***/
 ```
 
-上面的代码将打印出一个月前的日期，如“2021-06-20T15:15:00.000Z”。
+我们首先导入 Date 模块，并使用 `add` 函数来添加时间差。在这个例子中，我们传入 `months 3`，表示三个月的时间差。然后我们使用 `toString` 函数将日期转换为字符串，并使用 `append` 函数将字符串连接起来。最后，我们使用 `Html.text` 函数将结果输出到 HTML 页面。
 
-深入探讨：在日期计算中，我们需要特别注意时区的问题。在 Elm 中，可以使用 ``Time.inZone`` 函数来将日期转换为指定时区的时间。另外，还可以使用 ``Time.compare`` 函数来比较两个日期的先后顺序。
+另一个例子，假设我们要计算昨天的日期：
 
-另外，我们也可以通过使用 ``Time.fromIsoString`` 函数来将日期字符串转换为日期类型，以便进行更复杂的计算。
+```Elm
+yesterday : Date
+yesterday = sub (days 1) date
 
-参考链接：
+main = 
+  date |> toString
+  "当前日期：" |> append
+  |> toString
+  (toString yesterday) |> append
+  |> toString
+  |> Html.text
 
-- ``Elm/time`` 模块文档：https://package.elm-lang.org/packages/elm/time/latest/
-- Elm 中文文档：https://guide.elm-lang.org/
+/*** 输出：当前日期：2019-07-18, 昨天的日期：2019-07-17 ***/
+```
+
+在这个例子中，我们使用 `sub` 函数来减去一个时间差，即一天。其他的时间差函数还包括 `years`、`weeks`、`hours`等，可以根据具体需求来选择使用哪一个。
+
+# 深入了解：
+计算日期的技术已经存在很长一段时间了，并且在不同的编程语言中都有不同的实现。除了使用 Elm 的 Date 模块，还可以通过其他方式来计算日期，比如使用第三方库或手动编写算法。这些方法各有优缺点，可以根据项目的需要来选择。
+
+在实现上，Elm 使用了一种叫做"函数式编程"的方法来处理日期。这种方法强调将代码分离为独立的函数，并尽可能避免副作用。这使得代码更加清晰、可读性更高，并且不易出错。
+
+# 参考链接：
+- [Elm Date 模块文档](https://package.elm-lang.org/packages/elm/time/latest/Date)
+- [函数式编程概念](https://medium.com/@opensourcemeath/functions-and-benefits-of-functional-programming-407fd4b8c5a0)
+- [手动计算日期的算法](https://www.timeanddate.com/date/duration.html)

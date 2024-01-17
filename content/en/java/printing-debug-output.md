@@ -10,45 +10,67 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-Debugging is an essential part of the coding process, and being able to print debug output can be incredibly helpful in identifying and fixing issues. It allows you to see the specific values of variables and functions at different points in your code, providing valuable insights into the functioning of your program.
+## What & Why?
+Printing debug output is a common practice among programmers to help identify and fix errors in their code. It involves displaying the values of variables and messages during runtime to track the flow of the program and identify potential issues.
+By printing debug output, programmers can troubleshoot their code and understand how their program is behaving, helping them to find and fix any bugs in their code more efficiently.
 
-## How To
-To print debug output in Java, you can use the `System.out.println()` method. This method takes in a string or variable and prints it to the console. Let's say we want to print the value of a variable `num`:
-
-```Java
-int num = 10;
-System.out.println(num); // will print 10 to the console
-```
-
-You can also concatenate strings and variables using the `+` operator:
+## How to:
+To print debug output in Java, we can use the built-in `System.out.println()` method. This method takes in a string or variable and prints it to the console. Let's look at an example below:
 
 ```Java
-String name = "John";
-System.out.println("My name is " + name); // will print "My name is John" to the console
+// Debug output example
+public class DebugOutput {
+  public static void main(String[] args) {
+    String name = "John";
+    int age = 25;
+
+    // Print debug output
+    System.out.println("Name: " + name);
+    System.out.println("Age: " + age);
+  }
+}
 ```
 
-If you want to print multiple variables or strings on the same line, you can use the `System.out.print()` method instead, which will not add a newline character at the end:
+This will output the following:
+
+```
+Name: John
+Age: 25
+```
+
+We can also use `System.out.printf()` to format our output. This method allows us to specify the format of our output, which can be helpful when debugging complex data types. Here's an example:
 
 ```Java
-int num1 = 5;
-int num2 = 7;
-System.out.print("The sum of " + num1 + " and " + num2 + " is: ");
-System.out.println(num1 + num2); // will print "The sum of 5 and 7 is: 12" on one line
+// Debug output with formatting
+public class DebugOutputFormat {
+  public static void main(String[] args) {
+    int num = 123456789;
+    double price = 19.99;
+    boolean isReady = true;
+
+    // Print debug output with formatting
+    System.out.printf("Number: %d%n", num);
+    System.out.printf("Price: $%.2f%n", price);
+    System.out.printf("Is ready? %b%n", isReady);
+  }
+}
 ```
 
-You can also print the value of expressions to see their result:
+The output will be:
 
-```Java
-System.out.println("2 + 3 = " + (2 + 3)); // will print "2 + 3 = 5" to the console
+```
+Number: 123456789
+Price: $19.99
+Is ready? true
 ```
 
-## Deep Dive
-There are a few other ways to print debug output in Java, such as using the `Logger` class or external libraries, but for most cases, `System.out.println()` and `System.out.print()` are sufficient. However, it's important to note that printing debug output can slow down your program, so it's essential to remove it when you're done debugging.
+## Deep Dive:
+Historically, printing debug output was commonly used in older programming languages like C and Assembly, as it was the only way to track the flow of the program. However, with the introduction of modern integrated development environments (IDEs), debugging tools like breakpoints, watches, and step-by-step execution have become more popular.
+But, printing debug output still remains a useful technique, especially for quick and informative debugging during development. Alternative methods like using a debugger may require more setup and may not be as flexible as printing debug output.
 
-Another useful tip is to use the `java.util.logging.Level` class to specify the level of the debug output. This allows you to control which debug statements are shown based on their level of importance.
+When printing debug output, it's important to only include relevant information to avoid cluttering the output. You can use conditional statements and control flow to selectively print debug output for specific parts of your code. This can help save time and make it easier to pinpoint and fix issues.
 
-## See Also
-- [Java Documentation on System.out.println](https://docs.oracle.com/javase/7/docs/api/java/io/PrintStream.html#println())
-- [Tutorial on Debugging in Java](https://www.baeldung.com/java-debugging)
-- [Using Java's Logger Class for Debugging](https://www.logicbig.com/tutorials/core-java-tutorial/logging/using-java-logging-logger-for-application-logging.html)
+## See Also:
+- [Debugging in Java - Tutorialspoint](https://www.tutorialspoint.com/java/java_debugging.htm)
+- [System Class in Java - GeeksforGeeks](https://www.geeksforgeeks.org/system-class-in-java/)
+- [Debugging with System.out.println() - Baeldung](https://www.baeldung.com/java-system-out-println-debugging)

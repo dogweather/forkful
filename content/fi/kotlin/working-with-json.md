@@ -10,63 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Miksi: Miksi JSON:in kanssa kannattaa työskennellä?
+"## Mikä Ja Miksi?"
 
-Koska JSON on yksi yleisimmistä tiedonsiirtomuodoista, joka mahdollistaa tiedon siirtämisen ja tallentamisen eri sovellusten välillä. Sen yksinkertainen syntaksi ja helppo luettavuus tekevät siitä suositun vaihtoehdon monille ohjelmoijille. 
+JSON on yleisesti käytetty tiedonvälitysformaatti, jota käytetään monissa ohjelmistoprojekteissa. JSON tulee sanoista JavaScript Object Notation ja se on suosittu, koska se on helppo lukea ja kirjoittaa. Käyttämällä JSONia, ohjelmoijat voivat vaihtaa tietoa eri sovellusten välillä yhteensopivalla ja yksinkertaisella tavalla.
 
-## Kuinka: Esimerkkejä koodista ja tulostuksesta
+"## Miten tehdä:"
 
-Kotlinilla on valmiita työkaluja JSON:in käsittelyyn, mikä tekee siitä helpon ja vaivattoman työkalun työskennellä JSON:in kanssa. Alla on esimerkkejä siitä, kuinka voit lukea ja kirjoittaa JSON:ia Kotlinilla.
-
-```Kotlin
-// Luodaan JSON objekti käyttäen Kotlinin HashMapia
-val user = hashMapOf(
-    "name" to "Matti",
-    "age" to 25
-)
-
-// Muunnetaan HashMap JSON:iksi
-val jsonUser = JSONObject(user)
-
-// Tulostetaan JSON
-println(jsonUser)
-
-```
-
-Tässä esimerkissä luodaan Kotlinin HashMap, johon lisätään kaksi avainta ja arvoa. Sitten muunnetaan tämä HashMap JSON-muotoon käyttäen JSONObject-luokkaa ja lopuksi tulostetaan JSON. Tulostus näyttää seuraavalta:
-
-```
-{ "name": "Matti", "age": 25 }
-```
+Hyvä uutinen on, että Kotlinilla on sisäänrakennettu tuki JSON-tietojen käsittelyyn! Voit käyttää kotlinx.serialization-kirjastoa luodaksesi JSON-tietuja Kotlin-luokkien avulla ja analysoida JSON-tietoja suoraan merkkijonoina. Alla on esimerkkejä, miten voit luoda ja analysoida JSON-tietoja Kotlin-koodissa:
 
 ```Kotlin
-// Luetaan JSON:ia tiedostosta
-val jsonString = File("users.json").readText()
+// Luodaan JSON-tietoja Kotlin-luokkien avulla
+@Serializable data class Person(val name: String, val age: Int)
 
-// Muunnetaan JSON Kotlinin HashMapiksi
-val usersMap = JSON.parseObject(jsonString, object : TypeReference<HashMap<String, Any>>(){})
+// Muunnamme Kotlin-objektin JSON-muotoon
+val person = Person("Matti", 30)
+val json = Json.encodeToString(person)
 
-// Tulostetaan kaikki käyttäjät
-for ((name, age) in usersMap) {
-    println("Name: $name, Age: $age")
-}
-
+// Analysoimme JSON-merkkijonon Kotlin-objektiksi
+val parsedPerson = Json.decodeFromString(Person.serializer(), json)
+println(parsedPerson.name) // tulostaa "Matti"
 ```
 
-Toisessa esimerkissä luetaan JSON-tiedosto ja muunnetaan se HashMapiksi käyttäen Kotlinin JSON-kirjastoa. Sitten tulostetaan kaikki käyttäjät käyttäen for-silmukkaa. Tulostus näyttää tältä:
+Json-kirjaston avulla voit myös käsitellä kompleksisia JSON-tietoja, kuten taulukoita ja upotettuja objekteja. Voit käyttää myös Gson-kirjastoa, jos haluat vaihtoehtoisen tavan käsitellä JSON-tietoja.
 
-```
-Name: Matti, Age: 25
-Name: Liisa, Age: 30
-```
+"## Syvällinen sukellus:"
 
-## Syvemmälle: Lisää tietoa JSON:in käsittelystä
+JSON kehitettiin alun perin JavaScriptin yhteydessä, mutta se on nykyään suosittu formaatti kaikilla ohjelmointikielillä. JSON on myös korvannut XML-formaatin monissa sovelluksissa sen yksinkertaisuuden ja selkeyden vuoksi. Käyttämällä Kotlinia, voit helposti luoda ja analysoida JSON-tietoja ilman ylimääräistä työtä.
 
-JSON koostuu avaimista ja arvoista, jotka ovat tallennettuina tekstiin. Avaimet ja arvot erotetaan kaksoispisteellä ja parit pilkulla. JSON tukee myös erilaisia tietotyyppejä, kuten numeroita, merkkijonoja, totuusarvoja ja listoja.
+ "## Katso myös:"
 
-JSON:in suosio johtuu sen yksinkertaisesta syntaksista ja se sopii hyvin siirtämiseen internetin kautta. Suurin osa modernista web-sovelluskehityksestä käyttää JSON:ia, joten sen hyväksikäyttö on erittäin hyödyllistä.
-
-# Katso myös
-
-- [Kotlinin virallinen JSON-kirjasto: Gson](https://github.com/google/gson)
-- [Esimerkkejä JSON:in käsittelystä Kotlinilla](https://www.baeldung.com/kotlin-json)
+- ["Working with JSON in Kotlin" - Kotlinin virallinen dokumentaatio](https://kotlinlang.org/docs/serialization-json.html)
+- ["JSON - JavaScript Object Notation" - W3Schoolsin opas JSONista](https://www.w3schools.com/js/js_json_intro.asp)
+- ["Why JSON Has Replaced XML" - Blogikirjoitus JSONin ja XML:n eroista](https://www.talend.com/blog/2016/01/20/why-json-has-become-the-1-data-format-for-web-services/#:~:text=Now%2C%20JSON%20is%20the%20preferred,resource%20consumption%20with%20XML%20handling.)

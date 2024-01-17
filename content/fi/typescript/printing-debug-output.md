@@ -1,7 +1,7 @@
 ---
-title:                "Tulostusvirheiden palauttaminen"
-html_title:           "TypeScript: Tulostusvirheiden palauttaminen"
-simple_title:         "Tulostusvirheiden palauttaminen"
+title:                "Virheenkorjaustulostuksen tulostaminen"
+html_title:           "TypeScript: Virheenkorjaustulostuksen tulostaminen"
+simple_title:         "Virheenkorjaustulostuksen tulostaminen"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Testing and Debugging"
@@ -10,40 +10,21 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä & Miksi?
+Pyörittely tulostuksen avulla on työkalu, jota ohjelmoijat käyttävät virheiden paikantamiseen sovelluksiensa koodissa. Pienellä koodinpätkällä voit tulostaa debug-tietoja konsoliin selventämään, miksi ohjelma ei toimi halutulla tavalla.
 
-Joskus koodatessa voi tulla tarve selvittää tarkemmin, mitä ohjelma tekee ja miten se käsittelee eri tilanteita. Tässä tilanteessa voi olla hyödyllistä tulostaa debug-tietoa, joka auttaa hahmottamaan ohjelman suoritusta.
+## Mitä tehdä?
+Käytä TypeScriptiä ```console.log()```- toiminnon avulla tulostamaan sisäänrakennettua testimateriaalia. Tämä auttaa selvittämään, missä koodissa on ongelma ja miten sen voi ratkaista.
 
-## Miten
-
+Esimerkki:
 ```TypeScript
-// Esimerkki debug-tekstin tulostamisesta
-console.log("Tämä on debug-teksti.");
+const nimi = "Pekka";
+console.log("Hei, olen " + nimi); //tulostaa: Hei, olen Pekka 
 ```
 
-Debug-tekstiä voidaan tulostaa koodissa käyttämällä `console`-objektia ja sen `log`-metodia. Tämän avulla voidaan tulostaa haluttuja viestejä tai muuttujien arvoja ohjelman suorituksen aikana.
-
-```TypeScript
-// Tulostetaan muuttujan arvo
-let i = 5;
-console.log(`Muuttujan i arvo on ${i}`);
-```
-
-Debug-tekstin tulostaminen voi auttaa havaitsemaan mahdollisia virheitä koodissa ja helpottaa virheiden selvittämistä. Se voi myös olla hyödyllistä, kun halutaan seurata koodin suoritusta ja varmistaa, että ohjelma käsittelee eri tapauksia oikein.
-
-## Syvemmälle
-
-`console`-objektin lisäksi TypeScriptissä on myös `Debugger`-luokka, jonka avulla voidaan tulostaa tietoa vaihtehtisen debuggerin, kuten Chrome-kehittäjätyökalujen, kautta.
-
-```TypeScript
-// Tulostetaan numeroiden taulukko debuggerin kautta
-let numbers = [1, 2, 3];
-debugger;
-```
-
-Tämä avaa debuggerin, jossa voi tarkastella muuttujien arvoja ja suorittaa koodia vaiheittain. Tämä on hyödyllistä monimutkaisemman koodin debuggaamisessa ja mahdollisten bugin löytämisessä.
+## Syvemmälle aiheeseen
+Ennen oli tapana käyttää ```alert()```-metodia debug-tulostukseen. Kuitenkin tältä menetelmältä puuttuu tiettyjä hyödyllisiä toimintoja, kuten esimerkiksi tietojen tarkan sijainnin tulostaminen. Tulostuksen sijaan voit myös käyttää debuggeria tutkiaksesi tarkemmin koodin tuloksia.
 
 ## Katso myös
-
-- [TypeScriptin viralliset ohjeet debuggaamiseen](https://www.typescriptlang.org/docs/handbook/debugging.html)
-- [Chrome DevToolsin käyttö TypeScriptin debuggaamiseen](https://www.hanselman.com/blog/TypeScript-and-Debugging-JavaScript-In-Chrome-DevTools-in-Eclipse-And-ASPNET-5).
+- [TypeScript Console API - Microsoft Docs](https://docs.microsoft.com/en-us/scripting/javascript/reference/console-object-javascript) 
+- [Debugging in TypeScript - TypeScript Deep Dive](https://basarat.gitbook.io/typescript/type-system#debugging)

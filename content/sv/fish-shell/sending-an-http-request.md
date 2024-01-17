@@ -1,7 +1,7 @@
 ---
-title:                "Skicka en http-begäran"
-html_title:           "Fish Shell: Skicka en http-begäran"
-simple_title:         "Skicka en http-begäran"
+title:                "Sändning av en http-förfrågan"
+html_title:           "Fish Shell: Sändning av en http-förfrågan"
+simple_title:         "Sändning av en http-förfrågan"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "HTML and the Web"
@@ -10,46 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
 
-Att skicka HTTP-förfrågningar är nödvändigt för att kommunicera med servrar och hämta data från internet. Genom att använda Fish Shell kan du enkelt automatisera detta och integrera det med andra kommandon och skript.
+Att skicka ett HTTP-anrop innebär att be om information från en annan dator via nätverket. Detta är en vanlig uppgift för programmerare eftersom det möjliggör kommunikation och datautbyte mellan olika applikationer och servrar.
 
-## Hur du gör det
+## Hur man:
 
-Skicka en HTTP-förfrågan med Fish Shell är enkelt. Först behöver du installera cURL, ett vanligt verktyg för att utföra HTTP-kommunikationer. Detta kan du göra genom att köra följande kommando i terminalen:
-
-```Fish Shell
-sudo apt-get install curl
-```
-
-När cURL är installerat kan du skicka en GET-förfrågan med hjälp av följande kommando:
+Skicka ett HTTP-anrop med Fish Shell är enkelt och kan göras med hjälp av kommandot `curl`. Exempelvis kan du skicka ett anrop till en URL genom att skriva:
 
 ```Fish Shell
-curl www.example.com
+curl http://www.example.com
 ```
 
-Detta kommer att skicka en förfrågan till www.example.com och returnera resultatet i terminalen. Du kan också lägga till olika flaggor för att anpassa din förfrågan, såsom att specificera ett annat HTTP-metod, ange headers eller skicka data.
+Detta kommer att returnera hemsidan hos www.example.com i terminalen.
 
-## Djupdykning
-
-Fish Shell har också stöd för att skicka HTTP-förfrågningar med API:et "HTTPie". Detta är ett alternativ till cURL som erbjuder ett mer lättläst gränssnitt. För att installera HTTPie, kör följande kommando:
+Om du vill utföra en annan typ av HTTP-anrop, till exempel POST eller PUT, kan du använda flaggor för att specificera önskad metod och skicka med eventuella nödvändiga data. Exempelvis kan du utföra en POST-request med följande kommando:
 
 ```Fish Shell
-sudo apt-get install httpie
+curl -X POST -d "name=John&age=25" http://www.example.com/users
 ```
 
-Sedan kan du skicka en GET-förfrågan med hjälp av följande kommando:
+Detta kommer att skicka namn och ålder till www.example.com och spara dem som en ny användare.
 
-```Fish Shell
-http GET www.example.com
-```
+## Djupdykning:
 
-Detta kommer att ge samma resultat som cURL, men med en annorlunda syntax.
+HTTP-protokollet skapades för att möjliggöra kommunikation mellan webbservrar och webbklienter. Det är standardprotokollet för World Wide Web och används för att överföra data mellan datorer. Det finns andra alternativ för att skicka och ta emot data, som till exempel FTP eller SMTP, men HTTP är det vanligaste.
 
-Du kan också skicka POST-förfrågningar med både cURL och HTTPie genom att ange en body med data som ska skickas. Detta är användbart när du vill skicka formulärdata eller JSON till en server. Detta kan göras genom att använda flaggan "-d" i cURL eller "data=" i HTTPie.
+Fish Shell är ett alternativ till andra terminalskal, som Bash eller Zsh, och har inbyggd stöd för att kommunicera via HTTP med hjälp av kommandot `curl`. Det finns dock också andra verktyg och bibliotek som är specialiserade på att hantera HTTP-anrop, som till exempel Python-biblioteket `requests` eller verktyget `wget`.
 
-## Se även
+Skicka ett HTTP-anrop innebär vanligtvis att skapa en TCP-anslutning, skicka en anrop och sedan vänta på ett svar från servern. Det finns flera detaljer och parametrar som kan ställas in för att anpassa HTTP-anrop, men det grundläggande konceptet är att det handlar om att skicka data över nätverket.
 
-- Fish Shell documentation: https://fishshell.com/docs/current/
-- cURL manual: https://curl.haxx.se/docs/manpage.html
-- HTTPie documentation: https://httpie.org/docs
+## Se även:
+
+- Officiell Fish Shell dokumentation: https://fishshell.com/docs/current/index.html
+- "curl" kommandodokumentation: https://curl.se/docs/manpage.html
+- HTTP-protokollets officiella specifikation: https://www.w3.org/Protocols/rfc2616/rfc2616.html

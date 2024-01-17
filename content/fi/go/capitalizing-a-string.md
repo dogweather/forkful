@@ -1,7 +1,7 @@
 ---
-title:                "Merkkijonon ensimmäistä kirjainta suurennettaessa"
-html_title:           "Go: Merkkijonon ensimmäistä kirjainta suurennettaessa"
-simple_title:         "Merkkijonon ensimmäistä kirjainta suurennettaessa"
+title:                "Merkkijonon päätekirjaimen muuttaminen"
+html_title:           "Go: Merkkijonon päätekirjaimen muuttaminen"
+simple_title:         "Merkkijonon päätekirjaimen muuttaminen"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Strings"
@@ -10,53 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä & Miksi?
 
-Miksi haluaisit muuttaa merkkijonon ensimmäisen kirjaimen isoiksi kirjaimiksi? Yksi yleinen syy voi olla, että haluat esimerkiksi tulostaa nimen tai lauseen kanssa, ja haluat varmistaa, että se näyttää siistiltä ja hyvin muotoillulta.
+Saatat huomata, että ohjelmoijat usein käyttävät funktiota, joka muuttaa merkkijonon ensimmäisen kirjaimen isoksi. Tätä kutsutaan "merkkijonon kapitalisoinniksi". Ohjelmoijat tekevät tätä helpottaakseen merkkijonojen käsittelyä ja parantaakseen koodin luettavuutta.
 
-## Miten tehdä se
-
-Go-kielessä on sisäänrakennettu funktio nimeltä `strings.Title()`, joka tekee juuri sen haluamasi asian: muuttaa merkkijonon ensimmäisen kirjaimen isoksi kirjaimeksi. Tässä on yksinkertainen esimerkki:
+## Kuinka tehdä:
 
 ```Go
-package main
-
-import (
-    "fmt"
-    "strings"
-)
-
-func main() {
-    s := "hei, olen go-ohjelmoija"
-    fmt.Println(strings.Title(s))
+func kapitalisoi(teksti string) string {
+    return strings.ToUpper(teksti[0:1]) + teksti[1:]
 }
+
+kapitalisoi("go kieli") // palauttaa "Go kieli"
+kapitalisoi("FUNKTIO") // palauttaa "FUNKTIO"
 ```
 
-Tuloste: "Hei, Olen Go-Ohjelmoija"
+## Syvälle sukellus:
 
-Voit myös käyttää `strings.ToUpper()` -funktiota, joka muuttaa kaikki merkit isoiksi kirjaimiksi, ja sitten `strings.ToLower()` -funktiota, joka muuttaa kaikki merkit pieniksi kirjaimiksi. Tässä on esimerkki, jossa ensin muutamme merkkijonon kaikki kirjaimet isoiksi ja sitten takaisin pieniksi:
+Merkkijonon kapitalisointia on käytetty ohjelmoinnissa jo pitkään. Se juontaa juurensa vanhoista kirjoituskoneista, joissa isokirjaimisten kirjainten käyttäminen vaati enemmän voimaa kuin pienikirjaimisten.
 
-```Go
-package main
+On olemassa myös muita tapoja kapitalisoida merkkijonoja, kuten muuttamalla kaikki kirjaimet isoksi tai pieneksi, tai käyttämällä valmiita funktioita kuten `strings.Title`.
 
-import (
-    "fmt"
-    "strings"
-)
+Go:n merkkijonojen käsittely perustuu Unicode-standardiin, mikä tarkoittaa että merkkijonon kapitalisoinnissa täytyy ottaa huomioon myös ei-latinalaiset kirjaimet ja merkit. Tämä tekee Go:n kapitalisointifunktiosta erittäin monipuolisen ja käyttökelpoisen kaikenlaisissa ohjelmissa.
 
-func main() {
-    s := "Tämä on Merkkijono"
-    fmt.Println(strings.ToLower(strings.ToUpper(s)))
-}
-```
+## Katso myös:
 
-Tuloste: TÄMÄ ON MERKKIJONO
-
-## Syvemmälle
-
-Jos haluat ymmärtää, miten `strings.Title()` -funktio todella toimii, voit tutkia sen lähdekoodia. Voit löytää sen Go-paketin `strings` lähdetiedostosta (tai voit vain tarkastella sitä GitHubissa). Siitä löydät useita muita hyödyllisiä merkkijonojen käsittelyyn liittyviä funktioita.
-
-## Katso myös
-
-- [Go-kielem käsikirja (englanniksi)](https://golang.org/ref/spec)
-- [Go-paketin strings lähdetiedosto (englanniksi)](https://github.com/golang/go/blob/master/src/strings/strings.go)
+- [Go:n virallinen dokumentaatio merkkijonojen käsittelyyn](https://golang.org/pkg/strings/)
+- [Blogikirjoitus merkkijonon kapitalisoinnista Go:ssa](https://medium.com/@felipedutratine/creating-a-function-to-uppercase-the-first-letter-of-a-string-in-go-b4ed9782304f)

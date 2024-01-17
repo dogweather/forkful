@@ -1,7 +1,7 @@
 ---
-title:                "Lavorare con json"
-html_title:           "Fish Shell: Lavorare con json"
-simple_title:         "Lavorare con json"
+title:                "Lavorando con json"
+html_title:           "Fish Shell: Lavorando con json"
+simple_title:         "Lavorando con json"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Data Formats and Serialization"
@@ -10,42 +10,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+## Cosa e perché?
+Lavorare con JSON (JavaScript Object Notation) è una pratica comune per i programmatori perché è un formato di dati leggibile sia per gli esseri umani che per le macchine. È ampiamente utilizzato per lo scambio di informazioni tra diverse applicazioni o servizi web.
 
-Se sei un appassionato di programmazione e stai cercando di espandere le tue conoscenze, potresti essere interessato a lavorare con JSON. Questo formato di dati è ampiamente utilizzato nell'ambito della programmazione web e imparare a lavorare con esso può aprire molte opportunità di lavoro.
-
-## Come Fare
-
-Per iniziare a lavorare con JSON, prima di tutto dovrai accedere alla tua shell Fish. Questo può essere fatto facilmente digitando il comando "fish" nel tuo terminale. Una volta nell'ambiente Fish Shell, puoi utilizzare il comando "set" per creare una variabile e assegnarle dei valori in formato JSON. Ad esempio:
-
-```Fish Shell
-set myvar '{"nome": "Mario", "cognome": "Rossi", "età": 35}'
-```
-Una volta creata la tua variabile, puoi utilizzarla all'interno di uno script Fish per manipolare o leggere i dati in formato JSON. Ad esempio, per accedere all'età nella variabile "myvar" possiamo utilizzare il comando "echo" come segue:
-
-```Fish Shell
-echo $myvar[età]
-```
-
-Questo ci restituirà il valore "35". È anche possibile utilizzare strumenti come "jq" per formattare e filtrare i dati JSON. Ad esempio, per visualizzare solo il nome e il cognome nella nostra variabile "myvar", possiamo utilizzare il comando:
-
-```Fish Shell
-echo $myvar | jq '.nome, .cognome'
-```
-
-Questo ci restituirà il seguente output:
+## Come fare:
+Utilizzando Fish Shell, è possibile manipolare e interagire con i dati JSON in modo rapido e semplice. Ecco un esempio di come è possibile leggere un file JSON e accedere ai suoi valori:
 
 ```
-"Mario"
-"Rossi"
+Fish Shell
+set json (cat file.json | fromjson)
+echo $json.key
 ```
 
-## Approfondimenti
+L'output sarà il valore associato alla chiave specificata all'interno del file JSON. Puoi anche utilizzare lo stesso approccio per scrivere un file JSON, sostituendo `fromjson` con `tojson`.
 
-JSON è un formato di dati molto versatile e ci sono molti strumenti e librerie disponibili per lavorare con esso. Puoi esplorare ulteriormente le funzionalità di Fish Shell utilizzando la documentazione ufficiale e cercando tutorial e risorse online.
+## Approfondimento:
+JSON è stato creato nel 2001 da Douglas Crockford ed è diventato uno standard per lo scambio di dati grazie alla sua semplicità e flessibilità. Anche se è molto popolare, ci sono anche altri formati simili come YAML e XML. Fish Shell utilizza un'implementazione interna di JSON per gestire i dati, ma ci sono anche plugin disponibili per una maggiore flessibilità nell'utilizzo di JSON all'interno della shell.
 
-## Vedi Anche
-
-- Documentazione ufficiale di Fish Shell (https://fishshell.com/docs/current/)
-- Libreria JQ (https://stedolan.github.io/jq/)
-- Guida introduttiva a JSON (https://www.json.org/json-it.html)
+## Vedi anche:
+- [Documentazione ufficiale di Fish Shell su JSON](https://fishshell.com/docs/current/cmds/fromjson.html)
+- [Documentazione di JSON su json.org](https://www.json.org/json-it.html)
+- [Plugin Fish-J](https://github.com/seanedwards/fish-j) per una maggiore flessibilità nell'utilizzo di JSON in Fish Shell.

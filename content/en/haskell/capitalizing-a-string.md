@@ -10,30 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-Capitalizing strings may seem like a trivial task, but it can have a big impact on the readability and aesthetics of your code. By learning how to properly capitalize strings in Haskell, you can enhance the quality of your code and make it more visually appealing.
+## What & Why?
 
-## How To
-To capitalize a string in Haskell, we can use the `toUpper` function from the `Data.Char` module. Here's an example code with a sample output:
+Capitalizing a string means converting all letters in a string to uppercase. Programmers often do this for consistency and readability in their code, as well as for conforming to certain formatting standards.
+
+## How to:
 
 ```Haskell
-import Data.Char (toUpper)
+import Data.Char
 
 capitalize :: String -> String
-capitalize str = map toUpper str
-
-main = do
-  let str = "hello world"
-  putStrLn $ capitalize str
+capitalize = map toUpper
 ```
-Output: `HELLO WORLD`
+Sample output: "hello world" -> "HELLO WORLD"
 
-In the code above, we first import the `toUpper` function from the `Data.Char` module. Then, we define a function `capitalize` that takes a string as input and uses the `map` function to apply the `toUpper` function to each character in the string. In the `main` function, we create a string and pass it to the `capitalize` function, then print the output using `putStrLn`.
+## Deep Dive:
 
-## Deep Dive
-In Haskell, strings are treated as lists of characters, which means we can use all the list operations on strings. This is why we were able to use the `map` function in the `capitalize` function to apply the `toUpper` function to each character in the string. Additionally, the `toUpper` function only works on single characters, so using it directly on a string would result in an error. This is why we had to use the `map` function to apply it to each character.
+### Historical Context:
 
-## See Also
-- [Haskell Documentation on `Data.Char`](https://hackage.haskell.org/package/base-4.15.0.0/docs/Data-Char.html)
-- [Tutorial on Strings in Haskell](https://www.tutorialspoint.com/haskell/haskell_strings.htm)
-- [List Functions in Haskell](https://www.haskell.org/tutorial/arrays.html#sect21.2)
+Capitalizing strings has been a common practice in programming languages since the early days of computer programming. In many cases, uppercase letters were easier to read on early monitors and punch cards. Additionally, the use of uppercase letters helped to distinguish keywords and variables in a program.
+
+### Alternatives:
+
+Aside from using the `Data.Char` library, there are other ways to capitalize a string in Haskell. For example, you could use recursion to iterate through each character in the string and convert it to uppercase. Another alternative is to use the `Char` datatype's `isLower` and `toUpper` functions to only convert lowercase letters to uppercase.
+
+### Implementation Details:
+
+The `capitalize` function in our example makes use of the `map` function to apply the `toUpper` function to each character in the string, using function composition. This allows for a concise and readable implementation of the `capitalize` function.
+
+## See Also:
+
+- [toUpper function documentation](https://hackage.haskell.org/package/base-4.14.1.0/docs/Data-Char.html#v:toUpper)
+- [map function documentation](https://hackage.haskell.org/package/base-4.14.1.0/docs/Prelude.html#v:map)

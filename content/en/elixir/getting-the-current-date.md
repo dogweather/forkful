@@ -10,63 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why 
+## What & Why?
 
-Getting the current date is a common task in many programming projects. Whether it's for displaying the current date on a website or for tracking events, having the ability to access and manipulate the current date is crucial for many applications.
+Getting the current date is the process of retrieving the current date and time from your computer's system clock. It is a common task for programmers who want to keep track of time-sensitive events or display the current date and time in their applications.
 
-## How To 
+## How to:
 
-To get the current date in Elixir, we can use the `Date` module from the `Calendar` library. This module provides several functions for working with dates, including getting the current date. Here's an example of how to retrieve the current date and format it as a string:
+```Elixir
+Date.utc_today()
+#=> ~D[2021-09-29]
 
-```elixir
-current_date = Date.utc_today()
-formatted_date = Date.format(current_date, "{YYYY}-{MM}-{DD}")
-IO.puts(formatted_date)
-
-# Output: 2021-12-28
+Date.utc_today() |> Date.to_string()
+#=> "2021-09-29"
 ```
 
-We used the `utc_today` function to retrieve the current date, which returns a `Date` struct. Then, we used the `format` function to specify the format we wanted the date to be displayed in. In this case, we used `"{YYYY}-{MM}-{DD}"` to show the year, month, and day in a YYYY-MM-DD format. Lastly, we used `IO.puts` to print the formatted date to the console.
+The `Date.utc_today()` function returns the current date in the UTC format. The resulting date is represented using the `~D[YYYY-MM-DD]` syntax. To convert it into a string, we can use the `Date.to_string()` function.
 
-We can also get the current date and time by using the `DateTime` module from the `Calendar` library. Here's an example of how we can do that:
+```Elixir
+Date.to_string(Date.utc_today(), [{:format, "{ISO}"}, {:width, 1}])
+#=> "{2021-09-29T00:00:00.000Z}"
 
-```elixir
-current_datetime = DateTime.utc_now()
-formatted_datetime = DateTime.format(current_datetime, "{YYYY}-{MM}-{DD} {hh}:{mm}:{ss}")
-IO.puts(formatted_datetime)
+Date.to_string(Date.utc_today(), [{:format, "{ISO8601}"}, {:width, 1}])
+#=> "{2021-09-29T00:00:00Z}"
 
-# Output: 2021-12-28 15:28:42
+Date.strftime(Date.utc_today(), "%m/%d/%Y")
+#=> "09/29/2021"
 ```
 
-Similarly to the previous example, we used the `utc_now` function to retrieve the current date and time as a `DateTime` struct. Then, we used the `format` function to specify the format we wanted the date and time to be displayed in. In this case, we used `"{YYYY}-{MM}-{DD} {hh}:{mm}:{ss}"` to show the year, month, day, hour, minute, and second in a YYYY-MM-DD hh:mm:ss format. Lastly, we used `IO.puts` to print the formatted date and time to the console.
+If we want to customize the format of the date, we can use the `Date.to_string()` or the `Date.strftime()` functions. The `Date.to_string()` function accepts various options like `{:format, "{ISO8601}"} or {:width, 1}` to specify the output format. On the other hand, `Date.strftime()` uses the [strftime](https://man7.org/linux/man-pages/man3/strftime.3.html) format specifiers to define the output format.
 
-## Deep Dive 
+## Deep Dive:
 
-The `Date` and `DateTime` modules have several other functions that can be useful for working with dates and times. For example, we can use the `add` function to add or subtract a specified number of days, months, or years to a given date.
+In Elixir, dates and times are represented using the `Date` and `Time` modules. The `Date` module provides functions for manipulating dates, while the `Time` module handles time-related functions.
 
-```elixir
-current_date = Date.utc_today()
-IO.inspect(current_date)
+Alternative methods for getting the current date in Elixir include using the built-in `:os.timestamp()` function or the [Timex](https://github.com/bitwalker/timex) library. These methods offer additional features such as timezone handling and date manipulation.
 
-# Output: ~D[2021-12-28]
+Under the hood, Elixir uses the `erlang:now()` function to get the current date and time from the Erlang VM. The `Date.utc_today()` function then converts the Erlang timestamp into a `Date` struct. This approach ensures consistent date and time across different systems and platforms.
 
-next_month = Date.add(current_date, 1, :month)
-IO.inspect(next_month)
-
-# Output: ~D[2022-01-28]
-
-next_year = Date.add(current_date, 1, :year)
-IO.inspect(next_year)
-
-# Output: ~D[2022-12-28]
-```
-
-As we can see in the example, we can use `add` to add one month or one year to the current date, resulting in a new `Date` struct. This function can be handy when handling recurring events or creating date ranges.
-
-## See Also 
-
-Here are some additional resources to help you further explore working with dates and times in Elixir:
+## See Also:
 
 - [Elixir Date module documentation](https://hexdocs.pm/elixir/Date.html)
-- [Elixir DateTime module documentation](https://hexdocs.pm/elixir/DateTime.html)
-- [Elixir Calendar library documentation](https://hexdocs.pm/elixir/Calendar.html)
+- [Elixir Time module documentation](https://hexdocs.pm/elixir/Time.html)
+- [Erlang :os.timestamp() function documentation](https://erlang.org/doc/man/os.html#timestamp-0)
+- [Timex library documentation](https://hexdocs.pm/timex/index.html)

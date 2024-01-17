@@ -10,47 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi:
+## Mitä ja mikä?
+Lataaminen verkkosivulle tarkoittaa sivun tiedon tallentamista tietokoneelle tai muuhun laitteeseen sitä varten että sivustoa voidaan käyttää offline-tilassa tai että sen sisältöä voidaan käsitellä ohjelmallisesti. Ohjelmoijat voivat ladata verkkosivuja esimerkiksi tietojen keräämiseksi tai niiden käsittelyä varten.
 
-Olet ehkä kuullut paljon puheita Elm-ohjelmointikielestä ja sen käytöstä web-kehityksessä. Mutta miksi sinun kannattaisi aloittaa käyttämään sitä? Yksi suuri etu Elm:llä on sen kyky hakea web-sivuja ja käsitellä niitä helposti ja turvallisesti. Tässä artikkelissa näytämme, miten se tapahtuu!
-
-## Miten:
-
-Elm tarjoaa valmiita toimintoja web-sivujen lataamiseen ja niiden sisällön käsittelyyn. Seuraavassa esimerkissä käytämme `Http` moduulia lähettämään hakupyyntö ja muuttamaan vastauksen JSON-muotoon:
+## Miten tehdä se:
 ```Elm
 import Http
-import Json.Decode exposing (..)
+import Json.Decode as Json
 
-requestUrl : String
-requestUrl =
-  "https://example.com"
+type alias WebPage = 
+    { url : String
+    , content : String
+    }
 
-handleResponse : Http.Response -> String
-handleResponse response =
-  case response of
-    Ok body ->
-      parseJson body
+downloadWebPage : String -> Cmd Msg
+downloadWebPage url = 
+    Http.get 
+        { url = url
+        , expect = Http.expectString Response
+        }
 
-    Err error ->
-      "Oops, something went wrong!"
+type Msg 
+    = Response (Result Http.Error String)
 
-parseJson : String -> String
-parseJson json =
-  case decodeValue json of
-    Ok result ->
-      "JSON-parsed response: " ++ (toString result)
-
-    Err error ->
-      "Oops, invalid JSON format!"
+update : Msg -> WebPage -> WebPage
+update msg currentPage = 
+    case msg of 
+        Response res -> 
+            case res of 
+                Ok content -> 
+                    { currentPage | content = content }
+                Err error -> 
+                    currentPage 
 ```
-Kun painat selaimen `nappia`, `requestUrl`-osoitteeseen lähetetään GET-hakupyyntö. Jos vastaus onnistuu, `handleResponse`-funktio ottaa vastaan HTTP-vastauksen `body`:n ja muuttaa sen JSON-muotoon. Lopuksi `parseJson`-funktio tulostaa JSON-parsitun vastauksen tai virheviestin. Tämän avulla voit ladata, käsitellä ja näyttää web-sivun sisällön helposti ja turvallisesti!
 
-## Syvällisemmin:
-
-Elm tarjoaa myös muita moduuleja, kuten `Html`, `Navigation`, ja `Url`, jotka mahdollistavat web-sivujen luomisen ja navigoinnin sivujen välillä. Mutta koska tämä artikkeli keskittyy web-sivujen lataamiseen, suosittelemme tutustumaan `Http` moduulin dokumentaatioon ja kokeilemaan erilaisia koodaamisen mahdollisuuksia!
+## Syvempi sukellus:
+Lataaminen verkkosivulle on ollut tärkeä osa web-kehitystä alusta lähtien. Monet ohjelmointikielet tarjoavat työkaluja verkkosivujen lataamiseen, mutta Elm tarjoaa turvallisen ja käyttäjäystävällisen tavan tehdä sitä. Vaihtoehtoja lataamiseen ovat esimerkiksi JavaScript-bibliotekit ja selaimen sisäänrakennettu XMLHttpRequest-ominaisuus. Elmissä lataaminen tapahtuu käyttämällä sisäänrakennettua `Http` -moduulia, joka tarjoaa yksinkertaisen rajapinnan verkkosivujen lataamiselle. Tarkemmat tiedot `Http` -moduulin toteutuksesta ja käytöstä löytyvät Elm dokumentaatiosta.
 
 ## Katso myös:
-
-- [Elm:n virallinen dokumentaatio](https://guide.elm-lang.org/)
-- [Esimerkkejä Elm-koodista ja projektista](http://elm-lang.org/examples)
-- [Lisää tietoa Elm:stä ja sen käytöstä web-kehityksessä](https://medium.com/@_rchaves_/how-to-be-lazy-and-efficient-when-learning-elm-1d3cb3b6b4bb)
+- Elm dokumentaatio [Http -moduulista](https://package.elm-lang.org/packages/elm/http/latest/)
+- [HttpRequest](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest) selaimen sisäänrakennettu ominaisuus 
+- Erilaisia JavaScript-kirjastoja verkkosivujen lataamiseen kuten [axios](https://github.com/axios/axios) ja [fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)

@@ -1,7 +1,7 @@
 ---
-title:                "Ein Datum in eine Zeichenkette umwandeln"
-html_title:           "Swift: Ein Datum in eine Zeichenkette umwandeln"
-simple_title:         "Ein Datum in eine Zeichenkette umwandeln"
+title:                "Eine Datum in einen String umwandeln."
+html_title:           "Swift: Eine Datum in einen String umwandeln."
+simple_title:         "Eine Datum in einen String umwandeln."
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Dates and Times"
@@ -10,23 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
-Hast du dich jemals gefragt, wie man ein Datum in einen String umwandeln kann? Vielleicht hast du ein Datum in deiner App, das du dem Benutzer anzeigen möchtest, aber du musst es in einen lesbaren Text umwandeln. In Swift gibt es eine einfache Möglichkeit, dies zu tun, und in diesem Artikel werden wir uns ansehen, wie du das machen kannst.
+## Was & Warum?
+Die Konvertierung eines Datums in einen String ist ein häufiges Konzept in der Programmierung, das es ermöglicht, ein Datum in einem lesbaren Format anzuzeigen. Programmierer tun dies oft, um Informationen dem Benutzer zu präsentieren oder Daten aufzubereiten, um sie in einer Datenbank oder Datei zu speichern.
 
-## Wie es geht
+## Wie geht's:
+Beispiel 1:
 ```Swift
 let date = Date()
+
 let formatter = DateFormatter()
 formatter.dateFormat = "dd.MM.yyyy"
+
 let dateString = formatter.string(from: date)
-print(dateString) // Ausgabe: 16.03.2021
+//Output: 26.07.2021
 ```
 
-Der erste Schritt ist, ein Date-Objekt zu erstellen, das das aktuelle Datum und die aktuelle Uhrzeit enthält. Dann verwenden wir einen DateFormatter, um das Format des Datums zu definieren, das wir in unseren String umwandeln möchten. In diesem Beispiel haben wir das Format "dd.MM.yyyy" verwendet, was bedeutet, dass der Tag zuerst kommt, gefolgt vom Monat und dem Jahr. Zum Schluss rufen wir die Methode "string" des DateFormatter-Objekts auf und übergeben das Datum, das wir konvertieren möchten. Der resultierende String wird dann in die Variable "dateString" gespeichert und kann beliebig verwendet werden.
+Beispiel 2:
+```Swift
+let date = Date()
 
-## Deep Dive
-Wenn du dich genauer mit dem DateFormatter beschäftigst, wirst du feststellen, dass es viele verschiedene Optionen gibt, um das Datum zu formatieren. Zum Beispiel könntest du das Zeitformat hinzufügen, um die Uhrzeit mit anzugeben, oder das Format des Monats ändern, so dass er als Wort anstelle von einer Zahl angezeigt wird. Der DateFormatter hat auch die Fähigkeit, Sprach-, Kalender- und Zeitzone-Einstellungen zu berücksichtigen, so dass du auch internationalisierte Datumsangaben in deiner App verwenden kannst.
+let formatter = DateFormatter()
+formatter.locale = Locale(identifier: "de_DE")
+formatter.dateStyle = .medium
+formatter.timeStyle = .short
 
-## Siehe auch
-- [Apple Developer Documentation: DateFormatter](https://developer.apple.com/documentation/foundation/dateformatter)
-- [Swift.org: Date and Time](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+let dateString = formatter.string(from: date)
+//Output: 26. Juli 2021 um 10:30
+```
+In diesen Beispielen wird das aktuelle Datum mit verschiedenen Date Formatter-Einstellungen in einen String konvertiert. In Beispiel 1 wird das Datum im Format "Tag.Monat.Jahr" angezeigt, während in Beispiel 2 das Datum in einem formatierten Stil für die deutsche Sprache angezeigt wird.
+
+## Tiefergehende Erläuterung:
+Die Konvertierung eines Datums in einen String ist ein grundlegendes Konzept in der Programmierung und hat sich im Laufe der Zeit weiterentwickelt. Früher wurde dies oft durch die Verwendung von Funktionen wie "printf" in C oder "toString" in Java erreicht. Mit der Einführung von Swift wurde das Date Formatter-Objekt eingeführt, das eine einfachere Möglichkeit bietet, Datumswerte in Strings zu konvertieren.
+
+Es gibt auch alternative Methoden, um Datumswerte in einem lesbaren Format anzuzeigen, wie zum Beispiel die Verwendung von Bibliotheken von Drittanbietern oder die Implementierung eigener Funktionen. Letztendlich hängt die Wahl davon ab, welche Anforderungen ein Programm hat und welche Methode die beste Option ist.
+
+Bei der Konvertierung eines Datums in einen String ist es auch wichtig, die verschiedenen Datums- und Zeitzonenformate zu berücksichtigen. Date Formatter bietet die Möglichkeit, diese Einstellungen zu ändern, um sicherzustellen, dass das Datum korrekt dargestellt wird, unabhängig von der Einstellung des Geräts oder des Benutzers.
+
+## Siehe auch:
+- [Apple Dokumentation zum Date Formatter](https://developer.apple.com/documentation/foundation/dateformatter)
+- [Tutorial zum Konvertieren von Daten in Strings in Swift](https://www.hackingwithswift.com/example-code/system/how-to-convert-dates-and-times-to-a-string-using-dateformatter)
+- [Einführung in die Arbeit mit Datumswerten in Swift](https://www.raywenderlich.com/179848/swift-date-tutorial-getting-started)

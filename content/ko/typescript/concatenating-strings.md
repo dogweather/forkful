@@ -1,7 +1,7 @@
 ---
-title:                "문자열 연결"
-html_title:           "TypeScript: 문자열 연결"
-simple_title:         "문자열 연결"
+title:                "문자열 연결하기"
+html_title:           "TypeScript: 문자열 연결하기"
+simple_title:         "문자열 연결하기"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -10,36 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
-지금 버전의 TypeScript(이하 TypeScript)를 배우는 이유 중 하나는 문자열을 이어붙이는(concatenating) 것이다. 이는 텍스트를 결합하여 더 큰 문자열을 만들 수 있도록 도와준다.
+## 무엇이고 왜?
+문자열을 연결하는 것은 우리가 문자열을 일련의 부분으로 나누어 작업하는 것보다 컴퓨터 프로그램에서 더욱 유용한 방법입니다. 프로그래머는 여러 개의 문자열을 한 번에 하나의 문자열로 합쳐야 할 때가 종종 있기 때문에 이 작업을 자주합니다.
 
-## 하는 방법
+## 하는 방법:
 ```TypeScript
-// 예제 1
-let firstName: string = "Jane";
-let lastName: string = "Smith";
+let string1 = "안녕하세요";
+let string2 = "반가워요";
 
-let fullName: string = firstName + " " + lastName;
-console.log(fullName); // Jane Smith
+let combinedString = string1 + string2;
 
-// 예제 2
-let greeting: string = "Hello";
-let name: string = "John";
-
-let message: string = `${greeting}, ${name}!`;
-console.log(message); // Hello, John!
+console.log(combinedString);
+```
+```
+**출력:** 안녕하세요반가워요
 ```
 
-## 깊게 들어가보기
-문자열 이어붙이기는 JavaScript에서도 매우 일반적인 작업이다. TypeScript에서는 문자열의 데이터 타입을 명시해야 하기 때문에 조금 더 엄격한 방법으로 처리해야 한다. 문자열 이어붙이기에는 두 가지 방법이 있다. 첫 번째는 `+` 연산자를 사용하는 것이고, 두 번째는 템플릿 리터럴(template literal)을 이용하는 것이다. 템플릿 리터럴을 사용하면 변수나 표현식을 쉽게 문자열에 포함시킬 수 있다.
+## 깊이 파헤치기:
+1. 역사적 맥락: 문자열을 연결하는 개념은 프로그래밍 언어에 따라 조금 다르지만, 기본적으로 문자열을 조작하는 기본적인 작업 중 하나입니다. 이러한 작업은 오래된 컴퓨터 프로그래밍에서부터 사용되어 왔습니다.
 
-## 더 알아보기
-- [TypeScript 공식 문서(한국어)](https://www.typescriptlang.org/ko/docs/)
-- [TypeScript 핸드북(한국어)](https://typescript-kr.github.io/pages/basic-types.html)
-- [관련 기술 블로그(한국어)](https://www.notion.so/TypeScript-a0438a1e24e9438ba22146c91fd40e1c)
+2. 대안: 문자열을 연결하는 대신에 문자열 보간(interpolation)을 하는 방법도 있습니다. 이는 보다 편리한 방법으로 문자열을 조작하는데 사용될 수 있습니다.
 
-## 참고하기
-[See Also](translated into Korean)
-- [Understanding String Manipulation in TypeScript](https://blog.bitsrc.io/understanding-string-manipulation-in-typescript-f053cd69ede7)
-- [Mastering Strings in TypeScript](https://medium.com/@kellyjanderson/mastering-strings-in-typescript-3b0ca38812a2)
-- [Working with Strings in TypeScript](https://www.jenniferbland.com/work-with-strings-typescript/)
+3. 구현 세부사항: 문자열 연결은 큰 문자열을 생성하는 작업에는 비용이 많이 드는 작업일 수 있으므로, 문자열 연결의 경우 문자열 보간을 대신 사용하는 것이 더 좋을 수 있습니다.
+
+## 관련 정보:
+- [TypeScript 공식 문서](https://www.typescriptlang.org/docs/handbook/basic-types.html#string-interpolation)

@@ -1,7 +1,7 @@
 ---
-title:                "עבודה עם JSON"
-html_title:           "Haskell: עבודה עם JSON"
-simple_title:         "עבודה עם JSON"
+title:                "עבודה עם json"
+html_title:           "Haskell: עבודה עם json"
+simple_title:         "עבודה עם json"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Data Formats and Serialization"
@@ -10,45 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## למה
-אנשים יכולים להתעסק בעבודה עם JSON כדי לטפל בנתונים מורכבים כמו מידע מקימת API או קבצי הגדרת התצורה.
+## מה זה ולמה? 
+מעבדים עם JSON הוא תהליך שבו מתבצעת התנגשות בין מידע מבנת דטה ובין מידע טורפי כמו תקשורת רשת או יישום מסוים. פופולאריותו של JSON מתבססת על היכולת שלו להיות קריא וכתיבה של קוד פשוט, מה שהופך אותו לכלי חיוני למתכנתים בדרך כלל.
 
-## איך לבצע זאת
-אתם יכולים לעקוב אחר כמה פעולות פשוטות כדי לשנות את ייצוג הנתונים שלכם לתצורת JSON בHaskell. הנה דוגמה לקוד המראה איך לממש קבוצת נתונים כתצורת JSON:
-
-```Haskell
--- כתיבת מודולים מתאימים
+## איך לעשות זאת: 
+נתחיל עם דוגמה פשוטה:
+`Haskell
 import Data.Aeson
-import Data.ByteString.Char8 as C8
-import Data.Text.Encoding as E
 
--- יצירת נתוני דוגמה
-data User = User { name :: String
-                 , age :: Int
-                 , email :: String
-                 } deriving (Show, Generic)
+--מיצוא JSON ממילה
+encode "מרנגו"
 
--- נמירה לתצורת JSON
-instance ToJSON User
+--פלט: "\"\u05de\u05e8\u05e0\u05d2\u05d5\""
+`
+אתם יכולים לראות שהקלט "מרנגו" הפך למחרוזת של JSON מוצקה. 
+במשך הפעלה, זהו רק דוגמה מוצקה יותר.
 
--- הדפסת התצורה שלנו לתצורת JSON
-main = do
-    let user = User "John" 30 "john@example.com"
-    let json = encode user
-    -- ממירים את התצורה לstring סודי כדי להדפיס
-    C8.putStrLn $ E.decodeUtf8 json
-```
+כעת, ננסה לטפל בתקשורת JSON יותר מתוחכמת. 
+`Haskell
+import Data.Aeson
 
-הפלט:
+--המרת מחרוזת ממילה למבנה JSON אבסטרקטי
+decode "{\"key\":\"value\"}" :: Maybe Value
 
-```Output
-{"age":30,"email":"john@example.com","name":"John"}
-```
+--פלט: Just (Object (fromList [("key",String "value")]))
+`
+אל תשכחו לייבא את המודול Data.Aeson בכדי להשתמש בכל האפשרויות הטובות של JSON בהרחבה הווקטורפית שלו.
 
-## הצגה מעמיקה
-כאשר אתם מתחילים לעבוד עם JSON בHaskell, כדאי ללמוד מה הם ספריות המכשירים הטובות ביותר כדי לעבוד עם נתונים מורכבים. כמו כן, משתלב עם גוף רב שונות תומך הנתונים מידע אודות תעדוף, תקינה ועוד.
+## נחתור עמוק: 
+אם ברצונכם לדעת על ההיסטוריה של JSON, יש להוריד את RFC 4627 שהיה הדבר שהכיר אליו את המונח JSON.
+אלטרנטיבות שניתן להשתמש בהן כפתרון לJSON הן XML ו-YAML.
+המימוש האקדמי לאפשרויות תכנות JSON מופיע ב-ECMA-404.
 
-## ראו גם:
-- [המוכנה לשימוש ספריות JSON](https://hackage.haskell.org/package/aeson)
-- [מדריך איך להשתמש כמו לרכבת handling JSON עם Haskell](https://serokell.io/blog/handling-json-with-haskell)
-- [ממחשב תרגילים כדי לעבוד עם נתוני האיטרנט מקימת API או סמנטכיוס מערכת](https://github.com/nikita-volkov/semantic-refacto
+## ראו גם: 
+כדי לקבל מידע נוסף על מעבדי נתונים, נוכחו וניסויים שלמותם, אפשר לסתום לדף הוויקי הרשמי של Haskell.
+אם ברצונכם ללמוד יותר על Data.Aeson, ניתן להתנסות על התיעוד המלא של הספרייה הביתית.

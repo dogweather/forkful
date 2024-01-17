@@ -10,36 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+## O que é e por que enviar uma solicitação HTTP?
 
-Enviar uma solicitação HTTP é uma tarefa comum no desenvolvimento web. É uma maneira de obter dados de um servidor externo ou enviar informações para ele. Isso permite que os desenvolvedores criem aplicativos web mais dinâmicos e integrados.
+Enviar uma solicitação HTTP é basicamente enviar uma mensagem para um servidor web, solicitando informações ou ação. Programadores frequentemente fazem isso para acessar dados de uma API ou atualizar um banco de dados com informações do usuário.
 
-## Como Fazer
+## Como fazer:
 
-Enviar uma solicitação HTTP em PHP é simples e pode ser feito em poucas etapas. Primeiro, é necessário criar uma instância da classe `CURL` para realizar a requisição. Em seguida, é preciso definir as configurações da solicitação e executá-la utilizando o método `execute()`. Por fim, o resultado da solicitação será retornado e poderá ser manipulado de acordo com as necessidades do desenvolvedor. Abaixo está um exemplo de código que realiza uma solicitação GET ao Google.com e exibe o código de resposta:
+```php
+// Usando a função interna do PHP "file_get_contents" para enviar uma solicitação GET para uma URL
+$response = file_get_contents('https://www.exemplo.com/api/usuarios');
 
+// Decodificando a resposta JSON em uma matriz PHP
+$usuarios = json_decode($response);
+
+// Imprimindo o nome e e-mail do primeiro usuário na matriz
+echo $usuarios[0]['nome'];
+echo $usuarios[0]['email'];
 ```
-<?php
-$ch = curl_init(); //cria uma instância da classe CURL
-curl_setopt($ch, CURLOPT_URL, "https://www.google.com/"); //define a URL alvo
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); //define a opção para retornar o resultado em vez de exibi-lo
-$response = curl_exec($ch); //executa a requisição GET e retorna o resultado
-echo $response; //exibe o resultado
-curl_close($ch); //fecha a instância
-```
 
-O código acima irá imprimir o HTML da página inicial do Google. Este é apenas um exemplo básico e é possível configurar várias opções, como adicionar cabeçalhos à solicitação ou enviar dados através de POST ou PUT.
+## Profundando:
 
-## Mergulho Profundo
+Historicamente, as solicitações HTTP eram feitas usando a biblioteca "cURL" ou a função "fopen". No entanto, com as melhorias no PHP, a função interna "file_get_contents" é uma alternativa mais fácil de usar. Além disso, existem bibliotecas de terceiros, como o Guzzle, que fornecem recursos adicionais para enviar solicitações HTTP de maneira mais eficiente e robusta.
 
-Além das opções mencionadas na seção "Como Fazer", a classe CURL também possui outras configurações que podem ser úteis ao enviar solicitações HTTP. Por exemplo, é possível definir um tempo limite para a solicitação utilizando a opção `CURLOPT_TIMEOUT`. Isso pode evitar que o script fique esperando indefinidamente por uma resposta.
+## Veja também:
 
-Existem também opções específicas para lidar com protocolos de segurança, como `CURLOPT_SSL_VERIFYHOST` e `CURLOPT_SSL_VERIFYPEER`, que permitem especificar se a conexão deve ser verificada no lado do servidor ou do cliente.
-
-Além disso, a classe CURL também possui métodos como `curl_getinfo()` e `curl_error()`, que permitem obter informações sobre a solicitação e possíveis erros que possam ocorrer.
-
-## Veja Também
-
-- Documentação oficial do PHP sobre a classe CURL: https://www.php.net/manual/pt_BR/book.curl.php
-- Tutorial em português sobre como realizar solicitações HTTP em PHP: https://www.devmedia.com.br/fazendo-requisicoes-http-com-o-php-curl/27296
-- Livro "PHP for Absolute Beginners" (em inglês), que possui uma seção dedicada a enviar solicitações HTTP: https://www.amazon.com/dp/1484232451/
+- [Documentação oficial do PHP para a função file_get_contents](https://www.php.net/manual/pt_BR/function.file-get-contents.php)
+- [Documentação do Guzzle](http://docs.guzzlephp.org/en/stable/)
+- [Artigo do W3 Schools sobre como enviar solicitações HTTP com o PHP](https://www.w3schools.com/Php/php_http.asp)

@@ -10,54 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
+Writing a text file is the act of creating and saving a file that contains text-based data, using a computer program. Programmers often write text files to store persistent data or to generate reports.
 
-Writing a text file is a common task in programming that allows you to easily store and manipulate data in a simple and readable format. Whether you're creating a configuration file, saving user input, or outputting results, knowing how to write a text file is an essential skill for any developer.
-
-## How To
-
-To write a text file in Kotlin, you can use the `FileWriter` class. First, create a `File` object to represent the file you want to write to, using the path to the file as a parameter. Then, use the `appendText()` method to add content to the file. Here's an example:
-
-```Kotlin
-// Create File object for the file "sample.txt"
-val file = File("sample.txt")
-// Use FileWriter to append text to the file
-file.appendText("Hello world!")
+## How to:
+To write a text file in Kotlin, follow these three simple steps:
 ```
-This will create the file "sample.txt" and add the text "Hello world!" to it. You can also use string interpolation to insert variables into the text you're writing, like this:
+// 1. Import the necessary packages
+import java.io.File
+import java.io.FileWriter
 
-```Kotlin
-val name = "Jane"
-file.appendText("Hello $name, welcome to my program!")
+// 2. Create a new file object, specifying the file name and location
+val file = File("data.txt")
+
+// 3. Write to the file using a FileWriter object
+val writer = FileWriter(file)
+writer.write("Hello World!")
+writer.close()
 ```
+The above code will create a file named "data.txt" in the same directory as your Kotlin file, and write the text "Hello World!" to it. You can also specify a different file path to save the file in a specific location.
 
-An alternative and more concise way of writing to a file is by using the `printWriter()` function. This function automatically creates the file if it doesn't exist and overwrites its contents if it does. Here's an example of how you can use it:
+## Deep Dive:
+Text files have been used since the early days of computing to store data or communicate with other programs. They are simple and easily machine-readable, making them a popular choice among programmers. Alternatives to writing text files include using databases or creating binary files, but those options may be more complex or restrictive.
 
-```Kotlin
-// Use extension function printWriter to write to the file "sample.txt"
-File("sample.txt").printWriter().use { out ->
-    out.println("This is a new line")
-    out.println("This is another line")
-}
-```
+When writing a text file, it is important to consider character encoding to ensure compatibility with different operating systems and devices. In Kotlin, you can specify the encoding when creating a FileWriter object, such as "UTF-8" or "UTF-16".
 
-The `use` function ensures that the writer is properly closed after the code block is executed.
-
-## Deep Dive
-
-When writing to a text file, it's important to consider the encoding used for the file. By default, the `printWriter()` function uses the system's default encoding, but you can specify a different one as a parameter. For example, to use UTF-8 encoding for the file, you can use the following code:
-
-```Kotlin
-// Use UTF-8 encoding when writing to the file
-File("sample.txt").printWriter(Charsets.UTF_8).use { out ->
-    out.println("This is written in UTF-8 encoding")
-}
-```
-
-It's also important to note that when writing to a file, the content is buffered in memory before being written to the file in one go. This can be a problem when writing large amounts of data. To avoid this, you can use the `appendText()` function, which automatically flushes the buffer after each write.
-
-## See Also
-
-- [Kotlin File APIs](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file.html)
-- [Kotlin Standard Functions](https://kotlinlang.org/docs/reference/lambdas.html#function-composition)
-- [Java FileWriter class](https://docs.oracle.com/javase/7/docs/api/java/io/FileWriter.html)
+## See Also:
+- [Java File API documentation](https://docs.oracle.com/javase/8/docs/api/java/io/File.html)
+- [Kotlin File API documentation](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/)

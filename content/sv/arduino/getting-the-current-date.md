@@ -1,7 +1,7 @@
 ---
-title:                "Att få aktuellt datum"
-html_title:           "Arduino: Att få aktuellt datum"
-simple_title:         "Att få aktuellt datum"
+title:                "Att få nuvarande datum"
+html_title:           "Arduino: Att få nuvarande datum"
+simple_title:         "Att få nuvarande datum"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Dates and Times"
@@ -10,44 +10,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
 
-Att veta den aktuella datumen kan vara viktigt för att hålla ordning på olika projekt eller för att skapa tidsbaserade händelser i din Arduino-programmering. Med hjälp av en enkel kod kan du få Arduino att läsa av den aktuella datumen från en intern klocka och använda den informationen i ditt program.
+Att hämta den nuvarande datumen är en viktig del av många Arduino-program. Genom att få tillgång till det aktuella datumet kan vi göra ett brett utbud av uppgifter, från enkla tidshantering till mer avancerade schemaläggning av uppgifter.
 
-## Så här gör du
+## Hur man gör:
 
-För att få Arduino att hämta den aktuella datumen behöver du lägga till ett så kallat bibliotek i din kod. Biblioteket heter "Time" och är en del av Arduino-tidbaserad bibliotek. För att lägga till detta bibliotek i din kod öppna Arduino IDE och klicka på "Verktyg" och sedan "Bibliotek". I sökrutan skriver du "Time" och klickar på "Installera". Nu är biblioteket tillagt och du kan använda det i ditt program.
+Här är ett exempel på kod som visar hur man kan få det nuvarande datumet med Arduino:
 
-För att använda biblioteket behöver du inkludera det i din kod genom att skriva "Time.h" längst upp i koden. Nu kan du använda funktioner som getTimeStr() och getDayStr() för att få ut den aktuella datumen och konvertera den till strängar som du sedan kan använda i ditt program.
+```Arduino
+#include <RTClib.h>
+#include <Wire.h>
 
+RTC_DS3231 rtc;
+
+void setup() {
+  Serial.begin(9600);
+  Wire.begin();
+  rtc.begin();
+  if (! rtc.isrunning()) {
+     Serial.println("RTC är inte initierat!");
+     rtc.adjust(DateTime(F(__DATE__), F(__TIME__))); //Denna kod ställer in RTC:t med kompileringstiden 
+  }
+}
+
+void loop() {
+  DateTime now = rtc.now(); 
+  Serial.print(now.year(), DEC);
+  Serial.print('/');
+  Serial.print(now.month(), DEC);
+  Serial.print('/');
+  Serial.print(now.day(), DEC);
+  Serial.print(' ');
+  Serial.print(now.hour(), DEC);
+  Serial.print(':');
+  Serial.print(now.minute(), DEC);
+  Serial.print(':');
+  Serial.print(now.second(), DEC);
+  Serial.println();
+ 
+  delay(3000);
+}
 ```
-// inkluera biblioteket
-#include <Time.h>
 
-// få aktuellt datum som en sträng
-String currentDate = getTimeStr();
+Konsolen kommer att visa den nuvarande datum- och tidsinformationen som den erhålls från RTC-modulen.
 
-// få aktuell veckodag som en sträng
-String currentDay = getDayStr();
+## Djupdykning:
 
-// skriv ut datumen till seriell monitor
-Serial.println("Dagens datum: " + currentDate);
-Serial.println("Veckodag: " + currentDay);
-```
+Det finns flera olika sätt att hämta datumet på med Arduino, inklusive att använda en RTC-modul som ovan, eller genom att ansluta till en ntp-server för att få det aktuella datumet från internet. Dessa alternativ är användbara för olika typer av projekt och beror på tillgängliga resurser och behov. Implementationen av koden kan också variera beroende på vilken RTC-modul som används.
 
-Output:
-```
-Dagens datum: 2020-10-19
-Veckodag: måndag
-```
+## Se också:
 
-## Deep Dive
-
-Time-biblioteket bygger på en intern klocka i Arduino som håller koll på den aktuella datumen och tiden. Om du vill gå ännu djupare kan du läsa om funktionerna getTime() och getDate(), som ger dig datumen och tiden som separata variabler istället för som en sträng.
-
-Det finns också möjlighet att ställa in en tidszon för den interna klockan, vilket kan vara användbart om du vill ha den aktuella datumen och tiden i en specifik tidszon. Det finns flera exempel på hur man gör detta i Time-bibliotekets dokumentation.
-
-## Se också
-
-- Time-dokumentation på Arduino hemsida: https://www.arduino.cc/reference/en/libraries/time/
-- Time bibliotekets GitHub-repo med fler exempel och information: https://github.com/PaulStoffregen/Time
+- [Arduino referens för RTClib](https://www.arduino.cc/en/Reference/RTC)
+- [Uppdatering av böcker med RTC DS3231](http://www.rinkydinkelectronics.com/library.php?id=73)
+- [Använda en ntp-server med Arduino](https://www.arduino.cc/en/Tutorial/LibNTPClient)

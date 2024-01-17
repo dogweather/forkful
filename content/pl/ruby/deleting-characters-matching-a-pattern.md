@@ -10,51 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i dlaczego?
+Usuwanie znaków pasujących do określonego wzorca jest częstym zadaniem dla programistów. Polega ono na wykryciu i usunięciu wszystkich wystąpień określonego wzorca w tekście. Jest to szczególnie przydatne, gdy chcemy usunąć zbędne znaki, np. spacje, z tekstu.
 
-Zastanawiałeś się kiedyś, dlaczego ktoś chciałby usunąć znaki pasujące do wzorca? Może jest to potrzebne do filtrowania tekstu lub po prostu aby uporządkować dane. W tym artykule dowiesz się, jak w prosty sposób usunąć znaki pasujące do wzorca w języku Ruby.
+## Jak to zrobić:
+```Ruby
+# Przykładowy tekst
+tekst = "To jest przykładowy tekst"
 
-## Jak to zrobić?
+# Usunięcie spacji
+tekst.delete(" ")
 
-``` Ruby
-str = "Hello World!"
-p str.delete "l" 
-=> Heo Word!
+# Wynik: "Tojestprzykładowytekst"
 ```
 
-W powyższym przykładzie użyto metody `delete`, która usuwa wszystkie wystąpienia określonego znaku lub znaków podanego jako argument. Można również podać więcej niż jeden znak do usunięcia, na przykład `str.delete "lLoO"`. 
+```Ruby
+# Innym sposobem jest użycie wyrażenia regularnego
+# Przykładowy adres email
+email = "example@email.com"
 
-Możesz również użyć wyrażenia regularnego jako argumentu metody `delete`, jeśli chcesz usunąć więcej niż jeden konkretne znak. Na przykład:
+# Usunięcie znaku "@"
+email.sub("@", "")
 
-``` Ruby
-str = "Hello World!"
-p str.delete /[aeiou]/
-=> Hll Wrld!
+# Wynik: "exampleemail.com"
 ```
 
-W powyższym przykładzie użyto wyrażenia regularnego `[aeiou]` w celu usunięcia wszystkich samogłosek z ciągu znaków `str`.
+## Wnikliwe spojrzenie:
+Usuwanie znaków pasujących do wzorca jest jednym z wielu sposobów na manipulowanie tekstem w Ruby. Początkowo, w starszych wersjach języka, wykonywało się to za pomocą metody `gsub`, która wymaga użycia wyrażeń regularnych. Jednak w nowszych wersjach języka dostępna jest również metoda `delete`, co znacznie upraszcza to zadanie.
 
-## Deep Dive
+Możliwe jest także wykorzystanie wyrażeń regularnych do zlokalizowania oraz zamiany określonych znaków w tekście. Jednak w przypadku gdy chcemy jedynie usunąć określone znaki, metoda `delete` jest wyraźnie bardziej odpowiednia.
 
-Usunięcie znaków pasujących do określonego wzorca może być również bardzo przydatne, gdy chcesz oczyścić dane. Na przykład, jeśli masz duży plik z danymi, możesz użyć metody `delete` w połączeniu z instrukcją `gsub` w celu usunięcia zbędnych znaków lub wyrażeń.
-
-``` Ruby
-File.open("data.txt", "r") do |file|
-  file.each_line do |line|
-    # usuń wszystkie spacje i przecinki z tekstu
-    clean_line = line.gsub(/[ ,]/, "")
-    # wyświetl wynik
-    p clean_line
-  end
-end
-```
-
-W tym przykładzie, każda linia w pliku `data.txt` jest oczyszczana z występujących w niej spacji i przecinków, a następnie wyświetlana na ekranie.
-
-## Zobacz również
-
-Jeśli chcesz dowiedzieć się więcej o operacjach na ciągach znaków w języku Ruby, sprawdź poniższe źródła:
-
-- [Dokumentacja Ruby - Metoda `delete`](https://ruby-doc.org/core-2.7.2/String.html#method-i-delete)
-- [Tutorial Ruby - Operacje na ciągach znaków](https://www.rubyguides.com/ruby-string/)
-- [Dokumentacja Ruby - Wyrażenia regularne](https://ruby-doc.org/core-2.7.2/Regexp.html)
+## Zobacz także:
+- [Dokumentacja Ruby o metodzie `delete`](https://ruby-doc.org/core-2.7.1/String.html#method-i-delete)
+- [Wprowadzenie do wyrażeń regularnych w Ruby](https://www.rubyguides.com/2015/06/ruby-regex/)
+- [Inne przydatne metody do manipulowania tekstem w Ruby](https://www.rubyguides.com/2015/05/ruby-strings/)

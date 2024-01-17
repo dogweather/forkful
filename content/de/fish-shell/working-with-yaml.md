@@ -10,42 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+Fish Shell Programmier-Artikel: Einführung in YAML
 
-Es ist wichtig, die Grundlagen von YAML zu verstehen, da es in der heutigen Entwicklerwelt weit verbreitet ist und sowohl für individuelle Projekte als auch für den Einsatz in Unternehmen verwendet wird.
+## Was ist YAML und warum benutzen Programmierer es?
 
-## Wie es funktioniert
+YAML steht für "YAML Ain't a Markup Language" und ist eine einfache, menschenlesbare Formatierungssprache, die hauptsächlich für das Speichern und Übertragen von Daten verwendet wird. Programmierer verwenden YAML, um komplexe Datenstrukturen wie Konfigurationsdateien, Objektmodelle und andere strukturierte Daten zu organisieren und zu speichern. Es ist auch sehr nützlich für die Zusammenarbeit in gängigen Projekten, da es leicht zu lesen und zu bearbeiten ist.
 
-Um YAML mit Fish Shell zu verwenden, müssen wir das entsprechende Plugin installieren. Dazu können wir einfach folgenden Befehl ausführen:
+## Wie verwendet man YAML in der Fish Shell?
 
-```Fish Shell
-omf install yaml
+Fish Shell hat eine eingebaute Funktion, um mit YAML-Dateien zu arbeiten. Mit dem Befehl ```YAMLop``` können wir YAML-Dateien öffnen und die darin enthaltenen Daten extrahieren. Hier ist ein einfaches Beispiel:
+
+```
+YAMLop config.yml
 ```
 
-Nachdem wir das Plugin installiert haben, können wir YAML-Dateien in der Fish Shell verwenden, indem wir sie in unserer Konfigurationsdatei aufrufen. Hier ist ein Beispiel für die Verwendung von YAML, um Umgebungsvariablen festzulegen:
+Dies wird die Daten in der YAML-Datei "config.yml" ausgeben. Wenn wir beispielsweise die folgende YAML-Datei haben:
 
-```Fish Shell
-set -gx PYTHONPATH (cat config.yml | yaml get py_path)
+```
+titel: Mein tolles Projekt
+beschreibung: Dies ist eine Beschreibung meines Projekts
+autor:
+  name: Max Mustermann
+  email: max.mustermann@beispiel.com
 ```
 
-Wir können auch YAML-Dateien direkt innerhalb der Fish Shell erstellen und bearbeiten. Hier ist ein Beispiel, wie wir eine neue Datei erstellen und einige Daten in sie eingeben können:
+Der Befehl ```YAMLop config.yml``` würde Folgendes ausgeben:
 
-```Fish Shell
-touch new_config.yml
-yaml set name "John Doe" new_config.yml
-yaml set age 25 new_config.yml
-yaml set favorite_color "Blue" new_config.yml
+```
+titel: Mein tolles Projekt
+beschreibung: Dies ist eine Beschreibung meines Projekts
+autor:
+  name: Max Mustermann
+  email: max.mustermann@beispiel.com
 ```
 
-Dies erstellt eine neue YAML-Datei namens "new_config.yml" mit den angegebenen Daten.
+## Tiefer Einblick
 
-## Tiefergehende Einblicke
+YAML wurde ursprünglich von Clark Evans als eine einfache Alternative zu XML entwickelt und im Jahr 2001 erstmals veröffentlicht. Es ist in der Programmierwelt sehr beliebt geworden, insbesondere für Projekte, die eine leicht lesbare und bearbeitbare Konfigurationsdatei benötigen.
 
-YAML verwendet eine einfache Syntax, die das Lesen und Schreiben von Daten erleichtert. Es ist auch sehr flexibel und ermöglicht es uns, komplexe Datenstrukturen zu erstellen. Innerhalb der Fish Shell können wir YAML-Dateien verwenden, um unsere Konfigurationen zu verwalten, Umgebungsvariablen festzulegen oder sogar Skripte zu schreiben.
+Es gibt auch andere Möglichkeiten, mit YAML in der Fish Shell zu arbeiten. Zum Beispiel können wir die ```YAMLencode```-Funktion verwenden, um Daten in YAML-Format zu codieren oder die ```YAMLto```-Funktion, um Daten in anderen Formaten wie JSON oder CSV zu konvertieren.
 
-Weitere Informationen über die Verwendung von YAML mit Fish Shell finden Sie in der offiziellen Dokumentation des Plugins oder auf der offiziellen YAML-Website.
+## Weitere Informationen
 
-## Siehe auch
+Für weitere Informationen zum Arbeiten mit YAML in der Fish Shell können wir die offizielle Dokumentation besuchen: https://fishshell.com/docs/current/cmds/YAMLop.html
 
-- [Fish Shell Dokumentation](https://fishshell.com/docs/current/)
-- [YAML offizielle Website](https://yaml.org/)
+Um mehr über die YAML-Syntax und ihre Verwendung in anderen Programmiersprachen zu erfahren, kann diese Ressource hilfreich sein: https://yaml.org/
+
+Wir hoffen, dass dieser Artikel dir dabei geholfen hat, einen Einblick in das Arbeiten mit YAML in der Fish Shell zu bekommen. Viel Spaß beim Programmieren!

@@ -1,7 +1,7 @@
 ---
-title:                "Eliminazione di caratteri corrispondenti ad un modello"
-html_title:           "Gleam: Eliminazione di caratteri corrispondenti ad un modello"
-simple_title:         "Eliminazione di caratteri corrispondenti ad un modello"
+title:                "Eliminare caratteri corrispondenti a un modello."
+html_title:           "Gleam: Eliminare caratteri corrispondenti a un modello."
+simple_title:         "Eliminare caratteri corrispondenti a un modello."
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -10,50 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+## Cosa e perché?
 
-Stai cercando un modo semplice ed efficiente per eliminare i caratteri da una stringa che corrispondono ad uno specifico pattern? La soluzione potrebbe essere più facile di quanto pensi, grazie alla funzione `delete_matching` del linguaggio di programmazione Gleam.
+L'eliminazione di caratteri corrispondenti a un determinato modello è una pratica comune tra i programmatori che consente di rimuovere rapidamente parti di testo o dati indesiderati da un codice o da un file. In questo modo è possibile semplificare il lavoro di pulizia, di formattazione o di analisi dei dati e rendere il codice più leggibile e performante.
 
-## Come Fare
+## Come fare:
 
-Gleam è un linguaggio di programmazione funzionale staticamente tipizzato che punta a semplificare la creazione di applicazioni affidabili e performanti. Per utilizzare la funzione `delete_matching` dovrai seguire questi semplici passaggi:
+Ecco alcuni esempi di codice che mostrano come eliminare i caratteri corrispondenti a un determinato modello utilizzando Gleam:
 
-1. Definisci una variabile che rappresenti la stringa su cui vuoi operare:
+```Gleam
+// Rimuove tutte le lettere "a" dal testo
+let str = "casa"
+let cleaned_str = String.trim(String.replace("a", "", str))
 
-```
-let stringa = "Questo-e-un-test per rimuovere i caratteri.";
-```
-
-2. Definisci il pattern dei caratteri che desideri eliminare, utilizzando espressioni regolari:
-
-```
-let pattern = ~r"\W"; // Rimuove tutti i caratteri non alfanumerici
+// Elimina tutti i numeri da una lista di stringhe
+let numbers = ["12", "34", "56"]
+let cleaned_numbers = List.map(\x -> String.replace("\\d", "", x), numbers)
 ```
 
-3. Utilizza la funzione `delete_matching` per creare una nuova stringa senza i caratteri corrispondenti al pattern:
+Output:
 
-```
-let nuova_stringa = delete_matching(stringa, pattern); // Il risultato sarà "Questoeuntestperrimuovereicaratteri"
-```
+```Gleam
+// "cs"
+cleaned_str
 
-4. Puoi stampare il risultato per verificare il corretto funzionamento:
-
-```
-io.println(nuova_stringa); // Output: "Questoeuntestperrimuovereicaratteri"
+// ["", "", ""]
+cleaned_numbers
 ```
 
-## Approfondimento
+## Approfondimento:
 
-La funzione `delete_matching` accetta due argomenti: la stringa da modificare e il pattern dei caratteri da eliminare. Il pattern può essere definito utilizzando una stringa di espressione regolare o un valore di tipo `Regex`.
+Questa pratica di eliminazione di caratteri è stata introdotta in linguaggi di programmazione come Perl, dove si è rivelata molto utile per la gestione dei testi. Tuttavia, con l'avvento di linguaggi più moderni come Gleam, questa funzionalità diventa più semplice e sicura da utilizzare. Alcune alternative per eliminare caratteri in Gleam includono l'uso di funzioni come `String.filter` o `String.replace_re`, ma l'uso di `String.replace` rimane il metodo più comune e semplice. L'implementazione di `String.replace` nella standard library di Gleam utilizza l'algoritmo di Boyer-Moore, che è noto per la sua velocità e efficiente gestione di grandi quantità di dati.
 
-Inoltre, è possibile utilizzare il parametro opzionale `count` per specificare il numero massimo di corrispondenze da eliminare. Ad esempio, se volessi eliminare solo le prime 2 occorrenze del nostro pattern, potresti scrivere:
+## Vedi anche:
 
-```
-let nuova_stringa = delete_matching(stringa, pattern, ~s[ count: 2 ]);
-```
-
-## Vedi Anche
-
-- Documentazione ufficiale di Gleam - [https://gleam.run/](https://gleam.run/)
-- Espressioni regolari in Gleam - [https://gleam.run/book/tour/regular-expressions.html](https://gleam.run/book/tour/regular-expressions.html)
-- Tutorial sull'utilizzo di Gleam per i principianti - [https://gleam.run/book/tour/](https://gleam.run/book/tour/)
+- Documentazione ufficiale di Gleam: https://gleam.run/documentation/
+- Tutorial su Gleam: https://gleam.run/book/
+- Altri articoli sul linguaggio di programmazione Gleam: https://gleam.run/articles/

@@ -10,58 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué enviar una solicitud HTTP con autenticación básica?
+## ¿Qué y por qué?
 
-Hay muchas razones por las cuales uno podría querer enviar una solicitud HTTP con autenticación básica en Rust. Por ejemplo, al comunicarse con una API que requiere autenticación para acceder a ciertos recursos o datos protegidos, o al crear una aplicación que requiere una forma de identificación segura para utilizar.
+Enviar una solicitud HTTP con autenticación básica es un método que utilizan los programadores para proteger sus aplicaciones web de accesos no autorizados. Básicamente, es una forma de solicitar credenciales de usuario para permitir el acceso a ciertas partes de una aplicación.
 
-## Cómo hacerlo
-
-Para enviar una solicitud HTTP con autenticación básica en Rust, primero debemos importar las siguientes dependencias:
+## Cómo hacerlo:
 
 ```Rust
-use reqwest::blocking::{Client, Response};
-use reqwest::header::{HeaderValue, BASIC_AUTH};
+use reqwest::blocking::Client;
+ 
+// Crear un cliente HTTP con autenticación básica
+let client = Client::new()
+    .basic_auth("username", Some("password"))
+    .build()?;
+ 
+// Enviar una solicitud GET a una URL con autenticación básica
+let res = client.get("https://example.com")
+    .send()?;
+ 
+println!("{:?}", res); // Imprimir la respuesta HTTP
 ```
 
-A continuación, creamos un cliente de solicitud e inicializamos las credenciales de autenticación con un nombre de usuario y una contraseña:
+La salida del código anterior variará dependiendo de la respuesta del servidor web.
 
-```Rust
-let client = Client::new();
-let username = "usuario";
-let password = "contraseña";
-```
+## Profundizando
 
-Luego, construimos una solicitud HTTP utilizando el método `get` y agregamos las credenciales de autenticación al encabezado para protegerla:
+La autenticación básica en HTTP es un método de autenticación más antiguo y menos seguro en comparación con otros métodos más modernos como OAuth. Sin embargo, todavía se utiliza ampliamente en aplicaciones que no manejan información sensible.
 
-```Rust
-let request = client.get("https://www.ejemplo.com/api/datos")
-    .header(BASIC_AUTH, HeaderValue::from_str(&format!("{}:{}", username, password)).unwrap());
-```
+Existen alternativas a la autenticación básica, como la autenticación de tokens o el uso de claves API. Estas opciones son más seguras y generalmente se recomiendan para aplicaciones que manejan información confidencial.
 
-Por último, enviamos la solicitud y obtenemos la respuesta del servidor:
-
-```Rust
-let response: Response = match request.send() {
-    Ok(response) => response,
-    Err(e) => panic!("Error al enviar la solicitud: {}", e),
-};
-```
-
-Una vez que tenemos la respuesta, podemos manipularla según sea necesario. Por ejemplo, podemos obtener el código de estado de la respuesta:
-
-```Rust
-println!("Código de estado: {}", response.status());
-```
-
-## Inmersión profunda
-
-Ahora que sabemos cómo enviar una solicitud HTTP con autenticación básica en Rust, podemos profundizar un poco más en cómo funciona esto. La autenticación básica utiliza el encabezado `Authorization` en la solicitud HTTP para enviar las credenciales de autenticación al servidor.
-
-En Rust, esto se logra utilizando la constante `BASIC_AUTH` del módulo `header` de la biblioteca `reqwest`. Esta constante representa el encabezado `Authorization` y se utiliza en conjunción con la función `HeaderValue::from_str()` para construir un encabezado con las credenciales de usuario y contraseña codificadas en base64.
-
-Una vez que se envía la solicitud con autenticación básica, el servidor recibirá las credenciales y las comparará con las almacenadas en su base de datos. Si coinciden, se otorgará acceso a los recursos protegidos.
+El envío de una solicitud HTTP con autenticación básica se realiza mediante el envío de un encabezado de autorización en la solicitud, que incluye un nombre de usuario y una contraseña en formato codificado.
 
 ## Ver también
 
-- [Documentación oficial de reqwest](https://docs.rs/reqwest)
-- [Tutorial de Rust: Introducción a la programación web](https://www.rust-lang.org/es-ES/learn/get-started)
+- [Documentación de Rust para HTTP básico](https://doc.rust-lang.org/reqwest/reqwest/struct.ClientBuilder.html#method.basic_auth)
+- [Explicación de autenticación básica en HTTP](https://developer.mozilla.org/es/docs/Web/HTTP/Authentication#basic_authentication_scheme)
+- [Alternativas a autenticación básica en aplicaciones web](https://auth0.com/blog/amp/what-is-basic-authentication/)

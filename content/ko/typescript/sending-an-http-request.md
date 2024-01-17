@@ -1,7 +1,7 @@
 ---
-title:                "http 요청 보내기"
-html_title:           "TypeScript: http 요청 보내기"
-simple_title:         "http 요청 보내기"
+title:                "HTTP 요청 보내기"
+html_title:           "TypeScript: HTTP 요청 보내기"
+simple_title:         "HTTP 요청 보내기"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "HTML and the Web"
@@ -10,73 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+## 무엇 & 왜?
 
-* 왜 누군가 HTTP 요청을 보내는 것에 참여할까요? 
-* 현대 웹 개발에서 HTTP 요청은 필수적인 요소로 자리 잡았습니다. 서버에서 데이터를 가져오거나 웹 애플리케이션과 서버 간의 통신이 필요한 경우, HTTP 요청을 통해 이루어집니다. 따라서 TypeScript 프로그래머라면 HTTP 요청을 보내는 방법을 알 필요가 있습니다.
+HTTP 요청을 보내는 것이 무엇인지 정확히 알아야 이해할 수 있습니다. HTTP 요청은 서버에 데이터를 요청하거나 보내는 것을 말합니다. 프로그래머들은 자신이 작성한 코드에서 서버와 상호작용하기 위해 HTTP 요청을 보냅니다. 이를 통해 필요한 데이터를 받아오거나 업데이트할 수 있습니다.
 
-## 어떻게
-
-```TypeScript
-const axios = require('axios'); // axios 라이브러리 가져오기
-
-// GET 요청 보내기
-axios.get('https://jsonplaceholder.typicode.com/posts')
-    .then(response => {
-        console.log(response.data); // 요청 결과 출력
-    })
-    .catch(error => {
-        console.log(error); // 에러 처리
-    });
-
-// POST 요청 보내기
-axios.post('https://jsonplaceholder.typicode.com/posts', {
-    title: 'Example Title',
-    body: 'Example Body',
-    userId: 1
-})
-    .then(response => {
-        console.log(response.data); // 요청 결과 출력
-    })
-    .catch(error => {
-        console.log(error); // 에러 처리
-    });
-```
+## 하는 법:
 
 ```TypeScript
-// 요청 결과 예시 - GET 요청
-[
-  {
-    userId: 1,
-    id: 1,
-    title: 'example title',
-    body: 'example body'
-  },
-  {
-    userId: 1,
-    id: 2,
-    title: 'example title',
-    body: 'example body'
-  }
-]
-
-// 요청 결과 예시 - POST 요청
-{
-  userId: 1, 
-  id: 101,
-  title: 'Example Title',
-  body: 'Example Body'
-}
+axios.get('example.com')
+  .then(function(response) {
+    console.log(response.data);
+  })
+  .catch(function(error) {
+    console.log(error);
+  });
 ```
 
-## 깊게 파고들기
+위 코드를 예로 들면, 우리는 axios 라이브러리의 `get()` 메서드를 사용하여 'example.com' 주소로 GET 요청을 보냈습니다. 이후, 서버로부터 받은 응답은 `response` 객체에 담겨서 `.then()` 함수의 콜백 함수로 전달됩니다. 이를 이용하여 우리는 서버로부터 받은 데이터를 사용할 수 있게 됩니다.
 
-위의 예시에서 사용된 axios 라이브러리는 브라우저와 Node.js 환경에서 모두 사용할 수 있는 HTTP 클라이언트 라이브러리입니다. 이 라이브러리를 통해 다양한 HTTP 요청을 보내고 응답을 받을 수 있습니다. 추가적으로 HTTP 요청 옵션을 설정하거나 요청에 대한 인터셉터를 설정할 수도 있습니다. 또한 TypeScript와의 호환성 때문에 더 쉽게 HTTP 요청을 보낼 수 있습니다.
+## 심층 분석:
 
-## 연관 정보
+HTTP 요청은 1990년대 초부터 사용되기 시작했습니다. 이는 웹 브라우저를 통해 서버와 통신하기 위한 표준 프로토콜로 등장했습니다. 그 후, 다양한 방식의 HTTP 요청을 보내는 방법들이 나타나게 되었습니다. 일반적인 방식으로는 Ajax, Fetch 등이 있으며, 그 밖에도 다른 라이브러리나 프레임워크를 사용할 수 있습니다. 하지만 TypeScript는 기본 내장 모듈인 `http`를 사용하여 HTTP 요청을 보낼 수 있습니다. 이 때 요청 유형에 따라 코드가 달라지므로, 이를 이해하고 활용하는 것이 중요합니다.
 
-[axios 공식 문서 (영문)](https://github.com/axios/axios)
+## 관련 자료:
 
-[axios GitHub 저장소 (영문)](https://github.com/axios/axios)
-
-[npm axios 패키지 (영문)](https://www.npmjs.com/package/axios)
+- [axios 라이브러리 공식 문서](https://github.com/axios/axios)
+- [TypeScript 내장 모듈 `http` 문서](https://www.typescriptlang.org/docs/handbook/2/http.html)

@@ -10,34 +10,19 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mikä & Miksi?
+Kirjoittaminen standardi virheeseen (standard error) on tapa, jolla ohjelmoijat voivat näyttää virheviestejä ohjelmastaan. Tämä auttaa ohjelmoijia löytämään ja korjaamaan ohjelmansa virheitä nopeammin.
 
-Kun käytät Pythonia kehitystyössä, saatat törmätä virheisiin, jotka eivät näy tavallisessa tulostuksessa. Näiden virheiden syiden selvittämiseksi ja korjaamiseksi sinun on kirjoitettava standardiin virheeksi.
-
-## Miten
-
-Kun haluat kirjoittaa tietyn rivin standardin virheeksi, käytä "sys" moduulin "stderr" ominaisuutta koodissa, kuten seuraavassa esimerkissä:
-
-```Python
+## Kuinka:
+`` ` Python
 import sys
+sys.stderr.write("Tämä on virheviesti!")
+`` `
+Esimerkkilähtö:
+`Tämä on virheviesti!`
 
-print("Tämä on normaali tulostus")
+## Syventävä syventyminen:
+Kirjoittaminen standardi virheeseen on keksitty osaksi Unix käyttöjärjestelmää, ja on nykyään yleisesti käytetty tapa näyttää virheviestejä. Vaihtoehtoisia tapoja ovat esimerkiksi tulostaminen standardiin tulosvirtaan tai luokkien käyttäminen virheiden käsittelemiseen. Implementation yksityiskohdat vaihtelevat eri ohjelmointikielissä.
 
-sys.stderr.write("Tämä on standardi virhe")
-```
-
-Tämä tuottaa seuraavanlaisen tulostuksen:
-
-```
-Tämä on normaali tulostus
-Tämä on standardi virhe
-```
-
-## Syvenny
-
-Viestin kirjoittaminen standardi virheeksi on hyödyllistä erityisesti silloin, kun haluat tietää, mistä virheilmoitus tulee tietyn rivin koodissa. Voit myös yhdistää "stderr.write ()" -toiminnon "try" ja "except" lohkoon, jotta voit käsitellä virheitä paremmin.
-
-## Katso myös
-
-- [Pythonin "sys" moduulin virallinen dokumentointi](https://docs.python.org/3/library/sys.html)
-- [Täydellinen opas virheenkäsittelyyn Pythonissa](https://realpython.com/python-exceptions/)
+## Katso myös:
+[Python virheiden käsittely](https://docs.python.org/3/tutorial/errors.html)

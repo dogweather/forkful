@@ -10,58 +10,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+# Capitalizing Strings in Go
 
-Have you ever needed to capitalize a string in your programming project? Whether it's for a user interface, printing output, or manipulating data, capitalizing a string can be a useful and necessary task. In this article, we will explore how to do it using the Go programming language.
+## What & Why?
 
-## How To
+Capitalizing a string is the process of converting the first character of a string to uppercase. This is a common programming task used in string manipulation and formatting. Programmers do this to ensure consistency in the appearance of text, such as for user input or displaying data in a specific format.
 
-Capitalizing a string in Go is a straightforward process. Let's take a look at a few examples:
+## How to:
+
+In Go, you can capitalize a string by using the `strings` package and its `ToUpper` function. Here is an example of capitalizing the first character of the string "hello":
 
 ```Go
 package main
 
 import (
-    "fmt"
-    "strings"
+	"fmt"
+	"strings"
 )
 
 func main() {
-    // Example 1: using the strings package
-    string1 := "hello world"
-    capitalizedString1 := strings.ToUpper(string1)
-    fmt.Println(capitalizedString1) // Output: HELLO WORLD
-
-    // Example 2: using a custom function
-    string2 := "goodbye world"
-    capitalizedString2 := capitalize(string2)
-    fmt.Println(capitalizedString2) // Output: GOODBYE WORLD
-}
-
-func capitalize(s string) string {
-    bytes := []byte(s)
-    bytes[0] = bytes[0] - 32
-    return string(bytes)
+	s := "hello"
+	fmt.Println(strings.ToUpper(s[0:1]) + s[1:])
 }
 ```
+This will output: `Hello`
 
-In the first example, we used the `ToUpper()` function from the standard `strings` package to convert our string to all uppercase letters. In the second example, we created a custom function `capitalize()` which converts the first letter of a string to uppercase by manipulating the underlying byte array.
+You can also capitalize the entire string by using the `Title` function instead:
+
+```Go
+package main
+
+import (
+	"fmt"
+	"strings"
+)
+
+func main() {
+	s := "hello world"
+	fmt.Println(strings.Title(s))
+}
+```
+This will output: `Hello World`
 
 ## Deep Dive
 
-Now, let's take a deeper look at the `capitalize()` function. In the function, we first convert the string to a slice of bytes using the built-in `[]byte()` function. This allows us to manipulate each character in the string individually.
+Capitalizing strings is not a new concept and has been used in programming languages for a long time. It is a way to easily manipulate text and make it more readable. In Go, the `strings` package provides several functions for string manipulation, including the `ToUpper` and `Title` functions.
 
-Next, we subtract 32 from the first byte in the slice, which effectively converts it to uppercase according to ASCII values. We then convert the byte slice back to a string using the `string()` function and return the capitalized string.
+An alternative to using `strings.ToUpper` for capitalization is the `unicode` package, specifically the `unicode.ToTitle` function. This function not only capitalizes the first character, but also any subsequent characters that have a special meaning in their respective languages. This is relevant for internationalization and localization of software.
 
-There are also other methods for capitalizing a string in Go, such as using the `unicode` package or regular expressions. However, the two methods shown above are the simplest and most efficient.
+When passing an entire string to `strings.ToUpper` or `strings.Title`, it is important to keep in mind that these functions return a new string and do not modify the original string. This is in line with Go's philosophy of immutability, which helps avoid unexpected changes to data.
 
 ## See Also
 
-For more information on string handling in Go, check out these resources:
-
-- [The official Go documentation on strings](https://golang.org/pkg/strings/)
-- [Working with strings in Go](https://www.calhoun.io/working-with-strings-in-go/)
-- [Manipulating strings in Go](https://blog.gopheracademy.com/advent-2017/strings-manipulation/)
-- [Effective Go: Strings](https://golang.org/doc/effective_go.html#strings)
-
-Happy coding!
+- [strings package documentation](https://golang.org/pkg/strings/)
+- [unicode package documentation](https://golang.org/pkg/unicode/)

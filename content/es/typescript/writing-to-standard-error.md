@@ -10,24 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##¿Por qué escribir al error estándar en TypeScript?
+## ¿Qué y Por qué? 
+Escribir a la salida de error estándar (stderr) es una técnica común utilizada por los programadores para mostrar mensajes de error en la consola al momento de ejecutar su código. Es una manera útil de informar al desarrollador acerca de errores que pueden ocurrir durante la ejecución de un programa. 
 
-Escribir al error estándar en TypeScript puede ser una herramienta útil para detectar y depurar errores en tu código. Esto te permite ver los errores en tiempo real, en lugar de tener que depender únicamente de mensajes de error en la consola del navegador.
-
-## Cómo hacerlo
-
-Para escribir al error estándar en TypeScript, utiliza el objeto `console` y su función `error`. Por ejemplo:
+## Cómo: 
+Escribir a la salida de error estándar en TypeScript se puede lograr usando la función `console.error()`. Este método acepta uno o varios parámetros que serán mostrados como un mensaje de error en la consola al momento de ejecutar el programa. Por ejemplo: 
 
 ```TypeScript
-console.error("Este es un error en TypeScript.");
+console.error("¡Algo salió mal!");
+console.error("Ocurrió un error en la línea " + lineNumber);
 ```
 
-Esto imprimirá el mensaje de error en la consola del navegador, permitiéndote identificar fácilmente el problema en tu código.
+Esto mostrará un mensaje de error en la consola de la siguiente manera: 
+> ¡Algo salió mal! <br>
+> Ocurrió un error en la línea 10
 
-## Profundizando
+## Profundizando: 
+La técnica de escribir a stderr tiene sus raíces en los sistemas operativos Unix, donde stderr es un flujo de salida donde se imprimen los mensajes de error. Los programas suelen utilizar stdout (standard output) para el flujo de salida normal y stderr para los mensajes de error. 
 
-Cuando escribas al error estándar en TypeScript, ten en cuenta que solo deberías usarlo para mensajes de error significativos. No lo uses para imprimir mensajes de depuración o para mostrar información no esencial. También puedes aprovechar otras funciones de `console` como `warn`, `info` y `log` para imprimir diferentes tipos de mensajes.
+Existen alternativas para mostrar mensajes de error en TypeScript, como utilizar el módulo `console` de Node.js o crear una instancia de `Error` y lanzarla con `throw`. Sin embargo, escribir a stderr sigue siendo una forma sencilla y útil de mostrar mensajes de error en la consola. 
 
-##Ver también
-- [Documentación de console de TypeScript] (https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-3.html#improved-inference-for-dynamic-imports-in-umd-global-modules)
-- [Uso de console en TypeScript] (https://stackify.com/node-js-console-logging/)
+En cuanto a la implementación, la función `console.error()` simplemente envía el mensaje de error al flujo de salida stderr del proceso actual. En los sistemas operativos Windows, esto se mostrará en la consola como si se hubiera utilizado `console.log()`.
+
+## Para saber más:
+Si quieres profundizar más en el uso de `console.error()` en TypeScript, puedes consultar la documentación oficial de la función o explorar otros métodos y propiedades disponibles en el objeto `console`. También puedes investigar más sobre los conceptos de stdout y stderr y cómo se utilizan en diferentes sistemas operativos.

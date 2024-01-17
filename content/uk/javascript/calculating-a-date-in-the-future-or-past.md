@@ -10,34 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Чому
+# Що та чому?
+Розрахунок дати в майбутньому або минулому - це процес визначення точної дати, яка буде відстоювати певну кількість часу від поточної дати. Програмісти використовують цей підхід для різних цілей, таких як створення розкладів, планування подій або реалізації функцій, пов'язаних з визначенням строків.
 
-В даний час програмування є необхідною умінням, яка може допомогти у розв'язанні багатьох проблем. Розрахунок дати в майбутньому або минулому є необхідною задачею для багатьох проектів, яка може бути вирішена за допомогою Javascript.
-
-## Як
-
-Одним з шляхів розрахунку дати в майбутньому або минулому є використання вбудованих функцій ```Date()``` та ```setFullYear()```. Нижче показаний приклад коду для обчислення дати за допомогою цих функцій:
-
+# Як це зробити:
 ```Javascript
-// обчислення дати за 10 днів вперед
-var now = new Date();
-now.setDate(now.getDate() + 10);
-console.log(now); // виведе дату через 10 днів
+// Розрахунок дати в майбутньому (додавання днів)
+let currentDate = new Date(); // поточна дата
+let numberOfDaysToAdd = 7; // кількість днів, які будемо додавати
+let futureDate = new Date(currentDate.setDate(currentDate.getDate() + numberOfDaysToAdd)); // дата, відстояна на 7 днів від поточної
 
-// обчислення дати за 3 роки назад
-var now = new Date();
-now.setFullYear(now.getFullYear() - 3);
-console.log(now); // виведе дату 3 роки тому
+console.log(futureDate.toDateString()); // Вивід дати у зрозумілому форматі
+
+// Розрахунок дати в минулому (віднімання років)
+let currentDate = new Date();
+let numberOfYearsToSubtract = 5;
+let pastDate = new Date(currentDate.getFullYear() - numberOfYearsToSubtract, currentDate.getMonth(), currentDate.getDate());
+
+console.log(pastDate.toDateString());
 ```
 
-## Deep Dive
+# Вивчення глибше:
+- Історичний контекст: методи розрахунку дати існують з часів створення комп'ютерів і були широко використані для обчислення термінів в середовищі бізнесу та наукових досліджень.
+- Альтернативи: для розрахунку дати в майбутньому або минулому можна використовувати бібліотеки, такі як Moment.js або Date-fns, які містять готові функції для цього.
+- Деталі реалізації: методи, які використовуються для розрахунку дати в Javascript - це вбудовані методи конструктора Date, такі як `setDate()` та `setFullYear()`.
 
-Основна концепція щодо розрахунку дати в майбутньому або минулому полягає в тому, щоб використовувати дату за замовчуванням і додавати (або віднімати) необхідну кількість днів чи років за допомогою вбудованих функцій.
-
-Важливо також звернути увагу на формат виведення дати, який може бути змінений за допомогою функції ```toLocaleDateString()``` та передання потрібних параметрів. Докладніше про це можна дізнатися у [документації](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date).
-
-## Дивіться також
-
-- [W3Schools: Робота з датою і часом в Javascript](https://www.w3schools.com/js/js_dates.asp)
-- [MDN: Робота з датою в Javascript](https://developer.mozilla.org/uk/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [Codecademy: Онлайн курс з Javascript](https://www.codecademy.com/learn/introduction-to-javascript)
+# Дивіться також:
+- [MDN Документація про розрахунок дати в Javascript](https://developer.mozilla.org/uk/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [Moment.js бібліотека для розрахунку дати в майбутньому або минулому](https://momentjs.com/docs/)
+- [Date-fns бібліотека для розрахунку дати в майбутньому або минулому](https://date-fns.org/docs/Getting-Started)

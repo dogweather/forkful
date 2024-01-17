@@ -1,7 +1,7 @@
 ---
-title:                "ウェブページのダウンロード"
-html_title:           "TypeScript: ウェブページのダウンロード"
-simple_title:         "ウェブページのダウンロード"
+title:                "ウェブページをダウンロードする"
+html_title:           "TypeScript: ウェブページをダウンロードする"
+simple_title:         "ウェブページをダウンロードする"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "HTML and the Web"
@@ -10,27 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+## 何 & なぜ？
+Webページをダウンロードするとは何かを説明する2〜3文と、プログラマーがそれを行う理由を説明します。
 
-Webページをダウンロードする理由はさまざまですが、一般的にはオフラインで閲覧したいか、データを分析したいからです。
+Webページのダウンロードは、インターネット上で情報を取得するプロセスです。プログラマーは、この方法で必要なデータを取得し、処理することができるようになります。
 
-## 使い方
-
+## 方法：
 ```TypeScript
-import * as request from 'request';
-
-request('https://www.example.com', (error, response, body) => {
-    console.log(body);
+const https = require('https');
+const URL = "https://www.example.com";
+https.get(URL, function(response) {
+  response.setEncoding("utf-8");
+  let body = "";
+  response.on("data", data => {
+    body += data; //データを取得
+  });
+  response.on("end", () => {
+    console.log(body); //ダウンロードしたWebページのコンテンツを表示
+  });
 });
 ```
 
-上記のように、requestモジュールを使用してウェブページをダウンロードすることができます。その後、bodyにウェブページの内容が格納され、コンソールに表示されます。
+## 深堀り：
+Webページをダウンロードする方法には、他にも様々な手段があります。例えば、ブラウザーの開発者ツールを使って、手動でコードを実行することも可能です。
 
-## 詳細を深く
+また、Node.jsやPythonなどのプログラミング言語でもWebページをダウンロードすることができます。それぞれの言語に特有のライブラリを使用することで、より簡単に実装することができます。
 
-ウェブページをダウンロードする際には、リクエストを送信し、レスポンスを受け取る必要があります。一般的には、HTTPリクエストを使用してウェブサーバーにリクエストを送信し、レスポンスを受け取ります。このプロセスは、ネットワーク通信やHTMLの解析など、多数のステップで構成されています。
+## 関連情報：
+Webページをダウンロードするときに役立つリンクを紹介します。
 
-## 参考
-
-- requestモジュール: https://www.npmjs.com/package/request
-- HTTPリクエスト: https://developer.mozilla.org/ja/docs/Web/HTTP/Overview
+- [Node.js公式ドキュメント: https.get()](https://nodejs.org/api/https.html#https_https_get_url_options_callback)
+- [Python公式ドキュメント: urllib.request](https://docs.python.org/3/library/urllib.request.html)
+- [ブラウザの開発者ツールを使ったWebページのダウンロード方法: https://www.lifewire.com/fully-download-files-in-chrome-4582686](https://www.lifewire.com/fully-download-files-in-chrome-4582686)

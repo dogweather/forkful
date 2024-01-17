@@ -1,7 +1,7 @@
 ---
-title:                "Tietokoneohjelmointi: Verkkosivun lataaminen"
-html_title:           "TypeScript: Tietokoneohjelmointi: Verkkosivun lataaminen"
-simple_title:         "Tietokoneohjelmointi: Verkkosivun lataaminen"
+title:                "Verkkosivun lataaminen"
+html_title:           "TypeScript: Verkkosivun lataaminen"
+simple_title:         "Verkkosivun lataaminen"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "HTML and the Web"
@@ -10,30 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä ja Miksi?
 
-Web-sivun lataaminen voi olla tärkeä osa verkkokehitystä, sillä se mahdollistaa sivuston sisällön tallentamisen paikallisesti ja sen tietojen käytön muilla ohjelmilla.
+Verkkosivun lataaminen tarkoittaa yksinkertaisesti sivun sisällön hakemista internetistä ja sen tallentamista omalle tietokoneelle tai järjestelmälle. Ohjelmoijat tekevät tätä usein esimerkiksi siksi, että he haluavat tarkastella sivun sisältöä ja käyttää sitä omassa koodissaan.
 
-## Kuinka
+## Kuinka tehdä:
+
+Voit käyttää TypeScriptiä verkkosivun lataamiseen seuraavalla tavalla:
 
 ```TypeScript
-import axios from 'axios';
+const fetch = require('node-fetch');
 
-// Ladataan web-sivu käyttäen axios-kirjastoa
-axios.get('https://www.esimerkkisivu.fi').then(response => {
-    // Tulostetaan vastauksen data
-    console.log(response.data);
-});
+fetch('https://example.com')
+  .then(res => res.text())
+  .then(body => {
+    console.log(body);
+  });
 ```
 
-Tällä yksinkertaisella koodilla voidaan ladata haluttu web-sivu ja saada talteen sen sisältö. Käyttämällä HTTP-pyyntökirjastoa, kuten axios, lataaminen käy helposti ja luotettavasti. 
+Tämä koodi käyttää `node-fetch` -kirjastoa verkkosivun hakemiseen ja tulostaa sivun sisällön konsoliin.
 
-## Syväsukellus
+## Syvemmälle:
 
-Web-sivujen lataamisella on monia käyttötarkoituksia, kuten sivuston sisällön muokkaaminen ja kääntäminen eri kielille, tiedon kerääminen tai verkkorobotin luominen. Lataaminen voidaan tehdä myös taustaprosessina ohjelman suorituksen aikana.
+Verkkosivun lataaminen on yleisesti ottaen ollut välttämätöntä ohjelmoinnissa jo pitkään, ja tähän tarkoitukseen on kehitetty monia erilaisia kirjastoja ja työkaluja. TypeScript on yksi suosituimmista ohjelmointikielistä tällä hetkellä, joten sen avulla on helppo ladata verkkosivuja ja käsitellä niiden sisältöä.
 
-## Katso myös
+## Katso myös:
 
-- [axios-kirjaston dokumentaatio](https://github.com/axios/axios)
-- [Web-sivun lataaminen käyttämällä JavaScriptiä](https://www.digitalocean.com/community/tutorials/how-to-use-node-js-request-and-cheerio-to-set-up-simple-web-scraping)
-- [Web-sivujen lataaminen ja käyttö paikallisesti](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Fetching_data)
+- [Node.js:n virallinen dokumentaatio](https://nodejs.org/en/docs/)
+- [TypeScriptin virallinen dokumentaatio](https://www.typescriptlang.org/docs/)
+- [node-fetch-kirjaston dokumentaatio GitHubissa](https://github.com/node-fetch/node-fetch)

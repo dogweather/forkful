@@ -1,7 +1,7 @@
 ---
-title:                "Invio di una richiesta http con autenticazione di base"
-html_title:           "Java: Invio di una richiesta http con autenticazione di base"
-simple_title:         "Invio di una richiesta http con autenticazione di base"
+title:                "Inviare una richiesta http con autenticazione di base"
+html_title:           "Java: Inviare una richiesta http con autenticazione di base"
+simple_title:         "Inviare una richiesta http con autenticazione di base"
 programming_language: "Java"
 category:             "Java"
 tag:                  "HTML and the Web"
@@ -10,59 +10,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+## Cosa e Perché?
 
-In un mondo in cui la sicurezza dei dati è sempre più importante, l'autenticazione di base è uno dei modi più sicuri per inviare richieste HTTP. Questo metodo di autenticazione garantisce che solo i destinatari autorizzati possano accedere ai dati.
+Invio delle richieste HTTP con autenticazione di base è il processo di invio di una richiesta web a un server utilizzando le credenziali di accesso di base. I programmatori lo fanno per accedere a risorse protette su un server web, come file o dati.
 
-## Come fare
+## Come fare:
 
-Per inviare una richiesta HTTP con l'autenticazione di base in Java, è necessario seguire questi semplici passaggi:
+```Java
+// Importare la classe HTTPURLConnection dalla libreria Java
+import java.net.HttpURLConnection;
 
-1. Importare la classe "HttpURLConnection" dal pacchetto "java.net".
-2. Creare un'istanza di "URL" passando l'URL della richiesta come parametro.
-3. Chiamare il metodo "openConnection()" sull'istanza URL per ottenere un'istanza di "HttpURLConnection".
-4. Impostare il metodo della richiesta (GET, POST, PUT, DELETE) utilizzando il metodo "setRequestMethod()".
-5. Aggiungere le credenziali di autenticazione utilizzando il metodo "setRequestProperty()" e passando l'header "Authorization" con il valore "Basic " seguito da username e password codificati in Base64.
-6. Inviare la richiesta utilizzando il metodo "getInputStream()" e leggere la risposta utilizzando un oggetto "BufferedReader".
+// Dichiarare le credenziali di accesso
+String username = "user";
+String password = "password";
 
-Ecco un esempio di codice Java che esegue una richiesta GET con autenticazione di base e stampa la risposta ottenuta:
+// Creare un'istanza della classe URL con l'URL desiderato
+URL url = new URL("https://www.esempio.com/resource");
 
-```java
-import java.net.*;
-import java.io.*;
+// Creare una connessione HTTP con l'URL
+HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 
-public class BasicAuthRequest {
-    public static void main(String[] args) throws Exception {
-        URL url = new URL("https://www.example.com");
-        HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-        connection.setRequestMethod("GET");
-        String encodedAuth = Base64.getEncoder().encodeToString(("username:password").getBytes());
-        connection.setRequestProperty("Authorization", "Basic " + encodedAuth);
-        
-        BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-        String input;
-        StringBuffer response = new StringBuffer();
-        
-        while ((input = in.readLine()) != null) {
-            response.append(input);
-        }
-        in.close();
-        
-        System.out.println(response.toString());
-    }
+// Impostare il metodo HTTP su GET
+connection.setRequestMethod("GET");
+
+// Aggiungere le credenziali di accesso alla richiesta
+String authString = username + ":" + password;
+byte[] authEncBytes = Base64.getEncoder().encode(authString.getBytes());
+String authStringEnc = new String(authEncBytes);
+connection.setRequestProperty("Authorization", "Basic " + authStringEnc);
+
+// Leggere la risposta dal server
+BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+String inputLine;
+StringBuilder response = new StringBuilder();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
 }
+in.close();
+
+// Stampare la risposta
+System.out.println(response.toString());
 ```
 
-Eseguendo questo codice, si otterrà una risposta HTTP con codice di stato 200 e il corpo della risposta verrà stampato a console.
+L'output sarà il contenuto della risorsa protetta.
 
-## Approfondimento
+## Approfondimenti
 
-È importante notare che l'autenticazione di base non è il metodo più sicuro per inviare richieste HTTP, poiché le credenziali sono codificate ma non criptate. Tuttavia, è comunque una buona pratica utilizzare questo metodo insieme ad altre misure di sicurezza per garantire la protezione dei dati.
+L'autenticazione di base è uno dei metodi di autenticazione più semplici e meno sicuri. È stato definito nel 1996 nella specifica RFC 2617 e consiste nell'aggiungere un'intestazione di autorizzazione contenente il nome utente e la password codificati in Base64 alla richiesta HTTP. Questo metodo non è consigliato per l'invio di informazioni sensibili come le credenziali di accesso.
 
-Poiché l'autenticazione di base richiede che le credenziali siano codificate in Base64, è importante utilizzare librerie come "java.util.Base64" per assicurarsi che la codifica sia fatta correttamente.
+Un'alternativa più sicura all'autenticazione di base è l'autenticazione digest, che utilizza una crittografia più forte per proteggere le credenziali di accesso.
+
+L'implementazione dell'autenticazione di base in Java utilizza le classi HttpURLConnection e Base64 della libreria Java. È possibile personalizzare ulteriormente l'autenticazione di base utilizzando altre librerie o framework come Apache HttpClient.
 
 ## Vedi anche
 
-- Tutorial di Oracle su come inviare richieste HTTP in Java: https://www.oracle.com/technical-resources/articles/javase/submit-data-ssl-certificates.html 
-- Documentazione ufficiale su "java.net.HttpURLConnection": https://docs.oracle.com/javase/8/docs/api/java/net/HttpURLConnection.html 
-- Documentazione ufficiale su "java.util.Base64": https://docs.oracle.com/javase/8/docs/api/java/util/Base64.html
+- Documentazione ufficiale di Java per HttpURLConnection: https://docs.oracle.com/javase/7/docs/api/java/net/HttpURLConnection.html
+- Specifica RFC 2617: https://tools.ietf.org/html/rfc2617
+- Overview dell'autenticazione di base: https://www.httpwatch.com/httpgallery/authentication/

@@ -1,7 +1,7 @@
 ---
-title:                "Iniciando um novo projeto"
-html_title:           "Python: Iniciando um novo projeto"
-simple_title:         "Iniciando um novo projeto"
+title:                "Iniciando um novo projeto."
+html_title:           "Python: Iniciando um novo projeto."
+simple_title:         "Iniciando um novo projeto."
 programming_language: "Python"
 category:             "Python"
 tag:                  "Getting Started"
@@ -10,38 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Porquê
-Você está cansado de trabalhar em projetos chatos e quer se desafiar com algo novo? Ou talvez você tenha uma ideia brilhante que está ansioso para transformá-la em realidade? Independentemente da razão, começar um novo projeto de programação pode ser emocionante e gratificante. Aprenda como começar da maneira certa e se prepare para um sucesso criativo.
+### O que é e por que fazer um novo projeto?
+Iniciar um novo projeto é quando um programador começa a trabalhar em um novo programa ou projeto. Isso pode ser feito por diversos motivos, como a necessidade de um novo recurso em um projeto existente, a criação de um produto completamente novo ou o aprendizado de uma nova linguagem de programação.
 
-## Como Fazer
-Primeiro, é importante ter uma linguagem de programação escolhida. Neste artigo, nos concentraremos em Python, devido à sua popularidade e versatilidade. Você pode baixar o Python gratuitamente no site oficial e instalá-lo em seu computador.
+### Como fazer:
+```Python
+# Crie um novo diretório para o seu projeto
+mkdir meu_projeto
 
-Agora, vamos ao código. Use o comando ```python``` para iniciar o interpretador Python no seu terminal. Você também pode abrir um editor de código de sua preferência e salvar seu arquivo com a extensão ```.py```. Em seguida, é hora de escrever o seu primeiro "Hello, World!" programa:
+# Navegue para o diretório recém-criado
+cd meu_projeto
 
+# Inicie um novo ambiente virtual (recomendado)
+python -m venv venv
+
+# Ative o ambiente virtual
+source venv/bin/activate
+
+# Comece a programar!
 ```
-```python
-print("Hello, World!")
-```
 
-E quando você executar este código, você verá a saída abaixo:
+### Mais detalhes:
+Iniciar um novo projeto é uma parte essencial do processo de programação. Ele permite que os programadores criem novos produtos, melhorem projetos existentes e aprendam novas habilidades. Além disso, iniciar um novo projeto em um ambiente virtual garante um espaço de trabalho limpo e isolado, evitando conflitos com outros projetos.
 
-```
-Hello, World!
-```
-
-Parabéns! Você acabou de escrever seu primeiro código Python. Agora você está pronto para mergulhar mais fundo e começar seu novo projeto.
-
-## Imersão Profunda
-Ao iniciar um novo projeto de programação, é importante ter um plano e seguir algumas etapas essenciais:
-
-- Comece com um objetivo claro: certifique-se de ter uma ideia clara do que você deseja alcançar com o seu projeto.
-- Quebre o projeto em partes menores: isso ajudará a manter o projeto organizado e gerenciável.
-- Pesquise e use recursos: existem muitos recursos disponíveis on-line para ajudá-lo a aprender e solucionar problemas ao longo do caminho.
-- Seja persistente e divirta-se: a programação pode ser desafiadora, mas também pode ser extremamente gratificante. Mantenha-se motivado e divirta-se ao longo do processo.
-
-Ao seguir essas etapas, você estará bem encaminhado para começar seu novo projeto de programação com sucesso.
-
-## Veja também
-- [Python.org](https://www.python.org/)
-- [Codecademy - Python Courses](https://www.codecademy.com/catalog/language/python)
-- [Real Python - Tutorials, Books, and Packages](https://realpython.com/)
+### Veja também:
+- [The Beginner's Guide to Starting a Development Project](https://www.codepolitan.com/beginners-guide-to-starting-a-development-project)
+- [Why Starting a New Project is Important for Programmers](https://www.freecodecamp.org/news/why-starting-a-new-project-is-important-for-programmers/)
+- [How to Set up a Virtual Environment for Python Development](https://code.visualstudio.com/docs/python/environments)

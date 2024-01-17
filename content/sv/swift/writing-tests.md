@@ -1,7 +1,7 @@
 ---
-title:                "Att skriva tester"
-html_title:           "Swift: Att skriva tester"
-simple_title:         "Att skriva tester"
+title:                "Skriva tester"
+html_title:           "Swift: Skriva tester"
+simple_title:         "Skriva tester"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Testing and Debugging"
@@ -10,32 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
+I programminuyn så betyder att skriva tester att man skriver kod som kollar att ens program fungerar som det ska. Det kan inkludera att kolla olika användarscenarier och faktiskt köras kod. Programmers skriver tester för att säkerställa att deras kod fungerar korrekt och för att undvika potentiella buggar och fel i framtiden.
 
-Att skriva tester är en viktig del av att skapa högkvalitativ och pålitlig kod. Genom att utföra tester kan du upptäcka och lösa buggar och fel i ett tidigt skede, vilket leder till en mer robust och lättunderhållen slutprodukt.
+## Hur man:
+För att skriva tester i Swift, måste du först importera XCTest ramverket. Sedan kan du definiera tester genom att skapa en ny klass som ärver från XCTestCase klassen och använda funktionen XCTFail() för att testa om ett villkor är sant eller falskt. Se exempel nedan:
 
-## Hur man gör det
+```Swift 
+import XCTest 
 
-För att skriva tester i Swift behöver du först och främst ett testramverk. Det finns flera olika ramverk att välja mellan, men ett vanligt val är XCTest som är inbyggt i Xcode. Du behöver också en grundläggande förståelse för Swift-syntax och koncept som variabler och funktioner.
+class CalculatorTests: XCTestCase {
+    func testAdd() {
+        let calculator = Calculator()
+        let result = calculator.add(5, 2)
+        XCTAssertEqual(result, 7)
+    }
 
-För att skapa ett test använder du funktionen `XCTAssert` följt av ett uttalande som ska utvärderas till sant eller falskt. Här är ett exempel på en enkel testfunktion som testar om 2 + 2 är lika med 4:
-
-```Swift
-func testSum() {
-    XCTAssertEqual(2 + 2, 4)
+    func testSubtract() {
+        let calculator = Calculator()
+        let result = calculator.subtract(5, 2)
+        XCTAssertEqual(result, 3)
+    }
 }
+
+class Calculator {
+    func add(_ a: Int, _ b: Int) -> Int {
+        return a + b
+    }
+
+    func subtract(_ a: Int, _ b: Int) -> Int {
+        return a - b
+    }
+}
+
 ```
 
-Om testet är framgångsrikt kommer du att se en grönt resultat i testpanelen i Xcode, annars visas ett rött resultat och en beskrivning av vad som gick fel.
+## Djupdykning:
+Tester har funnits sedan programmeringens tidiga dagar. En av de mest populära testningsramverken är JUnit, som är utformat för Java-programmerare. Det finns också alternativ till XCTest för Swift, såsom Quick och Nimble. För att skriva effektiva tester är det viktigt att veta vilka delar av koden som måste testas och att skriva testfall för olika scenarier.
 
-## Djupdykning
-
-Det finns flera olika typer av tester du kan skriva i Swift, som enhetstester, integrationstester och UI-tester. Enhetstester fokuserar på att testa enskilda delar av koden, medan integrationstester testar hur olika delar av koden samarbetar. UI-tester testar användargränssnittet för att säkerställa att det fungerar som det ska.
-
-Att skriva tester kan också hjälpa till att förbättra kodstruktur och design. Genom att tänka på hur man ska testa koden kan man ofta komma på sätt att bryta ner den i mindre och mer återanvändbara delar.
-
-## Se även
-
-- [Apple: Writing Tests with XCTest](https://developer.apple.com/documentation/xctest)
-- [Ray Wenderlich: iOS Unit Testing and UI Testing Tutorial](https://www.raywenderlich.com/960290-ios-unit-testing-and-ui-testing-tutorial)
-- [SwiftByExample: Unit Testing with XCTest and Swift](https://www.swiftbysundell.com/articles/unit-testing-with-swift/)
+## Se även:
+- [Apple Developer Documentation](https://developer.apple.com/documentation/swift/xctest)
+- [Quick: A behavior-driven development framework for Swift](https://github.com/Quick/Quick)
+- [Nimble: A matcher framework for Swift and Objective-C](https://github.com/Quick/Nimble)

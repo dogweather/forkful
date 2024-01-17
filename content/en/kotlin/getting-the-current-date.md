@@ -10,49 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why 
+## What & Why?
 
-If you're a programmer, chances are you'll need to work with dates and times at some point. Whether you're developing an app, a website, or any other software, getting the current date is a common task that you'll likely encounter. Knowing how to do it in an efficient and precise way can save you time and headaches down the line.
+Getting the current date in programming simply means retrieving the current date and time from the system. This is a common task for programmers as it allows them to incorporate time-sensitive tasks into their programs, such as displaying the current date or calculating the duration between two dates. Additionally, getting the current date is essential for creating time stamps, scheduling events, or simply tracking the passage of time in a program.
 
-## How To
+## How to:
 
-Here's how to get the current date in Kotlin:
+To get the current date in Kotlin, we can use the built-in `java.time.LocalDate` class. First, we need to import the class by adding `import java.time.LocalDate` at the top of our code. Then, we can simply call the `now()` function on the `LocalDate` class, which will return the current date as a `LocalDate` object. Here's an example:
 
 ```Kotlin
 import java.time.LocalDate
 
-// Using LocalDate.now() method
-val currentDate = LocalDate.now()
-
-// Printing the current date
-println("Today's date is $currentDate")
-
-// Output: Today's date is 2021-01-01
+fun main(){
+    val currentDate = LocalDate.now()
+    print(currentDate)
+}
 ```
 
-Alternatively, you can also use the `java.util.Date` class and its `getTime()` method to get the current date in milliseconds:
+The output of this code would be something like: `2021-10-01`, which represents the current date in the ISO format of year-month-day.
 
-```Kotlin
-import java.util.Date
+## Deep Dive:
 
-// Creating a Date object using the current time
-val currentDate = Date(System.currentTimeMillis())
+Before Java 8, getting the current date in Java required additional code and was not as straightforward as it is now with Kotlin's `LocalDate` class. Prior to Java 8, the `java.util.Date` class was used, which had its own set of issues, such as not being thread-safe and not providing methods for handling time zones properly.
 
-// Printing the current date
-println("Today's date is $currentDate")
+An alternative to using the `java.time.LocalDate` class in Kotlin is the `java.util.Calendar` class. However, this class also has its own set of problems, including being mutable and prone to errors.
 
-// Output: Today's date is Fri Jan 01 00:00:00 GMT 2021
-```
+In terms of implementation, the `now()` function in the `LocalDate` class uses the system's default time-zone to generate the current date. However, we can also use the `of()` function to specify a specific time-zone to get the current date for that region. 
 
-## Deep Dive
+## See Also:
 
-In Java, the `java.util.Date` class was widely used for handling dates and time. However, with the release of Java 8, the new `java.time` package was introduced, providing more modern and efficient ways of working with dates and times.
-
-In Kotlin, we can also take advantage of these improvements by using the `LocalDate` class from the `java.time` package. It represents a date without a time zone, and the `now()` method returns the current date based on the system clock.
-
-## See Also
-
-- [Java 8 Date and Time API](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
-- [Kotlin Standard Library](https://kotlinlang.org/api/latest/jvm/stdlib/)
-
-By using the methods provided by the `java.time` package, we can effectively and accurately handle dates and times in our Kotlin programs. Take some time to explore and experiment with different methods and classes within the `java.time` package to see what other functionalities are available.
+To learn more about the `java.time.LocalDate` class and its different methods and available time zones, you can check out the official Kotlin documentation [here](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.time/java.time.-local-date/). Additionally, you can also refer to the Java 8 `LocalDate` documentation [here](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html).

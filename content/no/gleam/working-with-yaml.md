@@ -1,7 +1,7 @@
 ---
-title:                "Arbeid med yaml"
-html_title:           "Gleam: Arbeid med yaml"
-simple_title:         "Arbeid med yaml"
+title:                "Å jobbe med yaml"
+html_title:           "Gleam: Å jobbe med yaml"
+simple_title:         "Å jobbe med yaml"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Data Formats and Serialization"
@@ -10,67 +10,22 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hva & Hvorfor?
+YAML er en tekstbasert format for å representere og lagre datastrukturer. Det er brukt av programmører for å enkelt lese, lagre og dele data som ikke kan håndteres av andre formater som JSON eller XML.
 
-Hvis du er en programmerer som liker å jobbe med strukturerte data og konfigurasjonsfiler, så er arbeidet med YAML noe du bør begynne å vurdere. Gleam-programmeringsspråket har innebygd støtte for YAML, som gjør det enkelt å lese og skrive dette formatet i dine programmer.
+## Hvordan:
+For å arbeide med YAML i Gleam, må du først importere modulen `gleam_yaml` og deretter bruke funksjonene i denne modulen. For å lese en YAML-fil, kan du bruke `gleam_yaml.read_file`-funksjonen og angi filbanen som en streng. Hvis du vil konvertere YAML-data til Gleam-strenger eller moduler, kan du bruke `gleam_yaml.dumps` og `gleam_yaml.dumps_module`-funksjonene. Under er et enkelt eksempel på å lese en YAML-fil og skrive ut resultatet:
 
-## Hvordan bruke YAML i Gleam
-
-For å begynne å bruke YAML i Gleam, må du først importere `yaml` biblioteket ved å legge til følgende linje øverst i filen din:
-
-```Gleam
-import yaml
+```
+Gleam import gleam_yaml
+YAML_DATA <- gleam_yaml.read_file("min_datafil.yml")
+gleam_yaml.dumps(YAML_DATA) // => "min_datafil.yml"
 ```
 
-Dette lar Gleam-programmet vite at det vil bruke funksjoner og datatyper fra `yaml` biblioteket.
+## Dypdykk:
+YAML ble utviklet i 2001 av Clark Evans og Ingy döt Net for å være et menneskelesbart og konsist dataformat. Det har blitt et populært valg for å representere komplekse datastrukturer i programmeringsspråk som Python, Ruby og nå også Gleam. Alternativene til YAML inkluderer JSON og XML, men YAML har en mer menneskelesbar syntaks og støtter kommentarer og referanser til andre deler av YAML-filen. I Gleam er YAML-implementasjonen basert på en parser som bruker en tilpasset versjon av `libyaml`-biblioteket.
 
-Nå kan vi begynne å jobbe med YAML ved hjelp av `yaml` modulen. La oss først se på et eksempel på en YAML-fil:
-
-```YAML
-name: Jane
-age: 25
-favorite_foods: 
-  - pizza
-  - tacos
-  - sushi
-```
-
-For å lese denne filen i Gleam, kan vi bruke `yaml.from_string` funksjonen, som tar inn en tekststreng og returnerer en liste over tuple som representerer YAML-dataene. La oss se på et eksempel:
-
-```Gleam
-let input = "name: Jane
-age: 25
-favorite_foods:
-- pizza
-- tacos
-- sushi"
-let result = yaml.from_string(input)
-assert result == [("| name", "Jane"), ("| age", 25), ("| favorite_foods", ["pizza", "tacos", "sushi"])]
-```
-
-Vi kan også bruke `yaml.to_string` funksjonen for å konvertere Gleam-data til YAML-format. Her er et eksempel:
-
-```Gleam
-let input = [("| name", "Jane"), ("| age", 25), ("| favorite_foods", ["pizza", "tacos", "sushi"])]
-let result = yaml.to_string(input)
-assert result == "name: Jane
-age: 25
-favorite_foods:
-- pizza
-- tacos
-- sushi"
-```
-
-## Dykk dypere
-
-Nå som vi har sett på et enkelt eksempel, la oss dykke dypere inn i hvordan YAML fungerer i Gleam.
-
-I Gleam, er YAML-data representert som en `yaml.Value`-type, som kan være enten en tuple, en liste, et streng, et tall eller `yaml.Null`. Dette er viktig å huske når du leser og skriver YAML-data i dine Gleam-programmer.
-
-En ting som er verdt å merke seg er at `yaml.Null`-type er inkludert i alle lister, så du må håndtere dette når du behandler og konverterer YAML-data.
-
-## Se også
-
-- [YAML-spesifikasjonen](https://yaml.org/spec/)
-- [Gleam dokumentasjon om YAML](https://gleam.run/documentation/)
-- [Offisiell hjemmeside for Gleam](https://gleam.run/)
+## Se også:
+- [Gleam `gleam_yaml` modul dokumentasjon](https://gleam.run/modules/gleam_yaml/latest/gleam_yaml.html)
+- [YAML offisiell nettside](https://yaml.org)
+- [YAML dokumentasjon](https://docs.ansible.com/ansible/latest/reference_appendices/YAMLSyntax.html)

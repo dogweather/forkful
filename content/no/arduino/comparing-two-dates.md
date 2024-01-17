@@ -1,7 +1,7 @@
 ---
-title:                "Sammenligner to datoer"
-html_title:           "Arduino: Sammenligner to datoer"
-simple_title:         "Sammenligner to datoer"
+title:                "Sammenligning av to datoer"
+html_title:           "Arduino: Sammenligning av to datoer"
+simple_title:         "Sammenligning av to datoer"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Dates and Times"
@@ -10,42 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
-Hvorfor sammenligne to datoer? Det kan være nyttig å vite når en hendelse skjedde i forhold til en annen, for eksempel når et sensoravlesning ble gjort i forhold til et tidspunkt en alarm ble utløst.
+# Hva & Hvorfor?
+Comparing to datoer betyr å sjekke om de er like eller om en er større eller mindre enn den andre. Dette er viktig for programvareutviklere for å kunne sammenligne datoer og utføre forskjellige handlinger avhengig av resultatet.
 
-## Slik gjør du det
-For å kunne sammenligne to datoer trenger vi å konvertere dem til tall som Arduino kan forstå. Dette gjøres ved hjelp av funksjonen `time.mktime()` som tar et `struct_time` objekt som argument. Deretter kan vi sammenligne de to datoene ved å bruke vanlige matematiske operatorer som `<, >, ==`.
+# Hvordan:
+Arduino har innebygd funksjonalitet for å sammenligne to datoer. Her er et eksempel på hvordan du kan gjøre det:
 
 ```Arduino
-#include <TimeLib.h>  // importerer Time Library
-#include <Time.h>  // importerer Time.h biblioteket
+#include <RTClib.h>
+RTC_DS3231 rtc;
 
-// Opprett to datoer ved hjelp av struct_time objekter
-struct_time dato1 = { 30, 30, 8, 26, 4, 2021 }; // 26. april 2021
-struct_time dato2 = { 0, 0, 12, 24, 12, 2020 }; // 24. desember 2020
-
-// Konverterer datoene til tall ved hjelp av time.mktime()
-time_t tid1 = time.mktime(&dato1);
-time_t tid2 = time.mktime(&dato2);
-
-// Sammenligner datoene ved å bruke matematiske operatorer
-if (tid1 < tid2) {
-  Serial.println("Dato 1 er tidligere enn dato 2");
-}
-else if (tid1 > tid2) {
-  Serial.println("Dato 2 er tidligere enn dato 1");
-}
-else { // Hvis de to datoene er like
-  Serial.println("Dato 1 og dato 2 er like");
+void setup() {
+  Serial.begin(9600);
+  rtc.begin();
 }
 
-// Output: Dato 2 er tidligere enn dato 1
+void loop() {
+  DateTime dato1(2021, 05, 01, 11, 30, 00);
+  DateTime dato2(2021, 05, 05, 15, 45, 00);
+
+  // Sammenlign datoer og skriv ut resultatet
+  if (dato1 < dato2) {
+    Serial.println("Dato 1 er mindre enn dato 2");
+  } else if (dato1 == dato2) {
+    Serial.println("Dato 1 er lik dato 2");
+  } else {
+    Serial.println("Dato 1 er større enn dato 2");
+  }
+
+  // Vent i 5 sekunder
+  delay(5000);
+}
 ```
 
-## Dykk dypere
-For de som er interessert i å lære mer om datohåndtering i Arduino, er det verdt å se nærmere på "Time Library" og "Time.h" bibliotekene. Time Library gir flere funksjoner for å håndtere og manipulere datoer, mens Time.h biblioteket gir tilgang til systemdatoen og tidsfunksjoner for Arduino.
+Output:
 
-## Se også
-- [Time Library referanse](https://playground.arduino.cc/Code/Time)
-- [Time.h referanse](https://www.arduino.cc/en/Reference/Time)
-- [Offisiell Arduino nettside](https://www.arduino.cc/)
+```
+Dato 1 er mindre enn dato 2
+```
+
+# Dykk dypere:
+- Historisk kontekst: Før moderne programmeringsspråk hadde innebygd funksjonalitet for å sammenligne datoer, måtte utviklere skrive egne algoritmer for å gjøre dette.
+- Altenativer: Det finnes også biblioteker som kan brukes for å sammenligne datoer på en mer avansert måte.
+- Implementeringsdetaljer: Datoene i eksempelet er satt manuelt, men du kan også hente datoer fra systemet for å sammenligne de med den nåværende datoen.
+
+# Se også:
+- [DateTime Library for Arduino](https://www.arduino.cc/reference/en/libraries/datetime/)
+- [How to Compare Two Dates in Arduino](https://www.tutorialspoint.com/arduino/arduino_comparing_dates.htm)

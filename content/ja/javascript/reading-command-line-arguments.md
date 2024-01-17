@@ -1,7 +1,7 @@
 ---
-title:                "コンピュータプログラミングをするという記事のタイトルです: コマンドライン引数の読み取り"
-html_title:           "Javascript: コンピュータプログラミングをするという記事のタイトルです: コマンドライン引数の読み取り"
-simple_title:         "コンピュータプログラミングをするという記事のタイトルです: コマンドライン引数の読み取り"
+title:                "コンピュータープログラミングのための「コマンドライン引数の読み取り」"
+html_title:           "Javascript: コンピュータープログラミングのための「コマンドライン引数の読み取り」"
+simple_title:         "コンピュータープログラミングのための「コマンドライン引数の読み取り」"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Files and I/O"
@@ -10,42 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
-
-コマンドライン引数を読み取ることについて学ぶことは、JavaScriptの開発において非常に有用です。コマンドライン引数を利用することで、プログラムの実行時に外部から値を受け取ることができ、柔軟なプログラミングが可能になります。
+## 何＆何故？
+コマンドライン引数が何か、そしてなぜプログラマーがそれを行うのかを説明します。
+コマンドライン引数とは、プログラムを実行する際に、プログラム自体に情報を渡すための方法です。プログラマーは、プログラムの実行中にプログラムの動作を制御するためにコマンドライン引数を使用します。
 
 ## 方法
-
-下記のようなコードを使用して、コマンドライン引数を読み取ることができます。
+コマンドライン引数を読み取るには、Processオブジェクトの引数配列を使用します。配列には、プログラムを実行する際に指定されたすべての引数が含まれます。
 
 ```Javascript
-// コマンドライン引数を配列として取得
+// コマンドライン引数を読み取る
 const args = process.argv.slice(2);
 
-// 配列argsの要素を順に取り出し、コンソールに出力
-args.forEach(arg => console.log(arg));
+// 引数の数を取得
+const count = args.length;
+
+// 引数を出力
+for (let i = 0; i < count; i++) {
+    console.log(args[i]);
+}
+
+// プログラムを実行する際に、以下のようなコマンドを入力すると、
+// 第一引数: Hello
+// 第二引数: World
+// 「Hello」を出力します
+// $ node argument.js Hello World
 ```
 
-実行例：
-
 ```
-node app.js hello world
-
-// 出力結果
-hello
-world
+Output: 
+Hello
+World
 ```
 
-コマンドライン引数は、プログラムの実行時に与えられる値を取得するためのものです。上記の例では、`hello`と`world`という値がコンソールに出力されます。また、`process.argv`を使用することで、引数以外の情報も取得することができます。
-
-## ディープダイブ
-
-コマンドライン引数は、主にコマンドラインから実行されるツールやプログラムの設定やオプションを指定するために使用されます。例えば、ブラウザで動作するJavaScriptを開発する際に、コマンドライン引数を利用してポート番号やホスト名を指定することができます。
-
-また、Node.jsを使用してサーバーサイドのJavaScriptを実行する場合にも、コマンドライン引数を利用してプログラムの実行時の動作を制御することができます。
+## 深堀り
+コマンドライン引数の歴史的背景、代替方法、および実装の詳細について説明します。
+コマンドライン引数は、プログラムの実行時に追加の情報を提供するための、古くからある方法です。代替方法として、環境変数などがあります。コマンドライン引数を読み取るためのプログラムの実装は比較的簡単ですが、不正な入力の処理やエラーハンドリングなどに注意する必要があります。
 
 ## 関連リンク
-
-- [Node.jsドキュメント](https://nodejs.org/dist/latest-v14.x/docs/api/process.html#process_process_argv)
-- [コマンドライン引数を読み取る方法](https://nodejs.org/en/knowledge/command-line/how-to-parse-command-line-arguments/)
-- [コマンドライン引数について | MDN](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Infinity)
+- [Node.js Process Documentation](https://nodejs.org/api/process.html)
+- [Understanding Command Line Arguments in Node.js](https://blog.risingstack.com/node-js-arguments-command-line/)
+- [Environment Variables vs. Command Line Arguments](https://stackify.com/environment-variables-vs-command-line-arguments/)

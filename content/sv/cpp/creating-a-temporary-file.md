@@ -10,46 +10,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
+Skapande av en tillfällig fil i ett program innebär att skapa en fil som enbart behövs tillfälligt under körningstiden. Det kan vara användbart för att temporärt lagra data eller för att hantera filöverföringar. Programmers använder detta för att effektivt hantera datahantering och för att undvika permanent filskrivning i programmet.
 
-Att skapa en temporär fil kan vara användbart i vissa situationer när man programmerar i C++. Det kan till exempel vara behövligt för att lagra data temporärt eller för att skapa ett temporärt resultat.
+## Hur går man tillväga:
+```
+#include <iostream>
+#include <fstream>
 
-## Hur man gör det
-
-För att skapa en temporär fil i C++, kan man använda funktionen `tmpfile()` från standardbiblioteket `<stdio.h>`. Här är ett exempel på hur man kan använda denna funktion:
-
-```C++
-#include <stdio.h>
+using namespace std;
 
 int main() {
-    // Skapar en temporär fil och öppnar den för skrivning
-    FILE* tempFile = tmpfile();
+  // Skapar en temporär fil som heter "temp.txt" 
+  ofstream tempfile("temp.txt");
 
-    if (tempFile == NULL) {
-        // Om skapandet av temporär fil misslyckas
-        printf("Kan inte skapa en temporär fil\n");
-        return 1;
+  // Skriver in text i filen
+  tempfile << "Det här är en temporär fil\n";
+
+  // Stänger filen
+  tempfile.close();
+
+  // Öppnar filen för läsning
+  ifstream readfile("temp.txt");
+
+  // Kollar om filen är öppen
+  if (readfile.is_open()) {
+    // Skriver ut innehållet av filen
+    cout << "Filen innehåller: \n";
+    string line;
+    while (getline(readfile, line)) {
+      cout << line << '\n';
     }
-
-    // Skriv något till filen
-    fputs("Detta är en temporär fil", tempFile);
-
-    // Stäng filen när man är klar med den
-    fclose(tempFile);
-
-    return 0;
+    // Stänger filen
+    readfile.close();
+  } else {
+    // Om filen inte kunde öppnas
+    cout << "Kunde inte öppna filen\n";
+  }
+  // Tar bort filen när den inte längre behövs
+  remove("temp.txt");
+  return 0;
 }
 ```
 
-Efter att programmet körs, kommer det att skapa en temporär fil som heter något i stil med "tmp.ABC123". Användningen av `tmpfile()` funktionen är enkelt och lätt att implementera i ditt program. Detta är bara ett exempel på hur man kan skapa en temporär fil, det finns också andra sätt att göra det på i C++.
+Output:
+```
+Filen innehåller:
+Det här är en temporär fil
+```
 
-## Djupdykning
+## Djupdykning:
+Skapande av tillfälliga filer är en vanlig praktik som används både inom operativsystem och inom programutveckling. Det används ofta för att skapa temporära backup-filer eller loggfiler som senare kan raderas för att spara utrymme. Istället för att konstant skriva till huvudfilen, kan en tillfällig fil skapas och sedan överföras eller kombineras med huvudfilen vid behov. Alternativen till att använda temporära filer inkluderar att skapa temporära variabler i minnet eller att använda en databas för att hantera data.
 
-När man skapar en temporär fil med `tmpfile()` funktionen, kommer filen att lagras i en speciell mapp som kallas "tmp" eller "temp". Denna mapp finns på de flesta operativsystem och används för att lagra temporära filer. En viktig sak att tänka på är att dessa filer inte kommer att vara tillgängliga efter att programmet har avslutats eller stängts ner. Detta beror på att de endast är tillfälliga och kommer att raderas automatiskt av operativsystemet när de inte längre används.
+Implementationen av tillfälliga filer kan variera beroende på operativsystem och programmeringsspråk. I C++ görs detta genom användning av filestream-klassen för att skapa och skriva till filen, och sedan stänger och raderar filen när den inte längre behövs.
 
-För att skapa en temporär fil som kan användas permanent, kan man använda sig av andra metoder såsom `tmpnam()` eller `mkstemp()`. Det är viktigt att välja rätt metod beroende på hur man vill använda den temporära filen.
-
-## Se även
-
-- [C++ Referens för `tmpfile()`](https://www.cplusplus.com/reference/cstdio/tmpfile/)
-- [Översikt över temporära filer i C++](https://www.tutorialspoint.com/temporary-files-in-cplusplus)
+## Se även:
+- [C++ filestream-dokumentation](https://www.cplusplus.com/reference/fstream/)
+- [Umfangreiches STDIO.h Tutorial mit ASCII Tabellen](https://repl.it/talk/learn/ASCII-Tutorial-Part-1-Getting-Started-with-C/6832)

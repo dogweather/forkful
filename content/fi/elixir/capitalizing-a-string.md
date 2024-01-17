@@ -1,7 +1,7 @@
 ---
-title:                "Merkkijonon ensimmäisen kirjaimen suuriksi kirjaimiksi muuttaminen"
-html_title:           "Elixir: Merkkijonon ensimmäisen kirjaimen suuriksi kirjaimiksi muuttaminen"
-simple_title:         "Merkkijonon ensimmäisen kirjaimen suuriksi kirjaimiksi muuttaminen"
+title:                "Merkitsevä nauha"
+html_title:           "Elixir: Merkitsevä nauha"
+simple_title:         "Merkitsevä nauha"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -10,39 +10,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mikä ja miksi?
 
-Merkkijonon isojen kirjainten käyttö voi olla hyödyllistä esimerkiksi tietokantojen hakutoiminnoissa tai luotaessa selkeää käyttöliittymää.
+Kun puhutaan merkkijonojen muokkaamisesta Elixir-ohjelmoinnissa, monille tulee ensimmäisenä mieleen "stringin" muuttaminen suurilla kirjaimilla. Tämä tarkoittaa yksinkertaisesti sitä, että kaikki merkkijonon kirjaimet vaihdetaan isoiksi kirjaimiksi. Tämä muutos voidaan tehdä eri syistä, kuten tietojen yhtenäistämiseksi tai tietojen vertailun helpottamiseksi.
 
-## Näin teet sen
+## Kuinka tehdä?
 
-Hyvin yksinkertainen tapa muuttaa merkkijonon kirjaimet isoiksi on käyttää String.upcase/1 -funktiota. Se ottaa argumenttina merkkijonon ja palauttaa uuden merkkijonon, jossa kaikki kirjaimet ovat isoja. Esimerkiksi:
-```
-Elixir: String.upcase("moi") # "MOI"
-```
+Elixirissa merkkijonojen muuttaminen isoiksi kirjaimiksi voidaan tehdä käyttämällä funktiota nimeltä `String.upcase`. Tämä funktio ottaa parametrina merkkijonon ja palauttaa uuden merkkijonon, jossa kaikki kirjaimet on muutettu isoiksi kirjaimiksi.
 
-Mikäli haluat muuttaa vain tietyn alueen merkkijonon kirjaimista isoiksi, voit käyttää String.replace/4 -funktiota. Se ottaa argumentteina merkkijonon, mille alueelle muutokset tehdään, miltä osalta muutokset tehdään ja millaisiksi muutokset tehdään. Esimerkiksi:
-```
-Elixir: String.replace("Moi maailma!", "maailma", &String.upcase/1, overlap: true) # "Moi MAAILMA!"
+```Elixir
+String.upcase("Hei maailma") # => "HEI MAAILMA"
 ```
 
-## Syväsukellus
+## Syvemmälle sukeltaminen
 
-Merkkijonon isojen kirjainten käyttöön liittyy usein myös esiintymien laskeminen ja järjestäminen. Tämä onnistuu käyttämällä String.split/2 ja Enum.sort/1 -funktioita. Esimerkiksi:
-```
-Elixir: "Moi Moi Maailma!" 
-|> String.split(" ") 
-|> Enum.sort 
-# ["Maailma!", "Moi", "Moi"]
-```
-
-Osana merkkijonon muokkaamista, voi myös olla tarpeellista poistaa merkkijonosta välimerkit tai muut erikoismerkit. Tämä onnistuu käyttämällä String.replace/4 -funktiota ja regular expression -syntaksia. Esimerkiksi:
-```
-Elixir: String.replace("Terve, maailma!", ~r/[[:punct:]]/, "") # "Terve maailma"
-```
+On huomioitava, että Elixirissa merkkijonot ovat immuutabeleja eli muuttumattomia. Tämä tarkoittaa, että `String.upcase`-funktio ei muuta alkuperäistä merkkijonoa, vaan palauttaa uuden muokatun merkkijonon. Lisäksi merkkijonojen muuttaminen isoiksi kirjaimiksi voi vaikuttaa suorituskykyyn, jos käytetään valtavia merkkijonoja. Tällöin kannattaa harkita muita muokkausmetodeja, kuten esimerkiksi merkkijonojen vertailua käyttämällä `String.downcase`-funktiota.
 
 ## Katso myös
 
-- [String -moduuli Elixirin dokumentaatiossa](https://hexdocs.pm/elixir/String.html)
-- [Regular Expression -opas Elixirille](https://elixir-lang.org/getting-started/regex.html)
-- [Koodiesimerkkejä Elixirin verkkosivuilla](https://elixir-lang.org/getting-started/introduction.html)
+- [String.upcase dokumentaatio](https://hexdocs.pm/elixir/String.html#upcase/1)
+- [Elixir String-moduulin dokumentaatio](https://hexdocs.pm/elixir/String.html)

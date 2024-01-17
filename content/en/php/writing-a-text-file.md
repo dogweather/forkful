@@ -10,44 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-Before the internet became widely accessible, writing text files was the go-to method for storing and sharing information. Today, you may wonder why you would even need to write a text file when there are so many other advanced options available. However, there are still many situations where a simple, lightweight, and easy-to-read text file can come in handy.
+Writing a text file in PHP is a way for programmers to save data in a human-readable format. This allows the data to be easily accessed and modified, making it a convenient storage option for various types of information.
 
-## How To
+## How to:
 
-To write a text file in PHP, you can use the `file_put_contents()` function. Here's an example:
+To write a text file in PHP, we will use the `file_put_contents()` function. This function takes two parameters: the name of the file to be written, and the content to be written.
+
+Example:
 
 ```
 <?php
-// Open or create a file named "my_file.txt" in the same directory as this PHP file
-$file = 'my_file.txt';
+$filename = "example.txt";
+$content = "This is an example text file written with PHP.";
 
-// Write some text content to the file
-$content = "This is a sample text file written with PHP.";
-
-// Write the content to the file and return the number of bytes written
-$result = file_put_contents($file, $content);
-
-// Check if the operation was successful
-if ($result !== false) {
-    echo "Text file successfully written.";
-} else {
-    echo "Unable to write the text file.";
-}
+file_put_contents($filename, $content);
 ```
 
-Running this code will create a new text file named "my_file.txt" in the same directory as the PHP file. If the file already existed, it will overwrite the existing content. You can also specify a different path for the file if needed.
+This will create a file called "example.txt" in the same directory as the PHP file and write the provided content to it.
+
+To append to an existing text file, we can use the `FILE_APPEND` flag as the third parameter of the `file_put_contents()` function. This will add the new content to the end of the existing file instead of overwriting it.
+
+Example:
+
+```
+<?php
+$filename = "example.txt";
+$content = "\nThis is additional content added to the file.";
+
+file_put_contents($filename, $content, FILE_APPEND);
+```
+
+This will add the new content on a new line after the existing content in the file.
 
 ## Deep Dive
 
-The `file_put_contents()` function takes three parameters: the file name, the content to be written, and an optional `flags` parameter. The default value for `flags` is `0` which means the file will be opened in write-only mode and the existing content will be overwritten. However, you can use the `FILE_APPEND` flag to append new content to the end of the file instead of overwriting it.
+In the early days of web development, PHP was primarily used for generating dynamic web pages. However, as the language evolved, programmers realized its potential as a scripting language for tasks beyond web development. Writing text files is one such task that PHP can easily handle.
 
-You can also use the `fopen()` and `fwrite()` functions for more flexibility in writing text files. `fopen()` opens a file and returns a file pointer, while `fwrite()` writes content to the open file using the file pointer. This allows you to write to a specific position in the file or even create placeholders for future content.
+An alternative to the `file_put_contents()` function is the `fopen()` and `fwrite()` functions. These functions require a few more lines of code, but they provide more options for handling files, such as setting permissions and reading existing files.
+
+The `file_put_contents()` function uses the underlying `file_get_contents()` function to write the content to a file. This means that it can handle URLs as the filename parameter, making it possible to write data to a remote server.
 
 ## See Also
-
-Here are some useful resources for further reading on writing text files in PHP:
 
 - [PHP file_put_contents() function](https://www.php.net/manual/en/function.file-put-contents.php)
 - [PHP fopen() function](https://www.php.net/manual/en/function.fopen.php)

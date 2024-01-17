@@ -10,12 +10,10 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## למה:
-ניתן למצוא את אורך של מחרוזת (string) בכדי לאפשר עיבוד וטיפול נוח יותר של נתונים מסוג זה.
+# מה ולמה?
+מציאת אורך של מחרוזת היא פעולה שבה מוחזר מספר התווים במחרוזת. פעולה זו חשובה למתכנתים כיוון שהיא מאפשרת לנו לעבוד עם מחרוזות בצורה מדויקת יותר ולהבין את המבנה שלהן.
 
-## איך לעשות זאת:
-אפשר למצוא את אורך המחרוזת בשפת C++ באמצעות הפונקציה `length()` או `size()` שקיימות בספריית הסטנדרטית (Standard Library). ניתן להגדיר מחרוזת עם או בלי מקף סיום ולבדוק את האורך שלה באמצעות הפונקציות הנ"ל. כאן ניתן לראות דוגמא בקוד:
-
+# איך לעשות:
 ```C++
 #include <iostream>
 #include <string>
@@ -23,31 +21,18 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 using namespace std;
 
 int main() {
-    // מחרוזת עם מקף סיום
-    string s1 = "Hello world!";
-    
-    // מחרוזת בלי מקף סיום
-    string s2 = "Hello world";
-    
-    // הדפסת אורך המחרוזות
-    cout << "Length of s1: " << s1.length() << endl;
-    cout << "Length of s2: " << s2.size() << endl;
-    
-    return 0;
+  string name = "John";
+  int length = name.length();
+  cout << "The length of the string is: " << length << endl;
+  return 0;
 }
 ```
-
 פלט:
-
 ```
-Length of s1: 12
-Length of s2: 11
+The length of the string is: 4
 ```
+# צלילה עמוקה:
+(1) ראשית, צריך להפעיל את הספרייה הנכונה כדי להשתמש בפעולה length. בשפת C++, ניתן להשתמש בהצהרת "#include <string>". (2) חייבים לשים לב שהפעולה length מחזירה מספר שלם ולא את כל התווים במחרוזת. (3) ניתן להשתמש גם בפעולת size כדי למצוא את אורך המחרוזת.
 
-## Deep Dive:
-כאשר מחשבים את אורך המחרוזת, התוכנית עוברת על כל התווים במחרוזת עד למציאת תו מיוחד המציין את הסיום של המחרוזת. בדרך כלל זהו התו ASCII המייצג את התו ״נקודת סיום חזקה״ (NULL), שהוא תו יחיד בסוגו ומדגיש את גבול המחרוזת. בכפילות שלמעלה, חישוב אורך המחרוזת לא תמיד יעבוד באופן מיטבי, ויכול להיות קשה יותר להבין מדוע במקרים מסוימים יש צורך להשתמש בפונקציות אחרות כמו `strlen()` בספריית הסטנדרטית של שפת C.
-
-## ראה גם:
-- [ספריית הסטנדרטית של C++](https://en.cppreference.com/w/)
-- [אורך מחרוזת בשפת C](https://www.geeksforgeeks.org/strlen-function-in-cpp/)
-- [הסבר על תווי ASCII](https://he.wikipedia.org/wiki/ASCII)
+# ראה גם:
+לפרטים נוספים על מציאת אורך של מחרוזת בשפת C++, ניתן לקרוא עוד במדריך הרשמי של C++: https://en.cppreference.com/w/cpp/string/basic_string/length

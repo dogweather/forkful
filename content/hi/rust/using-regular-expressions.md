@@ -10,39 +10,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
+# Regular Expressions in Rust: 
 
-रास्ट (Rust) ने रेगुलर एक्सप्रेशन (regular expressions) का समर्थन किया है, जो पैटर्न मैचिंग (pattern matching) को सुपरचार्ज करने में मदद करता है। इससे आप स्ट्रिंग्स (strings) के साथ काम करने को और आसान बना सकते हैं और कोडिंग को और उत्तेजित कर सकते हैं। इसलिए, रास्ट परियोजनाओं में रेगुलर एक्सप्रेशन का उपयोग करना फायदेमंद हो सकता है।
+## Kya & Kyun? 
+Regular Expressions, ya 'Regex' kehte hain, ek powerful tool hai jiska istemaal programmers log text ko manipulate karne ke liye karte hain. Ye text ko search, replace aur validate karne mein madad karta hai. Aksar programmers 'Regex' ko complex string patterns ko match karne ke liye use karte hain, jaise ki email addresses, phone numbers, aur passwords.
 
-## कैसे करें
-
-रास्ट में रेगुलर एक्सप्रेशन का उपयोग करने के लिए, आप `regex` लाइब्रेरी का उपयोग कर सकते हैं। नीचे दिए गए उदाहरण में, हम एक स्ट्रिंग से नंबर्स (numbers) का गणना करेंगे और ऑपरेटर्स (operators) की सहायता से उनमें से बड़े नंबर को ढूंढेंगे।
-
+## Kaise karein: 
 ```Rust
-// बिल्ड को जमा करें
-use regex::Regex;
-
-fn main() {
-    // स्ट्रिंग से नंबर्स का गणना करें
-    let text = "11,22,33,44,55";
-    // रेगुलर एक्सप्रेशन का पैटर्न बनाएं
-    let pattern = Regex::new(r",(\d{2}),(\d{2}),").unwrap();
-    // मैचिंग का परिणाम प्राप्त करें
-    let matches = pattern.find(text);
-    // सही नंबर निकालें
-    match matches {
-        Some(n) => println!("बड़ा नंबर है: {}", &text[n.start() + 1..n.end()]),
-        None => println!("कोई मैच नहीं मिला। :("),
-    }
+let regex = regex::Regex::new(r"[a-zA-Z]+").unwrap(); // ek naya regex banayein
+let text = "Hello, World!"; // text mein se pattern match karein
+if regex.is_match(text) { 
+    println!("Pattern found!"); // agar pattern mil gaya toh print karein
 }
 ```
+Sample output: Pattern found! 
 
-आउटपुट:
+## Gehraai mein jayein: 
+Perl programming language mein 'Regex' ka concept pehli baar 1986 mein implement kiya gaya tha. Lekin aaj kal ye major programming languages, jaise ki Rust, Python, aur Java mein bhi available hai. Agar aapke paas ek complex string pattern hai jo traditional methods se match nahi ho raha hai, toh 'Regex' aapke kaam ka saathi ho sakta hai. Iske alawa, aap 'Regex' ko text mining, data validation, aur data cleaning mein bhi istemaal kar sakte hain. 
 
-```
-बड़ा नंबर है: 44
-```
-
-## गहराई-चौड़ाई
-
-रेगुलर एक्सप्रेशन का उपयोग करना बहुत ही गहराई-चौड़ाई और उत्साहजनक हो सकता है। आप अपने कोड में उपयोग करें या ऑनलाइन टूल्स (tools) का भी उपयोग कर सकते हैं। रेगुलर एक्सप्रेश
+## Aur jaaniye: 
+Agar aapko 'Regex' ke baare mein aur jaanna hai toh, [Official Rust Documentation](https://doc.rust-lang.org/std/regex/), [Regular-Expressions.info](https://www.regular-expressions.info/), aur [Regex Guru](https://www.regular-expressions.info/tutorial.html) aapke liye helpful resources ho sakte hain.

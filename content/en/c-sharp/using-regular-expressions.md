@@ -10,61 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-Regular expressions are an essential tool for any programmer, especially in a language like C#. They allow for efficient and powerful manipulation of string data, making tasks such as pattern matching and data extraction a breeze. Learning how to use regular expressions can greatly enhance your coding skills and save you time and effort in the long run.
+Regular expressions, or regex, are a tool used in programming to search and manipulate text based on a pattern-matching algorithm. It allows programmers to efficiently search for specific patterns within a string, helping with tasks such as data validation and parsing. Regular expressions are popular among programmers because they offer a concise and powerful way to manipulate text, making it an essential tool in many programming languages.
 
-## How To
+## How to:
 
-To start using regular expressions in C#, you first need to include the `System.Text.RegularExpressions` namespace in your code. This will give you access to all the necessary classes and methods for working with regular expressions. 
-
-Next, you can use the `Regex` class to create a regular expression object. This class has several methods such as `Match` and `Replace` which allow you to search for patterns or replace text within a string. 
-
-Let's take a look at a simple example, where we want to check if a string contains the word "hello":
+Using regular expressions in C# is simple and straightforward. First, you need to define the pattern you want to search for using special syntax. For example, if you want to find all email addresses in a string, your pattern might be ```\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b```. Then, you can use the ```Regex.Match()``` method to find the first match in the string or the ```Regex.Matches()``` method to find all matches. Finally, you can use the ```Match.Value``` property to access the matched text. Here's an example in code:
 
 ```
-// Using System.Text.RegularExpressions
-Regex regex = new Regex(@"hello"); // Create a regex object with our pattern
-string myString = "Hello World"; // Our string to search within
-
-// Using the Match method to find a match
-Match match = regex.Match(myString);
-Console.WriteLine(match.Success); // Outputs true if a match is found
+string text = "Hello, my email is example@email.com";
+string pattern = @"\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b";
+Match match = Regex.Match(text, pattern);
+Console.WriteLine(match.Value); // output: example@email.com
 ```
 
-You can also use the `Replace` method to replace a pattern with a different string:
+## Deep Dive:
 
-```
-// Using System.Text.RegularExpressions
-Regex regex = new Regex(@"hello"); // Create a regex object with our pattern
-string myString = "Hello World"; // Our string to search within
+Regular expressions were first developed by computer scientist Stephen Kleene in the 1950s and were popularized in the 1970s by computer scientist Ken Thompson. They have become a fundamental tool in text processing and are supported by many programming languages, including C#. There are alternatives to using regular expressions, such as string manipulation methods, but they are often more verbose and less efficient. Regular expressions offer a standardized and effective way to manipulate text and are widely used in fields such as web development, data science, and natural language processing.
 
-// Using Replace method to replace the pattern with "hi"
-string newString = regex.Replace(myString, "hi");
-Console.WriteLine(newString); // Outputs "hi World"
-```
+In C#, regular expressions are implemented through the ```Regex``` class in the .NET framework. This class provides various methods for matching patterns, splitting strings, and replacing text. Additionally, C# provides the ```RegexOptions``` enum for specifying options such as case sensitivity and single-line matching. There are also many online resources and tools available for testing and learning regular expressions, such as [[regexr.com]] and [[regex101.com]].
 
-As you can see, regular expressions in C# are quite simple and intuitive to use. However, they can get more complex and powerful as you dive deeper into their capabilities.
+## See Also:
 
-## Deep Dive
-
-Regular expressions in C# support a wide range of special characters and operators that allow for more specific pattern matching. Some common examples include:
-
-- `.` : Matches any single character
-- `+` : Matches the preceding element one or more times
-- `?` : Matches the preceding element zero or one time
-- `|` : Allows for alternate matching between patterns
-- `^` : Matches the pattern at the beginning of the string
-- `$` : Matches the pattern at the end of the string
-
-Regular expressions also support grouping and capturing parts of a pattern, which can be useful for extracting specific data from a string. This can be done using parentheses `()`, and you can refer to these captured groups using backreferences like `\1` or `\2`.
-
-Another useful feature of regular expressions in C# is the ability to use character ranges, denoted by square brackets `[]`. For example, `[a-z]` will match any lowercase letter, and `[0-9]` will match any digit.
-
-With regular expressions, the possibilities are endless, and there is always something new to learn. So keep exploring and experimenting to make the most out of this powerful tool.
-
-## See Also
-
-- [Official Microsoft documentation on Regular Expressions in C#](https://docs.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-language-quick-reference)
-- [Regular Expressions Cheat Sheet](https://www.rexegg.com/regex-quickstart.html)
-- [Regular Expressions 101: Online Regular Expression Tester](https://regex101.com/)
+- [[C# Regex Class Documentation|https://docs.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.regex?view=netcore-3.1]]
+- [[Regular Expressions 101 Tutorial|https://www.regular-expressions.info/tutorial.html]]
+- [[Mastering Regular Expressions Book|https://www.oreilly.com/library/view/mastering-regular-expressions/0596528124/]]

@@ -1,7 +1,7 @@
 ---
-title:                "Nerladdning av en webbsida"
-html_title:           "C: Nerladdning av en webbsida"
-simple_title:         "Nerladdning av en webbsida"
+title:                "Ladda ner en webbsida"
+html_title:           "C: Ladda ner en webbsida"
+simple_title:         "Ladda ner en webbsida"
 programming_language: "C"
 category:             "C"
 tag:                  "HTML and the Web"
@@ -10,45 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
-Det finns många anledningar till varför någon skulle vilja ladda ner en webbsida. Kanske vill man spara en kopia för framtida referens, analysera dess struktur eller innehåll, eller helt enkelt för att ha tillgång till den offline.
+# Vad & Varför?
 
-## Så här gör du
-Att ladda ner en webbsida i C är en enkel process. Först och främst behöver vi inkludera nödvändiga bibliotek, såsom <stdio.h> och <curl/curl.h>. Sedan behöver vi skapa en `FILE`-pekar för att kunna skriva till en fil. Sedan kan vi använda Curl bibliotekets `curl_easy_init`, `curl_easy_setopt` och `curl_easy_perform` för att hämta webbsidan och skriva innehållet till filen.
+Att ladda ner en webbsida innebär att hämta all källkod, bilder och annat innehåll från en specifik webbadress och spara det på din dator. Det kan vara användbart för programerare som vill analysera en webbsida eller integrera dess innehåll i sitt eget program.
+
+# Hur man gör:
+
+Ett enkelt sätt att ladda ner en webbsida är att använda ett HTTP-bibliotek som cURL. Här är ett exempel på hur man laddar ner "www.example.com" och sparar innehållet i en textfil:
 
 ```C
 #include <stdio.h>
 #include <curl/curl.h>
 
 int main(void) {
-  // Skapa en FILE-pekar och öppna en fil för att skriva innehållet till
-  FILE *fp;
-  fp = fopen("webbsida.html", "w");
-  
-  // Skapa en Curl-session och ställ in URL:en
   CURL *curl;
+  FILE *fp;
+  CURLcode res;
+  
   curl = curl_easy_init();
-  curl_easy_setopt(curl, CURLOPT_URL, "https://www.exempel.se/");
   
-  // Ange filen som ska ta emot datan
-  curl_easy_setopt(curl, CURLOPT_WRITEDATA, fp);
+  if (curl) {
+    fp = fopen("example.html", "wb");
+    
+    curl_easy_setopt(curl, CURLOPT_URL, "www.example.com");
+    
+    curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, NULL);
+    curl_easy_setopt(curl, CURLOPT_WRITEDATA, fp);
+    
+    res = curl_easy_perform(curl);
+    curl_easy_cleanup(curl);
+    
+    fclose(fp);
+  }
   
-  // Hämta webbsidan och spara innehållet till filen
-  CURLcode res = curl_easy_perform(curl);
-  
-  // Stäng filen och rensa upp efter oss
-  fclose(fp);
-  curl_easy_cleanup(curl);
   return 0;
 }
 ```
 
-### Sample Output
-Kör programmet ovan så kommer du att få en fil som heter "webbsida.html" som innehåller allt innehåll från webbsidan https://www.exempel.se/.
+Detta skapar en fil med namnet "example.html" som innehåller allt innehåll från webbsidan. Detta är en enkel grund som kan anpassas och utvecklas för mer avancerad användning.
 
-## Djupdykning
-För att förstå mer om hur hämtning av webbsidor fungerar i C, kan det vara bra att titta närmare på Curl bibliotekets funktioner och parametrar. Till exempel kan vi använda `curl_easy_setopt` för att ställa in ytterligare inställningar, som t.ex. användaragent, tidsgräns för hämtning, och funktionspekare för att hantera nedladdningen.
+# Djupdykning:
 
-See Also
-- <https://curl.haxx.se/libcurl/c/>
-- <https://curl.se/libcurl/c/code.html>
+Ladda ner en webbsida är ett vanligt verktyg för automatisering och dataextraktion. Det kan också vara användbart för att testa webbapplikationer och utveckla webbintegrering i program. Istället för att använda cURL kan man också använda inbyggda funktioner i C, såsom "fopen ()" och "fputs ()". Dessa ger mer kontroll över hur data ska behandlas. Det finns också andra språk och program som specialiserat sig på att ladda ner och behandla webbinnehåll.
+
+# Se också:
+
+- [libcurl documentation](https://curl.haxx.se/libcurl/)
+- [Guide to web page downloading in C](https://krazydad.com/tutorials/curl/)
+- [Other approaches to downloading web pages](https://stackoverflow.com/questions/230853/how-to-download-a-url/230906)

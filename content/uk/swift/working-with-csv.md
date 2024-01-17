@@ -1,7 +1,7 @@
 ---
-title:                "Робота з csv."
-html_title:           "Swift: Робота з csv."
-simple_title:         "Робота з csv."
+title:                "Робота з csv"
+html_title:           "Swift: Робота з csv"
+simple_title:         "Робота з csv"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Data Formats and Serialization"
@@ -10,41 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Чому
+## Що & Чому?
+Робота з CSV - це зчитування та запис даних у файл формату CSV у програмах. Це корисний інструмент для програмістів, який дозволяє легко і швидко обробляти та керувати великими обсягами даних.
 
-Робота з CSV форматом є необхідною для всіх, хто працює з данними, зокрема для аналітиків, програмістів, бізнесменів та інших професій. Цей формат дозволяє зберігати дані у вигляді таблиць, що робить їх легко зрозумілими та зручними для обробки.
-
-## Як користуватися CSV у Swift
-
-Для початку роботи з CSV у Swift, потрібно завантажити бібліотеку `SwiftCSV`, яка дозволяє зчитувати та записувати дані у форматі CSV. Далі необхідно імпортувати бібліотеку у свій проект та використовувати методи `read` та `write` для роботи зі зчитуванням та записом даних відповідно.
-
+## Як це зробити:
 ```Swift
-import SwiftCSV
+// Читання даних з файлу CSV
+let csvURL = Bundle.main.url(forResource: "file", withExtension: "csv")
+if let csvString = try? String(contentsOf: csvURL!) {
+    // розділення даних на рядки
+    let csvData = csvString.components(separatedBy: "\n")
+    for row in csvData {
+        // розділення рядків на окремі поля
+        let fields = row.components(separatedBy: ",")
+        // обробка даних
+        // ...
+    }
+}
 
-// Зчитуємо дані з CSV файлу
-let csv = try! CSV(url: "example.csv")
-
-// Доступ до конкретної клітинки
-let cell = csv[1, 0]
-print(cell)
-
-// Доступ до рядка даних
-let row = csv[1]
-print(row)
-
-// Записуємо дані у CSV
-let data = [["Name", "Age"], ["John", "25"], ["Sara", "30"]]
-let newCSV = try! CSV(data: data)
-try! newCSV.write(to: "newFile.csv")
+// Запис даних до файлу CSV
+let csvData = "field1,field2,field3\nvalue1,value2,value3"
+// створення файлу
+let fileURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("file.csv")
+// запис даних у файл
+try? csvData.write(to: fileURL!, atomically: true, encoding: .utf8) 
 ```
 
-## Поглиблене вивчення
+## Глибинний аналіз:
+CSV був створений у 1972 році і був широко популярним у 1980-х роках для обміну даними між різними програмними продуктами. Хоча зараз існує багато альтернатив, CSV все ще залишається популярним форматом для зберігання та обробки табличних даних.
 
-Робота з CSV форматом є корисним навичкою для всіх, хто працює з обробкою та аналізом даних. Для досягнення більшої ефективності у роботі з CSV, слід вивчити додаткові можливості бібліотеки `SwiftCSV`, такі як фільтрація даних, створення графіків та інші.
+При роботі з CSV важливо враховувати, що дані можуть містити коми та інші спеціальні символи, тому їх потрібно правильно обробляти при читанні та записі.
 
-## Дивіться також
-
-- [Презентація бібліотеки SwiftCSV](https://github.com/swiftcsv/SwiftCSV)
-- [Підручник зі зчитування та запису даних у Swift](https://www.raywenderlich.com/4526-swift-csv-tutorial-for-reading-and-writing)
-- [Стаття про роботу з CSV форматом у Swift](https://www.appcoda.com/csv-import/)
-- [Реалізація роботи з CSV форматом у Swift](https://medium.com/@mahaboudroza/using-a-csv-file-with-swift-3-e9d9c6d00ef9)
+## Дивись також:
+- [Офіційна документація Swift для роботи з CSV](https://developer.apple.com/documentation/foundation/archives_and_serialization/reading_and_writing_csv_data)
+- [Стаття про CSV на Вікіпедії](https://uk.wikipedia.org/wiki/CSV)
+- [Бібліотека для легкого роботи з CSV у Swift](https://github.com/yaslab/CSV.swift)

@@ -10,27 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
-Har du någonsin behövt extrahera information från en webbsida, men kämpat med att hitta en effektiv metod? Då är HTML parsing det du behöver! Genom att använda C# kan du enkelt hämta och manipulera data från HTML-kod, vilket sparar tid och ansträngning jämfört med manuell bearbetning.
+## Vad och Varför?
+Parsing av HTML är en vanlig uppgift för programmerare som innebär att tolka och extrahera data från HTML-dokument. Detta är viktigt eftersom det ger möjlighet att hämta specifik information från en webbsida för att använda den i en applikation eller för att utföra automatiska tester.
 
-## Hur man gör
-Först och främst måste du importera "HtmlAgilityPack" -paketet i ditt C# -projekt. Detta ger dig nödvändiga verktyg för att analysera HTML-kod. Sedan kan du använda "HtmlWeb" -objektet för att hämta en webbsida och sedan använda "HtmlDocument" -objektet för att få åtkomst till dess element. Nedan finns exempel på hur man hämtar all text i en paragraf på en webbsida och skriver ut den:
+## Hur gör man:
+För att utföra parsing av HTML i C# finns det flera tredjepartsbibliotek tillgängliga, till exempel HtmlAgilityPack eller AngleSharp. Dessa bibliotek tillhandahåller enkla metoder för att ladda ett HTML-dokument från en URL eller en fil och sedan navigera genom dokumentet för att hitta och extrahera önskad data.
+
+Ett exempel på hur man kan använda HtmlAgilityPack för att hämta alla länkar från en webbsida:
 
 ```C#
-HtmlWeb web = new HtmlWeb(); // Skapar ett HtmlWeb-objekt
-HtmlDocument doc = web.Load("https://exempelsida.com"); // Hämtar en websida och skapar ett HtmlDocument-objekt
-HtmlNode paragraph = doc.DocumentNode.SelectSingleNode("//p"); // SelectSingleNode väljer ett element baserat på XPath
-Console.WriteLine(paragraph.InnerText); // Skriver ut texten i det valda elementet
+HtmlWeb web = new HtmlWeb();
+HtmlDocument dokument = web.Load("https://www.example.com");
+HtmlNodeCollection länkar = dokument.DocumentNode.SelectNodes("//a");
+foreach (HtmlNode länk in länkar)
+{
+    Console.WriteLine(länk.Attributes["href"].Value);
+}
 ```
 
-Det finns naturligtvis många fler metoder och verktyg för att manipulera och analysera HTML-kod. Om du behöver jobba med specifika element eller attribut, kan du använda metoder som "SelectNodes" och "GetAttributeValue". Utforska dokumentationen för "HtmlAgilityPack" för att lära dig mer om dess kapaciteter och olika användningsområden.
+Detta kodexempel använder HtmlWeb-klassen för att hämta HTML-dokumentet från Url:en och sedan använder SelectNodes-metoden för att hitta alla länkelement på sidan. Genom att loopa igenom denna samling av element kan vi sedan skriva ut länkarnas adresser till konsolen.
 
-## Djupdykning
-Med "HtmlAgilityPack" kan du inte bara hämta data från HTML-kod, utan också göra ändringar i koden. Detta är användbart om du till exempel behöver uppdatera en webbsida automatiskt baserat på externt hämtade uppgifter. Genom att använda egenskaper som "InnerText" och "SetAttributeValue", kan du ändra eller lägga till data i existerande element.
+## Djupdykning:
+Parsing av HTML har funnits sedan de tidiga dagarna av webbutveckling och det finns flera olika metoder och verktyg för att hantera det. En alternativ metod är att använda reguljära uttryck för att matcha och extrahera data från HTML, men detta kan bli komplicerat och svårt att underhålla. Tredjepartsbibliotek som HtmlAgilityPack erbjuder en mer strukturerad och pålitlig lösning.
 
-Det finns också möjlighet att hantera felaktig eller ogiltig HTML-kod genom att använda metoden "LoadHtml" istället för "Load". Detta tillåter dig att bearbeta kod som annars skulle orsaka problem eller komplikationer.
+Genom att förstå HTML-strukturen och kunna använda HTML-klasser och ID:er kan du styra vilken data som ska extraheras och hur den ska behandlas. Denna kunskap kan vara användbar både för webbutveckling och datainsamling.
 
-## Se också
-- [HtmlAgilityPack dokumentation](https://html-agility-pack.net/documentation)
-- [ASP.NET Core Razor Pages tutorial: Working with HTML forms in an ASP.NET Core Razor Pages project](https://docs.microsoft.com/en-us/aspnet/core/tutorials/razor-pages/validation?view=aspnetcore-5.0&tabs=visual-studio)
-- [Codecademy C# tutorial](https://www.codecademy.com/learn/learn-c-sharp)
+## Se även:
+- [HtmlAgilityPack](https://html-agility-pack.net/)
+- [AngleSharp](https://anglesharp.github.io/)
+- [Regular Expressions for HTML Parsing?](https://stackoverflow.com/questions/1732348/regex-match-open-tags-except-xhtml-self-contained-tags)

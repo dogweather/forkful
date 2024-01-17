@@ -10,67 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Czym jest porównywanie dwóch dat i dlaczego programiści to robią?
 
-Porównywanie dwóch dat może być przydatne w wielu scenariuszach w programowaniu Bash. Na przykład, może być niezbędne do sprawdzenia, czy dana operacja została wykonana w zadanym przedziale czasu lub czy dana data jest przed lub po innej dacie. 
+Porównywanie dwóch dat jest procesem polegającym na porównaniu dwóch dat w celu ustalenia, która jest wcześniejsza, późniejsza lub czy są one sobie równe. Programiści często muszą porównywać daty w swoich programach, aby podejmować odpowiednie decyzje lub wyświetlać informacje w odpowiedniej kolejności.
 
-## Jak to zrobić
+## Jak to zrobić?
 
-### Porównywanie dat w formacie *YYYYMMDD*
-
-Można porównać dwie daty w formacie *YYYYMMDD* przez po prostu porównanie liczb. Na przykład, aby sprawdzić, czy dana data jest wcześniejsza lub późniejsza od innej, można użyć następującego kodu:
+Sprawdzenie, która z dwóch dat jest wcześniejsza, późniejsza lub czy są sobie równe w Bashu jest dość proste. Aby tego dokonać, należy użyć porównania operatorem `-gt`, `-lt` lub `=`. Poniżej przedstawiono przykładowy kod, który porównuje dwie daty i wyświetla odpowiednie komunikaty w zależności od wyniku.
 
 ```Bash
-if [ 20191231 -lt 20200101 ]; then
-  echo "Data 20191231 jest wcześniejsza od daty 20200101"
+# Przykładowe daty
+data1="2020-01-01"
+data2="2019-12-31"
+
+# Porównanie dat
+if [[ "$data1" -gt "$data2" ]]; then
+  echo "$data1 jest wcześniejsza niż $data2"
+elif [[ "$data1" -lt "$data2" ]]; then
+  echo "$data1 jest późniejsza niż $data2"
+else
+  echo "Daty są sobie równe"
 fi
 ```
 
-Output: `Data 20191231 jest wcześniejsza od daty 20200101`
-
-### Porównywanie dat w formacie *YYYY-MM-DD*
-
-Jeśli daty są w formacie *YYYY-MM-DD*, można wykorzystać do tego celu polecenie `date` i formatowanie wyjścia. Oto przykładowy kod:
+**Wynik:**
 
 ```Bash
-if [[ $(date -d '2019-12-31' +%s) -lt $(date -d '2020-01-01' +%s) ]]; then
-  echo "Data 2019-12-31 jest wcześniejsza od daty 2020-01-01"
-fi
+2020-01-01 jest wcześniejsza niż 2019-12-31
 ```
 
-Output: `Data 2019-12-31 jest wcześniejsza od daty 2020-01-01`
+## Głębsze wgląd
 
-### Obsługa błędnych dat
+Porównywanie dat jest szeroko wykorzystywaną funkcją w Bashu i innych językach programowania. Określenie, która z dwóch dat jest wcześniejsza lub późniejsza, jest często niezbędne do wykonywania różnych operacji, na przykład sortowania lub filtrowania danych. Alternatywnym sposobem na porównywanie dat w Bashu jest użycie polecenia `bc`, które pozwala na wykonywanie obliczeń matematycznych z wykorzystaniem różnych operatorów, w tym porównania `<` i `>`.
 
-Należy pamiętać, że w przypadku błędnych lub nieprawidłowych dat, porównanie może nie działać poprawnie. Na przykład, data 20190231 jest nieprawidłowa i może spowodować nieoczekiwane wyniki. W takim przypadku, zaleca się uprzednie sprawdzenie poprawności dat przed ich porównaniem.
+W Bashu daty mogą być przechowywane w różnych formatach, na przykład `YYYY-MM-DD` lub `DD-MM-YYYY`. Dlatego ważne jest, aby upewnić się, że daty są w tym samym formacie przed ich porównywaniem.
 
-## Głębsze zagadnienia
+## Zobacz także
 
-### Porównywanie z datami z przyszłością
-
-Jeśli chcemy porównać daty w formacie *YYYY-MM-DD*, ale jedna z nich jest datą w przyszłości, można użyć flagi `-g` w poleceniu `date` lub `-o` w GNU `find`.
-
-Przykładowy kod z wykorzystaniem polecenia `date`:
-
-```Bash
-if [[ $(date -d '2020-01-01' +%s) -lt $(date -d '+1 day' +%s) ]]; then
-  echo "Data 2020-01-01 jest wcześniejsza od daty jutrzejszej"
-fi
-```
-
-Output: `Data 2020-01-01 jest wcześniejsza od daty jutrzejszej`
-
-Przykładowy kod z wykorzystaniem polecenia `find`:
-
-```Bash
-if [[ $(find -newermt '2020-01-01' -not -newermt '2020-01-02') ]]; then
-  echo "Istnieje plik modyfikowany pomiędzy datami 2020-01-01 i 2020-01-02"
-fi
-```
-
-Output: `Istnieje plik modyfikowany pomiędzy datami 2020-01-01 i 2020-01-02`
-
-## Zobacz również
-
-- [`date` man page](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html)
-- [`find` man page](https://www.gnu.org/software/findutils/manual/html_node/find_html/index.html)
+- [Dokumentacja Bash](https://www.gnu.org/software/bash/manual/)
+- [Porównywanie dat z użyciem polecenia 'bc'](https://www.shell-tips.com/bash/math-arithmetic-calculation/#compare)

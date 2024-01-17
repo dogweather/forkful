@@ -10,84 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
+Calculating a date in the future or past refers to the process of manipulating dates by adding or subtracting a certain number of days, months, or years. 
+Programmers often need to do this in order to perform tasks such as scheduling events, calculating deadlines, or displaying dates in a user-friendly format.
 
-Calculating dates in the future or past can be a useful tool for a variety of applications, from scheduling appointments to creating reminders. It allows for dynamic and flexible date manipulation, making it a valuable skill for any programmer to have.
+## How to:
+In Go, the standard library provides the `time` package which offers various functions and methods for working with dates and times. Here are some examples of how to calculate a date in the future or past using Go:
 
-## How To
+```Go
+// Calculating a date 10 days from now
+futureDate := time.Now().AddDate(0, 0, 10) 
+fmt.Println(futureDate) // Output: 2021-10-25 16:45:00 -0400 EDT
 
-To calculate a date in the future or past, we will use the `time` package in Go. First, we will need to import the package:
+// Calculating a date 3 months and 2 days from now 
+futureDate := time.Now().AddDate(0, 3, 2)
+fmt.Println(futureDate) // Output: 2022-01-27 16:45:00 -0500 EST 
 
-```
-import "time"
-```
+// Calculating a date 5 years from now 
+futureDate := time.Now().AddDate(5, 0, 0)
+fmt.Println(futureDate) // Output: 2026-10-16 16:45:00 -0400 EDT
 
-Next, we will use the `time.Now()` function to get the current date and time:
+// Calculating a date 2 weeks ago
+pastDate := time.Now().AddDate(0, 0, -14)
+fmt.Println(pastDate) // Output: 2021-10-02 16:45:00 -0400 EDT
 
-```
-currentDate := time.Now()
-```
-
-To calculate a date in the future, we can use the `AddDate()` function and specify the number of years, months, and days we want to add to our current date:
-
-```
-futureDate := currentDate.AddDate(1, 0, 0) // adds 1 year to currentDate
-```
-
-To calculate a date in the past, we can use the `AddDate()` function again, but with negative values:
-
-```
-pastDate := currentDate.AddDate(0, -6, 0) // subtracts 6 months from currentDate
-```
-
-We can then format the dates using the `Format()` function and specifying the desired layout. For example:
-
-```
-futureDateFormatted := futureDate.Format("01/02/2006")
+// Calculating a date 6 months ago
+pastDate := time.Now().AddDate(0, -6, 0)
+fmt.Println(pastDate) // Output: 2021-04-16 16:45:00 -0400 EDT
 ```
 
-This will format our future date as "Month/Day/Year" (e.g. 09/23/2022). Here's the full code:
+## Deep Dive:
+The concept of calculating dates is not new and has been used in various calendars and programming languages throughout history. In fact, some calendars have complex algorithms for calculating dates due to the complexities of their systems.
 
-```
-import "time"
+There are also other ways to calculate dates in addition to the `time` package in Go, such as using third-party libraries or manually manipulating the underlying date values.
 
-currentDate := time.Now()
-futureDate := currentDate.AddDate(1, 0, 0)
-futureDateFormatted := futureDate.Format("01/02/2006")
+The `time` package in Go implements a proleptic Gregorian calendar, meaning that it applies the rules of the Gregorian calendar (used in modern times) to dates before it was introduced. This can lead to some unexpected results, such as calculating a date before the year 1582 (when the Gregorian calendar was adopted).
 
-// output: 09/23/2022
-fmt.Println(futureDateFormatted)
-```
-
-And here's the code for calculating a date in the past:
-
-```
-// subtracts 6 months from current date
-pastDate := currentDate.AddDate(0, -6, 0)
-pastDateFormatted := pastDate.Format("01/02/2006")
-
-// output: 03/23/2021
-fmt.Println(pastDateFormatted)
-```
-
-## Deep Dive
-
-When using the `AddDate()` function, it's important to note that the parameters represent years, months, and days respectively, not just one specific unit. For example, if we want to subtract 1 month from a date, we would add "-1" in the "months" parameter, and not in the "days" parameter.
-
-Also, you may have noticed that we used "01/02/2006" as the format layout in our examples. This is because Go follows a specific date and time layout convention:
-
-- Month: 01
-- Day: 02
-- Year: 2006
-- Hour: 15 (24-hour format)
-- Minute: 04
-- Second: 05
-- PM: PM
-
-By following this layout convention, we can easily manipulate and format our dates in Go.
-
-## See Also
-
-- [Time Package in Go](https://golang.org/pkg/time/)
-- [Formatting Dates and Times in Go](https://yourbasic.org/golang/format-parse-string-time-date-example/) 
-- [Date Manipulation in Go](https://www.calhoun.io/working-with-date-and-time-in-go/)
+## See Also:
+- Official Go documentation for `time` package: https://golang.org/pkg/time/
+- A tutorial on working with dates and times in Go: https://golangbot.com/datetime
+- An in-depth explanation of the `time` package in Go: https://www.calhoun.io/working-with-dates-and-times-in-go/

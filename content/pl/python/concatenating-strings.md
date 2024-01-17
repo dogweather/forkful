@@ -10,36 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i dlaczego?
 
-Jeśli masz wiele napisów w swoim programie i chcesz je połączyć w jeden dłuższy napis, to zapewne zastanawiasz się, jak to najlepiej zrobić. W Pythonie możesz to zrobić za pomocą konkatenacji stringów, czyli po prostu łączenia ich w jeden. Jest to przydatna umiejętność, którą warto poznać.
+Łączenie ciągów znaków, zwane również konkatenacją, jest podstawową czynnością w programowaniu, która polega na łączeniu kilku wyrazów lub zdań w jeden ciąg. Programiści często używają konkatenacji w celu tworzenia dynamicznych wiadomości oraz generowania wyjścia do użytkownika.
 
-## Jak to zrobić
-
-Aby połączyć stringi w Pythonie, użyj operatora "+" lub metody ".join()". Oto przykładowy kod:
+## Jak to zrobić:
 
 ```Python
-# Użycie operatora "+" dla dwóch napisów
-string1 = "Dzień"
-string2 = "dobry"
-new_string = string1 + " " + string2
-print(new_string)
-# Output: "Dzień dobry"
-
-# Użycie metody ".join()" dla listy stringów
-words = ["To", "jest", "przykładowy", "string"]
-new_string = " ".join(words)
-print(new_string)
-# Output: "To jest przykładowy string"
+imie = "Anna"
+nazwisko = "Kowalska"
+wiadomosc = "Witaj " + imie + " " + nazwisko + "!" 
+print(wiadomosc)
 ```
+```
+Wynik:
+Witaj Anna Kowalska!
 
-## Dogłębna analiza
+Możesz również łączyć więcej niż dwa ciągi znaków, używając operatora `+`:
+```Python
+liczba_1 = "7"
+liczba_2 = "3"
+wynik = liczba_1 + liczba_2
+print(wynik)
+```
+Wynik:
+73
 
-W Pythonie stringi są niemodyfikowalnymi obiektami, co oznacza, że nie można zmieniać ich już istniejącej wartości. Dlatego też konkatenacja stringów nie modyfikuje już istniejących napisów, a jedynie tworzy nowy. Operacja ta jest wykonywana szybko i jest wydajna, ponieważ w Pythonie stringi są traktowane jako tablice znaków, a więc konkatenacja sprowadza się do po prostu wstawienia jednej tablicy na koniec drugiej.
+## Głębsza perspektywa:
 
-Więcej informacji na temat konkatenacji stringów w Pythonie można znaleźć w [oficjalnej dokumentacji języka](https://docs.python.org/3/tutorial/introduction.html#strings) oraz na [stronie tutorialu w języku polskim](https://www.python.org.pl/forum/t/2455-Krotki-i-stringi).
+Tradycyjnie konkatenacja została wprowadzona w języku programowania Fortran w 1957 roku. Obecnie jest szeroko stosowana w wielu językach programowania, w tym w Pythonie. Alternatywą dla konkatenacji jest używanie nawiasów w celu wyrażenia wielu ciągów w jednym wyrażeniu.
 
-## Zobacz także
+Możesz też użyć metody `.join()` w celu połączenia elementów listy w jeden ciąg znaków:
+```Python
+lista = ["AB", "CD", "EF"]
+wynik = "-".join(lista)
+print(wynik)
+```
+Wynik:
+AB-CD-EF
 
-- [Dokumentacja języka Python](https://docs.python.org/3/)
-- [Tutorial języka Python w języku polskim](https://www.python.org.pl/tutorial/)
+Implementacja konkatenacji w Pythonie jest zoptymalizowana pod kątem wydajności, co oznacza, że łączenie większej liczby ciągów niż dwóch nie będzie powodować większej liczby operacji, a zatem będzie działać szybko i wydajnie.
+
+## Zobacz też:
+
+- Dokumentacja Pythona na temat konkatenacji: https://docs.python.org/3/library/stdtypes.html#string-methods
+- Porównanie konkatenacji i użycia nawiasów: https://realpython.com/python-strings/

@@ -1,7 +1,7 @@
 ---
-title:                "Analysering av html"
-html_title:           "Elm: Analysering av html"
-simple_title:         "Analysering av html"
+title:                "Analysering av HTML"
+html_title:           "Elm: Analysering av HTML"
+simple_title:         "Analysering av HTML"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "HTML and the Web"
@@ -10,79 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hva & Hvorfor?
 
-Å parse HTML kan være svært nyttig når man jobber med webutvikling. Det lar oss hente ut og manipulere data fra nettsider, noe som kan være essensielt for å lage dynamiske og interaktive nettsider.
+Å analysere HTML (Hypertext Markup Language) betyr å ta en tekst som beskriver et websideformat og gjøre om det til et leselig og manipulerbart format for datamaskiner. Programmører gjør dette for å kunne hente ut og bearbeide informasjon fra nettsider på en effektiv måte.
 
-## Hvordan
-
-La oss se på et eksempel på hvordan vi kan parse en nettside i Elm og hente ut dataen:
+## Slik gjør du:
 
 ```Elm
 import Html
-import Html.Attributes exposing (class, src)
-import Html.Parser exposing (..)
+import Html.Attributes
 
-type alias User = 
-    { name : String
-    , age : Int
-    , country : String
-    }
-
-parseUser : Html.Html -> User
-parseUser html =
+parsetHtml : String -> Html msg
+parsetHtml htmlString =
     let
-        name =
-            html
-                |> querySelector ".name"
-                |> text
-
-        age =
-            html
-                |> querySelector ".age"
-                |> text
-                |> String.toInt
-                |> Result.withDefault 0
-
-        country =
-            html
-                |> querySelector ".country"
-                |> text
+        document = htmlString |> Html.parse
     in
-        User name age country
+        case document of 
+            Ok doc -> 
+                Html.div [] [ Html.text (Html.nodeToHtml doc) ]
+            Err erroMsg -> 
+                Html.div [] [ Html.text erroMsg ]
 ```
 
-La oss forklare hva som skjer her. Først importerer vi to moduler, `Html` og `Html.Parser`. Deretter definerer vi en type `User` som representerer dataen vi ønsker å hente ut fra nettsiden. I `parseUser` funksjonen vår bruker vi `querySelector` funksjonen fra `Html.Parser` for å få tak i de elementene vi ønsker basert på klassen deres. Deretter bruker vi `text` funksjonen for å hente ut teksten fra disse elementene. Til slutt bruker vi `String.toInt` funksjonen for å konvertere alderen til et heltall.
+Merknader: For å analysere HTML i Elm, må du importere `Html` og `Html.Attributes` bibliotekene. Deretter kan du bruke funksjonen `parse` for å konvertere en streng av HTML-kode til et `document`-objekt. Ved å bruke `nodeToHtml` funksjonen, kan du få ut den konverterte HTML-koden og plassere den inn i et element, som i eksempelet over et `div`-element. 
 
-Vi kan teste denne funksjonen ved å definere en HTML streng med samme struktur som nettsiden vi vil parse, og bruke `parseUser` funksjonen for å få ut dataen. Her er en HTML streng og resultatet fra å parse den:
+Eksempeloutput:
 
 ```Elm
-input : String
-input =
-    """
-    <div>
-        <h1 class="name">Ola Nordmann</h1>
-        <p class="age">30</p>
-        <p class="country">Norge</p>
-    </div>
-    """
-
-result : User
-result =
-    parseUser (Html.Parser.parse input)
-
-{ name = "Ola Nordmann", age = 30, country = "Norge" } : User
+<div> 
+    <h1>Tittel</h1>
+    <p>Dette er en paragraf.</p>
+</div>
 ```
 
-Som du kan se får vi ut en `User` med riktig data fra HTML strengen vår. Du kan også prøve å eksperimentere med andre HTML strukturer og se hvordan funksjonen tilpasser seg.
+## Detaljert informasjon:
 
-## Dypdykk
+HTML-analyse har vært en viktig del av nettutvikling siden starten av weben på 1990-tallet. Det har blitt gjort på forskjellige måter, for eksempel ved å bruke regex (regular expressions). Men med nye programmeringsspråk som Elm, kan dette gjøres enklere og mer pålitelig ved hjelp av funksjonsprogrammering.
 
-Dette var et enkelt eksempel på hvordan man kan parse HTML i Elm, men det finnes mange andre funksjoner og metoder som kan hjelpe deg med å hente ut data. Du kan for eksempel bruke `queryAll` funksjonen for å få tak i alle elementer med en spesifikk klasse, eller bruke `getAttribute` funksjonen for å få tak i verdien av en spesifikk attributt.
+Et alternativ til Elm for å analysere HTML er å bruke JavaScript, som også er mye brukt for frontend-utvikling. Men i motsetning til JavaScript, som er et multi-paradigme språk, er Elm spesielt designet for å håndtere funksjonell programmering, noe som gjør det til et kraftig verktøy for HTML-analyse.
 
-Det er også verdt å merke seg at `Html.Parser` modulen er en del av kjernen i Elm og derfor er inkludert i alle prosjekter. Dette gjør det enkelt å implementere parsing av HTML i dine webapplikasjoner uten å måtte legge til eksterne avhengigheter.
+En interesant detalj ved Elm sin `parse`-funksjon er at den bruker et konvertibelt bibliotek som heter "elm-parser". Med dette biblioteket kan `parse` gjøre om tekst til data på en generisk måte, slik at det kan brukes til å konvertere andre formater i tillegg til HTML.
 
-## Se også
-- [Html.Parser dokumentasjon](https://package.elm-lang.org/packages/elm/html/latest/Html-Parser)
-- [Offisiell Elm hjemmeside](https://elm-lang.org/)
-- [Elm Diskusjonsforum](https://discourse.elm-lang.org/)
+## Se også:
+
+- Elm's offisielle dokumentasjon for HTML-analyse: https://package.elm-lang.org/packages/elm/html/latest/Html
+- En detaljert guide om Elm sin HTML-analysefunksjon: https://medium.com/@DevProgress/parse-html-in-elm-using-elm-parser-3e496e3bdd50

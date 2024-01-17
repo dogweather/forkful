@@ -10,57 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+## 현재 날짜 가져오기: 
+오늘 날짜를 가져오는 것은 많은 프로그래머들에게 중요하다. 날짜는 소프트웨어에서 많은 역할을 하며, 예약 시스템이나 매출 추적 등에 필수적인 정보다. 따라서 현재 날짜를 빠르고 간편하게 가져오는 것은 매우 유용한 능력이다.
 
-현재 날짜를 가져오는 것이 왜 필요할까요? 현재 날짜를 사용하면 다양한 프로그래밍 작업에서 유용하며, 시간 기반의 작업을 할 때 매우 중요합니다.
-
-## 하우투
-
+## 어떻게 하는가:
+Go 언어에서는 time 패키지를 사용하여 현재 날짜와 시간을 가져올 수 있다. 아래의 코드 블록은 현재 날짜와 시간을 출력하는 예제이다.
 ```Go
 import "fmt"
 import "time"
 
 func main() {
-  // 현재 시간에 대한 객체 생성
   now := time.Now()
-
-  // 현재 시간에서 년, 월, 일, 시분초를 가져옴
-  year := now.Year()
-  month := now.Month()
-  day := now.Day()
-  hour := now.Hour()
-  minute := now.Minute()
-  second := now.Second()
-
-  // 출력 예시: 2021-08-01 09:30:45
-  fmt.Printf("%d-%02d-%02d %02d:%02d:%02d", year, month, day, hour, minute, second)
+  fmt.Println("현재 날짜와 시간: ", now)
 }
 ```
 
-### 결과
-
+출력 결과:
+```sh
+현재 날짜와 시간: 2021-07-20 14:30:00.000000 +0000 UTC m=+0.000000001
 ```
-2021-08-01 09:30:45
-```
 
-## 딥 다이브
+## 더 깊게 파헤치기:
+날짜와 시간은 프로그래밍에서 중요한 부분이다. 예전에는 time 패키지 없이 직접 현재 날짜와 시간을 계산하거나 운영체제의 날짜와 시간 정보를 가져와서 사용했지만, 지금은 time 패키지를 사용하여 간편하고 정확하게 현재 날짜와 시간을 가져올 수 있다.
 
-Go 언어는 표준 라이브러리인 time 패키지를 통해 현재 시간을 쉽게 가져올 수 있습니다. 이 패키지는 익숙한 time 관련 작업을 간편하게 처리할 수 있도록 여러 함수와 형식을 제공합니다.
+다른 언어에서도 비슷한 기능을 제공하는데, Python에서는 datetime 모듈을 사용하고, Java에서는 java.time 패키지를 사용한다.
 
-### 현재 시간 가져오기
-
-지금까지 보여드린 방법은 time.Now()를 사용하는 방법이었습니다. 이 함수는 시간대 정보를 무시하고 현재 시간정보를 가지고 있는 Time 구조체를 반환합니다.
-
-### 다른 시간대의 현재 시간 가져오기
-
-위의 예제에서 사용한 time.Now() 함수는 로컬 시간 기준으로 현재 시간을 반환합니다. 하지만 시간대 정보를 고려한 현재 시간을 얻고 싶다면 다른 함수를 사용해야 합니다. 예를 들어, time.Now().UTC()는 세계 표준시 기준의 현재 시간을 반환합니다.
-
-### 시간 형태 변경하기
-
-Go 언어에서는 time 패키지의 Format 함수를 사용하여 시간을 원하는 형태로 변환할 수 있습니다. 위의 예제에서 시간을 "연-월-일 시분초" 형태로 출력하기 위해 Format 함수를 사용했습니다. 다른 형식도 가능하니 필요에 맞게 사용하면 됩니다.
-
-## 관련 자료
-
-- [Go 언어 공식 사이트](https://golang.org/)
-- [time 패키지 문서](https://golang.org/pkg/time/)
-- [Go 언어를 활용한 실전 예제](https://gobyexample.com/)
+## 관련 자료:
+- Go 공식 문서: https://golang.org/pkg/time/
+- time 패키지 예제: https://gobyexample.com/time
+- Python datetime 모듈: https://docs.python.org/3/library/datetime.html
+- Java java.time 패키지: https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html

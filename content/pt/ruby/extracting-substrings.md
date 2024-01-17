@@ -1,7 +1,7 @@
 ---
-title:                "Extraindo Substrings"
-html_title:           "Ruby: Extraindo Substrings"
-simple_title:         "Extraindo Substrings"
+title:                "Extraindo subcadeias de caracteres"
+html_title:           "Ruby: Extraindo subcadeias de caracteres"
+simple_title:         "Extraindo subcadeias de caracteres"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Strings"
@@ -10,42 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+## O que & Por quê?
+Extrair substrings é o processo de selecionar apenas parte de uma string maior. Isso é útil para manipular dados em seus projetos de programação e simplificar tarefas. Os programadores fazem isso para economizar tempo e tornar seu código mais eficiente.
 
-Extrair substrings é uma técnica comum em programação que permite que você obtenha partes específicas de uma string de texto. Isso pode ser útil quando você precisa manipular ou processar informações em um formato específico.
-
-## Como fazer
-
-Extrair substrings em Ruby é simples e pode ser feito usando o método `slice` ou a notação de intervalo `[]`.
-
+## Como fazer:
 ```
-# Exemplo 1: ussando o método slice
-string = "Olá, mundo!"
-substring = string.slice(5, 5) # A partir do índice 5, obtenha 5 caracteres
-puts substring # Output: mundo
+# Considere a string abaixo como exemplo
+str = "Exemplo de string"
 
-# Exemplo 2: usando a notação de intervalo
-string = "Olá, mundo!"
-substring = string[0..3] # Do índice 0 ao 3 (incluindo), obtenha os caracteres
-puts substring # Output: Olá
+# Para extrair uma substring específica, use o método slice com os índices desejados
+str[8..13] # output: "de str"
 
+# Você também pode usar o método slice com um único índice para extrair do índice até o final da string
+str[8..-1] # output: "de string"
+
+# Outro método útil é o substring, que permite definir o tamanho da substring
+str.substring(8, 6) # output: "de str"
 ```
 
-É importante notar que a contagem dos índices em Ruby começa a partir do 0, então o primeiro caractere de uma string tem o índice 0, o segundo caractere tem o índice 1 e assim por diante.
+## Profundando:
+Extrair substrings é uma técnica comum utilizada em muitas linguagens de programação. Foi introduzida pela primeira vez em linguagens como o BASIC e FORTRAN. Além do Ruby, outras linguagens como Java e Perl também possuem métodos para extrair substrings. Além disso, existem diferentes abordagens para extrair substrings, como usando expressões regulares.
 
-## Mergulho Profundo
-
-Além do método `slice` e da notação de intervalo, também é possível extrair substrings usando expressões regulares. As expressões regulares são sequências de caracteres que formam um padrão e podem ser usadas para encontrar e extrair partes específicas de uma string.
-
-```
-string = "My email is example@email.com"
-substring = string.match(/(\w+)@(\w+)\.com/)[1] # Procure por um padrão de email e obtenha o primeiro grupo de captura
-puts substring # Output: email
-```
-
-As expressões regulares podem ser complexas, mas são extremamente úteis para extrair informações de uma string de maneira precisa e flexível.
-
-## Veja também
-
-- [Ruby String Class Documentation](https://ruby-doc.org/core-2.7.0/String.html)
-- [Ruby Regular Expressions Tutorial](https://www.tutorialspoint.com/ruby/ruby_regular_expressions.htm)
+## Veja também:
+- [Documentação do método slice em Ruby](https://ruby-doc.org/core-2.7.1/String.html#method-i-slice)
+- [Tutorial de expressões regulares em Ruby](https://www.rubyguides.com/2015/06/ruby-regex/)
+- [Lista de outras linguagens de programação que suportam extração de substrings](https://en.wikipedia.org/wiki/Substring#Computing)

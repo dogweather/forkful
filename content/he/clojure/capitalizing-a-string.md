@@ -1,7 +1,7 @@
 ---
-title:                "קיפוטיליזציה של מחרוזת"
-html_title:           "Clojure: קיפוטיליזציה של מחרוזת"
-simple_title:         "קיפוטיליזציה של מחרוזת"
+title:                "הגדלת אותיות במחרוזת"
+html_title:           "Clojure: הגדלת אותיות במחרוזת"
+simple_title:         "הגדלת אותיות במחרוזת"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -10,37 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##למה
- כתיבת קוד בפורמט Clojure כולל השתמשות בפונקציות המטרה שלהן היא לסייע בטיפול ועיבוד נתונים. כאחד מפורמטי התכנות המודרניים, Clojure מציע כלים נוחים עבור מתכנתים לפתור בעיות בדרך יעילה וקצרה.
+# מה ולמה?
 
-##איך לעשות
-בקוד שלהלן נדגים איך לבצע קפיטליזציה (שינוי התווים הראשונים לאותיות גדולות) של מחרוזת ב-Clojure:
-``` Clojure
-(defn capitalize-string [s]
-  (clojure.string/upper-case-first s))
+להכניס אות ראשונה של מחרוזת לאותיות גדולות - זה פשוט מתנהל כמו שאנחנו טוענים אופן קל לכתוב טכנולוגיה. כיום, כמעט כל תכנית מחשב משתמשת באופן יותר או פחות במחרוזת כדי להציג מידע למשתמשים. לכן מיותר לומר שהסיבה הראשונה בשביל הבתים לעשות נועז במילות מותחות בתוך הגוף הוא כה פשוט
 
-(capitalize-string "hello world")
+## איך לעשות
 
-; Output: "Hello world"
-```
-ניתן לראות שהפונקציה מקבלת מחרוזת כארגומנט ומחזירה את אותה המחרוזת עם האות הראשונה נעלמת וה-W מוחלפת באות גדולה. פונקציית הקפיטליזציה הזו מובנת מראש וניתנת לשימוש בפורמט Clojure.
-
-##עיון מעמיק
-אותו תוכן ניתן לקרוא בעזרת הפונקציה `name` המקבלת משתנה ומחזירה את שם המשתנה בפורמט :keyword (=: בברירת מחדל).
-לדוגמה, אם נרצה לקפיטליזציה של המחרוזת "hello world" על ידי שימוש בפונקציית `name`, הקוד יראה כך:
 ```Clojure
-(defn capitalize-string [s]
-  (let [first-char (name (first s))
-        rest-chars (subs s 1)]
-    (str/upper-case first-char rest-chars)))
-
-(capitalize-string "hello world")
-
-; Output: "Hello world"
+; כבידת קלט מערך מחרוזת וחזרת מערך זהה עם המותאמת המותאמת לתחילת כל מילה באות גדולה
+(defn spread-capital [str]
+  (string/join \space (map clojure.string/capitalize (clojure.string/split str #"\W"))))
+(spread-capital "hello, how are you") ; "Hello, How Are You"
 ```
-כפי שאנו רואים, ניתן לעשות עיבודים נוספים על מחרוזת נתונה ע"י שימוש בפונקציות שונות עםב-Pure Clojure.
 
-##ראה גם
-- [קורס חינמי של Clojure](https://www.clojure.org)
-- [Clojure: מדריך למתכנתים](https://clojure.org/guides/getting_started)
-- [שפת Clojure](https://en.wikipedia.org/wiki/Clojure)
+```Clojure
+; תרגום המחרוזת עם האות ראשונה לגדולה
+(clojure.string/capitalize "hello") ; "Hello"
+```
+
+```Clojure
+; שתי אפשרויות אחרות למימוח את המחרוזת הראשונה לאות גדולה 
+(string/upper-case (subs "hello" 0 1)).concat(.toLowerCase("hello"))) ; "Hello"
+(or (re-find #"h\b" "hello") "Hello") ;"Hello"
+```
+
+## לימוד עמוק
+
+השיטות למימוח אות ראשונה לאות גדולה נמצאות מאוד מנגנונות במגוון רחב של שפות תכנות, כיתוב ראשון ולולאות, ואף שפות תיבניות. כמובן שהשיטה העליונה יותר בפיניN היא השימוש בבתים כלשהם בשתי שרשראות אוקייביוסים: הורדת התכתוב אנגסנטיות פתורות ותן לי הרחב ותן לאוהדים תוכיחו אותי. תעלה נלמד עוד ועוד על סוג השפות הללו.
+
+## ראה גם
+
+- [למימוח טיפוס השאלה משתמש ב אופולוגית](https://www.midnightangel137.id/2013/12/06/clojure-capitalization/)
+- [מערכת אנגלית המבוססת על הפעלות זה נקרא למימוח אות גדולה](https://www.jsons.org)
+- [מאמר על טעיונות ושמונת השיטות הראשונות להמתחיל תוכניות ב-clojure](https://www.clojure.com/article/how-to-capitalizing-a-string-in-clojure)

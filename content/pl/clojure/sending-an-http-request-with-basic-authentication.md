@@ -1,7 +1,7 @@
 ---
-title:                "Przesyłanie żądania http z podstawową autoryzacją"
-html_title:           "Clojure: Przesyłanie żądania http z podstawową autoryzacją"
-simple_title:         "Przesyłanie żądania http z podstawową autoryzacją"
+title:                "Wysyłanie żądania http z podstawową autoryzacją"
+html_title:           "Clojure: Wysyłanie żądania http z podstawową autoryzacją"
+simple_title:         "Wysyłanie żądania http z podstawową autoryzacją"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "HTML and the Web"
@@ -10,34 +10,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i dlaczego?
+Wysyłanie żądania HTTP z podstawową autoryzacją jest sposobem na uwierzytelnienie się do serwera za pomocą nazwy użytkownika i hasła. Jest to powszechne w programowaniu, ponieważ pozwala na ochronę danych i zasobów przed niepowołanym dostępem.
 
-Wysyłanie żądania HTTP z uwierzytelnieniem podstawowym jest ważne, ponieważ umożliwia bezpieczny dostęp do zasobów w Internecie. Użycie uwierzytelnienia podstawowego pozwala użytkownikom potwierdzić swoją tożsamość przed uzyskaniem dostępu do chronionych danych.
-
-## Jak to zrobić
-
+## Jak to zrobić:
 ```Clojure
-(require '[org.httpkit.client :as http])
-(http/post "https://example.com/api/resource" {:basic-auth ["username" "password"]})
+(require '[clj-http.client :as http])
+
+(http/get "https://example.com" :basic-auth "username" "password")
 ```
 
-Kod powyżej pokazuje przykład wysłania żądania POST z uwierzytelnieniem podstawowym do zasobu API na stronie internetowej. W celu użycia uwierzytelnienia podstawowego, należy przekazać wektor z nazwą użytkownika i hasłem jako drugi argument do funkcji `post`.
+W powyższym przykładzie wykorzystujemy bibliotekę clj-http, aby wysłać żądanie GET do witryny "example.com". Dodatkowo przekazujemy również nazwę użytkownika i hasło jako parametry podstawowej autentykacji.
 
-Output:
+## Deep Dive:
+Podstawowa autoryzacja została pierwotnie wprowadzona w protokole HTTP w 1996 roku. Dzięki temu programiści mogą szybko i łatwo dodawać funkcję uwierzytelniania do swoich aplikacji internetowych. Alternatywnym podejściem jest wykorzystanie bardziej bezpiecznej autoryzacji, taka jak OAuth.
 
-```Clojure
-{:status 200, :headers {...}, :body "..."}
-```
+Biblioteka clj-http jest popularnym narzędziem do wysyłania żądań HTTP w języku Clojure. Jest ona zależna od biblioteki Apache HttpComponents, która obsługuje różne typy autoryzacji, w tym podstawową.
 
-Gdy serwer odpowiedział na żądanie, otrzymamy obiekt z odpowiedzią zawierającym informacje o statusie odpowiedzi, nagłówkach i ciele odpowiedzi.
-
-## Deep Dive
-
-W przypadku wysyłania żądania z uwierzytelnieniem podstawowym, należy pamiętać, że dane uwierzytelniające są przesyłane w formacie Base64. Dzięki temu, że dane są kodowane, są one bezpieczniejsze w transmisji i mogą być odczytane tylko przez autoryzowaną stronę.
-
-Istnieje również możliwość dodania uwierzytelnienia podstawowego do żądań GET, DELETE i PUT poprzez ustawienie odpowiednich kluczy w parametrze `:query-params` funkcji `http/get`, `http/delete` lub `http/put`.
-
-## Zobacz też
-
-- [Dokumentacja Clojure dotycząca uwierzytelnienia HTTP](https://clojure.github.io/http-kit/#http-kit.client-auth/broadcast-request-cors-interactive)
-- [RFC 2617 dotyczące uwierzytelniania HTTP](https://tools.ietf.org/html/rfc2617)
+## Zobacz również:
+- [Dokumentacja biblioteki clj-http](https://github.com/dakrone/clj-http)
+- [Oficjalna specyfikacja protokołu HTTP](https://tools.ietf.org/html/rfc2616)
+- [Porównanie metod uwierzytelniania w protokole HTTP](https://www.httpwatch.com/httpgallery/authentication/)

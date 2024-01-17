@@ -10,33 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why: Improve String Manipulation Efficiency with Substrings
+## What & Why?
 
-As a Java programmer, you may often find yourself working with strings, whether it's for data validation, parsing, or concatenation. Sometimes, you may need to work with only a small portion of a string, and that's where substring extraction comes in handy. By learning how to extract substrings, you can improve your string manipulation efficiency and make your code more concise and readable.
+Extracting substrings in Java refers to the process of retrieving a smaller string from a larger string. This is a useful task for string manipulation, data validation, and data processing. Programmers often use it to extract specific information or validate user input.
 
-## How To: Extract Substrings in Java
-To extract a substring in Java, you will need to use the `substring()` method from the `String` class. This method takes in two parameters: the starting index and the ending index of the substring you want to extract. Keep in mind that the starting index is inclusive, while the ending index is exclusive.
+## How to:
 
-To better understand how the `substring()` method works, let's look at some examples:
+To extract substrings in Java, you can use the `substring()` method. This method takes in two parameters: the starting index and the ending index of the substring. It then returns a new string containing the characters from the original string within the specified range.
 
-````Java
-String sentence = "I love Java programming.";
-String substring1 = sentence.substring(2, 6); // Output: love
-String substring2 = sentence.substring(7, 11); // Output: Java
-````
+```Java
+String str = "Hello World!";
+String subStr = str.substring(6, 11); // Retrieves "World"
+System.out.println(subStr); // Outputs "World"
+```
 
-In the first example, we start at index 2, which is the letter "l", and end at index 6, which is the letter "e". This extracts the word "love" from the original sentence. In the second example, we start at index 7, which is the letter "J", and end at index 11, which is the letter "a". This extracts the word "Java" from the sentence.
+You can also use the `length()` method to get the length of the string and use it to extract substrings from the end of the string.
 
-You can also use negative indices to count from the end of the string. For example, `sentence.substring(3, -3)` will start at the 3rd to last character and end 3 characters before the end of the string. In this case, the output will be "love Java programming".
+```Java
+String str = "Hello World!";
+String subStr = str.substring(str.length() - 6); // Retrieves "World!"
+System.out.println(subStr); // Outputs "World!"
+```
 
-## Deep Dive: Important Notes on Substring Extraction 
-There are a few important things to keep in mind when working with substring extraction in Java. 
-- The starting and ending indices must be within the bounds of the string. Otherwise, an `IndexOutOfBoundsException` will be thrown.
-- The starting index cannot be greater than the ending index. 
-- If the starting index is equal to the ending index, an empty string will be returned.
-- It's important to be careful when using negative indices, as they can easily lead to unexpected results or errors.
+## Deep Dive
+
+The `substring()` method was introduced in Java 1.0 and remains an essential tool for string manipulation. It allows for more efficient and concise code compared to manually looping through the string characters. However, alternative methods such as `split()` and `StringTokenizer` can also be used for substring extraction.
+
+Implementation-wise, the `substring()` method utilizes the `StringIndexOutOfBoundsException` class to handle invalid index inputs. It also creates a new `String` object for the extracted substring, which may result in performance issues for large strings.
 
 ## See Also
-Here are some additional resources for working with substrings in Java:
-- [Java documentation on the `substring()` method](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#substring-int-int-)
-- [GeeksforGeeks tutorial on substring manipulation in Java](https://www.geeksforgeeks.org/java-string-substring/)
+
+- [Java String Class Documentation](https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/String.html)
+- [Official Java Tutorials: Strings](https://docs.oracle.com/javase/tutorial/java/data/strings.html)
+- [Using String Methods in Java](https://www.tutorialspoint.com/java/java_string_substring.htm)

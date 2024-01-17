@@ -1,7 +1,7 @@
 ---
-title:                "Removendo caracteres que correspondem a um padrão"
-html_title:           "Go: Removendo caracteres que correspondem a um padrão"
-simple_title:         "Removendo caracteres que correspondem a um padrão"
+title:                "Excluindo caracteres que correspondem a um padrão"
+html_title:           "Go: Excluindo caracteres que correspondem a um padrão"
+simple_title:         "Excluindo caracteres que correspondem a um padrão"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Strings"
@@ -10,41 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Por que
+## O que & Por que?
 
-Já se deparou com a necessidade de deletar caracteres de uma string que seguem um padrão específico? Isso pode ser útil em várias situações, como remoção de espaços em branco ou caracteres especiais. Neste artigo, vamos explorar como fazer isso em Go de forma simples e eficiente.
+Excluir caracteres que correspondam a um padrão é uma técnica comum usada pelos programadores para remover determinados caracteres de uma string. Isso pode ser útil para limpar dados indesejados ou formatar strings de acordo com uma determinada lógica. É uma prática importante para manter o código limpo e eficiente.
 
-# Como fazer
+## Como fazer:
 
-A função `strings.ReplaceAll()` é a nossa aliada nessa tarefa. Ela recebe três argumentos: a string original, o padrão a ser encontrado e o padrão a ser substituído. Veja um exemplo:
+```go
+pattern := regexp.MustCompile(`[aeiou]`) // cria um padrão regex para vogais
+str := "Olá, mundo!"
 
-```Go
-nome := "João, Maria, Pedro"
-nome = strings.ReplaceAll(nome, ", ", " e ")
-fmt.Println(nome)
+cleanStr := pattern.ReplaceAllString(str, "") // retorna "Ol, mnd!"
+fmt.Println(cleanStr)
 ```
 
-O resultado será `João e Maria e Pedro`, onde os caracteres ", " foram substituídos por " e ". É importante destacar que essa função substitui todas as ocorrências do padrão, não apenas a primeira.
+Aqui, usamos o pacote `regexp` padrão do Go para criar um objeto Regex com o padrão `[aeiou]`, que corresponde a todas as vogais. Em seguida, usamos o método `ReplaceAllString` para substituir todas as ocorrências desse padrão em uma string por uma string vazia, resultando em uma string sem vogais. O mesmo pode ser feito com qualquer outro padrão e pode ser facilmente integrado ao seu código.
 
-Caso você queira remover um determinado padrão da string, basta passar uma string vazia `""` como segundo argumento. Por exemplo, se quisermos remover todos os hífens de um CEP, podemos usar:
+## Profundidade:
 
-```Go
-cep := "12345-678"
-cep = strings.ReplaceAll(cep, "-", "")
-fmt.Println(cep)
-```
+### Contexto histórico:
 
-O resultado será `12345678`, onde todos os hífens foram removidos da string original.
+O conceito de expressões regulares (ou Regex) vem de linguagens formais e teoria da computação, surgindo na década de 1950. Foi posteriormente usado por linguagens de programação para permitir a manipulação de texto de forma eficiente. No Go, a implementação do pacote `regexp` é baseada no mecanismo do Perl e atualmente usa a sintaxe POSIX para expressões regulares.
 
-# Deep Dive
+### Alternativas:
 
-Agora, vamos mergulhar um pouco mais fundo e entender como a função `strings.ReplaceAll()` funciona. Primeiramente, ela utiliza o pacote `strings` da biblioteca padrão do Go. Esse pacote possui várias funções úteis para o tratamento de strings.
+Existem vários outros métodos para manipular strings e substituir caracteres em uma string, como o uso de funções múltiplas `Replace` no pacote `strings` ou o método `Trim` para remover caracteres específicos. No entanto, o uso de expressões regulares oferece uma maneira mais versátil e eficiente de realizar essas operações.
 
-Ao receber as três strings como argumento, a função `strings.ReplaceAll()` converte todas elas em slices de bytes, o que permite uma manipulação mais eficiente. Em seguida, ela procura pelo padrão dentro da string original e, quando encontra, substitui pelo padrão desejado.
+### Detalhes de implementação:
 
-Uma alternativa para substituir os caracteres dentro de uma string é utilizar a função `strings.Map()`. Ela recebe uma função como argumento que será aplicada a cada caractere da string. No entanto, a função `strings.ReplaceAll()` tende a ser mais rápida e eficiente, principalmente em casos onde o padrão é conhecido.
+O pacote `regexp` no Go usa a biblioteca C `re2` para implementar expressões regulares. Ele compila os padrões em um formato determinístico de automato finito que é então usado para comparar com as strings fornecidas. Isso oferece um desempenho aprimorado em comparação com a implementação padrão de expressões regulares em outras linguagens de programação.
 
-# Veja também
+## Veja também:
 
-- [Documentação oficial da função strings.ReplaceAll](https://golang.org/pkg/strings/#ReplaceAll)
-- [Artigo sobre o pacote strings](https://golang.org/pkg/strings/)
+- [Documentação oficial do pacote regexp no Go](https://golang.org/pkg/regexp/)
+- [Tutorial sobre expressões regulares no Go](https://www.digitalocean.com/community/tutorials/how-to-use-regular-expressions-in-go-pt)

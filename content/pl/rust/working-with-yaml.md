@@ -10,49 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Dlaczego: 
+Co & Dlaczego?
+YAML jest formatem przechowywania danych, często stosowanym w programowaniu do konfigurowania aplikacji lub przechowywania pewnych informacji w plikach. Programiści używają YAML, ponieważ jest prosty w użyciu i czytelny zarówno dla ludzi, jak i dla maszyn.
 
-Jeśli od dłuższego czasu zajmujesz się programowaniem w Rust, to na pewno słyszałeś o YAML. Jest to często używany format plików konfiguracyjnych, który jest czytelny dla człowieka i łatwy do parsowania. Pozwala to na przenoszenie ustawień między różnymi aplikacjami bez potrzeby pisania kodu na nowo.
-
-## Jak to zrobić
-
-Jeśli chcesz rozpocząć pracę z YAML, powinieneś najpierw dodać odpowiednią bibliotekę do swojego projektu. W tym przypadku użyjemy popularnego krateczki "yaml-rust". Możesz to zrobić, dodając poniższe linie do swojego pliku Cargo.toml:
-
+Jak to zrobić?
 ```Rust
-[dependencies]
-yaml-rust = "0.4.4"
+// Instaluj bibliotekę `serde_yaml`
+let data = "
+name: John
+age: 30
+occupation: Programmer
+";
+
+// Wyświetl zawartość pliku YAML
+let result: serde_yaml::Value = serde_yaml::from_str(data).unwrap();
+println!("{:?}", result);
+```
+Output:
+```
+{Value::String("John"), Value::String("30"), Value::String("Programmer")}
 ```
 
-Następnie, w kodzie, musisz zaimportować bibliotekę:
-
-```Rust
-extern crate yaml_rust;
-```
-
-Aby przeczytać plik YAML, musisz utworzyć bufor ze swoim plikiem i użyć funkcji "load" z biblioteki "yaml-rust". Poniższy kod pokazuje, jak to zrobić:
-
-```Rust
-let file = std::fs::File::open("config.yml").unwrap();
-let buffer = BufReader::new(file);
-let parsed = yaml_rust::YamlLoader::load_from_reader(buffer).unwrap();
-```
-
-Możesz teraz uzyskać dostęp do wczytanych danych, używając składni jak przy mapach i wektorach w Rust. Na przykład, aby uzyskać dostęp do wartości z pliku YAML, można użyć kodu:
-
-```Rust
-let value = parsed[0]["key"].as_str().unwrap();
-```
-
-## Głębsze spojrzenie
-
-Biblioteka "yaml-rust" oferuje również wiele innych funkcji, takich jak modyfikowanie plików YAML, sprawdzanie poprawności składni czy zapisywanie zmian do pliku. Możesz także wykorzystać funkcje "serialize" i "deserialize" do konwersji danych Rust na YAML i odwrotnie.
-
-Ważne jest również pamiętać, że format YAML jest wrażliwy na wcięcia, więc należy zwrócić szczególną uwagę na prawidłową strukturę pliku. W przeciwnym razie może to spowodować błędy podczas parsowania.
-
-Nadal są dostępne inne biblioteki obsługujące YAML w języku Rust, więc nie wahaj się poszukać innych opcji, jeśli ta nie spełnia Twoich potrzeb. 
-
-## Zobacz także
-
-- Dokumentacja oficjalna biblioteki "yaml-rust": https://docs.rs/yaml-rust/ 
-- Przykładowy projekt wykorzystujący YAML: https://github.com/johnbhogue/rust-yaml-example 
-- Poradnik wprowadzający do pracy z YAML w Rust: https://deterministic.space/yaml-rust.html
+Zanurzanie się głębiej
+Początki YAML sięgają lat 90., kiedy został zaprojektowany jako alternatywa dla XML. Obecnie popularność tego formatu wynika także z jego wszechstronności i obsługi wielu języków programowania. Istnieją również inne formaty przechowywania danych, takie jak JSON czy TOML, ale YAML jest często preferowany ze względu na swoją czytelność.
+Implementacja parsera YAML w Rust odbywa się za pomocą bibliotek `serde_yaml` i `syntex_syntax`, które wykorzystują parser języka Rust do przetwarzania plików YAML.
+## Zobacz więcej
+- [Dokumentacja biblioteki `serde_yaml`](https://docs.serde.rs/serde_yaml/)
+- [Porównanie YAML z innymi formatami danych](https://stackify.com/json-vs-xml-vs-yaml-vs-hcl/)
+- [Oficjalna strona YAML](https://yaml.org/)

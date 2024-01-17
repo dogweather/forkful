@@ -10,49 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co & Dlaczego?
 
-CSV (Comma-Separated Values) jest popularnym formatem do przechowywania danych w arkuszach kalkulacyjnych i bazach danych. W tym artykule dowiesz się, jak w łatwy sposób przetwarzać pliki CSV za pomocą języka Bash.
+CSV to format pliku, który jest często używany przez programistów do przechowywania i przetwarzania danych tabelarycznych. Jest to skrót od angielskiego terminu "Comma Separated Values" (wartości oddzielane przecinkami). Ułatwia on przechowywanie danych w formacie tekstowym, co ułatwia czytanie i edycję dla programistów.
 
-## Jak To Zrobić
+## Jak to zrobić?
 
-Przetwarzanie plików CSV w Bash jest możliwe dzięki zastosowaniu pętli i poleceń takich jak "cut" czy "awk". Przykładowy plik CSV może wyglądać tak:
+Aby pracować z plikami CSV w Bash, możemy skorzystać z kilku poleceń takich jak ```cut``` albo ```awk```. Wyobraźmy sobie, że mamy plik ```example.csv```, który zawiera dane o pracownikach w firmie.
 
-```Bash
-Imię,Nazwisko,Wiek
-Anna,Kowalska,30
-Jan,Nowak,45
-Karolina,Nowicka,25
+- Wyświetlenie pierwszej kolumny pliku: 
+```
+cut -d ',' -f 1 example.csv
+```
+- Wyświetlenie rekordów, gdzie wartość w drugiej kolumnie jest równa "Manager":
+```
+awk -F ',' '$2 == "Manager"' example.csv
 ```
 
-Aby wypisać dane z tego pliku, użyjemy polecenia "cat" wraz ze znakiem przekierowania ">", które umożliwi zapisanie wyników do nowego pliku. Nasza pętla będzie przetwarzać każdą linię pliku, dzieląc ją na poszczególne pola i wyświetlając odpowiednie informacje.
+## Głębsze pogłębienie
 
-```Bash
-cat plik.csv | while read line
-do
-    imie=$(echo $line | cut -d ',' -f1)
-    nazwisko=$(echo $line | cut -d ',' -f2)
-    wiek=$(echo $line | cut -d ',' -f3)
-    echo "Imię: $imie, Nazwisko: $nazwisko, Wiek: $wiek"
-done > wynik.csv
-```
+Format CSV został stworzony w 1972 roku przez Petera Critchlowa. Jest to jeden z najprostszych sposobów na ustrukturyzowanie danych w postaci tabelarycznej. Alternatywą dla CSV jest format JSON, który jest bardziej popularny w nowszych aplikacjach webowych. W Bash, obsługa plików CSV jest możliwa dzięki wykorzystaniu poleceń takich jak ```sed``` czy ```awk```. Możemy także wykorzystać narzędzia dedykowane do przetwarzania danych tabelarycznych, takie jak Pandas w języku Python.
 
-W efekcie, powyższe polecenie utworzy nowy plik "wynik.csv" zawierający przetworzone dane, które wyglądają następująco:
+## Zobacz także
 
-```Bash
-Imię: Anna, Nazwisko: Kowalska, Wiek: 30
-Imię: Jan, Nazwisko: Nowak, Wiek: 45
-Imię: Karolina, Nazwisko: Nowicka, Wiek: 25
-```
-
-## Pogłębiona Analiza 
-
-Podczas przetwarzania plików CSV w Bash warto pamiętać o kilku ważnych aspektach. Znaki przecinka (",") występujące w tekście mogą zakłócać poprawne przetwarzanie, dlatego warto używać opcji "-d" w poleceniu "cut", aby określić podział pól za pomocą innego znaku. W przypadku gdy nasz plik CSV zawiera nagłówki, możemy dodać opcję "tail -n +2" aby pominąć pierwszą linię podczas przetwarzania.
-
-W przypadku, gdy mamy do czynienia z większą ilością danych, warto skorzystać z polecenia "sed" w celu filtrowania lub dodawania danych do pliku CSV, a następnie przetwarzać go za pomocą pętli i poleceń "grep" lub "awk" w celu uzyskania pożądanych informacji.
-
-## Zobacz również
-
-- [Dokumentacja Bash](https://www.gnu.org/software/bash/)
-- [Poradnik Bash - Przetwarzanie plików CSV] (https://linuxhint.com/parse_csv_bash/)
-- [10 Przydatnych Przykładów Przetwarzania Plików CSV w Bash] (https://likegeeks.com/working-with-csv-files-in-bash/)
+- [Wikipedia - CSV](https://pl.wikipedia.org/wiki/Comma-separated_values)
+- [Tutorial Bash - Working with CSV](https://www.gnu.org/software/bash/manual/html_node/Working-with-CSV-files.html)

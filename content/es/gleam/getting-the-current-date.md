@@ -10,38 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué obtener la fecha actual en Gleam?
+Qué y Por Qué?
 
-Obtener la fecha actual en un programa es importante para realizar tareas como registrar la fecha de creación de un archivo, calcular la diferencia de tiempo entre dos eventos o simplemente mostrar la hora actual en una interfaz de usuario. En Gleam, esta tarea es fácil de lograr gracias a su biblioteca estándar y su función incorporada para obtener la fecha actual.
+Obtener la fecha actual es una tarea común en la programación, ya que permite a los programas mostrar la fecha y hora actual al usuario o utilizarla en cálculos y lógica de programación. Los programadores también pueden utilizarla para rastrear la ejecución del programa y monitorear la eficiencia del mismo.
 
-## Cómo obtener la fecha actual en Gleam
+Cómo:
 
-Para obtener la fecha actual en Gleam, simplemente necesitamos importar la biblioteca estándar `time` y llamar a la función `now`. Esto nos dará una estructura de fecha y hora que podemos formatear según nuestras necesidades. Veamos un ejemplo:
+Para obtener la fecha actual en Gleam, utilizamos la función `DateTime.now()`. Este método nos devuelve un objeto de fecha y hora actual, que luego podemos manipular o imprimir según nuestras necesidades.
 
 ```Gleam
-import time
-
-let fecha = time.now()
-
-// Formateo personalizado
-let fecha_formateada = fecha.format("%d/%m/%Y %H:%M:%S")
-
-// Impresión en consola
-io.println(fecha_formateada) // Salida: 21/09/2021 16:30:00
+let current_date_time = DateTime.now()
 ```
 
-¡Y eso es todo! Con solo unas pocas líneas de código, obtenemos la fecha actual y la mostramos en un formato personalizado. Ahora, profundicemos un poco más.
+El objeto `current_date_time` contiene varias funciones como `day`, `month` y `year` para acceder a las partes específicas de la fecha y hora. También podemos formatear la salida utilizando la función `format` en conjunto con la plantilla de formato deseada. A continuación se muestra un ejemplo de cómo imprimir la fecha en formato ISO 8601:
 
-## Profundizando en la obtención de la fecha actual en Gleam
+```Gleam
+let current_date_time = DateTime.now()
+IO.print(format"{iso-8601-date}" current_date_time)
+```
 
-La función `now` de la biblioteca `time` nos devuelve una estructura `Time` de Gleam que contiene información sobre la fecha y la hora actual. Esta estructura tiene varios campos que podemos utilizar para obtener diferentes partes de la fecha, como el día, el mes, el año, la hora, etc.
+La salida sería algo así: `2021-09-05`.
 
-También podemos utilizar la función `now_utc` para obtener la fecha y la hora en formato UTC en lugar de la hora local. Y si necesitamos una fecha y hora específicas en lugar de la actual, podemos utilizar la función `from_parts` para crear nuestra propia estructura `Time` utilizando los valores proporcionados.
+Profundizando:
 
-En resumen, obtener la fecha actual en Gleam es una tarea sencilla gracias a su biblioteca estándar y su función `now`. No dude en explorar las opciones disponibles para hacer coincidir con su caso de uso específico.
+La obtención de la fecha actual puede ser especialmente útil en aplicaciones web para mostrar la hora en diferentes zonas horarias a los usuarios o en aplicaciones de seguimiento de tiempo para calcular el tiempo transcurrido. También existen otras formas de obtener la fecha actual en Gleam, como utilizar librerías externas o acceder al sistema operativo.
 
-## Ver también
+Vea También:
 
-- Documentación oficial de la biblioteca `time`: https://gleam.run/modules/time
-- Más ejemplos de formateo de fecha en Gleam: https://github.com/gleam-lang/gleam/issues/3047
-- Ejemplos prácticos de uso de la estructura `Time`: https://dev.to/krthr/practical-time-management-in-gleam-30j3
+- Documentación oficial de la función `DateTime.now()` en Gleam: https://gleam.run/documentation/core-libraries/datetime/
+- Ejemplo de la función `now()` en la librería `gleam/datetime`: https://github.com/lpil/gleam/blob/master/lib/gleam/datetime/example/get_intro.now.gleam

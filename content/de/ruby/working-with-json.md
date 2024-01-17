@@ -10,85 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+# Was & Warum?
 
-Warum sollte man sich mit JSON beschäftigen? Ganz einfach: JSON ist eine äußerst praktische Methode, um Daten zu übertragen und zu speichern. Es ist leicht lesbar, flexibel und platzsparend.
+JSON (JavaScript Object Notation) ist ein Format zur Speicherung und Übertragung von Daten. Es wird häufig verwendet, um Daten zwischen verschiedenen Anwendungen auszutauschen oder um Daten in einer Datenbank zu speichern. Programmierer nutzen JSON, um Daten in einer leicht lesbaren und verständlichen Struktur zu übermitteln.
 
-## Wie geht es?
+## Wie geht's?
 
-Um mit JSON in Ruby zu arbeiten, müssen wir zuerst das "json" Modul importieren. Das können wir mit dem folgenden Code tun:
-
-```Ruby
-require 'json'
-```
-
-Als nächstes müssen wir ein JSON-Objekt erstellen, in dem wir unsere Daten speichern können. Wir können dies entweder manuell tun oder die ".to_json" Methode verwenden, um ein Hash-Objekt automatisch in JSON zu konvertieren. Hier ist ein Beispiel:
+Um mit JSON in Ruby zu arbeiten, muss zunächst die `json` Bibliothek importiert werden. Dann können Daten mit der `JSON.parse()` Methode von einer JSON-Zeichenkette in ein Ruby-Objekt und mit der `JSON.generate()` Methode vom Ruby-Objekt in eine JSON-Zeichenkette umgewandelt werden.
 
 ```Ruby
-# manuell
-my_data = {"Name" => "Max", "Alter" => 27, "Ort" => "Berlin"}
+require "json"
 
-# automatisch
-my_hash = {a: 1, b: 2, c: 3}
-my_json = my_hash.to_json
+# JSON in Ruby-Objekt umwandeln
+json_string = '{"name":"Max","age":25,"country":"Deutschland"}'
+ruby_object = JSON.parse(json_string)
+
+# Ruby-Objekt in JSON-Zeichenkette umwandeln
+ruby_object = { name: "Lisa", age: 28, country: "USA" }
+json_string = JSON.generate(ruby_object)
 ```
+Das Ergebnis der `JSON.parse()` Methode ist ein mit Hashes und Arrays strukturiertes Ruby-Objekt. Das Ergebnis der `JSON.generate()` Methode ist eine JSON-Zeichenkette im gleichen Format wie die Eingabe.
 
-Um unsere Daten in JSON-Format zu speichern, können wir die ".to_json" Methode auch auf größere Datenstrukturen wie Arrays oder Objekte anwenden. Hier ist ein Beispiel mit einem Array:
+## Tiefgehende Einblicke
 
-```Ruby
-my_array = ["Ruby", 2.6, true]
-my_array.to_json # => "[\"Ruby\",2.6,true]"
-```
+JSON wurde ursprünglich von Douglas Crockford entwickelt und 2002 veröffentlicht. Es ist mittlerweile ein populäres Format zur Datenübermittlung und Konfiguration in der Webentwicklung geworden. Alternativen zu JSON sind beispielsweise XML, YAML und CSV. In Ruby gibt es auch die Möglichkeit, JSON mit der `Hash#to_json` Methode zu konvertieren.
 
-Um JSON-Daten zu lesen, können wir die ".parse" Methode verwenden und die Daten in ein Hash-Objekt konvertieren. Hier ist ein Beispiel:
-
-```Ruby
-my_json = '{"Name": "Anna", "Alter": 30, "Ort": "Hamburg"}'
-my_hash = JSON.parse(my_json)
-puts my_hash["Name"] # => "Anna"
-puts my_hash["Alter"] # => 30
-puts my_hash["Ort"] # => "Hamburg"
-```
-
-## Tiefer eintauchen
-
-Nun, da wir wissen, wie wir JSON-Daten in Ruby erstellen und lesen können, lassen Sie uns einen tieferen Einblick in die Arbeit mit JSON erhalten.
-
-Um die Lesbarkeit von JSON-Code zu verbessern, können wir die ".pretty_generate" Methode verwenden, um unseren Daten automatisch Einzüge und Zeilenumbrüche hinzuzufügen. Hier ist ein Beispiel:
-
-```Ruby
-my_hash = {x: 1, y: 2, z: 3}
-puts JSON.pretty_generate(my_hash)
-# =>
-#{
-#  "x": 1,
-#  "y": 2,
-#  "z": 3
-#}
-```
-
-Wenn wir mit komplexen Datenstrukturen wie verschachtelten Arrays oder Objekten arbeiten, können wir die ".generate" Methode verwenden, um unsere Daten in eine gültige JSON-Zeichenfolge zu konvertieren. Hier ist ein Beispiel:
-
-```Ruby
-my_array = ["Ruby", {version: 2.6, year: 2018}, true]
-JSON.generate(my_array) # => "[\"Ruby\",{\"version\":2.6,\"year\":2018},true]"
-```
-
-Es ist auch wichtig zu wissen, dass Ruby automatisch Datentypen wie Strings, Zahlen und Wahrheitswerte im JSON-Format konvertiert. Zum Beispiel wird ein "String"-Objekt zu einem JSON-String und ein "Fixnum"-Objekt zu einer JSON-Zahl. Um ein bestimmtes Datentypen zu erhalten, können wir die ".to_json" Methode mit einem zusätzlichen Argument verwenden. Hier ist ein Beispiel:
-
-```Ruby
-my_hash = {name: "Tom", age: 42}
-my_json = my_hash.to_json # => "{\"name\":\"Tom\",\"age\":42}"
-my_json = my_hash.to_json(string_options: {ascii_only: true}) # => "{\"name\":\"Tom\",\"age\":42}"
-```
+Weitere Informationen zu JSON in Ruby und mögliche Anwendungen finden sich in der offiziellen Dokumentation [hier] (https://ruby-doc.org/stdlib-2.6.3/libdoc/json/rdoc/JSON.html) und [hier] (https://www.json.org/).
 
 ## Siehe auch
 
-Weitere Informationen und Tutorials zu Ruby und JSON finden Sie unter:
-
-- [Ruby Dokumentation](https://www.ruby-lang.org/de/documentation/)
-- [Offizielle JSON-Seite](https://www.json.org/json-de.html)
-- [JSON in Ruby](https://hackhands.com/ruby-read-json-file-hash/)
-- [Video-Tutorial zu JSON in Ruby](https://www.youtube.com/watch?v=_vUnWfztTfM)
-
-Happy Coding! 💻
+- [JSON auf GitHub] (https://github.com/json)
+- [Einführung in JSON] (https://www.digitalocean.com/community/tutorials/an-introduction-to-json) von DigitalOcean
+- [JSON und Ruby] (https://pragmaticstudio.com/tutorials/using-json-data-in-ruby) von Pragmatic Studio

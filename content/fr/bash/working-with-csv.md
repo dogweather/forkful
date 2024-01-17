@@ -10,55 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Quoi & Pourquoi?
 
-Si vous devez manipuler de grandes quantités de données tabulaires, alors travailler avec des fichiers CSV peut être extrêmement utile. Au lieu d'utiliser des logiciels coûteux ou des langages de programmation complexes, vous pouvez utiliser Bash, qui est un langage de script populaire pour les tâches de gestion de données et de traitement de fichiers.
+Travailler avec des fichiers CSV est souvent une tâche courante pour les programmeurs. CSV (Comma-Separated Values) est un format de fichier largement utilisé pour stocker des données tabulaires, telles que des listes de produits ou des données de vente. Les programmeurs utilisent des outils comme Bash pour manipuler ces fichiers et extraire des informations utiles.
 
-## Comment faire
+## Comment faire:
 
-Voici un exemple simple pour lire et afficher un fichier CSV en utilisant Bash :
+Pour démarrer, vous aurez besoin d'un fichier CSV à manipuler. Voici un exemple de fichier CSV avec des données sur les ventes de produits:
 
-```
-#!/bin/bash
-
-# Définir le séparateur de champ comme virgule
-IFS=,
-
-# Boucle à travers chaque ligne du fichier CSV
-while read -r col1 col2 col3 col4; do
-  # afficher les valeurs de chaque colonne
-  echo "colonne 1 : $col1"
-  echo "colonne 2 : $col2"
-  echo "colonne 3 : $col3"
-  echo "colonne 4 : $col4"
-done < fichier.csv
+```Bash
+Produit, Prix, Quantité vendue
+Chemise, $20, 50
+Pantalon, $35, 30
+Chaussures, $50, 20
 ```
 
-Output :
+Pour extraire des informations spécifiques de ce fichier, vous pouvez utiliser des commandes Bash comme `cut` et `grep`. Par exemple, si vous voulez connaître le prix total des ventes de chaussures, vous pouvez utiliser la commande suivante:
 
-```
-colonne 1 : valeur1
-colonne 2 : valeur2
-colonne 3 : valeur3
-colonne 4 : valeur4
+```Bash
+cut -d, -f2,3 produits.csv | grep "Chaussures" | awk '{total+=$1*$2} END {print total}'
 ```
 
-Dans cet exemple, nous utilisons la commande `IFS` pour définir le séparateur de champ en tant que virgule. Ensuite, nous utilisons une boucle pour lire chaque ligne du fichier CSV et stocker les valeurs de chaque colonne dans des variables. Enfin, nous affichons simplement ces valeurs à l'écran.
+Cette commande utilise `cut` pour sélectionner la deuxième et la troisième colonne (prix et quantité) et `grep` pour ne sélectionner que les lignes qui ont "Chaussures" dans la première colonne (produit). Ensuite, la commande `awk` est utilisée pour calculer le prix total des ventes de chaussures en multipliant le prix par la quantité et en ajoutant le résultat pour toutes les lignes sélectionnées.
 
-Si vous souhaitez extraire des données spécifiques de votre fichier CSV, vous pouvez utiliser la commande `grep` pour filtrer les résultats. Par exemple, si vous souhaitez ne voir que les lignes contenant "France" dans la première colonne, vous pouvez utiliser la commande suivante :
+La sortie devrait ressembler à ceci:
 
 ```
-grep "France" fichier.csv
+$1000
 ```
 
-## Approfondissement
+## Plongée en profondeur:
 
-Travailler avec des fichiers CSV dans Bash offre de nombreuses possibilités et permet de manipuler les données de différentes manières. Vous pouvez également utiliser des outils tels que `awk` ou `sed` pour effectuer des opérations plus avancées sur vos fichiers CSV.
+Le format CSV a été introduit pour la première fois en 1972 et est devenu populaire en tant que moyen simple et universel pour stocker et échanger des données tabulaires. Bien qu'il soit largement utilisé, il n'est pas le seul format de fichier pour les données tabulaires. Des alternatives telles que JSON et XML sont également couramment utilisées.
 
-Il est également important de noter que les fichiers CSV peuvent être délicats à manipuler en raison de différentes conventions d'écriture et de séparateurs de champ. Assurez-vous de comprendre la structure de votre fichier CSV avant de commencer à l'utiliser dans un script Bash.
+Pour travailler avec des fichiers CSV en Bash, vous pouvez également utiliser des outils tels que `awk` et `sed`, qui offrent une grande flexibilité pour manipuler des données. De plus, il existe des librairies de traitement de CSV disponibles pour des langages de programmation tels que Python et R.
 
-## Voir aussi
+## Voir aussi:
 
-- [La documentation officielle de Bash](https://www.gnu.org/software/bash/)
-- [Une introduction complète à Bash](https://www.learnshell.org/)
-- [Un tutoriel sur les commandes de base pour travailler avec des fichiers CSV en Bash](https://www.cyberciti.biz/faq/bash-loop-over-file/)
+- [Documentation sur les outils Bash](https://www.gnu.org/software/bash/manual/bash.html)
+- [Guide de survie Linux sur les fichiers CSV](https://linuxsurvival.com/linux-tutorials-introduction-to-learning-sed/working-with-comma-separated-csv-files-sed/)
+- [Guide de référence des commandes Bash](https://www.tldp.org/LDP/abs/html/abs-guide.html)

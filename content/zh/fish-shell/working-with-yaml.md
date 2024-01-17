@@ -1,7 +1,7 @@
 ---
-title:                "使用 yaml 进行编程"
-html_title:           "Fish Shell: 使用 yaml 进行编程"
-simple_title:         "使用 yaml 进行编程"
+title:                "使用yaml进行编程"
+html_title:           "Fish Shell: 使用yaml进行编程"
+simple_title:         "使用yaml进行编程"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Data Formats and Serialization"
@@ -10,23 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
-首先，YAML是一种易于阅读和编写的格式，适用于存储和传输数据。其次，它已成为许多编程语言和工具中常用的配置文件格式。
+## 什么是YAML & 为什么程序员需要它？
+YAML是一种使用简单易读的语法结构来表示数据的格式。它可以作为配置文件或者存储数据的方式。程序员会使用YAML来组织和存储数据，使其易于阅读和修改。
 
-## 如何
-```Fish Shell（Fish Shell是一种流行的命令行Shell，类似于Bash）语法可以轻松解析和使用YAML格式的数据，例如：```
+## 如何操作？
+```fish shell
+# 创建一个YAML文件
+touch mydata.yaml
 
-```shell
-set data (yaml load "config.yaml")
-echo $data
+# 使用Fish Shell的微型文本编辑器来编辑数据
+fish_config
+
+# 在YAML文件中定义数据，例如：
+name: Alice
+age: 25
+hobbies:
+- reading
+- hiking
 ```
 
-注意，需要在使用之前安装Fish Shell的yaml插件。 
-
 ## 深入了解
-YAML具有类似于JSON的键值对结构，但其语法更加简洁和易读。它也支持多种数据类型，例如字符串、整数、浮点数和布尔值等。此外，YAML还可以嵌套数据结构，使其在复杂的配置文件中能够更好地组织数据。
+YAML是"YAML Ain't Markup Language"的递归缩写，是一种由Clark Evans和Ingy döt Net共同开发的数据序列化格式。它的设计目的是要比其他格式更易于使用和阅读。除了YAML，还有其他类似的格式，例如JSON和XML，但它们并不像YAML那样易于阅读和修改。
 
-## 参考资料
-- [Fish Shell官方网站](https://fishshell.com/)
+## 查看更多
 - [YAML官方网站](https://yaml.org/)
-- [Fish Shell的yaml插件](https://fishshell.com/docs/current/commands.html#yaml)
+- [YAML语法指南](https://www.cloudbees.com/blog/yaml-tutorial-everything-you-need-get-started/)

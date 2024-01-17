@@ -10,78 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-As a Fish Shell user, you may sometimes need to extract substrings from a string variable. This can be useful when manipulating file paths, parsing data, or performing other operations on strings. In this article, we will explore how to extract substrings using Fish Shell and learn about its various options and abilities.
+ Sometimes, when writing code, you need to extract a specific part of a larger string. This is called "extracting substrings" and it is a common task for programmers. It allows you to manipulate and use smaller sections of a string instead of the entire thing.
 
-## How To
+## How to:
 
-To extract a substring from a string variable, we can use the `string sub` command in Fish Shell. The basic syntax for this command is:
+To extract substrings with the Fish Shell, use the `string sub -s index -l length` command. The `-s` flag specifies the starting index and the `-l` flag specifies the length of the substring. Here's an example:
 
-```Fish Shell
-string sub STRING VARIABLE START INDEX LENGTH
+```
+Fish Shell > set my_string "hello world"
+Fish Shell > string sub -s 0 -l 5 $my_string
+hello
 ```
 
-Let's look at an example. Suppose we have a string variable named `filename` which contains the value "my_file.docx". We want to extract the substring "file" from this variable. We can do so by using the following command:
+This will extract the first five characters of the string "hello world" and output it as "hello".
 
-```Fish Shell
-string sub $filename 3 4
-```
+You can also combine the `-s` and `-l` flags to extract specific parts of a string. For example, if you wanted to extract the word "world" from "hello world", you would use the command `string sub -s 6 -l 5 $my_string`.
 
-This will output "file" as the result. The first argument after the variable name (`3` in this case) represents the starting index of the substring and the second argument (`4`) represents the length of the substring we want to extract.
+## Deep Dive:
 
-We can also use negative indices to indicate the start index from the end of the string. For example, `string sub $filename -4 4` would also output "file" as the result. 
+Extracting substrings has been a common task since the early days of programming. It provides a way to work with smaller, more manageable pieces of data. While you can still extract substrings with other programming languages like Python or JavaScript, using a shell like Fish can make it quicker and easier.
 
-Additionally, we can use the `string length` command to find the length of the string before extracting a substring. This can be useful when we don't know the exact length of the substring we want to extract. For example:
+There are also other ways to extract substrings with Fish Shell. You can use regular expressions with the `string sub -r regex` command, or use specialized functions such as `string trim` to remove certain characters from the string before extracting the substring.
 
-```Fish Shell
-set start_index (string length $filename - 11)
-string sub $filename $start_index 4
-```
+## See Also:
 
-This would output "file" as the result, regardless of the length of the string before the substring we want to extract. 
-
-To extract a substring using a specific character as a reference point, we can use the `string find` command. This command will return the index of the first occurrence of a character within the string. We can then use this index as the start index for the `string sub` command. For example:
-
-```Fish Shell
-set start_index (string find $filename "_")
-string sub $filename $start_index 4
-```
-
-This would return "file" as the result, as we are starting at the index of the underscore character and extracting a substring of length 4. 
-
-## Deep Dive
-
-In addition to the basic functionality of extracting substrings, Fish Shell also offers various options to make this process more flexible and powerful.
-
-One such option is the `-r` flag, which allows us to extract substrings in reverse. This can be useful when dealing with strings that have a known pattern at the end. For example:
-
-```Fish Shell
-string sub -r $filename 5 3
-```
-
-This would return "xcod" as the result, as we are starting 5 characters from the end of the string and extracting a substring of length 3.
-
-We can also use the `string sub -p` command to extract a substring as well as print the remaining part of the string after the extraction. This can be useful when we want to apply the same operation to multiple parts of a string. For example:
-
-```Fish Shell
-string sub -p $filename 3 4
-```
-
-This would return "file" as the result and also print "my_.docx", as this is the remaining part of the string after the substring extraction.
-
-Lastly, we can use the `string sub -q` command to suppress any output except for the extracted substring. This can be useful when we only want the result of the extraction and not the rest of the string. For example:
-
-```Fish Shell
-string sub -q $filename 3 4
-```
-
-This would simply return "file" as the result, without printing the rest of the string.
-
-## See Also
-
-For more information and examples on using the `string sub` command in Fish Shell, refer to the official documentation:
-
-- [Fish Shell Documentation - string sub](https://fishshell.com/docs/current/cmds/string.html#string_sub)
-- [Fish Shell Tutorial - Strings and Substrings](https://fishshell.com/docs/current/tutorial.html#tut_strings)
-- [Fish Shell Cookbook - Working with Strings](https://fishshell.com/docs/current/cookbook.html#tut_strings)
+- [Official Fish Shell Documentation](https://fishshell.com/docs/current/cmds/string.html)
+- [Fish Shell Regular Expressions Tutorial](https://fishshell.com/docs/current/tutorial.html?doc=refextract.html#refextract)
+- [Fish Shell Function Reference](https://fishshell.com/docs/current/commands.html#appendix-function-summary)

@@ -1,7 +1,7 @@
 ---
-title:                "एक टेक्स्ट फाइल लिखना"
-html_title:           "C#: एक टेक्स्ट फाइल लिखना"
-simple_title:         "एक टेक्स्ट फाइल लिखना"
+title:                "एक टेक्स्ट फ़ाइल लिखना"
+html_title:           "C#: एक टेक्स्ट फ़ाइल लिखना"
+simple_title:         "एक टेक्स्ट फ़ाइल लिखना"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Files and I/O"
@@ -10,40 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
+# क्या और क्यों?
 
-किसी को एक पाठ फाइल लिखने में रूचि ले आने की वजहों की अधिकतम संख्या केवल २ वाक्यों में। 
+प्रोग्रामर एक पाठ फ़ाइल में लिखने का मतलब है कि वे एक टेक्स्ट फ़ाइल में अपने कोड का प्रवर्तन करना चाहते हैं। यह काम उन्हें अपने संगठन या अन्य प्रोजेक्ट के लिए आवश्यक होता है।
 
-## कैसे करें
+# कैसे करें?
 
-```C#
-using System;
+```c#
 using System.IO;
 
-public class FileWritingExample
-{
-    public static void Main()
-    {
-        // एक पाठ फाइल बनाएं
-        string fileName = "myfile.txt";
-        // नया फ़ाइल स्वृच्छिक रूप से बनाएं
-        using (StreamWriter myFile = new StreamWriter(fileName))
-        {
-            // फ़ाइल में लिखें
-            myFile.WriteLine("मेरा पहला पाठ फाइल है।");
-            myFile.WriteLine("यह लाइन अगले प्रदर्शन पर जा सकती है।");
-        }
-    }
-}
+// Create a new text file
+File.WriteAllText("newFile.txt", "This is a new text file.");
+
+// Append text to an existing file
+File.AppendAllText("existingFile.txt", "This text will be added to the end of the file.");
+
+// Read text from a file
+string text = File.ReadAllText("existingFile.txt");
+Console.WriteLine(text); // Output: This is the text from the file.
 ```
 
-इस उदाहरण में, "myfile.txt" नाम की एक पाठ फाइल बनाई गई है और दो लाइनों को लिखा गया है - "मेरा पहला पाठ फाइल है।" और "यह लाइन अगले प्रदर्शन पर जा सकती है।" फ़ाइल में दोनों लाइन लाइन द्वारा अलग हो जाती हैं। पाठ फाइल को बनाने के बाद, आप उसे अपने कंप्यूटर में खोल सकते हैं और उसमें दोनों लाइन देख सकते हैं।
+# गहराई में जाएँ
 
-## गहराई में जाएं
+आमतौर पर, प्रोग्रामर टेक्स्ट फ़ाइलों को पढ़ने और लिखने के लिए आसानी से उपलब्ध स्रोत को उपयोग करते हैं। यह पहले इंटरनेट के बाहर, शुरुआती कंप्यूटर और संगठनों द्वारा प्रयोग किया गया था। अलग रूप से, प्रोग्रामर एप्लीकेशन को डेटा को एक स्थायी फाइल में सुरक्षित रखने के लिए डेटाबेस का उपयोग कर सकते हैं। ये फ़ाइलें कंप्यूटर के लिए सर्वकार्यक्षम हैं और उसका इस्तेमाल बहुत से प्रोग्रामिंग लैंग्वेज में किया जाता है।
 
-एक पाठ फाइल लिखने के लिए महत्वपूर्ण कारक उसकी स्थिरता है। जब आप एक फ़ाइल लिखते हैं, तो आप उसे प्रोग्राम के स्थान पर बचाने के लिए कहते हैं। उदाहरण के लिए, आप एक पाठ फाइल को एक वर्किंग डायरेक्टरी में बचा सकते हैं जिसे आप प्रोग्राम के साथ साझा करना चाहते हैं। पाठ फाइल बनाने के लिए जादू का यह उपाय है।
+# अन्य स्रोत देखें
 
-## देखें भी
-
-- "फाइलें कैसे संग्रहीत करें और प्रोसेस करें" (https://www.geeksforgeeks.org/c-sharp-file-class/)
-- "कैसे फाइलें लोड और पढ़ें" (https://
+- [MSDN: Writing to a Text File](https://docs.microsoft.com/en-us/dotnet/standard/io/how-to-write-text-to-a-file)
+- [W3Schools: File Handling in C#](https://www.w3schools.com/cs/cs_filehandling.asp)
+- [C# Corner: Writing to a File Using C#](https://www.c-sharpcorner.com/article/writing-to-a-text-file/)
+- [GeeksforGeeks: File Class in C#](https://www.geeksforgeeks.org/file-class-in-c-sharp/?ref=leftbar-rightbar)

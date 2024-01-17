@@ -10,30 +10,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
-Att ladda ner en webbsida kan vara användbart av flera anledningar, som att spara en kopia för offline-visning eller att extrahera specifik information från sidan.
+Vad & Varför?
+Att ladda ned en webbsida är en process där man hämtar allt innehåll från en särskild webbadress och sparar det lokalt på datorn. Programerare använder denna teknik för att manipulera eller läsa webbplatsdata för att skapa nya funktionella applikationer.
 
-## Så här gör du
-För att ladda ner en webbsida med Fish Shell behöver du först installera verktyget "curl". Detta kan göras med kommandot `brew install curl`. När det är klart, kan du använda följande kod för att ladda ner en sida:
-
+Hur man:
+```Fish Shell ger en enkel och effektiv metod för att ladda ner webbsidor. Här är en kodexempel för att ladda ner den populära webbplatsen "Reddit" och spara den som en textfil på skrivbordet:
+```
 ```Fish Shell
-curl -O <webbadress>
+curl -o ~/Desktop/reddit.html https://www.reddit.com/
 ```
 
-Detta sparar sidan som en fil på din dator. Om du vill ge filen ett annat namn kan du lägga till `-o <filnamn>` efter webbadressen.
+## Djupdykning:
+Historiskt sett har programmerare länge behövt ladda ner webbsidor för att kunna manipulera data och skapa webbapplikationer. Det finns olika verktyg och tekniker för detta ändamål, men Fish Shell erbjuder en enkel och lättförståelig metod.
 
-## Djupdykning
-"Curl" är ett kraftfullt verktyg som tillåter dig att göra mer än att bara ladda ner en sida. Du kan till exempel även använda det för att ladda ner flera sidor samtidigt, genom att lägga till flera webbadresser efter varandra i kommandot.
+Andra alternative inkluderar verktyg som "wget" och "curl" som även finns tillgängliga för andra shells som Bash och Zsh. Men Fish Shell har fördelen med tydligare formaterad output och enklare syntax.
 
-Om du vill extrahera specifik information från sidan kan du använda dig av "grep"-kommandot tillsammans med "curl". Till exempel, om du vill hitta alla länkar på en sida kan du använda följande kod:
+För att implementera nedladdning i Fish Shell behövs ingen ytterligare installation av tredjepartsprogram, därför är det enkelt att använda i olika utvecklingsmiljöer.
 
-```Fish Shell
-curl <webbadress> | grep -o '<a[^>]* href="[^"]*"' 
-```
-
-Detta kommer att returnera en lista med alla länkar som finns på sidan.
-
-## Se även
-- [Fish Shell's officiella hemsida](https://fishshell.com)
-- [Curl's officiella hemsida](https://curl.haxx.se)
-- [En guide för grundläggande kommandon i Fish Shell](https://medium.com/@bekreev/the-ultimate-bash-vs-fish-shell-showdown-8258690b44e6)
+## Se även:
+https://fishshell.com/docs/current/cmds/curl.html
+https://www.lifewire.com/download-webpages-shell-2203076

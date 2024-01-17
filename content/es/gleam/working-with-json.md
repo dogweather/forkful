@@ -10,41 +10,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué trabajar con JSON?
+¡Hola programadores! ¿Alguna vez te has preguntado cómo procesar y almacenar datos de manera eficiente en tus aplicaciones? Bueno, ¡te tenemos cubierto! En este artículo, vamos a hablar sobre cómo trabajar con JSON en Gleam y por qué los programadores lo hacen. Así que ¡presta atención y prepárate para mejorar tus habilidades de programación!
 
-Si estás buscando una forma sencilla y eficiente de intercambiar datos entre diferentes aplicaciones o sistemas, JSON es tu mejor opción. Con su sintaxis ligera y su fácil integración en muchos lenguajes de programación, JSON se ha convertido en un formato de datos muy popular en la actualidad.
+## ¿Qué y por qué?
+
+Trabajar con JSON (JavaScript Object Notation) implica utilizar un formato de texto sencillo para almacenar y transmitir datos. Es ampliamente utilizado en aplicaciones web y móviles para intercambiar información entre sistemas diferentes. Los programadores a menudo optan por usar JSON debido a su simplicidad y su capacidad para trabajar con diferentes lenguajes de programación.
 
 ## Cómo hacerlo
 
-```Gleam
-// Ejemplo de cómo crear un objeto JSON
-let persona = {
-  nombre: "Maria",
-  edad: 25,
-  trabajo: "Desarrollador"
-}
+Ahora, veamos algunos ejemplos de cómo trabajar con JSON en Gleam. ¡Presta atención porque esto es realmente emocionante!
 
-// Ejemplo de cómo acceder a un valor en el objeto JSON
-let nombre = persona.nombre // Maria
+Primero, importamos el módulo de JSON en nuestra aplicación:
 
-// Ejemplo de cómo convertir un objeto JSON en una cadena
-let json = gleam_json.encode(persona) // {"nombre":"Maria","edad":25,"trabajo":"Desarrollador"}
+```
+import gleam/json
 ```
 
-Ahora que sabes cómo crear y acceder a los valores de un objeto JSON, es importante tener en cuenta algunas cosas a la hora de trabajar con este formato de datos.
+Luego, podemos convertir un objeto de Gleam en una cadena JSON utilizando la función `encode`:
 
-## Profundizando en JSON
+```
+let my_object = {
+  usuario: "Juan",
+  edad: 25
+}
 
-Algunos datos importantes para recordar sobre JSON incluyen:
+let json_string = gleam/json.encode(my_object)
+```
 
-- Todos los valores de JSON deben estar entre comillas dobles.
-- Los nombres de las propiedades también deben estar entre comillas dobles.
-- Los valores pueden ser de cualquier tipo de dato válido, incluyendo string, number, boolean, null, array y object.
-- Los objetos JSON pueden tener múltiples propiedades separadas por comas.
-- Una de las ventajas de JSON es que es fácil de analizar y generar en la mayoría de los lenguajes de programación, incluyendo Gleam.
+Esto producirá una cadena JSON similar a esta:
 
-## Vea también
+```
+{"user":"Juan","age":25}
+```
 
-- [Documentación oficial de JSON](https://www.json.org/json-es.html)
-- [Introducción a JSON en Gleam](https://gleam.run/book/tour/json.html)
-- [Librería JSON para Gleam](https://github.com/lpil/gleam_json)
+También podemos decodificar una cadena JSON en un objeto de Gleam utilizando la función `decode`:
+
+```
+let json_string = "{\"usuario\":\"Juan\",\"edad\":25}"
+let object = gleam/json.decode(json_string)
+```
+
+Esto nos devolverá un objeto de Gleam con las mismas propiedades que nuestro objeto inicial.
+
+## Profundizando
+
+JSON fue originalmente desarrollado en la década de 1990 por Douglas Crockford. Desde entonces, ha sido ampliamente adoptado en la industria y se ha convertido en un estándar para el intercambio de datos en la web. Alternativamente, XML (Extensible Markup Language) es otro formato popular para el almacenamiento y transmisión de datos, pero se considera más complejo que JSON.
+
+En términos de implementación, Gleam utiliza la biblioteca Rust `serde` para trabajar con JSON, lo que permite un rendimiento rápido y una alta compatibilidad con otros lenguajes de programación.
+
+## Consulta también
+
+Si estás interesado en aprender más sobre JSON en Gleam, aquí tienes algunos recursos útiles:
+
+- [Documentación de Gleam sobre JSON](https://gleam.run/modules/json.html)
+- [Sitio web oficial de JSON](https://www.json.org/json-es.html)
+- [Tutorial de JSON en Gleam](https://learnbyexample.github.io/learn_gleam/json_gleam/)

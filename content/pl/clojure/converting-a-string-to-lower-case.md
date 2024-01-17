@@ -1,7 +1,7 @@
 ---
-title:                "Konwertowanie ciągu znaków na małe litery."
-html_title:           "Clojure: Konwertowanie ciągu znaków na małe litery."
-simple_title:         "Konwertowanie ciągu znaków na małe litery."
+title:                "Konwertowanie ciągu znaków na małe litery"
+html_title:           "Clojure: Konwertowanie ciągu znaków na małe litery"
+simple_title:         "Konwertowanie ciągu znaków na małe litery"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -10,69 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+"Co & Dlaczego?"
 
-Często w programowaniu musimy porównywać teksty, jednak różnice w wielkości liter mogą sprawić problem. Dlatego warto nauczyć się konwertować ciągi znaków na małe litery, co ułatwi nam porównywanie i przetwarzanie danych.
+Zamiana tekstu na małe litery oznacza sprowadzenie wszystkich liter w ciągu znaków do ich niskiej formy. Programiści często wykonują to jako część procesu przetwarzania i analizowania danych, co ułatwia porównywanie i wycinanie określonych elementów.
 
-## Jak to zrobić?
-
-```Clojure
-(defn lowercase [str]
-  (clojure.string/lower-case str))
-
-(lowercase "CZEŚĆ") ; output: "cześć"
-```
-
-Możemy użyć funkcji `clojure.string/lower-case`, która zwraca tekst w postaci małych liter. Jeśli chcemy wykorzystać tę funkcję w naszym własnym kodzie, musimy najpierw zadeklarować przestrzeń nazw `clojure.string` za pomocą `require`. Następnie możemy wywołać funkcję `lower-case` na naszym ciągu znaków.
+"Jak to zrobić:"
 
 ```Clojure
-(def text "HEJ!")
-(lowercase text) ; output: "hej!"
+(def tekst "PRZYKŁADOWY TEKST")
+(clojure.string/lower-case tekst)
+
+; Output: "przykładowy tekst"
 ```
 
-Jeśli mamy już zadeklarowaną przestrzeń nazw `clojure.string`, możemy po prostu wywołać funkcję `lower-case` bezpośrednio na tekście.
+Możemy użyć funkcji `lower-case` z biblioteki `clojure.string` aby zamienić wszystkie litery w ciągu `tekst` na małe. Wstawiamy ciąg do funkcji jako argument, a następnie otrzymujemy tekst w małych literach jako wynik.
 
-```Clojure
-(require '[clojure.string :as str])
+"Zagłębienie"
 
-(str/lower-case "Żegnaj") ; output: "żeśniej"
-```
+Zamiana tekstu na małe litery jest bardzo często wykonywana w programowaniu, ponieważ ułatwia to porównywanie i filtrowanie danych. Wcześniej, programiści musieli pisać własne funkcje do zamieniania liter na małe, ale teraz jest to wbudowana funkcja w większości języków programowania.
 
-Możemy także użyć bloków `let` do zapisania przekonwertowanego tekstu w zmiennej.
+Alternatywą dla funkcji `lower-case` w Clojure może być funkcja `clojure.string/upper-case`, która przekształca wszystkie litery w ciągu na formę wielkich liter.
 
-```Clojure
-(let [tekst "WITAJ"]
-  (-> tekst
-      str/lower-case
-      (print))) ; output: "witaj"
-```
+Implementacja funkcji `lower-case` w bibliotece `clojure.string` wykorzystuje narzędzia z biblioteki Java, dzięki czemu jest wydajna i nie wymaga od programisty pisania własnego kodu do konwersji liter.
 
-## Głębsze zagadnienia
+"Zobacz też"
 
-Podczas konwertowania ciągu znaków na małe litery, musimy pamiętać o wyborze odpowiedniego algorytmu. W języku Clojure istnieją dwa podejścia do konwersji liter na małe: "uppercase" i "titlecase". W zależności od wymagań naszej aplikacji, musimy wybrać odpowiednią metodę.
-
-### Metoda "uppercase"
-
-Metoda "uppercase" zamienia wszystkie litery w tekście na wielkie, niezależnie od ich pierwotnego stanu.
-
-```Clojure
-(str/upper-case "Hej") ; output: "HEJ"
-(str/upper-case "hej") ; output: "HEJ"
-```
-
-### Metoda "titlecase"
-
-Metoda "titlecase" przywraca pierwszą literę każdego słowa w tekście na wielką, natomiast reszta liter pozostaje niezmieniona.
-
-```Clojure
-(str/title-case "hej cześć") ; output: "Hej Cześć"
-```
-
-### Wybór odpowiedniej metody
-
-Jeśli chcemy porównywać teksty i zależy nam na tym, aby różnice w wielkości liter były uwzględnione, powinniśmy użyć metody "uppercase". Natomiast jeśli chcemy wyświetlać tekst użytkownikowi, lepiej wybrać metodę "titlecase", aby utrzymać odpowiedni format tekstu.
-
-## Zobacz także
-
-- [Dokumentacja języka Clojure](https://clojure.org/)
-- [Funkcja lowercase w Clojure](https://clojuredocs.org/clojure.string/lower-case)
+- Oficjalna dokumentacja języka Clojure: https://clojure.org/
+- Dokumentacja biblioteki `clojure.string`: https://clojure.github.io/clojure/clojure.string-api.html

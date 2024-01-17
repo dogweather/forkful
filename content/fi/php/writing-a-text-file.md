@@ -1,7 +1,7 @@
 ---
-title:                "Tiedostotiedoston kirjoittaminen"
-html_title:           "PHP: Tiedostotiedoston kirjoittaminen"
-simple_title:         "Tiedostotiedoston kirjoittaminen"
+title:                "Tiedoston kirjoittaminen"
+html_title:           "PHP: Tiedoston kirjoittaminen"
+simple_title:         "Tiedoston kirjoittaminen"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Files and I/O"
@@ -10,64 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mikä & Miksi?
 
-Kirjoittaminen on tärkeä osa koodaamista ja tekstitiedostojen kirjoittaminen on yksi tapa tallentaa tietoja ja varmistaa niiden pysyvyys. PHP:n avulla voit luoda ja muokata tekstitiedostoja tehokkaasti ja helposti.
+Tiedoston kirjoittaminen tarkoittaa yksinkertaisesti tekstin tallentamista tietokoneella olevaan tiedostoon. Tämä voi sisältää esimerkiksi tietokannan tallentamista tai tulostamista tiedostoon. Ohjelmoijat tekevät tätä usein tallentaakseen ja jakaa tietoja, jotka eivät ole staattisia tai jotka tarvitsevat päivittämistä.
 
-## Miten
+## Miten:
 
-PHP:lla voit kirjoittaa tekstiä tiedostoon käyttämällä `fwrite()`-funktiota. Ensimmäisenä määritellään tiedosto, johon teksti kirjoitetaan:
+<p lang="fi">
+  ```PHP
+  $tiedosto = fopen("tiedosto.txt", "w");
+  fwrite($tiedosto, "Tervetuloa Suomi, PHP on mahtava!");
+  fclose($tiedosto);
+  
+  // Tällä koodilla voit luoda uuden tiedoston nimeltä "tiedosto.txt" ja kirjoittaa siihen tekstin "Tervetuloa Suomi, PHP on mahtava!".
 
-```
-$myFile = "tekstitiedosto.txt";
-```
+  $sisalto = file_get_contents("tiedosto.txt");
+  echo $sisalto;
+  
+  // Tällä koodilla voit tulostaa tiedoston sisällön sivullesi.
+  ```
+</p>
 
-Sitten avataan tiedosto `fopen()`-funktiolla ja määritellään avattavan tiedoston tila:
+Tulostus:
+```Tervetuloa Suomi, PHP on mahtava!```
 
-```
-$handle = fopen($myFile, "w");
-```
+## Syvempi sukeltaminen:
 
-Seuraavaksi kirjoitetaan haluttu teksti tiedostoon `fwrite()`-funktiolla:
+PHP:sta tuli suosittu verkkosivujen kehittämisessä alun perin sen dynaamisen luonteen takia. Ennen PHP:tä, suurin osa sivustoista sisälsi staattista sisältöä, mikä tarkoittaa, että sivut olivat samanlaisia jokaisen käyttäjän kohdalla. PHP mahdollisti sivustojen luomisen, jotka pystyvät luomaan sisältöä eri tavoilla jokaisen sivun lataus kohdalla. Tämä mahdollistaa dynaamisten verkkosivujen luomisen, jotka voivat sisältää käyttäjän toimintoja ja reagoida käyttäjän tekemiin toimintoihin.
 
-```
-fwrite($handle, "Tämä on kirjoitettu teksti");
-```
+On olemassa muita vaihtoehtoja tiedoston kirjoittamiselle, kuten JavaScriptin käyttäminen verkkosivustojen kehittämiseen. JavaScript tarjoaa samanlaisen dynaamisen ominaisuuden kuin PHP, mutta on suunniteltu erityisesti selaimen ympäristöön. PHP on suunniteltu erityisesti serverin ympäristöön, joten sen avulla voidaan tehdä paljon monimutkaisempia toimintoja selaimessa käytettäviin tekniikoihin verrattuna.
 
-Lopuksi tiedosto suljetaan `fclose()`-funktiolla:
+## Katso myös:
 
-```
-fclose($handle);
-```
-
-Tämän jälkeen voit avata tekstitiedoston ja nähdä kirjoitetun tekstin.
-
-## Syvällinen sukellus
-
-Syvemmälle tekstitiedoston kirjoittamiseen PHP:lla. `fwrite()`-funktion avulla voit myös kirjoittaa useita rivejä kerralla. Voit esimerkiksi määritellä taulukon, jossa on haluamasi tekstit ja sitten käyttää `foreach()`-silmukkaa kirjoittamaan kaikki tekstit riveittäin tiedostoon:
-
-```
-$myTexts = array("Ensimmäinen rivi", "Toinen rivi", "Kolmas rivi");
-
-foreach ($myTexts as $text) {
-    fwrite($handle, $text . "\n");
-}
-```
-
-Tässä esimerkissä `\n` merkitsee rivinvaihtoa ja jokainen taulukon teksti kirjoitetaan omalle rivilleen.
-
-Voit myös käyttää `file_put_contents()`-funktiota, joka avaa tiedoston, kirjoittaa siihen tekstin ja sulkee sen yhdellä komennolla:
-
-```
-file_put_contents($myFile, "Tämä on tekstiä");
-```
-
-## Katso myös
-
-Tutustu seuraaviin resursseihin saadaksesi lisätietoa PHP:n tekstitiedoston kirjoittamisesta:
-
-- [PHP fwrite() Documentation](https://www.php.net/manual/en/function.fwrite.php)
-- [Writing to a Text File with PHP](https://www.w3schools.com/php/php_file_create.asp)
-- [PHP File Handling Functions](https://www.tutorialspoint.com/php/php_file_handling.htm)
-
-_**Huomaa:** Muista aina huolehtia tiedostojen oikeuksista ja tietoturvasta ennen kuin kirjoitat tai tallennat tietoja tiedostoihin._
+- [PHP: tiedoston kirjoittaminen](https://www.php.net/manual/en/function.fwrite.php)
+- [JavaScriptin perusteet](https://www.w3schools.com/js/js_intro.asp)

@@ -10,30 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi vertailla kaksi päivämäärää?
+Mikä ja miksi?
 
-Päivämäärät ovat tärkeitä tietoja monissa ohjelmointiprojekteissa ja vertailemalla kahta päivämäärää voimme tarkistaa niiden suhdetta ja laskea kuluneen ajan. Esimerkiksi vertailemalla nykyhetkeä ja tulevaa tapahtumaa voimme näyttää käyttäjälle, kuinka monta päivää tai tuntia on jäljellä.
+Vertaillessaan kahta päivämäärää ohjelmoijat tarkastelevat kahden päivämäärän eroa toisiinsa nähden. Tämä on usein tarpeellista esimerkiksi sovelluksissa, jotka käsittelevät aikaa ja tapahtumia.
 
-## Miten vertailla kaksi päivämäärää?
-
-Vertaileminen kahden päivämäärän välillä on helppoa PHP:llä. Käytämme ensin `strtotime()`-funktiota muuttaaksemme päivämäärät Unix-aikaleimoiksi, jotka ovat sekunteja vuodesta 1970 lähtien. Sitten voimme käyttää `<` ja `>` operaattoreita vertailemaan aikaleimoja. Katso alla olevaa esimerkkiä:
+Miten:
 
 ```PHP
-$nyt = strtotime("now"); // nykyhetken aikaleima
-$tuleva_tapahtuma = strtotime("25 December 2021"); // tulevan tapahtuman aikaleima
+<?php
+$date1 = "2021-01-01";
+$date2 = "2021-12-31";
 
-if ($nyt < $tuleva_tapahtuma) {
-  echo "Tuleva tapahtuma on vasta " . floor(($tuleva_tapahtuma - $nyt) / 86400) . " päivän päässä!";
+// Vertaillaan päivämääriä ja tulostetaan tulos
+if ($date1 < $date2) {
+  echo "Päivämäärä 1 on ennen Päivämäärää 2";
+} else if ($date1 == $date2) {
+  echo "Päivämäärä 1 on sama kuin Päivämäärä 2";
+} else {
+  echo "Päivämäärä 1 on jälkeen Päivämäärän 2";
 }
+?>
 ```
 
-Tämä koodi tulostaa "Tuleva tapahtuma on vasta 13 päivän päässä!", jos suoritat sen esimerkiksi joulukuun 12. päivä.
+```PHP
+Tulostaa:
+Päivämäärä 1 on ennen Päivämäärää 2
+```
 
-## Syvemmälle päivämäärien vertailuun
+Syvällisempää tietoa:
 
-PHP tarjoaa myös muita hyödyllisiä funktioita päivämäärien vertailuun, kuten `date_diff()`, joka laskee kahden päivämäärän välisen eron haluamassasi muodossa, ja `date_interval_create_from_date_string()`, jolla voit luoda haluamasi aikavälin päivämääriin perustuen. Sekä `strtotime()` että `date()` voivat käsitellä myös päivämääriä muodossa "YYYY-MM-DD", joten voit helposti vertailla tarkkojakin päivämääriä.
+(1) Vertailua päivämäärien välillä on tarvittu jo pitkään, sillä ohjelmistoissa on usein tarvetta käsitellä aikaa ja tapahtumia. (2) Lisäksi on olemassa muitakin tapoja vertailla päivämääriä, kuten käyttämällä aikaleimoja tai muuntamalla päivämäärät numeerisiksi arvoiksi. (3) Tarkempien päivämäärävertailujen toteuttaminen voi edellyttää erilaisten kirjastojen käyttöä tai omien funktioiden luomista.
 
-## Katso myös
+Katso myös:
 
-- [PHP:n virallinen dokumentaatio päivämääräfunktioista](https://www.php.net/manual/en/function.date.php)
-- [PHP.net: Päivämäärien vertailu](https://www.php.net/manual/en/datetime.diff.php)
+- [PHP:n virallinen dokumentaatio päivämäärien vertailusta](https://www.php.net/manual/en/language.operators.comparison.php)
+- [Ohjeita päivämäärien käsittelyyn PHP:ssä](https://www.w3schools.com/php/php_date.asp)

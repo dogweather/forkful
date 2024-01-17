@@ -1,7 +1,7 @@
 ---
-title:                "Impression de sortie de débogage"
-html_title:           "Bash: Impression de sortie de débogage"
-simple_title:         "Impression de sortie de débogage"
+title:                "Afficher la sortie de débogage"
+html_title:           "Bash: Afficher la sortie de débogage"
+simple_title:         "Afficher la sortie de débogage"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Testing and Debugging"
@@ -10,48 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Qu'est-ce que c'est et pourquoi?
+Le débogage c'est lorsqu'on imprime du code pour voir comment il fonctionne. Les programmeurs l'utilisent pour comprendre les erreurs et les problèmes dans leur code.
 
-Si vous faites du développement en Bash, vous êtes probablement déjà familier avec l'utilisation de la commande `echo` pour afficher du texte dans votre terminal. Mais saviez-vous que vous pouvez également utiliser cette commande pour afficher des messages de débogage? L'affichage de messages de débogage peut être utile pour comprendre le fonctionnement de votre script et identifier les erreurs éventuelles.
-
-## Comment faire
-
-Pour afficher des messages de débogage, vous devez utiliser la commande `echo` suivie du texte à afficher entre guillemets. Vous pouvez également inclure des variables dans votre message en utilisant la syntaxe `"$variable"`. Voici un exemple de code Bash qui affiche un message de débogage et la valeur d'une variable :
-
+## Comment:
+Voici un exemple de code Bash pour imprimer un message de débogage:
 ```Bash
-#!/bin/bash
-a=5
-echo "La valeur de la variable a est : $a"
+echo "Débogage activé."
 ```
-
-Lorsque vous exécutez ce script, le message suivant s'affiche dans votre terminal : 
-
+Résultat:
 ```
-La valeur de la variable a est : 5
+Débogage activé.
 ```
-
-Vous pouvez également utiliser la commande `printf` pour afficher des messages de débogage au lieu de `echo`. La syntaxe est légèrement différente, mais vous pouvez tout de même inclure des variables dans votre message. Voici un exemple :
-
+Vous pouvez également inclure des variables dans vos messages de débogage en utilisant la structure `${variable}`:
 ```Bash
-#!/bin/bash
-b="Hello"
-printf "Le contenu de la variable b est : %s\n" "$b"
+nom="Jean"
+echo "Salut ${nom}, bienvenue dans le monde du débogage!"
+```
+Résultat:
+```
+Salut Jean, bienvenue dans le monde du débogage!
 ```
 
-Lors de l'exécution de ce script, vous obtiendrez le message suivant : 
+## Plongée en profondeur:
+Le débogage a été popularisé dans les années 1950 avec l'avènement des premiers ordinateurs. Aujourd'hui, il existe de nombreuses alternatives au débogage, telles que l'utilisation de logiciels de débogage intégrés ou l'écriture de tests automatisés pour détecter les erreurs. L'implémentation du débogage dans Bash se fait principalement à l'aide de la commande `echo` ou `printf`, mais il existe également des outils plus avancés tels que `xtrace` pour un débogage plus approfondi.
 
-```
-Le contenu de la variable b est : Hello
-```
-
-## Plongée en profondeur
-
-L'affichage de messages de débogage peut être utile pour comprendre le flux d'exécution de votre script, vérifier la valeur de vos variables à un certain point de celui-ci et repérer d'éventuelles erreurs. Vous pouvez également utiliser la commande `echo` ou `printf` dans des boucles ou des fonctions pour suivre l'évolution de vos données.
-
-Il est important de noter que ces messages de débogage ne sont pas destinés à être utilisés dans votre code de production. Il est recommandé de les supprimer une fois que vous avez terminé de déboguer votre script.
-
-## Voir aussi
-
-- [Documentation officielle de Bash](https://www.gnu.org/software/bash/manual/bash.html)
-- [Tutoriel sur le débogage avec Bash](https://linuxhandbook.com/bash-debugging/)
-- [Conseils pour le débogage en Bash](https://www.shellscript.sh/debugging.html)
+## Voir aussi:
+Pour en savoir plus sur le débogage dans Bash, consultez les liens suivants:
+- [Guide de débogage Bash](https://www.gnu.org/software/bash/manual/html_node/Debugging-Bash.html)
+- [Tutoriel Bash pour les débutants](https://www.howtogeek.com/67469/the-beginners-guide-to-shell-scripting-the-basics/)

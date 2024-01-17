@@ -1,7 +1,7 @@
 ---
-title:                "Usuwanie znaków pasujących do wzorca."
-html_title:           "Go: Usuwanie znaków pasujących do wzorca."
-simple_title:         "Usuwanie znaków pasujących do wzorca."
+title:                "Usuwanie znaków pasujących do wzorca"
+html_title:           "Go: Usuwanie znaków pasujących do wzorca"
+simple_title:         "Usuwanie znaków pasujących do wzorca"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Strings"
@@ -10,75 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i dlaczego?
 
-Pewnie zastanawiasz się dlaczego ktokolwiek miałby chcieć usuwać znaki zgodne z pewnym wzorem. Jednym z powodów może być potrzeba zmiany lub oczyszczenia danych, aby ułatwić analizę lub przetwarzanie. Może też po prostu chcesz uporządkować dane i pozbyć się zbędnych znaków.
+Usuwanie znaków pasujących do wzorca jest procesem polegającym na usunięciu wszystkich wystąpień danego znaku lub ciągu znaków w tekście. Programiści często wykonują tę czynność, aby wyczyścić lub przekształcić dane.
 
-## Jak to zrobić
-
-Go oferuje wiele możliwości do usuwania znaków zgodnych z wzorem. Najprostszym sposobem jest użycie funkcji `ReplaceAllString` z pakietu `regexp`. Zobaczmy jak to wygląda w kodzie:
+## Jak to zrobić:
 
 ```Go
-// Importowanie odpowiadających pakietów
-import (
-    "fmt"
-    "regexp"
-)
+package main
+
+import "fmt"
+import "regexp"
+import "strings"
 
 func main() {
-    // Definicja stringa z którego chcemy usunąć znaki
-    input := "K%o(d)e P@o(l)i'sh Str&in%g"
-    
-    // Utworzenie wyrażenia regularnego pasującego do znaków specjalnych
-    pattern := regexp.MustCompile("[%$&@()]")
-    
-    // Użycie funkcji ReplaceAllString do usunięcia pasujących znaków
-    output := pattern.ReplaceAllString(input, "")
-    
-    // Wyświetlenie efektu na ekranie
-    fmt.Println(output)
+    // Przykładowy tekst, z którego chcemy usunąć znaki pasujące do wzorca
+    text := "Ala ma 12 kotów i lubi je karmić"
+    // Wzorzec, określający jakie znaki chcemy usunąć (cyfry w tym przypadku)
+    pattern := regexp.MustCompile("[0-9]+")
+    // Wykorzystanie funkcji ReplaceAllString z pakietu "strings" do zastąpienia pasujących znaków pustym stringiem
+    result := strings.ReplaceAllString(text, pattern, "")
+
+    fmt.Println("Wynik:", result)
 }
 ```
 
-Wyjście z tego programu będzie wyglądać następująco:
-
+Output: 
 ```
-Kode Polish String
-```
-
-Możesz także użyć funkcji `ReplaceAll` z pakietu `strings` jeśli nie potrzebujesz użycia wyrażenia regularnego. Oto przykład:
-
-```Go
-// Improtowanie odpowiadających pakietów
-import (
-    "fmt"
-    "strings"
-)
-
-func main() {
-    // Definicja stringa z którego chcemy usunąć znaki
-    input := "Hello 123 World 456"
-    
-    // Użycie funkcji ReplaceAll do usunięcia cyfr
-    output := strings.ReplaceAll(input, "123", "")
-    output = strings.ReplaceAll(output, "456", "")
-    
-    // Wyświetlenie efektu na ekranie
-    fmt.Println(output)
-}
+Wynik: Ala ma kotów i lubi je karmić
 ```
 
-Wyjście z tego programu będzie wyglądać następująco:
+## Wnikliwe spojrzenie:
 
-```
-Hello World
-```
+1. Usuwanie znaków pasujących do wzorca jest powszechną czynnością w wielu językach programowania i jest wykorzystywane do wstępnej obróbki danych lub przekształcania ich do pożądanego formatu.
+2. W języku Go, oprócz funkcji ReplaceAllString z pakietu "strings", można również wykorzystać funkcję ReplaceAllStringFunc, która pozwala na zastosowanie własnej funkcji do zastąpienia pasujących znaków.
+3. Implementacja usuwania znaków pasujących do wzorca zazwyczaj wykorzystuje wyrażenia regularne, które są zestawem reguł do wyszukiwania i manipulacji tekstu.
 
-## Deep Dive
+## Zobacz także:
 
-Jeśli chcesz dowiedzieć się więcej o usuwaniu znaków zgodnych z wzorem w Go, warto zapoznać się z dokumentacją pakietu `regexp`. Możesz przeczytać o różnych funkcjach i sposobach wykorzystania wyrażeń regularnych w Go. Istnieje także wiele innych pakietów z funkcjami do operacji na stringach, z których możesz skorzystać w zależności od swoich potrzeb.
-
-## Zobacz też
-
-- https://golang.org/pkg/regexp/ - Dokumentacja pakietu `regexp`
-- https://golang.org/pkg/strings/ - Dokumentacja pakietu `strings`
+- Dokumentacja pakietu "strings" w języku Go: https://golang.org/pkg/strings/
+- Dokumentacja funkcji ReplaceAllString i ReplaceAllStringFunc: https://golang.org/pkg/strings/#ReplaceAllString, https://golang.org/pkg/strings/#ReplaceAllStringFunc
+- Wyrażenia regularne w języku Go: https://golang.org/pkg/regexp/

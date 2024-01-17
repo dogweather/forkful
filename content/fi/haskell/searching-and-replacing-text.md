@@ -10,39 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä ja miksi?
+Tekstin etsiminen ja korvaaminen on tärkeä osa ohjelmointia, sillä se mahdollistaa tietyn merkkijonon löytämisen ja korvaamisen toisella. Tämä voi olla hyödyllistä esimerkiksi virheiden korjaamisessa tai halutun tiedon etsimisessä suuresta tietokannasta.
 
-Haskell on funktionaalinen ohjelmointikieli, joka korostaa puhtaita funktioita ja välttää muuttuvaa tilaa. Tämä tekee siitä erinomaisen työkalun merkkijonojen muokkaamiseen, kuten tekstin etsimiseen ja korvaamiseen.
-
-## Kuinka tehdä
-
-Haskellilla tekstien etsiminen ja korvaaminen voidaan tehdä helposti, käyttämällä valmiita funktioita ja heittämällä syntaksiakaan. Alla on esimerkki, jossa muutetaan teksti "Hello World" muotoon "Hello Haskell".
+## Kuinka tehdä?
+Seuraavassa on joitakin esimerkkejä siitä, kuinka voit etsiä ja korvata tekstiä Haskell-kielellä:
 
 ```Haskell
-import Data.Text (replace)
+-- Etsi merkkijono "kuinka" ja korvaa se "miten"
+replace "kuinka" "miten" "Kuinka tehdä hyvä kahvi?"
+-- output: "Miten tehdä hyvä kahvi?"
 
-main = do
-  let text = "Hello World"
-  let modifiedText = replace "World" "Haskell" text
-  print modifiedText
+-- Etsi ja korvaa kaikki isot kirjaimet pieniksi kirjaimiksi
+map toLower "HELLO WORLD"
+-- output: "hello world"
+
+-- Etsi ja korvaa kaikki numerot nollilla
+map (\x -> if isDigit x then '0' else x) "He1llo 2Wor3ld"
+-- output: "He0llo 0Wor0ld"
 ```
 
-Tämän koodin tulostus olisi:
-
-```Haskell
-"Hello Haskell"
-```
-
-Kuten huomaat, Haskellissa ei tarvitse aloittaa muuttujia tyyppiannotaatioilla. Kirjasto Data.Text tarjoaa funktion replace, joka ottaa ensimmäisenä parametrina etsittävän tekstin, toisena parametrina korvaavan tekstin ja lopulta haettavan tekstin.
-
-## Syvällinen sukellus
-
-Haskellin Data.Text-kirjasto tarjoaa monia muita hyödyllisiä funktioita tekstien muokkaamiseen, kuten capitalize, take, drop jne. Lisäksi Haskellilla on myös mahdollista käyttää säännöllisiä lausekkeita tekstien etsimiseen ja korvaamiseen.
-
-Kannattaa myös tutustua listaan sisäänrakennettuja funktioita ja käyttää niitä hyväksi etsimisprosessissa. Esimerkiksi map-funktio, joka ottaa vastaan listan ja funktiokutsun, voisi auttaa muokkaamaan tekstiä haluttuun muotoon.
+## Syväsukellus
+Historiallisesti tekstien etsiminen ja korvaaminen on ollut yleinen tapa tehdä muutoksia ohjelmakoodiin ennen kuin versionhallintatyökalut tulivat käyttöön. Nykyään on olemassa myös muita vaihtoehtoja, kuten säännölliset lausekkeet, joita voi käyttää tekstien etsimiseen ja korvaamiseen monimutkaisemmissa tapauksissa. Haskellissa tekstien etsimiseen ja korvaamiseen on tarjolla myös useita kirjastoja, kuten "regex" ja "replace-megaparsec".
 
 ## Katso myös
-
-- [Haskellin virallinen sivusto](https://www.haskell.org/)
-- [Data.Text-kirjasto Hooglesta](https://hackage.haskell.org/package/text)
-- [Haskelliin tutustumisen opas](https://wiki.haskell.org/Learning_Haskell)
+- [Haskellin viralliset ohjeet](https://www.haskell.org/documentation/)
+- [Säännölliset lausekkeet](https://regexr.com/)

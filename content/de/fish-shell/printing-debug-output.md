@@ -1,7 +1,7 @@
 ---
-title:                "Fehlersuchausgabe drucken"
-html_title:           "Fish Shell: Fehlersuchausgabe drucken"
-simple_title:         "Fehlersuchausgabe drucken"
+title:                "Debug-Ausgabe drucken"
+html_title:           "Fish Shell: Debug-Ausgabe drucken"
+simple_title:         "Debug-Ausgabe drucken"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Testing and Debugging"
@@ -10,38 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
-Debug-Ausgaben sind ein nützliches Werkzeug, um Probleme beim Programmieren zu identifizieren und zu lösen. Mit der Fish Shell können wir dank ihrer einfachen und intuitiven Syntax problemlos Debug-Ausgaben in unserem Code einbauen.
+## Was & Warum?
+Debug-Ausgaben drucken ist eine häufige Praxis unter Programmierern, um Fehler zu finden und den Ablauf eines Programms besser zu verstehen. Durch das Drucken von Debug-Ausgaben können Programmer Fehler lokalisieren und nachvollziehen, wie Daten durch ihr Programm fließen.
 
-## Wie man das macht
-Um Debug-Ausgaben in der Fish Shell zu drucken, verwenden wir einfach den `echo` Befehl. Hier ist ein Beispiel:
+## Wie geht's?
+Die Fish Shell bietet verschiedene eingebaute Funktionen, um Debug-Ausgaben zu drucken. Eine davon ist die `echo` Funktion, welche eine Zeichenkette auf dem Terminal ausgibt. Beispiel:
 
-```Fish Shell
-echo "Debug-Ausgabe: Variable x hat den Wert 5"
+```
+Fish Shell  echo "Hallo Welt!"
 ```
 
-Dies wird die Nachricht "Debug-Ausgabe: Variable x hat den Wert 5" auf dem Terminal ausgeben, wenn der Code ausgeführt wird.
+Dies würde "Hallo Welt!" auf dem Terminal anzeigen. Eine weitere nützliche Funktion ist `printf`, welche ähnlich wie `echo` funktioniert, aber zusätzliche Formatierungsoptionen bietet. Beispiel:
 
-Wir können auch Variablen oder Ausdrücke in unseren Debug-Ausgaben verwenden, um spezifischere Informationen zu erhalten. Hier ist ein Beispiel:
-
-```Fish Shell
-set x 5
-set y "Hallo"
-echo "Debug-Ausgabe: Variable x hat den Wert $x und Variable y hat den Wert $y"
+```
+Fish Shell  printf "Das ist eine %s Datei" test.txt
 ```
 
-Dies wird die Nachricht "Debug-Ausgabe: Variable x hat den Wert 5 und Variable y hat den Wert Hallo" ausgeben.
+Dies würde "Das ist eine test.txt Datei" auf dem Terminal ausgeben.
 
-## Tiefentauchgang
-Es gibt verschiedene Arten, Debug-Ausgaben in unserer Fish Shell zu verwenden. Wir können sie zum Beispiel in einer Funktion oder Schleife platzieren, um den Zustand von Variablen oder Ausdrücken während des Programmablaufs zu überwachen. Wir können auch Bedingungen verwenden, um Debug-Ausgaben nur bei bestimmten Bedingungen auszudrucken.
-
-Es ist auch möglich, Debug-Ausgaben in eine Datei umzuleiten, anstatt sie direkt auf dem Terminal auszugeben. Dies ist hilfreich, wenn wir lange oder mehrere Debug-Ausgaben haben und sie später leichter analysieren und überprüfen möchten.
-
-Zusätzlich können wir auch die Fish Shell-Erweiterung `fish_trace` verwenden, um detaillierte Debug-Informationen zu erhalten, z.B. welche Befehle ausgeführt wurden und in welcher Reihenfolge.
-
-In jedem Fall ist es wichtig, Debug-Ausgaben nur für Testzwecke zu verwenden und sie vor der Veröffentlichung des Codes zu entfernen.
+## Tiefgehender Einblick
+Debug-Ausgaben werden oft verwendet, um Probleme mit dem Programmcode zu finden und zu beheben. Sie können auch dazu dienen, den Programmablauf und die Werte von Variablen zu überwachen. Historisch gesehen waren vor allem printf-Debugging und Debugger, wie GDB, verbreitet. Andere Tools wie Logging-Frameworks können ebenfalls zur Fehlersuche verwendet werden.
 
 ## Siehe auch
-- Fish-Shell-Dokumentation zu Debug-Ausgaben: https://fishshell.com/docs/current/commands.html#print
-- Fish-Shell-Dokumentation zur Erweiterung `fish_trace`: https://fishshell.com/docs/current/index.html#variables-other
-- Fish-Shell-Tutorials und -Beispiele: https://fishshell.com/docs/current/index.html#tutorials-examples
+- [Fish Shell-Dokumentation](https://fishshell.com/docs/current/cmds/echo.html)
+- [Einführung in das Debugging](https://www.itprotoday.com/compute-engines/what-debugging-and-how-can-you-use-it)
+- [Der GDB-Debugger](https://www.gnu.org/software/gdb/)

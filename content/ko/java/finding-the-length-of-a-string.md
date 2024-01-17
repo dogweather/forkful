@@ -10,35 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+## 무엇인가요? & 왜 이것을 해야 하나요?
 
-문자열의 길이를 찾는 것은 자바 프로그래밍에서 중요한 요소 중 하나입니다. 이 기술을 사용하면 문자열을 다루는 데 있어 더욱 효율적으로 작업할 수 있으며, 프로그래밍의 다양한 분야에서 유용하게 사용될 수 있습니다.
+문자열의 길이를 찾는 것은 입력된 문자열의 길이를 알아내는 것입니다. 이는 프로그래머가 자주 사용하는 작업 중 하나이며, 해당 문자열이 얼마나 긴지 또는 몇 개의 단어로 이루어져 있는지를 파악하기 위해서입니다.
 
-## 사용 방법
-
-문자열의 길이를 찾는 방법은 매우 간단합니다. 먼저 자바 코드에서 "length()" 메소드를 사용하여 문자열의 길이를 찾습니다. 다음은 "length()" 메소드를 사용한 예시 코드입니다.
+## 어떻게 하나요?
 
 ```Java
-String str = "Hello World";
-int length = str.length();
-System.out.println("Length of the string is: " + length);
+public class StringLength {
+  public static void main(String[] args) {
+    // 문자열의 길이를 알고 싶은 문자열 입력
+    String myString = "Hello World";
+    // .length() 메소드를 사용하여 문자열 길이 출력
+    System.out.println("문자열의 길이는: " + myString.length());
+  }
+}
 ```
 
-위 코드를 실행하면 "Length of the string is: 11"이라는 결과가 출력됩니다. 이는 "Hello World"라는 문자열의 길이가 11이라는 것을 의미합니다. 
+```
+출력: 문자열의 길이는: 11
+```
 
-## 깊이 들어가기
+## 더 깊게 알아보기
 
-Java에서 문자열의 길이를 찾기 위해 "length()" 메소드를 사용하는 이유는 무엇일까요? 이는 자바에서 문자열을 객체로 다루기 때문입니다. 즉, 문자열을 변수로 저장하고 메소드를 사용하여 다양한 작업을 처리할 수 있습니다. "String" 클래스에는 문자열을 다루는 다양한 메소드가 포함되어 있으며, 그 중 하나가 바로 "length()" 메소드입니다.
-
-더 많은 정보를 알고 싶다면, 자바 공식 문서인 "Oracle Java Documentation" (https://docs.oracle.com/javase/8/docs/api/)를 참고하세요.
-
-## 관련 링크
-
-- "Oracle Java Documentation" (https://docs.oracle.com/javase/8/docs/api/)
-- "Java String Tutorial" (https://www.javatpoint.com/java-string)
-- "Java - String length() method" (https://www.tutorialspoint.com/java/java_string_length.htm)
+1. [Java API 문서](https://docs.oracle.com/javase/8/docs/api/)에서 `String.length()` 메소드를 찾아보세요.
+2. `length()` 메소드는 String 클래스에 내장된 메소드이기 때문에 따로 import할 필요 없이 사용할 수 있습니다.
+3. `length()` 메소드는 문자열의 길이를 알기 위해 실제로 매번 문자열을 순회하지 않고, 내부적으로 저장된 문자열의 길이를 반환합니다.
 
 ## 참고 자료
 
-- "Oracle Java Documentation" (https://docs.oracle.com/javase/8/)
-- "Java Programming Tutorial" (https://www.w3schools.com/java/)
+- [GeeksforGeeks: Java String length() Method](https://www.geeksforgeeks.org/java-string-length-method-example/): 문자열 길이를 구하는 예제와 설명이 있습니다.
+- [Baeldung: String Length in Java](https://www.baeldung.com/java-string-length): 문자열 길이를 확인하는 다른 방법들을 소개하는 글입니다.

@@ -10,69 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-If you're a developer or programmer, chances are you've heard of HTTP requests. These requests are essential for web communication and enable users to interact with websites, APIs, and other web services. Learning how to send an HTTP request using C# can expand your skills and allow you to create dynamic and interactive web applications.
+Sending an HTTP request means making a request to a server using the Hypertext Transfer Protocol (HTTP). This allows programmers to communicate with web servers and retrieve data or resources from them. It is a crucial aspect of web development as it enables the exchange of information between clients and servers.
 
-## How To
+## How to:
 
-First, we need to import the `System.Net` namespace in our code, which contains the necessary classes and methods to make HTTP requests.
-
-```C#
-using System.Net;
-```
-
-Next, let's create an instance of the `WebRequest` class and specify the URL we want to send the request to.
+To send an HTTP request in C#, we can use the HttpClient class from the System.Net.Http namespace. Here is a simple example of sending an HTTP GET request:
 
 ```C#
-WebRequest request = WebRequest.Create("https://www.example.com");
+// create an instance of HttpClient
+HttpClient client = new HttpClient();
+
+// make a GET request to a URL
+HttpResponseMessage response = client.GetAsync("www.example.com").Result;
+
+// read the response content
+string responseContent = response.Content.ReadAsStringAsync().Result;
+
+Console.WriteLine(responseContent); // output the response
 ```
 
-Then, we can use the `GetResponse()` method to send the request and receive a response from the server.
+This will send a GET request to the specified URL and retrieve the response, which can then be accessed and used in our program.
+
+Another option is to use the WebClient class, which provides a higher-level interface for sending HTTP requests. Here is an example:
 
 ```C#
-WebResponse response = request.GetResponse();
+// create an instance of WebClient
+WebClient client = new WebClient();
+
+// download the response from a URL
+byte[] response = client.DownloadData("www.example.com");
+
+// convert the response to a string
+string responseContent = Encoding.Default.GetString(response);
+
+Console.WriteLine(responseContent); // output the response
 ```
 
-We can also specify the type of HTTP request we want to use, such as `GET`, `POST`, `PUT`, `DELETE`, etc., by setting the `Method` property of the `WebRequest` object.
+## Deep Dive:
 
-```C#
-request.Method = "POST";
-```
+HTTP was developed in 1991 by Tim Berners-Lee as a part of the World Wide Web project. It is a request-response protocol, meaning the client makes a request and the server responds with the requested data. There are different types of HTTP requests such as GET, POST, PUT, and DELETE, each serving a specific purpose.
 
-To send data along with the request, we can use the `GetRequestStream()` method to get a stream and write our data to it.
+Besides using the HttpClient and WebClient classes, there are other alternatives for sending HTTP requests in C#. These include the HttpWebRequest and the WebSocket classes.
 
-```C#
-Stream dataStream = request.GetRequestStream();
-byte[] data = Encoding.UTF8.GetBytes("{"username":"john_doe", "password":"password123"}");
-dataStream.Write(data, 0, data.Length);
-```
+When sending an HTTP request, there are different aspects to consider, such as headers, content type, and authentication. The HttpClient class provides methods to set these parameters in the request.
 
-Finally, we can read the response from the server using the `GetResponseStream()` method and convert it into a readable format.
+## See Also:
 
-```C#
-using (Stream responseStream = response.GetResponseStream())
-{
-    StreamReader reader = new StreamReader(responseStream);
-    string responseString = reader.ReadToEnd();
-    Console.WriteLine(responseString);
-}
-```
-
-## Deep Dive
-
-When sending an HTTP request, there are different statuses and error codes that can be returned by the server. For example, a status code of 200 means the request was successful, while a status code of 404 means the requested resource was not found.
-
-In addition, we can also add headers to our request using the `Headers` property of the `WebRequest` object. This allows us to include additional information, such as authentication, in our request.
-
-```C#
-request.Headers.Add("Authorization", "Bearer token123");
-```
-
-It's also important to note that when sending sensitive information, such as usernames and passwords, we should use a secure and encrypted connection by using the `https` protocol.
-
-## See Also
-
-- [Microsoft Docs: Sending HTTP Requests in C#](https://docs.microsoft.com/en-us/dotnet/api/system.net.webrequest?view=net-5.0)
-- [Codeburst: How to Make HTTP Requests in C#](https://codeburst.io/how-to-make-http-requests-in-c-615e0bb91c2a)
-- [Pluralsight: C# Fundamentals Course](https://www.pluralsight.com/courses/csharp-fundamentals-with-c-sharp-5-0)
+- [Microsoft Docs - Sending HTTP requests in C#](https://docs.microsoft.com/en-us/dotnet/api/system.net.http.httpclient?view=netcore-3.1)
+- [Mozilla Developer Network - HTTP request methods](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods)
+- [W3Schools - HTTP Tutorial](https://www.w3schools.com/whatis/whatis_http.asp)

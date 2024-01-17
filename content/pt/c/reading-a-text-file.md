@@ -10,53 +10,62 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+## O que & Porquê?
 
-Você pode se perguntar por que alguém se interessaria em ler um arquivo de texto em um programa de C. Bem, a resposta é simples: muitas vezes, dados são armazenados em arquivos de texto e precisamos criar programas para ler e manipular esses dados.
+A leitura de um arquivo de texto é uma tarefa comum e útil para os programadores. Basicamente, se trata de abrir e ler o conteúdo de um arquivo de texto, podendo ser utilizado para ler diferentes tipos de dados, como strings, números e até mesmo estruturas de dados mais complexas. A razão pela qual os programadores fazem isso é para processar e manipular esses dados em seus programas.
 
-## Como Fazer
+## Como fazer:
 
-Para ler um arquivo de texto em um programa de C, precisamos seguir alguns passos simples.
+Aqui estão dois exemplos simples de como ler um arquivo de texto em C:
 
-Primeiro, precisamos abrir o arquivo utilizando a função `fopen()`. Isso é feito da seguinte forma:
-
-```C
-FILE *arquivo;
-arquivo = fopen("arquivo.txt", "r");
 ```
+#include <stdio.h>
 
-A função `fopen()` recebe dois argumentos: o nome do arquivo (no exemplo acima, "arquivo.txt") e o modo de abertura, que, no caso de leitura, é "r".
+int main() {
+  FILE *arquivo;
+  char linha[100];
 
-Em seguida, precisamos criar uma variável para armazenar o conteúdo do arquivo em nossa memória. Neste exemplo, usaremos o tipo `char` para armazenar cada caractere do arquivo.
+  arquivo = fopen("texto.txt", "r"); // abre o arquivo em modo de leitura
 
-```C
-char caractere;
-```
+  while(fgets(linha, 100, arquivo) != NULL) { // lê cada linha do arquivo e armazena na variável "linha"
+    printf("%s", linha); // imprime a linha na tela
+  }
 
-Agora, podemos usar um laço `while` para percorrer o arquivo e imprimir seu conteúdo na tela. O laço continuará até encontrar o final do arquivo (EOF).
-
-```C
-while((caractere = fgetc(arquivo)) != EOF) {
-    printf("%c", caractere);
+  fclose(arquivo); // fecha o arquivo
 }
 ```
 
-E finalmente, não podemos esquecer de fechar o arquivo depois de terminar de lê-lo, utilizando a função `fclose()`.
+Ao executar esse código, o programa lerá o arquivo "texto.txt" e imprimirá seu conteúdo na tela. Note que é necessário utilizar a função "fclose" para fechar o arquivo após a leitura.
 
-```C
-fclose(arquivo);
+Outra maneira de ler um arquivo de texto é utilizando a função "fscanf":
+
+```
+#include <stdio.h>
+
+int main() {
+  FILE *arquivo;
+  char palavra[20];
+
+  arquivo = fopen("palavras.txt", "r"); // abre o arquivo em modo de leitura
+
+  while(fscanf(arquivo, "%s", palavra) != EOF) { // lê uma palavra por vez e armazena em "palavra"
+    printf("%s\n", palavra); // imprime a palavra na tela
+  }
+
+  fclose(arquivo); // fecha o arquivo
+}
 ```
 
-## Mergulho Profundo
+Neste exemplo, o programa lê cada palavra separadamente do arquivo "palavras.txt" e imprime na tela, até que chegue ao final do arquivo (EOF - end of file).
 
-Além da função `fgetc()`, existem outras funções úteis para ler arquivos de texto em um programa de C, como `fgets()` e `fscanf()`. Vale a pena explorar essas funções e descobrir a mais adequada para o seu programa.
+## Mergulho Profundo:
 
-Também é importante lembrar de verificar se o arquivo foi aberto corretamente, utilizando a função `ferror()`, e lidar com possíveis erros utilizando as funções `perror()` e `strerror()`. Isso garantirá que seu programa seja robusto e não apresente falhas ao lidar com arquivos de texto.
+Ler arquivos de texto remonta aos primeiros dias da programação. Antes do desenvolvimento de formatos de dados mais complexos, como bancos de dados e arquivos binários, os programadores usavam arquivos de texto simples para armazenar e manipular dados. Hoje em dia, ainda é uma técnica amplamente utilizada, especialmente para leitura de configurações e arquivos de log.
 
-## Veja Também
+Além da função "fopen", que utilizamos nos exemplos anteriores, também existem outras funções úteis para ler e manipular arquivos, como "fprintf", "fputc" e "fread". Além disso, há também a possibilidade de utilizar bibliotecas externas, como a "libfread", para facilitar o processo de leitura de arquivos.
 
-- [Documentação sobre a função fopen()](https://en.cppreference.com/w/c/io/fopen)
-- [Tutorial sobre leitura de arquivos em C](https://www.tutorialspoint.com/cprogramming/c_file_io.htm)
-- [Exemplos de uso da função fgetc()](https://www.programiz.com/c-programming/library-function/stdio.h/fgetc)
+## Veja Também:
 
-Pronto! Agora você está pronto para ler arquivos de texto em seus programas de C. Espero que este artigo tenha sido útil e, caso queira se aprofundar ainda mais, não hesite em consultar as fontes listadas acima. Boa codificação!
+- [The C File Input/Output Tutorial](https://www.programiz.com/c-programming/c-file-input-output)
+- [fopen() function in C](https://www.geeksforgeeks.org/fopen-for-an-existing-file-in-write-mode/)
+- [C Programming: Reading and Writing Files](https://www.thoughtco.com/reading-and-writing-files-in-c-program-4022383)

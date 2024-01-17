@@ -1,7 +1,7 @@
 ---
-title:                "Merkkijonon isot kirjaimet"
-html_title:           "Javascript: Merkkijonon isot kirjaimet"
-simple_title:         "Merkkijonon isot kirjaimet"
+title:                "Merkkijonon ensimmäisen kirjaimen muuttaminen isoksi"
+html_title:           "Javascript: Merkkijonon ensimmäisen kirjaimen muuttaminen isoksi"
+simple_title:         "Merkkijonon ensimmäisen kirjaimen muuttaminen isoksi"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Strings"
@@ -10,66 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi 
+## Mitä & Miksi?
 
-Joskus haluat muuttaa merkkijonon kirjainkoon, jotta se olisi helpompi lukea tai vastaisi tiettyä muotoilusääntöä. Tämän artikkelin avulla opit, kuinka voit käyttää muutamia yksinkertaisia Javascript-funktioita saadaksesi tämän aikaan.
+Stringin muuttaminen isoiksi kirjaimiksi tarkoittaa, että jokaisen merkin ensimmäistä kirjoitusasua muutetaan tarpeen mukaan isoksi. Tätä tehdään usein esimerkiksi otsikoissa tai käyttäjänimen syöttökentissä, jotta ne näyttävät selkeämmiltä ja helpommin luettavilta. Ohjelmoijat käyttävät tätä toimintoa myös silloin, kun he haluavat vertailla kahta merkkijonoa, sillä pienten ja isojen kirjainten ero voi vaikuttaa vertailutuloksiin.
 
-## Kuinka tehdä
+## Kuinka:
 
-```Javascript
-function capitalize(str) {
-  return str.charAt(0).toUpperCase() + str.slice(1);
-}
-
-console.log(capitalize("javascript")) // Tulostaa "Javascript"
+```javascript
+const string = "hei kaikki!";
+const capitalizedString = string.toUpperCase();
+console.log(capitalizedString); // TULOSTAA: HEI KAIKKI!
 ```
 
-Tämä esimerkki käyttää `charAt()` ja `toUpperCase()` -funktioita muuttaakseen merkkijonon ensimmäisen kirjaimen isoksi ja `slice()`-funktiota lisätäkseen sen takaisin alkuperäisen merkkijonon perään. Tämä on yksinkertainen tapa muuttaa merkkijonon ensimmäinen kirjain isoksi. Voit myös käyttää muita funktioita, kuten `split()` ja `join()` ensimmäisen kirjaimen muuttamiseen, mutta tämä on yksi helpoimmista tavoista.
+Tai voit käyttää tätä funktiota stringin sisällä:
 
-```Javascript
-String.prototype.capitalize = function() {
-  return this.charAt(0).toUpperCase() + this.slice(1);
-}
-
-console.log("javascript".capitalize()) // Tulostaa "Javascript"
+```javascript
+const string = "hello world!";
+console.log(string.toUpperCase()); // TULOSTAA: HELLO WORLD!
 ```
 
-Tämä toinen esimerkki käyttää merkkijonon prototyyppiä mahdollistaakseen `capitalize()`-kutsun suoraan merkkijonoon. Tämä voi olla hyödyllistä, jos haluat käyttää `capitalize()`-funktiota useammin koodissasi.
+## Syväsukellus:
 
-## Syvä sukellus
+Historiallisessa kontekstissa, merkkijonon muuttaminen isoiksi kirjaimiksi oli paljon monimutkaisempaa verrattuna nykyiseen Javascript-vaihtoehtoon. Kehittäjien täytyi käyttää monimutkaisia algoritmeja ja toimintoja, jotta tämä pystyttiin tekemään. Nykyään Javascript tarjoaa helpomman ja nopeamman tavan tehdä tämä muunnos.
 
-On myös mahdollista, että haluat vain muuttaa merkkijonon ensimmäistä kirjainta tietyllä alueella. Tässä tapauksessa voit käyttää `substring()`-funktiota muuttaaksesi osan merkkijonosta ja sitten yhdistää tämän osan muun merkkijonon kanssa.
+Jos haluat muuttaa merkkijonon vain ensimmäisen kirjaimen isoksi ja jättää muut kirjaimet pieniksi, voit käyttää funktiota "slice" yhdistettynä "toUpperCase" funktioon.
 
-```Javascript
-function capitalizeSentence(sentence) {
-  var firstChar = sentence.substring(0, 1).toUpperCase();
-  var restOfSentence = sentence.substring(1);
-  return firstChar + restOfSentence;
-}
+Esimerkiksi:
 
-console.log(capitalizeSentence("hello world")) // Tulostaa "Hello world"
+```javascript
+const string = "hello world!";
+const firstLetter = string.slice(0, 1).toUpperCase();
+console.log(firstLetter + string.slice(1)); // TULOSTAA: Hello world! 
 ```
 
-Voit myös käyttää `replace()`-funktiota muuttaaksesi vain tietyn osan merkkijonosta.
+## Katso myös:
 
-```Javascript
-function capitalizeWord(word) {
-  return word.replace(/^\w/, function (c) {
-    return c.toUpperCase();
-  });
-}
-
-console.log(capitalizeWord("javascript")) // Tulostaa "Javascript"
-```
-
-Edellinen esimerkki käyttää säännöllistä lausetta ja `replace()`-funktiota muuttaakseen ensimmäisen merkin isoksi. Tämä voi olla hyödyllistä, jos haluat käyttää `capitalize()`-funktiota vain yhden sanan muuttamiseksi.
-
-## Katso myös
-
-- [MDN - String.prototype.charAt()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/charAt)
-- [MDN - String.prototype.toUpperCase()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase)
-- [MDN - String.prototype.slice()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice)
-- [MDN - String.prototype.split()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split)
-- [MDN - String.prototype.join()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/join)
-- [MDN - String.prototype.substring()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
-- [MDN - String.prototype.replace()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
+- [Javascript String Methods](https://www.w3schools.com/js/js_string_methods.asp)
+- [Slice vs Substring Javascript](https://www.javascripttutorial.net/strings/javascript-string-substring/)
+- [Captializing First Letter of a String in JavaScript](https://kodementor.com/captializing-first-letter-of-a-string-in-javascript/)

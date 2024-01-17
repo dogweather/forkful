@@ -10,32 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+"## Vad & Varför?"
+Att skriva en textfil är en vanlig uppgift för programmerare. Det innebär att man skriver en fil med textinformation som kan läsas och tolkas av datorn. Textfiler används ofta för att lagra och hantera data, som till exempel användarinformation eller textfiler som behövs för att köra ett program.
 
-Ibland behöver vi lagra data eller information på en enkel och läsbar sätt, och därför är att skriva en textfil ett viktigt verktyg inom programmering. En textfil är också användbar för att skapa enkla konfigurationsfiler eller för att spara användarinställningar.
-
-## Hur man gör
-
-För att skriva en textfil behöver vi använda oss av standard C-funktioner för filhantering. Det första steget är att öppna en fil med funktionen `fopen()` och ange vilket mode filen ska öppnas i, exempelvis läge för att skriva (`"w"`). Sedan kan vi använda funktionen `fprintf()` för att skriva in önskad data i filen. När slutligen all data är skriven behöver vi stänga filen med funktionen `fclose()` för att undvika eventuella problem med filen i framtiden.
-
+"## Hur gör man:"
+För att skriva en textfil i C, behöver vi använda oss av några grundläggande funktioner som hör till C standardbiblioteket. Här är ett exempel på kod som skapar en ny textfil och skriver texten "Hej världen!" i filen:
+ 
 ```C
-// Öppna filen för skrivning
-FILE *fp = fopen("exempelfil.txt", "w");
-
-// Skriv in data i filen
-fprintf(fp, "Detta är en textfil som skrivs med C-programmeringsspråket.\n");
-fprintf(fp, "Här är en rad till.\n");
-
-// Stäng filen
-fclose(fp);
+#include <stdio.h> // inkluderar standardbiblioteket för att få tillgång till grundläggande funktioner
+ 
+int main() {
+  FILE *fp; // skapar en pekare till filen
+  fp = fopen("exempel.txt", "w"); // öppnar en ny fil med namnet "exempel.txt" i skrivläge
+  fprintf(fp, "Hej världen!"); // skriver texten i filen
+  fclose(fp); // stänger filen
+  return 0;
+}
 ```
 
-## Djupdykning
+En ny textfil med namnet "exempel.txt" kommer nu att skapas i samma mapp där du kör programmet. Om du öppnar filen kommer du att se att texten "Hej världen!" har skrivits in.
 
-När vi skriver en textfil måste vi också ha i åtanke att filen kommer att skapas i det nuvarande arbetsmappen. Om vi vill placera filen i en annan mapp kan vi ange sökväg till filen när vi öppnar den med `fopen()`. Det är också viktigt att nämna att vi endast kan skriva in text i en textfil, alla andra datatyper måste omvandlas till text först.
+"## Djupdykning:"
+Att kunna skriva en textfil är en viktig del av programmering eftersom det låter oss spara och hantera information på ett effektivt sätt. Textfiler används ofta för att konfigurera program, spara användarinställningar och för att visa utdata från ett program.
 
-## Se även
+Det finns också andra sätt att hantera information i C, som till exempel att använda C structs eller dynamiska datastrukturer som arrays och listor. Men textfiler är ofta enklare att hantera och använda i mer än en programmeringsspråk, vilket är en stor fördel.
 
-- [Officiell dokumentation för fopen()](https://www.cplusplus.com/reference/cstdio/fopen/)
-- [Officiell dokumentation för fprintf()](https://www.cplusplus.com/reference/cstdio/fprintf/)
-- [Officiell dokumentation för fclose()](https://www.cplusplus.com/reference/cstdio/fclose/)
+När man skriver en textfil är det också viktigt att veta att det finns olika lägen för att skriva till filen. I vårt exempel ovan använde vi "w"-läget vilket betyder att vi öppnade filen i skrivläge och skrev över allt som fanns i filen tidigare. Det finns också "a"-läget som lägger till ny information i filen utan att skriva över den befintliga informationen.
+
+"## Se även:"
+Mer information om hur man skriver en textfil i C kan hittas i C standardbibliotekets dokumentation [här](https://www.cplusplus.com/reference/cstdio/fopen/). Du kan också läsa mer om alternative sätt att hantera information i C, som till exempel structs, [här](https://www.tutorialspoint.com/cprogramming/c_structures.htm).

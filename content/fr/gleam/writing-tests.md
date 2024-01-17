@@ -1,7 +1,7 @@
 ---
-title:                "Rédiger des tests"
-html_title:           "Gleam: Rédiger des tests"
-simple_title:         "Rédiger des tests"
+title:                "Écrire des tests"
+html_title:           "Gleam: Écrire des tests"
+simple_title:         "Écrire des tests"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Testing and Debugging"
@@ -10,42 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+# Qu'est-ce que c'est et pourquoi faire des tests?
 
-Écrire des tests peut sembler fastidieux et ennuyeux, mais c'est en fait un élément crucial dans le processus de développement d'un logiciel de qualité. Les tests permettent de s'assurer que votre code fonctionne correctement, évitant ainsi les éventuels bugs et erreurs, et facilitent la maintenance du code à long terme.
+Les tests de code sont essentiels pour s'assurer que votre code fonctionne correctement et qu'il reste stable au fil du temps. Les programmeurs les utilisent pour vérifier que chaque fonction et chaque partie du code se comportent comme prévu, en s'assurant qu'ils fonctionnent correctement et en détectant les erreurs dès qu'elles se produisent.
 
-## Comment faire
+# Comment faire des tests en Gleam?
 
-Pour écrire des tests en Gleam, il suffit d'utiliser le module `test` et ses différentes fonctions. Par exemple, pour tester une fonction qui calcule le carré d'un nombre, on peut écrire le code suivant:
+Pour faire des tests en Gleam, utilisez la bibliothèque standard `gleam/test`. Cette bibliothèque fournit des fonctions et des macros pour écrire et exécuter des tests dans votre code.
 
-```
-Gleam
-import test
+```Gleam
+import gleam/test
+import my_project
 
-fn square(x) {
-  x * x
+test "Addition" {
+  assert.equal(my_project.add(2, 2), 4)
 }
-
-test.suite("Tests de la fonction square", [
-  test.test("Retourne le carré d'un nombre positif", _ {
-    expect(square(5)).toBe(25)
-  }),
-  test.test("Retourne le carré d'un nombre négatif", _ {
-    expect(square(-3)).toBe(9)
-  })
-])
 ```
+La fonction `test` dans `gleam/test` vous permet d'écrire des blocs de code de test auto-descriptifs, avec des noms et des fonctions de test clairs. Vous pouvez ensuite ajouter des assertions pour vérifier que la sortie du code de test est correcte. Dans cet exemple, nous testons la fonction `add` de notre projet, en vérifiant qu'elle ajoute correctement les nombres 2 et 2 et renvoie 4.
 
-Une fois exécuté, ce code va effectuer les deux tests définis et afficher le résultat (`Pass` ou `Fail`) pour chaque test.
+# Plongée en profondeur
 
-## Plongeons plus en profondeur
+Écrire des tests pour votre code n'est pas seulement une bonne pratique moderne, mais c'est aussi une méthode éprouvée depuis longtemps pour garantir la qualité du code. Les alternatives telles que le débogage manuel peuvent prendre plus de temps et être moins fiables. De plus, la bibliothèque `gleam/test` est conçue pour être simple et facile à utiliser, ce qui la rend accessible à tous les programmeurs, même débutants.
 
-Lors de l'écriture de tests, il est important de couvrir différentes situations et cas de figure. Pour cela, on peut utiliser des fonctions d'assertion telles que `expect` et `assert` pour vérifier que les résultats obtenus correspondent à ceux attendus. Le module `test` offre également la possibilité de créer des suites de tests pour organiser votre code et faciliter la lisibilité.
+# Voir aussi
 
-Il est également recommandé d'écrire des tests automatisés, qui peuvent être exécutés à chaque modification du code pour s'assurer que tout fonctionne correctement. Cela permet de détecter rapidement les erreurs et de maintenir la qualité de votre code au fil du temps.
-
-## Voir aussi
-
-- [Documentation officielle de Gleam sur les tests](https://gleam.run/book/testing.html)
-- [Article sur l'importance des tests en développement logiciel](https://www.codespot.org/importance-des-tests-en-developpement-logiciel/)
-- [Tutoriel sur les tests automatisés en Gleam](https://www.youtube.com/watch?v=ssv6fybWuTY)
+Pour plus d'informations sur l'écriture de tests en Gleam, consultez la documentation officielle sur les tests: https://gleam.run/book/collections/#tests. Vous pouvez également trouver d'autres articles et tutoriels utiles en cherchant ``gleam tests`` sur votre moteur de recherche préféré.

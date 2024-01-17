@@ -1,7 +1,7 @@
 ---
-title:                "부분 문자열 추출"
-html_title:           "Elixir: 부분 문자열 추출"
-simple_title:         "부분 문자열 추출"
+title:                "부분 문자열 추출하기"
+html_title:           "Elixir: 부분 문자열 추출하기"
+simple_title:         "부분 문자열 추출하기"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -10,28 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
-때로는 문자열에서 일부분을 추출하여 작업하는 것이 필요한 경우가 있습니다. 이런 경우에는 Elixir의 서브스트링 추출 기능이 매우 유용합니다.
+## 꼬리 문자열 추출하기 (Extracting Substrings)
 
-## 어떻게
-서브스트링을 추출하기 위해서는 두 가지 방법이 있습니다. 첫 번째 방법은 `String.slice/2` 함수를 사용하는 것입니다. 이 함수는 두 개의 인수를 받아 첫 번째 인수에서 두 번째 인수로 지정한 문자 사이의 부분 문자열을 추출합니다. 예를 들어:
+## 무엇을 & 왜? (What & Why?)
+문자열에서 일부의 특정 부분만 추출하는 것을 꼬리 문자열 추출이라고 합니다. 프로그래머들은 이 기능을 사용하여 원하는 정보를 쉽게 찾을 수 있고, 처리할 수 있습니다.
 
-```
-Elixir iex> String.slice("안녕하세요", 0, 2)
-"안녕"
-```
+## 방법 (How to:)
+꼬리 문자열 추출은 간단한 방법으로 수행할 수 있습니다. 예를 들어, 다음과 같이 하면 됩니다.
 
-두 번째 방법은 `String.split/3` 함수를 사용하는 것입니다. 이 함수는 세 개의 인수를 받아 첫 번째 인수에서 두 번째 인수로 지정한 패턴을 기준으로 부분 문자열을 나누고, 세 번째 인수는 반환된 문자열 배열에서 무시할 공백 문자의 수를 나타냅니다. 예를 들어:
-
-```
-Elixir iex> String.split("Hello, world!", ",", trim: true)
-["Hello", "world!"]
+```Elixir
+string = "Hello world!"
+substring = String.slice(string, 6..-1)
+IO.puts(substring)
 ```
 
-## 딥 다이브
-서브스트링 추출은 다양한 방식으로 활용될 수 있습니다. 예를 들어, `String.trim/1` 함수를 사용하여 문자열의 앞뒤 공백을 제거하고 `String.length/1` 함수를 사용하여 문자열의 길이를 확인한 후, 필요한 부분만 추출할 수 있습니다. 또는 `Regex` 모듈을 사용하여 정규식을 이용해 문자열을 추출할 수도 있습니다. 자세한 내용은 Elixir 문서나 인터넷 자료를 참고하세요.
+출력: world!
 
-## 더 알아보기
-* [Elixir 문서 - String 모듈](https://hexdocs.pm/elixir/String.html)
-* [Elixir 문서 - Regex 모듈](https://hexdocs.pm/elixir/Regex.html)
-* [블로그 - Elixir에서 문자열 다루기](https://blog.process-one.net/elixir-string-operations/)
+## 깊이 파고들기 (Deep Dive):
+꼬리 문자열 추출은 Elixir에서 부분 문자열을 추출하는 가장 효과적인 방법입니다. 이전의 다른 언어들에서는 부분 문자열을 추출하기 위해 복잡한 코드를 작성해야 했지만, Elixir에서는 간단하게 처리할 수 있습니다. Elixir의 String 모듈에는 다양한 메소드가 있어, 다양한 방법으로 부분 문자열을 추출할 수 있습니다.
+
+## 관련 자료 (See Also):
+- Elixir 문서: [String 모듈](https://hexdocs.pm/elixir/String.html)
+- 주요 용어 설명: [부분 문자열 추출](https://en.wikipedia.org/wiki/Substring)

@@ -1,7 +1,7 @@
 ---
-title:                "Überprüfen, ob ein Verzeichnis vorhanden ist"
-html_title:           "Elixir: Überprüfen, ob ein Verzeichnis vorhanden ist"
-simple_title:         "Überprüfen, ob ein Verzeichnis vorhanden ist"
+title:                "Überprüfung, ob ein Verzeichnis existiert"
+html_title:           "Elixir: Überprüfung, ob ein Verzeichnis existiert"
+simple_title:         "Überprüfung, ob ein Verzeichnis existiert"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Files and I/O"
@@ -10,32 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+# Was & Warum?
 
-Das Überprüfen, ob ein Verzeichnis existiert, ist ein wichtiger Schritt in der Elixir-Programmierung, um sicherzustellen, dass das Programm reibungslos ausgeführt wird und keine Fehler auftreten. Es hilft auch dabei, sicherzustellen, dass die benötigten Daten oder Dateien vorhanden sind, bevor das Programm ausgeführt wird.
+Die Überprüfung, ob ein Verzeichnis existiert, ist ein wichtiger Schritt beim Programmieren. Durch diese Überprüfung können wir sicherstellen, dass unser Programm korrekt funktioniert und keine Fehler auftreten. Programme, die auf der Existenz von Verzeichnissen basieren, können so effizienter und sicherer ausgeführt werden.
 
-## So geht's
+# Wie geht's?
 
-Die Überprüfung, ob ein Verzeichnis existiert, kann in Elixir auf verschiedene Weise erfolgen, je nachdem, welches Modul Sie verwenden möchten. Hier sind zwei Möglichkeiten, um dies zu erreichen:
-
-```Elixir
-# Mit dem File-Modul
-File.ls?("/pfad/zum/verzeichnis")
-
-# Mit dem Path-Modul
-Path.directory?("/pfad/zum/verzeichnis")
+```elixir
+# Check if directory exists
+case File.dir?("/path/to/directory") do
+  true -> IO.puts("Directory exists.")
+  false -> IO.puts("Directory does not exist.")
+end
 ```
 
-Die obigen Beispiele zeigen, wie Sie das `ls?` - oder `directory?` - Funktionen aus den `File` oder `Path` Modulen verwenden können, um zu überprüfen, ob das Verzeichnis existiert. Beide Funktionen geben `true` zurück, wenn das Verzeichnis vorhanden ist, andernfalls geben sie `false` zurück.
+Beim Ausführen dieses Codes wird "Directory exists." oder "Directory does not exist." je nachdem, ob das Verzeichnis vorhanden ist oder nicht, ausgegeben.
 
-## Tiefere Einblicke
+# Tief eintauchen
 
-Wenn Sie sich fragen, wie Elixir das Verzeichnis überprüft, können Sie einen tieferen Einblick in den Quellcode werfen. Beide Funktionen rufen die `_exist?` Funktion des `:file` Moduls auf, die letztendlich das `:file.info` Bif verwendet, um zu überprüfen, ob das Verzeichnis vorhanden ist.
+- Historischer Kontext: Das Überprüfen der Existenz eines Verzeichnisses war schon immer ein wichtiger Bestandteil der Programmierung. Mit dem Aufkommen von Datei- und Verzeichnisoperationen in den modernen Betriebssystemen ist es jedoch zu einer selbstverständlichen Aufgabe geworden.
+- Alternativen: Neben der Verwendung von ```File.dir?``` gibt es auch andere Möglichkeiten, die Existenz eines Verzeichnisses zu überprüfen, zum Beispiel mithilfe von regulären Ausdrücken oder durch direkte Zugriffe auf das Dateisystem.
+- Implementierungsdetails: Die Implementierung der ```File.dir?```-Funktion basiert auf dem Zugriff auf das Dateisystem des Betriebssystems, um die Existenz des Verzeichnisses zu überprüfen.
 
-Zusätzlich können Sie mit der `:file.ls` Bif eine Liste der Dateien und Verzeichnisse in einem angegebenen Pfad erhalten. Diese Funktion gibt eine leere Liste zurück, wenn das Verzeichnis nicht existiert.
+# Siehe auch
 
-## Siehe auch
-
-- [Elixir File Modul Dokumentation](https://hexdocs.pm/elixir/File.html)
-- [Elixir Path Modul Dokumentation](https://hexdocs.pm/elixir/Path.html)
-- [Elixir :file Modul Dokumentation](https://hexdocs.pm/elixir/File.html)
+- [Dokumentation der ```File.dir?```-Funktion in der offiziellen Elixir-Dokumentation](https://elixir-lang.org/docs/stable/elixir/File.html#dir?/1)
+- [Diskussion über die Überprüfung der Existenz von Verzeichnissen auf Stack Overflow](https://stackoverflow.com/questions/19783343/how-to-determine-if-a-directory-is-a-valid-directory-in-elixir)
+- [Weitere Informationen zu Datei- und Verzeichnisoperationen in Elixir](https://elixir-lang.org/getting-started/io-and-the-file-system.html)

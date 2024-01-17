@@ -10,36 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
-Varför ska man använda reguljära uttryck? Förkortat regex, är en kraftfull och effektiv metod för att söka och manipulera text på ett mycket specifikt sätt. Det är särskilt användbart för programmerare som behöver hantera stora mängder data och söka efter specifika mönster.
+## Vad & Varför?
 
-## Hur man använder reguljära uttryck i Python
-```python
-# Importera "re" biblioteket för att använda reguljära uttryck
-import re 
+Att använda reguljära uttryck (regular expressions) inom programmering handlar om att hitta, hantera och manipulera textsträngar på ett effektivt sätt. Det kan vara till nytta för att söka efter specifika mönster i text eller för att göra omfattande sökningar och ersättningar i stora mängder data. Reguljära uttryck är ett kraftfullt verktyg som kan spara tid och förbättra effektiviteten i din kod.
 
-# Skapa en sträng som innehåller text att söka igenom
-text = "Den här texten innehåller flera olika ord, inklusive ord som bil, bok och apa."
+## Hur man gör:
 
-# Använda re.findall() för att hitta alla ord som börjar med bokstaven "b"
-resultat = re.findall(r"b\w+", text)
+För att använda reguljära uttryck i Python behöver du importera modulet "re". Sedan kan du använda olika metoder för att söka och manipulera data. Nedan följer några exempel på hur man kan använda reguljära uttryck:
 
-# Skriv ut resultatet
-print(resultat)
+```Python
+# Importera re modulet
+import re
 
-# Output: ['bok', 'bil']
+# Söka efter ett specifikt ord
+text = "Hej, detta är en textsträng med några ord."
+resultat = re.search("textsträng", text)
+print(resultat.group())
+
+# Hitta alla ord som börjar med en vokal
+ordlista = ["äpple", "banan", "citron", "druva", "ägg"]
+for ord in ordlista:
+  if re.findall("^[aäeioöuüyå]", ord):
+    print(ord)
+
+# Ersätta alla siffror med ett X
+nummer = "123-45-678910"
+nytt_nummer = re.sub("\d", "X", nummer)
+print(nytt_nummer)
 ```
 
-I detta exempel använde vi reguljära uttryck för att hitta alla ord som börjar med bokstaven "b" i en given sträng. Detta är bara en enkel användning av regex, men det finns många fler möjligheter att utforska.
+Output:
 
-## Djupdykning i reguljära uttryck
-Reguljära uttryck kan verka komplicerade till en början, men när du väl lärt dig grunderna kan du enkelt anpassa sökningar för att passa dina specifika behov. De är mycket användbara för att filtrera och manipulera data i textformat och kan hjälpa till att effektivisera din kod.
+```
+textsträng
+äpple
+ägg
+XXX-XX-XXXXXX
+```
 
-Du kan också använda reguljära uttryck för att validera inmatning från användare, till exempel kontrollera om ett telefonnummer eller e-postadress följer ett specifikt format.
+## Fördjupning:
 
-Det finns många resurser online för att lära sig mer om reguljära uttryck och dess syntax. Du kan också experimentera och öva med olika mönster på olika typer av text för att förbättra din förståelse.
+Reguljära uttryck har funnits sedan 1950-talet och är en viktig del av många programmeringsspråk och textbehandlingsprogram. Förutom i Python kan man även använda reguljära uttryck i andra språk som t.ex. Perl, JavaScript och Java. Det finns även andra sätt att söka och manipulera data, som t.ex. på listaformat eller med hjälp av inbyggda string-metoder, men reguljära uttryck är oftast mer kraftfulla och flexibla.
 
-## Se även
-- [Python re dokumentation](https://docs.python.org/3/library/re.html)
-- [Reguljära uttryck cheat sheet](https://www.debuggex.com/cheatsheet/regex/python)
-- [Online regex testare](https://regex101.com/)
+När man implementerar reguljära uttryck är det viktigt att ha en tydlig förståelse för hur de olika symbolerna och uttrycken fungerar. Det finns många resurser på nätet där man kan lära sig mer om reguljära uttryck och hur man använder dem på bästa sätt.
+
+## Se även:
+
+- [Reguljära uttryck i Python dokumentationen](https://docs.python.org/3/library/re.html)
+- [En guide till reguljära uttryck på W3Schools](https://www.w3schools.com/python/python_regex.asp)
+- [Reguljära uttryck - Ett kraftfullt verktyg för textbearbetning](https://www.linuxjournal.com/article/2852)

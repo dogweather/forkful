@@ -1,7 +1,7 @@
 ---
-title:                "Sända en http förfrågan"
-html_title:           "Haskell: Sända en http förfrågan"
-simple_title:         "Sända en http förfrågan"
+title:                "Sända en http-begäran"
+html_title:           "Haskell: Sända en http-begäran"
+simple_title:         "Sända en http-begäran"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "HTML and the Web"
@@ -10,58 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
 
-Att utföra en HTTP-begäran är en viktig del av webbutveckling. Det tillåter ditt program att kommunicera med andra servrar och hämta data från olika källor.
+Att skicka en HTTP-förfrågan i Haskell är när du ber ditt program att skicka en begäran till en annan server för att hämta information. Detta är vanligt bland programmerare eftersom det låter dem bygga applikationer som kan hämta och bearbeta data från olika källor.
 
-## Så här gör du
+## Så här:
 
-Det enklaste sättet att utföra en HTTP-begäran i Haskell är genom att använda ett tredjepartsbibliotek som kallas "Wreq". Detta bibliotek ger en högnivå API för att göra HTTP-begäran och tolka svaren.
-
-Först behöver du importera Wreq-modulen i ditt projekt:
+För att skicka en HTTP-förfrågan i Haskell, behöver du först importera biblioteket "Network.HTTP.Simple". Sedan kan du använda funktionerna "parseRequest" och "httpLBS" för att skapa och utföra din förfrågan. Här är ett exempel på hur du kan hämta innehållet på en webbsida:
 
 ```Haskell
-import Network.Wreq
+import Network.HTTP.Simple
+
+response <- httpLBS "http://www.example.com"
+putStrLn $ "Body of response: " ++ show (getResponseBody response)
 ```
 
-Sedan kan du använda funktionen "get" för att göra en enkel GET-begäran till en URL:
+Detta kommer att skriva ut innehållet på webbsidan i din terminal.
 
-```Haskell
-let response = get "https://example.com"
-```
+## Djupdykning:
 
-För att använda "get"-funktionen måste du också importera "Control.Lens" - en annan modul som tillhandahåller hjälpfunktioner för att manipulera datastrukturer.
+HTTP (Hypertext Transfer Protocol) är ett protokoll som möjliggör kommunikation mellan olika datorer på internet. Det har funnits sedan 1991 och är fortfarande en viktig del av hur information överförs över webben. Alternativ till Haskell för att skicka HTTP-förfrågningar inkluderar Python, Ruby och Java. Implementationen av HTTP-förfrågningar i Haskell är gjort med hjälp av monader, vilket underlättar hanteringen av asynkron kommunikation.
 
-För att hämta svaret från begäran kan du använda funktionen "^.responseBody":
+## Se även:
 
-```Haskell
-let response = get "https://example.com"
-
-print (response ^.responseBody)
-```
-
-Detta kommer att skriva ut den resulterande HTML-koden från begäran.
-
-För att utföra andra typer av HTTP-begäran, såsom POST eller PUT, kan du använda funktionen "postWith" eller "putWith" och skicka med data som en andra parameter:
-
-```Haskell
-let response = postWith options "https://example.com" "{ \"name\": \"John\", \"age\": 27 }"
-```
-
-Denna kod skulle göra en POST-begäran med den angivna datan som kropp och svara med resultatet.
-
-Det finns många andra funktioner och möjligheter med Wreq-biblioteket, så se till att utforska dokumentationen för mer information.
-
-## Deep Dive
-
-Wreq-biblioteket är en wrapper för "curl" biblioteket, vilket innebär att det använder "curl" under huven för att utföra HTTP-begäran. Detta ger stabilitet och pålitlighet till biblioteket, eftersom "curl" är mycket beprövat och används i många andra olika programmeringsspråk.
-
-En annan fördel med att använda Wreq är att den har inbyggd hantering av JSON-svar. Om svaret från din begäran är i JSON-format, kommer Wreq att tolka det och göra det möjligt för dig att komma åt data enkelt.
-
-Om du är intresserad av att lära dig mer om HTTP-begäran och kommunikation över webben, finns det många resurser tillgängliga online som kan hjälpa dig att förstå mer avancerade koncept och tekniker.
-
-## Se även
-
-- [Wreq dokumentation](https://hackage.haskell.org/package/wreq)
-- [Haskell HTTP bibliotek](https://wiki.haskell.org/HTTP)
-- [En introduktion till funktionell programmering med Haskell](https://www.codementor.io/@gabdulmajid/an-introduction-to-functional-programming-with-haskell-9241iz1ii)
+- [Haskell Dokumentation om Network.HTTP.Simple](https://hackage.haskell.org/package/http-client)
+- [Mer information om HTTP-protokollet](https://www.w3.org/Protocols/rfc2616/rfc2616.html)
+- [Alternativ för att skicka HTTP-förfrågningar i andra språk](https://www.rubyguides.com/ruby-http-request/)

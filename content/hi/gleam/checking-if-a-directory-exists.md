@@ -1,7 +1,7 @@
 ---
-title:                "डायरेक्टरी मौजूद है या नहीं जांचें"
-html_title:           "Gleam: डायरेक्टरी मौजूद है या नहीं जांचें"
-simple_title:         "डायरेक्टरी मौजूद है या नहीं जांचें"
+title:                "डायरेक्ट्री का अस्तित्व जाँचना"
+html_title:           "Gleam: डायरेक्ट्री का अस्तित्व जाँचना"
+simple_title:         "डायरेक्ट्री का अस्तित्व जाँचना"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Files and I/O"
@@ -10,42 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Kyun
+## क्या और क्यों?
+जब हम किसी प्रोग्राम में एक निर्दिष्ट डायरेक्टरी के अस्तित्व को जांचते हैं, तो हमें यह जानना होता है कि क्या यह डायरेक्टरी मौजूद है या नहीं। इसका कारण है कि प्रोग्रामर अक्सर डायरेक्टरी के जन्म, पुनर्जन्म और हटने के दौरान विभिन्न स्थितियों का पता लगाना हो सकता है।
 
-Agar aap apane computer mein kisi project ko chalane se pahle, uske liye zaroori directories maujood hain ya nahi, ye pata lagana chahate hain, to aap ```Gleam``` programming language ka upyog karke aasani se check kar sakte hain. Isse aap apne project ko kisi bhi error se bacha sakte hain aur sahi directories ko use kar sakte hain. 
-
-## Kaise Karein
-
-Aapko bas kuch simple steps follow karne hain: 
-
-1. Sabse pehle, ```Gleam``` programming language mein ```dir.exists``` function ka use karein.
-2. Is function mein, aapko directory ka naam aur path provide karna hoga.
-3. Agar directory maujood hai, to function true return karega, warna false.
-4. Is tarah, aap easily check kar sakte hain ki kya aapke computer mein desired directory maujood hai ya nahi.
-
+## कैसे करें:
 ```Gleam
-dir.exists("project/directory")
+यदि डायरेक्टरी("डायरेक्टरी का नाम") हो
+    तो छापें("डायरेक्टरी मौजूद है")
+अन्यथा
+    छापें("डायरेक्टरी मौजूद नहीं है")
 ```
 
-Output:
-```
-true
-```
-
-## Gehri Jhaank
-
-Agar aap janna chahate hain ki ```dir.exists``` function kaise kaam karta hai aur uske peeche ki logic kya hai, to aap hamare saath deep dive kar sakte hain.
-
-```Gleam``` programming language mein, directories ko handle karne ke liye ```:gleam: io``` library ka use kiya jata hai. Ismein, ```dir``` data type define hai jo ki directories ko represent karta hai. Ismein, directories ke liye methods bhi hote hain jaise ki ```exists``` jismein directory ke existence ko check kiya jata hai.
-
+उत्पादन:
 ```Gleam
-pub fn exists(dir) -> Bool
+डायरेक्टरी मौजूद है
 ```
 
-Yahan ```dir``` parameter mein directory ka path provide karna hoga. Agar directory maujood hai, to wo true return karega, warna false. Iske peeche ki logic, ```POSIX``` standards par based hai jo ki directories ka management karta hai.
+## गहरी जाँच:
+इतिहासी संदर्भ, वैकल्पिक उपाय और डायरेक्टरी के अस्तित्व की जांच के लिए विवरण विस्तार से बात किया जा सकता है। इसके अलावा, कुछ लोग दूसरे तरीकों से भी डायरेक्टरी के उपस्थिति की जाँच करते हैं। जैसे - फाइल प्रणाली द्वारा, जो वास्तव में इस काम के लिए अधिक उपयुक्त हो सकती है और यह डायरेक्टरी को अलग करने के लिए एक अलग भंडारण स्थान की आवश्यकता नहीं है। अन्य प्रोग्रामिंग भाषाओं के साथ भी इस समस्या को हल करने के लिए अलग-अलग तरीकों का उपयोग किया जा सकता है।
 
-## Dekhein Bhi
-
-- [Gleam official documentation](https://gleam.run)
-- [Gleam GitHub repository](https://github.com/gleam-lang/gleam)
-- [POSIX standards for directories](https://pubs.opengroup.org/onlinepubs/007908799/xsh/sysstat.h.html)
+## और भी देखें:
+अधिक जानकारी के लिए निम्न लिंक जाँचें:
+- ग्रामर दस्तावेज़: https://gleam.run/docs/current/grammar/#directory
+- एक्सपलोर सूचनाएं: https://gleam.run/explore/#directory-exists
+- कोड संग्रह: https://github.com/gleam-lang/gleam/blob/main/lib/core/src/result/list/directory_exists.gleam

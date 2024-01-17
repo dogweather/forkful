@@ -1,7 +1,7 @@
 ---
-title:                "文字列の結合"
-html_title:           "PHP: 文字列の結合"
-simple_title:         "文字列の結合"
+title:                "文字列の連結"
+html_title:           "PHP: 文字列の連結"
+simple_title:         "文字列の連結"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Strings"
@@ -10,51 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+## 何となんで？
+PHPのプログラマーであるあなたは、文字列を連結することはご存知でしょうか？文字列の連結とは、文字列同士を結合して一つの文字列にすることを言います。プログラマーは、主にデータや文言を整形するために文字列を連結します。
 
-文字列の連結をする理由は、複数の文字列を一つにまとめることで処理を効率的に行うことができるためです。例えば、大量のテキストを含むHTMLページを動的に生成する場合、文字列の連結を使うことで簡潔なコードで効率的にページを作成することができます。
-
-## 方法
-
-PHPでは、単純な文字列の連結は「.（ドット）」を使います。例えば、以下のようにコードを記述します。
+## 方法：
+以下のようなコードを使って、文字列を連結することができます。PHPの組み込み関数である```concat()```を使用するか、```.```を使って文字列を連結することができます。
 
 ```PHP
+// 文字列の連結
 $name = "山田";
-$age = 25;
-echo "私の名前は" . $name . "です。年齢は" . $age . "歳です。";
+$surname = "太郎";
+$name_surname = concat($name, $surname);
+echo $name_surname; // 出力結果： 山田太郎
+
+// .を使った文字列の連結
+$message = "私の名前は" . $name_surname . "です。";
+echo $message; // 出力結果： 私の名前は山田太郎です。
 ```
 
-上記のように、連結する文字列の中で変数を使うこともできます。上記のコードを実行すると、以下のような結果が得られます。
+## 深堀り：
+文字列の連結は、PHPが登場する前から存在するプログラミングの基本的な構文の一つです。PHP以外にも、PythonやJavaScriptでも同様の方法で文字列を連結することができます。また、PHPでは単純に文字列を連結するだけでなく、条件によって変数を含めることもできます。
 
-```PHP
-私の名前は山田です。年齢は25歳です。
-```
-
-また、文字列の連結は「.=（ドットイコール）」を使っても行うことができます。これは、変数に対して自身の値を連結して再代入するという意味になります。例えば、以下のようにコードを記述することもできます。
-
-```PHP
-$name = "山田";
-$name .= "太郎";
-echo $name;
-```
-
-このコードを実行すると、以下のような結果が得られます。
-
-```PHP
-山田太郎
-```
-
-## ディープダイブ
-
-上記の方法では、単純に文字列を連結することができますが、実際の処理ではさらに多くの機能が使われることもあります。例えば、sprintf関数を使うことで、文字列中のプレースホルダーに対して変数の値を埋め込むことができます。また、PHPの組み込み関数であるjoinやimplodeを使うことで、配列内の要素を指定した区切り文字で連結することもできます。
-
-## おわりに
-
-PHPの文字列の連結を使うことで、簡単に文字列を操作することができます。しかし、文字列の連結だけではなく、さまざまな方法で文字列を処理することができるので、PHPのドキュメントを参考にしてさらに深い知識を身につけることができます。
-
-## 関連リンク
-
-- PHPドキュメント：https://www.php.net/manual/ja/language.operators.string.php
-- sprintf関数：https://www.php.net/manual/ja/function.sprintf.php
-- join関数：https://www.php.net/manual/ja/function.join.php
-- implode関数：https://www.php.net/manual/ja/function.implode.php
+## 関連情報：
+- [PHPのConcat()関数のドキュメント](https://www.php.net/manual/en/function.concat.php)
+- [Pythonでの文字列の連結方法](https://www.programiz.com/python-programming/methods/string/join)
+- [JavaScriptでの文字列の連結方法](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/concat)

@@ -10,59 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hva og Hvorfor?
 
-Regulære uttrykk, eller "regular expressions", er et kraftig verktøy for å søke etter og manipulere tekst i JavaScript. Det kan spare utviklere mye tid og forenkle arbeidsflyten deres når de jobber med tekstbaserte data.
+Regulære uttrykk er et verktøy som brukes av programmører for å søke og manipulere tekst på en effektiv måte. Det gjør det enklere å finne spesifikke strenger av tegn eller ord i en større tekst. Dette er nyttig når man for eksempel ønsker å finne spesifikke mønstre i en tekst, som for eksempel e-postadresser eller telefonnumre.
 
-## Hvordan
+## Hvordan:
 
-For å bruke regulære uttrykk i JavaScript, må du først definere et mønster som du vil søke etter i en tekststreng. Dette mønsteret kan inkludere forskjellige symboler og spesielle karakterer som vil hjelpe deg å finne ønsket data. Et eksempel på et mønster kunne være `/apple/`, som vil søke etter alle instanser av ordet "apple" i en tekst. 
+ ```Javascript
+let text = "Heisenberg, Walter and Jesse have been working together to make meth.";
 
-For å bruke dette mønsteret i koden din, bruker vi `test()`-metoden eller `exec()`-metoden på et regulært uttrykkobjekt. La oss ta en titt på et eksempel:
+let pattern = /Jesse/; // regex pattern to match the string "Jesse"
 
-```Javascript
-let tekst = "Jeg elsker å spise epler";
-let mønster = /epler/;
-let resultat = mønster.test(tekst);
+console.log(pattern.test(text)); // output: true
+ ```
 
-console.log(resultat); // Output: true
-```
+I dette eksempelet bruker vi et regulært uttrykk (`/Jesse/`) for å finne om teksten inneholder strengen "Jesse". Vi bruker også metoden `.test()` for å teste om uttrykket matcher med teksten. I dette tilfellet vil uttrykket matche og derfor vil `.test()` returnere `true`.
 
-Vi kan også bruke spesielle symboler for å gjøre søket vårt mer spesifikt. For eksempel kan vi bruke "globale" (`g`) og "sensitivitetsnivå" (`i`) flagg for å søke etter flere forekomster av et mønster og ignorere store og små bokstaver. Her er et eksempel på dette:
+## Dypdykk:
 
-```Javascript
-let tekst = "Jeg elsker å spise epler og appelsiner";
-let mønster = /Epler/; // Ignorerer store og små bokstaver 
-let resultat = mønster.test(tekst);
+Regulære uttrykk har eksistert siden 1950-tallet og har blitt en viktig del av programmering siden da. Alternativene til å bruke regulære uttrykk inkluderer å bruke innebygde funksjoner som `indexOf()` eller `includes()` for å søke etter enkel strenger. Men disse kan være begrensende når man ønsker å finne mer komplekse mønstre.
 
-console.log(resultat); // Output: true
-```
+For å bruke regulære uttrykk i Javascript, må du bruke `RegExp` konstruktøren og et set av flagg for å endre oppførselen. Det finnes også flere nettsider og programmer som kan hjelpe deg med å lage og teste regulære uttrykk.
 
-Vi kan også bruke "meta-tegn" som `^` for å finne et mønster i starten av en tekst, `$` for å finne det i slutten av en tekst og `.` for å finne alle karakterer mellom to punkter. La oss se dette i aksjon:
+## Se også:
 
-```Javascript
-let tekst = "I dag skal jeg på joggetur";
-let mønster = /^jogge/; // Finner mønsteret "jogge" i starten av teksten
-let resultat = mønster.test(tekst);
-
-console.log(resultat); // Output: false
-```
-
-Vi kan også bruke regulære uttrykk til å erstatte tekst. Dette gjøres ved å bruke `replace()`-metoden på en tekststreng og spesifisere to parametere: den gamle teksten som skal erstattes og den nye teksten den skal erstattes med. Her er et eksempel:
-
-```Javascript
-let tekst = "Jeg elsker å spise epler og appelsiner";
-let nyTekst = tekst.replace(/appelsiner/g, "sitroner"); // Erstatter "appelsiner" med "sitroner"
-console.log(nyTekst); // Output: "Jeg elsker å spise epler og sitroner"
-```
-
-## Dypdykk
-
-Regulære uttrykk kan også brukes til mer avanserte manipuleringer av tekst. For eksempel kan man bruke "gruppering" (`()`) og "alternativer" (`|`) for å søke etter flere mønstre samtidig. Man kan også bruke "kvantifisører" (`?`, `*`, `+`, `{}`) for å spesifisere hvor mange ganger et mønster skal forekomme i teksten. Det finnes også en rekke forskjellige "spesialtegn" som kan brukes til å finne og erstatte tekst i spesifikke mønstre.
-
-For å lære mer om regulære uttrykk og alle mulighetene de gir, anbefaler vi å sjekke ut lenkene nedenfor.
-
-## Se også
-
-- [MDN Web Docs om regulære uttrykk i JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
-- [RegExr - et interaktivt verktøy for å teste og lære om regulære uttrykk](https://regexr.com/)
+- [MDN - Regular Expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
+- [W3Schools - Regular Expressions](https://www.w3schools.com/js/js_regexp.asp)
+- [Regex101 - Online Regex Tester and Debugger](https://regex101.com/)

@@ -1,7 +1,7 @@
 ---
-title:                "Робота з yaml."
-html_title:           "Arduino: Робота з yaml."
-simple_title:         "Робота з yaml."
+title:                "Робота з YAML"
+html_title:           "Arduino: Робота з YAML"
+simple_title:         "Робота з YAML"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Data Formats and Serialization"
@@ -10,59 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Чому
+Що та чому?
+Жоден проект не обходиться без налаштування. Але коли к-сть параметрів зростає, використання звичайної текстової конфігураційної форми стає незручним. У таких випадках корисно використовувати YAML формат, який дозволяє структурувати і організовувати дані для налаштування проекту.
 
-Якщо ви працюєте з Arduino, то вам може знадобитися робота з YAML. YAML - це людино-читаеме структуроване даних, яке може бути корисним для зберігання налаштувань та конфігурацій у вашому проекті Arduino.
+Як?
+Щоб використовувати YAML формат у своїх проектах на Arduino, треба встановити бібліотеку "YamlReader" через менеджер бібліотек Arduino IDE. Далі потрібно імпортувати бібліотеку у свій код за допомогою директиви "#include <YamlReader.h>". Після цього можна починати роботу з файлами формату YAML.
 
-## Як
-
-```Arduino
-#include <ArduinoYAML.h>
-
-// Створення змінної YAML
-YAML settings;
-
-// Додавання ключів та значень до YAML
-settings.add("led", "on");
-settings.add("temperature", 25.0);
-
-// Збереження YAML у файлі з ім'ям "settings.yaml"
-if(settings.save("settings.yaml")){
-  Serial.println("Файл settings.yaml успішно збережений.");
-}
-
-// Завантаження інформації з YAML файлу
-YAML loadedSettings;
-if(loadedSettings.load("settings.yaml")){
-  Serial.println("Файл settings.yaml успішно завантажений.");
-}
-
-// Виведення значень з YAML
-Serial.println("Стан світлодіода: " + loadedSettings.get("led").asString());
-Serial.println("Температура: " + loadedSettings.get("temperature").asFloat());
-
-// Видалення ключів та їх значень із YAML
-loadedSettings.remove("led");
-settings.remove("temperature");
+Наприклад, потрібно зчитати дані з налаштувального файлу "config.yaml". Для цього використовуйте наступний код:
 ```
-
-Вихідний файл `settings.yaml` буде містити:
-
-```yaml
-led: on
-temperature: 25.0
+#include <YamlReader.h>
+YamlReader config("config.yaml");
 ```
+Якщо необхідно отримати конкретне значення з файлу, наприклад, кількість світлодіодів для вмикання, використовуйте наступний код:
+```
+int ledCount = config["led_count"].asInt();
+```
+Вихідні дані зберігаються в форматі "ассоціативний масив", тому для отримання значень використовуються ключі.
 
-## Вдосконалення
+Занурення
+YAML вперше був представлений у 2001 році та призначений для створення файлів конфігурації. Пізніше став широко використовуватися для обміну даними між різними мовами програмування та системами. Альтернативами формату YAML є JSON та XML, але YAML вважається більш зручним для роботи з людиною завдяки простій структурі.
 
-Якщо ви хочете докладніше дослідити роботу з YAML, ви можете використовувати цей пакет у поєднанні з бібліотекою `ArduinoJSON`. Це дозволить вам зберігати більш складні дані, такі як масиви та об'єкти, у вашому файлі YAML.
+Для роботи з форматом YAML на Arduino використовується бібліотека "YamlReader", яка дозволяє зчитувати дані з файлу безпосередньо у форматі "ассоціативного масиву". Детальніше про роботу з цією бібліотекою можна дізнатися на офіційному сайті Arduino.
 
-## Детальніше
-
-Для більш детальної інформації про бібліотеку `ArduinoYAML` та її можливості, ви можете переглянути її офіційну документацію [тут](https://github.com/ivyknob/ArduinoYAML).
-
-## Дивіться також
-
-- [Бібліотека ArduinoJSON](https://arduinojson.org/)
-- [Офіційна документація Arduino](https://www.arduino.cc/reference/en/)
-- [Основи роботи з YAML](https://yaml.org/start.html)
+Дивись також
+- Офіційний сайт Arduino: https://www.arduino.cc/
+- Офіційна документація бібліотеки "YamlReader": http://www.arduino.cc/en/Reference/YamlReader
+- Інформація про формат YAML: https://yaml.org/

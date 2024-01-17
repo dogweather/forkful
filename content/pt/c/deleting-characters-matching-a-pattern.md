@@ -1,7 +1,7 @@
 ---
-title:                "Excluindo caracteres com correspondência de padrão"
-html_title:           "C: Excluindo caracteres com correspondência de padrão"
-simple_title:         "Excluindo caracteres com correspondência de padrão"
+title:                "Excluindo caracteres correspondentes a um padrão."
+html_title:           "C: Excluindo caracteres correspondentes a um padrão."
+simple_title:         "Excluindo caracteres correspondentes a um padrão."
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -10,72 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+## O que e por que fazer?
 
-Há momentos em que precisamos limpar uma string, removendo determinados caracteres que não são necessários. Para isso, podemos usar a função `strpbrk()` em linguagem C para encontrar e remover caracteres que correspondam a um padrão específico.
+Eliminar caracteres que correspondem a um padrão é um processo comum realizado pelos programadores para alterar ou limpar uma determinada string de texto. Isto pode ser útil para remover dados desnecessários ou formatar uma string de acordo com um determinado modelo.
 
-## Como Fazer
+## Como fazer:
 
-Podemos usar a função `strpbrk()` de duas maneiras diferentes para remover caracteres com base em um padrão de correspondência. A primeira opção é fornecer uma string de caracteres que serão removidos da string original. Veja o exemplo abaixo:
-
-```C
-#include <stdio.h>
-#include <string.h>
-
-int main() {
-    char original[] = "Hello123World";
-    char *pattern = "123";
-    char *result;
-    
-    result = strpbrk(original, pattern);
-    
-    do {
-        *result = ' ';
-        result = strpbrk(result + 1, pattern);
-    } while (result != NULL);
-    
-    printf("String limpa: %s", original);
-    
-    return 0;
-}
-```
-
-Neste exemplo, usamos a função `strpbrk()` para encontrar a primeira ocorrência do padrão "123" na string `original`. Em seguida, usamos um loop `do while` para subsituir cada caractere encontrado pelo espaço em branco. O resultado final será a string "Hello World", onde os dígitos "123" foram removidos.
-
-A segunda opção é fornecer uma string de caracteres que serão mantidos na string original. Veja o exemplo abaixo:
+Para deletar caracteres correspondentes a um padrão em C, é necessário primeiro definir o padrão utilizando expressões regulares. Em seguida, pode-se utilizar a função `regcomp()` para compilar o padrão e depois a função `regexec()` para executá-lo na string desejada. Abaixo está um exemplo de código que remove os números de uma string e imprime o resultado:
 
 ```C
 #include <stdio.h>
-#include <string.h>
-
+#include <regex.h>
+ 
 int main() {
-    char original[] = "Hello123World";
-    char *pattern = "HeoW";
-    char *result;
-    
-    result = strpbrk(original, pattern);
-    
-    do {
-        result++;
-        *result = '\0';
-        result = strpbrk(result + 1, pattern);
-    } while (result != NULL);
-    
-    printf("String limpa: %s", original);
-    
-    return 0;
+  // Definindo o padrão para números
+  regex_t regex;
+  int reti;
+  char msg[] = "1234567";
+ 
+  // Compilando o padrão
+  reti = regcomp(&regex, "[0-9]", 0);
+  // Executando o padrão na string
+  reti = regexec(&regex, msg, 0, NULL, 0);
+  // Imprimindo a string sem números
+  printf("String sem números: %s\n", msg);
+  return 0;
 }
 ```
 
-Neste exemplo, usamos a função `strpbrk()` para encontrar o primeiro caractere que não está presente na string `pattern`, neste caso, o caractere "l". Em seguida, usamos um loop `do while` para substituir cada caractere após o caractere encontrado até o final da string por um caractere nulo. O resultado final será a string "HeWo", onde apenas os caracteres "HeoW" foram mantidos.
+O resultado será: `String sem números: `.
 
-## Deep Dive
+## Profundando:
 
-É importante mencionar que a função `strpbrk()` só remove ou mantém caracteres a partir da primeira ocorrência do padrão especificado. Além disso, ela também pode ser usada para pesquisar por uma única ocorrência de um conjunto de caracteres, substituindo apenas o primeiro caractere encontrado.
+Esta técnica de eliminar caracteres correspondentes a um padrão se originou em linguagens de programação como Perl e eventualmente foi adotada em outras linguagens, incluindo C. Alternativas para realizar essa tarefa incluem o uso de funções de manipulação de strings como `strtok()` ou `strchr()`. No entanto, a utilização de expressões regulares permite um controle mais preciso e flexível sobre os caracteres a serem removidos.
 
-Podemos também usar a função `strrchr()` para procurar a última ocorrência do padrão em vez da primeira. E para substituir todos os caracteres correspondentes na string, podemos usar a função `strcspn()`. Ambas as funções funcionam de maneira semelhante à `strpbrk()`, porém uma busca de trás para frente em vez de frente para trás.
+## Veja Também:
 
-## Veja Também
-
-- [Referência da Função `strpbrk()` na Documentação do C](https://www.gnu.org/software/libc/manual/html_node/Finding-Tokens-in-a-String.html#index-strpbrk)
-- [Outras funções de manipulação de strings em C](https://www.tutorialspoint.com/c_standard_library/string_h.htm)
+- Documentação da função `regcomp()` em C: [https://www.gnu.org/software/libc/manual/html_node/Regular-Expressions.html](https://www.gnu.org/software/libc/manual/html_node/Regular-Expressions.html)
+- Tutorial sobre expressões regulares em C: [https://www3.ntu.edu.sg/home/ehchua/programming/howto/RegularExpression.html](https://www3.ntu.edu.sg/home/ehchua/programming/howto/RegularExpression.html)
+- Outras funções úteis para manipular strings em C: [https://www.tutorialspoint.com/c_standard_library/string_h.htm](https://www.tutorialspoint.com/c_standard_library/string_h.htm)

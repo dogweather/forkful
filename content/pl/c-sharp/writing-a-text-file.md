@@ -10,32 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i Dlaczego?
+Zapisywanie pliku tekstowego to proces, w którym programiści mogą zapisać informacje w formacie tekstowym na swoim komputerze. Jest to przydatne, ponieważ pozwala programom odczytać i wykorzystać te informacje w przyszłości. Programiści często będą zapisywać pliki tekstowe w celu przechowywania ustawień, wyników lub innych ważnych danych.
 
-Zapisywanie pliku tekstowego to podstawowa, ale niezbędna umiejętność w programowaniu. Dzięki temu możemy przechowywać i edytować dane, które są niezbędne dla naszych programów. Bez niego, nasze aplikacje nie mogłyby wykorzystywać informacji, co często prowadziłoby do niezawodności i niepełnej funkcjonalności.
-
-## Jak to zrobić
-
-Aby zapisać plik tekstowy w języku C#, musimy najpierw wykorzystać przestrzeń nazw System.IO, która umożliwia nam dostęp do klas i metod związanych z operacjami wejścia/wyjścia. Następnie, możemy użyć klasy StreamWriter, która pozwala nam pisać do pliku tekstowego. Przykład kodu poniżej pokazuje, jak zapisać trzy linie tekstu do pliku o nazwie "tekstowy.txt".
+## Jak to zrobić:
+Aby zapisać plik tekstowy w C#, należy najpierw zadeklarować zmienną typu `StreamWriter`. Następnie należy użyć metody `WriteLine()` lub `Write()`, aby zapisać tekst w pliku. Na przykład:
 
 ```C#
+using System;
 using System.IO;
 
-StreamWriter sw = new StreamWriter("tekstowy.txt");
-sw.WriteLine("Pierwsza linia tekstu.");
-sw.WriteLine("Druga linia tekstu.");
-sw.WriteLine("Trzecia linia tekstu.");
-sw.Close();
+StreamWriter plikTekstowy = new StreamWriter("plik.txt");
+plikTekstowy.WriteLine("To jest przykładowy tekst do zapisania w pliku.");
+plikTekstowy.Close();
 ```
 
-Po uruchomieniu tego kodu, zostanie utworzony plik tekstowy o nazwie "tekstowy.txt", a w nim będą zawarte trzy linie tekstu, oddzielone nowymi liniami.
+Ten kod spowoduje utworzenie pliku tekstowego o nazwie "plik.txt" i zapisze w nim linię tekstu.
 
-## Głębsze wędrówki
+## Deep Dive:
+Zapisywanie plików tekstowych w programowaniu jest już powszechną praktyką od wielu lat. Przed pojawieniem się graficznych interfejsów użytkownika, programiści często korzystali z plików tekstowych, aby przechowywać dane w formie ustrukturyzowanej.
 
-Zapisywanie pliku tekstowego może obejmować także bardziej wymagające czynności, takie jak odczytywanie danych z zewnętrznych źródeł lub formatowanie tekstu w celu uzyskania czytelniejszego wyglądu pliku. W takich przypadkach, możemy wykorzystać inne klasy i metody dostępne w przestrzeni nazw System.IO, aby manipulować danymi i tworzyć bardziej zaawansowane pliki tekstowe.
+Alternatywnym sposobem na przechowywanie danych jest korzystanie z baz danych, jednak pliki tekstowe są wciąż często wykorzystywane w niewielkich projektach lub do przechowywania prostych informacji.
 
-## Zobacz także
+Gdy w pliku tekstowym zapisywane są dane, są one zapisywane w postaci ciągu znaków. W przypadku bardziej skomplikowanych danych, należy skorzystać z formatów danych, takich jak XML lub JSON.
 
-- [Jak odczytać plik tekstowy w C#](https://docs.microsoft.com/pl-pl/dotnet/csharp/programming-guide/file-system/how-to-read-from-a-text-file)
-- [Podstawy operacji wejścia/wyjścia w C#](https://docs.microsoft.com/pl-pl/dotnet/standard/io/)
-- [Inne sposoby na zapisywanie danych w C#](https://www.c-sharpcorner.com/UploadFile/mgold/ReadWriteDataTxtFile12062005003829AM/ReadWriteDataTxtFile.aspx)
+## Zobacz także:
+Zapisywanie plików tekstowych jest tylko jednym z elementów pracy z plikami w C#. Warto również zwrócić uwagę na odczytywanie plików tekstowych oraz modyfikowanie istniejących plików. Więcej informacji na ten temat można znaleźć w dokumentacji Microsoft na temat klas `StreamWriter` i `StreamReader`.

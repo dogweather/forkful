@@ -1,7 +1,7 @@
 ---
-title:                "날짜를 문자열로 변환하기"
-html_title:           "Elm: 날짜를 문자열로 변환하기"
-simple_title:         "날짜를 문자열로 변환하기"
+title:                "날짜를 문자열로 변환하는 방법"
+html_title:           "Elm: 날짜를 문자열로 변환하는 방법"
+simple_title:         "날짜를 문자열로 변환하는 방법"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Dates and Times"
@@ -10,28 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜 필요한가
+## 무엇 & 왜?
 
-날짜를 문자열로 변환하는 작업은 웹 개발에서 매우 중요합니다. 사용자가 입력한 날짜를 적절한 형식으로 화면에 표시하거나 날짜를 가공하여 데이터베이스에 저장할 때 사용됩니다. 이를테면, 예약 시스템에서 날짜를 필터링하기 위해 날짜를 문자열로 변환하는 것이 필요합니다.
+날짜를 문자열로 변환하는 것은 날짜를 컴퓨터가 이해할 수 있는 형식으로 변경하는 것을 말합니다. 프로그래머들은 이 작업을 하는 이유는 컴퓨터에서 날짜를 다룰 때 편리하게 하기 위해서입니다.
 
-## 사용 방법
+## 어떻게:
 
-Elm에서 날짜를 문자열로 변환하는 방법은 다음과 같이 간단합니다.
+```Elm 
+import Time
+import Date
 
-```Elm
-Date.format "%Y-%m-%d" (Date.fromTime 1625673600)
+Date.toString (Date.fromMillis 1583358000000)
+
+--> "2020-03-05"
 ```
 
-위의 코드는 "2021-07-08"라는 문자열을 출력합니다. 사용하는 형식 문자열의 포맷에 따라 출력되는 문자열의 형태가 달라질 수 있습니다.
+위의 코드는 날짜를 문자열로 변환하는 가장 간단한 방법입니다. ```Date.toString``` 함수를 사용하여 날짜를 문자열로 변환할 수 있습니다.
 
-## 깊이 파고들기
+```Elm 
+Time.millisToPosix (Time.millisSinceEpoch 1583358000000)
 
-사실 날짜를 문자열로 변환하는 작업은 매우 복잡합니다. 날짜는 우리가 생각하는 것보다 훨씬 더 다양한 형태로 표현될 수 있습니다. 또한, 언어와 시간대에 따라 다르게 처리되어야 할 때도 있습니다.
+--> { millis = 1583358000000, posix = 2020-03-05T00:00:00Z }
+```
 
-하지만 Elm에서는 Date 모듈을 통해 날짜를 쉽게 다룰 수 있게 해줍니다. Date 모듈에는 다양한 함수들이 있어서 우리가 원하는 형태로 날짜를 가공할 수 있습니다. 그리고 이를 문자열로 변환하는 과정도 간단하게 수행할 수 있습니다.
+또 다른 방법은 ```Time.millisSinceEpoch``` 함수를 사용하여 날짜와 시간을 밀리초로 변환하고, ```Time.millisToPosix``` 함수를 사용하여 날짜를 문자열로 변환하는 것입니다. 이 방법은 밀리초를 다룰 수 있는 더 많은 유연성을 제공합니다.
 
-## 참고하기
+## 깊게 파보기:
 
-- [Elm Date 모듈 문서](https://package.elm-lang.org/packages/elm/time/latest/Date)
-- [Date 관련 포스팅](https://medium.com/elm-shorts/the-elm-date-experiment-a9441ba2f04c)
-- [날짜를 문자열로 변환하는 데모 프로젝트](https://ellie-app.com/cKknSkBxKpHa1)
+이전에는 날짜를 문자열로 변환하기 위해 많은 노력이 필요했습니다. 그러나 Elm에서는 내장 함수를 사용하여 간단하게 이 작업을 수행할 수 있습니다. 또한 이전에는 서로 다른 시간대를 다루기가 어려웠지만, 우리는 이제 나라별 시간대를 자동으로 고려하는 내장 함수를 제공합니다.
+
+## 참고:
+
+- Elm 공식 문서(https://elm-lang.org/docs)
+- 시간 라이브러리 관련 문서(https://package.elm-lang.org/packages/elm/time/latest/)

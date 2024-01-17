@@ -1,7 +1,7 @@
 ---
-title:                "स्ट्रिंग को बड़ा लिखना"
-html_title:           "Haskell: स्ट्रिंग को बड़ा लिखना"
-simple_title:         "स्ट्रिंग को बड़ा लिखना"
+title:                "स्ट्रिंग को कैपिटलाइज करना"
+html_title:           "Haskell: स्ट्रिंग को कैपिटलाइज करना"
+simple_title:         "स्ट्रिंग को कैपिटलाइज करना"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -10,39 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Kyon
+# क्या और क्यों?
 
-Imagine ki aapke paas ek string hai, jisme kuch words hain jinke pehle letter small aur baaki letters capital hain. Agar aap chahte hain ki saare words capital letters se shuru ho, to aapko string ko capitalize karna hoga. Is article mein hum jaanege ki kaise aisa kiya ja sakta hai Haskell mein.
+कैपिटलाइजिंग एक स्ट्रिंग का अर्थ है कि स्ट्रिंग के प्रथम अक्षर को बड़ा अक्षर में बदल दिया जाए। हार्डवेयर निर्माताओं को आमतौर पर इसे अपने प्रोग्रामिंग भाषाओं में दर्शाने के लिए यूज़ किया जाता है क्योंकि इससे एक स्ट्रिंग को पढ़ना और समझना आसान हो जाता है।
 
-## Kaise Karein
-
-Capitalizing ek string ko karne ke liye, aapko `toUpper` function ka use karna hoga. Is function ko `Data.Char` module mein define kiya gaya hai. Neeche diye gaye code block mein ek example diya gaya hai jisme hum ek string ko capitalize kar rahe hain aur output bhi show ho raha hai:
+# कैसे करें?
 
 ```Haskell
-import Data.Char
-
+import Data.Char (toUpper)
 capitalize :: String -> String
-capitalize str = (toUpper (head str)) : (tail str)
-
-main = do
-    putStrLn "Enter a string: "
-    str <- getLine
-    putStrLn $ capitalize str
+capitalize (x:xs) = toUpper x : xs
 ```
 
-Output:
+यहाँ, हम डेटा चार्मिंग फंक्शन ```toUpper``` का उपयोग करके स्ट्रिंग के प्रथम अक्षर को बड़ा अक्षर में बदलते हैं। फांक्शन ```capitalize``` को एक स्ट्रिंग देता है और वह स्ट्रिंग के प्रथम अक्षर को बड़ा अक्षर में बदलकर फिर से वही स्ट्रिंग वापस करता है।
 
+```Haskell
+*Main> capitalize "haskell"
+"Haskell"
 ```
-Enter a string: hello world
-Hello world
-```
 
-## Deep Dive
+आप देख सकते हैं कि स्ट्रिंग "haskell" का प्रथम अक्षर "H" हो गया है।
 
-`toUpper` function ko use karne se pehle, hum `Data.Char` module ko import kar lete hain. Iske baad hum `capitalize` function ko define karte hain jisme hum string ko split karke capital letters se replace karte hain. Is function ke bina bhi hum directly `toUpper` function ka use karke string ko capitalize kar sakte hain. Lekin agar hum function ko define karte hain, to hum is function ko baar-baar use kar sakte hain.
+# गहराई में जाएं
 
-## Dekhein Bhi
+** इतिहास: ** हम सबने कभी न कभी अपने दैनिक जीवन में ठीक उसी प्रकार के काम के लिए स्ट्रिंग कैपिटालाइजिंग का उपयोग किया होगा। जैसे कि अक्षरों के साठवें से ज्वः सब केस तक को अतिरिक्त प्रकाशित करने के लिए।
 
-- [Haskel mein functions ka use kaise karein](https://www.haskell.org/tutorial/functions.html)
-- [Functional programming ka concept](https://www.geeksforgeeks.org/functional-programming-paradigm/)
-- [Haskell ki official documentation](https://www.haskell.org/documentation/)
+** विकल्प: ** हार्डवेयर निर्माताओं को अपने प्रोग्रामिंग भाषाओं में फीचर के रूप में इसे शामिल करने की जगह, वे सामान्यतया अलग फंक्शन के माध्यम से इसके लिए पूर्वनिर्धारित अनुचित स्थान का उपयोग करते हैं।
+
+** अंतर्निहित निवेश के बारे में: ** एक और अपोष्ट्रॉफ़ हाल ही में प्रकाशित हुए एक मामले में, आलेख का प्रहारण एक हार्डवेयर निर्माता को पूर्वावलोकन एबीआर (एसबीआर) स्विच की जटिलता की फुसफुसाहट को हल करने के लिए संभालना था। उन्होंने अराजपत्र अनुचित सान्द्रता में अपने प्रोग्रामिंग भाषाओं में उसी प्रकार एक स्पेशियल फाँक्शन कहा बनाने के बजाय एक मुहावरे का मन्थन किया।
+
+# देखें भी
+
+* [* How To Capitalize a String in Haskell *](https://www.haskell.org/) डेटा चाकूत्र रूप में स्ट्रिंग चार्डात्वर अपने प्रोग्रामिंग जरूरतों के लिए फीचरप्रद अप्लिकेशन को धारण करता है। यह पर आप more काफी विस्तार से ह

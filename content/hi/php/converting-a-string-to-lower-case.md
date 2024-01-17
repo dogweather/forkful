@@ -1,7 +1,7 @@
 ---
-title:                "अलगाव को निचले अनुमति में परिवर्तित करना"
-html_title:           "PHP: अलगाव को निचले अनुमति में परिवर्तित करना"
-simple_title:         "अलगाव को निचले अनुमति में परिवर्तित करना"
+title:                "स्ट्रिंग को निचले केस में रूपांतरित करना"
+html_title:           "PHP: स्ट्रिंग को निचले केस में रूपांतरित करना"
+simple_title:         "स्ट्रिंग को निचले केस में रूपांतरित करना"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Strings"
@@ -10,33 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Kyun
+## क्या और क्यों?
 
-Kisi bhi programming language mein, string manipulation ek bahut important aspect hai. String ka manipulation karne ke liye, hume kai alag alag functions aur methods ka use karna padhta hai. Ek common scenario hai jahan hume ek string ko lower case mein convert karna hai. Iska karan ho sakta hai ke hume input string mein se case sensitivity ko hatakar, usse compare karna ho ya phir humare code mein lower case strings ka use hona ho. Is article mein hum dekhenge PHP mein string ko lower case mein convert kaise karte hai aur iska kya faayda ho sakta hai.
+कोई भी दो से तीन सत्रों में PHP प्रोग्रामिंग के मामले में वो अभी हम देखेंगे जो हमारा स्ट्रिंग को कम कर देता है और हमारे स्ट्रिंग में से सभी अक्षरों को छोटे अक्षर में बदल देता है। क्योंकि कभी कभी हमें कुछ विशिष्ट परिस्थितियों में स्ट्रिंग के मामले को सभी अक्षरों को छोटे अक्षरों में लाने की संभावना होती है, जो हमारी कोड और जांच को सहज बनाता है।
 
-## Kaise Kare
+## कैसे:
 
-String ko lower case mein convert karne ka sabse easy aur direct tareeka hai PHP mein `strtolower()` function ka use karna. Is function ke andar hume bas woh string deni hoti hai jise hum lower case mein convert karna chahte hai. Iske baad function hume ek naya string return karta hai jise lower case mein convert kiya jaata hai.
-
-```PHP
-$input = "HELLO WORLD";
-$output = strtolower($input);
-echo $output;
+```
+$string = "PHP IS COOL";
+echo strtolower($string);
 ```
 
-Output: hello world
+उत्पादन:
+```
+php is cool
+```
 
-Is coding example mein humne `strtolower()` function ka use kiya hai ek input string `HELLO WORLD` ko lower case mein convert karne ke liye. Isse hume `hello world` output mila hai.
+## गहराई में:
 
-## Deep Dive
+स्ट्रिंग को छोटे अक्षर में परिवर्तित करना एक पुराना और साधारण परंपरा है जो प्रोग्रामिंग में उपयोग किया जाता है। इसके अलावा, इसे कुछ अलगरूपियों में भी कर सकते हैं, जैसे कि स्ट्रिंग को अपरकेस में परिवर्तित करना। फिर भी, स्ट्रिंग को छोटे अक्षरों में परिवर्तित करने के लिए PHP में strtolower() फंक्शन सबसे सरल और अधिक लोकप्रिय है।
 
-PHP mein string ko lower case mein convert karne ke liye hume `mb_strtolower()` function ka bhi use kar sakte hai. Yeh function UTF-8 characters ko bhi sahi tarah se handle karta hai. Is function ke use ka syntax `mb_strtolower(string $string [, string $encoding = null])` hai.
+इसके अलावा, किसी भी अन्य प्रोग्रामिंग भाषा में भी स्ट्रिंग को छोटे अक्षरों में परिवर्तित करने के लिए कुछ न कुछ रूप उपलब्ध होते हैं। जैसे कि जावा में toLowerCase() और सी प्रोग्रामिंग में tolower() एक प्रकार का समान काम करते हैं।
 
-Kuch aur methods mein string ko lower case mein convert karne ke liye `strtoupper()` aur `mb_convert_case()` ka use kiya jaata hai. Inme se `strtoupper()` function upper case mein convert karta hai ek string ko aur `mb_convert_case()` function upper ya lower case mein convert karne ke liye `MB_CASE_UPPER` aur `MB_CASE_LOWER` constant ka use karta hai.
+अंत में, इस फंक्शन को PHP में कैसे ठीक तरीके से इम्प्लीमेंट किया गया है, यह आपकी आवश्यकताओं और पारिस्थितिकी के अनुसार भिन्न हो सकता है। फिर भी, PHP में स्ट्रिंग को छोटे अक्षर में परिवर्तन करने के लिए strtolower() फंक्शन आपको सर्वोत्तम समाधान प्रदान करता है।
 
-## See Also
+## इससे जुड़े हुए स्रोत
 
-- [strtolower() function documentation](https://www.php.net/manual/en/function.strtolower.php)
-- [mb_strtolower() function documentation](https://www.php.net/manual/en/function.mb-strtolower.php)
-- [strtoupper() function documentation](https://www.php.net/manual/en/function.strtoupper.php)
-- [mb_convert_case() function documentation](https://www.php.net/manual/en/function.mb-convert-case.php)
+- PHP डॉक्यूमेंटेशन: https://www.php.net/manual/en/function.strtolower.php
+- लिंक्डइनलर्न: https://www.linkedin.com/learning/php-securing-php-web-applications/string-functions-strtolower-and-strtoupper

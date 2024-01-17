@@ -10,58 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was ist YAML & Warum benutzen es Programmierer?
 
-Wenn du mit Konfigurationsdateien arbeitest, musst du möglicherweise auch mit YAML umgehen. YAML ist eine einfache und benutzerfreundliche Syntax, um Daten zu strukturieren und zu speichern. Mit Elixir kannst du problemlos mit YAML-Dateien arbeiten und sie in deiner Anwendung verwenden.
+YAML ist eine plattformübergreifende Sprache zur Darstellung von Daten in einem menschenlesbaren Format. Programmierer nutzen YAML, um Konfigurationsdateien und andere strukturierte Daten zu erstellen, die leicht zu lesen und zu bearbeiten sind.
 
-## Wie man mit YAML in Elixir arbeitet
+## Wie man es benutzt:
 
-Um mit YAML in Elixir zu arbeiten, musst du zuerst das Paket "YAML" installieren. Öffne dazu deine Elixir-Projektkonfiguration und füge das folgende Paket hinzu:
-
-```Elixir
-{:yaml, "~> 0.0.2"}
-```
-
-Dann führe `mix deps.get` aus, um die Abhängigkeit zu installieren. Nun kannst du das `YAML`-Modul in deinem Code importieren:
+Benutze die `Elixir YAML` Bibliothek, um Daten in YAML-Format zu konvertieren und umgekehrt.
 
 ```Elixir
-import YAML
+# YAML zu Elixir
+YAML.decode("""
+  - name: Max
+    age: 25
+  - name: Anna
+    age: 30
+""")
+# => [%{"name" => "Max", "age" => 25}, %{"name" => "Anna", "age" => 30}]
+
+# Elixir zu YAML
+YAML.encode([
+  %{"name" => "Max", "age" => 25},
+  %{"name" => "Anna", "age" => 30}
+])
+# => - name: Max
+#    age: 25
+#  - name: Anna
+#    age: 30
 ```
 
-Um eine YAML-Datei in Elixir zu lesen, verwende die `YAML.load_file/1` Funktion und gib den Pfad zur Datei an:
+## Tiefere Einblicke:
 
-```Elixir
-config = YAML.load_file("config.yml")
-```
+YAML wurde ursprünglich als Alternative zu XML entwickelt und zeichnet sich durch eine einfachere und intuitivere Syntax aus. Es wird von vielen Programmiersprachen, einschließlich Elixir, unterstützt und eignet sich ideal für das Erstellen von Konfigurationsdateien, Datenübertragung und Speichern von strukturierten Daten.
 
-Du kannst nun auf die Werte in der YAML-Datei zugreifen, indem du den entsprechenden Schlüssel verwendest:
+Einige Programmierer bevorzugen möglicherweise JSON oder TOML gegenüber YAML. JSON hat eine sehr ähnliche Syntax zu YAML, aber es werden unterschiedliche Datentypen unterstützt. TOML ist eine noch jüngere Alternative, die sich durch eine strengere Syntax auszeichnet.
 
-```Elixir
-config[:database][:username]
-```
+Die Implementation von YAML in Elixir basiert auf der `libyaml` Bibliothek. Diese Bibliothek ermöglicht es Elixir, Daten in YAML-Format zu lesen und zu schreiben.
 
-Um eine YAML-Datei zu schreiben, verwende die `YAML.dump/1` Funktion und gib ein beliebiges Elixir-Datenformat an:
+## Siehe auch:
 
-```Elixir
-data = %{name: "Max Mustermann", age: 25}
-YAML.dump(data, "profile.yml")
-```
-
-Das Ergebnis wird eine YAML-Datei sein, die wie folgt aussieht:
-
-```YAML
-name: Max Mustermann
-age: 25
-```
-
-## Tiefer Einblick
-
-YAML steht für "YAML Ain't Markup Language" und wurde entwickelt, um eine einfache und benutzerfreundliche Möglichkeit zu bieten, Daten in einer menschenlesbaren Struktur zu speichern. In Elixir wird das `YAML`-Modul verwendet, das auf YamlElixir basiert, einer leistungsstarken YAML-Bibliothek.
-
-Mit dem `YAML`-Modul kannst du auch benutzerdefinierte Typen definieren und verwenden. Dies ermöglicht es dir, komplexere Datenstrukturen in einer YAML-Datei zu speichern, die dann direkt in Elixir eingelesen werden können. Du kannst mehr über die Verwendung von benutzerdefinierten Typen in der offiziellen Elixir-Dokumentation erfahren.
-
-## Siehe auch
-
-- Offizielle Elixir-Dokumentation: https://hexdocs.pm/elixir/YAML.html
-- YamlElixir-Bibliothek: https://github.com/KamilLelonek/yamler
-- YAML-Spezifikation: https://yaml.org/spec/1.2/spec.html
+* [`YAML` Elixir Bibliothek Dokumentation](https://github.com/jeremyong/yaml_elixir)
+* [YAML Spezifikation](https://yaml.org/spec/)
+* [Offizielle YAML Website](https://yaml.org/)

@@ -1,7 +1,7 @@
 ---
-title:                "Puolan mukaiset merkkien poistaminen"
-html_title:           "C++: Puolan mukaiset merkkien poistaminen"
-simple_title:         "Puolan mukaiset merkkien poistaminen"
+title:                "Pohjautuvien merkkien poisto"
+html_title:           "C++: Pohjautuvien merkkien poisto"
+simple_title:         "Pohjautuvien merkkien poisto"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -10,43 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä & Miksi?
+Mikä on merkkijonon osien poistaminen ja miksi ohjelmoijat tekevät sitä? Merkkijonon osien poistaminen on prosessi, jossa ohjelma etsii ja poistaa tietyn kaavan mukaiset merkit merkkijonosta. Tätä voidaan käyttää esimerkiksi turhien välilyöntien, numero- tai erikoismerkkien poistamiseen merkkijonosta. Ohjelmoijat tekevät tätä parantaakseen ohjelmien suorituskykyä ja helpottaakseen käsiteltävien tietojen käsittelyä.
 
-Saatat joskus joutua poistamaan merkkejä tietyllä kaavalla ohjelmaasi. Ehkä haluat poistaa kaikki välilyönnit tai erikoismerkit käyttäjän syötteestä. Tässä artikkelissa näytämme, miten voit tehdä tämän C++:lla.
+## Miten tehdään:
+```
+#include <iostream>
+#include <string>
 
-## Miten
+using namespace std;
 
-```C++
-// Alustetaan merkkijono, josta haluamme poistaa merkkejä
-std::string teksti = "Tämä on esimerkki!";
-// Alustetaan uusi merkkijono, johon tallennamme muokatun version
-std::string muokattu_teksti = "";
-
-// Käydään läpi jokainen merkki alkuperäisessä merkkijonossa
-for (int i = 0; i < teksti.length(); i++) {
-  // Tallennetaan jokainen merkki muuttujaan "kirjain"
-  char kirjain = teksti[i];
-  // Tarkistetaan, onko "kirjain" välilyönti
-  if (kirjain != ' ') {
-    // Jos ei ole, lisätään se uuteen merkkijonoon
-    muokattu_teksti += kirjain;
-  }
+int main() {
+    //Alustetaan merkkijono
+    string teksti = " Tämä on esimerkkiteksti! ";
+    //Poistetaan välilyönnit merkkijonon alusta ja lopusta
+    teksti.erase(0, teksti.find_first_not_of(' '));
+    teksti.erase(teksti.find_last_not_of(' ') + 1);
+    //Tulostetaan lopputulos
+    cout << teksti << "\n";
+    return 0;
 }
-
-std::cout << muokattu_teksti << std::endl;
+```
+**Tulostus:**
+```
+Tämä on esimerkkiteksti!
 ```
 
-**Tulostus:**
+## Syvempi sukellus:
+Merkkijonon osien poistamisella on pitkä historia ohjelmoinnissa. Aikaisemmin tämä tehtiin usein manuaalisesti tai käyttämällä monimutkaisia koodinpätkiä. Nykyään se on kuitenkin yksinkertaistunut ja tehokkaampaa käyttämällä valmiita funktioita, kuten ```erase()```. Toinen vaihtoehto on käyttää säännöllisiä lausekkeita (regular expressions), mutta tämä voi olla monimutkaisempaa ja hitaampaa toteuttaa.
 
-`Tämäonesimerkki!`
+Merkkijonon osien poistamisen toteutus perustuu usein käsittelemään merkkijonoa merkkien ja indeksien avulla. Tästä syystä on tärkeää huolehtia siitä, että indeksit jaettaessa tai lisättäessä ovat oikein, jotta merkkijono pysyy eheänä.
 
-Tässä esimerkissä käytämme for-silmukkaa ja if-lausetta tarkistaaksemme kutakin merkkiä ja lisäämme ne uuteen merkkijonoon vain, jos ne eivät ole välilyöntejä. Voit muuttaa if-ehtoa vastaavasti, jos haluat poistaa muita merkkejä.
-
-## Syventävä tietoa
-
-Mikäli haluat poistaa merkkejä tietyn kaavan perusteella, voit käyttää myös säännöllisiä lausekkeita (regex). C++:ssa voit käyttää std::regex -kirjastoa tähän tarkoitukseen. Toinen tapa on käyttää kirjaston Boost.Regex tarjoamia työkaluja, jotka ovat usein tehokkaampia ja monipuolisempia kuin std::regex. Muista kuitenkin, että säännöllisten lausekkeiden käyttö vaatii hieman enemmän ohjelmointitaitoja.
-
-## Katso myös
-
-- [std::regex - C++ Reference](https://en.cppreference.com/w/cpp/regex)
-- [Boost.Regex - Official Documentation](https://www.boost.org/doc/libs/1_75_0/libs/regex/doc/html/index.html)
+## Katso myös:
+- [C++ String Manipulation](https://www.geeksforgeeks.org/string-manipulation-in-c/#erase)
+- [Regular Expressions in C++](https://www.geeksforgeeks.org/regular-expressions-in-c-cset-1-introduction/)

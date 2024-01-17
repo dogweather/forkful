@@ -1,7 +1,7 @@
 ---
-title:                "「二つの日付を比較する」"
-html_title:           "Go: 「二つの日付を比較する」"
-simple_title:         "「二つの日付を比較する」"
+title:                "2つの日付の比較"
+html_title:           "Go: 2つの日付の比較"
+simple_title:         "2つの日付の比較"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Dates and Times"
@@ -10,62 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## 何をするのか？
+日付の比較とは、二つの日付を比べて、どちらが過去の日付か、もしくは同じ日付かを判断することです。プログラマーが日付を比較する理由は、例えば顧客情報を管理するシステムで顧客の誕生日をチェックするためや、期限が過ぎたかどうかを確認するためなど、日付の情報を処理する際に必要不可欠なものだからです。
 
-あなたは日付の比較をする必要がありますか？それは、よくあることです。例えば、特定の日付に関連するデータを検索するために、データベース内の日付を比較する必要があるかもしれません。Go言語を使用することで、効率的かつ正確な日付の比較が簡単に行えます。
+## 方法： 
+```Go 
+package main 
 
-## How To
+import ( 
+    "fmt" 
+    "time" 
+) 
 
-日付を比較するには、まず`time`パッケージをインポートします。
+func main() { 
+    // 二つの日付を定義 
+    date1 := time.Date(2020, time.September, 21, 0, 0, 0, 0, time.UTC) 
+    date2 := time.Date(2020, time.September, 22, 0, 0, 0, 0, time.UTC) 
 
-```Go
-import "time"
+    // 日付を比較 
+    if date1.Before(date2) { 
+        fmt.Println("date1はdate2よりも前の日付です") 
+    } else if date1.After(date2) { 
+        fmt.Println("date1はdate2よりも後の日付です") 
+    } else { 
+        fmt.Println("date1とdate2は同じ日付です") 
+    } 
+} 
 ```
 
-次に、比較したい2つの日付を`time`型に変換します。例えば、以下のように現在の日付と昨日の日付を定義します。
-
-```Go
-now := time.Now()
-yesterday := time.Date(2021, time.January, 1, 0, 0, 0, 0, time.Local)
+``` 
+date1はdate2よりも前の日付です 
 ```
 
-これで、2つの日付を比較するための準備が整いました。では、実際に比較してみましょう。
+## 詳しい情報：
+日付の比較は、グレゴリオ暦の普及により一般的になりました。グレゴリオ暦は、1582年に制定されたもので、それまで使われていたユリウス暦よりも計算が正確です。日付の比較には、他にもUnix時間やExcelシリアル値などの方法がありますが、Goではtimeパッケージを使うことで簡単に日付の比較ができます。
 
-```Go
-if now.After(yesterday) {
-  fmt.Println("今日より前の日付です")
-} else if now.Before(yesterday) {
-  fmt.Println("今日より後の日付です")
-} else {
-  fmt.Println("今日と同じ日付です")
-}
-```
-
-このように、`After`や`Before`といったメソッドを使用することで、2つの日付を比較することができます。
-
-## Deep Dive
-
-Go言語では、`time`パッケージには数多くの関数やメソッドがあり、詳しく調べてみることでさらに複雑な日付の比較が可能になります。例えば、`Equal`メソッドを使用することで、時刻の情報を無視して2つの日付を比較することもできます。
-
-```Go
-if time.Equal(now, yesterday) {
-  fmt.Println("同じ日付です")
-}
-```
-
-また、日付のフォーマットを指定して比較することもできます。`Format`メソッドを使用することで、日付を特定の形式で表現し、比較することができます。
-
-```Go
-formattedNow := now.Format("2006-01-02")
-formattedYesterday := yesterday.Format("2006-01-02")
-if formattedNow == formattedYesterday {
-  fmt.Println("同じ日付です")
-}
-```
-
-Go言語の`time`パッケージには、さまざまな機能がありますので、ぜひ試してみてください。
-
-## See Also
-
-- Go言語の公式ドキュメント：https://golang.org/pkg/time/
-- 日付の比較について：https://www.calhoun.io/how-to-compare-go-time-objects/
+## 関連情報：
+- [Go Documentation: Time](https://golang.org/pkg/time/)
+- [Wikipedia: Gregorian calendar](https://en.wikipedia.org/wiki/Gregorian_calendar)
+- [The Julian and Gregorian Calendars](http://scienceworld.wolfram.com/astronomy/JulianandGregorianCalendars.html)

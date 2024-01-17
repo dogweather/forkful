@@ -1,7 +1,7 @@
 ---
-title:                "एक पाठ फ़ाइल पढ़ना"
-html_title:           "Kotlin: एक पाठ फ़ाइल पढ़ना"
-simple_title:         "एक पाठ फ़ाइल पढ़ना"
+title:                "टेक्स्ट फाइल को पढ़ना"
+html_title:           "Kotlin: टेक्स्ट फाइल को पढ़ना"
+simple_title:         "टेक्स्ट फाइल को पढ़ना"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Files and I/O"
@@ -10,29 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Kyu
+## क्या और क्यों?
 
-Kisi bhi programmer ke liye text files ek bahut important aur pratishthit source of information hai. Text files me hum sirf text likh sakte hai, jiske wajah se wo bahut asaani se readable aur accessible ho jaate hai. Isliye, agar aapko kisi bhi programming language ko sikhna hai ya fir kisi project me work karna hai, toh text files ko padhna aur unme se data extract karke use karna bahut hi zaruri hai.
+टेक्स्ट फाइल को पढ़ना एक आम सी गतिविधि है, यह तो आप जानते ही हैं। परन्तु क्या आपको पता है कि यह किसी भी भाषा में लिखी गई गणित और उपयुक्त परिस्थितियों को समझने में मदद करता है। प्रोग्रामर्स इस क्रिया को कोडिंग प्रोजेक्ट्स में अक्सर उपयोग करते हैं, जिससे कि वे बहुत से डेटा को सही ढंग से एकजुट कर सके। यह उन्हें एक अधिक सुसंगत तरीके से अपने कोड में डेटा को जोड़ने की अनुमति देता है, जो कि कोड को अधिक अनुकूल बनाता है।
 
-## Kaise Kare
+## कैसे करें?
 
-```Kotlin
-val file = File("path/to/file.txt")
-file.forEachLine { println(it) }
+कोटलिन में किसी टेक्स्ट फाइल को पढ़ने का सबसे आसान तरीका उपयोगकर्ता के अपने सिस्टम में स्थित उस फाइल के स्थान का प्रयोग करके होता है। उस स्थान का नाम File क्लास के एक आवेदन में पहले निर्धारित करें और फिरचमें उसको पुरालेखित करके URL को प्राप्त करें। कुछ दिनों को उनुक्त URL को उपयोग करते हुए FileIO.readText() या यूजर के सिस्टम में जिस तरह से प्रदान किया गया है वह किसी के द्वारा पाई हुई आवेदन पर उपलब्ध कराता है। मिसाल के लिए:
+
+Kotlin
 ```
-Is coding example me humne ek text file ko read karke uske har line ko print kiya hai. `File()` function ko use karke hum file ka path specify kar sakte hai. Fir `forEachLine` function me hum `println` use karke file ke har line ko print kar sakte hai.
+val file = File("example.txt")
+val text = file.readText()
+```
 
-Is tarah se, aap Kotlin ka `File` class aur `forEachLine` function ka use karke text files ko bahut asani se read aur manipulate kar sakte hai.
+जब आप उपरोक्त समर्थन से प्राप्त होते हैं तब भी आपको  कुछ समतुल्य बहुत से जोड़नी प्रत्येक String भागवान द्वारा जगह स्थान जीत होते हैं।
 
-## Deep Dive
+Kotlin
+```
+val file2 = File("other-example.txt")
+val lines: List<String> = file2.readLines()
+for (line in lines) {
+    println(line)
+}
+```
 
-Text files me data line by line format me store hota hai. Isliye, hum `forEachLine` function ka use karte hai taki hum file ke har line ko separately access kar sake. Agar aap `readText()` function ka use karte hai, toh pura file ek string ke roop me return ho jayega.
+## गहराई में जाएं
 
-Hum `FileReader` class bhi use kar sakte hai text files ke read karne ke liye. `FileReader` class ka ek constructor hai jisme hum file ka path specify karke `readText()` function ka use kar sakte hai.
+यह कार्य की बहुत सारी विभिन्न विकल्प हैं। कुछ लोग URL बनाए जाते हैं और इसके लिए सामूहिक - उदःोग एक कहत है कि उस सामूहिक पीडीफाइल्सी को एक सिन्टैक्स मॉडसाग नाम से संगठन से काम में कोशिश किया होता है ताकि रिसरच और विदानों के लिए इसका डेवूरोयमेट कर सके।
 
-## Dekhiye Bhi
+Original Kotlin
+```
+val url = URL("https://example.com/example.txt")
+val lines: List<String> = url.readLines()
+```
 
-Agar aapko aur jaankari chahiye text files ke read karne ke baare me, toh neeche di gayi links par visit kare:
-- https://kotlinlang.org/docs/reference/input-output.html
-- https://www.tutorialspoint.com/kotlin/kotlin_read_write_files.htm
-- https://www.baeldung.com/kotlin-read-file
+अपने प्रोजेक्टिंग पशुनं में आप गणक उपाधिकाएं प्रत्येक लाइनीं कल्पना भाग्यम कभी भी फॉरका। वार्ताक में संभासन नाम डामसिगास सुत के अगले प्रक्रिया से संभापनल मौखोदा संक्रमण 164.png
+
+## भीरोए देखिये
+
+- [File क्लास ट्यूटोरियल](https://www.tutorialspoint.com/kotlin

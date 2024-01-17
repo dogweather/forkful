@@ -1,7 +1,7 @@
 ---
-title:                "Lese kommandolinjeargumenter"
-html_title:           "Ruby: Lese kommandolinjeargumenter"
-simple_title:         "Lese kommandolinjeargumenter"
+title:                "Lesing av kommandolinje-argumenter"
+html_title:           "Ruby: Lesing av kommandolinje-argumenter"
+simple_title:         "Lesing av kommandolinje-argumenter"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Files and I/O"
@@ -10,49 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hva & Hvorfor?
 
-Å lese kommandolinjeargumenter er en viktig del av Ruby-programmering, spesielt når du ønsker å lage interaktive programmer som krever innspill fra brukeren. Det kan også være nyttig for å gi spesifikk funksjonalitet basert på argumentene som er passert inn i programmet.
+Å lese kommandolinje-argumenter er en måte for programmerere å få tilgang til brukerinndata gjennom terminalen. Dette er nyttig for å lage interaktive programmer og gjøre dem mer tilpasningsdyktige for brukeren.
 
-## Hvordan
+## Hvordan:
 
-Det er enkelt å lese kommandolinjeargumenter i Ruby ved å bruke standardbiblioteket `ARGV`. Her er et eksempel på hvordan du kan ta inn to tall som argumenter og utføre en enkel matematisk operasjon:
+Å lese kommandolinje-argumenter er enkelt i Ruby. Alt du trenger å gjøre er å bruke ARGV-variabelen, som lagrer alle argumentene som er gitt når programmet blir kjørt. Her er et eksempel på hvordan du kan skrive ut alle argumentene til terminalen:
+
+```Ruby 
+puts ARGV
+```
+Når du kjører programmet ditt, legger du til argumentene etter filnavnet. For eksempel, hvis filen din heter "program.rb", kan du kjøre den slik:
 
 ```Ruby
-number1 = ARGV[0].to_i
-number2 = ARGV[1].to_i
-
-puts "Summen av #{number1} og #{number2} er #{number1 + number2}"
+ruby program.rb arg1 arg2
 ```
-
-Når du kjører dette programmet med følgende kommandolinje: `ruby program.rb 3 5`, vil du få følgende output:
-
-```
-Summen av 3 og 5 er 8
-```
-
-Som du ser, bruker vi `ARGV` for å få tak i argumentene som er passert inn ved bruk av indeksering. Vi konverterer også argumentene til heltall ved hjelp av `.to_i`-metoden for å kunne utføre matematiske operasjoner.
-
-## Dypdykk
-
-Ved å dykke dypere inn i `ARGV` kan du også legge merke til at den tar inn alle argumentene som en array, uansett hvor mange det er. Det betyr at du kan ta inn en variabel mengde av argumenter og behandle dem som du ønsker. Her er et eksempel på hvordan du kan skrive ut alle argumentene som blir passert inn som strenger:
+Dette vil skrive ut følgende:
 
 ```Ruby
-ARGV.each do |argument|
-  puts "Argument: #{argument}"
-end
+["arg1", "arg2"]
 ```
 
-Når du kjører dette programmet med følgende kommandolinje: `ruby program.rb hello world`, vil du få følgende output:
+Du kan også få tilgang til hvert enkelt argument ved å bruke indekser. ARGV[0] vil være den første parameteren, ARGV[1] vil være den andre og så videre.
 
-```
-Argument: hello
-Argument: world
-```
+## Dypdykk:
 
-Dette gir deg muligheten til å lage programmer som kan tilpasses basert på brukerens input.
+Kommandolinje-argumenter har eksistert siden de tidlige dagene av programmering, og er fortsatt et viktig konsept i dag. En annen måte å lese brukerinndata på er gjennom standard inndata streams, men kommandolinje-argumenter er ofte foretrukket fordi de er enklere å lese og behandle.
 
-## Se også
+Det er flere alternativer til å bruke ARGV i Ruby. En måte er å bruke det mer spesialiserte optparse-biblioteket, som lar deg definere hvilke argumenter som skal være tilgjengelige og få tilgang til dem på en mer strukturert måte.
 
-- [Ruby Standardbiblioteket](https://ruby-doc.org/stdlib-2.7.0/libdoc/)
-- [Kommandolinje argumenter i Ruby](https://www.rubyguides.com/2019/05/ruby-command-line-arguments/)
+På et mer teknisk nivå, når du kjører et Ruby-program med kommandolinje-argumenter, blir alle argumentene satt inn i et array som ARGV-variabelen refererer til. Dette arrayet er tilgjengelig for å bli behandlet av programmet ditt.
+
+## Se også:
+
+- [Ruby ARGV documentation](https://ruby-doc.org/core-2.7.0/ARGV.html)
+- [Optparse documentation](https://ruby-doc.org/stdlib-2.7.0/libdoc/optparse/rdoc/OptionParser.html)

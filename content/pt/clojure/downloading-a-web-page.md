@@ -10,47 +10,22 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+## O que é & Por que?
+Baixar uma página da web é o ato de transferir o conteúdo de uma página da web armazenada em um servidor para o seu dispositivo local. Programadores geralmente fazem isso para obter informações ou dados de uma página da web, que podem ser usados em outros programas ou projetos.
 
-Baixar páginas da web pode ser uma tarefa útil e interessante para muitas pessoas. Pode ser necessário para fazer cópias de segurança de sites importantes, ou pode ser uma forma de extrair dados de uma página para uso posterior. Independentemente do motivo, é importante saber como realizar essa tarefa em Clojure.
-
-## Como fazer
-
+## Como fazer:
 ```Clojure
-(require '[clj-http.client :as client])
-(require '[clojure.java.io :as io])
-
-; Definindo a URL da página que queremos baixar
-(def url "https://www.example.com")
-
-; Usando a biblioteca clj-http para realizar a requisição HTTP
-(def response (client/get url))
-
-; Escrevendo o conteúdo da página em um arquivo local
-(io/copy (io/input-stream (:body response)) (io/file "pagina.html"))
-
-; Imprimindo o status da resposta HTTP
-(println (:status response))
-
-; Imprimindo o conteúdo da página
-(println (:body response))
+(require '[clj-http.client :as client]) ;; importar a biblioteca HTTP
+(def response (client/get "https://exemplo.com")) ;; atribuir a resposta do servidor à variável "response"
+(:body response) ;; imprimir o conteúdo da página
 ```
+    <h1>Bem-vindo ao Exemplo.com!</h1>
+    <p>Aqui você pode encontrar informações e recursos úteis.</p>
 
-Saída do console ao executar o código acima:
+## Profundando:
+Baixar páginas da web é uma função essencial para muitos aplicativos e ferramentas em diferentes áreas, desde web scraping para coleta de dados até automação de tarefas em desenvolvimento. Além da biblioteca clj-http, existem outras alternativas, como o Java interop ou bibliotecas mais específicas, como o webclient do Clojure. Para baixar páginas com conteúdos dinâmicos, pode ser necessário usar ferramentas adicionais, como o Selenium ou PhantomJS.
 
-```
-200
-<!doctype html>
-...
-
-Com o código acima, realizamos uma requisição HTTP para a URL especificada e salvamos o conteúdo da página em um arquivo local. Também imprimimos o código de status e o conteúdo da página na saída do console.
-
-## Mergulho Profundo
-
-Existem diferentes abordagens para baixar páginas da web em Clojure, como usar outras bibliotecas além da clj-http, ou até mesmo escrever sua própria função para fazer a solicitação HTTP. É importante também considerar a segurança ao realizar essas requisições, evitando ataques de força bruta ou sobrecarga de servidores.
-
-## Veja também
-
-- [Documentação oficial da biblioteca clj-http](https://clj-http.github.io/)
-- [Tutorial de Clojure na página do Loop Infinito](https://www.linux.ime.usp.br/~lucasmmg/clojure(pt_BR).pdf)
-- [Artigo sobre segurança em requisições HTTP com Clojure](https://www.infoq.com/br/news/2017/05/seguranca-clj-http/)
+## Veja também:
+- [Documentação oficial do clj-http](https://github.com/dakrone/clj-http)
+- [Java interop no Clojure](https://clojure.org/reference/java_interop)
+- [Webclient no Clojure](https://github.com/hozza/clj-webclient)

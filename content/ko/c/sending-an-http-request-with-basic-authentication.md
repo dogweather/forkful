@@ -10,68 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+## 무엇 & 왜?
+HTTP 요청에 기본 인증을 함께 보내는 것은 무엇일까요? 이것은 서버에서 인증 정보를 검증하고 사용자가 인증되었는지 확인하는 방법입니다. 프로그래머들이 이것을 하는 이유는 전송하는 데이터의 보안을 보장하고 인증이 필요한 서버에 접근하기 위해서입니다.
 
-HTTP 요청을 기본 인증으로 보내는 과정에 참여하는 이유는 여러 가지가 있습니다. 예를 들어, 사용자가 웹사이트에 로그인한 다음 해당 사용자의 데이터에 접근하려면, 서버는 사용자의 인증 정보를 확인할 필요가 있습니다. 이때 기본 인증은 가장 간단하고 효과적인 방법입니다.
-
-## 어떻게
-
-보안 강화를 위해 기본 인증을 사용하는 방법은 다음과 같습니다.
-```
+## 어떻게:
+```C
+#include <stdio.h>
 #include <curl/curl.h>
 
-// 기본 인증 헤더 구성
-struct curl_slist *headers = NULL;
-headers = curl_slist_append(headers, "Authorization: Basic <username:password>");
-
-// cURL 초기화
-CURL *curl_handle;
-curl_handle = curl_easy_init();
-
-if (curl_handle) {
-    // 요청 URL 설정
-    curl_easy_setopt(curl_handle, CURLOPT_URL, "https://example.com");
-
-    // 헤더 추가
-    curl_easy_setopt(curl_handle, CURLOPT_HTTPHEADER, headers);
-
-    // 기본 인증 설정
-    curl_easy_setopt(curl_handle, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
-
-    // 요청 보내기
-    curl_easy_perform(curl_handle);
-
-    // cURL 해제
-    curl_easy_cleanup(curl_handle);
+int main(void)
+{
+  CURL *curl;
+  CURLcode res;
+  
+  curl = curl_easy_init();
+  if(curl) {
+    curl_easy_setopt(curl, CURLOPT_URL, "https://www.example.com");
+    curl_easy_setopt(curl, CURLOPT_USERPWD, "username:password");
+    res = curl_easy_perform(curl);
+    
+    if(res != CURLE_OK)
+      fprintf(stderr, "curl_easy_perform() failed: %s\n", curl_easy_strerror(res));
+    
+    curl_easy_cleanup(curl);
+  }  
+  return 0;
 }
-
-// 헤더 메모리 해제
-curl_slist_free_all(headers);
 ```
+위의 예시 코드는 libcurl 라이브러리를 사용하여 기본 인증을 추가한 HTTP 요청을 보내는 방법입니다. 다른 옵션들을 추가하면 요청을 더욱 세부적으로 컨트롤할 수 있습니다.
 
-위 코드를 실행하면 서버로부터 다음과 같은 응답을 받게 될 것입니다.
-```
-HTTP/1.1 200 OK
-Date: Tue, 14 Sep 2021 00:00:00 GMT
-Server: Apache
-Content-Length: 234
+## 딥 다이브:
+HTTP 기본 인증은 보안 및 인증이 필요한 서버에 접속하기 위해 사용되는 가장 오래된 형식의 사용자 인증 기술 중 하나입니다. 그러나 인터넷 트래픽이 증가함에 따라 보안 수준이 낮아졌고 다른 인증 방식으로 대체되는 경우가 많아졌습니다. libcurl은 다양한 인증 방법을 지원하기 때문에 다른 인증 방식을 사용하고 싶다면 다른 옵션을 추가하여 요청을 보낼 수 있습니다. 
 
-<html>
-    <head>
-        <title>Example Website</title>
-    </head>
-    <body>
-        <h1>Welcome!</h1>
-        <p>You have successfully logged in.</p>
-    </body>
-</html>
-```
-
-## 더 깊게
-
-HTTP 기본 인증은 base64로 인코딩된 사용자 이름과 비밀번호를 인증 요청 헤더에 포함하여 요청을 보냅니다. 이때 base64는 암호화가 아니므로 보안 수준이 낮습니다. 따라서 보안이 더 필요한 경우 토큰 기반 인증을 고려해야 합니다.
-
-## 참고문서
-
-- [cURL 공식 문서](https://curl.se/libcurl/c/curl_easy_setopt.html)
-- [HTTP 기본 인증에 대한 RFC](https://datatracker.ietf.org/doc/html/rfc7617)
+## 관련 자료:
+- [libcurl 공식 문서](https://curl.haxx.se/libcurl/c/curl_easy_setopt.html)
+- [HTTP 인증 방식 비교](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)

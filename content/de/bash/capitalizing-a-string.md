@@ -10,32 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum?
+Was ist das und warum?
 
-Es gibt mehrere Gründe, warum man in der Bash-Programmierung eine Zeichenkette groß schreiben würde. Es kann zum Beispiel Teil einer Textmanipulation sein oder um die Lesbarkeit des Codes zu verbessern.
+Capitalizing ist ein Konzept in der Programmierung, das es ermöglicht, bestimmte Zeichen in einem String in Großbuchstaben zu konvertieren. Programmierer nutzen dies, um Texte einheitlicher aussehen zu lassen oder um bestimmte Funktionen zu implementieren.
 
-## Anleitung
+## Wie geht das?
 
-Um eine Zeichenkette in der Bash groß zu schreiben, können Sie den Befehl "tr" verwenden. Hier ist ein Beispiel, um den Satz "Hallo, Welt!" in Großbuchstaben zu schreiben:
-
-```Bash 
-echo "Hallo, Welt!" | tr '[:lower:]' '[:upper:]'
-# Ausgabe: HALLO, WELT!
-```
-
-Sie können auch die Funktion "toupper" verwenden, die in der Bash 4.0 und höher verfügbar ist. Hier ist ein Beispiel:
+Um einen String in Bash zu capitalizen, verwenden wir das Kommando ```echo```, gefolgt von dem String, den wir capitalizen möchten, gefolgt von dem Pipe-Operator ```|``` und dann dem Kommando ```tr```, gefolgt von den Optionen ```[:lower:]``` und ```[:upper:]```, gefolgt von Schrägstrichen ```/``` und abschließend dem Befehl ```sed```. Beispiel:
 
 ```Bash
-text="Hallo, Welt!"
-echo "${text^^}"
-# Ausgabe: HALLO, WELT!
+echo "hallo welt" | tr '[:lower:]' '[:upper:]' | sed 's/\([A-Z]\)/\L\1/g'
 ```
+Dieses Beispiel würde den String "hallo welt" in "HALLO WELT" umwandeln und ausgeben.
 
-## Tiefere Einblicke
+## Tiefer tauchen
 
-In der Bash gibt es keine eigene Funktion, um eine Zeichenkette in Großbuchstaben zu schreiben. Stattdessen können Sie die genannten Methoden verwenden, um eine Zeichenkette aus Kleinbuchstaben in Großbuchstaben umzuwandeln. Die Verwendung von "tr" ist jedoch nicht nur auf Groß- und Kleinbuchstaben beschränkt, sondern kann auch für andere Zeichen und Zeichensätze verwendet werden.
+Die Idee des Capitalizing kommt aus der Schreibmaschinentechnologie, bei der es keine Möglichkeit gab, zwischen Groß- und Kleinbuchstaben zu wechseln. Alternativen zum Capitalizing können die Verwendung von regulären Ausdrücken oder von speziellen Tools wie ```awk``` oder ```sed``` sein.
+
+Es gibt auch verschiedene Implementierungen von Capitalizing, wie zum Beispiel die Funktion ```ucfirst```, die in der Programmiersprache PHP verfügbar ist und nur den ersten Buchstaben einer Zeichenkette in Großbuchstaben konvertiert.
 
 ## Siehe auch
 
-- Die offizielle Dokumentation zu [tr](https://www.gnu.org/software/coreutils/manual/html_node/tr-invocation.html#tr-invocation)
-- Ein praktisches Beispiel für die Verwendung von "tr" in der Bash [hier](https://www.baeldung.com/linux/convert-uppercase-lowercase#tr-command)
+- [Offizielle Bash Dokumentation](https://www.gnu.org/software/bash/manual/)
+- [Ein Beitrag über das Capitalizing in Bash](https://www.lifewire.com/capitalize-words-string-bash-4618163)
+- [Beispiele für die Verwendung von tr und sed](https://www.tecmint.com/13-tr-command-examples-in-linux/)

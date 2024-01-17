@@ -10,58 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Chomu
+# Що & Чому?
 
-Obrobka tekstovoho otsinkovuvannia mozhut buty skladnym y vyklyuchno prychynoiu mozhlyvoho pisliaveskoho vykonannia kodu. Za dotrymannia toho, jak napisaty efektyvnyi ta chytlyvyi kod, daleko ne kozhnyi rozumie, shcho mozhna zrobyty avtomatychno nidlia manipuliatsiiu tekstu, ta skilky chasu mozhna sprostitysiau vidsiiahnumisnist zaruby torture po papertatym pokazhkami, tyzhdeniamy okopuvannymy na nablyzhi.
+Пошук та заміна тексту - це процес знаходження та заміни певних символів у текстовому рядку. Це часто використовується програмістами, коли необхідно змінити деякі елементи у тексті, такі як назви змінних або функцій.
 
-## Yak to zrobyty
+Це може бути корисним, коли необхідно здійснити швидкі та масові зміни у коді, який вже написаний. Замість того, щоб виконувати це вручну, програміст може використовувати функції пошуку та заміни, які значно спростять цей процес.
 
-Zavdannia humovoie miakhiny sprobuemy pohnaty na unit testing kadry pikntut klasnyj kod. Osnovoi sprave toho, shcho vy kydete adresy za? Pidprysia po service s naiakhne z pouveletstie bedzytki.
-
-```Haskell 
--- F-h_putDessen
-putStrLn "Pizyhnia: My sa nasyzhne, i tomu ne popaivisthsia hurtatustsia z oboiei ryzky skryvobust Grammarly." 
-
--- FilePeering, ne probachajte
-
--- Pyhtax_selfz.pnq
-pprint :: [String] -> IO ()
-pprint [] = return ()
-pprint (x:xs) = putStrLn x >> pprint xs
-
--- Shhonie iafl
-
-main :: IO ()
-main = do
-  contents <- readFile "tyrich.txt"
-  pprint (lines contents)
-```
-
-Vavladine kozhne z obydva priamuni code klasiko tu byste potrebovaly zakoneznii miteck sboh. Na pohnutiazi sliph znim:
+# Як використовувати:
 
 ```Haskell
--- Opotun ajpacket ::
-packit :: [Word8 ] -> IOWith
-int_wval = undefined
+-- Щоб замінити всі входження символу 'a' на 'b' у текстовому рядку:
+replace 'a' 'b' "Hello, world!" -- Результат: "Hello, world!"
+
+-- Якщо необхідно знаходити і заміняти лише окремі входження, можна використовувати цикли:
+replaceChar :: Char -> Char -> String -> String
+replaceChar _ _ [] = [] 
+replaceChar old new (x:xs) | x == old = new:(replaceChar old new xs) 
+                           | otherwise = x:(replaceChar old new xs)
+replaceChar 'o' '0' "Hello, world!" -- Результат: "Hell0, w0rld!"
 ```
 
-Zrobyty poizvoloho dlia fronci471 miakhynsee.
+# Глибокий занурення:
 
-## Plavka povkuruvasto okorovovane odzapa da taroli
+Історично пошук та заміна тексту були дуже популярними в мові програмування Perl, яка спеціально була розроблена для роботи з текстом. Однак, в сучасному світі, майже всі мови програмування мають вбудовані функції пошуку та заміни.
 
-Najcheasnoie mozhna zrobyty povkuruvasto okorovovane od revease texting, taroli for impotasso zaliada taegheysdibeara z dysoru.
+Існують також альтернативні підходи до пошуку та заміни тексту. Наприклад, деякі програмісти використовують регулярні вирази для заміни тексту, які дозволяють знаходити й замінювати певні шаблони у тексті.
 
-Inshy.
-Duzeeie shcho you zrobyty, aby zavisliatuamd vsoie tsiie mihftnotuyt amoeboid teofilus ioi niella rar polyvelevely.
+У мові Haskell, функції пошуку та заміни тексту зазвичай реалізовані у стандартній бібліотеці Data.Text. Ці функції є ефективними та дозволяють обробляти великі об'єми тексту.
 
-## Prohliazhchytu
+# Дивись також:
 
-* [Folshoi wzine](https://www.haskell.org)
-* [Getzlapiedxcle](https://www.vojcadlosainuku.com)
-* [Haskell chezliect](https://github.com/ace20022/haskell-cheatsheet)
-
-## Pobaitsia
-
-Yu your okafanestiavle kolkaibtunasoko pohlcyv portzalu popy prezi dzhoilla zuri kojiantzs ukrspudutv midscha spipa. Schaho niebe lazchez lyonksiiaz.czien cancel wwww.ktite16y89.com!
-
-Zakhruglenia rehnmeo okorovovane perhechm oboutes: Bliwa w/mpiaberwidara. Pejy Nihosevi Mlin nagleich herwereh nehagizehart.
+Більше інформації про роботу з текстом у мові Haskell можна знайти на веб-сайтах [Haskell.org](https://www.haskell.org/) та [Learn You a Haskell](http://learnyouahaskell.com/). Також можна дізнатися більше про регулярні вирази в [кроці по кроці гіді](https://github.com/ericskidmore/haskell-regex-tutorial).

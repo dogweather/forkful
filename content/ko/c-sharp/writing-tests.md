@@ -1,7 +1,7 @@
 ---
-title:                "테스트 작성하기."
-html_title:           "C#: 테스트 작성하기."
-simple_title:         "테스트 작성하기."
+title:                "테스트 작성하기"
+html_title:           "C#: 테스트 작성하기"
+simple_title:         "테스트 작성하기"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Testing and Debugging"
@@ -10,90 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+## 무엇과 왜?
 
-테스트의 중요성은 소프트웨어의 안정성과 신뢰성을 보장하기 위해서입니다. 테스트를 통해 버그를 발견하고 수정할 수 있으며, 더 나은 코드를 작성할 수 있습니다.
+테스트 작성이란 무엇인지, 그리고 프로그래머들이 이를 왜 하는지에 대해 간단히 설명하겠습니다. 테스트 작성은 코드를 작동하기 전에 실제로 코드를 시험해보는 것을 말합니다. 이로써 버그를 찾고 수정하며 더 품질 좋은 코드를 만들 수 있습니다.
 
-## 어떻게
+## 하는 법:
 
-첫번째 예제에서는 간단한 연산을 테스트하는 코드를 보여 드리겠습니다.
-
-```C#
-using System;
-
-class Program
-{
-    static void Main()
-    {
-        // 덧셈 계산을 테스트합니다.
-        int result = Add(2, 3);
-
-        // 올바른 결과값인지 확인합니다.
-        if (result == 5)
-        {
-            Console.WriteLine("테스트가 성공적으로 통과했습니다.");
-        }
-        else
-        {
-            Console.WriteLine("테스트가 실패했습니다.");
-        }
-    }
-
-    // 덧셈 함수
-    public int Add(int num1, int num2)
-    {
-        return num1 + num2;
-    }
-}
-```
-
-출력 결과는 다음과 같습니다.
-
-```
-테스트가 성공적으로 통과했습니다.
-```
-
-두번째 예제에서는 배열을 정렬하는 함수를 테스트해보겠습니다.
+아래에 코드 블록 안에 코딩 예제와 샘플 출력을 함께 제시하겠습니다.
 
 ```C#
-using System;
-using System.Linq;
-
-class Program
+public class Calculator 
 {
-    static void Main()
-    {
-        // 정렬할 배열
-        int[] nums = { 5, 2, 7, 1 };
-
-        // 배열을 정렬합니다.
-        Array.Sort(nums);
-
-        // 올바른 결과값인지 확인합니다.
-        if (nums.SequenceEqual(new[] { 1, 2, 5, 7 }))
-        {
-            Console.WriteLine("테스트가 성공적으로 통과했습니다.");
-        }
-        else
-        {
-            Console.WriteLine("테스트가 실패했습니다.");
-        }
-    }
+  public int Add(int num1, int num2) 
+  {
+    return num1 + num2;
+  }
 }
 ```
+```C#
+// Calculator 클래스의 인스턴스 생성
+Calculator calc = new Calculator();
 
-출력 결과는 다음과 같습니다.
-
+// Add 메서드 사용
+int result = calc.Add(5, 7);
+Console.WriteLine(result); // 출력: 12
 ```
-테스트가 성공적으로 통과했습니다.
-```
 
-## 딥 다이브
+## 깊이 들어가기:
 
-테스트를 작성하기 전에 반드시 테스트의 목적을 명확하게 정의해야 합니다. 또한 여러 가지 테스트 도구를 활용하여 코드가 잘 동작하는지 확인하고 불필요한 버그를 사전에 방지할 수 있습니다.
+테스트 작성에 대한 깊은 정보를 다루겠습니다. 테스트 작성은 오랜 역사를 가지고 있으며, 이를 위해 다양한 방법이 제시되어 왔습니다. 하지만 현재는 자동화된 테스트 프레임워크를 사용하여 코드의 품질을 검증하는 것이 일반적입니다.
 
-## 참고자료
+## 참고 자료:
 
-- [Microsoft 공식 C# 문서](https://docs.microsoft.com/ko-kr/dotnet/csharp/)
-- [C# 테스트 작성 가이드](https://docs.microsoft.com/ko-kr/dotnet/core/testing/)
-- [xUnit 닷넷 프로젝트](https://xunit.net/)
+- [테스트 작성에 대한 참고 자료](https://en.wikipedia.org/wiki/Test-driven_development)
+- [C#과 테스트 작성](https://docs.microsoft.com/en-us/dotnet/core/testing)
+- [테스트 작성에 대한 더 깊은 이해](https://medium.com/@everis_tech/things-you-should-know-about-test-driven-development-tdd-53a2fcca4266)

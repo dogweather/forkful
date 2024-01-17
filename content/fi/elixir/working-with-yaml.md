@@ -1,7 +1,7 @@
 ---
-title:                "Yaml-työskentely"
-html_title:           "Elixir: Yaml-työskentely"
-simple_title:         "Yaml-työskentely"
+title:                "Työskentely yaml:n kanssa"
+html_title:           "Elixir: Työskentely yaml:n kanssa"
+simple_title:         "Työskentely yaml:n kanssa"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Data Formats and Serialization"
@@ -10,39 +10,62 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+Uusi vuosi, uudet Elixir-taidot – tämä artikkeli auttaa sinut alkuun YAML:n kanssa. Tämä ahkeraan käytetty tiedostomuoto on suosittu ohjelmoijilla, ja tutustumalla siihen voit monipuolistaa ohjelmointikokemustasi.
 
-Miksi YAMLin käyttö on hyödyllistä Elixir-ohjelmoinnissa? YAML (Yet Another Markup Language) on helppolukuinen ja ihmisystävällinen tietojen esitysmuoto, joten se on hyödyllinen tiedostojen tallentamiseen sekä tietojen siirtoon eri ohjelmistojen välillä.
+## Mitä & Miksi?
 
-## Miten
+YAML on tapa tallentaa dataa luettavassa muodossa. Se auttaa ohjelmoijia jakamaan ja tallentamaan tietoja helposti. YAML on myös helpompi lukea ja ymmärtää kuin perinteinen JSON-tiedosto.
 
-YAMLin käyttö Elixirissä on yksinkertaista ja helppoa. Ensimmäiseksi meidän täytyy hankkia Elixirin YAML-kirjasto, joka sisältää tarvittavat työkalut YAML-tiedostojen lukemiseen ja kirjoittamiseen.
+## Kuinka:
 
-```Elixir
-# Asennus
-mix add yaml
+Elixirissä YAML:n käyttö on helppoa ja yksinkertaista. Voit ladata YAML-paketin koodiisi käyttämällä ```mix.exs```-tiedostoa seuraavasti:
 
-# Tiedoston lukeminen
-yaml = File.read!("tiedosto.yml")
-data = Yaml.decode(yaml)
-
-# Tiedoston kirjoittaminen
-data = %{"nimi" => "Matti", "ika" => 25, "harrastukset" => ["luonnossa liikkuminen", "kirjallisuus"]}
-yaml = Yaml.encode(data)
-File.write!("henkilotiedot.yml", yaml)
+```
+defp deps do
+  [{:yaml, "~> 0.2.0"}]
+end
 ```
 
-Yllä olevassa esimerkissä määritellään ensin muuttuja `yaml` lukemaan YAML-tiedosto. Sitten käytetään `Yaml.decode`-funktiota muuntamaan YAML-muotoiset tiedot Elixirin avoimeen tietorakenteeseen. Tämän jälkeen muuttuja `data` sisältää tietojen kokonaisuuden, jota voidaan käsitellä Elixirissä normaalisti.
+Tämän jälkeen voit käyttää YAML-pakettia koodissasi seuraavasti:
 
-Seuraavassa osassa esimerkissä luodaan uusi YAML-tiedosto käyttäen `Yaml.encode`-funktiota ja tallennetaan se muuttujaan `yaml`. Tämän jälkeen `File.write!`-funktiolla kirjoitetaan tiedosto tallentaen `yaml`-muuttujan sisältö tiedostoon.
+```
+YAML.decode("""
+- name: John
+  age: 27
+- name: Sarah
+  age: 33
+""")
+```
 
-## Syvällinen sukellus
+Tämä koodi palauttaa listan karttoja, joissa on "name" ja "age" -avaimet. Tuloste näyttää tältä:
 
-YAML-tiedostot koostuvat avain-arvo -pareista tai listoista, joita voidaan sisällyttää toisiinsa. Elixirin YAML-kirjasto käyttää Elixirin tietorakenteita vastaavasti. Esimerkiksi avain-arvo -parit muodostetaan `%{}` -muodossa, ja listat `[]` -muodossa.
+```
+[%{"age" => 27, "name" => "John"}, %{"age" => 33, "name" => "Sarah"}]
+```
 
-YAML tukee myös monia muita ominaisuuksia, kuten ankkureita ja viittauksia, jotka mahdollistavat tietojen uudelleenkäytön ja lyhentävät tiedostojen kokoa. Elixirin YAML-kirjasto tukee myös näitä ominaisuuksia.
+Käyttämällä YAML.encode-funktiota voit muuttaa tietorakenteen YAML-muotoon:
 
-## Katso myös
+```
+YAML.encode(%{name: "Elixir", version: "1.10"})
+```
 
-- [Elixir - Dokumentaatio](https://hexdocs.pm/yaml/)
-- [YAML - Virallinen verkkosivusto](https://yaml.org/)
+Tämä koodi palauttaa seuraavan YAML-muotoisen tulosteen:
+
+```
+"name": "Elixir"
+"version": "1.10"
+```
+
+## Syväsukellus:
+
+YAML kehitettiin ensimmäisen kerran vuonna 2001, ja sen tarkoituksena oli korvata monimutkaisten XSLT- tiedostojen käyttö XML:n kanssa. Nykyään YAML on yleisempi kuin XML monissa sovelluksissa, koska sen avulla tiedostojen lukeminen ja kirjoittaminen on nopeampaa ja helpompaa.
+
+On myös muita vaihtoehtoja YAML:lle, kuten CSV- ja INI-tiedostomuodot. CSV on hyvä vaihtoehto jos haluat tallentaa yksinkertaisia listoja, mutta jos haluat tallentaa monimutkaisempia dataa, or INI-tiedostot eivät ole paras valinta.
+
+YAML-paketti Elixirissä perustuu libyaml-kirjastoon, ja se käyttää C-koodia parantaakseen suorituskykyä. Tästä syystä YAML on yksi nopeimmista tiedostomuodoista Elixirissä.
+
+## Lue lisää:
+
+Jos haluat oppia lisää YAML:stä, voit tutustua paketin viralliseen dokumentaatioon: https://hexdocs.pm/yaml/readme.html. Voit myös tarkastella libyaml-kirjaston dokumentaatiota täällä: http://pyyaml.org/wiki/LibYAML.
+
+Onnea matkaan YAML:n kanssa – toivon, että tästä artikkelista on sinulle hyötyä Elixir-taitojesi kehittämisessäsi!

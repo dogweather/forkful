@@ -1,7 +1,7 @@
 ---
-title:                "Das aktuelle Datum abrufen."
-html_title:           "Java: Das aktuelle Datum abrufen."
-simple_title:         "Das aktuelle Datum abrufen."
+title:                "Das aktuelle Datum abrufen"
+html_title:           "Java: Das aktuelle Datum abrufen"
+simple_title:         "Das aktuelle Datum abrufen"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Dates and Times"
@@ -10,67 +10,67 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was & Warum?
+Das Erhalten des aktuellen Datums ist eine häufige Aufgabe in der Programmierung. Es ermöglicht die Verarbeitung von Daten in Echtzeit und erleichtert die Organisation von Dateien und Ordnern.
 
-Das aktuelle Datum zu erhalten, ist in der Java-Programmierung eine häufige Aufgabe. Es ist wichtig, um bestimmte Funktionen in Anwendungen zu implementieren, die sich auf das Datum beziehen. Zum Beispiel können wir damit Geburtstage berechnen, Fristen einhalten und vieles mehr.
-
-## Wie man das aktuelle Datum in Java erhält
-
-Um das aktuelle Datum in Java zu erhalten, benötigen wir die Klasse "LocalDate" aus dem Paket "java.time". Mit dieser Klasse können wir eine Instanz des aktuellen Datums erstellen und es dann verwenden.
+## Wie geht's?
+Um das aktuelle Datum in Java zu erhalten, verwendet man die ```LocalDate``` Klasse aus dem ```java.time``` Paket. Hier ist ein Beispielcode:
 
 ```Java
-import java.time.LocalDate;  // Import der benötigten Klasse
+import java.time.LocalDate;
 
-public class CurrentDate {
+public class CurrentDateExample {
+
     public static void main(String[] args) {
-        LocalDate currentDate = LocalDate.now(); // Erstellung der aktuellen Datum-Instanz
-        System.out.println("Das aktuelle Datum ist: " + currentDate); // Ausgabe des aktuellen Datums
+        
+        // Erstellt ein LocalDate Objekt mit dem heutigen Datum
+        LocalDate today = LocalDate.now();
+        
+        // Gibt das aktuelle Datum aus
+        System.out.println("Heute ist der " + today);
     }
 }
 ```
 
-Die Ausgabe wird wie folgt sein:
+Die Ausgabe dieses Codes wäre:
 
-```Java
-Das aktuelle Datum ist: 2021-06-27
+```shell
+Heute ist der 2021-01-01
 ```
 
-## Tiefere Einblicke
-
-Es gibt viele Methoden, die wir mit der Klasse "LocalDate" verwenden können, um das aktuelle Datum zu bearbeiten oder Informationen darüber zu erhalten. Einige Beispiele sind:
-
-- Um das aktuelle Jahr zu erhalten, können wir die Methode "getYear()" verwenden.
+Man kann auch das aktuelle Datum im gewünschten Format ausgeben lassen, z.B. in deutschem Format mit dem Tag zuerst und dem Monat ausgeschrieben:
 
 ```Java
-int year = currentDate.getYear();
-System.out.println("Das aktuelle Jahr ist: " + year);
-```
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
-Die Ausgabe wird sein: 
+public class CurrentDateExample {
 
-```Java
-Das aktuelle Jahr ist: 2021
-```
-
-- Wir können auch das aktuelle Datum mit anderen Datumsobjekten vergleichen, um zum Beispiel zu überprüfen, welches davon in der Zukunft liegt. Dazu können wir die Methode "isAfter()" verwenden.
-
-```Java
-LocalDate futureDate = LocalDate.of(2022, 1, 1); // Erstellung eines zukünftigen Datums
-if (futureDate.isAfter(currentDate)) {  // Vergleich mit dem aktuellen Datum
-    System.out.println("Das zukünftige Datum ist nach dem heutigen Datum.");
+    public static void main(String[] args) {
+        
+        // Erstellt ein LocalDate Objekt mit dem heutigen Datum
+        LocalDate today = LocalDate.now();
+        
+        // Erstellt ein DateTimeFormatter Objekt mit dem gewünschten Format
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
+        
+        // Gibt das aktuelle Datum im gewünschten Format aus
+        System.out.println("Heute ist der " + today.format(formatter));
+    }
 }
 ```
 
-Die Ausgabe wird sein:
+Die Ausgabe wäre dann:
 
-```Java
-Das zukünftige Datum ist nach dem heutigen Datum.
+```shell
+Heute ist der 01.01.2021
 ```
 
-Weitere Informationen über die Klasse "LocalDate" und ihre Methoden findest du in der offiziellen Java-Dokumentation (siehe "Siehe auch"-Abschnitt).
+## Tiefere Einblicke
+Das Erhalten des aktuellen Datums ist in Java seit der Einführung des ```java.time``` Pakets in Java 8 viel einfacher geworden. Vorher musste man dafür die ```Calendar``` Klasse verwenden, was oft komplizierter war.
+
+Eine Alternative zur Nutzung der ```LocalDate``` Klasse ist die Verwendung der ```Date``` Klasse, aber diese wird nun als veraltet (deprecated) betrachtet und sollte vermieden werden, da sie Schwierigkeiten beim Umgang mit Zeitzonen und Formatierung verursachen kann.
 
 ## Siehe auch
-
-- [Java-Dokumentation für die Klasse "LocalDate"](https://docs.oracle.com/javase/10/docs/api/java/time/LocalDate.html)
-- [Java-Tutorial: Arbeiten mit Datums- und Zeitangaben](https://docs.oracle.com/javase/tutorial/datetime/overview/index.html)
-- [Ein Tutorial zu java.time](https://www.baeldung.com/java-8-date-time-intro)
+- [Java Oracle Dokumentation zu LocalDate](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/time/LocalDate.html)
+- [Tutorialspoint Artikel zu Java Dates](https://www.tutorialspoint.com/java/java_date_time.htm)

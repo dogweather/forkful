@@ -10,24 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i Dlaczego?
 
-Konwersja stringów na małe litery może być przydatna, gdy potrzebujemy porównać dwa tekstu bez uwzględnienia wielkości liter lub gdy chcemy uporządkować dane alfabetycznie.
+Konwertowanie ciągów znaków na małe litery jest częstym zadaniem dla programistów. Polega to na zamianie wszystkich wielkich liter w ciągu na odpowiadające im małe litery. Robimy to zazwyczaj ze względu na jednolitość lub łatwiejsze porównywanie danych.
 
-## Jak to zrobić
+## Jak to zrobić:
 
-```TypeScript
-let text = "PIĘKNY"; // deklarujemy zmienną z tekstem
-let lowercaseText = text.toLowerCase(); // przy użyciu funkcji toLowerCase() konwertujemy tekst na małe litery
-console.log(lowercaseText); // wyświetlamy wynik: piękny
+```typescript
+let string = "TEKST DO KONWERTOWANIA";
+console.log(string.toLowerCase());
+// Output: tekst do konwertowania
 ```
 
-## Pod lupą
+## Głębsze wyjaśnienia:
 
-Podczas konwersji, znaki nieznane dla danego języka mogą pozostać bez zmian, np. litery z diakrysimi, znaki specjalne itp. W TypeScript istnieje również funkcja toLocaleLowerCase(), która uwzględnia ustawienia regionalne, co może być przydatne w niektórych przypadkach.
+1. Konwersja ciągów znaków na małe litery jest powszechnie stosowaną techniką w programowaniu. Początkowo wynikało to z ograniczeń sprzętowych, gdzie używanie tylko jednego rozmiaru liter ułatwiało przechowywanie i porównywanie danych.
 
-## Zobacz także
+2. Alternatywną metodą jest użycie funkcji upperCase(), która zamienia wszystkie litery w ciągu na wielkie. Jednak nie jest to zalecane ze względu na zmianę oryginalnego ciągu.
 
-- [Mozilla Developer Network - toLowerCase()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)
-- [TypeScript Docs - String](https://www.typescriptlang.org/docs/handbook/2/types-from-types.html#string)
-- [Stack Overflow - How to convert a string to lowercase in TypeScript?](https://stackoverflow.com/questions/69691897/how-to-convert-a-string-to-lowercase-in-typescript)
+3. Implementacja konwersji ciągu znaków na małe litery jest różna w zależności od języka programowania. W języku TypeScript możemy użyć funkcji toLowerCase(), która jest wbudowana w obiekt String.
+
+## Zobacz także:
+
+- [Dokumentacja TypeScript o toLowerCase()](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-5.html#built-in-operator-o-a-works-on-string)
+- [Funkcja String.prototype.toLowerCase() w języku JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)

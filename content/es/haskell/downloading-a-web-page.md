@@ -1,7 +1,7 @@
 ---
-title:                "Descargar una página web"
-html_title:           "Haskell: Descargar una página web"
-simple_title:         "Descargar una página web"
+title:                "Descargando una página web"
+html_title:           "Haskell: Descargando una página web"
+simple_title:         "Descargando una página web"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "HTML and the Web"
@@ -10,42 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¿Qué y por qué?
+Descargar una página web es un proceso utilizado por programadores para obtener archivos de internet y almacenarlos localmente en su computadora. Esto puede ser útil para extraer información de una página específica o para crear un archivo de respaldo en caso de que la página sea removida o modificada.
 
-Si estás interesado en programación funcional y quieres aprender un lenguaje versátil y eficiente, entonces Haskell es perfecto para ti. Además, con la creciente importancia de la web, saber cómo descargar páginas web puede ser útil para proyectos personales o profesionales.
-
-## Cómo hacerlo
-
-En Haskell, puedes descargar una página web utilizando la biblioteca `Network.HTTP.Simple`. Primero, importamos la biblioteca en nuestro archivo con `import Network.HTTP.Simple`.
-
-A continuación, creamos una función que tomará una URL como entrada y devolverá el contenido de la página web en formato de texto plano:
-
-```Haskell
-getPage :: String -> IO String
-getPage url = do
-    request <- parseRequest url
-    response <- httpLBS request
-    return $ getResponseBody response
+## Como:
+Este proceso se puede realizar en Haskell de varias maneras. Una opción es utilizar la librería `http-conduit`, que proporciona funciones para descargar una página web de forma asincrónica. Un ejemplo de código sería el siguiente:
 ```
+import qualified Data.ByteString.Lazy as B
+import Network.HTTP.Conduit
 
-Con la función `getPage`, podemos descargar el contenido de una página web y almacenarlo en una variable. Por ejemplo, si queremos descargar la página principal de Google, podemos hacerlo de la siguiente manera:
-
-```Haskell
 main :: IO ()
-main = do
-    page <- getPage "https://www.google.com/"
-    print page
+main =
+  simpleHttp "https://www.example.com" >>= B.writeFile "example.txt"
 ```
+Este código descargará la página web en formato de texto y la guardará en un archivo llamado "example.txt" en el directorio actual. Si se desea guardar la página en otro formato, se puede utilizar alguna librería de parsing para procesar los datos descargados.
 
-El resultado de imprimir `page` sería el código HTML de la página de inicio de Google en texto plano.
+## Profundizando:
+Existen varias alternativas para descargar una página web en Haskell, como por ejemplo la librería `wreq` que proporciona una API más simple y limpiam, o la librería `curl` que utiliza el comando de línea de comandos para descargar páginas web. Además, es posible descargar contenido de páginas que requieren autenticación utilizando funciones específicas de la librería.
 
-## Inmersión profunda
+Algunas cosas a tener en cuenta al descargar una página web son la optimización del código y la gestión adecuada de errores, como por ejemplo el manejo de conexiones lentas o páginas no disponibles.
 
-La función `getPage` que creamos utiliza dos funciones de la biblioteca `Network.HTTP.Simple`: `parseRequest` y `httpLBS`. La primera es para crear una solicitud HTTP a partir de la URL que se le pasa como argumento, mientras que la segunda envía esa solicitud y devuelve la respuesta.
-
-También es importante tener en cuenta que `getPage` devuelve un valor de tipo `IO String`, lo que significa que es una acción de entrada y salida que eventualmente devuelve una cadena de texto. Esto se debe a que la descarga de una página web es una operación de entrada y salida y puede ser bloqueante, lo que significa que el programa se detendrá hasta que se complete la operación.
-
-## Ver también
-
-- [Documentación de la biblioteca Network.HTTP.Simple](https://hackage.haskell.org/package/http-client)
-- [Más información sobre Haskell](https://www.haskell.org/)
+## Ver también:
+Para obtener más información sobre la descarga de páginas web en Haskell, se pueden consultar las documentación de las librerías mencionadas y explorar otras opciones en el repositorio de paquetes de Hackage. Además, se pueden encontrar tutoriales y ejemplos en línea para guiar el proceso de descarga y extracción de datos de páginas web utilizando Haskell.

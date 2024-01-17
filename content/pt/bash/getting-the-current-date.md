@@ -10,36 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que utilizar Bash?
+# O que e por que?
 
-Se você trabalha com programação de sistemas ou tem interesse em automatizar tarefas no seu computador, é provável que já tenha ouvido falar sobre o Bash. Uma das vantagens dessa linguagem de script é a sua capacidade de interagir com o sistema operacional, permitindo a execução de comandos do terminal. E uma das funções mais úteis do Bash é a possibilidade de obter a data e a hora atual.
+Obter a data atual é uma tarefa comum para muitos programadores em Bash. Isso permite que eles obtenham informações precisas sobre o momento em que um script é executado e a usem para criar lógicas ou gerar arquivos com nomes únicos. Além disso, a data atual é uma informação importante para fins de registro e identificação de tendências.
 
-## Como obter a data atual em Bash?
+# Como fazer:
 
-Obter a data atual é uma tarefa simples em Bash. Basta usar o comando `date`, seguido das opções desejadas. Por padrão, o comando `date` retorna a data e a hora atual no formato dd/MM/yyyy HH:mm:ss, mas é possível personalizar o formato usando a opção `-format`. Veja um exemplo:
+Existem várias maneiras de obter a data atual em Bash. Aqui estão dois exemplos:
 
-```Bash
-date "+%d/%m/%Y"
 ```
-Output: 29/08/2021
+# A saída será no formato "MM/DD/AAAA"
+Bash ... date +"%m/%d/%Y"
 
-Outra opção interessante é a possibilidade de exibir a data e a hora em fuso horário diferente do seu sistema. Basta usar a opção `-u` seguida do fuso horário desejado. Veja um exemplo:
-
-```Bash
-date -u "+%d/%m/%Y %H:%M:%S" # Fuso horário UTC
+# A saída será no formato "Dia da semana, DD de Mês de AAAA"
+Bash ... date +"%A, %d de %B de %Y"
 ```
-Output: 29/08/2021 21:31:15
 
-Há diversas outras opções que podem ser usadas com o comando `date` para personalizar a forma como a data e a hora são exibidas. Para conhecer todas elas, você pode conferir a documentação oficial do Bash ou utilizar o comando `man date` no seu terminal.
+Nota: os três "%A, %d, %B" são especificadores de formato de data, que podem ser encontrados na documentação do "date". Você pode experimentar diferentes combinações para personalizar o formato da data.
 
-## Uma olhada mais aprofundada na obtenção da data atual
+# Aprofundamento:
 
-Quando usamos o comando `date`, na verdade estamos fazendo uma chamada de sistema para obter a data e a hora atual. O Bash, por sua vez, é responsável por interpretar e formatar essa informação de acordo com as opções fornecidas. Isso significa que, se você precisar obter a data e a hora em um formato específico que não está disponível no comando `date`, pode ser necessário implementar uma solução personalizada em Bash para fazer essa formatação.
+Historicamente, a maioria dos sistemas Unix e Linux possuem o comando "date" incorporado que permite obter a data atual. No entanto, existem outras ferramentas ou dependências que também podem ser usadas, como o "time" ou o "localtime". Além disso, há a opção de usar a linguagem de programação "Python" com o módulo "datetime" ou o utilitário "awk".
 
-Outro detalhe interessante é que o comando `date` fica armazenado em um arquivo executável no seu sistema operacional, geralmente na pasta /usr/bin. Isso significa que você pode usá-lo em qualquer linguagem de programação que suporte a chamada de comandos do sistema, não apenas em Bash.
+# Veja também:
 
-## Veja também
-
-- [Documentação oficial do Bash](https://www.gnu.org/software/bash/manual/bash.html#Bash-Features)
-- [Guia rápido sobre o comando date](https://www.gbdirect.co.uk/resources/nix/kb/date.html)
-- [Artigo sobre como formatar a data em Bash](https://www.howtogeek.com/410442/how-to-display-the-date-time-using-the-linux-command-line/)
+- A documentação oficial do "date" para mais informações sobre especificadores de formato de data - https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html
+- O artigo "Formatar a data e a hora em Bash" para mais exemplos e dicas - https://linuxize.com/post/bash-formatting-date-time/
+- O guia "Como usar o utilitário date em Linux" para mais informações e alternativas - https://www.linux.com/topic/desktop/date-command-linux-tips-and-tricks/

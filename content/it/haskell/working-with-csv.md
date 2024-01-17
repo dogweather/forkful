@@ -10,67 +10,92 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+## Cos'è e perché?
 
-Se sei un appassionato di dati o lavori con grandi quantità di informazioni, probabilmente hai incontrato file CSV (Comma Separated Values). Questo formato di file è ampiamente utilizzato per memorizzare dati in forma tabellare, rendendolo uno strumento utile per analisi e elaborazioni di dati. Utilizzando Haskell, puoi facilmente manipolare e gestire i file CSV in modo efficiente e preciso.
+Lavorare con CSV, ovvero Comma Separated Values, è un modo comune per gestire e manipolare grandi quantità di dati tabellari. Questo formato, che utilizza una virgola come separatore tra i valori dei dati, è ampiamente utilizzato nel mondo della programmazione per importare ed esportare dati da database, fogli di calcolo e altre fonti.
 
-## Come fare
+I programmatori utilizzano CSV per semplificare il processo di gestione dei dati tabellari e per facilitare lo scambio di informazioni tra sistemi diversi.
 
-Per lavorare con i file CSV in Haskell, abbiamo bisogno di alcuni moduli esterni. Includiamo il modulo "csv", che ci fornisce funzioni per leggere e scrivere file CSV e il modulo "vector", che ci permette di lavorare con i dati in forma di vettori anziché liste.
+## Come fare:
 
-```Haskell
-import Text.CSV
-import Data.Vector
-```
+Per lavorare con CSV in Haskell, avrai bisogno del pacchetto ```Data.Csv```. Dopo averlo importato nel tuo file di codice, puoi utilizzare le sue funzioni per leggere e scrivere dati CSV.
 
-Ora possiamo caricare il nostro file CSV in un vettore utilizzando la funzione "parseCSVFromFile". Assicuriamoci di avere il file "data.csv" nella stessa cartella del nostro codice.
+### Leggere da un file CSV
 
-```Haskell
-file <- parseCSVFromFile "data.csv"
-let data = fromRight (fromList []) file
-```
-
-Possiamo ora stampare il contenuto del nostro vettore utilizzando la funzione "print" e specificando l'indice desiderato.
+Per leggere i dati da un file CSV, utilizza la funzione ```decode```, specificando il tuo tipo di dati desiderato e il file di input come parametri.
 
 ```Haskell
-print (data ! 0)
+import Data.Csv
+
+data Persona = Persona 
+    { nome :: String
+    , cognome :: String
+    , eta :: Int
+    } deriving (Show, Generic)
+
+instance FromRecord Persona
+
+leggiCSV :: String -> IO [Persona]
+leggiCSV fileName = do
+    content <- readFile fileName
+    case decode NoHeader content :: Either String (Vector Persona) of
+        Left err -> error err
+        Right v -> return $ toList v
 ```
 
-Questo ci fornirà la prima riga del nostro file CSV.
+Nell'esempio sopra, creiamo un nuovo tipo di dati ```Persona``` con campi ```nome```, ```cognome``` ed ```eta```, e lo rendiamo un'istanza di ```FromRecord``` per indicare come i dati devono essere convertiti dal CSV.
 
-```
-["Nome","Cognome","Età"]
-```
+Utilizziamo quindi la funzione ```leggiCSV``` per leggere i dati dal file specificato e otteniamo una lista di valori di tipo ```Persona```.
 
-Possiamo anche filtrare il nostro vettore in base a delle condizioni utilizzando la funzione "filter" e specificando una funzione di controllo. Ad esempio, se vogliamo solo i dati delle persone con un'età superiore a 30, possiamo fare così:
+### Scrivere su un file CSV
+
+Per scrivere i dati in un file CSV, utilizza la funzione ```encodeDefaultOrderedByName```, specificando il nome delle colonne e i dati da scrivere come parametri.
 
 ```Haskell
-let filteredData = filter (\row -> (row ! 2) > "30") data
-print filteredData
+import qualified Data.ByteString.Lazy as BL
+import Data.Csv
+
+data Prodotto = Prodotto
+    { nome :: String
+    , prezzo :: Float
+    , quantità :: Int
+    } deriving (Show, Generic)
+
+instance ToNamedRecord Prodotto where
+    toNamedRecord prodotto = namedRecord
+        [ "Nome" .= nome prodotto
+        , "Prezzo" .= prezzo prodotto
+        , "Quantità" .= quantità prodotto
+        ]
+
+prodotti = [ Prodotto "Penna" 1.50 100
+           , Prodotto "Quaderno" 4.50 50
+           , Prodotto "Matita" 0.75 200
+           ]
+
+scriviCSV :: String -> IO ()
+scriviCSV fileName = BL.writeFile fileName (encodeDefaultOrderedByName prodotti)
 ```
 
-```
-[["John","Smith","35"], ["Maria","Rossi","32"]]
-```
+Nell'esempio sopra, creiamo un nuovo tipo di dati ```Prodotto``` con campi ```nome```, ```prezzo``` e ```quantità```, e lo rendiamo un'istanza di ```ToNamedRecord``` per indicare come i dati devono essere convertiti in formato CSV.
 
-## Approfondimento
+Utilizziamo quindi la funzione ```scriviCSV``` per scrivere i dati nella lista di prodotti nel file specificato.
 
-Oltre alle funzioni di base per leggere e scrivere file CSV, il modulo "csv" ci fornisce anche alcune funzioni utili per manipolare i nostri dati. Ad esempio, la funzione "mapRows" ci permette di applicare una determinata funzione a ogni riga del nostro vettore, mentre la funzione "groupBy" ci permette di raggruppare i dati in base a una determinata colonna.
+## Approfondimento:
 
-Un'altra funzionalità interessante di Haskell per lavorare con i file CSV è l'utilizzo delle espressioni "do". Ciò ci consente di scrivere codice più leggibile e strutturato, senza dover utilizzare troppe funzioni nidificate.
+### Contesto storico:
 
-```Haskell
-do
-  file <- parseCSVFromFile "data.csv"
-  let data = fromRight (fromList []) file
-  let filteredData = filter (\row -> (row ! 2) > "30") data
-  print filteredData
-```
+CSV è stato originariamente sviluppato nel 1972 da un programmatore della IBM, ma è diventato popolare solo negli anni '80 con l'avvento dei fogli di calcolo e dei database relazionali. Oggi è uno dei formati più comunemente utilizzati per l'importazione ed esportazione di dati.
 
-Inoltre, se stiamo lavorando con file CSV molto grandi, possiamo anche utilizzare il metodo di lettura "loadCsvFile" del modulo "Data.Csv.Streaming". Questo ci permette di leggere i dati dal file a blocchi, riducendo il carico sulla memoria del nostro programma.
+### Altre alternative:
 
-## Vedi anche
+Sebbene CSV sia un formato comune e popolare, ci sono altre alternative disponibili per lavorare con dati tabellari in Haskell. Ad esempio, ci sono pacchetti che supportano formati più strutturati come JSON o XML.
 
-- [Haskell Basics](https://wiki.haskell.org/Introduction)
-- [Haskell Documentation](https://www.haskell.org/documentation)
-- [Working with CSVs in Haskell](https://www.haskell.org/documentation#csv)
+### Dettagli di implementazione:
+
+Il pacchetto ```Data.Csv``` utilizza il tipo di dati ```Record``` per rappresentare una riga di dati CSV, e fornisce funzioni per convertire tra questo tipo e altri tipi di dati personalizzati.
+
+## Vedi anche:
+
+- [Hackage: Data.Csv](http://hackage.haskell.org/package/cassava)
+- [Haskell Weekly: Working with CSV in Haskell](https://haskellweekly.news/blog/posts/2020-06-11-working-with-csv-in-haskell/)

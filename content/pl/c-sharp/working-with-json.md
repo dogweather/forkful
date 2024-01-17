@@ -1,7 +1,7 @@
 ---
-title:                "Praca z json"
-html_title:           "C#: Praca z json"
-simple_title:         "Praca z json"
+title:                "Praca z formatem json"
+html_title:           "C#: Praca z formatem json"
+simple_title:         "Praca z formatem json"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Data Formats and Serialization"
@@ -10,85 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co to jest JSON i po co to robić?
+JSON (JavaScript Object Notation) jest to lekki i czytelny sposób przedstawiania danych w postaci obiektów tekstowych. Programiści korzystają z JSON, aby łatwiej przekazywać i przechowywać dane, szczególnie w przypadku aplikacji internetowych.
 
-Możliwość manipulacji danymi w formacie JSON jest niezbędna dla wielu projektów programistycznych. JSON jest powszechnie stosowany w aplikacjach internetowych, aplikacjach mobilnych, bazach danych i wiele więcej.
-
-## Jak To Zrobić
-
-### Tworzenie JSON
-
-Tworzenie obiektów JSON w C# jest proste i intuicyjne. Wystarczy użyć klasy `JObject` z przestrzeni nazw`Newtonsoft.Json` oraz metody `Add` do dodawania właściwości i ich wartości.
-
-```C#
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-
-JObject jsonObject = new JObject();
-jsonObject.Add("name", "John");
-jsonObject.Add("age", 30);
-jsonObject.Add("hobbies", new JArray("gaming", "reading", "traveling"));
+## Jak to zrobić:
+### Przedstawienie danych w formacie JSON:
+```
+C# var person = new { name = "John", age = 30, hobbies = ["reading", "gaming"] };
+Console.WriteLine(JsonConvert.SerializeObject(person));
 ```
 
-### Serializacja do formatu JSON
-
-Aby przekonwertować dane z C# na format JSON, można wykorzystać metodę `JsonConvert.SerializeObject` z przestrzeni nazw `Newtonsoft.Json`.
-
-```C#
-string json = JsonConvert.SerializeObject(jsonObject);
-Console.WriteLine(json);
-// Output: {"name":"John","age":30,"hobbies":["gaming","reading","traveling"]}
+### Rezultat:
+```
+{"name":"John","age":30,"hobbies":["reading","gaming"]}
 ```
 
-### Deserializacja z formatu JSON
-
-Aby przekonwertować dane z formatu JSON na obiekty C#, można wykorzystać metodę `JsonConvert.DeserializeObject` z przestrzeni nazw `Newtonsoft.Json`.
-
-```C#
-string json = @"{
-    'name': 'John',
-    'age': 30,
-    'hobbies': ['gaming', 'reading', 'traveling']
-}";
-
-JObject jsonObject = JsonConvert.DeserializeObject<JObject>(json);
-string name = jsonObject["name"].ToObject<string>();
-int age = jsonObject["age"].ToObject<int>();
-JArray hobbies = jsonObject["hobbies"].ToObject<JArray>();
+### Odczytanie danych z formatu JSON:
+```
+C# var json = "{\"name\":\"John\",\"age\":30,\"hobbies\":[\"reading\",\"gaming\"]}";
+var person = JsonConvert.DeserializeObject<Person>(json);
+Console.WriteLine($"Name: {person.Name} \nAge: {person.Age} \nHobbies: {string.Join(", ", person.Hobbies)}");
 ```
 
-### Przeszukiwanie i modyfikowanie danych JSON
-
-Dzięki wykorzystaniu metody `JsonConvert.DeserializeObject`, możemy przekonwertować dane w formacie JSON na obiekty, które mogą być łatwo przeszukiwane i modyfikowane.
-
-```C#
-string json = @"{
-    'name': 'John',
-    'age': 30,
-    'hobbies': ['gaming', 'reading', 'traveling']
-}";
-
-Person person = JsonConvert.DeserializeObject<Person>(json);
-Console.WriteLine("Name: " + person.Name); // Output: Name: John
-Console.WriteLine("Age: " + person.Age); // Output: Age: 30
-Console.WriteLine("Hobbies: " + string.Join(", ", person.Hobbies)); // Output: Hobbies: gaming, reading, traveling
-
-// Modyfikacja danych
-person.Name = "Bill";
-person.Hobbies.Add("coding");
-Console.WriteLine(person.Name); // Output: Bill
-Console.WriteLine(string.Join(", ", person.Hobbies)); // Output: gaming, reading, traveling, coding
+### Rezultat:
+```
+Name: John
+Age: 30
+Hobbies: reading, gaming
 ```
 
-## Głębsze Zagadnienia
+## Głębsze zgłębienie tematu:
+### Kontekst historyczny:
+JSON został stworzony przez Douglasa Crockforda w 2001 roku i stał się popularnym sposobem zapisywania i wymiany danych.
 
-- W jaki sposób radzić sobie z błędami podczas przetwarzania danych JSON?
-- Jak wykorzystać atrybuty do serializacji i deserializacji obiektów do formatu JSON?
-- Jak przekonwertować dane JSON na typy niestandardowe (np. daty)?
-- W jaki sposób uprościć kod do pracy z danymi JSON przy pomocy bibliotek takich jak `Newtonsoft.Json.Linq`?
+### Alternatywy:
+Jedną z alternatyw dla JSON jest format XML, który również służy do przechowywania i wymiany danych. Jednak JSON jest bardziej czytelny i łatwiejszy w użyciu dla programistów.
 
-## Zobacz także
+### Szczegóły implementacji:
+W języku C# istnieje narzędzie o nazwie *Newtonsoft.Json*, które udostępnia metody do serializacji i deserializacji danych w formacie JSON.
 
-- Dokumentacja oficjalna JSON na stronie https://www.json.org
-- Przewodnik po tworzeniu i obsłudze danych JSON w C# https://docs.microsoft.com/pl-pl/dotnet/standard/serialization/system-text-json-how-to
-- Przykłady użycia biblioteki `Newtonsoft.Json` https://www.newtonsoft.com/json/help/html/Introduction.htm
+## Zobacz także:
+- [Dokumentacja Newtonsoft.Json](https://www.newtonsoft.com/json/help/html/introduction.htm)
+- [Inne formaty danych: XML, CSV, YAML](https://stackify.com/json-xml-yaml-csv/)

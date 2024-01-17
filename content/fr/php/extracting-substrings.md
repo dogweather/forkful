@@ -10,40 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Qu'est-ce que c'est et pourquoi le faire?
+L'extraction de sous-chaînes de caractères est une tâche courante pour les programmeurs PHP. Cela consiste à extraire un morceau spécifique d'une chaîne de caractères, en utilisant des positions de début et de fin déterminées. Les programmeurs utilisent souvent cette fonctionnalité pour manipuler et traiter des données textuelles de manière plus efficace.
 
-Vous avez peut-être rencontré des situations où vous aviez besoin d'extraire une partie spécifique d'une chaîne de caractères. Cela pourrait être des numéros de téléphone, des adresses email, ou même des données de grande taille à analyser. Dans ces cas, il est utile de savoir comment extraire facilement des sous-chaînes à partir d'une chaîne principale en utilisant PHP.
+## Comment faire:
+Voici deux exemples de code qui utilisent la fonction `substr()` pour extraire des sous-chaînes de caractères en PHP.
 
-## Comment faire
+```PHP
+// Exemple 1: Extraire les 3 premiers caractères d'une chaîne
+$string = "Bonjour";
+$first_three_letters = substr($string, 0, 3);
+// output: Bon
 
-Tout d'abord, pour extraire une sous-chaîne à partir d'une chaîne principale, nous allons utiliser la fonction PHP `substr()`. Cette fonction prend deux arguments obligatoires et un argument facultatif.
-
-Voici un exemple de code PHP montrant comment utiliser la fonction `substr()` pour extraire une sous-chaîne:
-
+// Exemple 2: Extraire les 5 derniers caractères d'une chaîne
+$string = "Hello World!";
+$last_five_letters = substr($string, -5);
+// output: World!
 ```
-$string = "Bienvenue sur notre site";
-$start = 12;
-$length = 6;
-$subString = substr($string, $start, $length);
-echo $subString;
-```
 
-Dans cet exemple, nous avons défini une chaîne de caractères et décidé de commencer à extraire une sous-chaîne à partir du 12ème caractère jusqu'au 6ème caractère suivant. Le résultat de cette opération serait "notre".
+## Plongée en profondeur:
+L'extraction de sous-chaînes de caractères est un concept qui existe depuis longtemps. Dans les versions antérieures de PHP, la fonction `substr()` était la seule option pour extraire des sous-chaînes. Cependant, avec l'introduction de la fonction `mb_substr()` dans PHP 4.0, les programmeurs peuvent maintenant extraire des sous-chaînes de caractères multibyte, ce qui était auparavant une tâche plus difficile.
 
-En utilisant les arguments facultatifs, nous pouvons également extraire une sous-chaîne à partir d'une position donnée jusqu'à la fin de la chaîne principale, ou même une sous-chaîne à partir d'une position négative en commençant de la fin de la chaîne principale.
+Il existe également d'autres alternatives à la fonction `substr()`, telles que `str_split()`, qui peut diviser une chaîne en un tableau de caractères, ou `preg_match()`, qui utilise des expressions régulières pour extraire des sous-chaînes qui correspondent à un modèle spécifique.
 
-## Deep Dive
+En ce qui concerne les détails d'implémentation, il est important de noter que la fonction `substr()` retourne une valeur de chaîne vide si le point de départ demandé est égal à la longueur de la chaîne d'origine. De plus, lorsque la longueur demandée est un nombre négatif, la fonction retourne une chaîne vide si la valeur absolue du nombre est supérieure à la longueur de la chaîne d'origine.
 
-Si vous devez extraire des sous-chaînes régulièrement dans votre code, il pourrait être utile de connaître d'autres fonctions qui peuvent également effectuer cette tâche.
-
-Par exemple, la fonction `strstr()` peut être utilisée pour trouver la première occurrence d'une sous-chaîne dans une chaîne principale et extraire toutes les autres caractères à partir de cette position. La fonction `str_replace()` peut également être utilisée pour remplacer une sous-chaîne par une autre dans une chaîne principale.
-
-Il est également important de noter que la position des caractères dans une chaîne de caractères commence à zéro, ce qui signifie que le premier caractère est en position 0, le deuxième en position 1, et ainsi de suite.
-
-## Voir aussi
-
-Pour plus d'informations sur les fonctions de manipulation de chaînes de caractères en PHP, vous pouvez consulter la documentation officielle de PHP sur les fonctions de chaînes de caractères.
-
-- [Documentation PHP sur la fonction `substr()`](https://www.php.net/manual/fr/function.substr.php)
-- [Documentation PHP sur la fonction `strstr()`](https://www.php.net/manual/fr/function.strstr.php)
-- [Documentation PHP sur la fonction `str_replace()`](https://www.php.net/manual/fr/function.str-replace.php)
+## Voir aussi:
+- Documentation officielle de PHP sur la fonction `substr()`: https://www.php.net/manual/fr/function.substr.php
+- Tutoriel sur l'utilisation des expressions régulières en PHP: https://www.w3schools.com/php/php_regex.asp
+- Comparaison entre les fonctions `substr()` et `mb_substr()`: https://stackoverflow.com/questions/2327818/what-is-the-difference-between-substr-and-mb-substr-in-php

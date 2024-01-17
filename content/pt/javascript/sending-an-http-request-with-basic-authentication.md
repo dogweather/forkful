@@ -10,58 +10,64 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+## O que é e por que fazer isso?
 
-Enviar uma solicitação HTTP com autenticação básica é uma forma segura de se comunicar com servidores externos. Isso permite que apenas usuários autorizados tenham acesso às informações solicitadas, protegendo os dados sensíveis.
+Enviar uma solicitação HTTP com autenticação básica é um processo importante para os programadores. Trata-se de enviar uma solicitação para um servidor com informações de autenticação (como nome de usuário e senha) para acessar dados protegidos. Isso é necessário para assegurar que apenas usuários autorizados possam visualizar as informações.
 
-## Como fazer
-
-Para enviar uma solicitação HTTP com autenticação básica em Javascript, é necessário seguir alguns passos simples:
-
-1. Primeiramente, crie uma instância de um objeto `XMLHttpRequest`, que é responsável por fazer chamadas HTTP assíncronas.
+## Como fazer:
 
 ```Javascript
-let request = new XMLHttpRequest();
-```
+// Importando o módulo "http" do Node.js
+const http = require('http');
 
-2. Em seguida, defina o método e a URL que será utilizada para enviar a requisição.
+// Definindo as informações de autenticação
+const username = 'exemplo';
+const password = 'senha123';
 
-```Javascript
-request.open('GET', 'http://www.example.com/api/data');
-```
+// Definindo a URL e o método da requisição
+const url = 'https://www.exemplo.com/dados';
+const method = 'GET';
 
-3. Adicione as credenciais de autenticação no cabeçalho da solicitação utilizando o método `setRequestHeader()`, passando o nome do cabeçalho e um valor codificado em Base64 com o padrão `username:password`.
+// Criando a string de autenticação
+const authString = `${username}:${password}`;
 
-```Javascript
-let username = 'user123';
-let password = 'pass456';
+// Codificando a string de autenticação em Base64
+const encodedAuth = Buffer.from(authString).toString('base64');
 
-request.setRequestHeader('Authorization', 'Basic ' + btoa(username + ':' + password));
-```
-
-4. Por fim, envie a solicitação utilizando o método `send()` e trate a resposta no evento `onreadystatechange`.
-
-```Javascript
-request.send();
-
-request.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-        // A resposta do servidor pode ser acessada no atributo responseText
-        console.log(this.responseText);
-    }
+// Definindo as opções para a requisição
+const options = {
+  url,
+  method,
+  headers: {
+    'Authorization': `Basic ${encodedAuth}` // Adicionando a autenticação ao header da requisição
+  }
 };
+
+// Enviando a requisição
+http.request(options, (res) => {
+  // Lendo a resposta e imprimindo o conteúdo
+  res.on('data', (data) => {
+    console.log(`${data}`);
+  });
+}).end();
 ```
 
-O resultado será a resposta da requisição, que pode ser utilizada para exibir os dados requisitados ou realizar alguma outra ação.
+Saída:
 
-## Aprofundando
+```
+// Conexão bem sucedida
+{
+  data: [dados protegidos]
+}
+```
 
-É importante ressaltar que a autenticação básica no envio de solicitações HTTP não é considerada muito segura, pois as credenciais são transmitidas em texto simples e podem ser interceptadas por terceiros. Por isso, é aconselhável utilizar um protocolo HTTPS para criptografar a comunicação e torná-la mais segura.
+## Mergulho profundo:
 
-Além disso, é importante validar as credenciais no servidor para garantir que apenas usuários autenticados tenham acesso às informações solicitadas.
+A autenticação básica é um padrão de autenticação para acesso a recursos da web. Foi criada no início dos anos 90 para fornecer uma forma simples de autenticação em aplicações web. Apesar de ser utilizada amplamente, a autenticação básica não é considerada segura, pois envia as informações de autenticação sem criptografia.
 
-## Veja também
+Existem alternativas mais seguras, como a autenticação baseada em token, que utiliza um token único e criptografado para autenticar as solicitações. Além disso, é importante implementar medidas extras de segurança, como SSL, para garantir a proteção dos dados transmitidos.
 
-- Documentação oficial do objeto XMLHttpRequest: https://developer.mozilla.org/pt-BR/docs/Web/API/XMLHttpRequest
-- Tutorial sobre autenticação básica com Javascript: https://www.digitalocean.com/community/tutorials/js-xmlhttprequest-with-basic-authentication
-- Vantagens e desvantagens da autenticação básica em requisições HTTP: https://www.owasp.org/index.php/Basic_authentication
+## Veja também:
+
+- [Como funciona a autenticação básica](https://www.infoq.com/br/articles/autenticao-web/)
+- [Como implementar autenticação básica em Node.js] (https://gist.github.com/cdaringe/6e83bc3caaa3a7e3262c)

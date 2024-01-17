@@ -1,7 +1,7 @@
 ---
-title:                "पैटर्न से मेल खाने वाले अक्षरों को हटाना"
-html_title:           "Kotlin: पैटर्न से मेल खाने वाले अक्षरों को हटाना"
-simple_title:         "पैटर्न से मेल खाने वाले अक्षरों को हटाना"
+title:                "पैटर्न से मेल खाते हुए अक्षरों को हटाना"
+html_title:           "Kotlin: पैटर्न से मेल खाते हुए अक्षरों को हटाना"
+simple_title:         "पैटर्न से मेल खाते हुए अक्षरों को हटाना"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Strings"
@@ -10,27 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
+## क्या और क्यों?
+character matching pattern को हटाना क्या है और programming में इसे क्यों किया जाता है।
 
-अब डिजिटल दुनिया में डाटा की मान्यता और मान्यता अत्यधिक मायने रखती है। कभी-कभी हमारे पास भी डेटा होता है जो हमें उपयोगी नहीं होता है और हमें उसे साफ़ करने की आवश्यकता होती है। इसमें से एक है अपने कोड में से आपूर्तिक अक्षरों को हटाना जो पैटर्न के साथ मेल खाते हैं। इसे मानव-L साथ जानिए।
+कई बार programming में हमे एक विशिष्ट पैटर्न के अनुसार characters को हटाना होता है। इससे हमे दूसरे characters को ढूंढने में सहायता मिलती है जो कि एक लंबे समय तक खोज के लिए जरूरी हो सकते हैं। 
 
-## कैसे करें
+## कैसे करें:
+कोटलिन में character matching pattern को हटाने का प्रोग्राम निम्न तरीके से संचालित किया जा सकता है।
 
-```Kotlin
-val inputString = "Hello World!"
-val pattern = "[HW]" // हटाने के लिए आपूर्तिक अक्षरों का पैटर्न
-val removedChars = inputString.replace(pattern, "") // हटाने वाली तरीकी कोलीग समापईलप
+```
+fun main() {
+   val str = "Hello World"
+   val pattern = "[a-z]".toRegex()
+   val result = str.replace(pattern, "")
+   println(result) 
+}
 
-println(removedChars) // आपूर्तिक अक्षरों को हटाया गया भागु की वह भी क्यतांनस अ्यह्यापरिशःश
-// Output: elo orld!
+// Output: H W
 ```
 
-इसे आप वास्तव में महत्वपूर्ण लोगों के साथ उपयोग कर सकते हैं, जहां आपको विशेष प्रकार के डाटा ही चाहिए होता है और बाकी सब कुछ आपको बाद में हटाना होता है।
+इसके अलावा, जिस character को हम हटाना चाहते हैं, उसके साथ और operations भी किये जा सकते हैं। जैसे की अगर हम अभिव्यक्ति में एक एक्स्ट्रा स्पेस भी हटाना चाहते हैं तो निम्न तरीके से कर सकते हैं। 
 
-## गहराई तक जाओ
+```
+val result = str.replace(pattern, "").trim()
+// Output: H W
+```
 
-कोत्तिंग अपूर्तिक अक्षरों को हटाने साथ कोड एनस करने में सबसे महत्वपूर्ण हिस्सा पैटर्न में। आप अपने डाटा के अलावा भी इस तरीके का उपयोग कर सकते हैं, जैसे कि आप एक स्ट्रिंग का स्र्व है और आपको वह स्ट्रिंग उससंचार में भें स्त है। यह एक प्राकृतिख समस्या है और पैटर्न कंतने कोदेंगरिगी मुसजूला समापशेत्रिया हैं।
+## गहराई में:
+character matching pattern को हटाने का काम कई दशकों से हमने pay किया है। कोटलिन में भी इसे अनगिनत तरीकों से संचालित किया जा सकता है जैसे builtin function ```removeIf```, ```dropWhile``` और ```filterNot```। कई अन्य programming languages में इसे regular expressions के साथ भी किया जाता है। 
 
-अतिरिक्त सहायता के लिए, आप इन लिंक्स से जान सकते हैं:
+इसके अलावा, हम character matching pattern को हटाने में glob patterns भी प्रयोग करते हैं। इनकी मदद से हम अनुकूलन को भी कर सकते हैं जैसे कि case sensitivity में अंतर। 
 
-- [Kotlin रिफर
+## इससे जुड़े:
+- [Kotlin RemoveSpecificCharacter][1]
+- [Kotlin String documentation][2]
+- [Kotlin Collection operations][3]
+
+[1]: https://kotlinbyshivank.blogspot.com/2017/04/kotlin-remove-specific-character.html
+[2]: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/
+[3]: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/index.html

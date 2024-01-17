@@ -10,50 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-So you've heard about YAML and you're wondering why you should bother learning it. Well, YAML is a simple and easily readable data serialization language, making it perfect for storing and sharing data in a variety of applications. Plus, it's widely used and supported, so it's definitely worth adding to your programming skill set.
+## What & Why?
 
-## How To
-Now that you know why YAML is worth learning, let's dive into some coding examples to get you started. We'll be using Bash, the current version, to demonstrate how to work with YAML.
+Working with YAML is a way for programmers to manage and organize data in a human-readable format. It is often used for configuring applications and systems, and is especially popular in the DevOps and automation world. YAML files use a simple indentation format, making it easy for anyone to read.
 
-First, you'll need to make sure you have YAML installed on your system. If you're using a Linux distribution, chances are it's already installed. If not, you can easily install it using the command ```sudo apt-get install libyaml-dev```.
+## How to:
 
-Next, let's create a simple YAML file using the ```cat``` command. Just open your terminal and type:
+To work with YAML in Bash, you will need to have the "yq" tool installed. You can do this by using the package manager for your operating system. Once installed, you can start working with YAML files by using the "yq" command.
 
-```Bash
-cat > sample.yaml
+```
+# Example command to get a value from a YAML file using "yq"
+yq eval '.key' file.yaml
 ```
 
-This will open up a blank file where you can start typing your YAML code. Let's add a simple key-value pair:
-
-```Bash
-name: John Doe
+```
+# Example output from above command
+value
 ```
 
-To save and exit the file, press CTRL+D. Now let's use the ```cat``` command again to print the contents of our YAML file:
+To modify a YAML file, you can use the "yq" command with the "-i" flag. This will edit the file in place instead of just displaying the output.
 
-```Bash
-cat sample.yaml
+```
+# Example command to modify a key in a YAML file using "yq"
+yq eval -i '.key = "new value"' file.yaml
 ```
 
-You should see the following output:
+## Deep Dive:
 
-```Bash
-name: John Doe
-```
+YAML was first introduced in 2001 and stands for "YAML Ain't Markup Language." It was designed to be easy for humans to read and write, while still being easily parsed by machines. YAML is often seen as an alternative to XML or JSON for configuration files.
 
-Congratulations, you've just created your first YAML file! Of course, YAML can handle much more complex data structures, but this simple example gives you a good idea of its syntax and structure.
+An alternative tool for working with YAML in Bash is "shyaml." It offers similar functionality to "yq" but with slightly different syntax. It is worth exploring both options to see which one works best for your needs.
 
-## Deep Dive
-For a deeper understanding of YAML, there are a few key concepts to keep in mind. First, YAML utilizes indentation to define the structure of data. This means that proper indentation is crucial for a valid YAML file. It also uses key-value pairs to store data, with the key and value separated by a colon.
+Behind the scenes, "yq" uses the "jq" library to parse and manipulate the YAML data. This means that "yq" is essentially a wrapper for "jq" commands specifically designed for YAML files. For those familiar with "jq," this can be a useful insight.
 
-YAML also supports arrays and dictionaries, making it a versatile language for storing and organizing different types of data. It even allows you to reference values within your YAML file using the ampersand (&) and asterisk (*) symbols.
+## See Also:
 
-To learn more about YAML's syntax and features, check out the official YAML specification document here.
-
-## See Also
-For more information on working with YAML, check out these helpful resources:
-
-- https://yaml.org/
-- https://www.tutorialspoint.com/yaml/index.htm
-- https://github.com/jasperes/bash-yaml
+- [yq GitHub repo](https://github.com/mikefarah/yq)
+- [shyaml GitHub repo](https://github.com/martinblech/xml2json)
+- [YAML official website](https://yaml.org/)

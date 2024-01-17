@@ -1,7 +1,7 @@
 ---
-title:                "Capitalizando uma string"
-html_title:           "C#: Capitalizando uma string"
-simple_title:         "Capitalizando uma string"
+title:                "Capitalização de uma string"
+html_title:           "C#: Capitalização de uma string"
+simple_title:         "Capitalização de uma string"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Strings"
@@ -10,39 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+## O que e porque?
 
-Quando estamos trabalhando com strings em C#, pode ser necessário capitalizar uma ou mais palavras, seja para deixar o texto mais legível ou para fins de formatação. Felizmente, o C# possui uma função simples para realizar essa tarefa.
+Capitalizar uma string significa mudar a primeira letra de cada palavra para maiúscula. Os programadores costumam fazer isso para melhorar a legibilidade e apresentação do texto ao usuário final.
 
-## Como Fazer
+## Como fazer:
 
-Para capitalizar uma string em C#, utilizamos o método `ToUpper()` da classe `string`. Veja o exemplo abaixo:
-
-```C#
-string texto = "exemplo de texto";
-string textoMaiusculo = texto.ToUpper();
-
-Console.WriteLine(textoMaiusculo); // Exibe "EXEMPLO DE TEXTO"
-```
-
-Como podemos ver, o método `ToUpper()` transforma todas as letras do texto em maiúsculas. Porém, se quisermos apenas capitalizar a primeira letra, podemos usar o método `ToTitleCase()` da classe `TextInfo` da seguinte forma:
+O código a seguir mostra como capitalizar uma string em C# usando o método `ToTitleCase` da classe `TextInfo`. O resultado será exibido no console.
 
 ```C#
-string texto = "exemplo de texto";
-TextInfo textInfo = new CultureInfo("pt-BR").TextInfo;
-string textoTitulo = textInfo.ToTitleCase(texto);
+using System.Globalization;
 
-Console.WriteLine(textoTitulo); // Exibe "Exemplo De Texto"
+string texto = "programação é legal";
+TextInfo textInfo = new CultureInfo("pt-BR", false).TextInfo;
+string textoCapitalizado = textInfo.ToTitleCase(texto);
+Console.WriteLine(textoCapitalizado);
 ```
 
-Além disso, é possível especificar o idioma a ser utilizado no método `ToTitleCase()`, garantindo uma capitalização de acordo com as regras de cada língua.
+```
+Programação É Legal
+```
 
-## Mergulho Profundo
+## Mergulho Profundo:
 
-O método `ToUpper()` e `ToTitleCase()` são chamados de "métodos de extensão", o que significa que eles são aplicados diretamente em um objeto `string`. Isso permite que o código fique mais limpo e legível. Além disso, o C# possui outras funções úteis para trabalhar com strings, como `ToLower()`, `Trim()` e `Replace()`, que auxiliam na manipulação e formatação de textos.
+No passado, em algumas línguas, apenas a primeira letra de uma frase era maiúscula. Mais tarde, o uso de maiúsculas e minúsculas foi adotado para melhorar a leitura e compreensão. Mas em alguns sistemas, apenas letras maiúsculas eram permitidas, e capitalizar uma string permitia que esses sistemas aceitassem o texto.
 
-## Veja Também
+Uma alternativa à capitalização de uma string é apenas forçar todas as letras para minúsculas ou maiúsculas, mas isso pode resultar em palavras ou nomes incorretos. Além disso, ao usar o método `ToTitleCase`, ele leva em consideração as regras de capitalização para cada idioma.
 
-- [Documentação Oficial do C#](https://docs.microsoft.com/pt-br/dotnet/csharp/)
-- [Lista de Culturas Suportadas pelo C#](https://docs.microsoft.com/pt-br/dotnet/api/system.globalization.cultureinfo?view=netcore-3.1)
-- [Tutorial de C# para Iniciantes](https://www.c-sharpcorner.com/article/c-sharp-tutorial-for-beginners/)
+Na implementação do método `ToTitleCase`, a classe `TextInfo` utiliza as convenções do idioma do sistema operacional para fazer a capitalização. Isso significa que o resultado pode ser diferente dependendo do idioma do usuário.
+
+## Veja também:
+
+- Documentação oficial da Microsoft sobre o método `ToTitleCase`: https://docs.microsoft.com/pt-br/dotnet/api/system.globalization.textinfo.totitlecase?view=net-5.0
+- Explicação da diferença entre `ToLower` e `ToTitleCase`: https://stackoverflow.com/a/186464
+- Lista de códigos de idiomas usados pelo `ToTitleCase`: https://msdn.microsoft.com/library/System.Globalization.CultureInfo(v=vs.110).aspx

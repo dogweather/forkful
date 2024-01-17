@@ -10,20 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜?
-문자열을 연결하는 것에 참여할 이유는 무엇일까요? Swift에서는 문자열을 쉽게 연결할 수 있는 기능이 있어 코드를 간단하게 작성할 수 있기 때문입니다.
+## 무엇 & 왜?
 
-## 하는 방법
+문자열을 이어붙이는 것은 간단한 개념입니다. 이는 한 개 이상의 문자열을 결합하여 새로운 하나의 문자열로 만드는 것을 의미합니다. 프로그래머들은 이를 하는 이유는 문자열을 다룰 때 유용하기 때문입니다.
+
+## 어떻게:
+
 ```Swift 
-let firstName = "John"
-let lastName = "Smith"
-let fullName = "\(firstName) \(lastName)"
-print(fullName)
+let greeting = "Hello"
+let name = "John"
+let message = greeting + " " + name
+
+print(message)
+// Output: "Hello John"
 ```
-위 코드에서는 `firstName`과 `lastName` 변수를 선언하고 `\(firstName) \(lastName)`을 이용하여 두 변수의 값을 합쳐 `fullName` 변수에 저장합니다. 그리고 `print` 함수를 사용하여 `fullName`을 출력합니다. 결과는 "John Smith"가 됩니다.
 
-## 깊이 파고들기
-Swift에서는 문자열을 연결하기 위해 `+` 연산자나 `String` 클래스의 `append` 메서드를 사용할 수 있습니다. 하지만 `String interpolation` 문법을 이용하면 변수를 더 간결하게 연결할 수 있습니다. 또한 문자열뿐만 아니라 다른 타입과도 함께 사용할 수 있습니다.
+## 깊이 파고들기:
 
-## 참고 자료
-[Swift 공식 문서](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+문자열을 연결하는 개념은 다양한 언어에서 모두 사용됩니다. 오래된 언어인 C에서는 `strcat()` 함수를 사용하거나 문자열 포맷팅을 사용합니다. 또한 Swift에서는 `+` 연산자를 사용하여 문자열을 이어붙일 수 있습니다. 다른 대안으로는 `String(StringInterpolation)`을 사용하는 방법이 있으며, 이를 통해 Swift 내부에서 문자열을 이어붙일 수 있습니다.
+
+## 관련 자료:
+
+- 문자열 다루기: [Swift Programming Language Guide](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+- `StringInterpolation`에 대한 문서: [Apple Developer Documentation](https://developer.apple.com/documentation/swift/stringinterpolation)

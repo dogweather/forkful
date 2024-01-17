@@ -1,7 +1,7 @@
 ---
-title:                "Alaryhmien erottaminen"
-html_title:           "Java: Alaryhmien erottaminen"
-simple_title:         "Alaryhmien erottaminen"
+title:                "Alialirivien erottaminen"
+html_title:           "Java: Alialirivien erottaminen"
+simple_title:         "Alialirivien erottaminen"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Strings"
@@ -10,44 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä & Miksi?
+Substringien erottaminen tarkoittaa osan merkkijonon poimimista. Tämä voi olla kätevää tietyissä tilanteissa, kuten kun halutaan käsitellä tiettyjä osia tekstistä erikseen. Ohjelmoijat käyttävät sitä usein helpottaakseen tiettyjen toimintojen toteuttamista.
 
-Joskus tietojen käsittelyssä tarvitaan tietyn osan tekstistä tai merkkijonosta, esimerkiksi nimen tai puhelinnumeron erottelua. Tämä tapahtuu substrin purkamisen avulla ja tässä artikkelissa käymme läpi miten se tehdään Java-kielellä.
+## Miten?
+Alla on esimerkkejä siitä, miten substringeja voidaan erottaa käyttämällä Java-ohjelmointikieltä.
 
-## Kuinka tehdä
-
-```Java
-// Luodaan merkkijono-olio ja annetaan sille sisältö
-String teksti = "Tervetuloa Java-maailmaan!";
-
-// Haetaan ensimmäiset 7 merkkiä merkkijonosta
-String tekstinAlku = teksti.substring(0, 7);
-
-// Tulostetaan teksti - "Tervetu"
-System.out.println(tekstinAlku);
-
-// Haetaan viimeiset 8 merkkiä merkkijonosta
-String tekstinLoppu = teksti.substring(teksti.length() - 8);
-
-// Tulostetaan teksti - "maailmaan!"
-System.out.println(tekstinLoppu);
-
-// Haetaan merkkijonon osa, joka sijaitsee välillä "Java" ja "!"
-String tekstinKeskiosa = teksti.substring(teksti.indexOf("Java") + 4, teksti.indexOf("!"));
-
-// Tulostetaan teksti - "-maailmaan-"
-System.out.println("-" + tekstinKeskiosa + "-");
 ```
+String s = "Tämä on esimerkki tekstistä";
+String substring = s.substring(4, 9);
+System.out.println(substring);
+```
+Tämä tulostaisi "on es", koska se erottaa tekstin osat väliltä 4-9 ja tallentaa ne muuttujaan "substring". Voit myös erottaa tekstistä osan aloittamalla tietystä merkistä ja lopettamalla siihen asti, kun teksti päättyy.
 
-Tässä esimerkissä luomme ensin merkkijono-olion ja annamme sille sisällön. Sitten käytämme `substring()`-metodia, joka ottaa parametreina aloitus- ja lopetuskohdat ja palauttaa halutun osan merkkijonosta. Voimme myös käyttää `indexOf()`-metodia löytääksemme tietyn merkkijonon sijainnin ja käyttää sitä parametrina `substring()`-metodissa.
+```
+String s = "Tämä on toinen esimerkki";
+String substring = s.substring(9);
+System.out.println(substring); 
+```
+Tämä tulostaisi "toinen esimerkki", koska se erottaa tekstin osan väliltä 9-14 ja tallentaa sen muuttujaan "substring". Voit myös käyttää substringeja muuttujien arvojen muokkaamiseen tai tarkistamiseen.
 
-## Syvällinen tarkastelu
-
-`substring()`-metodi toimii niin, että se luo uuden merkkijono-olion halutusta osasta alkuperäistä merkkijonoa. Tämä tarkoittaa sitä, että vaikka muokkaamme tai poistamme alkuperäisen merkkijonon, substrin sisältö pysyy ennallaan. On myös tärkeää huomata, että `substring()` käyttää nollaperusteista indeksointia, eli ensimmäinen merkki sijaitsee indeksissä 0.
-
-Voit myös käyttää `substring()`-metodia kahden parametrin sijasta vain yhdellä parametrilla, jolloin se palauttaa osan merkkijonosta halutusta indeksistä eteenpäin. Esimerkiksi `teksti.substring(10)` palauttaisi osan merkkijonosta "maailmaan!" alkaen kohdasta 10 eteenpäin.
+## Syvempi sukellus
+Substringien erottaminen oli ensimmäisen kerran mahdollista Java 1.2 -versiosta, kun lisättiin toinen substring-metodi, joka otettiin käyttöön Java 7:ssä. On myös erilaisia tapoja erottaa substringeja, kuten käyttämällä split-metodia tai regex-formaatteja. Substringien erottamisen avulla voit käsitellä tekstiä tehokkaammin ja tarkemmin.
 
 ## Katso myös
+Lisätietoa substringien erottamisesta Java-ohjelmointikielessä löytyy virallisilta Java-sivuilta: https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#substring(int,%20int)
 
-- [Java String Documentation](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html)
-- [Substring Tutorial by Codecademy](https://www.codecademy.com/courses/learn-java/lessons/java-arraylist/exercises/java-substring)
+Voit myös lukea lisää substringien käytöstä tästä artikkelista: https://www.baeldung.com/java-string-substr

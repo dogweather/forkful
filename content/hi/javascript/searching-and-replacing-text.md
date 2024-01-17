@@ -10,30 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-Kya aapne kabhi apne code mein ek specific text ko find aur replace kiya hai? Agar haan, toh aapko pata hoga ki yeh ek bahut common task hai jo har programmer ko karna padta hai. Text search and replace ka kaam karte waqt aapko same text ko manual search karne ki koi jarurat nahi hoti, jisse aapka time bachta hai aur aapka code bhi efficient banta hai.
+नया जावास्क्रिप्ट (वर्तमान संस्करण) प्रोग्रामिंग आर्टिकल: टिपण्णी-शैली में गैर-सूखवादी तौर से छह शीर्षकों की व्यवस्थापन युक्त आठ से डालने हेतु निलिखित आलेख में हिन्दी भाषा के पाठ्‌य प्रस्तुतियों अनिवार्य अभाव रहते हैं. श्रेणियों का उल्लेख हिन्दी भाषा में होगा.
 
-## How To
+## क्या और क्यों?
+कार्यक्रमकर्ताओं द्वारा पाठ को खोजने और बदलाव करने कोशिश तब की जाती है जब वे किसी विशेष फ़ाइल या प्रोग्राम में ऐसा करना चाहते हैं. इससे वे जान सकते हैं कि कितने सारे आवश्यकों को पूरा करना हो सकता है और उनका कोड कैसे और ज्यादा प्रभावी तरीके से लिखा जा सकता है.
+
+## कैसे करें:
+जावास्क्रिप्ट में पाठ को खोजने और बदलने के लिए, `search()` और `replace()` फ़ंक्शन का उपयोग करा जाता है. यह कोड नीचे दिये गए हैं:
+
 ```Javascript
-// Yaha pe hum "Hello World!" ke saath ek variable declaration karenge.
-var text = "Hello World!";
-// Ab hum "Hello" ko "Hi" mein replace karenge.
-var newText = text.replace("Hello", "Hi");
-// Ab humara newText "Hi World!" hoga.
-console.log(newText); // Output: "Hi World!"
+// उदाहरण १: पाठ को खोजकर उसे बदलें
+let text = "मुझे इस जावास्क्रिप्ट प्रोग्रामिंग भाषा का पसंदीदा भाग बनाना है.";
+let newText = text.replace("जावास्क्रिप्ट", "पायथन");
+console.log(newText); // यह मुझे इस पायथन प्रोग्रामिंग भाषा का पसंदीदा भाग बनाना है.
+
+// उदाहरण २: सभी एन-अक्षर को  छोड़ दें
+let text = "Hindi is my favorite language.";
+let newText = text.search(/[^n]/g);
+console.log(newText); // n
 ```
 
-Kya aapko dikh raha hai? Humne .replace() function ka use kiya jisse humne ek specific text ko find aur replace kiya. Is function mein pehle humne find karna chahe text ko aur fir uske replace karne wale text ko dena hota hai. Agar hume saare instances ko replace karna hai, toh hum .replace() function ke sath "g" modifier bhi laga sakte hai.
+## गहराई में जाएं:
+**इतिहासांकन:** जब आमतौर पर पाठ को खोजने और बदलने के लिए संदेश बॉक्स या टेक्स्ट का स्रोत कोड में समारोह में लागू किया जाता था, तो यह मुश्किल से था. लेकिन अब आसानी से प्रोग्रामर इसका इस्तेमाल कर सकते हैं क्योंकि जावास्क्रिप्ट में मौजूद बहुत सारे फ़ंक्शन.
 
-## Deep Dive
-Jaise ki humne upar dekha, .replace() function ek string method hai jo ek string ko find aur replace karne ke liye use kiya jaata hai. Is function ke arguments mein pehla argument woh text hai jo hume replace karna hai, aur dusra argument woh text hai jisse hum replace karna chahte hai. Hum chahe toh .replace() function ka ek optional argument bhi use kar sakte hai jisme hum find karne ke liye ek regex pattern bhi specify kar sakte hai.
+**वैकल्पिक:** इस प्रविधि की अलग-अलग रूपांतरण हैं, जैसे कि `replaceAll()` फ़ंक्शन एक ही समान होता है लेकिन यह अलग तरीके से कार्य करता है. असफल खोजों की स्थितियों होने में अनुशासन करने के लिए `g` विकल्प वाले झंझटों का उपयोग करें.
 
-Ek important point yeh hai ki .replace() function, original string ko change nahi karta hai. Balki iska output ek completely new string hai jisme changes kiye gaye hai. Agar aap chahe toh original string ko bhi change kar sakte hai, iske liye hume ek variable mein yeh new string store karna hoga.
-
-## See Also
-Agar aapko Javascript mein .replace() function ke alawa bhi aur string methods ke bare mein janna hai, toh aap ye links check kar sakte hai:
-
-- [MDN - String Methods](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String#Instance_methods)
-- [W3Schools - Javascript Strings](https://www.w3schools.com/js/js_strings.asp)
-
-Main aasha karta hu ki aapko yeh article helpful raha hoga. Happy coding!
+**निष्पादन की विवरण:** जब कोड को निष्पादित किया जाता है, तो स्ट्रिंग का `search()` फ़ंक्शन सबसे पहले हमेशा बाइट पर लौट के जवाब द

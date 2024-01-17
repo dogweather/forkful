@@ -10,37 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
+## क्या और क्यों?
 
-JSON कोडिंग में लोग उसका उपयोग इसलिए करते हैं क्योंकि यह एक लोकप्रिय एवं सुरक्षित प्रारूप है जो डेटा को आसानी से संगठित करता है।
+JSON के साथ काम करना वह विशेष कौशल है जो कोड को डेटा को संपादित करने और प्रसंस्करण करने की अनुमति देता है। प्रोग्रामर्स इसलिए JSON को उपयोग करते हैं आजकल कि यह सुपर संवेदनशील, अत्यंत ही उपयोगी, और स्क्रिप्टिंग भाषाओं के साथ प्रभावी तरीके से इंटीग्रेट होता है।
 
-## कैसे करें
-
-जब हम अपने PHP स्क्रिप्ट में JSON कोड का उपयोग करते हैं, तो हम उसे इस प्रकार से पारस्परिक विश्लेषण कर सकते हैं:
+## कैसे:
 
 ```PHP
-$json = '{"name":"John", "age":30, "city":"New York"}'; // JSON स्ट्रिंग
-$data = json_decode($json, true); // यह डेटा असोसियटिव एरे में परिवर्तित हो जाएगा
-echo $data['name']; // John आउटपुट
-echo $data['age']; // 30 आउटपुट
+// JSON डेटा बनाएं
+$data = array(
+  "पहला" => "खुद",
+  "दूसरा" => "समझने",
+  "तीसरा" => "जगह",
+  "चौथा" => "Json"
+);
+
+// PHP के साथ JSON बनाएं
+$jsondata = json_encode($data);
+
+// JSON डेटा को पढ़ें
+$jsonobj = json_decode($jsondata);
+
+// डेटा के रूप में प्रिंट करें
+echo $jsonobj->पहला . ", " . $jsonobj->दूसरा . ", " . $jsonobj->तीसरा . ", " . $jsonobj->चौथा . "!";
+
+// Output: खुद, समझने, जगह, Json!
 ```
 
-जोड़ सकते हैं:
+## गहराई में जाएं:
 
-```PHP
-$data = ['name' => 'John', 'age' => 30, 'city' => 'New York']; // एरे
-$json = json_encode($data); // इसे JSON स्ट्रिंग में परिवर्तित करें
-echo $json; // {"name":"John","age":30,"city":"New York"} आउटपुट
-```
+JSON का विस्तृत समर्थन 1990 के दशक में के उदगम का हिस्सा था। इसके अलावा, कुछ अन्य विकल्पों के रूप में XML और YAML भी प्रचलित हैं। PHP में, ```json_encode``` और ```json_decode``` फंक्शन को उपयोग करके JSON डेटा को प्रोसेस करना सुनिश्चित होता है।
 
-इस तरह से, हम PHP में JSON कोड का उपयोग कर सकते हैं।
+## इससे जुड़े देखें:
 
-## गहराई में
-
-JSON पैरसर पैकेज PHP में स्थापित है, इसलिए हम उसे कोड से आसानी से अपनी PHP एप्लीकेशन में शामिल कर सकते हैं। JSON कोडिंग के लिए यह एक ब्रिलियेंट और सरल विकल्प है।
-
-## देखें भी
-
-- [PHP में JSON कोडिंग का आसान गाइड](https://www.php.net/manual/en/book.json.php)
-- [JSON.org में PHP](https://www.json.org/php.html)
-- [PHP में JSON परिवर्तन](https://www.php.net/manual/en/json.requirements.php)
+- [PHP Manual: JSON फंक्शन](https://www.php.net/manual/en/book.json.php)
+- [W3Schools: PHP JSON उदाहरण](https://www.w3schools.com/php/php_json_example.asp)
+- [What is JSON? एक सरल गाइड](https://www.digitalocean.com/community/tutorials/an-introduction-to-json)

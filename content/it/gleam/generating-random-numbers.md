@@ -10,42 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
-Puoi pensare che generare numeri casuali sia solo per giochi o attività divertenti, ma in realtà è un'abilità utile da avere per molte applicazioni pratiche. Ad esempio, può essere utilizzato per testare algoritmi o per creare dati di esempio per il tuo programma.
+## Cos'è e perché?
 
-## Come fare
-Per generare numeri casuali in Gleam, puoi utilizzare la funzione `Random.int` che accetta un numero minimo e massimo e restituisce un intero casuale compreso tra questi due valori inclusi.
+Generare numeri casuali è un processo fondamentale nella programmazione. Ciò consente ai programmatori di creare elementi casuali nei loro programmi, come generare password sicure o selezionare un elemento a caso in una lista.
 
-```Gleam
-import Random
+## Come fare:
 
-let random_num = Random.int(1, 10)
-
-io.println(random_num)
-```
-
-Questo codice genererà e stamperà un numero casuale compreso tra 1 e 10 ogni volta che viene eseguito.
-
-Puoi anche utilizzare la funzione `Random.float` per generare un numero casuale con la virgola.
+Per generare un numero casuale in Gleam, puoi utilizzare la funzione `random.int` fornita dalla libreria standard `gleam/random`. Esempio:
 
 ```Gleam
-import Random
+import gleam/random.{int}
 
-let random_num = Random.float(0.0, 1.0)
-
-io.println(random_num)
+let num = random.int(1, 100) // genera un numero casuale tra 1 e 100
 ```
 
-In questo caso, il numero casuale sarà compreso tra 0.0 e 1.0.
+Output: il valore di `num` sarà un numero casuale compreso tra 1 e 100.
 
-## Approfondimento
-La generazione di numeri casuali in un programma richiede un algoritmo che sia in grado di riprodurre una serie di numeri che sembrano casuali. Uno dei metodi più comuni per farlo è il "linear congruential generator", che utilizza una formula matematica per generare una sequenza di numeri con proprietà statistiche simili a quelle di una sequenza casuale.
+Puoi anche utilizzare la funzione `random.float` per generare numeri casuali con la virgola. Esempio:
 
-Se vuoi esplorare ulteriormente il funzionamento di questo algoritmo e altre strategie per la generazione di numeri casuali, puoi consultare questi link:
+```Gleam
+import gleam/random.{float}
 
-- [Linear congruential generator - Wikipedia](https://en.wikipedia.org/wiki/Linear_congruential_generator)
-- [How to generate random numbers · Gleam](https://gleam.run/book/tour/random.html)
+let num = random.float(0, 1) // genera un numero float tra 0 e 1
+```
 
-## Vedi anche
-- [Gleam Documentation](https://gleam.run/) - Documentazione ufficiale di Gleam.
-- [Gleam on GitHub](https://github.com/gleam-lang/gleam) - Repository GitHub di Gleam.
+Output: il valore di `num` sarà un numero casuale con la virgola compreso tra 0 e 1.
+
+## Approfondimento:
+
+La generazione di numeri casuali è stata storicamente una sfida per i programmatori, con diverse tecniche sviluppate nel corso degli anni per rendere i numeri più "casuali". In Gleam, vengono utilizzati algoritmi di generazione di numeri pseudo-casuali, che utilizzano un particolare metodo matematico per produrre una sequenza di numeri che appaiono casuali.
+
+Un'alternativa a questi algoritmi è l'utilizzo di generatori di numeri veramente casuali, come ad esempio attraverso una fonte esterna, come un dispositivo fisico che registra l'entropia ambientale.
+
+Per chi vuole approfondire l'implementazione dei generatori di numeri casuali in Gleam, consigliamo di consultare il codice sorgente della libreria `gleam/random` e di approfondire gli algoritmi di generazione di numeri pseudo-casuali.
+
+## Vedi anche:
+
+- Documentazione ufficiale sulla libreria `gleam/random`: https://gleam.run/modules/gleam/random/latest/
+- Articolo su algoritmi di generazione di numeri pseudo-casuali: https://en.wikipedia.org/wiki/Pseudorandom_number_generator

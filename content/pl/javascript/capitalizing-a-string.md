@@ -1,7 +1,7 @@
 ---
-title:                "Zmiana wielkości liter w ciągu znaków"
-html_title:           "Javascript: Zmiana wielkości liter w ciągu znaków"
-simple_title:         "Zmiana wielkości liter w ciągu znaków"
+title:                "Konwertowanie ciągu tekstowego na wielkie litery"
+html_title:           "Javascript: Konwertowanie ciągu tekstowego na wielkie litery"
+simple_title:         "Konwertowanie ciągu tekstowego na wielkie litery"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Strings"
@@ -10,30 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+Co to jest kapitalizacja łańcucha i dlaczego powinniśmy tego używać?
 
-Czy kiedykolwiek zdarzyło Ci się, że musiałeś pozmieniać wielkość liter w ciągu znaków? Może pracujesz nad projektem, który wymaga jednolitej pisowni, albo po prostu chcesz wyświetlić użytkownikom imię zaczynające się z dużej litery? W takich sytuacjach capitalizacja stringu może być bardzo pomocna.
+Kapitalizacja łańcucha jest procesem zmiany małych liter na wielkie w łańcuchu tekstu. Programiści często wykonują tę operację, aby poprawić wygląd lub czytelność tekstu, a także dla potrzeb sortowania danych.
 
-## Jak to zrobić
+Jak to zrobić?
 
 ```Javascript
-// Przykładowy ciąg znaków
-let imie = "jan";
+let przykladowyTekst = "to jest przykladowy tekst";
 
-// Wykorzystanie metody toUpperCase()
-let imieZDuzej = imie.toUpperCase();
+//Funkcja toUpperCase () zwraca nowy łańcuch z wielkimi literami
+console.log(przykladowyTekst.toUpperCase ()); // WYNIK: TO JEST PRZYKŁADOWY TEKST
 
-//Wypisanie wyniku w konsoli
-console.log(imieZDuzej); // "JAN"
+//Możesz również użyć metody charAt (), aby zmienić pierwszą literę na wielką
+console.log(przykladowyTekst.charAt(0).toUpperCase() + przykladowyTekst.slice(1)); //WYNIK: To jest przykladowy tekst
 ```
 
-W powyższym przykładzie wykorzystaliśmy wbudowaną metodę **toUpperCase()**, która zmienia małe litery na wielkie. W ten sposób nie musimy ręcznie zmieniać wielkości liter w ciągu znaków, co jest czasochłonne i skłonne do błędów.
+Także warto wiedzieć
 
-## Deep Dive
+W historii programowania istniało wiele innych sposobów zmiany wielkości liter w łańcuchu, m.in. metody takie jak "snake_case" lub "camelCase", ale kapitalizacja jest najbardziej powszechna.
 
-Metoda **toUpperCase()** jest częścią obiektu String w języku Javascript. Możemy ją wykorzystać do zmiany wielkości liter w dowolnym ciągu znaków, nie tylko w pojedynczym wyrazie. Warto również zauważyć, że istnieje również metoda **toLowerCase()**, która działa w przeciwny sposób - zamienia wielkie litery na małe.
+Alternatywą dla kapitalizacji jest operacja "toLowerCase ()", która zamienia wszystkie litery na małe. 
 
-## Zobacz także
+W przypadku implementacji, metoda toUpperCase () jest niezwykle szybka i wydajna, ale możesz również użyć biblioteki zewnętrznej, jeśli potrzebujesz bardziej zaawansowanych funkcji kapitalizacji.
 
-- [Metoda toUpperCase() w dokumentacji Mozilla](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase)
-- [Metoda toLowerCase() w dokumentacji Mozilla](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)
+Zobacz również
+
+- Dokumentacja JavaScript na temat metod string (https://developer.mozilla.org/pl/docs/Web/JavaScript/Referencje/Obiekty/String)
+- Inne sposoby manipulacji danymi w JavaScript (https://www.w3schools.com/js/js_string_methods.asp)
+- Przydatne przykłady kapitalizacji w różnych językach programowania (https://www.programiz.com/java-programming/examples/string-capitalization)

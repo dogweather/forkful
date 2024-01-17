@@ -10,55 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+## 무엇이고 왜?
 
-잠시 사용되는 파일을 만드는 이유는 여러 가지가 있습니다. 가장 일반적인 이유는 프로그램이 특정 작업을 수행하는 동안 일시적으로 데이터를 저장할 필요가 있기 때문입니다. 또는 프로그램 종료 시 데이터를 삭제하고 메모리를 확보하기 위해 임시 파일을 사용할 수도 있습니다.
+임시 파일 생성이란 무엇인가? 임시 파일은 개발자들이 자주 사용하는 파일이며 일시적으로 사용하기 위해 만들어진 파일입니다. 프로그램이 실행되는 동안 필요한 정보를 저장하거나 처리할 수 있도록 할 때 유용하게 쓰입니다.
 
-## 만드는 방법
+## 하는 법:
 
-여기서는 C#의 `Path.GetTempFileName()` 메서드를 사용하여 임시 파일을 만드는 방법을 알아보겠습니다.
-
-```
-C# 
-using System;
-using System.IO;
-
-namespace TemporaryFileExample
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            // 임시 파일 이름 생성
-            string tempFileName = Path.GetTempFileName();
-
-            // 임시 파일 생성
-            using (var tempFile = File.Create(tempFileName))
-            {
-                // 임시 파일에 데이터 쓰기
-                using (var writer = new StreamWriter(tempFile))
-                {
-                    writer.WriteLine("Hello world!");
-                }
-            }
-
-            // 임시 파일 삭제
-            File.Delete(tempFileName);
-
-            Console.WriteLine("임시 파일이 생성되었습니다.");
-            Console.ReadLine();
-        }
-    }
-}
+```C#
+// 임시 파일을 생성하는 예제 코드
+string tempFilePath = Path.GetTempFileName();
 ```
 
-위 코드를 실행하면 `C:\Users\사용자이름\AppData\Local\Temp` 폴더에 임시 파일이 생성되고, 해당 파일에 "Hello world!"가 쓰여집니다. 프로그램이 종료되면 임시 파일은 자동으로 삭제됩니다.
+```C#
+// 임시 파일을 생성하는 예제 코드 - 다른 디렉토리에 만드는 방법
+string tempDirectory = @"C:\Temp";
+string tempFilePath = Path.Combine(tempDirectory, Guid.NewGuid().ToString());
+File.Create(tempFilePath);
+```
 
-## 딥 다이브
+위 코드를 실행하면 임시 파일이 생성되며, 해당 파일의 경로를 변수에 저장할 수 있습니다.
 
-`Path.GetTempFileName()` 메서드는 실제로 `GetTempFileNameW()` Win32 API를 호출하여 임시 파일을 만듭니다. 이 함수는 파일 이름으로 사용할 고유한 임시 파일 이름을 생성하고, 해당 파일을 생성한 다음 파일 핸들을 반환합니다. `using`키워드를 사용하면 파일 핸들을 자동으로 닫고, `File.Delete()` 메서드를 사용하여 임시 파일을 삭제할 수 있습니다.
+```C#
+// 예제 코드 실행 결과
+C:\Users\Username\AppData\Local\Temp\tmp123.tmp
+```
 
-## 관련 링크
+## 깊게 들어가기:
 
-- [Microsoft Docs - Path.GetTempFileName 메서드](https://docs.microsoft.com/ko-kr/dotnet/api/system.io.path.gettempfilename)
-- [Microsoft Docs - GetTempFileNameW 함수](https://docs.microsoft.com/ko-kr/windows/win32/api/fileapi/nf-fileapi-gettempfilenamew)
+임시 파일 생성은 운영 체제에서 제공하는 기능을 이용하는 것입니다. 예를 들어, Windows 운영 체제에서는 아래와 같이 `GetTempFileName` 함수를 제공합니다.
+
+```C#
+[DllImport("kernel32.dll", CharSet = CharSet.Auto, SetLastError = true)]
+public static extern uint GetTempFileName(string tempDirectory, string prefix, uint unique, StringBuilder tempFileName);
+```
+
+또한, 사용자가 직접 임시 파일을 만드는 방법도 있습니다. 이 경우에는 무작위의 파일 이름을 생성하여 파일을 만드는데, GUID 값을 활용할 수 있습니다.
+
+기존에 임시 파일을 만들어 사용한 후 삭제해야하지만, 최근에는 MemoryStream 클래스를 사용하여 임시 파일을 만들지 않고도 임시 저장 공간을 생성할 수 있습니다.
+
+## 또 다른 방법이 궁금하신가요?
+
+- [Temporary File 생성 방법 - Microsoft 기술문서](https://docs.microsoft.com/ko-kr/dotnet/standard/io/how-to-create-a-temporary-file)
+- [C# 프로그램에서 임시 파일을 만드는 다른 방법 - 코드기억](http://www.codeengn.com/cs-how-to-create-temporary-file-in-csharp/)

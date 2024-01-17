@@ -10,45 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché utilizzare espressioni regolari in Gleam
+## Cosa & Perché?
+Le espressioni regolari sono uno strumento fondamentale per i programmatori per trovare e manipolare testo in modo efficiente e preciso. Sono utilizzate in molte lingue di programmazione, tra cui Gleam, per cercare corrispondenze tra pattern e stringhe di testo.
 
-Se stai scrivendo codice in Gleam, è probabile che presto o tardi ti troverai di fronte alla necessità di manipolare stringhe di testo. Le espressioni regolari sono uno strumento potente per trovare e manipolare determinati pattern all'interno di stringhe di testo. Ti permettono di risparmiare tempo e sforzi nella manipolazione di stringhe e possono aiutarti a scrivere codice più efficiente e accurato.
-
-## Come utilizzare espressioni regolari in Gleam
-
-Per utilizzare le espressioni regolari, il primo passo è importare il modulo `regex` di Gleam. Puoi farlo utilizzando il seguente codice:
+## Come fare:
+Le espressioni regolari in Gleam possono essere create usando il modulo `regex` della libreria standard. Ad esempio, per trovare una corrispondenza di un numero telefonico in una stringa di testo, possiamo usare il seguente codice:
 
 ```Gleam
 import regex
 
-// Resto del codice
+let telefono_regex = regex.compile("([0-9]{3})-([0-9]{3})-([0-9]{4})")
+
+let stringa_di_testo = "Il mio numero di telefono è 555-123-4567"
+let risultato = stringa_di_testo
+  |> regex.find(telefono_regex)
+  |> Option.map(fn {region, _} -> region)
+
+// Risultato = Some("555-123-4567")
 ```
 
-Una volta importato il modulo, puoi utilizzare la funzione `Regex.replace` per cercare e sostituire un determinato pattern all'interno di una stringa. Ad esempio:
+Il codice sopra importa il modulo `regex`, compila un'espressione regolare per il formato di un numero di telefono americano e usa il metodo `find` per cercare una corrispondenza all'interno della stringa di testo. Il risultato è un `Option` contenente la corrispondenza trovata.
 
-```Gleam
-let input = "Hello, World!"
-let output = Regex.replace(input, Regex.compile("[Ww]orld"), "new_world")
+## Approfondimento:
+Le espressioni regolari sono state inventate negli anni '50 dall'informatico statunitense Stephen Kleene. Oggi sono utilizzate in molte lingue di programmazione e strumenti di ricerca avanzata, come gli editor di testo. In alternativa alle espressioni regolari, ci sono anche altre tecniche di matching come le grammatiche regolari e i parser.
 
-// output diventerà "Hello, new_world!"
-```
-Puoi anche utilizzare la funzione `Regex.match` per cercare un determinato pattern all'interno di una stringa e ottenere le corrispondenze trovate. Ad esempio:
+Un'implementazione popolare di espressioni regolari è quella del motore di ricerca `PCRE`, che viene utilizzato in molti linguaggi di programmazione. Nel caso di Gleam, l'implementazione è basata sulla libreria `re2`, che è veloce e sicura da usare in un ambiente di concorrenza come quello di Erlang.
 
-```Gleam
-let input = "01/01/2021"
-let matches = Regex.match(input, Regex.compile("([0-9]{2})/([0-9]{2})/([0-9]{4})"))
-
-// matches diventerà Just(["01/01/2021", "01", "01", "2021"])
-```
-
-## Approfondimenti sull'utilizzo di espressioni regolari in Gleam
-
-Una volta compreso come utilizzare le espressioni regolari in Gleam, puoi esplorare ulteriormente le diverse funzioni e opzioni disponibili nel modulo `regex`. Puoi anche imparare a creare espressioni regolari più complesse, incluse le cosiddette "capture groups" che consentono di ottenere specifiche porzioni di una stringa corrispondente al pattern cercato.
-
-Oltre a ciò, è importante anche comprendere le "best practices" nell'utilizzo delle espressioni regolari, come ad esempio la corretta gestione delle eccezioni e la verifica della correttezza dei pattern utilizzati.
-
-## Vedi anche
-
-- Documentazione del modulo `regex` di Gleam: https://gleam.run/libraries/regex/
-- Guida alle espressioni regolari: https://regexone.com/
-- Tutorial su come utilizzare espressioni regolari in Gleam: https://serokell.io/blog/gleam-regex-tutorial
+## Vedi anche:
+- Documentazione ufficiale di Gleam sul modulo `regex`: https://gleam.run/modules/regex/
+- Tutorial su come utilizzare espressioni regolari in altre lingue di programmazione: https://www.regular-expressions.info/tutorial.html

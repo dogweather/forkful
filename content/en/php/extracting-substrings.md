@@ -10,88 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
+Simply put, extracting substrings in PHP means taking a small part of a larger string. Programmers use this technique to manipulate and work with specific portions of a string without affecting the rest of it. This helps make their code more efficient and precise.
 
-Have you ever needed to grab a smaller portion of a larger string? This could be for parsing data, formatting text, or any other reason. In PHP, we can easily accomplish this by extracting substrings.
+## How to:
+To extract substrings in PHP, we use the `substr()` function. Let's take a look at an example:
 
-## How To
-
-Extracting substrings in PHP is a simple task that can be achieved using the built-in `substr()` function. Let's take a look at some code examples to see how it works:
-
-```
-<?php
-// String we want to extract from
+```PHP
 $string = "Hello World";
-
-// Extracting from start index 0, with a length of 5 characters
-$substring = substr($string, 0, 5);
-
-// Output: Hello
-echo $substring;
-
-// Extracting from start index 6 until the end of the string
-$substring = substr($string, 6);
-
-// Output: World
-echo $substring;
-?>
+$subString = substr($string, 6, 5);
+echo $subString;
 ```
+The first argument in the `substr()` function is the original string, and the second argument is the starting index of the substring. The third argument is optional and represents the length of the substring. In this example, we start at index 6, which is the 'W' in "World" and include the next 5 characters, resulting in "World" being printed as the output.
 
-As shown in the above examples, `substr()` takes in three parameters - the string we want to extract from, the starting index, and the optional length of characters to extract. If no length is specified, it will extract everything from the starting index until the end of the string.
-
-We can also use negative indices to count backwards from the end of the string. Let's see this in action:
-
+Another example using the optional length parameter:
+```PHP
+$string = "I love coding in PHP";
+$subString = substr($string, 7);
+echo $subString;
 ```
-<?php
-$string = "Lorem ipsum dolor sit amet";
+In this example, we start at index 7, which is the space after "love", and include all the rest of the characters in the string. The output will be "coding in PHP".
 
-// Extracting from start index -16, with a length of 5 characters
-$substring = substr($string, -16, 5);
+## Deep Dive:
+The `substr()` function was introduced in PHP 4 and has been a handy tool for programmers since then. Before its existence, programmers had to use more complicated and less efficient methods to extract substrings.
 
-// Output: dolor
-echo $substring;
+There is also an alternative function, `mb_substr()`, which is a multi-byte safe version of `substr()`. This means it can handle strings with non-ASCII characters correctly. In cases where you are working with multibyte characters, it is recommended to use `mb_substr()` instead.
 
-// Extracting from start index -4 until the end of the string
-$substring = substr($string, -4);
+Internally, `substr()` uses the `memcmp()` function to compare bytes of the string. This is done in a relatively efficient way to avoid excessive memory usage for large strings.
 
-// Output: amet
-echo $substring;
-?>
-```
-
-In addition, we can use `substr()` to replace a portion of the string with another string, using the optional fourth parameter. This can be useful for formatting or manipulating text. Here's an example:
-
-```
-<?php
-$string = "apple banana grape";
-
-// Replacing "banana" with "orange"
-$new_string = substr_replace($string, "orange", 6, 6);
-
-// Output: apple orange grape
-echo $new_string;
-?>
-```
-
-## Deep Dive
-
-The `substr()` function is a part of the core set of string functions in PHP. It primarily works with bytes and has some limitations when dealing with multibyte characters, as it counts each byte as one character. This can lead to unexpected results when working with non-English languages.
-
-To avoid this issue, we can use the `mb_substr()` function, which is a multibyte version of `substr()`. It takes the same parameters and produces the same output, but properly handles multibyte characters by counting them as individual characters. Here's an example:
-
-```
-<?php
-$string = "こんにちは世界";
-
-// Extracting from start index 3, with a length of 3 characters
-$substring = mb_substr($string, 3, 3);
-
-// Output: 界
-echo $substring;
-?>
-```
-
-## See Also
-
-- [PHP: substr() function](https://www.php.net/manual/en/function.substr.php)
-- [PHP: mb_substr() function](https://www.php.net/manual/en/function.mb-substr.php)
+## See Also:
+- PHP manual for substr(): http://php.net/manual/en/function.substr.php
+- PHP manual for mb_substr(): http://php.net/manual/en/function.mb-substr.php

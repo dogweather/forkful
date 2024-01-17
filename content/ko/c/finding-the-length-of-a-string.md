@@ -10,40 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+# What & Why?
+문자열의 길이를 찾는 것은 그 이름 그대로, 특정 문자열이 얼마나 긴지를 알아내는 것을 말합니다. 이 기능은 프로그래밍에서 매우 중요한데, 우리가 다루는 데이터가 얼마나 길거나 얼마만큼의 용량을 차지하는지 알아야 하기 때문입니다.
 
-문자열의 길이를 찾는 것에 참여하는 이유는 매우 간단합니다. 그것은 프로그램에서 문자열을 다룰 수 있게 해주기 때문입니다.
-
-## 하우 투
-
-문자열의 길이를 찾는 것은 C 프로그래밍에서 매우 기본적이고 필수적인 작업입니다. 이를 위해서는 다음과 같은 단계를 따릅니다.
-
-1. `strlen()` 함수를 이용하여 문자열의 길이를 반환합니다.
-
-```
+# How to:
+예를 들어 문자열 "Hello World"의 길이를 알고 싶다면, 다음과 같이 코드를 작성할 수 있습니다.
+```C
 #include <stdio.h>
 #include <string.h>
 
 int main() {
     char str[] = "Hello World";
-    int len = strlen(str); // 길이를 변수에 저장합니다.
-    printf("문자열의 길이: %d", len);
-    return 0;
+    int length = strlen(str);
+    printf("Length of string: %d \n", length);
 }
 ```
-
-2. 위의 코드를 실행하면 `Hello World` 문자열의 길이가 출력됩니다.
-
+위 코드를 실행하면 다음과 같은 결과가 출력됩니다.
 ```
-문자열의 길이: 11
+Length of string: 11
 ```
 
-## 딥 다이브
+# Deep Dive:
+이 기능은 C 언어에서 기본적으로 제공되는 함수인 `strlen()` 을 이용해 구현할 수 있습니다. 이 함수는 `<string.h>` 헤더 파일에 정의되어 있으며, 주어진 문자열의 길이를 반환합니다. 반대로, 문자열의 실제 크기를 구한다면 `sizeof()` 함수를 사용할 수 있지만 이 함수는 NULL 문자를 포함한 전체 배열의 크기를 반환하기 때문에 문자열의 길이를 찾는 데는 적합하지 않습니다. 또 다른 대안은 반복문을 사용해 문자열의 각 문자가 나타날 때마다 카운터를 증가시켜 길이를 찾는 것입니다.
 
-C 프로그래밍에서 문자열의 길이를 찾는 것은 매우 간단한 작업처럼 보이지만, 실제로는 많은 내부 작업이 수행됩니다. `strlen()` 함수는 문자열의 첫 번째 문자부터 순차적으로 탐색하면서 NULL 문자 `\0`을 만날 때까지 카운팅하게 됩니다. 따라서 문자열의 길이가 늘어날수록 작업 시간도 늘어날 수 있습니다.
-
-## 봐주세요
-
-- [C 언어 튜토리얼](https://www.programiz.com/c-programming)
-- [문자열 처리 관련 함수들](https://modoocode.com/141)
-- [NULL 문자에 대한 이해](https://www.geeksforgeeks.org/null-character-c/)
+# See Also:
+- [strlen() 함수 문서](https://www.tutorialspoint.com/c_standard_library/c_function_strlen.htm)
+- [sizeof() 함수 문서](https://www.tutorialspoint.com/c_standard_library/c_function_sizeof.htm)

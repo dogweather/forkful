@@ -1,7 +1,7 @@
 ---
-title:                "Maiuscolizzazione di una stringa"
-html_title:           "C: Maiuscolizzazione di una stringa"
-simple_title:         "Maiuscolizzazione di una stringa"
+title:                "Capitalizzare una stringa"
+html_title:           "C: Capitalizzare una stringa"
+simple_title:         "Capitalizzare una stringa"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -10,51 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##Perchè
+## Cosa & Perché?
+Capitalizzare una stringa è il processo di convertire tutte le lettere di una stringa in maiuscolo. I programmatori spesso lo fanno per uniformare una stringa o per confrontarla con altre stringhe.
 
-Spesso capita di dover manipolare dati di testo all'interno di un programma in C, e una delle operazioni più comuni è quella di convertire la prima lettera di una stringa in maiuscolo. Capitale è un'esigenza comune in molti contesti, come ad esempio nel salvataggio di un nome utente, nel formattare un titolo o nell'ordinamento di una lista di parole. In questo articolo vedremo come implementare questa funzionalità in C.
-
-##Come fare
-
-Per eseguire questa operazione, è necessario manipolare i singoli caratteri della stringa. La funzione `toupper()` della libreria standard `<ctype.h>` ci sarà di aiuto, in quanto prende come argomento un singolo carattere e lo converte nel corrispondente carattere maiuscolo, se presente.
-
+## Come:
+Un esempio di codice per capitalizzare una stringa in C è il seguente:
 ```
 #include <stdio.h>
+#include <string.h>
 #include <ctype.h>
-
-void capitalize(char str[])
-{
-    int i = 0;
-
-    // Scansione dei caratteri fino alla fine della stringa
-    while (str[i] != '\0')
-    {
-        // Converte il carattere in maiuscolo
-        str[i] = toupper(str[i]);
-        i++;
-    }
-}
 
 int main()
 {
-    // Stringa di esempio
-    char stringa[] = "ciao mondo";
+    char stringa[] = "esempio di stringa";
+    char nuova_stringa[20];
+    int i;
 
-    // Chiamata della funzione per capitalizzare il testo
-    capitalize(string);
+    printf("Stringa originale: %s\n", stringa);
 
-    // Output: CIAO MONDO
-    printf("%s", stringa);
+    for(i = 0; i < strlen(stringa); i++)
+    {
+        nuova_stringa[i] = toupper(stringa[i]);
+    }
+
+    printf("Stringa capitalizzata: %s", nuova_stringa);
 
     return 0;
 }
 ```
 
-##Approfondimento
+Questo codice utilizza la funzione `toupper()` della libreria `ctype.h` per convertire ogni lettera della stringa in maiuscolo e la funzione `strlen()` della libreria `string.h` per determinare la lunghezza della stringa originale. Il risultato della conversione viene salvato in una nuova stringa.
 
-In generale, è possibile capitalizzare anche le lettere successive alla prima, seguendo le regole di grammatica della lingua in cui si sta lavorando. Tuttavia, per evitare complicazioni di questo tipo, è consigliabile utilizzare una libreria esterna specifica per la lingua desiderata.
+L'output di questo codice sarà:
+```
+Stringa originale: esempio di stringa
+Stringa capitalizzata: ESEMPIO DI STRINGA
+```
 
-##Vedi anche
+## Approfondimento:
+La funzione `toupper()` viene utilizzata anche per convertire caratteri di un intero alfabeto, come ad esempio il turco. Inoltre, esistono anche altri metodi per capitalizzare una stringa, come ad esempio utilizzando il puntatore all'inizio della stringa e modificando i caratteri uno alla volta.
 
-- [Funzione `toupper()` della libreria `<ctype.h>`](https://man7.org/linux/man-pages/man3/toupper.3.html)
-- [Libreria per la formattazione dei testi in italiano in C](https://github.com/enricobacis/libitalian)
+## Vedi anche:
+Per ulteriori informazioni sulle funzioni utilizzate in questo articolo, si consiglia di consultare la documentazione ufficiale di C su `toupper()` e `strlen()`.

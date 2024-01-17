@@ -1,7 +1,7 @@
 ---
-title:                "Store bokstaver i en tekststreng"
-html_title:           "C++: Store bokstaver i en tekststreng"
-simple_title:         "Store bokstaver i en tekststreng"
+title:                "Stor bokstavering av en streng"
+html_title:           "C++: Stor bokstavering av en streng"
+simple_title:         "Stor bokstavering av en streng"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -10,64 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hva & Hvorfor?
+Kapitalisering av en streng er en prosess der den første bokstaven i hvert ord i en setning blir gjort stor. Dette gjør teksten lettere å lese og følge for både mennesker og datamaskiner.
 
-Det kan være flere grunner til å kapitalisere en streng i et program. En vanlig grunn er å gjøre utdataen mer lesbar for brukeren. Det kan også være nødvendig for å følge konvensjoner og standarder i koding.
+Programmerere bruker kapitalisering for å gjøre koden mer leselig, spesielt når det kommer til variabelnavn og kommentarer. Det bidrar til å tydeliggjøre koden og gjøre den enklere å forstå.
 
-## Slik gjør du det
-
-For å kapitalisere en streng i C++, trenger du å bruke en innebygd funksjon kalt `toupper()`. Denne funksjonen konverterer et enkelttegn til dets tilsvarende store bokstav. Ved å bruke en løkke, kan du gå gjennom alle tegnene i strengen og konvertere dem til store bokstaver.
-
-```C++
-// Eksempelkode for å kapitalisere en streng i C++
-// Bruker en løkke og toupper() funksjonen
-
-#include <iostream>
-#include <cstring> // for å bruke strcpy() funksjonen
-#include <cctype> // for å bruke toupper() funksjonen
-using namespace std;
-
-int main()
-{
-    char input[100]; // lagrer den opprinnelige strengen
-    char output[100]; // lagrer den kapitaliserte strengen
-    int len; // lengden på strengen
-
-    // les inn den opprinnelige strengen fra brukeren
-    cout << "Skriv inn en streng: ";
-    cin.getline(input, 100);
-
-    len = strlen(input);
-
-    // bruk toupper() funksjonen til å konvertere hvert tegn
-    // og lagre det i output strengen
-    for (int i = 0; i < len; i++)
-    {
-        output[i] = toupper(input[i]);
-    }
-
-    // legg til en avsluttende null-tegn i output strengen
-    output[len] = '\0';
-
-    // skriv ut den kapitaliserte strengen
-    cout << "Den kapitaliserte strengen er: " << output;
-
-    return 0;
-}
+## Slik gjør du:
+Kapitalisering i C++ kan gjøres ved å bruke transform-funksjonen og toupper-funksjonen fra STL-biblioteket. Se eksempelkoden nedenfor for å se hvordan det gjøres:
 
 ```
+// Eksempel på kapitalisering av en streng i C++
+#include <iostream>
+#include <string>
+#include <algorithm>
 
-**Eksempel input:** Hei på deg!
+using namespace std;
 
-**Eksempel output:** HEI PÅ DEG!
+int main() {
+    string sentence = "dette er en test";
+    transform(sentence.begin(), sentence.end(), sentence.begin(), ::toupper);
+    cout << sentence << endl;
+    return 0;
+}
+```
 
-## Dypdykk
+Dette vil produsere følgende utgang:
 
-Mens `toupper()` funksjonen er den vanligste måten å kapitalisere en streng på i C++, er det flere andre metoder tilgjengelig. For eksempel kan du bruke `str.capitalize()` funksjonen fra `cstring` biblioteket i stedet for å lage en løkke. Denne funksjonen vil også konvertere første bokstav i hvert ord til stor bokstav, i tillegg til å konvertere enkelttegn.
+`DETTE ER EN TEST`
 
-Det finnes også tilgjengelige biblioteker og tredjepartsverktøy som tilbyr mer avanserte funksjoner for å kapitalisere strenger, som for eksempel å ignorere akronymer eller bestemte ord.
+## Dypdykk:
+Historisk sett ble kapitalisering brukt i programmene til tidlige datamaskiner, som bare taklet store bokstaver. I dag brukes det primært for å gjøre koden mer lesbar og strukturert.
 
-## Se også
+Alternativene til å bruke STL-funksjoner for å kapitalisere en streng inkluderer å lage en egen funksjon eller å bruke en tredjepartsbibliotek.
 
-- [C++ toupper() funksjon](https://www.programiz.com/cpp-programming/library-function/cctype/toupper)
-- [C++ str.capitalize() funksjon](https://www.programiz.com/cpp-programming/library-function/cstring/strcapitalize)
+Implementeringsdetaljer for kapitalisering kan variere avhengig av programmeringsspråket, men konseptet og bruken av STL-biblioteket forblir det samme.
+
+## Se også:
+- [STL-biblioteket i C++](https://www.geeksforgeeks.org/the-c-standard-template-library-stl/)
+- [Implementasjon av kapitalisering i Java](https://www.techiedelight.com/capitalize-first-letter-of-each-word-string-java/)

@@ -1,7 +1,7 @@
 ---
-title:                "Senden einer http-Anfrage mit grundlegender Authentifizierung"
-html_title:           "C: Senden einer http-Anfrage mit grundlegender Authentifizierung"
-simple_title:         "Senden einer http-Anfrage mit grundlegender Authentifizierung"
+title:                "Senden einer HTTP-Anfrage mit Basic-Authentifizierung"
+html_title:           "C: Senden einer HTTP-Anfrage mit Basic-Authentifizierung"
+simple_title:         "Senden einer HTTP-Anfrage mit Basic-Authentifizierung"
 programming_language: "C"
 category:             "C"
 tag:                  "HTML and the Web"
@@ -10,15 +10,15 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+# Was & Warum?
 
-Es gibt viele Gründe, warum man sich beim Senden einer HTTP-Anfrage mit Basissauthentifizierung (Basic Authentication) beschäftigen könnte. Möglicherweise möchten Sie eine sichere Verbindung zu einem Server herstellen oder Zugriff auf bestimmte geschützte Ressourcen erhalten. In jedem Fall ist es wichtig zu wissen, wie man eine Anfrage mit Basissauthentifizierung richtig sendet, um Ihre Ziele zu erreichen.
+Das Senden einer HTTP-Anfrage mit grundlegender Authentifizierung bedeutet, dass ein Programmierer bei der Verbindung mit einem Webserver Benutzername und Passwort verwendet, um sich zu authentifizieren. Dies wird in der Regel verwendet, um speziell geschützte Ressourcen oder eine API aufzurufen. Programmierer verwenden dies, um sicherzustellen, dass nur berechtigte Benutzer auf bestimmte Informationen zugreifen können.
 
-## Wie funktioniert es?
+# Wie Geht Das?
 
-Um eine HTTP-Anfrage mit Basissauthentifizierung zu senden, müssen Sie Ihrem Code einige zusätzliche Parameter hinzufügen. Hier ist eine Beispielfunktion in C, die Ihnen zeigt, wie Sie das tun können:
+Der folgende Code zeigt ein Beispiel, wie man eine HTTP-Anfrage mit grundlegender Authentifizierung in C senden kann:
 
-```C
+```
 #include <stdio.h>
 #include <curl/curl.h>
 
@@ -26,42 +26,39 @@ int main(void)
 {
   CURL *curl;
   CURLcode res;
-
-  // Initialisieren Sie den Curl-Handle
+  
   curl = curl_easy_init();
+  
   if(curl) {
-    // Setzen Sie die zu verwendende URL
-    curl_easy_setopt(curl, CURLOPT_URL, "http://example.com/");
-
-    // Fügen Sie den Benutzernamen und das Passwort hinzu
-    curl_easy_setopt(curl, CURLOPT_USERPWD, "username:password");
-
-    // Führen Sie die HTTP-Anfrage aus und speichern Sie die Antwort in 'res'
+    curl_easy_setopt(curl, CURLOPT_URL, "http://www.example.com/api");
+    curl_easy_setopt(curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
+    curl_easy_setopt(curl, CURLOPT_USERNAME, "username");
+    curl_easy_setopt(curl, CURLOPT_PASSWORD, "password");
+    
     res = curl_easy_perform(curl);
-
-    // Überprüfen Sie, ob Fehler aufgetreten sind
+    
     if(res != CURLE_OK)
-      fprintf(stderr, "curl Fehler: %s\n",
+      fprintf(stderr, "curl_easy_perform() failed: %s\n",
               curl_easy_strerror(res));
-
-    // Bereinigen Sie den Curl-Handle
+              
     curl_easy_cleanup(curl);
   }
   return 0;
 }
 ```
 
-Dieses Beispiel verwendet die Curl-Bibliothek, um eine HTTP-Anfrage durchzuführen. Es verwendet auch die Funktion `curl_easy_setopt()` , um zusätzliche Parameter wie die URL und die Benutzerdaten anzugeben. Wenn alles gut geht, sollte die Antwort in der Variablen `res` gespeichert werden.
+Das obige Beispiel verwendet die cURL-Bibliothek, um eine HTTP-Anfrage mit grundlegender Authentifizierung zu senden. Die Funktion ```curl_easy_setopt()``` wird verwendet, um die entsprechenden Optionen zu setzen, einschließlich der URL, der Art der Authentifizierung und der Benutzerdaten. Dann wird die Funktion ```curl_easy_perform()``` verwendet, um die Anforderung tatsächlich auszuführen.
 
-## Tiefergehende Einblicke
+Das Ergebnis sollte der erhaltene HTTP-Statuscode und der entsprechende Inhalt sein.
 
-Beim Senden einer HTTP-Anfrage mit Basissauthentifizierung ist es wichtig zu beachten, dass der Benutzername und das Passwort im Klartext übertragen werden. Aus diesem Grund sollte diese Methode nur für sichere Verbindungen verwendet werden und das Passwort sollte regelmäßig geändert werden.
+# Tiefer Einblick
 
-Es gibt auch verschiedene Arten von HTTP-Authentifizierung, wie Digest- und OAuth-Authentifizierung, die möglicherweise besser geeignet sind, je nachdem, was Sie erreichen möchten. Es lohnt sich, sich mit diesen Alternativen vertraut zu machen, um die beste Wahl für Ihr Szenario zu treffen.
+Die grundlegende Authentifizierung wurde eingeführt, um eine einfache Methode zur Authentifizierung von Anfragen zu bieten. Sie ist jedoch nicht sehr sicher, da Benutzername und Passwort in Klartext übertragen werden. Aus diesem Grund werden heute oft alternative Methoden wie OAuth oder Token-basierte Authentifizierung verwendet.
 
-Insgesamt ist das Senden einer HTTP-Anfrage mit Basissauthentifizierung eine nützliche Technik, um Zugriff auf geschützte Ressourcen zu erhalten. Mit den richtigen Werkzeugen und Kenntnissen können Sie sicher und effektiv mit Ihrer Ziel-URL kommunizieren.
+Die cURL-Bibliothek ist eine beliebte Wahl zur Durchführung von HTTP-Anfragen und bietet eine Vielzahl von Optionen für verschiedene Arten von Authentifizierung.
 
-## Siehe auch
+# Siehe Auch
 
-- [Curl-Bibliothek](https://curl.se/libcurl/)
-- [HTTP-Authentifizierungstypen](https://developer.mozilla.org/de/docs/Web/HTTP/Authentication)
+- [cURL-Bibliothek](https://curl.haxx.se/libcurl/)
+- [OAuth](https://oauth.net/)
+- [Token-basierte Authentifizierung](https://stormpath.com/blog/token-based-authentication-for-single-page-applications)

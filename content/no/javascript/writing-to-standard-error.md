@@ -1,7 +1,7 @@
 ---
-title:                "Skriving til standardfeil"
-html_title:           "Javascript: Skriving til standardfeil"
-simple_title:         "Skriving til standardfeil"
+title:                "Skriver til standard feil"
+html_title:           "Javascript: Skriver til standard feil"
+simple_title:         "Skriver til standard feil"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Files and I/O"
@@ -10,33 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
-For de fleste er standard error en ukjent og sjelden brukt funksjon i Javascript. Men det kan være en nyttig måte å feilsøke og forbedre koden din på. I denne artikkelen vil vi se nærmere på hvorfor det kan være lurt å skrive til standard error og hvordan man gjør det.
+# Hva og hvorfor?
 
-## Slik gjør du det
-For å skrive til standard error, kan du bruke console.error() funksjonen i Javascript. Denne funksjonen tar imot en eller flere variabler som input, og skriver de ut i standard error konsollen. Her er et eksempel på hvordan du kan bruke funksjonen:
+Skriver du noen ganger til standardfeil når du koder? Det betyr rett og slett at man sender feilmeldinger eller annen informasjon til strømmen for standardfeil i stedet for standardutgang. Programmerere gjør dette fordi det er et viktig verktøy for å feilsøke og forbedre koden sin.
 
-```Javascript
-console.error("Dette er en feilmelding");
-```
-
-Dette vil resultere i at teksten "Dette er en feilmelding" blir skrevet ut i standard error konsollen.
-
-Du kan også bruke interpolering for å vise variabler i feilmeldingen. Dette gjøres ved å bruke ${variabelnavn} inne i en tekststreng som vist nedenfor:
+# Hvordan:
 
 ```Javascript
-let num = 7;
-console.error(`Variabelen num har verdien ${num}`);
+console.error("Dette er en feilmelding til standardfeil!");
 ```
 
-Dette vil skrive ut teksten "Variabelen num har verdien 7" i standard error konsollen.
+Resultat:
+Dette er en feilmelding til standardfeil!
 
-## Dypdykk
-Nå lurer du sikkert på hvorfor dette er nyttig? En av fordelene med å skrive til standard error er at du kan skrive ut til konsollen selv når koden din ikke kjører. Dette kan være nyttig når du prøver å finne ut hvor koden din feiler. I tillegg vil feilmeldingene dine bli tydeligere og enklere å forstå for andre utviklere som skal bruke koden din.
+# Dypdykk:
 
-Det er også viktig å merke seg at standard error er forskjellig fra standard output som er det som vanligvis blir skrevet til konsollen med console.log(). Mens standard output er ment for generell informasjon og debugging, er standard error ment for å indikere en feil i koden. Derfor vil det være mer hensiktsmessig å bruke console.error() for feilmeldinger i stedet for console.log().
+Det å skrive til standardfeil er en praksis som går helt tilbake til Unix-operativsystemet på 1970-tallet. Det ble utviklet som en måte å håndtere feil og uventede situasjoner på. Det finnes også alternative måter å håndtere feilmeldinger på, som for eksempel å kaste unntak eller bruke loggfiler. Når man skriver til standardfeil, kan man også inkludere informasjon som hjelper til med feilsøking, som for eksempel variabler og stakkspor.
 
-## Se også
-- [Hvordan bruke console.log() i Javascript](https://www.digitalocean.com/community/tutorials/how-to-use-the-javascript-console-log-function)
-- [Hvordan feilsøke ved hjelp av console.error() i Javascript](https://blog.sessionstack.com/how-to-debug-javascript-errors-like-a-pro/)
-- [Offisiell dokumentasjon for console.error()](https://developer.mozilla.org/en-US/docs/Web/API/Console/error)
+# Se også:
+
+For å lære mer om å skrive til standardfeil i Javascript, kan du sjekke ut disse kildene:
+
+- [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/API/Console/error)
+- [FreeCodeCamp](https://www.freecodecamp.org/news/writing-to-standard-error-in-javascript/)

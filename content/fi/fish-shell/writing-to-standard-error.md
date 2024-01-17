@@ -1,7 +1,7 @@
 ---
-title:                "Tietokoneohjelmointi: Kirjoittaminen standardivirheelle"
-html_title:           "Fish Shell: Tietokoneohjelmointi: Kirjoittaminen standardivirheelle"
-simple_title:         "Tietokoneohjelmointi: Kirjoittaminen standardivirheelle"
+title:                "Kirjoittaminen standardivirheeseen"
+html_title:           "Fish Shell: Kirjoittaminen standardivirheeseen"
+simple_title:         "Kirjoittaminen standardivirheeseen"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Files and I/O"
@@ -10,32 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+Mitä & Miksi?
 
-Kirjoittaminen standardivirheelle voi olla hyödyllistä, jos haluat nähdä lopputuloksen välittömästi ja varmistaa, että kaikki toiminnot suoritetaan oikein.
+Kun ohjelmoijat käyttävät Fish Shell -ohjelmointikieltä, he usein kirjoittavat virheitä standardivirheeseen. Tämä tarkoittaa käytännössä sitä, että virheet ja ilmoitukset näkyvät vain terminaalissa eivätkä sekoita normaaliin tulostukseen. Tämä auttaa ohjelmoijia havaitsemaan ja korjaamaan virheitä nopeammin ja tehokkaammin.
 
-## Kuinka tehdä se
+## Kuinka:
 
-Kun haluat kirjoittaa standardivirheelle Fish Shell -ohjelmassa, käytä seuraavaa koodia:
-
-```
-echo "Tämä on standardivirheen teksti" >&2
-```
-Tämä koodi kirjoittaa "Tämä on standardivirheen teksti" -tekstin standardivirheelle, joten se näkyy komentorivillä.
-
-## Syvemmälle
-
-Standardivirheen kirjoittaminen voi olla hyödyllistä myös silloin, kun haluat ohjelman tuottavan virheviestin tietyissä tilanteissa. Voit esimerkiksi käyttää seuraavaa koodia tarkistaaksesi, onko käyttäjä syöttänyt ohjelmaan oikean määrän argumentteja:
+Fish Shell -ohjelmointikieli tarjoaa helpon ja yksinkertaisen tavan kirjoittaa virheitä standardivirheeseen. Käytä komentoa `echo` ja lisää `-e` -lippu, jotta voit käyttää erikoismerkkejä, kuten uudet rivit ja välilyönnit, kuten esimerkissä alla. Huomaa, että virheellinen rivien järjestys johtaa virheelliseen tulostukseen.
 
 ```
-if test (count $argv) -ne 2
-    echo "Ohjelmaan tulee syöttää kaksi argumenttia" >&2
-    exit 1
-end
+Fish Shell koodi:
+echo -e "Tämä on ensimmäinen rivi. \nTämä on toinen rivi."
 ```
-Tässä tapauksessa ohjelma kirjoittaa standardivirheelle tekstin "Ohjelmaan tulee syöttää kaksi argumenttia" ja lopettaa suorituksen virhekoodilla 1, jos käyttäjä ei anna kahta argumenttia.
+```
+Tulostus:
+Tämä on ensimmäinen rivi.
+Tämä on toinen rivi.
+```
 
-## Katso myös
+## Syvempää tietoa:
 
-- [Fish Shellin viralliset dokumentaatiot standardiovirheen käyttämisestä](https://fishshell.com/docs/current/commands.html#step-9-redirecting-stderr)
-- [Ohjelmoinnin perusteet: Tekstin kirjoittaminen standardivirheelle](https://ohjelmointiopas.fi/fish-shell/standardivirheen-kaytto/)
+Historiallisesti ohjelmoijat ovat kirjoittaneet virheitä standardivirheeseen, jotta ne eivät sekoitu normaaliin tulostukseen. Tämä käytäntö on edelleen suosittu ja käytössä monissa muissa ohjelmointikielissä, kuten Bash ja Python.
+
+On myös muita tapoja kirjoittaa virheitä standardivirheeseen Fish Shellissä, kuten komennolla `print -e`, mutta `echo` on yleisimmin käytetty tapa.
+
+## Katso myös:
+
+- Fish Shellin viralliset dokumentaatiot: https://fishshell.com/docs/current/
+- Fish Shellin GitHub-sivusto: https://github.com/fish-shell/fish-shell
+- "Kuinka käyttää Fish Shell -täydennysliitännäisiä": https://www.solidsmack.com/cad-design-news/fish-shell-plugins/

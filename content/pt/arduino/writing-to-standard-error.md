@@ -1,7 +1,7 @@
 ---
-title:                "Escrevendo no erro padrão"
-html_title:           "Arduino: Escrevendo no erro padrão"
-simple_title:         "Escrevendo no erro padrão"
+title:                "Escrevendo em erro padrão"
+html_title:           "Arduino: Escrevendo em erro padrão"
+simple_title:         "Escrevendo em erro padrão"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Files and I/O"
@@ -10,43 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que escrever para o erro padrão?
+O que é e por quê escrever no erro padrão?
 
-O erro padrão é uma ferramenta essencial para depurar e monitorar o comportamento do seu código Arduino. Ao escrever para o erro padrão, você pode obter informações detalhadas sobre o que está acontecendo dentro do seu programa e identificar possíveis erros rapidamente.
+Escrever no erro padrão é uma técnica comum usada por programadores para imprimir mensagens de erro e informações de depuração durante a execução de um programa. Isso permite que os desenvolvedores identifiquem e resolvam problemas em seu código de maneira mais eficiente. 
 
-## Como Fazer
+Como fazer:
 
-Para escrever para o erro padrão em seu código Arduino, siga os seguintes passos:
-
-- Primeiro, inclua a biblioteca "Arduino.h" no início do seu código.
-
-- Em seguida, utilize a função `Serial.begin()` para iniciar a comunicação serial com uma taxa de transmissão de dados.
-
-- Agora, use a função `Serial.println()` para enviar uma mensagem para o erro padrão. Por exemplo: 
-
-```Arduino
-Serial.println("Mensagem de erro");
+```
+Arduino.println("Mensagem de erro ou depuração");
 ```
 
-- Você também pode enviar variáveis para o erro padrão usando `Serial.println()` e a função `String()`. Por exemplo:
+Ao usar essa função, a mensagem será impressa na janela do Monitor Serial do Arduino. Isso pode ser útil para verificar o valor de variáveis durante a execução do programa ou detectar erros em determinadas linhas de código.
 
-```Arduino
-int temperatura = 25;
-String mensagem = "A temperatura atual é: ";
+Exemplo de saída:
 
-Serial.println(mensagem + String(temperatura));
+```
+Erro na linha 25: valor inválido para variável x
 ```
 
-- Para visualizar as mensagens do erro padrão, abra a janela do "Monitor Serial" localizada no menu "Ferramentas" do Arduino IDE.
+Mergulho profundo:
 
-## Uma Profundidade de Mergulho
+A escrita no erro padrão tem sido uma técnica amplamente utilizada desde os primeiros dias de programação. Ela foi desenvolvida para facilitar a identificação de erros em programas e ajudar os desenvolvedores a solucioná-los de maneira rápida e eficiente.
 
-Ao usar a função `Serial.println()`, tenha em mente que o texto enviado para o erro padrão deve estar entre aspas duplas. Se você quiser enviar valores decimal ou hexadecimal para o erro padrão, use `Serial.println()` e `Serial.print()` respectivamente.
+Uma alternativa para a escrita no erro padrão é o uso de um depurador, um software especializado para identificar e corrigir erros em código. No entanto, nem todos os ambientes de programação possuem um depurador integrado, tornando a escrita no erro padrão uma opção mais acessível para os desenvolvedores.
 
-Além disso, você pode personalizar a taxa de transmissão de dados ao iniciar a comunicação serial com a função `Serial.begin()`. Isso pode ser útil para depurar problemas de desempenho em seu código.
+Outra alternativa é usar uma biblioteca, como a "DebugUtils", que fornece funções adicionais para imprimir informações de depuração na janela do Monitor Serial.
 
-## Veja Também
+Veja também:
 
-- [Documentação do Arduino sobre comunicação serial](https://www.arduino.cc/en/Serial/)
-- [Tutorial em vídeo sobre como usar o Monitor Serial](https://www.youtube.com/watch?v=8ZjfA6wfKt4)
-- [Fórum da comunidade do Arduino](https://forum.arduino.cc/index.php?board=1.0)
+- Documentação oficial do Arduino para a função println: https://www.arduino.cc/reference/en/language/functions/communication/serial/println/
+- Tutorial da SparkFun sobre escrita no erro padrão: https://learn.sparkfun.com/tutorials/printer-defects-im-not-defective-youre-defective/
+- Documentação da biblioteca "DebugUtils": https://github.com/JoaoLopesF/DebugUtils

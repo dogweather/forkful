@@ -1,7 +1,7 @@
 ---
-title:                "A finne lengden av en streng"
-html_title:           "Elixir: A finne lengden av en streng"
-simple_title:         "A finne lengden av en streng"
+title:                "Å finne lengden av en tekststreng"
+html_title:           "Elixir: Å finne lengden av en tekststreng"
+simple_title:         "Å finne lengden av en tekststreng"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -10,28 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+Hva & Hvorfor?
 
-Å finne lengden til en streng er en viktig del av programmering. Det lar deg blant annet håndtere tekst data og lage mer dynamiske programmer.
+Å finne lengden på en streng er en måte for programmerere å bestemme hvor mange tegn en spesifikk streng inneholder. Dette er nyttig for å håndtere tekst og data i koden vår.
 
-## Hvordan
+Slik Gjør Du:
+```elixir
+# Her er noen eksempler på hvordan du kan finne lengden på en streng i Elixir:
 
-For å finne lengden til en streng, kan du bruke funksjonen `String.length()`. Den tar en streng som input og returnerer et heltall som representerer antall tegn i strengen.
+# Metode 1: Bruk String.length funksjonen
+string = "Hei, dette er en streng!"
+len = String.length(string)
+IO.puts(len) #output: 25
 
-```Elixir
-iex> String.length("Hei, verden!")
-12
+# Metode 2: Itererer gjennom strengen og teller antall tegn
+def count(string) do
+    count = 0
+    for char <- string, do: count = count + 1
+    count
+end
+len = count("Hei, dette er en streng!")
+IO.puts(len) #output: 25
 ```
 
-Mer avanserte bruksområder kan inkludere å kombinere funksjonen med løkker for å finne lengden til en liste med strenger.
+Deep Dive:
 
-## Dypdykk
+Å finne lengden på en streng er en av de mest grunnleggende funksjonene i programmering, og det er en viktig del av datatyper og hvordan vi håndterer tekst og data. Denne funksjonen kan også brukes til å validere input, for eksempel for å sikre at en brukers input ikke overstiger en bestemt lengde. Alternativt kan man også bruke regex for å finne lengden på en streng, men dette kan være mer komplekst og mindre effektivt.
 
-I Elixir, og funksjonelle programmeringsspråk generelt, er strenger immutable, det vil si at de ikke kan endres. Dette betyr at hver gang en streng blir manipulert, blir det egentlig laget en ny streng. Dette er viktig å huske når du bruker `String.length()` da den bare returnerer lengden av den gitte strengen, og ikke tar hensyn til eventuelle endringer som blir gjort på den originale strengen.
-
-Å finne lengden av en streng kan også være nyttig når du skal håndtere input fra brukere, som for eksempel passord eller brukernavn. Ved å bruke `String.length()` kan du validere om inputen oppfyller kravene til lengde.
-
-## Se også
-
-- [Elixir Docs for String module](https://hexdocs.pm/elixir/String.html)
-- [String manipulation in Elixir tutorial](https://elixirschool.com/en/lessons/basics/basics/#string-manipulation)
+Se også:
+- Elixir Dokumentasjon: https://hexdocs.pm/elixir/String.html#length/1

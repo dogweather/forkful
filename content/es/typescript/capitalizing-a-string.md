@@ -10,57 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¿Qué y por qué?
+En programación, capitalizar una cadena de texto significa convertir la primera letra de cada palabra en mayúscula. Los programadores suelen hacer esto para mejorar la legibilidad y la estética de su código.
 
-Capitalizar un string es una tarea común en la programación. Ya sea para mejorar la legibilidad del código o para cumplir con ciertas reglas de formato, es importante saber cómo capitalizar correctamente un string en TypeScript.
-
-## Cómo hacerlo
-
-Para capitalizar un string en TypeScript, podemos utilizar dos métodos diferentes: toUpperCase() y toLowerCase(). Ambos métodos convierten todos los caracteres de un string a mayúsculas o minúsculas, respectivamente.
+## ¿Cómo hacerlo?
+En TypeScript, puedes capitalizar una cadena utilizando el método integrado `toUpperCase()` junto con el método `charAt()` para obtener la primera letra de cada palabra. Aquí hay un ejemplo de código que capitaliza una cadena y muestra el resultado por consola:
 
 ```TypeScript
-// Ejemplo de uso de toUpperCase()
-let texto = "hola mundo";
-console.log(texto.toUpperCase());
-// Output: HOLA MUNDO
+const cadena = "este es un ejemplo";
+const palabras = cadena.split(" ");
+let resultado = "";
 
-// Ejemplo de uso de toLowerCase()
-let texto = "HOLA MUNDO";
-console.log(texto.toLowerCase());
-// Output: hola mundo
+for (let i = 0; i < palabras.length; i++) {
+  resultado += palabras[i].charAt(0).toUpperCase() + palabras[i].slice(1) + " ";
+}
+
+console.log(resultado); // Output: Este Es Un Ejemplo
 ```
 
-También podemos utilizar el método charAt() junto con toUpperCase() o toLowerCase() para capitalizar una sola letra específica dentro del string.
+## Profundizando
+La capitalización de cadenas ha sido utilizada durante mucho tiempo en lenguajes de programación para mejorar la legibilidad del código. Sin embargo, también existen otros métodos de formato de texto, como el camelCase o el snake_case, que tienen ventajas en ciertas situaciones.
 
-```TypeScript
-let texto = "hola mundo";
-console.log(texto.charAt(0).toUpperCase() + texto.slice(1));
-// Output: Hola mundo
-```
-
-Si queremos capitalizar todas las palabras de un string, podemos utilizar el método replace() junto con expresiones regulares (\b = límite de una palabra).
-
-```TypeScript
-let texto = "hola mundo feliz";
-console.log(texto.replace(/\b\w/g, l => l.toUpperCase()));
-// Output: Hola Mundo Feliz
-```
-
-## Deep Dive
-
-Es importante tener en cuenta que los métodos toUpperCase() y toLowerCase() no modifican el string original, sino que devuelven una nueva cadena de texto. De esta manera, siempre debemos asignar el resultado a una nueva variable o al mismo string original.
-
-Además, es interesante mencionar que TypeScript también cuenta con el tipo de datos string literal, que nos permite especificar un valor concreto para un string. Por ejemplo:
-
-```TypeScript
-let color: "rojo" | "verde" | "azul";
-color = "ROJO"; // Esto dará un error en tiempo de compilación
-color = "rojo"; // Esto es correcto
-```
-
-Por último, también existen librerías como lodash o string.js que nos ofrecen métodos más avanzados para manipular strings, incluyendo la capitalización.
+En TypeScript, también puedes usar la función `replace()` junto con expresiones regulares para capitalizar ciertos patrones de texto en una cadena. Además, hay bibliotecas externas disponibles que ofrecen una amplia variedad de funciones de formato de texto más avanzadas.
 
 ## Ver también
-
-- [Documentación oficial de TypeScript](https://www.typescriptlang.org/)
-- [Guía de referencia de String en TypeScript](https://www.typescriptlang.org/docs/handbook/basic-types.html#string)
+Puedes encontrar más información sobre la capitalización de cadenas y otros métodos de formato de texto en la documentación oficial de TypeScript y en otras fuentes en línea, como blogs y foros de programadores.

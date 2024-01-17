@@ -1,7 +1,7 @@
 ---
-title:                "String großschreiben"
-html_title:           "C#: String großschreiben"
-simple_title:         "String großschreiben"
+title:                "Einen String großschreiben"
+html_title:           "C#: Einen String großschreiben"
+simple_title:         "Einen String großschreiben"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Strings"
@@ -10,52 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was & Warum?
+Das Kapitalisieren einer Zeichenkette ist ein üblicher Schritt in der Programmierung, bei dem der erste Buchstabe eines jeden Wortes großgeschrieben wird. Dies wird gemacht, um die Lesbarkeit und Ästhetik der Zeichenkette zu verbessern und es einfacher zu machen, Schlüsselwörter oder Variablennamen zu identifizieren. 
 
-Das Kapitalisieren von Zeichenketten ist eine häufige Operation in der Programmierung, die dazu dient, Texte einheitlich und lesbar zu gestalten. Es ist besonders nützlich, wenn Daten von externen Quellen übernommen werden, da diese möglicherweise nicht in der gewünschten Formatierung vorliegen.
+## Wie geht's?
+Die Verwendung von C# macht das Kapitalisieren einer Zeichenkette sehr einfach. Hier ist ein Beispielcode:
 
-## Wie
-
-Um eine Zeichenkette in C# zu kapitalisieren, gibt es zwei grundlegende Ansätze. Der erste Ansatz ist die Verwendung der eingebauten Funktion "ToUpper()", die die gesamte Zeichenkette in Großbuchstaben umwandelt. Dies funktioniert jedoch nicht immer korrekt, da Umlaute oder Sonderzeichen möglicherweise nicht in der gewünschten Form konvertiert werden.
-
-```
-string text = "hallo welt!";
-string capitalizedText = text.ToUpper();
-Console.WriteLine(capitalizedText);
-```
-
-Output: HALLO WELT!
-
-Für eine präzisere Konvertierung kann die Funktion "CultureInfo" verwendet werden, die die aktuelle Kultur des Systems berücksichtigt und auch Sonderzeichen korrekt umwandelt.
-
-```
-string text = "hallo welt!";
-string capitalizedText = CultureInfo.CurrentCulture.TextInfo.ToTitleCase(text);
-Console.WriteLine(capitalizedText);
+```C#
+// Eingabezeichenkette
+string eingabe = "hallo welt";
+// Ausgabezeichenkette
+string ausgabe = eingabe.ToUpper();
+Console.WriteLine(ausgabe);
 ```
 
-Output: Hallo Welt!
+Dieser Code wird die Zeichenkette "hallo welt" in "HALLO WELT" umwandeln.
 
-## Deep Dive
+## Tiefer Einblick
+Das Prinzip der String-Kapitalisierung wurde erstmals in den Programmiersprachen COBOL und BASIC eingeführt, um die Dateinamen im Dateisystem zu formatieren. Obwohl es nicht zwingend notwendig ist, wird das Kapitalisieren einer Zeichenkette in der Programmierung allgemein als bewährte Methode angesehen, um die Lesbarkeit und Konsistenz des Codes zu verbessern.
 
-Die Funktion "CultureInfo" basiert auf den Regeln der aktuellen Kultur des Betriebssystems, die möglicherweise nicht immer den gewünschten Anforderungen entsprechen. In diesen Fällen kann die Verwendung einer benutzerdefinierten Methode nützlich sein, um die Zeichenkette nach eigenen Regeln zu kapitalisieren.
+Alternativ können auch andere Methoden wie z.B. die Verwendung von Unterstrichen oder CamelCase verwendet werden, um Wörter in Variablennamen zu trennen. Es ist jedoch wichtig, dass innerhalb eines bestimmten Projekts eine einheitliche Methode verwendet wird, um die Lesbarkeit und Verständlichkeit des Codes zu gewährleisten.
 
-Ein Beispiel für eine einfache benutzerdefinierte Methode, die einen einzelnen String als Parameter annimmt und die erste Buchstabe in einen Großbuchstaben umwandelt:
-
-```
-public static string CapitalizeString(string text)
-{
-    if (string.IsNullOrEmpty(text))
-        return text;
-
-    text = text.ToLower();
-    char firstLetter = char.ToUpper(text[0]);
-    return firstLetter + text.Substring(1);
-}
-```
+In C# wird die String-Kapitalisierung durch einen eingebauten Befehl ("ToUpper") ermöglicht, der jede Zeichenkette in Großbuchstaben umwandelt. Dieser Befehl kann jedoch nicht angewendet werden, wenn Sonderzeichen oder Zahlen in der Zeichenkette vorhanden sind.
 
 ## Siehe auch
-
-- [ToUpper() Methode](https://docs.microsoft.com/de-de/dotnet/api/system.string.toupper?view=net-5.0)
-- [ToTitleCase() Methode](https://docs.microsoft.com/de-de/dotnet/api/system.globalization.textinfo.totitlecase?view=net-5.0)
-- [CultureInfo Klasse](https://docs.microsoft.com/de-de/dotnet/api/system.globalization.cultureinfo?view=net-5.0)
+- [MSDN-Dokumentation zu String.ToUpper()](https://docs.microsoft.com/en-us/dotnet/api/system.string.toupper?view=net-5.0)
+- [Alternative Methoden zur Formatierung von Zeichenketten](https://stackoverflow.com/questions/3035338/c-sharp-how-to-set-title-case)
+- [Begriffe und Konventionen in der Programmierung](https://en.wikipedia.org/wiki/Naming_convention_(programming))

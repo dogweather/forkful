@@ -1,7 +1,7 @@
 ---
-title:                "Analyse des arguments en ligne de commande"
-html_title:           "TypeScript: Analyse des arguments en ligne de commande"
-simple_title:         "Analyse des arguments en ligne de commande"
+title:                "La lecture des arguments de ligne de commande"
+html_title:           "TypeScript: La lecture des arguments de ligne de commande"
+simple_title:         "La lecture des arguments de ligne de commande"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Files and I/O"
@@ -10,55 +10,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Qu'est-ce que c'est et pourquoi le lire?
+Lire les arguments de la ligne de commande est une pratique courante chez les programmeurs. Cela consiste à récupérer les données saisies par l'utilisateur lors de l'exécution d'un programme en ligne de commande. Les arguments peuvent être utilisés pour personnaliser l'exécution du programme ou pour fournir des informations supplémentaires à l'utilisateur.
 
-Si vous êtes un développeur de logiciels, vous avez probablement entendu parler des arguments de ligne de commande ou des "command line arguments". Ces arguments sont des valeurs saisies par l'utilisateur lors de l'exécution d'un programme. Ils peuvent être très utiles car ils permettent à l'utilisateur de modifier rapidement et facilement le comportement du programme sans avoir à le modifier directement. Dans cet article, nous allons vous montrer comment lire et utiliser les arguments de ligne de commande en TypeScript.
-
-## Comment faire
-
-Pour lire les arguments de ligne de commande en TypeScript, il suffit d'accéder à l'objet global `process` et à sa propriété `argv`. Cette propriété contient un tableau des arguments saisis par l'utilisateur lors de l'exécution du programme.
+## Comment le faire:
+Voici un exemple de code en TypeScript pour lire les arguments de la ligne de commande et les afficher dans la console:
 
 ```TypeScript
-const args = process.argv;
-
-// Si vous exécutez le programme avec la commande "node index.ts hello world",
-// les arguments seront ["hello", "world"]
+const args = process.argv.slice(2); // Récupère les arguments de la ligne de commande en excluant les deux premiers (node et le chemin du script)
+console.log(args); // Affiche les arguments dans la console
 ```
 
-Vous pouvez également utiliser la fonction `slice()` pour obtenir une partie de ce tableau, en excluant le premier argument qui est toujours le chemin d'accès du programme.
+Si l'utilisateur exécute le programme avec la commande `node index.ts hello world`, cela affichera `['hello', 'world']` dans la console.
 
-```TypeScript
-const args = process.argv.slice(2);
+## Exploration en profondeur:
+Cette pratique de lecture des arguments de la ligne de commande est courante dans les langages de programmation et remonte aux premiers systèmes d'exploitation où le seul moyen de communiquer avec l'ordinateur était via la ligne de commande. Une alternative à cette méthode est d'utiliser une interface utilisateur graphique (GUI), mais cela peut être moins pratique pour certains types de programmes.
 
-// Avec la même commande "node index.ts hello world",
-// les arguments seront ["hello", "world"]
-```
+Pour lire les arguments de la ligne de commande en TypeScript, nous utilisons l'objet `process` qui est fourni par l'environnement d'exécution Node.js. L'objet `argv` de cet objet est un tableau contenant les arguments, où le premier élément est le chemin de l'exécutable node et le deuxième est le chemin du script en cours d'exécution. En utilisant la méthode `slice` pour exclure ces deux premiers éléments, nous obtenons un tableau contenant uniquement nos arguments.
 
-Maintenant que nous avons les arguments stockés dans une variable, nous pouvons les utiliser selon nos besoins. Par exemple, si nous voulons afficher un message de bienvenue en utilisant le premier argument, nous pouvons le faire en utilisant la notation de chaîne de modèle (string interpolation).
-
-```TypeScript
-const args = process.argv;
-
-// Avec la commande "node index.ts John",
-// le message de bienvenue sera "Welcome John!"
-console.log(`Welcome ${args[2]}!`);
-```
-
-## Deep Dive
-
-En plus de la fonction `slice()`, il existe également la fonction `substring()` pour obtenir une sous-chaîne à partir d'une chaîne. Nous pouvons utiliser cette fonction pour extraire des parties spécifiques d'un argument. Par exemple, si nous voulons obtenir les deux premiers caractères du premier argument, nous pouvons le faire comme ceci:
-
-```TypeScript
-const args = process.argv;
-
-// Avec la commande "node index.ts hello",
-// le résultat sera "he"
-console.log(args[2].substring(0, 2));
-```
-
-Il convient également de noter que les arguments de ligne de commande sont toujours des chaînes de caractères, même s'ils ressemblent à des nombres ou à des booléens. Cela signifie que si nous voulons les utiliser comme des nombres, nous devons les convertir en utilisant les fonctions `parseInt()` ou `parseFloat()`.
-
-## Voir aussi
-
-- [Parcourir les arguments de ligne de commande en TypeScript](https://www.digitalocean.com/community/tutorials/how-to-use-arguments-and-parameters-in-typescript)
-- [Documentation sur l'objet process en Node.js](https://nodejs.org/api/process.html)
+## Voir aussi:
+Si vous souhaitez en savoir plus sur la manière dont les arguments de la ligne de commande sont traités en TypeScript, vous pouvez consulter la documentation officielle de Node.js: [process.argv](https://nodejs.org/docs/latest/api/process.html#process_process_argv). Vous pouvez également lire cet article pour découvrir d'autres astuces utiles en TypeScript: [10 astuces pour améliorer votre code TypeScript](https://dzone.com/articles/10-useful-typescript-tips-to-improve-your-code).

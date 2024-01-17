@@ -10,54 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
-Parsing von HTML ist ein wichtiger Teil der Entwicklung von Webanwendungen, da es ermöglicht, strukturierte Daten aus dem HTML Code zu extrahieren und in ein maschinenlesbares Format umzuwandeln. Dadurch können wir die Daten einfacher verarbeiten und benutzen.
+## Was & Warum?
+Beim Parsen von HTML geht es darum, den Quellcode einer Webseite zu analysieren und die darin enthaltenen Informationen auszulesen. Programmierer nutzen dies, um bestimmte Daten aus einer Webseite zu extrahieren, sie zu manipulieren oder um sie in einem bestimmten Format darzustellen.
 
-## Wie
-Das Parsen von HTML in Elm ist relativ einfach und wird durch die Elm Html Bibliothek unterstützt. Es gibt verschiedene Funktionen, die in Kombination verwendet werden können, um HTML in Elm zu parsen.
-
-Ein Beispiel für das Parsen von HTML sieht wie folgt aus:
+## Wie geht's?
+Das Parsen von HTML kann in Elm auf verschiedene Arten erfolgen. Eine Möglichkeit ist die Verwendung der Bibliothek "Html.Parser", die speziell für diesen Zweck entwickelt wurde. Sie bietet verschiedene Funktionen, die beim Parsen von HTML helfen. Hier ein Beispiel, wie man den Titel einer Webseite auslesen kann:
 
 ```Elm
-import Html exposing (..)
-import Html.Parser exposing (Attribute(..), Element(..), Parser)
+import Html.Parser exposing (..)
 
-parseHtml : String -> Maybe Html
-parseHtml str =
-    case Html.Parser.parseHtml str of
-        Ok element ->
-            Just element
+-- HTML-Code der Webseite
+htmlCode = "<html><head><title>Meine Webseite</title></head><body><h1>Willkommen</h1><p>Hier gibt es viele interessante Artikel!</body></html>"
 
-        Err _ ->
-            Nothing
+-- Funktion zum Parsen des Titels
+getTitle node = 
+    case node of
+        Element tag _ _ -> tag == "title"
+        _ -> False
+
+-- Ausgabe des Titels
+title = parse getTitle htmlCode
+
+-- Ausgabe: Meine Webseite
 ```
 
-Die Funktion `parseHtml` nimmt einen String als Eingabe und gibt entweder ein `Just` mit dem geparsten HTML Element oder ein `Nothing` zurück, wenn ein Fehler auftritt.
+## Tiefere Einblicke
+Das Parsen von HTML hat eine lange Geschichte und wurde bereits in den Anfängen des World Wide Web verwendet. Es gibt auch andere Möglichkeiten, HTML in Elm zu parsen, zum Beispiel mit Hilfe von regulären Ausdrücken oder maßgeschneiderten Parsern. Bei der Wahl der Methode sollte stets die Effizienz und Genauigkeit im Auge behalten werden.
 
-Einmal geparst, können wir das HTML Element in Elm verwenden, um die Daten zu extrahieren oder zu manipulieren. Zum Beispiel können wir alle Links auf der Seite finden und sie in eine Liste zusammenstellen:
-
-```Elm
-import Html exposing (..)
-import Html.Parser exposing (Attribute(..), Element(..), Parser)
-
-getPageLinks : Html -> List String
-getPageLinks html =
-    let
-        links = Html.xpath "//a/@href" html
-        links' = List.map (\(Attribute _ value) -> value) links
-    in
-        links'
-```
-
-Die Funktion `getPageLinks` nimmt das geparste HTML Element als Eingabe und verwendet die `xpath` Funktion aus der `Html` Bibliothek, um alle `href` Attribute der `a` Elemente auf der Seite zu finden. Diese Attribute werden dann in eine Liste von Strings umgewandelt und zurückgegeben.
-
-## Deep Dive
-Das Parsen von HTML kann komplex werden, wenn wir uns mit unterschiedlichen Syntaxen und Sonderfällen auseinandersetzen müssen. Die Elm Html Bibliothek bietet jedoch verschiedene Funktionen, die uns dabei helfen, damit umzugehen.
-
-Zum Beispiel können wir mit der `Parser` Bibliothek Attribute mit unterschiedlichen Werten parsen, indem wir die `Attribute` Union Type verwenden. Außerdem können wir Mustererkennung in Kombination mit der `Element` Union Type verwenden, um spezifische Elemente aus dem HTML zu extrahieren und zu verarbeiten.
-
-Es ist auch wichtig zu beachten, dass das Parsen von HTML nicht immer die beste Option ist. In manchen Fällen kann es einfacher sein, die HTML Struktur direkt in Elm zu codieren, anstatt sie zu parsen.
-
-## Siehe Auch
-- [Offizielle Elm Html Dokumentation](https://package.elm-lang.org/packages/elm/html/latest/)
-- [Elm Html Parser Paket](https://package.elm-lang.org/packages/elm/parser/latest/)
+## Sieh' auch:
+- Offizielle Elm Dokumentation für Html.Parser: [html-parser.elm-lang.org](https://html-parser.elm-lang.org/)
+- Video-Tutorial zum Parsen von HTML mit Elm: [youtu.be/sb-MEfPHUxg](https://youtu.be/sb-MEfPHUxg)
+- Präsentation über die Geschichte des HTML-Parsens: [www.slideshare.net/kripken/html-parser](https://www.slideshare.net/kripken/html-parser)

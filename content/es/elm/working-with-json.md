@@ -10,62 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué trabajar con JSON en Elm?
+## ¿Qué y por qué?
 
-JSON (JavaScript Object Notation) es un formato ligero y fácil de entender para el intercambio de datos. Al trabajar con Elm, un lenguaje de programación funcional y declarativo, el uso de JSON es beneficioso ya que nos permite manejar y manipular datos de manera eficiente y segura.
+Trabajar con JSON puede ser intimidante para algunos, pero en realidad es una tarea bastante útil para los programadores. JSON, o JavaScript Object Notation, es un formato de texto que se utiliza para almacenar y transmitir datos. Los programadores lo utilizan para estructurar y organizar datos de manera fácil y eficiente.
 
-## Cómo hacerlo
+## ¡Cómo hacerlo!
 
-Para trabajar con JSON en Elm, primero debemos importar el módulo `Json.Decode` en nuestro archivo. Este módulo nos proporciona funciones para convertir datos en formato JSON a tipos de datos nativos de Elm.
+Elm proporciona una biblioteca incorporada para trabajar con JSON, lo que lo hace realmente fácil. Primero, debes importar la biblioteca ```Json.Decode```. Luego, puedes utilizar la función ```Json.Decode.decodeValue``` para decodificar un objeto JSON en un tipo de dato específico. Por ejemplo:
 
-```Elm
-import Json.Decode exposing (..)
+```elm
+Json.Decode.decodeValue Json.Decode.int jsonString
 ```
 
-Una vez que tenemos el módulo importado, podemos utilizar la función `decodeValue` para convertir nuestro JSON en un tipo de dato Elm específico.
+Este código tomará un objeto JSON como una cadena llamada "jsonString" y lo decodificará en un tipo de dato entero. Puedes utilizar la función ```Json.Decode.map``` para realizar transformaciones al objeto JSON antes de decodificarlo. Por ejemplo:
 
-```Elm
-decodeValue : Decoder a -> Value -> Result String a
+```elm
+Json.Decode.map (\x -> x + 5) (Json.Decode.decodeValue Json.Decode.int jsonString)
 ```
 
-Aquí, `a` representa el tipo de dato que queremos obtener. Por ejemplo, si nuestro JSON es una lista de objetos que representan libros, podríamos utilizar un `Decoder` para convertirlos en un tipo de dato `List Book` (donde `Book` es un tipo de dato personalizado que representa un libro).
+Este código tomará un objeto JSON como una cadena llamada "jsonString" y lo decodificará en un tipo de dato entero. Luego, le sumará 5 antes de devolver el resultado. También puedes utilizar la función ```Json.Decode.field``` para acceder a un campo específico dentro del objeto JSON. Por ejemplo:
 
-```Elm
-type alias Book =
-  { title : String
-  , author : String
-  , year : Int
-  }
-
-bookDecoder : Decoder Book
-bookDecoder =
-  map3 Book
-    (field "title" string)
-    (field "author" string)
-    (field "year" int)
-
-jsonString = """
-[
-  { "title": "1984", "author": "George Orwell", "year": 1949 },
-  { "title": "To Kill a Mockingbird", "author": "Harper Lee", "year": 1960 },
-  { "title": "Pride and Prejudice", "author": "Jane Austen", "year": 1813 }
-]
-"""
-
-books = jsonString |> decodeString (list bookDecoder)
+```elm
+Json.Decode.field "nombre" Json.Decode.string jsonString
 ```
 
-El resultado de `books` sería una lista de libros, donde cada elemento es un valor del tipo `Book`.
+Este código tomará un objeto JSON, accederá al campo "nombre" y lo decodificará como una cadena.
 
 ## Profundizando
 
-Además de las funciones `decodeValue` y `decodeString`, el módulo `Json.Decode` también proporciona otras funciones útiles para trabajar con JSON en Elm, como `map`, `andThen` y `oneOf` que nos permiten manejar errores y casos especiales de forma elegante y segura.
+El formato JSON fue creado originalmente para ser utilizado con JavaScript, por lo que es fácil de entender para los programadores que ya están familiarizados con ese lenguaje. Sin embargo, también es utilizado en otros lenguajes de programación debido a su simplicidad y facilidad de uso. Algunas alternativas a JSON incluyen XML y YAML, pero JSON sigue siendo el formato preferido para muchos debido a su compatibilidad con la mayoría de los lenguajes de programación y su capacidad para ser leído y escrito fácilmente por humanos.
 
-Además, también podemos utilizar el módulo `Json.Encode` para convertir nuestros tipos de datos Elm en formato JSON, lo que nos permite enviar y recibir datos desde una API o servidor externo.
-
-Para obtener más información y detalles sobre cómo trabajar con JSON en Elm, se recomienda consultar la documentación oficial y ejemplos de código.
+En Elm, el trabajo con JSON es muy eficiente debido a la biblioteca incorporada. Además, Elm es un lenguaje funcional y estático, lo que significa que es más seguro trabajar con JSON en comparación con otros lenguajes que son más susceptibles a errores de tipificación. Por último, pero no menos importante, Elm tiene una comunidad activa que proporciona una gran cantidad de recursos y ayuda para trabajar con JSON y otros temas relacionados.
 
 ## Ver también
 
-- Documentación oficial de Elm sobre JSON: https://package.elm-lang.org/packages/elm/json/latest/
-- Ejemplos de código: https://github.com/elm/json/tree/1.1.3/examples
+Si quieres seguir aprendiendo sobre cómo trabajar con JSON en Elm, aquí tienes algunos enlaces útiles para continuar tu aprendizaje:
+
+- [La documentación oficial de Elm sobre JSON](https://elm-lang.org/docs/json)
+- [Una guía paso a paso sobre cómo trabajar con JSON en Elm](https://medium.com/@jxxcarlson/hitchhikers-guide-to-elm-and-json-6c7d18f1ae86)
+- [Una presentación sobre cómo trabajar con JSON en Elm](https://www.youtube.com/watch?v=p8yUrZQa-iM&t=213s)

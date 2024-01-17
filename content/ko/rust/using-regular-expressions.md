@@ -1,7 +1,7 @@
 ---
-title:                "정규 표현식을 사용하는 방법"
-html_title:           "Rust: 정규 표현식을 사용하는 방법"
-simple_title:         "정규 표현식을 사용하는 방법"
+title:                "정규식 사용하기"
+html_title:           "Rust: 정규식 사용하기"
+simple_title:         "정규식 사용하기"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -10,38 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
-정규표현식을 사용하는 이유는 무엇일까요? 정규표현식은 텍스트에서 원하는 패턴을 찾고 추출하거나 대체하고 싶을 때 유용합니다.
+# Rust에서 정규 표현식 사용하기
 
-## 사용 방법
-```Rust
-// 정규표현식이 포함된 텍스트를 생성합니다.
-let text = "My email address is john@example.com ";
+## 무엇 & 왜?
+정규 표현식 사용이란 무엇인지 알고 싶으세요? 그래도 알아두면 좋은 이유가 있어요. 정규 표현식은 문자열에서 원하는 패턴을 찾아내는 데 사용되며, 이를 통해 프로그래머는 작업을 더 쉽고 정확하게 수행할 수 있습니다.
 
-// 이메일 패턴을 정의합니다.
-let email_regex = regex::Regex::new(r"([a-z0-9]+)@[a-z]+\.[a-z]{2,3}").unwrap();
+## 사용 방법:
+아래에 있는 예제 코드를 통해 정규 표현식의 사용법을 살펴볼게요. 코드 블록을 참고하시면서 결과를 확인해보세요.
 
-// 정규표현식에 일치하는 부분을 찾아서 출력합니다.
-if let Some(captures) = email_regex.captures(text) {
-    // 일치하는 부분을 추출합니다.
-    let email = captures.get(0).unwrap().as_str();
-    println!("Extracted email: {}", email);
+```rust
+use regex::Regex;
+
+fn main() {
+    let re = Regex::new(r"ab+c").unwrap();
+    let text = "abc, ac, abbbc";
+    for caps in re.captures_iter(text) {
+        println!("Found match: {}", caps.get(0).unwrap().as_str());
+    }
 }
 ```
+
+결과는 다음과 같습니다:
 ```
-출력 결과:
-Extracted email: john@example.com
+Found match: abc
+Found match: abbbc
 ```
 
-## 더 깊게 들어가기
-정규표현식을 통해 원하는 패턴을 찾는 것뿐만 아니라, 복잡한 패턴을 만들어서 유용한 텍스트 처리 작업도 할 수 있습니다. 예를 들어, 이메일 주소를 추출하는 예제에서 "@"를 기준으로 아이디와 도메인을 분리하거나, 이메일 형식에 맞지 않는 텍스트를 걸러내는 등의 작업이 가능합니다.
+위 코드는 정규 표현식 "ab+c"에 대해 문자열 "abc, ac, abbbc"를 검색하고 일치하는 부분을 찾아내는 예제입니다.
 
-## 관련 자료
-- 여러분이 더 많은 정보를 얻을 수 있는 Rust 공식 문서입니다. [https://doc.rust-lang.org/book/regular-expressions.html](https://doc.rust-lang.org/book/regular-expressions.html)
-- Rust에서 정규표현식을 쉽게 사용할 수 있도록 도와주는 `regex` 크레이트입니다. [https://github.com/rust-lang/regex](https://github.com/rust-lang/regex)
-- 실제로 Rust에서 사용되는 정규표현식의 예시들을 살펴볼 수 있는 레포지토리입니다. [https://github.com/rust-lang/regex/tree/master/tests](https://github.com/rust-lang/regex/tree/master/tests)
+## 깊게 들어가기:
+- 정규 표현식은 1960년대에 켄 톰슨이 발명했으며, 그 이후로 많은 언어들에서 사용되고 있습니다.
+- Rust에서 정규 표현식을 사용하는 대안으로는 glob 패턴 매칭이 있습니다.
+- Rust의 정규 표현식은 Rust 표준 라이브러리에서 제공되는 regex 라이브러리를 사용합니다.
 
-## 참고자료
-- [Rust 공식문서](https://doc.rust-lang.org/book/regular-expressions.html)
-- [Rust regex 크레이트](https://github.com/rust-lang/regex)
-- [Rust regex 예시 레포지토리](https://github.com/rust-lang/regex/tree/master/tests)
+## 관련 자료:
+- [Rust regex 라이브러리](https://docs.rs/regex/1.4.2/regex/)
+- [Rust glob 패턴 매칭](https://doc.rust-lang.org/glob/)

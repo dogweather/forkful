@@ -1,7 +1,7 @@
 ---
-title:                "Søke og erstatte tekst"
-html_title:           "C#: Søke og erstatte tekst"
-simple_title:         "Søke og erstatte tekst"
+title:                "Søk og erstatning av tekst"
+html_title:           "C#: Søk og erstatning av tekst"
+simple_title:         "Søk og erstatning av tekst"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Strings"
@@ -10,30 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
-Ofte i programmering må man bytte ut tekst i et dokument eller en fil, enten det er for å rette feil eller oppdatere informasjon. Dette kan være en tidkrevende oppgave hvis man må gjøre det manuelt, derfor er det viktig å kunne bruke et programmeringsspråk som C# for å automatisere denne prosessen.
+## Hva & Hvorfor?
 
-## Slik gjør du det
-For å søke og erstatte tekst i C#, må man bruke "Replace" metoden. Her er et eksempel på hvordan man bruker den:
+Søk og erstatt av tekst er en vanlig oppgave for programmerere. Ved å bruke kode kan du automatisk finne spesifikk tekst og erstatte den med ønsket tekst. Dette sparer tid og sikrer nøyaktighet i store programmeringsprosjekter.
+
+## Slik gjør du:
+
+Å søke og erstatte tekst i C# er enkelt med innebygde funksjoner og metodene. For å søke og erstatte i en tekststreng kan du bruke `string.Replace()` metoden. For eksempel:
 
 ```
-string originalText = "Hei, verden!";
-string newText = originalText.Replace("Hei", "Hallo");
+string text = "Hei verden!";
+string newText = text.Replace("Hei", "Hallo");
 Console.WriteLine(newText);
 ```
-Dette vil resultere i at teksten "Hallo, verden!" blir skrevet ut i konsollen. Her har vi erstattet "Hei" med "Hallo" i den originale teksten.
 
-For å søke og erstatte i en fil, må man først lese inn filen og lagre den i en string. Deretter kan man bruke "Replace" metoden på denne stringen og til slutt skrive den endrede teksten tilbake til filen.
+Dette vil erstatte "Hei" med "Hallo" i tekststrengen og printe ut "Hallo verden!".
+
+For å søke og erstatte i hele prosjekter, kan du bruke Regex (regulære uttrykk). Dette er nyttig når du ønsker å gjøre søk og erstatte handlinger basert på spesifikke mønstre. For eksempel:
 
 ```
-string fileText = File.ReadAllText("tekstfil.txt");
-string newText = fileText.Replace("gammel tekst", "ny tekst");
-File.WriteAllText("tekstfil.txt", newText);
+using System.Text.RegularExpressions;
+
+string text = "Jeg er en programmerer.";
+string pattern = "programmerer";
+string replacement = "utvikler";
+
+Regex regex = new Regex(pattern);
+string newText = regex.Replace(text, replacement);
+Console.WriteLine(newText);
 ```
 
-## Dykk dypere
-Det finnes flere alternativer når man arbeider med "Replace" metoden i C#. Man kan for eksempel spesifisere om teksten man søker etter skal være case-sensitive eller ikke ved å bruke "StringComparison" parameteren. Man kan også angi om man vil begynne å søke etter teksten fra en bestemt posisjon i stringen ved å bruke "startsWith" og "indexOf" metoden. Ved å studere dokumentasjonen til "Replace" metoden, kan man lære mer om alle mulighetene og finne ut hvilke som passer best for ens eget prosjekt.
+Dette vil erstatte "programmerer" med "utvikler" i tekststrengen og printe ut "Jeg er en utvikler." Regex kan være mer komplekst og kraftig, så det kan være lurt å utforske dette konseptet videre for å utnytte det fullt ut.
 
-## Se også
-- [C# dokumentasjon for Replace metoden](https://docs.microsoft.com/en-us/dotnet/api/system.string.replace?view=netcore-3.1)
-- [Guide til å arbeide med tekst i C#](https://www.tutorialspoint.com/csharp/csharp_strings.htm)
+## Dykk dypere:
+
+Søk og erstatt av tekst er en funksjon som har vært tilgjengelig i ulike programmeringsspråk i mange år. Det er utformet for å effektivisere oppgaven med å manuelt endre tekst i store programmeringsprosjekter. Det finnes også alternative måter å gjøre søk og erstatning på, for eksempel ved hjelp av tredjepartsbiblioteker som tilbyr mer avanserte funksjoner.
+
+For å implementere søk og erstatting i eget kode, er det viktig å ha god forståelse av strenger og Regex. Å lære om metall-reprasentasjoner av tekst og hvordan regler uttrykkes i Regex vil være nyttig når du utvikler mer komplekse søk og erstattningsfunksjoner.
+
+## Se også:
+
+- [Microsoft dokumentasjon for `string.Replace()`](https://docs.microsoft.com/en-us/dotnet/api/system.string.replace?view=netcore-3.1)
+- [Microsoft dokumentasjon for Regex](https://docs.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-language-quick-reference)

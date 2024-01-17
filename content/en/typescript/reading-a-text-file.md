@@ -10,36 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
+Reading a text file is the process of accessing and extracting information from a text-based document using a computer program. Programmers often do this to automate tasks such as data analysis, parsing, or creating reports from large amounts of data contained within a text file.
 
-If you're a programmer, chances are you've encountered the need to read and manipulate data from a text file. Whether it's for inputting user information, parsing CSV files, or any other task that involves dealing with textual data, knowing how to read a text file is a crucial skill in any programming language. In this article, we'll take a closer look at how to read a text file using TypeScript, the popular language known for its static typing and object-oriented features.
-
-## How To
-
-Reading a text file in TypeScript is a straightforward process. First, we need to ensure we have the necessary tools installed, which in this case is Node.js. Next, we can create a new TypeScript file and import the necessary modules, including the "fs" module for file system operations. Then, using the "fs" module's "readFile" function, we can pass in the path to our text file and a callback function that will handle the data once it's read. 
-
-```TypeScript
-import * as fs from 'fs';
-
-fs.readFile('data.txt', 'utf-8', (err, data) => {
-  if (err) {
-    console.error(err);
-    return;
-  }
-  console.log(data); // outputs the content of data.txt
-});
+## How to:
+To read a text file in TypeScript, we can use the `fs` module from Node.js. First, we need to import the module by adding this line at the top of our code: 
+```
+import { readFileSync } from 'fs';
+```
+Next, we need to specify the path of the text file we want to read. For example, if our text file is located in the same folder as our TypeScript file, we can use the following code:
+```
+const filePath = './myTextFile.txt';
+```
+Then, we can use the `readFileSync()` method to read the contents of the file and store it in a variable, like this:
+```
+const fileContents = readFileSync(filePath, 'utf-8');
+```
+The `utf-8` parameter specifies the character encoding of the file. Finally, we can output the contents of the file by logging the variable to the console:
+```
+console.log(fileContents);
 ```
 
-In the above example, we use the "utf-8" encoding option to ensure that the data is read in a readable format. We could also specify other encoding options depending on the type of data in the text file. Once the file is read, the callback function will be called with two parameters - an error object if there is an error, and the data from the file if it was successfully read.
+## Deep Dive:
+In the past, reading a text file in TypeScript was not as straightforward as it is now. Before the `fs` module was introduced, developers had to rely on external libraries or use `XMLHttpRequest` to access the file. However, the `fs` module provides a more efficient and convenient way to read files, especially when dealing with large amounts of data.
 
-## Deep Dive
+An alternative to using the `fs` module is using the `readFile()` method, which allows for asynchronous file reading. This can be useful when we want to read multiple files at the same time, without blocking other operations. However, it requires the use of callbacks or promises, making the code more complex.
 
-Now that we've covered the basic process of reading a text file, let's take a deeper look at some important concepts to keep in mind. Firstly, it's essential to handle errors when reading a file, as shown in our example. This helps us catch any potential issues and handle them accordingly. Additionally, we can also specify additional options in the "readFile" function such as the file's encoding or the starting point to read from. 
+When reading a text file, it is important to consider the character encoding of the file. The `utf-8` encoding is widely used and can handle most languages, but other encodings may be needed for specific languages or characters.
 
-Furthermore, we can use the "fs" module's other functions like "readFileSync" for synchronous file reading or "createReadStream" for reading large files in chunks. TypeScript also offers the "fs/promises" module, which provides promises-based alternatives to these functions. Lastly, it's crucial to close the file once we're done reading it, which can be achieved by using the "close" function on the opened file.
-
-## See Also
-
-- [Node.js](https://nodejs.org/en/)
-- [TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/intro.html)
-- [File System Module in Node.js](https://nodejs.dev/learn/the-nodejs-fs-module)
+## See Also:
+- [Node.js `fs` module documentation](https://nodejs.org/api/fs.html)
+- [Understanding character encoding](https://www.w3.org/International/questions/qa-what-is-encoding)
+- [A comparison of `readFileSync()` and `readFile()`](https://stackoverflow.com/questions/17604866/difference-between-fs-readfilesync-vs-fs-readfile)

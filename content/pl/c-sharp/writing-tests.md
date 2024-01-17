@@ -10,49 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i dlaczego?
 
-Pomyśl o pisaniu testów jako o inwestycji na przyszłość. Testy zapewniają, że Twój kod jest niezawodny i działa zgodnie z oczekiwaniami, co pomaga uniknąć błędów i oszczędza czas w dłuższej perspektywie.
+Pisanie testów jest procesem weryfikacji działania kodu w celu upewnienia się, że aplikacja działa zgodnie z oczekiwaniami. Programiści piszą testy, ponieważ pomaga to uprościć proces debugowania, zwiększa niezawodność aplikacji i przyspiesza jej rozwój.
 
-## Jak To Zrobić
+## Jak to zrobić:
 
-Pisanie testów w języku C# jest proste i wymaga tylko kilku kroków. Najpierw musisz znać pewne podstawy dotyczące struktury i składni języka C#, a następnie możesz zacząć pisać testy.
-
+Przykładowe kody i wyniki wyświetlane są w blokach ```C# ... ```.
 ```C#
-// Tworzenie nowego projektu testowego
-dotnet new nunit
-
-// Dodawanie testowanej metody
-[TestMethod]
-public void TestMethod()
-{
-    // Tworzenie instancji klasy, która ma być przetestowana
-    MyClass myClass = new MyClass();
-
-    // Wywołanie metody, która ma być przetestowana
-    string result = myClass.Method();
-
-    // Sprawdzenie, czy wynik jest poprawny
-    Assert.AreEqual("expected result", result);
-}
+    public int Add(int a, int b)
+    {
+        return a + b;
+    }
 ```
+Wywołanie funkcji Add(5, 3) zwróci wynik 8.
 
-Deep Dive: 
 
-Ważne jest, aby pamiętać o kilku podstawowych zasadach, pisząc testy w języku C#:
+## Deep Dive:
 
-1. Testy powinny być niezależne od siebie. Każdy test powinien testować tylko jedną funkcjonalność, aby uniknąć wpływu na wyniki innych testów.
+Pisanie testów jest praktykowane od wielu lat i jest uważane za standardowy sposób weryfikacji i walidacji aplikacji. Alternatywą dla pisania testów jest manualne sprawdzanie działania kodu, ale jest to czasochłonne i brak odwzorowania wszystkich możliwych scenariuszy.
 
-2. Testy powinny być czytelne i zrozumiałe. Należy używać nazewnictwa, które dobrze opisuje testowaną funkcjonalność.
+Podczas pisania testów warto skupić się na tworzeniu niezależnych i niezawodnych testów jednostkowych, które będą sprawdzać wydajność i funkcjonalność pojedynczych elementów kodu. Jest również ważne aby pamiętać o zasadzie "write once, run everywhere" - testy powinny być niezależne od środowiska, w którym są uruchamiane.
 
-3. Używaj różnych danych testowych, aby sprawdzić różne scenariusze. Dzięki temu można wykryć więcej potencjalnych błędów.
+## Zobacz także:
 
-4. Unikaj pisania zbyt wielu testów jednostkowych dla jednej funkcjonalności. Wiele testów może być trudnych do utrzymania i prowadzić do powtarzalności kodu.
+[Microsoft - Writing Tests](https://docs.microsoft.com/en-us/dotnet/core/testing/index)
 
-Ważne jest również, aby pamiętać, że testy powinny być regularnie wykonywane i aktualizowane wraz ze zmianami w kodzie, aby zapewnić, że są one nadal skuteczne.
+[xUnit - Unit Testing Framework](https://xunit.net/)
 
-## Zobacz również
-
-- [Dokumentacja NUnit](https://nunit.org/docs/2.4.2/getStarted.html)
-- [Rozpoczęcie pracy z testami jednostkowymi w C#](https://docs.microsoft.com/en-us/visualstudio/test/walkthrough-creating-and-running-unit-tests-for-managed-code?view=vs-2019)
-- [5 najlepszych praktyk pisania testów jednostkowych w C#](https://medium.com/javascript-scene/what-every-unit-test-needs-f6cd34d9836d)
+[Selenium - Automated Testing](https://www.selenium.dev/)

@@ -10,47 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad och Varför?
+Arbetet med YAML är en vanlig uppgift för programmerare som behöver läsa, skriva och konfigurera datafiler i formatet. YAML står för YAML Ain't Markup Language och är en språklig tillgång för att skapa människaläsbar datajämfört med andra dataformater som är mer svåra att läsa för människor. 
 
-För att börja arbeta med YAML, kan hjälpa dig att skapa välstrukturerade filer för att konfigurera och organisera ditt projekt. Det är också användbart för att utbyta data mellan olika plattformar.
-
-## Hur du gör det
-
-För att arbeta med YAML i din TypeScript-kod, måste du först installera "js-yaml" paketet. Därefter kan du använda "load" metoden för att läsa in YAML-filer och "dump" metoden för att skapa YAML-strängar. Se nedan för ett exempel på hur du läser in en YAML-fil:
-
+## Hur man gör:
 ```TypeScript
-import * as YAML from 'js-yaml';
+// Omvandla från YAML till JSON
+import YAML from 'js-yaml';
 
-// Läser in YAML-fil
-const data = YAML.load('exempel.yaml');
+let yamlStr = 'name: Anna\nage: 28';
+let obj = YAML.load(yamlStr);
 
-// Skriver ut innehållet till konsolen
-console.log(data);
+console.log(obj); // Resultat: { name: 'Anna', age: 28 }
+
+// Omvandla från JSON till YAML
+import YAML from 'js-yaml';
+
+let obj = { name: "Anna", age: 28 };
+let yamlStr = YAML.dump(obj);
+
+console.log(yamlStr); // Resultat: name: Anna age: 28
 ```
 
-YAML-filer består av nyckel-värde-par, separerade med kolon. De kan också inkludera listor av värden, som visas nedan:
+## Djupare dykning:
+YAML skapades ursprungligen för att underlätta konfigurering av data, men har sedan dess utvecklats till en allmän databeskrivningsformat. Det finns flera alternativ till YAML som till exempel JSON och XML, men YAML är vanligt föredraget på grund av sin läsbarhet och enkelhet när det kommer till att sammanställa data. Det finns flera olika implementationer av YAML, men den vanligaste är js-yaml-biblioteket som används i exemplet ovan.
 
-```yaml
-namn: John Doe
-ålder: 30
-intressen:
-  - Programmering
-  - Resor
-  - Musik
-```
-
-Det finns också möjlighet att använda kommentarer i YAML-filer, genom att börja raden med ett "#"-tecken. Se till att hålla koll på indentation när du skapar din YAML-fil, då det är viktigt för att få korrekt formatering.
-
-## Deep Dive
-
-En av fördelarna med att arbeta med YAML jämfört med andra konfigurationsfiler, är att det är mycket lättare att läsa och förstå. Det är även flexibelt och tillåter kommentarer, vilket är användbart för dokumentation. Du kan även inkludera JSON-format i din YAML-fil för att ytterligare strukturera dina data.
-
-YAML har också inbyggd stöd för att inkludera så kallade "ankare" och "referenser", vilket gör det möjligt att återanvända samma data på flera ställen i filen. Detta är särskilt användbart för större och mer komplexa konfigurationsfiler.
-
-## Se också
-
-För mer information om hur du använder YAML i din TypeScript-kod, se följande länkar:
-
-- [YAML officiell hemsida](https://yaml.org/)
-- [js-yaml dokumentation](https://github.com/nodeca/js-yaml)
-- [YAML Cheat Sheet](https://yaml.org/start.html)
+## Se även:
+[Officiell YAML-hemsida](https://yaml.org/) 
+[JS-YAML dokumentation](https://www.npmjs.com/package/js-yaml)

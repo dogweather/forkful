@@ -10,51 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+# What & Why?
 
-Concatenating strings is a useful skill to have in Bash programming as it allows you to combine multiple strings together to create a new string. This can be helpful for creating dynamic output or manipulating data.
+Concatenating strings in Bash is the process of combining multiple strings into a single string. Programmers often use this in order to create dynamic output or build complex commands.
 
-## How To
+#How to:
 
-To concatenate strings in Bash, you can use the `+` operator or the `+=` compound assignment operator. Here's an example:
-
-```Bash
-first_name="John"
-last_name="Doe"
-
-full_name=$first_name" "$last_name
-
-#or using compound assignment:
-full_name+=" Jr."
-
-echo $full_name
-#output: John Doe Jr.
+Concatenating strings in Bash is done using the `echo` command. For example, to combine the strings "Hello" and "World", we would use the following code:
+```
+Bash
+echo "Hello""World"
 ```
 
-In the above example, we have two variables `first_name` and `last_name` which contain the first and last name respectively. We used the `+` operator to add a space in between the two names and store it in a new variable `full_name`. We then used the `+=` operator to add the suffix "Jr." to the end of the `full_name` variable. Finally, we printed out the `full_name` variable to see the concatenated string.
-
-You can also use the `cat` command to concatenate strings. Here's an example:
-
-```Bash
-str1="Hello"
-str2="world!"
-
-echo `cat <<< "$str1 $str2"`
-#output: Hello world!
+This would output: `HelloWorld`. We can also include variables in our string concatenation. For instance:
+```
+Bash
+name="John"
+echo "Hello "$name"!"
 ```
 
-Here, we used the `<<<` input redirection operator to pass the two strings into the `cat` command, which then concatenates them and prints out the result.
+This would output: `Hello John!` 
 
-## Deep Dive
+# Deep Dive:
 
-There are a few things to keep in mind when concatenating strings in Bash:
+String concatenation has been around since the early days of programming and can be found in many different programming languages, including Bash. One alternative to using the `echo` command for string concatenation is using the `printf` command, which allows for more control over the output formatting.
 
-- Double quotes should be used when assigning concatenated strings to a variable to prevent word splitting and globbing. For example, `full_name=$first_name" "$last_name` is better than `full_name=$first_name $last_name`.
-- Arrays can also be concatenated using the `+=` operator. For example, `nums+=(10 20 30)` will add the numbers 10, 20 and 30 to the end of the `nums` array.
-- You can also use command substitution to concatenate strings from the output of a command. For example, `pathname=$(pwd)" documents"` will add the string " documents" to the end of the current working directory.
+When concatenating strings, it is important to note that there should be no spaces between the strings or variables being combined. If a space is needed, it should be included within one of the strings using quotes. Additionally, Bash does not have a built-in function for string concatenation, so using commands such as `cat` or `sed` can also achieve similar results.
 
-## See Also
+# See Also:
 
-- [Bash Guide for Beginners](https://tldp.org/LDP/Bash-Beginners-Guide/html/) - helpful resource for learning more about Bash scripting.
-- [Introduction to Bash Scripting](https://www.pluralsight.com/guides/introduction-to-bash-scripting) - another article on Bash scripting for beginners.
-- [GNU Bash Manual](https://www.gnu.org/software/bash/manual/html_node/index.html) - official documentation for Bash.
+For more information on string concatenation in Bash, check out the [Bash String Manipulation](https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html#Shell-Parameter-Expansion) section of the Bash manual. Another useful resource is [tldp.org](https://www.tldp.org/LDP/abs/html/string-manipulation.html) which provides more in-depth examples and explanations.

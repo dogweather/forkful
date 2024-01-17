@@ -10,36 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+## Che cos'è e perché?
 
-Scrivere su standard error, o stderr, è un aspetto importante della programmazione che ti permette di gestire gli errori in modo efficiente. Quando un programma viene eseguito, ci possono essere degli errori o delle eccezioni che potrebbero causare problemi o malfunzionamenti. Scrivere su stderr ti dà la possibilità di visualizzare questi errori e di gestirli in modo appropriato.
+Scrivere su standard error (stderr) è un modo per stampare messaggi di errore o di debug mentre si sta programmando. Gli sviluppatori usano questa funzione per ottenere informazioni aggiuntive durante il processo di sviluppo, che aiuta a individuare e risolvere eventuali bug e problemi nel codice.
 
-## Come fare
+## Come fare:
 
-Per scrivere su stderr in Fish Shell, è possibile utilizzare il comando `echo` insieme al segno di maggiore `>` e il numero 2. Ad esempio:
-
-```Fish Shell
-echo "Questo è un errore" >&2
-```
-
-Questo comando è composto da due parti: prima viene specificato il messaggio da scrivere tra virgolette, poi viene utilizzato il simbolo `>&2` per indicare che il messaggio deve essere scritto su stderr.
-
-Un altro modo per scrivere su stderr è utilizzare il comando `stderr` e specificare il messaggio all'interno delle parentesi. Per esempio:
+Ecco un esempio di codice che stampa un messaggio di errore su stderr utilizzando il Fish Shell:
 
 ```Fish Shell
-stderr "Questo è un altro errore"
+echo "Errore! Qualcosa è andato storto." >&2
 ```
 
-Questo comando ha lo stesso effetto del precedente, ma utilizza la funzione specifica di Fish Shell per scrivere su stderr.
+Il simbolo ">&2" instrada il messaggio al canale di stderr invece che a quello di stdout, in cui vengono di solito stampati i messaggi di output.
 
-## Approfondimento
+Ecco un'altra variante del codice che utilizza il comando "printf" anziché "echo":
 
-Scrivere su stderr è importante perché ti permette di visualizzare e gestire gli errori in modo specifico e separato dai messaggi di output standard. In questo modo, puoi distinguere facilmente tra gli errori e il normale funzionamento del tuo programma.
+```Fish Shell
+printf "%s\n" "Errore! Qualcosa è andato storto." >&2
+```
 
-Inoltre, scrivere su stderr ti dà anche la possibilità di redirezionare questi messaggi di errore in un file, utilizzando ad esempio il simbolo `&>>`. Ciò è particolarmente utile quando si sta eseguendo un programma in background o quando si vuole registrare gli errori in un file di log.
+L'uso di "printf" permette di formattare il messaggio in modo più preciso, ad esempio aggiungendo variabili o aggiungendo caratteri speciali.
 
-## Vedi anche
+## Approfondimento:
 
-- [Documentazione di Fish Shell](https://fishshell.com/docs/current/index.html)
-- [Tutorial su Fish Shell](https://www.digitalocean.com/community/tutorials/how-to-use-fish-shell-on-ubuntu-18-04)
-- [Articolo su come gestire gli errori in Fish Shell](https://medium.com/@csvang/how-to-handle-errors-in-fish-shell-6426142aa2f9)
+#### Contesto storico:
+
+La scrittura su standard error è una funzionedel sistema operativo Unix, introdotta nel 1971 con l'Unix Version 4. Inizialmente veniva utilizzata solo per stampare messaggi di errore, ma successivamente è diventata anche un metodo di debug molto utile per gli sviluppatori.
+
+#### Altre alternative:
+
+In aggiunta all'utilizzo del Fish Shell, è possibile scrivere su standard error con altri linguaggi di programmazione come Bash, Python e Perl. Ogni linguaggio ha una sua sintassi specifica per utilizzare esta funzione, ma il concetto rimane lo steso.
+
+#### Dettagli di implementazione:
+
+Nel Fish Shell, utilizzando il simbolo ">&2", il messaggio viene instradato al canale di stderr. Questo canale è definito come il canale di output "standard error" del processo in esecuzione. Il messaggio può poi essere catturato dal processo o redirizzato in un file di log per ulteriori analisi.
+
+## Vedi anche:
+
+- Documentazione ufficiale del Fish Shell: https://fishshell.com/docs/current/
+- Spiegazione dettagliata di standard error: https://www.freecodecamp.org/news/io-streams-in-the-shell-a-primer-a010b2cc8dfd/

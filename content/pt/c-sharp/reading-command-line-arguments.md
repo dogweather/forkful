@@ -10,55 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Por que ler argumentos da linha de comando em C#?
+O que & Porquê?
 
-Se você está familiarizado com programação em C#, provavelmente já sabe que a linguagem oferece diversas opções para ler dados de entrada. No entanto, a leitura de argumentos da linha de comando pode ser particularmente útil em alguns casos específicos. Neste artigo, vamos explorar por que pode ser interessante incluir esse recurso em suas aplicações.
+Ler argumentos da linha de comando é uma prática comum na programação, que consiste em obter informações passadas pelo usuário ao executar um programa. Isso permite que o programa seja mais interativo e personalizado, tornando a experiência do usuário mais fluída.
 
-## Como fazer a leitura de argumentos da linha de comando em C#
+Os programadores utilizam essa técnica para permitir que seus programas sejam executados de diferentes formas, de acordo com as necessidades dos usuários. Além disso, ler argumentos da linha de comando permite que o código seja mais dinâmico e reutilizável, já que não há a necessidade de alterar manualmente variáveis ou configurações do programa a cada execução.
 
-Em C#, a leitura de argumentos passados pela linha de comando é feita utilizando a classe `Environment` e seus métodos `GetCommandLineArgs()` e `GetFolderPath()`. Vamos ver um exemplo prático de como utilizar esses recursos:
+Como Fazer:
 
-```C#
-using System;
+Ler argumentos da linha de comando em C# é uma tarefa simples e direta. Para isso, utilizamos o método `Main` com um parâmetro do tipo `string[]`, que representa uma coleção de argumentos passados na linha de comando.
 
-class Program
+Segue um exemplo de como ler dois argumentos (nome e idade) e imprimir uma mensagem personalizada usando esses dados:
+
+```
+C# 
+static void Main(string[] args)
 {
-    static void Main(string[] args)
-    {
-        // Obtém todos os argumentos passados pela linha de comando
-        string[] arguments = Environment.GetCommandLineArgs();
+    // Lendo o primeiro argumento (nome)
+    string nome = args[0];
 
-        // Exibe os argumentos na tela
-        Console.WriteLine("Os argumentos passados foram:");
-        foreach (string arg in arguments)
-        {
-            Console.WriteLine(arg);
-        }
-    }
+    // Lendo o segundo argumento (idade)
+    int idade = Convert.ToInt32(args[1]);
+
+    // Criando a mensagem personalizada
+    string mensagem = $"Olá {nome}, sua idade é {idade}";
+
+    // Imprimindo a mensagem no console
+    Console.WriteLine(mensagem);
 }
 ```
 
-No exemplo acima, ao executar o programa com `dotnet run argumento1 argumento2`, o resultado será:
+Ao executar o programa com os argumentos "João" e "20", a saída será:
 
 ```
-Os argumentos passados foram:
-/path/to/program.exe
-argumento1
-argumento2
+Olá João, sua idade é 20
 ```
 
-Um ponto importante a ser destacado é que o primeiro argumento retornado pelo método `GetCommandLineArgs()` é sempre o caminho para o programa em si. Portanto, devemos estar cientes dessa informação para tratá-lo adequadamente. Além disso, é possível obter o diretório atual do programa utilizando o método `GetFolderPath()` e passando o argumento `Environment.SpecialFolder.CurrentDirectory`.
+É importante mencionar que os argumentos são lidos na ordem em que são passados, então é necessário que a quantidade e a ordem dos argumentos estejam corretas para que o programa funcione corretamente.
 
-## Mergulhando mais fundo nos argumentos da linha de comando
+Mergulho Profundo:
 
-Vale mencionar que há diversas opções para obter informações sobre os argumentos da linha de comando em C#. Além do método `GetCommandLineArgs()`, podemos utilizar as classes `Console` e `CommandLine` que oferecem recursos mais avançados.
+A leitura de argumentos da linha de comando é uma técnica muito antiga e é utilizada em diversas linguagens de programação, não apenas em C#. A sua origem remonta aos primórdios da programação, quando os sistemas operacionais não tinham interfaces gráficas e os comandos eram executados apenas através da linha de comando.
 
-Por exemplo, a classe `Console` possui um método `Read` que permite fazer a leitura de entrada diretamente pela linha de comando. Já a classe `CommandLine` pode ser utilizada para extrair informações específicas dos argumentos, como separar valores a partir de um caractere específico ou ignorar determinados argumentos.
+Atualmente, existem outras formas de interação com o usuário, como interfaces gráficas e aplicativos móveis, mas a leitura de argumentos da linha de comando ainda é muito utilizada, principalmente em programas de linha de comando ou scripts automatizados.
 
-De qualquer forma, a leitura de argumentos da linha de comando é uma funcionalidade importante para aumentar a flexibilidade e interatividade de suas aplicações em C#.
+Em C#, além do método `Main`, também é possível utilizar a classe `Environment` para obter informações sobre os argumentos passados na linha de comando, como por exemplo a quantidade total de argumentos e a string de argumentos completa.
 
-## Veja também
+Veja Também:
 
-- [Documentação da classe Environment em C#](https://docs.microsoft.com/pt-br/dotnet/api/system.environment)
-- [Documentação da classe Console em C#](https://docs.microsoft.com/pt-br/dotnet/api/system.console)
-- [Documentação da classe CommandLine em C#](https://docs.microsoft.com/pt-br/dotnet/api/system.environment.commandline)
+- [Documentação oficial do método Main (em inglês)](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/main-and-command-args/)
+- [Exemplo prático de leitura de argumentos da linha de comando em C# (em inglês)](https://stackoverflow.com/questions/1629735/how-do-i-pass-command-line-arguments-to-a-visual-studio-vsto-add-in/2665915#2665915)

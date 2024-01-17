@@ -10,28 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
-CSV (Comma Separated Values) er en vanlig filformat for å lagre tabellignende data. Det er ofte brukt i dataanalyse, regneark og databasesystemer. Ved å kunne jobbe med CSV-filer, kan du enkelt importere og eksportere data mellom ulike programmeringsverktøy og systemer.
+Hva & Hvorfor?
 
-## Slik gjør du
-For å jobbe med CSV-filer i Clojure, kan du bruke biblioteket "clojure-csv". Her er et eksempel på hvordan du kan åpne en CSV-fil og lese dataene:
+Arbeid med CSV, eller Comma Separated Values, er en vanlig oppgave for utviklere å håndtere store datasett. CSV er en enkel og vanlig filformat for lagring og deling av tabellariske data, og er mye brukt i forretningsapplikasjoner og databehandling.
+
+Hvordan:
+
+En av de enkleste måtene å håndtere CSV-filer i Clojure er å bruke biblioteket clojure.data.csv. Dette gir enkle funksjoner for å lese og skrive til CSV-filer, som vist i følgende eksempel:
 
 ```Clojure
-(require '[clojure-csv.core :as csv])
+(require '[clojure.data.csv :as csv])
 
-(with-open [file (clojure.java.io/reader "data.csv")]
-  (doall (csv/read-csv file)))
+;; Leser en CSV-fil og lagrer dataene i et vektor
+(def data (csv/read-csv "eksempel.csv"))
+
+;; Skriver data til en CSV-fil
+(csv/write-csv "ny_csv_fil.csv" data)
 ```
 
-I dette eksempelet bruker vi funksjonen `read-csv` til å lese dataene fra filen "data.csv". Utdataen vil være en liste av lister, der hver liste representerer en rad i CSV-filen. Du kan også bruke parametere for å spesifisere separator og header-rader, se dokumentasjonen for mer informasjon.
+Dette biblioteket har også funksjoner for å konvertere data fra CSV til mer komplekse datastrukturer, som kart og sett, og vice versa.
 
-Når du har lest dataene inn i Clojure, kan du enkelt manipulere dem ved hjelp av Clojures funksjoner og datastrukturer. Du kan for eksempel filtrere ut rader basert på bestemte kriterier, endre verdier eller lage en ny CSV-fil med resultatet.
+Dypdykk:
 
-## Dypdykk
-I tillegg til å lese og skrive CSV-filer, kan du også bruke "clojure-csv" til å validere og formatere dataene. Det finnes også andre biblioteker som kan være nyttige for å håndtere CSV-filer, som for eksempel "data.csv" og "data.zip".
+CSV-formatet ble utviklet i 1972 og har vært en viktig del av datautveksling mellom ulike programmer og systemer siden da. Alternativer til å jobbe med CSV inkluderer SQL-databaser og NoSQL-databaser, men CSV er fortsatt mye brukt på grunn av sin enkelhet og kompatibilitet.
 
-En annen ting å være oppmerksom på når du jobber med CSV-filer, er at data kan være formatert på ulike måter. Noen ganger kan det være nødvendig å utføre en del rensing og formatering på dataene før du kan jobbe med dem i Clojure.
+Implementasjonsdetaljer kan variere avhengig av hvilket bibliotek eller verktøy du bruker, men det viktigste å huske på når du arbeider med CSV er å håndtere potensielle feil, som manglende verdier eller ugyldig formatering av data.
 
-## Se også
-- [ClojureScript - en introduksjon](https://www.datametrix.no/blog/clojurescript-en-introduksjon/) 
-- [Hvordan hente og behandle data i Clojure](https://www.datametrix.no/blog/hvordan-hente-og-behandle-data-i-clojure/)
+Se også:
+
+- Offisiell dokumentasjon for biblioteket clojure.data.csv: https://clojure.github.io/data.csv/
+- En guide til å arbeide med CSV i Clojure: https://mrinalbhattacharya.github.io/clojure/csv/data-science/big-data/open-data/2018/08/31/csv-file-in-clojure.html

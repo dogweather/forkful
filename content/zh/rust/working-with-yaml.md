@@ -10,69 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么 
-首先，YAML 是一种人类可读写的数据序列化格式。它非常便于使用，因为它使用缩进来表示层次结构，而不是使用括号或者标签。它也可以轻松地与各种编程语言集成，包括 Rust。
+## 什么是YAML以及为什么程序员要用它？
 
-## 怎么做 
-下面是一个使用 Rust 和 serde_yaml 库解析 YAML 文件的简单示例：
-```Rust 
-use std::fs::File;
-use serde_yaml::{from_reader, Value};
+YAML是一种轻量级的数据序列化格式，它使用简单的键值对结构来表示数据。它具有易读易写的特性，因此它被广泛地用作配置文件和数据交换的格式。程序员使用YAML来存储和传输数据，使得他们可以更轻松地将数据传递给其他应用程序。
 
-fn main() {
-    let file = File::open("my_config.yaml").expect("Failed to open file");
-    let value: Value = from_reader(file).expect("Failed to read file");
-    println!("{:?}", value);
-}
-```
-如果我们有一个名为 "my_config.yaml" 的文件，内容如下：
-```yaml 
-name: John Smith
-age: 30
-hobbies:
-  - reading
-  - hiking
-  - coding
-```
-那么运行上面的代码会输出以下内容：
-```Rust 
-{
-  "name": String("John Smith"),
-  "age": Integer(30),
-  "hobbies": Array([
-    String("reading"),
-    String("hiking"),
-    String("coding")
-  ])
-}
-```
-从上面的示例中，我们可以看到通过 serde_yaml 库，我们可以轻松地解析 YAML 文件并将其转换为 Rust 中的数据结构，方便我们在程序中使用。
+## 如何使用YAML：
 
-同时，我们也可以使用相同的方法将 Rust 的数据结构序列化为 YAML 文件：
-```Rust 
-use std::fs::File;
-use serde_yaml::{to_writer, Value};
+使用YAML非常简单。首先，我们需要导入yaml-crate，然后使用Yaml::load_from_str()函数来加载YAML文件中的数据。下面是一个简单的示例代码：
+
+```Rust
+extern crate yaml;
+
+use yaml::{Yaml, YamlLoader};
 
 fn main() {
-    let value = Value::Map(vec![
-        (Value::String("name".to_string()), Value::String("John Smith".to_string())),
-        (Value::String("age".to_string()), Value::Integer(30)),
-        (Value::String("hobbies".to_string()), Value::Array(vec![
-            Value::String("reading".to_string()),
-            Value::String("hiking".to_string()),
-            Value::String("coding".to_string()),
-        ])),
-    ]);
-    
-    let file = File::create("my_config.yaml").expect("Failed to create file");
-    to_writer(file, &value).expect("Failed to write to file");
+    let yaml_str = "
+    name: John
+    age: 25
+    occupation: Developer
+    ";
+    let yaml = YamlLoader::load_from_str(yaml_str).unwrap();
+    let doc = &yaml[0];
+    println!("Name: {}", doc["name"]);
+    println!("Age: {}", doc["age"]);
+    println!("Occupation: {}", doc["occupation"]);
 }
 ```
-运行以上代码会在当前目录下生成一个名为 "my_config.yaml" 的文件，内容和我们上面的示例文件一样。
+输出：
+```
+Name: John
+Age: 25
+Occupation: Developer
+```
 
-## 深入了解 
-在使用 YAML 时可能会遇到的一些问题包括：如何处理多行文本、如何处理日期时间等等。如果想要深入了解这些问题的解决方案，可以查看 serde_yaml 库的文档，里面有更详细的说明和示例代码。
+## 深入了解：
 
-## 参考链接 
-- [Rust 官方文档](https://www.rust-lang.org/zh-CN/)
-- [serde_yaml 库文档](https://docs.serde.rs/serde_yaml/index.html)
+YAML最初由Clark Evans于2001年开发，旨在解决XML格式复杂和冗长的问题。它类似于JSON，但比JSON更易读。其他可选的数据交换格式包括XML、JSON和INI。与其他格式相比，YAML具有更简单的语法，并且允许注释和多行文本。yaml-crate是一个Rust库，提供了用于解析和序列化YAML格式的工具。
+
+## 参考链接：
+
+- [yaml-crate官方网站](https://docs.rs/yaml/)
+- [YAML官方网站](https://yaml.org/)
+- [YAML在Rust中的使用](https://docs.rs/crate/yaml/)
+- [Rust编程语言官网](https://www.rust-lang.org/zh-CN/)

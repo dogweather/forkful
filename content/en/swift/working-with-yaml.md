@@ -10,62 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Why
+---
 
-YAML is a widely used format for storing and sharing data, making it a valuable tool for developers. It's commonly used in configurations and settings files, making it essential for those working with applications or systems that require frequent updates or customization.
+# What & Why?
 
-# How To
+Working with YAML is all about organizing data in a human-readable format. It is a type of data serialization that allows programmers to store and transmit data in a format that is both easy to read and machine-readable. Many developers use YAML in their projects because it is a versatile and efficient way to manage complex data structures.
 
-To work with YAML in Swift, we first need to import the Yams library using the following code:
+# How to:
 
-```
-import Yams
-```
+Implementing YAML in Swift is relatively straightforward. Here are a few examples to get you started:
 
-Next, we can start using YAML in our code by creating a YAML string using the `YAMLEncoder` class:
+### 1. Create a YAML string:
 
-```
-let yamlString = try YAMLEncoder().encode(["name": "John", "age": 25])
-```
-
-We can then print the YAML string to see the output:
-
-```
-print(yamlString)
+```Swift
+let yamlString = """
+    name: John Doe
+    age: 35
+    occupation: Programmer
+"""
 ```
 
-The output would look like this:
+### 2. Convert a YAML string to a dictionary:
 
-```
-name: John
-age: 25
-```
+```Swift
+let yamlString = """
+    name: John Doe
+    age: 35
+    occupation: Programmer
+"""
 
-We can also decode a YAML string to retrieve the data in Swift. For example:
-
-```
-let yamlString = "name: John\r\nage: 25"
-let data = try YAMLDecoder().decode([String: Any].self, from: yamlString)
+let yamlDict = try! YAMLSerialization.object(withYAML: yamlString) as! [String: Any]
 ```
 
-The output would be a dictionary containing the data:
+### 3. Convert a dictionary to YAML string:
 
+```Swift
+let person = ["name": "John Doe", "age": 35, "occupation": "Programmer"]
+
+let yamlString = try! YAMLSerialization.yamlString(withObject: person)
 ```
-["name": "John", "age": 25]
-```
 
-# Deep Dive
+# Deep Dive:
 
-YAML stands for "YAML Ain't Markup Language" and is a human-friendly data serialization format. It's commonly used for configurations and has a simple syntax that is easier to read and write than other formats like XML or JSON.
+YAML was first created in 2001 as a more user-friendly alternative to XML, and has since become a popular choice for managing data in web applications. YAML stands for "YAML Ain't Markup Language" and is designed to be easy to read and write for both humans and machines.
 
-One of the main advantages of YAML is its support for nested data structures, making it great for representing complex configurations. It also allows for comments, making it easier to document and maintain code.
+An alternative to YAML is JSON, which is also a popular data serialization format. However, many developers prefer YAML because it allows for more human-friendly formatting, such as indentation, which can make complex data structures easier to manage.
 
-It's worth noting that YAML is a superset of JSON, meaning any valid JSON document is also a valid YAML document. This makes it easy to switch between the two formats if needed.
+Internally, the SwiftYAML library uses the LibYAML C library, making it fast and efficient at parsing YAML data. It also supports the ability to customize the way it handles data through the use of Codable protocols.
 
-# See Also
+# See Also:
 
-For more information on working with YAML in Swift, check out these resources:
-
-- [Yams library on Github](https://github.com/jpsim/Yams)
-- [Official YAML website](https://yaml.org)
-- [SwiftYAML library](https://github.com/behrang/YamlSwift)
+- [SwiftYAML GitHub page](https://github.com/behrang/YamlSwift)
+- [YAML Specification](https://yaml.org/spec/1.2/spec.html)
+- [Introduction to YAML](https://www.datacamp.com/community/tutorials/working-yaml-python)

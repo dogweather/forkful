@@ -10,70 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+Em programação, muitas vezes precisamos calcular datas no futuro ou no passado para realizar diferentes tarefas. Isso significa que temos que determinar uma data específica adicionando ou subtraindo um certo número de dias, semanas, meses ou anos de uma data existente. Isso pode ser usado para fins de agendamento de eventos, configuração de lembretes, cálculo de prazos, entre outros.
 
-Calcular datas no futuro ou passado é uma habilidade muito útil em programação, especialmente quando se lida com tarefas como cronogramas, lembretes e agendamentos. Com Swift, podemos facilmente realizar esses cálculos, tornando nosso código mais dinâmico e funcional.
+## O que e por quê?
 
-## Como fazer
+Calcular uma data no futuro ou no passado é uma tarefa comum entre os programadores. Isso permite que criemos lógicas específicas para atender às necessidades de nossos aplicativos, sem ter que lidar manualmente com cada situação. Por exemplo, ao programar um aplicativo de comércio eletrônico, podemos querer exibir uma data estimada de entrega ao usuário, com base na data de compra e no tempo estimado de entrega.
 
-Para calcular uma data no futuro ou passado com Swift, precisamos usar a classe Date, que representa uma data específica. Vamos dar uma olhada em alguns exemplos de código para entender melhor como isso funciona.
+## Como fazer:
 
-```Swift
-// Definindo a data atual como ponto de partida
-let now = Date()
-
-// Usando a função addingTimeInterval para adicionar um intervalo de tempo em segundos
-let futureDate = now.addingTimeInterval(3600) // Adicionando 1 hora no futuro
-let pastDate = now.addingTimeInterval(-3600) // Subtraindo 1 hora no passado
-```
-
-Agora, vamos imprimir as datas para ver o resultado:
-
-```Swift
-print("Data atual: \(now)")
-print("Data no futuro: \(futureDate)")
-print("Data no passado: \(pastDate)")
-```
-
-Ao executar esse código, teremos a seguinte saída:
+Para calcular uma data no futuro ou no passado em Swift, podemos utilizar a classe `Calendar`, que possui o método `date(byAdding:to:)`. Este método recebe uma instância do tipo `DateComponents`, que possui propriedades para definir os componentes que queremos adicionar ou subtrair da data original. Podemos passar valores negativos para subtrair e valores positivos para adicionar.
 
 ```
-Data atual: 2019-09-10 13:00:00 +0000
-Data no futuro: 2019-09-10 14:00:00 +0000
-Data no passado: 2019-09-10 12:00:00 +0000
+// Criando uma data original
+let dataOriginal = Date()
+
+// Definindo uma instância de DateComponents para adicionar 5 dias à data original
+var dataComponents = DateComponents()
+dataComponents.day = 5
+
+// Utilizando o método date(byAdding:to:) para obter a nova data
+let dataFutura = Calendar.current.date(byAdding: dataComponents, to: dataOriginal)
+
+// Imprimindo a nova data
+print(dataFutura) // 5 dias no futuro
 ```
 
-Podemos ver que a data atual não foi alterada, mas a data no futuro foi incrementada em 1 hora e a data no passado foi subtraída em 1 hora.
+Podemos alterar os valores da instância `DateComponents` para adicionar ou subtrair outros componentes, como meses ou anos. O método `date(byAdding:to:)` também pode ser utilizado para calcular uma data no passado.
 
-Também podemos usar a função `date(byAdding:to:wrappingComponents:)` para adicionar componentes específicos em uma data, como dias, meses ou anos. Vamos dar uma olhada em um exemplo:
+## Mergulho profundo:
 
-```Swift
-// Definindo a data atual como ponto de partida
-let now = Date()
+Uma das principais razões para a criação do método `date(byAdding:to:)` foi o fato de o Swift ser uma linguagem de programação orientada a protocolos, o que permite que os desenvolvedores criem tipos personalizados que adotem o protocolo `Calendar`. Isso significa que é possível criar uma classe que funcione como um calendário personalizado e seja capaz de efetuar cálculos de datas no futuro e no passado de forma específica.
 
-// Definindo o calendário atual
-let calendar = Calendar.current
+Além disso, existem outras formas de calcular datas no futuro ou no passado em Swift, como utilizando a classe `DateComponentsFormatter` ou a biblioteca de terceiros `DateToolsSwift`. No entanto, o método `date(byAdding:to:)` é a forma mais comummente utilizada e recomendada pela documentação oficial do Swift.
 
-// Adicionando 2 semanas no futuro
-let futureDate = calendar.date(byAdding: .weekOfYear, value: 2, to: now) 
-```
+## Veja também:
 
-Ao executar esse código, teremos a seguinte saída:
-
-```
-Data atual: 2019-09-10 13:00:00 +0000
-Data no futuro: 2019-09-24 13:00:00 +0000
-```
-
-Podemos ver que o valor de `value` foi definido como 2, o que resultou em adicionar 2 semanas no futuro.
-
-## Mergulho Profundo
-
-Além das funções mencionadas acima, o Swift também possui uma classe chamada DateComponents, que nos permite desmontar uma data e acessar seus componentes individuais, como dia, mês e ano. Isso pode ser útil quando precisamos realizar cálculos mais específicos.
-
-Além disso, também podemos calcular a diferença entre duas datas usando a função `dateComponents(_:from:to:)`, que retorna um objeto DateComponents contendo os componentes de diferença entre as duas datas.
-
-## Veja também
-
-- Documentação oficial da Apple sobre Date: https://developer.apple.com/documentation/foundation/date
-- Tutoriais da RayWenderlich sobre Swift: https://www.raywenderlich.com/swift
+- [Documentação oficial do Swift](https://developer.apple.com/documentation/foundation/calendar/2292622-date)
+- [Como trabalhar com datas em Swift](https://www.raywenderlich.com/1606463-dates-and-calculations-in-swift)

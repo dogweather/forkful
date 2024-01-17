@@ -10,63 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Qu'est-ce que c'est et pourquoi on le fait?
+Travailler avec YAML est une façon de gérer des données de configuration ou de structure de manière facilement lisible. Les programmeurs l'utilisent parce qu'il est plus simple à lire et à écrire que le JSON ou le XML.
 
-Si vous êtes un développeur travaillant avec TypeScript, vous avez probablement déjà entendu parler de YAML. YAML est un langage de sérialisation de données léger et facile à lire, ce qui le rend très utile pour configurer des applications et des environnements de développement. Dans cet article, nous allons explorer comment utiliser TypeScript pour travailler avec YAML et comment cela peut améliorer votre processus de développement.
-
-## Comment faire
-
-Pour utiliser YAML avec TypeScript, vous devez tout d'abord installer un package appelé `js-yaml`. Vous pouvez le faire en utilisant la commande suivante dans votre terminal :
-
-```
-npm install js-yaml
-```
-
-Ensuite, dans votre code TypeScript, vous devez importer le package `js-yaml` et l'utiliser pour charger votre fichier YAML comme suit :
+## Comment faire:
+Voici un exemple de code TypeScript utilisant la librairie YAML pour parser un fichier YAML et afficher le contenu dans la console:
 
 ```TypeScript
-import * as yaml from 'js-yaml';
-import * as fs from 'fs';
+import * as yaml from "yaml";
 
-const config = yaml.safeLoad(fs.readFileSync('config.yml', 'utf8'));
+const data = `
+  nom: Jean
+  age: 25
+  ville: Paris
+`;
+
+const parsedData = yaml.parse(data); // convertit le fichier YAML en objet JavaScript
+console.log(parsedData); // affiche {nom: "Jean", age: 25, ville: "Paris"}
 ```
 
-Ce code va charger le fichier `config.yml` et le stocker dans la variable `config` sous forme d'objet JavaScript. Vous pouvez maintenant utiliser cet objet pour accéder aux valeurs de votre fichier YAML, telles que des clés et des valeurs.
+## Plongée en profondeur:
+YAML a été créé en 2001 dans le but de fournir un moyen simple et lisible de stocker des données structurées. D'autres alternatives telles que JSON et XML sont également couramment utilisées, mais YAML se distingue par sa facilité de lecture pour les humains. En termes d'implémentation, YAML utilise une syntaxe indentée pour définir la structure des données.
 
-Si vous souhaitez écrire un objet JavaScript sous la forme d'un fichier YAML, vous pouvez utiliser la fonction `safeDump` de `js-yaml`. Voici un exemple de code :
-
-```TypeScript
-import * as yaml from 'js-yaml';
-import * as fs from 'fs';
-
-const data = {
-  name: 'John',
-  age: 25,
-  hobbies: ['programming', 'hiking'],
-};
-
-const ymlString = yaml.safeDump(data);
-fs.writeFileSync('output.yml', ymlString, 'utf8');
-```
-
-Le fichier `output.yml` contiendra maintenant les données de l'objet JavaScript sous forme de YAML.
-
-## Plongée en profondeur
-
-En travaillant avec YAML en utilisant TypeScript, il est important de comprendre comment les types sont gérés. Comme YAML est principalement basé sur les données et ne possède pas de type spécifique, TypeScript peut parfois avoir des difficultés à inférer correctement les types pour les valeurs des fichiers YAML.
-
-Pour résoudre ce problème, vous pouvez utiliser des annotations de type dans votre code TypeScript pour spécifier les types que vous attendez pour chaque clé dans votre fichier YAML. Par exemple, si vous avez une clé `age` qui doit être un nombre, vous pouvez l'annoter comme ceci :
-
-```TypeScript
-type Config = { name: string; age: number; hobbies: string[] };
-
-const config: Config = yaml.safeLoad(fs.readFileSync('config.yml', 'utf8'));
-```
-
-En utilisant ce type de déclaration, TypeScript sera en mesure de vérifier si les types dans votre fichier YAML correspondent bien aux types spécifiés.
-
-## Voir aussi
-
-- Site officiel de YAML : https://yaml.org/
-- Documentation de TypeScript : https://www.typescriptlang.org/docs/
-- Documentation de `js-yaml` : https://www.npmjs.com/package/js-yaml
+## Voir aussi:
+- [Documentation officielle de YAML](https://yaml.org/)
+- [Comparaison entre YAML, JSON et XML](https://www.baeldung.com/java-yaml-json-xml)
+- [Guide de démarrage de TypeScript](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html)

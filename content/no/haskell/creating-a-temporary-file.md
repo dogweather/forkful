@@ -10,59 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hva & Hvorfor?
+Opprettelse av midlertidige filer er en viktig del av programmering, spesielt når det kommer til å håndtere data og lagre midlertidig informasjon. Dette er nyttig når man trenger å behandle data som ikke skal lagres permanent, eller når man ønsker å teste kode uten å endre den eksisterende filen. Det er også en måte å sikre at data blir ryddet opp når det ikke lenger er behov for dem.
 
-Det å lage midlertidige filer kan være svært nyttig når du jobber med programmeringsspråket Haskell. Det tillater deg å manipulere og lese/skrive til en fil uten å påvirke den permanente versjonen.
-
-## Slik gjør du det
-
-For å lage en midlertidig fil i Haskell, bruker du funksjonen `withSystemTempFile`. Denne funksjonen tar imot to parametere: en prefiks for filnavnet og en funksjon. Den midlertidige filen vil opprettes med et unikt navn basert på prefikset du gir. Den midlertidige filen vil automatisk bli slettet når funksjonen er ferdig med å kjøre.
-
+## Hvordan:
 ```Haskell
-import System.IO
-import System.IO.Temp
+import System.IO.Temp (withSystemTempFile)
 
-withSystemTempFile "temp" $ \tempPath handle -> do
-  putStrLn ("Opprettet midlertidig fil: " ++ tempPath) -- Output: Opprettet midlertidig fil: /var/folders/xz/87wdbd1d2bb4z
-  hPutStrLn handle "Dette er innholdet i den midlertidige filen"
-    
+main :: IO ()
+main = withSystemTempFile "sample.txt" $ \tmpFile handle -> do
+  putStrLn $ "Temp file created at: " ++ tmpFile
+  hPutStrLn handle "Sample data"
 ```
-
-Innholdet du legger til i midlertidig fil vil bli slettet sammen med filen når `withSystemTempFile`-funksjonen er ferdig. Hvis du vil beholde innholdet, kan du bruke funksjonen `writeFile` for å skrive til filen.
-
-```Haskell
-withSystemTempFile "temp" $ \tempPath handle -> do
-  writeFile tempPath "Dette er innholdet i den midlertidige filen"
-  putStrLn "Filen er opprettet og innhold er skrevet til den"
+Output:
 ```
-
-## Dykk dypere
-
-Hvis du ønsker mer kontroll over den midlertidige filen, kan du bruke funksjonen `withTempFile` i stedet for `withSystemTempFile`. Denne funksjonen tar imot en sti til en mappe og et prefiks for filnavnet.
-
-```Haskell
-import System.IO
-import System.IO.Temp
-
-withTempFile "C:\\temp" "temp" $ \tempPath handle -> do
-  putStrLn ("Opprettet midlertidig fil: " ++ tempPath) -- Output: Opprettet midlertidig fil: C:\\temp\\temp.txt
-  hPutStrLn handle "Dette er innholdet i den midlertidige filen"
+Temp file created at: /var/folders/mn/b_h801bx36d7qpxnh2b6096m0000gn/T/sample.txt
 ```
+Først importerer vi `withSystemTempFile` fra `System.IO.Temp` modulen. Deretter bruker vi funksjonen som tar imot to parametere - et navn til den midlertidige filen og en funksjon som tar imot plasseringen til den midlertidige filen og en håndterer til filen. Inne i funksjonen kan vi gjøre operasjoner på filen, som å skrive eller lese data. Når funksjonen er ferdig, vil filen automatisk bli slettet.
 
-Hvis du vil beholde den midlertidige filen etter at programmet er ferdig å kjøre, kan du bruke funksjonen `getTemporaryDirectory` for å finne stien til den midlertidige mappe og deretter flytte filen dit.
+## Dypdykk:
+Opprettelse av midlertidige filer har blitt brukt i programmering i lang tid, da det har vært enklere å lagre data midlertidig i en fil enn å håndtere dem i minnet. Alternativet til å opprette en midlertidig fil er å bruke variabler eller lister, men dette kan være mindre effektivt og ikke alltid mulig.
 
-```Haskell
-import System.Directory
+I Haskell, kan vi også bruke `System.IO.Temp` modulen til å opprette en midlertidig katalog ved hjelp av `withSystemTempDirectory` funksjonen. Dette kan være nyttig for å lagre midlertidige filer som er relatert til hverandre.
 
-getTemporaryDirectory >>= \tempDir -> do
-  tempFile <- openTempFile tempDir "temp"
-  putStrLn (fst tempFile) -- Output: /Users/username/AppData/Local/Temp/4138.temp
-  hPutStrLn (snd tempFile) "Dette er innholdet i den midlertidige filen"
-  renameFile (fst tempFile) "/Users/username/Dokumenter/temp.txt"
-  putStrLn "Filen er nå flyttet og ikke lenger midlertidig"
-```
+Når det kommer til implementering, bruker Haskell `withSystemTempFile` funksjonen `openTempFile` under panseret, som i utgangspunktet gjør akkurat det samme, bortsett fra at det returnerer en håndterer til filen i stedet for plasseringen.
 
-## Se også
-
-- [System.IO.Temp dokumentasjon](https://hackage.haskell.org/package/temp-1.2.3.1/docs/System-IO-Temp.html)
-- [System.Directory dokumentasjon](https://hackage.haskell.org/package/directory-1.3.6.1/docs/System-Directory.html)
+## Se også:
+- [Haskell documentation: System.IO.Temp](https://hackage.haskell.org/package/temporary-1.3/docs/System-IO-Temp.html)
+- [Using Temporary Files in Haskell](https://mmhaskell.com/blog/2017/5/15/using-temporary-files-in-haskell)

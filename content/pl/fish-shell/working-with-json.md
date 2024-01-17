@@ -10,30 +10,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co & dlaczego?
+JSON jest formatem danych często używanym przez programistów do przechowywania i przesyłania danych w postaci tekstu. Umożliwia łatwe przechowywanie i odczytywanie danych w sposób zrozumiały dla komputerów, co ułatwia pracę z dużymi zbiorami danych.
 
-JSON (JavaScript Object Notation) jest popularnym formatem danych wykorzystywanym w wielu dziedzinach, w tym w programowaniu. W tym artykule dowiesz się, jak używać Fish Shell do pracy z plikami JSON i jak wykorzystać to w codziennej pracy.
+## Jak to zrobić:
+W programowaniu z użyciem Fish Shell możemy łatwo pracować z danymi w formacie JSON przy użyciu wbudowanych funkcji i poleceń. Możemy użyć komendy ```jq``` aby filtrować dane i wybierać konkretne pola, a następnie wyświetlić wynik w wybranym formacie, na przykład:
 
-## Jak to zrobić
-
-Fish Shell posiada wbudowane funkcje, które ułatwiają pracę z plikami JSON. W celu otworzenia i przetworzenia pliku możesz użyć polecenia "jq" (przełącznik "-R" umożliwia przechowywanie wyników w zmiennych):
-
-```Fish Shell
-jq -R '.' plik.json
+```
+$ cat data.json | jq '.name'
+"John Smith"
 ```
 
-Wykorzystując powyższy przykład, możesz wyświetlić całą zawartość pliku JSON w formacie, który jest łatwy do odczytania. Jeśli chcesz zmodyfikować konkretne dane w pliku, możesz użyć polecenia "jq" z opcją "-c" (pozwala na manipulowanie pojedynczymi wartościami):
+Jeśli chcemy zmienić format danych, możemy użyć komendy ```json2yaml``` aby przekonwertować dane z JSON na YAML lub ```yaml2json``` aby dokonać odwrotnej konwersji.
 
-```Fish Shell
-jq -c '.klucz="nowa wartość"' plik.json
-```
+## Deep Dive:
+JSON został stworzony w 2001 roku przez Douglasa Crockforda i szybko stał się jednym z najpopularniejszych formatów przechowywania danych. Alternatywami dla JSON są na przykład XML lub CSV, jednak JSON jest popularniejszy ze względu na swoją prostotę i czytelność.
 
-## Głębsza analiza
+Implementacja obsługi JSON w Fish Shell jest oparta na bibliotece ```libyajl```, która zapewnia wydajne i bezpieczne przetwarzanie danych w formacie JSON.
 
-Polecenie "jq" jest niezwykle wszechstronnym narzędziem do manipulowania danymi w formacie JSON. Możesz wykorzystać go do filtrowania i przekształcania danych, a także do tworzenia nowych plików. Fish Shell zawiera również wiele innych przydatnych funkcji i poleceń do pracy z JSON, takich jak "walk" do nawigowania po strukturze pliku czy "merge" do łączenia kilku plików JSON w jeden.
-
-## Zobacz również
-
-- [Dokumentacja Fish Shell dotycząca pracy z JSON](https://fishshell.com/docs/current/cmds/jq.html)
-- [Oficjalna strona formatu JSON](https://www.json.org/json-pl.html)
-- [Poradnik dla początkujących: Jak pracować z plikami JSON w Fish Shell](https://dev.to/odpoczynski123/handling-json-files-with-fish-shell-1dp)
+## Zobacz także:
+Dokumentacja Fish Shell (https://fishshell.com/docs/current/cmds.html)
+Dokumentacja biblioteki ```libyajl``` (https://lloyd.github.io/yajl/)

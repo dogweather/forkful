@@ -10,49 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+# 무얼 & 왜?
+날짜를 미래나 과거로 계산하는 것은 프로그래머들이 자주 하는 작업 중 하나입니다. 날짜 계산은 특정한 날짜 간의 차이를 계산하는 것으로, 예를 들어 "내일"이나 "어제"와 같은 날짜를 다룰 때 유용합니다.
 
-날짜를 미래 또는 과거로 계산하는 것의 이유는 우리가 일상 생활에서 자주 필요한 작업입니다. 예를 들어, 어떤 날짜에 대한 예약을 하거나, 과거 날짜의 기록을 찾고 싶을 때 등 다양한 상황에서 날짜 계산은 필수적인 기능입니다.
-
-## 하는 법
-
-우리는 Bash의 내장 명령어인 `date`를 사용하여 미래 또는 과거 날짜를 계산할 수 있습니다. 이를 위해 다음과 같은 형식을 사용합니다.
-
-```
-date -d "MM/DD/YYYY + n days/weeks/months/years"
+# 어떻게:
+```Bash
+# 현재 날짜에서 5일 전의 날짜 계산하기
+date -d '5 days ago'
+# 결과: Wed Jun 2 20:08:30 KST 2021
 ```
 
-여기서 MM/DD/YYYY는 기준이 되는 날짜이며, n은 더하거나 빼고자 하는 날짜의 수입니다. 예를 들어, 내일의 날짜를 계산하려면 다음과 같이 입력하면 됩니다.
-
-```
-date -d "06/22/2021 + 1 day"
-```
-
-출력은 "Tue Jun 22 00:00:00 KST 2021"과 같은 형식으로 나타납니다.
-
-계산된 날짜를 년도, 월, 일과 같이 보다 자세한 형식으로 출력하려면 `-I` 옵션을 사용할 수 있습니다. 예를 들어, 위의 예제를 아래와 같이 입력하면 됩니다.
-
-```
-date -I -d "06/22/2021 + 1 day"
+```Bash
+# 30일 후의 날짜 계산하기
+date -d '30 days'
+# 결과: Fri Jul 2 20:09:58 KST 2021
 ```
 
-그러면 "2021-06-22"라는 형식으로 출력됩니다.
+```Bash
+# 지난 주 일요일의 날짜 계산하기
+date --date='last sunday'
+# 결과: Sun Jun 13 00:00:00 KST 2021
+```
 
-## 깊게 파헤치기
+# 깊게 들어가보면:
+날짜 계산은 오래된 시스템과 프로그래밍 언어에서도 많이 사용되었습니다. 이전에는 C언어에서만 가능했지만, 현재는 Bash를 비롯한 다양한 언어에서도 사용할 수 있습니다. 날짜 계산 외에도 현재 시간과 날짜를 포맷팅하거나 시간대를 변경하는 등 다양한 기능을 제공합니다.
 
-`date` 명령어는 다양한 옵션을 가지고 있어 매우 유용합니다. 예를 들어, 다음과 같은 옵션들이 있습니다.
+물론 날짜 계산을 위해서는 패키지나 라이브러리를 사용할 수도 있습니다. 하지만 좀 더 간단하고 빠른 방법으로 CLI(Command Line Interface)를 이용해 날짜 계산을 할 수 있습니다.
 
-- `-I` : 출력 형식을 년, 월, 일 형식으로 지정합니다.
-- `-R` : 출력 형식을 RFC2822 형식으로 지정합니다.
-- `-u` : 출력 시간을 UTC로 지정합니다.
-- `-r` : 입력 파일의 수정 시간을 사용하여 날짜를 계산합니다.
-
-또한, `--date`나 `-d` 옵션으로 입력된 날짜 형식은 다양한 형태로 지정할 수 있습니다. 자세한 사항은 `man date`를 통해 확인할 수 있습니다.
-
-## 참고
-
-- [Bash 공식 문서 - date](https://www.gnu.org/software/bash/manual/bash.html#Date-Input-Formats)
-- [Linuxize - How to Use the date Command in Linux](https://linuxize.com/post/how-to-use-date-command-in-linux/)
-
-[//]: # (This is a comment and it won't be included in the output)
-[//]: # (I am using it to show the output in the preview section)
+# 관련 자료:
+- [GNU Coreutils 날짜 계산 문서](https://www.gnu.org/software/coreutils/manual/html_node/Date-input-formats.html#Date-input-formats)
+- [Bash 날짜 계산 예제 참고 사이트](https://linuxhint.com/bash-date-command/)
+- [PHP 날짜/시간 함수들](https://www.php.net/manual/kr/ref.datetime.php)

@@ -10,57 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
+Searching and replacing text is the process of searching for a specific word or phrase within a text and replacing it with another word or phrase. Programmers do this in order to quickly make changes to their code without having to manually go through each line. It saves time and ensures accuracy in making changes.
 
-Have you ever found yourself in the tedious task of manually searching and replacing a particular word or phrase in a large chunk of text? Maybe it's a typo or a repeated word that needs to be fixed. This is where the power of searching and replacing text comes in, making it a valuable tool for any developer or writer.
+## How to:
+Here's an example of how to search and replace text in Elm:
 
-## How To
-
-Let's dive into some Elm code to see how we can efficiently perform a search and replace task.
-
-First, we need to import the `String` module, which contains the `replace` function that allows us to specify the search term and the replacement text. We also need to import the `Array` module because we will be working with arrays of strings.
-
-```
-import String exposing (replace)
-import Array exposing (singleton)
+``` Elm
+replaceText : String -> String -> String -> String
+replaceText old new text =
+    String.replace old new text
 ```
 
-Next, we can define our source text as an array of strings:
+This code will take in three arguments: the old text you want to replace, the new text you want to replace it with, and the text you want to search through. It uses the built-in function `String.replace` to replace the old text with the new text in the given text. Here's an example of how to call this function:
 
-```
-sourceText = ["Hello", "world", "this", "is", "a", "test", "sentence"]
-```
-
-Now, let's say we want to replace the word "test" with "sample". We can use the `replace` function to specify the search term and the replacement text, and pass in our source text as the third argument.
-
-```
-replacedText = replace "test" "sample" sourceText
+``` Elm
+replaceText "Hello" "Hi" "Hello, world!" -- returns "Hi, world!"
 ```
 
-The `replacedText` variable will now contain the updated array of strings with the search term replaced by the replacement text. We can use `String.join` to combine all the strings into one final string.
+## Deep Dive:
+Searching and replacing text has been a common feature in programming languages for a long time. It allows for quick and efficient editing of code, especially when making widespread changes. In Elm, the `String.replace` function is used to replace text. However, there are other ways to achieve the same result, such as using regular expressions or using the `replace` function in the `Dict` module.
 
-```
-finalText = String.join " " replacedText
-```
-
-If we print out the `finalText` variable, it will output: "Hello world this is a sample sentence". 
-
-You can also use regular expressions as the search term, allowing for more complex and dynamic replacements. For example, if we want to replace all instances of numbers in a string with the word "number", we can use the following code:
-
-```
-input = "I have 20 apples and 3 bananas"
-result = replaceRegex "\\d+" "number" input
-```
-
-The `result` variable will now contain the string: "I have number apples and number bananas".
-
-## Deep Dive
-
-Underneath the hood, the `replace` function uses the `replaceRegex` function, which allows for more advanced replacements using regular expressions. This means that any regular expression that is valid in JavaScript regex will also work in Elm.
-
-The `replace` function also handles case sensitivity by default, but you can use the `replaceInsensitive` function to ignore case when performing replacements.
-
-## See Also
-
-- Official Elm documentation on searching and replacing text: https://package.elm-lang.org/packages/elm-lang/core/latest/String#replace
-- Useful regular expressions for text replacement: https://www.regular-expressions.info/examples.html
+## See Also:
+- Official Elm documentation on `String.replace`: https://package.elm-lang.org/packages/elm-lang/core/latest/String#replace
+- Elm package for regular expressions: https://package.elm-lang.org/packages/elm/regex/latest/
+- `Dict` module documentation: https://package.elm-lang.org/packages/elm-lang/core/latest/Dict

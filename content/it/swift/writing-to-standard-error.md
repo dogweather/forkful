@@ -1,7 +1,7 @@
 ---
-title:                "Scrivere su standard error"
-html_title:           "Swift: Scrivere su standard error"
-simple_title:         "Scrivere su standard error"
+title:                "Scrittura su errori standard"
+html_title:           "Swift: Scrittura su errori standard"
+simple_title:         "Scrittura su errori standard"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Files and I/O"
@@ -10,26 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+## Cosa & Perché? 
+Scrivere su standard error non è altro che l'atto di inviare un messaggio di errore ad un canale specifico, invece di stamparlo sullo standard output. I programmatori lo fanno per tenere traccia degli errori in modo più efficiente e per separare i messaggi di errore da quelli di output regolari.
 
-Scrivere all'errore standard è un'attività utile quando si vuole visualizzare un messaggio di errore o di avviso ai nostri utenti. Questo ci consente di avere un maggiore controllo sulle informazioni che mostriamo loro e di fornire indicazioni specifiche su come risolvere eventuali problemi.
-
-## Come Fare
-
-Per scrivere all'errore standard in Swift, possiamo utilizzare la funzione `print(_:)` passando come primo parametro il messaggio che vogliamo mostrare e come secondo parametro la parola chiave `to: .standardError`. Ad esempio:
+## Come fare:
+Per scrivere su standard error in Swift, è necessario utilizzare il metodo `fputs()` insieme alla costante `stderr` che rappresenta lo standard error. Il tuo codice dovrebbe apparire come segue:
 
 ```
-Swift.print("Errore! Il valore inserito non è valido.", to: .standardError)
+import Foundation
+fputs("Messaggio di errore", stderr)
 ```
 
-Questo comporta una stampa del messaggio all'utente tramite l'errore standard, anziché tramite la solita console.
+Questo codice invierà il messaggio di errore specificato al canale dello standard error. Puoi anche utilizzare l'operatore `<<` per inviare un messaggio di errore direttamente all'interno di un'istruzione print:
 
-## Approfondimento
+```
+import Foundation
+print("Messaggio di errore" << stderr)
+```
 
-Scrivere all'errore standard è una pratica comune nella programmazione, in quanto ci consente di separare gli errori dai normali output. Inoltre, questo ci permette di fare un uso più mirato dei log di errore e di facilitare la ricerca e la risoluzione dei problemi.
+L'output di entrambi i codici sarà simile a questo: 
+`Messaggio di errore`
 
-## Vedi Anche
+## Approfondimenti:
+Lo standard error è stato introdotto nei primi sistemi operativi UNIX nel 1969 e da allora è diventato uno standard nell'industria informatica. Un altro modo per gestire gli errori è utilizzare il meccanismo di eccezioni, ma ciò richiede una maggiore complessità nella gestione e può rallentare l'esecuzione del codice.
 
-- [Documentazione Swift su print(_:to:)](https://developer.apple.com/documentation/swift/1541053-print)
-- [Tutorial su come gestire gli errori in Swift](https://www.raywenderlich.com/3715234-swift-error-handling-tutorial-what-is-error-handling-in-swift)
-- [Video su come scrivere messaggi di log in Swift](https://youtu.be/nDk9meNhbR4)
+## Altre risorse: 
+- Documentazione Apple su `Foundation` e `stderr`: https://developer.apple.com/documentation/foundation/1395125-fputs
+- Tutorial su come gestire gli errori in Swift: https://www.swiftbysundell.com/posts/throwing-errors-in-swift

@@ -10,125 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¿Qué y por qué?
+Trabajar con YAML es una parte importante del proceso de desarrollo de software para muchos programadores. YAML es un formato de serialización de datos que permite almacenar información en una estructura legible para seres humanos. Gracias a su simplicidad y flexibilidad, se ha convertido en una herramienta popular en el mundo de la programación.
 
-YAML es un lenguaje de serialización de datos que se ha vuelto muy popular en el mundo de la programación. Es simple y fácil de leer, lo que lo hace una excelente opción para configuraciones y archivos de datos. Además, muchas herramientas y frameworks modernos lo utilizan, por lo que es importante saber cómo trabajar con él.
+## ¿Cómo hacerlo?
+Para trabajar con YAML en TypeScript, primero debemos instalar una librería llamada "yaml", usando el gestor de paquetes npm:
 
-## Cómo hacerlo
-
-La forma más sencilla de trabajar con YAML en TypeScript es utilizando una librería externa llamada "js-yaml". Esta librería nos permite cargar un archivo YAML y convertirlo en un objeto de JavaScript. Veamos un ejemplo:
-
-```typescript
-import * as YAML from 'js-yaml';
-
-const data = YAML.load(`
-name: Juan Perez
-age: 25
-hobbies: 
-  - reading
-  - hiking
-  - cooking
-`);
-
-console.log(data.name); // "Juan Perez"
-console.log(data.hobbies[1]); // "hiking"
+```TypeScript
+npm install yaml
 ```
 
-Como se puede ver en el ejemplo, podemos cargar un archivo YAML usando el método `load` de la librería y luego acceder a los datos como si fuera un objeto de JavaScript.
+Luego, podemos importar esta librería en nuestro código TypeScript:
 
-Pero ¿qué pasa si queremos convertir un objeto de JavaScript en un archivo YAML? En este caso, podemos utilizar el método `dump` de la librería. Veamos un ejemplo:
-
-```typescript
-import * as YAML from 'js-yaml';
-
-const data = {
-  name: "Maria Lopez",
-  age: 30,
-  hobbies: ["painting", "dancing", "traveling"]
-};
-
-const yamlData = YAML.dump(data);
-console.log(yamlData);
-// name: Maria Lopez
-// age: 30
-// hobbies: 
-//   - painting
-//   - dancing
-//   - traveling
+```TypeScript
+import * as YAML from 'yaml';
 ```
 
-En este caso, podemos ver que el objeto de JavaScript se ha convertido en una cadena de texto en formato YAML. Esto es útil cuando queremos guardar datos en archivos de configuración o enviarlos a través de una API.
+A continuación, podemos utilizar la función "dump" para convertir un objeto en un string YAML:
 
-## Inmersión profunda
+```TypeScript
+let data = {
+    name: 'Juan',
+    age: 25
+}
 
-Como mencionamos anteriormente, YAML es un formato de serialización de datos simple y fácil de leer, pero también es muy poderoso. A continuación, mostraremos algunas características más avanzadas para trabajar con YAML en TypeScript.
+let yamlString = YAML.dump(data);
 
-### Comentarios
-
-Los comentarios son una parte importante de cualquier archivo de configuración o archivo de datos. En YAML, los comentarios se pueden agregar utilizando el símbolo `#`, y js-yaml los maneja automáticamente al cargar o convertir un archivo.
-
-### Referencias y anclas
-
-Otra característica interesante de YAML es la posibilidad de utilizar referencias y anclas para reutilizar datos. Esto es especialmente útil cuando tenemos estructuras de datos complejas. Veamos un ejemplo:
-
-```typescript
-const data = `
-  drinks:
-    - &water
-      name: Water
-      color: clear
-      type: still
-    - &coffee
-      name: Coffee
-      color: dark brown
-      type: hot
-  breakfast:
-    - *water
-    - *coffee
-`;
-
-const breakfastMenu = YAML.load(data);
-console.log(breakfastMenu);
-// {
-//   drinks: [
-//    { name: "Water", color: "clear", type: "still" },
-//    { name: "Coffee", color: "dark brown", type: "hot"}
-//   ],
-//   breakfast: [
-//    { name: "Water", color: "clear", type: "still" },
-//    { name: "Coffee", color: "dark brown", type: "hot"}
-//   ]
-// }
+console.log(yamlString); // Output: name: Juan, age: 25
 ```
 
-En este ejemplo, hemos creado dos referencias (`&water` y `&coffee`) y luego las hemos utilizado en la sección de "drinks" y "breakfast". De esta forma, no es necesario repetir los mismos datos en diferentes partes del archivo.
+También podemos convertir un string YAML en un objeto de TypeScript usando la función "parse":
 
-### Tipos personalizados
+```TypeScript
+let yamlString = "name: Maria, age: 30";
+let data = YAML.parse(yamlString);
 
-Por último, una característica interesante de YAML es la posibilidad de definir tipos personalizados. Esto nos permite crear nuestras propias estructuras de datos y luego cargarlas o convertirlas a YAML. Veamos un ejemplo:
+console.log(data.name); // Output: Maria
+console.log(data.age); // Output: 30
+```
 
-```typescript
-import * as YAML from 'js-yaml';
+## Profundizando
+YAML fue creado por Clark Evans en 2001 como una alternativa más legible y estructurada a otros formatos de serialización como XML y JSON. Aunque inicialmente fue desarrollado para trabajos en Python, ha sido adoptado por muchos lenguajes de programación, incluyendo JavaScript y TypeScript.
 
-const data = `
-- !user
-  name: Maria
-  age: 30
-- !user
-  name: Juan
-  age: 25
-`;
+Además de su simplicidad, una de las ventajas de YAML es que permite comentarios, lo que resulta útil para documentar nuestro código. Sin embargo, algunas de sus desventajas incluyen la falta de soporte por parte de todos los lenguajes de programación y la posibilidad de errores si no se respeta la estructura de indentación.
 
-YAML.addSchema({
-  name: 'user',
-  kind: 'sequence',
-  construct(data) {
-    return {
-      name: data[0],
-      age: data[1]
-    };
-  }
-});
-const users = YAML.load(data);
-console.log(users); // [{name: "Maria", age: 30}, {name: "Juan", age: 25}]
-``
+Existen algunas alternativas a YAML, como JSON y TOML, pero cada una tiene sus propias características y es importante elegir la mejor opción según las necesidades de nuestro proyecto.
+
+## Ver también
+- [Página oficial de YAML](https://yaml.org/)
+- [Documentación de la librería YAML para TypeScript](https://www.npmjs.com/package/yaml)

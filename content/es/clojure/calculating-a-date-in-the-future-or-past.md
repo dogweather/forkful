@@ -10,65 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¿Qué y por qué?
+Calcular una fecha en el futuro o en el pasado es una tarea común en programación. Los programadores a menudo necesitan encontrar la fecha correspondiente a una cierta cantidad de días, semanas o meses después o antes de una fecha dada. Esto puede ser útil para programar recordatorios, planificar eventos o hacer cálculos sobre el tiempo.
 
-¡Hola lectores! ¿Alguna vez se han preguntado cómo calcular una fecha en el pasado o en el futuro? Bueno, ¡hoy vamos a sumergirnos en el mundo de la programación con Clojure y descubrir cómo hacer precisamente eso de manera sencilla y eficiente. ¡Continúen leyendo!
+## Cómo hacerlo:
+Usando la biblioteca estándar de Clojure, podemos utilizar la función ```java.util.Calendar/add```, que nos permite sumar o restar una cantidad determinada de días, semanas o meses a una fecha dada. A continuación, un ejemplo de cómo obtener la fecha correspondiente a una semana después de la fecha actual:
 
-## Cómo hacerlo
-
-```Clojure
-(defn calcular-fecha [fecha dias]
-  (-> fecha
-      (clj-time.core/plus {:days dias})
-      (clj-time.format/unparse "dd/MM/yyyy")))
+```
+Clojure (java.util.Calendar/add java.util.Calendar/DATE 7)
 ```
 
-En el código anterior, definimos una función llamada `calcular- fecha` que toma dos argumentos: `fecha` y `dias`. El primero debe ser una cadena de texto en el formato `dd/MM/yyyy` y el segundo es un número entero que representa la cantidad de días que queremos agregar o restar a la fecha inicial.
+Esto producirá la siguiente salida: ```#inst "2021-07-06T20:09:05.000-00:00"```, que representa la fecha del 6 de julio de 2021.
 
-Luego, mediante el uso de dos funciones de la biblioteca `clj-time`, `plus` y `unparse`, podemos sumar o restar la cantidad de días especificada a la fecha inicial y obtener el resultado en el formato deseado.
+## Profundizando:
+En el pasado, los desarrolladores tenían que manejar manualmente los cálculos de fechas y horas, lo que podía ser tedioso y propenso a errores. Sin embargo, con el avance de la tecnología y el uso de bibliotecas como la mencionada anteriormente, ahora es una tarea simple y eficiente.
 
-Veamos algunos ejemplos de uso de esta función:
+Otras alternativas para calcular fechas en Clojure incluyen usar la librería ```clj-time``` o realizar los cálculos utilizando funciones de bajo nivel como ```java.util.Date``` o ```java.time.LocalDate``` de Java.
 
-```Clojure
-(calcular-fecha "04/05/2021" 10)
+Detrás de escena, la función ```java.util.Calendar/add``` utiliza el método ```add()``` del objeto ```java.util.Calendar``` de Java para calcular la fecha deseada.
 
-;; Output: "14/05/2021"
-```
-
-```Clojure
-(calcular-fecha "04/05/2021" -5)
-
-;; Output: "29/04/2021"
-```
-
-## Profundizando
-
-Ahora que ya sabemos cómo utilizar la función `calcular-fecha`, ¡podemos ir un paso más allá y explorar otras posibilidades! Por ejemplo, ¿Qué pasaría si queremos sumar o restar no solo días, sino también meses o años? ¡No se preocupen, Clojure tiene una solución para eso!
-
-```Clojure
-(defn calcular-fecha-avanzado [fecha dias meses años]
-  (-> fecha
-    (clj-time.core/plus {:years años})
-    (clj-time.core/plus {:months meses})
-    (clj-time.core/plus {:days dias})
-    (clj-time.format/unparse "dd/MM/yyyy")))
-```
-
-En este nuevo código, hemos definido una función similar a la anterior, pero esta vez se pueden especificar la cantidad de días, meses y años que queremos agregar o restar a la fecha inicial.
-
-Veamos un ejemplo de cómo usar esta función:
-
-```Clojure
-(calcular-fecha-avanzado "04/05/2021" 10 2 -1)
-
-;; Output: "14/07/2020"
-```
-
-En este caso, hemos sumado 10 días, 2 meses y restado 1 año a la fecha inicial, lo que nos da como resultado el 14 de julio de 2020.
-
-¡Ya tienen las herramientas necesarias para calcular fechas en el pasado o en el futuro de manera sencilla y eficiente con Clojure! ¡Espero que les sea útil y sigan explorando más opciones para mejorar sus habilidades de programación con este lenguaje!
-
-## Ver también
-
-- [Documentación oficial de Clojure](https://clojure.org/)
-- [Biblioteca clj-time para manejo de fechas en Clojure](https://github.com/clj-time/clj-time)
+## Ver también:
+- Documentación oficial de Clojure sobre la función ```java.util.Calendar/add```: https://clojuredocs.org/clojure.java/javadocs/java.util.Calendar/add
+- Documentación de la librería ```clj-time```: https://github.com/clj-time/clj-time

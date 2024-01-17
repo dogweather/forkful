@@ -10,37 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
+什么是生成随机数字，为什么程序员要这样做？
 
-随机数在Java编程中扮演着重要的角色。它们可以被用来模拟真实世界的随机事件，也可以被用来加密敏感信息。
+生成随机数字是指在代码中使用随机算法来产生随机数的过程。程序员经常使用这种技术来模拟现实生活中的随机事件，例如抽奖、游戏等。这样可以使程序更具有趣味性和变化性。
 
-## 怎么做
-
-生成随机数的方法在Java中有多种。其中最简单的方法是使用Java的内置类Random。下面是一个简单的示例代码：
+如何生成随机数字：
 
 ```Java
-// 导入Random类
+// 导入Java自带的Random类
 import java.util.Random;
 
-// 创建Random对象
-Random random = new Random();
+// 创建随机数生成器对象
+Random rand = new Random();
 
-// 生成一个0-10之间的随机整数
-int number = random.nextInt(11);
+// 生成一个0到10的随机整数
+int num = rand.nextInt(11);
+
+// 生成一个0到1的随机浮点数
+double num2 = rand.nextDouble();
 
 // 输出结果
-System.out.println(number); // 可能输出：5
+System.out.println("随机整数：" + num);
+System.out.println("随机浮点数：" + num2);
+
+// 示例输出：
+// 随机整数：7
+// 随机浮点数：0.829
+
 ```
 
-可以发现，每次运行代码，输出结果都会不一样，这就是随机数的特点。除了使用nextInt()方法生成随机整数，还可以使用nextDouble()方法生成随机小数。
+深入了解：
 
-## 深入了解
+生成随机数的历史背景可以追溯到20世纪50年代，在计算机科学发展初期，人们就开始研究如何产生随机数。目前常见的随机数生成方法有伪随机数和真随机数。伪随机数是由一个确定的算法按照一定规律产生的数列，而真随机数则是由物理现象提供的完全随机的数列。
 
-Random类是一个伪随机数生成器，它不是真正意义上的随机，而是通过算法来模拟随机性。如果需要更高质量的随机数，可以使用SecureRandom类，在安全性方面会更加可靠。
+除了使用Java自带的Random类生成随机数，还有一些其他的方法，例如使用随机数生成器类库。此外，一些编程语言也提供了更强大的随机数生成功能，可以生成更复杂的数字模式。
 
-另外，Java 8中还引入了新的Random类，名为ThreadLocalRandom。它是线程安全的，可以在并发编程中使用。同时，它也提供了一些更方便的方法来生成随机数。
+相关资源：
 
-## 参考资料
+了解Java自带的Random类：https://docs.oracle.com/javase/8/docs/api/java/util/Random.html
 
-- [Java Random类文档](https://docs.oracle.com/javase/8/docs/api/java/util/Random.html)
-- [Java ThreadLocalRandom类文档](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ThreadLocalRandom.html)
+查看其他随机数生成方法：https://dzone.com/articles/getting-random-numbers-in-java
+
+学习各种编程语言中的随机数生成：https://www.baeldung.com/java-random-numbers

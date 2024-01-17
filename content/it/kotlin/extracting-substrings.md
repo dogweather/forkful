@@ -10,36 +10,22 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+Che cos'è e perché lo facciamo?
+L'estrazione di sottostringhe è una tecnica utilizzata dai programmatori per ottenere una parte specifica di una stringa più lunga. È utile quando si lavora con dati in formato stringa, come nel caso di analisi del testo o manipolazione di URL. 
 
-Spesso può essere necessario e utile estrarre parti specifiche di una stringa all'interno di un programma. In questo articolo, vedremo come fare ciò utilizzando Kotlin in modo semplice e veloce.
+Come farlo:
+```kotlin
+val stringa = "Ciao, sono una stringa di esempio"
+val sottostringa = stringa.substring(6, 13)
 
-## Come fare
-
-Per estrarre una parte di una stringa in Kotlin, possiamo utilizzare il metodo `substring()` che accetta due parametri: l'indice iniziale e l'indice finale della sottostringa che vogliamo estrarre. Ad esempio, se abbiamo una stringa "Ciao Mondo" e vogliamo estrarre solo la parola "Mondo", possiamo usare il metodo `substring(5, 10)` dove 5 è l'indice iniziale della parola "Mondo" e 10 è l'indice finale (notare che l'indice finale non verrà incluso nella sottostringa).
-
-Possiamo anche utilizzare il metodo `drop()` per eliminare le prime n lettere della stringa e poi utilizzare il metodo `take()` per prendere le prossime m lettere. Ad esempio, se abbiamo una stringa "Ciao Mondo" e vogliamo eliminare la parola "Ciao" e prendere solo la parola "Mondo", possiamo usare il metodo `drop(5).take(5)`. Questo ci darà una sottostringa di 5 lettere a partire dal sesto carattere della stringa originale.
-
-Di seguito un esempio di codice completo:
-
-```Kotlin
-fun main() {
-   val str = "Ciao Mondo"
-   val subStr1 = str.substring(5, 10)
-   val subStr2 = str.drop(5).take(5)
-  
-   println(subStr1) // Output: Mondo
-   println(subStr2) // Output: Mondo
-}
+println(sottostringa) // output: "sono una"
 ```
 
-## Deep Dive
+Se il metodo di estrazione richiede che la prima sottostringa sia inclusa e l'ultima esclusa. Quindi, nel nostro esempio, il carattere iniziale è il sesto e l'ultimo è il dodicesimo. Il codice ci restituirà la stringa da "s" a "e", inclusi. 
 
-Kotlin offre anche altri metodi per estrarre sottostringhe, come ad esempio `slice()` che permette di estrarre più sottostringhe specificando gli indici desiderati, oppure `subSequence()` che restituisce una sequenza dei caratteri della sottostringa indicata. Inoltre, è possibile utilizzare espressioni regolari per estrarre sottostringhe più complesse e utilizzare il metodo `replace()` per sostituire una sottostringa nella stringa originale.
+Approfondimento:
+Questo processo è conosciuto anche come "slicing" e ha le sue origini nella programmazione di linguaggi come Python. Un'alternativa al metodo di estrazione di Kotlin è l'utilizzo dell'operatore `[]` come in JavaScript. Implementato in modo efficiente grazie alla gestione di stringhe come array di caratteri, il metodo di estrazione applica una coppia di indici all'oggetto di tipo String e restituisce la sottostringa corrispondente. 
 
-Vale la pena notare che Kotlin considera tutte le stringhe come sequenze di caratteri unicode, quindi è possibile utilizzare i metodi sopra menzionati anche per estrarre sottostringhe di caratteri speciali.
-
-## Vedi anche
-
-- [Documentazione ufficiale di Kotlin sulle stringhe](https://kotlinlang.org/docs/basic-types.html#strings)
-- [Kotlin String extensions](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/kotlin.-string/index.html)
+Vedi anche:
+- [Documentazione di Kotlin sul metodo substring()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/substring.html)
+- [Spiegazione dettagliata dei metodi di estrazione di Kotlin](https://kotlinlang.org/docs/reference/basic-types.html#strings)

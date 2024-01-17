@@ -10,86 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+Mikä & Miksi?
+Lue komentorivin argumentteja tarkoittaa sitä, että ohjelmoijat voivat antaa lisätietoja ohjelmalle suorituksen aikana. Tämä voi olla hyödyllistä, kun halutaan muokata ohjelman käyttäytymistä eri olosuhteissa.
 
-Kommentorivin argumenttien lukeminen on tärkeä taito, joka helpottaa ohjelmien suorittamista ja hallintaa. Tämän taidon avulla voit helposti välittää parametreja ohjelmalle sen suorituksen aikana.
+Mikä on komentorivin argumenttien lukeminen ja miksi ohjelmoijat tekevät sitä?
 
-## Kuinka
+Komentorivin argumenttien lukeminen tarkoittaa sitä, että ohjelma ottaa vastaan lisätietoja käyttäjältä suorituksen aikana. Tämä voi olla hyödyllistä esimerkiksi silloin, kun halutaan muuttaa ohjelman toimintaa eri tilanteissa. Ohjelmoijat käyttävät tätä toimintoa, jotta ohjelma olisi joustavampi ja voisi sopeutua paremmin vaihtuviin olosuhteisiin.
 
+Kuinka tehdä?
 ```Elm
-import Platform exposing (Program)
-import Task exposing (Task)
-import Parser exposing (run, string, succeed) 
-
-main : Program Never Model 
-main = 
-    Platform.program
-    { init = init
-    , view = view
-    , update = update
-    , subscriptions = subscriptions
-    }
-
--- Alustaa ohjelman lukemaan komentorivin argumenttien rivin
-init: (Model, Cmd Msg)
-init = (Model "", Task.succeed Cmd")
-
--- Näyttää yksinkertaisen tekstikentän
-view : Model -> Html Msg
-view model =
-    text model
-
--- Päivittää tilan komentorivilla annettuun arvoon
-type Msg = Cmd String
-
-update : Msg -> Model -> (Model, Cmd Msg)
-update msg model =
-    case msg of
-        Cmd arg ->
-            (Model arg, Cmd.none)
-
--- Tilaukset komentorivin argumenttien muutoksille
-subscriptions: Model -> Sub Msg
-subscriptions model =
-    Sub.none
-
--- Toteuttaa komentorivin argumenttien lukemisen
-port currentUrl : String
-port currentUrl =
-    toTask Platform.Task
-
--- Käynnistää ohjelman komentorivilla annetun argumentin avulla
-port launch : Task x
-port launch = 
-    Succeed ()
-
--- Mahdollistaa ohjelman suorittamisen komentorivin argumentteja apuna käyttäen
-port toTask : (String -> Task x) -> Sub x
-port toTask task =
-  on "args" (map task currentUrl)
+{-|
+  Function for reading command line arguments
+  - Parameters:
+    - cmdArguments: list of strings
+  - Output:
+    - string
+-}
+readArguments : List String -> String
+readArguments cmdArguments =
+  case cmdArguments of
+    x :: _ -> x -- Returns the first argument
+    _ -> "" -- Returns an empty string if no arguments are given
+```
+```Elm
+readArguments ["Hello", "world"] -- Returns "Hello"
+readArguments [] -- Returns ""
 ```
 
-```bash
-elm make Main.elm
-elm reactor
-```
+Halutessasi voit myös käyttää `List.head` funktiota saadaksesi ensimmäisen argumentin listasta.
 
-#### Syöte: `elm reactor`  
-#### Output: Palvelin käynnistyy oletuksena portissa 8000.
+Syventävä tieto
+Komentorivin argumenttien lukeminen on ollut käytössä ohjelmoinnissa jo pitkään ja se on tärkeä osa monia ohjelmointikieliä, kuten Elm. Joissain tapauksissa, kuten kun kyseessä on monimutkainen sovellus, voi olla tarpeellista käyttää ArgParse-kirjastoa auttamaan komentorivin argumenttien lukemisessa. Tämä mahdollistaa esimerkiksi tarkemman tarkistuksen annetuista arvoista.
 
-#### Syöte: `elm make Main.elm --output=app.js`  
-#### Output: Luo `app.js` -tiedoston.
-
-#### Syöte: `elm make Main.elm --optimize`  
-#### Output: Optimoi tiedostokoon.
-
-#### Syöte: `elm repl`  
-#### Output: Käynnistää Elm-tulkin, jolla voit kokeilla koodia reaaliajassa.
-
-## Syvemmälle
-
-Kommentorivin argumenttien lukeminen perustuu tietokoneen käyttöjärjestelmän ominaisuuksiin. Komentorivin argumenttien lukemisessa on myös huomioitava mahdolliset virhetilanteet, kuten virheellisten argumenttien antaminen ja odotettujen argumenttien puuttuminen. Jokaisella käyttöjärjestelmällä voi myös olla omat ominaisuutensa ja tapansa käsitellä komentorivin argumentteja, joten kannattaa tutustua niihin ennen koodin kirjoittamista.
-
-## Katso myös
-- [Elm-ohjelmointikielen virallinen dokumentaatio](https://guide.elm-lang.org/)
-- [Komentoriviparametrien käsittely eri käyttöjärjestelmissä](https://en.wikipedia.org/wiki/Command-line_interface#Arguments)
+Katso myös
+- [ArgParse-kirjaston dokumentaatio](https://package.elm-lang.org/packages/elm/parser/latest/)
+- [Elm-ohjelmointikielen viralliset kotisivut](https://elm-lang.org/)

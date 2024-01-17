@@ -10,48 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+## Cosa & Perché?
 
-Se sei un programmatore che vuole creare una applicazione web, è molto probabile che tu abbia bisogno di scaricare una pagina web per visualizzare il suo contenuto in un formato strutturato. Questo è dove TypeScript può aiutarti, facilitando il download di una pagina web e l'analisi dei suoi dati.
+Scaricare una pagina web significa ottenere il suo contenuto e visualizzarlo sul tuo dispositivo. I programmatori lo fanno per creare applicazioni web, che devono ottenere i dati da diverse fonti per funzionare correttamente.
 
-## Come Fare
+## Come fare:
+
+Provalo tu stesso:
 
 ```TypeScript
-// importa il modulo http di Node.js
-import * as http from 'http';
+// Importa il modulo HTTP
+import * as http from "http";
 
-// definisci l'URL della pagina web che vuoi scaricare
-const url = 'https://www.example.com';
-
-// usa il metodo 'get' del modulo http per fare una richiesta GET all'URL
-http.get(url, (res) => {
-  // definisci una variabile per immagazzinare i dati ricevuti dalla pagina web
-  let data = '';
-
-  // aggiungi ogni pezzo di dato alla variabile 'data'
-  res.on('data', (chunk) => {
-    data += chunk;
-  });
-
-  // alla fine della richiesta, stampa il contenuto della pagina
-  res.on('end', () => {
-    console.log(data);
-  });
-}).on('error', (err) => {
-  // gestisci eventuali errori
-  console.log(err.message);
+// Crea un'istanza dell'oggetto HTTP
+let request = http.request("https://www.esempio.com/", (response) => {
+  // Gestisci il contenuto della risposta
+  console.log(response.statusCode);
 });
+
+// Invia la richiesta
+request.end();
 ```
 
-Esempio di output: `<html><head>...</head><body>...</body></html>`
+Ecco il risultato della tua richiesta:
 
-## Approfondimento
+```TypeScript
+200
+```
 
-Per scaricare una pagina web in TypeScript, viene utilizzato il modulo 'http' di Node.js. Ciò significa che è possibile utilizzare anche altri moduli Node.js per ulteriori funzionalità, come ad esempio 'fs' per la gestione dei file o 'cheerio' per l'analisi del DOM. Inoltre, con TypeScript, è possibile sfruttare le tipizzazioni dei dati per una migliore gestione degli errori durante il processo di download della pagina.
+## Approfondimento:
 
-## Vedi Anche
+Scaricare una pagina web è una funzionalità fondamentale per le applicazioni web moderne. Prima dello sviluppo di linguaggi di programmazione come TypeScript, i programmatori dovevano scrivere codice più complesso per ottenere una pagina web. Oggi, ci sono molte alternative per scaricare una pagina web, come ad esempio l'utilizzo di librerie di terze parti come Axios o Fetch. Per implementare il download di una pagina web, i programmatori devono conoscere il protocollo HTTP e il funzionamento delle richieste e delle risposte.
 
-- [Documentazione ufficiale di TypeScript](https://www.typescriptlang.org/docs/home.html)
-- [Modulo HTTP di Node.js](https://nodejs.org/api/http.html)
-- [Modulo FS di Node.js](https://nodejs.org/api/fs.html)
-- [Cheerio: un'utility per il parsing di HTML in Node.js](https://cheerio.js.org/)
+## Vedi anche:
+
+- https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview
+- https://www.npmjs.com/package/axios
+- https://www.npmjs.com/package/node-fetch

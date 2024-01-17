@@ -1,7 +1,7 @@
 ---
-title:                "Creando un archivo temporal."
-html_title:           "C#: Creando un archivo temporal."
-simple_title:         "Creando un archivo temporal."
+title:                "Creando un archivo temporal"
+html_title:           "C#: Creando un archivo temporal"
+simple_title:         "Creando un archivo temporal"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Files and I/O"
@@ -10,44 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¿Qué & Por qué?
 
-Crear un archivo temporal es una práctica común en la programación en C# ya que puede ayudarnos a almacenar información de forma temporal y eliminarla una vez que ya no la necesitamos. Además, puede ser útil en situaciones en las que no queremos afectar a un archivo existente mientras realizamos cambios en él.
+Crear un archivo temporal es una técnica común utilizada por los programadores para almacenar datos temporalmente durante la ejecución de un programa. Esto puede ser útil en situaciones como mantener registros de una sesión en línea o guardar información para un proceso que se realizará más tarde. Los archivos temporales también pueden ayudar a reducir el uso de memoria del sistema al no almacenar datos innecesarios durante largos periodos de tiempo.
 
-## Cómo hacerlo
+## Cómo hacerlo:
 
-Para crear un archivo temporal en C#, primero debemos importar el espacio de nombres `System.IO`. Luego, utilizaremos el método `Path.GetTempFileName()` para generar un nombre único para nuestro archivo temporal y guardarlo en una variable.
+Para crear un archivo temporal en C#, se puede usar la clase ```System.IO.Path``` y su método ```GetTempFileName()```. Este método devuelve una cadena que representa la ruta de acceso a un archivo temporal único en el sistema. A continuación, se puede utilizar esta ruta para crear y escribir datos en el archivo temporal.
 
 ```
-using System.IO;
-
 string tempFilePath = Path.GetTempFileName();
-```
-
-Después, podemos escribir cualquier información que queramos almacenar en el archivo utilizando la clase `StreamWriter`, que nos permite escribir en un archivo de texto.
-
-```
-using (StreamWriter writer = new StreamWriter(tempFilePath))
+// Crear un objeto de archivo temporal
+using (FileStream fs = File.Create(tempFilePath))
 {
-    writer.WriteLine("Este es un archivo temporal creado en C#.");
-    writer.WriteLine("Puedes agregar cualquier información que desees.");
+    // Escribir datos en el archivo temporal
+    Byte[] data = new byte[] { 0x0, 0x1, 0x2, 0x3, 0x4 };
+    fs.Write(data, 0, data.Length);
 }
 ```
 
-Finalmente, para eliminar el archivo temporal después de su uso, podemos utilizar el método `File.Delete()` y pasarle la ruta del archivo como argumento.
+## Profundizando:
 
-```
-File.Delete(tempFilePath);
-```
+La creación de archivos temporales ha sido una práctica común en la programación desde los primeros días de los sistemas operativos. Antes de la existencia de la clase ```System.IO.Path```, los programadores solían generar nombres de archivo aleatorios para crear sus archivos temporales. Sin embargo, este método no garantizaba la singularidad de los nombres y podría generar conflictos si se utilizaban en diferentes programas.
 
-## Profundizando
+Hoy en día, hay alternativas al uso de archivos temporales en C# como la utilización de almacenamiento en memoria o bases de datos. Sin embargo, el uso de archivos temporales sigue siendo una técnica útil en ciertas situaciones y es una práctica común en la programación actual.
 
-Si queremos tener un mayor control sobre la creación de un archivo temporal, podemos utilizar la clase `FileStream` en lugar de `StreamWriter`. Esto nos permite especificar el nombre y la ubicación del archivo temporal, así como su tamaño máximo y el modo de abrirlo.
+## Ver también:
 
-Además, si el archivo temporal contiene información confidencial, podemos garantizar su eliminación utilizando un bloque `try-finally` y el método `File.Delete()` en el bloque `finally`. De esta manera, nos aseguramos de que el archivo sea eliminado incluso si se produce una excepción en el código.
+Para más información sobre la creación y manipulación de archivos temporales en C#, se pueden consultar los siguientes recursos:
 
-## Ver también
-
-- Documentación oficial de Microsoft sobre el método `GetTempFileName()`: https://docs.microsoft.com/es-es/dotnet/api/system.io.path.gettempfilename?view=net-5.0
-
-- Ejemplos de uso de archivos temporales en C#: https://www.c-sharpcorner.com/UploadFile/mahesh/HOWTOCreateTemporaryFile11222005012400AM/HOWTOCreateTemporaryFile.aspx
+- [Documentación de Microsoft sobre la clase ```System.IO.Path```](https://docs.microsoft.com/es-es/dotnet/api/system.io.path)
+- [Guía de C# para principiantes de Código Facilito](https://codigofacilito.com/guias/aprende-csharp)
+- [Curso de C# de Platzi](https://platzi.com/clases/csharp/)

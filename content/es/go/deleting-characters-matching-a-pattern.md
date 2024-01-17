@@ -10,59 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué eliminar caracteres coincidentes con un patrón?
+## ¿Qué y por qué?
+Eliminar caracteres que coinciden con un patrón es una técnica común en la programación para filtrar y manipular cadenas de texto. Los programadores lo hacen para limpiar datos, validar entradas o realizar transformaciones específicas en sus programas.
 
-A veces, queremos limpiar una cadena de caracteres de ciertos caracteres que siguen un patrón específico. En lugar de hacerlo manualmente, podemos usar una función en Go que nos permita eliminar automáticamente estos caracteres para ahorrar tiempo y evitar errores.
-
-## Cómo hacerlo
-
-Para eliminar caracteres coincidentes con un patrón en Go, podemos utilizar la función `Trim()` de la biblioteca `strings`. Esta función toma dos parámetros: la cadena de caracteres a limpiar y una cadena de caracteres que contiene el patrón a eliminar.
-
-Ejemplo de código:
+## ¿Cómo hacerlo?
+En Go, podemos eliminar caracteres que coinciden con un patrón utilizando el paquete "regexp", que nos permite trabajar con expresiones regulares. Aquí hay un ejemplo de cómo eliminar todas las vocales de una cadena de texto:
 
 ```Go
-package main
-
-import (
-    "fmt"
-    "strings"
-)
+import "regexp"
 
 func main() {
-    str := "¡H0la mundo!"
-    cleanStr := strings.Trim(str, "0")
-    fmt.Println(cleanStr)
+    input := "Hola mundo!"
+    output := regexp.MustCompile("[aeiou]").ReplaceAllString(input, "")
+    // output: Hl mnd!
 }
 ```
 
-Este código producirá la salida `¡Hla mundo!`, ya que el patrón "0" ha sido eliminado de la cadena de caracteres original.
-
-Otro ejemplo:
-
-```Go
-package main
-
-import (
-    "fmt"
-    "strings"
-)
-
-func main() {
-    str := "This123 is456 a78 test"
-    cleanStr := strings.Trim(str, "1234567890")
-    fmt.Println(cleanStr)
-}
-```
-
-En este caso, la salida sería `This is a test`, ya que todos los números han sido eliminados de la cadena original.
+El código anterior utiliza la función "ReplaceAllString" del paquete "regexp" para reemplazar todas las vocales (que coincidan con el patrón "[aeiou]") en la cadena de entrada con una cadena vacía, eliminándolas así del resultado final.
 
 ## Profundizando
+La utilización de expresiones regulares para eliminar caracteres coincidentes es una técnica muy versátil y poderosa, ya que permite especificar patrones complejos y realizar manipulaciones avanzadas en cadenas de texto. Además, en Go también podemos hacer uso del paquete "strings" para realizar elimaciones más simples basadas en igualdad de caracteres, sin necesidad de utilizar expresiones regulares.
 
-La función `Trim()` también puede ser combinada con otras funciones como `ReplaceAll()` para eliminar patrones más complejos o reemplazarlos con otros caracteres. Además, esta funcionalidad también se puede aplicar a otras estructuras de datos como slices y maps.
-
-Para obtener más información sobre cómo utilizar la función `Trim()` de manera más avanzada, se recomienda revisar la documentación oficial de Go y explorar otros ejemplos de código.
-
-## Ver también
-
-- [Documentación oficial de Go](https://golang.org/doc/)
-- [Tutorial de funciones de cadenas en Go](https://www.calhoun.io/6-tips-for-using-strings-in-go/)
+## Véase también
+- [Documentación oficial de Go: regexp](https://golang.org/pkg/regexp/)
+- [Especificación de expresiones regulares en Go](https://golang.org/src/regexp/syntax/syntax.go)
+- [Documentación oficial de Go: strings](https://golang.org/pkg/strings/)
+- [Tutoriales de expresiones regulares en Go](https://www.calhoun.io/using-regex-in-go/)

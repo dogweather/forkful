@@ -10,90 +10,81 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+## O Que & Porquê?
 
-Se você está interessado em criar programas em Arduino, é importante conhecer diversas formas de armazenar e manipular dados. O YAML é uma linguagem de marcação simples e eficiente, muito utilizada para armazenar informações em arquivos de configuração, aplicativos web e até mesmo em projetos de hardware. Aprender a trabalhar com YAML pode expandir suas habilidades em programação e torná-lo mais versátil e eficiente em sua jornada com o Arduino. 
+Trabalhar com YAML no Arduino é uma maneira de estruturar e organizar dados de forma clara e legível, usando apenas texto simples. Os programadores utilizam o YAML para armazenar configurações, dados e até mesmo código, em vez de usar o formato padrão do Arduino (C++).
 
-## Como fazer
+## Como Fazer:
 
-Antes de começar a escrever seu código, é necessário instalar uma biblioteca no seu Arduino IDE para permitir a manipulação de arquivos YAML. No menu "Sketch", escolha "Include Library" e em seguida "Manage Libraries". Na barra de pesquisa, digite "YAML" e escolha a biblioteca "Arduino YAML". Clique em "Install" e aguarde a instalação ser concluída.
-
-Agora, vamos para a parte prática. Primeiramente, inclua a biblioteca no seu código usando `#include <arduino-yaml.h>`. Para ler um arquivo YAML, utilize o seguinte código:
-
-```
-ArduinoYAML yaml;
-
+### Exemplo 1:
+```Arduino
+#include <yaml.h>
 void setup() {
-  Serial.begin(9600);
-  // abra o arquivo em modo leitura
-  File file = SD.open("dados.yaml", FILE_READ);
-  // faça o parsing dos dados do arquivo
-  YAML::Node doc = yaml.parse(file);
-  // imprima o valor de "mensagem"
-  Serial.println(doc["mensagem"].as<String>());
+  YAML::Node dados; //cria um objeto para armazenar os dados
+  dados["nome"] = "João"; //define a chave "nome" com o valor "João"
+  dados["idade"] = 25; //define a chave "idade" com o valor 25
+  dados["linguagem"] = "C++"; //define a chave "linguagem" com o valor "C++"
+
+  Serial.begin(9600); //inicia a comunicação serial
+  YAML::Emitter saida; //cria um objeto para gerar a saída YAML
+  saida << dados; // adiciona os dados ao objeto de saída
+
+  Serial.println(saida.c_str()); // imprime a saída do YAML na porta serial
 }
 
 void loop() {
-  // nada a ser feito no loop
+  //não há nada a ser feito aqui
 }
-```
-
-Caso queira escrever em um arquivo YAML, utilize o seguinte código como base:
 
 ```
-ArduinoYAML yaml;
-
+O resultado desta implementação é a impressão dos dados em formato YAML na porta serial:
+```
+nome: João
+idade: 25
+linguagem: C++
+```
+### Exemplo 2:
+```Arduino
+#include <yaml.h>
 void setup() {
-  // abra o arquivo em modo escrita
-  File file = SD.open("dados.yaml", FILE_WRITE);
-  // crie um novo objeto YAML::Emitter
-  YAML::Emitter out;
-  // escreva os dados desejados, seguindo a estrutura chave-valor
-  out << YAML::BeginMap;
-  out << YAML::Key << "nome";
-  out << YAML::Value << "João";
-  out << YAML::Key << "idade";
-  out << YAML::Value << 27;
-  out << YAML::EndMap;
-  // salve os dados no arquivo
-  yaml.save(file, out);
+  YAML::Node dados; //cria um objeto para armazenar os dados
+  dados["time"] = "Flamengo"; //define a chave "time" com o valor "Flamengo"
+  dados["pontuação"] = 84; //define a chave "pontuação" com o valor 84
+  dados["posição"] = 1; //define a chave "posição" com o valor 1
+
+  Serial.begin(9600); //inicia a comunicação serial
+  YAML::Emitter saida; //cria um objeto para gerar a saída YAML
+  saida << dados; // adiciona os dados ao objeto de saída
+
+  Serial.println(saida.c_str()); // imprime a saída do YAML na porta serial
 }
 
 void loop() {
-  // nada a ser feito no loop
+  //não há nada a ser feito aqui
 }
-```
-
-O arquivo "dados.yaml" será criado e conterá os seguintes dados:
 
 ```
-nome: "João"
-idade: 27
+
+O resultado desta implementação é a impressão dos dados em formato YAML na porta serial:
+```
+time: Flamengo
+pontuação: 84
+posição: 1
 ```
 
-A partir desses exemplos, você pode adaptar o código à sua necessidade, criando ou lendo dados mais complexos em arquivos YAML. Lembre-se de sempre fechar o arquivo após o uso com `file.close()`.
+## Mergulho Profundo:
 
-## Mergulho profundo
+### Contexto Histórico:
+O formato YAML (YAML Ain't Markup Language), foi criado em 2001 pelo designer de software Clark Evans com o objetivo de ser uma alternativa mais simples e fácil de usar do que o formato XML. No entanto, só ganhou popularidade no meio da programação com a ascensão de novas ferramentas como o GitHub e o Kubernetes, que utilizam o formato YAML para gerenciar e configurar seus serviços.
 
-O YAML (YAML Ain't Markup Language) é uma linguagem de marcação simples e legível por humanos, inspirada em outros formatos como XML e JSON. Sua estrutura é baseada em chaves e valores, organizadas em hierarquias através de identação. Por exemplo:
+### Alternativas:
+Existem outras opções de formato de dados estruturados, como o JSON e o XML, no entanto, o YAML se destaca por ser mais legível e fácil de manipular pelos seres humanos.
 
-```
-frutas:
-  - banana
-  - laranja
-  - maçã
-cores:
-  - vermelho
-  - verde
-  - amarelo
-```
+### Detalhes de Implementação:
+Para utilizar o YAML no Arduino, é necessário instalar a biblioteca "ArduinoYaml" disponível no gerenciador de bibliotecas da IDE. Além disso, é necessário incluir a biblioteca no seu código e utilizar as classes e funções destinadas a manipulação de dados e geração de saída no formato YAML.
 
-Notamos que "frutas" e "cores" são chaves que contêm listas de valores. Neste caso, "banana", "laranja" e "maçã" são frutas, enquanto "vermelho", "verde" e "amarelo" são cores. Além disso, é possível adicionar comentários em um arquivo YAML usando o caractere cerquilha (#) antes do texto.
+## Veja Também:
 
-O manipulador de arquivos YAML utilizado na biblioteca para Arduino é baseado na biblioteca "ArduinoJson", o que garante compatibilidade e facilidade de uso. Outro diferencial do YAML é a possibilidade de referenciar dados em diferentes partes do arquivo usando âncoras e referências, o que pode ser útil em casos de repetição de dados.
-
-## Veja também
-
-- [Documentação oficial da biblioteca Arduino YAML](https://github.com/arduino-libraries/ArduinoYaml)
-- [Exemplos práticos de uso de YAML com Arduino](https://create.arduino.cc/projecthub/arduino-yaml/getting-started-with-yaml-and-arduino-4af603)
-- [Tutorial para iniciantes em YAML](https://www.learnpython.org/pt/YAML)
+- [Site oficial do YAML](https://yaml.org/)
+- [Documentação da biblioteca ArduinoYaml](https://github.com/arduino-libraries/ArduinoYaml)
+- [Explicação detalhada sobre o formato YAML](https://medium.com/@HudsonGIslander/what-is-yaml-42a17a1ab152)

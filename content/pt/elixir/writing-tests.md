@@ -10,61 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que escrever testes em Elixir?
+## O que e por que?
 
-Ao escrever testes em Elixir, os desenvolvedores garantem que seu código está funcionando corretamente e que quaisquer alterações feitas no futuro não quebrarão o código existente.
+Escrever testes na programação é um processo de verificação e validação do código para garantir que o mesmo esteja funcionando corretamente. Os programadores utilizam testes para detectar bugs e garantir a qualidade do código.
 
-## Como fazer
+## Como fazer:
 
-Um teste básico em Elixir pode ser definido da seguinte forma:
+Elixir tem uma estrutura de testes embutida chamada ExUnit, que torna o processo de escrever testes fácil e eficiente. Abaixo está um exemplo de como escrever testes em Elixir:
 
 ```Elixir
-defmodule MathTest do
+defmodule CalculatorTest do
   use ExUnit.Case
-  
-  test "soma de dois números" do
-    assert 2 + 3 == 5
+
+  test "addition" do
+    assert Calculator.add(2, 3) == 5
+  end
+
+  test "multiplication" do
+    assert Calculator.multiply(2, 3) == 6
   end
 end
 ```
 
-Nesse exemplo, estamos criando um módulo `MathTest` que utiliza a estrutura de teste do Elixir `ExUnit.Case` e criando um teste simples que verifica a soma de dois números.
+Neste exemplo, estamos testando as funções de adição e multiplicação de uma calculadora simples. A estrutura de testes começa com `defmodule` e `use ExUnit.Case`, seguido de `test` e uma descrição do teste. Dentro de cada teste, usamos a função `assert` para verificar se o resultado esperado é igual ao resultado real.
 
-Executar esse teste é simples, basta rodar o seguinte comando no terminal:
+## Mergulho profundo:
 
-```
-mix test
-```
+A prática de escrever testes é conhecida como desenvolvimento guiado por testes (TDD), e foi introduzida pelo programador Kent Beck no início dos anos 2000. O objetivo do TDD é criar testes primeiro e, em seguida, escrever o código necessário para passar nesses testes. Isso ajuda a garantir que o código funcione como esperado e evita possíveis falhas futuras.
 
-Isso irá executar todos os testes presentes no diretório `test` do seu projeto. Caso queira executar apenas o teste que acabamos de criar, é possível passar o nome do arquivo como argumento:
+Além do ExUnit, existem outras ferramentas de teste disponíveis em Elixir, como Hound para testes de aplicativos web e Mox para simular módulos em ambiente de teste. É importante encontrar a ferramenta que melhor se adapte às necessidades de cada projeto.
 
-```
-mix test test/math_test.exs
-```
+## Veja também:
 
-O resultado esperado seria algo como:
-
-```
-  1) test soma de dois números (MathTest)
-      test/math_test.exs:5
-      Assertion with == failed
-      code: 2 + 3 == 5
-      lhs:  5
-      rhs:  6
-      stacktrace:
-        test/math_test.exs:6: (test)
-```
-
-Essa saída nos informa que o teste falhou, pois o resultado da expressão `2 + 3` é diferente de 5. Isso nos permite identificar rapidamente e corrigir o erro.
-
-## Profundidade na escrita de testes
-
-Ao escrever testes em Elixir, é importante ter em mente que devemos testar não apenas o resultado esperado, mas também possíveis erros ou comportamentos inesperados. Isso garantirá que nosso código esteja mais robusto e que possíveis problemas sejam detectados e corrigidos antes de chegarem em produção.
-
-Além disso, é possível utilizar a estrutura de testes do Elixir para testar funções que utilizam processos concorrentes. Isso nos permite garantir que nosso código seja capaz de lidar com múltiplos processos e dados compartilhados sem causar problemas.
-
-## Veja também
-
-- Documentação oficial da estrutura de teste do Elixir: https://hexdocs.pm/ex_unit/ExUnit.html
-- Artigo sobre TDD em Elixir: https://www.obiefernandez.com/posts/tdd-in-elixir
-- Exemplo de projeto com testes em Elixir: https://github.com/elixirschool/elixir-survey-2016
+- [Documentação do ExUnit](https://hexdocs.pm/ex_unit/ExUnit.html)
+- [Vídeo sobre TDD com Elixir](https://www.youtube.com/watch?v=3QvOVol7mLE)
+- [Artigo sobre TDD com Elixir](https://medium.com/@sachinbhate/test-driven-development-with-elixir-a-simple-guide-952c6ce03b32)

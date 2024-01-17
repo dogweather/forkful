@@ -10,47 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+Vad är concatenating strings och varför gör programmerare det?
 
-Innan vi hoppar in i hur man konkatenaterar strängar i Elixir, låt oss först förstå varför vi skulle vilja göra det. Att konkatenatera strängar är ett viktigt koncept inom programmering eftersom det ger oss möjlighet att sammanfoga flera delar av en text eller ett meddelande till en enda enhet. Det kan vara användbart för att skapa dynamiska meddelanden eller för att manipulera befintliga strängar på ett mer effektivt sätt.
+Concatenating strings refererar till att slå samman två eller flera strängar till en enda sträng. Detta kan vara användbart när du vill kombinera olika texter eller variabler för att skapa en längre sträng.
 
-## Hur man konkatenaterar strängar
+Detta är ett vanligt förekommande koncept inom programmering eftersom det ger oss möjligheten att manipulera text på ett användbart sätt. Genom att dela upp en sträng i mindre delar och sedan sätta ihop dem på ett specifikt sätt kan vi skapa önskad output.
 
-För att konkatenatera strängar i Elixir kan vi använda oss av operatorn `<>`. Detta operatorn tar två strängar och sammanfogar dem till en enda med den första strängen först, följt av den andra strängen.
-
+Hur man gör det:
 ```Elixir
-"Hello " <> "world!" #=> "Hello world!"
+sträng1 = "Hej "
+sträng2 = "världen!"
+
+concat_sträng = sträng1 <> sträng2
+
+IO.puts concat_sträng
 ```
+Output: "Hej världen!"
 
-Vi kan också använda funktionen `String.concat/2` som tar ett godtyckligt antal strängar som argument och sammanfogar dem tillsammans.
+Det finns flera sätt att concatenating strings i Elixir, men det vanligaste är att använda operatören `<>` (kan också skrivas som `<>`). Detta sätter ihop två strängar till en och returnerar ett nytt värde, medan de ursprungliga strängarna förblir oförändrade.
 
-```Elixir
-String.concat("Welcome", "to", "Elixir") #=> "Welcome to Elixir"
-```
+Mer avancerade funktioner som `String.concat/1` och `String.joint/1` finns också tillgängliga i Elixir för att göra concatenating strings ännu enklare.
 
-Om vi vill konkatenatera en lista av strängar kan vi använda funktionen `Enum.join/2` som tar en lista och ett valfritt separator-tecken som argument.
+Djupdykning:
+Concatenating strings är en vanlig koncept inom programmering och är inte unikt för Elixir. Det finns flera andra programmeringsspråk som också erbjuder liknande funktioner, till exempel JavaScripts `+` operator och Pythons `+` operator.
 
-```Elixir
-Enum.join(["Programming", "is", "fun"], " ") #=> "Programming is fun"
-```
+När du jobbar med mycket långa strängar och behöver prestanda, kan det vara mer fördelaktigt att använda metoder som `String.joint/1` istället för `<>` operatorn. Detta beror på hur Elixir implementerar referenser och garbage collection.
 
-Vi kan också använda funktionen `IO.puts/2` för att skriva ut våra konkatenaterade strängar direkt till konsolen.
-
-```Elixir
-IO.puts("Hello " <> "Elixir!") #=> Hello Elixir!
-```
-
-## Djupdykning
-
-Det är viktigt att notera att när man konkatenaterar strängar i Elixir skapas en ny sträng istället för att ändra den befintliga strängen. Detta innebär att vi kan vara säkra på att vårt ursprungliga värde inte förändras.
-
-En annan funktion som kan vara användbar för att manipulera strängar är `String.replace/4` som låter oss ersätta en del av en sträng med en annan sträng. Detta kan visa sig användbart när man vill byta ut delar av en text med en dynamiskt genererad sträng.
-
-```Elixir
-String.replace("Elixir är ett", "Elixir", "Språk") #=> "Språk är ett"
-```
-
-## Se även
-
-- [Elixir Dokumentation om strängar](https://hexdocs.pm/elixir/String.html)
-- [Elixir Koans: Strings](https://elixirkoans.org/#strings)
+Se även:
+- Elixir dokumentation för `String` module: https://hexdocs.pm/elixir/String.html
+- En bra bloggpost om förbättringar i strängmanipulering i Elixir 1.3: https://lostechies.com/iancooper/2016/06/14/improvements-in-string-manipulation-in-elixir-1-3/
+- En artikel om strängkonkatenering i andra programmeringsspråk: https://en.wikipedia.org/wiki/String_append

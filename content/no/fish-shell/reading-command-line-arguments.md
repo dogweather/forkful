@@ -1,7 +1,7 @@
 ---
-title:                "Lesing av kommandolinje argumenter"
-html_title:           "Fish Shell: Lesing av kommandolinje argumenter"
-simple_title:         "Lesing av kommandolinje argumenter"
+title:                "Lesing av kommandolinje-argumenter"
+html_title:           "Fish Shell: Lesing av kommandolinje-argumenter"
+simple_title:         "Lesing av kommandolinje-argumenter"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Files and I/O"
@@ -10,57 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hvorfor
+## Hva & Hvorfor?
 
-Hvorfor skulle noen ønske å lese kommandolinjeargumenter? Vel, det er faktisk en ganske nyttig funksjon i Fish Shell som kan hjelpe deg med å ta kommandoene dine til neste nivå. Enten du er en nybegynner i programmering verden, eller en erfaren veteran, kan det være nyttig å lære hvordan man leser kommandolinjeargumenter i Fish Shell.
+Lesing av kommandolinje-argumenter er en vanlig oppgave for programvareutviklere. Det innebærer å hente informasjon som er gitt som argumenter når en kommando blir kjørt i terminalen. Dette gjør det mulig å lage programmer som kan ta imot spesifikke input fra brukeren og utføre bestemte oppgaver basert på dette.
 
-# Slik gjør du det
+Å lese kommandolinje-argumenter er en viktig del av å lage effektive og fleksible programmer, da det gjør det mulig for brukeren å gi spesifikke instruksjoner til programmet uten å måtte endre selve programmet.
 
-Det er enkelt å lese kommandolinjeargumenter i Fish Shell ved å bruke en enkel kommando:
+## Slik gjør du det:
 
-```Fish Shell
-set arg (commandline -p arg)
+```Fish Shell``` har innebygde kommandoer for å lese kommandolinje-argumenter. For å få tilgang til argumentene, kan du bruke ```$argv``` variabelen som returnerer alle argumentene som en liste.
+
+For å hente et spesifikt argument, kan du bruke ```$argv[index]``` hvor ```index``` er nummeret på argumentet du vil hente. For eksempel, hvis du vil hente det andre argumentet, kan du bruke ```$argv[2]```.
+
+Her er et eksempel på hvordan du kan bruke denne funksjonen i et enkelt program:
+
+```
+#!/usr/bin/env fish
+
+echo "Dette programmet ble kjørt med følgende argumenter: $argv"
+echo "Det første argumentet er $argv[1] og det andre er $argv[2]"
 ```
 
-La oss bryte det ned. Først bruker vi kommandoen "set" til å skape et variabelt som heter "arg". Deretter bruker vi "commandline -p" for å hente ut kommandolinjeargumentene og plasserer dem i "arg" variabelen. Kjører du dette i terminalen din, vil du se at "arg" nå inneholder alle de tilgjengelige kommandolinjeargumentene i en liste.
+Output:
 
-For å få en bedre forståelse av hvordan dette fungerer og hvordan du kan bruke det, la oss se på et eksempel. Si for eksempel at du har en scriptfil kalt "list_files.fish" som inneholder følgende:
-
-```Fish Shell
-for file in (ls)
-    echo $file
-end
+```
+$ ./program.sh hello world
+Dette programmet ble kjørt med følgende argumenter: hello world
+Det første argumentet er hello og det andre er world
 ```
 
-Dette scriptet vil liste opp alle filene i nåværende mappe. Men, hva om du vil bruke det på en spesifikk mappe som du passerer som et kommandolinjeargument? Her er hvor lesing av kommandolinjeargumenter kommer til nytte:
+## Dypdykk:
 
-```Fish Shell
-set arg (commandline -p arg)
-for file in (ls $arg)
-    echo $file
-end
-```
+Kommandolinje-argumenter har vært en standardfunksjon for Unix-operativsystemer siden starten av 1970-tallet. Det finnes også alternative måter å lese argumenter på, som for eksempel å bruke en tredjeparts modul som ```argparse```. Det er også verdt å merke seg at antall argumenter og hvordan de håndteres kan variere avhengig av hvilket shell og operativsystem man bruker.
 
-Nå kan du kjøre scriptet ved å skrive følgende i terminalen:
+I ```Fish Shell``` blir alle kommandolinje-argumenter lagret som en liste i ```$argv``` variabelen. Du kan også bruke ```$argc``` variabelen for å få antall argumenter som ble gitt. I tillegg kan du bruke innebygde funksjoner som ```string split``` og ```set``` for å behandle argumentene på forskjellige måter.
 
-```bash
-./list_files.fish /sti/til/mappen
-```
+## Se også:
 
-Dette vil liste opp alle filene i den spesifikke mappen du har passert som et kommandolinjeargument.
-
-Det er verdt å merke seg at "commandline" kommandoen også har andre nyttige alternativer, som for eksempel "-c" for å få ut antall kommandolinjeargumenter og "-e" for å få ut den faktiske kommandolinjen som ble brukt.
-
-# Dypdykk
-
-Nå som du kjenner til hvordan du kan lese kommandolinjeargumenter i Fish Shell, kan vi gå litt dypere inn i emnet. Det er også verdt å nevne at du ikke bare kan lese kommandolinjeargumenter, men også skrive dem.
-
-Ved hjelp av "-C" alternativet til "commandline" kommandoen, kan du endre kommandolinjen rett fra Fish Shell, noe som kan være veldig nyttig når du jobber med kraftige kommandoer eller oppretter skall-aliaser.
-
-For mer informasjon om lesing og skriving av kommandolinjeargumenter i Fish Shell, kan du sjekke ut dokumentasjonen på deres offisielle nettside.
-
-# Se også
-
-- [Offisiell dokumentasjon for kommandolinjeargumenter i Fish Shell](https://fishshell.com/docs/current/cmds/commandline)
-- [En guide til Fish Shell for nybegynnere](https://www.freecodecamp.org/news/fish-shell-beginner-tutorial/)
-- [En mer avansert dypdykk i Fish Shell](https://www.mattjones.tech/blog/advanced-fish-fishshell/)
+- [The Fish Shell documentation](https://fishshell.com/docs/current/index.html)
+- [The history of Unix shells](https://www.historicalinganalysis.com/en/the-history-of-unix-shells/)

@@ -1,7 +1,7 @@
 ---
-title:                "Wycinanie podciągów"
-html_title:           "Elixir: Wycinanie podciągów"
-simple_title:         "Wycinanie podciągów"
+title:                "Wyodrębnianie podciągów"
+html_title:           "Elixir: Wyodrębnianie podciągów"
+simple_title:         "Wyodrębnianie podciągów"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -10,39 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## O co chodzi i dlaczego?
 
-Często w procesie programowania musimy operować na fragmentach tekstu - czy to dla wyciągania konkretnych informacji, czy też dla zmiany formatu danych. W takich przypadkach bardzo przydatne może okazać się wykorzystanie funkcji do wydobywania podłańcuchów z tekstu w języku Elixir.
+Wyciąganie podciągów (substrings) to operacja, która polega na pobraniu fragmentu tekstu z danego napisu. Programiści często wykorzystują tę funkcjonalność do odczytywania danych z różnych źródeł i manipulowania nimi.
 
-## Jak to zrobić
+## Jak to zrobić:
 
-W Elixir istnieje wiele sposobów na wydobywanie podłańcuchów z tekstu, ale najczęściej używanym jest funkcja `slice/3`, która pozwala nam na wybieranie fragmentów tekstu na podstawie indeksów. Przykładowo, jeśli chcemy wydobyć z tekstu nazwisko użytkownika, który znajduje się między znakami `<>`, możemy to zrobić w następujący sposób:
+Najprostszym sposobem na uzyskanie podciągu jest użycie funkcji ```String.slice(string, start, end)```, która pobierze fragment tekstu od indeksu startowego do indeksu końcowego. Na przykład, jeśli mamy napis "Hello world!", to ```String.slice("Hello world!", 0, 5)``` zwróci napis "Hello".
 
-```Elixir
-text = "<Jan Kowalski>"
-surname = String.slice(text, 5, -2)
-IO.puts(surname) # Kowalski
-```
+Można także skorzystać z funkcji ```String.split(string, separator)``` aby podzielić napis na fragmenty przy użyciu danego separatora. Na przykład, jeśli mamy napis "Elixir jest super!" to ```String.split("Elixir jest super!", " ")``` zwróci listę napisów ["Elixir", "jest", "super!"].
 
-W powyższym przykładzie wykorzystujemy funkcję `slice/3`, która jako argumenty przyjmuje tekst, początkowy i końcowy indeks wybierania. W naszym przypadku używamy indeksów `5` oraz `-2`, co oznacza, że wybieramy fragment tekstu od 5. znaku do przedostatniego. Dzięki temu otrzymujemy oczekiwane nazwisko użytkownika.
+## Wnikliwa analiza:
 
-Warto również wspomnieć o funkcji `match?/2`, która pozwala nam na sprawdzenie, czy podany tekst pasuje do danego wzorca. Przykładowo, jeśli chcemy sprawdzić, czy podany tekst jest adresem email, możemy to zrobić w ten sposób:
+Wyciąganie podciągów jest jednym z podstawowych operacji przy obróbce i manipulacji tekstu w programowaniu. Jest to szczególnie przydatna funkcjonalność w języku Elixir, ponieważ ten język jest silnie oparty na napisach jako podstawowym typie danych.
 
-```Elixir
-email = "jan.kowalski@example.com"
-is_valid = String.match?(email, ~r/[\w.]+@[\w.]+\.[a-z]{2,3}/)
-IO.puts(is_valid) # true
-```
+Alternatywnym sposobem na wyciąganie podciągów jest użycie wyrażeń regularnych, które pozwalają na dokładną specyfikację wzorca poszukiwanego w tekście. W Elixirze można to zrobić przy użyciu modułu Regex.
 
-W powyższym przykładzie wykorzystujemy funkcję `match?/2`, która przyjmuje tekst oraz wzorzec do sprawdzenia. W naszym przypadku używamy wyrażenia regularnego, które pozwala nam na określenie formatu adresów email. Jeśli tekst będzie pasował do wzorca, funkcja zwróci wartość `true`, w przeciwnym razie będzie to `false`.
+Wyciąganie podciągów jest realizowane wewnątrz języka Elixir przy użyciu indeksów napisów, co pozwala na szybkie i wydajne operacje na tekście.
 
-## Deep Dive
+## Zobacz także:
 
-W Elixir istnieje wiele innych funkcji związanych z wydobywaniem podłańcuchów z tekstu, takich jak `substring/3`, `split/2`, czy `replace/3`. Zanim jednak zaczniemy je używać, warto dobrze poznać i zrozumieć podstawową funkcję `slice/3`. Dzięki temu łatwiej będzie nam zrozumieć działanie i zastosowanie pozostałych funkcji.
+[Dokumentacja Elixir - Operacje na napisach](https://hexdocs.pm/elixir/String.html)
 
-Warto także pamiętać, że funkcje do wydobywania podłańcuchów w Elixir są bardzo wydajne - w porównaniu do innych języków programowania, operacje na stringach w Elixir są znacznie szybsze i nie obciążają zasobów. Warto więc z nich korzystać, szczególnie w aplikacjach, które wymagają szybkiego przetwarzania dużej ilości tekstu.
+[Dokumentacja Elixir - Wyrażenia regularne](https://hexdocs.pm/elixir/Regex.html)
 
-## Zobacz także
-
-- [Dokumentacja Elixir](https://hexdocs.pm/elixir/Kernel.String.html)
-- [Książka "Programming Elixir"](https://pragprog.com/book/elixir/programming-elixir)
+[Tutorial Elixir - Podstawy napisów](https://elixir-lang.org/getting-started/basic-types.html#string-concatenation-and-interpolation)

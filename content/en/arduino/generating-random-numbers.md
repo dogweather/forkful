@@ -10,46 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-Random numbers are an essential component of many programming projects, from generating unique IDs to creating randomized game elements. In Arduino, the `random()` function allows for the generation of pseudo-random numbers that can add an element of unpredictability to your project. 
+## What & Why?
 
-## How To
-To generate random numbers in Arduino, you can use the `random()` function. Here is an example code snippet:
+Generating random numbers is an essential task in programming that involves creating a sequence of numbers that cannot be predicted or repeated. Programmers use random numbers for a variety of purposes, including generating unique IDs, simulating unpredictable behavior, and selecting items randomly from a list.
 
-```arduino
-int randomNum = random(0, 10); // generates a random number between 0 and 10
-Serial.println(randomNum); // outputs the random number to the serial monitor
+## How to:
+
+To generate random numbers in Arduino, we can use the ```random()``` function. This function takes two parameters: the minimum and maximum values of the range of numbers we want to generate. For example, if we want to generate a random number between 1 and 10, we would use the following code:
+
+```
+Arduino int rand_num = random(1,10);
 ```
 
-Running this code would output a different random number each time it is executed. You can also specify a range for the random numbers by changing the values in the `random()` function. 
+We can also use the ```randomSeed()``` function to set a seed value for the random number generator. This seed value is used to generate the sequence of numbers, so by changing the seed value, we can get a different sequence of random numbers. This is useful when we want to have consistent results in our program.
 
-```arduino
-int randomNum = random(50, 100); // generates a random number between 50 and 100
-Serial.println(randomNum); // outputs the random number to the serial monitor
+To generate a random number within a certain range but with a specific increment, we can use the ```random(x, y, z)``` function. The third parameter, z, specifies the increment value. For example, if we want to generate a random number between 1 and 10, with increments of 2, we would use the following code:
+
+```
+Arduino int rand_num = random(1,10,2);
 ```
 
-You can also use the `randomSeed()` function to generate different sequences of random numbers. Here is an example:
+## Deep Dive:
 
-```arduino
-randomSeed(analogRead(A0)); // uses a changing voltage on analog pin 0 to generate a different sequence of random numbers
-int randomNum = random(0, 10); // generates a random number between 0 and 10
-Serial.println(randomNum); // outputs the random number to the serial monitor
-```
+There are two main approaches to generating random numbers: pseudo-random number generators and true random number generators. Pseudo-random number generators use a mathematical algorithm to generate a sequence of numbers that appears random but is actually deterministic. True random number generators, on the other hand, use physical phenomena (such as atmospheric noise) to generate truly random numbers.
 
-Note that the `randomSeed()` function should only be called once in the setup function, and not in the loop function. 
+In Arduino, the ```random()``` function uses a pseudo-random number generator, specifically the 'linear congruential generator' (LCG) algorithm. This algorithm generates numbers based on a seed value and a set of mathematical calculations. While this may not produce truly random numbers, it is sufficient for most applications.
 
-## Deep Dive
-The `random()` function in Arduino is actually a modified implementation of the C function `rand()`, which uses a mathematical formula to generate pseudo-random numbers. This means that while the numbers generated appear random, they are actually following a predictable pattern. Hence, the term "pseudo-random."
+Another alternative for generating random numbers in Arduino is by using external hardware, such as an analog noise source or a dedicated random number generator chip. However, these methods may require additional components and may not be necessary for most projects.
 
-The algorithm used in `random()` is called a linear congruential generator (LCG). It works by multiplying a seed value by a large number, adding another value, and then taking the remainder of that result when divided by a third number. This remainder becomes the next seed value, and the process continues to generate a sequence of numbers. The `randomSeed()` function allows us to change the initial seed value to create a different sequence.
+It's essential to note that the ```random()``` function is not truly random, and it is possible for the same sequence of numbers to be generated if the same seed value is used. For most applications, this may not be an issue, but for more secure use cases, it's essential to use alternative methods for generating random numbers.
 
-It's also important to note that while `random()` can generate a wide range of numbers, it is not truly random and can produce similar numbers in consecutive runs. To overcome this, you can use external factors like an analog input or the millis() function to change the seed value and create a different sequence of numbers. 
+## See Also:
 
-## See Also
-For more information on the `random()` function and other Arduino programming techniques, check out these resources:
-
-https://www.arduino.cc/reference/en/language/functions/random-numbers/random/
-
-https://learn.adafruit.com/arduino-tips-tricks-and-techniques/random-numbers
-
-https://www.arduino.cc/en/Reference/RandomSeed
+- Official Documentation for random(): https://www.arduino.cc/reference/en/language/functions/random-numbers/random/
+- Overview of Pseudo-random Number Generators: https://www.geeksforgeeks.org/pseudo-random-number-generator-prng/
+- True Random Number Generators: https://www.howtogeek.com/183051/htg-explains-how-computers-generate-random-numbers/

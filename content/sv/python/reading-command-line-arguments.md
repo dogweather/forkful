@@ -10,50 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
- Om du är nyfiken på Python och vill lära dig mer om hur man hanterar kommandoradsargument, då har du kommit till rätt ställe! Att lära sig om kommandoradsargument kan hjälpa dig att skapa mer dynamiska och användarvänliga Python-program, så det är en färdighet som är väl värd att lägga tid på.
+## Vad & Varför?
 
-## Hur man
-För att börja läsa kommandoradsargument i Python, behöver du först importera `sys`modulen. Sedan kan du använda `sys.argv` för att åtkomstkommandoradsargument som en lista. Låt oss titta på ett exempel:
+Att läsa kommandoradsargument är en viktig del av Python-programmering. Det innebär att läsa information som ges till ditt program via kommandoraden när du kör det. Det kan vara användbart när du vill göra dina program mer interaktiva och flexibla.
+
+## Hur man:
+
+För att läsa kommandoradsargument i Python använder du sys.argv-funktionen. Det är en lista som innehåller de argument som angavs när programmet startades. Här är ett enkelt exempel:
+
 ```Python
 import sys
-
-print("Namn på det körbara programmet: ", sys.argv[0])
-print("Kommandoradsargument: ", sys.argv[1:])
-```
-Kör detta program med några argument, till exempel "python program.py arg1 arg2 arg3", så kommer du att se följande utmatning:
-```
-Namn på det körbara programmet: program.py
-Kommandoradsargument: ['arg1', 'arg2', 'arg3']
+args = sys.argv
+print("Kommandoradsargument: ", args)
 ```
 
-## Djupdykning
-Förutom att bara läsa kommandoradsargument, kan du också använda `argparse`-modulen för att skapa mer avancerade funktioner, som att definiera argumenttyper, beskrivningar och krav. Detta är speciellt användbart för att skapa mer användarvänliga program som kan hantera felaktiga eller saknade argument. Här är ett exempel på hur man kan använda `argparse`:
+Om du kör detta program med följande kommandoradsargument:
+
+`python kommando.py argument1 argument2`
+
+Kommer output att bli:
+
 ```Python
-import argparse
-
-parser = argparse.ArgumentParser(description="En enkel kalkylator")
-parser.add_argument('--operation', type=str, help="Välj räknesätt: add, subtract, multiply, divide", required=True)
-parser.add_argument('--numbers', nargs='+', type=float, help="Skriv in siffror som du vill räkna med", required=True)
-args = parser.parse_args()
-
-if args.operation == 'add':
-    result = sum(args.numbers)
-elif args.operation == 'subtract':
-    result = args.numbers[0] - sum(args.numbers[1:])
-elif args.operation == 'multiply':
-    result = 1
-    for num in args.numbers:
-        result *= num
-elif args.operation == 'divide':
-    result = args.numbers[0] / sum(args.numbers[1:])
-else:
-    print("Räknesättet är inte giltigt.")
-
-print("Resultat: {}".format(result))
+Kommandoradsargument: ['kommando.py', 'argument1', 'argument2']
 ```
-Om du kör detta program med argumentet `--operation multiply --numbers 2 3 4`, så kommer du att få utmatningen `Resultat: 24`.
 
-## Se också
-- [Python's sys modul](https://docs.python.org/3/library/sys.html)
-- [Argparse dokumentation](https://docs.python.org/3/library/argparse.html)
+## Djupdykning:
+
+Kommandoradsargument är en funktion som funnits länge i programmering. Det är ett sätt att ge flexibilitet till program genom att tillåta användaren att ange olika värden för argument vid varje körning. Det finns också alternativ till att använda sys.argv, som argparse och getopt, som ger mer robusta sätt att läsa och använda kommandoradsargument.
+
+För implementationen är det viktigt att komma ihåg att sys.argv returnerar en lista som startar med namnet på det körbara programmet och därefter följer de argument som angavs. Det kan också finnas behov av att omvandla argumenten till andra typer, som int eller float, beroende på hur de ska användas i programmet.
+
+## Se även:
+
+Här är några användbara länkar för att lära dig mer om att läsa kommandoradsargument i Python:
+
+- [Python sys.argv documentation](https://docs.python.org/3/library/sys.html)
+- [Command Line Arguments in Python](https://www.pythonforbeginners.com/system/python-sys-argv)
+- [Command Line Arguments in Python with argparse](https://realpython.com/command-line-interfaces-python-argparse/)
+- [Reading Command-Line Arguments in Python](https://www.geeksforgeeks.org/reading-command-line-arguments-in-python/)

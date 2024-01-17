@@ -1,7 +1,7 @@
 ---
-title:                "Extracción de subcadenas"
-html_title:           "C++: Extracción de subcadenas"
-simple_title:         "Extracción de subcadenas"
+title:                "Extrayendo subcadenas"
+html_title:           "C++: Extrayendo subcadenas"
+simple_title:         "Extrayendo subcadenas"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -10,49 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué?
+## ¿Qué y por qué?
+Extraer subcadenas en programación es el proceso de obtener una parte de una cadena de texto más grande. Los programadores lo hacen para manipular y trabajar con cadenas más pequeñas de una manera más eficiente.
 
-Extraer subcadenas es una tarea muy común en la programación, especialmente cuando trabajamos con cadenas de texto. Nos permite obtener parte de una cadena más grande y utilizarla de manera independiente, lo que puede ser muy útil en diversos escenarios.
+## ¿Cómo hacerlo?
+En C++, se utilizan dos funciones para extraer subcadenas: ```substr()``` y ```copy()```. Ambas funciones tienen parámetros que le indican a la función qué parte de la cadena desea extraer. Un ejemplo de código sería el siguiente:
 
-## Cómo
-
-```C++
+```
 #include <iostream>
 #include <string>
-
 using namespace std;
 
 int main() {
-  // Definimos una cadena de texto
-  string frase = "Este es un ejemplo de frase";
 
-  // Extraer una subcadena desde la posición 8 hasta el final
-  string subcadena1 = frase.substr(8);
-  cout << subcadena1 << endl;
-  // Output: un ejemplo de frase
-
-  // Extraer una subcadena de 10 caracteres desde la posición 5
-  string subcadena2 = frase.substr(5, 10);
-  cout << subcadena2 << endl;
-  // Output: es un ejemplo
-
-  // Extraer una subcadena delimitada por un caracter específico
-  string subcadena3 = frase.substr(5, frase.find("de") - 1);
-  cout << subcadena3 << endl;
-  // Output: es un ejemplo
-
-  return 0;
+    string cadena = "Hola mundo!";
+    string subcadena = cadena.substr(5, 5); // Extrae la subcadena "mundo"
+    cout << subcadena << endl;
+    char buffer[6];
+    cadena.copy(buffer, 6, 5); // Copia la subcadena " mundo" al buffer
+    buffer[5] = '\0'; // Agrega el carácter de fin de cadena al buffer
+    cout << buffer << endl;
+    return 0;
 }
+```
+**Resultado:**
+```
+mundo
+ mundo
 ```
 
 ## Profundizando
-
-La función `substr()` en C++ acepta dos argumentos: la posición inicial y la longitud de la subcadena que deseamos extraer. También podemos utilizar la función `find()` para encontrar la posición de un carácter específico en una cadena y utilizarla como argumento en `substr()`.
-
-Además, es importante destacar que las cadenas de texto en C++ son inmutables, es decir, no se pueden modificar una vez creadas. Por lo tanto, cuando extraemos una subcadena, se crea una nueva cadena en lugar de modificar la original.
+El uso de subcadenas se ha vuelto cada vez más importante con el aumento en el uso de cadenas de texto en la programación. Antes, los programadores se veían obligados a trabajar con cadenas completas, lo que podía ser ineficiente. Hoy en día, hay varias formas de extraer subcadenas en C++, incluyendo las funciones de la librería ```string``` y las expresiones regulares.
 
 ## Ver también
-
-- [Función substr() en C++](https://www.cplusplus.com/reference/string/string/substr/)
-- [Split y join en cadenas de texto en C++](https://www.geeksforgeeks.org/split-a-string-in-cpp/)
-- [Documentación de cadenas de texto en C++](https://www.cplusplus.com/reference/string/)
+- [Documentación de la función ```substr()``` en cplusplus.com](http://www.cplusplus.com/reference/string/string/substr/)
+- [Documentación de la función ```copy()``` en cplusplus.com](http://www.cplusplus.com/reference/string/basic_string/copy/)
+- [Ejemplos de expresiones regulares en C++](https://www.geeksforgeeks.org/regular-expressions-c/)

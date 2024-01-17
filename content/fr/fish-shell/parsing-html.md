@@ -1,7 +1,7 @@
 ---
-title:                "Analyse du code HTML"
-html_title:           "Fish Shell: Analyse du code HTML"
-simple_title:         "Analyse du code HTML"
+title:                "Analyse de l'html"
+html_title:           "Fish Shell: Analyse de l'html"
+simple_title:         "Analyse de l'html"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "HTML and the Web"
@@ -10,60 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+# Quoi et Pourquoi?
 
-Si vous êtes un développeur web, vous avez probablement déjà dû faire face à la tâche fastidieuse de parcourir du code HTML pour extraire des informations précises. Heureusement, avec le shell Fish et quelques connaissances en parsing, vous pouvez automatiser cette tâche et libérer du temps pour des tâches plus importantes.
+Parsing HTML, or extracting data from HTML code, is a useful skill for programmers who want to scrape websites or work with web data. Parsing HTML helps simplify and organize the data for easier analysis and manipulation.
 
-## Comment faire
+# Comment faire:
 
-Pour commencer, assurez-vous d'avoir Fish Shell installé sur votre système. Si ce n'est pas le cas, vous pouvez facilement l'installer avec votre gestionnaire de paquets préféré.
-
-Une fois Fish Shell installé, vous pouvez commencer à écrire votre code de parsing HTML en utilisant la commande `read` pour lire le contenu d'un fichier ou `curl` pour récupérer le contenu d'une URL :
+Voici comment parser HTML en utilisant Fish Shell:
 
 ```
-Fish Shell
-
-# Récupérer le contenu d'une URL
-set html (curl https://www.example.com)
-
-# Lire le contenu d'un fichier
-set html (read ~/Documents/example.html)
-```
-
-Ensuite, utilisez la commande `string split` pour diviser votre code HTML en parties plus petites, en utilisant une balise spécifique comme délimiteur. Par exemple, si vous voulez extraire toutes les informations situées entre les balises `<h1>` et `</h1>`, vous pouvez utiliser le code suivant :
-
-```
-Fish Shell
-
-set html (curl https://www.example.com)
-set headers (string split -rm "<h1>" "</h1>" $html)
-
-# Affiche le contenu de chaque balise <h1>
-for header in $headers
-    echo $header
+set html (curl -s <url>) # Récupère le code HTML à partir de l'URL spécifiée et le stocke dans la variable html
+set data (string split -r "</?tag>" $html) # Sépare le code HTML en morceaux en utilisant des balises
+for line in $data # Parcourt chaque morceau
+  echo $line # Affiche le morceau en console
 end
 ```
 
-Enfin, utilisez la commande `string sub` pour retirer les balises inutiles et ne garder que le contenu souhaité :
+Voici un exemple de sortie pour un site avec des balises 'h1' et 'p':
 
 ```
-Fish Shell
-
-set html (curl https://www.example.com)
-set headers (string split -rm "<h1>" "</h1>" $html)
-
-# Affiche le contenu de chaque balise <h1> sans les balises
-for header in $headers
-    string sub -r "</?h1>" "" $header
-end
+1. Site web
+2. Ceci est un paragraphe
 ```
 
-## Plongée en profondeur
+# Plongée en profondeur:
 
-Il existe de nombreuses autres commandes utiles pour le parsing HTML dans Fish Shell, telles que `string match` pour trouver une sous-chaîne spécifique, `sed` pour effectuer des modifications plus complexes et `grep` pour filtrer les résultats. N'hésitez pas à explorer les possibilités avec Fish Shell et à lire la documentation officielle pour en apprendre davantage sur ces commandes.
+Le parsing HTML est une technique couramment utilisée dans le traitement de données web et le scraping de sites web. Cela a été particulièrement utile avant l'avènement des API qui permettent un accès plus structuré aux données. D'autres langages de programmation comme Python ont également des méthodes intégrées spécialement pour parser HTML, mais Fish Shell peut également être utilisé via l'utilisation des commandes système telles que 'curl' et 'string'.
 
-## Voir aussi
+# Références utiles:
 
-- Documentation officielle de Fish Shell : https://fishshell.com/docs/current/index.html
-- Tutoriel pour débuter avec Fish Shell : https://fishshell.com/docs/current/tutorial.html
-- Guide du parsing HTML avec Fish Shell : https://fishshell.com/docs/current/cmds/string.html
+- Pour en savoir plus sur le parsing HTML avec Fish Shell, consultez la documentation officielle: https://fishshell.com/docs/current/cmds/string.html#string-split
+- Apprenez-en plus sur les fonctionnalités de Fish Shell sur leur site web: https://fishshell.com/
+- Pour une alternative à l'utilisation de Fish Shell pour le parsing HTML, consultez: https://wiki.python.org/moin/HTMLParsing

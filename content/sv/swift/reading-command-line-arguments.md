@@ -10,63 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
+När man skapar program är det vanligt att man ibland vill ha möjligheten att lägga till extra instruktioner när man kör programmet. Detta kan vara för att göra det mer flexibelt eller för att anpassa det till olika användningsfall. Det är här läsning av kommandoradsargument kommer in.
 
-Att kunna läsa kommandoradsargument är en grundläggande färdighet inom programmering, och är också mycket användbart när du utvecklar program som körs från kommandoraden. 
+Programmerare utför läsning av kommandoradsargument för att få tillgång till extra information som användaren väljer att skicka med när de kör programmet. Det kan vara allt från enkel data som en sträng eller numeriskt värde till mer avancerade inställningar och flaggor.
 
-## Hur man gör
-
-Det finns flera sätt att läsa kommandoradsargument i Swift, men här är ett enkelt exempel som du kan använda i dina projekt.
-
-Först måste du importera Foundation framework i din Swift-fil:
-
-```Swift 
-import Foundation
-```
-
-Sedan kan du använda funktionen CommandLine.arguments för att få en array av alla kommandoradsargument som tillhandahålls vid körning av ditt program:
-
-```Swift 
-let arguments = CommandLine.arguments
-```
-
-Nu kan du använda dessa argument för att utföra önskade åtgärder inom ditt program.
-
-Till exempel, om du vill skriva ut alla kommandoradsargument, kan du använda en enkel for-loop:
-
+## Så här:
 ```Swift
-for argument in arguments {
-    print(argument)
+// Läsning av ett enkelt kommandoradsargument
+let name = CommandLine.arguments[1] // name blir nu det andra argumentet som skickades med vid körning av programmet
+print("Hej \(name)! Välkommen till programmet!")
+
+// Mer komplex läsning med hjälp av optionals och flaggor
+var message: String? = nil // Skapar en optional variabel som kan hålla värdet för flaggan
+var debugMode = false // En bool för att hålla reda på om flaggan har använts när programmet körs
+
+// Loopar igenom alla kommandoradsargument
+for argument in CommandLine.arguments{
+    switch argument{
+        // Om flaggan "debug" finns med som argument sätts debugMode till true
+        case "debug": debugMode = true
+        // Om argumentet innehåller ordet "meddelande" läses det in som en sträng till variabeln message
+        case let str where str.contains("meddelande"): message = argument
+        // Ignorerar alla andra argument
+        default: continue
+    }
+}
+
+// Om debugMode är true skrivs ett extra meddelande ut
+if debugMode{
+    print("Kör programmet i debug-läge!")
+}
+
+// Om en sträng har skickats med som "meddelande" skrivs den ut
+if let msg = message{
+    print("Ditt meddelande: \(msg)")
+} else {
+    print("Inget meddelande skickades med.")
 }
 ```
 
-Detta kommer att ge följande utmatning när du kör ditt program från kommandoraden tillsammans med några argument:
+## Djupdykning:
+Att läsa kommandoradsargument har varit en del av programmering sedan tidigt 70-tal då Unix-operativsystemet först introducerades. Det finns även alternativ till att läsa kommandoradsargument, som att använda miljövariabler istället.
 
-```
-$ swift myProgram.swift argument1 argument2 argument3
-argument1
-argument2
-argument3
-```
+I Swift finns möjligheten att använda CommandLine-structen för att få tillgång till kommandoradsargument. Den har också en inbyggd funktion för att validera och konvertera argumenten till rätt datatyper.
 
-Det är viktigt att notera att det första argumentet i arrayen av kommandoradsargument alltid är namnet på programmets körbara fil. Så om du till exempel kör ditt program med kommandot "swift myProgram.swift", kommer arrayen CommandLine.arguments att innehålla ["myProgram.swift"] som första argument.
-
-## Djupdykning
-
-Nu när vi har sett ett enkelt exempel på hur man kan läsa kommandoradsargument, låt oss titta lite djupare in på detta ämne.
-
-För det första kan du använda funktionen CommandLine.argc för att få antalet kommandoradsargument som tillhandahålls vid körning av ditt program. Detta kan vara användbart om du vill göra något baserat på antalet argument som matas in.
-
-En annan bra funktion att känna till är CommandLine.arguments.suffix(n), som returnerar en del av arrayen CommandLine.arguments från och med det n:te elementet till slutet. Detta kan vara användbart om du bara vill ha vissa argument och inte alla.
-
-När det gäller att hantera argument som är filnamn eller sökvägar, är det viktigt att ta hänsyn till eventuella mellanslag eller specialtecken som kan finnas i dem. För att undvika problem med detta bör du använda funktionen stringByAddingPercentEncodingWithAllowedCharacters() från Foundation framework för att korrekt koda argumenten innan du använder dem i ditt program.
-
-## Se även
-
-Här är några länkar till andra resurser som kan vara användbara när du arbetar med kommandoradsargument i Swift:
-
-- [Apples officiella dokumentation för Foundation framework](https://developer.apple.com/documentation/foundation)
-- [Exempel på att läsa kommandoradsargument i Swift](https://www.avanderlee.com/swift/command-line-arguments/)
-- [En video om att arbeta med kommandoradsargument i Swift](https://www.youtube.com/watch?v=_gHGYa9qbss)
-
-Det är allt för denna artikel. Hoppas det hjälpte dig att förstå hur man kan läsa kommandoradsargument i Swift. Lycka till i dina framtida projekt!
+## Se även:
+Läs mer om läsning av kommandoradsargument i Swift på [Apple Developer Documentation](https://developer.apple.com/documentation/foundation/commandlinearguments).

@@ -1,7 +1,7 @@
 ---
-title:                "Konwersja ciągu znaków do małych liter"
-html_title:           "Ruby: Konwersja ciągu znaków do małych liter"
-simple_title:         "Konwersja ciągu znaków do małych liter"
+title:                "Konwertowanie ciągu znaków na małe litery"
+html_title:           "Ruby: Konwertowanie ciągu znaków na małe litery"
+simple_title:         "Konwertowanie ciągu znaków na małe litery"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Strings"
@@ -10,33 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i Dlaczego?
 
-Istnieje kilka powodów, dla których warto przekonwertować ciąg znaków na małe litery w języku Ruby. Pierwszym z nich jest poprawność danych, ponieważ wiele funkcji w Ruby oczekuje, że dane będą w jednym formacie, a zamiana na małe litery ułatwia porównywanie i przetwarzanie danych. Kolejnym powodem jest estetyka i czytelność kodu - korzystanie z jednego konwencjonalnego formatu liter jest przyjemniejsze dla oka i ułatwia czytanie kodu innym programistom.
+Konwertowanie ciągu znaków na małe litery jest jedną z podstawowych operacji w programowaniu. Polega ono na zamianie wszystkich liter w ciągu na ich małe odpowiedniki. Programiści wykonują tę operację przede wszystkim w celu ujednolicenia danych oraz ułatwienia ich porównywania.
 
-## Jak to zrobić
-Czasami wystarczy jedna prosta metoda, aby przekonwertować ciąg znaków na małe litery w języku Ruby. Wystarczy wywołać metodę `downcase` na zmiennej zawierającej łańcuch znaków. Zobaczmy to na przykładzie:
+## Jak to zrobić:
 
 ```Ruby
-string = "PRzyKłAdOWy TEKST"
-puts string.downcase
+string = "ZWIERZĄTKA"
+puts string.downcase 
+# => "zwierzątka"
 ```
 
-Output:
+W powyższym przykładzie wykorzystujemy metodę `downcase` na stringu "ZWIERZĄTKA". Metoda ta zwraca nowy ciąg znaków z wszystkimi literami zmienionymi na małe. Możemy również wykorzystać operator `<<` aby zmienić oryginalny ciąg bez tworzenia nowego obiektu.
+
+```Ruby
+string = "MYSZKA"
+string.downcase!
+puts string
+# => "myszka"
 ```
-przykładowy tekst
-```
 
-Jeśli chcemy, aby zmiana była tymczasowa i nie chcemy zmieniać wartości zmiennej, możemy użyć `downcase!` z wykrzyknikiem na końcu, co spowoduje, że zmienimy oryginalny ciąg znaków. Możemy również przekazać dużą literę lub cały wyraz jako argument do metody, aby zamienić na małe litery tylko te części ciągu, które chcemy.
+## Głębsza Analiza:
 
-## Głębszy zanurzenie
-Zanim przejdziemy do konkluzji, warto zauważyć, że zamiana ciągu znaków na małe litery w języku Ruby może przebiegać nieco inaczej, jeśli używamy znaków spoza alfabetu angielskiego lub specjalnych znaków. W tym przypadku zależy to od kodowania znaków, które używamy. Możemy także wykorzystać inne metody, takie jak `swapcase`, `upcase`, czy `capitalize`, aby manipulować wielkością liter w ciągu.
+Konwertowanie ciągu znaków na małe litery jest ważną częścią wielu działań w programowaniu. Nie zawsze taka operacja była dostępna w językach programowania. W starszych językach typu C, konieczne było ręczne przekształcenie każdej litery w pętli. Współczesne języki programowania, takie jak Ruby, udostępniają gotową metodę, która znacznie ułatwia ten proces.
 
-## Zobacz także
-Jeśli chcesz dowiedzieć się więcej o konwersji i manipulacji ciągami znaków w języku Ruby, zapoznaj się z tymi pomocnymi materiałami:
+Alternatywami dla metody `downcase` są `upcase` (konwertuje na duże litery) oraz `swapcase` (zamienia wielkość liter na przeciwną). Można również użyć metody `capitalize` aby zamienić tylko pierwszą literę na dużą.
 
-- [Ruby String class documentation](https://ruby-doc.org/core-#{RUBY_VERSION}/String.html)
-- [Ruby String methods guide](https://www.rubyguides.com/2015/05/ruby-string-methods/)
-- [Ruby String Cookbook](https://learnbyexample.github.io/Ruby_String/#table-of-contents)
+Wewnętrzna implementacja metody `downcase` może się różnić w zależności od języka programowania. W przypadku Rubiego, wykorzystywane jest standardowe tłumaczenie mapujące każdy znak na jego mały odpowiednik.
 
-Dziękujemy za przeczytanie! Mam nadzieję, że ten krótki artykuł był dla Ciebie pomocny. Do zobaczenia w kolejnych!
+## Zobacz także:
+
+- [Ruby Docs on String#downcase](https://ruby-doc.org/core-3.0.0/String.html#method-i-downcase)
+- [Alternatives to downcase in Ruby](https://stackoverflow.com/questions/11873534/alternative-to-djoncase-in-ruby)

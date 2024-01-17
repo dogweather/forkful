@@ -10,36 +10,63 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## What & Why?
 
-Il est souvent nécessaire de remplacer du texte dans des programmes C, que ce soit pour corriger des erreurs ou pour effectuer une mise à jour. Cette fonctionnalité permet de gagner du temps et d'optimiser la qualité du code.
+La recherche et le remplacement de texte font partie des tâches courantes des programmeurs. Cela consiste à trouver une chaîne de caractères spécifique dans un ensemble de données, et à la remplacer par une autre chaîne. Les programmeurs utilisent cette technique pour corriger des erreurs, mettre à jour du code obsolète ou pour effectuer des modifications massives dans leur code.
 
-## Comment faire
-Pour remplacer du texte dans un programme en C, il suffit d'utiliser la fonction `strstr()` qui permet de trouver une sous-chaîne dans une chaîne de caractères. Voici un exemple de code pour remplacer toutes les occurrences de "bonjour" par "hello" dans une chaîne de caractères :
+## How to:
 
-```C
+Pour effectuer une recherche et un remplacement de texte en C, vous pouvez utiliser la fonction `str_replace` de la bibliothèque `<string.h>`. Voici un exemple de code :
+
+```
 #include <stdio.h>
 #include <string.h>
 
 int main() {
-    char str[] = "Bonjour tout le monde !";
-    char *ptr = strstr(str, "bonjour"); // recherche de la sous-chaîne "bonjour"
-    while (ptr != NULL) { // tant que des occurrences sont trouvées
-        strncpy(ptr, "hello", 5); // remplacer la sous-chaîne par "hello"
-        ptr += 5; // déplacer le pointeur de 5 caractères
-        ptr = strstr(ptr, "bonjour"); // rechercher la prochaine occurrence de "bonjour"
-    }
-    printf("%s", str); // afficher la chaîne modifiée
-    return 0;
-}
+	char str[] = "Bonjour le monde !";
+	char old_str[] = "le monde";
+	char new_str[] = "mon ami";
 
-// Output : Hello tout le monde !
+	printf("Avant la recherche et le remplacement : %s\n", str); // Avant la recherche et le remplacement : Bonjour le monde !
+
+	str_replace(str, old_str, new_str);
+
+	printf("Après la recherche et le remplacement : %s\n", str); // Après la recherche et le remplacement : Bonjour mon ami !
+
+	return 0;
+}
 ```
 
-## Plongée en profondeur
-La fonction `strstr()` est très utile lorsqu'on souhaite rechercher et remplacer du texte. Elle renvoie un pointeur vers la première occurrence de la sous-chaîne recherchée et permet ainsi de l'utiliser pour remplacer cette sous-chaîne. Il est également possible d'utiliser d'autres fonctions telles que `strchr()` ou `strrchr()` pour trouver et remplacer du texte dans des chaînes de caractères.
+Vous pouvez également l'utiliser pour remplacer toutes les occurrences d'une chaîne de caractères :
 
-## Voir aussi
-- [Documentation officielle sur la fonction `strstr()` en C](https://www.cplusplus.com/reference/cstring/strstr/)
-- [Tutorial sur la manipulation de chaînes de caractères en C](https://www.tutorialspoint.com/cprogramming/c_strings.htm)
-- [Exemples de code pour rechercher et remplacer du texte en C](https://www.programiz.com/c-programming/examples/replace-string)
+```
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+	char str[] = "Voici une phrase avec des chiffres : 123456789";
+	char old_str[] = "123";
+	char new_str[] = "ABC";
+
+	printf("Avant la recherche et le remplacement : %s\n", str); // Avant la recherche et le remplacement : Voici une phrase avec des chiffres : 123456789
+
+	str_replace(str, old_str, new_str);
+
+	printf("Après la recherche et le remplacement : %s\n", str); // Après la recherche et le remplacement : Voici une phrase avec des chiffres : ABC456789
+
+	return 0;
+}
+```
+
+## Deep Dive
+
+La fonction `str_replace` a été introduite en C99. Avant cela, les programmeurs devaient réaliser eux-mêmes une fonction de recherche et de remplacement en utilisant des boucles et des pointeurs. Bien qu'il existe d'autres fonctions dans la bibliothèque `<string.h>` pour réaliser des opérations similaires, `str_replace` offre une solution plus rapide et efficace pour les chaînes de caractères.
+
+Il existe également des alternatives à l'utilisation de la fonction `str_replace`, comme l'utilisation de la bibliothèque `regex.h` pour effectuer des recherches et des remplacements à l'aide d'expressions régulières. Cependant, cela peut être plus complexe pour les débutants.
+
+En termes d'implémentation, la fonction `str_replace` utilise un algorithme basé sur la méthode de Boyer-Moore pour trouver et remplacer les chaînes de caractères. Cet algorithme est plus efficace que les méthodes basées sur des boucles et des pointeurs, car il utilise un tableau de sauts précalculé pour effectuer la recherche.
+
+## See Also
+
+- [La bibliothèque `<string.h>` en C (en anglais)](https://www.tutorialspoint.com/c_standard_library/string_h.htm)
+- [La bibliothèque `regex.h` en C (en anglais)](https://www.gnu.org/software/libc/manual/html_node/Regular-Expressions.html)

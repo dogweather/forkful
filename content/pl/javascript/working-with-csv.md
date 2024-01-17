@@ -10,61 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
-Możliwe powody do wykorzystania plików CSV w codziennej pracy są niezliczone. Czy to aby prosto przechowywać i przesyłać dane, czy też szybko przetwarzać je w programie - format CSV jest niezwykle wszechstronny i przydatny w różnych dziedzinach pracy.
+## Co to jest CSV & Dlaczego?
 
-## Jak To Zrobić
-Nie ma nic prostszego niż praca z plikami CSV w języku Javascript. Wystarczy użyć odpowiedniej biblioteki lub modułu, a cały proces będzie szybki i łatwy. Poniżej przedstawiamy przykłady kodów i wyjść dla różnych operacji na plikach CSV.
+Praca z CSV to jedna z częstych zadań programistycznych. CSV to format pliku przechowującego dane w postaci tabelarycznej. Jest to popularny sposób przechowywania i udostępniania danych w wielu dziedzinach, takich jak finanse, nauka, biznes, itp. Programiści często pracują z plikami CSV, aby przetwarzać i manipulować danymi w swoich projektach.
 
-Tworzenie obiektu CSV z danymi:
+## Jak to zrobić:
+
+Aby pracować z plikami CSV w Javascript, potrzebujesz odpowiednich narzędzi oraz znajomości niektórych funkcji języka. Możesz użyć wbudowanej funkcji ```require()``` do wczytania biblioteki ```csv-parser```. Następnie użyj funkcji ```createReadStream()``` aby utworzyć strumień z pliku CSV, a następnie przekazuj dane do funkcji ```csv-parser()```, która przetwarza plik i zwraca dane w postaci tablicy obiektów. Poniżej znajduje się przykładowy kod i jego wynik:
+
 ```Javascript
-const csv = require('csvtojson');
+const csv = require('csv-parser');
+const fs = require('fs'); // wbudowana biblioteka w Node.js do pracy z plikami
+const results = [];
 
-const csvData = [
-    { name: 'John', age: 25, profession: 'Programmer' },
-    { name: 'Anna', age: 30, profession: 'Designer' },
-    { name: 'Mark', age: 35, profession: 'Manager' }
-]
-
-const csvString = csvData.map(data => Object.values(data).join(',')).join('\n');
-console.log(csvString);
-// Output: "John,25,Programmer
-// Anna,30,Designer
-// Mark,35,Manager"
+fs.createReadStream('plik.csv')
+  .pipe(csv())
+  .on('data', (data) => results.push(data))
+  .on('end', () => {
+    console.log(results); // [ { kolumna1: 'wartość1', kolumna2: 'wartość2' }, ... ]
+  });
 ```
 
-Przetwarzanie istniejącego pliku CSV i zapisywanie nowych danych:
-```Javascript
-const fs = require('fs');
-const csv = require('csvtojson');
+## Deep Dive:
 
-// Read CSV file
-fs.readFile('data.csv', 'utf8', (err, data) => {
-    if (err) throw err;
+Format CSV został opracowany w 1972 roku przez Petera Naur-a, aby ułatwić przechowywanie i przetwarzanie danych w systemach telekomunikacyjnych. Obecnie jest szeroko stosowany dla przechowywania danych tabelarycznych w elektronicznej postaci. Istnieją również inne sposoby przechowywania danych tabelarycznych, takie jak XML, JSON czy Excel, jednak CSV jest wygodnym formatem dla prostych i dużych zbiorów danych.
 
-    // Convert CSV to JSON
-    csv().fromString(data).then((json) => {
-        // Manipulate JSON data
-        json.push({ name: 'Sarah', age: 27, profession: 'Writer' });
+Pracując z CSV, należy zwrócić uwagę na ustawienie odpowiednich parametrów, takich jak separator, nagłówki kolumn czy kodowanie pliku. W celu bardziej zaawansowanego przetwarzania danych można również używać bibliotek, takich jak ```csv-writer``` lub ```csvtojson```.
 
-        // Convert JSON to CSV
-        const csvString = json.map(data => Object.values(data).join(',')).join('\n');
+## Zobacz też:
 
-        // Write new CSV file
-        fs.writeFile('new_data.csv', csvString, 'utf8', (err) => {
-            if (err) throw err;
-            console.log('New CSV file created!');
-        });
-    });
-});
-```
-
-## Głębsza Wiedza
-Pliki CSV są bardzo popularne w kontekście przetwarzania danych numerycznych i tekstowych, ale mogą również zawierać dane w formacie JSON. W przypadku gdy CSV ma nagłówki kolumn, można użyć opcji `noheader` podczas przetwarzania do JSON, aby uzyskać dane w postaci obiektów z kluczami odpowiadającymi nazwom kolumn.
-
-Do zaawansowanej manipulacji danymi w plikach CSV można wykorzystać również biblioteki takie jak `csv-parser` czy `fast-csv`, które oferują dodatkowe funkcje takie jak filtrowanie lub grupowanie danych.
-
-## Zobacz Również
-- [Dokumentacja biblioteki CSV do konwersji danych](https://csv.js.org/)
-- [Poradnik z przykładami wykorzystania CSV w języku Javascript](https://www.pluralsight.com/guides/import-export-csv-files-javascript)
-- [Przewodnik po manipulacji danymi w plikach CSV w języku Javascript](https://stephanwagner.me/only-three-steps-to-read-and-write-csv-files-in-javascript)
+- [Przykład użycia biblioteki ```csv-parser```](https://www.npmjs.com/package/csv-parser)
+- [Inne popularne biblioteki do pracy z CSV](https://www.npmjs.com/search?q=CSV)
+- [Oficjalna dokumentacja formatu CSV](https://tools.ietf.org/html/rfc4180)

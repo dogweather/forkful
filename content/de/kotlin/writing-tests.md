@@ -10,50 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was & Warum?
+Die Erstellung von Tests ist ein wesentlicher Bestandteil der Softwareentwicklung. Programmierer nutzen Tests, um sicherzustellen, dass ihr Code richtig funktioniert und um mögliche Fehler aufzudecken. Dadurch wird die Qualität der Software verbessert und die Wahrscheinlichkeit von Bugs und Problemen verringert.
 
-Egal ob du ein erfahrener Entwickler oder gerade erst anfängst zu programmieren bist, das Schreiben von Tests ist ein wichtiger Teil des Entwicklungsprozesses. Tests helfen dabei, die Funktionalität deiner Anwendung zu überprüfen und Fehler frühzeitig zu erkennen. Sie stellen sicher, dass deine Code-Änderungen keine unerwarteten Auswirkungen haben und sorgen für eine stabilere Anwendung. Außerdem erleichtern sie das Debugging, da du durch die Tests bereits eine genaue Vorstellung hast, wo der Fehler liegen könnte.
-
-## Wie es geht
-
-Um Tests in Kotlin zu schreiben, benötigst du das Testframework "JUnit". Dieses kann einfach über die Build-Tool-Abhängigkeit deines Projekts hinzugefügt werden. 
+## Wie geht's:
+Um Tests in Kotlin zu schreiben, können wir die integrierte Test-Unterstützung von Kotlin verwenden. Wir erstellen eine Testklasse und fügen unsere Testmethoden hinzu. Anschließend können wir unsere Logik testen und durch definieren von erwarteten Ausgaben sicherstellen, dass unser Code wie gewünscht funktioniert.
 
 ```Kotlin
-val junitVersion = "4.12"
-dependencies {
-    testImplementation("junit:junit:$junitVersion")
-}
-```
-
-Als nächstes erstellst du eine Klasse für deinen Test. Diese muss mit dem Suffix "Test" enden und als Parameter eine Instanz von JUnit's "TestCase" Klasse enthalten. Anschließend kannst du in der Klasse Methoden für deine einzelnen Tests definieren, indem du das Annotation "@Test" verwendest.
-
-```Kotlin
-class CalculatorTest : TestCase() {
-
-     @Test
-     fun testAddition() {
-        // Arrange
-        val calculator = Calculator()
-        
-        // Act
-        val result = calculator.add(3, 5)
-        
-        // Assert
-        assertEquals(8, result)
+class MyTest {
+    @Test fun testAddition() {
+        assertEquals(4, 2 + 2)
     }
 }
 ```
 
-Hier haben wir ein Beispiel für einen Test der "add" Methode eines "Calculator" Objekts. In der "testAddition" Methode legen wir zuerst unser erwartetes Ergebnis fest. Anschließend führen wir die Addition mit dem Calculator aus und überprüfen durch die "assertEquals" Methode, ob das tatsächliche Ergebnis mit unserem erwarteten übereinstimmt. 
+Dieses Beispiel testet eine einfache Addition und vergleicht das Ergebnis mit dem erwarteten Wert von 4. Wenn die Testmethode fehlschlägt, wird dies als Fehler im Testbericht angezeigt.
 
-## Tiefere Einblicke
+## Tiefgehender Einblick:
+Tests spielen eine wichtige Rolle in der Geschichte der Softwareentwicklung und sind ein integraler Bestandteil von agilen Methoden wie Test-driven Development (TDD). Alternativen zu Test-Unterstützung in Kotlin sind beispielsweise JUnit und MockK.
 
-Neben dem grundlegenden Testen deiner Anwendung bietet JUnit auch die Möglichkeit, sogenannte "Assertions" zu verwenden. Diese ermöglichen es, gezielt Aussagen über das Verhalten deiner Anwendung zu treffen. Ein gutes Beispiel hierfür sind die "assertThrows" und "expect" Methoden, die es dir erlauben, zu testen, ob eine bestimmte Exception geworfen wird. 
+Die Implementierung von Tests in Kotlin erfolgt durch Annotationen wie "@Test" und Assertions wie "assertEquals". Diese helfen dabei, Tests übersichtlich und leicht verständlich zu gestalten.
 
-Das Schreiben von Tests sollte ein integraler Bestandteil deines Entwicklungsprozesses sein. Es ist wichtig, dass Tests regelmäßig ausgeführt werden und auch immer aktualisiert werden, wenn sich der Code ändert. So kannst du sicherstellen, dass deine Anwendung immer den gewünschten Anforderungen entspricht.
-
-## Siehe Auch
-
-- [Kotlin Dokumentation](https://kotlinlang.org/docs/home.html)
-- [JUnit User Guide](https://junit.org/junit4/users-guide)
-- [Android Testing mit Kotlin](https://developer.android.com/training/testing/unit-testing/instrumented-unit-tests.html)
+## Siehe auch:
+- [Kotlin Test-Unterstützung](https://kotlinlang.org/docs/reference/testing.html)
+- [JUnit](https://junit.org/junit5/)
+- [MockK](https://mockk.io/)

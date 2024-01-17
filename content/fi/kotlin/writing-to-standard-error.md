@@ -1,7 +1,7 @@
 ---
-title:                "Tietokoneohjelmoinnin artikkeli: Kirjoittaminen normaalivirheelle"
-html_title:           "Kotlin: Tietokoneohjelmoinnin artikkeli: Kirjoittaminen normaalivirheelle"
-simple_title:         "Tietokoneohjelmoinnin artikkeli: Kirjoittaminen normaalivirheelle"
+title:                "Kirjoittaminen vakiovirheelle"
+html_title:           "Kotlin: Kirjoittaminen vakiovirheelle"
+simple_title:         "Kirjoittaminen vakiovirheelle"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Files and I/O"
@@ -10,31 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä & Miksi?
 
-Kirjoittaminen tavallisessa virhevirtaan voi olla hyödyllistä havaitseman virheitä ohjelmoinnissa. Se auttaa myös hahmottamaan, miten ohjelma toimii, kun se on suoritettu.
+Kirjoittaminen standardivirheeseen on tapa ilmoittaa ohjelman suorituksen aikana havaituista virheistä ja poikkeustilanteista. Usein kirjoitamme virheilmoituksia standardilähtöön, mutta joskus on tarpeen käyttää erillistä virheenkorjaustilaa, jotta ohjelma voi jatkaa suoritustaan mahdollisimman sujuvasti.
 
-## Miten
+## Miten:
 
-Tässä on yksinkertainen esimerkki siitä, miten kirjoitat virhelookiin Kotlinilla: 
 ```Kotlin
 fun main() {
-    println("Kirjoita standardi virhevirtaan")
-    System.err.println("Tämä on virheviesti")
+    val age = -5
+    if (age < 0) {
+        System.err.println("Ikä ei voi olla negatiivinen.")
+    }
+    /*
+    Tämä tulostaa "Ikä ei voi olla negatiivinen." standardivirheeseen,
+    koska käytämme System.err.println() -metodia.
+    */
 }
 ```
 
-Ja tämä on odotettu tuloste: 
+```Kotlin
+try {
+    //Koodi, jossa saattaa olla poikkeustilanteita
+} catch (e: Exception) {
+    System.err.println("Tapahtui poikkeustilanne: " + e.message)
+}
+/*
+Tämä tulostaa virheilmoituksen standardivirheeseen,
+jossa kerrotaan tapahtuneesta poikkeustilanteesta ja sen viestin sisältö.
+*/
 ```
-Kirjoita standardi virhevirtaan
-Tämä on virheviesti
-```
 
-## Syvällisempi katsaus
+## Syventävä tieto:
 
-Kotlinilla kirjoittaminen standardi virhevirtaan voidaan tehdä käyttämällä `System.err.println()` -metodia. Tämä metodi tulostaa annetun merkkijonon virhevirtaan ilman rivinvaihtoa. Jos haluat lisätä rivinvaihdon, voit käyttää `System.err.printf()` -metodia ja koodata rivinvaihdon manuaalisesti.
+Historiallisesti standardivirheen käyttö on ollut yleistä ohjelmoinnissa. Toisaalta modernimmat ohjelmointikielet tarjoavat myös muita tapoja käsitellä ja raportoida virheitä, kuten poikkeusten heittämisen ja käsittelyn. Käyttötapauksista riippuen standardivirheen käyttö voi olla edelleen hyödyllistä ja kätevää.
 
-## Katso myös
+## Katso myös:
 
-- [Virheiden käsittely Kotlinissa](https://kotlinlang.org/docs/reference/exceptions.html)
-- [Tulostaminen Kotlinilla](https://kotlinlang.org/docs/tutorials/kotlin-for-py/printing-output.html)
+- [Kotlin System.err Documentation](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.system/-system/err.html)
+- [Exception Handling in Kotlin](https://kotlinlang.org/docs/exceptions.html)

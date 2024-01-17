@@ -10,44 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-Sending an HTTP request is essential for interacting with web servers and retrieving data from remote sources. It allows developers to build powerful and dynamic applications that can communicate with other systems on the internet.
+## What & Why?
+Sending an HTTP request refers to the process of a client (such as a web browser) requesting information from a server over the internet using the HTTP protocol. Programmers use this to retrieve data or trigger actions on a remote server, enabling them to create dynamic and interactive web applications.
 
-## How To
-To send an HTTP request in Clojure, we will use the `clj-http` library. First, we need to add it as a dependency in our project.clj file:
-```Clojure
-:dependencies [[clj-http "3.11.0"]]
-```
-Next, we need to require the `clj-http.client` namespace in our code:
-```Clojure
-(ns my-app.core
-  (:require [clj-http.client :as http]))
-```
-Now, we can use the `http/get` function to make a GET request to a specific URL and retrieve the response:
-```Clojure
-(def response (http/get "https://www.example.com"))
-```
-We can also pass additional parameters to the `http/get` function, such as headers and query parameters:
-```Clojure
-(def response (http/get "https://www.example.com"
-                        {:headers {"Content-Type" "application/json"}
-                         :query-params {:page 1 :limit 10}}))
-```
-To make a POST request, we can use the `http/post` function and pass in the request body:
-```Clojure
-(def response (http/post "https://www.example.com/users"
-                         {:body {:name "John" :email "john@example.com"}}))
-```
-The `response` variable will contain a map with the status code, headers, and body of the HTTP response. We can access these values using the `:status`, `:headers`, and `:body` keys, respectively.
+## How to:
+To send an HTTP request in Clojure, we can use the `clojure.java.io` namespace and the `put` function. Here's an example of how we can send a simple GET request and print the response code and body:
 
-## Deep Dive
-Clojure's `clj-http` library is built on top of the Apache HttpComponents project, which provides a powerful HTTP client for Java. This means that we have access to a wide range of configuration options and features, such as SSL/TLS support, connection pooling, and cookies management.
+```Clojure
+(require '[clojure.java.io :as io])
+(let [request (io/request "http://example.com")]
+    (println "Response Code:" (:status request))
+    (println "Response Body:" (:body request)))
+```
 
-In addition to the basic HTTP methods (GET, POST, PUT, DELETE), the `clj-http` library also supports other request methods, including PATCH, HEAD, and OPTIONS. We can specify the method in the request options using the `:method` key.
+The output should look something like this:
 
-Sending HTTP requests asynchronously is also possible with `clj-http`, using the `http/async-get` and `http/async-post` functions. These functions return a `future` object, which is useful for handling long-running requests without blocking the main thread.
+```Clojure
+Response Code: 200
+Response Body: "<html>..."
+```
 
-## See Also
-- [clj-http documentation](https://github.com/dakrone/clj-http)
-- [HTTP Made Really Easy](https://www.jmarshall.com/easy/http/): A beginner-friendly guide to HTTP protocol
-- [Ring](https://github.com/ring-clojure/ring): A popular web application library that also provides HTTP request and response handling functionalities.
+## Deep Dive:
+HTTP requests have been a fundamental part of web development since the early days of the internet. They are a crucial aspect of the client-server model, allowing communication between a client and a server over the web.
+
+Apart from the `clojure.java.io` namespace, there are a few other popular libraries in Clojure for sending HTTP requests, such as `clj-http` and `http-kit`. These libraries provide more advanced features, such as handling cookies and redirects, and are often used in production-level applications.
+
+Under the hood, the `put` function uses Java's `java.net.HttpURLConnection` class to create and handle the request. Clojure's `with-open` macro ensures that the connection is properly closed after the request is completed.
+
+## See Also:
+- [ClojureDocs - clojure.java.io](https://clojuredocs.org/clojure.java.io/request)
+- [ClojureVerse - HTTP Libs library comparison](https://clojureverse.org/t/http-libs-library-comparison/1044)
+- [Java docs - HttpURLConnection](https://docs.oracle.com/javase/8/docs/api/java/net/HttpURLConnection.html)

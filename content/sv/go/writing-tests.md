@@ -1,7 +1,7 @@
 ---
-title:                "Skriva tester"
-html_title:           "Go: Skriva tester"
-simple_title:         "Skriva tester"
+title:                "Att skriva tester"
+html_title:           "Go: Att skriva tester"
+simple_title:         "Att skriva tester"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Testing and Debugging"
@@ -10,47 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
 
-Att skriva tester är en viktig del av utvecklingsprocessen. Det hjälper till att säkerställa att koden fungerar som det är tänkt och minskar risken för buggar och fel i produktion. Det kan också öka kvaliteten på koden och underlätta för samarbete mellan utvecklare.
+Att skriva tester är en viktig del av programmering. Det är en metod för att säkerställa kvaliteten på din kod genom att köra den genom olika scenarier och kontrollera att den fungerar som förväntat. Detta hjälper till att upptäcka och åtgärda fel och bidrar till att säkerställa att din kod är robust och pålitlig.
 
-## Så här gör du
+## Hur gör man?
 
-För att skriva tester i Go behöver du använda paketet "testing". Först måste du skapa en fil som slutar på "_test.go" för att testerna ska köras automatiskt av Go. Därefter kan du skapa en funktion för varje testfall som du vill köra. Här är ett exempel på en testfil som testar en funktion för att lägga till två tal:
+För att skriva tester i Go använder man "testing" paketet som ingår i standardbiblioteket. I detta paket finns funktioner, som "testing.T" som möjliggör för oss att skapa och köra tester. Nedan följer ett exempel på hur man kan göra en enkel "pass" test:
 
 ```Go
-package main_test
+package main
 
-import "testing"
+import (
+	"testing"
+)
 
-func TestAddition(t *testing.T) {
-    sum := add(2, 3)
-    expected := 5
-    if sum != expected {
-        t.Errorf("Summan av 2 och 3 är fel. Förväntat: %d, fick: %d", expected, sum)
-    }
+func multiply(x int, y int) int {
+	return x * y
 }
 
-func add(a, b int) int {
-    return a + b
+func TestMultiply(t *testing.T) {
+	expected := 10
+	a := 2
+	b := 5
+	actual := multiply(a, b)
+	if actual != expected {
+		t.Errorf("Expected %d, but got %d", expected, actual)
+	}
 }
 ```
 
-När du kör testet kommer du att se följande utskrift:
+Återigen, detta är bara ett enkelt exempel för att visa hur tester kan skrivas i Go. Det finns många olika sätt att skriva tester och det beror på din kod och dina specifika behov.
 
-```
-ok      command-line-arguments  0.002s
-```
+## Djupdykning
 
-Detta betyder att testet lyckades och alla dina funktioner fungerar som de ska. Om något test fallerar får du en detaljerad utskrift med information om felet, vilket hjälper dig att hitta och lösa problemet.
+Historiskt sett har väl skrivna tester varit en del av kvalitets- och testdriven utveckling (TDD) metoder. TDD innebär att man skriver tester först och sedan utvecklar koden för att uppfylla de tester man skrivit. Alternativet till TDD är att skriva tester först efter att man skrivit sin kod, vilket kallas för testning efter kod (BDD).
 
-## Deep Dive
+Utöver Go's standard testing paket finns det också andra tester verktyg som kan vara bra att känna till, som till exempel "goconvey" och "ginkgo". Dessa erbjuder mer avancerade funktioner och möjligheter att organisera och strukturera dina tester.
 
-När du skriver tester är det viktigt att täcka alla möjliga scenarion av din kod. Detta inkluderar också felhantering och gränsvärden. Det kan också vara användbart att använda Go's inbyggda benchmarking-funktioner för att mäta prestanda av din kod.
+## Se även
 
-Det är också möjligt att använda externa testramverk som ginkgo för att organisera och köra dina tester på ett mer strukturerat sätt.
-
-## Se också
-
-- https://golang.org/pkg/testing/
-- https://onsi.github.io/ginkgo/
+- [Go's Testing Paket Dokumentation](https://golang.org/pkg/testing/)
+- [En bra introduktion till testning i Go](https://medium.com/@thedevsaddam/testing-golang-i-go-74536b6e8d48)
+- [Mer information om testdriven utveckling och testning efter kod](https://martinfowler.com/bliki/TestDrivenDevelopment.html)
+- [goconvey paketet](https://github.com/smartystreets/goconvey)
+- [ginkgo paketet](https://github.com/onsi/ginkgo)

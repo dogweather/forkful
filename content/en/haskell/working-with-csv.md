@@ -10,60 +10,80 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
+Working with CSV (Comma Separated Values) files is a common task for many programmers. CSV files are a popular format for storing data in a structured way, and therefore, it is often necessary to read and write information from these files in a program. CSV files can hold large amounts of data while remaining human-readable, making them a versatile choice for data storage and manipulation.
 
-CSV (Comma Separated Values) files are commonly used in data analysis and management as they allow for easy storage and manipulation of data. Using Haskell to work with CSV files can provide efficient and effective solutions for handling large datasets. Additionally, learning how to work with CSV files in Haskell can enhance your programming skills and make you a more versatile developer.
-
-## How To
-
-To start working with CSV files in Haskell, we first need to import the necessary libraries:
+## How to:
+Reading and writing CSV files in Haskell is made simple with the help of the "csv" library. First, you will need to import it into your program:
 
 ```Haskell
 import Text.CSV
-import System.IO
 ```
 
-Next, we can read a CSV file and store its contents in a variable:
+Next, let's look at an example of reading data from a CSV file, assuming it has three columns: "Name", "Age", and "Occupation".
 
 ```Haskell
-exampleCSV <- parseCSVFromFile "example.csv"
+main = do
+    -- Load the CSV file using the provided "parseCSVFromFile" function
+    file <- parseCSVFromFile "data.csv"
+
+    case file of
+        -- If the file was successfully loaded, process the data
+        Right csv -> do
+            -- Remove the header (first row) from the CSV file
+            let csv' = tail csv
+            -- Extract a list of rows, where each row is represented as a list of strings
+            let rows = map snd csv'
+            -- Convert the string rows to lists of strings, representing each value
+            let values = map (\x -> [head x, head $ tail x, head $ tail $ tail x]) rows
+            -- Print the values to the console
+            print values
+        -- If there was an error loading the file, print the error message
+        Left error -> putStrLn $ "Error: " ++ error
 ```
 
-We can then use the `parseCSVFromFile` function to parse the file and return a `Result` type. This type can either be `CSVError` if there was an error in parsing, or `CSV` if the file was successfully parsed.
+Given the following data in "data.csv":
 
-To access the values from the CSV file, we can use the `rows` function to get a list of `Record` types:
+```
+Name,Age,Occupation
+John,25,Software Engineer
+Jane,30,Data Scientist
+```
+
+The output of the code above would be:
+
+```
+[["John", "25", "Software Engineer"], ["Jane", "30", "Data Scientist"]]
+```
+
+Writing data to a CSV file follows a similar process. Here is an example of writing the same data back to a new CSV file:
 
 ```Haskell
-let records = rows exampleCSV
+import Text.CSV
+
+main = do
+    -- Create the data to write to the CSV file
+    let dataToWrite = [["Name", "Age", "Occupation"], ["John", "25", "Software Engineer"], ["Jane", "30", "Data Scientist"]]
+    -- Write the data to a new CSV file, with the given filename
+    writeCSV "new_data.csv" dataToWrite
 ```
 
-We can then use the `!!` operator to access specific columns or rows in the CSV file. For example, to get the value in the first column of the second row:
+The result is a new CSV file with the following contents:
 
-```Haskell
-let firstColSecondRow = records !! 1 !! 0
+```
+Name,Age,Occupation
+John,25,Software Engineer
+Jane,30,Data Scientist
 ```
 
-Alternatively, we can use the `record` function to access a specific row and column by name. For example, to get the value in the `Name` column of the second row:
+## Deep Dive:
+CSV files have been around since the early days of computers, dating back to the 1970s. They were originally used as a way to transfer data between mainframe computers and personal computers. Over the years, they have become a popular format for storing and sharing data due to their simplicity and compatibility with different programming languages and applications.
 
-```Haskell
-let name = record records !! 1 ! "Name"
-```
+While the "csv" library is the standard way for working with CSV files in Haskell, there are other alternatives such as the "cassava" library which provides more advanced features such as type-safe parsing and encoding.
 
-To write to a CSV file, we can use the `writeFile` function and pass in a `Record` type. For example, to write a new row to a CSV file:
+The "Text.CSV" module of the "csv" library provides functions for parsing and writing CSV files, but it also includes features for manipulating CSV data, such as merging and sorting rows, and handling different separator characters (not just commas).
 
-```Haskell
-let newRow = ["John", "35", "New York"]
-writeFile "example.csv" $ recordToCSV newRow
-```
-
-## Deep Dive
-
-Working with CSV files involves parsing the data, manipulating it, and then writing the changes back to the file. The `CSV` type returned by the `parseCSVFromFile` function is a list of `Record` types, which in turn are list of `Field` types. This allows us to easily access and modify specific values within the CSV file.
-
-The `recordToCSV` function converts a `Record` type to a string in CSV format, which can then be written to a file. Additionally, we can use the `encode` function from the `Data.List.Split` library to manipulate the data in CSV format and then convert it back to a `Record` type.
-
-## See Also
-
-- [Haskell CSV library documentation](https://hackage.haskell.org/package/csv)
-- [Haskell tutorials and resources](https://www.haskell.org/documentation)
-- [Working with CSV files in Python](https://realpython.com/python-csv/)
+## See Also:
+- [The csv package on Hackage](https://hackage.haskell.org/package/csv)
+- [The cassava package on Hackage](https://hackage.haskell.org/package/cassava)
+- [The CSV file format on Wikipedia](https://en.wikipedia.org/wiki/Comma-separated_values)

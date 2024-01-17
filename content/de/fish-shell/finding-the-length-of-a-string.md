@@ -1,7 +1,7 @@
 ---
-title:                "Die Länge einer Zeichenkette finden"
-html_title:           "Fish Shell: Die Länge einer Zeichenkette finden"
-simple_title:         "Die Länge einer Zeichenkette finden"
+title:                "Die Länge eines Strings finden"
+html_title:           "Fish Shell: Die Länge eines Strings finden"
+simple_title:         "Die Länge eines Strings finden"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -10,24 +10,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
-Warum sollte man sich überhaupt mit der Länge eines Strings beschäftigen? Nun, in der Programmierung ist es manchmal wichtig zu wissen, wie viele Zeichen ein String enthält, um zum Beispiel die Ausgabe eines Textes anzupassen.
+## Was & Warum?
+Die Länge einer Zeichenkette zu finden bedeutet zu bestimmen, wie viele Zeichen in einer Zeichenkette vorhanden sind. Programmierer tun dies, um beispielsweise die Eingabe des Benutzers zu überprüfen oder um die Ausgabe zu formatieren.
 
-## Wie geht's
-#### Fish Shell Installation
-Bevor wir loslegen können, muss die Fish Shell installiert werden. Dies kann einfach über einen Paketmanager wie Homebrew oder Aptitude geschehen.
+## Wie geht's:
+Um die Länge einer Zeichenkette in der Fish Shell zu finden, können wir das ```count```-Kommando verwenden. Hier ist ein Beispiel:
 
-#### Länge eines Strings finden
-Um die Länge eines Strings zu finden, können wir die `string` Funktion `length` verwenden. Hier ein Beispiel:
-```Fish Shell
-set name "John"
-echo (string length $name)
 ```
-Dieser Code gibt die Länge des Strings "John" aus, in diesem Fall also die Zahl 4.
+set str "Hallo Welt"
+echo (count $str)
+```
 
-## Tiefergehende Information
-Wie funktioniert die `length` Funktion eigentlich? Sie zählt einfach die Anzahl an Zeichen im String und gibt diese als Zahl zurück. Beachte, dass Leerzeichen und Sonderzeichen auch als Zeichen gezählt werden.
+Dies wird ```11``` ausgeben, da die Zeichenkette "Hallo Welt" aus 11 Zeichen besteht.
 
-## Siehe Auch
-- [Offizielle Dokumentation der `length` Funktion](https://fishshell.com/docs/current/cmds/string.html#length)
-- [String Manipulation mit Fish Shell](https://dev.to/mishmanners/working-with-strings-in-fish-shell-4he7)
+## Tiefgehende Informationen:
+Das Konzept, die Länge einer Zeichenkette zu bestimmen, ist nicht neu. Es wurde schon in früheren Programmiersprachen wie Fortran und COBOL verwendet. Ein alternatives Verfahren ist die Verwendung von Endmarkierungen, wie zum Beispiel das Hinzufügen eines Leerzeichens am Ende der Zeichenkette. In der Fish Shell wird die Funktion ```string length $str``` zur Ermittlung der Länge einer Zeichenkette verwendet.
+
+## Siehe auch:
+- [Fisch-Shell-Dokumentation](https://fishshell.com/docs/current/cmds/count.html)
+- [Informationen zur String-Länge auf frei-programmieren.de](https://www.frei-programmieren.de/freie-programm-artikel/frei-programmieren-kleine-verwaltung/163-string-laenge)
+- [Zusätzliche Informationen zur Geschichte der String-Länge](https://de.wikipedia.org/wiki/String)

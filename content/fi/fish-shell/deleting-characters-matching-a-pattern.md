@@ -1,7 +1,7 @@
 ---
-title:                "Kaavan mukaisten merkkien poistaminen"
-html_title:           "Fish Shell: Kaavan mukaisten merkkien poistaminen"
-simple_title:         "Kaavan mukaisten merkkien poistaminen"
+title:                "Mallia vastaavien merkkien poistaminen"
+html_title:           "Fish Shell: Mallia vastaavien merkkien poistaminen"
+simple_title:         "Mallia vastaavien merkkien poistaminen"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -10,34 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä & Miksi?
+"Poista merkkejä vastaava kuvio" on ohjelmointitehtävä, jossa etsitään ja poistetaan merkkijonosta kaikki merkit, jotka vastaavat tiettyä kuvioita tai sääntöjä. Tämä on yleinen tehtävä ohjelmoinnissa esimerkiksi tiedon käsittelyn tai muokkaamisen yhteydessä, ja se auttaa säästämään aikaa ja vaivaa manuaalisen työn sijaan.
 
-Kuvitellaan tilanne, jossa haluat poistaa kaikki tiettyä kuviota vastaavat merkit. Tämä voi olla esimerkiksi tarpeellista jos haluat puhdistaa tietoa, joka sisältää turhia tai ei-toivottuja merkkejä. Fish Shell tarjoaa helpon ja tehokkaan tavan tehdä tämä.
-
-## Kuinka se tehdään
-
-Fish Shellilla voit poistaa merkkejä, jotka vastaavat tiettyä kuviota käyttämällä `string_match` komentoa ja `^` merkkiä. Tämä merkki symboloi kaikkia merkkejä, joita haluat poistaa. Alla on yksi esimerkki siitä, kuinka tätä käytetään:
+## Miten:
+```Fish Shell``` koodiesimerkki:
 
 ```
-Fish Shell koodi:
-set text "Tämä on teksti, jossa on turhia merkkejä!"
-echo $text
-
-Viimeistä kertaa käyttäen "FISH regexp":
-set text (echo $text | string_match -r '^[oliu].*')
-echo $text
-
-Output:
-Tm vittekj yh turia merekii!
+echo "Tervetuloa Suomeen" | tr -d "aoueiy"
 ```
 
-## Syventymistä
+Tulostus:
+```
+Trvlm Snm 
+```
+Tässä esimerkissä käytetään ```tr```-komentoa (lyhenne sanasta "translate"), joka poistaa kaikki merkit "a", "o", "u", "e" ja "i" tulosteesta. Huomaa, että ```|```-merkki yhdistää kaksi komentoa: ensimmäinen komento tuottaa syötteen ja toinen komento käsittelee syötettä.
 
-`string_match` komento tukee myös muita regexp-merkkejä, jotka voit käyttää määrittämään tarkemmin mitkä merkit poistetaan. Esimerkiksi `[a-z]` poistaa kaikki pienet kirjaimet tai `[1-9]` poistaa kaikki numerot. Voit myös yhdistää useampia merkkejä toisiinsa esimerkiksi `[a-z0-9]` poistaa kaikki pienet kirjaimet ja numerot.
+## Syväsukellus:
+Tämä toiminto perustuu Unix-käyttöjärjestelmän perinteiseen ```tr```-komennon toimintaan, joka on tarjolla myös muissa käyttöjärjestelmissä kuten Linuxissa ja macOS:ssä. Lisäksi on olemassa muita komentoja, kuten ```sed``` ja ```awk```, jotka voivat suorittaa samanlaisia tehtäviä. Joissakin kielissä, kuten Pythonissa, tällainen toiminto voidaan suorittaa myös sisäänrakennetuilla ominaisuuksilla ilman erillistä komentoa. Fish Shellissä tämä toiminto tehdään käyttämällä komentoa ```tr```, joka on yksi useista sisäänrakennetuista komennoista.
 
-Voit myös käyttää `string_sub` komentoa, joka antaa enemmän joustavuutta kuinka haluat poistaa merkkejä. Tätä komentoa käytetään seuraavasti: `string_sub 'merkit jotka haluat poistaa' 'mitkä merkit haluat korvata'`. Tässä komennossa voit määrittää, mitkä merkit haluat poistaa tai korvata haluamillasi merkeillä.
-
-## Katso myös
-
-- [Fish Shell dokumentaatio](https://fishshell.com/docs/current/index.html)
-- [Regex-opas](https://www.regular-expressions.info/fish.html)
+## Katso myös:
+- [Kuinka käyttää `tr` -komentoa Fish Shellissä](https://fishshell.com/docs/current/cmds/tr.html)
+- [Youtube-video: Fish Shell aloittelijoille](https://www.youtube.com/watch?v=sKmt6XR7xd8)
+- [StackOverflow: Poistetaan merkkejä merkkijonosta Pythonissa](https://stackoverflow.com/questions/3939361/remove-specific-characters-from-a-string-in-python)

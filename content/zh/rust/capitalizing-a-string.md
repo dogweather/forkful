@@ -1,7 +1,7 @@
 ---
-title:                "将字符串编写成大写首字母"
-html_title:           "Rust: 将字符串编写成大写首字母"
-simple_title:         "将字符串编写成大写首字母"
+title:                "将字符串大小写转换为大写"
+html_title:           "Rust: 将字符串大小写转换为大写"
+simple_title:         "将字符串大小写转换为大写"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -10,32 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么要用Rust语言来将字符串转换为大写
+## 这是什么 & 为什么？
 
-在编程中，我们经常需要处理字符串。而很多时候，为了统一格式或者方便处理，我们需要将字符串中的所有字母都转换为大写。使用Rust语言可以实现这一功能，它具有高效的性能和简洁的语法，让我们能够更轻松地处理字符串。
+将一个字符串变为大写就是将该字符串中的所有字符转换为大写的过程。程序员这么做的原因是为了统一字符串的格式，便于处理和比较。
 
-## 如何使用Rust语言将字符串转换为大写
+## 怎么做？
 
 ```Rust
 fn main() {
-    let s = String::from("hello, world!");
-    let s_uppercase = s.to_uppercase();
-    println!("{}", s_uppercase); // 输出：HELLO, WORLD!
+    // 定义一个字符串
+    let my_string = "Hello, world!";
+    // 使用to_uppercase()方法将字符串变为大写
+    let capitalized_string = my_string.to_uppercase();
+    // 打印结果
+    println!("{}", capitalized_string);
 }
 ```
 
-上面的代码演示了如何使用Rust语言中的`to_uppercase()`方法来将字符串转换为大写。首先，我们创建一个字符串`s`，然后调用`to_uppercase()`方法来转换为大写，并将结果存放在`s_uppercase`变量中。最后，使用`println!`宏来输出转换后的字符串。可以看到，输出的结果是全大写的。
+结果：
+```
+HELLO, WORLD!
+```
 
-除了`to_uppercase()`方法外，Rust语言还提供了一个`to_ascii_uppercase()`方法，它可以将字符串中的所有非ASCII字符转换为大写，同时保留ASCII字符不变。这对于处理特殊字符的字符串非常有用。
+## 深入探讨
 
-## 深入了解字符串转换为大写的原理
+历史背景：在计算机发展初期，由于硬件限制和编码规范不统一，大小写不敏感的字符集更受欢迎。随着计算机技术的发展，对大小写敏感的字符集变得普遍，不同的编程语言也对大小写敏感的处理方式有所不同。
 
-Rust语言中，字符串是不可变的，即无法直接改变字符串的内容。因此，字符串转换为大写其实是创建了一个新的字符串并返回，而不是在原字符串上进行修改。
+其他方法：除了使用to_uppercase()方法，也可以使用to_ascii_uppercase()方法将字符串中的非ASCII字符转换为大写。
 
-在转换为大写时，Rust语言会遍历字符串中的每一个字符，并将小写字母转换为对应的大写字母。这个过程也被称为“升级码位（upgrade code point）”，因为Rust语言中，字符实际上是以码位（code point）的形式存储的，而不是字母本身。
+实现细节：Rust中采用的Unicode标准来处理字符串的大小写转换，它不仅支持英文字母的大小写转换，还支持其他语言字符的转换。
 
-## 看看这些相关链接
+## 参考资料
 
-- [Rust官方文档](https://www.rust-lang.org/zh-CN/)
-- [Rust语言教程](https://learnxinyminutes.com/docs/rust-cn/)
-- [使用Rust实现字符串转换为大写的算法](https://medium.com/@sohojoe/how-to-upcase-the-string-in-rust-c0947164e6d2)
+了解更多有关Rust字符串处理的内容，请参考以下链接：
+
+- [Rust标准库文档](https://doc.rust-lang.org/std/index.html)
+- [Rust编程语言官方网站](https://www.rust-lang.org/zh-CN/)

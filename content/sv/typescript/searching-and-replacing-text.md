@@ -10,36 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
+Att söka och ersätta text är en vanlig uppgift för programmerare. Det innebär att man upphittar en specifik bit av text och ersätter den med en annan. Detta kan vara användbart för att uppdatera felaktig information eller för att göra ändringar i koden för att förbättra dess funktionalitet.
 
-Att söka och ersätta text är en viktig del av programmering, särskilt när det kommer till att modifiera stora mängder data. Det kan vara ett effektivt sätt att ändra flera instanser av en specifik textsnutt på en gång.
+## Hur man:
+I TypeScript finns flera olika sätt att söka och ersätta text. Ett vanligt sätt är att använda metoden ```replace()```, där man anger den ursprungliga texten som ska ersättas och den nya texten. En annan metod är ```replaceAll()```, som ersätter alla förekomster av den ursprungliga texten med den nya texten.
 
-## Så här gör du
-
-Du kan använda TypeScript för att söka och ersätta text med hjälp av strängmetoder som .replace() eller reguljära uttryck. Med .replace() kan du ange den text som ska ersättas och den önskade ändringen, medan reguljära uttryck ger dig mer avancerade sök- och ersättningsmöjligheter.
-
+Exempel:
 ```TypeScript
-// Använda .replace()
-let str = "Välkommen till TypeScript!";
-let newStr = str.replace("Välkommen", "Hej"); // Hej till TypeScript!
-
-// Använda reguljära uttryck
-let str = "Jag älskar att kodas i TypeScript!";
-let newStr = str.replace(/kodas i/g, "använda"); // Jag älskar att använda TypeScript!
+let text = "Hej världen!"
+let newText = text.replace("världen", "allihopa")
+console.log(newText) // Output: "Hej allihopa!"
 ```
 
-## Fördjupning
+## Fördjupning:
+Att söka och ersätta text har funnits i programmering sedan tidigt 1960-tal, då det först implementerades i språket SNOBOL. I TypeScript finns det flera olika metoder för att utföra denna uppgift, varav vissa har olika prestanda och funktionalitet. Alternativ till ```replace()``` och ```replaceAll()``` är bland annat ```search()```, ```replaceAllWith()``` och ```splitJoin()```.
 
-När du använder reguljära uttryck för att söka och ersätta text kan du använda specialtecken för att göra sökningen mer specifik. Till exempel kan du använda "*" för att matcha alla tecken eller "+" för att matcha en eller flera repetitioner av ett tecken.
+Det finns också andra språk och bibliotek som erbjuder inbyggda funktioner för att söka och ersätta text, som till exempel JavaScript och jQuery. För mer detaljerade implementationer i TypeScript rekommenderas att läsa dokumentationen för det aktuella språket eller biblioteket.
 
-Du kan också använda flaggor för att ändra hur sökningen utförs, till exempel "g" för global sökning eller "i" för att ignorera skillnaden mellan gemener och versaler.
+## Se även:
+Dokumentation för ```replace()```: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace
 
-```TypeScript
-let str = "Det finns bara ett sätt att lära sig TypeScript - övning!";
-let newStr = str.replace(/[a-z]/gi, "?"); // ??? ????? ??? ???? ??? ????! 
-```
+Dokumentation för ```replaceAll()```: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replaceAll
 
-## Se även
-
-- [Dokumentation för strängmetoden .replace()](https://www.typescriptlang.org/docs/handbook/strings.html#search-and-replace)
-- [Reguljära uttryck i TypeScript](https://www.typescriptlang.org/docs/handbook/regular-expressions.html)
+Dokumentation för andra metoder för att söka och ersätta text i TypeScript: https://www.typescriptlang.org/docs/handbook/strings.html#searching-for-text-within-a-string

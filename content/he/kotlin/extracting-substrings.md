@@ -1,7 +1,7 @@
 ---
-title:                "חילוץ תת-מחרוזות"
-html_title:           "Kotlin: חילוץ תת-מחרוזות"
-simple_title:         "חילוץ תת-מחרוזות"
+title:                "החלץ שרשראות מחרוזות"
+html_title:           "Kotlin: החלץ שרשראות מחרוזות"
+simple_title:         "החלץ שרשראות מחרוזות"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Strings"
@@ -10,53 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## למה
+כתיבת קוד בתוכנית הפיתוח הכי חדשה של קוטלין עבור הקוראים הישראליים
 
-למה להתעסק בחילוץ מחרוזת? טוב, ברשימה אתה
+## מה ולמה?
+מרבית התוכניות המתוכננות על ידי מתכנתים משתמשות במנגנוני טכסט כדי למצוא חלקים ספציפיים של מחרוזות. התהליך הזה נקרא החלקת מחרוזות והוא מאפשר למתכנתים לגדל ולשפר את החומר כדי שיהיה נוח יותר לקריאה ותחזוקה.
 
-1. עובד עם נתונים וזיהוי עיקריים לניתוח נתונים.
-2. צריך לשלב מחרוזות כחלק ממטלות כמו תיאור תכניות או פילטר מסננים.
-
-## איך לעשות זאת
-
-ראשית, נצטרך להעדפת מחרוזת ראשונית, וכדי לעשות זאת, נשתמש בפעולה `subSequence()`. למשל, ננסה להחליף את האות "א" במחרוזת "Hello אותו":
+## איך לעשות?
+למתכנתים יש שתי אפשרויות כאשר הם רוצים לחלץ מחרוזות. יש אפשרות להשתמש במחלקת String של קוטלין או ללמוד על מחרוזות תת-מחרוזות.
 
 ```Kotlin
-val originalString = "Hello World"
-val replacedString = originalString.replace("World", "Place")
+// דוגמא עבור שימוש במחלקת String 
 
-println(replacedString)
+val fullName = "שם מלא: ליאת לוי"
+val firstName = fullName.substring(10)
+val lastName = fullName.substring(0..9)
+
+println("שם פרטי: $firstName")
+println("שם משפחה: $lastName")
 ```
-Output: Hello Place
-
-כעת נרצה לחלץ את האות "א" מהמחרוזת המקורית:
 
 ```Kotlin
-val originalString = "Hello World"
-val substring = originalString.subSequence(6,7)
+// דוגמא עבור למידה על מחרוזות תת-מחרוזות
 
-println(substring)
+val sentence = "קוטלין היא שפת תכנות חדשה ומתקדמת."
+
+println("מילים ראשונות: ${sentence.substringBefore(" ")}")
+println("תת-מחרוזת: ${sentence.substringAfterLast(" ")}")
 ```
-Output: א
 
-ניתן גם להשתמש בפעולה `substring()` כדי לחלץ עוד יותר מחרוזות. בדוגמה הבאה, נחלץ את המספרים במחרוזת "12345":
+תוצאה:
 
-```Kotlin
-val originalString = "12345"
-val substring1 = originalString.substring(0,2)
-val substring2 = originalString.substring(2,5)
-
-println(substring1)
-println(substring2)
 ```
-Output: 12
-345
+שם פרטי: ליאת
+שם משפחה: לוי
+מילים ראשונות: קוטלין
+תת-מחרוזת: מתקדמת.
+```
 
-## רטרוספקטיבה
+## חקירה מעמיקה
+אנחנו כבר התכווננו לכך שהחלקה תת-מחרוזות היא חלק חשוב בתוכניות המתוכננות על ידי מתכנתים. עד שקוטלין הופך לשפת תכנות פופולרית כיום, פייתון הייתה השפה הנפוצה ביותר שימוש בו לחלץ מחרוזות. אם אתה מעוניין לדעת עוד אודות החלקה תת-מחרוזות בשפות תכנות אחרות, כדאי לראות את הפוסט הבא: ​​[החלקה טקסט בפייתון](https://realpython.com/python-substring/).
 
-מכיוון שמחרוזות הן מבני נתונים נפוצים בכל שפת תכנות, חילוץ מחרוזות הוא כלי חשוב בתחום תכנות. בדוגמאות שלנו עילה נראה כיצד להשתמש בפעולות חילוץ מחרוזת הכוללות פעולות כגון `subSequence()` ו-`substring()`, אשר יכולות להיות מועילות כאשר מעורבים בהפיכת מחרוזות ונתונים.
+כאן במעבדות הקוד הישראליות, אנחנו תומכים בשפות תכנות שונות כמו גם מכינים את ה@b-insiders עם רעיונות וכמה טיפים לקישור. אם אתה רוצה ללמוד עוד על קוטלין, כדאי להקדיש כמה דקות שבועיות בפורום שלנו: [@b-insiders-forum](https://forum.b-insider.com/).
 
 ## ראה גם
+למידע נוסף על חלקה תת-מחרוזות בקוטלין יש לך כמה מקורות נוספים. מדריך הקוד המקורי של קוטלין מספק מידע מפורט יותר על המחלקה String ועל הפעולות הקשורות בה: [מחלקת String בקוד המקורי של Kotlin](https://github.com/JetBrains/kotlin/blob/2.0.0/js/js.libraries/stdlib/src/kotlin/text/String.kt).
 
-- [Kotlin Documentation on subSequence](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-char-sequence/sub-sequence.html)
-- [Kotlin Documentation on substring](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-string/substring.html)
+כמו כן, תמיד תפתור תרגילים ללמוד יותר על חלקה תת-מחרוזות בקוד ה

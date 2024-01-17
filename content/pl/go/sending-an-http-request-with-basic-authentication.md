@@ -10,59 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+Co to jest i dlaczego to robimy?
 
-Podstawowa autoryzacja jest jedną z najczęściej stosowanych metod uwierzytelniania w protokole HTTP. Wysyłając zapytanie HTTP z podstawowym uwierzytelnieniem, użytkownik może dostarczyć nazwę użytkownika i hasło, które będą weryfikowane przez serwer w celu autoryzacji dostępu. Jest to przydatne w przypadku korzystania z aplikacji internetowych, gdzie istnieje potrzeba zabezpieczenia dostępu do określonych zasobów.
+Wysłanie żądania HTTP z podstawową autoryzacją to proces, w którym wysyłamy żądanie do serwera, ale do uzyskania dostępu wymagana jest autoryzacja za pomocą podstawowych danych. Programiści robią to po to, aby zabezpieczyć i ograniczyć dostęp do zasobów chronionych na serwerze.
 
-## Jak
+Jak to zrobić:
 
-\`\`\`Go
-// Załadowanie potrzebnych pakietów
-import (
-    "fmt"
-    "net/http"
-    "encoding/base64"
-)
+```Go
+url := "https://example.com/api/endpoint"
+    
+req, err := http.NewRequest("GET", url, nil)
+    
+username := "admin"
+password := "pass123"
+    
+req.SetBasicAuth(username, password)
 
-func main() {
-    // Ustawienie adresu URL, do którego zostanie wysłane zapytanie
-    url := "https://moja-aplikacja.com/zasoby"
-
-    // Ustawienie danych uwierzytelniających
-    username := "moj_uzytkownik"
-    password := "moje_haslo"
-
-    // Zakodowanie danych uwierzytelniających za pomocą Base64
-    auth := base64.StdEncoding.EncodeToString([]byte(username + ":" + password))
-
-    // Ustawienie nagłówka uwierzytelniającego w zapytaniu
-    req, _ := http.NewRequest("GET", url, nil)
-    req.Header.Set("Authorization", "Basic " + auth)
-
-    // Wysłanie zapytania i obsłużenie potencjalnego błędu
-    client := &http.Client{}
-    resp, err := client.Do(req)
-    if err != nil {
-        fmt.Println("Wystąpił błąd:", err)
-        return
-    }
-    defer resp.Body.Close()
-
-    // Wypisanie odpowiedzi serwera
-    fmt.Println(resp.Status)
+res, err := http.DefaultClient.Do(req)
+    
+defer res.Body.Close()
+    
+if res.StatusCode == 200 {
+    fmt.Println("Udane żądanie HTTP z podstawową autoryzacją!")
+} else {
+    fmt.Println("Autoryzacja nie powiodła się.")
 }
-\`\`\`
-
-**Output:**
-
-200 OK
+```
 
 ## Deep Dive
 
-Podstawowa autoryzacja jest często uważana za nieskuteczną i niebezpieczną ze względu na to, że dane uwierzytelniające są przesyłane w formie niezaszyfrowanej. Dlatego zaleca się stosowanie innych metod uwierzytelniania (np. uwierzytelnianie tokenowe) dla większego bezpieczeństwa. Jednak w niektórych przypadkach, np. w przypadku wewnętrznych aplikacji firmowych, podstawowa autoryzacja może być wystarczająca.
+Kontekst historyczny:
 
-## Zobacz także
+Autoryzacja została zaprojektowana dla protokołu HTTP przez IETF (Internet Engineering Task Force) w 1996 roku. Jest to jedna z najprostszych i najpowszechniejszych metod autoryzacji w sieciach komputerowych.
 
-- [Dokumentacja Go](https://golang.org/doc/)
-- [Oficjalny poradnik HTTP w Go](https://golang.org/pkg/net/http/)
-- [Podstawowa autoryzacja w protokole HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#http_basic_authentication)
+Alternatywy:
+
+Istnieje kilka innych metod autoryzacji, takich jak autoryzacja HMAC, autoryzacja tokenów dla dostępu, autoryzacja oparta na sesjach i inne. Każda z nich ma swoje własne zalety i wady.
+
+Szczegóły implementacji:
+
+Wysyłanie żądania HTTP z podstawową autoryzacją wymaga ustawienia nagłówka "Authorization" z odpowiednim kodowaniem danych autoryzacyjnych. W przykładzie kodu powyżej, użyliśmy funkcji ```SetBasicAuth``` , która wygenerowała i ustawiła ten nagłówek automatycznie. Należy jednak pamiętać, że w rzeczywistości, należy dokonać wielu innych działań, takich jak sprawdzenie poprawności danych autoryzacyjnych, obsługa błędów, itp.
+
+## Zobacz też:
+
+- Oficjalna dokumentacja Go dla pakietu "net/http": https://golang.org/pkg/net/http/
+- Dokumentacja IETF dotycząca autoryzacji HTTP: https://tools.ietf.org/html/rfc7615

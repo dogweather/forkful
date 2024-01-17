@@ -1,7 +1,7 @@
 ---
-title:                "Arbeta med yaml"
-html_title:           "Fish Shell: Arbeta med yaml"
-simple_title:         "Arbeta med yaml"
+title:                "================================================"
+html_title:           "Fish Shell: ================================================"
+simple_title:         "================================================"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Data Formats and Serialization"
@@ -10,46 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
 
-YAML är en filformat som används för att strukturera data på ett läs- och skrivbart sätt. Det används ofta inom programmering för att konfigurera och konfigurera applikationer eller för att hantera data på ett organiserat sätt.
+Arbetar du som programmerare och stöter på YAML-filer? Då är Fish Shell en bra plattform att använda sig av för att hantera och manipulera dessa filer. YAML står för "YAML Ain't Markup Language" och används för att strukturera och lagra data. Programmerare använder det ofta för konfigurationsfiler och datautbyte mellan system.
 
-## Hur man använder YAML i Fish Shell
+## Så här:
 
-Fisk Shell har inbyggd stöd för att hantera YAML-filer. För att läsa in en YAML-fil i Fish Shell, använd kommandot `yq` följt av filnamnet:
+För att arbeta med YAML-filer i Fish Shell, kan du använda kommandot "yaml". Här är ett exempel på hur du kan lista ut alla nycklar och värden i en fil:
 
-```Fish Shell
-yq filnamn.yml
+```
+yaml data.yaml
 ```
 
-Om du vill göra ändringar i YAML-filen, kan du använda `yq` tillsammans med pipelining. Till exempel, om du vill lägga till ett nytt objekt i YAML-filen, kan du göra det med:
+Detta kommer att ge dig en lista med alla nycklar och värden i filen. Om du vill filtrera denna lista för en specifik nyckel, kan du lägga till flaggan "-k" efter kommandot:
 
-```Fish Shell
-echo "nytt_objekt:
-    - namn: John
-      ålder: 30" | yq -iy filnamn.yml
+```
+yaml -k "name" data.yaml
 ```
 
-Outputen kommer att färdigställas i YAML-format och skrivas till filen. Detta gör det enkelt att ändra och uppdatera YAML-filer direkt från Fish Shell.
+Detta kommer endast att visa nycklarna och värdena för "name" i filen. Du kan också ändra värdena för en specifik nyckel genom att använda flaggan "-s" och ange det nya värdet:
 
-## Djupdykning
-
-Förutom att läsa och ändra i YAML-filer, kan du också använda Fish Shell för att skapa helt nya YAML-filer. Med hjälp av kommandot `yq` tillsammans med `for`-loopen i Fish Shell, kan du generera YAML-filer baserade på befintliga mallar eller data.
-
-Till exempel:
-
-```Fish Shell
-for rad i (seq 1 5)
-    echo "objekt_$rad:
-        - namn: Anonym
-          ålder: $rad" | yq -yiy ny_filspec.yml
-end
+```
+yaml -s "age" 30 data.yaml
 ```
 
-Genom att utnyttja de många funktionerna i Fish Shell och kommandot `yq`, kan du utföra många olika uppgifter med YAML-filer, från att läsa och ändra till att skapa helt nya.
+Detta kommer att ändra värdet för "age" till 30 i filen. Du kan även lägga till nya nycklar och värden med hjälp av flaggan "-a":
 
-## Se även
+```
+yaml -a "city" "Stockholm" data.yaml
+```
 
-- [YAML officiella webbplats](https://yaml.org/)
-- [YAML Wikipedia](https://en.wikipedia.org/wiki/YAML)
-- [Fish Shell dokumentation](https://fishshell.com/docs/current/index.html)
+Detta kommer att lägga till nyckeln "city" med värdet "Stockholm" i filen. För mer information om alla tillgängliga flaggor och hur du kan använda dem, kan du använda kommandot "yaml -h" för att få en lista med instruktioner.
+
+## Deep Dive:
+
+YAML grundades år 2001 av Clark Evans och blev senare en del av YAML.org. Det är en lättläst och mänskligt vänligt sätt att representera data, vilket har gjort det populärt bland programmerare. Alternativ till YAML är JSON, XML och INI-filer.
+
+Fish Shell använder sig av ett yaml-paket för att kunna hantera YAML-filer. Detta paket är utvecklat av David R. Bild och är tillgängligt på GitHub.
+
+## Se även:
+
+- Fish Shell dokumentation: https://fishshell.com/docs/current/index.html
+- YAML.org: https://yaml.org/
+- Yaml-paket på GitHub: https://github.com/oh-my-fish/pkg-yaml

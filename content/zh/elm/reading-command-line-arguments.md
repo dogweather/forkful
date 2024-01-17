@@ -10,33 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
+什么和为什么？
+读取命令行参数是指从命令行中获取输入的过程，程序员这样做是为了使程序更加灵活和可配置。
 
-有时候，在编程过程中，我们需要从命令行中读取参数来改变程序的行为。阅读这篇文章可以帮助你学习如何在Elm中读取命令行参数，让你的程序更加灵活和可配置。
-
-## 如何做
-
-在Elm中，我们可以通过使用`CommandLine.arguments`函数来读取命令行参数。下面是一个简单的例子：
-
+如何：
 ```Elm
-import CommandLine exposing (arguments)
+import Platform exposing (worker)
 
 main =
-    let
-        args = arguments
-    in
-    -- 在这里使用args来改变你的程序行为
-    -- 比如根据命令行参数来选择不同的页面展示
+    worker
+        { init = init
+        , update = update
+        , subscriptions = subscriptions
+        , view = view
+        }
+        
+        
+-- 初始化函数
+init flags =
+    ( Model flags, Cmd.none )
+    
+    
+-- 更新函数
+update msg model =
+    case msg of
+        SetArgs args ->
+            ( { model | args = args }, Cmd.none )
+
+-- 订阅函数
+subscriptions model =
+    Sub.none
+
+-- 视图函数
+view model =
+    text (toString model.args)
+        
 ```
 
-假设我们在命令行中运行这个程序，并输入`elm make Main.elm --output=output.html`，那么`args`将会是一个包含`["make", "Main.elm", "--output=output.html"]`的列表。我们可以通过使用这些参数来修改输出文件的名称或者检查用户是否传入了正确的命令。
+深入探索：
+读取命令行参数在计算机编程的历史中已经存在了很长一段时间，这种方法可以帮助程序员在运行程序时通过命令行输入不同参数来调整程序的行为。也可以通过使用其他编程语言如JavaScript来实现读取命令行参数的功能。
 
-## 深入探索
-
-除了`arguments`函数，Elm还提供了其他一些有用的函数来处理命令行参数。比如，`CommandLine.succeed`可以将参数转换成一个特定的类型，`CommandLine.expect`可以验证参数是否符合特定的格式。通过探索这些函数，你可以更加有效地处理命令行参数。
-
-## 参考链接
-
-- 官方Elm命令行文档: https://package.elm-lang.org/packages/elm/core/latest/CommandLine
-- Elm命令行参数教程: https://thoughtbot.com/blog/elm-command-line-flags
-- Elm命令行参数示例: https://github.com/rtfeldman/elm-spa-example/blob/master/src/Main.elm
+另请参阅：
+- [Elm Platform](https://elm-lang.org/)
+- [JavaScript Command Line Arguments](https://www.geeksforgeeks.org/javascript-command-line-arguments/)

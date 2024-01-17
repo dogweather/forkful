@@ -10,75 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que enviar uma requisição HTTP?
+## O Que e Por Que?
 
-Enviar uma solicitação HTTP é uma das tarefas mais básicas e comuns ao criar aplicativos e sites modernos. Ao enviar uma requisição, podemos obter informações de um servidor ou enviar dados para serem processados. É uma parte essencial na comunicação entre o cliente e o servidor na internet.
+Enviar uma requisição HTTP é uma forma de comunicação entre uma aplicação e um servidor web. Os programadores fazem isso para obter informações, enviar dados, ou interagir com sistemas e serviços externos.
 
-## Como enviar uma requisição HTTP com Kotlin
+## Como Fazer:
 
-Para enviar uma requisição HTTP em Kotlin, podemos utilizar a biblioteca nativa do Kotlin, chamada "kotlinx.serialization". Esta biblioteca permite o uso de objetos Kotlin diretamente como dados JSON a serem enviados em uma requisição.
+```Kotlin 
+import java.net.URL
 
-Vamos criar um exemplo de como enviar uma requisição GET usando a API do GitHub para obter informações de um usuário. Primeiro, importe a biblioteca "kotlinx.serialization" em seu projeto. Em seguida, crie uma classe com as informações do usuário que você deseja obter, por exemplo:
-
-```
-data class Usuario(
-    val nome: String,
-    val empresa: String,
-    val localizacao: String
-)
-```
-
-Em seguida, importe as dependências necessárias para a requisição, como a biblioteca "okhttp" e o "json.kt" que contém a classe criada anteriormente. Em seguida, podemos criar um OkHttpClient e um Gson para nos ajudar no processo de serialização de objetos Kotlin para JSON:
-
-```
-val client = OkHttpClient()
-val gson = Gson()
-val request = Request.Builder()
-    .url("https://api.github.com/users/johnsmith")
-    .build()
-```
-
-Agora, podemos enviar a requisição e obter a resposta do servidor usando o método "newCall" do OkHttpClient:
-
-```
-client.newCall(request).execute().use { response ->
-    if (!response.isSuccessful) throw IOException("Unexpected code $response")
-    val responseData = response.body!!.string()
-    val usuario = gson.fromJson(responseData, Usuario::class.java)
+fun main() {
+    val url = URL("https://www.example.com") // cria um objeto URL com o endereço do servidor
+    val conn = url.openConnection() // abre uma conexão com a URL
+    val response = conn.getInputStream().bufferedReader().use { it.readText() } // lê a resposta do servidor
+    println(response) // imprime a resposta no console
 }
 ```
 
-Podemos então acessar as informações do usuário desejado a partir do objeto "usuario" criado, como por exemplo:
+A saída deste código será o conteúdo da página https://www.example.com .
 
-```
-println(usuario.nome)
-println(usuario.empresa)
-println(usuario.localizacao)
-```
+## Profundando Mais:
 
-O código completo seria semelhante a este:
+Enviar uma requisição HTTP é um método amplamente utilizado na programação para a comunicação entre aplicações web e serviços externos. Alternativas para as conexões HTTP incluem FTP (File Transfer Protocol) e SMTP (Simple Mail Transfer Protocol), mas esses protocolos são menos usados devido à popularidade e eficiência do HTTP.
 
-```
-    val client = OkHttpClient()
-    val gson = Gson()
-    val request = Request.Builder()
-        .url("https://api.github.com/users/johnsmith")
-        .build()
-    client.newCall(request).execute().use { response ->
-        if (!response.isSuccessful) throw IOException("Unexpected code $response")
-        val responseData = response.body!!.string()
-        val usuario = gson.fromJson(responseData, Usuario::class.java)
-        println(usuario.nome)
-        println(usuario.empresa)
-        println(usuario.localizacao)
-    }
-```
+Na implementação de uma requisição HTTP, o programa primeiro estabelece uma conexão com o servidor usando um objeto URL, especificando o endereço. Em seguida, a conexão é aberta e a resposta do servidor é lida e retornada para o programa. Existem bibliotecas e frameworks que podem facilitar a realização de requisições HTTP em aplicações Kotlin, como o Ktor e o Retrofit.
 
-## Mergulho aprofundado em requisições HTTP
+## Veja Também:
 
-Enquanto este artigo aborda somente uma maneira de enviar uma requisição HTTP em Kotlin, existem outras bibliotecas e abordagens disponíveis para essa tarefa. Além disso, é importante ter em mente os diferentes tipos de métodos HTTP, seus propósitos e suas diferenças, como GET, POST, PUT, DELETE, entre outros. Além disso, é importante também entender os diferentes cabeçalhos (headers) que podem ser utilizados em uma requisição HTTP, como o cabeçalho de autenticação ou o cabeçalho de tipo de conteúdo (Content-Type).
-
-## Veja também
-- [Biblioteca kotlinx.serialization para serialização de objetos em JSON](https://github.com/Kotlin/kotlinx.serialization)
-- [Biblioteca OkHttp para realizar requisições HTTP em Kotlin](https://github.com/square/okhttp)
-- [Tutorial de Kotlin para iniciantes](https://kotlinlang.org/docs/tutorials/)
+- [Documentação oficial do Kotlin sobre requisições HTTP](https://kotlinlang.org/docs/tutorials/networking.html)
+- [Ktor: framework de cliente HTTP para Kotlin](https://ktor.io/)
+- [Retrofit: biblioteca para fazer requisições HTTP de forma declarativa em Kotlin](https://square.github.io/retrofit/)

@@ -1,7 +1,7 @@
 ---
-title:                "HTML:n jäsentäminen"
-html_title:           "Rust: HTML:n jäsentäminen"
-simple_title:         "HTML:n jäsentäminen"
+title:                "HTML-analysaatio"
+html_title:           "Rust: HTML-analysaatio"
+simple_title:         "HTML-analysaatio"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "HTML and the Web"
@@ -10,70 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+Mikä & Miksi?
+HTML:n jäsentäminen on prosessi, jossa ohjelmoijat analysoivat HTML-koodin rakennetta ja sisältöä. Tämä on tärkeää, koska se mahdollistaa tiedon hakemisen ja muokkaamisen tiettyjä sivustoja varten. Esimerkiksi web-sivujen skannaaminen ja tietojen kerääminen voi usein vaatia HTML-jäsentämistä.
 
-Kaikki nykyaikainen internet-sisältö on rakennettu HTML:llä ja siksi on erittäin hyödyllistä osata parsia sitä, jotta voi tehdä muutoksia tai manipuloida sisältöä automaattisesti.
-
-## Kuinka
-
-Parsiminen HTML:ään Rustilla on helppoa ja tehokasta. Käytämme `html5ever` kirjastoa ja sen `parse()` metodia. Se palauttaa puumaisen rakenteen HTML-dokumentista ja siitä me voimme hakea haluamiamme elementtejä. Alla on yksinkertainen esimerkki, jossa haetaan kaikki kuva-elementit HTML-dokumentista ja tulostetaan niiden lähdetiedostojen linkit.
-
-```Rust
-extern crate html5ever;
-use html5ever::{ parse, QualName, LocalName };
-use html5ever::rcdom::{ Document, NodeData, Doctype, Text };
-use std::default::Default;
-use std::io;
-use std::io::Read;
-use std::io::{stdout, Write};
+Miten:
+```rust
+Käytä crate html5ever;
+Käytä std::io;
 
 fn main() {
-    let html = "<html><body><img src=\"example.com/image1.jpg\"/><p>Lorem Ipsum</p><img src=\"example.com/image2.jpg\"/></body></html>";
-    let mut links: Vec<String> = vec![];
+    // Alusta HTML-jäsennin
+    let jäsennin = html5ever::parse_document(
+        html5ever::rcdom::RcDom::default(),
+        Default::default()
+    ).from_utf8()
+        .read_from(&mut io::Cursor::new(html_as_bytes()))
+        .unwrap();
 
-    let mut parser = parse(html);
-    let mut doc = Document::new();
-    doc.append(parser, Default::default());
-
-    let p = QQualName::new(None, ns!(), LocalName::from("p"));
-    for img in doc.descendants() {
-        let elem = match img.owned_ref().data {
-            NodeData::Element { ref name, ..} if *name == p => {
-                let node = img.first_child().unwrap();
-                let text = node.as_text().unwrap();
-
-                let link = text.borrow();
-                links.push(link.clone().into_owned());
-                img.first_child().unwrap()
-            },
-            _ => continue
-        };
-    }
-
-    for link in &links {
-        println!("{}", link);
-    }
-
-    println!("Hakutulokset:");
-
-    for link in &links {
-        let y = open(&link).unwrap();
-        x.write(&[links.clone()]);
+    // Tulosta otsikot HTML-sivulta
+    for lapsi in jäsentin.nodet() {
+        jos lapsi.nimi() == "otsikko" {
+            println!("{}: {}", lapsi.langattu(), lapsi.lasts());
+        }
     }
 }
 ```
 
-Output:
+Tässä esimerkissä käytetään "html5ever" crateä HTML-jäsennykseen. Crate asennetaan cargo-työkalulla komennolla ```cargo install html5ever```. Tämän jälkeen ```std::io``` cratea käytetään HTML-sivun lukemiseen ja käsittelijä luodaan käyttämällä html5everin toimintoja. Lopuksi tulostetaan sivun otsikot.
 
-```
-example.com/image1.jpg
-example.com/image2.jpg
-```
+Syväallas:
+HTML-jäsentämistä on käytetty jo 1990-luvulta lähtien ja siitä on tullut tärkeä osa web-kehitystä. Se on monipuolinen ja tehokas tapa hakea ja muokata tietoa eri sivustoilla. Rustilla on useita HTML-jäsennin crateja, kuten myös muita vaihtoehtoja kuten Javascript-pohjaisia ratkaisuita.
 
-## Deep Dive
-
-`html5ever` kirjasto on nopea ja käytännöllinen, koska se käyttää järjestettyä HTML-parseria `html5ever-parser` joka on kirjoitettu Rustilla, ei esimerkiksi JavaScriptillä kuten monet muut parserit. Kirjallisuudessa on myös muita HTML-parsereita, kuten `parse5` ja `htmlparser`, mutta ne ovat hitaampia ja niillä on vähemmän ominaisuuksia kuin `html5ever`:llä.
-
-## Katso myös
-
-- [h
+Katso myös:
+- [html5ever crate dokumentaatio](https://docs.rs/html5ever/0.23.0/html5ever/)
+- [Rust-ohjelmoinnin aloittaminen](https://www.rust-lang.org/learn/get-started)
+- [Javascript-pohjainen HTML-jäsennin](https://github.com/cheeriojs/cheerio)

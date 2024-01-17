@@ -10,63 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜?
+## 무엇인가 & 왜? 
+문자열을 소문자로 변환하는 것은 프로그래머가 문자열을 간단하게 처리하고 비교할 수 있도록 하기 위한 방법입니다. 예를 들어, 문자열 "HELLO"를 모두 대문자로 쓸 때와 소문자로 쓸 때를 다루는 두 가지 다른 기능을 구현해야 할 때 매우 유용합니다.
 
-문자열을 소문자로 변환하는 이유는 다양할 수 있습니다. 영문 대소문자 구분을 하지 않는 경우 데이터를 일관되게 처리하기 위해서, 또는 사용자가 입력한 문자열을 비교하기 전에 일관성을 유지하기 위해서 등등 다양한 이유가 있습니다.
-
-## 어떻게?
-
-가장 간단한 방법은 `toupper()` 함수를 사용하는 것입니다. 이 함수는 ASCII 문자열을 대문자로 변환해주는 역할을 합니다. 하지만 이 함수는 이미 대문자인 문자는 건들지 않기 때문에 소문자로 변환하려면 다른 방법을 사용해야 합니다.
-
-다음은 `tolower()` 함수를 사용하여 소문자로 변환하는 예제입니다.
-
-```c
+## 방법: 
+```C
 #include <stdio.h>
-#include <string.h>
+#include <ctype.h>
 
-int main() {
-    char my_str[] = "Hello, World";
-    int len = strlen(my_str);
-
-    for (int i = 0; i < len; i++) {
-        my_str[i] = tolower(my_str[i]);
-    }
-
-    printf("%s", my_str); // 출력: hello, world
-
-    return 0;
+int main()
+{
+  char str[] = "Hello, World!";
+  
+  // lowercase conversion using tolower() function
+  int i = 0;
+  while (str[i])
+  {
+    str[i] = tolower(str[i]);
+    i++;
+  }
+  
+  printf("%s", str);
+  
+  return 0;
 }
 ```
+출력: hello, world!
 
-위 예제에서 `strlen()` 함수를 사용하여 문자열의 길이를 구하고, 반복문을 사용하여 모든 문자를 `tolower()` 함수를 통해 소문자로 변환합니다. 그 후 변환된 문자열을 `printf()` 함수를 사용하여 출력합니다.
+## 깊이 파고들기: 
+문자열을 소문자로 변환하는 아이디어는 프로그램 언어마다 다르지만, 대부분의 프로그래밍 언어에서 문자열 처리를 위한 내장 함수를 제공합니다. C에서는 tolower() 함수를 사용해 문자를 소문자로 변환할 수 있고, 문자가 대문자인지 소문자인지 확인하는 isupper() 함수를 제공합니다. 또한 문자열을 복사하고 비교하는 등 다양한 방법으로 문자열을 대소문자 구분 없이 처리할 수 있습니다.
 
-## 깊게 파고들기
-
-C 언어에서 문자열을 소문자로 변환하는 방법은 여러 가지가 있습니다. 하지만 위에서 작성한 예제처럼 `toupper()` 또는 `tolower()` 함수를 사용하는 것이 가장 간단한 방법입니다.
-
-또 다른 방법으로는 `std::transform()` 함수를 사용하는 방법이 있습니다. 이 함수는 표준 C++ 라이브러리에 포함되어 있지만, C 언어에서도 `#include <algorithm>`을 추가하여 사용할 수 있습니다. 이 함수는 두 개의 반복자를 인자로 받아서 해당 범위의 값을 변환하는 역할을 합니다. 다음은 위 예제를 `std::transform()`을 사용하여 작성한 경우입니다.
-
-```c
-#include <stdio.h>
-#include <string.h>
-#include <algorithm>
-
-int main() {
-    char my_str[] = "Hello, World";
-    int len = strlen(my_str);
-
-    std::transform(my_str, my_str + len, my_str, ::tolower);
-
-    printf("%s", my_str); // 출력: hello, world
-
-    return 0;
-}
-```
-
-위 예제에서는 `std::transform()` 함수를 사용하여 모든 문자를 소문자로 변환하였습니다.
-
-## 참고자료
-
-- [C 언어 | `toupper()` 함수](https://www.tutorialspoint.com/c_standard_library/c_function_toupper.htm)
-- [C 언어 | `tolower()` 함수](https://www.tutorialspoint.com/c_standard_library/c_function_tolower.htm)
-- [Standard C++ Library | `std::transform()` 함수](https://www.cplusplus.com/reference/algorithm/transform/)
+## 관련 자료: 
+- [C 문자열 함수 - tolower()](https://www.tutorialspoint.com/c_standard_library/c_function_tolower.htm)
+- [C 문자열 함수 - isupper()](https://www.tutorialspoint.com/c_standard_library/c_function_isupper.htm)
+- [Ambitious Coder - 문자열에 대소문자 변환 기능 구현하기](https://www.ambitiouscoder.com/c-string-case-conversion/)

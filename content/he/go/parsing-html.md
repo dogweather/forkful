@@ -1,7 +1,7 @@
 ---
-title:                "פירוק קוד HTML"
-html_title:           "Go: פירוק קוד HTML"
-simple_title:         "פירוק קוד HTML"
+title:                "ניתוח HTML"
+html_title:           "Go: ניתוח HTML"
+simple_title:         "ניתוח HTML"
 programming_language: "Go"
 category:             "Go"
 tag:                  "HTML and the Web"
@@ -10,65 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מדוע
+# Parsing HTML בשפת גוגל גו
 
-אם אתם מתכנתים, ייתכן שתגיעו למצבים בהם תצטרכו לטפל בנתונים שמגיעים מקוד HTML. בג'ו, זה די קל להפוך את התהליך הזה למהיר ויעיל.
+## מה ולמה?
 
-## איך לעשות זאת
+פארסינג של HTML היא התהליך שבו מתוכנתים נכנסים לתוך דף אינטרנט, קוראים את הקוד שלו ויוצאים בעלת מידע מועיל על הדף. תהליך זה חשוב למתכנתים כדי לאפשר להם לשלב נתונים מועילים מדפי אינטרנט ולמאפיין אותם לניתוח ועיבוד.
 
-### התקנת החבילה
+## איך לעשות זאת:
 
-לפני שניכנס לפנייה ניתן לקחת ארגז הכלים של `http` ולהביא את המערכת וכן `html` אבל השיטה המומלצת לעשות את זה היא ע"י התקנת החבילה `golang.org/x/net/html`.
-
-כדאי לוודא שהחבילה מתוקנת בצורה נכונה ואם לא כך, אז לשלוח `go get` כמו תמיד.
-
-### השתמש ב`Parse`
-
-עבור תחילת הפעילות של הקוד שכתבנו, נגדיר משתנה שנקרא `doc` שיכיל את הרצועה של התשתית שהוספנו ברגע הקודם.
-
+התכנית הבאה מדגימה את השימוש בספריית הפניהור כדי לפרסם ולהדפיס את התוכן של דף אינטרנט:
 ```Go
-doc, err := html.Parse(resp.Body)
-```
+import (
+    "fmt"
+    "net/http"
+    "github.com/PuerkitoBio/goquery"
+)
 
-במקרה הנוכחי, המתודה של `Parse` תהיה נמשכת מהתשובת האתר המבוקש המופיע במשתנה `resp`.
-
-### מציאת אלמנטים
-
-בכוונה, אנחנו נחפש את האלמנט הרצוי באמצעות השיטה `findLinks`.
-
-```Go
-func findLinks(n *html.Node) []string {
-	var links []string
-	// רק אם זה תנאי הזה
-	if n.Type == html.ElementNode && n.Data == "a" {
-		for _, a := range n.Attr {
-			if a.Key == "href" {
-				links = append(links, a.Val)
-			}
-		}
-	}
-	// זה יוצא מכל השאר
-	for c := n.FirstChild; c != nil; c = c.NextSibling {
-		links = append(links, findLinks(c)...)
-	}
-	return links
+func main() {
+    response, _ := http.Get("https://examplewebsite.com")
+    defer response.Body.Close()
+    document, _ := goquery.NewDocumentFromReader(response.Body)
+    
+    document.Find("h1").Each(func(index int, element *goquery.Selection) {
+        fmt.Println(element.Text())
+    })
 }
 ```
+פלט התוכנית ישיג את כותרת הדף מהתגית h1 וידפיס אותה בטקסט נקי.
 
-זה לא משנה מה זה HTML נראה להכריח את השיטה `findLinks` לרדת לילדים של `Node` ולהתחיל לעבוד רק כשהיא מגיעה לאיבר הרלוונטי.
+## כיול עמוק:
 
-בסוף הקוד מחזיר רשימה של אופני מחיקה עבור סוגי נתונים HTML כגון.
+פירוט קצר של מה פעילות הנדסת HTML מיישמת בתכנות השלב בפיתוח הווב, מספר פתרונות ספציפיים שאפשר להשתמש בהם במקום הפניהור וכיצד הוא מתממש.
 
-Url x, url y, url z, url3
+מעבר לספריית הפניהור, ישנם פתרונות אחרים שניתן להשתמש בהם כדי לפרסם דפים אינטרנט בגוגל גו, כגון הספרייה המדורגת גיני. בנוסף, חשוב לציין כי גוגל גו מציע תמיכה מלאה בכתיבת אפליקציות אינטרנט המשתמשות ב HTML כאשר ההתאמה לעולם הווב הינה תמיד מהירה ויעילה.
 
-הנה פלט לקריאה של הפונקציה הקודמת:
+## ראה גם:
 
-```
-$ go run fetching_urls.go
-
-https://www.yourwebsite.com
-http://www.example.com
-http://www.example2.com
-```
-
-### השת
+- דוקומנטציה רשמית של ספריית הפניהור של גוגל גו: https://godoc.org/github.com/PuerkitoBio/goquery
+- ערוץ האינטרנט של גוגל גו עם תוכן מגוון על פיתוח ותכנות: https://www.youtube.com/channel/UC0NErq0RhP51iXx64ZmyVfg

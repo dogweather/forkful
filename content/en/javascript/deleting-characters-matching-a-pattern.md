@@ -10,52 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-Deleting characters that match a specific pattern can be a common task in Javascript, especially when handling user input or manipulating strings. It allows for efficient and accurate data processing, making it a valuable skill for any Javascript developer.
+Deleting characters matching a pattern in Javascript refers to the act of removing specific characters that follow a certain sequence or rule. It is commonly done by programmers to clean up data or manipulate strings to fit a certain format.
 
-## How To
+## How to:
 
-To delete characters matching a pattern, we can use the `replace` method in combination with a regular expression. The `replace` method takes in two parameters: the pattern to match and the replacement value. To delete the matched characters, we can simply pass an empty string as the replacement value. Here is an example:
+The following are two examples of how to delete characters matching a pattern in Javascript, using the built-in String.prototype.replace() method.
 
-```Javascript
-// Replace all numbers from a string with an empty string
-let str = "Hello 123 World";
-let newStr = str.replace(/[0-9]/g, "");
-console.log(newStr); // Output: Hello World
 ```
+let string = "Hello World!";
+let newString = string.replace(/[a-z]/g, ''); 
 
-In this example, we used the regular expression `/[0-9]/g` to match all numbers in the string and replaced them with an empty string. The `g` at the end of the regular expression stands for global, which means it will replace all occurrences of the matched characters.
-
-We can also use other regular expression modifiers, such as `i` for case-insensitive matching, `m` for multiline matching, and `s` for dot-all matching.
-
-```Javascript
-// Replace all vowels from a string with an empty string, case-insensitive
-let str = "Hello World";
-let newStr = str.replace(/[aeiou]/gi, "");
-console.log(newStr); // Output: Hll Wrld
+console.log(newString); // Output: H W!
 ```
+In this first example, we use the regular expression /[a-z]/g within the replace() method to target all lowercase letters in the string and replace them with an empty string, effectively deleting them from the string.
 
-## Deep Dive
+```
+let string = "123-456-789";
+let newString = string.replace(/[0-9-]/g, '');
 
-Regular expressions in Javascript can become quite complex, allowing for advanced and specific pattern matching. Here are some common metacharacters and their meanings:
+console.log(newString); // Output: Remove the numbers and dashes from the string
+```
+In this second example, we use the regular expression /[0-9-]/g to target all numbers and dashes in the string and replace them with an empty string. This is a useful technique for stripping out any unwanted characters from a string that may interfere with parsing or calculations.
 
-- `.` Matches any character.
-- `^` Matches the beginning of a string.
-- `$` Matches the end of a string.
-- `*` Matches zero or more occurrences of the previous character.
-- `+` Matches one or more occurrences of the previous character.
-- `?` Matches zero or one occurrence of the previous character.
-- `\d` Matches any digit.
-- `\w` Matches any alphanumeric character.
-- `\s` Matches any whitespace character.
-- `[...]` Matches any character within the brackets.
-- `[^...]` Matches any character that is not within the brackets.
+## Deep Dive:
 
-By combining these metacharacters and modifiers, we can create powerful regular expressions to match and delete any desired characters.
+### Historical Context:
+The concept of deleting characters matching a pattern has been around since the earliest versions of Javascript. Regular expressions were first introduced in 1995 and have been a fundamental tool for pattern matching and data manipulation ever since.
 
-## See Also
+### Alternatives:
+Apart from using regular expressions, there are other ways to delete characters matching a pattern in Javascript. One alternative method is to use the built-in String.prototype.substring() method, which takes in two parameters - the starting index and the ending index. This would allow you to remove certain characters within a string using their index positions.
 
-- [MDN Web Docs: String.prototype.replace()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
-- [Regular Expressions Cheat Sheet](https://www.debuggex.com/cheatsheet/regex/javascript)
-- [Regular Expressions Explained](https://regexone.com/)
+### Implementation Details:
+The String.prototype.replace() method not only allows for the replacement of characters, but it also supports the use of capturing groups and functions. Capturing groups allow you to extract specific parts of the matched string, while functions allow for more complex calculations to be carried out for each match.
+
+## See Also:
+
+- [MDN Web Docs on String.prototype.replace()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
+- [MDN Web Docs on Regular Expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
+- [W3Schools tutorial on Regular Expressions in Javascript](https://www.w3schools.com/js/js_regexp.asp)

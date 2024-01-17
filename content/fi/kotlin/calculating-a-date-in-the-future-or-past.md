@@ -1,7 +1,7 @@
 ---
-title:                "Päivämäärän laskeminen tulevaisuudessa tai menneisyydessä"
-html_title:           "Kotlin: Päivämäärän laskeminen tulevaisuudessa tai menneisyydessä"
-simple_title:         "Päivämäärän laskeminen tulevaisuudessa tai menneisyydessä"
+title:                "Tulevaisuuden tai menneen päivämäärän laskeminen"
+html_title:           "Kotlin: Tulevaisuuden tai menneen päivämäärän laskeminen"
+simple_title:         "Tulevaisuuden tai menneen päivämäärän laskeminen"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Dates and Times"
@@ -10,47 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä ja miksi?
+Päivämäärien laskeminen tulevaisuudessa tai menneisyydessä on yleinen tehtävä ohjelmoinnissa. Tämä voidaan tehdä esimerkiksi tilanteissa, joissa halutaan tarkistaa, kuinka monta päivää on jäljellä tiettyyn tapahtumaan tai laskea tulevan päivämäärän perusteella tulevien päivien sää. Ohjelmoijat tekevät tämän lisäämällä tai vähentämällä päiviä nykyisestä päivästä.
 
-Päivämäärien laskeminen tulevaisuuteen ja menneisyyteen voi olla hyödyllistä esimerkiksi tapahtumien suunnittelussa tai raportoinnissa.
-
-## Miten tehdä
-
-Päivämäärien laskeminen tulevaisuuteen tai menneisyyteen onnistuu helposti Kotlin-ohjelmointikielellä. Voit käyttää tähän tarkoitukseen `Calendar`-luokkaa, joka löytyy `java.util`-paketista. Seuraavassa esimerkissä lasketaan päivämäärä yhden viikon päähän käyttäen `Calendar`-luokkaa.
-
+## Näin teet sen:
+### Esimerkki 1:
 ```Kotlin
-val calendar = Calendar.getInstance()
-calendar.add(Calendar.DAY_OF_YEAR, 7)
-val date = calendar.time
-println(date)
+val currentDate = LocalDate.now() // nykyinen päivämäärä
+val futureDate = currentDate.plusDays(30) // lisätään 30 päivää nykyiseen päivään
+println(futureDate) // tulostaa tulevan päivämäärän 30 päivää nykyisestä päivästä
 ```
-**Tulostus:**
-
-`Sat Sep 25 21:13:15 EDT 2021`
-
-Voit myös asettaa päivämäärän tiettyyn muotoon käyttämällä `SimpleDateFormat`-luokkaa. Tässä esimerkissä päivämäärä muotoillaan `dd/MM/yyyy`-muotoon.
-
-```Kotlin
-val sdf = SimpleDateFormat("dd/MM/yyyy")
-val formattedDate = sdf.format(date)
-println(formattedDate)
+Tulostus:
 ```
-**Tulostus:**
-
-`25/09/2021`
-
-## Syvemmälle aiheeseen
-
-`Calendar`-luokan lisäksi Kotlinissa on käytettävissä myös `LocalDateTime`-luokka, joka helpottaa päivämäärien käsittelyä ja muokkaamista. `LocalDateTime`-luokka tarjoaa mahdollisuuden esimerkiksi eri aikavyöhykkeiden huomioimiseen ja päivämäärien vertailuun.
-
+2021-08-19
+```
+### Esimerkki 2:
 ```Kotlin
-val date1 = LocalDateTime.now()
-val date2 = date1.plusDays(14)
-println(date1.isBefore(date2)) //tulostaa true
+val inputDate = "2021-12-25" // syötetty päivämäärä
+val christmas = LocalDate.parse(inputDate) // päivämäärän muuntaminen
+val currentDate = LocalDate.now() // nykyinen päivämäärä
+val daysUntilChristmas = ChronoUnit.DAYS.between(currentDate, christmas) // päivien välisen eron laskeminen
+println(daysUntilChristmas) // tulostaa päivien määrän jäljellä jouluun
+```
+Tulostus:
+```
+131
 ```
 
-## Katso myös
+## Syvemmälle:
+Päivämäärien laskeminen ei ole uusi asia ohjelmoinnissa. Jo 1700-luvulla matemaatikot ja astronoomit kehittelivät erilaisia kaavoja päivämäärien laskemiseen. Nykyään eri ohjelmointikielillä on valmiita kirjastoja, jotka helpottavat päivämäärien käsittelyä. Jos haluat tehdä päivämäärien laskemisen monimutkaisemmaksi, voit esimerkiksi ottaa huomioon karkausvuodet tai eri aikavyöhykkeet.
 
-- [Kotlinin virallinen dokumentaatio](https://kotlinlang.org/docs/home.html)
-- [Java Calendar-luokan käyttöohjeet](https://docs.oracle.com/javase/8/docs/api/java/util/Calendar.html)
-- [Java LocalDateTime-luokan käyttöohjeet](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDateTime.html)
+## Katso myös:
+- [LocalDate - Kotlin](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-local-date/index.html)
+- [Date and Time API - Oracle](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)

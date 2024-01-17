@@ -1,7 +1,7 @@
 ---
-title:                "टेक्स्ट को ढूंढ़ना और बदलना"
-html_title:           "Elm: टेक्स्ट को ढूंढ़ना और बदलना"
-simple_title:         "टेक्स्ट को ढूंढ़ना और बदलना"
+title:                "टेक्स्ट की खोज और बदलाव"
+html_title:           "Elm: टेक्स्ट की खोज और बदलाव"
+simple_title:         "टेक्स्ट की खोज और बदलाव"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -10,35 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Kyun
+## क्या है और क्यों?
+खोज और टेक्स्ट को बदलने क्या है, ये समझने के लिए आपको पहले सोचना पड़ेगा कि आपने किस वस्तु की तलाश करनी है और वह आपको किस अंग्रज़ी शब्द से ढूँढना है। कंप्यूटर प्रोग्रामर्स यह काम करते हैं क्योंकि यह टेक्स्ट को बदलकर प्रोग्राम छोडने के लिए सुविधाजनक बनाता है।
 
-Kai baar hamko kisi bhi text ko replace karna hota hai, jaise ki kuch words delete ya modify karna ho ya phir koi specific pattern ya format ko find karna ho. Elm mein hai ek built-in function "String.replace" jo text ko replace karne mein kaafi madad karta hai.
+## कैसे करें:
+टेक्स्ट को खोजने और बदलने के लिए, हम पाँच चरणों को ध्यान से फॉलो करेंगे:
+१. पहला चरण: शुरु करें
+```Elm text```
+२. दूसरा चरण: ढूँढें
+```Elm text```
+३. तीसरा चरण: बदलें
+```Elm text```
+४. चौथा चरण: तागती है
+```Elm text```
+५. पाँचवाँ चरण: बचाएं
+```Elm text```
 
-## Kaise Kare
+यहाँ, हम अलग-अलग मामलों में टेक्स्ट को खोजेंगे और बदलेंगे। इससे हम प्रोग्राम के भीतर अलग-अलग प्रकार के खोज और बदलाव को कर सकते हैं। निरंतर मामलों में, हम अपने मामले को और अलग-अलग तरीकों से ढूँढ सकते हैं।
 
-Ham is function ko "String.replace" ka naam se use kar sakte hai. Iske liye hame do strings aur ek pattern dena hoga jo hum replace karna chahte hai. Example ke liye, agar hum ek string ko do parts mein split karna chahte hai, jahan split point ' ' hai, toh hum "String.replace" ka use kar sakte hai:
+## गहा
+जीवन में, आपको जब कभी भी किसी पाठ को बदलने की जरूरत पड़ती है, आपको एक बहुत अच्छी गूँज के स्थान पर है। उन दिनों, लोग यह काम अपने आप ही करते थे और साथ ही एक हाथ तेज था। आजकल, ये काम बहुत ही सुविधाजनक बन गया है क्योंकि हम उन बातों को पूरी तरह से बदलें जहाँ तक हम देख सकते हैं।
 
-```Elm
-String.replace "Hello Elm!" " " ", "  -- Output: "Hello, Elm!"
-```
-
-Is code mein pehle string " " ka jagah "Hello, Elm!" string mein ' ' ke jagah ", " replace hogaya hai.
-
-Agar hum kisi specific format ko find karna chahte hai, jaise ki email addresses, toh hum is function ke sath "Regex.fromString" bhi use kar sakte hai. Example ke liye, ek string mein se sabhi email addresses ko find karke unhe replace karna ho, toh hum ye code use kar sakte hai:
-
-```Elm
-String.replace (Regex.fromString "[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}") " " "********"  -- Output: "********, ********"
-```
-
-Is code mein humne ek regular expression pattern diya hai jisse hum sabhi email addresses ko find karke unhe "********" se replace kar rahe hai.
-
-## Deep Dive
-
-"String.replace" function adding feature rich hai, jismein hum "Regex" bhi use kar sakte hai. Ye ek powerful tool hai text operations ke liye, jisse hum text ko split, replace, find aur modify kar sakte hai. Iske alawa, hum is function mein multiple patterns bhi use kar sakte hai aur isse humare kaam ko aur bhi asaan banate hai.
-
-Ek important baat jo dhyaan rakna hai is function ke use mein, wo ye ki agar pattern match nahi hota hai string mein toh wo string khud hi return hogi. Isliye hamesha ek check karle ki pattern sahi hai ya nahi, taki hum unexpected output se bach sake.
-
-## See Also
- - Elm String Documentation: https://package.elm-lang.org/packages/elm/core/latest/String
- - Regex Documentation: https://package.elm-lang.org/packages/elm/regex/latest/
- - String Replace Package: https://package.elm-lang.org/packages/elm-community/string-extra/latest/String-Extra#replace
+## आगे देखे:
+- [टेक्स्ट को खोजने और बदलने के लिए Elm की आधिकारिक साइट](https://elmprogramming.com/search-replace-text.html)
+- [कैसे काम करती है टेक्स्ट के लिए Ansi बनाने का प्रोग्रामिंग](https://guthurian.com/writing-and-language/an-ansi-sequence-down-the-rabbit-hole/)
+- [Vim के एक सुपर काम जिसका नाम दुनिया से पता लग रहा है](https://www.briancarper.net/blog/99/)

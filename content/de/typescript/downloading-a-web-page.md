@@ -1,7 +1,7 @@
 ---
-title:                "Eine Webseite herunterladen"
-html_title:           "TypeScript: Eine Webseite herunterladen"
-simple_title:         "Eine Webseite herunterladen"
+title:                "Herunterladen einer Webseite"
+html_title:           "TypeScript: Herunterladen einer Webseite"
+simple_title:         "Herunterladen einer Webseite"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "HTML and the Web"
@@ -10,36 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was & Warum?
+Das Herunterladen einer Webseite ist der Vorgang des Abrufs von HTML, CSS, JavaScript und anderen Dateien von einem bestimmten URL. Programmierer nutzen diesen Prozess, um Inhalte von einer Webseite auf einer anderen Seite anzuzeigen oder um sie offline zu nutzen.
 
-Webseiten sind ein wichtiger Bestandteil unseres täglichen Lebens. Wir verwenden sie zum Lesen von Nachrichten, zum Anschauen von Videos, zum Einkaufen und vielem mehr. Indem wir eine Webseite herunterladen, können wir sie auch offline lesen oder verändern. Das ist besonders nützlich, wenn wir keine Internetverbindung haben oder die Webseite bearbeiten möchten.
-
-## So geht's
-
-Der Prozess des Herunterladens einer Webseite ist relativ einfach mit TypeScript zu implementieren. Zuerst müssen wir ein Modul namens "https" importieren, das uns hilft, Daten von einer Webseite zu erhalten. Dann können wir die Methode "get()" verwenden, um eine Verbindung zur Webseite herzustellen. Wir müssen auch die Ziel-URL angeben, von der wir die Daten herunterladen möchten. Hier ist ein Beispielcode:
-
+## So geht's:
 ```TypeScript
-import https from 'https';
+import fetch from 'node-fetch';
 
-https.get('https://www.example.com', (res) => {
-  res.on('data', (chunk) => {
-    console.log(chunk);
-  });
-}).on('error', (e) => {
-  console.error(e);
-});
+// URL der herunterzuladenen Seite
+const url = "https://www.example.com";
+
+fetch(url) 
+    .then(response => response.text())
+    .then(data => console.log(data))
+    .catch(error => console.log(error));
+
 ```
 
-Dieser Code verwendet die "get()" Methode von "https", um eine Anfrage an die Ziel-URL zu stellen. Wenn die Anfrage erfolgreich ist, wird die Antwort in Form von Datenchunks empfangen. Wir können diese Daten dann verarbeiten, speichern oder anzeigen, wie im obigen Beispiel durch Auflisten der Daten in der Konsole.
+## Tiefere Einblicke:
+Das Herunterladen von Webseiten hat eine lange Geschichte, die bis in die Anfänge des Internets zurückreicht. Früher wurde dies hauptsächlich durch das Herunterladen von Dateien über FTP oder HTTP ermöglicht. Heutzutage gibt es viele alternative Methoden, wie zum Beispiel das Herunterladen von Inhalten über APIs oder das Verwenden von Web Crawlers. In TypeScript können wir die node-fetch Library verwenden, um die Inhalte von Webseiten herunterzuladen. Dabei müssen wir jedoch darauf achten, die Daten korrekt zu verarbeiten, da sie möglicherweise im falschen Format vorliegen oder Fehler enthalten können.
 
-## Tiefergehende Informationen
-
-Beim Herunterladen einer Webseite müssen wir auch andere Faktoren berücksichtigen, wie z.B. das Verständnis von HTTP-Statuscodes und die Handhabung von Fehlern. Wir können auch benutzerdefinierte Optionen wie Header oder Authentifizierungsdaten angeben, um die Anfrage anzupassen. Es gibt auch verschiedene Node.js-Module, die uns helfen können, den Herunterladeprozess zu verbessern, wie z.B. "request" oder "axios".
-
-## Siehe auch
-
-- [https](https://nodejs.org/api/https.html)
-- [request](https://www.npmjs.com/package/request)
-- [axios](https://www.npmjs.com/package/axios)
-
-Danke fürs Lesen!
+## Siehe auch:
+- [node-fetch Dokumentation](https://www.npmjs.com/package/node-fetch)
+- [Web Crawling Artikel](https://de.wikipedia.org/wiki/Web_Crawling)

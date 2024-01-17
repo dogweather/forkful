@@ -1,7 +1,7 @@
 ---
-title:                "텍스트 파일 작성하기"
-html_title:           "Clojure: 텍스트 파일 작성하기"
-simple_title:         "텍스트 파일 작성하기"
+title:                "컴퓨터 프로그래밍의 제목은 텍스트 파일 작성입니다."
+html_title:           "Clojure: 컴퓨터 프로그래밍의 제목은 텍스트 파일 작성입니다."
+simple_title:         "컴퓨터 프로그래밍의 제목은 텍스트 파일 작성입니다."
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Files and I/O"
@@ -10,31 +10,22 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+# 지금 무엇을 & 왜?
+텍스트 파일 작성은 단순히 컴퓨터에 글을 쓰는 것입니다. 프로그래머들은 자신의 코드나 데이터를 보관하고 공유하기 위해서 텍스트 파일을 작성합니다.
 
-텍스트 파일을 써야만 할까요? 텍스트 파일은 데이터를 쉽게 저장하고 공유하는 데 유용합니다. 또한 텍스트 파일은 사람이 읽고 쓸 수 있는 형식이기 때문에 다른 프로그래밍 언어에서도 쉽게 읽을 수 있습니다.
-
-## 사용 방법
-
+# 어떻게:
 ```Clojure
-(defn write-file [file-name]
-  (with-open [wrtr (clojure.java.io/writer file-name :append true)]
-    (.write wrtr "Hello World!")
-    (.close wrtr)))
-
-(write-file "test.txt")
+(with-open [file (io/writer "/path/to/file.txt")]
+  (.write file "Hello World!")
+  (.close file))
 ```
 
-위의 코드는 "Hello World!" 라는 내용을 가지는 "test.txt" 파일을 생성합니다. 파일을 쓰기 위해서는 `with-open` 함수를 사용하고, `clojure.java.io/writer` 함수로 파일을 열어서 `.write` 함수를 통해 내용을 씁니다. 마지막으로 `.close` 함수를 이용해 파일을 닫습니다.
+파일을 열고 쓰기 위해서 `with-open` 함수를 사용합니다. 이 함수는 파일의 경로를 첫 번째 인자로 받아서 파일을 열고 두 번째 인자로 받은 함수를 실행합니다. 여기서는 파일을 쓰는 함수를 실행합니다. 해당 함수에 파일 객체와 쓸 내용을 전달합니다. 마지막으로 파일을 닫습니다.
 
-## 깊은 곳으로
+# 깊이 파보기:
+텍스트 파일 작성은 컴퓨터 프로그래밍에서 매우 중요한 기술입니다. 예전에는 파일을 쓰는 것이 다소 복잡했지만 요즘에는 매우 쉽고 간단해졌습니다. `with-open` 함수는 파일을 열고 닫는 번거로운 작업을 알아서 처리해 줍니다. 이런 방식으로 코드를 작성하면 실수를 줄이고 코드를 더 간결하게 만들 수 있습니다.
 
-텍스트 파일은 매우 유용한 데이터 저장 방식 중 하나입니다. 텍스트 파일에는 다양한 데이터를 쉽게 저장할 수 있고, 특히 CSV 형식으로 저장할 경우 데이터베이스의 대안으로 사용할 수 있습니다. 또한 텍스트 파일은 버전 관리 시스템에서도 매우 유용하며, 프로그램에서 읽고 쓰기가 쉬운 형식이기 때문에 다른 프로그램과의 데이터 교환에도 매우 유용합니다.
-
-## 더 많은 정보
-
-https://clojure.org/ - 공식 Clojure 웹사이트
-
-https://www.clojure.or.kr/ - 한국 채택센터의 Clojure 정보 사이트
-
-https://github.com/clojure/clojure - Clojure GitHub 저장소
+# 관련 자료:
+- [Clojure 공식 문서 - 파일 다루기](https://clojure.org/reference/io)
+- [Clojure Cookbook - 파일 다루기](https://clojure-cookbook.com/06-io/06-07)
+- [Clojure Style Guide - 파일 다루기](https://github.com/bbatsov/clojure-style-guide#files-and-folders)

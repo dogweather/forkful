@@ -1,7 +1,7 @@
 ---
-title:                "Schreiben auf Standardfehler"
-html_title:           "Ruby: Schreiben auf Standardfehler"
-simple_title:         "Schreiben auf Standardfehler"
+title:                "Schreiben auf standard error"
+html_title:           "Ruby: Schreiben auf standard error"
+simple_title:         "Schreiben auf standard error"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Files and I/O"
@@ -10,45 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
-
-Warum sollte man sich überhaupt damit beschäftigen, Fehlermeldungen an den Standardfehlerausgabestrom zu schreiben? Ganz einfach - es ist eine effektive Möglichkeit, Fehler in Ruby-Programmen zu diagnostizieren und zu beheben. Durch das Schreiben von Fehlermeldungen an den Standardfehlerausgabestrom erhalten Sie detaillierte Informationen über den Programmablauf und können so Probleme schneller und präziser lösen.
+## Was & Warum?
+Das Schreiben von Standardfehlermeldungen bedeutet, dass Programmierer ihre Fehlermeldungen auf einem unverzichtbaren Ausgabekanal festlegen. Dies ist hilfreich, um Fehlermeldungen von normalen Ausgaben zu unterscheiden und um sicherzustellen, dass wichtige Fehler nicht übersehen werden.
 
 ## Wie geht das?
+Die Syntax zum Schreiben von Standardfehlern in Ruby ist einfach - einfach ```$stderr.puts "Fehlermeldung" ``` verwenden. Dies wird den Fehler in der Kommandozeile ausgeben, unabhängig davon, wo die normale Ausgabe erfolgt.
 
-Das Schreiben von Fehlermeldungen an den Standardfehlerausgabestrom in Ruby ist denkbar einfach. Alles was Sie tun müssen, ist das `STDERR`-Objekt zu verwenden und die `puts`-Methode aufzurufen, um Ihre Meldung auszugeben. Hier ist ein Beispiel:
-
+Beispiel:
 ```Ruby
-STDERR.puts "Ein Fehler ist aufgetreten: Benutzername konnte nicht gefunden werden."
+$stderr.puts "Es ist ein Fehler aufgetreten."
 ```
 
-Dies wird einen Fehler im Standardfehlerausgabestrom ausgeben, der von anderen Ausgaben im Programm unterschieden werden kann. Hier ist ein Beispiel für die Ausgabe dieses Codes:
-
+Ausgabe:
 ```
-$ ruby fehler.rb
-Ein Fehler ist aufgetreten: Benutzername konnte nicht gefunden werden.
+Es ist ein Fehler aufgetreten.
 ```
 
-Wie Sie sehen können, wird die Fehlermeldung als separate Zeile ausgegeben und gibt Ihnen wichtige Informationen darüber, was schief gelaufen ist.
+## Tief einsteigen
+Das Schreiben von Standardfehlern hat seinen Ursprung in den frühen Tagen der Programmierung, als die Ausgabe normalerweise in die Kommandozeile geschrieben wurde. Alternativen zum Schreiben von Standardfehlern sind das Schreiben in eine Datei oder das Senden per E-Mail. Es ist jedoch immer noch eine gängige Praxis, da es einfach und effektiv ist.
 
-## Tiefergehende Informationen
-
-Das `STDERR`-Objekt ist ein Teil der Standardbibliothek von Ruby und wird verwendet, um Fehlermeldungen und andere wichtige Nachrichten an den Standardfehlerausgabestrom zu senden. Es ist wichtig zu beachten, dass das Schreiben zu `STDERR` nicht das gleiche ist wie das Schreiben zu `STDOUT`, dem Standardausgabestrom.
-
-Im Allgemeinen wird empfohlen, Fehlermeldungen an den Standardfehlerausgabestrom zu schreiben, da er unabhängig vom Standardausgabestrom gehandhabt wird und somit wichtige Informationen nicht vom Programmoutput überschrieben werden.
-
-Eine weitere Möglichkeit, auf `STDERR` zuzugreifen, ist die Verwendung der `warn`-Methode. Diese Methode kann verwendet werden, um Warnungen und nicht-kritische Fehler an den Standardfehlerausgabestrom zu senden. Hier ist ein Beispiel:
-
-```Ruby
-warn "Benutzername ist zu kurz."
-```
-
-Dies wird eine Warnung im Standardfehlerausgabestrom ausgeben, die von anderen Ausgaben unterscheidbar ist.
-
-Es ist auch möglich, eigene benutzerdefinierte Klassen zu erstellen, die von `Exception` erben und dann mithilfe der `raise`-Methode Fehlermeldungen an `STDERR` senden können.
+Eine wichtige Sache zu beachten ist, dass das Schreiben von Standardfehlern auch die Leistung beeinflussen kann. Zu viele Fehlermeldungen auf dem Standardfehlerkanal können die gesamte Programmleistung verlangsamen.
 
 ## Siehe auch
+Hier sind einige hilfreiche Quellen, um mehr über das Schreiben von Standardfehlern in Ruby zu erfahren:
 
-- [Ruby Dokumentation zu STDERR](https://ruby-doc.org/core-3.0.2/STDERR.html)
-- [Ruby Dokumentation zu Exception](https://ruby-doc.org/core-3.0.2/Exception.html)
-- [Artikel über die Verwendung von STDERR in Ruby](https://www.rubyguides.com/2019/05/ruby-io/)
+- Offizielle Ruby-Dokumentation: https://ruby-doc.org/core-2.7.0/IO.html#method-i-puts
+- Medium Artikel von Michal Lipski: https://medium.com/@mlipski87/standard-output-vs-standard-error-a2298a6a23ba
+- Ruby Guides: https://www.rubyguides.com/2015/03/ruby-standard-error/

@@ -1,7 +1,7 @@
 ---
-title:                "Merkkijonojen poistaminen vastaavien kuvioiden perusteella."
-html_title:           "Haskell: Merkkijonojen poistaminen vastaavien kuvioiden perusteella."
-simple_title:         "Merkkijonojen poistaminen vastaavien kuvioiden perusteella."
+title:                "Mallia vastaavien merkkien poistaminen"
+html_title:           "Haskell: Mallia vastaavien merkkien poistaminen"
+simple_title:         "Mallia vastaavien merkkien poistaminen"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -10,43 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä & miksi?
 
-Oletko koskaan kohdannut tilanteen, jossa haluat poistaa tiettyjä merkkejä tekstistäsi? Ehkä haluat puhdistaa sisältöäsi tai filtteröidä tiettyjä sanoja. Kannattaa harkita Haskellin käyttöä tähän tehtävään.
+Haskellissa merkkijonojen käsittely on helppoa ja kätevää. Yksi hyödyllinen toiminto on poistaa merkkejä, jotka täsmäävät tiettyyn malliin. Tämä voi olla hyödyllistä esimerkiksi tekstin analysoinnissa tai tietynlaisen datan etsimisessä. Monet ohjelmoijat käyttävät tätä toimintoa puhdistaakseen dataa tai muokatakseen merkkijonoja tarvittavaan muotoon.
 
-## Kuinka
+## Kuinka tehdä:
 
-Näin poistat merkkejä vastaavat kaavan mukaiset merkit tekstistäsi:
-
-```Haskell
-delete :: Eq a => [a] -> [a] -> [a]
-delete _ [] = []
-delete [] ys = ys
-delete (x:xs) ys = delete xs (remove x ys)
-	where
-		remove :: Eq a => a -> [a] -> [a]
-		remove _ [] = []
-		remove x (y:ys) | x == y = remove x ys
-				| otherwise = y : remove x ys
-```
-
-Esimerkkituloste:
+Tässä on esimerkki siitä, kuinka voimme poistaa kaikki numerot sisältävät merkit merkkijonosta nimeltä "hae tuotteet". Tämä voidaan tehdä käyttämällä funktiota ```map```, joka suorittaa annetun funktion jokaiselle listan alkiolle.
 
 ```Haskell
-delete "a" "kissa" = "kiss"
-delete "aa" "kaakko" = "kko"
+removeNumbers string = map (\x -> if not (x `elem` ['0'..'9']) then x else ' ') string
+
+removeNumbers "hae tuotteet" -- Output: "hae tuotteet"
+removeNumbers "hae 123 tuotteet" -- Output: "hae tuotteet"
 ```
 
-## Syvemmällä
+## Syvemmälle:
 
-Tämä ratkaisu käyttää hyödyksi Haskellin tarjoamaa `delete`-funktiota, joka poistaa ensimmäisen esiintymän listassa. `remove`-funktio puolestaan käy läpi listan ja poistaa kaikki merkit, jotka vastaavat kaavaa.
+Historiallisesti Haskell on tunnettu puhtaasta funktionaalisesta ohjelmointityylistään, jolla on vahva tuki erilaisille tietorakenteille ja rekursiolle. Jos haluat oppia lisää funktionaalisesta ohjelmoinnista ja Haskellin ominaisuuksista, suosittelemme tutustumaan "Learn You a Haskell" -verkkosivustoon. Lisäksi voit käyttää myös muita funktioita, kuten ```filter``` ja ```foldl```, poistaaksesi merkkejä haluamallasi tavalla.
 
-`delete`-funktio ottaa vastaan kaksi listaa, ensimmäinen on merkit, jotka haluat poistaa ja toinen on tekstisi. Se kutsuu `remove`-funktiota jokaiselle ensimmäisen listan merkille ja palauttaa lopulta puhdistetun tekstin.
+## Katso myös:
 
-Jos haluat poistaa kaikki tietyn kaavan mukaiset merkit tekstistäsi, voit käyttää tätä funktiota yhdistettynä esimerkiksi `filter`-funktioon. Voit myös laajentaa tätä ratkaisua siten, että se poistaa esimerkiksi kaikki välimerkit tai isot kirjaimet.
-
-## Katso myös
-
-- [Haskellin dokumentaatio](https://www.haskell.org/documentation/)
-- [Haskellin opetusohjelmat](https://wiki.haskell.org/Tutorials)
-- [Haskellin virallinen sivusto](https://www.haskell.org/)
+- [Learn You a Haskell](http://learnyouahaskell.com/): Opettele Haskellin perusteet interaktiivisen oppaan avulla.
+- [Haskell-ohjelmointikieli](https://fi.wikipedia.org/wiki/Haskell): Tietoa Haskellista ja sen historiasta (on huomattava, että Wikipedia-artikkelit eivät ole parhaita lähteitä oppimiseen).

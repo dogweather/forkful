@@ -10,71 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que usar expressões regulares em C#?
+O que é e por que usar Expressões Regulares
 
-As expressões regulares são uma ferramenta poderosa e versátil para buscar e manipular padrões de texto em C#. Elas são especialmente úteis para encontrar e validar informações específicas em grandes quantidades de texto, tornando a programação mais eficiente e precisa.
+Expressões Regulares são padrões de texto usados para buscar, extrair e substituir informações em uma string. Programadores usam expressões regulares para realizar tarefas como validação de formato de entrada de dados, busca e filtro de informações em um texto e substituição de caracteres específicos.
 
-## Como usar expressões regulares em C#
-
-Para utilizar expressões regulares em C#, é necessário importar a biblioteca System.Text.RegularExpressions. A seguir, segue um exemplo de código para buscar o número de telefone em um texto:
-
+Como fazer:
 ```C#
+using System;
 using System.Text.RegularExpressions;
 
-// Texto de exemplo a ser buscado
-string texto = "Meu número de telefone é (555) 123-4567.";
+class Program {
+    static void Main() {
+        // Busca por um padrão específico em uma string
+        string texto = "Olá meu nome é João";
+        string padrao = "João";
+        Regex regex = new Regex(padrao);
+        Console.WriteLine(regex.IsMatch(texto)); //true
 
-// Expressão regular para buscar números de telefone
-string regex = @"\(\d{3}\) \d{3}-\d{4}";
-
-// Realizando a busca no texto e imprimindo o resultado
-Match resultado = Regex.Match(texto, regex);
-Console.WriteLine(resultado.Value); // Output: (555) 123-4567
+        // Substitui um padrão em uma string
+        string novoTexto = Regex.Replace(texto, "Olá", "Oi");
+        Console.WriteLine(novoTexto); //Oi meu nome é João
+    }
+}
 ```
 
-Neste exemplo, a expressão regular utilizada utiliza metacaracteres para encontrar um número de telefone no formato (XXX) XXX-XXXX. A seguir são listados alguns dos metacaracteres mais utilizados em expressões regulares em C#:
+Mergulho profundo:
 
-- `\d` para encontrar dígitos numéricos;
-- `\w` para encontrar caracteres alfanuméricos;
-- `\s` para encontrar espaços;
-- `.` para encontrar qualquer caractere;
-- `+` para encontrar uma ou mais ocorrências do caractere ou grupo anterior;
-- `*` para encontrar zero ou mais ocorrências do caractere ou grupo anterior;
-- `?` para encontrar zero ou uma ocorrência do caractere ou grupo anterior.
+Expressões Regulares têm suas raízes na teoria matemática dos autômatos finitos e suas aplicações práticas remontam à década de 1940. Elas são amplamente usadas em diferentes linguagens de programação e podem variar em sua sintaxe e recursos. Algumas alternativas para expressões regulares incluem o uso de funções de string específicas da linguagem, mas expressões regulares são frequentemente a maneira mais concisa e abrangente para manipular e extrair informações de uma string. A implementação de expressões regulares em C# é feita através do namespace System.Text.RegularExpressions.
 
-Existem muitos outros metacaracteres e opções que podem ser utilizados em expressões regulares em C#. É recomendado pesquisar e experimentar para entender melhor como eles funcionam.
-
-## Uma visão mais aprofundada sobre expressões regulares em C#
-
-As expressões regulares em C# também permitem o uso de grupos, que permitem agrupar partes da expressão e obter cada grupo separadamente. No exemplo anterior, podemos utilizar grupos para separar o código de área, número e prefixo do número de telefone.
-
-Para utilizar grupos, basta adicionar parênteses na expressão regular. Cada par de parênteses representa um grupo separado. Os grupos podem então ser acessados através da propriedade `Groups` do objeto `Match`.
-
-A seguir, segue um exemplo utilizando grupos para separar o código de área, número e prefixo do número de telefone encontrado anteriormente:
-
-```C#
-using System.Text.RegularExpressions;
-
-// Texto de exemplo a ser buscado
-string texto = "Meu número de telefone é (555) 123-4567.";
-
-// Expressão regular com grupos para busca de número de telefone
-string regex = @"\((\d{3})\) (\d{3})-(\d{4})";
-
-// Realizando a busca no texto
-Match resultado = Regex.Match(texto, regex);
-
-// Imprimindo os grupos encontrados
-Console.WriteLine(resultado.Groups[0]); // Output: (555) 123-4567
-Console.WriteLine(resultado.Groups[1]); // Output: 555
-Console.WriteLine(resultado.Groups[2]); // Output: 123
-Console.WriteLine(resultado.Groups[3]); // Output: 4567
-```
-
-Além disso, vale ressaltar que as expressões regulares em C# também possuem diversos métodos e propriedades úteis para trabalhar com padrões de texto, como `IsMatch()` para verificar se um texto contém um padrão, `Matches()` para retornar todas as ocorrências de um padrão em um texto, entre outros.
-
-## Veja também
-
-- [Documentação da classe Regex em C#](https://docs.microsoft.com/pt-br/dotnet/api/system.text.regularexpressions.regex?view=net-5.0)
-- [Expressões regulares em C# - Guia completo (em inglês)](https://www.regular-expressions.info/dotnet.html)
-- [Tutorial de expressões regulares em C# (em português)](https://www.devmedia.com.br/expressoes-regulares-como-utilizar-essa-ferramenta-de-busca-em-java/26704)
+Veja também:
+- Documentação oficial do C#: https://docs.microsoft.com/pt-br/dotnet/csharp/
+- Tutorial de expressões regulares em C#: https://www.tutorialspoint.com/csharp/csharp_regular_expressions.htm

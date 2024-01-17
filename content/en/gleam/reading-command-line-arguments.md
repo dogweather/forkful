@@ -10,46 +10,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why 
+## What & Why?
+Reading command line arguments is the process of retrieving information entered by a user in the command line interface. Programmers use this to allow users to provide specific instructions or input data to their programs at runtime. This helps make their programs more dynamic and customizable.
 
-Command line arguments are an essential aspect of programming, and understanding how to read them can greatly improve your efficiency and productivity as a programmer. In this article, we will delve into Gleam's methods for reading command line arguments, so you can confidently utilize them in your projects.
+## How to:
+To read command line arguments in Gleam, we can use the `os.args` function. This will return a list of strings, with each element representing a command line argument entered by the user. Let's see an example:
 
-## How To
-
-Reading command line arguments in Gleam is a simple process that can be broken down into three steps:
-
-1. First, we need to import the `gleam/io` package to access all the necessary functions. We can do this by adding the line `import gleam/io` to the top of our code.
-
-2. Next, we define a `main` function that will serve as the entry point of our code. Inside this function, we use the `gleam/io/args` function to retrieve the command line arguments. We can assign these arguments to a variable using the `let` keyword. 
-
-3. Finally, we can use the `gleam/io/stdout` function to print out the arguments to the terminal. This will allow us to see the arguments in action.
-
-Let's take a look at a basic example of reading command line arguments in Gleam:
-
-```
-import gleam/io
-
-fn main() {
-  let args = io.args()
-  io.stdout(args)
-}
+``` gleam
+// Retrieving command line arguments
+let args = os.args
 ```
 
-If we were to run this code with the command `Gleam hello world`, the output would be `["hello", "world"]`, which are the two arguments we passed in.
+If a user enters `gleam run program.gleam arg1 arg2`, the `args` list will contain `["arg1", "arg2"]`. We can then use these arguments in our program as needed.
 
-## Deep Dive
+## Deep Dive:
+Command line arguments have been a crucial aspect of programming since the early days of computing. They allow for more flexible and user-friendly programs, as users can provide input without having to modify the source code. Alternatives to reading command line arguments in Gleam include using environment variables or configuration files, but these may not be as convenient for users.
 
-Now that we have a basic understanding of how to read command line arguments in Gleam, let's dive deeper into the topic.
+In Gleam, the `os.args` function is implemented by the `gleam_stdlib.os` module, which utilizes the Erlang `init:get_plain_arguments()` function. This ensures proper handling of command line arguments, including quoting and escaping characters.
 
-Firstly, it's important to note that command line arguments are separated by spaces. This means that if we wanted to pass in a phrase as an argument, we would need to surround it with quotes. For example, `Gleam "hello world"` would pass in one argument of `"hello world"`.
-
-Additionally, Gleam offers various functions that allow us to manipulate and format the arguments in different ways. Some of these functions include `join`, `split`, and `map`.
-
-It's also worth mentioning that Gleam allows for optional arguments, which can be specified with a flag. These are typically preceded by a `--` and are used to perform specific actions or customize the program's behavior.
-
-Overall, understanding how to read command line arguments in Gleam is a valuable skill that can greatly enhance your programming abilities.
-
-See Also
-
-- [Gleam Documentation for command line arguments](https://gleam.run/book/intro.html#command-line-arguments)
-- [Gleam CLI repository](https://github.com/gleam-lang/gleam)
+## See Also:
+- [Official Gleam Documentation](https://gleam.run/book/embedding-the-vm.html#parsing-command-line-arguments)
+- [Erlang init:get_plain_arguments() documentation](https://erlang.org/doc/man/init.html#get_plain_arguments-0)

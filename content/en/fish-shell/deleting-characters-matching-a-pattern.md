@@ -10,23 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-If you're an avid user of Fish Shell, you may encounter situations where you need to delete certain characters that match a specific pattern. Whether it's to clean up messy data or make your code more efficient, mastering this skill can be incredibly useful in your daily programming tasks.
+## What & Why?
 
-## How To
-To delete characters matching a pattern in Fish Shell, you can use the `string replace` command. Let's say you have a string `hello123world` and you want to remove all numbers from it. The command would look like this:
+Deleting characters matching a pattern, also known as regular expression, is a powerful feature that allows programmers to manipulate text in a specific way. It helps in finding and manipulating multiple instances of characters in any given text, saving time and effort for programmers. 
 
-```Fish Shell
-string replace hello123world \d ''  
+## How to:
+
+Coding examples in Fish Shell: 
+
+```
+# To delete a specific character from a string
+set my_string "hello!"
+echo $my_string | tr -d 'l'
+# Output: heo!
+
+# To delete a range of characters from a string
+set my_string "hello!"
+echo $my_string | tr -d 'l-o'
+# Output: he!
+
+# To delete multiple instances of a character from a string
+set my_string "hello!"
+echo $my_string | tr -d 'l'
+# Output: heo!
+
+# To delete a specific pattern from a string
+set my_string "fish_shell_123"
+echo $my_string | tr -d '_[0-9]'
+# Output: fishshell
+
 ```
 
-The `\d` here represents the regex pattern for numbers, and the empty string `''` signifies that we want to replace it with nothing. The `replace` command will then output `helloworld` as the result.
+## Deep Dive:
 
-## Deep Dive
-For a more in-depth explanation, the `replace` command follows the syntax of `string replace INPUT REGEX SUBSTITUTION`, where INPUT is the original string, REGEX is the pattern you want to match, and SUBSTITUTION is what you want to replace it with. You can also use variations of the command, such as `string replace --count NUM`, which will only replace the first NUM occurrences, or `string replace --all`, which will replace all occurrences. Additionally, you can use the `replace-string` function to save the result to a variable for later use.
+- **Historical Context**: Regular expressions were first introduced by computer scientist Stephen Cole Kleene in the 1950s as a notation for describing patterns in formal language theory. They were later popularized by Unix tools such as grep, sed, and awk, and have since become an essential tool for text processing.
+- **Alternatives**: Other shell languages such as Bash and Zsh also have regular expression capabilities, but the syntax and functions might differ.
+- **Implementation details**: Fish Shell uses the tr command for its delete functionality. This command is short for "translate" and is used to delete or change characters in a given string according to the specified pattern.
 
-## See Also
-For more information on using Fish Shell, check out these helpful resources:
+## See Also:
 
-- [Official Fish Shell documentation](https://fishshell.com/docs/current/index.html)
-- [Learn X in Y minutes - Fish Shell](https://learnxinyminutes.com/docs/fish/)
+- [Fish Shell Official Website](https://fishshell.com/): For more information on Fish Shell, including installation and usage guides.
+- [Regular Expressions Tutorial](https://www.regular-expressions.info/tutorial.html): A comprehensive tutorial on regular expressions for beginners.
+- [Unix Shell Commands](https://www.maths.tcd.ie/~michal/UNIX.html): A list of common Unix shell commands, including tr.

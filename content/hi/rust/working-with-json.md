@@ -1,7 +1,7 @@
 ---
-title:                "JSON के साथ काम करना"
-html_title:           "Rust: JSON के साथ काम करना"
-simple_title:         "JSON के साथ काम करना"
+title:                "Json के साथ काम करना"
+html_title:           "Rust: Json के साथ काम करना"
+simple_title:         "Json के साथ काम करना"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Data Formats and Serialization"
@@ -10,52 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
+# JSON क्या है और इसे क्यों काम करते हैं? 
 
-रस्ट एक मौजूदा और अधिक भाषावादी भाषा है जो डीकोडिंग और एन्कोडिंग जैसे JSON डेटा को प्रसंस्करण करने के लिए शानदार है। हालांकि, अगर आप पहली बार रस्ट का उपयोग कर रहे हैं तो आपको JSON डेटा से सामने कई चुनौतियां आ सकती हैं।
+JSON (Javascript Object Notation) एक पॉपुलर डेटा फॉर्मेट है जो स्ट्रिंग, नंबर्स, बूलियन, विकल्प, एरे और ऑब्जेक्ट्स को संगठन और संचित करने के लिए इस्तेमाल किया जाता है। यह डेटा फॉर्मेट प्रोग्रामर्स को अपने प्रोग्राम से डेटा पढ़ने और उसे संशोधित करने की आसानी प्रदान करता है।
 
-## कैसे करें
+## कैसे करें: 
 
-{\```rust
-use serde_json::{Value, json};
+जब हम अपने रस्ट कोड में JSON डेटा को पार्स करना चाहते हैं, हम पहले serde_json पैकेज को अपनी डिपेंडेंसी में एड करते हैं। फिर हम डेटा को एक स्ट्रिंग में लोड करते हैं, उसे serde_json::from_str() फंक्शन के साथ डेकोड करते हैं और अपने डेकोड किए गए डेटा को उपयोग करते हैं। नीचे दिए गए उदाहरण में, हम एक JSON स्ट्रिंग को डेकोड करके उसमें दिए गए विकल्पों के मान को प्रिंट करते हैं। 
+
+```Rust
+use serde_json;
 
 fn main() {
-    // नए JSON वैल्यू बनाएं
-    let my_object = json!({
-        "name": "John",
-        "age": 25,
-        "favorite_fruit": "Mango"
-    });
-
-    // वैल्यू के अनुसार प्रिंट करें
-    println!("{:#?}", my_object);
-
-    // डेटा एक्सेस करें
-    println!("नाम: {}", my_object["name"]);
-    println!("उम्र: {}", my_object["age"]);
+    let data = r#"{"name":"John", "age":30, "is_programmer":true}"#;
+    let decoded: serde_json::Value = serde_json::from_str(data).unwrap();
+    
+    let name = decoded["name"].as_str().unwrap();
+    let age = decoded["age"].as_u64().unwrap();
+    let is_programmer = decoded["is_programmer"].as_bool().unwrap();
+    
+    println!("Name: {}", name);
+    println!("Age: {}", age);
+    if is_programmer {
+        println!("Is a programmer? Yes");
+    } else {
+        println!("Is a programmer? No");
+    }
 }
+```
 
-{\```
+आउटपुट: 
+```
+Name: John
+Age: 30
+Is a programmer? Yes
+```
 
-{\```bash
-OUTPUT:
-{
-    "name": "John",
-    "age": 25,
-    "favorite_fruit": "Mango"
-}
-नाम: John
-उम्र: 25
-{\```}
+## गहराई में जाएं: 
 
-## गहराई में जाएं
+JSON का इतिहास 1999 में डब्ल्यूएसडब्ल्यू कोलेन ने बनाया था। यह डेटा फॉर्मेट आसानी से समझने और लिखने के लिए छोटे से टेक्स्ट फाइलों पर आधारित था। कुछ अल्टरनेटिव्स हाल ही में आए हैं, जगह-जगह जो XML, बीएमपी, और टेक्स्ट फाइलों जैसे दूसरे डेटा फॉर्मेट प्रदान करते हैं। रस्ट में, हम इन डेटा फाइलों को पार्स करने के लिए serde पैकेज का भी इस्तेमाल कर सकते हैं। इसके अलावा, हम अपने अनुप्रयोग के आवश्यकतानुसार अपना सेरिलाइज़न और डिसिरियलाइज़ेशन भी कर सकते हैं। 
 
-जब आप JSON डेटा को प्रसंस्करण करते हैं, तो आपको सुनिश्चित करना होगा कि आपका JSON डेटा वैध है और उसमें कोई अनुमत विलंब नहीं है। सरल एफपीआई (API) के साथ काम करने के लिए, आपको विशेषकर JSON को सीरियलाइज और डीसीरियलाइज करना आवश्यक हो सकता है। आप सर्वोत्तम तरीके से यह करने के लिए serde अनुप्रयोग का उपयोग कर सकते हैं।
+## और जानें: 
 
-## और जानें
-
-यदि आप रस्ट में JSON डेटा के साथ काम करने के बारे में अधिक जानना चाहते हैं, तो इन लिंकों पर जाएं:
-
-- [serde डॉक्यूमेंटेशन](https://docs.rs/serde_json/1.0.65/serde_json/)
-- [Jaspy का रस्ट और JSON विकास](https://jaspy.dev/rust-and-json/)
-- [रस्ट में सीरियलाइज और डीसीरियलाइज करने का एक नमूना कोड](https://blog.logrocket.com/serializing-and-deserializing-json-in-rust-with-serde/)
+1. [Rust डॉक्यूमेंटेशन](https://www.rust-lang.org/learn) - रस्ट के ऑफिशियल डॉक्यूमेंटेशन के साथ सुरुवात करने के लिए यहां देखें। 
+2. [json.org](https://www.json.org/json-en.html) - जेसन का क्यों-कैसे और उसके डिज़ाइन पर अधिक जानने के लिए आधिकारिक साइट पर जाएं। 
+3. [serde_json डॉक्यूमेंटेशन](https://docs.rs/serde_json/

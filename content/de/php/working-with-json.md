@@ -10,65 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+# Was & Warum?
 
-Wenn du regelmäßig mit Daten in deinen PHP-Projekten arbeitest, bist du wahrscheinlich schon auf das Format JSON (JavaScript Object Notation) gestoßen. JSON ist ein leicht verständliches und platzsparendes Format, das perfekt für die Übertragung von Daten zwischen Client und Server geeignet ist. In diesem Artikel erklären wir dir, warum es sich lohnt, sich mit JSON in PHP zu beschäftigen.
+JSON, kurz für "JavaScript Object Notation", ist ein Datenformat, das häufig von Programmierern verwendet wird, um strukturierte Daten auszutauschen. Es ist im Wesentlichen eine einfache Textdarstellung von Objekten und Arrays, die von verschiedenen Programmiersprachen unterstützt wird. Das formatierte und lesbarer menschlicher Programmierstil macht es zu einer beliebten Wahl für den Austausch von Daten zwischen Servern und Clients.
 
-## Wie geht das?
+## Wie man:
 
-Die Verarbeitung von JSON in PHP ist sehr einfach und intuitiv. Wir verwenden dazu die Standardfunktionen `json_encode()` und `json_decode()`. `json_encode()` wandelt eine PHP-Variable in das JSON-Format um, während `json_decode()` das JSON in eine PHP-Variable umwandelt.
+Der einfachste Weg, mit JSON in PHP zu arbeiten, ist durch die Verwendung von integrierten Funktionen wie `json_encode()` und `json_decode()`. Zum Beispiel:
 
 ```PHP
-// Beispiel JSON-Daten
-$json_data = '{"name": "Max Mustermann", "age": 25, "hobbies": ["lesen", "Musik hören"]}';
+// Ein Array erstellen
+$array = ["Name" => "Peter", "Alter" => 25, "Hobby" => "Fußball"];
 
-// Umwandeln von JSON in ein Array
-$array = json_decode($json_data);
+// Datensatz in JSON konvertieren
+$json = json_encode($array);
 
-// Ausgabe des Namens
-echo "Name: " . $array["name"]; // Ausgabe: Name: Max Mustermann
+// JSON wieder in ein Array umwandeln
+$newArray = json_decode($json);
 
-// Hinzufügen eines neuen Hobbys
-$array["hobbies"][] = "Fotografieren";
-
-// Umwandeln von Array in JSON
-$json_data = json_encode($array);
+// Ausgabe des neuen Arrays lesen
+var_dump($newArray);
 ```
 
-## Tiefer Einblick
+Die Ausgabe sollte folgendes enthalten:
 
-Neben dem Umwandeln von Daten bietet PHP auch die Möglichkeit, direkt mit JSON-Dateien zu arbeiten. Mit der Funktion `file_get_contents()` können wir den Inhalt einer JSON-Datei in eine Variable laden und sie mit `json_decode()` in ein PHP-Array umwandeln.
-
-Eine besondere Stärke von JSON in PHP ist die Unterstützung von assoziativen Arrays. Durch die Verwendung von `json_decode()` mit dem zweiten Parameter `true` können wir JSON-Daten direkt in assoziative Arrays umwandeln.
-
-```PHP
-// Beispiel JSON-Datei
-{
-    "name": "Lisa Müller",
-    "age": 30,
-    "hobbies": ["Malen", "Reisen"]
+```
+array(3) {
+  ["Name"]=>
+  string(5) "Peter"
+  ["Alter"]=>
+  int(25)
+  ["Hobby"]=>
+  string(8) "Fußball"
 }
-
-// Laden der JSON-Datei
-$json_data = file_get_contents("data.json");
-
-// Umwandeln in assoziatives Array
-$array = json_decode($json_data, true);
-
-// Ausgabe des Alters
-echo "Alter: " . $array["age"]; // Ausgabe: Alter: 30
-
-// Hinzufügen eines neuen Hobbys
-$array["hobbies"][] = "Tanzen";
-
-// Umwandeln von Array in JSON
-$json_data = json_encode($array);
 ```
 
-Zusätzlich bietet PHP auch die Möglichkeit, die Struktur von JSON-Daten zu validieren, um sicherzustellen, dass sie den Anforderungen entspricht. Hierfür können wir die Funktion `json_last_error()` verwenden, die uns den Fehlercode der letzten JSON-Aktion zurückgibt.
+## Tiefer tauchen:
 
-## Siehe auch
+JSON wurde erstmals 2001 von Douglas Crockford eingeführt und hat sich seitdem zu einem der am häufigsten verwendeten Datenformate entwickelt. Es hat auch Alternativen wie XML und YAML, aber JSON ist aufgrund seiner einfachen Struktur und der Unterstützung durch viele Programmiersprachen sehr beliebt.
 
-- [Offizielle PHP-Dokumentation zu JSON](https://www.php.net/manual/de/book.json.php)
-- [JSON - Eine Einführung von MDN Web Docs](https://developer.mozilla.org/de/docs/Learn/JavaScript/Objects/JSON)
-- [JSON in PHP von jQuery Rain](https://www.jqueryrain.com/2017/09/json-php-jQuery/)
+Um die Leistung beim Codieren und Decodieren großer JSON-Datenmengen zu verbessern, gibt es auch Erweiterungen wie JSON-PHP und Jansson. Diese können verwendet werden, um Daten in einem effizienteren Speicherformat zu verarbeiten und so die Verarbeitungsgeschwindigkeit zu erhöhen.
+
+## Siehe auch:
+
+- Offizielle PHP-Dokumentation zu JSON: https://www.php.net/manual/en/book.json.php
+- JSON.org: https://www.json.org/
+- Douglas Crockfords Seite zu JSON: https://www.crockford.com/mckeeman.html

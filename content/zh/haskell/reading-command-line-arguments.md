@@ -10,65 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 为什么
+## 什么是读取命令行参数以及为什么程序员要这样做？
 
-在编写命令行程序时，读取命令行参数是一个非常常见的需求。通过阅读本文，您将学习如何使用Haskell语言来读取命令行参数，并且可以在您的项目中实践这一技巧。
+读取命令行参数是指程序能够提取用户在命令行中输入的信息，并在程序中使用这些参数。程序员经常需要这样做，因为这样可以使程序更加灵活和可配置，用户可以通过命令行来修改程序的行为。
 
-# 如何操作
+## 如何实现：
 
-首先，我们需要导入System.Environment模块，它包含了许多有用的函数来操作命令行参数。
+Haskell提供了一个标准库函数```getArgs```，可以用来读取命令行参数。下面是一个示例代码，它会打印出用户输入的所有参数：
 
-```Haskell
-import System.Environment 
+``` Haskell
+import System.Environment
+
+main = do
+  args <- getArgs
+  print args
 ```
 
-接下来，我们可以使用getArgs函数来读取命令行参数，并将它们存储为一个列表。
+假设在命令行中输入以下命令： ```runhaskell demo.hs hello world```
 
-```Haskell
-args <- getArgs 
-```
+程序的输出结果将会是： ```["hello", "world"]```
 
-通过索引访问列表中的参数。
+## 深入了解：
 
-```Haskell
-let firstArg = args !! 0       -- 访问第一个参数
-let secondArg = args !! 1      -- 访问第二个参数
-```
+读取命令行参数的概念起源于早期的计算机操作系统，它允许用户通过命令行来控制程序的行为。除了Haskell提供的```getArgs```函数，其他语言也提供了相似的功能，例如Python中的```sys.argv```和Java中的```String[] args```。
 
-如果需要，也可以将参数转换为其他类型，比如Int。
+除了使用命令行参数，程序员还可以通过其他方式来实现程序的配置，比如读取配置文件或者使用环境变量。然而，命令行参数通常是最直接和简单的方法，因此被广泛使用。
 
-```Haskell
-let num = read firstArg :: Int -- 将第一个参数转换为Int类型
-```
+## 相关阅读：
 
-现在，让我们来观察一下完整的代码，并打印出读取到的参数。
-
-```Haskell
-import System.Environment 
-
-main = do 
-  args <- getArgs 
-  putStrLn "读取到的参数为：" 
-  print args 
-```
-
-样例输出：
-
-```
-读取到的参数为：["Hello", "World"]
-```
-
-# 深入了解
-
-除了getArgs函数，还有一些其他有用的函数可以帮助我们读取和处理命令行参数。比如，我们可以使用getProgName函数来获取当前执行的程序的名称。
-
-另外，我们还可以使用System.Environment中的一些函数来操作环境变量。
-
-# 参考链接
-
-- https://hackage.haskell.org/package/base-4.14.0.0/docs/System-Environment.html
-- https://www.tutorialspoint.com/haskell/haskell_command_line_arguments.htm
-
-# 参见
-
-- [Haskell官方文档](https://www.haskell.org/documentation/)
+- [Haskell标准库文档](https://hackage.haskell.org/package/base/docs/System-Environment.html)
+- [Python文档：Command line and environment](https://docs.python.org/3/using/cmdline.html)
+- [Java文档：Main method and command-line arguments](https://docs.oracle.com/javase/tutorial/essential/environment/cmdLineArgs.html)

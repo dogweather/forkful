@@ -1,7 +1,7 @@
 ---
-title:                "Å laste ned en nettside"
-html_title:           "Arduino: Å laste ned en nettside"
-simple_title:         "Å laste ned en nettside"
+title:                "Laste ned en nettside"
+html_title:           "Arduino: Laste ned en nettside"
+simple_title:         "Laste ned en nettside"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "HTML and the Web"
@@ -10,72 +10,83 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hva & Hvorfor?
+Nedlasting av en nettside betyr å hente informasjon fra en nettside og bruke den i koden din. Dette er nyttig for å få tilgang til og behandle data fra eksterne kilder. 
 
-Å kunne laste ned en nettside kan være nyttig for å få tilgang til informasjon eller for å automatisere en prosess som krever nettverkskommunikasjon. Det kan også være en del av et større prosjekt eller eksperiment med Arduino.
+Programmerere gjør dette for å få tilgang til og behandle data fra nettsider, som kan brukes til å lage interaktive prosjekter eller hente nyttig informasjon for å forbedre deres kodingsarbeid. 
 
-## Hvordan
-
-Å laste ned en nettside med Arduino kan gjøres ved hjelp av en Ethernet-skjold eller en Wi-Fi-modul. Først må du koble til internett og deretter bruke et program som heter "Client" for å åpne en forbindelse til nettsiden og lese dataene. Deretter kan du lagre disse dataene og behandle dem videre etter behov.
-
-Vi kan ta en titt på et enkelt eksempel for å laste ned en nettside og lagre den i en strengvariabel:
-
+# Hvordan:
+Eksempel på kode for å laste ned en nettside og skrive ut innholdet:
 ```Arduino
-#include <Ethernet.h> 
-// Initialiser Ethernet-skjoldet
+#include <WiFi.h>
+#include <WiFiClient.h>
+#include <WiFiMulti.h>
+#include <HTTPClient.h>
 
-byte server[] = { 192, 168, 1, 1 }; 
-// Dette er IP-adressen til den nettsiden du vil laste ned
+// Vær sikker på å endre SSID og passord til ditt eget nettverk
+const char* ssid = "ditt_wifi_navn";
+const char* password = "ditt_wifi_passord";
 
-char result[256]; 
-// Opprett en strengvariabel for å lagre dataene
+WiFiMulti wifiMulti;
+WiFiClient client;
+HTTPClient http;
 
-void setup() { 
-  // Sett opp Ethernet-tilkoblingen
+void setup() {
+  Serial.begin(115200);
 
-  Ethernet.begin(mac, ip); 
+  // Koble til Wi-Fi
+  wifiMulti.addAP(ssid, password);
+  Serial.println("Kobler til Wi-Fi...");
+  while (wifiMulti.run() != WL_CONNECTED) {
+    Serial.print(".");
+    delay(500);
+  }
+  Serial.println();
+  Serial.println("Koblet til Wi-Fi!");
 
-  Serial.begin(9600); 
-  // Konfigurer seriel port for å kunne skrive til Serial Monitor
-
-  delay(1000); 
-  // Vent i 1 sekund for at tilkoblingen skal etableres
+  // Koble til nettsiden
+  http.begin(client, "http://nettsted.no"); // Endre URL-en til nettsiden du vil laste ned
+  int httpCode = http.GET();
+  if (httpCode > 0) {
+    Serial.println("Nettside lastet ned:");
+    String payload = http.getString();
+    Serial.println(payload);
+  }
+  http.end();
 }
 
 void loop() {
-  // Åpne forbindelsen til nettsiden og les dataene
-
-  EthernetClient client;
-  if (client.connect(server, 80)) {
-    Serial.println("Koblet til nettstedet!");
-    client.println("GET / HTTP/1.1");
-    client.println("Host: www.example.com");
-    client.println("Connection: close");
-    client.println();
-  }
-
-  // Skrive dataene til strengen variabel
-  while(client.available()) {
-    int len = client.read((uint8_t*)result, 255);
-    result[len] = '\0';
-  }
-
-  // Skriv ut dataene til Serial Monitor
-  Serial.println("Data fra nettsiden: ");
-  Serial.println(result);
+  // Din kode her
 }
 ```
 
-Nå vil du kunne se utdataene fra nettsiden i Serial Monitor vinduet.
+Eksempel på utdata fra koden ovenfor:
+```
+Kobler til Wi-Fi...
+Koblet til Wi-Fi!
+Nettside lastet ned:
+<!DOCTYPE html>
+<html>
+<head>
+<title>Min nettside</title>
+</head>
+<body>
+<h1>Velkommen til min nettside!</h1>
+<p>Her finner du nyttig informasjon om programmering og Arduino.</p>
+</body>
+</html>
+```
 
-## Dypdykk
+# Nærere Undersøk:
+## Historisk Kontekst:
+Nedlasting av nettsider har blitt mye enklere med utviklingen av Wi-Fi-moduler og biblioteker som støtter HTTP-tilkoblinger. Tidligere måtte programmerere implementere komplekse protokoller som TCP eller UDP for å få tilgang til nettsider.
 
-Det finnes flere metoder for å laste ned en nettside med Arduino, og dette eksempelet bare viser en enkel måte å gjøre det på. Det er også viktig å merke seg at noen nettsider krever autentisering eller spesifikke formater for forespørsler, så du må kanskje tilpasse koden basert på dette.
+## Alternativer:
+I stedet for å laste ned en hel nettside, kan du også bruke API-er for å få tilgang til spesifikk data på nettsider. Dette kan være mer effektivt og kreve mindre dataoverføring.
 
-Det er også verdt å nevne at du ikke bør laste ned store nettsider eller store mengder data med Arduino, da det kan påvirke ytelsen til enheten.
+## Implementeringsdetaljer:
+Denne koden bruker WiFi-, WiFiClient- og HTTPClient-biblioteker for å koble til og laste ned nettsiden. Det er viktig å sørge for at bibliotekene er riktig installert og inkludert i koden din for å unngå feil.
 
-## Se også
-
-- [Arduino Ethernet Bibliotek](https://www.arduino.cc/en/Reference/Ethernet)
-- [Arduino Wi-Fi Bibliotek](https://www.arduino.cc/en/Reference/WiFi)
-- [W3Schools HTTP Protokoll Tutorial](https://www.w3schools.com/whatis/whatis_http.asp)
+# Se Også:
+- [WiFi Biblioteket for Arduino](https://www.arduino.cc/en/Reference/WiFi)
+- [HTTP Biblioteket for Arduino](https://arduinogetstarted.com/tutorials/arduino-http-client-library)

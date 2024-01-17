@@ -1,7 +1,7 @@
 ---
-title:                "Analyse de HTML"
-html_title:           "TypeScript: Analyse de HTML"
-simple_title:         "Analyse de HTML"
+title:                "Analyse de l'html"
+html_title:           "TypeScript: Analyse de l'html"
+simple_title:         "Analyse de l'html"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "HTML and the Web"
@@ -10,47 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
-Vous êtes peut-être un développeur web en herbe qui souhaite concevoir un site web dynamique en utilisant Angular ou React. Ou peut-être êtes-vous un développeur chevronné à la recherche d'une solution plus efficace pour extraire des données spécifiques d'une page web. Dans les deux cas, l'analyse de HTML peut être un outil précieux pour atteindre votre objectif.
+## Qu'est-ce que le parsing HTML et pourquoi les programmeurs le font-ils?
 
-## Comment faire
-```TypeScript
-// Importer le module 'cheerio' pour l'analyse de HTML
-import * as cheerio from 'cheerio';
+Le parsing HTML est le processus de lecture et d'analyse d'un document HTML pour le transformer en une structure de données utilisable par un programme informatique. Les programmeurs utilisent le parsing HTML pour extraire des informations spécifiques d'une page Web, telles que des titres, des images ou du texte, afin de les utiliser pour des besoins ultérieurs tels que la création de sites dynamiques.
 
-// Définir le code HTML à analyser
-const html = `
-<html>
-  <body>
-    <h1>Titre</h1>
-    <p>Paragraphe</p>
-    <ul>
-      <li>Élément 1</li>
-      <li>Élément 2</li>
-      <li>Élément 3</li>
-    </ul>
-  </body>
-</html>
-`;
+## Comment faire:
 
-// Charger le code HTML dans Cheerio
-const $ = cheerio.load(html);
+```TypeScript 
+// Importation de la bibliothèque de parsing HTML dans TypeScript
+import { parseHTML } from 'HTMLParser';
 
-// Utiliser des sélecteurs CSS pour extraire les données
-const titre = $('h1').text(); // Renvoie "Titre"
-const paragraphe = $('p').text(); // Renvoie "Paragraphe"
-const elements = $('li').map((i, el) => $(el).text()).get(); // Renvoie un tableau avec les éléments 1, 2 et 3
+// Définition de la chaîne HTML à parser
+let htmlString = "<h1>Titre de la page</h1><p>Paragraphe de contenu</p>";
 
-// Afficher les résultats
-console.log(titre); // Titre
-console.log(paragraphe); // Paragraphe
-console.log(elements); // ['Élément 1', 'Élément 2', 'Élément 3']
+// Utilisation de la fonction parseHTML pour extraire les balises et le contenu
+let parsedHTML = parseHTML(htmlString);
+
+// Accès aux balises et au contenu
+let title = parsedHTML.tags[0].content;
+let paragraph = parsedHTML.tags[1].content;
+
+console.log(title); // Titre de la page
+console.log(paragraph); // Paragraphe de contenu
 ```
 
-## Plongée en profondeur
-L'analyse de HTML utilise des sélecteurs CSS pour extraire les données d'un document HTML en utilisant la bibliothèque Cheerio. Ces sélecteurs peuvent cibler des éléments spécifiques avec des attributs, des classes, des balises et même des combinaisons de ces sélecteurs. Cela se révèle très utile lorsqu'il s'agit d'extraire des données d'une page web complexe et de les utiliser dans votre application.
+## Plongée en profondeur:
 
-## Voir aussi
-- [Documentation officielle de Cheerio](https://cheerio.js.org/)
-- [Guide pour débuter avec TypeScript](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html)
-- [Utiliser TypeScript avec Angular](https://angular.io/guide/typescript-configuration)
+Le parsing HTML a évolué depuis les premiers jours du World Wide Web et est devenu un élément essentiel du développement Web moderne. Les programmeurs peuvent utiliser différentes bibliothèques et outils pour parser le HTML, tels que jQuery ou AngularJS. Le parsing HTML peut également être réalisé côté serveur avec des langages tels que PHP ou Python.
+
+## Voir aussi:
+
+- [Introduction au parsing HTML avec TypeScript](https://www.typescriptlang.org/docs/handbook/htmlparser.html)
+- [jQuery - méthode de parsing HTML](https://api.jquery.com/jquery.parsehtml/)
+- [AngularJS - fonction de parsing HTML](https://docs.angularjs.org/api/ng/service/$sce/html)

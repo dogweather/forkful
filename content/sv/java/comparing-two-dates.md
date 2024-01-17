@@ -1,7 +1,7 @@
 ---
-title:                "Jämföring av två datum"
-html_title:           "Java: Jämföring av två datum"
-simple_title:         "Jämföring av två datum"
+title:                "Jämförelse av två datum"
+html_title:           "Java: Jämförelse av två datum"
+simple_title:         "Jämförelse av två datum"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Dates and Times"
@@ -10,49 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
-Det finns många anledningar till varför man kan vilja jämföra två datum i Java. Det kan vara för att kontrollera om ett datum är större, mindre eller lika med ett annat, eller för att jämföra hur lång tid som gått mellan två datum.
+## Vad är det och varför?
+Dagens programmeringsvärld är full av data och information som måste hanteras och jämföras. Ett vanligt problem är att jämföra två olika datum för att se om de är lika eller olika. Detta är ett grundläggande koncept inom programmering som hjälper till att organisera och manipulera datumuppgifter.
 
-## Hur man gör
-För att jämföra två datum i Java, används metoden `compareTo()` som finns tillgänglig i klassen `Date`. Den här metoden jämför råa värden från två datum och returnerar en negativ, noll eller positiv siffra beroende på om det första datumet är före, samma eller efter det andra datumet.
+## Hur man gör:
+För att jämföra två datum i Java, behöver du använda metoden "compareTo" från klassen "Date". Detta gör att du kan jämföra två datum och få en returvärde som indikerar deras förhållande till varandra.
 
-Här är ett exempel på hur man jämför två datum:
 ```Java
-import java.util.Date;
+Date date1 = new Date(21/01/2021);
+Date date2 = new Date(20/01/2021);
 
-public class CompareDates {
+int comparison = date1.compareTo(date2);
 
-    public static void main(String[] args) {
-        
-        // Skapa två Date-objekt
-        Date date1 = new Date(2020, 10, 15);
-        Date date2 = new Date(2020, 5, 30);
-        
-        // Jämför de två datum
-        int result = date1.compareTo(date2);
-        
-        // Skriv ut resultatet
-        if (result < 0) {
-            System.out.println("date1 är tidigare än date2");
-        } else if (result > 0) {
-            System.out.println("date2 är tidigare än date1");
-        } else {
-            System.out.println("date1 och date2 är samma datum");
-        }
-    }
+if(comparison == 0){
+	System.out.println("Date1 är lika med Date2");
+}
+else if(comparison > 0){
+	System.out.println("Date1 är senare än Date2");
+}
+else{
+	System.out.println("Date1 är tidigare än Date2");
 }
 ```
 Output:
 ```
-date1 är efter date2
+Date1 är senare än Date2
 ```
-## Djupdykning
-När man jämför datum i Java är det viktigt att förstå skillnaden mellan klasserna `Date`, `Calendar` och `LocalDate`. Klasserna `Date` och `Calendar` är äldre och har vissa begränsningar, som att de inte är trådsäkra och inte har stöd för dagligt sparande av sommartid. Därför rekommenderas det att använda den nya klassen `LocalDate` för att jämföra datum.
 
-En annan viktig sak att tänka på när man jämför datum i Java är att det kan finnas skillnader i hur datum representeras på datorer med olika tidszoner. För att undvika förvirring bör man använda metoden `setTimeZone()` för att ställa in önskad tidszon innan man jämför datum.
+## Djupdykning:
+Jämförelsen av datum i programmering har funnits sedan början av datorer. Detta koncept är grunden för många andra datumrelaterade funktioner och har utvecklats över tid. Det finns även alternativa metoder för att jämföra datum, såsom att konvertera dem till millisekunder och sedan jämföra dessa värden.
 
-## Se även
-Här är några länkar till andra resurser som kan vara användbara när man jobbar med att jämföra datum i Java:
-- Oracle Java dokumentation: https://docs.oracle.com/javase/8/docs/api/java/util/Date.html#compareTo-java.util.Date-
-- Javatpoint tutorial: https://www.javatpoint.com/java-date-compareto-method
-- JavaWorld article: https://www.javaworld.com/article/2074803/core-java/when-to-use-compareto--equals---and-equalsignorecase-.html
+Det är viktigt att notera att "compareTo" inte är begränsad till endast datum. Det kan också användas för att jämföra andra typer av data, såsom stringar och numeriska värden, vilket gör det till ett allmänt användbart verktyg.
+
+## Se också:
+För mer information om date manipulation och andra användbara Java-metoder, kolla in följande länkar:
+
+- [Java Date Class](https://www.w3schools.com/java/java_date.asp)
+- [Oracle Documentation for Date Comparison](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html#compareTo-java.util.Date-)

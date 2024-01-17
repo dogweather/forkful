@@ -1,7 +1,7 @@
 ---
-title:                "Konwertowanie ciągu znaków na małe litery"
-html_title:           "Bash: Konwertowanie ciągu znaków na małe litery"
-simple_title:         "Konwertowanie ciągu znaków na małe litery"
+title:                "Konwersja ciągu znaków na małe litery"
+html_title:           "Bash: Konwersja ciągu znaków na małe litery"
+simple_title:         "Konwersja ciągu znaków na małe litery"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Strings"
@@ -10,40 +10,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co & dlaczego?
+Zamiana ciągu znaków na małe litery jest procesem, w którym wszystkie litery w ciągu zostają zamienione na ich odpowiedniki w małych literach. Programiści często wykonują tę czynność w celu ujednolicenia danych oraz ułatwienia ich przetwarzania.
 
-Konwertowanie ciągu znaków na małe litery może być bardzo przydatne podczas pisania skryptów w Bashu. Pozwala to na ujednolicenie danych wejściowych oraz ułatwia wyszukiwanie i porównywanie tekstów.
-
-## Jak to zrobić
-
+## Jak to zrobić:
 ```Bash
-# Przykładowy skrypt konwertujący wszystkie litery na małe
-#!/bin/bash
+# Przykładowy ciąg znaków
+myString="PRZYKŁADOWY CIĄG ZNAKÓW"
 
-# Wczytanie ciągu znaków z klawiatury przez użytkownika
-read -p "Wpisz ciąg znaków: " input
+# Zamiana na małe litery
+echo ${myString,,}
 
-# Wykorzystanie komendy tr do zamiany wielkich liter na małe
-echo "$input" | tr '[:upper:]' '[:lower:]'
+# Wynik: przykładowy ciąg znaków
 ```
 
-**Przykładowe wyjście:**
+## Na głębsze wody:
+Początki zmiany ciągu znaków na małe litery sięgają lat 60., kiedy to powstał system operacyjny Unix. Wcześniej, wyłącznie wielkie litery były używane w programowaniu, co utrudniało czytanie i edycję kodu. Alternatywą dla zamiany ciągu na małe litery jest użycie funkcji "tr", jednak nie jest to zalecane w przypadku bardziej skomplikowanych zadań. Implementacja w Bash wykorzystuje funkcję "parameter expansion" oraz "pattern substitution".
 
-```
-> Wpisz ciąg znaków: PRZYkłADowY TEksT
-przykładowy tekst
-```
-
-**Uwagi dotyczące kodu:**
-
-- W powyższym przykładzie wykorzystano operator `|` do przekierowania danych z echo do komendy tr.
-- Warto zauważyć, że komenda tr jest niezmienna, co oznacza, że ​​jeśli zostanie przekazany ciąg znaków zawierający już tylko małe litery, wynik zostanie zwrócony bez zmian.
-
-## Dalej
-
-Konwertowanie ciągu znaków na małe litery jest możliwe także przy użyciu innych poleceń, takich jak `awk` lub `sed`. Dodatkowo, można również wykorzystać wcięcia i pętle w celu stworzenia bardziej zaawansowanych skryptów konwertujących tekst.
-
-## Zobacz także
-
-- [Dokumentacja Bash](https://www.gnu.org/software/bash/manual/bash.pdf)
-- [Poradnik po polsku dotyczący skryptów w Bashu](http://www.bash.bash.pl/)
+## Zobacz również:
+- [Parameter Expansion](https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html)
+- [Pattern Substitution](https://www.gnu.org/software/bash/manual/html_node/Pattern-Matching.html#Pattern-Matching)

@@ -1,7 +1,7 @@
 ---
-title:                "Utskrift av felsökningsutdata"
-html_title:           "C: Utskrift av felsökningsutdata"
-simple_title:         "Utskrift av felsökningsutdata"
+title:                "Utskrift av felsökningsutmatning"
+html_title:           "C: Utskrift av felsökningsutmatning"
+simple_title:         "Utskrift av felsökningsutmatning"
 programming_language: "C"
 category:             "C"
 tag:                  "Testing and Debugging"
@@ -10,47 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+# Debugutskrift i C-programmering
 
-Att skriva ut felmeddelanden och debuggingutdata är ett viktigt verktyg för att hitta buggar och förbättra programkod. Utan att visa vad som händer i koden kan det vara svårt att förstå var problemet ligger.
+## Vad & Varför?
+Debugutskrift är en metod för att lägga till extra kod i ditt C-program för att få ut utskrifter av variabler eller viktiga steg i koden under körning. Detta är ett vanligt sätt för programmerare att felsöka och förstå vad som händer i programmet.
 
-## Hur man gör det
+## Så här gör du:
+För att lägga till utskrifter i ditt C-program, använd `printf()` funktionen. Du kan skriva ut text eller värden av variabler genom att inkludera dem inuti citattecken eller genom att använda speciella konverterare (%d, %f, osv.) för variabler.
 
-Att skriva ut felmeddelanden och debuggingutdata är enkelt i C-språket. Här är ett exempel på en funktion som skriver ut ett meddelande:
-
-```C
-void print_error(char* message) {
-    printf("Error: %s\n", message);
-}
-```
-
-För att använda denna funktion i koden kan man bara skicka ett meddelande som argument:
+Till exempel, om du vill skriva ut värdet av variabeln `x`, kan du skriva:
 
 ```C
-print_error("The program has encountered an error.");
+printf("x = %d\n", x);
 ```
 
-Detta kommer att skriva ut "Error: The program has encountered an error." på skärmen när koden körs.
+Detta kommer att skriva ut värdet av `x` följt av en radbrytning.
 
-Det är också möjligt att skriva ut värden på variabler för att få mer detaljerad utdata. Till exempel:
+## Djupdykning:
+Printing debug output är ett vanligt sätt att felsöka i C-programmering eftersom det är enkelt att implementera och ge en ögonblicksbild av variabler och koden. Alternativ till att använda `printf()` inkluderar att använda en debugger eller att logga utskrifter till en fil.
 
-```C
-int age = 25;
-printf("My age is %d years old.\n", age);
-```
+När du lägger till debugutskrifter i din kod, se till att ta bort dem när du är klar med felsökningen, annars kan det påverka prestandan av ditt program.
 
-Detta kommer att skriva ut "My age is 25 years old." på skärmen. Genom att använda olika formatkonverterare kan man skriva ut olika typer av variabler som t.ex. float, char eller string.
-
-## Djupdykning
-
-Att använda funktionen printf() är det vanligaste sättet att skriva ut debuggingutdata i C. Men det finns också andra sätt att göra det på, som t.ex. att använda funktionen fprintf() för att skriva ut till en fil istället för till skärmen.
-
-Det finns också speciella debuggingverktyg som kan användas för att visa utdata på ett mer överskådligt sätt. Till exempel kan man använda gdb (GNU Debugger) för att stega igenom koden och se värdet på olika variabler vid olika punkter.
-
-Att skriva ut debuggingutdata bör göras med omsorg, eftersom det kan påverka prestandan hos programmet. Se till att endast skriva ut det som är nödvändigt och ta bort utskrifter när de inte längre behövs.
-
-## Se även
-
-- [The Art of Debugging](https://www.amazon.com/Art-Debugging-GDB-DDD-Linux/dp/159327002X)
-- [Debugging with GDB](https://www.gnu.org/software/gdb/)
-- [Fprintf() function in C](https://www.geeksforgeeks.org/fprintf-in-c/#:~:text=fprintf()%20function%20in%20C%20language%20writes%20formatted%20data%20to,det.&text=Declaration%20of%20fprintf(),-int%20fprintf%28FILE%20*stream%2C%20const%20char%20*format%2C%20%2E%2E%2E%29)
+## Se även:
+- [De olika formateringskonverterarna i C](https://www.tutorialspoint.com/c_standard_library/c_function_printf.htm)
+- [Introduktion till felsökning i C](https://www.geeksforgeeks.org/cpp-debugging-tips/)
+- [C debuggin verktyg](https://www.thegeekstuff.com/2010/03/debug-c-program-using-gdb/)

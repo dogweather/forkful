@@ -10,62 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co & Dlaczego?
+Sprawdzanie, czy katalog istnieje, jest procesem, którego używają programiści do upewnienia się, czy dany katalog faktycznie istnieje. Jest to ważne, ponieważ programy często muszą operować na istniejących katalogach lub tworzyć nowe, w zależności od potrzeb. Wiele funkcji w języku C++ wymaga, aby użytkownik podał poprawną ścieżkę do katalogu, więc upewnienie się, że dany katalog istnieje jest niezbędne.
 
-Sprawdzanie, czy dany katalog istnieje, jest ważnym aspektem programowania w języku C++, ponieważ pozwala nam na bezpieczne i efektywne zarządzanie plikami i katalogami w naszych programach. Dzięki temu możemy uniknąć niepożądanych błędów i upewnić się, że nasz program działa poprawnie.
-
-## Jak to zrobić
-
-Aby sprawdzić, czy dany katalog istnieje w naszym programie C++, możemy skorzystać z funkcji `std::filesystem::exists()` z biblioteki `<filesystem>`. Jest to nowy sposób na zarządzanie plikami i katalogami w C++ od wersji C++17.
-
-Przykładowy kod wykorzystujący tę funkcję może wyglądać następująco:
+## Jak to zrobić:
+Sprawdzenie, czy katalog istnieje, jest stosunkowo proste w języku C++. W poniższym przykładzie użyjemy funkcji stat z biblioteki <sys/stat.h> aby sprawdzić, czy katalog istnieje. Funkcja ta zwraca wartość 0, jeśli katalog istnieje, lub wartość -1, jeśli nie istnieje.
 
 ```C++
+#include <sys/stat.h>
 #include <iostream>
-#include <filesystem>
 
-int main()
-{
-    // ścieżka do katalogu, którego istnienie chcemy sprawdzić
-    std::filesystem::path directory = "/home/user/Documents/";
-
-    // sprawdzenie, czy katalog istnieje
-    bool exists = std::filesystem::exists(directory);
-
-    // wypisanie wyniku
-    if (exists) {
-        std::cout << "Katalog istnieje\n";
-    }
-    else {
-        std::cout << "Katalog nie istnieje\n";
-    }
-
+int main() {
+    struct stat buffer;
+    if (stat("katalog_testowy", &buffer) == 0)
+        std::cout << "Katalog istnieje" << std::endl;
+    else
+        std::cout << "Katalog nie istnieje" << std::endl;
     return 0;
 }
 ```
-
-Przykładowy wynik dla istniejącego katalogu:
-
+Sample output:
 ```
 Katalog istnieje
 ```
 
-Przykładowy wynik dla nieistniejącego katalogu:
+## Głębokie Nurkowanie:
+Funkcja stat, użyta w powyższym przykładzie, jest dostępna w języku C++ od jego wczesnych wersji. Alternatywnym podejściem jest użycie boost::filesystem, które zapewnia bogatszy zestaw funkcji do operacji na katalogach i plikach. Aby sprawdzić, czy katalog istnieje przy użyciu boost::filesystem możemy użyć funkcji exists.
 
+```C++
+#include <boost/filesystem.hpp>
+#include <iostream>
+
+int main() {
+    if (boost::filesystem::exists("katalog_testowy"))
+        std::cout << "Katalog istnieje" << std::endl;
+    else
+        std::cout << "Katalog nie istnieje" << std::endl;
+    return 0;
+}
 ```
-Katalog nie istnieje
-```
 
-## Głębsza analiza
+W języku C++17 pojawiła się również funkcja filesystem::exists, która zwraca typ std::filesystem::file_status zamiast bool. Aby zobaczyć pełną listę dostępnych funkcji dotyczących operacji na katalogach i plikach, można przejrzeć dokumentację języka C++ lub boost::filesystem.
 
-Funkcja `std::filesystem::exists()` sprawdza, czy dana ścieżka istnieje w systemie plików. Jeśli tak, zwraca `true`, w przeciwnym razie zwraca `false`. Niemniej jednak, istnieją pewne istotne rzeczy, które warto wiedzieć przy korzystaniu z tej funkcji.
-
-Po pierwsze, funkcja ta nie sprawdza, czy dany plik lub katalog jest dostępny (np. czy użytkownik ma odpowiednie uprawnienia do odczytania pliku), a jedynie czy istnieje. Może to być ważne, jeśli nasz program będzie interakcjonować z plikami i katalogami, do których nie mamy pełnego dostępu.
-
-Po drugie, funkcja ta może prowadzić do pomyłek w przypadku, gdy w systemie plików mamy do czynienia z tzw. linkami symbolicznymi (ang. symbolic links). Linki symboliczne są specjalnymi plikami lub katalogami, które wskazują na inną ścieżkę, a `std::filesystem::exists()` sprawdza właśnie stan ostatniego elementu wskazywanej ścieżki. Może to wprowadzić nas w błąd i wyświetlić nieprawidłowy wynik, dlatego ważne jest, aby mieć to na uwadze podczas korzystania z tej funkcji.
-
-## Zobacz również
-
-- [Dokumentacja std::filesystem::exists()](https://en.cppreference.com/w/cpp/filesystem/exists)
-- [Przykłady użycia std::filesystem::exists()](https://www.geeksforgeeks.org/stdfilesystemexists-in-c-examples/)
-- [Poradnik: Zarządzanie plikami i katalogami w C++17](https://www.codingame.com/playgrounds/27068/managing-files-using-c-17-filesystem)
+## Zobacz też:
+- [Dokumentacja języka C++](https://en.cppreference.com/w/)
+- [Dokumentacja boost::filesystem](https://www.boost.org/doc/libs/1_76_0/libs/filesystem/doc/index.htm)

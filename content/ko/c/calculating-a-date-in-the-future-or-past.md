@@ -1,7 +1,7 @@
 ---
-title:                "미래나 과거의 날짜 계산하기"
-html_title:           "C: 미래나 과거의 날짜 계산하기"
-simple_title:         "미래나 과거의 날짜 계산하기"
+title:                "미래 또는 과거의 날짜 계산하기"
+html_title:           "C: 미래 또는 과거의 날짜 계산하기"
+simple_title:         "미래 또는 과거의 날짜 계산하기"
 programming_language: "C"
 category:             "C"
 tag:                  "Dates and Times"
@@ -10,67 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+빠른날짜 계산을 위한 C 프로그래밍
 
-과거나 미래의 날짜를 계산하는 것에 참여하는 이유는 일정을 관리하고 관리하는 것을 도와주기 때문입니다.
+## What & Why?
 
-## 어떻게
+날짜 계산이란, 특정 날짜로부터 과거나 미래로 일정 시간을 계산하는 것을 말합니다. 프로그래머들은 주로 이것을 날짜/시간 기능을 사용하여 프로그램 내에서 일정한 작업을 수행할 때 필요합니다.
+
+## How to:
+
+날짜 계산을 위한 코드의 예시를 살펴보겠습니다. 우선 <time.h> 헤더 파일을 포함시키고, 두 날짜를 나타내는 구조체(예: struct tm)를 만들어야 합니다. 그 다음, 구조체의 값을 적절하게 설정하고, mktime() 함수를 사용하여 두 날짜 사이의 차이를 계산할 수 있습니다. 아래는 이 과정을 보여주는 예시 코드입니다.
 
 ```C
 #include <stdio.h>
-#include <stdlib.h>
 #include <time.h>
 
-int main()
-{
-    struct tm now = { 0 }; //현재 날짜
-    struct tm future = { 0 }; //미래 날짜
-    struct tm past = { 0 }; //과거 날짜
+int main() {
+    struct tm start_date = {0};
+    start_date.tm_year = 2020 - 1900;
+    start_date.tm_mon = 0;
+    start_date.tm_mday = 1; // 2020년 1월 1일
+    time_t start_time = mktime(&start_date);
     
-    //현재 날짜 가져오기
-    time_t t = time(NULL);
-    now = *localtime(&t);
+    struct tm end_date = {0};
+    end_date.tm_year = 2020 - 1900;
+    end_date.tm_mon = 2;
+    end_date.tm_mday = 15; // 2020년 3월 15일
+    time_t end_time = mktime(&end_date);
     
-    //미래 날짜 계산하기
-    future = now;
-    future.tm_mday += 365; //365일 추가 (1년 후)
-    mktime(&future); //tm structure를 현재 시스템의 시간에 맞게 변경해줌
-    
-    //과거 날짜 계산하기
-    past = now;
-    past.tm_mday -= 365; //365일 감소 (1년 전)
-    mktime(&past); //tm structure를 현재 시스템의 시간에 맞게 변경해줌
-    
-    //결과 출력하기
-    printf("현재 날짜: %d년 %d월 %d일\n", now.tm_year + 1900, now.tm_mon + 1, now.tm_mday);
-    printf("미래 날짜: %d년 %d월 %d일\n", future.tm_year + 1900, future.tm_mon + 1, future.tm_mday);
-    printf("과거 날짜: %d년 %d월 %d일\n", past.tm_year + 1900, past.tm_mon + 1, past.tm_mday);
+    int difference = difftime(end_time, start_time) / (24 * 60 * 60); // 하루는 86,400초
+    printf("두 날짜 사이의 차이는 %d일입니다.", difference);
     
     return 0;
 }
-
-/* 출력:
-현재 날짜: 2021년 4월 5일
-미래 날짜: 2022년 4월 5일
-과거 날짜: 2020년 4월 5일
-*/
 ```
 
-## 기초 파헤치기
+위 코드에서는 2020년 1월 1일과 2020년 3월 15일 사이의 차이를 일단위로 출력합니다. 결과는 "두 날짜 사이의 차이는 74일입니다."가 될 것입니다.
 
-날짜를 계산하는 것은 여러 이유로 유용할 수 있습니다. 예를 들어, 일정한 날짜 간격을 유지하거나 특정 날짜에 이벤트를 예약하는 데 사용할 수 있습니다. 또한 C 언어에서 날짜를 계산하는 방법을 배우는 것은 프로그래밍 기초를 다지는 데 도움이 됩니다.
+## Deep Dive
 
-## 참고 자료
+날짜 계산은 컴퓨터 시스템에서 매우 중요한 역할을 합니다. 예를 들어, 파일의 만료일이나 휴가 기간 등과 같이 일정한 시간이 지나면 특정 작업이 필요한 경우에 자주 사용됩니다.
 
-- [C 언어 랜덤 숫자 생성하기](https://www.geeksforgeeks.org/rand-and-srand-in-ccpp/)
-- [C 언어 문자열 입출력 함수](https://www.geeksforgeeks.org/c-input-output/)
-- [C 언어에서 날짜를 문자열로 바꾸기](https://stackoverflow.com/questions/2408958/how-to-get-a-date-in-c)
-- [C 언어에서 문자열을 정수로 바꾸기](https://www.geeksforgeeks.org/c-program-convert-string-integer/)
-- [C 언어로 미리 정의된 상수 사용하기](https://www.tutorialspoint.com/cprogramming/c_constants.htm)
+날짜 계산에는 여러 가지 방식이 존재하지만, 대표적으로 Julian Day와 UNIX Timestamp가 있습니다. Julian Day는 1582년 10월 15일 이전에 사용되는 달력 시스템을 바탕으로 하며, UNIX Timestamp는 1970년 1월 1일 이후부터 초 단위로 계산되는 시간을 나타냅니다.
 
-## 봐도 좋아요
+## See Also
 
-- [C 언어로 현재 시간 얻기](https://www.programmingunit.com/2012/10/15/c-tutorial-get-current-date-time/)
-- [C 언어의 난수 생성기 함수](https://www.tutorialspoint.com/c_standard_library/c_function_rand.htm)
-- [C 언어에서 여러 가지 날짜 형식 사용하기](https://www.tutorialspoint.com/c_standard_library/c_function_localtime.htm)
-- [C 언어에서 날짜와 시간을 표시하는 다양한 방법](https://www.guru99.com/c-date-time.html)
+- [날짜와 시간 관련 함수 참조](https://ko.wikipedia.org/wiki/C_%EC%99%80_%ED%99%88%EC%8A%A4_%EC%8B%9C%EC%9E%91)
+- [Julian Day에 대한 자세한 설명](https://ko.wikipedia.org/wiki/%EC%A3%BC%EB%A6%84%EB%8E%99%EC%8B%9C%EC%9D%98_%EA%B0%92)
+- [UNIX Timestamp 정보](https://ko.wikipedia.org/wiki/UNIX_%EC%8B%9C%EA%B0%84)

@@ -10,58 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么要检查一个目录是否存在
+#「什么 & 为什么？」
+检查一个目录是否存在是指检查电脑上是否已经存在一个具有特定名称的文件夹。程序员通常会这样做是为了避免重复创建同名的文件夹，也可以在程序运行时检查文件夹是否存在来决定下一步的操作。
 
-当我们需要在我们的 TypeScript 代码中操作文件时，有时候需要先检查一个目录是否存在。这是为了避免在文件操作过程中出现错误，保证我们的代码能够顺利运行。
-
-## 如何检查一个目录是否存在
-
-在 TypeScript 中，我们可以使用内置的 `fs` 模块来检查一个目录是否存在。我们可以通过 `fs.stat()` 方法传入目录的路径来检查该目录是否存在，如下所示：
-
-```TypeScript
+#「如何：」
+```
+TypeScript 
 import * as fs from 'fs';
 
-const directoryPath = './myDirectory';
+const directoryPath = '../directory_name';
 
-fs.stat(directoryPath, (err, stats) => {
-  if (err) {
-    // 如果出现错误，说明该目录不存在
-    console.log('该目录不存在！');
-  } else {
-    // 否则，说明该目录存在
-    console.log('该目录存在！');
-  }
+fs.stat(directoryPath, function (err) {
+    if (err === null) {
+        console.log('Directory exists.');
+    } else if (err.code === 'ENOENT') {
+        console.log('Directory does not exist.');
+    } else {
+        console.log('Error: ', err);
+    }
 });
 ```
 
-如果在目录不存在的情况下运行这段代码，我们会在控制台中看到 `该目录不存在！` 的输出，否则会看到 `该目录存在！` 的输出。
+#「深入浅出」
+1. 历史背景：在早期的操作系统中，程序员必须手动检查是否存在某个文件夹来确定下一步的操作，随着操作系统的发展，提供了更加便捷的 API 来检查文件夹的存在性。
 
-## 深入了解检查一个目录是否存在
+2. 替代方案：除了使用 fs 模块中的 `fs.stat()` 方法之外，还可以使用 `fs.existsSync()` 方法来检查文件夹是否存在，并返回一个 `boolean` 值。
 
-在深入了解之前，首先让我们了解一下 `fs.stat()` 方法。它用于检索关于文件或目录的详细信息，并将其作为回调函数的第二个参数 `stats` 返回。如果在检索过程中出现错误，则会将 `err` 参数传入回调函数。
+3. 实现细节：fs 模块是 Node.js 中用于处理文件系统操作的核心模块，可以通过 `require('fs')` 来引入并使用其中的方法。
 
-通过传入目录路径，我们可以使用 `stats.isDirectory()` 方法来判断是否存在一个目录。该方法会返回一个布尔值，如果是目录则为 `true`，否则为 `false`。
-
-除了 `fs.stat()` 方法外，我们还可以使用 `fs.existsSync()` 方法来同步检查一个目录是否存在。该方法会返回一个布尔值，如果目录存在则为 `true`，否则为 `false`。示例如下：
-
-```TypeScript
-import * as fs from 'fs';
-
-const directoryPath = './myDirectory';
-
-if (fs.existsSync(directoryPath)) {
-  console.log('该目录存在！');
-} else {
-  console.log('该目录不存在！');
-}
-```
-
-## 参考资料
-
-- [Node.js 文档 - fs 模块](https://nodejs.org/dist/latest-v14.x/docs/api/fs.html)
-- [深入浅出 TypeScript（二） - Node.js 中的开发](https://zhuanlan.zhihu.com/p/64862638)
-
-## 参见
-
-- [使用 TypeScript 进行 Node.js 开发](https://github.com/Microsoft/TypeScript-Node-Starter)
-- [TypeScript 中文网](https://www.tslang.cn/)
+#「相关链接」
+- Node.js fs 模块文档：https://nodejs.org/api/fs.html
+- TypeScript 官方文档：https://www.typescriptlang.org/

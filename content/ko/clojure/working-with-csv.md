@@ -1,7 +1,7 @@
 ---
-title:                "CSV 작업하기"
-html_title:           "Clojure: CSV 작업하기"
-simple_title:         "CSV 작업하기"
+title:                "CSV 파일 사용하기"
+html_title:           "Clojure: CSV 파일 사용하기"
+simple_title:         "CSV 파일 사용하기"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Data Formats and Serialization"
@@ -10,53 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜 CSV를 다루는 것이 유익한가요?
+## 무엇과 왜?
 
-CSV는 엑셀과 같은 스프레드시트 프로그램에서 자주 사용되는 데이터 형식입니다. 따라서 CSV 파일을 처리하는 것은 비즈니스에서 필수적인 작업이 될 수 있습니다. 또한 Clojure에서 CSV를 다루는 것은 매우 간단하고 빠르며 유용합니다.
+CSV 작업이란 무엇일까요? 이것은 데이터를 스프레드시트나 데이터베이스에 저장할 수 있는 표 형식의 파일 형식입니다. 프로그래머가 CSV를 다루는 이유는 데이터를 쉽고 효율적으로 구성하고 관리하기 위해서입니다.
 
-## 어떻게 하면 될까요?
-
-CSV를 다루는 데에는 두 가지 주요 방법이 있습니다. 첫 번째 방법은 Clojure 라이브러리인 "clojure-csv"를 사용하는 것입니다. 이 라이브러리는 CSV 파일을 읽고 쓰는 데에 필요한 모든 기능을 제공합니다. 예를 들어, CSV 파일을 읽어서 데이터를 맵으로 변환하는 코드는 다음과 같습니다. 
+## 방법:
 
 ```Clojure
-(require '[clojure-csv.core :as csv])
+;; CSV 파일 로드하기
+(require '[clojure.data.csv :as csv])
 
-(csv/parse-csv "file.csv") ; CSV 파일을 파싱하여 한 줄씩 맵으로 변환
+;; 파일의 내용 읽어오기
+(with-open [reader (clojure.java.io/reader "file.csv")]
+  (csv/read-csv reader))
+
+;; 데이터베이스에 저장하기
+(with-open [writer (clojure.java.io/writer "file.csv")]
+  (csv/write-csv writer data))
 ```
 
-두 번째 방법은 Clojure의 내장 함수인 "clojure.string"을 사용하는 것입니다. 이 방법은 더욱 간단하지만, 기본적인 기능만 제공합니다. 예를 들어, CSV 파일을 문자열로 읽은 뒤 줄마다 분리하여 리스트로 변환하는 코드는 다음과 같습니다.
+## 심층 분석
 
-```Clojure
-(require '[clojure.java.io :as io])
-(require '[clojure.string :as string])
+CSV 작업은 전통적인 데이터 저장과 교환 방식으로 문서 형식이 아닌 데이터를 메모리에서 처리하는 방식입니다. 이를 다루는 대안에는 XML, JSON 등이 있으며 이들은 구조화된 데이터를 다룰 때 더 나은 선택이 될 수 있습니다. CSV 작업은 `clojure.data.csv` 라이브러리를 사용하여 구현할 수 있으며, 표준적인 형식과 커스텀 형식 모두 지원합니다.
 
-(string/split (slurp (io/file "file.csv")) #"\r\n") ; CSV 파일을 문자열로 읽고 줄마다 분리하여 리스트로 변환
-```
+## 관련 자료
 
-## 딥 다이브
-
-CSV 파일을 읽고 쓰는 것 외에도, Clojure에서는 다양한 방식으로 CSV를 다룰 수 있습니다. 예를 들어, "data.csv" 파일을 분석하여 평균 값을 구하는 코드는 다음과 같습니다.
-
-```Clojure
-(require '[clojure.string :as string])
-(require '[clojure.java.io :as io])
-(require '[clojure.math :as math])
-
-(defn get-data [file]
-  ; CSV 파일을 읽고 데이터를 리스트로 변환
-  (->> (slurp file) (string/split #"\r\n") (map string/split #",") (map #(map #(Float/parseFloat %) %))))
-
-(defn get-average [data]
-  ; 데이터의 평균 값을 구하는 함수
-  (/ (apply + data) (count data)))
-
-(with-open [file (io/reader "data.csv")]
-  (->> (get-data file) (map get-average))) ; data.csv 파일에서 데이터를 읽고 평균 값을 구하는 코드
-```
-
-딥 다이브를 위해 추가적인 자료를 참고하고 싶다면 아래 링크를 확인해 보세요.
-
-## See Also
-- [Clojure Docs](https://clojure.org/)
-- [clojure-csv 라이브러리](https://github.com/danlentz/clojure-csv)
-- [Clojure for the Brave and True](https://www.braveclojure.com/)
+[clojure.data.csv 라이브러리 문서](https://clojure.github.io/data.csv/)

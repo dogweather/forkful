@@ -10,52 +10,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+## Che cos'è e perché?
 
-Sei un appassionato di Bash e vuoi espandere le tue conoscenze incorporando dati JSON nei tuoi script? Oppure ti trovi spesso a dover manipolare file JSON e vuoi imparare a farlo direttamente da riga di comando? In entrambi i casi, questo articolo è quello che fa per te!
+Lavorare con JSON significa gestire dati strutturati in formato testuale. Questo formato è ampiamente utilizzato dai programmatori perché è compatto e facile da leggere e scrivere.
 
-## Come fare
+## Come fare:
 
-Per lavorare con dati JSON in Bash, ci sono due strumenti principali che puoi utilizzare: `jq` e `python`. Vediamo un un esempio per ognuno.
-
-##### Utilizzando `jq`
+Un modo semplice per lavorare con JSON in Bash è utilizzare il comando `jq` che è incluso nella maggior parte delle distribuzioni Linux. Ecco un esempio per stampare un valore specifico dal file JSON:
 
 ```Bash
-# Esempio di input JSON
-input='{"nome": "Marco", "età": 25, "professione": "programmatore"}'
-
-# Estrai il valore della chiave "nome"
-nome=$(echo $input | jq '.nome')
-echo $nome # Output: "Marco"
-
-# Modifica il valore della chiave "età"
-input=$(echo $input | jq '.età = 26')
-echo $input # Output: {"nome": "Marco", "età": 26, "professione": "programmatore"}
+jq '.key' file.json
 ```
 
-##### Utilizzando `python`
+L'output sarà il valore corrispondente alla chiave specificata.
 
-```Bash
-# Esempio di input JSON
-input='{"nome": "Maria", "età": 30, "professione": "designer"}'
+## Approfondimento:
 
-# Estrai il valore della chiave "età"
-# Utilizzando l'opzione -c ficchiamo il codice Python nel comando python
-età=$(python -c "import json; print(json.loads('$input')['età'])")
-echo $età # Output: 30
+JSON è diventato rapidamente uno dei formati più popolari per lo scambio di dati grazie alla sua semplicità e flessibilità. Tuttavia, ci sono alternative come XML e YAML che possono essere utilizzate a seconda delle esigenze. Per lavorare con JSON in Bash, è possibile utilizzare anche strumenti come `sed` e `awk` che offrono maggiori possibilità di manipolazione dei dati.
 
-# Modifica il valore della chiave "nome"
-novo_nome="Giulia"
-input=$(python -c "import json; x=json.loads('$input'); x['nome']='$novo_nome'; print(json.dumps(x))")
-echo $input # Output: {"nome": "Giulia", "età": 30, "professione": "designer"}
-```
+## Vedi anche:
 
-## Approfondimento
-
-Come puoi vedere dagli esempi, utilizzare `jq` è più semplice e diretto rispetto all'utilizzo di `python` dove è necessario convertire il JSON in un oggetto Python e poi riportarlo in JSON dopo le modifiche. Tuttavia, lavorare con `python` ti offre una maggiore flessibilità e possibilità di manipolazione dei dati. Inoltre, puoi utilizzare librerie come `pyjq` per combinare la sintassi di `jq` con la potenza di `python`.
-
-## Vedi anche
-
-- [Documentazione di jq](https://stedolan.github.io/jq/)
-- [Documentazione di python](https://docs.python.org/3/library/json.html)
-- [Libreria pyjq](https://pypi.org/project/pyjq/)
+Per maggiori informazioni su JSON e come lavorare con esso in Bash, puoi consultare la documentazione ufficiale di [jq](https://stedolan.github.io/jq/) e [GNU sed](https://www.gnu.org/software/sed/). Inoltre, puoi trovare utili esempi e tutorial su siti come [DigitalOcean](https://www.digitalocean.com/community/tutorials/an-introduction-to-jq) e [Linuxize](https://linuxize.com/post/processing-json-in-bash-with-jq/).

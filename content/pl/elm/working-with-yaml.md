@@ -10,38 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Czym jest i dlaczego?
 
-Jeśli chcesz pracować z plikami konfiguracyjnymi o prostym i zrozumiałym formacie, to YAML będzie świetnym wyborem. Jest to język znaczników, który jest popularny wśród programistów ze względu na swoją czytelność i elastyczność.
+YAML (Yet Another Markup Language) jest językiem znaczników używanym przez programistów do formatowania danych w sposób łatwy do czytania dla człowieka. Jest to popularna alternatywa dla innych formatów, takich jak JSON lub XML, ponieważ YAML jest uważany za bardziej przejrzysty i czytelny. Programiści używają YAML do przechowywania konfiguracji aplikacji lub danych w formie strukturyzowanej.
 
-## Jak to zrobić
+## Jak to zrobić:
 
 ```Elm
-import Json.Decode as Decode
+import Data.Yaml exposing (..)
 
-data = """
-name: Elm
-type: language
-version: 0.19
-"""
+-- przykładowy plik YAML
+dreamTeam:
+  - Jan
+  - Kasia
+  - Tomek
+  - Ania
 
-yamlDecoder : Decode.Decoder (List ( String, String ))
-yamlDecoder = Decode.list (Decode.pair Decode.string Decode.string)
+-- wczytanie danych z pliku
+readFile "team.yaml"
+    |> andThen decodeValue
+    |> Result.withDefault []
 
-result : Result Decode.Error (List (String, String))
-result = Decode.decodeString yamlDecoder data
-
--- output: Ok [("name", "Elm"), ("type", "language"), ("version", "0.19")]
+-- wynik
+["Jan", "Kasia", "Tomek", "Ania"]
 ```
 
-Aby rozpocząć pracę z YAML w Elm, musisz najpierw zaimportować bibliotekę `Json.Decode` i zdefiniować dekoder YAML, który w tym przykładzie konwertuje plik YAML na listę par klucz-wartość. Następnie wywołaj funkcję `decodeString` i podaj jej dekoder oraz wczytany plik YAML.
+## Głębsza analiza:
 
-## Głębsze zanurzenie
+### Kontekst historyczny:
+ YAML został opracowany w 2001 roku przez Clarka Evansa w celu stworzenia prostego i łatwego w użyciu języka znaczników. Od tego czasu stał się popularną opcją dla programistów ze względu na swoją czytelność i łatwość w rozwiązaniu różnych problemów związanych z formatowaniem danych.
 
-Pliki YAML mogą zawierać wiele różnych danych, takich jak listy, mapy, liczby i ciągi znaków. W Elm możesz łatwo przekonwertować je na odpowiadające im typy danych, używając funkcji dekodujących z biblioteki `Json.Decode`. Jest również możliwe użycie zewnętrznych bibliotek, takich jak `avh4/elm-schema`, aby stworzyć bardziej szczegółowe dekodery, które pomogą w analizowaniu i walidacji plików YAML.
+### Alternatywy:
+Istnieje wiele innych formatów, takich jak JSON lub XML, które są również popularne wśród programistów. Każdy z nich ma swoje własne zastosowanie, więc wybór zależy od konkretnej potrzeby i preferencji programisty.
 
-## Zobacz także
+### Szczegóły implementacji:
+ELM udostępnia moduł Data.Yaml, który pozwala na łatwe wczytywanie i zapisywanie danych w formacie YAML. Moduł ten zawiera wiele przydatnych funkcji, takich jak decodeValue i encode, które ułatwiają pracę z tym językiem znaczników.
 
-- [Oficjalna dokumentacja Elm](https://elm-lang.org/docs)
-- [Repozytorium biblioteki Json.Decode na GitHubie](https://github.com/elm/json)
-- [Strona YAML](https://yaml.org)
+## Zobacz także:
+
+- [Oficjalna strona YAML](https://yaml.org/)
+- [Dokumentacja ELM dla modułu Data.Yaml](https://package.elm-lang.org/packages/NoRedInk/elm-yaml/latest/)

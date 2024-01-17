@@ -10,39 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché scrivere test?
-Scrivere test è fondamentale per garantire che il codice che stiamo sviluppando sia robusto e funzionante. I test ci permettono di individuare eventuali errori o bug nel codice in modo tempestivo, aumentando la qualità del nostro prodotto finale.
+Cosa sono i test e perché i programmatori li scrivono?
 
-## Come scrivere test in Elixir
-Scrivere test in Elixir è un processo semplice e intuitivo. Utilizzando il modulo `ExUnit`, possiamo definire una suite di test utilizzando vari metodi come `assert`, `refute` e `match`, che ci consentono di verificare le nostre aspettative sulle funzioni che stiamo testando.
+Scrivere test è il processo di creare codice che verifica che il nostro software funzioni come ci aspettiamo. I programmatori lo fanno per essere sicuri che il nostro codice sia affidabile e funzioni correttamente, identificando eventuali errori o bug prima che il software venga rilasciato agli utenti.
+
+Come: Esempi di codice e output di esempio
 
 ```Elixir
-defmodule TestCalculator do
+defmodule Calculator do
+  def add(x, y) do
+  	x + y
+  end
+
+  def subtract(x, y) do
+  	x - y
+  end
+end
+
+defmodule CalculatorTest do
   use ExUnit.Case
-  
-  # Definiamo un test case per la funzione sum, che dovrebbe sommare i due numeri dati
-  test "sum" do
-    result = Calculator.sum(2, 3)
-    assert result == 5
+
+  test "addition" do
+    assert Calculator.add(2, 2) == 4
+  end
+
+  test "subtraction" do
+    assert Calculator.subtract(5, 2) == 3
   end
 end
 ```
 
-In questo esempio, stiamo verificando se la funzione `Calculator.sum` restituisce il valore corretto quando gli passiamo i parametri 2 e 3. Oltre a testare la funzione, possiamo anche testare il comportamento in caso di errori o eccezioni:
+Output di esempio:
 
-```Elixir
-# Testiamo la funzione divide per verificare se gestisce correttamente la divisione per 0
-test "divide per 0" do
-  assert_raise ZeroDivisionError, fn -> Calculator.divide(5, 0) end
-end
+```sh
+$ mix test
+Compiling 2 files (.ex)
+...
+
+Finished in 0.03 seconds
+2 tests, 0 failures
 ```
 
-Una volta definiti tutti i nostri test, possiamo eseguirli utilizzando il comando `mix test`. Questo ci fornirà un report dei test passati e di quelli falliti, con dettagli sulle asserzioni che non sono andate a buon fine.
+Approfondimento: Contesto storico, alternative e dettagli di implementazione sui test
 
-## Approfondimento sulla scrittura dei test
-In aggiunta alle asserzioni standard, possiamo anche utilizzare altre utili funzioni come `assert_receive`, `assert_raise` e `assert_raise_message` per testare il comportamento di funzioni che interagiscono con altri processi o lanciano eccezioni specifiche. Inoltre, possiamo utilizzare anche il modulo `ExUnit.CaptureIO` per testare l'output di funzioni che stampino sulla console.
+Scrivere test è una pratica comune nel processo di sviluppo del software. Sebbene non sia obbligatoria, è considerata una best practice per garantire la qualità del codice. Alcune alternative al testing unitario sono il testing di integrazione e il testing funzionale, che coprono rispettivamente la gestione delle interfacce tra le diverse parti del software e i casi d'uso completi.
 
-## Vedi anche
-- [ExUnit documentation](https://hexdocs.pm/ex_unit/ExUnit.html)
-- [TDD - Test Driven Development](https://www.vervesearch.com/blog/tdd-test-driven-development/)
-- [Unit Testing in Elixir](https://semaphoreci.com/community/tutorials/unit-testing-in-elixir)
+Un modo comune per scrivere test in Elixir è utilizzare il modulo ```ExUnit.Case```, che fornisce una serie di macro per definire test e assert personalizzati. Inoltre, Elixir offre anche il supporto per i test generativi con il modulo ```StreamData```, che genera dati casuali per testare il nostro codice in modo più approfondito.
+
+Vedi anche: Link correlati
+
+- [Documentazione su testing in Elixir](https://elixir-lang.org/getting-started/mix-otp/docs-tests-and-mocks.html)
+- [Articolo su come scrivere test di integrazione in Elixir](https://thoughtbot.com/blog/testing-and-dumping-external-http-apis-in-elixir)
+- [Esempi di test generativi in Elixir](https://elixirschool.com/en/lessons/advanced/stream-data/)

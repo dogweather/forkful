@@ -10,70 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför? 
+Att skriva en textfil innebär att spara information i ett dokument, utan någon speciell formatering eller design. Programerare använder textfiler för att spara och återanvända data från sina program, som kan inkludera text, siffror eller annan data.
 
-För att spara information och dela den med andra, eller för att läsa och bearbeta information. Textfiler kan också användas för att skapa en dokumentation av koden för framtida referens.
-
-## Hur man gör
-
-Det första steget för att skriva en textfil är att inkludera standardbiblioteket `fstream` i din C++-kod. Detta gör det möjligt att arbeta med filer. 
-
-Först är det viktigt att öppna en fil innan du kan skriva till den. Detta kan göras genom att använda funktionen `open()` tillsammans med `ofstream`-objekt, till exempel:
+## Hur man gör:
+Här kommer ett exempel på hur man skriver till en textfil i C++. Vi använder oss av ofstream-funktionen som tillåter oss att skriva och skapa nya textfiler.
 
 ```C++
+#include <iostream>
 #include <fstream>
+
 using namespace std;
 
 int main() {
-    ofstream fil("minfil.txt"); // öppnar filen minfil.txt
-    if (fil.is_open()) { // kontrollerar om filen är öppen
-        // kod för att skriva till filen
-        fil.close(); // stänger filen när vi är klara
-    }
-    else {
-        cout << "Kunde inte öppna filen." << endl;
-    }
+    string text = "Hej, här är ett exempel på en textfil.";
+    // Skapar och öppnar en textfil
+    ofstream file("textfil.txt");
+    // Skriv till textfilen
+    file << text;
+    // Stäng filen
+    file.close();
     return 0;
 }
+
 ```
 
-När filen är öppen kan du använda olika funktioner som `<<` för att skriva till filen. Se följande exempel:
+När du öppnar textfil.txt kommer det att stå "Hej, här är ett exempel på en textfil.". Det är så enkelt det är att skriva en textfil!
 
-```C++
-#include <fstream>
-using namespace std;
+## Deep Dive
+Att spara data i en textfil är en vanlig del av programmering sedan långt tillbaka. Textfiler används ofta för att skapa en lättläst och portabel version av data som kan användas mellan olika program och system. Det finns också alternativ för att skriva till binära filer, som sparar datan i ett binärt format, men det är ofta mer komplicerat och svårare att läsa av för människor. 
 
-int main() {
-    ofstream fil("minfil.txt");
-    if (fil.is_open()) {
-        fil << "Detta är en textfil." << endl;
-        fil << "Här kan vi skriva all slags information." << endl;
-        fil << "Till exempel vår favoritfärg: blå." << endl;
-        fil.close();
-    }
-    else {
-        cout << "Kunde inte öppna filen." << endl;
-    }
-    return 0;
-}
-```
+När du öppnar en textfil kan du välja att öppna den som en vanlig textfil eller som en binär fil beroende på vilket syfte du har. Om du vill läsa och ändra i textfilen är det lättare att göra det som en textfil, medan en binär fil är bättre lämpad för information som inte behöver redigeras.
 
-Det viktigaste att komma ihåg när du skriver till en textfil är att lägga till `endl` efter varje rad. Detta gör att texten skrivs på en ny rad i filen.
-
-## Djupdykning
-
-Det finns flera saker att tänka på när man skriver en textfil i C++. 
-
-Förutom att använda `endl` kan du också använda `"\n"` för att skapa en ny rad i filen. Detta kan ibland vara användbart, till exempel om du vill skapa en tabell i filen.
-
-Du kan också använda `getline()` för att läsa in en hel rad från filen istället för bara ett ord eller en siffra. Detta är särskilt användbart om du vill läsa in en hel mening från en textfil.
-
-Slutligen är det viktigt att stänga filen när du är klar med den, annars kan det leda till problem i framtiden.
-
-## Se även
-
-Här är några andra användbara resurser för att lära sig mer om att skriva textfiler i C++:
-
-- [C++ - File I/O](https://www.tutorialspoint.com/cplusplus/cpp_files_streams.htm)
-- [C++ File Handling - GeeksforGeeks](https://www.geeksforgeeks.org/file-handling-c-classes/)
-- [C++ File Input/Output](https://www.learncpp.com/cpp-tutorial/181-input-and-output-io-streams/)
+## Se även:
+Här är några länkar som kan vara intressanta för dig som vill lära dig mer om att skriva textfiler i C++:
+- [C++ Text File I/O (w3schools)](https://www.w3schools.com/cpp/cpp_files.asp)
+- [C++ File Handling Tutorial (GeeksforGeeks)](https://www.geeksforgeeks.org/basics-file-handling-c/)
+- [Writing files in C++ (cplusplus.com)](http://www.cplusplus.com/doc/tutorial/files/)

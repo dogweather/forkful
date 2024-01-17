@@ -1,7 +1,7 @@
 ---
-title:                "Lecture des arguments de ligne de commande"
-html_title:           "Swift: Lecture des arguments de ligne de commande"
-simple_title:         "Lecture des arguments de ligne de commande"
+title:                "Lecture des arguments de la ligne de commande"
+html_title:           "Swift: Lecture des arguments de la ligne de commande"
+simple_title:         "Lecture des arguments de la ligne de commande"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Files and I/O"
@@ -10,71 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Qu'est-ce que c'est et pourquoi les programmeurs le font-ils?
 
-Si vous êtes un programmeur en herbe ou expérimenté, vous avez probablement entendu parler des arguments de ligne de commande dans vos projets de programmation. Mais pourquoi devriez-vous vous intéresser à cette fonctionnalité ? Eh bien, voyons ensemble pourquoi vous devriez apprendre à lire les arguments de ligne de commande en Swift.
+Lire les arguments de ligne de commande est un moyen pour un programme de recevoir des entrées directement depuis la ligne de commande. Les programmeurs le font pour rendre leurs programmes plus interactifs et leur permettre de réagir en temps réel aux entrées de l'utilisateur.
 
-## Comment faire
-
-Commençons par comprendre ce que sont les arguments de ligne de commande. Ce sont des valeurs spécifiées lors de l'exécution d'un programme, qui peuvent être utilisées pour personnaliser ou configurer le fonctionnement du programme. En Swift, pour lire ces arguments, vous pouvez utiliser l'objet `CommandLine`.
-
-Voici un exemple de code qui illustre comment lire et afficher les arguments de ligne de commande en utilisant l'objet `CommandLine` :
+## Comment:
 
 ```Swift
-//Premier argument : nom du programme
-print(CommandLine.arguments[0])
-
-//Deuxième argument : premier argument spécifié par l'utilisateur
-let arg1 = CommandLine.arguments[1]
-print("Premier argument : \(arg1)")
-
-//Troisième argument : deuxième argument spécifié par l'utilisateur
-let arg2 = CommandLine.arguments[2]
-print("Deuxième argument : \(arg2)")
+let arguments = CommandLine.arguments
+print("Les arguments passés dans la ligne de commande sont: \(arguments)")
 ```
 
-Ainsi, si vous exécutez votre programme avec les arguments `Bonjour` et `le monde`, la sortie sera la suivante :
+Ce code va prendre tous les arguments passés dans la ligne de commande et les stocker dans une variable "arguments". Ensuite, il les imprime tous à l'écran.
 
+Output:
 ```
-nomduprogramme
-Premier argument : Bonjour
-Deuxième argument : le monde
-```
-
-## Plongée en profondeur
-
-Maintenant que vous savez comment lire les arguments de ligne de commande en Swift, allons un peu plus loin. Vous pouvez également ajouter des options à vos arguments de ligne de commande, afin de donner plus de flexibilité à votre programme. Les options sont précédées d'un tiret (`-`) et peuvent être suivies d'un paramètre.
-
-Voici un exemple de code qui utilise des options pour afficher un message de bienvenue personnalisé :
-
-```Swift
-//Définition des options
-let nomOption = CommandLine.Option("n", "--nom", description: "Définit le nom de l'utilisateur")
-let ageOption = CommandLine.Option("a", "--age", description: "Définit l'âge de l'utilisateur")
-
-//Parsing des options
-let options = CommandLine.parseOptions()
-
-//Récupération des valeurs des options spécifiées par l'utilisateur
-let nom = options[nomOption]
-let age = options[ageOption]
-
-//Affichage du message de bienvenue
-print("Bienvenue \(nom ?? "inconnu"), vous avez \(age ?? "inconnu") ans !")
+Les arguments passés dans la ligne de commande sont: [nomDuProgramme, premierArgument, deuxièmeArgument]
 ```
 
-Ainsi, si vous exécutez votre programme avec les options `-n Bob` et `-a 25`, la sortie sera la suivante :
+## Plongée en profondeur:
 
-```
-Bienvenue Bob, vous avez 25 ans !
-```
+Lire les arguments de ligne de commande est une fonctionnalité présente dans de nombreux langages de programmation depuis les débuts de la programmation informatique. Cela permet aux programmeurs d'interagir avec leurs programmes en leur passant des valeurs directement depuis la ligne de commande plutôt que de les définir à l'avance dans le code.
 
-Il existe de nombreuses autres fonctions utiles pour lire et manipuler les arguments de ligne de commande en Swift, telles que `CommandLine.popFirst()` pour récupérer le premier argument et le supprimer de la liste, ou encore `CommandLine.arguments.contains()` pour vérifier si un argument spécifique a été utilisé.
+Il existe également d'autres moyens de recevoir des entrées de l'utilisateur, tels que les fichiers de configuration ou les interfaces graphiques, mais lire les arguments de ligne de commande est souvent privilégié car c'est une méthode simple et rapide.
 
-## Voir aussi
+Dans Swift, lire les arguments de ligne de commande se fait en utilisant la classe CommandLine, qui contient une variable statique "arguments" contenant tous les arguments passés dans la ligne de commande. Il est important de noter que les arguments sont toujours stockés sous forme de chaînes de caractères, il faut donc les convertir en le type souhaité si nécessaire.
 
-Vous pouvez en apprendre davantage sur les arguments de ligne de commande en Swift en consultant les liens suivants :
+## À voir aussi:
 
-- [Documentation officielle Apple](https://developer.apple.com/documentation/foundation/commandline)
-- [Tutoriel raywenderlich.com](https://www.raywenderlich.com/511-command-line-programs-on-macos-tutorial)
-- [Cours Udacity](https://www.udacity.com/course/command-line-programs-in-swift--ud207)
+- [Documentation officielle de Swift sur CommandLine](https://developer.apple.com/documentation/foundation/commandline

@@ -10,36 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Чому
+## Що і зачому?
+Робота з JSON це швидкий і простий спосіб обміну даними між веб-сервером та клієнтом. Цей формат дозволяє програмістам легко перетворювати дані у JavaScript об’єкти та зворотньо.
 
-Робота з JSON (JavaScript Object Notation) є невід'ємною частиною сучасного програмування. Вона дозволяє обмінюватися даними між різними додатками та серверами, що робить її потужним інструментом для розробників.
-
-## Як
-
-Для початку роботи з JSON, вам необхідно створити або отримати даний об'єкт у форматі JSON. Існує кілька способів цього зробити, але найбільш поширений - це використання функції `JSON.parse()` для перетворення рядка з JSON у об'єкт JavaScript.
-
+## Як це зробити:
+Для початку, ви можете створити об’єкт JSON, використовуючи функцію `JSON.stringify()`. Наприклад:
 ```Javascript
-let jsonString = '{"name": "John", "age": 30, "city": "Kyiv"}'; // рядок з JSON
-let person = JSON.parse(jsonString); // перетворення в об'єкт JavaScript
-console.log(person.name); // виведе "John"
+const car = {
+  brand: "Tesla",
+  model: "Model 3",
+  year: 2021,
+  color: "black"
+};
+
+const json = JSON.stringify(car);
+
+console.log(json); // output: {"brand":"Tesla","model":"Model 3","year":2021,"color":"black"}
+```
+Щоб перетворити JSON назад у об’єкт JavaScript, використовуйте функцію `JSON.parse()`. Наприклад:
+```Javascript
+const jsonObj = '{"brand":"Tesla","model":"Model 3","year":2021,"color":"black"}';
+
+const car = JSON.parse(jsonObj);
+
+console.log(car); // output: {brand: "Tesla", model: "Model 3", year: 2021, color: "black"}
 ```
 
-Для створення об'єкта JSON з JavaScript об'єкту використовуйте функцію `JSON.stringify()`, яка перетворить об'єкт у рядок з JSON.
+## Поглиблене вивчення:
+JSON був створений в 2001 році та став популярним форматом для передачі даних у світі Веб. Існують інші альтернативи, такі як XML, але JSON став вибором програмістів завдяки своїй простоті та широкій підтримці. У JavaScript, є також функція `JSON.stringify()` та `JSON.parse()` для роботи з цим форматом даних.
 
-```Javascript
-let person = { name: "John", age: 30, city: "Kyiv" }; // об'єкт JavaScript
-let jsonString = JSON.stringify(person); // перетворення в рядок JSON
-console.log(jsonString); // виведе '{"name": "John", "age": 30, "city": "Kyiv"}'
-```
-
-## Глибінний аналіз
-
-JSON дозволяє зберігати дані в простий і зрозумілий формат, що робить його ідеальним для обміну даними між різними системами та пристроями. Крім того, він підтримується більшістю програмних мов та є стандартом у веб-розробці.
-
-Однак, варто пам'ятати про декілька особливостей роботи з JSON. Наприклад, він не може напряму працювати з функціями та датами, тому їх необхідно перетворювати у спеціальні формати, наприклад, до рядків.
-
-## Дивіться також
-
-- [Офіційна документація JSON](https://www.json.org/)
-- [JSON Tutorial на w3schools.com](https://www.w3schools.com/js/js_json_intro.asp)
-- [JavaScript Object Notation на MDN](https://developer.mozilla.org/uk/docs/Learn/JavaScript/Objects/JSON)
+## Дивись також:
+- [JSON офіційний сайт](https://www.json.org/json-uk.html)
+- [Курс "Віртуальний Планета": Робота з JSON](https://www.virtualplanet.org.ua/training/programming/7325)
+- [Редактор JSON онлайн](https://jsoneditoronline.org/)

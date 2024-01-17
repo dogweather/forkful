@@ -1,7 +1,7 @@
 ---
-title:                "作成する一時ファイル"
-html_title:           "Ruby: 作成する一時ファイル"
-simple_title:         "作成する一時ファイル"
+title:                "「一時ファイルの作成」"
+html_title:           "Ruby: 「一時ファイルの作成」"
+simple_title:         "「一時ファイルの作成」"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Files and I/O"
@@ -10,34 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ作成するのか
-一時ファイルを作成することの利点はたくさんあります。ファイルの一時的な保存、プログラムのパフォーマンスの向上、および関連するデータとの間でのスムーズなやりとりができるようになります。
+## あのね、そうなんだ、一時ファイルを作るってなんだろう？なぜプログラマーがそれをするの？
 
-## 作成方法
-一時ファイルを作成するには、以下のようなコードを使用します。
-
+## どうやるんだい？
 ```Ruby
-# ランダムなファイル名を作成する
-temp_file = File.new("temp_file#{rand(1..100)}.txt", "w")
+# 一時ファイルを作成する
+file = Tempfile.new
 
-# ファイルにデータを書き込む
-temp_file.puts("このファイルは一時的なファイルです")
-temp_file.close
+# テキストを書き込む
+file.write("こんにちは、世界！")
 
-# ファイルを読み込んで出力する
-read_file = File.read(temp_file)
-puts read_file
+# ファイルを読み込む
+file.read
+#=> "こんにちは、世界！"
 
-# ファイルを削除する
-File.delete(temp_file)
+# ファイルを閉じる
+file.close
+
+# 一時ファイルの削除
+file.unlink
 ```
 
-上記のコードでは、一時ファイルとしてテキストファイルを作成し、そこにデータを書き込んで表示し、最後にファイルを削除しています。
+## 深く掘り下げると？
+一時ファイルとは、一時的にデータを保存するために作成されるファイルのことです。プログラマーは、プログラム内で動的にファイルを作成する必要がある場合に使用します。一時ファイルは、プログラムの実行が終了すると自動的に削除されるので、ディスク容量を節約するためにも重要です。
 
-## 深堀り
-一時ファイルを作成することで、プログラムの処理速度が向上することができます。また、一時ファイルにデータを一時的に保存することで、データの整理や処理を容易にすることができます。さらに、一時ファイルを使用することで、予期せぬエラーが発生した場合でも元のファイルが破損することを防ぐことができます。
+代替手段としては、プログラム内でデータをメモリ上に保持する方法がありますが、一時ファイルを使用する方がメモリの使用量を減らすことができます。一時ファイルの実装方法については、各プログラミング言語のマニュアルを参照してください。
 
-## 参考リンク
-- [Rubyドキュメンテーション](https://ruby-doc.org/core-2.7.0/File.html)
-- [Ruby on Railsの一時ファイルの使用例](https://www.educba.com/working-with-temporary-files-in-ruby-on-rails/)
-- [一時ファイルを利用するメリット](https://dotnet.developers.square-phoenix.com/2020/03/21/temporary-files-ruby/)
+## もっと詳しく知りたい方へ
+- [RubyのTempfileクラスのドキュメント](https://ruby-doc.org/stdlib-2.6.4/libdoc/tempfile/rdoc/Tempfile.html)
+- [一時ファイルに関する詳細な解説記事](https://devblog.theoryspace.com/temporary-files-in-ruby/)
+- [プログラミングでの一時ファイル作成の活用法](https://medium.com/@jeroenptrs/using-temporary-files-in-ruby-everything-you-need-to-know-22da8871e160)

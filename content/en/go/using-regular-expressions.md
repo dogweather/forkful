@@ -10,64 +10,66 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
+Regular expressions, commonly shortened to "regex," are a powerful tool used in programming to search for patterns within text. They allow programmers to efficiently and accurately manipulate strings of characters, making tasks such as data validation and parsing much easier. Regular expressions have become a staple in programming languages like Go, as they provide a concise and versatile way to handle complex string operations.
 
-So, you've heard about regular expressions but you're not exactly sure what they are or why you should use them? Well, let me break it down for you. Regular expressions, also known as regex, are a powerful tool used for string pattern matching and manipulation in programming languages. They allow you to search, replace and extract specific parts of a string, making tasks such as data validation, text parsing and data extraction much easier.
+## How to:
+To use regular expressions in Go, we first import the built-in `regexp` package. This gives us access to functions and methods for working with regular expressions. Let's take a look at a simple example that checks if a string contains the word "Go."
 
-## How To
+```Go
+package main
 
-Using regular expressions in Go is fairly straightforward. First, we need to import the "regexp" package which contains all the necessary functions for working with regex. Now, let's see some examples of how to use regular expressions in Go.
-
-### Matching a String Pattern
-
-To check if a string matches a specific pattern, we can use the `MatchString()` function. For example, if we want to check if a string contains only numbers, we can use the regular expression `\d+` which matches one or more digits.
-
-```
-// import regexp package
-import "regexp"
+import (
+	"fmt"
+	"regexp"
+)
 
 func main() {
-    // check if string contains only numbers
-    matched := regexp.MatchString(`\d+`, "12345")
+	str := "I love using Go in my programming projects."
+	pattern := "Go"
 
-    if matched {
-        fmt.Println("String contains only numbers")
-    } else {
-        fmt.Println("String contains other characters")
-    }
+	match, _ := regexp.MatchString(pattern, str)
+
+	fmt.Println("Match found:", match)
 }
 ```
 
-The output of this code will be `String contains only numbers`.
+Running this code will print `Match found: true`, indicating that the string contains the searched pattern. But what if we want to extract the specific location and substring that matched our pattern? We can use `FindStringIndex` and `FindStringSubmatch` methods to achieve this.
 
-### Extracting Substrings
+```Go
+package main
 
-Using regex, we can also extract specific parts of a string. For example, if we have a string that follows the format `Name: Age` and we want to extract the name, we can use the `FindStringSubmatch()` function.
-
-```
-// import regexp package
-import "regexp"
+import (
+	"fmt"
+	"regexp"
+)
 
 func main() {
-    // extract name from string
-    name := regexp.MustCompile(`Name: (.+)`).FindStringSubmatch("Name: John")[1]
+	str := "I love using Go in my programming projects."
+	pattern := "Go"
 
-    fmt.Println("Name:", name)
+	loc := regexp.MustCompile(pattern).FindStringIndex(str)
+	substr := regexp.MustCompile(pattern).FindStringSubmatch(str)
+
+	fmt.Println("Match found at index:", loc)
+	fmt.Println("Matched substring:", substr[0])
 }
 ```
 
-The output of this code will be `Name: John`.
+The output of this code would be:
+```
+Match found at index: [19 21]
+Matched substring: Go
+```
 
-## Deep Dive
+## Deep Dive:
+The foundations of regular expressions date back to the 1950s, when computer scientist Stephen Cole Kleene introduced mathematical notation for describing regular languages. This concept was later implemented in various programming languages, and has gone through many iterations and adaptations over the years.
 
-Regular expressions can seem intimidating at first, but once you understand the basics, they can greatly improve your coding skills. Here are some key points to keep in mind when working with regex in Go:
+While regular expressions are a popular solution for string manipulation and pattern matching, there are alternatives such as text parsers and string manipulation functions that can also achieve similar results. However, regular expressions have the advantage of being concise and expressive, making them a valuable tool for developers.
 
-- Use raw strings, denoted by backticks, when working with regular expressions in Go. This will prevent any issues with escape characters.
-- Go's built-in `regexp` package uses the POSIX standard for regular expressions, which may differ from the syntax used in other programming languages.
-- Regular expressions can greatly reduce the amount of code needed for tasks such as input validation and text manipulation.
+Under the hood, regular expressions in Go are implemented using a modified version of the POSIX Extended Regular Expressions (ERE) syntax. This syntax allows for a wide range of pattern matching capabilities, from simple string searches to complex multi-line operations.
 
-## See Also
-
-- [Official Go regexp package documentation](https://golang.org/pkg/regexp/)
-- [Regex tutorial on DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-use-regular-expressions-in-go)
-- [Online regex tester for Go](https://regex-golang.appspot.com/)
+## See Also:
+- [Go Regexp package documentation](https://golang.org/pkg/regexp/)
+- [Regular Expression tutorial on GoDocs](https://godoc.org/github.com/google/re2j#Regexp)
+- [Regular Expression cheat sheet](https://www.rexegg.com/regex-quickstart.html)

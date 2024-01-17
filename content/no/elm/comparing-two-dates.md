@@ -10,31 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hvorfor
-Å sammenligne to datoer er en vanlig oppgave i mange programmeringsprosjekter. Dette er spesielt nyttig når du trenger å sjekke om en dato kommer før eller etter en annen, eller om de to datoene er like. I denne artikkelen vil vi ta en titt på hvordan du kan sammenligne datoer ved hjelp av Elm-programmeringsspråket. 
+## Hva & Hvorfor?
+"Å sammenligne to datoer" er en vanlig oppgave for programmere. Det innebærer å sjekke om to datoer er like, eller hvilken som kommer først, basert på en gitt format. Dette er nyttig for å sortere data og utføre ulike operasjoner på datoer.
 
-# Hvordan
-For å sammenligne to datoer i Elm, kan du bruke funksjonen `compare`. Denne funksjonen tar inn to datoer og returnerer en `Order`-verdi, som kan være `LT` (less than), `EQ` (equal) eller `GT` (greater than). La oss se på et eksempel der vi sammenligner to datoer:
-
-```Elm
-compare (Date.fromParts 2020 10 20) (Date.fromParts 2020 10 25)
-```
-
-Her vil funksjonen returnere `LT`, siden 20. oktober kommer før 25. oktober.
-
-Du kan også sammenligne datoen din med dagens dato ved å bruke `Date.today`. La oss se på et annet eksempel der vi sjekker om en dato er før eller etter dagens dato:
+## Hvordan:
+I Elm er det enkelt å sammenligne to datoer ved hjelp av funksjonen `case` og det innebygde `Date` modulen. Her er et eksempel på hvordan du sammenligner to datoer for å se om de er like:
 
 ```Elm
-Date.compare (Date.fromParts 2020 10 31) Date.today
+import Date exposing (..)
+
+date1 : Date
+date1 = fromString "2019-05-30"
+
+date2 : Date
+date2 = fromString "2019-05-30"
+
+case compare date1 date2 of
+    LT -> "Dato 1 kommer før dato 2"
+    EQ -> "Dato 1 og 2 er like"
+    GT -> "Dato 2 kommer før dato 1"
 ```
 
-Dette vil returnere `GT`, siden 31. oktober kommer etter dagens dato.
+Output:
+`Dato 1 og Dato 2 er like`
 
-# Dypdykk
-Når du sammenligner to datoer, er det viktig å merke seg at `compare`-funksjonen tar hensyn til både dato og tid. Dette betyr at hvis du ønsker å sammenligne to datums, må de også ha samme tidspunkt. Hvis du ikke er interessert i tid, kan du bruke funksjonen `Date.toMidnight` for å sette tiden til midnatt.
+## Deep Dive
+Å sammenligne datoer har vært en vanlig oppgave i programmering siden datamaskiner ble først introdusert. I eldre språk som Cobol, måtte programmere håndtere datoer manuelt ved å konvertere de til numeriske verdier. Elm sin `Date` modul tar seg av dette for deg, og gjør sammenligning av datoer enkelt og nøyaktig.
 
-Videre kan du også bruke `Date.isEqual` og `Date.isBefore` for å sjekke om to datoer er like eller om en dato kommer før en annen. Disse funksjonene returnerer en `Bool`-verdi, som kan være `True` eller `False`.
+Det finnes også alternative måter å sammenligne datoer på, som å bruke en tredjeparts bibliotek som håndterer datoer og tidspunkter. Men i Elm, er det anbefalt å bruke den innebygde `Date` modulen fordi den er designet spesifikt for å håndtere datoer og gir nøyaktige resultater.
 
-# Se Også
-- [Elm Offisiell Dokumentasjon](https://guide.elm-lang.org/)
-- [Elm Forum](https://discourse.elm-lang.org/)
+Når du sammenligner to datoer, må du huske å bruke samme format for begge datoene for å få riktig resultat. For eksempel, hvis en dato er i formatet `YYYY-MM-DD`, må den andre også være i samme format.
+
+## Se Også
+Offisiell Elm dokumentasjon for `Date` modulen: https://package.elm-lang.org/packages/elm/time/latest/Date

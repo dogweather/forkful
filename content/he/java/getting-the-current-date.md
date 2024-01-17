@@ -1,7 +1,7 @@
 ---
-title:                "קבלת התאריך הנוכחי"
-html_title:           "Java: קבלת התאריך הנוכחי"
-simple_title:         "קבלת התאריך הנוכחי"
+title:                "קבלת תאריך נוכחי"
+html_title:           "Java: קבלת תאריך נוכחי"
+simple_title:         "קבלת תאריך נוכחי"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Dates and Times"
@@ -10,41 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## למה
+## מה ולמה?
 
-קבלת התאריך הנוכחי חשובה בעיקר כשמתכנתים רוצים ליצור יישומים דינמיים שנתמכים על פני זמן. זה יכול להיות שימושי גם כאשר אנשים רוצים להציג את התאריך הנוכחי למשתמשים או להשתמש בו באופן כללי בתור חלק מיכולות האפליקציה.
+קבלת התאריך הנוכחי היא פעולה חשובה בתכנות ב-Java. זה מאפשר למפתחים לצרף זמנים ותאריכים בתוך התוכנית שלהם, כמו לדוגמה לשמור תאריך של ריצת התוכנית או להפעיל משימות בזמנים מסוימים.
 
-## כיצד לעשות זאת
+## איך לעשות זאת?
 
-כדי לקבל את התאריך הנוכחי בשפת ג'אווה, ניתן להשתמש במחלקה הפנימית "Date" או במחלקת "Calendar". להלן דוגמאות של שימוש בשתי השיטות:
+תהליך רכישת התאריך הנוכחי ב-Java פשוט וקצר. כאן אנו משתמשים בפקודה "LocalDate.now()" כדי לקבל את התאריך הנוכחי כפי שמוצג למטה:
 
 ```Java
-import java.util.Date;
-import java.util.Calendar;
-
-// עותק מתאריך נוכחי משמש כבסיס
-Date currentDate = new Date();
-System.out.println(currentDate);
-
-// עותק מתאריך נוכחי משמש לטפל בחלקים שונים של תאריך כגון יום וחודש
-Calendar calendar = Calendar.getInstance();
-System.out.println(calendar.get(Calendar.MONTH) + 1);
-System.out.println(calendar.get(Calendar.DATE));
+LocalDate today = LocalDate.now();
+System.out.println(today);
 ```
 
-לתוצאות הדוגמאות הנלוות נרשמים:
+פלט:
+"2020-08-16"
 
+ניתן גם לקבל את התאריך הנוכחי בפורמט שונה באמצעות פקודות נוספות כמו למשל "DateTimeFormatter". הנה דוגמה להדפסת התאריך בפורמט שאנו בוחר:
+
+```Java
+LocalDate today = LocalDate.now();
+DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+String formattedDate = today.format(formatter);
+System.out.println(formattedDate);
 ```
-Wed Jun 23 14:57:41 IST 2021
-6
-23
+
+פלט:
+"16/08/2020"
+
+## חקירה מעמיקה
+
+קבלת התאריך הנוכחי ב-Java מאוד חשובה כי היא תורמת לפיתוח תוכניות יעילים יותר ומאפשרת גם תיעוד מדויק של זמנים בתוך התוכנית. בנוסף לקבלת התאריך הנוכחי, ניתן גם לעשות שימוש בפקודות נוספות כגון "LocalDateTime" כדי לקבל תאריך עם זמן מדויק.
+
+כארציה: לקבל תאריך עם שעה נוכחית ולהציג אותו בפורמט של שעה כדי למנוע בלבול:
+
+```Java
+LocalDateTime now = LocalDateTime.now();
+DateTimeFormatter formatter = DateTimeFormatter.ofPattern("hh:mm a");
+String formattedTime = now.format(formatter);
+System.out.println(formattedTime);
 ```
 
-## חקר מעמיק בקבלת התאריך הנוכחי
-
-במאמר זה ראינו כיצד לקבל את התאריך הנוכחי בשפת ג'אווה באמצעות שתי שיטות נפוצות. אם תרצה ללמוד עוד על אופן התפקוד של מחלקות Date ו-Calendar ועל המתודות שניתן להשתמש בהן לעיבוד תאריך, אתה מוזמן לקרוא את תיעוד השפה הרשמי של ג'אווה.
+פלט:
+"11:25 AM"
 
 ## ראה גם
 
-- [תיעוד של ג'אווה-אופיציה ראשונית למתכנתים חדשים](https://www.oracle.com/java/technologies/learn-java.html)
-- [מדריך לקבלת התאריך הנוכחי בג'אווה](https://www.baeldung.com/java-get-current-date-time)
+למידע נוסף על פקודות ומתודות נוספות בספריית התאריך ב-Java, ניתן לבקר בקישור הבא:
+
+[https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
+
+ולפרטים נוספים על קבלת התאריך הנוכחי בפיתוח Java, ניתן לקרוא את המאמר הזה:
+
+[https://www.baeldung.com/java-get-current-date-time](https://www.baeldung.com/java-get-current-date-time)

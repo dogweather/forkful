@@ -1,7 +1,7 @@
 ---
-title:                "yaml के साथ काम करना"
-html_title:           "Javascript: yaml के साथ काम करना"
-simple_title:         "yaml के साथ काम करना"
+title:                "यामल के साथ काम करना"
+html_title:           "Javascript: यामल के साथ काम करना"
+simple_title:         "यामल के साथ काम करना"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Data Formats and Serialization"
@@ -10,31 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Kyun
-Kya aapne kabhi apne code ko organize karne ke liye YAML ka istemal kiya hai? YAML (YAML Ain't Markup Language) ek simple aur flexible format hai, jise aap programming languages ke saath bhi use kar sakte hain. Isse aap apne data ko asaan tareeke se store aur access kar sakte hain.
+## क्या और क्यों?
+क्या आपने कभी YAML के बारे में सुना है? यह एक फॉर्मेट है जो डेटा को संरचित करने और भंडारित करने के लिए उपयोग किया जाता है। यह एक पाठ का आसान और साफ तरीका है जो डेटा पारगमन और डेटा विनिस्त उचित रूप से संरचित करता है। YAML यूएमईएल पहले से ही गोल्ड स्टैंडर्ड है और वैभवपूर्ण समर्थन को प्रदान करता है।
 
-## Kaise Karein
-YAML ko Javascript mein use karne ke liye, aapko kuch simple steps follow karne honge:
-
-1. Sabse pehle, aapko YAML library ko install karna hoga. Ye npm package manager ka istemal karke easily ho sakta hai. Terminal mein `npm install js-yaml` likhkar ye library install kar sakte hain.
-2. Ab aap `require()` function ka istemal karke YAML library ko apne code mein import kar sakte hain.
-3. Ab aap YAML ka object `yaml` banalein, jisme aap apni YAML file ko load kar sakte hain. Jaise: 
+## कैसे करें:
 ```Javascript
-const yaml = require('js-yaml');
+// शंखनाद फ़ंक्शन से एक यूएमईएल फ़ाइल को पढ़ें
 const fs = require('fs');
+const yaml = require('js-yaml');
 
-let yamlFile = yaml.safeLoad(fs.readFileSync('file.yml', 'utf8'));
+try {
+  const data = yaml.safeLoad(fs.readFileSync('फ़ाइल.यूएमईएल', 'utf8'));
+  console.log(data);
+} catch (e) {
+  console.log(e);
+}
+
+// जावास्क्रिप्ट ऑब्जेक्ट को यूएमईएल फ़ॉर्मेट में रूपांतरित करें
+const data = { name: 'शुरुआत', उम्र: 10 };
+const yamlData = yaml.dump(data);
+console.log(yamlData);
 ```
-4. Aap `yamlFile` object ka istemal karke apne YAML data ko access kar sakte hain, jaise:
+
+आउटपुट:
 ```Javascript
-console.log(yamlFile.key); // "value"
+{
+  "name": "शुरुआत",
+  "उम्र": 10
+}
+"name: शुरुआत\nउम्र: 10\n"
 ```
 
-## Gahrai Se Jaaein
-Agar aapko YAML ke baare mein aur jaankari chahiye, toh aap `js-yaml` library ke official documentation aur GitHub repository par jaa sakte hain. Iske alawa, aap YAML ke Python, Ruby aur Java ke implementations ke baare mein bhi padh sakte hain.
+## गहराई में दिखावट:
+YAML को 2001 में घोषित किया गया था और इसकी मूल विभागीय संरचना Perl के CPAN दस्तावेज़ के आधार पर बनाई गई थी। YAML के कुछ प्रमुख विकल्प शामिल हैं - JSON, XML और CSV जैसे प्रारूपों को भी डेटा को संरचित करने के लिए इस्तेमाल किया जा सकता है। यूएमईएल को प्राथमिक रूप से दोगुने नोड विश्लेषण के रूप में कॉन्सुम किया जाता है और इसे YAML का रूपांतरण नहीं कहा जाता है।
 
-## Dekhein Bhi
-Yadi aapko YAML ke saath kaam karne mein aur madad chahiye, toh yeh links aapke kaam aa sakte hain:
-- [js-yaml library documentation](https://www.npmjs.com/package/js-yaml)
-- [js-yaml GitHub repository](https://github.com/nodeca/js-yaml)
-- [YAML Wikipedia page](https://en.wikipedia.org/wiki/YAML)
+## भी देखें:
+- YAML की आधिकारिक साइट (https://yaml.org/)
+- YAML के JavaScript में अनुप्रयोग (https://github.com/nodeca/js-yaml)
+- YAML और JSON के बीच की तुलना (https://www.smashingmagazine.com/2016/07/yaml-primer-part-1/)

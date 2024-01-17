@@ -10,45 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Quoi & pourquoi?
 
-Si vous avez déjà eu besoin de calculer une date dans le futur ou dans le passé, vous savez que cela peut être une tâche fastidieuse. Heureusement, Clojure a une solution simple et élégante pour cela.
+Calculer une date dans le futur ou le passé consiste à trouver une date spécifique à un certain nombre de jours, semaines ou mois à partir d'une date donnée. Les programmeurs le font pour des raisons pratiques telles que la planification de tâches, la gestion du temps ou la manipulation de données chronologiques.
 
-## Comment Faire
+## Comment faire:
 
-```Clojure
-; Pour obtenir la date d'aujourd'hui
-(println (java.util.Date.))
+Voici une façon simple de calculer une date dans le futur ou le passé en utilisant Clojure:
 
-; Pour calculer une date dans le futur ou dans le passé, nous allons utiliser la fonction
-'java.util.Calendar' de Java.
+```
+;Exemple pour ajouter 30 jours à une date:
+(def ma-date (java.util.Date.)) ;date actuelle
+(def nb-jours 30)
+(.add ma-date java.util.Calendar/DATE nb-jours)
 
-; Pour cela, nous devons d'abord importer la librairie Java dans notre code Clojure :
-(import '(java.util Calendar))
-
-; Ensuite, nous pouvons créer une instance de la classe Calendar et utiliser la méthode 'add' pour ajouter ou soustraire des jours, mois ou années à la date actuelle :
-(def today (Calendar/getInstance))
-
-; Pour ajouter 3 jours à la date actuelle :
-(.add today Calendar/DAY_OF_MONTH 3)
-
-; Pour soustraire 1 mois et 2 années :
-(.add today Calendar/MONTH -1)
-(.add today Calendar/YEAR -2)
-
-; La méthode 'getTime' nous permet d'obtenir la date résultat sous forme de timestamp :
-(.getTime today)
+;Output : La date dans 30 jours à partir de maintenant
 ```
 
-## Deep Dive
+```
+;Exemple pour soustraire 2 semaines à une date:
+(def ma-date (java.util.Date. "2021-05-01")) ;1er mai 2021
+(def nb-semaines -2)
+(.add ma-date java.util.Calendar/WEEK_OF_YEAR nb-semaines)
 
-En utilisant la classe Calendar de Java, nous pouvons également spécifier une date de départ différente de la date actuelle, en utilisant la méthode 'set' au lieu de 'getInstance'.
+;Output : La date 2 semaines avant le 1er mai 2021
+```
 
-De plus, en utilisant les constantes telles que 'Calendar/DAY_OF_MONTH' ou 'Calendar/MONTH', nous pouvons facilement préciser quelle partie de la date doit être modifiée.
+## Approfondissement:
 
-Enfin, il est également possible d'utiliser la librairie 'clj-time', qui fournit des fonctions plus abstraites et faciles à utiliser pour manipuler les dates en Clojure.
+- Contexte historique: La manipulation de dates est une tâche courante depuis les premiers jours de l'informatique et a donné lieu à de nombreuses méthodes différentes. Aujourd'hui, l'utilisation de bibliothèques telles que Clojure facilite grandement cette tâche pour les programmeurs.
 
-## Voir Aussi
+- Alternatives: En plus de Clojure, il existe d'autres langages de programmation pouvant être utilisés pour calculer une date dans le futur ou le passé, tels que Java, Python ou JavaScript.
 
-- [Documentation officielle de la classe Calendar](https://docs.oracle.com/javase/7/docs/api/java/util/Calendar.html)
-- [Documentation de la librairie clj-time](https://github.com/clj-time/clj-time)
+- Détails d'implémentation: Pour calculer une date à partir d'une date donnée, nous utilisons les méthodes de la classe Java Calendar, qui permettent d'ajouter ou de soustraire un certain nombre d'unités de temps (jours, semaines, mois) à une date donnée. Il est également possible d'utiliser la bibliothèque clojure.java-time pour une manipulation plus facile des dates et des temps en Clojure.
+
+## A voir également:
+
+- Pour en savoir plus sur la manipulation des dates en Clojure, consultez la documentation officielle: https://clojure.org/reference/java_interop#Calendar. 
+
+- Vous pouvez également découvrir la bibliothèque clojure.java-time ici: https://github.com/dm3/clojure.java-time.

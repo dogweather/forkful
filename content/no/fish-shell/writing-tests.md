@@ -10,39 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hva & Hvorfor?
+Å skrive tester er en viktig del av programmering. Det er en måte å sørge for at koden vår fungerer som den skal og å fange eventuelle feil eller bugs før de når produksjonsstadiet. Dette sparer oss for tid og unødvendige problemer.
 
-Så du har begynt å bruke Fish Shell i terminalen din, og lurer kanskje på hvorfor du bør bruke tid på å skrive tester for koden din? Vel, å skrive tester er en god måte å sikre at koden din fungerer som den skal og å identifisere eventuelle feil eller bugs i koden tidlig, noe som kan spare deg for mye frustrasjon på lang sikt.
+## Hvordan:
+Å skrive tester i Fish Shell er enkelt og effektivt. Først må vi definere en funksjon med navnet "test". Dette kan gjøres ved å bruke nøkkelordet "function" etterfulgt av funksjonsnavnet og "test". Inne i denne funksjonen kan vi bruke kommandoer og sammenligne forventet og faktisk utgang ved hjelp av enkle sammenligningsoperatører. 
 
-## Slik gjør du det
-
-For å skrive tester i Fish Shell, må du først opprette en testfil. Dette kan gjøres ved å åpne en tekstredigerer og skrive følgende kode:
-
-```Fish Shell
-# Det første du må gjøre er å inkludere test-rammeverket:
-source /usr/local/share/fish/tools/test.fish
-
-# Bruk "begin" og "end" for å definere en gruppe av tester:
-begin gruppe_navn
-
-# Skriv testene dine ved å bruke "test" kommandoen:
-test "1 er lik 1" -a 1 = 1
-
-# Avslutt gruppen med "end":
+```Fish Shell 
+function test_example
+    some_command
+    if test $status -eq 0
+        echo "Test vellykket!"
+    else 
+        echo "Test feilet!"
+    end
 end
-
-# Kjør testene ved å kjøre filen med test-rammeverket:
-fish test_filen.fish
 ```
 
-Etter å ha kjørt filen din, vil du få utskrift som viser hvilke tester som besto og hvilke som feilet. Hvis alle testene bestod, har du skrevet fungerende kode!
+## Dypdykk:
+Å skrive tester er ikke noe nytt i programmeringsverdenen. Det har vært en del av "Test Driven Development" (TDD) prinsippet siden begynnelsen av 2000-tallet. Det finnes også andre programmeringsspråk og rammeverk som tilbyr innebygde tester, som for eksempel Python og RSpec for Ruby. For å implementere tester i større prosjekter, kan man bruke et testrammeverk som for eksempel "Bats" eller "shelltestrunner" som er spesifikt laget for shell-skripting.
 
-## Grav dypere
-
-Nå som du vet hvordan du skriver og kjører tester i Fish Shell, kan du begynne å utforske de forskjellige funksjonene og mulighetene som test-rammeverket gir deg. For eksempel kan du bruke "test_not" for å sjekke at en betingelse ikke er sann, eller "test_equal" for å sammenligne verdier som ikke er like. Det er også mulig å håndtere unntak og feilmeldinger ved hjelp av "catch" kommandoen. Ved å utforske disse mulighetene og eksperimentere med kode, kan du bli mer komfortabel med å skrive tester og skrive mer omfattende og effektive tester for koden din.
-
-## Se også
-
-- [Fish Shell Test Rammeverk Dokumentasjon](https://fishshell.com/docs/current/cmds/test.html)
-- [En Introduksjon til Test-Driven Utvikling i Fish Shell](https://medium.com/fish-tips/easy-test-driven-development-tdd-in-fish-shell-50322c0402d7)
-- [Å Skrive Klarere Kode ved å Skrive Tester i Fish Shell](https://stackoverflow.blog/2019/07/18/write-more-understandable-code-by-writing-tests/)
+## Se også:
+- [Fish Shell dokumentasjon om testing.](https://fishshell.com/docs/current/index.html#testing)
+- [Test Driven Development på Wikipedia.](https://en.wikipedia.org/wiki/Test-driven_development)
+- [Bats testrammeverk.](https://github.com/bats-core/bats-core)
+- [ShellTestRunner testrammeverk.](https://github.com/bats-core/bats-core)

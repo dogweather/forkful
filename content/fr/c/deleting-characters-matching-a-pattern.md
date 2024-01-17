@@ -10,34 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+Qu'est-ce que c'est et pourquoi le faire?
 
-Supprimer des caractères correspondant à un motif peut être utile dans de nombreux cas. Par exemple, pour nettoyer des données en enlevant des espaces inutiles ou pour modifier un document en supprimant des lignes qui ne répondent pas à certaines exigences.
+Supprimer des caractères correspondants à un motif est une technique qui permet aux programmeurs d'éliminer rapidement des informations spécifiques d'une chaîne de caractères. Cela peut être utile dans des tâches telles que le nettoyage de données ou la validation des entrées utilisateur.
 
-## Comment faire
+Comment faire:
 
-Il existe plusieurs façons de supprimer des caractères correspondant à un motif en C, voici deux exemples :
+Voici un exemple de code en C qui montre comment supprimer tous les espaces d'une chaîne de caractères:
 
 ```
-char string[] = "Bonjour, comment ça va ?";
+#include <stdio.h>
 
-// Exemple 1 : Suppression des virgules
-char *pattern = ",";
-char *result = remove_matching_chars(string, pattern); // Renvoie "Bonjour comment ça va ?"
+int main () {
+    char str[] = "Bonjour les amis !";
+    int i = 0, j = 0;
 
-// Exemple 2 : Suppression des voyelles
-char *pattern = "[aeiouAEIOU]";
-char *result = remove_matching_chars(string, pattern); // Renvoie "Bnjr, cmment ç v ?"
+    while (str[i]) {
+        if (str[i] != ' ') {
+            str[j++] = str[i];
+        }
+        i++;
+    }
+    str[j] = '\0';
+
+    printf("La chaîne sans espaces est : %s\n", str);
+
+    return 0;
+}
 ```
 
-## Un peu plus en détail
+En utilisant cet exemple, la sortie serait:
 
-Il existe plusieurs fonctions et bibliothèques en C qui peuvent vous aider à supprimer des caractères correspondant à un motif. Par exemple, la fonction `strchr()` de la bibliothèque standard C peut être utilisée pour rechercher un caractère spécifique dans une chaîne de caractères et `strtok()` peut être utilisée pour diviser une chaîne en sous-chaînes en utilisant un délimiteur.
+```
+La chaîne sans espaces est : Bonjourlesamis!
+```
 
-Il est également possible d'utiliser des expressions régulières pour définir un motif plus complexe à supprimer. La bibliothèque `regex.h` permet de définir et d'utiliser des expressions régulières en C.
+Plongée profonde:
 
-## Voir aussi
+Cette technique existe depuis longtemps et est fréquemment utilisée en programmation. Cependant, il existe également d'autres façons de supprimer des caractères correspondants à un motif, telles que l'utilisation de fonctions de bibliothèque telles que ```strpbrk``` ou en utilisant des expressions régulières. La mise en œuvre peut également varier en fonction du langage de programmation utilisé.
 
-- [Documentation officielle de la fonction strchr()](https://www.man7.org/linux/man-pages/man3/strchr.3.html)
-- [Documentation officielle de la fonction strtok()](https://www.man7.org/linux/man-pages/man3/strtok.3.html)
-- [Documentation officielle de la bibliothèque regex.h](https://www.gnu.org/software/libc/manual/html_node/Regular-Expressions.html)
+Voir aussi:
+
+- [Documentation de la fonction strpbrk en C](https://www.tutorialspoint.com/c_standard_library/c_function_strpbrk.htm)
+- [Guide sur les expressions régulières en C](https://www.cs.cmu.edu/~pattis/15-1XX/common/handouts/ascii.html)

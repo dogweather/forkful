@@ -1,7 +1,7 @@
 ---
-title:                "स्टैंडर्ड इरर में लिखना"
-html_title:           "C: स्टैंडर्ड इरर में लिखना"
-simple_title:         "स्टैंडर्ड इरर में लिखना"
+title:                "स्टैंडर्ड त्रुटि में लिखना"
+html_title:           "C: स्टैंडर्ड त्रुटि में लिखना"
+simple_title:         "स्टैंडर्ड त्रुटि में लिखना"
 programming_language: "C"
 category:             "C"
 tag:                  "Files and I/O"
@@ -10,37 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Kyun
-Standard error mein likhne ka kya faayda hai? Ye sawaal aksar naye C programmers ke mann mein aata hai. Lekin standard error mein likhna bahut zaroori hai kyunki ye humari debugging aur error handling capability ko badhata hai. Isse hum errors ko track kar sakte hain aur apne code ko sahi tarike se troubleshoot kar sakte hain.
+क्या और क्यों?
 
-## Kaise Karein
-Sabse pehle, hume `stdio.h` header file ko apne code mein include karna hoga. Phir hum `fprintf()` function ka use karenge jo standard error mein likhne ke liye hai. Iske baad hum desired error message ko likh sakte hain. Yeha ek simple example hai:
+प्रोग्रामर्स कभी-कभी अपने प्रोग्राम के दौरान स्टैंडर्ड एरर में संदेश लिखते हैं। हम इसे एरर हैंडलिंग कहते हैं, जो उन्हें अपने प्रोग्राम के दौरान होने वाली समस्याओं का पता लगाने में मदद करता है। यह संदेश उन्हें विशिष्ट खानों की सूचना देते हैं जहां प्रोग्राम निष्पादित होने में समस्या हो रही है।
 
-```
+कैसे करें:
+
+
+आइए अब देखें कि हम स्टैंडर्ड एरर में संदेश कैसे लिख सकते हैं। नीचे दिए गए कोड ब्लॉक में आप एक साधारण एरर हैंडलिंग कोड देख सकते हैं:
+
+```C
 #include <stdio.h>
 
-int main()
-{
-  fprintf(stderr, "Yeh ek error message hai!");
-  
-  return 0;
+int main() {
+    fprintf(stderr, "Error occurred! Please try again.\n");
+    return 0;
 }
 ```
-**Output:**
-```
-Yeh ek error message hai!
-```
 
-Is tarah se hum apne code mein multiple `fprintf()` statements bhi likh sakte hain aur apne errors ko alag-alag lines mein display kar sakte hain.
+जैसा कि आप देख सकते हैं, हम `fprintf` फंक्शन का इस्तेमाल करके स्टैंडर्ड एरर में संदेश लिख रहे हैं। यह फंक्शन दूसरे प्रिंटिंग फंक्शन की तरह ही काम करता है, बस इसमें हमें स्टैंडर्ड एरर को डेटा के रूप में पास करना होता है।
 
-## Deep Dive
-Standard error ka use sirf error messages likhne ke liye hi nahi kiya ja sakta hai. Hum isse warnings aur debugging messages bhi likh sakte hain taki humare code ki flow aur performance ka pata lag sake. Iske sath hi, hum standard error ka use apni command-line utilities mein bhi kar sakte hain jaha hume output ke sath-sath errors aur warnings bhi display karne hai.
+अब आप नीचे दिए गए स्क्रीनशॉट में देख सकते हैं कि ऊपर दिए गए कोड को कैसे स्टैंडर्ड एरर में लिखा गया है।
 
-Ek aur important technique hai standard error ka use kar ke hum apne code mein log messages likh sakte hain. Ye hume debugging mein bahut help karta hai kyunki hume pata lagta hai ki code kaunse part mein zyada time le raha hai aur kis section mein errors ho rahe hain. Isse hum apne code ki performance ko improve kar sakte hain.
+![स्टैंडर्ड एरर में संदेश](https://i.imgur.com/FA5jCIp.png)
 
-## Dekhein Bhi
-- [Original article on writing to standard error](https://www.geeksforgeeks.org/write-to-standard-error/)
-- [Difference between standard error and standard output](https://www.geeksforgeeks.org/what-is-the-difference-between-stderr-and-stdout/)
-- [Debugging techniques in C](https://www.geeksforgeeks.org/debugging-and-its-types/)
+डीप डाइव:
 
-Is article se hum samajh gaye hain ki standard error mein likhna kyun aur kaise zaroori hai. Ye debugging aur error handling capability ko badhata hai aur hume apne code ko sahi tarike se troubleshoot karne mein help karta hai. Humesha apne code mein standard error ka use karna na bhulein!
+आप अब एक आसानी से देख सकते हैं कि कैसे हम अपने प्रोग्राम में एरर हैंडलिंग कर सकते हैं। लेकिन क्या आप जानते हैं कि ये प्रैक्टिस इतिहासिक और सक्रिय रूप से उपयोग में है?
+
+इसे हमेशा से प्रोग्रामर्स सोचते आए हैं कि उनके प्रोग्राम में कोई भी समस्या आ सकती है। लेकिन इन समस्याओं को खोजना और सुधारना थोड़ा मुश्किल हो सकता है। प्रोग्राम में स्टैंडर्ड एरर में संदेश लिखना आसान तरीका है जिससे प्रोग्रामर्स अपनी समस्याओं को पहचान सकते हैं और उन्हें सुधार सकते हैं।
+
+अल्टरनेटिव्स:
+
+स्टैंडर्ड एरर में संदेश लिखने के अलावा, प्रोग्रामर्स अपनी समस्याओं को खोजने के लिए अन्य कई तरीकों का भी उपयोग कर सकते हैं। इनमें से कुछ आपको आसान और अनुकूल हो सकते हैं, जैसे लॉग फ़ाइल में समस्याएं रिपोर्ट करना। यह भी प्रोग्र

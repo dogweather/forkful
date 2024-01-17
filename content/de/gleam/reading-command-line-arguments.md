@@ -10,58 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Warum
+# Was & Warum?
 
-Warum sollte man sich überhaupt mit dem Lesen von Befehlszeilenargumenten befassen? Nun, die Antwort ist einfach. Wenn Sie ein bisschen mehr Kontrolle über Ihr Back-End oder Ihre Kommandozeilenanwendung haben möchten, ist das Lesen von Befehlszeilenargumenten unerlässlich. Es ermöglicht Ihnen, dynamisch auf verschiedene Eingaben zu reagieren und Ihre Applikation effizienter zu gestalten.
+Das Lesen von Befehlszeilenargumenten ist eine gängige Aufgabe für Programmierer. Es bedeutet, dass das Programm beim Start Informationen aus der Befehlszeile erhält, die es dann verarbeiten kann. Dies ist besonders nützlich, wenn das Programm auf unterschiedlichen Eingaben basieren oder konfiguriert werden soll.
 
-# Wie geht das?
+# Wie geht's?
 
-Das Lesen von Befehlszeilenargumenten in Gleam ist ziemlich einfach, aber wir werden es uns trotzdem Schritt für Schritt anschauen. Zuerst importieren wir das `Os.Args` -Modul und rufen die `list`-Funktion auf, um eine Liste der Befehlszeilenargumente zu erhalten. Dann grenzen wir diese Liste auf die Argumente ein, die wir benötigen und führen die entsprechenden Aktionen aus.
+In Gleam kann dies mit der Funktion `command_args` erreicht werden. Diese nimmt keine Argumente entgegen und gibt ein Array von Strings zurück, die die Befehlszeilenargumente enthalten. Hier ist ein Beispiel:
 
-```Gleam
-import gleam/os.Args
-
+``` Gleam
 fn main() {
-   args = Args.list()
-   
-   // Hier können Sie die Liste der Argumente nach Ihren Bedürfnissen filtern und die entsprechenden Aktionen ausführen.
+  let args = command_args()
+  io.println("Befehlszeilenargumente:")
+  for arg in args {
+    io.println(arg)
+  }
 }
 ```
 
-Hier ist ein Beispiel, wie Sie alle Befehlszeilenargumente ausgeben können:
-
-```Gleam
-import gleam/os.Args
-
-fn main() {
-   args = Args.list()
-   
-   // args = ["gleam", "install", "-f", "package"]
-   
-   // Wir verwenden `io` aus dem Standardmodul, um die Argumente auszugeben.
-   io.print_line("Befehlszeilenargumente:")
-   args |> List.map(io.print_line(_))
-   // Ausgabe:
-   // Befehlszeilenargumente:
-   // gleam
-   // install
-   // -f
-   // package
-}
+Wenn wir dieses Programm mit dem folgenden Befehl ausführen:
+```
+$ gleam run example.gleam arg1 arg2
+```
+Lautet die Ausgabe:
+```
+Befehlszeilenargumente:
+arg1
+arg2
 ```
 
-# Tiefer eintauchen
+# Tiefere Einblicke
 
-Natürlich gibt es noch viel mehr, was Sie mit Befehlszeilenargumenten in Gleam machen können. Zum Beispiel können Sie mit dem `Flags.parse`-Modul argumentabhängige Flags definieren und auf sie zugreifen.
+Das Lesen von Befehlszeilenargumenten ist keine neue Aufgabe und wird von vielen Sprachen unterstützt. Alternativ können auch Umgebungsvariablen oder Konfigurationsdateien verwendet werden, um Programme zu konfigurieren. Das Lesen von Befehlszeilenargumenten ist oft schneller und einfacher, da keine externe Datei oder Variablen erstellt werden müssen. In Gleam werden Befehlszeilenargumente durch die Standardbibliothek `gleam/io` verarbeitet.
 
-https://gleam.run/book/tour/command-line-arguments.html#using-flags
+# Siehe auch
 
-Wenn Sie mehr darüber erfahren möchten, wie Befehlszeilenargumente in Gleam funktionieren und wie Sie sie am besten nutzen können, empfehlen wir Ihnen, sich die offizielle Dokumentation anzusehen und verschiedene Beispiele auszuprobieren.
-
-# Weitere Infos
-
-Hier sind ein paar hilfreiche Links, die Ihnen dabei helfen können, tiefer in die Welt der Befehlszeilenargumente in Gleam einzutauchen:
-
-- Offizielle Dokumentation: https://gleam.run/book/tour/command-line-arguments.html
-- Gleam Quellcode zu Lesen von Befehlszeilenargumenten: https://github.com/gleam-lang/gleam/blob/master/src/os/args.gleam
-- Schauen Sie sich die Beispiele an, um ein besseres Verständnis zu bekommen: https://github.com/gleam-lang/gleam/tree/master/examples/1.basics/3.command_line_arguments
+Weitere Informationen zur Verwendung von Befehlszeilenargumenten in Gleam finden Sie in der offiziellen Dokumentation der Standardbibliothek: https://gleam.run/std/io#command-args.

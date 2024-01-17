@@ -10,74 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä ja miksi?
 
-Monissa ohjelmointitehtävissä joudutaan vertailemaan kahta eri päivämäärää. Tämä voi olla tarpeen esimerkiksi tapahtumien järjestämiseen tai aikajärjestykseen perustuvien toimintojen suorittamiseen. Opi, miten voit helposti vertailla kahta päivämäärää C-ohjelmoinnin avulla.
+Vertaaminen kahden päivämäärän välillä on prosessi, jossa kaksi päivämäärää verrataan keskenään selvittääkseen, mikä niistä on aiempi tai myöhempi. Tämä on tärkeää ohjelmoinnissa, jotta voidaan esimerkiksi järjestää tapahtumia tai tarkistaa onko tietty päivämäärä menneisyydessä vai tulevaisuudessa.
 
-## Kuinka
+## Miten?
 
 ```C
 #include <stdio.h>
 #include <time.h>
 
-int main() {
-  
-  // Luodaan kaksi aikarakennetta
-  struct tm date1 = {0};
-  struct tm date2 = {0};
+// esimerkki vertailusta
+int compare_dates(struct tm date1, struct tm date2)
+{
+    if (date1.tm_year < date2.tm_year) return -1;
+    else if (date1.tm_year > date2.tm_year) return 1;
+    else if (date1.tm_mon < date2.tm_mon) return -1;
+    else if (date1.tm_mon > date2.tm_mon) return 1;
+    else if (date1.tm_mday < date2.tm_mday) return -1;
+    else if (date1.tm_mday > date2.tm_mday) return 1;
+    else return 0;
+}
 
-  // Asetetaan halutut päivämäärät
-  date1.tm_year = 121; // Vuosi 2021
-  date1.tm_mon = 1; // Helmikuu
-  date1.tm_mday = 22; // 22. päivä
+int main()
+{
+    // alustetaan kaksi päivämäärää käyttäen struct tm -rakennetta
+    struct tm date1 = { .tm_year = 2020, .tm_mon = 8, .tm_mday = 15 };
+    struct tm date2 = { .tm_year = 2021, .tm_mon = 4, .tm_mday = 1 };
 
-  date2.tm_year = 120; // Vuosi 2020
-  date2.tm_mon = 11; // Joulukuu
-  date2.tm_mday = 1; // 1. päivä
+    // vertaillaan päivämääriä ja tulostetaan tulos
+    int result = compare_dates(date1, date2);
+    if (result == -1) printf("Ensimmäinen päivämäärä on aiempi.");
+    else if (result == 1) printf("Toinen päivämäärä on aiempi.");
+    else printf("Päivämäärät ovat samat.");
 
-  // Muunnetaan aikarakenteet aikaleimoiksi
-  mktime(&date1);
-  mktime(&date2);
-
-  // Vertaillaan päivämääriä
-  if (date1.tm_year > date2.tm_year) {
-    printf("Ensimmäinen päivämäärä on myöhäisempi kuin toinen päivämäärä.");
-  }
-  else if (date1.tm_year < date2.tm_year) {
-    printf("Toinen päivämäärä on myöhäisempi kuin ensimmäinen päivämäärä.");
-  }
-  else { // Vuodet ovat samat, vertaillaan kuukausia
-    if (date1.tm_mon > date2.tm_mon) {
-      printf("Ensimmäinen päivämäärä on myöhäisempi kuin toinen päivämäärä.");
-    }
-    else if (date1.tm_mon < date2.tm_mon) {
-      printf("Toinen päivämäärä on myöhäisempi kuin ensimmäinen päivämäärä.");
-    }
-    else { // Kuukaudet ovat samat, vertaillaan päiviä
-      if (date1.tm_mday > date2.tm_mday) {
-        printf("Ensimmäinen päivämäärä on myöhäisempi kuin toinen päivämäärä.");
-      }
-      else if (date1.tm_mday < date2.tm_mday) {
-        printf("Toinen päivämäärä on myöhäisempi kuin ensimmäinen päivämäärä.");
-      }
-      else { // Päivämäärät ovat samat
-        printf("Päivämäärät ovat samat.");
-      }
-    }
-  }
-
-  return 0;
+    return 0;
 }
 ```
 
-Tämä esimerkkikoodi osoittaa, miten voit vertailla kahta päivämäärää C-ohjelmoinnin avulla. Koodi hyödyntää aikarakenteita ja aikaleimoja, jotta päivämäärien vertailu onnistuu.
+Tulos: Toinen päivämäärä on aiempi.
 
-## Syväsukellus
+## Syvempi sukellus
 
-Päivämäärien vertaileminen voi joskus olla monimutkaisempaa, sillä päivämäärät voivat sisältää myös aikaa. Tällöin tarvitaan esimerkiksi `difftime`-funktiota, joka vertailee kahta aikaleimaa ja palauttaa niiden välisen ajan erotuksen. Lisäksi voit käyttää `struct tm` -rakenteen muita kenttiä, kuten tunti tai minuutti, vertailuun.
+Päivämäärien vertaaminen on ollut tärkeä osa ohjelmointia jo vuosikymmenien ajan. Aiemmin se oli monimutkaisempaa, mutta nykyään C-ohjelmoijat voivat käyttää valmiita funktioita, kuten `difftime()`, joka laskee kahden aikaleiman välisen sekuntimäärän.
+
+Toinen tapa vertailla päivämääriä on käyttää julian päivämääriä, jotka ovat yhtenäisessä muodossa kaikille päivämäärille.
 
 ## Katso myös
 
-- [C-kielen virallinen dokumentaatio](https://www.iso.org/standard/74528.html)
-- [Aikarakenne C-ohjelmoinnissa](https://www.tutorialspoint.com/c_standard_library/c_function_mktime.htm)
-- [Esimerkkejä päivämäärien vertailusta C:ssä](https
+[Tietoisku C:stä](https://fi.wikipedia.org/wiki/C_(ohjelmointikieli)) - Lisätietoja C-ohjelmoinnista
+
+[Time.h C-dokumentaatio](https://www.tutorialspoint.com/c_standard_library/time_h.htm) - Time.h-kirjaston dokumentaatio, joka sisältää mm. päivämäärän vertailuun tarvittavat funktiot.

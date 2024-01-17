@@ -10,38 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+## What & Why?
 
-임시 파일을 생성하는 것에 참여하는 이유는 매우 간단합니다. 이는 파일을 생성하고 사용한 후에 해당 파일을 자동으로 삭제하게 해주기 때문입니다. 이는 우리가 불필요한 파일을 수동으로 삭제하는 수고를 덜어줍니다!
+임시 파일을 만드는 것은 프로그래머들이 자주 하는 일입니다. 임시 파일은 일시적으로 사용될 때 유용하며, 새로운 데이터를 만들거나 기존 데이터를 수정할 때 사용됩니다. 임시 파일은 일반적으로 메모리나 디스크 공간을 절약하고, 작업 속도를 높이기 위해 사용됩니다.
 
-## 사용 방법
+## How to:
+임시 파일을 만드는 방법은 간단합니다. Swift에서는 FileManager 클래스를 사용하여 임시 파일을 생성할 수 있습니다. 다음은 임시 파일을 만들고 출력하는 간단한 예제입니다.
 
-코드를 작성하기 전에, `FileManager`를 import 해야 합니다. 그러고난 후에는 `FileManager`의 `URLForDirectory` 메소드를 사용하는데, 이는 우리가 생성한 임시 파일을 저장할 디렉토리를 반환합니다. 이후에는 `FileManager`의 `createFile` 메소드를 사용하여 임시 파일을 생성할 수 있습니다.
+```Swift
+import Foundation
 
-``` Swift 
-let fileManager = FileManager.default
-let tempDir = fileManager.URLForDirectory(FileManager.SearchPathDirectory.ItemReplacementDirectory, inDomain: FileManager.SearchPathDomainMask.UserDomainMask, appropriateForURL: nil, create: true, error: nil)
-let tempURL = tempDir?.appendingPathComponent("temp.txt")
+let fileManager = FileManager()
+let tempFileURL = fileManager.temporaryDirectory.appendingPathComponent("tempFile.txt")
 
 do {
-    try "This is a temporary file!".write(to: tempURL!, atomically: true, encoding: String.Encoding.utf8)
-    print("\(tempURL!) 파일이 생성되었습니다.")
+    try "Hello World!".write(to: tempFileURL, atomically: true, encoding: .utf8)
+    let tempFileContent = try String(contentsOf: tempFileURL, encoding: .utf8)
+    print(tempFileContent) // Prints "Hello World!"
 } catch {
-    print("파일을 생성하는데 실패했습니다.")
+    print("Failed to create temporary file")
 }
 ```
 
-위의 코드를 실행하면 다음과 같은 출력을 볼 수 있습니다.
+## Deep Dive:
+1. 임시 파일은 1960년대부터 사용되어 온 개념입니다. 초기에는 메모리 상에 저장되는 가상 파일로 사용되었고, 나중에는 디스크 상에 저장되는 실제 파일로 발전하였습니다.
+2. 다른 언어에서는 임시 파일을 만드는데에 tmpfile() 함수를 사용할 수 있지만, Swift는 파일을 생성할 때 경로를 지정해야 합니다.
+3. 임시 파일은 앱이 실행되는 동안에만 존재하며 앱 종료 시 자동으로 삭제됩니다.
 
-```
-file:///Users/username/Library/Temporary%20Items/temp.txt 파일이 생성되었습니다.
-```
-
-## 깊이 들어가기
-
-임시 파일을 생성하는데는 두 가지 방법이 있습니다. 첫 번째 방법은 `FileManager`의 `URLForDirectory` 메소드를 사용하는 것이고, 두 번째 방법은 `NSTemporaryDirectory` 메소드를 사용하는 것입니다. 두 방법 중 어떤 것을 사용하든 임시 파일을 생성하는 것은 동일하지만, `NSTemporaryDirectory`는 iOS 7 이상에서만 사용 가능합니다.
-
-## 참고 자료
-
-- [Apple's Documentation on NSTemporaryDirectory](https://developer.apple.com/documentation/foundation/1409215-nstemporarydirectory)
-- [How To Use FileManager in Swift](https://www.ralfebert.de/ios-examples/foundation/filemanager/)
+## See Also:
+https://developer.apple.com/documentation/foundation/filemanager
+https://www.brianstorti.com/understanding-temporary-files-in-ruby/

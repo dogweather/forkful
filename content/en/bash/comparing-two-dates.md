@@ -10,59 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why 
+## What & Why?
+Comparing two dates is a common task in programming, where we compare two sets of date and time values to determine their relationship. This is often done to check if one date is before, after, or equal to another date. Programmers do this to validate user input, sort data, and control program flow based on specific dates.
 
-Comparing two dates is a common task in programming, especially when dealing with time-sensitive data or events. By learning how to compare dates in Bash, you can effectively manipulate and make decisions based on date values in your scripts or programs. 
+## How to:
+To compare two dates in Bash, we can use the built-in ```test``` command, also known as ```[ ]```, along with the operators ```-gt```, ```-lt```, and ```-eq``` to compare greater than, less than, and equal to respectively. We can also use the ```date``` command to convert the dates into a format that can be compared. Below are some examples:
 
-## How To 
+- To check if 10th April 2021 is after 1st January 2021:
+```Bash
+[ 20210410 -gt 20210101 ] && echo "10th April 2021 is after 1st January 2021"
+```
+Output: ```10th April 2021 is after 1st January 2021```
 
-To compare two dates in Bash, you can use the `date` command combined with the `test` command or the `[[` syntax. Here's a sample code and its output: 
+- To check if the current date and time is before 31st December 2021, we can use the ```date``` command:
+```Bash
+[ $(date +%Y%m%d%H%M%S) -lt 20211231000000 ] && echo "Current date and time is before 31st December 2021"
+```
+Output: ```Current date and time is before 31st December 2021```
 
-```Bash 
-#!/bin/bash 
+- We can also compare dates in alternate formats, such as with ```date -d``` command, which takes a string as an argument and converts it into a date:
+```Bash
+[ $(date -d "2021-06-25" +%s) -gt $(date -d "2021-06-24" +%s) ] && echo "25th June 2021 is after 24th June 2021"
+```
+Output: ```25th June 2021 is after 24th June 2021```
 
-date1="2021-01-01" 
-date2="2021-02-01" 
+## Deep Dive:
+Comparing dates is not a new concept, as dates have been used to keep track of time for centuries. In Bash, the ```test``` command is used to check for certain conditions and return an exit status based on the outcome. This exit status is then used to control the flow of the program. As an alternative, we can also use the ```((${var#pattern}))``` construct, which checks for a specific pattern within a variable and returns a boolean result.
 
-if [[ "$date1" > "$date2" ]]; then 
-echo "Date 1 is later than Date 2" 
-elif [[ "$date1" < "$date2" ]] 
-echo "Date 2 is later than Date 1" 
-else 
-echo "The dates are equal" 
-fi 
-``` 
-Output: 
-`Date 2 is later than Date 1`
+Furthermore, the implementation of comparing dates in Bash depends on the specific scenario and the desired output. Dates can be compared using various formats, such as epoch (seconds since 1st January 1970), day of the week, or day of year. It is essential to carefully choose the date format to ensure accurate comparisons.
 
-In the above code, we first define two variables `date1` and `date2` with values in the format `YYYY-MM-DD`. Then, we use the `[[` syntax and specify the comparison condition within double brackets. In this case, we're checking if `date1` is greater than `date2`. If this condition is true, the first statement will be executed. Otherwise, the `elif` condition will be checked, and if it's true, the second statement will be executed. If both conditions are false, the `else` statement will be executed. 
-
-Alternatively, you can also use the `test` command with the `-gt` or `-lt` flags for greater than or less than comparisons, respectively, and the `-eq` flag for equal comparisons. Here's an example: 
-
-```Bash 
-#!/bin/bash 
-
-date3="2021-03-01" 
-date4="2021-04-01" 
-
-if [ $date3 -gt $date4 ]; then 
-echo "Date 3 is greater than Date 4" 
-elif [ $date3 -lt $date4 ]; then 
-echo "Date 4 is greater than Date 3" 
-else 
-echo "The dates are equal" 
-fi 
-``` 
-Output: 
-`Date 4 is greater than Date 3`
-
-## Deep Dive 
-
-When comparing dates in Bash, it's important to keep in mind that the format of the dates must be consistent. For example, if you want to compare dates in the `MM-DD-YYYY` format, make sure that all your dates follow the same format. 
-In addition, the `date` command has various options for customizing the output of date values. For example, you can use the `-d` option to specify a date and time string instead of the current system date. This can come in handy when you need to compare a specific date and time combination. 
-
-## See Also 
-
-- [Bash Scripting Tutorial](https://linuxize.com/post/bash-scripting-tutorial/) 
-- [Bash Tips: Comparing Numbers and Strings](https://www.tldp.org/LDP/abs/html/comparison-ops.html) 
-- [GNU Coreutils date manual](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html#date-invocation)
+## See Also:
+- Bash ```test``` command: https://www.gnu.org/software/bash/manual/html_node/Bash-Conditional-Expressions.html
+- Bash Arithmetic Expansion: https://www.gnu.org/software/bash/manual/html_node/Arithmetic-Expansion.html
+- Date command in Bash: https://www.gnu.org/software/bash/manual/html_node/Bash-as-an-integer_002dcomparison-operator.html
+- Date formats in Bash: https://www.gnu.org/software/bash/manual/html_node/Date-Methods.html#Date-Methods

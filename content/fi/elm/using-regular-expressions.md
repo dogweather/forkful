@@ -10,43 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi käyttää reguläärisiä lausekkeita?
+## Mitä ja miksi?
 
-Reguläärisiä lausekkeita käytetään usein ketterissä ohjelmointikielissä, kuten Elm, joiden avulla voimme käsitellä ja manipuloida tekstidataa. Ne ovat hyödyllisiä esimerkiksi tekstin etsimisessä, korvaamisessa ja validoinnissa. Niiden avulla voimme käsitellä monimutkaisia hakuehtoja ja säästää paljon aikaa ja vaivaa.
+Säännölliset lausekkeet ovat tekstin käsittelyyn tarkoitettuja työkaluja, jotka auttavat löytämään ja muokkaamaan tietynlaisia merkkijonoja. Ohjelmoijat käyttävät niitä esimerkiksi datan etsimiseen ja validointiin sekä tekstien korvaamiseen. Säännölliset lausekkeet säästävät aikaa ja vaivaa, ja ovat erittäin hyödyllisiä monissa eri ohjelmointiprojekteissa.
 
-## Näin käytät reguläärisiä lausekkeita Elmissä
-```elm
--- Etsitään sana "kissaeläin" tekstistä
-Regex.find (Regex.regex "kissaeläin") "Tässä on muutama kissaeläin: kissa, koira, hamsteri"
+## Kuinka?
 
--- Tulostaa: Just (Ok (Regex.Match { match = "kissaeläin", submatches = [], index = 27, number = 1, namedSubmatches = Dict.empty }))
+Elm-kielellä säännöllisiä lausekkeita käytetään `Regex`-kirjaston avulla. Alla on esimerkki, miten voit esimerkiksi tarkistaa, onko annettu merkkijono validi sähköpostiosoite:
+
+```Elm
+import Regex exposing (..)
+
+isValidEmail : String -> Bool
+isValidEmail str =
+    case Regex.match (regex "[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,3}$") str of
+        Ok _ ->
+            True
+
+        Err _ ->
+            False
 ```
 
-```elm
--- Korvataan sana "maailma" "universumi"
-Regex.replace (Regex.regex "maailma") "universumi" "Tervetuloa uuteen maailmaan"
+Tässä koodissa käytämme `match`-funktiota, joka ottaa parametreikseen säännöllisen lausekkeen ja tarkistettavan merkkijonon. Jos merkkijono täsmää annettuun regexiin, palauttaa funktio `Ok`-arvon, muuten `Err`-arvon. Voit myös käyttää regexiä esimerkiksi datan hakuun tai korvaamiseen, kuten seuraavassa esimerkissä:
 
--- Tulostaa: Just (Ok "Tervetuloa uuteen universumiin")
+```Elm
+import Regex exposing (..)
+
+replaceAll : String -> String -> String -> String
+replaceAll old new str =
+    Regex.replace (regex old) (\_ -> new) str
+
+> replaceAll "elämä" "maailma" "Tämä on ihana elämä!"
+"Tämä on ihana maailma!"
 ```
 
-Regulääriset lausekkeet ovat myös käteviä tarkistamaan esimerkiksi sähköpostiosoitteen tai puhelinnumeron muotoa.
+## Syvemmälle
 
-```elm
--- Tarkistetaan, onko annettu merkkijono kelvollinen sähköpostiosoite
-Regex.contains (Regex.regex "[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,4}") "esimerkki@domain.com"
+Termi "säännöllinen lauseke" tulee matematiikasta, ja niitä on käytetty jo yli 60 vuoden ajan ohjelmoinnissa. Monet kielet tarjoavat sisäänrakennetun tavan käyttää säännöllisiä lausekkeita, mutta Elm-kielessä ne on toteutettu kirjastona. Muutama vaihtoehto Regex-kirjastolle Elm-kielessä on esimerkiksi `re` ja `regex-string` -kirjastot.
 
--- Tulostaa: Just (Ok True)
-```
-
-## Syvemmälle reguläärisiin lausekkeisiin
-
-Regulääriset lausekkeet perustuvat useisiin erikoismerkkeihin ja symboleihin, jotka määrittelevät tietyt haku- ja korvausmallit. Esimerkiksi symbolit ".", "+", "?" ja "*" tarkoittavat erilaisia sääntöjä merkkijonon osien sijoittamisessa.
-
-Monet ohjelmointikielillä toimivat regulääriset lausekkeet perustuvat POSIX-määrityksiin, jotka määrittelevät tarkat hakuehdot ja säännönsiirtymät.
-
-Jos haluat oppia lisää reguläärisistä lausekkeista ja niiden käytöstä Elmissä, voit tarkistaa virallisen dokumentaation osoitteesta https://package.elm-lang.org/packages/elm/regex/latest.
+Säännöllisten lausekkeiden toteutus perustuu tekstin parsimiseen ja vertailuun sallittuihin merkkijonoihin. Ne voivat olla hyödyllisiä myös esimerkiksi tietokantojen käsittelyssä tai tiedoston muokkaamisessa.
 
 ## Katso myös
 
-- [Elm - virallinen verkkosivusto](https://elm-lang.org/)
-- [Elm - suomenkielinen dokumentaatio](https://guide.elm-lang.org/)
+- [Elm-kirjasto: Regex](https://package.elm-lang.org/packages/elm/regex/latest/)
+- [Blogikirjoitus säännöllisten lausekkeiden käytöstä Elm-kielessä](https://www.jancona.com/posts/2016-12-13-elm-regex.html)

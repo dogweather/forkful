@@ -1,7 +1,7 @@
 ---
-title:                "Merkkijonojen yhdistäminen"
-html_title:           "Gleam: Merkkijonojen yhdistäminen"
-simple_title:         "Merkkijonojen yhdistäminen"
+title:                "Lauseiden yhdistäminen"
+html_title:           "Gleam: Lauseiden yhdistäminen"
+simple_title:         "Lauseiden yhdistäminen"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -10,33 +10,20 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä ja miksi?
+Merkkijonojen linkittäminen on tapa yhdistää kaksi tai useampaa merkkijonoa yhdeksi. Tämä on hyödyllistä esimerkiksi taulukoissa tai viesteissä, joissa tarvitaan dynaamista dataa. Ohjelmoijat käyttävät sitä helpottamaan muutosten tekemistä ja tietojen hallintaa.
 
-Stringien yhdistäminen on tärkeä osa ohjelmointia, sillä se mahdollistaa useiden tekstien yhdistämisen yhdeksi merkkijonoksi. Tämä on erityisen hyödyllistä esimerkiksi käyttäjän syötteen käsittelyssä ja tietojen tallentamisessa.
-
-## Kuinka Tehtävä
-
-Stringien yhdistäminen on helppoa Gleam-ohjelmointikielessä. Voit käyttää stringien yhdistämiseen plus-merkkiä (+) tai käyttämällä string-moduulista löytyvää "concat" -funktiota.
-
+## Miten:
 ```Gleam
-let etunimi = "Mikko"
-let sukunimi = "Mäkinen"
+let etunimi = "Matti"
+let sukunimi = "Meikäläinen"
 
-let kokonimi = etunimi + " " + sukunimi
-//tulostaa "Mikko Mäkinen"
-
-let kokonimi2 = string.concat(etunimi, " ", sukunimi)
-//tulostaa myös "Mikko Mäkinen"
+merkkijono.concat(etunimi, " ", sukunimi)
+//tulostaa "Matti Meikäläinen"
 ```
 
-## Syvemmälle
+## Syvemmälle:
+Merkkijonojen yhdistäminen on ollut käytössä jo pitkään ohjelmoinnissa, ja siihen on kehitetty erilaisia menetelmiä kuten interpolointi ja muuttujien sisällyttäminen merkkijonoihin. Muita tapoja yhdistää merkkijonoja ovat muun muassa string.format ja string.concat. Gleamin merkkijonojen yhdistämisfunktio on optimoitu ja nopea, joten sitä kannattaa käyttää tarpeen mukaan.
 
-Stringien yhdistämisessä on hyvä muistaa, että Gleam-kielessä kaikki on immutablea eli muuttumatonta. Tämä tarkoittaa sitä, että alkuperäisiä stringejä ei muokata, vaan uusi stringi luodaan niiden pohjalta.
-
-Stringien yhdistäminen on myös suorituskyvyltään tehokasta Gleamissa, sillä se käyttää sisäisesti StringBuilder -rakennetta. Tämä tarkoittaa, että useiden stringien yhdistäminen ei aiheuta turhia muistiallokaatioita, mikä voi hidastaa ohjelman suoritusta.
-
-## Katso myös
-
-- [Gleam-kielen dokumentaatio](https://gleam.run/)
-- [Opas Gleam-ohjelmointikieleen](https://github.com/gleam-lang/gleam/blob/master/getting-started.md)
-- [Tekstien käsittely Gleamissa](https://gleam.run/book/tutorials/strings.html)
+## Katso myös:
+Lisää tietoa Gleamin merkkijonojen käsittelyyn löydät dokumentaatiosta: https://gleam.run/documentation/strings/concat. Voit myös tutustua muihin tapoihin yhdistää merkkijonoja muiden ohjelmointikielten, kuten Javascriptin tai Pythonin, avulla.

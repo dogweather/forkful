@@ -1,7 +1,7 @@
 ---
-title:                "Überprüfen, ob ein Verzeichnis vorhanden ist"
-html_title:           "Go: Überprüfen, ob ein Verzeichnis vorhanden ist"
-simple_title:         "Überprüfen, ob ein Verzeichnis vorhanden ist"
+title:                "Überprüfung, ob ein Verzeichnis existiert"
+html_title:           "Go: Überprüfung, ob ein Verzeichnis existiert"
+simple_title:         "Überprüfung, ob ein Verzeichnis existiert"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Files and I/O"
@@ -10,52 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum 
-Let's face it, checking if a directory exists is not the most exciting task in programming. But it is a crucial one, especially when working with files and folders. By knowing how to perform this simple task in Go, you can save yourself from potential errors and ensure the smooth running of your code.
+## Was & Warum?
 
-## Wie geht es 
-Um zu überprüfen, ob ein Verzeichnis in Go existiert, gibt es einige verschiedene Möglichkeiten. In den folgenden Codebeispielen verwenden wir die Funktion `os.Stat()` und die `os.IsNotExist()` Funktion, um zu überprüfen, ob das angegebene Verzeichnis existiert oder nicht.
+Das Überprüfen, ob ein Verzeichnis existiert, ist ein wichtiger Aspekt der Programmierung, der häufig bei der Verwaltung von Dateien und Ordnern verwendet wird. Programmierer verwenden diese Funktion, um zu prüfen, ob ein bestimmtes Verzeichnis vorhanden ist, bevor sie darauf zugreifen oder damit arbeiten. Dadurch wird sichergestellt, dass der Code zuverlässig und robust ist.
 
-Um zu beginnen, importieren wir das `os` Paket in unserem Code:
+## Wie geht's?
 
-```Go
+Um zu überprüfen, ob ein Verzeichnis mit Go existiert, müssen wir die Funktion "Exist" aus der Paketbibliothek "Os" importieren und die gewünschte Pfadangabe als Parameter übergeben. Hier ist ein Beispielcode:
+
+```
+package main
+import "fmt"
 import "os"
-```
 
-Als nächstes verwenden wir die `os.Stat()` Funktion, um Informationen über ein gegebenes Verzeichnis abzurufen. Diese Funktion gibt eine `FileInfo` Struktur zurück, die Informationen wie Dateigröße, Erstellungsdatum und Änderungsdatum enthält.
-
-```Go
-info, err := os.Stat("pfad/zum/verzeichnis")
-```
-
-Wir überprüfen nun, ob es einen Fehler beim Aufrufen der `os.Stat()` Funktion gab, indem wir die `err` Variable prüfen. Falls der Fehler `nil` ist, bedeutet dies, dass das Verzeichnis existiert und wir können weiter mit unserem Code fortfahren. Ist der Fehler jedoch nicht `nil`, bedeutet dies, dass das Verzeichnis nicht existiert und wir können entsprechend reagieren.
-
-```Go
-if err != nil {
-    // Verzeichnis existiert nicht
-} else {
-    // Verzeichnis existiert 
+func main() {
+    _, err := os.Stat("/pfad/zum/verzeichnis") 
+    if os.IsNotExist(err) {
+        fmt.Println("Verzeichnis existiert nicht") 
+    } else {
+        fmt.Println("Verzeichnis existiert") 
+    } 
 }
 ```
 
-Eine weitere Möglichkeit ist die Verwendung der `os.IsNotExist()` Funktion. Diese Funktion nimmt den Rückgabewert von `os.Stat()` entgegen und überprüft, ob der Fehler auf eine nicht vorhandene Datei oder ein Verzeichnis hinweist.
+Die Ausgabe hängt davon ab, ob das Verzeichnis vorhanden ist oder nicht. Wenn das Verzeichnis nicht existiert, wird die erste Bedingung ausgeführt und die Meldung "Verzeichnis existiert nicht" ausgegeben.
 
-```Go
-// Überprüfen auf Fehler
-if os.IsNotExist(err) {
-    // Verzeichnis existiert nicht
-} else {
-    // Fehler ist kein Hinweis auf nicht existierendes Verzeichnis
-    // Verzeichnis existiert vielleicht doch
-}
-```
+## Tiefentauchen
 
-## Tiefer Einblick 
-Bei der Verwendung von `os.Stat()` gibt es einige wichtige Dinge zu beachten. Zum Beispiel werden keine Fehler zurückgegeben, wenn der angegebene Pfad ein symbolischer Link ist, der auf ein nicht existierendes Verzeichnis verweist. In solchen Fällen wird die tatsächliche Existenz des Verzeichnisses durch den `os.Stat()` Aufruf nicht überprüft.
+Historisch gesehen gab es verschiedene Ansätze, um zu überprüfen, ob ein Verzeichnis existiert, mit verschiedenen Sprachen und Bibliotheken. Mit der Einführung von Go wurde diese Funktion in die Standardbibliothek aufgenommen, um die Verwaltung von Verzeichnissen zu vereinfachen.
 
-Eine weitere wichtige Sache ist, dass die `os.Stat()` Funktion auch eine Fehlermeldung zurückgibt, wenn der Zugriff auf das Verzeichnis nicht möglich ist, zum Beispiel aufgrund von fehlenden Berechtigungen. Daher ist es ratsam, vor dem Aufrufen der `os.Stat()` Funktion sicherzustellen, dass der Zugriff auf das Verzeichnis möglich ist.
+Eine Alternative zur Verwendung der "Exist" Funktion besteht darin, das Verzeichnis zu öffnen und dann anhand von Fehlermeldungen festzustellen, ob es existiert oder nicht. Allerdings ist dies weniger effizient und kann zu unerwünschtem Verhalten führen.
 
-## Siehe auch 
-- [Paket os in der Go-Dokumentation](https://golang.org/pkg/os/)
-- [Tutorial zur Datei- und Verzeichnisverwaltung in Go](https://www.digitalocean.com/community/tutorials/how-to-manage-files-and-directories-in-go-de)
-- [Der Unterschied zwischen os.IsNotExist und os.Stat bei der Überprüfung auf Dateiexistenz in Go](https://stackoverflow.com/questions/12518876/how-to-check-if-a-file-exists-in-go-programming/58104833#58104833)
+Die "Exist" Funktion überprüft nicht nur, ob ein Verzeichnis existiert, sondern auch, ob auf das Verzeichnis zugegriffen werden kann. So können wir sicherstellen, dass das Verzeichnis nicht nur vorhanden, sondern auch zugänglich ist.
+
+## Siehe auch
+
+Weitere Informationen zum Überprüfen der Existenz von Verzeichnissen in Go finden Sie in der offiziellen Dokumentation: https://pkg.go.dev/os#File.Exist. Hier finden Sie auch Beispiele für die Verwendung der Funktion in verschiedenen Szenarien.

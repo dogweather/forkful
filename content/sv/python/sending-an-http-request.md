@@ -1,7 +1,7 @@
 ---
-title:                "Sänder en http-begäran"
-html_title:           "Python: Sänder en http-begäran"
-simple_title:         "Sänder en http-begäran"
+title:                "Skicka en http-begäran"
+html_title:           "Python: Skicka en http-begäran"
+simple_title:         "Skicka en http-begäran"
 programming_language: "Python"
 category:             "Python"
 tag:                  "HTML and the Web"
@@ -10,55 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
 
-Att skicka HTTP-förfrågningar är en grundläggande färdighet för programmerare som vill skapa webbapplikationer eller arbeta med API:er. Genom att förstå hur HTTP-protokollet fungerar kan du kommunicera med servrar och hämta eller skicka data på webben.
+Att skicka en HTTP-förfrågan är en viktig del av programmering eftersom det låter dig kommunicera med en server och hämta data eller utföra en åtgärd. Det är den grundläggande metoden för att ansluta till och använda webbplatser och webbapplikationer.
 
-## Hur man gör
+## Så här gör du:
 
-För att skicka en HTTP-förfrågan i Python, behöver du importera inbyggda urllib-biblioteket:
+```python
+import requests
 
-```Python
-import urllib.request
+# Skicka en förfrågan till Google och skriv ut statuskoden
+response = requests.get('https://www.google.com')
+print(response.status_code)
 ```
 
-För att skicka en GET-förfrågan, använd `urlopen()`-funktionen:
+```python
+import requests
 
-```Python
-url = "http://exempelwebbplats.com"
-response = urllib.request.urlopen(url)
+# Skicka en POST-förfrågan med en JSON-payload
+data = {'username': 'John', 'password': 'secret'}
+response = requests.post('https://example.com/login', json=data)
+print(response.content)
 ```
 
-Du kan sedan läsa svaret som en sträng med `read()`-metoden:
+## Djupdykning:
 
-```Python
-data = response.read()
-```
-För att skicka en POST-förfrågan, behöver du först koda dina data med `urllib.parse`-modulen:
+Att skicka HTTP-förfrågningar har funnits sedan början av World Wide Web. Det finns också andra protokoll som kan användas för att skicka förfrågningar, som till exempel FTP och SMTP. Det finns också olika bibliotek som kan användas för att skicka HTTP-förfrågningar i Python, såsom urllib och httplib. Requests-biblioteket är dock ett populärt alternativ på grund av dess enkla syntax och användarvänlighet.
 
-```Python
-import urllib.parse
-data = urllib.parse.urlencode({'key': 'value'})
-data = data.encode('utf-8') # om du behöver konvertera till byte-format
-```
+## Se även:
 
-Sedan kan du skicka förfrågan med `urlopen()`-funktionen och ange dina data som argument:
-
-```Python
-url = "http://exempelwebbplats.com"
-response = urllib.request.urlopen(url, data)
-```
-
-## Djupdykning
-
-HTTP står för "Hypertext Transfer Protocol" och är ett protokoll som möjliggör kommunikation mellan klienter och servrar på webben. Det använder en "request-response"-modell där en klient skickar en förfrågan till en server, som sedan svarar med en respons. En HTTP-förfrågan består av en metod (t.ex. GET eller POST), en URL och en valfri "body" som kan innehålla data.
-
-Det finns också olika typer av statuskoder som en server kan skicka tillbaka i en HTTP-respons. Exempelvis, om allt gick bra kommer du få ett 200-kod, men om det finns ett fel kommer du få en annan kod för att ange vad som gick fel.
-
-Att lära sig mer om HTTP och dess specifikationer kan hjälpa dig att förstå hur du skickar och tar emot förfrågningar på ett effektivt sätt.
-
-## Se även
-
-- [Python's urllib-dokumentation](https://docs.python.org/3/library/urllib.html)
-- [Hypertext Transfer Protocol - Wikipedia](https://sv.wikipedia.org/wiki/Hypertext_Transfer_Protocol)
-- [HTTP statuskoder - MDN webbdokumentation](https://developer.mozilla.org/sv-SE/docs/Web/HTTP/Status)
+- [Requests documentation](https://requests.readthedocs.io/en/master/)
+- [Python standard library: urllib](https://docs.python.org/3/library/urllib.html)
+- [Python standard library: httplib](https://docs.python.org/3/library/http.client.html)

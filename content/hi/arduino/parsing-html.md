@@ -1,7 +1,7 @@
 ---
-title:                "HTML का विश्लेषण"
-html_title:           "Arduino: HTML का विश्लेषण"
-simple_title:         "HTML का विश्लेषण"
+title:                "हैंडिंग हैटम्ल"
+html_title:           "Arduino: हैंडिंग हैटम्ल"
+simple_title:         "हैंडिंग हैटम्ल"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "HTML and the Web"
@@ -10,34 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Kyun
-HTML ko parse karne ka yeh bohot accha tarika hai kyuki isse hum web pages ke content ko extract karke use aur bhi useful bana sakte hai. Iske saath saath, yeh ek accha way hai HTML coding ki samajhne ka.
+## क्या और क्यों?
+HTML पार्सिंग क्या है और क्यों प्रोग्रामर इसे करते हैं? यह एक तरीका है जिससे हम वेबपेज्स से डेटा को निकाल सकते हैं और उसे अपने प्रोग्राम में उपयोग कर सकते हैं।
 
-## Kaise Karein
-Sabse pehle, humein ek HTML parser library ko download karna hoga. Yeh humein bahut se options provide karega jaise ki Soup, HTML Parser ya phir libxml2. Ab humein apne Arduino IDE mein ek naya sketch create karna hoga. Uske baad, humein apne code mein library ko import karna hoga. Iss tarah se:
+## कैसे:
 ```Arduino
-#include <LibraryName.h>
-```
-Ab hum ise setup() function mein use karenge:
-```Arduino
+#include <ESP8266WiFi.h>
+#include <ESP8266HTTPClient.h>
+
 void setup() {
-  // Initialize the parser
+  // Wi-Fi कनेक्शन सेट करें
+  WiFi.begin("wifi_स्थानीय", "पासवर्ड");
+
+  // सर्वर से डेटा डाउनलोड करें
+  HTTPClient http;
+  http.begin("https://example.com/");
+  int httpCode = http.GET();
+
+  // डाउनलोड किए गए डेटा को पार्स करें
+  String data = http.getString();
+
+  // समझें कि आप चाहते हैं कि स्ट्रिंग किसी HTML एलिमेंट से प्राप्त हो
+  // उदाहरण के लिए: <p id="name">Arduino लेख निर्माण विधि</p> 
+  // हमें प्रकाशित लेख के साथ बहुत सारे प्रकार के डेटा को निकालना है जो हमें स्ट्रिंग <p id="name"> से ऊपर लेते हैं। 
+  // इसके लिए, हम अपनी स्ट्रिंग को split() फंक्शन का उपयोग करके पार्स करते हैं। 
+  // हम अपने डेटा को कोई भी दिया गया अलगाव-friendly ठस्कहेरा मानता हूँ 
+  // उदाहरण के लिए: <p id="name"> 
+  String result = data.split("<p id=\"name\">")[1].split("</p>")[0]; 
+
+  // प्रिंट करें
+  Serial.println(result);
 }
-```
-Uske baad, humein HTML content likhna hoga jise hum parse karna chahte hai, jaise ki:
-```Arduino
-String html = "<h1>Hello World</h1>";
-```
-Iske baad, humein parser function ko use karna hoga jaise ki:
-```Arduino
-String title = parser(html);
-```
-Iss tarah, humne HTML content se "Hello World" extract kar liya hai. Isse hum apne code mein kisi bhi tarah ka changes kar sakte hai jaise ki use variable mein store kar sakte hai, use print kar sakte hai ya phir kisi aur function mein use kar sakte hai.
 
-## Deep Dive
-HTML content ko parse karne ka yeh versatile method hai kyuki hum isse apne code mein kam se kam lines mein implement kar sakte hai. Isse hum web scraping, data extraction aur web automation jaise tasks ko bhi asaan bana sakte hai. Iss method mein, hum ek parser library ka use karte hai jo humein HTML content ko parse karne mein madad karta hai. Yeh library HTML tags aur unke attributes ke basis par content ko parse karta hai.
+void loop() {}
 
-## See Also
-- [Soup - A web-scraping library for Arduino](https://github.com/tttapa/Arduino-Soup)
-- [HTML Parser for Arduino](https://github.com/ivanseidel/ArduinoThread)
-- [libxml2 - An HTML parser written in C](http://www.xmlsoft.org/html/libxml-HTMLparser.html)
+```
+
+आउटपुट: "Arduino लेख निर्माण विधि"
+
+## गहराई में जाएं:
+इतिहासी परिस्थिति: HTML का अस्तित्व 1993 में टिम बर्नर्स-ली द्वारा दिया गया था। 
+वैकल्पिक: HTML पार्सिंग के लिए अन्य तरीके भी हैं जैसे कि एक्सप्रेस्स और जावास्क्रिप्ट पर आधारित पुरोहित आदि। 
+अंतर्जाल प्रकरण: यह समझने के लिए महत्वपूर्ण है कि आप स्ट्रिंग को किस तत्व से प्राप्त करना चाहते हैं। 
+इसके लिए आपको समान और असमान के अलावा कुछ और विकल्प हैं।
+
+## भी देखें:
+- [ESP8266WiFi Library](https://github.com/esp8266/Arduino)
+- [Arduino स्प्लिट फंक्शन](https://www.arduino.cc/reference/en/language/functions/strings/string/split/)
+- [डेटा पार्सिंग के लिए कुछ और अल्गाव-friendly ठस्क हैं](https://www.arduino.cc/reference/en/language/functions/communication/serial/parseint/)

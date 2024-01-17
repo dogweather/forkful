@@ -10,34 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+## Cosa e perché?
 
-Scrivere test è un'abitudine cruciale per qualsiasi sviluppatore di Clojure che desideri produrre codice di alta qualità. I test forniscono una maggiore sicurezza, aiutano a individuare bug in modo tempestivo e agevolano la manutenzione del codice nel lungo termine. Inoltre, scrivere test ti aiuta a comprendere meglio la tua logica e a migliorare le tue abilità di programmazione.
+Scrivere test è un modo per verificare che il nostro codice funzioni correttamente. I programmatori lo fanno per garantire che il loro codice sia affidabile e che funzioni correttamente, prima di inviarlo in produzione.
 
-## Come fare
+## Come fare:
 
-Per scrivere test in Clojure, è necessario utilizzare il framework di test integrato chiamato "clojure.test". Inizia definendo una funzione di test, utilizzando la sintassi ```(deftest)```, fornendo un nome descrittivo e il blocco di codice da testare. Ad esempio:
+Scrivere test in Clojure è facile! Basta usare la libreria di test incorporata nel linguaggio, chiamata ```clojure.test```. Di seguito un esempio di un test semplice che verifica che la funzione ```add``` sommi correttamente due numeri:
 
 ```Clojure
+(ns test-example
+  (:require [clojure.test :refer :all]
+            [example.core :refer :all]))
+
 (deftest add-test
-  (is (= 5 (+ 2 3))))
+  (testing "Addition Test"
+    (is (= (add 1 2) 3))
+    (is (= (add -1 5) 4))))
 ```
 
-Questo codice definisce un test che controlla se la somma di 2 e 3 è uguale a 5. Per eseguire il test, utilizza la funzione ```(run-tests)``` e passa il nome della funzione di test come parametro:
+Esaminiamo questo codice da vicino:
 
-```Clojure
-(run-tests 'add-test)
-```
+- La prima riga definisce il namespace per il nostro file di test, ```test-example```. Ogni file di test dovrebbe avere un namespace unico.
 
-Il risultato dovrebbe essere una stampa a schermo che indica se il test è passato o fallito.
+- La seconda riga importa la libreria di test e il namespace della nostra applicazione, ```example.core```, che contiene la funzione ```add```.
 
-## Approfondimento
+- La terza riga definisce il test stesso, chiamato ```add-test```.
 
-Oltre al semplice esempio di test mostrato sopra, ci sono molte altre funzionalità che puoi utilizzare per scrivere test più completi e robusti. Ad esempio, puoi definire più asserzioni all'interno di un singolo test utilizzando la funzione ```(are)```, che prende come argomenti una serie di espressioni e controlla se tutte sono vere. Puoi anche utilizzare le funzioni di "setup" e "teardown" per impostare le condizioni precedentemente o successivamente all'esecuzione dei test.
+- La quarta riga utilizza la funzione ```testing``` per raggruppare tutti i test per la funzione ```add```.
 
-Puoi approfondire ulteriormente le tue conoscenze su clojure.test consultando la documentazione ufficiale e studiando esempi di codice di test su progetti open source.
+- Le ultime due righe utilizzano la funzione ```is```, che verifica se il risultato dell'espressione fornita è uguale a quello atteso.
 
-## Vedi anche
+Per eseguire questo test, basta invocare ```lein test``` sulla riga di comando.
 
-- Documentazione ufficiale su clojure.test: https://clojure.github.io/clojure/clojure.test-api.html
-- Esempi di test su GitHub: https://github.com/clojure/clojure/blob/master/test/clojure/test/test_clojure/test_test.clj
+## Approfondimento:
+
+Scrivere test è un'attività fondamentale nella pratica della programmazione test-driven development (TDD). Ci sono anche altre librerie di test disponibili per Clojure, come ```midje``` e ```speclj```. In generale, è importante scrivere test che siano facili da mantenere e che coprano tutti i casi possibili del nostro codice.
+
+## Vedi anche:
+
+- [Documentazione ufficiale di Clojure](https://clojure.org/guides/learn/testing)
+
+- [Articolo di blog di Joel Hooks su TDD in Clojure](https://joelhooks.com/blog/2013/03/02/writing-tests-with-clojure-test/)
+
+- [Documentazione di Leiningen](https://leiningen.org/), il gestore di progetto consigliato per sviluppare applicazioni in Clojure.

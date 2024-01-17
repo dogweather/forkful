@@ -10,42 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i dlaczego?
 
-Pobieranie stron internetowych jest jednym z podstawowych zadań programistów, którzy pracują z językiem Javascript. Jest to niezbędne do pozyskania danych z sieci, tworzenia automatycznych skryptów lub tworzenia spersonalizowanych aplikacji internetowych. Dzięki temu procesowi możliwe jest uzyskanie wielu informacji, które można później wykorzystać w różnych celach.
+Pobieranie strony internetowej to proces pobierania kodu źródłowego danej strony przez przeglądarkę internetową. Programiści często pobierają strony internetowe, aby wyświetlić je w swoim oprogramowaniu lub przetworzyć dane ze strony.
 
-## Jak to zrobić
-
-Aby pobrać stronę internetową za pomocą Javascript, można skorzystać z wbudowanej funkcji "fetch". Poniżej przedstawiamy przykładowy kod, który pobierze stronę główną Google i wyświetli jej treść w konsoli.
+## Jak to zrobić:
 
 ```Javascript
-fetch('https://www.google.com')
-.then(response => response.text())
-.then(data => console.log(data));
+fetch('https://example.com')
+    .then(response => response.text())
+    .then(data => console.log(data));
 ```
 
 Output:
 
-```Text
-<!DOCTYPE html>
+```
 <html>
 <head>
-...
+    <title>Example</title>
 </head>
 <body>
-...
+    <h1>Hello World!</h1>
 </body>
 </html>
 ```
 
-Możliwe jest również wykorzystanie biblioteki zewnętrznej, takiej jak "axios" lub "request", aby ułatwić proces pobierania. Ważne jest również zrozumienie sposobu budowy zapytań HTTP i przekazywania parametrów, takich jak nagłówki czy dane formularza.
+## Głębsze spojrzenie:
 
-## Pogłębiona analiza
+Pobieranie stron internetowych jest możliwe dzięki protokołowi HTTP. Przez lata pojawiło się wiele innych metod pobierania danych z internetu, takich jak WebSockets czy API REST, ale pobieranie strony internetowej jest w dalszym ciągu jednym z najbardziej popularnych sposobów. W Javascripcie, funkcja `fetch()` jest wykorzystywana do wysyłania zapytania HTTP do podanego adresu URL i zwraca obietnicę, która potem może być przetworzona przez kolejne funkcje.
 
-Pobieranie stron internetowych za pomocą Javascript może być skomplikowanym procesem. Wymaga to wiedzy na temat protokołu HTTP, struktury HTML oraz sposobu przetwarzania danych przez przeglądarkę. Dlatego, warto poświęcić czas na dokładne zapoznanie się z dokumentacją i wykorzystanie narzędzi programistycznych, takich jak narzędzia deweloperskie w przeglądarce czy debugger.
+## Zobacz też:
 
-## Zobacz również
-
-- [Dokumentacja funkcji "fetch" na MDN](https://developer.mozilla.org/pl/docs/Web/API/Fetch_API/Using_Fetch)
-- [Dokumentacja biblioteki "axios"](https://github.com/axios/axios)
-- [Dokumentacja biblioteki "request"](https://github.com/request/request)
+- [fetch() na MDN](https://developer.mozilla.org/pl/docs/Web/API/GlobalFetch/fetch)
+- [HTTP na Wikipedia](https://pl.wikipedia.org/wiki/HTTP)

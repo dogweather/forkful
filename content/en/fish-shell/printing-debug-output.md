@@ -10,47 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-Debug output, also known as logging, is an essential tool for any programmer. It allows you to track the execution of your code and identify any errors or unexpected behavior. Printing debug output in a clear and organized manner can greatly improve the debugging process and save you time in the long run.
+# What & Why?
 
-## How To
-To print debug output in Fish Shell, you can use the `echo` command followed by the `-d` option, which stands for "debug". For example:
+Debugging is an important part of programming and involves finding and fixing errors in code. One way programmers do this is by printing debug output, which is when specific values or information is displayed while the code is running. This can help identify where an error is occurring and what the current state of the code is. 
 
-```
-Fish Shell
+# How to:
 
-echo -d "Debug output"
-```
-
-This will print the string "Debug output" along with the line number and file name where the `echo` command was executed.
-
-You can also use the `set -q` command in combination with a variable to check if a certain condition is met, and then print the debug output. For example:
+Fish Shell makes printing debug output a breeze with its built-in `fish_echo` function. Simply use the `fish_echo` command followed by the value or information you want to print. For example:
 
 ```
-Fish Shell
-
-set var "Debug variable"
-
-if set -q var
-    echo -d $var
-end
+Fish Shell > set variable_name 3
+Fish Shell > fish_echo $variable_name 
+3
 ```
 
-This will only print the debug output if the condition `set -q var` is true.
+This can also be used within a script or function to print out multiple values or track the execution of the code.
 
-## Deep Dive
-By default, Fish Shell will print debug output to the standard error stream, which is usually displayed in red. However, you can also customize the output color using the `-c` option followed by a color name or RGB value. For example:
+# Deep Dive:
 
-```
-Fish Shell
+Historically, the most common way to print debug output was through the use of `printf` statements in C programming. However, with the rise of shell scripting and other high-level languages, the use of dedicated functions like `fish_echo` have become popular. 
 
-echo -d -c red "Red debug output"
-```
+Alternative methods for printing debug output include using the `echo` command or redirecting standard output to a file. However, these may not provide as much control and flexibility as using a dedicated function.
 
-This will print "Red debug output" in red to the standard error stream.
+In terms of implementation, Fish Shell's `fish_echo` function is implemented in the C++ language and is available as a part of the core package. It also supports various formatting options, such as the `-n` flag for omitting the trailing new line.
 
-Additionally, you can use the `-f` and `-l` options to print the file name and line number respectively, without printing any actual debug output. This can be useful when you want to track the execution of your code without cluttering the output with unnecessary messages.
+# See Also:
 
-## See Also
-- [Fish Shell documentation](https://fishshell.com/docs/current/index.html)
-- [Debugging in Fish Shell](https://fishshell.com/docs/current/commands.html#debug-output)
+For more information on Fish Shell's `fish_echo` function, check out the official documentation here: https://fishshell.com/docs/current/cmds/fish_echo.html
+
+To learn more about debugging and other essential programming skills, consider checking out the tutorials and resources available on websites like Codecademy, Udemy, and FreeCodeCamp. Happy coding!

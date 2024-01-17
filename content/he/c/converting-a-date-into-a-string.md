@@ -10,42 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##Why
-תמיד קשה לטפל בתאריך בתוכנית. כתיבה של תאריך בתור מחרוזת מאפשרת לנו לטפל בתאריך בצורה פשוטה וקלה יותר.
+# מה ולמה?
 
-##How To
+המרת תאריך למחרוזת היא תהליך שבו מתאריך מסוים נמצא בפורמט של מחרוזת. תהליך זה חשוב למתכנתים מכיוון שהוא מאפשר להציג תאריך בצורה מותאמת לכל פלטפורמה או דיבור, מבלי להשתמש בתאריך מקורי.
+
+# איך לעשות זאת:
+
 ```C
 #include <stdio.h>
 #include <time.h>
 
-char* date_to_string(time_t date) {
-    // יצירת מערך מאפשר לשמירת התאריך בתור מחרוזת
-    char str[26];
-
-    // מתחילים את העיבוד של התאריך באמצעות פונקציית gmtime
-    struct tm* timeinfo = gmtime(&date);
-
-    // שימוש בפונקציית strftime עבור יצירת המחרוזת בתאריך ובפורמט מתאים
-    strftime(str, 26, "%Y-%m-%d %H:%M:%S", timeinfo);
-
-    // החזרת המחרוזת כתאריך מלא בפורמט מבוקש
-    return str;
-}
-
-int main() {
-    // תאריך נתון לדוגמה
-    time_t my_date = 1568719200;
-
-    // הדפסת התאריך בפורמט מחרוזת
-    printf("התאריך בפורמט מחרוזת הוא: %s", date_to_string(my_date));
-    return 0;
+int main()
+{
+   time_t now;
+   time(&now);
+   char buffer[80];
+   strftime(buffer, 80, "Today is %A, %B %d.", localtime(&now));
+   printf("Date: %s", buffer);
+   return 0;
 }
 ```
-Output: התאריך בפורמט מחרוזת הוא: 2019-09-17 19:00:00
+**Output:** Date: Today is Wednesday, September 29.
 
-##Deep Dive
-בכדי להמיר תאריך למחרוזת בשפת C, נצטרך להשתמש בפונקציית gmtime המאפשרת לנו לעבור על תאריך נתון לפי כל הפורמטים הנתמכים ולהחזיר את התאריך בתור struct tm. לאחר מכן, נשתמש בפונקציית strftime המאפשרת לנו להמיר את התאריך בתוך הstruct למחרוזת בפורמט מתאים עבורנו.
+# הנכים לעומק:
 
-##See Also
-- תיעוד רשמי לפונקציות gmtime ו- strftime בשפת C: https://www.cplusplus.com/reference/ctime/gmtime/
-- מדריך לטיפול בתאריכים בשפת C: https://www.tutorialspoint.com/c_standard_library/time_h.htm
+תהליך המרה של תאריך למחרוזת קיים מאז ילדות המחשבים והשתמש בהיסטוריית התאריכים הצביונית לחישוב התאריך היהודי והמולד.
+
+אחת האלטרנטיבות הנפוצות יותר לתהליך המרה הזה היא לשמור את התאריך במבנה נתון מתאים כמו משתנה מסוג struct או להשתמש בספריית תוצרת צד ג'ייסון.
+
+פירוט יותר על תהליך המרה כולל דוגמאות ומידע נוסף ניתן למצוא במקורות המקושרים למטה.
+
+# ראה גם:
+
+- [מדריך של MSDN על המרת תאריך למחרוזת בשפת C](https://docs.microsoft.com/en-us/cpp/standard-library/strftime-wcsftime-strftime-l-wcsftime-l)
+- [מדריך של GeeksforGeeks על המרת תאריך למחרוזת בשפת C](https://www.geeksforgeeks.org/converting-string-different-date-formats-using-strptime/?ref=rp)
+- [ספריית ממשק תרגום של gettext לשפת C](https://www.gnu.org/software/gettext/)

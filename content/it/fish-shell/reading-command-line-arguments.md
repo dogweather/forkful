@@ -10,49 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##Perché
-Probabilmente sei qui perché vuoi imparare a utilizzare la Fish Shell e sei curioso di conoscere i suoi comandi. Leggere gli argomenti della riga di comando è un'abilità fondamentale per poter usare la Shell in modo efficace e veloce. Questo articolo ti spiegherà come farlo nel modo più semplice possibile.
+## Cosa e Perche?
+Leggere argomenti dalla riga di comando è il processo di accettare input da parte dell'utente, tipicamente quando viene eseguito un programma da terminale. I programmatori utilizzano questo per fornire flessibilità e personalizzazione ai loro programmi, consentendo agli utenti di specificare dati o opzioni specifiche al momento dell'esecuzione.
 
-##Come Fare
-Per leggere gli argomenti della riga di comando nella Fish Shell, è necessario utilizzare il comando `read`, seguito da una variabile dove verranno salvati i dati inseriti dall'utente. Vediamo un esempio:
+## Come Fare:
+Di seguito sono riportati alcuni esempi di codice in Fish Shell per leggere e utilizzare argomenti dalla riga di comando:
 
-```Fish Shell
-read -l nome
+```
+#!/usr/bin/fish
+
+# leggi e salva l'argomento in una variabile
+set arg $argv[1]
+
+# stampa l'argomento
+echo "Il tuo argomento è $arg"
+
+# verifica se è stato fornito un argomento aggiuntivo
+if test "count $argv" -gt 1
+	echo "Hai fornito più di un argomento!"
+end
 ```
 
-Questo comando aspetterà che l'utente inserisca il proprio nome e lo salverà nella variabile `nome`. Per stampare il nome inserito, possiamo utilizzare il comando `echo` seguito dal nome della variabile. Ad esempio:
-
-```Fish Shell
-echo $nome
+Esempio di output:
+```
+$ myscript.fish hello
+Il tuo argomento è hello
 ```
 
-Se vogliamo leggere più di un argomento nella stessa riga, possiamo utilizzare il flag `-a`, che ci permette di creare un array con i dati inseriti. Vediamo un esempio:
+## Approfondimento:
+La lettura degli argomenti dalla riga di comando è stata introdotta nei primi sistemi operativi, come UNIX e MS-DOS, per consentire agli utenti di personalizzare i comandi che volevano eseguire. Il Fish Shell è una delle alternative al bash, un interprete più comune per la linea di comando. L'implementazione di base per leggere gli argomenti utilizza il programma `getopt`, che consente di specificare opzioni e argomenti richiesti. 
 
-```Fish Shell
-read -a preferiti
-```
-
-Con questo comando, l'utente potrà inserire più argomenti separati da spazi e verranno salvati nell'array `preferiti`. Possiamo poi stampare l'array utilizzando il comando `echo` seguito dal nome dell'array e dal numero dell'elemento che vogliamo visualizzare. Ad esempio:
-
-```Fish Shell
-echo $preferiti[1]
-```
-
-##Deep Dive
-Ora che sai come leggere gli argomenti della riga di comando nella Fish Shell, è importante comprendere che è anche possibile assegnare dei valori di default alle variabili. Ad esempio:
-
-```Fish Shell
-read -l -i "Sconosciuto" nome
-```
-
-In questo modo, se l'utente non inserisce alcun valore, la variabile `nome` avrà come valore di default "Sconosciuto". Inoltre, possiamo anche specificare una lunghezza massima per l'input utilizzando il flag `-m`. Vediamo un esempio:
-
-```Fish Shell
-read -l -m 20 nome
-```
-
-In questo caso, l'utente può inserire al massimo 20 caratteri per il nome.
-
-##Vedi Anche
-- [Comandi di base della Fish Shell](https://fishshell.com/docs/current/tutorial.html#basic-commands)
-- [Creare script nella Fish Shell](https://fishshell.com/docs/current/tutorial.html#scripting)
+## Vedi Anche:
+Per ulteriori informazioni sulla lettura degli argomenti dalla riga di comando, consulta queste risorse utili:
+- Documentazione ufficiale di Fish Shell: https://fishshell.com/docs/current/cmds/set.html
+- Documentazione di `getopt`: https://www.gnu.org/software/libc/manual/html_node/Getopt.html

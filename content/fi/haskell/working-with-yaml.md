@@ -1,7 +1,7 @@
 ---
-title:                "Työskentely yaml:n kanssa"
-html_title:           "Haskell: Työskentely yaml:n kanssa"
-simple_title:         "Työskentely yaml:n kanssa"
+title:                "Töitä tehdään yamlin kanssa"
+html_title:           "Haskell: Töitä tehdään yamlin kanssa"
+simple_title:         "Töitä tehdään yamlin kanssa"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Data Formats and Serialization"
@@ -10,59 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+Versio 1.0 - Työskentely YAML:in kanssa
 
-Jos olet kiinnostunut ohjelmoinnista, luultavasti olet törmännyt YAML:iin. YAML (Yet Another Markup Language) on formaatti, jota käytetään tiedostojen tallentamiseen ja siirtämiseen tietokoneiden välillä. Se on erityisen hyödyllinen, kun halutaan tallentaa tai vaihtaa tietoa rakenteisessa muodossa, kuten taulukkoina tai joukkoina. Jos olet kiinnostunut datan hallinnasta ja manipuloinnista, YAML on loistava väline tähän tarkoitukseen.
+## Mikä & Miksi?
+YAML (Yet Another Markup Language) on tiedostomuoto, jota käytetään datan tallentamiseen ja jakamiseen erilaisten ohjelmien välillä. Ohjelmoijat käyttävät YAML:ia koska se on yksinkertainen ja helposti luettavissa oleva formaatti, joka helpottaa datan käsittelyä ja jakamista.
 
-## Näin aloitat
+## Kuinka?
+Haskellin avulla voit lukea ja kirjoittaa YAML-tiedostoja käyttämällä Data.Yaml kirjastoa. Alla on esimerkki, joka lukee YAML-tiedoston ja tulostaa sen sisällön konsoliin:
 
-Aloittaaksesi YAML:n käytön Haskellissa, sinun tulee ensin asentaa paketti nimeltä "yaml". Voit tehdä tämän suorittamalla seuraavan komennon GHCi-konsolissa:
+```Haskell
+import Data.Yaml
 
-```
-cabal install yaml
-```
-
-Tämän jälkeen sinun tulee tuoda YAML-paketti moduuliesi joukkoon:
-
-```
-import Data.YAML
+main = do
+  yaml <- readFile "tiedosto.yaml"
+  print yaml
 ```
 
-Nyt voit käyttää YAML:ia koodissasi. Annetaan esimerkiksi olemassa oleva YAML-tiedosto nimeltä "mydata.yaml" jo sisältää seuraavanlaista dataa:
-
-```
-- title: "Esimerkki"
-  author: "Maija Meikäläinen"
-  year: 2020
-- title: "Toinen esimerkki"
-  author: "Matti Mallikas"
-  year: 2019
-```
-
-Voimme käyttää YAML-paketin funktiota "decodeFileThrow" lukeaksemme tämän tiedoston sisällön ja tallentaaksemme sen muuttujaan koodissamme:
-
-```
-mydata <- decodeFileThrow "mydata.yaml" :: IO [YAML]
-```
-
-Tämän jälkeen voimme käyttää muuttujaa "mydata" saadaksemme tiedoston sisällön koodissa. Esimerkiksi voimme tulostaa tiedoston sisällön näytölle seuraavalla tavalla:
-
-```
-print $ show mydata
-```
-
-Ja tuloste olisi:
-
-```
-[Node (Mapping [Scalar (Str "title"),Scalar (Str "Esimerkki"),Scalar (Str "author"),Scalar (Str "Maija Meikäläinen"),Scalar (Str "year"),Scalar (Int 2020)]),Node (Mapping [Scalar (Str "title"),Scalar (Str "Toinen esimerkki"),Scalar (Str "author"),Scalar (Str "Matti Mallikas"),Scalar (Str "year"),Scalar (Int 2019)])]
-```
+Tämän koodin suorittaminen tulostaa tiedoston sisällön muodossa, joka on helppo lukea ja muokata.
 
 ## Syväsukellus
+YAML kehitettiin vuonna 2001 ja sen tarkoituksena oli korvata XML:ää yksinkertaisemmalla ja helpommin luettavalla formaatilla. Muihin vaihtoehtoihin kuuluvat JSON ja TOML, mutta YAML on edelleen suosittu ohjelmoijien keskuudessa sen helposti luettavan rakenteen takia.
 
-Kun olet perehtynyt YAML:n perusominaisuuksiin ja haluat syventää tietämystäsi, voit tutkia erilaisia tapoja käyttää sitä kanssa Haskellissa. Voit esimerkiksi luoda omaa dataa ja tallentaa sen YAML-tiedostoon käyttämällä "encodeFile" funktiota. Voit myös käyttää YAML:ia yhdessä muiden pakettien kanssa, kuten "aeson", joka mahdollistaa JSON-tiedostojen käsittelyn sekä JSON:sta YAML:ksi muuntamisen.
+Haskellissa Data.Yaml kirjasto käyttää Aeson-kirjastoa JSON-tietojen serialisointiin ja deserialisointiin. Tämä mahdollistaa YAML-tiedoston muuntamisen JSON-muotoon ja päinvastoin.
 
 ## Katso myös
-
-- [YAML Specification](https://yaml.org/spec/1.2/spec.html)
-- [YAML-haskell paketin dokumentaatio](https://hackage.haskell.org/package/yaml)
-- [Haskellin peruskurssi](https://www.cis.upenn.edu/~cis194/spring13/)
+- [Data.Yaml-haskellkirjaston dokumentaatio](https://hackage.haskell.org/package/yaml)
+- [YAML-spesifikaatio](https://yaml.org/spec/)
+- [Aeson-haskellkirjasto](https://hackage.haskell.org/package/aeson)

@@ -1,7 +1,7 @@
 ---
-title:                "Extrahering av delsträngar"
-html_title:           "Fish Shell: Extrahering av delsträngar"
-simple_title:         "Extrahering av delsträngar"
+title:                "Utvinna delsträngar"
+html_title:           "Fish Shell: Utvinna delsträngar"
+simple_title:         "Utvinna delsträngar"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -10,58 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
+Att extrahera substrängar (delsträngar) innebär att man hämtar en del av en större sträng. Detta är ett vanligt behov bland programmerare när man vill manipulera eller behandla specifika delar av en text. Det kan till exempel vara för att utföra sökningar, ersättningar eller för att parsar data.
 
-Substring-extrahering är en vanlig uppgift vid programmering, särskilt när du hanterar textdata. Det kan hjälpa dig att effektivt manipulera och hantera textsträngar enligt specifika kriterier.
-
-## Hur man gör det
-
-Det finns många olika sätt att extrahera substrings i Fish Shell, men vi kommer att fokusera på två vanliga metoder: användning av inbyggda kommandon och användning av reguljära uttryck.
-
-Först ska vi se på hur man använder inbyggda kommandon för att extrahera substrings:
+## Hur man gör:
+```Fish Shell``` har inbyggda funktioner som gör det enkelt att extrahera substrängar. Här är ett exempel där vi extraherar en del av en URL:
 ```
-Fish Shell
-# Spara textsträngen i en variabel
-set sträng "Hej världen"
-
-# Extrahera de första 3 tecknen
-string sub --start 0 --length 3 $sträng
-# Resultat: "Hej"
-
-# Extrahera tecknen mellan index 4 och 8
-string sub --start 4 --length 4 $sträng
-# Resultat: "värld"
-
-# Extrahera de sista 5 tecknen
-string sub --length -5 $sträng
-# Resultat: "världen"
+set url "https://www.example.com/article/1234"
+set article_number (string sub $url 29 -1)
+echo $article_number
 ```
-
-Nu ska vi titta på hur man använder reguljära uttryck för att extrahera substrings:
+Output:
 ```
-Fish Shell
-# Spara textsträngen i en variabel
-set sträng "Detta är en text"
-
-# Extrahera första ordet (allt innan första mellanslaget)
-string match -r "(\w+)" $sträng
-# Resultat: "Detta"
-
-# Extrahera alla ord som börjar med bokstaven "t"
-string match -rx "t\w+" $sträng
-# Resultat: "text"
-
-# Extrahera alla tecken mellan "är" och "en"
-string match -r "är (\w+) en" $sträng
-# Resultat: "en"
+1234
 ```
+Vi använder ```set``` för att tilldela strängen "https://www.example.com/article/1234" till variabeln url. Sedan använder vi ```string sub``` för att extrahera en del av strängen, från index 29 till slutet av strängen. Slutligen använder vi ```echo``` för att skriva ut den extraherade delen.
 
-## Djupgående
+## Djupdykning:
+Funktionen ```string sub``` har funnits sedan Fish Shell 2.3 och är en väldigt kraftfull och användbar funktion när det kommer till strängmanipulation. Det finns dock också alternativ som kan användas för att extrahera substrängar, såsom ```awk``` och ```sed```. För att implementera substrängsextraktion använder Fish Shell en C-funktion som heter ```fish__sub_string```.
 
-Det finns många fler alternativ och möjligheter när det gäller substring-extrahering i Fish Shell. Det är värt att utforska olika kommandon och tekniker för att hitta vad som fungerar bäst för ditt specifika projekt. En annan användbar funktion är "string replace", som låter dig byta ut en del av en textsträng med en annan. Du kan också använda "string split" för att dela upp en sträng baserat på ett givet tecken eller mönster.
-
-## Se även
-
-- Fish Shell-dokumentation om "string" kommandon: https://fishshell.com/docs/current/cmds/string.html
-- Tutorial om reguljära uttryck: https://www.regular-expressions.info/tutorial.html
-- Bevaka String Extraction i Bash Shell: https://usefulangle.com/post/78/string-extraction-bash-shell
+## Se även:
+* [Fish Shell dokumentation för string sub](https://fishshell.com/docs/current/cmds/set.html#string_sub)
+* [Fish Shell GitHub](https://github.com/fish-shell/fish-shell)

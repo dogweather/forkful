@@ -10,57 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-Debugging is an essential part of the development process. It involves identifying and fixing errors in code, which can be a frustrating and time-consuming task. One way to make debugging more efficient is by utilizing print-debugging, which involves printing out specific values and messages to help identify where the issue lies in the code.
+Printing debug output refers to the act of displaying the values of variables and other information during the execution of a program. This is a common practice among programmers as it allows them to track the behavior of their code and identify errors or potential issues.
 
-## How To
+## How to:
 
-Printing debug output in PHP is a straightforward process. All you need is the `echo` or `print` statement, followed by the variable or message you want to display. Let's look at a simple example:
+To print debug output in PHP, you can use the ```print_r()``` or ```var_dump()``` functions. The ```print_r()``` function allows you to view the contents of a variable, while ```var_dump()``` provides a more detailed and structured output.
 
+Example code:
 ```PHP
-$number = 10;
-echo "The value of the variable is: " . $number;
+$fruit = "apple";
+print_r($fruit); // displays: apple
+var_dump($fruit); // displays: string(5) "apple"
 ```
 
-In this code, we create a variable called `$number` and assign it a value of `10`. Then, using the `echo` statement, we print out a message along with the value of the variable. The output of this code will be:
+## Deep Dive:
 
-```
-The value of the variable is: 10
-```
+1. Historical Context:
+Debugging has been a fundamental part of programming since its inception. In the early days, programmers would use printing debug output as a way to check the state of their programs, as more advanced debugging tools were not available.
 
-This can be helpful in understanding the flow of the code and identifying which variables are holding which values.
+2. Alternatives:
+Besides printing debug output, there are other ways to debug code, such as using a debugger tool or logging errors to a file. However, many programmers still prefer the simplicity and effectiveness of printing output.
 
-You can also print out the contents of an array or object using the `print_r()` function:
+3. Implementation Details:
+The ```print_r()``` and ```var_dump()``` functions are built-in to PHP, making them easily accessible for developers. They also have some useful parameters that can be used to customize the output, such as ```print_r($fruit, true)``` to return the output as a string instead of displaying it.
 
-```PHP
-$fruits = array("apple", "banana", "orange");
-print_r($fruits);
-```
+## See Also:
 
-The output will be:
-
-```
-Array
-(
-    [0] => apple
-    [1] => banana
-    [2] => orange
-)
-```
-
-This allows you to see the structure and contents of complex data types, which can be useful when debugging.
-
-## Deep Dive
-
-In addition to the basic `echo` and `print` statements, there are various ways to print debug output in PHP. One method is by using the `var_dump()` function, which displays the data type, value, and length of a variable. This can be especially helpful for troubleshooting issues related to data types.
-
-Another useful function is `debug_print_backtrace()`, which prints a backtrace of the function calls that lead to the current point in the code. This can help in understanding the flow of the program and identifying where the issue may have originated.
-
-It's important to note that while print-debugging can be helpful, it should not be used as a permanent solution. It's best to remove any print statements once the issue has been identified and resolved to ensure clean and efficient code.
-
-## See Also
-
-- [PHP Manual: Debugging](https://www.php.net/manual/en/book.debug.php)
-- [Debugging in PHP: A Beginner's Guide](https://www.cloudways.com/blog/php-debugging/)
-- [5 Tips for Effective Debugging in PHP](https://www.telerik.com/blogs/5-tips-for-effective-debugging-in-php)
+- [Debugging in PHP](https://www.php.net/manual/en/debugger.php)
+- [PHP Debugging with Xdebug](https://www.jetbrains.com/help/phpstorm/debugging-with-xdebug.html)
+- [PHP Error Logging](https://www.php.net/manual/en/function.error-log.php)

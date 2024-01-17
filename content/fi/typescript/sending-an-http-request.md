@@ -1,7 +1,7 @@
 ---
-title:                "HTTP-pyynnön lähettäminen"
-html_title:           "TypeScript: HTTP-pyynnön lähettäminen"
-simple_title:         "HTTP-pyynnön lähettäminen"
+title:                "Lähettämällä http-pyyntö"
+html_title:           "TypeScript: Lähettämällä http-pyyntö"
+simple_title:         "Lähettämällä http-pyyntö"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "HTML and the Web"
@@ -10,30 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
-Kehittäjät voivat lähettää HTTP-pyyntöjä kommunikoidakseen web-palvelimien kanssa ja hakeakseen tai päivittääkseen tietoja. Tämä on tärkeä osa web-kehitystä ja voi auttaa luomaan yhteyspisteitä muiden sovellusten kanssa.
+## Kiitos HTTP-pyynnön: miksi ja MITÄ?
+Lähettäessäsi HTTP-pyynnön, pyydät verkkosivulta tai palvelimelta tietoja. Tämä voi sisältää esimerkiksi hakemista, lähettämistä tai päivittämistä. Ohjelmoijat käyttävät tätä hyödyksi saadakseen esimerkiksi uusimmat tiedot palvelimelta tai tallentaakseen tietoja.
 
-## Miten tehdä se
-Käyttämällä TypeScriptiä ja sen sisäänrakennettuja kirjastoja, kuten Axios, kehittäjät voivat lähettää HTTP-pyyntöjä helposti ja tehokkaasti. Tässä on yksinkertainen esimerkki GET-pyynnön lähettämiseksi Axios-kirjastolla:
-
+## Näin teet sen:
 ```TypeScript
-import axios from 'axios';
+import { HttpClient } from '@angular/common/http';
 
-axios.get('https://example.com/api/users')
-  .then((response) => {
-    console.log(response.data);
-  })
-  .catch((error) => {
+const url = 'https://example.com/api/users';
+
+//luodaan uusi HTTP-asiakas
+const http = new HttpClient();
+
+//lähetetään GET-pyyntö ja haetaan vastaus
+http.get(url).subscribe(response => {
+    console.log(response);
+}, error => {
     console.log(error);
-  });
+})
 ```
+Tässä esimerkissä käytetään Angularin HttpClient-kirjastoa lähettämään GET-pyyntö haluttuun URL-osoitteeseen. Vastaus saadaan Observable-muodossa, joka käsitellään sitten subscribe-metodilla.
 
-Koodi lähettää GET-pyynnön osoitteeseen "https://example.com/api/users" ja tulostaa vastauksen konsoliin. Koodissa käytämme myös promiseja käsittelemään vastausta ja mahdollisia virheitä.
+## Syvempään perehtyminen:
+HTTP-pyyntöjen käyttö on yleistynyt internetin kehittymisen myötä. Nykyään suurin osa verkkosivuista ja sovelluksista kommunikoi muiden palvelimien kanssa lähettämällä ja vastaanottamalla HTTP-pyyntöjä.
 
-## Syväsukellus
-HTTP-pyynnöt ovat tärkeä osa RESTful-arkkitehtuuria ja ovat tärkeä tapa siirtää tietoja eri sovellusten välillä. TypeScript tarjoaa kehittäjille helpon tavan lähettää erilaisia HTTP-pyyntöjä, kuten GET, POST ja PUT. Kehittäjät voivat myös käyttää muita kirjastoja, kuten SuperAgent ja Fetch, lähettääkseen HTTP-pyyntöjä ja käsitellä vastauksia.
+On myös muita tapoja lähettää ja vastaanottaa dataa kuin HTTP-pyynnöt, kuten esimerkiksi WebSockets, joka mahdollistaa reaaliaikaisen kommunikoinnin palvelimien kanssa. HTTP-pyyntöjen toteuttaminen on kuitenkin edelleen tärkeä ja yleinen tapa ohjelmoijien keskuudessa.
 
-## Katso myös
-- [TypeScriptin virallinen verkkosivusto](https://www.typescriptlang.org/)
-- [Axios-kirjaston dokumentaatio](https://github.com/axios/axios)
-- [RESTful-sovellusten suunnittelu](https://restfulapi.net/)
+HTTP-pyyntöjen toteuttaminen TypeScriptillä on helppoa, sillä on olemassa valmiita kirjastoja, kuten Angularin HttpClient, joka tekee pyynnön lähettämisestä ja vastauksen käsittelystä yksinkertaista.
+
+## Katso myös:
+- [HttpClient Angularin dokumentaatiossa](https://angular.io/guide/http)
+- [Express.js -framework Node.js-pohjaisten web-sovellusten kehittämiseen](https://expressjs.com/)
+- [MDN WebSocketsin dokumentaatiossa](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API)

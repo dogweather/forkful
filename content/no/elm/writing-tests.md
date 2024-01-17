@@ -1,7 +1,7 @@
 ---
-title:                "Skriving av tester"
-html_title:           "Elm: Skriving av tester"
-simple_title:         "Skriving av tester"
+title:                "Å skrive tester"
+html_title:           "Elm: Å skrive tester"
+simple_title:         "Å skrive tester"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Testing and Debugging"
@@ -10,41 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hva & Hvorfor?
 
-Hvorfor skulle man bry seg med å skrive tester, når man allerede har tilbrakt timer med å skrive og feilsøke koden? Vel, her er noen gode grunner til hvorfor det kan være verdt innsatsen:
+Skriving av tester er en viktig del av å være en dyktig programmerer. Det er en prosess hvor man skriver kode for å sjekke om den eksisterende koden fungerer som den skal. Dette gjør man for å sikre seg at koden fungerer som den skal, og for å redusere sjansene for feil og bugs.
 
-- Å skrive tester hjelper deg med å fange feil tidlig i koden, noe som betyr mindre arbeid senere når koden skal integreres og testes som en helhet.
-- Det er også en god måte å dokumentere koden din på, og gjøre det enklere for andre å forstå hva du har skrevet.
+## Slik gjør du det:
 
-## Hvordan
+Enkelt sagt, det å skrive tester innebærer å lage små kodeeksempler som verifiserer at funksjonene og metodene i programmet oppfører seg som forventet. La oss ta en titt på et eksempel:
 
-Å skrive tester i Elm er enkelt og intuitivt. Her er et eksempel på å skrive en enkel test for en funksjon som legger sammen to tall og sjekker om resultatet er riktig:
+```Elm
+import List exposing (head)
 
-```Elm 
-import Test exposing (..)
-
-addNumbers : Int -> Int -> Int
-addNumbers x y =
-    x + y
-
-testAddNumbers : Test
-testAddNumbers =
-    describe "Adding numbers"
-        [ test "1 + 1 should be 2" <|
-            \_ -> 
-                Expect.equal (addNumbers 1 1) 2
-        ]
+testHead =
+  describe "List.head"
+    [ test "returns the first element of a non-empty list" <|
+        \_ -> head [1,2,3] == Just 1
+    ]
 ```
 
-Som du kan se, bruker vi funksjonen `expect` for å sjekke om resultatet er lik det vi forventer. Når du kjører testen, vil det enten produsere en grønn eller rød melding, avhengig av om testen består. Du kan også kjøre flere tester ved å bruke funksjonen `testList` og gruppere dem sammen.
+I dette eksempelet ser vi hvordan vi benytter Elm's `List.head` funksjon i en test. Ved hjelp av `test` funksjonen, kan vi sjekke om det returnerte verdien av `head` funksjonen er det vi forventer. Her benytter vi også `describe` funksjonen for å gi en beskrivelse av hva testen skal verifisere.
 
-## Dykk dypere
+## Dypdykk:
 
-Hvis du ønsker å lære mer om hvordan du kan skrive tester i Elm, kan du sjekke ut Elm sin offisielle dokumentasjon om Testing. Der vil du finne mer detaljert informasjon om ulike typer tester, debugging og vanlige feil du kan støte på.
+Tester har blitt en nødvendighet i moderne programmering, og mange programmeringsspråk har lignende verktøy som lar utviklere skrive og kjøre tester. I Elm, benytter man seg av et bibliotek som heter `elm-test` for å skrive tester og kjøre dem.
 
-## Se også
+Alternativt, kan man også benytte seg av andre biblioteker og rammeverk som tilbyr tester som en del av sin funksjonalitet. Noen eksempler inkluderer `elm-spec` og `elm-explorations/test`.
 
-- [Offisiell Elm Testing dokumentasjon](https://guide.elm-lang.org/testing/)
-- [En oversikt over Elm Testing verktøy](https://medium.com/@felixblaschke/testing-elm-apps-an-overview-of-tools-52b0a93709c1)
-- [Elm Test Tutorial fra Scrimba](https://scrimba.com/g/gelmtesting)
+## Se også:
+
+[Elm Test Documentation](https://package.elm-lang.org/packages/elm-explorations/test/latest/Elm-Test)
+
+[Elm Spec Documentation](https://package.elm-lang.org/packages/JustusWeber/elm-spec/latest/)
+
+[Elm Explorations Test Documentation](https://package.elm-lang.org/packages/elm-explorations/test/latest/)
+
+Så nå vet du hva det vil si å skrive tester i Elm, og hvorfor det er viktig. Start å implementer testing i din egen kode og se hvor mye det kan hjelpe deg som programmerer.

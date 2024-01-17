@@ -1,7 +1,7 @@
 ---
-title:                "HTML-Analyse"
-html_title:           "PHP: HTML-Analyse"
-simple_title:         "HTML-Analyse"
+title:                "HTML-Parsing"
+html_title:           "PHP: HTML-Parsing"
+simple_title:         "HTML-Parsing"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "HTML and the Web"
@@ -10,44 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was & Warum?
+Das Parsen von HTML ist eine Technik, mit der Programmierer HTML-Code analysieren und extrahieren können. Dadurch können sie bestimmte Informationen aus einer Webseite isolieren und in ihren eigenen Programmen verwenden. Das Parsen von HTML wird häufig verwendet, um automatisierte Bots zu erstellen, die Daten von Websites sammeln oder um Inhalte auf Websites dynamisch zu aktualisieren.
 
-Warum sollte man HTML parsen? Nun, HTML ist die Sprache, in der Webseiten geschrieben werden, und um auf Informationen oder Inhalte einer Webseite zugreifen zu können, müssen wir sie zunächst verstehen. Das Parsen von HTML ermöglicht es uns, die Struktur und den Inhalt einer Webseite zu analysieren und zu verarbeiten, um die gewünschten Informationen zu erhalten.
+## Wie geht's?
+Eine einfache Möglichkeit, HTML mit PHP zu parsen, ist die Verwendung der `simple_html_dom`-Bibliothek. Diese Bibliothek bietet verschiedene Funktionen zum Durchsuchen und Extrahieren von HTML-Elementen. Zum Beispiel können Sie mit dem folgenden Code ein HTML-Dokument laden und alle Links auf der Seite auflisten:
 
-## Wie Geht's
+```PHP
+<?php
+include 'simple_html_dom.php';
 
-Das Parsen von HTML ist relativ einfach mit PHP, da es spezielle Funktionen gibt, die uns dabei unterstützen. Hier ist ein einfaches Beispiel, um den Titel einer Webseite auszulesen:
+// HTML-Dokument laden
+$html = file_get_html('https://www.example.com');
 
-```PHP 
-// HTML-Datei einlesen 
-$html = file_get_contents('https://www.example.com'); 
-
-// DOMDocument-Objekt erstellen 
-$dom = new DOMDocument(); 
-
-// HTML-Code in das Objekt laden 
-$dom->loadHTML($html); 
-
-// Das <title>-Tag finden und den Text ausgeben 
-$title = $dom->getElementsByTagName('title')->item(0)->textContent; 
-
-echo $title; // Ausgabe: Beispiel Webseite 
+// Alle Links auswählen und ausgeben
+foreach($html->find('a') as $link) {
+  echo $link->href . '<br>';
+}
+?>
 ```
 
-In diesem Beispiel haben wir zuerst die HTML-Datei mit der Funktion "file_get_contents" eingelesen und anschließend ein DOMDocument-Objekt erstellt. Mit der "loadHTML"-Funktion haben wir den HTML-Code in das Objekt geladen und konnten dann mithilfe von "getElementsByTagName" das <title>-Tag finden und den Text ausgeben.
+Die Ausgabe könnte beispielsweise so aussehen:
+```
+https://www.example.com/link1
+https://www.example.com/link2
+https://www.example.com/link3
+```
 
-Es gibt viele weitere Funktionen, die uns beim Parsen von HTML helfen, wie zum Beispiel "getElementById", "getElementsByTagName", "getAttribute" usw. Mit diesen Funktionen können wir auf bestimmte Elemente, Attribute und Inhalte in einem HTML-Dokument zugreifen und sie verarbeiten.
+## Tiefer eintauchen
+Der erste Parser für HTML wurde bereits im Jahr 1980 entwickelt und seitdem gibt es viele verschiedene Parsing-Methoden und Bibliotheken. Neben der Verwendung von PHP gibt es auch andere Möglichkeiten, um HTML zu parsen, wie z.B. mit regulären Ausdrücken oder mit JavaScript. Jede Methode hat ihre eigenen Vor- und Nachteile, aber PHP ist eine häufig verwendete und bewährte Option.
 
-## Tieferer Einblick
+Wenn Sie sich für die Verwendung von `simple_html_dom` entscheiden, gibt es viele weitere Funktionen, die Sie erkunden können. Zum Beispiel können Sie spezifische HTML-Tags oder -Attribute auswählen oder sogar auf CSS-Selektoren zugreifen.
 
-Das Parsen von HTML ermöglicht es uns nicht nur, Daten aus einer Webseite zu extrahieren, sondern auch sie zu manipulieren und neu zu erstellen. Wir können zum Beispiel mit der "createElement" Funktion neue HTML-Elemente erstellen und sie dann in das bestehende HTML-Dokument einfügen.
-
-Außerdem können wir mit dem Einsatz von Funktionen wie "strip_tags" oder "htmlspecialchars" unerwünschte oder gefährliche Elemente und Zeichen aus dem HTML-Code filtern, was die Sicherheit unserer Anwendung verbessert.
-
-Es gibt auch fortgeschrittene Techniken wie das Einbinden von XPATH-Ausdrücken, um gezielt auf bestimmte Elemente eines HTML-Dokuments zuzugreifen. Für einen tieferen Einblick in das Parsen von HTML empfehle ich, sich mit den verschiedenen Funktionen und Konzepten der PHP-DOM-Erweiterung vertraut zu machen.
-
-## Siehe Auch
-
-- [PHP Manual: DOMDocument](https://www.php.net/manual/de/book.dom.php)
-- [W3Schools: PHP DOMDocument](https://www.w3schools.com/php/php_ref_dom.asp)
-- [WebScraping.com: PHP und HTML Parsing](https://www.webscraping.com/de/blog/PHP-und-HTML-Parsing/)
+## Siehe auch
+- Offizielle Dokumentation für `simple_html_dom`: https://simplehtmldom.sourceforge.io/
+- Einführung in das Parsen von HTML mit PHP: https://code.tutsplus.com/tutorials/html-parsing-and-screen-scraping-with-the-simple-html-dom-library--net-11856
+- Alternative Methode zum Parsen von HTML mit PHP: https://github.com/azettl/php-html-parser

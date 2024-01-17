@@ -1,7 +1,7 @@
 ---
-title:                "Zaczynając nowy projekt"
-html_title:           "C#: Zaczynając nowy projekt"
-simple_title:         "Zaczynając nowy projekt"
+title:                "Rozpoczynając nowy projekt"
+html_title:           "C#: Rozpoczynając nowy projekt"
+simple_title:         "Rozpoczynając nowy projekt"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Getting Started"
@@ -10,117 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i dlaczego?
 
-Skoro czytasz ten artykuł, pewnie zastanawiasz się, dlaczego warto zacząć nowy projekt w języku C#. No cóż, powody mogą być różne - może chcesz poszerzyć swoje umiejętności programistyczne, może masz w głowie genialny pomysł, który chcesz zrealizować, a może po prostu lubisz wyzwania i chcesz spróbować czegoś nowego. Niezależnie od motywacji, rozpoczynanie nowego projektu w języku C# może być bardzo satysfakcjonującym doświadczeniem i pomóc Ci w rozwoju jako programista.
+Zaczynanie nowego projektu to proces tworzenia nowej aplikacji lub oprogramowania od podstaw. Programiści wykonują to, aby dostosować swoje projekty do konkretnych potrzeb lub wymagań. Zaczynanie od nowa daje im również możliwość wykorzystania najnowszych technologii i metod, aby stworzyć bardziej wydajne i funkcjonalne oprogramowanie.
 
-## Jak to zrobić
+## Jak to zrobić?
 
-Zanim zaczniemy, upewnij się, że masz zainstalowaną najnowszą wersję języka C#. W Visual Studio możesz to sprawdzić w "Help" -> "About Microsoft Visual Studio". Jeśli nie masz jeszcze języka zainstalowanego, możesz pobrać go ze strony internetowej Microsoft lub skorzystać z innej platformy, takiej jak .NET Core. 
+### Przykład 1: Tworzenie nowego projektu
 
-Kiedy już będziesz miał wszystko gotowe, możemy przejść do kodowania. Oto kilka przykładowych zadań, które możesz wykonać w języku C# w ramach swojego nowego projektu:
-
-- "Hello World!" 
 ```C#
-using System;
+public class NewProject {
 
-namespace HelloWorld
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Hello World!");
-        }
+    // kod tworzący nowy projekt
+
+    public static void Main() {
+        Console.WriteLine("Witaj w moim nowym projekcie!");
     }
 }
 ```
-Output:
-```
-Hello World!
-```
 
-- Prosty kalkulator
+### Przykład 2: Definiowanie wymaganych elementów
+
 ```C#
-using System;
+const string projectName = "Moja aplikacja";
+DateTime projectStartDate = new DateTime(2020, 07, 01);
+int projectDuration = 6;
 
-namespace Calculator
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Enter the first number:");
-            double num1 = Convert.ToDouble(Console.ReadLine());
-
-            Console.WriteLine("Enter the second number:");
-            double num2 = Convert.ToDouble(Console.ReadLine());
-
-            Console.WriteLine("Sum: " + (num1 + num2));
-            Console.WriteLine("Difference: " + (num1 - num2));
-            Console.WriteLine("Product: " + (num1 * num2));
-            Console.WriteLine("Quotient: " + (num1 / num2));
-        }
-    }
-}
-```
-Output:
-```
-Enter the first number:
-10
-Enter the second number:
-5
-
-Sum: 15
-Difference: 5
-Product: 50
-Quotient: 2
+Console.WriteLine("Nazwa projektu: " + projectName);
+Console.WriteLine("Data rozpoczęcia: " + projectStartDate);
+Console.WriteLine("Czas trwania w miesiącach: " + projectDuration);
 ```
 
-- Gra w zgadywanie liczb 
-```C#
-using System;
+### Oczekiwany wynik:
 
-namespace NumberGame
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            Random random = new Random();
-            int numToGuess = random.Next(1, 11);
-            Console.WriteLine("Guess a number between 1 and 10:");
-
-            int userInput = Convert.ToInt32(Console.ReadLine());
-
-            while (userInput != numToGuess)
-            {
-                Console.WriteLine("Wrong, try again:");
-                userInput = Convert.ToInt32(Console.ReadLine());
-            }
-
-            Console.WriteLine("Correct! The number was " + numToGuess);
-        }
-    }
-}
-```
-Output:
-```
-Guess a number between 1 and 10:
-8
-Wrong, try again:
-2
-Wrong, try again:
-5
-Correct! The number was 5
-```
+Nazwa projektu: Moja aplikacja
+Data rozpoczęcia: 01.07.2020
+Czas trwania w miesiącach: 6
 
 ## Głębszy zanurzenie
 
-Rozpoczynanie nowego projektu w języku C# może być przyjemnym i satysfakcjonującym doświadczeniem, ale pamiętaj, że nie jest to tylko zabawa. Warto dokładnie zaplanować swój projekt, określić cele i wyznaczyć sobie realistyczne terminy. W dzisiejszych czasach bardzo ważne jest również dbanie o jakość kodu i stosowanie dobrych praktyk programistycznych, na przykład pisząc czytelny i modularny kod.
+Tworzenie nowego projektu jest częstym zadaniem w pracy programisty. Pozwala ono na wykorzystanie najnowszych narzędzi i technologii do tworzenia oprogramowania wysokiej jakości. Alternatywami dla rozpoczęcia nowego projektu są modyfikowanie istniejącego kodu lub wykorzystanie gotowych szablonów. W C# możliwe jest również tworzenie projektów przy użyciu różnych frameworków, takich jak .NET Framework czy .NET Core.
 
-## Zobacz również
+## Zobacz także
 
-- [Oficjalna strona języka C#](https://docs.microsoft.com/pl-pl/dotnet/csharp/)
-- [Kurs C# dla początkujących](https://www.c-sharpcorner.com/learn/c-sharp-tutorial/)
-- [10 kroków do zaczęcia programowania w C#](https://www.freecodecamp.org/news/
+Jeśli chcesz dowiedzieć się więcej o tworzeniu nowych projektów w języku C#, polecamy zapoznać się z dokumentacją na oficjalnej stronie Microsoft: https://docs.microsoft.com/pl-pl/visualstudio/get-started/csharp/. Znajdziesz tam wiele przydatnych poradników i przykładów kodu. Możesz też skorzystać z różnych kursów online, takich jak ten na platformie Microsoft Learn: https://docs.microsoft.com/pl-pl/learn/paths/csharp-first-steps/. Pamiętaj, że im więcej wiesz o tworzeniu nowych projektów, tym łatwiej będzie Ci stworzyć oprogramowanie, które spełni oczekiwania użytkowników.

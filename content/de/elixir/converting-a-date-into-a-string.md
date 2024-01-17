@@ -1,7 +1,7 @@
 ---
-title:                "Eine Datum in einen String umwandeln"
-html_title:           "Elixir: Eine Datum in einen String umwandeln"
-simple_title:         "Eine Datum in einen String umwandeln"
+title:                "Eine Datumsumwandlung in einen String."
+html_title:           "Elixir: Eine Datumsumwandlung in einen String."
+simple_title:         "Eine Datumsumwandlung in einen String."
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Dates and Times"
@@ -10,37 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Warum?
+"## Was & Warum?"
 
-Wenn du schon einmal mit Datumsangaben in deiner Elixir-Anwendung gearbeitet hast, dann weißt du, dass es manchmal notwendig ist, sie in einen String zu konvertieren. Dies kann nützlich sein, um das Datum in einem menschenlesbaren Format anzuzeigen oder es für die weitere Verarbeitung in einer Datenbank zu speichern.
+Das Konvertieren eines Datums in einen String bedeutet, ein Datumsobjekt in ein lesbares Textformat umzuwandeln. Programmierer tun dies, um die Darstellung von Daten zu vereinfachen und zu standardisieren.
 
-# Wie geht das?
+"## Wie geht das?"
 
-Die Konvertierung von einem Datum in einen String in Elixir ist ganz einfach. Schauen wir uns dazu ein Beispiel an:
+Elixir bietet die Funktion `Calendar.Format.date_to_string/2`, die ein Datumsobjekt und ein gewünschtes Format als Parameter erhält. Hier ist ein Beispiel, das das aktuelle Datum in dem Format `'YYYY-MM-DD'` ausgibt:
 
-```elixir
-datum = ~D[2021-08-10]
-String.to_charlist(datum, "dd.MM.yyyy")
+```Elixir
+iex> Calendar.Format.date_to_string(~U[2021-10-05], "{YYYY}-{MM}-{DD}")
+"2021-10-05"
 ```
 
-Das Ergebnis dieses Codes wäre der String "10.08.2021". Zuerst wird das Datum in einen String umgewandelt und dann das gewünschte Format angegeben. Es ist auch möglich, zusätzliche Parameter hinzuzufügen, wie zum Beispiel die Formatierung von Stunden oder Minuten.
+"## Tiefer Einblick"
 
-Es ist wichtig zu beachten, dass die Funktion `String.to_charlist` nur mit Date-Objekten funktioniert, die mit dem `~D`-Präfix erstellt wurden. Wenn du ein Datum aus anderen Datentypen erstellen möchtest, kannst du die Funktion `:calendar.date_to_gregorian_days/2` verwenden.
+Das Konvertieren von Daten in Strings ist ein grundlegender Vorgang in der Programmierung, der es ermöglicht, Informationen auf verständliche Weise darzustellen. Früher wurde dies manuell mithilfe von Datumsfunktionen durchgeführt, wodurch die Möglichkeit von Fehlern und Inkonsistenzen bestand. Elixir bietet nun eine integrierte Funktion, die dies effizient und zuverlässig erledigt.
 
-## Deep Dive
+Alternativ können Programmierer auch Bibliotheken wie `Timex` oder `Floki` verwenden, die erweiterte Funktionen für die Datums- und Zeitzonenkonvertierung bieten.
 
-Die Funktion `String.to_charlist` verwendet intern die `:calendar.strftime/2` Funktion, die Teile einer Date im gewünschten Format ausgibt. Wenn wir also das Format `"dd.MM.yyyy"` angeben, bedeutet das, dass die Funktion den Tag, den Monat und das Jahr in der richtigen Reihenfolge ausgibt. 
+"## Siehe auch"
 
-Es ist auch möglich, eigene benutzerdefinierte Formatierungen zu erstellen, indem du das `~`-Zeichen vor dem Formatierungscode setzt und diese innerhalb von `{}` Klammern platzierst. Zum Beispiel:
-
-```elixir
-String.to_charlist(datum, "~{~a.~} ~B ~Y", chars: [".", ""])
-```
-
-Dies würde das Datum im Format "10. August 2021" ausgeben.
-
-# Siehe auch
-
-- [Elixir Dokumentation für Kalenderfunktionen](https://hexdocs.pm/elixir/Calendar.html)
-- [Einführung in Elixir Dates und Times](https://elixirschool.com/en/lessons/advanced/datetime/)
-- [Elixir Date and Time Library](https://github.com/bitwalker/timex)
+- [Official Elixir documentation for `Calendar.Format.date_to_string/2`](https://hexdocs.pm/elixir/Calendar.Format.html#date_to_string/2)
+- [Timex library](https://hexdocs.pm/timex/Timex.html)
+- [Floki library](https://hexdocs.pm/floki/Floki.html)

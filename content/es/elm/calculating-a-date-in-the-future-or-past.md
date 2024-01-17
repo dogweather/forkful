@@ -1,7 +1,7 @@
 ---
-title:                "Calculando una fecha en el futuro o en el pasado"
-html_title:           "Elm: Calculando una fecha en el futuro o en el pasado"
-simple_title:         "Calculando una fecha en el futuro o en el pasado"
+title:                "Calculando una fecha en el futuro o pasado"
+html_title:           "Elm: Calculando una fecha en el futuro o pasado"
+simple_title:         "Calculando una fecha en el futuro o pasado"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Dates and Times"
@@ -10,48 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué calcular fechas futuras o pasadas en Elm?
+# ¿Qué y por qué?
+Calcular una fecha en el futuro o en el pasado es una tarea común en la programación. Esto implica obtener una fecha específica sumando o restando una cantidad de tiempo a otra fecha dada. Los programadores utilizan esta funcionalidad para determinar vencimientos, programar tareas, entre otras aplicaciones.
 
-Existen muchas situaciones en las que necesitamos calcular una fecha en el futuro o en el pasado, como por ejemplo, para planificar eventos o para realizar tareas programadas. En Elm, podemos utilizar funciones y tipos de datos específicos para realizar estos cálculos de manera sencilla y precisa.
+# Cómo hacerlo:
+Para calcular una fecha en Elm, primero debes importar el módulo `Time` en la parte superior de tu código:
+```
+import Time
+```
+Para obtener una fecha en el futuro, podemos utilizar la función `add` y proporcionarle un `Time.Span`, que representa la cantidad de tiempo que deseamos sumar a la fecha actual. Por ejemplo, para obtener la fecha dentro de una semana, podemos hacer lo siguiente:
+```
+Time.add (Time.weeks 1) Time.now
+```
+Esto nos devolverá una `Time.Posix` que representa la nueva fecha en el futuro. Similarmente, si queremos obtener una fecha en el pasado, podemos utilizar la función `subtract` y proporcionarle un `Time.Span` negativo. Por ejemplo, para obtener la fecha hace dos días, podemos hacer lo siguiente:
+```
+Time.subtract (Time.days -2) Time.now
+```
 
-## Cómo hacerlo
+# Profundizando:
+El cálculo de fechas ha sido una tarea común en la programación desde hace mucho tiempo. Antes de la introducción de bibliotecas y funciones específicas para manejar fechas, los programadores tenían que escribir su propia lógica para calcular fechas en diferentes lenguajes de programación. En Elm, podemos utilizar el módulo `Time` que nos proporciona funciones y tipos de datos específicos para manejar fechas y tiempos.
 
-Para calcular una fecha en el futuro o en el pasado en Elm, primero debemos tener en cuenta el tipo de dato Date. Este tipo representa una fecha específica, con el formato "yyyy-mm-dd", donde "yyyy" es el año, "mm" es el mes y "dd" es el día.
+Otra alternativa para calcular fechas es utilizando bibliotecas externas, como `date-extra`, que proporciona una funcionalidad similar al módulo `Time` pero con algunas características adicionales.
 
-Para obtener la fecha actual, podemos utilizar la función `Date.today` que nos devolverá una instancia de Date con la fecha actual. A partir de ahí, podemos utilizar las funciones `Date.add` y `Date.sub` para sumar o restar días, semanas, meses o años a la fecha actual.
+En cuanto a la implementación, el módulo `Time` utiliza objetos `Time.Posix` que representan los momentos en el tiempo. Estos objetos se basan en el [Tiempo Unix](https://es.wikipedia.org/wiki/Tiempo_Unix), que es una medida del tiempo que se ha utilizado ampliamente en sistemas informáticos.
 
-A continuación, un ejemplo de código en Elm que calcula la fecha de un evento que ocurrirá en 3 semanas:
-
-````Elm
-import Date exposing (Date)
-import Date.Extra exposing (weeks)
-
--- Obtenemos la fecha actual
-today : Date
-today = Date.today
-
--- Calculamos la fecha del evento sumando 3 semanas a la fecha actual
-eventoFecha : Date
-eventoFecha = Date.add (weeks 3) today
-
--- Imprimimos la fecha del evento en consola
-main =
-    Date.format "%d de %B de %Y" eventoFecha
-        |> Debug.log "Fecha del evento"
-````
-
-El output de este código será: "18 de mayo de 2021". Podemos ver que utilizando las funciones adecuadas, es muy fácil obtener una fecha en el futuro o en el pasado en Elm.
-
-## Deep Dive
-
-En Elm, también podemos utilizar la función `Date.fromParts` para construir una instancia de Date a partir de valores específicos para el año, mes y día. Además, también existen funciones para obtener el día de la semana de una fecha, comparar fechas y realizar cálculos más complejos.
-
-Es importante tener en cuenta que, al igual que con cualquier otro tipo de dato en Elm, el tipo Date es inmutable. Esto significa que cada vez que utilizamos una función para sumar o restar valores a una fecha, se genera una nueva instancia de Date en lugar de modificar la fecha original.
-
-Por último, es importante mencionar que, para trabajar con zonas horarias en Elm, podemos utilizar la biblioteca `elm/time` que nos provee de funciones y tipos de datos específicos para manejar fechas y horas en diferentes zonas.
-
-## Ver también
-
-- [Documentación oficial de Date en Elm](https://package.elm-lang.org/packages/elm/core/latest/Date)
-- [Ejemplos de código para calcular fechas en Elm](https://gist.github.com/mmarconm/10e0c686c3511d407c7a0c249632a854)
-- [Sitio web oficial de Elm](https://elm-lang.org/)
+# Ver también:
+- Documentación del módulo `Time` en la [página oficial de Elm](https://package.elm-lang.org/packages/elm/time/latest/).
+- Puedes encontrar más información sobre el [Tiempo Unix](https://www.unixtimestamp.com/) en línea.

@@ -1,7 +1,7 @@
 ---
-title:                "Å lese en tekstdokument"
-html_title:           "PHP: Å lese en tekstdokument"
-simple_title:         "Å lese en tekstdokument"
+title:                "Lese en tekstfil"
+html_title:           "PHP: Lese en tekstfil"
+simple_title:         "Lese en tekstfil"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Files and I/O"
@@ -10,44 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hva og Hvorfor?
 
-Lesing av tekstfiler er en vanlig oppgave innen webutvikling, og en nyttig ferdighet å ha for enhver PHP-utvikler. Ved å lære hvordan man leser og behandler tekstfiler i PHP, kan man enkelt manipulere data og bygge dynamiske og responsive nettsteder.
+Lesing av en tekstfil i PHP er en viktig del av programmering. Dette gjøres for å kunne få tilgang til og bearbeide informasjon lagret i en tekstfil. Tekstfiler er en enkel og vanlig måte å lagre data på, og derfor er det viktig å vite hvordan man kan lese dem i sine programmer.
 
-## Hvordan gjøre det
+# Hvordan:
 
-Å lese en tekstfil i PHP er en enkel og rett frem oppgave. Først må man åpne filen ved hjelp av `fopen()` funksjonen og angir filbanen og tilgangsmetoden (lesing, skriving, etc.). Deretter kan man bruke `fgets()` funksjonen til å lese hver enkelt linje i filen og behandle den som ønsket. Til slutt må man huske å lukke filen med `fclose()` funksjonen.
-
-```PHP
-<?php
-$fil = fopen("tekstfil.txt", "r"); // åpner filen i lesing-modus
-while(!feof($fil)) { // leser hver linje til slutten av filen er nådd
-    $linje = fgets($fil); // lagrer linjen i en variabel
-    echo $linje; // printer ut linjen
-}
-fclose($fil); // lukker filen
-?>
-```
-
-## Dypdykk
-
-Ved å bruke `fgets()` funksjonen, kan man lese en tekstfil linje for linje. Det finnes imidlertid også andre funksjoner som kan brukes for å lese og behandle tekstfiler i PHP, for eksempel `file_get_contents()` og `file()`.
-
-En annen nyttig funksjon er `fgetcsv()` som kan brukes til å lese en CSV-fil (Comma Separated Values), vanligvis brukt for å lagre tabelldata. Denne funksjonen leser hver linje i filen og deler den opp i separate verdier basert på et angitt separator-tegn, for eksempel `,` eller `;`.
+For å lese en tekstfil i PHP, kan man bruke funksjonen `file_get_contents()`. Eksempelvis:
 
 ```PHP
-<?php
-$fil = fopen("data.csv", "r");
-while(!feof($fil)) {
-    $data = fgetcsv($fil, 1000, ";"); // angir et semikolon som separasjonstegn
-    print_r($data); // printer ut en array med de forskjellige verdiene
-}
-fclose($fil);
-?>
+$file_content = file_get_contents("tekstfil.txt"); // Leser hele innholdet av tekstfilen og lagrer det i variabelen $file_content
+echo $file_content; // Skriver ut innholdet av tekstfilen i nettleseren
 ```
 
-## Se også
+Når man kjører dette eksempelet, vil innholdet av tekstfilen "tekstfil.txt" bli skrevet ut i nettleseren.
 
-- [PHP Dokumentasjon - Filbehandling](https://www.php.net/manual/en/book.filesystem.php)
-- [W3Schools - PHP Filbehandling](https://www.w3schools.com/php/php_file.asp)
-- [PHPKode - Lesing av CSV-filer i PHP](https://www.phpkode.com/tutorials/php-file-handling-tutorial/reading-csv-file-in-php/)
+Man kan også lese en tekstfil linje for linje ved å bruke en løkke og funksjonen `fgets()`. Eksempelvis:
+
+```PHP
+$myfile = fopen("tekstfil.txt", "r"); // Åpner tekstfilen i lesertilgang
+while(!feof($myfile)){ // Løkke som går gjennom hele filen til den når slutten
+  echo fgets($myfile) . "<br>"; // Skriver ut én linje av gangen, med en linjeskift mellom hver
+}
+fclose($myfile); // Lukker filen når løkken er ferdig
+```
+
+Når dette eksempelet kjøres, vil innholdet av tekstfilen bli skrevet ut linje for linje i nettleseren.
+
+# Dykk dypere:
+
+Lesing av tekstfiler har vært en viktig del av programmering siden starten av webutvikling. Før PHP ble utviklet, ble det vanligvis gjort ved hjelp av programmeringsspråket Perl. I dag er lesing av tekstfiler i PHP en svært effektiv og vanlig måte å håndtere data på.
+
+En alternativ måte å lese tekstfiler på i PHP, er ved hjelp av funksjonen `file()`. Denne funksjonen leser hele filen og legger hver linje inn i et array. Dette kan være en enklere måte å håndtere data på, spesielt hvis man bare trenger å jobbe med én linje av gangen.
+
+Det er viktig å merke seg at når man leser en tekstfil i PHP, vil hele innholdet av filen bli lagt inn i minnet. Dette kan påvirke ytelsen til nettsiden hvis filen er stor. Derfor er det lurt å begrense lesing av tekstfiler til små filer, og vurdere andre metoder for å håndtere store datamengder.
+
+# Se også:
+
+For mer informasjon om hvordan man kan lese tekstfiler i PHP, anbefales det å se på følgende ressurser:
+
+- [Official PHP documentation for file handling functions](https://www.php.net/manual/en/ref.filesystem.php)
+- [W3Schools tutorial on reading files in PHP](https://www.w3schools.com/php/php_file_open.asp)
+- [GeeksforGeeks article on different ways to read a file in PHP](https://www.geeksforgeeks.org/php-program-to-find-the-length-of-the-longest-word-in-a-file/)

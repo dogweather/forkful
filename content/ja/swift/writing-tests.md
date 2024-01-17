@@ -1,7 +1,7 @@
 ---
-title:                "テストの書き方"
-html_title:           "Swift: テストの書き方"
-simple_title:         "テストの書き方"
+title:                "シ answered Jun 12 'テストを書く"
+html_title:           "Swift: シ answered Jun 12 'テストを書く"
+simple_title:         "シ answered Jun 12 'テストを書く"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Testing and Debugging"
@@ -10,45 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
-テストを書くことの意義とは？人々がテストを書くことに取り組む理由を最大2つの文章で説明します。
+## なに？なんで？
 
-テストは、作業の効率性や品質を向上させる重要な方法です。コードを書く前にテストを書くことで、問題やバグを早期に発見し、修正することができます。また、コードを変更した際にもテストを実行することで、安心してコードを修正することができます。
+テストを書くとは、単純にコードの動作を確認することです。プログラマーがそれをする理由は、コードの品質を保証し、バグを見つけて修正するためです。また、チームで作業する際には、同じコードを複数人で書くことによってコードの一貫性を保つこともできます。
 
-## テストの書き方
-テストを書くためのコーディング例とサンプルの出力について、"```Swift ... ```"コードブロックを使って説明します。
+## 作り方：
 
-例えば、以下のような関数をテストするとします。
-```
+```Swift
 func add(_ a: Int, _ b: Int) -> Int {
     return a + b
 }
+// add 関数をテストする
+assert(add(2, 2) == 4, "add 関数は正しく動作しません。")
 ```
-テストを書くためには、まずはじめにテスト用の関数を作成します。
-```
-func testAdd() {
-    let result = add(2, 3)
-    assert(result == 5, "Add function should return 5 when passed 2 and 3.")
+
+```Swift
+struct Person {
+    let name: String
+    let age: Int
+    
+    func greet() -> String {
+        return "こんにちは、私の名前は\(name)です。\(age)歳です。"
+    }
 }
-```
-そして、テスト用の関数を呼び出します。
-```
-testAdd()
-```
-もしテストが成功すると、以下のような結果が出力されます。
-```
-Test succeeded!
+// Person 構造体をテストする
+let person = Person(name: "太郎", age: 30)
+assert(person.greet() == "こんにちは、私の名前は太郎です。30歳です。", "greet 関数は正しく動作しません。")
 ```
 
-## ディープダイブ
-テストを書く際に注意すべきポイントやより深い知識について説明します。
+## 詳しく：
 
-1つのテスト関数だけでなく、複数のテスト関数を作成し、コードの様々な場面でテストを行うことが重要です。また、テストケースを書く際には、問題をカバーするようなデータを用意することが重要です。
+テストは、プログラミングの歴史の中で重要な役割を果たしてきました。以前は、人間が手動でコードをテストすることが一般的でしたが、現在ではプログラマーが自動化されたテストを作成することができるようになりました。代替手法としては、デバッグツールを使用したり、コードをレビューしたりすることもあります。テストを実装する際には、テストカバレッジ（コードのどの部分がテストされているか）を確認することも重要です。
 
-さらに、テストを自動化することで繰り返し行う手間を省き、効率的にテストを実行することができます。XcodeやSourceryなどのツールを使用することで、自動化されたテストコードを作成することができます。
+## 参考にする：
 
-## See Also
-- [テスト駆動開発(TDD)とは？｜基礎知識やメリット・デメリットを解説！] (https://qiita.com/ymasaoka/items/5d43d25ad69c94cad619)
-- [Swiftでテストを書くためのおすすめのツールまとめ] (https://qiita.com/aitaandzwa/items/d12c146325b9790c20bc)
-
-この記事を読んで、テストを書くことの重要性や基本的な書き方を理解していただけたと思います。ぜひ、実際にテストを書いて、コード品質の向上に役立ててみてください。
+- [テスト駆動開発（TDD）について](https://www.geeksforgeeks.org/test-driven-development-tdd/)
+- [Swift でのユニットテストの作成](https://www.hackingwithswift.com/articles/101/how-to-write-unit-tests-in-swift)
+- [デバッグの基本](https://www.oreilly.co.jp/ldblog/blog/2014/05/debugging_basics.html)

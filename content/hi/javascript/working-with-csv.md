@@ -1,7 +1,7 @@
 ---
-title:                "कंप्यूटर प्रोग्रामिंग में सीएसवी के साथ काम करना"
-html_title:           "Javascript: कंप्यूटर प्रोग्रामिंग में सीएसवी के साथ काम करना"
-simple_title:         "कंप्यूटर प्रोग्रामिंग में सीएसवी के साथ काम करना"
+title:                "Computer Programming में csv के साथ काम करना"
+html_title:           "Javascript: Computer Programming में csv के साथ काम करना"
+simple_title:         "Computer Programming में csv के साथ काम करना"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Data Formats and Serialization"
@@ -10,71 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
+# CSV क्या होता है और यह क्यों किया जाता है?
 
-CSV (Comma Separated Values) फाइलों को प्रोग्रामिंग के माध्यम से पढ़ने और उनसे काम करना बहुत सारे उपयोगों के लिए उपयोगी है। यह डाटा संरचना को अधिक स्पष्ट और साझा करता है जो अपनी आसानी से चलने वाले फॉर्मेट के लिए जाना जाता है।
+CSV से क्या समझा जाता है, यह हमें डेटा को अलग अलग टेक्स्ट के स्तर पर संगठित करने में मदद करता है। प्रोग्रामर्स CSV का प्रयोग अक्सर डेटा को इम्पोर्ट या एक्सपोर्ट करने के लिए करते हैं।
 
-## कैसे करें
+## कैसे करें:
 
-```Javascript
-// CSV फ़ाइल को पढ़ें
-const csv = require('csv-parser');
-const fs = require('fs');
-
-fs.createReadStream('data.csv')
-  .pipe(csv())
-  .on('data', (row) => {
-    console.log(row);
-  })
-  .on('end', () => {
-    console.log('CSV फ़ाइल से डेटा पढ़ना सम्पन्न हुआ।');
-  });
-
-// CSV फ़ाइल लिखें
-const createCsvWriter = require('csv-writer').createObjectCsvWriter;
-const csvWriter = createCsvWriter({
-  path: 'output.csv',
-  header: [
-    { id: 'name', title: 'नाम' },
-    { id: 'age', title: 'आयु' },
-    { id: 'job', title: 'नौकरी' },
-  ]
-});
-
+```
 const data = [
-  {
-    name: 'जॉन डो',
-    age: 30,
-    job: 'मैनेजर'
-  },
-  {
-    name: 'सारा सिंह',
-    age: 25,
-    job: 'डिज़ाइनर'
-  },
-  {
-    name: 'राहुल मेहता',
-    age: 35,
-    job: 'खाता अधिकारी'
-  }
-];
+  ['उपयोगकर्ता नाम', 'ईमेल', 'आयु'],
+  ['जॉन डो', 'johndoe@gmail.com', '25'],
+  ['जेन डो', 'jendo@gmail.com', '21']
+]
 
-csvWriter.writeRecords(data)
-  .then(() => {
-    console.log('CSV फ़ाइल बनाना सम्पन्न हुआ।');
+// डेटा को CSV फाइल में लिखें
+const csv = data.map(row => row.join(',')).join('\n');
+console.log(csv);
+
+// एक CSV फ़ाइल से डेटा पढ़ें
+const fs = require('fs').promises;
+fs.readFile('data.csv', 'utf-8').then((data) => {
+  data.split('\n').map(row => {
+    console.log(row.split(','))
   });
-
+});
 ```
 
-Output:
-```
-{ name: 'जॉन डो', age: 30, job: 'मैनेजर' }
-{ name: 'सारा सिंह', age: 25, job: 'डिज़ाइनर' }
-{ name: 'राहुल मेहता', age: 35, job: 'खाता अधिकारी' }
-CSV फ़ाइल से डेटा पढ़ना सम्पन्न हुआ।
-CSV फ़ाइल बनाना सम्पन्न हुआ।
-```
+उपरोक्त कोड से, हम डेटा सेट बनाते हैं और फिर उसे CSV फाइल में लिखते हैं। और उसी तरह से, हम CSV फाइल से डेटा पढ़ते हैं।
 
-## डीप डाइव
+## गहराई में जाएं:
 
-CSV फाइलें विशेष रूप से डाटा सिंक्रनाइज़ेशन और संचयन के लिए बहुत उपयोगी हैं। यह डेटा मानचित्रण और अनुकूलन के लिए अनुकूल होती है जो विभिन्न एप्लिकेशन और प्लेटफॉर्म में संभावित होता है। इसलिए, जब
+CSV या Comma Separated Values, एक विशेष तरह की फाइल है जहां डेटा अलग अलग कोटेशन से अलग होता है और कोटेशन से अलग अलग फ़ील्डों में अलग होता है। आजकल, CSV कोडिंग में व्यापक रूप से उपयोग किया जाता है और प्रोग्रामिंग के क्षेत्र में यह ज्यादातर डेटा को शेयर करने के लिए एक प्रमुख तरीका है।
+
+## देखें:
+
+- [CSV परिभाषा और उदाहरण](https://www.w3schools.com/js/js_csv.asp)
+- [CSV और जेसन का उपयोग डेटा मेंा 設定 ت ](https://dzone.com/articles/using-csv-and-json-data-my-settings-app)
+- [CSV फ़ॉर्मेट का सारांश](https://tools.ietf.org/html/rfc4180)

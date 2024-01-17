@@ -1,7 +1,7 @@
 ---
-title:                "Lecture des arguments en ligne de commande"
-html_title:           "C++: Lecture des arguments en ligne de commande"
-simple_title:         "Lecture des arguments en ligne de commande"
+title:                "Lecture des arguments de ligne de commande"
+html_title:           "C++: Lecture des arguments de ligne de commande"
+simple_title:         "Lecture des arguments de ligne de commande"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Files and I/O"
@@ -10,38 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Qu'est-ce que c'est et pourquoi le faire?
 
-Si vous avez déjà utilisé des lignes de commande pour exécuter un programme, vous avez probablement vu des arguments être passés après le nom du fichier exécutable. Ces arguments permettent à un utilisateur de personnaliser l'exécution du programme en modifiant ses paramètres. Dans cet article, nous allons expliquer comment lire et utiliser ces arguments en C++, afin que vous puissiez maximiser l'utilité de vos programmes en ligne de commande.
+La lecture des arguments de ligne de commande est une compétence cruciale pour tout programmeur en C++. Elle nous permet de fournir des paramètres à notre programme au moment de son exécution, ce qui le rend personnalisable et plus polyvalent. Grâce à cette capacité, nous pouvons modifier le comportement de notre programme sans avoir à recompiler une nouvelle version à chaque fois.
 
-## Comment Faire
+## Comment faire:
 
-La lecture des arguments de ligne de commande en C++ est un processus assez simple. Tout d'abord, vous devez utiliser les paramètres de la fonction main pour récupérer les arguments. La fonction main a deux paramètres, argc et argv. Le premier représente le nombre total d'arguments passés, tandis que le second est un tableau de chaînes de caractères contenant les arguments eux-mêmes.
+Voici un exemple simple pour vous montrer comment lire les arguments de ligne de commande en C++:
 
 ```C++
-int main(int argc, char* argv[]) {
-  // Utilisez les paramètres argc et argv pour lire les arguments.
+#include <iostream>
+
+int main(int argc, char *argv[]) {
+  std::cout << "Le nombre d'arguments est: " << argc << std::endl;
+  for(int i = 0; i < argc; i++) {
+    std::cout << "Argument " << i << ": " << argv[i] << std::endl;
+  }
+  return 0;
 }
 ```
 
-Pour accéder à un argument spécifique, vous pouvez utiliser son indice dans le tableau argv. Par exemple, pour récupérer le premier argument, vous pouvez utiliser ```argv[1]```. Notez que le premier argument (```argv[0]```) représente toujours le nom du fichier exécutable lui-même.
+Supposons que notre programme s'appelle "myprogram.exe" et que nous l'exécutons avec deux arguments: "param1" et "param2". Voici le résultat que nous obtiendrons:
 
-Une fois que vous avez récupéré un argument, vous pouvez le convertir en un type de données approprié pour l'utiliser dans votre programme. Par exemple, vous pouvez utiliser la fonction ```std::stoi()``` pour convertir un argument en entier.
+```
+Le nombre d'arguments est: 3
+Argument 0: myprogram.exe
+Argument 1: param1
+Argument 2: param2
+```
 
-Enfin, n'oubliez pas de gérer les erreurs potentielles en vérifiant le nombre d'arguments et en utilisant des structures de contrôle comme ```if``` ou ```switch``` pour traiter différents scénarios d'utilisation des arguments.
+## Plongée en profondeur:
 
-## Plongée Profonde
+La lecture des arguments de ligne de commande n'est pas une nouveauté dans le monde de la programmation. Cependant, cette capacité est extrêmement utile pour rendre nos programmes plus dynamiques et personnalisables. Il existe également des alternatives à la lecture des arguments de ligne de commande, comme l'utilisation de variables d'environnement ou la création d'interfaces graphiques.
 
-Il existe de nombreuses façons de tirer parti des arguments de ligne de commande en C++. Vous pouvez par exemple les utiliser pour:
+Pour implémenter cette fonctionnalité en C++, nous devons utiliser le paramètre "argc" qui représente le nombre d'arguments passés lors de l'exécution du programme, et le tableau "argv" qui contient les arguments eux-mêmes. Les arguments peuvent être de n'importe quel type, y compris des chaînes de caractères, des nombres ou même des expressions régulières.
 
-- Passer des options de configuration à votre programme.
-- Fournir des entrées de données au programme.
-- Contrôler le comportement du programme en fonction des arguments fournis.
+## Voir aussi:
 
-Vous pouvez également utiliser des bibliothèques tierces comme ```Boost.Program_options``` pour simplifier davantage la lecture et l'utilisation des arguments de ligne de commande.
+Si vous souhaitez en savoir plus sur la lecture des arguments de ligne de commande en C++, vous pouvez consulter ces sources:
 
-## Voir Aussi
-
-- [Documentation de la fonction main en C++](https://fr.cppreference.com/w/cpp/language/main_function)
-- [Tutoriel sur les arguments de ligne de commande en C++](https://www.learncpp.com/cpp-tutorial/arguments-command-line/)
-- [Boost.Program_options](https://www.boost.org/doc/libs/1_76_0/doc/html/program_options.html) (documentation officielle)
+- [Documentation C++ sur les arguments de ligne de commande](https://en.cppreference.com/w/cpp/language/main_function)
+- [Tutoriel vidéo sur la lecture des arguments de ligne de commande en C++](https://www.youtube.com/watch?v=S7UYoFnlz-g)
+- [Un article de blog avec des exemples pratiques de lecture des arguments de ligne de commande en C++](https://www.geeksforgeeks.org/command-line-arguments-in-c-cpp/)

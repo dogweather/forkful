@@ -10,32 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么会想要获取当前日期？
+[开始markdown]
 
-获取当前日期是非常常见的需求，无论是在编程中还是日常生活中。它可以帮助我们记录事件发生的时间，或者作为程序中的条件控制，使程序更加智能化。在 Ruby 中，获取当前日期也是很容易的。让我们来看看如何做到这一点。
+如果你是一位入门的 Ruby 程序员，你可能会遇到这个问题：如何获取当前的日期？在本文中，我们将探讨这个问题的答案，并告诉你为什么程序员需要做这件事情。
 
-## 如何操作
+## 为什么 & 如何？
 
-Ruby 提供了一个名为 `Time` 的类来处理时间和日期。要获取当前日期，可以使用 `Time.now` 方法。让我们在 `irb` 中试一试：
+获取当前日期是一个常见的编程任务。程序员经常需要获取当前日期来进行日志记录、时间戳、计时等操作。通过获取当前日期，程序员可以确保他们的程序在不同的时间运行时具有准确的时间信息。
 
-```Ruby
-Time.now
+## 如何：
+
+```ruby
+require 'date'
+
+# 获取当前日期
+current_date = Date.today
+
+# 获取当前日期的时间戳
+current_timestamp = DateTime.now.to_time.to_i
+
+# 获取当前日期和时间
+current_datetime = DateTime.now
 ```
 
-这会返回一个包含当前日期和时间的 `Time` 对象。如果你只想要当前日期，可以使用 `strftime` 方法来格式化日期的输出。例如，要只获取当前日期的年月日，可以使用 `"%Y-%m-%d"` 格式。让我们来试一试：
+运行以上代码，你将得到类似于以下输出：
 
-```Ruby
-Time.now.strftime("%Y-%m-%d")
+```text
+# 获取当前日期
+2020-10-17
+
+# 获取当前日期的时间戳
+1602886085
+
+# 获取当前日期和时间
+2020-10-17T12:48:17+00:00
 ```
 
-这会返回一个字符串，如 "2021-08-01"。你也可以使用其他格式来获取不同的日期信息，如小时、分钟、秒等。更多的日期格式可以在 [Ruby文档](https://ruby-doc.org/core-2.7.1/Time.html#method-i-strftime) 中找到。
+## 深入了解：
 
-## 深入了解
+Ruby 中，你可以使用内置的 `Date` 和 `DateTime` 类来获取当前日期。如果你想要更多更精细的日期操作，你可以使用 `Time` 和 `DateTime` 类。
 
-在 Ruby 中，日期和时间是以格式化的字符串的形式存储的。当我们使用 `Time.now` 方法时，实际上是在获取一个包含当前日期和时间信息的字符串。当我们使用 `strftime` 方法时，我们可以根据自己的需要从字符串中提取特定的日期信息。此外，Ruby 还提供了许多其他有用的方法来处理日期和时间，如 `Date`、`DateTime`、`zone` 等。你可以查阅 [Ruby文档](https://ruby-doc.org/core-2.7.1/Time.html) 来了解更多关于日期和时间操作的信息。
+另外，你也可以使用第三方的日期库，例如 ActiveSupport、Chronic 等来获取当前日期。它们提供了更多功能强大和便捷的日期操作方法。
 
-## 参考
+关于获取当前日期的实现细节方面，它可能与操作系统和硬件架构相关。例如，在不同操作系统下，时间戳可能有不同的格式，因此你需要根据你的环境调整你的代码。
 
-- [Ruby文档 - Time类](https://ruby-doc.org/core-2.7.1/Time.html)
-- [Ruby文档 - Date类](https://ruby-doc.org/stdlib-2.7.1/libdoc/date/rdoc/Date.html)
-- [Ruby文档 - DateTime类](https://ruby-doc.org/stdlib-2.7.1/libdoc/datetime/rdoc/DateTime.html)
+## 参考资料：
+
+- Ruby 官方文档：https://ruby-doc.org
+- ActiveSupport GitHub：https://github.com/rails/rails/tree/master/activesupport
+- Chronic GitHub：https://github.com/mojombo/chronic

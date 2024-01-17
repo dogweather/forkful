@@ -1,7 +1,7 @@
 ---
-title:                "बेसिक प्रमाणीकरण के साथ एक http अनुरोध भेजना"
-html_title:           "Swift: बेसिक प्रमाणीकरण के साथ एक http अनुरोध भेजना"
-simple_title:         "बेसिक प्रमाणीकरण के साथ एक http अनुरोध भेजना"
+title:                "बेसिक प्रमाणीकरण के साथ HTTP अनुरोध भेजना।"
+html_title:           "Swift: बेसिक प्रमाणीकरण के साथ HTTP अनुरोध भेजना।"
+simple_title:         "बेसिक प्रमाणीकरण के साथ HTTP अनुरोध भेजना।"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "HTML and the Web"
@@ -10,51 +10,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
+## क्या और क्यों?
 
-एचटीटीपी अनुरोध भेजने में बेसिक प्रमाणीकरण का उपयोग करने का कारण यह है कि यह आपको उपयोगकर्ता के खाते को सुरक्षित रूप से संपादित करने की अनुमति देता है।
+HTTP अनुरोध भेजने के लिए बेसिक प्रमाणीकरण के साथ सिंडिंग क्या है, यह समझने के बाद प्रोग्रामर सिंडिंग क्यों करते हैं।
 
-## कैसे करें
-
-बेसिक प्रमाणीकरण के साथ एचटीटीपी अनुरोध भेजने के लिए, हम निम्नवत चरणों का पालन कर सकते हैं:
+## कैसे करें:
 
 ```Swift
-// आवश्यक पुस्तकालय आयात करें
-import Foundation
-
-// अनुरोध ऑब्जेक्ट बनाएं
-let url = URL(string: "https://www.example.com")
-var request = URLRequest(url: url!)
-
-// अनुरोध में उपयोगकर्ता नाम और पासवर्ड जोड़ें
-let username = "example_user"
-let password = "example_password"
-// बेसिक प्रमाणीकरण के लिए उपयोगकर्ता नाम और पासवर्ड की संलग्नता
+let url = URL(string: "http://www.example.com")
+let username = "username"
+let password = "password"
 let loginString = "\(username):\(password)"
-let loginData = loginString.data(using: String.Encoding.utf8)
-let base64LoginString = loginData!.base64EncodedString()
+let loginData = loginString.data(using: String.Encoding.utf8)!
+let base64LoginString = loginData.base64EncodedString()
+
+var request = URLRequest(url: url!)
+request.httpMethod = "GET"
 request.setValue("Basic \(base64LoginString)", forHTTPHeaderField: "Authorization")
 
-// सत्यापन चालू
-URLSession.shared.dataTask(with: request) { data, response, error in
-  guard let data = data, let response = response as? HTTPURLResponse, error == nil else {                                                 
-    print("error", error ?? "Unknown error")
-    return
-  }
-
-  // अनुरोध के प्रतिसाद को मानव पठनीय रूप में प्रिंट करें
-  if let responseData = String(data: data, encoding: .utf8) {
-    print(responseData)
-  }
-}.resume()
+let task = URLSession.shared.dataTask(with: request) { data, response, error in
+    guard let data = data, error == nil else {
+        print("Error: \(error ?? "Unknown error" as! Error)")
+        return
+    }
+    
+    if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {
+        print("Error: HTTP status code is \(httpStatus.statusCode)")
+        print("Response: \(response!)")
+    }
+    
+    let responseString = String(data: data, encoding: .utf8)
+    print("Response: \(responseString!)")
+}
+task.resume()
 ```
 
-आउटपुट:
+यह कोड उदाहरण बताता है कि हम कैसे बेसिक प्रमाणीकरण के साथ HTTP अनुरोध भेज सकते हैं। इसमें हम URL और क्रेडेंशियल्स का इस्तेमाल करते हैं जो उपयोगकर्ता का नाम और पासवर्ड को कॉलन द्वारा जोड़ता है। फिर हम अपने अनुरोध को आईडीओ बिल्क अपलोड करते हुए अविनाश को  भेजते हैं और उसके बाद हम अप्रत्युक्त उत्पाद कॉल दर्शा सकते हैं। 
 
-``` 
-Welcome to Example.com!
+```Swift
+Response: Optional(The HIV Simple/Basic Web server, example page)
 ```
 
-## गहराई में जाएं
+यह नतीजा उस वेबसाइट पर पूरी तरह से अभिव्यक्त करता है जो हमने भेजा है। हम आसानी से बेसिक प्रमाणीकरण के साथ HTTP अनुरोध भेज सकते हैं और उसका प्रतिक्रिया प्राप्त कर सकते हैं। 
 
-बेसिक प्रमाणीकरण एक आम तरीके है उपयोगकर्ता को खाते को सत्यापित करने के लिए HTTP अनुरोध में प्रवेश करने के लिए। यह अनुरोध उपयोगकर्ता के साथ प्रदान किए गए उपयोगकर्ता नाम और पासवर्ड को सर्वर तक भेजता है। यदि यह सही होता है, तो सर्वर स्वीकार करता है और उपयोगकर्ता को अनुमति देता है ताकि वह संपादित कर सके
+## गहराई में जाएँ:
+
+HTTP बेसिक प्रमाणीकरण के साथ अनुरोध भेजने के अतिरिक्त, कुछ अविकल्प भी हैं जो इस काम को करने के लिए उपयोग किए जा सकते हैं। एक विकल्प है डाइजेस्ट प्रमाणीकरण जो भी उपयोगकर्ता का नाम और पासवर्ड दर्शाता है, लेकिन यह अधिक सुरक्षित है। इसके अलावा, आप C या Java में हाईरयरसीएस भी उपयोग कर सकते हैं जो बहुत सुरक्षित होता है। 
+
+HTTP बेसिक प्रमाणीकरण को ध्यान में रखते हुए जिस URL से आप अनुरोध भेजते हैं, आपका अनुरोध और उससे जुड़ी सभी जानकारी अन्य लोगों को मिल सकती है। इसलिए, आपको अपने अनुरोध को बेहतर सुरक्षित करने के लिए सुनिश्चित होना चाहिए। 
+
+## इससे जुड़े प्रमाण:
+
+अधिक जानकारी के लिए निम्नलिखित स्रोतों पर जाएँ:
+
+- एप्पलआईओएस डेवलपर दस्तावेज़ीकरण कंटेंट गाइड।
+https://developer

@@ -10,51 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que verificar se um diretório existe?
+## O que e Porque?
+Verificar se um diretório existe é um processo importante para os programadores. Isso envolve verificar se um determinado caminho no sistema de arquivos é um diretório válido ou não. A razão pela qual os programadores fazem isso é para garantir que seu código possa lidar adequadamente com diferentes situações e evitar erros no programa.
 
-Você pode querer verificar se um diretório existe antes de criar um novo diretório ou executar outras operações nele. Isso evita erros e problemas em seu código e economiza tempo, pois não é necessário lidar com erros desnecessários.
+## Como fazer:
+Existem várias maneiras de verificar se um diretório existe em Fish Shell. Uma maneira simples é usar o comando `test` seguido do operador `-d` para verificar o tipo de arquivo. Por exemplo, para verificar se o diretório "documents" existe, podemos usar o seguinte comando:
 
-## Como fazer
-
-Para verificar se um diretório existe em Fish Shell, você pode usar o comando `test -d` seguido pelo caminho do diretório que deseja verificar. Por exemplo:
-
-```Fish Shell
-test -d /Users/usuario/Documentos
+```
+test -d documents
 ```
 
-Se o diretório existir, esse comando retornará um valor de "verdadeiro" (true). Caso contrário, retornará "falso" (false).
+Isso retornará um código de saída 0 se o diretório existir e um código de saída 1 se não existir.
 
-Você também pode usar o comando `if` para executar ações específicas com base no resultado da verificação. Por exemplo:
+Outra opção é usar o comando `stat` para obter informações sobre um arquivo ou diretório específico. Por exemplo, para verificar se o diretório "pictures" existe, podemos usar o seguinte comando:
 
-```Fish Shell
-if test -d /Users/usuario/Downloads
-    echo "O diretório Downloads existe!"
+```
+if stat pictures
+  echo "O diretório existe!"
 else
-    echo "O diretório não existe. Criando agora..."
-    mkdir /Users/usuario/Downloads
+  echo "O diretório não existe."
 end
 ```
 
-Isso irá imprimir uma mensagem diferente com base no resultado da verificação. Se o diretório existir, será exibida a mensagem "O diretório Downloads existe!" Caso contrário, será criado um novo diretório com o nome "Downloads".
+Este comando irá imprimir "O diretório existe!" se o diretório "pictures" existe, e "O diretório não existe." se não existir.
 
-## Mergulho profundo
+## Mergulho Profundo:
+Verificar se um diretório existe não é uma tarefa nova para os programadores. De fato, é uma tarefa comum em muitas linguagens de programação e sistemas operacionais. Além dos métodos acima mencionados, também é possível usar o comando `ls` ou a função `os.path.isdir()` em Python para verificar se um diretório existe.
 
-O comando `test -d` faz parte dos comandos de teste no Fish Shell, que são usados ​​para avaliar valores e retornar "verdadeiro" ou "falso". Outros comandos de teste incluem `test -e` para verificar a existência de um arquivo e `test -f` para verificar se um arquivo é um arquivo regular.
+No entanto, é importante mencionar que verificar se um diretório existe não é a mesma coisa que acessá-lo. Um diretório pode existir no sistema de arquivos, mas pode não ter permissão de acesso. Portanto, é importante considerar também a verificação de permissões ao trabalhar com diretórios.
 
-Ao usar o comando `if`, você pode usar a opção `-s` para verificar se o tamanho de um arquivo/diretório é maior que zero. Por exemplo:
-
-```Fish Shell
-if test -s /Users/usuario/Documentos/meu_arquivo.txt
-    rm /Users/usuario/Documentos/meu_arquivo.txt
-else
-    echo "O arquivo está vazio."
-end
-```
-
-Isso irá excluir o arquivo apenas se ele tiver um tamanho maior que zero.
-
-## Veja também
-
-- [Documentação oficial do Fish Shell](https://fishshell.com/docs/current/)
-- [Comandos de teste no Fish Shell (em inglês)](https://fishshell.com/docs/current/index.html#conditional-execution)
-- [Tutorial do Fish Shell no dev.to (em inglês)](https://dev.to/erik109/navigating-fish-shell-for-the-first-time-8o7/)
+## Veja também:
+- [Documentação do Fish Shell](https://fishshell.com/docs/current/)
+- [Guia rápido de Fish Shell](https://fishshell.com/docs/current/#quick-start)
+- [Como verificar se um diretório existe em outras linguagens de programação](https://www.codecademy.com/articles/how-to-check-if-directory-exists-python)

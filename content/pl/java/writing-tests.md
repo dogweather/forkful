@@ -10,65 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i dlaczego?
 
-Testowanie jest nieodłączną częścią procesu tworzenia oprogramowania. Dzięki testom, deweloperzy mogą wczesniej wykrywać błędy i uniknąć problemów w późniejszych etapach projektu. W ten sposób, pisanie testów znacznie zwiększa jakość produktu i pozwala zaoszczędzić czas i pieniądze.
+Pisanie testów polega na tworzeniu kodu, który sprawdza, czy nasz program działa poprawnie. Programiści robią to w celu upewnienia się, że ich kod działa prawidłowo i zapobieganiu błędom w przyszłości.
 
-## Jak to zrobić
+## Jak to zrobić:
 
-Pisanie testów w języku Java jest stosunkowo proste i wymaga znajomości kilku podstawowych koncepcji. Poniżej znajdują się przykłady kodów zawierających testy i ich wynik.
+Aby napisać test w Javie, musimy użyć klas z pakietu ```org.junit```. Najpierw musimy zainicjować klasę testową używając adnotacji ```@Test```, a następnie napisać kod, który sprawdza czy nasza metoda zwraca oczekiwany wynik. Na przykład:
 
-```java
-// Przykładowa klasa, którą będziemy testować
-public class Calculator {
-    public int add(int a, int b){
-        return a + b;
-    }
-}
-
-// Test metody add() z wykorzystaniem biblioteki JUnit
-import static org.junit.Assert.assertEquals;
-
+```
 @Test
-public void testAdd() {
-    Calculator calculator = new Calculator();
-    assertEquals(5, calculator.add(2, 3));
+public void testAddition() {
+  Calculator calc = new Calculator();
+  int result = calc.add(2, 3);
+  assertEquals(5, result);
 }
 ```
-Powstanie nowego obiektu klasy Calculator i wywołanie metody add() z dwoma argumentami 2 i 3 zwróci wartość 5, co jest potwierdzeniem poprawności działania metody.
 
-Możemy również użyć biblioteki Mockito do tworzenia mocków i weryfikowania zachowań obiektów w naszych testach. Przykład kodu wykorzystującego tę bibliotekę wyglądałby następująco:
+Output będzie wyglądał następująco:
 
-```java
-// Przykładowa klasa, którą będziemy testować
-public class MessageService {
-    public void sendMessage(String message){
-        System.out.println(message);
-    }
-}
-
-// Test metody sendMessage() z wykorzystaniem biblioteki Mockito
-import static org.mockito.Mockito.*;
-
-@Test
-public void testSendMessage() {
-    MessageService messageService = mock(MessageService.class);
-    messageService.sendMessage("Hello World");
-    verify(messageService).sendMessage("Hello World");
-}
 ```
-Tworzymy tutaj mock klasy MessageService, wywołujemy na nim metodę sendMessage() z argumentem "Hello World" i sprawdzamy czy metoda ta została wywołana z tym samym argumentem.
+OK (1 test)
+```
 
-## Pogłębione informacje
+## Głębsze zanurzenie:
 
-Pisanie testów w języku Java pozwala na lepsze zrozumienie kodu i jego funkcjonowania. Dzięki testom możemy upewnić się, że nasze metody działają zgodnie z oczekiwaniami i nie powodują przypadkowych błędów. Warto również pamiętać o odpowiednim nazewnictwie testów, tak aby były one czytelne i łatwe w utrzymaniu.
+Pisanie testów ma swoje korzenie w metodyce programowania zwanej Test Driven Development (TDD), w której najpierw piszemy testy, a potem dopiero kod. Alternatywą dla testów jednostkowych jest testowanie funkcjonalne, gdzie sprawdzamy zachowanie całego systemu jako całości. W implementacji testów, warto zwrócić uwagę na dostępne narzędzia, takie jak JUnit czy TestNG.
 
-Istnieje wiele bibliotek przeznaczonych do testowania w języku Java, takich jak JUnit, Mockito czy AssertJ, które ułatwiają tworzenie i uruchamianie testów. Warto zapoznać się z nimi i wybrać tę, która najlepiej pasuje do naszych potrzeb.
+## Zobacz też:
 
-## Zobacz także
-
-[10 podstawowych sposobów pisania testów w Javie](https://www.pluralsight.com/blog/software-development/writing-clean-unit-tests-10-tips)
-
-[Testowanie jednostkowe w języku Java - poradnik dla początkujących](https://www.toptal.com/developers/blog/junit-testing-tutorial-for-beginners)
-
-[Oficjalna dokumentacja JUnit](https://junit.org/junit5/docs/current/user-guide/)
+- Oficjalna dokumentacja JUnit: https://junit.org/junit5/docs/current/user-guide/
+- Przykładowe testy w Javie: https://github.com/junit-team/junit5-samples

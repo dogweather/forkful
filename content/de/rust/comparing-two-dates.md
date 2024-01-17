@@ -1,7 +1,7 @@
 ---
-title:                "Vergleich von zwei Datumsangaben"
-html_title:           "Rust: Vergleich von zwei Datumsangaben"
-simple_title:         "Vergleich von zwei Datumsangaben"
+title:                "Vergleich zweier Daten"
+html_title:           "Rust: Vergleich zweier Daten"
+simple_title:         "Vergleich zweier Daten"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Dates and Times"
@@ -10,51 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+# Vergleichen von zwei Daten in Rust
 
-Sich mit der Vergleichung von zwei Datumswerten zu beschäftigen mag zunächst unbedeutend erscheinen, aber es ist eine sehr wichtige Fähigkeit in der Programmierung. Ob es darum geht zu überprüfen, ob eine bestimmte Zeitspanne verstrichen ist oder die Reihenfolge von Ereignissen zu bestimmen, das Vergleichen von Daten ist ein grundlegendes Konzept in der Datumsmanipulation.
+## Was & Warum?
+Das Vergleichen von zwei Daten ist eine übliche Aufgabe in der Programmierung, bei der man feststellt, welches Datum früher oder später ist. Dies ist besonders hilfreich, wenn man Daten verarbeiten oder sortieren möchte. Programmierer führen diese Aufgabe häufig aus, um die Logik von Programmen zu steuern und um Fehlfunktionen zu vermeiden.
 
-## So geht's
+## Wie geht's:
+In Rust kann man zwei Daten mit den Vergleichsoperatoren `==`, `!=`, `<`, `>`, `<=` und `>=` vergleichen. Diese operatoren werden mit zwei Daten als Operanden verwendet und geben einen `bool` (true oder false) zurück.
 
-Um zwei Datumsangaben in Rust zu vergleichen, können wir die Methode `cmp()` verwenden, die auf Objekten implementiert ist, die das Trait `Ord` implementieren. Diese Methode gibt ein `Ordering`-Enum zurück, das entweder `Less`, `Equal` oder `Greater` sein kann, je nachdem, welches Datum früher ist. Schauen wir uns dazu ein Beispiel an:
-
-```rust
-let date1 = NaiveDate::from_ymd(2020, 1, 1); //1. Januar 2020
-let date2 = NaiveDate::from_ymd(2021, 3, 30); //30. März 2021
-
-let order = date1.cmp(&date2);
-
-match order {
-    Ordering::Less => println!("Das erste Datum liegt vor dem zweiten Datum."),
-    Ordering::Equal => println!("Beide Daten sind identisch."),
-    Ordering::Greater => println!("Das zweite Datum liegt vor dem ersten Datum."),
-}
+```Rust
+let date1 = NaiveDate::from_ymd(2020, 4, 15);
+let date2 = NaiveDate::from_ymd(2020, 4, 20);
+println!("{}", date1 < date2); // true
+println!("{}", date1 == date2); // false
 ```
 
-Die Ausgabe wird `Das erste Datum liegt vor dem zweiten Datum.` sein, da `date1` früher als `date2` ist. Beachte, dass wir `date2` als Referenz übergeben müssen, da die `cmp()`-Methode eine Referenz erwartet.
+## Tiefere Einblicke:
+Die Vergleichsoperation ist in der Programmierung schon lange bekannt und wird in den meisten Sprachen ähnlich implementiert. In Rust gibt es jedoch die Besonderheit, dass man auch komplexe Datenstrukturen wie Datumsobjekte vergleichen kann, solange diese die erforderlichen Implementierungen für die Vergleichsoperatoren haben.
 
-## In die Tiefe
+Alternativen zum Vergleichen von Daten könnten zum Beispiel die Verwendung von Timestamps oder komplett andere Ansätze wie die Umwandlung von Daten in Zahlenwerte sein. Es kommt immer auf den Anwendungsfall an.
 
-Der Vergleich von zwei Datumswerten mag auf den ersten Blick einfach erscheinen, aber es gibt einige Fallstricke zu beachten. Zunächst müssen die beiden Datumsangaben im gleichen Format sein, um richtig verglichen werden zu können. Wenn wir in unserem obigen Beispiel `date2` als `NaiveDate::from_ymd(21, 3, 30)` definieren (statt `2021`), wird die Ausgabe `Das zweite Datum liegt vor dem ersten Datum.` sein, da Rust standardmäßig zweistellige Jahre als 20xx interpretiert.
+Die genaue Implementierung der Vergleichsoperatoren in Rust ist in der Rust-Dokumentation erklärt: https://doc.rust-lang.org/std/cmp/trait.PartialEq.html
 
-Außerdem müssen wir bedenken, dass Datumsangaben in unterschiedlichen Zeitzonen verschieden interpretiert werden können. Um dies zu vermeiden, können wir das Modul `DateTime` aus dem Paket `chrono` verwenden, das es ermöglicht, Zeitzonen explizit anzugeben.
-
-```rust
-let date1 = DateTime::parse_from_rfc3339("2020-01-01T00:00:00+00:00").unwrap(); //1. Januar 2020 in UTC-Zeit
-let date2 = DateTime::parse_from_rfc3339("2020-01-01T01:00:00+01:00").unwrap(); //1. Januar 2020 in Mitteleuropäischer Zeit (MEZ)
-
-let order = date1.cmp(&date2);
-
-match order {
-    Ordering::Less => println!("Das erste Datum liegt vor dem zweiten Datum."),
-    Ordering::Equal => println!("Beide Daten sind identisch."),
-    Ordering::Greater => println!("Das zweite Datum liegt vor dem ersten Datum."),
-}
-```
-
-In diesem Beispiel werden die beiden Datumsangaben als unterschiedlich interpretiert, da sie in verschiedenen Zeitzonen liegen.
-
-## Siehe auch
-
-- [Rust-Dokumentation zu Datum und Zeit](https://doc.rust-lang.org/std/time/index.html)
-- [Chrono-Dokumentation](https://docs.rs/chrono/0.4.9/chrono/index.html)
+## Siehe auch:
+- Rust-Dokumentation: https://www.rust-lang.org/
+- Mehr über die Datei- und Zeitverarbeitung in Rust: https://docs.rs/chrono/0.4.0/chrono/
+- Eine umfassende Einführung in Rust: https://doc.rust-lang.org/book/

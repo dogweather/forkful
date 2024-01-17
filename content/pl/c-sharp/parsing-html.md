@@ -1,7 +1,7 @@
 ---
-title:                "Analiza składni HTML"
-html_title:           "C#: Analiza składni HTML"
-simple_title:         "Analiza składni HTML"
+title:                "Analiza składniowa HTML"
+html_title:           "C#: Analiza składniowa HTML"
+simple_title:         "Analiza składniowa HTML"
 programming_language: "C#"
 category:             "C#"
 tag:                  "HTML and the Web"
@@ -10,36 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co & Dlaczego?
 
-Każdy, kto pracuje z internetem, ma do czynienia z dokumentami HTML. Może to być tworzenie stron internetowych, scrapowanie danych lub wykorzystanie informacji dostarczonych przez serwisy internetowe. W takich przypadkach, rozumienie i analiza HTML jest niezbędna, a programowanie parsera dla tego języka może ułatwić wiele zadań.
+Parsowanie HTML to proces analizowania kodu źródłowego strony internetowej w celu wyciągnięcia żądanych informacji. Programiści często wykonują to zadanie, aby wyodrębnić dane z witryn internetowych i wykorzystać je w swoich aplikacjach lub projektach.
 
-## Jak to zrobić
-
-Ważnym elementem parsowania HTML jest korzystanie z biblioteki lub narzędzia, które ułatwiają ten proces. W przypadku języka C#, jednym z popularnych wyborów jest biblioteka HtmlAgilityPack.
+## Jak to zrobić:
 
 ```C#
-// instancja klasy HtmlAgilityPack.HtmlDocument
-HtmlDocument doc = new HtmlDocument();
+// Przykładowy kod w C# do parsowania HTML
 
-// załadowanie zawartości HTML
-doc.Load("strona.html");
+string html = "<div><p> Przykładowy tekst </p></div>";
 
-// wybieranie elementów na podstawie tagu
-HtmlNodeCollection divs = doc.DocumentNode.SelectNodes("//div");
+var htmlDoc = new HtmlDocument();
+htmlDoc.LoadHtml(html);
 
-// wyświetlenie tekstu z wybranego elementu
-Console.WriteLine(divs[0].InnerText);
+var parsedText = htmlDoc.DocumentNode.Descendants("p").FirstOrDefault()?.InnerText;
+
+Console.WriteLine(parsedText); //Wyświetli "Przykładowy tekst"
 ```
 
-Kod powyżej pokazuje podstawową funkcjonalność parsera HtmlAgilityPack. Za pomocą metody `SelectNodes()` możemy wybierać elementy na podstawie tagów, a następnie korzystając ze właściwości `InnerText` uzyskać zawartość tekstu.
+## Głębsze zagadnienia:
 
-## Wnikliwsza analiza
+Parsowanie HTML ma długą historię, sięgającą początków Internetu. Dawniej, programiści musieli ręcznie analizować kod HTML i wyciągać z niego dane. Jednak dzięki rozwojowi technologii, istnieją teraz różne alternatywy do ręcznego parsowania, takie jak biblioteki czy narzędzia zintegrowane w środowisko programistyczne. W implementacji parsowania HTML, ważne jest uwzględnienie różnych przypadków, które mogą wystąpić w kodzie źródłowym strony.
 
-Istnieje wiele innych metod i właściwości, które można wykorzystać przy parsowaniu HTML. Na przykład, można korzystać z xpath do precyzyjnego wybierania elementów lub wybierać elementy na podstawie ich klas i identyfikatorów. Dodatkowo, znając strukturę i składnię HTML, można ustawić właściwości biblioteki w sposób, który ułatwi zrozumienie i analizę dokumentu.
+## Zobacz także:
 
-## Zobacz również
+Jeśli chcesz dowiedzieć się więcej o parsowaniu HTML w C#, polecamy następujące materiały:
 
-1. [Dokumentacja biblioteki HtmlAgilityPack](https://html-agility-pack.net/documentation)
-2. [Kurs C# dla początkujących](https://www.youtube.com/playlist?list=PLJeTUJQAsfMIqkDq_8VSIpKTm5Z_LNbjh)
-3. [Tutorial o wyrażeniach xpath](https://www.w3schools.com/xml/xpath_intro.asp)
+- [Oficjalna dokumentacja biblioteki HtmlAgilityPack](https://html-agility-pack.net/documentation)
+- [Poradnik dla początkujących: Jak wydobywać dane z witryn internetowych w C#](https://www.pluralsight.com/guides/extracting-data-html-page-using-csharp)
+- [Narzędzia do parsowania HTML w C# porównanie](https://www.codeproject.com/Articles/659019/HTML-Parsing-using-Csharp-Comparison-of-Data)

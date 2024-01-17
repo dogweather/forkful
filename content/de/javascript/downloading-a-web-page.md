@@ -1,7 +1,7 @@
 ---
-title:                "Das Herunterladen einer Webseite"
-html_title:           "Javascript: Das Herunterladen einer Webseite"
-simple_title:         "Das Herunterladen einer Webseite"
+title:                "Herunterladen einer Webseite"
+html_title:           "Javascript: Herunterladen einer Webseite"
+simple_title:         "Herunterladen einer Webseite"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "HTML and the Web"
@@ -10,49 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was & Warum?
 
-Es gibt viele Gründe, warum jemand eine Webseite herunterladen möchte. Vielleicht möchtest du eine lokale Kopie einer Webseite machen, um sie offline anzusehen oder zu sichern. Oder du möchtest die Webseitenstruktur analysieren oder bestimmte Informationen extrahieren. Egal aus welchem Grund, das Herunterladen einer Webseite kann mit JavaScript einfach und effektiv durchgeführt werden.
+Das Herunterladen einer Webseite bedeutet, dass man den Inhalt einer Webseite auf seinen Computer oder ein anderes Gerät herunterlädt. Programmierer tun dies, um den Inhalt einer Webseite für ihre Programme zugänglich zu machen oder um Informationen von der Webseite zu extrahieren.
 
-## How To
+## Wie geht's?
 
-Die Kernfunktion für das Herunterladen einer Webseite mit JavaScript ist `XMLHttpRequest`. Diese ermöglicht es uns, eine Anfrage an eine URL zu senden und die Antwort als HTML-Text zu erhalten. Hier ist ein Beispielcode:
+Das Herunterladen einer Webseite in JavaScript ist relativ einfach. Man kann die `fetch()` Funktion verwenden, um eine Anfrage an die Webseite zu senden und den Inhalt herunterzuladen. Hier ist ein Beispiel:
 
 ```Javascript
-// Erstelle ein neues XMLHttpRequest-Objekt
-let xhr = new XMLHttpRequest();
-// Öffne eine Anfrage an eine URL
-xhr.open('GET', 'https://www.beispielwebseite.de');
-// Erhalte die Antwort als HTML
-xhr.responseType = 'document';
-// Rufe die Anfrage auf
-xhr.send();
-// Warte auf die Antwort und führe eine Funktion aus
-xhr.onload = function() {
-  // Speichere die Antwort in einer Variablen
-  let response = xhr.response;
-  // Greife auf das HTML-Dokument zu
-  let html = response.documentElement;
-  // Extrahiere den gesamten HTML-Text der Seite
-  let htmlText = html.outerHTML;
-  // Gib den HTML-Text in der Konsole aus
-  console.log(htmlText);
-}
+fetch("https://www.example.com")     // Anfrage an die Webseite senden
+  .then(response => response.text())  // Die Antwort in Text umwandeln
+  .then(data => console.log(data))    // Ausgabe des heruntergeladenen Inhalts
+  .catch(error => console.log(error)) // Fehlerbehandlung
 ```
 
-In diesem Beispiel verwenden wir `XMLHttpRequest`, um eine GET-Anfrage an die URL `https://www.beispielwebseite.de` zu senden. Wir erhalten die Antwort als HTML-Text, indem wir die Eigenschaft `responseType` auf `document` setzen. Dann rufen wir die Anfrage auf und warten auf die Antwort. Sobald die Antwort erhalten wurde, greifen wir mithilfe der Eigenschaft `response` auf das HTML-Dokument zu und speichern es in einer Variablen. Von dort aus können wir den gesamten HTML-Text extrahieren und ihn in der Konsole ausgeben.
+Dieses Code-Beispiel verwendet die `.then()` Methode, um die heruntergeladenen Daten in Text umzuwandeln und dann in der Konsole auszugeben. Es gibt auch die Möglichkeit, die Daten in einem JSON-Format herunterzuladen, indem man die `.json()` Methode verwendet.
 
-## Deep Dive
+```Javascript
+fetch("https://www.example.com/api")  // Anfrage an die JSON-API senden
+  .then(response => response.json())  // Die Antwort in JSON umwandeln
+  .then(data => console.log(data))    // Ausgabe der heruntergeladenen Daten
+  .catch(error => console.log(error)) // Fehlerbehandlung
+```
 
-Es gibt noch weitere Möglichkeiten, wie man mithilfe von JavaScript Webseiten herunterladen kann. Eine Alternative zur `XMLHttpRequest` ist die Verwendung von `fetch`, die es uns ermöglicht, asynchrone Netzwerkanfragen durchzuführen. Die Funktionsweise ist ähnlich wie im vorherigen Beispiel, nur dass wir hier die Antwort als `text()` oder `json()` konvertieren müssen, um den HTML-Text zu erhalten.
+Es ist auch wichtig zu beachten, dass der Code innerhalb der `.then()` Methode nur ausgeführt wird, wenn die Anfrage erfolgreich war. Bei einem Fehler wird der Code innerhalb der `.catch()` Methode ausgeführt.
 
-Außerdem gibt es Bibliotheken wie Puppeteer und Cheerio, die uns noch mehr Kontrolle über das Herunterladen und Verarbeiten von Webseiten geben. Mit Puppeteer können wir sogar automatisiert durch Webseiten navigieren und Screenshots erstellen.
+## Tiefer tauchen
 
-Es ist jedoch wichtig zu beachten, dass das Herunterladen einer Webseite mit JavaScript einige Einschränkungen hat. Nicht alle Webseiten erlauben es, ihre Inhalte auf diese Weise herunterzuladen, und manche haben möglicherweise auch Sicherheitsmaßnahmen, die das Herunterladen mit JavaScript verhindern. Es ist daher immer wichtig, die Nutzungsbedingungen einer Webseite zu prüfen, bevor man sie herunterlädt.
+Das Herunterladen von Webseiten war in der Vergangenheit komplizierter und erforderte die Verwendung von XMLHTTPRequest oder Ajax. Mit der Einführung von `fetch()` in ES6 wurde dies jedoch viel einfacher. Es gibt auch Alternativen wie z.B. die Verwendung von Frameworks wie jQuery, um Anfragen an Webseiten zu senden.
+
+Es ist auch wichtig zu beachten, dass beim Herunterladen einer Webseite viele Aspekte wie Sicherheit, Cookies und Redirects berücksichtigt werden müssen. Die `fetch()` Funktion kümmert sich jedoch standardmäßig um diese Dinge und erleichtert so das Herunterladen von Webseiten.
 
 ## Siehe auch
 
-- [XMLHttpRequest on MDN](https://developer.mozilla.org/de/docs/Web/API/XMLHttpRequest)
-- [Fetch API on MDN](https://developer.mozilla.org/de/docs/Web/API/Fetch_API)
-- [Puppeteer on GitHub](https://github.com/puppeteer/puppeteer)
-- [Cheerio on GitHub](https://github.com/cheeriojs/cheerio)
+- [MDN Web Docs über die fetch() Funktion](https://developer.mozilla.org/de/docs/Web/API/Fetch_API/Using_Fetch)
+- [JQuery Dokumentation](https://jquery.com/)

@@ -10,29 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
-Miksi kukaan haluaisi luoda satunnaisia numeroita PHP:lla? Satunnaiset numerot ovat tärkeitä monissa ohjelmoinnin sovelluksissa, kuten pelien generoimisessa, salasanojen luomisessa ja testauksessa.
+## Mitä & Miksi?
 
-## Miten
-Satunnaisia numeroita voi luoda PHP:lla käyttämällä sisäänrakennettua "rand" funktiota. Se ottaa argumenttina parametrin, joka määrittelee halutun numeroiden välillä olevan alueen ja palauttaa satunnaisen numeron tästä alueesta.
+Satunnaislukujen generointi on prosessi, jossa tietokone luo lukuja, jotka eivät noudata mitään tietyä kaavaa tai järjestystä. Ohjelmoijat käyttävät satunnaislukugenerointia moniin eri tarkoituksiin, kuten pelien luomiseen, salauksen algoritmien luomiseen ja testitietojen luomiseen.
 
-```PHP
-rand($min, $max);
-```
+## Kuinka:
 
-Esimerkiksi, jos haluamme luoda satunnaisen numeron väliltä 1 ja 10, voimme käyttää seuraavaa koodia:
+```PHP 
+echo rand(); 
+``` 
+Tämä yksinkertainen koodinpätkä generoi satunnaisen kokonaisluvun ja tulostaa sen ruudulle.
 
-```PHP
-$random_number = rand(1,10);
-echo $random_number; //tulostaa esimerkiksi 7
-```
+```PHP 
+echo rand(1, 10); 
+``` 
+Tässä esimerkissä satunnainen luku generoidaan välillä 1-10.
 
-## Syvempi sukellus
-"rand" funktiolla on myös muita hyödyllisiä parametreja, kuten "mt_rand", joka käyttää tehokkaampaa satunnaislukugeneraattoria. Lisäksi PHP tarjoaa myös muita funktioita, kuten "shuffle", jolla voi sekoittaa sattumanvaraisesti taulukoita ja "mt_srand", joka asettaa alkusiementen arvot satunnaislukugeneraattorille.
+## Syvennys:
 
-On myös hyvä huomata, että PHP:n satunnaislukugeneraattorit eivät ole täysin satunnaisia, vaan perustuvat tiettyyn algoritmiin. Tämän vuoksi ne eivät sovellu salauskäyttöön, vaan paras valinta on käyttää PHP:n "random_int" funktiota, joka käyttää tietokoneen käyttöjärjestelmän satunnaislukugeneraattoria.
+Satunnaislukugenerointia on käytetty tietokoneohjelmoinnissa jo vuosikymmenten ajan. Alkuperäinen algoritmi, jota käytettiin satunnaislukujen generointiin, käytti tietokoneen kelloa lähteenä. Nykyään useimmat ohjelmointikielet, kuten PHP, sisältävät sisäänrakennetun funktion satunnaislukujen generointiin.
 
-## Katso myös
-- PHP:n virallinen dokumentaatio satunnaislukugeneraattoreista: https://www.php.net/manual/en/function.rand.php
-- "random_int" ja "random_bytes" käyttöohjeet: https://www.php.net/manual/en/function.random-int.php
-- Tutkimus "todellisesta" satunnaisluku-generoinnista: https://www.geeksforgeeks.org/how-to-generate-large-random-numbers-mathrandom-in-php/
+On myös olemassa muita tapoja luoda satunnaislukuja ohjelmoinnissa. Yksi esimerkki on niin kutsuttu pseudorandom-toiminto, jossa luvut eivät ole täysin satunnaisia, vaan ne generoidaan tietyn matemaattisen kaavan avulla.
+
+Satunnaislukujen generointiin liittyy myös useita tärkeitä käsitteitä, kuten seed-arvo, joka määrittää mistä kohtaa aloitetaan lukuja generoitaessa, ja pseudo-satunnainen sekvenssi, jossa sama seed-arvo tuottaa saman sarjan satunnaislukuja.
+
+## Katso myös:
+
+PHP:n virallinen dokumentaatio satunnaislukugenerointiin: https://www.php.net/manual/en/function.rand.php
+
+Hyödyllisiä vinkkejä satunnaislukugenerointiin: https://www.geeksforgeeks.org/php-program-to-generate-a-random-number-in-a-given-range/

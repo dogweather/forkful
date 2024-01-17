@@ -1,7 +1,7 @@
 ---
-title:                "Lese en tekstfil"
-html_title:           "Gleam: Lese en tekstfil"
-simple_title:         "Lese en tekstfil"
+title:                "Ans: Lese en tekstfil"
+html_title:           "Gleam: Ans: Lese en tekstfil"
+simple_title:         "Ans: Lese en tekstfil"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Files and I/O"
@@ -10,41 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hva og hvorfor?
 
-Å lese innholdet i en tekstfil er en vanlig oppgave for å hente informasjon fra en ekstern kilde eller for å behandle data som allerede finnes på datamaskinen din. Det kan være nyttig for å automatisere repetitivt arbeid, hente relevant informasjon eller bare for å ha en oversikt over dataene dine.
+Lesing av en tekstfil er en vanlig oppgave for programmerere. Det rett og slett betyr å åpne en fil og lese innholdet i den. Dette er nyttig for å hente data fra en fil og bruke den i koden din.
 
-## Hvordan
-
-For å lese innholdet i en tekstfil i Gleam, bruker vi funksjonen `File.read` og angir filbanen som en streng. Her er et eksempel på hvordan dette kan se ut:
+## Slik gjør du det:
 
 ```Gleam
-let filbane = "min_filsti.txt"
-let filinnhold = File.read(filbane)
+// Åpne en fil i skrive- eller lesemodus
+File.open("tekstfil.txt", write) do |fil|
+  // Les linje for linje og skriv ut innholdet
+  for line in fil.each_line() do
+    println(line)
+  end
+end
 ```
-
-Vi kan deretter behandle informasjonen i filen som ønsket, for eksempel ved å skrive den ut med `Debug.inspect`:
 
 ```Gleam
-Debug.inspect(filinnhold)
+// Opprett en fil og skriv inn noe tekst
+File.open("ny_fil.txt", write) do |fil|
+  fil.write("Dette er en ny fil!")
+end
 ```
 
-Dette vil gi oss en utskrift av alt innholdet i filen, inkludert linjeskift og annen formatering.
+## Dykk dypere:
 
-## Deep Dive
+Å lese tekstfiler er en viktig del av programmering, spesielt når man jobber med data fra eksterne kilder. Filer med tekstformat brukes ofte til å lagre og transportere data. Alternativer til å lese tekstfiler inkluderer å lese og skrive til en database eller å bruke API-er for å få tilgang til eksterne datakilder.
 
-Når vi bruker `File.read` funksjonen, blir innholdet i filen automatisk konvertert til Gleam sin `List` datatype. Dette betyr at vi kan bruke alle de vanlige funksjonene for å håndtere lister for å behandle informasjonen i filen.
+For å lese en tekstfil i Gleam benytter man seg av det innebygde File-modulen. Denne inneholder metoder for å åpne, lese og skrive til filer. Det kan også være lurt å håndtere eventuelle feil som kan oppstå under lesing av en fil. 
 
-For å legge til litt interaktivitet i koden vår, kan vi også be brukeren om å angi filbanen manuelt ved hjelp av `IO.prompt` funksjonen:
+## Se også:
 
-```Gleam
-let filbane = IO.prompt("Skriv inn filbanen:")
-let filinnhold = File.read(filbane)
-```
-
-På denne måten kan vi gjøre koden vår mer fleksibel og tilpasse den til forskjellige brukeres behov.
-
-## Se Også
-
-- [Dokumentasjon for `File` modulen i Gleam](https://gleam.run/documentation/std_lib/file/)
-- [Andre nyttige ressurser for å lære Gleam](https://gleam.run/resources/)
+- [Gleam sin offisielle dokumentasjon om File-modulen](https://gleam.run/book/stdlib#the-file-module)
+- [En artikkel om å lese og skrive til filer i Java](https://docs.oracle.com/javase/tutorial/essential/io/file.html)

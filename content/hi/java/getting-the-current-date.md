@@ -1,7 +1,7 @@
 ---
-title:                "वर्तमान दिनांक प्राप्त करना"
-html_title:           "Java: वर्तमान दिनांक प्राप्त करना"
-simple_title:         "वर्तमान दिनांक प्राप्त करना"
+title:                "वर्तमान तारीख प्राप्त करना"
+html_title:           "Java: वर्तमान तारीख प्राप्त करना"
+simple_title:         "वर्तमान तारीख प्राप्त करना"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Dates and Times"
@@ -10,35 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## लोग आजकल क्यूरेंट डेट को प्राप्त करने में उलझे हुए हैं। 
+#Kya Aur Kyun?
 
-शायद यह जानने के लिए कि वर्तमान तिथि क्यों महत्वपूर्ण है और कैसे इसका पता लगाया जाता है। यह एक अत्यंत उपयोगी और आवश्यक कौशल है जो सभी नए जावा प्रोग्रामर्स को सीखना चाहिए।
+Current date ko prapt karne ki baat kya hai aur programmers isko kyu karte hai?
 
-## कैसे करें 
+Current date ko prapt karna ek aam coding kaam hai, jisme developers apne code mein vartman tithi ko jaankaari ke liye use karte hai. Vartman tithi ka pata lagane se, code mein tarikh ke adhyapakatv, database ke records aur anya kai prakar ke kaam aasan ho jaate hai.
 
-```Java
-// एक इंस्टेंस बनाएं
-Date currentDate = new Date();
-// फार्मेट को निर्धारित करें
-SimpleDateFormat dateFormatter= new SimpleDateFormat("dd/MM/yyyy");
-// फार्मेटेड डेट को प्राप्त करें
-String formattedDate= dateFormatter.format(currentDate);
-// फार्मेट डेट को प्रिंट करें
-System.out.println("वर्तमान तिथि: " + formattedDate);
+#Kaise Kare?
+
+```java
+//Java code to get current date
+import java.time.LocalDate; //import LocalDate class
+import java.time.format.DateTimeFormatter; //import DateTimeFormatter class
+
+//creating LocalDate object with current date
+LocalDate currentDate = LocalDate.now();
+
+//creating DateTimeFormatter object with desired date format
+DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+
+System.out.println("Current date is: "+formatter.format(currentDate));
 ```
 
-### उत्पादन:
+**Output: Current date is: 01/09/2021**
 
-```
-वर्तमान तिथि: 12/06/2021
-```
+#Gehra Antardhyaan
 
-## गहराई में
+Iss section mein kuch gehre jaankariyan hain, jaise (1) itihaasik prasang, (2) vikalpon ke baare mein aur (3) current date prapt karne ke implementation ke bare mein.
 
-जावा में वर्तमान तिथि प्राप्त करना अधिकांश उपयोगी कॉन्स्ट्रक्टर्स में से एक है। एक तारीख और समय वर्ग संख्या से प्राप्त करना और इसे उचित फोर्मेट में प्रदर्शित करना जावा में आसान है। वर्तमान तिथि को प्राप्त करने के लिए, जावा में विभिन्न तरीकों का उपयोग किया जा सकता है, जैसे कि Date, Calendar और SimpleDataFormat का उपयोग किया जाता है।
+Current date prapt karne ke liye, pehle purane java.util.Date class use kiya jaata tha, lekin usme kuch samasyaein aayi jaise mutability aur thread-safety ki kami. Isiliye Java 8 ke baad se java.time package mein, LocalDate, LocalTime, LocalDateTime jaise saare classes available hain, jo concurrency aur thread-safety ke saath immutable bhi hain.
 
-## देखें भी
+#Aur Padhein
 
-- [Java Date मैन्युअल] (https://docs.oracle.com/javase/8/docs/api/java/sql/Date.html)
-- [Java Calendar मैन्युअल] (https://docs.oracle.com/javase/8/docs/api/java/util/Calendar.html)
-- [Java SimpleDateFormat मैन्युअल] (https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html)
+Current date ke aur bhi bahut se properties aur methods hain, jinke baare mein aap iss link par jaankaari prapt kar sakte hain: https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html
+
+Aur saath hi, Java ke aur bhi useful classes aur methods ke bare mein jaankaari ke liye, official documentation ki jaroor dekhein: https://docs.oracle.com/javase/8/docs/api/
+
+Happy coding!

@@ -10,67 +10,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Ознайомтесь з прочитанням текстового файлу в Elm
+## Що & Чому?
 
-Програмування може бути цікавим, але іноді може бути важко сприймати програмні мови та їх особливості. Але якщо ви ознайомитеся з різними мовами програмування та їх можливостями, ви можете стати більш розуміючим і ефективним розробником. У цій статті ми розглянемо, як ви можете читати текстовий файл у Elm.
+Читання текстового файлу - це процес отримання текстової інформації з файлу на комп'ютері. Програмісти виконують цю дію, щоб отримати доступ до даних, які можуть бути використані для подальшого аналізу або обробки.
 
-## Як
+## Як зробити:
 
-В першу чергу, вам потрібен текстовий файл, який ви хочете прочитати. Ви можете створити новий текстовий файл або використовувати вже існуючий. Для цього прикладу ми створимо новий текстовий файл з назвою "example.txt".
+```Elm
+import File exposing (readAsText)
+import Json.Decode exposing (decodeString)
+import Http exposing (get, string)
+import String
+import Task exposing (attempt)
 
-```
-Elm.file.readFile "example.txt"
-    |> Debug.log "текстовий файл"
-```
+readFile : String -> Task Http.Error String
+readFile filePath =
+  get filePath string
 
-Цей код допоможе прочитати вміст файлу та вивести його у консоль. Якщо ваш текстовий файл містить текст "Це приклад", то результат буде наступним:
+decodeContents : String -> Result String a
+decodeContents contents =
+  case String.split "," contents of
+    Right values ->
+      Ok values
+    Left e ->
+      Err e
 
-```
-"Це приклад"
-```
+convertToTask : Task Http.Error String -> Task Http.Error (Result String a)
+convertToTask task =
+  Task.map decodeContents task
 
-Якщо ви хочете прочитати більше одного рядка з вашого текстового файлу, ви можете використовувати функцію `readLines` замість `readFile`. Ця функція повертає список рядків з файлу.
+fileTask : Task Http.Error (Result String a)
+fileTask =
+  readFile "sample.txt"
+    |> Task.andThen convertToTask
 
-```
-Elm.file.readLines "example.txt"
-    |> Debug.log "список з рядками"
-```
+main =
+  case attempt (\_ -> Decode.wrap String.fromString fileTask) of
+    Err err ->
+      error (show err)
 
-А якщо ваш текстовий файл містить наступні рядки:
-
-```
-Рядок 1
-Рядок 2
-```
-
-То результат буде наступним:
-
-```
-[ "Рядок 1", "Рядок 2" ]
-```
-
-## Глибина аналізу
-
-Тепер, коли ми зрозуміли, як прочитати текстовий файл у Elm, давайте подивимося на деякі додаткові можливості. Elm також надає можливість записувати дані у текстовий файл за допомогою функцій `writeFile` та `writeLines`.
-
-Наприклад, якщо ми хочемо записати рядок "Це новий рядок" у файл "example.txt", то ми можемо використовувати наступний код:
-
-```
-"Це новий рядок"
-    |> Elm.file.writeFile "example.txt"
+    Ok task ->
+      task |> Task.attempt (\_ -> IO.succeed "File read successfully: " ++ (toString task))
 ```
 
-Якщо ви хочете додати більше одного рядка у файл, ви можете використовувати функцію `appendFile` замість `writeFile`.
+## Глибоке занурення:
 
-```
-"Рядок 3"
-    |> Elm.file.appendFile "example.txt"
-```
+Історичний контекст: ще з початків програмування, читання текстових файлів було необхідною частиною роботи з даними. Але з впровадженням графічних інтерфейсів та розширенням інтернету, цей процес став менш потрібнею дією.
 
-Це дозволить вам додати рядок "Рядок 3" в кінець файлу "example.txt".
+Альтернативи: нативні функції зчитування файлів існують у багатьох мовах програмування, включаючи C ++ та Java. Але у Elm є вбудовані функції, які спрощують читання текстових файлів.
 
-## Дивіться також
+Деталі реалізації: функція `readAsText` використовує вбудований `File` модуль у Elm для зчитування та повернення текстових даних з файлу. Навіть якщо файл не існує, функція поверне порожній рядок замість повідомлення про помилку.
 
-- [Офіційна документація Elm](https://elm-lang.org/docs)
-- [Довідник з використання Elm файлів](https://elmprogramming.com/guide/101-files.html)
-- [Стаття про введення в Elm](https://frontendmasters.com/courses/beginner-elm/introduction/)
+## Дивись також:
+
+- Elm документація про зчитування файлів: https://package.elm-lang.org/packages/elm/file/latest/File
+- Різні способи читання файлів у мові програмування Elm: https://discourse.elm-lang.org/t/reading-files-in-elm/4507/2 
+- Відео покрокового процесу читання файлів в Elm: https://www.youtube.com/watch?v=BeV_hQHi6pY

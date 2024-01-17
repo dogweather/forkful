@@ -10,41 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i dlaczego? 
 
-Dlaczego ktoś chciałby porównywać dwie daty? To proste. Porównywanie dat jest niezwykle przydatną umiejętnością w programowaniu, ponieważ pozwala nam na określenie kolejności zdarzeń, wykrywanie zależności czasowych oraz przetwarzanie i analizowanie danych historycznych.
+Porównywanie dwóch dat w programowaniu to proces sprawdzania, czy jedna data jest wcześniejsza, późniejsza lub równa drugiej. Programiści wykonują to w celu porównania np. kolejności wystąpienia zdarzeń lub obliczenia różnicy w czasie.
 
-## Jak to zrobić?
-
-Porównywanie dwóch dat w Clojure jest łatwe i intuicyjne. Najprostszym sposobem jest użycie funkcji `compare`, która zwraca wartość liczbą całkowitą w zależności od wyniku porównania. Przykładowe użycie tej funkcji wyglądałoby tak:
+## Jak to zrobić:
 
 ```Clojure
-(compare #inst "2021-04-15" #inst "2021-05-01")
+(def data1 (java.util.Date. 2020 12 31))
+(def data2 (java.util.Date. 2021 1 1))
+
+(> data1 data2) ;; false
+(< data1 data2) ;; true
+(= data1 data2) ;; false
 ```
 
-W powyższym przykładzie porównujemy datę 15 kwietnia 2021 z datą 1 maja 2021. Wynik porównania będzie liczbą ujemną, ponieważ pierwsza data jest wcześniejsza niż druga.
+## Głębszy wgląd:
 
-Możemy również użyć funkcji `after?`, `before?` lub `between?` do bardziej zaawansowanych porównań. Przykład użycia `before?` wyglądałby tak:
+Proces porównywania dat jest powszechnie stosowany w programowaniu, szczególnie w kontekście zarządzania i analizowania danych. Istnieją różne sposoby na porównywanie dat w różnych językach programowania, jednak w przypadku Clojure można korzystać z funkcji `>` (większy), `<` (mniejszy) i `=` (równy), które zwracają wartość logiczną `true` lub `false` dla danego warunku.
 
-```Clojure
-(before? #inst "2021-04-15" #inst "2021-05-01")
-```
+## Zobacz również:
 
-W tym przypadku funkcja zwróci wartość `true`, ponieważ data 15 kwietnia 2021 jest wcześniejsza niż data 1 maja 2021.
-
-## Głębsze zanurzenie
-
-Porównywanie dat może być trochę bardziej skomplikowane, jeśli chcemy wziąć pod uwagę również inne elementy, takie jak godziny, minuty czy sekundy. W takim przypadku należy użyć funkcji `between?` w połączeniu z funkcją `chrono-range`, która pozwala na zdefiniowanie zakresu porównania w bardziej szczegółowy sposób.
-
-```Clojure
-(between? #inst "2021-04-15" #inst "2021-04-16" (chrono-range :hours))
-```
-
-W powyższym przykładzie określamy, że chcemy porównać dwie daty z dokładnością do godzin. Funkcja `between?` zwróci w tym przypadku wartość `true`, ponieważ obejmuje cały zakres od 15 kwietnia do 16 kwietnia.
-
-Dzięki funkcjom jak `compare`, `after?`, `before?` i `between?` porównywanie dat w Clojure jest szybkie i proste. Warto również zapoznać się z innymi funkcjami z biblioteki `clj-time`, która oferuje szereg narzędzi do pracy z datami i czasem.
-
-## Zobacz też
-
-- [Dokumentacja Clojure - porównywanie dat](https://clojuredocs.org/clojure.core/compare)
-- [Dokumentacja Clojure - biblioteka clj-time](https://clj-time.github.io/clj-time/)
+- [Clojure Official Website](https://clojure.org/)
+- [Java Date Class Documentation](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html)
+- [Comparing Dates in Python](https://realpython.com/python-datetime/)

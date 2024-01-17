@@ -10,74 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hva og hvorfor?
 
-Hvis du noen gang har støtt på feil eller problemer i koden din, vet du hvor frustrerende det kan være å prøve å finne ut hva som går galt. Her kommer debugging inn i bildet - og en av de nyttigste verktøyene for å løse disse problemene er å bruke debug output. Ved å skrive ut variabler eller meldinger fra koden din kan du se nøyaktig hva som skjer i hvert trinn av kjøringen, og finne ut hvor feilen ligger.
+Printing av feilsøkningsutdata er en vanlig praksis blant programmerere for å hjelpe med å identifisere og løse problemer i koden sin. Det innebærer å skrive ut variabler, meldinger og annen relevant informasjon under kjøringen av programmet ditt.
 
-## Hvordan
+## Slik gjør du:
 
-Det første trinnet for å bruke debug output i Python er å importere `print()` funksjonen:
-
-```Python
-from __future__ import print_function
+```
+Python print("Hei, verden!") 
 ```
 
-Deretter kan du bruke `print()` funksjonen til å skrive ut hva som helst du vil sjekke i koden din. La oss si at du har en variabel som heter `x` og du vil skrive ut verdien av den for å sjekke om det er riktig:
+Dette enkle eksempelet viser hvordan du bruker `print` -funksjonen til å skrive ut en melding i Python. Du kan også skrive ut variabler og til og med matematiske uttrykk ved å legge dem til i parentes etter `print` -funksjonen.
 
-```Python
-x = "Hello"
-print(x)
+```
+Python tall = 5 print("Tallet er:", tall) #Output: Tallet er: 5 print("Summen av 2+3 er:", tall+2) #Output: Summen av 2+3 er: 7 
 ```
 
-Dette vil produsere følgende output når du kjører koden:
+## Dypdykk:
 
-```Python
-Hello
-```
+Printing av feilsøkningsutdata har vært en viktig metode for å finne feil i koden siden de tidlige dagene av programmering. Alternativet til å bruke `print` -funksjonen er å bruke en debugger, som er et spesialisert verktøy for å spore og fikse feil. Selv om det kan være mer effektivt i visse tilfeller, kan det være vanskeligere for nybegynnere å bruke.
 
-Du kan også legge til flere variabler eller strenger for å få mer informasjon:
+Under panseret bruker `print` -funksjonen `sys.stdout` -objektet for å skrive ut data til standard utdatastrømmen. Dette er vanligvis skjermen, men det kan også omadresseres til en fil. Du kan også bruke `sys.stderr` for å skrive ut feilmeldinger.
 
-```Python
-x = "Hello"
-y = "World"
-print(x, y)
-```
+## Se også:
 
-Dette vil produsere følgende output:
-
-```Python
-Hello World
-```
-
-Du kan også bruke `print()` for å sjekke om betingelser blir oppfylt i `if` og `else` setninger:
-
-```Python
-x = 5
-if x > 10:
-    print("x er større enn 10")
-else:
-    print("x er mindre enn 10")
-```
-
-Dette vil gi følgende output, som viser at betingelsen ikke blir oppfylt og at koden går til `else` setningen:
-
-```Python
-x er mindre enn 10
-```
-
-## Deep Dive
-
-En annen nyttig måte å bruke debug output er å bruke `print()` til å sjekke verdien av variabler i løkker. Ved å skrive ut verdien etter hvert steg vil du kunne se hvordan den endrer seg og om den forventede verdien blir nådd.
-
-Du kan også legge til en ekstra parameter i `print()` funksjonen som viser hvilken linje i koden konsollen skriver ut fra. Dette kan være nyttig hvis du har mange print-statements eller arbeider med flere filer, og ønsker å vite nøyaktig hvilken del av koden som produserte visse output.
-
-```Python
-print("Dette er linje 10:", x)
-```
-
-## Se også
-
-Hvis du ønsker å lære mer om debugging og hvordan du kan bruke det effektivt i Python, kan du sjekke ut følgende ressurser:
-
-- [Offisiell dokumentasjon for debugging i Python](https://docs.python.org/3/library/pdb.html)
-- [En guide til å lage effektive print-statements i koden din](https://realpython.com/python-debugging-pdb/)
+- [Python `print` -dokumentasjon](https://docs.python.org/3/library/functions.html#print)
+- [Debugging for nybegynnere](https://wiki.python.org/moin/DebuggingWithPython)
+- [Hvordan bruke en debugger i Python](https://realpython.com/python-debugging-pdb/)

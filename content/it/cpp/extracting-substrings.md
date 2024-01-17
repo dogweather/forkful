@@ -10,35 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché usare l'estrazione di sottostringhe?
+## Che cos'è e perché:
+Estrarre sottostringhe è il processo di selezione di una parte di una stringa più grande. I programmatori spesso lo fanno per analizzare e manipolare dati in modo più preciso e efficiente.
 
-Quando si lavora con stringhe di testo, può essere utile prendere solo una parte specifica di esse per analisi o manipolazione. L'estrazione di sottostringhe è un'operazione essenziale che consente di estrarre parti di stringhe in base a determinati criteri.
-
-## Come farlo?
-
-Una volta definita una stringa da cui estrarre la sottostringa desiderata, è possibile utilizzare la funzione `substr` per specificare l'indice di inizio e la lunghezza della sottostringa da estrarre. Ad esempio:
+## Come fare:
+Ecco un esempio di codice in C++ che mostra come estrarre una sottostringa da una stringa più grande utilizzando la funzione `substr()`:
 
 ```C++
-string str = "Ciao a tutti!";
-string sub = str.substr(5,3); // estrae i caratteri dalla posizione 5 per una lunghezza di 3
-cout << sub; // output: a t
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main() {
+    string str = "Ciao mondo!";
+    string subStr = str.substr(5, 5); // estrae "mondo" dalla posizione 5 con una lunghezza di 5 caratteri
+    cout << subStr; // output: mondo
+    return 0;
+}
 ```
 
-In alternativa, è possibile utilizzare il metodo `find` per cercare la posizione di un determinato carattere o stringa all'interno della stringa principale e poi utilizzare `substr` per estrarre la sottostringa desiderata. Ad esempio:
+## Approfondimento:
+Estrarre sottostringhe è un concetto comune in programmazione. In C++ ci sono diverse alternative come ad esempio l'utilizzo delle funzioni `strncpy()` e `memcpy()`. La funzione `substr()` è stata introdotta nella libreria standard di C++ a partire dalla versione 98 e offre una sintassi più semplice e intuitiva.
 
-```C++
-string str = "Hello world!";
-int pos = str.find("world"); // cerca la posizione della stringa "world"
-string sub = str.substr(pos); // estrae la parte di stringa a partire dalla posizione trovata
-cout << sub; // output: world!
-```
-
-## Approfondimento
-
-La funzione `substr` accetta anche un secondo parametro opzionale che permette di ottenere una sottostringa di lunghezza variabile a partire dalla posizione specificata. Inoltre, esiste anche il metodo `erase` che consente di eliminare una sottostringa all'interno della stringa principale.
-
-## Vedi anche
-
-- Documentazione ufficiale su `substr`: https://www.cplusplus.com/reference/string/string/substr/
-- Tutorial su come usare `substr` in C++: https://www.geeksforgeeks.org/substring-in-cpp/
-- Approfondimenti sull'utilizzo dei metodi `find` e `erase`: https://www.tutorialspoint.com/cplusplus/cpp_strings.htm
+## Vedi anche:
+- [La documentazione ufficiale di C++ sulla funzione `substr()`](https://en.cppreference.com/w/cpp/string/basic_string/substr)
+- [Un tutorial su come utilizzare la funzione `substr()` in C++](https://www.studytonight.com/cpp/string-basic-string-substr-function.php)
+- [Altre alternative per estrarre sottostringhe in C++](https://www.cplusplus.com/forum/general/78848/)

@@ -10,32 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
+Att generera slumpmässiga nummer är en vanlig uppgift för programmerare, särskilt inom spel- och kryptografindustrin. Detta är ett sätt att skapa variation och osäkerhet i program och spel, vilket leder till en mer realistisk och spännande upplevelse för användaren.
 
-Generering av slumpmässiga tal är en viktig funktion inom Arduino-programmering eftersom det kan bidra till att skapa mer dynamiska och varierade kretsar och projekt.
+## Så här gör du:
+För att generera slumpmässiga nummer i Arduino kan du använda funktionen random(), som är inbyggd i Arduino-miljön. Detta gör det enkelt att skapa ett nummer inom ett specificerat intervall. Koden nedan visar hur du kan använda funktionen:
 
-## Så här gör du
-
-För att generera slumpmässiga tal i Arduino kan du använda dig av funktionen `random(min, max)` där `min` är det minsta möjliga talet och `max` är det största möjliga talet. Här nedan följer ett exempel på hur du kan använda denna funktion för att generera fem slumpmässiga tal mellan 1 och 10:
-
-```Arduino
-int slumpmässigtTal;
-
-for (int i = 0; i < 5; i++) {
-  slumpmässigtTal = random(1, 10);
-  Serial.println(slumpmässigtTal);
-}
+```Arduino 
+int randomNumber = random(1, 10);
+Serial.println(randomNumber);
 ```
+Detta kommer att skriva ut ett slumpmässigt nummer mellan 1 och 10 i serieporten.
 
-Detta kodexempel kommer att skriva ut fem slumpmässiga tal i seriell monitor och varje gång du kör koden kommer dessa tal att vara olika.
+## Djupdykning:
+För att förstå hur generering av slumpmässiga nummer fungerar, kan det vara intressant att titta på lite historik. Innan datorer hade utvecklat algoritmer för att skapa slumpmässiga nummer, användes fysiska metoder som tärningar och kortlekar för att skapa osäkerhet i spel.
 
-Du kan även använda dig av funktionen `randomSeed()` för att starta en sekvens för slumpmässiga tal baserat på ett specifikt startnummer. På så sätt kan du skapa en mera förutsägbar slumpmässig sekvens som du kan använda i din kod.
+Det finns också alternativa sätt att generera slumpmässiga nummer i Arduino, som att använda en extern klocka eller störningar i kretsen för att skapa ett osäkert nummer. Detta kan vara användbart för mer avancerade krypteringsapplikationer.
 
-## Djupdykning
+När det gäller implementationen av random() i Arduino, baseras den på en algoritm som kallas "linear congruential generator". Detta är en enkel metod för att skapa ett pseudoslumpmässigt tal baserat på en startpunkt och ett särskilt multiplikator.
 
-Vad som händer bakom kulisserna när du genererar slumpmässiga tal i Arduino är att en algoritm kallas för Linear Congruential Generator (LCG) används. Denna algoritm är enkel och effektiv men har vissa begränsningar i hur slumpmässiga talen kan vara. Om du vill ha en mera avancerad algoritm kan du använda dig av en extern enhet, såsom ett random access memory (RAM), som kan ge mera slumpmässiga resultat.
+## Se även:
+Om du vill lära dig mer om slumpmässiga nummer och genereringen av dem, kan du ta en titt på följande länkar:
 
-## Se även
-
-- [Officiell Arduino dokumentation om Random](https://www.arduino.cc/reference/en/language/functions/random-numbers/random/)
-- [Mer information om Linear Congruential Generator](https://en.wikipedia.org/wiki/Linear_congruential_generator)
+- [Arduino reference för random()](https://www.arduino.cc/reference/en/language/functions/random-numbers/random/)
+- [En grundläggande förklaring av algoritmer för generering av slumpmässiga nummer](https://www.geeksforgeeks.org/random-number-generator-in-arbitary-probability-distribution-fashion/)
+- [En översikt av datorers historia och utvecklingen av slumpmässiga nummer](https://history-computer.com/ModernComputer/Basis/random.html)

@@ -1,7 +1,7 @@
 ---
-title:                "पैटर्न से मिलते हुए अक्षरों को हटाना"
-html_title:           "Gleam: पैटर्न से मिलते हुए अक्षरों को हटाना"
-simple_title:         "पैटर्न से मिलते हुए अक्षरों को हटाना"
+title:                "पैटर्न से मेल खाते अक्षरों को नष्ट करना"
+html_title:           "Gleam: पैटर्न से मेल खाते अक्षरों को नष्ट करना"
+simple_title:         "पैटर्न से मेल खाते अक्षरों को नष्ट करना"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -10,29 +10,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Kyon
+## क्या और क्यों?
+एक उपयोगी कौशल है जिसे प्रोग्रामर्स को सीधे शब्दों में समझाया तो डिलीटिंग अक्षर जो मिलते हैं। यह एक पैटर्न मैचिंग फंक्शन है जो डेटा संरचनाओं में अक्षरों को हटाने के लिए काम आती है। प्रोग्रामर्स इस कौशल का उपयोग करते हैं क्योंकि यह जल्दी और सही तरीके से बड़े डेटा सेट्स में अक्षरों को हटा सकता है जो एक टेडियस प्रक्रिया हो सकती है।
 
-Kayi baar, humein kisi bhi likhit kaam mein se kuch unnischiya alfaz ya characters ko hatana padta hai, jaise ki spam emails mein "[Advertisement]" ya "[SPAM]" likhna. Iske alawa, WhatsApp par naye messages ka notification delete karne ya kisi pattern ke hisab se kisi specific type ke messages ko delete karne ke liye bhi humein characters ko pattern ke saath match karna padta hai. Isse hum apni coding tasks ko automate kar sakte hain aur samay bacha sakte hain. Isiliye, aaj hum dekhenge ki kaise Gleam programming language se characters ko pattern ke saath match karte huye delete kiya ja sakta hai.
-
-## Kaise Karein?
-
+## कैसे करें:
+```Gleam
+let input_string = "गुड्डू88"; 
+let result = Deleting.Characters.Matching("8", input_string); 
+assert.String.Equal(result, "गुड्डू");
 ```
-Gleam "Characters delete karne ka example"
-fn main() {
-	let input = "Hum[SPAM]es"[SPAM] }
-	println!(input);
-}
+इस उदाहरण में, हमने एक स्ट्रिंग वेरिएबल बनाया है जिसमें "गुड्डू88" फ़ॉर्मेट है। फिर हमने "8" को पैटर्न के रूप में दिया है जो कि हमारे स्ट्रिंग में मौजूद है। आखिरकार, हमने एसर्ट फंक्शन का प्रयोग करके परिणाम को "गुड्डू" के साथ समान बताया है। जैसा कि आप देख सकते हैं, इस प्रक्रिया से स्ट्रिंग में मौजूद अक्षर "8" को हटा दिया गया है।
 
-Output: Hum es
-```
+## गहराई में जाएँ:
+इस अनुप्रयोग में, हमने प्रोग्रामिंग की दृष्टि से डिलीटिंग अक्षर जो मिलते हैं की गहरी जांच की है। यह दृष्टि पहले से ही विकसित हुई है और कई प्रोग्रामिंग भाषाओं में उपलब्ध है। इसके अलावा, कई अन्य विकल्प हैं जो अक्षरों को हटाने के लिए उपयोग किए जा सकते हैं। यदि हम इस कौशल की गहराई में जाएँ, तो हम देखेंगे कि यह कैसे वास्तव में अक्षरों को हटाता है। इसके अलावा, यह प्रक्रिया समय और उपादेशों के साथ कैसे काम करती है।
 
-Is coding example mein humne "[SPAM]" pattern ke saath match karne ke liye code likha hai, jisse "[SPAM]" ke pehle aur baad ke characters hat jayenge aur humein sirf "Hum es" output milega.
+## इसके अलावा देखें:
+यदि आप अधिक जानकारी प्राप्त करना चाहते हैं, तो आप निम्नलिखित स्रोतों को देख सकते हैं:
 
-## Deep Dive
-
-Gleam programming language patterns ko bahut acchi tarah handle karta hai. Ismein aap partial matching kar sakte hain, jismein sirf pattern ke matching characters ko delete kiya ja sakta hai aur baki characters ko code mein use kar sakte hain. Iske alawa, wildcards ka bhi use kiya ja sakta hai. Wildcards kisi bhi character or set of characters ke saath match ho sakte hain aur uske jagah hamein kuch bhi output print kar sakte hain.
-
-## See Also
-
-- [Gleam Programming Language website](https://gleam.run/)
-- [Gleam Tutorial for Beginners](https://gleam.run/documentation/#tutorial)
+- गुड़िया की आधिकारिक साइट (https://gleam.run/)
+- विकिपीडिया पर पैटर्न मैचिंग का इतिहास (https://en.wikipedia.org/wiki/Pattern_matching)
+- संकलित Gleam एक्सप्लॉरर (https://explore.gleam.run/)
+- संघर्ष उत्तर फोरम (https://struggle.ws/)

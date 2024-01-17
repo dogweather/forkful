@@ -10,70 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que trabalhar com YAML?
+## O que & Por Que?
 
-YAML, ou YAML Ain't Markup Language, é uma linguagem de serialização de dados leve e fácil de ler. Ela é comumente usada para representar configurações e dados estruturados em ferramentas de automação como Ansible, Kubernetes e Docker. Ao aprender como trabalhar com YAML, você poderá criar e manipular arquivos de configuração de forma mais eficiente e simplificar seus processos de automação.
+Trabalhar com YAML é uma forma de organizar e armazenar dados de forma estruturada em arquivos de texto. Os programadores o utilizam para armazenar informações como configurações, dados de formulários e outros tipos de dados estruturados de forma fácil e legível.
 
-## Como fazer isso
+## Como fazer:
 
-Para começar a trabalhar com YAML, você precisará ter o Bash instalado em seu sistema. Em seguida, crie um arquivo YAML com a extensão `.yml` ou `.yaml` e adicione seu conteúdo usando uma sintaxe de chave-valor. Veja um exemplo simples abaixo:
+Aqui estão alguns exemplos de como trabalhar com YAML usando Bash:
 
-```Bash
-# arquivo.yml
+```
+# Criar um arquivo YAML
+cat <<EOF > my_file.yml
 nome: João
-idade: 25
-cidade: São Paulo
+sobrenome: Silva
+idade: 30
+EOF
+
+# Ler e imprimir um valor de um arquivo YAML
+nome=$(cat my_file.yml | grep "nome" | cut -d ":" -f 2)
+echo "O nome é $nome"
+
+# Alterar um valor em um arquivo YAML
+sed -i 's/José/Maria/g' my_file.yml
 ```
 
-Você pode adicionar quantas chaves e valores desejar, desde que siga a mesma formatação. Agora, para ler os dados deste arquivo YAML, podemos usar o comando `cat`:
+### Saída de exemplo:
 
-```Bash
-cat arquivo.yml
+```
+O nome é João
+
+Arquivo my_file.yml depois da alteração:
+nome: Maria
+sobrenome: Silva
+idade: 30
 ```
 
-A saída será:
+## Profundando:
 
-```Bash
-nome: João
-idade: 25
-cidade: São Paulo
-```
+O YAML (YAML Ain't Markup Language) foi criado em 2001 por Clark Evans e Ingy döt Net como uma alternativa mais simples ao formato de dados XML. Ele é baseado em indentação e espaços em branco, o que o torna fácil de ser lido e escrito por humanos. Além do Bash, o YAML também pode ser usado em outras linguagens como Python e Ruby.
 
-Para adicionar comentários em um arquivo YAML, use o caractere `#` antes da linha de comentário. Para criar uma lista, basta adicionar um hífen antes de cada item. Veja um exemplo abaixo:
+## Veja também:
 
-```Bash
-# arquivo.yml
- #Este é um comentário
-pessoas:
-- João #Primeiro nome
-- Maria #Segundo nome
-- Pedro #Terceiro nome
-```
-
-Agora, para acessar cada item da lista, podemos usar a ferramenta de linha de comandos `jq`:
-
-```Bash
-jq '.pessoas[]' arquivo.yml
-```
-
-A saída será:
-
-```Bash
-"João"
-"Maria"
-"Pedro"
-```
-
-## Mergulho profundo
-
-O YAML é muito flexível e possui várias funcionalidades para ajudá-lo em suas tarefas de automação. Você pode usar as chaves `include` e `extends` para reduzir a repetição de código em seus arquivos YAML e torná-los mais legíveis. Além disso, o YAML suporta tipos de dados complexos, como listas de listas e dicionários, que podem ser úteis em casos de configurações mais complexas.
-
-Outra funcionalidade interessante é a capacidade de referenciar variáveis em outros arquivos YAML, o que pode ser útil ao trabalhar com vários arquivos de configuração interdependentes.
-
-Para obter uma lista completa de recursos e sintaxe do YAML, consulte a documentação oficial disponível em [yaml.org](https://yaml.org).
-
-## Veja também
-
-- [Bash Documentation](https://www.gnu.org/software/bash/manual/bash.html)
-- [YAML Quick Reference](https://yaml.org/refcard.html)
-- [jq Documentation](https://stedolan.github.io/jq/manual/)
+- [Documentação oficial do YAML](https://yaml.org/)
+- [Tutorial de YAML para iniciantes](https://medium.com/swlh/a-beginners-guide-to-yaml-f9a85999b25d)
+- [Comparação entre YAML e JSON](https://stackify.com/json-vs-yaml/)

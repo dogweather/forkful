@@ -1,7 +1,7 @@
 ---
-title:                "文字列の抽出"
-html_title:           "Clojure: 文字列の抽出"
-simple_title:         "文字列の抽出"
+title:                "部分文字列を抽出する"
+html_title:           "Clojure: 部分文字列を抽出する"
+simple_title:         "部分文字列を抽出する"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -10,82 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+## なに？なぜ？
 
-もし誰かが文字列を部分文字列に分割することに興味があるのならば、この記事はあなたにとって役に立つでしょう。
+文字列から部分文字列を抽出することは、プログラマーがよく行うタスクです。これにより、特定のテキストパターンを含む文字列を検索し、必要に応じて変更することができます。
 
-## 方法
-
-部分文字列を抽出するには、Clojureの[subs](https://clojuredocs.org/clojure.core/subs)関数を使用します。
+## やり方：
 
 ```Clojure
-(subs "Hello world" 0 5)
+(str/split "こんにちは、私はClojureを勉強しています。" #"、")
 ```
 
-このコードでは、文字列"Hello world"の先頭から5文字目までの部分文字列が抽出されます。出力は以下のようになります。
+このコードの出力は `("こんにちは" "私はClojureを勉強しています。")` となります。文字列を `split` 関数に渡すことで、指定したパターン（ここでは `,`）で文字列が分割されます。
 
 ```Clojure
-"Hello"
+(str/replace "Clojure is fun!" #"fun" "awesome")
 ```
 
-部分文字列を抽出する際、取り出したい文字列の範囲を指定することが重要です。上記の例では、始点と終点のインデックスを指定しましたが、指定しない場合は文字列の先頭から終端までの部分文字列が抽出されます。
+このコードの出力は `"Clojure is awesome!"` となります。`replace` 関数により、指定したパターン（ここでは `fun`）が文字列内で見つかった場合に、別の文字列（ここでは `awesome`）に置き換えられます。
 
-```Clojure
-(subs "Hello world" 3)
-```
+## 深堀り：
 
-このコードでは、文字列の先頭から3番目の文字列から終端までの部分文字列が抽出されます。出力は以下のようになります。
+部分文字列を抽出する機能は、文字列処理に欠かせないものです。例えば、ユーザーからの入力情報を確認するフォームなどでは、必要な情報を部分文字列として抽出する必要があります。Clojureでは、上記のコードの他にも`subs`関数や`re-find`関数など、複数の方法で部分文字列を抽出することができます。
 
-```Clojure
-"lo world"
-```
+また、正規表現を使うことで、より複雑なパターンの文字列を抽出したり置き換えたりすることができます。ただし、正規表現を扱うには少し学習が必要です。
 
-文字列の範囲を指定する際、負のインデックスを使用することもできます。負のインデックスを指定すると、文字列の末尾から数えて範囲を指定できます。
+## 関連情報：
 
-```Clojure
-(subs "Hello world" -2)
-```
-
-このコードでは、文字列の末尾から2番目の文字列から終端までの部分文字列が抽出されます。出力は以下のようになります。
-
-```Clojure
-"ld"
-```
-
-## ディープダイブ
-
-Clojureの[subs](https://clojuredocs.org/clojure.core/subs)関数は再帰的な部分文字列の抽出もサポートしています。つまり、抽出した部分文字列から更に部分文字列を抽出することができます。
-
-```Clojure
-(subs (subs "Hello world" 0 5) 1)
-```
-
-このコードでは、文字列全体から5文字目までの部分文字列を抽出し、その中から2番目の文字から終端までの部分文字列が抽出されます。出力は以下のようになります。
-
-```Clojure
-"ello"
-```
-
-文字列の範囲を指定する際、始点より終点のインデックスの方が小さい場合、空の文字列が返されます。
-
-```Clojure
-(subs "Hello world" 3 0)
-```
-
-このコードでは、文字列の3番目の文字から、文字列の0番目の文字までの部分文字列が抽出されます。しかし、文字列の3番目の文字より前に0番目の文字があるわけがないので、結果は空の文字列になります。出力は以下のようになります。
-
-```Clojure
-""
-```
-
-## もっと詳しく知りたい方は
-
-- [ClojureDocs: subs](https://clojuredocs.org/clojure.core/subs)
-- [Clojure for the Brave and True](https://www.braveclojure.com/clojure-for-the-brave-and-true/): 参考としておすすめの本です。
-- [Clojure Koans](https://github.com/functional-koans/clojure-koans): Clojureの基本を学べる練習問題です。
-
-***
-
-## 関連記事
-
-- [Clojureで文字列を連結する方法](https://example.com/clojure-string-concatenation)
+部分文字列の抽出や置換について、詳しい情報はClojure公式ドキュメントを参照してください。また、同様の機能を持つ他の言語やライブラリもありますので、状況に応じてどの方法が最適か検討してみてください。

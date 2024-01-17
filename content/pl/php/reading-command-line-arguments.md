@@ -10,55 +10,71 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co to jest i dlaczego to robimy?
 
-W dzisiejszych czasach programowanie jest nieodłączną częścią wielu dziedzin, a znajomość języków programowania jest niezbędna do wykonywania wielu zadań. Język PHP jest jednym z najpopularniejszych języków programowania na świecie, więc jest ważne dla programistów posiadanie wiedzy o jego różnych funkcjonalnościach. Jedną z takich funkcjonalności są argumenty wiersza poleceń, które pozwalają na przekazywanie parametrów podczas uruchamiania skryptu PHP z konsoli. W tym artykule dowiesz się, dlaczego warto poznać tę funkcjonalność i jak ją wykorzystać.
+Odczytywanie argumentów z wiersza poleceń to proces, w którym programista pobiera dane dostarczone przez użytkownika w wierszu poleceń systemu operacyjnego. Jest to szczególnie ważne w programowaniu PHP, ponieważ pozwala nam na interakcję z użytkownikiem w czasie wykonywania programu, dzięki czemu program może być w pełni funkcjonalny i dostosowywalny.
 
-## Jak to zrobić
+## Jak to zrobić:
 
-W celu odczytania argumentów wiersza poleceń w PHP, musimy skorzystać z tablicy globalnej o nazwie `$argv`. Jest to tablica, która zawiera wszystkie przekazane parametry wiersza poleceń jako swoje elementy. W razie potrzeby, możemy również skorzystać z tablicy globalnej `$argc`, która przechowuje liczbę przekazanych argumentów.
-
-Przykładowy kod w języku PHP wykorzystujący argumenty wiersza poleceń może wyglądać tak:
-
-```php
+### Przykład 1: Proste odczytywanie argumentów z wiersza poleceń
+```PHP
 <?php
-// Sprawdzamy czy podane zostały odpowiednie argumenty
-if ($argc < 3) {
-    echo "Użycie: php skrypt.php argument1 argument2";
-    exit;
+// Ustawienie dostępnych opcji argumentów
+$options = getopt("f:t:m:");
+
+// Wyświetlenie argumentów i wartości
+echo "Początek: ".$options["f"]."\n";
+echo "Koniec: ".$options["t"]."\n";
+echo "Wiadomość: ".$options["m"]."\n";
+```
+
+### Przykład 2: Wykorzystanie domyślnych wartości dla niepodanych argumentów
+```PHP
+<?php
+// Ustawienie domyślnych wartości dla argumentów
+$defaults = array(
+    "f" => "2019-01-01",
+    "t" => "2019-12-31",
+    "m" => "Wesołego Nowego Roku!"
+);
+
+// Zastosowanie domyślnych wartości dla niepodanych argumentów
+$options = getopt("f:t:m:", $defaults);
+
+// Wyświetlenie argumentów i wartości
+echo "Początek: ".$options["f"]."\n";
+echo "Koniec: ".$options["t"]."\n";
+echo "Wiadomość: ".$options["m"]."\n";
+```
+
+### Przykład 3: Odczytywanie argumentów jako tablica
+```PHP
+<?php
+// Ustawienie opcji "m" na częstotliwość
+$options = getopt("f:t:m:");
+
+// Zamiana argumentu "m" na tablicę
+$freq = explode(",", $options["m"]);
+
+// Wyświetlenie poszczególnych częstotliwości
+foreach($freq as $f){
+    echo "Częstotliwość: ".$f."\n";
 }
-
-// Przypisujemy przekazane argumenty do zmiennych
-$arg1 = $argv[1];
-$arg2 = $argv[2];
-
-// Wyświetlamy argumenty wraz z tekstem pomocniczym
-echo "Pierwszy argument: " . $arg1 . "\n";
-echo "Drugi argument: " . $arg2;
 ```
 
-W powyższym przykładzie wykorzystujemy argumenty w celu przypisania wartości do zmiennych oraz wyświetlamy je na konsoli wraz z pomocniczym tekstem. Przykładowe wywołanie skryptu z konsoli wyglądałoby tak:
+## Deep Dive:
 
-```
-php skrypt.php Hello World
-```
+Historia:
+Odczytywanie argumentów z wiersza poleceń jest ważnym elementem programowania od początku istnienia systemów operacyjnych. Wcześniej musieliśmy pisać skrypty wiersza poleceń i wykorzystywać zmienne środowiskowe, aby dostarczyć dane do programów. Dzięki odczytywaniu argumentów w PHP, możemy wykonać te same zadania w wygodny sposób bez korzystania z dodatkowych skryptów.
 
-Wynikiem działania skryptu byłoby:
+Alternatywy:
+Choć odczytywanie argumentów jest niezbędnym elementem w programowaniu PHP, istnieją również alternatywy, takie jak wykorzystanie formularzy lub interaktywnych menu, aby uzyskać dane od użytkownika. Jednak odczytywanie argumentów jest szybkim i prostym sposobem na interakcję z użytkownikiem w czasie wykonywania programu.
 
-```
-Pierwszy argument: Hello
-Drugi argument: World
-```
+Szczegóły implementacji:
+W PHP istnieje wbudowana funkcja `getopt()`, która jest wykorzystywana do odczytywania argumentów z wiersza poleceń. Funkcja ta przyjmuje dwa parametry: pierwszy to ciąg znaków określający dostępne opcje argumentów, a drugi to opcjonalna tablica z domyślnymi wartościami dla argumentów. Funkcja ta zwraca tablicę z wartościami przypisanymi do argumentów. Dzięki wykorzystaniu tej funkcji, odczytywanie argumentów jest szybkie i łatwe w implementacji.
 
-Możemy również wykorzystać argumenty wiersza poleceń do przekazania wartości do naszej aplikacji lub skryptu, na przykład podczas wywołania przez zewnętrzny program lub skrypt powłoki. Dzięki temu nasz skrypt będzie bardziej uniwersalny i łatwiejszy w użyciu dla innych użytkowników.
+## Zobacz też:
 
-## Głębokie zanurzenie
-
-W przypadku, gdy nasz skrypt ma przyjmować wiele argumentów lub parametry o różnych typach danych, musimy zadbać o odpowiednie walidowanie i konwersję wartości. W celu ułatwienia tego procesu, można skorzystać z funkcji `getopt()` lub wykorzystać zewnętrzną bibliotekę taką jak np. "symfony/console".
-
-Istnieje również możliwość odczytania argumentów wiersza poleceń podczas działania skryptu PHP, dzięki wykorzystaniu funkcji `getopt()` w połączeniu z pętlą `while` i funkcją `fgets()`, która pozwala na pobieranie pojedynczych linii z konsoli.
-
-## Zobacz również
-
-- [Dokumentacja PHP - Argumenty wiersza poleceń](https://www.php.net/manual/en/reserved.variables.argv.php)
-- [Biblioteka "symfony/console" do obsługi argumentów wiersza poleceń](https://github.com/symfony/console)
+1. Dokumentacja PHP: https://www.php.net/manual/en/function.getopt.php
+2. Przykładowe użycie argumentów w wierszu poleceń: https://www.anil2u.info/2011/02/getopt-php-function-to-read-command-line-and-display-output/
+3. Blog o wykorzystaniu argumentów w wierszu poleceń: https://girishjoshi.io/blog/php-getopt-command-line-options-in-php/

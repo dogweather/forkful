@@ -1,7 +1,7 @@
 ---
-title:                "Att göra en sträng stor bokstavsförsjuten"
-html_title:           "TypeScript: Att göra en sträng stor bokstavsförsjuten"
-simple_title:         "Att göra en sträng stor bokstavsförsjuten"
+title:                "Idealisering av en sträng"
+html_title:           "TypeScript: Idealisering av en sträng"
+simple_title:         "Idealisering av en sträng"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -10,38 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
 
-Du kanske undrar varför du skulle vilja ta dig tid att "capitalizing" en sträng, eller göra första bokstaven i varje ord i en sträng till en stor bokstav. Det finns faktiskt flera fördelar med att använda denna teknik i dina applikationer.
+Att kapitalisera en sträng betyder helt enkelt att göra första bokstaven i en sträng till en stor bokstav. Programmerare gör detta för att göra strängar mer läsbara eller för att matcha specifika strängmallar.
 
-För det första, kan det förbättra läsbarheten och estetiken av din kod. Genom att använda stora bokstäver vid början av varje ord, blir det enklare att skilja mellan olika variabler och namn i din kod. Dessutom kan det hjälpa till att göra ditt kod till mer lättläst och professionellt utseende.
-
-## Så här gör du
-
-För att capitalizing en sträng i TypeScript, finns det flera olika sätt att åstadkomma detta. Här är två enkla sätt att göra det:
+## Hur man:
 
 ```TypeScript
-// Använda inbyggd JavaScript metod
-const str = "hej, detta är en exempelsträng";
-const capitalizedStr = str.charAt(0).toUpperCase() + str.slice(1);
-console.log(capitalizedStr);
-// Output: "Hej, detta är en exempelsträng"
+const str = "hej allihopa!"
 
-// Använda TypeScript inbyggd metod
-const str = "hej, detta är en exempelsträng";
-const capitalizedStr = str.replace(/\b\w/g, c => c.toUpperCase());
-console.log(capitalizedStr);
-// Output: "Hej, Detta Är En Exempelsträng"
+//Använda inbyggda funktioner
+const kapitaliseradStr = str.charAt(0).toUpperCase() + str.slice(1);
+console.log(kapitaliseradStr); //Output: "Hej allihopa!"
+
+//Använda regex
+const kapitaliseradStr2 = str.replace(/^\w/, c => c.toUpperCase());
+console.log(kapitaliseradStr2); //Output: "Hej allihopa!"
 ```
 
-Som du kan se, kan du antingen använda den inbyggda JavaScript-metoden "toUpperCase()" för att göra första bokstaven till en stor bokstav och sedan använda "slice()" för att återställa resten av strängen, eller så kan du använda TypeScript-metoden "replace()" med ett reguljärt uttryck för att samtidigt ändra alla första bokstäver i varje ord.
+## Djupdykning:
 
-## Djupdykning
+Att kapitalisera strängar är inget nytt koncept och har funnits sedan tidigare programmeringsspråk som C. Det finns också alternativ som att använda CSS för att ändra utseendet på text. Implementeringen av att kapitalisera en sträng kan göras på olika sätt, exempelvis genom att använda inbyggda funktioner eller regex.
 
-För dem som är intresserade av att förstå mer om hur capitalizing en sträng fungerar i bakgrunden, kan vi titta närmare på den inbyggda "replace()" metoden i TypeScript. Det reguljära uttrycket "\b\w" söker efter enbart de första bokstäverna i varje ord i strängen. När matchningen är hittad, ersätts det med en stora bokstav genom användning av pil notationen (=>), vilket är en av de snygga funktionerna i TypeScript. Denna process upprepas för varje matchning som hittas i strängen, vilket ger oss en "capitalized" version av strängen.
+## Se även:
 
-## Se också
-
-* [TypeScript officiella hemsida](https://www.typescriptlang.org/)
-* [String.prototype.toUpperCase()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase)
-* [String.prototype.replace()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
+- [CSS Text-Transform](https://www.w3schools.com/cssref/pr_text_text-transform.asp)
+- [Regex JavaScript](https://www.w3schools.com/js/js_regexp.asp)

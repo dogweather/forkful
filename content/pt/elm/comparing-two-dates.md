@@ -10,52 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+# Comparando duas datas em Elm: Por que e como os programadores fazem isso?
 
-Se você já precisou comparar duas datas em sua programação, sabe como pode ser uma tarefa complexa. Com o Elm, essa tarefa se torna muito mais simples e eficiente. Neste artigo, vamos explorar como comparar duas datas utilizando a linguagem de programação Elm.
+## O que e porquê?
 
-## Como Fazer
+Comparar duas datas é uma tarefa comum em programação, especialmente quando trabalhamos com dados relacionados a tempo e agendamento. Essencialmente, estamos comparando duas instâncias de uma data para determinar qual é a mais recente ou se elas são iguais. Isso nos permite tomar decisões lógicas com base nessas datas e é uma habilidade fundamental para muitos programadores.
 
-Começando com dois exemplos de datas:
+## Como fazer:
 
-```elm
-date1 = Date.fromParts 2020 04 15
-date2 = Date.fromParts 2020 03 30
+Em Elm, comparar duas datas é bastante simples. Podemos usar a função `Date.compare` que leva duas datas como argumentos e retorna um `Order`. Uma instância de `Order` pode ser `LT` (menos que), `EQ` (igual) ou `GT` (maior que). Aqui está um exemplo de como usá-lo:
+
+```Elm
+date1 = Date.fromString "2020-01-01"
+date2 = Date.fromString "2020-01-05"
+order = Date.compare date1 date2
 ```
 
-Podemos compará-las utilizando a função `compare` da biblioteca `Date`:
+Neste caso, a variável `order` será igual a `LT`, indicando que `date1` é menor que `date2`. Podemos usar isso em uma declaração if para tomar ações diferentes dependendo da data mais recente.
 
-```elm
-Date.compare date1 date2
--- Output: Greater
-```
+## Profundando:
 
-O resultado dessa comparação é um tipo de dados `Order`. Ele pode assumir três valores: `Less`, `Equal` e `Greater`, representando respectivamente, menor, igual e maior.
+Comparar duas datas tem sido uma tarefa constante na história da programação. Em linguagens mais antigas, como C ou Java, muitas vezes tínhamos que escrever nosso próprio código para comparar datas, o que poderia levar a erros e ineficiências. Felizmente, em Elm, temos a função `Date.compare` que já lida com toda a lógica de comparação para nós.
 
-Para uma comparação mais específica, podemos utilizar a função `compareValue` da biblioteca `Date`:
+No entanto, existem outras maneiras de se comparar datas em Elm. Podemos usar a biblioteca Time Extra que oferece mais recursos relacionados a tempo, incluindo a função `Time.Compare` para comparar datas e até mesmo o `Time.Extra.ExtraOrdinary` para comparar datas com uma precisão maior.
 
-```elm
-Date.compareValue date1 date2
--- Output: 16
-```
+## Veja também:
 
-O resultado é um número inteiro que representa a diferença em milissegundos entre as duas datas. Neste caso, a diferença é de 16 dias.
-
-## Deep Dive
-
-Para entendermos melhor como a comparação de datas funciona em Elm, vamos dar uma olhada no código fonte da função `compare`:
-
-```elm
-compare : Date -> Date -> Order
-compare =
-    Date.compareValue >> compareInt
-```
-
-Esta função simplesmente chama `Date.compareValue` e passa o resultado para `compareInt`, que converte o número em um valor do tipo `Order`.
-
-É importante lembrar que a comparação de datas em Elm leva em consideração o fuso horário. Se você precisar comparar datas em um fuso horário específico, é preciso utilizar as funções `toIsoStringInTimezone` e `fromIsoStringInTimezone` e especificar o fuso horário desejado.
-
-## Veja Também
-
-- [Documentação oficial do pacote Date no Elm](https://package.elm-lang.org/packages/elm/core/latest/Date)
-- [Artigo sobre como lidar com datas em Elm](https://medium.com/frontend-digest/how-to-handle-dates-in-elm-the-right-way-dfb71c658e76)
+- Biblioteca Time Extra: https://package.elm-lang.org/packages/elm/time-extra/latest/
+- Documentação do Elm sobre comparação de datas: https://package.elm-lang.org/packages/elm/time/latest/Time#compare

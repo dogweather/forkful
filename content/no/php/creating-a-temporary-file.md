@@ -1,7 +1,7 @@
 ---
-title:                "Opprettelse av en midlertidig fil"
-html_title:           "PHP: Opprettelse av en midlertidig fil"
-simple_title:         "Opprettelse av en midlertidig fil"
+title:                "Opprettelse av midlertidig fil"
+html_title:           "PHP: Opprettelse av midlertidig fil"
+simple_title:         "Opprettelse av midlertidig fil"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Files and I/O"
@@ -10,44 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##
-
-Hvorfor:
-
-Skal du til å programmere og lurer på hvorfor du skulle bry deg med å lage midlertidige filer? Det er flere situasjoner der det kan være nyttig å bruke midlertidige filer i din PHP-kode. De kan for eksempel brukes til å lagre midlertidige data som trengs for å kjøre en bestemt funksjon, eller til å utføre operasjoner på større filer som krever et midlertidig lagringssted.
+## Hva & Hvorfor?
+Opprette midlertidig filer er en vanlig praksis blant programvareutviklere for å lagre midlertidig data eller resultater som trenger å bli brukt senere. Dette er spesielt nyttig når man arbeider med store datasett eller når programmer må koordinere med andre applikasjoner.
 
 ## Hvordan:
+```
+// Opprette en midlertidig fil med standardnavn og lokasjon
+$temp_file = tempnam(sys_get_temp_dir(), "temp");
 
+// Skrive data til den midlertidige filen
+$file_handle = fopen($temp_file, "w");
+fwrite($file_handle, "Dette er tekst som skal lagres i den midlertidige filen");
+fclose($file_handle);
 
-Hvis du ønsker å lage en midlertidig fil i PHP, kan du bruke funksjonen `tmpfile()`. Denne funksjonen oppretter en midlertidig fil og returnerer en håndterer som kan brukes til å utføre operasjoner på filen. Se følgende kode eksempel:
+// Les data fra den midlertidige filen og skriv ut i nettleseren
+echo file_get_contents($temp_file);
 
-```PHP
-<?php
-$file = tmpfile();
-echo gettype($file). "\n"; // output: resource
-?>
+// Slette den midlertidige filen
+unlink($temp_file);
+```
+Resultat:
+```
+Dette er tekst som skal lagres i den midlertidige filen
 ```
 
-Som du kan se, returnerer `tmpfile()` en håndterer av typen "resource". Du kan deretter bruke denne håndtereren til å skrive til filen, lese fra den, eller utføre andre manipulasjoner på den. Husk å lukke filen etter at du er ferdig med å bruke den ved å bruke funksjonen `fclose()`.
+## Dypdykk:
+Opprettelse av midlertidige filer har vært en vanlig praksis i programmering i lang tid. I eldre operativsystemer som DOS og Windows 3.x var det nødvendig å manuelt opprette midlertidige filer for å lagre data som ikke lenger var nødvendige. I dag blir midlertidige filer ofte brukt for å effektivisere plassering og utveksling av data mellom applikasjoner.
 
-```PHP
-<?php
-$file = tmpfile();
-fwrite($file, "Dette er en midlertidig fil\n");
-rewind($file); // Setter håndtereren tilbake til starten av filen
-echo fgets($file); // output: Dette er en midlertidig fil
-fclose($file); // Husk å lukke filen når du er ferdig
-?>
-```
+Det finnes også alternative metoder for å lagre midlertidige data i PHP, som for eksempel å bruke sesjonsvariabler eller kontinuerlig å slette gamle midlertidige filer for å frigjøre plass. Men å opprette en midlertidig fil er fortsatt en enkel og pålitelig måte å lagre og utveksle data.
 
-## Deep Dive:
+Når en midlertidig fil opprettes, blir det faktisk en faktisk fil på harddisken med et unikt navn. Det er et tegn på at filen er midlertidig og bør slettes når den ikke lenger er nødvendig. Det er derfor viktig for programmere å ha kontroll over hvor midlertidige filer blir opprettet og å slette dem når de ikke lenger er i bruk.
 
-Når du oppretter en midlertidig fil ved hjelp av `tmpfile()` blir filen automatisk slettet når den er lukket. Dette betyr at du ikke trenger å bekymre deg for å slette filen manuelt etter at du er ferdig med å bruke den. Du kan også bruke funksjonen `tmpname()` som gir deg navnet på den midlertidige filen, og dermed kan du eksempelvis inkludere den i en kobling for å sende data videre til en annen side.
-
-En annen nyttig funksjon er `unlink()` som lar deg slette en fil på serveren. Dette kan være nyttig om du ønsker å slette den midlertidige filen før du lukker den, ved å kalle `unlink()` før du bruker `fclose()`.
-
-## Se Også:
-
-- [PHP.net - tmpfile()](https://www.php.net/manual/en/function.tmpfile.php)
-- [PHP.net - tmpnam()](https://www.php.net/manual/en/function.tmpnam.php)
-- [PHP.net - unlink()](https://www.php.net/manual/en/function.unlink.php)
+## Se også:
+https://www.php.net/manual/en/function.tempnam.php

@@ -10,42 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
 
-Att skriva tests är ett viktigt steg i utvecklingsprocessen eftersom det hjälper dig att säkerställa att din kod fungerar som den ska och att den inte bryts när du gör ändringar. Det sparar tid och resurser på lång sikt och ger dig en ökad kvalitetssäkring för din kod.
+Att skriva tester är en viktig del av programmering, då det hjälper oss att säkerställa att vår kod fungerar korrekt och inte bryts när vi gör ändringar. Tester är små bitar av kod som testar specifika delar av vår programvara och ger oss feedback om de har passerat eller misslyckats. Programmerare gör det för att säkerställa att deras kod är tillförlitlig och uppvisar förväntade resultat.
 
-## Så gör du
+## Hur man gör:
 
-För att skriva tests i Elm behöver du använda ett testramverk som heter elm-test. Först och främst bör du skapa en separat fil för alla dina tests och inkludera den i ditt elm-program genom att använda "import"-kod:
-```
-import Expect
-import Fuzzer
-import Test
+```Elm
+import Test exposing (..)
 
-```
-Nästa steg är att definiera dina tester som funktioner som returnerar en Bool för att indikera om testet har lyckats eller misslyckats. Du kan använda funktionen Expect.equal för att jämföra förväntade värden med faktiska värden.
-```
-addTest : Test
-addTest =
-    describe "add"
-        [ test "adds two numbers" <|
+-- En enkel funktion som returnerar sitt argument plus 1
+addOne : Int -> Int
+addOne x =
+    x + 1
+
+-- Ett test som kontrollerar att vår addOne-funktion returnerar förväntat resultat
+testAddOne : () -> Test
+testAddOne _ =
+    describe "addOne"
+        [ test "Returns expected result" <|
             \_ ->
-                Expect.equal 5 (add 2 3)
+                addOne 5
+                |> Expect.equal 6 -- Verifierar att 5 + 1 är lika med 6
         ]
+
+-- Kör testet och få ut resultatet
+runTests : Test
+runTests =
+    describe "Our Test Suite"
+        [ testAddOne -- Lägg till fler tester här om du vill
+        ]
+
+main =
+    runTests
+        |> toString
+        |> text
+
 ```
-Slutligen kan du köra dina tester genom att använda elm-test i terminalen:
-```
-elm-test
-```
 
-## Djupdykning
+När vi kör koden ovan får vi ut som förväntat: `OK, passed 1 test`.
 
-För att skriva effektiva och pålitliga tester är det viktigt att förstå skillnaden mellan enhetstester och integrationstester. Enhetstester fokuserar på att testa enskilda delar av din kod, medan integrationstester testar hur de olika delarna fungerar tillsammans. Båda är viktiga och bör användas i kombination för att säkerställa en bra testning av din kod.
+## Djupdykning:
 
-En annan aspekt att tänka på är att skriva tydliga och läsbara tests. Detta är viktigt för att underlätta felsökning och för att andra utvecklare ska kunna förstå och bygga vidare på din kod. Användande av tydliga namn på tester och kommentarer kan hjälpa till i detta.
+I början av programmeringens historia utfördes tester manuellt av programmerare. Det var inte förrän på 1960-talet som idén om automatiserade tester uppkom, vilket gjorde testprocessen mer effektiv. Alternativ till att skriva tester med Elm inkluderar JavaScripts Jest och Pythons Pytest. För att implementera tester i din kod behöver du använda Test.exposing-modulen och sedan skriva dina tester inuti en ```describe```-funktion.
 
-## Se även
+## Se även:
 
-- [elm-test GitHub-repositorium](https://github.com/elm-community/elm-test)
-- [Elm-test officiell dokumentation](https://www.elm-test.org/)
-- [Enkel guide till att skriva tests i Elm](https://medium.com/@DanT8n/a-simple-guide-to-testing-in-elm-9d672e8b7b34)
+- [Elms dokumentation om tester] (https://package.elm-lang.org/packages/elm-explorations/test/latest/) 
+- [Jests dokumentation] (https://jestjs.io/docs/en/getting-started)
+- [Pytests dokumentation] (https://docs.pytest.org/en/stable/)

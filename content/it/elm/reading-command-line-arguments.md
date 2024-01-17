@@ -1,7 +1,7 @@
 ---
-title:                "Lettura degli argomenti dalla riga di comando"
-html_title:           "Elm: Lettura degli argomenti dalla riga di comando"
-simple_title:         "Lettura degli argomenti dalla riga di comando"
+title:                "Lettura degli argomenti della riga di comando"
+html_title:           "Elm: Lettura degli argomenti della riga di comando"
+simple_title:         "Lettura degli argomenti della riga di comando"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Files and I/O"
@@ -10,67 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+## Cos'è & Perché?
 
-Hai mai avuto bisogno di leggere gli argomenti passati dalla riga di comando in un programma Elm? Forse stai sviluppando un'applicazione per la riga di comando o vuoi semplicemente gestire alcuni input dall'utente. In ogni caso, saper come leggere gli argomenti della riga di comando può essere estremamente utile.
+Leggere gli argomenti dalla linea di comando è il processo di ottenere informazioni inserite dall'utente attraverso il terminale. I programmatori spesso fanno ciò per interagire con l'utente e ottenere input dinamico per il loro programma.
 
-## Come Fare
+## Come Fare:
 
-Per leggere gli argomenti della riga di comando in Elm, possiamo utilizzare la funzione built-in `Platform.Cmd.getArgs`. Questa funzione restituirà gli argomenti come una lista di stringhe, che possiamo poi elaborare e utilizzare nel nostro programma.
-
-```Elm
-import Platform.Cmd as Cmd
-
-arguments : Cmd.Cmd (List String)
-arguments =
-    Cmd.getArgs
-
--- Esempio di output: ["Hello", "world"]
+```
+Elm.platform.program {
+    init = init,
+    update = update,
+    view = view,
+    subscriptions = arguments
+}
 ```
 
-Possiamo anche isolarli direttamente nella nostra funzione `main` utilizzando la funzione `map` per elaborare la lista degli argomenti:
+Questo è un esempio di come si può utilizzare la funzione `arguments` in Elm per ottenere gli argomenti dalla linea di comando. Il programma inizierà eseguendo la funzione `init` e poi passando attraverso la funzione `update` per gestire gli argomenti. Infine, la funzione `view` sarà responsabile di mostrare l'output corretto basato sugli argomenti inseriti dall'utente.
 
-```Elm
-import Platform.Cmd as Cmd
+## Approfondimento:
 
-main : Program flags
-main =
-    Platform.worker
-        { init = init
-        , update = update
-        , subscriptions = subscriptions
-        , view = view
-        }
+La lettura degli argomenti dalla linea di comando è un concetto importante per la programmazione, poiché permette ai programmatori di creare programmi interattivi e personalizzati per gli utenti. Una delle alternative a questa pratica è l'utilizzo di interfacce grafiche utente, ma spesso le applicazioni che utilizzano la lettura degli argomenti dalla linea di comando sono più veloci ed efficienti.
 
-init : flags -> ( Model, Cmd Cmd.Cmd (List String))
-init _ =
-    ( Model "", arguments )
+Per implementare la lettura degli argomenti in Elm, è necessario eseguire il comando `elm-cli args`, che restituirà una lista di argomenti inseriti dall'utente. È importante notare che gli argomenti saranno restituiti come stringhe, quindi sarà necessario convertirle al tipo corretto all'interno del programma.
 
-update : msg -> Model -> ( Model, Cmd Cmd.Cmd (List String) )
-update _ model =
-    ( model, Cmd.none )
+## Vedi Anche:
 
-view : Model -> Html msg
-view model =
-    text (String.join " " model.arguments)
-
-subscriptions : Model -> Sub.Sub (Msg)
-subscriptions model =
-    Sub.none
-
--- Esempio di output: Hello world
-```
-
-## Approfondimento
-
-È importante notare che quando utilizziamo la funzione `Platform.Cmd.getArgs`, stiamo aspettando che il programma Elm riceva gli argomenti dalla riga di comando, quindi è necessario eseguire il codice tramite `elm reactor` o `elm make` per vedere gli argomenti in azione.
-
-Inoltre, è necessario assicurarsi di gestire correttamente gli argomenti e i loro tipi all'interno del nostro programma per evitare errori e bug.
-
-## Vedi Anche
-
-Se vuoi saperne di più su come utilizzare la riga di comando in Elm, puoi consultare la documentazione ufficiale di Elm su questo argomento o guardare alcune risorse online come:
-
-- [Documentazione ufficiale di Elm - Modulo Cmd](https://package.elm-lang.org/packages/elm/core/latest/Platform-Cmd)
-- [Canale Youtube di Elm - Comandi e Subscriptions](https://www.youtube.com/watch?v=0Qyt2pGO9qg)
-- [Blog di Elm - Usare i comandi per comunicare con JavaScript](https://elm-lang.org/news/compiling-to-javascript-completely-revised)
+Per ulteriori informazioni sulla lettura degli argomenti dalla linea di comando in Elm, consigliamo la lettura del seguente articolo: [Lettura degli Argomenti dalla Linea di Comando in Elm](https://dev.to/pzp1997/reading-command-line-arguments-in-elm-2gki).

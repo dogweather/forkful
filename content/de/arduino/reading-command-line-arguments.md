@@ -1,7 +1,7 @@
 ---
-title:                "Lesen von Befehlszeilenargumenten"
-html_title:           "Arduino: Lesen von Befehlszeilenargumenten"
-simple_title:         "Lesen von Befehlszeilenargumenten"
+title:                "Das Lesen von Kommandozeilenargumenten."
+html_title:           "Arduino: Das Lesen von Kommandozeilenargumenten."
+simple_title:         "Das Lesen von Kommandozeilenargumenten."
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Files and I/O"
@@ -10,45 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Warum
+Was & Warum?
 
-Hast du dich jemals gefragt, wie du deinen Arduino dazu bringen kannst, auf Befehle zu reagieren, die du über die Befehlszeile eingibst? Diese Fähigkeit kann dir helfen, deinen Arduino noch vielseitiger und anpassungsfähiger zu machen. In diesem Artikel zeigen wir dir, wie du Befehlszeilenargumente in deinen Arduino-Sketches einlesen kannst.
+Lesen von Befehlszeilenargumenten ist die Möglichkeit, Eingaben vom Benutzer zu erhalten, während das Programm ausgeführt wird. Programmierer nutzen dies, um ihre Programme interaktiver und flexibler zu gestalten.
 
-# Wie geht's
+Wie geht's:
 
-Um Befehlszeilenargumente in deinen Arduino-Sketch einzulesen, musst du zuerst die Bibliothek "CommandLine" herunterladen und installieren. Öffne dazu die Bibliotheksverwaltung in der Arduino-IDE (Strg+Umschalt+I), suche nach "CommandLine" und klicke auf "Installieren".
+Um Befehlszeilenargumente in Arduino zu lesen, verwenden Sie die Funktion ```Arduino.read()```, gefolgt von der gewünschten Datentypspezifikation und dem Variablennamen. Zum Beispiel: ```Arduino.read(int input)``` liest eine Ganzzahl (integer) und speichert sie in der Variablen "input". 
 
-Als nächstes musst du die Bibliothek in deinem Sketch einbinden. Füge dazu am Anfang deines Codes die folgende Zeile hinzu:
+Der Codeblock unten zeigt, wie man beim Drücken eines Knopfes auf dem verwendeten Arduino Board eine Eingabe lesen und diese dann ausgeben kann.
 
-```Arduino
-#include <CommandLine.h>
 ```
+int buttonPin = 2;    // Definiere den Knopf-Pin
+int buttonState = 0;  // Diese Variable wird später benutzt, um den aktuellen Knopf-Status zu speichern
 
-Dann erstellst du eine Instanz der CommandLine-Klasse und definierst einen Befehl, den dein Arduino erkennen und darauf reagieren soll:
+void setup() {
+  pinMode(buttonPin, INPUT);  // Definiere den Pin als Eingang
+  Serial.begin(9600);  // Starte die serielle Kommunikation
+}
 
-```Arduino
-CommandLine cmd;
-cmd.addCommand("blink", blink); // "blink" ist der Befehl, der erkannt werden soll und "blink" ist der Name der Funktion, die ausgeführt werden soll
-```
-
-Jetzt musst du nur noch in der Funktion "loop()" die Methode "cmd.read()" aufrufen, damit dein Arduino auf Befehle wartet:
-
-```Arduino
 void loop() {
-    cmd.read();
+  buttonState = digitalRead(buttonPin);  // Lese den aktuellen Knopf-Status
+  if (buttonState == HIGH) { // Wenn der Knopf gedrückt wird, führe das folgende aus
+    Serial.print("Button wurde gedrückt"); // Gib eine Nachricht auf der seriellen Schnittstelle aus
+    // Hier können weitere Aktionen ausgeführt werden, abhängig von der Eingabe des Benutzers
+  }
+  delay(10); // Warte 10 Millisekunden, um Flackern zu vermeiden
 }
 ```
 
-Wenn du nun den String "blink" über die Befehlszeile eingibst und die Eingabetaste drückst, wird die Funktion "blink()" ausgeführt. In diesem Beispiel würde dies bedeuten, dass die eingebaute LED deines Arduinos blinkt.
+Deeper Dive:
 
-# Tiefgehende Analyse
+Die Möglichkeit, Befehlszeilenargumente zu lesen, ist ein wichtiger Teil der Programmierung, der aus der Notwendigkeit entstanden ist, Aktionen durch Benutzereingaben zu steuern. Früher war dies oft nur mit komplizierteren Methoden möglich, wie zum Beispiel über Schalter oder Tastatureingaben. Heutzutage ist das Lesen von Befehlszeilenargumenten eine gängige Methode, um Benutzereingaben zu verarbeiten.
 
-Du fragst dich vielleicht, wie die Bibliothek "CommandLine" die Befehlszeilenargumente einliest und erkennt. Sie nutzt die "Serial"-Klasse, um die Eingabe über die serielle Schnittstelle zu empfangen und zu verarbeiten. Dabei wird der empfangene String in einzelne Wörter aufgeteilt und mit den eingestellten Befehlen verglichen. Wenn ein match gefunden wird, wird die entsprechende Funktion ausgeführt.
+Eine Alternative zur Eingabe von Befehlszeilenargumenten kann das Senden von Daten über eine serielle Schnittstelle von einem anderen Gerät sein. Dies kann jedoch zusätzliche Hardware und Komplexität erfordern.
 
-Probiere ruhig verschiedene Befehle aus und schau dir den Beispiel-Code in der Bibliotheksdokumentation an, um zu sehen, wie du sie in deinem Sketch einsetzen kannst.
+Die Implementierung des Lesens von Befehlszeilenargumenten kann je nach Programmiersprache und Gerät variieren. In Arduino müssen bestimmte Funktionen verwendet werden, um auf die serielle Schnittstelle und die Eingabeparameter zuzugreifen.
 
-# Siehe auch
+Siehe auch:
 
-- [Bibliotheksdokumentation "CommandLine"](https://github.com/nakardo/CommandLine/) (Englisch)
-- [Serial-Klasse in der Arduino-Referenz](https://www.arduino.cc/reference/en/language/functions/communication/serial/) (Englisch)
-- [Video-Tutorial zur Verwendung von Befehlszeilenargumenten am Beispiel von LEDs](https://www.youtube.com/watch?v=MSbbo2YzYck) (Englisch)
+- https://www.arduino.cc/reference/de/language/functions/communication/serial/read/
+- https://www.arduino.cc/en/Tutorial/Button

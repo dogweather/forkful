@@ -1,7 +1,7 @@
 ---
-title:                "Obteniendo la fecha actual"
-html_title:           "TypeScript: Obteniendo la fecha actual"
-simple_title:         "Obteniendo la fecha actual"
+title:                "Obteniendo la fecha actual."
+html_title:           "TypeScript: Obteniendo la fecha actual."
+simple_title:         "Obteniendo la fecha actual."
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Dates and Times"
@@ -10,51 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
-Ahora más que nunca, es importante mantener nuestra tecnología actualizada y eficiente. Al obtener la fecha actual en TypeScript, podemos asegurarnos de que nuestras aplicaciones y programas estén sincronizados y funcionando correctamente.
+¿Qué y por qué?
 
-## Cómo hacerlo
-Obtener la fecha actual en TypeScript es muy fácil y rápido. Solo sigue estos pasos:
+Obtener la fecha actual es una tarea común para los programadores. Esto se refiere a obtener la fecha y hora actual en que se ejecuta un programa. Los programadores a menudo necesitan esta información para realizar tareas como registrar eventos y transacciones, o para mostrar la fecha y hora actual en una interfaz de usuario.
 
-### 1. Importar la función
-Primero, necesitamos importar la función Date del módulo de Javascript:
+¡Cómo hacerlo!
 
 ```TypeScript
-import {Date} from 'js- fecha';
+const currentDate = new Date();
 ```
 
-### 2. Crear una instancia de Date
-Luego, creamos una instancia de Date que nos dará la fecha y hora actual:
+Este código crea una nueva instancia de la clase `Date` en TypeScript que representa la fecha y hora actual. A continuación, podemos acceder a diferentes métodos de la clase `Date` para obtener información específica, como el día, mes, año, hora, minuto, segundo, etc.
 
 ```TypeScript
-let fechaActual = new Date();
+console.log(currentDate.toDateString());
+```
+```
+Salida esperada: Fri Dec 10 2021
 ```
 
-### 3. Obtener la fecha actual
-Por último, podemos utilizar los métodos getFullYear(), getMonth() y getDate() para obtener la fecha actual en el formato que deseemos:
+Profundizando
+
+En el pasado, obtener la fecha y hora actual era una tarea mucho más compleja y requería escribir códigos personalizados. Sin embargo, gracias a los avances en el lenguaje de programación y las bibliotecas disponibles, se ha vuelto mucho más simple. Una de las alternativas a la clase `Date` de TypeScript es utilizar la biblioteca Moment.js que ofrece una sintaxis más intuitiva para manejar fechas y horas.
+
+Para obtener la fecha y hora actual en una zona horaria específica, podemos utilizar la función `toLocaleString()` y pasar como parámetro el código de la zona horaria deseada. Por ejemplo:
 
 ```TypeScript
-console.log(fechaActual.getFullYear()); // resultado: 2021
+console.log(currentDate.toLocaleString('en-US', { timeZone: 'America/New_York' }));
+```
+```
+Salida esperada: Fri, Dec 10, 2021, 10:35 AM
 ```
 
-```TypeScript
-console.log(fechaActual.getMonth()); // resultado: 8 (septiembre, ya que los meses comienzan en 0)
-```
+Otra forma de obtener la fecha y hora actual en TypeScript es utilizar la clase `DatePipe` de Angular, que ofrece un formato más fácil de leer y personalizar.
 
-```TypeScript
-console.log(fechaActual.getDate()); // resultado: 17 (día actual)
-```
+Conclusión
 
-## Deep Dive
-La función Date de JavaScript es en realidad un objeto, por lo que también podemos utilizar otros métodos para obtener información detallada sobre la fecha y hora actual. Algunos de estos métodos son:
+Obtener la fecha y hora actual es una tarea importante para los programadores, y en TypeScript se ha vuelto mucho más sencillo gracias a la clase `Date` y las bibliotecas disponibles. Además, podemos personalizar fácilmente el formato y la zona horaria de la fecha y hora para adaptarse a nuestras necesidades. ¡Ahora estás listo para trabajar con fechas y horas en tus proyectos de TypeScript!
 
-- getHours(): nos da la hora actual en formato de 24 horas (0-23).
-- getMinutes(): nos da los minutos actuales.
-- getSeconds(): nos da los segundos actuales.
+¡Míralo también!
 
-Además, también podemos modificar la fecha y hora actual utilizando otros métodos como setDate() o setFullYear().
-
-## Ver también
-- [Documentación de Date de TypeScript](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-0.html#support-for-ecmascript-2018)
-- [Introducción a TypeScript](https://www.tutorialspoint.com/typescript/index.htm)
-- [Curso de TypeScript para principiantes](https://www.udemy.com/course/typescript-de-cero-a-experto/?referralCode=25A9ECF37F6C3D1F2A55)
+- Documentación oficial de la clase `Date` en TypeScript: https://www.typescriptlang.org/docs/handbook/datetime.html
+- Moment.js: https://momentjs.com/
+- Documentación de la función `toLocaleString()`: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleString
+- Documentación de la clase `DatePipe` en Angular: https://angular.io/api/common/DatePipe

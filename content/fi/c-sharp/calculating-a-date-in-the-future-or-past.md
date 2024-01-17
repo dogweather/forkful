@@ -1,7 +1,7 @@
 ---
-title:                "Päivämäärän laskeminen tulevaisuudessa tai menneisyydessä"
-html_title:           "C#: Päivämäärän laskeminen tulevaisuudessa tai menneisyydessä"
-simple_title:         "Päivämäärän laskeminen tulevaisuudessa tai menneisyydessä"
+title:                "Ajan laskeminen tulevaisuudessa tai menneisyydessä"
+html_title:           "C#: Ajan laskeminen tulevaisuudessa tai menneisyydessä"
+simple_title:         "Ajan laskeminen tulevaisuudessa tai menneisyydessä"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Dates and Times"
@@ -10,47 +10,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä & Miksi?
+Päivämäärän laskeminen tulevaisuuteen tai menneisyyteen on prosessi, jossa ohjelmoija määrittää tietyn ajanjakson kuluneen tai tulevan päivän perusteella. Tämä on hyödyllistä monissa sovelluksissa, kuten aikatauluissa, tilastojen laskennassa ja muiden tapahtumien suunnittelussa.
 
-Usein tarvitsemme laskemaan päivämäärän menneisyydessä tai tulevaisuudessa toiminnassamme. Ehkä sinulla on projekti, joka vaatii tietyn päivämäärän tai haluat vain tietää tulevaisuuden päivämäärän johonkin tiettyyn tapahtumaan.
-
-## Kuinka
-
-Laskeminen päivämäärää menneisyydessä on helppoa C# -ohjelmointikielellä. Seuraavassa on esimerkki, joka näyttää kuinka voit laskea päivämäärän tietyn määrän päiviä menneisyyteen:
-
+## Näin teet sen:
 ```C#
-DateTime nykyinenPäivä = DateTime.Today; //Hakee nykyisen päivämäärän
-int päivätMenneisyydessä = 30; //Määrittää, kuinka monta päivää haluat mennä taaksepäin
+DateTime tulevaisuus = DateTime.Now.AddDays(7);
+DateTime menneisyys = DateTime.Now.AddYears(-5);
 
-DateTime tulevaPäivä = nykyinenPäivä.AddDays(-päivätMenneisyydessä); //Laskee päivämäärän 30 päivää taaksepäin
-Console.WriteLine(tulevaPäivä); //Tulostaa lasketun päivämäärän konsoliin
+Console.WriteLine(tulevaisuus);
+Console.WriteLine(menneisyys);
+
+// Output:
+// 27.10.2020 10:14:18
+// 28.10.2015 10:14:18
 ```
 
-Tämä koodi käyttää DateTime-luokan AddDays-metodia, joka lisää tai vähentää päiviä valittuun päivämäärään. Huomaa, että käytämme negatiivista päivien lukumäärää, jos haluamme laskea päivämäärää menneisyyteen.
+## Syvemmälle:
+Historiallisessa kontekstissa päivämäärän laskeminen aiemmin vaati monimutkaista matematiikkaa, mutta nykyään C# tarjoaa kätevät valmiit funktiot tähän tarkoitukseen. Toisinaan myös päivämäärien vertaileminen ja tarkastelu voi olla hyödyllistä, jotta voidaan varmistua tietyn päivämäärän sijainnista tiettyjen aikarajojen sisällä.
 
-Voit myös laskea tulevan päivämäärän lisäämällä päiviä nykyiseen päivämäärään. Seuraavassa esimerkissä lisätään 30 päivää nykyiseen päivämäärään:
-
-```C#
-DateTime nykyinenPäivä = DateTime.Today; //Hakee nykyisen päivämäärän
-int päivätTulevaisuudessa = 30; //Määrittää, kuinka monta päivää haluat lisätä
-
-DateTime tulevaPäivä = nykyinenPäivä.AddDays(päivätTulevaisuudessa); //Laskee päivämäärän 30 päivää eteenpäin
-Console.WriteLine(tulevaPäivä); //Tulostaa lasketun päivämäärän konsoliin
-```
-
-## Syvempi sukellus
-
-Päivämäärän laskeminen menneisyydessä tai tulevaisuudessa on mahdollista myös käyttämällä TimeSpan-luokkaa. TimeSpan-luokka edustaa ajanjaksoa esimerkiksi päivien, tuntien tai minuuttien muodossa. Voimme käyttää tätä luokkaa laskemaan päivämäärä tietyn ajanjakson kuluttua.
-
-Seuraavassa esimerkissä lisätään 30 päivää nykyiseen päivämäärään käyttäen TimeSpania:
-
-```C#
-DateTime nykyinenPäivä = DateTime.Today; //Hakee nykyisen päivämäärän
-int päivätTulevaisuudessa = 30; //Määrittää, kuinka monta päivää haluat lisätä
-
-TimeSpan ajanjakso = new TimeSpan(päivätTulevaisuudessa, 0, 0, 0); //Luodaan TimeSpan jossa 30 päivää
-DateTime tulevaPäivä = nykyinenPäivä + ajanjakso; //Lisätään TimeSpan nykyiseen päivämäärään
-Console.WriteLine(tulevaPäivä); //Tulostaa lasketun päivämäärän konsoliin
-```
-
-Huomaathan, että TimeSpanin ensimmäinen parametri on päivien määrä. Voit myös käyttää muita parametreja, kuten tunteja, minuutteja ja sekunteja, lasketaksesi tarkempia päivämääri
+## Katso myös:
+Microsoftin dokumentaatio C# Date and Time -toiminnoista: https://docs.microsoft.com/en-us/dotnet/standard/datetime/

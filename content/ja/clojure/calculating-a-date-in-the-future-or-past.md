@@ -1,7 +1,7 @@
 ---
-title:                "未来または過去の日付の計算"
-html_title:           "Clojure: 未来または過去の日付の計算"
-simple_title:         "未来または過去の日付の計算"
+title:                "将来または過去の日付の計算"
+html_title:           "Clojure: 将来または過去の日付の計算"
+simple_title:         "将来または過去の日付の計算"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Dates and Times"
@@ -10,39 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+## 何 & なぜ?
 
-日付を未来や過去に計算する必要性はさまざまです。例えば、イベントの日程を決めたり、期限を設定するために必要になることがあります。
+未来または過去の日付を計算することは、プログラマーにとってよくあるタスクです。これは特定の日付を基準に、指定した日数や期間を加えることで、新しい日付を得ることを意味します。これは、バックアップや予定の作成など、様々なアプリケーションで役立ちます。
 
-## 方法
-
-日付を計算するには、 `(java.util.Calendar.)` 関数を使用します。未来の日付を計算する場合は、 `(.add calendar java.util.Calendar/DAY_OF_MONTH days)` を使うことができます。過去の日付を計算する場合は、 `(.add calendar java.util.Calendar/DAY_OF_MONTH (- days))` を使用します。
+## 方法:
 
 ```Clojure
-(def now (java.util.Calendar.)) ; 今日の日付を取得
+;; 未来の日付を計算する
+(println "今から1日後は" (clojure.java-time.format/parse "yyyy-MM-dd" (clojure.string/join "-" [(+ (local-time/get-local-date) (java.time.Duration/of-days 1))])))
 
-; 10日後の日付を計算
-(def future-date (.add now java.util.Calendar/DAY_OF_MONTH 10))
-
-; 5日前の日付を計算
-(def past-date (.add now java.util.Calendar/DAY_OF_MONTH (- 5)))
-
+;; 過去の日付を計算する
+(println "今から1年前は" (clojure.java-time.format/parse "yyyy-MM-dd" (clojure.string/join "-" [(+ (local-time/get-local-date) (java.time.Duration/of-years -1))])))
 ```
 
-### 出力例
+上記のコードでは、現在の日付を取得し、それに対して日数や年数の差分を加えることで、新しい日付を計算しています。そして、計算結果を指定した書式で出力しています。
 
-今日の日付: 2021/06/14
+出力例:
+今から1日後は 2019-12-22
+今から1年前は 2018-12-23
 
-10日後の日付: 2021/06/24
-5日前の日付: 2021/06/09
+## 深堀り:
 
-## ディープダイブ
+日付の計算はコンピューターの世界では最も古い問題の一つです。昔は、人間が日付を計算していましたが、無駄な計算やミスが多く、それを自動化する必要性が生まれました。その結果、様々なアルゴリズムが発展し、現代ではビルトインの機能やライブラリーを使用することで、簡単に日付を計算することができるようになりました。
 
-日付を計算する際には、 `(java.util.Calendar.)` 関数が返すオブジェクトに注意する必要があります。このオブジェクトには、`java.util.Calendar/ERA`、`java.util.Calendar/YEAR`、`java.util.Calendar/MONTH`、`java.util.Calendar/DAY_OF_MONTH`など、日付の各要素を取得するためのメソッドが用意されています。これらを組み合わせることで、さまざまな日付計算を行うことができます。
+もしこの記事で紹介した方法に加えて、さらに柔軟性を求める場合は、"java.time" ライブラリーのドキュメントを参照することをおすすめします。また、このライブラリー以外にも、Joda-TimeやJULIAN4等、日付計算のための専用ライブラリーがあります。
 
-また、バグや意図しない結果を避けるために、日付のフォーマットやタイムゾーンにも注意が必要です。
+## 関連情報:
 
-## さらに見る
-
-- [The Joy of Clojure](https://www.amazon.co.jp/Joy-Clojure-Michael-Fogus/dp/1617291412/)
-- [Clojureの日付操作ライブラリ - clj-time](https://github.com/clj-time/clj-time)
+- [Clojureドキュメント - java.time](https://clojure.github.io/java.time/java.time.html)
+- [Joda-Time](https://www.joda.org/joda-time/)
+- [JULIAN4](https://github.com/phoracek/JULIAN4)

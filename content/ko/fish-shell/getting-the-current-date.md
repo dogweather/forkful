@@ -1,7 +1,7 @@
 ---
-title:                "현재 날짜 얻기"
-html_title:           "Fish Shell: 현재 날짜 얻기"
-simple_title:         "현재 날짜 얻기"
+title:                "현재 날짜 가져오기"
+html_title:           "Fish Shell: 현재 날짜 가져오기"
+simple_title:         "현재 날짜 가져오기"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Dates and Times"
@@ -10,49 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+## 무엇과 왜? 
+"현재 날짜 얻기"는 현재 날짜와 시간 정보를 얻는 것을 말합니다. 이는 프로그래머들이 자신의 코드에 현재 날짜를 포함하고 싶어할 때 매우 유용한 기능입니다.
 
-현재 날짜를 가져오는 이유는 간단합니다 - 우리는 일상 생활에서 자주 현재 날짜를 필요로하기 때문입니다. 일정을 만들고 기록하며 마감일을 추적하는 등 다양한 상황에서 현재 날짜를 알아야 할 수 있습니다.
+## 방법: 
+Fish Shell에서 현재 날짜를 얻는 방법은 매우 간단합니다. 다음과 같이 입력해보세요:
 
-## 방법
-
-```Fish Shell```에서 현재 날짜를 가져오는 방법은 매우 간단합니다. 터미널에서 ```date``` 명령어를 입력하면 현재 날짜와 시간이 표시됩니다.
-
-```fish shell
-date
+```
+set date (date)
+echo $date
 ```
 
-출력 예시:
+위 코드를 실행하면 현재 날짜와 시간 정보가 출력됩니다. 예를 들어, 오늘 날짜가 2021년 3월 25일이라면 다음과 같은 결과가 나올 것입니다:
 
-```shell
-Wed Feb 19 09:23:07 PST 2020
-```
+`Thu, Mar 25, 2021 10:00 AM`
 
-또한, ```Fish Shell```에서는 ```date``` 명령어에 옵션을 추가해 더 다양한 형식의 날짜를 가져올 수 있습니다. 예를 들어, ```+%m-%d-%Y``` 옵션을 추가하면 현재 날짜를 월-일-년도의 형식으로 가져올 수 있습니다.
+## 자세히 알아보기: 
+현재 날짜를 얻는 것은 우리가 생각하는 것보다 더 복잡한 과정을 거치는 것 같습니다. 사실, 다른 프로그래밍 언어에서도 많이 사용되는 표준 라이브러리 시스템 함수를 사용하여 현재 날짜를 얻습니다. 한가지 대안으로는 date 명령어를 사용하는 것입니다. 
 
-```fish shell
-date +%m-%d-%Y
-```
+Fish Shell은 본질적으로 현재 날짜와 시간 정보를 저장하는 변수를 생성합니다. 이 변수에는 다양한 형식의 날짜 정보가 포함됩니다. 이러한 구조는 매우 유용하지만, 상황에 맞게 적절한 변수를 선택하는 것은 중요합니다. 더 많은 정보는 Fish Shell 매뉴얼에서 찾아볼 수 있습니다.
 
-출력 예시:
-
-```shell
-02-19-2020
-```
-
-## 심도 들어가기
-
-```date``` 명령어는 시스템의 현재 날짜와 시간을 확인하는 데 사용되는 간단한 명령어입니다. 이 명령어는 시스템의 기본 설정에 따라 다양한 옵션을 가질 수 있으며, 사용자의 요구에 따라 다양한 날짜 형식을 제공할 수 있습니다.
-
-또한, ```date``` 명령어는 시스템의 시간대를 변경하는 데에도 사용될 수 있습니다. 시간대를 변경하면 시스템의 현재 날짜와 시간이 변경되며, 다른 지역의 날짜와 시간을 확인할 수 있습니다.
-
-## 더 알아보기
-
-- [Fish Shell 공식 홈페이지](https://fishshell.com/)
-- [Fish Shell 사용법 안내서](https://fishshell.com/docs/current/index.html)
-- [Fish Shell 공식 GitHub 저장소](https://github.com/fish-shell/fish-shell)
-
-## 참고 자료
-
-- [Linuxize: How to Get Current Date and Time in Linux](https://linuxize.com/post/how-to-get-current-date-and-time-in-linux/)
-- [nixCraft: How to Write the Current Date and Time to a File in a Shell Script](https://www.cyberciti.biz/faq/linux-unix-write-simple-current-date-time-into-logfile/)
+## 관련 정보: 
+- [Fish Shell 매뉴얼 (영문)](https://fishshell.com/docs/current/ "공식 Fish Shell 매뉴얼")
+- [Bash Shell에서 현재 날짜 얻기 (한글)](https://codechacha.com/ko/get-current-date-time-in-bash-shell/ "Bash Shell에서 현재 날짜 얻는 방법 설명 블로그")

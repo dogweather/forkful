@@ -10,67 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-If you're a developer working with TypeScript, understanding how to read and use command line arguments can greatly enhance your workflow and make your code more efficient. This skill can also be useful for troubleshooting and debugging purposes.
+Reading command line arguments is the process of retrieving data or parameters that are passed to a program through the command line interface. Programmers do this in order to make their programs more flexible and customizable by allowing users to input specific values when running the program.
 
-## How To
+## How to:
 
-Reading command line arguments in TypeScript is a simple and straightforward process. First, we need to import the built-in "process" module, which provides access to the command line arguments. Then, we can access the arguments using the "argv" property, which is an array containing all the arguments passed in when the program was executed.
+In TypeScript, command line arguments can be read using the `process.argv` array. Its first two elements are reserved for the program execution path and command used, so the actual arguments start at index 2. To access these arguments, we can simply loop through the array starting at index 2 and print out each argument. For example:
 
-Let's take a look at a simple example:
-
-```typescript
-// Import the process module
-import * as process from 'process';
-
-// Access the command line arguments using 'argv'
-const arguments = process.argv;
-
-// Print out the arguments array
-console.log(arguments);
+```TypeScript
+for (let i = 2; i < process.argv.length; i++) {
+  console.log(`Argument ${i - 1}: ${process.argv[i]}`);
+}
 ```
 
-If you run this program in your command line with some arguments, you will see the arguments array printed out. For example:
-
+Running the program with the command `node index.ts argument1 argument2` would result in the output:
 ```
-$ ts-node index.ts arg1 arg2
-
-// Output:
-[ 'node', '/path/to/your/file/index.ts', 'arg1', 'arg2' ]
+Argument 1: argument1
+Argument 2: argument2
 ```
 
-As you can see, the first two items in the array are 'node' and the path to your file, followed by the arguments that you provided.
+Alternatively, we can use the `yargs` package to make command line argument parsing even easier. This package allows us to define options and flags for our program and automatically parse the arguments for us. For example:
 
-You can also access individual arguments by index, starting from 2 (since the first two items are not part of the arguments provided):
+```TypeScript
+const argv = require('yargs').argv;
 
-```typescript
-// Accessing the first argument
-const firstArg = process.argv[2];
-console.log(firstArg);
-
-// Output:
-arg1
+console.log(`Name: ${argv.name}`);
+console.log(`Age: ${argv.age}`);
 ```
 
-You can also use command line flags with arguments. These are usually preceded by a '-' or '--'. Let's take a look at an example:
-
+Running the program with the command `node index.ts --name John --age 25` would result in the output:
 ```
-$ ts-node index.ts --env development
-
-// Output:
-[ 'node', '/path/to/your/file/index.ts', '--env', 'development' ]
+Name: John
+Age: 25
 ```
 
-As you can see, the '--env' flag is treated as a separate argument and can be accessed in the same way as the regular arguments.
+## Deep Dive:
 
-## Deep Dive
+Reading command line arguments has been a common practice since the early days of programming, when command line interfaces were the main form of user interaction with computers. It provides a convenient way for programs to receive input from users without the need for a graphical user interface. In addition to using the `process.argv` array, some other popular packages for parsing command line arguments in TypeScript include `commander` and `argparse`.
 
-In addition to accessing the arguments themselves, the "process" module also provides some useful information about the execution environment. For example, you can access the current working directory with the "cwd()" method, or the name of the script with the "title" property.
+It is worth noting that command line arguments are not the only way to make programs customizable. Other methods include config files, environment variables, and interactive prompts. However, command line arguments are often preferred for their ease of use and simplicity.
 
-You can also use third-party libraries like "yargs" to parse and validate the command line arguments. This can be particularly useful for more complex programs with multiple command line options and flags.
+## See Also:
 
-## See Also
-
-- [Node.js process module documentation](https://nodejs.org/dist/latest-v16.x/docs/api/process.html)
-- [yargs documentation](https://www.npmjs.com/package/yargs)
+- [process.argv documentation](https://nodejs.org/docs/latest/api/process.html#process_process_argv)
+- [yargs package](https://www.npmjs.com/package/yargs)
+- [commander package](https://www.npmjs.com/package/commander)
+- [argparse package](https://www.npmjs.com/package/argparse)

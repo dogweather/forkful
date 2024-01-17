@@ -1,7 +1,7 @@
 ---
-title:                "Skicka en http-förfrågan"
-html_title:           "Gleam: Skicka en http-förfrågan"
-simple_title:         "Skicka en http-förfrågan"
+title:                "Sända en http-begäran"
+html_title:           "Gleam: Sända en http-begäran"
+simple_title:         "Sända en http-begäran"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "HTML and the Web"
@@ -10,45 +10,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför?
+## Vad & Varför?
+Att skicka en HTTP förfrågan är när en utvecklare ber sin dator att kontakta en annan dator och begära information från den. Det är ett viktigt verktyg för utvecklare eftersom det låter dem integrera och hämta data från externa källor i sina applikationer.
 
-Att skicka HTTP-förfrågningar är en viktig del av många webbapplikationer och servrar. Genom att kunna skicka och ta emot HTTP-förfrågningar kan din applikation kommunicera med andra system och ge användarna en naturlig och smidig upplevelse. 
-
-## Hur man gör det
-
-För att skicka en HTTP-förfrågan i Gleam använder man inbyggda moduler som {httpc} och {request}. Här är ett exempel på hur man kan skicka en GET-förfrågan med hjälp av {httpc} modulen och få tillbaka ett svar:
-
+## Hur man gör:
 ```Gleam
-import httpc.{Request, get}
-import httpc.Response
-
-let url = "https://example.com"
-
-let request = Request(
-  method: get, 
-  url: url
+// Exempel på en HTTP förfrågan med Gleam
+let resultat = Http.request(
+  url: "https://example.com/api/posts",
+  method: Http.post,
+  headers: [( "Content-Type", "application/json")],
+  body: "{\"title\":\"Hello\",\"content\":\"My first post\"}"
 )
-
-let response =
-  case httpc.send(request) {
-    Ok(resp) -> resp
-    Error(e) -> error("HTTP request failed: {e}")
-  }
-
-HttpResponse.print(response)
+// Output: En bekräftelse att förfrågan har skickats och eventuell data som svar.
 ```
 
-Output:
-```
-{"status": "200 OK", "response_headers": {"content_type": "text/html", "content_length": "606", "server": "Apache/2.4.48"}, "body": "<html>...</html>"} 
-```
+## Djupdykning:
+Att skicka en HTTP förfrågan har funnits sedan starten av webben. Det finns andra alternativ för att integrera med externa källor, som till exempel att använda WebSocket för kontinuerligt utbyte av data. I Gleam finns det en inbyggd HTTP modul som bygger på Erlangs standardbibliotek för att skicka förfrågningar. 
 
-## Djupdykning
-
-HTTP-förfrågningar består av olika delar, som request-line, request headers och request body. I Gleam kan man konfigurera dessa delar genom att sätta olika värden i request-objektet. Man kan också använda sig av {request} modulen för att skicka mer avancerade förfrågningar som kräver autentisering eller som skickar data i ett specifikt format som JSON. Det är viktigt att förstå dessa koncept för att kunna skicka korrekta och effektiva HTTP-förfrågningar. 
-
-## Se också
-
-- [Gleam HTTPc modul](https://gleam.run/modules/httpc/)
-- [Gleam request modul](https://gleam.run/modules/request/)
-- [En guide för att arbeta med HTTP-förfrågningar i Gleam](https://gleam.run/articles/http-requests/)
+## Se också:
+- [Gleams HTTP dokumentation](https://gleam.run/posts/http/)
+- [Erlangs HTTP modul](https://erlang.org/doc/man/http.html)

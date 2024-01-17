@@ -1,7 +1,7 @@
 ---
-title:                "एक लिखित फाइल लिखना"
-html_title:           "Bash: एक लिखित फाइल लिखना"
-simple_title:         "एक लिखित फाइल लिखना"
+title:                "कंप्यूटर प्रोग्रामिंग पर एक लेख: टेक्स्ट फ़ाइल लिखना"
+html_title:           "Bash: कंप्यूटर प्रोग्रामिंग पर एक लेख: टेक्स्ट फ़ाइल लिखना"
+simple_title:         "कंप्यूटर प्रोग्रामिंग पर एक लेख: टेक्स्ट फ़ाइल लिखना"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Files and I/O"
@@ -10,39 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+क्या और क्यों?
 
-Bash, also known as the Bourne-Again Shell, is a command-line interface that allows users to interact with their operating system through text commands. Writing a Bash script can greatly increase efficiency and automation in tasks, making it a valuable skill for any programmer or system administrator.
+पाठ फ़ाइल लिखना एक काफी आम तरीक़ा है जो ऑनलाइन संचार और सर्वर कनेक्शन में प्रयोग किया जाता है। कई फाइल प्रोग्रामिंग भाषाओं में यह आवश्यक होता है, जिसे टेक्स्ट फ़ाइल बनाना कहा जाता है।
 
-## How To
+## कैसे करें:
 
-Writing a Bash script is relatively simple and only requires a text editor such as Atom or Notepad. Start by creating a new file with the extension ".sh". Then, every line in the script should begin with a "#", followed by the command or action. Here's an example:
+यहाँ हम एक स्वप्रयोग बश स्क्रिप्ट के माध्यम से एक नई टेक्स्ट फ़ाइल बनाने का तरीक़ा देखेंगे। यह बश स्क्रिप्ट उदाहरण और उत्पाद का उदाहरण शामिल करता है। इसमें बश कोड ब्लॉकों के भीतर ```Bash ... ``` है।
 
-```Bash
-#!/bin/bash
-#This line specifies the interpreter for the script
-echo "Hello World!"
-#This line prints "Hello World!" to the terminal
-```
-Sample output:
-`Hello World!`
-
-To run the script, navigate to the directory it is saved in and use the command `./scriptname.sh`. You can also add arguments to the script, making it more versatile. Here's an example of a script that takes in a name argument and prints a personalized message:
+इस निर्देशिका के बाहर एक नई फाइल नामित example.txt बनाएँ:
 
 ```Bash
-#!/bin/bash
-echo "Hello, $1!"
-#The $1 represents the argument given after the script name when executing
+touch example.txt
 ```
-Sample output:
-`./scriptname.sh John` would print `Hello, John!`
 
-## Deep Dive
+बश स्क्रिप्ट के माध्यम से example.txt में एक संदेश भेजें:
 
-Bash allows for conditional statements, loops, and other functions to make your scripts even more powerful. It also has built-in variables for things like the current date and time or the user's home directory. By adding these elements to your script, you can create dynamic and customizable outputs. For a more in-depth tutorial on Bash scripting, check out this guide: [https://www.tldp.org/LDP/abs/html/](https://www.tldp.org/LDP/abs/html/)
+```Bash
+echo "नमस्ते दोस्तों" > example.txt
+```
 
-## आगे देखें (See Also)
+अब, example.txt को दिखाएँ:
 
-[https://www.gnu.org/software/bash/](https://www.gnu.org/software/bash/)
-[https://www.shellscript.sh/](https://www.shellscript.sh/)
-[https://devhints.io/bash](https://devhints.io/bash)
+```Bash
+cat example.txt
+```
+
+इस द्वारा, “नमस्ते दोस्तों” फाइल में संग्रहीत हो जाएगा।
+
+यह आपको कैसे example.txt उपयोग करके टेक्स्ट फ़ाइलों को बनाने के लिए हल करता है। आप इस डायरेक्टरी में अन्य नामों के साथ प्लेबैक कर सकते हैं! अगर आप प्रेस हो तो, नई दिशा क्लिक करें। उसके बाद, आपको यहाँ उनका अवश्य पता चलेगा।
+
+## गहराई में जाएँ:
+
+टेक्स्ट फाइल लिखने का प्राचीन इतिहास है। पहले, कई भाषाओं में उन्हें हस्ताक्षर्ता फ़ाइल बनाने के लिए उपयोग किया जाता था। आजकल, ये आमतौर पर संचार, स्टोरेज, और डेटा प्रसंगों में बहुत प्रयोग हुआ है।
+
+टेक्स्ट फाइल लिखने के लिए कुछ अन्य विकल्प हैं, जो सुनिश्चित करते हैं कि आपके पाठ फ़ाइल है। अन्य विकल्पों में बहुत से प्रोग्रामिंग भाषाओं (जैसे कि पाइथन या जावा) तर्क पर आधारित भाषा हो सकती है।
+
+टेक्स्ट फाइलों को बनाने के लिए, नामीचनिंग और संग्रहीत डेटा जैसी आवश्यकताओं के बारे में भी विचार करें। आप अपने दृश्य और रूप के साथ में चाहिए और और बनाने से जैसे आपको अधिक़तर चाहिए। आप example.txt उपयोग से अपने डेटा को बटवायया सकते हैं।
+
+संग्रहीत सेवा के फ़ाइलों के इस आप अपने देखें!
+
+## आप

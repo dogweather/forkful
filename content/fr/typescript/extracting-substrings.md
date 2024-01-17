@@ -10,28 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Pourquoi
+# Qu'est-ce que c'est et pourquoi on le fait ?
 
-Les extractions de sous-chaînes sont utiles lorsqu'on souhaite récupérer une partie d'une chaîne de caractères, comme un numéro de téléphone ou une adresse email, sans avoir à parcourir toute la chaîne de caractères.
+Extraire des sous-chaînes est une méthode couramment utilisée en programmation qui consiste à récupérer une partie d'une chaîne de caractères. Les programmeurs utilisent cette technique pour traiter des données textuelles et effectuer des opérations de manipulation de texte plus précises et ciblées.
 
-# Comment faire
+# Comment faire :
 
-Pour extraire une sous-chaîne en TypeScript, on utilise la méthode `substring()` sur la chaîne de caractères, en lui passant en paramètres l'index de début et de fin de la sous-chaîne souhaitée (en comptant à partir de zéro).
+Voici quelques exemples de code en TypeScript pour extraire des sous-chaînes :
 
 ```TypeScript
-let str: string = "Bonjour tout le monde";
-let subStr: string = str.substring(8, 12);
+// Exemple 1 : Extraire une sous-chaîne à partir d'une position de départ donnée 
+let string = "Bonjour tout le monde !";
+let subString = string.substring(8); // Résultat : "tout le monde !"
 
-console.log(subStr); // affiche "tout"
+// Exemple 2 : Extraire une sous-chaîne en spécifiant une position de départ et une position d'arrivée
+let string = "Bonjour tout le monde !";
+let subString = string.substring(8, 12); // Résultat : "tout"
+
+// Exemple 3 : Extraire une sous-chaîne en utilisant un motif de caractères spécifique
+let string = "Bonjour les programmeurs !";
+let subString = string.match(/programmeurs/); // Résultat : "programmeurs"
 ```
 
-# Plongée en profondeur
+# Zoom sur :
 
-Il est important de comprendre que la méthode `substring()` ne modifie pas la chaîne originale, elle renvoie simplement la sous-chaîne demandée. De plus, si on ne spécifie pas l'index de fin, la sous-chaîne renvoyée va jusqu'à la fin de la chaîne originale.
+## Contexte historique :
+L'extraction de sous-chaînes a été rendue populaire par le langage de programmation Perl dans les années 1980. Depuis, cette technique a été implémentée dans de nombreux autres langages, dont TypeScript.
 
-On peut également utiliser des index négatifs pour spécifier un comptage à partir de la fin de la chaîne. Par exemple, `substring(-6)` renverra les 6 derniers caractères de la chaîne.
+## Alternatives :
+En plus de la méthode `substring`, TypeScript offre également les méthodes `slice` et `substr` pour extraire des sous-chaînes. Ces trois méthodes ont des fonctionnalités similaires mais présentent quelques différences dans leurs arguments et leurs comportements.
 
-# Voir aussi
+## Détails d'implémentation :
+La méthode `substring` prend deux arguments optionnels : le premier représente la position de départ de la sous-chaîne et le second représente la position d'arrivée de la sous-chaîne. Si le second argument est omis, la sous-chaîne sera extraite à partir de la position de départ jusqu'à la fin de la chaîne. Si les deux arguments sont spécifiés, la sous-chaîne sera extraite entre ces deux positions incluses.
 
-- Documentation officielle de `substring()` en TypeScript: https://www.typescriptlang.org/docs/handbook/strings.html#substring
-- Référence complète des méthodes sur les chaînes de caractères en TypeScript: https://www.w3schools.com/jsref/jsref_obj_string.asp
+# Voir aussi :
+
+Pour en savoir plus sur l'extraction de sous-chaînes en TypeScript, vous pouvez consulter la documentation officielle de TypeScript à ce sujet : [Documentation de TypeScript sur les sous-chaînes](https://www.typescriptlang.org/docs/handbook/basic-types.html#string-subtraction).

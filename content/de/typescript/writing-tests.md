@@ -1,7 +1,7 @@
 ---
-title:                "Tests schreiben."
-html_title:           "TypeScript: Tests schreiben."
-simple_title:         "Tests schreiben."
+title:                "Tests schreiben"
+html_title:           "TypeScript: Tests schreiben"
+simple_title:         "Tests schreiben"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Testing and Debugging"
@@ -10,50 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+# Warum und Wie Tests in TypeScript schreiben?
 
-Tests sind ein wichtiger Bestandteil der Softwareentwicklung. Sie ermöglichen es, die Qualität des Codes zu überprüfen und Fehler frühzeitig zu erkennen. Dadurch wird die Gesamtleistung des Projekts verbessert und die Zeiten für das Debugging reduziert, was letztendlich Zeit und Geld spart.
+## Was & Warum?
+Tests sind ein wichtiger Bestandteil des Programmierens, insbesondere in TypeScript. Sie dienen dazu, den Code zu überprüfen und sicherzustellen, dass er wie erwartet funktioniert. Durch das Schreiben von Tests können Programmierer potenzielle Fehler identifizieren und beheben, bevor sie in die Produktion gelangen. Das spart Zeit und vermeidet unerwünschte Probleme für die Nutzer.
 
-## Wie man Tests schreibt
-
-Um Tests in TypeScript zu schreiben, benötigen Sie ein Test-Framework wie Jest oder Mocha. Diese ermöglichen es, Tests in speziellen Dateien zu schreiben, die mit ".test.ts" oder ".spec.ts" enden.
-
-Hier ist ein Beispiel für eine einfache Funktion, die wir mit Jest testen können:
+## Wie geht das?
+Um Tests in TypeScript zu schreiben, können verschiedene Tools und Frameworks verwendet werden, z.B. Jasmine, Jest oder Mocha. In der folgenden Code-Beispiel wird Jasmine verwendet, um eine einfache Funktion zu testen.
 
 ```TypeScript
-// index.ts
-
-function addNumbers(x: number, y: number) {
-  return x + y;
+// Funktion, die zwei Zahlen addiert
+function addiere(a: number, b: number): number {
+  return a + b;
 }
 
-export { addNumbers };
-```
-
-```TypeScript
-// index.test.ts
-import { addNumbers } from "./index";
-
-describe("addNumbers function", () => {
-  it("should return the sum of two numbers", () => {
-    const result = addNumbers(5, 7);
-    expect(result).toBe(12);
+// Test mit Jasmine
+describe("addiere Funktion", () => {
+  it("sollte zwei Zahlen korrekt addieren", () => {
+    expect(addiere(2, 3)).toEqual(5);
   });
 });
 ```
+Beim Ausführen des Tests sollte die Ausgabe ```Pass``` lauten, was bedeutet, dass die Funktion wie erwartet funktioniert.
 
-Nachdem wir die Funktion importiert haben, können wir in der `describe`-Funktion eine Beschreibung des zu testenden Funktionsbereichs angeben. In der `it`-Funktion geben wir dann die konkreten Erwartungen für den Test an, indem wir `expect` und `toBe` verwenden. Wenn der Test erfolgreich ist, wird die Ausgabe "Passed" angezeigt, ansonsten wird eine detaillierte Fehlermeldung ausgegeben.
+## Tief eintauchen
+Das Schreiben von Tests ist schon lange ein wichtiger Bestandteil der Softwareentwicklung. Es gibt verschiedene Ansätze, wie z.B. Test-Driven Development (TDD), bei dem Tests vor dem eigentlichen Code geschrieben werden, oder Behavior-Driven Development (BDD), bei dem die Tests in einer natürlicheren Sprache geschrieben werden. Es ist wichtig, den für ein Projekt passenden Ansatz auszuwählen.
 
-Natürlich gibt es viele weitere Möglichkeiten, Tests zu schreiben, je nach Bedarf und Komplexität des Codes.
+Alternativ können auch andere Sprachen wie JavaScript oder Python zum Schreiben von Tests verwendet werden. TypeScript bietet jedoch den Vorteil, dass die Tests direkt im selben Code wie die Anwendung geschrieben werden können und somit eine bessere Integration ermöglichen.
 
-## Deep Dive
+Für die Implementierung von Tests in TypeScript sollten die entsprechenden Frameworks oder Tools sorgfältig ausgewählt werden, abhängig von den Anforderungen des Projekts. Es ist auch wichtig, regelmäßig die Tests zu aktualisieren und zu überarbeiten, um sicherzustellen, dass sie immer noch relevant sind und potenzielle Probleme aufdecken.
 
-Es ist wichtig zu beachten, dass Tests auch als eine Art Dokumentation dienen können. Sie beschreiben, was der Code tun sollte und dienen als Referenz für das Verhalten des Codes. Sie können auch dazu beitragen, gute Praktiken wie eine gute Codeabdeckung zu fördern und sicherzustellen, dass jede Änderung am Code keine ungewollten Nebenwirkungen hat.
+## Weitere Informationen
+Einige nützliche Ressourcen zum Thema Testen in TypeScript sind:
 
-Außerdem können Tests auch automatisch ausgeführt werden, jedes Mal wenn der Code geändert wurde. Dies beschleunigt den Feedback-Zyklus und unterstützt eine schnellere Weiterentwicklung des Projekts.
-
-## Siehe auch
-
+- [Jasmine Dokumentation](https://jasmine.github.io/api/3.5/global)
 - [Jest Dokumentation](https://jestjs.io/docs/en/getting-started)
-- [Mocha Dokumentation](https://mochajs.org/)
-- [Testgetriebene Entwicklung in TypeScript](https://timdeschryver.dev/blog/test-driven-development-in-typescript)
+- [Mocha Dokumentation](https://mochajs.org/#table-of-contents)
+- [Einführung in Behavior-Driven Development](https://www.agilealliance.org/glossary/bdd/)
+- [TypeScript Beispielprojekt mit Tests](https://github.com/microsoft/TypeScript-Node-Starter/tree/master/src/tests)
+
+Es ist auch hilfreich, sich mit anderen Entwicklern auszutauschen und Erfahrungen zu teilen, um das Schreiben von Tests in TypeScript zu verbessern. Mit ausreichendem Fokus auf die Qualität und die Integration von Tests können Probleme früher erkannt und die Gesamtqualität des Codes verbessert werden.

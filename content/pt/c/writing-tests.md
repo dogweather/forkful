@@ -10,49 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+## O que é e por que fazer testes?
 
-Se você é um programador em C, provavelmente já ouviu falar sobre testes de código. Mas por que escrever testes é tão importante? Bem, para começar, testes são uma forma de garantir que o seu código funciona corretamente e continua funcionando conforme você o modifica. Além disso, eles ajudam a identificar e corrigir erros antes que o código seja enviado para produção, o que economiza tempo e recursos.
+Escrever testes em programação significa criar pequenos programas que testam cada parte do seu código para garantir que tudo funcione corretamente. Os programadores fazem isso para se certificar de que suas alterações ou novos recursos não quebram o código existente e para evitar erros antes de entregá-lo aos usuários.
 
-## Como fazer
+## Como fazer:
 
-Para escrever testes em C, você pode usar os frameworks de teste populares, como o Unity ou o Google Test. Esses frameworks fornecem funções e macros específicos para criar testes simples e eficazes. Por exemplo, vamos supor que você tem uma função que calcula o fatorial de um número inteiro:
+```
+C
+#include <stdio.h>
 
-```C
-int fatorial(int n) {
-  if (n < 0) {
-    return -1;
-  } else if (n == 0) {
-    return 1;
+// função que retorna a soma de dois números
+int somar(int a, int b) {
+  return a + b;
+}
+
+// função de teste para a função somar
+void testar_somar() {
+  int resultado = somar(2, 3);
+  if (resultado == 5) {
+    printf("TESTE PASSOU: 2 + 3 = 5");
   } else {
-    return n * fatorial(n - 1);
+    printf("TESTE FALHOU: 2 + 3 = %d", resultado);
   }
 }
-```
 
-Para testar essa função, podemos usar o framework Unity para criar um teste simples que verifica se o resultado do fatorial de 5 é igual a 120:
-
-```C
-#include "unity.h"
-
-void test_fatorial() {
-    int resultado = fatorial(5);
-    TEST_ASSERT_EQUAL(120, resultado);
+int main() {
+  // chamando a função de teste
+  testar_somar();
+  return 0;
 }
 ```
 
-Se o valor retornado pela função `fatorial()` for igual a 120, o teste será considerado bem-sucedido. Caso contrário, o teste falhará e o resultado será exibido junto com uma mensagem indicando o motivo do erro.
+Output:
+```
+TESTE PASSOU: 2 + 3 = 5
+```
 
-## Profundando
+## Aprofundando:
 
-Agora que você já sabe como escrever testes em C, é importante entender alguns conceitos fundamentais para garantir a eficácia dos seus testes. Primeiro, é importante ter uma boa cobertura de testes, ou seja, ter testes para todas as partes do seu código. Além disso, os testes devem ser independentes, o que significa que eles não devem depender uns dos outros para serem executados.
+Testes de unidade, também conhecidos como testes de caixa branca, se tornaram populares com o desenvolvimento de metodologias ágeis de desenvolvimento de software. Eles ajudam a garantir que o código seja confiável e de alta qualidade. Existem outras formas de testes, como testes de integração e testes de aceitação, mas o foco dos testes de unidade é em partes individuais do código.
 
-Outro conceito importante é o TDD (Desenvolvimento Orientado a Testes), que sugere escrever os testes antes mesmo de escrever o código. Isso garante que o código seja escrito com foco em sua funcionalidade e não apenas para fazer os testes passarem.
+## Veja também:
 
-Por fim, lembre-se de sempre revisar e atualizar seus testes à medida que o código evolui. Isso garantirá que seus testes continuem eficazes e que seu código permaneça livre de bugs.
-
-## Veja também
-
-- [Documentação do Unity para C](https://github.com/ThrowTheSwitch/Unity)
-- [Tutorial de testes em C com Unity](https://embeddedartistry.com/blog/2019/03/13/unit-testing-c-code-with-unity/)
-- [TDD em C com CppUTest](https://cpputest.github.io/)
+- [Artigo sobre testes de unidade na Wikipedia](https://pt.wikipedia.org/wiki/Teste_de_unidade)
+- [Livro sobre testes de software: "Art of Unit Testing"](https://www.amazon.com.br/Art-Unit-Testing-Examples/dp/1617290890)
+- [Ferramenta de testes em C: CUnit](http://cunit.sourceforge.net/)

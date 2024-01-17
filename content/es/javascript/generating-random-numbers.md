@@ -10,44 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué generar números aleatorios?
+## Qué y por qué?
 
-Generar números aleatorios es una técnica muy útil en programación, ya que permite crear aplicaciones dinámicas y divertidas. Además, puede ser utilizado en juegos, sorteos y algoritmos de optimización.
+Generar números aleatorios es una técnica comúnmente utilizada por los programadores para generar valores aleatorios en un programa. Esto puede servir para simular situaciones de la vida real, generar datos de prueba o mejorar la aleatoriedad de un juego. 
 
-## Cómo generar números aleatorios en Javascript
+## Cómo:
 
-Para generar números aleatorios en Javascript, podemos utilizar la función ```Math.random()```. Esta función devuelve un número decimal entre 0 y 1. Luego, podemos multiplicarlo por el rango de números que queremos obtener y sumarle el número mínimo. Veamos un ejemplo:
+```Javascript 
+// Ejemplo 1: Generar un número aleatorio entre 1 y 10
+let randomNumber = Math.floor(Math.random() * 10) + 1;
+console.log(randomNumber); // Output: 7
 
-```Javascript
-// Generar un número aleatorio entre 1 y 10
-let numeroAleatorio = Math.random() * 10 + 1;
-console.log(numeroAleatorio); // 4.7824312
+// Ejemplo 2: Generar un número aleatorio entre 50 y 100
+let min = 50;
+let max = 100;
+let random = Math.floor(Math.random() * (max - min + 1) + min);
+console.log(random); // Output: 87
 ```
+Código de ejemplo: https://codepen.io/manuquerty/full/LYpzLxB
 
-También podemos usar la función ```Math.floor()``` para redondear el número hacia abajo y obtener un número entero:
+## Profundizando:
 
-```Javascript
-// Generar un número entero aleatorio entre 1 y 10
-let numeroAleatorio = Math.floor(Math.random() * 10 + 1);
-console.log(numeroAleatorio); // 4
-```
+La generación de números aleatorios es un concepto ampliamente utilizado en la informática, que tiene sus raíces en el campo de la probabilidad y la estadística. Antiguamente, los programadores utilizaban algoritmos que no eran realmente aleatorios, sino pseudoaleatorios, es decir, que siguen un patrón predecible. Sin embargo, hoy en día, los lenguajes de programación modernos cuentan con funciones y librerías que permiten generar números verdaderamente aleatorios.
 
-Incluso, podemos utilizar la función ```Math.round()``` para redondear el número hacia el número entero más cercano. Esto puede ser útil si queremos un rango de números con decimales:
+Existen también otras técnicas para generar números aleatorios, como usar variables de tiempo o datos externos como fuente de entropía. Sin embargo, la función Math.random() en JavaScript es la forma más sencilla y común de obtener valores aleatorios.
 
-```Javascript
-// Generar un número aleatorio entre 1 y 10 con un decimal
-let numeroAleatorio = Math.round(Math.random() * 10 + 1);
-console.log(numeroAleatorio); // 7.5
-```
-
-## Profundizando en la generación de números aleatorios
-
-La función ```Math.random()``` utiliza un algoritmo matemático para generar los números aleatorios. Sin embargo, este método no es completamente aleatorio, ya que siempre sigue un patrón predecible. Para obtener una mayor aleatoriedad, se pueden utilizar librerías externas como ```Chance.js``` o ```Random.js```.
-
-Por otro lado, es importante tener en cuenta que los números generados por estas funciones no son realmente aleatorios, sino pseudoaleatorios. Esto significa que siguen un patrón determinado, pero para fines prácticos se consideran aleatorios.
-
-## Ver también
-
-- [Documentación de Math.random() en MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
-- [Librería Chance.js](https://chancejs.com/)
-- [Librería Random.js](https://random.js.org/)
+## Vea también:
+- Documentación oficial de la función Math.random() en MDN: https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+- Más ejemplos de generación de números aleatorios en JavaScript: https://stackabuse.com/javascript-generate-random-string/

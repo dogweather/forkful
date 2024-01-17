@@ -1,7 +1,7 @@
 ---
-title:                "Utilizando expressões regulares"
-html_title:           "Haskell: Utilizando expressões regulares"
-simple_title:         "Utilizando expressões regulares"
+title:                "Usando expressões regulares"
+html_title:           "Haskell: Usando expressões regulares"
+simple_title:         "Usando expressões regulares"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -10,86 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que usar expressões regulares?
+## O que e por que?
 
-Se você é um programador iniciante ou experiente, provavelmente já se deparou com a necessidade de buscar padrões em textos e strings. Talvez você precise encontrar e-mails em um documento ou validar senhas em um formulário. É aí que entram as expressões regulares. Elas são um recurso poderoso e versátil que permite buscar e manipular padrões de strings de forma eficiente. Em resumo, usar expressões regulares pode facilitar a vida do programador e tornar o código mais compacto e legível.
+Regular expressions (ou expressões regulares) são sequências de caracteres que definem um padrão de texto para serem procurados e manipulados em uma grande quantidade de dados. É uma ferramenta comum usada por programadores para fazer correspondências complexas de padrões de texto em seus scripts e aplicativos.
 
-## Como fazer isso em Haskell?
+## Como fazer:
 
-Para usar expressões regulares em Haskell, primeiro precisamos importar o módulo `Text.Regex.Posix`. Em seguida, vamos criar um pequeno exemplo que busca números em um texto. Confira o código abaixo:
-
-```Haskell
-import Text.Regex.Posix
-
--- texto que será analisado
-texto = "Eu tenho 3 maçãs e 5 laranjas"
-
--- expressão regular que busca números
-regex = "[0-9]+"
-
--- função que aplica a expressão regular ao texto e retorna uma lista de números
-buscarNumeros :: String -> [String]
-buscarNumeros str = str =~ regex :: [String]
-
-main = do
-  -- mostra o texto original
-  putStrLn $ "Texto original: " ++ texto
-  
-  -- mostra a lista de números encontrados
-  putStrLn $ "Números encontrados: " ++ show (buscarNumeros texto)
-```
-
-A saída desse código será:
-
-```
-Texto original: Eu tenho 3 maçãs e 5 laranjas
-Números encontrados: ["3","5"]
-```
-
-Vamos analisar o código passo a passo:
-
-1. Importamos o módulo `Text.Regex.Posix`.
-2. Criamos uma variável `texto` com o texto a ser analisado.
-3. Definimos nossa expressão regular na variável `regex`. Nesse caso, queremos buscar sequências de dígitos, então usamos `[0-9]+`.
-4. Criamos uma função `buscarNumeros` que recebe uma string e retorna uma lista de strings (que serão os números encontrados).
-5. Dentro da função, usamos o operador `=~` para aplicar a expressão regular ao texto. O resultado é uma lista de strings, então usamos `:: [String]` para especificar o tipo de dados.
-6. No `main`, mostramos o texto original e a lista de números encontrados.
-
-Além do operador `=~`, também temos o operador `=~%` que só retorna o primeiro match da expressão regular. E se quisermos substituir esses números por outra coisa? Basta usar o operador `subRegex`. Confira um exemplo:
+Os programadores podem usar a biblioteca "Text.Regex.TDFA" do Haskell para trabalhar com expressões regulares. Por exemplo, para verificar se uma string contém um número de telefone válido:
 
 ```Haskell
-import Text.Regex.Posix
+import Text.Regex.TDFA
 
--- texto original
-texto = "Eu tenho 3 maçãs e 5 laranjas"
+telefone = "123-456-7890"
+padrao = "^\\(?\[0-9]{3}\\)?\[ -\]?\\[0-9]{3}\\[ -\]?\\[0-9]{4}$" :: String
 
--- expressão regular que busca números
-regex = "[0-9]+"
-
--- função que substitui os números por asteriscos
-substituirPorAsteriscos :: String -> String
-substituirPorAsteriscos str = subRegex (str =~ regex) "\\*" str
-
-main = do
-  -- mostra o texto original
-  putStrLn $ "Texto original: " ++ texto
-  
-  -- mostra o texto com os números substituídos por asteriscos
-  putStrLn $ "Texto com números substituídos: " ++ substituirPorAsteriscos texto
+if telefone =~ padrao then
+    putStrLn "Número de telefone válido!"
+else
+    putStrLn "Número de telefone inválido."
 ```
 
-A saída será:
-
+Saída:
 ```
-Texto original: Eu tenho 3 maçãs e 5 laranjas
-Texto com números substituídos: Eu tenho * maçãs e * laranjas
+"Número de telefone válido!"
 ```
 
-## Mergulhando mais fundo
+## Deep Dive:
 
-Esses foram apenas exemplos simples de como usar expressões regulares em Haskell. Para explorar mais funcionalidades e possibilidades, recomendo dar uma olhada na documentação oficial do módulo `Text.Regex.Posix` e também na biblioteca `regex-posix` no Hackage. Além disso, é sempre bom praticar e experimentar em seus próprios projetos para se familiarizar com o uso das expressões regulares.
+Expressões regulares têm suas origens na teoria da computação e em linguagens formais, mas se tornaram mais populares com o advento da linguagem Perl na década de 1980. Embora sejam poderosas e úteis, elas podem ser difíceis de ler e entender, especialmente para padrões mais complexos. Existem também outras alternativas para trabalhar com padrões de texto, como parsers combinadores. A implementação geralmente segue o algoritmo de correspondência de padrões de Thompson.
 
-## Veja também
+## Veja também:
 
-* Documentação oficial do módulo `Text.Regex.Posix`: https://hackage.haskell.org/package/regex-posix-0.95.2/docs/Text-Regex-Posix.html
-* Biblioteca `regex-posix` no Hackage: https://hackage.haskell.org/package/regex-posix
+- [Documentação da biblioteca "Text.Regex.TDFA"](https://hackage.haskell.org/package/regex-tdfa/docs/Text-Regex-TDFA.html)
+- ["Expressões regulares em 5 minutos"](https://www.youtube.com/watch?v=Hztic4Y6ON0)
+- [Parsers combinadores no Haskell](https://wiki.haskell.org/Parsing_a_simple_imperative_language)

@@ -10,47 +10,61 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##なぜ？
+何と、なぜ？ 
+デバッグ出力のプリントとは何かを説明するために、プログラマーが行う理由を二、三文で説明します。
 
-デバッグ出力を行うことがどのように役立つのかを理解するためには、まずはなぜそれが必要なのかを知る必要があります。デバッグ出力は、コード内の不具合を特定する際に重要なツールです。デバッグ出力を使用することで、コードの実行中にどのような値が代入されているのかを確認し、問題をより早く発見することができます。
+## 何と、なぜ？ 
 
-##やり方
+デバッグ出力のプリントとは、プログラマーがコードの実行中に発生するエラーや異常を特定し、修正するために画面にメッセージを表示することです。プログラマーは、デバッグ出力を使用することで、プログラムが正しく動作していることを確認できます。
 
-デバッグ出力を行うためには、Gleamの"```log```"関数を使用します。この関数は、引数として任意の型のデータを受け取り、それを標準出力に出力します。例えば、文字列をデバッグ出力するには以下のように記述します。
+## ハウツー： 
 
-```
-Gleam.log("Hello, world!")
-```
-
-もし変数に割り当てられた値を出力したい場合は、その変数を"```{}```"内に記述します。
-
-```
-let name = "John"
-Gleam.log("Hello, {}", name)
+```Gleam
+fn main() {
+  let name = "John";
+  debug_print("Hello, {}!", name);
+}
 ```
 
-さらに、複数の値を出力したい場合は、"```{}```"をそれぞれの値の位置に対応させます。
-
+実行結果：
 ```
-let name = "John"
-let age = 25
-Gleam.log("My name is {} and I am {} years old.", name, age)
+Hello, John!
 ```
 
-上記のコードの実行結果は、以下のようになります。
+```Gleam
+struct Circle {
+  radius: Float,
+  area: Float,
+}
 
+impl Circle {
+  pub fn new(radius: Float) -> Circle {
+    let area = circle_area(radius);
+    debug_print("Area of circle with radius {} is {}.", radius, area);
+    Circle { radius, area }
+  }
+}
+
+fn circle_area(radius: Float) -> Float {
+  3.14 * pow(radius, 2.0)
+}
 ```
-My name is John and I am 25 years old.
+
+実行結果：
+```
+Area of circle with radius 5.0 is 78.5.
 ```
 
-##深堀り
+## ディープダイブ： 
 
-デバッグ出力には、さまざまなオプションがあります。例えば、"```log```"関数の第二引数に"```format_opts```"を指定することで、出力する値のフォーマットを指定することができます。また、"```log```"関数を使用する際には、必ず先頭に"```import gleam/io```"を記述するように注意しましょう。
+デバッグ出力は、プログラミングの歴史的な文脈では欠かせないものでした。コンピューターが高価で、メモリやプロセッサーの能力が限られていた時代では、デバッグ出力はプログラムの実行中に表示する唯一の方法でした。現在でも、デバッグ出力はコードの動作を確認するために大切な手段です。
 
-さらに、Gleamにはデバッグ出力を行うための専用モジュールとして"```gleam/debug```"があり、さまざまな便利な関数を提供しています。このモジュールを使用することで、より効率的かつ柔軟なデバッグ出力を行うことができます。
+代替手段として、プログラマーは特殊なデバッガーやログファイルを使用することもできます。しかし、デバッグ出力はより簡単で直接的な方法でエラーや異常を特定し、修正することができます。
 
-##参考リンク
+デバッグ出力を実装する方法はプログラミング言語によって異なりますが、多くの言語では````print````や````printf````といった関数を使用します。Gleamでは、````debug_print````関数が使えます。
 
-- [Gleamドキュメント - ロギング](https://gleam.run/book/tour/logging)
-- [Gleamドキュメント - デバッグ](https://gleam.run/book/how_to/debugging)
-- [Gleamドキュメント - 標準ライブラリ](https://gleam.run/lib/standard-library)
+## 関連情報を確認する： 
+
+- [Gleamの公式ドキュメント](https://gleam.run/getting-started/#Printing).
+- [デバッグについての記事-TOAST](https://taosmi.hatenablog.com/entry/2016/08/02/153612).
+- [デバッグ出力についてのQ&A-Stack Overflow](https://stackoverflow.com/questions/6454185/what-is-debug-print).

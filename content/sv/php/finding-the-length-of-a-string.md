@@ -1,7 +1,7 @@
 ---
-title:                "Hitta längden av en sträng"
-html_title:           "PHP: Hitta längden av en sträng"
-simple_title:         "Hitta längden av en sträng"
+title:                "Att hitta längden av en sträng"
+html_title:           "PHP: Att hitta längden av en sträng"
+simple_title:         "Att hitta längden av en sträng"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Strings"
@@ -10,51 +10,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad och varför?
+När man programmerar i PHP finns det ofta behov av att hitta längden på en sträng. Detta är helt enkelt antalet tecken som finns i en viss sträng. Detta kan vara användbart för att till exempel kontrollera om en inmatad sträng är tillräckligt lång eller för att trimma bort onödiga mellanslag i en sträng.
 
-Att hitta längden på en sträng är en viktig del av programmering, eftersom det låter dig hantera och bearbeta data på ett effektivt sätt. Genom att veta längden på en sträng kan du till exempel avgöra hur många tecken som finns i den, vilket är användbart för att hantera text eller lösa problem i koden.
-
-## Hur man
-
-För att hitta längden på en sträng i PHP, kan du använda funktionen `strlen()`. Den tar en parameter som är strängen som du vill hitta längden på och returnerar dess längd som en siffra.
+## Hur man gör:
+För att hitta längden på en sträng i PHP använder man funktionen ```strlen()```. Denna funktion tar emot en sträng som argument och returnerar längden på strängen som en heltalsvärde. Se nedan för ett enkelt exempel:
 
 ```PHP
-$name = "Maria";
-echo strlen($name); // Output: 5
+$string = "Hej! Detta är en sträng.";
+$lenght = strlen($string);
+echo $length; // Skriver ut 24 vilket är antalet tecken i strängen.
 ```
 
-Du kan också använda en `for`-loop för att iterera över varje tecken i strängen och öka en räknare för varje tecken, tills du når slutet av strängen. Detta är en mer manuell metod, men det ger dig mer kontroll om du behöver göra något annat med tecknen under tiden.
+## Djupdykning:
+För att förstå varför det är nödvändigt att hitta längden på en sträng behöver man förstå lite om hur PHP behandlar strängar. I äldre versioner av PHP var alla strängar en del av ett annat datatyp som hette array. Detta gjorde att man kunde använda array-funktioner på strängar, som till exempel funktionen ```count()```. Men i moderna versioner är strängar en egen datatyp och därför behövs en specifik funktion för att räkna antalet tecken i en sträng.
 
-```PHP
-$name = "Maria";
-$count = 0;
+Det finns också alternativa sätt att hitta längden på en sträng i PHP. Man kan till exempel använda funktionen ```mb_strlen()``` som hanterar flerspråkiga strängar på ett bättre sätt. Det finns också möjlighet att använda en for-loop för att räkna antalet tecken i en sträng, men detta är inte lika effektivt som att använda den inbyggda funktionen ```strlen()```.
 
-for($i = 0; $i < strlen($name); $i++){
-  $count++;
-}
-
-echo $count; // Output: 5
-```
-
-Om du behöver använda längden på en sträng för att utföra någon handling, som att kolla om den är längre än ett visst maximalt antal tecken, kan du också jämföra längden med en siffra.
-
-```PHP
-$name = "Maria";
-$max_length = 10;
-
-if(strlen($name) > $max_length){
-  echo "Strängen är för lång!";
-}
-```
-
-## Djupdykning
-
-När du använder `strlen()` i PHP, måste du vara medveten om att den räknar både bokstäver och mellanslag. Så om du har en sträng som innehåller fem bokstäver och två mellanslag, kommer längden att vara sju. Detta kan ibland orsaka problem, så det är viktigt att ha i åtanke när du använder `strlen()`.
-
-En annan sak att nämna är att `strlen()` returnerar längden på en sträng i bytes. Detta kan bli ett problem om du har en sträng som innehåller icke-ASCII-tecken, eftersom de tar upp mer än en byte. I sådana fall kan du använda funktionen `mb_strlen()`, som hanterar Unicode-tecken och returnerar deras längd korrekt.
-
-## Se även
-
-- [PHP - Strings](https://www.php.net/manual/en/language.types.string.php)
-- [PHP - strlen()](https://www.php.net/manual/en/function.strlen.php)
-- [PHP - mb_strlen()](https://www.php.net/manual/en/function.mb-strlen.php)
+## Se även:
+- [PHP Manual - strlen()](https://www.php.net/manual/en/function.strlen.php)
+- [PHP Manual - mb_strlen()](https://www.php.net/manual/en/function.mb-strlen.php)
+- [PHP Array Functions](https://www.w3schools.com/php/php_ref_array.asp)

@@ -10,45 +10,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+# Quoi & Pourquoi?
 
-Si vous travaillez avec des dates dans vos scripts Bash, il est important de savoir comment les comparer pour effectuer des actions en fonction de leur relation. Cela peut être utile pour trier des fichiers par date, vérifier si une date est dans le passé ou le futur, ou encore pour créer des sauvegardes basées sur une plage de dates spécifique.
+Comparer deux dates est une tâche courante en programmation, qui consiste à déterminer si une date est plus récente, plus ancienne ou égale à une autre date. Les programmeurs utilisent cette fonctionnalité pour effectuer des opérations de tri, de filtrage ou de vérification dans leurs programmes.
 
-## Comment faire
+# Comment faire:
 
-La comparaison de dates en Bash peut sembler intimidante, mais avec les bonnes commandes, c'est en fait assez simple. Voici un exemple de code qui compare deux dates saisies par l'utilisateur :
+Voici deux façons simples de comparer des dates en Bash:
 
-```Bash
-read -p "Entrez une date au format YYYY-MM-DD : " date1
-read -p "Entrez une autre date au format YYYY-MM-DD : " date2
-if [[ "$date1" > "$date2" ]]; then
-  echo "La première date est plus récente que la seconde."
-elif [[ "$date1" < "$date2" ]]; then
-  echo "La seconde date est plus récente que la première."
+```Bash 
+# Exemple 1: Comparaison de dates de manière numérique
+if (( date1 > date2 )); then
+  echo "date1 est plus récente que date2"
+elif (( date1 < date2 )); then
+  echo "date1 est plus ancienne que date2"
 else
-  echo "Les deux dates sont identiques."
-```
-
-Dans cet exemple, nous utilisons la commande `read` pour saisir les dates et les stockons dans les variables `date1` et `date2`. Ensuite, nous utilisons le comparateur `>`, qui vérifie si la première date est plus grande que la seconde. Si c'est le cas, nous affichons un message en conséquence. Sinon, nous utilisons le comparateur `<` pour vérifier si la seconde date est plus petite que la première. Si c'est le cas, nous affichons un autre message. Sinon, cela signifie que les deux dates sont identiques et nous en informons l'utilisateur.
-
-## Plongée en profondeur
-
-Lors de la comparaison de dates en Bash, il est important d'utiliser un format standard tel que `YYYY-MM-DD` pour éviter toute confusion. De plus, il est également important de prendre en compte les années bissextiles lors de la comparaison de dates.
-
-Pour vérifier si une année est bissextile, vous pouvez utiliser la commande `date` avec l'option `%Y`, qui renvoie l'année complète, et l'option `%m`, qui renvoie le mois. Si la date du 29 février existe, cela signifie que l'année est bissextile.
-
-```Bash
-if [[ $(date -d "$year-02-29" +"%Y%m") == $(date -d "$year-03-01" +"%Y%m") ]]; then
-  echo "Cette année est bissextile."
-else
-  echo "Cette année n'est pas bissextile."
+  echo "Les dates sont égales"
 fi
 ```
 
-Il existe également d'autres comparateurs que vous pouvez utiliser pour comparer les dates, tels que `==` pour vérifier si deux dates sont identiques, `!=` pour vérifier si elles sont différentes, `<=` pour vérifier si la première date est antérieure à la seconde, et `>=` pour vérifier si elle est postérieure.
+```Bash 
+# Exemple 2: Comparaison de dates en utilisant la commande date
+date1=$(date -d "2021-01-01" +%s)
+date2=$(date -d "2020-01-01" +%s)
+if (( date1 > date2 )); then
+  echo "date1 est plus récente que date2"
+elif (( date1 < date2 )); then
+  echo "date1 est plus ancienne que date2"
+else
+  echo "Les dates sont égales"
+fi
+```
 
-## Voir aussi
+Voici un exemple de sortie pour ces deux exemples:
 
-- [Guide complet sur la manipulation de dates en Bash](https://www.cyberciti.biz/faq/linux-unix-formatting-dates-for-display/)
-- [Documentation sur la commande `date` en Bash](https://linux.die.net/man/1/date)
-- [Comparaison de chaînes en Bash](https://www.linuxjournal.com/content/comparing-strings-bash)
+```Bash 
+date1 est plus récente que date2
+```
+
+```Bash 
+Les dates sont égales
+```
+
+# Plongeon Profond:
+
+Dans les versions précédentes de Bash, la comparaison de dates nécessitait l'utilisation d'options spécifiques pour la commande `date`. Cependant, depuis la version 4 de Bash, les expressions numériques ont été introduites, ce qui a facilité la comparaison de dates en utilisant des opérateurs tels que `>`, `<` et `==`.
+
+Il existe également des alternatives telles que `awk` ou la commande `test`, qui peuvent également être utilisées pour comparer des dates en Bash.
+
+Pour les développeurs plus expérimentés, il est possible de créer des fonctions personnalisées en utilisant des variables et des opérateurs de comparaison pour effectuer des comparaisons de dates plus complexes.
+
+# Voir aussi:
+
+- Documentation officielle de Bash pour plus d'informations sur les expressions numériques : <https://www.gnu.org/software/bash/manual/html_node/Conditional-Constructs.html#Conditional-Constructs>
+- Tuto Bash sur les opérateurs de comparaison: <https://www.tutorialspoint.com/unix/awk_comparison_operators.htm>

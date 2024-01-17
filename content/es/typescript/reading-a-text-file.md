@@ -10,44 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¿Qué y por qué?
+Leer un archivo de texto es una tarea esencial para los programadores. Se refiere a la acción de acceder al contenido de un archivo de texto y utilizarlo en un programa. Los programadores suelen utilizar esta técnica para obtener datos de un archivo o para escribir en él.
 
-Si estás buscando un lenguaje de programación que sea fácil de aprender, flexible y basado en JavaScript, entonces TypeScript podría ser lo que necesitas. La lectura de archivos de texto es una tarea común en el desarrollo de aplicaciones, y en este artículo te explicaremos cómo hacerlo utilizando TypeScript.
-
-## Cómo hacerlo
+## ¿Cómo hacerlo?
+En TypeScript, la forma más común de leer un archivo de texto es utilizando la función `readFileSync()` de Node.js. Veamos un ejemplo sencillo de cómo hacerlo:
 
 ```TypeScript
-//Importar el módulo 'fs' que nos permite acceder al sistema de archivos
 import * as fs from 'fs';
 
-//Leer el contenido completo de un archivo de texto
-fs.readFile('miArchivo.txt', 'utf8', (err, data) => {
-  if (err) throw err;
-  console.log(data);
-})
-
-//Leer línea por línea y mostrar el resultado en la consola
-const stream = fs.createReadStream('miArchivo.txt', { encoding: 'utf8' });
-let tempString = '';
-
-stream.on('data', (chunk) => {
-  //Convirtiendo los datos a una cadena de texto
-  tempString += chunk.toString();
-  //Separamos la cadena en líneas
-  const lines = tempString.split(/\r\n|\r|\n/);
-  //Mostramos el contenido línea por línea
-  lines.forEach((line) => {
-    console.log(line);
-  });
-})
+const contenido = fs.readFileSync('archivo.txt', 'utf8');
+console.log(contenido);
 ```
 
-## Profundizando
+Este código importa el módulo `fs` de Node.js, el cual proporciona varias funciones para trabajar con archivos en el sistema. Luego, se utiliza la función `readFileSync()` para leer el archivo de texto especificado como primer argumento. El segundo argumento, en este caso `'utf8'`, indica que se desea obtener el contenido del archivo como una cadena de texto en lugar de un búfer de bytes. Finalmente, se imprime el contenido del archivo en la consola utilizando la función `console.log()`.
 
-La función `readFile()` de Node.js es la forma más sencilla de leer un archivo de texto en TypeScript. Utiliza un callback para recibir el contenido del archivo y manejar los errores en caso de que existan. Por otro lado, la función `createReadStream()` nos permite leer el archivo línea por línea, lo que puede ser útil para archivos grandes o para realizar operaciones más avanzadas.
+### Resultado:
+
+`Este es el contenido del archivo de texto.`
+
+## Profundizando
+La lectura de archivos de texto es una técnica ampliamente utilizada en la programación desde hace décadas. Antes de la llegada de Node.js, los lenguajes de programación tenían sus propias formas de leer archivos de texto, como por ejemplo en C se utiliza la función `fopen()`. Sin embargo, el uso de funciones como `readFileSync()` en Node.js hace que esta tarea sea más sencilla y accesible para los programadores.
+
+En TypeScript, también es posible utilizar la función `readFile()` de Node.js, la cual es asincrónica y utiliza callbacks para manejar el resultado de la operación. Además, existen librerías externas como `fs-extra` que proporcionan funciones adicionales para trabajar con archivos y directorios.
 
 ## Ver también
-
-- [Documentación de Node.js sobre el módulo 'fs'](https://nodejs.org/api/fs.html)
-- [Guía de TypeScript para principiantes](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html)
-- [Ejemplos de lectura de archivos de texto en TypeScript](https://github.com/Ruthenic/file-reading-examples)
+- [Documentación de Node.js sobre la función `readFileSync()`](https://nodejs.org/api/fs.html#fs_fs_readfilesync_path_options)
+- [Node.js para principiantes: trabajar con archivos](https://www.digitalocean.com/community/tutorials/nodejs-fundamentals-nodejs-file-system)
+- [fs-extra: una librería de Node.js para trabajar con archivos y directorios](https://www.npmjs.com/package/fs-extra)

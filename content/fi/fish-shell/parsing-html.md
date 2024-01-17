@@ -1,7 +1,7 @@
 ---
-title:                "HTML:n jäsentäminen"
-html_title:           "Fish Shell: HTML:n jäsentäminen"
-simple_title:         "HTML:n jäsentäminen"
+title:                "Html-tiedostojen jäsentäminen"
+html_title:           "Fish Shell: Html-tiedostojen jäsentäminen"
+simple_title:         "Html-tiedostojen jäsentäminen"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "HTML and the Web"
@@ -10,25 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
-On monia syitä, miksi voit haluta analysoida HTML-tiedostoja Fish Shellissä. Ehkä haluat kerätä tietoa verkkosivuilta automatisoidaksesi tietyt tehtävät, kuten tiedon louhinta tai sisällön tarkistaminen tiettyyn sivupäivitykseen liittyen.
+# Mikä & Miksi?
 
-## Kuinka tehdä
-Fish Shellillä on mahdollista analysoida HTML-tiedostoja helposti käyttäen "htmlgrep" komentoa. Tämä komento etsii ja tulostaa tietyn HTML-elementin perusteella. Esimerkiksi, jos haluat tulostaa kaikki otsikot sivustolta nimeltä "example.com", voit käyttää seuraavaa komentoa:
- 
-```Fish Shell
-htmlgrep -P example.com h1
+HTML-analysointi on prosessi, jossa tietokone ohjelmallisesti lukee ja käsittelee HTML-koodia. Tämän avulla ohjelmoijat voivat hakea tietoja verkkosivuilta tai muuttaa niitä tarpeidensa mukaan.
+
+Miksi ohjelmoijat tekevät tätä? Esimerkiksi web-kehittäjät voivat käyttää HTML-analysointia verkkosivujen sisällön jäsentelemiseen ja muokkaamiseen. Data-analyytikot taas voivat hyödyntää HTML-analysointia hakeakseen tietoja verkkosivuilta ja luodakseen raportteja.
+
+# Miten:
+
+```Fish Shell``` tarjoaa HTML-analysointiin kätevän ```curl```-komenton, joka mahdollistaa verkkosivujen lataamisen suoraan terminaalista. Tämän jälkeen voit käyttää ```sed```-työkalua HTML-koodin parsimiseen.
+
+Esimerkiksi voit hakea verkkosivun otsikot seuraavasti:
+
+```
+set url "https://www.esimerkkiverkkosivu.fi"
+curl $url | sed -n 's/<title>\(.*\)<\/title>/\1/p'
 ```
 
-Tämä tulostaa kaikki "h1" otsikkotiedostot sivustolta "example.com" ja näyttää ne terminaalissa.
+Tämä tulostaa verkkosivun otsikon terminaaliin. Voit myös tallentaa otsikon muuttujaan ja käyttää sitä myöhemmin.
 
-## Syvällinen tutkimus
-Fish Shellin mukana tuleva "htmlgrep" komento pohjautuu "grep" komentoon, joka on tarkoitettu erilaisten tiedostojen analysointiin ja tietojen etsimiseen. "htmlgrep" toimii samalla tavoin kuin "grep", mutta se analysoi HTML-tiedoston ja etsii sieltä tiettyjä HTML-elementtejä.
+# Syväsukellusta:
 
-Voit myös käyttää muita komentoja, kuten "curl" ja "sed", Fish Shellissä HTML-tiedoston analysointiin ja datan kaivamiseen.
+HTML-analysoinnilla on pitkä historia, ja se on ollut tärkeä osa web-kehitystä alusta lähtien. Nykyään on olemassa myös muita tapoja analysoida HTML-koodia, kuten käyttämällä kirjastoja kuten Beautiful Soup tai lxml.
 
-## Katso myös
-- [Fish Shell: HTML Parsing](https://fishshell.com/docs/current/cmds/htmlgrep.html)
-- [Curl Manual](https://curl.haxx.se/docs/manpage.html)
-- [Sed Manual](https://www.gnu.org/software/sed/manual/sed.html)
-- [HTML Tutorial](https://www.w3schools.com/html/)
+Fish Shellin avulla voit myös luoda skriptejä, jotka automatisoivat HTML-analysointiprosessin ja säästävät aikaa ja vaivaa.
+
+# Katso myös:
+
+- [Fish Shellin virallinen dokumentaatio](https://fishshell.com/docs/current/index.html) - Lisätietoa Fish Shellin toiminnoista ja ominaisuuksista.
+- [Beautiful Soup dokumentaatio](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) - Kirjasto, jolla voi helposti analysoida HTML-koodia Pythonissa.
+- [lxml dokumentaatio](https://lxml.de/) - Toimiva ja nopea kirjasto XML- ja HTML-dokumenttien parsimiseen Pythonissa.

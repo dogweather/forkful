@@ -10,32 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi créer un fichier temporaire?
+Qu'est-ce que créer un fichier temporaire et pourquoi les programmeurs le font-ils?
 
-Il y a plusieurs raisons pour lesquelles vous pourriez avoir besoin de créer un fichier temporaire dans votre code Fish Shell. Un des exemples les plus courants est de stocker temporairement des données avant de les enregistrer dans un fichier permanent. Cela peut être utile lors de la manipulation de gros volumes de données ou lors de la mise en œuvre de fonctionnalités telles que l'annulation ou la restauration.
+Créer un fichier temporaire, c'est créer un fichier éphémère qui va être utilisé pour stocker des données temporaires. Les programmeurs le font souvent lorsqu'ils ont besoin de générer ou de manipuler des données temporaires sans affecter leurs fichiers existants.
 
-## Comment faire?
+Comment faire:
 
-Il existe plusieurs façons de créer un fichier temporaire dans le code Fish Shell. Voici deux exemples très simples pour vous aider à démarrer:
+```
+Fish Shell vous permet de créer facilement des fichiers temporaires en utilisant la commande `mktemp`. Voici un exemple de code :
 
-```Fish Shell
-# Avec la commande built-in "mktemp"
-set temp_file (mktemp)
+```fish
+# Créer un fichier temporaire nommé "mon_fichier_temp"
+set mon_fichier_temp (mktemp)
 
-# Avec l'utilitaire "touch"
-touch $HOME/temp_file.txt
+# Écrire du contenu dans le fichier temporaire
+echo "Données temporaires" > $mon_fichier_temp
+
+# Lire le contenu du fichier temporaire
+cat $mon_fichier_temp
 ```
 
-Dans le premier exemple, nous utilisons la commande *built-in* "mktemp" qui crée un fichier temporaire avec un nom unique et stocke son chemin d'accès dans la variable "temp_file". Dans le deuxième exemple, nous utilisons l'utilitaire "touch" pour créer un fichier vide dans le répertoire "HOME". Pour accéder au contenu de ce fichier, nous pouvons utiliser la commande "cat" ou toute autre commande de lecture de fichier.
+Output: Données temporaires
 
-## Plongée en profondeur
+Deep Dive:
 
-Créer un fichier temporaire n'est pas seulement utile pour stocker des données temporaires, cela peut également aider à améliorer les performances de votre code. En créant un fichier temporaire, vous pouvez économiser de précieuses ressources telles que la mémoire vive en limitant la quantité de données stockées en mémoire.
+Avant l'avènement de Fish Shell, les programmeurs utilisaient souvent la commande `touch` pour créer des fichiers temporaires vides. Cependant, cette méthode pouvait entraîner la création accidentelle de fichiers avec le même nom que des fichiers existants.
 
-Il est également important de choisir un nom de fichier unique pour éviter d'éventuels conflits avec d'autres fichiers dans votre système. Ce qui rend la commande "mktemp" si pratique, c'est qu'elle génère automatiquement un nom de fichier unique pour vous.
+Une alternative à la commande `mktemp` est la commande `mkfile`, disponible sur les systèmes d'exploitation macOS. Cependant, celle-ci n'offre pas autant de flexibilité, car elle crée uniquement des fichiers de taille fixe.
 
-## Voir aussi
+Pour ceux qui veulent en savoir plus, la création d'un fichier temporaire passe par la génération d'un nom unique à l'aide d'un processus aléatoire. Ce nom est ensuite utilisé pour créer le fichier temporaire à l'aide de la commande `touch`.
 
-- [La documentation officielle de Fish Shell](https://fishshell.com/docs/current/index.html)
-- [Un tutoriel sur la manipulation de fichiers dans Fish Shell](https://linuxhint.com/tmp_file_handling_fish_shell/)
-- [Plus d'astuces et de conseils pour optimiser votre code Fish Shell](https://linuxhint.com/fish_shell_tips_tricks/)
+Voir aussi:
+
+Pour en savoir plus sur Fish Shell, vous pouvez consulter sa documentation officielle (https://fishshell.com/docs/current/). Vous pouvez également trouver d'autres articles et tutoriels en ligne pour apprendre à utiliser les fonctionnalités avancées de Fish Shell.

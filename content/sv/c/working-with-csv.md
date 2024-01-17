@@ -10,54 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
+CSV är en vanlig typ av filformat som används för att lagra och överföra data i tabellform. Det är en förkortning för "Comma-Separated Values" och fungerar som en mellanhand för att dela information mellan olika program och system. Programmörer använder CSV för att enkelt hantera och manipulera data som behöver organiseras i en tabellstruktur.
 
-Att arbeta med CSV-filer är en vanlig uppgift när man hanterar data i olika program och verktyg. Det kan till exempel vara användbart för att importera eller exportera data från en databas, eller för att dela data med andra användare.
+## Hur gör man:
+Att arbeta med CSV i C är relativt enkelt. Det första steget är att inkludera biblioteket "stdio" som ger möjlighet att läsa och skriva till filer. Sedan är det viktigt att komma ihåg de grundläggande reglerna för CSV-formatet: varje fält är separerat med ett kommatecken och varje rad är separerad med ett radbrytningstecken.
 
-## Så här gör du
+Exempel på kod för att skriva data till en CSV-fil:
 
-Att läsa och skriva CSV-filer med C är relativt enkelt. För att läsa en fil, kan du använda funktionen `fopen` för att öppna filen och sedan använda `fgets` för att läsa in varje rad. För att skriva till en fil kan du använda `fprintf` för att skriva data i det önskade formatet.
-
-````C
+```C
 #include <stdio.h>
-
 int main() {
-  // Öppna en fil för läsning
-  FILE *in_file = fopen("data.csv", "r");
-  
-  // Loopa igenom filen och läsa in varje rad
-  char line[100]; // Antag att varje rad är högst 100 tecken lång
-  while(fgets(line, 100, in_file) != NULL) {
-    // Hantera raden här
-    printf("%s", line);
-  }
+   //öppna filen för skrivning
+   FILE *csvFile = fopen("data.csv", "w");
 
-  // Stäng filen
-  fclose(in_file);
-
-  // Öppna en fil för skrivning
-  FILE *out_file = fopen("output.csv", "w");
-  
-  // Skriva data i önskat format
-  fprintf(out_file, "Kolumn 1, Kolumn 2, Kolumn 3\n");
-  fprintf(out_file, "Data 1, Data 2, Data 3\n");
-  fprintf(out_file, "Data 4, Data 5, Data 6\n");
-
-  // Stäng filen
-  fclose(out_file);
-
-  return 0;
+   //skriv data till filen
+   fprintf(csvFile, "Hund,Katt,Kanin\n");
+   fprintf(csvFile, "Brun,Svart,Vit\n");
+   
+   //stäng filen
+   fclose(csvFile);
+   
+   return 0;
 }
-````
+```
 
-## Djupdykning
+Output i filen 'data.csv':
+```
+Hund,Katt,Kanin
+Brun,Svart,Vit
+```
 
-CSV-filer är ett vanligt format för att lagra tabellformad data. Det finns dock vissa utmaningar med att arbeta med CSV-filer, exempelvis att hantera tecken som kommatering och citattecken. För att hantera dessa problem kan du använda `fgetc` för att hantera tecken för tecken istället för rad för rad. Dessutom kan du använda `strtok` för att dela upp raderna i enskilda celler.
+## Djupdykning:
+CSV-formatet har funnits sedan tidigt 1970-tal och har blivit en standard för att överföra data mellan program och system på grund av dess enkelhet. En nackdel med CSV är att det inte kan hantera specialtecken som kommatecken eller radbrytningar inuti datafält, vilket kan orsaka problem vid hantering av mer komplex data.
 
-## Se även
+Det finns alternativ till CSV som kan hantera specialtecken bättre, till exempel JSON och XML. Dock så blir dessa format mer komplicerade att hantera för både människor och datorer.
 
-- [fopen](https://www.tutorialspoint.com/c_standard_library/c_function_fopen.htm)
-- [fgets](https://www.tutorialspoint.com/c_standard_library/c_function_fgets.htm)
-- [fprintf](https://www.tutorialspoint.com/c_standard_library/c_function_fprintf.htm)
-- [fgetc](https://www.tutorialspoint.com/c_standard_library/c_function_fgetc.htm)
-- [strtok](https://www.tutorialspoint.com/c_standard_library/c_function_strtok.htm)
+När det gäller implementation så är det viktigt att ha i åtanke att CSV-filer kan ha olika separatorer, inte bara kommatecken. Det finns också specifika regler för att hantera citattecken, som används för att inkludera specialtecken inuti datafält.
+
+## Se även:
+- [The history of CSV](https://www.computerworld.com/article/2280176/the-story-behind-the-developer-s-workhorse-csv-utilty.html)
+- [Comparison of data interchange formats](https://en.wikipedia.org/wiki/Comparison_of_data_interchange_formats)
+- [Reading and Writing CSV files in C](https://www.geeksforgeeks.org/csv-file-management-using-c/)

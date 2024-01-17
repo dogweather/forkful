@@ -1,7 +1,7 @@
 ---
-title:                "Nykyisen päivämäärän hankkiminen"
-html_title:           "Elixir: Nykyisen päivämäärän hankkiminen"
-simple_title:         "Nykyisen päivämäärän hankkiminen"
+title:                "Nykyisen päivämäärän saaminen"
+html_title:           "Elixir: Nykyisen päivämäärän saaminen"
+simple_title:         "Nykyisen päivämäärän saaminen"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Dates and Times"
@@ -10,46 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+# Mitä & Miksi?
 
-Jos haluat lukea tämän artikkelin, olet ehkä kiinnostunut selvittämään nykyisen päivämäärän Elixir-ohjelmointikielellä. Tämä voi olla hyödyllistä esimerkiksi päivää laskiessa tai tiettyjen aikapohjaisten toimintojen suorittamiseen ohjelmassa.
+Nykyisen päivämäärän hakeminen on prosessi, jossa ohjelma hakee ja tallentaa nykyisen päivämäärän ja kellonajan tietokoneen järjestelmäkellolta. Tätä tarvitaan usein ohjelmoinnissa esimerkiksi tapahtumien ajoittamisessa tai arkistojen järjestämisessä.
 
-## Kuinka
+# Kuinka:
 
-```elixir
-current_date = Date.utc_today()
-IO.inspect(current_date)
+``` Elixir
+Time.utc_now()
+```
+## Tuloste:
+
+``` Elixir
+# ⟨DateTime.utc_ #<Year: 2021, month: 10, day: 25, hour: 15, minute: 30, second: 45, microsecond: {0, 500, 0}, timezone: Etc/UTC⟩
 ```
 
-Koodinpätkä hakee nykyisen päivämäärän UTC-aikavyöhykkeellä ja tulostaa sen konsoliin. Voit myös tallentaa päivämäärän muuttujaan ja käyttää sitä myöhemmin muissa ohjelman osissa.
+## Syventävä tutkimus:
 
-```elixir
-{year, month, day} = Date.utc_today()
-```
+### Historiallinen konteksti:
 
-Tämä esimerkki näyttää, kuinka voit eritellä päivämäärän osiin ja tallentaa ne omiin muuttujiin. Näin voit esimerkiksi luoda oman formaatin päivämäärälle.
+Ennen tietokoneita päivämäärät laskettiin käsin tai käytettiin mekaanisia laitteita, kuten aurinkokelloja. Tietokoneiden myötä päivämäärän hakeminen on tullut helpommaksi ja nopeammaksi.
 
-## Syvempi sukellus
+### Vaihtoehtoisia tapoja:
 
-Elixirissä on sisäänrakennettu Date-moduuli, joka tarjoaa useita funktioita ja metodeja päivämäärien käsittelyyn. Voit esimerkiksi käyttää `Date.add/2` -funktiota lisätäksesi tai vähentääksesi tietyn ajanjakson nykyisestä päivämäärästä.
+On olemassa useita tapoja hakea nykyinen päivämäärä eri ohjelmointikielillä. Elixirissä käytetään Time-moduulia, mutta esimerkiksi Pythonissa käytetään datetime-moduulia.
 
-```elixir
-next_week = Date.add(current_date, 7, :day)
-```
+### Toteutus:
 
-Tämä koodi lisää 7 päivää nykyiseen päivämäärään ja tallentaa sen `next_week` -muuttujaan.
+Nykyisen päivämäärän hakeminen perustuu tietokoneen järjestelmäkellon tarjoamiin tiedonkeruu- ja tallennusominaisuuksiin. Ohjelma lukee järjestelmäkellon tallentaman päivämäärän ja ajan, ja muuntaa sen sitten haluttuun muotoon.
 
-Voit myös käyttää `Date.compare/2` -funktiota vertaamaan kahta päivämäärää keskenään.
+# Katso myös:
 
-```elixir
-{:ok, comparison} = Date.compare(next_week, current_date)
-IO.puts "Next week is #{comparison} than today."
-```
+Lisätietoa Elixirin Time-mallista: https://hexdocs.pm/elixir/DateTime.html
 
-Tässä koodissa vertaillaan `next_week`-muuttujan ja `current_date`-muuttujan välisiä päivämääriä ja tulostetaan ero konsoliin.
-
-## Katso myös
-
-- [Elixirin virallinen dokumentaatio Date-moduulista](https://hexdocs.pm/elixir/Date.html)
-- [Elixir School -oppimissivusto](https://elixirschool.com/fi/) tarjoaa kattavan oppaan Elixir-ohjelmointikieleen
-- [Jaaen Matsdotterin blogipostaus aiheesta](https://medium.com/@jannematthias/fun-with-exirls-date-module-4fdd39b3c470), jossa hän käy läpi erilaisia päivämääräfunktioita Elixirissä.
+Lisätietoa päivämäärän hakemisesta muilla ohjelmointikielillä: https://www.w3schools.com/jsref/jsref_getfullyear.asp

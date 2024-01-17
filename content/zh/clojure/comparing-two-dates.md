@@ -10,38 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
+## 什么 & 为什么?
+比较两个日期是指将两个日期进行比较，通常是通过比较这两个日期之间的时间差来确定哪一个日期早于或晚于另一个日期。程序员们经常进行这种操作，因为日期比较是许多应用程序中常用的功能，比如日历应用和任务管理工具。
 
-比较两个日期可能是一个常见的需求，例如在编写日程管理应用程序时。Clojure可以帮助我们轻松地完成这项任务，并且它的函数式编程风格使得代码更加简洁和易于维护。
-
-## 如何做
-
-比较两个日期可以通过Clojure的`clojure.instant/compare`函数来实现。这个函数接受两个日期作为参数，然后返回一个整数，表示两个日期的关系。以下是一个简单的例子：
-
+## 如何进行?
+下面是使用Clojure语言比较日期的示例代码和输出结果：
 ```Clojure
-(clojure.instant/compare (java.time.LocalDate/parse "2020-01-01") (java.time.LocalDate/parse "2020-12-31"))
+(import [java.util Date])
+(let [date1 (Date.),
+      date2 (Date. 2000 1 1)]
+  (compare date1 date2))
+
+; Output: 1
 ```
+上述代码中，首先我们通过`import`指令导入了Java的Date类，这个类用来表示日期和时间。然后我们定义了两个日期变量`date1`和`date2`，分别表示今天的日期和2000年1月1日的日期。最后，使用`compare`函数来比较这两个日期，返回值为1，表示`date1`日期晚于`date2`日期。
 
-这将返回一个负数，表示第一个日期在第二个日期之前。同样地，我们可以比较时间戳，使用`clojure.instant/compare`函数，并使用`java.time.Instant`类来表示时间戳。以下是一个示例：
+## 深入了解
+在计算机科学的早期，像比较日期这样的基本功能并不像现在这么容易。以前，日期是以不同的格式存储，并且使用基于当地文化的不同日历系统。这导致了在开发跨文化应用程序时经常出现日期错误的问题。
 
-```Clojure
-(clojure.instant/compare (java.time.Instant/parse "2020-01-01T00:00:00Z") (java.time.Instant/parse "2020-01-01T12:00:00Z"))
-```
+除了使用Clojure的`compare`函数来比较日期，我们也可以使用Java的`compareTo`函数来完成同样的操作。此外，也有许多第三方库可以用来解决日期比较的问题，比如Joda-Time和java.time包。
 
-这将返回一个负数，表示前一个时间戳在后一个时间戳之前。我们也可以使用`clojure.instant/compare`来比较具有相同日期的不同时间。以下是一个例子：
+在实现日期比较时，一个常见的问题是处理闰年。Clojure的`compare`函数和Java的`compareTo`函数都已经处理了这个问题，但是在使用第三方库时，需要注意是否需要手动处理闰年。
 
-```Clojure
-(clojure.instant/compare (java.time.LocalDate/parse "2020-01-01") (java.time.LocalTime/parse "12:00:00"))
-```
-
-这将返回0，表示这两个时间是相等的。
-
-## 深入探讨
-
-在Clojure中，日期和时间是一个不可变的对象，它们的值在创建之后就不会改变。这保证了我们对日期和时间进行比较时的准确性。Clojure还提供了其他一些有用的函数来处理日期和时间，例如`clojure.instant/instant`, `clojure.instant/now`, `clojure.instant/with-zone`等。我们还可以使用`java.time`包中的其他类来创建和处理日期和时间，例如`java.time.ZoneId`, `java.time.Duration`等。
-
-## 参考链接
-
-- [Clojure官方文档](https://clojuredocs.org/)
-- [Java 8日期和时间API文档](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
-- [Clojure比较函数文档](https://clojure.org/reference/data_structures#date_and_time_functions)
+## 相关资源
+- [Clojure官方文档关于日期和时间的介绍](https://clojure.org/reference/java_interop#_dates_and_times)
+- [Joda-Time官方网站](https://www.joda.org/joda-time/)
+- [Java 8中处理日期和时间的新API](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)

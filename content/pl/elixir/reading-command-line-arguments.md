@@ -1,7 +1,7 @@
 ---
-title:                "Wczytywanie argumentów z linii poleceń"
-html_title:           "Elixir: Wczytywanie argumentów z linii poleceń"
-simple_title:         "Wczytywanie argumentów z linii poleceń"
+title:                "Odczytywanie argumentów wiersza poleceń"
+html_title:           "Elixir: Odczytywanie argumentów wiersza poleceń"
+simple_title:         "Odczytywanie argumentów wiersza poleceń"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Files and I/O"
@@ -10,55 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i dlaczego?
 
-Czy kiedykolwiek zastanawiałeś się, jak programy są w stanie odczytywać argumenty z linii poleceń? W tym artykule dowiesz się, dlaczego jest to ważne i jak w praktyce wykorzystać czytanie argumentów z linii poleceń w Elixir.
+Wczytywanie argumentów wiersza poleceń jest procesem, w którym programista pobiera dane podane przez użytkownika przy uruchamianiu programu. Jest to przydatne, ponieważ pozwala na dostarczenie programowi konkretnych informacji lub opcji, co pozwala na bardziej spersonalizowane użycie programu.
 
-## Jak to zrobić
+## Jak to zrobić:
 
-Aby odczytać argumenty z linii poleceń w Elixir, należy użyć funkcji `System.argv/0` lub `System.argv/1`. Pierwsza z nich zwraca listę argumentów jako atomy, a druga jako ciągi znaków. Aby zobaczyć to w praktyce, przejdźmy do kodu:
+Aby wczytać argumenty wiersza poleceń w Elixir, należy użyć funkcji `System.argv`. Przykładowy kod wraz z oczekiwanym wyjściem wygląda następująco:
 
-```elixir
-# Przykładowy kod wykorzystujący `System.argv/0`
-args = System.argv()
+```Elixir
+# Przykładowy kod
+args = System.argv
 
-IO.puts "Otrzymane argumenty: #{inspect args}"
+# Wyjście
+["program_name", "arg1", "arg2"]
 ```
 
-```elixir
-# Przykładowy kod wykorzystujący `System.argv/1`
-args = System.argv("--flag argument1 argument2")
+## Coś więcej:
 
-IO.puts "Otrzymany wynik: #{inspect args}"
-```
+### Kontekst historyczny:
 
-Po uruchomieniu powyższych przykładowych kodów, powinniśmy otrzymać odpowiednio takie wyniki:
+W przeszłości, czytanie argumentów wiersza poleceń było jedynym sposobem na dostarczenie danych do programów. Jednak w dzisiejszych czasach istnieje wiele alternatywnych sposobów, takich jak wykorzystanie interfejsu użytkownika, aby umożliwić użytkownikom konfigurowanie opcji.
 
-`Otrzymane argumenty: [:elixir, :arg1, :arg2]`
+### Alternatywy:
 
-`Otrzymany wynik: ["--flag", "argument1", "argument2"]`
+Alternatywne metody dostarczania danych do programów mogą obejmować użycie plików konfiguracyjnych lub interfejsów użytkownika. Każda z tych metod ma swoje zalety i może być bardziej odpowiednia w zależności od danego zadania.
 
-Jak widać, funkcje `System.argv/0` i `System.argv/1` zwracają odpowiednio listę atomów i listę stringów. Dzięki temu możemy wygodnie odczytywać i przetwarzać podane argumenty.
+### Szczegóły implementacji:
 
-## Głębokie zanurzenie
+W Elixir, argumenty wiersza poleceń są dostępne poprzez wywołanie funkcji `System.argv`. Funkcja ta zwraca listę zawierającą nazwę programu i wszystkie podane argumenty. Można również użyć opcji wiersza poleceń do specyfikowania konkretnych argumentów lub ich kolejności.
 
-Pozwólmy sobie na nieco głębsze zanurzenie w temat czytania argumentów z linii poleceń w Elixir. Warto wiedzieć, że funkcje `System.argv/0` i `System.argv/1` nie są jedynymi sposobami odczytywania argumentów. Możemy również skorzystać z modułu `OptionParser`, który oferuje dodatkowe funkcjonalności, takie jak parsowanie flag czy argumentów wykorzystujących wartości domyślne.
+## Zobacz także:
 
-Poniższy przykład pokazuje, jak możemy korzystać z `OptionParser` w celu odczytania argumentów z linii poleceń:
+Niektóre przydatne źródła dotyczące wczytywania argumentów wiersza poleceń w Elixir:
 
-```elixir
-# Przykład użycia `OptionParser`
-args = ["--flag", "argument1", "argument2"]
-
-options = OptionParser.parse(args, [parse_flags: true, strict: false])
-
-IO.inspect options
-```
-
-W powyższym przykładzie, `OptionParser` zostanie użyty do parsowania argumentów `args`, uwzględniając ustawione flagi. Wynikiem będzie mapa zawierająca wszystkie parsowane opcje i wartości.
-
-## Zobacz także
-
-- [Dokumentacja Elixir na temat czytania argumentów z linii poleceń](https://hexdocs.pm/elixir/System.html#argv/0)
-- [Więcej informacji na temat modułu `OptionParser`](https://hexdocs.pm/elixir/OptionParser.html)
-- [Przykładowe kody, w których wykorzystywane są odczytywanie argumentów z linii poleceń w Elixir](https://gist.github.com/search?utf8=✓&q=elixir+command+line+args&type=)
+- Dokumentacja Elixir: https://hexdocs.pm/elixir/System.html#argv/0
+- Wprowadzenie do Elixir: https://elixir-lang.org/getting-started/modules.html#command-line-arguments
+- Wideo na YouTube: https://www.youtube.com/watch?v=3ZLcyR5l0aA

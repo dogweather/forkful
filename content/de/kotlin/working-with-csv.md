@@ -10,57 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+Was ist CSV und warum verwenden Programmierer es?
 
-CSV (Comma-Separated Values) ist ein beliebtes Dateiformat für den Austausch von Daten zwischen verschiedenen Programmen. Das Arbeiten mit CSV-Dateien kann hilfreich sein, um Daten effizient zu organisieren und zu analysieren. Mit Kotlin können Sie mithilfe von Bibliotheken wie 'Apache Commons CSV' und Funktionen wie 'split()' CSV-Dateien einfach verarbeiten.
+CSV steht für "Comma Separated Values" und ist ein universales Dateiformat zum Speichern von tabellarischen Daten. Programmierer verwenden es, um Daten in eine einfach lesbare und bearbeitbare Struktur zu bringen.
 
-## Wie man es tut
+Wie geht das?
 
-Um mit CSV in Kotlin zu arbeiten, müssen Sie zuerst die entsprechenden Bibliotheken importieren. Hier ist ein Beispiel, um eine CSV-Datei zu lesen und die Daten in eine Liste zu speichern:
+Kotlin bietet verschiedene Methoden, um mit CSV-Dateien zu arbeiten. Das CSV-Library von JetBrains ist eine gut dokumentierte und leicht zu verwendende Option.
+
+1. CSV-Datei lesen:
+
+Um eine CSV-Datei zu lesen, wird zunächst ein Reader-Objekt erstellt, das die CSV-Datei als Parameter erhält. Dann kann die Datenzeile für Zeile ausgelesen werden.
 
 ```Kotlin
-import org.apache.commons.csv.CSVFormat
-import java.io.FileReader
-
-val reader = FileReader("meine_datei.csv")
-val records = CSVFormat.DEFAULT.parse(reader).records
-
-for (record in records) {
-    // Hier können Sie auf die Daten in jeder Zeile zugreifen 
-    // record[0] ist die erste Spalte, record[1] die zweite usw.
+val reader = CSVReader(FileReader("meine_datei.csv"))
+val csvData = reader.readAll() // Liste aller Datenzeilen
+for (data in csvData) {
+    println(data) // Aufruf der einzelnen Datenzeilen
 }
 ```
 
-Um eine CSV-Datei zu schreiben, können Sie diese Funktion verwenden:
+2. CSV-Datei schreiben:
+
+Auch das Schreiben in eine CSV-Datei ist mit der CSV-Library von Kotlin möglich. Hier wird ein Writer-Objekt erstellt, dem die CSV-Datei und die zu schreibenden Daten übergeben werden. Anschließend können die Daten zeilenweise in die Datei geschrieben werden.
 
 ```Kotlin
-import org.apache.commons.csv.CSVFormat
-import java.io.FileWriter
-
-val writer = FileWriter("output.csv")
-val records = listOf(listOf("Spalte 1", "Spalte 2", "Spalte 3"), 
-                     listOf("Wert 1", "Wert 2", "Wert 3"))
-CSVFormat.DEFAULT.print(writer).use { printer ->
-    for (record in records) {
-        printer.printRecord(record)
-    }
-}
+val writer = CSVWriter(FileWriter("meine_neue_datei.csv"))
+val data = arrayOf("Spalte 1", "Spalte 2") // Daten, die geschrieben werden sollen
+writer.writeNext(data) // Schreiben der Daten in die CSV-Datei
 ```
 
-Dieses Beispiel liest eine Liste von List-Objekten und schreibt sie als Zeilen in die CSV-Datei.
+## Vertiefung
 
-## Tauchen wir tiefer ein
-
-CSV-Dateien folgen einem bestimmten Format, bei dem Spalten durch Kommas getrennt sind und jede Zeile eine neue Datenreihe darstellt. Es gibt jedoch auch verschiedene Konventionen innerhalb dieses Formats, wie z.B. die Verwendung von Anführungszeichen um Textfelder oder die Verwendung von unterschiedlichen Trennzeichen wie Tabs oder Semikolons.
-
-Um mit diesen Unterschieden umzugehen, können Sie bei der Verwendung von 'Apache Commons CSV' verschiedene Optionen angeben, wie z.B. das Trennzeichen, die Anführungszeichen und die Zeichenkodierung.
-
-Es ist auch wichtig zu beachten, dass CSV-Dateien keine Datentypen speichern. Alle Daten werden als Zeichenfolgen gelesen und müssen daher von Ihnen in den richtigen Datentyp konvertiert werden, z.B. in Zahlen oder Booleans.
-
-Es gibt auch andere nützliche Bibliotheken für die Arbeit mit CSV in Kotlin, wie z.B. die 'kotlin-csv' Bibliothek, die eine einfachere und modernere Schnittstelle bietet.
+- Historischer Kontext: CSV wurde bereits 1972 entwickelt und ist eines der ältesten Dateiformate. Es war ursprünglich für die Speicherung von Daten in Tabellenkalkulationsprogrammen gedacht.
+- Alternativen: Es gibt auch andere Formate wie JSON oder XML, aber CSV ist aufgrund seiner einfachen Struktur und der Vielzahl an unterstützten Programmen immer noch eines der beliebtesten Formate.
+- Implementierungsdetails: CSV besteht aus einfachen Textdateien, in denen die Daten durch Trennzeichen wie Kommas oder Semikolons voneinander getrennt sind. Die erste Zeile enthält in der Regel die Spaltenüberschriften.
 
 ## Siehe auch
 
-- [Offizielle Kotlin-Dokumentation für CSV](https://kotlinlang.org/docs/reference/io.html#working-with-files)
-- [Apache Commons CSV-Bibliothek](https://commons.apache.org/proper/commons-csv/)
-- [Kotlin-CSV-Bibliothek](https://github.com/doyaaaaaken/kotlin-csv)
+- [Kotlin CSV Library von JetBrains](https://github.com/JetBrains/kotlin/blob/master/libraries/stdlib/csv/README.md)
+- [Wikipedia Artikel über CSV](https://de.wikipedia.org/wiki/CSV_(Dateiformat))
+- [CSV-Format Spezifikation](https://tools.ietf.org/html/rfc4180)

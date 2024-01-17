@@ -1,7 +1,7 @@
 ---
-title:                "एक वेब पेज को डाउनलोड करना"
-html_title:           "PHP: एक वेब पेज को डाउनलोड करना"
-simple_title:         "एक वेब पेज को डाउनलोड करना"
+title:                "एक वेब पृष्ठ डाउनलोड करना"
+html_title:           "PHP: एक वेब पृष्ठ डाउनलोड करना"
+simple_title:         "एक वेब पृष्ठ डाउनलोड करना"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "HTML and the Web"
@@ -10,30 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
+PHP के लिए एक वेब पृष्ठ डाउनलोड करने का तरीका
 
-वेब पृष्ठ डाउनलोड करने का मुख्य कारण है कि उपयोगकर्ता दूसरों को उस पृष्ठ के साथ आसानी से अपना अनुभव साझा कर सकते हैं। यह भी उपयोगकर्ताओं को अनुकूल डेटा को सुरक्षित रखने में मदद करता है।
+## क्या और क्यों? 
+वेब पृष्ठ डाउनलोड करना क्या है और प्रोग्रामर्स इसे क्यों करते हैं? वेब पृष्ठ डाउनलोड करना एक मेहनत से भरे काम हो सकता है, लेकिन इससे हमें बहुत सारी महत्वपूर्ण सूचनाएं प्राप्त होती हैं, जैसे कि वेबसाइट के संरचना, सामग्री और अन्य जानकारी। हम PHP का उपयोग करके वेब पृष्ठ डाउनलोड कर सकते हैं और उसी समय उस पृष्ठ को प्रोसेस कर सकते हैं। 
 
-## कैसे करें
-
+## कैसे करें? 
 ```
 <?php
-$url = "https://www.example.com";
-$file = file_get_contents($url);
-
-echo $file;
+  $url = 'https://www.example.com';
+  $page = file_get_contents($url);
+  echo $page;
 ?>
 ```
 
-इस उदाहरण में, हमने `file_get_contents` फ़ंक्शन का उपयोग करके दिए गए URL से पृष्ठ को डाउनलोड किया है और उसे `echo` के माध्यम से प्रिंट किया है। आप अपनी जरूरत के अनुसार इसे अपनाकर और भी विस्तृत डाउनलोड प्रक्रिया बना सकते हैं।
+यह सरल प्रोग्राम में हमने file_get_contents() फ़ंक्शन का उपयोग करके एक URL से पृष्ठ डाउनलोड किया है और उसे प्राप्त की है। फिर हम उस पृष्ठ को echo फ़ंक्शन का उपयोग करके प्रिंट किया है। जो पृष्ठ आएगा वह यह होगा:
+```
+<html>
+<head>
+  <title>Example Domain</title>
+</head>
+<body>
+  <h1>Example Domain</h1>
+  <p>This domain is for use in illustrative examples in documents. You may use this domain in literature without prior coordination or asking for permission.</p>
+</body>
+</html>
+```
 
-## गहराई में जाएं
+और यदि हम file_get_contents() के बजाय cURL extension का उपयोग करना चाहते हैं तो हम इस तरह से कोड कर सकते हैं:
+```
+<?php
+  $url = 'https://www.example.com';
+  $ch = curl_init();
+  curl_setopt($ch, CURLOPT_URL, $url);
+  curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+  $page = curl_exec($ch);
+  curl_close($ch);
+  echo $page;
+?>
+```
 
-URL से पृष्ठ डाउनलोड करने के लिए, कभी-कभी कई प्रकार के डेटा भी आपको चाहिए होते हैं, जो उपयोगकर्ताओं को उस पृष्ठ के संबंध में अधिक जानकारी प्रदान करते हैं। आपको [cURL](https://www.php.net/manual/en/book.curl.php) जैसे और भी अलग-अलग विकल्प मिलेंगे, जिन्हें आप अपनी आवश्यकता के अनुसार उपयोग कर सकते हैं। साथ ही, आप सरल और सुरक्षित अनुरोध पद्धति के साथ विकेंध वेब विभिन्न वेब होस्टिंग प्लेटफ़ॉर्म्स पर डाउनलोड प्रोसेस को प्रकाशित कर सकते हैं।
+## गहराई में 
+वेब पृष्ठ डाउनलोड करना काफी पुरानी तकनीक है और पर्याप्त जानकारी प्राप्त करने के लिए आप इसे अलग-अलग तरीके से भी कर सकते हैं। मैंने ऊपर बताया है कि कैसे हम file_get_contents() और cURL extension का उपयोग करके डाउनलोड कर सकते हैं। छोटे परियोजनाओं में सामान्यतः file_get_contents() का ही उपयोग करा जाता है जबकि बड़े परियोजनाओं में cURL extension ज्यादातर पसंद किया जाता है। साथ ही आप cURL extension के साथ अनुकूलित और अनेक अन्य फीचर्स का भी उपयोग कर सकते हैं। 
 
-## इससे सम्बंधित
+## जारी रखें 
+आप इस लेख में बताये गए सूत्रों का उपयोग कर आप PHP में वेब पृष्ठ डाउनलोड कर सकते हैं। अगर आप ज्यादा जानना चाहते हैं तो आप यहां से और जानकारी प्राप्त कर सकते हैं: 
 
-- [PHP file_get_contents() Function](https://www.php.net/manual/en/function.file-get-contents.php)
-- [An Introduction to cURL in PHP](https://www.php.net/manual/en/book.curl.php)
-- [cURL Tutorial: How to use cURL and PHP](https://www.phpied.com/curl/)
-- [PHP cURL Tutorial: How to Create GET, POST, DELETE Requests](https://www.codeofaninja.com/2013/05/php-curl-tutorial.html)
+https://www.php.net/manual/en/function.file-get-contents.php 
+
+https://www.php.net/manual/en/curl.examples-basic.php

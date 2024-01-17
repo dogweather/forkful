@@ -1,7 +1,7 @@
 ---
-title:                "Sprawdzanie czy istnieje katalog."
-html_title:           "Rust: Sprawdzanie czy istnieje katalog."
-simple_title:         "Sprawdzanie czy istnieje katalog."
+title:                "Sprawdzanie czy istnieje katalog"
+html_title:           "Rust: Sprawdzanie czy istnieje katalog"
+simple_title:         "Sprawdzanie czy istnieje katalog"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Files and I/O"
@@ -10,50 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-#
+## Co i po co?
 
-# Dlaczego
+Sprawdzanie, czy katalog istnieje, jest często wykonywanym zadaniem przez programistów. Jest to po prostu sposób na upewnienie się, czy dany katalog istnieje przed wykonaniem innych operacji na nim. Przykładowo, może to być użyteczne w przypadku tworzenia plików lub przenoszenia ich do konkretnego katalogu.
 
-Sprawdzanie, czy dany katalog istnieje, jest ważnym elementem w procesie programowania. Wiele aplikacji wymaga dostępu do różnych katalogów, a udostępnienie tej funkcjonalności użytkownikom może poprawić doświadczenie korzystania z aplikacji.
+## Jak to zrobić:
 
-# Jak to zrobić
-
-Sprawdzenie, czy dany katalog istnieje, w języku Rust jest bardzo proste. Możemy to zrobić za pomocą metody `metadata()` z biblioteki `std::fs`. Oto przykład kodu:
-
-```rust
+```Rust
 use std::fs;
 
-let result = fs::metadata("/sciezka/do/katalogu");
+let result = fs::metadata("nazwa_katalogu"); // sprawdzenie metadanych katalogu
 
-if result.is_ok() {
-    println!("Katalog istnieje.");
-} else {
-    println!("Katalog nie istnieje.");
+if let Ok(metadata) = result { // sprawdzanie czy metadane istnieją
+    if metadata.is_dir() { // sprawdzenie czy to jest katalog
+        println!("Katalog istnieje!");
+    }
+} else {  // w przypadku niepowodzenia
+    println!("Katalog nie istnieje!");
 }
 ```
 
-Przykładowy wynik dla istniejącego katalogu wyglądałby tak:
+## Głębszy zanurzenie:
 
-```
-Katalog istnieje.
-```
+W przeszłości, sprawdzanie czy katalog istnieje było zadaniem bardziej skomplikowanym, często wymagającym korzystania z dodatkowych bibliotek lub funkcji. Jednak od wprowadzenia Rust w wersji 1.0, funkcja `fs::metadata()` jest dostępna w standardowej bibliotece, co znacznie ułatwia zadanie.
 
-A dla nieistniejącego:
+Alternatywną metodą sprawdzania czy katalog istnieje jest użycie funkcji `fs::read_dir()`, która zwraca iterator plików w danym katalogu. Jeśli iterator jest pusty, oznacza to, że katalog nie istnieje.
 
-```
-Katalog nie istnieje.
-```
+Implementacja tej funkcji może się różnić w zależności od systemu operacyjnego, jednak w przypadku popularnych systemów (jak Windows czy Linux), ta metoda jest dobrze zoptymalizowana, więc nie ma potrzeby martwić się o wydajność.
 
-# Wnikliwsze spojrzenie
+## Zobacz też:
 
-Metoda `metadata()` zwraca strukturę `std::fs::Metadata`, która zawiera informacje o danym pliku lub katalogu. Wykorzystując odpowiednie metody tej struktury, możemy uzyskać informacje takie jak data modyfikacji, rozmiar czy uprawnienia dostępu.
-
-Możemy również wykorzystać metodę `fs::read_dir()` w celu pobrania listy plików i podkatalogów w danym katalogu. Może to być przydatne przy przeglądaniu zawartości katalogu lub w przypadku tworzenia listy plików do przetworzenia.
-
-# Zobacz również
-
-Możesz dowiedzieć się więcej o sprawdzaniu katalogów i plików w języku Rust, korzystając z poniższych zasobów:
-
-- [Dokumentacja języka Rust - std::fs](https://doc.rust-lang.org/std/fs/)
-- [Kurs programowania w Rust - Sprawdzanie plików i katalogów](https://www.javatpoint.com/rust-checking-files-and-directories)
-- [Blog o programowaniu w Rust - Praca z katalogami i plikami](https://miladrambazam.github.io/blog/rust-working-with-directories/)
+- [Seria Rust and WinAPI: Tworzenie, odczytywanie, zmienianie i usuwanie plików i katalogów](https://www.youtube.com/playlist?list=PLprxlsTjFZ96yzN1iwQzuSa6n0Y3SSBWH)
+- [Dokumentacja Rust: fs::metadata()](https://doc.rust-lang.org/std/fs/fn.metadata.html)

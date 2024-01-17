@@ -1,7 +1,7 @@
 ---
-title:                "Perusautentikoinnilla http-pyynnön lähettäminen"
-html_title:           "Python: Perusautentikoinnilla http-pyynnön lähettäminen"
-simple_title:         "Perusautentikoinnilla http-pyynnön lähettäminen"
+title:                "HTTP-pyynnön lähettäminen perusautentikoinnilla."
+html_title:           "Python: HTTP-pyynnön lähettäminen perusautentikoinnilla."
+simple_title:         "HTTP-pyynnön lähettäminen perusautentikoinnilla."
 programming_language: "Python"
 category:             "Python"
 tag:                  "HTML and the Web"
@@ -10,69 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä & Miksi?
+HTTP-pyynnön lähettäminen perusautentikoinnin avulla tarkoittaa sitä, että lähettäessämme pyynnön verkkosivulle, järjestelmä pyytää meiltä käyttäjätunnusta ja salasanaa ennen kuin se antaa meille pääsyn pyydettyyn sisältöön. Tätä tehdään yleensä tietoturvasyistä, jotta vain oikeilla käyttäjillä on pääsy tiettyihin sivustoihin tai palveluihin.
 
-Miksi lähettää HTTP-pyyntö käyttäjätunnuksella ja salasanalla? Monissa tapauksissa palveluntarjoajat vaativat käyttäjiä todentamaan tunnistetietonsa ennen kuin he saavat pääsyn tiettyihin resursseihin. Tämä tapahtuu yleensä lähettämällä HTTP-pyyntö käyttäjätunnuksella ja salasanalla, jotta käyttäjä voidaan tunnistaa ja tarvittaessa valtuuttaa.
-
-## Kuinka
-
-```Python
-import requests
-
-# Määritä pyyntö parametrit
-url = "https://www.example.com/api"
-username = "käyttäjätunnus"
-password = "salasana"
-
-# Luo autentikointitiedot käyttäjätunnuksella ja salasanalla
-auth = (username, password)
-
-# Lähetä HTTP-pyyntö autentikointitiedoilla
-response = requests.get(url, auth=auth)
-
-# Tulosta vastauksen statuskoodi
-print(response.status_code)
-```
-```
-200
-```
+## Kuinka:
 
 ```Python
 import requests
-import base64
 
-# Määritä pyyntö parametrit
-url = "https://www.example.com/api"
-username = "käyttäjätunnus"
-password = "salasana"
+url = 'https://example.com' 
+# Replace with the URL of the website or service you want to access
 
-# Luo autentikointistringi
-auth_string = username + ":" + password
+username = 'example_username'
+# Replace with your own username 
 
-# Muunna autentikointistringi base64-muotoon
-base64_auth_string = base64.b64encode(auth_string.encode("utf-8"))
+password = 'example_password'
+# Replace with your own password
 
-# Luo otsikkoparametrit
-headers = {
-    "Authorization": "Basic " + base64_auth_string.decode("utf-8")
-}
+# Sending a GET request with basic authentication 
+response = requests.get(url, auth=(username, password))
 
-# Lähetä HTTP-pyyntö otsikkoparametreilla
-response = requests.get(url, headers=headers)
+# Accessing the response's status code
+print(response.status_code) # Should output 200 if successful
 
-# Tulosta vastauksen statuskoodi
-print(response.status_code)
+# Accessing the response's content
+print(response.content) # Will contain the website's HTML
+
+# Sending a POST request with basic authentication
+response = requests.post(url, auth=(username, password), json={'key': 'value'})
+
+# Accessing the response's status code
+print(response.status_code) # Should output 200 if successful
+
+# Accessing the response's content
+print(response.content) # Will contain the response from the server
 ```
-```
-200
-```
 
-## Syväsukellus
+## Syväsukellus:
+Perusautentikointi kehitettiin alun perin HTTP-protokollaan, kun tarve muodostaa suojattuja yhteyksiä syntyi. Nykyään on olemassa myös muita tunnistautumismenetelmiä, kuten Digest-autentikointi, jotka tarjoavat parempaa tietoturvaa ja salauksen vaihtoehtona perusautentikoinnille. Perusautentikointi on kuitenkin edelleen yleisesti käytetty menetelmä, koska se on helppo toteuttaa ja tukee lähes kaikkia verkkopalveluita.
 
-Basic-authentikaatio on yksi yleisimmistä tapoista autentikoida käyttäjät web-sovelluksissa. Se perustuu käyttäjän lähettämään käyttäjätunnukseen ja salasanaan, jotka koodataan base64-muotoon ja lähetetään HTTP-pyynnön otsikkoparametreina tai autentikointitietoina. On tärkeää varmistaa, että käyttäjätunnus ja salasana eivät ole avoimesti nähtävillä, ja salaaminen base64-muotoon ei tarjoa täydellistä turvallisuutta.
-
-## Katso myös
-
-- [Python Requests -dokumentaatio](https://2.python-requests.org/en/master/)
-- [Base64 -moduulin dokumentaatio](https://docs.python.org/3/library/base64.html)
-- [HTTP-pyyntö ja vastaus -tiedot W3Schoolsissa](https://www.w3schools.com/python/module_requests.asp)
+## Katso myös:
+- [Pythonin virallinen Requests-kirjaston dokumentaatio](https://requests.readthedocs.io/en/latest/)
+- [Information Security - Basic HTTP Authentication](https://www.infosecurity.nl/knowledge-item/N58395/Basic-HTTP-authentication)

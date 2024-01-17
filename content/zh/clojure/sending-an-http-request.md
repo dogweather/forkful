@@ -10,42 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 为什么要发送HTTP请求？
+# 什么是发送HTTP请求及其原因？
 
-当我们浏览网页、使用手机应用或者和服务器交互数据时，我们都在与HTTP请求打交道。通过发送HTTP请求，我们能够获取所需的数据或者与其他系统进行通信，这在现代软件开发中非常常见。
+发送HTTP请求是指通过网络协议HTTP来请求远程服务器上的资源。编程人员通常会使用发送HTTP请求来获取数据，例如从一个API接口获取数据，或者与远程服务器进行通信。
 
-## 如何发送HTTP请求
+# 如何发送HTTP请求？
 
-我们可以使用Clojure的内置库`clojure.java.net`来发送HTTP请求。下面是一个简单的示例，我们将发送GET请求到一个API，并打印出响应内容：
-
-```clojure
-(require '[clojure.java.net :as http])
-
-(defn send-request [url]
-  (-> url
-    (http/request)
-    (http/response)
-    (http/entity)
-    (slurp)))
-
-(def response (send-request "https://dog.ceo/api/breeds/image/random"))
-(println response)
+```Clojure
+;; 首先导入Clojure内置的core.async库
+(ns http-example
+  (:require [clojure.core.async :as async]))
+;; 使用core.async库中的<!运算符接收远程服务器的响应
+(async/<! "http://example.com")
 ```
 
-运行以上代码，我们将得到一个包含随机狗狗图片链接的字符串。
+运行以上代码后，将会从http://example.com获取远程服务器的响应，这可以是HTML页面、JSON数据等，取决于请求的URL和远程服务器的响应。
 
-```clojure
-{:data {:image "https://images.dog.ceo/breeds/doberman/n02107142_1293.jpg", :message "https://images.dog.ceo/breeds/doberman/n02107142_1293.jpg", :status "success"}}
-```
+## 深入了解
 
-## 深入了解HTTP请求
+发送HTTP请求是一种常见的网络编程技术，它可以追溯到20世纪90年代。除了Clojure内置的core.async库，也可以使用其他第三方库来发送HTTP请求，例如clj-http和http-kit。
 
-HTTP是一种客户端-服务器协议，客户端通过发送请求获得服务器端的响应。HTTP请求由请求方法、URL、请求头和可选的请求体组成。主要的请求方法包括GET、POST、PUT、DELETE等。
+## 参考资料
 
-除了使用内置库，我们还可以使用第三方库如`clj-http`来发送HTTP请求。这些库提供了额外的特性，如错误处理和异步请求。
-
-# 同样也看看这些
-
-- [HTTP请求的详细文档](https://clojure.github.io/clojure/clojure.java.net-api.html)
-- [Clj-http库的文档](https://clojars.org/clj-http)
-- [HTTP请求的常见问题解答](https://stackoverflow.com/questions/32306827/clojure-http-request-example)
+https://clojure.org/reference/protocols#_sending_http_requests
+https://github.com/dakrone/clj-http
+https://http-kit.org

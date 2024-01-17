@@ -1,7 +1,7 @@
 ---
-title:                "Ein neues Projekt starten"
-html_title:           "Java: Ein neues Projekt starten"
-simple_title:         "Ein neues Projekt starten"
+title:                "Eine neue Projekt beginnen"
+html_title:           "Java: Eine neue Projekt beginnen"
+simple_title:         "Eine neue Projekt beginnen"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Getting Started"
@@ -10,37 +10,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Warum
+## Was & Warum?
+Ein neues Projekt in der Programmierung zu starten bedeutet, dass man sich darauf vorbereitet, eine neue Idee umzusetzen oder ein vorhandenes Problem zu lösen. Programmierer tun dies, um neue Fähigkeiten zu erlernen, Herausforderungen zu meistern oder einfach etwas Neues zu schaffen.
 
-Warum sollte jemand ein neues Projekt beginnen? Es gibt viele Gründe - von der Erschaffung von etwas Neuem bis hin zur Verbesserung bestehender Lösungen. Egal aus welchem Grund, es ist immer aufregend, in ein neues Projekt einzutauchen und kreative Möglichkeiten zu entdecken.
-
-# Wie gehe ich vor?
-
-Der erste Schritt bei der Erstellung eines Java-Projekts ist die Installation der neuesten Version von Java Development Kit (JDK). Stellen Sie sicher, dass alles korrekt installiert wurde, indem Sie "javac -version" in Ihrem Terminal eingeben. Dann können Sie mit der Erstellung Ihrer Java-Datei beginnen.
-
+## Wie geht's?
 ```Java
-public class HelloWorld {
+public class NeueProjekt {
     public static void main(String[] args) {
-        System.out.println("Hallo Welt!"); // Ausgabe: Hallo Welt!
+        System.out.println("Willkommen in meinem neuen Projekt!");
     }
 }
 ```
 
-Es ist wichtig, die Struktur und Konventionen von Java-Dateien zu beachten. Der Dateiname sollte mit dem Klassennamen übereinstimmen und die Dateiendung ".java" haben. Verwenden Sie Klassen und Methoden, um Ihren Code übersichtlich zu gestalten und stellen Sie sicher, dass jeder Klassennamen großgeschrieben wird. Die Methode "main" ist der Einstiegspunkt für Ihr Programm und muss wie oben gezeigt deklariert werden.
+Output:
+> Willkommen in meinem neuen Projekt!
 
-# Tiefes Eintauchen
+## Tief tauchen
+Um ein neues Projekt zu starten, solltest du über grundlegende Programmierkenntnisse und eine Idee für dein Projekt verfügen. Es gibt verschiedene Programmiersprachen wie Java, um ein Projekt umzusetzen. Alternativen dazu könnten Python oder C++ sein. Um eine Idee zu entwickeln, könntest du dich von bestehenden Projekten inspirieren lassen oder ein Problem identifizieren, das du lösen möchtest.
 
-Bevor Sie mit der Implementierung Ihres Projekts beginnen, ist es wichtig, ein Verständnis für die grundlegenden Konzepte von Java zu haben. Hier sind einige wichtige Aspekte, die Sie beachten sollten:
-
-- Klassen und Objekte: Java ist eine objektorientierte Sprache, daher sollte Ihr Code in Klassen organisiert sein. Klassen sind Vorlagen für Objekte, die bestimmte Eigenschaften und Methoden haben.
-- Variablen und Datentypen: Variablen werden verwendet, um Daten zu speichern. In Java müssen Variablen deklariert werden, bevor sie verwendet werden, und müssen einen bestimmten Datentyp haben.
-- Kontrollstrukturen: Diese ermöglichen es Ihnen, Entscheidungen und Wiederholungen in Ihrem Code zu treffen. Beispiele hierfür sind "if-else" und "for-Schleifen".
-- Pakete und Importe: Pakete dienen dazu, Ihren Code in logische Bereiche zu unterteilen. Verwenden Sie Importe, um Klassen aus anderen Paketen in Ihrem Code zu verwenden.
-
-Es gibt noch viele weitere Konzepte in Java, die es zu erkunden gilt. Stellen Sie sicher, dass Sie ein solides Fundament haben, bevor Sie mit Ihrem Projekt beginnen.
-
-# Siehe auch
-
-- [Java-Tutorial von Oracle](https://docs.oracle.com/javase/tutorial/)
-- [Java-Grundkurs auf Codecademy](https://www.codecademy.com/learn/learn-java)
-- [Java bei Wikipedia](https://de.wikipedia.org/wiki/Java_(Programmiersprache))
+## Siehe auch
+- [Die Geschichte von Java](https://dzone.com/articles/the-history-of-java) 
+- [Java vs. Python: Der Kampf der Programmiersprachen](https://towardsdatascience.com/java-vs-python-has-the-cobra-overthrown-the-duke-113b6d8193fa)

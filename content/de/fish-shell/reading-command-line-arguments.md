@@ -1,7 +1,7 @@
 ---
-title:                "Lesen von Befehlszeilenargumenten"
-html_title:           "Fish Shell: Lesen von Befehlszeilenargumenten"
-simple_title:         "Lesen von Befehlszeilenargumenten"
+title:                "Lesen von Eingabeparametern"
+html_title:           "Fish Shell: Lesen von Eingabeparametern"
+simple_title:         "Lesen von Eingabeparametern"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Files and I/O"
@@ -10,57 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was & Warum?
 
-Wenn du ein erfahrener Programmierer bist oder einfach nur ein Interesse an der Kommandozeile hast, ist es wichtig zu wissen, wie man Argumente in der Fish Shell liest. Dies hilft dir, effektiver und schneller zu arbeiten, da du damit deine Skripte und Befehle anpassen und automatisieren kannst.
+Das Lesen von Befehlszeilenargumenten ist ein grundlegender Teil der Programmierung in Fish Shell. Es ermöglicht Programmierern, Eingaben von Benutzern effizient zu verarbeiten und ihre Programme interaktiver zu gestalten.
 
-## Wie geht's?
-
-Um Argumente in der Fish Shell zu lesen, kannst du das `argparse`-Modul verwenden, das bereits in Fish integriert ist. Hier ist ein Beispielcode, der alle Argumente, die beim Aufruf des Skripts übergeben werden, ausgibt:
+## Wie das geht:
+Fish Shell bietet eine einfache Syntax zum Lesen von Argumenten aus der Befehlszeile. Hier ist ein Beispiel:
 
 ```Fish Shell
-#!/usr/bin/env fish
-
-use argparse
-
-function parse_arguments -d "Parse command line arguments"
-    set -l parser (argparse -p "My Script" -d "This is my script")
-    argparse::add_argument $parser "argument"
-    argparse::parse $parser \$argv
-    echo (argparse::get_argument $parser "argument")
-end
-
-parse_arguments
+set name $argv[1]
+echo "Hallo, $name!"
 ```
+Dieser Code liest das erste Argument von der Befehlszeile und weist es der Variable "name" zu. Dann wird der Wert dieser Variable in einer Ausgabe verwendet.
 
-Angenommen, das obige Skript wurde als `myscript.fish` gespeichert, hier sind einige Beispiele für die Ausgabe, je nachdem, welche Argumente übergeben wurden:
+Wenn wir also Folgendes in der Befehlszeile eingeben:
 
 ```
-$ ./myscript.fish hello
-Hello
-
-$ ./myscript.fish -h
-My Script
-This is my script
-
-$ ./myscript.fish --help
-My Script
-This is my script
+fish read-arguments.fish Max
+```
+erhalten wir die Ausgabe:
+```
+Hallo, Max!
 ```
 
-## Tief tauchen
+## Tiefere Einblicke:
+Das Lesen von Befehlszeilenargumenten ist keine Erfindung von Fish Shell. Es ist ein Konzept, das in vielen anderen Programmiersprachen und Shell-Umgebungen verwendet wird. Einige alternative Methoden zum Lesen von Argumenten sind die Verwendung von Umgebungsvariablen oder die Verwendung des Programmierungsmusters "Option-Argument". Die Implementierung von Argumentenlesung in Fish Shell basiert auf der Verwendung des globalen argv-Arrays.
 
-Das `argparse`-Modul bietet ein umfangreiches Set an Funktionen, mit denen du die Argumente auswerten und verwenden kannst. Hier sind einige Beispiele für weitere Funktionen, die du verwenden kannst:
-
-- `argparse::add_argument` - Fügt ein Argument mit einem angegebenen Namen hinzu.
-- `argparse::add_option` - Fügt eine Option mit einem angegebenen Namen hinzu.
-- `argparse::add_subparser` - Fügt einen Subparser hinzu, um verschiedene Befehle in einem Skript zu verarbeiten.
-- `argparse::parse` - Verarbeitet die übergebenen Argumente und speichert sie in einem Parserobjekt.
-- `argparse::get_argument` - Ruft den Wert eines bestimmten Arguments aus dem Parserobjekt ab.
-
-Für eine vollständige Liste aller Funktionen und weitere Beispiele kannst du die offizielle Dokumentation des Fish-Teams unter [https://fishshell.com/docs/current/index.html#argparse](https://fishshell.com/docs/current/index.html#argparse) besuchen.
-
-## Siehe auch
-
-- [Die offizielle Fish Shell-Dokumentation](https://fishshell.com/docs/current/)
-- [Eine Einführung in die Fish Shell für Einsteiger](https://linuxhint.com/getting-started-with-fish-shell/)
+## Siehe auch:
+- [Die offizielle Fish Shell Dokumentation](https://fishshell.com/docs/current/index.html)
+- [Ein Tutorial zum Lesen von Argumenten in Fish Shell](https://medium.com/@clauswitt/how-to-get-command-line-arguments-in-fish-shell-730d69c6b7a3)
+- [Weitere Informationen zu Alternativen zum Lesen von Argumenten](https://stackoverflow.com/questions/14496251/what-is-the-difference-between-command-line-arguments-and-environment-variables)

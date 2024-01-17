@@ -10,36 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
 
-Att starta ett nytt projekt kan vara spännande och givande. Det ger dig möjlighet att utveckla dina färdigheter som programmerare, skapa något unikt och kanske till och med tjäna pengar.
+Att starta ett nytt programmeringsprojekt är när du skapar en ny applikation, program eller hemsida från grunden. Programutvecklare gör detta för att skapa något unikt och anpassat för deras behov. Det ger också möjlighet att lära sig nya tekniker och ha full kontroll över koden.
 
-## Hur man börjar
-
-Att starta ett nytt projekt i Swift är enkelt. Först och främst behöver du ha Swift-programvaran installerad på din dator. Du kan ladda ner den från Apples officiella hemsida. För att skriva kod behöver du en textredigerare eller en integrerad utvecklingsmiljö (IDE) som Xcode. När du har allt installerat är du redo att börja koda.
-
-För att skapa ett nytt projekt i Swift kan du följa dessa steg:
-
-1. Öppna Xcode och välj "Create a new Xcode project" från startskärmen.
-2. Välj "Application" under iOS-fliken och välj sedan "Single View App" som mall.
-3. Fyll i projektinformationen som heter, organisation, språk och enheter.
-4. Välj sedan var du vill spara ditt projekt och klicka på "Create".
-
-Nu har du startat ditt nya Swift-projekt och Xcode har skapat en grundläggande kodstruktur för dig. Du kan nu börja skriva din kod och se resultatet i simuleringen eller på din enhet.
+## Hur man:
 
 ```Swift
-print("Hej världen!")
+// Skapa ett nytt projekt
+let nyttProjekt = Projekt()
+
+// Ange projektets namn
+nyttProjekt.namn = "Min nya app"
+
+// Lägg till funktionalitet
+nyttProjekt.läggTillFunktionalitet("Logga in")
+nyttProjekt.läggTillFunktionalitet("Registrering")
+nyttProjekt.läggTillFunktionalitet("Användarprofil")
+
+// Bygg projektet
+nyttProjekt.bygg()
+
+// Visa resultatet
+print("Mitt nya projekt är klart! Nu kan jag börja använda det.")
 ```
-Output: Hej världen!
 
-## På djupet
+Output:
+```
+Mitt nya projekt är klart! Nu kan jag börja använda det.
+```
 
-Att starta ett nytt projekt i Swift ger dig möjlighet att välja mellan flera olika mallar beroende på typen av applikation du vill skapa. Du kan också lägga till olika paket och tredjepartsbibliotek för att hjälpa dig med utvecklingen. Dessutom kan du utnyttja Swifts många funktioner som typsäkerhet, funktionell programmering och enumeratorer för att skriva effektiv och lättläst kod.
+## Deep Dive
 
-Att starta ett nytt projekt ger dig också möjlighet att lära dig nya koncept och utmaningar. Du kan utforska Swifts olika funktioner och använda dem på ett kreativt sätt för att skapa en unik och funktionell applikation. Och vem vet, kanske ditt nya projekt blir nästa stora succé?
+Att starta ett nytt programprojekt är en viktig del av programutveckling. Det ger dig möjlighet att utveckla något från grunden och skriva kod som är skräddarsydd för dina specifika behov. Historiskt sett var det vanligt att starta projekt från en grundmall, men med dagens utvecklingsverktyg är det enkelt att starta ett nytt projekt och bygga det från grunden.
+
+Andra alternativ till att starta ett nytt projekt inkluderar att använda ett befintligt projekt och bygga vidare på det eller att använda mallar som förenklar utvecklingsprocessen. Men att starta ett nytt projekt ger dig full kontroll över koden och möjlighet att utveckla en unik applikation.
 
 ## Se även
 
-- [Officiell Swift-hemsida](https://developer.apple.com/swift/)
-- [Xcode](https://developer.apple.com/xcode/)
-- [Tutorium för Swift](https://www.raywenderlich.com/category/swift)
+För mer information om att starta ett nytt projekt i Swift, kan du kolla in dessa länkar:
+
+- [Apple Developer: Getting Started with Swift](https://developer.apple.com/swift/getting-started/)
+- [Swift.org: The Swift Programming Language](https://docs.swift.org/swift-book/)
+- [raywenderlich.com: Getting Started with Swift](https://www.raywenderlich.com/323-getting-started-with-swift)

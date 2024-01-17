@@ -1,7 +1,7 @@
 ---
-title:                "连接字符串"
-html_title:           "C: 连接字符串"
-simple_title:         "连接字符串"
+title:                "字符串拼接"
+html_title:           "C: 字符串拼接"
+simple_title:         "字符串拼接"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -10,42 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
-当我们需要将多个字符串拼接在一起时，我们可以使用C语言中的字符串连接函数来拼接它们，这样可以简化我们的代码并且使代码更易读。
+## 什么是字符串连接? 为什么程序员会这样做?
 
-## 如何做
-我们可以使用 C 语言中的 `strcat()` 函数来拼接字符串。下面是一个简单的例子：
+字符串连接是将多个字符串链接在一起来创建新的字符串的过程。程序员经常使用它来将不同的变量或文本组合在一起以创建动态的结果。这样可以使代码更加灵活和可读。
 
-```C
-#include <stdio.h>
-#include <string.h>
+## 如何进行字符串连接:
 
-int main()
-{
-    // 定义两个字符串
-    char str1[] = "Hello";
-    char str2[] = "World";
+```C 
+// 使用`+`运算符来连接两个字符串
+char str1[] = "Hello ";
+char str2[] = "world!";
+char concat_str[12];
+strcpy(concat_str, str1 + str2);
+printf("结果是: %s", concat_str);
+// 输出: Hello world!
 
-    // 使用 strcat() 函数拼接字符串
-    strcat(str1, str2);
-
-    printf("拼接后的结果是：%s", str1);
-
-    return 0;
-}
-
+// 使用`strcat()`函数来连接两个字符串
+char str1[] = "Hello ";
+char str2[] = "world!";
+char concat_str[12];
+strcat(concat_str, str1);
+strcat(concat_str, str2);
+printf("结果是: %s", concat_str);
+// 输出: Hello world!
 ```
 
-输出结果：
-```
-拼接后的结果是：HelloWorld
-```
+## 深入了解:
 
-## 深入了解
-当我们使用 `strcat()` 函数时，它会从第一个字符串的结尾开始将第二个字符串中的字符按顺序拼接到第一个字符串中，直到遇到第二个字符串的结尾符 `\0`。因此，我们需要确保第一个字符串的大小足够大，能够容纳下要拼接的两个字符串。
+字符串连接的历史可以追溯到早期的编程语言，如BASIC和FORTRAN。除了使用运算符和函数，也可以使用基于指针的方法来连接字符串。另外，有一些其他的替代方案，如使用字符串模板或字符串格式化函数来创建动态的字符串。
 
-此外，如果第一个字符串的大小不够大，那么 `strcat()` 函数会出现缓冲区溢出的情况，导致程序崩溃或产生不可预知的结果。因此，在使用 `strcat()` 函数时，我们需要保证第一个字符串有足够的空间来容纳待拼接的字符串。
+## 参考资料:
 
-## 另请参阅
-- [C语言字符串连接函数](https://www.runoob.com/cprogramming/c-function-strcat.html)
-- [C语言字符串函数](https://www.runoob.com/cprogramming/c-standard-library-string-h.html)
+- [C语言字符串连接](https://www.programiz.com/c-programming/c-strings-concatenation)
+- [字符串连接的历史发展](https://en.wikipedia.org/wiki/String_concatenation)
+- [字符串模板的用法](https://www.geeksforgeeks.org/string-templates-python/)

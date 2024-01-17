@@ -10,45 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¿Qué es y por qué se usa?
 
-Trabajar con archivos CSV puede ser muy útil cuando se trata de analizar grandes conjuntos de datos. Además, es una forma sencilla y conveniente de guardar y compartir datos en formato tabular.
+Trabajar con CSV (Comma Separated Values) significa manipular datos que están organizados en una tabla, donde cada columna está separada por una coma. La mayoría de los programadores trabajan con CSV debido a su facilidad de uso y flexibilidad en la manipulación de datos.
 
-## Cómo hacerlo
+## Cómo hacerlo:
 
-Para trabajar con archivos CSV en Clojure, primero necesitamos importar la librería "clojure.data.csv". Luego, podemos utilizar la función "csv/read" para leer un archivo CSV y convertirlo en una secuencia de mapas en donde cada mapa representa una fila del archivo.
+Para trabajar con CSV en Clojure, podemos utilizar la librería "clojure.data.csv". Primero, debemos importarla:
 
-```
-(require '[clojure.data.csv :as csv])
+`Clojure (require '[clojure.data.csv :as csv])`
 
-(def csv-data (csv/read "datos.csv"))
-
-;; csv-data => ({:nombre "Ana" :edad 30 :ciudad "Madrid"}
-;;               {:nombre "Juan" :edad 25 :ciudad "Barcelona"}
-;;               {:nombre "Sofía" :edad 33 :ciudad "Valencia"})
-```
-
-Podemos seleccionar columnas específicas utilizando la función "csv/cut" y aplicar funciones de agregación a los datos utilizando "csv/select". Por ejemplo, podemos obtener la suma de todas las edades en nuestro conjunto de datos:
+Luego, podemos utilizar la función "with-csv-reader" para leer un archivo CSV y convertir sus datos a una lista:
 
 ```
-(csv/select (csv/cut csv-data [:edad]) :sum)
-
-;; output => {:edad 88}
+Clojure (with-csv-reader
+  (io/reader "data.csv")
+  (fn [line] (println line)))
 ```
 
-También podemos utilizar la función "csv/write" para escribir datos en formato CSV a un archivo.
+Esta función ejecutará la función que le pasamos como segundo argumento en cada línea del archivo, imprimiendo cada línea en la consola. También podemos utilizar la función "parse-csv" para convertir los datos del archivo en una lista de listas, donde cada lista representa una fila de la tabla:
 
 ```
-(csv/write [["Rodrigo" 27 "Sevilla"] ["Laura" 29 "Bilbao"]] "nuevos_datos.csv")
+Clojure (->> (with-open [r (io/reader "data.csv")]
+                      (parse-csv r))
+           (map #(for [i (range (count %))]
+                         ({(get-in % [0 i]) (nth % (inc i))}))))
 ```
 
-Esto generará un nuevo archivo CSV con los datos proporcionados.
+Este código primero abre el archivo y lo convierte en una lista de listas utilizando la función "parse-csv". Luego, utilizamos "map" para recorrer cada lista y crear un mapa con las columnas como claves y los datos correspondientes como valores.
 
-## Profundizando
+## Profundizando:
 
-Además de las funciones mencionadas anteriormente, la librería "clojure.data.csv" ofrece una variedad de herramientas para trabajar con archivos CSV, como funciones para filtrar, ordenar y combinar datos, así como opciones para personalizar el formato de escritura de datos. También podemos utilizar la librería "clojure.java.jdbc" para conectarnos y escribir datos a una base de datos a partir de un archivo CSV.
+El formato CSV se ha vuelto muy popular en la manipulación de datos debido a su simplicidad y flexibilidad. Sin embargo, también existen otros formatos como JSON o XML que también son utilizados para almacenar y compartir datos estructurados. En Clojure, existen diferentes librerías para trabajar con estos formatos, como "clojure.data.json" o "clojure.data.xml".
 
-## Ver también
+En cuanto a la implementación de la manipulación de CSV en Clojure, esta se realiza utilizando la librería "clojure.data.csv" que utiliza la función "parse-csv" para convertir los datos del archivo en una secuencia de secuencias. Luego, podemos utilizar funciones de Clojure como "map" o "filter" para manipular estos datos según nuestras necesidades.
 
-- [Documentación oficial de Clojure sobre la librería "clojure.data.csv"](https://clojure.github.io/data.csv/)
-- [Tutorial sobre cómo trabajar con archivos CSV en Clojure](https://www.infoq.com/articles/clojure-csv-data-analytics/)
+## Ver también:
+
+- Documentación oficial de la librería "clojure.data.csv"
+- Ejemplos de manipulación de CSV en Clojure en el sitio web "4clojure.com"
+- Librería "clojure.data.json" para trabajar con el formato JSON en Clojure

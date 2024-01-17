@@ -1,7 +1,7 @@
 ---
-title:                "Zmiana wielkości liter w ciągu znaków"
-html_title:           "Ruby: Zmiana wielkości liter w ciągu znaków"
-simple_title:         "Zmiana wielkości liter w ciągu znaków"
+title:                "Zmiana na wielkie litery ciągu znaków"
+html_title:           "Ruby: Zmiana na wielkie litery ciągu znaków"
+simple_title:         "Zmiana na wielkie litery ciągu znaków"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Strings"
@@ -10,45 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i czemu?
 
-Dlaczego warto skorzystać z opcji kapitalizacji w programowaniu w Ruby? Głównym powodem jest możliwość zmiany wyglądu ciągu znaków w spójny i czytelny sposób. Może to być szczególnie przydatne, gdy pracujemy z danymi użytkowników lub formatujemy wyświetlane informacje.
+Niektórzy z was być może zastanawiają się, dlaczego programiści robią "cięcie" (ang. capitalizing) łańcucha znaków (ang. string) - co to jest i po co to robić? Otóż, "cięcie" to po prostu zamiana pierwszej litery łańcucha na dużą literę, a reszty na małe. Wygodne jest to na przykład przy wypisywaniu imion czy tytułów i dzięki temu tekst jest czytelniejszy. Ułatwia to również porównywanie łańcuchów znaków.
 
-## Jak to zrobić
+## Jak:
 
-Podczas programowania w Ruby, istnieje kilka sposobów na kapitalizację ciągów znaków. Jednym z najprostszych sposobów jest użycie metody `capitalize`, która zwraca kopię ciągu znaków z pierwszą literą zmienioną na wielką. Możemy to osiągnąć w następujący sposób:
+```ruby
+string = "hello world"
+capitalized = string.capitalize
 
-```Ruby
-text = "hello world"
-puts text.capitalize
+puts capitalized # output: "Hello world"
 ```
 
-Wynik:
+W powyższym przykładzie widzimy, że używając metody "capitalize" dostępnej dla obiektów typu String, możemy w prosty sposób zmienić format tekstu. Warto również zauważyć, że ta metoda zwraca kopię łańcucha, a nie modyfikuje oryginalnego obiektu.
 
-```Ruby
-Hello world
-```
+## Głębsze zanurzenie:
 
-Inną metodą jest użycie metody `upcase`, która zwraca kopię ciągu znaków z wszystkimi literami zmienionymi na wielkie. Przykład:
+"Capitalizing" zostało wprowadzone w dawnych czasach, kiedy drukarki i komputery nie były w stanie wyświetlać dużych i małych liter jednocześnie. W dzisiejszych czasach można by uznać to za zbędność, ale nadal często spotyka się zastosowanie tej metody w różnych językach programowania.
 
-```Ruby
-text = "hello world"
-puts text.upcase
-```
+Istnieją również inne sposoby zmiany formatu tekstu, np. "downcasing" (zmiana na małe litery) czy "upcasing" (zmiana na duze litery). W Ruby możemy również użyć metody "swapcase" aby zamienić litery na przeciwne - wielkie na małe i na odwrót.
 
-Wynik:
+Implementacja metody "capitalize" w Rubym jest dość prosta, ponieważ należy tylko zmienić pierwszą literę na dużą, a resztę na małe przy użyciu metody "downcase".
 
-```Ruby
-HELLO WORLD
-```
+## Zobacz również:
 
-## Głębsza analiza
+Jeśli chcesz dowiedzieć się więcej na temat metod dla obiektów typu String w Ruby, koniecznie sprawdź dokumentację: https://ruby-doc.org/core-3.0.0/String.html 
 
-Warto zauważyć, że metody `capitalize` i `upcase` nie zmieniają oryginalnego ciągu znaków, ale zwracają jego zmienioną kopię. Istnieje również możliwość zmiany oryginalnego ciągu znaków poprzez użycie wykrzyknika `!` na końcu metody, np. `text.upcase!`. W ten sposób zmieniamy wartość zmiennej `text` na oryginalną. 
-
-Ponadto, jeśli chcemy zmienić tylko pierwszą literę na wielką, ale zachować pozostałe w oryginalnej formie, możemy użyć metody `capitalize!`, która zmieni tylko pierwszą literę w zmiennej `text` bez zmiany pozostałych. 
-
-## Zobacz także
-
-- [Dokumentacja Ruby - metoda capitalize](https://ruby-doc.org/core-2.7.1/String.html#method-i-capitalize)
-- [Dokumentacja Ruby - metoda upcase](https://ruby-doc.org/core-2.7.1/String.html#method-i-upcase)
+Możesz również poznać inne ciekawe sposoby formatowania tekstu, np. "snake_case" czy "camelCase". Wszystko zależy od preferencji programisty i zastosowania w danym projekcie.

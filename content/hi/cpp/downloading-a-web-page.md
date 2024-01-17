@@ -1,7 +1,7 @@
 ---
-title:                "वेब पेज डाउनलोड करना"
-html_title:           "C++: वेब पेज डाउनलोड करना"
-simple_title:         "वेब पेज डाउनलोड करना"
+title:                "वेब पृष्ठ डाउनलोड करना"
+html_title:           "C++: वेब पृष्ठ डाउनलोड करना"
+simple_title:         "वेब पृष्ठ डाउनलोड करना"
 programming_language: "C++"
 category:             "C++"
 tag:                  "HTML and the Web"
@@ -10,85 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##Kyun
+## क्या और क्यों?
+वेब पृष्ठ डाउनलोड करना मतलब इंटरनेट से किसी भी वेब पेज को अपने स्थानीय स्टोरेज में स्थानांतरित करना होता है। कंप्यूटर निर्माताओं को अक्सर उसी प्रोग्राम को लिखना पड़ता है जो इस तकनीक का उपयोग करता है, जिससे उन्हें विभिन्न वेब पृष्ठों को अपने कंप्यूटर पर संग्रहीत करने में मदद मिलती है।
 
-Kya aapne kabhi socha hai ki internet par aap kaise kisi bhi web page ko dekh sakte hai? Yeh kaam kaise hota hai? Yadi aap bhi iss baare mein janna chahte hai, to iss article ko padhkar aap iss process ke baare mein jaan sakte hai.
-
-##Kaise Kare
-
+## कैसे:
 ```C++
-// URL ko download karne ke liye
 #include <iostream>
+#include <fstream>
 #include <string>
-#include <curl/curl.h>
 
 using namespace std;
 
-// CURL library ka use karke ek data structure banaye
-struct MemoryStruct {
-  char *memory;
-  size_t size;
-};
+int main() {
+    // इनपुट प्राप्त करना
+    string url;
+    cout << "डाउनलोड करने के लिए वेब पेज का लिंक दर्ज करें: ";
+    cin >> url;
 
-// CURL function
-static size_t WriteMemoryCallback(void *contents, size_t size, size_t nmemb, void *userp) {
-  size_t realsize = size * nmemb;
-  struct MemoryStruct *mem = (struct MemoryStruct *)userp;
+    // वेब पृष्ठ डाउनलोड करें
+    system(("curl " + url + " > downloaded_page.html").c_str());
 
-// Reallocate karke memory space increase karne ke liye
-  mem->memory = (char *)realloc(mem->memory, mem->size + realsize + 1);
+    // डाउनलोड किए गए पेज को फ़ाइल में संकलित करें
+    ifstream file("downloaded_page.html");
+    string content((istreambuf_iterator<char>(file)), (istreambuf_iterator<char>()));
+    file.close();
 
-// Naya data copy karne ke liye.
-  memcpy(&(mem->memory[mem->size]), contents, realsize);
-  mem->size += realsize;
-  mem->memory[mem->size] = 0;
+    // संकलित किए गए पेज का आउटपुट प्रिंट करें
+    cout << content << endl;
 
-  return realsize;
-}
-
-// CURL ka use karke web page download karne ka code
-int main(void) {
-  CURL *curl;
-  CURLcode res;
-
-  struct MemoryStruct chunk;
-
-  // Memory ko allocate kare
-  chunk.memory = (char *)malloc(1);
-  chunk.size = 0;
-
-  curl = curl_easy_init();
-
-  // Download karne ke liye URL set kare
-  curl_easy_setopt(curl, CURLOPT_URL, "https://www.example.com/");
-  curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, WriteMemoryCallback);
-  curl_easy_setopt(curl, CURLOPT_WRITEDATA, (void *)&chunk);
-  curl_easy_setopt(curl, CURLOPT_FOLLOWLOCATION, 1L);
-
-  // Download kare
-  res = curl_easy_perform(curl);
-
-  // Result ko print kare
-  cout << chunk.memory;
-
-  // Memory free karne ke liye
-  free(chunk.memory);
-
-  // CURL close kare
-  curl_easy_cleanup(curl);
-
-  // Program ko exit kare
-  return 0;
+    return 0;
 }
 ```
 
-Iss coding example mein humne CURL library ka use karke ek web page ko download kiya hai. Pehle, humne ek data structure banaya jis mein hum apne download kiye huve data ko store karenge. Fir, humne CURL function banaya jis mein humne web page ko download karne ke liye URL set kiya hai. Fir, humne malloc function ka use karke memory allocate kiya hai aur free function se download kiya huva web page ka data free kar diya hai.
+उपरोक्त कोड से, आप web पेज को डाउनलोड कर सकते हैं और उसकी संकलनात्मक जागरूकता प्राप्त कर सकते हैं।
 
-##Gehri Jankari
+## गहराई में जाएं:
+(1) आइसीएन और आईआईएफ जैसी तकनीकी संस्थाओं ने डाउनलोडिंग तकनीकों को विकसित किया है जिससे वेब पृष्ठों को स्थानांतरित करना आसान और तेज़ है। (2) यदि आपके पास C++ के अलावा अन्य प्रोग्रामिंग भाषाओं का ज्ञान है, तो आप उनका उपयोग भी कर सकते हैं, जैसे कि Java और Python। (3) सूक्ष्मता के लिए, आप सी डिफ़ाल्ट ब्राउज़र को कॉल करें जिससे वेब पेज खुल सकते हैं।
 
-Web pages ko download karne ke liye, hume ek HTTP request bhejna hota hai. Iss request mein hum web page ka URL, method (GET, POST) aur kuch headers bhejte hai. Jab humara request server tak pahuchta hai, to server hume ek HTTP response bhejta hai jismein web page ka data hota hai. Hum CURL library ka use karke iss request aur response ko handle karte hai. CURL library humare liye server se communication ko asaan banati hai.
+## इसके अन्य स्रोतों को देखें:
+निम्न लिंक में बाकी स्रोतों को जांचें:
+- [C++ के ऑफिशियल डॉक्यूमेंटेशन](https://isocpp.org/)
+- [C++ के बोधगम्य और उदाहरण उपकरण](https://www.tutorialspoint.com/cplusplus/index.htm)
+- [विभिन्न वेब पेजों को डाउनलोड करने के लिए जावा स्क्रिप्ट का उपयोग](https://www.geeksforgeeks.org/download-web-page-using-java/)
 
-##Dekhe bhi
-
-- [CURL library documentation](https://curl.se/libcurl/)
-- [LearnCPP - Web file downloading using C++](https://www.learncpp.com/cpp-tutorial/a3-working-with-files-web-file-downloading/)
+ऊपर दिए गए स्रोत आपको अन्य तकनीकी जानकारी प्रदान कर सकते हैं जो आपको उच्च स्तर पर समझने में मदद कर सकती हैं।

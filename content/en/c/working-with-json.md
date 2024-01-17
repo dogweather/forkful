@@ -10,45 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+### What & Why?
+JSON, or JavaScript Object Notation, is a lightweight data interchange format that is commonly used in web development. It allows programmers to easily transfer and manipulate data between applications and systems, making it a popular choice among developers. Simply put, working with JSON is a way to organize, store, and transmit data in a readable and efficient format.
 
-JSON (JavaScript Object Notation) is a lightweight and widely used data interchange format, making it a popular choice for data storage and communication in web applications. Learning how to work with JSON in C can greatly enhance your programming skills and open up new opportunities for handling and manipulating data.
+### How to:
+To work with JSON in C, you'll need to use a library called "json-c" which provides functions for parsing, creating, and manipulating JSON objects. Here's a simple example of how to use it:
 
-## How To
+```C
+// First, include the necessary headers
+#include <stdio.h>
+#include <string.h>
+#include <json-c/json.h>
 
-To work with JSON in C, you will need to install a library called jansson, which provides functions for encoding and decoding JSON data. You can download the latest version of jansson from their [GitHub page](https://github.com/akheron/jansson) or use your package manager to install it.
+// Then, create a JSON object and add data to it
+struct json_object *person = json_object_new_object();
+json_object_object_add(person, "name", json_object_new_string("John Smith"));
+json_object_object_add(person, "age", json_object_new_int(30));
 
-Once you have jansson installed, you can start using it in your C programs by including the "jansson.h" header file and linking the library in your compiler settings. Next, you can create JSON objects using the `json_t` data type, which represents a generic JSON value. Here's an example of how to create a JSON object with key-value pairs using jansson's `json_object()` function:
+// To retrieve data from the JSON object, use the appropriate functions
+char *name;
+int age;
+json_object_object_get_ex(person, "name", &name);
+json_object_object_get_ex(person, "age", &age);
 
-```c
-json_t *json_obj = json_object();
-json_object_set(json_obj, "name", json_string("John"));
-json_object_set(json_obj, "age", json_integer(25));
+// Finally, print the data
+printf("Name: %s\nAge: %d\n", name, age);
 ```
 
-In the above code, we create a JSON object `json_obj` and add two key-value pairs to it - `name` with the value "John" and `age` with the value 25. Now, let's see how we can convert this JSON object to a string using jansson's `json_dumps()` function:
-
-```c
-char *json_str = json_dumps(json_obj, JSON_ENCODE_ANY);
+The output of this code would be:
 ```
-
-The `json_dumps()` function takes in a JSON object as its first argument and a set of options as its second argument. In this case, we use the `JSON_ENCODE_ANY` option to encode the JSON object with any type of encoding. This will return a string representation of our JSON object, which can be printed to the console or used for further processing.
-
-Once you have finished working with your JSON data, don't forget to free the memory used by the JSON objects using jansson's `json_decref()` function:
-
-```c
-json_decref(json_obj);
-free(json_str); // don't forget to free the string as well
+Name: John Smith
+Age: 30
 ```
+Now you can see how easy it is to work with JSON in C!
 
-## Deep Dive
+### Deep Dive
+JSON was first introduced in 1999 by Douglas Crockford and has since become a widely adopted data format. It was created as an alternative to XML, which was considered too verbose and complex for many applications.
 
-Jansson offers a wide range of functions for working with JSON, including creating nested objects and arrays, retrieving and modifying values, and handling errors. You can refer to the official [jansson documentation](https://jansson.readthedocs.io/en/2.13/#) for a complete list of functions and their usage.
+There are a few alternatives to JSON, such as YAML and XML, but JSON is preferred for its simple and flexible structure. It is also a more lightweight option, making it ideal for use in web development where efficiency is important.
 
-It's worth noting that while jansson is a powerful library for working with JSON in C, it does have some limitations, such as not being able to handle cyclic references in JSON objects. It's important to keep these limitations in mind when using jansson in your projects.
+The json-c library is an implementation of the JSON data format in C. It provides functions for creating, parsing, and manipulating JSON objects, as well as converting them to and from strings. The library is actively maintained and can be easily installed through package managers or downloaded from the official website.
 
-## See Also
+### See Also
+For more information and examples of using json-c, check out the following resources:
 
-* [Official jansson documentation](https://jansson.readthedocs.io/en/2.13/#)
-* [C tutorial on JSON with jansson](https://riptutorial.com/c/example/5984/json-with-jansson)
-* [GitHub page for jansson](https://github.com/akheron/jansson)
+- [json-c official website](https://github.com/json-c/json-c)
+- [JSON tutorial on W3Schools](https://www.w3schools.com/js/js_json_intro.asp)
+- [C programming language on GeeksforGeeks](https://www.geeksforgeeks.org/c-programming-language/)

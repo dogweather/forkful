@@ -1,7 +1,7 @@
 ---
-title:                "שרשור מחרוזות"
-html_title:           "TypeScript: שרשור מחרוזות"
-simple_title:         "שרשור מחרוזות"
+title:                "צירוף מחרוזות"
+html_title:           "TypeScript: צירוף מחרוזות"
+simple_title:         "צירוף מחרוזות"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -10,29 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## למה
+## מה ולמה?
 
-למה לאדם לעסוק באיחוד מחרוזות? פשוט, כל תוכנית בתכנות משתמשת במחרוזות באופן רחב, לכן חשוב שנדע איך לחבר אותן בצורה נכונה כדי ליצור תוצאה תקינה.
+קונקטיזציה של מחרוזות היא פעולה שמשמשת לשלב יחד יותר מקבצי טקסט אחד בכדי ליצור מחרוזת אחת גדולה יותר. תהליך זה משמש ליצירת מחרוזות פתרון רב-תכליתיות, לדוגמה ליצירת רשימת תווים או לבניית הודעות למשתמש.
 
-## איך ל
+## איך לבצע:
 
-על מנת לחבר מחרוזות ב TypeScript, ניתן להשתמש באופרטור הכפל ( + ). לדוגמה:
+כאשר תרצו לקונקטיז מחרוזות ב- TypeScript, ישנם שלושה אפשרויות: תוך כדי ההכרזה על משתנה חדש, באמצעות פעולת השמה, או באמצעות תוכנית פונקציה. להלן כמה דוגמאות של שימוש בפעולה זו:
 
 ```TypeScript
-let firstName: string = "טלי";
-let lastName: string = "כהן";
+// הוספת מחרוזת נוספת לסוף מחרוזת נמצאת במשתנה
+let sentence: string = "Hello, ";
+sentence += "world!";
 
-console.log(firstName + " " + lastName);
+console.log(sentence); // Output: "Hello, world!"
 
-// תוצאה: טלי כהן
+// קונקטיזציה באמצעות פעולת השמה
+let firstWord: string = "Hello ";
+let secondWord: string = "world!";
+let newSentence = firstWord + secondWord;
+
+console.log(newSentence); // Output: "Hello world!"
+
+// שימוש בפונקציה לקונקטיזציה
+function combineStrings(name: string, age: number): string {
+  return "My name is " + name + " and I am " + age + " years old.";
+}
+
+console.log(combineStrings("John", 25)); // Output: "My name is John and I am 25 years old."
 ```
 
-## חקירת עומק
+## חפירה עמוקה:
 
-האם אתם יודעים שניתן לחבר מחרוזות ב TypeScript עם האופרטור +=? בנוסף, ניתן גם להשתמש בפונקציה concat() כדי לחבר מספר מחרוזות במקביל. יתרה מכך, אם מצביעים על מחרוזת בתוך שורת קוד, ניתן להשתמש בפונקציה toString() כדי להמיר את המצביע למחרוזת לפני שמחברים אותה עם מחרוזת אחרת.
+הקונקטיזציה של מחרוזות היא טכניקה פשוטה שמשמשת בשפות תכנות שונות כדי להציג מחרוזת או רשימה של תווים. בעבר, השיטה המועט יותר פשוטה היא באמצעות שרשרת תווים, אשר הכוונה אליה היא פשוט להוסיף טקסט או מחרוזת לסוף מחרוזת אחרת. אך כיום, קיימות פתרונות מתקדמים יותר כגון String Builder אשר מאפשרים יישום נוסף ואפשרויות יותר גמישות.
 
-## ראו גם
+## ראו גם:
 
-- [JavaScript מדריך תחבירי: מחרוזות](https://developer.mozilla.org/he/docs/Web/JavaScript/Guide/Grammar_and_types#strings_in_javascript)
-- [מחרוזות ב TypeScript](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#string)
-- [השתמש במחרוזות ב TypeScript כמו מקצוען](https://www.digitalocean.com/community/tutorials/how-to-use-strings-in-typescript-like-a-professional)
+- [קונקטיזציה של מחרוזות ב-TypeScript](https://www.typescriptlang.org/docs/handbook/basic-types.html#string-concatenation)
+- [String Builder ב-TypeScript](https://www.typescriptlang.org/docs/handbook/basic-types.html#stringbuilder)

@@ -1,7 +1,7 @@
 ---
-title:                "Convertendo uma string para minúsculas"
-html_title:           "Haskell: Convertendo uma string para minúsculas"
-simple_title:         "Convertendo uma string para minúsculas"
+title:                "Convertendo uma string para letras minúsculas"
+html_title:           "Haskell: Convertendo uma string para letras minúsculas"
+simple_title:         "Convertendo uma string para letras minúsculas"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -10,36 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que converter uma string para letras minúsculas?
+## O que é e por que fazer?
 
-Existem várias situações em que pode ser necessário converter uma string para letras minúsculas no código Haskell. Por exemplo, pode ser útil para manipulação de texto, validação de entrada do usuário ou para comparação de strings sem levar em conta as letras maiúsculas/minúsculas.
+Converter uma string para minúsculas é um processo comum em programação, em que todas as letras presentes em uma string são transformadas em letras minúsculas. Isso pode ser útil para padronizar a entrada do usuário, facilitando a comparação de strings ou a busca por palavras-chave. 
 
-## Como fazer
+## Como fazer:
 
-A conversão de uma string para letras minúsculas em Haskell é bastante simples. Você pode utilizar a função `map` juntamente com a função `toLower` do módulo `Data.Char` para aplicar a conversão em cada caractere da string. Veja o exemplo abaixo:
+Você pode facilmente converter uma string para minúsculas em Haskell usando a função `toLower` do módulo` Data.Char`. Basta importar o módulo e aplicar a função à sua string desejada, como no exemplo abaixo:
 
 ```Haskell
 import Data.Char
 
--- Função que converte uma string para letras minúsculas
-toLowerString :: String -> String
-toLowerString s = map toLower s
+stringEmUppercase = "OLÁ, AMIGOS!"
+stringEmLowercase = map toLower stringEmUppercase
+
+print stringEmLowercase -- output: "olá, amigos!"
 ```
 
-Para testar a nossa função, podemos executá-la no console do GHCi, da seguinte forma:
+Observe que a função `map` é usada aqui para aplicar a função `toLower` a cada caractere da string. Isso nos permite converter qualquer string, independentemente do tamanho, para minúsculas.
 
-```Haskell
-> toLowerString "OLA, MUNDO!"
-"ola, mundo!"
-```
+## Profundidade:
 
-## Mais informações
+A conversão de string para minúsculas pode ser rastreada até os primórdios da programação. Antigamente, quando o armazenamento de dados era limitado, muitos programadores escolhiam armazenar suas strings em letra maiúscula para economizar espaço de memória. No entanto, isso se tornou menos relevante com o avanço da tecnologia e hoje em dia a escolha é mais uma questão de preferência. 
 
-Ao usar a função `map` para aplicar a conversão em cada caractere, estamos aproveitando o conceito de função de ordem superior em Haskell. Isso significa que a função `map` toma uma função como um de seus argumentos. E a função `toLower` também é um exemplo de função de ordem superior, pois ela toma um caractere como argumento e retorna outro caractere após a conversão para minúsculas.
+Existem outras formas de converter uma string para minúsculas em Haskell, como usando funções de bibliotecas externas como `Text` e `String`, mas a função `toLower` é a maneira mais simples e comumente usada. É importante notar que essa função é sensível ao idioma e pode não funcionar corretamente para caracteres acentuados em diferentes línguas. Se esse for o caso, existem alternativas que solucionam esse problema
 
-Além disso, o módulo `Data.Char` contém outras funções úteis para manipulação de caracteres, como `toUpper` (para conversão para letras maiúsculas) e `isSpace` (para verificar se um caractere é um espaço em branco). Você pode explorá-lo mais para aprofundar seus conhecimentos em Haskell.
+## Veja também:
 
-## Veja também
-
-- [Documentação oficial do GHC Haskell](https://downloads.haskell.org/~ghc/latest/docs/html/users_guide/)
-- [Tutorial de Haskell em português](https://haskell.tailorfontela.com.br/)
+- [Haskell Data.Char module documentation](https://hackage.haskell.org/package/base-4.15.0.0/docs/Data-Char.html)
+- [Haskell String library](https://hackage.haskell.org/package/base-4.15.0.0/docs/Data-String.html)
+- [Haskell Text library](https://hackage.haskell.org/package/text-1.2.4.0/docs/Data-Text.html)

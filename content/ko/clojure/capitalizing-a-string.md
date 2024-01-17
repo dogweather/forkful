@@ -10,29 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 왜
-왜 누군가 문자열을 대문자로 변환하는 것에 참여할까요? 대문자로 작성된 문자열은 주로 사용자 입력을 정리하거나 데이터 처리를 위해 사용됩니다.
+# 무엇 & 왜?
 
-# 어떻게
-Clojure에서는 문자열을 대문자로 변환하기 위해 `clojure.string/capitalize` 함수를 사용합니다. 아래는 간단한 예시 코드입니다.
+문자열을 대문자로 변환하는 것이 무엇인지 설명하고 프로그래머들이 왜 그렇게 하는지 알려줍니다.
 
-```Clojure
-(require '[clojure.string :as str])
+## 어떻게:
 
-(str/capitalize "hello") ; => "Hello"
-(str/capitalize "goodbye") ; => "Goodbye"
-```
-
-여러 단어가 있는 문자열의 경우, 첫 번째 단어만 대문자로 변환하고 나머지는 소문자로 유지됩니다.
+기존의 문자열을 대문자로 변환하는 코드와 예시 출력을 ```Clojure ... ``` 코드 블록 내에 넣어서 보여줍니다.
 
 ```Clojure
-(str/capitalize "hello world") ; => "Hello world"
-(str/capitalize "goodbye cruel WORLD") ; => "Goodbye cruel world"
+;; 스트링 "hello world"를 대문자로 변환하는 예제 코드
+; 입력: "hello world"
+; 출력: "HELLO WORLD"
+(println (clojure.string/upper-case "hello world"))
 ```
 
-# 심층 분석
-`clojure.string/capitalize` 함수는 내부적으로 `java.lang.Character/toUpperCase` 함수를 사용하여 문자열을 대문자로 변환합니다. 이 함수의 경우 Unicode 문자를 처리할 수 있으므로 다국어 환경에서도 잘 작동합니다.
+## 깊이 파고들기:
 
-# 참고
-- [Clojure Docs: clojure.string/capitalize](https://clojuredocs.org/clojure.string/capitalize)
-- [Java Docs: java.lang.Character/toUpperCase](https://docs.oracle.com/javase/10/docs/api/java/lang/Character.html#toUpperCase(int))
+(1) 역사적인 문맥, (2) 대안들, 그리고 (3) 문자열을 대문자로 변환하는 구현 세부사항에 대한 정보와 함께 더 깊게 들어가 봅니다.
+
+## 관련 자료:
+
+문자열을 대문자로 바꾸는 데 관련된 링크들을 소개합니다.
+
+- https://clojuredocs.org/clojure.string/upper-case
+- https://www.clojure.org/api/cheatsheet#Upper-case
+- https://clojure.org/reference/strings

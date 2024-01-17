@@ -10,42 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä & Miksi?
 
-Usein ohjelmoinnissa tarvitaan tapaa vertailla kahta päivämäärää keskenään, esimerkiksi tarkistamaan onko jokin tapahtuma mennyt jo ohi tai laskemaan aikaeroja. Joissakin tapauksissa myös päivämäärien järjestäminen tai ryhmittely voi vaatia päivämäärien vertailua.
+Vertaaminen kahden päivämäärän välillä on ohjelmoinnissa yhteinen tehtävä. Se tarkoittaa yksinkertaisesti kahden päivämäärän vertailua selvittääkseen kumpi niistä on ennen tai jälkeen toisen päivämäärän. Ohjelmoijat tekevät tätä usein esimerkiksi tarkistaakseen, onko asiakkaan sopimus voimassa tai onko tietty päivämäärä tulevaisuudessa.
 
-## Ohjeet
+## Kuinka tehdä se:
 
-Vertaillessa päivämääriä Java-ohjelmassa on tärkeää muistaa tarkistaa myös ajallisesti päivämäärien järjestys. Tässä on esimerkki koodista, joka vertaa kahta päivämäärää:
+```Java 
+// Oletetaan, että haluamme verrata kahta päivämäärää: 01/01/2020 ja 05/01/2020
+LocalDate date1 = LocalDate.of(2020, 1, 1);
+LocalDate date2 = LocalDate.of(2020, 5, 1);
 
-```Java
-import java.time.*;
+// Verrataan päivämääriä käyttäen compareTo() metodia
+int result = date1.compareTo(date2);
 
-LocalDate firstDate = LocalDate.of(2020, 3, 15); // Ensimmäinen päivämäärä
-LocalDate secondDate = LocalDate.of(2020, 3, 18); // Toinen päivämäärä
-
-if(firstDate.isBefore(secondDate)){
-  System.out.println("Ensimmäinen päivämäärä on ennen toista päivämäärää.");
-} else if(firstDate.isAfter(secondDate)){
-  System.out.println("Toinen päivämäärä on ennen ensimmäistä päivämäärää.");
+if (result < 0) {
+    System.out.println("date1 on ennen date2");
+} else if (result > 0) {
+    System.out.println("date1 on jälkeen date2");
 } else {
-  System.out.println("Päivämäärät ovat samat.");
+    System.out.println("date1 ja date2 ovat samat");
 }
 
-// Tulostus: Ensimmäinen päivämäärä on ennen toista päivämäärää.
+// Output: date1 on ennen date2
 ```
 
-Tässä esimerkissä käytämme Java 8:ssa esiteltyä uutta LocalDate-luokkaa, joka helpottaa päivämäärien käsittelyä ja vertailua. Koodissa käytämme myös if-lauseita tarkistamaan päivämäärien järjestyksen ja tulostamme sen mukaisen viestin.
+## Syväsukellus:
 
-## Syvällinen sukellus
+Päivämäärien vertailu on ollut tärkeä tehtävä jo pitkään, ja Java tarjoaa monia tapoja tehdä se. Yksi vaihtoehto on käyttää compareTo() metodia, kuten yllä olevassa esimerkissä. Toinen vaihtoehto on käyttää isEqual() tai isBefore() ja isAfter() metodeja. Näillä metodeilla voit tarkistaa, ovatko päivämäärät samat tai ovatko ne ennen tai jälkeen toisiaan.
 
-Java:ssa päivämäärien vertailu tapahtuu pääasiassa LocalDate-luokan avulla, kuten yllä olevassa esimerkissä näimme. Tämä luokka sisältää erilaisia metodeita päivämäärien vertailuun, kuten `isBefore()` ja `isAfter()`. Lisäksi LocalDaten lisäksi Java sisältää myös muita päivämääriä käsitteleviä luokkia, kuten LocalDateTime ja ZonedDateTime.
+## Katso myös:
 
-Jos haluat tutustua syvemmin päivämäärien vertailuun Java-ohjelmassa, suosittelemme lukemaan Java:n virallista dokumentaatiota sekä kokeilemaan erilaisia vertailukeinoja käytännössä.
-
-## Katso myös
-
-- [Java:n virallinen dokumentaatio](https://docs.oracle.com/javase/8/docs/api/)
-- [LocalDate-luokan dokumentaatio](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
-- [Tutoriaali päivämäärien käyttämisestä Java:ssa](https://www.baeldung.com/java-date-compare)
-- [Stack Overflow-kysymys päivämäärien vertailusta Java:ssa](https://stackoverflow.com/questions/20061783/comparing-two-dates-in-java)
+- [Java LocalDate API](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
+- [Ohjeita päivämäärän vertailuun Java:ssa](https://www.baeldung.com/java-date-compare)
+- [Java 8 DateTime API opetusohjelma](https://www.baeldung.com/java-8-date-time-intro)

@@ -10,48 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+Cześć czytelnicy!
 
-Kotlin jest coraz popularniejszym językiem programowania zarówno wśród początkujących, jak i doświadczonych programistów. Jedną z przydatnych funkcji oferowanych przez Kotlin jest możliwość wypisywania wiadomości na standardowe wyjście błędów. W tym artykule dowiesz się, dlaczego warto korzystać z tej funkcji i jak jej używać.
+# Co i dlaczego?
 
-## Jak używać standardowego wyjścia błędów w Kotlin
+Pisanie do standardowego błędu to proces informowania o błędach w programowaniu. Programiści często to robią, ponieważ chcą być świadomi występujących problemów i ich przyczyn, aby szybko je rozwiązać.
 
-Za pomocą wbudowanej funkcji `System.err.println()` można wypisać wiadomość na standardowe wyjście błędów. Przykład poniżej pokazuje, jak użyć tej funkcji w celu wypisania informacji o błędzie do konsoli:
-
-```Kotlin
-fun main() {
-    System.err.println("Wystąpił błąd!")
-}
-```
-
-Przykładowy output:
+# Jak to zrobić:
 
 ```Kotlin
-Wystąpił błąd!
+System.err.println("To jest przykładowy błąd.")
 ```
 
-Można również użyć wyrażenia `System.err.print()` jeśli nie chcemy, aby wypisywana informacja była automatycznie zakończona nową linią. Przykład:
+Wynik:
 
-```Kotlin
-fun main() {
-    System.err.print("Wystąpił błąd ")
-    System.err.print("podczas odczytu pliku")
-}
+```
+To jest przykładowy błąd.
 ```
 
-Przykładowy output:
+# Głębsza analiza:
 
-```Kotlin
-Wystąpił błąd podczas odczytu pliku
-```
+Istnieje wiele dlatego, dla których pisanie do standardowego błędu jest wygodną praktyką. Pierwszym powodem jest wyświetlanie wszystkich informacji o błędzie, co ułatwia znalezienie jego przyczyny. Drugim powodem jest to, że błędy są wyświetlane nawet w przypadku zakończenia programu, dzięki czemu można łatwo zauważyć problemy nawet w dużych projektach. Alternatywą jest pisanie do standardowego wyjścia, co sprawia, że błędy są trudniejsze do odnalezienia.
 
-## Deep Dive
+# Zobacz też:
 
-Funkcje `System.err.println()` i `System.err.print()` wykorzystują standardowe wyjście błędów, które jest oddzielone od standardowego wyjścia za pomocą specjalnego strumienia. Dzięki temu, w przypadku wystąpienia błędów, są one wypisywane niezależnie od innych informacji wyświetlanych na standardowym wyjściu. Jest to bardzo przydatne w przypadku, gdy chcemy otrzymywać informacje o błędach w sposób wyraźny i niezakłócony przez inne wiadomości.
-
-## Zobacz także
-
-Jeśli chcesz poznać więcej o możliwościach jakie oferuje język Kotlin, zapoznaj się z poniższymi artykułami:
-
-- [Jak używać process builder w Kotlin](https://www.example.com/process-builder-kotlin)
-- [Podstawowe operatory w Kotlin](https://www.example.com/basic-operators-kotlin)
+- Oficjalna dokumentacja Kotlin: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-writer.-standart-error.html
+- Wideo na YouTube o znaczeniu pisania do standardowego błędu: https://www.youtube.com/watch?v=1L8jYQIjsSc
+- Omówienie pisania do standardowego błędu w kontekście obsługi wyjątków: https://www.baeldung.com/java-printstream-standard-error

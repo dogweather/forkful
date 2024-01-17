@@ -10,62 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+Mitä ja miksi?
 
-Miksi kukaan haluaisi lukea komentorivin argumentteja Java-ohjelmoinnissa? Yksi syy voi olla tarve saada käyttäjältä tietoja ohjelman suorituksen aikana. 
+Kun ohjelmoijat kehittävät Java-ohjelmia, heidän täytyy usein lukea syötteitä käyttäjältä tai ympäristöstä, jotta ohjelmat voivat toimia oikein. Yksi tapa tehdä tämä on lukemalla komentoriviparametreja, eli käyttäjän antamia tietoja ohjelman suorittamisen aikana.
 
-## Kuinka
+Kuinka:
 
-Usein ohjelmat vaativat tiettyjä arvoja tai vaihtoehtoja tulkittavaksi ja käsiteltäväksi. Tämä voidaan tehdä helposti hyödyntäen komentorivin argumentteja. Katso alla oleva esimerkki, jossa luodaan ohjelma, joka tulostaa käyttäjän antaman parametrin mukaisen viestin.
+Java tarjoaa helpon tavan lukea komentoriviparametreja käyttäen `args`-muuttujaa. Alla on esimerkki koodista, joka tulostaa käyttäjän antaman syötteen komentoriviltä:
 
-```java 
-public class ArgumentExample {
-
-  public static void main(String[] args) {
-
-    if (args.length == 0) {
-      System.out.println("Anna parametri tulostettavalle viestille!");
-    } else {
-      System.out.println("Käyttäjän antama parametri: " + args[0]);
+```Java
+public class CommandLine {
+    public static void main(String[] args) {
+        System.out.println(args[0]); //tulostaa ensimmäisen komentoriviparametrin
     }
-
-  }
 }
 ```
 
-Esimerkki syöte ja tuloste:
+Jos käyttäjä antaa ohjelmalle seuraavan komennon: `java CommandLine Hello`, ohjelma tulostaa `Hello`.
 
-```bash 
-java ArgumentExample Hello
-Käyttäjän antama parametri: Hello
-```
+Syötteiden lukeminen komentoriviltä on hyödyllistä silloin kun ohjelman toimintaan voidaan vaikuttaa käyttämällä erilaisia parametreja.
 
-## Syvemmälle
+Syvempää tietoa:
 
-Komentorivin argumentit voidaan lukea Java-ohjelmassa hyödyntämällä `args`-muuttujaa, joka on `String`-taulukko. Tämä taulukko sisältää kaikki parametrit, jotka on annettu ohjelman käynnistyksen yhteydessä. Voit myös käyttää `foreach`-silmukkaa helpottamaan argumenttien käsittelyä, kuten alla olevassa esimerkissä:
+Komentoriviparametrien käyttö on ollut osa Java-kieltä lähtien sen ensimmäisestä versiosta. Aluksi käytettiin `getSystemProperty()`-metodia, mutta sisäänrakennettu `args`-muuttuja tekee tästä helpompaa ja suorempaa. Java-tiedostojen lisäksi komentoriviparametreja voidaan lukea myös työkoneella ajettaessa, käyttäen `appletviewer`-työkalua.
 
-```java
-public class ArgumentLoopExample {
+Katso myös:
 
-  public static void main(String[] args) {
-
-    for (String arg : args) {
-      System.out.println("Käyttäjän antama parametri: " + arg);
-    }
-
-  }
-}
-```
-
-Esimerkki syöte ja tuloste:
-
-```bash
-java ArgumentLoopExample Hello World
-Käyttäjän antama parametri: Hello
-Käyttäjän antama parametri: World
-```
-
-## Katso myös
-
-- [Oracle:n Java dokumentointi: Komentorivin argumentit](https://docs.oracle.com/javase/tutorial/essential/environment/cmdLineArgs.html)
-- [Baeldung:n artikkeli: Java Command-Line Arguments Parsing](https://www.baeldung.com/java-command-line-arguments-parsing)
+Lue lisää komentoriviparametrin lukemisesta ja sen käytöstä Java-tiedostoissa täältä: https://docs.oracle.com/javase/tutorial/essential/environment/cmdLineArgs.html

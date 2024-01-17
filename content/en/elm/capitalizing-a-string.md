@@ -10,46 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-To make words stand out and draw attention, it is often necessary to capitalize them. This is especially important in programming, where capitalization can indicate the start of a new variable or function. In this article, we will explore how to capitalize strings in the functional programming language, Elm.
+Capitalizing a string simply means converting the first letter of each word in the string to uppercase. This is a common practice in programming for improving readability and consistency. It also follows certain naming conventions, making the code more standardized.
 
-## How To
-
-To capitalize a string in Elm, we can use the `String.toUpper` function. Let's take a look at an example:
+## How to:
 
 ```Elm
-String.toUpper "hello world"
+import String
+
+String.capitalize "hello world"
+-- Output: "Hello World"
+
+String.capitalize "hello elm"
+-- Output: "Hello Elm"
 ```
 
-The output of this code would be `"HELLO WORLD"`. As you can see, the `String.toUpper` function takes a string as its parameter and returns the capitalized version of that string.
+In the above examples, we used the `String.capitalize` function from the `String` module in Elm. This function takes in a string as an argument and returns a new string with the first letter of each word capitalized. It does not modify the original string.
 
-But what if we only want to capitalize the first letter of a string, like in a title? Elm has a `String.capitalize` function for that:
+## Deep Dive:
 
-```Elm
-String.capitalize "elm programming"
-```
+The practice of capitalizing strings has been around since the early days of computer programming. It originated from the typographical convention of using uppercase letters for emphasis or headings. In programming, it became a way to distinguish between different types of data and improve code readability.
 
-The output of this code would be `"Elm programming"`. This function only capitalizes the first letter of the first word in the string.
+In Elm, there are other ways to capitalize strings besides using the `String.capitalize` function. One alternative is using the `String.toUpper` function, which converts all letters in the string to uppercase. This may not produce the desired result, especially if the string contains special characters or symbols.
 
-## Deep Dive
+The `String.words` function can also be used to split a string into a list of words, which can then be converted to uppercase using `List.map` and `String.toUpper`. This approach allows for more flexibility in handling different types of strings.
 
-In some cases, we may want to capitalize every word in a string, similar to how titles are typically formatted. Elm has a `String.words` function that splits a string into a list of words, and a `String.join` function that joins a list of strings into one string. We can use these functions together to capitalize every word in a string:
+## See Also:
 
-```Elm
-String.join " " (List.map String.capitalize (String.words "united states of america"))
-```
-
-The output of this code would be `"United States Of America"`. Let's break down the code:
-
-- `String.words` takes a string and returns a list of words, in this case `[ "united", "states", "of", "america" ]`
-- `List.map` takes a function and a list as its parameters, and applies the function to each element in the list. In this case, we are using the `String.capitalize` function to capitalize each word in the list.
-- Finally, `String.join` combines all the words in the list into one string, separated by a space.
-
-By combining these functions, we can create a custom `String.capitalizeAll` function that capitalizes every word in a given string.
-
-## See Also
-
-- [Elm Documentation](https://elm-lang.org/docs)
-- [Elm Syntax](https://guide.elm-lang.org)
-- [Elm Packages](https://package.elm-lang.org)
+- Elm Documentation on `String`: https://package.elm-lang.org/packages/elm-lang/core/latest/String
+- Functional Programming in Elm: https://guide.elm-lang.org/architecture/
+- String capitalization best practices: https://dev.to/sandrastring/string-capitalization-best-practices-565

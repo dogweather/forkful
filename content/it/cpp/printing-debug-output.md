@@ -10,79 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+## Che cos'è e perché?
+Stampano l'output di debug è una pratica comune fra i programmatori, utilizzata per visualizzare informazioni utili durante l'esecuzione di un programma. Ciò aiuta a identificare e risolvere errori e problemi di esecuzione del codice.
 
-Stampare l'output di debug è un'attività comune per i programmatori C++. Questa tecnica aiuta a identificare e risolvere errori nel codice in modo più efficiente.
+## Come fare:
+Ecco un esempio di codice in C++ su come stampare un messaggio di debug utilizzando la funzione ```cout```:
 
-## Come Farlo
-
-Per stampare un output di debug in C++, utilizzeremo la funzione `cout` dall'header `<iostream>`. Questa funzione ci permette di stampare messaggi su standard output. Vediamo un esempio di codice:
-
-```C++
+```
 #include <iostream>
 
+using namespace std;
+
 int main() {
-  std::cout << "Questo è un messaggio di debug" << std::endl;
-  return 0;
+    cout << "Questo è un messaggio di debug!" << endl;
+    return 0;
 }
 ```
 
-Questo codice stamperà il messaggio "Questo è un messaggio di debug" seguito da una nuova riga su standard output. Si può anche utilizzare la funzione `cerr` per stampare su standard error. Ecco un altro esempio:
+Output: Questo è un messaggio di debug!
 
-```C++
-#include <iostream>
+## Approfondimento:
+Nell'ambito della programmazione, l'output di debug è stato introdotto per la prima volta negli anni '50, con lo sviluppo del linguaggio di programmazione LISP. Un'alternativa popolare all'uso della funzione ```cout``` è l'utilizzo di un debugger, che consente di visualizzare variabili e informazioni di runtime in modo più dettagliato. 
 
-int main() {
-  std::cerr << "Errore: variabile non inizializzata" << std::endl;
-  return 0;
-}
-```
+Per quanto riguarda l'implementazione dell'output di debug, è importante tenere conto delle prestazioni del programma e di non inserire troppe istruzioni di stampa che possono rallentare l'esecuzione.
 
-Questo codice stamperà il messaggio di errore "Errore: variabile non inizializzata" su standard error.
-
-## Deep Dive
-
-È importante notare che la stampa di output di debug dovrebbe essere una pratica temporanea e non dovrebbe essere inclusa nel codice finale che verrà distribuito agli utenti. Invece, si può utilizzare la compilazione condizionale per includere o escludere l'output di debug, ad esempio utilizzando `#ifdef` e `#endif`:
-
-```C++
-#include <iostream>
-
-#define DEBUG
-// Si può anche utilizzare #define NDEBUG per disabilitare output di debug
-// prima di includere l'header <cassert> in cui dichiarare la macros assert().
-
-int main() {
-  
-#ifdef DEBUG
-  std::cout << "Output di debug" << std::endl;
-#endif
-  
-  // Altro codice
-  
-  return 0;
-}
-```
-
-Oltre alla semplice stampa di messaggi di testo, si può anche utilizzare `cout` per stampare il valore di variabili o espressioni durante l'esecuzione del programma:
-
-```C++
-#include <iostream>
-
-int main() {
-  int var = 5;
-  std::cout << "Valore di var: " << var << std::endl;
-  
-  int result = var * 2;
-  std::cout << "Risultato: " << result << std::endl;
-  
-  return 0;
-}
-```
-
-Questo codice stamperà "Valore di var: 5" e "Risultato: 10" su standard output.
-
-## Vedi Anche
-
-- [Informazioni su output di debug in C++](https://www.geeksforgeeks.org/types-of-output-of-a-cpp-program)
-- [Guida dettagliata alla gestione degli errori in C++](https://www.tutorialspoint.com/cplusplus/cpp_exceptions_handling.html)
-- [Utilizzo dei compilatori condizionali in C++](https://en.cppreference.com/w/cpp/preprocessor/conditional)
+## Vedi anche:
+- [Debugging - Wikipedia](https://it.wikipedia.org/wiki/Debugging)
+- [Utilizzare cout per il debugging in C++](https://www.javatpoint.com/cout-cpp)

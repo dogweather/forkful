@@ -1,7 +1,7 @@
 ---
-title:                "यादृच्छिक संख्याएँ उत्पन्न करना"
-html_title:           "Rust: यादृच्छिक संख्याएँ उत्पन्न करना"
-simple_title:         "यादृच्छिक संख्याएँ उत्पन्न करना"
+title:                "यादृच्छिक संख्याएं उत्पन्न करना"
+html_title:           "Rust: यादृच्छिक संख्याएं उत्पन्न करना"
+simple_title:         "यादृच्छिक संख्याएं उत्पन्न करना"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Numbers"
@@ -10,20 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## इसलिए
-क्या आप एक प्रोग्राम या गेम बना रहे हैं जो हर बार अलग-अलग नंबर चुनता है? या शायद आप किसी काम को स्पर्शित करने के लिए उपयोग कर रहे हो जो स्पष्ट नंबर या डेटा के साथ तार्किक निष्कर्ष निकालने की आवश्यकता है? अगर हां, तो रस्ट में नंबर जेनरेट करना आपको बहुत मददगार साबित हो सकता है।
+## क्या और क्यों?
+Random numbers उसे संख्याओं के समूह के लिए कहा जाता है जो किसी भी प्रकार की क्रमबद्धता के बिना उत्पन्न होते हैं। यह प्रोग्रामर्स द्वारा उसे उनकी कोड की variability को बढ़ाने के लिए किया जाता है।
 
-## कैसे करें
-"```Rust
+## कैसे करें:
+```Rust
 use rand::Rng;
 
 fn main() {
-    let mut rng = rand::thread_rng(); // एक अव्यवस्थित सीड के साथ गेन्रेटर बनाएं 
-    let number: u32 = rng.gen(); // दोनों 0 और सीमित u32 तकलाख समान रूप से बिना सीड जेनरेट करने के लिए
-    println!("{}", number); // रैंडम नंबर छपाएं
+    let mut rng = rand::thread_rng();
+    let num: i32 = rng.gen_range(0..10);
+    println!("Random number is: {}", num);
 }
-```
-एक सीड के साथ गेन्रेटर बनाने के बिना, हर बार आपको चलाने के लिए एक अन्य नंबर देखने के लिए आपको पहले से ही उदयपनापन का उपयोग न करना होगा। इसलिए, आप अपने नंबर जेनरेटर को एक बार सेटोल गाम और रूलेट के लिए खेलने के लिए अवश्य उपयोग कर सकते हैं।
 
-## गहरी जाँच
-नंबर जेनरेटिंग ने कई उपयोग जोड़े हैं, और आपको पता होना चाहिए कि क्या आप कृत्रिम नंबर गेनरेट करने के लिए अन्य अंशों को कैसे बदलते हैं। यह सीखने के लिए और अधिक साहसिक उपकरणों को समझने के लिए आपको गहरी जाँच की आवश्यकता होगी। आप यहां [रस्ट मैनुअल](https://doc.rust-lang.org/stable/book/ch07-03-paths-for-referring-to-an-item-in-the-module-tree.html) और [रन्ड डॉक्स](https://
+```
+Output:
+```
+Random number is: 5
+```
+## गहराई में जाएं:
+Random number generator एक algorithm होता है जो यादृच्छिक संख्याओं को generate करता है। इसे विभिन्न applications में इस्तेमाल किया जाता है जैसे cryptography और simulations में। रस्ट के साथ आप विभिन्न random number libraries का इस्तेमाल कर सकते हैं जैसे rand और rand_core। यह उदाहरण में हमने thread_rng() उपयोग किया है, जो एक नया random number generator प्रस्तुत करता है, और gen_range() से हम दिए गए range के बीच कोई एक उपयुक्त रैंडम संख्या अनुकूलित करते हैं। 
+
+## और भी देखें:
+- [The Rust Book chapter on generating random numbers](https://doc.rust-lang.org/book/ch07-04-randomness.html)
+- [The rand crate documentation](https://docs.rs/rand/0.8.3/rand)
+- [The rand_core crate documentation](https://docs.rs/rand_core/0.6.2/rand_core)

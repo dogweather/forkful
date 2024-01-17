@@ -10,44 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué?
+## ¿Qué y por qué?
+Convertir una fecha en una cadena de texto es una manera de representar una fecha en un formato legible para los humanos. Los programadores a menudo hacen esto para mostrar la fecha en una interfaz de usuario o para almacenarla en una base de datos de una manera fácilmente comprensible.
 
-¿Te has preguntado alguna vez cómo convertir una fecha en Ruby a un formato de cadena de texto? Puede que necesites hacerlo para mostrar la fecha en un formato específico o para guardarla en una base de datos. En este artículo, te enseñaremos cómo hacerlo de manera sencilla y eficiente.
+## Cómo:
+```Ruby
+# Ejemplo 1: Convertir una fecha en una cadena de texto
+date = Date.new(2021, 10, 12)
+puts date.to_s # Output: "2021-10-12"
+# Se puede usar el método ".strftime" para especificar el formato deseado
+puts date.strftime("%d/%m/%Y") # Output: "12/10/2021"
 
-## Cómo hacerlo
-
-Para convertir una fecha en una cadena de texto en Ruby, utilizamos el método `strftime`, que significa "string from time". Este método permite especificar el formato en el que queremos mostrar la fecha. Aquí tienes un ejemplo de código:
-
-```ruby
-fecha = Time.new(2021, 9, 15) # Crear una fecha de ejemplo
-puts fecha.strftime("%d/%m/%Y") # La fecha se muestra en formato DD/MM/YYYY
+# Ejemplo 2: Convertir una fecha y hora en una cadena de texto
+time = Time.new(2021, 10, 12, 10, 30, 00)
+puts time.to_s # Output: "2021-10-12 10:30:00"
+# También se puede usar el método ".strftime" para especificar el formato deseado
+puts time.strftime("%d/%m/%Y %H:%M:%S") # Output: "12/10/2021 10:30:00"
 ```
 
-El resultado sería:
+## Profundizando:
+La conversión de una fecha en una cadena de texto es una práctica común en la programación debido a la necesidad de mostrar fechas en una forma legible para los usuarios. Antes de la creación de sistemas de procesamiento de tiempo, las fechas se almacenaban y manipulaban en formato de cadena de texto. Sin embargo, con la evolución de la tecnología, surgieron nuevas formas de representar y manipular fechas, como objetos de fecha y hora en lenguajes de programación modernos.
 
-```
-15/09/2021
-```
+Un método alternativo para convertir una fecha en una cadena de texto es utilizar el método ".to_s" en lugar de ".strftime". Esto producirá una cadena de texto utilizando el formato predeterminado del lenguaje de programación. Además, la función "DateTime.parse()" también puede usarse para convertir una cadena de texto en un objeto de fecha.
 
-El primer argumento del método `strftime` es una cadena con el formato deseado. Aquí hay algunos de los caracteres más comunes que puedes utilizar:
+En Ruby, las fechas se almacenan como números enteros que representan la cantidad de días desde el 1 de enero de 4713 a.C. Este sistema de calendario se llama Calendario Juliano. Sin embargo, en la mayoría de los casos, las fechas se muestran en el formato Gregoriano, que se usa en la mayoría de los países occidentales.
 
-- `%d`: día del mes con dos dígitos
-- `%m`: mes con dos dígitos
-- `%Y`: año con cuatro dígitos
-- `%H`: hora con formato 24 horas
-- `%M`: minuto con dos dígitos
-- `%S`: segundo con dos dígitos
-
-Si quieres ver una lista completa de los caracteres disponibles, puedes consultar la documentación oficial de Ruby.
-
-## Profundizando
-
-El método `strftime` utiliza un objeto del tipo `Time` para convertirlo en una cadena de texto. Este objeto contiene toda la información de la fecha y hora, como año, mes, día, hora, minuto y segundo. Al especificar el formato que queremos en el método `strftime`, estamos diciéndole a Ruby qué información debe incluir en la cadena de texto.
-
-También podemos utilizar el método `strftime` con objetos del tipo `Date` y `DateTime`, que tienen la misma estructura que el objeto `Time`.
-
-## Ver también
-
-- [Documentación oficial de Ruby sobre strftime](https://docs.ruby-lang.org/en/3.0.0/Time.html#method-i-strftime)
-- [Artículo de Ruby para principiantes sobre objetos Time, Date y DateTime](https://www.freecodecamp.org/news/ruby-time-date-datetime/)
-- [Guía de formateo de fechas en Ruby](https://www.codecademy.com/learn/learn-ruby/modules/learn-ruby-formatting-numbers-and-strings-u/articles/ruby-formatting-date)
+## Ver también:
+- Documentación oficial de Ruby sobre la clase Date: https://ruby-doc.org/stdlib-2.7.0/libdoc/date/rdoc/Date.html
+- Documentación oficial de Ruby sobre la clase Time: https://ruby-doc.org/core-2.7.0/Time.html
+- Artículo de Medium sobre diferentes formas de trabajar con fechas en Ruby: https://medium.com/rubycademy/manipulando-fechas-en-ruby-6ab88bb3d8d

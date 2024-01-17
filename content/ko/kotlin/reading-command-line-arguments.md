@@ -1,7 +1,7 @@
 ---
-title:                "명령줄 인수 읽기"
-html_title:           "Kotlin: 명령줄 인수 읽기"
-simple_title:         "명령줄 인수 읽기"
+title:                "컴퓨터 프로그래밍에서 명령 줄 인자 읽기"
+html_title:           "Kotlin: 컴퓨터 프로그래밍에서 명령 줄 인자 읽기"
+simple_title:         "컴퓨터 프로그래밍에서 명령 줄 인자 읽기"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Files and I/O"
@@ -10,60 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+# 커맨드 라인 인수 읽기란 무엇이며 왜 필요한가요?
 
-"Command line arguments(명령 줄 인자)"를 읽는 것은 프로그래밍에서 매우 유용한 기술입니다. 이것을 이용하면 프로그램을 실행할 때 사용자로부터 입력값을 받을 수 있으며, 이를 통해 프로그램의 실행 방식을 유연하게 조절할 수 있습니다.
+커맨드 라인 인수를 읽는 것은 프로그램이 시작될 때 사용자가 입력한 인수를 읽어들이는 작업을 의미합니다. 보통 사용자가 프로그램을 실행할 때 명령행에 추가적인 정보를 넣어주기 위해 사용됩니다. 이를 통해 사용자가 원하는 결과를 얻을 수 있도록 프로그램을 조작할 수 있습니다.
 
-## 방법
+## 어떻게 하나요?
 
-```Kotlin
+**코틀린**에서는 ```args``` 배열을 통해 커맨드 라인 인수를 읽을 수 있습니다. 다음은 인수를 출력하는 예시 코드입니다.
+
+```kotlin
 fun main(args: Array<String>) {
+    println("입력한 인수는 다음과 같습니다:")
     for (arg in args) {
         println(arg)
     }
 }
 ```
 
-위의 코드는 "main" 함수의 괄호 안에 "args"라는 변수를 넣어서 실행하면, 사용자가 프로그램 실행 시 프로그램 이름 뒤에 입력한 모든 값을 출력하는 간단한 예제입니다.
+사용자가 프로그램을 실행할 때 다음과 같이 인수를 추가할 수 있습니다:
 
-**커맨드 라인에서 실행:**
-
-```Kotlin
-$ kotlin Main.kt Hello World!
-Hello
-World!
+```
+kotlin MyProgram.kt arg1 arg2
 ```
 
-만약 프로그램에서 특정한 인자를 사용하는 것이 아니라면, "전역 변수(global variable)"인 "args"를 사용하는 것도 가능합니다. 하지만 이 방식은 가독성이 떨어져 추천하지 않습니다.
+위 코드를 실행하면 다음과 같은 결과가 출력됩니다:
 
-### 옵션 파싱
-
-커맨드 라인 인자는 다양한 형태로 지정할 수 있습니다. 예를 들어, "압축 파일을 만들기 위한 프로그램에서 "-c" 옵션으로 압축 파일을 지정하고 싶을 때, 다음과 같이 사용할 수 있습니다.
-
-```Kotlin
-fun main(args: Array<String>) {
-    val options = args.filter { it[0] == '-' }
-    val files = args.filter { it[0] != '-' }
-    println("Options: $options")
-    println("Files: $files")
-}
+```
+입력한 인수는 다음과 같습니다:
+arg1
+arg2
 ```
 
-**옵션과 파일 지정:**
+## 깊이있게 살펴보기
 
-```Kotlin
-$ kotlin Main.kt -c output.txt input1.txt input2.txt
-Options: [-c]
-Files: [output.txt, input1.txt, input2.txt]
-```
+### 역사적 배경
 
-옵션은 "-c output.txt"처럼 사용할 수 있지만, 파일명이 "-"로 시작하는 경우 처리하기가 어렵기 때문에 "-c=output.txt"와 같이 사용하는 것을 권장합니다.
+커맨드 라인 인수를 읽는 기능은 오래 전부터 존재했습니다. 과거에는 프로그램을 실행할 때 모든 인수를 미리 설정해야 했기 때문에, 유연성과 편의성 측면에서 커맨드 라인 인수가 중요한 역할을 했습니다.
 
-## 딥 다이브
+### 대안
 
-커맨드 라인 인자는 문자열 배열(Array<String>)로 전달되며, 배열의 크기는 인자 개수에 따라 결정됩니다. 이 배열을 이용하면 프로그램에서 사용자의 입력 값을 쉽게 읽어올 수 있습니다. 또한 "args"를 통해 전달된 인자는 "immutable(불변)"하기 때문에, 값을 변경하는 것은 불가능합니다.
+커맨드 라인 인수를 읽는 대안으로는 프롬프트를 이용하여 사용자로부터 직접 인수를 입력 받는 방법이 있습니다. 하지만 효율성과 사용자의 불편함 측면에서 커맨드 라인 인수를 사용하는 것이 더 좋은 방법입니다.
 
-## 더 보기
+### 구현 세부 사항
 
-- [Kotlin 프로그래밍 가이드](https://kotlinlang.org/docs/reference/)
-- [코틀린 공식 문서](https://kotlinlang.org/docs/)
+코틀린에서는 ```args``` 배열을 통해 커맨드 라인 인수를 읽을 수 있지만, 다른 언어에서는 다른 방식으로 구현될 수도 있습니다. 프로그래밍 언어마다 다른 방식이 존재하며 개발자의 취향에 따라 다른 방식을 선택할 수 있습니다.
+
+## 관련 자료들
+
+- [Kotlin 공식 문서 - 커맨드 라인 인수](https://kotlinlang.org/docs/reference/parameters.html#command-line-arguments)
+- [코틀린으로 Java 프로그램 작성하기](https://mvpjava.com/kotlin-tutorial-basics/) - 커맨드 라인 인수 읽는 방법 알아보기
+- [Java와 Kotlin의 차이점](https://javaexpert.tistory.com/827) - 각 언어에서 커맨드 라인 인수 읽는 방법 비교하기

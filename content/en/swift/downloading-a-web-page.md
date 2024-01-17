@@ -10,47 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
+Downloading a web page is the process of retrieving the content of a webpage from a server and displaying it on your device. Programmers do this in order to access and utilize information from websites, whether it be for data processing or creating applications.
 
-If you're a web developer or even just a curious internet user, you may want to download a web page for various reasons. Perhaps you want to analyze the HTML structure, check for broken links, or simply save a local copy for offline viewing.
-
-## How To
-
-Downloading a web page in Swift is a relatively simple process that can be done using the URLSession framework. First, we need to create a URL for the web page we want to download. Then, we initialize a URLSession object and use it to create a data task, passing in the URL we just created. Finally, we use the resume() method to start the data task. Here's an example:
+## How to:
+To download a web page in Swift, we can use the `Data(contentsOf:)` function. We simply need to provide the URL of the webpage we want to download as a parameter, and the function will return the content of the webpage as an instance of `Data`. For example:
 
 ```Swift
-let url = URL(string: "https://www.example.com")
-let session = URLSession(configuration: .default)
-let task = session.dataTask(with: url) { (data, response, error) in
-    if let error = error {
-        print("Error: \(error)")
-    } else if let data = data {
-        // Do something with the data here
-    }
+if let data = try? Data(contentsOf: URL(string: "https://www.example.com")!) {
+    // Content of webpage is now stored in 'data' variable
+    // Use 'data' variable to process or utilize information
 }
-task.resume()
 ```
 
-In the above example, we create a data task that will download the web page specified by the URL. Once the download is complete, the closure is executed and we can access the downloaded data.
+## Deep Dive:
+Downloading web pages has been a crucial aspect of web development since the early days of the internet. In the past, programmers had to use more complex methods, such as establishing a network connection and sending HTTP requests, to download web pages. However, with the `Data(contentsOf:)` function now available in Swift, the process has become much simpler and more efficient.
 
-To save the downloaded data to a file, we can use the FileManager class. Here's an example of how we can save the downloaded web page as an HTML file:
+An alternative method for downloading web pages in Swift is to use the `URLSession` class. This allows for more control over the download process, such as handling network errors and downloading content asynchronously. However, for simple web page downloads, the `Data(contentsOf:)` function is usually sufficient.
 
-```Swift
-let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-let filePath = documentsDirectory.appendingPathComponent("example.html")
-try data?.write(to: filePath)
-```
+When downloading web pages, it is important to handle any errors that may occur, such as a broken or invalid URL. It is also recommended to download web pages asynchronously in order to avoid blocking the main thread and potentially causing the app to freeze.
 
-This will create a file called "example.html" in the app's document directory with the downloaded data. From here, we can do whatever we want with the file.
-
-## Deep Dive
-
-Behind the scenes, the URL session created in the above example uses the HTTP protocol to make a request to the server and download the web page. The data that is returned is in the form of a Data object, which can then be converted to a String or other data type if needed.
-
-There are also various options available for configuring the URL session, such as setting a timeout for the request or handling redirections. For more advanced usage, you can also implement delegate methods to be notified of the progress of the download.
-
-## See Also
-
-- [Official URLSession Documentation](https://developer.apple.com/documentation/foundation/urlsession)
-- [Medium Article on Downloading Web Pages in Swift](https://medium.com/@sdrzn/swift-downloading-the-contents-of-webpage-411c76f1bdf8)
-- [Stack Overflow Post on Saving a File from URL in Swift](https://stackoverflow.com/questions/24231680/loading-downloading-image-from-url-on-swift)
+## See Also:
+- [Apple Developer Documentation on `Data(contentsOf:)` function](https://developer.apple.com/documentation/foundation/data/1409715-contents)
+- [Apple Developer Documentation on `URLSession` class](https://developer.apple.com/documentation/foundation/urlsession)

@@ -1,7 +1,7 @@
 ---
-title:                "Yamlでの作業"
-html_title:           "Arduino: Yamlでの作業"
-simple_title:         "Yamlでの作業"
+title:                "yamlを扱う"
+html_title:           "Arduino: yamlを扱う"
+simple_title:         "yamlを扱う"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Data Formats and Serialization"
@@ -10,44 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
-YAMLを使用するのに最適な2つの理由を紹介します。
+## 何 & なぜ？
+プログラマーがYAMLを使用する理由は何でしょうか？YAMLとは何かについて説明します。YAMLとは、人が読み書きしやすい形式でデータを表現するための軽量な言語です。プログラマーがYAMLを使用する理由は、データを簡単に読み書きできるためです。
 
-1. YAMLは可読性が高く、人間が直接読めるテキスト形式であるため、プログラムの設定やデータの保存に適しています。
-2. YAMLは簡潔な文法を持っており、繰り返しを避けることができるため、コードの可読性を高めることができます。
-
-## 使い方
-YAMLをArduinoで使用する方法を具体的なコーディング例とサンプルの出力を交えて説明します。
+## 使い方：
+以下は、YAMLを使用するArduinoのコーディング例とサンプル出力です。
 
 ```
-Arduinoの例:
-#include <ArduinoYaml.h>
+Arduino library:
+#include <YAML.h>
+ 
+YAML.begin();
+ 
+String yamlString = F("greeting: hello\nname: world");
+DynamicJsonDocument data(1024);
+if (deserializeYaml(data, yamlString)) {
+  Serial.println(data["greeting"].as<char*>());
+  Serial.println(data["name"].as<char*>());
+} else {
+  Serial.println("YAML parsing failed");
+}
 
-YamlDocument doc;
-
-// データをYAML形式で書き込む
-doc["name"] = "John";
-doc["age"] = 25;
-doc["hobby"] = "reading";
 ```
 
-YAML形式で書き込んだデータを取得して出力すると、以下のようになります。
-
+出力：
 ```
-出力:
-name: John
-age: 25
-hobby: reading
+hello
+world
 ```
 
-## 深堀り
-YAMLをさらに深く理解するために、以下の情報を参考にしてください。
+## 詳しく見る：
+YAMLは、XMLやJSONなどの他の形式と比較して、より人が読み書きしやすい形式を提供します。XMLは、重いタグ構造を使用してデータを表現します。JSONは、配列やオブジェクトなどの構造体を使用してデータを表現します。しかし、YAMLはシンプルなキーと値の形式を採用しています。また、インデントを使用することで、階層構造を表現することができます。
 
-- YAMLはJSONと非常に似ていますが、一般的にはより人間が読みやすい形式であると言われています。
-- YAMLはネストされたデータ構造をサポートしており、コードが煩雑になるのを防ぎます。
-- Arduinoでは[ArduinoYamlライブラリ](https://github.com/greiman/ArduinoYaml)を使用することでYAMLを簡単に扱うことができます。
+さらに、YAMLはJSONやXMLよりも柔軟性があります。コメントを挿入することができるため、人間が読みやすいドキュメントとして使用することができます。
 
-## 関連リンク
-- [YAMLの公式サイト](https://yaml.org/)
+YAMLは、さまざまなプログラミング言語でサポートされており、Arduinoでも使用することができます。しかし、代替として使用できるものもあります。JSONやXMLは、YAMLよりも広く使用されていますが、YAMLの柔軟性と人間が読みやすい形式は、特定のユースケースに向いているかもしれません。
+
+## 他の情報を見る：
+YAMLについて詳しく知りたい方は、以下のリンクを参考にしてください。
+
+- [YAML公式サイト](http://www.yaml.org/)
 - [YAMLチュートリアル](https://learnxinyminutes.com/docs/yaml/)
-- [ArduinoYamlライブラリのドキュメンテーション](https://github.com/greiman/ArduinoYaml#yaml-class-documentation)
+- [ArduinoでYAMLを使用する方法](https://arduinojson.org/2016/02/02/the-php-yaml-Android/)
+- [YAML vs JSON vs XML:どちらが最適か？](https://www.quora.com/YAML-vs-JSON-vs-XML-Which-is-the-preferred-data-interchange-format-and-why)

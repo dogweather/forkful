@@ -10,53 +10,86 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was & Warum?
+YAML (Yet Another Markup Language) ist eine lesbar-formatierte Datenstruktur, die von Programmierern häufig verwendet wird, um Daten in einer einfachen und menschenlesbaren Weise zu speichern. Sie wird oft für Konfigurationsdateien verwendet und bietet eine praktische Alternative zu komplexen und schwer zu lesenden Datei- und Datenformaten.
 
-YAML ist eine Text-basierte, strukturierte Datenformat, die häufig für die Konfiguration von Anwendungen oder das Speichern von Daten verwendet wird. Es ist leicht lesbar und ähnelt der menschlichen Sprache, was es zu einer beliebten Wahl für Entwickler macht. Durch die Verwendung von Go können Sie nahtlos mit YAML arbeiten und Ihre Projekte effizienter gestalten.
-
-## Wie geht das?
-
-Um mit YAML in Go zu arbeiten, müssen Sie zunächst das "yaml" Paket importieren. Dann können Sie die "Marshal" und "Unmarshal" Funktionen verwenden, um Daten in und aus YAML-Strukturen zu konvertieren. Zum Beispiel:
-
+## Wie geht's?
+Go bietet eine eingebaute Unterstützung für das Arbeiten mit YAML. Hier ist ein Beispiel, wie Sie Daten in einer YAML-Datei speichern und lesen können:
 ```
+package main
+
 import (
-	"fmt"
-	"gopkg.in/yaml.v2"
+    "fmt"
+    "gopkg.in/yaml.v2"
+    "os"
 )
 
-type Person struct {
-	Name string `yaml:"name"`
-	Age  int    `yaml:"age"`
+type person struct {
+    Name  string `yaml:"name"`
+    Age   int    `yaml:"age"`
+    Email string `yaml:"email"`
 }
 
 func main() {
-	// Daten in YAML konvertieren
-	person := &Person{Name: "Max", Age: 25}
-	yamlData, err := yaml.Marshal(person)
 
-	if err != nil {
-		panic(err)
-	}
+    // Daten strukturieren
+    data := map[string]person{
+        "1": {
+            Name:  "Max Mustermann",
+            Age:   30,
+            Email: "max@mustermann.com",
+        },
+        "2": {
+            Name:  "Anna Schmidt",
+            Age:   25,
+            Email: "anna@schmidt.com",
+        },
+    }
 
-	// YAML in Struktur konvertieren
-	var newPerson Person
-	err = yaml.Unmarshal(yamlData, &newPerson)
+    // YAML-Datei erstellen
+    file, err := os.Create("./test.yaml")
+    if err != nil {
+        panic(err)
+    }
+    defer file.Close()
 
-	if err != nil {
-		panic(err)
-	}
+    // Daten in YAML-Format codieren und in die Datei schreiben
+    err = yaml.NewEncoder(file).Encode(data)
+    if err != nil {
+        panic(err)
+    }
 
-	fmt.Println(newPerson)
+    // YAML-Datei lesen
+    file, err = os.Open("./test.yaml")
+    if err != nil {
+        panic(err)
+    }
+    defer file.Close()
+
+    // Daten aus Datei in eine Variable decodieren
+    var newData map[string]person
+    err = yaml.NewDecoder(file).Decode(&newData)
+    if err != nil {
+        panic(err)
+    }
+
+    // Daten ausgeben
+    fmt.Println(newData["1"].Name)
+    fmt.Println(newData["1"].Age)
+    fmt.Println(newData["1"].Email)
+    fmt.Println(newData["2"].Name)
+    fmt.Println(newData["2"].Age)
+    fmt.Println(newData["2"].Email)
+
 }
 ```
 
-Die Ausgabe dieses Codes wäre `Name: Max, Age: 25`. Durch die Nutzung von Tags können Sie die Feldnamen in der Struktur an die entsprechenden Schlüssel in der YAML-Datei anpassen.
+Das obige Beispiel erstellt eine YAML-Datei mit den Informationen von zwei Personen und liest dann diese Datei und gibt die gespeicherten Daten in der Konsole aus.
 
-## Tiefer Einblick
-
-Es gibt viele weitere Funktionen und Optionen, die beim Arbeiten mit YAML in Go verfügbar sind. Zum Beispiel können Sie mit dem "Decoder" und "Encoder" auch Daten von Streams und Dateien lesen und schreiben. Außerdem gibt es zahlreiche Optionen, um das Marshalling und Unmarshalling Ihrer Daten anzupassen. Für eine ausführlichere Erklärung und Beispiele empfehle ich, die offizielle Dokumentation des "yaml" Pakets zu lesen.
+## Tiefer Tauchgang
+YAML wurde ursprünglich von Clark Evans im Jahr 2001 entwickelt und ist eine Erweiterung der bekannten Markup-Sprache "YAML Ain't Markup Language". Es bietet eine leichte Syntax und ist einfach zu lesen und zu interpretieren. Alternativen zu YAML sind z.B. JSON oder XML, jedoch bietet YAML eine bessere Lesbarkeit und ist deshalb bei Entwicklern sehr beliebt. In Go wird YAML durch die Bibliothek "gopkg.in/yaml.v2" unterstützt.
 
 ## Siehe auch
-
-- Dokumentation des "yaml" Pakets: https://pkg.go.dev/gopkg.in/yaml.v2
-- Einführung in Go: https://tour.golang.org/
+- [YAML offizielle Website](https://yaml.org/)
+- [YAML vs JSON vs XML](https://www.geeksforgeeks.org/difference-json-vs-xml-vs-yaml/)
+- [Dokumentation der YAML-Bibliothek in Go](https://pkg.go.dev/gopkg.in/yaml.v2)

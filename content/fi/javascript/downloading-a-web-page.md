@@ -1,7 +1,7 @@
 ---
-title:                "Navigoinnin lataaminen"
-html_title:           "Javascript: Navigoinnin lataaminen"
-simple_title:         "Navigoinnin lataaminen"
+title:                "Verkkosivun lataaminen"
+html_title:           "Javascript: Verkkosivun lataaminen"
+simple_title:         "Verkkosivun lataaminen"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "HTML and the Web"
@@ -10,44 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+# Mitä ja miksi?
 
-Jokaisella verkkosivulla on oma ainutlaatuinen ulkoasu ja sisältö, joka tekee siitä mielenkiintoisen ja tarpeellisen. Jos haluat päästä käsiksi tähän sisältöön ja manipuloida sitä, sinun täytyy ensin ladata verkkosivu.
+Tiedätkö kuinka voit ladata web-sivun näytöllesi? Tämä on yksi tärkeimmistä taidoista, joita ohjelmoijan tulisi hallita. Tämä tarkoittaa sitä, että voit hakea ja näyttää web-sivuja internetistä. Tämä on oleellista monille sovelluksille, kuten selaimille, hakukoneille ja sosiaalisen median sovelluksille.
 
-## Kuinka tehdä se
+# Kuinka tehdä?
 
-Lataaminen vaatii käyttämään Javascript-koodia, joka luo HTTP-pyynnön ja vastaanottaa palvelimelta verkkosivun sisällön. Tämän jälkeen voit käyttää tätä sisältöä ja suorittaa erilaisia toimintoja, kuten muokata ja näyttää sitä käyttäjälle.
-
-Esimerkiksi voit ladata verkkosivun ja näyttää sen sisällön käyttäjälle seuraavalla koodilla:
+Pystyt lataamaan web-sivuja käyttämällä `JavaScript`-kielen sisäänrakennettua toimintoa `XMLHttpRequest`. Voit aloittaa luomalla uuden XMLHttpRequest-olion ja asettamalla sen avulla osoitteen, josta haluat ladata web-sivun. Sitten käytä `open()`-metodia määrittämään HTTP-pyyntötyyppi ja osoitteen. Lopuksi käytä `send()`-metodia aloittaaksesi lataamisen. Alla on esimerkki koodista:
 
 ```Javascript
-// Luo uusi HTTP-pyyntö osoitteeseen
-var request = new XMLHttpRequest();
-request.open('GET', 'https://www.example.com/', true);
-
-// Kun vastaus on valmis, tulosta sisältö konsolissa
-request.onload = function() {
-  if (request.status >= 200 && request.status < 400) {
-    console.log(request.responseText);
-  } else {
-    console.log("Sivun lataaminen epäonnistui");
-  }
-};
-
-// Lähetä pyyntö
-request.send();
+let xmlhttp = new XMLHttpRequest(); // Luodaan uusi olio
+xmlhttp.open('GET', 'https://example.com', true); // Määritetään HTTP-pyyntötyyppi ja osoite
+xmlhttp.send(); // Aloittaa lataamisen
 ```
 
-Tämä koodi luo uuden HTTP-pyynnön osoitteeseen "https://www.example.com/" ja palauttaa vastauksena lataamasi verkkosivun sisällön. Voit tämän jälkeen käyttää tätä sisältöä erilaisiin tarkoituksiin, kuten näyttää sen käyttäjälle tai tallentaa sen johonkin tietorakenteeseen.
+Kun olet ladannut web-sivun, voit käyttää `responseText`-ominaisuutta saadaksesi sivun sisällön. Voit myös käyttää muita ominaisuuksia, kuten `status`, joka kertoo lataamisen tilasta, tai `getAllResponseHeaders()`, joka palauttaa kaikki vastauksen otsikot. Alla on esimerkki koodista, joka tulostaa ladatun sivun sisällön:
 
-## Syväsukellus
+```Javascript
+// Kun ladattu sivu on valmis
+xmlhttp.onreadystatechange = function() {
+    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+        // Tulostetaan sivun sisältö
+        console.log(xmlhttp.responseText);
+    }
+}
+```
 
-Sivun lataamisessa on useita vaihtoehtoisia tapoja, kuten käyttämällä jQuery-kirjastoa tai NodeJS:n sisäänrakennettuja moduuleja. Voit myös muokata pyyntöä ja lisätä otsikoita tai muita parametreja sen mukaan, mitä tarpeita sinulla on.
+# Syvällinen sukellus
 
-On myös hyvä huomata, että jotkut verkkosivut voivat estää niiden lataamisen. Tämä johtuu yleensä siitä, että sivuston omistaja ei halua, että joku muu käyttää heidän sisältöään ilman lupaa. Tässä tapauksessa sinun täytyy tutkia sivuston politiikkaa ja etsiä muita vaihtoehtoja ladata sisältöä tai luoda oma sisältösi.
+`XMLHttpRequest`-tekniikka on ollut käytössä vuodesta 1999 lähtien ja se on yksi ensimmäisistä tekniikoista, joita käytettiin lataamaan web-sivuja dynaamisesti. Nykyään on olemassa myös muita vaihtoehtoja, kuten käyttämällä `Fetch API`-toimintoa tai asynkronista `fetch()`-metodia. Nämä toimivat samalla periaatteella kuin `XMLHttpRequest`.
 
-## Katso myös
+Kun lataat web-sivun, voit myös määrittää muita asetuksia, kuten asettaa HTTP-otsikoita lisämällä `setRequestHeader()`-metodin. Voit myös määrittää pyynnön asetukset, kuten käyttämällä `withCredentials`-ominaisuutta määrittääksesi, kuljetetaanko evästeitä pyynnössä. Voit löytää lisätietoja näistä vaihtoehdoista MDN-dokumentaatiosta.
 
-- [MDN: HTTP-pyyntö](https://developer.mozilla.org/fi/docs/Web/API/XMLHttpRequest) 
-- [jQuery-kirjasto](https://jquery.com/) 
-- [NodeJS](https://nodejs.org/en/)
+# Katso myös
+
+- [MDN - Asynchronous JavaScript](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous)
+- [W3Schools - XMLHttpRequest](https://www.w3schools.com/XML/xml_http.asp)
+- [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)

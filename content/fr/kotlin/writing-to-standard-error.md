@@ -1,7 +1,7 @@
 ---
-title:                "Écrire sur le flux d'erreur standard"
-html_title:           "Kotlin: Écrire sur le flux d'erreur standard"
-simple_title:         "Écrire sur le flux d'erreur standard"
+title:                "Écrire vers l'erreur standard"
+html_title:           "Kotlin: Écrire vers l'erreur standard"
+simple_title:         "Écrire vers l'erreur standard"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Files and I/O"
@@ -10,41 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+# Quoi & Pourquoi?
+Le terme « écrire vers la sortie d'erreur standard » (ou « écrire vers la stderr ») fait référence à une pratique de programmation consistant à envoyer des messages d'erreur vers un flux de sortie appelé standard error. Les programmeurs utilisent cela pour signaler les erreurs et les problèmes dans leur code.
 
-Écrire sur la sortie d'erreur standard est utile lorsque vous souhaitez afficher des informations de débogage sur votre programme. Cela peut vous aider à trouver et à résoudre les erreurs plus facilement.
-
-## Comment faire
-
-Voici comment écrire sur la sortie d'erreur standard en utilisant Kotlin :
-
-```Kotlin
+# Comment faire:
+Voici un exemple de code en Kotlin pour écrire vers la stderr:
+ ```Kotlin
 fun main() {
-  // Code de votre programme
-  println("Ceci est un message sur la sortie standard")
-  System.err.println("Ceci est un message sur la sortie d'erreur standard")
+    System.err.println("Erreur détectée !")
 }
 ```
-
-La première ligne de code crée une fonction principale tandis que la deuxième ligne utilise la fonction prédéfinie `println()` pour afficher le message sur la sortie standard. La troisième ligne utilise la fonction `println()` de l'objet `System.err` pour écrire le message sur la sortie d'erreur standard. Le résultat de ces lignes de code sera :
-
+Cela produira une sortie qui ressemble à ceci:
 ```
-Ceci est un message sur la sortie standard
-Ceci est un message sur la sortie d'erreur standard
+Erreur détectée !
+```
+Vous pouvez également spécifier le type d'erreur dans votre message:
+```Kotlin
+fun main() {
+    val num = 10
+    try {
+        num / 0
+    } catch (e: Exception) {
+        System.err.println("Erreur de division par zéro: ${e.message}")
+    }
+}
+```
+Résultat:
+```
+Erreur de division par zéro: / by zero
 ```
 
-## Plongez plus profondément
+# Plongée en profondeur:
+Écrire vers la stderr est une pratique courante dans la programmation depuis de nombreuses années. Avant cette méthode, les programmeurs utilisaient souvent des pop-ups ou des messages sur la sortie standard pour signaler les erreurs. Cependant, cela peut gêner l'utilisateur et le flux de sortie standard est généralement utilisé pour d'autres informations importantes. Écrire vers la stderr permet de séparer clairement les messages d'erreur du reste de la sortie.
 
-Pour mieux comprendre comment écrire sur la sortie d'erreur standard en Kotlin, voici quelques points à connaître :
+Une alternative à cette méthode serait d'utiliser des logs pour gérer les erreurs. Cependant, écrire vers la stderr est souvent plus simple et plus rapide à mettre en place.
 
-- En Kotlin, la classe `System` est utilisée pour accéder à la sortie standard et à la sortie d'erreur standard.
-- La fonction `println()` est une méthode de la classe `PrintStream` qui est utilisée pour écrire sur la sortie standard.
-- La fonction `println()` de l'objet `System.err` est une méthode de la classe `PrintStream` qui est utilisée pour écrire sur la sortie d'erreur standard.
+En implémentation, écrire vers la stderr est similaire à l'écriture vers la sortie standard. La seule différence est que vous utilisez System.err au lieu de System.out.
 
-Ces informations peuvent sembler techniques, mais elles sont importantes pour comprendre comment écrire efficacement sur la sortie d'erreur standard en utilisant Kotlin.
+# Voir aussi:
+Pour plus d'informations sur l'écriture vers la stderr en Kotlin, consultez la documentation officielle de Kotlin sur les flux de sortie.
+https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.system/-print-stream/err.html
 
-## Voir aussi
-
-- [Documentation officielle de Kotlin](https://kotlinlang.org/docs/home.html)
-- [Tutoriels de programmation Kotlin](https://www.programiz.com/kotlin-programming)
-- [Guide de débogage en Kotlin](https://www.google.com/search?q=kotlin+debugging+guide)
+Pour en savoir plus sur la manipulation des erreurs en général, consultez cet article sur la gestion des exceptions en Kotlin.
+https://kotlinlang.org/docs/reference/exceptions.html

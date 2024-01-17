@@ -10,64 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-Sending HTTP requests is a crucial part of web development and allows users to communicate with servers and fetch data from websites. It is necessary for tasks such as retrieving information, making API calls, and interacting with web forms.
+Sending an HTTP request means making a request to a web server to retrieve information. Programmers use this to communicate with web servers and get data such as web pages, images, or files. It is an essential part of web development and allows us to access and use information from the internet.
 
-## How To
+## How to:
 
-To send an HTTP request in Python, we will be using the built-in `requests` module. First, we need to import the module:
+To send an HTTP request in Python, we can use the built-in `requests` library. First, we import the library using `import requests`. Then, we use the `get()` method to make a GET request to a specific URL. For example:
 
 ```Python
 import requests
-```
-
-Next, we can use the `get()` method from the `requests` module to make a GET request to a specified URL:
-
-```Python
 response = requests.get("https://www.example.com")
-```
-
-We can also include parameters in our request:
-
-```Python
-params = {"key": "value"}
-response = requests.get("https://www.example.com", params=params)
-```
-
-To make a POST request, we can use the `post()` method and pass in any necessary data:
-
-```Python
-data = {"key": "value"}
-response = requests.post("https://www.example.com", data=data)
-```
-
-After making the request, we can access the response using the `response` variable. We can view the HTML of the page using the `text` attribute:
-
-```Python
 print(response.text)
 ```
 
-We can also view the status code of the response using the `status_code` attribute:
+This will send a request to the URL and print out the response data. We can also specify additional parameters such as headers or data to send with the request. For more information on the `requests` library, check out their official documentation.
 
-```Python
-print(response.status_code)
-```
+## Deep Dive:
 
-## Deep Dive
+The Hypertext Transfer Protocol (HTTP) was created in 1989 and has since become the standard for communication between web servers and clients. In addition to GET requests, there are also other types of requests such as POST, PUT, and DELETE. These allow programmers to interact with web servers and update information, not just retrieve it.
 
-The `requests` module makes it easy for us to send HTTP requests in Python by handling all of the underlying complexities. It also allows us to customize our requests by adding headers, authentication, and other options.
+There are also alternative methods for sending HTTP requests in Python, such as using the `urllib` library or the `httplib` library. However, the `requests` library is generally preferred for its simpler syntax and more user-friendly interface.
 
-The GET and POST methods are just two of the many available request methods, such as PUT, DELETE, and PATCH. The `requests` module also has a built-in JSON decoder, making it easy to work with JSON data.
+When we send an HTTP request, we are using the client-server model, where the client (our program) sends a request to the server (the web server) and waits for a response. This process involves several steps, including establishing a TCP connection, sending the request, and receiving the response.
 
-It is important to note that when making multiple requests, it is best to use the `Session` object from the `requests` module. This allows for more efficient use of network resources and improved performance.
+## See Also:
 
-To learn more about the `requests` module and its capabilities, check out the official documentation [here](https://requests.readthedocs.io/en/latest/).
-
-## See Also
-
-For more information on web development in Python, check out these helpful resources:
-
-- [Official Python Documentation](https://docs.python.org/3/library/http.html)
-- [Flask - A Lightweight Web Framework](https://flask.palletsprojects.com/en/2.0.x/)
-- [Django - A Full-Featured Web Framework](https://www.djangoproject.com/)
+- [Requests library documentation](https://docs.python-requests.org/en/master/)
+- [Introduction to HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview)

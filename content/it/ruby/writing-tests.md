@@ -10,67 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+## Che cos'è e perché?
+Scrivere test è una pratica comune tra i programmatori per verificare che il codice funzioni correttamente e per identificare eventuali errori. I test consentono di risparmiare tempo nella fase di debugging e di garantire la qualità del codice.
 
-Scrivere codice di qualità è fondamentale per qualsiasi programmatore. I test sono uno strumento essenziale per garantire che il nostro codice funzioni correttamente e continui a farlo nel futuro. Facilitano anche la comprensione e la manutenzione del codice.
-
-## Come fare
-
-Per scrivere test efficaci, dobbiamo utilizzare il framework di testing integrato di Ruby, chiamato Minitest. Iniziamo creando un nuovo file per i nostri test e utilizzando l'istruzione `require` per aggiungere Minitest al nostro progetto:
+## Come fare:
+Ecco un esempio di come scrivere un test in Ruby utilizzando la libreria standard `Test::Unit`:
 
 ```Ruby
-require "minitest/autorun"
-```
-
-Successivamente, creiamo una classe che eredita dalla classe `Minitest::Test` e definiamo i nostri test all'interno di metodi che iniziano con `test_`:
-
-```Ruby
-class CalculatorTest < Minitest::Test
-  def test_add
-    # codice per testare la funzione della calcolatrice per l'addizione
+  require 'test/unit'
+  
+  class TestString < Test::Unit::TestCase
+    def test_length
+      assert_equal(5, 'Hello'.length)
+    end
   end
-
-  def test_subtract
-    # codice per testare la funzione della calcolatrice per la sottrazione
-  end
-end
 ```
 
-Utilizziamo gli assert di Minitest per verificare se il nostro codice produce il risultato previsto:
+L'output dovrebbe essere `1 runs, 1 assertions, 0 failures, 0 errors, 0 pendings, 0 notifications`.
 
-```Ruby
-assert_equal 4, calculator.add(2, 2)
-assert_equal 6, calculator.subtract(8, 2)
-```
+## Approfondimento:
+La pratica di scrivere test è diventata sempre più popolare negli ultimi anni grazie all'approccio di sviluppo noto come "test-driven development" (TDD). Alcune alternative a `Test::Unit` includono `RSpec` e `minitest`.
 
-Una volta che i nostri test sono pronti, possiamo eseguirli dal terminale utilizzando il comando `ruby` seguito dal nome del nostro file dei test:
+Per implementare i test, è importante comprendere i concetti di "assertions" e "fixtures". Le assertions sono dichiarazioni che descrivono i risultati attesi del test, mentre le fixtures sono dati di prova utilizzati per eseguire i test.
 
-```
-ruby calculator_test.rb
-```
-
-Se tutto funziona correttamente, dovremmo vedere un output simile al seguente:
-
-```
-Run options: --seed 29162
-
-# Running:
-
-..
-
-Finished in 0.002154s, 927.4375 runs/s, 1854.8750 assertions/s.
-
-2 runs, 4 assertions, 0 failures, 0 errors, 0 skips
-```
-
-Ora possiamo continuare a sviluppare il nostro codice, avendo la sicurezza che se qualcosa smetterà di funzionare in futuro, il nostro test ci avviserà.
-
-## Approfondimento
-
-Scrivere test efficaci richiede un equilibrio tra copertura e affidabilità. Dobbiamo essere sicuri di coprire tutti i casi possibili senza cadere nella trappola di testare ogni singola riga di codice. Inoltre, è importante seguire le best practice di Ruby, come utilizzare metodi di test brevi e descrittivi e non utilizzare test come mezzo per controllare il flusso del nostro codice.
-
-## Vedi anche
-
-- [La guida ufficiale a Minitest](https://github.com/seattlerb/minitest#minitest---miniature-test-framework) 
-- [Test Driven Development (TDD)](https://www.agilealliance.org/glossary/tdd/) 
-- [Ruby Best Practices](https://github.com/ruby/ruby/blob/trunk/README.md)
+## Vedi anche:
+- [The Pragmatic Programmer: From Journeyman to Master by Andrew Hunt and David Thomas](https://www.amazon.it/Pragmatic-Programmer-Journeyman-Master/dp/020161622X)
+- [Test Driven Development: By Example by Kent Beck](https://www.amazon.it/Test-Driven-Development-By-Example/dp/0321146530)

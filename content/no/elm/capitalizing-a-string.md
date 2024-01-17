@@ -1,7 +1,7 @@
 ---
-title:                "Stor bokstaver en streng."
-html_title:           "Elm: Stor bokstaver en streng."
-simple_title:         "Stor bokstaver en streng."
+title:                "Konvertere en streng til stor bokstav"
+html_title:           "Elm: Konvertere en streng til stor bokstav"
+simple_title:         "Konvertere en streng til stor bokstav"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -10,65 +10,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hva og Hvorfor?
+Når vi snakker om å "kapitalisere" en streng i programmering, betyr det rett og slett å gjøre alle bokstavene i strengen store bokstaver (store bokstaver). Så hvis vi for eksempel har strengen "heIiVerDen", vil en kapitalisert versjon av denne strengen være "HEIIVERDEN". Programmerere gjør dette fordi det kan være nyttig å ha en standardisert versjon av en streng, spesielt når man jobber med input fra brukere.
 
-Hvis du har noen gang jobbet med tekstbehandling i programmering, har du kanskje lurt på hvordan du kan gjøre enkle oppgaver som å gjøre det første bokstaven i et ord til en stor bokstav. Dette er hvor kapitalisering av en streng kommer inn. Å kunne kapitalisere en streng er en grunnleggende ferdighet som kan brukes i mange forskjellige programmeringsspråk, inkludert Elm.
-
-## Hvordan gjøre det
-
-Det er flere måter å kapitalisere en streng på i Elm. Her er et eksempel på en måte som bruker funksjonen `String.toUpper`:
-
+# Slik gjør du det:
+En kapitalisert streng kan enkelt opprettes ved å bruke funksjonen "String.toUpper" i Elm. La oss se på et eksempel:
 ```Elm
-import String exposing (toUpper)
-
-str = "dette er en streng"
-kapitalisert = toUpper str
-
--- kapitalisert = "DETTE ER EN STRENG"
+kapitalisertStreng = String.toUpper "heIiVerDen"
 ```
-
-Her importeres `String` modulen, som inneholder funksjonen `toUpper` som tar imot en streng (i dette tilfellet `str`) som argument og returnerer en kapitalisert versjon av strengen i en ny variabel (i dette tilfellet `kapitalisert`).
-
-En annen måte å kapitalisere en streng på er ved bruk av `String.toFirstUpper`:
-
+Dette vil gi oss outputen "HEIIVERDEN". Det er også mulig å kapitalisere individuelle ord eller setninger ved å bruke funksjonen "String.words" og deretter "List.map" for å anvende "String.toUpper" på hvert element i listen. For eksempel:
 ```Elm
-import String exposing (toFirstUpper)
-
-str = "dette er en streng"
-kapitalisert = toFirstUpper str
-
--- kapitalisert = "Dette er en streng"
+kapitalisertOrd = String.words "heIiVerDen" |> List.map String.toUpper
 ```
+Dette vil gi oss outputen ["HEIIVERDEN"]. 
 
-Som du ser, blir bare den første bokstaven i hvert ord kapitalisert i stedet for hele strengen, noe som kan være nyttig i visse tilfeller.
+# Dypdykk:
+Kapitalisering av strenger har vært en vanlig praksis i programmering i lang tid, og brukes fortsatt mye i dag. Det finnes imidlertid noen alternativer som kan brukes, for eksempel å konvertere strenger til små bokstaver i stedet for store bokstaver. Dette kan være nyttig i visse tilfeller, for eksempel når man jobber med data som skal sammenlignes eller sorteres alfabetisk. Implementeringen av kapitalisering kan også variere avhengig av programmeringsspråk, men prinsippet er det samme.
 
-## Dypdykk
-
-I Elm er det også mulig å lage din egen funksjon for å kapitalisere en streng. Dette kan gjøres ved å bruke `String.foldl` for å iterere gjennom hvert tegn i strengen og bruke `String.fromChar` og `String.toUpper` for å endre tegnet til en stor bokstav. Her er et eksempel:
-
-```Elm
-import String exposing (fromChar, foldl, toUpper)
-
-str = "dette er en streng"
-kapitalisert = capitalize str
-
-capitalize string =
-    if String.length string == 0 then
-        ""
-    else
-        let
-            firstChar = String.left string 1
-            restOfStr = String.dropLeft string 1
-        in
-        fromChar <| toUpper firstChar ++ foldl (\char s -> s ++ String.fromChar char) "" restOfStr
-
--- kapitalisert = "Dette Er En Streng"
-```
-
-Her kalles den våre egenlagde funksjonen `capitalize` og den tar imot strengen som argument. Funksjonen sjekker om strengen er tom, og hvis den ikke er det, så tar den først bokstaven, kapitaliserer den og legger den til resten av strengen ved å bruke en `foldl` funksjon. Det er flere måter å implementere en egen funksjon for kapitalisering av strenger i Elm, men denne er bare et eksempel på en mulig måte å gjøre det på.
-
-## Se også
-
-- [Elm dokumentasjon for String modul](https://package.elm-lang.org/packages/elm/core/latest/String)
-- [En introduksjon til funksjonell programmering i Elm](https://medium.com/@fabio_nogueira/introduction-to-functional-programming-in-elm-f5022ec155f4)
-- [Spillprogrammering i Elm](https://www.elm-tutorial.org/no/17-games.html)
+# Se også:
+- [Elm dokumentasjon om strenger](https://package.elm-lang.org/packages/elm/core/latest/String)
+- [Fordeler og ulemper med å kapitalisere strenger i programmering](https://www.geeksforgeeks.org/capitalize-first-letter-of-each-word-in-string/)
+- [Andre nyttige strengmanipuleringsfunksjoner i Elm](https://package.elm-lang.org/packages/elm/core/latest/String)

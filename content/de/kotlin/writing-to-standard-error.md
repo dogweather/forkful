@@ -10,39 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was & Warum?
 
-Das Schreiben von Standardfehlermeldungen ist eine häufige Praxis in der Entwicklung mit Kotlin, um Fehler und Ausnahmen zu identifizieren. Oftmals werden diese Fehlermeldungen an den Benutzer zurückgegeben, um ihm hilfreiche Informationen bei der Fehlerbehebung zu bieten.
+Das Schreiben auf der Standardfehlerausgabe ist eine Praxis unter Programmierern, um Fehler und andere wichtige Informationen während der Ausführung von Programmen zu drucken. Diese Ausgabe ist unabhängig von der Standardausgabe, ermöglicht es Entwicklern aber, kritische Informationen zu verfolgen, die nicht zur normalen Ausgabe gehören. Es ist eine effektive Möglichkeit, Probleme während der Entwicklung oder Tests zu erkennen.
 
-## Wie geht das?
+## Wie geht's?
 
-Um eine Fehlermeldung oder Ausnahme an die Standardfehlerausgabe zu schreiben, kann die Funktion `System.err.println()` verwendet werden. Hier ist ein Beispiel, wie man dies in Kotlin machen kann:
+Um auf die Standardfehlerausgabe in Kotlin zu schreiben, verwenden Sie den Befehl ```System.err.println()```. Dieser Befehl gibt die angegebene Nachricht auf der Standardfehlerausgabe aus. Hier ist ein Beispielcode:
 
 ```Kotlin
 fun main() {
-    try {
-        val result = 10 / 0 // Division durch 0 auslösen
-        println("Ergebnis: $result")
-    } catch (e: ArithmeticException) {
-        System.err.println("Fehler: " + e.message)
+    val num = 10
+    if (num < 0) {
+        System.err.println("Negative Zahlen sind nicht erlaubt.")
     }
 }
 ```
 
-Die Ausgabe des obigen Beispiels wäre:
+Die Ausgabe wird folgendes sein:
 
-```
-Fehler: / by zero
-```
+```Error: Negative Zahlen sind nicht erlaubt.```
 
-Durch die Verwendung von `System.err.println()` wird sichergestellt, dass die Fehlermeldung an die Standardfehlerausgabe geschrieben wird und nicht an die Standardausgabe.
+## Tiefer eintauchen
 
-## Tiefere Einblicke
+Das Schreiben auf der Standardfehlerausgabe hat seinen Ursprung im UNIX-Betriebssystem, das bereits in den 1970er Jahren existierte. Damals wurde es verwendet, um Fehler während der Ausführung von Programmen zu verfolgen. In der heutigen Zeit ist es eine gängige Praxis unter Entwicklern, da es eine einfache Möglichkeit ist, wichtige Informationen zu erkennen und zu debuggen.
 
-Wenn ein Programm Fehler oder Ausnahmen hat, ist es wichtig, diese Informationen an den Benutzer weiterzugeben, damit er die Möglichkeit hat, den Fehler zu verstehen und zu beheben. Das Schreiben von Informationen an die Standardfehlerausgabe ist eine effektive Methode, um dies zu erreichen. Es ist auch wichtig zu beachten, dass das Schreiben von zu vielen Informationen an die Standardfehlerausgabe zu unübersichtlichen Ausgaben führen kann, daher sollte dies mit Bedacht verwendet werden.
+Alternativ können Entwickler auch Logging-Frameworks wie Log4j verwenden, um auf die Standardfehlerausgabe zu schreiben. Diese Frameworks bieten zusätzliche Funktionen wie das Protokollieren von Ausnahmen und das Formatieren von Protokollmeldungen.
+
+In Kotlin ist das Schreiben auf der Standardfehlerausgabe auch Teil des Kotlin-Standardbibliothek. Es gibt eine separate Klasse ```System.err```, die verwendet werden kann, um auf die Standardfehlerausgabe zu schreiben.
 
 ## Siehe auch
 
-- [Kotlin Dokumentation zur Standardfehlerausgabe](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-print-stream/write-error.html)
-- [Artikel über Fehlerbehandlung in Kotlin](https://www.baeldung.com/kotlin/try-catch)
-- [Vergleich von Standard- und Fehlerausgabe in Kotlin](https://www.techiedelight.com/differences-standard-error-output-kotlin/)
+- [Kotlin Standard Library - System.err](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/-system.err/)
+- [Log4j](https://logging.apache.org/log4j/2.x/)

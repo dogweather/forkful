@@ -10,39 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Dlaczego pisać testy?
+## Co & Dlaczego?
 
-Pisanie testów jest ważną umiejętnością dla każdego programisty, ponieważ pomaga w weryfikacji poprawności działania kodu i zapobiega pojawianiu się błędów. Dzięki testom można również szybciej odnaleźć i naprawić ewentualne problemy, co przyczynia się do zwiększenia efektywności pracy.
+Pisanie testów jest nieodłączną częścią procesu programowania. Jest to proces weryfikacji czy kod programu działa poprawnie oraz spełnia oczekiwane wymagania. Programiści piszą testy, aby uniknąć błędów i zapewnić niezawodność swoich programów.
 
-## Jak pisać testy?
+## Jak to zrobić:
 
-Poniżej znajdziesz przykłady kodu w języku Python oraz wyjście z testów za pomocą bloczków "```Python ... ```".
 ```Python
-def dodaj(a, b):
-    return a + b
-    
-def test_dodaj():
-    assert dodaj(2, 3) == 5
-    assert dodaj(5, 7) == 12
-    
-test_dodaj()
+# Importujemy moduł unittest, który pomaga nam w pisanie testów.
+import unittest
+
+# Tworzymy klasę Test, zawierającą funkcje testowe.
+class Test(unittest.TestCase):
+    # Funkcja sprawdzająca czy dwa wyrażenia są równe.
+    def test_equal(self):
+        self.assertEqual(1+2, 3)
+        
+    # Funkcja sprawdzająca czy wyrażenie jest prawdziwe.
+    def test_true(self):
+        self.assertTrue(5 > 3)
+        
+    # Funkcja sprawdzająca czy lista zawiera określony element.
+    def test_in(self):
+        my_list = [1, 2, 3]
+        self.assertIn(2, my_list)
+        
+# Uruchamiamy testy.
+if __name__ == '__main__':
+    unittest.main()
 ```
+
+**Wynik wykonania testów:**
 ```
-Output:
+..
+----------------------------------------------------------------------
+Ran 2 tests in 0.000s
 
-==================== 2 passed in 0.001 seconds ====================
+OK
 ```
 
-W powyższym przykładzie użyto funkcji `assert`, która sprawdza czy wyrażenie logiczne jest prawdziwe. Jeśli jest, to test zostanie uznany za zdany, a w przypadku, gdy wyrażenie jest fałszywe, pojawi się błąd.
+## Deep Dive:
 
-## Wprowadzenie do pisania testów
+Pierwsze testy pojawiły się w latach 50. XX wieku. Nazywali się "programistycznymi testami jednostkowymi" i były używane w programowaniu w języku Fortran. Obecnie, istnieje wiele różnych bibliotek, narzędzi i frameworków do pisania testów w języku Python, takich jak unittest, pytest czy doctest.
 
-Pisanie testów może wydawać się skomplikowane na początku, jednak jest to bardzo ważna umiejętność, która znajduje zastosowanie w każdym projekcie programistycznym. Warto poznać różne sposoby pisanie testów, takie jak testy jednostkowe, integracyjne czy akceptacyjne.
+Alternatywnym podejściem do pisania testów jest "tdd" (test-driven development). Polega on na tym, aby najpierw napisać testy dla kodu, a dopiero potem napisać kod, który je przejdzie. Jest to popularna metoda wśród programistów zwłaszcza w metodyce Agile.
 
-Testy jednostkowe służą do sprawdzenia poprawności wybranej funkcjonalności lub modułu, a testy integracyjne umożliwiają sprawdzenie poprawności działania kilku modułów lub całości aplikacji. Natomiast testy akceptacyjne są wykorzystywane do weryfikacji czy projekt spełnia wymagania klientów.
+Podczas pisania testów ważne jest, aby tworzyć testy możliwie najbardziej dokładne i obejmujące wiele różnych przypadków, aby zapewnić kompleksowe testowanie kodu.
 
-## Zobacz także
+## Zobacz też:
 
-- [Dokumentacja biblioteki unittest w języku Python] (https://docs.python.org/3/library/unittest.html)
-- [Przykładowe testy jednostkowe w języku Python] (https://realpython.com/python-testing/)
-- [Poradnik pisania testów integracyjnych w języku Python] (https://testdriven.io/blog/intro-to-testing-in-python/)
+- Dokumentacja unittest: https://docs.python.org/3/library/unittest.html
+- Porównanie unittest i pytest: https://realpython.com/python-testing/
+- Tutorial tdd w Pythonie: https://www.obeythetestinggoat.com/pages/book.html#toc

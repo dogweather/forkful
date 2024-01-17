@@ -1,7 +1,7 @@
 ---
-title:                "텍스트 파일 쓰기"
-html_title:           "Go: 텍스트 파일 쓰기"
-simple_title:         "텍스트 파일 쓰기"
+title:                "텍스트 파일 작성하기"
+html_title:           "Go: 텍스트 파일 작성하기"
+simple_title:         "텍스트 파일 작성하기"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Files and I/O"
@@ -10,44 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+# 지금 Go 언어로 프로그래밍 출판물을 만드는 방법
 
-텍스트 파일을 작성하는 이유는 여러 가지가 있지만, 대표적으로는 데이터를 보관하거나 공유하기 위해서입니다. 예를 들어, 시스템 설정 파일이나 로그 파일 등이 텍스트 파일로 작성됩니다.
+## 무엇인가 & 왜 하는가?
+텍스트 파일을 쓰는 것이란 무엇을 의미하는 걸까요? 그리고 가장 중요한 질문인, 왜 프로그래머들은 이것을 하는 걸까요? 텍스트 파일에는 텍스트 데이터가 저장되어 있으며, 이를 다른 프로그램에서 읽고 사용할 수 있습니다. 예를 들어, 파일에는 사용자 정보, 설정, 로그 등 다양한 정보가 저장될 수 있습니다. 프로그래머들은 이러한 정보를 파일에 쓰는 것을 통해 프로그램을 보다 유연하고 확장 가능하게 만들 수 있습니다.
 
-## 작성하는 방법
-
-텍스트 파일을 작성하는 방법은 매우 간단합니다. 먼저, Go 언어에서 파일을 다루기 위해 `os` 패키지를 임포트해야 합니다. 그 다음, `os.Create()` 함수를 이용하여 새로운 파일을 생성하고 `os.Write()` 함수를 이용하여 텍스트를 입력할 수 있습니다. 아래는 간단한 예제 코드입니다.
-
-```Go
+## 방법:
+```Go 
 package main
 
-import "os"
+import (
+    "fmt"
+    "os"
+)
 
 func main() {
-    file, err := os.Create("sample.txt")      // 새로운 파일 생성
+    // 파일 생성
+    file, err := os.Create("newFile.txt")
     if err != nil {
-        panic(err)                           // 에러 처리
-    }
-    defer file.Close()                       // 작업이 종료되면 파일 닫기
-
-    text := "This is a sample text."          // 파일에 쓸 텍스트
-    _, err = file.Write([]byte(text))        // 파일에 텍스트 입력
-    if err != nil {
-        panic(err)                           // 에러 처리
+        fmt.Println(err)
+        return
     }
 
-    fmt.Println("Text file created.")
+    // 파일에 데이터 쓰기
+    data := "Hello, World!"
+    _, err = file.WriteString(data)
+    if err != nil {
+        fmt.Println(err)
+        return
+    }
+
+    // 파일 닫기
+    err = file.Close()
+    if err != nil {
+        fmt.Println(err)
+        return
+    }
+
+    fmt.Println("텍스트 파일이 성공적으로 생성되었습니다.")
 }
 ```
 
-위 코드를 실행하면 현재 디렉토리에 `sample.txt` 파일이 생성되고, 내용으로 `This is a sample text.`가 입력될 것입니다.
+위 예제 코드에서는 os 패키지의 Create 함수를 통해 새로운 파일을 생성하고, WriteString 함수를 사용해 데이터를 파일에 씁니다. 마지막으로 Close 함수를 통해 파일을 닫아줍니다.
 
-## 깊게 들어가기
+## 딥 다이브:
+텍스트 파일 작성의 역사적인 배경은 프로그래밍 언어나 운영체제마다 다를 수 있으며, 이러한 다양한 방법들이 존재합니다. 한 가지 대안으로는 JSON 또는 CSV와 같은 구조화된 데이터 형식을 사용할 수 있습니다. 또한 파일 작성은 운영체제와 파일 시스템에 따라 다를 수 있으니, 그에 따른 조치가 필요할 수 있습니다. 예를 들어, Windows에서는 파일 이름에 특수 문자가 들어가면 오류가 발생할 수 있으므로 이에 대한 처리를 해주어야 합니다.
 
-텍스트 파일을 작성하는 과정에서는 `os.Create()` 함수가 실제로 파일을 생성하는 것이 아니라 운영체제에 파일을 요청하는 것입니다. 따라서 파일에 대한 작업이 모두 끝나면 `file.Close()` 함수를 호출하여 파일을 닫아주어야 합니다. 또한, `os.Write()` 함수는 바이트 형태의 데이터를 입력하므로 `[]byte` 형태로 변환해주어야 합니다. 이러한 세부 사항들을 모두 고려하여 텍스트 파일을 작성하는 것이 중요합니다.
-
-## 관련 자료
-
-- [Go 공식 문서 - os 패키지](https://golang.org/pkg/os/)
-- [OS 파일 다루기 - go.dev](https://go.dev/blog/files)
-- [텍스트 파일 다루기 예제 코드 - GeeksforGeeks](https://www.geeksforgeeks.org/write-data-in-a-text-file-int-struct-string/?ref=rp)
+## 참고 자료:
+- [Go 문서: 파일 작성](https://golang.org/pkg/os/#Create)
+- [JSON 형식 참고 자료](https://www.json.org/)
+- [CSV 형식 참고 자료](https://www.csvjson.com/)

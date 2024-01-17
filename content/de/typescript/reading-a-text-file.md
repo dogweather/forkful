@@ -1,7 +1,7 @@
 ---
-title:                "Eine Textdatei lesen"
-html_title:           "TypeScript: Eine Textdatei lesen"
-simple_title:         "Eine Textdatei lesen"
+title:                "Lesen einer Textdatei"
+html_title:           "TypeScript: Lesen einer Textdatei"
+simple_title:         "Lesen einer Textdatei"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Files and I/O"
@@ -10,46 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Warum
+Was & Warum?:
+Beim Lesen einer Textdatei geht es darum, den Inhalt einer Textdatei in einem Computerprogramm zu verarbeiten. Programmierer tun dies, um auf die Informationen in der Datei zuzugreifen und sie in ihrem Programm zu nutzen.
 
-Wenn Sie ein Entwickler sind, der mit TypeScript arbeitet, werden Sie früher oder später auf die Aufgabe stoßen, eine Textdatei zu lesen. Das kann aus verschiedenen Gründen notwendig sein, zum Beispiel um Konfigurationsdaten zu laden oder Eingabedaten zu verarbeiten. In diesem Artikel zeige ich Ihnen, wie Sie mithilfe von TypeScript eine Textdatei lesen können.
+Wie geht's:
+Um eine Textdatei in TypeScript zu lesen, können wir die ```fs``` Bibliothek verwenden. Wir importieren sie mit ```import fs from 'fs'``` und verwenden dann die ```readFileSync()``` Methode, um die Datei zu lesen und ihren Inhalt in einer Variable zu speichern. Hier ist ein Beispiel:
 
-# Wie geht das?
-
-Um eine Textdatei mit TypeScript zu lesen, benötigen Sie zunächst eine Datei mit dem Text, den Sie lesen möchten. Nehmen wir als Beispiel die folgende Datei `sample.txt`:
-
-```
-Hallo, dies ist eine Beispieltextdatei.
-Auf mehreren Zeilen können auch mehrere Sätze stehen.
-```
-
-Um die Datei zu lesen, können Sie die integrierte `readFileSync`-Funktion von TypeScript verwenden, die Teil des `fs`-Moduls ist. Diese Funktion erwartet den Pfad zur Datei als Parameter und gibt den Inhalt der Datei als String zurück.
-
-```
-```TypeScript
-import * as fs from 'fs';
-
-const fileContent = fs.readFileSync('sample.txt', 'utf-8');
+ ```
+import fs from 'fs';
+let fileContent = fs.readFileSync('textdatei.txt', 'utf-8');
 console.log(fileContent);
 ```
 
-Die Ausgabe dieser Codezeilen wird sein:
+Dieser Code liest die Datei ```textdatei.txt``` und speichert ihren Inhalt in der Variablen ```fileContent```. Dann geben wir den Inhalt mit ```console.log()``` aus.
 
-```
-Hallo, dies ist eine Beispieltextdatei.
-Auf mehreren Zeilen können auch mehrere Sätze stehen.
-```
+Tieferes Eintauchen:
+Die Möglichkeit, Textdateien zu lesen, ist ein wichtiger Aspekt in der Programmierung und wird seit den Anfängen von Programmiersprachen wie C und Java verwendet. Alternativen zu der oben genannten Methode sind die Verwendung von ```readFile()```, einer asynchronen Methode, oder das Parsen der Datei mit einer regulären Ausdrucksbibliothek.
 
-# Tiefeneintauch
+Außerdem ist es wichtig zu beachten, dass beim Lesen von Textdateien in TypeScript die Codierung angegeben werden muss. In unserem Beispiel haben wir ```utf-8``` als Codierung verwendet, aber dies kann je nach Datei variieren. Um dies zu vermeiden, können wir ```readFile()``` verwenden, um eine sogenannte Byte Buffer zurückzugeben, die es uns erlaubt, den Inhalt in der gewünschten Codierung zu verarbeiten.
 
-Die `readFileSync`-Funktion von TypeScript bietet mehrere Optionen, die Sie nutzen können, um die Art und Weise zu steuern, wie die Datei gelesen wird. Einige davon sind:
+Weitere Infos:
+- Dokumentation der ```fs``` Bibliothek: https://nodejs.org/api/fs.html
+- Tutorial zum Lesen von Dateien in TypeScript: https://www.tutorialspoint.com/typescript/typescript_reading_a_file.htm
 
-- `encoding` - Hiermit können Sie das Encoding der gelesenen Datei festlegen, standardmäßig ist es `utf-8`.
-- `flag` - Mit dieser Option können Sie angeben, ob die Datei nur gelesen oder auch beschrieben werden soll. Standardmäßig ist die Flag auf `r` gesetzt, also `read-only`.
-
-Wenn Sie mehr Kontrolle über den Lesevorgang benötigen, können Sie auch die `createReadStream`-Funktion verwenden, die ein `ReadStream`-Objekt zurückgibt, welches Sie dann weiter verarbeiten können.
-
-# Siehe auch
-
-- [Das `fs`-Modul von Node.js](https://nodejs.org/api/fs.html)
-- [Das `ReadStream`-Objekt](https://nodejs.org/api/fs.html#fs_fs_createreadstream_path_options)
+Sieh auch:
+- Vergleich von ```readFileSync()``` und ```readFile()```: https://stackoverflow.com/questions/17699599/node-js-quick-file-read
+- Nützliche Tipps für den Umgang mit Dateien in TypeScript: https://itnext.io/working-with-files-in-typescript-part-1-reading-files-9ee2975a8e49

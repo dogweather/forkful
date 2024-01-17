@@ -1,7 +1,7 @@
 ---
-title:                "Merkkijonon muuttaminen isoiksi kirjaimiksi"
-html_title:           "Swift: Merkkijonon muuttaminen isoiksi kirjaimiksi"
-simple_title:         "Merkkijonon muuttaminen isoiksi kirjaimiksi"
+title:                "Merkkijonon suurennus"
+html_title:           "Swift: Merkkijonon suurennus"
+simple_title:         "Merkkijonon suurennus"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -10,30 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
-Miksi joku haluaisi käyttää Swift-ohjelmointikieltä ja kirjoittaa koodia, joka muuttaa merkkijonon kirjaimet isoihin kirjaimiin?
+BB
 
-## Miten tehdä se
-Koodinpätkät ja esimerkkilähdöt "```Swift ... ```" koodilohkoissa.
+##Mitä ja miksi?
 
-Esimerkki 1:
+Päättäjänä, merkkijonon eli tekstirivan ensimmäisen kirjaimen muuttaminen suureksi on tapa muuttaa kirjainkoko sisällössä. Tämä auttaa korostamaan tietyt osat tekstistä ja on hyödyllinen esimerkiksi käytettäessä nimiä tai otsikoita.
+
+##Kuinka se tehdään?
+
+Swiftiläisille tämä on helppoa. On olemassa valmiiksi määritelty metodi, joka tekee sen puolestasi. Se näyttää tältä:
+
 ```Swift
-let sana = "hei"
-print("Merkkijono isoin kirjaimin: \(sana.uppercased())")
+let teksti = "tervetuloa"
+print(teksti.capitalized)
 ```
-**Tulostaa:** "Merkkijono isoin kirjaimin: HEI"
 
-Esimerkki 2:
-```Swift
-let lause = "tämä on lause"
-print("Lause isoin kirjaimin: \(lause.capitalized)")
-```
-**Tulostaa:** "Lause isoin kirjaimin: Tämä on lause"
+Tämä tulostaisi "Tervetuloa" konsoliin. Huomaa, että metodi ei muuta alkuperäistä merkkijonoa, vaan palauttaa uuden version, joka on muutettu haluttuun muotoon.
 
-## Syväluotaus
-Merkkijonon kirjainten muuttaminen isoihin kirjaimiin voi olla hyödyllistä esimerkiksi silloin, kun käyttäjä syöttää tiedot pienillä kirjaimilla mutta ne halutaan tallentaa tietokantaan isoin kirjaimin. Swift-ohjelmointikielen sisäänrakennettu ominaisuus "uppercased()" muuttaa merkkijonon kaikki kirjaimet isoihin kirjaimiin, kun taas "capitalized" muuttaa vain ensimmäisen kirjaimen isoksi ja muut pieniksi. On myös mahdollista käyttää "lowercased()" muuttaaksesi kirjaimet pieniksi.
+##Syvemmälle
 
-## Katso myös
-- [Swiftin virallinen verkkosivusto](https://swift.org/)
-- [Apple:n Swift-opetusohjelmat](https://developer.apple.com/swift/resources/)
-- [Swift-koodin kirjoitusohjeet](https://swift.org/documentation/api-design-guidelines/)
+Capitalize-metodin lisäksi on olemassa myös muita tapoja muuttaa merkkijonon kirjainkokoa, kuten uppercased ja lowercased. Ne toimivat vastaavasti, mutta muuttavat koko merkkijonoa kokonaisuudessaan.
+
+Uppercase ja lowercase perustuvat historiallisesti kirjaintyhdistelmään ASCIISTA, joka määritteli jokaiselle kirjaimelle numeron. Esimerkiksi iso A on numerolla 65 ja pieni a on numerolla 97. Näiden numeroiden avulla tietokone pystyi "kipuamaan" merkkijonoa ylös ja alas.
+
+##Katso myös
+
+Voit lukea lisää merkkijonosta ja sen muokkaamisesta Swiftin dokumentaatiosta: https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html. Tutustu myös muihin merkkijonoihin liittyviin metodeihin, kuten replacingOccurrences ja trimmingCharacters.
+
+Enjoy the journey of coding with Swift!

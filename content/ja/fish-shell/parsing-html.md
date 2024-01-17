@@ -1,7 +1,7 @@
 ---
-title:                "HTMLパース"
-html_title:           "Fish Shell: HTMLパース"
-simple_title:         "HTMLパース"
+title:                "「HTMLの解析」"
+html_title:           "Fish Shell: 「HTMLの解析」"
+simple_title:         "「HTMLの解析」"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "HTML and the Web"
@@ -10,55 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+## ファイシェルとは
+パーシングをするプログラマー向けの最新バージョンのシェルです。
 
-HTMLの解析に、なぜ取り組むのでしょうか？あなたがプログラマーであるなら、大きなウェブサイトの内容をスクレイピングしたり、特定の情報を抽出したりすることがあるかもしれません。また、ウェブアプリケーションを開発する際にも必要になるかもしれません。どのような理由であっても、HTMLの解析は非常に有用なスキルです。
+## なぜパーシングをするのか
+パーシングとは、HTMLを解析することを意味します。プログラマーは、Webサイトのコンテンツを分析したり、特定のデータを抽出したりするためにパーシングを行います。
 
-## やり方
-
-では、Fish Shellを使ってHTMLを解析する方法を見ていきましょう。まずは、以下のようにFishのセッションを開始しましょう。
-
-```Fish Shell
-fish
-```
-
-次に、HTMLを解析するために必要なパッケージをインストールします。
-
-```Fish Shell
-apt-get install html-xml-utils
-```
-
-今回は、Wikipediaの日本語版トップページから記事のタイトルを抽出する例を示します。
-
-```Fish Shell
-curl -s https://ja.wikipedia.org/wiki/%E3%83%A1%E3%82%A4%E3%83%B3%E3%83%9A%E3%83%BC%E3%82%B8 | hxnormalize -x | hxselect -c "div#mw-content-text > div.mw-parser-output > ul li > a"
-```
-
-実行すると、以下のような出力が得られます。
+## 使い方
+ファイシェルを使用してHTMLをパーシングする方法を説明します。
 
 ```
-メインページ
-2020東京オリンピック
-提供依頼
-宣言
-経済学者
-クリス・リズカ
-広韻
-勾践
-エレナ・パン
-...
+# リンクの抽出
+set links (curl -s https://example.com | xpath -e "//a/@href")
+
+# キーワードの抽出
+set keywords (curl -s https://example.com | pcregrep -o1 '<meta.*?name="keywords".*?content="(.*?)"')
+
+# 抽出したデータの表示
+echo $links
+echo $keywords
 ```
 
-これで、Wikipediaのトップページから抽出した記事のタイトルを取得できました。
+## より詳しい情報
+パーシングの歴史、代替手段、およびパーシングの実装について詳しく説明します。
 
-## ディープダイブ
+### 歴史的背景
+パーシングは、Webサイトが一般的になる前から存在していました。当初は手作業で行われていましたが、今ではプログラマーが自動的に行うことができるようになりました。
 
-今回紹介した例では、curlコマンドでHTMLを取得し、それをhtml-xml-utilsパッケージを使ってパースしていました。また、hxselectコマンドではCSSセレクターを使って特定の要素を抽出していました。これらのコマンドはFish Shellだけでなく、他のシェルでも利用できるので、HTMLの解析には非常に便利です。
+### 代替手段
+ファイシェル以外にも、パーシングを行うためのツールやライブラリがいくつかあります。例えば、PythonのBeautiful SoupやJavaのJSoupなどがあります。
 
-ただし、HTMLは常に変化しているため、解析には注意が必要です。特定のサイトに依存するコードを書くと、サイトの構造が変更された際にうまく動作しなくなってしまいます。そのため、柔軟に対応できるように、コードを書く際はできるだけ一般的な手法を使うように心がけましょう。
+### 実装の詳細
+ファイシェルでのパーシングは、Fishスクリプトを使用して行われます。特定のコマンドラインツール（例：xpathやpcregrep）を使用して、Webサイトから情報を取得し、必要なデータを抽出します。
 
-## 参考リンク
+## 関連情報
+ファイシェルに関連する情報を以下に示します。
 
-- [Fish Shell公式サイト](https://fishshell.com/)
-- [HTML/XMLユーティリティパッケージのインストール方法](https://www.debian.org/distrib/packages.ja.html)
-- [Wikipediaの日本語版トップページ](https://ja.wikipedia.org/wiki/%E3%83%A1%E3%82%A4%E3%83%B3%E3%83%9A%E3%83%BC%E3%82%B8)
+- [Official Fish Shell Website](https://fishshell.com/)
+- [Fish Shell Github Repository](https://github.com/fish-shell/fish-shell)
+- [Fish Shell Official Documentation](https://fishshell.com/docs/current/index.html)
+- [XPath Documentation](https://www.w3schools.com/xml/xpath_intro.asp)
+- [PCRE grep Documentation](https://www.gnu.org/software/gnulib/manual/html_node/Perl-Regular-Expressions.html)

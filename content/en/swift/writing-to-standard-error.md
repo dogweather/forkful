@@ -10,51 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
+Writing to standard error is a way for programmers to display error messages in their code. It allows them to easily identify and troubleshoot issues without disrupting the normal output of the program.
 
-Writing to standard error is a useful skill for debugging and error handling in Swift programming. By being able to print error messages to the standard error stream, developers can easily identify and fix issues in their code.
-
-## How To
-
-In Swift, printing to standard error can be done using the `FileHandle` class. First, we need to import the Foundation framework at the top of our code:
+## How to:
+To write to standard error in Swift, use the `print()` function with the `to` parameter set to `.standardError`. Here's an example:
 
 ```Swift
-import Foundation
+print("Error: Something went wrong.", to: .standardError)
 ```
 
-Then, we can create an instance of `FileHandle` for the standard error stream:
-
-```Swift
-let errorStream = FileHandle.standardError
-```
-
-To write to the standard error stream, we use the `write` method and pass in a `Data` object containing the message we want to print:
-
-```Swift
-// Example error message
-let errorMessage = "Oops, something went wrong!"
-
-if let data = errorMessage.data(using: .utf8) {
-    errorStream.write(data)
-}
-```
-
-The output of this code will be:
+The error message will be displayed in the console with a designated error symbol next to it. Here's what the output would look like:
 
 ```
-Oops, something went wrong!
+❌ Error: Something went wrong.
 ```
 
-## Deep Dive
+## Deep Dive:
+The practice of writing to standard error has been around since the early days of programming. Initially, programmers would simply print error messages to the standard output, but this proved to be problematic as it would mix with the normal output of the program. Hence, the introduction of standard error as a dedicated channel for error messages.
 
-In Swift, the standard error stream is a special output channel that is separate from the standard output stream. This allows developers to differentiate between regular program output and error messages.
+An alternative to writing to standard error is using logging frameworks, such as Apple's own `os_log`. However, these frameworks can be more complex to set up and use compared to the simple `print()` function.
 
-Using the `FileHandle` class, we can also redirect the standard error stream to a file or another stream if needed. This can be useful for logging errors or debugging on different systems.
+Behind the scenes, writing to standard error uses the `stderr` stream, which is part of the UNIX file descriptor system. This stream is used to output text specifically for error messages, while the `stdout` stream is reserved for normal program output.
 
-Additionally, we can customize the appearance of error messages by including escape sequences in the message string. For example, to print a message in red, we can use the escape sequence `\u{001B}[0;31m`, followed by our message and then the escape sequence `\u{001B}[0;0m` to reset the color. This may be helpful for visually highlighting errors in a console.
-
-## See Also
-
-- [Swift FileHandle Class](https://developer.apple.com/documentation/foundation/filehandle)
-- [Standard Streams in Swift](https://www.hackingwithswift.com/articles/165/how-to-send-data-to-standard-input-and-output)
-- [Error Handling in Swift](https://www.swiftbysundell.com/basics/error-handling/)
+## See Also:
+- [Swift Standard Library Reference](https://developer.apple.com/documentation/swift/standard_library)
+- [Logging in Swift](https://developer.apple.com/documentation/os/logging)
+- [Standard Streams in UNIX](https://en.wikipedia.org/wiki/Standard_streams)

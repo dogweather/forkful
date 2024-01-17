@@ -10,49 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+## O que e por que?
 
-Você provavelmente já se deparou com a necessidade de ler um arquivo de texto durante o desenvolvimento de algum script ou programa em Bash. Ler um arquivo de texto é uma habilidade básica e útil para diversos casos de uso, como lidar com dados armazenados em um arquivo de configuração ou processar informações de um registro de log.
+Ler um arquivo de texto é simplesmente o ato de visualizar o conteúdo de um arquivo de texto em um editor de texto ou terminal. Os programadores geralmente leem arquivos de texto para acessar e manipular dados.
 
-## Como fazer
+## Como fazer:
 
-Para ler um arquivo de texto em Bash, você pode utilizar o comando `read` em conjunto com a sintaxe de redirecionamento de entrada `<` para direcionar o conteúdo de um arquivo para a entrada do comando. Por exemplo, suponha que tenhamos um arquivo chamado `dados.txt` com o seguinte conteúdo:
-
-```
-1
-2
-3
-```
-
-Podemos utilizar o seguinte comando em Bash para ler cada linha deste arquivo:
+Um exemplo simples de ler um arquivo de texto em Bash é usando o comando `cat`. Por exemplo, se você tiver um arquivo de texto chamado `texto.txt` com o seguinte conteúdo:
 
 ```Bash
-# Lendo uma linha por vez
-while read linha; do
-  echo $linha
-done < dados.txt
+Olá mundo!
+Este é um texto de exemplo.
 ```
 
-Isso irá imprimir no terminal cada uma das linhas contidas no arquivo `dados.txt`. Também é possível ler um arquivo inteiro de uma vez utilizando o comando `cat` e o redirecionamento de saída, como mostrado abaixo:
+Você pode usar o comando `cat texto.txt` para exibir o conteúdo do arquivo no seu terminal:
 
 ```Bash
-# Lendo um arquivo inteiro
-conteudo=$(cat dados.txt)
-echo $conteudo
+$ cat texto.txt
+
+Olá mundo!
+Este é um texto de exemplo.
 ```
 
-Isso irá armazenar o conteúdo do arquivo `dados.txt` na variável `conteudo` e então imprimi-la no terminal.
+Outro comando útil para ler arquivos de texto é `head`, que exibe as primeiras linhas do arquivo. Por exemplo, se você quiser ver as duas primeiras linhas do arquivo `texto.txt`, você pode usar `head -n 2 texto.txt`:
+
+```Bash
+$ head -n 2 texto.txt
+
+Olá mundo!
+Este é um texto de exemplo.
+```
 
 ## Profundidade
 
-Existem diversas maneiras de ler um arquivo de texto em Bash, além das mostradas anteriormente. Por exemplo, você pode especificar qual o separador a ser usado durante a leitura utilizando a opção `-d` do comando `read`. Além disso, é possível também utilizar o comando `IFS` (Internal Field Separator) para alterar o separador padrão.
+Ler arquivos de texto é uma tarefa básica na programação, e é usada para obter dados a serem manipulados em um script ou programa. No passado, o comando `cat` era usado principalmente para visualizar o conteúdo de arquivos de texto, mas hoje em dia existem outras opções, como `head`, `tail` e `less`.
 
-Outra funcionalidade interessante é a possibilidade de utilizar o comando `while IFS= read -r linha` para garantir que as quebras de linha do arquivo sejam preservadas durante a leitura. Isso é especialmente útil quando se trabalha com arquivos que possuem espaços em branco no nome ou em seu conteúdo.
+Além disso, os desenvolvedores também podem usar recursos mais avançados, como expressões regulares e loops, para ler arquivos de texto de forma mais precisa e eficiente. Esses recursos podem ser particularmente úteis ao lidar com grandes conjuntos de dados.
 
-Ler um arquivo de texto em Bash também pode ser realizado de forma interativa, permitindo ao usuário inserir dados diretamente no terminal e então salvando-os em um arquivo. Isso agiliza o processo de edição de arquivos de configuração, por exemplo.
+## Veja também:
 
-## Veja também
+Se você quiser aprender mais sobre como ler arquivos de texto em Bash, consulte a documentação oficial do Bash ou confira estes recursos adicionais:
 
-- [Documentação oficial do Bash (em inglês)](https://www.gnu.org/software/bash/)
-- [Tutorial sobre redirecionamento de entrada e saída em Bash (em inglês)](https://linuxconfig.org/bash-redirections-cheat-sheet)
-- [Exemplos práticos de leitura de arquivos em Bash (em inglês)](https://bash.cyberciti.biz/guide/Reads_from_the_file_descriptor_-&lt;age-_&amp;_process_Substitution)
+- [Tutorial sobre leitura de arquivos de texto em Bash](https://linuxconfig.org/bash-scripting-tutorial-for-beginners)
+- [Guia de expressões regulares em Bash](https://www.regular-expressions.info/bash.html)
+- [Aprenda Bash em 15 minutos](https://www.panix.com/~elflord/unix/bash-tute.html#reads)

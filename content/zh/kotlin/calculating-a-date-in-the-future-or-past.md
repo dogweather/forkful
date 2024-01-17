@@ -1,7 +1,7 @@
 ---
-title:                "计算过去或未来的日期"
-html_title:           "Kotlin: 计算过去或未来的日期"
-simple_title:         "计算过去或未来的日期"
+title:                "计算未来或过去的日期。"
+html_title:           "Kotlin: 计算未来或过去的日期。"
+simple_title:         "计算未来或过去的日期。"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Dates and Times"
@@ -10,55 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
+# 是什么 & 为什么？
+在编程中，经常会遇到需要计算未来或过去某个日期的情况。比如，某个活动需要在下个月的第二个星期六举行，或者需要在十天后提醒用户某件事。为了方便处理这种日期相关的逻辑，程序员需要使用代码来计算日期。
 
-计算未来或过去的日期可能是一个很有用的工具，它可以帮助我们预测未来事件的发生日期，或者回顾过去事件的发生日期。这在许多情况下都是必需的，比如计划旅行、制定项目计划、纪念日等。使用 Kotlin 编程语言来实现日期计算功能，可以让我们更加方便地完成这些任务。
+# 怎么做：
+使用Kotlin内置的 `LocalDate` 类，可以很容易地进行日期计算。首先，我们需要导入 `java.time` 包，然后就可以使用 `now()` 方法获取当前日期，或者使用 `of()` 方法指定特定的日期。接下来，使用 `plus()` 方法来计算未来的日期，或者使用 `minus()` 方法来计算过去的日期。最后，我们可以使用 `format()` 方法来将日期格式化为我们需要的形式。
 
-## 如何操作
+```kotlin
+import java.time.*
 
-首先，我们需要引入 `java.time.LocalDate` 包，它提供了日期的计算和操作功能。然后，我们可以使用 `plusDays()` 和 `minusDays()` 方法来分别对日期进行向后和向前的计算。下面是一个示例代码：
+fun main() {
+    // 获取当前日期
+    val today = LocalDate.now()
 
-```Kotlin
-import java.time.LocalDate
+    // 计算未来日期，返回结果为2021-10-16
+    val futureDate = today.plus(Period.ofMonths(1)).with(TemporalAdjusters.next(DayOfWeek.SATURDAY))
 
-// 计算 10 天后的日期
-val dateAfterTenDays = LocalDate.now().plusDays(10)
-println("今天的日期是：${LocalDate.now()}")
-println("十天后的日期是：$dateAfterTenDays")
+    // 计算过去日期，返回结果为2021-09-25
+    val pastDate = today.minus(10L, ChronoUnit.DAYS)
 
-// 计算 30 天前的日期
-val dateBeforeThirtyDays = LocalDate.now().minusDays(30)
-println("今天的日期是：${LocalDate.now()}")
-println("三十天前的日期是：$dateBeforeThirtyDays")
+    // 格式化日期为yyyy/MM/dd形式
+    println(futureDate.format(DateTimeFormatter.ofPattern("yyyy/MM/dd")))
+}
 ```
 
-运行后，我们可以得到如下输出：
-
-```
-今天的日期是：2021-01-01
-十天后的日期是：2021-01-11
-
-今天的日期是：2021-01-01
-三十天前的日期是：2020-12-02
-```
-
-## 深入了解
-
-除了使用 `plusDays()` 和 `minusDays()` 方法，我们还可以使用 `plusMonths()`、`minusMonths()`、`plusYears()`、`minusYears()` 方法来对日期进行月份和年份的计算。另外，我们也可以在 `LocalDate` 对象上直接调用 `plus()` 和 `minus()` 方法，传入 `java.time.Period` 对象来进行更加复杂的日期计算。
-
-需要注意的是，在日期计算中，我们并不需要考虑闰年的问题，因为 `LocalDate` 会自动进行处理。
-
-另外，Kotlin 也提供了 `java.time.LocalDateTime`、`java.time.LocalTime` 等类来处理日期和时间的计算，可以根据具体的需求选择使用。
-
-## 相关阅读
-
-如果你想了解更多关于使用 Kotlin 计算日期的方法，可以参考下面的链接：
-
-1. Kotlin 文档： https://kotlinlang.org/docs/datetime.html
-2. Java API 文档： https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html
-
-## 查看相关
-
-- Kotlin 官方网站： https://kotlinlang.org/
-- Java 官方网站： https://www.java.com/
-- Android 开发者网站： https://developer.android.com/
+# 深入了解：
+- 历史背景：在早期的计算机编程中，日期计算并不是那么容易，需要编写复杂的代码来处理。但随着现代编程语言的发展，日期计算变得更加简单，比如Kotlin就支持直接操作日期对象。
+- 其他替代方案：除了使用Kotlin内置的日期类，也可以使用第三方库来处理日期计算。比如 `Joda-Time` 和 `DateUtils` 等。
+- 实现细节：在 `LocalDate` 类中，日期是以 `Year-Month-Day` 的格式存储的，并且支持闰年的计算。使用 `plus()` 和 `minus()` 方法时，可以传入 `Period` 对象来指定想要增加或减少的时间单位，也可以使用 `TemporalAdjusters` 类来指定具体的日期，比如下一个周六。
+# 相关资源：
+- Kotlin官方文档：https://kotlinlang.org/docs/datetime.html
+- Joda-Time库：https://www.joda.org/joda-time/
+- DateUtils库：https://commons.apache.org/proper/commons-lang/apidocs/org/apache/commons/lang3/time/DateUtils.html

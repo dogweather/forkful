@@ -1,7 +1,7 @@
 ---
-title:                "Uzyskiwanie bieżącej daty"
-html_title:           "Elm: Uzyskiwanie bieżącej daty"
-simple_title:         "Uzyskiwanie bieżącej daty"
+title:                "Otrzymywanie aktualnej daty"
+html_title:           "Elm: Otrzymywanie aktualnej daty"
+simple_title:         "Otrzymywanie aktualnej daty"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Dates and Times"
@@ -10,39 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+##
 
-Pobieranie aktualnej daty jest niezbędne w wielu aplikacjach internetowych i programach. Dzięki temu możemy wyświetlić aktualną datę na stronie, kontrolować wygaśnięcie ważności dokumentów lub prowadzić statystyki na podstawie daty.
+ Cześć programiści!
 
-## Jak to zrobić
+## O co chodzi & Po co ?
 
-```elm
-currentDate : Date
-currentDate =
-    Time.now
+Pobranie aktualnej daty jest krokiem niezbędnym w wielu programach, m.in. w aplikacjach finansowych czy tworzeniu kalendarzy. W Elm jest to proste do zrobienia i często wykorzystywane przez programistów.
+
+## Jak to zrobić:
+
+ ``` Elm
+import Time
+
+-- Pobranie aktualnej daty
+date = Time.now
+-- Wynik: 1628310760703
+
+-- Pobranie aktualnej daty w formacie ISO
+isoDate = Time.toIsoString date
+-- Wynik: "2021-08-06T12:06:00.703Z"
 ```
 
-Powyższy kod używa wbudowanej funkcji `now` z modułu `Time`, która zwraca bieżącą datę i czas w formacie `Date`. Możemy wykorzystać tę datę do dalszych przetwarzania lub wyświetlenia jej na stronie.
+## Głębszy zanurzenie:
 
-Aby wyświetlić bieżącą datę w formacie tekstowym, możemy użyć funkcji `toText` z modułu `Time.Format`:
+Funkcja ```now``` jest częścią modułu ```Time```, który został wprowadzony w wersji 0.19 Elm. Wcześniej, aby uzyskać aktualną datę, trzeba było korzystać z zewnętrznych bibliotek lub interfejsów Javascript.
 
-```elm
-import Time.Format exposing (toText)
+Alternatywnym sposobem na pobranie bieżącej daty jest użycie funkcji ```inSeconds```, która zwróci liczbę sekund od 1 stycznia 1970 r. Dzięki temu można łatwo obliczyć dowolne przesunięcia czasowe.
 
-currentDate : String
-currentDate =
-    currentDate
-        |> toText "dd/MM/yyyy"
-```
+Funkcja ```toIsoString``` konwertuje datę na standardowy format ISO. Można również użyć funkcji ```toPosix``` w celu uzyskania daty w formacie numerycznym Unix.
 
-Powyższy kod zwróci datę w formacie `dd/MM/yyyy`, czyli np. `08/03/2021`.
+## Zobacz także:
 
-## Deep Dive
+Dokumentacja modułu Time w Elm: https://package.elm-lang.org/packages/elm/time/latest/
 
-W Elm istnieje wiele różnych metod do pobierania, przetwarzania i wyświetlania bieżącej daty. Istnieje również możliwość tworzenia niestandardowych formatów daty przy użyciu modułu `Time.Format`. Wraz z rozwojem języka, może pojawić się coraz więcej sposobów na zarządzanie datami.
-
-## Zobacz także
-
-- Dokumentacja modułu `Time` w języku polskim: https://package.elm-lang.org/packages/elm/time/latest/Time
-- Oficjalna strona języka Elm w języku polskim: https://guide.elm-lang.org/
-- Przykładowe projekty w języku Elm: https://elm-projects.com/
+Oficjalny poradnik Elm: https://guide.elm-lang.org/

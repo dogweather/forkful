@@ -1,7 +1,7 @@
 ---
-title:                "Comparaison de deux dates"
-html_title:           "Ruby: Comparaison de deux dates"
-simple_title:         "Comparaison de deux dates"
+title:                "Comparer deux dates"
+html_title:           "Ruby: Comparer deux dates"
+simple_title:         "Comparer deux dates"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Dates and Times"
@@ -10,27 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
-La comparaison de deux dates est un outil utile pour les développeurs Ruby lorsqu'ils ont besoin de déterminer si une date est antérieure, postérieure ou égale à une autre. Cela peut être particulièrement utile dans les applications de gestion de temps ou dans la manipulation de données de calendrier.
+## Quoi & Pourquoi?
 
-## Comment faire
-Pour comparer deux dates en Ruby, vous pouvez utiliser la méthode `Date#<=>`, qui renvoie -1 si la première date est antérieure à la seconde, 0 si les deux dates sont égales et 1 si la première date est postérieure à la seconde.
+Comparer deux dates est un processus courant en programmation qui consiste à vérifier si une date donnée est antérieure, postérieure ou égale à une autre date. Les programmeurs utilisent cette fonction pour des besoins tels que le tri chronologique de données ou la validation de données entrées par les utilisateurs.
 
-Par exemple, pour comparer les dates d'aujourd'hui et de demain :
+## Comment faire:
+
+Voici deux manières de comparer des dates en Ruby:
 
 ```Ruby
-aujourdhui = Date.today
-demain = Date.today + 1
-aujourdhui <=> demain # renvoie -1
+#Méthode 1: Utiliser l'opérateur de comparaison ">"
+date_1 = Date.new(2021, 7, 21) #date_1 est antérieure à date_2
+date_2 = Date.new(2021, 7, 28)
+puts date_1 > date_2 #affiche "false"
+
+#Méthode 2: Utiliser la méthode "compare"
+date_1 = Date.new(2021, 7, 21) #date_1 est postérieure à date_2
+date_2 = Date.new(2021, 7, 15)
+puts date_1.compare(date_2) #affiche "1"
 ```
 
-Vous pouvez également utiliser les opérateurs de comparaison `==`, `<`, `>`, `<=` et `>=` pour comparer deux dates. Cependant, cela ne fonctionnera que si les deux objets ont le même type (Date, Time, DateTime) et ne prend pas en compte la précision des secondes, contrairement à la méthode `Date#<=>`.
+## Plongée en profondeur:
 
-## Plongée en profondeur
-Il est important de noter que si vous comparez une date avec un objet DateTime ou Time, la comparaison ne se fera pas correctement car DateTime et Time prennent en compte l'heure, les minutes et les secondes, tandis que Date ne prend en compte que la date. Pour comparer correctement des dates avec des objet DateTime ou Time, vous devez les convertir en objets Date en utilisant la méthode `Date#to_date`.
+Avant l'introduction de la classe Date en Ruby 1.8, la comparaison de dates était plus complexe. Les programmeurs devaient convertir les dates en nombres pour les comparer. Une alternative à la classe Date est la gem "chronic" qui permet de manipuler des dates sous forme de phrases en langage naturel. La comparaison de dates en Ruby se fait en se basant sur l'objet "Time" qui stocke la date et l'heure en nombre de secondes depuis le 1er janvier 1970.
 
-De plus, si vous utilisez des dates représentées en chaînes de caractères, assurez-vous de les parser en objets Date en utilisant la méthode `Date.parse` avant de les comparer.
+## Voir aussi:
 
-## Voir aussi
-- [Documentation officielle de Ruby sur la comparaison de dates](https://ruby-doc.org/stdlib/libdoc/date/rdoc/Date.html#method-i-3C-3D-3E)
-- [Documentation officielle de Ruby sur les opérateurs de comparaison](https://ruby-doc.org/core-2.7.1/Comparable.html)
+Pour en savoir plus sur la classe Date et ses méthodes, consultez la documentation officielle de Ruby: https://ruby-doc.org/stdlib-2.7.2/libdoc/date/rdoc/Date.html
+
+La gem "chronic" est disponible sur RubyGems: https://rubygems.org/gems/chronic

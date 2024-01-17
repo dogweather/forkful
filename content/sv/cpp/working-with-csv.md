@@ -1,7 +1,7 @@
 ---
-title:                "Arbeta med CSV"
-html_title:           "C++: Arbeta med CSV"
-simple_title:         "Arbeta med CSV"
+title:                "Arbeta med CSV-filer"
+html_title:           "C++: Arbeta med CSV-filer"
+simple_title:         "Arbeta med CSV-filer"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Data Formats and Serialization"
@@ -10,68 +10,64 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+# Vad & Varför?
+CSV står för "comma separated values" och är en typ av filformat som används för att lagra tabelldata. Det är ett populärt sätt att dela och utbyta data mellan olika program och plattformar. Programmerare använder ofta CSV-filer för att hantera och analysera stora mängder data på ett enkelt och effektivt sätt.
 
-CSV, eller "Comma Separated Values", är en vanlig filformat som används för att lagra och hantera data i tabellform. Det är ofta användbart för att hantera stora mängder data och för att dela och överföra information mellan olika program. Om du är intresserad av att lära dig hur man arbetar med CSV-filer, kan det hjälpa dig att bli mer effektiv i ditt programmeringsarbete.
-
-## Så här gör du
-
-Om du vill arbeta med CSV-filer i C++, behöver du ett bibliotek som stödjer detta filformat. Ett populärt bibliotek som används för att läsa och skriva CSV-filer är "csv-parser". För att använda detta bibliotek i ditt C++-projekt, behöver du först installera det genom att använda verifieraren "vcpkg" eller via din operativsystems pakethanterare.
-
-Efter installationen kan du börja använda biblioteket i ditt projekt. För att läsa en CSV-fil kan du använda följande kod:
+# Hur man gör:
+För att arbeta med CSV-filer i C++, måste du först inkludera biblioteket ```<fstream>```.
+Sedan kan du öppna CSV-filen med ```ifstream``` och läsa in data antingen rad för rad eller kolumn för kolumn.
+Här är ett exempel på hur man kan läsa in en CSV-fil och skriva ut innehållet:
 
 ```C++
 #include <iostream>
-#include "csv.h"
+#include <fstream>
 
-int main() {
-    // Ladda csv-filen
-    io::CSVReader<3> in("exempel.csv");
-    in.read_header(io::ignore_extra_column, "Namn", "Ålder", "Stad");
+int main()
+{
+    // Öppna CSV-fil för läsning
+    std::ifstream infile("min_data.csv");
 
-    // Loopa igenom dataraden för rad
-    std::string namn; int ålder; std::string stad;
-    while(in.read_row(namn, ålder, stad)){
-        std::cout << "Person: " << namn << "; Ålder: " << ålder << "; Stad: " << stad << std::endl;
+    // Variabel för att lagra inlästa värden
+    int value;
+
+    // Läs in värden och skriv ut dem
+    while (infile >> value)
+    {
+        std::cout << "Värde: " << value << std::endl;
     }
-    return 0;
-}
-```
-
-I detta exempel använder vi biblioteket för att läsa en CSV-fil med tre kolumner: Namn, Ålder och Stad. För varje rad i filen skrivs sedan informationen ut på skärmen.
-
-Om du istället vill skriva till en CSV-fil kan du använda följande kod:
-
-```C++
-#include "csv.h"
-
-int main() {
-    // Skapa csv-fil
-    io::CSVWriter csv("ny_fil.csv");
-
-    // Skriv till filen rad för rad
-    csv << "Person" << "Ålder" << "Stad";
-    csv << "Anna" << 25 << "Stockholm";
-    csv << "David" << 30 << "Göteborg";
 
     return 0;
 }
+
 ```
 
-Kom ihåg att inkludera "csv.h"-filen i ditt projekt och att ange antal kolumner för att skapa rätt typ av "csv-reader" eller "csv-writer".
+Exempel på innehåll i en CSV-fil:
 
-## Deep Dive
+```csv
+1,2,3,4,5
+6,7,8,9,10
+```
 
-CSV-filer kan vara användbara för en mängd olika ändamål, men de kan också vara knepiga att hantera om du inte är van vid att arbeta med dem. En viktig sak att komma ihåg är att varje rad i en CSV-fil representerar en datarad. Varje data skiljs åt med ett komma, därav namnet "Comma Separated Values".
+Utmatning från exemplet ovan:
 
-Det är också viktigt att notera att en del problem kan uppstå när du arbetar med CSV-filer, särskilt om datat innehåller citattecken eller specialtecken. Som en försiktighet är det bäst att kontrollera datat noggrant innan du använder det för att undvika eventuella problem.
+```text
+Värde: 1
+Värde: 2
+Värde: 3
+Värde: 4
+Värde: 5
+Värde: 6
+Värde: 7
+Värde: 8
+Värde: 9
+Värde: 10
+```
 
-Om du behöver arbeta med CSV-filer på en mer avancerad nivå, finns det också andra bibliotek som du kan utforska, som till exempel "libcsv" eller "Fast C++ CSV Parser".
+# Djupdykning:
+CSV-filer har funnits sedan 1970-talet och är fortfarande ett vanligt sätt att strukturera och dela data. Det finns dock några alternativ till CSV, som JSON och XML, som är mer lämpade för webbapplikationer. När du arbetar med CSV är det viktigt att kontrollera indata för att undvika felaktigheter eller datahaverier.
 
-## Se även
+När du arbetar med CSV-filer är det också viktigt att känna till att varje rad representerar en datapost och att varje kolumn representerar ett attribut eller en egenskap för den datan. Det är viktigt att ha koll på rad- och kolumnseparatorer för att kunna läsa in datan på rätt sätt.
 
-Här är några användbara länkar som kan hjälpa dig att lära dig mer om att arbeta med CSV i C++:
-
-- [csv-parser på GitHub](https://github.com/csv-parser/csv-parser)
-- [en tutorial om att läsa CSV-filer i C++](https://www.analyticsvidhya.com/blog/2021/06/csv-handling-in-c-introduction-and-usage-with-examples/)
-- [en guide om att skriva CSV-filer i C++](https://www.codegrepper.com/code-examples/cpp/cpp+write+csv)
+# Se även:
+- [std::ifstream reference](https://www.cplusplus.com/reference/fstream/ifstream/)
+- [CSV format](https://en.wikipedia.org/wiki/Comma-separated_values)

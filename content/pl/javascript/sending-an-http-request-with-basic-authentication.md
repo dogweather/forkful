@@ -1,7 +1,7 @@
 ---
-title:                "Wysyłanie żądania HTTP z podstawowym uwierzytelnieniem"
-html_title:           "Javascript: Wysyłanie żądania HTTP z podstawowym uwierzytelnieniem"
-simple_title:         "Wysyłanie żądania HTTP z podstawowym uwierzytelnieniem"
+title:                "Wysyłanie żądania HTTP z podstawowym uwierzytelnieniem."
+html_title:           "Javascript: Wysyłanie żądania HTTP z podstawowym uwierzytelnieniem."
+simple_title:         "Wysyłanie żądania HTTP z podstawowym uwierzytelnieniem."
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "HTML and the Web"
@@ -10,39 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co & Dlaczego?
 
-Wykorzystanie uwierzytelniania podstawowego jest ważnym elementem bezpieczeństwa przy wysyłaniu żądań HTTP. Dzięki temu możliwe jest potwierdzenie tożsamości użytkownika oraz ochrona danych przesyłanych między aplikacją a serwerem.
+Wysyłanie zapytania HTTP z podstawowym uwierzytelnianiem to proces, w którym programista wyśle żądanie do serwera internetowego, aby uzyskać dostęp do chronionego zasobu. Uwierzytelnienie zapewnia bezpieczne i poufne wykorzystywanie zasobu i jest niezbędne do zapewnienia bezpieczeństwa danych.
 
-## Jak
+## Jak to zrobić?
 
-Żeby wysłać żądanie HTTP z uwierzytelnieniem podstawowym, należy najpierw utworzyć obiekt `XMLHttpRequest` i przypisać mu adres URL serwera, do którego chcemy się połączyć. Następnie należy ustawić metodę żądania (np. `GET` lub `POST`) oraz dodatkowe nagłówki, w tym nagłówek `Authorization`, zawierający dane uwierzytelniające.
+Przykładowy kod w JavaScript, wykorzystujący bibliotekę Axios, do wysyłania żądań HTTP z podstawowym uwierzytelnieniem:
 
-```Javascript
-var xhr = new XMLHttpRequest();
-var url = "https://example.com/auth";
-xhr.open('GET', url);
-xhr.setRequestHeader('Authorization', 'Basic ' + btoa('username:password')); // btoa - koduje dane do postaci base64
-xhr.send();
+```
+const axios = require('axios');
+
+axios.get('/protected/resource', {
+  auth: {
+    username: 'username',
+    password: 'password'
+  }
+})
+  .then(response => {
+    console.log(response.data);
+  })
+  .catch(error => {
+    console.log(error);
+  });
 ```
 
-Jeśli uwierzytelnienie przebiegnie pomyślnie, otrzymamy odpowiedź z serwera, która może być w formacie JSON lub tekstowym. Przykład odpowiedzi z nagłówkiem `Authorization` zawierającym dane uwierzytelniające może wyglądać następująco:
+Przykładowy wynik zwrócony przez serwer:
 
-```Javascript
+```
 {
-  "success": true,
-  "message": "Uwierzytelniono pomyślnie.",
-  "user_id": 123,
-  "Authorization": "Basic dXNlcm5hbWU6cGFzc3dvcmQ=" // dane uwierzytelniające zakodowane w base64
+  data: "Dane zasobu"
 }
 ```
 
-## Pogłębione zagadnienia
+## Głębszy zanurzenie
 
-Wysyłanie żądania HTTP z uwierzytelnianiem podstawowym polega na przekazaniu danych uwierzytelniających w formacie base64 w nagłówku `Authorization`. Warto jednak pamiętać, że jest to słaby sposób uwierzytelnienia i zalecane jest stosowanie bardziej zaawansowanych mechanizmów, takich jak uwierzytelnianie oparte o tokeny.
+Podstawowe uwierzytelnienie zostało wprowadzone w protokole HTTP w celu połączenia użytkownika z serwerem. Alternatywą dla tego typu uwierzytelnienia jest wykorzystanie tokenów, które są bezpieczniejszym sposobem uwierzytelniania i są często stosowane w API.
 
-## Zobacz także
+Implementacja zapytań HTTP z podstawowym uwierzytelnieniem może różnić się w zależności od wykorzystywanej biblioteki lub frameworka. Przykład powyżej wykorzystuje bibliotekę Axios, ale istnieją też inne sposoby wykonywania tego typu żądań.
 
-- [MDN - Wysyłanie żądań HTTP z XMLHttpRequest](https://developer.mozilla.org/pl/docs/Web/API/XMLHttpRequest)
-- [MDN - Nagłówki HTTP](https://developer.mozilla.org/pl/docs/Web/HTTP/Headers)
-- [W3Schools - Uwierzytelnianie HTTP](https://www.w3schools.com/tags/att_http_equiv.asp)
+## Zobacz również
+
+- [Axios dokumentacja](https://axios-http.com/docs/intro)
+- [HTTP Basic Authentication: co to jest i jak działa](https://www.w3schools.com/tags/att_input_type_button.asp)

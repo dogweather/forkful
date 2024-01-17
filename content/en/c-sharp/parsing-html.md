@@ -10,45 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-Parsing HTML is an essential skill for any web developer or data analyst. It allows you to extract specific data or information from websites, making it easier to automate tasks or gather insights from large amounts of data. With the rise of web scraping and data mining, knowing how to parse HTML is becoming more and more valuable in today's digital age.
+# An Informal Guide to Parsing HTML Using C#
 
-## How To
-To parse HTML in C#, you will need to use a combination of classes from the `System.Xml` and `System.Net` namespaces. The first step is to download the HTML content of the webpage using the `WebClient` class. Then, use the `HtmlDocument` class to load the HTML content and navigate through its elements using XPath or by specifying the element's tag name. Here's an example of how to extract all the text within the `<p>` tags of a webpage:
+## What & Why?
+So you want to know about parsing HTML, huh? Well, put simply, parsing HTML is the process of taking raw HTML code and converting it into a more structured format that can be read and manipulated by a computer. Programmers do this in order to extract specific information from websites or to automate repetitive tasks.
+
+## How to:
+The most popular way to parse HTML using C# is by using the HtmlAgilityPack library. Here's a simple example of how to use it to extract all the links from a webpage:
 
 ```C#
-using System;
-using System.Net;
-using System.Xml;
+// Import the HtmlAgilityPack library
+using HtmlAgilityPack;
 
-// Download HTML content from webpage
-WebClient client = new WebClient();
-string html = client.DownloadString("https://www.example.com");
+// Create a new HtmlDocument object and load the webpage
+HtmlDocument document = new HtmlDocument();
+document.Load("https://www.example.com");
 
-// Load HTML content into HtmlDocument
-HtmlDocument doc = new HtmlDocument();
-doc.LoadHtml(html);
-
-// Select all <p> tags and print their inner text
-HtmlNodeCollection pTags = doc.DocumentNode.SelectNodes("//p");
-foreach (HtmlNode p in pTags)
-{
-    Console.WriteLine(p.InnerText);
-}
+// Use LINQ to select all <a> tags and extract their "href" attributes
+var links = document.DocumentNode.Descendants("a")
+                .Select(a => a.GetAttributeValue("href", null))
+                .Where(link => !String.IsNullOrEmpty(link));
 ```
 
-This code snippet will print out the inner text of all the `<p>` tags on the webpage. You can also use other methods of the `HtmlDocument` class, such as `GetElementById()` or `GetElementByClassName()`, to access specific elements on the webpage.
+And that's it! You now have all the links from the webpage stored in the `links` variable. Of course, parsing HTML can involve much more complex tasks, but this gives you a basic idea of how it works.
 
-## Deep Dive
-Parsing HTML involves understanding the structure and syntax of HTML documents. The `HtmlDocument` class represents the HTML document as a tree-like structure, where each element is a node. The `SelectNodes()` method uses XPath, a query language for navigating XML documents, to select specific elements within the HTML tree. You can also use the `SelectSingleNode()` method if you only want to retrieve one element.
+## Deep Dive:
+Parsing HTML has been around since the early days of the internet when information was primarily shared through websites. Before the introduction of libraries like HtmlAgilityPack, programmers had to manually write code to extract information from HTML, a tedious and time-consuming process.
 
-To access the attributes of an element, you can use the `GetAttributeValue()` method. This method takes in the attribute name and returns its value, allowing you to extract data such as links, image sources, or IDs.
+Nowadays, there are several alternatives to HtmlAgilityPack, such as AngleSharp and CsQuery. Each library has its own strengths and weaknesses, so it's important to do your research and choose the one that best fits your project's needs.
 
-## See Also
-To learn more about parsing HTML in C#, check out these resources:
+When it comes to implementation details, parsing HTML can be a bit tricky. HTML code is not always well-formed, meaning it may not follow the proper syntax rules. In these cases, libraries like HtmlAgilityPack use heuristics and guessing algorithms to make sense of the code and extract the desired information.
 
-- [Microsoft Docs: Working with HTML documents using C#](https://docs.microsoft.com/en-us/dotnet/api/system.web.htmlcontrols.htmldocument?view=net-framework-4.8)
-- [C# Corner: Parsing HTML with C#](https://www.c-sharpcorner.com/article/parsing-html-with-c-sharp/)
-- [CodeProject: Parsing HTML with C# and XPath](https://www.codeproject.com/articles/659019/parsing-html-with-csharp-and-xpath)
-
-Now that you know the basics of parsing HTML in C#, go forth and extract some data!
+## See Also:
+- Official website of HtmlAgilityPack: https://html-agility-pack.net/
+- AngleSharp library: https://anglesharp.github.io/
+- CsQuery library: https://github.com/jamietre/CsQuery

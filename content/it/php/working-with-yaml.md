@@ -10,42 +10,64 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché utilizzare YAML per la programmazione in PHP
+## Cosa & Perché?
+Lavorare con YAML significa gestire i dati in formato YAML usando il linguaggio di programmazione PHP. Questo formato è popolare tra i programmatori poiché è facile da leggere e scrivere per i computer, ma anche per gli esseri umani. Inoltre, YAML è altamente compatibile con una vasta gamma di linguaggi di programmazione.
 
-Se stai lavorando con dati strutturati, come ad esempio configurazioni o informazioni da archiviare, YAML è una scelta eccellente per la tua programmazione in PHP. È un formato facile da leggere e scrivere per gli esseri umani, e possiede anche una sintassi semplice da interpretare per i computer.
-
-## Come utilizzare YAML in PHP
-
-Per utilizzare YAML in PHP, è necessario innanzitutto installare l'estensione "yaml" dal tuo gestore di pacchetti. Una volta installata, puoi cominciare a manipolare i dati attraverso la funzione `yaml_parse()`.
-
-```PHP
-// Esempio di parsing di un file YAML
-$data = yaml_parse(file_get_contents('config.yaml'));
-
-// Esempio di creazione di un file YAML
-$config = [
-  'database' => [
-    'host' => 'localhost',
-    'username' => 'root',
-    'password' => 'password'
-  ],
-  'app' => [
-    'name' => 'Mio fantastico sito',
-    'author' => 'Io stesso'
-  ]
-];
-
-file_put_contents('config.yaml', yaml_emit($config));
+## Come fare:
+### Esempio 1:
+```
+<?php
+// Creiamo un array con alcune informazioni
+$frutta = array(
+    "mela" => array(
+        "color" => "rosso",
+        "prezzo" => "1.50€"
+    ),
+    "banana" => array(
+        "color" => "giallo",
+        "prezzo" => "2€"
+    )
+);
+// Convertiamo l'array in formato YAML
+$yaml = yaml_emit($frutta);
+echo $yaml;
+?>
+```
+Output:
+```
+mela:
+  color: rosso
+  prezzo: 1.50€
+banana:
+  color: giallo
+  prezzo: 2€
 ```
 
-La funzione `yaml_parse()` restituisce un array PHP contenente i dati del file YAML, mentre la funzione `yaml_emit()` converte un array in formato YAML e lo scrive su un file.
+### Esempio 2:
+```
+<?php
+// Creiamo una stringa con dati YAML
+$car = "modello: Ferrari\nanno: 2021";
+// Convertiamo la stringa in un array associativo
+$array_car = yaml_parse($car);
+print_r($array_car);
+?>
+```
+Output:
+```
+Array ( [modello] => Ferrari [anno] => 2021 )
+```
 
-## Approfondimenti su YAML
+## Approfondimento:
+YAML è stato creato nel 2001 da Clark Evans e Ingy döt Net come linguaggio di markup per la configurazione dei sistemi. Inizialmente era pensato per essere una versione semplificata di XML, ma è diventato rapidamente popolare tra i programmatori a causa della sua sintassi più leggibile e intuitiva. Altre alternative per la gestione dei dati includono JSON e XML.
 
-YAML è un formato di serializzazione ed è quindi utile per la memorizzazione di dati strutturati. È molto flessibile, permettendo anche l'uso di ogetti e tipi di dato personalizzati. Inoltre, YAML permette la creazione di commenti all'interno del file, rendendolo ancora più leggibile e gestibile per gli sviluppatori.
+### Dettagli Implementativi:
+Per lavorare con YAML in PHP, è necessario assicurarsi che l'estensione "yaml" sia abilitata nel file php.ini. Se non è abilitata, è possibile farlo nei modi seguenti:
+- Aggiungendo la linea "extension=yaml" nel file php.ini
+- Usando la funzione `dl("yaml.so")` all'interno del codice PHP
+- Abilitando l'estensione nell'interfaccia di gestione del server (ad esempio CPanel)
 
-## Vedi anche
-
-- [Documentazione ufficiale di PHP per l'estensione YAML](https://www.php.net/manual/en/book.yaml.php)
-- [Documentazione ufficiale di YAML](https://yaml.org/)
-- [Articolo su "Come sfruttare al meglio YAML in PHP"](https://jesseduffield.com/YAML-over-verbosity/)
+## Vedi anche:
+- Documentazione ufficiale di PHP per YAML: https://www.php.net/manual/en/book.yaml.php
+- Documentazione ufficiale di YAML: https://yaml.org/
+- Tutorial su come lavorare con YAML in PHP: https://www.techiediaries.com/php-yaml/

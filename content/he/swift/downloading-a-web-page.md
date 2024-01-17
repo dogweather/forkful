@@ -1,7 +1,7 @@
 ---
-title:                "להורדת דף אינטרנט"
-html_title:           "Swift: להורדת דף אינטרנט"
-simple_title:         "להורדת דף אינטרנט"
+title:                "הורדת עמוד אינטרנט"
+html_title:           "Swift: הורדת עמוד אינטרנט"
+simple_title:         "הורדת עמוד אינטרנט"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "HTML and the Web"
@@ -10,37 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## למה
+## מה ולמה?
+ההורדה של עמוד אינטרנט היא פעולת מחשב המאפשרת למתכנתים לקבל את תוכן עמוד אינטרנט כדי לעבוד עם המידע הנמצא בו. ההורדה של אתר אינטרנט מועילה לתוצאות חיפוש, אפליקציות ופרויקטים שונים.
 
-אנשים ירצו להוריד דף אינטרנט מכמה סיבות: לצורך גילוי אבטחה, לצורך נתונים מידעיים או פשוט כי הם נקלעו לקישור מעניין. באמצעות קוד Swift יכולים להעניק לעצמם את הכלים להוריד דף אינטרנט, לעבד את התוצאות ולהתאים אותם לצרכים שלהם.
-
-## איך לעשות
-
-הכירו את הנציג טיפוס URL של Swift. יש ליצור אובייקט זה כדי ליצור קישור לכתובת האינטרנט שתרצו להוריד. לכלול את הקוד הבא בתוך אובייקט URL כדי לייצר בקשת HTTP GET:
+## כיצד לעשות זאת:
+כדי להוריד דף אינטרנט בSwift, ניתן להשתמש בפונקציה בשם "URLSession" יחד עם פקודות נוספות כמו "URL", "Data" ו- "Task" כדי ליצור את הבקשה ולקבל את התוכן. למשל, ניתן להשתמש בפונקציה להוציא את תוכן העמוד ולהדפיס אותו:
 
 ```Swift
-let url = URL(string: "https://www.example.com")!
-```
-
-כעת ניתן להשתמש במחלקה URLSession כדי לבצע את הבקשה ולקבל את התוכן המלא של הדף:
-
-```Swift
-let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
-    if let data = data, let string = String(data: data, encoding: .utf8) {
-        print(string)
-    }
+guard let url = URL(string: "https://www.example.com") else { return }
+let task = URLSession.shared.dataTask(with: url) { data, response, error in
+    guard let data = data, error == nil else { return }
+    print(String(data: data, encoding: .utf8))
 }
 task.resume()
 ```
 
-לאחר מכן, ניתן לבצע עיבוד נוסף על התוצאות לפי הצורך.
+## נכים בעומק:
+בעבר, כדי להוריד עמוד אינטרנט, היה על המתכנת להשתמש בתוכניות חיצוניות נפרדות או לבנות תוכנה מגבלתית עם דרישות מיוחדות. עכשיו, עם העובדות מתחת לשטיח, תכניות נפלאות כמו פונקצית "URLSession" זמינות לחברת הקוד הפתוח כדי לאפשר הורדה קלה של תוכן אינטרנט ישירות מתוך קוד פרויקט.
 
-## מעמקים
+## ראו גם:
+למידע נוסף על דרכים נוספות לעבוד עם דפי אינטרנט בשפת Swift, ניתן לצפות במדריכים הבאים ברשת:
 
-דפי אינטרנט ניתנים להורדה באמצעות טכניקות שונות, כגון HTTP and HTTPS. בנוסף, ניתן גם להשתמש בקוד מקור קיים כדי לממש בקשות GET, POST וכו' בפשטות. כמו כן, ניתן להתאים ולהתאים את הקוד הזה לצורכים שונים כגון הורדה של תמונות או קבצים.
-
-## ראו גם
-
-- ["איך לממש בקשות GET וPOST בקוד Swift"](https://www.hackingwithswift.com/example-code/system/how-to-send-the-contents-of-a-url-to-the-server-using-post) 
-- ["הורדת תמונות באמצעות Swift"](https://www.appcoda.com/download-images-rest-api/) 
-- ["מדריך מקיף לתכנות בשפת Swift"](https://www.apple.com/swift/)
+- [איך להוריד תמונה מאינטרנט בשפת Swift](https://www.hackingwithswift.com/example-code/networking/how-to-download-an-image-from-the-web) 
+- [איך לשלב REST API לפרויקט Swift](https://www.raywenderlich.com/18-afnetworking-2-0-tutorial)
+- [פרויקט פתוח ומתוחזק עם דוגמת כריית דפי אינטרנט](https://github.com/Alamofire/Alamofire)

@@ -10,29 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
-I detta artikel kommer du att lära dig om hur du läser kommandoradsargument i PHP och varför detta är ett användbart verktyg för att hantera användarinput. Genom att läsa kommandoradsargument kan du enkelt ta emot och bearbeta data från användaren.
+## Vad & Varför? 
+Att läsa kommandoradsargument är en vanlig uppgift som programmerare utför för att interagera med sina program på ett mer dynamiskt sätt. Genom att läsa in argument som användaren skriver in i terminalen kan en programmerare skapa anpassade och mer interaktiva program som kan hantera olika användarfall.
 
-## Hur man gör det
-Först och främst behöver du känna till kommandot "argv" i PHP, som är en array som innehåller alla kommandoradsargument som skickas med när man kör ett PHP-skript. Här är ett exempel på hur du kan använda detta i ditt kod:
+## Så här gör du:
+För att läsa in kommandoradsargument i PHP använder vi en inbyggd funktion vid namn `$_SERVER['argv']`. Denna funktion returnerar en array som innehåller alla argument som lästs in. Nedan följer ett exempel på hur detta kan implementeras:
 
 ```PHP
-<?php
-    // Skriv ut alla kommandoradsargument
-    var_dump($argv);
-    
-    // Skriv ut det första argumentet
-    echo $argv[0];
-?>
+// Filnamn: test.php
+$args = $_SERVER['argv']; // Läser in användarens argument som en array
+echo "Dina argument är: ";
+print_r($args); // Skriver ut argumenten i terminalen
+```
+Om du nu kör detta program från kommandoraden och lägger till några argument, kommer du att få utskriften av dessa argument:
+
+```
+php test.php argument1 argument2
+Dina argument är: 
+Array
+(
+    [0] => test.php
+    [1] => argument1
+    [2] => argument2
+)
 ```
 
-Om du till exempel kör ovanstående kod med kommandot "php script.php arg1 arg2" kommer den första raden att skriva ut en array med alla argumenten och den andra raden kommer att skriva ut "arg1". Detta ger dig tillgång till all input som användaren skickar med när de kör ditt skript.
+## Djupdykning:
+Att läsa in kommandoradsargument är en vanlig uppgift inom programmering, och detta har funnits som en funktion i PHP sedan dess första version. Det finns olika sätt att implementera detta på, men vanligtvis är det `$_SERVER['argv']` som används. Alternativ till detta är att använda andra funktioner som `getopt()` eller `argv_parse()` för att läsa in argumenten i en mer strukturerad form.
 
-## Deep Dive
-För att få en bättre förståelse för hur du kan använda kommandoradsargument i dina projekt, så kan du också utforska hur du kan använda olika PHP-funktioner som "getopt()" och "filter_var()". Dessa funktioner ger dig möjligheten att hantera och filtrera kommandoradsargument på ett mer avancerat sätt. Genom att känna till dessa funktioner kan du skapa mer robusta och säkrare skript.
-
-## Se även
-För mer information om kommandoradsargument i PHP, se följande länkar:
-- [PHP manual om kommandoradsargument](https://www.php.net/manual/en/reserved.variables.argv.php)
-- [getopt() funktionen](https://www.php.net/manual/en/function.getopt.php)
-- [filter_var() funktionen](https://www.php.net/manual/en/function.filter-var.php)
+## Se även:
+- Mer information om `$_SERVER['argv']`: https://www.php.net/manual/en/reserved.variables.argv.php 
+- Alternativa funktioner för att läsa kommandoradsargument: https://stackoverflow.com/questions/2186391/how-can-i-read-command-line-arguments-in-a-php-script

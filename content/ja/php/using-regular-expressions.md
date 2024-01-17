@@ -1,7 +1,7 @@
 ---
-title:                "正規表現を使用する"
-html_title:           "PHP: 正規表現を使用する"
-simple_title:         "正規表現を使用する"
+title:                "正規表現の使用"
+html_title:           "PHP: 正規表現の使用"
+simple_title:         "正規表現の使用"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Strings"
@@ -10,35 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
-なぜ正規表現を使用するのか？それは、テキストのパターンマッチングや置換を行うために、より効率的にコーディングすることができるからです。
+## なに & なぜ?
 
-## 手順
-正規表現を使用するには、まず `preg_match()` 関数を使用してパターンを定義し、それにマッチするテキストを検索します。例えば、`"/[0-9]+/"`という正規表現パターンは、数字を含む文字列を検索します。コードブロック内にPHPのサンプルコードと出力例を記載します。
+正規表現を使うことは、テキストパターンを検索および置換する手段です。プログラマーは、データの整形やバリデーション、または文字列の処理において、この機能を使用します。
 
-```PHP
-// 正規表現パターンを定義
-$pattern = "/[0-9]+/";
+## 使い方:
 
-// テキストを検索し、数字を含むパターンを出力
-$text = "This is a string with numbers like 1234.";
-preg_match($pattern, $text, $matches);
-print_r($matches);
+```php
+// 文字列中のメールアドレスの検索
+$string = "Contact us at info@example.com";
+$pattern = '/[\w.%+-]+@[\w.-]+\.[A-Za-z]{2,3}/';
+preg_match($pattern, $string, $matches);
+echo $matches[0]; // 出力: info@example.com
 ```
 
-出力結果は以下のようになります。
-
+```php
+// 正規表現を使った置換
+$text = "Hello, my name is John.";
+$pattern = '/John/';
+$replacement = "Jane";
+echo preg_replace($pattern, $replacement, $text); // 出力: Hello, my name is Jane.
 ```
-Array
-(
-    [0] => 1234
-)
+
+```php
+// パスワードのバリデーション
+$password = "abc123$";
+$pattern = '/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[$@$!%*?&])[A-Za-z0-9$@$!%*?&]{8,}$/';
+if (preg_match($pattern, $password)) {
+  echo "Valid Password";
+} else {
+  echo "Invalid Password";
+}
 ```
 
-## 深堀り
-正規表現は、単純な文字列の検索だけでなく、パターンに基づいた複雑な操作を行うことも可能です。例えば、メールアドレスのバリデーションやHTMLタグの除去などができます。正規表現の詳細な構文や特殊文字をマスターすることで、より高度な操作が可能になります。
+## 深堀り:
 
-## 併せて参考にしてほしい
-- [PHPの正規表現マニュアル](https://www.php.net/manual/ja/reference.pcre.pattern.syntax.php)
-- [正規表現チュートリアル](https://www.regular-expressions.info/tutorial.html)
-- [正規表現を理解するための練習問題](https://regexone.com/)
+- 正規表現は、アメリカのコンピューターサイエンスで生まれましたが、現在では世界中のプログラミング言語で使用されています。
+- PHPでは、preg_レギュラーエクスプレッション関数を使うことで正規表現を処理できますが、別の方法として、Perl互換正規表現(PCRE)を使う方法もあります。
+- 正規表現は、パフォーマンスが重要なアプリケーションでは避けるべきです。処理するテキストが長くなると、正規表現は大変負荷がかかります。
+
+## 関連リソース:
+
+- [PHPで正規表現を使う方法](https://www.php.net/manual/en/book.pcre.php)
+- [正規表現の基礎](https://www.sitepoint.com/expressions-php/)
+- [PHP正規表現チュートリアル](https://www.tutorialspoint.com/php/php_regular_expression.htm)

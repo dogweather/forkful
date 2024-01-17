@@ -1,7 +1,7 @@
 ---
-title:                "Analisando html"
-html_title:           "C++: Analisando html"
-simple_title:         "Analisando html"
+title:                "Análise de html"
+html_title:           "C++: Análise de html"
+simple_title:         "Análise de html"
 programming_language: "C++"
 category:             "C++"
 tag:                  "HTML and the Web"
@@ -10,53 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+## O que e por que?
 
-Muitas vezes, é necessário analisar ou extrair informações específicas de uma página HTML para fins de análise de dados, automação de tarefas ou criação de aplicativos da web. É aí que entra o uso do parsing HTML em C++.
+Analisar HTML é o processo de ler e interpretar o código de uma página da web, permitindo que os programadores possam acessar e manipular informações específicas dentro de uma página. Os programadores muitas vezes fazem isso para extrair dados de um site ou para criar aplicativos que interagem com sites existentes.
 
-## Como fazer
+## Como fazer:
 
-Para fazer parsing HTML em C++, é preciso utilizar uma biblioteca de parsing, como a "libxml2". Aqui está um exemplo simples de como fazer parsing de uma página HTML e imprimir o título:
+Existem várias maneiras de realizar a análise de HTML em C++, mas uma das formas mais populares é usando uma biblioteca externa chamada "libxml2". Aqui está um exemplo de como usar essa biblioteca para obter o título de uma página da web:
 
 ```
-#include <libxml/HTMLparser.h>
-#include <libxml/xpath.h>
+#include <libxml/HTMLparser.h> // inclua a biblioteca
 
 int main() {
-    // Criando a estrutura do documento HTML
-    xmlDocPtr doc = htmlNewDoc("UTF-8");
-    // Lendo o arquivo HTML
-    htmlCtxtPtr context = htmlReadFile("pagina.html", NULL, HTML_PARSE_NOBLANKS);
-    // Obtendo o elemento do título
-    htmlNodePtr titulo = htmlXPathEvalExpression((xmlChar*)"//title", context->doc);
-    // Imprimindo o texto do título
-    printf("Título: %s",titulo->children->content);
-    // Limpando a memória
-    xmlFreeDoc(doc);
-    htmlCleanupParser();
-    xmlCleanupParser();
+    const char * htmlInput; // entrada HTML
+    htmlDocPtr doc = htmlReadMemory(htmlInput, strlen(htmlInput), NULL, NULL, HTML_PARSE_RECOVER); // cria um documento a partir da entrada HTML
+    xmlNode * root = xmlDocGetRootElement(doc); // obtém o elemento raiz do documento
+    xmlNode * head = root->children; // obtém o elemento "head" dentro do elemento raiz
+    xmlNode * title = head->children; // obtém o elemento "title" dentro do elemento "head"
+    xmlChar * titleContent = xmlNodeGetContent(title); // obtém o conteúdo do elemento "title"
+    printf("%s\n", titleContent); // imprime o título
+    xmlFreeDoc(doc); // libera o documento
+    xmlCleanupParser(); // limpa o parser
     return 0;
 }
 ```
 
-A saída esperada seria:
+A saída desse código seria o título da página da web.
 
-```
-Título: Meu Site Incrível
-```
+## Mergulho profundo:
 
-## Mergulho Profundo
+A análise de HTML é uma prática antiga na programação, que remonta aos primeiros dias da internet. Existem várias bibliotecas disponíveis para análise de código HTML em C++, como a "libxml2" mencionada anteriormente e a "libhtmlcxx". Além disso, muitas linguagens de programação modernas, como Python e JavaScript, têm recursos embutidos para análise de HTML, tornando essa tarefa ainda mais fácil.
 
-Parsing HTML em C++ pode ser um processo complexo, pois o HTML pode ser muito estruturado e detalhado. Algumas coisas importantes a serem consideradas incluem:
+## Veja também:
 
-- A tag <title> pode estar em diferentes lugares em páginas HTML diferentes, por isso, pode ser necessário usar expressões XPath diferentes para encontrá-lo.
+Para saber mais sobre análise de HTML em C++, confira os seguintes recursos:
 
-- Existem muitas bibliotecas de parsing HTML disponíveis, cada uma com suas próprias vantagens e desvantagens. Certifique-se de escolher a que melhor se adequa às suas necessidades.
-
-- É importante garantir que a página HTML seja válida e esteja bem formatada, caso contrário, pode ser difícil realizar o parsing corretamente.
-
-## Veja também
-
-- [libxml2 documentation](http://www.xmlsoft.org/html/index.html)
-- [XPath tutorial](https://www.w3schools.com/xml/xpath_intro.asp)
-- [C++ tutorial](https://www.tutorialspoint.com/cplusplus/index.htm)
+- [Site oficial da biblioteca libxml2](http://www.xmlsoft.org/)
+- [Tutorial de análise de HTML usando a biblioteca libxml2](https://www.xmlsoft.org/html/libxml-HTMLparser.html)
+- [Documentação da biblioteca libhtmlcxx](http://www.mbayer.de/htmlcxx/)
+- [Tutoriais de análise de HTML em outras linguagens de programação](https://realpython.com/html-and-python/), [JavaScript](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction)

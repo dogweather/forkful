@@ -10,37 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué escribir un archivo de texto en Java?
+## ¿Qué y por qué?
 
-Escribir un archivo de texto en Java es una tarea común en la programación. Este método permite almacenar y compartir información de manera organizada y accesible. Ya sea para crear registros de datos, generar reportes o guardar archivos de configuración, aprender cómo escribir un archivo de texto en Java es una habilidad valiosa en cualquier proyecto de programación.
+Escribir un archivo de texto en Java es crear un archivo con contenido en forma de texto legible por humanos. Los programadores lo hacen para almacenar información, como configuraciones, registros o datos de entrada/salida, de forma persistente y accesible.
 
-## Cómo hacerlo
+## ¿Cómo hacerlo?
 
-Para escribir un archivo de texto en Java, sigue estos pasos:
+Utilizando la clase `FileWriter` y su método `write()`, abrimos un archivo de texto y escribimos en él. Luego cerramos el archivo para asegurarnos de que todo se haya guardado correctamente. Aquí hay un ejemplo:
 
-1. Importa la clase `FileWriter` para poder crear y escribir en un archivo.
-2. Crea una instancia de `FileWriter` y especifícale el nombre y la ruta del archivo que deseas crear. Por ejemplo: 
 ```Java
-    FileWriter fileWriter = new FileWriter("mi_archivo.txt");
-```
-3. Utiliza el método `write` para escribir en el archivo. Puedes escribir cadenas de texto o utilizar un bucle para escribir varias líneas. Por ejemplo:
-```Java
-    fileWriter.write("Hola mundo!");
-```
-4. No olvides cerrar el archivo utilizando el método `close` una vez que hayas terminado de escribir. Esto es importante para guardar los cambios y liberar recursos. Por ejemplo:
-```Java
-    fileWriter.close();
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class WriteFile {
+   public static void main(String[] args) {
+      try {
+         FileWriter writer = new FileWriter("archivo.txt");
+         writer.write("¡Hola amigos!");
+         writer.close();
+      } catch (IOException e) {
+         e.printStackTrace();
+      }
+   }
+}
 ```
 
-¡Y eso es todo! Ahora tienes un archivo de texto creado y escrito con Java.
+El código anterior creará un archivo llamado `archivo.txt` que contiene el texto "¡Hola amigos!". Para ver el archivo, puedes usar cualquier editor de texto o el comando `cat` en la terminal.
 
 ## Profundizando
 
-La clase `FileWriter` utiliza un flujo de salida para escribir el contenido en un archivo. Esto significa que puedes utilizar todos los métodos de la clase `Writer` para escribir en tu archivo. Algunas opciones útiles incluyen `append` para agregar texto a un archivo existente y `flush` para vaciar el búfer y asegurarse de que todos los datos se han escrito.
-
-También es importante tener en cuenta que al trabajar con archivos, pueden surgir errores. Por lo tanto, es buena práctica utilizar un bloque de `try-catch` para manejar posibles excepciones. Esto garantizará que tu programa no se bloquee si ocurre un error al escribir el archivo.
+Escribir archivos de texto es una parte crucial de la programación en Java. Fue introducido en la versión 1.1 de Java y ha sido ampliamente utilizado desde entonces. Hay algunas alternativas, como el uso de la clase `PrintWriter` en lugar de `FileWriter`, pero la idea es la misma. Al escribir archivos de texto, también es importante tener en cuenta la codificación, ya que esto afectará cómo se verá el texto en diferentes dispositivos y sistemas operativos.
 
 ## Ver también
-- Documentación oficial de Java sobre la clase `FileWriter`: https://docs.oracle.com/javase/8/docs/api/java/io/FileWriter.html
-- Tutorial de Java para principiantes: https://www.programiz.com/java-programming
-- Ejemplos de codificación en Java: https://www.freecodecamp.org/news/java-tutorial-for-beginners/
+
+- [Clase FileWriter en la documentación de Java](https://docs.oracle.com/javase/7/docs/api/java/io/FileWriter.html)
+- [Tutorial sobre escritura de archivos en Java](https://www.edureka.co/blog/writing-a-file-in-java/)

@@ -1,7 +1,7 @@
 ---
-title:                "Scaricare una pagina web"
-html_title:           "C: Scaricare una pagina web"
-simple_title:         "Scaricare una pagina web"
+title:                "Scaricare una pagina web."
+html_title:           "C: Scaricare una pagina web."
+simple_title:         "Scaricare una pagina web."
 programming_language: "C"
 category:             "C"
 tag:                  "HTML and the Web"
@@ -10,53 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+## Cosa e Perché?
+Scaricare una pagina web è il processo di acquisizione del contenuto di una pagina web dal server remoto e visualizzarlo sul tuo dispositivo locale. I programmatori spesso scaricano pagine web per analizzarne il contenuto o per utilizzarne le informazioni in altri progetti.
 
-Se sei interessato a sviluppare siti web o applicazioni che richiedono di scaricare pagine web, la conoscenza del linguaggio C è fondamentale. Con la sua velocità e la sua potenza, C è uno strumento ideale per automatizzare il processo di download di pagine web.
+## Come:
+Un modo semplice per scaricare una pagina web in C è utilizzare la libreria standard "curl". Di seguito è riportato un esempio di codice che utilizza curl per scaricare la pagina principale di Google:
 
-## Come Fare
-
-Un modo semplice per scaricare una pagina web utilizzando il linguaggio C è utilizzare la funzione `fopen()` per aprire un file e la funzione `fgets()` per leggere il contenuto della pagina linea per linea.
-
-`` `C
+```C
 #include <stdio.h>
+#include <curl/curl.h>
 
-int main() {
-    // Apro il file da creare ed il file da cui scaricare
-    FILE *file = fopen("index.html", "w");
-    FILE *webpage = fopen("https://www.esempio.com/", "r");
-
-    // Controllo se il file è stato aperto correttamente
-    if (file == NULL || webpage == NULL) {
-        printf("Errore nell'apertura dei file");
-        return 1; // Errore
-    }
-
-    // Leggo la pagina linea per linea e la scrivo nel file
-    char buffer[BUFSIZ];
-    while (fgets(buffer, BUFSIZ, webpage) != NULL) {
-        fputs(buffer, file);
-    }
-
-    // Chiudo i file
-    fclose(file);
-    fclose(webpage);
-
-    return 0; // Tutto ok
+int main(void)
+{
+  CURL *curl;
+  char *web_page = "https://www.google.com";
+  curl = curl_easy_init();
+  if(curl) {
+    CURLcode res;
+    curl_easy_setopt(curl, CURLOPT_URL, web_page);
+    res = curl_easy_perform(curl);
+    if(res != CURLE_OK)
+      fprintf(stderr, "curl_easy_perform() failed: %s\n",
+              curl_easy_strerror(res));
+    curl_easy_cleanup(curl);
+  }
+  return 0;
 }
-`` `
+```
 
-L'esempio qui sopra utilizza le funzioni `fopen()` e `fgets()` per aprire un file, scaricare una pagina web e scrivere il contenuto della pagina nel file. Questo è solo uno dei modi in cui è possibile utilizzare il linguaggio C per scaricare pagine web, ma è un buon punto di partenza per approfondire ulteriormente.
+L'output di questo codice sarà il contenuto della pagina Google sulla console.
 
-## Approfondimento
+## Approfondimento:
+Scaricare una pagina web è stato uno dei compiti più importanti degli inizi di Internet, quando era necessario un modo per condividere informazioni tra computer remoti. Oggi ci sono molti modi diversi per scaricare una pagina web, come utilizzare librerie di terze parti o creare il proprio parser HTML. Inoltre, è importante considerare la sicurezza durante il download di una pagina web, poiché potrebbero essere presenti codici dannosi che possono influenzare il tuo dispositivo.
 
-Se vuoi approfondire ulteriormente la conoscenza sul download di pagine web utilizzando il linguaggio C, ecco alcuni suggerimenti per continuare la tua ricerca:
-
-- [Differenza tra fopen, fclose, fwrite e fprintf in C](https://www.studytonight.com/c/file-input-output-in-c.php)
-- [Utilizzo avanzato delle funzioni di memoria in C](https://c-faq.com/decl/multiargi.html)
-- [Come gestire gli errori nella programmazione C](https://www.codeproject.com/Articles/695869/Exception-Handling-in-C-The-Right-Way)
-
-## Vedi Anche
-- [Documentazione ufficiale di standard C](https://en.cppreference.com/w/c)
-- [Esempi di codice C](https://www.programiz.com/c-programming/examples)
-- [Tutorial sul linguaggio C per principianti](https://www.learn-c.org/)
+## Vedi anche:
+- Documentazione ufficiale di curl: <https://curl.haxx.se/libcurl/c>
+- Tutorial su come scaricare una pagina web in C utilizzando libcurl: <https://www.digitalocean.com/community/tutorials/how-to-scrape-web-pages-with-c-and-libcurl>

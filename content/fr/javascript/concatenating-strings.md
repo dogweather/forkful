@@ -1,7 +1,7 @@
 ---
-title:                "La concaténation des chaînes de caractères"
-html_title:           "Javascript: La concaténation des chaînes de caractères"
-simple_title:         "La concaténation des chaînes de caractères"
+title:                "Concaténation de chaînes"
+html_title:           "Javascript: Concaténation de chaînes"
+simple_title:         "Concaténation de chaînes"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Strings"
@@ -10,29 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi Concaténer des Chaînes de Caractères en Javascript?
+## Qu'est-ce que & Pourquoi?
 
-Si vous avez besoin de combiner plusieurs morceaux de textes différents pour afficher une information complète, vous devrez concaténer des chaînes de caractères en Javascript. Cela vous permet de créer une seule chaîne de caractères qui contient toutes les informations dont vous avez besoin.
+La concaténation de chaînes en Javascript signifie combiner plusieurs chaines de caractères en une seule. Les programmeurs font cela pour créer des phrases ou des phrases plus longues à partir de petits morceaux de texte.
 
-## Comment Faire
+## Comment faire:
+
+### Exemple 1:
 
 ```Javascript
-let firstName = "Jean";
-let lastName = "Dupont";
-let fullName = firstName + " " + lastName; // "Jean Dupont"
-console.log(fullName); // Affiche "Jean Dupont"
+let phrase = "Bonjour";
+let nom = "Jean";
+let greeting = phrase + " " + nom;
+console.log(greeting);
 ```
 
-Il existe plusieurs façons de concaténer des chaînes de caractères en Javascript. Vous pouvez utiliser l'opérateur de concaténation '+' pour ajouter des chaînes de caractères, ou la méthode 'concat()' pour concaténer plusieurs chaînes de caractères à la fois. Vous pouvez également utiliser des templates literals (``) pour concaténer des variables et du texte sans utiliser d'opérateur.
+### Résultat 1:
+```
+Bonjour Jean
+```
 
-## Plongée Profonde
+### Exemple 2:
 
-En Javascript, les chaînes de caractères sont des objets immuables. Cela signifie que lorsqu'une chaîne de caractères est créée, elle ne peut pas être modifiée. Lorsque vous concaténez des chaînes de caractères, vous créez en fait une toute nouvelle chaîne de caractères, sans modifier les chaînes de caractères d'origine.
+```Javascript
+let nombre = 52;
+let message = "J'ai " + nombre + " ans.";
+console.log(message);
+```
 
-De plus, la concaténation peut être une opération coûteuse en termes de performances, car elle implique la création et l'allocation de nouvelles chaînes de caractères en mémoire. Dans certaines situations, il peut être plus efficace d'utiliser la méthode 'join()' pour concaténer plusieurs chaînes de caractères contenues dans un tableau.
+### Résultat 2:
+```
+J'ai 52 ans.
+```
 
-## Voir Aussi
+## Plongée Profonde:
 
-- [MDN - Concaténation de chaînes de caractères en Javascript](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/String/concat)
-- [MDN - Templates literals en Javascript](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Template_literals)
-- [MDN - Performances en Javascript](https://developer.mozilla.org/fr/docs/Web/JavaScript/Performance/Optimizing_Profiles)
+La concaténation de chaînes a été introduite dans les premières versions de Javascript en 1995. À l'époque, elle était couramment utilisée pour créer des pop-ups et des alertes dans les navigateurs. Aujourd'hui, il existe d'autres méthodes pour combiner des chaînes de caractères, telles que l'utilisation de modèles littéraux ou la méthode .concat(). Cependant, la concaténation reste une méthode simple et efficace pour composer des chaînes de caractères en Javascript.
+
+## Voir Aussi:
+
+Pour en savoir plus sur la concaténation de chaînes en Javascript, consultez ces sources: 
+
+- [Documentation MDN sur la concaténation de chaînes en Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/String_Operators)
+- [Article sur différents moyens de combiner des chaînes de caractères en Javascript](https://www.techiedelight.com/concatenate-strings-javascript/)

@@ -1,7 +1,7 @@
 ---
-title:                "Oppretting av en midlertidig fil"
-html_title:           "Ruby: Oppretting av en midlertidig fil"
-simple_title:         "Oppretting av en midlertidig fil"
+title:                "Lage en midlertidig fil"
+html_title:           "Ruby: Lage en midlertidig fil"
+simple_title:         "Lage en midlertidig fil"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Files and I/O"
@@ -10,36 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
-Å lage midlertidige filer er en nyttig måte å håndtere data på når du jobber med programmering. Disse filene kan inneholde midlertidige eller sensitive data som bare trengs for en kort periode, og skaperen av filen kan være sikker på at den vil bli slettet når det er nødvendig.
+## Hva & Hvorfor?
 
-## Hvordan du lager en midlertidig fil i Ruby
-```Ruby
-# Først importerer du nødvendige biblioteker
-require 'tempfile'
+Å opprette en midlertidig fil er en vanlig teknikk blant programmerere for å midlertidig lagre data mens programmet kjører. Dette kan være nyttig for å spare plass og forbedre programytelsen. 
 
-# Deretter kan du opprette en midlertidig fil som følger:
-tmp_file = Tempfile.new('example')
+## Hvordan:
 
-# Du kan nå skrive til filen ved å bruke "puts"-metoden:
-tmp_file.puts "Dette er en midlertidig fil som inneholder noen data."
+For å opprette en midlertidig fil i Ruby, kan du bruke "Tempfile" biblioteket. Det krever bare en linje med kode og vil automatisk opprette en unik fil med et tilfeldig navn. Se eksempler nedenfor: 
 
-# Du kan også lese data fra filen:
-puts tmp_file.read # Vil skrive ut "Dette er en midlertidig fil som inneholder noen data."
+```Ruby 
+require 'tempfile' #Importer Tempfile biblioteket
 
-# Når du er ferdig med å bruke filen, må du huske å slette den:
-tmp_file.close
-tmp_file.unlink # Vil slette filen fra systemet
-
-# Du kan også angi en spesifikk mappe for filen å bli opprettet i:
-tmp_file = Tempfile.new('example', '/path/to/directory')
+#Opprette en midlertidig fil og skrive til det 
+tf = Tempfile.new('mitt_tidligere_filnavn') 
+tf.write("Dette er en midlertidig fil") 
+puts tf.path # Skriver ut plassen til filen
+tf.close # Lukker filen 
 ```
 
-## Dypdykk
-Ruby's `Tempfile`-modul gjør det enkelt å opprette og manipulere midlertidige filer. Du kan bruke `new`-metoden for å opprette filen og spesifisere en prefiks for filnavnet. Du kan også spesifisere en bestemt mappe for filen å bli opprettet i ved å legge til en parameter for banen.
+Eksempelet ovenfor vil opprette en midlertidig fil med navnet "mitt_tidligere_filnavn" og skrive teksten "Dette er en midlertidig fil" til den. Deretter vil den skrive ut plassen til filen og lukke den. 
 
-Det er også verdt å merke seg at når `Tempfile`-objektet er initialisert, vil filen automatisk bli slettet når den ikke lenger blir brukt. Du kan også bruke `unlink`-metoden for å slette filen manuelt. En annen nyttig funksjon er at `Tempfile`-objektet vil følge sikkerhetsreglene for midlertidige filer, noe som betyr at filen vil bli automatisk slettet på en sikker måte som forhindrer uautorisert tilgang til dataene i filen.
+Du kan også bruke "open" metoden fra Tempfile biblioteket for å åpne en midlertidig fil og skrive til den. Se eksempel nedenfor: 
 
-## Se også
-- [Ruby Tempfile dokumentasjon](https://ruby-doc.org/stdlib-2.6.3/libdoc/tempfile/rdoc/Tempfile.html)
-- [Effektiv håndtering av midlertidige filer i Ruby](https://www.rubyguides.com/2018/08/ruby-tempfile/)
+```Ruby 
+require 'tempfile' 
+
+#Opprette en midlertidig fil og skrive til det 
+Tempfile.open('mitt_tidligere_filnavn') do |tf| 
+  tf.write("Dette er en midlertidig fil") 
+  puts tf.path # Skriver ut plassen til filen 
+end #Fil lukkes automatisk etter blokken er ferdig
+```
+
+Denne metoden gjør at filen automatisk lukkes når blokken er ferdig, så du trenger ikke å huske å lukke den manuelt. 
+
+## Deep Dive:
+
+Opprettelse av midlertidige filer har vært en vanlig praksis i programmering i mange år. Det er et nyttig verktøy for å håndtere midlertidige data og forbedre programmet ditt sin effektivitet. Alternativer til å opprette en midlertidig fil kan inkludere bruk av minnekort, database eller å lagre data i en variabel. 
+
+Implementeringen av Tempfile biblioteket i Ruby bruker operativsystemets API for å generere et tilfeldig navn og opprette en midlertidig fil. Dette gjør det enkelt å bruke og gir pålitelig funksjonalitet. 
+
+## Se også: 
+
+For mer informasjon om bruk av Tempfile i Ruby, sjekk ut dokumentasjonen her: https://ruby-doc.org/stdlib-2.6.3/libdoc/tempfile/rdoc/Tempfile.html.

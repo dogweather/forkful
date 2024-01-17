@@ -1,7 +1,7 @@
 ---
-title:                "Sammanslående av strängar"
-html_title:           "Fish Shell: Sammanslående av strängar"
-simple_title:         "Sammanslående av strängar"
+title:                "Sammanslagning av strängar"
+html_title:           "Fish Shell: Sammanslagning av strängar"
+simple_title:         "Sammanslagning av strängar"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -10,42 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
 
-Förmodligen har du stött på uppgiften att lägga samman flera textsträngar till en enda sträng. I detta fall kan du använda dig av Fish Shell för att effektivt utföra operationen och därmed spara tid och undvika onödigt komplex kod.
+Att konkatenera strängar innebär att man lägger samman flera strängar för att skapa en ny, längre sträng. Programörer gör detta för att skapa dynamiska och anpassningsbara texter, till exempel för användarinteraktion eller för att manipulera data.
 
-## Hur man gör
+## Så här:
 
-För att sammanfoga flera textsträngar i Fish Shell behöver du använda kommandot "string join", med syntaxen `string join STRÄNG1 STRÄNG2`. Detta sammanfogar `STRÄNG1` och `STRÄNG2` till en enda sträng.
+Fish Shell erbjuder flera enkla sätt att konkatenera strängar. Se nedan för exempelkod och utdata.
 
-```Fish Shell
-string join "Hej" "världen"  # Ger output "Hej världen"
+```
+set greeting "Hej" " " "världen!"
+echo $greeting
+# Output: Hej världen!
 ```
 
-Om du vill sammanfoga flera strängar i en variabel kan du använda följande syntax:
-
-```Fish Shell
-set mitt_namn "Lisa"
-string join "Mitt namn är" $mitt_namn ". Jag gillar att programmera." # Ger output "Mitt namn är Lisa. Jag gillar att programmera."
+```
+set name "Lisa"
+echo Hej $name"!"
+# Output: Hej Lisa!
 ```
 
-## Djupdykning
-
-I Fish Shell finns det flera andra kommandon som hjälper till att manipulera och sammanfoga strängar. Till exempel kan du använda kommandot "string split" för att dela upp en sträng baserat på ett visst tecken.
-
-```Fish Shell
-set mejladress "lisa@example.com"
-string split "@" $mejladress  # Ger output "lisa" "example.com"
+```
+set count 5
+echo Vi har $count "fiskar i akvariet."
+# Output: Vi har 5 fiskar i akvariet.
 ```
 
-Du kan också kombinera flera strängar med kommandot "string append". Detta lägger till en sträng i slutet av en befintlig sträng.
+## Djupdykning:
 
-```Fish Shell
-set favorit_frukt "äpplen"
-string append "Jag älskar att äta " $favorit_frukt " på sommaren." # Ger output "Jag älskar att äta äpplen på sommaren."
-```
+Historiskt sett har konkatenering av strängar varit en vanlig operation i programmering, men framsteg inom språk som Ruby och Python har lett till alternativ som interpolering av strängar och formatering av strängar. I Fish Shell finns det också alternativ att använda andra inbyggda funktioner, såsom string join.
 
-## Se också
+Det finns också vissa effektivitetsaspekter att tänka på när man konkatenerar strängar. Till exempel kan det vara bättre att använda en buffer eller en StringBuilder om man ska konkatenera en stor mängd strängar.
 
-- Fish Shell officiell dokumentation: https://fishshell.com/docs/current/index.html
-- Fish Shell tutorial: https://fishshell.com/docs/current/tutorial.html
+## Se även:
+
+[Officiell Fish Shell dokumentation om konkatenering](https://fishshell.com/docs/current/scripting.html#strings)
+
+[En jämförelse av tre olika sätt att hantera strängar i Fish Shell](https://dev.to/echakrab/different-ways-to-handle-string-manipulation-in-fish-shell-3k98)

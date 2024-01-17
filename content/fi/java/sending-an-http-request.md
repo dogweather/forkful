@@ -1,7 +1,7 @@
 ---
-title:                "Lähettämällä http-pyyntö"
-html_title:           "Java: Lähettämällä http-pyyntö"
-simple_title:         "Lähettämällä http-pyyntö"
+title:                "Http-pyynnön lähettäminen"
+html_title:           "Java: Http-pyynnön lähettäminen"
+simple_title:         "Http-pyynnön lähettäminen"
 programming_language: "Java"
 category:             "Java"
 tag:                  "HTML and the Web"
@@ -10,69 +10,67 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+Mikä & Miksi?
 
-Miksi joku haluaisi lähettää HTTP-pyynnön? Yksi syy voisi olla kommunikointi sovellusten välillä, esimerkiksi kun halutaan hakea tietoa ulkoisesta API:sta. 
+HTTP-pyyntöjen lähettäminen on tapa, jolla ohjelmoijat kommunikoivat tietokonejärjestelmien kanssa Internetin välityksellä. Tämä mahdollistaa tietojen hakemisen, lähettämisen ja käsittelyn eri lähteistä. Ohjelmoijat lähettävät HTTP-pyynnön usein esimerkiksi tiedon hakemiseksi verkkosivuilta.
 
-## Kuinka
+Miten:
 
-```Java
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
+```java 
+import java.net.*; 
 
-public class HTTPRequestExample {
+public class HTTPRequestExample { 
 
-    public static void main(String[] args) throws IOException {
+public static void main(String[] args) { 
 
-        // Luodaan URL-olio, joka sisältää halutun pyyntöosoitteen
-        URL url = new URL("https://www.example.com/api/data");
+try { 
 
-        // Avataan yhteys
-        HttpURLConnection con = (HttpURLConnection) url.openConnection();
+// Luodaan URL-olio ja yhdistetään se haluttuun osoitteeseen 
+URL url = new URL("https://www.example.com/"); 
 
-        // Määritetään pyyntötyyppi ja lähetetään pyyntö
-        con.setRequestMethod("GET");
+// Luodaan URL-yhteys ja lähettetään GET-pyyntö 
+HttpURLConnection con = (HttpURLConnection) url.openConnection(); 
+con.setRequestMethod("GET"); 
 
-        // Luodaan buffered reader lukuavun kanssa
-        BufferedReader in = new BufferedReader(
-                new InputStreamReader(con.getInputStream()));
+// Saadaan vastauskoodi 
+int responseCode = con.getResponseCode(); 
+System.out.println("Vastauskoodi: " + responseCode); 
 
-        // Luetaan pyynnön vastaussanoma ja tulostetaan se näytölle
-        String response;
-        StringBuffer content = new StringBuffer();
-        while ((response = in.readLine()) != null) {
-            content.append(response);
-        }
-        in.close();
-        System.out.println(content);
+// Luetaan vastausasetta ja tulostetaan se 
+BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream())); 
+String inputLine; 
+StringBuffer response = new StringBuffer(); 
 
-        // Suljetaan yhteys
-        con.disconnect();
-    }
-}
+while ((inputLine = in.readLine()) != null) { 
+response.append(inputLine); 
+} 
+in.close(); 
+
+// Tulostetaan vastaus 
+System.out.println(response.toString()); 
+
+} catch (Exception e) { 
+e.printStackTrace(); 
+} 
+
+} 
+} 
+
 ```
 
-**Esimerkkituloste:**
-```html
-<html>
-  <head>
-    <title>Example</title>
-    <meta name="description" content="This is an example of an HTTP request">
-  </head>
-  <body>
-    <h1>Hello world!</h1>
-  </body>
-</html>
-```
+Tulostus: 
+Vastauskoodi: 200 
+<!DOCTYPE html> 
+<html> 
+<head> 
+<title> Esimerkkisivu </title> 
+</head> 
 
-## Syvällinen sukellus
+Deep Dive:
 
-HTTP-pyynnön lähettäminen käyttää Java-luokkia `java.net.URL` ja `java.net.HttpURLConnection` luomaan yhteyden URL-osoitteeseen ja lähettämään pyynnön valitulla pyyntötyypillä. Pyyntö voi sisältää myös parametreja, joita voi asettaa luomalla `java.net.URLConnection` ja käyttämällä `setRequestProperty()` -metodia. Yhteys tulee myös sulkea ja vastaussanoma lukea sulkemisen jälkeen. 
+HTTP-pyyntöjen lähettäminen on ollut tärkeä osa Internetin kehitystä, ja se perustuu protokollaan, joka mahdollistaa tehokkaan tiedon siirron eri järjestelmien välillä. On olemassa myös muita vaihtoehtoja, kuten FTP- ja SMTP-pyyntöjä, mutta HTTP on tullut suosituimmaksi teknologiaksi verkkosivuilla käytetyille tiedonhakuyhteyksille.
 
-## Katso myös
+See Also:
 
-- Oracle Java-tutoriaali: [HTTP-ja virheen käsittely](https://docs.oracle.com/javase/tutorial/networking/urls/readingWriting.html)
-- w3schools: [Java HTTP-pyynnön lähettäminen](https://www.w3schools.com/java/java_httpurlconnection.asp)
+- [HTTP-pyynnöt Java - Lucinda L shykvtluvdidkei](https://www.google.com/search?q=http+pyynnot+java&oq=http+pyynnot+java&aqs=chrome..69i57j69i64l3.2832j0j7&sourceid=chrome&ie=UTF-8) 
+- [Oracle Java Tietosanakirja - Java.net](https://www.google.com/search?q=oracle+java+tietosanakirja+java.net&oq=oracle+java+tietosanakirja+java.net&aqs=chrome..69i57j69i64j69i60l2j69i65j69i60.3717j0j7&sourceid=chrome&ie=UTF-8)

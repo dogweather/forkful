@@ -10,46 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mikä & Miksi?
+Komentoriviparametrien lukeminen on tapa saada ulkoisia tietoja koodiin. Ohjelmoijat tekevät sitä usein käyttäjän antamien arvojen tai toimintojen hallitsemiseksi.
 
-Yleensä, kun kirjoitat Arduinon koodia, sinulla on joitain muuttujia, joihin käyttäjän tarvitsee syöttää tietoja. Tämä onnistuu helposti laitteen pinnien tai näppäimistön avulla, mutta jos haluat antaa käyttäjän syöttää tietoja jo ennen kuin laite käynnistetään, tarvitaan jotain muuta. Tämä "jotain muuta" voi olla komentoriviparametrit, joilla pystytään ohjaamaan laitteen toimintaa jo ennen kuin koodi suoritetaan.
+## Miten:
+Esimerkkejä koodista ja tulosteesta, ```Arduino ...``` -lohkoissa.
 
-## Miten
-
-Komentoriviparametrien lukeminen Arduinolla onnistuu helposti käyttämällä ```Arduino.h``` kirjastoa ja siihen sisältyvää ```Serial``` kirjastoa. Seuraa alla olevia esimerkkejä saadaksesi paremman käsityksen siitä, miten komentoriviparametreja käytetään koodissa.
-
+Esimerkki: 
 ```Arduino
-#include <Arduino.h>
-#include <Serial.h>
+int merkki; 
 
 void setup() {
-    Serial.begin(9600); // käynnistetään sarjayhteys
-    while (!Serial) {
-        // odotetaan, kunnes sarjayhteys on muodostettu
-    }
+  Serial.begin(9600);
 }
 
 void loop() {
-    if (Serial.available()) { // tarkistetaan, onko sarjayhteys avoinna
-        String input = Serial.readString(); // luetaan seriaalipuskuriin tullut data
-        Serial.println("Komentoriviparametrit ovat: " + input); // tulostetaan saatu data
-    }
+  if (Serial.available() > 0) {
+    merkki = Serial.read(); 
+    Serial.print("Käyttäjän antama merkki: ");
+    Serial.println(merkki); 
+  }
 }
 ```
 
-Esimerkin koodi lukee sarjayhteyden kautta Arduinolle lähetettyjä komentoriviparametreja ja tulostaa ne sarjayhteyden kautta. Nyt voit antaa Arduinolle komentoriviparametreja ennen sen käynnistämistä ja laite suorittaa niiden mukaisen toiminnon.
+Tuloste:
 
-```bash
-$ arduino-cli upload -p COM3 -b arduino:avr:uno
-```
+Käyttäjän antama merkki: X
 
-Yllä olevassa komennossa lähetetään Arduinon koodi portille ```COM3``` ja käytetään ```arduino:avr:uno``` alusta.
+## Syväsukellus:
+Kommentoriviparametrien lukeminen on ollut käytössä ohjelmoinnissa jo pitkään. Se on yleinen tapa kommunikoida käyttäjän kanssa ja antaa heille mahdollisuus ohjata ohjelmaa.
 
-## Syvempi sukellus
+On olemassa myös muita tapoja saada ulkoisia tietoja koodiin, kuten tiedostojen lukeminen tai käyttäjän kanssa vuorovaikutuksessa olevan käyttöliittymän luominen.
 
-Komentoriviparametrien lukeminen Arduinolla käyttää hyväksi mikro-ohjaimen integroitua sarjayhteyttä. Tämän ansiosta voit kommunikoida laitteen kanssa esimerkiksi ```Serial.print()``` ja ```Serial.read()``` -komennoilla. Muista myös, että voidaksesi käyttää Arduinon komentoriviparametrejä, sinun tulee ensin avata sarjayhteys koodissasi.
+Kommentoriviparametrien lukeminen on mahdollista myös monilla muilla ohjelmointikielillä, ei vain Arduino-ympäristössä.
 
-## Katso myös
-
-- [Arduino-hallintakonsoli](https://www.arduino.cc/en/Main/Software)
-- [Arduino-hallintatiedostot](https://github.com/arduino/Arduino/tree/master/build/shared/examples)
+## Katso myös:
+- [Arduino Language Reference - Serial.read()](https://www.arduino.cc/reference/en/language/functions/communication/serial/read/)
+- [Wikipedia - Command-line interface](https://en.wikipedia.org/wiki/Command-line_interface) 
+- [The C Programming Language](https://www.amazon.com/Programming-Language-2nd-Brian-Kernighan/dp/0131103628)

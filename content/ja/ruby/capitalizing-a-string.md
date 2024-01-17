@@ -1,7 +1,7 @@
 ---
-title:                "文字列の大文字化"
-html_title:           "Ruby: 文字列の大文字化"
-simple_title:         "文字列の大文字化"
+title:                "文字列のキャピタライズ"
+html_title:           "Ruby: 文字列のキャピタライズ"
+simple_title:         "文字列のキャピタライズ"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Strings"
@@ -10,46 +10,21 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+## 何でしょう & なぜ: StringをCapital化することとプログラマーがそれをする理由を説明します。
+文字列のCapital化とは、最初の文字を大文字に変換することです。これにより、より読みやすいコードを作成することができます。プログラマーは、コードを読みやすくするためにしばしばStringをCapital化します。
 
-文字列を大文字に変換する理由はいくつかあります。例えば、入力された文字列を正規化するためや、プログラムで処理する際に一貫性を保つためです。また、単に見た目を美しくするためにも利用されます。
-
-## 方法
-
-### 文字列を大文字に変換する方法
-
-入力された文字列を大文字に変換するには、RubyのStringクラスにあるupcaseメソッドを使用します。また、downcaseメソッドを使用すると文字列を小文字に変換することもできます。以下のコードを参考にしてください。
-
-```Ruby
-input = "Hello World"
-puts input.upcase # 出力結果: HELLO WORLD
-puts input.downcase # 出力結果: hello world
+## 方法: ```Ruby```コードブロック内のコーディング例とサンプル出力を参照してください。
+```ruby
+name = "john"
+puts name.capitalize # "John"
+age = 25
+puts age.to_s.capitalize # "25"
 ```
 
-### 文字列の最初の文字を大文字に変換する方法
+## 詳しく: (1)歴史的背景、(2)代替方法、および(3)StringをCapital化する実装の詳細について説明します。
+文字列のCapital化は、英語の文章で最初の文字を大文字にすることから始まりました。これは、名詞や文の先頭を大文字にする英語の文法規則に基づいています。代替方法としては、Stringを全て大文字もしくは小文字に変換するメソッドもあります。StringをCapital化する実装には、最初の文字を抽出し、それを大文字に変換するアルゴリズムが使われています。
 
-文字列の最初の文字を大文字に変換するには、capitalizeメソッドを使用します。以下のコードを参考にしてください。
-
-```Ruby
-input = "hello world"
-puts input.capitalize # 出力結果: Hello world
-```
-
-### 文字列の各単語の最初の文字を大文字に変換する方法
-
-文字列の各単語の最初の文字を大文字に変換するには、titleizeメソッドを使用します。以下のコードを参考にしてください。
-
-```Ruby
-input = "hello world"
-puts input.titleize # 出力結果: Hello World
-```
-
-## ディープダイブ
-
-Rubyでは、Stringクラスに多数のメソッドが用意されており、文字列の大文字・小文字変換だけでなく、部分文字列の取得や置換など、さまざまな処理が可能です。また、文字コードによる大文字・小文字の違いも考慮されています。詳細な情報は公式ドキュメントを参照してください。
-
-## 参考リンク
-
-- [Rubyドキュメント: Stringクラス](https://docs.ruby-lang.org/ja/latest/class/String.html)
-- [RubyGuides: Rubyの文字列操作ガイド](https://www.rubyguides.com/2019/06/ruby-string-methods/)
-- [Progate: Rubyの文字列操作について学ぼう](https://prog-8.com/docs/ruby-string)
+## 関連情報を参照: 関連する情報源へのリンク。
+- [Rubyドキュメント - class String](https://docs.ruby-lang.org/ja/latest/class/String.html)
+- [Stringを大文字に変換する方法](https://ruby-doc.org/core-2.7.0/String.html#method-i-capitalize)
+- [Stringを小文字に変換する方法](https://ruby-doc.org/core-2.7.0/String.html#method-i-downcase)

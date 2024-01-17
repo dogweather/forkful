@@ -1,7 +1,7 @@
 ---
-title:                "Utilizzare le espressioni regolari"
-html_title:           "Clojure: Utilizzare le espressioni regolari"
-simple_title:         "Utilizzare le espressioni regolari"
+title:                "Utilizzo delle espressioni regolari"
+html_title:           "Clojure: Utilizzo delle espressioni regolari"
+simple_title:         "Utilizzo delle espressioni regolari"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -10,38 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché Utilizzare le Espressioni Regolari?
+## Cosa & Perchè?
 
-Se ti trovi spesso a cercare e manipolare testi in modo efficiente, le espressioni regolari possono essere un'arma potente nel tuo arsenale di strumenti di programmazione. Con il loro aiuto, puoi facilmente cercare, sostituire e manipolare testi in modo più semplice e veloce rispetto alle tradizionali operazioni di stringhe.
+L'utilizzo delle espressioni regolari è un modo molto efficiente per cercare e manipolare testo in un programma Clojure. È uno strumento potente che permette ai programmatori di trovare corrispondenze precise o modelli all'interno di una stringa di testo. Ciò rende possibile l'elaborazione di grandi quantità di dati in modo rapido e preciso.
 
-## Come Utilizzare le Espressioni Regolari in Clojure
+## Come si fa:
 
-Per utilizzare le espressioni regolari in Clojure, puoi utilizzare la funzione `re-find` o `re-matches`. Ad esempio:
-
-```Clojure
-(re-find #"\d+" "Questo è un testo 123")
-; Output: "123"
-
-(re-matches #"^\w+" "Questa è una parola")
-; Output: ["Questa"]
-```
-
-Le espressioni regolari sono sempre racchiuse tra `#""` mentre il testo su cui applicare l'espressione è racchiuso tra ` "" `.
-
-Puoi anche utilizzare le espressioni regolari per sostituire parti di un testo con la funzione `re-sub`. Ad esempio:
+In Clojure, è possibile utilizzare espressioni regolari con la funzione `re-find` per trovare la prima corrispondenza in una stringa e `re-seq` per trovare tutte le corrispondenze. Ad esempio:
 
 ```Clojure
-(re-sub #"otto" "otto e dieci" "nove")
-; Output: "nove e dieci"
+(re-find #"re.*" "espressioni regulari")
+```
+Produrrà l'output "regulari". 
+
+Se invece si desidera trovare tutte le parole che iniziano con la lettera "t" in una lista, si può utilizzare:
+
+```Clojure
+(re-seq #"t\w+" ["tavolo" "triste" "tetto" "cane"])
 ```
 
-Inoltre, puoi utilizzare diverse opzioni all'interno delle espressioni regolari, come ad esempio l'uso di `?i` per ignorare le maiuscole e minuscole o `?x` per permettere di aggiungere spazi e commenti all'interno dell'espressione.
+Che produrrà l'output `("tavolo" "triste" "tetto")`
 
-## Approfondimento sull'utilizzo delle Espressioni Regolari
+## Approfondimento:
 
-Le espressioni regolari sono basate su un linguaggio formale chiamato "Regular Expression Language" (o Regex) che permette di creare pattern di ricerca e sostituzione in modo più flessibile ed efficiente rispetto alle tradizionali operazioni di stringhe. Per imparare di più sul loro utilizzo, puoi consultare la documentazione ufficiale di Clojure dedicata alle espressioni regolari o seguire alcuni tutorial online.
+Le espressioni regolari sono state introdotte per la prima volta negli anni '50 dal matematico Stephen Cole Kleene e sono diventate uno strumento fondamentale per l'analisi e la manipolazione del testo nei linguaggi di programmazione. In Clojure, sono supportate dalla libreria Java `java.util.regex` e sono anche disponibili altre librerie di terze parti come `clojure.string` e `re-find`.
 
-## Vedi Anche
+Se preferisci utilizzare un approccio diverso alle espressioni regolari, puoi utilizzare anche la funzione `match` della libreria Clojure core. Utilizzando questi diversi strumenti, puoi scegliere quello che meglio si adatta alle tue esigenze.
 
-- [Documentazione Ufficiale di Clojure su Espressioni Regolari](https://clojuredocs.org/clojure.core/re-find)
-- [Tutorial su Espressioni Regolari in Clojure](https://eugenp.com/2018/07/23/clojure-regular-expressions-tutorial/)
+## Vedi anche:
+
+- [ClojureDocs - Regular Expressions](https://clojuredocs.org/clojure.regex) 
+- [Official Java Documentation - Regular Expressions](https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html)
+- [Clojure for the Brave and True - Regular Expressions](https://www.braveclojure.com/regular-expressions/)

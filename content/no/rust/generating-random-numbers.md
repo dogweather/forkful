@@ -10,35 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hva & hvorfor?
 
-Hvorfor ville du trenge tilfeldig genererte tall i koden din? Vel, det kan være flere grunner til dette. Kanskje du trenger å lage et spill eller en simulering som krever tilfeldigheter for å gjøre det mer realistisk. Eller kanskje du vil legge til en element av tilfeldighet i din algoritme for å få mer varierte resultater. Uansett årsak, å generere tilfeldige tall er en viktig del av mange programmer.
+Generering av tilfeldige tall er en viktig del av programmering, da det tillater oss å lage ulike, unike verdier på en enkel måte. Dette er spesielt nyttig i spill, simuleringer og kryptografi, der tilfeldige tall er nødvendige for å skape et variert og sikkert miljø.
 
-## Slik gjør du det
+## Hvordan:
 
-For å generere tilfeldige tall i Rust, må du importere "rand" biblioteket. Deretter kan du opprette en ny instans av "ThreadRng" type ved hjelp av "rand::thread_rng()" funksjonen. Dette gir deg tilgang til en tilfeldighetsgenerator som kan brukes til å generere ulike typer tall. Her er noen eksempler:
+Å generere tilfeldige tall i Rust er enkelt og innebærer bruk av standardbibliotekets funksjoner. Ved å importere "rand" biblioteket og bruke "thread_rng" funksjonen, kan vi opprette en generator som vil produsere et tilfeldig tall hver gang den kalles.
 
 ```Rust
-// Genererer et tilfeldig heltall mellom 1 og 10
-let num = rand::thread_rng().gen_range(1..11);
-println!("Tallet mitt er: {}", num);
-
-// Genererer et tilfeldig desimaltall mellom 0 og 1
-let dec_num = rand::thread_rng().gen_range(0.0..1.0);
-println!("Tallet mitt er: {}", dec_num);
-
-// Genererer et tilfeldig boolsk verdi
-let boolean = rand::thread_rng().gen_bool(0.5);
-println!("Boolean verdi: {}", boolean);
+use rand::Rng;
+let mut rng = rand::thread_rng();
+let random_number: u8 = rng.gen();
 ```
 
-Dette er bare noen få eksempler på hvordan du kan bruke tilfeldighetsgeneratoren. Sjekk ut dokumentasjonen for "rand" biblioteket for å lære om flere muligheter.
+I dette eksempelet bruker vi "gen" funksjonen for å generere et tilfeldig tall mellom 0 og 255 og lagrer det i variabelen "random_number". Vi kan også bruke "gen_range" funksjonen for å lage tilfeldige tall innenfor et bestemt område.
 
-## Dypdykk
+```Rust
+let random_number: u8 = rng.gen_range(1, 10);
+```
 
-Du lurer kanskje på hvordan "rand" biblioteket faktisk genererer tilfeldige tall. Vel, det bruker en pseudorandom generator som er basert på en algoritme kalt "Xorshift". Algoritmen starter med en startverdi og bruker enkle beregninger for å generere en tilsynelatende tilfeldig sekvens av tall. Men, siden dette er en algoritme og ikke helt random, kan sekvensen faktisk gjenta seg selv. Derfor er det viktig å bruke en god startverdi og å ikke bruke algoritmen flere ganger i samme program for å unngå å få de samme tallene.
+Dette vil generere et tilfeldig tall mellom 1 og 10.
 
-## Se også
+## Dype dykk:
 
-- [Rust Dokumentasjon for "rand" biblioteket](https://docs.rs/rand)
-- [En artikel om Xorshift algoritmen](https://www.jstatsoft.org/article/view/v008i14)
+Generering av tilfeldige tall har blitt brukt i programmering i mange år og er et viktig verktøy for å skape variasjon og sikkerhet. Det finnes også andre metoder for å generere tilfeldige tall, som for eksempel ved bruk av eksterne enheter som støygeneratorer eller til og med radiosignaler, men dette er mer avanserte og mindre vanlige metoder.
+
+Når det kommer til implementering, er det viktig å bruke en pålitelig kilde for å generere de tilfeldige tallene, slik som ved bruk av "thread_rng" funksjonen i Rust. Det er også mulig å sette en frøverdi for å få samme sekvens av tilfeldige tall hver gang, men dette kan også gå ut over sikkerheten.
+
+## Se også:
+
+- [Rust Official Documentation on Random Number Generation](https://doc.rust-lang.org/std/rand/)
+- [Understanding and Using Random Number Generators](https://www.computer.org/csdl/magazine/cg/2020/01/mcg2020010019/13Gm3P0MU1Z) (artikkel)
+- [Cryptographically Secure Pseudo-Random Number Generators](https://www.random.org/randomness/) (artikkel og verktøy for å teste tilfeldig tallgeneratorer)

@@ -10,47 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-Sending HTTP requests is a crucial aspect of web development and automation. It allows you to interact with web servers and retrieve data from APIs, making it an essential skill for any developer or systems administrator.
+Sending an HTTP request is a way for a computer to communicate with a web server. It allows developers to retrieve data from a specific URL and receive a response back.
 
-## How To
+Programmers use HTTP requests to make web-based applications and websites interactive. It enables the exchange of data between the client (user's computer) and the server, making the user experience more dynamic and responsive.
 
-To send an HTTP request in Bash, you can use the `curl` command. Here's an example of a basic GET request:
+## How to:
 
-```Bash
-curl https://example.com
-```
-
-This will retrieve the homepage of `example.com` and print the HTML response to your terminal. You can also specify the HTTP method, headers, and data in your request. For example:
+To send an HTTP request using Bash, we will use the `curl` command, which stands for "client URL". Here's an example of how it works:
 
 ```Bash
-curl -X POST -H "Content-Type: application/json" -d '{"username": "john", "password": "abc123"}' https://example.com/login
+curl https://www.example.com
 ```
 
-In this case, we're making a POST request with a JSON body to a login endpoint. The response will contain the data we receive after logging in.
-
-You can also use variables and loops to simplify sending multiple HTTP requests. For instance, if you have a list of URLs stored in a file called `urls.txt`, you can iterate through them and make a GET request to each one using the following script:
+This will send a GET request to the specified URL and output the response from the server. To specify a different type of request, such as POST or PUT, we can use the `-X` flag followed by the desired method. For example:
 
 ```Bash
-#!/bin/bash
-while read -r url; do
-  curl $url
-done < urls.txt
+curl -X POST https://www.example.com
 ```
 
-This will save you time and effort instead of manually typing the `curl` command for each URL.
+We can also add additional parameters to our requests using the `-d` flag, which stands for "data". For example, to send a POST request with some data, we can do this:
+
+```Bash
+curl -X POST -d "name=John&age=25" https://www.example.com
+```
 
 ## Deep Dive
 
-Behind the scenes, the `curl` command utilizes the HTTP protocol to communicate with a server. It forms a request with a request line, headers, and a body (if applicable), and then receives a response with a status line, headers, and a body.
+HTTP requests were first introduced in 1991 as a way to transfer data over the internet. Since then, there have been different versions of the protocol, and it has become the standard for communication between clients and servers.
 
-To further customize your HTTP request, you can specify options such as the user-agent, cookies, authentication methods, and even proxy settings. You can find a full list of options and their usage in the `curl` manual page.
+While `curl` is the most commonly used tool for sending HTTP requests in Bash, there are other alternatives such as `wget` and `httpie`. These tools offer additional features and options, so it's worth exploring them to find the one that best suits your needs.
 
-In addition to `curl`, you can also use other tools like `wget` or `httpie` to send HTTP requests in Bash. Each tool may have its own set of features and options, so it's worth exploring and comparing them to find the one that best suits your needs.
+Behind the scenes, sending an HTTP request involves establishing a TCP connection between the client and server, sending the request in a specific format, and receiving a response back. This process is handled by the network stack on the operating system level.
 
 ## See Also
 
-- `curl` manual page: https://curl.se/docs/manpage.html
-- `wget` manual page: https://www.gnu.org/software/wget/manual/wget.html
-- `httpie` documentation: https://httpie.io/docs
+- [Curl Documentation](https://curl.se/docs/)
+- [Wget Documentation](https://www.gnu.org/software/wget/)
+- [Httpie Documentation](https://httpie.io/)

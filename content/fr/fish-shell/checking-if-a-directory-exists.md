@@ -1,7 +1,7 @@
 ---
-title:                "Vérification de l'existence d'un répertoire"
-html_title:           "Fish Shell: Vérification de l'existence d'un répertoire"
-simple_title:         "Vérification de l'existence d'un répertoire"
+title:                "Vérifier si un répertoire existe"
+html_title:           "Fish Shell: Vérifier si un répertoire existe"
+simple_title:         "Vérifier si un répertoire existe"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Files and I/O"
@@ -10,26 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Pourquoi
+# Qu'est-ce que c'est et pourquoi le faire ?
 
-Si vous utilisez le Fish Shell, vous pourriez à un moment donné avoir besoin de vérifier si un répertoire existe avant de poursuivre votre code. Cet article va vous montrer comment le faire facilement. 
+Vérifier si un répertoire existe est une étape importante pour les programmeurs car cela leur permet de s'assurer que leur code fonctionne correctement et qu'il peut accéder aux bons fichiers et répertoires nécessaires pour son exécution.
 
-## Comment faire
+# Comment le faire ?
 
-```Fish Shell
-if test -d /chemin/vers/mon/repertoire
-	echo "Le répertoire existe"
+Voici un exemple de code en utilisant le Fish Shell pour vérifier si un répertoire existe :
+
+```
+if test -d ~/documents
+  echo "Le répertoire 'documents' existe."
 end
 ```
-Supposons que notre répertoire existe. Le code ci-dessus va afficher "Le répertoire existe" dans le terminal. Si le répertoire n'existe pas, rien ne sera affiché.
 
-## Plongée en profondeur
+Output:
 
-La commande `test` permet de tester différentes conditions en Fish Shell. Ici, nous utilisons l'option `-d` qui vérifie si le chemin spécifié est un répertoire. Si c'est le cas, elle renvoie `true` et le code à l'intérieur du bloc `if` est exécuté. Sinon, elle renvoie `false` et le code à l'intérieur est ignoré.
+```
+Le répertoire 'documents' existe.
+```
 
-Vous pouvez également utiliser la commande `test` avec d'autres options pour réaliser d'autres types de tests, tels que la vérification de l'existence d'un fichier ou d'un lien symbolique.
+# Plongée en profondeur
+
+Historiquement, cette méthode de vérification de répertoire existe depuis longtemps dans les systèmes informatiques et elle est également utilisée dans d'autres shells que le Fish Shell, comme le Bash ou le zsh.
+
+D'autres alternatives pour vérifier si un répertoire existe incluent l'utilisation de la commande `ls` avec l'option `-d` ou l'utilisation de la commande `find`.
+
+La commande `test` utilisée dans notre exemple peut également être utilisée pour vérifier l'existence d'autres types de fichiers, tels que les fichiers réguliers ou les liens symboliques.
 
 # Voir aussi
 
-- La documentation officielle de Fish Shell sur la commande `test`: https://fishshell.com/docs/current/cmds/test.html
-- Un article sur la syntaxe des conditions en Fish Shell: https://medium.com/@utkarsh_singh/condition-testing-in-fish-shell-511b9d025624
+Pour en savoir plus sur la commande `test` et ses différentes options, vous pouvez consulter la documentation officielle : [https://fishshell.com/docs/current/cmds/test.html](https://fishshell.com/docs/current/cmds/test.html)
+
+Si vous souhaitez en apprendre davantage sur le Fish Shell et ses fonctionnalités, vous pouvez consulter le site officiel : [https://fishshell.com/](https://fishshell.com/)

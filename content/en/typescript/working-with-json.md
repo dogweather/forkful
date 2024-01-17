@@ -10,80 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-JSON (JavaScript Object Notation) is a popular data-interchange format used for storing and transmitting data. It is widely used in web development and is essential for creating flexible and dynamic applications. By learning how to work with JSON in TypeScript, you can effectively manipulate and manage data in your projects.
+Working with JSON (JavaScript Object Notation) is the act of manipulating and accessing data in a format that is easy for humans to read and write, and for machines to parse and generate. Programmers often work with JSON because it is a lightweight and efficient way to store and transmit data between applications and servers.
 
-## How To
+## How to:
 
-To work with JSON in TypeScript, follow these simple steps:
+Coding examples and sample output:
 
-### 1. Import the JSON library
-
-To start working with JSON, you need to first import the `JSON` library into your project. This library provides useful methods for parsing and stringifying data in JSON format.
-
-```
-import { JSON } from 'typescript';
-```
-
-### 2. Parsing JSON data
-
-To parse JSON data from a string, use the `parse()` method. This will take in a string containing JSON data and convert it into a TypeScript object.
-
-```
-let jsonString = '{"name": "John", "age": 30, "hobbies": ["gaming", "reading"]}';
-let person = JSON.parse(jsonString);
-
-console.log(person.name); // Output: John
-console.log(person.hobbies[0]); // Output: gaming
-```
-
-### 3. Stringifying JSON data
-
-To convert a TypeScript object into a JSON string, use the `stringify()` method. This will take in an object and convert it into a JSON string.
-
-```
-let person = { name: "John", age: 30, hobbies: ["gaming", "reading"] };
-let jsonString = JSON.stringify(person);
-
-console.log(jsonString); // Output: {"name": "John", "age": 30, "hobbies": ["gaming", "reading"]}
-```
-
-### 4. Manipulating JSON data
-
-You can also manipulate JSON data in TypeScript by accessing and modifying the properties of the converted object.
-
-```
-let jsonString = '{"language": "TypeScript", "version": "4.4.3"}';
-let info = JSON.parse(jsonString);
-info.version = "4.4.4"
-
-console.log(info); //Output: {"language": "TypeScript", "version": "4.4.4"}
-```
-
-## Deep Dive
-
-When working with larger and complex JSON data, you can use interfaces to define the structure of the data and assign proper types to the properties. This will ensure that your data remains consistent and error-free when accessing or modifying it.
-
-```
-interface User {
-    name: string;
-    age: number;
-    hobbies: string[];
+```TypeScript
+// Creating a JSON object
+let person = {
+  "name": "John",
+  "age": 25,
+  "location": "New York"
 }
 
-let jsonString = '{"name": "John", "age": 30, "hobbies": ["gaming", "reading"]}';
-let user: User = JSON.parse(jsonString);
+// Accessing values in JSON
+console.log(person.name); // Output: John
+console.log(person.age); // Output: 25
+console.log(person.location); // Output: New York
 
-console.log(user.name); // Output: John
-console.log(user.age); // Output: 30
-user.hobbies.push("coding");
-
-console.log(user); // Output: {"name": "John", "age": 30, "hobbies": ["gaming", "reading", "coding"]}
+// Adding a new property to the object
+person.job = "Software Developer";
+console.log(person); // Output: { "name": "John", "age": 25, "location": "New York", "job": "Software Developer" }
 ```
 
-## See Also
+## Deep Dive:
 
-- [Introduction to JSON](https://www.json.org/json-en.html)
-- [TypeScript official documentation on JSON](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-9.html#support-for-json-ts)
-- [Working with JSON in Node.js](https://www.sitepoint.com/python-json-serialize-decode-python/)
+JSON was first introduced in 1999 as a simplified alternative to XML. It quickly gained popularity due to its lightweight nature, making it easy to parse and ideal for use in web applications. It is also supported by many programming languages, including TypeScript. When working with JSON, there are alternative formats such as YAML and XML, but JSON remains the standard for data interchange.
+
+In TypeScript, JSON data can be easily converted to objects using the `JSON.parse()` method, and objects can be converted to JSON strings using the `JSON.stringify()` method. This makes it easy to send and receive data between a client and a server. JSON also supports arrays, making it a versatile data format.
+
+## See Also:
+
+- [JSON tutorial on W3Schools](https://www.w3schools.com/js/js_json_intro.asp)
+- [JSON on MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON)

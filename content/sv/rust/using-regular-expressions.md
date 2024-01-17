@@ -1,7 +1,7 @@
 ---
-title:                "Användning av reguljära uttryck"
-html_title:           "Rust: Användning av reguljära uttryck"
-simple_title:         "Användning av reguljära uttryck"
+title:                "Att använda reguljära uttryck"
+html_title:           "Rust: Att använda reguljära uttryck"
+simple_title:         "Att använda reguljära uttryck"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -10,60 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
+Användning av reguljära uttryck, även kallat regex, är en vanlig praxis bland programmerare för att söka och manipulera textsträngar. Det är ett kraftfullt verktyg som kan användas för att identifiera mönster och utföra sök- och ersättningsoperationer på text.
 
-Reguljära uttryck är ett kraftfullt verktyg inom programmering som hjälper dig att söka, matcha och manipulera textsträngar på ett mer effektivt sätt. Det är särskilt användbart när du behöver hantera stora mängder data eller när du arbetar med textbaserade filer.
+## Så här gör du:
+```Rust
+use regex::Regex;
 
-## Så här använder du reguljära uttryck i Rust
+fn main() {
+    // Skapa ett nytt reguljärt uttryck för att söka efter "hello world"
+    let re = Regex::new(r"hello world").unwrap();
 
-För att använda reguljära uttryck i Rust behöver du importera "regex" biblioteket och skapa en instans av regex-objektet. Här är ett enkelt exempel på hur du kan matcha ett mönster i en textsträng:
+    // Skapa en textsträng att söka igenom
+    let text = "Hello world, detta är en exempelsträng";
+
+    // Utför sökningen och skriv ut resultatet
+    println!("{}", re.find(text).unwrap().as_str()); // Output: hello world
+}
+```
 
 ```Rust
 use regex::Regex;
 
 fn main() {
-    let re = Regex::new(r"hej"); // Skapar en regex-instans som matchar "hej"
-    let text = "hej alla!";
+    // Skapa ett nytt reguljärt uttryck för att ersätta "hej" med "hello"
+    let re = Regex::new(r"hej").unwrap();
 
-    if re.is_match(text) { // Kontrollerar om mönstret matchar texten
-        println!("Hittade ett matchande mönster.");
-    } else {
-        println!("Inget matchande mönster hittades.");
-    }
+    // Skapa en textsträng att utföra ersättningen på
+    let text = "Hej alla, vad gör ni?";
+
+    // Utför ersättningen och skriv ut resultatet
+    println!("{}", re.replace_all(text, "hello")); // Output: hello alla, vad gör ni?
 }
 ```
 
-I detta exempel kommer programmet att skriva ut "Hittade ett matchande mönster." eftersom textsträngen innehåller ordet "hej".
+## Djupdykning:
+Reguljära uttryck har funnits sedan 1950-talet och används i många programmeringsspråk, inte bara i Rust. Alternativ till regex inkluderar strängmanipuleringsfunktioner och parseringsbibliotek.
 
-Du kan också använda reguljära uttryck för att söka efter specifika mönster och ersätta dem med annan text. Här är ett exempel som byter ut alla siffror i en textsträng med "X":
+Implementationen av regex i Rust är byggd på NFA (Non-deterministic Finite Automata) och erbjuder hög prestanda och korrekthet för komplexa mönster.
 
-```Rust
-use regex::Regex;
-
-fn main() {
-    let re = Regex::new(r"\d"); // Skapar en regex-instans som matchar siffror
-    let text = "Det finns 123 äpplen i skålen.";
-
-    let result = re.replace_all(text, "X"); // Ersätter alla siffror med "X"
-    
-    println!("{}", result); // Skriver ut resultatet: "Det finns XXX äpplen i skålen."
-}
-```
-
-## Djupdykning
-
-Regex-objektet i Rust har många olika metoder som hjälper dig att manipulera textsträngar på olika sätt. Här är några av de vanligaste metoderna:
-
-- *is_match()*: Kontrollerar om ett mönster matchar en textsträng.
-- *find()*: Hittar den första matchningen av ett mönster i en textsträng.
-- *captures()*: Returnerar alla fångade grupper i en matchning.
-- *replace()*: Ersätter en matchning med ny text.
-- *split()*: Delar upp en textsträng baserat på ett angivet mönster.
-
-Det finns också många olika metakaraktärer och modifierare som du kan använda för att skapa mer avancerade mönster. För att lära dig mer om dessa, rekommenderar vi dig att läsa dokumentationen för "regex" biblioteket samt experimentera med olika mönster och metoder.
-
-## Se även
-
-- ["regex" bibliotekets dokumentation](https://docs.rs/regex/latest/regex/)
-- [En tutorial om reguljära uttryck i Rust](https://www.stoica.dev/regular-expressions-in-rust/)
-- [Officiell hemsida för Rust](https://www.rust-lang.org/)
+## Se även:
+- [Rust regex dokumentation](https://docs.rs/regex/1.5.4/regex/)
+- [Regular Expressions Cheat Sheet](https://www.rexegg.com/regex-quickstart.html)

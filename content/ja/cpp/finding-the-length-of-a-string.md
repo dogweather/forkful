@@ -10,36 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+## What & Why?
+文字列の長さを見つけることは、文字列内の文字数を計算することです。プログラマーたちは、文字列の長さを見つけることで、処理すべきデータの量を把握し、コードの実行を最適化することができます。
 
-文字列の長さを求めることに関わる理由は、プログラムで文字列を処理する必要があるからです。例えば、ユーザーからの入力を受け付ける場合や、文字列を比較する場合などです。文字列の長さを知ることで、より効率的にプログラムを構築することができます。
-
-## 方法
-
-```C++
+## How to:
+文字列の長さを見つけるには、```C++``` の ```length``` メソッドを使用します。下の例を参考にしてください。
+```
 #include <iostream>
 #include <string>
 
 using namespace std;
 
 int main() {
-    // 文字列の長さを求める例
-    string str = "Hello World";
-    int length = str.size();
+    string myString = "Hello World";
 
-    cout << "The length of the string is: " << length << endl;
+    // 文字列の長さを見つける
+    int length = myString.length();
+
+    // 結果を出力する
+    cout << "文字列：" << myString << endl;
+    cout << "長さ：" << length << endl;
 
     return 0;
 }
 ```
+出力結果：
+```
+文字列：Hello World
+長さ：11
+```
 
-上記のようなコードを使用することで、文字列の長さを求めることができます。まず、"string"ライブラリをインポートし、"using namespace std;"を使用することで、プログラム内でstringを使用することができます。そして、"size()"関数を使用することで、文字列の長さを取得できます。上記の例では、文字列 "Hello World"の長さが求められ、その結果がコンソールに表示されます。
+## Deep Dive:
+文字列の長さを見つけるメソッドは、古くからプログラミング言語に存在しています。一つの代表的な方法としては、文字列の最後に ```\0``` という特殊な文字を追加し、その数を数える方法があります。また、C言語では文字列の長さを格納するためのバッファを手動で確保する必要がありましたが、C++では ```string``` クラスが文字列の長さを自動的に管理してくれるため、より簡単に文字列の長さを見つけることができます。
 
-## ディープダイブ
+代替手段としては、単純に文字列をループ処理して文字数をカウントする方法や、正規表現を使用してマッチするパターンの文字数をカウントする方法があります。その他にも、文字列の長さを取得するための独自の関数を定義することもできます。
 
-文字列の長さを求めるためには、プログラムで文字列を扱うにあたっての基本的な知識が必要となります。文字列は、単なる文字の配列としてメモリ上に格納されています。そのため、文字列の長さは、配列の要素数を表す整数として求めることができます。また、C++では、文字列の長さを取得するためにいくつかの関数が用意されています。"size()"関数の他には、"length()"や"capacity()"などの関数もありますので、使用する際には適切な関数を選択することが重要です。
-
-## 関連リンク
-
-- [C++の文字列の長さを取得する方法](https://www.sejuku.net/blog/13606)
-- [string - C++ Reference](https://www.cplusplus.com/reference/string/string/)
+## See Also:
+- [C++ string::length() reference](https://www.cplusplus.com/reference/string/string/length/)
+- [Introduction to strings in C++](https://www.geeksforgeeks.org/strings-in-c-2/)

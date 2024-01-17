@@ -10,65 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Qu'est-ce-que et Pourquoi?
 
-Si vous programmez en C, il est important de savoir comment vérifier si un répertoire existe. Cela peut être utile pour s'assurer que vous ne manipulez pas de fichiers ou de dossiers inexistants, évitant ainsi les erreurs et les bogues potentielles.
+Vérifier si un répertoire existe est un moyen pour les programmeurs de s'assurer qu'un chemin d'accès spécifié mène à un répertoire valide. Cela permet de s'assurer que le programme peut accéder aux fichiers et dossiers nécessaires pour son exécution sans rencontrer d'erreurs.
 
-## Comment faire
+## Comment faire:
 
-Pour vérifier si un répertoire existe en C, vous pouvez utiliser la fonction `opendir()`. Cette fonction retourne un pointeur vers une structure de type `DIR` qui représente le répertoire spécifié. Si le répertoire n'existe pas, `opendir()` renvoie un pointeur nul. Voici un exemple de code utilisant `opendir()` pour vérifier si un répertoire existe :
+Il est possible de vérifier si un répertoire existe en utilisant la fonction stat() de la bibliothèque standard en C. Elle prend en entrée le nom du répertoire et renvoie une structure stat contenant des informations sur le fichier ou le répertoire spécifié. Si le répertoire existe, la structure sera remplie et la fonction renverra 0 en tant que valeur de retour. Sinon, elle renverra -1.
 
 ```C
 #include <stdio.h>
-#include <dirent.h>
+#include <sys/stat.h>
 
 int main()
 {
-    // Déclarer un pointeur vers une structure DIR
-    DIR *rep;
-
-    // Spécifier le chemin vers le répertoire à vérifier
-    char path[] = "./monDossier";
-
-    // Utilisation de la fonction opendir() pour vérifier si le répertoire existe
-    rep = opendir(path);
-
-    // Vérification si opendir() a renvoyé un pointeur nul
-    if (rep == NULL)
+    char* directory = "path/to/directory";
+    struct stat info;
+    if(stat(directory, &info) == 0)
     {
-        printf("Le répertoire n'existe pas.\n");
+        printf("%s existe. \n", directory);
     }
     else
     {
-        printf("Le répertoire existe.\n");
-        // N'oubliez pas de fermer le pointeur vers le répertoire
-        closedir(rep);
+        printf("%s n'existe pas. \n", directory);
     }
-
     return 0;
 }
 ```
 
-Voici un exemple de sortie pour un répertoire existant :
+## Plongée en profondeur:
 
-```
-Le répertoire existe.
-```
+Avant la version actuelle du langage C, il n'y avait pas de fonction spécifique pour vérifier si un répertoire existait. Les programmeurs devaient utiliser d'autres méthodes telles que opendir() et readdir() pour parcourir les fichiers et répertoires et vérifier s'ils correspondaient au chemin d'accès spécifié. Cependant, ces méthodes n'étaient pas aussi efficaces et fiables que la fonction stat() actuelle.
 
-Et pour un répertoire inexistant :
+Il existe également d'autres méthodes pour vérifier si un répertoire existe, telles que l'utilisation de POSIX (Portable Operating System Interface) et la fonction access(), qui renvoie également 0 si le répertoire existe. Cependant, la fonction stat() reste la méthode recommandée pour sa fiabilité et sa compatibilité avec les systèmes d'exploitation.
 
-```
-Le répertoire n'existe pas.
-```
+## Voir aussi:
 
-## Plongée en profondeur
-
-Bien que `opendir()` soit la fonction la plus couramment utilisée pour vérifier l'existence d'un répertoire en C, il existe également d'autres fonctions pouvant être utiles dans certaines situations. Par exemple, la fonction `access()` peut être utilisée pour vérifier non seulement l'existence d'un répertoire, mais aussi si l'utilisateur a les droits nécessaires pour y accéder. De plus, la fonction `stat()` peut être utilisée pour récupérer des informations spécifiques sur le répertoire, telles que sa taille ou sa date de création.
-
-Il est également important de noter que la vérification de l'existence d'un répertoire en C peut dépendre du système d'exploitation sur lequel le code est exécuté. Par conséquent, il peut être utile de consulter la documentation de votre système d'exploitation pour obtenir des informations plus détaillées sur les fonctions à utiliser pour vérifier l'existence d'un répertoire.
-
-## Voir aussi
-
-- [Documentation `opendir()` sur cppreference.com](https://en.cppreference.com/w/c/io/opendir)
-- [Documentation `access()` sur cppreference.com](https://en.cppreference.com/w/c/io/access)
-- [Documentation `stat()` sur cppreference.com](https://en.cppreference.com/w/c/io/stat)
+- La documentation officielle de la fonction stat() en C: https://www.gnu.org/software/libc/manual/html_node/File-Status-Test-Macros.html#File-Status-Test-Macros
+- Un guide détaillé sur la manipulation de fichiers et répertoires en C: https://www.geeksforgeeks.org/c-programming-language/.

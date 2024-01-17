@@ -10,29 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué capitalizar una cadena?
+¡Hola, queridos programadores! ¿Están buscando una manera rápida y efectiva de capitalizar cadenas de texto en sus aplicaciones? Si es así ¡no busquen más! En este artículo de programación, les enseñaré cómo capitalizar una cadena de texto en el lenguaje de programación Gleam. ¿Están listos? ¡Comencemos!
 
-Capitalizar una cadena es una operación común en la programación para asegurarse de que la primera letra de cada palabra esté en mayúsculas. Esto puede ser útil para mejorar la legibilidad de una cadena o para formatear correctamente los títulos en una aplicación.
+## ¿Qué y por qué?
 
-## Cómo hacerlo
+Capitalizar una cadena de texto simplemente significa convertir la primera letra de cada palabra en mayúscula. Los programadores lo hacen para mejorar la legibilidad y presentación de la información en sus aplicaciones. Además, al seguir convenciones de estilo y formato, se aseguran de que el código sea fácil de entender y mantener para ellos y otros desarrolladores.
 
-Para capitalizar una cadena en Gleam, se puede utilizar la función `String.capitalize` que viene incluida en su biblioteca estándar. A continuación se muestra un ejemplo de código y su resultado utilizando esta función:
+## ¿Cómo hacerlo?
+
+Para capitalizar una cadena de texto en Gleam, hay dos opciones: la función `String.capitalize/1` o la macro `String.capitalize_words/1`. La función `String.capitalize/1` toma una cadena de texto y devuelve una nueva cadena de texto con la primera letra en mayúscula. La macro `String.capitalize_words/1` toma una cadena de texto y devuelve una nueva cadena de texto con todas las palabras en mayúscula.
 
 ```Gleam
-let cadena = "hola mundo"
-let cadena_capitalizada = String.capitalize(cadena)
+import gleam/string
+
+my_string = "hola mundo"
+capitalized_string = String.capitalize(my_string)
+/* ¡El resultado es "Hola mundo"! */
+
+cap_words = String.capitalize_words(my_string)
+/* El resultado es "Hola Mundo" */
 ```
 
-El resultado será `"Hola mundo"`.
+## Profundizando
 
-## Profundizando en la capitalización de cadenas
+Si bien capitalizar una cadena de texto puede parecer una tarea simple, tiene un contexto histórico importante. Antes de Gleam, el lenguaje de programación Erlang utilizaba `atom`, una estructura de datos que puede contener cadenas de texto, para representar identificadores y nombres de funciones. Sin embargo, `atom` tenía un límite de 255 caracteres y no admitía mayúsculas y minúsculas. Esto obligó a los programadores a usar `string` en su lugar, lo que resultó en una gran cantidad de código repetitivo para capitalizar cadenas de texto. Gleam solucionó este problema al proporcionar funciones y macros integradas para capitalizar y manipular cadenas de texto fácilmente.
 
-Además de la función `String.capitalize`, también existen otras formas de capitalizar cadenas en Gleam. Por ejemplo, se puede utilizar la función `String.titleize` para capitalizar todas las palabras de una cadena. Además, es posible utilizar la función `String.sentence_case` para capitalizar solo la primera letra de una cadena.
-
-En Gleam también se pueden utilizar patrones de coincidencia de patrones en lugar de usar directamente funciones para realizar la capitalización. Esto permite una mayor flexibilidad en términos de qué partes de la cadena se capitalizan.
+Si bien la función `String.capitalize/1` y la macro `String.capitalize_words/1` son las opciones más comunes para capitalizar cadenas de texto en Gleam, también existen otras alternativas, como crear una función personalizada utilizando el módulo `gleam/char` o utilizando bibliotecas externas como `gleam/unicode`. Sin embargo, es importante tener en cuenta que estas alternativas pueden no ser tan eficientes o confiables como las funciones y macros integradas de Gleam.
 
 ## Ver también
 
-- Documentación oficial de la función `String.capitalize`: https://gleam.run/modules/gleam_std.String.html#capitalize
-- Tutorial de Gleam en español: https://gleam.run/tour/es/ 
-- Examples directory: https://github.com/gleam-lang/gleam/tree/master/examples
+Si desean profundizar aún más en la manipulación de cadenas de texto en Gleam, pueden consultar la documentación oficial de Gleam o explorar la vasta comunidad en línea que comparte recursos y ejemplos útiles. ¡Hasta la próxima, programadores! ¡Continúen escribiendo código limpio y eficiente con Gleam!

@@ -10,49 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+# What & Why?
+Writing a text file is the process of creating a file that contains text-based information. It is a common practice among programmers as it allows them to store and access data in a human-readable format, making it easier to manage and manipulate.
 
-Fish Shell, the friendly interactive shell, is becoming a popular choice among developers due to its user-friendly interface and powerful features. But did you know that you can also use it to write text files? This feature can come in handy when you want to quickly create or modify a document without using a text editor. In this article, we'll explore how to write a text file using Fish Shell.
-
-## How To
-
-To create a new text file using Fish Shell, open your terminal and enter the command:
-
+# How to:
+To write a text file using the Fish Shell, follow these simple steps:
 ```
-fish
+1. Open your Fish Shell terminal.
+2. Navigate to the directory where you want to create the text file.
+3. Type `touch filename.txt` to create the file with the desired name.
+4. Type `echo "your text goes here" >> filename.txt` to add content to the file.
+5. You can also use a text editor like nano or vim to open the file and edit it directly.
 ```
 
-This will start the Fish Shell. Next, use the `cat` command to create a new file and add content to it. Here's an example:
+Once you have completed these steps, your text file will be created and ready for use. You can easily access and modify its contents using the Fish Shell.
 
-```
-cat > new_file.txt
-```
-This will open a blank file in the terminal. You can now start typing your content. Once you're done, press `Ctrl + D` to save the file.
+# Deep Dive:
+Writing text files has been a fundamental task for programmers since the early days of computing. It allows for the storage and sharing of data in a standardized format, making it easier to work with across different systems and programming languages.
 
-To add content to an existing file, use the `echo` command followed by double quotes to surround the content. For example:
+Some alternative methods for writing text files in the Fish Shell include using the `printf` or `cat` commands, or using a text editor in conjunction with the `touch` command. However, the `echo` command is the simplest and most commonly used method.
 
-```
-echo "This is some new content" >> existing_file.txt
-```
-This will add the given content to the end of the file.
+Under the hood, the Fish Shell uses the `write()` function from the C programming language to write the contents of the file. This function takes in the file descriptor and the text to be written as arguments, and opens the file in write mode before writing the text and closing the file.
 
-To modify a text file, you can use the `sed` command. For instance, to replace a specific word in the file, you can use the following command:
-
-```
-sed -i 's/word1/word2/g' file.txt
-```
-This will replace all occurrences of `word1` with `word2` in the specified file.
-
-## Deep Dive
-
-Apart from creating, adding, and modifying text files, Fish Shell also offers various other convenient features for text manipulation. For example, you can use the `grep` command to search for specific content within a file. The `wc` command can be used to count the number of lines, words, and characters in a file. The `sort` command lets you arrange the content of a file in a particular order.
-
-Furthermore, Fish Shell also has support for regular expressions, which can come in handy for advanced text manipulation. You can use the `sed` and `awk` commands to perform various operations using regular expressions.
-
-So as you can see, Fish Shell offers a quick and efficient way to create, modify, and manipulate text files without any hassle. It's definitely a useful skill to have in your coding arsenal.
-
-## See Also
-
-- [Fish Shell official website](https://fishshell.com/)
-- [Fish Shell tutorial on YouTube](https://www.youtube.com/watch?v=5M8E2gQaTm0)
-- [Regular Expressions tutorial](https://www.regular-expressions.info/tutorial.html)
+# See Also:
+- [Fish Shell Official Documentation](https://fishshell.com/docs/current/)
+- [Introduction to Text Files](https://www.computerhope.com/jargon/t/textfile.htm)
+- [C write() function](https://www.tutorialspoint.com/c_standard_library/c_function_write.htm)

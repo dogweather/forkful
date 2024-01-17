@@ -10,39 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was ist das und Warum?
+Tests schreiben ist eine wichtige und unverzichtbare Praxis im Programmieren. Dabei werden spezielle Codeabschnitte geschrieben, um zu überprüfen, ob die Funktionalität des Programms ordnungsgemäß funktioniert. Programmierer nutzen Tests, um sicherzustellen, dass ihr Code zuverlässig und fehlerfrei ist. Dies spart Zeit und Mühe bei der Fehlerbehebung und gewährleistet eine bessere Qualität des Codes.
 
-Sie fragen sich vielleicht, warum es wichtig ist, Tests beim Programmieren zu schreiben. Nun, Tests helfen dabei, sicherzustellen, dass der Code wie erwartet funktioniert und verhindern mögliche Fehler oder Bugs. Sie sparen letztendlich Zeit und Mühe, da sie Probleme frühzeitig erkennen und beheben können.
-
-## Wie
-
-Um Tests in Java zu schreiben, können Sie die JUnit-Bibliothek verwenden. Zuerst müssen Sie sie jedoch in Ihr Projekt importieren. Legen Sie dann eine neue Klasse für Ihren Test an und importieren Sie die JUnit-Klassen. Erstellen Sie eine Methode mit der Annotation "@Test" und schreiben Sie Ihren Testcode innerhalb dieser Methode. Führen Sie schließlich Ihre Tests aus und überprüfen Sie die Ergebnisse im Konsolenfenster.
+## Wie geht's?
+Die grundlegende Syntax zum Schreiben von Tests in Java ist folgende:
 
 ```Java
-import static org.junit.Assert.assertEquals;
+// Importieren der notwendigen Java-Klassen
+import org.junit.*; 
 
-import org.junit.Test;
+// Erstellen einer Testklasse
+public class MeinTest { 
+  
+  // Definieren von Testmethoden mit der Annotation "@Test"
+  // Hier ein Beispiel
+  @Test
+  public void testAddition() { 
+    // Initialisieren der Werte für den Test
+    int a = 5; 
+    int b = 3; 
 
-public class TestCalculator {
+    // Ausführen der zu testenden Funktion
+    int ergebnis = a + b; 
 
-    @Test
-    public void testAddition() {
-        Calculator calculator = new Calculator();
-        assertEquals(10, calculator.add(5, 5));
-    }
-}
+    // Überprüfen, ob das Ergebnis korrekt ist
+    Assert.assertEquals(8, ergebnis); 
+  } 
+} 
 ```
+Der Codeblock beginnt mit dem Importieren der JUnit-Klasse, die für das Erstellen von Tests verwendet wird. Anschließend wird eine Testklasse erstellt, in der alle Testmethoden enthalten sind. Diese sind mit der Annotation "@Test" gekennzeichnet. Im Beispiel wird die Methode "testAddition" erstellt, welche die Addition zweier Zahlen überprüft. Durch die Verwendung von "Assert.assertEquals" wird geprüft, ob das Ergebnis der Addition dem erwarteten Ergebnis entspricht.
 
-Die Ausgabe sollte die erfolgreiche Durchführung des Tests bestätigen.
+## Tiefere Einblicke
+Die Praxis des Testens entstand in den 60er Jahren mit der Entwicklung von Software-Tests für den NASA-Großrechner. Seitdem hat sie sich zu einem wichtigen Bestandteil der Software-Entwicklung entwickelt. Es gibt auch alternative Ansätze zum Schreiben von Tests, wie zum Beispiel das Test-Driven Development (TDD), bei dem Tests vor dem eigentlichen Code geschrieben werden.
 
-## Tiefer eintauchen
-
-Beim Schreiben von Tests ist es wichtig, verschiedene Szenarien abzudecken und randbedingungen zu berücksichtigen. Sie sollten auch sicherstellen, dass Ihre Tests unabhängig voneinander sind und nicht aufeinander aufbauen. Verwenden Sie außerdem aussagekräftige Testnamen, um die Lesbarkeit und Verständlichkeit zu verbessern.
-
-Es ist auch hilfreich, regelmäßig Tests auszuführen und diese in Ihre Entwicklungsroutine einzubinden. Das macht es einfacher, Probleme frühzeitig zu erkennen und zu beheben.
+Es gibt auch spezielle Frameworks wie JUnit, TestNG oder Mockito, die die Erstellung von Tests erleichtern und erweiterte Funktionen bieten. Es ist wichtig, bei der Erstellung von Tests eine gute Testabdeckung zu erreichen, um sicherzustellen, dass alle möglichen Fälle getestet werden und der Code zuverlässig ist.
 
 ## Siehe auch
-
-- [JUnit Dokumentation](https://junit.org/junit5/docs/current/user-guide/)
-- [Tutorial: Tests schreiben in Java mit JUnit](https://www.baeldung.com/junit-tests-runwith)
-- [Best Practices für das Schreiben von Tests in Java](https://www.yegor256.com/2017/05/31/tests-best-practices.html)
+- [Offizielle JUnit-Dokumentation (auf Englisch)](https://junit.org/junit5/docs/current/user-guide/)
+- [Informationen über den Einsatz von JUnit in der Java-Entwicklung](https://www.codecademy.com/articles/using-junit-with-java)
+- [Test-Driven Development (TDD) erklärt (auf Deutsch)](https://entwickler.de/online/agile/test-driven-development-tdd-was-ist-das-579460351.html)

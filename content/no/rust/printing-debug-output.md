@@ -1,7 +1,7 @@
 ---
-title:                "Utskrift av feilsøkingsutdata"
-html_title:           "Rust: Utskrift av feilsøkingsutdata"
-simple_title:         "Utskrift av feilsøkingsutdata"
+title:                "Skriving av feilsøkningsutdata"
+html_title:           "Rust: Skriving av feilsøkningsutdata"
+simple_title:         "Skriving av feilsøkningsutdata"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Testing and Debugging"
@@ -10,61 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hva & Hvorfor?
 
-Hvis du noen gang har programmert i Rust, har du sannsynligvis også kommet over behovet for å skrive ut feilsøkingsinformasjon. Selv om Rust er kjent for sin strenge typetilordning og kompilatorfeil, kan det fortsatt oppstå situasjoner der du trenger å se hva som foregår i koden din for å finne feilen. Heldigvis tilbyr Rust en enkel og kraftig metode for å skrive ut debug-utdata.
+Å skrive ut feilsøkningsutdata er en viktig del av utviklingsprosessen for programvare. Det handler om å legge inn kode som skriver ut informasjon som hjelper deg med å forstå hva som foregår i programmet ditt mens det kjører. Dette er nyttig for å finne og fikse feil og for å forstå hvordan koden din fungerer.
 
-## Hvordan
-
-For å skrive ut debug-utdata i Rust, kan du bruke makroen `println!`. Denne makroen fungerer på samme måte som `println!` i andre programmeringsspråk, bortsett fra at den krever et ekstra symbol `#` før anførselstegnet for å skrive ut feilsøkingsinformasjon. Her er et eksempel:
+## Hvordan:
 
 ```Rust
 fn main() {
-    let navn = "Kari";
-    println!("Navn: {:?}", navn); // Legg merke til # symbolet
-
-    let nummer = 123;
-    println!("Nummer: {:?}", nummer);
+    println!("Hei fra Rust!");
 }
 ```
 
-Dette vil resultere i følgende utskrift:
-
-```
-Navn: "Kari"
-Nummer: 123
-```
-
-Som du kan se, skriver `println!` ut verdien til variabelen, i dette tilfellet en tekststreng og et heltall. Ved å bruke `{:?}`, forteller du Rust at du vil skrive ut verdien på en måte som er nyttig for feilsøking. Hvis du vil skrive ut verdien på en mer vanlig måte, kan du bruke `{}` i stedet.
-
-Du kan også bruke `print!` makroen hvis du ikke ønsker å inkludere en ny linje i utskriften. Dette kan være nyttig hvis du vil skrive ut flere linjer med informasjon i samme funksjon.
-
-## Deep Dive
-
-Når du bruker `println!`, kan du skrive ut så mange variabler som du vil, ved å inkludere dem i kommandoen, for eksempel `println!("Verdi 1: {}, Verdi 2: {}", verdi1, verdi2)`. I tillegg kan du også bruke spesielle formateringsmetoder for å gjøre utskriften mer lesbar, for eksempel å begrense desimaler på et tall eller skrive ut binærkoden for en verdi.
-
-En annen nyttig funksjon for debug-utdata er makroen `dbg!`, som skriver ut både navnet på variabelen og verdien den inneholder. Her er et eksempel:
+Dette eksempelet viser hvordan du bruker `println!` -makroen i Rust til å skrive ut en streng til konsollen. Du kan også skrive ut variabler og andre verdier ved å inkludere dem i `println!` -kallet med en komma-separert liste. For eksempel:
 
 ```Rust
-fn main() {
-    let navn = "Kari";
-    dbg!(navn); // Legg merke til at du ikke trenger å bruke # symbolet her
-
-    let nummer = 123;
-    dbg!(nummer);
-}
+let navn = "Jonas";
+let alder = 25;
+println!("Hei, mitt navn er {} og jeg er {} år gammel.", navn, alder);
 ```
 
-Dette vil resultere i følgende utskrift:
+Output vil da være: `Hei, mitt navn er Jonas og jeg er 25 år gammel.`
 
-```
-[src/main.rs:4] navn = "Kari"
-[src/main.rs:7] nummer = 123
-```
+## Dypdykk:
 
-Som du kan se, kan `dbg!` være spesielt nyttig når du jobber med flere variabler og trenger å holde styr på hvilken verdi som tilhører hvilken variabel.
+Historisk sett har debug-utskrift vært en viktig del av programmering for å finne og løse feil i komplekse programmer. I tillegg til å bruke `println!` -makroen, kan du også bruke Rusts `println_dbg!` -makro for å få mer detaljert informasjon om koden din når du feilsøker.
 
-## Se også
+Det finnes også alternativer til å skrive ut feilsøkningsutdata, for eksempel å bruke en debuggere eller logger-biblioteker som `log` eller `slog`. Disse gir mer avanserte funksjoner for å håndtere og analysere utdata.
 
-- [Rust dokumentasjon om debugging](https://doc.rust-lang.org/book/ch12-01-accepting-command-line-arguments.html#reading-the-environment-to-configure-your-program)
-- [Artikkel om Rusts debugging-funksjoner](https://blog.burntsushi.net/rust-debugging/)
+Når det gjelder implementasjonsdetaljer, bruker Rusts `println!` og `println_dbg!` -makroen `fmt` -modulen for formatering av utdata. Denne modulen gir mange nyttige funksjoner for å formatere utdata på en oversiktlig måte.
+
+## Se også:
+
+- [Rust docs for println!](https://doc.rust-lang.org/std/macro.println.html)
+- [Rust docs for fmt modulen](https://doc.rust-lang.org/std/fmt/index.html)
+- [The Rust Programming Language - Debugging Techniques](https://doc.rust-lang.org/book/ch14-00-more-about-cargo.html#debugging-techniques)

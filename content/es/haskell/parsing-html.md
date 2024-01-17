@@ -1,7 +1,7 @@
 ---
-title:                "Analizando HTML"
-html_title:           "Haskell: Analizando HTML"
-simple_title:         "Analizando HTML"
+title:                "Analizando html"
+html_title:           "Haskell: Analizando html"
+simple_title:         "Analizando html"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "HTML and the Web"
@@ -10,41 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¿Qué y Por Qué?
 
-¿Alguna vez has querido extraer información de una página web y utilizarla en tu programa? La respuesta es simple: ¡necesitas aprender a analizar HTML en Haskell!
+La creación de páginas web es una tarea común en la programación. Sin embargo, para poder manipular y utilizar la información de una página web, es necesario "analizar" o "parsear" el código HTML. Esto significa convertir el código en una estructura de datos legible por el programa. Los programadores realizan esta tarea para extraer datos de una página web o para manipular el contenido de una página antes de mostrarlo al usuario.
 
-## Cómo hacerlo
-La principal herramienta que utilizaremos en Haskell para analizar HTML es la biblioteca `tagsoup`. Primero, necesitaremos importarla en nuestro código:
-
-```Haskell
-import Text.HTML.TagSoup -- importamos la biblioteca
-```
-
-A continuación, debemos cargar el HTML que queremos analizar. Esto se puede hacer de varias maneras, pero una forma común es utilizando la función `openUrl` de la biblioteca `HTTP`:
+## Cómo:
 
 ```Haskell
-import Network.HTTP
-
-url <- simpleHTTP (getRequest "https://www.ejemplo.com") >>= getResponseBody
+parseHTML :: String -> Maybe [String]
+parseHTML = undefined
 ```
 
-Esto nos dará una cadena de texto con el código HTML de esa página en particular. Ahora, podemos utilizar la función `parseTags` para convertir esa cadena de texto en una lista de etiquetas que podemos recorrer y analizar:
+El ejemplo de código anterior muestra una función de Haskell para analizar una cadena de texto HTML. La función toma una cadena y devuelve una lista de cadenas, lo que significa que el código HTML ha sido convertido a una estructura de datos de Haskell. Dependiendo de la complejidad de la página web, esta función puede requerir de librerías adicionales y un tratamiento de errores más elaborado.
 
-```Haskell
-let tags = parseTags url -- convertimos la cadena de texto a una lista de etiquetas
-```
+## Deep Dive:
 
-Y ahora, por ejemplo, si queremos extraer todos los enlaces de la página, podemos utilizar la función `isTagOpenName` para filtrar solo las etiquetas de apertura con el nombre "a" (enlaces) y luego utilizar la función `fromAttrib` para obtener el valor del atributo "href" de cada etiqueta:
-```Haskell
-let links = map (fromAttrib "href") (filter (isTagOpenName "a") tags) -- lista con los enlaces de la página
-```
+El análisis de HTML se ha vuelto una tarea mucho más común en la programación con el auge de las aplicaciones web y el intercambio de datos en línea. Antes, esta tarea generalmente era hecha a mano, con herramientas como "grep" y "sed". Sin embargo, con la evolución de la tecnología, se han creado lenguajes de programación específicos para el análisis de HTML, como XPath y JSON Query.
 
-Esto es solo un ejemplo sencillo, pero con la biblioteca `tagsoup` y algunas otras herramientas de Haskell, podemos analizar y extraer cualquier información que necesitemos de una página web.
+Es importante destacar que el análisis de HTML puede ser complejo y existen librerías y paquetes adicionales que pueden facilitar esta tarea en Haskell. Algunos ejemplos son "html-conduit", "tagsoup" y "hxt".
 
-## Inmersión profunda
-Si quieres profundizar más en el análisis de HTML en Haskell, puedes echar un vistazo a la documentación oficial de la biblioteca `tagsoup` y también a otras herramientas como `HXT` que proporcionan un enfoque más modular y flexible para el análisis de HTML.
+## Ver También:
 
-## Ver también
-- [Documentación de la biblioteca `tagsoup`](https://hackage.haskell.org/package/tagsoup)
-- [Documentación de la biblioteca `HXT`](https://hackage.haskell.org/package/HXT)
+Aquí se encuentran algunas fuentes adicionales relacionadas con el análisis de HTML en Haskell:
+
+- https://hackage.haskell.org/package/html-conduit
+- https://hackage.haskell.org/package/tagsoup
+- https://hackage.haskell.org/package/hxt

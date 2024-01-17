@@ -10,53 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-Searching and replacing text is a crucial task in any programming language. With Go, it becomes even more efficient and simple thanks to its robust built-in features. In this article, we will explore the process of searching and replacing text using Go and why it is a valuable skill for any Go developer.
+Searching and replacing text is a common task for programmers, where they look for a specific set of characters or words in a string and replace them with a different set. This can be done manually, but it can be time-consuming and prone to errors, which is why programmers often use coding languages like Go to automate the process.
 
-## How To
+## How to: 
 
-Searching and replacing text in Go can be done using the strings package, specifically the `Replace` function. Let's see an example of how this function works:
+To search and replace text efficiently in Go, we can use the "strings" package and its built-in functions. Let's take a look at some coding examples:
 
-```Go
-package main
+```Go 
+// Import the strings package
+import "strings"
 
-import (
-    "fmt"
-    "strings"
-)
+// Create a string variable
+str := "Hello, world! Hello, Go!"
 
-func main() {
-    // Defining a string with some text
-    text := "Hello there! I am a Go programmer. Go is amazing!"
+// Replace "Hello" with "Hey"
+newStr := strings.Replace(str, "Hello", "Hey", -1)
 
-    // Replacing "Go" with "Golang"
-    newText := strings.Replace(text, "Go", "Golang", -1)
-
-    fmt.Println(newText)
-}
+// Output: Hey, world! Hey, Go!
+fmt.Println(newStr)
 ```
 
-Running this program will give us the following output:
+In the above code, we first imported the "strings" package, which provides functions to manipulate strings. Then, we declared a string variable and used the "Replace" function to replace all instances of "Hello" with "Hey". The last argument (-1) indicates to replace all occurrences, not just the first one. Finally, we printed the new string to see the result.
 
+Now, let's take it a step further and use regular expressions to search and replace text:
+
+```Go 
+// Create a string variable 
+str := "Buy 2 apples for $3"
+
+// Use regex to replace numbers with "X"
+newStr := regexp.MustCompile(`[0-9]+`).ReplaceAllString(str, "X")
+
+// Output: Buy X apples for $X
+fmt.Println(newStr)
 ```
-Hello there! I am a Golang programmer. Golang is amazing!
-```
 
-In the code above, we first declared a string variable with some text. Then, we used the `Replace` function from the strings package to replace all occurrences of "Go" with "Golang". The `-1` parameter indicates that all occurrences should be replaced. Finally, we printed the modified string to the console.
+This time, we used the "regexp" package and its "ReplaceAllString" function to replace all numbers with "X" in our string. Regular expressions (regex) are a powerful tool for searching and manipulating text patterns.
 
-## Deep Dive
+## Deep Dive:
 
-Behind the scenes, the `Replace` function in Go uses the `ReplaceAll` function from the strings package. This function takes in the original string, the replacement string, and the number of replacements to be made. 
+Searching and replacing text has been a fundamental task in computing since the early days of programming. In the past, it was often done manually using command-line tools such as grep and sed. However, with the rise of coding languages like Go, this process has become more efficient and less error-prone.
 
-Additionally, the strings package also includes other functions such as `ReplaceAllLiteral`, which replaces exact text matches without any special handling of regular expressions.
+Apart from the string manipulation functions in the "strings" package, Go also has other alternatives for searching and replacing text. For instance, the "bufio" package provides methods to read and write text, and the "bytes" package has functions specifically for byte manipulation in strings.
 
-There are also more advanced techniques for searching and replacing text in Go, such as using regular expressions with the `Regexp` package. This allows for more complex and precise replacements.
+The "strings" package uses a standard Boyer-Moore implementation to find and replace text efficiently. This algorithm takes advantage of the fact that we are searching for a fixed pattern and can skip large sections of the string that do not match the search pattern.
 
-## See Also
+## See Also:
 
-To learn more about searching and replacing text in Go, check out the links below:
-
-- [Official documentation for the strings package](https://golang.org/pkg/strings/)
-- [Tutorial on using regular expressions in Go](https://www.innoq.com/en/tutorials/golang-regular-expressions/)
-- [Article on improving string performance in Go](https://medium.com/@seanhokanson/8-tips-for-string-performance-in-go-5bd94e0a7e58)
+- [Go strings package documentation](https://golang.org/pkg/strings/)
+- [Mastering Regular Expressions by Jeffrey E.F. Friedl](https://www.oreilly.com/library/view/mastering-regular-expressions/9780596528126/)
+- [The Go Programming Language by Alan A. A. Donovan and Brian W. Kernighan](https://www.gopl.io/)

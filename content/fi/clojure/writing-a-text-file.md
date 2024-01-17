@@ -10,23 +10,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
-Jos olet kiinnostunut ohjelmoinnista, saatat haluta oppia lisää Clojuresta, joka on dynaaminen ohjelmointikieli, joka on suunniteltu toimimaan Java-virtuaalikoneella. Clojurella voit kirjoittaa tekstitiedostoja ja käyttää niitä osana projektejasi.
+"Mikä & Miksi?":
+Tekstitiedoston kirjoittaminen on periaatteessa vain tekstin tallentamista tietokoneesi muistiin. Ohjelmoijat käyttävät tekstitiedostoja tallentaakseen tietoa tai koodia, jota he haluavat käyttää myöhemmin.
 
-## Kuinka
-Käytä "write-string" -funktiota luodaksesi tekstitiedoston ja "close" -funktiota lopettaaksesi sen käytön. Tässä on esimerkki, joka luo "testi.txt" -tiedoston, kirjoittaa siihen "Tämä on tekstiä!" ja sitten sulkee sen:
-
+"Kuinka tehdä?":
 ```Clojure
-(with-open [out-file (clojure.java.io/writer "testi.txt")]
-  (.write out-file "Tämä on tekstiä!"))
+;; Luo uusi tekstitiedosto nimeltä "tietoa.txt"
+(with-open [f (io/writer "tietoa.txt")]
+  (.write f "Tervetuloa Ohjelmointi 101 kurssille!"))
+
+;; Avaa ja lue tekstitiedosto
+(with-open [f (io/reader "tietoa.txt")]
+  (println (.readLine f)))
+=> Tulostaa: "Tervetuloa Ohjelmointi 101 kurssille!"
 ```
 
-Jos katsot "testi.txt" -tiedostoasi, näet siellä olevan tekstin. Voit myös käyttää "println" -funktiota kirjoittaaksesi rivin käyttäen välilyöntiä tai sanoman lopussa olevaa "newline" -funktiota.
+"Syväsukellus":
+Kirjoittaminen tekstitiedostoihin on ollut osa ohjelmointia jo pitkään. Tekstitiedostoja käytetään usein tallentamaan tietokantakyselyjä tai tulostamaan tietoa käyttäjälle. On myös muita tapoja tallentaa tietoa, kuten tietokantoihin tai verkkopalveluihin, mutta tekstitiedostot ovat yksinkertaisin ja helpoin tapa tallentaa ja lukea tietoa ohjelmassa.
 
-## Syvällinen sukellus
-Clojurella on muitakin tapoja luoda ja kirjoittaa tekstitiedostoja, kuten käyttämällä "spit" -funktiota tai "with-open-writer" -makroa. Voit myös antaa lisäargumentteja, kuten tiedoston olemassaolon tarkistamisen, tiedoston oikeuksien asettamisen ja tiedoston sijainnin määrittämisen.
-
-## Katso myös
-- Clojure:n viralliset kotisivut: https://clojure.org/
-- Clojure-oppikirja: https://clojure-doc.org/
-- Clojure:n virallinen dokumentaatio: https://clojuredocs.org/
+"Katso myös":
+Lisätietoa tekstitiedostojen lukemisesta ja kirjoittamisesta Clojurella löytyy esim. täältä: https://clojuredocs.org/clojure.java.io/writer. Voit myös kokeilla erilaisia tapoja kirjoittaa ja lukea tekstitiedostoja ja tutkia niiden toimintaa Clojure REPL:ssä.

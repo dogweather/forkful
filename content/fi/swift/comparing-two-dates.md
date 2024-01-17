@@ -10,48 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
-On monia tilanteita, jolloin ohjelmassa on tarve verrata kahta päivämäärää tai tarkistaa, ovatko ne samat. Esimerkiksi sovelluksissa, jotka käsittelevät varauksia tai tapahtumia, on tärkeää pystyä vertailemaan päivämääriä ja hallitsemaan tiettyjen päivämäärien välisiä suhteita.
+## Mitä & Miksi? 
 
-## Kuinka
-Vertaillessa päivämääriä Swiftissä on tärkeää käyttää `Date` -oliota ja sen tarjoamia metodeja ja ominaisuuksia. Tässä on muutamia esimerkkejä erilaisista tilanteista ja kuinka päivämääriä voidaan vertailla niissä.
+Päivämäärien vertailu tarkoittaa kahden päivämäärän välisen eron selvittämistä ja vertailemista. Tämä on usein tarpeellista ohjelmoinnissa, kun halutaan esimerkiksi laskea päivien määrä tietyn tapahtuman välillä tai tarkistaa, onko jokin päivämäärä tulevaisuudessa vai menneisyydessä.
 
-### Vertaa kahta päivämäärää
-Käytä `compare` -metodia vertailemaan kahta päivämäärää. Metodi palauttaa `ComparisonResult` -enumeration, joka voi olla `.orderedAscending`, `.orderedSame` tai `.orderedDescending` riippuen siitä, ovatko käytetyt päivämäärät suurempi, sama vai pienempi.
+## Miten:
 
-```Swift
-let date1 = Date()
-let date2 = Date(timeIntervalSinceNow: 86400) // yksi päivä tulevaisuudessa
-let result = date1.compare(date2)
-print(result) // tulostaa "orderedAscending"
-```
-
-### Tarkista, ovatko kaksi päivämäärää samat
-Tässä tapauksessa voit käyttää `==` -operaattoria vertailemaan kahta päivämäärää.
+Seuraavassa esimerkissä näytämme, miten kahden päivämäärän välisen eron voi laskea Swiftillä:
 
 ```Swift
-let date1 = Date()
-let date2 = Date(timeIntervalSinceReferenceDate: date1.timeIntervalSinceReferenceDate)
-if date1 == date2 {
-    print("Päivämäärät ovat samat")
-} else {
-    print("Päivämäärät ovat erilaiset")
-}
+let date1 = Date(timeIntervalSince1970: 1577836800) // 1.1.2020
+let date2 = Date(timeIntervalSince1970: 1609372800) // 1.1.2021
+
+let difference = Calendar.current.dateComponents([.day], from: date1, to: date2).day
+print(difference) // 366
 ```
 
-### Vertaa päivämäärien välisiä suhteita
-`Date` -luokka tarjoaa myös `compareHierarchy` -metodin, jonka avulla voit vertailla päivämääriä tarkemmin. Tämä metodi ottaa huomioon paitsi päivämäärien tasaheiton, myös tunnit, minuutit ja sekunnit.
+Ensimmäisessä rivissä luomme kaksi päivämäärää, date1 ja date2, joita me sitten vertailemme. Toisessa rivissä käytämme Calendar-luokkaa laskemaan päivien määrä date1:n ja date2:n välillä. Lopuksi, print-funktio tulostaa eron, joka tässä tapauksessa on 366 päivää.
 
-```Swift
-let date1 = Date()
-let date2 = Date(timeIntervalSinceNow: 3600) // yksi tunti tulevaisuudessa
-let result = date1.compareHierarchy(date2)
-print(result) // tulostaa "orderedSame"
-```
+## Syvemmälle:
 
-## Syvällinen sukellus
-Päivämäärien vertailu Swiftissä perustuu `TimeInterval` -tyyppiin, joka on todellisuudessa `Double` -tyyppiä. `Date` -luokka tarjoaa vain käteviä metodeja ja operaattoreita, jotka hyödyntävät tätä taustalla olevaa tyyppiä. Tämä varmistaa, että päivämäärät voidaan vertailla tarkasti ja luotettavasti.
+Päivämäärien vertailu on tärkeä osa ohjelmointia, ja se on ollut osana koodaamista jo pitkään. Aiemmin sen toteuttaminen vaati paljon enemmän koodia ja laskutoimituksia, mutta nykyään Swift tarjoaa helppokäyttöisiä työkaluja tämän tehtävän suorittamiseen.
 
-## Katso myös
-- [Swiftin virallinen verkkosivu] (https://developer.apple.com/swift/)
-- [Apple Developer Documentation: Date] (https://developer.apple.com/documentation/foundation/date)
+Jos haluat vertailla päivämääriä tarkempia aikatietoja, kuten tunteja, minuutteja ja sekunteja, voit käyttää myös muita DateComponents-muuttujia, kuten .hour, .minute ja .second.
+
+## Katso myös:
+
+Jos haluat saada lisätietoa päivämäärien vertailusta ja laskemisesta Swiftillä, voit tutustua seuraaviin lähteisiin:
+
+- Swiftin virallinen dokumentaatio päivämäärien vertailusta: https://developer.apple.com/documentation/foundation/datecomparisonresult
+- Swiftin virallinen dokumentaatio DateComponents-muuttujista: https://developer.apple.com/documentation/foundation/datecomponents
+- Stack Overflow:n sivusto, jolla käydään läpi päivämäärien vertailua Swiftissä: https://stackoverflow.com/questions/24723431/swift-days-between-giving-two-nsdates

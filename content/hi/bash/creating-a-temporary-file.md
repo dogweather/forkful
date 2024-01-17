@@ -1,7 +1,7 @@
 ---
-title:                "अस्थायी फाइल बनाना"
-html_title:           "Bash: अस्थायी फाइल बनाना"
-simple_title:         "अस्थायी फाइल बनाना"
+title:                "एक अस्थायी फ़ाइल बनाना"
+html_title:           "Bash: एक अस्थायी फ़ाइल बनाना"
+simple_title:         "एक अस्थायी फ़ाइल बनाना"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Files and I/O"
@@ -10,58 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Kyu
+# क्या और क्यों?
 
-Temporary files ka upyog karne ka mukhya karan hai ki we apki coding process ko aasan aur organized banate hai. Ye temporary files apko temporary data storage, debugging aur temporary output generation jaise kaamo mein madad karte hai.
+टेम्पररी फ़ाइल बनाना क्या है और इसे क्यों प्रोग्रामर्स करते हैं - यह दो बड़े सवाल हैं। क्या आप भी उनमें से एक हैं? तो चलिए शुरू करते हैं! 
 
+## कैसे:
 
-## Kaise Kare
+जब हम अपने कंप्यूटर पर एक बड़ी या गायब फ़ाइल को तैयार करते हैं, हमारे फाइल सिस्टम पर कई समस्याओं का अनुभव हो सकता है। टेम्पररी फ़ाइल बनाने से हम इन समस्याओं से बच सकते हैं। 
 
-Temporary files banane ke liye, aapko `mktemp` command ka upyog karna hoga. Is command ke through aap temporary files ke liye unique names generate kar sakte hai. Niche diye gaye example mein hum dekhenge ki kaise hum ek temporary file bana sakte hai aur usme kuch data store kar sakte hai.
-
-```Bash
-#!/bin/bash
-
-# Temporary file create kare
-TEMP_FILE=$(mktemp)
-
-# Temporary file mein data store kare
-echo "Hello world!" > $TEMP_FILE
-
-# Temporary file ka content print kare
-cat $TEMP_FILE
-```
-
-Is code mein humne `mktemp` command ka upyog karke ek temporary file banaya aur usme `"Hello world!"` ka data store kiya. Fir humne `cat` command ka upyog karke us temporary file ke content ko print kiya.
-
-### Output:
+यहां हमने दो तरीकों को बताया है जिनका इस्तेमाल करके आप एक टेम्पररी फ़ाइल बना सकते हैं - 
 
 ```Bash
-Hello world!
+# एक टेम्पररी फ़ाइल बनाएं
+mktemp
+
+# एक टेम्पररी फ़ाइल बनाकर उसका नाम प्रिंट करें
+echo "आपका टेम्पररी फ़ाइल है: $(mktemp)"
 ```
 
-Is tarah se aap temporary files create karke apne coding process ko organized aur efficient bana sakte hai.
+जब आपको एक टेम्पररी फ़ाइल की ज़रूरत हो, तो आप उसे पढ़ने या लिखने के लिए प्रयोग कर सकते हैं, और जब काम समाप्त हो जाए, तो आप उसे हटा सकते हैं। 
 
-## Deep Dive
+## गंभीर विवेचन:
 
-Temporary files banane ke liye, Linux/Unix operating systems mein `tmp` directory ka upyog kiya jata hai. Default tarah se yeh directory `/tmp` mein locate hota hai, lekin is location mein temporary files ko store karne ke liye koi guarantee nahi hoti hai. Isliye, behtar hoga agar aap `mktemp` command mein `-t` flag ka upyog karke apne desired location mein temporary files create kare. Jaise ki:
+टेम्पररी फ़ाइल बनाने की यह टेक्निक पूर्वी नार्थ साइड और बेल लैब्स कंप्यूटर सिस्टम में विकसित की गई थी। कुछ अन्य विकल्प भी हैं जैसे ```tempfile``` और ```mkstemp``` जो आपको टेम्पररी फ़ाइल बनाने की अन्य विकल्प प्रदान कर सकते हैं। 
 
-```Bash
-mktemp -t /home/user/Desktop/tempfile
-```
+इस तकनीक का अनुप्रयोग विभिन्न कामों में किया जा सकता है जहां आपको कम समय में बड़ी फ़ाइलों के साथ काम करना होता है। लेकिन, टेम्पररी फ़ाइल बनाने के अलावा भी आप कुछ अन्य साधनों का इस्तेमाल कर सकते हैं जैसे पाइप्स और शॉर्टकट्स। 
 
-Is command ke through, aap apne `/home/user/Desktop` directory mein `tempfile` naam ka temporary file bana sakte hai.
+## देखें भी:
 
-Temporary files banane ke liye, aap `tempfile` ke alawa `mktemp` ke aur bhi options ka upyog kar sakte hai. In options mein se kuch important options ko niche diya gaya hai:
-
-- `-u` - Temporary file ka naam generate kare lekin actual file create na kare.
-- `-p` - Location specify kare jaha temporary file create karna hai.
-- `-d` - Temporary directory create kare instead of a file.
-- `--suffix` ya `-o` - Temporary file ke end mein ek suffix add kare.
-
-In options ka upyog karke aap apne requirements ke according temporary files create kar sakte hai.
-
-## Dekhiye bhi
-
-- [Bash manpage](https://linux.die.net/man/1/bash)
-- [mktemp command documentation](https://linux.die.net/man/1/mktemp)
+- [टेम्पररी फ़ाइल के बारे में अधिक जानकारी](https://www.cyberciti.biz/tutorials/locating-and-treating-unix-linux-bad-out-of-temporary-file-problems/)
+- [टेम्पररी फ़ाइल बनाने के और अन्य विकल्प](https://bash.cyberciti.biz/guide/Temporary_files_or_directories)

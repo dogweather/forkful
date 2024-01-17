@@ -10,44 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hva & Hvorfor?
 
-Hvis du noen gang har arbeidet med datoer i programmering, har du sannsynligvis måttet sammenligne to datoer for å bestemme rekkefølgen eller hvor lang tid det er mellom dem. I denne artikkelen vil vi se på hvordan du kan sammenligne to datoer i Haskell og få nyttig informasjon om dem. 
+Sammenligning av to datoer er en vanlig oppgave for programmere. Det innebærer å sjekke om en dato er før, etter eller lik en annen dato. Dette er nyttig for å organisere og filtrere data basert på datoer, for eksempel når man lager en kalender eller sorterer data basert på når de ble opprettet.
 
-## Hvordan gjøre det
-
-Først må vi importere Data.Time biblioteket. Dette biblioteket lar oss jobbe med datoer og tid i Haskell. Her er et eksempel på hvordan du kan sammenligne to datoer:
+## Hvordan gjøre det:
 
 ```Haskell
+-- Importer Data.Time biblioteket for å bruke funksjoner for datoer
 import Data.Time
 
--- Oppretter to datoer
-date1 = fromGregorian 2021 7 12
-date2 = fromGregorian 2021 7 15
+-- Opprett en utdatafunksjon for å vise sammenligningsresultat
+output :: Ordering -> String
+output LT = "Før"
+output GT = "Etter"
+output EQ = "Lik"
 
--- Sjekker om date1 er før date2
-date1 < date2  -- Output: True
+-- Definer to datoer (i dette tilfellet, 1. januar 2020 og 15. februar 2020)
+d1 :: Day
+d1 = fromGregorian 2020 1 1
+d2 :: Day
+d2 = fromGregorian 2020 2 15
 
--- Finn antall dager mellom to datoer
-diffDays date1 date2  -- Output: 3
+-- Sammenlign datoene ved hjelp av compare-funksjonen
+-- og skriv ut resultatet
+main :: IO ()
+main = do
+    let comparison = compare d1 d2
+    putStrLn $ "Dato 1 er " ++ output comparison ++ " dato 2."
+
+-- Output:
+-- Dato 1 er Før dato 2.
 ```
 
-Her har vi definert to datoer ved hjelp av funksjonen `fromGregorian` som tar inn et år, måned og dag. Deretter sammenligner vi de to datoene ved å bruke `<` operatøren, som returnerer `True` hvis `date1` er før `date2`. 
+## Dykk dypere:
 
-Vi kan også få informasjon om hvor lang tid det er mellom to datoer ved å bruke `diffDays` funksjonen, som returnerer antall dager mellom de to datoene. 
+Sammenligning av datoer har alltid vært en viktig del av programmering, særlig med utviklingen av datamaskiner og datasystemer. Etter hvert som datamaskiner ble mer vanlige, ble behovet for å håndtere datoer og tidsdata mer komplekst. Dette førte til utviklingen av spesifikke funksjoner og biblioteker som Data.Time i Haskell, som gjør det enkelt å håndtere og sammenligne datoer.
 
-## Dypdykk
+Det finnes også alternative måter å sammenligne datoer på, for eksempel ved å representere dem som tall og bruke vanlige matematiske operatorer. Dette kan være en enklere tilnærming, men det kan også føre til feil og unøyaktigheter når man håndterer tidsdata.
 
-Når vi sammenligner to datoer, er det viktig å være klar over hvordan de er representert i Haskell. Datoer i Haskell er objekter av typen `Day` som består av år, måned og dag. Det er også verdt å merke seg at hvis vi prøver å sammenligne to datoer med forskjellige tidsenheter, som for eksempel å sammenligne en dato med en klokkeslett, vil Haskell gi oss en typefeil. 
+Når det kommer til implementasjonsdetaljer, bruker Data.Time-biblioteket i Haskell konseptet om "Julian Day Numbers" for å representere datoer. Dette er et numerisk system som angir antall dager siden en bestemt startdato. Ut fra dette kan man enkelt bruke vanlige numeriske operatorer for å sammenligne datoer.
 
-En annen ting å være oppmerksom på er at datoene vi bruker i eksemplet over er basert på det gregorianske kalendersystemet. Hvis du trenger å jobbe med andre kalendersystemer, kan du bruke forskjellige funksjoner som er tilgjengelige i Data.Time biblioteket. 
+## Se også:
 
-Haskell tilbyr også andre nyttige funksjoner for å sammenligne datoer, som for eksempel `addDays`, som lar deg legge til et bestemt antall dager til en dato. Du kan utforske disse funksjonene og lære mer om hvordan du arbeider med datoer ved å lese dokumentasjonen for Data.Time biblioteket. 
-
-## Se også
-
-For mer informasjon om å arbeide med datoer og tid i Haskell, kan du sjekke ut følgende ressurser:
-
-- [Data.Time dokumentasjon](https://hackage.haskell.org/package/time-1.10.0.2/docs/Data-Time.html)
-- [Real World Haskell - Working with Time and Dates](http://book.realworldhaskell.org/read/using-parsec.html) 
-- [Learn You a Haskell - A Fistful of Monads](http://learnyouahaskell.com/a-fistful-of-monads#monads-as-containers)
+- [Haskell wiki - Data.Time](https://wiki.haskell.org/Data.Time)
+- [Haskell.org - Data.Time dokumentasjon](https://downloads.haskell.org/~ghc/latest/docs/html/libraries/time-1.9.3/Data-Time.html)
+- [W3 Schools - Sammenligning av datoer i Haskell](https://www.w3schools.com/haskell/haskell_date_comparison.asp)

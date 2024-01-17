@@ -10,40 +10,21 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜?
+## 현재 날짜
+날짜를 가져오는 것은 프로그래머들에게 중요한 일입니다. 왜냐하면 현재 날짜를 알고 있다면, 무슨 일이 벌어지고 있는지를 알 수 있기 때문입니다.
 
-현재 날짜를 구하는 것은 프로그래밍에서 매우 일반적입니다. 예를 들어, 회원 가입일, 결제 일자, 또는 파일을 만든 날짜를 표시하는 등의 경우에 많이 사용됩니다.
-
-## 어떻게 하는가?
-
-```Ruby
-puts Time.now
-
-# 출력 예시: 2021-03-04 12:30:00 +0900
-```
-
+## 방법:
 ```Ruby
 puts Date.today
-
-# 출력 예시:  2021-03-04
+```
+코드 블록 안에 위와 같이 입력하면, 오늘의 날짜가 출력됩니다.
+```
+2021-03-18
 ```
 
-위의 코드처럼 `Time.now` 또는 `Date.today`를 사용하여 간단하게 현재 날짜와 시간을 출력할 수 있습니다. 이 외에도 `Time`과 `Date` 클래스에는 다양한 메소드가 있으니 필요에 따라 찾아보세요.
+## 깊게 파고들기:
+날짜를 가져오는 것은 오래된 컴퓨터 프로그래밍 기법 중 하나입니다. 예전에는 매우 복잡한 방법으로 날짜를 구했지만, 현재는 Ruby처럼 간편한 코드로도 날짜를 얻을 수 있습니다. 또한 날짜는 시스템 외부 API를 통해 가져올 수도 있습니다.
 
-## 깊이 파헤치기
-
-`Time.now`와 `Date.today`는 우리가 일상적으로 사용하는 날짜와 시간 형식으로 출력됩니다. 하지만 이를 더욱 세밀하게 다루려면 `strftime` 메소드를 사용할 수 있습니다. 이 메소드는 형식 문자열을 이용하여 날짜와 시간을 원하는대로 출력할 수 있도록 해줍니다.
-
-```Ruby
-puts Time.now.strftime("%Y년 %m월 %d일 %H시 %M분 %S초")
-
-# 출력 예시: 2021년 03월 04일 12시 35분 00초
-```
-
-또한 `Time`과 `Date` 클래스는 연산이 가능하며, `Time` 클래스는 시간의 차이를 나타내는 `TimeDifference`도 지원합니다. 이를 이용하여 날짜와 시간을 다양하게 조작할 수 있습니다.
-
-## 관련 자료
-
-- [Ruby Time 클래스 문서](https://ruby-doc.org/core-2.7.0/Time.html)
-- [Ruby Date 클래스 문서](https://ruby-doc.org/stdlib-2.7.0/libdoc/date/rdoc/Date.html)
-- [strftime 형식 문자열 참고 문서](https://www.rubyguides.com/2015/05/working-with-dates-in-ruby/)
+## 관련 자료:
+- [Ruby Date 클래스 문서](https://ruby-doc.org/stdlib-3.0.0/libdoc/date/rdoc/Date.html)
+- [Ruby의 시간과 날짜 처리에 대한 정리 문서](https://m.blog.naver.com/PostView.nhn?blogId=jhleefree&logNo=221221900746&proxyReferer=https:%2F%2Fwww.google.com%2F)

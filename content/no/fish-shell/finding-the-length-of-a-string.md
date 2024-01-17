@@ -1,7 +1,7 @@
 ---
-title:                "Å finne lengden på en streng"
-html_title:           "Fish Shell: Å finne lengden på en streng"
-simple_title:         "Å finne lengden på en streng"
+title:                "Å finne lengden av en streng"
+html_title:           "Fish Shell: Å finne lengden av en streng"
+simple_title:         "Å finne lengden av en streng"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -10,41 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+Fish Shell: Finn lengden av en streng
 
-Å finne lengden til en tekststreng kan være nyttig for å kunne behandle og manipulere data på en mer effektiv måte. Ved å vite lengden til en streng, kan vi blant annet bestemme hvor mange ganger en løkke skal kjøre eller hvor mange tegn som skal hentes ut fra en streng.
+## Hva & Hvorfor?
 
-## Hvordan
+Hvis du jobber som programmerer, er du sannsynligvis vant til å jobbe med tekststrenger. Men noen ganger trenger du å finne ut hvor mange tegn en bestemt streng inneholder. Det er der "lengden av en streng" kommer inn i bildet. Det er rett og slett å finne ut hvor mange tegn en streng består av.
 
-Vi kan bruke Fish Shell sin innebygde kommando `string length` for å finne lengden til en streng. Denne kommandoen tar en streng som argument og returnerer antall tegn i strengen.
+## Slik gjør du det:
 
-```Fish Shell
-string length "Hei verden"
+For å finne lengden av en streng i Fish Shell, kan du bruke "string lengde" kommandoen. Her er et eksempel på hvordan du kan bruke den:
+
 ```
-Output:
-```
-11
+Fish Shell> set streng "Hei alle sammen!"
+Fish Shell> string lengde $streng
+16
 ```
 
-Vi kan også bruke variabler og funksjoner sammen med `string length` for å få mer fleksibilitet. For eksempel, hvis vi ønsker å finne lengden til en tekststreng som brukeren skriver inn, kan vi bruke følgende kode:
-
-```Fish Shell
-set input (read -l "Skriv inn en tekststreng: ")
-string length $input
-```
-Output:
-```
-12
-```
+Som du kan se, blir resultatet (16) skrevet ut ved hjelp av lengdekommandoen. Det er en rask og enkel måte å finne ut lengden på en streng på!
 
 ## Dypdykk
 
-Det er verdt å merke seg at `string length` kun teller antall tegn i en streng og ikke antall ord. Derfor, hvis vi ønsker å finne antall ord i en streng, må vi først bruke `string split` for å dele strengen inn i en liste av ord, og deretter bruke `count` funksjonen for å telle antall elementer i lista.
+Historisk sett har string lengde vært en viktig funksjon i datamaskinprogrammering. Det gir programmerere muligheten til å manipulere tekstdata på en effektiv måte. Selv om "lengden av en streng" er en vanlig funksjon i de fleste programmeringsspråk, finnes det noen alternative måter å finne lengden på en streng. For eksempel kan du bruke "count" kommandoen, som teller antall tegn i en streng.
 
-Det er også viktig å være oppmerksom på at `string length` tar hensyn til alle tegn, inkludert mellomrom og spesialtegn. Dette kan påvirke resultatet hvis vi for eksempel har en tekststreng med blandede tegn og ønsker å finne lengden til bare bokstavene.
+Når det gjelder implementeringen av "lengden av en streng" i Fish Shell, bruker den faktisk den samme metoden som andre programmeringsspråk. Det er fordi Fish Shell er kompatibelt med Bash Shell og bruker mye av de samme kommandoene og funksjonene.
 
 ## Se også
 
-- [Fish Shell sin offisielle dokumentasjon](https://fishshell.com/docs/current/commands.html)
-- [Tutorial: How to Use Fish Shell to Automate Tasks on a VPS](https://www.digitalocean.com/community/tutorials/how-to-use-fish-shell-to-automate-tasks-on-a-vps)
-- [10 Useful Tips for Fish Shell](https://computingforgeeks.com/10-useful-tips-for-fish-shell-on-linux-macos/)
+Hvis du vil lære mer om Fish Shell og dens funksjoner, kan du sjekke ut disse ressursene:
+
+- [Fish Shell's offisielle nettside](https://fishshell.com/)
+- [Fish Shell dokumentasjon](https://fishshell.com/docs/current/index.html)
+- [Fish Shell på GitHub](https://github.com/fish-shell/fish-shell)

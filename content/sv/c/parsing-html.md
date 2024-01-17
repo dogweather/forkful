@@ -1,7 +1,7 @@
 ---
-title:                "Parsera html"
-html_title:           "C: Parsera html"
-simple_title:         "Parsera html"
+title:                "Analys av html"
+html_title:           "C: Analys av html"
+simple_title:         "Analys av html"
 programming_language: "C"
 category:             "C"
 tag:                  "HTML and the Web"
@@ -10,27 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+# Vad & Varför?
+HTML-analys, eller parsing, är en process där en dator tar en HTML-kod och bryter ner den i olika delar för att förstå dess struktur och innehåll. Detta är viktigt för programmerare eftersom det gör det möjligt för dem att manipulera eller extrahera data från HTML-dokument.
 
-Du undrar kanske varför det är viktigt att kunna parsa HTML i C, den senaste versionen av det populära programmeringsspråket. Svaret är enkelt: HTML är språket i vilket webbsidor skrivs, och genom att kunna parsa det kan du extrahera och manipulera data från internet på ett smidigt sätt. Detta kan vara användbart för allt från webbsskrapning till automatiserad databehandling.
-
-## Så här gör du
-
-För att kunna parsa HTML i C behöver du först och främst lära dig hur man bearbetar strängar, eftersom HTML är skrivet som en sträng. Använd funktionen `strstr()` för att hitta specifika taggar och `strtok()` för att dela upp strängen i mindre delar. Här är ett exempel på hur du skulle kunna extrahera all text mellan ett `<h1>`-tagg från en HTML-sida:
-
+# Hur gör man:
 ```C
-char html[] = "<h1>Hej världen!</h1>";
-char* start = strstr(html, "<h1>") + 4; // Hittar första förekomsten av "<h1>" och flyttar startpekaren 4 steg framåt 
-char* end = strstr(start, "</h1>"); // Hittar första förekomsten av "</h1>"
-*end = '\0'; // Sätter en nolltecken vid slutet av strängen
-printf("%s", start); // Skriver ut "Hej världen!"
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+// Enkelt exempel på att analysera en HTML-tagg
+int main(void) {
+    char html_data[] = "<h1>Welcome to my website</h1>";
+    char tag_name[50];
+    char tag_content[100];
+
+    // Skildra taggnamnet från innehållet
+    sscanf(html_data, "<%[^>]>%[^<]", tag_name, tag_content);
+
+    // Skriv ut taggnamnet och innehållet
+    printf("Taggnamn: %s\n", tag_name);
+    printf("Innehåll: %s\n", tag_content);
+
+    return 0;
+}
+```
+```C
+// Resultat:
+Taggnamn: h1
+Innehåll: Welcome to my website
 ```
 
-## Djupdykning
+# Djupdykning:
+HTML-analys är en fundamentell del av webbutveckling och har funnits sedan tidigt 1990-tal. Tidiga webbläsare som Netscape Navigator och Internet Explorer var ansvariga för att tolka och rendera HTML-dokument. Idag finns det alternativ till HTML-analys, såsom DOM-parser och XPath, men HTML-analys är fortfarande den vanligaste metoden för att manipulera och extrahera data från HTML.
 
-Att parsa HTML handlar inte bara om att hitta och manipulera enskilda taggar, utan också om att kunna navigera genom en hel HTML-struktur. Det finns flera tillgängliga tredjepartsbibliotek som kan hjälpa dig med detta, som till exempel libxml2 eller BeautifulSoup. Dessa bibliotek har redan implementerat komplexa funktioner för att söka, extrahera och bearbeta HTML-data. Det kan vara värt att utforska dessa bibliotek om du behöver en mer avancerad lösning för att parsar HTML i C.
+Det finns också flera bibliotek tillgängliga för att underlätta HTML-analys i C, såsom libxml och glib. Dessa bibliotek ger funktioner som kan användas för att hantera HTML-dokument.
 
-## Se även
-
-- [libxml2](http://www.xmlsoft.org/)
-- [BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/)
+# Se även:
+- [W3Schools HTML Tutorial](https://www.w3schools.com/html/html_intro.asp)
+- [libxml](http://www.xmlsoft.org/html/index.html)
+- [GLib](https://developer.gnome.org/glib/)

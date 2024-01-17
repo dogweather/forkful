@@ -10,37 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hva & Hvorfor?
 
-Å finne lengden til en streng er en svært vanlig oppgave som en programmerer støter på. Det kan være nyttig å vite hvor mange tegn en streng inneholder for å kunne behandle den på riktig måte.
+Å finne lengden på en streng betyr å telle antall tegn i en gitt streng. Dette er en vanlig oppgave for programmører, da det ofte er nødvendig å vite lengden på en streng for å kunne behandle den riktig.
 
-## Hvordan
-
-Å finne lengden til en streng i Kotlin er enkelt og intuitivt. Du trenger bare å kalle på `length` metoden for å få tilbake antall tegn i en streng. Se eksempelet nedenfor:
+## Hvordan:
+Kotlin gjør det enkelt å finne lengden på en streng ved å bruke innebygde metoder. Her er et eksempel på hvordan du kan finne lengden på en streng:
 
 ```Kotlin
-val navn = "Ole"
-println(navn.length)
+fun main() {
+    val str = "Hei, verden!"
+    println("Lengden på strengen er: ${str.length}")
+}
 ```
 
 Output:
-`3`
-
-Du kan også bruke `count()` metoden for å telle antall tegn i en streng. Det følgende eksempelet viser hvordan:
-
-```Kotlin
-val setning = "Dette er en setning."
-println(setning.count())
+```
+Lengden på strengen er: 12
 ```
 
-Output:
-`21`
+## Dypdykk:
+Å finne lengden på en streng er en enkel oppgave i de fleste programmeringsspråk, men det har ikke alltid vært tilfelle. I tidligere språk var det vanlig å bruke en egen funksjon for å telle lengden på en streng, men med utviklingen av moderne språk som Kotlin, har dette blitt enklere og mer effektivt.
 
-## Dypdykk
+Et alternativ til å bruke ```.length``` metoden i Kotlin er å bruke ```.count``` metoden, som gir samme resultat. Dette er nyttig å vite hvis man jobber med eldre kode eller må bruke et annet språk.
 
-I Kotlin er det ingen forskjell mellom `length` og `count()` metodene. Begge gir samme resultat, og bruker de samme underliggende mekanismene for å finne lengden til en streng. Det er viktig å være klar over at både whitespace og spesialtegn telle som et tegn når du bruker disse metodene. Du kan også bruke `size()` metoden på en `String` variabel for å finne lengden.
-
-## Se Også
-
-- [Kotlin Offisiell Dokumentasjon](https://kotlinlang.org/docs/reference/basic-types.html#strings)
-- [Kotlin Strings Tutorial](https://www.programiz.com/kotlin-programming/strings)
+## Se også:
+Kotlin Dokumentasjon - Strings: https://kotlinlang.org/docs/reference/basic-types.html#strings

@@ -1,7 +1,7 @@
 ---
-title:                "Komentoriviparametrien lukeminen"
-html_title:           "Python: Komentoriviparametrien lukeminen"
-simple_title:         "Komentoriviparametrien lukeminen"
+title:                "Kommenttiriviparametrien lukeminen"
+html_title:           "Python: Kommenttiriviparametrien lukeminen"
+simple_title:         "Kommenttiriviparametrien lukeminen"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Files and I/O"
@@ -10,38 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+# Mitä ja miksi?
+Komentoriviparametrien lukeminen tarkoittaa ohjelman antamien argumenttien vastaanottamista käyttäjältä komentokehotteessa. Tätä tehdään yleensä siksi, että ohjelman suorituksessa voidaan käyttää erilaisia parametreja, kuten tiedostonimiä tai vaihtoehtoisia toimintoja.
 
-Komentoriviparametrien lukeminen on tärkeä osa Python-ohjelmointia, sillä se mahdollistaa käyttäjän antaman syötteen käsittelyn ja interaktiivisuuden ohjelman suorituksen aikana.
+# Kuinka:
+Tässä esimerkeissä osoitetaan, kuinka Pythonin ```argv``` -moduulia käytetään komentoriviparametrien lukemiseen. 
 
-## Miten
-
-Komentoriviparametrien lukeminen Pythonilla on helppoa. Se tapahtuu `sys` -kirjaston `argv` -listan avulla, joka sisältää syötetyt komentoriviparametrit. Alla on yksinkertainen esimerkki:
-
-```Python
+```python
 import sys
 
-print(sys.argv)
+# Hae argumentit ja tallenna ne listaan
+args = sys.argv
+
+# Tulosta kaikki argumentit
+print("Saadut argumentit:", args)
+
+# Tulosta ensimmäinen argumentti
+print("Ensimmäinen argumentti:", args[0])
+
+# Tulosta toinen argumentti
+print("Toinen argumentti:", args[1])
 ```
 
-Tämä koodi tulostaa kaikki annetut komentoriviparametrit listana. Esimerkiksi komennolla `python argumentit.py hello world` tulostus olisi seuraava:
+Kun koodi suoritetaan komentokehotteessa seuraavasti:
 
-```Python
-['argumentit.py', 'hello', 'world']
+```
+python arguments.py arg1 arg2
 ```
 
-Kuten nähdään, ensimmäinen alkio on aina itse tiedoston nimi ja sen jälkeen tulevat kaikki annetut parametrit.
+Saadaan seuraava tulos:
 
-Käyttäjän antamaa syötettä voi myös käsitellä eri tavoin, esimerkiksi tarkastamalla parametreja ja niiden määrää ennen niiden käyttämistä ohjelmassa.
+```
+Saadut argumentit: ['arguments.py', 'arg1', 'arg2']
+Ensimmäinen argumentti: arguments.py
+Toinen argumentti: arg1
+```
 
-## Syvällisempi sukellus
+# Syväsukellus:
+Komentoriviparametrien lukemisen historia juontaa juurensa vanhoista käyttöjärjestelmistä, joissa ohjelmia suoritettiin komentokehotteessa paljon nykyistä enemmän. Nykyään tätä tekniikkaa käytetään edelleen, koska se mahdollistaa ohjelman toiminnan varaamalla tilaa komentokehotteen ulkopuolella. Vaihtoehtoinen tapa lukea komentoriviparametreja Pythonissa on käyttää ```argparse``` -moduulia, joka tarjoaa enemmän mahdollisuuksia argumenttien hallintaan. Argumenttien lukeminen on myös tärkeä taito monissa muissa ohjelmointikielissä, joten sen opetteleminen hyödyttää laajemmin.
 
-Komentoriviparametrien lukeminen Pythonilla mahdollistaa ohjelman käyttämisen interaktiivisemmin, sillä käyttäjä voi antaa tietoa ohjelmalle sen suorituksen aikana. Komennot voi myös antaa eri järjestyksessä ja niitä voidaan tarkastella ja käsitellä ohjelman sisällä.
-
-On myös hyvä huomata, että `sys.argv` -lista sisältää aina merkkijonoja, joten mikäli ohjelmassa tarvitaan tietyn tyyppisitä arvoja, kuten kokonaislukuja tai liukulukuja, ne tulee muuttaa oikeaan muotoon ennen käyttämistä.
-
-## Katso myös
-
-- [Pythonin virallinen dokumentaatio komentoriviparametreista](https://docs.python.org/3/library/sys.html#sys.argv)
-- [Stack Overflow -kysymys komentoriviparametrien lukemisesta Pythonilla](https://stackoverflow.com/questions/41683465/command-line-parameters-in-python)
-- [Tutoriaali komentoriviparametrien lukemisesta Pythonilla](https://www.guru99.com/python-command-line-arguments.html)
+# Katso myös:
+- [Pythonin sys.argv-dokumentaatio](https://docs.python.org/3/library/sys.html#sys.argv)
+- [Pythonin argparse-dokumentaatio](https://docs.python.org/3/library/argparse.html)
+- [Komentoriviparametrien lukeminen muilla ohjelmointikielillä](https://en.wikipedia.org/wiki/Command-line_interface#Arguments)

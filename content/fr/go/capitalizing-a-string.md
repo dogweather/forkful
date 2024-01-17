@@ -10,37 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Qu'est-ce que c'est et pourquoi le faire?
+Capitaliser une chaîne de caractères signifie mettre en majuscule la première lettre de chaque mot dans une phrase. Les programmeurs le font souvent pour rendre les textes plus lisibles et pour respecter les conventions de codage.
 
-Si vous travaillez avec des chaînes de caractères en Go, vous pourriez être confronté à un problème fréquent : comment rendre la première lettre de chaque mot en majuscule ? Dans cet article, je vais vous montrer comment capitaliser une chaîne de caractères en utilisant la puissance de Go.
-
-## Comment faire
-
-
-Le moyen le plus simple de capitaliser une chaîne de caractères en Go est d'utiliser la fonction `strings.Title()`. Elle prend une chaîne de caractères en entrée et renvoie une nouvelle chaîne de caractères avec la première lettre de chaque mot en majuscule. Voici un exemple de code : 
-
+## Comment le faire:
 ```Go
 package main
 
-import (
-	"fmt"
-	"strings"
-)
+import "fmt"
+import "strings"
+
+func capitalize(str string) string {
+	words := strings.Split(str, " ")
+
+	for i, word := range words {
+		words[i] = strings.Title(word)
+	}
+
+	return strings.Join(words, " ")
+}
 
 func main() {
-	str := "hello world"
-	capitalizedStr := strings.Title(str)
-	fmt.Println(capitalizedStr)
+	fmt.Println(capitalize("hello world"))
 }
+
 ```
-La sortie de ce code sera "Hello World". Comme vous pouvez le voir, la fonction `strings.Title()` a automatiquement converti la première lettre de chaque mot en majuscule.
 
-## Plongée profonde
+Output: "Hello World"
 
-Maintenant que vous avez vu comment capitaliser une chaîne de caractères en utilisant `strings.Title()`, il peut être intéressant de comprendre comment cela fonctionne. En réalité, la fonction utilise plusieurs algorithmes pour capitaliser correctement une chaîne de caractères. Elle prend en compte des règles d'exceptions pour certains mots spéciaux comme "the", "and", "of" et bien d'autres. De plus, elle détecte également la casse déjà présente dans la chaîne de caractères et la conserve. Par exemple, si vous avez une chaîne de caractères comme "microsoft word", elle sera capitalisée en "Microsoft Word" et non en "Microsoft word". 
+## Plongée en profondeur:
+Historiquement, la capitalisation a été utilisée pour faciliter la lecture des textes imprimés en majuscules uniquement. De nos jours, elle est principalement utilisée dans le domaine de la programmation pour améliorer la lisibilité du code. D'autres alternatives existent, comme l'utilisation de majuscules uniquement pour les constantes en Go. L'implémentation de la fonction de capitalisation variera selon le langage de programmation utilisé.
 
-## Voir aussi
-
-- [Documentation officielle de la fonction `strings.Title()`](https://golang.org/pkg/strings/#Title)
-- [Tutoriel vidéo sur la gestion des chaînes de caractères en Go](https://www.youtube.com/watch?v=32TeZiFXjXk) 
-- [Article sur les bonnes pratiques de programmation en Go](https://medium.com/@pcanino/bonnes-pratiques-de-programmation-en-go-d7357c5907a5)
+## Voir aussi:
+- [Documentation officielle de Go sur les chaînes de caractères](https://golang.org/doc/effective_go.html#strings)
+- [Alternative à la capitalisation: utilisation de majuscules pour les constantes en Go](https://blog.golang.org/constants)
+- [Article sur l'importance de la lisibilité du code en programmation](https://blog.codinghorror.com/code-readability/)

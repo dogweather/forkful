@@ -10,92 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##Чому
+## Що і чому?
 
-Робота з JSON є невід'ємною частиною розробки веб-додатків і додатків для мобільних пристроїв. Використання мови програмування Go для роботи з цим форматом данних дозволяє легко та ефективно обробляти та обмінюватись даними між різними додатками та системами.
+Робота з JSON - це процес обміну даними між різними програмами та системами з використанням формату JSON. Це дуже популярний спосіб передачі даних, оскільки JSON є простим у використанні та зрозумінні форматом. Програмісти використовують JSON для обміну даними з різними сервісами та веб-додатками.
 
-##Як
-
-Найпростіший спосіб працювати з JSON в Go - використання пакету "encoding/json" для преобразування даних в форматі JSON в об'єкти типу struct та навпаки. Нижче наведений приклад коду, який демонструє цей підхід:
+## Як це зробити:
 
 ```Go
-package main
-
-import (
-	"encoding/json"
-	"fmt"
-)
-
-type Person struct {
-	Name    string `json:"name"`
-	Age     int    `json:"age"`
-	Hobbies []string `json:"hobbies"`
+type User struct {
+  Name string `json:"name"`
+  Age  int    `json:"age"`
 }
 
+// Створення JSON об'єкта
 func main() {
-	jsonData := `{"name": "John", "age": 30, "hobbies": ["reading", "running"]}`
-
-	var person Person
-
-	err := json.Unmarshal([]byte(jsonData), &person)
-	if err != nil {
-		fmt.Println("Error parsing JSON:", err)
-	}
-
-	fmt.Println("Name:", person.Name)
-	fmt.Println("Age:", person.Age)
-	fmt.Println("Hobbies:", person.Hobbies)
-}
-```
-
-При запуску цього коду буде виведено наступний результат:
-
-```bash
-Name: John
-Age: 30
-Hobbies: [reading running]
-```
-
-Щоб згенерувати JSON з об'єктів типу struct, можна використовувати метод "Marshal" пакету "encoding/json". Наступний приклад коду демонструє цей підхід:
-
-```Go
-package main
-
-import (
-	"encoding/json"
-	"fmt"
-)
-
-type Person struct {
-	Name    string `json:"name"`
-	Age     int    `json:"age"`
-	Hobbies []string `json:"hobbies"`
+  user := User{Name: "John Doe", Age: 24}
+  jsonString, _ := json.Marshal(user)
+  fmt.Println(string(jsonString)) // {"name":"John Doe","age":24}
 }
 
+// Отримання даних з JSON об'єкта
 func main() {
-	person := Person{Name: "Mary", Age: 25, Hobbies: []string{"painting", "hiking"}}
-
-	result, err := json.Marshal(person)
-	if err != nil {
-		fmt.Println("Error encoding JSON:", err)
-	}
-
-	fmt.Println(string(result))
+  jsonString := `{"name":"Jane Doe","age":28}`
+  var user User
+  json.Unmarshal([]byte(jsonString), &user)
+  fmt.Println(user.Name, user.Age) // Jane Doe 28
 }
 ```
 
-Після запуску цього коду буде виведений наступний результат:
+## Глибоке занурення:
 
-```bash
-{"name":"Mary","age":25,"hobbies":["painting","hiking"]}
-```
+JSON був створений як спосіб поєднати дві популярні технології - JavaScript та обмін даними. Це обрало велику популярність завдяки своїй простоті та універсальності. Існують також альтернативні формати, такі як XML та YAML, але JSON залишається простішим та ширше використовується. У програмуванні з Go, робота з JSON є необхідною для забезпечення взаємодії з різними сервісами та додатками.
 
-##Глибокий занурення
+## Дивись також:
 
-У мові програмування Go є багато інших способів роботи з JSON. Наприклад, пакет "encoding/json" дозволяє задавати налаштування для кодування та декодування JSON з використанням тегів структури. Також є можливість використовувати інші пакети, такі як "jsoniter", для більш швидкої та ефективної роботи з JSON.
-
-##Дивіться також
-
-- [Офіційна документація Go для пакету "encoding/json"](https://golang.org/pkg/encoding/json/)
-- [Довідкова стаття про роботу з JSON в Go на сайті Medium](https://medium.com/@arslando/json-processing-in-go-part-i-3b3fc32a8600)
-- [Стаття про роботу з JSON у мові програмування Go на сайті dev.to](https://dev.to/wagslane/working-with-json-in-go-is-a-breeze-4j4e)
+- [Офіційна документація Go для роботи з JSON] (https://golang.org/pkg/encoding/json/)
+- [Стаття "Розуміння JSON: Що це таке та як з ним працювати" (англ.)] (https://blog.golang.org/json-and-go)
+- [Стаття "Робота з JSON в Go" (рос.)] (https://habr.com/en/post/317266/)

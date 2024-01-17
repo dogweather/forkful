@@ -1,7 +1,7 @@
 ---
-title:                "भाषा प्रोग्रामिंग पर एक लेख का शीर्षक: यादृच्छिक संख्याओं का उत्पादन"
-html_title:           "Java: भाषा प्रोग्रामिंग पर एक लेख का शीर्षक: यादृच्छिक संख्याओं का उत्पादन"
-simple_title:         "भाषा प्रोग्रामिंग पर एक लेख का शीर्षक: यादृच्छिक संख्याओं का उत्पादन"
+title:                "कंप्यूटर प्रोग्रामिंग पर किसी भी संख्याओं को उत्पन्न करना"
+html_title:           "Java: कंप्यूटर प्रोग्रामिंग पर किसी भी संख्याओं को उत्पन्न करना"
+simple_title:         "कंप्यूटर प्रोग्रामिंग पर किसी भी संख्याओं को उत्पन्न करना"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Numbers"
@@ -10,39 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Kyun
-Random numbers ka upyog kyun kiya jaata hai? Random numbers ki vyavastha aapke program mein prabhaav ko badhaane ke liye squash tatha cryptographically secure communications mein iska upyog kiya ja sakta hai.
+क्या और क्यों?
+प्रोग्रामर यादृच्छिक संख्याओं को उत्पन्न करते हैं। वे यह करते हैं क्योंकि यादृच्छिक संख्याओं को उपयोग करके वे अपनी प्रोग्रामों में विभिन्न जानकारी या प्रतिक्रियाएं बना सकते हैं।
 
-## Kaise
-```Java
-// Random class ka import
-import java.util.Random;
+कैसे करें:
+यहां हम दो उदाहरण देखेंगे जिनमें हम "Math.random()" मेथड का उपयोग करके यादृच्छिक संख्याएं बना सकते हैं।
 
-// Object banaye
-Random random = new Random();
-
-// Integer random number generate karein
-int randomNumber = random.nextInt();
-
-// Diye gaye range ke beech mein random number generate karein
-int randomNumberInRange = random.nextInt(100 - 50) + 50;
-
-// Double random number generate karein
-double randomDouble = random.nextDouble();
-
-// Boolean random value generate karein
-boolean randomBoolean = random.nextBoolean();
-
-// Sample output
-System.out.println("Random number: " + randomNumber);
-System.out.println("Random number in range: " + randomNumberInRange);
-System.out.println("Random double: " + randomDouble);
-System.out.println("Random boolean: " + randomBoolean);
+```java
+// यादृच्छिक दो संख्याओं को मुद्रित करें
+System.out.println(Math.random());
+System.out.println(Math.random());
 ```
 
-## Deep Dive
-Random numbers ko generate karne ke liye, Java mein `random` class ka upyog hota hai. Is class mein `nextInt()` method se integer random numbers aur `nextDouble()` method se double random numbers generate kar sakte hain. Iske alawa `nextBoolean()` method se boolean random values bhi generate ki ja sakti hain. Is method ka upyog seed value ki madad se bhi kiya ja sakta hai, jisse same sequence mein random numbers generate kiya ja sake.
+इस स्क्रिप्ट को रन करने पर हमें कुछ इस तरह का आउटपुट मिलेगा:
 
-## See Also
-- [Oracle Java Random Documentation](https://docs.oracle.com/javase/8/docs/api/java/util/Random.html)
-- [Java Randomization Tutorial](https://www.baeldung.com/java-random)
+```
+0.7234
+0.156
+```
+
+गोल नंबर:
+अद्यतन करने के लिए यादृच्छिक संख्याओं को बनाने का एक अन्य उपाय "Random" ऑब्जेक्ट का उपयोग करना है।
+
+```java
+// रैंडम ऑब्जेक्ट बनाएं
+Random rand = new Random();
+
+// यादृच्छिक एक संख्या प्राप्त करें
+int num = rand.nextInt();
+
+// प्रारंभिक और अंतिम सीमा द्वारा निर्धारित एक संख्या प्राप्त करें
+int numInRange = rand.nextInt(100) + 1;
+System.out.println(numInRange);
+```
+
+इस स्क्रिप्ट को रन करने पर हमें कुछ इस तरह का आउटपुट मिलेगा:
+
+```
+56
+```
+
+कहानी का समय:
+यादृच्छिक संख्याओं को परिभाषित करने का पहला तरीका एक सरल फार्मूला "यादृच्छिक नंबर तथ्यांक" उपयोग करना था। इसके बाद 1960 में IBM ने "RANDU" जेनरेटर को बनाया जो कि अब भी कुछ भविष्यवाणियों के लिए उपयोग में है।
+
+अल्टरनेटिव:
+यदि आप यादृच्छिक संख्याओं को उपयोग करने के लिए एक तीसरा तरीका चाहते हैं, तो आप एक "SecureRandom" ऑब्जेक्ट का उपयोग कर सकते हैं जो कि इसमें कुछ अतिरिक्त सुरक्षा सुविधाओं को शामिल करता है।
+
+नीचे देखें:
+अधिक जानकारी के लिए नीचे दी गई साइटें देखें:
+- https://www.geeksforgeeks.org/java-math-random-method-examples/
+- https://www.baeldung.com/java-generate-random-long-float-integer-double
+- https://www.tutorialspoint.com/java/lang/math_random.htm

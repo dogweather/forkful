@@ -1,7 +1,7 @@
 ---
-title:                "「文字列の連結」"
-html_title:           "Kotlin: 「文字列の連結」"
-simple_title:         "「文字列の連結」"
+title:                "文字列の連結"
+html_title:           "Kotlin: 文字列の連結"
+simple_title:         "文字列の連結"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Strings"
@@ -10,45 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+## 何をして、なぜ?
 
-文字列の連結を行うことの利点は、文字列をより効率的に処理することができるためです。例えば、各文字列を個別に操作するのではなく、1つの長い文字列として処理することで、より複雑な操作を簡単に行うことができます。
+文字列を連結するとは、複数の文字列を一つにまとめることです。プログラマーは、文字列を連結することで、より複雑な文字列を作成できます。
 
-## 方法
-
-文字列の連結を行うには、Kotlin言語で用意されている`+`演算子を使用します。例えば、以下のように書くことで複数の文字列を連結することができます。
+## 方法:
 
 ```Kotlin
-val str1 = "Hello"
-val str2 = "world"
-val str3 = str1 + ", " + str2
-print(str3) // 出力結果: Hello, world
+// 文字列を連結する方法
+val name = "田中"
+val age = 25
+val message = "私の名前は" + name + "です。年齢は" + age + "歳です。"
+println(message)
+
+// Output:
+// 私の名前は田中です。年齢は25歳です。
 ```
 
-また、文字列の連結には`plus()`関数も利用することができます。
+## 詳細:
+
+文字列の連結は、一つの文字列を作成するための一番簡単な方法です。実際、多くのプログラミング言語で、文字列を連結するための専用の演算子が用意されています。Kotlinでは、プラス記号（+）を使用して文字列を連結することができます。
+
+Kotlinでは、文字列の連結に加えて、テンプレート文字列を使用することもできます。テンプレート文字列では、変数や式を文字列の中に埋め込むことができます。例えば、先ほどのコードをテンプレート文字列を使って書くと次のようになります。
 
 ```Kotlin
-val str1 = "Hello"
-val str2 = "world"
-val str3 = str1.plus(", ").plus(str2)
-print(str3) // 出力結果: Hello, world
+// テンプレート文字列を使った文字列の連結
+val name = "田中"
+val age = 25
+val message = "私の名前は$nameです。年齢は$age歳です。"
+println(message)
+
+// Output:
+// 私の名前は田中です。年齢は25歳です。
 ```
 
-さらにKotlinでは、文字列テンプレートという機能を使用することで、連結ではなく文字列の中に変数を埋め込むこともできます。
+## 参考:
 
-```Kotlin
-val name = "John"
-val str = "Hello, $name"
-print(str) // 出力結果: Hello, John
-```
-
-## ディープダイブ
-
-文字列の連結は内部的にはStringBuilderクラスを使用して行われます。StringBuilderは可変の文字列を扱うためのクラスであり、`append()`メソッドを使用することで文字列を連結していきます。
-
-また、文字列の連結は単純な操作のように見えますが、大きなループ内で行われる場合などにはパフォーマンス上の問題が生じる可能性があります。そのため、より高速な文字列連結を行えるように最適化された`StringBuilder`クラスを使用することを推奨します。
-
-## その他
-
-- [Kotlinプログラミング言語公式サイト](https://kotlinlang.org/)：Kotlinの最新情報やリファレンス、ドキュメンテーションなどが掲載されています。
-- [Kotlinコミュニティフォーラム](https://discuss.kotlinlang.org/)：多くのKotlinユーザーが参加し、質問や議論を行うことができるコミュニティフォーラムです。
+- [Kotlin Documentation](https://kotlinlang.org/docs/reference/basic-types.html#strings)
+- [Kotlin String Concatenation with Examples](https://www.opentechguides.com/how-to/article/kotlin/106/kotlin-string-concatenation.html)
+- [Kotlin String Templates](https://kotlinlang.org/docs/reference/basic-types.html#string-templates)

@@ -10,49 +10,64 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-If you're an English reader looking to learn Elm, chances are you're either a beginner programmer or you're interested in functional programming. Whatever the case may be, learning how to read a text file in Elm is a useful skill to have. It allows you to easily access and manipulate data from external sources, such as APIs or user-generated files.
+Reading a text file is the process of extracting data from a file that is in a plain text format. Programmers often do this to access important information or to manipulate and analyze data. It is a vital skill for any programmer, especially for those working with large datasets or creating applications that need to process text-based information.
 
-## How To
+## How to:
 
-Reading a text file in Elm is fairly straightforward. First, we need to import the necessary module by adding `import File` to the top of our code. Next, we can use the `File.read` function to read in a file. Here's an example:
+To read a text file in Elm, we can use the `Text` library's `fromString` function. This function takes in a string containing the file's contents and converts it into a `Text` value, which can then be used for further processing. 
 
-```Elm
-import File
-
-readTextFile : (Result String String -> msg) -> Sub msg
-readTextFile callback =
-  File.read "example.txt" callback
-```
-In this example, we're using a callback function to handle the result of the file read operation. The `File.read` function takes in the file path and the callback function as its arguments. Once the file has been read, the callback function will be called with a `Result` type, which can either be `Ok` or `Err`.
-
-To access the actual contents of the file, we can use the `Result.withDefault` function. Here's an example:
+Example:
 
 ```Elm
-import File exposing (read)
-import Result exposing (withDefault)
+import Text
 
-main =
-  read "example.txt" (`withDefault` "") -- default value to return if file cannot be read
+readFile : String -> Task err Text
+readFile path =
+  File.read path
+    |> Task.map Text.fromString
 ```
 
-In this example, we're using the `withDefault` function to handle potential errors when reading the file. If the file cannot be read, the default value of an empty string will be returned.
+The above code uses the `File.read` function from the `File` library, which reads the contents of a file into a `String`. This `String` is then converted into a `Task` using the `Task.map` function, which allows us to perform some action on the value once it is available.
 
-## Deep Dive
+To use this function, we need to provide the path of the text file we want to read. This can be done by passing the path as an argument to the `readFile` function.
 
-Now, let's take a deeper look at the `File.read` function and its type signature:
+Output:
 
 ```
-read : String -> (Result String String -> msg) -> Sub msg
+Task { value = Ok "This is the contents of the text file." }
 ```
 
-As we can see, the function takes in a `String` (representing the file path) and a callback function with the `Result String String` type. This type represents a `Result` that either contains a `String` or an error message.
+As shown in the output, the file's contents are wrapped in the `Task` type, which allows for asynchronous handling of data. To extract the actual value, we can use the `Task.attempt` function, which takes in a `Decoder` and returns a `Task` with the decoded value. 
 
-Additionally, the `File.read` function returns a `Sub` type, which is a type used in Elm for handling subscriptions to external events. This is because reading a file is an asynchronous operation, meaning that we want to wait for the file to be read before continuing with our program.
+Example:
 
-## See Also
+```Elm
+import Task exposing (attempt)
+import Json.Decode exposing (Decoder, string)
 
-- [Elm Docs - File](https://package.elm-lang.org/packages/elm/file/latest/)
-- [Elm Tutorial - Reading and Writing Files](https://elmprogramming.com/reading-files-elm.html)
-- [Codepen - Reading Text File in Elm](https://codepen.io/sharkdp/pen/eYJWeQJ)
+fileDecoder : Decoder String
+fileDecoder =
+  string
+
+getFileContents : String -> Task String String
+getFileContents path =
+  readFile path
+    |> attempt fileDecoder
+```
+
+We can then use the `getFileContents` function to get the contents of the file and use them in our application.
+
+## Deep Dive:
+
+The ability to read text files has been a part of programming since the early days, with the first programming languages like COBOL supporting file I/O operations. In Elm, reading text files was previously possible using the `Http` library, but it was removed in version 0.19 due to security concerns.
+
+An alternative to using the `Task` type to handle file reading is to use the `Browser.File` library, which allows for selecting a file from the user's system and reading it directly. However, this approach is only suitable for applications running in the browser and not native applications.
+
+Implementation details of reading text files in Elm can be found in the `File` and `Text` libraries, which use native code to access the system's file system and convert the file's contents into a usable format.
+
+## See Also:
+
+- Elm File: https://package.elm-lang.org/packages/elm/file/latest/
+- Elm Text: https://package.elm-lang.org/packages/elm/core/latest/Text

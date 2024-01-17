@@ -1,7 +1,7 @@
 ---
-title:                "Capitalizzare una stringa"
-html_title:           "C++: Capitalizzare una stringa"
-simple_title:         "Capitalizzare una stringa"
+title:                "Maiuscolare una stringa"
+html_title:           "C++: Maiuscolare una stringa"
+simple_title:         "Maiuscolare una stringa"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -10,76 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
-Ci sono molte situazioni in cui è necessario convertire una stringa in maiuscolo, come ad esempio nel controllo delle password, nella gestione di dati sensibili o nella formattazione di output. In questo articolo, vedremo come eseguire questa operazione utilizzando il linguaggio di programmazione C++.
+# Che cos'è e perché: 
+Il processo di capitalizzazione di una stringa si riferisce alla trasformazione dei caratteri iniziali di ogni parola in maiuscolo. Questo è comunemente fatto dai programmatori per rendere più leggibile il testo e per seguire le convenzioni di stile dei linguaggi di programmazione come il C++.
 
-## Come Fare
-Per convertire una stringa in maiuscolo in C++, è possibile utilizzare la funzione `toupper` presente nella libreria `cctype`. Di seguito è riportato un esempio di codice che mostra come utilizzarla:
-
-```
+# Come fare:
+```C++
 #include <iostream>
-#include <cctype>
+#include <string>
+
 using namespace std;
 
 int main() {
-  string str = "questa è una stringa in minuscolo";
-  for (char& c : str) {
-    c = toupper(c);
+  string str = "prova di capitalizzazione";
+  for (int i = 0; i < str.length(); i++) {
+    str[i] = toupper(str[i]);
   }
   cout << str << endl;
   return 0;
 }
 ```
+## Output: "PROVA DI CAPITALIZZAZIONE"
 
-L'output di questo codice sarà:
+# Approfondimento:
+La capitalizzazione delle stringhe è un processo comune nei linguaggi di programmazione ed è spesso utilizzata per una migliore leggibilità del codice. In passato, i computer non erano in grado di riconoscere le lettere maiuscole e minuscole, quindi l'utilizzo di capitali era un modo per distinguere tra parole diverse. Tuttavia, oggi questo non è più necessario e si tratta più di una convenzione di stile. Alternativamente, è possibile utilizzare una funzione di formattazione delle stringhe come "capitalize" per ottenere lo stesso risultato.
 
-```
-QUESTA È UNA STRINGA IN MINUSCOLO
-```
-
-In questo esempio, la funzione `toupper` viene utilizzata all'interno di un ciclo `for` per convertire ogni carattere della stringa in maiuscolo.
-
-## Approfondimento
-È importante notare che la funzione `toupper` converte solo i caratteri alfabetici in maiuscolo e lascia invariati gli altri. Inoltre, è possibile utilizzare la funzione `tolower` per convertire una stringa in minuscolo. Entrambe le funzioni accettano un carattere come parametro e restituiscono il corrispondente carattere convertito.
-
-Per convertire una stringa in maiuscolo o minuscolo senza modificarla direttamente, è possibile utilizzare la classe `stringstream` presente nella libreria `sstream`. Di seguito è riportato un esempio di codice che utilizza questa classe:
-
-```
-#include <iostream>
-#include <sstream>
-using namespace std;
-
-int main() {
-  string str = "questa è una stringa in minuscolo";
-  stringstream ss(str);
-  string converted;
-
-  // Conversione in maiuscolo
-  while (ss >> str) {
-    converted +=toupper(str[0]) + str.substr(1) + " ";
-  }
-  cout << converted << endl;
-
-  // Conversione in minuscolo
-  while (ss >> str) {
-    converted +=tolower(str[0]) + str.substr(1) + " ";
-  }
-  cout << converted << endl;
-
-  return 0;
-}
-```
-
-L'output di questo codice sarà:
-
-```
-Questa È Una Stringa In Minuscolo 
-questa è una stringa in minuscolo
-```
-
-In questo esempio, la classe `stringstream` viene utilizzata per separare la stringa in singole parole, convertire la prima lettera di ogni parola in maiuscolo o minuscolo e infine ricostruire la stringa originale con le conversioni applicate.
-
-## Vedi Anche
-Per ulteriori informazioni su come gestire le stringhe in C++, consulta questi articoli:
-- [C++ Strings](https://www.geeksforgeeks.org/c-string-class-and-its-applications/) (in inglese)
-- [Le Stringhe in C++: Modellazione, Formattazione e Gestione](https://www.html.it/pag/33363/stringhe-cpp/) (in italiano)
+# Vedi anche:
+- [Funzione "capitalize" in C++](https://www.cplusplus.com/reference/string/string/capitalize/)
+- [Convenzioni di stile in C++](https://en.wikipedia.org/wiki/C++_Core_Guidelines)

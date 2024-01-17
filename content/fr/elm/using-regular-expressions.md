@@ -1,7 +1,7 @@
 ---
-title:                "Utiliser les expressions régulières"
-html_title:           "Elm: Utiliser les expressions régulières"
-simple_title:         "Utiliser les expressions régulières"
+title:                "Utilisation des expressions régulières."
+html_title:           "Elm: Utilisation des expressions régulières."
+simple_title:         "Utilisation des expressions régulières."
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -10,53 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Qu'est-ce que c'est et pourquoi le faire?
 
-Si vous avez déjà essayé de chercher ou de manipuler des chaînes de caractères dans un langage de programmation, vous avez probablement réalisé à quel point cela peut être fastidieux et répétitif. Les expressions régulières, ou regex, sont un outil très utile pour rechercher, extraire et remplacer des motifs de chaînes de caractères de manière efficace et rapide.
+Les expressions régulières sont un outil utile pour rechercher et manipuler des motifs de texte. Les programmeurs les utilisent pour effectuer des opérations telles que la validation de formats de saisie utilisateur, le filtrage de données et la recherche de mots-clés dans du texte.
 
-## Comment faire
+## Comment faire:
 
-Dans Elm, les regex sont introduites avec la syntaxe `/pattern options/`, où le motif est entouré de deux barres obliques et les options sont facultatives et apparaissent après le motif. Voici un exemple de regex simple qui recherche les mots "hello" ou "salut" dans une chaîne de caractères :
+Utiliser des expressions régulières en Elm est assez simple. Tout d'abord, importez le module `Regex` dans votre fichier. Ensuite, utilisez la fonction `Regex.regex` pour créer un objet de type `Regex` en passant un motif de texte comme argument. Vous pouvez ensuite utiliser les fonctions `Regex.find` ou`Regex.replace` pour effectuer des opérations de recherche ou de remplacement avec votre expression régulière.
 
-```Elm
-import Regex exposing (Regex)
+```
+Elm
+import Regex
 
-input = "Bonjour à tous! Salut les amis!"
+-- Crée un objet Regex pour rechercher "elm"
+rechercheRegex = Regex.regex "elm"
 
-pattern = Regex.regex "/(hello|salut)/"
+-- Effectue une recherche dans le texte "Ce cours est pour vous, novice d'Elm!"
+Regex.find rechercheRegex "Ce cours est pour vous, novice d'Elm!"
 
-result = Regex.find pattern input
-
--- Le résultat sera [|(Just (1,5, "salut"))|]
+-- Résultat: Juste (Ok (Match "elm"))
 ```
 
-Comme vous pouvez le voir, la fonction `Regex.find` renvoie le résultat sous forme de liste contenant des tuples avec les correspondances trouvées. Dans cet exemple, nous avons trouvé le mot "salut" à partir de l'index 1 (en raison de l'option "g" pour une recherche globale).
+## Plongée en profondeur:
 
-Les regex peuvent également être utilisées pour capturer des sous-groupes de motifs en utilisant des parenthèses. Voici un exemple où nous cherchons à capturer un numéro de téléphone avec un code de pays à partir d'une chaîne de caractères :
+Les expressions régulières sont basées sur une notation appelée "expressions régulières". Elles ont été inventées par un informaticien américain Kenneth Thompson dans les années 1950. Bien qu'elles soient largement utilisées dans les langages de programmation, il existe d'autres outils tels que les lexiques basés sur les expressions régulières et d'autres langages spécifiques à un domaine.
 
-```Elm
-input = "Mon numéro de téléphone est +33 6 12 34 56 78"
+## Voir aussi:
 
-pattern = Regex.regex "/\\+(\\d{2}) (\\d{1,2} ?){5}/"
-
-result = Regex.find pattern input
-
--- Le résultat sera [|(Just (21,24, "33")),(Just (25,27, "6")),(Just (28,32, "12")),(Just (33,35, "34")),(Just (36,38, "56")),(Just (39,41, "78"))|]
-```
-
-Pour plus d'exemples et d'informations sur les options disponibles en Elm pour les regex, consultez la documentation officielle.
-
-## Plongée en profondeur
-
-Les regex peuvent sembler déroutantes au début en raison de leur syntaxe cryptique et de leur utilisation de caractères spéciaux pour définir des motifs. Cependant, une fois que vous avez compris les bases, elles peuvent être un outil puissant pour automatiser des tâches de manipulation de chaînes de caractères. Voici quelques conseils à garder en tête lors de l'utilisation de regex en Elm :
-
-- Utilisez des caractères d'échappement pour éviter toute confusion avec les caractères spéciaux.
-- Utilisez des options telles que "i" pour une recherche insensible à la casse et "m" pour rechercher sur plusieurs lignes.
-- Expérimentez avec différents sites en ligne pour tester vos regex.
-- N'oubliez pas que les regex peuvent être coûteuses en termes de performances, essayez donc d'optimiser votre motif si possible.
-
-## Voir aussi
-
-- [Documentation officielle Elm pour les regex](https://package.elm-lang.org/packages/elm/regex/latest/)
-- [Un guide complet pour apprendre les regex](https://regexone.com/)
-- [Un outil interactif en ligne pour tester les regex en temps réel](https://regex101.com/)
+Pour en savoir plus sur les expressions régulières en Elm, vous pouvez consulter la documentation officielle sur le module `Regex` : https://package.elm-lang.org/packages/elm/regex/latest/Regex. Vous pouvez également trouver utile de consulter des ressources supplémentaires telles que https://regexone.com/ pour apprendre davantage sur les motifs de texte et leur utilisation dans les expressions régulières.

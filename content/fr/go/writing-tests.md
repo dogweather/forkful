@@ -1,7 +1,7 @@
 ---
-title:                "Écrire des tests"
-html_title:           "Go: Écrire des tests"
-simple_title:         "Écrire des tests"
+title:                "Ecrire des tests"
+html_title:           "Go: Ecrire des tests"
+simple_title:         "Ecrire des tests"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Testing and Debugging"
@@ -10,39 +10,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+Qu'est-ce que c'est ?
+L'écriture de tests est un processus par lequel les programmeurs vérifient si leur code fonctionne correctement. Cela implique de créer des cas de test pour couvrir différents scénarios et d'écrire du code pour s'assurer que le code initial fonctionne comme prévu.
 
-Ecrire des tests est essentiel pour garantir la qualité et la stabilité du code. Les tests aident à détecter et à corriger les bogues avant qu'ils n'affectent les utilisateurs finaux, ce qui permet d'économiser du temps et de l'argent à long terme.
+Pourquoi le faire ?
+Les tests sont importants car ils permettent de s'assurer que le code est exempt d'erreurs et fonctionne comme prévu. Cela peut aider à réduire les bogues et à améliorer la qualité du code. De plus, en écrivant des tests, les programmeurs peuvent également détecter les problèmes plus tôt dans le processus de développement et les corriger avant qu'ils ne deviennent des problèmes plus importants.
 
-## Comment faire
+Comment faire ?
+Voici un exemple de code en Go pour illustrer comment écrire des tests :
 
-Ecrire des tests en Go est simple et efficace grâce à son intégration native avec le package de tests standard. Voici un exemple de test simple pour une fonction qui retourne la somme de deux nombres :
+```
+package main
 
-```Go
-func Sum(a, b int) int {
-    return a + b
+import "fmt"
+
+// Fonction d'addition simple
+func addition(a, b int) int {
+	return a + b
 }
 
-func TestSum(t *testing.T) {
-    result := Sum(2, 3)
-    expected := 5
+func main() {
+	// Tests pour la fonction addition
+	tests := []struct {
+		input1 int
+		input2 int
+		expectedOutput int
+	}{
+		{2, 2, 4},
+		{5, 7, 12},
+		{-3, 10, 7},
+	}
 
-    if result != expected {
-        t.Errorf("Expected %d, but received %d", expected, result)
-    }
+	for _, test := range tests {
+		result := addition(test.input1, test.input2)
+		if result == test.expectedOutput {
+			fmt.Printf("Le résultat de %d + %d est %d. Test réussi !\n", test.input1, test.input2, result)
+		} else {
+			fmt.Printf("Le résultat de %d + %d était incorrect. Le résultat réel est %d\n", test.input1, test.input2, result)
+		}
+	}
 }
 ```
 
-L'utilisation de "testing.T" permet d'effectuer des assertions pour vérifier si les résultats sont conformes aux attentes. En exécutant "go test" dans le terminal, le test sera exécuté et le résultat sera affiché : "PASS".
+Résultat du code :
 
-## Approfondissement
+```
+Le résultat de 2 + 2 est 4. Test réussi !
+Le résultat de 5 + 7 est 12. Test réussi !
+Le résultat de -3 + 10 est 7. Test réussi !
+```
 
-Ecrire des tests en Go offre une grande flexibilité. Les tests peuvent être organisés en différents fichiers, ce qui facilite la maintenance à mesure que le code s'agrandit. De plus, les tests peuvent être exécutés en parallèle, ce qui permet de gagner du temps lors de la phase de test.
+Plongée en profondeur
+Les tests unitaires, qui sont des tests pour des parties spécifiques du code, ont été introduits pour la première fois dans le cadre de la méthodologie de développement piloté par les tests (TDD). Cette approche consiste à écrire les tests avant même l'écriture du code, et à s'assurer que tous les tests réussissent avant de passer à la phase de développement suivante. Certains développeurs préfèrent également utiliser des outils de test tels que GoConvey pour optimiser le processus de test.
 
-Pour écrire des tests plus complexes, Go offre des fonctionnalités telles que les table-driven tests, qui permettent de tester plusieurs valeurs d'entrée avec les mêmes assertions. Les sous-tests sont également utiles pour tester plusieurs scénarios avec différentes mises en place de données.
-
-## Voir aussi
-
-- [Documentation de Go sur le package de tests](https://golang.org/pkg/testing/)
-- [Guide pour écrire des tests en Go](https://blog.golang.org/subtests)
-- [Table-driven tests en Go](https://medium.com/@quii/learn-go-by-writing-tests-345b0c0c0d8b)
+Voir également
+- [Apprenez à écrire des tests en Go](https://blog.golang.org/test)
+- [Code de l'exemple de test en Go](https://gist.github.com/asankov/5322deccd565ffce0659bd9f16607e5c)
+- [Documentation Go sur les tests](https://golang.org/pkg/testing/)

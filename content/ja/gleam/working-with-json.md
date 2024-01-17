@@ -1,7 +1,7 @@
 ---
-title:                "「jsonを使ったプログラミング」"
-html_title:           "Gleam: 「jsonを使ったプログラミング」"
-simple_title:         "「jsonを使ったプログラミング」"
+title:                "「JSONを使う」"
+html_title:           "Gleam: 「JSONを使う」"
+simple_title:         "「JSONを使う」"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Data Formats and Serialization"
@@ -10,76 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜJSONを使うのか
+# JSONを扱うためにGleamを使おう！
 
-JSONは、データを簡潔で読みやすい形式で表現することができるため、プログラマーにとって非常に便利なフォーマットです。また、多くのウェブアプリケーションやモバイルアプリケーションでも使用されているため、JSONを理解して扱うことは非常に重要です。
+こんにちは、みなさん！今回は、Gleamを使ってJSONを扱う方法についてお話しします。JSONとは何か、そしてプログラマーがなぜそれを使うのか、まずは簡単にご説明しましょう。
 
-## JSONの扱い方
+## 詳しくはどうするの？
 
-JSONを使うには、Gleamの`jsone`モジュールをインポートする必要があります。次のコードは、簡単なJSONオブジェクトを作成し、その内容をコンソールに出力する例です。
+JSONは、データを格納してやりとりするための一般的なフォーマットです。プログラマーは、JSONを使うことでデータをより簡単に扱うことができます。例えば、ウェブアプリケーションを開発する際に、サーバーからクライアントにデータを送信する際によく使われます。
 
-```Gleam
-import jsone
+## やり方は？
 
-let user = jsone.encode({
-  "name": "John",
-  "age": 30,
-  "hobbies": ["reading", "hiking", "cooking"]
-})
+GleamでJSONを扱うには、まずは```json```モジュールをインポートします。
 
-jsone.pretty_print(user)
+```gleam
+import json
 ```
 
-出力結果は以下のようになります。
+次に、JavaScriptのようにJSONを解析することができます。例えば、次のコードでは、JSONを文字列から値に変換します。
 
-```
-{
-  "name": "John",
-  "age": 30,
-  "hobbies": [
-    "reading",
-    "hiking",
-    "cooking"
-  ]
-}
+```gleam
+let value = json.parse("{\"name\": \"John\", \"age\": 30}")
 ```
 
-また、データをJSONからGleamのデータ型に変換することもできます。次の例では、JSONからGleamのレコード型を作成し、その内容をコンソールに出力しています。
+また、JSONを文字列に変換することもできます。
 
-```Gleam
-import jsone
-
-let user_string = "{ \"name\": \"Alice\", \"age\": 25, \"hobbies\": [\"painting\", \"traveling\"] }"
-
-let user = jsone.decode(user_string)
-
-io.println(user.name) // => "Alice"
-io.println(user.age) // => 25
-for hobby in user.hobbies {
-  jsone.pretty_print(hobby) // => "painting" と "traveling"が順に出力される
-}
+```gleam
+let str = json.stringify({"name": "John", "age": 30})
 ```
 
-## JSONの深層への旅
+## 深入りする
 
-より複雑なJSONオブジェクトを扱うためには、Gleamのパターンマッチングを使うことができます。次の例では、JSONの配列から特定の要素を取り出し、それをGleamの整数型に変換しています。
+JSONは、データ交換フォーマットとして1990年代から使用されてきました。しかし、もしあなたがJSONに代わるものをお探しであれば、YAMLやXMLなどの他のフォーマットもあります。
 
-```Gleam
-import jsone
+Gleamの```json```モジュールは、一部動的な方法を使用してJSONを解析および生成するため、パフォーマンスが向上します。しかし、Gleamのモジュールではなく、他のライブラリを使用することもできます。
 
-let numbers_string = "[1, 2, 3, 4, 5]"
+## 関連リンク
 
-let numbers = jsone.decode(numbers_string)
-
-let first = case numbers {
-  [head, .._] -> jsone.int(head)
-  _ -> panic("This should not happen!")
-}
-
-io.println(first) // => 1
-```
-
-## 関連情報
-
-- [Gleam公式ドキュメント（英語）](https://gleam.run/)
-- [GleamのJSONモジュールについて（英語）](https://gleam.run/documentation/stdlib/jsone/)
+- [Gleamの公式ウェブサイト](https://gleam.run/)
+- [JSONのドキュメント](https://www.json.org/json-en.html)

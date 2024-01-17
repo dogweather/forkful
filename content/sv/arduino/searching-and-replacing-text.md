@@ -10,48 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
-När du skriver kod för ditt Arduino-projekt är det lätt att göra misstag och behöva ändra text på flera ställen. Genom att använda sök- och ersättfunktionen kan du snabbt och enkelt ändra alla förekomster av en viss text i ditt kod.
+## Vad & Varför?
 
-## Så här gör du
+Sökning och ersättning av text är en vanlig uppgift inom programmering. Det innebär att söka efter en viss text i en given sträng och ersätta den med en annan text. Programmarbetare gör detta för att kunna snabbt och effektivt byta ut eller ändra specifika delar av en kod, istället för att manuellt söka efter dem och ändra dem en efter en.
 
-För att söka och ersätta text i din Arduino-kod, används funktionen ```replace``` tillsammans med ```find```. Här är ett exempel på hur du kan använda dem:
+## Så här gör du:
 
-```
-Arduino.replace("fel", "rätt");
-Arduino.find("fel");
-```
+För att söka och ersätta text i ditt Arduino-program, kan du använda funktionerna indexOf() och replace().
 
-Det här koden kommer att hitta alla förekomster av ordet "fel" och ersätta dem med ordet "rätt". Om du vill söka efter flera ord på en gång kan du använda en lista med ord istället för bara ett ord:
-
-```
-Arduino.replace(["fel1", "fel2", "fel3"], "rätt");
-Arduino.find(["fel1", "fel2", "fel3"]);
+```Arduino
+String myString = "Hej Svenska läsare!";
+int index = myString.indexOf("läsare"); // söker efter första förekomsten av "läsare"
+myString.replace(index, 7, "vänner"); // ersätter "läsare" med "vänner"
+Serial.println(myString); // skriver ut: Hej Svenska vänner!
 ```
 
-Du kan också använda en variabel för att söka efter ett visst ord:
+Du kan också använda funktionen replaceAll() för att söka och ersätta alla förekomster av en viss text i en sträng.
 
-```
-String fel = "fel1";
-Arduino.replace(fel, "rätt");
-Arduino.find(fel);
-```
-
-När du använder funktionen ```replace``` och ```find```, så är det viktigt att du håller koll på stor- och småbokstäver. Om du vill ersätta både "fel" och "Fel" måste du anropa funktionerna två gånger och ersätta båda varianterna av ordet.
-
-För att se hur din kod kommer att se ut efter att du har använt funktionen ```replace```, kan du använda funktionen ```println```:
-
-```
-Arduino.println();
+```Arduino
+String myString = "Hej Sverige! Hej månsken! Hej finska sjöar!";
+myString.replaceAll("Hej", "Hallå");
+Serial.println(myString); // skriver ut: Hallå Sverige! Hallå månsken! Hallå finska sjöar!
 ```
 
-Det här kommer att skriva ut din kod med alla förekomster av det sökta ordet ersatt med det nya ordet.
+## Djupdykning:
 
-## Deep Dive
+Sökning och ersättning av text är en viktig del av textmanipulering inom programmering. Det finns olika sätt att genomföra detta, såsom användning av reguljära uttryck eller bibliotek som tillhandahåller mer avancerade funktioner.
 
-När du använder dig av funktionerna ```find``` och ```replace``` på din kod, så kommer det att bli en högre bearbetning för Arduino, vilket kan påverka din kod för långsam. Om du märker att din kod tar väldigt lång tid att bli exekverad eller inte fungerar som den ska, kan du överväga att använda en annan sökmetod, som till exempel manuellt ersätta varje förekomst av den sökta texten.
+Vid implementering av sökning och ersättning av text är det viktigt att ta hänsyn till teckensättning och stor- och småbokstäver, eftersom dessa kan påverka sökresultaten.
 
-## Se även
+## Se även:
 
-* [Funktionsreferens för Arduino - replace()](https://www.arduino.cc/reference/en/language/structure/strings/stringobject/replace/)
-* [Funktionsreferens för Arduino - find()](https://www.arduino.cc/reference/en/language/functions/advanced-io/find/)
+Du kan läsa mer om funktionerna indexOf(), replace() och replaceAll() i Arduinos referensdokumentation:
+[https://www.arduino.cc/reference/en/](https://www.arduino.cc/reference/en/)
+
+För mer information om reguljära uttryck, kan du kolla in detta onlineverktyg som kan hjälpa dig skapa och testa dina uttryck:
+[https://regex101.com/](https://regex101.com/)
+
+Det finns också flera bibliotek som erbjuder utökade funktioner för sökning och ersättning av text, som till exempel det populära biblioteket "string-search" för Arduino:
+[https://github.com/arduino-libraries/StringSearch](https://github.com/arduino-libraries/StringSearch)

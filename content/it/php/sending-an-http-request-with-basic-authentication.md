@@ -10,38 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
-Molti siti web richiedono l'autenticazione per accedere al loro contenuto, quindi imparare come inviare una richiesta HTTP con autenticazione di base è fondamentale per accedere a queste risorse.
+## Cos'è e Perché?
 
-## Come
-Per inviare una richiesta HTTP con autenticazione di base in PHP, possiamo utilizzare la funzione `curl_init()` e passare il parametro `CURLOPT_USERPWD` con le credenziali desiderate. Di seguito è riportato un esempio di codice che invia una richiesta GET a un'API protetta da autenticazione di base:
+Invio di una richiesta HTTP con autenticazione di base è un modo per accedere a una risorsa protetta su un server utilizzando un nome utente e una password. I programmatori spesso utilizzano questo metodo per accedere a risorse come API o pagine web che richiedono l'autenticazione prima del loro utilizzo.
 
-```PHP
-<?php
-// Inizializzazione di cURL
+## Come fare:
+
+Ecco un esempio di codice PHP che invia una richiesta HTTP con autenticazione di base e stampa la risposta ricevuta:
+
+```
 $ch = curl_init();
-// Impostazione dell'URL di destinazione
-curl_setopt($ch, CURLOPT_URL, 'https://www.example.com/api');
-// Impostazione dell'autenticazione di base
+curl_setopt($ch, CURLOPT_URL, 'www.example.com');
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
 curl_setopt($ch, CURLOPT_USERPWD, 'username:password');
-// Impostazione della richiesta come GET
-curl_setopt($ch, CURLOPT_HTTPGET, true);
-// Esecuzione della richiesta
-$response = curl_exec($ch);
-
-// Stampa dell'output della richiesta
-echo $response;
-
-// Chiusura della sessione cURL
-curl_close($ch);
+$output = curl_exec($ch);
+echo $output;
 ```
 
-In questo esempio, abbiamo specificato il nome utente e la password desiderati come stringa nel formato `username:password`. Possiamo anche passare un array con il parametro `CURLOPT_USERPWD` se necessario.
+Output:
+```
+<html>
+<head>
+<title>Hello World!</title>
+</head>
+<body>
+<p>This is a protected resource.</p>
+</body>
+</html>
+```
 
-## Deep Dive
-Quando inviamo una richiesta HTTP con autenticazione di base, le credenziali vengono codificate in base64 prima di essere inviate al server. Questo processo di codifica rende le credenziali meno leggibili in caso di intercettazione della richiesta. Inoltre, è consigliabile utilizzare HTTPS per cifrare la comunicazione e proteggere ulteriormente le credenziali.
+## Approfondimenti:
 
-## Vedere Anche
-- [Documentazione PHP su cURL](https://www.php.net/manual/en/book.curl.php)
-- [Documentazione cURL su CURLOPT_USERPWD](https://curl.se/libcurl/c/CURLOPT_USERPWD.html)
-- [Tutorial su autenticazione di base con cURL in PHP](https://www.interserver.net/tips/kb/use-curl-php/)
+La comunicazione HTTP tra un client e un server è guidata dallo scambio di richieste e risposte. Nell'inviare una richiesta con autenticazione di base, il client codifica il nome utente e la password in base64 e li invia nel campo di intestazione "Authorization". L'alternativa a questo metodo è l'autenticazione tramite token, che richiede un token di accesso invece di un nome utente e una password.
+
+Per implementare l'autenticazione di base in una richiesta HTTP, è necessario utilizzare una libreria come curl o guzzle. Inoltre, è importante ricordare di utilizzare una connessione sicura tramite HTTPS per proteggere le credenziali di autenticazione durante la trasmissione.
+
+## Vedi anche:
+
+- Documentazione ufficiale di PHP su come inviare richieste HTTP con autenticazione di base: https://www.php.net/manual/it/features.http-auth.php
+- Articolo su Medium che spiega come utilizzare l'autenticazione di base in richieste API in PHP: https://medium.com/@mrjimbot/how-to-do-basic-authentication-with-php-3c9ba5db79d
+- Esempi di codice su GitHub che mostrano l'utilizzo di autenticazione di base in diverse situazioni: https://github.com/search?q=basic+authentication+php&type=Repositories

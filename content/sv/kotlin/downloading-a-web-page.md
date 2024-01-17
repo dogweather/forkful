@@ -10,49 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+Vad & Varför?
 
-Vi lever i en digital era där internet är en integrerad del av våra liv. Att ladda ner en webbsida kan vara användbart för att spara information, tillgång till offline versioner av sidor, eller för att enkelt göra en backup av viktig information.
+Att ladda ner en webbsida innebär att hämta innehållet från en viss webbsida och spara det lokalt på din dator. Detta kan vara till nytta för programmerare eftersom det ger dem möjlighet att arbeta med webbinnehåll utan att behöva vara online.
 
-## Så här gör du
+Hur to:
 
-För att ladda ner en webbsida i Kotlin, behöver du använda dig av klassen `URL` och funktionen `readText()`:
-
-```Kotlin
-val url = URL("https://example.com")
-val pageContent = url.readText()
-```
-
-I detta exempel skapar vi en `URL`-objekt som representerar webbadressen till sidan vi vill ladda ner. Sedan använder vi funktionen `readText()` för att läsa all text på sidan och spara den i variabeln `pageContent`.
-
-För att sedan spara ned den nerladdade sidan som en fil, kan vi använda oss av `FileWriter`-klassen:
+Exempel 1: Ladda ner och skriv ut innehållet från en webbsida.
 
 ```Kotlin
-// Skapa en ny fil
-val file = File("webbsida.html")
-
-// Skapa en FileWriter för att skriva till filen
-val writer = FileWriter(file)
-
-// Skriv nerladdad data till filen
-writer.write(pageContent)
-
-// Stäng FileWriter
-writer.close()
+val url = "www.example.com"
+val content = URL(url).readText()
+println(content)
 ```
 
-Nu har vi sparat den nerladdade webbsidan som en fil på vår dator.
+Output: Innehållet från webbsidan på www.example.com kommer att skrivas ut i konsolen.
 
-## Djupdykning
+Exempel 2: Spara innehållet från en webbsida till en fil.
 
-När vi laddar ner en webbsida i Kotlin, använder vi oss av URL-klassen för att representera webbadressen och `readText()`-funktionen för att läsa all text på sidan. Detta fungerar bra för mindre sidor, men om sidan är större kan det finnas risker för minnesläckor eller att sidan inte laddas ner helt.
+```Kotlin
+val url = "www.example.com"
+val content = URL(url).readText()
+File("myFile.txt").writeText(content)
+```
 
-För att undvika detta, kan vi använda oss av en annan metod för att läsa sidans innehåll - `openStream()`. Denna metod ger oss tillgång till en instans av `InputStream`, som vi sedan kan läsa data från en bit i taget. Detta minskar risken för minnesläckor och lägger mindre belastning på vårt system.
+Output: Innehållet från webbsidan på www.example.com kommer att sparas i filen "myFile.txt".
 
-En annan sak att tänka på när man laddar ner webbsidor är att de kan innehålla bilder och andra medieelement. För att också kunna ladda ner dessa, kan vi använda oss av bibliotek som `Jsoup` eller `OkHttp` som erbjuder mer avancerade funktioner för nedladdning av webbsidor.
+Djupdykning:
 
-## Se även
+Historisk kontext: Att ladda ner webbsidor har funnits sedan början av webben. Det var en vanlig funktion i webbläsare på 90-talet för att kunna använda webben offline. Idag används det främst av programmerare för utveckling och testning.
 
-- [Kotlin Dokumentation](https://kotlinlang.org/docs/)
-- [Jsoup biblioteket](https://jsoup.org/)
-- [OkHttp biblioteket](https://square.github.io/okhttp/)
+Alternativ: Det finns flera alternativ för att ladda ner webbsidor, men Kotlin's standard library som vi visade i exemplet ovan är ett enkelt och effektivt sätt att åstadkomma detta. Det finns också olika tredjepartsbibliotek som kan användas för mer avancerade funktioner.
+
+Implementeringsdetaljer: I exemplet används funktionen "readText()" från klassen URL som finns i Kotlin's standard library för att läsa innehållet från webbsidan som en sträng. Det är också möjligt att använda "readLines()" för att läsa innehållet som en lista av rader eller "openStream()" för att läsa innehållet från webbsidan som en InputStream.
+
+Se också:
+
+- Kotlin's standard library: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/
+- Tredjepartsbibliotek för att ladda ner webbsidor: https://www.baeldung.com/java-download-file
+- Dokumentation för Java's URL-klass som också kan användas i Kotlin: https://docs.oracle.com/javase/8/docs/api/java/net/URL.html

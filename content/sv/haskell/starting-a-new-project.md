@@ -1,7 +1,7 @@
 ---
-title:                "Börja ett nytt projekt"
-html_title:           "Haskell: Börja ett nytt projekt"
-simple_title:         "Börja ett nytt projekt"
+title:                "Att påbörja ett nytt projekt"
+html_title:           "Haskell: Att påbörja ett nytt projekt"
+simple_title:         "Att påbörja ett nytt projekt"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Getting Started"
@@ -10,44 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
 
-Du kanske har hört talas om Haskell och är nyfiken på att lära dig det, eller så har du redan börjat använda det och vill starta ett nytt projekt. Oavsett anledning är Haskell ett kraftfullt, funktionellt programmeringsspråk som kan hjälpa dig att skriva effektiv och elegant kod.
+Att starta ett nytt projekt i Haskell är när du skapar en ny mapp och börjar skriva kod för en ny applikation eller bibliotek. Programmerska utför detta för att implementera nya idéer, lära sig nya tekniker eller lösa ett problem som de står inför.
 
-## Så här gör du
+## Hur man:
 
-För att börja ett nytt projekt i Haskell behöver du först installera en Haskell-miljö på din dator. Det finns olika verktyg som kan hjälpa dig med detta, men det enklaste är att ladda ner Haskell Platform, som innehåller allt du behöver för att komma igång.
+Kodexempel och exempel på output visas nedanför i kodblock vilket signaleras med ```Haskell ... ```
 
-När du har installerat Haskell Platform kan du skapa en ny mapp för ditt projekt och öppna den i en textredigerare eller utvecklingsmiljö. Sedan är det dags att börja skriva kod!
+```
+-- Skapar en ny mapp för projektet
+mkdir min_haskell_projekt
 
-En av de viktigaste delarna i Haskell är typer. Detta hjälper dig att undvika felaktig kod och gör det enklare att förstå din programkod. Här är ett exempel på en funktion som tar emot två heltal och returnerar deras summa:
+-- Skapar en ny fil som heter "Hello.hs"
+touch Hello.hs
 
-```Haskell
-addTwo :: Int -> Int -> Int
-addTwo x y = x + y
+-- Öppnar filen med din valda textredigerare, i detta fallet 'vi'
+vi Hello.hs
 ```
 
-För att köra denna funktion i din terminal eller kompilator, skriv:
-
 ```Haskell
-addTwo 5 7
+-- Hello.hs
+main :: IO ()
+main = putStrLn "Hej världen!"
 ```
 
-Outputen bör vara 12.
+Output:
+```
+Hej världen!
+```
 
-Du kan också använda Haskell för att skriva mer komplexa program som t.ex. webbapplikationer. Ett populärt ramverk för detta är Yesod, som hjälper dig att bygga webbapplikationer med Haskell.
+## Djupdykning:
 
-## Djupdykning
+När Haskell skapades på 1980-talet var det en av de första funktionella programmeringsspråken och användes i forskning inom datormatematik. Alternativen till att starta ett nytt projekt i Haskell inkluderar att använda andra språk som till exempel Java, Python eller C++. Implementationen av att starta ett projekt involverar att skapa en skaplig projektmapp och skriva kod i en fil som används för att köra ditt program eller bibliotek.
 
-En av de bästa sakerna med att använda Haskell för nya projekt är den inbyggda typinferensen. Detta betyder att du inte alltid behöver ange typer i din kod, eftersom Haskell kan dra slutsatser baserat på hur du använder dina funktioner.
+## Se även:
 
-Haskell är också ett starkt typat språk, vilket betyder att det har ett starkt system för att hantera datatyper och deras relationer. Detta gör det lättare att skriva robust och säker kod.
-
-En annan fördel med Haskell är dess hög ordningens funktioner. Detta innebär att du kan behandla funktioner som vanliga värden och skicka dem som argument till andra funktioner. Detta ger stor flexibilitet och möjlighet att abstrahera på en högre nivå.
-
-## Se även
-
-- [Haskell.org](https://www.haskell.org/)
-- [Haskell Platform](https://www.haskell.org/platform/)
-- [Haskell wiki](https://wiki.haskell.org/)
-- [Yesod](https://www.yesodweb.com/)
+Här är några användbara länkar om hur man startar ett nytt projekt i Haskell:
+- https://www.haskell.org/platform/
+- https://wiki.haskell.org/How_to_write_a_Haskell_program
+- https://www.fpcomplete.com/blog/2019/08/starting-a-haskell-project-an-opinionated-guide

@@ -1,7 +1,7 @@
 ---
-title:                "Sammenslåing av strenger"
-html_title:           "PHP: Sammenslåing av strenger"
-simple_title:         "Sammenslåing av strenger"
+title:                "Sammensetting av strenger"
+html_title:           "PHP: Sammensetting av strenger"
+simple_title:         "Sammensetting av strenger"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Strings"
@@ -10,56 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hva & Hvorfor?
+Concatenating strings i programmering er når du kombinerer to eller flere tekststrenger til en enkelt streng. Dette kan være nyttig for å bygge dynamiske setninger eller lenker. Programmere gjør dette for å lage mer fleksible og dynamiske programmer som kan tilpasse seg ulike situasjoner.
 
-Det å kombinere strenger, også kjent som string concatenation på engelsk, er en viktig del av å kunne programmere i PHP. Dette lar deg legge sammen flere tekster for å skape nye setninger eller endre eksisterende tekst. Dette er spesielt nyttig når du jobber med dynamiske data som kommer fra databaser eller brukerinput. Ved å kunne kombinere strenger kan du lage mer tilpassede løsninger og gjøre koden din mer fleksibel.
-
-## Hvordan
-
-For å kombinere strenger i PHP, bruker du "." -operatøren. Dette forteller PHP å legge sammen de ulike strengene. La oss se på et enkelt eksempel:
+## Hvordan:
+For å konkatere strenger i PHP bruker du punktum operatøren ```.```. Se følgende eksempel:
 
 ```PHP
-$navn = "Kari";
-$alder = 30;
-$melding = "Hei, mitt navn er " . $navn . " og jeg er " . $alder . " år gammel.";
-echo $melding;
+$string1 = "Hei, ";
+$string2 = "verden!";
+echo $string1 . $string2; // output: Hei, verden!
 ```
 
-I dette eksempelet har vi en variabel som inneholder navnet "Kari" og en annen som inneholder alderen "30". Vi bruker deretter "." -operatøren til å kombinere disse to variablene og en fast tekst i den tredje variabelen. Når vi så printer ut den siste variabelen, får vi følgende output:
-
-"Hei, mitt navn er Kari og jeg er 30 år gammel."
-
-Du kan også kombinere så mange strenger som du ønsker ved å bruke flere "." -operatører. For eksempel:
+Du kan også konkatere strenger ved hjelp av attributter. Se følgende eksempel:
 
 ```PHP
-$tekst1 = "Denne teksten ";
-$tekst2 = "er kombinert ";
-$tekst3 = "av flere strenger."
-echo $tekst1 . $tekst2 . $tekst3;
+$string1 = "Jeg liker ";
+$string2 = "å kode på ";
+$string3 = "PHP";
+echo $string1 .= $string2 .= $string3; // output: Jeg liker å kode på PHP
 ```
 
-Outputen vil da være:
+## Dypdykk:
+Historisk sett har concatenation vært brukt i programmering for å bygge dynamiske HTML-sider og SQL-uttrykk. Alternativene til string concatenation inkluderer string interpolation og string formatting. Implementeringsdetaljene for string concatenation avhenger av programmeringsspråket som brukes, men det samme konseptet kan bli funnet i de fleste språk.
 
-"Denne teksten er kombinert av flere strenger."
-
-## Dykk dypere
-
-Når du kombinerer strenger i PHP, er det viktig å huske på at du må inkludere mellomrom og tegn som komma eller punktum for å få en lesevennlig tekst. Dette kan du gjøre ved å inkludere dem direkte i tekststrengen eller ved å legge dem til som egne variabler. For eksempel:
-
-```PHP
-$tekst = "Dette er en ";
-$middag = "veldig god middag.";
-echo $tekst . $middag;
-```
-
-Outputen her blir "Dette er en veldig god middag." Hvis du ikke inkluderer mellomrom i tekststrengene, vil du få en tekst som kan være vanskelig å lese og forstå.
-
-Du kan også kombinere variabler av ulike typer, som for eksempel en tekststreng og et tall. PHP vil automatisk konvertere tallet til en tekststreng og legge dem sammen. Du kan også kombinere strenger med booleans eller andre datastrukturer.
-
-## Se også
-
-For mer informasjon om concatenation og andre nyttige PHP-funksjoner, kan du sjekke ut følgende ressurser:
-
-- [PHP - String Operators](https://www.php.net/manual/en/language.operators.string.php)
-- [W3Schools - PHP String Concatenation](https://www.w3schools.com/php/php_operators.asp)
-- [Codecademy - PHP Concatenation](https://www.codecademy.com/learn/learn-php/modules/learn-php-strings/cheatsheet)
+## Se også:
+- [PHP strings dokumentasjon](https://www.php.net/manual/en/language.types.string.php)
+- [Different ways to concatenate strings in PHP](https://www.tutorialrepublic.com/faq/how-to-concatenate-strings-in-php.php)
+- [String concatenation in other programming languages](https://www.techopedia.com/definition/29912/string-concatenation)

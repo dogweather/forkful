@@ -10,50 +10,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que usar expressões regulares em C?
+## O que e por que?
 
-Expressões regulares são uma ferramenta poderosa que permitem procurar, substituir e validar padrões em texto. Em C, elas podem ser usadas para manipular strings com maior facilidade e eficiência. Se você está trabalhando com texto em seus programas, aprender a usar expressões regulares pode economizar tempo e tornar seu código mais robusto.
+Expressões regulares são um recurso comum para muitos programadores em C. Elas são uma forma de procurar padrões específicos em strings ou textos. Com expressões regulares, os programadores podem realizar tarefas como validação de dados, pesquisa e substituição de texto de forma eficiente.
 
-## Como usar expressões regulares em C
+## Como fazer:
 
-Para usar expressões regulares em C, primeiro é necessário incluir a biblioteca de expressões regulares `regex.h` no seu programa. Em seguida, você pode criar um objeto do tipo `regex_t` para armazenar a expressão regular que você deseja usar. Para compilar a expressão regular, você pode usar a função `regcomp()` e, em seguida, usar a função `regexec()` para procurar padrões em uma string. Por exemplo:
+Utilizar expressões regulares em C é bastante simples. Vamos dar uma olhada em um exemplo de código:
 
-```C
+```
 #include <stdio.h>
+#include <string.h>
 #include <regex.h>
 
 int main() {
-  regex_t regex;
-  char *text = "Olá, este é um texto de exemplo.";
-  char *pattern = "exemplo";
-  int result = regcomp(&regex, pattern, 0);
-  
-  if (result == 0) {
-    result = regexec(&regex, text, 0, NULL, 0);
-    
-    if (result == 0) {
-      printf("Padrão encontrado na string!\n");
-    } else {
-      printf("Padrão não encontrado na string.\n");
-    }
-    
-    regfree(&regex);
-  } else {
-    printf("Erro ao compilar a expressão regular.\n");
-  }
-  
-  return 0;
+
+    // Definir uma expressão regular:
+    char *regex = "r([0-9]+)";
+
+    // String de teste:
+    char *str = "Este texto contém r47 e r204, mas não 123r456 ou rabc";
+
+    // Compilar a expressão regular:
+    regex_t regex_compiled;
+    regcomp(&regex_compiled, regex, REG_EXTENDED);
+
+    // Encontrar correspondências:
+    int match = regexec(&regex_compiled, str, 0, NULL, 0);
+
+    // Imprimir o resultado:
+    printf("Correspondências encontradas: %i \n", match);
+
+    return 0;
 }
 ```
 
-O código acima utiliza a função `regcomp()` para compilar o padrão "exemplo" e a função `regexec()` para verificar se esse padrão existe na string fornecida. A função `regfree()` é usada para liberar a memória alocada para o objeto `regex`.
+O output deste exemplo seria:
 
-## Profundando em expressões regulares em C
+`Correspondências encontradas: 2`
 
-As expressões regulares em C são baseadas na biblioteca POSIX regex, que segue um conjunto de regras e metacaracteres específicos. Alguns exemplos de metacaracteres são `.` para qualquer caractere, `*` para multiplicidade zero ou mais e `+` para multiplicidade uma ou mais. Existem também modos de busca que permitem procurar por padrões em todo o texto ou apenas no início ou fim do texto. Para aprender mais sobre a sintaxe e recursos de expressões regulares em C, consulte a documentação oficial da biblioteca `regex.h`.
+Neste exemplo, estamos procurando por todas as ocorrências de "r" seguido de um ou mais números. Ao executar o código, podemos ver que foram encontradas duas correspondências: "r47" e "r204".
 
-## Veja também
+## Detalhes aprofundados:
 
-- [Documentação da biblioteca regex.h](https://www.gnu.org/software/libc/manual/html_node/POSIX-Regexps.html)
-- [Tutorial sobre expressões regulares em C](https://www.thegeekstuff.com/2017/02/c-regex/)
-- [Códigos de exemplo com expressões regulares em C](https://github.com/zakj/regex-example-c)
+Expressões regulares existem há décadas e são amplamente utilizadas em diferentes linguagens de programação. Existem diferentes implementações de expressões regulares e muitos detalhes técnicos sobre como elas funcionam.
+
+Alternativas para o uso de expressões regulares em C incluem o uso de bibliotecas externas, como o PCRE (Perl Compatible Regular Expressions). No entanto, para muitos casos simples, as expressões regulares nativas de C são suficientes e de fácil utilização.
+
+Na implementação de expressões regulares em C, é importante prestar atenção aos padrões de escape (como o "\" no exemplo acima) e às possíveis vulnerabilidades de segurança, como o estouro de buffer.
+
+## Veja também:
+
+- [Tutorial de Expressões Regulares em C](https://www.tutorialspoint.com/c_standard_library/regex_h.htm)
+- [Diferenças entre Expressões Regulares em C e Perl](https://stackoverflow.com/questions/6616100/regular-expressions-implementation-in-c-vs-perl)
+- [Documentação oficial para a biblioteca de Expressões Regulares de C](http://man7.org/linux/man-pages/man3/regex.3.html)

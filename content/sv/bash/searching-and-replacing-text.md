@@ -10,30 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
-Har du någonsin behövt byta ut ett ord eller en fras som upprepas flera gånger i en text? Bash erbjuder en enkel och effektiv metod för att söka och ersätta text. Detta kan vara särskilt användbart när du arbetar med stora mängder text eller behöver genomföra samma ändringar på flera filer.
+## Vad & Varför?
 
-## Hur man gör
-För att söka och ersätta text i Bash använder man sig av kommandot "sed" (stream editor). Det finns olika sätt att använda detta kommando, men ett av de vanligaste är att skriva en enkel kommandorad med syntaxen:
+Söka och ersätta text är en vanlig uppgift för programmerare. Det innebär helt enkelt att byta ut en viss text med en annan i ett textdokument. Detta kan vara användbart för att snabbt göra massiva ändringar eller för att automatisera upprepade uppgifter.
 
-```
-sed 's/gammalt_ord/nytt_ord/g' filnamn.txt
-```
+## Hur man gör:
 
-Där "s" står för sökning (substitution), "gammalt_ord" är den text du vill ersätta, "nytt_ord" är den text du vill ersätta med och "filnamn.txt" är den fil du vill söka i. Kommandot kommer att gå igenom filen och byta ut alla förekomster av "gammalt_ord" med "nytt_ord". Om du vill byta ut flera ord kan du använda samma syntax men lägga till flera sök- och ersättningsfraser, till exempel:
+För att söka och ersätta text i Bash, använd kommandot `sed` (stream editor). Det tar två huvudsakliga parametrar: "söktermen" och "ersättningstermen." Här är ett exempel på hur man använder det:
+
+Bash kod block:
 
 ```
-sed 's/hund/katt/g; s/apa/igelkott/g' filnamn.txt
+sed 's/hund/katt/g' namnlista.txt
 ```
 
-Detta kommer att byta ut alla förekomster av "hund" med "katt" och "apa" med "igelkott".
+Detta kommer att söka igenom filen `namnlista.txt` och ersätta alla instanser av "hund" med "katt." Notera att "g" står för "global," vilket innebär att det kommer att genomföra ersättningen för varje förekomst av söktermen.
 
-## Djupdykning
-Sedan erbjuder en rad olika alternativ för sökning och ersättning, till exempel att göra sökningen icke-känslig för skillnad mellan stora och små bokstäver, begränsa sökningen till en viss rad eller en viss del av en rad, och mer. Du kan utforska dessa alternativ genom att skriva "man sed" i terminalen eller söka efter dokumentation online.
+Om du vill spara resultatet till en ny fil istället för att visa det direkt i terminalen, kan du använda rörledningar (`|`) och utdataomdirigering (`>`). Till exempel:
 
-Det är också möjligt att kombinera "sed" med andra Bash-kommandon för att göra mer avancerade sökningar och ändringar i text. Till exempel kan du använda "grep" för att söka efter en viss fras i flera filer, och därefter använda "sed" för att byta ut den frasen i alla filer samtidigt.
+Bash kod block:
 
-## Se även
-- [Bash Dokumentation](https://www.gnu.org/software/bash/manual/bash.html)
-- [Sed Tutorial](https://www.gnu.org/software/sed/manual/sed.html)
-- [Kommandoradsväljaren (GNU)](https://www.gnu.org/software/sed/manual/sed.html)
+```
+sed 's/hund/katt/' namnlista.txt > nya_namnlista.txt
+```
+
+Detta kommer att söka igenom `namnlista.txt` och ersätta "hund" med "katt," och spara den nya filen som `nya_namnlista.txt`.
+
+## Djupdykning:
+
+`sed` är en stream editor som ursprungligen utvecklades för Unix-system på 1970-talet. Det är en mycket kraftfull och mångsidig kommando, men det finns också andra kommandon som kan användas för att söka och ersätta text, som till exempel `awk` och `perl`.
+
+När du använder `sed` i Bash, är det viktigt att lägga märke till att söktermen och ersättningstermen måste vara uttryckta i form av "reguljära uttryck." Detta innebär att det finns vissa tecken och uttryck som har speciell betydelse och måste vara noga utformade. Om du är osäker på hur man skriver ett reguljärt uttryck, finns det många online resurser och guider tillgängliga.
+
+## Se även:
+
+- [Bash Dokumentation](https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html)
+- [Kommandozeile](https://www.kommandozeile.de/)

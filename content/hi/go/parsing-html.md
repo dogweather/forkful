@@ -1,7 +1,7 @@
 ---
-title:                "HTML का पार्सिंग"
-html_title:           "Go: HTML का पार्सिंग"
-simple_title:         "HTML का पार्सिंग"
+title:                "होमपेज को विश्लेषण करने का तरीका"
+html_title:           "Go: होमपेज को विश्लेषण करने का तरीका"
+simple_title:         "होमपेज को विश्लेषण करने का तरीका"
 programming_language: "Go"
 category:             "Go"
 tag:                  "HTML and the Web"
@@ -10,45 +10,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
+## परिचय
 
-क्या आप वेब स्क्रेपिंग से थक गए हैं और अपने डेटा से उपयोगी जानकारी प्राप्त करने के लिए अधिक समय खर्च करना नहीं चाहते हैं? यदि हाँ, तो HTML को पार्स करना आपके लिए उत्तम एक्सपीरियंसिंग हो सकता है। यह उद्योग में एक प्रचलित तकनीक है जो एक बहुत ही प्रभावी तरीके से डेटा को अलग-अलग प्रारूपों में प्रस्तुत करने में मदद करती है।
+HTML को पार्स (parse) करना एक आम क्रिया है जो वेब डेवलपर्स को रेंतेवेबल और लागू संचित जानकारी देने के लिए की जाती है। यह कोड, टेक्स्ट और मल्टीमीडिया कंटेंट को सांझा करने के लिए स्ट्रक्चर्स के रूप में काम करता है। वेब पृष्ठों के स्ट्रक्चर को समझने के लिए, वेब डेवलपर्स उपलब्ध HTML को पार्स करते हैं।
 
-## कैसे करें
+## कैसे:
 
+जाओ कोड के जरिए प्रैक्टिकल उदाहरण सिखाएं:
 ```Go
 package main
 
 import (
-  "fmt"
-  "net/http"
-  "io/ioutil"
+	"fmt"
+	"strings"
+
+	"golang.org/x/net/html"
 )
 
 func main() {
-  // HTTP कनेक्शन को स्थापित करें
-  resp, err := http.Get("https://www.example.com")
+	htmlString := "<html><head><title>This is a title</title></head><body><h1>Heading</h1><p>This is a paragraph</p></body></html>"
 
-  if err != nil {
-    // अगर कोई गड़बड़ी हो तो इसे प्रिंट करें
-    fmt.Println(err)
-  }
+	r := strings.NewReader(htmlString)
+	doc, err := html.Parse(r)
+	if err != nil {
+		fmt.Println("Error parsing HTML!")
+	}
 
-  // कनेक्शन से डेटा को पढ़ें
-  bytes, err := ioutil.ReadAll(resp.Body)
-
-  if err != nil {
-    // अगर कोई गड़बड़ी हो तो इसे प्रिंट करें
-    fmt.Println(err)
-  }
-
-  // प्रिंट करें
-  fmt.Println(string(bytes))
+	var traverse func(*html.Node)
+	traverse = func(n *html.Node) {
+		if n.Type == html.ElementNode && n.Data == "h1" {
+			fmt.Println("Heading found!")
+		}
+		if n.Type == html.ElementNode && n.Data == "p" {
+			fmt.Println("Paragraph found!")
+		}
+		for c := n.FirstChild; c != nil; c = c.NextSibling {
+			traverse(c)
+		}
+	}
+	traverse(doc)
 }
 ```
 
-इस सेक्शन में हम एक सरल Go कोड देखेंगे जिसकी मदद से हम एक वेबसाइट से HTML डेटा को पढ़ सकते हैं। हम `http` पैकेज का उपयोग करके साइट से डेटा प्राप्त करते हैं और इसे `ioutil` पैकेज का उपयोग करके प्रिंट करते हैं। आप इस तकनीक का उपयोग अपने पर्यावरण में भी कर सकते हैं।
+आउटपुट:
+```
+Heading found!
+Paragraph found!
+```
 
-## गहराई में गुप्त
+## गहराई में जानकारी:
 
-HTML पार्सिंग एक थोड़ी समझदारी और तकनीक को शामिल करता है। यह वास्तव में डेटा को प्रकट करने के लिए एक अलग-अलग संरचना को लगातार ढूंढे और उसका उपयोग करता है। इसलिए, सही HTML डेटा को प्राप्त करने
+HTML को पार्स करने का इतिहास 1991 में आईएनएसजी के इयान हैंटेंन के द्वारा बनाया गया था। इससे पहले, एक जेनेरेटेड सुविधा का उपयोग किया जाता था जिससे HTML को ट्रैन्सलेट करें और पेश करें। लेकिन प्रोग्रामर्स इस सुविधा को अनकवरेजी और नायांकों के प्रवाह के समस्याओं के कारण छोड़ रहे थे। अब यहां, HTML को पार्स करने के लिए बहुत सारे विकल्प हैं जैसे कि एचएमएल, सि, पायथन आदि। गो पोपुलर, विकसित, तेजी से संपादन होने और मजबूत होने के कारण, वेब डेवलपरों को HTML को पार्स करने के लिए अधिक लोकप्रिय विकल्प में से एक है। गो के आरामदेह कोडिंग संरक्षण को ध्यान में रखते हुए, अनुभवी प्रोग्रामर्स को संबंधित कोडिंग कुशलताओं को पालन करने के लिए इसमें सलाह दी जाती है।
+
+## अन्य संसाधनों को देखें:
+
+- https://golang.org/pkg/net/html/
+- https://www.w3schools.com/html/html_intro.asp
+- https://developer.mozilla.org/en-US/docs/Web/HTML

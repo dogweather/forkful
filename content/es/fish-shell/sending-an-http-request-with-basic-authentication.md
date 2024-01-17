@@ -10,50 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+¿Qué es y por qué enviar una solicitud HTTP con autenticación básica?
 
-Si eres un desarrollador web o alguien que trabaja con APIs, es esencial saber cómo enviar una solicitud HTTP con autenticación básica. Esto te permitirá acceder a recursos protegidos y realizar acciones autorizadas en un servidor remoto.
+Enviar una solicitud HTTP con autenticación básica significa que estás proporcionando credenciales de inicio de sesión (usuario y contraseña) para poder acceder a una API o servicio web protegido. Los programadores lo hacen para asegurarse de que solo usuarios autorizados tengan acceso a ciertos recursos o datos.
 
-## How To
+Cómo hacerlo:
 
 ```Fish Shell
-# Primero, importa el módulo `http` en tu script de Fish Shell
-source /usr/local/share/fish/vendor_completions.d/http.fish
-
-# Luego, establece las credenciales de autenticación como variables
-set -xu username <tu_usuario>
-set -xu password <tu_contraseña>
-
-# Ahora, puedes enviar una solicitud GET con autenticación básica
-http -a $username:$password GET https://api.example.com/resources
-
-# Para una solicitud POST, puedes incluir los datos en el cuerpo del mensaje
-set -xu data '{"title": "Nuevo recurso", "description": "Esto es un nuevo recurso de ejemplo"}'
-http -a $username:$password -f POST https://api.example.com/resources <<< $data
+curl -u username:password url
 ```
 
-Output:
+Ejemplo de código:
+
+```Fish Shell
+curl -u admin123:secretpass https://api.example.com/users
+```
+
+Resultado:
 
 ```
-HTTP/1.1 200 OK
-Date: Thu, 17 Sep 2020 18:46:22 GMT
-
-{
-  "id": "12345",
-  "title": "Nuevo recurso",
-  "description": "Esto es un nuevo recurso de ejemplo"
+Response code: 200
+Body: {
+  "id": 123,
+  "name": "John Doe",
+  "email": "johndoe@example.com"
 }
 ```
 
-## Deep Dive
+Profundizando:
 
-La autenticación básica es un método simple de autenticación que se basa en credenciales de usuario y contraseña. Esta información se envía al servidor en formato de texto sin cifrar, por lo que no se recomienda para entornos de producción. Sin embargo, es útil para fines de prueba y desarrollo.
+Este método de autenticación se ha utilizado en la web desde los primeros días de HTTP. Sin embargo, ha sido criticado por su vulnerabilidad a ataques de replay debido a que las credenciales se envían en texto plano. Alternativas más seguras incluyen el uso de tokens de acceso o TLS (Transport Layer Security).
 
-Además de los ejemplos mencionados anteriormente, también puedes enviar solicitudes con otros métodos HTTP, como PUT, PATCH o DELETE, simplemente cambiando `GET` o `POST` en el comando `http` a tu método deseado. También puedes especificar encabezados adicionales en la solicitud mediante el uso del parámetro `-h`.
+Además, es importante tener en cuenta que aunque es muy común utilizar una solicitud HTTP con autenticación básica para acceder a una API, no es una práctica recomendada para la autenticación de usuarios en aplicaciones web. En su lugar, se sugiere el uso de un flujo de autenticación más robusto como OAuth.
 
-Para obtener más detalles sobre el uso de `http` en Fish Shell, consulta la documentación oficial [aquí](https://fishshell.com/docs/current/cmds/http.html).
+En cuanto a la implementación, Fish Shell ofrece una herramienta integrada llamada ```curl```para enviar solicitudes HTTP con autenticación básica. Sin embargo, también hay bibliotecas de otros lenguajes de programación que facilitan este proceso, como la biblioteca de Python, ```Requests```.
 
-## See Also
+Consulte también:
 
-- [Comandos básicos de Fish Shell](https://fishshell.com/docs/current/tutorial.html)
-- [Ejemplos de uso de autenticación básica con cURL](https://gist.github.com/shim-hyunseok/0db41e326627f7fa08af262e4ac2543c)
+- [Insecurity of HTTP Basic Authentication] (http://www.codingdefined.com/2014/07/insecurity-of-http-basic-authentication.html)
+- [OAuth vs. HTTP Basic Authentication] (https://medium.com/@paigen11/why-oauth-is-a-better-alternative-than-basic-authentication-b368ceb65176)

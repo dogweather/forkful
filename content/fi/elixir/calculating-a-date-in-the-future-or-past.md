@@ -1,7 +1,7 @@
 ---
-title:                "Tulevan tai menneen päivän laskeminen tietokoneohjelmoinnilla"
-html_title:           "Elixir: Tulevan tai menneen päivän laskeminen tietokoneohjelmoinnilla"
-simple_title:         "Tulevan tai menneen päivän laskeminen tietokoneohjelmoinnilla"
+title:                "Päivämäärän laskeminen tulevaisuuteen tai menneisyyteen"
+html_title:           "Elixir: Päivämäärän laskeminen tulevaisuuteen tai menneisyyteen"
+simple_title:         "Päivämäärän laskeminen tulevaisuuteen tai menneisyyteen"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Dates and Times"
@@ -10,45 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä & Miksi?
 
-On monia tilanteita, joissa ohjelman täytyy laskea tuleva tai menneellä ajanhetkellä. Se voi olla esimerkiksi tapahtumien ajanvarausta varten tai laskemassa eräpäivää laskuja varten. Tämän artikkelin avulla opit, kuinka voit tehdä tämän Elixirilla.
+Päivämäärän laskeminen tulevaisuudessa tai menneisyydessä tarkoittaa päivämäärän määrittämistä tietyn ajanjakson päässä nykyajasta. Tätä tehdään usein ohjelmoinnissa, jotta voidaan suunnitella ja seurata tapahtumia tulevaisuudessa tai hakea tietoja menneisyydestä.
 
-## Kuinka
+## Miten:
 
-Voit laskea tulevan tai menneen päivämäärän Elixirilla käyttämällä `DateTime`-moduulia. Alla on yksinkertainen esimerkki, jossa laskemme seuraavan päivän päivämäärän käyttämällä `DateTime.shift_naive` -funktiota:
-
-```Elixir
-date = DateTime.shift_naive(DateTime.utc_now(), days: 1)
-IO.inspect(date)
-```
-
-Tämän koodin tulosteena pitäisi olla seuraavan päivän päivämäärä ISO 8601 -muodossa (esimerkiksi "2021-10-10T00:00:00.000000Z").
-
-Jos haluat laskea menneen päivän päivämäärän, voit käyttää `DateTime.shift_naive` -funktiota samalla tavalla, mutta negatiivisella luvulla päivissä. Voit myös laskettavan päivän lisäksi määrittää muita aikayksiköitä, kuten tunteja, minuutteja tai sekunteja.
+### Tulevaisuuden päivämäärän laskeminen:
 
 ```Elixir
-date = DateTime.shift_naive(DateTime.utc_now(), days: -7, hours: -3)
-IO.inspect(date)
+DateTime.utc_now() |> DateTime.add(weeks: 2)
 ```
 
-Tässä esimerkissä laskemme 7 päivää ja 3 tuntia takaisin. 
-
-## Syvällisempi perehtyminen
-
-`DateTime`-moduulin lisäksi Elixirilla on myös `Calendar`-moduuli, joka tarjoaa lisää toimintoja päivämäärän käsittelyyn. Voit esimerkiksi tarkistaa, onko tietty päivämäärä viikonloppu, käyttäen `Calendar.weekdays`-funktiota:
+Tämä koodi esittää päivämäärän kaksi viikkoa nykyhetkestä. Tämän koodin tulostus voi näyttää esimerkiksi tältä:
 
 ```Elixir
-weekend_day = DateTime.from_date({2021, 10, 9})
-Calendar.weekday(weekend_day) # :saturday
-Calendar.weekend?(weekend_day) # true
+#=> ~N[2021-12-28 00:00:00]
 ```
 
-Voit myös suorittaa päivämäärälaskelmia käyttäen `Calendar`-moduulin funktioita, kuten `Calendar.add/3` tai `Calendar.diff/2`. Näillä funktioilla voit lisätä tai vähentää aikayksiköitä tietystä päivämäärästä.
+### Menneisyyden päivämäärän laskeminen:
 
-Lisätietoja `DateTime`- ja `Calendar`-moduuleista voit löytää [Elixirin virallisesta dokumentaatiosta](https://hexdocs.pm/elixir/DateTime.html) .
+```Elixir
+~N[2021-12-28 00:00:00] |> DateTime.add(days: -30)
+```
 
-## Katso myös
+Tämä koodi esittää päivämäärän 30 päivää taaksepäin. Koodin tuloste voi olla esimerkiksi:
 
-- [Elixirin virallinen dokumentaatio](https://hexdocs.pm/elixir/DateTime.html)
-- [Video opetusohjelma: Kuinka laskea päivämääriä Elixirilla](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
+```Elixir
+#=> ~N[2021-11-28 00:00:00]
+```
+
+## Syventyminen:
+
+Päivämäärän laskeminen tulevaisuudessa tai menneisyydessä on ollut tärkeä osa ohjelmointia jo pitkään. Ennen vanhaan tämä tehtiin manuaalisesti laskemalla päiviä huolellisesti tai käyttämällä erikoisia kalentereita. Nykyään tämän voi tehdä helposti käyttämällä ohjelmointikieliä, kuten Elixir.
+
+Toinen tapa laskea päivämäärä tulevaisuudessa tai menneisyydessä on käyttää Date-pakettia Elixirissä. Tämä tarjoaa lisää toiminnallisuuksia, kuten arkipäivien huomioimisen päivämäärän laskemisessa.
+
+Implementaatiotiedot:
+
+Päivämäärän laskeminen tulevaisuudessa tai menneisyydessä perustuu aika- ja päivämäärätoimintojen hyödyntämiseen Elixirin sisäänrakennetussa DateTime-moduulissa. Tästä moduulista löytyy monia hyödyllisiä toimintoja, kuten päivän lisääminen tai vähentäminen nykyhetkestä tai tietyn päivämäärän luominen.
+
+## Katso myös:
+
+- [Elixir Date-paketti](https://hexdocs.pm/elixir/Date.html)
+- [DateTime-moduulin dokumentaatio](https://hexdocs.pm/elixir/DateTime.html)
+- [Aikapäiväkirja - laskeskeleva päivämääräpainike](https://www.matematiikkalehti.com/wp-content/uploads/matikka5-2013-sivut_26_31.pdf) historiallisesta kontekstista

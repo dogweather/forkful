@@ -10,45 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Warum
-Debugausgabe ist ein wichtiger Teil des Programmierens, da sie dabei hilft, Fehler im Code zu finden und zu beheben. Durch das Drucken von Debugausgaben können Entwickler*innen ihre Programme effektiver und effizienter debuggen und somit schneller zu einem fehlerfreien Ergebnis gelangen.
+## Was & Warum?
+"Debug Output" oder "Debug-Ausgabe" ist das, was Programmierer verwenden, um Informationen über den Zustand ihres Codes während der Ausführung zu erhalten. Es hilft dabei, Fehler und Probleme zu identifizieren und zu beheben. Debug-Ausgaben werden normalerweise während der Entwicklung von Anwendungen verwendet und anschließend aus dem Code entfernt, bevor er in der Produktionsumgebung eingesetzt wird.
 
-# Wie funktioniert es?
-Das Drucken von Debugausgaben in C++ ist eine einfache Methode, um den Programmierprozess zu unterstützen. Dafür gibt es die Funktion `cout`, die den Text oder die Werte von Variablen auf der Konsole ausgibt. Hier ist ein Beispiel:
+## Wie geht's?
+Um Debug-Ausgaben in C++ zu machen, können Sie die `cout` Funktion aus der Standardbibliothek verwenden. Hier ist ein Beispiel, wie Sie eine Debug-Ausgabe mit einer variablen `x` erstellen können:
 
 ```C++
 #include <iostream>
-
 using namespace std;
 
-int main(){
-    int a = 10;
-    float b = 1.5;
-
-    // Debugausgabe
-    cout << "Der Wert von a ist: " << a << endl;
-    cout << "Der Wert von b ist: " << b << endl;
-
-    return 0;
+int main() {
+  int x = 5;
+  cout << "Der Wert von x ist: " << x << endl;
+  return 0;
 }
-
-// Ausgabe:
-Der Wert von a ist: 10
-Der Wert von b ist: 1.5
 ```
 
-In diesem Beispiel wird der Wert der Variablen `a` und `b` ausgegeben, was hilfreich sein kann, um sicherzustellen, dass die Variablen die gewünschten Werte haben.
+Dieser Code würde die folgende Ausgabe produzieren:
 
-# Tiefergehende Informationen
-Es gibt verschiedene Möglichkeiten, Debugausgaben in C++ zu nutzen, je nachdem, welchen Teil des Codes Sie überprüfen möchten. Hier sind einige zusätzliche Funktionen, die Sie beim Debuggen verwenden können:
+```
+Der Wert von x ist: 5
+```
 
-- `cerr`: Gibt Text auf der Fehlerausgabe aus und kann helfen, schwerwiegende Fehler im Programm zu finden.
-- ` #ifdef DEBUG`: Diese Bedingung ermöglicht es, Debugausgaben nur im Entwicklungsmodus zu nutzen und sie beim Kompilieren für die endgültige Version zu entfernen.
-- `assert()`: Eine Funktion, die es Ihnen ermöglicht, Bedingungen im Code zu überprüfen und zu prüfen, ob diese Bedingungen wahr sind oder nicht.
+## Tiefer einsteigen
+Debug-Ausgaben werden seit Beginn der Programmierung verwendet, um Softwarefehler zu identifizieren und zu beheben. Alternativ können auch Debugging-Tools verwendet werden, die speziell für diesen Zweck entwickelt wurden. Eine andere Möglichkeit ist das Verwenden von "Assertions", um bestimmte Bedingungen während der Ausführung des Codes zu überprüfen.
 
-Es ist wichtig zu beachten, dass Debugausgaben auch den Code verlangsamen können, daher sollten sie nur verwendet werden, wenn sie wirklich benötigt werden.
+In C++ können Debug-Ausgaben auch mit dem `cerr` Stream statt `cout` erstellt werden. Dies ist nützlich, wenn Ausgaben direkt auf dem Terminal ausgegeben werden müssen. Zum Beispiel:
+
+```C++
+#include <iostream>
+using namespace std;
+
+int main() {
+  cerr << "Achtung: Es ist ein Fehler aufgetreten!" << endl;
+  return 0;
+}
+```
 
 ## Siehe auch
-- [Übersicht der C++ Debugging Tools von Microsoft](https://docs.microsoft.com/en-us/cpp/cpp/debugging-tools-for-windows)
-- [Tutorial: Debuggen von C++-Code mit Visual Studio Code](https://code.visualstudio.com/docs/cpp/cpp-debug)
-- [Tipps und Tricks für effektives Debuggen in C++](https://www.alessandromacor.com/de/how-to-debug-cpp-with-visual-studio-code/)
+- [Debugging 101: Grundlagen des Debuggens](https://www.codingame.com/playgrounds/273/debugging-101-grundlagen-des-debuggens)
+- [Debugging in C++](https://www.cprogramming.com/debugging/debugging_c++.html)
+- [C++ Debugging Tutorial mit Visual Studio](https://www.learncpp.com/tutorials/debugging-your-code-with-visual-studio/)

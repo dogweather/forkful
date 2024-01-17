@@ -1,7 +1,7 @@
 ---
-title:                "csv 파일로 작업하기"
-html_title:           "C: csv 파일로 작업하기"
-simple_title:         "csv 파일로 작업하기"
+title:                "CSV 작업하기"
+html_title:           "C: CSV 작업하기"
+simple_title:         "CSV 작업하기"
 programming_language: "C"
 category:             "C"
 tag:                  "Data Formats and Serialization"
@@ -10,49 +10,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜?
+# CSV 작업하는 방법과 이유
+CSV는 Comma Separated Values의 약자로, 콤마로 구분되어있는 텍스트 파일 형태입니다. 프로그래머들은 CSV를 사용하는 이유는 데이터를 저장하고 공유하기 위해서입니다. CSV는 엑셀 등 다른 프로그램에서도 쉽게 사용할 수 있어서 데이터 조작에 활용하기에 용이합니다.
 
-어떤 프로그래밍을 하든 데이터를 다루는 일은 아주 중요합니다. 그 중에서도 CSV 파일은 간단하게 다룰 수 있고 널리 사용되기 때문에 프로그래머들에게 인기가 많습니다. CSV 파일을 다루는 법을 배우는 것은 프로그래밍에 있어서 유용한 기술입니다.
-
-## 코드로 배우는 CSV 파일 다루는 법
-
-CSV 파일은 데이터를 쉼표(,)로 구분한 파일입니다. 이렇게 간단한 형식이지만 많은 데이터를 담을 수 있으며, 프로그래머 입장에서도 쉽게 다룰 수 있습니다. 아래의 예시 코드를 통해 CSV 파일을 읽고 쓰는 방법을 살펴보겠습니다.
+# 어떻게 하나요?
 
 ```C
 #include <stdio.h>
+#include <string.h>
 
 int main() {
-   
     // CSV 파일 열기
-    FILE *fp = fopen("example.csv", "r");
+    FILE *fp = fopen("sample.csv", "r");
 
-    // 한 줄씩 읽어오기
-    char line[100];
-    while (fgets(line, 100, fp) != NULL) {
-        
-        // 데이터 분리하기
-        char *token;
-        token = strtok(line, ",");
+    // 파일에서 문자열 읽기
+    char str[100];
+    while(fgets(str, 100, fp) != NULL) {
+        // 문자열에서 콤마로 나누기
+        char *token = strtok(str, ",");
 
-        // 데이터 출력하기
-        while (token != NULL) {
-            printf("%s\n", token);
+        // 각 항목 출력
+        while(token != NULL) {
+            printf("%s", token);
+
+            // 다음 항목으로 이동
             token = strtok(NULL, ",");
         }
     }
 
     // 파일 닫기
     fclose(fp);
+    return 0;
 }
 ```
-위 코드는 "example.csv"라는 이름의 CSV 파일을 열고, 한 줄씩 읽어오고, 데이터를 쉼표를 기준으로 분리하여 출력하는 예시입니다. 만약 CSV 파일에 "Hello,World"라는 데이터가 있다면, "Hello"와 "World"가 각각 다른 줄에 출력됩니다.
 
-## CSV 파일 다루는 더 깊은 내용
+### 코드 설명:
+- 파일을 열고, fgets 함수를 사용해 파일에서 문자열을 읽어옵니다.
+- 문자열을 strtok 함수를 이용해 콤마로 나누고, 각 항목을 출력합니다.
+- 파일을 닫아줍니다.
 
-위에서 살펴본 예시 코드를 통해 기본적인 CSV 파일 다루는 방법을 배웠습니다. 하지만 이 외에도 CSV 파일 안에는 쉼표가 아니라 다른 문자로 구분되는 경우도 있을 수 있습니다. 이 경우에는 코드를 약간 수정해야 합니다. 또한, CSV 파일을 다루기 전에 파일을 읽고 쓰는 방법부터도 알아야 합니다.
+### 샘플 출력:
+- sample.csv 파일 내용: Alex,25,Programmer,Hobby: Coding
+- 출력: Alex
+    25
+    Programmer
+    Hobby: Coding
 
-## 참고
+# CSV 깊이 파보기
+- CSV는 1972년 Trinity 컴퓨터에서 최초로 사용되었습니다.
+- CSV는 다른 형식인 XML보다 용량이 작고 읽고 쓰기가 쉬워서 많이 사용됩니다.
+- 이 예제에서는 콤마로 데이터를 나누었지만, 다른 구분 기호도 사용할 수 있습니다. 예를 들어, 탭이나 세미콜론을 사용할 수 있습니다.
 
-- [C 파일 다루는 법](https://modoocode.com/204)
-- [strtok 함수 설명](https://www.ibm.com/support/knowledgecenter/ko/ssw_ibm_i_74/rtref/strtok.htm)
-- [CSV 파일 다루기 예시 코드](https://www.cprogramming.com/tutorial/cfileio.html)
+# 관련 링크
+- [strtok 함수 정보](https://www.tutorialspoint.com/c_standard_library/c_function_strtok.htm)
+- [CSV 파일 형식 정보](http://www.ietf.org/rfc/rfc4180.txt)
+- [다른 구분 기호를 사용하는 예제](https://cboard.cprogramming.com/c-programming/162166-alternative-delimiters-strtok.html)

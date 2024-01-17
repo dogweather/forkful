@@ -1,7 +1,7 @@
 ---
-title:                "랜덤 숫자 생성"
-html_title:           "Fish Shell: 랜덤 숫자 생성"
-simple_title:         "랜덤 숫자 생성"
+title:                "랜덤 숫자 생성하기"
+html_title:           "Fish Shell: 랜덤 숫자 생성하기"
+simple_title:         "랜덤 숫자 생성하기"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Numbers"
@@ -10,33 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
-랜덤 숫자를 생성하는 일을 하는 이유는 무엇일까요? 우리는 일상생활에서 랜덤 숫자를 자주 사용합니다. 예를 들어, 랜덤으로 나오는 로또 번호를 기대하거나, 랜덤으로 할당되는 업무를 받는 등 다양한 상황에서 랜덤 숫자가 필요합니다. 따라서 랜덤 숫자를 프로그래밍으로 생성해주는 Fish Shell을 배우면 여러분의 일상생활에서 유용하게 활용할 수 있습니다.
+## 무엇이고 왜?
+난수 생성은 임의의 숫자를 생성하는 프로그래밍 기술입니다. 프로그래머들은 이를 하지 않아도 되지만, 여러 암호화와 게임에서 사용되고 더 나은 코드를 작성하는 데 유용하기 때문에 이를 사용합니다.
 
-## 방법
-먼저, Fish Shell을 실행하고 다음과 같은 코드를 입력해보세요.
-```Fish Shell
-set -U random_number (math random)
-echo $random_number
+## 어떻게:
+Fish Shell에서의 난수 생성 코드는 다음과 같이 작성할 수 있습니다. ```Fish Shell ...``` 내에서 예제 코드와 출력을 확인해보세요.
 ```
-위의 코드를 실행하면 0과 1 사이의 랜덤한 숫자가 생성됩니다. 만약 특정 범위의 숫자를 생성하고 싶다면, 다음과 같이 코드를 수정할 수 있습니다.
-```Fish Shell
-set -U random_number (math random 1 10)
-echo $random_number
-```
-위의 코드는 1부터 10 사이의 랜덤한 숫자를 생성합니다. 또한, 랜덤 숫자를 사용할 때마다 다른 값이 나오도록 하고 싶다면, 다음과 같이 코드를 수정할 수 있습니다.
-```Fish Shell
-begin;
-set -U random_number (math random)
-echo $random_number
-end;
-```
-위의 코드는 매번 다른 랜덤 숫자를 생성하여 출력합니다. 따라서 여러분은 개발한 어플리케이션에 랜덤 숫자를 쉽게 적용할 수 있습니다.
+# 난수 생성하기
+set my_number (math random)
+echo $my_number
 
-## 깊이 파보기
-Fish Shell에서는 ```math random``` 이외에도 여러 가지 랜덤 기능을 제공합니다. 예를 들어, ```math between```을 사용하면 특정 범위에서 랜덤한 정수를 생성할 수 있습니다. 또한, ```math shuffle```을 사용하면 리스트나 배열을 무작위로 섞을 수 있습니다. 이 외에도 더 다양한 랜덤 기능을 포함하고 있으니 여러분은 Fish Shell 공식 문서를 참고하여 더 많은 정보를 얻을 수 있습니다.
+# 1에서 10 사이의 난수 생성하기
+set my_bounded_number (math random -l 1 -u 10)
+echo $my_bounded_number
+```
 
-## 관련 링크들
-- [Fish Shell 공식 문서](https://fishshell.com/docs/current/index.html)
-- [Fish Shell GitHub 레포지토리](https://github.com/fish-shell/fish-shell)
-- [Fish Shell 랜덤 기능 관련 문서](https://fishshell.com/docs/current/cmds/math.html#random-numbers)
+## 더 알아보기:
+- 난수 생성은 컴퓨터과학 분야에서 매우 중요한 부분입니다. 예전에는 난수 생성을 위한 물리적인 장치가 사용되었지만 현재는 소프트웨어 방식으로 많이 사용됩니다.
+- 다른 언어에서도 난수 생성 기능을 사용할 수 있습니다. Java에서는 ```java.util.Random``` 클래스를 사용하며, Python에서는 ```import random``` 구문으로 사용할 수 있습니다.
+- Fish Shell에서는 ```math random``` 기능을 사용하여 난수 생성을 할 수 있습니다. 이는 C언어의 ```rand()``` 함수와 유사합니다.
+- 난수 생성은 암호화나 시뮬레이션 등 많은 분야에서 사용됩니다. 이러한 분야에서는 난수가 예측할 수 없고 일관성이 없어야 하기 때문에 난수 생성 기술이 매우 중요합니다.
+
+## 관련 자료:
+- [Fish Shell 매뉴얼](https://fishshell.com/docs/current/index.html)
+- [다른 언어에서의 난수 생성 기술](https://www.random.org/randomness/)

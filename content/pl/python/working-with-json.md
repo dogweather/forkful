@@ -1,7 +1,7 @@
 ---
-title:                "Praca z jsonem"
-html_title:           "Python: Praca z jsonem"
-simple_title:         "Praca z jsonem"
+title:                "Praca z json"
+html_title:           "Python: Praca z json"
+simple_title:         "Praca z json"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Data Formats and Serialization"
@@ -10,123 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i dlaczego?
+JSON (JavaScript Object Notation) to popularny format danych używany przez programistów do przechowywania i wymiany informacji. W przeciwieństwie do innych formatów, takich jak XML czy CSV, JSON jest prostszy w użyciu i ma bardziej przejrzystą składnię. Programiści stosują go do przechowywania i przesyłania danych między aplikacjami, serwerami oraz bazami danych.
 
-JSON jest jednym z najpopularniejszych formatów danych używanych w dzisiejszym świecie programowania. Jest to lekki, przenośny i prosty do zrozumienia sposób kodowania i przechowywania danych. Wykorzystując JSON w swoim kodzie, możesz łatwo komunikować się z różnymi aplikacjami i serwisami sieciowymi.
-
-## Jak używać
-
-W Pythonie obsługa danych w formacie JSON jest bardzo prosta i intuicyjna. Do jej wykorzystania potrzebny jest moduł wbudowany `json`, który dostarcza funkcje do kodowania i dekodowania danych JSON. 
+## Jak to zrobić:
+Aby pracować z JSON w Pythonie, możemy skorzystać z modułu wbudowanego o nazwie "json". Najpierw musimy zaimportować ten moduł, a następnie można używać jego funkcji do odczytu, zapisu oraz manipulacji danymi JSON. Poniżej znajdują się przykładowe kody wraz z wynikami:
 
 ```Python
-# Importowanie modułu json
 import json
 
-# Zdefiniowanie danych w formacie JSON
-my_json = '{"name": "Jan", "age": 25, "hobby": "programowanie"}'
+# Przykładowy obiekt JSON:
+person = '{"name": "Anna", "age": 30, "city": "Warsaw"}'
 
-# Dekodowanie danych JSON do formatu Python
-my_dict = json.loads(my_json)
+# Odczytanie JSON i przekształcenie go w słownik:
+person_dict = json.loads(person)
+print(person_dict)
+# Output: {'name': 'Anna', 'age': 30, 'city': 'Warsaw'}
 
-# Wyświetlenie danych
-print(my_dict)
+# Dodanie nowego klucza i wartości do słownika:
+person_dict["job"] = "Programmer"
+print(person_dict)
+# Output: {'name': 'Anna', 'age': 30, 'city': 'Warsaw', 'job': 'Programmer'}
+
+# Konwersja słownika na JSON:
+person_json = json.dumps(person_dict)
+print(person_json)
+# Output: {"name": "Anna", "age": 30, "city": "Warsaw", "job": "Programmer"}
+
 ```
 
-Output:
-```Python
-{'name': 'Jan', 'age': 25, 'hobby': 'programowanie'}
-```
+## W głąb:
+JSON został stworzony jako alternatywa dla formatu XML w 2001 roku przez Douglasa Crockforda, który jest również jednym z autorów języka JavaScript. Od tego czasu JSON stał się bardzo popularnym formatem w świecie programowania, a jego prostota i czytelność przyczyniły się do jego rozpowszechnienia. Alternatywnymi formatami do przechowywania i wymiany danych w Pythonie są m.in. XML, YAML oraz protocol buffers. Ponadto, warto pamiętać, że w Pythonie możemy również wykorzystać wbudowane funkcje do obsługi formatu CSV (comma-separated values).
 
-Podobnie, możemy również przekonwertować dane z formatu Python na JSON przy użyciu funkcji `json.dumps()`.
+Jeśli chcesz dowiedzieć się więcej o pracy z JSON w Pythonie, możesz zgłębić dokumentację modułu "json": https://docs.python.org/3/library/json.html#module-json
 
-```Python
-# Zdefiniowanie słownika
-my_dict = {'name': 'Anna', 'age': 30, 'hobby': 'fotografia'}
-
-# Konwersja do formatu JSON
-my_json = json.dumps(my_dict)
-
-# Wyświetlenie danych
-print(my_json)
-```
-
-Output:
-```Python
-{"name": "Anna", "age": 30, "hobby": "fotografia"}
-```
-
-Możemy również pracować z bardziej złożonymi strukturami danych, takimi jak listy i zagnieżdżone słowniki.
-
-```Python
-# Zdefiniowanie złożonej struktury danych
-my_data = {
-  "students": [
-    {
-      "name": "Marcin",
-      "age": 22,
-      "courses": ["Informatyka", "Matematyka"]
-    },
-    {
-      "name": "Kasia",
-      "age": 20,
-      "courses": ["Historia", "Literatura"]
-    }
-  ]
-}
-
-# Konwersja do formatu JSON
-my_json = json.dumps(my_data)
-
-# Wyświetlenie danych
-print(my_json)
-```
-
-Output:
-```Python
-{"students": [{"name": "Marcin", "age": 22, "courses": ["Informatyka", "Matematyka"]}, {"name": "Kasia", "age": 20, "courses": ["Historia", "Literatura"]}]}
-```
-
-## Deep Dive
-
-W Pythonie można również odwoływać się do konkretnych elementów w strukturach danych JSON przy użyciu notacji podobnej do odwoływania się do elementów list i słowników.
-
-```Python
-# Przykładowe dane JSON
-my_json = '{"name": "Julia", "age": 27, "hobbies": ["programowanie", "czytanie", "joga"]}'
-
-# Dekodowanie do formatu Python
-my_dict = json.loads(my_json)
-
-# Wyświetlenie jednego konkretnego hobby
-print(my_dict["hobbies"][1])
-```
-
-Output:
-```Python
-czytanie
-```
-
-Dodatkowo, można również używać argumentów `indent` i `sort_keys` podczas konwersji danych do formatu JSON w celu uzyskania lepiej sformatowanego i uporządkowanego kodu.
-
-```Python
-# Konwersja do formatu JSON z wcięciami i uporządkowaniem kluczy
-my_json = json.dumps(my_dict, indent=4, sort_keys=True)
-
-# Wyświetlenie danych
-print(my_json)
-```
-
-Output:
-```Python
-{
-    "age": 27,
-    "hobbies": [
-        "programowanie",
-        "czytanie",
-        "joga"
-    ],
-    "name": "Julia"
-}
-```
-
-Teraz, gdy wiesz jak łatwo obsługiwać JSON w Pythonie, możesz bez problemu integrować się z innymi aplikacjami i serwisami i wykorzystywać dane w formacie JSON w swo
+## Zobacz także:
+- Oficjalna strona formatu JSON: https://json.org/
+- Przykładowa strona zawierająca dane w formacie JSON: https://jsonplaceholder.typicode.com/
+- Porównanie formatów JSON i XML: https://www.jsonxml.com/

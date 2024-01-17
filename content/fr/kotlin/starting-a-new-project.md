@@ -10,37 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+# Qu'est-ce que c'est et pourquoi le faire?
 
-Si vous cherchez à démarrer un nouveau projet, Kotlin est un langage de programmation moderne et puissant à considérer. Avec sa syntaxe concise et expressive, sa prise en charge de la programmation orientée objet et fonctionnelle, ainsi que son intégration transparente avec Java, Kotlin est un excellent choix pour tous types de projets.
+Lancer un nouveau projet est un processus dans lequel les programmeurs créent une base de code pour un nouveau logiciel ou une nouvelle application. Cela permet de structurer le développement de manière efficace, en adoptant une approche systématique et organisée. Les programmeurs lancent de nouveaux projets pour diverses raisons, telles que la création d'un nouveau produit, l'amélioration de fonctionnalités existantes ou même simplement pour s'entraîner et se familiariser avec un nouveau langage de programmation.
 
-## Comment faire
-
-Pour commencer un nouveau projet en Kotlin, vous aurez besoin d'installer le JDK, le compilateur Kotlin et un environnement de développement intégré (IDE) tel qu'Android Studio ou IntelliJ IDEA. Une fois installé, vous pouvez commencer à écrire votre premier programme en Kotlin en créant un fichier ```.kt```.
+# Comment faire:
 
 ```Kotlin
 fun main() {
-    println("Bonjour le monde!")
+  println("Hello World!") //Affiche "Bonjour le Monde!"
 }
 ```
 
-Ensuite, vous pouvez compiler et exécuter votre programme en utilisant la commande ```kotlinc``` ou en utilisant les outils intégrés dans votre IDE.
+L'écriture de cette simple ligne de code est la première étape pour démarrer un nouveau projet Kotlin. Ici, nous utilisons la fonction ```println()``` pour afficher le message "Bonjour le Monde!" sur la console. Cela nous montre que notre environnement de développement est bien configuré et prêt à être utilisé pour notre projet Kotlin. Désormais, nous pouvons continuer à coder et ajouter de nouvelles fonctionnalités à notre projet.
 
-## Plongée en profondeur
+# Plongée profonde:
 
-Kotlin offre une variété de fonctionnalités pour faciliter la création d'un nouveau projet. Voici quelques-unes à prendre en compte:
+Une des raisons pour lesquelles les programmeurs choisissent Kotlin pour démarrer un nouveau projet est sa compatibilité avec Java. En effet, Kotlin est un langage de programmation qui peut être facilement intégré avec le système existant basé sur Java. Cela en fait un choix populaire pour les programmeurs qui souhaitent utiliser les avantages de Kotlin tout en travaillant avec du code déjà existant.
 
-- La nullabilité de type: Kotlin permet de déclarer explicitement si un type peut être nul ou non, ce qui aide à prévenir les bugs liés aux valeurs nulles.
-- Extension de classe: Avec les extensions de classe, vous pouvez ajouter de nouvelles fonctionnalités à des classes existantes sans les modifier directement.
-- Courroies standard: Les courroies standard de Kotlin fournissent une bibliothèque riche en fonctions utilitaires pour travailler avec les collections, les chaînes de caractères et plus encore.
-- Syntaxe concise: La syntaxe concise de Kotlin réduit la quantité de code nécessaire pour accomplir une tâche, ce qui rend votre code plus facile à lire et à maintenir.
+De plus, JetBrains, l'entreprise à l'origine de Kotlin, a introduit le framework "Kotlin Multiplatform" en 2019. Cela permet de créer un projet commun utilisant le même langage de programmation pour différents systèmes, tels qu'Android, iOS et le web. Cela simplifie le processus de développement en utilisant un seul langage pour plusieurs plates-formes et en partageant du code entre elles.
 
-## Voir aussi
+En termes d'implémentation, pour démarrer un nouveau projet en utilisant Kotlin, il est nécessaire de télécharger et d'installer l'IDE (Integrated Development Environment) d'IntelliJ. Ensuite, dans le menu "File", nous pouvons sélectionner "New Project" pour créer un nouveau projet Kotlin. Une fois le projet créé, nous pouvons commencer à écrire du code et à créer notre application.
 
-Pour en savoir plus sur la façon de démarrer un projet en Kotlin, voici quelques liens utiles pour vous aider à commencer:
+# Voir aussi:
 
-- [Site officiel de Kotlin](https://kotlinlang.org)
-- [Guide de démarrage rapide de Kotlin](https://play.kotlinlang.org/koans/overview)
-- [Documentation de référence de Kotlin](https://kotlinlang.org/docs/reference/)
-
-Maintenant que vous avez une base solide en Kotlin, il est temps de vous lancer et de commencer à créer votre nouveau projet!
+Pour en savoir plus sur Kotlin et commencer à apprendre à coder avec ce langage, consultez la documentation officielle de Kotlin sur le site web de JetBrains: [https://kotlinlang.org/docs/home.html](https://kotlinlang.org/docs/home.html)

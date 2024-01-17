@@ -10,45 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i dlaczego?
 
-Porównywanie dat jest nieodłączną częścią wielu zastosowań programowania w języku Python. Jest to szczególnie przydatne w przypadkach, gdy chcemy sprawdzić, czy określona data jest wcześniejsza lub późniejsza od innej daty. W tym artykule przejdziemy przez podstawowe techniki porównywania dat w Pythonie.
+Porównywanie dat może wydawać się prostym zadaniem, ale jest nieodzowne w programowaniu. Polega ono na porównaniu dwóch dat, aby określić, która jest wcześniejsza lub późniejsza. Programiści wykonują to, aby przetwarzać i porządkować dane w aplikacjach lub aby sprawdzić, czy dana data jest ważna lub aktualna.
 
-## Jak to zrobić
-
-Porównywanie dat w Pythonie jest możliwe dzięki wbudowanej funkcji ```date``` oraz modułowi ```datetime```, który pozwala na wygodne manipulowanie czasem i datami.
-
-Aby porównać dwie daty, musimy najpierw utworzyć zmienne przechowujące konkretne daty. Możemy to zrobić na kilka sposobów, np.:
+## Jak to zrobić:
 
 ```Python
-date_1 = datetime.date(2020, 7, 15)
-date_2 = datetime.date(2019, 11, 30)
+from datetime import date
+
+today = date.today()
+date1 = date(1997, 9, 12)
+date2 = date(2020, 1, 1)
+
+# Porównywanie dat za pomocą operatora ">"
+print(date1 > date2) #Wyświetli False
+print(date2 > today) #Wyświetli True
+
+# Porównywanie dat za pomocą funkcji "compare"
+print(date1.compare(date2)) #Wyświetli -1
+print(date2.compare(today)) #Wyświetli 1
 ```
 
-Następnie wykorzystujemy operator porównania (np. ```>``` lub ```<```) do porównania tych dwóch zmiennych, np.:
+W powyższym przykładzie używamy modułu `datetime` do utworzenia daty i porównujemy ją z dzisiejszą datą. Możemy wykorzystać operator `>` lub funkcję `compare`, która zwraca wartość -1, 0 lub 1 w zależności od tego, czy pierwsza data jest wcześniejsza, równa lub późniejsza od drugiej.
 
-```Python
-date_1 > date_2 # zwraca "True", ponieważ 15 lipca 2020 jest później niż 30 listopada 2019
-```
+## Wnikliwe spojrzenie:
 
-Możemy również wykorzystać funkcję ```timedelta``` z modułu ```datetime``` do dodawania lub odejmowania określonej ilości dni, tygodni czy miesięcy do daty. Na przykład:
+Porównywanie dat jest niezbędne nie tylko w programowaniu, ale także w codziennym życiu. W przeszłości programiści musieli pisać skomplikowane funkcje, aby porównywać daty, ale teraz dzięki modułowi `datetime` jest to prostsze. Inną alternatywą jest użycie modułu `dateutil` lub biblioteki `Arrow`. Przy porównywaniu dat należy pamiętać o różnych formatach, na przykład daty zapisanej jako `dd/mm/yyyy` mogą być różne dla różnych języków.
 
-```Python
-date_3 = datetime.date(2020, 1, 1)
-date_4 = date_3 + datetime.timedelta(30) # dodajemy 30 dni do daty 1 stycznia 2020
-```
+## Zobacz także:
 
-## Głębszy zanurzenie
-
-W Pythonie istnieją również bardziej zaawansowane metody porównywania dat, takie jak wykorzystanie klasy ```dateutil.parser``` do konwersji napisów na daty, czy użycie metody ```strptime()``` do parsowania dat zgodnie z określonym formatem.
-
-Warto również wiedzieć, że daty w Pythonie mogą być porównywane nie tylko za pomocą operatorów porównania, ale także z użyciem metod ```equal()```, ```isocalendar()``` czy ```toordinal()```, które pozwalają na bardziej precyzyjne porównanie.
-
-## Zobacz także
-[Oficjalna dokumentacja Pythona dotycząca modułu ```datetime```](https://docs.python.org/3/library/datetime.html)
-
-[Poradnik na temat porównywania dat w Pythonie](https://realpython.com/python-datetime/)
-
-[Przykłady kodu z wykorzystaniem modułu ```datetime```](https://www.programiz.com/python-programming/datetime)
-
-[Porównywanie dat w innych językach programowania: różnice i podobieństwa](https://www.freecodecamp.org/news/the-basic-principles-of-date-and-time-comparison-in-programming/)
+- Dokumentacja modułu `datetime`: https://docs.python.org/3/library/datetime.html
+- Porównywanie dat w Pythonie: https://www.geeksforgeeks.org/python-comparing-dates/
+- Porównywanie dat w języku polskim: http://python.edu.pl/kursy/python/zadania_14.html

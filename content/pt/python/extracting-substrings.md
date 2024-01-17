@@ -10,55 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+## O que é e por que os programadores extraem substrings?
 
-Extração de substrings é uma técnica muito útil para manipular e obter informações específicas de strings em Python. É especialmente útil para tarefas como análise de dados e processamento de linguagem natural.
+A extração de substrings é uma técnica comum na programação que envolve a obtenção de uma parte específica de uma string ou texto maior. Os programadores fazem isso por várias razões, como separar informações importantes de uma string grande, manipular dados de forma mais eficiente ou simplificar tarefas.
 
-## Como fazer
+## Como fazer:
 
-```Python
-# Definindo uma string
-texto = "Este é um texto de exemplo"
+Extrair substrings em Python é bastante simples e pode ser feito usando o método `.split()` ou usando índices de strings. Vejamos alguns exemplos:
 
-# Usando o método "find" para encontrar a posição da palavra "texto"
-posicao = texto.find("texto")
+```
+#Exemplo 1: Usando .split()
+texto = "Olá, Portugal!"
+separado = texto.split(",") #separa a string em duas partes usando a vírgula como delimitador
+print(separado) #saída: ['Olá', ' Portugal!']
 
-# Imprimindo a posição da palavra
-print(posicao)
+#Exemplo 2: Usando índices
+texto = "Olá, Brasil!"
+print(texto[0:4]) #pega os primeiros quatro caracteres da string, 'Olá'
+print(texto[-1]) #pega o último caractere da string, '!'
 
-# Saída: 12 (a palavra "texto" começa na posição 12 da string)
-
-# Usando a posição para extrair a substring que contém a palavra "texto"
-subtexto = texto[posicao:]
-
-# Imprimindo a substring
-print(subtexto)
-
-# Saída: texto de exemplo
 ```
 
-Outra maneira de extrair substrings é usando colchetes com um número que representa a posição da letra que você deseja extrair.
+## Detalhando melhor:
 
-```Python
-# Definindo uma string
-frase = "Python é uma linguagem de programação"
+A extração de substrings tem sido usada na programação há muito tempo como uma forma de manipular e processar dados de forma mais eficiente. Antes do surgimento da linguagem Python, era comum utilizar técnicas como `substring()` em outras linguagens de programação como C++ e Java. No entanto, a simplicidade e a flexibilidade da sintaxe do Python tornaram a extração de substrings ainda mais fácil e acessível.
 
-# Extraindo a segunda palavra
-segunda_palavra = frase[7:10]
+Além do método `.split()` e índices de strings, existem outras abordagens de extração de substrings em Python, como o `re` (módulo de expressões regulares) e o `find()` (método de procura em strings). Cada um desses métodos tem suas próprias vantagens e desvantagens, tornando a extração de substrings uma técnica versátil que pode ser adaptada para diferentes situações.
 
-# Imprimindo a segunda palavra
-print(segunda_palavra)
+## Veja também:
 
-# Saída: é
-```
-
-## Mergulho profundo
-
-A extração de substrings em Python é uma tarefa simples, mas é importante ter algumas coisas em mente. Primeiramente, é importante notar que a contagem de posições começa em 0, ou seja, a primeira posição é representada por 0 e não por 1. Além disso, o método `find` só retorna a primeira ocorrência da palavra na string.
-
-Outra coisa importante a notar é que o número entre os colchetes ao extrair uma substring representa o índice do caractere. Por exemplo, na string "Python", "P" está na posição 0, "y" está na posição 1 e assim por diante.
-
-## Veja também
-
-- [Documentação oficial do Python sobre `find`](https://docs.python.org/3/library/stdtypes.html#str.find)
-- [Explicação detalhada sobre indexação de strings em Python](https://realpython.com/python-strings/#indexing-and-cutting-strings)
+- Documentação do método `.split()` em Python: https://docs.python.org/3/library/stdtypes.html#str.split
+- Tutorial sobre índices de strings em Python: https://www.w3schools.com/python/python_strings_slicing.asp
+- Exemplos de uso de expressões regulares em Python: https://www.datacamp.com/community/tutorials/python-regular-expression-tutorial

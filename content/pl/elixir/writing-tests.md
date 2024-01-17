@@ -10,16 +10,16 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+Co i dlaczego?
+Testowanie jest procesem pisania kodu, który pomaga programistom weryfikować, czy ich kod działa poprawnie. Jest to często wykonywane przez programistów, aby zapewnić, że ich aplikacja lub system działa zgodnie z oczekiwaniami.
 
-Pisanie testów jest nieodłączną częścią procesu tworzenia oprogramowania. Dzięki nim możemy upewnić się, że nasz kod działa poprawnie i nie wprowadza kolejnych błędów. Ponadto, testy pomagają w szybszym znajdowaniu i naprawianiu błędów oraz ułatwiają wprowadzanie zmian w kodzie.
+Jak to zrobić:
+Elixir dostarcza bibliotekę o nazwie ExUnit, która jest wykorzystywana do tworzenia testów w języku Elixir. Poniżej znajdują się przykład kodu oraz wyjście, aby pomóc Ci zacząć pisać testy.
 
-## Jak to zrobić?
-
-```elixir
+```
 defmodule Calculator do
-  def add(a, b) do
-    a + b
+  def add(x, y) do
+    x + y
   end
 end
 
@@ -27,19 +27,24 @@ defmodule CalculatorTest do
   use ExUnit.Case
 
   test "should add two numbers" do
-    assert Calculator.add(2, 3) == 5
+    result = Calculator.add(2, 3)
+    assert result == 5
   end
 end
 ```
 
-W powyższym przykładzie tworzymy test jednostkowy dla prostej funkcji dodawania. Korzystając z modułu `ExUnit.Case`, definiujemy testy dla naszej aplikacji. Następnie w bloku `test` sprawdzamy czy wynik wywołania funkcji `Calculator.add` jest równy oczekiwanemu wynikowi - w tym przypadku `5`.
+```
+$ elixir calculator_test.exs
+...
 
-## Deep Dive
+Finished in 0.03 seconds
+1 test, 0 failures
+```
 
-Pisanie dobrych testów to sztuka, która wymaga nie tylko znajomości składni języka, ale również umiejętności analizowania kodu i przewidywania możliwych błędów. Wymaga to także zrozumienia działania testów jednostkowych oraz innych narzędzi takich jak `ExUnit.Case` czy `mix test`. Warto również pamiętać o zasadzie "Test-Driven Development", czyli zasadzie pisania testów przed kodem, co pozwala zachować przejrzystość i poprawność naszego kodu.
+Głębsze spojrzenie:
+Historia testowania sięga lat 50-tych, kiedy to zapoczątkowano praktykę pisania testów automatycznych w języku assembler. Alternatywą dla pisania testów w Elixir jest wykorzystanie bibliotek takich jak ExUnit czy Doctests, które również wspierają testy jednostkowe.
 
-## Zobacz też
-
-- Oficjalna dokumentacja Elixir: https://hexdocs.pm/elixir
-- Poradnik "Elixir School": https://elixirschool.com/pl/
-- Kurs "Test Driven Development w Elixir": https://pragmaticstudio.com/courses/elixir
+Zobacz również:
+- Dokumentacja biblioteki ExUnit: https://hexdocs.pm/ex_unit/ExUnit.html
+- Tutorial "Testowanie w Elixir": https://elixir-lang.org/getting-started/testing-with-exunit.html 
+- Porównanie różnych bibliotek do testowania w Elixir: https://medium.com/@SundayAKpan/test-in-elixir-using-exunit-vs-dialyxir-4b4ac2d128a0

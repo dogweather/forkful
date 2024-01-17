@@ -10,42 +10,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¿Qué y por qué?
+Imprimir la salida de depuración es una técnica ampliamente utilizada por los programadores para rastrear y solucionar errores en su código. Con él, pueden imprimir mensajes en la consola o en un archivo de registro que les ayuden a comprender qué está sucediendo en su programa y por qué se están produciendo ciertos errores.
 
-Imagínate que estás desarrollando una aplicación en Java y te encuentras con un error que no puedes solucionar. ¿Cómo sabes dónde está el problema? Aquí es donde la impresión de salida de depuración (debug output) es útil. Al imprimir información específica en ciertas partes de tu código, puedes identificar mejor dónde está ocurriendo el error y solucionarlo más rápido.
+## Cómo hacerlo:
+Una forma común de imprimir la salida de depuración en Java es utilizar el método `System.out.println()`. Este método toma cualquier objeto como argumento y lo imprime en la consola. Aquí hay un ejemplo:
 
-## Cómo hacerlo
-
-La impresión de salida de depuración en Java se realiza utilizando la función ```System.out.println()```, la cual imprime el valor de una variable o una cadena de texto en la consola. Por ejemplo:
-
-```
-int num = 5;
-System.out.println(num); // imprime "5" en la consola
-```
-También puedes imprimir múltiples valores separándolos con el signo ```+```. Por ejemplo:
-
-```
-String nombre = "María";
-int edad = 24;
-System.out.println("Mi nombre es " + nombre + " y tengo " + edad + " años."); // imprime "Mi nombre es María y tengo 24 años." en la consola
+```Java
+int num1 = 5;
+int num2 = 10;
+System.out.println("La suma de " + num1 + " y " + num2 + " es " + (num1 + num2));
 ```
 
-Para imprimir información en un lugar específico de tu código, puedes utilizar comentarios. Por ejemplo:
+Este código imprimirá "La suma de 5 y 10 es 15" en la consola. También se pueden usar expresiones y variables en la cadena para imprimir valores dinámicos.
 
-```
-// imprimir el valor actual de la variable "num"
-System.out.println("El valor de num es: " + num);
-```
+## Profundizando:
+La impresión de la salida de depuración se ha utilizado desde los primeros días de la programación, cuando se usaban impresoras en papel para imprimir mensajes de depuración. En la actualidad, también hay otras formas de depurar código, como usar un depurador integrado en un IDE o escribir pruebas unitarias. Sin embargo, la impresión de la salida de depuración sigue siendo una técnica ampliamente utilizada debido a su simplicidad y flexibilidad.
 
-Recuerda eliminar los comentarios y las impresiones de salida después de solucionar el error para no afectar el rendimiento de tu aplicación.
-
-## Profundizando
-
-La impresión de salida de depuración es una técnica muy útil para solucionar errores, pero no debe utilizarse como una solución permanente. Es importante aprender a utilizar otras herramientas de depuración para identificar y solucionar problemas en tu código.
-
-También es importante tener en cuenta que la impresión de salida de depuración puede ser una vulnerabilidad de seguridad si se imprime información confidencial, como contraseñas o información personal. Por lo tanto, se recomienda utilizarla solo en entornos de desarrollo y eliminarla antes de lanzar tu aplicación en producción.
-
-## Ver también
-
-- [Java Debugging Tutorial](https://www.baeldung.com/java-debugging)
-- [The Power of System.out.println for Debugging](https://blog.frankel.ch/power-system-out-println-debugging/)
+## Ver también:
+- [Debugging with System.out.println() in Java](https://www.geeksforgeeks.org/debugging-in-java-using-system-out-println/)
+- [Difference between printing to console and writing to log file](https://stackoverflow.com/questions/5360248/printing-to-the-console-vs-writing-to-a-file/5360295)

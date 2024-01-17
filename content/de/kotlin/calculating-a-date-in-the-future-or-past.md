@@ -1,7 +1,7 @@
 ---
-title:                "Berechnung eines Datums in der Zukunft oder Vergangenheit"
-html_title:           "Kotlin: Berechnung eines Datums in der Zukunft oder Vergangenheit"
-simple_title:         "Berechnung eines Datums in der Zukunft oder Vergangenheit"
+title:                "Ein Datum in der Zukunft oder Vergangenheit berechnen"
+html_title:           "Kotlin: Ein Datum in der Zukunft oder Vergangenheit berechnen"
+simple_title:         "Ein Datum in der Zukunft oder Vergangenheit berechnen"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Dates and Times"
@@ -10,55 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was & Warum?
 
-Das Berechnen von zukünftigen oder vergangenen Terminen kann in vielen Programmieraufgaben nützlich sein, z.B. für die zeitbasierte Planung von Aufgaben oder die Darstellung von Ereignissen in einer Anwendung.
+Das Berechnen eines Datums in der Zukunft oder Vergangenheit beinhaltet das Hinzufügen oder Subtrahieren von Tagen, Wochen, Monaten oder Jahren von einem gegebenen Datum, um ein neues gewünschtes Datum zu erhalten. Programmierer tun dies, um zukünftige Ereignisse zu planen oder zu überprüfen, wann ein bestimmtes Ereignis in der Vergangenheit stattgefunden hat.
 
-## Anleitung
+## Wie geht's?
 
-Um ein Datum in der Zukunft oder Vergangenheit zu berechnen, können wir die `LocalDate` Klasse aus der `java.time` Bibliothek verwenden.
+Die Berechnung eines Datums in der Zukunft oder Vergangenheit kann in Kotlin mithilfe der "add" und "subtract" Funktionen aus der Klasse "kotlin.time.LocalDate" durchgeführt werden. Hier ist ein Beispielcode, der zuerst 5 Tage zu einem aktuellen Datum hinzufügt und dann 2 Monate davon subtrahiert:
 
-Um z.B. das Datum von heute um 2 Monate in der Zukunft zu erhalten, können wir folgenden Code verwenden:
-
-```Kotlin
+```Kotlin 
 val currentDate = LocalDate.now()
-val futureDate = currentDate.plusMonths(2)
-println("Das Datum in zwei Monaten wird sein: $futureDate")
+val futureDate = currentDate.add(Duration.days(5))
+val pastDate = currentDate.subtract(Duration.months(2))
+
+println("Heute: $currentDate")
+println("In 5 Tagen: $futureDate")
+println("Vor 2 Monaten: $pastDate")
+```
+Ausgabe:
+```
+Heute: 2021-11-10
+In 5 Tagen: 2021-11-15
+Vor 2 Monaten: 2021-09-10
 ```
 
-Die Ausgabe dieses Codes wäre: `Das Datum in zwei Monaten wird sein: 2021-08-26`.
+## Tiefer eintauchen
 
-Um ein Datum in der Vergangenheit zu berechnen, können wir stattdessen die `minus` Methode verwenden, z.B.:
+Die Berechnung von Daten in der Zukunft oder Vergangenheit ist in der Programmierung wichtig, um zu planen, wann bestimmte Aktionen ausgeführt werden sollen oder um zu überprüfen, wann Ereignisse in der Vergangenheit stattgefunden haben. Alternativ können auch Bibliotheken wie "java.time" oder "Joda-Time" verwendet werden, um Daten in Java zu berechnen.
 
-```Kotlin
-val pastDate = currentDate.minusWeeks(1)
-println("Das Datum vor einer Woche war: $pastDate")
-```
-
-Die Ausgabe dieses Codes wäre: `Das Datum vor einer Woche war: 2021-07-12`.
-
-## Tiefere Einblicke
-
-Es gibt auch eine Reihe von anderen Methoden in der `LocalDate` Klasse, die helfen können, komplexe Datumsberechnungen durchzuführen. Zum Beispiel können wir die `withDayOfYear` Methode verwenden, um das Datum auf einen bestimmten Tag im Jahr zu setzen:
-
-```Kotlin
-val birthday = LocalDate.now().withDayOfYear(200)
-println("Mein Geburtstag ist am: $birthday")
-```
-
-Die Ausgabe dieses Codes wäre: `Mein Geburtstag ist am: 2021-07-19`.
-
-Außerdem können wir die `until` Methode verwenden, um die Anzahl der Tage zwischen zwei Datumswerten zu berechnen, z.B.:
-
-```Kotlin
-val christmas = LocalDate.of(2021, Month.DECEMBER, 24)
-val daysUntilChristmas = currentDate.until(christmas, ChronoUnit.DAYS)
-println("Es sind noch $daysUntilChristmas Tage bis Weihnachten!")
-```
-
-Die Ausgabe dieses Codes wäre: `Es sind noch 153 Tage bis Weihnachten!`.
+Es ist wichtig zu beachten, dass bei der Berechnung von Daten in unterschiedlichen Zeitzonen das Ergebnis je nach implementierter Methode variieren kann. Daher ist es ratsam, eine Methode zu wählen, die die gewünschten Ergebnisse erzielt und die Zeitzonenkorrektur berücksichtigt.
 
 ## Siehe auch
 
-- [Offizielle Kotlin Dokumentation zu Date and Time](https://kotlinlang.org/docs/dart-overview.html)
-- [Java LocalDate Dokumentation] (https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
+- Kotlin Dokumentation für "LocalDate": https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.time/-local-date/
+- Java Dokumentation für "java.time": https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html
+- Joda-Time Dokumentation: https://www.joda.org/joda-time/

@@ -1,7 +1,7 @@
 ---
-title:                "Envoi d'une demande http"
-html_title:           "Gleam: Envoi d'une demande http"
-simple_title:         "Envoi d'une demande http"
+title:                "Envoyer une demande http"
+html_title:           "Gleam: Envoyer une demande http"
+simple_title:         "Envoyer une demande http"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "HTML and the Web"
@@ -10,57 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Qu'est-ce que c'est & pourquoi le faire?
 
-Si vous travaillez dans le développement web, il est à peu près certain que vous allez devoir interagir avec des API et donc, envoyer des requêtes HTTP. Découvrez comment le faire avec Gleam !
+L'envoi d'une requête HTTP est un moyen pour les programmeurs de communiquer avec des serveurs via le protocole HTTP. Cela leur permet de récupérer des données à partir de pages Web ou de services en ligne, ou d'envoyer des données pour y être traitées. Il est couramment utilisé dans le développement Web pour créer des sites Web interactifs et dynamiques.
 
-## Comment faire
+## Comment faire:
 
-Envoyer une requête HTTP en utilisant Gleam est simple. Tout d'abord, vous devez avoir le module HTTP dans votre projet :
-
-```Gleam
-let http = import http
 ```
+Gleam.http.request(
+	{
+	  method: "GET",
+	  url: "https://example.com",
+	  headers: [ {"content-type", "application/json"} ],
+	  body: "This is the request body"
+	}
+) `
 
-Ensuite, vous pouvez utiliser la fonction `request` pour spécifier la méthode, l'URL, les en-têtes et le corps de la requête :
+```Gleam.http.request``` est la fonction clé pour envoyer une requête HTTP avec Gleam. Dans cet exemple, nous demandons à l'API de exmaple.com d'envoyer une requête GET avec un en-tête JSON et un corps de requête contenant du texte. Les données renvoyées seront stockées dans une variable que vous pouvez ensuite utiliser pour effectuer des opérations supplémentaires.
 
-```Gleam
-let { Ok, Err } =
-  http.request(
-    "GET",
-    "https://example.com/users",
-    [("Content-Type", "application/json")],
-    "{
-      \"name\": \"John Doe\",
-      \"email\": \"john.doe@example.com\"
-    }"
-  )
-```
+## Plongeon en profondeur:
 
-Notez que cette fonction renvoie un résultat `Ok` ou `Err` en fonction de la réponse de serveur.
+L'envoi de requêtes HTTP est une pratique courante dans le développement Web depuis les années 1990 et reste une méthode populaire pour communiquer avec des serveurs. Alternativement, certaines applications Web modernes peuvent utiliser des technologies telles que GraphQL pour gérer leurs requêtes. Dans Gleam, l'implémentation de cette fonctionnalité repose sur les bibliothèques standard Erlang et les bibliothèques communautaires.
 
-Vous pouvez également spécifier des paramètres de requête avec la fonction `params` :
+## Voir aussi:
 
-```Gleam
-http.request(
-  "GET",
-  "https://example.com/users",
-  [("Content-Type", "application/json")],
-  "{
-    \"name\": \"John Doe\",
-    \"email\": \"john.doe@example.com\"
-  }",
-  http.params([("filter", "online"), ("sort", "name")])
-)
-```
-
-Cela ajoutera les paramètres "filter=online" et "sort=name" à l'URL de la requête.
-
-## Plongée en profondeur
-
-Il existe de nombreux autres paramètres et options disponibles pour personnaliser vos requêtes HTTP en utilisant le module HTTP de Gleam. Vous pouvez également utiliser les fonctions `get`, `post`, `put`, `delete` pour raccourcir votre code si vous n'avez pas besoin de spécifier tous les détails de la requête.
-
-## Voir aussi
-
-- La documentation du module HTTP de Gleam : https://gleam.run/modules/http.html
-- Une présentation détaillée sur l'envoi de requêtes HTTP en utilisant Gleam : https://www.jameswest.dev/http-requests-gleam/
+- La documentation officielle de Gleam pour en savoir plus sur la fonction ```Gleam.http.request```.
+- La liste des bibliothèques communautaires pour le développement Web en Gleam.
+- Un article sur la différence entre HTTP et HTTPS.

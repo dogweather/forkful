@@ -1,7 +1,7 @@
 ---
-title:                "Utskrift av feilfinnende utdata"
-html_title:           "Kotlin: Utskrift av feilfinnende utdata"
-simple_title:         "Utskrift av feilfinnende utdata"
+title:                "Utskrift av feilsøkningsdata"
+html_title:           "Kotlin: Utskrift av feilsøkningsdata"
+simple_title:         "Utskrift av feilsøkningsdata"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Testing and Debugging"
@@ -10,57 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hva og hvorfor?
+ 
+ "Printing debug output" er en måte for utviklere å se informasjon om hva som skjer i koden deres mens den kjører. Dette kan være nyttig for å feilsøke og finne feil i koden. Det er vanlig for programmerere å bruke "printing debug output" for å sikre at koden deres fungerer som den skal og for å forstå hva som skjer under kjøringen av programmet.
 
-Hvorfor skulle noen ønske å skrive ut feilsøkingsutdata (debug output)? Det er en god måte å finne ut hva som skjer i programmet ditt og for å feilsøke eventuelle problemer du støter på. 
+## Hvordan:
 
-## Hvordan gjøre det
-
-For å skrive ut feilsøkingsutdata ganske enkelt, kan du bruke funksjonen `print()` eller `println()` i Kotlin. Denne funksjonen tar inn en parameter som du vil skrive ut.
-
-```Kotlin
-val navn = "Maria"
-println(navn)
-```
-
-Dette vil skrive ut `Maria` i terminalen eller konsollen din når du kjører programmet ditt.
-
-Det er også mulig å formatere utdataen din ved hjelp av "string templates" i Kotlin. For å gjøre dette, bruk `$` foran variabelnavnet eller `${}` foran uttrykket du vil skrive ut.
+La oss si vi har en funksjon som skal legge sammen to tall og returnere resultatet. Vi ønsker å sjekke om funksjonen fungerer som den skal, så vi printer ut resultatet.
 
 ```Kotlin
-val tall1 = 10
-val tall2 = 5
-val sum = tall1 + tall2
-
-println("Summen av $tall1 og $tall2 er $sum.")
-```
-
-Dette vil skrive ut `Summen av 10 og 5 er 15.` i terminalen din.
-
-## Dypdykk
-
-For å skrive ut mer komplekse utdata, kan du bruke `debug()` funksjonen i Kotlin. Denne funksjonen tar inn en varargs parameter, slik at du kan skrive ut flere verdier samtidig.
-
-```Kotlin
-val tall = listOf(1, 2, 3, 4)
-debug("Tallene er: ", *tall)
-```
-
-Dette vil skrive ut `Tallene er: [1, 2, 3, 4]` i terminalen din.
-
-Det er også mulig å bruke `debug()` funksjonen for å skrive ut dine egne feilmeldinger. Dette kan være nyttig når du ønsker å feilsøke og finne ut hvor i koden din et problem oppstår.
-
-```Kotlin
-val navn = "Maria"
-if (navn != "Maria") {
-    debug("Feil navn, forventet Maria men fikk $navn.")
+fun addNumbers(num1: Int, num2: Int): Int {
+    val result = num1 + num2
+    println("The sum of $num1 and $num2 is $result")
+    return result
 }
+
+addNumbers(5, 3)
 ```
 
-Dette vil skrive ut `Feil navn, forventet Maria men fikk Anna.` hvis `navn` er noe annet enn "Maria".
+Output:
+```Kotlin
+The sum of 5 and 3 is 8
+```
 
-## Se også
+Her kan vi se at funksjonen fungerer som den skal og vi får det forventede resultatet. Dette kan hjelpe oss å bekrefte at koden vår er riktig og at resultatet blir håndtert på riktig måte.
 
-- [Kotlin Documentation](https://kotlinlang.org/docs/reference/)
-- [Debugging in Kotlin](https://kotlinlang.org/docs/tutorials/debugging.html)
-- [Using print(), println(), and debug() in Kotlin](https://www.baeldung.com/kotlin/print-println-debug)
+## Dypdykk:
+
+Printing debug output har vært en vanlig måte å feilsøke koden siden de tidlige dagene av programmering. Andre metoder, som for eksempel å bruke en "debugger", har også blitt mer populære. En debugger lar utviklere gå gjennom koden sin linje for linje for å se hva som skjer mens programmet kjører. Men printing debug output kan fortsatt være en nyttig metode for rask feilsøking og for å få en generell forståelse av hvordan koden fungerer.
+
+Når vi printer ut informasjon fra koden vår, er det viktig å være forsiktig så vi ikke printer ut sensitiv informasjon som kan være skadelig for programmet vårt. Det er også viktig å huske å fjerne printing debug output-koden før vi ferdigstiller programmet vårt, slik at det ikke påvirker ytelsen til programmet.
+
+## Se også:
+
+* [Kotlin Offisiell Dokumentasjon] (https://kotlinlang.org/docs/reference/basic-syntax.html#using-string-templates) for mer informasjon om printing debug output i Kotlin.
+* [Debugging Techniques] (https://www.geeksforgeeks.org/debugging-techniques/) for å lære mer om ulike metoder for å feilsøke koden din.
+* [Kotlin Playground] (https://play.kotlinlang.org/) for å prøve ut og eksperimentere med Kotlin-kode.

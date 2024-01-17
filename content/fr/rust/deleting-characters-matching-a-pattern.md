@@ -1,7 +1,7 @@
 ---
-title:                "Supprimer les caractères correspondant à un motif"
-html_title:           "Rust: Supprimer les caractères correspondant à un motif"
-simple_title:         "Supprimer les caractères correspondant à un motif"
+title:                "Suppression de caractères correspondant à un motif"
+html_title:           "Rust: Suppression de caractères correspondant à un motif"
+simple_title:         "Suppression de caractères correspondant à un motif"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -10,47 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Quoi & Pourquoi?
 
-L'une des tâches les plus courantes en programmation est de gérer et de manipuler des chaînes de caractères. Il peut arriver qu'on ait besoin de supprimer des caractères qui correspondent à un certain modèle, qu'il s'agisse de caractères spéciaux, d'espaces ou de chiffres. Dans cet article, nous allons voir comment le faire en utilisant Rust, un langage de programmation moderne et performant.
+Supprimer des caractères correspondant à un motif est l'action de supprimer tous les caractères qui correspondent à un patron spécifique dans une chaîne de texte. Les programmeurs le font souvent pour nettoyer ou manipuler des données avant de les utiliser dans leur code. Cela peut également être utile pour traiter de grandes quantités de données ou pour effectuer des modifications en masse.
 
-## Comment faire
+## Comment:
 
-La façon la plus simple et la plus efficace de supprimer des caractères correspondant à un modèle est d'utiliser la fonction `replace` du type `String` en combinaison avec des expressions régulières. Voici un exemple de code en Rust:
+Voici deux méthodes pour supprimer des caractères correspondant à un motif en Rust:
 
-```
-let chaine = "Hello, 1234!".to_string();
-let chaine_modifiee = chaine.replace(|c: char| c.is_numeric(), "");
-println!("{}", chaine_modifiee);
-```
+```Rust
+let mut text = String::from("Hello, world!");
+let pattern = "l";
+text = text.replace(pattern, "");
 
-Dans cet exemple, nous avons une chaîne de caractères qui contient des lettres et des chiffres. Nous utilisons ensuite la méthode `replace` pour remplacer tous les caractères numériques par une chaîne vide. Ainsi, la variable `chaine_modifiee` contiendra désormais "Hello, !".
-
-L'utilisation de la fonction `replace` avec une expression régulière nous permet de spécifier un modèle plus complexe pour les caractères à supprimer. Par exemple, si nous voulons supprimer tous les caractères spéciaux d'une chaîne, nous pouvons utiliser l'expression régulière `[^a-zA-Z0-9]` qui correspond à tout caractère qui n'est ni une lettre ni un chiffre. Voici un exemple de code utilisant cette expression régulière:
-
-```
-let chaine = "Hello, @#$!".to_string();
-let chaine_modifiee = chaine.replace(regex::Regex::new(r"[^a-zA-Z0-9]").unwrap(), "");
-println!("{}", chaine_modifiee);
+println!("{}", text);
 ```
 
-Dans ce cas, la variable `chaine_modifiee` contiendra "Hello". Nous utilisons ici la bibliothèque `regex` pour créer notre expression régulière, mais vous pouvez également utiliser celle intégrée à Rust en utilisant le `mod regex`.
+Cet exemple utilise la méthode `replace` pour remplacer toutes les instances du caractère "l" dans la chaîne `text` par une chaîne vide. Le résultat sera "Heo, word!".
 
-## Plonger plus en profondeur
+```Rust
+let mut text = String::from("Bonjour le monde!");
+let pattern = Regex::new("[aeiou]").unwrap();
+text = pattern.replace_all(&text, "").to_string();
 
-En regardant de plus près la fonction `replace`, on peut voir qu'elle prend en paramètre une closure ou une expression régulière. La closure est une fonction anonyme qui peut être utilisée pour spécifier un modèle personnalisé. Pour un exemple plus avancé, on pourrait vouloir supprimer tous les caractères de ponctuation d'une chaîne en utilisant une closure:
-
-```
-let ponctuation = ['!', '"', '(', ')', '-', '*', '.', '⸱'];
-let chaine = "Hello, world!".to_string();
-let chaine_modifiee = chaine.replace(|c: char| { ponctuation.contains(&c) }, "");
-println!("{}", chaine_modifiee);
+println!("{}", text);
 ```
 
-Dans cet exemple, nous créons d'abord un tableau contenant tous les caractères de ponctuation que nous voulons supprimer. Ensuite, dans la closure de la méthode `replace`, nous utilisons la méthode `contains` pour vérifier si le caractère actuel se trouve dans le tableau `ponctuation`. Si c'est le cas, la méthode `replace` le remplacera par une chaîne vide.
+Dans cet exemple, nous utilisons la bibliothèque Regex pour créer une expression régulière qui correspond à toutes les voyelles en français. Ensuite, nous utilisons la méthode `replace_all` pour remplacer toutes les voyelles dans `text` par une chaîne vide. Le résultat sera "Bnjr l mnd!".
 
-## Voir aussi
+## Plongée en profondeur:
 
-- [Documentation officielle de la méthode `replace` en Rust](https://doc.rust-lang.org/std/string/struct.String.html#method.replace)
-- [Documentation de la bibliothèque `regex` pour Rust](https://docs.rs/regex/)
-- [Guide de référence sur les expressions régulières en Rust](https://doc.rust-lang.org/std/regex/index.html)
+Supprimer des caractères correspondant à un motif a été une tâche courante pour les programmeurs depuis les débuts de la programmation. Auparavant, cela impliquait souvent d'utiliser des fonctions de bas niveau pour parcourir manuellement une chaîne et supprimer les caractères souhaités. Avec l'avènement des expressions régulières, cette tâche a été grandement simplifiée, offrant aux programmeurs des options plus flexibles et efficaces.
+
+Alternativement, plutôt que de supprimer des caractères correspondant à un motif, les programmeurs peuvent également utiliser des méthodes pour extraire ou remplacer ces caractères. Cela peut être utile dans d'autres cas où vous avez besoin de conserver certaines données plutôt que de les supprimer complètement.
+
+Sur le plan de l'implémentation, les expressions régulières sont souvent utilisées pour trouver et remplacer des caractères correspondant à un motif. Cela peut être dû à leur flexibilité et à leur grande efficacité pour traiter de grandes quantités de données. Cependant, d'autres méthodes peuvent également être utilisées, en fonction des besoins spécifiques du programmeur.
+
+## Voir aussi:
+
+- [Documentation officielle de Rust sur les expressions régulières](https://doc.rust-lang.org/std/str/struct.Regex.html)
+- [Tutoriel sur les expressions régulières en Rust](https://learnxinyminutes.com/docs/fr-fr/regex/)
+- [Article sur les avantages et les inconvénients des expressions régulières en programmation](https://www.iamtechnical.com/blog/regular-expressions-using-in-programming-languages)

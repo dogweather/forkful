@@ -10,34 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+Vad & Varför?
+Att läsa kommandoradsargument är en vanlig uppgift för JavaScript-programmerare. Det gör det möjligt för programmet att ta emot input från användaren när det körs, vilket kan vara användbart för att anpassa programmets beteende och hantera olika scenarier.
 
-Om du någonsin har använt ett program från en terminal, har du förmodligen stött på begreppet "kommandoradsargument" eller "kommandoradsparametrar". Det är helt enkelt information som kan ges till ett program när det körs för att påverka dess beteende. Men varför är det viktigt att kunna läsa dessa argument? Det kan vara till stor hjälp när du vill anpassa eller manipulera ditt program för att passa dina specifika behov.
+Hur man gör:
+För att läsa kommandoradsargument kan vi använda Node.js process.argv-objektet. Detta objekt innehåller en array av argument som skickas till programmet från kommandoraden. Här är en enkel kodexempel som skriver ut alla de givna argumenten i konsolen:
 
-## Hur man gör
+```Javascript
+process.argv.forEach((arg, index) => {
+  console.log(`Argument #${index}: ${arg}`);
+});
 
-För att läsa kommandoradsargument i Javascript, använder du process.argv-objektet som innehåller en array av argument som skickas till ditt program. Låt oss titta på ett enkelt exempel där vi vill visa ett meddelande beroende på vilka argument som skickats till programmet.
-
-```javascript
-// Kör programmet med "node arguments.js hello world"
-// node arguments.js är namnet på programfilen och "hello" och "world" är argumenten som skickas med
-
-// arguments.js
-const argument = process.argv[2];
-console.log("Hej " + argument + "!");
-// Output: Hej hello!
 ```
 
-Det här är en mycket grundläggande metod, men den ger en bra grund för att förstå hur man läser kommandoradsargument. Genom att referera till rätt index i process.argv-arrayen kan du få tillgång till specifika argument som skickats till ditt program.
+När du kör detta program med kommandoradsargument som "node script.js hello world", kommer du att se följande output:
 
-## Utforska djupare
+```
+Argument #0: node
+Argument #1: script.js
+Argument #2: hello
+Argument #3: world
+```
 
-Nu när du har en förståelse för hur man läser kommandoradsargument, kan du utforska djupare för att lära dig mer avancerade tekniker och användningar. Ett användbart tillämpningsområde är att skapa mer flexibla och anpassningsbara program. Du kan också använda kommandoradsargument för att implementera enkla användargränssnitt för dina program, vilket gör det lättare för användare att interagera med dem.
+För att endast få tag på vissa argument kan vi använda indexering på arrayen, till exempel `process.argv[2]` för att få det första argumentet efter filnamnet.
 
-## Se även
+Djupdykning:
+Att läsa kommandoradsargument har funnits sedan de tidiga dagarna av UNIX-system och är en vanlig funktion i många programmeringsspråk. Alternativet till att använda `process.argv` är att använda ett externa bibliotek som `commander` som gör det enklare att hantera olika argument och switchar.
 
-För mer information och exempel, se till exempel följande länkar:
-
-- [Node.js process.argv dokumentation](https://nodejs.org/docs/latest/api/process.html#process_process_argv)
-- [Codecademy tutorial om kommandoradsargument i Javascript](https://www.codecademy.com/articles/command-line-arguments-javascript)
-- [Kommandoradsargument: Vad de är och hur man använder dem](https://www.digitalocean.com/community/tutorials/how-to-read-command-line-arguments-in-node-js)
+Se även:
+- [Node.js - Process](https://nodejs.org/api/process.html#process_process_argv)
+- [Commander](https://www.npmjs.com/package/commander)

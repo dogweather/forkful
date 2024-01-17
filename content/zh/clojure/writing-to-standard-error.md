@@ -1,7 +1,7 @@
 ---
-title:                "“写入标准错误”"
-html_title:           "Clojure: “写入标准错误”"
-simple_title:         "“写入标准错误”"
+title:                "向标准错误写入"
+html_title:           "Clojure: 向标准错误写入"
+simple_title:         "向标准错误写入"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Files and I/O"
@@ -10,34 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-《为什么要向标准错误写入？》
+## 什么 & 为什么？
+写入标准错误是指将错误消息打印到控制台的特定位置，以便程序员可以查看并跟踪程序中的错误。这是一个巧妙的调试技巧，帮助程序员快速定位和排除问题。
 
-有时候在编程过程中，我们会遇到需要输出错误信息的情况。这时候，使用标准错误输出可以让我们更方便地找到和处理错误，从而提高代码的健壮性。
-
-《如何写入标准错误》
+## 如何：
+以下是使用Clojure写入标准错误的示例代码：
 
 ```Clojure
-;; 使用`clojure.java.io`库中的`error-writer`函数来创建一个向标准错误输出的写入器
-(def stderr-writer (error-writer))
-
-;; 使用`write`函数来向标准错误写入信息
-(write stderr-writer "Uh oh, something went wrong!")
-
+(defn test-function [message]
+  (println "This is a test message to standard error: " message))
+(throw (new Exception "This is an error message to standard error"))
 ```
 
-输出：
-
+运行上述代码，将产生以下输出：
 ```
-Uh oh, something went wrong!
+This is a test message to standard error: This is an error message to standard error
 ```
 
-《深入了解标准错误输出》
+## 深入探讨：
+写入标准错误最早是由C语言引入的调试技巧，现在已经被广泛应用于各种编程语言中。除了打印错误消息到控制台，编程语言还提供了其他调试工具，如断点和调试器，但写入标准错误仍然是一种简单而有效的方法。同时，程序员也可以选择将错误信息写入日志文件或发送到远程服务器进行分析。
 
-除了使用`write`函数来向标准错误输出信息，我们还可以使用`throw`函数来抛出错误，并让Clojure自动将其输出到标准错误。此外，我们还可以通过`binding`宏来设置当前线程的`*err*`变量，从而将标准错误输出重定向到其他地方。
-
-《相关阅读》
-
-- Clojure官方文档: https://clojure.org/
-- Clojure标准库文档: https://clojuredocs.org/
-- `clojure.java.io`文档: http://clojuredocs.org/clojure.java.io
-- 《The Joy of Clojure》: https://www.manning.com/books/the-joy-of-clojure
+## 参考资料：
+- [https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/error](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/error)
+- [https://clojure.org/reference/errors](https://clojure.org/reference/errors)

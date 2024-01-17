@@ -1,7 +1,7 @@
 ---
-title:                "Capitalizar una cadena"
-html_title:           "Fish Shell: Capitalizar una cadena"
-simple_title:         "Capitalizar una cadena"
+title:                "Mayúsculas de una cadena"
+html_title:           "Fish Shell: Mayúsculas de una cadena"
+simple_title:         "Mayúsculas de una cadena"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -10,39 +10,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¿Qué & Por qué?
+Cuando hablamos sobre capitalizar una cadena o "string", nos referimos a hacer que la primera letra de cada palabra sea mayúscula. Esto se hace a menudo en programación para mejorar la legibilidad y formato de los datos.
 
-¿Alguna vez has necesitado capitalizar una cadena en Fish Shell? Puede que pienses que es difícil o tedioso, pero en realidad es muy simple y puede ser muy útil para mejorar la presentación de tu código.
-
-## Cómo hacerlo
-
-Para capitalizar una cadena en Fish Shell, utilizamos el comando `string capitalize` seguido de la cadena que queremos capitalizar. Por ejemplo:
+## Cómo:
+En la consola de Fish Shell, podemos utilizar el comando `string capitalize` seguido de la cadena que deseamos capitalizar. Por ejemplo:
 
 ```
-Fish Shell> string capitalize "hola mundo"
-Hola mundo
+Fish Shell> string capitalize "hola amigos" 
+Hola Amigos
 ```
 
-Incluso podemos utilizar variables para capitalizar una cadena dinámicamente:
+También podemos utilizar el comando de forma interactiva, escribiendo `string capitalize` y luego presionando la tecla `Enter` para ingresar la cadena y obtener la salida deseada.
 
-```
-Fish Shell> set cadena "bienvenidos al artículo"
-Fish Shell> string capitalize $cadena
-Bienvenidos al artículo
-```
+## Profundizando:
+Antes de la aparición de la programación moderna, capitalizar una cadena se hacía a mano escribiendo letras mayúsculas con un rotulador en un papel. Sin embargo, en la actualidad, gracias a comandos como `string capitalize`, este proceso se ha vuelto mucho más sencillo y eficiente.
 
-## Profundizando
+Un método alternativo para capitalizar una cadena en Fish Shell es utilizando el comando `upper`, el cual convierte toda la cadena a mayúsculas en lugar de solo la primera letra de cada palabra.
 
-El comando `string capitalize` utiliza el algoritmo de capitalización de palabras de unicode, lo que significa que toma en cuenta las reglas de capitalización para diferentes idiomas. También se puede personalizar agregando el parámetro `-s` para especificar un delimitador diferente al espacio en blanco, o el parámetro `-m` para indicar que solo se deben capitalizar las primeras letras después del delimitador. Por ejemplo:
-
-```
-Fish Shell> string capitalize -s "_" "hola_amigo"
-Hola_amigo
-Fish Shell> string capitalize -m -s "_" "hola_amigo"
-Hola_Amigo
-```
-
-## Ver también
-
-- [Página oficial de documentación de Fish Shell](https://fishshell.com/docs/current)
-- [Ejemplos de capitalización con Fish Shell](https://fishshell.com/docs/3.3/cmds/string.html#capitalize)
+## Ver también:
+Para más información sobre los comandos de cadena en Fish Shell, puedes consultar la documentación oficial en su sitio web: https://fishshell.com/docs/current/cmds.html#string.

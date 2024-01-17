@@ -1,7 +1,7 @@
 ---
-title:                "Å skrive tester"
-html_title:           "Elixir: Å skrive tester"
-simple_title:         "Å skrive tester"
+title:                "Skriving av tester"
+html_title:           "Elixir: Skriving av tester"
+simple_title:         "Skriving av tester"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Testing and Debugging"
@@ -10,42 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+Hva & Hvorfor?
+Å skrive tester er en viktig del av programmering. Det betyr at man skriver kode som sjekker om koden vi allerede har laget fungerer som den skal. Dette er viktig for å sikre at koden fungerer som forventet og for å fange eventuelle feil før de blir et problem for brukerne.
 
-Hvorfor skal man bruke tid på å skrive tester? Vel, det er flere grunner til det. Først og fremst vil tester bidra til å sikre kvaliteten på kildekoden din. Det vil også hjelpe deg med å identifisere eventuelle feil og sørge for at alt fungerer som det skal. I tillegg vil det gjøre det enklere å vedlikeholde og videreutvikle koden din i fremtiden.
-
-## Hvordan
-
-For å skrive tester i Elixir, trenger du først å opprette en `test` mappe i prosjektet ditt. Deretter kan du lage en `test.exs` fil hvor du kan definere og kjøre tester. La oss se på et eksempel:
+Hvordan:
+Tester skrives ved hjelp av spesielle verktøy og biblioteker som er tilgjengelige for Elixir. Disse lar deg skrive tester på en strukturert og effektiv måte. La oss se på et eksempel:
 
 ```Elixir
-defmodule Calculator do
-  def add(x, y) do
-    x + y
-  end
-end
-
-ExUnit.start()
-
-defmodule CalculatorTest do
-  use ExUnit.Case
-
-  test "adds two numbers" do
-    assert Calculator.add(2, 3) == 5
-  end
+def test_division do
+  assert 10 / 2 == 5
 end
 ```
 
-I dette eksempelet har vi opprettet en enkel kalkulatorfunksjon og en tilhørende test som sjekker om funksjonen returnerer riktig svar. Ved å kjøre testen, vil vi få en output som sier at testen har passert.
+I dette eksemplet bruker vi "assert" for å sjekke at 10 delt på 2 gir oss 5 som svar. Hvis dette ikke stemmer, vil testen feile og gi oss beskjed om at noe er galt.
 
-## Deep Dive
+Dypdykk:
+Selve konseptet med å skrive tester er ikke nytt, men det har blitt mer og mer populært i moderne programmering. Alternativene til å skrive tester inkluderer manuell testing, som er tidkrevende og ikke alltid pålitelig, og andre automatiske testrammeverk som RSpec eller JUnit.
 
-Å skrive tester bygger på prinsippet om "Test Driven Development" (TDD). Dette innebærer å først skrive tester som skal svikte, og deretter skrive kode som består testene. Dette hjelper deg med å fokusere på den eksakte funksjonaliteten du ønsker å implementere, og fører ofte til bedre og mer strukturert kode.
+Å skrive tester i Elixir kan også bety å ta i bruk test-drevet utvikling (TDD). Dette er en metodikk der man skriver testene før man skriver selve koden, som kan hjelpe til med å produsere bedre og mer feilfri kode.
 
-I Elixir kan du også bruke biblioteker som `ExUnit` og `ExSpec` for å strukturere og organisere tester på en mer effektiv måte. I tillegg til å teste funksjonaliteten til koden din, kan du også skrive tester for å sjekke input/output, forventet feilhåndtering og ytelse.
+Tester kan også være nyttige for å dokumentere koden og fungere som en slags bruksanvisning for andre utviklere som skal jobbe med koden senere.
 
-## Se også
-
-- [Elixir Testing: From Beginner to Master](https://www.codementor.io/@joshuaballoch/elixir-testing-from-beginner-to-master-34hm3wrfu)
-- [ExUnit Documentation](https://hexdocs.pm/ex_unit/ExUnit.html)
-- [ExSpec Documentation](https://hexdocs.pm/exspec/ExSpec.html)
+Se også:
+- Offisiell Elixir dokumentasjon: https://hexdocs.pm/exunit/ExUnit.html
+- En enkel introduksjon til TDD med Elixir: https://thoughtbot.com/blog/testing-your-first-elixir-module

@@ -10,52 +10,20 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i dlaczego?
+Ściąganie strony internetowej to proces pobierania zawartości strony z Internetu na komputer lub urządzenie mobilne. Programiści często wykorzystują to narzędzie do pobierania danych lub informacji z wybranych stron internetowych. Może to być wykorzystane do scrapowania danych, automatyzacji zadań lub analizy treści.
 
-Pobieranie stron internetowych jest niezbędnym elementem w dzisiejszym świecie cyfrowym. Dzięki temu możemy uzyskać dostęp do różnych informacji, treści i zasobów, które są dostępne online.
-
-## Jak To Zrobić
-
-Aby pobrać stronę internetową w języku Swift, możemy skorzystać z kilku różnych metod. Jedną z nich jest użycie API URLSession, które pozwala na wykonywanie żądań HTTP i pobieranie danych z wybranego adresu URL. Należy najpierw utworzyć obiekt URL z adresem strony, a następnie użyć metody URLSession do pobrania danych z tego adresu. Poniżej znajduje się przykładowy kod:
-
+## Jak to zrobić:
 ```Swift
-// Tworzenie obiektu URL
-guard let url = URL(string: "https://www.example.com") else {
-  print("Nieprawidłowy adres URL.")
-  return
+let url = URL(string: "https://www.example.com") // Tworzenie URL do strony internetowej
+if let html = try? String(contentsOf: url!) { // Pobieranie zawartości strony jako string
+    print(html) // Wyświetlenie pobranej strony w konsoli
 }
-
-// Tworzenie żądania
-let request = URLRequest(url: url)
-
-// Inicjalizacja sesji URLSession
-let session = URLSession.shared
-
-// Tworzenie zadania pobierania danych
-let task = session.dataTask(with: request) { (data, response, error) in
-  if let error = error {
-    print("Wystąpił błąd: \(error)")
-  } else if let data = data {
-    // Opcjonalne przetworzenie danych
-    let htmlData = String(data: data, encoding: .utf8)
-    print(htmlData)
-  }
-}
-
-// Uruchamianie zadania
-task.resume()
 ```
 
-Po wykonaniu tego kodu, można zobaczyć zawartość pobranej strony w konsoli. Możemy również zastosować różne operacje na danych, aby dostosować wynik do naszych potrzeb.
+## Głębsze zagadnienia:
+Ściąganie stron internetowych jest popularnym narzędziem w programowaniu, szczególnie przy tworzeniu aplikacji do przeglądania internetowego. Takie rozwiązanie jest nie tylko wygodne dla użytkowników, ale również pozwala na wykorzystanie dużej ilości danych z różnych stron internetowych. Alternatywnym sposobem na pobieranie danych z Internetu jest wykorzystanie API (interfejsu programistycznego aplikacji), ale wymaga to wcześniejszej integracji z daną stroną internetową. Implementacja pobierania danych z Internetu w języku Swift jest prosta i wymaga tylko kilku linijek kodu.
 
-## Głębsza Analiza
-
-Podczas pobierania stron internetowych w języku Swift, warto pamiętać o pewnych rzeczach. Przede wszystkim, należy zachować ostrożność przy pobieraniu danych z niezaufanych źródeł, ponieważ mogą one zawierać złośliwy kod. Warto również zapoznać się z metodami do zarządzania sesją URLSession, takimi jak ustawianie limitów czasowych czy dodawanie nagłówków do żądań.
-
-Inną przydatną funkcją jest użycie bloków w metodzie dataTask. Dzięki temu możemy przekazać kod, który zostanie wykonany po pobraniu danych z serwera, co pozwala na lepszą obsługę błędów i zarządzanie danymi.
-
-## Zobacz również
-
-* [Dokumentacja URLSession](https://developer.apple.com/documentation/foundation/urlsession)
-* [Swift dla początkujących](https://www.swiftbysundell.com/basics/)
-* [Pobieranie danych z internetu w języku Swift](https://www.hackingwithswift.com/advanced-ios/20)
+## Zobacz także:
+- [Wyjaśnienie pojęcia "narzędzie do scrapowania" (ang. web scraping)](https://www.investopedia.com/terms/w/web-scraping.asp)
+- [Wykorzystanie API do pobierania danych z Internetu](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Introduction)

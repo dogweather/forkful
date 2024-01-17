@@ -10,49 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Qu'est-ce que c'est et pourquoi le faire ?
 
-Pourquoi devriez-vous vous soucier d'écrire des tests pour votre code? Eh bien, tout simplement parce que les tests vous permettent de vous assurer que votre code fonctionne comme prévu, en évitant les bugs et les erreurs. En outre, les tests vous aident à mieux comprendre votre code et à le maintenir à jour au fil du temps.
+Écrire des tests est une pratique courante chez les programmeurs. Il s'agit de créer du code spécifiquement pour tester votre code existant et s'assurer qu'il fonctionne correctement. Cela permet de détecter les erreurs et de s'assurer que votre programme est de qualité.
 
-## Comment faire 
+## Comment faire :
 
-Voici comment vous pouvez écrire des tests en TypeScript de manière simple et efficace:
+Voici un exemple en TypeScript d'un test de fonction pour calculer la moyenne d'un tableau de nombres :
 
 ```TypeScript
-// Importer la bibliothèque d'assertions chai
-import { expect } from 'chai';
-
-// Définir une fonction pour tester
-function sum(a: number, b: number): number {
-  return a + b;
+function calculerMoyenne(nombres: number[]): number {
+  let somme: number = 0;
+  for (let nombre of nombres) {
+    somme += nombre;
+  }
+  return somme / nombres.length;
 }
 
-// Écrire des assertions pour vérifier que la fonction retourne la valeur attendue
-expect(sum(2, 2)).to.equal(4);
-expect(sum(5, 10)).to.equal(15);
+// Test
+describe("calculerMoyenne", () => {
+  it("devrait retourner la moyenne d'un tableau de nombres", () => {
+    const result = calculerMoyenne([1, 2, 3, 4, 5]);
+    expect(result).toBe(3);
+  });
+});
 ```
 
-L'objectif de ces tests est de s'assurer que notre fonction `sum` fonctionne correctement pour toutes les valeurs d'entrée attendues. En exécutant ces tests, nous pouvons être certains que notre code est fonctionnel et qu'il n'y a pas de bugs.
+Lorsque nous exécutons ce test, il vérifie si la fonction calculerMoyenne renvoie bien la moyenne correcte pour le tableau de nombres donné. Si le test échoue, cela signifie qu'il y a un problème dans notre fonction et nous devons le corriger.
 
-## Deep Dive
+## Approfondissement :
 
-Lorsque vous écrivez des tests, il est important de comprendre les différents types de tests disponibles et quand les utiliser. Voici quelques-uns des types de tests les plus courants:
+La pratique de l'écriture de tests, également connue sous le nom de développement piloté par les tests (Test-driven development en anglais), a été popularisée dans les années 2000 par le programmeur Kent Beck. Elle est basée sur l'idée que les tests peuvent servir de spécifications pour votre code, en vous forçant à réfléchir à toutes les possibilités et cas de bord avant d'écrire votre code.
 
-- **Tests unitaires:** ces tests visent à tester une fonction ou une petite partie de code pour s'assurer qu'elle fonctionne correctement.
-- **Tests d'intégration:** ces tests vérifient si différents modules de code peuvent fonctionner ensemble correctement.
-- **Tests fonctionnels:** ces tests simulent des interactions utilisateur réelles pour vérifier que le code fonctionne comme prévu.
-- **Tests de mutation:** ces tests visent à détecter les erreurs dans le code en modifiant intentionnellement une partie du code pour voir si les tests échouent.
+Il existe également d'autres façons d'effectuer des tests, telles que le développement piloté par les comportements (Behaviour-driven development en anglais) ou les tests unitaires. Chacune a ses avantages et ses inconvénients, et il est important de choisir celle qui convient le mieux à votre projet.
 
-Il est également important de garder à l'esprit les principes de base lors de l'écriture de tests:
+L'implémentation des tests en TypeScript est relativement simple, car il dispose d'un framework de tests intégré appelé Jest, qui fournit des fonctionnalités telles que describe et it pour structurer vos tests et expect pour effectuer des assertions.
 
-- **Testez toutes les branches du code:** assurez-vous que tous les chemins possibles de votre code sont testés.
-- **Testez les cas limites:** vérifiez que votre code fonctionne correctement pour les valeurs extrêmes ou les cas inattendus.
-- **Utilisez des valeurs prévisibles:** évitez d'utiliser des valeurs aléatoires dans vos tests pour vous assurer que les résultats sont cohérents.
+## Voir aussi :
 
-## Voir aussi
-
-Pour en savoir plus sur l'écriture de tests en TypeScript, vous pouvez consulter les ressources suivantes:
-
-- Documentation officielle de TypeScript sur les tests: https://www.typescriptlang.org/docs/handbook/testing.html
-- Tutoriel sur les tests en TypeScript avec Jest: https://dev.to/bommox/testing-typescript-with-jest-4no9
-- Article sur les types de tests et leur utilisation: https://medium.freecodecamp.org/learn-typescript-fundamentals-through-unit-tests-3be9621c05bc
+- [Documentation officielle de Jest](https://jestjs.io/docs/en/getting-started)
+- [Introduction au développement piloté par les tests en JavaScript](https://www.agilealliance.org/glossary/tdd/)
+- [Dix règles pour le développement piloté par les tests](https://pragprog.com/magazines/2012-01/pragpub/january-2012-tdd)

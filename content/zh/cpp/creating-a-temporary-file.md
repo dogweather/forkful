@@ -10,66 +10,64 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 为什么？
+# 什么是临时文件？为什么要创建它们？
+创建临时文件是指在计算机中创建一个临时文件来存储一些临时性的数据。程序员通常会创建临时文件来处理一些需要暂时存储的信息，比如从一个文件中读取数据并临时保存在一个文件中。
 
-创建临时文件是在编程中常见的做法。它可以帮助我们保存一些临时的数据，方便后续使用，同时也可以防止一些冲突和错误。因此，学习如何创建临时文件是非常重要的。
-
-## 如何做？
-
-首先，我们需要包含一个头文件`<cstdio>`以使用文件操作函数。然后，使用`tmpfile()`函数来创建一个临时文件，如下所示：
-
+# 如何创建临时文件？
 ```C++
-FILE* temp = tmpfile();
+#include <iostream>
+#include <cstdio>
+
+int main() {
+
+  // 使用tmpnam()函数来在系统默认的临时文件夹中创建一个临时文件名
+  char filename[L_tmpnam];
+  tmpnam(filename);
+
+  // 使用tmpfile()函数来创建一个实际的临时文件
+  FILE *tempFile = tmpfile();
+
+  if (tempFile != NULL) {
+    std::cout << "成功创建了临时文件！" << std::endl;
+    std::cout << "临时文件名为：" << filename << std::endl;
+
+    // 使用fprintf()函数向临时文件中写入一些数据
+    fprintf(tempFile, "这是一个临时文件的例子\n");
+    fprintf(tempFile, "这是一些临时数据\n");
+
+    // 使用fseek()函数将文件指针定位在文件的起始位置
+    fseek(tempFile, 0, SEEK_SET);
+
+    // 使用fgets()函数从临时文件中读取数据并输出到屏幕上
+    char buffer[50];
+    while (fgets(buffer, 50, tempFile) != NULL) {
+      std::cout << buffer;
+    }
+  } else {
+    std::cout << "无法创建临时文件！" << std::endl;
+  }
+
+  // 关闭临时文件
+  fclose(tempFile);
+
+  return 0;
+}
 ```
 
-我们还可以使用`fopen()`函数来创建一个带有特定名称的临时文件，如下所示：
-
-```C++
-FILE* temp = fopen("temp_file.txt", "w+");
+输出：
+```
+成功创建了临时文件！
+临时文件名为：/tmp/tmp.abcdef
+这是一个临时文件的例子
+这是一些临时数据
 ```
 
-现在，我们可以使用标准的文件操作函数来读写这个临时文件。例如，我们可以使用`fprintf()`函数来向文件中写入数据，如下所示：
+# 深入了解
+- 创建临时文件的概念最初出现在Unix操作系统中，用于为程序提供一种临时存储数据的方式。
+- 除了使用标准库中的tmpnam()和tmpfile()函数，程序员也可以使用操作系统提供的临时文件功能来创建临时文件。
+- 创建的临时文件一般会根据系统设置自动被删除，但是程序员也可以在程序中手动删除它们。
 
-```C++
-fprintf(temp, "Hello, world!");
-```
-
-最后，记得使用`fclose()`函数来关闭文件并清理内存。
-
-```C++
-fclose(temp);
-```
-
-这样，我们便成功地创建了一个临时文件并向它写入了数据。记得在使用完毕后删除这个临时文件，避免占用空间。
-
-## 深入了解
-
-在创建临时文件时，我们需要注意的一点是文件名不能重复。因此，我们可以使用`tmpnam()`函数来生成一个唯一的文件名，如下所示：
-
-```C++
-char temp_name[L_tmpnam];
-tmpnam(temp_name);
-```
-
-另外，我们也可以使用`mkstemp()`函数来创建一个带有唯一名称的临时文件，如下所示：
-
-```C++
-char temp_name[] = "temp_file_XXXXXX";
-int temp_fd = mkstemp(temp_name);
-```
-`mkstemp()`函数会在指定名称中替换`X`为随机字符，确保文件名的唯一性。而且，它会返回一个文件描述符，我们可以使用`fdopen()`函数将其转换为`FILE*`类型。
-
-```C++
-FILE* temp = fdopen(temp_fd, "w+");
-```
-
-这样，我们便可以利用这个临时文件进行更多的操作，例如在写入数据后刷新缓冲区或者获取文件大小等。
-
-# 参考链接
-
-- [C++ Reference - tmpfile()](http://www.cplusplus.com/reference/cstdio/tmpfile/)
-- [C++ Reference - fopen()](http://www.cplusplus.com/reference/cstdio/fopen/)
-- [C++ Reference - fprintf()](http://www.cplusplus.com/reference/cstdio/fprintf/)
-- [C++ Reference - tmpnam()](http://www.cplusplus.com/reference/cstdio/tmpnam/)
-- [C++ Reference - mkstemp()](http://www.cplusplus.com/reference/cstdio/mkstemp/)
-- [C++ Reference - fdopen()](http://www.cplusplus.com/reference/cstdio/fdopen/)
+# 参考资料
+- [C++ 参考手册： tmpnam() 函数](https://zh.cppreference.com/w/cpp/io/c/tmpnam)
+- [C++ 参考手册： tmpfile() 函数](https://zh.cppreference.com/w/cpp/io/c/tmpfile)
+- [CSDN 博客：临时文件在文件系统中的作用](https://blog.csdn.net/hongyang_xu/article/details/7847467)

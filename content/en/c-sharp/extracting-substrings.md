@@ -10,58 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-Substrings are an important concept in programming, especially in C#. They allow us to extract specific parts of a string, which can be useful in various scenarios such as data manipulation, data validation, and more. In this article, we will discuss the basics of extracting substrings in C# and see how they can be applied in practical situations.
+Extracting substrings in programming means taking out a specific portion or section of a longer string. Programmers often do this to manipulate or access certain portions of a string, such as extracting a username from an email address or retrieving a certain value from a larger dataset. It helps to make code more efficient and organized.
 
-## How To
+## How to:
 
-To extract a substring in C#, we use the `Substring()` method. This method takes in two parameters: the starting index and the length of the substring. Let's see an example:
+### Basic method
 
-```C#
-string sentence = "Hello world!";
-string substring = sentence.Substring(6, 5);
+To extract a substring in C#, you can use the ```Substring()``` method. This method takes in two parameters - the starting index of the substring and the length of the substring.
 
-Console.WriteLine(substring);
-// Output: world
+```
+string myString = "Hello World";
+string subString = myString.Substring(6, 5);
 ```
 
-In the above code, we have a `sentence` string and we want to extract the word "world" from it. The first parameter in the `Substring()` method is the starting index, which in this case is 6 because "world" starts at index 6 in the string. The second parameter is the length of the substring, which is 5 because "world" has 5 characters.
+In this example, we want to extract the word "World" from the string "Hello World". We specify the starting index as 6 (corresponding to the first character of "World") and the length as 5 (the number of characters in "World"). The output will be the substring "World".
 
-We can also use string indexes instead of a length to extract a substring. For example:
+### Advanced method using Index and Range
 
-```C#
-string sentence = "Hello world!";
-string substring = sentence.Substring(6);
+Starting with C# 8.0, we can use the ```[..]``` index and range operators to extract substrings in a more concise way. The square brackets are used to specify the start and end indices of the substring we want.
 
-Console.WriteLine(substring);
-// Output: world!
+```
+string myString = "Hello World";
+string subString = myString[6..];
 ```
 
-In this code, we have only specified the starting index and not the length. This will extract all the characters from the starting index to the end of the string.
-
-We can also use the `Substring()` method on a character array instead of a string. Let's see an example:
-
-```C#
-char[] characters = { 'H', 'e', 'l', 'l', 'o', ' ', 'w', 'o', 'r', 'l', 'd', '!' };
-string sentence = new string(characters);
-string substring = sentence.Substring(6, 5);
-
-Console.WriteLine(substring);
-// Output: world
-```
-
-In this code, we first convert the character array to a string using the `new` keyword, and then we use the `Substring()` method on the string.
+This will extract the substring starting from index 6 (corresponding to the first character of "World") to the end of the string. The output will be "World".
 
 ## Deep Dive
 
-Behind the scenes, the `Substring()` method uses the `StringBuilder` class to create a new string with the specified substring. It also performs some checks to make sure that the starting index and length are within the boundaries of the string to avoid any errors.
+The ```Substring()``` method was first introduced in .NET Framework 1.1 and has also been available in subsequent versions. However, the use of indexes and ranges for extracting substrings is a newer feature, introduced in C# 8.0.
 
-It's worth noting that the `Substring()` method does not modify the original string. Instead, it creates a new string with the extracted substring. This means that if we modify the extracted substring, it will not affect the original string.
+There are other ways to extract substrings in C#, such as using the ```Remove()``` method or the ```Split()``` method. However, the use of the ```Substring()``` method or the index and range operators are the most commonly preferred methods as they offer more flexibility and clarity.
 
-Another important thing to keep in mind is that the `Substring()` method is case-sensitive. This means that if we pass in a different case string for the starting index, it will not return the expected substring.
+It is also important to note that extracting substrings can impact performance, especially when dealing with large strings or using nested substring operations. Care should be taken to choose the most efficient method based on the specific needs of the program.
 
 ## See Also
 
-- [C# String.Substring Method (Microsoft Docs)](https://docs.microsoft.com/en-us/dotnet/api/system.string.substring)
-- [C# StringBuilder Class (Microsoft Docs)](https://docs.microsoft.com/en-us/dotnet/api/system.text.stringbuilder)
+- [Official Microsoft documentation for the Substring method](https://docs.microsoft.com/en-us/dotnet/api/system.string.substring?view=net-5.0)
+- [Explanation of index and range operators in C#](https://docs.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-8#indices-and-ranges)

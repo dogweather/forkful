@@ -10,28 +10,22 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
-ウェブページをダウンロードすることのメリットは、オフラインでもウェブページを閲覧できることです。また、様々なデータを収集するためにも使用できます。
+## 何を & なぜ？
+Webページのダウンロードとは、ウェブサイトからコンテンツを取得することです。プログラマーがWebページをダウンロードする理由は、そのページから情報を収集して、処理や分析を行うことです。
 
-## 方法
+## 方法：
 ```C#
-using System;
-using System.Net;
-
-string url = "https://www.example.com";
-
-// URLからドキュメントを取得する
-WebClient client = new WebClient();
-string html = client.DownloadString(url);
-
-Console.WriteLine(html); // ウェブページのHTMLコードを出力
+var url = "https://example.com";
+var client = new WebClient();
+var html = client.DownloadString(url);
+Console.WriteLine(html);
 ```
 
-上記のコードを実行すると、指定したURLからHTMLコードをダウンロードできます。また、ダウンロードする際にはセキュリティ証明書の有無などを確認できます。
+## 深く掘り下げる：
+Webページのダウンロードは、インターネットが普及する以前から行われてきました。代替手段として、WebスクレイピングやAPIを使用することもできます。C#では、WebClientやHttpClientなどのクラスを使用してWebページのダウンロードを実装することができます。また、ユーザーエージェントやプロキシの設定なども可能です。
 
-## 詳細
-ウェブページのダウンロードでは、HTTPリクエストを使用してサーバーにアクセスし、HTMLコードを取得します。その際、ヘッダー情報を使用してセッションや言語の設定なども行うことができます。また、リクエストのボディにはデータを含めることもできます。
-
-## 参考リンク
-- [WebClient.DownloadString メソッド](https://docs.microsoft.com/ja-jp/dotnet/api/system.net.webclient.downloadstring)
-- [HTTPリクエストの詳細](https://developer.mozilla.org/ja/docs/Web/HTTP/Overview)
+## 関連情報：
+- [WebClientクラスドキュメント](https://docs.microsoft.com/en-us/dotnet/api/system.net.webclient?view=net-5.0)
+- [HttpClientクラスドキュメント](https://docs.microsoft.com/en-us/dotnet/api/system.net.http.httpclient?view=net-5.0)
+- [C#でWebスクレイピングを行う方法](https://qiita.com/zaburo/items/1723427f64882fcbbe98)
+- [C#でAPIを使用する方法](https://csharp.keicode.com/basics/web-api.php)

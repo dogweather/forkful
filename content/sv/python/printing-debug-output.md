@@ -1,7 +1,7 @@
 ---
-title:                "Utskrift av felsökningsutdata"
-html_title:           "Python: Utskrift av felsökningsutdata"
-simple_title:         "Utskrift av felsökningsutdata"
+title:                "Utmatning av felsökningsdata"
+html_title:           "Python: Utmatning av felsökningsdata"
+simple_title:         "Utmatning av felsökningsdata"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Testing and Debugging"
@@ -10,62 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
-Debuggning är en viktig del av programmering för att hitta och lösa fel i koden. Genom att skriva ut debuggutdata kan du få en bättre förståelse för din kod och snabbt hitta och åtgärda eventuella problem.
+## Vad & Varför?
 
-## Hur man gör
-För att skriva ut debuggutdata i Python, använd print() funktionen. Här är ett enkelt exempel:
+När vi programmerar, är det inte alltid att allt går som vi vill. Ibland behöver vi veta vad som händer under programmets körning, för att förstå varför det inte fungerar som det ska. Det är där "debug output" kommer in - det är ett sätt att skriva ut information under programmets körning för att följa vad som händer.
 
-```Python
+## Hur gör man?
+
+För att skriva ut debug output i Python använder vi funktionen "print()". Det finns många olika sätt att använda print() på, beroende på vad vi vill uppnå. Här är några exempel:
+
+```python
 x = 5
-y = 10
-print("x = ", x)
-print("y = ", y)
-```
-Output:
-```Shell
-x = 5
-y = 10
+y = "Hello"
+print(x) # skriver ut värdet av x på skärmen - i detta fall 5
+print(y) # skriver ut värdet av y på skärmen - i detta fall "Hello"
+print("Detta är ett meddelande") # skriver ut en textsträng på skärmen
 ```
 
-För att lägga till mer information i din debuggutdata, kan du använda formatters som %s, %d, %f för att sätta in variabler i strängar. Till exempel:
+Output skulle se ut såhär:
 
-```Python
-name = "Anna"
+```
+5
+Hello
+Detta är ett meddelande
+```
+
+Vi kan också kombinera flera värden i samma print() funktion genom att använda "strängformatering". Detta gör vi genom att sätta in variabler eller värden i en textsträng med hjälp av "%s". Här är ett exempel:
+
+```python
+name = "Annie"
 age = 25
-print("Hej, mitt namn är %s och jag är %d år gammal." %(name, age))
-```
-Output:
-```Shell
-Hej, mitt namn är Anna och jag är 25 år gammal.
+print("Mitt namn är %s och jag är %d år gammal." % (name, age)) # skriver ut en textsträng med värden av variablerna name och age insatta
 ```
 
-Du kan också använda funktionen repr() för att skriva ut lite mer detaljerad information om variabler, som till exempel listor eller objekt. Till exempel:
+Output skulle se ut såhär:
 
-```Python
-list = [1,2,3]
-print("Lista: " + repr(list))
 ```
-Output:
-```Shell
-Lista: [1, 2, 3]
+Mitt namn är Annie och jag är 25 år gammal.
 ```
 
 ## Djupdykning
-När du börjar använda print() funktionen för debugging, är det viktigt att vara medveten om att du inte vill lämna kvar debuggutdata i din slutliga kod. Detta kan leda till prestandaproblem eller orsaka oavsiktliga utskrifter till användaren.
 
-För att undvika detta kan du använda en debuggflagga som kontrollerar om debuggutdata ska skrivas ut eller inte. Till exempel:
+Debug output har funnits sedan början av datorer. Ursprungligen användes det genom att utskrifter skickades till en skrivare, men nu för tiden används det oftast genom att skriva ut på skärmen.
 
-```Python
-debug = True # Sätt till False när koden är klar för produktion
-if debug:
-    print("Debugginfo:")
-    # Din debuggutdata här
-```
+Alternativet till att använda print() är att använda en "debugger", vilket är ett speciellt program som låter oss undersöka variabler och steg för steg följa vad som händer i programmet. Detta är speciellt användbart när problemet är svårt att hitta eller om vi vill undersöka mer specifikt vad som händer i programmet.
 
-En annan viktig aspekt att komma ihåg är att för större projekt kan det vara värt att överväga att använda ett dedikerat debuggsystem som ger dig mer omfattande information och kontroll över din debuggutdata.
+Om vi vill skriva ut mer avancerad information, som t.ex. objekt av en viss typ eller information från en specifik rad i koden, kan vi använda "logging" modulen i Python. Detta ger oss mer möjligheter och kontroll över vad vi vill skriva ut och var vi vill skriva ut det.
 
 ## Se även
-- [Python Documentations - print()](https://docs.python.org/3/library/functions.html#print)
-- [RealPython - Python Debugging: Getting Started](https://realpython.com/python-debugging/)
-- [Medium - Debugging in Python: 2020 Edition](https://medium.com/@jasonrigden/a-guide-to-python-debugging-2020-edition-e16e05dc0364)
+
+För mer information om print() funktionen och hur man använder den kan du kolla in den officiella Python dokumentationen här: https://docs.python.org/3/library/functions.html#print
+
+För mer information om "logging" modulen kan du kolla in den officiella Python dokumentationen här: https://docs.python.org/3/library/logging.html

@@ -10,41 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hva & Hvorfor?
+Når man starter et nytt prosjekt innen programmering betyr det at man begynner å jobbe med å lage et nytt program eller en ny funksjon. Dette kan være fordi man ønsker å løse et problem, skape noe nytt eller forbedre noe som allerede finnes. Å starte et nytt prosjekt er en vanlig del av den kreative prosessen til programmerere.
 
-Å starte et nytt prosjekt kan være både spennende og utfordrende. Ved å bruke Arduino, en åpen kildekode elektronikk plattform, kan du utforske og skape dine egne interaktive innretninger og roboter. Det er en flott måte å lære om elektronikk og programmering, samtidig som du har det gøy.
-
-## Slik gjør du det
-
-Du kan programmere en Arduino ved å følge disse enkle trinnene:
-
+## Hvordan:
 ```Arduino
-// Sett "LED" til å bli styrt av pin 13
-int LED = 13;
-
 void setup() {
-// Sett pin 13 som utgang
-  pinMode(LED, OUTPUT);
+  // Sett opp koden din her
 }
 
 void loop() {
-// Skru på LED'en i 1 sekund
-  digitalWrite(LED, HIGH);
-  delay(1000);
-// Skru av LED'en i 1 sekund
-  digitalWrite(LED, LOW);
-  delay(1000);
+  // Legg til koden din her for å kontinuerlig kjøre programmet
 }
 ```
 
-Dette eksempelet vil få en LED-lys til å blinke på og av hvert sekund. Ved å endre tiden i `delay` funksjonen, kan du endre hvor lenge LED'en skal være på eller av.
+```Arduino
+void setup() {
+  // Opprett en variabel og gi den verdien "Hei"
+  String tekst = "Hei";
+  // Skriv ut teksten ved hjelp av seriell kommunikasjon
+  Serial.println(tekst);
+}
 
-## Gå dypere
+void loop() {
+  // Ingenting vil skje her siden det ikke er lagt til kode i løkken
+}
+```
 
-Når du starter et nytt prosjekt med Arduino, er det viktig å ha en god idé og en tydelig plan for hvordan du ønsker å implementere den. Tenk på komponenter du trenger, som sensorer eller motorer, og hvordan du skal koble dem til Arduino. Det er også nyttige ressurser som Arduino dokumentasjon og online samfunn som kan hjelpe deg når du står fast.
+Output: Hei
 
-## Se også
+## Dypdykk:
+Å starte et nytt prosjekt med Arduino er en enkel og effektiv måte å lage digitale prototyper. Dette er et verktøy som er utviklet for å gjøre det enklere for folk uten mye erfaring innen programmering å lage interaktive prosjekter. Andre alternativer for å starte et nytt prosjekt kan være å bruke andre programmeringsspråk eller å bygge en datamaskin fra bunnen av.
 
-- [Offisiell Arduino nettside](https://www.arduino.cc/)
-- [Arduino dokumentasjon](https://www.arduino.cc/reference/en/)
-- [Arduino forum](https://forum.arduino.cc/)
+Arduino ble opprinnelig utviklet av en gruppe studenter fra Italia på begynnelsen av 2000-tallet. Siden da har det vokst til å bli et populært verktøy blant både hobbyister og profesjonelle utviklere. Det finnes mange ressurser og tutorials tilgjengelig online for å lære mer om Arduino og hvordan man kan bruke det til å lage spennende prosjekter.
+
+## Se også:
+- Hva er Arduino? - https://www.arduino.cc/en/Guide/Introduction
+- Arduino ressurser og tutorials - https://www.arduino.cc/en/Tutorial/HomePage

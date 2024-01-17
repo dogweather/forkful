@@ -10,55 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+# Cosa e Perché?
 
-## Come Fare
+Iniziare un nuovo progetto è il primo passo per creare un'applicazione o un sito web con Elm. I programmatori creano nuovi progetti per sviluppare idee e risolvere problemi specifici utilizzando il linguaggio di programmazione Elm.
 
-Sei pronto per iniziare un nuovo progetto su Elm? Segui questi semplici passaggi per iniziare:
+# Come:
 
-```
-Elm init
-```
+Per iniziare un nuovo progetto in Elm, segui questi passi:
 
-Questo comando creerà una nuova cartella chiamata "my-app" e ti guiderà attraverso il processo di inizializzazione di un progetto Elm. Una volta completato, sarai pronto per iniziare a scrivere codice.
+1. Assicurati di aver installato Elm sul tuo computer.
+2. Crea una nuova directory per il tuo progetto.
+3. Utilizza il comando "elm init" per inizializzare il tuo progetto Elm.
+4. Inizia a scrivere il codice Elm nel tuo editor di testo o nell'IDE preferito.
+5. Utilizza il comando "elm make <file-name>.elm" per compilare il tuo codice e creare un file HTML eseguibile.
+6. Visualizza il risultato nel tuo browser preferito aprendo il file HTML generato.
 
-Ecco un esempio di codice Elm che definisce un messaggio "Saluta" e una funzione che accetta una stringa come parametro e restituisce un modello di Elm che visualizza il messaggio:
+Ecco un esempio di codice che stampa "Ciao mondo!" nella console:
 
-```
-type Msg
-    = Greet String
+```Elm
+module Main exposing (..)
 
-view : String -> Html msg
-view name =
-    div [] [ text ("Ciao, " ++ name) ]
-```
+import Html exposing (..)
+import Html.Console
 
-Per renderizzare questo modello nella tua pagina HTML, puoi utilizzare il seguente codice:
-
-```
-main : Html msg
+main : Html.Html msg
 main =
-    view "mondo"
+    Html.Console.log "Ciao mondo!"
 ```
 
-Ecco l'output che otterrai:
+## Approfondimento:
 
-```
-<div>
-    <span>Ciao, mondo</span>
-</div>
-```
+Alcuni dei vantaggi di utilizzare Elm per iniziare un nuovo progetto includono una sintassi semplice e pulita, una forte tipizzazione dei dati e una gestione degli errori più accurata. Inoltre, Elm ha una ricca libreria standard e una community attiva che offre supporto e risorse per lo sviluppo di progetti.
 
-Ora sei pronto per sperimentare e creare il tuo progetto Elm!
+Un'alternativa a Elm per iniziare un nuovo progetto potrebbe essere JavaScript o TypeScript, ma questi linguaggi possono essere più complessi e soggetti a errori.
 
-## Approfondimento
+La libreria Elm Architecture è un concetto importante da conoscere quando si inizia un nuovo progetto in Elm. Questa architettura è diventata uno standard per la struttura delle applicazioni front-end in Elm ed è progettata per creare applicazioni robuste e facili da mantenere.
 
-Iniziare un nuovo progetto su Elm è molto semplice, ma ci sono alcune cose importanti da tenere a mente prima di iniziare. Assicurati di comprendere i concetti fondamentali di Elm, come il modello di architettura "Model-View-Update" e l'uso del linguaggio di programmazione funzionale.
+## Vedi anche:
 
-Inoltre, prima di iniziare a scrivere codice, è consigliabile esplorare la documentazione ufficiale di Elm, che include esempi di codice, esercitazioni e guide su come utilizzare tutte le funzionalità disponibili. In questo modo, sarai più preparato per affrontare eventuali sfide che incontrerai durante lo sviluppo del tuo progetto.
-
-## Vedi Anche
-
-- Documentazione ufficiale di Elm: https://guide.elm-lang.org/
-- Esercitazioni di Elm: https://elmprogramming.com/tutorials/
-- Elm for Beginners: https://www.codementor.io/projects/elm/learn-elm-beginner-web-app-gRgdK4Lq0Z
+- Guida ufficiale di Elm
+- Libreria standard di Elm
+- Risorsa Learning Elm per principianti

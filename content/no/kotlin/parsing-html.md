@@ -1,7 +1,7 @@
 ---
-title:                "Analysering av HTML"
-html_title:           "Kotlin: Analysering av HTML"
-simple_title:         "Analysering av HTML"
+title:                "Analysering av html"
+html_title:           "Kotlin: Analysering av html"
+simple_title:         "Analysering av html"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "HTML and the Web"
@@ -10,51 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hva & Hvorfor?
 
-Lurer du på hvordan du kan trekke ut spesifikke deler av en nettsides innhold? Da er parsing av HTML det riktige verktøyet for deg! Ved å bruke Kotlin kan du enkelt utnytte denne funksjonen og få tilgang til dataen du trenger.
+Parsing HTML er prosessen med å analysere og tolke kildekoden til en nettside for å ekstrahere spesifikke deler av informasjonen, som for eksempel tekst eller bilder. Dette er nyttig for å automatisere oppgaver som å hente informasjon fra flere nettsider samtidig, eller for å lage egendefinerte nettsøk.
 
-## Slik gjør du det
+## Slik gjør du det:
 
-For å parse HTML i Kotlin trenger du først å importere et bibliotek for å få tilgang til funksjonene for parsing. Et populært bibliotek er Jsoup, som kan importeres i Kotlin ved å legge til følgende linje i gradle:
+Inkluder følgende kode i en Kotlin-fil for å importere biblioteket som trengs for å parse HTML:
 
-```Kotlin
-implementation 'org.jsoup:jsoup:1.13.1'
+```
+import org.jsoup.Jsoup
 ```
 
-Nå kan du begynne å bruke funksjonene for parsing. La oss si at du vil hente ut tittelen på en nettside, da kan du bruke følgende kode:
+Deretter bruker du følgende kode for å få tak i kildekoden til en nettside og ekstrahere informasjonen du ønsker:
 
-```Kotlin
-val doc = Jsoup.connect("https://www.wikipedia.org").get()
-val title = doc.title()
-println(title)
+```
+val doc = Jsoup.connect("URL til nettsiden").get()
+val element = doc.select("CSS-selector") // Dette velger elementet du ønsker å ekstrahere
+println(element.text())
 ```
 
-Dette vil gi følgende output:
+Denne koden vil gi deg tekstinnholdet til det valgte elementet. Det finnes også flere metoder som kan brukes til å hente ut andre typer informasjon, for eksempel attributter eller attributtverdier til et HTML-element.
 
-```Kotlin
-Wikipedia
-```
+## Dypdykk:
 
-Du kan også hente ut innhold fra en bestemt tag på nettsiden ved å bruke funksjonen `getElementById`. For eksempel, hvis du vil ha innholdet fra `<h1>` taggen på Wikipedia-siden, kan du bruke følgende kode:
+Parsing av HTML ble først introdusert i World Wide Web-prosjektet i 1993, og har blitt en viktig teknikk for web scraping og automatisering av weboppgaver. I tillegg til å bruke biblioteker som Jsoup, finnes det også andre alternativer som XML-parser for å parse HTML-dokumenter. Det finnes også mer avanserte teknikker som DOM (Document Object Model) og SAX (Simple API for XML) for å håndtere og manipulere HTML-strukturen.
 
-```Kotlin
-val doc = Jsoup.connect("https://www.wikipedia.org").get()
-val header = doc.getElementById("mp-topbanner")
-println(header.text())
-```
+## Se også:
 
-Dette vil gi output av tittelen på Wikipedia.
-
-## Dykk dypere
-
-Å parse HTML kan også være nyttig hvis du vil hente ut spesifikke data fra nettsiden, som for eksempel informasjon om en bok fra en nettbokhandel. Ved å bruke funksjonene for parsing kan du enkelt hente ut tittel, forfatter, pris og annen relevant informasjon fra nettsiden og bruke det til din fordel.
-
-Det finnes også andre biblioteker for å parse HTML i Kotlin, som for eksempel Jsoup-ktx, som gir en mer Kotlin-vennlig syntaks. Utforsk forskjellige biblioteker og finn det som passer best for ditt prosjekt.
-
-## Se også
-
-- [Jsoup biblioteket](https://jsoup.org/)
-- [Kotlin kodeeksempler for parsing av HTML](https://github.com/jsoup/jsoup)
-
-Med dette verktøyet i verktøykassen vil du nå være i stand til å enkelt hente ut data fra nettsider ved hjelp av Kotlin. Utforsk mulighetene og ha det gøy med å utforske og manipulere HTML. Lykke til!
+- [The Evolution of HTML Parsing](https://stackoverflow.com/questions/1074431/history-of-html-parsing)
+- [JSoup Documentation](https://jsoup.org/apidocs/)
+- [Alternatives to JSoup](https://jsoup.org/alternatives)

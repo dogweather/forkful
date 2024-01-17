@@ -1,7 +1,7 @@
 ---
-title:                "Sammenligner to datoer"
-html_title:           "Bash: Sammenligner to datoer"
-simple_title:         "Sammenligner to datoer"
+title:                "Sammenligning av to datoer"
+html_title:           "Bash: Sammenligning av to datoer"
+simple_title:         "Sammenligning av to datoer"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Dates and Times"
@@ -10,56 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor?
+## Hva og hvorfor?
+Sammenligning av to datoer er en vanlig oppgave for programmerere. Det er en måte å sjekke om en dato er større, mindre eller lik en annen dato. Det er nyttig for å organisere og filtrere data basert på datoer.
 
-Hvorfor vil man være interessert i å sammenligne to datoer? Det er flere grunner til dette, blant annet for å se om en dato kommer før eller etter en annen, eller for å avgjøre om en dato ligger i en bestemt tidsperiode.
-
-## Hvordan?
-
-For å sammenligne to datoer i Bash kan du bruke kommandoen `date -d` for å konvertere datoene til et tall som er enklere å sammenligne. La oss ta en titt på et eksempel:
-
-```Bash
-date1="2021-10-20"
-date2="2021-11-05"
-
-if [ $(date -d "$date1" +%s) -gt $(date -d "$date2" +%s) ]
-then
-    echo "$date1 er etter $date2"
+## Slik gjør du:
+Bruk følgende syntaks for å sammenligne to datoer i Bash:
+```
+if [ "$date1" -eq "$date2" ]; then
+  echo "Datoene er like"
+elif [ "$date1" -lt "$date2" ]; then
+  echo "Dato1 er før Dato2"
 else
-    echo "$date1 er før $date2"
+  echo "Dato1 er etter Dato2"
 fi
 ```
 
-Dette vil gi følgende output:
-
-```Bash
-2021-10-20 er før 2021-11-05
+Eksempelutdata:
+```
+date1=2021-01-01
+date2=2021-01-15
+Dato1 er før Dato2
 ```
 
-Her bruker vi `+%s` for å konvertere datoene til et tallformat, og deretter bruker vi `-gt` for å sammenligne dem. Du kan også bruke `-lt` for å sjekke om en dato er før en annen, eller `-eq` for å sjekke om de er like.
+## Dykk dypere:
+I eldre versjoner av Bash ble datofunksjonen "test" brukt for å sammenligne datoer. Men med den nyere versjonen av Bash, kan du bruke operatøren "-eq" for numeriske sammenligninger. Alternativt kan du også bruke Unix-verktøyet "date" for å konvertere datoer til epokenummer og sammenligne dem. Implementeringen av sammenligningen er basert på ISO-datoformatet, og kan variere mellom forskjellige operativsystemer.
 
-## Dypdykk
-
-For å kunne sammenligne datoer på en mer avansert måte, kan du også bruke `date` kommandoen til å evaluere datoer basert på ulike formater og variabler. For eksempel kan du bruke variabelen `DATEMSK` til å sammenligne datoer basert på måned og dag:
-
-```Bash
-DATEMSK="+%m-%d"
-
-date1="10-20"
-date2="11-05"
-
-if [ "$(date +%Y)-$date1" -gt "$(date +%Y)-$date2" ]
-then
-    echo "$date1 er etter $date2"
-else
-    echo "$date1 er før $date2"
-fi
-```
-
-Her bruker vi `+%Y` for å legge til det nåværende året sammen med datoene, og sammenligner deretter basert på dette. Dette kan være nyttig hvis du prøver å sammenligne datoer som kommer tilbake hvert år, som bursdager eller årlige hendelser.
-
-## Se også
-
-- [GNU Bash dokumentasjon](https://www.gnu.org/software/bash/manual/)
-
-- [Bash-programmering for nybegynnere](https://linuxconfig.org/bash-scripting-tutorial-for-beginners)
+## Se også:
+- [Bash Manual](https://www.gnu.org/software/bash/manual/html_node/Bash-Conditional-Expressions.html)
+- [Using Date in Bash Scripts](https://www.baeldung.com/linux/bash-date-command)

@@ -10,41 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¿Qué y por qué?
+Extraer subcadenas es una técnica utilizada en programación para obtener una parte específica de una cadena de texto más grande. Los programadores lo hacen para obtener datos específicos de una cadena y utilizarlos en su código.
 
-Extraer subcadenas es una habilidad importante en la programación que te permite manipular y utilizar partes específicas de una cadena de texto. Esto puede ser útil si quieres buscar ciertos patrones en una frase, o si necesitas dividir una cadena en secciones más pequeñas para realizar diferentes operaciones.
+## Cómo hacerlo:
+A continuación, se muestran dos ejemplos de cómo extraer subcadenas en Arduino. El primer ejemplo muestra cómo obtener una subcadena a partir de una cadena dada. El segundo ejemplo muestra cómo obtener una subcadena entre dos índices especificados.
 
-## Cómo hacerlo
+```
+// Ejemplo 1
+String cadena = "Hola Mundo";
+String subcadena = cadena.substring(5, 10); // Esto devuelve "Mundo"
 
-Arduino tiene una función incorporada llamada `substring()` que te permite extraer subcadenas de una cadena de texto. Para utilizarla, sigue estos sencillos pasos:
+// Ejemplo 2
+String cadena = "123456789";
+String subcadena = cadena.substring(2); // Esto devuelve "3456789"
+```
 
-1. Primero, declara una variable de tipo `String` que contenga la cadena de texto de la cual quieres extraer la subcadena.
+## Profundizando:
+Esta técnica se ha utilizado durante mucho tiempo en programación, incluso antes de la llegada de Arduino. Sin embargo, también hay alternativas como la función ```strtok()``` en C que realiza tareas similares. En cuanto a su implementación en Arduino, la función ```substring()``` pertenece a la clase String de la librería Arduino, por lo que puede ser utilizada en proyectos sin necesidad de importar librerías adicionales.
 
-   ```
-   String texto = "Hola mundo";  // La cadena de texto de la que queremos extraer la subcadena
-   ```
-
-2. Luego, usa la función `substring()` especificando el índice de inicio y el número de caracteres que quieres extraer. En Arduino, los índices comienzan desde 0.
-
-   ```
-   String subcadena = texto.substring(5, 10);  // Extrae 5 caracteres a partir del índice 10
-   ```
-
-3. Ahora puedes hacer lo que quieras con tu subcadena, como imprimirlo en la pantalla LCD o compararlo con otra cadena.
-
-   ```
-   Serial.println(subcadena);  // Imprime "mundo" en el monitor serial
-   ```
-
-Puedes jugar con diferentes valores de índices y longitud de caracteres para obtener diferentes subcadenas.
-
-## Una mirada más profunda
-
-La función `substring()` en Arduino funciona de manera similar a la función `substring()` en otros lenguajes de programación, como Java. Toma dos parámetros: el índice de inicio y la longitud de la subcadena. Y devuelve una nueva cadena de caracteres.
-
-Además, ten en cuenta que la función `substring()` no modifica la cadena original, sino que solo devuelve una copia de la subcadena extraída. Por lo tanto, si quieres modificar la cadena original, deberás asignar el resultado de `substring()` a la variable original.
-
-## Ver también
-
-- [Documentación oficial de Arduino sobre la función substring()](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/substring/)
-- [Tutorial sobre cómo usar la función substring() en Arduino](https://www.arduino.cc/en/Tutorial/TextStringSubstring)
+## Ver también:
+- [Documentación oficial de la función ``substring()`` de Arduino](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/substring/)
+- [Tutorial sobre cómo extraer subcadenas en Arduino (en inglés)](https://www.tutorialspoint.com/arduino/arduino_strings.htm)
+- [Otra alternativa para extraer subcadenas en Arduino utilizando la función ```indexOf()```](https://www.arduino.cc/reference/en/language/functions/string/character-functions/indexof/)

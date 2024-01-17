@@ -10,41 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué trabajar con YAML?
+## ¿Qué y por qué?
 
-YAML (YAML Ain't Markup Language) es un formato de serialización de datos legible por humanos, que se utiliza comúnmente para la configuración y almacenamiento de información en aplicaciones y sistemas. Al ser fácil de leer y escribir, YAML se ha vuelto popular entre los desarrolladores para trabajar con datos estructurados de manera eficiente.
+Trabajar con YAML es una forma común para que los programadores manejen la configuración de sus aplicaciones. Está basado en la simple idea de usar etiquetas y valores para definir datos estructurados, similar a cómo lo hacemos al escribir JSON.
 
-## Cómo hacerlo
+Los programadores utilizan YAML porque les permite definir información de manera clara y organizada, lo que facilita la lectura y escritura de código. 
 
-Para trabajar con YAML en Haskell, primero es necesario importar el módulo YAML utilizando la función `import`:
+## Cómo hacerlo:
+
+Utilizar YAML en Haskell es muy sencillo. Primero, debemos importar el módulo correspondiente:
 
 ```Haskell
 import Data.Yaml
 ```
 
-Luego, se puede cargar un archivo YAML utilizando la función `decodeFile`:
+Luego, podemos cargar un archivo YAML utilizando la función `decodeFile` y especificando el tipo de datos que esperamos obtener:
 
 ```Haskell
-decodeFile :: FromJSON a => FilePath -> IO (Maybe a)
+config <- decodeFile "config.yaml" :: IO (Maybe Config)
 ```
 
-Esta función devuelve una estructura de datos de tipo `Maybe` que contiene una instancia de la clase `FromJSON` que puede ser utilizada para acceder y manipular los datos cargados del archivo YAML.
-
-Para guardar una estructura de datos en un archivo YAML, se puede utilizar la función `encodeFile`:
+Finalmente, podemos acceder a los datos del archivo YAML usando la función `(.:)`:
 
 ```Haskell
-encodeFile :: ToJSON a => FilePath -> a -> IO ()
+host <- config .: "host"
+port <- config .: "port"
 ```
 
-Esta función toma una estructura de datos de tipo `ToJSON` y la convierte en un archivo YAML que se puede guardar en el sistema de archivos.
+## Profundizando:
 
-## Profundizando
+YAML fue creado originalmente en 2001 por Clark Evans como una alternativa más legible al formato XML. Desde entonces, se ha convertido en un estándar para la configuración de aplicaciones y sistemas.
 
-Además de la carga y guardar de archivos YAML, el módulo YAML en Haskell también ofrece funciones para manipular y transformar datos estructurados. Por ejemplo, se puede utilizar la función `(.:?)` para acceder a los valores de un objeto YAML de manera segura o la función `(.!=)` para proporcionar un valor predeterminado en caso de que no se encuentre un valor en el objeto.
+Aunque YAML tiene muchas ventajas, también existen otras opciones como JSON o XML. Cada uno tiene sus propias ventajas y desventajas, por lo que es importante elegir la adecuada según tus necesidades.
 
-Para obtener más información y ejemplos de cómo trabajar con YAML en Haskell, se recomienda revisar la documentación oficial del módulo [Data.Yaml](https://hackage.haskell.org/package/yaml/docs/Data-Yaml.html).
+La implementación de YAML en Haskell se basa en el módulo `Data.Yaml`, que utiliza algoritmos de parsing de alta eficiencia y una sintaxis simple para leer y escribir archivos YAML.
 
-## Ver también
+## Ver también:
 
-- [Introducción a YAML](https://es.wikipedia.org/wiki/YAML)
-- [Documentación oficial de Hackage sobre el módulo Data.Yaml](https://hackage.haskell.org/package/yaml/docs/Data-Yaml.html)
+- Documentación oficial de YAML en Haskell: https://www.stackage.org/haddock/lts-18.4/yaml-0.11.4.0/Data-Yaml.html
+- Tutorial de utilización de YAML en Haskell: http://travis-ci.org/p/yaml-hs

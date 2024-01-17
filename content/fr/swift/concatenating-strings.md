@@ -10,42 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Qu'est-ce que c'est et pourquoi le faire?
 
-Si vous êtes en train d'apprendre Swift, vous avez probablement entendu parler de la concaténation de chaînes de caractères. Cela peut sembler être une compétence de programmation assez basique, mais c'est en fait une compétence très utile qui vous permet de combiner plusieurs chaînes de caractères en une seule.
+Lorsque vous programmez en Swift, vous pourriez avoir besoin de combiner plusieurs chaînes de caractères en une seule. C'est ce qu'on appelle la concatenation de chaînes. Les programmeurs utilisent cette technique pour créer des phrases dynamiques ou pour formater des données avant de les afficher.
 
-## Comment le faire
+## Comment faire:
 
-La concaténation de chaînes de caractères en Swift est très simple. Tout ce que vous avez à faire est d'utiliser l'opérateur "+" entre deux chaînes de caractères pour les combiner en une seule. Regardez l'exemple ci-dessous pour mieux comprendre :
-
-```Swift
-let nom = "Sophie"
-let message = "Bonjour " + nom
-print(message)
-```
-
-Lorsque vous exécutez ce code, vous verrez que le message imprimé est "Bonjour Sophie". Vous avez réussi à concaténer deux chaînes de caractères en utilisant l'opérateur "+".
-
-## Plongée en profondeur
-
-Maintenant que vous avez compris comment concaténer des chaînes de caractères, voici quelques informations supplémentaires qui pourraient vous être utiles. Premièrement, vous pouvez également utiliser l'opérateur "+" pour concaténer plus de deux chaînes de caractères en les mettant les unes après les autres, par exemple : "Bonjour " + nom + " comment vas-tu ?".
-
-Deuxièmement, si vous avez besoin d'inclure des variables dans votre chaîne de caractères, vous pouvez utiliser l'interpolation de chaîne en plaçant vos variables entre les accolades. Regardons un exemple :
+Voici un exemple de code en Swift pour concaténer deux chaînes de caractères:
 
 ```Swift
-let age = 27
-let message = "J'ai \(age) ans"
-print(message)
+let firstName = "Marie"
+let lastName = "Dupont"
+
+let fullName = firstName + " " + lastName
+
+print(fullName) // "Marie Dupont"
 ```
 
-Dans ce cas, le message imprimé sera "J'ai 27 ans". L'utilisation de l'interpolation de chaîne est très pratique lorsque vous avez besoin de combiner une variable avec une chaîne de caractères.
+Vous pouvez également utiliser des interpolations de chaînes pour concaténer des variables au sein d'une chaîne:
 
-## Voir aussi
+```Swift
+let age = 32
+let message = "J'ai \(age) ans!"
 
-Pour en savoir plus sur la concaténation de chaînes de caractères en Swift, vous pouvez consulter ces ressources :
+print(message) // "J'ai 32 ans!"
+```
 
-- [Documentation officielle de Swift sur les chaînes de caractères](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
-- [Un tutoriel sur la concaténation de chaînes de caractères en Swift](https://www.hackingwithswift.com/read/22/overview)
-- [Stack Overflow : Comment concaténer des chaînes de caractères en Swift](https://stackoverflow.com/questions/24005247/how-do-you-concatenate-strings-in-swift)
+## Plongée en profondeur:
 
-Maintenant que vous avez appris à concaténer des chaînes de caractères en Swift, vous pouvez utiliser cette compétence pour créer des messages personnalisés, des noms de fichiers dynamiques ou tout simplement pour rendre votre code plus lisible. Amusez-vous bien !
+La concaténation de chaînes existe depuis les débuts de la programmation et est utilisée dans de nombreux langages de programmation. Cependant, Swift offre des fonctionnalités telles que les interpolations de chaînes qui la rendent plus efficace et pratique.
+
+En alternative à la concaténation, certains programmeurs préfèrent utiliser des formateurs de chaînes, tels que `String(format: )`, pour formater leurs données. Cela peut être utile dans certaines situations, mais la concaténation reste un moyen simple et efficace de combiner des chaînes de caractères.
+
+## Voir aussi:
+
+Pour en savoir plus sur la concaténation de chaînes en Swift, vous pouvez consulter la documentation officielle d'Apple sur les interpolations de chaînes [(Interpolations de chaînes en Swift)](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#ID277). Vous pouvez également trouver des exemples de code sur [cette page GitHub](https://gist.github.com/varunpawnesh/a2812d98b61f231088f132b72aa6fe22).

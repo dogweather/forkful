@@ -10,41 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-Converting a date into a string may seem like a simple task, but it can actually be quite complex due to different date formats, timezones, and localization. However, by using Elm's built-in functions and libraries, this process can be made easier and more efficient. In this article, we will explore how to convert a date into a string in Elm.
+Converting a date into a string simply means taking a date and turning it into a text format that is readable and understandable for humans. This is commonly done by programmers to display dates on a website or application in a way that is user-friendly and follows a specific format.
 
-## How To
+## How to:
 
-To convert a date into a string in Elm, we can use the `Date.Format` library. First, we need to import this library into our project by adding the following line at the top of our Elm file:
+To convert a date into a string in Elm, we make use of the `toString` function, which takes in a date as its parameter and returns a string representation of that date. Let's take a look at an example code below:
 
-```elm
-import Date.Format
+```
+Elm.toString October 24 2021
 ```
 
-Next, we need to create a `Date` value using the `Date.fromYearMonthDay` function, which takes in three arguments: year, month, and day. For example, to create a date for January 1st, 2020, we would use:
+The output of this code will be:
 
-```elm
-date = Date.fromYearMonthDay 2020 1 1
+```
+"Sun Oct 24 2021"
 ```
 
-Now, to convert this date into a string, we can use the `Date.Format.format` function, which takes in two arguments: a format string and the date value. The format string specifies how we want the date to be formatted and can include various placeholders for different components of the date. For example, to format our date as "1/1/2020", we would use the format string "MM/dd/yyyy" and pass in our `date` value:
+Alternatively, we can also specify a specific format for our output using the `Date.format` function. The code and output for this would look like:
 
-```elm
-formattedDate = Date.Format.format "MM/dd/yyyy" date -- "01/01/2020"
+```
+Date.format "%A, %B %d %Y" October 24 2021
 ```
 
-You can also use different format strings to get different formats of the date, such as "MMM dd, yyyy" for "Jan 01, 2020" or "yyyy-MM-dd" for "2020-01-01". Refer to the [Date.Format documentation](https://package.elm-lang.org/packages/elm-lang/core/latest/Date-Format) for more information on available format options.
+Output:
+
+```
+"Sunday, October 24 2021"
+```
 
 ## Deep Dive
 
-When converting a date into a string, it is important to consider the timezone and locale. By default, Elm will use the UTC timezone when creating a `Date` value. However, we can use the `Date.fromLocalCalendarDate` function to create a `Date` value in the local timezone. This function takes in four arguments: year, month, day, and timezone.
+Prior to the invention of computers, people used to write dates in a long-form textual format, such as "Sunday, October 24, 2021." However, with the increasing use of technology and the need for consistent formatting, dates started being represented in numeric formats, such as "10/24/2021" or "24.10.2021." However, this format is not easily readable for humans, hence the need for converting dates into strings.
 
-Furthermore, the `Date.Format.format` function also takes in an optional `Date.Format.Options` value, which allows us to specify the locale for the formatted string. This ensures that the date is formatted correctly based on the language and cultural conventions of a specific region.
+In terms of alternatives, there are other functions in Elm that allow us to manipulate dates, such as `Date.add` to add or subtract time from a given date and `Date.fromTime` to convert a time value into a date. Additionally, there are also external libraries such as `elm-time` and `Time.Clock` that provide more robust date and time functionalities.
 
-For a more in-depth understanding of date formatting in Elm, check out the [Elm Guide](https://guide.elm-lang.org/).
+In terms of implementation, the `toString` and `Date.format` functions use the `Date` and `Time` modules in Elm to convert dates into strings. These modules also allow for more advanced manipulations of dates, such as comparing dates and checking for leap years.
 
 ## See Also
 
-- [Date.Format documentation](https://package.elm-lang.org/packages/elm-lang/core/latest/Date-Format)
-- [Elm guide on date and time](https://guide.elm-lang.org/interop/dates_and_times.html)
+- [Elm official documentation for Date and Time](https://package.elm-lang.org/packages/elm/time/latest/)
+- [Using Dates in Elm video tutorial](https://www.youtube.com/watch?v=-G8xTa6XMcA)
+- [elm-time package on GitHub](https://github.com/elm/time)

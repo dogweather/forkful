@@ -10,61 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-Writing tests may seem like an extra step in the coding process, but it ultimately saves time and effort in the long run. By testing your code, you can catch any errors or bugs early on and ensure that your code is functioning as intended.
+Writing tests in Python is essentially creating automated scripts to check the functionality of your code. It allows developers to catch bugs and ensure the accuracy of their code, ultimately resulting in more reliable software.
 
-## How To
+## How to:
 
-Writing tests in Python is made easy with the built-in `unittest` module. Let's say we have a simple function that adds two numbers together:
+Writing tests in Python is as simple as creating functions that test specific aspects of your code. Let's take a look at an example:
 
-```Python
-def add(x, y):
-    return x + y
 ```
-
-To write a test for this function, we can create a new file and import the `unittest` module. Then, we can define a new test case and add a test method to it using the `assertEqual()` function to verify that our function is returning the correct output:
-
-```Python
-import unittest
-
-class TestAdd(unittest.TestCase):
-    def test_add(self):
-        self.assertEqual(add(5, 10), 15)
+def test_addition():
+    assert 2+2 == 4
 ```
+The above function is testing if the result of 2+2 equals 4. If you run this test and see no output, that means the test passed. However, if you were to change the assert statement to something like `assert 2+2 == 5`, the test would fail and you would see an output indicating that the test failed.
 
-We can run this test by simply executing our test file, and if all goes well, we should see that our test passes!
+To run this test, simply type `pytest` in your terminal while in the directory containing your tests. You can also specify which test file to run by using `pytest <test_file_name>`.
 
-Now let's say we want to add some more functionality to our `add()` function, such as checking for invalid inputs. We can easily add this test by using the `assertRaises()` function:
+## Deep Dive:
 
-```Python
-def add(x, y):
-    if not isinstance(x, int) or not isinstance(y, int):
-        raise TypeError("Arguments must be integers")
-    return x + y
-```
+Writing tests has been around for a long time and is a fundamental part of software development. It allows for a more structured approach to writing code and helps catch errors that might otherwise be missed during manual testing.
 
-```Python
-import unittest
+There are also alternatives to writing tests in Python, such as using external testing frameworks like Selenium or unit testing frameworks like unittest or nose.
 
-class TestAdd(unittest.TestCase):
-    def test_add(self):
-        self.assertEqual(add(5, 10), 15)
-    def test_invalid_input(self):
-        self.assertRaises(TypeError, add, "5", 10)
-```
+When it comes to actually implementing tests, it's important to keep them organized and separate from your actual code. This allows for easier maintenance and prevents clutter in your codebase.
 
-Now, if we run our tests again, we should see that the second test fails, since we are passing in a string instead of an integer.
+## See Also:
 
-## Deep Dive
-
-Writing tests not only helps ensure that your code is functioning correctly, but it also promotes good coding practices. By writing tests, you are essentially breaking down your code into smaller, more manageable chunks and checking each one individually. This not only makes debugging easier, but it also allows for easier testing of new features and catching potential bugs.
-
-Another useful tool for testing in Python is the `pytest` module, which provides additional features such as support for parametrized testing and fixtures. It also has a more user-friendly and readable syntax compared to the `unittest` module.
-
-It's important to remember that writing tests should not be an afterthought, but rather an integral part of the coding process. By writing tests along with your code, you are ensuring that your code is reliable and maintainable.
-
-## See Also
-
-- [Python unittest documentation](https://docs.python.org/3/library/unittest.html)
-- [pytest documentation](https://docs.pytest.org/en/latest/)
+- [Python Testing Tutorial](https://realpython.com/python-testing/)
+- [Pytest Documentation](https://docs.pytest.org/en/6.2.x/)
+- [Unittest Documentation](https://docs.python.org/3/library/unittest.html)

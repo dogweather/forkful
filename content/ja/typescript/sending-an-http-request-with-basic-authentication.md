@@ -1,7 +1,7 @@
 ---
-title:                "基本認証を用いたhttpリクエストの送信"
-html_title:           "TypeScript: 基本認証を用いたhttpリクエストの送信"
-simple_title:         "基本認証を用いたhttpリクエストの送信"
+title:                "基本認証を使用してhttpリクエストを送信する"
+html_title:           "TypeScript: 基本認証を使用してhttpリクエストを送信する"
+simple_title:         "基本認証を使用してhttpリクエストを送信する"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "HTML and the Web"
@@ -10,30 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-HTTPリクエストを基本認証で送信する理由は、ウェブアプリケーションやAPIなど、二つの異なるシステム間でセキュリティを確保するためです。基本認証では、ユーザー名とパスワードを使用して認証を行い、認証が成功した場合のみリクエストが送信されます。
+## 何と、なぜ？
 
-## How To
+HTTP要求を基本認証付きで送信することは何かというと、ユーザー名とパスワードなどのクレデンシャル情報をサーバーに安全に送信することです。なぜプログラマーがこれをするのかというと、アプリケーションやサービスへのアクセスを制限するために使用される、セキュリティ上の重要な手段だからです。
+
+## 方法：
+
 ```TypeScript
+// HTTPライブラリをインポート
 import axios from 'axios';
 
-// 例：基本認証を使用してAPIエンドポイントにGETリクエストを送信する
-axios.get('https://example.com/api/users', {
+// 基本認証を使用してHTTPリクエストを送信する例
+axios.get('https://example.com/api', {
   auth: {
     username: 'ユーザー名',
     password: 'パスワード'
   }
-}).then((response) => {
-  console.log(response.data); // APIからのレスポンスをコンソールに出力
-}).catch((error) => {
-  console.log(error.response.data); // エラーの場合、エラーレスポンスをコンソールに出力
-});
+})
+  .then(response => {
+    console.log(response.data);
+  })
+  .catch(err => {
+    console.log(err);
+  });
 ```
-基本認証を行うには、axiosなどのHTTPクライアントライブラリを使用します。リクエストを送信する際、`auth`オプションを使用して、ユーザー名とパスワードを含むオブジェクトを渡します。認証が必要な場合、サーバーからのレスポンスで認証エラーが返されることに注意してください。
 
-## Deep Dive
-基本認証では、ユーザー名とパスワードが平文として送信されるため、セキュリティ上のリスクがあります。そのため、HTTPSを使用して暗号化された接続を確立することが重要です。また、ユーザー名とパスワードを暗号化するため、Base64エンコーディングも使用されます。
+## 深堀り：
 
-## See Also
-- [axios documentation](https://github.com/axios/axios)
-- [HTTP Basic Authentication](https://developer.mozilla.org/ja/docs/Web/HTTP/Authentication#Basic_authentication_scheme)
+基本認証は、HTTPプロトコルの認証スキームの1つです。ユーザー名とパスワードは、Base 64でエンコードされ、HTTPリクエストヘッダー内のAuthorizationフィールドに含まれます。これは、ユーザーがアクセスを要求したリソースに関連する権限があるかどうかをチェックするために、サーバー側でデコードされます。
+
+基本認証には、メールやFTPなど、多くのプロトコルで使用されてきましたが、現在は安全性の面で欠点があるとされ、代わりによりセキュアな認証方式が推奨されています。
+
+基本認証を実装する方法は、HTTPライブラリを使用した例のように非常に簡単です。ただし、エンコードやデコードの処理など、細かな手順も理解しておく必要があります。
+
+## 関連リンク：
+
+- [HTTP Basic Authentication](https://en.wikipedia.org/wiki/Basic_access_authentication)
+- [Examples of Using Basic Authentication in Different Programming Languages](http://docs.moodle.org/dev/Basic_authentication_examples)

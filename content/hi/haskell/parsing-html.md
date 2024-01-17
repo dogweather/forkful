@@ -1,7 +1,7 @@
 ---
-title:                "HTML का Parsing"
-html_title:           "Haskell: HTML का Parsing"
-simple_title:         "HTML का Parsing"
+title:                "एचटीएमएल की टालना"
+html_title:           "Haskell: एचटीएमएल की टालना"
+simple_title:         "एचटीएमएल की टालना"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "HTML and the Web"
@@ -10,39 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
+## Kya aur Kyun?
+Parsing HTML kya hai? Yeh ek tarika hai website se text data ko extract karne ka. Iss process mein, ek HTML document ko parse karte hue, alag-alag elements, tags aur attributes ko alag karke data ko sahi tarike se display kia jata hai. Programmers iss kaam ko karne ka reason yeh hota hai ke unnko specific website se data collect karna hota hai aur yeh sahi tarike se upar se karna possible nahi hota hai.
 
-क्या आपने कभी सोचा है कि वेब पेज की हमारी सामान्य तस्वीरें और पाठ कैसे प्रकाशित होती हैं? यह सब टेक्स्ट से होता है! हाँ, आपने सही सुना। एचटीएमएल को प्रक्रिया करने के लिए, हस्केल का उपयोग किया जा सकता है। इस आर्टिकल में, हम आपको हस्केल में एचटीएमएल पार्सिंग के बारे में बताएंगे और आपको कुछ उदाहरण भी देंगे कि फिर विभिन्न पाठ, लिंक और दूसरे तस्वीरों को कैसे प्राप्त किया जा सकता है।
-
-## हास्केल में एचटीएमएल पार्सिंग
-
-चलिए एक साधारण हस्केल फ़ंक्शन से शुरू करते हैं जो HTML पार्सिंग करती है:
-
+## Kaise Karein:
 ```Haskell
-parseHTML :: String -> [String]
-parseHTML html = betweenTags html
+import Text.HTML.TagSoup
+
+-- HTML document ko fetch karein
+html <- openURL "https://www.examplewebsite.com"
+
+-- HTML ko parse karein
+tags <- parseTags html
+
+-- Specific tag aur uske content ko extract karein
+let headers = sections (~== "<h1>") tags
+print headers
 ```
 
-जैसा कि आप देख सकते हैं, हमने एक स्ट्रिंग को पारामीटर के रूप में दिया है और HTML का बनावट बनाया है। फिर अंतर की तालिका को वापसी किया है जि‌समें दो स्ट्रिंग अन्दर हैं (इंस्क्रुदर्डिंग स्ट्रिंग या कोमेंटएस)।
+Yeh code example mein, Text.HTML.TagSoup library use kiya gaya hai jo ki ek popular library hai Haskell mein HTML parsing ke liye. Iss example mein, ek website se HTML document ko fetch karna aur usko parse karna dikhaaya gaya hai. Phir specific tag ko identify karke uske content ko extract kiya gaya hai.
 
-यहां आप एक उदाहरण देख सकते हैं:
+## Gehre Khulase:
+Parsing HTML purane se purane tasks mein se ek hai jo ki internet ke shuruwat se hi developers ke liye ek daunting task raha hai. Phir bhi, aajkal iss process ko aur bhi easy banane ke liye kuch alternatives available hai jaise ki kuch IDEs, libraries, aur tools jo ki HTML parsing ko automated aur efficient bana dete hai.
 
-```Haskell
-parseHTML "<html><body><h1>Hello, world!</h1></body></html>"
-```
-और प्रकाशित पाठ को पेश किया। आप अपेक्षित पाठ को देख सकते हैं:
+Iss process mein ek important cheez yeh hoti hai ki HTML document mein errors ho sakte hai aur inn errors ko handle karna important hota hai. Haskell mein, ```parseTags``` function iss kaam ko sambhalta hai aur automatically errors ko handle karke sahi output deta hai.
 
-```Haskell
-["Hello, world!"]
-```
-
-कुछ इसी प्रकार से, हम आपको लिंक और तस्वीरें प्राप्त करने के लिए एक और फ़ंक्शन प्रस्तुत करते हैं:
-
-```Haskell
-extractLinks :: String -> [String]
-extractLinks html = filter isLink parsed
-    where parsed = parseHTML html
-          isLink s = "http://" `isPrefixOf` s || "https://" `isPrefixOf` s
-```
-
-इस अंतिम फ़ंक्शन में, हमने एक पूर्व निर्ध
+## Dekhein Bhi:
+- [Haskell TagSoup Library](https://hackage.haskell.org/package/tagsoup)
+- [Haskell Web Scraping Tutorial](https://www.youtube.com/watch?v=4DIpB-bXnso)
+- [Haskell for Web Development](https://www.haskell.org/haskellwiki/Haskell_for_Web_Development)

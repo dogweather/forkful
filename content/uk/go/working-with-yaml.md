@@ -10,76 +10,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Чому
+## Що і Чому?
 
-Використання YAML є дуже корисним і простим для розуміння способом зберігання та обробки структурованої інформації. Цей формат є популярним серед розробників програмного забезпечення та дозволяє зручно керувати налаштуваннями та даними.
+Робота з YAML - це процес роботи зі структурованим форматом даних, який часто використовується при програмуванні. Програмісти використовують YAML для збереження та передачі даних у зручному для обробки форматі.
 
-## Як
+## Як:
 
-Для початку роботи з YAML потрібно встановити бібліотеку `gopkg.in/yaml.v2` і імпортувати її у свій проект:
+```Go
+package main 
 
-```
+import "fmt"
 import "gopkg.in/yaml.v2"
-```
 
-Створюємо структуру даних в Go та заповнюємо її значеннями:
-
-```
-type Person struct {
-    Name string
-    Age  int
-    Job  string
+type User struct {
+    Name  string `yaml:"name"`
+    Email string `yaml:"email"`
 }
 
-p := Person{Name: "John", Age: 25, Job: "Developer"}
-```
+func main() {
+    user := User{Name: "John Doe", Email: "johndoe@example.com"}
 
-Далі, для перетворення цієї структури в YAML формат потрібно використати функцію `Marshal` та передати в неї структуру даних у вигляді `[]byte`:
+    // Encoding
+    data, err := yaml.Marshal(user)
+    if err != nil {
+        panic(err)
+    }
+    fmt.Printf(string(data))
 
-```
-yamlData, err := yaml.Marshal(p)
-if err != nil {
-    log.Fatalf("unable to marshal data: %v", err)
+    // Decoding
+    var decodedUser User
+    err = yaml.Unmarshal([]byte(data), &decodedUser)
+    if err != nil {
+        panic(err)
+    }
+    fmt.Println(decodedUser.Name, decodedUser.Email)
 }
 ```
 
-Тепер перетворений YAML код може бути виведений, наприклад, на екран:
-
+Вихідний код:
+```text
+name: John Doe
+email: johndoe@example.com
 ```
-fmt.Println(string(yamlData))
+Вивід:
 ```
-
-Результат виглядатиме наступним чином:
-
-```
-name: John
-age: 25
-job: Developer
+John Doe johndoe@example.com
 ```
 
-## Deep Dive
+## Глибинний Заплив:
 
-При роботі з YAML важливо звернути увагу на правильну структуру файлу. Він повинен бути добре структурований та відформатований, щоб уникнути помилок при обробці даних.
+YAML був створений у 2001 році з метою створення простого та зручного для читання формату даних, який був би підходящим для використання у скриптах та інструментах. Існують альтернативи, такі як JSON та XML, але деякі програмісти віддають перевагу YAML через його зручну інтуїтивно зрозумілу структуру. У Go існує бібліотека gopkg.in/yaml.v2, яка підтримує кодування та декодування даних в форматі YAML.
 
-Крім того, бібліотека `yaml.v2` вміє працювати не тільки зі структурами даних, а й зі звичайними типами, такими як `string`, `int` чи `bool`. При цьому важливо правильно вказати тип даних під час використання функції `Marshal`:
+## Дивіться також:
 
-```
-b, err := yaml.Marshal(struct {
-	Number int    `yaml:"number"`
-	Msg    string `yaml:"message"`
-}{Number: 1, Msg: "Hello!"})
-
-fmt.Println(string(b))
-```
-
-Результат буде таким:
-
-```
-number: 1
-message: Hello!
-```
-
-## Дивись також
-
-- [YAML офіційний сайт](https://yaml.org/)
-- [Програмування на Go](https://go.dev/)
+- [Офіційна документація YAML](https://yaml.org/)
+- [Документація для бібліотеки gopkg.in/yaml.v2](https://pkg.go.dev/gopkg.in/yaml.v2)

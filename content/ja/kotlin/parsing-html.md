@@ -10,32 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
-誰もがインターネットを使用することで、HTMLは非常に重要な役割を果たしています。HTMLをプログラムで動的に解析することにより、より高度なウェブアプリケーションを作成することができます。
+## 何となぜ？
+HTML解析とは、HTMLファイルから情報を抽出することです。プログラマーがこの作業を行う理由は、HTMLファイルから必要な情報を取得し、その情報を他のアプリケーションで使用することができるようにするためです。
 
-## 作り方
-HTMLをKotlinで解析する方法は簡単です。まず、HTMLを読み込んで解析するためのライブラリをインストールします。次に、HTMLを解析するための適切なタグや属性を特定し、Kotlinのコードを使用してそのデータを取得します。以下は、実際のHTMLコードとその解析方法の例です。
+## 方法：
+以下に Kotlinを使用した、HTML解析の例を示します。Kotlinのコードブロック内にコーディング例やサンプル出力が記載されています。
 
-```kotlin
-// HTMLを読み込む
-val document = Jsoup.connect("https://example.com").get()
+```Kotlin
 
-// <title>タグからテキストを取得する
-val title = document.select("title").text()
-println("ページのタイトル: $title")
+// HTML解析用のライブラリをインポート
+import org.jsoup.Jsoup
+import org.jsoup.nodes.Document
 
-// <img>タグから画像のURLを取得する
-val imageUrls = document.select("img").map { it.absUrl("src") }
-for (url in imageUrls) {
-    println("画像のURL: $url")
-}
+// 解析したいHTMLファイルのURLを指定
+val url = "https://example.com"
+
+// HTMLファイルを解析してドキュメントオブジェクトに変換
+val document: Document = Jsoup.connect(url).get()
+
+// ドキュメントオブジェクトから指定した要素の情報を取得
+val element = document.select("p").first()
+val text = element.text()
+
+// テキストを出力
+println(text)
 ```
 
-上記の例では、Jsoupというライブラリを使用してHTMLを読み込み、select()メソッドを使用して特定のタグや属性を指定し、それらの要素から必要なデータを抽出しています。
+出力結果：
+このウェブサイトは例です。
 
-## ディープダイブ
-HTMLの解析に関するさらに詳細な情報を学ぶには、[Jsoup公式ドキュメント](https://jsoup.org/)や[HTMLパーサーの基礎](https://www.tutorialspoint.com/html/html_paser.html)のチュートリアルを参考にすることができます。また、XMLやJSONといった他の形式のデータを解析する方法も学ぶことで、より幅広いウェブアプリケーションの開発が可能になります。
+## ディープダイブ：
+HTML解析の歴史的背景として、最初のハイパーテキストシステムであるWorldWideWebの開発が挙げられます。HTMLの標準化が進むにつれ、解析するためのライブラリやツールも開発されてきました。代替手段としては、正規表現を使用してHTMLファイルを解析する方法もありますが、複雑なタグや構造については対応できません。Kotlinでは、Javaのライブラリを使用することでHTMLの解析が可能です。
 
-## 参考リンク
-- [Jsoup公式ドキュメント](https://jsoup.org/)
-- [HTMLパーサーの基礎](https://www.tutorialspoint.com/html/html_paser.html)
+## さらに参考：
+- [Kotlinプログラミング言語公式サイト](https://kotlinlang.org/)
+- [Kotlinを使用したWebスクレイピングのチュートリアル](https://www.educative.io/blog/kotlin-web-scraping-tutorial)
+- [HTML解析のためのJsoupライブラリ](https://jsoup.org/)

@@ -10,54 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Qu'est-ce que et pourquoi?
 
-Vous vous demandez peut-être pourquoi créer un fichier temporaire en utilisant Arduino. Eh bien, il peut y avoir plusieurs raisons pour cela. Par exemple, vous pouvez utiliser un fichier temporaire pour stocker des données temporaires pendant l'exécution d'un programme ou pour tester votre code avant de l'implémenter de manière définitive.
+Créer un fichier temporaire est une pratique courante dans la programmation pour stocker des données ou des informations temporaires avant de les utiliser ou de les supprimer. Cela peut être utile lorsque vous avez besoin de stocker des données pour une courte période de temps et que vous ne voulez pas créer de fichiers permanents pour cela.
 
-## Comment faire
-
-Voici un exemple simple de création et d'utilisation d'un fichier temporaire en utilisant Arduino :
+## Comment faire:
 
 ```Arduino
-#include <SD.h> //inclure la bibliothèque SD pour la gestion des fichiers
-
-File myFile; //déclarer un objet de fichier temporaire
-
-void setup() {
-  Serial.begin(9600); //initialiser le port série pour afficher des messages
-  
-  SD.begin(4); //initialiser la carte SD avec l'indentificateur de broche 4
-  
-  //créer un fichier temporaire nommé "temp.txt" et ouvrir en mode écriture
-  myFile = SD.open("temp.txt", FILE_WRITE);
-
-  //écrire une chaîne de caractères dans le fichier
-  if (myFile) {
-    myFile.println("Ceci est un fichier temporaire !"); 
-    myFile.close(); //fermer le fichier
-    Serial.println("Fichier temporaire créé avec succès !");
-  }
-}
-
-void loop() {
-  //rien à faire dans la boucle principale
-}
+ // Créer un fichier temporaire nommé "temp.txt"
+ File tempfile = SD.open("temp.txt", FILE_WRITE);
+ // Écrire une chaîne de caractères dans le fichier
+ tempfile.println("Bonjour le monde!");
+ // Fermer le fichier
+ tempfile.close();
 ```
 
-En exécutant ce code, vous verrez sur le moniteur série le message "Fichier temporaire créé avec succès !". Maintenant, si vous ouvrez la carte SD sur votre ordinateur, vous devriez trouver le fichier "temp.txt" contenant la ligne de texte que nous avons écrite.
+## Plongée en profondeur:
 
-## Plongez plus en profondeur
+La pratique de créer des fichiers temporaires existe depuis longtemps dans le domaine de la programmation. Elle est souvent utilisée pour stocker des données temporaires telles que des journaux, des mises en cache ou des fichiers temporaires pour les téléchargements. Les alternatives à la création de fichiers temporaires peuvent inclure l'utilisation de variables ou de tableaux pour stocker les données temporaires, mais cela peut être moins efficace et difficile à gérer pour les grandes quantités d'informations.
 
-Créer un fichier temporaire peut également être utile lorsque vous avez besoin de stocker des données volumineuses qui peuvent ralentir votre programme si elles sont stockées en mémoire RAM. Dans ce cas, vous pouvez écrire les données dans un fichier temporaire, puis les récupérer en utilisant des fonctions de lecture de fichiers. Vous pouvez également choisir de supprimer le fichier temporaire une fois que vous avez terminé d'utiliser les données pour libérer de l'espace sur votre carte SD.
+L'implémentation d'une fonction de création de fichiers temporaires peut varier en fonction du langage de programmation utilisé et du système d'exploitation sur lequel il s'exécute. Dans le cas d'Arduino, la création de fichiers temporaires peut être réalisée en utilisant les fonctions de la bibliothèque SD. Cela nécessite également un module de carte SD pour stocker les fichiers sur le système.
 
-## Voir aussi
+## Voir aussi:
 
-Voici quelques liens utiles pour en savoir plus sur la gestion des fichiers avec Arduino :
-
-- [Documentation officielle de la bibliothèque SD](https://www.arduino.cc/en/Reference/SD)
-
-- [Tutoriel sur la création et la lecture de fichiers avec Arduino](https://www.arduino.cc/en/Tutorial/ReadWrite)
-
-- [Exemples de projets utilisant des fichiers temporels avec Arduino](https://create.arduino.cc/projecthub/projects/tags/file)
-
-Maintenant que vous savez comment créer un fichier temporaire, vous pouvez l'appliquer à vos projets pour améliorer leur efficacité et leur gestion des données. Amusez-vous bien !
+- [Documentation Arduino sur la gestion des fichiers](https://www.arduino.cc/en/Reference/SD)
+- [Article sur la création de fichiers temporaires en C++](https://www.geeksforgeeks.org/temporary-files-c/)
+- [Différentes façons de gérer les données temporaires en programmation](https://www.digitalocean.com/community/tutorials/temporary-files-in-programming)

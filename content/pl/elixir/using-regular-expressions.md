@@ -1,7 +1,7 @@
 ---
-title:                "Używanie wyrażeń regularnych"
-html_title:           "Elixir: Używanie wyrażeń regularnych"
-simple_title:         "Używanie wyrażeń regularnych"
+title:                "Korzystanie z wyrażeń regularnych"
+html_title:           "Elixir: Korzystanie z wyrażeń regularnych"
+simple_title:         "Korzystanie z wyrażeń regularnych"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -10,52 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Czym jest wyrażenie regularne (ang. Regular expression)?
 
-Jeśli jesteś programistą lub zainteresowanym nauką programowania, zapewne już słyszałeś o wyrażeniach regularnych, zwanych także regexami. Dzięki nim możemy efektywnie przetwarzać tekst i znalezienie określonego wzoru w długim ciągu znaków staje się prostsze. W artykule tym dowiesz się, dlaczego warto nauczyć się regexów i jak możesz zacząć używać ich w swoich projektach.
+Wyrażenie regularne jest ciągiem znaków, który działa jako szablon do dopasowania pewnych wzorców tekstu. Jest to często wykorzystywane narzędzie przez programistów do wykonywania operacji na tekście, takich jak wyszukiwanie, zastępowanie i filtrowanie.
 
-## Jak to zrobić
+## Jak używać wyrażeń regularnych w Elixirze?
 
-Gotowy do zanurzenia się w świat wyrażeń regularnych? Oto kilka przykładów kodu, które wyjaśnią, jak łatwo jest używać wyrażeń regularnych w Elixirze.
+Wykorzystując wbudowany moduł `Regex`, możesz używać wyrażeń regularnych w swoim kodzie Elixir. Poniżej znajdują się przykłady kodu, które pokazują, jak użyć wyrażeń regularnych w Elixirze:
 
-### Wyszukiwanie wzorców
+```
+# Wyszukuje wszystkie wystąpienia ciągu 'Elixir' w tekście
+Regex.run(~r/Elixir/, "Uczymy się Elixir'a")
 
-```Elixir
-string = "Przykładowy tekst z liczbą 123"
+# Sprawdza, czy dany tekst zawiera liczbę
+Regex.scan(~r/\d+/, "Elixir 1.10.0")
 
-Regex.run(~r/\d+/, string)
-# wynik: ["123"]
+# Zastępuje wystąpienia 'Elixir' przez 'Ruby' w tekście
+Regex.replace(~r/Elixir/, "Uczymy się Elixir'a", "Uczymy się Ruby'ego")
+
+# Dopasowuje jedynie duże litery w tekście
+Regex.scan(~r/[A-Z]+/, "Elixir")
 ```
 
-### Zamiana tekstu
+## Głębszy wgląd
 
-```Elixir
-string = "Witaj, świecie!"
+Wyrażenia regularne istnieją już od wielu lat i są szeroko wykorzystywane w programowaniu.  Są one również dostępne w innych językach programowania, takich jak Perl, Python czy JavaScript.
 
-Regex.replace(~r/świecie/, string, "Elderis")
-# wynik: "Witaj, Elderis!"
-```
+Alternatywą dla wyrażeń regularnych w Elixirze jest użycie funkcji z modułu `String`, takich jak `contains?` czy `replace`. Jednak dla bardziej złożonych operacji na tekście, użycie wyrażeń regularnych może być wygodniejsze i szybsze.
 
-### Walidacja adresu email
+Implementacja wyrażeń regularnych w Elixirze opiera się na języku Erlang i wzorcu "bezpiecznej sekstrakcji" (ang. safe extraction). Dzięki temu, operacje te są bezpieczne i nie powinny powodować błędów w Twoim kodzie.
 
-```Elixir
-email = "janek@przyklad.com"
+## Zobacz również
 
-Regex.match?(~r/\A[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\Z/i, email)
-# wynik: true
-```
-
-Jak widać, regexy są bardzo elastyczne i można je wykorzystać w różnych celach, od prostych wyszukiwań po złożone walidacje.
-
-## Głębsza perspektywa
-
-Wyrażenia regularne są często wykorzystywane w programowaniu, ponieważ pozwalają na szybkie i precyzyjne przetwarzanie tekstów. Jednak warto pamiętać, że wyrażenia regularne nie są przeznaczone do wszystkiego. Często lepszym wyborem jest użycie funkcji łacińskich lub manipulowanie stringami w języku Elixir.
-
-Podstawowe konstrukcje wyrażeń regularnych warto poznać na pamięć, ponieważ pomogą one w walce z problemami związanymi z przetwarzaniem znaków. Jednak jeśli chcesz pogłębić swoją wiedzę na temat wyrażeń regularnych, możesz zapoznać się z zaawansowanymi konstrukcjami i ich zastosowaniami, takimi jak grupowanie i przechwytywanie danych.
-
-## Zobacz też
-
-- [Dokumentacja Elixir](https://elixir-lang.org/docs.html)
-- [Regexr - narzędzie do testowania wyrażeń regularnych](https://regexr.com/)
-- [Gotowy zestaw wyrażeń regularnych w Elixirze](http://www.elixirpatterns.com/regular-expressions/)
-- [Interaktywny tutorial do nauki wyrażeń regularnych w Elixirze](https://www.alchemistcamp.com/blog/elixir-regular-expressions-cheat-sheet)
+Więcej informacji na temat wyrażeń regularnych w Elixirze możesz znaleźć w [dokumentacji oficjalnej](https://hexdocs.pm/elixir/Regex.html) oraz [poradniku Elixir School](https://elixirschool.com/pl/lessons/advanced/pattern-matching/).

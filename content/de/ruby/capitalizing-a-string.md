@@ -1,7 +1,7 @@
 ---
-title:                "Eine Zeichenkette großschreiben"
-html_title:           "Ruby: Eine Zeichenkette großschreiben"
-simple_title:         "Eine Zeichenkette großschreiben"
+title:                "Großschreibung eines Strings"
+html_title:           "Ruby: Großschreibung eines Strings"
+simple_title:         "Großschreibung eines Strings"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Strings"
@@ -10,51 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+# Was und Warum?
+Die Großschreibung (auch bekannt als Capitalization) ist ein gängiger Begriff in der Programmierung, der die Änderung des ersten Buchstabens eines Strings in einen Großbuchstaben bezeichnet. Dies geschieht aus verschiedenen Gründen, beispielsweise um die Lesbarkeit des Codes zu verbessern oder um bestimmte Konvertierungen durchzuführen.
 
-Jeder hat wahrscheinlich schon mal einen Satz oder einen Namen in einer E-Mail oder Textnachricht in Großbuchstaben geschrieben, um eine Betonung auszudrücken oder zu zeigen, dass man wütend ist. Aber wusstest du, dass es auch in der Programmierung wichtig sein kann, Strings (Zeichenketten) in Großbuchstaben umzuwandeln? Mit Ruby, einer modernen und benutzerfreundlichen Programmiersprache, ist das ganz einfach. In diesem Artikel werde ich dir zeigen, wie du Strings in Ruby in Großbuchstaben umwandeln kannst und warum das wichtig sein kann.
-
-## Wie geht's
-
-Das Umwandeln von Strings in Großbuchstaben ist in Ruby dank einer eingebauten Methode namens `upcase` unkompliziert. Hier ist ein Beispiel:
+# Wie geht das?
+Die Großschreibung eines Strings in Ruby ist einfach und erfordert nur wenige Zeilen Code. Hier ist ein Beispiel:
 
 ```Ruby
-string = "hallo welt"
-puts string.upcase
-# Ausgabe: HALLO WELT
+str = "hallo welt"
+puts str.capitalize
 ```
 
-Wie du sehen kannst, gibt die Methode `upcase` den String in Großbuchstaben aus. Diese Methode funktioniert auch mit Umlauten und Sonderzeichen:
+Die Ausgabe dieses Codes ist "Hallo welt". Der Befehl `capitalize` lässt Ruby den ersten Buchstaben in einen Großbuchstaben konvertieren.
 
-```Ruby
-string = "Entschuldigung, ich spreche kein Deutsch."
-puts string.upcase
-# Ausgabe: ENTSCHULDIGUNG, ICH SPRECHE KEIN DEUTSCH.
-```
+# Tiefergehende Informationen
+Historisch gesehen gibt es verschiedene Möglichkeiten, um Strings in ein bestimmtes Format zu bringen, wie z.B. die Verwendung von ASCII-Codes oder regulären Ausdrücken. In Ruby gibt es jedoch die `capitalize` Methode, die speziell für die Großschreibung von Strings entwickelt wurde.
 
-Du kannst die Methode auch auf Variablen anwenden, die vorherige Methoden auf Strings ausgeführt haben:
+Alternativ gibt es auch die Methode `upcase`, die alle Buchstaben in einen String in Großbuchstaben konvertiert. Beachten Sie jedoch, dass dies nicht dasselbe wie `capitalize` ist, da `upcase` alle Buchstaben in Großbuchstaben ändert, während `capitalize` nur den ersten Buchstaben verändert.
 
-```Ruby
-string = "Hallo welt"
-puts string.reverse.upcase
-# Ausgabe: TLEW OLLAH
-```
-## Tief tauchen
+Die `capitalize` Methode kann auch auf Wörter angewendet werden, die mehr als einen Buchstaben enthalten, ohne den Rest des Worts zu ändern. Zum Beispiel würde `Hello World`.capitalize zu `Hello world` werden, während `Hello World`.upcase immer noch `HELLO WORLD` sein würde.
 
-Das Umwandeln von Strings in Großbuchstaben ist besonders nützlich, wenn du mit Benutzereingaben arbeitest. Nehmen wir an, du baust eine Benutzerregistrierungsseite für deine Website und möchtest sicherstellen, dass alle Benutzernamen in Großbuchstaben gespeichert werden, um spätere Verwirrungen oder Fehler zu vermeiden. Oder du möchtest eine Suchfunktion für deine Webseite erstellen und möchtest sicherstellen, dass alle eingegebenen Suchbegriffe unabhängig von der Groß- und Kleinschreibung funktionieren.
-
-Eine weitere interessante Anwendung von `upcase` ist die Verwendung in Kombination mit der `slice`-Methode, um bestimmte Buchstaben in einem String zu ersetzen oder zu entfernen. Hier ist ein Beispiel:
-
-```Ruby
-string = "Hallo Welt"
-puts string.slice(0..4).upcase + string.slice(5..-1)
-# Ausgabe: HALLOWelt
-```
-
-In diesem Beispiel wird die `slice`-Methode verwendet, um aus dem ursprünglichen String nur die ersten fünf Buchstaben (`"Hallo"`) auszuwählen und dann `upcase` angewendet, um sie in Großbuchstaben auszugeben. Die restlichen Buchstaben werden durch den zweiten Teil des `puts`-Statements unverändert ausgegeben.
+# Weitere Informationen
+Für weitere Informationen zu Strings und ihrer Formatierung in Ruby können Sie die offizielle Dokumentation von Ruby oder die zahlreichen Online-Tutorials konsultieren.
 
 ## Siehe auch
-
-- [Ruby Dokumentation - Strings](https://ruby-doc.org/core-2.7.1/String.html)
-- [ruby-doc.org - Methode upcase](https://ruby-doc.org/core-2.7.1/String.html#method-i-upcase)
-- [rubyguides.com - Ruby Strings](https://www.rubyguides.com/ruby-string/)
+- Offizielle Ruby-Dokumentation: https://ruby-doc.org/core-2.7.0/String.html
+- Ruby-Tutorial: https://www.ruby-lang.org/de/documentation/quickstart/

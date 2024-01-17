@@ -10,63 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why 
+# Welcome to the World of Basic Authentication in HTTP Requests!
 
-Sending HTTP requests with basic authentication is essential for accessing and retrieving protected resources from a web server. This type of authentication provides an additional layer of security to prevent unauthorized access to sensitive information.
+## What & Why?
+Sending an HTTP request with basic authentication simply means adding a username and password to your request in order to access protected resources on a server. Programmers use this method to ensure secure communication with a server, as it allows only authorized users to retrieve the requested information.
 
-## How To 
+## How to:
+Let's dive into some coding examples to demonstrate how to send an HTTP request with basic authentication in Gleam:
 
-To send an HTTP request with basic authentication in Gleam, you will need to use the `http` and `base64` standard libraries. First, import these libraries at the top of your file:
+```Gleam
+import gleam/http
 
-```
-import http
-import base64
-```
+// Create an HTTP client with a basic authentication config
+client = http.make_client(~config=http.BasicConfig(username="username", password="password"))
 
-Next, create a `HttpClient` instance and specify the URL you want to send the request to:
+// Make a GET request to an endpoint with basic authentication
+response = http.get(client, "https://example.com/protected-resource")
 
-```
-let client = http.client("https://example.com/my/resource")
-```
+// Print the response status code
+log(response.status_code)
 
-Then, use the `auth_basic` method to add the basic authentication header to your request. This method takes in a username and password as arguments:
-
-```
-let client_with_auth = client |> http.headers([[ "Authorization", http.auth_basic("username", "password") ]])
-```
-
-Now, you can make your HTTP request using the `get` or `post` methods:
-
-```
-let response = client_with_auth |> http.get()
+// Print the response body
+log(response.body)
 ```
 
-Finally, you can access the response body and status code to see if your request was successful:
-
+Sample output:
 ```
-let body = response |> http.body()
-let status_code = response |> http.status()
+200
+"This is a protected resource for authorized users only."
 ```
 
-Below is a complete example of sending an HTTP request with basic authentication and accessing the response:
+## Deep Dive:
+In the early days of the internet, basic authentication was the primary method for securing access to restricted content on servers. However, with the rise of more advanced authentication methods such as OAuth and API keys, basic authentication is now considered less secure. It also has limitations, such as being unable to revoke access for individual users without changing the shared password.
 
-```
-import http
-import base64
+In Gleam, basic authentication is implemented through the use of the `http.BasicConfig` type, which contains the username and password needed for authentication. This configuration is then passed into the `http.make_client` function, which creates an HTTP client that can be used to make requests with the specified authentication.
 
-let client = http.client("https://example.com/my/resource") 
-let client_with_auth = client |> http.headers([[ "Authorization", http.auth_basic("username", "password") ]])
-let response = client_with_auth |> http.get()
-let body = response |> http.body()
-let status_code = response |> http.status()
-
-## Deep Dive 
-
-When sending an HTTP request with basic authentication, the credentials are encoded in a base64 string and added to the `Authorization` header. This allows the server to verify the identity of the client making the request.
-
-The `http.auth_basic` method handles the encoding of the credentials for you, but it is important to note that this type of authentication is not secure on its own. It is recommended to use HTTPS in conjunction with basic authentication for a more secure transfer of sensitive information.
-
-## See Also 
-- Gleam documentation on HTTP requests: https://gleam.run/docs/http
-- Standard library for HTTP: https://github.com/lpil/gleam-http
-- Standard library for base64 encoding: https://github.com/gleam-lang/gleam_base64
+## See Also:
+If you want to learn more about sending HTTP requests in Gleam, check out the official Gleam documentation. You can also explore other authentication methods such as OAuth or API keys for a more secure and flexible way of accessing restricted resources. Happy coding!

@@ -1,7 +1,7 @@
 ---
-title:                "Надсилання http-запиту"
-html_title:           "TypeScript: Надсилання http-запиту"
-simple_title:         "Надсилання http-запиту"
+title:                "Надсилання HTTP-запиту"
+html_title:           "TypeScript: Надсилання HTTP-запиту"
+simple_title:         "Надсилання HTTP-запиту"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "HTML and the Web"
@@ -10,53 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Чому
+# Що & Чому?
+ Висилання HTTP запиту - це процес взаємодії між програмою та веб-сервером. Програмісті надсилають HTTP запити для отримання інформації з серверу або виконання певних дій на сервері.
 
-Правильне відправлення HTTP-запитів є важливою частиною розробки веб-додатків. Це дає змогу обмінюватися даними між клієнтом і сервером та забезпечує швидке виконання запитів.
+ # Як: 
+ Приклад коду для відправлення GET запиту:
+ ```TypeScript 
+ axios.get("https://example.com")
+    .then(response => {
+        console.log(response.data);
+    })
+    .catch(error => {
+        console.log(error);
+    })
 
-## Як
-
-```TypeScript
-// Приклад відправлення GET-запиту
-import axios from 'axios';
-
-axios.get('https://api.example.com/users')
-  .then(response => {
-    // Обробка отриманих даних
-    console.log(response.data);
-  })
-  .catch(error => {
-    // Обробка помилки в разі неуспішного запиту
-    console.log(error.message);
-  });
+/* Виводить в консоль відповідь від серверу. */
 ```
 
+Приклад коду для відправлення POST запиту:
 ```TypeScript
-// Приклад відправлення POST-запиту з передачею даних
-import axios from 'axios';
+axios.post("https://example.com", {name: "John"})
+    .then(response => {
+        console.log(response.data);
+    })
+    .catch(error => {
+        console.log(error);
+    })
 
-const requestBody = {
-  name: 'John',
-  age: 30
-}
-
-axios.post('https://api.example.com/users', requestBody)
-  .then(response => {
-    // Обробка отриманих даних
-    console.log(response.data);
-  })
-  .catch(error => {
-    // Обробка помилки в разі неуспішного запиту
-    console.log(error.message);
-  });
+/* Виводить в консоль відповідь від серверу, включаючи дані, які були надіслані. */
 ```
 
-## Глибоке дослідження
+ # Глибше волю:
+ Висилання HTTP запиту є важливою частиною розробки додатків та веб-сайтів, оскільки дозволяє обмінюватися інформацією з сервером. Цей процес став можливим завдяки створенню протоколу HTTP в 1991 році. Існують інші способи взаємодії з сервером, такі як WebSocket та GraphQL, але HTTP залишається найбільш популярним і простим для використання.
 
-Відправляючи HTTP-запити, необхідно врахувати деякі особливості. Наприклад, важливо використовувати правильний метод запиту (GET, POST, PUT, DELETE тощо) та передавати необхідні дані у відповідному форматі. Також необхідно обробляти помилки, які можуть виникнути під час відправлення запиту.
+При відправленні HTTP запиту, програма спочатку створює об'єкт запиту з необхідною інформацією, такою як URL та тип запиту (GET, POST, PUT, DELETE тощо). Потім запит надсилається на сервер за допомогою мережевої бібліотеки або вбудованої функції. Після цього, сервер обробляє запит та повертає відповідь з необхідними даними або повідомленням про помилку. 
 
-## Дивіться також
-
-- [Методи HTTP-запитів](https://developer.mozilla.org/uk/docs/Web/HTTP/Methods)
-- [Axios - бібліотека для роботи з HTTP-запитами](https://github.com/axios/axios)
-- [Розробка веб-додатків з TypeScript](https://www.typescriptlang.org/docs/handbook/react.html)
+ # Дивіться також:
+ Детальніше про стандартну бібліотеку TypeScript для взаємодії з сервером можна дізнатися з документації: https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-4.html#support-for-old-apis. Також, ви можете вивчати інші способи роботи з сервером, наприклад, за допомогою WebSocket, у офіційній документації: https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API.

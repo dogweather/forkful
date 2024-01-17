@@ -10,55 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que 
+## O que é isso e por que fazemos isso?
 
-Você pode se perguntar por que alguém se daria o trabalho de baixar uma página da web. A resposta é simples - pode ser útil para acessar o conteúdo offline, realizar análises de dados ou até mesmo fazer um backup de informações importantes.
+Baixar uma página da web é quando um programador usa código para obter o conteúdo de uma página da web e salvá-lo em seu computador. Fazemos isso para ter acesso offline ao conteúdo de uma página, bem como para analisar e manipular os dados para nossos projetos.
 
-## Como Fazer
+ ## Como fazer:
 
-```TypeScript 
-// importando a biblioteca Node.js 'fs' para manipulação de arquivos
-import * as fs from 'fs';
-// importando a biblioteca Node.js 'https' para fazer requisições na web
-import * as https from 'https';
+ ```TypeScript
+ import request from 'request';
 
-// função para baixar uma página da web
-function baixarPagina(url: string): void {
-  // faz uma requisição GET para a URL fornecida
-  https.get(url, (res) => {
-    // cria um buffer para armazenar os dados recebidos
-    let data: Buffer = Buffer.from('');
-    // adiciona os dados recebidos ao buffer
-    res.on('data', (chunk) => {
-      data = Buffer.concat([data, chunk]);
-    });
-    // quando a requisição terminar, o conteúdo será salvo em um arquivo HTML
-    res.on('end', () => {
-      // cria um arquivo chamado 'pagina.html' e salva os dados recebidos nele
-      fs.writeFile('pagina.html', data, (err) => {
-        if (err) throw err;
-        console.log('Página baixada com sucesso!');
-      });
-    });
-  }).on('error', (err) => {
-    console.log(`Erro ao baixar página: ${err.message}`);
-  });
-}
+ request('https://www.example.com', (error, response, body) => {
+    if (!error && response.statusCode == 200) {
+        console.log(body); // O conteúdo da página será exibido no console
+    }
+ });
+ ```
+Exemplo de saída:
 
-// chamando a função com a URL desejada
-baixarPagina('https://www.example.com');
+```
+<html>
+  <head>
+    <title>Exemplo</title>
+  </head>
+  <body>
+      <h1>Bem-vindo ao exemplo</h1>
+      <p>Este é um exemplo de uma página baixada usando TypeScript.</p>
+  </body>
+</html>
 ```
 
-**Exemplo de Saída:**
+## Profundidade:
 
-Ao executar o código acima, uma requisição é feita para a página "https://www.example.com". O conteúdo dessa página será salvo em um arquivo chamado "pagina.html" na pasta do seu projeto.
+Baixar páginas da web tem sido uma prática comum entre os programadores desde o início da internet. Antes do TypeScript, essa tarefa era feita principalmente em outras linguagens de programação, como Python e Java. Hoje, o TypeScript oferece uma abordagem mais moderna e eficiente para lidar com a tarefa de download de páginas da web.
 
-## Mergulho Profundo 
+Além do pacote "request" utilizado no exemplo acima, existem outras opções para download de páginas da web em TypeScript, incluindo pacotes específicos para diferentes tarefas, como extração de dados ou automação de navegação.
 
-Existem várias maneiras de baixar uma página da web, dependendo da sua necessidade específica. No nosso exemplo, usamos a biblioteca nativa "https" do Node.js, mas você também pode usar outras bibliotecas como "axios" ou "node-fetch" para fazer a requisição. Além disso, é importante observar que algumas páginas da web podem ter proteções contra esse tipo de ação, então é sempre importante verificar a política de uso e termos da página antes de fazer qualquer requisição automatizada.
+## Veja também:
 
-## Veja Também
-
-- [Documentação oficial do Node.js](https://nodejs.org/en/docs/)
-- [Documentação oficial do TypeScript](https://www.typescriptlang.org/docs/home.html)
-- [Tutorial em vídeo: Baixando páginas da web com Node.js](https://www.youtube.com/watch?v=J3KNqclgcBI)
+- [Documentação do TypeScript](https://www.typescriptlang.org/)
+- [Documentação do pacote "request"](https://www.npmjs.com/package/request)
+- [Outra opção para download de páginas da web: "node-fetch"](https://www.npmjs.com/package/node-fetch)

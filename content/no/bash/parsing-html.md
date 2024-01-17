@@ -1,7 +1,7 @@
 ---
-title:                "Ikke noe Kommentar her!"
-html_title:           "Bash: Ikke noe Kommentar her!"
-simple_title:         "Ikke noe Kommentar her!"
+title:                "Håndtering av html"
+html_title:           "Bash: Håndtering av html"
+simple_title:         "Håndtering av html"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "HTML and the Web"
@@ -10,28 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
-Det er forskjellige situasjoner der du kan støte på behov for å parse HTML i Bash-programmering, som for eksempel å lese eller analysere innhold på et nettsted, automatisk hente data fra en nettside, eller generere rapporter basert på HTML-maler.
+**## Hva og Hvorfor?**
 
-## Hvordan
-Det første trinnet for å parse HTML i Bash er å laste ned og installere et passende verktøy for dette formålet. Et populært alternativ er "pup" som kan installeres ved hjelp av følgende kommando:
+Parsing HTML handler om å tolke og analysere koden som utgjør nettsider. Dette er et viktig verktøy for utviklere når de jobber med å bygge nettapplikasjoner eller automatisere prosesser.
+
+**## Hvordan:**
+
+For å parse HTML i Bash, kan du bruke verktøyet "grep". Dette verktøyet søker gjennom en fil eller et utdatastrøm etter et spesifikt uttrykk, og returnerer linjene som matcher uttrykket.
+
 ```Bash
-brew install pup
+grep "target" index.html
 ```
 
-For å starte parsingen, må du først laste ned innholdet på nettsiden ved hjelp av "curl" kommandoen og deretter bruke "pup" for å filtrere ut ønsket informasjon fra HTML-koden. For eksempel, hvis du ønsker å finne alle overskriftene på en nettside, kan du bruke følgende kommando:
+Dette kommandoen vil søke gjennom "index.html"-fila og returnere alle linjene som inneholder ordet "target". Output vil se omtrent slik ut:
+
 ```Bash
-curl -s https://www.example.com | pup 'h1' | tr -d '\n' && echo
+<a href="#top" target="_blank">Til toppen</a>
+<h1 class="title" target="_blank">Overskrift</h1>
 ```
 
-Dette vil skrive ut alle overskriftene på nettsiden du har hentet og vil også formatere det i et leselig format uten linjeskift.
+Du kan også bruke "sed" kommandoen for å manipulere HTML-koden. For eksempel kan du øke verdien av "src" attributten til alle "img" elementer i en fil ved å kjøre denne kommandoen:
 
-## Dypdykk
-Selv om "pup" er et godt verktøy, kan det være begrenset når det kommer til komplekse HTML-strukturer. I slike tilfeller kan du bruke "xmlstarlet" som tilbyr et bredere utvalg av kommandoer for å håndtere XML og HTML-data.
+```Bash
+sed -i '' 's/src=/src="https://bilder.no"/g' index.html
+```
 
-En annen mulighet er å bruke "awk" kommandoen til å parse HTML. Dette er spesielt nyttig hvis du jobber med store datasett og trenger å filtrere ut spesifikke deler av HTML-koden basert på et mønster.
+Dette vil legge til en standard "src" attributt til alle bildeelementer i fila "index.html". 
 
-## Se også
-+ Les mer om pup: https://github.com/ericchiang/pup
-+ Utforsk mulighetene med xmlstarlet: https://xmlstar.sourceforge.io/
-+ Lær mer om awk: https://www.gnu.org/software/gawk/manual/gawk.html
+**## Dykk Dypere:**
+
+Parsing HTML har vært en del av utviklerverktøykassen i lang tid, og det finnes mange alternativer i tillegg til "grep" og "sed". Et mer avansert og kraftig verktøy er "xmlstarlet", som lar deg gjøre komplekse endringer i HTML-koden ved hjelp av XPath og XSLT språk.
+
+Når du parser HTML i Bash, er det viktig å være nøye med bruk av regex-uttrykk for å sikre nøyaktig tolkning av koden. En annen viktig ting å huske på er at HTML er et språk som stadig utvikler seg, og derfor kan du oppleve ulike resultater ved bruk av forskjellige verktøy.
+
+**## Se Også:**
+
+- Dokumentasjon for "grep": https://linux.die.net/man/1/grep
+- Dokumentasjon for "sed": https://linux.die.net/man/1/sed
+- Dokumentasjon for "xmlstarlet": http://xmlstar.sourceforge.net/doc/UG/xmlstarlet-ug.html

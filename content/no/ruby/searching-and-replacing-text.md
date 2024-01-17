@@ -10,53 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hvorfor
-Det er ofte nødvendig å søke og erstatte tekst når man jobber med kode, enten det er for å rette opp skrivefeil eller for å gjøre større endringer i koden. Å kunne søke og erstatte effektivt kan spare tid og forbedre kvaliteten på koden din.
+# Hva & Hvorfor?
+Søking og erstatting av tekst er en vanlig oppgave for programmerere. Den innebærer å finne spesifikke tekstelementer og erstatte dem med nye verdier. Dette kan være nyttig for å automatisere repetitivt arbeid eller for å endre mange forekomster av en gittekst på en gang.
 
-## Slik gjør du det
-Det er flere måter å søke og erstatte tekst i Ruby. Den mest grunnleggende måten er å bruke metoden `gsub` på en streng: 
-
-``` Ruby
-my_string = "Hei verden"
-my_string.gsub("verden", "Ruby")
-# Output: "Hei Ruby"
+# Hvordan:
+For å søke og erstatte tekst i Ruby kan du bruke metoden `gsub`. La oss si at vi har en streng som inneholder ordet "hallo" og vi vil erstatte det med "hei". Vi kan enkelt gjøre det ved å skrive følgende:
 ```
-
-Du kan også bruke regulære uttrykk for å søke etter mønstre i teksten din og erstatte dem:
-
-``` Ruby
-my_string = "123abc"
-my_string.gsub(/[a-z]/, "X")
-# Output: "123XXX"
+streng = "Hallo verden!"
+puts streng.gsub("hallo", "hei")
 ```
-
-Hvis du ønsker å gjøre endringer i en fil, kan du bruke kommandolinjetolsen `sed`:
-
+Dette vil produsere følgende utdata:
 ```
-sed -i 's/verden/Ruby/g' hello.rb
+Hei verden!
 ```
-Dette vil oppdatere filen `hello.rb` slik at alle forekomster av "verden" erstattes med "Ruby".
+Som du kan se, erstattet `gsub` metoden alle forekomster av "hallo" med "hei" i vår streng.
 
-## Dypdykk
-Søking og erstatting av tekst kan gjøres på en mer avansert måte ved å bruke metoden `scan` for å finne alle forekomster av et mønster og deretter bruke en blokk for å erstatte dem individuelt:
+# Dypdykk:
+Søking og erstatting av tekst har eksistert i mange år og har blitt brukt i flere programmeringsspråk. En alternativ måte å gjøre det på i Ruby er ved å bruke metoden `sub` som bare erstatter den første forekomsten av den gitte teksten. Det finnes også andre programmeringsspråk som har innebygde funksjoner for å utføre denne oppgaven, for eksempel `replace()` i Python.
 
-``` Ruby
-my_string = "Hei verden"
-my_string.scan(/e/) { |match| print match.replace("a") }
-# Output: Hai vardan
-```
+Implementerings-detaljer for søking og erstatting av tekst kan variere avhengig av programmeringsspråk og versjon. Det er viktig å sjekke dokumentasjonen for språket du jobber med for å sikre riktig bruk.
 
-Du kan også bruke regulære uttrykk med flagg for å få mer spesifikke søk og erstatninger. For eksempel kan flagget `/i` brukes for å ignorere store og små bokstaver:
-
-``` Ruby
-my_string = "Hallo Verden"
-my_string.gsub(/verden/i, "Ruby")
-# Output: "Hallo Ruby"
-```
-
-For en mer omfattende forståelse av søking og erstatting i Ruby, anbefaler vi å se på Ruby-dokumentasjonen for `String`-klassen.
-
-## Se også
-- [Ruby-dokumentasjon for `String#gsub`](https://ruby-doc.org/core/String.html#method-i-gsub)
-- [Ruby-dokumentasjon for regulære uttrykk](https://ruby-doc.org/core/Regexp.html)
-- [En guide til å bruke `sed`](https://www.digitalocean.com/community/tutorials/the-basics-of-using-the-sed-stream-editor-to-manipulate-text-in-linux)
+# Se også:
+- Ruby sin offisielle dokumentasjon for `gsub` metoden: https://ruby-doc.org/core-2.7.1/String.html#method-i-gsub
+- En guide til søking og erstatting i Ruby: https://www.rubyguides.com/2019/02/ruby-search-and-replace/

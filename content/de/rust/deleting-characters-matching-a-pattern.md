@@ -1,7 +1,7 @@
 ---
-title:                "Entfernen von Zeichen, die einem Muster entsprechen"
-html_title:           "Rust: Entfernen von Zeichen, die einem Muster entsprechen"
-simple_title:         "Entfernen von Zeichen, die einem Muster entsprechen"
+title:                "Löschen von Zeichen, die einem Muster entsprechen"
+html_title:           "Rust: Löschen von Zeichen, die einem Muster entsprechen"
+simple_title:         "Löschen von Zeichen, die einem Muster entsprechen"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -10,48 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+# Was & Warum?
 
-Warum sollte man sich überhaupt mit dem Löschen von Zeichen in einem Text beschäftigen? Ganz einfach: Es kann die Effizienz und Lesbarkeit des Codes verbessern und unerwünschte Zeichen entfernen, die die Funktionalität beeinträchtigen könnten.
+Das Löschen von Zeichen, die einem bestimmten Muster entsprechen, ist eine gängige Aufgabe in der Programmierung. Oftmals werden diese Zeichen entfernt, um Daten zu bereinigen oder zu transformieren, bevor sie weiterverarbeitet werden. Programmer greifen immer wieder auf dieses Verfahren zurück, um ihre Programme effizienter und robuster zu gestalten.
 
-## Wie Funktioniert Es
+# Wie geht's?
 
-Das Löschen von Zeichen anhand eines Musters kann in Rust auf verschiedene Arten erreicht werden. Eine Möglichkeit ist die Verwendung von regulären Ausdrücken, die in der Standardbibliothek von Rust verfügbar sind. Nehmen wir zum Beispiel an, dass wir alle Leerzeichen aus einem String entfernen wollen:
-
-```Rust
-let string = "Hallo, Welt!";
-let new_string = string.replace(" ", "");
-println!("{}", new_string); // Ausgabe: Hallo,Welt!
-```
-
-Wie du sehen kannst, haben wir die `replace`-Methode verwendet, um alle Leerzeichen aus dem String zu entfernen. Wir können auch ein reguläres Ausdrucksmuster als String übergeben, um alle Zeichen, die diesem Muster entsprechen, zu entfernen. Zum Beispiel:
+Das Löschen von Zeichen, die einem bestimmten Muster entsprechen, kann in Rust auf verschiedene Arten erreicht werden. Die einfachste Methode ist die Verwendung der `replace()` Funktion, die durch die Angabe des zu ersetzenden Musters und des entsprechenden Ersatzes die Zeichen im Text ersetzt. Ein Beispiel für die Anwendung dieser Funktion sieht wie folgt aus:
 
 ```Rust
-let string = "Dies~ist~ein~Beispiel~String~mit~Tilden~als~Trennzeichen~";
-let new_string = string.replace("~", "");
-println!("{}", new_string); // Ausgabe: DiesisteinBeispielStringmitTildenalsTrennzeichen
+let mut text = String::from("Hallo Welt!");
+text.replace("!", "");
+println!("{}", text);
 ```
 
-Einfach, oder? Aber was ist, wenn wir mehr Kontrolle über das Löschen von Zeichen haben wollen, zum Beispiel nur Zeichen an bestimmten Positionen oder in einem bestimmten Bereich des Strings löschen? Hier kommt die `chars()`-Methode ins Spiel, die uns eine Iterator über jeden einzelnen Buchstaben im String gibt. Wir können dann entscheiden, welche Zeichen wir behalten und welche wir löschen wollen. Schauen wir uns ein Beispiel an:
+Die Ausgabe dieses Codeschnipsels würde "Hallo Welt" ohne das Ausrufezeichen sein. Alternativ kann auch die `filter()` Methode verwendet werden, die ein vorgegebenes Prädikat auf den Text anwendet und alle Zeichen entfernt, die dem Muster entsprechen. Hier ein Beispiel hierfür:
 
 ```Rust
-let string = "123abc456def";
-let new_string: String = string.chars() // Erhalte einen Iterator über jeden Buchstaben im String
-    .enumerate() // Nummeriere jeden Buchstaben, um die Position zu erhalten
-    .filter(|&(index, _)| index % 3 != 0) // Entferne jeden dritten Buchstaben
-    .map(|(_, letter)| letter) // Entferne die Nummerierung und behalte nur die Buchstaben
-    .collect(); // Sammle die übrigen Buchstaben wieder zu einem String
-
-println!("{}", new_string); // Ausgabe: 12457ef
+let text = String::from("Hallo Welt!");
+let filtered_text = text.chars().filter(|c| c != &'!').collect::<String>();
+println!("{}", filtered_text);
 ```
 
-Interessant, oder? Indem wir die `enumerate()`- und `filter()`-Methode kombinieren, können wir die Position der einzelnen Buchstaben herausfinden und basierend auf dieser Position entscheiden, ob wir den Buchstaben behalten oder entfernen wollen. Dann verwenden wir `map()` und `collect()` um den Iterator wieder zu einem String zu sammeln.
+Dieser Ansatz ist etwas komplexer, erlaubt aber auch die Anwendung von komplexeren Bedingungen.
 
-## Tiefer Einblick
+# Tiefes Eintauchen
 
-Es gibt noch viele weitere Möglichkeiten, um Zeichen in Rust zu löschen, zum Beispiel durch die Verwendung von Slices oder dem crate `unicode_segmentation`. Wenn du tiefer in die Materie einsteigen möchtest, empfehlen wir dir, die offizielle Rust-Dokumentation zu lesen und verschiedene Methoden auszuprobieren.
+Das Entfernen von Zeichen mit einer bestimmten Form ist schon lange eine gängige Aufgabe in der Programmierung. In den Anfängen der Computerentwicklung war das Löschen von Zeichen oft ein komplexer und zeitaufwändiger Prozess. Mit dem Fortschritt in der Technologie wurden jedoch immer effizientere Methoden entwickelt, die es Programmern ermöglichen, diese Aufgabe schnell und einfach zu erledigen. Alternativen zum Löschen von Zeichen können auch das Ersetzen oder Filtern beinhalten.
 
-## Siehe Auch
+In Rust wird die `replace()` Funktion von der `String` Datenstruktur zur Verfügung gestellt, während `filter()` eine Methode der `Chars` Datenstruktur ist. Beide Methoden verwenden die von Rust bereitgestellten String-Manipulations-Funktionen, um das Entfernen von Zeichen auf eine effiziente und elegante Weise zu ermöglichen.
 
-- [Offizielle Rust-Dokumentation](https://doc.rust-lang.org/std/string/struct.String.html#method.replace)
-- [Crate: Unicode_segmentation](https://crates.io/crates/unicode_segmentation)
+# Siehe auch
+
+- [How to Replace Substrings in Rust](https://www.baeldung.com/rust/replace-substrings)
+- [Rust Documentation on Strings](https://doc.rust-lang.org/std/string/struct.String.html)
+- [Filtering and Mapping With Closures in Rust](https://gavialonsoleon.com/filtering-and-mapping-with-closures-in-rust/)

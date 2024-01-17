@@ -10,67 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+# Co i Dlaczego?
 
-Jeśli chcesz pracować jako programista w Clojure, czy to jako hobbysta czy zawodowiec, musisz umieć czytać i manipulować plikami tekstowymi. Pliki tekstowe są podstawowym sposobem przechowywania danych i konieczne jest zrozumienie, jak je odczytywać w Clojure.
+Czytanie pliku tekstowego jest procesem, w którym programista odczytuje zawartość tekstu z pliku i przetwarza go zgodnie z określonymi instrukcjami. Jest to powszechna praktyka w wielu językach programowania, w tym w Clojure. Programiści często czytają pliki tekstowe, aby uzyskać dostęp do danych, które są przechowywane w plikach lub dla przetwarzania tekstu w celu wykonania określonych zadań.
 
-## Jak to zrobić
-
-```Clojure
-; Otwarcie pliku tekstowego przez nazwę (zwraca strumień)
-
-(def file (clojure.java.io/reader "plik.txt"))
-
-; Otwarcie pliku przez ścieżkę (zwraca strumień)
-
-(def file (clojure.java.io/reader "ścieżka/do/pliku.txt"))
-
-; Odczytanie zawartości pliku w całości (zwraca ciąg)
-
-(slurp file)
-
-; Odczytanie zawartości pliku wiersz po wierszu (zwraca sekwencję wierszy)
-
-(line-seq file)
-
-; Zamykanie strumienia pliku
-
-(.close file)
-
-```
-
-Przykład:
-
-Jeśli mamy plik o nazwie "dane.txt" z następującą zawartością:
-
-```
-Imię: Anna
-Wiek: 30
-Miasto: Kraków
-```
-
-To możemy go odczytać i przypisać wartości do zmiennych w ten sposób:
+# Jak to zrobić:
 
 ```Clojure
-(def file (clojure.java.io/reader "dane.txt"))
-(def imie (nth (line-seq file) 0))
-(def wiek (nth (line-seq file) 1))
-(def miasto (nth (line-seq file) 2))
+;; Wczytanie tekstu z pliku do zmiennej
+(def data (slurp "plik.txt"))
 
-; Wyświetlenie wyników
-
-(imie) ; "Imię: Anna"
-(wiek) ; "Wiek: 30"
-(miasto) ; "Miasto: Kraków"
-
-(.close file)
+;; Wyświetlenie zawartości pliku
+(println data)
 ```
 
-## Głębsza analiza
+#### Przykładowy plik.txt:
+```
+To jest przykładowy tekst.
+Można wczytać i przetworzyć go w Clojure.
+```
 
-Funkcja `(clojure.java.io/reader)` zwraca strumień, który jest później wykorzystywany przez funkcje `slurp` i `line-seq`. Strumienie te są automatycznie zamykane, gdy funkcja `(.close)` jest wywołana. Pamiętaj, aby zawsze zamknąć strumień po zakończeniu pracy - jest to ważne dla wydajności i bezpieczeństwa.
+#### Wynik:
+```
+To jest przykładowy tekst.
+Można wczytać i przetworzyć go w Clojure.
+```
 
-## Zobacz również
+# Głębsze zagadnienia:
 
-- [Dokumentacja Clojure do funkcji `clojure.java.io/reader`](https://clojuredocs.org/clojure.java.io/reader)
-- [Poradnik do manipulacji plikami w Clojure](https://techbeacon.com/how-manipulate-files-clojure)
+1. Kontekst historyczny: Czytanie plików tekstowych jest jedną z podstawowych operacji wykonywanych przez komputery od lat. Odkąd istnieją komputery, programiści posługują się technikami, aby czytać i przetwarzać pliki tekstowe.
+2. Alternatywy: W Clojure można użyć różnych funkcji do czytania plików tekstowych, takich jak `slurp`, `line-seq` czy `re-find`. Można również użyć zewnętrznych bibliotek, takich jak `clojure.java.io`, aby uzyskać lepsze możliwości przetwarzania plików.
+3. Szczegóły implementacji: W celu przeczytania pliku tekstowego, Clojure używa potoku wejściowego `java.io.BufferedReader`. Określone funkcje interpretują odczytany tekst i konwertują go do odpowiedniej postaci, aby można go było łatwo przetwarzać.
+
+# Zobacz też:
+
+* Dokumentacja Clojure: https://clojure.org/
+* Poradnik dla początkujących w Clojure: https://lispcast.com/clojure-tutorial/
+* Wprowadzenie do czytania i pisania plików w Clojure: https://www.baeldung.com/clojure-read-write-file

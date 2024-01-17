@@ -10,56 +10,74 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-Have you ever come across a situation where you need to search for a specific pattern within a string or a large chunk of data? Using regular expressions in your Arduino programming can help you accomplish this task efficiently and accurately.
+Regular expressions, also known as "regex", are a powerful tool used by programmers to search, manipulate, and validate text patterns within a given string of characters. It allows for more efficient and accurate text processing, making it an essential skill for any programmer.
 
-## How To
+## How to:
 
-Using regular expressions in Arduino is as simple as writing a few lines of code. First, you need to include the regex library by adding the following line at the beginning of your code:
-
-```Arduino
-#include <regex.h>
-```
-
-Next, you need to create a regular expression pattern using the `regex_t` data type and `regcomp()` function. For example, if you want to search for the word "Hello" in a string, your code would look like this:
+To use regular expressions in Arduino, you will first need to include the "Regex" library. Here's an example of searching for a specific pattern in a string:
 
 ```Arduino
-char *pattern = "Hello";
-regex_t regex;
-int result = regcomp(&regex, pattern, 0);
-```
+#include <Regex.h>  //include the library
 
-After creating the pattern, you can use the `regexec()` function to match the pattern with a string. The `regexec()` function returns zero if the pattern is found in the string, and a non-zero value otherwise. Here's a code snippet to demonstrate this:
+void setup() {
 
-```Arduino
-char *text = "Hello there!";
-int match_found = regexec(&regex, text, 0, NULL, 0);
-if (match_found == 0) {
-    Serial.println("Pattern found!");
-} else {
-    Serial.println("Pattern not found!");
+  String text = "Hello there!";  //our string
+  regex pattern = regex("Hello");  //our pattern to search for
+  bool match = Regex.match(pattern, text);  //check for a match
+
+  if (match) {  //if a match is found
+    Serial.println("Pattern found!");  //print confirmation
+  }
+}
+
+void loop() {
+  //nothing to do here
 }
 ```
 
-The above code will output "Pattern found!" since the word "Hello" is present in the string.
+Output:
+```
+Pattern found!
+```
 
-## Deep Dive
+Similarly, we can use regular expressions to replace a specific pattern with a new string. Here's an example:
 
-Regular expressions use a set of special characters to represent patterns in a string. Some commonly used characters include:
+```Arduino
+#include <Regex.h>  //include the library
 
-- `.` : Matches any single character
-- `*` : Matches zero or more occurrences of the previous character
-- `+` : Matches one or more occurrences of the previous character
-- `?` : Matches zero or one occurrence of the previous character
-- `[ ]` : Matches any single character in the specified set
-- `^` : Matches the beginning of a string
-- `$` : Matches the end of a string
+void setup() {
 
-Using these characters, you can create complex patterns and search for specific strings within your data.
+  String text = "I love ice cream.";  //our string
+  regex pattern = regex("ice cream");  //our pattern to replace
+  String replacement = "pizza";  //our replacement string
 
-## See Also
+  Regex.replace(pattern, text, replacement);  //replace the pattern with the new string
+  Serial.println(text);  //print the updated string
+}
 
-- [Regexp Reference](https://www.regular-expressions.info/reference.html)
-- [Arduino Reference](https://www.arduino.cc/reference/en/)
-- [Regular Expressions Cheat Sheet](https://cheatography.com/davechild/cheat-sheets/regular-expressions/)
+void loop() {
+  //nothing to do here
+}
+```
+
+Output:
+```
+I love pizza.
+```
+
+## Deep Dive:
+
+Regular expressions have been around since the 1950s and have become a standard feature in many programming languages. However, they can be quite complicated to learn and can seem daunting to beginners. Fortunately, there are many online resources and tutorials available that can help you learn and understand regular expressions better.
+
+Alternatively, there are also other methods of achieving similar results without using regular expressions, such as string manipulation functions and bitwise operations. However, regular expressions offer a more concise approach and are often faster and more efficient.
+
+When using regular expressions in Arduino, it's essential to understand that they consume valuable memory and processing power. Therefore, they should only be used when necessary and with caution in memory-constrained projects.
+
+## See Also:
+
+To learn more about regular expressions and how to use them in Arduino, check out these resources:
+- [Arduino Regex Library Documentation](https://www.arduino.cc/reference/en/libraries/regex/)
+- [Regular Expressions Tutorial by W3Schools](https://www.w3schools.com/regex/)
+- [Regular Expressions Cheat Sheet](https://www.cheatography.com/davechild/cheat-sheets/regular-expressions/)

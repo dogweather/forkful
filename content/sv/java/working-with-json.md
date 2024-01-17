@@ -10,67 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
+Att arbeta med JSON är ett sätt för programmerare att hantera data på ett strukturerat sätt. JSON står för JavaScript Object Notation och är ett populärt format för att lagra och överföra data mellan applikationer och system. Genom att använda JSON kan man enkelt hantera och strukturera data på ett sätt som är lättläst både för människor och datorer.
 
-Om du är intresserad av att hantera data i ett format som är lättläst för både människor och maskiner, kan JSON vara en användbar lösning för dig. Det är ett flexibelt och lättanvänt sätt att lagra och överföra strukturerad data.
-
-## Så här gör du
-
-För att arbeta med JSON i Java, behöver du först importera biblioteket "org.json". Sedan kan du använda metoder som "put" och "get" för att lägga till och hämta data från JSON-objektet.
-
+## Så här gör man:
 ```Java
-// Skapa ett JSON-objekt
-JSONObject json = new JSONObject();
+// För att använda JSON i ditt Java-program, behöver du importera JSON-biblioteket:
+import org.json.*;
 
-// Lägg till data i objektet
-json.put("namn", "Anna");
-json.put("ålder", 25);
+// Skapa ett JSON-objekt:
+JSONObject obj = new JSONObject();
 
-// Hämta data från objektet
-String namn = json.getString("namn"); // namn = "Anna"
-int ålder = json.getInt("ålder"); // ålder = 25
+// Lägg till data i objektet:
+obj.put("namn", "Anna");
+obj.put("ålder", 25);
 
-// Skriv ut JSON-objektet
-System.out.println(json.toString());
+// Skriv ut JSON-objektet:
+System.out.println(obj);
 ```
+Output: {"namn":"Anna","ålder":25}
 
-Detta kommer att producera följande utmatning:
+## Djupdykning:
+JSON har funnits sedan 2002 och har blivit ett populärt alternativ till XML för att hantera data. Det är ett enkelt format som är lätt att läsa och skriva för både människor och datorer. Det finns också många bibliotek och verktyg tillgängliga för att arbeta med JSON i olika programmeringsspråk.
 
-```json
-{
-  "namn": "Anna",
-  "ålder": 25
-}
-```
-
-I Java kan du också läsa in en JSON-fil och konvertera den till ett objekt med hjälp av "JSONObject" klassen.
-
-## Djupdykning
-
-Utöver att lägga till och hämta data, kan du också manipulera och bearbeta JSON-objekt på olika sätt. Till exempel kan du iterera igenom en lista av objekt och utföra åtgärder på varje objekt med hjälp av en "foreach" loop.
-
-```Java
-JSONArray lista = new JSONArray();
-lista.put(new JSONObject("{\"namn\":\"Anna\",\"ålder\":25}"));
-lista.put(new JSONObject("{\"namn\":\"Bob\",\"ålder\":30}"));
-
-// Iterera igenom listan och skriv ut namnen
-for (int i = 0; i < lista.length(); i++) {
-    JSONObject objekt = lista.getJSONObject(i);
-    System.out.println(objekt.getString("namn"));
-}
-```
-
-Detta kommer att producera följande utmatning:
-
-```Anna
-Bob
-```
-
-Det är också viktigt att hantera eventuella felaktigheter i JSON-data, till exempel om en icke-existerande nyckel försöks hämtas. Därför är det alltid bra att använda "try-catch" block för att undvika kraschar i ditt program.
-
-## See Also
-
-- [JSON på w3schools](https://www.w3schools.com/js/js_json_intro.asp)
-- [Java JSONObject Dokumentation](https://www.json.org/json-en.html)
-- [Java try-catch block på Oracle Documentation](https://docs.oracle.com/javase/tutorial/essential/exceptions/try.html)
+## Se även:
+- [JSON - officiell hemsida](https://www.json.org/)
+- [JSON Tutorial för Java](https://www.tutorialspoint.com/json/json_java_example.htm)
+- [Alternativ till JSON](https://www.atmantra.com/machine-learning-101/serialization/json-vs-xml-vs-yaml-a-comparison/) (jämförelse mellan JSON, XML och YAML)

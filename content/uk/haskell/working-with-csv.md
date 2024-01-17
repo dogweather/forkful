@@ -10,44 +10,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Чому
+# Що і чому?
 
-Якщо ви працюєте з даними, шансів свого життя вам вже доводилося працювати з CSV (Comma Separated Values) файлами. CSV є одним з найбільш поширених форматів для зберігання даних, особливо коли маєте справу з великими об'ємами даних.
+Робота з CSV є надзвичайно важливим і корисним навичкою для програмістів. CSV (Comma Separated Values) представляє собою формат зберігання даних, який використовує коми для розділення полів. Це дозволяє легко читати і записувати дані, що робить його популярним форматом для обміну даними між різними програмами.
 
-## Як це зробити
+# Як?
 
-Найпростіший спосіб прочитати CSV файл у Haskell - використати пакет "csv". Це можна зробити за допомогою наступного коду:
-
-```Haskell
-import Text.CSV (parseCSV)
-
-main = do
-    let csvFile = "file.csv" -- назва вашого файлу
-    input <- readFile csvFile
-    let csv = parseCSV csvFile input
-    print csv
-```
-Після цього ви отримаєте дані у вигляді списку списків рядків.
-
-Якщо потрібно обробити більш складні дані, можна використовувати функції з пакету "cassava". Наприклад, якщо у вас є CSV файл з заголовками стовпців, то за допомогою функції `decodeHeader` ви можете отримати дані у вигляді масиву об'єктів з відповідними назвами полів.
+Щоб працювати з CSV у Haskell, потрібно встановити пакет ```csv```. Приклади коду та вихідні дані наведені нижче:
 
 ```Haskell
-import Data.Csv (decodeHeader)
+import qualified Data.Csv as Csv
+import qualified Data.ByteString as BS
 
-main = do
-    let csvFile = "file.csv" -- назва вашого файлу
-    input <- readFile csvFile
-    case decodeHeader input of
-        Left err -> putStrLn err
-        Right rows -> print rows
+csvFile = "data.csv"
+
+-- Читання CSV файлу
+readCSV :: BS.ByteString -> IO (Either String (V.Vector (Ссv.Header, Ссv.Record)))
+readCSV file = Csv.decode Csv.NoHeader file
+
+-- Запис CSV файлу
+writeCSV :: BS.ByteString -> IO ()
+writeCSV file = BS.appendFile file
+
+-- Приклад вихідних даних
+header = ["id", "name", "age"]
+data = [["1", "John", "20"], ["2", "Mary", "25"], ["3", "Tom", "30"]]
+
+-- Читання CSV файла за допомогою наших функцій
+readCSV csvFile
+-- Вивід: Right (fromList [("id",["1","2","3"]),("name",["John","Mary","Tom"]),("age",["20","25","30"])])
+
+-- Запис вихідних даних у CSV файл за допомогою наших функцій
+writeCSV csvFile (Csv.encode header <> Csv.encode data)
+
+readCSV csvFile
+-- Вивід:
+
+-- id,name,age
+-- 1,John,20
+-- 2,Mary,25
+-- 3,Tom,30
+
 ```
 
-## Глибоке погруження
+# Більш детально
 
-Цей приклад є досить простим і не враховує багатьох ситуацій, які можуть виникнути під час роботи з CSV файлами. Наприклад, вам можуть знадобитися додаткові функції для парсингу конкретних типів даних або обробки помилок. Для цього можна ознайомитися з іншими пакетами, такими як "cassava" або "csv-conduit".
+Формат CSV був розроблений у 1972 році для зберігання і обміну даними між програмами. Сьогодні він залишається одним з найпопулярніших форматів для зберігання і обробки табличних даних.
 
-## Дивіться також
+Існують інші альтернативи для роботи з даними, такі як JSON та XML. Але CSV залишається популярним завдяки своїй простоті та легкості прочитання людиною.
 
-- [Пакет csv у Hackage](https://hackage.haskell.org/package/csv)
-- [Пакет cassava у Hackage](https://hackage.haskell.org/package/cassava)
-- [Пакет csv-conduit у Hackage](https://hackage.haskell.org/package/csv-conduit)
+У Haskell пакет ```csv``` використовує бібліотеку ```cassava```, яка надає швидку та ефективну реалізацію для роботи з CSV.
+
+# Більше інформації
+
+- [Документація пакету ```csv```] (https://hackage.haskell.org/package/csv)
+- [Документація бібліотеки ```cassava```] (https://hackage.haskell.org/package/cassava)
+- [Огляд формату CSV] (https://en.wikipedia.org/wiki/Comma-separated_values)

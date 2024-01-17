@@ -1,7 +1,7 @@
 ---
-title:                "Rozpoczynając nowy projekt"
-html_title:           "Python: Rozpoczynając nowy projekt"
-simple_title:         "Rozpoczynając nowy projekt"
+title:                "Rozpoczynanie nowego projektu"
+html_title:           "Python: Rozpoczynanie nowego projektu"
+simple_title:         "Rozpoczynanie nowego projektu"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Getting Started"
@@ -10,40 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co & Dlaczego?
+Zaczęcie nowego projektu to proces, w którym programiści tworzą nowe programy lub rozszerzają istniejące o nowe funkcje. Przy okazji tworzą kod, rozwiązują problemy i uczą się nowych rzeczy. Robią to, aby rozwijać swoje umiejętności i przyczynić się do rozwoju technologicznego.
 
-Zastanawiasz się, dlaczego warto zacząć nowy projekt w języku Python? W artykule dowiesz się, dlaczego Python jest popularnym wyborem dla wielu programistów i jak zacząć swoją przygodę z tym językiem.
-
-## Jak zacząć
-
-Aby rozpocząć projekt w języku Python, najpierw musisz zainstalować interpreter Python na swoim komputerze. Możesz to zrobić poprzez pobranie najnowszej wersji z oficjalnej strony Pythona. Gdy już go zainstalujesz, możesz przejść do pisania swojego pierwszego kodu.
-
+## Jak to zrobić:
 ```Python
-# Przykład kodu
-print("Witaj świecie!")
-```
-Ten krótki przykład pokazuje, jak prosty i czytelny jest język Python. Możesz również użyć interpretera Python w trybie interaktywnym, aby przetestować swoje pomysły i eksperymentować z różnymi funkcjami języka.
+# Przykładowy kod do rozpoczęcia nowego projektu
+import os
 
-```Python
-# Przykład interaktywnego trybu
->>> x = 5
->>> print(x*2)
-10
->>> y = "Python"
->>> print("Mój ulubiony język to " + y)
-Mój ulubiony język to Python
+# Utworzenie nowego folderu dla projektu
+os.mkdir("Nowy_projekt")
+
+# Utworzenie nowego pliku z kodem
+with open("nowy_projekt.py", "w") as file:
+    file.write("print('Witaj w moim nowym projekcie!')")
+    
+# Uruchomienie nowego pliku z kodem
+os.system("python nowy_projekt.py")
 ```
 
-Po nauce podstaw języka, możesz poszukać różnych bibliotek i frameworków, które ułatwią Ci tworzenie swojego projektu. Przeczytaj dokumentację różnych modułów, aby znaleźć te, które najlepiej odpowiadają Twoim potrzebom.
+Przykładowy output:
+```
+Witaj w moim nowym projekcie!
+```
 
-## Deep Dive
+## Deep Dive:
+W przeszłości, tworzenie nowych projektów było bardziej czasochłonne i wymagało wielu działań, takich jak ręczna konfiguracja środowiska i tworzenia wszystkich plików od zera. Dzięki narzędziom jak Django czy Flask, można teraz szybko rozpocząć nowe projekty i skupić się na ich rozwoju. Alternatywą dla języka Python mogą być na przykład C++ lub Java. W celu rozpoczęcia nowego projektu należy mieć podstawową wiedzę na temat programowania w języku Python oraz umieć korzystać z narzędzi takich jak Git czy Virtualenv.
 
-Podstawy języka Python są bardzo proste do zrozumienia, co sprawia, że jest on idealny dla początkujących programistów. Dzięki czytelnemu składni i bogatej bibliotece standardowej, możesz w szybki sposób używać gotowych funkcji i modułów. Ponadto, język ten jest również popularny w świecie nauki danych i uczenia maszynowego, co daje Ci możliwość rozwoju w tych dziedzinach.
-
-Jednak zacząć nowy projekt w języku Python może być również wyzwaniem. Musisz poświęcić czas na naukę podstaw i zrozumienie struktury i składni języka. Jednak gdy już opanujesz te podstawy, będziesz mógł tworzyć zaawansowane i skomplikowane projekty.
-
-## Zobacz również
-
-- [Oficjalna strona Pythona](https://www.python.org/)
-- [Dokumentacja Pythona](https://docs.python.org/)
-- [Kurs Pythona na Codecademy](https://www.codecademy.com/learn/learn-python)
+## Zobacz też:
+- [Django](https://www.djangoproject.com/)
+- [Flask](https://flask.palletsprojects.com/)
+- [Virtualenv](https://virtualenv.pypa.io/en/latest/)
+- [Git](https://git-scm.com/)

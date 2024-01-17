@@ -10,49 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¡Da un salto hacia el futuro o el pasado: Cómo calcular fechas con Gleam!
+## ¿Qué & por qué?
 
-Si alguna vez te has preguntado cuántos días faltan para el próximo cumpleaños de tu mejor amigo o cuántos días han pasado desde que nació tu mascota, entonces este artículo es para ti. Gleam, un lenguaje de programación funcional creado por el equipo de investigación de Galois, te permite realizar cálculos precisos de fechas en el pasado y en el futuro. ¡Así que sigue leyendo y descubre cómo dar un salto en el tiempo con Gleam!
+Calcular una fecha en el futuro o en el pasado es un proceso común en la programación que nos permite manejar de manera eficiente y precisa el tiempo en nuestras aplicaciones. Los programadores realizan esta tarea para rastrear eventos, establecer plazos y generar cronogramas.
 
-## ¿Por qué?
+## Cómo:
 
-¿Por qué te gustaría calcular fechas en el futuro o en el pasado? Bueno, hay muchas razones. Tal vez necesitas saber cuándo se cumple un plazo importante o quieres saber cuántos días te quedan en tu período de vacaciones. O tal vez eres un aficionado a la genealogía y quieres calcular cuántas generaciones han pasado desde que nació tu bisabuelo. Sea cual sea la razón, Gleam te ofrece una forma fácil y precisa de calcular fechas.
-
-## Cómo hacerlo
-
-Primero, importa el módulo `Calendar.Date` en tu programa:
+Para calcular una fecha en el futuro o pasado en Gleam, podemos utilizar la función `DateTime.add` combinada con una cantidad de tiempo en el formato adecuado usando los operadores `seconds`, `minutes`, `hours`, `days`, `weeks` y `years`. Por ejemplo, si queremos obtener la fecha de 5 días después de hoy, podemos escribir:
 
 ```Gleam
-import Calendar.Date
+DateTime.add(3 |> days)
 ```
 
-A continuación, puedes utilizar la función `add_days` para calcular una fecha en el futuro o en el pasado:
+El resultado sería la fecha en tres días a partir de hoy. También podemos restar tiempo usando el mismo método, solo utilizando números negativos. Por ejemplo, si queremos obtener la fecha de 10 días antes de hoy, podemos escribir:
 
 ```Gleam
-let date = Calendar.Date.add_days(
-  today(),
-  30
-)
+DateTime.add(-10 |> days)
 ```
 
-En este ejemplo, hemos usado la función `today` para obtener la fecha actual como punto de partida y luego hemos añadido 30 días a esta fecha usando `add_days`. Puedes cambiar el número de días según tus necesidades. Además, puedes restar días en lugar de añadirlos para obtener una fecha en el pasado.
+El resultado sería la fecha hace diez días a partir de hoy.
 
-Si quieres obtener una fecha específica en el pasado o en el futuro, puedes utilizar la función `make` y especificar el año, mes y día como argumentos. Por ejemplo:
+Otra forma de especificar una fecha es utilizando la función `DateTime.from_posix_utc`, que toma un timestamp POSIX (el número de segundos desde el 1 de enero de 1970 en UTC) y devuelve una representación de fecha y hora en formato `DateTime`.
 
-```Gleam
-let date = Calendar.Date.make(1995, 8, 24)
-```
+## Profundizando:
 
-También puedes hacer cálculos más complejos como sumar años o meses a una fecha determinada utilizando las funciones `add_years` y `add_months`.
+Antes de la introducción de los timestamps POSIX, muchos sistemas utilizaban el formato de fecha y hora conocido como "Época", que establecía el comienzo de la hora como el 1 de enero de 1900. Sin embargo, esto presentaba algunos problemas, como la incapacidad de representar fechas antes de esa época. El uso de timestamps POSIX ha resuelto estas limitaciones y se ha convertido en el estándar para la gestión de tiempo en la mayoría de los sistemas.
 
-## Profundizando en el cálculo de fechas
+Alternativamente, en lugar de utilizar la función `DateTime.add` en conjunto con la cantidad de tiempo deseada, también podemos especificar una fecha exacta utilizando la función `DateTime.from_components`, que toma los componentes de una fecha (año, mes, día) y devuelve una representación de fecha y hora en formato `DateTime`.
 
-Gleam utiliza el calendario gregoriano para calcular fechas, lo que significa que no se tendrán en cuenta los cambios en el calendario que se han hecho a lo largo de la historia (como el cambio del calendario juliano al gregoriano en 1582). Además, Gleam no puede manejar fechas anteriores al 1 de enero de 1582.
+## Ver también:
 
-Si te interesa la matemática detrás de los cálculos de fechas, puedes echar un vistazo a cómo Gleam utiliza algoritmos y funciones para realizar estas operaciones. ¡Quién sabe, podría ser una buena oportunidad para mejorar tus habilidades matemáticas y de programación al mismo tiempo!
-
-## Consulta también
-
-- [Documentación de Gleam sobre fechas](https://gleam.run/std/calendar.date.html)
-- [Tutorial de Gleam](https://gleam.run/book/tour/introduction.html)
-- [Comunidad de Gleam en Discord](https://discord.gg/7Rptjwu)
+Para obtener más información sobre el uso de fechas y horas en Gleam, puedes consultar la documentación oficial en https://gleam.run/documentation/#date-and-time. También puedes explorar la función `DateTime` y sus variantes en la biblioteca estándar de Gleam en https://github.com/gleam-lang/gleam_stdlib/blob/master/lib/DateTime.gleam.

@@ -1,7 +1,7 @@
 ---
-title:                "未来または過去の日付を計算する"
-html_title:           "TypeScript: 未来または過去の日付を計算する"
-simple_title:         "未来または過去の日付を計算する"
+title:                "未来または過去の日付の計算"
+html_title:           "TypeScript: 未来または過去の日付の計算"
+simple_title:         "未来または過去の日付の計算"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Dates and Times"
@@ -10,37 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## 何かとは？
+日付の計算を一定のルールに従って行うことを指します。プログラマーは、特定の日付の未来や過去を計算する必要があるため、このような計算を行います。
 
-未来や過去の日付を計算する理由は多岐に渡ります。例えば、締め切りやイベントの日程を把握したり、将来の計画を立てたりする際に便利です。
-
-## How To
-
-日付の計算を行うには、TypeScriptの組み込み関数である`Date()`を使用します。この関数は、現在の日付を取得することができます。そして、JavaScriptのDateオブジェクトを使って未来や過去の日付を計算することができます。例えば、現在の日付に10日を加算するコードは以下のようになります。
-
+## 方法：
 ```TypeScript
-let currentDate = new Date(); //現在の日付を取得
-currentDate.setDate(currentDate.getDate() + 10); //10日追加
-console.log(currentDate); //コンソールに出力される日付は入力した日付の10日後になる
+// 現在から10日後の日付を計算する例
+const currentDate = new Date();
+const futureDate = new Date(currentDate.setDate(currentDate.getDate() + 10));
+console.log(futureDate.toDateString()); // フォーマットされた日付（例：Mon Aug 16 2021）
+```
+```TypeScript
+// 指定された日付から5年前の日付を計算する例
+const pastDate = new Date('2015-08-16');
+const fiveYearsAgo = new Date(pastDate.setFullYear(pastDate.getFullYear() - 5));
+console.log(fiveYearsAgo.toDateString()); // フォーマットされた日付（例：Thu Aug 16 2015）
 ```
 
-また、日付を加算するだけでなく、減算することもできます。例えば、現在の日付から1年前の日付を求めるコードは以下のようになります。
+## 詳細：
+日付の計算は、歴史的な背景や選択肢、実装の詳細について深く調べる価値があります。過去の日付の計算は、歴史的な出来事や記念日を特定するのに役立ちます。一方、未来の日付の計算は、予定や期限を設定するのに役立ちます。日付の足し算や引き算をする方法はいくつかありますが、JavaScriptやTypeScriptでは、Dateオブジェクトのメソッドを使って計算を行うことができます。
 
-```TypeScript
-let currentDate = new Date();
-currentDate.setFullYear(currentDate.getFullYear() - 1); //1年減算
-console.log(currentDate);
-```
-
-これらのコードを実行すると、現在の日付に加算または減算された日付がコンソールに表示されます。
-
-## Deep Dive
-
-TypeScriptのDateオブジェクトには、日付を加算したり減算したりするための多くのメソッドがあります。これらのメソッドを使いこなすことで、日付の計算をより柔軟に行うことができます。また、時差を考慮した日付の計算や、特定の曜日を指定して日付を求めることも可能です。
-
-しかしながら、日付の計算には多くの注意点があります。例えば、閏年やオーバーフローなどが考慮されないと、意図しない結果になる可能性があります。そのため、日付を計算する際は、組み込み関数を利用するだけでなく、ライブラリを使用することをおすすめします。
-
-## See Also
-
-* [TypeScript Dateオブジェクトの公式ドキュメント](https://www.typescriptlang.org/docs/handbook/standard-library.html#date)
-* [JavaScriptのDateオブジェクトの公式ドキュメント (英語)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
+## 関連情報：
+- [Dateオブジェクトのドキュメント](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [JavaScriptにおける日付の扱い方](https://www.sejuku.net/blog/77361#i-2)

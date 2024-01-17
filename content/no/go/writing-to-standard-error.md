@@ -1,7 +1,7 @@
 ---
-title:                "Å skrive til standardfeil"
-html_title:           "Go: Å skrive til standardfeil"
-simple_title:         "Å skrive til standardfeil"
+title:                "Skriver til standardfeil"
+html_title:           "Go: Skriver til standardfeil"
+simple_title:         "Skriver til standardfeil"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Files and I/O"
@@ -10,36 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
-Så hvorfor skulle du egentlig bry deg om å skrive til standardfeil i Go? Kort fortalt, så er det en måte å informere om eventuelle feil eller problemer som oppstår under kjøring av ditt Go-program. Det er en viktig del av feilhåndteringen og kan hjelpe deg med å finne og fikse potensielle problemer i koden din.
+## Hva & Hvorfor?
 
-## Hvordan
-For å skrive til standardfeil i Go, bruker du funksjonen `fmt.Fprintf` og pekeren `os.Stderr`. Her er et eksempel på hvordan det kan gjøres:
+Å skrive til standard feil er en måte for utviklere å fange og håndtere feil i sitt Go-programmeringsspråk. Dette lar programmerere få en detaljert rapport om feil og hjelper med å feilsøke og forbedre koden sin.
 
-```Go
-package main
+## Hvordan:
 
-import (
-	"fmt"
-	"os"
-)
+For å skrive til standard feil i Go, bruker du fmt.Fprintf() -funksjonen og angir standard feil som det første argumentet, etterfulgt av en formatstreng og eventuelle verdier du vil skrive ut. Se eksempelet nedenfor:
 
-func main() {
-	err := doSomething()
-
-	// Sjekk om det oppstår en feil og skriv den til standardfeil hvis det gjør det
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Ops! En feil oppsto: %v", err)
-	}
-}
+```
+fmt.Fprintf(os.Stderr, "Feil oppstod: %s", err)
 ```
 
-Kjører dette programmet vil skrive en melding til standardfeil hvis `doSomething()` returnerer en feil. 
+Dette vil skrive ut feilmeldingen til standard feil, som vanligvis er konsollen når du kjører programmet fra terminalen. Her er et annet eksempel som skriver ut til standard feil på en enklere måte:
 
-## Dypdykk
-Nå som du vet hvordan du skriver til standardfeil i Go, la oss gå litt dypere og se nærmere på sammenhengen mellom standardfeil og standardutgang. Begge disse utstrømmene er koblet til terminalen og kan leses og skrives til med `os.Stdout` og `os.Stderr` pekere. Du kan til og med kombinere disse to og skrive ut informasjon til begge samtidig ved å bruke funksjonen `fmt.Fprintf` to ganger.
+```
+fmt.Fprintln(os.Stderr, "Oisann, en feil skjedde!")
+```
 
-## Se også
-* [Go's dokumentasjon om standardfeil](https://golang.org/pkg/fmt/#Fprintf)
-* [En guide til feilhåndtering i Go](https://blog.golang.org/error-handling-and-go)
-* [En oversikt over grunnleggende kommandoer i Go](https://www.digitalocean.com/community/tutorials/how-to-install-go-and-set-up-a-local-programming-environment-on-macos)
+Begge eksemplene ovenfor vil skrive ut teksten til standard feil og legge til en linjeskift etterpå.
+
+## Dypdykk:
+
+Skrive til standard feil har eksistert siden de første dager av programmering og er en vanlig måte å håndtere feil på. Alternativer til dette er for eksempel å logge feil i en fil eller sende en e-post med feilmeldingen. Selv om dette kan være mer pålitelig, er det også mer komplekst og krever ekstra kode og ressurser.
+
+Go sitt innebygde fmt-pakke gjør det enkelt å skrive til standard feil, og det er derfor valgt av mange utviklere som en effektiv og enkel måte å håndtere feil på.
+
+## Se også:
+
+- [Official Go documentation for fmt package](https://golang.org/pkg/fmt/)
+- [Error handling in Go: Best Practices](https://blog.golang.org/error-handling-and-go)

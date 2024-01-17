@@ -1,7 +1,7 @@
 ---
-title:                "פיענוח html"
-html_title:           "Javascript: פיענוח html"
-simple_title:         "פיענוח html"
+title:                "ניתוח HTML"
+html_title:           "Javascript: ניתוח HTML"
+simple_title:         "ניתוח HTML"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "HTML and the Web"
@@ -10,49 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# למה
+## מה ומדוע? 
+פענוח HTML הוא תהליך שבו מתוכנתים ממירים את קוד ה-HTML של דף אינטרנט לפורמט נתונים המובן למכשירים טכנולוגיים. הפענוח הוא חיוני לתפעול של דפי אינטרנט ולהצגתם כמיני מידע ותמונות. תוכנתי חושבים על הקוד הלא תקין של אתרים כאשר הם מנסים לפענט HTML ולתקן אותם, מה שמביא לטובת התפעול ולשיפור הגרפיקה.
 
-למה אתה צריך לקרוא קוד HTML? איך אתה יכול ליצור ולערוך אתרים מעניינים ומצטיינים באמצעות לשוניות כגון גרור ושחרר וכמו הנספחים הרבים שאתה יכול להוסיף או למחוק באתר שלך. ועוד מספר תכונות שמציינים את הדרך בה התכניות הפכו להיות מתקדמות יותר, כגון גרסאות קוד HTML, סוגי מיחשוב שונים כמו וידלינג ואפשרויות שימושיות עם קודים לאינטגרציה של דפים או אלמנטים.
+## איך לעשות?
+קודם כל, נא להבין שפענוח HTML הוא תהליך כתיבת קוד בה שכל הפרטים היטב להיות בעלי אופי מיוצמים טכנולוגים. כאן יעשו הרבה מחשבות המשתמשים לפענוח-קבלה-תציידי HTML מותאמים לכל פיתוח נתון. זה כל כך פשוט לכתוב קוד HTML יש לפענח אותו, כי יותר ויותר אנשים מתנסים את כל קודי ה-HTML שהורדו באתר.
 
-למה נדרשים להמחיש דפים?
-
-לעולם לא ניתן לערוך תוך כדי ניווט אינטואיטיבי ויישום רב כללי של קוד לכניסה של המלאכה. למעשה, חלון הפתיחה כולו הוא לא אליצציה מקרהית ממה שה power heeft מאחר וקוד הדפדפן שלך משתמשים.
-
-# איך לעשות
-
-### כתיבת קוד HTML שכאן
+קוד קבוע הצגה של דף באמצעות הפענוח.ן
 
 ```Javascript
-<!DOCTYPE html>
-<html>
-<head>
-	<title>הדגמת סוגי מיספור שמכילים שמות סוגי מיספור</title>
-	<style>
-		body{
-			font-family: Arial, sans-serif;
-		}
-	</style>
-</head>
-<body>
-	<h1>מונה את החודרים!!</h1>
-	<ul>
-		<li>רעדן</li>
-		<li>אלה</li>
-		<li>אדם</li>
-	</ul>
-	<script>
-		var names = document.getElementsByTagName('li'); //איסוף כל הפריטים בתוך הרשימה התחתונה
-		var listLength = names.length; //מאתר את מספר הפריטים ברשימה
-		for (var i = 0; i < listLength; i++) {
-			names[i].textContent = names[i].textContent + '';
-		}
-	</script>
-</body>
-</html>
+const html = '<p>Hello World!</p>';
+const parser = new DOMParser();
+const parsedHTML = parser.parseFromString(html, 'text/html');
+console.log(parsedHTML.body.innerHTML);
+// Output: Hello World!
 ```
 
-### פלט דגם
+## לחקור 
+ראשית כל, הפענוח HTML נמצא עם הטכנולוגיות המתאימות לזמן הנכון. זה נמצא עם כלי הפענוח הכלים שהיו משתמשים בהם כשהם רושמים באתר חשוב שכתרת הכלים עדיין בוגולציה. פענוף המידע הוא חשוב לפמוח כמו גם לשבוד. לפענוח כונן.
 
-# Deep Dive
-
-כאשר מדובר בגרור ושחרר דרך HTML, מדובר בכתיבת קודים סוגי HTML ללא צורך בתוכן וסגנון. המעבר בין כתיבת קוד חידתי ועריכה עד כמה שהיא גדולה. לכן, לבדוק את התאמה מוצחת
+## ראה גם
+- [HTML תיקוני] https://developer.mozilla.org/en-US/docs/Web/API/DOMParser
+- [תיקוני HTML כלים און העולמות] http://www.html5reporter.com
+- [תיקוני HTML נרגיל] https://www.w3.org/TR/html-parsing/

@@ -10,38 +10,22 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi: Miksi haluat nimenomaan osa-merkkijonon poistamisen
+# Mitä ja miksi?
+Substringien erottaminen on prosessi, jossa ohjelmoijat etsivät ja poimivat osia merkkijonoista, jotka haluavat manipuloida tai tarkastella tietyn algoritmin tai funktion suorittamiseksi. Tätä käytetään usein muutosten tekemiseen olemassa oleviin merkkijonoihin tai niiden jakamiseen pienempiin osiin datan käsittelyä varten.
 
-Substringien poistaminen on erittäin hyödyllistä, kun haluat käsitellä vain osaa merkkijonosta tietyissä tilanteissa. Tämä voi säästää aikaa ja tehdä koodistasi tehokkaampaa.
+# Miten tehdä se:
+Erota alamerkkijonoja Rubyssa voidaan tehdä useilla eri tavoilla, mutta yleisin tapa on käyttää String-luokan sisäänrakennettuja metodeita, kuten #slice ja #substring. Seuraavassa esimerkissä näytämme, miten voit erottaa alamerkkijonon tietystä merkkijonosta käyttämällä #slice metodia:
 
-## Kuinka: Esimerkkejä koodia ja tulostusta
-
-Mikäli haluat poistaa osan merkkijonosta, käytä Rubyssa "slice!"-metodia, joka poistaa ilmoittamasi alueen merkkijonosta ja palauttaa poistetun osan. Katso alla olevaa esimerkkiä:
-
-```Ruby
-string = "Tämä on hyvä tapa poistaa osa merkkijonosta"
-
-string.slice!(9, 11)
-
-puts string #=> Tämä on poistaa merkkijonosta
+```ruby
+string = "Tervetuloa Rubyyn!"
+puts string.slice(0, 9)
 ```
+Tämä tulostaisi "Tervetulo" terminaalissa. Ensimmäinen parametri #slice metodissa on aloituskirjain indeksi, ja toinen on lopetuskirjain indeksi.
 
-## Syvällinen tarkastelu: Lisätietoa osa-merkkijonon poistamisesta
+# Syvemmälle:
+Substringien erottaminen on ollut tärkeä osa ohjelmointia pitkään. Alun perin kehitsi IBM:n kehittäjä, ohjelmointikieltä nimeltä SNOBOL. Kuten aiemmin mainittu, Rubyssa on erilaisia ​​tapoja erottaa alamerkkijonot, kuten myös #[] -metodilla, jota käytetään pääasiassa lopputaulukoinnissa.
 
-Jos haluat tarkistaa, onko merkkijono tietyssä kohdassa tietyllä pituudella, voit käyttää "include?"-metodia yhdessä "slice!"-metodin kanssa. Tämä auttaa sinua välttämään tyhjien alkioiden poiston, jos kohdassa ei ole tarpeeksi merkkejä poistettavaksi. Katso alla olevaa esimerkkiä:
-
-```Ruby
-string = "Tämä on toinen hyvä tapa poistaa merkkijonosta"
-
-if string.include?("hyvä tapa") 
-  string.slice!(0, 15)
-end
-
-puts string #=> poistaa merkkijonosta
-```
-
-## Katso myös
-
-- [Ruby String API](https://ruby-doc.org/core-2.7.3/String.html)
-- [Miten poistaa merkkijonosta välimerkki käyttämällä Rubya](https://medium.com/@alanachavez616/how-to-remove-punctuation-in-ruby-6d979172c5d0)
-- [Stringien manipulointi ja substringien poistaminen Rubyssa](https://www.rubyguides.com/2016/07/ruby-strings/)
+## Katso myös:
+- Ruby String-luokan dokumentaatio: https://ruby-doc.org/core-2.7.1/String.html
+- Ruby String-luokan Github-lähdekoodi: https://github.com/ruby/ruby/blob/master/string.c
+- String methods in Ruby – SitePoint article: https://www.sitepoint.com/ruby-string-methods/

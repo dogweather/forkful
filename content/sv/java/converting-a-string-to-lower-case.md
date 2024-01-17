@@ -1,7 +1,7 @@
 ---
-title:                "Omvandla en sträng till gemener"
-html_title:           "Java: Omvandla en sträng till gemener"
-simple_title:         "Omvandla en sträng till gemener"
+title:                "Konvertera en sträng till gemener"
+html_title:           "Java: Konvertera en sträng till gemener"
+simple_title:         "Konvertera en sträng till gemener"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Strings"
@@ -10,29 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
+Att konvertera en sträng till små bokstäver i Java är en vanlig uppgift för programmerare. Det innebär att man omvandlar alla bokstäver i en sträng till små bokstäver, oavsett om strängen består av både små och stora bokstäver. Detta behövs ofta för att underlätta jämförelser och sökningar i textsträngar.
 
-Att kunna konvertera en sträng till små bokstäver kan vara väldigt användbart i vissa programmeringsscenarier. Till exempel kan det vara användbart när du jämför strängar eller när du får indata från en användare och vill bearbeta det på ett enhetligt sätt.
-
-## Hur man gör
-
-Det finns ett enkelt sätt att konvertera en sträng till små bokstäver i Java genom att använda metoden "toLowerCase()". Nedan följer ett exempel på hur du kan använda detta i din kod:
-
+## Så här:
+För att konvertera en sträng till små bokstäver behöver vi använda metoden `toLowerCase()` i Java. Här är ett enkelt exempel på hur man kan göra det:
 ```Java
-String name = "Jag Är En Sträng";
-System.out.println(name.toLowerCase());
+String str = "Hej";
+String lowerCaseStr = str.toLowerCase();
+System.out.println(lowerCaseStr); // output: hej
 ```
 
-Detta kommer att ge följande utmatning: "jag är en sträng". Metoden "toLowerCase()" returnerar en ny sträng med alla tecken i små bokstäver.
+Det är också möjligt att konvertera strängen "på plats" genom att använda metoden `toLowerCase()` på varje enskild bokstav i strängen. Detta kan se ut så här:
+```Java
+String str = "Hej";
+char[] chars = str.toCharArray();
+for(int i = 0; i < chars.length; i++){
+    chars[i] = Character.toLowerCase(chars[i]);
+}
+String lowerCaseStr = new String(chars);
+System.out.println(lowerCaseStr); // output: hej
+```
 
-## Djupdykning
+## Utforska djupare:
+Konvertering av strängar till små bokstäver är ett vanligt problem som programmerare har stött på under lång tid. Faktum är att detta var en vanlig uppgift i äldre versioner av Java, eftersom strängar då behandlades som en array av tecken istället för en egen klass.
 
-I Java är alla tecken representerade av numeriska värden enligt Unicode-standarden. Bokstäverna A-Z har värdena 65-90 och a-z har värdena 97-122. När man använder metoden "toLowerCase()" i Java jämförs varje teckens numeriska värde för att avgöra om det ska konverteras till en små bokstav. Om det redan är en små bokstav behålls det oförändrat.
+Ett alternativ till att använda `toLowerCase()` är att använda en `StringBuilder`-klass och dess `append()`-metod för att lägga till de små bokstäverna till en tom sträng. Detta kan vara mer effektivt för stora strängar, men det är viktigt att komma ihåg att det ändå innebär en extra loop.
 
-Det är också viktigt att notera att "toLowerCase()" bara fungerar på strängar med bokstäver från det engelska alfabetet. Om en sträng innehåller specialtecken eller bokstäver från andra alfabet, kommer de inte att påverkas av metoden.
-
-## Se även
-
-- [Javas officiella dokumentation om string-klassens metoder](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html)
-- [En annan artikel om strängkonvertering i Java](https://www.baeldung.com/java-string-to-lowercase)
-- [En generell guide för Java-programmerare](https://www.tutorialspoint.com/java/index.htm)
+## Se även:
+- [Java String Documentation](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
+- [StringBuilder Documentation](https://docs.oracle.com/javase/8/docs/api/java/lang/StringBuilder.html)
+- [Java Character Documentation](https://docs.oracle.com/javase/8/docs/api/java/lang/Character.html)

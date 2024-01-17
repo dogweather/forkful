@@ -10,34 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi käyttää säännöllisiä lausekkeita?
+## Mitä ja miksi?
 
-Säännölliset lausekkeet ovat tehokas työkalu tekstin käsittelyssä ja etsimisessä. Niiden avulla voit suorittaa monimutkaisia hakuja ja korvauksia tekstissä, mikä säästää aikaa ja vaivaa monissa ohjelmointitilanteissa.
+Säännölliset lausekkeet ovat tapa ilmaista ja hakea kuvioita merkkijonoista. Ohjelmoijat käyttävät niitä erilaisten tietojen käsittelyyn, kuten käyttäjän syötteiden validoimiseen ja tekstin etsimiseen suurista tietokannoista.
 
-## Kuinka käyttää säännöllisiä lausekkeita?
+## Kuinka tehdä:
 
-Säännöllisiä lausekkeita käytetään Pythonin `re` -kirjaston avulla. Ensimmäiseksi sinun on tuotava `re` -kirjasto:
+Pythonilla säännöllisten lausekkeiden käyttö on helppoa. Alla on esimerkki koodista, jossa etsitään kaikki puhelinnumeroita tekstimuodossa olevasta tiedostosta ja tulostetaan ne.
 
 ```Python
 import re
+
+# Määritetään hakukuvio säännöllisen lausekkeen avulla
+pattern = r"\d{3}-\d{3}-\d{4}"
+
+# Luetaan tiedosto ja etsitään kaikki vastaavuudet hakukuvion mukaan
+with open('tiedosto.txt', 'r') as file:
+    data = file.read()
+    matches = re.findall(pattern, data)
+
+# Tulostetaan löydetyt puhelinnumerot
+for match in matches:
+    print(match)
 ```
 
-Sitten voit käyttää `re` -kirjaston eri funktioita säännöllisten lausekkeiden luomiseen. Esimerkiksi voit käyttää `re.search()` -funktiota etsimään tietyn kaavan mukaisia merkkijonoja. Tässä on yksinkertainen esimerkki, jossa etsitään kaikkia sanoja, jotka alkavat kirjaimella "h" ja loppuvat kirjainpariin "en":
+Tämän esimerkin avulla voit soveltaa säännöllisiä lausekkeita myös omassa koodissasi.
 
-```Python
-teksti = "Hei, tämä on esimerkki hakusanoista, jotka alkavat h:lla ja loppuvat en:aan"
-hakutulos = re.search(r"h\w+en", teksti)
-print(hakutulos.group())
-```
+## Syvempi sukellus:
 
-Tämä tulostaa "hakusanojen" sijasta "haku" osoituksena siitä, että säännölliset lausekkeet ovat löytäneet oikean vastineen tekstissä.
+Säännölliset lausekkeet ovat olleet käytössä jo yli 70 vuotta ja ne ovat olennainen osa monia ohjelmointikieliä, kuten Pythonia. Vaikka niiden käyttöä voidaan korvata esimerkiksi silmukoiden avulla, säännölliset lausekkeet tarjoavat tehokkaamman ja monipuolisemman tavan kuvioihin perustuvassa tiedonkäsittelyssä.
 
-## Syvennä tietämystäsi säännöllisistä lausekkeista
+## Katso myös:
 
-Säännölliset lausekkeet voivat tuntua aluksi vaikeilta, mutta niiden avulla voit suorittaa monimutkaisia hakuja ja korvauksia tekstissä. Voit lukea lisää säännöllisistä lausekkeista Pythonin virallisesta dokumentaatiosta tai käyttää online-selaimia, kuten Regex101, harjoitellaksesi ja testataksesi erilaisia säännöllisiä lausekkeita.
-
-## Katso myös
-
-- [Pythonin virallinen dokumentaatio säännöllisistä lausekkeista](https://docs.python.org/3/library/re.html)
-- [Regex101](https://regex101.com/) - online-selain säännöllisten lausekkeiden harjoitteluun ja testaamiseen
-- [Säännöllisten lausekkeiden opas](https://www.digitalocean.com/community/tutorials/how-to-use-regular-expressions-regex-in-python-3) - oppimateriaali säännöllisistä lausekkeista Pythonissa
+Tutustu lisää säännöllisiin lausekkeisiin ja niiden käyttöön Pythonissa Dokumentaatiosta: https://docs.python.org/3/library/re.html

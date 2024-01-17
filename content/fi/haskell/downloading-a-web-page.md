@@ -1,7 +1,7 @@
 ---
-title:                "Lataaminen verkkosivulle"
-html_title:           "Haskell: Lataaminen verkkosivulle"
-simple_title:         "Lataaminen verkkosivulle"
+title:                "Verkkosivun lataaminen"
+html_title:           "Haskell: Verkkosivun lataaminen"
+simple_title:         "Verkkosivun lataaminen"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "HTML and the Web"
@@ -10,40 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+# Mikä ja Miksi?
 
-Jokainen meistä on varmasti joskus tarvinnut ladata muutaman verkkosivun datan omalle tietokoneelle. Ehkä halusit tallentaa artikkelin offline-luvuksi tai tutkia tarkemmin sivun rakennetta ja sisältöä. Oli syy mikä tahansa, Haskellilla tämä tehtävä on helppo toteuttaa ja osoittaa jälleen kerran kielen monipuolisuuden.
+Ladataan sivu tarkoittaa käytännössä sivun sisällön kopioimista internetistä tietokoneellesi. Tätä tehdään yleensä sen takia, että haluat käyttää sivun sisältöä jossakin muussa sovelluksessa tai analysoit sivun tietoja.
 
-## Miten
-
-Käytännössä kaikki verkkosivut toimivat HTTP-protokollan avulla, joten tarvitsemme vain pienen kirjaston, joka osaa kommunikoida tietokoneesi ja verkkosivun välillä. Tämä kirjasto on `wget` ja voimme ladata sen komentoriviltä seuraavalla komennolla:
+# Kuinka:
 
 ```Haskell
-cabal install wget
-```
-
-Tämän jälkeen voimme aloittaa lataamisen suoraan Haskellin GHCI-tulkista. Otetaan esimerkiksi lataus Google-hakukoneen etusivulta:
-
-```Haskell
-import Data.ByteString (concat)
-import Network.Wreq (get, responseBody)
+import Network.HTTP.Simple
+import qualified Data.ByteString.Lazy.Char8 as L
 
 main :: IO ()
 main = do
-  res <- get "https://www.google.com/" -- Lataa sivun
-  let body = response body res -- Tallentaa sivun sisällön
-      file = "google.html" -- Tiedoston nimi
-  Data.ByteString.writeFile file body -- Tallentaa tiedoston
+  response <- httpLBS "http://example.com"
+  L.putStrLn (getResponseBody response)
 ```
 
-Tämä esimerkki lataa Google-hakukoneen etusivun ja tallentaa sen tiedoston `google.html` sisälle. Huomaa, että olemme käyttäneet `Data.ByteString`-kirjastoa, joka mahdollistaa binaaridatan käsittelyn, ja `Network.Wreq`-kirjastoa, joka tarjoaa yksinkertaisen tavan tehdä HTTP-pyyntöjä. Tämän lisäksi olemme käyttäneet `let`-lauseketta ja `do`-syntaksia tekemään latausoperaation ja tiedoston tallentamisen.
+Tämä koodi käyttää `httpLBS` funktiota ladataakseen sivun ja tulostaa sen sisällön konsoliin. Tämä vaatii `Network.HTTP.Simple` kirjaston tuomisen. Voit muuttaa sivun osoitteen, jolloin koodi lataa haluamasi sivun.
 
-## Syvällinen tarkastelu
+# Syväsukellus:
 
-Jos olet kiinnostunut syvemmin siitä, miten web-sivuja ladataan Haskellilla, suosittelemme tutustumaan `wget`-kirjaston lähdekoodiin ja tutkimaan, miten se käsittelee HTTP-pyyntöjä. Voit myös käyttää eri kirjastoja, kuten `http-conduit` tai `curl`, joilla on erilaisia ominaisuuksia ja toimintatapoja.
+Sivun lataaminen on yleinen tehtävä monissa ohjelmointitilanteissa. Esimerkiksi web-scraperit käyttävät tätä toimintoa hakeakseen tietoa sivuilta automaattisesti. On myös muita tapoja ladata sivuja, kuten käyttämällä HTTP-pyynnön tuloksena olevaa vastauskoodia. Haskellissa on myös muita kirjastoja, jotka tarjoavat lisäominaisuuksia sivujen lataamiseen, kuten `Http-Client` ja `Curl`.
 
-## Katso myös
+# Katso myös:
 
-- [wget-kirjasto Hackageissa](http://hackage.haskell.org/package/wget)
-- [Tulosta HTTP-kuorma Haskellissa](https://stackoverflow.com/questions/3854273/print-the-http-load-using-haskell)
-- [Haskellin perusopas](https://wiki.haskell.org/Learn_Haskell)
+- [Haskellin virallinen dokumentaatio sivujen lataamisesta](https://hackage.haskell.org/package/http-client)
+- [HTTP-pyynnön vastauskoodit](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)
+- [Mikä on web-scraper?](https://en.wikipedia.org/wiki/Web_scraping)

@@ -10,27 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
-Att kunna konvertera ett datum till en sträng är en användbar färdighet när man arbetar med Bash-scripting. Det kan hjälpa till att automatisera uppgifter som kräver specifika datumformat och göra dem mer läsbara för användaren.
+## Vad & Varför?
 
-## Hur man gör det
-För att konvertera ett datum till en sträng i Bash kan man använda kommandot "date". Det finns många olika sätt att ange ett datumformat, men vi kommer att fokusera på det vanligaste formatet, "YYYY-MM-DD". Här är ett exempel på hur man skulle göra det:
+Att omvandla ett datum till en sträng handlar om att konvertera ett datum, som till exempel 12 maj 2021, till en textsträng som ser ut som "12-05-2021". Programmerare gör detta för att kunna använda datumet i koden på ett enklare sätt, till exempel för att jämföra med andra datum eller skapa en titel för en fil baserad på datumet.
 
-```Bash
-date +%Y-%m-%d
-```
+## Såhär gör man:
 
-Detta kommando kommer att returnera dagens datum i formatet YYYY-MM-DD. Om du till exempel kör det idag (23 oktober 2021) kommer det att se ut så här:
+För att konvertera ett datum till en sträng i Bash kan vi använda "date" kommandot tillsammans med formatflaggan. Här är ett exempel på hur man kan konvertera dagens datum till en sträng med formatet "dd-mm-yyyy":
 
 ```Bash
-2021-10-23
+# Spara datumet i en variabel
+today=$(date +"%d-%m-%Y")
+
+# Visa resultatet
+echo "Dagens datum är $today"
+# Output: Dagens datum är 12-05-2021
 ```
 
-Du kan också använda andra flaggor för att anpassa datumet till det format du behöver. Till exempel, om du vill inkludera tiden, kan du använda "date +%Y-%m-%d %H:%M:%S" som kommer att returnera datumet och tiden i formatet YYYY-MM-DD HH:MM:SS.
+Vi kan också använda andra formatflaggor för att skapa en annan typ av sträng. Till exempel skulle kommandot ```date +"%A, %d %B %Y"``` ge oss en sträng som "onsdag, 12 maj 2021". Det finns många olika formatflaggor att välja mellan beroende på vilken typ av sträng vi vill ha.
 
-## Djupdykning
-För att förstå hur ovanstående kommando fungerar behöver man ha grundläggande kunskap om variabler i Bash. "date" kommandot tilldelar värdet av datumet till en variabel genom användning av "%Y" för år, "%m" för månad och "%d" för dag. Detta resulterar i en väggssträng som representerar dagens datum.
+## Djupdykning:
 
-## Se även
-- [Bash Date Command](https://www.cyberciti.biz/faq/linux-unix-formatting-dates-for-display/)
-- [Introduction to Bash Scripting](https://linuxhint.com/bash_scripting_tutorial_beginners/)
+Att konvertera ett datum till en sträng är ett vanligt problem inom programmering och det finns många olika sätt att göra det på. Bash är bara ett av de verktyg som kan användas för att lösa detta problem, men det är enkelt och lättviktigt att använda för enklare uppgifter.
+
+En alternativ metod för att konvertera datum till strängar är att använda "awk" kommandot tillsammans med "strftime" funktionen. Detta kan vara användbart om du behöver göra mer komplicerade omvandlingar eller om du arbetar med stora mängder data. Men för enkla uppgifter, som att bara få dagens datum i ett visst format, fungerar Bash's "date" kommando väl.
+
+## Se även:
+
+- [Bash:s officiella dokumentation för "date" kommandot](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html)
+- [En handledning om hur man använder "awk" och "strftime"](https://www.computerhope.com/unix/awk-strftime.htm)

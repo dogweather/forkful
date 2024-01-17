@@ -10,55 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+# Qu'est-ce que c'est et pourquoi le JavaScript utilise-t-il le YAML? 
+Le YAML (YAML Ain't Markup Language) est un format de données structuré utilisé pour stocker et échanger des informations. Il est souvent utilisé par les programmeurs dans le développement web pour créer des fichiers de configuration et les échanger entre différentes applications. Il est facile à lire et à écrire, ce qui en fait un choix populaire pour les développeurs.
 
-Vous êtes peut-être familier avec le format de données JSON en JavaScript, mais saviez-vous qu'il existe également un format de données appelé YAML? Bien que moins courant, YAML offre de nombreux avantages pour le stockage et la lecture de configurations complexes. Dans cet article, nous allons vous montrer comment travailler avec YAML en JavaScript et pourquoi vous devriez envisager de l'utiliser dans vos projets.
+## Comment faire: 
+Voici un exemple simple de code utilisant le YAML en JavaScript:
 
-## Comment faire
+```javascript
+// Déclaration d'un objet YAML
+let user = {
+  name: 'Jean',
+  age: 26,
+  interests: ['programmation', 'jeux vidéo']
+};
 
-Pour commencer à travailler avec YAML en JavaScript, vous devrez installer un module appelé YAML. Vous pouvez le faire en utilisant le gestionnaire de packages NPM en tapant la commande suivante dans votre terminal :
+// Conversion de l'objet en chaîne YAML
+let yamlString = YAML.stringify(user);
 
-```
-npm install yaml
-```
-
-Une fois le module installé, vous pouvez l'importer dans votre code JavaScript en utilisant la syntaxe suivante :
-
-```
-const yaml = require('yaml');
-```
-
-Maintenant, vous pouvez utiliser la méthode `parse` pour convertir une chaîne de caractères YAML en un objet JavaScript. Voici un exemple :
-
-```
-const yamlStr = `name: John
-age: 25`;
-
-const obj = yaml.parse(yamlStr);
-console.log(obj.name); // Output: John
+// Résultat: name: Jean | age: 26 | interests: - programmation | - jeux vidéo
 ```
 
-Vous pouvez également utiliser la méthode `stringify` pour convertir un objet JavaScript en une chaîne de caractères YAML. Voici un exemple :
+## Plongée en profondeur: 
+Le YAML a été créé en 2001 par Clark Evans et Ingy döt Net pour simplifier la création de fichiers de configuration. Il est basé sur le langage de programmation PERL et se présente sous la forme d'un document texte lisible par l'homme. Il existe également des alternatives telles que JSON (JavaScript Object Notation) et XML (Extensible Markup Language). En JavaScript, vous pouvez utiliser des bibliothèques telles que YAML.js pour travailler avec du code YAML.
 
-```
-const obj = { name: 'John', age: 25 };
-
-const yamlStr = yaml.stringify(obj);
-console.log(yamlStr); // Output: "name: John\age: 25"
-```
-
-Ces méthodes sont très utiles pour lire et écrire des fichiers de configuration YAML dans vos projets JavaScript. Vous pouvez également utiliser la méthode `load` pour charger un fichier YAML directement en mémoire, ce qui peut être pratique pour les fichiers de grande taille.
-
-## Plongée en profondeur
-
-En plus des fonctionnalités de base pour lire et écrire des fichiers YAML, le module YAML offre également des fonctionnalités avancées telles que la validation des données et la personnalisation de la syntaxe YAML. Vous pouvez utiliser la méthode `schema` pour créer un schéma de validation et valider vos données YAML en utilisant ce schéma. Vous pouvez également utiliser la méthode `setSchema` pour personnaliser la syntaxe YAML en définissant vos propres balises et en créant des documents YAML avec cette syntaxe personnalisée.
-
-Il est également important de noter que YAML prend en charge les commentaires, ce qui peut être très utile pour fournir des explications ou des notes pour votre configuration. Vous pouvez utiliser la notation `#` pour ajouter un commentaire à la fin d'une ligne ou utiliser la notation `|` pour ajouter un commentaire sur plusieurs lignes. Les commentaires seront ignorés lors de la lecture du fichier YAML, mais ils resteront visibles pour une meilleure compréhension du fichier.
-
-## Voir aussi
-
-- [Documentation du module YAML](https://github.com/eemeli/yaml)
-- [Tutoriel sur la manipulation des fichiers YAML en JavaScript](https://www.digitalocean.com/community/tutorials/how-to-use-yaml-to-manipulate-a-configuration-file-in-javascript)
-- [Vidéo sur l'utilisation de YAML dans un projet JavaScript réel](https://www.youtube.com/watch?v=a4ZSwI8bPSU)
-
-Merci d'avoir lu cet article sur l'utilisation de YAML en JavaScript. Nous espérons que vous pourrez maintenant profiter de ses avantages dans vos projets futurs. Happy coding!
+## Voir aussi: 
+Pour en savoir plus sur le YAML, vous pouvez consulter le site officiel à l'adresse suivante: https://yaml.org/. Vous pouvez également trouver des tutoriels et des exemples de code en utilisant YAML en JavaScript sur des sites comme Codecademy (https://www.codecademy.com/learn/learn-yaml) et W3schools (https://www.w3schools.com/js/js_yaml.asp).

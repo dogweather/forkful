@@ -10,58 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hva & Hvorfor? 
+Skriver en tekstfil er en måte for programmerere å lagre og organisere data på en datamaskin. Det er nyttig for å lagre informasjon som kan brukes senere i programmet, eller for å dele data med andre programmer. 
 
-Skal du skrive et Java-program som håndterer store mengder data? Da kan det være nyttig å kunne skrive dataen din til en tekstfil. Det gjør at du kan lagre dataen og lese den senere, og det kan også være enklere å behandle store datamengder på den måten.
-
-## Slik gjør du det
-
-For å skrive en tekstfil i Java, må du følge noen enkle steg. Først må du opprette et nytt filobjekt, som vil representere filen du ønsker å skrive til.
+# Hvordan:
+For å skrive en tekstfil i Java, kan du følge disse enkle trinnene:
 
 ```Java
-File file = new File("minfil.txt");
-```
+// Importer nødvendige pakker
+import java.io.*;
 
-Deretter må du åpne en FileWriter og koble den til filobjektet.
+// Opprett en tekstfil
+File minFil = new File("minFil.txt");
 
-```Java
-FileWriter writer = new FileWriter(file);
-```
+// Opprett en writer for å skrive til filen
+FileWriter writer = new FileWriter(minFil);
 
-For å skrive data til tekstfilen, må du bruke FileWriter-objektets write() metode.
+// Skriv til filen
+writer.write("Dette er en tekstfil skrevet av et Java-program");
 
-```Java
-writer.write("Dette er en testtekst.");
-```
-
-Husk å lukke FileWriter-objektet når du er ferdig.
-
-```Java
+// Lukk writer for å frigjøre ressurser
 writer.close();
 ```
 
-## Dypdykk
+Dette vil opprette en fil kalt "minFil.txt" og skrive teksten til filen. Hvis du allerede har en fil, kan du bruke en ```FileWriter``` for å skrive til den eksisterende filen. 
 
-Nå som du har lært hvordan du skriver data til en tekstfil i Java, kan det være nyttig å vite noen flere detaljer. Det første du bør vite er at FileWriter-klassen bruker en buffer for å skrive data til filen, som betyr at dataen ikke blir lagret umiddelbart. For å sikre at dataen faktisk blir lagret, kan du enten bruke FileWriter-objektets flush() metode eller methoden close().
+# Dypdykk:
+Skriving av tekstfiler i Java går tilbake til dens tidligste versjoner og har vært en grunnleggende ferdighet for programmerere i mange år. Alternativt kan du også bruke ```BufferedWriter``` for å skrive til filer, som tillater buffering av data for bedre ytelse. Et annet alternativ er å bruke Java API for streaming av data. 
 
-En annen ting å være obs på er at FileWriter vil overskrive eksisterende data i filen hver gang du åpner den på nytt. Hvis du ønsker å legge til data i filen i stedet for å overskrive, kan du bruke FileWriter-objektets constructor med en boolean parameter som indikerer dette.
-
-```Java
-FileWriter writer = new FileWriter(file, true);
-```
-
-Et siste tips er å bruke try-with-resources syntaksen når du åpner en fil for å sørge for at ressursene blir lukket automatisk.
-
-```Java
-try (FileWriter writer = new FileWriter(file)) {
-    writer.write("Dette er en testtekst.");
-} catch (IOException e) {
-    e.printStackTrace();
-}
-```
-
-## Se også
-
-- Java FileWriter dokumentasjon: https://docs.oracle.com/javase/7/docs/api/java/io/FileWriter.html
-- Java File dokumentasjon: https://docs.oracle.com/javase/7/docs/api/java/io/File.html
-- Tutorialspoint sin guide til å skrive til en tekstfil i Java: https://www.tutorialspoint.com/javaexamples/file_write.htm
+# Se også: 
+- [Java FileWriter Dokumentasjon](https://docs.oracle.com/javase/7/docs/api/java/io/FileWriter.html)
+- [Java BufferedWriter Dokumentasjon](https://docs.oracle.com/javase/7/docs/api/java/io/BufferedWriter.html)
+- [Java I/O API Dokumentasjon](https://docs.oracle.com/javase/7/docs/api/java/io/package-summary.html#package_description)

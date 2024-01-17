@@ -1,7 +1,7 @@
 ---
-title:                "Suppression de caractères correspondant à un motif"
-html_title:           "C++: Suppression de caractères correspondant à un motif"
-simple_title:         "Suppression de caractères correspondant à un motif"
+title:                "Supprimer les caractères correspondant à un motif"
+html_title:           "C++: Supprimer les caractères correspondant à un motif"
+simple_title:         "Supprimer les caractères correspondant à un motif"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -10,46 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+# Quoi & Pourquoi? 
+Supprimer des caractères correspondant à un motif est une technique utilisée par les programmeurs pour supprimer des parties spécifiques d'une chaîne de caractères selon un motif donné. Cette technique est souvent utilisée pour nettoyer les données en éliminant les caractères indésirables ou pour filtrer certains types de données d'un ensemble plus large.
 
-Supprimer des caractères correspondant à un modèle peut être utile dans de nombreuses situations, telles que nettoyer des données ou filtrer du texte pour une analyse ultérieure.
-
-## Comment faire
-
-Voici un exemple de code en C++ montrant comment supprimer des caractères correspondant à un modèle :
-
-```C++
+# Comment faire:
+Voici un exemple simple de code en C++ pour supprimer tous les espaces d'une chaîne de caractères:
+```
 #include <iostream>
 #include <string>
 
 using namespace std;
 
 int main() {
-    // Créer une chaîne de caractères avec un modèle à supprimer
-    string texte = "Supprimer tous les voyelles";
+  string str = "Bonjour tout le monde!";
 
-    // Parcourir la chaîne de caractères et supprimer chaque voyelle
-    for (int i = 0; i < texte.length(); i++) {
-        if (texte[i] == 'a' || texte[i] == 'e' || texte[i] == 'i' || texte[i] == 'o' || texte[i] == 'u') {
-            texte.erase(i, 1);
-        }
-    }
+  // Supprimer les espaces de la chaîne
+  str.erase(remove(str.begin(), str.end(), ' '), str.end());
 
-    // Afficher le résultat
-    cout << texte << endl;
+  cout << str; // "Bonjourtoutlemonde!" sera affiché
 
-    return 0;
+  return 0;
 }
+```
+Si vous souhaitez supprimer des caractères spécifiques d'une chaîne de caractères en fonction d'un motif, vous pouvez utiliser des expressions régulières. Voici un exemple de code utilisant la bibliothèque <regex>:
+```
+#include <iostream>
+#include <regex>
 
-// Output : Sprmr t s ls vylls
+using namespace std;
+
+int main() {
+  string str = "123abc456def789ghi";
+
+  // Supprimer toutes les lettres de la chaîne
+  str = regex_replace(str, regex("[a-zA-Z]"), "");
+
+  cout << str; // "123456789" sera affiché
+
+  return 0;
+}
 ```
 
-## Plongée en profondeur
+# Plongée en profondeur:
+Supprimer des caractères correspondant à un motif a été rendu possible grâce à l'utilisation de la bibliothèque <algorithm> en C++. Cette bibliothèque contient une fonction appelée "remove" qui renvoie un nouvel itérateur après avoir "supprimé" les éléments correspondants à un motif donné. Il est également possible d'effectuer cette tâche à l'aide d'une boucle for, mais cela peut être plus long et plus sujet aux erreurs.
 
-En C++, la fonction `string::erase()` permet de supprimer des caractères d'une chaîne de caractères. Elle prend en paramètre la position à partir de laquelle les caractères doivent être supprimés et le nombre de caractères à supprimer. Dans notre exemple, la fonction `erase()` est utilisée à l'intérieur d'une boucle `for` pour parcourir la chaîne de caractères et supprimer les voyelles. Il est important de noter que la fonction `erase()` modifie la chaîne de caractères d'origine, donc il est conseillé de créer une copie de cette dernière si elle doit être réutilisée par la suite.
+Il existe également d'autres façons de nettoyer et de filtrer les données, telles que l'utilisation de fonctions telles que "find" et "substr" pour extraire des parties spécifiques d'une chaîne de caractères. Cependant, cela peut être plus compliqué et moins efficace que l'utilisation de la fonction "remove".
 
-## Voir aussi
-
-- [Documentation de la fonction `erase()` en C++](https://www.cplusplus.com/reference/string/string/erase/)
-- [Guide complet sur les chaînes de caractères en C++](https://www.tutorialspoint.com/cplusplus/cpp_strings.htm)
-- [Autres opérations de manipulation de chaînes de caractères en C++](https://www.geeksforgeeks.org/c-string-manipulation-with-examples/)
+# Voir aussi:
+- [Documentation officielle de la bibliothèque <algorithm> en C++](https://en.cppreference.com/w/cpp/algorithm)
+- [Documentation officielle de la bibliothèque <regex> en C++](https://en.cppreference.com/w/cpp/regex)

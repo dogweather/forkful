@@ -10,35 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mikä & Miksi?
 
-Miksi kirjoittaa testejä? Onko se vain turha lisätyö ohjelmointiprosessissa? Ei todellakaan. Hyvin kirjoitetut testit parantavat koodin laatua ja helpottavat ohjelmoijan elämää.
+Testien kirjoittaminen on ohjelmistokehittäjien tapa varmistaa, että koodi toimii oikein ja pysyy virheettömänä. Tämä auttaa vähentämään virheitä ja vikatilanteita ohjelmistossa, mikä johtaa parempaan lopputuotteeseen ja tyytyväisempiin käyttäjiin.
 
-## Miten
-
-Testikoodin kirjoittaminen Swiftissä on helppoa. Perusta testiluokka, jossa testaat haluamiasi toimintoja, ja käytä `XCTAssert`-funktiota arvioidaksesi, onko toiminto toiminut oikein.
+## Miten:
 
 ```Swift
-class CalculatorTests: XCTestCase {
-  // Testi lisäysfunktiolle
-  func testAddition() {
-    let calculator = Calculator()
-    let result = calculator.add(a: 2, b: 2)
-    XCTAssertEqual(result, 4, "Lisäyksen oletetun tuloksen pitäisi olla 4.")
-  }
+func sumOfTwoNumbers(_ num1: Int, _ num2: Int) -> Int {
+    return num1 + num2
+}
+
+test("Sum of 2 and 3 is 5") {
+    expect(sumOfTwoNumbers(2, 3)).toBe(5)
 }
 ```
 
-Muista myös kirjoittaa positiivisia ja negatiivisia testejä jokaiselle toiminnolle, jotta varmistat koodin toimivuuden kaikissa tilanteissa.
+Testikoodin kirjoittaminen on yksinkertaista. Ensiksi määrität funktion tai metodin, jolle haluat kirjoittaa testin. Sitten käytät testikehystä, kuten esimerkissä käytettyä `test`-funktiota, joka ottaa parametreina nimen ja testikoodin. Lopuksi käytät `expect`-funktiota, joka verrataan testin tulokseen ja odotettuun arvoon.
 
-## Syvemmälle
+## Syväsukellus:
 
-Mikä tekee hyvästä testistä? Ensinnäkin, testin tulee olla yksinkertainen ja selkeä, jotta sen toiminta on helppo ymmärtää. Toiseksi, testin tulee kattaa kaikki tapaukset ja varmistaa, että koodi toimii oikein myös virheellisissä tilanteissa. Lisäksi, testikoodin tulee olla itsenäistä ja toistettavaa, jotta sen avulla voidaan helposti havaita muutokset koodissa.
+Testien kirjoittaminen on ollut osa ohjelmistokehitystä jo vuosikymmenien ajan. Perinteisesti se on tehty manuaalisesti, mutta nykyään on olemassa myös automatisoituja testikehyksiä, kuten esimerkiksi Swiftin oma XCTest. Näiden avulla testien kirjoittaminen on nopeampaa ja luotettavampaa.
 
-Muista myös pitää testikoodi ja varsinaisen koodin erillään, jotta muutokset eivät vahingossa vaikuta toisiinsa. Hyvä käytäntö on myös ajaa testit säännöllisesti siirtymällä projektin juureen ja kirjoittamalla `swift test` komento.
+On myös olemassa erilaisia testaustapoja, kuten yksikkötestaus, integraatiotestaus ja hyväksymistestaus. Jokaisella on oma tarkoituksensa ja ne kaikki ovat tärkeitä osia ohjelmiston laadun varmistamisessa.
 
-## Katso myös
+## Tsekkaa myös:
 
 - [XCTest Documentation](https://developer.apple.com/documentation/xctest)
-- [Swift Test Driven Development - tutorial](https://www.raywenderlich.com/10730636-test-driven-development-tutorial-for-ios-getting-started)
-- [Swift Test Doubles - tutorial](https://www.swiftbysundell.com/articles/mocking-in-swift/)
+- [Unit Testing in Swift](https://www.raywenderlich.com/960290-ui-testing-and-continuous-integration-with-xcode-and-swift)
+- [Different Types of Tests in Software Development](https://www.geeksforgeeks.org/different-types-of-tests-in-software-development/)

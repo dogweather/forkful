@@ -10,40 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+## 무엇 & 왜?
 
-이번 글에서 우리는 C# 언어를 사용하여 텍스트 파일을 읽는 방법에 대해 알아보겠습니다. 텍스트 파일을 읽는 것은 프로그래밍에서 매우 중요한 기능이며, 실제 프로젝트에서도 자주 사용됩니다. 따라서 C# 개발을 하시는 분들에게는 꼭 필요한 내용입니다.
+텍스트 파일을 읽는 것은 컴퓨터 프로그래머들이 사용하는 기술 중 하나입니다. 이는 텍스트 파일의 내용을 읽어와서 컴퓨터에서 이해할 수 있는 형태로 변환하는 과정입니다. 프로그래머들은 이를 통해 파일에 저장된 정보를 처리하고 활용할 수 있게 됩니다.
 
-## 어떻게 하나요?
+## 방법:
+
+### 파일 전체 읽기:
 
 ```C#
-// 파일 경로를 지정해줍니다.
-string path = "textfile.txt";
+string filePath = "textfile.txt";
+string rawText = System.IO.File.ReadAllText(filePath);
+Console.WriteLine(rawText);
+```
+**출력:**
+```Hello, world!```
 
-// StreamReader 객체를 생성합니다.
-StreamReader reader = new StreamReader(path);
+### 텍스트 한 줄씩 읽기:
 
-// 파일의 모든 내용을 한 줄씩 읽어옵니다.
-while(!reader.EndOfStream)
+```C#
+string filePath = "textfile.txt";
+string[] lines = System.IO.File.ReadAllLines(filePath);
+foreach (string line in lines)
 {
-    // 한 줄씩 읽어옵니다.
-    string line = reader.ReadLine();
-
-    // 읽어온 내용을 콘솔에 출력합니다.
     Console.WriteLine(line);
 }
-
-// 마지막으로 StreamReader 객체를 닫아줍니다.
-reader.Close();
-
+```
+**출력:**
+```
+Hello,
+world!
 ```
 
-## 딥 다이브
+## 더 깊게 들어가보기:
 
-StreamReader 클래스는 파일을 읽어오는 기능을 제공하는 클래스입니다. 파일을 읽어올 때 사용하는 메소드는 Read, ReadLine, ReadToEnd 등이 있으며, 각각의 메소드는 다양한 방식으로 파일을 읽어오는데 사용됩니다. 또한 파일을 다 읽어오지 않았을 때 사용할 수 있는 Peek 메소드도 있어서 더욱 유용하게 사용할 수 있습니다.
+### 역사적 배경:
 
-## See Also
+텍스트 파일을 읽는 기술은 컴퓨터의 초기부터 사용되어 온 기술 중 하나입니다. 당시에는 파일의 내용을 메모리에 로드한 뒤 이를 처리하는 방식을 사용했으며, 현재는 텍스트 파일 자체를 읽는 방식이 더 선호되고 있습니다.
 
-- [](https://docs.microsoft.com/ko-kr/dotnet/api/system.io.streamreader?view=netcore-3.1)
-- [](https://www.c-sharpcorner.com/article/read-file-by-using-streamreader-in-C-Sharp/)
-- [](https://www.azybao.com/using-streamreader-to-read-file-in-c/?lang=en)
+### 대안:
+
+텍스트 파일을 읽는 다른 방법으로는 ```StreamReader``` 클래스를 사용하는 것이 있습니다. 이 클래스는 메모리 사용량이 적고 텍스트 파일의 크기가 큰 경우에 유용합니다. 또한 파일의 크기가 너무 크거나 시간이 제한적인 경우에는 텍스트 파일이 아닌 데이터베이스 등 다른 형식을 사용하는 것이 일반적입니다.
+
+### 구현 세부사항:
+
+```C#```에서는 ```System.IO``` 네임스페이스를 사용하여 텍스트 파일을 읽는 기능을 제공하고 있습니다. 이를 사용하기 위해서는 해당 네임스페이스를 호출하고, 파일 경로를 지정하여 파일을 열어야 합니다. 읽은 내용은 내부적으로 스트링 형태로 저장되며, 이를 바탕으로 원하는 방식으로 처리할 수 있습니다.
+
+## 참고 자료:
+
+- [StreamReader 클래스, Microsoft Docs](https://docs.microsoft.com/ko-kr/dotnet/api/system.io.streamreader?view=net-5.0)
+- [System.IO 네임스페이스, Microsoft Docs](https://docs.microsoft.com/ko-kr/dotnet/api/system.io?view=net-5.0)

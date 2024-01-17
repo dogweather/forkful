@@ -1,7 +1,7 @@
 ---
-title:                "Stosowanie wyrażeń regularnych"
-html_title:           "Haskell: Stosowanie wyrażeń regularnych"
-simple_title:         "Stosowanie wyrażeń regularnych"
+title:                "Korzystanie z wyrażeń regularnych"
+html_title:           "Haskell: Korzystanie z wyrażeń regularnych"
+simple_title:         "Korzystanie z wyrażeń regularnych"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -10,39 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co to jest wyrażenie regularne i dlaczego programiści tego potrzebują?
 
-Regularne wyrażenia są bardzo przydatnym narzędziem w programowaniu, pozwalającym na efektywne przetwarzanie i manipulację tekstowymi danymi. Dzięki nim możemy wykonać skomplikowane operacje na ciągach znaków w prosty i intuicyjny sposób. W Haskellu regularne wyrażenia są dostępne dzięki modułowi "Text.Regex.PCRE" i znajomość ich wykorzystania może znacznie ułatwić pracę z tekstem w naszych programach.
+Wyrażenia regularne to wyrażenia lub wzorce służące do dopasowania i manipulowania tekstem w programowaniu. Programiści często używają wyrażeń regularnych w celu wykonywania operacji związanych z analizą lub przetwarzaniem danych tekstowych. Jest to szybka i skuteczna metoda, która pozwala na precyzyjne dopasowanie do wybranych wzorców w tekście.
 
-## Jak to zrobić
+## Jak to zrobić:
 
-Aby skorzystać z regularnych wyrażeń w Haskellu, musimy najpierw zaimportować odpowiedni moduł:
-```Haskell
-import Text.Regex.PCRE
-```
-Następnie możemy użyć funkcji `=~`, aby przetestować, czy dany ciąg znaków pasuje do danego wyrażenia regularnego. Na przykład:
-```Haskell
-"Hello world" =~ "world" :: Bool
--- Zwraca True
-```
-Możemy również wykorzystać wyrażenia regularne do wyciągania określonych fragmentów tekstu. W tym celu używamy funkcji `=~~`, która zwraca listę dopasowanych grup. Na przykład:
-```Haskell
-"Hello world" =~ "wo([a-z]+)" :: [[String]]
--- Zwraca [["world","rld"]]
-```
-Klauzulę ":: [[String]]" dodajemy, ponieważ wynik funkcji `=~~` jest listą list ciągów znaków.
+Wyrażenia regularne są dostępne w języku Haskell dzięki modułowi `Text.Regex.Posix`. Można użyć funkcji `=~` do dopasowywania wzorca do tekstu i funkcji `=~~` do globalnego dopasowania. Przykład kodu:
 
-Wyrażenia regularne pozwalają również na wykonywanie bardziej skomplikowanych operacji, takich jak zastępowanie wybranych fragmentów tekstu innymi wartościami. W tym celu używamy funkcji `subRegex`. Przykładowo:
 ```Haskell
-subRegex (mkRegex "l+") "Hello world" "!"
--- Zwraca "He!o world"
+import Text.Regex.Posix
+
+-- Dopasowanie wzorca "abc" do tekstu "Abcdef" zwróci True.
+"Abcdef" =~ "abc" :: Bool 
+
+-- Dopełnienie wzorca "y.*z" do tekstu "xyz" zwróci zamrożoną listę ["yz"].
+"xyz" =~~ "y.*z" :: Maybe [String]
 ```
 
-## Głębszy zanurzenie
+## Głębsze spojrzenie:
 
-W Haskellu, wyrażenia regularne są wyrażeniami będącymi instancjami klasy typów `RegexLike`. Oznacza to, że możemy używać wielu funkcji, takich jak `subRegex` czy `match`, do manipulacji i analizy wyrażeń regularnych. Więcej informacji na ten temat można znaleźć w dokumentacji modułu "Text.Regex.PCRE" oraz w oficjalnej dokumentacji języka Haskell.
+Wyrażenia regularne mają swoje korzenie w teorii automatów skończonych i są używane od kilku dziesięcioleci w programowaniu. Alternatywne podejścia do manipulacji tekstem to m.in. wykorzystanie funkcji wbudowanych w języki programowania lub wykorzystanie parserów do analizy składniowej. Implementacja wyrażeń regularnych w Haskellu jest oparta na bibliotece `regex-posix`, która jest zgodna z POSIX i oferuje rozszerzoną składnię dla bardziej zaawansowanych wyrażeń.
 
-## Zobacz też
+## Zobacz też:
 
-- [Dokumentacja modułu Text.Regex.PCRE](https://hackage.haskell.org/package/regex-pcre/docs/Text-Regex-PCRE.html)
-- [Dokumentacja języka Haskell](https://www.haskell.org/documentation)
+🔗 [Oficjalna dokumentacja modułu `Text.Regex.Posix`](https://hackage.haskell.org/package/regex-posix)
+
+🔗 [Tutorial o użyciu wyrażeń regularnych w Haskellu](https://www.tutorialspoint.com/haskell/haskell_regular_expressions.htm)

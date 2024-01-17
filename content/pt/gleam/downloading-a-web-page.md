@@ -1,7 +1,7 @@
 ---
-title:                "Baixando uma página da web"
-html_title:           "Gleam: Baixando uma página da web"
-simple_title:         "Baixando uma página da web"
+title:                "Baixando uma página da web."
+html_title:           "Gleam: Baixando uma página da web."
+simple_title:         "Baixando uma página da web."
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "HTML and the Web"
@@ -10,32 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que Baixar uma Página da Web?
+## O que & Por quê?
+Baixar uma página da web é o processo de transferir o conteúdo de uma página da internet para o seu computador. Os programadores geralmente fazem isso para acessar informações específicas contidas na página, que podem ser usadas em seus programas.
 
-Baixar uma página da web pode ser útil para uma variedade de propósitos, como salvar conteúdo offline, realizar análises de dados ou automatizar tarefas de coleta de informações.
-
-## Como Fazer
-
-Existem várias maneiras de baixar uma página da web usando Gleam. Aqui está um exemplo simples, utilizando a biblioteca padrão da linguagem:
-
+## Como fazer:
+Para baixar uma página da web em Gleam, você pode usar a biblioteca "Fetch". Primeiro, importe a biblioteca em seu programa:
+```Gleam
+import gleam/fetch
 ```
-Gleam.Ports.Http.get("https://www.example.com")
-|> Gleam.IO.to_string
-|> Gleam.IO.write_file("example.html")
+Em seguida, use a função `get` para especificar a URL da página que deseja baixar e atribua o resultado a uma constante:
+```Gleam
+let page_content = fetch.get("https://example.com")
 ```
+Por fim, você pode imprimir o conteúdo da página usando a função `stdout` e passando a constante como argumento:
+```Gleam
+stdout(page_content)
+```
+Este código irá imprimir todo o conteúdo da página, incluindo o código HTML e qualquer outro conteúdo presente nela.
 
-Este código faz uma requisição HTTP para a URL especificada e salva o conteúdo da página em um arquivo chamado "example.html". Ao executar este código, você terá baixado com sucesso a página da web especificada.
+## Mergulho profundo:
+Baixar páginas da web é uma tarefa comum para muitos programadores, especialmente aqueles que trabalham com análise de dados ou web scraping. Existem muitas outras bibliotecas em Gleam que podem ser usadas para baixar páginas da web, como a biblioteca "HTTP". Além disso, é importante entender os protocolos HTTP e como o processo de download funciona para que você possa lidar com erros e respostas específicas do servidor.
 
-## Mergulho Profundo
-
-Além do exemplo acima, existem outras opções para baixar páginas da web usando Gleam. Uma delas é a biblioteca de terceiros chamada "gleam-scrape", que oferece funcionalidades mais avançadas para extrair informações específicas de uma página.
-
-Existem também outras opções disponíveis além da biblioteca padrão, como a biblioteca "gleam-curl", que permite fazer chamadas de sistema utilizando o programa curl. Isso pode ser útil se você precisar de mais controle sobre as configurações da requisição HTTP.
-
-Além disso, existem várias técnicas e práticas recomendadas para lidar com problemas comuns ao baixar páginas da web, como lidar com erros de conexão ou timeout. Você pode se aprofundar mais nesses tópicos com a documentação oficial da linguagem e as comunidades de usuários.
-
-## Veja Também
-
-- Documentação oficial do Gleam: https://gleam.run/
-- Biblioteca gleam-scrape: https://github.com/gleam-lang/gleam-scrape
-- Biblioteca gleam-curl: https://github.com/pragdave/gleam-curl
+## Veja também:
+- Documentação oficial da biblioteca Fetch: https://gleam.run/modules/gleam/fetch.html
+- Tutorial sobre como baixar páginas da web em Gleam: https://dennisreimann.de/articles/downloading-web-pages-in-gleam.html

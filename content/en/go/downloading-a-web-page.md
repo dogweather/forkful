@@ -10,83 +10,75 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-Have you ever needed to download a web page for a project or simply to read it offline? Instead of spending time copying and pasting the content, why not use a programming language to do the work for you? In this article, we will explore how to download a web page using Go, the current version of the popular programming language.
+Downloading a web page refers to the process of retrieving the content and code of a webpage from a server and displaying it on a device. Programmers often do this in order to create web crawlers, scrapers, or simply to gather data from websites for analysis.
 
-## How To
+## How to:
 
-To get started, make sure you have Go installed on your computer. Then, create a new Go file and add the following import statement:
+```Go
+package main
 
-```
-import "net/http"
-```
-
-Next, we will use the `Get()` function from the `http` package to make a GET request to the web page we want to download. Let's say we want to download the GitHub homepage, we would use the following code:
-
-```
-resp, err := http.Get("https://github.com/")
-```
-
-The `Get()` function takes in a string representing the URL of the web page we want to download and returns a response and an error. We assign these values to `resp` and `err` respectively.
-
-To check if there was an error during the request, we can use a simple `if` statement:
-
-```
-if err != nil {
-    // handle error
-}
-```
-
-If there is no error, we can proceed to read the response body using the `ReadAll()` function from the `ioutil` package:
-
-```
-body, err := ioutil.ReadAll(resp.Body)
-```
-
-Again, we assign the response to `body` and check for any errors. Finally, we can print the downloaded web page by using `fmt.Println()` and passing in the `body` variable:
-
-```
-fmt.Println(string(body))
-```
-
-The `string()` function converts the body byte array to a string for easier printing. Your complete code should look like this:
-
-```
 import (
-    "fmt"
-    "net/http"
-    "io/ioutil"
+	"fmt"
+	"net/http"
 )
 
 func main() {
-    resp, err := http.Get("https://github.com/")
+	// Specify the URL of the webpage you want to download
+	url := "https://www.example.com"
 
-    if err != nil {
-        // handle error
-    }
+	// Make a GET request to the URL
+	response, err := http.Get(url)
+	if err != nil {
+		fmt.Println("Error fetching webpage:", err)
+		return
+	}
 
-    body, err := ioutil.ReadAll(resp.Body)
+	// Read the response body
+	defer response.Body.Close()
+	body, err := ioutil.ReadAll(response.Body)
+	if err != nil {
+		fmt.Println("Error reading response body:", err)
+		return
+	}
 
-    if err != nil {
-        // handle error
-    }
-
-    fmt.Println(string(body))
+	// Print the webpage content
+	fmt.Println(string(body))
 }
 ```
 
-And the output should be the HTML code of the GitHub homepage. Congratulations, you have successfully downloaded a web page using Go!
+Output:
+```
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Example Domain</title>
+	<meta charset="utf-8" />
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<style type="text/css">
+		body {
+			background-color: #f0f0f2;
+			margin: 0;
+			padding: 0;
+			font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+			
+		}
+		...
+		...
+		...
+</html>
+```
 
-## Deep Dive
+## Deep Dive:
 
-Behind the scenes, the `Get()` function is actually creating an HTTP request, sending it to the server, and receiving a response. This is made possible by the `http` package, which provides functions for making HTTP requests and handling responses.
+Downloading web pages became popular in the late 1990s with the rise of the World Wide Web. It is commonly used for tasks such as web scraping, where data is collected from websites for various purposes such as market analysis, price comparisons, or content aggregation. Other alternatives to downloading web pages include using web APIs or using browser automation tools.
 
-In our code, we used the `ReadAll()` function to read the response body. This function takes in a `Reader` object, which can be created by accessing the `Body` field of the response. The `Body` field is of type `io.ReadCloser`, which implements the `Reader` interface.
+In Go, the `http` package provides the `Get()` function to make a GET request to a URL and retrieve the webpage content. By default, the `Get()` function follows any redirects and handles any network errors, making it a simple and efficient solution for downloading web pages.
 
-To learn more about the `http` package, check out the official documentation: https://golang.org/pkg/net/http/
+## See Also:
 
-## See Also
-
-- https://golang.org/doc/
-- https://github.com/golang/go/wiki/Learn
+- [Official Golang documentation for the `http` package](https://golang.org/pkg/net/http/)
+- [Ben Johnson's blog post on web scraping in Go](https://www.usegolang.com/web-scraping-in-go/)
+- [A comparison between web scraping and web APIs](https://rapidapi.com/blog/web-scraping-vs-web-apis/)

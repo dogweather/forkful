@@ -10,46 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-Writing to standard error is an essential tool in any PHP programmer's arsenal. It allows for better error handling and debugging in your code, making it easier to catch and fix any issues that may arise during execution.
+## What & Why?
 
-## How To
+Writing to standard error is a way for programmers to output error messages or other important information during the execution of their code. It allows them to communicate with the user or other programs about potential issues or important updates. This can help with debugging and make the code more user-friendly.
 
-To write to standard error in PHP, we use the `fwrite()` function. This function takes two parameters - the first being the stream we want to write to, and the second being the string we want to write.
+## How to:
 
-Let's take a look at an example:
+To write to standard error in PHP, we use the `fwrite()` function with the `STDERR` file pointer. Here's an example:
 
-```PHP
+```
 <?php
-$stream = fopen('php://stderr', 'w'); // open the standard error stream
-fwrite($stream, 'An error has occurred!'); // write to the stream
-fclose($stream); // close the stream
-?>
+$fp = fopen('php://stderr', 'w');
+fwrite($fp, 'Something went wrong.'); 
+fclose($fp);
 ```
 
-The above code will write the string 'An error has occurred!' to the standard error stream, which can then be viewed in the command line or error log. This can be particularly useful when debugging code that is not producing the desired results.
+The code above will write the string "Something went wrong." to the standard error output.
 
-Now, let's see what the output would look like in the command line:
+## Deep Dive:
 
-```
-php -f file.php
-An error has occurred!
-```
+Writing to standard error has been a common practice in programming for many years. It originated in Unix-like operating systems, where standard error is considered a separate stream from standard output. This feature allows programmers to differentiate between regular output and error messages, making it easier to identify and fix issues.
 
-As we can see, our message is being displayed in the standard error stream.
+In PHP, there are two ways to write to standard error: using the `STDERR` file pointer or the `error_log()` function. Both methods achieve the same outcome, so it's up to personal preference which one to use.
 
-## Deep Dive
+It's essential to handle error messages properly in any programming language, and writing to standard error is just one way to do it. Other alternatives include writing to a log file or displaying error messages to the user directly. It's essential to choose the method that best fits the needs of your project.
 
-When writing to standard error, it's important to understand how it differs from standard output. Standard error is used for error and diagnostic messages, while standard output is used for normal program output.
-
-One thing to note is that standard error is unbuffered, meaning it will display any output immediately rather than waiting for the program to finish. It also has a higher priority, so any output to standard error will take precedence over standard output.
-
-It's also worth mentioning that we can use `echo` to write to standard error, but it is not considered best practice. Using `fwrite()` allows for more control and flexibility in writing to the stream.
-
-## See Also
-
-Here are some helpful resources for further reading on writing to standard error in PHP:
+## See Also:
 
 - [PHP fwrite() Function](https://www.php.net/manual/en/function.fwrite.php)
-- [Understanding Standard Streams in PHP](https://www.php.net/manual/en/features.commandline.io-streams.php)
-- [PHP Output Buffering Explained](https://www.php.net/manual/en/features.output-buffering.php)
+- [Unix Standard Streams](https://en.wikipedia.org/wiki/Standard_streams#Standard_error_(stderr))
+- [PHP error_log() Function](https://www.php.net/manual/en/function.error-log.php)

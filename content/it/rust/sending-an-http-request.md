@@ -10,58 +10,63 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+## Che cos'è e perché si invia una richiesta HTTP?
 
-Se sei un programmatore che lavora con applicazioni web o sistemi distribuiti, è molto probabile che prima o poi avrai bisogno di inviare una richiesta HTTP. Queste richieste sono fondamentali quando si tratta di comunicare con server o servizi esterni, quindi è importante avere una buona comprensione di come farlo correttamente.
+Invio di una richiesta HTTP è l'azione di inviare una richiesta da un client (come un browser web) a un server. I programmatori lo fanno per interagire con una risorsa o un servizio disponibile su un server, come una pagina web o un'API. 
 
-## Come Fare
-
-In Rust, possiamo inviare una richiesta HTTP utilizzando la libreria `reqwest`. Per prima cosa, dobbiamo aggiungere questa dipendenza al nostro `Cargo.toml`:
-
-```Rust
-[dependencies]
-reqwest = { version = "0.11.0", features = ["blocking", "json"]}
-```
-
-Ora possiamo importare la libreria nel nostro codice:
+## Come fare:
 
 ```Rust
 use reqwest;
+use std::collections::HashMap;
+
+
+// Esempio di richiesta GET
+let response = reqwest::get("https://jsonplaceholder.typicode.com/posts/1")
+    .await?;
+
+if response.status().is_success() {
+    let body = response.text().await?;
+    println!("Corpo della risposta: {}", body);
+}
+
+// Esempio di richiesta POST con parametri
+let params = [("username", "john"), ("password", "secret")];
+let client = reqwest::Client::new();
+let response = client.post("https://jsonplaceholder.typicode.com/posts")
+    .form(&params)
+    .send()
+    .await?;
+
+if response.status().is_success() {
+    let body = response.text().await?;
+    println!("Corpo della risposta: {}", body);
+}
 ```
 
-Una volta fatto ciò, possiamo creare una richiesta utilizzando il metodo `get()` e specificare l'URL del server a cui vogliamo inviare la richiesta:
+Output:
 
-```Rust
-let response = reqwest::get("https://example.com").unwrap();
-```
+Corpo della risposta: {
+  "userId": 1,
+  "id": 1,
+  "title": "titolo",
+  "body": "testo della pagina"
+}
 
-Per aggiungere parametri alla nostra richiesta, possiamo utilizzare il metodo `query()` e fornire una tupla contenente i parametri desiderati:
+Corpo della risposta: {
+  "username": "john",
+  "password": "secret",
+  "id": 101
+}
 
-```Rust
-let response = reqwest::get("https://example.com").query(&[("lang", "rust"), ("user", "me")]).unwrap();
-```
+## Approfondimento:
 
-Possiamo anche impostare le intestazioni della nostra richiesta utilizzando il metodo `header()`:
+Mandare richieste HTTP è un'azione fondamentale della programmazione web. Originariamente, il protocollo HTTP è stato creato nel 1991 da Tim Berners-Lee ed è stato adottato come standard per scambiare informazioni su Internet. Esistono anche alternative a HTTP, come HTTPS che utilizza la crittografia per proteggere le comunicazioni.
 
-```Rust
-let response = reqwest::get("https://example.com").header("Accept", "application/json").unwrap();
-```
+Una implementazione comune di invio di richieste HTTP in Rust è attraverso la libreria reqwest. Tuttavia, ci sono anche altre librerie disponibili come hyper e actix-web. 
 
-Una volta che abbiamo impostato tutti i parametri desiderati, possiamo inviare la richiesta utilizzando il metodo `send()` e ottenere la risposta utilizzando il metodo `text()` o `json()` a seconda del tipo di dati che ci aspettiamo nella risposta:
+## Vedi anche:
 
-```Rust
-let response = reqwest::get("https://example.com").send().unwrap();
-let body = response.text().unwrap();
-```
-
-## Deep Dive
-
-Ci sono molti altri metodi e opzioni disponibili nella libreria `reqwest` per inviare una richiesta HTTP. Ad esempio, possiamo impostare il timeout della nostra richiesta utilizzando il metodo `timeout()` o gestire eventuali errori utilizzando il metodo `unwrap_or()`.
-
-Inoltre, possiamo anche utilizzare la libreria `hyper` per gestire direttamente il protocollo HTTP in modo più dettagliato, ma per la maggior parte dei casi, `reqwest` sarà sufficiente.
-
-## Vedi Anche
-
-- Documentazione ufficiale di `reqwest`: https://docs.rs/reqwest/
-- Una guida dettagliata su HTTP in Rust: https://blog.logrocket.com/http-in-rust/
-- Esempi di codice per l'invio di una richiesta HTTP utilizzando `reqwest`: https://github.com/seanmonstar/reqwest/tree/master/examples
+- [Documentazione ufficiale di Reqwest](https://docs.rs/reqwest/)
+- [Tutorial su come inviare richieste HTTP con Rust](https://erwabook.com/intro/http.html)
+- [Progetto di esempio di invio di richieste HTTP in Rust](https://github.com/ZcashFoundation/zecwallet-light-cli)

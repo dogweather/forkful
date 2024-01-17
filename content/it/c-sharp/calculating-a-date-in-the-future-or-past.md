@@ -10,45 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché 
+## Cosa & Perché?
+Calcolare una data nel futuro o nel passato è un'operazione comune nella programmazione. Ciò permette ai programmatori di gestire le date in modo efficiente e preciso, evitando errori umani e semplificando la gestione di processi che richiedono una data precisa.
 
-Calcolare una data nel futuro o nel passato può essere utile per vari scopi, ad esempio per pianificare eventi o per gestire la scadenza di una specifica attività. In questo articolo, vedremo come farlo utilizzando il linguaggio di programmazione C#.
+## Come fare:
+Ci sono diversi modi per calcolare una data nel futuro o nel passato utilizzando il linguaggio di programmazione C#. Ecco alcuni esempi utilizzando il metodo AddDays() della classe DateTime:
 
-## Come fare
+```
+// Calcola la data di oggi più 5 giorni
+DateTime oggi = DateTime.Today;
+DateTime dataFutura = oggi.AddDays(5);
+Console.WriteLine(dataFutura.ToString());
 
-Per calcolare una data nel futuro o nel passato in C#, possiamo utilizzare la classe `DateTime` del framework .NET. Questa classe ci permette di manipolare date e orari in modo semplice ed efficiente.
+// Calcola la data di oggi meno 10 giorni
+DateTime dataPassata = oggi.AddDays(-10);
+Console.WriteLine(dataPassata.ToString());
 
-### Calcolare una data futura
-
-Per calcolare una data futura, possiamo utilizzare il metodo `Add` della classe `DateTime`, passando come parametro l'intervallo di tempo desiderato. Ad esempio, se vogliamo ottenere la data di oggi più 15 giorni, possiamo scrivere il seguente codice:
-
-```C#
-DateTime oggi = DateTime.Today; // ottiene la data di oggi
-DateTime dataFutura = oggi.Add(TimeSpan.FromDays(15)); // aggiunge 15 giorni
-Console.WriteLine(dataFutura); // output: 27/03/2021
+// Calcola la data di un evento in futuro, specificando manualmente anno, mese e giorno
+DateTime dataEvento = new DateTime(2022, 3, 15);
+Console.WriteLine(dataEvento.ToString());
 ```
 
-Nell'esempio sopra, stiamo utilizzando il metodo `FromDays` della classe `TimeSpan` per creare un intervallo di tempo di 15 giorni. Questo valore viene poi passato come parametro al metodo `Add` della classe `DateTime`, che ci permette di ottenere la data futura desiderata.
-
-### Calcolare una data passata
-
-Per calcolare una data passata, possiamo utilizzare lo stesso approccio utilizzato per la data futura, ma invece di aggiungere un intervallo di tempo, possiamo sottrarlo. Ad esempio, se vogliamo ottenere la data di oggi meno 1 mese, possiamo scrivere il seguente codice:
-
-```C#
-DateTime oggi = DateTime.Today; // ottiene la data di oggi
-DateTime dataPassata = oggi.Add(-1 * TimeSpan.FromMonths(1)); // sottrae 1 mese
-Console.WriteLine(dataPassata); // output: 28/01/2021
+Output:
+```
+24/06/2021
+14/06/2021
+15/03/2022
 ```
 
-Come vediamo nell'esempio sopra, stiamo utilizzando il metodo `FromMonths` della classe `TimeSpan` per creare un intervallo di tempo di 1 mese, che viene poi sottratto dalla data di oggi utilizzando il segno meno (-) davanti all'intervallo.
+## Approfondimento:
+Le date sono fondamentali nella programmazione, poiché permettono di gestire il tempo in modo preciso e organizzato. Prima dell'introduzione dei linguaggi di programmazione, le date venivano spesso gestite manualmente e questo poteva portare a errori o a un alto grado di complessità nelle operazioni. Oltre alla classe DateTime del framework .NET, esistono anche altre librerie come NodaTime che offrono metodi più avanzati per la gestione delle date.
 
-## Approfondimenti
-
-La classe `DateTime` offre molti altri metodi e proprietà utili per la manipolazione di date e orari. Ad esempio, possiamo ottenere il giorno della settimana di una data specifica utilizzando il metodo `DayOfWeek` o convertire una data in una stringa formattata utilizzando il metodo `ToString`.
-
-Inoltre, è possibile utilizzare la classe `TimeSpan` per creare intervalli di tempo personalizzati, utili per calcolare date in modo più preciso.
-
-## Vedi anche
-
-- [Guida completa alla classe `DateTime` (Microsoft Docs)](https://docs.microsoft.com/it-it/dotnet/api/system.datetime)
-- [Guida completa alla classe `TimeSpan` (Microsoft Docs)](https://docs.microsoft.com/it-it/dotnet/api/system.timespan)
+## Vedi anche:
+- [Documentazione ufficiale di Microsoft su DateTime in C#](https://docs.microsoft.com/en-us/dotnet/api/system.datetime)
+- [Libreria NodaTime per la gestione avanzata delle date in C#](https://nodatime.org/)
+- [Tutorial su come gestire le date in C#](https://www.c-sharpcorner.com/article/a-tour-of-working-with-datetime-in-c-sharp/)

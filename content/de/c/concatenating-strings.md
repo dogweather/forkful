@@ -1,7 +1,7 @@
 ---
-title:                "Zeichenfolgen verbinden"
-html_title:           "C: Zeichenfolgen verbinden"
-simple_title:         "Zeichenfolgen verbinden"
+title:                "Das Verbinden von Zeichenketten"
+html_title:           "C: Das Verbinden von Zeichenketten"
+simple_title:         "Das Verbinden von Zeichenketten"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -10,49 +10,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was & Warum?
+Beim Programmieren geht es oft darum, verschiedene Daten und Variablen zu verbinden, um eine größere und nützlichere Einheit zu bilden. Eine Möglichkeit, dies zu tun, ist das Verketten von Strings, also das Zusammenfügen mehrerer Zeichenketten zu einer einzigen. Dies ist besonders hilfreich, wenn wir Texte oder Nachrichten erstellen möchten, die aus verschiedenen Teilen bestehen.
 
-Wenn du jemals Text aus verschiedenen Variablen oder Werten zusammenfügen musst, bist du auf die String-Konkatenation angewiesen. Diese Funktion ermöglicht es, mehrere Strings zu einem größeren String zu verbinden, was in vielen Anwendungen sehr nützlich sein kann.
-
-## Wie man es macht
-
-Die Verkettung von Strings in C ist recht einfach. Du musst lediglich die ```strcat``` Funktion verwenden, die in der C-Standardbibliothek enthalten ist. Hier ist ein Beispiel:
+## Wie geht's?
+Um Strings in C zu verketten, benötigen wir die Standardbibliotheksfunktion ```strcat()```. Diese Funktion nimmt zwei Strings als Argumente und fügt den zweiten String an das Ende des ersten Strings an. Hier ist ein Beispiel:
 
 ```
-char str1[20] = "Hallo";
-char str2[20] = "Welt";
+char str1[] = "Hallo, ";
+char str2[] = "Welt!";
 strcat(str1, str2);
 printf("%s", str1);
+//Ausgabe: Hallo, Welt!
 ```
 
-Die Ausgabe dieses Codes wäre "HalloWelt". Wie du sehen kannst, fügt ```strcat``` den Inhalt von ```str2``` an das Ende von ```str1``` an.
+## Tiefere Einblicke
+Das Verketten von Strings ist eine häufig verwendete Methode, die bereits seit den frühen Tagen der Programmierung existiert. Früher wurden Strings als Arrays von Zeichen behandelt, was bedeutete, dass jede Zeichenposition einzeln manipuliert werden musste, um sie zu verketten. Heutzutage gibt es alternative Methoden wie die Verwendung von Zeigern oder das Verwenden von Funktionen aus anderen Bibliotheken wie ```sprintf()```.
 
-## Tiefentauchen
-
-Es gibt auch andere Wege, Strings in C zu verkettet. Eine andere Möglichkeit ist die Verwendung des Operators "+" anstatt der ```strcat``` Funktion. Hier ist ein Beispiel:
-
-```
-#include <stdio.h>
-#include <string.h>
-
-int main() {
-   char str1[20] = "Hallo";
-   char str2[20] = "Welt";
-   char str3[40];
-   
-   str3[0] = '\0';
-   strcat(str3, str1);
-   strcat(str3, str2);
-
-   printf("%s", str3);
-   
-   return 0;
-}
-```
-
-Die Ausgabe wäre immer noch "HalloWelt". Der Operator "+" fügt jedoch nur eine einzelne Zeichenkette an das Ende einer bestehenden Zeichenkette an, während ```strcat``` es ermöglicht, mehrere Zeichenketten zusammen zu fügen.
-
-## Siehe auch
-
-- [C-String-Konkatenation auf tutorialspoint.com](https://www.tutorialspoint.com/cprogramming/c_string_concatenation.htm)
-- [C-String-Manipulation auf Wikibooks](https://en.wikibooks.org/wiki/C_Programming/String_manipulation)
+## Sieh auch
+- [The strcat() function in C](https://www.programiz.com/c-programming/library-function/string.h/strcat)
+- [C String Handling Functions](https://www.tutorialspoint.com/c_standard_library/string_h.htm)

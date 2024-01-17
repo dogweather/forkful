@@ -10,43 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+# Was & Warum?
+Bei der Suche und dem Ersatz von Text geht es darum, in einem Text nach bestimmten Begriffen zu suchen und diese dann durch andere Begriffe zu ersetzen. Programmierer nutzen dies häufig, um ihre Codebase zu aktualisieren oder um schnellere und effizientere Methoden zu implementieren.
 
-Wenn du schon einmal einen längeren Text geschrieben hast, kennst du das Problem: Plötzlich musst du mehrere Wörter oder Sätze ändern, die sich an verschiedenen Stellen im Text befinden. Anstatt alles manuell durchzugehen, kannst du die Suchen-und-Ersetzen-Funktion nutzen, um Zeit und Mühe zu sparen. In diesem Artikel zeige ich dir, wie du dieses nützliche Werkzeug in Python nutzen kannst.
+# So geht's:
+Um Text in Python zu suchen und zu ersetzen, gibt es verschiedene Methoden. Eine Möglichkeit ist die Verwendung der ```replace()``` -Funktion. Mit dieser Funktion können Sie einen String in einem anderen String suchen und durch einen neuen String ersetzen. Zum Beispiel:
 
-## Wie es geht
-
-Die Suchen-und-Ersetzen-Funktion in Python ist sehr einfach zu verwenden. Zunächst musst du den zu durchsuchenden Text in eine Variable speichern. Dann rufst du die `replace()`-Methode auf und gibst die zu ersetzenden Begriffe sowie ihre neuen Werte ein.
-
-```Python
-text = "Ich habe gestern eine Pizza gegessen."
-
-neuer_text = text.replace("Pizza", "Burger")
-
-print(neuer_text)
+```
+initial_string = "Ich mag Python!"
+new_string = initial_string.replace("mag", "liebe")
+print(new_string)
+```
+Ausgabe:
+```
+Ich liebe Python!
 ```
 
-Die Ausgabe lautet: "Ich habe gestern eine Burger gegessen."
+Eine weitere Möglichkeit ist die Verwendung von regulären Ausdrücken mit der ```re``` -Bibliothek. Mit regulären Ausdrücken können Sie spezifische Muster in einem Text finden und ersetzen. Zum Beispiel:
 
-Es ist auch möglich, mehrere Begriffe gleichzeitig zu ersetzen und die Groß- und Kleinschreibung zu berücksichtigen:
-
-```Python
-text = "Heute ist ein wunderschöner Tag."
-
-neuer_text = text.replace("heute", "morgen", 1).replace("Tag", "Abend")
-
-print(neuer_text)
+```
+import re
+initial_string = "Hallo Welt!"
+new_string = re.sub("H[a-z]+", "Guten", initial_string)
+print(new_string)
+```
+Ausgabe:
+```
+Guten Welt!
 ```
 
-Die Ausgabe lautet: "Morgen ist ein wunderschöner Abend."
+# Tiefere Einblicke:
+Die Verwendung von regulären Ausdrücken hat ihre Wurzeln in der Mathematik und wurde später von Ken Thompson für die Programmiersprache Unix entwickelt. Heutzutage gibt es auch verschiedene textsuchende und -ersetzende Programme wie Sed und AWK, die auf Unix basieren. Alternativ können auch externe Textbearbeitungsprogramme wie Notepad++ oder Sublime Text verwendet werden.
 
-## Tiefergehende Informationen
-
-Die `replace()`-Methode ersetzt nur den ersten gefundenen Begriff in einem Text. Möchtest du alle Begriffe ersetzen, musst du die `count`-Argument auf `0` setzen. Außerdem kannst du mithilfe von regulären Ausdrücken bestimmte Muster im Text suchen und ersetzen.
-
-Sieh dir die offizielle Dokumentation von Python zu `str.replace()` an, um weitere Informationen und Beispiele zu erhalten.
-
-## Siehe auch
-
-- [Einführung in reguläre Ausdrücke in Python](https://python.de/tutorial/regex)
-- [Offizielle Dokumentation zu str.replace()](https://docs.python.org/3/library/stdtypes.html#str.replace)
+# Siehe auch:
+- [Offizielle Dokumentation für die replace() -Funktion in Python](https://docs.python.org/3/library/stdtypes.html#str.replace)
+- [Offizielle Dokumentation für die re -Bibliothek in Python](https://docs.python.org/3/library/re.html)
+- [Sed Dokumentation](http://www.gnu.org/software/sed/manual/sed.html)
+- [AWK Dokumentation](https://www.gnu.org/software/gawk/manual/gawk.html)
+- [Notepad++](https://notepad-plus-plus.org/)
+- [Sublime Text](https://www.sublimetext.com/)

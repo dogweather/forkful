@@ -10,31 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Quoi & Pourquoi?
+Comparer deux dates est une opération courante en programmation, qui consiste à vérifier si une date est antérieure, égale ou postérieure à une autre date. Les programmeurs font cela pour gérer des événements temporels ou pour trier des données par date.
 
-Si vous travaillez avec des données temporelles dans vos programmes, il est probable que vous ayez besoin de les comparer à un moment donné. La comparaison de deux dates peut être utile pour vérifier si elles sont égales, les trier ou les utiliser dans des conditions logiques.
-
-## Comment faire
-
-Pour comparer deux dates en Haskell, nous pouvons utiliser la fonction `compare` de la bibliothèque `Data.Time`. Cette fonction prend en paramètre deux valeurs de type `Day` (date) et renvoie un ordre de tri, représenté par le type de données `Ordering` (Ordre). Voici un exemple de code montrant comment utiliser `compare` pour trier une liste de dates:
-
+## Comment faire:
+Voici un exemple de comparaison de deux dates en Haskell:
 ```Haskell
-import Data.Time
-
-main = do
-    let dates = [fromGregorian 2021 10 12, fromGregorian 2021 10 10, fromGregorian 2021 10 11]
-    print (sortBy compare dates)
+compareDates :: Ord a => a -> a -> Ordering
+compareDates date1 date2 = compare date1 date2
 ```
+Sur lequel we peut appeler en utilisant deux dates de type ```Day``` dans le module ```Data. Time```:
+```Haskell
+compareDates (fromGregorian 2021 1 1) (fromGregorian 2020 1 1)
+```
+Ce qui retourne la valeur ```GT``` pour "greater than" (supérieure à).
 
-La sortie de ce code sera `[2021-10-10,2021-10-11,2021-10-12]`, car la fonction `compare` a trié les dates dans l'ordre croissant.
+## Deep Dive:
+Dans le passé, comparer deux dates pouvait être compliqué en raison de différents systèmes de calendrier et de représentations de temps. Aujourd'hui, la plupart des langages de programmation, dont Haskell, utilisent le modèle de temps Unix pour simplifier ces opérations.
 
-## Plongée en profondeur
+Une alternative à l'utilisation de la fonction ```compare``` est d'utiliser des opérateurs de comparaison tels que ```<```, ```>```, ```==```, etc. Il est important de noter que ces opérateurs peuvent être surchargés pour différents types de données, donc en utilisant ```compare``` on garantit la comparaison de dates au lieu d'une comparaison surchargée.
 
-Vous avez peut-être remarqué que la fonction `compare` renvoie le type `Ordering` plutôt que le résultat direct de la comparaison (par exemple, `True` ou `False`). Cela est dû au fait que la comparaison peut donner trois résultats: `LT` (Less Than- inférieur à), `GT` (Greater Than - supérieur à) ou `EQ` (Equal - égal). Cela peut sembler inutile, mais cela peut être utile si vous comparez des dates avec des horodatages.
+Pour implémenter la comparaison de dates en utilisant ```compare```, Haskell se base sur la notation de jours de calendrier proleptique, où les dates avant la réforme grégorienne sont comptées à rebours à partir de leur origine en -4713. La fonction ```fromGregorian``` dans le module ```Data.Time.Calendar``` fonctionne selon ce modèle.
 
-En plus de `compare`, il existe d'autres fonctions utiles dans la bibliothèque `Data.Time` pour la comparaison de dates. Par exemple, `diffDays` renvoie le nombre de jours entre deux dates. Cela peut être utile pour trouver la différence entre deux événements ou pour calculer l'âge d'une personne à partir de sa date de naissance.
+## See Also:
+Pour plus d'informations sur les opérations temporelles en Haskell, consultez la documentation du module ```Data.Time``` sur [Hackage](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time.html).
 
-## Voir aussi
-
-- Documentation officielle sur la bibliothèque `Data.Time` : https://hackage.haskell.org/package/time/docs/Data-Time.html
-- Un tutoriel sur les dates en Haskell : https://mmhaskell.com/blog/2017/5/22/dates-and-times-in-haskell
+Pour des informations sur la notation de jours de calendrier proleptique, consultez [Wikipedia](https://fr.wikipedia.org/wiki/Calendrier_julien).

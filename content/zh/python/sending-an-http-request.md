@@ -10,33 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
+# 什么与为什么？
 
-发送HTTP请求在Python编程中非常重要，因为它可以让我们与网络服务进行交互。例如，我们可以使用HTTP请求来获取网页的内容或向网络服务器发送数据。
+发送HTTP请求是一种让程序连接到网络服务器并请求信息的方法。程序员经常使用它来从其他网站获取数据，这样他们就可以在自己的程序中使用这些数据。
 
-## 如何做
+# 如何：
 
-```Python
+```python
 import requests
-
-# 发送GET请求
-response = requests.get("https://www.google.com")
-print(response.status_code) # 输出200
-print(response.text) # 输出网页的内容
-
-# 发送POST请求
-data = {'username': 'John', 'password': '1234'}
-response = requests.post("https://www.example.com/login", data=data)
-print(response.status_code) # 输出200
-print(response.json()) # 输出服务器返回的JSON数据
+r = requests.get('https://www.example.com/api/data')
+print(r.text)
 ```
 
-## 深入探讨
+在这个例子中，我们使用Python的"requests"库来发送一个GET请求，并将返回的文本打印输出到屏幕上。
 
-发送HTTP请求的核心方法是使用`requests`库中的`get()`和`post()`方法。这两个方法可以传入URL和一些可选的参数来发送不同类型的HTTP请求。除此之外，我们还可以通过`response`对象来获取服务器返回的信息，如状态码和内容。
+# 深入挖掘：
 
-## 参考资料
+发送HTTP请求是在Web发展早期借鉴了现有的计算机网络技术而发展起来的。它可以用来与Web服务器进行通信，并获取数据。除了Python的"requests"库外，还有其他一些库也可以实现这一功能，如"urllib"和"httplib"。
 
-- [Python官方文档](https://docs.python.org/3/library/urllib.html)
-- [Requests库官方文档](https://requests.readthedocs.io/en/master/)
-- [HTTP请求教程](https://www.runoob.com/http/http-tutorial.html)
+# 查看也可以：
+
+了解更多关于Python中发送HTTP请求的信息，可以访问以下链接：
+
+- [Python官方文档中关于发送HTTP请求的说明](https://docs.python.org/3/library/http.client.html)
+- [Python中使用requests库发送HTTP请求的教程](https://realpython.com/python-requests/)

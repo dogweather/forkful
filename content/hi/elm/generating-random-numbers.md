@@ -1,7 +1,7 @@
 ---
-title:                "रैंडम नंबर उत्पन्न करना"
-html_title:           "Elm: रैंडम नंबर उत्पन्न करना"
-simple_title:         "रैंडम नंबर उत्पन्न करना"
+title:                "संयुक्त बाधरण द्वारा संख्याओं का उत्पादन"
+html_title:           "Elm: संयुक्त बाधरण द्वारा संख्याओं का उत्पादन"
+simple_title:         "संयुक्त बाधरण द्वारा संख्याओं का उत्पादन"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Numbers"
@@ -10,24 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
+## क्या और क्यों?
+Generating random numbers एक programming technique है जिसमें हम अनुक्रमिक तारणाएं बनाते हैं। हमारे प्रोग्राम विभिन्न सांख्यिकीय या रंगबिरंगे डेटा को analysis और simulation करने के लिए random numbers की आवश्यकता होती है।
 
-आमतौर पर, यदि हमारे पास कोई प्रोग्राम या दूसरा ऐप्लिकेशन होता है जो हमारे उपयोगकर्ताओं को रैंडम नंबर्स चाहिए, तो हम इस विषय पर गहराई से विचार करने और कैसे हम उन्हें बना सकते हैं, इस पर ध्यान देते हैं। रैंडम नंबर्स उपयोगकर्ताओं के लिए असली और अनुभवपूर्ण अनुभव बना सकते हैं और इससे हमारे एप्लिकेशन को और अधिक ज्ञान का अनुभव कराते हैं। 
-
-## कैसे करें
-
-इस विषय पर गहराई से जानने के लिए, हम एल्म में रैंडम नंबर्स कैसे बनाएं, इसके लिए शुरूआत से अंत तक स्टेप बाय स्टेप आगे बढ़ेंगे। सबसे पहले, हमारे पास `Random` मॉड्यूल होगा जो हमें रैंडम नंबर्स को बनाने के लिए आवश्यक फंक्शन प्रदान करता है। उदाहरण के लिए, हम `Random` का उपयोग करके 1 से 10 तक रैंडम नंबर बनाने के लिए निम्न स्निपेट का उपयोग कर सकते हैं: 
-
+## कैसे करें:
 ```Elm
-import Random exposing (..)
+import Random
 
-randomNumber : Int
-randomNumber =
-  Random.int 1 10
+-- random numbers between 0 and 100
+randomNumberList : List Int
+randomNumberList =
+    Random.list 10 (Random.int 0 100)
+
+main : Program () Model Msg
+main =
+    program
+        { init = (Model "" randomNumberList, Cmd.none)
+        , view = view
+        , update = update
+        , subscriptions = \_ -> Sub.none
+        }
+        
+view : Model -> Html Msg
+view model =
+    div [] [
+        h1 [ text "Random Numbers in Elm" ],
+        ul [] (List.map (\num -> li [ text <| String.fromInt num ]) model.randomNumberList)
+    ]
+    
+type Model
+    = Model String (List Int)
+    
+type Msg
+    = NoOp
+
+update : Msg -> Model -> ( Model, Cmd Msg )
+update msg model =
+    case msg of
+        NoOp ->
+            ( model, Cmd.none )
 ```
 
-जब हम अपने कोड को चलाते हैं, तो हमें अलग-अलग संख्याओं का एक रैंडम सेट मिलेगा। इसके अलावा, हम अन्य प्रकार के रैंडम नंबर्स भी बना सकते हैं जैसे कि बूलियन, फ्लोट या चारूज्ञानि। भाग या गुणा भी किया जा सकता है जो फ़ोर लूप या शर्त द्वारा नियंत्रित किया जा सकता है। 
+## गहराई में जाएं:
+इतिहासिक पृष्ठभूमि के पार जाकर, random numbers को सांख्यिकी में बहुत समय से प्रयोग किया जाता है। एल्गोरिथमों और तकनीकियों में पिछले सौ सालों में बहुत उन्नति हुई है और आज वे प्रकाशित हो चुके हैं। अलग-अलग programming languages में भी random numbers को उत्पन्न करने के लिए कई तकनीक उपलब्ध हैं, जैसे pseudo-random और true random algorithms, seed values और बहुत कुछ।
 
-## गहराई में
-
-इस म
+## इससे संबंधित देखें:
+[Elm Random Library](https://package.elm-lang.org/packages/elm/random/latest), [Understanding Randomness and Random Numbers](https://www.lifewire.com/understanding-randomness-and-random-numbers-958201), [Random Number Generation in Different Programming Languages](https://hackernoon.com/random-number-generation-in-different-programming-languages-example-python-8e90c160d92e)

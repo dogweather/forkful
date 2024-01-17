@@ -10,39 +10,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## למה:
-למה להתעסק בהורדת דף אינטרנט?
- במהלכי המאמר הזה, נלמד כיצד להשתמש בשפת תכנות C# כדי להוריד דף אינטרנט ולקבל גישה לתוכן שלו.
+## מה ולמה?
+הורדת דף אינטרנט היא פעולה שנעשית כאשר מתכנתים משתמשים בקוד כדי להוריד דף אינטרנט מהאינטרנט למחשב שלהם. כך ניתן לגשת לתוכן של הדף ולעבוד עליו בצורה יעילה ונוחה. מתכנתים גם יכולים להשתמש בהורדת דף אינטרנט כדי לאסוף נתונים מאתרי אינטרנט או לבצע פעולות כמו עדכון תוכן אוטומטי.
 
-## איך לעשות זאת:
-תחילה, נכיר את הספרייה System.Net המציעה כלים להתחברות רשת. נגדיר את המשתנה "url" ככתובת האתר המבוקש ונשתמש בפונקציית WebClient() כדי לבצע את הבקשה לכתובת זו. לבסוף, נדפיס את תוכן הדף המורד על ידי שימוש בפונקציה DownloadString() ובפקודת Console.WriteLine().
+## כיצד לעשות זאת:
+הנה כמה דוגמאות להורדת דף אינטרנט בשפת C#:
 
 ```C#
-using System; 
+using System;
 using System.Net;
 
-string url = "https://www.example.com";
-WebClient webClient = new WebClient();
-string downloadedPage = webClient.DownloadString(url);
-Console.WriteLine(downloadedPage);
+namespace SimpleWebDownloader
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //קבלת נתוני הגבל הרשת הכללית
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+
+            //יצירת אובייקט WebClient והורדת תוכן הדף המבוקש
+            WebClient client = new WebClient();
+            string webpage = client.DownloadString("https://example.com");
+
+            //הדפסת התוכן המורד על ידי WebClient
+            Console.WriteLine(webpage);
+        }
+    }
+}
 ```
 
-Output:
+תוצאה:
 ```
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Example</title>
+<title>Example Domain</title>
 </head>
 <body>
-	<h1>Welcome to example.com</h1>
+<h1>Example Domain</h1>
+<p>This domain is for use in illustrative examples in documents. You may use this
+domain in literature without prior coordination or asking for permission.</p>
+<p><a href="https://www.iana.org/domains/example">More information...</a></p>
 </body>
 </html>
 ```
 
-## לחקור יותר עמוק:
-השתמשנו בפונקציה DownloadString() כדי להוריד דף אינטרנט, אך ישנן פונקציות אחרות בספרייה זו שמאפשרות לנו לשלוט בדרך הבוקשת במידת ויש לנו יותר מפרמטר אחד. פונקציה DownloadData() מאפשרת לנו להוריד גם קבצים אחרים מהאתר, כמו תמונות או קבצי טקסט, בעוד שפונקציה DownloadFile() מאפשרת לנו לשמור את הקובץ המורד בשם ובמיקום שאנו בוחרים.
+## Deep Dive:
+פעם קודמת, הורדת דף אינטרנט הייתה מתבצעת בעיקרון בעזרת תוכנות כמו wget או curl. אבל עם התפתחות שפות תכנות כמו C#, חשיבת ההורדה נכללה כחלק מתכנותי התוכנה בעקבות התפתחות מערכות האינטרנט החדשות. אם אתם מעוניינים לגשת לתוכן של דף אינטרנט, מכשיר מכשיר, אתר מכשיר או אתר ווב, הורדת דף אינטרנט היא דרך נוחה ופשוטה לעשות זאת.
+
+אפשרויות אחרות להורדת דף אינטרנט כוללות שימוש ב-API או בספריות של צד שלישי כמו HtmlAgilityPack או AngleSharp. בכל זאת, שיטה הנפוצה ביותר והמומלצת היא להשתמש בספריה המובנית של .NET WebClient.
+
+לעומת זאת, כשמשתמשים בספריה WebClient, יש לשים לב לאבטחת הרשת הכללית של .NET כדי לאפשר את ההורדה של דף אינטרנט עם כל מנגנון אבטחת רשת. בנוסף, כדי למנוע שגיאות בזמן ההורדה, כדאי לברור את פרוטוקול התקשורת מראש עם מחלקת ServicePointManager.
 
 ## ראו גם:
-- [תיעוד ה-System.Net במדריך הרשמי של C#](https://docs.microsoft.com/en-us/dotnet/api/system.net?view=netframework-4.8)
-- [מדריך להורדת דף אינטרנט ב-C# עם WebRequest ו-WebClient](https://www.c-sharpcorner.com/article/download-web-page-in-C-Sharp/)
+- [מדריך רשמי של מיקרוסופט על WebClient](https://docs.microsoft.com/en-us/dotnet/api/system.net.webclient?view=net-5.0)
+- [המדריך המלא על הורדת דף אינטרנט בשפת C#](https://www.c-sharpcorner.com/article/downloading-web-page-data-in-c-sharp/)

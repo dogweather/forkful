@@ -1,7 +1,7 @@
 ---
-title:                "नए प्रोजेक्ट की शुरुआत"
-html_title:           "Clojure: नए प्रोजेक्ट की शुरुआत"
-simple_title:         "नए प्रोजेक्ट की शुरुआत"
+title:                "एक नया परियोजना शुरू करना"
+html_title:           "Clojure: एक नया परियोजना शुरू करना"
+simple_title:         "एक नया परियोजना शुरू करना"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Getting Started"
@@ -10,27 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
+## Kya aur Kyun?
 
-अगर आप सालों से कोडिंग का जादू सीख रहे हैं, आपको शायद अब एक एक नया प्रोजेक्ट शुरू करने के लिए तैयार हो गए हैं। शायद आपको अपनी नौकरी से इनकम पर संतोष नहीं है या आपने एक आवेदन खरोंचा है और एक अपने बच्चों को बेहतर भविष्य देने की उम्मीद का सपना सुनिश्चित किया है। चलिए आज हम इसके लिए यहां एक नया प्रोजेक्ट शुरू करने के तरीके के बारे में बात करें।
+Ek naya project shuru karna kisi bhi programmer ke liye bahut important aur zaruri hota hai. Koi bhi programmer apne naye project ko shuru karta hai taki woh bhi apna creative aur learning process jaari rakhe. Isse unka skill level bhi improve hota hai aur unke liye naye challenging tasks bhi milte hain.
 
-## कैसे करें
+## Kaise Karein:
 
-अगर आप Clojure में नए प्रोजेक्ट को शुरू करना चाहते हैं, तो आपको निम्न चरणों का पालन करना होगा:
+Ek naya project shuru karne ke liye Clojure ka use karke hum in steps ko follow kar sakte hain:
 
-```Clojure
-(defproject new-project "0.1.0-SNAPSHOT"
-  :description "A new Clojure project."
-  :dependencies [[org.clojure/clojure "1.10.1"]]
-  :main ^:skip-aot new-project.core
-  :target-path "target/%s"
-  :profiles {:uberjar {:aot :all}
-             :dev {:source-paths ["dev"]}
-             :test {:source-paths ["test"]}})
+```
+Clojure (ns project-name)
 ```
 
-जैसा कि आप देख सकते हैं, हमने `new-project` नाम का एक प्रोजेक्ट बनाया है जो `0.1.0-SNAPSHOT` संस्करण पर काम करता है। `:dependencies` की सहायता से हमने पंजीकृत ग्रुप और उनके संस्करण के बीच से हमें जिस ग्रुप को आप प्रोजेक्ट के लिए चाहते हैं, को कैसे देखना है। उबेर जार (uberjar) एक जार है जो सभी आवश्यक फाइलों को इकट्ठा करके आपके प्रोजेक्ट को एकदम सही रूप में दर्शाता है। आप इसे उबेर-जार जार (uber-jar.jar) में बना सकते हैं। 
+Isse hum naya namespace 'project-name' create kar sakte hain.
 
-## गहराई तक
+```
+Clojure (defn project-name [] "Welcome to my new project!")
+```
 
-अब जब आपने नए प्रोजेक्ट को सफलतापूर्वक शुरू कर लिया है, आपको इसे बन
+Ab hum ek function 'project-name' create karenge jo ek welcome message print karega.
+
+```
+Clojure (project-name)
+```
+
+Finally, hum apna function invoke kar sakte hain aur welcome message output dekh sakte hain.
+
+## Gehri Baatein:
+
+Naye project shuru karne ke alawa, kuch programmers multiple languages ka use karke apne project ko create karte hain. Lekin Clojure ki flexibility ke karan, woh ek hi language mein apna project bana sakte hain aur isse unko multiple codebase manage karne ki zarurat nahi padti.
+
+## Aur Bhi Dekhein:
+
+Yadi aapko aur details jaanne ki zarurat hai toh aap Clojure ki official documentation aur tutorials check kar sakte hain. Iske alawa, aap kisi experienced Clojure programmer se bhi guidance le sakte hain. Happy coding!

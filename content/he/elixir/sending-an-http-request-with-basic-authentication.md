@@ -10,31 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## למה
+## מה ולמה?
 
-בשנים האחרונות, אינטרנט הפך לחלק בלתי נפרד מחיינו. אנו משתמשים בו לכל מיני דברים, כגון קניות, תורניות ואף בעבודה. אחד הדברים הכי נפוצים שאנו עושים באינטרנט הוא שליחת בקשות HTTP, שמאפשרות לנו ליצור תקשורת בין המכשיר שלנו לבין השרת של האתר. אם אתם מנסים לשלוח בקשת HTTP עם אימות בסיסי, המאמץ הכי נפוץ בכדי לוודא שרק המשתמשים המורשים יכולים לקבל מידע שמגיע מהשרת.
+שליחת בקשת HTTP עם אימות בסיסי היא פעולה בה תוכנתאים משתמשים כדי לקבל גישה למידע משרתי אינטרנט מאובטחים. תוכניות כמו תוכנות מחשב או אפליקציות ניידות צריכות לשלוח בקשות כאלה כדי לקבל גישה לפרטי משתמש תוך הבטחת פרטיות ואבטחת מידע.
 
-## כיצד
-
-```Elixir
-defmodule Example do
-  use HTTPoison
-  def send_request(url, username, password, query) do
-    HTTPoison.get(url, [basic_auth: {username, password}, body: query])
-  end
-end
-```
-
-בקוד המנהל, אנו מגדירים את המודול החדש שלנו ושולפים את HTTPoison, אחד הספריות הכי פופולריות ב-Elixir לשותפי HTTP. אז, בפונקציה send_request שלנו, אנו משתמשים בפונקציה get מספריית HTTPoison כדי לשלוח בקשת GET בכוונה לכתובת האתר שחברתי כדי לספק את הנתונים הנחוצים כדי לצרף אותו כסתם בנקודת הנתינה. בנוסף, אנו מוסיפים פרמטר שמציג לספק כי הבקשה ממכילה אימות בסיסי עם שם משתמש וסיסמה, כדי להבטיח שרק המשתמשים המורשים יכולים לקבל את הנתונים.
+## איך לעשות זאת:
 
 ```Elixir
-{:ok,
- %HTTPoison.Response{
-   body: "[{\"name\": \"John\", \"age\": 25}]",
-   headers: [{"Content-Type", "application/json"}],
-   request_url: "https://www.example.com/query",
-   status_code: 200
- }}
+# דוגמא של שליחת בקשת HTTP עם אימות בסיסי באמצעות הספרייה HTTPoison
+response = HTTPoison.get("https://example.com/resource", headers: [
+  {"Authorization", "Basic YWRtaW46cGFzc3dvcmQ="} # הכנס כאן את שם המשתמש והסיסמה שלך בקידוד base64
+])
+
+# הדפסת קוד תגובה
+IO.puts(response.status_code)
+
+# הדפסת גוף תגובה
+IO.puts(response.body)
 ```
 
-כשאנו מריצים את הפונקציה שלנו עם הפרמטרים המתאימים, אנו מקבלים תשובה מהשרת בפורמט JSON, עם נתונים כמו שעשינו בבקשה GET. אם הבקשה לא נכשלת, אנו מקבלים קוד
+## חקירה מעמיקה:
+
+מאז הומצאה פרוטוקול ה-HTTP בשנות השישים של המאה העשרים ועד היום, פרוטוקול זה הפך לסטנדרט בעולם האינטרנט. כך שלשליחת בקשת HTTP עם אימות בסיסי יש מספר שיטות נוספות כמו OAuth או Token מסוג JSON Web.
+
+פרוטוקול אימות בסיסי טבעו מבוסס טכנולוגיית הטקסט הבתולי ומכן הוא מיועד רק לפראנסים שמעדיפים שימוש פשוט ויעיל. תיקנוים כמו YARN ו NPM מרחיבים את האופקים עם שליחת הבקשות האלה תוך התאמה לבקשות ב API שונות.
+
+## ראה גם:
+
+- [HTTPoison - מסמך API פלאטפורמת Elixir](https://hexdocs.pm/httpoison/1.6.1/HTTPoison.html)
+- [OAuth - מה זה ואיך זה עובד?](https://www.digitalocean.com/community/tutorials/an-introduction-to-oauth-2-hebrew)
+- [JSON Web Token - הוראות לשימוש ב Elixir עבור בקשות HTTP בסיסיות](https://hexdocs.pm/joken/2.0.5/Joken.html)

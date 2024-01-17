@@ -1,7 +1,7 @@
 ---
-title:                "Lecture des arguments de ligne de commande"
-html_title:           "PHP: Lecture des arguments de ligne de commande"
-simple_title:         "Lecture des arguments de ligne de commande"
+title:                "Lecture des arguments en ligne de commande"
+html_title:           "PHP: Lecture des arguments en ligne de commande"
+simple_title:         "Lecture des arguments en ligne de commande"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Files and I/O"
@@ -10,62 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Qu'est-ce que c'est et pourquoi le faire?
 
-Si vous êtes un développeur PHP, il est fort probable que vous ayez déjà utilisé la ligne de commande pour exécuter votre code. Mais saviez-vous que vous pouvez également utiliser la ligne de commande pour transmettre des arguments à votre script PHP ? Dans cet article, nous allons explorer pourquoi et comment lire simplement des arguments de ligne de commande en PHP.
+La lecture des arguments de ligne de commande est une fonctionnalité importante dans la programmation PHP. Elle permet aux programmeurs d'interagir avec leur programme en fournissant des paramètres spécifiques lors de son exécution. Cela peut être utile pour personnaliser le comportement du programme en fonction des besoins de l'utilisateur.
 
-## Comment faire
+## Comment le faire:
+```PHP
+<?php
+// Syntaxe pour récupérer les arguments de ligne de commande
+$arguments = getopt("l:f:");
 
-Pour lire les arguments de ligne de commande en PHP, nous allons utiliser la fonction `getopt()`. Cette fonction prend deux paramètres optionnels : les options à fournir et les arguments à lire. Considérons cet exemple de code :
+// Exemple d'utilisation: Affiche les arguments spécifiés lors de l'exécution
+echo "Langue: ".$arguments['l']."\n";
+echo "Fichier: ".$arguments['f']."\n";
+?>
+```
+
+Il est également possible de récupérer tous les arguments de la ligne de commande en utilisant la variable `$argc` et la fonction `argv()`. Voici un exemple:
 
 ```PHP
 <?php
-$options = getopt("a:b:c:d:");
-print_r($options);
+// Récupère le nombre d'arguments
+$arguments_count = $argc;
+
+// Parcourt tous les arguments et les affiche
+for($i = 0; $i < $arguments_count; $i++) {
+  echo "Argument $i : ".$argv[$i]."\n";
+}
+?>
 ```
 
-Lorsqu'on exécute ce script en ligne de commande avec des options d'arguments, par exemple `php script.php -a value1 -b value2`, nous obtenons une sortie similaire à ceci :
+Lors de l'exécution du programme, vous pouvez spécifier les arguments en utilisant le format suivant:
 
-```
-Array
-(
-    [a] => value1
-    [b] => value2
-)
+```bash
+php mon_programme.php -l fr -f fichier.txt
 ```
 
-Comme vous pouvez le voir, la fonction `getopt()` nous retourne un tableau associatif contenant les options et leurs valeurs fournies en ligne de commande.
+Le résultat affichera alors:
 
-Nous pouvons également utiliser des arguments positionnels en passant un tableau contenant les noms de ces arguments comme deuxième paramètre de la fonction `getopt()`. Par exemple :
-
-```PHP
-<?php
-$arguments = array("argument1", "argument2");
-$options = getopt("", $arguments);
-print_r($options);
+```bash
+Langue: fr
+Fichier: fichier.txt
 ```
 
-En exécutant ce script avec des arguments de ligne de commande, par exemple `php script.php value1 value2`, nous obtenons une sortie similaire à ceci :
+## Plongée en profondeur:
+La lecture des arguments de ligne de commande est une fonctionnalité qui existe depuis longtemps dans les langages de programmation et qui est utilisée dans de nombreux environnements, tels que les scripts shell et les applications en ligne de commande. En plus de l'utiliser pour personnaliser le comportement du programme, il peut également être utile pour le débogage et le test.
 
-```
-Array
-(
-    [argument1] => value1
-    [argument2] => value2
-)
-```
+En plus de la fonction `getopt()`, il existe également une fonction `getopt_long()` qui permet de spécifier des options à plusieurs caractères pour les arguments. Il est également possible de définir des options facultatives et des valeurs par défaut pour les arguments.
 
-Vous pouvez également fournir des options avec des valeurs requises en utilisant un double-point (`:`) après le nom de l'option. Par exemple, `getopt("a:", $arguments)` attendra une valeur pour l'option `a`.
-
-La fonction `getopt()` retourne `false` si aucune option n'a été fournie en ligne de commande.
-
-## Deep Dive
-
-La lecture des arguments de ligne de commande peut être très utile dans différentes situations, par exemple pour obtenir des valeurs de configuration ou pour créer des scripts flexibles et personnalisables. Vous pouvez également utiliser la fonction `getopt()` pour valider les arguments fournis en vérifiant s'ils correspondent aux options attendues.
-
-En plus de la fonction `getopt()`, il existe d'autres façons de lire les arguments de ligne de commande en PHP. Par exemple, la variable `$argv` est un tableau contenant tous les arguments passés en ligne de commande, y compris le nom du script lui-même. Vous pouvez également utiliser la fonction `$_SERVER['argv']` pour obtenir les mêmes informations.
-
-## Voir aussi
-
-- [Documentation sur la fonction getopt() en PHP](https://www.php.net/manual/fr/function.getopt.php)
-- [Tutoriel sur la lecture des arguments de ligne de commande en PHP](https://www.codecourse.com/forum/topics/php-reading-command-line-arguments)
+## Voir aussi:
+- [Documentation officielle de PHP sur la lecture des arguments de ligne de commande](https://www.php.net/manual/fr/features.commandline.arguments.php)
+- [Un tutoriel sur la lecture des arguments de ligne de commande en PHP](https://www.phpkitchen.com/2012/06/reading-command-line-arguments-from-php-cli/)
+- [Un autre tutoriel sur la lecture des arguments de ligne de commande en PHP](https://www.youtube.com/watch?v=Fizs2jMNQg8)

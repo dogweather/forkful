@@ -10,35 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
-Les expressions régulières sont des outils puissants pour la manipulation de chaînes de caractères dans vos programmes Ruby. Elles vous permettent de rechercher, d'extraire et de modifier facilement des données en utilisant des modèles de correspondance.
+## Qu'est-ce que c’est & pourquoi?
+Les expressions régulières sont des séquences de caractères utilisées pour rechercher et manipuler du texte selon un motif pré-défini. Les programmeurs les utilisent pour effectuer des tâches telles que la validation des entrées de l'utilisateur, le filtrage de données et la recherche de chaînes de caractères spécifiques dans un grand ensemble de données.
 
-## Comment utiliser les expressions régulières en Ruby
-Les expressions régulières sont définies par des motifs entre des barres obliques ("/"). Par exemple, `/hello/` correspondra à la chaîne "hello" dans une autre chaîne.
+## Comment faire:
+Les expressions régulières sont écrites avec une syntaxe spécifique et peuvent sembler intimidantes au premier abord, mais elles sont en réalité très puissantes et utiles pour résoudre des problèmes courants de traitement de texte. Voyons un exemple simple en utilisant Ruby:
 
-Voici un exemple de code Ruby utilisant une expression régulière pour trouver toutes les occurrences de "ruby" dans une chaîne et les remplacer par "Ruby":
-```Ruby
-sentence = "J'aime écrire en Ruby. Ruby est un langage de programmation polyvalent."
-puts sentence.gsub(/ruby/, 'Ruby')
 ```
-La sortie de ce code sera:
+texte = "Bonjour! Comment allez-vous?"
+patron = /bonjour/i
+
+if patron.match?(texte)
+  puts "Salut!"
+else
+  puts "Je ne peux pas trouver de correspondance."
+end
 ```
-J'aime écrire en Ruby. Ruby est un langage de programmation polyvalent.
+
+Ici, nous utilisons ```/bonjour/i``` pour créer notre expression régulière, en utilisant le «i» pour indiquer que nous voulons ignorer la casse et trouver «Bonjour» dans notre texte, qu'il soit écrit en majuscules ou en minuscules. Ensuite, nous utilisons la méthode ```match?``` pour vérifier si notre expression régulière trouve une correspondance dans notre texte. Si c'est le cas, nous affichons "Salut!", sinon nous affichons un message d'erreur. Dans cet exemple, notre expression régulière a trouvé une correspondance et nous avons donc obtenu la sortie suivante:
+
+```
+Salut!
 ```
 
-Il existe également des raccourcis pour certains motifs couramment utilisés. Par exemple, le motif `/[0-9]/` correspondra à n'importe quel chiffre et le motif `/[a-z]/` correspondra à n'importe quelle lettre minuscule.
+## Plongée en profondeur:
+Les expressions régulières ont été inventées dans les années 1950 par le scientifique américain Stephen Cole Kleene. Aujourd'hui, elles sont supportées par de nombreux langages de programmation, dont Ruby. Il existe également des alternatives aux expressions régulières, telles que les expressions rationnelles, qui offrent une syntaxe plus simple mais avec moins de fonctionnalités.
 
-Les expressions régulières ont également de nombreuses autres fonctionnalités avancées telles que les groupes de capture, les caractères spéciaux et les modificateurs de correspondance. Il est recommandé de consulter la documentation officielle de Ruby pour en savoir plus.
+Les expressions régulières peuvent sembler compliquées au début, mais avec de la pratique, vous pourrez les utiliser pour effectuer des tâches complexes de manière rapide et efficace. Ruby propose également des méthodes telles que ```gsub``` et ```scan``` qui prennent en charge les expressions régulières et facilitent leur utilisation dans votre code.
 
-## Plongée en profondeur
-Les expressions régulières peuvent sembler intimidantes à première vue, mais elles peuvent être très utiles une fois que vous les maîtrisez. Voici quelques astuces pour vous aider:
+## Voir aussi:
+Pour en savoir plus sur les expressions régulières en Ruby, voici quelques ressources utiles:
 
-- Utilisez différents sites en ligne pour tester et expérimenter vos expressions régulières en temps réel, tels que Regex101 ou Rubular.
-- Vous pouvez utiliser les expressions régulières pour valider des entrées utilisateur telles qu'un numéro de téléphone ou une adresse e-mail.
-- En utilisant des groupes de capture, vous pouvez extraire des données spécifiques d'une chaîne et les réutiliser dans d'autres motifs ou dans votre code.
-- Les expressions régulières sont également disponibles dans d'autres langages de programmation tels que JavaScript ou Python, ce qui permet une plus grande portabilité de votre code.
-
-## Voir aussi
-- [Documentation officielle de Ruby sur les expressions régulières](https://ruby-doc.org/core-2.7.0/Regexp.html)
-- [Tutoriel en français sur les expressions régulières en Ruby](https://openclassrooms.com/fr/courses/1302681-introduction-aux-expressions-regulieres)
-- [Site de pratique d'expressions régulières](https://regex101.com/)
+- [Ruby regular expressions cheat sheet](https://www.ruby-lang.org/en/documentation/quickstart/2/)
+- [Rubular](https://rubular.com/): un outil pour tester vos expressions régulières en toute simplicité
+- [The Ruby regex tutorial](https://www.tutorialspoint.com/ruby/ruby_regular_expressions.htm): un tutoriel complet sur les expressions régulières en Ruby.

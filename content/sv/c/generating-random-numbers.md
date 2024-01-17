@@ -1,7 +1,7 @@
 ---
-title:                "Generera slumpmässiga nummer"
-html_title:           "C: Generera slumpmässiga nummer"
-simple_title:         "Generera slumpmässiga nummer"
+title:                "Generering av slumpmässiga tal"
+html_title:           "C: Generering av slumpmässiga tal"
+simple_title:         "Generering av slumpmässiga tal"
 programming_language: "C"
 category:             "C"
 tag:                  "Numbers"
@@ -10,34 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## VarförDet finns många situationer där det är nödvändigt att generera slumpmässiga nummer, till exempel inom spelutveckling eller dataanalys. Genom att använda slumpmässiga nummer i våra program kan vi skapa variation och diversifiering, vilket kan leda till mer intressanta och realistiska resultat.  ## Hur man gör
+## Vad & Varför?
+Generering av slumpmässiga nummer är en teknik som används av programmerare för att skapa en sekvens av nummer som verkar slumpmässiga. Detta kan vara användbart för många olika ändamål, som till exempel spelutveckling eller simuleringar.
 
-För att generera slumpmässiga nummer i C kan du använda funktionen ```rand()```, som returnerar en slumpmässig heltalsvärde mellan 0 och ```RAND_MAX```. För att få en mindre intervall kan du använda modulus-operatören för att begränsa värdet.
+## Hur gör man:
+Här är ett enkelt exempel på hur man genererar ett slumpmässigt heltal mellan 1 och 100 i C:
 
-Här är ett exempel på hur du kan använda ```rand()``` för att välja ett slumpmässigt heltal mellan 1 och 10:
-
-```
+```C
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
-int main() {
+int main()
+{
+    // sätt en seed baserat på aktuell tid
+    srand(time(NULL));
 
-  int num = rand() % 10 + 1;
-  printf("Det slumpmässiga numret är: %d\n", num);
-  
-  return 0;
+    // generera ett slumpmässigt heltal mellan 1 och 100
+    int random_number = rand() % 100 + 1;
+
+    // skriv ut det slumpmässiga numret
+    printf("Slumpmässigt nummer: %d\n", random_number);
+
+    return 0;
 }
 ```
+Output: "Slumpmässigt nummer: 72"
 
-Detta kommer att generera en nytt heltal varje gång programmet körs.
+För att få olika slumpmässiga nummer vid varje körning av programmet, behöver vi använda funktionen `srand` tillsammans med en variabel som innehåller en aktuell tid. Sedan kan vi använda funktionen `rand` tillsammans med modulus-operatorn `%` för att få ett tal inom ett visst intervall.
 
-## Djupdykning
+## Djupdykning:
+Att generera slumpmässiga nummer är en viktig del av datorprogrammering och har använts sedan tidiga dagar av IT. Tidigare användes ofta fysiska slumpmässiga processer, som att kasta tärningar, men nu används algoritmer som kan generera pseudoslumpmässiga nummer. Det finns även andra metoder för att generera slumpmässiga tal, som till exempel användning av sensorer eller mätningar av yttre faktorer som temperatur eller atmosfärstryck.
 
-För att öka precisionen och variationen i slumpmässiga nummer kan vi använda funktionen ```srand()```, som initierar generatorn med en startvärde. Genom att använda exempelvis tiden som startvärde kan vi få en mer slumpmässig sekvens av nummer.
-
-Det är också viktigt att komma ihåg att ```rand()``` inte är en riktigt slumpmässig funktion utan en pseudo-random generator. Detta innebär att sekvensen av nummer som genereras är förutbestämd och kan återkomma efter en viss tid. För att undvika detta kan vi använda andra metoder, såsom att använda externa faktorer som muspekare eller tangenttryckningar som startvärde i ```srand()```.
-
-## Se även
-
-- Läs mer om de olika funktionerna för slumpmässiga nummer i C här: https://www.tutorialspoint.com/c_standard_library/c_function_rand.htm
-- Se hur du kan använda tiden som startvärde för att få mer slumpmässiga nummer här: https://stackoverflow.com/questions/822323/how-to-generate-a-random-number-in-c
+## Se även:
+Om du vill lära dig mer om slumpmässiga nummer och dess användning i C, se följande källor:
+- [Wikipedia: Random number generation](https://en.wikipedia.org/wiki/Random_number_generation)
+- [GeeksforGeeks: rand() and srand() in C/C++](https://www.geeksforgeeks.org/rand-and-srand-in-ccpp/)
+- [C-programmering för nybörjare: Ett steg i taget - Slumpmässiga nummer](https://www.cprogramming.com/tutorial/random.html)

@@ -1,7 +1,7 @@
 ---
-title:                "Scaricare una pagina web"
-html_title:           "Gleam: Scaricare una pagina web"
-simple_title:         "Scaricare una pagina web"
+title:                "Scaricare una pagina web."
+html_title:           "Gleam: Scaricare una pagina web."
+simple_title:         "Scaricare una pagina web."
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "HTML and the Web"
@@ -10,49 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+## Cosa & Perché?
 
-Se sei un programmatore, probabilmente hai già usato la libreria standard di Erlang per scaricare una pagina web. Ma se vuoi un'esperienza più moderna e funzionale, allora è il momento di provare Gleam! Con una sintassi intuitiva e tipi di dati statici, Gleam rende semplice e affidabile il processo di download di pagine web.
+Scaricare una pagina web è il processo di recuperare il contenuto di una pagina web e salvarlo sul proprio dispositivo. I programmatori spesso eseguono questa operazione per analizzare il contenuto di una pagina, estrarne informazioni o utilizzarlo per creare applicazioni web.
 
-## Come
+## Come Fare:
 
-Per iniziare, installa Gleam e il suo compilatore tramite il gestore di pacchetti esatto del tuo sistema operativo. Dopodiché, segue questi semplici passaggi in un file nuovo di Gleam:
+In Gleam, è possibile utilizzare il modulo `Http` per scaricare una pagina web. Ecco un esempio di come farlo:
 
-```Gleam
-import gleam/http
-import gleam/io
+```
+Gleam import Http
 
-response = http.get("https://www.example.com/")
+let response = Http.get("https://esempio.com")
 
-io.print(response.body)
+case response {
+  Ok(_, body) -> body
+  Error(_) -> "Errore nel scaricare la pagina"
+}
 ```
 
-Il codice sopra importa i moduli di Gleam per il download delle pagine web e la stampa dei risultati. Dopo aver scaricato la pagina del nostro esempio, il codice stampa il corpo della risposta della pagina sul terminale. 
+Questo codice utilizza la funzione `get` del modulo `Http` per effettuare una richiesta alla pagina `esempio.com`. Se la richiesta ha successo, verrà restituito il corpo della risposta nella variabile `body`. Se ci sono errori durante il download, verrà stampato un messaggio di errore.
 
-Ma cosa succede se vogliamo passare dei parametri alla nostra richiesta? Gleam rende anche questa operazione semplice:
+## Approfondimento:
 
-```Gleam
-import gleam/http
-import gleam/io
+Scaricare pagine web è diventato una parte essenziale della programmazione moderna, poiché ci sono sempre più dati disponibili online. Esistono anche alternative a Gleam per scaricare pagine web, come il modulo `Httpc` di Erlang. L'implementazione di questa funzionalità richiede l'utilizzo dei protocolli HTTP e HTTPS.
 
-url = "https://www.example.com/search"
-params = [("q", "Gleam")]
+## Vedi Anche:
 
-response = http.get(url, params)
-
-io.print(response.body)
-```
-
-In questa versione, invece di passare solo l'URL come argomento, passiamo anche una lista di coppie chiave-valore che rappresentano i parametri che vogliamo inviare nella richiesta. Verrà eseguito il download della pagina con i parametri specificati e il suo risultato verrà stampato sul terminale.
-
-## Deep Dive
-
-Ora che hai visto come eseguire il download di pagine web in modo semplice e diretto con Gleam, potresti chiederti come funziona il tutto dietro le quinte. In realtà, Gleam utilizza la libreria libcurl per gestire le richieste HTTP. Ciò significa che ha a disposizione un'ampia gamma di funzionalità avanzate per la gestione delle richieste, come le intestazioni personalizzate e gli agenti utente.
-
-Inoltre, Gleam utilizza anche il sistema di tipi statico di Erlang per garantire che i dati scaricati siano gestiti in modo sicuro e affidabile. Ciò significa che puoi contare su Gleam per eseguire il parsing della risposta della pagina in modo corretto e senza dover preoccuparti di errori di tipo.
-
-## Vedi Anche
-
-- Documentazione ufficiale di Gleam: https://gleam.run/
-- Libreria libcurl: https://curl.se/libcurl/
-- Erlang typesystem: https://erlang.org/doc/reference_manual/typespec.html
+Consulta la documentazione di Gleam sul modulo `Http` per ulteriori informazioni sull'uso di questa funzione. Puoi anche esplorare altri moduli utili per la manipolazione di dati web in Gleam, come `Html` e `Json`.

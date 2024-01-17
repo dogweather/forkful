@@ -1,7 +1,7 @@
 ---
-title:                "Konvertering av en dato til en streng"
-html_title:           "Go: Konvertering av en dato til en streng"
-simple_title:         "Konvertering av en dato til en streng"
+title:                "Konvertere en dato til en streng"
+html_title:           "Go: Konvertere en dato til en streng"
+simple_title:         "Konvertere en dato til en streng"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Dates and Times"
@@ -10,47 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##Hvorfor
-Å konvertere en dato til en streng kan være nyttig når du for eksempel ønsker å vise datoen på en leserlig måte eller lagre den i en database. Det kan også være nødvendig når du håndterer brukerinput eller sender datoen som en del av en API-forespørsel.
+## Hva & Hvorfor?
+Konvertering av dato til en streng betyr å endre datoen til tekstformat, for eksempel fra "22/10/2021" til "22. oktober 2021". Dette er nyttig for å presentere datoer på en mer lesbar måte for brukere. Programmere gjør dette for å øke brukervennligheten og for å unngå feil ved presentasjon av datoer.
 
-##Hvordan gjøre det
-Å konvertere en dato til en streng i Go er enkelt og krever bare noen få linjer med kode. Først må du importere "time" pakken:
+## Hvordan:
+For å konvertere en dato til streng i Go, bruker vi funksjonen `format()` fra `time` pakken. Vi gir funksjonen en dato og en ønsket strengformat som argumenter, og den vil returnere datoen i strengformatet. Her er et eksempel:
 
 ```Go
 import "time"
+
+func main() {
+    date := time.Date(2021, 10, 22, 0, 0, 0, 0, time.UTC)
+    strDate := date.Format("2. January 2006")
+    fmt.Println(strDate)
+}
 ```
+Output: `22. October 2021`
 
-Deretter kan du bruke "Format" funksjonen for å konvertere datoen til en streng:
+## Dypdykk:
+Konvertering av dato til streng er ikke en ny konsept, og har vært en vanlig oppgave i programmering i lang tid. Alternativt kan også `strconv` pakken brukes til å konvertere datoer til strenger i Go. Det finnes også ulike formateringsmuligheter for datoer i Go, som kan utforskes nærmere i Go-dokumentasjonen.
 
-```Go
-time.Now().Format("January 02, 2006")
-```
-
-Dette vil gi følgende output:
-
-```Go
-August 27, 2021
-```
-
-Du kan også spesifisere et annet format for datoen ved å endre formatstrengen. For eksempel:
-
-```Go
-time.Now().Format("02/01/2006")
-```
-
-Dette vil gi følgende output:
-
-```Go
-27/08/2021
-```
-
-##Dypdykk
-Når du konverterer en dato til en streng, kan du også inkludere andre verdier som timer, minutter og sekunder i formatstrengen. Dette kan være nyttig hvis du trenger å vise en mer detaljert datoen til brukeren.
-
-Du kan også bruke funksjoner som "Add" og "Sub" for å legge til eller trekke fra et visst antall timer, minutter eller sekunder fra en dato før du konverterer den til en streng.
-
-Det er også verdt å merke seg at formatstrenger i Go følger et spesielt mønster, hvor spesifikke bokstaver representerer forskjellige verdier av datoen. En full oversikt over disse bokstavene finner du i dokumentasjonen til "time" pakken.
-
-##Se også
-- "time" pakken dokumentasjon: https://golang.org/pkg/time/
-- Konvertering av strenger til dato i Go: https://www.digitalocean.com/community/tutorials/how-to-format-date-and-time-in-the-go-programming-language
+## Se også:
+- https://gobyexample.com/string-formatting
+- https://pkg.go.dev/time#pkg-overview

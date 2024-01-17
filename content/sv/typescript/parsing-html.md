@@ -1,7 +1,7 @@
 ---
-title:                "Att analysera html"
-html_title:           "TypeScript: Att analysera html"
-simple_title:         "Att analysera html"
+title:                "Analysera html"
+html_title:           "TypeScript: Analysera html"
+simple_title:         "Analysera html"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "HTML and the Web"
@@ -10,35 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
-Det är vanligt att behöva hämta innehållet från en webbsida och använda det i en applikation eller skal. Att analysera HTML-koden och extrahera specifikt innehåll kan spara massor av tid och arbete för utvecklare.
+## Vad & Varför?
 
-## Hur man gör
-### Installera och Importera
-För att kunna analysera HTML-koden behöver vi använda ett TypeScript-paket som heter `cheerio`. Installera det genom att köra `npm install cheerio` i terminalen. Sedan kan vi importera det i vår kod genom att lägga till `import * as cheerio from 'cheerio';` i början av vår fil.
+Parsing HTML (HTML-analys) är en process där man tar en HTML-kod och omvandlar den till en trädstruktur, vilket gör det möjligt att enklare manipulera och visa informationen från koden. Detta är en vanlig uppgift för webbutvecklare, eftersom det tillåter dem att skapa dynamiska webbsidor med hjälp av JavaScript.
 
-### Hämta HTML från en webbsida
-Innan vi kan börja analysera HTML-koden behöver vi först hämta den från en URL. För detta använder vi `fetch()`-funktionen tillsammans med JavaScripts `Promise` för att få tillbaka data från ett GET-anrop. Vi kommer sedan konvertera svaret till text och skicka det som en parameter till `cheerio`-funktionen.
+## Hur man gör:
 
 ```TypeScript
-const html = await fetch('https://mypage.com').then(res => res.text());
-const $ = cheerio.load(html);
+const html = "<h1>Hello World</h1><p>This is a paragraph</p>";
+
+// Skapa en HTML-analysator
+const parser = new DOMParser();
+
+// Konvertera HTML-koden till ett träd
+const doc = parser.parseFromString(html, "text/html");
+
+// Hämta alla element med taggen "p"
+const paragraphs = doc.getElementsByTagName("p");
+
+// Visa innehållet av det första elementet
+console.log(paragraphs[0].textContent);
+
+/* Output:
+   This is a paragraph
+*/
 ```
 
-### Hitta och extrahera innehåll
-Nu kan vi använda `cheerio` för att leta efter specifikt innehåll i vår HTML-kod. Det gör vi genom att använda CSS-selektorer tillsammans med `$(...)`-funktionen för att få tillbaka en array med alla element som matchar vårt selektor. Vi kan sedan använda `text()`- eller `attr()`-funktionerna för att få ut själva innehållet eller attributen från elementet.
+## Djupdykning:
 
-```TypeScript
-const title = $('h1').text(); // Hämtar innehållet i det första h1-elementet på sidan
-const links = $('a'); // Returnerar en array med alla länkar på sidan
-const imageSrc = $('img').attr('src'); // Hämtar URL:en till bilden i det första img-elementet på sidan
-```
+HTML parsering har funnits sedan början av webbens utveckling för att göra processen med att visa webbsidor mer effektiv. Det finns flera olika alternativ för att utföra HTML parsering, inklusive inbyggda funktioner i webbläsare och externa bibliotek. I TypeScript kan man använda DOMParser för att analysera HTML och sedan använda DOM-trädet för att manipulera eller visa elementen på en webbsida.
 
-## Djupdykning
-För att kunna använda CSS-selektorer behöver `cheerio` först konvertera HTML-koden till DOM-noder. Detta görs med hjälp av `htmlparser2`-paketet. Detta är också varför vi skickar in svaret från `fetch()`-anropet som en text-sträng till `cheerio`-funktionen.
+## Se även:
 
-Det finns också många andra funktioner som `cheerio` erbjuder, till exempel möjligheten att ändra på HTML-koden och sedan få tillbaka den ändrade koden med `html()`-funktionen.
-
-## Se även
-- [Officiell dokumentation för cheerio](https://github.com/cheeriojs/cheerio)
-- [Fler exempel på hur man kan använda cheerio](https://www.digitalocean.com/community/tutorials/how-to-use-node-js-request-and-cheerio-to-set-up-simple-web-scraping)
+- [DOMParser dokumentation](https://developer.mozilla.org/en-US/docs/Web/API/DOMParser)
+- [Bärklara HTML parser](https://github.com/taoqf/node-html-parser)
+- [Implementering av HTML parser i TypeScript](https://github.com/Microsoft/TSJS-lib-generator/blob/master/src/lib/dom.generated.d.ts#L10163)

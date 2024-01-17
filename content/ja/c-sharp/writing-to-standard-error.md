@@ -10,32 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
-書き込みを標準エラーに行う理由は、プログラムのデバッグおよびエラーハンドリング時に便利であるためです。
+## なに & なぜ？
+標準エラーに書き込むことが何であるかと、プログラマーがそれをする理由について説明します。標準エラーは、プログラムの実行中に発生したエラーを出力するためのものです。プログラマーは、コードのデバッグや問題の解決に役立てるために、標準エラーを使用します。
 
-## 方法
-以下のC#コードブロックを使用して、標準エラーに書き込む方法を学ぶことができます。
+## 使い方：
+次の例は、C＃で標準エラーに書き込む方法を示しています。コードブロック内のサンプルコードと出力をご覧ください。
 
 ```C#
-using System;
+// エラーメッセージを標準エラーに書き込む
+Console.Error.WriteLine("エラーが発生しました。");
 
-public class Program
-{
-    public static void Main()
-    {
-        Console.Error.WriteLine("This is an error message.");
-    }
-}
-```
-出力結果は次の通りです。
-
-```
-This is an error message.
+// 変数の値を標準エラーに書き込む
+int num = 10;
+Console.Error.WriteLine($"変数numの値は{num}です。");
 ```
 
-## 深く掘り下げる
-標準エラーに書き込むことで、実行時に発生したエラーをプログラムが捉えることができます。これにより、エラーの原因を特定しやすくなり、プログラムの改善に役立ちます。
+標準エラーに書き込むことで、プログラマーは読みやすい形式でエラーメッセージや変数の値を確認できます。
 
-## 参考
-- [C#のコード例](https://docs.microsoft.com/ja-jp/dotnet/csharp/programming-guide/main-and-command-args/)
-- [標準エラーの書き込み方法の詳細](https://docs.microsoft.com/ja-jp/dotnet/api/system.console.error?view=netframework-4.8)
+## 深堀り：
+以下の情報について、標準エラーに書き込む方法を深く掘り下げます。
+1. 歴史的な文脈：標準エラーは、アプリケーションの標準的な出力方法の一つです。以前は、エラーをファイルに書き込んで確認する方法もありましたが、今は標準エラーを使用することが一般的です。
+2. 代替手段：標準エラーに書き込む代わりに、デバッグ用のコンソールウィンドウを開いて確認することもできます。
+3. 実装の詳細：標準エラーに書き込む方法は、プラットフォームや言語ごとに異なります。C＃では、System.ConsoleクラスのErrorプロパティを使用して、エラーメッセージを書き込みます。
+
+## 関連情報：
+標準エラーに書き込むことについてもっと学びたい場合は、以下の情報を参考にしてください。
+
+- エラーハンドリングの詳細については、[Microsoft Docs](https://docs.microsoft.com/ja-jp/dotnet/standard/io/how-to-read-and-write-to-the-console)をご覧ください。
+- 標準エラーを使用したデバッグ方法については、[C#標準出力／エラー出力の使い方](https://zukucode.com/2016/01/sysout-stderr-csharp.html)を参考にしてください。

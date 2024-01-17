@@ -1,7 +1,7 @@
 ---
-title:                "Analysering av html"
-html_title:           "Gleam: Analysering av html"
-simple_title:         "Analysering av html"
+title:                "Innføring i html-analysering"
+html_title:           "Gleam: Innføring i html-analysering"
+simple_title:         "Innføring i html-analysering"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "HTML and the Web"
@@ -10,38 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+---------------------------------------
 
-Hvorfor bry seg om å analysere HTML? Vel, hvis du for eksempel ønsker å ekstrahere spesifikk data fra en nettside, kan parsing av HTML være svært nyttig. Det kan også hjelpe deg med å lage automatiserte oppgaver, for eksempel å generere rapporter eller analysere data.
+## Hva & Hvorfor?
+Parsing HTML er prosessen med å strukturere og tolke informasjonen som finnes i HTML-kode, som er kodespråket som brukes for å lage nettsider. Programmerere bruker parsing for å kunne manipulere eller hente ut spesifikke data fra nettsider, som for eksempel å lese og manipulere brukerinput eller å automatisk generere innhold.
 
-## Hvordan
+## Hvordan:
+Gleam har innebygde funksjoner og biblioteker for å enkelt parse HTML. Et eksempel på dette er funksjonen `Html.parse`, som leser og strukturerer HTML-koden og returnerer et tre med alle elementer og deres attributter. Her er et eksempel på bruk av denne funksjonen:
 
-For å analysere HTML i Gleam, kan du bruke biblioteket "html_beautify". Her er et eksempel på hvordan du kan bruke dette biblioteket:
+```Gleam 
+let result = Html.parse("<p>Hello <b>world</b>!</p>")
 
-```Gleam
-import html_beautify.{parse, select}
-
-//parse HTML from a URL
-let html = parse("https://www.example.com")
-
-//select specific elements using CSS selectors
-let links = select(html, "a")
-
-//print out the links
-for link in links {
-  io.println(link)
-}
+Html.get_text(result) // output: "Hello world!"
+Html.get_children(result) // output: [ "<p>", "<b>world</b>", "!" ]
+Html.get_attributes(result) // output: { inner_text: "Hello world!" }
 ```
-Dette vil gi deg en liste over alle lenkene på nettsiden som er hentet fra URLen.
+I dette eksempelet ser vi at funksjonen `Html.parse` har analysert og strukturert HTML-koden og returnert et tre med informasjonen.
 
-## Dypdykk
+## Dypdykk:
+Parsing av HTML har vært en viktig del av utvikling av nettsider siden det ble introdusert på 90-tallet. Tidligere ble dette gjort manuelt, men med innføring av programmeringsspråk som Gleam har denne prosessen blitt automatisert og mer effektiv.
 
-For å gå enda dypere i parsing av HTML, kan du også bruke funksjonen "parse_sanitize" som fjerner all HTML formatering fra teksten og returnerer en ren tekststreng. Dette kan være nyttig hvis du kun er interessert i å analysere teksten på en nettside og ikke det visuelle innholdet.
+En alternativ måte å parse HTML på er å bruke et tredjepartsbibliotek som f.eks. `htmlparser2` for Node.js. Dette biblioteket har et større utvalg av funksjoner og muligheter, men Gleams innebygde funksjoner kan være tilstrekkelig for enklere parsing.
 
-Det er også mulig å bruke CSS-selektorer til å hente ut spesifikke elementer fra en HTML-side. Dette gjør det enklere å ekstrahere data fra en nettside uten å måtte gå gjennom alt manuelt.
+Ved bruk av `Html.parse` funksjonen kan man også spesifisere en liste med tillatte og uønskede elementer, noe som gir større kontroll over hva som blir returnert fra parsingen.
 
-## Se også
-
-- [html_beautify dokumentasjon](https://hexdocs.pm/gleam/0.13.0/Html.Beautify.html)
-- [Gleam offisiell nettside](https://gleam.run/)
-- [CSS-selektorer for mer informasjon om CSS-selektorer](https://www.w3schools.com/cssref/css_selectors.asp)
+## Se også:
+- Offisiell Gleam dokumentasjon: https://gleam.run/documentation/
+- Tutorial om bruk av Gleam og parsing av HTML: https://dev.to/raphaelbaude/learn-gleam-part-4-parsing-html-with-gleam-248l

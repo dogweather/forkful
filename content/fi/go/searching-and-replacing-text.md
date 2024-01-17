@@ -10,76 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mikä & Miksi?
+Etsiminen ja tekstin korvaaminen ovat yleisiä ohjelmoijien tekemiä tehtäviä. Tämä tarkoittaa yksinkertaisesti antamasi tekstin sanojen tai lauseiden löytämistä ja korvaamista toisilla sanoilla tai lauseilla. Ohjelmoijat tekevät tätä usein, kun he haluavat muuttaa tai päivittää tiettyä osaa koodistaan.
 
-Miksi joku haluaisi etsiä ja korvata tekstiä Go-kielellä? Yksinkertaisesti sanottuna, tekstien etsiminen ja korvaaminen on erittäin hyödyllinen toiminto, jota voi tarvita koodauksessa. Se voi säästää aikaa ja vaivaa ja auttaa pitämään koodisi järjesteltynä ja tehokkaana.
-
-## Miten
-
-Etsi ja korvaa -toiminnon toteuttaminen Go-kielellä ei ole vaikeaa. Voit käyttää sisäänrakennettua replace-funktiota, joka löytyy strings-paketista. Tämä funktio ottaa kolme parametria: teksti, jota haluat etsiä, korvaava teksti ja alkuperäinen teksti, jossa haluat suorittaa korvauksen.
+## Miten?
+Go-kielellä etsimisen ja korvaamisen voi tehdä helposti käyttämällä sisäänrakennettua `strings.Replace` -funktiota. Alla on esimerkki, jossa etsimme ja korvaamme sanan "vanha" sanalla "uusi":
 
 ```Go
-package main
-
-import (
-    "fmt"
-    "strings"
-)
-
-func main() {
-    text := "Tervetuloa Go-kieleen!"
-    newText := strings.Replace(text, "Tervetuloa", "Hei", 1)
-    fmt.Println(newText)
-}
+teksti := "Tämä on vanha teksti"
+uusiTeksti := strings.Replace(teksti, "vanha", "uusi", 1)
+fmt.Println(uusiTeksti) // Tulostaa: "Tämä on uusi teksti"
 ```
 
-Tässä esimerkissä käytämme replace-funktiota korvaamaan sanan "Tervetuloa" sanalla "Hei". Kolmas parametri "1" tarkoittaa, että korvaus tehdään vain ensimmäiseen esiintymään. Tulostus olisi "Hei Go-kieleen!".
-
-Voit myös käyttää strings.ReplaceAll-funktiota, jos haluat korvata kaikki esiintymät.
+Voimme myös antaa lisäparametrina korvausten määrän, jotta voimme korvata useamman kuin yhden esiintymän. Esimerkiksi:
 
 ```Go
-package main
-
-import (
-    "fmt"
-    "strings"
-)
-
-func main() {
-    text := "Tervetuloa Tervetuloa Tervetuloa!"
-    newText := strings.ReplaceAll(text, "Tervetuloa", "Hei")
-    fmt.Println(newText)
-}
+teksti := "Korvataan vanha sanonta tässä vanhassa maailmassa"
+uusiTeksti := strings.Replace(teksti, "vanha", "uusi", 2)
+fmt.Println(uusiTeksti) // Tulostaa: "Korvataan uusi sanonta tässä uudessa maailmassa"
 ```
 
-Tämä tulostaisi "Hei Hei Hei!".
-
-## Syvempi sukellus
-
-Go tarjoaa myös muita vaihtoehtoja tekstien etsimiseen ja korvaamiseen. Voit esimerkiksi käyttää regex-käyttöliittymää käyttämällä regexp-pakettia. Tämä mahdollistaa monimutkaisempien korvausten ja hakuoperaatioiden suorittamisen.
-
-```Go
-package main
-
-import (
-    "fmt"
-    "regexp"
-)
-
-func main() {
-    text := "Auto, moottoripyörä, polkupyörä"
-    re := regexp.MustCompile("moottoripyörä")
-    newText := re.ReplaceAllString(text, "vene")
-    fmt.Println(newText)
-}
-```
-
-Tässä esimerkissä käytämme regexp-pakettia etsimään sanaa "moottoripyörä" ja korvaamaan sen sanalla "vene". Tulostus olisi "Auto, vene, polkupyörä".
-
-On myös muita usein käytettyjä kirjastoja, kuten text/template ja strings.Builder, jotka tarjoavat lisää vaihtoehtoja tekstien etsimiseen ja korvaamiseen.
+## Syvällinen sukellus
+Etsimistä ja korvaamista on tehty ohjelmoinnissa jo pitkään, ja eri kielillä on erilaisia tapoja hoitaa tämä tehtävä. Esimerkiksi C-kielellä voidaan käyttää `strstr()` -funktiota, ja Java-kielellä voidaan käyttää `replace()` -metodia. Go-kielessä `strings.Replace` on rakennettu standardikirjaston osaksi, joten se on kätevä ratkaisu tekstien käsittelyyn.
 
 ## Katso myös
-
-- [Go:n virallinen dokumentaatio tekstien korvaamisesta](https://golang.org/pkg/strings/#Replace)
-- [Go:n regexp-paketti](https://golang.org/pkg/regexp/)
-- [Go:n strings.Builder-paketti](https://golang.org/pkg/strings/#Builder)
+- [Go:n virallinen dokumentaatio](https://golang.org/pkg/strings/#Replace)
+- [Esimerkkejä Go-koodilla](https://gobyexample.com/string-functions)
+- [Stringien käsittelyn vertailu eri kielillä](https://benchmarksgame-team.pages.debian.net/benchmarksgame/fastest/go-python3.html)

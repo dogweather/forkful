@@ -10,34 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
 
-Att konkaternera strängar är en viktig del av programmering eftersom det tillåter oss att kombinera flera textsträngar och skapa mer komplexa uttryck. Det är särskilt användbart när vi behöver bygga dynamiska textsträngar som inkluderar variabler eller användarinmatning.
+Att kontinuerligt sammanfoga strängar är en viktig del av programmering. Det betyder att kombinera två eller flera strängar till en enda sträng. Programmerare använder denna teknik för att skapa mer dynamiska och användbara texter och för att utföra olika manipulationer på strängar.
 
-## Hur man gör
-
-För att konkaternera strängar i Haskell använder vi operatorn "++", vilket betyder att vi helt enkelt lägger till en sträng på slutet av en annan. Vi kan också använda funktionen "concat" för att konkaternera en lista av strängar. Här är ett exempel:
+## Hur man gör:
 
 ```Haskell
-sträng1 ++ sträng2
+"Hello " ++ "World!" -- Output: "Hello World!"
 ```
-
-I detta exempel kommer sträng2 att läggas till slutet av sträng1. Om vi vill konkaternera flera strängar i en lista kan vi använda "concat" funktionen:
 
 ```Haskell
-concat [sträng1, sträng2, sträng3]
+"2 + 2 is " ++ show (2 + 2) -- Output: "2 + 2 is 4"
 ```
 
-Detta kommer att ge oss en sammanfogad sträng av sträng1, sträng2 och sträng3.
+## Djupdykning:
 
-## Djupdykning
+Historiskt sett har sammanfogning av strängar varit begränsad inom programmeringsspråken, men det har ändrats med introduktionen av Haskell-programmeringsspråket. Det finns också alternativa sätt att sammanfoga strängar, till exempel med formatsträngar eller funktioner som "join" i andra språk. I Haskell används operatorn "++" för sammanfogning av strängar, och det är också värt att nämna att dessa operatorer kan användas för att manipulera strängar på olika sätt, som att ta bort eller ersätta delar av en sträng.
 
-Att konkaternera strängar i Haskell är inte bara användbart för att skapa dynamiska textsträngar, det är också en effektiv och snabb metod. Det är också en flexibel metod eftersom vi kan konkaternera en obegränsad mängd strängar med hjälp av operatorn "++" eller funktionen "concat".
+## Se även:
 
-En viktig sak att notera är att när vi konkaternerar strängar, skapas en helt ny sträng istället för att ändra på de ursprungliga strängarna. Detta är viktigt att komma ihåg eftersom det är ett grundläggande koncept i de flesta funktionella programmeringsspråk som Haskell.
+Här är några länkar för mer information om hur man sammanfogar strängar och andra användbara manipuleringar av strängar:
 
-## Se också
-
-- [Haskell String-merging](https://www.tutorialspoint.com/haskell/haskell_string_merging.htm)
-- [Haskell String Functions](https://www.programiz.com/haskell-programming/string-functions)
-- [Haskell Concatenation](https://hackr.io/tutorials/learn-haskell/concatenation)
+- [Haskell dokumentation för strängar](https://www.haskell.org/tutorial/strings.html)
+- [Jämförelse av olika metoder för att sammanfoga strängar i olika språk](https://lord.io/blog/2014/strconcat/)
+- [Mer om manipulering av strängar i Haskell](https://wiki.haskell.org/Strings)

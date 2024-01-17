@@ -1,7 +1,7 @@
 ---
-title:                "发送HTTP请求"
-html_title:           "Javascript: 发送HTTP请求"
-simple_title:         "发送HTTP请求"
+title:                "发送一次http请求"
+html_title:           "Javascript: 发送一次http请求"
+simple_title:         "发送一次http请求"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "HTML and the Web"
@@ -10,59 +10,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么要发送HTTP请求
+什么是发送HTTP请求，以及为什么程序员这样做？
+发送HTTP请求是将信息从一个程序发送到另一个程序的步骤。程序员这样做是为了与其他程序进行通信，从而获得所需的信息。
 
-发送HTTP请求是与服务器通信的主要方式。它允许我们获取、发送或更新数据，从而构建交互式的网络应用程序。
-
-## 如何发送HTTP请求
-
-发送HTTP请求的方法有很多，但是最常用的是使用Javascript中内置的XMLHttpRequest对象。以下是一个简单的示例代码：
-
+怎样做：
 ```Javascript
-// 创建XMLHttpRequest对象
-const xhr = new XMLHttpRequest();
-
-// 指定请求目标和请求类型
-xhr.open('GET', 'https://api.example.com/users');
-
-// 发送请求
-xhr.send();
-
-// 监听请求状态改变事件
-xhr.onreadystatechange = function() {
-  // 检查请求状态
-  if (xhr.readyState === XMLHttpRequest.DONE) {
-    // 检查响应状态
-    if (xhr.status === 200) {
-      // 响应成功，使用responseText获取响应数据
-      const data = xhr.responseText;
-      console.log(data);
-    } else {
-      // 响应失败，输出错误信息
-      console.log("Error: " + xhr.status);
-    }
-  }
-}
+// 使用XMLHttpRequest对象发送HTTP请求
+var xhr = new XMLHttpRequest();
+xhr.open('GET', 'http://www.example.com/', true); // 在第一个参数中指定请求方法，第二个参数是请求的URL，第三个参数表示该请求是否应该异步处理。
+xhr.send(); // 发送请求
+console.log(xhr.responseText); // 获取服务器的响应
 ```
+输出：如果成功发送了请求，控制台会打印出服务器返回的文本。
 
-以上代码会向"https://api.example.com/users"发送一个GET请求，并在控制台输出响应数据。
+深入探讨：
+发送HTTP请求的历史背景：在Web发展初期，网页只能通过链接来进行通信，但是这种方式有限制。随着技术的发展，出现了更加高效和灵活的HTTP请求方式，从而推动了Web的发展。
+其他可选的方法：除了使用XMLHttpRequest对象，还可以使用Fetch API来发送HTTP请求。这是一种基于Promise的新技术，使得请求更加简洁和易于使用。
+实现细节：程序员可根据自己的需求使用不同的HTTP请求方法，如GET、POST、PUT和DELETE。通常，服务器会返回一个状态码来表示请求的成功或失败。
 
-## 深入探讨HTTP请求
-
-除了上面提到的XMLHttpRequest对象，还有其他方法可以发送HTTP请求，比如使用第三方库如Axios、Fetch等，或者使用浏览器中内置的Fetch API。
-
-HTTP请求的一个重要组成部分是URL，它由以下几部分组成：
-
-- 协议：一般为“http”或“https”
-- 域名：服务器的地址，比如“api.example.com”
-- 端口（可选）：服务器的HTTP端口，默认为80，HTTPS端口为443
-- 路径（可选）：指定请求的资源路径，比如“/users”
-- 查询参数（可选）：使用问号“?”将参数和值连接，多个参数用“&”分隔，比如“?id=123&name=john”
-
-除了GET请求外，还有POST、PUT、DELETE等其他类型的HTTP请求，它们可以在请求中传递不同类型的数据，如表单数据、JSON数据等。
-
-## 查看也可以
-
-- [XMLHttpRequest对象文档](https://developer.mozilla.org/zh-CN/docs/Web/API/XMLHttpRequest)
-- [Fetch API文档](https://developer.mozilla.org/zh-CN/docs/Web/API/Fetch_API)
-- [Axios文档](https://github.com/axios/axios)
+也可以参考：
+- MDN的XMLHttpRequest文档：https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest
+- MDN的Fetch API文档：https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API

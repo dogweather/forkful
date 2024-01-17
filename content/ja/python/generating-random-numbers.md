@@ -1,7 +1,7 @@
 ---
-title:                "ランダムな数字を生成する"
-html_title:           "Python: ランダムな数字を生成する"
-simple_title:         "ランダムな数字を生成する"
+title:                "乱数の生成"
+html_title:           "Python: 乱数の生成"
+simple_title:         "乱数の生成"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Numbers"
@@ -10,38 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ？
+## 何？なぜ？
+ランダムな数字を生成することは、プログラマーがプログラミング中に行う重要なタスクの一つです。ランダムな数字は、ゲームやシミュレーション、暗号化などのアプリケーションで使用されます。プログラマーは、ユーザーにとってランダムで不可予の値を生成する必要がある場合に、この技術を使用します。
 
-ランダムな数字を生成することで、データをより多様化し、偶然性をシミュレートすることができます。これにより、プログラムのテストやゲーム開発など、さまざまな用途で活用することができます。
-
-## 使い方
+## 方法：
+Pythonでは、**random**モジュールを使用して、簡単にランダムな数字を生成することができます。下記のコードを使用して、10から20までのランダムな整数を生成する方法を見てみましょう。
 
 ```Python
-# ランダムモジュールをインポート
 import random
-
-# 0から10の範囲のランダムな整数を生成
-print(random.randint(0,10))
-
-# リストからランダムに要素を選択
-list = ["りんご", "バナナ", "オレンジ", "イチゴ"]
-print(random.choice(list))
-
-# 0から1までの範囲のランダムな小数を生成
-print(random.random())
+random_number = random.randint(10, 20)
+print(random_number)
 ```
 
-プログラムを実行すると、毎回異なる結果が得られることがわかります。また、シード値を指定することで、同じ結果を再現することも可能です。
+出力は以下のようになります。
 
-## ディープダイブ
+```
+16
+```
 
-ランダムな数字を生成する方法はさまざまありますが、大きく分けて疑似乱数と真の乱数の2種類があります。
+また、小数点以下のランダムな数値を生成することもできます。下記のコードは、0から1までのランダムな小数点以下の数値を生成する例です。
 
-疑似乱数はアルゴリズムに基づいて生成されるため、完全なランダム性を持ちません。一方、真の乱数は外部要因によって生成されるため、より偶然性を持ちます。Pythonのrandomモジュールは疑似乱数を生成するため、通常の用途では問題ありませんが、暗号技術などでの使用は避けるべきです。
+```Python
+import random
+random_float = random.random()
+print(random_float)
+```
 
-## 参考リンク
+出力は以下のようになります。
 
-- [Python公式ドキュメント - ランダムモジュール](https://docs.python.org/ja/3/library/random.html)
-- [GeeksforGeeks - Random number generation in Python](https://www.geeksforgeeks.org/random-number-generation-in-python/)
-- [Qiita - Pythonでランダムな数値を生成する方法](https://qiita.com/tomotaka_ito/items/ae7be28a4308c4766c9f)
-- [Python Tips - Random Number Generators in Python](https://pythontips.com/2017/12/04/random-number-generators-in-python/)
+```
+0.782994658361
+```
+
+## 詳しく調べる：
+ランダムな数字を生成するために、様々なアルゴリズムが使用されます。疑似乱数生成器と呼ばれるアルゴリズムは、事前に決められた種（seed）からランダムな数列を生成します。Pythonでは、初期化する種を指定することで、同じ数字の再現性を得ることができます。また、外部の物理現象を利用して本物のランダム数列を生成するハードウェアランダム数生成器もあります。
+
+Pythonでランダムな数字を生成するための他の方法として、**random.uniform**関数や**random.choice**関数があります。詳しくは[公式ドキュメント](https://docs.python.org/ja/3/library/random.html)を参照してください。
+
+## 関連リンク：
+- [公式ドキュメント](https://docs.python.org/ja/3/library/random.html)
+- [Pythonにおける疑似乱数生成器の仕組み](https://dozzie.jarowit.net/1998/12/python-random/)
+- [ハードウェアランダム数生成器とは？](https://www.everythingrf.com/community/what-is-a-hardware-random-number-generator)

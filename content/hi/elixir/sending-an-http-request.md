@@ -1,7 +1,7 @@
 ---
-title:                "एक http अनुरोध भेजना"
-html_title:           "Elixir: एक http अनुरोध भेजना"
-simple_title:         "एक http अनुरोध भेजना"
+title:                "HTTP अनुरोध भेजना"
+html_title:           "Elixir: HTTP अनुरोध भेजना"
+simple_title:         "HTTP अनुरोध भेजना"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "HTML and the Web"
@@ -10,40 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
+## क्या और क्यों?
+HTTP अनुरोध भेजना एक प्रोग्रामिंग कार्य है जहां प्रोग्रामर अन्य सर्वर को डेटा को भेजने के लिए अनुरोध भेजते हैं। यह इसलिए क्योंकि डेटा साझा करने के लिए इंटरनेट का उपयोग करने का सबसे प्रमुख और आसान तरीका है।
 
-एक HTTP अनुरोध भेजने में किसी को कितना रुचि हो सकता है, इसे समझने के लिए सूचना उपलब्ध कराने से संबंधित हो सकता है।
-
-## कैसे करें
-
+## कैसे करें:
 ```elixir
-defmodule HTTPRequest do
-  def send(method, url) do
-    case method do
-      "GET" -> IO.puts("Request sent to #{url} using the GET method.")
-      "POST" -> IO.puts("Request sent to #{url} using the POST method.")
-      "PUT" -> IO.puts("Request sent to #{url} using the PUT method.")
-      "DELETE" -> IO.puts("Request sent to #{url} using the DELETE method.")
-      _ -> IO.puts("Invalid method.")
-    end
-  end
+# HTTP इनइक्सन के सहायता से HTTP अनुरोध भेजें
+HTTPoison.get!( "https://www.example.com/" )
+
+# HTTP कोड स्नीपेट के शुरू में एक HTTPoison इनस्टेंस पेश करके HTTP अनुरोध भेजें
+defmodule MyModule do
+    use HTTPoison
+
+    HTTPoison.get!( "https://www.example.com/" )
 end
 
-method = "GET"
-url = "https://example.com"
-HTTPRequest.send(method, url)
+# उत्पादन:
+%HTTPoison.Response{ status_code: 200, body: "<!DOCTYPE html> ...", headers: ... }
 ```
 
-इस कोड ब्लॉक देखकर आप एक एचटीटीपी अनुरोध भेजने के लिए कैसे कोड कर सकते हैं और कैसे उसकी उत्पादन की जांच कर सकते हैं।
+## गहरी जाँच:
+HTTP वेबसाइट के अतिरिक्त अन्य विकल्प शामिल हैं। उनमें सबसे लोकप्रिय विकल्प जैसे GET, POST, PUT, DELETE आदि शामिल हैं। HTTP क्लाइंट लाइब्रेरी जैसे HTTPoison या आप अपने एपीआई उपयोगकर्ता को कुछ विशेष प्रकार के डेटा जैसे JSON या XML में भेज सकते हैं।
 
-## गहराई में जाएँ
-
-HTTP अनुरोध भेजने के लिए, हम ईक्सर का अनुकरण कर सकते हैं, जो कि असंबद्ध और एसिन्क्रोनस कार्रवाई के लिए भी जाना जाता है। HTTPoison और Mint जैसे कई पैकेज उपलब्ध हैं जो HTTP अनुरोधों को अधिक सहज बनाने के लिए आसान माध्यम प्रदान करते हैं।
-
-## देखें सहायक
-
-[HTTPoison](https://hex.pm/packages/httpoison)
-
-[Mint](https://hex.pm/packages/mint)
-
-[An Introduction to HTTP Clients in Elixir](https://www.syndicode.com/blog/2019/02/22/an-introduction-to-http-clients-in-elixir/)
+## आगे से देखें:
+- [HTTPoison डॉक्यूमेंटेशन](https://hexdocs.pm/httpoison/readme.html)
+- [एचटीटीपी हाइपर टॉरशन स्पेस](https://httpstatus.es/)
+- [HTTP क्लाइंट लाइब्रेरी की तुलना](https://github.com/staskobzar/http-comparison)

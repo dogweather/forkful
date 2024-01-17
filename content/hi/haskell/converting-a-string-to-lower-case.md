@@ -1,7 +1,7 @@
 ---
-title:                "स्ट्रिंग को छोटे अक्षर में रूपांतरित करना"
-html_title:           "Haskell: स्ट्रिंग को छोटे अक्षर में रूपांतरित करना"
-simple_title:         "स्ट्रिंग को छोटे अक्षर में रूपांतरित करना"
+title:                "स्ट्रिंग को लोअर केस में रूपांतरित करना"
+html_title:           "Haskell: स्ट्रिंग को लोअर केस में रूपांतरित करना"
+simple_title:         "स्ट्रिंग को लोअर केस में रूपांतरित करना"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -10,40 +10,18 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
+## क्या और क्यों?
+कोन्टेक्स्ट से बाहर आते हुए हम कस्टम अलग्योरिदम को इस्तेमाल करके स्ट्रिंग को लोअर केस में बदलना चाहते हैं। यह काम उस स्थिति में किया जाता है जब हमें किसी अन्य नामों की बजाय स्ट्रिंग को स्थानांतरित करना हो।
 
-कोई भी प्रोग्रामर कोई भी भाषा सीखते हुए अपने कार्यों को सरल बनाने का प्रयास करता है। इसलिए, मूल रूप से वह अपने कोड को सबसे प्रभावी तरीके से लिखना चाहता है। स्ट्रिंग को लोअर केस में रूपांतरित करने से संस्करण और कॉपी/पेस्ट आसान होता है। यह भी पढ़ें: [लघुक्रम क्या होता है और वास्तव में इसे लिखना क्यों आसान होता है](https://www.haskell.org/).
-
-## कैसे करें
-
-स्ट्रिंग को लोअर केस में रूपांतरित करने के लिए, हास्केल में `toLower` फंक्शन का प्रयोग किया जाता है। इसका उपयोग निम्न आदेशिकता के साथ किया जाता है:
-
+## कैसे करें?
 ```Haskell
-toLower :: Char -> Char
+toLower :: Char -> Char -- Char को Used करके एक Char टाइप को लोअर केस में बदलता है 
+map toLower "HELLO Haskell!" -- "hello haskell!"
 ```
 
-जहाँ `toLower` एक वर्ग से वर्ग परिवर्तन करता है, और `Char` वर्ग वास्तव में एक एनुमेरेबल एवं चरित्र मनचाहे वाक्यांश में होता है। आइसो बर के साथ, हास्केल में एक सरल रीसोर्स है जो पुरोहित और एनोंपरान प्रदान करता है जो कि आप चाहते हैं और चाहते हैं. कि आप क्यों विकसित कर रहे हैं।
+## गहराई में
+किसी भी भाषा में स्ट्रिंग को लोअर केस में बदलना बहुत आसान है। आपको कनवर्टिंग के लिए प्रोग्रामिंग भाषा की कोई क्षमता की जरूरत नहीं है। हैस्केल में, हम इस कार्य को आसानी से `map` फंक्शन के माध्यम से कर सकते हैं।
 
-यह हमारे स्ट्रिंग को लोअर केस में रूपांतरित करने का एक उदाहरण है:
-
-```Haskell
-toLower 'H' -- output: 'h'
-toLower 'E' -- output: 'e'
-toLower 'l' -- output: 'l'
-toLower 'L' -- output: 'l'
-toLower 'O' -- output: 'o'
-```
-
-यदि हम `module Main` के साथ अपना कोड रखते हैं, तो हम निम्न रूप से भी लिख सकते हैं:
-
-```Haskell
-module Main where
-
-import Data.Char (toLower)
-
-main :: IO ()
-main = do
-  putStrLn (toLower 'H') -- output: 'h'
-  putStrLn (toLower 'E') -- output: 'e'
-  putStrLn (toLower 'l') -- output: 'l'
-  putStrLn (toLower 'L') -- output: 'l'
+## और भी देखें
+- [Haskell Wiki - String Manipulation](https://wiki.haskell.org/String_manipulation)
+- [GeeksforGeeks - Convert String to Lowercase in Haskell](https://www.geeksforgeeks.org/convert-a-string-to-lower-case-in-haskell/)

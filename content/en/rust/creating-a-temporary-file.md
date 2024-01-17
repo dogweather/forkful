@@ -10,49 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-Creating temporary files in programming is a common practice that allows for efficient and secure data handling. In Rust, it is particularly useful for managing file operations that do not require a permanent storage solution.
+Creating a temporary file in programming refers to generating a file that will only exist temporarily and will be deleted once its purpose is served. Programmers often do this in order to store and retrieve data in a temporary setting without cluttering their system with unnecessary files.
 
-## How To
+## How to:
 
-To create a temporary file in Rust, we can use the `TempDir` struct from the `tempfile` crate. First, we need to add the crate as a dependency in our `Cargo.toml` file:
+Creating a temporary file in Rust is a straightforward process using the `tempfile` crate. First, we need to add the `tempfile` dependency in our `Cargo.toml` file:
 
-```
+```Rust
 [dependencies]
 tempfile = "3.1.0"
 ```
 
-Next, we can use the `tempfile::tempdir()` function to create a temporary directory and store it in a `TempDir` variable. We can then use this variable to perform various operations on the temporary file. For example:
+Next, we can use the `tempfile::Builder` struct to create a temporary file and specify its name and location:
 
-```
-use tempfile::tempdir;
- 
-let temp_dir = tempdir().expect("Failed to create temporary directory.");
- 
-// Create a new temporary file inside the directory
-let temp_file = temp_dir.path().join("temp.txt");
- 
-// Write some data to the file
-std::fs::write(&temp_file, b"Hello World").expect("Failed to write to temporary file.");
- 
-// Read the data back from the file
-let data = std::fs::read(&temp_file).expect("Failed to read from temporary file.");
- 
-// Print the contents of the file
-println!("{:?}", std::str::from_utf8(&data));
+```Rust
+use tempfile::Builder;
+let temp_file = Builder::new().suffix(".txt").tempfile().unwrap();
 ```
 
-Running this code will output `Hello World`, which was the data we wrote to the temporary file.
+Finally, we can write data to the temporary file and retrieve its path:
 
-## Deep Dive
+```Rust
+use std::io::Write;
+temp_file.write_all(b"Hello World!").unwrap();
+let path = temp_file.path();
+println!("Temporary file path: {}", path.display());
+```
 
-Under the hood, the `tempfile` crate uses the operating system's native methods for creating temporary files. When we call the `tempdir()` function, it creates a directory using the `mkdtemp()` function on Unix-based systems or the `GetTempFileNameW()` function on Windows.
+Running this code will generate a temporary file with a `.txt` extension in the system's temporary directory. The program will also print out the path of the temporary file, which we can use to access the data written to it.
 
-The `TempDir` struct also implements the `Drop` trait, which means that as soon as the variable goes out of scope, the temporary directory will be deleted from the system. This ensures that our temporary files do not clutter up our file system and cause security or performance issues.
+## Deep Dive:
 
-## See Also
-- [`tempfile` crate documentation](https://docs.rs/tempfile/3.1.0/tempfile/)
-- [`std::fs` module documentation](https://doc.rust-lang.org/std/fs/)
+Historically, creating temporary files was a common practice in programming, but with the advancement of memory management and multi-threading, it has become less popular. Another alternative to creating temporary files is using in-memory data structures, which can improve performance and avoid cluttering the system with unnecessary files.
 
-Creating temporary files in Rust is a simple and effective way to handle data that does not require permanent storage. By using the `tempfile` crate, we can easily create and manage temporary files in a secure and efficient manner. Happy coding!
+In Rust, the `tempfile` crate uses a unique naming convention to ensure that temporary file names do not conflict with existing files on the system. It also uses the operating system's temporary file directory by default, but this can be changed if needed.
+
+## See Also:
+
+- [Documentation for `tempfile` crate](https://docs.rs/tempfile/3.1.0/tempfile/)
+- [Alternatives to creating temporary files in programming](https://www.oreilly.com/library/view/unix-systems-programming/0130424110/ch04lev1sec2.html)
+- [Efficient use of temporary files in Rust](https://fasterthanli.me/articles/efficient-temp-files-in-rust)

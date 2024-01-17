@@ -10,50 +10,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜテストを書くのか
-テストを書くことの最も重要な理由は、コードの品質を保証することです。テストを書くことで、潜在的なバグを発見し、品質を向上させることができます。
+## 何&なぜ？
+テストを書くとは何か、そしてなぜプログラマーがそれを行うのかを説明する、2〜3文。
 
-## テストの書き方
-以下は、Clojureでテストを書く方法の例です。テストを書くための基本的な構文を示します。
+テストを書くことは、コードが期待どおりに動作するかを確認することです。プログラマーは、自分のコードが正しく動作することを保証するために、テストを書きます。
 
-```Clojure
-(defn add [x y]       ; 関数を定義
-  (+ x y))            ; 処理内容
+## 作り方：
+ ```Clojure
+ (defn add [x y]
+   (+ x y))
 
-```Clojure
-(require '[clojure.test :refer [deftest is]])
-
-(deftest test-addition    ; テストを定義
-  (is (= 4 (add 2 2))))  ; 期待する結果と実際の結果を比較
-
-(deftest test-multiplication
-  (is (= 9 (multiply 3 3))))
-
-```Clojure
-(run-tests)  ; テストを実行するコマンド
+ (add 2 3) ;; => 5
 ```
+上記の例では、```add```関数が正しく動作するかを確認するために、2つの数字を渡しています。もし結果が期待通りでなければ、テストは失敗します。
 
-上記のコードでは、最初に関数を定義し、その後にテストを定義しています。テストの実行は「run-tests」コマンドを使用します。テストが全てパス（成功）すると、以下のような出力が得られます。
+## 深いダイブ：
+テストを書くことは、コンピュータサイエンスの歴史的背景に基づいています。プログラマーは、バグを最小限に抑えるためにテストを書くことが重要だと考えています。Clojureでは、Clojure.testというライブラリを使って、テストを書くことができます。
 
-```Clojure
-Testing test-addition
-Ran 1 tests containing 1 assertions.
-0 failures, 0 errors.
-
-Testing test-multiplication
-Ran 1 tests containing 1 assertions.
-0 failures, 0 errors.
-```
-
-このように、テストを書くことで期待する結果と実際の結果を比較し、コードの正しさを確認することができます。
-
-## 深堀り
-Clojureでは、「clojure.test」ライブラリを使ってテストを書きます。このライブラリを使うことで、テストをより柔軟に書くことができます。また、テストの実行前や実行後に特定の処理を行うこともできます。
-
-テストを同じnamespaceにまとめることもできます。これにより、関連するテストをグループ化し、論理的な構造を持たせることができます。
-
-テストを書くことで、コードの品質を保証するだけでなく、自信を持ってプログラムを実行することができるようになります。また、不具合を早期に発見することで、修正が簡単になり、プロジェクト全体の品質を維持できるようになります。
-
-## See Also
-- [Clojureのテスト方法](https://clojuredocs.org/clojure.test)
-- [テスト駆動開発について](https://qiita.com/opengl-8080/items/81bf81a3d1f51f559148)
+## 関連リンク：
+- https://clojure.org/guides/test_clojure
+- https://www.baeldung.com/clojure-test-automation
+- https://blog.cleancoder.com/uncle-bob/2017/05/05/TestAssert.html

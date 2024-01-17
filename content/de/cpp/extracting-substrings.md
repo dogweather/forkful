@@ -1,7 +1,7 @@
 ---
-title:                "Substrings extrahieren"
-html_title:           "C++: Substrings extrahieren"
-simple_title:         "Substrings extrahieren"
+title:                "Aus dem Extrahieren von Teilzeichenfolgen"
+html_title:           "C++: Aus dem Extrahieren von Teilzeichenfolgen"
+simple_title:         "Aus dem Extrahieren von Teilzeichenfolgen"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -10,50 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Warum
+# Was & Warum?
 
-Wenn du C++ als Programmiersprache verwendest, musst du manchmal bestimmte Teilstrings oder Unterzeichenketten aus einem String extrahieren. Das kann nützlich sein, um beispielsweise bestimmte Informationen aus Nutzereingaben zu erhalten oder um Texte zu manipulieren.
+Es gibt viele Situationen, in denen Programmierer einen Teilstring aus einem vorhandenen String extrahieren müssen. Dies kann nützlich sein, um beispielsweise nur einen Teil einer längeren Zeichenkette zu verwenden oder bestimmte Informationen aus einem Text zu erfassen. Das Extrahieren von Teilstrings ist eine häufige Aufgabe in der Programmierung, die es ermöglicht, effizienter und präziser zu arbeiten.
 
-# Wie geht das?
+# Wie?
 
-Die Extraktion von Teilstrings in C++ ist recht einfach und kann auf verschiedene Arten erfolgen. Im Folgenden findest du drei Methoden, um Teilstrings in einem String zu extrahieren.
+Die C++-Standardbibliothek bietet eine Reihe von Funktionen, mit denen Teilstrings extrahiert werden können. Eine der einfachsten Möglichkeiten ist die `substr()`-Funktion, die in der `<string>`-Bibliothek enthalten ist. Hier ist ein Beispielcode, der die `substr()`-Funktion verwendet:
 
-```C++
-// Beispiel String
-std::string beispiel = "Ich liebe C++ Programmierung";
+```
+#include <iostream>
+#include <string>
+using namespace std;
 
-// Methode 1: std::string::substr()
-// Mit substr() können wir Teilstrings anhand von Start- und Endpositionen extrahieren.
-// Hier extrahieren wir den Teilstring "C++".
-int start_pos = 9; // Die Position, an der der Teilstring beginnt (inklusive)
-int length = 3; // Die Länge des Teilstrings
-std::string teilstring = beispiel.substr(start_pos, length); // Gibt "C++" zurück
-
-// Methode 2: std::string::find()
-// Mit find() können wir eine bestimmte Zeichenfolge in einem String suchen und die Position zurückgeben.
-// Hier suchen wir nach dem ersten Vorkommen von "b" und extrahieren den Teilstring bis zum Ende des Strings.
-int position = beispiel.find("b"); // Gibt 13 zurück (Position des ersten "b")
-std::string teilstring2 = beispiel.substr(position); // Gibt "bung" zurück
-
-// Methode 3: std::string::find_first_of()
-// Mit find_first_of() können wir nach einem beliebigen Zeichen aus einer Liste suchen.
-// Hier extrahieren wir den Teilstring bis zum ersten Leerzeichen.
-int position2 = beispiel.find_first_of(" "); // Gibt 2 zurück (Position des ersten Leerzeichens)
-std::string teilstring3 = beispiel.substr(0, position2); // Gibt "Ich" zurück
+int main() {
+  string text = "Hallo Welt!";
+  string teilstring = text.substr(0, 5);
+  cout << teilstring << endl;
+  // Output: Hallo
+  return 0;
+}
 ```
 
-### Ausgabe:
+In diesem Beispiel extrahieren wir einen Teilstring aus dem String "Hallo Welt!", indem wir `substr()` mit den Parametern `0` und `5` aufrufen. Der erste Parameter gibt den Startindex an, von dem der Teilstring extrahiert werden soll, und der zweite Parameter gibt die Anzahl der Zeichen an, die extrahiert werden sollen.
 
-Teilstring: C++ <br>
-Teilstring 2: bung <br>
-Teilstring 3: Ich
+# Tiefer tauchen
 
-# Tiefere Einblicke
+Das Extrahieren von Teilstrings ist eine gängige Aufgabe in der Programmierung und kann auf verschiedene Weise erreicht werden. Neben der `substr()`-Funktion gibt es auch andere Methoden, die verwendet werden können, wie zum Beispiel die `substr()`-Funktion mit anderen Parametern oder das Verwenden von Iteratoren.
 
-Du hast jetzt gesehen, wie einfach es ist, Teilstrings in C++ zu extrahieren. Aber es gibt noch mehr Möglichkeiten und Methoden, die du ausprobieren kannst, z.B. das Ersetzen von Teilstrings oder die Verwendung von Regulären Ausdrücken mit der Bibliothek <regex>. Experimentiere ein wenig und finde heraus, welche Methode am besten für deine spezifischen Anforderungen geeignet ist.
+Früher in der C-Programmierung musste man Teilstrings manuell extrahieren, indem man eine for-Schleife benutzte, um jeden Buchstaben einzeln zu überprüfen. Glücklicherweise sind wir heute mit modernen Programmiersprachen und ihren integrierten Funktionen gesegnet, die uns das Leben viel einfacher machen.
 
-# See Also
+Es ist wichtig zu beachten, dass bei der Verwendung von `substr()` der Startindex immer bei `0` beginnt und die Anzahl der Zeichen die Länge des extrahierten Teilstrings widerspiegelt. Wenn das Ende des Teilstrings nicht spezifiziert ist, wird der Rest der Zeichenkette extrahiert.
 
-- [std::string::substr() Dokumentation](https://en.cppreference.com/w/cpp/string/basic_string/substr)
-- [std::string::find() Dokumentation](https://en.cppreference.com/w/cpp/string/basic_string/find)
-- [std::string::find_first_of() Dokumentation](https://en.cppreference.com/w/cpp/string/basic_string/find_first_of)
+# Siehe auch
+
+- [C++ Strings: How to extract numbers from a string](https://www.programiz.com/cpp-programming/library-function/cctype/isdigit)
+- [C++ Strings: Making substring extraction backwards ](https://en.cppreference.com/w/cpp/string/basic_string/substr)

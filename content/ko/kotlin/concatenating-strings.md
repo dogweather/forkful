@@ -10,31 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
-이번 글에서는 Kotlin에서 문자열을 연결하는 것에 대해 알아보겠습니다. 문자열 연결은 우리가 프로그래밍을 할 때 빈번하게 사용되는 기능이며, 이를 알고 있으면 더 효율적인 코드를 작성할 수 있습니다.
+무엇 & 왜?
 
-## 방법
-먼저, 우리는 ```+``` 연산자를 이용하여 두 문자열을 연결할 수 있습니다. 예를 들어, 아래의 코드는 "Hello"와 "Kotlin"이라는 두 문자열을 연결하여 "Hello Kotlin"이라는 하나의 문자열을 생성합니다.
+코틀린에서, 문자열 연결은 두 개의 문자열을 결합하여 새로운 하나의 문자열을 만드는 작업을 말합니다. 이렇게 하는 이유는 때로는 여러 개의 문자열을 결합해야 할 때가 있기 때문입니다. 예를 들어, 사용자 이름을 받아서 인사말을 만들거나, 여러 개의 파일 경로를 결합하여 하나의 경로를 만들 때 사용할 수 있습니다.
+
+어떻게:
+
 ```Kotlin
-val str1 = "Hello"
-val str2 = "Kotlin"
-val result = str1 + str2
-println(result) // 출력 결과: Hello Kotlin
-```
-또는 우리는 ```StringBuilder``` 클래스를 사용하여 여러 개의 문자열을 연결할 수도 있습니다. 이 클래스는 불변성(immutable)의 문제를 해결하기 위해, 새로운 문자열을 생성하는 대신 기존의 문자열에 문자를 계속 추가하는 방식으로 작동합니다. 아래의 예시 코드를 보면 더욱 명확해집니다.
-```Kotlin
-val str1 = "Hello"
-val str2 = "Kotlin"
-val sb = StringBuilder()
-sb.append(str1)
-sb.append(str2)
-println(sb.toString()) // 출력 결과: Hello Kotlin
+val firstName = "John"
+val lastName = "Smith"
+val fullName = firstName + " " + lastName
+println(fullName)
 ```
 
-## 깊이 파고들기
-Kotlin에서 문자열 연결은 또 다른 흥미로운 점이 있습니다. 이미 ```String``` 클래스는 불변성을 가지기 때문에, 새로운 문자열이 생성될 때마다 새로운 인스턴스가 할당됩니다. 이는 성능 측면에서 비효율적일 수 있습니다. 하지만 ```StringBuilder```는 문자열을 수정하면서도 동일한 인스턴스를 사용하기 때문에 성능이 향상됩니다. 이를 통해 문자열 연결을 할 때 메모리와 성능 면에서 효율적인 코드를 작성할 수 있습니다.
+출력:
 
-## 살펴보기
-Kotlin 공식 문서에서 문자열 연결에 대한 더 많은 정보를 얻을 수 있습니다.
-- [Kotlin Strings](https://kotlinlang.org/docs/reference/basic-types.html#strings)
-- [StringBuilder Class](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-string-builder/)
+```
+John Smith
+```
+
+딥 다이브:
+
+여러분은 문자열을 연결하기 위해 `+` 연산자를 사용할 수 있지만,이는 매우 비효율적일 수 있습니다. 왜냐하면 매번 문자열을 연결할 때마다 새로운 문자열 객체를 만들기 때문입니다. 따라서 많은 문자열을 연결해야 할 경우 `StringBuilder` 클래스를 사용하는 것이 좋습니다. 이 클래스는 내부적으로 문자열 버퍼를 사용하여 문자열을 연결하므로 메모리를 효율적으로 사용할 수 있습니다.
+
+또한 다른 언어에서는 이 작업을 수행하는 방법이 다를 수 있습니다. 예를 들어, 자바에서는 `String.concat()` 메서드를 사용하여 문자열을 연결할 수 있습니다. 코틀린에서는 이와 같은 메서드가 없기 때문에 `+` 연산자를 사용해야 합니다.
+
+마지막으로, `+` 연산자는 코드를 읽기 쉽고 간결하게 만들어 주기 때문에 많은 개발자가 선호하는 방법입니다.
+
+참고 자료:
+
+코틀린 문서에서 문자열 연산자에 대해 더 자세히 알아보실 수 있습니다. 또한 `StringBuilder` 클래스에 대한 자세한 정보는 코틀린 문서나 자바 문서를 참고하시기 바랍니다.

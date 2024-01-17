@@ -10,53 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
-두 날짜를 비교하는 데 관심이 생기는 이유는 우리가 날짜와 시간 정보를 다룰 때 자주 마주하는 문제 중 하나입니다. 요구하는 기능에 따라 날짜와 시간을 정확하게 비교할 수 있어야 합니다. 이를 위해 Rust 프로그래밍 언어를 사용하여 어떻게 두 날짜를 비교할 수 있는지 알아보겠습니다.
+# 무엇 & 왜?
 
-## 어떻게
-```Rust
-// 필요한 라이브러리 가져오기
-use chrono::{DateTime, Utc, Duration};
+날짜 비교는 두 날짜가 서로 어떻게 비교되는지 알아보는 것을 의미합니다. 이 기술이 중요한 이유는 프로그래머가 날짜를 비교하여 더 많은 정보를 얻을 수 있기 때문입니다.
 
-// 비교할 날짜 생성
-let date_one: DateTime<Utc> = Utc::now();
-let date_two: DateTime<Utc> = Utc::now() + Duration::days(5); // 5일 후 날짜
-
-// 비교하기
-if date_one > date_two {
-    println!("첫 번째 날짜가 두 번째 날짜보다 미래입니다.");
-} else if date_one < date_two {
-    println!("첫 번째 날짜가 두 번째 날짜보다 과거입니다.");
-} else {
-    println!("두 날짜가 같습니다.");
-}
-```
-
-위 코드에서 우리가 사용한 라이브러리는 `chrono`입니다. 이 라이브러리는 날짜와 시간을 다루는 많은 기능을 제공해줍니다. 우리는 비교할 날짜를 `DateTime` 형태로 생성하고, `now()`를 사용하여 현재 시간을 가져온 후 `Duration`을 사용하여 5일을 더해 두 번째 날짜를 만들어주었습니다. 이후 `if` 문을 사용하여 두 날짜를 비교하고 적절한 출력을 해주었습니다.
-
-## 딥 다이브
-두 날짜를 비교할 때 자주 사용되는 또 다른 기능은 두 날짜간의 차이를 계산하는 것입니다. 이를 위해서는 `Duration`을 사용하여 두 날짜 사이의 차이를 계산해줄 수 있습니다.
+## 어떻게:
 
 ```Rust
-// 필요한 라이브러리 가져오기
-use chrono::{Utc, Duration};
+use chrono::{Date, TimeZone, Utc};
 
-// 비교할 날짜 생성
-let date_one: DateTime<Utc> = Utc::now();
-let date_two: DateTime<Utc> = Utc::now() + Duration::days(5); // 5일 후 날짜
+// 현재 날짜 및 UTC 시간 가져오기
+let now: Date<Utc> = Utc::today();
 
-// 두 날짜 사이의 차이 계산
-let difference = date_two - date_one;
+// 다음 주 일요일이 몇월 몇일인지 계산하기
+let next_sunday = Utc.ymd(2022, 11, 6) - now;
 
-println!("두 날짜 사이의 차이는 {} 일입니다.", difference.num_days());
+// 결과 출력: 1년 2개월 22일
+println!("{}", next_sunday);
 ```
 
-위 코드에서 우리는 `Duration`을 사용하여 두 날짜 사이의 차이를 계산하고 `num_days()` 메서드를 사용하여 이를 일 단위로 변환하였습니다.
+```Rust
+// 특정 날짜를 다른 타임존의 날짜로 변환하기
+let date = Utc.ymd(2021, 7, 11);
+let paris_date = date.with_timezone(&Paris);
 
-## 참고 자료
-- [chrono 라이브러리 공식 문서](https://docs.rs/chrono/0.4.19/chrono/)
-- [Rust 언어 공식 웹사이트](https://www.rust-lang.org/)
+// 결과 출력: 2021-07-11T02:00:00Z
+println!("{}", paris_date);
+```
 
----
-## 더 읽어보기
-- [Rust로 날짜와 시간 다루기](https://opensource.com/article/19/9/date-and-time-manipulation-rust)
+## 깊이 파헤치기:
+
+이 기능은 Rust의 chrono 라이브러리를 사용하여 구현되었습니다. 이 라이브러리는 날짜 및 시간에 관련된 여러 가지 기능을 제공합니다. 이전에는 Rust에서는 날짜 관리를 위한 별도의 라이브러리가 필요했지만, chrono는 이를 제공하여 개발자들에게 편리함을 제공하였습니다.
+
+또 다른 날짜 비교 방법으로는 Date의 크기를 비교하는 것이 있습니다. 이는 Date가 Ord trait를 구현하기 때문에 가능합니다. 또한 날짜를 비교할 때 Timezone도 고려해야 할 수 있습니다.
+
+## 더 알아보기:
+
+- Rust 공식 문서: [chrono](https://docs.rs/chrono)
+- Rust reddit 커뮤니티: [rustlang](https://www.reddit.com/r/rustlang/)

@@ -1,7 +1,7 @@
 ---
-title:                "Mallin mukaisia merkkejä vastaavien merkkien poistaminen"
-html_title:           "Javascript: Mallin mukaisia merkkejä vastaavien merkkien poistaminen"
-simple_title:         "Mallin mukaisia merkkejä vastaavien merkkien poistaminen"
+title:                "Mallia vastaavien merkkien poistaminen"
+html_title:           "Javascript: Mallia vastaavien merkkien poistaminen"
+simple_title:         "Mallia vastaavien merkkien poistaminen"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Strings"
@@ -10,31 +10,22 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä ja miksi?
+Merkkijonojen poistaminen, jotka vastaavat tiettyä kuvioa, on yleistä ohjelmoinnissa. Tämä prosessi mahdollistaa helpomman ja tehokkaamman datan käsittelyn ja muokkaamisen.
 
-Jokaiselle ohjelmoijalle saattaa joskus tulla tarve poistaa tietyt merkit tietyistä kohdista merkkijonossa. Tämä voi helpottaa tietojen muokkausta ja järjestelyä. Tässä artikkelissa opit, miten voit käyttää Javascriptia poistaaksesi merkkejä, jotka täyttävät tietyn mallin.
-
-## Miten
-
-Koodiesimerkki:
-
+## Kuinka tehdä:
+Esimerkki merkkijonon poistamisesta, jossa haluamme poistaa kaikki numeroilla alkavat merkkijonot:
 ```Javascript
-// Luo merkkijono, josta poistetaan merkkejä
-let merkkijono = "Tämä on esimerkkiteksti!";
-
-// Luo uusi merkkijono, josta poistetaan merkit, jotka täyttävät halutun mallin (esim. välilyönnit)
-let uusiMerkkijono = merkkijono.replace(/ /g, "");
-
-// Tulostaa uuden merkkijonon konsoliin
-console.log(uusiMerkkijono); //Tämäonesimerkkiteksti!
+let string = "123 Java on mahtavaa!";
+string = string.replace(/\d+/g, "");
+console.log(string); // Tulostaa: " Java on mahtavaa!";
 ```
 
-Kuten esimerkistä näkee, voit käyttää `replace()`-funktiota Javascriptilla poistamaan merkkejä tietystä merkkijonosta. Ensimmäisenä parametrina annetaan merkki tai merkkijono, joka halutaan poistaa, ja toisena parametrina haluttu korvaava merkki tai tyhjä merkkijono, mikäli halutaan vain poistaa merkkejä.
+## Syväsukellus:
+Merkkijonojen poistamisen historiallinen tausta voidaan jäljittää takaisin 1960-luvulle, jolloin awkingin ja kellerautonneen kehittivät ensimmäisen tietokantajärjestelmän, joka pystyi suorittamaan erilaisia ​​hakuja ja poistamaan suuria tietomääriä kerralla.
 
-## Syvällisempi katsaus
+Nykyään on olemassa useita tapoja poistaa merkkijonoja, jotka vastaavat tiettyä kuvioa, kuten käyttämällä split () -toimintoa tai säännöllisiä lausekkeita. Split () -funktiolla voit jakaa merkkijonon tiettyyn kuvioon perustuen ja poistaa näin haluamasi osat. Säännölliset lausekkeet puolestaan ​​tarjoavat monipuolisempia mahdollisuuksia ehdottomasti vastaavien merkkijonojen poistoon.
 
-`replace()`-funktio on osa String-objektin ominaisuuksia Javascriptissa. Sillä voidaan korvata merkkejä merkkijonosta, mutta se pystyy myös poistamaan merkkejä, jos toinen parametri annetaan tyhjä merkkijono. Nämä korvasäännöt voi määrittää myös merkkijonon alussa käyttämällä `RegExp`-objektia. Tässä esimerkissä merkkeinä `replace()`-funktiolle annetaan välilyönnit, mutta voit muuttaa mallia haluamallasi tavalla.
-
-## Katso myös
-
-- JavaScript String.replace() - Mozilla Developer Network, https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace
+## Katso myös:
+- [MDN Web Docs: säännölliset lausekkeet](https://developer.mozilla.org/fi/docs/Web/JavaScript/Guide/Regular_Expressions)
+- [W3Schools: split () -toiminto](https://www.w3schools.com/jsref/jsref_split.asp)

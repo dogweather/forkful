@@ -1,7 +1,7 @@
 ---
-title:                "חיפוש והחלפת טקסטים"
-html_title:           "Elixir: חיפוש והחלפת טקסטים"
-simple_title:         "חיפוש והחלפת טקסטים"
+title:                "חיפוש והחלפת טקסט"
+html_title:           "Elixir: חיפוש והחלפת טקסט"
+simple_title:         "חיפוש והחלפת טקסט"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -10,35 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## למה:
-
-החיפוש וההחלפה של טקסט הוא כלי חשוב בתכנות שימושי במיוחד כאשר מתעסקים עם קבצי טקסט גדולים או כאשר חייבים לבצע מעברים מהירים של שפת מקור מסוימת לאחרת. באמצעות חיפוש והחלפה, ניתן לחפש מחרוזות מסוימות בתוך קובץ טקסט ולהחליף אותן במחרוזות אחרות תוך קלות ומהירות.
+## מה זה & למה?
+חיפוש והחלפת טקסט הוא תהליך בו מציאת טקסט ספציפי בתוך קובץ והחלפתו בטקסט אחר. תהליך זה נחשב לחשוב וקשה למתכנתים, מכיוון שהם צריכים להיות מדויקים בהתאמה של הטקסט ולוודא שאין שינויים לא צפויים.
 
 ## איך לעשות:
-
-הקוד המצורף מראה כיצד לבצע חיפוש והחלפה תוך שימוש בשפת Elixir. בקוד נתונה מחרוזת איתה נבצע את החיפוש וההחלפה, ואת התוצאה נדפיס בעזרת הפונקציה IO.puts:
-
 ```Elixir
-text = "שלום עולם"
-put "מחרוזת ראשונה: #{text}"
+defmodule StringManipulator do
+  def search_replace(string, search_term, replace_term) do
+    String.replace(string, search_term, replace_term)
+  end
+end
 
-new_text = String.replace(text, "עולם", "כולם")
-IO.puts "מחרוזת חדשה: #{new_text}"
+StringManipulator.search_replace("Hello World", "World", "Universe") #=> "Hello Universe"
 ```
+קוד זה משתמש בפונקציה מובנית עבור חיפוש והחלפת טקסט, String.replace, כדי להחליף מחרוזת עם מחרוזת אחרת. הפונקציה זו מקבלת שלושה ארגומנטים: המחרוזת המקורית, מחרוזת החיפוש ומחרוזת ההחלפה. בדוגמה זו, המחרוזת "Hello World" נחלפת עם המחרוזת "Universe".
 
-תוצאה:
+## טיפול מקיף:
+ישנם אלטרנטיבות לחיפוש והחלפת טקסט כמו לאסוף את הטקסט עם קוד PATTERN שונה או ליצור פונקציות מותאמות אישית שיכולות לחפש ולהחליף טקסט. בנוסף, פונקציית חיפוש והחלפת הטקסט אמורה להיות כמה שיותר ביצועית ככל האפשר כדי לאפשר שימוש בתהליך זה בקבצים גדולים.
 
-```
-מחרוזת ראשונה: שלום עולם
-מחרוזת חדשה: שלום כולם
-```
-
-## טיול עמוק:
-
-באמצעות הפונקציה String.replace ניתן לבצע חיפוש והחלפה של מחרוזת בתוך מחרוזת אחרת. ניתן להעביר לפונקציה גם פרמטר נוסף שיכול לציין כמה פעמים חיפש למחרוזת ולהחליף אותה. כמו כן, באמצעות פונקציות אחרות כמו String.split ו- Enum.map ניתן לבצע חיפוש והחלפה בדיוק בהקשר הרצוי.
-
-## ראה גם:
-
-- [Documentation for String.replace in Elixir](https://hexdocs.pm/elixir/String.html#replace/4)
-- [Article on using Elixir for text processing and manipulation](https://www.itnext.io/text-processing-in-elixir-4eaac3cd69b7)
-- [Blog post on using Elixir for data processing](https://michal.muskala.eu/2017/02/19/efficient-data-processing-with-elixir.html)
+## ראו גם:
+- [פנאיון על חיפוש והחלפת טקסט ב-Elixir](https://elixir-lang.org/getting-started/pattern-matching.html)
+- [שפה שוודית בעלת דומיין ספציפי עבור חיפוש והחלפת טקסט](https://www.vim.org/)
+- [אפשרויות טיפול במחרוזת בנתיב Nandwani, כולל פרמטריזציה](https://www.tutorialspoint.com/data_structures_algorithms/string_manipulation.html)

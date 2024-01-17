@@ -1,7 +1,7 @@
 ---
-title:                "उपस्थित उपवाक्यों का प्राप्त करना"
-html_title:           "Kotlin: उपस्थित उपवाक्यों का प्राप्त करना"
-simple_title:         "उपस्थित उपवाक्यों का प्राप्त करना"
+title:                "उपस्तर समूहों को निकालना"
+html_title:           "Kotlin: उपस्तर समूहों को निकालना"
+simple_title:         "उपस्तर समूहों को निकालना"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Strings"
@@ -10,28 +10,22 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
+## क्या और क्यों?
+"Substring निकालना" क्या है, इसका प्रयोग क्यों करते हैं हम प्रोग्रामर? इसका सरल जवाब यह है कि substring उपस्थित string से छोटा string होता है जो उपस्थित string के कुछ अंशों को अलग कर लेता है। प्रोग्रामर इसका उपयोग स्ट्रिंग का स्नेहपूर्ण डेटा प्रकार के रूप में करते हैं।
 
-क्या आपने कभी किसी बड़े टेक्स्ट स्ट्रिंग से छोटे और उपयोगी स्ट्रिंग्स निकालने के बारे में सोचा है? यदि हाँ, तो यह आपको अपने कोड को और स्वचालित बनाने में मदद कर सकता है। सबसे रोचक हिस्सा यह है कि इसके लिए आपको अपने बार कोड का उपयोग करने की ज़रूरत नहीं है, अपने कोड को और बड़े और साफ बना सकते हैं।
-
-## कैसे करें
-
-स्ट्रिंग से सबसे आसान तरीका स्ट्रिंग का `substring` मेथड है। यह आपको दो इंदेक्स द्वारा पारिभाषित स्ट्रिंग के भीतर के सही हिस्से को लेने की अनुमति देता है। निम्नलिखित उदाहरण में, हम "Hello, World!" स्ट्रिंग से "World" को निकालने के लिए `substring` मेथड का उपयोग करते हैं।
-
+## कैसे करें:
 ```Kotlin
-val str = "Hello, World!"
-val substr = str.substring(7, 12)
-println(substr) // Output: World
+val str = "Hello World"
+val subStr = str.substring(0, 5)
+println(subStr)
 ```
 
-आप इस मेथड का `startIndex` और `endIndex` आर्ग्यूमेंट्स का उपयोग करके स्ट्रिंग से किसी भी हिस्से को निकाल सकते हैं। आइये इसके लिए और एक उदाहरण देखें, जहाँ हम एक स्ट्रिंग से पहले 5 अक्षरों को निकालते हैं।
+आपको बस मूल स्ट्रिंग(str) से substring(subStr) की शुरुआत और समाप्ति के स्थान को निर्दिष्ट करना होगा। यहां हमने "Hello World" स्ट्रिंग का प्रथम पांच अक्षर substring के रूप में निकाला है। यह कमान "Hello" स्क्रीन पर प्रिंट करेगी।
 
-```Kotlin
-val str = "Welcome to Kotlin"
-val substr = str.substring(0, 5)
-println(substr) // Output: Welco
-```
+## गहराई में जाएँ:
+substring का इतिहास दोनों 1957 में और 1966 में IBM ने प्रकाशित किया गया। substring डेटा को उपयुक्त ढंग से काटने के लिए कई तकनीकों और अल्गोरिदमों का उपयोग करता है। इसके अलावा, प्रोग्रामरों द्वारा substring का उपयोग स्ट्रिंग का अधिक मात्रा में डेटा प्राप्त करने के लिए भी किया जाता है।
 
-## गहराई में जाएं
-
-अब आप जानते हैं कि स्ट्रिंग से कैसे उपयोगी सबस्ट्रिंग्स निकाले जा सकते हैं, आपको अपने कोड को और अधिक बेहतर बनाने के लिए इसका उपयोग करना चाहिए। आप अपने एप्लिकेशन में डाटा को आसानी से फ़ॉर्मेट कर सकत
+## इसके अतिरिक्त देखें:
+- [Kotlin Official Documentation on Substring](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/substring.html)
+- [TutorialsPoint: Kotlin - Substring](https://www.tutorialspoint.com/kotlin/kotlin_substring.htm)
+- [Java2s: Kotlin substring() function with example](http://www.java2s.com/Tutorials/Kotlin/Kotlin_Tutorial/Kotlin_Substring_Function.htm)

@@ -10,41 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+## Che cos'è e perché si fanno i test?
+Scrivere i test è un'attività importante per i programmatori. Consiste nel creare una serie di test per verificare che il codice scritto funzioni correttamente. I programmatori lo fanno per assicurarsi che il loro codice sia privo di errori e per facilitare la manutenzione e il debugging in futuro.
 
-Scrivere test è una parte fondamentale dello sviluppo di software in Java. I test aiutano a garantire che il codice sia robusto, affidabile e funzioni correttamente. 
-
-## Come Si Fa
-
-Per scrivere i test in Java, è necessario utilizzare il framework di test JUnit. Questo framework è stato sviluppato appositamente per scrivere e eseguire test su codice Java. Di seguito viene mostrato un esempio di test di JUnit per verificare se il metodo `addProduct` della classe `ShoppingCart` aggiunge correttamente un prodotto al carrello:
+## Come fare:
+Ecco un esempio pratico di come scrivere un test in Java:
 
 ```Java
-@Test
-public void testAddProduct(){
-    ShoppingCart cart = new ShoppingCart();
-    Product product = new Product("Phone", 500);
-    cart.addProduct(product);
-    assertTrue(cart.containsProduct(product));
+import org.junit.Test;
+import static org.junit.Assert.*;
+
+public class CalcolatriceTest {
+    
+    @Test
+    public void testSomma() {
+        Calcolatrice calcolatrice = new Calcolatrice();
+        int risultato = calcolatrice.somma(5, 10);
+        assertEquals(15, risultato);
+    }
 }
 ```
 
-Nel codice sopra, viene creato un oggetto `ShoppingCart` e un oggetto `Product`. Successivamente, viene chiamato il metodo `addProduct` e viene verificato che il prodotto sia stato correttamente aggiunto al carrello.
+In questo esempio, stiamo testando il metodo "somma" della nostra classe "Calcolatrice". Utilizziamo l'annotazione "@Test" per indicare a Java che questo metodo è un test e ci aspettiamo che restituisca il risultato corretto, ovvero 15. Utilizziamo anche il metodo "assertEquals" per confrontare il risultato effettivo con quello atteso.
 
-Per utilizzare JUnit, devi importare la libreria nel tuo progetto (nel caso di un progetto Maven, puoi aggiungere la dipendenza nel file `pom.xml`) e annotare i tuoi metodi di test con `@Test`. Puoi anche utilizzare le asserzioni di JUnit come `assertTrue` e `assertEquals` per verificare l'output atteso del tuo codice.
+## Approfondimento:
+L'idea di scrivere i test è nata con lo sviluppo dei primi linguaggi di programmazione orientati agli oggetti, come Java. Prima di allora, i programmatori dovevano verificare manualmente il corretto funzionamento del loro codice tramite esecuzioni e debug. Oltre alla libreria di unit testing "JUnit", esistono anche altre alternative come "TestNG", "Mockito" e "PowerMock" per testare codice più complesso e che dipende da altri componenti.
 
-## Deep Dive 
+Se siamo alla ricerca di un approfondimento sulla scrittura dei test in Java, vi consigliamo di consultare la documentazione ufficiale di JUnit, disponibile qui: https://junit.org/junit5/ o di ricorrere ad altri tutorial e risorse online.
 
-Scrivere test efficaci in Java richiede un approccio sistematico. Ecco alcuni consigli per scrivere test di qualità:
-
-- Scrivi test per ogni metodo importante del tuo codice, in particolare per quelli che eseguono operazioni critiche o hanno requisiti specifici.
-- Usa una combinazione di test unitari (per testare singoli componenti del codice) e test di integrazione (per testare l'interazione tra più componenti).
-- Utilizza il mocking per simulare il comportamento di determinati oggetti o dipendenze all'interno dei tuoi test.
-- Mantieni i tuoi test indipendenti e non dipendenti da altri test.
-- Usa nomi descrittivi per i tuoi metodi di test, in modo che sia chiaro cosa stai testando.
-- Aggiorna i tuoi test quando il codice cambia, per garantire che continuino a funzionare correttamente.
-
-## Vedi Anche
-
-- [JUnit Documentation](https://junit.org/junit5/docs/current/user-guide/) - Documentazione ufficiale di JUnit.
-- [Mockito](https://site.mockito.org) - Un framework di mocking molto popolare per Java.
-- [Test-driven development (TDD)](https://en.wikipedia.org/wiki/Test-driven_development) - Una metodologia di sviluppo software in cui i test sono scritti prima del codice.
+## Vedi anche:
+Per ulteriori informazioni sulla scrittura dei test in Java, vi consigliamo di dare un'occhiata a questi siti:
+- https://www.baeldung.com/java-junit
+- https://www.tutorialspoint.com/java_xml/java_xml_xunit_testing.htm
+- https://www.vogella.com/tutorials/JUnit/article.html

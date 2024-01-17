@@ -1,7 +1,7 @@
 ---
-title:                "Omvandla en sträng till gemener"
-html_title:           "Python: Omvandla en sträng till gemener"
-simple_title:         "Omvandla en sträng till gemener"
+title:                "Omvandling av en sträng till gemener"
+html_title:           "Python: Omvandling av en sträng till gemener"
+simple_title:         "Omvandling av en sträng till gemener"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Strings"
@@ -10,30 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+# Vad & Varför?
+Konvertering av en sträng till små bokstäver är en vanlig uppgift inom programmering. Det innebär att alla bokstäver i en sträng görs om till små bokstäver istället för stora. Detta görs oftast för att underlätta jämförelse av strängar, då små och stora bokstäver annars behandlas som olika tecken i programmeringsspråk.
 
-Att konvertera en sträng till små bokstäver är en vanlig uppgift inom programmering, och det finns många praktiska användningsområden för detta. Det kan till exempel vara användbart när man ska söka eller filtrera igenom textdata, eller när man vill jämföra strängar oavsett deras skiftläge.
-
-## Hur man gör det
-
-För att konvertera en sträng till små bokstäver i Python, används den inbyggda funktionen `.lower()`. Det här exemplet visar hur man använder funktionen och skriver ut resultatet:
+# Hur man:
 ```Python
-my_str = "Hej, Världen!"
-print(my_str.lower())
+my_string = "HALLÅ Det är en STRÄNG"
+print(my_string.lower())
 ```
-
 Output:
-```
-hej, världen!
-```
+`hallå det är en sträng`
 
-Denna funktion är också tillgänglig för andra datatyper som innehåller text, som t.ex. listor eller dictionaries. Det är viktigt att notera att funktionen inte påverkar originalsträngen, utan returnerar en ny sträng med små bokstäver.
+Genom att använda metoden `.lower()` på en sträng-variabel blir alla bokstäver i strängen omvandlade till små bokstäver. Detta gäller även för specialtecken och bokstäver med accent.
 
-## Djupdykning
+# Djupdykning:
+Historiskt sett har omvandling av strängar till små bokstäver varit en komplicerad process. I äldre programmeringsspråk behövde man använda speciella funktioner eller loopar för att åstadkomma detta. Numera finns det inbyggda metoder i de flesta moderna språk som gör det betydligt enklare.
 
-Bakom kulisserna använder `.lower()` funktionen sig av Unicode-teckenkoder för att konvertera strängen till små bokstäver. Detta gör att den fungerar på alla språk, inklusive icke-latiniska alfabet. Om du vill lära dig mer om Unicode-tecken och deras användning inom programmering, kan du läsa mer här: https://docs.python.org/3/howto/unicode.html
+En annan metod för att skriva om strängar till små bokstäver är att använda modulen `string`. Där finns en funktion som heter `lower()` som också åstadkommer samma sak.
 
-## Se även
+Tänk på att det kan finnas tillfällen då man vill behålla versaler i en sträng, till exempel för att betona ett ord eller en fras. Då är det viktigt att inte använda `.lower()` metoden och istället skriva strängen som den är.
 
-- Python 3 dokumentation: https://docs.python.org/3/library/stdtypes.html#str.lower
-- "Capitalization in Different Languages" av Joel Lim: https://www.emreakkas.com/internationalization/capitalization-in-different-languages
+# Se även:
+- Python dokumentation för `string.lower()`: https://docs.python.org/3/library/string.html#string.lower
+- En skriftlig guide på svenska över grundläggande koncept inom programmering: https://codingkungen.nu/

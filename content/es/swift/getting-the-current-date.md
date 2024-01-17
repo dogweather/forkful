@@ -10,33 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+Qué es y por qué lo hacemos:
 
-Si estás creando una aplicación o un proyecto que necesita mostrar la fecha actual, es importante saber cómo obtenerla en tu código. Esto te permite mantener la información actualizada y brindar una experiencia de usuario más precisa y personalizada.
+Obtener la fecha actual es una tarea común que los programadores realizan para obtener información sobre el momento en el que se está ejecutando un programa. Esto puede ser útil para realizar operaciones basadas en fechas, como mostrar la fecha actual en una aplicación o calcular la duración entre dos fechas.
 
-## Cómo hacerlo
+Cómo hacerlo:
 
-Para obtener la fecha actual en Swift, puedes utilizar la clase `Date`, que representa una fecha y hora específicas. A continuación, se muestra un ejemplo de cómo obtener la fecha actual en formato de cadena:
+Para obtener la fecha actual en Swift, podemos utilizar el objeto `Date()` y el objeto `DateFormatter()`. Primero, creamos un objeto `Date()` para representar la fecha actual y luego lo formateamos utilizando un objeto `DateFormatter()`. Luego podemos imprimir la fecha formateada utilizando el método `string(from: Date)`.
 
-```Swift 
+```Swift
 let fechaActual = Date()
-let formatter = DateFormatter()
-formatter.dateFormat = "dd/MM/yyyy"
-let fechaActualString = formatter.string(from: fechaActual)
-print(fechaActualString)
+let formatoFecha = DateFormatter()
+formatoFecha.dateFormat = "dd-MM-yyyy"
+let fechaFormateada = formatoFecha.string(from: fechaActual)
+print(fechaFormateada) // Salida: 18-03-2021
 ```
-**Salida:**
-31/10/2021
 
-En este ejemplo, primero creamos una instancia de la clase `Date()` que representa la fecha y hora actuales. Luego, utilizamos un objeto de la clase `DateFormatter()` para especificar el formato en el que queremos mostrar la fecha. En este caso, establecemos el formato en "dd/MM/yyyy" para obtener la fecha en formato día/mes/año. Finalmente, utilizamos el método `string(from:)` para convertir la fecha en formato de cadena y mostrarla en la consola.
+Deep Dive:
 
-## Profundizando
+La necesidad de obtener la fecha actual ha existido desde los primeros días de la programación. Antes del año 1970, los sistemas de tiempo se basaban en el reloj del sistema y no tenían una forma estándar de representar la fecha y hora. Sin embargo, con el desarrollo de sistemas operativos modernos, se ha establecido una forma estándar de representar la fecha y hora utilizando el llamado "Tiempo Unix", que es la cantidad de segundos transcurridos desde el 1 de enero de 1970.
 
-Existen diferentes propiedades y métodos que puedes utilizar con la clase `Date()`, dependiendo de lo que necesites en tu proyecto. Por ejemplo, puedes obtener la hora actual utilizando `let horaActual = Date()`, o incluso agregar o restar días, semanas, meses o años a una fecha específica utilizando métodos como `addingTimeInterval(_: TimeInterval)`. También puedes comparar fechas y obtener la diferencia entre ellas utilizando métodos como `compare(_: Date)` y `timeIntervalSince(_: Date)`.
+Hay varias alternativas para obtener la fecha actual en Swift, como utilizar bibliotecas externas o la API de tiempo de iOS, pero la forma presentada anteriormente es una solución simple y nativa que debería ser suficiente para la mayoría de los casos.
 
-Recuerda que la fecha y hora actual pueden variar según la ubicación de tu dispositivo, por lo que es importante tener en cuenta la zona horaria en la que se encuentra el usuario y ajustarla si es necesario.
+Más información:
 
-## Ver también
+Para obtener más información sobre cómo trabajar con fechas en Swift, puedes visitar la documentación oficial de Apple: https://developer.apple.com/documentation/foundation/date.
 
-- [Documentación de Swift sobre la clase Date](https://developer.apple.com/documentation/foundation/date)
-- [Cómo trabajar con fechas y horas en Swift](https://www.hackingwithswift.com/example-code/language/how-to-work-with-dates-and-times-in-swift)
+También puedes explorar otras formas de obtener la fecha actual en Swift y sus ventajas y desventajas en este artículo: https://swiftwithmajid.com/2020/01/15/getting-current-date-and-time-in-swift/.
+
+¡Happy coding!

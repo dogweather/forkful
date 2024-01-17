@@ -1,7 +1,7 @@
 ---
-title:                "ウェブページのダウンロード"
-html_title:           "Java: ウェブページのダウンロード"
-simple_title:         "ウェブページのダウンロード"
+title:                "「ウェブページのダウンロード」"
+html_title:           "Java: 「ウェブページのダウンロード」"
+simple_title:         "「ウェブページのダウンロード」"
 programming_language: "Java"
 category:             "Java"
 tag:                  "HTML and the Web"
@@ -10,56 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+## 何が & 何故？
 
-ウェブページをダウンロードする理由は、そのコンテンツを読んだり、取得したり、保存したりするためです。
+ウェブページをダウンロードするとは何かを説明します。プログラマーがそれを行う理由を説明します。
+ 
+ウェブページをダウンロードするとは、インターネット上にあるページのコンテンツをローカルのコンピューターにコピーすることです。 プログラマーは、このようなタスクを自動化するためにウェブページをダウンロードします。 
 
-## ダウンロードする方法
+## 方法：
 
-ダウンロードするには、Javaの標準ライブラリであるjava.netパッケージのURLConnectionクラスを使用します。以下のコードを使用して、指定したURLからウェブページをダウンロードし、コンソールに出力することができます。
+次の ```Java ... ``` コードブロックで、コード例と出力例を示します。 
 
-```Java
-import java.net.*;
-import java.io.*;
+```Java 
+// URL オブジェクトの作成
+URL url = new URL("https://www.examplesite.com/");
 
-public class DownloadWebPage{
-  public static void main (String[] args) {
-    try {
-      URL url = new URL("https://example.com"); // ダウンロードするウェブページのURL
-      URLConnection connection = url.openConnection();
-      BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-      String inputLine;
-      while ((inputLine = in.readLine()) != null) {
-        System.out.println(inputLine); // ウェブページのコンテンツを一行ずつ出力
-      }
-      in.close();
-    } catch (Exception e) {
-      e.printStackTrace();
-    }
-  }
+// バッファリングされた文字入力ストリームの作成
+BufferedReader br = new BufferedReader(new InputStreamReader(url.openStream()));
+
+// 1 行ずつ文字列を読み込む
+String line;
+while ((line = br.readLine()) != null) {
+   // 出力
+   System.out.println(line);
 }
+// 接続を閉じる
+br.close();
 ```
 
-上記のコードを実行すると、例えば「Hello, world!」を含むウェブページの場合、コンソールには次のように出力されます。
-
+出力例:
 ```
-<!DOCTYPE html>
 <html>
 <head>
-<title>Hello, world!</title>
-<meta charset="UTF-8">
+<title>Example Website</title>
 </head>
 <body>
-<h1>Hello, world!</h1>
+<h1>Welcome to Example Website!</h1>
+<p>Thank you for visiting our website.</p>
 </body>
 </html>
 ```
 
-## 深堀り
+## もっと詳しく：
 
-URLConnectionクラスは、URLからデータを取得するための機能を提供します。上記の例では、getInputStream()メソッドを使用してウェブページのコンテンツを取得しています。また、URLを使用して画像や動画などのメディアファイルをダウンロードすることも可能です。URLConnectionクラスは、HTTPやFTPなどのプロトコルをサポートしており、様々な種類のデータを取得することができます。
+ウェブページのダウンロードは、ウェブスクレイピングの一例です。 これは、ウェブサイトから情報を抽出するプロセスを指します。 ウェブスクレイピングには、JavaScript の実行や HTML のパースなどが必要になることがあります。
 
-## 参考リンク
+代替方法として、Java では HTTP クライアントライブラリを使用することもできます。 これにより、より高度な処理やログインの自動化などが可能になります。
 
-- [URLConnectionクラスのドキュメント](https://docs.oracle.com/javase/8/docs/api/java/net/URLConnection.html)
-- [Javaでwebページをダウンロードする方法](https://www.baeldung.com/java-download-webpage)
+ウェブページのダウンロードには、Java の URL クラスや HttpURLConnection クラスなどを使用することができます。 これらのクラスを使用すると、ウェブページをダウンロードする際に必要なヘッダーやクエリパラメータを設定できます。
+
+## 関連リンク：
+
+- [Java での URL ダウンロード方法](https://www.javatpoint.com/how-to-download-url-in-java)
+- [ウェブスクレイピングについての Javatpoint のチュートリアル](https://www.javatpoint.com/web-scraping-in-java)
+- [Apache HttpClient ライブラリのドキュメント](https://hc.apache.org/httpcomponents-client-ga/)

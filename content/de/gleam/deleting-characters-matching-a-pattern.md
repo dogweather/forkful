@@ -10,28 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was & Warum?
 
-Das Löschen von Zeichen, die einem bestimmten Muster entsprechen, kann nützlich sein, um unerwünschte Daten zu entfernen oder einen String in einem bestimmten Format zu formatieren. Gleam bietet eine effiziente und einfache Möglichkeit, diese Art von Aufgaben durchzuführen.
+Das Löschen von Zeichen anhand bestimmter Muster ist eine häufige Aufgabe beim Programmieren. Es ermöglicht uns, unerwünschte Zeichen oder Textabschnitte aus unseren Daten zu entfernen und die gewünschten Informationen zu behalten.
 
-## Wie geht das?
+Oftmals müssen Programmierer diese Aufgabe bewältigen, um Daten zu bereinigen oder um Code effizienter oder sicherer zu machen.
 
-```Gleam
-String.delete_match("HelloAwesome", "weso") // gibt "HellAwe" zurück
-```
+## Wie geht's?
 
-Das obige Beispiel zeigt, wie wir mit Gleam einen String verarbeiten und bestimmte Zeichen basierend auf einem Muster löschen können. Der erste Parameter ist der zu verarbeitende String und der zweite Parameter ist das Muster, nach dem gesucht werden soll. Alle Zeichen, die diesem Muster entsprechen, werden aus dem String entfernt.
-
-## Tieferes Eintauchen
-
-Das Löschen von Zeichen basierend auf einem Muster ist dehnbarer als es auf den ersten Blick scheint. Gleam bietet die Möglichkeit, reguläre Ausdrücke zu verwenden, um noch genauere und komplexere Muster zu erstellen. Hier ist ein Beispiel, wie wir mit regulären Ausdrücken arbeiten können, um nur Ziffern aus einem String zu entfernen:
+Um Zeichen anhand eines bestimmten Musters zu löschen, gibt es in Gleam die Funktion `remove`. Hier ein einfaches Beispiel:
 
 ```Gleam
-String.delete_match_regex("123jsk45ndoz", "[0-9]") // gibt "jskndoz" zurück
+remove("a", "abracadabra") // Ergebnis: "brcdbr"
 ```
+
+Die Funktion `remove` nimmt zwei Argumente entgegen: das zu löschende Muster und den Text, aus dem das Muster entfernt werden soll. Dabei wird jedes Vorkommen des Musters im Text gelöscht und der bereinigte Text zurückgegeben.
+
+Auch die Kombination von mehreren Mustern ist möglich, wie in diesem Beispiel:
+
+```Gleam
+remove("a,v", "hello, world!") // Ergebnis: "hello world!"
+```
+
+Hier werden sowohl das Komma als auch der Buchstabe "a" gelöscht.
+
+## Gründlicher Blick
+
+Die `remove` Funktion ist nur eine der vielen Möglichkeiten, Zeichen in Gleam zu löschen. Es gibt auch andere Funktionen wie z.B. `replace`, die es uns erlauben, Zeichen anzupassen oder zu ersetzen.
+
+Außerdem gibt es auch weitere Techniken, um unerwünschte Zeichen oder Textabschnitte zu entfernen. Dazu gehören z.B. reguläre Ausdrücke oder das Teilen von Strings in Substrings und das Herausfiltern bestimmter Teile.
+
+In Gleam wird das Löschen von Zeichen durch die Standardbibliothek `gleam/strings` unterstützt. Hier finden sich viele nützliche Funktionen, die uns bei der Bearbeitung von Strings helfen.
 
 ## Siehe auch
 
-- Offizielle Gleam Dokumentation: [String Modul](https://gleam.run/documentation/standard-library/string/)
-- Reguläre Ausdrücke in Gleam: [Regex Modul](https://gleam.run/documentation/standard-library/regex/)
-- Weitere Beispiele und Tutorials finden Sie auf [GitHub](https://github.com/gleam-lang/gleam/tree/master/examples)
+- Offizielle Gleam Dokumentation: https://gleam.run/
+- "Gleam Strings" in der Dokumentation: https://gleam.run/articles/strings.html

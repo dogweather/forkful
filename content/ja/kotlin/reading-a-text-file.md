@@ -1,7 +1,7 @@
 ---
-title:                "「テキストファイルの読み込み」"
-html_title:           "Kotlin: 「テキストファイルの読み込み」"
-simple_title:         "「テキストファイルの読み込み」"
+title:                "テキストファイルの読み込み"
+html_title:           "Kotlin: テキストファイルの読み込み"
+simple_title:         "テキストファイルの読み込み"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Files and I/O"
@@ -10,44 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## なに & なぜ？
 
-なぜテキストファイルを読むことに興味を持つのか？それは、テキストファイルがコンピューターやプログラミングにおいて欠かせないものであるからです。テキストファイルは、様々なデータを格納し、処理するための重要な手段です。
+テキストファイルを読むこととは、コンピューターに保存されているテキストをプログラムで読み取ることを意味します。プログラマーがテキストファイルを読む理由は、そのファイルに保存されているデータを処理し、プログラムの機能を向上させるためです。
 
-## How To
+## やり方：
 
-テキストファイルを読み込むには、Kotlinで以下のようにコードを書けばいいです。
+テキストファイルを読む方法は簡単です。まず、ファイルを変数に割り当て、ファイルからデータを読み取ります。コードの一例をご紹介します。
 
-```
-Kotlin
-val file = File("text.txt")
-file.forEachLine {
-    println(it)
+```Kotlin
+// ファイルを変数に割り当てる
+val file = File("example.txt")
+
+// ファイルからデータを読み取る
+file.forEachLine { line ->
+    println(line) // 読み取ったデータを表示
 }
 ```
 
-これは、ファイルの各行を読み込み、コンソールに出力するコードです。もちろん、ファイルの内容を実際に処理することも可能です。
+上記のコードは、ファイルを1行ずつ読み取って、読み取ったデータを表示するものです。もちろん、実際のプログラムではさらに処理を行うことが可能です。
 
-```
-Kotlin
-val file = File("names.txt")
-val names = mutableListOf<String>()
+## 深堀り：
 
-file.forEachLine {
-    names.add(it)
-}
-println("読み込まれた名前の数は ${names.size} です。")
-```
+テキストファイルを読む方法にはいくつかのオプションがあります。上記の例では、`forEachLine`メソッドを使用しましたが、`readLines`メソッドや`bufferedReader`クラスを使用することもできます。また、テキストファイルのエンコーディングを指定することで、日本語のようなマルチバイト文字を正しく読み取ることが可能です。
 
-上記のコードは、テキストファイルに記録された名前をリストに追加し、最後にその数を出力するものです。
+また、テキストファイルの他にも、バイナリファイルを読み取る方法もあります。バイナリファイルを読み取る際には、`inputStream`クラスを使用します。
 
-## Deep Dive
+## 関連リンク：
 
-テキストファイルを読み込む際には、ファイルのエンコーディングに気をつける必要があります。特に日本語のようなマルチバイト文字を含む場合は、適切なエンコーディングを指定する必要があります。Kotlinでは、`File()`メソッドの引数にエンコーディングを指定することで、問題なくファイルを読み込むことができます。
-
-また、大規模なテキストファイルを読み込む際には、メモリの消費にも注意が必要です。その場合、`readLines()`メソッドを使用し、必要な行だけを読み込むことができます。
-
-## See Also
-
-- [Kotlin File Class](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/index.html)
-- [Reading and Writing Files in Kotlin](https://medium.com/@thomashambach/reading-and-writing-files-in-kotlin-a73ab397acc6)
+- Kotlinの公式ドキュメント：https://kotlinlang.org/
+- ファイルの読み書きについての記事：https://qiita.com/kyota/items/dc022650c708b6b31115

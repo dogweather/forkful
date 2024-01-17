@@ -1,7 +1,7 @@
 ---
-title:                "Nedladdning av en webbsida"
-html_title:           "Python: Nedladdning av en webbsida"
-simple_title:         "Nedladdning av en webbsida"
+title:                "Ladda ner en webbsida"
+html_title:           "Python: Ladda ner en webbsida"
+simple_title:         "Ladda ner en webbsida"
 programming_language: "Python"
 category:             "Python"
 tag:                  "HTML and the Web"
@@ -10,78 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
+Att ladda ner en webbsida innebär att hämta en kopia av en webbsida till din dator. Detta är viktigt för programmerare eftersom det gör det möjligt att analysera webbsidor, samla data och automatiskt utföra åtgärder.
 
-Att ladda ner en webbsida är en vanlig uppgift inom webbutveckling och datascience. Det kan användas för att hämta information från en specifik webbsida, analysera webbsidans innehåll eller för att bygga en lokal backup av en hemsida.
-
-## Hur man gör det
-
-För att ladda ner en webbsida i Python behöver man använda sig av ett tredjepartsbibliotek som heter "Requests". Detta bibliotek gör det möjligt för oss att skicka HTTP-förfrågningar till en webbsida och hämta dess innehåll.
-
-För att installera "Requests" biblioteket, kan du använda dig av pip-kommandot i terminalen:
-
-```python
-pip install requests
-```
-
-När biblioteket är installerat, kan du importera det i ditt Python-skript genom att använda följande kod:
+## Hur gör man:
+Att ladda ner en webbsida i Python är enkelt och kan göras med hjälp av biblioteket "requests". Nedan ser du en kodexempel på hur man hämtar en webbsida och sedan skriver ut dess innehåll:
 
 ```python
 import requests
+
+r = requests.get("https://example.com")  # Ladda ner webbsidan
+print(r.text)  # Skriv ut innehållet
+```
+Exempeloutput:
+```
+<!DOCTYPE html>
+<html>
+<head>
+<title>Exempel - En övningssida</title>
+</head>
+<body>
+<h1>Välkommen till denna övningssida</h1>
+<p>Detta är ett exempel på en webbsida som kan laddas ner med hjälp av Python.</p>
+</body>
+</html>
 ```
 
-För att hämta en webbsida använder vi funktionen "get" från "Requests" biblioteket och anger webbadressen som en parameter. Detta skapar sedan ett responsobjekt som innehåller webbsidans innehåll.
+## Djupdykning:
+Ladda ner en webbsida är en integrerad del av automatisering och automatiserad webbtranskribering. Det kan också användas för webcrawling och för att samla data från flera webbsidor. Det finns många olika metoder för att ladda ner en webbsida, inklusive att använda bibliotek som "urllib" eller att utföra en HTTP-begäran direkt.
 
-```python
-# Hämtar en webbsida
-response = requests.get("https://www.example.com")
+## Se även:
+Här är några relaterade källor som kan hjälpa dig att lära dig mer om att ladda ner webbsidor med Python:
 
-# Skriver ut webbsidans innehåll
-print(response.content)
-```
-
-En vanlig uppgift är också att spara webbsidans innehåll till en lokal fil. Detta kan göras genom att använda funktionen "open" och skicka in ett filnamn tillsammans med "wb"-läget (vilket står för "write binary").
-
-```python
-# Skapar en lokal fil och sparar webbsidans innehåll
-with open("exempel.html", "wb") as file:
-    file.write(response.content)
-```
-
-## Djupdykning
-
-Utöver att hämta en hel webbsida, kan man också använda "Requests" biblioteket för att hämta specifika delar av en webbsida. Detta kan göras genom att använda "BeautifulSoup" biblioteket för webbskrapning.
-
-Först måste man installera "BeautifulSoup" genom att köra följande kommando:
-
-```python
-pip install beautifulsoup4
-```
-
-Sedan kan man importera biblioteket i sitt Python-skript:
-
-```python
-from bs4 import BeautifulSoup
-```
-
-Därefter kan man använda "BeautifulSoup" tillsammans med "Requests" för att hitta specifika HTML-element på en webbsida.
-
-```python
-# Hämtar en webbsida
-response = requests.get("https://www.example.com")
-
-# Skapar ett BeautifulSoup objekt av webbsidans innehåll
-soup = BeautifulSoup(response.content, 'html.parser')
-
-# Hittar alla "a"-taggar på webbsidan och skriver ut deras länkar
-for link in soup.find_all('a'):
-    print(link.get('href'))
-```
-
-Detta är bara en grundläggande introduktion till att ladda ner webbsidor i Python. Det finns många fler aspekter som kan utforskas, som att hantera HTTP-headers, skicka POST-förfrågningar och autentisering.
-
-## Se även
-
-- [Dokumentation för Requests biblioteket](https://requests.readthedocs.io/en/master/)
-- [Dokumentation för BeautifulSoup biblioteket](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) 
-- [En guide till webbskrapning med Python](https://realpython.com/beautiful-soup-web-scraper-python/)
+- [Officiell Python-biblioteket "requests" dokumentation](https://requests.readthedocs.io/en/master/user/quickstart/)
+- [En introduktion till webbskrapning med Python](https://www.dataquest.io/blog/web-scraping-tutorial-python/)
+- [En tutorial om att ladda ner webbsidor med "urllib"](https://www.pythonforbeginners.com/python-on-the-web/how-to-use-urllib2-in-python/)

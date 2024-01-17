@@ -10,39 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
+## क्या है और क्यों?
+JSON काम करने का एक तरीका है जिसमें डेटा को आसानी से प्रस्तुत किया जाता है। प्रोग्रामर इसका उपयोग करते हैं अपने डेटा को स्टोर और ट्रांस्फर करने के लिए।
 
-जेसन (JSON) प्रोग्रामिंग में एक प्रचलित डेटा संरचना है जो डेटा को स्टोर और ट्रांस्फर करने के लिए इस्तेमाल की जाती है। यह सरल और लाइटवेट स्ट्रक्चर के साथ बहुत ही अनुकूलनीय है जो कि जावास्क्रिप्ट वेब डेवलपमेंट में आवश्यक है।
+## कैसे करें?
+```Javascript
+// एक ऑब्जेक्ट बनाएं
+var person = { "नाम": "जॉन", "उम्र": 30, "शहर": "मुंबई" };
 
-## कैसे
+// एक जीसन का स्ट्रिंगफाइ करें
+var json = JSON.stringify(person);
 
-"```Javascript
-// एक JSON ऑब्जेक्ट बनाएं
-const student = {
-  name: "राहुल",
-  age: 25,
-  course: "वेब डेवलपमेंट",
-  college: "दिल्ली यूनिवर्सिटी"
-};
+// एक जीसन का पार्स कारें
+var obj = JSON.parse(json);
 
-// JSON को स्ट्रिंग में परिवर्तित करें
-const studentString = JSON.stringify(student);
-console.log(studentString); // {"name":"राहुल","age":25,"course":"वेब डेवलपमेंट","college":"दिल्ली यूनिवर्सिटी"}
-
-// JSON स्ट्रिंग को पार्स करें और ऑब्जेक्ट में वापस लाएं
-const studentObject = JSON.parse(studentString);
-console.log(studentObject); // { name: "राहुल", age: 25, course: "वेब डेवलपमेंट", college: "दिल्ली यूनिवर्सिटी"}
-"
+// जीसन के फील्ड एक्सेस करें
+console.log(obj.नाम);
 ```
 
-## गहराई पर जाएं
+आउटपुट:
+```
+जॉन
+```
 
-- JSON को समझने के लिए डेटा टाइपिंग के साथ पिछ्ले डेटा संरचनाओं की तुलना करें, जैसे XML या CSV।
-- किसी भी होस्ट सर्वर से डेटा को बेहतर तरीके से प्राप्त करने के लिए JSON प्रोटोकॉल का उपयोग करें।
-- जेसन की उपयोगिता को और बढ़ाने के लिए जावास्क्रिप्ट परिवर्तन ट्रांसफर्मेशन (JSONPT) का उपयोग करें।
+## गहराई में जाएं
+JSON का उपयोग स्टैंडर्ड डेटा फॉर्मेट के रूप में 1999 में शुरू हुआ था। अन्य विकल्पों में XML और CSV शामिल हैं। आजकल, JSON उपयोगी और लोकप्रिय है क्योंकि यह अनुप्रयोगों के बीच डेटा स्ट्रिंग का आसानी से ट्रांसफर करने की अनुमति देता है। जीसन इसकी साधारण, सरल संरचना के कारण भी पसंद किया जाता है।
 
-## देखें भी
-
-- [JSON डॉक्यूमेंटेशन ( जावास्क्रिप्ट)](https://developer.mozilla.org/hi/docs/Learn/JavaScript/Objects/JSON)
-- [JSON गाइड (जावास्क्रिप्ट)](https://www.json.org/json-en.html)
-- [जेसन और जावास्क्रिप्ट उदाहरणों के साथ: संचार और बाधाएं](https://medium.com/@tkssharma/json-in-javascript-68f5c0f9c0d0)
+## और भी देखें
+- [MDN का JSON आर्टिकल](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON)
+- [कैसे करें: JavaScript में जीसन स्ट्रिंगिफाइ और पार्स](https://www.digitalocean.com/community/tutorials/how-to-work-with-json-in-javascript)

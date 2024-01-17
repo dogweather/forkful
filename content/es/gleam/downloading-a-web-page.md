@@ -10,50 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+# ¿Qué es y por qué se hace?
 
-Si eres desarrollador web, es posible que necesites descargar una página web para hacer pruebas o realizar cambios en ella. Con Gleam, puedes automatizar este proceso y ahorrar tiempo y esfuerzo.
+Descargar una página web es obtener el código HTML de una página en internet. Los programadores realizan esto para acceder a la información de la página y utilizarla en sus propios programas.
 
-## Cómo hacerlo
+# Cómo hacerlo:
 
-Para descargar una página web con Gleam, sigue estos sencillos pasos:
-
-1. Importa el módulo `http` de Gleam.
-2. Crea una función `download_webpage` que tome la URL de la página como argumento.
-3. Hace una solicitud GET a la URL usando la función `http.get`.
-
-`` `Gleam
-import http
-
-fn download_webpage(url) {
-    http.get(url)
-} `` `
-
-4. Ahora puedes llamar a la función con la URL de la página que quieres descargar.
-
-`` `Gleam
-download_webpage("https://www.gleam.dev")`` `
-
-5. Para guardar el contenido de la página en un archivo, puedes utilizar el módulo `file` de Gleam y la función `file.write`.
-
-`` `Gleam
-import http
-import file
-
-fn download_webpage(url) {
-    http.get(url)
+```Gleam 
+fn main() {
+  let response = download("https://google.com");
+  let text = response.text();
+  println(text);
 }
+```
 
-let response = download_webpage("https://www.gleam.dev")
-file.write("webpage.html", response.body)`` `
+Este código descargará la página de Google y mostrará su contenido en la consola. Para personalizar lo que se descarga, se pueden utilizar diferentes funciones como ```headers``` para especificar encabezados o ```params``` para agregar parámetros a la URL.
 
-¡Listo! Ahora tienes el contenido de la página web descargado y guardado en un archivo.
+# Profundizando:
 
-## Profundizando
+Descargar páginas web es una práctica común para obtener datos de internet. Alternativas a Gleam para lograr esto incluyen librerías como ```reqwest``` o ```curl```. Gleam también ofrece la posibilidad de manejar respuestas en formatos como JSON para facilitar el procesamiento de datos.
 
-Si quieres personalizar tu proceso de descarga de páginas web, puedes utilizar las funciones y métodos adicionales del módulo `http` de Gleam. Por ejemplo, puedes especificar encabezados personalizados en tu solicitud GET o descargar imágenes y otros recursos incrustados en la página web.
+# Ver también:
 
-## Ver también
-
-- Documentación oficial de Gleam sobre el módulo `http`: https://gleam.run/modules/http.html
-- Tutorial sobre cómo descargar una página web con Gleam: https://www.gleam.dev/tutorials/web_download/
+Para más información sobre cómo descargar páginas web con Gleam, puedes consultar la documentación oficial: https://gleam.run/documentation/working-with-http/ También puedes revisar diferentes ejemplos de código en el directorio de ejemplos de Gleam: https://github.com/gleam-lang/gleam/tree/master/examples

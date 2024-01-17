@@ -1,7 +1,7 @@
 ---
-title:                "Satunnaislukujen luominen"
-html_title:           "Go: Satunnaislukujen luominen"
-simple_title:         "Satunnaislukujen luominen"
+title:                "Satunnaisten numeroiden luominen"
+html_title:           "Go: Satunnaisten numeroiden luominen"
+simple_title:         "Satunnaisten numeroiden luominen"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Numbers"
@@ -10,34 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi?
+## Mikä & Miksi?
 
-On monia syitä, miksi ohjelmoijat haluavat käyttää satunnaislukugeneraattoria. Se voi olla hyödyllistä esimerkiksi pelien kehittämisessä tai salauksen luomisessa.
+Satunnaislukujen luominen tarkoittaa satunnaisten numeroiden generoimista tietokoneohjelmassa. Ohjelmoijat käyttävät tätä toimintoa esimerkiksi simulaatioissa, peleissä ja salauksessa.
 
-## Miten?
+## Miten:
 
-Go-kielessä voit helposti luoda satunnaislukugeneraattorin käyttämällä "math/rand" -kirjastoa ja sen "rand.Intn" -funktiota. Voit antaa halutun lukuluokan parametrina ja ohjelma palauttaa satunnaisen luvun kyseiseltä alueelta.
+Go-ohjelmoinnissa satunnaislukuja voi luoda käyttämällä pakettia `math/rand` ja sen `Intn(n)` -funktiota, joka generoi satunnaisen kokonaisluvun välillä 0-n. 
+Esimerkiksi:
 
-```Go
-import "fmt"
-import "math/rand"
+```
+Go funktiolla rand.Intn(100) voimme luoda satunnaisia lukuja välillä 0-100.
+
+package main
+
+import (
+	"fmt"
+	"math/rand"
+)
 
 func main() {
-  // Generoidaan satunnainen luku väliltä 1-100
-  randomNum := rand.Intn(100) + 1
-  fmt.Println("Satunnainen luku on:", randomNum)
+	randomNumber := rand.Intn(100)
+	fmt.Println("Satunnainen luku välillä 0-100 on:", randomNumber)
 }
+
 ```
+Esimerkkitulos:
 
-Tämä koodiesimerkki tulostaa satunnaisen luvun väliltä 1-100. Voit muuttaa parametria ja testata erilaisia luvunalueita.
+`Satunnainen luku välillä 0-100 on: 75`
 
-## Syväsukellus
+## Syväsukellus:
 
-Go-kielessä käytetty satunnaislukugeneraattori tulee "math/rand" -kirjastosta, mikä perustuu algoritmiin nimeltä "Mersenne Twister". Tämä algoritmi on yksi suosituimmista menetelmistä satunnaislukujen tuottamiseen ja se on myös hyvin tehokas. "math/rand" -paketti myös tarjoaa muita funktioita ja metodeja satunnaislukujen generoimiseen, kuten "Float32" ja "Float64".
+Satunnaislukujen generoiminen on ollut tärkeä osa tietokoneohjelmointia jo pitkään. Aluksi ohjelmoijat joutuivat itse suunnittelemaan algoritmejä satunnaislukujen generoimiseksi, mutta nykyään monet ohjelmointikielet, kuten Go, tarjoavat valmiita funktioita tähän tarkoitukseen. 
 
-On myös tärkeää huomata, että satunnaislukugeneraattoreita ei pidä käyttää salausmenetelmiin tai muuhun turvallisuustarkoitukseen. Niitä tulee käyttää vain simulaatioissa ja muissa vastaavissa tarkoituksissa.
+Go:ssa on myös mahdollista käyttää `crypto/rand` -pakettia, joka tarjoaa turvallisempia satunnaislukuja, jotka perustuvat laadukkaisiin satunnaisiin lähdeaineistoihin.
 
-## Katso myös
+## Katso myös:
 
-- "math/rand" -kirjaston dokumentaatio: https://golang.org/pkg/math/rand/
-- Satunnaislukugeneraattori Wikipedia-sivulla: https://fi.wikipedia.org/wiki/Satunnaislukugeneraattori
+- Dokumentaatio Go:n `math/rand` -paketista: https://golang.org/pkg/math/rand/
+- Dokumentaatio Go:n `crypto/rand` -paketista: https://golang.org/pkg/crypto/rand/
+- Artikkeli satunnaislukujen generoinnista Go:ssa: https://gobyexample.com/random-numbers

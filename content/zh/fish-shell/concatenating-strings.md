@@ -10,50 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
+什么和为什么？
+串联字符串是一种将多个字符串连接在一起形成一个更长的字符串的常用编程技术。程序员经常使用串联字符串来创建动态的文本输出，例如在打印消息或构建网页内容时。
 
-简单来说，如果你想要在命令行中创建、编辑和管理字符串，那么串联字符串就是一个非常有用的功能。串联字符串允许你将几个单独的字符串组合在一起，以创建一个全新的字符串。
-
-## 如何操作
-
-使用Fish Shell的串联字符串功能非常简单。你只需要使用`string combine`命令，然后在每个字符串之间使用空格分隔开即可。下面是一个例子：
-
-```
-Fish Shell Code Block:
-string combine "Hello," "world!"
-```
-
-运行以上代码，你将会得到一个新的字符串"Hello, world!"。这个实例展示了如何将两个单独的字符串进行串联，并将它们合并为一个新的字符串。
-
-## 深入了解
-
-在Fish Shell中，串联字符串的功能不仅限于合并两个字符串。你还可以使用变量、命令替换和算术运算符来创建更加复杂的字符串。下面是一些示例：
-
-```
-Fish Shell Code Block:
+如何进行？
+Fish Shell 允许使用双引号和空格来指示字符串的始末。下面是一个例子：
+```fish
 set name "John"
-
-# 使用变量
-string combine "Hello, " "$name" "!"
-
-# 使用命令替换
-string combine "The current directory is: " (pwd)
-
-# 使用算术运算符
-string combine "5 + 5 = " (math 5 + 5)
+set greeting "Hello"
+set message "$greeting, $name!"
 ```
+输出：
+`Hello, John!`
 
-在第一个例子中，我们使用了一个变量`name`来动态地创建一个问候字符串。在第二个例子中，我们使用了`pwd`命令替换来获取当前目录，并将它串联到一个提示消息中。最后，我们使用了算术运算符来计算5+5的结果，并将其作为一个字符串添加到另一个字符串的末尾。
+深入探讨
+串联字符串的概念可以追溯到早期的编程语言，如C和Perl。在这些语言中，使用`+`运算符来连接字符串。在Fish Shell中，我们使用`set`命令来定义变量，并使用`$`来引用变量。
 
-## 参考链接
+其他替代方法还包括使用字符串连接函数，如`string concat`，或使用`printf`命令来格式化字符串输出。Fish Shell还提供了`string join`函数来通过特定的分隔符将字符串数组连接在一起。
 
-- [Fish Shell 官方文档](https://fishshell.com/docs/current/index.html)
-- [Fish Shell - Concatenate Strings](https://fishshell.com/docs/current/cmds/string-combine.html)
-- [GitHub- Fish Shell中文文档](https://github.com/fish-shell/fish-shell/blob/master/share/doc/Readme.zh_CN.md)
-
-谢谢阅读本文，在你的下一次Fish Shell中，记得试试串联字符串的功能吧！
-
-## 参见
-
-- [Fish Shell的变量和命令替换](https://fishshell.com/docs/current/tutorial.html#variables-and-command-substitution)
-- [Fish Shell的算术运算符](https://fishshell.com/docs/current/tutorial.html#arithmetic-operators)
+相关文献
+- [Fish Shell官方文档](https://fishshell.com/docs/current/index.html)
+- [深入掌握Fish Shell的字符串操作](https://medium.com/@jorgebucaran/demystifying-fish-shell-strings-11b15d70ac23)
+- [比较不同编程语言中字符串连接的性能](https://blog.alexellis.io/compare-string-performance-in-bash-python-and-ruby/)

@@ -1,7 +1,7 @@
 ---
-title:                "Arbeide med YAML"
-html_title:           "Elm: Arbeide med YAML"
-simple_title:         "Arbeide med YAML"
+title:                "Arbeide med yaml"
+html_title:           "Elm: Arbeide med yaml"
+simple_title:         "Arbeide med yaml"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Data Formats and Serialization"
@@ -10,53 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hva & Hvorfor?
+YAML er et format for å strukturere og organisere data, spesielt brukt i programmering og konfigurasjonsfiler. Det er en mer leselig og intuitiv måte å representere data på, sammenlignet med mer komplekse formater som JSON og XML. Mange programmører velger å bruke YAML på grunn av dens enkelhet og lesbarhet.
 
-Hvis du jobber med frontend-utvikling, har du kanskje hørt om YAML, men lurer på hva det egentlig er. YAML står for "YAML Ain't Markup Language" og det er et verktøy som kan hjelpe deg med å strukturere og organisere data på en enklere måte. Hvis du ønsker å forbedre utviklingsprosessen din og lage mer lesbar kode, kan læring av YAML være en god idé.
-
-## Hvordan
-
-For å begynne å bruke YAML i Elm, må du først legge til en avhengighet i prosjektet ditt:
+## Hvordan:
+For å jobbe med YAML i Elm, trenger du en pakke kalt `elm-yaml`. Med denne kan du enkelt konvertere YAML-filer til Elm-typer og omvendt. Her er et enkelt eksempel på hvordan du kan bruke `elm-yaml`:
 
 ```Elm
-import Yaml exposing (scalar, list, mapping, decode)
+import Yaml exposing (..)
+
+-- Definer YAML-data
+yamlData = "age: 28\nname: John"
+
+-- Konverter YAML til Elm-typer
+elmData = decode yamlData
+
 ```
 
-Deretter kan du begynne å definere dine YAML-data. Her er et eksempel på en enkel liste med ulike språk:
+I dette eksempelet vil `elmData` bli en Elm-tuple med `("age", 28)` og `("name", "John")` som elementer. For å konvertere fra Elm til YAML, kan du bruke funksjonen `encode`:
 
 ```Elm
-languages : Yaml.Value
-languages =
-    list
-        [ scalar "Javascript"
-        , scalar "Elm"
-        , scalar "Python"
-        , scalar "PHP"
-        ]
+-- Konverter Elm-typer til YAML
+yaml = encode elmData
+
 ```
 
-For å konvertere YAML-dataene til Elm, kan du bruke funksjonen `decode`:
+Denne funksjonen vil produsere en streng med YAML-formatert data, klar til å bli lagret i din konfigurasjonsfil.
 
-```Elm
-elmLanguages : Result String (List String)
-elmLanguages =
-    case decode languages of
-        Ok result ->
-            result
+## Dykk dypere:
+YAML ble utviklet i 2001 av Clark Evans for å være en mer menneskelig-leselig og enklere alternativ til JSON og XML. Det har blitt populært i utviklingen av kuber, Docker og andre infrastrukturverktøy på grunn av dets evne til å representere komplekse datastrukturer på en intuitiv måte. Alternativer til YAML inkluderer toml og HCL. Implementasjonen av `elm-yaml` er basert på libyaml og bruker PEG for parsing av YAML.
 
-        Err error ->
-            Err (Debug.toString error)
-```
-
-Etter å ha kjørt koden ovenfor, vil du få en liste med språk som kan brukes i ditt Elm-prosjekt.
-
-## Dypdykk
-
-YAML har flere interessante funksjoner som kan gjøre utviklingsprosessen din mer effektiv. For eksempel kan du bruke flere typer datastrukturer som `scalar`, `list`og `mapping` for å bygge mer komplekse YAML-data. Du kan også legge til kommentarer i dine YAML-filer for å gjøre det enklere å forstå koden senere.
-
-Føler du deg klar til å begynne å bruke YAML i ditt Elm-prosjekt? Start med å utforske dokumentasjonen for mer informasjon og flere muligheter.
-
-## Se Også
-
-- [YAML offisiell hjemmeside](https://yaml.org/)
-- [Elm dokumentasjon om YAML](https://package.elm-lang.org/packages/mdgriffith/yaml/latest/)
+## Se også:
+- [Offisiell YAML-nettside](https://yaml.org/)
+- [elm-yaml pakke](https://package.elm-lang.org/packages/avh4/elm-yaml/latest/)

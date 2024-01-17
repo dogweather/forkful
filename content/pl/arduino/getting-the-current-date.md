@@ -1,7 +1,7 @@
 ---
-title:                "Pobieranie aktualnej daty"
-html_title:           "Arduino: Pobieranie aktualnej daty"
-simple_title:         "Pobieranie aktualnej daty"
+title:                "Uzyskiwanie bieżącej daty"
+html_title:           "Arduino: Uzyskiwanie bieżącej daty"
+simple_title:         "Uzyskiwanie bieżącej daty"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Dates and Times"
@@ -10,48 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+# Getting the Current Date in Arduino
 
-Jeśli masz projekt, w którym potrzebujesz ustawiać aktualną datę, poznaj metodę uzyskiwania jej w programowaniu Arduino. Z tej wiedzy możesz skorzystać, aby wyświetlić datę na ekranie lub zaprogramować określone działania na konkretny dzień.
+Często w programowaniu konieczne jest pobranie aktualnej daty i godziny. W przypadku Arduino może to być przydatne przy tworzeniu systemów zegarowych, rejestracji danych czy zarządzania czasem wykonania pewnych czynności. W tym artykule dowiesz się, jak pobrać aktualną datę w Arduino i dlaczego programiści to robią.
 
-## Jak To Zrobić
+## Co i dlaczego?
 
-Pierwszym krokiem jest zdefiniowanie zmiennej, która przechowa aktualną datę:
+Pobieranie aktualnej daty polega na odczytaniu informacji o dniu, miesiącu, roku i godzinie w danym momencie. Programiści wykorzystują tę funkcjonalność do śledzenia czasu, wykonywania określonych zadań w konkretnych momentach lub do rejestracji danych ze znacznikiem czasowym.
 
-```Arduino
-int currentDay = day(); //zmienna przechowująca aktualny dzień
-int currentMonth = month(); //zmienna przechowująca aktualny miesiąc
-int currentYear = year(); //zmienna przechowująca aktualny rok
+## Jak to zrobić?
+
+W Arduino do pobrania aktualnej daty służy funkcja ```now()``` z biblioteki Time. Można ją wykorzystać do zapisania aktualnej daty do zmiennej lub jej wyświetlenia na ekranie. Przykład użycia:
+
+```arduino
+time_t currentTime = now(); // zapisanie aktualnej daty do zmiennej
+Serial.println(year(currentTime)); // wyświetlenie aktualnego roku
 ```
 
-Następnie możemy wyświetlić datę na ekranie LCD:
+Wynik będzie wyglądał podobnie do tego:
 
-```Arduino
-lcd.print(currentDay + "/" + currentMonth + "/" + currentYear); //wyświetlenie daty na ekranie LCD
+```
+2021
 ```
 
-Inną przydatną funkcją jest obliczenie dnia tygodnia dla danej daty:
+## Głębsza analiza
 
-```Arduino
-int currentWeekday = weekday(); //zmienna przechowująca aktualny dzień tygodnia
-```
+Pobieranie aktualnej daty na Arduino jest możliwe dzięki zastosowaniu biblioteki Time, która dostarcza funkcjonalności związanych z obsługą czasu. Jest ona dostępna jako standardowa biblioteka w środowisku Arduino lub można ją pobrać z oficjalnej strony internetowej. Alternatywnie, można samodzielnie napisać funkcję do odczytu aktualnego czasu, korzystając ze zmiennych systemowych dostępnych w Arduino.
 
-Możemy również ustawić określone działania na konkretny dzień, np. zaprogramować wyzwalanie alarmu w poniedziałek rano.
+## Zobacz też
 
-## Film
-
-Aby dokładniej poznać możliwości uzyskiwania aktualnej daty w Arduino, zapraszam do obejrzenia filmu [Arduino Date and Time Tutorial by HowToMechatronics](https://www.youtube.com/watch?v=mZFpQlwkqlU).
-
-## Wnikliwe Badanie
-
-Arduino korzysta z biblioteki Time, która zapewnia wiele funkcji związanych z czasem i datą. Dzięki niej możemy uzyskać m.in. czas w milisekundach, sprawdzić, czy dany rok jest przestępny, czy porównywać daty. Więcej informacji o bibliotece Time można znaleźć na [stronie oficjalnej](https://www.arduino.cc/en/Reference/Time).
-
-Możliwości Arduino w zakresie uzyskiwania aktualnej daty są szerokie i warto zapoznać się zarówno z dokumentacją, jak i skorzystać z innych materiałów dostępnych w sieci.
-
-## Zobacz Również
-
-- [Arduino Reference - Date and Time](https://www.arduino.cc/reference/en/libraries/time/)
-- [Instructables - Get Current Date on LCD using Arduino](https://www.instructables.com/Get-Current-Date-on-LCD-using-Arduino/)
-- [Random Nerd Tutorials - Guide for DS1307 Real Time Clock (RTC) Module with Arduino](http://randomnerdtutorials.com/guide-for-ds3231-real-time-clock-rtc-with-arduino/)
-
-Translated by [artykulix.pl](https://artykulix.pl/).
+- [Dokumentacja bibilioteki Time w Arduino](https://www.arduino.cc/reference/en/libraries/time/)
+- [Oficjalna strona biblioteki Time](https://github.com/PaulStoffregen/Time)
+- [Przykład pobierania aktualnej daty na Arduino](https://www.circuitbasics.com/arduino-getting-current-date-time/)

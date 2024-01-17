@@ -1,7 +1,7 @@
 ---
-title:                "표준 오류에 쓰는 방법"
-html_title:           "Elixir: 표준 오류에 쓰는 방법"
-simple_title:         "표준 오류에 쓰는 방법"
+title:                "표준 에러에 쓰는 방법"
+html_title:           "Elixir: 표준 에러에 쓰는 방법"
+simple_title:         "표준 에러에 쓰는 방법"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Files and I/O"
@@ -10,32 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+## 무엇 그리고 왜?
 
-가장 일반적인 디버깅 방법 중 하나는 상태나 오류 메시지를 콘솔에 출력하는 것입니다. 이는 작은 오류를 신속하게 발견하고 관련된 정보를 확인하는 데에 매우 유용합니다.
+표준 에러에 쓰는 것은 프로그래머들이 에러 메시지를 출력하기 위해 사용하는 방법입니다. 이는 디버깅과 코드 흐름을 분석하는 데 중요한 도구입니다.
 
-## 어떻게
+## 하는 방법 :
 
-Elixir에서는 `IO.puts/2` 함수를 사용하여 텍스트를 표준 출력으로 출력할 수 있지만, 오류 메시지는 일반적으로 표준 에러에 출력되어야 합니다. 이를 위해서는 `IO.puts/2` 대신 표준 에러를 처리하는 `IO.puts/3` 함수를 사용해야 합니다. 아래는 간단한 예제 코드입니다.
+표준 에러에 쓰는 방법은 아주 쉽습니다. 단지 `IO.puts/2`를 사용하고 에러 메시지를 나타내려는 문자열과 함께 `:stderr` 옵션을 전달하면 됩니다.
 
 ```Elixir
-IO.puts("표준 출력")
-IO.puts(:stderr, "표준 에러")
+IO.puts("에러 메시지입니다.", stderr: :stderr)
 ```
 
-이 코드는 다음과 같이 출력됩니다.
+위의 코드는 다음과 같은 결과를 출력합니다.
 
+```Elixir
+에러 메시지입니다.
 ```
-표준 출력
-표준 에러
-```
 
-## 깊이 파고들기
+## 깊이 파고들기 :
 
-표준 에러는 대개 로그 파일이나 관리 콘솔과 같은 다른 장소에 저장되어 실제로 접근할 수 있게 됩니다. 또한, `Logger` 모듈을 사용하여 더 정교한 로깅 방식을 구현할 수도 있습니다. 이 모듈을 사용하면 로그를 원하는 위치에 기록하고, 로그 레벨을 지정하거나 필터링하여 더 유용한 정보를 얻을 수 있습니다.
+표준 에러에 쓰는 아이디어는 오래 전부터 존재하였습니다. 하지만 요즘에는 더 다양한 방법으로 에러 메시지를 출력할 수 있습니다. 예를 들어, `IO.inspect/2` 함수를 사용하여 구조화된 데이터를 출력할 수 있습니다. 또한 복잡한 로그 시스템을 사용하여 에러를 추적할 수도 있습니다.
 
-## 참고 자료
+## 관련 자료 :
 
-- [Elixir 공식 문서](https://hexdocs.pm/elixir/1.12/IO.html#puts/3)
-- [Elixir School](https://elixirschool.com/ko/lessons/basics/io-and-the-file-system/)
-- [Elixir 프로그래밍 정우영](https://programmer.ink/think/using-logger-in-elixir.html)
+[Elixir 공식 문서](https://hexdocs.pm/elixir/IO.html#puts/2)에서 `IO.puts/2` 함수에 대해 더 자세한 정보를 확인할 수 있습니다. 또한 [이 블로그 포스트](https://medium.com/@williamhayek/the-art-of-writing-to-stderr-in-elixir-e7c6797eaeac)에서 더 많은 정보를 얻을 수 있습니다.

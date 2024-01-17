@@ -1,7 +1,7 @@
 ---
-title:                "Ala-merkkijonojen erottaminen"
-html_title:           "Fish Shell: Ala-merkkijonojen erottaminen"
-simple_title:         "Ala-merkkijonojen erottaminen"
+title:                "Alirivien erottaminen"
+html_title:           "Fish Shell: Alirivien erottaminen"
+simple_title:         "Alirivien erottaminen"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -10,32 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä & Miksi?
 
-Olet varmaan kokenut tilanteen, jossa haluat käsitellä tekstin osaa tai pienempää dataosaa. Tässä Fish Shellin **substring** työkalu tulee avuksi, joka auttaa sinua saamaan haluamasi osan tekstitiedostosta tai merkkijonosta helposti.
+Substringien erottelu on tapa organisoida tekstimuotoista dataa osiin, joita voidaan käsitellä erillisinä kokonaisuuksina. Tämä helpottaa datan käsittelyä ja tarjoaa mahdollisuuden suorittaa erilaisia toimintoja tiettyjen osien suhteen. Koodaajat käyttävät substringien erottelua usein tietyn tiedon tunnistamiseen ja käsittelemiseen, kuten esimerkiksi tiedostonimiä tai URL-osoitteita.
 
-## Miten
+## Miten:
 
-Käytännössä tämä tarkoittaa, että voit käyttää ``substring`` komentoa hakasulkeiden avulla erottaaksesi haluamasi osan tekstitiedostosta tai merkkijonosta. Katso esimerkki alla:
+Fish Shell -ohjelmointikielen avulla substringien erottelu on helppoa ja nopeaa. Alla on esimerkkejä siitä, miten voit erottaa substringin tekstistä ja tulostaa sen konsoliin.
 
-```Fish Shell
-substring "Tämä on esimerkki" 5 -1
+```
+Fish Shell -koodia:
+
+set input "Tämä on tekstiä"
+echo (echo $input | cut -d ' ' -f 2)
 ```
 
-Tämä palauttaa “on esimerkki” osan tekstitiedostosta. Voit myös käyttää haluamasi alku- ja loppupistettä:
+Tuloste: "on"
 
-```Fish Shell
-substring "Tämä on toinen esimerkki" 0 11
+Voit myös erottaa useamman substringin samalla kertaa ja tulostaa ne konsoliin. Esimerkiksi:
+
+```
+Fish Shell -koodia:
+
+set input "John Doe 30 vuotta"
+echo (string split "JohnDoe30 vuotta" | cut -d ' ' -f 1,2)
 ```
 
-Tämä palauttaa “Tämä on toi” osan tekstitiedostosta. Huomaa, että alueen siirtämällä (-1 ensimmäisessä esimerkissä ja 11 toisessa) voit valita haluamasi alueen.
+Tuloste: "John Doe"
 
-## Syvällisempi sukellus
+Fish Shell -kielen substring-funktioilla on myös muita hyödyllisiä vaihtoehtoja, kuten säännöllisiä lausekkeita ja merkkijonojen vaihtamista. Näitä voit käyttää vielä tarkempien substringien erotteluun.
 
-Substring käyttöön liittyy myös muita ominaisuuksia, kuten pisteotsakierto (point slicing), jossa voit käyttää miinusmerkkejä alueen laskemiseen tekstin lopusta. Voit myös käyttää ``substring`` komentoa yhdessä muiden Fish Shellin työkalujen kanssa, kuten ``string replace``, ``string match`` ja ``string length``.
+## Syväsukellus:
 
-## Katso myös
+Substringien erottelu on ollut osa ohjelmointikieliä jo pitkään, ja sen suosio johtuu sen käytännöllisyydestä ja monipuolisuudesta. Fish Shellin lisäksi myös muut ohjelmointikielet, kuten Python ja Java, tarjoavat erilaisia työkaluja ja algoritmeja substringien erotteluun.
 
-- [Fish Shellin viralliset verkkosivut](https://fishshell.com/)
-- [Fish Shell opas](https://fishshell.com/docs/current/tutorial.html)
-- [Fish Shellin GitHub repository](https://github.com/fish-shell/fish-shell)
+Fish Shellin substring-toiminto perustuu usein Unix-käyttöjärjestelmän cut-komentoon, joka tarjoaa erilaisia vaihtoehtoja tietyn merkkijonon erotteluun. Tämä mahdollistaa myös erilaisten komentoriviohjelmien integroinnin Fish Shellin substring-toimintoihin.
+
+## Katso myös:
+
+Löydät lisätietoa Fish Shellin substring-toiminnoista Fish Shell -ohjelmointikielen dokumentaatiosta: https://fishshell.com/docs/2.7/cmds/set.html#string-split. Voit myös tutustua muihin ohjelmointikieliin ja niiden substring-toimintoihin, kuten Pythonin string-joukkoon: https://docs.python.org/3/library/stdtypes.html#string-methods.

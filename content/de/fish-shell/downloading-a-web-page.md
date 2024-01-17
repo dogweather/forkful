@@ -10,36 +10,21 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+# Was und warum?
+Beim Programmieren geht es darum, Webseiten zu downloaden. Dies ist ein gängiger Prozess, um Daten aus dem Internet zu extrahieren und weiterzuverarbeiten. Programmierer verwenden diesen Vorgang, um beispielsweise Informationen für Analyse- oder Scraping-Aufgaben zu sammeln.
 
-Stell dir vor, du möchtest eine Webseite herunterladen, um sie offline zu lesen oder als Teil eines größeren Skripts zu verwenden. Mit der Fish Shell kannst du dies schnell und einfach erledigen.
-
-## Wie geht das?
-
-```Fish Shell
-wget <URL>
+# So geht's:
+Um eine Webseite mit Fish Shell herunterzuladen, müssen Sie zunächst die entsprechende URL angeben und die heruntergeladenen Daten in einer Datei speichern. Hier ist ein Beispielcode:
 ```
-
-Der Befehl `wget` steht für "Web Get" und kann verwendet werden, um eine beliebige Datei von einer URL herunterzuladen. Wenn du jedoch nur die Webseite herunterladen möchtest, ohne Bilder oder andere Dateien, kannst du die Option `-p` hinzufügen.
-
-```Fish Shell
-wget -p <URL>
+wget https://www.beispielseite.com -O beispiel.html 
 ```
+Dieser Befehl lädt die Seite von "beispielseite.com" herunter und speichert sie in der Datei "beispiel.html".
 
-Mit `wget` kannst du auch Dateien von FTP- oder HTTPS-Servern herunterladen und sogar Bandbreiteneinschränkungen festlegen.
+# Tiefere Einblicke:
+Das Herunterladen von Webseiten ist ein wichtiger Bestandteil der Webentwicklung und des Webscrapings. Es gibt verschiedene Tools und Programmiersprachen, die für diesen Prozess verwendet werden können, wie z.B. Python oder Curl. Fish Shell bietet jedoch eine saubere und einfache Möglichkeit, Webseiten herunterzuladen, ohne zusätzliche Abhängigkeiten zu installieren.
 
-## Tief eintauchen
-
-Wenn du mehr Kontrolle über den Downloadprozess haben möchtest, kannst du auch das Programm `curl` verwenden. Im Gegensatz zu `wget` erfordert `curl` jedoch etwas mehr Codierung.
-
-```Fish Shell
-curl <URL> -o <Dateiname>
-```
-
-Mit `curl` kannst du auch den Download in den Hintergrund verschieben, um andere Aufgaben auszuführen, und du kannst die Serverauthentifizierung konfigurieren, falls erforderlich.
-
-## Siehe auch 
-
-- Offizielle Fish Shell Dokumentation über `wget`: https://fishshell.com/docs/current/cmds/wget.html
-- Offizielle Fish Shell Dokumentation über `curl`: https://fishshell.com/docs/current/cmds/curl.html
-- Einführung in die Fish Shell: https://fishshell.com/docs/current/tutorial.html
+# Siehe auch:
+- https://fishshell.com/docs/current/cmds/wget.html
+- https://www.gnu.org/software/wget/
+- https://www.python.org/
+- https://curl.se/

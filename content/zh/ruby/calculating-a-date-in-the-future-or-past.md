@@ -1,7 +1,7 @@
 ---
-title:                "计算未来或过去的日期。"
-html_title:           "Ruby: 计算未来或过去的日期。"
-simple_title:         "计算未来或过去的日期。"
+title:                "计算未来或过去的日期"
+html_title:           "Ruby: 计算未来或过去的日期"
+simple_title:         "计算未来或过去的日期"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Dates and Times"
@@ -10,48 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##为什么
+#在未来或过去计算日期的原因及方法
 
-在日常生活中，我们经常需要计算未来或过去的日期，例如计算某个事件发生多少天后的日期。Ruby提供了一个方便的方式来进行这样的日期计算，让我们来看看如何做到这一点。
+## 什么是计算未来或过去日期？为什么程序员要这样做？
 
-##如何进行日期计算
+计算日期是指以特定的间隔从当前日期往前或往后推算一个新日期。程序员经常需要计算日期，例如在编写软件时需要向用户显示特定日期的信息。此外，还可以用于编写日历或计划应用程序。
 
-日期计算可以通过使用Ruby中的Date类和其内置的方法来完成。首先，我们需要导入Date类，然后通过指定年、月和日来创建一个日期对象。下面的代码片段显示了如何创建一个Date对象：
-
-```Ruby
-require 'date'
-
-#创建一个表示2021年7月29日的日期对象
-date = Date.new(2021, 7, 29)
-
-puts date #=> 2021-07-29
-```
-
-现在我们可以使用Date类的内置方法对日期进行计算。下面是一些常用的示例：
+## 如何进行计算？
 
 ```Ruby
-#计算一个日期之后的某个日期
-next_date = date + 7
+# 计算未来日期
+Date.today + 7 # 加 7 天
+#=> 2021-09-26
 
-puts next_date #=> 2021-08-05
+Date.today + (30 * 3) # 加 90 天
+#=> 2021-12-25
 
-#计算两个日期之间的天数差
-diff = date - Date.today
+Date.today - 14 # 减 14 天
+#=> 2021-09-05
 
-puts diff #=> 271
+# 计算过去日期
+Date.today - 7 # 减 7 天
+#=> 2021-09-12
 
-#判断一个日期是否为闰年
-puts date.leap? #=> false
+Date.today - (30 * 3) # 减 90 天
+#=> 2021-06-16
+
+Date.today + 14 # 加 14 天
+#=> 2021-09-29
 ```
 
-你可以根据自己的需求使用不同的内置方法来计算日期，并根据需要来格式化输出。
+## 深入了解
 
-##深入探讨日期计算
+计算日期的历史可以追溯到古代，人们使用日历来记录时间。另外，除了使用Ruby中的简便方法外，还可以使用时间戳或UNIX时间来计算日期。此外，还可以使用其他编程语言实现类似的功能，例如Python的datetime模块。
 
-Date类提供了许多有用的方法来计算和处理日期。例如，你可以使用`#next_year`和`#prev_year`方法来计算给定日期的上一年和下一年。你还可以使用`#next_month`和`#prev_month`方法来计算给定日期的上一个月和下一个月。此外，Date类还允许你进行跨时区的日期计算，通过使用`#new_offset`方法来指定一个时区偏移量。
+## 相关资源
 
-##参考资料
-
-- [官方Ruby文档](https://ruby-doc.org/stdlib/libdoc/date/rdoc/Date.html)
-- [Ruby中的日期和时间计算技巧](https://blog.appsignal.com/2021/06/30/ruby-magic-date-and-time-calculation-tricks.html)
-- [日期计算的一些有用方法](https://rubyplus.com/articles/4431-Calculating-Dates-and-Times-in-Ruby)
+- [Ruby官方文档](https://www.ruby-lang.org/zh_cn/)
+- [关于日期计算的教程](https://www.rubyguides.com/2015/08/ruby-date-and-time/)

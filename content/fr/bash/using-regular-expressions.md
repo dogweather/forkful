@@ -10,34 +10,18 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi 
+## Qu'est-ce que c'est et pourquoi les développeurs l'utilisent-ils ?
+Les expressions régulières sont des séquences de caractères utilisées pour rechercher et manipuler des chaînes de caractères. Les développeurs les utilisent pour effectuer des opérations telles que la validation de données, l'extraction d'informations ou la manipulation de fichiers. Cela permet d'automatiser des tâches récurrentes et de gagner du temps lors de la manipulation de données.
 
-Utiliser les expressions régulières dans Bash peut grandement faciliter le traitement de données et la manipulation de fichiers. Cela peut également vous permettre d'automatiser certaines tâches répétitives plus rapidement et efficacement.
-
-## Comment faire 
-
-Les expressions régulières dans Bash sont définies entre deux 'slash' (/) et peuvent être utilisées avec des commandes comme 'grep', 'sed' ou encore 'awk'. Voici quelques exemples de code pour vous montrer leur efficacité :
-
+## Comment faire :
+Les expressions régulières peuvent être utilisées dans le terminal avec des commandes Bash telles que `grep`, `sed` et`awk`. Par exemple, pour trouver tous les fichiers contenant le mot "bonjour", vous pouvez utiliser la commande suivante :
 ```Bash
-# Trouver toutes les lignes contenant des mots commençant par la lettre 'a'
-grep '/a[a-z]/' fichier.txt
-
-# Remplacer toutes les occurrences du mot 'hello' par 'bonjour' dans un fichier
-sed 's/hello/bonjour/g' fichier.txt
-
-# Afficher toutes les lignes commençant par 'b' et contenant 3 caractères
-awk '/^b.{2}/' fichier.txt
+grep -l "bonjour" *
 ```
+Cela affichera tous les fichiers contenant le mot "bonjour" dans leur nom ou leur contenu.
 
-Les expressions régulières peuvent également être combinées avec des opérateurs logiques tels que '|' (ou), '&' (et) ou encore '!' (non) pour effectuer des recherches plus complexes.
+## Plongez dans les détails :
+Les expressions régulières ont été développées dans les années 1950 et ont été popularisées dans les années 1970 par le langage de programmation Perl. Il existe également des alternatives comme les expressions rationnelles, qui sont plus simples à utiliser mais offrent moins de flexibilité. L'implémentation des expressions régulières implique l'utilisation d'opérateurs et de constructions spécifiques, tels que `*` pour représenter un nombre quelconque de caractères, ou `[]` pour représenter une classe de caractères.
 
-## Plongée en profondeur 
-
-En plus des commandes mentionnées, les expressions régulières peuvent être utilisées dans d'autres contextes tels que le renommage de fichiers, la recherche dans des chaînes de caractères ou encore la validation de formats.
-
-Il existe également de nombreux modificateurs tels que 'i' (ignore case), 'm' (multi-line) ou encore 'g' (global) qui peuvent être ajoutés à une expression régulière pour effectuer des recherches plus précises.
-
-## Voir aussi 
-
-- [La référence Bash complète des expressions régulières](https://www.gnu.org/software/sed/manual/html_node/Regular-Expressions.html)
-- [Tutoriel Bash : Les expressions régulières](https://www.linuxtricks.fr/wiki/bash-les-expressions-regulieres)
+## Voir aussi :
+Pour en savoir plus sur les expressions régulières et leur utilisation dans Bash, consultez la documentation officielle de GNU `grep` (https://www.gnu.org/software/grep/manual/grep.html#Regular-Expressions) et le tutoriel Bash du site LinuxCommand.org (https://linuxcommand.org/lc3_adv_les8.php). Vous pouvez également trouver des listes complètes d'opérateurs et de constructions dans la documentation en ligne de Perl (https://perldoc.perl.org/perlre.html) et de Python (https://docs.python.org/fr/3/library/re.html).

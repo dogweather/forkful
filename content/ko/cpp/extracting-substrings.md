@@ -1,7 +1,7 @@
 ---
-title:                "부분 문자열 추출하기"
-html_title:           "C++: 부분 문자열 추출하기"
-simple_title:         "부분 문자열 추출하기"
+title:                "하위 문자열 추출"
+html_title:           "C++: 하위 문자열 추출"
+simple_title:         "하위 문자열 추출"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -10,78 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+# 무엇이며 왜?
 
-문자열에서 부분 문자열을 추출하는 것은 굉장히 유용한 기술입니다. 이를 통해 문자열에서 필요한 데이터만 추출하여 다른 작업에 사용할 수 있습니다.
+추출하는 부분 문자열이란 무엇인지 알아보겠습니다. 프로그래머들이 이를 하는 이유는 무엇일까요? 
 
-## 하는 방법
+추출하는 부분 문자열은 기존의 문자열에서 일부분을 추출하여 따로 사용하기 위한 것입니다. 예를 들어, 한 문장에서 특정 단어만 뽑아내거나, 파일 이름에서 확장자만 추출하는 등의 작업에 주로 사용됩니다. 프로그래머들은 이 기능을 활용하여 더 효율적인 코딩을 할 수 있으며, 코드의 가독성을 높이는 데에도 도움이 됩니다.
 
-우선 문자열을 생성하고, 추출할 부분 문자열의 시작 인덱스와 길이를 지정합니다. 그리고 `substr()` 함수를 사용하여 부분 문자열을 추출할 수 있습니다. 예를 들어, 다음과 같은 코드를 작성할 수 있습니다.
+# 방법:
 
+## 문자열에서 특정 단어 추출하기 
 ```C++
-#include <iostream>
-#include <string>
-
-using namespace std;
-
-int main() {
-    // 문자열 생성
-    string str = "안녕하세요! C++ 프로그래밍을 배워봅시다.";
-
-    // 부분 문자열 추출
-    string substr = str.substr(8, 9); // "C++ 프로그래밍"을 추출
-
-    // 추출한 부분 문자열 출력
-    cout << "추출한 부분 문자열: " << substr << endl;
-
-    return 0;
-}
+string sentence = "안녕하세요! 제 이름은 존이고, 만나서 반가워요!";
+string name = sentence.substr(13, 2);
 ```
+위의 코드는 변수 `sentence`에 저장된 문자열에서 `substr()` 함수를 이용해 13번째부터 2개의 글자를 추출하여 변수 `name`에 저장합니다. 따라서 `name`에는 "존"이라는 문자열이 저장됩니다.
 
-위 코드의 출력은 다음과 같습니다.
-
-```
-추출한 부분 문자열: C++ 프로그래밍
-```
-
-또 다른 방법으로는 `find()` 함수를 사용하는 것입니다. 이 함수는 원하는 부분 문자열이 시작하는 인덱스를 반환해주기 때문에, `substr()` 함수와 함께 사용할 수 있습니다. 예를 들어, 다음과 같이 코드를 작성할 수 있습니다.
-
+## 파일 이름에서 확장자 추출하기
 ```C++
-#include <iostream>
-#include <string>
-
-using namespace std;
-
-int main() {
-    // 문자열 생성
-    string str = "안녕하세요! C++ 프로그래밍을 배워봅시다.";
-
-    // 부분 문자열 추출을 위한 시작 인덱스 찾기
-    int start = str.find("C++");
-
-    // 추출할 부분 문자열의 길이 설정
-    int length = 7;
-
-    // 추출한 부분 문자열 출력
-    cout << "추출한 부분 문자열: " << str.substr(start, length) << endl;
-
-    return 0;
-}
+string filename = "image.png";
+string extension = filename.substr(6, 3);
 ```
+위의 코드는 변수 `filename`에 저장된 파일 이름에서 확장자 부분을 추출하여 변수 `extension`에 저장합니다. 따라서 `extension`에는 "png"라는 문자열이 저장됩니다.
 
-위 코드의 출력은 다음과 같습니다.
+# 깊이 파고들기:
 
-```
-추출한 부분 문자열: C++ 프
-```
+## 역사적 맥락
+추출하는 부분 문자열은 1979년에 미국의 덴마크 출신 프로그래머 브라이언 커니항(Brian Kernighan)과 체스터 노선(Chet Ramey)이 개발한 유닉스 운영체제의 쉘 프로그래밍 언어(bourne shell)에서 처음 사용되었습니다. 그 이후 C언어 및 다양한 프로그래밍 언어에서도 이 기능이 채용되었습니다.
 
-## 자세히 알아보기
+## 대안
+추출하는 부분 문자열 기능 외에도 정규표현식(Regular Expression)을 이용하여 문자열에서 원하는 부분을 추출할 수 있습니다. 정규표현식은 더 복잡한 패턴을 이용하여 문자열을 추출할 수 있고, 보다 다양한 문자열 처리 기능을 제공합니다.
 
-위 코드에서 사용된 `substr()` 함수는 `string` 클래스의 멤버 함수로, `string` 객체에서 원하는 부분 문자열을 추출하는 기능을 수행합니다. 이 함수는 두 개의 인자를 받는데, 첫 번째 인자는 추출할 부분 문자열의 시작 인덱스이고 두 번째 인자는 추출할 부분 문자열의 길이입니다. 두 번째 인자를 지정하지 않으면 시작 인덱스부터 문자열의 끝까지의 모든 문자열을 추출합니다. 그리고 `find()` 함수는 `string` 클래스의 멤버 함수로, 인자로 전달된 부분 문자열을 찾아 해당 인덱스를 반환해줍니다. 이를 이용하여 `substr()` 함수에 인자로 전달할 수 있는 것입니다.
+## 구현 세부사항
+추출하는 부분 문자열 기능은 `string` 라이브러리의 `substr()` 함수를 이용하여 구현할 수 있습니다. `substr()` 함수는 두 개의 매개변수를 받는데, 첫 번째 매개변수는 추출을 시작할 인덱스를, 두 번째 매개변수는 추출할 문자의 개수를 나타냅니다. 또한 C++11부터는 `substr()` 함수에 시작 인덱스 대신, 추출을 시작할 위치를 나타내는 `pos` 매개변수를 이용할 수도 있습니다.
 
-## 관련 링크
+# 관련 자료:
 
-- [C++ `string` 클래스 문서](https://www.cplusplus.com/reference/string/string/)
-- [C++ `substr()` 함수 문서](https://www.cplusplus.com/reference/string/string/substr/)
-- [C++ `find()` 함수 문서](https://www.cplusplus.com/reference/string/string/find/)
-- [C++ 문자열 처리 관련 포스팅 (번역)](https://modoocode.com/306)
+- [C++ string class](https://www.cplusplus.com/reference/string/string/)
+- [C++11 Library Reference](https://docs.microsoft.com/en-us/cpp/standard-library/string-class?view=vs-2019)
+- [Regular Expressions in C++](https://www.regular-expressions.info/cpp.html)

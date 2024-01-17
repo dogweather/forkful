@@ -1,7 +1,7 @@
 ---
-title:                "ניתוח שפת תגיות HTML"
-html_title:           "Clojure: ניתוח שפת תגיות HTML"
-simple_title:         "ניתוח שפת תגיות HTML"
+title:                "פירוק של html"
+html_title:           "Clojure: פירוק של html"
+simple_title:         "פירוק של html"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "HTML and the Web"
@@ -10,53 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## למה
+## מה ולמה?
 
-למה להתעסק בפרסום HTML? הפרסום של HTML הוא כלי מאוד חשוב לפיתוח תוכנה, לכן זה יכול להיות כוח עוצמתי בידי המתכנתים. באמצעות פרסום HTML, ניתן ליצור תכניות ואתרים דינמיים עם תצורות מתחשבות, תשתיות פשוטות יותר ופיצול אחריות.
+הניתוח של HTML הוא תהליך שמאפשר לקודמים לקרוא ולהבין את קודים האתרים באופן ממוחשב. ניתוח זה משמש כדי להפוך את תוכן האתר לנתונים מבניים יותר נגישים ונוחים לעיבוד על ידי תוכניות תכנות כגון Clojure.
 
-## איך לעשות זאת
+## כיצד ל:
 
-הוראות קוד ותצורות פרסום לפרסום HTML כפי שאתה לא חייב להיות יכול לכתוב עם שפת התכנות Clojure. הנה דוגמה:
+כדי להפעיל את ניתוח ה-HTML בתכנית Clojure שלך, ניתן להשתמש בפונקציות של מודול Clojure "hiccup" כדי לטפל בקידוד של ה-HTML. לדוגמה, הנה פקודות שיכולות לעזור לך לקרוא את קוד ה-HTML ולהדפיס את התוכן המבני שלו:
 
-קבלת דף HTML והדפסת תוכן הדף:
-```clojure
-(use 'clojure.string)
-(def page (slurp "https://www.example.com"))
-(println page)
+```
+;; הגדרת קוד HTML
+(def my-html "<div><h1>Hello World!</h1></div>")
+
+;; שימוש בפונקציות של hiccup
+(require '[hiccup.core :as hiccup])
+
+;; ניתוח קוד ה-HTML והדפסת התוכן המבני
+(println (hiccup/html-to-str my-html))
 ```
 
-מילוי תוכן טופס HTML עם פרפרים:
-```clojure
-(require '[clojure.xml :as xml])
-(require '[clojure.zip :as zip])
+פלט הקוד הזה יהיה:
 
-(def forms
-  (xml-> (zip/xml-zip (xml/parse "https://www.example.com"))
-    :form))
-   
-(println (xml-zip/xml-> 
-  (xml-zip/xml-zipper forms)
-  :form
-  (xml-zip/attr :action)
-  :content))
+```
+<h1>Hello World!</h1>
 ```
 
-הנה דוגמא נוספת עם פרסום תוכן כתמלול משומע:
-```clojure
-(require '[enlive.core :as html])
+## טיול עמוק:
 
-(html/defsnippet form "form" [form action]
-  [[:input {:type "hidden" 
-            :name "form-id" 
-            :value  (str (int (rand)))}]]
-  [:input {:class "form-title" 
-           :type "text" 
-           :name "form-title" 
-           :autocomplete "off"}])
+הניתוח של HTML נחשב למקורי ולא יעיל, כך שתכונת המודול "hiccup" היא שמייצרת קוד HTML באופן יעיל וקריא. ישנם גם תוכניות תכנות אחרות כמו "Enlive" ו"Jericho" המשמשות לטיפול וניתוח גמישים יותר של קודי HTML.
 
-(html/emit* (form "https://www.example.com/submit") {:title "My Form"})
-```
+עוד פופולריות יתר של פתרונות לניתוח ה-HTML כוללים שימוש בתוכנת ה-Java "JSoup" או בספרייה של ניתוח הנתונים החדשה "ClojureQL".
 
-## צליל עמוק
+מבחינה מבנית, האלגוריתם של ניתוח ה-HTML מדרג כל קוד HTML לתצורה עץ של תגיות ותוכן, וכך מאפשר לתכניות לקרוא ולעבד את תוכן האתר בקלות.
 
-הפרסום של HTML בעזרת Clojure משמש כקלט וכפלט, כך שניתן לבנות מערכות בכלים שונים כדי להכין את היישום המתאים לך. בעזרת כלים נוספים כמו המפוחם המעניק מידע על דפי אינטרנט קשורים נוספים, להחיל האלגורטמים לסינונים אקראי או לכתוב ולבדוק את מה שכתובת האתר שלך מרכיבה מקבועה. קוד של Clojure שנועד עבור זה נוכל לעשות כוון של תוצאם ראשית לכתוב את קצת דפ
+## ראו גם:
+
+- ניתוח קוד HTML עם Clojure "Enlive": https://github.com/cgrand/enlive
+- ניתוח קוד HTML עם ClojureQL: https://github.com/LauJensen/clojureql
+- תיעוד על תוכניות תקשורת כגון "JSoup" ו-"Jericho": https://github.com/clojure-cookbook/clojure-cookbook/tree/master/02_advjava/2-12_html-parsing

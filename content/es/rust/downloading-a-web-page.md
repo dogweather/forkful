@@ -1,7 +1,7 @@
 ---
-title:                "Descargando una página web"
-html_title:           "Rust: Descargando una página web"
-simple_title:         "Descargando una página web"
+title:                "Descargar una página web"
+html_title:           "Rust: Descargar una página web"
+simple_title:         "Descargar una página web"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "HTML and the Web"
@@ -10,44 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+Qué y por qué?
+Descargar una página web es el proceso de recuperar el contenido de una página web desde un servidor remoto y mostrarlo en su dispositivo. Los programadores lo hacen para acceder a información específica en línea o para crear aplicaciones que requieren datos en tiempo real de Internet.
 
-Si estás interesado en el desarrollo web o simplemente quieres aprender un nuevo lenguaje de programación, descargar una página web puede ser una buena forma de tomar el primer paso. Puedes aprender cómo interactuar con una página web, extraer datos y utilizarlos en tus proyectos.
+Cómo:
 
-## Cómo hacerlo
+```Rust
+use reqwest;
+use std::fs::File;
 
-La mejor forma de descargar una página web en Rust es utilizando la biblioteca `reqwest`. Primero, debes agregar esta biblioteca a tu archivo `Cargo.toml`:
-
-```
-[dependencies]
-reqwest = { version = "0.11.4", features = ["json"] }
-```
-
-Luego, en tu archivo `.rs`, importa la biblioteca y utiliza su función `get` para enviar una solicitud al servidor de la página que deseas descargar:
-
-```rust
-use reqwest::Error;
-
-#[tokio::main]
-async fn main() -> Result<(), Error> {
-    let response = reqwest::get("https://example.com").await?;
-    println!("Status: {}", response.status());
-    println!("Headers:\n{}", response.headers());
-    println!("Body:\n{}", response.text().await?);
-    Ok(())
-}
+// Descargar una página web y guardarla localmente
+let mut archivo = File::create("pagina.html")?;
+let mut respuesta = reqwest::get("https://ejemplo.com/pagina")?;
+respuesta.copy_to(&mut archivo)?;
 ```
 
-La función `get` devuelve una estructura `Result`, así que es necesario manejar los posibles errores con `?` o `match`. En el ejemplo anterior, se imprime el estado de la respuesta, los encabezados y el cuerpo en formato de texto.
+Deep Dive:
+La descarga de páginas web ha evolucionado junto con el desarrollo de Internet. Al principio, los usuarios accedían a las páginas web a través de comandos de texto simples. Con la popularidad de la World Wide Web, se desarrollaron navegadores de web que facilitaron la navegación y descarga de páginas web.
 
-## Deep Dive
+Existen varias alternativas para descargar páginas web, como con una aplicación de descarga dedicada o a través de un navegador web utilizando extensiones o complementos. Sin embargo, utilizar un lenguaje de programación como Rust permite a los desarrolladores tener más control sobre el proceso y pueden integrar la descarga en sus aplicaciones.
 
-`reqwest` es una biblioteca completa para realizar solicitudes HTTP en Rust. Además de la función `get`, también puedes utilizar otras funciones como `post` o `delete` según tus necesidades. Puedes consultar la documentación oficial para obtener más información sobre las opciones de configuración y los métodos de solicitud disponibles.
+Para implementar la descarga de páginas web en Rust, se utiliza la librería REQWEST, que gestiona la comunicación con servidores web. También es necesario tener un conocimiento básico de cómo funcionan los protocolos HTTP y HTTPS.
 
-Al utilizar `reqwest`, también puedes manejar cookies, autenticación, redirecciones y más. Además, usando la función `json` puedes analizar automáticamente la respuesta si está en formato JSON.
-
-## Ver también
-
-- [Documentación de `reqwest`](https://docs.rs/reqwest/0.11.4/reqwest/)
-- [Tutorial de Rust para principiantes](https://www.rust-lang.org/es-ES/learn/get-started)
-- [Proyectos de código abierto para contribuir en Rust](https://opensource.com/alternatives/rust-projects)
+See Also:
+- https://doc.rust-lang.org/std/fs/struct.File.html
+- https://docs.rs/reqwest/0.10.9/reqwest/index.html
+- https://www.w3.org/People/Berners-Lee/WorldWideWeb.html

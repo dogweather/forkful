@@ -1,7 +1,7 @@
 ---
-title:                "生成随机数字"
-html_title:           "Swift: 生成随机数字"
-simple_title:         "生成随机数字"
+title:                "生成随机数"
+html_title:           "Swift: 生成随机数"
+simple_title:         "生成随机数"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Numbers"
@@ -10,43 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
+## Random Number Generation: A Fun Tool for Programmers
 
-生成随机数在编程中是一项常见的任务。它可以用于模拟游戏，生成测试数据，或者在任何需要随机性的场景中。Swift 内置了生成随机数的功能，让我们来看看如何使用它！
+## 什么 & 为什么？
 
-## 如何
+随机数生成是指在程序中产生一系列随机数的过程。随机数在编程中是一项非常重要的工具，它可以被用来模拟现实世界的随机性，例如掷骰子、抽奖等。同时，它也可以用来测试程序的稳定性和性能。因此，作为一名程序员，学会生成随机数是很有必要的。
 
+## 如何进行？
+
+生成随机数的方法有很多种，以下为几种常见的方法：
+
+1. 使用系统提供的随机数函数：Swift中提供了`Int.random(in:Range)`函数来生成一个指定范围内的随机整数，`Double.random(in:Range)`函数来生成一个指定范围内的随机浮点数。
 ```Swift
-// 生成一个随机的布尔值
-let randomBool = Bool.random()
-// 输出结果：true 或 false
+let randomInt = Int.random(in: 1...10) //生成1到10范围内的随机整数
+let randomDouble = Double.random(in: 0..<1.0) //生成0到1范围内的随机浮点数
+```
 
-// 生成一个介于 0 到 10 之间的随机数
-let randomInt = Int.random(in: 0...10)
-// 输出结果：0、1、2、3、4、5、6、7、8、9 或 10
+2. 使用第三方库：Swift还有一些第三方库，比如`GameplayKit`和`Random`，它们提供了更多功能丰富的随机数生成方法。
+```Swift
+import GameplayKit
 
-// 生成一个介于 0.0 到 1.0 之间的随机数
-let randomDouble = Double.random(in: 0.0..<1.0)
-// 输出结果：介于 0.0 到 1.0 之间的小数，不包括 1.0
-
-// 从一个数组中随机选择一个元素
-let fruits = ["apple", "orange", "banana", "kiwi"]
-let randomFruit = fruits.randomElement()
-// 输出结果：数组中的一个水果，比如 "kiwi"
+let randomDistribution = GKRandomDistribution(lowestValue: 0, highestValue: 100) //生成0到100范围内的随机数
+let randomNumber = randomDistribution.nextInt() //获取随机数
 ```
 
 ## 深入了解
 
-Swift 中的随机数生成功能是由 `RandomNumberGenerator` 协议驱动的。它定义了一个 `next()` 方法，用于生成下一个随机数。Swift 提供了默认的随机数生成器 `RandomNumberGenerator.default`，也可以自定义一个遵循 `RandomNumberGenerator `协议的结构体或类来实现自定义的随机数生成策略。
+随机数生成在计算机科学中已经有很悠久的历史。早期的电脑并不能产生真正的随机数，所以人们使用了伪随机数生成算法来模拟随机性。随着技术的发展，现在的电脑可以使用真正的随机数生成器硬件来产生真正的随机数。
 
-除了前面提到的方法，Swift 还提供了更多生成随机数的方式，比如 `random(in:using:)`、`shuffled()` 等。详细的文档可参考 [官方文档](https://developer.apple.com/documentation/swift/randomnumbers)。
+除了在编程中常用的伪随机数生成算法外，还有一些其他的种类的随机数生成方法，比如伪随机数序列生成器和真随机数生成器。伪随机数序列生成器可以按照指定的规则生成连续的伪随机数，而真随机数生成器则需要外部的真正随机性源，例如随机数硬件、摄像头的噪声等。
 
 ## 参考资料
 
-- [官方文档](https://developer.apple.com/documentation/swift/randomnumbers)
-- [Swift by Sundell - Randomness in Swift](https://www.swiftbysundell.com/articles/randomness-in-swift/)
-- [Hacking with Swift - Random numbers in Swift](https://www.hackingwithswift.com/articles/101/random-numbers-in-swift)
+如果你想更深入地了解随机数生成的知识，可以参考以下资料：
 
-## 参见
-
-如需了解更多 Swift 的基础知识和使用技巧，请参考 [Swift 中文指南](https://swiftgg.gitbook.io/swift/).
+1. [Swift官方文档 - Generating Random Numbers](https://docs.swift.org/swift-book/LanguageGuide/TheBasics.html#ID352)
+2. [WWDC 2018 - Random numbers in Swift](https://developer.apple.com/videos/play/wwdc2018/223/)
+3. [Wikipedia - Random Number Generation](https://en.wikipedia.org/wiki/Random_number_generation)

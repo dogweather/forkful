@@ -10,45 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-If you're working with multiple programming languages or need to store data in a human-readable format, YAML is a great option. It's a lightweight, easy-to-read language that makes organizing and sharing data a breeze.
+## What & Why?
 
-## How To
-To start using YAML in your Gleam project, first install the latest version of the official Gleam YAML library. Then, import it into your code with `import gleam/yaml`.
+Working with YAML is a common task for programmers, as it allows them to easily store and organize configuration data in a human-readable format. YAML stands for "YAML Ain't Markup Language" and is often used as an alternative to XML or JSON for configuration files and data serialization.
 
-Next, let's take a look at a basic example of how to create and save a YAML file:
+## How to:
 
-```Gleam
-let my_data = [
-  { "name":  "John", "age": 26 },
-  { "name":  "Jane", "age": 32 }
-]
+To work with YAML in Gleam, the first step is to import the `gleam/yaml` module:
 
-let file = yaml.encode(my_data)
-File.write("./sample.yaml", file)
+```
+import gleam/yaml
 ```
 
-In this code, we create a list of dictionaries containing some sample data. Then, we use the `encode` function from the YAML library to convert the data into YAML format. Finally, we use the `File.write` function to save the YAML data to a file.
+Then, to read a YAML file and convert it to a Gleam type, you can use the `from_string` function:
 
-To read and use data from a YAML file, we can use the `decode` function:
-
-```Gleam
-let data = File.read("./sample.yaml")
-let decoded_data = yaml.decode(data)
+```
+Gleam.from_string(yaml_string) // Converts the YAML string to a Gleam type
 ```
 
-The `decoded_data` variable will now contain the same list of dictionaries that we created earlier.
+To convert a Gleam type back to YAML, you can use the `to_string` function:
+
+```
+Yaml.to_string(gleam_type) // Converts the Gleam type to a YAML string
+```
+
+Here's a simple example of using YAML in Gleam:
+
+```
+let example_yaml = "
+name: Gleam
+year: 2019
+is_awesome: true
+"
+let config = Yaml.from_string(example_yaml)
+```
+
+The `config` variable will then contain a Gleam map with the corresponding keys and values from the YAML string. This makes it easy to access the data programmatically.
 
 ## Deep Dive
-Now that you know the basics of creating and reading YAML files in Gleam, let's take a deeper dive into some advanced features.
 
-First, it's important to note that Gleam's YAML library follows the YAML 1.2 standard. This means that you can take advantage of all the powerful features that come with the standard, such as anchors, aliases, and custom tags.
+YAML was first introduced in 2001 and has since become a popular choice for configuration files due to its simplicity and readability. It is widely supported by many programming languages and has libraries available for easy integration.
 
-Additionally, the library provides functions for formatting, parsing, and validating YAML data. This allows for more control and flexibility when working with YAML.
+As an alternative to XML or JSON, YAML offers a more human-friendly syntax, making it easier to read and understand even for non-technical people. It also allows for multi-line strings, making it a great choice for writing documentation or other text-heavy data.
 
-And finally, the library also supports converting between YAML and JSON. This can come in handy when working with other programming languages that may not have native support for YAML.
+In Gleam, the `gleam/yaml` module uses the `libyaml` library, a lightweight YAML C library, for its parsing and serialization. This ensures efficient and reliable handling of YAML files.
 
 ## See Also
-- [Official Gleam YAML Library](https://github.com/gleam-lang/yaml)
-- [YAML Specification](https://yaml.org/spec/1.2/spec.html)
-- [JSON to YAML Converter](https://www.json2yaml.com/)
+
+- [YAML Specification](https://yaml.org/spec/) - Official YAML specification
+- [Gleam Documentation](https://gleam.run/documentation/) - Official Gleam documentation 
+- [libyaml](https://pyyaml.org/wiki/LibYAML) - Lightweight YAML C library used by Gleam's `gleam/yaml` module

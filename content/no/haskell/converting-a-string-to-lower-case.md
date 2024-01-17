@@ -1,7 +1,7 @@
 ---
-title:                "Konvertere en streng til små bokstaver"
-html_title:           "Haskell: Konvertere en streng til små bokstaver"
-simple_title:         "Konvertere en streng til små bokstaver"
+title:                "Konvertering av en streng til små bokstaver"
+html_title:           "Haskell: Konvertering av en streng til små bokstaver"
+simple_title:         "Konvertering av en streng til små bokstaver"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -10,47 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hva & Hvorfor?
+Konvertering av en streng til små bokstaver er å endre alle bokstavene i en tekststreng til små bokstaver. Det er nyttig for å standardisere og forenkle tekstbehandling og sammenligning av strenger. Programmere gjør dette for å sikre lik behandling av tekst og unngå unødvendige feil.
 
-Det å konvertere en streng til små bokstaver kan være nyttig i mange tilfeller. Det kan hjelpe med å sammenligne strenger, filtrere data og generelt gjøre tekstbehandling enklere. I denne artikkelen skal vi se på hvordan man kan gjøre dette i Haskell.
-
-## Hvordan gjøre det
-
-For å konvertere en streng til små bokstaver i Haskell, kan vi bruke funksjonen `toLower` fra biblioteket `Data.Char`. Denne funksjonen tar inn en enkelt bokstav og returnerer bokstaven i små bokstaver. For å konvertere en hel streng, kan vi bruke funksjonen `map` som tar inn en funksjon og en liste, og returnerer en liste hvor funksjonen er brukt på hvert element i listen.
+## Hvordan:
+Kodeeksempler og sample output:
 
 ```Haskell
-import Data.Char
+import Data.Char (toLower)
 
-toLowerString :: String -> String
-toLowerString = map toLower
+lowerCaseString :: String -> String
+lowerCaseString s = map toLower s
+
+lowerCaseString "HeLlO WoRlD"  -- output: "hello world"
 ```
 
-Vi definerer en ny funksjon `toLowerString` som tar inn en streng og bruker `map` for å bruke `toLower` på hver bokstav i strengen.
-
-La oss prøve ut denne funksjonen med noen eksempler:
+En annen måte å konvertere en streng til små bokstaver er å bruke funksjonen `map` sammen med `Data.Etafunktor` modulen:
 
 ```Haskell
-toLowerString "HELLO WORLD!" -- Output: "hello world!"
-toLowerString "Haskell er gøy!" -- Output: "haskell er gøy!"
+import Data.Etafunktor (fmap)
+import Data.Char (toLower)
+
+lowerCaseString :: String -> String
+lowerCaseString s = fmap toLower s
+
+lowerCaseString "HaVe A nIcE DaY"  -- output: "have a nice day"
 ```
 
-Som vi kan se, blir alle bokstavene i strengen konvertert til små bokstaver.
+## Dypere dykk:
+Historisk kontekst:
+Konvertering av en streng til små bokstaver har vært en viktig del av tekstbehandling siden den første datamaskinen ble oppfunnet. I eldre programmeringsspråk som C og Fortran måtte programmene selv håndtere konverteringen. Men med framveksten av funksjonelt programmeringsspråk som Haskell, er det nå innebygd funksjonalitet for å gjøre dette enkelt og effektivt.
 
-## Dypdykk
+Alternative tilnærminger:
+I tillegg til `toLower` funksjonen som vi brukte i eksemplene, tilbyr Haskell også `toLower` funksjonen som er spesifikt for enkelte språk og skriftsystemer. For eksempel `toLower_greek` og `toLower_hebrew` for henholdsvis gresk og hebraisk. Dette gjør det enkelt å håndtere spesifikke språk i tekstbehandling.
 
-Det er viktig å merke seg at denne funksjonen bare vil fungere for ASCII-tegn, altså bokstaver i det latinske alfabetet. Dersom vi ønsker å konvertere strenger som inneholder andre språk eller spesialtegn, må vi bruke en annen funksjon som støtter dette. En slik funksjon er `map toLower . map toTitle` som følger:
+Implementasjonsdetaljer:
+Kjernen av konvertering av en streng til små bokstaver er å endre ASCII-kodene til de respektive bokstavene. Dette gjøres ved hjelp av matematiske operasjoner og funksjoner som er innebygd i Haskell.
 
-```Haskell
-import Data.Char
-
-toLowerString :: String -> String
-toLowerString = map toLower . map toTitle
-```
-
-Denne funksjonen vil først konvertere alle bokstavene til stor bokstav ved hjelp av `toTitle`, og deretter konvertere dem til små bokstaver med `toLower`. Dette vil gi korrekt konvertering for alle typer bokstaver.
-
-## Se også
-
-- "Introduction to Haskell" fra W3Schools: https://www.w3schools.com/haskell/
-- "Data.Char" dokumentasjon fra Haskell.org: https://hackage.haskell.org/package/base/docs/Data-Char.html
-- "Funksjoner i Haskell" fra Programiz: https://www.programiz.com/haskell-programming/functions
+## Se også:
+- [Haskell.org](https://www.haskell.org/) - Offisiell hjemmeside for Haskell språket.
+- [Haskell wiki](https://wiki.haskell.org/) - Wiki med informasjon om Haskell.
+- [Hackage](https://hackage.haskell.org/) - Sentralisert bibliotek for Haskell pakker.

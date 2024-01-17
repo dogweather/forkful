@@ -1,7 +1,7 @@
 ---
-title:                "Excluindo caracteres que correspondem a um padrão"
-html_title:           "PHP: Excluindo caracteres que correspondem a um padrão"
-simple_title:         "Excluindo caracteres que correspondem a um padrão"
+title:                "Exclusão de caracteres correspondentes a um padrão"
+html_title:           "PHP: Exclusão de caracteres correspondentes a um padrão"
+simple_title:         "Exclusão de caracteres correspondentes a um padrão"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Strings"
@@ -10,32 +10,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+## O que & Por que?
+Às vezes, um programador pode precisar excluir certos caracteres ou padrões de uma string em PHP. Isso pode ser útil para limpar dados ou formatar informações de maneira específica. É uma técnica comum usada para manipulação de string.
 
-Às vezes, em nossos códigos PHP, nos deparamos com caracteres que não queremos manter. Eles podem ser espaços em branco, símbolos ou até mesmo palavras inteiras. Para evitar problemas ou erros, é importante saber como deletar esses caracteres de uma maneira eficiente.
+## Como fazer:
+Um exemplo simples de como excluir caracteres correspondentes a um padrão em uma string é usando a função `preg_replace()` em PHP. Abaixo está um exemplo de código que substitui todos os números de um número de telefone por asteriscos:
 
-## Como fazer
-
-Felizmente, o PHP possui uma função integrada que nos permite facilmente deletar caracteres indesejados. A função `preg_replace()` permite que substituamos caracteres que correspondam a um padrão específico por um novo conteúdo. Por exemplo:
-
-```
-<?php
-$string = "Esta é uma frase com caracteres indesejados   ";
-echo preg_replace("/\s+/", "", $string);
-?>
+```PHP
+$telefone = "123-456-7890";
+$telefone = preg_replace("/[0-9]/", "*", $telefone);
+echo $telefone; // output: ***-***-****
 ```
 
-Este código irá deletar todos os espaços em branco da string, resultando em "Estaéumafrasecomcaracteresindesejados". Observe que o primeiro parâmetro da função é uma expressão regular, que nos permite definir o padrão a ser encontrado.
+## Mergulho Profundo:
+Deletar caracteres correspondentes a um padrão é uma técnica que sempre foi usada na programação, mas se tornou mais fácil com o uso de funções específicas, como `preg_replace()` em PHP. Existem outras opções, como usar `str_replace()` ou `substr()`, mas nem sempre são tão precisas ou eficientes quanto a função `preg_replace()`.
 
-## Deep Dive
+Na implementação, a função `preg_replace()` usa expressões regulares para especificar o padrão a ser correspondido e a string a ser usada como substituição. Isso permite uma ampla gama de possibilidades na manipulação de string, tornando-a uma ferramenta poderosa para os programadores.
 
-Expressões regulares são uma ferramenta poderosa para manipulação de strings em PHP. Existem diversos padrões que podem ser utilizados para encontrar e deletar caracteres específicos. Além disso, a função `preg_replace()` também aceita arrays como parâmetros, o que nos permite deletar vários caracteres em uma única chamada de função.
-
-Outra opção é utilizar a função `str_replace()`, que permite a substituição de um conjunto de caracteres por outro conjunto. Essa função é mais simples de usar, mas pode não oferecer a flexibilidade da `preg_replace()`.
-
-Por fim, é importante lembrar que ambas as funções mencionadas acima não alteram a string original, apenas retornam o resultado da operação. Portanto, é necessário atribuir o resultado a uma variável ou imprimir diretamente.
-
-## Veja também
-
-- [Documentação oficial do PHP sobre a função preg_replace()](https://www.php.net/manual/pt_BR/function.preg-replace.php)
-- [Tutorial sobre expressões regulares em PHP](https://www.php.net/manual/pt_BR/book.pcre.php)
+## Veja também:
+- Documentação oficial do PHP sobre `preg_replace()`: https://www.php.net/manual/en/function.preg-replace.php
+- Uma introdução às expressões regulares em PHP: https://www.php.net/manual/en/regexp.introduction.php
+- Uma comparação entre `preg_replace()` e outras funções de manipulação de string: https://stackoverflow.com/questions/4178155/what-is-the-difference-between-preg-replace-str-replace-and-strtr

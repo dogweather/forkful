@@ -10,49 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜?
+# 현재 날짜를 얻는 방법과 그 이유
 
-코딩을 하는 많은 사람들에게 대부분의 프로세스에서 현재 날짜를 찾는 것이 필수적입니다. 예를 들어, 어떤 작업을 수행하고 해당 결과를 보관하거나 프로그램에서 날짜별로 파일이나 데이터를 정리할 때 현재 날짜를 사용할 수 있습니다.
+## 무엇인가요?
+현재 날짜를 얻는 것이란, 시스템이나 프로그램이 현재 날짜를 알아내는 것을 말합니다. 프로그래머들은 이 기능을 사용하여 시간 관련 기능을 구현하거나, 로그를 기록하거나, 파일을 만들 때 날짜 정보를 포함시킬 수 있습니다.
 
-## 하우 투 (How To)
+## 왜 하나요?
+현재 날짜는 프로그램이나 시스템이 언제 작동했는지를 알 수 있는 중요한 정보입니다. 또한 시간 관련 기능을 구현하기 위해 필수적인 요소입니다. 예를 들어, 사용자가 게시물을 작성한 시간을 표시하거나, 파일 이름에 날짜 정보를 포함시켜 다른 파일과 구분할 수 있습니다.
 
-그럼, C++에서 현재 날짜를 어떻게 가져오는지 알아보겠습니다. 우선, 다음과 같이 헤더 파일 &#60;ctime&#62; 을 포함해야 합니다.
-
+## 방법:
 ```C++
-#include &#60;ctime&#62;
+#include <iostream>
+#include <ctime>
+
+using namespace std;
+
+int main() {
+  // 현재 시간을 받아오는 코드
+  time_t now = time(0);
+
+  // time_t 변수에서 현재 날짜 정보를 얻는 코드
+  char* date = ctime(&now);
+
+  // 출력
+  cout << "현재 날짜: " << date << endl;
+
+  return 0;
+}
 ```
+위의 코드는 현재 날짜를 출력하는 간단한 예제입니다. <code>ctime</code> 함수를 사용하여 <code>time_t</code> 변수에서 날짜 정보를 얻어오고, <code>cout</code> 함수를 사용하여 출력합니다.
 
-그리고, 아래의 코드를 사용해서 현재 날짜를 얻을 수 있습니다.
+## 더 알아보기:
+### 역사적인 배경:
+현재 날짜를 얻는 기능은 시스템에 따라 다르게 구현될 수 있습니다. 예전에는 시스템의 내부 시계를 사용해 현재 날짜를 알아내는 방식이었지만, 이제는 인터넷을 통해 정확한 현재 날짜를 서버에서 받아오기도 합니다.
 
-```C++
-// 현재 시간(현재 날짜 및 시간)을 저장하는 tm 구조체 생성
-time_t now = time(0);
+### 대안:
+<code>#include <ctime></code> 라이브러리 대신 <code>#include <chrono></code> 라이브러리를 사용하여 현재 날짜를 얻을 수도 있습니다. <code>std::chrono::system_clock::now()</code> 함수를 사용하는 방법이 있습니다.
 
-// 현재 날짜 및 시간으로 변환
-char* dt = ctime(&now);
+### 구현 상세:
+<code>time_t</code>는 1970년 1월 1일부터 현재까지의 초 단위를 저장하는 데이터 형식입니다. 따라서 <code>time_t</code> 변수에서 날짜 정보를 얻으려면 초 단위를 일 단위로 변환해주어야 합니다. <code>ctime</code> 함수는 <code>time_t</code> 변수를 파라미터로 받아서 문자열 형태의 날짜 정보를 리턴해줍니다.
 
-// 현재 날짜만 추출
-cout << "현재 날짜: "<< dt << endl;
-```
-
-위의 코드를 실행하면 다음과 같은 출력 결과를 얻게 될 것입니다.
-
-```
-현재 날짜: Tue Nov 9 21:56:04 2021
-```
-
-## 딥 다이브 (Deep Dive)
-
-위의 코드에서 사용된 함수인 `time()` 함수는 시간을 지정된 형식으로 리턴해주는 C++의 표준 라이브러리 함수입니다. 이 함수는 파라미터를 받지 않고, 호출 시 현재 시간을 `time_t` 타입으로 리턴합니다.
-
-`time_t` 타입은 시간을 표현하는 클래스이며, 이를 `tm` 구조체에 저장하면 현재 날짜 및 시간 정보를 얻을 수 있습니다. `ctime()` 함수는 `time_t` 변수를 파라미터로 받아서 날짜 및 시간을 문자열 형식으로 표현해줍니다.
-
-## 더 알아보기
-
-- [C++ 날짜 및 시간 함수](https://www.cplusplus.com/reference/ctime/)
-- [C++의 time, tm, ctime 함수 이해하기 (영문)](https://www.tutorialspoint.com/cplusplus/cpp_date_time.htm)
-
-## 참고자료
-
-- [C++ Reference - ctime](https://en.cppreference.com/w/cpp/chrono/c/ctime)
-- [C++ 사용자와 개발자를 위한 C++ 표준 라이브러리 출시](https://docs.microsoft.com/ko-kr/cpp/standard-library/release-notes?view=msvc-160)
+## 참고 자료:
+- [ctime 라이브러리 문서](https://www.cplusplus.com/reference/ctime/)
+- [chrono 라이브러리 문서](https://www.cplusplus.com/reference/chrono/)

@@ -1,7 +1,7 @@
 ---
-title:                "Ein neues Projekt beginnen"
-html_title:           "Fish Shell: Ein neues Projekt beginnen"
-simple_title:         "Ein neues Projekt beginnen"
+title:                "Eine neue Projekt aufbauen"
+html_title:           "Fish Shell: Eine neue Projekt aufbauen"
+simple_title:         "Eine neue Projekt aufbauen"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Getting Started"
@@ -10,44 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Warum
+## Was & Warum?
 
-Warum sollte man ein neues Projekt starten? Es gibt viele Gründe dafür, wie z.B. die Automatisierung von Aufgaben, die Verbesserung der Produktivität oder die Anpassung an persönliche Bedürfnisse. Wenn du daran interessiert bist, ein neues Projekt zu starten, solltest du weiterlesen, um zu erfahren, wie du dies mit der Fish Shell erreichen kannst.
+Eine neue Programmierungsaufgabe oder ein neues Projekt zu beginnen ist der Prozess, bei dem ein Programmierer eine neue Aufgabe annimmt und damit beginnt, sie zu lösen. Programmierer starten neue Projekte, um neue Herausforderungen anzunehmen, vorhandenes Wissen anzuwenden und neue Fähigkeiten zu erlernen.
 
-# Wie geht's
+## Wie es geht:
 
-Die Fish Shell ist eine leistungsstarke und benutzerfreundliche Shell, die es dir ermöglicht, komplexe Aufgaben mit nur wenigen Befehlen auszuführen. Wenn du ein neues Projekt starten möchtest, solltest du zuerst ein Verzeichnis für dein Projekt erstellen und dann mit der Fish Shell interagieren. Hier sind einige Beispiele, wie du dies tun kannst:
+```Fish Shell``` bietet eine effiziente und benutzerfreundliche Möglichkeit, ein neues Projekt zu starten. Hier sind einige Beispiele, wie man in ```Fish Shell``` ein neues Projekt starten kann:
 
-```fish
-# Ein neues Verzeichnis erstellen
-mkdir mein_projekt
-
-# In das Verzeichnis wechseln
-cd mein_projekt
-
-# Eine neue Datei erstellen
-touch index.html
-
-# Den Inhalt der Datei mit einem Texteditor bearbeiten
-vi index.html
+1. Erstelle einen neuen Ordner für das Projekt und navigiere in diesen Ordner:
+```
+$ mkdir neues_projekt
+$ cd neues_projekt
+```
+2. Erstelle eine Datei mit dem gewünschten Dateinamen:
+```
+$ touch main.py
+```
+3. Öffne die Datei im Texteditor und beginne mit dem Schreiben des Codes:
+```
+$ code main.py
 ```
 
-Wenn du die Datei mit dem Texteditor bearbeitet hast, kannst du sie ausführen, indem du den Namen der Datei in der Shell eingibst:
+## Tief Eintauchen
 
-```fish
-./index.html
-```
+Das Erstellen eines neuen Projekts in ```Fish Shell``` ist nicht nur einfach, sondern auch Teil der Philosophie der Shell. Es ist erwähnenswert, dass es auch andere Shell-Optionen gibt, die das Starten von Projekten erleichtern, wie z.B. die Verwendung von ```bash``` oder ```zsh```. Zusätzlich können Entwickler auch Tools wie ```virtualenv``` nutzen, um Umgebungen für spezifische Projekte zu erstellen.
 
-Dies sind nur einige Beispiele dafür, wie du die Fish Shell für dein neues Projekt nutzen kannst. Mit der Fish Shell kannst du auch Variablen, Funktionen und andere nützliche Tools nutzen, um deine Arbeit effizienter zu gestalten.
+## Siehe auch:
 
-# Tief eintauchen
-
-Um dein Verständnis von der Fish Shell zu vertiefen, solltest du eine kurze Einführung in das Skripting mit Fish lesen. Mit dieser Technik kannst du komplexe Aufgaben automatisieren und deine Produktivität steigern. Außerdem bietet die Fish Shell eine Vielzahl von Plugins und Erweiterungen, die dir helfen können, dein Projekt anzupassen und zu erweitern.
-
-Eine gute Möglichkeit, mehr über die Fish Shell zu lernen, ist die offizielle Dokumentation auf der Website des Projekts. Dort findest du detaillierte Informationen zu den Funktionen, Syntax und Einsatzmöglichkeiten der Shell. Außerdem gibt es eine aktive Community, in der du Fragen stellen und hilfreiche Tipps und Tricks erhalten kannst.
-
-# Siehe auch
-
-- Offizielle Fish Shell Dokumentation: https://fishshell.com/docs/
-- Fish Shell Cookbook: https://fishshell.com/docs/current/index.html
-- Fish Shell Plugins: https://github.com/fish-shell/fish-shell/wiki/Plugins
+- Offizielle Dokumentation für ```Fish Shell``` (https://fishshell.com/docs/current/)
+- Eine Einführung in die ```Fish Shell``` von Sebastian Daschner (https://blog.sebastian-daschner.com/entries/fish-shell)
+- Vergleich von verschiedenen Shell-Optionen von Linuxize (https://linuxize.com/post/bash-vs-zsh-vs-fish/)

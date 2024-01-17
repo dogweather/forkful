@@ -10,35 +10,20 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
-अमान्य फ़ाइल तैयार करने में लोगों को क्यों हिस्सा लें। इसका मूल उद्देश्य क्या है और यह क्यों उपयोगी हो सकता है।
+## क्या है और क्यों?
+Temporary file को create करना रोज़मर्रा की programming में एक common task है। यह काम उस समय किया जाता है जब हमारे पास अपनी temporary data को store करने का dedicated space नहीं है, और हम उसे temporary file के रूप में बना कर संग्रहीत करना चाहते हैं।
 
-## कैसे करें
-अमान्य फ़ाइल तैयार करना बहुत आसान है। आप निम्नलिखित चरणों का अनुसरण करके अपनी अपनी भाषा में बस एक चीज़ प्रोग्राम कर सकते हैं:
-
+## कैसे करें?
 ```Gleam
-import gleam/temporary
+let { Ok, Err } = file.write_temporary("temp.txt", "Temporary file content")
+```
 
-temporary_file =
-    temporary.create()
-// नया अमान्य फ़ाइल बनाने के लिए उपयोग किया जा रहा है।
+यह कोड temporary file "temp.txt" को create करेगा और उसमें "Temporary file content" लिखेगा। अगर कोई error होता है तो उसे Err में store किया जाएगा। जबकि अगर सब कुछ ठीक हो तो Ok में success message store हो जाएगा।
 
-temporary_file_path = temporary.path(temporary_file)
-// अमान्य फ़ाइल का पथ आपको दूसरे भागों में उपयोग करने के लिए मिल जाएगा।
+## गहराई में जाएं
+Temporary file को create करने का concept वास्तव में unix-like operating systems से संबंधित है। ये operating systems process से associated हैं। जब process terminate होता है तो उसके साथ associated temporary file भी automatically delete हो जाता है। यह एक efficient way है अगर हम प्रोग्राम में temporary file को साफ़ करने का बार-बार burden से नहीं चाहते हैं।
 
-temporary.write(temporary_file, "Hello World")
-// अमान्य फ़ाइल में डेटा लिखना, उसे मूल फ़ाइल से स्पर्श नहीं करता है।
-
-let content = temporary.read(temporary_file)
-/* अमान्य फ़ाइल पठ है,
- और मूल फ़ाइल की तुलना में यह पाठ मूल फ़ाइल से पठित होगा।
- डेटा न लिखें, उसे पढ़ने के लिए बल्कि मूल फ़ाइल से फ़ाइल पठ को उपयोग करें। प्रोग्राम
- अब यहाँ `content` के रूप में उपलब्ध है।
-*/
-
-// अमान्य फ़ाइल को स्वतः ही हटा दिया जाएगा।
-
-// यह सब कुछ है! अब आप इसके साथ खेल सकते हैं - अमान्य फ़ाइलें का आनंद लें!
-
-## डीप डाइव
-अमान्य फ़ाइलें प्रोग्रामिंग की दुनिया में बहुत ही उपयोगी हो सकते हैं। यह आपको स्थायी फ़ाइले बनाने के लिए अल्टरनेटिव दे सकता है। इसके अलावा, यह प्रोग्राम का हिस
+## और देखें
+- [आधिक्य के बारे में जानें](https://github.com/lpil/gleam_stdlib/blob/master/lib/gleam_std/temporary/file.gleam#L88)
+- [दो alternatives भी विचार करें](https://github.com/lpil/gleam_stdlib/blob/master/lib/gleam_std/temporary/file.gleam#L15)
+- [temporary file को create करने के दूसरे तरीके](https://github.com/lpil/gleam_stdlib/blob/master/lib/gleam_std/temporary/file.gleam#L33)

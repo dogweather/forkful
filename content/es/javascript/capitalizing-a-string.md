@@ -1,7 +1,7 @@
 ---
-title:                "Capitalizar una cadena"
-html_title:           "Javascript: Capitalizar una cadena"
-simple_title:         "Capitalizar una cadena"
+title:                "Cambiar una cadena a mayúsculas"
+html_title:           "Javascript: Cambiar una cadena a mayúsculas"
+simple_title:         "Cambiar una cadena a mayúsculas"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Strings"
@@ -10,59 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¿Qué y por qué?
+Capitalizar una cadena de texto simplemente significa convertirla en una cadena en la que la primera letra de cada palabra esté en mayúscula. Los programadores suelen hacer esto para mejorar la legibilidad y la presentación de sus códigos.
 
-Capitalizar una cadena de texto en JavaScript es una práctica común en el desarrollo web que nos permite darle un formato específico a nuestros datos para mejorar la presentación y legibilidad de la información.
+## Cómo hacerlo:
+Hay varias formas de capitalizar una cadena en JavaScript. Puedes usar la función ```toUpperCase()``` para convertir la cadena completa en mayúsculas, o la función ```charAt()``` junto con ```toUpperCase()``` para convertir solo la primera letra en mayúscula. Ejemplos de código y salidas de muestra a continuación:
 
-## Cómo hacerlo
+```
+// Convertir la cadena completa en mayúsculas
+let cadena = "hola mundo";
+let cadenaCapitalizada = cadena.toUpperCase();
+console.log(cadenaCapitalizada); // Salida: HOLA MUNDO
 
-Para capitalizar una cadena en JavaScript, podemos utilizar el método `toUpperCase()` que convierte todo el texto en mayúsculas. También podemos utilizar el método `charAt()` para obtener la primera letra de la cadena y convertirla a mayúscula. A continuación, concatenamos esa letra con el resto de la cadena en minúsculas utilizando el método `slice()`.
-
-Veamos un ejemplo de cómo capitalizar una cadena en JavaScript:
-
-```Javascript
+// Convertir solo la primera letra en mayúscula
 let cadena = "hola mundo";
 let primeraLetra = cadena.charAt(0).toUpperCase();
-let restoDeCadena = cadena.slice(1).toLowerCase();
-let cadenaCapitalizada = primeraLetra + restoDeCadena;
-
-console.log(cadenaCapitalizada); // "Hola mundo"
+let cadenaCapitalizada = primeraLetra + cadena.slice(1);
+console.log(cadenaCapitalizada); // Salida: Hola mundo
 ```
 
-Podemos encapsular esta lógica en una función para hacerla más reutilizable:
+## Profundizando:
+La capitalización de cadenas ha existido desde los primeros días de la informática y se utiliza en muchos lenguajes de programación. Alternativas en JavaScript incluyen el uso de expresiones regulares y la función ```replace()```. La implementación de la función ```toUpperCase()``` varía dependiendo de la codificación del lenguaje utilizado.
 
-```Javascript
-function capitalizar(cadena) {
-  return cadena.charAt(0).toUpperCase() + cadena.slice(1).toLowerCase();
-}
-
-console.log(capitalizar("hola mundo")); // "Hola mundo"
-console.log(capitalizar("estoy aprendiendo javascript")); // "Estoy aprendiendo javascript"
-```
-
-## Profundizando
-
-Cuando utilizamos el método `toUpperCase()`, es importante tener en cuenta que este método no solo convierte las letras a mayúsculas, sino que también convierte los caracteres especiales y acentos a su equivalente en mayúsculas. Esto puede afectar el resultado final si estamos trabajando con diferentes idiomas y caracteres.
-
-Además, si queremos capitalizar no solo la primera letra de la cadena, sino también la primera letra después de un espacio o un carácter de puntuación, necesitamos un enfoque diferente. Podemos utilizar el método `split()` para dividir la cadena en un array de palabras, luego utilizar el método `map()` y la función `capitalizar()` que definimos anteriormente para capitalizar cada palabra, y finalmente volver a unir el array en una cadena utilizando el método `join()`.
-
-Veamos un ejemplo de cómo capitalizar todas las palabras de una cadena en JavaScript:
-
-```Javascript
-function capitalizarTodas(cadena) {
-  let palabras = cadena.split(" ");
-  let palabrasCapitalizadas = palabras.map(palabra => capitalizar(palabra));
-
-  return palabrasCapitalizadas.join(" ");
-}
-
-console.log(capitalizarTodas("hola mundo")); // "Hola Mundo"
-console.log(capitalizarTodas("estoy aprendiendo javascript")); // "Estoy Aprendiendo Javascript"
-```
-
-## Ver también
-
-- [Documentación de MDN para el método `toUpperCase()` en JavaScript](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase)
-- [Documentación de MDN para el método `charAt()` en JavaScript](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/String/charAt)
-- [Documentación de MDN para el método `slice()` en JavaScript](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/String/slice)
-- [Más información sobre el lenguaje JavaScript en nuestra sección dedicada](https://www.example.com/javascript)
+## Ver también:
+- [Documentación de JavaScript para la función toUpperCase()](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/String/toUpperCase)
+- [Ejemplos de expresiones regulares para capitalizar cadenas en JavaScript](https://www.regexpal.com/39242)

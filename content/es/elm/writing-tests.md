@@ -1,7 +1,7 @@
 ---
-title:                "Escribiendo pruebas"
-html_title:           "Elm: Escribiendo pruebas"
-simple_title:         "Escribiendo pruebas"
+title:                "Escribir pruebas"
+html_title:           "Elm: Escribir pruebas"
+simple_title:         "Escribir pruebas"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Testing and Debugging"
@@ -10,46 +10,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¿Qué y por qué?
 
-Escribir pruebas (tests) en Elm puede parecer una tarea tediosa e innecesaria, pero en realidad puede ser una herramienta muy valiosa para garantizar que nuestro código funcione correctamente y mantenerlo libre de errores. Además, escribir pruebas desde el principio nos permite tener una mayor confianza en nuestro código a medida que vamos añadiendo nuevas funcionalidades.
+Escribir pruebas es una práctica común en la programación. Básicamente, consiste en crear pequeños programas que verifican si una parte específica de nuestro código funciona como debería. Es una forma de asegurarse de que todo está funcionando correctamente y de detectar posibles errores antes de que se conviertan en problemas más grandes.
 
-## Cómo hacerlo
+Los programadores escriben pruebas por varias razones, entre ellas: garantizar un código más limpio y menos propenso a errores, facilitar la detección y corrección de errores, y mejorar la calidad y estabilidad del código en general.
 
-Escribir pruebas en Elm es bastante sencillo y se puede hacer utilizando módulos y funciones específicas de esta herramienta de programación funcional. A continuación, se presenta un ejemplo de cómo escribir una prueba simple para una función de suma:
+## Cómo hacerlo:
 
-```elm
-import Test exposing (..)
-import Expect exposing (expect)
-
-sumar : Int -> Int -> Int
-sumar x y =
-    x + y
-
-sumaCorrecta : Test
-sumaCorrecta =
-    describe "Sumar" <|
-        test "la suma de dos números debería ser correcta" <|
+```Elm
+probandoCadenas : () -> Test
+probandoCadenas =
+  test "Probando funciones de cadenas" <|
+    \_ ->
+      describe "Concatenando cadenas" <|
+        [ test "Concatenación exitosa" <|
             \_ ->
-                expect <| sumar 2 3
-                    |> toBe 5
-
+              let
+                string1 = "¡Hola "
+                string2 = "mundo!"
+                resultado = String.concat [string1, string2]
+              in
+                Expect.equal resultado "¡Hola mundo!"
+        , test "Concatenación con número" <|
+            \_ ->
+              let
+                string1 = "Tengo "
+                numero = 10
+                string2 = " años"
+                resultado = String.concat [string1, numero, string2]
+              in
+                Expect.equal resultado "Tengo 10 años"
+        ]
 ```
 
-En este ejemplo, estamos importando los módulos `Test` y `Expect`, que nos permiten escribir nuestras pruebas y definir expectativas sobre los resultados. Luego, definimos una función `sumar` que toma dos números enteros y los suma, y una prueba llamada `sumaCorrecta` que describe el comportamiento deseado de esta función. Para finalizar, utilizamos la función `expect` para verificar que el resultado de la suma de 2 y 3 sea igual a 5.
+Resultado:
 
-Si corremos esta prueba utilizando alguna herramienta de testeo de Elm, como por ejemplo `elm-test`, deberíamos obtener una salida en la que se indica si la prueba pasó o falló. En este caso, deberíamos recibir una confirmación de que nuestra prueba fue exitosa.
+```Elm
+Test ID: 20701d66-3495-43a5-9763-d77f15edc244 ~
 
-## Profundizando
+√ Probando funciones de cadenas:Passed - 2 suites and 2 tests
+√ Test suite "Concatenación exitosa":Passed - 1 test
+√ Test "Concatenación exitosa":Passed - Equality Check
+√ Test suite "Concatenación con número":Passed - 1 test
+√ Test "Concatenación con número":Passed - Equality Check
+```
 
-Escribir pruebas en Elm nos ofrece una serie de beneficios, como la capacidad de detectar errores antes de que lleguen a producción y la posibilidad de refactorizar nuestro código de manera segura. Además, nos permite tener un mayor control y comprensión de nuestro código, ya que nos obliga a pensar en las posibles situaciones en las que nuestro código podría fallar.
+## Inmersión profunda:
 
-Otro aspecto importante a tener en cuenta al escribir pruebas en Elm es tener en cuenta el principio de "una prueba por función". Esto significa que cada función debería tener su propia prueba específica que verifique su funcionamiento. De esta manera, podemos aislar y solucionar errores de manera más eficiente.
+La escritura de pruebas tiene su origen en la metodología de desarrollo de software conocida como "Desarrollo guiado por pruebas" o Test-driven development (TDD). Sin embargo, también se utiliza en otras metodologías ágiles como el "Desarrollo orientado a pruebas" o Behaviour-driven development (BDD). En ambas, el objetivo es el mismo: asegurar que el código desarrollado cumpla con los requisitos previamente establecidos.
 
-Además, podemos utilizar la función `testOnly` para correr solo una prueba específica, lo que nos permite enfocarnos en un determinado aspecto de nuestro código mientras seguimos trabajando en él.
+Otra forma de realizar pruebas en Elm es utilizando Debug.log, una función que permite imprimir valores y mensajes en la consola del navegador para comprobar el funcionamiento de nuestro código en tiempo de ejecución. Sin embargo, esta técnica no es recomendable para pruebas complejas, ya que puede ser difícil de mantener y no ofrece la misma precisión que las pruebas unitarias.
 
-## Ver también
+## Ver más:
 
-- [Documentación de Elm - Testing](https://guide.elm-lang.org/testing/)
-- [Introducción a los tests de Elm](https://medium.com/@joneshf/introduction-to-elm-s-test-package-800c15f56c12)
-- [Elm Test - Guía de inicio rápido](https://giang-caprio.gitlab.io/blog/2019/02/10/elm-test-quick-start-guide/)
+- Documentación de pruebas en Elm: https://package.elm-lang.org/packages/elm-explorations/test/latest/
+- Ejemplos de pruebas en Elm: https://github.com/elm/community-resources/tree/master/examples/testing
+- TDD vs BDD: https://medium.com/@nosolopau/tdd-vs-bdd-like-chalk-and-cheese-b9a80655813a

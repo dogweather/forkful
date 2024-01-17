@@ -1,7 +1,7 @@
 ---
-title:                "Suchen und Ersetzen von Text"
-html_title:           "Kotlin: Suchen und Ersetzen von Text"
-simple_title:         "Suchen und Ersetzen von Text"
+title:                "Textsuche und Ersetzung"
+html_title:           "Kotlin: Textsuche und Ersetzung"
+simple_title:         "Textsuche und Ersetzung"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Strings"
@@ -10,40 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+# Was & Warum?
+Was ist die Suche und Ersetzung von Text? Wenn Sie Text in einem Dokument, einer Datei oder einer Quellcode-Datei suchen und durch einen anderen Text ersetzen, dann betreiben Sie die Suche und Ersetzung von Text. Programmierer nutzen diese Technik, um beispielsweise Fehler im Code zu beheben oder bestimmte Wörter oder Ausdrücke durch andere zu ersetzen.
 
-Es gibt viele Situationen, in denen man Text in einem Computerprogramm suchen und durch etwas Neues ersetzen muss. Zum Beispiel kann man so schnell und einfach Tippfehler in einer Datei korrigieren oder mehrere Zeilen Code auf einmal ändern. In diesem Artikel werde ich dir zeigen, wie du dies mit Kotlin ganz einfach machen kannst.
+# Wie geht's:
+Hier sind zwei Beispiele, wie Sie die Suche und Ersetzung von Text in Kotlin durchführen können:
 
-## Wie geht das?
+```
+// Beispiel 1: Ersetzen aller Vorkommen von "Hund" durch "Katze" in einem String
+val text = "Ich mag Hunde, aber meine Schwester mag Katzen."
+val newText = text.replace("Hund", "Katze")
+println(newText) // Ausgabe: "Ich mag Katzen, aber meine Schwester mag Katzen."
 
-Um Text in Kotlin zu suchen und zu ersetzen, musst du die `replace()` Funktion verwenden. Diese Funktion nimmt zwei Parameter an: den zu suchenden Text und den Text, durch den er ersetzt werden soll.
-
-```Kotlin
-// Ersetze alle Vorkommen von "Hund" mit "Katze"
-val text = "Ich mag Hunde, aber ich liebe Katzen"
-val neuerText = text.replace("Hund", "Katze")
+// Beispiel 2: Ersetzen aller Zahlen durch "X" in einem String
+val text = "123 ist eine Zahl."
+val newText = text.replace("\\d+".toRegex(), "X")
+println(newText) // Ausgabe: "X ist eine Zahl."
 ```
 
-Das Ergebnis des obigen Codes wird sein: `Ich mag Katzen, aber ich liebe Katzen`.
+# Tief einsteigen:
+Die Suche und Ersetzung von Text ist eine weit verbreitete Technik, die in vielen Programmen und Anwendungen verwendet wird. Sie wurde erstmals in den 1960er Jahren in der Programmiersprache SNOBOL eingeführt und ist seitdem ein unverzichtbares Werkzeug für Softwareentwickler. Es gibt auch alternative Ansätze zur Suche und Ersetzung von Text, wie beispielsweise die Verwendung von regulären Ausdrücken oder speziellen Such- und Ersetzungsfunktionen in Texteditoren. In Kotlin wird die Funktion replace verwendet, um die Suche und Ersetzung von Text durchzuführen. Es können auch reguläre Ausdrücke oder andere Such- und Ersetzungsmethoden verwendet werden.
 
-Aber was ist, wenn du nur bestimmte Vorkommen des Textes ersetzen möchtest? Keine Sorge, Kotlin bietet dir auch hier eine Lösung. Die `replace()` Funktion hat eine optionale dritte Parameter `ignoreCase`, mit der du angeben kannst, ob die Suche nach dem Text Groß- und Kleinschreibung beachten soll.
-
-```Kotlin
-// Ersetze "Hund" nur, wenn es großgeschrieben ist
-val text = "Ich mag Hunde, aber ich liebe Katzen"
-val neuerText = text.replace("Hund", "Katze", true)
-```
-
-Das Ergebnis wäre hier `Ich mag Katzen, aber ich liebe Hunde`. Beachte, dass das erste Vorkommen von `Hund` in `Hunde` nicht geändert wurde, da es nicht großgeschrieben war.
-
-## Tiefer Einblick
-
-Es gibt noch weitere Funktionen in Kotlin, mit denen du die Suche und das Ersetzen von Texten optimieren kannst. Zum Beispiel kannst du mit der `replaceFirst()` Funktion nur das erste Vorkommen des zu suchenden Textes ersetzen. Oder du kannst die `replaceAfter()` und `replaceBefore()` Funktionen verwenden, um nur Texte vor oder nach einem bestimmten Punkt zu ersetzen.
-
-Kotlin bietet außerdem mächtige reguläre Ausdrücke, mit denen du noch spezifischere Suchen durchführen kannst. Diese sind besonders nützlich, wenn du komplexe Suchmuster hast, die nicht mit einfachen Texten ersetzt werden können. Du kannst sie in Kombination mit den oben genannten `replace` Funktionen verwenden.
-
-## Siehe auch
-
-- [Kotlin offizielle Dokumentation](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/replace.html)
-- [10 Kotlin Tipps und Tricks für Anfänger](https://medium.com/better-programming/10-kotlin-tips-and-tricks-for-beginners-bcfb25aec1e2)
-- [Reguläre Ausdrücke in Kotlin](https://kotlinlang.org/docs/regexp.html)
+# Siehe auch:
+- [Kotlin Dokumentation zu Strings](https://kotlinlang.org/docs/reference/basic-types.html#strings)
+- [Online Regex Tester für Kotlin](https://regex101.com/r/1jzHpL/1)

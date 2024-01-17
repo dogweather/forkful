@@ -10,63 +10,61 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-YAML (YAML Ain't Markup Language) is a popular human-readable data serialization language that is commonly used for configuration files. It offers a simpler and more readable alternative to formats like XML and JSON, making it a popular choice among developers.
+# YAML: the Simple Way to Store and Share Data
 
-## How To
-Using YAML in Javascript is made easy with the help of libraries like js-yaml and yaml-js. Here's a quick example of how to load and parse a YAML file using js-yaml:
+## What & Why?
+YAML (YAML Ain't Markup Language) is a lightweight, human-readable data serialization language commonly used by programmers to store and share data in a structured format. It's designed to be easy to read and write, making it a popular choice for configuration files, data exchange between applications, and even website content.
 
+## How to:
+To start working with YAML, you'll need a text editor or an IDE (Integrated Development Environment) that supports YAML. Let's take a look at some basic examples of how to use YAML in a Javascript program:
+
+**Creating a YAML Object:**
 ```Javascript
-const yaml = require('js-yaml');
-const fs = require('fs');
-
-// Load the YAML file
-let data = fs.readFileSync('config.yml', 'utf8');
-
-// Parse the data
-let config = yaml.safeLoad(data);
-
-// Access the data
-console.log(config.title); // Output: "My Website"
-console.log(config.author); // Output: "John Doe"
+var yamlObj = {
+  name: "John Smith",
+  age: 28,
+  interests: ["coding", "gaming", "hiking"]
+};
 ```
-
-And here's how the config.yml file would look like:
-
-```YAML
-title: My Website
-author: John Doe
-```
-
-Using yaml-js, the process would look slightly different:
-
+**Nested Objects:**
 ```Javascript
-const YAML = require('yaml-js');
-const fs = require('fs');
-
-// Load the YAML file
-let data = fs.readFileSync('config.yml', 'utf8');
-
-// Parse the data
-let config = YAML.load(data);
-
-// Access the data
-console.log(config.title); // Output: "My Website"
-console.log(config.author); // Output: "John Doe"
+var nestedObj = {
+  name: "Jane Doe",
+  contact: {
+    email: "jane@example.com",
+    phone: "123-456-7890"
+  }
+};
+```
+**Array of Objects:**
+```Javascript
+var arrayObj = [
+  {
+    name: "Bob",
+    age: 35
+  },
+  {
+    name: "Alice",
+    age: 29
+  },
+]
+```
+**Sample Output:**
+```Javascript
+console.log(yamlObj.name); // Outputs "John Smith"
+console.log(nestedObj.contact.email); // Outputs "jane@example.com"
+console.log(arrayObj[1].age); // Outputs 29
 ```
 
-Both libraries offer similar functionality with some minor differences in syntax.
+## Deep Dive:
+YAML was first introduced in 2001 and is based on the concept of human readability over machine readability. It's similar to XML and JSON, but with a simpler syntax that focuses on the hierarchical structure of data. It's widely used in web development, particularly in frameworks like Ruby on Rails and Node.js. It also has a wide range of library support for different programming languages, making it a flexible and widely adopted solution for data serialization.
 
-## Deep Dive
-YAML supports a wide range of data types, including strings, numbers, booleans, arrays, and objects. It also allows for indentation-based nesting, making it easy to create structured and hierarchical data.
+An alternative to YAML is JSON (JavaScript Object Notation), which is also used for data interchange. While YAML is more readable and allows for comments and complex data structures, JSON is more widely supported and has a simpler syntax. A programmer may choose one over the other depending on their specific needs and preferences.
 
-One of the key advantages of YAML is its readability. It uses human-friendly syntax that is easy to understand, making it a great choice for configuration files that need to be frequently updated and maintained.
+When working with YAML in Javascript, there are some important things to keep in mind. Firstly, YAML is whitespace sensitive, so indentation is significant and must be consistent. It also supports various data types including strings, numbers, arrays, and nested objects. It's important to properly format your data and use quotes when necessary to avoid any unexpected errors.
 
-Additionally, YAML supports comments, which can help provide context or explanations for certain sections of the data. This can be especially useful when working with large or complex files.
-
-It's worth noting that YAML is not without its limitations. While it supports most basic data types, it does not support functions or any other executable code. This means it should not be used to store sensitive or critical data.
-
-## See Also
-- YAML Official Website: https://yaml.org/
-- js-yaml library: https://github.com/nodeca/js-yaml
-- yaml-js library: https://github.com/tj/js-yaml-js
+## See Also:
+To learn more about YAML and how to use it, check out these resources:
+- Official YAML website: https://yaml.org/
+- YAML tutorial on W3Schools: https://www.w3schools.io/file/yaml-tutorial/
+- Comparison between YAML and JSON: https://stackify.com/yaml-vs-json/

@@ -1,7 +1,7 @@
 ---
-title:                "Obtenir la date actuelle."
-html_title:           "Kotlin: Obtenir la date actuelle."
-simple_title:         "Obtenir la date actuelle."
+title:                "Obtenir la date actuelle"
+html_title:           "Kotlin: Obtenir la date actuelle"
+simple_title:         "Obtenir la date actuelle"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Dates and Times"
@@ -10,40 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Qu'est-ce que la récupération de la date courante, et pourquoi les programmeurs le font-ils?
 
-Vous êtes probablement ici parce que vous souhaitez utiliser Kotlin pour obtenir la date actuelle. Et devinez quoi ? C'est très facile à faire ! La plupart des langages de programmation modernes ont une fonction intégrée pour cela et Kotlin ne fait pas exception.
+La récupération de la date courante est une fonctionnalité essentielle en programmation, qui permet aux programmeurs d'obtenir la date et l'heure actuelles. Cela peut être utile pour enregistrer le moment exact où un événement s'est produit, ou pour gérer des tâches planifiées en fonction de la date et de l'heure actuelles.
 
-## Comment faire
+## Comment faire?
 
-```Kotlin
-// Importez la classe java.util.Date
-import java.util.Date
+Voici deux façons de récupérer la date courante en Kotlin:
 
-// Utilisez la fonction `Date()` pour créer un objet de type "Date"
-val date = Date()
-
-// Utilisez la fonction `toString()` pour afficher la date actuelle
-println(date.toString())
-
-// Vous pouvez également formater la date selon vos préférences
-val format = SimpleDateFormat("dd-MM-yyyy") 
-println(format.format(date))
+- En utilisant la classe `LocalDateTime`: ```Kotlin
+val currentDateTime = LocalDateTime.now()
+println(currentDateTime)
+// Output: 2021-01-01T12:30:00.000
+```
+- En utilisant la classe `Date`: ```Kotlin
+val currentDate = Date()
+println(currentDate)
+// Output: Fri Jan 01 12:30:00 GMT 2021 
 ```
 
-**Sortie :** 
-```
-Sat Jan 09 16:11:26 EST 2021
-09-01-2021
-```
+## Plongée en profondeur
 
-## Plongez plus profondément
+La récupération de la date courante est une fonctionnalité qui existe depuis les premiers jours de la programmation informatique. Cependant, avec les avancées technologiques, sa mise en œuvre a évolué pour être plus précise et plus fiable. Il existe plusieurs alternatives pour obtenir la date courante en Kotlin, notamment en utilisant des librairies tierces telles que JodaTime ou ThreeTen.
 
-La classe `Date` de Kotlin provient en fait de la bibliothèque standard Java. Elle contient des méthodes utiles pour manipuler les dates et les heures, comme `compareTo()`, `before()`, `after()`, etc.
-
-De plus, Kotlin dispose d'une autre classe appelée `LocalDateTime` qui offre une alternative plus moderne au type `Date`. Elle prend en compte les fuseaux horaires et les horloges avec précision, ce qui peut être utile pour les applications internationales.
+En ce qui concerne l'implémentation en Kotlin, la classe `LocalDateTime` utilise la bibliothèque Java `java.time` pour gérer les dates et les heures, tandis que la classe `Date` est dépréciée depuis Java 8 et recommandée pour les versions antérieures.
 
 ## Voir aussi
 
-- [Java Date and Time](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html) (Documentation officielle Java)
-- [Working with Dates in Kotlin](https://www.baeldung.com/kotlin/dates) (Tutoriel Baeldung)
+- [Documentation officielle de Kotlin sur les dates et les heures](https://kotlinlang.org/docs/datetime/)
+- [Documentation officielle de Java sur `java.time`](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
+- [Librairie JodaTime pour la gestion des dates et des heures en Java](https://www.joda.org/joda-time/)
+- [Librairie ThreeTen pour la gestion des dates et des heures en Java 8 et versions ultérieures](https://www.threeten.org/)

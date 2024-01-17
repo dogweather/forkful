@@ -1,7 +1,7 @@
 ---
-title:                "Die Verwendung von regulären Ausdrücken"
-html_title:           "Swift: Die Verwendung von regulären Ausdrücken"
-simple_title:         "Die Verwendung von regulären Ausdrücken"
+title:                "Verwendung von regulären Ausdrücken"
+html_title:           "Swift: Verwendung von regulären Ausdrücken"
+simple_title:         "Verwendung von regulären Ausdrücken"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -10,60 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+# Was & Warum?
+Regular Expressions sind eine Möglichkeit, Textmuster in Strings zu finden und zu manipulieren. Sie sind besonders nützlich für das Überprüfen von Eingaben oder das Extrahieren von Informationen aus großen Datenmengen. Programmierer nutzen sie, um effektiver und präziser mit Text zu interagieren.
 
-Warum sollte man sich mit regulären Ausdrücken beschäftigen? Nun, sie sind ein äußerst leistungsstarkes Werkzeug, das es uns ermöglicht, komplexe Such- und Ersetzungsvorgänge in Texten schnell und effizient durchzuführen. Sie sind besonders nützlich für Entwickler, die mit Parsing, Datenvalidierung oder Textverarbeitung zu tun haben.
-
-## Wie man reguläre Ausdrücke in Swift verwendet
-
-Um reguläre Ausdrücke in Swift zu verwenden, müssen wir zuerst die `NSRegularExpression`-Klasse importieren. Dann können wir eine Instanz dieser Klasse erstellen und sie mit dem Muster füllen, nach dem wir suchen möchten.
-
-```Swift
-import Foundation
-
-// Erstelle eine Instanz von NSRegularExpression
-let muster = "RegEx"
-let regex = try! NSRegularExpression(pattern: muster, options: .caseInsensitive)
-
-// Lege den zu durchsuchenden String fest
-let text = "RegEx ist großartig!"
-
-// Suche nach Übereinstimmungen im Text
-let matches = regex.matches(in: text, options: [], range: NSRange(location: 0, length: text.utf16.count))
-
-// Gehe durch jede Übereinstimmung und zeige sie an
-for match in matches {
-    let range = match.range
-    print("Gefunden bei Index \(range.location) mit Länge \(range.length)")
+# Wie?
+### Überprüfen auf gültige E-Mail-Adresse:
+```
+let email = "johndoe@example.com"
+let regex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+if email.range(of: regex, options: .regularExpression) != nil {
+    print("Gültige E-Mail-Adresse.")
+} else {
+    print("Ungültige E-Mail-Adresse.")
 }
 ```
+Ausgabe: Gültige E-Mail-Adresse.
 
-In diesem Beispiel verwenden wir das Muster "RegEx" und suchen nach allen Übereinstimmungen im Text, unabhängig von Groß- und Kleinschreibung. Die Ausgabe wird folgendermaßen aussehen:
-
+### Ersetzen von bestimmten Wörtern in einem String:
 ```
-Gefunden bei Index 0 mit Länge 5
-Gefunden bei Index 12 mit Länge 5
+var sentence = "Ich mag Bananen und Äpfel."
+let regex = "Bananen|Äpfel"
+sentence = sentence.replacingOccurrences(of: regex, with: "Erdbeeren")
+print(sentence)
 ```
+Ausgabe: Ich mag Erdbeeren und Erdbeeren.
 
-## Tiefer Einblick
+# Tiefer einsteigen
+Regular Expressions gibt es schon seit den 50er Jahren und wurden vor allem in Unix-Systemen verwendet. Mittlerweile bieten viele Programmiersprachen, darunter auch Swift, eine eigene Syntax für Regular Expressions. Alternativ können auch String-Funktionen wie `contains()` oder `replacingOccurrences()` verwendet werden, die weniger komplex sind, aber auch weniger flexibel. Die Implementierung von Regular Expressions in Swift basiert auf dem ICU-Projekt.
 
-Reguläre Ausdrücke können auch verwendet werden, um Text zu ersetzen. Mit der Methode `stringByReplacingMatches(in:options:range:withTemplate:)` können wir alle Übereinstimmungen im Text durch einen anderen String ersetzen.
-
-```Swift
-let neuerText = regex.stringByReplacingMatches(in: text, options: [], range: NSRange(location: 0, length: text.utf16.count), withTemplate: "Regular Expressions")
-print(neuerText)
-```
-
-In diesem Beispiel ersetzen wir alle Übereinstimmungen von "RegEx" durch "Regular Expressions" und erhalten folgende Ausgabe:
-
-```
-Regular Expressions ist großartig!
-```
-
-Es gibt auch viele nützliche Metazeichen, mit denen wir unsere regulären Ausdrücke noch leistungsfähiger machen können. Zum Beispiel `+` für ein oder mehrere Vorkommen, `?` für null oder ein Vorkommen und `|` für Alternative.
-
-## Siehe auch
-
-- [Apple Dokumentation über reguläre Ausdrücke in Swift](https://developer.apple.com/documentation/foundation/nsregularexpression)
-- [Einführung in reguläre Ausdrücke von RegEx Cookbook](https://www.regular-expressions.info/tutorial.html)
-- [Reguläre Ausdrücke üben mit RegexOne](https://regexone.com/)
+# Siehe auch
+Offizielle Swift-Dokumentation zu Regular Expressions: https://developer.apple.com/documentation/foundation/nsregularexpression
+Tutorial zu Regular Expressions in Swift: https://www.raywenderlich.com/5766073-regular-expressions-tutorial-getting-started

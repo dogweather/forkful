@@ -10,51 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
-Om du behöver arbeta med YAML-filer, är Haskell ett kraftfullt och effektivt val för att hantera dem. Det är också ett bra sätt att lära sig funktionell programmering genom praktisk kodning.
+## Vad & Varför?
+Att arbeta med YAML innebär att strukturera data på ett läsbart sätt i en textbaserad fil. Det används ofta av programmerare för att konfigurera applikationer eller system, eftersom det är en enkel och flexibel metod för att hantera data.
 
-## Så här gör du
-Först måste du installera Haskell på din dator. Sedan kan du använda följande kod för att läsa in och tolka en YAML-fil:
-
-```Haskell
-import Data.Yaml
-
-main :: IO ()
-main = do
-  -- Läs in YAML-fil
-  yamlFile <- readFile "exempel.yaml"
-  -- Tolkar YAML-filen och returnerar en Maybe-sträng
-  let result = decodeEither' yamlFile :: Either ParseException String
-  case result of
-    Left err -> putStrLn $ "Fel vid tolkning av YAML-fil: " ++ show err
-    Right str -> putStrLn $ "YAML-fil tolkad som: " ++ str
-```
-
-Detta kommer att läsa in en YAML-fil "exempel.yaml", tolka den och skriva ut det tolkade resultatet. Om något går fel kommer ett felmeddelande att skrivas ut istället. 
-
-Om du vill skriva en YAML-fil istället kan du använda följande kod:
+## Hur man:
+För att arbeta med YAML i Haskell behöver du importera modulen "Data.Yaml" och använda lämpliga funktioner för att läsa, skriva och manipulera YAML-filer. Här är ett exempel på hur man läser en YAML-fil och hämtar en viss nyckel:
 
 ```Haskell
 import Data.Yaml
-
-main :: IO ()
 main = do
-  -- Skapa ett värde för att konvertera till YAML
-  let person = [("name" :: "John), ("age" :: 30)]
-  -- Konvertera personvärde till YAML
-  let yaml = encode person
-  -- Skriv YAML till en fil
-  writeFile "ny_person.yaml" yaml
+  yamlData <- decodeFileThrow "data.yaml" :: IO (Maybe Object)
+  let value = case yamlData of
+                Just obj -> obj .: "key"
+                Nothing -> "No key found"
+  putStrLn value
 ```
 
-Detta kommer att skapa en YAML-fil "ny_person.yaml" med det inmatade personvärdet i det kodade formatet.
+Detta kodexempel visar hur man använder funktionen "decodeFileThrow" för att läsa in en YAML-fil och sedan hämta värdet för en specifik nyckel med hjälp av funktionskomposition i den sista raden.
 
-## Djupdykning
-Haskell har en robust YAML-parsning och serialisering med hjälp av biblioteket "yaml". Det ger dig möjlighet att läsa och skriva YAML-filer samt konvertera dem till och från Haskell-värden.
+## Djupdykning:
+YAML står för "YAML Ain't Markup Language" och är en dataformat som utvecklades ursprungligen för programmeringsspråket Perl. Det är ett enkelt och lättläst alternativ till andra dataformat som XML och JSON. YAML är också ettspråkoberoende format, vilket innebär att det kan användas med en mängd olika programmeringsspråk.
 
-YAML innehåller flera nyckelfunktioner som inte finns i andra filformat, till exempel återanvändbara ankarpunkter och alias för att återanvända data, vilket gör det till ett flexibelt val för konfigurationer och datastrukturer.
+En alternativ metod för att hantera datafiler i Haskell är att använda Haskell-modulen "Data.Aeson", som ger liknande funktioner som "Data.Yaml". Dock föredrar vissa programmerare YAML-formatet på grund av sin enkelhet och läsbarhet.
 
-## Se även
-- Haskell dokumentation för YAML: https://hackage.haskell.org/package/yaml
-- YAML officiell webbplats: https://yaml.org/
-- En snabb intro till YAML: https://learnxinyminutes.com/docs/yaml/
+När det gäller implementationen av YAML i Haskell, så är "Data.Yaml" en wrapper runt en C-biblioteket "libyaml" som hanterar parsning och serialisering av YAML-filer. Detta gör det till en snabb och effektiv lösning för hantering av YAML i Haskell.
+
+## Se även:
+För mer information om händelsespelet och hur man använder det i Haskell, se dokumentationen för [Data.Yaml](https://hackage.haskell.org/package/yaml) och [libyaml](https://pyyaml.org/wiki/LibYAML).

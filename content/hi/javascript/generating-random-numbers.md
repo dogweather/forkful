@@ -1,7 +1,7 @@
 ---
-title:                "यादृच्छिक संख्याएं उत्पन्न करना"
-html_title:           "Javascript: यादृच्छिक संख्याएं उत्पन्न करना"
-simple_title:         "यादृच्छिक संख्याएं उत्पन्न करना"
+title:                "हासिल करें सांद्रता संख्याएं"
+html_title:           "Javascript: हासिल करें सांद्रता संख्याएं"
+simple_title:         "हासिल करें सांद्रता संख्याएं"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Numbers"
@@ -10,24 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
+## What & Why?
+Random numbers are numbers that are generated using a specific algorithm in an unpredictable manner. Programmers use them in various applications such as games, simulations, and cryptography. 
 
-क्या आपने कभी सोचा है कि आपकी ज़िन्दगी मेरी तरह उच्च जत्तिकीय ताकतों से भरी जा सकती है? शायद ना, लेकिन एक चीज है जो आपको इसकी दिशा में आगे धकेल सकती है। और वो है - रैंडम नंबर! रैंडम नंबर बनने की प्रक्रिया आपको बहुत सारे अनोखे और क्रियात्मक तरीकों से जोड़ सकती है, जो आपको नए चुनौतियों से निपटने में मदद कर सकती है। इस लेख में हम आपको बताएंगे कि रैंडम नंबर क्यों जरूरी है और उसे कैसे तैयार किया जाता है, और दालोग़ की अधिक जानकारी के लिए आपको उसे बारीकी से काम में लेना जरूरी है।
+## How to:
+```Javascript
+//To generate a random number between 0 and 1 (excluding 1), use the Math.random() function
+let randNum = Math.random();
+console.log(randNum); //0.543013952370924
 
-## कैसे करें
-
-```javascript
-// फक्त सत्यापन के लिए दो भिन्न पूर्णांक का उपयोग करके रैंडम नंबर बनाएं
-let randomNumber = Math.floor(Math.random() * 10 + 1); // 1 से 10 तक का रैंडम नंबर मिलेगा
-console.log(randomNumber);
-
-// रिंगफेंडे फंक्शन का उपयोग करके रैंडम नंबर बनाएं
-function getRandomNumber(min, max) {
-    return Math.floor(Math.random() * (max - min + 1) + min);
+//To generate a random number between two specified values (included), use the Math.random() function along with some simple calculations
+function getRandom(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
 }
-
-let num = getRandomNumber(5,15); // 5 से 15 तक का रैंडम नंबर मिलेगा
-console.log(num);
+let randNum = getRandom(1, 10);
+console.log(randNum); //6
 ```
 
-दोनों तरीकों से आप रैंडम नंबर तैयार कर सकते हैं। पहले, हम सीधे `Math.random()` फंक्शन का उपयोग करके पूर्णांकों की सीमा में से कोई एक नंबर का निर्धारण करते हैं। दूसरे तरीके में, हम एक पूर्णांक के मध्य भिन्नता की गणना करके विस्तृत सीमा के बीच का एक रैंडम
+## Deep Dive:
+Generating random numbers has been a common problem in computer science. It was first addressed by John von Neumann in the 1940s when he devised a way to generate random bits using a combination of physical processes and mathematical algorithms. Since then, several other methods have been developed such as linear congruential generators, middle-square method, and Mersenne Twister. However, these methods can sometimes result in patterns and should not be used for cryptographic purposes. A more secure option is to use a true random number generator which utilizes unpredictable physical processes like atmospheric noise or radioactive decay.
+
+## See Also:
+- [Math.random()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
+- [Random Numbers and JavaScript: What You Need to Know](https://www.freecodecamp.org/news/random-numbers-and-javascript-what-you-need-to-know-680d524fccca/)
+- [True and Pseudo Random Numbers](https://www.techopedia.com/definition/26811/true-random-number)

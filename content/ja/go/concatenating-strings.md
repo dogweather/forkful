@@ -10,46 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## 何 & なぜ？
 
-## なぜ
+文字列を連結することは、Go言語でよく使われるテクニックの一つです。プログラマーは、複数の文字列を一つの文字列にまとめることで、より効率的なコードを書くことができます。
 
-文字列の連結を行うのは、複数の文字列を結合して一つの大きな文字列を作ることができるからです。
+## 方法：
 
-## How To
+以下の例では、文字列を連結する方法を示します。それぞれの例の出力結果も示します。
 
-## 方法
-
-文字列の連結は、Go言語の組み込み関数である`fmt.Sprintf()`を使用することで簡単に実現することができます。以下のコード例を参考にしてください。
-
-```Go
-package main
-
-import (
-    "fmt"
-)
-
-func main() {
-    str1 := "Hello"
-    str2 := "World"
-
-    // 文字列の連結
-    concatenated := fmt.Sprintf("%s %s", str1, str2)
-
-    fmt.Println(concatenated) // Output: Hello World
-}
+```
+Go fmt.Println("こんにちは、" + "世界") → "こんにちは、世界"
 ```
 
-## Deep Dive
+```
+Go name := "山田"
+   age := 20
+   fmt.Printf("%sは%d歳です。", name, age) → "山田は20歳です。"
+```
 
-## 困難な技術
+## 詳細を掘り下げる
 
-文字列の連結には、Go言語の組み込み関数以外にもいくつかの方法があります。例えば、`+`演算子や、`strings.Join()`関数を使用することもできます。また、連結する文字列の数が多い場合は、`strings.Builder`を使用してより効率的に連結することもできます。
+文字列の連結は、プログラミングの歴史の中でよく使われるテクニックです。他の方法としては、テンプレートや文字列フォーマットを使う方法もあります。Go言語では、`+`演算子を使うことで文字列を連結することができます。
 
-## See Also
+## 関連リンク
 
-## 関連記事
-
-- [Go言語ドキュメンテーション](https://golang.org/doc/)
-- [文字列の操作と処理 - The Go Blog](https://blog.golang.org/strings)
-- [Go言語での文字列操作のベストプラクティス - Medium](https://medium.com/swlh/string-manipulation-in-go-best-practices-7c30f7bbaaa1)
+- [Go言語ドキュメンテーション、文字列の連結](https://golang.org/pkg/strings/#Join)
+- [Go言語ドキュメンテーション、フォーマット](https://golang.org/pkg/fmt/)

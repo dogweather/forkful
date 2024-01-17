@@ -1,7 +1,7 @@
 ---
-title:                "Sända en http-begäran med grundläggande autentisering"
-html_title:           "Clojure: Sända en http-begäran med grundläggande autentisering"
-simple_title:         "Sända en http-begäran med grundläggande autentisering"
+title:                "Skicka ett http-förfrågan med grundläggande autentisering"
+html_title:           "Clojure: Skicka ett http-förfrågan med grundläggande autentisering"
+simple_title:         "Skicka ett http-förfrågan med grundläggande autentisering"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "HTML and the Web"
@@ -10,26 +10,21 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Varför: För att kunna kommunicera med en server och åtkomst till dess skyddade resurser, är det ofta nödvändigt att skicka en HTTP-begäran med grundläggande autentisering. Detta säkerställer att endast auktoriserade användare har tillgång till de resurser som skyddas av servern.
+## Vad & Varför? 
+Skicka en HTTP-begäran med grundläggande autentisering är en metod för att autentisera begäran när du kommunicerar med en server via HTTP-protokollet. Programutvecklare använder denna metod för att säkerställa att endast auktoriserade användare har åtkomst till resurser som finns på servern.
 
-Hur man gör det: 
+## Hur man gör:
+Här är ett exempel på hur du kan skicka en HTTP-begäran med grundläggande autentisering i Clojure:
 ```Clojure
 (require '[clj-http.client :as client])
-
-(client/get "https://www.example.com/" {:basic-auth ["username" "password"]})
+(def response (client/get "https://example.com/api/resource"
+                          :basic-auth "username" "password"))
 ```
-Detta är ett exempel på hur en HTTP-begäran med grundläggande autentisering kan skickas med hjälp av Clojure-biblioteket "clj-http". Funktionen "get" tar emot två argument - en URL och en karta av begärförbindelser. I detta fall har vi lagt till en begärförbindelse med nyckeln ":basic-auth" och värdena för användarnamn och lösenord i en vektor.
 
-```Clojure
-{:status 200
- :headers {"Content-Type" "text/html;charset=utf-8"}
- :body "<!DOCTYPE html><h1>Välkommen till exempel-webbplatsen</h1>"}
-```
-Efter att ha skickat begäran, kommer vi att få ett svar, representerat som en karta med tre nycklar - ":status" som visar statuskoden, ":headers" som innehåller information om svarsrubriker och ":body" som innehåller själva innehållet i svaret från servern. Här ser vi att statuskoden är 200 vilket betyder att begäran har lyckats och vi har tillgång till resursen.
+Det första steget är att importera ```clj-http.client``` biblioteket. Sedan definierar vi variabeln ```response``` och tilldelar den resultatet av vår begäran med ```clj-http.client/get``` funktionen. Där vi anger den URL som vi vill skicka begäran till och ```basic-auth``` för att ange användarnamn och lösenord.
 
-Djupdykning: Vid grundläggande autentisering, skickar klienten sitt användarnamn och lösenord i klartext till servern. Detta kan skapa säkerhetsproblem eftersom informationen kan fångas upp av en angripare. Därför är det viktigt att använda HTTPS för att kryptera kommunikationen och skydda användarinformationen.
+## Djupdykning:
+Grundläggande autentisering för HTTP-begäran infördes ursprungligen i HTTP 1.0-standarden för att möjliggöra enkel autentisering mellan klient och server. Det finns också andra metoder för autentisering, som token-baserad autentisering, som erbjuder bättre säkerhet. Implementeringen av HTTP-begäran med grundläggande autentisering skiljer sig också åt mellan olika programmeringsspråk.
 
-Se också:
-- https://github.com/dakrone/clj-http - "clj-http" biblioteket
-- https://www.w3.org/Protocols/rfc2616/rfc2616-sec11.html - HTTP-autentiseringsstandarder
-- https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#Basic_authentication_scheme - Mer information om HTTP autentisering
+## Se även:
+För mer information om grundläggande autentisering och hur det används i Clojure, ta en titt på Clojures officiella dokumentation för ```clj-http.client``` biblioteket: https://github.com/dakrone/clj-http. Du kan också läsa mer om HTTP-autentisering generellt på Mozillas utvecklarportal: https://developer.mozilla.org/sv/docs/Web/HTTP/Authentication.

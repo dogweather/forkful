@@ -1,7 +1,7 @@
 ---
-title:                "कंप्यूटर प्रोग्रामिंग पर 'रैंडम नंबर्स उत्पन्न करना'"
-html_title:           "Fish Shell: कंप्यूटर प्रोग्रामिंग पर 'रैंडम नंबर्स उत्पन्न करना'"
-simple_title:         "कंप्यूटर प्रोग्रामिंग पर 'रैंडम नंबर्स उत्पन्न करना'"
+title:                "रैंडम नंबर्स उत्पन्न करना"
+html_title:           "Fish Shell: रैंडम नंबर्स उत्पन्न करना"
+simple_title:         "रैंडम नंबर्स उत्पन्न करना"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Numbers"
@@ -10,34 +10,20 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Kyon
+# Fish Shell में रैंडम नंबर्स बनाना क्या है और क्यों है?
+रैंडम नंबर्स बनाना कुछ हद तक एक गणितीय क्रिया है जो एक या एक से अधिक अनियंत्रित या अनिश्चित निर्णायकों को उत्पन्न करती है। प्रोग्रामर्स इसे फिश शेल में करते हैं क्योंकि वे इसका उपयोग यादृच्छिक पारिवर्तनों और पट्टियों के लिए करते हैं जो कि कई फ़ंक्शनों के लिए जरूरी है।
 
-Iss article mein hum jaanenge ki kyon kisi ko random numbers generate karne mein interest hota hai. Random numbers generation ki zaroorat kisi bhi programming language mein hoti hai, jaha par hume unpredictable input ki zaroorat hoti hai. Random numbers ka use cryptography, simulation, game development, aur bahut saari aur jaagaon mein kiya jata hai.
 
-# Kaise Karein
-
-Fish Shell mein random numbers generate karne ke liye bahut simple aur easy to use ek command hai - `random`. Is command ka use karke hum anek tarah ke random numbers generate kar sakte hain. Chaliye kuch examples dekhate hain:
-
+# Fish Shell में रैंडम नंबर्स बनाना कैसे?
 ```Fish Shell
-random  # ek random floating point number banega
-random 100  # ek random integer number banega 0 se 100 tak
-random -r 10 20  # ek random floating point number banega 10 aur 20 ke beech
-```
+rand 10
+ ```
+आप फिश शेल में `rand` कमांड का उपयोग करके रैंडम नंबर्स बना सकते हैं। ऊपर दिए गए कोड में `10` से रैंडम नंबर बनते हैं जो कि कंप्यूटर स्क्रीन पर प्रिंट होते हैं। आप इसे अपनी जरूरत के हिसाब से बदल सकते हैं।
 
-Agar hume specific range ke numbers generate karne hain, to hum `seq` command ka bhi use kar sakte hain:
 
-```Fish Shell
-seq (random 1 5)  # yeh command randomly 1 aur 5 ke beech koi ek integer number banayegi, fir us number tak ka sequence create karegi
-```
+# डीप डाइव: रैंडम नंबर्स का इतिहास, अल्टरनेटिव और इंप्लीमेंटेशन की जानकारी
+रैंडम नंबर्स को पहले 19वि सदी में इस्तेमाल किया जाता था। आजकल रैंडम नंबर्स बनाने के कई तरीके हैं, जैसे पेशन सीड, अनुमानित सीड और डार्क नॉइज तकनीक। कुछ अन्य फ़ंक्शन भी रैंडम नंबर बनाने के लिए उपयोग किए जा सकते हैं, जैसे मशीन टाइम और सिस्टम स्टेटस। आप स्वयं भी अपनी खुद की अनुमानित सीड तकनीक बना सकते हैं।
 
-Fish Shell mein hum `random` command ke saath kuch options bhi specify kar sakte hain, jaise `-r` jo ki humare input ki range ko specify karta hai aur `-l` jo ki humare output numbers ko left aligned kar deta hai. Is tarah hum apne use case ke hisaab se random numbers generate kar sakte hain.
 
-# Deep Dive
-
-Random numbers generate karne ke bahut sare algorithms hain, aur har algorithm ki apni strengths and weaknesses hoti hain. Fish Shell mein `random` command ka use karne se hum Mersenne Twister algorithm ka use karte hain. Ye algorithm ek powerful aur fast random number generator hai. Magar agar hum randomly generated numbers ko security sensitive jagah use karte hain, jaise cryptography, to hume ise secure algorithm ki jagah se badal kar use karna chahiye. Isliye, apne use case ke according hume sahi algorithm ka use karna zaroori hai.
-
-# See Also
-
-- [Fish Shell Documentation](https://fishshell.com/docs/current/)
-- [Mersenne Twister algorithm](https://en.wikipedia.org/wiki/Mersenne_Twister)
-- [Cryptography](https://en.wikipedia.org/wiki/Cryptography)
+# सी अभी भी नहीं समाप्त हुआ?
+ यदि आपको रैंडम नंबर्स बनाने से सम्बंधित अधिक जानकारी चाहिए, तो फिश शेल की आधिकारिक वेबसाइट पर `rand` कमांड से सम्बंधित अधिक जानकारी उपलब्ध है। आप वेबसाइट पर "रैंडम नंबर्स" का खोज करके भी संबंधित जानकारी प्राप्त कर सकते हैं।

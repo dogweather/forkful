@@ -1,7 +1,7 @@
 ---
-title:                "Removendo caracteres correspondentes a um padrão"
-html_title:           "Bash: Removendo caracteres correspondentes a um padrão"
-simple_title:         "Removendo caracteres correspondentes a um padrão"
+title:                "Removendo caracteres que correspondem a um padrão"
+html_title:           "Bash: Removendo caracteres que correspondem a um padrão"
+simple_title:         "Removendo caracteres que correspondem a um padrão"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Strings"
@@ -10,23 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+O que e por que?
 
-Você provavelmente já enfrentou a tarefa de ter que trabalhar com texto em um arquivo usando o Bash. E muitas vezes, esse texto pode não estar exatamente da maneira que você precisa. É aí que entra a função de deletar caracteres que correspondem a um padrão. Ela permite que você remova partes do texto que não são relevantes para o que você está procurando ou precisa. Isso torna mais fácil e rápido trabalhar com os dados em um arquivo, economizando seu tempo e esforço.
+Deletar caracteres que correspondem a um padrão é uma tarefa comum na programação Bash, que permite que você remova um ou mais caracteres específicos de uma string. Os programadores geralmente fazem isso para limpar dados ou formatar entradas de usuário corretamente.
 
-## Como fazer
+Como fazer:
 
-A sintaxe para excluir caracteres que correspondem a um padrão é simples. Tudo o que você precisa é do comando `sed` seguido pelos comandos `s/padrão/ /g` dentro das aspas. Por exemplo, se quisermos excluir todos os números em um determinado arquivo, podemos usar o seguinte comando:
-```Bash
-sed 's/[0-9]//g' arquivo.txt 
+Você pode usar o comando "sed" para deletar caracteres que correspondem a um padrão em Bash. Por exemplo, se você quiser remover todos os números de uma string, você pode usar o seguinte comando:
+
 ```
-Isso irá substituir todos os números no arquivo pelo espaço em branco, efetivamente excluindo-os. Você também pode usar expressões regulares para refinar o seu padrão e tornar mais específico o que deve ser excluído. Ou, se você quiser manter alguns caracteres e excluir apenas outros, você pode usar o operador de negação `^` dentro do padrão. Por exemplo, `s/[^a-zA-Z]//g` irá manter apenas letras e excluir todos os outros caracteres.
+$ echo "123abc456" | sed 's/[0-9]*//g'
+abc
+```
 
-## Profundidade
+Neste comando, usamos a opção "s" para substituir qualquer caractere que corresponda ao padrão [0-9] pelo caractere vazio. A opção "g" é usada para garantir que todos os caracteres correspondentes sejam removidos, não apenas o primeiro.
 
-Se você quiser se aprofundar ainda mais no uso do `sed` para excluir caracteres que correspondem a um padrão, há muitas outras formas de personalizar seu comando. Por exemplo, você pode usar flags como `i` para ignorar maiúsculas e minúsculas ou `n` para suprimir o output. Você também pode combinar vários padrões em uma única linha, separando-os por ponto e vírgula (;). Ou, se quiser excluir um caractere ou conjunto de caracteres específicos, você pode usar `tr` em vez de `sed`. É sempre uma boa ideia consultar a documentação ou procurar exemplos de uso antes de tentar algo mais complexo.
+Para tornar o comando mais flexível, você pode substituir o padrão [0-9] por qualquer outro padrão que desejar, como [A-Z] para remover todas as letras maiúsculas ou [^a-z] para remover tudo, exceto letras minúsculas.
 
-## Veja também
+Profundando:
 
-- [Documentação do `sed`](https://linux.die.net/man/1/sed)
-- [Exemplos de uso do `sed`](https://likegeeks.com/linux-sed-command/)
+O comando "sed" (abreviação para "editor de fluxo") é uma ferramenta de linha de comando que pode ser usada para manipular textos em UNIX e outras plataformas. Foi criado em 1974 e ainda é amplamente utilizado em sistemas operacionais UNIX e em linguagens de programação como Bash.
+
+Uma alternativa comum ao comando "sed" é o "awk", que também permite a manipulação de texto. No entanto, o "awk" é mais adequado para o processamento de grandes quantidades de dados, enquanto o "sed" é mais rápido e eficiente para a manipulação de cadeias de caracteres menores.
+
+Você também pode usar expressões regulares (regex) para corresponder a padrões e deletar caracteres em Bash. Isso pode ser útil quando você precisa de mais flexibilidade e precisão na manipulação do texto.
+
+Veja também:
+
+Para mais informações sobre o comando "sed", você pode consultar a documentação oficial em: https://www.gnu.org/software/sed/ ou verificar o manual do usuário digitando "man sed" no terminal Bash.
+
+Para aprender mais sobre expressões regulares em Bash, você pode conferir este guia do The Linux Documentation Project: http://tldp.org/LDP/Bash-Beginners-Guide/html/sect_04_01.html.

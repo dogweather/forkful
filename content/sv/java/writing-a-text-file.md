@@ -1,7 +1,7 @@
 ---
-title:                "Skriva en textfil"
-html_title:           "Java: Skriva en textfil"
-simple_title:         "Skriva en textfil"
+title:                "Att skriva en textfil"
+html_title:           "Java: Att skriva en textfil"
+simple_title:         "Att skriva en textfil"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Files and I/O"
@@ -10,43 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför skriva en textfil?
+Vad & Varför? 
+Skriva en textfil är när man använder kod för att skapa en fil som kan innehålla text. Programmet använder kod för att skriva den önskade texten till filen och sparar den för framtida användning. Programmörer gör detta för att spara viktig information, dela data med andra eller skapa en loggfilsom kan användas för att spåra programmet.
+Hur gör man:
+Java-kod för att skapa en textfil och skriva till den:
 
-Skriva en textfil är ett av de grundläggande koncepten inom programmering, oavsett vilket programmeringsspråk man använder. Genom att skriva en textfil kan man enkelt spara och manipulera data på ett organiserat sätt. Det är en viktig del av datahantering och kan användas för att skapa en mängd olika program och applikationer. 
+```
+import java.io.*;
+public class TextFil {
 
-## Så här skriver du en textfil i Java
-
-För att skriva en textfil i Java behöver du först och främst skapa en instans av FileWriter-klassen. Sedan kan du använda den för att skriva data till filen med hjälp av metoden write(). En viktig sak att komma ihåg är att vi behöver använda try-catch block för att hantera eventuella fel som kan uppstå under skrivprocessen.
-
-```Java 
-// Skapa en instans av FileWriter
-FileWriter writer = new FileWriter("textfil.txt");
-
-try {
-  // Använd metoden write() för att skriva data till filen
-  writer.write("Hej, det här är en textfil skriven i Java!");
-} catch (IOException e) {
-  System.out.println("Kunde inte skriva till filen.");
-  e.printStackTrace();
-} finally {
-  // Glöm inte att stänga filen när du är klar med skrivningen
-  writer.close();
+   public static void main(String args[]) {
+      try {
+         // Skapar en ny textfil 
+         File textFil = new File("mittTextdokument.txt");
+         
+         // Skapar en ny FileWriter-object
+         FileWriter skrivare = new FileWriter(textFil);
+         
+         // Skriver text till filen
+         skrivare.write("Det här är min första textfil!");
+         
+         // Stänger skrivaren
+         skrivare.close();
+         
+         // Skriver ett meddelande om att filen skapades
+         System.out.println("En ny textfil har skapats!");
+         
+      } catch(IOException e) {
+         e.printStackTrace();
+      }
+   }
 }
+
 ```
 
-När du kör detta program kommer en ny fil vid namn "textfil.txt" att skapas i samma mapp som ditt Java-program. Om filen redan finns kommer innehållet att skrivas över. 
+Vad händer:
+Kodexemplet ovan kommer att skapa en ny fil med namnet "mittTextdokument.txt" och skriva texten "Det här är min första textfil!" till filen. Om koden körs mer än en gång kommer det att ersätta den tidigare texten med den nya texten.
 
-## Djupdykning
+Djupgående:
+Skriva till en textfil är en vanlig uppgift inom programmering. Det ger användare möjlighet att spara data på ett enkelt och läsbart sätt. Det finns också andra sätt att spara data, som till exempel att använda en databastjänst. Men att skriva till en textfil är ett snabbt och enkelt sätt att spara information.
 
-När det kommer till att skriva en textfil finns det flera olika metoder och klasser som kan användas beroende på dina behov och preferenser. FileWriter-klassen som används i exemplet ovan är enkel och lätt att använda, men det finns även andra alternativ som till exempel BufferedWriter eller PrintWriter. Det är viktigt att välja rätt klass för att säkerställa effektiv datahantering och för att undvika problem som till exempel förlorad data eller onödiga felmeddelanden.
-
-## Se även
-
-- [Java FileWriter Javadoc](https://docs.oracle.com/javase/10/docs/api/java/io/FileWriter.html)
-- [Java BufferedWriter Javadoc](https://docs.oracle.com/javase/10/docs/api/java/io/BufferedWriter.html)
-- [Java PrintWriter Javadoc](https://docs.oracle.com/javase/10/docs/api/java/io/PrintWriter.html)
-
-## Källor
-
-- [W3Schools - Java FileWriter](https://www.w3schools.com/java/java_files_create.asp)
-- [Baeldung - How to write to a file in Java](https://www.baeldung.com/java-write-to-file)
+Se även:
+- Java Fil Hantverk (https://www.programiz.com/java-programming/file-handling)
+- Java Output strömmar (https://www.w3schools.com/java/java_files_create.asp)
+- Programmering för nybörjare - Textfiler (https://www.programmeringforfeminarier.se/blogg/textfiler/)

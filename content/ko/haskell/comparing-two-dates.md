@@ -10,51 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+## 무엇이고 왜 하는가?
 
-두 개의 날짜를 비교하는 것이 왜 중요한지 궁금하십니까? 일반적인 언어와 달리 Haskell의 날짜 비교 방법은 기술적이고 복잡할 수 있기 때문입니다. 이 글을 통해 Haskell에서의 날짜 비교를 쉽게 이해하고 활용하는 방법을 배우세요.
+두 날짜를 비교하느 것은 두 가지 날짜를 비교하여 어느 하나가 더 늦거나 빠른지를 알아내는 것입니다. 프로그래머들은 두 날짜를 비교하는 이유는 일반적으로 날짜 기반의 알고리즘 또는 데이터를 처리할 때 필요하기 때문입니다.
 
-## 어떻게
+## 방법:
 
-Haskell에서 두 날짜를 비교하는 방법은 `compare` 함수를 사용하는 것입니다. 이 함수는 첫 번째 인자를 두 번째 인자와 비교하여 `LT` (less than, 작다), `EQ` (equal, 같다), `GT` (greater than, 크다) 값 중 하나를 반환합니다. 아래 예제를 살펴봅시다.
-
+첫 번째 날짜가 더 늦은지 아닌지 확인하는 코드 예시:
 ```Haskell
--- February 18th, 2021
-date1 = fromGregorian 2021 2 18
--- March 3rd, 2021
-date2 = fromGregorian 2021 3 3
-
--- 두 날짜를 비교해서 date1이 date2보다 작은지 확인합니다.
-compare date1 date2 == LT -- 결과: True
+firstDate `isEarlierThan` secondDate = firstDate < secondDate
 ```
 
-위 예제에서 `fromGregorian` 함수는 지정된 년, 월, 일 값을 가지는 `Day` 타입의 날짜를 생성하는 함수입니다. 이를 통해 두 날짜를 생성하고 `compare` 함수를 사용하여 비교하였습니다.
-
-또 다른 방법으로는 `diffDays` 함수를 사용하는 것입니다. 이 함수는 두 날짜 사이의 일 수를 반환합니다. 아래 예제를 살펴봅시다.
-
+두 날짜가 같은지 아닌지 확인하는 코드 예시:
 ```Haskell
--- March 10th, 2021
-date1 = fromGregorian 2021 3 10
--- June 15th, 2021
-date2 = fromGregorian 2021 6 15
-
--- 두 날짜 사이의 일 수를 계산합니다.
-diffDays date1 date2 -- 결과: 97
+firstDate `isSameAs` secondDate = firstDate == secondDate
 ```
 
-이 외에도 Haskell에서는 다양한 함수를 사용하여 년, 월, 일, 시간 등의 날짜 정보에 대한 계산을 수행할 수 있습니다. 자세한 내용은 아래 "## 깊숙한 곳으로" 섹션에서 다루도록 하겠습니다.
+## 깊이 파헤치기:
 
-## 깊숙한 곳으로
+1. 역사적 배경: 날짜 비교 기능은 컴퓨터가 발명된 이래로 널리 사용되어온 기능 중 하나입니다. 초기 컴퓨터들은 숫자로 된 날짜를 문자로 변경한 다음 비교하였습니다. 하지만 현재의 컴퓨터들은 내부적으로 날짜를 표현하고 비교하는 기능을 갖추고 있습니다.
+2. 대안: 날짜를 비교하지 않고도 요일이나 연도 등 날짜에 대한 정보가 필요한 경우, 라이브러리를 사용할 수 있습니다. 이를 통해 더 쉽게 날짜와 관련된 기능을 구현할 수 있습니다.
+3. 구현 세부사항: Haskell의 기본 데이터 타입인 Data.Time은 날짜를 비교하는 데 필요한 함수들을 내장하고 있습니다. 따라서 별도의 라이브러리를 사용하지 않고도 날짜를 비교할 수 있습니다.
 
-날짜를 비교하는 것 외에도 Haskell에서 날짜에 대한 다양한 작업을 수행할 수 있습니다. 다음 라이브러리들을 사용하여 더욱 복잡한 날짜 연산을 수행할 수 있습니다.
+## 또한 보기:
 
-- [time 라이브러리](https://hackage.haskell.org/package/time): 날짜, 시간, 시간대에 대한 데이터 타입과 관련 함수를 제공합니다.
-- [chronos 라이브러리](https://hackage.haskell.org/package/chronos): 날짜와 시간을 효율적으로 표현하는 라이브러리로, 시간대와 대형 정밀도를 지원합니다.
-
-## 참고하기
-
-- [Haskell 공식 문서](https://www.haskell.org/documentation/)
-- [언어 참고사이트](https://www.learnyouahaskell.com/)
-- [Haskell에서의 날짜와 시간 다루기](https://en.wikibooks.org/wiki/Haskell/Date_and_time)
-- [Haskell에서 날짜와 시간 다루기 - 1](https://blog.felipe.rs/2011/05/04/date-and-time-in-haskell-via-dates-datetime-cputime/)
-- [Haskell에서 날짜와 시간 다루기 - 2](https://blog.felipe.rs/2011/12/23/haskell-and-time-handling-parsers-and-comput
+- [Data.Time 라이브러리 문서](https://hackage.haskell.org/package/time/docs/Data-Time.html): Data.Time 라이브러리의 자세한 문서를 확인할 수 있습니다.

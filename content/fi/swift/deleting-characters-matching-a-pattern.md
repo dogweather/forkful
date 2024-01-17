@@ -10,29 +10,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä & Miksi?
+Miksi poistamme merkkejä, jotka vastaavat tiettyä kuvioa? Tätä tehdään ohjelmoinnissa, kun haluamme puhdistaa tai muokata tiettyä tekstiä tai dataa. Tämä on hyödyllistä esimerkiksi silloin, kun haluamme poistaa ylimääräisiä välilyöntejä tai muokata syötettä haluttuun muotoon.
 
-Miksi joku haluaisi poistaa tietyntyyppisiä merkkejä koodistaan? Yksi yleinen syy on halu muuttaa tai korjata tiettyä merkkijonoa tai muuttujaa. Esimerkiksi, jos haluat poistaa kaikki välilyönnit tai erikoismerkit tietystä lauseesta tai merkkijonosta, tämä voi olla hyödyllinen tekniikka.
-
-## Miten tehdä
-
-Poistaaksesi merkkejä suoraan Swift-koodeista, voit käyttää `string.replacingOccurrences(of:with:)` -metodia. Tämä metodi korvaa kaikki esiintymät annetulla merkkijonolla tai merkeillä ja palauttaa uuden merkkijonon. Esimerkiksi:
+## Kuinka:
+Tässä esimerkissä käytämme String-tyypin `replacingOccurrences`-metodia poistaaksemme kaikki numerot merkkijonosta `text`.
 
 ```Swift
-let sentence = "Tämä on esimerkkilause!"
-let newSentence = sentence.replacingOccurrences(of: "se", with: "pa")
+let text = "H3ll0 W0rld!"
+let noNumbers = text.replacingOccurrences(of: "[0-9]", with: "", options: .regularExpression)
 
-print(newSentence)
-// Tulostaa "Tämä on epimerkkilause!"
+print(noNumbers) // Tulostaa “Hll Wrld!”
 ```
 
-## Syvempi sukellus
+## Syväsukellus:
+Historiallisesta kontekstista, poistamalla merkkejä halutun kuvion perusteella on ollut pitkään käytetty ohjelmointiin. Ennen regex-järjestelmän esittelyä ohjelmoijien täytyi käyttää monimutkaisia kaavoja ja tietorakenteita tämän saavuttamiseksi. Nykyään käytämme yleisesti säännöllisiä lausekkeita eli regexejä, jotka tarjoavat helppokäyttöisen ja tehokkaan tavan poistaa merkkejä kuvioittain. Tämän lisäksi on olemassa myös muita vaihtoehtoisia tapoja poistaa merkkejä, kuten käyttämällä looppeja ja merkkijonojen metodien yhdistelmää.
 
-Tämä tekniikka ei rajoitu vain yksinkertaisiin korvauksiin, vaan voit myös käyttää säännöllisiä lausekkeita poistamaan merkkejä, jotka täyttävät tietyn kuvion. Voit myös käyttää monimutkaisempia korvaustekniikoita, kuten korvaamista muuttujilla tai funktiokutsuilla.
-
-Lisäksi, jos haluat vain poistaa tietyntyyppisiä merkkejä tietyistä kohdista merkkijonossa, voit käyttää tekstinsisällä uudelleenkirjoittamista (inline string manipulation) käyttäen `string.filter()` -metodia.
-
-## Katso myös
-
-- ["How to replace a string with another string in Swift?" - Stack Overflow](https://stackoverflow.com/questions/27597360/how-to-replace-a-string-with-another-string-in-swift)
-- ["Regular Expression in Swift" - Hacking with Swift](https://www.hackingwithswif
+## Katso myös:
+- [NSString Regular Expressions - Apple Developer Documentation](https://developer.apple.com/documentation/foundation/nsstring/1411947-replacingcharacters)
+- [Swift Regular Expressions - Stack Overflow](https://stackoverflow.com/questions/27880650/swift-extract-regex-matches#27880421)
+- [Learn Regular Expressions Basics - RegexOne](https://regexone.com/)

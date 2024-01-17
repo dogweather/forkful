@@ -10,40 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么会写文本文件？
+## 什么是文本文件？为什么要写？
 
-在我们的日常生活中，我们经常需要记录、保存和共享信息。使用文本文件可以方便地存储和交换数据，而不需要使用复杂的软件。因此，学习如何编写文本文件是一项非常实用的技能，可以帮助你更轻松地管理和共享信息。
+文本文件是一种存储文本内容的文件类型，它通常包含字符和行来表示文本的结构。程序员通常会写文本文件来存储和读取数据，例如配置文件、日志文件和数据集。
 
-## 如何做？
+## 如何操作：
 
-如果你想在Swift中编写文本文件，首先你需要创建一个文件路径，来确定文本文件将被保存的位置。然后，你需要使用`FileManager`类的方法来创建一个文件，并写入你想要的内容。以下是一个简单的例子：
+下面是一个示例，展示如何在Swift中写入文本文件，并将数据存储在一个名为`example.txt`的文件中：
 
-```Swift
-// 文件路径
-let filePath = "/Users/username/Documents/test.txt"
+```Swift 
+let text = "这是一个文本文件的例子。"
+let filename = "example.txt"
 
-// 创建文本文件
-FileManager.default.createFile(atPath: filePath, contents: nil, attributes: nil)
-
-// 写入内容
-let content = "Hello World!"
-try? content.write(toFile: filePath, atomically: true, encoding: .utf8)
+if let docDir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
+    let fileURL = docDir.appendingPathComponent(filename)
+    
+    do {
+        try text.write(to: fileURL, atomically: true, encoding: .utf8)
+    } catch {
+        print("写入文件失败：\(error)")
+    }
+}
 ```
 
-运行这段代码后，你就可以在指定的文件路径下找到一个名为`test.txt`的文本文件，里面包含有你写入的内容。
+运行以上代码后，您将在文档目录中找到名为`example.txt`的文件，其中包含文本“这是一个文本文件的例子。”
 
-## 深入了解
+## 深度挖掘：
 
-除了简单地写入文本，你还可以使用Swift的字符串插值功能来动态地生成文本文件的内容。同时，你也可以使用`FileHandle`类来对文本文件进行更复杂的操作，比如读取文件内容、追加内容等等。如果想要更加深入地了解文本文件的相关知识，可以参考下面这些链接：
+文本文件是计算机系统中最基本的文件类型之一，常用于存储人类可读的文本信息。它可以追溯到计算机的早期发展阶段，现在已经被广泛应用于各种领域，例如网站开发、数据处理和游戏存档。
 
-[FileManager - Apple Developer Documentation](https://developer.apple.com/documentation/foundation/filemanager)
+除了使用文本文件，程序员还可以使用其他类型的文件格式来存储数据，例如二进制文件和数据库。然而，文本文件具有易读易编辑的特点，适用于一些简单的文本数据存储需求。
 
-[FileHandle - Apple Developer Documentation](https://developer.apple.com/documentation/foundation/filehandle)
+如果您想深入了解如何使用Swift写入文本文件，建议查看苹果官方文档：https://developer.apple.com/documentation/foundation/filemanager/1412649-contents
 
-[Swift Strings and Characters - Apple Developer Documentation](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+## 参考链接：
 
-## 参考链接
-
-- [为什么会使用文本文件？ - 简书](https://www.jianshu.com/p/a6652804b8d4)
-- [Swift文本文件操作教程 - 简书](https://www.jianshu.com/p/aaf965d47f55)
-- [Swift教程：字符串和字符 - 菜鸟教程](https://www.runoob.com/swift/swift-strings-characters.html)
+- 苹果官方文档：https://developer.apple.com/documentation/foundation/filemanager
+- 文本文件相关知识：https://zh.wikipedia.org/wiki/文本文件

@@ -1,7 +1,7 @@
 ---
-title:                "कम्प्यूटर प्रोग्रामिंग में कमांड लाइन आर्ग्यूमेंट पढ़ना"
-html_title:           "Kotlin: कम्प्यूटर प्रोग्रामिंग में कमांड लाइन आर्ग्यूमेंट पढ़ना"
-simple_title:         "कम्प्यूटर प्रोग्रामिंग में कमांड लाइन आर्ग्यूमेंट पढ़ना"
+title:                "कम्प्यूटर प्रोग्रामिंग में कमांड लाइन आर्ग्यूमेंट्स पढ़ना"
+html_title:           "Kotlin: कम्प्यूटर प्रोग्रामिंग में कमांड लाइन आर्ग्यूमेंट्स पढ़ना"
+simple_title:         "कम्प्यूटर प्रोग्रामिंग में कमांड लाइन आर्ग्यूमेंट्स पढ़ना"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Files and I/O"
@@ -10,22 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Kyon
-Kai baar hume apne programs mein user se interact karne ki zarurat hoti hai, jaise input lena ya specific output display karna. Command line arguments read karne se hum user se interact kar sakte hai aur apne program ko versatile bana sakte hai. Isse humare programs ka use increase hota hai aur hume flexibility milti hai.
+## क्या और क्यों?
 
-## Kaise Kare
-Kotlin mein command line arguments read karne ke liye hum `args` array ka use karte hai. Isse hume terminal mein user dvara enter kiye gaye arguments ko access karne mein madad milti hai. Chaliye ek simple program dekhenge jaha hum command line arguments ko read karke unhe print karenge.
+कमांड लाइन आर्ग्यूमेंट को रीड करना क्या है? यह एक प्रोग्रामर के लिए क्यों महत्वपूर्ण है? कमांड लाइन आर्ग्यूमेंट एक विशेष प्रकार का इनपुट है जो प्रोग्राम को बताता है कि उपयोगकर्ता के द्वारा दिए गए कमांड में क्या संशोधन किया जाना है। इससे प्रोग्राम को उपयोगकर्ता के द्वारा किए गए बदलावों को समझने में आसानी होती है।
 
-```Kotlin
+## कैसे:
+
+यहां हम Kotlin में कॉमांड लाइन आर्ग्यूमेंट रीड करने के दो तरीके देखेंगे:
+
+```
 fun main(args: Array<String>) {
-    println("Welcome, your name is ${args[0]}") // assuming the first argument is the name
+    if (args.isNotEmpty()) {
+        println("उपयोगकर्ता द्वारा पास किए गए आर्ग्यूमेंट: ")
+        for (arg in args) {
+            println(arg)
+        }
+    } else {
+        println("कोई आर्ग्यूमेंट नहीं मिला।")
+    }
 }
 ```
-Agar hume is program ko run karne ke liye terminal mein `kotlin Main.kt John` command enter karna hai, toh output mein "Welcome, your name is John" print hoga. Is tarah hum user ke dwara enter kiye gaye arguments ko read kar sakte hai.
 
-## Deep Dive
-Agar hum terminal mein `kotlin Main.kt John 25 true` command enter karte hai, toh humare `args` array mein 3 elements honge - John, 25 aur true. Yaha par `args[1]` hume age aur `args[2]` hume boolean value return karega. Isse hum apne program mein dynamic input ki tarah bhi use kar sakte hai.
+इसकी उपयोग से हम उपयोगकर्ता द्वारा पास किए गए सभी आर्ग्यूमेंट्स को प्रिंट कर सकते हैं। अन्य तरीके से, हम यह भी कर सकते हैं:
 
-## Dekhiye Bhi
-- [Kotlin Command Line Arguments](https://kotlinlang.org/docs/command-line.html#command-line-arguments)
-- [Kotlin Command Line Programs](https://www.freecodecamp.org/news/how-to-program-in-kotlin-command-line-programs/)
+```
+fun main(args: Array<String>) {
+    val name = args[0]
+    val age = args[1].toInt()
+
+    println("नाम: ${name}")
+    println("आयु: ${age}")
+}
+```
+
+इसमें, हम दो आर्ग्यूमेंट्स लेकर उन्हें प्रिंट कर सकते हैं। यहां दूसरा आर्ग्यूमेंट आयु नामक integer होना चाहिए, इसलिए हम इसको इंट से फॉरमैट कर रहे हैं।
+
+आर्ग्यूमेंट्स को कमांड लाइन में यूज़ करने के लिए, हम यह कमांड लाइन पर टाइप करते हैं: ```kotlin <नाम फाइल>.kt <आर्ग्यूमेंट्स>```
+
+उदाहरण के लिए, यदि आपको पहले के तरह ही कोई नाम और उम्र प्रिंट करना है, तो आपको इसके लिए यह कमांड लाइन टाइप करना होगा: ```kotlin main.kt John 25```
+
+इसके आउटपुट में आपको नाम और उम्र की जगह John और 25 दिखेंगे।
+
+## डीप डाइव:
+
+कमांड लाइन आर्ग्यूमेंट को पहले से ही कई प्रोग्रामिंग भाषाओं में समर्थित किया गया है। इससे प्रोग्रामर्स को प्रोग्राम के साथ मिले गए आर्ग्यूमेंट्स के अनुपात का पता चलता है जो उनके द्वारा बनाए गए आर्ग्यूमेंट्स से लोगों को समझने में मदद करता है। इसके अलावा, कई बार उपयोगकर्ताओं को समझने में आसानी होती है कि उन्हें किसी विशेष प्रकार के आर्ग्यूमेंट्स को पास करने का तरीका

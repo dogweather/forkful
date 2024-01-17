@@ -1,7 +1,7 @@
 ---
-title:                "小文字に文字列を変換する"
-html_title:           "Kotlin: 小文字に文字列を変換する"
-simple_title:         "小文字に文字列を変換する"
+title:                "文字列を小文字に変換する"
+html_title:           "Kotlin: 文字列を小文字に変換する"
+simple_title:         "文字列を小文字に変換する"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Strings"
@@ -10,40 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何故
+## 何 & なぜ？
 
-文字列を小文字に変換することの利点は、プログラムの柔軟性と使いやすさです。
+文字列を小文字に変換することは、プログラマーにとって非常に一般的なタスクです。これは、入力された文字列の大文字や小文字が異なっている場合、正しく動作しない可能性があるためです。そのため、文字列を小文字に統一することで、不必要なバグを防ぐことができます。
 
-## 方法
-
-文字列を小文字に変換するには、`toLowerCase()`メソッドを使用します。このメソッドは、以下のように使用します。
+## 方法：
 
 ```Kotlin
-val str = "HAPPY BIRTHDAY"
-val lowerCaseStr = str.toLowerCase() // 出力は "happy birthday"
+val text = "Hello, World!"
+println(text.toLowerCase())
+
+// 出力：hello, world!
 ```
 
-このように、`toLowerCase()`メソッドはオリジナルの文字列を小文字に変換し、新しい文字列として返します。また、英字以外の文字も小文字に変換することができます。例えば、ドイツ語の文字 `Ü` は小文字に変換すると `ü` になります。
+上記のように、Kotlinでは```toLowerCase()```関数を使用することで、文字列を小文字に変換することができます。
 
-```Kotlin
-val germanStr = "GÜNTER"
-val lowerCaseGermanStr = germanStr.toLowerCase() // 出力は "günter"
-```
+また、```toLowerCase()```関数は日本語を含むマルチバイト文字列にも対応しているため、安心して使用することができます。
 
-## ディープダイブ
+## 深堀り：
 
-Javaの場合、`toLowerCase()`メソッドは`Locale`引数を受け取り、その言語の正しいルールで文字を小文字に変換します。一方、Kotlinではこの引数が省略されています。そのため、Kotlinの小文字変換メソッドは常にロケールに依存しない一貫性のある結果を返します。
+Javaでは、文字列の小文字変換には```toLowerCase()```メソッドもしくは```CaseFormat.LOWER_CASE.toConverter()```メソッドが使用されていましたが、Kotlinではより簡潔かつ使いやすい```toLowerCase()```関数が導入されました。
 
-また、Kotlinではオプションとして`LOCALE`引数も受け取ることができます。これを指定すると、指定したロケールに従って文字を小文字に変換します。
+これ以外にも、正規表現を使って文字列を小文字に変換する方法や、文字コードを変換する方法などもありますが、Kotlinの```toLowerCase()```関数が最も一般的で推奨される方法です。
 
-```Kotlin
-val str = "NICE WEATHER"
-val loc = Locale("fr", "FR")
-val lowerCaseStr = str.toLowerCase(loc) //出力は "nice weather"（フランス語のロケールに従って変換）
-```
+## 関連情報：
 
-## 関連リンク
-
-- [Kotlin公式ドキュメント](https://kotlinlang.org/docs/reference/basic-types.html#string-literals)
-- [JavaでのString小文字変換の仕組み](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#toLowerCase(java.util.Locale))
-- [KotlinでのString小文字変換の仕組み](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/.html#to-lower-case)
+- [Kotlinドキュメンテーション](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/to-lowercase.html)
+- [Java Stringの小文字変換メソッド](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#toLowerCase--)
+- [Java CaseFormatの説明](https://github.com/google/guava/wiki/StringsExplained#caseformat)

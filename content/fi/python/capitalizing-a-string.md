@@ -1,7 +1,7 @@
 ---
-title:                "Pienentäminen merkkijonoksi"
-html_title:           "Python: Pienentäminen merkkijonoksi"
-simple_title:         "Pienentäminen merkkijonoksi"
+title:                "Merkkijonon kirjoitusasu"
+html_title:           "Python: Merkkijonon kirjoitusasu"
+simple_title:         "Merkkijonon kirjoitusasu"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Strings"
@@ -10,26 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+# Mitä ja miksi?
 
-Miksi haluaisit muuttaa merkkijonon ensimmäisen kirjaimen isoksi alkukirjaimeksi? Tämä on hyödyllistä esimerkiksi silloin, kun haluat muuttaa käyttäjän syöttämän merkkijonon oikeaan muotoon ennen sen tallentamista tietokantaan tai käytä sitä vertailussa jonkun toisen merkkijonon kanssa.
+Kapitalisoiminen on tapa muuntaa merkkijono alkamaan isolla kirjaimella ja muut kohdat säilyttävät pienet kirjaimet. Tätä käytetään usein tekstin muokkauksessa, esimerkiksi otsikoiden muotoilussa. Ohjelmoijat käyttävät tätä toimintoa helpottaakseen tekstin muokkausta ja käsittelemistä.
 
-## Kuinka tehdä
+## Kuinka tehdä se?
 
 ```Python
-# Esimerkki koodi
-string = "tervehdys maailma!"
-print(string.capitalize())
+teksti = "esimerkki teksti"
+print(teksti.capitalize())
 ```
 
-Tässä esimerkissä annettu merkkijono "tervehdys maailma!" muutetaan isoksi alkukirjaimeksi käyttäen capitalize()-funktiota. Koodin tulostus on "Tervehdys maailma!", jossa ensimmäinen kirjain on nyt isolla alkukirjaimella.
+Tulostus:
+```
+Esimerkki teksti
+```
 
-## Syventävä tieto
+Voimme myös kapitalisoida vain tietyn kohdan merkkijonosta käyttämällä ```title()``` metodia.
 
-Capitalize()-funktio on osa Pythonin sisäänrakennettua "string" -moduulia ja se voidaan käyttää kaikissa merkkijonoissa. Jokaisen sanan ensimmäinen kirjain muuttuu isoksi, mutta muut kirjaimet pysyvät ennallaan. Tämä toiminto on hyödyllinen myös silloin, kun halutaan päästä eroon mahdollisista kirjoitusvirheistä merkkijonossa, kuten jos käyttäjä on syöttänyt ensimmäisen kirjaimen vahingossa pienellä.
+```Python
+teksti = "esimerkki teksti"
+print(teksti.title())
+```
+
+Tulostus:
+```
+Esimerkki Teksti
+```
+
+## Syväsukellus
+
+Kapitalisointiin liittyvät käytännöt juontavat juurensa fyysisistä kirjoituskoneista, joissa kirjaimien koon muuttaminen oli mahdotonta. Nykyään kapitalisointia käytetään paljon tekstinkäsittelyohjelmissa ja ohjelmoijat käyttävät sitä yksinkertaisemman ja yhtenäisen koodin kirjoittamiseen.
+
+On olemassa myös muita tapoja kapitalisoida merkkijonoja, kuten "upper()" ja "lower()" metodit, jotka muuttavat kaikki kirjaimet isiksi tai pieniksi.
 
 ## Katso myös
 
-- [Python string -moduuli](https://docs.python.org/3/library/string.html)
-- [Merkkijonojen käsittely Pythonissa](https://realpython.com/python-strings/)
-- [Pythonin järjestelmävalmiudet](https://docs.python.org/3/library/sys.html)
+- [Pythonin virallinen dokumentaatio kapitalisoinnista](https://docs.python.org/3/library/stdtypes.html#str.capitalize)
+- [Erilaisia tapoja käsitellä merkkijonoja Pythonilla](https://www.tutorialspoint.com/python3/python_strings.htm)

@@ -1,7 +1,7 @@
 ---
-title:                "Tiedoston lukeminen"
-html_title:           "Ruby: Tiedoston lukeminen"
-simple_title:         "Tiedoston lukeminen"
+title:                "Tekstitiedoston lukeminen"
+html_title:           "Ruby: Tekstitiedoston lukeminen"
+simple_title:         "Tekstitiedoston lukeminen"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Files and I/O"
@@ -10,57 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Miksi
+## Mitä & Miksi?
+Lukeminen tekstitiedosto on tapsa ohjelmoijille lukea sisältöä tiedostosta. Tämä on hyödyllistä, kun halutaan käsitellä suuria määriä tietoa tai tallentaa tietoja pysyvästi. 
 
-Text tiedostojen lukeminen on yksi perustavanlaatuisimmista taidoista, joita Ruby-ohjelmoija voi tarvita. Se mahdollistaa tiedon käsittelyn ja muokkaamisen tekstipohjaisista tiedostoista, ja on välttämätön taito monissa ohjelmointiprojekteissa.
-
-## Miten
-
-### Peruslukeminen
-
-Perus tapa lukea tiedosto Rubylla on käyttää `File`-luokkaa ja sen `open`-metodia. Voit antaa `open`-metodille tiedostopolun ja valita haluamasi lukutavan. Esimerkiksi:
+## Kuinka:
+Ruby tarjoaa helpon tavan lukea tekstitiedostoja. Käytä File.open -metodia ja anna sen saada haluttu tiedoston nimi parametrina. Tallenna avattu tiedosto muuttujaan ja käytä `each` -metodia lukeaksesi tiedoston sisällön rivi kerrallaan. Esimerkki:
 
 ```Ruby
-File.open("tiedosto.txt", "r") do |file|
-  puts file.read
-end
+tiedosto = File.open("tekstitiedosto.txt")
+
+tiedosto.each { |rivi| puts rivi }
+
+#tulostaa tekstitiedoston sisällön rivi kerrallaan
+```
+Tiedoston lukemisen voit käyttää myös muuttujaa käyttäen ja hyödyntää `gets.chomp` -metodia lukemaan käyttäjän syötteen:
+
+``` Ruby
+tiedosto = File.open("tekstitiedosto.txt")
+
+sisalto = tiedosto.read
+
+kayttajan_syote = gets.chomp
+
+puts "Käyttäjän syöttämä tieto:"
+puts kayttajan_syote
+
+#tulostaa tekstitiedoston sisällön sekä käyttäjän syöttämän tiedon
 ```
 
-Yllä olevassa esimerkissä tiedosto `"tiedosto.txt"` avataan lukutilassa (`"r"`) ja sen sisältö tulostetaan konsoliin `puts`-metodilla.
+## Syventävä sukellus:
+Tekstitiedostojen lukeminen on ollut tärkeä osa ohjelmointia jo vuosikymmenien ajan. Ennen tätä teknistä ratkaisua, ohjelmoijien täytyi käsitellä tietoa manuaalisesti, mikä oli hankalaa ja aikaa vievää. Nykyään on myös muita tapoja lukea tiedostoja, kuten käyttämällä erilaisia kirjastoja ja rajapintoja. Tiedostojen lukemisen perusteiden ymmärtäminen auttaa sinua myös ymmärtämään muita tapoja käsitellä ja tallentaa tietoja.
 
-### Vieno tapa
-
-Yksi suosituimmista tavoista lukea tekstiä Rubylla on käyttää `File`-luokan `readlines`-metodia. Tämä palauttaa taulukon, jossa jokainen rivi on oma merkkijononsa. Voit sitten käyttää tätä taulukkoa esimerkiksi `each`-metodin kanssa tai iteroimalla sen läpi for-silmukalla:
-
-```Ruby
-File.open("tiedosto.txt", "r") do |file|
-  file.readlines.each do |line|
-    puts line
-  end
-end
-```
-
-### Vihjeitä ja nikssejä
-
-* Muista aina sulkea tiedosto käytön jälkeen `File#close`-metodilla.
-* Voit käyttää erilaisia lukutiloja tiedoston avaamiseen, kuten `"r"` (luettavaksi), `"w"` (kirjoitettavaksi) tai `"a"` (lisättäväksi).
-* Jos tiedostosi käyttää ei-tavallista merkistöä (kuten UTF-8), voit asettaa `File.open`-metodin parametrikseen `"r:UTF-8"`.
-
-## Syvä sukellus
-
-Lue tämä osio vain, jos haluat ymmärtää paremmin, miten tiedostojen lukeminen toimii Rubylla.
-
-Kun avaat tiedoston `File.open`-metodilla, se palauttaa `File`-luokan ilmentymän, joka luo välillistä URL:ää vastaavan luokan. Tämä luokka hoitaa tiedoston lukemisen, kirjoittamisen ja muokkaamisen.
-
-Muutamia esimerkkejä `File`-luokan tarjoamista metodeista:
-
-* `read`: lukee koko tiedoston yhtenä merkkijonona
-* `gets`: lukee yhden rivin tiedostosta
-* `each`: antaa pääsyn jokaiseen tiedoston riviin
-* `write`: kirjoittaa merkkijonon tiedostoon
-* `close`: sulkee tiedoston
-
-## Katso myös
-
-* [Ruby Doc - File-luokka](https://ruby-doc.org/core-2.6.3/File.html)
-* [Ruby Monk - Tiedostojen käsittely Rubylla](https://rubymonk.com/learning/books/4-ruby-primer-ascent/chapters/41-file-i-o/lessons/91-reading-files)
+## Katso myös:
+- [Ruby File -dokumentaatio] (https://ruby-doc.org/core-2.7.2/File.html)
+- [Ruby Essentials] (https://www.rubyguides.com/ruby-tutorial/file/)
+- [Ruby Text File I/O -opas] (https://www.tutorialspoint.com/ruby/ruby_input_output.htm)

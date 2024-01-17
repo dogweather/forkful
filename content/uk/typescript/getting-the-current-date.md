@@ -10,31 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Чому
-Існує багато ситуацій, коли вам потрібно обробити поточну дату у вашому коді, наприклад, створити логи або записати дату створення елементу. TypeScript надає нам потужні засоби для отримання теперішньої дати без додаткових зусиль.
+## Що це і чому?
 
-## Як
-Щоб отримати поточну дату в TypeScript, нам потрібно використовувати вбудований об'єкт `Date`. У нього є кілька методів та властивостей, за допомогою яких ми можемо отримати інформацію про поточну дату. Давайте подивимося на деякі приклади коду:
+Отримання поточної дати є процесом отримання поточної інформації про дату та час на комп'ютері. Програмісти часто здійснюють цю дію для того, щоб коректно працювати з датами та часом у своїх програмах.
+
+## Як це зробити:
+
+Існує кілька способів отримати поточну дату в TypeScript. Один з найпростіших способів - використовувати вбудований об'єкт `Date`. Для цього потрібно створити новий екземпляр `Date` та викликати методи `getDate()`, `getMonth()` та `getFullYear()`.
 
 ```TypeScript
-// Отримання поточної дати
-const now = new Date();
-
-// Отримання поточної дати у вигляді рядка
-const dateString = now.toString();
-
-// Отримання поточного часу у годинах, хвилинах та секундах
-const hours = now.getHours();
-const minutes = now.getMinutes();
-const seconds = now.getSeconds();
+let currentDate = new Date();
+console.log(currentDate.getDate(), currentDate.getMonth() + 1, currentDate.getFullYear());
 ```
 
-В прикладі вище ми створили об'єкт `Date`, який представляє поточну дату та час. Ми також використали метод `toString()`, щоб отримати поточну дату у вигляді рядка. Крім того, ми використали методи `getHours()`, `getMinutes()` та `getSeconds()`, щоб отримати поточний час у годинах, хвилинах та секундах.
+В цьому прикладі ми використали метод `getDate()` для отримання числа поточного місяця, `getMonth()` для отримання порядкового номера місяця та `getFullYear()` для отримання року.
 
-## Глибоке занурення
-Об'єкт `Date` у TypeScript базується на стандартному об'єкті `Date` у JavaScript, і має деякі зауваження стосовно часових зон та точності. Якщо вам потрібна більш детальна інформація, ви можете переглянути документацію на [офіційному сайті TypeScript](https://www.typescriptlang.org/docs/handbook/utility-types.html#picktype-keys).
+## Глибше копання:
 
-## Дивіться також
-- [Робота з датами та часом в TypeScript](https://www.digitalocean.com/community/tutorials/how-to-work-with-dates-and-times-in-typescript)
-- [Стандартний об'єкт Date у JavaScript](https://developer.mozilla.org/uk/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [Official TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/utility-types.html)
+Перша версія JavaScript була випущена 1995 року і не мала вбудованого об'єкту `Date`. Тому розробники вирішили додати цей об'єкт до мови у наступних версіях.
+
+Існує деяка кількість альтернативних бібліотек та пакетів, які можна використовувати для отримання поточної дати в TypeScript, таких як `moment.js` та `date-fns`.
+
+Детально ознайомитися з роботою вбудованого об'єкта `Date` в TypeScript можна на [офіційній документації](https://www.typescriptlang.org/docs/handbook/standard-library.html#date). 
+
+## Дивіться також:
+
+- [Методи об'єкту `Date` в TypeScript](https://www.typescriptlang.org/docs/handbook/standard-library.html#date)
+- [Moment.js](https://momentjs.com/)
+- [date-fns](https://date-fns.org/)

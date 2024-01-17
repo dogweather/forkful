@@ -10,49 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co to jest konkatynacja i dlaczego jest ważna?
 
-Konkatenacja to proces łączenia dwóch lub więcej ciągów znaków w jeden dłuższy ciąg. Jest to przydatna umiejętność w programowaniu, ponieważ pozwala na łatwe tworzenie wyświetlania komunikatów, generowanie plików lub budowanie bardziej złożonych programów.
+Konkatynacja stringów to połączenie kilku ciągów znaków w jeden większy ciąg. Programiści wykorzystują tę technikę, aby tworzyć bardziej złożone i dynamiczne teksty, które są potrzebne w wielu aplikacjach.
 
-## Jak to zrobić
+## Jak to zrobić?
 
-Łączenie ciągów znaków w Bash jest łatwe i wymaga tylko użycia operatora "+" lub użycia komendy "echo". Przykłady:
-
-```Bash
-# Użycie "+" operatora
-imie="John"
-nazwisko="Smith"
-pelne_imie=$imie+$nazwisko
-echo "Witaj, $pelne_imie"
-
-# Użycie komendy "echo"
-echo "Dzisiejsza data to: " `date`
-```
-
-Wynik:
-
-```
-Witaj, John+Smith
-Dzisiejsza data to: Fri Jan 15 20:20:20 CET 2021
-```
-
-## Deep Dive
-
-Bash oferuje również możliwość konkatenacji ciągów znaków z wykorzystaniem funkcji "printf". Funkcja ta pozwala na bardziej zaawansowane formatowanie wyjścia, co może być przydatne przy generowaniu bardziej skomplikowanych ciągów znaków. Przykład:
+Aby skonkatynować stringi w Bashu, możemy użyć operatora "+" lub odwrotnego ukośnika "\" do połączenia kilku ciągów znaków w jeden. Przykładowy kod wyglądałby tak:
 
 ```Bash
-imie="John"
-nazwisko="Smith"
-printf "Witaj, %s %s" $imie $nazwisko
+string1="Hello"
+string2="world!"
+concatenated="$string1 $string2"
+echo $concatenated
 ```
 
-Wynik:
+Wyjściem powyższego kodu będzie "Hello world!".
 
-```
-Witaj, John Smith
-```
+## Głębszy zanurzenie
 
-## Zobacz również
+Konkatynacja stringów jest powszechnie stosowana w wielu językach programowania, a jej historia sięga początków informatyki. Alternatywną metodą może być użycie funkcji "printf" lub "sprintf", które posiadają więcej opcji formatowania tekstu. W Bashu, używając operatora "+", stringi są konwertowane na liczby i następnie dodawane razem, co może być problematyczne przy niektórych typach danych. Dlatego też, lepszym wyborem jest użycie operatora "\".
 
-- ["Bash Concatenation Operator (+) and String Concatenation"] (https://www.oreilly.com/library/view/bash-cookbook/0596526784/ch01s15.html)
-- ["Some Useful Tips and Tricks in Bash Programming"] (https://linuxacademy.com/blog/linux/some-useful-tips-and-tricks-in-bash-programming/)
+## Zobacz także
+
+Jeśli chcesz dowiedzieć się więcej o konkatynacji stringów w Bashu, możesz zajrzeć do dokumentacji Bash Guide for Beginners (http://tldp.org/LDP/Bash-Beginners-Guide/html/index.html) lub przejrzeć różne przykłady kodu na stronie Bash Hackers Wiki (https://wiki.bash-hackers.org/).

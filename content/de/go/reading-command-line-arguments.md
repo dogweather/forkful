@@ -1,7 +1,7 @@
 ---
-title:                "Das Lesen von Befehlszeilenargumenten"
-html_title:           "Go: Das Lesen von Befehlszeilenargumenten"
-simple_title:         "Das Lesen von Befehlszeilenargumenten"
+title:                "Lesen von Befehlszeilenargumenten"
+html_title:           "Go: Lesen von Befehlszeilenargumenten"
+simple_title:         "Lesen von Befehlszeilenargumenten"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Files and I/O"
@@ -10,53 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was & Warum? 
+Beim Lesen von Befehlszeilenargumenten geht es darum, Eingaben von Benutzern zu erhalten, die beim Starten eines Programms über die Kommandozeile eingegeben werden. Programmierer tun dies, um die Funktionalität ihrer Programme anzupassen und benutzerfreundlicher zu gestalten.
 
-Wenn Sie Go programmieren, werden Sie früher oder später auf die Anforderung stoßen, Befehlszeilenargumente zu lesen. Dies ist besonders nützlich, wenn Sie Ihre Programme anpassungsfähiger machen möchten, da Benutzer verschiedene Einstellungen durch die Befehlszeile übergeben können.
+## Wie geht's? 
+Eine Option in Go ist die Verwendung der "Args"-Funktion aus der "os"-Paketbibliothek. Hier ein Beispiel, wie man diese Funktion verwendet:
+```
+package main 
 
-## Wie gehts
+import (
+   "fmt"
+   "os"
+) 
 
-Um Befehlszeilenargumente in Go zu lesen, können Sie die `os.Args` Funktion verwenden. Diese gibt eine `[]string` zurück, in der jedes Element ein Befehlszeilenargument darstellt. Beispiel:
-
-```Go
-func main() {
-    args := os.Args
-    fmt.Println(args)
-}
+func main() { 
+   arguments := os.Args[1:] 
+   fmt.Println(arguments) 
+} 
 ```
 
-Wenn Sie nun Ihr Programm mit dem Befehlszeilenargument `foo bar` aufrufen, wird die Ausgabe `["meinprogramm" "foo" "bar"]` sein.
+Wenn wir dieses Programm mit dem Befehl "Go run main.go Hallo Welt" ausführen, wird "Hallo" und "Welt" als Strings zurückgegeben.
 
-Sie können auch auf bestimmte Argumente in der `[]string` zugreifen, indem Sie den Index verwenden. Beispiel:
+## Tieferes Eintauchen 
+Die Verwendung von Befehlszeilenargumenten in Programmiersprachen ist seit den Anfängen der Befehlszeilen-Interaktion gängige Praxis. Es gibt auch alternative Möglichkeiten, dies zu tun, wie zum Beispiel das Parsen von Argumenten mit einer Flaggen- oder Argumentenparser-Bibliothek. Die Implementierung von Go's "Args"-Funktion basiert auf der "getopt"-Funktion aus dem C-Standardbibliothek.
 
-```Go
-func main() {
-    args := os.Args
-    fmt.Println(args[0]) // gibt "meinprogramm" aus
-    fmt.Println(args[1]) // gibt "foo" aus
-}
-```
-
-Dies ermöglicht es Ihnen, auf spezifische Argumente in Ihrem Programm zuzugreifen und diese zur Laufzeit zu verwenden.
-
-## Tiefere Einblicke
-
-Sie können auch die `flag`-Paket in Go verwenden, um Befehlszeilenargumente zu lesen. Dies ermöglicht es Ihnen, auch Argumente mit verschiedenen Flags zu übergeben und diese bequem beim Ausführen Ihres Programms zu überprüfen. Beispiel:
-
-```Go
-func main() {
-    name := flag.String("name", "Gopher", "Name of user")
-    age := flag.Int("age", 25, "Age of user")
-    flag.Parse()
-    fmt.Printf("Hello %s, you are %d years old!", *name, *age)
-}
-```
-
-Wenn Sie nun Ihr Programm mit dem Befehlszeilenargument `--name Alice --age 30` aufrufen, wird die Ausgabe `Hello Alice, you are 30 years old!` sein.
-
-Sie können auch benutzerdefinierte Flags und Argumente erstellen, indem Sie die `flag`-Paket weiter erkunden. Dies kann nützlich sein, wenn Sie ein Programm mit vielen verschiedenen Einstellungen und Optionen haben.
-
-## Siehe auch
-
-- [Die offizielle Dokumentation zu os.Args](https://golang.org/pkg/os/#Args)
-- [Die offizielle Dokumentation zum flag-Paket](https://golang.org/pkg/flag/)
+## Siehe auch 
+- [Die offizielle Go-Dokumentation zur Args-Funktion](https://golang.org/pkg/os/#Args) 
+- [Ein Tutorial, das zeigt, wie man Befehlszeilenargumente mit Go nutzt](https://www.digitalocean.com/community/tutorials/how-to-read-command-line-arguments-in-go-de)

@@ -10,18 +10,13 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
+## 什么和为什么?
 
-有时候，我们可能需要从字符串中删除符合特定模式的字符。这可能是因为我们想要对字符串进行清理，或者从文本中删除敏感或无效的字符。使用C++编程语言，我们可以轻松地删除字符串中匹配特定模式的字符。
+删除符合特定模式的字符是一种编程的常见任务，它允许程序员通过一次操作来删除指定模式的多个字符。这种操作节省了时间和精力，并且可以提高代码的可读性。程序员使用这种技术来删除无用的字符，或者为不同的输入数据格式提供通用的处理方法。
 
-## 如何操作
+## 怎样做？
 
-使用C++编程语言删除字符串中匹配特定模式的字符非常简单。我们只需要遵循以下三个步骤：
-1. 定义一个用于存储字符串的变量。
-2. 使用C++的内置函数或自定义函数，在变量中查找并删除符合特定模式的字符。
-3. 打印输出结果或将结果存储在新的变量中。
-
-让我们来看一个简单的实例，在字符串中删除所有的数字。在下面的C++代码示例中，我们将使用字符串变量“str”来存储字符串，使用C++的for循环和isnumeric()函数来遍历并删除字符串中的所有数字，最后将结果存储在新的变量“new_str”中。
+下面是一个简单的例子，展示如何使用C++编程语言在字符串中删除所有的数字字符。
 
 ```C++
 #include <iostream>
@@ -29,41 +24,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 using namespace std;
 
 int main() {
-  string str = "ABC123!@#";
-  string new_str = "";
-
-  for (int i = 0; i < str.size(); i++) {
-    if (!isnumeric(str[i])) {
-      new_str += str[i];
+    string str = "Hello123 World456";
+    int i = 0;
+    while (i < str.length()) {
+        if (isdigit(str[i])) {
+            str.erase(i, 1);
+        }
+        else {
+            i++;
+        }
     }
-  }
-
-  cout << "原字符串： " << str << endl;
-  cout << "删除数字后的字符串： " << new_str;
-
-  return 0;
+    cout << str; // Output: HelloWorld
+    return 0;
 }
-```
-
-输出结果为：
-```
-原字符串： ABC123!@#
-删除数字后的字符串： ABC!@#
 ```
 
 ## 深入了解
 
-在C++中，我们可以使用不同的方法来删除字符串中匹配特定模式的字符。例如，我们可以使用C++的replace()函数来替换字符串中的特定字符，或者使用erase()函数来删除字符串中的特定字符位置。此外，我们还可以使用自定义函数来实现更复杂的匹配模式和删除操作。记住，在使用自定义函数时，需要在程序中包含函数的原型声明。
+这种技术最早出现在正则表达式中，但现在已被许多编程语言广泛采用。另外，除了一次删除所有匹配的字符，程序员也可以使用循环和条件语句来逐个删除指定模式的字符。在C++中，使用erase()函数可以通过指定起始位置和长度来删除字符串中的字符。
 
-## 参考链接
+## 参考资料
 
-- [C++字符串处理的基本操作](https://www.zhihu.com/question/52974618)
-- [C++标准库函数列表](http://c.biancheng.net/cpp/u/cpp_function_list.html)
-- [C++中的字符串处理函数](https://www.runoob.com/w3cnote/cpp-string-functions.html)
-
-**相关文章：**
-
-## 参见
-
-- ["C++字符串处理：删除特定字符"](https://github.com/example/delete-matching-characters-cpp/blob/master/delete-matching-characters-cpp.md)
-- ["C++字符串处理：替换特定字符"](https://github.com/example/replace-specific-character-cpp/blob/master/replace-specific-character-cpp.md)
+- [C++标准模板库(STL)函式之string：erase()](https://www.twblogs.net/a/5bd6a9fa2b7177781a0b5d3a)  
+- [C++教程-更多有用的C++字符函数](https://www.runoob.com/cplusplus/cpp-string-functions.html)  
+- [C++文档-C++中的字符串处理](https://www.cplusplus.com/articles/1UqpX9L8/)

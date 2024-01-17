@@ -10,49 +10,72 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was ist es und warum?
 
-Wenn du jemals versucht hast, große Mengen an Text zu bearbeiten, weißt du sicherlich, wie mühsam es sein kann, jedes einzelne Vorkommen eines bestimmten Wortes oder Ausdrucks zu ändern. Glücklicherweise ist C++ mit der Funktion zum Suchen und Ersetzen von Text ausgestattet, die es dir ermöglicht, diesen Prozess schnell und effizient durchzuführen.
+Suchen und Ersetzen von Text ist ein häufiger Teil der Programmierung, bei dem bestimmte Zeichenketten in einem Code durch andere ersetzt werden. Programmierer tun dies, um schnell und effizient Änderungen oder Korrekturen im Code durchzuführen.
 
-## Wie geht's
+## Anleitung:
 
-Um Text in C++ zu suchen und zu ersetzen, musst du die <string> Bibliothek einbinden und die Funktion ```find()``` und ```replace()``` verwenden. Hier ist ein Beispiel, bei dem der Text "Hallo" durch "Tschüss" ersetzt wird:
+### Beispiel 1:
 
 ```C++
 #include <iostream>
-#include <string>
+
+using namespace std;
 
 int main() {
-    std::string text = "Hallo Welt! Ich hoffe, es geht dir gut.";
-    std::string oldWord = "Hallo";
-    std::string newWord = "Tschüss";
-
-    // Find position of oldWord in text
-    size_t pos = text.find(oldWord);
-
-    // Replace oldWord with newWord
-    text.replace(pos, oldWord.length(), newWord);
-
-    std::cout << text << std::endl;
-
-    return 0;
+  // erstellen eines Strings mit dem Wort "Hallo"
+  string text = "Hallo";
+  
+  // Suchen und Ersetzen von "Hallo" mit "Guten Tag"
+  text.replace(0,5,"Guten Tag");
+  
+  // Ausgabe des resultierenden Strings
+  cout << text << endl;
+  
+  return 0;
 }
-
-// Output:
-// Tschüss Welt! Ich hoffe, es geht dir gut.
 ```
 
-Beachte, dass die Funktion ```find()``` die Position des gesuchten Wortes im Text zurückgibt. Diese Position wird dann in der Funktion ```replace()``` verwendet, um das Wort zu ersetzen.
+#### Ausgabe:
+```
+Guten Tag
+```
 
-## Tiefer Schritt
+### Beispiel 2:
 
-Die ```find()``` Funktion ist Teil der STL (Standard Template Library) in C++ und wird verwendet, um Unterzeichenketten in einem Text zu suchen. Sie gibt den Index der ersten Übereinstimmung oder ```std::string::npos``` zurück, wenn keine Übereinstimmung gefunden wurde. Die ```replace()``` Funktion nimmt die Position der zu ersetzenden Unterzeichenkette sowie deren Länge und den Ersatztext entgegen. Sie ersetzt einfach die angegebene Unterzeichenkette durch den Ersatztext, ohne den Rest des Textes zu beeinflussen.
+```C++
+#include <iostream>
 
-In der Tiefe zu verstehen, wie diese Funktionen arbeiten, kann dir helfen, sie effektiv und effizient in deinem Code zu verwenden. Stelle sicher, dass du die Dokumentation der STL im Auge behältst, um alle Funktionen und ihre Verwendung zu verstehen.
+using namespace std;
 
-## Siehe auch
+int main() {
+  // erstellen einer Zeichenkette mit dem Wort "Welt"
+  string text = "Hallo Welt";
+  
+  // Suchen und Ersetzen von "Welt" mit "Mars"
+  text.replace(6,4,"Mars");
+  
+  // Ausgabe des resultierenden Strings
+  cout << text << endl;
+  
+  return 0;
+}
+```
 
-- <https://www.cplusplus.com/reference/string/string/find/>
-- <https://www.cplusplus.com/reference/string/string/replace/>
-- <https://www.geeksforgeeks.org/find-and-replace-a-part-of-a-string-in-cpp-stl/>
-- <https://www.tutorialspoint.com/cpp_standard_library/cpp_searching.htm>
+#### Ausgabe:
+```
+Hallo Mars
+```
+
+## Tief tauchen:
+
+Suchen und Ersetzen von Text ist keine neue Idee, da es schon in frühen Textverarbeitungsprogrammen verwendet wurde. Auch in der modernen Programmierung wird es häufig verwendet, um Codeeffizienz und -wartbarkeit zu verbessern.
+
+Alternativen zu dieser Methode sind z.B. reguläre Ausdrücke, welche jedoch eine komplexere Syntax aufweisen. In der Implementierung werden Such- und Ersetzungsalgorithmen verwendet, um effizient durch den Code zu navigieren und die gewünschten Änderungen vorzunehmen.
+
+## Siehe auch:
+
+- [Einführung in C++ Programmierung](https://de.wikibooks.org/wiki/C%2B%2B-Programmierung:_Einf%C3%BChrung)
+- [Effektives Suchen und Ersetzen von Text in C++](https://www.codeproject.com/Articles/20091/Effective-C-Text-Search-and-Replace)
+- [Reguläre Ausdrücke in C++](https://www.codeproject.com/Articles/5283763/Basic-Regular-Expressions-in-Cplusplus)

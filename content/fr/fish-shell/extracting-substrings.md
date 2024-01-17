@@ -10,33 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
-Si vous utilisez Fish Shell, vous savez probablement à quel point il est agréable de travailler avec ce shell moderne et convivial. Mais saviez-vous que vous pouvez également utiliser des sous-chaînes dans vos commandes Fish Shell ? Cela peut sembler intimidant au premier abord, mais en réalité c'est un moyen pratique de manipuler et d'extraire des parties spécifiques de vos chaînes de texte. Dans cet article, nous allons vous montrer comment utiliser les sous-chaînes dans votre code Fish Shell et vous expliquer pourquoi cela peut être utile.
+## Qu'est-ce que c'est et pourquoi le faire?
 
-## Comment faire
-Si vous voulez extraire une sous-chaîne d'une chaîne de texte, la première chose à faire est de comprendre comment fonctionnent les indices de sous-chaînes dans Fish Shell. Les indices commencent à 1 et les caractères spéciaux sont également pris en compte. Voici un exemple de code pour extraire une sous-chaîne :
+L'extraction de sous-chaînes dans la programmation, c'est simplement le fait de récupérer une partie d'une chaîne de caractères. Les programmeurs le font souvent pour obtenir des informations spécifiques d'une chaîne, tels que des noms de fichiers ou des adresses URL.
 
-```Fish Shell
-set ma_chaine "Bonjour tout le monde !"
-set sous_chaine (string sub --start 9 --length 4 $ma_chaine)
-echo $sous_chaine
+## Comment faire:
+
+```
+Fish Shell a une commande intégrée pour extraire des sous-chaînes: `string`. Par exemple, si nous avons la chaîne "Bonjour tout le monde", nous pouvons extraire "tout" en utilisant la commande suivante:
+
+```fish
+set my_string "Bonjour tout le monde"
+string sub $my_string 8 4
 ```
 
-Dans cet exemple, nous créons une chaîne "ma_chaine" contenant la phrase "Bonjour tout le monde !" et nous utilisons la commande "string sub" pour extraire une sous-chaîne à partir du 9ème caractère pour une longueur de 4 caractères. Le résultat sera "tout". Vous pouvez également utiliser des indices négatifs pour compter à partir de la fin de la chaîne. Par exemple, un indice de -1 correspond au dernier caractère de la chaîne. Voici un autre exemple pour extraire le dernier mot de notre chaîne d'origine :
-
-```Fish Shell
-set dernier_mot (string sub --start -7 --length 7 $ma_chaine)
-echo $dernier_mot
+Cela retournera simplement "tout". Vous pouvez également extraire une sous-chaîne en utilisant un motif, comme dans l'exemple suivant:
+```fish
+set my_string "hello_world_123"
+string match *world* $my_string
 ```
 
-Le résultat sera "monde !".
+Cela retournera "world". Vous pouvez également extraire une sous-chaîne à partir de la fin de la chaîne en utilisant un indice négatif. Par exemple:
+```fish
+set my_string "Bonjour tout le monde"
+string sub $my_string -6 -1
+```
+Cela retournera "monde".
 
-## Plongée Plus Profonde
-Il est important de noter que les sous-chaînes sont immuables dans Fish Shell, ce qui signifie qu'elles ne peuvent pas être modifiées. Si vous essayez de modifier une sous-chaîne, vous obtiendrez un message d'erreur. De plus, si vous utilisez un indice de sous-chaîne qui dépasse la longueur de la chaîne d'origine, une sous-chaîne vide sera retournée. Enfin, si vous omettez l'argument de longueur, la sous-chaîne sera extraite jusqu'à la fin de la chaîne d'origine.
+## Deep Dive:
 
-Maintenant que vous avez compris les bases de l'utilisation des sous-chaînes dans Fish Shell, vous pouvez les utiliser dans vos commandes pour manipuler toutes sortes de chaînes de texte. Que ce soit pour extraire des noms de fichiers, des adresses e-mail, ou tout autre élément spécifique d'une chaîne, les sous-chaînes sont un outil utile à avoir dans votre arsenal de programmation Fish Shell.
+L'extraction de sous-chaînes peut sembler une tâche simple, mais elle a une grande importance dans la programmation. Cela permet aux programmeurs de manipuler facilement des chaînes de caractères et d'obtenir des informations précises. Il existe également différentes façons d'extraire des sous-chaînes dans d'autres langages de programmation, tels que Python ou Java. Dans Fish Shell, la commande `string` utilise la syntaxe commune du langage de programmation C pour définir le début et la fin de la sous-chaîne. Cela permet une utilisation familière pour les programmeurs qui passent de C à Fish Shell.
 
-## Voir Aussi
-Pour en savoir plus sur l'utilisation des sous-chaînes dans Fish Shell, consultez la documentation officielle sur les sous-chaînes : https://fishshell.com/docs/current/cmds/string-sub.html
+## Voir aussi:
 
-Et si vous voulez aller encore plus loin dans votre apprentissage de Fish Shell, n'hésitez pas à explorer les différentes commandes et fonctionnalités offertes par ce shell moderne et puissant. Bonne programmation !
+- [Guide officiel de Fish Shell sur la commande "string"](https://fishshell.com/docs/current/cmds/string.html)
+- [Exemples d'utilisation de l'extraction de sous-chaînes en Python](https://www.guru99.com/python-regular-expressions-complete-tutorial.html#6)
+- [Tutoriel sur la manipulation de chaînes en Java](https://www.dummies.com/programming/java/how-to-extract-substrings-from-a-string-in-java/)

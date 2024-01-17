@@ -10,38 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-Writing to the standard error (often abbreviated as "stderr") is a crucial function in programming that allows developers to efficiently handle error messages and debugging in their code. Without utilizing stderr, it can be difficult to pinpoint and troubleshoot issues within a program.
+Writing to standard error is a way for programmers to output information about errors and warnings that occur during the execution of their code. This is an important tool for debugging and troubleshooting programs as it allows developers to see what went wrong and how to fix it.
 
-## How To
+## How to:
 
-To write to stderr in Gleam, you can use the `io.println` function and specify stderr as the first argument. Here's an example:
-
-```Gleam
-import gleam/io
-
-io.println(gleam/core.Line(stderr), "This is an error message!")
-```
-
-This will print the given message to the standard error stream. You can also use `gleam/core.Line(stderr)` to define a new line before the message to make it stand out.
-
-### Sample Output
-
-Running this code will output the following to your terminal: 
+To write to standard error in Gleam, use the stdlib `io/2` module and the `write_error` function. This function takes in a string as an argument and outputs it to the standard error stream. Here's an example:
 
 ```
-This is an error message!
+fn main() {
+  let message = "Oops, something went wrong";
+  io::write_error(message);
+}
 ```
 
-## Deep Dive
+The output will be:
+```
+Oops, something went wrong
+```
 
-Writing to standard error can be particularly useful when dealing with error handling or debugging in your program. By directing certain messages to stderr instead of stdout (the standard output stream), you can easily distinguish and filter out error messages from regular output. This can help with troubleshooting and identifying issues within your code.
+You can also specify the standard error stream's file descriptor with the `write_error_to_fd` function. This can be useful for redirecting error messages to a specific location. Here's an example:
 
-It's also worth noting that stderr and stdout can be redirected to different locations, such as a log file, to store and review error messages separately from regular output.
+```
+fn main() {
+  let message = "Oops, something went wrong";
+  let fd = 2; // file descriptor for standard error stream
+  io::write_error_to_fd(message, fd);
+}
+```
 
-## See Also 
+The output will be the same as before, but now it has been directed to the specified file descriptor.
 
-- [Gleam documentation for `io.println`](https://gleam.run/core/io.html#println)
-- [Introduction to stderr and stdout in programming](https://www.geeksforgeeks.org/stderr-stdout-linux/)
-- [Using stderr for error handling in C programming](https://www.thecrazyprogrammer.com/2013/06/using-stderr-for-error-messages-in-c.html)
+## Deep Dive:
+
+Historically, writing to standard error has been a common practice in programming languages. It allows developers to differentiate between normal output and error messages, making debugging and troubleshooting easier.
+
+An alternative to writing to standard error is using the `panic` function, which stops the execution of the program and outputs an error message. However, this can be seen as a harsh approach and may not always be desirable.
+
+Implementation-wise, writing to standard error in Gleam uses the operating system's standard error stream. This means that the output will be visible in the console or terminal where the program is being executed.
+
+## See Also:
+
+- [Gleam stdlib documentation for `io/2` module](https://gleam.run/documentation/stdlib/io/)
+- [Difference between standard output and standard error](https://www.theserverside.com/feature/Standard-Output-vs-Standard-Error-What-DevOps-needs-to-know)

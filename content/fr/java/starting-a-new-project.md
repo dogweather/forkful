@@ -10,42 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Qu'est-ce que c'est et pourquoi?
+Commencer un nouveau projet en programmation, c'est créer une base pour un nouveau programme ou application. Les programmeurs le font souvent lorsqu'ils ont une nouvelle idée pour un projet ou lorsqu'ils ont besoin de mettre en place un code propre et bien organisé.
 
-Si vous cherchez un langage de programmation polyvalent et en constante évolution pour démarrer un nouveau projet, Java est la réponse. En plus d'être largement utilisé et pris en charge par une communauté active, Java est également facile à apprendre avec une syntaxe claire et concise.
-
-## Comment faire
-
-Pour commencer un nouveau projet Java, suivez ces étapes simples :
-
-1. Assurez-vous d'avoir le dernier JDK (Java Development Kit) installé sur votre ordinateur.
-2. Choisissez un IDE (Integrated Development Environment) tel que IntelliJ, Eclipse ou NetBeans pour faciliter la création et la gestion de votre projet.
-3. Créez un nouveau projet en sélectionnant l'option appropriée dans l'IDE de votre choix.
-4. Commencez à coder en utilisant les concepts de base de Java tels que les variables, les boucles et les fonctions.
-5. Compilez et exécutez votre code pour vérifier qu'il fonctionne comme prévu.
-6. Continuez à ajouter des fonctionnalités à votre projet en utilisant des bibliothèques et des frameworks disponibles pour Java.
-
-Voici un exemple de code Java pour afficher "Bonjour, le monde ! " dans la console :
+## Comment faire:
+Voici un exemple de code en Java pour commencer un nouveau projet:
 
 ```Java
-public class BonjourLeMonde {
-   public static void main(String[] args) {
-     System. out. println("Bonjour, le monde ! ");
-   }
+public class Main {
+    public static void main(String[] args) {
+        // Votre code ici
+    }
 }
 ```
+Voici l'exemple d'output que vous pourriez obtenir en exécutant ce code:
+```
+// Output:
+Aucun dans ce cas car il n'y a pas de code à exécuter.
+```
 
-Output : Bonjour, le monde !
+## Plongée plus profonde:
+Dans le développement de logiciels, il existe différents outils et environnements de développement pour commencer un nouveau projet. Certains programmeurs préfèrent utiliser des IDE (Integrated Development Environment) tels que Eclipse ou IntelliJ, tandis que d'autres préfèrent utiliser des éditeurs de texte simples comme Visual Studio Code.
 
-## Plongée en profondeur
+Une alternative à la création d'un nouveau projet serait d'utiliser un gestionnaire de projet comme Maven ou Gradle. Ces outils aident à gérer les dépendances et à automatiser certaines tâches liées à la construction et à la gestion d'un projet.
 
-Avant de vous lancer dans un nouveau projet Java, il est important de comprendre les concepts fondamentaux tels que la POO (Programmation Orientée Objet), les collections et les exceptions. En outre, prenez le temps de planifier la structure de votre projet et de choisir les bonnes bibliothèques et frameworks pour répondre à vos besoins.
+Dans Java, la notation Javadoc est souvent utilisée pour documenter le code et rendre le projet plus facilement compréhensible pour d'autres programmeurs. Il est également important de définir des normes de codage dès le début d'un nouveau projet pour assurer une cohérence dans le code produit par l'équipe.
 
-N'oubliez pas également de suivre les bonnes pratiques de codage telles que l'utilisation de noms de variables significatifs, l'écriture de commentaires clairs et la gestion des erreurs de manière appropriée.
-
-## Voir aussi
-
-- [Introduction à Java](https://openclassrooms.com/fr/courses/26832-apprenez-a-programmer-en-java)
-- [Documentation Java](https://docs.oracle.com/javase/10/)
-- [Communauté Java](https://www.java.com/fr/)
-- [Liste de bibliothèques et de frameworks Java](https://www.java-forums.org/other-frameworks/43139-list-java-technologies-apis-libraries-documentation-tools.html)
+## Voir aussi:
+- [Java IDEs](https://www.guru99.com/best-java-ides.html)
+- [Maven vs Gradle](https://www.baeldung.com/maven-vs-gradle)
+- [Guide de style pour le code Java](https://google.github.io/styleguide/javaguide.html)

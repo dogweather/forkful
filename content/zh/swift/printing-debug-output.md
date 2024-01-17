@@ -1,7 +1,7 @@
 ---
-title:                "打印调试输出"
-html_title:           "Swift: 打印调试输出"
-simple_title:         "打印调试输出"
+title:                "输出调试信息"
+html_title:           "Swift: 输出调试信息"
+simple_title:         "输出调试信息"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Testing and Debugging"
@@ -10,53 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么要打印调试输出
+# 何 & 为何？
+在编程中，打印调试信息是一个常见的技巧，它可以帮助程序员们检查代码并发现潜在的错误。通常，这些调试输出是程序中的一些特定值，例如变量的值或者函数的执行结果。通过打印这些信息，程序员们可以更容易地理解代码的运行过程，从而更快地修复错误。
 
-在编程中，出现bug是很常见的事情。为了找到问题所在，打印调试输出是一种有效的方法。它可以帮助开发者跟踪程序运行过程中的变量值，帮助发现潜在的错误。
-
-## 如何打印调试输出
-
-打印调试输出的方法很简单，Swift提供了一个内置函数print来实现。在需要打印的位置使用print函数，并将需要跟踪的变量作为参数传入即可。例如：
+# 如何：
+使用 ```Swift ...``` 代码块，你可以轻松地在Swift中打印出调试信息。下面是两个例子，展示了如何使用 ```print()``` 函数来打印变量的值和函数的执行结果。
 
 ```Swift
 let num = 10
-print(num)
+print(num) // 输出：10
+
+func sum(num1: Int, num2: Int) -> Int {
+    return num1 + num2
+}
+
+print(sum(num1: 5, num2: 6)) // 输出：11
 ```
 
-这段代码会打印出变量`num`的值，即`10`。如果想要打印多个变量，可以用逗号隔开，例如：
+# 深入了解：
+虽然在当前版本的Swift中，打印调试信息很容易，但它产生的效果却是与过去不同的。在Swift的早期版本中，打印调试信息是一项不太容易的任务，因为它需要使用 ```println()``` 函数，并且需要特定的格式来打印信息。同时，也有其他的调试方法，例如使用调试器来跟踪代码的执行过程。
 
-```Swift
-let num1 = 10
-let num2 = 20
-print(num1, num2)
-```
+# 参考链接：
+如果你想了解更多关于在Swift中打印调试信息的方法和技巧，请参考以下链接：
 
-这样就会依次打印出`10`和`20`。除了基本数据类型，也可以打印字符串和数组等复杂数据类型。下面是一个更复杂的示例：
-
-```Swift
-let name = "John"
-let age = 25
-let hobbies = ["reading", "hiking", "coding"]
-print("My name is \(name), I am \(age) years old. My hobbies are \(hobbies)")
-```
-
-运行后，会得到如下输出：
-
-```
-My name is John, I am 25 years old. My hobbies are ["reading", "hiking", "coding"]
-```
-
-## 深入探讨打印调试输出
-
-除了基本的print函数，Swift还提供了更多的调试输出方式，包括`debugPrint`、`dump`和`NSLog`等。它们分别有些不同，可以根据不同的需求选择使用。此外，可以通过设置`#if DEBUG`条件来控制是否打印调试输出，这在发布版本时可以避免将调试信息暴露给用户。
-
-## 参考链接
-
-- [Apple官方文档：Debugging with Print Statements](https://developer.apple.com/documentation/swift/debugging_with_print_statements)
-- [简书：Swift 调试输出的种种姿势](https://www.jianshu.com/p/fcb4b5a06247)
-- [知乎：Swift中的print 和 NSLog有何区别？](https://www.zhihu.com/question/51380822)
-
-## 参见
-
-- [Swift官方文档](https://swift.org)
-- [Swift中文社区](https://swift.gg)
+- [Apple官方文档](https://developer.apple.com/documentation/swift/debugging_with_print)
+- [《The Swift Programming Language》书籍](https://docs.swift.org/swift-book/LanguageGuide/PrintingAndDebugging.html)
+- [Stack Overflow论坛的相关讨论](https://stackoverflow.com/questions/28853886/how-do-you-print-debug-only-information-in-swift)

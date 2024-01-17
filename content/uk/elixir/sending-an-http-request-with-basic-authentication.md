@@ -1,7 +1,7 @@
 ---
-title:                "Надсилання запиту http з базовою автентифікацією"
-html_title:           "Elixir: Надсилання запиту http з базовою автентифікацією"
-simple_title:         "Надсилання запиту http з базовою автентифікацією"
+title:                "Відправка запиту http з базовою автентифікацією"
+html_title:           "Elixir: Відправка запиту http з базовою автентифікацією"
+simple_title:         "Відправка запиту http з базовою автентифікацією"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "HTML and the Web"
@@ -10,30 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Чому
+"## Що і чому?"
 
-Базова автентифікація є одним з методів автентифікації у мережевому протоколі HTTP. Вона дозволяє вхід на захищені сторінки з використанням ідентифікатора та паролю. Використання базової автентифікації є важливим для безпечних веб-додатків та API.
+Ви навряд чутіли про термін "відправка HTTP-запиту з базовою аутентифікацією", але для програмістів це один з поширених способів працювати з веб-сервісами. Він дозволяє надійно передавати ідентифікатори та паролі для авторизації на сервері, щоб отримати доступ до захищених даних.
 
-## Як
+"## Як це зробити:"
 
-```elixir
-# Налаштування HTTP-клієнта з базовими автентифікаційними даними
-client = HTTPoison.BasicAuth.client("john", "password")
+```Elixir
+defmodule HTTPRequest do
+  def basic_auth_request(url, username, password) do
+    # Створюємо зазначений URL з урахуванням ідентифікатора та пароля
+    url_with_credentials = url
+      |> URI.join()
+      |> URI.add_query_param("user", username)
+      |> URI.add_query_param("password", password)
 
-# Відправлення GET-запиту на захищений ресурс
-HTTPoison.get("https://example.com/protected_resource", [], client)
+    # Відправляємо GET-запит з базовою аутентифікацією
+    response = HTTPoison.get(url_with_credentials, [], [basic_auth: {username, password}])
 
-# Виведення коду статусу та тіла відповіді
-status = %{code: 200}
-body = "Hello, world!"
+    # Перевіряємо статус відповіді та повертаємо вміст відповіді
+    case response do
+      {:ok, %{status_code: 200, body: body}} -> body
+      _ -> []
+    end
+  end
+end
 ```
 
-## Глибоке вивчення
+Приклад використання:
 
-При відправленні HTTP-запиту з базовою автентифікацією, ідентифікатор та пароль посилаються в запиті у формі "ім'я:пароль", які потім кодуються у форматі Base64 та додаються до заголовка "Authorization". При отриманні запиту, сервер декодує ці дані та перевіряє їх правильність для доступу до захищеного ресурсу.
+```Elixir
+username = "user123"
+password = "secret"
 
-## Дивись Також
+# Відправляємо запит до стороннього API з базовою аутентифікацією і отримуємо відповідь
+url = "https://example.com/api"
+response = HTTPRequest.basic_auth_request(url, username, password)
 
-- [Elixir](https://elixir-lang.org/) - Офіційний сайт мови Elixir.
-- [HTTPoison](https://hexdocs.pm/httpoison/HTTPoison.html) - Розширення для взаємодії з веб-серверами та API.
-- [Basic Authentication](https://developers.google.com/web/updates/2016/03/http-security-reporting-for-developers#basic_auth) - Документація Google про базову автентифікацію у веб-розробці.
+IO.puts response
+# {"message": "Дякуємо за запит!"}
+```
+
+"## Глибока занурення:"
+
+Відправка HTTP-запиту з базовою аутентифікацією була стандартизована у 1999 році з метою підвищити рівень безпеки веб-серверів та зменшити кількість шахраїв, які можуть отримати доступ до захищених даних.
+
+Є інші способи авторизації на сервері, такі як OAuth або власні методи, проте базова аутентифікація є простим та ефективним рішенням у багатьох випадках. Вона також підтримується більшістю веб-серверів.
+
+Реалізація надійної базової аутентифікації включає кодування ідентифікатора та пароля у форматі Base64. Для даної мети можна використати функції Elixir такі як `Base.encode64/1` та `Base.decode64/1`.
+
+"## Дивіться також:"
+
+- Документація Elixir по відправленню HTTP-запитів з HTTPoison: https://hexdocs.pm/httpoison/HTTPoison.html
+- Розділ RFC про базову аутентифікацію: https://tools.ietf.org/html/rfc2617

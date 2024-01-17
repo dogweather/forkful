@@ -10,27 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ今日の日付を取得するのか
+## 今、何の話？
+現在の日付を取得するとは、プログラマーが現在の日付を調べることです。プログラマーは、日付を取得することで、日付を処理する際の基準となる重要な情報を得ることができます。
 
-日付を取得することは、多くのアプリケーションにとって重要な機能です。例えば、スケジュール管理や登録したデータを時間順に表示する際に必要になります。Swiftでは、現在の日付を簡単に取得することができます。
-
-## ‎‎取得方法
-
+## 方法：
 ```Swift
-let date = Date() // 現在の日付を取得
-let dateFormatter = DateFormatter() // DateFormatterを使って日付をフォーマット
-dateFormatter.dateFormat = "yyyy-MM-dd" // 使用するフォーマットを指定
-let stringDate = dateFormatter.string(from: date) // 日付を文字列に変換
-print(stringDate) // 出力結果： 2021-04-20
+// 日付を取得する
+let currentDate = Date() 
+// フォーマットを指定して日付を文字列に変換する
+let formatter = DateFormatter()
+formatter.dateFormat = "yyyy/MM/dd"
+let dateString = formatter.string(from: currentDate)
+print(dateString) //出力：2021/02/15
 ```
 
-上のコード例では、`Date()`を使って現在の日付を取得し、`DateFormatter`を使って指定したフォーマットに合わせて日付を表示しています。日付を文字列に変換することで、アプリケーション内で便利に使用することができます。
+## さらに深く掘り下げる：
+日付を取得するには、Dateというデータ型を使用します。Date型は、1970年1月1日からの秒数を表す整数型で、現在のタイムゾーンでの現在の日付と時刻を表します。
 
-## 深堀り
+また、DateFormatterを使用することで、日付を指定したフォーマットに変換することができます。例えば、"yyyy/MM/dd"というフォーマットを指定することで、現在の日付を"2021/02/15"のような形式で取得することができます。
 
-日付を取得する方法には、他にも様々なオプションがあります。例えば、タイムゾーンを指定したり、24時間制ではなく12時間制で表示することも可能です。また、日付を比較したり、計算したりすることもできます。詳しくは[公式ドキュメント](https://developer.apple.com/documentation/foundation/date)を参照してください。
+他にも、CalendarやNSDateなどのオブジェクトを使用することで、より詳細な日付情報を取得することができます。
 
-## ‎‎See Also
-
-- [How to Format Dates in Swift](https://www.hackingwithswift.com/example-code/system/how-to-format-dates-with-dateformatter)
-- [Date and Time Programming Guide](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/DatesAndTimes/DatesAndTimes.html#//apple_ref/doc/uid/10000039i)
+## 関連リンク：
+- [AppleのDateドキュメント](https://developer.apple.com/documentation/foundation/date)
+- [AppleのDateFormatterドキュメント](https://developer.apple.com/documentation/foundation/dateformatter)
+- [Swiftでは日付をどのように処理するか](https://techlife.cookpad.com/entry/2019/11/13/090000)

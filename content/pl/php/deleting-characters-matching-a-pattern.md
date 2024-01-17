@@ -1,7 +1,7 @@
 ---
-title:                "Usuwanie znaków odpowiadających wzorcowi"
-html_title:           "PHP: Usuwanie znaków odpowiadających wzorcowi"
-simple_title:         "Usuwanie znaków odpowiadających wzorcowi"
+title:                "Usuwanie znaków pasujących do wzorca"
+html_title:           "PHP: Usuwanie znaków pasujących do wzorca"
+simple_title:         "Usuwanie znaków pasujących do wzorca"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Strings"
@@ -10,44 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego usuwać znaki pasujące do wzorca?
+## Czym i dlaczego?
 
-Usuwanie znaków pasujących do wzorca jest często wymagane w programowaniu PHP, ponieważ pozwala na szybkie i skuteczne przetwarzanie danych. Może to być przydatne na przykład podczas filtrowania danych, usuwania niepotrzebnych znaków z tekstu lub utworzenia wyrażeń regularnych dla bardziej skomplikowanych operacji.
+Usuwanie znaków pasujących do danego wzorca jest jedną z wielu przydatnych funkcji w PHP. Pozwala ona programistom na szybkie i skuteczne filtrowanie danych, na przykład usuwanie niepożądanych znaków ze stringów lub zmianę ich formatowania. Jest to niezwykle przydatna umiejętność w tworzeniu zoptymalizowanych i bezpiecznych skryptów.
 
 ## Jak to zrobić?
 
-Implementacja usuwania znaków pasujących do wzorca w PHP jest prosta i wygodna dzięki wbudowanej funkcji `preg_replace()`. Poniżej przedstawiamy przykłady użycia tej funkcji w różnych sytuacjach.
+Załóżmy, że chcemy usunąć wszystkie cyfry z danego stringa. W tym celu możemy użyć funkcji `preg_replace()`, która działa na podstawie wyrażeń regularnych. W poniższym przykładzie użyjemy wyrażenia `/[0-9]/`, które oznacza wszystkie cyfry od 0 do 9. 
 
-Usuwanie białych znaków z tekstu:
 ```PHP
-$text = "  Tekst   z    białymi    znakami  ";
-$text = preg_replace('/\s+/', '', $text);
-echo $text;
-// Output: "Tekstzbiałymiznakami"
+<?php
+$string = "abc123def456ghi";
+$new_string = preg_replace("/[0-9]/", "", $string);
+
+echo $new_string; // Output: abcdefghi
+?>
 ```
 
-Usuwanie wszystkich cyfr z tekstu:
-```PHP
-$text = "1a2b3c4d";
-$text = preg_replace('/[0-9]/', '', $text);
-echo $text;
-// Output: "abcd"
-```
+Funkcja `preg_replace()` przyjmuje trzy parametry: wzorzec do wyszukania, co powinno zostać zastąpione oraz string, w którym ma zostać wykonane wyszukanie. W powyższym przykładzie użyliśmy pustego stringa jako drugiego parametru, ponieważ chcemy, aby znaki zostały po prostu usunięte. 
 
-Podmiana wybranego wzorca:
-```PHP
-$text = "To jest tekst <span>z elementem HTML</span>.";
-$text = preg_replace('/<span>(.*?)<\/span>/', 'Zastąpione', $text);
-echo $text;
-// Output: "To jest tekst Zastąpione."
-```
+## Głębszy wgląd
 
-## Deep Dive
+Wyrażenia regularne są jednym z najpotężniejszych narzędzi w PHP. Są one wykorzystywane do szybkiego i precyzyjnego wyszukiwania oraz modyfikacji tekstu. Warto również wspomnieć, że funkcja `preg_replace()` ma kilka alternatywnych wariantów, takich jak `preg_replace_callback()`, które pozwalają na bardziej zaawansowane operacje z wykorzystaniem wyrażeń regularnych.
 
-Funkcja `preg_replace()` przyjmuje trzy argumenty - wzorzec, zastępujący tekst oraz tekst, na którym wykonujemy operację. Wzorzec jest wyrażeniem regularnym, zgodnie z którym zostaną znalezione pasujące fragmenty tekstu. Zastępujący tekst może być ciągiem znaków lub funkcją, która zwróci wartość zamiany. Spliter wyrażenia `$` użyty do zastępowania elementów HTML to często stosowany wzorzec, ponieważ pozwala zachować oryginalne tagi.
+## Zobacz również
 
-## Zobacz też
-
-- [Dokumentacja funkcji `preg_replace()` w PHP](https://www.php.net/manual/en/function.preg-replace.php)
-- [Poradnik programowania w PHP dla początkujących](https://www.php.net/manual/en/tutorial.php)
-- [Przykłady wyrażeń regularnych w PHP](https://www.php.net/manual/en/reference.pcre.pattern.syntax.php)
+- Oficjalna dokumentacja PHP dotycząca funkcji preg_replace(): https://www.php.net/manual/en/function.preg-replace.php
+- Przewodnik dla początkujących na temat wyrażeń regularnych w PHP: https://www.w3schools.com/php/php_regex.asp
+- Przykłady zastosowania wyrażeń regularnych w PHP: https://www.tutorialrepublic.com/php-tutorial/php-regular-expressions.php

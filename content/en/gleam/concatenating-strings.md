@@ -10,50 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-Strings are a core element in any programming language, allowing us to manipulate and combine text to create dynamic outputs. In Gleam, concatenating strings is a useful tool for creating more complex strings and improving the overall functionality of our code.
+## What & Why?
 
-## How To
-To concatenate strings in Gleam, we use the `++` operator to add two or more strings together. Let's take a look at an example:
+Concatenating strings is the process of combining two or more strings together into one string. This is a common task in programming, as it allows for the creation of more complex and dynamic strings. 
+ 
+## How to:
 
-```Gleam
-let first_name = "John"
-let last_name = "Smith"
-
-let full_name = first_name ++ " " ++ last_name
-
-IO.print("Hello " ++ full_name)
 ```
-Output:
+Gleam program 
+
+import gleam/string 
+
+fn main() { 
+  let first = "Hello "; 
+  let second = "World!"; 
+  let combined = string.concat(first, second); 
+  
+  // Output: Hello World! 
+  io.println("combined"); 
+} 
 ```
-Hello John Smith
-```
-
-In this example, we first declare two string variables, `first_name` and `last_name`. Then, using the `++` operator, we concatenate these two strings with a space in between and assign the result to the `full_name` variable. Finally, we use concatenation once again to add the string "Hello" before the `full_name` variable and print it to the console.
-
-We can also use concatenation with more than just two strings. For example:
-
-```Gleam
-let first_name = "John"
-let last_name = "Smith"
-let age = "25"
-
-let profile = first_name ++ " " ++ last_name ++ ", " ++ age ++ " years old"
-
-IO.print("Profile: " ++ profile)
-```
-Output:
-```
-Profile: John Smith, 25 years old
-```
-
-In this case, we have concatenated three strings together to create a more detailed profile output.
-
-## Deep Dive
-In Gleam, strings are always represented as lists of individual characters. This means that when we use the `++` operator to concatenate strings, we are essentially merging two lists together.
-
-Additionally, it's important to note that the `++` operator is not limited to just strings. We can also concatenate an integer or any other data type with a string. However, we must convert the non-string data into a string using the `to_string()` function first.
-
-## See Also
-- [Gleam documentation on strings](https://gleam.run/book/tour/strings.html)
-- [Gleam string functions](https://gleam.run/core/String.html)
+ 
+In the above code, we import the `gleam/string` module which provides the `concat` function. This function takes in two string arguments and returns a new string that is the combination of those two strings. We then print out the result using the `io.println` function. 
+ 
+## Deep Dive 
+ 
+The process of concatenating strings has been used in programming for a long time. It is often used for tasks such as creating user-friendly messages, formatting data, and building dynamic web pages. 
+ 
+There are other methods for combining strings, such as interpolation and formatting, but concatenation is a simple and straightforward method. 
+ 
+Internally, the Gleam `concat` function uses the Rust `String` type which allows for efficient and flexible manipulation of strings. 
+ 
+## See Also 
+ 
+- [Gleam documentation](https://gleam.run/documentation/)
+- [Rust documentation on strings](https://doc.rust-lang.org/std/string/struct.String.html)

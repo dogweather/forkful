@@ -10,52 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué descargar una página web?
+## ¿Qué y por qué?
 
-Descargar una página web puede ser útil en muchas situaciones. Puede ser para guardar una copia local de una página importante, como para tener acceso a ella cuando no hay conexión a internet. También puede ser para analizar o extraer datos de una página web en particular.
+Descargar una página web es cuando un programador obtiene el código fuente de una página web por medio de un lenguaje de programación. Los programadores lo hacen para poder acceder y manipular la información de la página web, ya sea para obtener datos específicos o para automatizar tareas.
 
-## Cómo hacerlo
+## Cómo:
 
-Para descargar una página web en Ruby, utilizaremos la gema open-uri. Primero, debes instalar la gema en tu computadora con el siguiente comando en la terminal:
-
-```
-gem install open-uri
-```
-
-Una vez instalada, podemos usarla en nuestro código Ruby. Importamos la gema al principio de nuestro archivo con la línea:
-
-```
+```ruby
 require 'open-uri'
+# Requerir el módulo "open-uri" para poder usar los métodos de descarga de páginas web
+
+webpage = URI.open("https://example.com")
+# Crear una variable que almacene la página web a descargar
+
+puts webpage.read
+# Imprimir el contenido de la página web, obtenido a través del método .read
+
+# Output:
+# <!doctype html>
+# <html>
+# ...
 ```
 
-Luego, para descargar la página web, simplemente utilizamos el método `open` de la gema `open-uri` y le pasamos la URL de la página que queremos descargar. Por ejemplo, para descargar la página de Google, escribimos:
+## Profundizando:
 
-```
-page = open("https://www.google.com")
-```
+La descarga de páginas web ha sido una técnica común en la programación desde los primeros años de Internet. Existen diversos métodos para hacerlo, como utilizar herramientas de línea de comandos como cURL o wget, o bien implementar código en un lenguaje de programación como Ruby. También se pueden descargar páginas web completas con su estructura y recursos por medio de herramientas como HTTrack.
 
-Podemos guardar la página descargada en una variable, llamada `page` en este ejemplo. Luego, podemos imprimir el contenido de la página utilizando el método `read` de la variable `page`:
+## Vea también:
 
-```
-puts page.read
-```
-
-Este código imprimirá el contenido HTML de la página de Google en la terminal. También podemos guardar el contenido en un archivo utilizando el método `write` y pasándole el nombre del archivo como argumento:
-
-```
-page.write("google.html")
-```
-
-Este código creará un archivo llamado `google.html` en el directorio donde se encuentra nuestro archivo Ruby, y guardará el contenido de la página de Google en él.
-
-## Profundizando
-
-La gema open-uri también nos permite descargar páginas y guardarlas en diferentes formatos, como por ejemplo PDF. También nos permite autenticarnos en páginas web privadas si tenemos los datos de acceso necesarios.
-
-Otra funcionalidad útil es el manejo de errores al descargar páginas. Podemos utilizar la estructura `begin` `rescue` para manejar posibles errores al descargar una página, como por ejemplo si la página no existe o no se puede acceder a ella. Esto nos permite controlar el flujo de nuestro programa y manejar los errores de manera adecuada.
-
-## Ver también
-
-- Documentación de la gema open-uri: https://github.com/ruby/open-uri
-- Ejemplos de uso de open-uri: https://www.rubyguides.com/2016/09/ruby-open-uri/
-- Tutorial de descarga de páginas web en Ruby: https://www.pluralsight.com/guides/download-web-pages-using-ruby
+- [La documentación oficial de open-uri en Ruby](https://ruby-doc.org/stdlib-2.7.2/libdoc/open-uri/rdoc/URI.html)
+- [La guía de cURL para descargar páginas web](https://curl.se/docs/manual.html)
+- [El sitio web de HTTrack para descargar páginas web completas](https://www.httrack.com/)

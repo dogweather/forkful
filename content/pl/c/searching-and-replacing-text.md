@@ -10,44 +10,71 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+Cześć programiści!
 
-Szukanie i zamiana tekstu są kluczowymi umiejętnościami w programowaniu. Pozwalają one na szybkie dostosowanie kodu do zmieniających się wymagań i ułatwiają jego czytelność. Ponadto, dzięki nim można automatycznie zmienić duże ilości tekstu, co znacznie przyspiesza pracę.
+Chcesz wiedzieć, co to jest wyszukiwanie i zamiana tekstu oraz dlaczego jest istotne dla programistów? Świetnie, bo właśnie o tym będzie ten artykuł!
 
-## Jak to zrobić
+## Co i dlaczego?
 
-Mamy kilka sposobów na wyszukiwanie i zamianę tekstu w języku C. Najprostszym z nich jest użycie funkcji `strstr()` do znalezienia konkretnej frazy w tekście i funkcji `strncpy()` do jej zamiany. Przykładowy kod wyglądać może tak:
+Wyszukiwanie i zamiana tekstu to częsta czynność wśród programistów. Polega ona na znalezieniu określonego tekstu i zastąpieniu go innym. Jest to przydatne w przypadku, gdy masz do czynienia z dużym plikiem lub kodem, w którym trzeba wprowadzić zmiany w wielu miejscach.
+
+Dlaczego programiści to robią? Ponieważ jest to szybki i wygodny sposób na wprowadzanie zmian. Zamiast przeszukiwać cały kod ręcznie, można użyć wyszukiwarki i zastąpić tekst jednym kliknięciem.
+
+## Jak to zrobić?
 
 ```C
-char str[] = "Ten tekst zawiera słowo pomidor.";
-char search[] = "pomidor";
-char replace[] = "arbuz";
-char *ptr;
-ptr = strstr(str, search); // szukamy frazy "pomidor" w tekście
-if (ptr != NULL) // jeśli udało się ją znaleźć
+#include <stdio.h>
+
+int main()
 {
-    strncpy(ptr, replace, strlen(replace)); // zamieniamy na "arbuz"
+    char string[] = "Cześć programiści!";
+    char search[] = "programiści";
+    char replace[] = "koderzy";
+    
+    //wyszukiwanie i zmiana tekstu
+    int i, j, flag;
+    for (i = 0; string[i] != '\0'; ++i)
+    {
+        flag = 1;
+        for (j = 0; search[j] != '\0'; ++j)
+        {
+            if (string[i + j] != search[j])
+            {
+                flag = 0;
+                break;
+            }
+        }
+        if (flag)
+        {
+            for (j = 0; replace[j] != '\0'; ++j)
+            {
+                string[i + j] = replace[j];
+            }
+            break;
+        }
+    }
+    
+    //wyświetlenie wyniku
+    printf("%s", string);
+    
+    return 0;
 }
-printf("%s", str); // nowy tekst: "Ten tekst zawiera słowo arbuz."
 ```
 
-Jeśli mamy do zamiany wiele wystąpień danej frazy, możemy użyć pętli `while` do iteracji po tekście. Innym wygodnym sposobem jest użycie funkcji `str_replace()` dostępnej w bibliotece `string.h`. Poniżej przykładowy kod korzystający z tej funkcji:
+Output: Cześć koderzy!
 
-```C
-#include <string.h>
-char str[] = "Ten tekst to tylko przykład.";
-char search[] = "tylko";
-char replace[] = "jedynie";
-printf("%s", str_replace(str, search, replace)); // nowy tekst: "Ten tekst to jedynie przykład."
-```
+Zobacz jak proste to jest? Teraz możesz wykorzystać ten kod do dokonywania zmian w swoim kodzie.
 
-## Głębszy zanurzenie
+## Głębsze zanurzenie
 
-W języku C jest też dostępnych wiele innych funkcji do manipulacji tekstem, takich jak `strtok()` do dzielenia tekstu na części, `strcat()` do łączenia tekstu czy `strlen()` do obliczania długości ciągu znaków. Ponadto, w przypadku bardziej skomplikowanych operacji można użyć wyrażeń regularnych za pomocą funkcji `regcomp()` i `regexec()`.
+Wyszukiwanie i zamiana tekstu jest popularną praktyką, ale nie jest jedyną metodą na wprowadzanie zmian w kodzie. Istnieją również narzędzia, takie jak edytory tekstu, które posiadają funkcję wyszukiwania i zamiany. Jednak dla programistów, którzy muszą często dokonywać zmian w kodzie, pisanie własnej funkcji jest szybszym i bardziej wygodnym rozwiązaniem.
 
-Podstawową zasadą przy wyszukiwaniu i zamianie tekstu jest pamiętanie o wielkości liter. Można to rozwiązać na przykład poprzez użycie funkcji `toupper()` lub `tolower()` do zmiany wszystkich liter na wielkie lub małe.
+Co więcej, istnieje możliwość wykorzystania wyrażeń regularnych do wyszukiwania i zamiany tekstu. Jest to bardziej zaawansowana metoda, ale jeśli nauczyć się jej poprawnie używać, może przyspieszyć proces.
 
-## Zobacz także
+Jeśli chcesz poznać więcej o wyszukiwaniu i zamianie tekstu w języku C, zapraszam do lektury dokumentacji C: https://en.cppreference.com/w/c/string/byte
 
-- Dokumentacja funkcji `string.h` w języku C: https://www.tutorialspoint.com/c_standard_library/string_h.htm
-- Przewodnik po wyrażeniach regularnych w języku C: http://www.gnu.org/software/libc/manual/html_node/Regular-Expressions.html
+## Zobacz również
+
+Jeśli chcesz poznać więcej sposobów na wykorzystanie funkcji wyszukiwania i zamiany tekstu w języku C, możesz przeczytać artykuł na temat wyrażeń regularnych w C: https://www.geeksforgeeks.org/regular-expressions-in-c/
+
+Dziękuję za przeczytanie tego artykułu. Mam nadzieję, że teraz czujesz się pewniej w wyszukiwaniu i zamianie tekstu w języku C. Powodzenia z programowaniem! 😊

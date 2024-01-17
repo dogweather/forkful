@@ -10,55 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-String concatenation is a commonly used operation in programming, especially when dealing with user input or data from external sources. It allows developers to combine multiple strings into one, creating a cohesive and organized output.
+Concatenating strings in programming means combining two or more strings into one. This is a common practice among programmers as it allows for the creation of dynamic and customized output by joining different pieces of text together.
 
-## How To
+## How to:
 
-To concatenate strings in Go, we can use the `+` operator or the `fmt.Sprintf()` function. Let's take a look at some coding examples and their output.
+To concatenate strings in Go, there are a few simple steps to follow. First, declare the strings you want to combine using the `var` keyword. Then, use the `+` operator to join the strings together in the desired order. Let's see an example:
 
-### Using `+` operator
-
-```Go
-name := "John"
-greeting := "Hello " + name
-fmt.Println(greeting)
+```
+Go func main() {
+    name := "John"
+    greeting := "Hello"
+    message := greeting + " " + name
+    fmt.Println(message) // Output: Hello John
+}
 ```
 
-Output:
-`Hello John`
+In this code, the string variables `name` and `greeting` are combined with the `+` operator to create the string variable `message`, which is then printed to the console.
 
-### Using `fmt.Sprintf()`
+## Deep Dive:
 
-```Go
-num1 := 10
-num2 := 20
-result := fmt.Sprintf("The sum of %d and %d is %d.", num1, num2, num1+num2)
-fmt.Println(result)
-```
+Concatenating strings has been a fundamental operation in programming languages for a long time. However, in some languages such as Java, concatenating strings can be inefficient as it creates a new string every time it is performed. In contrast, Go's string concatenation operator `+` is optimized to use strings efficiently and avoid this performance issue.
 
-Output:
-`The sum of 10 and 20 is 30.`
+An alternative to using the `+` operator is the `fmt.Sprintf()` function, which uses placeholders to format and combine strings. This can be useful for more complex string concatenation operations.
 
-## Deep Dive
+Internally, concatenating strings in Go is implemented using a byte array, which ensures efficient memory usage. To avoid creating unnecessary copies of strings, the Go compiler optimizes string concatenation operations at compile time.
 
-There are a few things to keep in mind when concatenating strings in Go. First, it is important to note that the `+` operator is not just meant for string concatenation, it can also be used for arithmetic operations. Therefore, it is recommended to use `fmt.Sprintf()` when concatenating strings to avoid any unexpected results.
+## See Also:
 
-Additionally, Go provides the `strings.Join()` function for more efficient string concatenation. It takes in a slice of strings and a separator, and returns a single string with all the elements of the slice joined together.
-
-```Go
-names := []string{"John", "Jane", "Bob"}
-result := strings.Join(names, " - ")
-fmt.Println(result)
-```
-
-Output:
-`John - Jane - Bob`
-
-Lastly, it is important to note that string concatenation in Go is not just limited to combining two strings. It can also be used to combine variables, constants, and even expressions.
-
-See Also
-- [Official Go Documentation on String Operations](https://golang.org/pkg/strings/)
-- [Go By Example: String Formatting](https://gobyexample.com/string-formatting)
-- [Go Language Specification: Operators](https://golang.org/ref/spec#Operators)
+- [The official Go documentation on strings](https://golang.org/pkg/strings/)
+- [An in-depth explanation of string concatenation in Go](https://www.ardanlabs.com/blog/2017/05/language-mechanics-on-strings.html)

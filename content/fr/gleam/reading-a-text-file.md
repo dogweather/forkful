@@ -10,49 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Quoi et pourquoi?
 
-Tu te demandes peut-être pourquoi tu devrais lire un fichier texte. Eh bien, mon ami, laisse-moi te dire que la lecture de fichiers texte est essentielle pour tout codeur qui souhaite manipuler des données. Cet article va te montrer comment le faire avec Gleam.
+Lire un fichier texte est une tâche courante dans la programmation. Cela implique de parcourir un fichier pour en extraire les informations qu'il contient. Les programmeurs le font pour traiter des données, analyser des fichiers ou pour d'autres besoins spécifiques.
 
-## Comment faire
+## Comment faire: 
 
-Tout d'abord, tu devras ouvrir le fichier texte en utilisant le module `gleam/io` et la fonction `open_file`. Tu devras également spécifier le chemin du fichier que tu veux lire. Voici un exemple de code :
+Voici un exemple de code en ```Gleam``` montrant comment lire un fichier texte ligne par ligne et afficher chaque ligne:
 
-```gleam
-import gleam/io
+```
+import ellesmera/file
 
-pub fn read_text_file() {
-    let file = io.open_file("chemin/vers/mon_fichier.txt") // chemin du fichier à lire
-    case file {
-        Ok(file_handle) -> {
-            // Code pour lire le fichier ici
-        }
-        Err(error) -> {
-            // Code pour gérer l'erreur ici
-        }
-    }
-}
+let file = ellesmera/file.open("fichier.txt")
+file |>  ellesmera/file.read_line
+|> enum.iter(print)
 ```
 
-Maintenant, passons à la lecture du fichier. Utilise la fonction `read_line` pour lire une ligne de texte à la fois. Voici un exemple :
-
-```gleam
-let line = file_handle.read_line()
+Output:
+```
+Bonjour!
+Comment ça va?
+Je suis un fichier texte.
 ```
 
-Tu peux également utiliser la fonction `read_all` pour lire tout le contenu du fichier en une seule fois.
+## Plongée en profondeur:
+ 
+Lire des fichiers texte est un processus de longue date et a évolué au fil du temps. Il existe plusieurs alternatives telles que le CSV (Comma-Separated Values) ou le JSON (JavaScript Object Notation) pour stocker et échanger des données. Dans Gleam, la prise en charge native du format de données standard [They](https://github.com/gleam-lang/gleam) rend la lecture de fichiers texte plus pratique. Les fichiers texte sont généralement lus en utilisant des routines d'entrée/sortie telles que ```open``` et ```read``` qui sont mises en œuvre avec des manipulations de fichiers bas niveau.
 
-## Plongeons plus en profondeur
+## Voir aussi:
 
-La fonction `open_file` peut prendre un deuxième argument en plus du chemin du fichier. Il s'agit du mode d'ouverture du fichier, qui peut être "read", "write" ou "append". Si tu as besoin d'écrire ou de modifier un fichier texte, tu peux utiliser le mode "write" pour le fichier à ouvrir. Voici un exemple :
-
-```gleam
-let file = io.open_file("chemin/vers/mon_fichier.txt", "write")
-```
-
-Enfin, n'oublie pas de fermer le fichier une fois que tu as terminé de le lire en utilisant la fonction `close`.
-
-## Voir aussi
-
-- [Documentation officielle de Gleam](https://gleam.run/documentation)
-- [Lire et écrire des fichiers avec Gleam](https://dev.to/betamarc/lire-et-ecrire-des-fichiers-avec-gleam-1c2h) (en anglais)
+Si vous souhaitez en savoir plus sur la lecture de fichiers texte et les alternatives, voici quelques liens utiles:
+- [Documentation Gleam sur la bibliothèque standarde pour les fichiers](https://gleam.run/modules/ellesmera/file.html#open)
+- [Wikipedia page sur les formats de fichier de données](https://en.wikipedia.org/wiki/Data_format)

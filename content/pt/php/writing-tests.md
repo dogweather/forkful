@@ -10,44 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que escrever testes é importante
+#O que & Por quê?
 
-Escrever testes é uma prática essencial em qualquer linguagem de programação, incluindo o PHP. Os testes ajudam a garantir que o código funcione corretamente e a identificar possíveis bugs antes que se tornem um problema para os usuários. Isso resulta em um código mais confiável e de melhor qualidade.
+Escrever testes é uma prática comum entre os programadores de PHP. Esse processo consiste em criar um conjunto de instruções que verificam se o código do programa está funcionando corretamente. Os testes são importantes porque garantem que o código está livre de erros e podem ser usados para detectar falhas antes que elas se tornem um problema maior.
 
-## Como escrever testes em PHP
+#Como fazer:
 
-Para escrever testes em PHP, você precisará de uma estrutura de testes, como o PHPUnit. Aqui está um exemplo básico de como escrever um teste de unidade simples usando PHPUnit:
+Segue abaixo um exemplo de código PHP para criar um teste simples e imprimir o resultado:
 
 ```PHP
 <?php
-use PHPUnit\Framework\TestCase;
-
-class CalculatorTest extends TestCase
-{
-    public function testAdd()
-    {
-        $calculator = new Calculator();
-        $result = $calculator->add(2, 2);
-        $this->assertEquals(4, $result);
-    }
+function calcularSucesso($nota) {
+	if ($nota >= 70) {
+		return "Aprovado";
+	} else {
+		return "Reprovado";
+	}
 }
+
+echo calcularSucesso(85);
+
+// Output:
+// Aprovado
+?>
 ```
 
-Este exemplo cria um teste de unidade para uma classe `Calculator` que tem um método `add`. O teste verifica se o resultado da adição de 2 e 2 é igual a 4. Para executar este teste, você precisará executar o seguinte comando no diretório onde o arquivo Test.php está localizado:
+Neste exemplo, a função `calcularSucesso` verifica se a nota passada como parâmetro é maior ou igual a 70. Se for, ela retorna a string "Aprovado", caso contrário retorna "Reprovado". Depois, a função é chamada e o resultado é impresso na tela.
 
-```
-phpunit Test.php
-```
+#Mergulho Profundo:
 
-Se tudo estiver configurado corretamente, você verá uma mensagem indicando que o teste foi bem-sucedido. Agora você pode escrever testes para cada parte importante do seu código e garantir que tudo funcione como esperado.
+Os testes surgiram na indústria de software por volta dos anos 60, mas só se tornaram populares nos anos 90 com o advento das metodologias ágeis. Existem diversas ferramentas de teste disponíveis no mercado, como o PHPUnit e o Codeception. Além disso, existem diferentes tipos de testes, como testes unitários, testes de integração e testes de aceitação.
 
-## Aprofundando-se em testes em PHP
+É importante destacar que escrever testes não garante que o código está livre de erros, mas ajuda a identificá-los mais facilmente para que possam ser corrigidos antes que causem problemas mais graves. Alguns programadores preferem não escrever testes, mas essa prática pode levar a erros que dificultam a manutenção e fazem com que o código de um projeto se torne cada vez mais complexo.
 
-Existem várias técnicas e metodologias para escrever testes em PHP, como testes de integração, testes funcionais e testes de cobertura de código. É importante explorar e experimentar com diferentes abordagens para encontrar a que melhor se adapta ao seu projeto.
+#Veja Também:
 
-Além disso, ao escrever testes, é importante lembrar de manter um bom equilíbrio entre a cobertura de testes e a manutenção do código. Escrever muitos testes pode ser tão ruim quanto escrever poucos, pois pode ser difícil de manter e pode levar a um trabalho redundante.
-
-## Veja também
-- [Documentação oficial do PHPUnit](https://phpunit.de/documentation.html)
-- [Tutorial de testes em PHP do site Tuts+](https://code.tutsplus.com/pt/tutorials/the-beginners-guide-to-php-unit-testing--net-27266)
-- [Testes automatizados em PHP: Introdução](https://www.devmedia.com.br/testes-automatizados-em-php-introducao/28849)
+- Documentação oficial do PHPUnit: https://phpunit.de/documentation.html
+- Introdução aos testes em PHP com PHPUnit: https://code.tutsplus.com/pt/tutorials/introduction-to-web-testing-with-phpunit--net-6367
+- Tutorial sobre testes de unidade com PHP e PHPUnit: https://www.toptal.com/php/integration-and-unit-testing-guide-for-php

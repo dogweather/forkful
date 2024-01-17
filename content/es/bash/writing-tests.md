@@ -1,7 +1,7 @@
 ---
-title:                "Escribiendo pruebas"
-html_title:           "Bash: Escribiendo pruebas"
-simple_title:         "Escribiendo pruebas"
+title:                "Redacción de pruebas"
+html_title:           "Bash: Redacción de pruebas"
+simple_title:         "Redacción de pruebas"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Testing and Debugging"
@@ -10,51 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+¡Hola, programadores de Bash!
 
-Si estás escribiendo un script en Bash, es importante asegurarse de que todo funciona correctamente. Una forma de garantizar esto es a través de pruebas. Las pruebas te ayudan a identificar y corregir errores en tu código antes de ponerlo en producción.
+## ¿Qué & Por qué?
 
-## Cómo
+Escribir pruebas (o tests) es una parte importante de la programación. Se trata de crear pequeños scripts que evalúan si nuestro código funciona correctamente. Los programadores lo hacen para asegurarse de que su código se comporte de la manera esperada y para evitar errores en el futuro.
 
-Las pruebas en Bash se realizan a través del comando `test` o su forma abreviada `[ ]`. Aquí hay un ejemplo de cómo realizar una prueba en la que se comprueba si dos variables son iguales:
+## Cómo hacerlo:
 
-```Bash
-#!/bin/bash
-
-var1="hola"
-var2="mundo"
-
-if [ $var1 == $var2 ]
-then
-    echo "Las variables son iguales"
-else
-    echo "Las variables son diferentes"
-fi
-```
-Este código imprimirá "Las variables son diferentes" ya que `var1` y `var2` no son iguales. Puedes realizar diversas pruebas utilizando operadores lógicos como `==`, `!=`, `-eq`, `-ne`, `-gt`, `-lt`, entre otros.
-
-## Deep Dive
-
-Además de las pruebas básicas, también puedes crear pruebas más complejas utilizando los comandos `and` y `or`. Por ejemplo, puedes utilizar el comando `and` para verificar simultáneamente si dos o más condiciones son verdaderas y utilizar `or` para comprobar si al menos una de las condiciones es verdadera.
-
-Otra técnica útil es el uso de expresiones regulares en las pruebas. Por ejemplo, si quieres verificar si una variable contiene sólo números, puedes utilizar el operador `=~` junto con una expresión regular:
+En Bash, podemos escribir pruebas utilizando el comando `assert`. Por ejemplo, si queremos asegurarnos de que un archivo exista, podemos escribir:
 
 ```Bash
-#!/bin/bash
-
-var="12345"
-
-if [[ $var =~ ^[0-9]+$ ]]
-then
-    echo "La variable contiene sólo números"
-else
-    echo "La variable no contiene sólo números"
-fi
+assert -e mi_archivo.txt
 ```
 
-Existen muchas otras técnicas y comandos que pueden ser utilizados en las pruebas de Bash, es importante investigar y practicar para aprovechar al máximo esta herramienta.
+El comando `assert` verificará si el archivo especificado existe y en caso contrario, mostrará un error. También podemos utilizar `assert` para verificar si una variable tiene el valor esperado:
 
-## Ver también
+```Bash
+nombre="Maria"
+assert $nombre == "Maria"
+```
 
-- [Bash Guide for Beginners](https://linux.die.net/Bash-Beginners-Guide)
-- [Advanced Bash-Scripting Guide](https://tldp.org/LDP/abs/html/index.html)
+Si la variable `nombre` no tiene el valor "Maria", `assert` mostrará un error.
+
+## Profundizando:
+
+Las pruebas en el mundo de la programación no son nada nuevo. De hecho, su uso se remonta a la década de 1950 cuando los programadores necesitaban una manera de verificar su código sin tener que ejecutarlo todo manualmente. En ese entonces, se utilizaban pruebas manuales, lo cual era muy tedioso y propenso a errores.
+
+Hoy en día, existen otras herramientas para escribir pruebas en Bash, como `shunit2` o `bats`. Estas herramientas proporcionan una sintaxis más sencilla y una mejor organización de las pruebas. Sin embargo, el uso de `assert` sigue siendo una forma simple y efectiva de escribir pruebas en Bash.
+
+## Ver también:
+
+Si quieres aprender más sobre el uso de `assert` y otras herramientas de pruebas en Bash, te recomendamos revisar estas fuentes:
+
+- [Documentación oficial de Bash](https://www.gnu.org/software/bash/manual/html_node/Assertions.html)
+- [Artículo sobre pruebas en Bash en Opensource.com](https://opensource.com/article/19/4/functional-tests-bash)
+- [Tutorial de pruebas en Bash de Tutorialspoint](https://www.tutorialspoint.com/unix/shell_scripting.htm)

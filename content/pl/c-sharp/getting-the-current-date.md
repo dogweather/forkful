@@ -10,39 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+# Co i dlaczego?
 
-Pobranie bieżącej daty jest bardzo powszechnym zadaniem w programowaniu C#. Jest to przydatne w wielu przypadkach, na przykład w tworzeniu aplikacji z funkcją rejestrowania czasu, wyświetlania ostatnio modyfikowanych plików lub tworzenia raportów z datą wykonania. Poniżej zaprezentujemy kilka sposobów, jak można uzyskać bieżącą datę w C#.
+Aktualna data jest po prostu dzisiejszą datą, czyli dniem, miesiącem i rokiem, w którym aktualnie się znajdujemy. Programiści potrzebują dostępu do aktualnej daty w celu wykonywania różnych zadań, takich jak śledzenie czasu lub wyświetlanie daty i godziny w aplikacji.
 
-## Jak?
+# Jak to zrobić:
 
-```C#
-DateTime currentDate = DateTime.Now; //Przypisanie bieżącej daty do zmiennej "currentDate"
-Console.WriteLine(currentDate); //Wyświetlenie bieżącej daty w konsoli
-```
-
-W powyższym przykładzie użyliśmy obiektu `DateTime`, który jest wbudowany w język C# i pozwala nam na obsługę dat i godzin. Metoda `Now()` zwraca bieżącą datę i czas, a następnie możemy ją wyświetlić w dowolny sposób, np. za pomocą metody `WriteLine()` z klasy `Console`.
-
-Możemy również sformatować wyświetloną datę za pomocą metody `ToString()` i podając odpowiednie parametry jako argumenty. Na przykład:
+Możemy użyć metody `DateTime.Now`, aby uzyskać aktualną datę i czas w formacie standardowych obiektów `DateTime`.
 
 ```C#
-Console.WriteLine(currentDate.ToString("dddd, dd MMMM yyyy")); // Wyświetli "wtorek, 16 marca 2021"
+ DateTime dzis = DateTime.Now;
+Console.WriteLine("Dzisiejsza data to: {0}", dzis.Date);
+Console.WriteLine("Aktualny czas to: {0:t}", dzis.TimeOfDay);
+// Output:
+// Dzisiejsza data to: 7/5/2021
+// Aktualny czas to: 12:00:00 AM
 ```
 
-Każdy z parametrów w nawiasach okrągłych określa kolejno: dzień tygodnia (po polsku), dzień miesiąca, nazwę miesiąca (po polsku) i rok. Pełną listę możliwych parametrów można znaleźć w dokumentacji języka C#.
+# Głębszy przegląd:
 
-## Deep Dive
+## Kontekst historyczny:
 
-Jeśli chcemy uzyskać bieżącą datę z większą precyzją, możemy użyć struktury `DateTimeOffset`. Jest to rozszerzenie klasy `DateTime` i pozwala na przechowywanie dodatkowych informacji o strefie czasowej. Przykład użycia:
+Pierwsza implementacja funkcji pobierania aktualnej daty pojawiła się w języku FORTRAN w roku 1958. W językach programowania takich jak C# dostępna jest wbudowana klasa `DateTime`, która umożliwia łatwe uzyskanie aktualnej daty.
 
-```C#
-DateTimeOffset currentDateTimeOffset = DateTimeOffset.Now;
-Console.WriteLine(currentDateTimeOffset); //Wyświetli np. "17.03.2021 12:47:15 +01:00"
-```
+## Alternatywy:
 
-Pole `Offset` wyświetla przesunięcie czasowe między naszą strefą, a strefą czasową UTC (Coordinated Universal Time). W przykładzie, zakładając że mieszkamy w strefie czasowej GMT+1, wynik będzie 1-godzinny.
+Poza użyciem wbudowanej klasy `DateTime` w C#, istnieją również inne biblioteki i narzędzia, które umożliwiają dostęp do aktualnej daty, takie jak `System.Time` czy `NodaTime`.
 
-## Zobacz też:
-- Dalsze możliwości manipulacji datami w C#: [https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=net-5.0](https://docs.microsoft.com/pl-pl/dotnet/api/system.datetime?view=net-5.0)
-- Dokumentacja klasy `DateTimeOffset`: [https://docs.microsoft.com/en-us/dotnet/api/system.datetimeoffset?view=net-5.0](https://docs.microsoft.com/pl-pl/dotnet/api/system.datetimeoffset?view=net-5.0)
-- Przewodnik po formatowaniu dat i godzin w C#: [https://docs.microsoft.com/en-us/dotnet/standard/base-types/custom-date-and-time-format-strings?view=net-5.0](https://docs.microsoft.com/pl-pl/dotnet/standard/base-types/custom-date-and-time-format-strings?view=net-5.0)
+## Szczegóły implementacji:
+
+Metoda `DateTime.Now` korzysta z zegara systemowego w celu uzyskania aktualnego czasu. Jest to dokładniejsza metoda niż korzystanie z `DateTime.Today`, która zwraca tylko datę bez uwzględniania czasu.
+
+# Zobacz także:
+
+- [Dokumentacja Microsoft na temat klasy DateTime](https://docs.microsoft.com/pl-d##otnet/api/system.datetime?view=net-5.0)
+- [Wprowadzenie do biblioteki NodaTime](https://nodatime.org/1.4.x/userguide/)

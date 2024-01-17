@@ -10,75 +10,64 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-JSON (JavaScript Object Notation) is a popular data format used for storing and transferring data between applications. As a Rust programmer, understanding how to work with JSON can greatly expand your abilities and make your code more versatile.
+JSON (JavaScript Object Notation) is a popular data format used by programmers for storing and exchanging data between different applications. It is a lightweight and readable format, making it easy for humans to understand and write, while also being easily processed by computers. Programmers use JSON because it allows for efficient data transfer and provides a structured way to organize and store data.
 
-## How To
+## How to:
 
-To work with JSON in Rust, you will need to use a crate (Rust's term for libraries) called `serde_json`. This crate provides convenient methods for serializing and deserializing JSON data.
+Working with JSON in Rust is made easy with the help of the serde and serde_json crates. Follow these steps to get started:
 
-Let's start by creating a simple JSON object using the `serde_json` crate:
+1. Install the serde and serde_json crates by adding them to your ```Cargo.toml``` file.
+2. Import the ```serde``` and ```serde_json``` crates into your code using the ```use``` keyword.
+3. To serialize a Rust data structure into JSON, use the ```serde_json::to_string()``` function. This will return a string with the JSON representation of your data.
+4. To deserialize a JSON string into a Rust data structure, use the ```serde_json::from_str()``` function. This will return a ```serde_json::Result``` enum, with the parsed data or an error if the string is not valid JSON.
 
-```rust
-use serde_json::json;
-
-let person = json!({
-    "name": "John Doe",
-    "age": 28,
-    "hobbies": ["hiking", "reading", "coding"]
-});
 ```
+use serde::{Serialize, Deserialize};
+use serde_json;
 
-We can easily access values within the JSON object using dot notation:
-
-```rust
-let name = person["name"].as_str(); // returns Some("John Doe")
-
-let hobbies = person["hobbies"].as_array(); // returns Some(["hiking", "reading", "coding"])
-```
-
-We can also modify the JSON object or add new values:
-
-```rust
-person["age"] = json!(30); // changes the age value to 30
-
-person["occupation"] = json!("software engineer"); // adds a new key-value pair
-```
-
-To convert our JSON object into a string, we can use the `.to_string()` method:
-
-```rust
-let json_string = person.to_string(); // returns {"name":"John Doe","age":30,"hobbies":["hiking","reading","coding"],"occupation":"software engineer"}
-```
-
-We can also deserialize a JSON string into a Rust data structure using the `from_str` method:
-
-```rust
-use serde::{Deserialize, Serialize};
-
-#[derive(Deserialize, Serialize)]
-struct Person {
+// Serializing into JSON
+#[derive(Serialize)]
+struct Student {
     name: String,
     age: u8,
-    hobbies: Vec<String>,
-    occupation: Option<String>,
+    grade: u8,
 }
+let john = Student {
+    name: "John".to_string(),
+    age: 16,
+    grade: 11,
+};
+let json_string = serde_json::to_string(&john).unwrap(); // Serialize the `john` struct into a JSON string
 
-let json_string = r#"{"name":"Jane Doe","age":25,"hobbies":["painting","dancing"],"occupation":"artist"}"#;
-
-let person: Person = serde_json::from_str(json_string).unwrap();
-
-println!("{}", person.name); // prints Jane Doe
+// Deserializing from JSON
+#[derive(Deserialize)]
+struct Student {
+    name: String,
+    age: u8,
+    grade: u8,
+}
+let json_string = r#"{"name":"John","age":16,"grade":11}"#; // JSON string
+let john: Student = serde_json::from_str(json_string).unwrap(); // Deserialize the JSON string into a `Student` struct
 ```
 
-## Deep Dive
+Sample output:
 
-Working with JSON in Rust becomes even more powerful when combined with Rust's type system. The `serde_json` crate allows us to serialize and deserialize more complex data structures, such as enums and structs, by implementing the `Serialize` and `Deserialize` traits respectively.
+```
+{"name":"John","age":16,"grade":11}
+```
 
-The crate also supports custom serialization and deserialization logic through the use of attributes, allowing for even more flexibility in handling JSON data.
+## Deep Dive:
 
-## See Also
+JSON was first invented by Douglas Crockford in 2001 as a way to represent data in a simple and consistent format. It gained popularity due to its compatibility with JavaScript, which made it a preferred choice for web developers. However, it is now widely used in many other programming languages, including Rust.
 
-- Official documentation for the `serde_json` crate: https://docs.serde.rs/serde_json/
-- Rust Book chapter on working with JSON data: https://doc.rust-lang.org/book/ch08-03-hash-maps.html#working-with-json-data
+There are alternative libraries for working with JSON in Rust, such as json and rust-csv. However, serde and serde_json are the most widely used and have a larger community, providing additional support and updates.
+
+In Rust, JSON data is deserialized into the ```serde_json::Value``` enum, which has different variants for representing different types of data, such as strings, numbers, arrays, and objects. This allows for flexible handling of JSON data without needing to know the exact structure beforehand.
+
+## See Also:
+
+- [serde documentation](https://serde.rs/)
+- [serde_json documentation](https://docs.serde.rs/serde_json/)
+- [An introduction to working with JSON in Rust](https://medium.com/@kbknapp/json-de-serialization-with-rust-1-0-67924f9b8c1)

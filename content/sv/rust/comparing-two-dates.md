@@ -1,7 +1,7 @@
 ---
-title:                "Jämförelse av två datum"
-html_title:           "Rust: Jämförelse av två datum"
-simple_title:         "Jämförelse av två datum"
+title:                "Jämföra två datum"
+html_title:           "Rust: Jämföra två datum"
+simple_title:         "Jämföra två datum"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Dates and Times"
@@ -10,47 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
+När man programmerar kan man ibland behöva jämföra två datum för att t.ex. se om ett datum kommer före eller efter ett annat. Detta är vanligt när man jobbar med kalendrar eller scheman och behöver sortera och filtrera datum. 
 
-Jag tror att alla kan relatera till den frustrerande uppgiften att jämföra två datum. Det är inte alltid så enkelt som att skriva ut dem och se vilket som är större eller mindre än det andra.
+## Hur går det till:
+För att jämföra två datum i Rust, kan man använda sig av ```PartialOrd``` traitet. Det här traitet låter oss jämföra värden som har en ordning, som till exempel siffror och datum. Genom att använda funktionen ```partial_cmp``` kan vi jämföra två datum och få tillbaka en ```Option<cmp::Ordering>``` som visar vilket datum som kommer före det andra. 
 
-Men oroa dig inte, med Rusts inbyggda funktioner kan du enkelt jämföra två datum och få exakt det resultatet du behöver.
-
-## Så här
-
-För att jämföra två datum i Rust behöver du bara använda dig av `Date`-modulen. Du kan skapa två instanser av `Date` med hjälp av `from_y/m/d`-funktionen och sedan jämföra dem med antingen `<` eller `>`-operatorerna.
-
-Se till att importera `Date`-modulen först genom att skriva:
-
-```Rust
-use std::time::Date;
+Exempelkod:
 ```
+use std::cmp::Ordering;
+use chrono::NaiveDate;
 
-Sedan kan du skapa dina två datum och jämföra dem i en `if`-sats:
+fn main() {
+    let date1 = NaiveDate::from_ymd(2020, 06, 30);
+    let date2 = NaiveDate::from_ymd(2020, 07, 01);
 
-```Rust
-let start_date = Date::from_y_m_d(2021, 1, 1);
-let end_date = Date::from_y_m_d(2021, 1, 9);
-
-if start_date < end_date {
-    println!("Startdatumet är mindre än slutdatumet");
-} else {
-    println!("Startdatumet är större än slutdatumet");
+    match date1.partial_cmp(&date2) {
+        Some(Ordering::Less) => println!("{} kommer före {}", date1, date2),
+        Some(Ordering::Equal) => println!("{} är samma som {}", date1, date2),
+        Some(Ordering::Greater) => println!("{} kommer efter {}", date1, date2),
+        None => println!("Ingen ordning för dessa datum")
+    }
 }
 ```
 
-Beroende på vilka datum du skrivit in kommer antingen `"Startdatumet är mindre än slutdatumet"` eller `"Startdatumet är större än slutdatumet"` att skrivas ut.
+Exempeloutput:
+```
+2020-06-30 kommer före 2020-07-01
+```
 
-## Djupdykning
+## Deep Dive:
+Historiskt sett har det funnits olika sätt att jämföra datum, beroende på vilket kalendersystem som används (t.ex. gregorianska eller julianska kalendern). I moderna programmeringsspråk som Rust används vanligtvis en tidsstandard som kallas Coordinated Universal Time (UTC) för att undvika komplikationer med olika kalendrar. 
 
-Det finns flera saker att tänka på när man jämför två datum i Rust. Först och främst, om datumet har ett annat tidsformat som timmar eller minuter så kommer det att ignoreras vid jämförelsen. Bara datumet i sig är relevant.
+Det finns också alternativa metoder för att jämföra datum, såsom att konvertera datum till en numrering som börjar vid ett visst datum och sedan jämföra dessa nummer. Det är viktigt att noga överväga vilken metod som passar bäst för ens specifika användningsområde när man jämför datum i en applikation.
 
-För det andra, om du vill jämföra två datum baserade på veckonummer eller dag i veckan, då kan du använda `to_weekday()` och `to_weekday_num()`-funktionerna för att få ut den specifika informationen från datumet.
+När det gäller implementationen i Rust, använder ```PartialOrd``` traitet funktionen ```partial_cmp``` för att jämföra två värden. Om funktionen returnerar ```None``` betyder det att värdena inte kan jämföras, till exempel om de är i olika tidszoner eller format. 
 
-För mer djupgående information om hur man jämför datum i Rust, ta en titt på [Rusts dokumentation](https://doc.rust-lang.org/std/time/struct.Date.html).
-
-## Se även
-
-* [Rusts dokumentation för datum](https://doc.rust-lang.org/std/time/struct.Date.html)
-* [En översikt över Rusts grundläggande datatyper](https://www.aidanwoods.com/blog/a-tour-of-rust-basic-types/)
-* [Jämförelse av datum i andra programmeringsspråk](https://www.sitepoint.com/compare-dates-time-stamps/)
+## Se även:
+- [Chrono biblioteket](https://docs.rs/chrono/latest/chrono/index.html): Ett populärt bibliotek för att hantera datum och tider i Rust.
+- [Official Rust documentation](https://doc.rust-lang.org/std/cmp/trait.PartialOrd.html): Mer information om ```PartialOrd``` traitet och andra jämförelsemetoder i Rust.

@@ -10,54 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-Writing tests is an important aspect of software development that helps ensure code quality and catch bugs early on. By writing tests, you can test your code in isolation and have confidence in your code's functionality before deploying it to production.
+Writing tests is the process of creating code that checks the functionality of other code, also known as "test code". Programmers write tests to ensure that their code functions as intended, catches potential bugs, and maintains its functionality over time.
 
-## How To
+## How to: 
 
-Writing tests in Clojure is made easy with its built-in testing framework, clojure.test. Let's take a look at how to write tests using this framework.
-
-First, we need to require the clojure.test library:
+Writing tests in Clojure is easy using the built-in test framework called `clojure.test`. Here's an example of a test for a function that adds two numbers:
 
 ```Clojure
-(ns my-app.core-test
-  (:require [clojure.test :refer :all]))
+(require '[clojure.test :refer [deftest is]])
+(deftest test-addition
+  (is (= 5 (+ 3 2))))
 ```
 
-Next, we need to define our test functions using the `deftest` macro. Let's say we want to test a function that calculates the area of a circle:
+The above code creates a test called `test-addition` using the `deftest` macro. Within the test, we use the `is` macro to compare the expected result of adding 3 and 2 to the actual result. If the two values don't match, the test will fail. Here's the output when we run the test:
 
-```Clojure
-(deftest area-of-circle-test
-  (testing "correct area with radius 5"
-    (is (= (circle-area 5) 78.5)))
-  (testing "correct area with radius 0"
-    (is (= (circle-area 0) 0)))
-  (testing "correct area with negative radius"
-    (is (= (circle-area -5) 78.5))))
+```
+FAIL in (test-addition) (form-init7499349873952303573.clj:3)
+expected: (= 5 (+ 3 2))
+  actual: (not (= 5 6))
 ```
 
-Note that we use the `testing` macro to group our test cases and the `is` macro to assert that a certain condition is true. In this case, we are using the `=` function to compare the expected and actual values.
-
-Finally, we can run our tests using the `run-tests` function:
-
-```Clojure
-(run-tests)
-;=>
-{:test 3, :pass 3, :fail 0, :error 0, :type :summary}
-```
-
-From the output, we can see that all 3 of our tests passed. If there were any failures or errors, they would be displayed in more detail.
+As you can see, the test failed because 5 does not equal 6. This indicates that there is an error in our code. Writing tests can help us catch these errors and ensure that our code is functioning correctly.
 
 ## Deep Dive
 
-There are several things to keep in mind when writing tests in Clojure. First, it's important to structure your tests in a descriptive and organized way using the `testing` macro. This makes it easier to understand and maintain your tests.
-
-Additionally, you can use the `is` macro with various assertion functions such as `=` and `not=` to check for different conditions. You can also use the `thrown?` function to assert that certain exceptions are thrown.
-
-Finally, you can use the `use-fixtures` macro to set up and tear down any necessary resources for your tests. This ensures that your tests are run in a consistent environment.
+Writing tests has become an essential practice in modern software development due to its many benefits. It not only helps catch bugs, but it also serves as documentation for how the code is meant to function. Writing tests also allows for more efficient debugging and makes it easier to refactor code without breaking its functionality. While there are other testing frameworks available for Clojure, `clojure.test` is the official one and is widely used.
 
 ## See Also
 
-- [Clojure Test Library Documentation](https://clojure.github.io/clojure/clojure.test-api.html)
-- [Clojure Test Tutorial](https://www.braveclojure.com/unit-testing/#Clojure’s_unit_testing_library:_clojure.test)
+- [Official Clojure documentation for `clojure.test`](https://clojure.github.io/clojure/clojure.test-api.html)
+- [Practical Guide to Clojure Test Driven Development](https://purelyfunctional.tv/guide/clojure-test-driven-development/)

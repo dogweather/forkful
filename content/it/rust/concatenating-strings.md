@@ -1,7 +1,7 @@
 ---
-title:                "Concatenazione di stringhe"
-html_title:           "Rust: Concatenazione di stringhe"
-simple_title:         "Concatenazione di stringhe"
+title:                "Unire stringhe"
+html_title:           "Rust: Unire stringhe"
+simple_title:         "Unire stringhe"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -10,40 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
-Concatenare le stringhe è una pratica comune nella programmazione per combinare più stringhe in una sola. Questo può essere utile per creare messaggi personalizzati, formattare testo e molte altre applicazioni.
+# Rust: Concatenare stringhe
 
-## Come Fare
-In Rust, è possibile concatenare le stringhe utilizzando l'operatore `+` o il metodo `format!()`. Ecco un esempio di entrambi i metodi utilizzando le stringhe "Ciao" e "mondo":
+## Cosa & Perché?
+Concatenare stringhe significa unire due o più stringhe in un'unica stringa. I programmatori spesso fanno questo per creare un'unica stringa a partire da più parti di testo, ad esempio quando si vuole comporre un messaggio di errore dinamicamente.
 
-```Rust
-let saluto = "Ciao";
-let messaggio = saluto + " mondo!"; // utilizzando l'operatore +
-println!("{}", messaggio);
-// Output: Ciao mondo!
-
-let messaggio = format!("{} mondo!", saluto); // utilizzando il metodo format!()
-println!("{}", messaggio);
-// Output: Ciao mondo!
-```
-
-Come si può vedere dall'esempio, l'operatore `+` concatena due stringhe in una nuova stringa, mentre il metodo `format!()` permette di combinare più stringhe all'interno di una sola stringa utilizzando il placeholder `{}`.
-
-## Approfondimento
-In Rust, le stringhe sono immutabili, quindi quando si concatenano due stringhe, in realtà si crea una nuova stringa e si scarta quella vecchia. Ad esempio, se si utilizza l'operatore `+` in un ciclo, si creeranno continuamente nuove stringhe, il che può essere inefficiente. 
-
-Per ovviare a questo problema, Rust offre il tipo `String` che è mutabile e permette di aggiungere nuove stringhe senza doverne creare una nuova ogni volta. Si può convertire facilmente una stringa in un tipo `String` utilizzando il metodo `to_string()`. Ecco un esempio:
+## Come fare:
+Ecco come si può concatenare stringhe in Rust, utilizzando l'operatore `+`:
 
 ```Rust
-let mut nome = "Maria".to_string(); // convertire una stringa in un tipo String
-nome.push_str(" Rossi"); // aggiungere una nuova stringa senza creare una nuova stringa
-println!("{}", nome);
-// Output: Maria Rossi
+let str1 = "Ciao";
+let str2 = "mondo!";
+let str3 = str1 + str2;
+println!("{}", str3); // Output: Ciaomondo!
 ```
 
-Inoltre, è possibile utilizzare il tipo `String` in combinazione con il metodo `push()` per aggiungere singoli caratteri alla fine della stringa. Ci sono anche altre operazioni che si possono fare con il tipo `String`, come la rimozione di parte della stringa o la ricerca di una sottostringa. Per ulteriori informazioni, è consigliato consultare la documentazione ufficiale di Rust.
+E se invece volessimo separare le stringhe con uno spazio, possiamo farlo in questo modo:
 
-## Vedi Anche
-- [La documentazione ufficiale di Rust sulla gestione delle stringhe](https://doc.rust-lang.org/std/string/index.html)
-- [Un tutorial su concatenare le stringhe in Rust](https://rust-lang-nursery.github.io/rust-cookbook/text/strings.html#concatenate-strings)
-- [Un confronto tra l'operatore `+` e il metodo `format!()` per concatenare le stringhe in Rust](https://stackoverflow.com/questions/30353462/when-does-a-string-get-automatically-converted-into-a-string)
+```Rust
+let str1 = "Ciao";
+let str2 = "mondo!";
+let str3 = format!("{} {}", str1, str2);
+println!("{}", str3); // Output: Ciao mondo!
+```
+
+## Approfondimento:
+La concatenazione di stringhe è stata introdotta nella versione 1.38 di Rust, insieme all'operatore `+` che permette di unire le stringhe più facilmente rispetto all'utilizzo del metodo `.to_string()`.
+
+Un'alternativa alla concatenazione di stringhe in Rust è utilizzare il tipo `String` che può essere modificato in modo dinamico aggiungendo testo con il metodo `.push_str()`.
+
+L'implementazione della concatenazione di stringhe in Rust è ottimizzata per prestazioni, in modo da utilizzare il minor numero di allocazioni di memoria possibile.
+
+## Vedi anche:
+- [La documentazione ufficiale di Rust su `String`](https://doc.rust-lang.org/std/string/struct.String.html)
+- [Un video tutorial sulla concatenazione di stringhe in Rust](https://www.youtube.com/watch?v=b8WH_xKdI2U)
+- [Un esempio pratico di concatenazione di stringhe in Rust](https://play.integer32.com/?gist=90f1d1d1a255cda4b2de833742f8d423&version=stable&mode=release&edition=2018)

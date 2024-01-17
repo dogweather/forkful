@@ -1,7 +1,7 @@
 ---
-title:                "문자열 대문자로 변환하기"
-html_title:           "TypeScript: 문자열 대문자로 변환하기"
-simple_title:         "문자열 대문자로 변환하기"
+title:                "문자열의 대문자화"
+html_title:           "TypeScript: 문자열의 대문자화"
+simple_title:         "문자열의 대문자화"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -10,51 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
-문자열을 대문자로 바꾸는 작업을 수행하는 이유를 설명합니다.
+## 무엇 & 왜?
 
-예를 들어, 사용자가 입력한 문자열을 데이터베이스에 저장하거나, 외부 API를 사용할 때 대문자로 변환하여 일관성을 유지하거나, 일부 데이터의 비교 및 검색이 용이하도록 하기 위해 문자열을 대문자로 바꿀 수 있습니다.
+문자열의 첫 번째 글자를 대문자로 변환하는 작업을 캐피탈라이즈(capitalize)라고 합니다. 프로그래머들이 이 작업을 하는 이유는 사용자에게 보기 좋은 텍스트를 제공하기 위해서입니다.
 
-## 사용 방법
-아래의 예제 코드 블록을 참고하여 TypeScript를 사용하여 문자열을 대문자로 바꾸는 방법을 배우세요.
+## 어떻게:
 
 ```TypeScript
-// 입력 받은 문자열
-let str = "hello world";
+const str = "hello world";
+console.log(str.charAt(0).toUpperCase() + str.slice(1));
 
-// 문자열을 대문자로 변환
-let capitalizedStr = str.toUpperCase();
-
-// 변환된 문자열 출력
-console.log(capitalizedStr);
-
-// Output: HELLO WORLD
+//Output: Hello world
 ```
 
 ```TypeScript
-// 변수에 할당된 문자열 대문자로 변환
-let str = "happy birthday";
+const str = "typescript programming";
+console.log(str.split(" ").map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(" "));
 
-// 기존 변수에 대문자로 변환된 문자열 덮어쓰기
-str = str.toUpperCase();
-
-// 변환된 문자열 출력
-console.log(str);
-
-// Output: HAPPY BIRTHDAY
+//Output: TypeScript Programming
 ```
 
-## 더 깊게
-문자열을 대문자로 바꾸는 작업은 일반적으로 문자열 처리에서 자주 사용됩니다. TypeScript에서는 `toUpperCase()` 메서드를 사용하여 간단하게 대문자로 바꿀 수 있습니다. 
+## 딥 다이브:
 
-또한, `toLocaleUpperCase()` 메서드를 사용하여 현재 사용자의 로케일에 맞는 대문자로 변환할 수도 있습니다. 이를 통해 문자열 처리에 더 많은 유연성을 추가할 수 있습니다.
+(1) 캐피탈라이즈 작업은 대문자나 소문자와 같은 문자열 변환 작업의 일부입니다. (2) 다른 언어에서는 capitalize() 함수를 제공하지만 TypeScript에서는 위 코드와 같이 수동으로 작업해야 합니다. (3) 또한 위 코드에서는 첫 번째 글자만 대문자로 변환하지만 다른 구현 방식으로 모든 단어의 첫 번째 글자를 대문자로 변환할 수도 있습니다.
 
-## 참고 자료
-- [TypeScript: 문자열 메서드](https://www.typescriptlang.org/docs/handbook/strings.html)
-- [MDN: toUpperCase()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase)
-- [MDN: toLocaleUpperCase()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLocaleUpperCase)
+## 관련 자료:
 
-## 참고자료
-- [TypeScript: 문자열 메서드 (https://www.typescriptlang.org/docs/handbook/strings.html)
-- [MDN: toUpperCase() (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase)
-- [MDN: toLocaleUpperCase() (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLocaleUpperCase)
+- [JavaScript 문자열 변환 함수](https://www.w3schools.com/js/js_string_methods.asp)
+- [TypeScript 공식 문서](https://www.typescriptlang.org/docs/)

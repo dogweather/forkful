@@ -10,37 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+## 무엇 & 왜?
+텍스트 파일 읽기란 무엇인가요? 이것은 프로그래머가 컴퓨터에서 텍스트 파일을 읽어서 내용을 처리하는 것입니다. 많은 프로그래머들이 이를 사용하는 이유는 일반적으로 파일에서 정보를 가져오는 것이 프로그래밍의 기본 기능이기 때문입니다.
 
-텍스트 파일을 읽는 것은 프로그래밍에서 매우 중요한 일입니다. 프로그램에서 데이터를 읽기 위해서는 텍스트 파일을 이해하고 처리하는 방법을 알아야 합니다.
-
-## 어떻게
-
+## 방법:
 ```Clojure
-;; 파일 읽기
-(with-open [rdr (clojure.java.io/reader "example.txt")]
+;; "resources/sample.txt" 파일에서 내용을 읽어와서 출력하기 
+(with-open [rdr (clojure.java.io/reader "resources/sample.txt")]
   (doseq [line (line-seq rdr)]
     (println line)))
 
-"example.txt" 파일의 내용을 한 줄씩 읽어서 출력합니다.
+코드 실행 결과:
+This is a sample text file.
+It contains some random text.
 ```
 
 ```Clojure
-;; 파일에 쓰기
-(with-open [wrt (clojure.java.io/writer "example.txt")]
-  (.write wrt "Clojure is awesome!"))
-
-"example.txt" 파일에 "Clojure is awesome!"를 씁니다.
+;; "resources/sample.json" 파일에서 내용을 읽어와서 Clojure 데이터 타입으로 변환하기
+(clojure.data.json/read-str (slurp "resources/sample.json"))
+ 
+코드 실행 결과:
+{:key1 "value1", :key2 2, :key3 true}
 ```
 
-## 심층 탐구
+```Clojure
+;; "resources/sample.csv" 파일에서 내용을 읽어와서 행 단위로 처리하기
+(require '[clojure-csv.core :as csv])
+(csv/parse-csv (slurp "resources/sample.csv"))
+ 
+코드 실행 결과:
+[["col1" "col2" "col3"] ["row1" "row2" "row3"]]
+```
 
-텍스트 파일을 읽고 쓰는 것은 프로그래밍에서 매우 중요한 부분입니다. Clojure는 `clojure.java.io` 라이브러리를 제공하여 파일을 다루는데 유용한 함수를 제공합니다. `with-open` 함수는 파일을 자동으로 닫아주기 때문에 파일 처리 후 꼭 닫아줘야 하는 번거로움을 줄여줍니다. `line-seq` 함수는 파일의 내용을 한 줄씩 순회하며 가져올 수 있게 해줍니다.
+## 깊은 곳 더 들어가기:
+텍스트 파일 읽기는 과거부터 프로그래밍에서 중요한 요소였습니다. 이전에는 다른 언어에서 파일에서 정보를 읽고 처리하는 과정이 복잡했지만, Clojure는 간단하고 강력한 함수들을 제공하여 파일 처리를 쉽게 할 수 있게 만들어줍니다. 또한 파일 읽기 대신 데이터베이스와 같은 다른 방법을 사용할 수도 있습니다. 파일 읽기는 주로 로그 파일 분석이나 초기 데이터 로딩에 사용되며, Clojure의 다양한 라이브러리와 함께 다양한 형태로 사용될 수 있습니다.
 
-## 더 알아보기
-
-Clojure에서 파일을 읽고 쓰는 방법에 대해 더 자세히 알아보려면 아래 링크들을 참고해보세요.
-
-* [Official Clojure Documentation on I/O](https://clojure.org/reference/io)
-* [Clojure Cookbook: File I/O](https://clojure-cookbook.com/010_file_io.html)
-* [Clojure for the Brave and True: Working with Files](https://www.braveclojure.com/files/)
+## 관련 자료:
+- [Clojure 함수 레퍼런스](https://clojuredocs.org/clojure.java.io/reader)
+- [Clojure-CSV 라이브러리](https://github.com/clojure/data.csv)
+- [Clojure 데이터 JSON 변환](https://github.com/clojure/data.json)

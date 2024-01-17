@@ -1,7 +1,7 @@
 ---
-title:                "Ausgabe von Debugging-Informationen"
-html_title:           "Haskell: Ausgabe von Debugging-Informationen"
-simple_title:         "Ausgabe von Debugging-Informationen"
+title:                "Debug-Ausgabe drucken"
+html_title:           "Haskell: Debug-Ausgabe drucken"
+simple_title:         "Debug-Ausgabe drucken"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Testing and Debugging"
@@ -10,46 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was & Warum?
 
-Du bist gerade dabei, dein Haskell-Programm zu entwickeln und stößt auf unerklärliche Fehler? Das Drucken von Debug-Ausgaben kann dir dabei helfen, deine Code zu verstehen und Probleme zu lösen. In diesem Artikel werden wir dir zeigen, wie du Debug-Ausgaben in Haskell nutzen kannst.
+Debugging ist ein wichtiger Teil der Programmierung und bezieht sich darauf, Probleme und Fehler in einem Programm zu identifizieren und zu beheben. Das Drucken von Debug-Ausgaben ist eine Möglichkeit, dieses Ziel zu erreichen, indem wichtige Informationen über den Zustand des Programms während der Ausführung angezeigt werden. Dies hilft Programmierern dabei, ihren Code besser zu verstehen und mögliche Fehlerquellen zu erkennen.
 
-## Wie funktioniert es
+## Wie geht's?
 
-Um Debug-Ausgaben in Haskell zu drucken, verwenden wir die Funktion `print`, die einen Wert auf die Standardausgabe ausgibt. Hier ist ein Beispiel, wie wir eine Debug-Ausgabe in unserem Code platzieren können:
-
-```Haskell
-foo :: Int -> Int -> Int
-foo x y = x + y
-
-main = do
-    let result = foo 2 3
-    print result
-```
-
-In diesem Beispiel haben wir die Funktion `foo` definiert, die zwei Integers addiert. In der `main` Funktion haben wir `foo` mit den Argumenten 2 und 3 aufgerufen und das Ergebnis daraus in der Variable `result` gespeichert. Anschließend drucken wir `result` mit der `print` Funktion aus. Wenn wir nun unser Programm ausführen, sollten wir `5` in unserer Konsole sehen.
-
-Dies ist nur ein einfaches Beispiel, aber du kannst Debug-Ausgaben in jedem Teil deines Codes platzieren, um den Wert von Variablen oder Ausdrücken zu überprüfen.
-
-## Der tiefe Tauchgang
-
-Es gibt eine weitere nützliche Funktion namens `trace`, die es uns ermöglicht, Debug-Ausgaben mit zusätzlichen Informationen zu versehen. Hier ist ein Beispiel:
+Um Debug-Ausgaben in Haskell zu drucken, können wir die Funktion `trace` aus dem Paket `Debug.Trace` verwenden. Wir importieren das Paket in unsere Datei und rufen dann die Funktion `trace` auf, wobei wir die Debug-Nachricht als ersten Argument und den Wert, den wir ausgeben möchten, als zweites Argument angeben.
 
 ```Haskell
-import Debug.Trace (trace)
-
-foo :: Int -> Int -> Int
-foo x y = x + y
+import Debug.Trace
 
 main = do
-    let result = foo 2 3
-    trace ("Das Ergebnis von foo ist " ++ (show result)) result
+    let x = 10
+    trace "Wert von x:" x
 ```
 
-Wenn wir nun unser Programm ausführen, sehen wir nicht nur `5`, sondern auch unsere zusätzliche Information in der Konsole: "Das Ergebnis von foo ist 5". Dies kann besonders hilfreich sein, wenn du versuchst, die Reihenfolge oder den Wert verschiedener Ausdrücke in deinem Code zu überprüfen.
+Dieser Code gibt folgende Debug-Ausgabe aus:
 
-## Siehe auch
+```
+Wert von x: 10
+```
 
-- [Haskell Debugging](https://wiki.haskell.org/Debugging)
-- [Learn You a Haskell - Debugging](http://learnyouahaskell.com/starting-out#debugging) 
-- [Haskell Documentation - Debugging Tools](https://www.haskell.org/documentation/#debugging-tools)
+## Tiefgehende Einblicke
+
+Die Verwendung von `trace` zum Drucken von Debug-Ausgaben ist eine schnelle und einfache Möglichkeit, Fehler in Haskell-Programmen zu finden. Es gibt jedoch auch andere Möglichkeiten, Debugging durchzuführen, wie zum Beispiel das Hinzufügen von `print`-Statements an verschiedenen Stellen im Code, um bestimmte Variablen oder Werte auszugeben.
+
+Darüber hinaus ist es wichtig zu beachten, dass das Drucken von Debug-Ausgaben in der Regel nur für Testzwecke verwendet werden sollte und im fertigen Produktcode entfernt werden muss. Andernfalls kann es die Leistung und Effizienz des Programms beeinträchtigen.
+
+## Sieh auch
+
+Weitere Informationen zum Debugging in Haskell finden Sie in der offiziellen Dokumentation des Pakets `Debug.Trace` und in der [Haskoogle-Community](https://haskoogle.com/blog/2016/05/14/elevating-haskell-debugging/).

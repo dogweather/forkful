@@ -1,7 +1,7 @@
 ---
-title:                "发送基本认证的http请求"
-html_title:           "Bash: 发送基本认证的http请求"
-simple_title:         "发送基本认证的http请求"
+title:                "使用基本身份验证发送http请求"
+html_title:           "Bash: 使用基本身份验证发送http请求"
+simple_title:         "使用基本身份验证发送http请求"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "HTML and the Web"
@@ -10,41 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
+# Basic Authentication: 如何用Bash发送HTTP请求
 
-有时，我们需要向一个需要验证的网站发送 HTTP 请求。此时，我们可以使用基本身份验证来提供用户名和密码，并获得访问权限。
+## What & Why?
+通过Bash发送带有基本认证的HTTP请求是指在代码中使用Bash命令来发送一个带有基本认证信息的HTTP请求。程序员这样做的原因是为了在请求中加入认证信息，以便访问需要登录的网页或API。
 
-## 如何
+## How to:
+下面是一个用Bash发送带有基本认证HTTP请求的示例代码：
 
-我们可以使用 curl 命令来发送带有基本身份验证的 HTTP 请求。首先，使用 ```-u``` 参数来提供用户名和密码，然后指定请求的方法、URL 和其他选项。
+ ```
+curl -u username:password https://example.com/api/users
+```
+这个命令将向URL为"https://example.com/api/users"的API发送一个HTTP GET请求，并在其中包含通过认证的用户名和密码。如果认证成功，API将会返回请求的数据。
 
-例如，要获取 https://example.com 网站的内容，我们可以使用以下命令：
+### Sample Output:
+如果认证成功，API将会返回请求的数据，例如：
 
-```Bash
-curl -u username:password https://example.com
+```
+[
+    {
+        "id": 1,
+        "username": "JohnDoe",
+        "email": "john@example.com"
+    },
+    {
+        "id": 2,
+        "username": "JaneSmith",
+        "email": "jane@example.com"
+    }
+]
 ```
 
-这将返回网站的 HTML 内容，并使用提供的用户名和密码进行身份验证。
+## Deep Dive:
+### Historical Context:
+基本认证是HTTP协议中最早的认证方式之一，它的设计目的是为了解决HTTP请求中必须包含特定用户的凭据的问题。在早期的互联网应用中，它被广泛地使用。但是由于它的安全性较低，现在已被许多其他更安全的认证方式所取代。
 
-## 深入探讨
+### Alternatives:
+目前有许多其他的认证方式可供选择，比如OAuth、JWT等。它们都提供了更强的安全性和其他功能，适合不同的使用场景。
 
-基本身份验证使用的是 HTTP Header 字段。当我们发送带有基本身份验证的 HTTP 请求时，会添加一个名为 ```Authorization: Basic``` 的字段。这个字段的值是通过将用户名和密码进行 base64 编码来生成的。
+### Implementation Details:
+使用Bash发送带有基本认证HTTP请求的关键是要将认证信息包含在请求中的HTTP头部信息中，具体格式为：Authorization: Basic <base64 encoded username:password>。
 
-此外，如果将用户名或密码留空，那么只需要在 curl 命令中提供用户名或密码即可。例如，如果用户名为空，则可以使用以下命令：
-
-```Bash
-curl -u :password https://example.com
-```
-
-## 参考资料
-
-- [cURL官方文档 - 发送HTTP认证请求](https://curl.haxx.se/docs/manpage.html#-u)
-- [HTTP基本身份验证介绍](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Authentication#%E5%9F%BA%E6%9C%AC%E8%AE%A4%E8%AF%81%E6%96%B9%E6%B3%95)
-
-## 请参阅
-
-- [使用Bash进行思考的文档撰写者](https://rickyhsuanyuanli.gitbook.io/machine-learning-notes/1.-lang)
-
-## 注
-
-如果您在尝试发送带有基本身份验证的 HTTP 请求时遇到问题，请确保您提供的用户名和密码是正确的，并且使用正确的编码方式。
+## See Also:
+- [Bash官方文档](https://www.gnu.org/software/bash/)
+- [curl命令文档](https://www.man7.org/linux/man-pages/man1/curl.1.html)
+- [HTTP 1.0 RFC Section 11.1](https://tools.ietf.org/html/rfc1945#section-11.1)
+- [HTTP Basic Authentication](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Authentication#basic_authentication_scheme)

@@ -10,52 +10,62 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Чому
+Зачем и зачем?
 
- YAML - це формат файлу, який досить часто використовується для зберігання і обміну данними у багатьох програмах та розробці програмного забезпечення. Ця стаття допоможе вам дізнатись про базові концепції YAML та як використовувати його в своїх проектах на Clojure.
+YAML (YAML Ain't Markup Language) - це формат даних, який широко використовується у програмуванні для зберігання та обміну даними. Він є читабельним для людей та легко інтерпретованим для комп'ютерів, що робить його улюбленим серед програмістів. Робота з YAML дозволяє зручно створювати та організовувати дані, що досить часто виникає у різних проектах.
 
-## Як
-
-Основними структурами даних у YAML є масиви, асоціативні масиви та скалярні значення. Давайте розглянемо деякі приклади використання YAML у Clojure.
-
-### Створення асоціативного масиву:
+Як це зробити:
 
 ```Clojure
-;; Використовуємо конструктор "hash-map" для створення асоціативного масиву
-(def my-map (hash-map :key1 "значення1" :key2 "значення2"))
+(def data
+    {:person {:name "John"
+              :age 27
+              :occupation "developer"}})
+
+(require '[hara.data :as string])
+
+(string/to-data "person:
+  name: John
+  age: 27
+  occupation: developer")
+=> {:person {:name "John"
+             :age 27
+             :occupation "developer"}}
 ```
 
-### Додавання нового елементу до асоціативного масиву:
+Глибоке занурення:
+
+YAML був створений у 2001 році для заміни складної і нечитабельної форми XML. Його синтаксис надзвичайно простий та зрозумілий, що дозволяє людям та програмістам легко редагувати та використовувати дані без додаткових інструментів. Існують альтернативи YAML, такі як JSON та CSV, але YAML надає більшу гнучкість та читабельність.
 
 ```Clojure
-;; Використовуємо функцію "assoc" для додавання нового елементу до масиву
-(assoc my-map :key3 "значення3")
+(require '[clojure.data.yaml :as yaml])
+
+;; convert Clojure data to YAML string
+(def data
+    {:person {:name "John"
+              :age 27
+              :occupation "developer"}})
+
+(yaml/generate-string data)
+=> "person:
+      name: John
+      age: 27
+      occupation: developer"
+
+;; convert YAML string to Clojure data
+(def string "person:
+                name: Jane
+                age: 30
+                occupation: designer")
+
+(yaml/parse-string string)
+=> {:person {:name "Jane"
+             :age 30
+             :occupation "designer"}}
 ```
 
-### Отримання значення за ключем:
+Дивись також:
 
-```Clojure
-;; Використовуємо функцію "get" для отримання значення за ключем
-(get my-map :key2)
-```
+Для детальнішої інформації про роботу з YAML в Clojure рекомендується ознайомитись із документацією та прикладами за посиланням: https://github.com/ragnard/cljs-yaml
 
-### Перетворення YAML у структури даних Clojure:
-
-```Clojure
-;; Використовуємо бібліотеку "cheshire" для перетворення YAML у структури даних Clojure
-(require '[cheshire.core :as json])
-
-(-> "my_yaml_file.yaml"
-    slurp
-    (json/parse-string :key-fn keyword))
-```
-
-## Глибше
-
-YAML - це розширений формат для структурування та зберігання даних у зручному для читання та редагування вигляді. Детальніше про його синтаксис можна дізнатись у [офіційній документації](https://yaml.org/spec/1.2/spec.html). Також, у Clojure є багато інших бібліотек для роботи з YAML, наприклад [data.yaml](https://github.com/yogthos/data.yaml) та [yaml-clojure](https://github.com/lrhn/yaml-clojure).
-
-## Дивіться також
-
-[Офіційна документація Clojure](https://clojure.org/documentation)
-
-[Clojure Cookbook: Serializing Data to and from YAML](https://clojure.org/cookbook/serialization/yaml)
+Для порівняння різних форматів даних та їх використання в різних ситуаціях можна переглянути статтю за посиланням: https://www.smashingmagazine.com/2018/05/json-versus-xml-versus-yaml-which-is-the-best-serialization-format/

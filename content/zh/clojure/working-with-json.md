@@ -1,7 +1,7 @@
 ---
-title:                "使用json编程"
-html_title:           "Clojure: 使用json编程"
-simple_title:         "使用json编程"
+title:                "使用json进行编程"
+html_title:           "Clojure: 使用json进行编程"
+simple_title:         "使用json进行编程"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Data Formats and Serialization"
@@ -10,51 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
+什么是JSON？为什么程序员要使用它？
 
-在当今的软件开发中，JSON是一个非常普遍的数据交换格式。它具有简洁性和易于解析的特点，同时也被广泛地应用于Web应用程序和移动应用程序中。如果你想成为一名优秀的Clojure程序员，掌握JSON的使用是非常重要的。
+JSON（JavaScript Object Notation）是一种轻量级的数据交换格式，它被广泛用于在不同系统之间传输数据。程序员经常使用JSON来从服务器或其他系统中请求和接收数据。
 
-## 如何做
-
-在Clojure中处理JSON数据是非常简单的，因为它内置了一些功能强大的库。让我们来看一个简单的例子，假设我们有一个包含用户信息的JSON文件，我们想要从中获取用户名和电子邮件地址。首先，我们需要导入JSON库：
+如何使用JSON：
 
 ```Clojure
-(require '[clojure.data.json :as json])
+(require '[clj-http.client :as client])
+(require '[cheshire.core :as json])
+
+(def response (client/get "https://api.github.com/users/github"))
+
+(def user-info (json/parse-string (:body response)))
+
+(println "User's name: " (:name user-info))
+(println "User's bio: " (:bio user-info))
 ```
 
-接下来，我们使用`slurp`函数来读取JSON文件并将其转换为Clojure的数据结构：
+在这个示例中，我们使用了clj-http和cheshire这两个库来发送请求并解析返回的JSON数据。首先，我们使用clj-http来发出GET请求并获取响应。然后，我们使用cheshire的parse-string函数来将响应体转换为Clojure的map数据结构。最后，我们可以从map中提取出我们需要的数据，比如用户的名字和简介。
 
-```Clojure
-(def user-data (json/read-str (slurp "user.json")))
-```
+深入了解：
 
-现在我们可以使用Clojure的`get`函数来获取用户名和电子邮件地址：
+JSON起源于JavaScript语言，但现在已经成为一种跨语言通用的数据格式。除了Clojure，其他语言也有许多支持JSON的第三方库。另外，肯定有一些不同的方式来处理JSON，但上面提到的两个库是最常用的。如果你想进一步学习如何在Clojure中使用JSON，可以参考以下资源：
 
-```Clojure
-(def username (get user-data "username"))
-(def email (get user-data "email"))
-```
+- [clj-http官方文档](https://github.com/dakrone/clj-http)
+- [cheshire官方文档](https://github.com/dakrone/cheshire)
+- [Clojure中处理JSON的其他方法](https://stackoverflow.com/questions/14416587/how-to-handle-json-in-clojure)
 
-最后，我们可以打印出获取的值来确保它们是正确的：
+相关链接：
 
-```Clojure
-(println "Username: " username)
-(println "Email: " email)
-```
-
-运行以上代码，我们应该会得到以下输出：
-
-```Clojure
-Username: John
-Email: john@example.com
-```
-
-## 深入探讨
-
-Clojure中的json库不仅仅能够解析JSON数据，还能够将Clojure数据结构转换为JSON字符串。它还提供了一些有用的功能，比如可以自定义如何处理字符串、数字和空值等。你可以在[Clojure's json库官方文档](https://github.com/clojure/data.json)中找到更多详细的信息。
-
-## 参考资料
-
-- [Clojure's json库官方文档](https://github.com/clojure/data.json)
-- [Clojure特性指南: 处理JSON](https://clojure.org/guides/json)
-- [用Clojure处理JSON](https://medium.com/@scott_jensen/working-with-json-in-clojure-285ef0e10900)
+- [JSON官方文档](https://www.json.org/json-en.html)
+- [JSON - 维基百科](https://zh.wikipedia.org/zh-hans/JSON)

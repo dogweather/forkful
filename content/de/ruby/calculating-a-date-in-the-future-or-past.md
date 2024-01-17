@@ -1,7 +1,7 @@
 ---
-title:                "Berechnen eines Datums in der Zukunft oder Vergangenheit"
-html_title:           "Ruby: Berechnen eines Datums in der Zukunft oder Vergangenheit"
-simple_title:         "Berechnen eines Datums in der Zukunft oder Vergangenheit"
+title:                "Berechnung eines Datums in der Zukunft oder Vergangenheit"
+html_title:           "Ruby: Berechnung eines Datums in der Zukunft oder Vergangenheit"
+simple_title:         "Berechnung eines Datums in der Zukunft oder Vergangenheit"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Dates and Times"
@@ -10,54 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was & Warum?
+Das Berechnen eines Datums in der Zukunft oder Vergangenheit ist eine nützliche Fähigkeit für Programmierer, die es ermöglicht, Datumsmanipulationen in ihren Anwendungen durchzuführen. Indem sie ein Datum in der Zukunft oder Vergangenheit berechnen, können Programmierer beispielsweise Termine für Aufgaben oder Erinnerungen automatisch erstellen oder Daten auf bestimmte Zeiträume beschränken.
 
-Du hast dich vielleicht schon einmal gefragt, wie man in Ruby ein Datum in der Zukunft oder Vergangenheit berechnen kann. Es gibt viele Gründe, dies zu tun, wie zum Beispiel die Erstellung von Planungs-Tools, die Berechnung von Fristen oder das Hinzufügen von Datumsfunktionen zu deinen Programmen.
-
-## Wie geht man vor
-
-Um ein Datum in der Zukunft oder Vergangenheit zu berechnen, gibt es mehrere Schritte, die du befolgen musst:
-
-1. Importiere das `Date`-Modul in dein Ruby-Programm.
-2. Verwende die Methode `today` des `Date`-Moduls, um das aktuelle Datum zu erhalten.
-3. Verwende die Methode `+` oder `-` des `Date`-Objekts, um das gewünschte Datum in der Zukunft oder Vergangenheit zu berechnen.
-
-Schau dir diese Beispiele an:
-
+## Wie geht das?
 ```Ruby
-# Heutiges Datum abrufen
-today = Date.today
-# Ein Datum in der Zukunft berechnen (1 Woche später)
-future_date = today + 7
-# Ein Datum in der Vergangenheit berechnen (1 Woche vorher)
-past_date = today - 7
+require 'date'
 
-# Ausgabe des Ergebnisses
-puts "Heute: #{today}"
-puts "Zukünftiges Datum: #{future_date}"
-puts "Vergangenes Datum: #{past_date}"
+# Ein Datum in der Zukunft berechnen
+Date.today + 7
+
+# Ein Datum in der Vergangenheit berechnen
+Date.today - 30
 ```
 
-Das obige Programm wird folgende Ausgabe erzeugen:
+Das obige Beispiel verwendet die in Ruby integrierte `Date`-Klasse und die Methoden `today`, `+` und `-` um ein Datum in der Zukunft oder Vergangenheit zu berechnen. Durch die Verwendung von `require 'date'` wird die `Date`-Klasse in das laufende Programm geladen, falls dies nicht bereits geschehen ist. Die Methode `today` gibt das aktuelle Datum zurück, während `+` und `-` es erlauben, das Datum um eine bestimmte Anzahl von Tagen zu erweitern oder zu reduzieren.
 
-```
-Heute: 2021-08-08
-Zukünftiges Datum: 2021-08-15
-Vergangenes Datum: 2021-08-01
-```
+Die Ausgabe des obigen Codes würde z.B. "2021-07-14" für das Datum in der Zukunft (eine Woche nach dem heutigen Datum) und "2021-06-14" für das Datum in der Vergangenheit (30 Tage vor dem heutigen Datum) sein.
 
-## Tiefere Einblicke
+## Tiefergehende Info
+Das Berechnen von Datumsangaben ist eine nützliche Funktion für Programmierer, die seit langem existiert. Frühere Programmiersprachen wie Fortran und COBOL enthielten bereits Funktionen, die es ermöglichten, Datumsberechnungen durchzuführen. In Ruby sind weitere Möglichkeiten zur Manipulation von Datumswerten verfügbar, beispielsweise durch die Nutzung von Unix-Zeitstempeln oder durch die Verwendung von Bibliotheken wie `Chronic` und `Datejs`.
 
-Wenn du dich für weitere Details über die Berechnung von Datum in Ruby interessierst, hier sind ein paar zusätzliche Informationen:
-
-- Du kannst verschiedene Einheiten wie Tage, Wochen, Monate und Jahre verwenden, um ein Datum zu verändern. Zum Beispiel `today + 3` fügt 3 Tage zu `today` hinzu, während `today + 1.month` ein Monat zum Datum hinzufügt.
-- Du kannst auch Datums-Objekte miteinander vergleichen, um zu sehen, welches Datum später ist. Du kannst auch überprüfen, ob ein Datum vor oder nach einem bestimmten Datum liegt.
-- Du kannst das `strftime`-Methode verwenden, um das Datum in einem bestimmten Format auszugeben. Zum Beispiel `today.strftime("%d.%m.%Y")` gibt das Datum im Format "Tag.Monat.Jahr" aus.
-
-## Sieh auch
-
-Hier sind ein paar nützliche Links, die dir bei der Berechnung von Datum in Ruby helfen können:
-
-- [Ruby Date Dokumentation](https://ruby-doc.org/stdlib-2.7.2/libdoc/date/rdoc/Date.html)
-- [Ruby Date und Time Tutorial](https://www.tutorialspoint.com/ruby/ruby_date_time.htm)
-- [Praktische Ruby Methoden zur Datummanipulation](https://www.rubyguides.com/2015/09/ruby-time/)
+## Siehe auch
+- [Ruby-Dokumentation zur Date-Klasse](https://ruby-doc.org/stdlib/libdoc/date/rdoc/Date.html)
+- [Chronic-Ruby-Gem](https://github.com/mojombo/chronic)
+- [Datejs-Bibliothek](https://datejs.com/)

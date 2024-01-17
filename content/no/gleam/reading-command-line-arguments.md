@@ -10,45 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hvorfor
+## Hva & Hvorfor?
+Det å lese kommandolinjeargumenter er en viktig del av programmering, spesielt for å gjøre programmene våre mer fleksible. Med kommandolinjeargumenter kan vi gi inndata direkte til programmet vårt når vi kjører det, i stedet for å måtte endre koden for hver gang vi ønsker å endre inndata.
 
-Å lese kommandolinjeargumenter kan være en nyttig ferdighet å ha for utviklere som arbeider med terminalbaserte programmer eller scripts. Dette gjør at de kan tilpasse og kontrollere hvordan programmet deres fungerer uten å måtte endre selve koden.
-
-# Hvordan
-
-For å få tilgang til kommandolinjeargumenter i Gleam kan du bruke funksjonen `CommandLine.arguments()`, som gir deg en liste med alle argumentene som ble gitt da programmet ble kjørt.
+## Slik gjør du det:
+Vi kan lese kommandolinjeargumenter ved hjelp av Gleam sin `args` funksjon. Dette returnerer en liste med argumentene som ble gitt da vi kjørte programmet. La oss se på et eksempel:
 
 ```Gleam
-import gleam/cli
+// Sett variabel for kommandolinje-argumenter
+let args = args
 
-pub fn main() {
-  let arguments = CommandLine.arguments()
-  // gjør noe spennende med argumentene her
-}
+// Skriv ut alle argumentene
+IO.print("Kommandolinje-argumenter:")
+for arg in args do
+  IO.print(arg)
 ```
 
-La oss si at du kjører programmet ditt med `gleam run hello_world.gleam --name Bob`. Da vil `CommandLine.arguments()` returnere en liste med verdier `[hello_world.gleam, --name, Bob]`.
+Output av dette programmet når det kjøres med argumentene "hello" og "world" ville vært:
 
-# Deep Dive
-
-Det finnes også muligheter for å gi verdier til argumentene dine ved hjelp av flagg og navngitte argumenter. Dette kan gjøres ved å bruke `gleam/cli`-modulen og dens funksjoner som `get_flag()` og `get_named_arg()`.
-
-`get_flag()` brukes for flagg som ikke har noen verdi, for eksempel `--help`. Mens `get_named_arg()` brukes for å hente verdien til et navngitt argument, for eksempel `--name Bob`.
-
-For å bruke disse funksjonene må du først definere hvilke flagg og navngitte argumenter du forventer, som vist i eksempelet nedenfor.
-
-```Gleam
-import gleam/cli
-
-config fn main(flags, args) {
-  flags
-    | get_flag(_, "--help")
-    | get_named_arg(_, "--name", "Bob")
-  // gjør noe magisk med flagg og argumenter her
-}
+```
+Kommandolinje-argumenter:
+hello
+world
 ```
 
-# Se også
+## Dykk dypere:
+Kommandolinjer har vært en del av programmering siden de tidlige dagene, og det finnes flere måter å lese dem på. I tillegg til å bruke `args` funksjonen, kan vi også bruke `std.os` modulen for å få tilgang til operativsystemets kommandolinje-argumenter direkte.
 
-- [Gleam dokumentasjon](https://gleam.run/documentation/)
-- [Gleam Github-repositorium](https://github.com/gleam-lang/gleam)
+## Se også:
+For mer informasjon om Gleam sin `args` funksjon og andre nyttige funksjoner, sjekk ut Gleam sin offisielle dokumentasjon: https://gleam.run/documentation.

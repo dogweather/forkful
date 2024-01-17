@@ -10,44 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-One common task in programming is to get the current date. Whether you need to display the current date on a website or use it for data processing, knowing how to retrieve this information is essential for any programmer. In this article, we will explore the various methods to get the current date in C#.
+## What & Why?
 
-## How To
-To get the current date in C#, we can use the built-in `DateTime` class. This class provides us with methods and properties to work with dates and times. Let's take a look at some examples of how we can use this class to get the current date.
+In C#, as well as in many other programming languages, getting the current date and time is a common task. This function allows programmers to include dynamic and up-to-date information in their programs, such as timestamps or time-related calculations. 
 
-```C#
-// Get the current date and time
-DateTime now = DateTime.Now;
+## How to:
 
-// Get the current date without the time component
-DateTime today = DateTime.Today;
-```
-
-In the above examples, we use the `Now` and `Today` properties of the `DateTime` class to retrieve the current date. The `Now` property includes the time component, while the `Today` property returns only the date component with the time set to 12:00:00 AM.
-
-We can also customize the format of the date using the `ToString()` method and a format string. Here's an example:
+To get the current date and time in C#, you can use the `DateTime.Now` property. This will return a `DateTime` object with the current date and time. See the example below:
 
 ```C#
-// Get the current date in a specific format
-string formattedDate = now.ToString("MMM dd, yyyy");
-Console.WriteLine(formattedDate);
-// Output: Jan 15, 2021
+DateTime currentDate = DateTime.Now;
+Console.WriteLine(currentDate);
 ```
 
-In the above code, we use the `ToString()` method with a format string to specify the desired format for the date. In this case, we use the format string "MMM dd, yyyy" to get the month name, day, and year in a specific format.
+Output:
+```
+8/27/2021 2:30:56 PM
+```
 
-## Deep Dive
-Under the hood, the `DateTime` class uses the system clock to retrieve the current date and time. This means that the date returned by the `Now` and `Today` properties will be the same as the system date and time on the machine where the code is running.
+You can also format the output using the `ToString()` method and specifying a format string. For example:
 
-It's worth noting that the `DateTime` class also has a `UtcNow` property, which returns the current date and time in Coordinated Universal Time (UTC). This can be useful when working with international applications or when dealing with time zones.
+```C#
+DateTime currentDate = DateTime.Now;
+Console.WriteLine(currentDate.ToString("MM/dd/yyyy"));
+```
 
-Additionally, the `DateTime` class has various methods and properties to perform operations on dates. For example, you can use the `AddDays()` method to add a certain number of days to the current date, or the `DayOfWeek` property to get the day of the week for a specific date.
+Output:
+```
+08/27/2021
+```
 
-## See Also
-- [DateTime.Now Property (System)](https://docs.microsoft.com/en-us/dotnet/api/system.datetime.now?view=net-5.0)
-- [DateTime.Today Property (System)](https://docs.microsoft.com/en-us/dotnet/api/system.datetime.today?view=net-5.0)
-- [DateTime.UtcNow Property (System)](https://docs.microsoft.com/en-us/dotnet/api/system.datetime.utcnow?view=net-5.0)
-- [DateTime Struct (System)](https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=net-5.0)
+## Deep Dive:
 
-By now, you should have a good understanding of how to get the current date in C# using the `DateTime` class. Whether you need to display the date or perform operations on it, the `DateTime` class has you covered. Happy coding!
+Before the introduction of `DateTime` in .NET Framework 1.0, managing date and time in applications was a complex and error-prone task. The `DateTime` class provides a simple and reliable way to work with dates and times in C#.
+
+An alternative way to get the current date and time is by using the `DateTime.UtcNow` property, which returns the current date and time in UTC format. This can be useful for applications that need to be time-zone independent.
+
+The implementation of `DateTime.Now` uses the system clock to retrieve the current date and time. This means that if the system clock is changed, the returned value will also change.
+
+## See Also:
+
+- [DateTime.Now Property - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/api/system.datetime.now?view=net-5.0)
+- [Working with Dates and Times in C# - codeburst](https://codeburst.io/working-with-dates-and-times-in-c-599ba50ee9d3)
+- [DateTimeOffset Structure - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/api/system.datetimeoffset?view=net-5.0)

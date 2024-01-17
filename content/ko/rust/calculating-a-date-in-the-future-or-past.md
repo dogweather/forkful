@@ -1,7 +1,7 @@
 ---
-title:                "미래 또는 과거 날짜 계산하기"
-html_title:           "Rust: 미래 또는 과거 날짜 계산하기"
-simple_title:         "미래 또는 과거 날짜 계산하기"
+title:                "미래나 과거에서 날짜 계산하기"
+html_title:           "Rust: 미래나 과거에서 날짜 계산하기"
+simple_title:         "미래나 과거에서 날짜 계산하기"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Dates and Times"
@@ -10,59 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+#오늘 무슨 날짜야? 날짜 계산을 배우자!
 
-예를 들어, 생일이나 여행을 계획할 때 앞뒤로 날짜를 계산하는 경우가 있을 것입니다. 또는 현재 날짜를 기반으로 특정 기간 후의 날짜를 계산해야 할 때가 있을 수 있습니다. 이번에는 Rust를 사용하여 미래나 과거의 날짜를 계산하는 방법에 대해 알아보겠습니다.
+## 무엇인가요?
+우선, 날짜 계산이 무엇인지 알아보겠습니다. 여러분들이 어떤 날짜를 입력하면, 그 날짜의 미래 또는 과거의 날짜를 계산해주는 것을 말해요. 이 작업을 프로그래머들은 자주 사용하는데, 예를 들어서 어떤 이벤트를 몇 일 후에 발생시키고 싶을 때나, 어떤 데이터를 정해진 날짜에 만료되게 하기 위해서 등등 많은 경우에 사용하죠. 고맙게도 러스트(Rust)에서는 이 작업을 쉽게 할 수 있어요!
 
-## 방법
+## 어떻게 하나요?
+자, 이제 직접 코드를 작성해보겠습니다! 이번에는 미래의 날짜를 계산하는 예제를 살펴볼 거예요. 아래에 보이는 코드를 그대로 따라하며 실행해보세요.
 
-우선, 계산에 필요한 라이브러리를 가져와야 합니다. Rust에서는 `chrono` 라이브러리를 사용하면 됩니다. 먼저 해당 라이브러리를 `Cargo.toml`에 추가해 주세요.
-```Rust
-[dependencies]
-chrono = "0.4.19"
 ```
-
-그리고 `main.rs` 파일에서 해당 라이브러리를 가져옵니다.
-```Rust
-use chrono::{Local, DateTime, Duration};
-```
-
-이제 `DateTime` 구조체를 사용하여 현재 날짜와 시간을 가져옵니다.
-```Rust
-let now = Local::now();
-```
-
-다음으로는 `Duration`을 사용하여 시간 간격을 계산합니다. 예를 들어, 3일 후의 날짜를 계산하는 경우 코드는 다음과 같습니다.
-```Rust
-let future_date = now + Duration::days(3);
-```
-
-여기서 중요한 점은 미래 날짜를 계산할 때는 `+` 연산자를 사용하고, 과거 날짜를 계산할 때는 `-` 연산자를 사용한다는 것입니다.
-
-아래는 전체 코드와 실행 결과입니다.
-```Rust
-use chrono::{Local, DateTime, Duration};
-
-fn main() {
+Rust fn main() {
+    use chrono::{Duration, Local, DateTime};
     let now = Local::now();
-    println!("현재 날짜와 시간: {}", now);
-
-    let future_date = now + Duration::days(3);
-    println!("3일 후 날짜: {}", future_date);
+    let future_date = now + Duration::days(7);
+    println!("In one week, it will be {}", future_date.format("%B %d, %Y"));
 }
 ```
 
-실행 결과는 다음과 같습니다.
-```bash
-현재 날짜와 시간: 2021-11-01T10:30:00.123456789+09:00
-3일 후 날짜: 2021-11-04T10:30:00.123456789+09:00
-```
+위 코드를 실행하면 "In one week, it will be [날짜]" 라는 메시지가 출력될 거예요. 여기서 [날짜] 자리에는 현재 날짜로부터 일주일 뒤의 날짜가 출력될 거예요. 이처럼 러스트에서는 날짜 계산을 위해 크로노 (chrono)라는 라이브러리를 사용합니다.
 
-## 딥 다이브
+## 깊이 파고들어보기
+날짜 계산은 오래 전부터 컴퓨터 프로그래밍에서 매우 중요한 역할을 하고 있었어요. 현재는 우리가 흔히 사용하는 그레고리력(calendar)을 기반으로 날짜를 계산하기 때문에, 이 또한 매우 오래된 역사를 가지고 있어요. 러스트 이외에도 파이썬(Python)이나 자바(Java) 등 다른 프로그래밍 언어에서도 날짜 계산을 위한 다양한 라이브러리가 있습니다. 그리고 날짜 계산을 위해 다양한 알고리즘과 방법들이 개발되었는데, 이 역시 프로그래밍을 배울 때 중요한 부분 중 하나입니다.
 
-`DateTime` 구조체에는 다양한 메서드가 있어서 우리가 원하는 날짜와 시간을 계산할 때 유용합니다. 예를 들어, `Duration`만큼의 시간 간격을 뺀 날짜를 계산하는 메서드는 `sub`이며, `DateTime` 타입을 `&'a DateTime<Local>`와 같은 형태로 받아들입니다. 또는 `DateTime` 타입을 `format()` 메서드를 사용하여 원하는 형식으로 출력할 수도 있습니다.
+## 더 알아보기
+날짜 계산에 대해 더 알고 싶다면, 아래의 링크들을 참고해보세요!
 
-## See Also
-
-- [Rust 공식 홈페이지](https://www.rust-lang.org/ko)
-- [Rust Cookbook: 날짜 및 시간 계산하기](https://rust-lang-nursery.github.io/rust-cookbook/datetime.html)
+- [Chrono documentation](https://docs.rs/chrono/latest/chrono/)
+- [History of calendars](https://www.timeanddate.com/calendar/info.html)
+- [Python datetime library](https://docs.python.org/3/library/datetime.html)
+- [Java Calendar class](https://docs.oracle.com/javase/8/docs/api/java/util/Calendar.html)

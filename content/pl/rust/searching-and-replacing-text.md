@@ -1,7 +1,7 @@
 ---
-title:                "Wyszukiwanie i zamienianie tekstu"
-html_title:           "Rust: Wyszukiwanie i zamienianie tekstu"
-simple_title:         "Wyszukiwanie i zamienianie tekstu"
+title:                "Wyszukiwanie i zastępowanie tekstu"
+html_title:           "Rust: Wyszukiwanie i zastępowanie tekstu"
+simple_title:         "Wyszukiwanie i zastępowanie tekstu"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -10,54 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co & Dlaczego?
 
-Zastąpienie tekstu jest częstym zadaniem podczas programowania. Może to być konieczne, gdy chcemy zmienić jakiś wyraz lub frazę w wielu miejscach w naszym kodzie lub plikach. Dzięki narzędziom takim jak Rust możemy wykonać to szybko i bezbłędnie, oszczędzając nam czas i wysiłek.
+Wyszukiwanie i wymienianie tekstu jest jednym z podstawowych zadań każdego programisty, które może być wymagane podczas tworzenia oprogramowania. Polega to na wyszukiwaniu określonego ciągu znaków w tekście i zastępowaniu go innym, co pozwala na automatyczne modyfikowanie kodu lub dokumentów.
 
-## Jak to zrobić
+## Jak to zrobić?
 
-Zacznijmy od zaimportowania biblioteki 'regex' w naszym pliku Rust:
+Rust ma wbudowane funkcje do wyszukiwania i zastępowania tekstu, dzięki którym zadanie to staje się łatwe i efektywne. Oto prosty przykład kodu, który wyszukuje i zastępuje tekst w zmiennej ```my_string```:
+
 ```Rust
-use regex::Regex;
-```
-Następnie, przygotujmy nasz tekst, w którym chcemy dokonać zmian:
-```Rust 
-let text = "Witaj, świecie!";
-```
-Aby wykonać wyszukiwanie i zamianę tekstu, musimy określić wzorzec wyszukiwania oraz tekst, który będzie zastąpiony:
-```Rust
-let wzorzec = Regex::new("świecie").unwrap();
-let nowy_tekst = wzorzec.replace(text, "Rusty świat").unwrap();
-```
-Warto zauważyć, że użyliśmy metody `unwrap()` na końcu każdego wywołania, aby obsłużyć potencjalne błędy. W tym przykładzie, zostanie wygenerowany nowy tekst: "Witaj, Rusty świat!".
+let my_string = "Hello World!";
+let replaced_string = my_string.replace("World", "Poland");
 
-Możemy również zastosować zmienne do naszego wzorca wyszukiwania, np. jeśli chcielibyśmy zmienić tylko pierwsze wystąpienie danego tekstu, które będzie zaczynało się dużą literą, możemy użyć następującego wzorca:
-```Rust
-let wzorzec = Regex::new("[^A-Z]+").unwrap(); //zastąp wszystkie znaki do pierwszej wielkiej litery
-let nowy_tekst = wzorzec.replace(text, "Rusty").unwrap();
+println!("{}", replaced_string);
 ```
-Oczywiście, istnieje wiele innych możliwości związanych z wyszukiwaniem i zastępowaniem tekstu w Rust. Zachęcamy do zapoznania się z dokumentacją biblioteki `regex`, aby poznać więcej opcji i sposobów jej wykorzystania.
+
+To wydrukuje ```Hello Poland!``` w konsoli.
 
 ## Głębsza analiza
 
-W bibliotece `regex` dostępne są liczne funkcje, które pozwalają na precyzyjne i efektywne wyszukiwanie i zastępowanie tekstu. Na przykład, możemy użyć operatora "i" na końcu naszego wzorca, aby wyłączyć czułość na wielkość liter:
-```Rust
-let wzorzec = Regex::new("świecie").unwrap(); //jest czuły na wielkość liter
-let nowy_tekst = wzorzec.replace(text, "Rusty świat").unwrap();
-println!("{}", nowy_tekst); //Witaj, Rusty świat!
+Wyszukiwanie i zastępowanie tekstu jest ważnym elementem w wielu językach programowania i narzędziach, które są wykorzystywane w codziennej pracy programisty. Niektóre z alternatywnych sposobów na to zadanie to użycie wyrażeń regularnych lub zastosowanie biblioteki do automatyzacji tego procesu. W Rust, funkcja do zastępowania tekstu jest częścią standardowej biblioteki i jest często wykorzystywana przez programistów do łatwego modyfikowania tekstu w plikach źródłowych.
 
-let wzorzec = Regex::new("(?i)świecie").unwrap(); //nieczuły na wielkość liter
-let nowy_tekst = wzorzec.replace(text, "Rusty świat").unwrap();
-println!("{}", nowy_tekst); //Witaj, Rusty świat!
-```
-Ponadto, biblioteka `regex` oferuje specjalne sekwencje, które można użyć w naszych wzorcach. Na przykład, sekwencja `\d` odpowiada dowolnej cyfrze, a sekwencja `\w` odpowiada dowolnej literze lub cyfrze. Możemy również użyć sekwencji `\s` do zastąpienia białych znaków, takich jak spacja lub tabulator. Przykładowo:
-```Rust
-let wzorzec = Regex::new("\\d+").unwrap();
-let nowy_tekst = wzorzec.replace("Witaj, 123!", "Rusty").unwrap();
-println!("{}", nowy_tekst); //Witaj, Rusty!
-```
+## Zobacz także
 
-## Zobacz też
+Dla więcej informacji o funkcji wyszukiwania i zastępowania tekstu w Rust, zapoznaj się z dokumentacją oficjalnej strony języka Rust: https://doc.rust-lang.org/std/string/struct.String.html#method.replace
 
-- [Dokumentacja biblioteki `regex`](https://docs.rs/regex/1.4.3/regex/)
-- [Oficjalna strona
+Więcej o wyrażeniach regularnych i ich zastosowaniach można przeczytać w artykule na temat tego tematu: https://www.regular-expressions.info/

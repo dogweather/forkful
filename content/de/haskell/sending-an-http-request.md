@@ -1,7 +1,7 @@
 ---
-title:                "Versenden einer HTTP Anfrage"
-html_title:           "Haskell: Versenden einer HTTP Anfrage"
-simple_title:         "Versenden einer HTTP Anfrage"
+title:                "Das Senden einer http-Anfrage"
+html_title:           "Haskell: Das Senden einer http-Anfrage"
+simple_title:         "Das Senden einer http-Anfrage"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "HTML and the Web"
@@ -10,34 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum 
-Warum sollte jemand eine HTTP-Anfrage senden wollen? Es gibt viele Gründe, aber einer der häufigsten ist die Interaktion mit Web-APIs. Durch das Senden von HTTP-Anfragen können wir Daten von anderen Servern abrufen und mit ihnen interagieren, was für viele Anwendungen unerlässlich ist.
+## Was & Warum?
+Das Absenden einer HTTP-Anfrage ist ein grundlegender Prozess in der Webprogrammierung, bei dem ein Computer eine Anfrage an einen Server sendet, um eine Ressource abzurufen oder zu modifizieren. Programmierer nutzen HTTP-Anfragen, um Daten von APIs zu erhalten, mit Webbrowsern zu interagieren und vieles mehr.
 
-## Wie geht es
-Um eine HTTP-Anfrage in Haskell zu senden, können wir das "http-client" Paket verwenden. Zuerst müssen wir das Paket importieren: 
-```Haskell
-import Network.HTTP.Client
-```
-Als nächstes definieren wir eine `Request` variable, die die URL enthält, an die wir die Anfrage senden möchten:
-```Haskell
-request <- parseRequest "https://www.beispiel.com"
-```
-Dann können wir die Anfrage mit der `httpLbs` Funktion ausführen. Diese Funktion führt die Anfrage aus und gibt die Antwort als `Response` zurück:
-```Haskell
-response <- httpLbs request
-```
-Schließlich können wir auf die verschiedenen Informationen in der Antwort zugreifen, z.B. den Statuscode, die Header und den Body:
-```Haskell
-putStrLn $ "Status Code: " ++ show (responseStatusCode response)
-putStrLn $ "Header: " ++ show (responseHeaders response)
-putStrLn $ "Body: " ++ show (responseBody response)
-```
-Wenn wir diese Beispiele ausführen, sollten wir eine Antwort von der Beispiel-URL erhalten. 
+## So geht's:
+Um eine HTTP-Anfrage in Haskell zu senden, müssen wir das `Network.HTTP`-Paket importieren. Dann können wir die `simpleHTTP`-Funktion verwenden, um eine Anfrage an eine URL zu senden und die Antwort als Objekt zu erhalten.
 
-## Tiefer Tauchen
-Wenn Sie sich noch näher mit HTTP-Anfragen in Haskell befassen möchten, können Sie die Dokumentation des "http-client" Pakets durchlesen oder sich mit anderen Paketen und Bibliotheken auseinandersetzen, die das Senden von HTTP-Anfragen erleichtern, wie z.B. "wreq" oder "webcrank". Sie können auch mehr über die verschiedenen HTTP-Methoden und -Codes erfahren, um ein besseres Verständnis dafür zu bekommen, wie HTTP-Anfragen und -Antworten funktionieren.
+```Haskell
+-- importieren des `Network.HTTP` Pakets
+import Network.HTTP
 
-## Siehe auch
-- Dokumentation des "http-client" Pakets: https://hackage.haskell.org/package/http-client
-- Dokumentation des "wreq" Pakets: https://hackage.haskell.org/package/wreq
-- Dokumentation des "webcrank" Pakets: https://hackage.haskell.org/package/webcrank
+-- senden einer GET-Anfrage an die URL "http://www.google.com"
+simpleHTTP (getRequest "http://www.google.com") >>= getResponseBody
+```
+
+Die obige Codezeile würde die HTML-Seite von Google zurückgeben. Wir können auch eine benutzerdefinierte Anfrage erstellen, indem wir verschiedene Funktionen wie `addRequestHeader` verwenden, um Header hinzuzufügen, oder `setRequestBody` für die POST-Anfrage.
+
+## Tiefere Einblicke:
+HTTP wurde in den 1990er Jahren entwickelt und ist weiterhin das am häufigsten verwendete Protokoll für die Kommunikation im Web. Eine alternative Option dazu ist HTTPS, welches eine verschlüsselte Verbindung bietet. Haskell bietet auch das `Network.HTTPs`-Paket für sichere Anfragen.
+
+Bei der Implementierung einer HTTP-Anfrage in Haskell wird die `IO`-Monade verwendet, da das Senden einer Anfrage eine Operation ist, von der externer Code und Zustand abhängen können. Zudem gibt es auch andere nützliche Funktionen in `Network.HTTP`, wie z.B. `urlEncode`.
+
+## Siehe auch:
+- [Haskell Dokumentation zum Network.HTTP-Paket](https://www.stackage.org/haddock/ltl-tutorial/Network-HTTP.html)
+- [HTTP vs. HTTPS: Was ist der Unterschied?](https://www.cloudflare.com/learning/ssl/http-vs-https/)
+- [Einführung in die Monaden in Haskell](https://en.wikibooks.org/wiki/Haskell/Understanding_monads)

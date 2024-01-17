@@ -1,7 +1,7 @@
 ---
-title:                "HTTPリクエストの送信"
-html_title:           "Javascript: HTTPリクエストの送信"
-simple_title:         "HTTPリクエストの送信"
+title:                "「HTTPリクエストの送信」"
+html_title:           "Javascript: 「HTTPリクエストの送信」"
+simple_title:         "「HTTPリクエストの送信」"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "HTML and the Web"
@@ -10,23 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
-HTTPリクエストを送信する理由は、ウェブ開発において欠かせないものです。ウェブサイトやアプリケーションは、クライアントとサーバーがデータのやりとりをすることで機能します。HTTPリクエストは、そのデータのやりとりを可能にする重要な手段です。
+## 何 & なぜ?
 
-## 方法
-HTTPリクエストを送信する方法はいくつかありますが、ここではJavascriptを使用した方法を紹介します。まずは、`XMLHttpRequest`オブジェクトを使用してリクエストを作成します。次に、`open()`メソッドを使用してリクエストの種類や送信先のURLを指定し、`send()`メソッドでリクエストを送信します。例えば、以下のようになります。
+HTTPリクエストを送信することとは、Webブラウザやアプリケーションがサーバーに情報を要求することを意味します。プログラマーがHTTPリクエストを送信する目的は、ウェブサイトやアプリケーションを動的に作成するために必要なデータや機能を取得することです。
 
-```Javascript
-const request = new XMLHttpRequest();
-request.open('GET', 'https://example.com/api/users');
-request.send();
+## 方法:
+
+以下のようなコードを使用して、JavascriptでHTTPリクエストを送信することができます。
+
+```
+var xhr = new XMLHttpRequest();
+xhr.open('GET', 'https://example.com/api/data', true);
+xhr.send();
+
 ```
 
-上記の例では、`GET`メソッドを使用して`https://example.com/api/users`へのリクエストを送信しています。`GET`以外にも、`POST`や`PUT`などのメソッドを使用することもできます。また、応答を受け取るためには、`onload`イベントを使用したり、`send()`メソッドの引数としてコールバック関数を設定することもできます。
+上記のコードでは、新しいXMLHttpRequestオブジェクトを作成し、GETリクエストを送信しています。また、リクエストURLや非同期処理の使用方法も示しています。
 
-## 深堀り
-HTTPリクエストには、さまざまな種類があります。例えば、単純なGETリクエストの他にも、認証付きのリクエストやフォームデータを含むPOSTリクエストなどがあります。また、リクエストのヘッダーには、要求内容やクライアントの情報などを含めることもできます。さらに、HTTPリクエストの内容を確認するために、開発者ツールやデバッガーを使用することもできます。
+## 深堀り:
 
-See Also
-- [XMLHttpRequest - MDN Web Docs](https://developer.mozilla.org/ja/docs/Web/API/XMLHttpRequest)
-- [HTTP リクエストを送信する方法 - MDN Web Docs](https://developer.mozilla.org/ja/docs/Learn/JavaScript/Client-side_web_APIs/Fetching_data)
+HTTPリクエストには、HTMLフォームやAjaxなどの代替手段も存在します。また、リクエストヘッダーやレスポンスコードなど、詳細な実装方法や制御方法もあります。HTTPリクエストは、Web開発において重要な概念であり、適切に理解することが必要です。
+
+## 関連リンク:
+
+- [HTTP リクエストとは](https://developer.mozilla.org/ja/docs/Web/HTTP/Overview#request_messages)
+- [XMLHttpRequest オブジェクト](https://developer.mozilla.org/ja/docs/Web/API/XMLHttpRequest)
+- [AJAX 入門](https://www.w3schools.com/xml/ajax_intro.asp)

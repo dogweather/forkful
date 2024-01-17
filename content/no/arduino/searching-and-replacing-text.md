@@ -10,61 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
-Hvorfor skulle du trenge å søke og erstatte tekst i din Arduino kode? Vel, det er faktisk et nyttig verktøy hvis du ønsker å gjøre masseendringer i koden din. Det kan også være nyttig for å endre f.eks. pin-numre eller verdier i variabler på en enkel måte.
+### Hva og hvorfor?
+Å søke og erstatte tekst er en vanlig oppgave for programmerere. Dette innebærer å finne et bestemt uttrykk eller ord i en tekst og erstatte det med et annet. Dette kan være nyttig for å rette opp feil, endre i koden eller gjøre omfattende endringer i en fil.
 
-## Hvordan
-For å søke og erstatte tekst i Arduino, kan du bruke den innebygde funksjonen "Find and Replace". Dette gjøres ved å først åpne Arduino-programvaren og deretter trykke på "Ctrl + F" (for Windows) eller "Cmd + F" (for Mac). Dette vil åpne et søkefelt der du kan skrive inn teksten du ønsker å søke etter i koden din.
+## Hvordan:
+For å søke og erstatte tekst på en effektiv måte i Arduino, kan du bruke funksjonen "replace" og "replaceAll" fra String-objektet. Se eksemplene nedenfor for å se hvordan dette fungerer.
 
-```Arduino
-#define LED_PIN 5
-void setup(){
-  pinMode(LED_PIN, OUTPUT);
-}
-void loop(){
-  digitalWrite(LED_PIN, HIGH);
-  delay(1000);
-  digitalWrite(LED_PIN, LOW);
-  delay(1000);
-}
+```
+// Eksempel 1:
+String tekst = "Hei verden!";
+tekst.replace("verden", "univers");
+Serial.println(tekst);
+// Output: Hei univers!
+
+// Eksempel 2:
+String telefonnummer = "888-888-8888";
+String nyttNummer = telefonnummer.replaceAll("-", "");
+Serial.println(nyttNummer);
+// Output: 8888888888
 ```
 
-For eksempel, hvis vi ønsker å endre LED-pinnen fra 5 til 6, kan vi søke etter "LED_PIN 5" og erstatte det med "LED_PIN 6". Det vil se slik ut:
+## Dypdykk:
+I eldre versjoner av Arduino var det vanlig å bruke funksjoner som "strreplace" eller "strtok" for å søke og erstatte tekst. Disse er fortsatt tilgjengelige, men det anbefales å bruke "replace" og "replaceAll" da de er mer effektive og enklere å bruke.
 
-```Arduino
-#define LED_PIN 6
-void setup(){
-  pinMode(LED_PIN, OUTPUT);
-}
-void loop(){
-  digitalWrite(LED_PIN, HIGH);
-  delay(1000);
-  digitalWrite(LED_PIN, LOW);
-  delay(1000);
-}
-```
+Det finnes også flere biblioteker tilgjengelig for å håndtere søking og erstatting av tekst, som for eksempel "ArduinoStrings", "StringMap" og "Festring".
 
-Vi kan også bruke "Find and Replace" til å endre verdien i en variabel. La oss si at vi ønsker å endre delay-verdien i koden vår fra 1000 millisekunder til 500 millisekunder. Vi søker da etter "delay(1000)" og erstatter det med "delay(500)". Koden vil da se slik ut:
+Det er også verdt å merke seg at å bruke replace-funksjonene på store tekstfiler kan være tidskrevende og derfor ikke anbefalt. Det kan være bedre å bruke tekstbehandlingsverktøy som grep eller sed for å håndtere store filer.
 
-```Arduino
-#define LED_PIN 6
-void setup(){
-  pinMode(LED_PIN, OUTPUT);
-}
-void loop(){
-  digitalWrite(LED_PIN, HIGH);
-  delay(500);
-  digitalWrite(LED_PIN, LOW);
-  delay(500);
-}
-```
-
-## Dypdykk
-Det er noen ting å være oppmerksom på når du bruker "Find and Replace" i Arduino-koden din. Det er viktig å sørge for at du kun erstatter det du ønsker å endre og ikke noe annet i koden. Det kan være lurt å teste koden din etterpå for å være sikker på at alt fortsatt fungerer som det skal.
-
-Du bør også være nøye med kassebruk (store og små bokstaver) når du søker og erstatter tekst. Arduino er følsom for kassebruk og vil ikke gjenkjenne ord som er skrevet på feil måte.
-
-## Se også
-- [Arduino offisiell nettside](https://www.arduino.cc/)
-- [Offisiell Arduino Forum](https://forum.arduino.cc/)
-- [Arduino dokumentasjon](https://www.arduino.cc/reference/en/)
+## Se også:
+- [Arduino referansedokumentasjon for String-objekt](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/replace/)
+- [ArduinoStrings bibliotek](https://github.com/JChristensen/ArduinoString)
+- [StringMap bibliotek](https://github.com/millerlp/ArduinoStringMap)
+- [Festring bibliotek](https://github.com/Winterland1989/Festring)

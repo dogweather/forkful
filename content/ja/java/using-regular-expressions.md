@@ -1,7 +1,7 @@
 ---
-title:                "正規表現の使用"
-html_title:           "Java: 正規表現の使用"
-simple_title:         "正規表現の使用"
+title:                "正規表現を使用する"
+html_title:           "Java: 正規表現を使用する"
+simple_title:         "正規表現を使用する"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Strings"
@@ -10,41 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+## 何 & なぜ?
 
-正規表現を使用する理由はたくさんありますが、一番の理由はデータのパターンを効率的にマッチングできることです。これにより、大量のデータを手動で処理する必要がなくなり、時間の節約につながります。
+正規表現を使うことは、文字列のパターンを検索や置換することができるプログラミングの手法です。プログラマーは、効率的に大量のテキストデータを処理するために正規表現を使用します。
 
-## 使い方
+## 方法:
 
-正規表現を使用するには、まず ```java java.util.regex``` パッケージをインポートします。次に、パターンを定義し、マッチしたい文字列と比較します。
-
-```java
-import java.util.regex.*;
-
-String str = "今日の天気は晴れです";
-String pattern = ".*晴れ.*"; // マッチしたいパターンを定義する
-Pattern p = Pattern.compile(pattern);
-Matcher m = p.matcher(str);
-if (m.find()) { // マッチしたらtrueを返す
-    System.out.println("天気が晴れです！");
-} else {
-    System.out.println("天気が晴れではありません。");
+```Java
+// 文字列の中から特定の単語を検索する例
+String str = "これはサンプルテキストです。";
+if(str.matches(".*サンプル.*")) {
+    System.out.println("サンプルが見つかりました。");
 }
 ```
 
-上記のコードでは、パターン ```.*晴れ.*``` が文字列にマッチしているかどうかを確認しています。 ```.*``` は任意の文字列を表し、その前後に ```晴れ``` という文字列があるかどうかをチェックします。もしマッチしていれば、```天気が晴れです！``` というメッセージが出力されます。
+```Java
+// 正規表現を使って文字列を置換する例
+String str = "Hello, World!";
+str = str.replaceAll("World", "Universe");
+System.out.println(str);
+// 出力: Hello, Universe!
+```
 
-複雑なパターンを定義することも可能です。例えば、電話番号の形式をチェックする場合、```[0-9]{2,4}-[0-9]{3,4}-[0-9]{4}``` というパターンを定義し、それにマッチするかどうかを確認します。詳しくは「深堀」セクションで説明します。
+## 深堀り:
 
-## 深堀
+1. 正規表現は、1960年代に開発されたプログラミング言語の一つであるPerlに由来します。
+2. 正規表現に代わる手法として、文字列操作やパターンマッチングの機能を提供するStringクラスのメソッドを使用する方法もあります。
+3. 正規表現は、Javaで "java.util.regex" パッケージをインポートして使用することができます。
 
-正規表現はテキスト内の指定したパターンを検索するための特別な文字列です。基本的には、任意の文字を表す「ワイルドカード」や特定の文字を指定する「キャラクタークラス」を使用して、パターンを定義します。例えば、```.*``` は任意の文字列を表し、```[a-zA-Z]``` はアルファベットの小文字と大文字を指定します。詳しい正規表現のルールについては、以下のリンクを参考にしてください。
+## 関連リンク:
 
-- [正規表現チュートリアル](https://www.ntu.edu.sg/home/ehchua/programming/howto/Regexe.html)
-- [Javaの正規表現について](https://docs.oracle.com/javase/tutorial/essential/regex/index.html)
-
-## 関連リンク
-
-- [Java正規表現リファレンス (Oracle)](https://docs.oracle.com/javase/jp/6/api/java/util/regex/Pattern.html)
-- [正規表現を使用したテキスト処理 (JavaMagazine)](https://www.javamagazine.mozaicreader.com/JulAug2018/Launch.action#article-id=63425)
-- [練習用の正規表現サイト (Regex101)](https://regex101.com/)
+- [Javaで正規表現を使用する方法](https://docs.oracle.com/javase/jp/7/docs/api/java/util/regex/Pattern.html)
+- [正規表現のパターンをチェックするオンラインツール](https://regex101.com/)

@@ -10,58 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+## O que e Porque?
 
-Ler arquivos de texto é uma tarefa comum na programação, seja para extrair informações de um documento ou para processar dados de entrada. Aprender a ler arquivos de texto em Gleam pode expandir suas habilidades de programação e permitir que você trabalhe com diferentes tipos de dados.
+Ler um arquivo de texto simplesmente significa ler o conteúdo de um arquivo de texto em um programa de computador. Os programadores frequentemente precisam ler arquivos de texto para obter informações armazenadas neles, como configurações ou dados para processamento.
 
-## Como Fazer
+## Como fazer:
 
-A seguir, mostraremos como ler um arquivo de texto passo a passo com exemplos de código Gleam e a saída correspondente. Primeiro, você precisará definir um tipo para representar o conteúdo do arquivo:
+Você pode facilmente ler um arquivo de texto em Gleam usando a função `File.read` e passando o caminho do arquivo como um argumento. Aqui está um exemplo simples:
 
-```Gleam
-type FileContent {
-  lines: List(String)
-}
+```gleam
+let resultado = File.read("caminho/do/arquivo.txt")
 ```
 
-Em seguida, importe o módulo `gleam/fs` para acessar as funções de leitura de arquivos:
+O conteúdo do arquivo será armazenado na variável `resultado`, que pode ser usada mais tarde no seu programa.
 
-```Gleam
-import gleam/fs
+## Mergulho Profundo:
 
-pub fn read_file(path: String) -> FileContent {
-  let result = fs.read_file(path)
+A leitura de arquivos de texto é uma tarefa comum em programação e está presente em muitas linguagens de programação. Alternativas ao Gleam incluem Rust e Elixir, que também têm funções para ler arquivos de texto.
 
-  case result {
-    Ok(contents) -> FileContent { lines: String.split("\n", contents) }
-    Error(err) -> panic(err)
-  }
-}
-```
+A implementação de `File.read` em Gleam utiliza as bibliotecas padrão do sistema operacional para realizar a leitura do arquivo. Isso significa que a função é altamente eficiente e pode lidar com arquivos grandes.
 
-Aqui, criamos uma função `read_file` que usa a função `fs.read_file` para ler o conteúdo de um arquivo e, em seguida, separar as linhas em uma lista de strings. Agora, podemos chamar essa função para ler um arquivo e ver a saída:
+## Veja Também:
 
-```Gleam
-let file_content = read_file("exemplo.txt")
+[Documentação oficial do Gleam sobre a função File.read](https://gleam.run/documentation/stdlib/#file-read)
 
-let primeira_linha = List.get(0, file_content.lines)
-let segunda_linha = List.get(1, file_content.lines)
-
-Assert.equal(file_content.lines, ["Este é um texto de exemplo.", "Ele contém algumas linhas para ler."])
-Assert.equal(primeira_linha, "Este é um texto de exemplo.")
-Assert.equal(segunda_linha, "Ele contém algumas linhas para ler.")
-```
-
-Ao extrair as linhas em uma lista, podemos acessá-las individualmente e compará-las com o que esperamos. Isso também nos permite trabalhar com o conteúdo do arquivo de maneira mais flexível e aplicar quaisquer transformações necessárias.
-
-## Deep Dive
-
-Embora tenhamos mostrado como ler um arquivo de texto simples neste artigo, é importante notar que existem muitas outras opções e métodos disponíveis no módulo `gleam/fs` para a leitura de arquivos de texto. Você pode aprender mais sobre eles lendo a documentação oficial do Gleam ou explorando por conta própria.
-
-Além disso, tenha em mente que a leitura de arquivos de texto pode envolver outras tarefas, como tratamento de erros e conversão de tipos de dados. É importante ter uma compreensão sólida desses conceitos para ler e manipular arquivos de texto com eficiência.
-
-## Veja Também
-
-- [Documentação Oficial do Gleam](https://gleam.run/documentation)
-- [Módulo `gleam/fs`](https://gleam.run/modules/gleam_fs.html)
-- [Exemplos de leitura de arquivos em Gleam](https://github.com/search?q=language%3Agleam+fs.read_file&type=Code)
+[Livro online gratuito sobre programação funcional com Gleam](https://book.functinal.ch/03-reading-and-writing.html)

@@ -10,45 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##Varför
+## Vad & Varför?
 
-Alla har någon gång suttit och väntat på att en webbsida ska ladda, bara för att få ett meddelande om att sidan inte kan nås. Genom att lära sig hur man laddar ner en webbsida med Haskell kan du snabbt och enkelt komma åt innehållet på en webbsida utan att behöva lita på internetanslutningen.
+Att ladda ner en webbsida innebär att man hämtar en kopia av en webbsida från internet till sin egna dator. Detta kan göras av olika skäl, till exempel för att kunna arbeta offline eller analysera webbsidans struktur och innehåll.
 
-##Hur man gör
+## Så här gör du:
 
-Ladda ner en webbsida i Haskell är enkelt med hjälp av paketet "http-conduit". Först måste du importera paketet och skapa en förfrågan med hjälp av funktionen "parseRequest".
+```Haskell 
+import Network.HTTP.Simple 
+main = do 
+    response <- httpGet "https://example.com" 
+    print $ getResponseBody response 
 
-```Haskell
-import Network.HTTP.Conduit
-
-req <- parseRequest "https://example.com"
+-- Output: a complete copy of the webpage in question 
 ```
 
-Därefter kan du använda funktionen "withManager" för att skapa en anslutning och ladda ner sidan med hjälp av funktionen "httpLbs".
+## Deep Dive:
 
-```Haskell
-withManager $ \m -> do
-  res <- httpLbs req m
-  print res
-```
+Att ladda ner en webbsida är ett vanligt behov hos många programmerare, särskilt de som arbetar med webbutveckling eller dataanalys. Det finns flera alternativ för att hämta en webbsida, inklusive direkta anrop till webbservern eller användning av specialiserade bibliotek. I Haskell är användning av Network.HTTP.Simple ett enkelt och smidigt sätt att hämta en webbsida, vilket illustreras i exemplet ovan.
 
-Den här koden skriver ut en "Response" som innehåller all information om webbsidan, inklusive HTML-koden. För att endast få ut HTML-koden kan du använda funktionen "responseBody" på "Response"-värdet.
+## Se också:
 
-```Haskell
-let responseBody = fmap responseBody res
-print responseBody
-```
+För mer information om hur man hämtar och bearbetar webbinnehåll i Haskell, se dessa länkar: 
 
-För att bearbeta HTML-koden kan du använda olika paket som till exempel "tagsoup" eller "hxt". På så sätt kan du enkelt plocka ut specifika element eller data från webbsidan.
-
-##Djupdykning
-
-För att kunna ladda ner en webbsida behöver du först och främst en url som du ska ladda ner från. Du kan också ange olika inställningar för förfrågan, till exempel att använda en proxy eller att sätta en timeout-funktion.
-
-När du har förstått hur du kan ladda ner en webbsida i Haskell kan du vidareutveckla din kod. Du kan till exempel bygga en enkel webbskrapa som automatiskt hämtar data från flera olika sidor eller skapa ett program som övervakar förändringar på en viss webbsida.
-
-##Se även
-
-- HTTP-Conduit paketet: [https://hackage.haskell.org/package/http-conduit](https://hackage.haskell.org/package/http-conduit)
-- Tagsoup paketet: [https://hackage.haskell.org/package/tagsoup](https://hackage.haskell.org/package/tagsoup)
-- HXT paketet: [http://hackage.haskell.org/package/hxt](http://hackage.haskell.org/package/hxt)
+- https://hackage.haskell.org/package/http-client 
+- https://www.haskell.org/hoogle/?hoogle=http+request

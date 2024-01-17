@@ -10,40 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-Substring extraction is a useful programming technique in Bash that allows you to extract specific portions of text from a larger string. This can come in handy when dealing with large sets of data or when you need to manipulate text in a certain way.
+## What & Why?
 
-## How To
-To extract substrings in Bash, you can use the built-in `cut` command. Here's an example of extracting the first 5 characters from a string:
+Extracting substrings is a process where a specific portion of a string is retrieved. Programmers often need to extract substrings to manipulate data, format strings, or perform text processing tasks.
 
+## How to:
+
+To extract a substring in Bash, we can use the built-in `expr` command or the string manipulation tool, `cut`. Here are some examples:
+
+### Extract first N characters in a string:
 ```Bash
-myString="Hello World"
-echo "${myString:0:5}"
+echo "Hello World" | cut -c -5
 ```
+Output: `Hello`
 
-The output of this code will be `Hello`, as it extracts the first 5 characters (starting at index 0) from the string. You can also specify a starting index and length for the substring, like this:
-
+### Extract portion of string between two characters:
 ```Bash
-echo "${myString:6:5}"
+expr match "This is a sample string" '.*\(is.*\)''
 ```
+Output: `is a sample string`
 
-This will output `World`, as it extracts 5 characters starting from index 6. You can also extract from the end of the string by using negative indices:
+## Deep Dive:
 
-```Bash
-echo "${myString: -5}"
-```
-The output of this code will be `World`, as the negative index starts counting from the end of the string.
+### Historical Context:
+Extracting substrings has been a fundamental concept in computer programming since the early days of computing, dating back to the 1950s. It has been used in various programming languages, including Bash, to manipulate and process strings efficiently.
 
-## Deep Dive
-There are a few things to keep in mind when extracting substrings in Bash. First, Bash uses 0-based indexing, so the first character in a string is at index 0. This means that if you want to extract the first 5 characters, you would use an index of 0 and a length of 5.
+### Alternative Methods:
+Apart from `cut` and `expr`, there are other ways to extract substrings in Bash, such as using `sed` and `awk` commands. However, these methods may require more complex syntax and are not as commonly used for substring extraction.
 
-Secondly, if you do not specify a length for the substring, Bash will extract all remaining characters from the specified index. For example, if you only specify an index of 6, Bash will extract all characters starting from index 6 until the end of the string.
+### Implementation Details:
+To extract a substring using `cut`, we specify the start and end position of the desired substring using the `-c` flag. The positions can be defined using single numbers, or a range of numbers separated by a dash. The `expr` command uses regular expressions to match and extract substrings from a given string.
 
-You can also use variables for the indices and lengths of your substrings. This can come in handy when dealing with dynamic data. Just make sure to properly format the variables within the substring extraction syntax.
+## See Also:
 
-Lastly, you can use the `cut` command with a delimiter to extract substrings based on a specific character or pattern. This is useful when working with text separated by certain characters, such as commas or spaces.
+For more information on substring extraction in Bash, check out the following resources:
 
-## See Also
-- [Bash Substring Extraction - Linuxize](https://linuxize.com/post/bash-substring/)
-- [Cut Command in Bash - GeeksforGeeks](https://www.geeksforgeeks.org/cut-command-linux-examples/)
-- [Bash Guide for Beginners - Linux Documentation Project](http://tldp.org/LDP/Bash-Beginners-Guide/html/sect_10_02.html)
+- [Bash Documentation on String Manipulation](https://www.gnu.org/software/bash/manual/html_node/String-Manipulation.html)
+- [Unix Tutorial: Cut Command](http://www.unixtutorial.org/2008/04/cut-a-key-unix-command/)
+- [Unix Tutorial: Expr Command](http://www.unixtutorial.org/2008/04/expr-command/)
+- [Stack Overflow: How to Extract Substring in Bash](https://stackoverflow.com/questions/22730780/how-to-extract-substring-in-bash)

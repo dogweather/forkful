@@ -1,7 +1,7 @@
 ---
-title:                "Escrevendo testes"
-html_title:           "TypeScript: Escrevendo testes"
-simple_title:         "Escrevendo testes"
+title:                "Redação de testes"
+html_title:           "TypeScript: Redação de testes"
+simple_title:         "Redação de testes"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Testing and Debugging"
@@ -10,39 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+## O que & Porquê?
 
-Escrever testes é uma prática essencial para garantir a qualidade do código e minimizar a ocorrência de erros em projetos de desenvolvimento de software. Além disso, escrever testes permite a detecção precoce de possíveis falhas, economizando tempo e recursos no longo prazo.
+Escrever testes é o processo de criar pequenos códigos que verificam se o seu código principal está funcionando como esperado. Os programadores fazem isso para garantir que as suas aplicações estão corretas e que o código está apto para ser implantado em produção.
 
-## Como fazer
+## Como fazer:
 
-```TypeScript
-// Função simples que retorna true se o número for positivo e false se for negativo
-function isPositiveNumber(num: number) {
-    if (num >= 0) {
-        return true;
-    } else {
-        return false;
-    }
+Um exemplo simples de como escrever um teste em TypeScript:
+
+```TypeScript 
+// Código de exemplo em TypeScript
+
+function add(x: number, y: number): number {
+  return x + y;
 }
 
-// Teste da função para números positivos
-console.log(isPositiveNumber(5)); // expected output: true
-console.log(isPositiveNumber(-2)); // expected output: false
+test("Soma 2 + 3 e espera como resultado 5", () => {
+  const expected = 5;
+  const result = add(2, 3);
+  expect(result).toBe(expected);
+});
 ```
 
-Para escrever testes em TypeScript, é necessário utilizar um framework de testes, como o Jest ou o Mocha. Esses frameworks permitem criar funções de teste que recebem uma entrada e verificam se a saída é a esperada. É importante também usar asserções, que são declarações que permitem verificar se um resultado é igual ao esperado.
+Saída esperada:
 
-## Mergulho Profundo
+```
+Test Soma 2 + 3 e espera como resultado 5 bem sucedido.
+```
 
-Ao escrever testes, é importante cobrir todos os cenários possíveis, como entradas inválidas ou situações de erro. Além disso, é importante manter os testes atualizados e executá-los regularmente para garantir que nenhuma alteração no código cause falhas.
+## Profundidade:
 
-Existem diferentes tipos de testes, como testes unitários, testes de integração e testes funcionais. Cada um tem seu propósito e deve ser usado em conjunto para garantir uma cobertura completa do código.
+O processo de escrever testes é um processo importante para garantir que o código que você escreve está correto e livre de erros. Ele também pode ajudar a identificar problemas de lógica e a aumentar a manutenibilidade do seu código. Existem algumas alternativas ao uso de testes, como a revisão manual de código ou a execução de testes manualmente, mas esses métodos podem ser demorados e propensos a erros humanos.
 
-Ao utilizar o TypeScript, é possível utilizar recursos como tipos e interfaces para tornar os testes mais robustos e seguros. Além disso, é importante escrever testes que sejam fáceis de entender e manter, para que possam ser utilizados como documentação do código.
+## Veja também:
 
-## Veja também
+Para mais informações sobre testes com TypeScript, consulte:
 
-- [Documentação oficial do Jest](https://jestjs.io/)
-- [Documentação oficial do Mocha](https://mochajs.org/)
-- [Artigo sobre testes de software](https://www.devmedia.com.br/testes-de-software-conheca-os-tipos-e-descubra-por-que-eles-sao-importantes/28337)
+- [Documentação oficial do TypeScript](https://www.typescriptlang.org/docs/handbook/testing.html)
+- [Artigo sobre testes unitários com Jasmine e TypeScript](https://medium.com/@bryanmanuele/type-safe-jasmine-unit-testing-with-typescript-ebd8da1df0f2)

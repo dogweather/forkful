@@ -1,7 +1,7 @@
 ---
-title:                "Merkkijonon muuttaminen suuriksi kirjaimiksi"
-html_title:           "C: Merkkijonon muuttaminen suuriksi kirjaimiksi"
-simple_title:         "Merkkijonon muuttaminen suuriksi kirjaimiksi"
+title:                "Muutetaan merkkijonoa isolla alkukirjaimella"
+html_title:           "C: Muutetaan merkkijonoa isolla alkukirjaimella"
+simple_title:         "Muutetaan merkkijonoa isolla alkukirjaimella"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -10,56 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä ja miksi?
 
-Stringien kapselointi on hyödyllinen tekniikka, kun käsitellään tekstipohjaista dataa, kuten käyttäjän syötteitä tai tiedostojen nimiä. Se mahdollistaa johdonmukaisen muotoilun ja helpottaa tietojen käsittelyä.
+Tervehdys, ohjelmoijat! Olet varmasti joskus nähnyt sanaan "CAPS" kirjoitettuna isoilla kirjaimilla. Tämä tarkoittaa tekstin isossa kirjoituksessa ja se on yleinen tapa merkitä tekstiä tietokoneessa. Kun ohjelmoijat "kapitalisoivat" merkkijonoja, he tekevät niistä isoja kirjaimia. Tämä on hyödyllistä, kun yrittävät löytää tietyn sanan tai merkkijonon isolla tai pienellä kirjoituksella.
 
-## Näin
+## Miten?
+
+Tässä on lyhyt esimerkki siitä, miten voit kapitalisoida merkkijonon C-kielellä:
 
 ```C
 #include <stdio.h>
-#include <string.h>
 
-// Function to capitalize a string
+// Funktio, joka muuntaa merkkijonon isojen kirjainten muotoon
 void capitalize(char *str) {
-    int i = 0;
+   int i;
 
-    // Loop through each character
-    while (str[i] != '\0') {
-        // Check if character is lowercase
-        if (str[i] >= 'a' && str[i] <= 'z') {
-            // Convert to uppercase by subtracting 32 from ASCII value
-            str[i] = str[i] - 32;
-        }
-        i++;
-    }
-
-    printf("Capitalized string: %s", str);
+   // Käydään läpi jokainen merkki merkkijonosta
+   for (i = 0; str[i] != '\0'; i++) {
+      // Jos merkki on pieni kirjain, muutetaan se isoksi kirjaimeksi
+      if (str[i] >= 'a' && str[i] <= 'z') {
+         str[i] = str[i] - 32;
+      }
+   }
 }
 
 int main() {
-    char str[50];
-    printf("Enter a string: ");
-    scanf("%s", str);
+   char str[50] = "ohjelmointi on hauskaa";
 
-    // Call capitalize function
-    capitalize(str);
+   printf("Alkuperäinen merkkijono on: %s\n", str);
 
-    return 0;
+   // Kutsutaan capitalize-funktiota ja tulostetaan muokattu merkkijono
+   capitalize(str);
+   printf("Muutettu merkkijono on: %s\n", str);
+
+   return 0;
 }
 ```
 
-**Syöte:** hello
-**Output:** Capitalized string: HELLO
+Tämä koodi tulostaa:
 
-## Tarkempi selvitys
+```
+Alkuperäinen merkkijono on: ohjelmointi on hauskaa
+Muutettu merkkijono on: OHJELMOINTI ON HAUSKAA
+```
 
-Stringien kapselointi on yksinkertainen prosessi, joka muuttaa kaikki merkit pienaakkosista suuraakkosiin. Tämä voidaan tehdä käymällä läpi jokainen merkki ja muuttamalla sen ASCII-arvoa. ASCII-taulukossa pienaakkoset alkavat numerolla 97 ja suuraakkoset numerolla 65. Joten pienaakkoset voidaan muuttaa suuraakkosiksi vähentämällä 32 niiden ASCII-arvosta.
+## Syvempi sukellus
 
-Kuitenkin tämä yksinkertainen prosessi toimii vain englannin kielellä, jossa on vain 26 kirjainta. Jos haluat kapseloida muita merkkejä, kuten ääkkösiä tai erikoismerkkejä, sinun on käytettävä monimutkaisempia toimenpiteitä, kuten merkistöjen muunnosta.
+Tietokoneissa käytetään yleensä ASCII-koodausta merkkien tallentamiseen ja käsittelyyn. Tämä tarkoittaa, että jokaisella merkillä on oma numeronsa ja pienet ja isot kirjaimet ovat eri numeroiden takana. Pienestä isoksi muuntamisen yksinkertainen logiikka perustuu ASCII-koodien numeroiden lisäämiseen tai vähentämiseen. Toiset kielet, kuten Java, tarjoavat valmiin capitalized-funktion, mutta C-kielessä sitä täytyy kirjoittaa itse.
 
 ## Katso myös
 
-- [ASCII-taulukko](https://fi.wikipedia.org/wiki/ASCII)
-- [Merkistöjen muunnos C:ssä](https://www.tutorialspoint.com/c_standard_library/c_function_setlocale.htm)
-- [Stringien muokkaus C:ssä](https://www.geeksforgeeks.org/c-program-basics-string-operations/)
+[C-kirjasto](https://www.cprogramming.com/tutorial/c/lesson14.html)
+[ASCII-koodit](https://www.cs.cmu.edu/~pattis/15-1XX/common/handouts/ascii.html)

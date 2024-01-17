@@ -10,57 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Quoi & Pourquoi?
 
-Si vous êtes passionné par la programmation et que vous souhaitez constamment améliorer vos compétences, démarrer un nouveau projet est la meilleure façon de le faire. Cela vous permettra de vous mettre au défi et d'apprendre de nouvelles techniques et pratiques de codage.
+Lancer un nouveau projet est le processus de créer un nouveau programme à partir de zéro. Les programmeurs le font pour résoudre un problème spécifique ou pour améliorer un programme existant.
 
-## Comment faire
+## Comment ça marche?
 
-Pour commencer un nouveau projet en C, vous aurez besoin d'un éditeur de code tel que Visual Studio Code ou Code::Blocks. Assurez-vous d'installer un compilateur C tel que GCC ou Clang pour exécuter votre code.
-
-Voici un exemple de code simple pour afficher "Bonjour, monde !" à l'écran :
+Voici un exemple de code pour démarrer un nouveau projet en C:
 
 ```C
 #include <stdio.h>
 
 int main() {
-  printf("Bonjour, monde !\n");
-  return 0;
+    printf("Bonjour le monde!");
+    return 0;
 }
 ```
 
-Lorsque vous exécutez ce code, vous devriez voir la phrase "Bonjour, monde !" s'afficher dans la console de votre éditeur de code.
+Voici la sortie que vous verriez en exécutant ce code:
 
-Vous pouvez également créer une fonction pour demander à l'utilisateur son nom et lui souhaiter la bienvenue :
-
-```C
-#include <stdio.h>
-
-void welcome() {
-  char name[20];
-  printf("Quel est votre nom ?\n");
-  scanf("%s", name);
-  printf("Bienvenue, %s !\n", name);
-}
-
-int main() {
-  welcome();
-  return 0;
-}
+```
+Bonjour le monde!
 ```
 
-La fonction scanf accepte l'entrée utilisateur et la stocke dans la variable name. La phrase "Bienvenue, [nom] !" sera alors imprimée à l'écran.
+Ce code commence par inclure la bibliothèque standard ```stdio.h```, puis déclare une fonction principale ```main``` qui imprime un simple message à l'écran et renvoie 0 pour indiquer que le programme s'est terminé avec succès.
 
 ## Plongée en profondeur
 
-Lorsque vous démarrez un nouveau projet en C, il est important de bien comprendre l'objectif du projet et de planifier sa structure et son architecture. Assurez-vous de décomposer votre code en fonctions logiques pour rendre votre code plus lisible et facile à maintenir.
+Le C est un langage de programmation créé par Dennis Ritchie en 1972 et est toujours largement utilisé aujourd'hui pour sa vitesse et son efficacité. Bien qu'il existe maintenant de nombreux autres langages de programmation, le C reste populaire en raison de sa compatibilité avec de nombreux systèmes et de sa simplicité. Les alternatives au C pour démarrer un nouveau projet pourraient être Java, Python ou C++.
 
-Vous devriez également vous familiariser avec les fonctions et bibliothèques standard du langage C, telles que printf pour l'affichage et scanf pour la saisie utilisateur.
+Il y a plusieurs étapes à suivre pour démarrer un nouveau projet en C, notamment:
 
-N'oubliez pas de toujours commenter votre code pour expliquer vos choix de conception et rendre votre code plus compréhensible pour vous et pour les autres programmeurs travaillant sur le projet.
+1. Déterminer l'objectif du projet et écrire un plan détaillé.
+2. Choisir un environnement de développement intégré tel que Code::Blocks ou Visual Studio.
+3. Écrire le code en utilisant les connaissances de base du langage C.
+4. Déboguer les erreurs et tester le code pour s'assurer qu'il fonctionne correctement.
+5. Compiler le code en un fichier exécutable.
+6. Distribuer le programme ou l'utiliser pour résoudre le problème souhaité.
 
 ## Voir aussi
 
-- [Tutoriel C pour débutants](https://www.learn-c.org/)
-- [Documentation officielle du langage C](https://en.cppreference.com/w/c)
-- [Guide de style de codage C](https://stackoverflow.com/questions/228783/what-is-your-favorite-c-coding-style)
+Pour en savoir plus sur le langage de programmation C et comment démarrer un nouveau projet en C, vous pouvez consulter les sources suivantes:
+
+- [Le C pour les débutants (en français)](https://openclassrooms.com/fr/courses/19980-apprenez-a-programmer-en-c)
+- [Tutoriels sur le C de W3Schools (en anglais)](https://www.w3schools.in/c-tutorial/)
+- [La documentation officielle du C (en anglais)](https://devdocs.io/c/)

@@ -1,7 +1,7 @@
 ---
-title:                "Å laste ned en nettside"
-html_title:           "C#: Å laste ned en nettside"
-simple_title:         "Å laste ned en nettside"
+title:                "Nedlasting av en nettside"
+html_title:           "C#: Nedlasting av en nettside"
+simple_title:         "Nedlasting av en nettside"
 programming_language: "C#"
 category:             "C#"
 tag:                  "HTML and the Web"
@@ -10,56 +10,63 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hva & Hvorfor?
 
-Når du besøker en nettside, lastes den ned på datamaskinen din slik at du kan se og interagere med innholdet. Men hva om du vil laste ned hele nettsiden og lagre den for senere bruk? I denne artikkelen skal vi se på hvordan du kan gjøre akkurat det ved hjelp av C#.
+Når du laster ned en nettside, henter du innholdet på siden og lagrer det på datamaskinen din. Dette er nyttig for programmerere fordi det lar dem manipulere og behandle dataene fra nettsiden på en enkel måte, for eksempel å hente ut spesifikke informasjon eller analysere dataene.
 
-## Hvordan
-
-For å laste ned en nettside, trenger vi å bruke et webklientobjekt i C#. Dette er en del av .NET Framework og lar oss kommunisere med nettressurser.
-
-Vi kan først opprette et webklientobjekt ved å inkludere System.Net namespace i koden vår. Deretter kan vi bruke webklienten til å laste ned nettsiden ved å bruke WebClient.DownloadFile() metoden. La oss se på et eksempel:
+## Slik gjør du:
 
 ```C#
 using System;
 using System.Net;
 
-WebClient client = new WebClient();
-client.DownloadFile("https://www.examplewebsite.com", "example.html");
+class Program
+{
+    static void Main()
+    {
+        //Oppretter en Webclient
+        WebClient client = new WebClient();
 
-//Dette vil laste ned nettsiden og lagre den som en HTML-fil med navnet "example.html" på datamaskinen din.
+        //Laster ned innholdet til en nettside og lagrer det i en streng
+        string webpage = client.DownloadString("https://www.example.com");
+
+        Console.WriteLine(webpage); //Skriver ut nettsiden i konsollen
+    }
+}
 ```
 
-Vi kan også laste ned en nettside som et tekststreng ved hjelp av WebClient.DownloadString() metoden. Dette er nyttig hvis vi vil behandle teksten videre i koden vår. Her er et eksempel:
+Output:
 
-```C#
-using System;
-using System.Net;
+```html
+<!doctype html>
+<html>
+<head>
+<title>Example Domain</title>
+<meta charset="utf-8" />
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<style type="text/css">
+/* CSS code her... */
+</style>
+</head>
 
-WebClient client = new WebClient();
-string webpage = client.DownloadString("https://www.examplewebsite.com");
-
-//Dette vil laste ned nettsiden som en tekststreng og lagre den i variabelen "webpage".
+<body>
+<div>
+    <h1>Example Domain</h1>
+    <p>This domain is established to be used for illustrative examples in documents. You may use this
+    domain in examples without prior coordination or asking for permission.</p>
+    <p><a href="https://www.iana.org/domains/example">More information...</a></p>
+</div>
+</body>
+</html>
 ```
 
-Nå har vi lastet ned nettsiden, men hva om vi vil laste ned bilder eller andre filer som ligger på nettsiden? Vi kan bruke WebClient.DownloadFile() metoden til å laste ned alle ressurser på nettsiden. Dette kalles også å "lytte" på en nettside. Her er et eksempel:
+## Dypdykk:
 
-```C#
-using System;
-using System.Net;
+Weblesere gjør også nedlasting av nettsider for å vise dem til brukeren. Alternativt kan man bruke en annen metode for å laste ned og behandle nettsidedata, for eksempel HTTP-forespørsler eller tredjepartsbiblioteker. Når du laster ned en nettside i C#, bruker du vanligvis en ```WebClient``` eller ```HttpClient``` klasse. Disse klassene har metoder for å sende HTTP-forespørsler og motta responsen.
 
-WebClient client = new WebClient();
-client.DownloadFile("https://www.examplewebsite.com", "example.html");
+## Se også:
 
-//Dette vil laste ned nettsiden og alle ressurser som bilder og videoer, og lagre dem på datamaskinen din.
-```
-
-Det er viktig å merke seg at når du laster ned en nettside på denne måten, vil den beholden sin originale formatering og koding. Det kan være lurt å konvertere filen til et annet format, som for eksempel UTF-8, før du bruker den i koden din.
-
-## Deep Dive
-Å laste ned en nettside kan være nyttig for mange forskjellige formål. Kanskje du vil lagre en kopi av en nettside for senere bruk, eller kanskje du vil analysere innholdet på nettsiden for å trekke ut spesifikk informasjon. Ved å bruke webklientobjektet i C#, har du enkelt tilgang til å laste ned nettsider og utføre ulike operasjoner på dem i koden din.
-
-## Se Også
-- [Official documentation for WebClient class in C#](https://docs.microsoft.com/en-us/dotnet/api/system.net.webclient?view=netframework-4.8)
-- [Tutorial on downloading files in C#](https://www.dotnetperls.com/downloadstring)
-- [C# Tutorials in Norwegian](https://www.tutlane.com/tutorial/csharp)
+- Microsoft sin [dokumentasjon](https://docs.microsoft.com/en-us/dotnet/api/system.net.webclient?view=net-5.0) for WebClient-klassen.
+- En [tutorial](https://www.tutorialspoint.com/csharp/csharp_web_client.htm) fra Tutorialspoint om hvordan du bruker WebClient-klassen i C#.
+- Alternativet til WebClient, HttpClient-klassen, som er mer fleksibel og skaleres bedre, men er også mer kompleks å bruke.

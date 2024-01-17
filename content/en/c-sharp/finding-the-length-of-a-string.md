@@ -10,40 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-Strings are a fundamental type in any programming language, and a common task when working with them is finding their length. Knowing the length of a string can help with tasks such as validation, formatting, and manipulation.
+## What & Why?
 
-## How To
-Finding the length of a string in C# is a simple task that can be achieved in different ways. Let's explore two popular methods: the `Length` property and the `Count()` method.
+Finding the length of a string is a common task in programming that involves determining the number of characters or elements contained within a given string. Programmers often need to know the length of a string in order to manipulate or compare it with other strings, or to allocate the necessary amount of memory for it. 
 
-#### Using the `Length` property
-Here's a simple example of how to use the `Length` property to find the length of a string: 
+## How To:
 
-```C#
-string sentence = "Hello World";
-int length = sentence.Length; // length = 11
-Console.WriteLine("The length of the string is: " + length); // Output: The length of the string is: 11
-```
-
-The `Length` property returns the total number of characters in a string, including spaces and punctuation.
-
-#### Using the `Count()` method
-Another way to find the length of a string is by using the `Count()` method. Here's an example:
+To find the length of a string in C#, you can use the built-in ```Length``` property of the ```String``` class. Here's an example:
 
 ```C#
-string sentence = "Hello World";
-int length = sentence.Count(); // length = 11
-Console.WriteLine("The length of the string is: " + length); // Output: The length of the string is: 11
+string myString = "Hello World";
+int length = myString.Length;
+Console.WriteLine(length);
 ```
 
-The `Count()` method returns the number of elements in a sequence, which for a string is equivalent to its length.
+This will output the value ```11```, as there are 11 characters in the string "Hello World".
 
-## Deep Dive
-Under the hood, both the `Length` property and the `Count()` method are based on the `String` class. The `Length` property is simply a property of the `String` class, while the `Count()` method is an extension method that uses the `Length` property internally.
+You can also use the ```Count``` method from the ```Enumerable``` class to find the length of a string, as shown below:
 
-It's also worth mentioning that the `Length` property and the `Count()` method have different performance implications. The `Length` property performs slightly better since it's a direct property of the `String` class, while the `Count()` method has to go through additional checks.
+```C#
+string myString = "Goodbye";
+int length = Enumerable.Count(myString);
+Console.WriteLine(length);
+```
 
-## See Also
-- [C# String Handling](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/strings/)
-- [String.Length Property](https://docs.microsoft.com/en-us/dotnet/api/system.string.length/)
-- [Enumerable.Count Method](https://docs.microsoft.com/en-us/dotnet/api/system.linq.enumerable.count)
+This will also output the value ```7```, as there are 7 characters in the string "Goodbye".
+
+## Deep Dive:
+
+Historically, counting the number of characters in a string was a more complicated task, as languages like C and C++ did not have built-in methods or classes for this purpose. Programmers had to write their own functions to iterate through the string and count each character, often using techniques like pointers and memory allocation to do so.
+
+In C#, the ```Length``` property was introduced to simplify this process and provide a more efficient way to find the length of a string. However, the ```Count``` method is still a useful alternative for when you need to find the length of a sequence of elements, not just a string.
+
+As for implementation details, the ```Length``` property returns an integer representing the number of characters in the string, including spaces and special characters. It does not count null characters (\0) or escape characters (such as \n or \t). The ```Count``` method, on the other hand, can be used with any object that implements the ```IEnumerable``` interface, making it a more versatile approach for finding the length of a sequence.
+
+## See Also:
+
+- Microsoft documentation on [String.Length](https://docs.microsoft.com/en-us/dotnet/api/system.string.length)
+- Microsoft documentation on [Enumerable.Count](https://docs.microsoft.com/en-us/dotnet/api/system.linq.enumerable.count)
+- [String Length Calculation in C and C++](https://www.geeksforgeeks.org/length-of-a-string-using-pointer-in-c/) by GeeksforGeeks

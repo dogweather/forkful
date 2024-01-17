@@ -1,7 +1,7 @@
 ---
-title:                "디버그 출력 프린트"
-html_title:           "Java: 디버그 출력 프린트"
-simple_title:         "디버그 출력 프린트"
+title:                "디버그 출력 출력하기"
+html_title:           "Java: 디버그 출력 출력하기"
+simple_title:         "디버그 출력 출력하기"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Testing and Debugging"
@@ -10,19 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
-디버그 출력을 사용하는 이유는 디버깅 중에 코드의 작동을 더 잘 이해하고 오류를 찾기 위해서입니다.
+# 무엇 & 왜?
 
-## 방법
-```java
-System.out.println("디버그 출력 예시");
+디버그 출력을 프로그래머가 하는 이유는 코드의 실행중에 발생하는 문제를 파악하고 해결하기 위해서입니다.
+
+# 방법:
+
+디버그 출력을 위해서는 ```System.out.println()```을 사용하면 됩니다. 예를 들어:
+
+```Java
+int x = 5;
+System.out.println("값 x: " + x);
 ```
-위와 같이 `println()` 메소드를 사용하여 디버그 출력을 할 수 있습니다.
 
-## 딥 다이브
-디버그 출력을 통해 변수의 값이 어떻게 변하는지 실시간으로 확인하고, 조건문의 결과를 확인하여 코드를 분석할 수 있습니다. 디버그 출력을 적절하게 사용하면 코드의 작동 과정을 더 잘 이해할 수 있습니다.
+출력:
+```Java
+값 x: 5
+```
 
-## 참고
-https://docs.oracle.com/javase/8/docs/api/java/lang/System.html#out
-https://www.baeldung.com/java-print-debug
-https://stackoverflow.com/questions/1046652/how-can-i-scientifically-debug-my-code
+# 깊숙히:
+
+디버그 출력은 디버깅 단계에서 중요한 역할을 합니다. 이 기능은 오류가 발생한 부분을 식별하고 수정하는 데 도움이 됩니다. 또한, 오류가 발생한 곳에서 적절한 변수나 데이터를 확인할 수도 있습니다. 다른 대안으로는 디버깅 툴을 사용하는 것이 있으며, 자바 디버거 (Java Debugger)를 사용하는 것이 가장 일반적입니다.
+
+디버그 출력은 ```System.out.println()``` 메소드를 이용하여 구현됩니다. 이 메소드는 문자열을 화면에 출력하는 역할을 합니다. 패키지 및 클래스 내에서 호출이 가능하며, 필요에 따라 여러 번 호출할 수도 있습니다. 또한, 특정 조건이 충족되었을 때만 출력되도록 if-else 구문과 함께 사용할 수도 있습니다.
+
+# 관련 자료:
+
+- 자바 디버거 (Java Debugger): https://docs.oracle.com/javase/8/docs/technotes/tools/windows/jdb.html
+- 디버깅과의 관계: https://www.c-sharpcorner.com/article/debugging-concept-and-relationship-with-other-development-activities/

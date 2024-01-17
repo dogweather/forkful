@@ -10,40 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+¿Qué es y por qué se crea un archivo temporal?
 
-Crear archivos temporales es útil cuando necesitamos almacenar información temporalmente en nuestro sistema. Puede ser útil para aplicaciones que requieren guardar datos temporales durante la ejecución del programa, o para realizar pruebas y experimentos sin comprometer los archivos permanentes.
+Crear un archivo temporal es un proceso en el cual un programador crea un archivo que se utiliza temporalmente para almacenar datos o realizar un proceso específico en un programa. Esta práctica es comúnmente utilizada por programadores para evitar sobrecargar o alterar los archivos permanentes del sistema. 
 
-## Cómo hacerlo
+Cómo hacerlo:
 
-En Fish Shell, podemos crear un archivo temporal utilizando el comando `mktemp`. Por ejemplo, si queremos crear un archivo temporal llamado "temp.txt" en nuestro directorio actual, podemos hacerlo de la siguiente manera:
+Fish Shell ofrece una forma sencilla de crear archivos temporales utilizando el comando `mktemp`. Este comando permite crear archivos con nombres únicos en una ubicación específica. Aquí tienes un ejemplo de cómo crear un archivo temporal en el directorio actual:
 
-```Fish Shell
-mktemp temp.txt
+```
+Fish Shell > mktemp
+/tmp/tmp.RBrZdNNZG7
+```
+En este ejemplo, el archivo temporal se llama "tmp.RBrZdNNZG7" y se encuentra en el directorio `/tmp/`.
+
+Profundizando:
+
+La práctica de crear archivos temporales ha sido utilizada por programadores durante mucho tiempo. En el pasado, se solía hacer de forma manual, creando un archivo vacío y dándole un nombre único. Actualmente, existen otras alternativas para crear archivos temporales, como el uso de ramas temporales en sistemas de control de versiones como Git.
+
+Es importante destacar que los archivos temporales deben ser eliminados una vez que ya no se necesitan para evitar posibles problemas de seguridad o llenar el espacio de almacenamiento con archivos innecesarios. Por ello, Fish Shell incluye el comando `rm` para eliminar los archivos temporales creados con `mktemp` de la siguiente manera:
+
+```
+Fish Shell > rm /tmp/tmp.RBrZdNNZG7
 ```
 
-Esto creará un archivo llamado "temp.txt" en el directorio actual y nos dará su ruta completa, que podemos utilizar para acceder y trabajar con ese archivo.
+Consulta también:
 
-Si queremos crear un archivo temporal dentro de un directorio específico, podemos especificar la ruta al directorio como argumento para el comando `mktemp`:
-
-```Fish Shell
-mktemp ~/Documentos/temp.txt
-```
-
-También podemos utilizar la opción `-d` para crear un directorio temporal en lugar de un archivo temporal:
-
-```Fish Shell
-mktemp -d ~/Documentos/temporal/
-```
-
-### Deep Dive
-
-El comando `mktemp` es en realidad un backend para el comando `mktemp.fish`, que es la versión de Fish Shell de este comando. Esto significa que podemos usar `mktemp.fish` en lugar de `mktemp` si queremos acceder a sus opciones y funcionalidades adicionales. Por ejemplo, el comando `mktemp.fish` nos permite especificar un patrón para el nombre del archivo temporal que se generará. Esto es útil si queremos que el archivo temporal siga un patrón específico para facilitar su identificación y eliminación posteriormente.
-
-Otra diferencia entre `mktemp` y `mktemp.fish` es que `mktemp.fish` nos permite especificar un prefijo para el nombre del archivo temporal. Esto significa que podemos usar nombres más descriptivos para nuestros archivos temporales, lo que facilita su comprensión y gestión.
-
-## Ver También
-
-- [Página oficial de Fish Shell](https://fishshell.com/)
-- [Documentación de Fish Shell sobre el comando `mktemp`](https://fishshell.com/docs/current/cmds/mktemp.html)
-- [Tutorial de Fish Shell en español](https://shellsystem.es/tutorial-fish-shell-el-editor-de-comandos-que-no-conoces/)
+- La documentación oficial de Fish Shell para conocer más sobre el comando `mktemp`: https://fishshell.com/docs/current/cmds/mktemp.html
+- Descubre cómo utilizar ramas temporales en Git para trabajar con archivos temporales de forma más eficiente: https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell#_branching

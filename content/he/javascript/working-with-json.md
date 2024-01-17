@@ -1,7 +1,7 @@
 ---
-title:                "עבודה עם קובץ JSON"
-html_title:           "Javascript: עבודה עם קובץ JSON"
-simple_title:         "עבודה עם קובץ JSON"
+title:                "עבודה עם פרמטר json"
+html_title:           "Javascript: עבודה עם פרמטר json"
+simple_title:         "עבודה עם פרמטר json"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Data Formats and Serialization"
@@ -10,36 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-למה:
-מתרגשים להתחיל לעבוד עם פורמט הנתונים המאפשר כתיבה וקריאה בפשטות ויעילות רבה - JSON. הוא מאפשר תקשורת יעילה בין אפליקציות ואתרים, וזהו חלק בלתי נפרד מהפיתוח המודרני שלו.
+# מה ולמה?
+עבודה עם JSON היא חלק בלתי נפרד מתכנות רשתות ואינה מדורגת כמבולגנת כמו ההדפסים שבשפות אחרות. זהו פורמט נתונים פשוט וקריא המשמש להעברת מידע בין מכשירים שונים, לרבות דפי אינטרנט ואפליקציות סלולריות. התמיכה הרחבה ב-JavaScript והגמישות הגדולה שלו בפרסום וקריאת נתונים, הופכים את JSON לפופולרי מבחינת מתכנתים.
 
-איך לעבוד עם JSON: כדי להתחיל, נצטרך ליצור משתנה שיכיל נתונים בפורמט JSON. לדוגמה:
+# איך לעשות זאת:
+מאגר נתונים בפורמט JSON מתחבר לסביבת התכנות של JavaScript כדי ליצור נתונים עם מבנה דומה למערך. נוכל ליצור משתנים משולשים ואפילו מערכים משולשים תוך שימוש בתווים כפולים (" "). לדוגמה: 
 ```Javascript
-const person = {
-  name: 'John',
+var person = {
+  name: "רויטל",
   age: 28,
-  city: 'New York'
-}
+  interests: ["תכנות", "טיולים", "ריקוד"]
+};
 ```
-ניתן להדפיס את הנתונים האלו בדיקה של באחד משדות האובייקט:
-```Javascript
-console.log(person.name) // פלט: John
-```
-ניתן גם להוסיף נתונים חדשים לאובייקט בדרך זו:
-```Javascript
-person.occupation = 'programmer'
-console.log(person) // פלט: { name: 'John', age: 28, city: 'New York', occupation: 'programmer' }
-```
-צריך לשים לב שכל שדה באובייקט חייב להיות מוגדר בצורה תקנית כדי שהקוד יתנהג כראוי.
+נוכל ליצור נתונים מכל סוג שנרצה ולהכניס אותם למאגר באופן פשוט וקריא.
 
-כדי לקבל פלט נכון כשמתעסקים עם JSON, ניתן להשתמש בפונקציית `JSON.stringify` כדי להמיר אובייקט למחרוזת בפורמט JSON:
+לקרוא נתונים כאלה, נוכל להשתמש בפונקציית JSON.parse על מנת להמיר את הנתונים מפורמט JSON לאובייקט של JS. לדוגמה:
 ```Javascript
-const personJSON = JSON.stringify(person)
-console.log(personJSON) // פלט: {"name":"John","age",28,"city":"New York","occupation":"programmer"}
+var person = '{"name": "רויטל", "age": 28, "interests": ["תכנות", "טיולים", "ריקוד"]}';
+var parsed = JSON.parse(person);
+console.log(parsed.name); // יצג את הערך "רויטל" בסטודנטים. 
 ```
 
-עומק נפלא בעבודה עם JSON: JSON מכיל תמיכה רחבה בכמה פורמטים נתונים שונים כגון מספרים, מחרוזות, מערכים ועוד. בנוסף, קיימות כמה פונקציות שימושיות בתיצור וקריאת נתונים בפורמט זה, כגון `JSON.parse` ו- `JSON.parse`, שימושיות להמרת נתונים לפורמט הנוכחי שונים.
+# עיון מעמיק:
+לפני JSON, רשתות היכרו עם מבנה נתונים כגון XML שהידוע מתכנני רשתות. עם זאת, החסרונות של XML כמו פערי מתן וכבדות, הביאו לפיתוח של JSON בשנת 2001. מאז, הוא כיכב בסביבת התכנות כפורמט נתונים מתוכנן, פשוט ואמין.
 
-ראו גם:
-- [מדריך התחלתי לעבוד עם JSON](https://developer.mozilla.org/he/docs/Learn/JavaScript/Objects/JSON)
-- [מדריך להמרה מתכניתית של נתונים בין פורמטים ב-JavaScript](https://flaviocopes.com/javascript-data-types-how-to/)
+כאלטרנטיבה לתכנות ב-JavaScript ישנם מספר המחלפים כמו: XML, CSV ו- YAML. עדיין, עם כל שיפור ואחסון נתונים, כינוי המביא הוא תכנון וגם במקרי נתונים תקמה. (ASA) טלפאזת מודרנית ו- JSON מנסהו של והאחת הביצוע של שיפור/
+
+# ראה גם:
+1. עורך טקסט חינם עבור JSON: https://jsoneditoronline.org/
+2. תיעוד מלא על עבודה עם JSON ב-JavaScript: https://www.w3schools.com/js/js_json_intro.asp
+3. כלי חינם ליצירת מערכי JSON: https://json-generator.com/

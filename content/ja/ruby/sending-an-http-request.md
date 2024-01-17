@@ -1,7 +1,7 @@
 ---
-title:                "「httpリクエストを送信する」"
-html_title:           "Ruby: 「httpリクエストを送信する」"
-simple_title:         "「httpリクエストを送信する」"
+title:                "「HTTPリクエストの送信」"
+html_title:           "Ruby: 「HTTPリクエストの送信」"
+simple_title:         "「HTTPリクエストの送信」"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "HTML and the Web"
@@ -10,30 +10,22 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+## 何が可能なの？ 
+HTTP リクエストとは、Web サーバーにデータを要求することを意味します。プログラマーは、情報の入出力が必要な場合や、Web サービスに接続する必要がある場合に使います。 
 
-HTTPリクエストを送信することのメリットは、インターネットを介して情報を取得したり、データを送信したりすることができることです。これは、Webアプリケーションを開発する際に非常に重要な機能です。
-
-## 方法
-
+## 方法： 
 ```Ruby
 require 'net/http'
-url = URI("https://www.example.com")
-http = Net::HTTP.new(url.host, url.port)
-http.use_ssl = true
-request = Net::HTTP::Get.new(url)
-response = http.request(request)
-puts response.body
-```
+uri = URI('https://example.com/') 
+res = Net::HTTP.get_response(uri)
+puts res.body 
+``` 
+出力： 
+HTML ページのコンテンツ 
 
-このコードは、RubyのNet::HTTPライブラリを使用して、https://www.example.comにGETリクエストを送信しています。リクエストに対するレスポンスは、responseという変数に保存され、そのbodyメソッドを使用して結果を取得します。
+## 詳細を見る： 
+HTTP リクエストは、Web 開発の伝説的なレガシー技術です。最近では、JavaScript のようなアプリケーションで代替手段が見つかったため、重要性は低くなっています。実装詳細を知りたい場合は、標準ライブラリの "net/http" モジュールをチェックしてください。 
 
-## 深堀り
-
-HTTPリクエストには、GET、POST、PUT、DELETEなどのメソッドがあります。また、リクエストに必要なパラメーターやヘッダーを指定することもできます。さらに、レスポンスのステータスコードやヘッダーの情報も取得することができます。詳細な情報は、RubyのNet::HTTPドキュメントを参照してください。
-
-## 他に見る
-
-- https://docs.ruby-lang.org/en/2.7.0/Net/HTTP.html
-- https://www.rubyguides.com/2018/08/net-http-ruby/
-- https://www.tutorialspoint.com/ruby-on-rails/rails-and-http-requests.htm
+## 関連情報を見る： 
+- [Ruby 公式ドキュメント: Net::HTTP](https://docs.ruby-lang.org/en/3.0.0/Net/HTTP.html) 
+- [プログラミング言語 Ruby メモ：HTTP リクエストの扱い方](https://programming-notes.hatenablog.com/entry/how-to-handle-an-http-request-in-ruby)

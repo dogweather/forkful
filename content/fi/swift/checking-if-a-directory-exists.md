@@ -1,7 +1,7 @@
 ---
-title:                "Tarkistetaan löytyykö kansio"
-html_title:           "Swift: Tarkistetaan löytyykö kansio"
-simple_title:         "Tarkistetaan löytyykö kansio"
+title:                "Tarkastetaan löytyykö kansio"
+html_title:           "Swift: Tarkastetaan löytyykö kansio"
+simple_title:         "Tarkastetaan löytyykö kansio"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Files and I/O"
@@ -10,34 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+Miksi, miksi ohjelmoijat tarkistavat, onko hakemisto olemassa, ja mitä se tarkoittaa.
 
-On tärkeää tietää, miten tarkistaa, onko hakemistoa olemassa Swift-ohjelmointikielellä, jotta voidaan varmistaa ohjelman toimivuus ja välttää mahdolliset virheet.
+Hakemisto on tietokoneen osa, joka sisältää useita tiedostoja tai muita hakemistoja. Kun ohjelmoijat tarkistavat, onko hakemisto olemassa, he haluavat varmistaa, että se on saatavilla käytettäväksi ohjelmassa. Tämä auttaa estämään virheilmoituksia ja mahdollistaa sujuvamman koodin suorituksen.
 
-## Miten
-
-Hakemistojen olemassaolon tarkistaminen Swiftillä on helppoa ja nopeaa. Käytännössä tämä voidaan tehdä käyttämällä FileManager-luokkaa, joka tarjoaa pääsyn tiedostojärjestelmään.
+Miten se tehdään:
 
 ```Swift
 let fileManager = FileManager.default
+let directoryPath = "/Users" // vaihda tämä haluamaasi hakemistoon
 
-// Tarkistetaan, onko hakemistoa olemassa annetulla polulla
-let directoryPath = "/Users/kayttajanimi/Documents"
-var isDirectory: ObjCBool = false
-let exists = fileManager.fileExists(atPath: directoryPath, isDirectory: &isDirectory)
-
-// Tulostetaan tulos konsoliin
-print("Hakemisto olemassa: \(exists)")
+// Tarkistetaan, onko hakemisto olemassa
+if fileManager.fileExists(atPath: directoryPath) {
+    // Jos hakemisto on olemassa, tulostetaan tiedot
+    if let directoryContents = try? fileManager.contentsOfDirectory(atPath: directoryPath) {
+        print("Hakemistossa on seuraavat tiedostot: \(directoryContents)")
+    }
+} else {
+    print("Hakemistoa ei löytynyt")
+}
 ```
 
-Tässä esimerkissä käytetään `fileExists(atPath:isDirectory:)` -metodia, joka palauttaa totuusarvon hakemiston olemassaolosta polussa ja asettaa `isDirectory` -muuttujan arvoksi `true`, jos kyseessä on hakemisto.
+Tässä ohjeessa käytämme FileManager-luokkaa, joka on saatu Swift Foundation -kehyksestä. Ensimmäisellä rivillä määritämme FileManager-olion ja toisella rivillä asetamme halutun hakemistosijainnin muuttujaan "directoryPath". Seuraavaksi tarkistamme, onko hakemisto olemassa käyttämällä "fileExists"-metodia. Jos se on olemassa, tulostamme hakemistossa olevien tiedostojen nimet. Muussa tapauksessa tulostamme, että hakemistoa ei löytynyt.
 
-## Syvällinen sukellus
+Syvemmälle mennään:
 
-Swiftin `FileManager`-luokka tarjoaa myös muita hyödyllisiä metodeja tiedostojen ja hakemistojen hallintaan, kuten `createDirectory(atPath:withIntermediateDirectories:attributes:)` ja `removeItem(atPath:)`. Lisäksi `fileExists(atPath:)` -metodi hyödyntää `NSURL`-luokkaa polun käsittelyyn.
+Historiallinen tausta: Hakemistojen olemassaolon tarkistaminen on ollut osa ohjelmointia jo pitkään. Aiemmin se tehtiin käyttämällä erilaisia järjestelmäkutsuja tai Shell-komentoja. Swiftin FileManager-luokka tuo tämän toiminnallisuuden kätevästi kehykseen, mikä helpottaa kehittäjän työtä.
 
-## Katso myös
+Vaihtoehtoiset vaihtoehdot: Hakemistojen olemassaolon tarkistamiseen on muitakin tapoja, kuten käyttämällä Foundationin "URL"-luokkaa tai Unix Shell-komentoja. Jokaisella näistä tavoista on omat etunsa ja haittansa, joten on hyvä tuntea eri vaihtoehtoja ja valita niistä sopivin tapauskohtaisesti.
 
-- [Swiftin FileManager-luokan dokumentaatio](https://developer.apple.com/documentation/foundation/filemanager)
-- [Swiftin FileManager-tutoriaali](https://www.hackingwithswift.com/example-code/system/how-to-create-a-directory-on-disk-using-filemanager)
-- [Swiftin NSURL-luokan dokumentaatio](https://developer.apple.com/documentation/foundation/nsurl)
+Tarkemmat tiedot: Tarkistaaksesi oikeassa hakemistossa käytetyt järjestelmäkutsut ja komentojen syntaksi, voit tutustua viralliseen dokumentaatioon osoitteessa https://developer.apple.com/documentation/foundation/filemanager ja https://developer.apple.com/legacy/library/documentation/Darwin/Reference/ManPages/man1/find.1.html.
+
+Katso myös: Jos haluat lukea lisää FileManager-luokasta ja sen tarjoamista toiminnoista, voit tutustua myös seuraaviin lähteisiin:
+- https://www.hackingwithswift.com/read/3/5/working-with-directories-in-swift
+- https://developer.apple.com/documentation/foundation/filemanager/1408285-fileexists

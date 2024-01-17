@@ -1,7 +1,7 @@
 ---
-title:                "표준 오류로 작성하기"
-html_title:           "Swift: 표준 오류로 작성하기"
-simple_title:         "표준 오류로 작성하기"
+title:                "표준 에러 쓰기"
+html_title:           "Swift: 표준 에러 쓰기"
+simple_title:         "표준 에러 쓰기"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Files and I/O"
@@ -10,37 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
-누군가가 표준 오류로 쓰기에 참여하는 이유에 대해 최대 2문장으로 설명합니다.
+## 무엇 & 왜?
 
-표준 오류로 쓰기는 프로그래밍에서 오류를 디버깅하는 데 매우 유용한 도구입니다. 오류가 발생한 경우 이를 빠르게 식별하고 수정할 수 있도록 합니다. 또한 프로그램의 실행 상태를 실시간으로 모니터링할 수 있습니다.
+"표준 에러에 쓰는 작성"이란 무엇인가요? 프로그래머들이 왜 이것을 할까요?
+ 
+표준 에러에 쓰는 작성은 프로그래머들이 프로그램 실행 중에 에러가 발생할 때 에러 메세지를 출력하기 위해 사용하는 것입니다. 이를 통해 프로그램 실행 전에 발생할 수 있는 잠재적인 문제를 사전에 알 수 있게 됩니다.
 
-## 방법
-코드 블록인"```Swift ... ```" 안에 코드 예제와 샘플 출력을 포함하여 설명합니다.
+## 어떻게:
 
-```Swift
-import Foundation
-
-// 표준 오류로 문자열 출력하기
-let errorMessage = "오류가 발생했습니다."
-FileHandle.standardError.write(errorMessage.data(using: .utf8)!)
-
-// 표준 오류로 정수 출력하기
-let errorNumber = 404
-FileHandle.standardError.write("\(errorNumber)".data(using: .utf8)!)
+ ```Swift
+print("Oops! 에러 발생!", to: &stderr)
 ```
 
-출력:
-```
-404
-```
+출력: ```"Oops! 에러 발생!"```
 
-## 심화 학습
-표준 오류에 대해 더 깊이있는 정보를 제공합니다.
+## 깊게 파보기:
 
-표준 오류는 프로그램에서 발생한 오류를 캡쳐하고 콘솔에 출력하는 데 사용됩니다. 이것은 표준 출력과는 달리 오류를 따로 처리하여 디버깅을 더 쉽게 만듭니다. 또한 표준 오류를 파일로 리디렉션하면 오류 내용을 나중에 확인할 수 있습니다.
+- 위의 예시에서 볼 수 있듯이, `to:` 매개변수를 사용하여 `print()` 함수를 호출하면 표준 에러에 쓰는 작성을 할 수 있습니다.
+- 다른 대안으로는 `error()` 함수를 사용하는 것이 있습니다. 이 함수는 에러 메세지를 출력하는 것 외에도 에러 코드를 지정할 수 있습니다.
+- 표준 에러에 쓰는 작성은 에러 처리에 필수적인 기능이지만 너무 많이 사용하면 프로그램 실행 속도가 느려질 수 있으니 주의해야 합니다.
 
-## 관련 링크
-- [Swift Documentation - FileHandle](https://developer.apple.com/documentation/foundation/filehandle)
-- [How to write to stderr in Swift?](https://stackoverflow.com/questions/28933352/how-to-write-to-stderr-in-swift)
-- [Debugging with Stderr in Swift](https://joemasilotti.com/Debugging-With-Stderr-in-Swift/)
+## 관련 자료:
+
+- [Swift 문서 - 표준 출력과 표준 에러](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#ID282)
+- [Swift WikiDocs - 오류 처리](https://wikidocs.net/476)
+- [Swift Korea - 에러 메세지 출력하기](https://swiftkorea.github.io/2019/07/15/error-handling/)

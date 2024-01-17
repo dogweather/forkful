@@ -1,7 +1,7 @@
 ---
-title:                "字符串大写化"
-html_title:           "Go: 字符串大写化"
-simple_title:         "字符串大写化"
+title:                "将字符串大写"
+html_title:           "Go: 将字符串大写"
+simple_title:         "将字符串大写"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Strings"
@@ -10,55 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
+## 什么是字符串大写？为什么程序员要这么做？
+ 字符串大写是指将字符串中的所有字母变成大写格式。程序员经常这样做是因为在编程中，我们经常需要对字符串进行处理和比较。大写格式可以统一字符串的格式，方便我们进行操作和判断。
 
-在编程中，经常会遇到需要将字符串中的首字母大写的情况。这样做可以使字符串的格式更统一，更易于阅读和理解。
-
-## 如何操作
-
-要在Go中将字符串的首字母大写，可以使用内置的strings包中的Title函数。以下是一个示例代码和输出：
-
-```Go
-package main
-
-import (
-    "fmt"
-    "strings"
-)
-
-func main() {
-    str := "hello world"
-    changedStr := strings.Title(str)
-    fmt.Println(changedStr)
-}
-
-// Output: Hello World
+## 如何实现：
+对于Go语言来说，我们可以使用内置函数 ```strings.ToUpper()``` 来实现字符串大写。下面是一个示例代码：
 ```
+// 声明一个字符串变量并赋值
+str := "hello, world"
 
-## 深入了解
+// 使用ToUpper()函数将字符串变量中的所有字母变为大写格式
+result := strings.ToUpper(str)
 
-除了Title函数外，还可以使用unicode包来操作字符串的首字母大小写。这里需要用到unicode包中的ToTitle和ToTitleSpecial函数。下面是一个示例代码和输出，展示了如何将字符串的第一个字母大写，同时保持其他字母小写：
+// 输出结果
+fmt.Println(result)
 
-```Go
-package main
-
-import (
-    "fmt"
-    "unicode"
-)
-
-func main() {
-    str := "hello WorLD"
-    first := str[0:1]
-    rest := str[1:]
-    changedStr := string(unicode.ToTitle(rune(first[0]))) + rest
-    fmt.Println(changedStr)
-}
-
-// Output: Hello world
+// 输出："HELLO, WORLD"
 ```
+从以上示例可以看出，使用```strings.ToUpper()```函数可以简单快速地实现字符串大写。
 
-## 参考资料
+## 深入了解：
+字符串大写的概念在计算机编程中已经有很长的历史。在早期的计算机系统中，字母只能以大写形式存储。随着计算机技术的发展，小写字母也被添加进了编程语言中，但仍然保留了大小写区别的特性。因此，字符串大写就成为了重要的操作。
 
-- [Go官方文档：strings包](https://golang.org/pkg/strings/)
-- [Go官方文档：unicode包](https://golang.org/pkg/unicode/)
+除了使用内置函数之外，也可以使用ASCII码来实现字符串大写。每个字符对应一个ASCII码，而大写字母的ASCII码比小写字母的ASCII码小32。通过这种方法，我们可以将字符串中的每个字符与32进行比较，如果小于等于该值，则将其转换为大写格式。
+
+## 参考链接：
+- 关于Go语言的更多信息，可以参考官方文档：https://golang.org/
+- 关于字符串大写的更多实现方式，可以参考：https://www.geeksforgeeks.org/convert-a-string-to-uppercase-in-golang/

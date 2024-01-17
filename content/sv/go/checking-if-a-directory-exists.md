@@ -1,7 +1,7 @@
 ---
-title:                "Kontrollera om en mapp existerar"
-html_title:           "Go: Kontrollera om en mapp existerar"
-simple_title:         "Kontrollera om en mapp existerar"
+title:                "Kontrollera om en mapp finns"
+html_title:           "Go: Kontrollera om en mapp finns"
+simple_title:         "Kontrollera om en mapp finns"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Files and I/O"
@@ -10,32 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
-Kanske är du en utvecklare som vill skapa ett program som kan kolla om en specifik mapp finns på ditt system. Kanske vill du ha en extra nivå av säkerhet för att undvika att din kod kraschar om en mapp inte finns. I den här artikeln kommer vi att gå igenom hur du kan checka om en mapp finns i Go, det populära programmsspråket som lämpar sig för allt från småskaliga projekt till stora system.
+## Vad & Varför?
+Att kontrollera om en mapp (directory) existerar är en vanlig uppgift för Go-programmerare. Detta betyder helt enkelt att man söker efter en specifik mapp på en dator eller server för att se om den finns eller inte. Detta är viktigt för att kunna navigera och arbeta med filer och mappar på ett effektivt sätt.
 
-## Så här gör du
-För att kolla om en mapp finns i Go behöver vi använda oss av paketet "os". Genom att importera detta paket kan vi få tillgång till funktioner som hjälper oss att navigera och manipulera filsystemet.
+## Hur?
+För att kontrollera om en mapp existerar i Go använder man funktionen `os.Stat()` tillsammans med mappens sökväg. Om mappen finns kommer funktionen att returnera en `os.FileInfo` struktur som innehåller information om mappen. Om mappen inte finns kommer funktionen att returnera ett felmeddelande. Här är ett exempel:
 
-```Go 
-import "os"
+```Go
+package main
 
-// Kontrollera om en mapp finns
-if _, err := os.Stat("min_mapp"); err == nil{
-    // Mappen finns!
-    fmt.Println("Mappen finns")
-} else {
-    // Mappen finns inte, hantera detta i din kod
-    fmt.Println("Mappen finns inte")
+import (
+	"fmt"
+	"os"
+)
+
+func main() {
+	// Sökvägen till mappen
+	dir := "C:/Users/Johanna/Documents"
+
+	// Kör funktionen för att kontrollera mappen
+	if _, err := os.Stat(dir); !os.IsNotExist(err) {
+		// Om mappen finns, skriv ut ett meddelande
+		fmt.Println("Mappen finns!")
+	} else {
+		// Om mappen inte finns, skriv ut ett felmeddelande
+		fmt.Println("Mappen finns inte!")
+	}
 }
-``` 
+```
 
-I koden ovan använder vi funktionen "Stat" från "os" för att kolla om mappen "min_mapp" finns. Om det inte finns något fel (err == nil) betyder det att mappen existerar och vi kan göra åtgärder med den. Om däremot ett fel uppstår betyder det att mappen inte finns och vi kan hantera detta i vår kod.
+Output: "Mappen finns!"
 
-## Deep Dive
-Om du vill ha lite mer kontroll över hur du kollar om en mapp finns kan du använda dig av funktionen "os.Stat" som vi använde i vårt exempel ovan. Denna funktion returnerar en datastruktur som innehåller information om filens eller mappens namn, storlek, skapad datum och andra attribut. Du kan sedan använda detta för att göra olika kontroller och manipulationer.
+## Djupdykning
+Kontroll av mappars existens har funnits med i Go sedan den första versionen släpptes på 2000-talet. Det finns även andra sätt att kontrollera mappars existens, som att använda `os.MkdirAll()` för att skapa en mapp om den inte redan finns.
 
-Det är också värt att notera att När vi använder funktionen "Stat" kan vi också få information om fel som kan uppstå, till exempel om filen inte finns eller om du inte har tillräckliga rättigheter att komma åt filsystemet.
+Det är också möjligt att använda paketet `path/filepath` för att söka efter en mapp baserat på dess namn eller sökväg. Detta kan vara användbart om man inte vet exakt var mappen kommer att finnas, men vet hur den kommer att heta.
 
 ## Se även
-- ["os" Paketet i Go](https://golang.org/pkg/os/)
-- [Undersökning av filer och mappar med Go](https://golangbyexample.com/golang-check-if-file-directory-exists/)
+- [Officiell dokumentation för os.Stat()](https://golang.org/pkg/os/#Stat)
+- [Exempel på att kontrollera mappars existens i Go](https://goplay.space/#DTWYwhNj7CV)
+- [Mer om mappar och filer i Go](https://www.golang-book.com/books/intro/8)

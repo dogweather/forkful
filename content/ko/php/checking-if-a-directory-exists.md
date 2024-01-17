@@ -10,66 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+## 무엇인가요? 왜 확인하는 걸까요?
 
-디렉토리가 존재하는지 확인하는 것은 프로그램에서 필요한 작업을 수행하기 전에 중요한 검사입니다. 디렉토리가 존재하는지 확인하는 것은 파일을 저장하거나 불러오는 작업을 할 때, 그리고 프로그램이 원활하게 작동하기 위해 필요한 여러 가지 작업을 수행할 때 중요합니다.
+디렉토리가 존재하는지 확인하는 것은 단순한 과업입니다. 프로그래머들이 이 작업을 하는 이유는 자신이 작성한 코드가 올바르게 동작하고, 마주하는 에러를 최소화하기 위해입니다.
 
-## 어떻게
+## 방법:
 
-```PHP
-// 디렉토리 경로 지정
-$dir = "/var/www/html";
+```
+<?php
+// 디렉토리 경로 정의
+$directory = "/Users/username/Desktop/";
 
-// 디렉토리가 존재하는지 여부를 확인하는 함수
-if (is_dir($dir)) {
-  echo "해당 디렉토리가 존재합니다.";
+// 디렉토리 확인하기
+if (is_dir($directory)) {
+  echo "이 디렉토리는 존재합니다.";
 } else {
-  echo "해당 디렉토리가 존재하지 않습니다.";
+  echo "이 디렉토리는 존재하지 않습니다.";
 }
+?>
 ```
 
-위의 예시는 PHP의 `is_dir()` 함수를 사용하여 디렉토리가 존재하는지 확인하는 방법을 보여줍니다. 이 함수는 파라미터로 디렉토리의 경로를 받아서 해당 디렉토리가 존재하면 `true`를, 존재하지 않으면 `false`를 반환합니다. 
-
-```PHP
-// 디렉토리 경로 지정
-$dir = "/var/www/html";
-
-// 디렉토리의 정보를 얻는 함수
-$dir_info = stat($dir);
-
-// 디렉토리가 존재하는지 확인하는 조건문
-if ($dir_info) {
-  echo "해당 디렉토리가 존재합니다.";
-} else {
-  echo "해당 디렉토리가 존재하지 않습니다.";
-}
+출력:
+```
+이 디렉토리는 존재합니다.
 ```
 
-또 다른 방법으로 `stat()` 함수를 사용하여 디렉토리의 정보를 얻은 뒤, 해당 정보를 이용하여 디렉토리가 존재하는지를 확인할 수 있습니다. `stat()` 함수는 파일이나 디렉토리의 상세한 정보를 배열의 형태로 반환해주기 때문에 디렉토리가 존재하면 배열의 값이 존재하고, 존재하지 않으면 `false`를 반환하게 됩니다.
+## 깊게 들어가보기:
 
-## 딥 다이브
+(1) 과거의 문맥: 디렉토리 존재 확인은 초창기 컴퓨터 시스템에서 매우 중요한 기능이었습니다. 파일 시스템의 개념이 생기기 전, 모든 파일들은 하나의 디렉토리에 있었고, 디렉토리를 관리하는 것은 컴퓨터 시스템의 기반적인 요소였습니다. (2) 대안: 디렉토리 존재 확인을 위해서는 PHP 함수 이외에도 다른 방법들이 있습니다. 예를 들어, 운영체제 기반의 명령어를 사용할 수도 있습니다. (3) 구현 세부 사항: PHP에서 디렉토리 존재 확인은 is_dir() 함수를 사용하여 쉽게 구현할 수 있습니다. 이 함수는 디렉토리의 경로를 매개 변수로 받고, 존재하면 true를, 그렇지 않으면 false를 반환합니다. 
 
-PHP에서 디렉토리가 존재하는지를 확인하기 위해 사용할 수 있는 함수는 많이 있습니다. `is_dir()` 함수 외에도 `file_exists()` 함수, `is_readable()` 함수, `glob()` 함수 등 다양한 함수를 사용할 수 있지만, 이들 함수는 각각 다른 목적에 맞게 사용되므로 신중하게 선택해야 합니다.
+## 참고 자료:
 
-아래는 `glob()` 함수를 사용하여 디렉토리의 파일 리스트를 출력하는 예시입니다.
-
-```PHP
-// 디렉토리 경로 지정
-$dir = "/var/www/html";
-
-// 해당 디렉토리의 모든 파일 리스트를 배열로 반환하는 함수
-$files = glob($dir . "/*");
-
-// 파일 리스트를 출력하는 반복문
-foreach($files as $file){
-  echo "파일명: " . $file . "\n";
-}
-```
-
-`glob()` 함수는 디렉토리 내부의 모든 파일 리스트를 배열로 반환하는 함수로, 위의 예시에서는 배열의 각 요소를 반복문으로 출력하는 방식으로 사용하였습니다.
-
-## 관련 링크 
-
-- [PHP 공식 사이트](https://www.php.net/)
-- [PHP 디렉토리 관련 함수 안내](https://www.php.net/manual/en/ref.dir.php)
-- [PHP 파일 관련 함수 안내](https://www.php.net/manual/en/ref.filesystem.php)
+- [Official PHP Documentation on is_dir()](https://www.php.net/manual/en/function.is-dir.php)
+- [Alternative ways to check if directory exists in PHP](https://stackoverflow.com/questions/4914577/checking-if-a-directory-exists-in-php/4914603#4914603)
+- [Directory and Path in Computing History](https://www.techopedia.com/definition/3787/directory)

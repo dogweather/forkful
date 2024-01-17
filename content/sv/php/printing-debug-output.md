@@ -1,7 +1,7 @@
 ---
-title:                "Felsökningsutskrift"
-html_title:           "PHP: Felsökningsutskrift"
-simple_title:         "Felsökningsutskrift"
+title:                "Utskrift av felsökningsresultat"
+html_title:           "PHP: Utskrift av felsökningsresultat"
+simple_title:         "Utskrift av felsökningsresultat"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Testing and Debugging"
@@ -10,50 +10,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?:
+Att skriva ut debug output är en teknik som används av programmerare för att söka och identifiera fel eller problem i sin kod. Det innebär att man skriver ut variabler eller meddelanden i koden för att se hur den utvecklas under körning och på så sätt kunna förstå vad som eventuellt går fel.
 
-Att skriva ut felsökningsinformation i sin kod är ett vanligt förekommande tillvägagångssätt för att hitta och lösa problem i ett PHP-program. Det är ett effektivt verktyg för att identifiera fel och förstå hur ens kod fungerar.
+## Hur man gör:
+Det är enkelt att skriva ut debug output i PHP. Använd bara funktionen `echo()` eller `print_r()`för att skriva ut en variabel eller ett meddelande. Till exempel:
+```PHP
+$namn = "Nisse";
+echo "Hej " . $namn; //Output: Hej Nisse
 
-## Hur man gör
-
-För att skriva ut felsökningsinformation i PHP, kan man använda sig av funktionen `var_dump()` eller `print_r()`. Dessa funktioner tar ett argument och skriver sedan ut en detaljerad beskrivning av det värdet. Här är ett exempel:
-
-```
-<?php
-$namn = "Anna";
-var_dump($namn);
-?>
+$array = [1,2,3];
+print_r($array); //Output: Array ([0] => 1, [1] => 2, [2] => 3)
 ```
 
-Resultatet blir:
+## Djupdykning:
+Metoden att skriva ut debug output har funnits i flera år och är fortfarande en populär teknik bland programmerare. En alternativ metod är att använda ett debuggingsverktyg som xdebug, som ger mer detaljerad information och möjlighet att stega igenom koden. Implementeringen av debug output är också beroende av programmiringsspråket och plattformen som används.
 
-```
-string(4) "Anna"
-```
-
-Man kan också använda `echo` för att skriva ut enklare felsökningsmeddelanden. Här är ett exempel:
-
-```
-<?php
-$ålder = 25;
-echo "Min ålder är " . $ålder;
-?>
-```
-
-Resultatet blir:
-
-```
-Min ålder är 25
-```
-
-## Djupdykning
-
-När man ska skriva ut felsökningsinformation är det viktigt att tänka på säkerheten. Det kan vara farligt att skriva ut känslig information såsom lösenord eller användaruppgifter. Se därför till att endast skriva ut information som du är bekväm med att visa för andra.
-
-En annan viktig punkt är att inte lämna kvar felsökningskod i produktionsmiljön. Det kan leda till säkerhetsrisker och onödig belastning på servern. Se till att ta bort eller kommentera ut felsökningskoden när den inte längre behövs.
-
-## Se även
-
-* [PHP-funktionen `var_dump()`](https://www.php.net/manual/en/function.var-dump.php)
-* [PHP-funktionen `print_r()`](https://www.php.net/manual/en/function.print-r.php)
-* [PHP-funktionen `echo`](https://www.php.net/manual/en/function.echo.php)
+## Se också:
+- [Mer om `echo()` och `print_r()`](https://www.php.net/manual/en/function.echo.php)
+- [Guide till debugging i PHP](https://www.codecademy.com/articles/how-to-debug-php)
+- [xdebug](https://xdebug.org/)

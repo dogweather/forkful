@@ -1,7 +1,7 @@
 ---
-title:                "Herunterladen einer Webseite"
-html_title:           "Ruby: Herunterladen einer Webseite"
-simple_title:         "Herunterladen einer Webseite"
+title:                "Eine Webseite herunterladen"
+html_title:           "Ruby: Eine Webseite herunterladen"
+simple_title:         "Eine Webseite herunterladen"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "HTML and the Web"
@@ -10,56 +10,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was & Warum?
+Das Herunterladen einer Webseite bedeutet, den gesamten Inhalt einer Webseite in Form von HTML-Code auf Ihren Computer oder Ihr Gerät zu übertragen. Programmierer tun dies, um Informationen von der Webseite zu extrahieren und sie für verschiedene Zwecke zu verwenden, wie z.B. Datenanalyse oder Web-Scraping.
 
-Wenn du schon immer mal wissen wolltest, wie man eine Webseite herunterladen kann, bist du hier genau richtig! Mit Ruby ist es ganz einfach, eine Webseite herunterzuladen und den HTML-Code zu analysieren.
-
-## Wie funktioniert es?
-
-Um eine Webseite herunterzuladen, verwenden wir die Ruby Standard Library `net/http`. Zuerst müssen wir die URL der Webseite angeben, die wir herunterladen möchten.
-
+## Wie geht's?
 ```Ruby
-require 'net/http'
-url = URI.parse('https://www.ruby-lang.org/de/')
+require 'open-uri'
+webpage = open('https://www.example.com')
+content = webpage.read
+puts content
 ```
 
-Dann verwenden wir `Net::HTTP.get_response` um die Antwort von der Webseite zu erhalten.
+Die oben gezeigten Zeilen Code verwenden die Open-URI-Bibliothek, um eine Verbindung zu einer Webseite herzustellen und deren Inhalt in einer Variablen zu speichern. Dann wird der Inhalt des Webseiten-Objekts ausgegeben. Auf diese Weise können Programmierer den HTML-Code einer Webseite auf einfache Weise herunterladen.
 
-```Ruby
-response = Net::HTTP.get_response(url)
-```
+## Tiefer Einblick
+Das Herunterladen von Webseiten hat eine lange Geschichte, die bis in die Anfänge des Internets zurückreicht. Früher wurde dies hauptsächlich verwendet, um Webseiten offline verfügbar zu machen oder um Dateien von einer Webseite herunterzuladen. Heutzutage wird das Herunterladen von Webseiten häufig für Datenanalyse, Web-Scraping oder automatisierte Tests verwendet.
 
-Der zurückgegebene Wert ist ein Objekt der Klasse `Net::HTTPResponse`, welches Informationen wie den Statuscode und den HTML-Inhalt der Seite enthält. Wir können `body` verwenden, um den HTML-Code der Seite zu erhalten.
+Es gibt auch Alternativen zu Open-URI, wie z.B. die HTTP-Bibliothek, die mehr Optionen bietet, aber auch komplexer zu nutzen ist. Wenn Sie in die Implementierungsdetails eintauchen möchten, können Sie die Dokumentation der Bibliotheken oder den Quellcode überprüfen.
 
-```Ruby
-puts response.body
-```
-
-Dies gibt uns den gesamten HTML-Code der Webseite aus. Wir können auch zusätzliche Informationen wie den Response Code und die Header der Seite anzeigen lassen.
-
-```Ruby
-puts response.code # Gibt den Statuscode der Antwort aus (z.B. 200 für Erfolg)
-puts response.header # Gibt die Header der Antwort aus (z.B. Content-Type)
-```
-
-## Tief tauchen
-
-Wenn wir uns den HTML-Code genauer ansehen möchten, können wir Tools wie Nokogiri verwenden, um den Code zu analysieren und spezifische Elemente auszuwählen.
-
-```Ruby
-require 'nokogiri'
-doc = Nokogiri::HTML(response.body)
-
-# Gibt den Titel der Seite aus
-puts doc.css('title').text
-
-# Gibt alle Links auf der Seite aus
-puts doc.css('a').to_s
-```
-
-Nokogiri hat viele mächtige Funktionen, die es uns ermöglichen, auf spezifische Elemente im HTML-Code zuzugreifen und sie zu manipulieren.
-
-## Siehe auch
-
-- [Net::HTTP Dokumentation](https://ruby-doc.org/stdlib-2.7.1/libdoc/net/http/rdoc/Net/HTTP.html)
-- [Nokogiri Dokumentation](https://nokogiri.org/)
+## Sieh auch
+- offizielle Dokumentation von Open-URI: https://ruby-doc.org/stdlib-2.7.0/libdoc/open-uri/rdoc/OpenURI.html
+- HTTP-Bibliothek: https://ruby-doc.org/stdlib-2.7.0/libdoc/net/http/rdoc/Net/HTTP.html

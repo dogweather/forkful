@@ -1,7 +1,7 @@
 ---
-title:                "HTML-analyysi"
-html_title:           "Elm: HTML-analyysi"
-simple_title:         "HTML-analyysi"
+title:                "HTML:n jäsentäminen"
+html_title:           "Elm: HTML:n jäsentäminen"
+simple_title:         "HTML:n jäsentäminen"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "HTML and the Web"
@@ -10,46 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+# Mitä ja miksi?
+HTML-analyysi on prosessi, jossa koodarit muuttavat HTML-koodia tietokoneen ymmärtämään muotoon. Tämä tehdään, jotta tietokone pystyy ymmärtämään ja käsittämään sivuston rakenteen ja sisällön. Tämä on tärkeää, jotta sivuston muokkaaminen ja käyttäminen on helpompaa ja tehokkaampaa.
 
-Vanhat HTML-virheet, kuten puuttuvat sulkumerkit, voivat olla katastrofaalisia verkkosivuston toiminnalle. Parsimisen avulla voit tarkistaa koodin ja varmistaa sen oikeellisuuden, mikä on tärkeää sivuston käyttökokemuksen kannalta.
-
-## Näin
-
+# Miten:
 ```Elm
 import Html
-import Html.Parser exposing (..)
 
-htmlString : String
-htmlString =
-    "<p>Tervetuloa</p>"
-
-parsedHtml : Result (List Html.Error) Html.Html
-parsedHtml =
-    parse htmlString
-
+Html.toHtmlDocument "<h1>Tervetuloa Elm-maailmaan!</h1>"
 ```
+Tämä koodinpätkä muuttaa HTML-koodin, jossa on otsikkoelementti, Elm-koodiksi. Tämän avulla voit esimerkiksi lisätä sivustolleen dynaamisesti luodun HTML-sisällön.
 
-Tässä koodiesimerkissä käytämme Html.Parser kirjastoa, joka sisältää funktion parse, joka ottaa merkkijonon argumenttina ja palauttaa joko Html.Html:n tai virheen. Voit myös käyttää muita Html.Parser kirjaston funktioita, kuten parseFragment, joka palauttaa fragmentin.
-
-Tarkastellaan seuraavaksi tulostetta. Jos HTML on oikein, toimii seuraava tulostus:
+Tuloksena tästä koodista on seuraavanlainen Elm-malli:
 
 ```Elm
-Ok
-    [ { name = "p", attributes = [], children = [ Text "Tervetuloa" ] } ]
+Html.HtmlDocument
+    { head = []
+    , body =
+        [ Html.Node "h1"
+            []
+            [ Html.text "Tervetuloa Elm-maailmaan!" ]
+        ]
+    }
 ```
 
-Jos HTML sisältää virheitä, se palauttaa virheilmoituksen, joka auttaa sinua paikantamaan ja korjaamaan ongelmat.
+# Syvällinen sukellus:
+Historiallisesti HTML-analyysi suoritettiin muilla kielillä, kuten Java, JavaScript tai Python. On myös olemassa muita vaihtoehtoja kuin Elm, kuten Html-parseri package, joka tarjoaa samanlaisen toiminnallisuuden.
 
-## Deep Dive
+HTML-analyysi on tärkeä vaihe verkko-ohjelmoinnissa ja monet ohjelmoijat arvostavat Elm:n selkeyttä ja helppokäyttöisyyttä tässä prosessissa. Elm mahdollistaa myös tarkan virheenhallinnan, jos virheellistä HTML-koodia käytetään.
 
-Elm kieli käyttää HTML:n DOM puuta, joten HTML:n parsiminen ei ole kielen kotitehtävä. Sen sijaan Elm käyttää parser-kirjastoja, kuten Html.Parser, joka on kehitetty nimenomaan parsimista varten.
-
-HTML:n parsiminen mahdollistaa myös XML:n parsimisen. Elm Parser on rakennettu käyttäen jotain nimeltä “parser combinator”, mikä on modulaarinen tapa luoda parser-sääntöjä. Parser combinatorit ovat sarja funktionaalisia työkaluja, joita voit käyttää luomaan uusia parsereita monimutkaisten HTML tasojen käsittelyyn.
-
-## Katso myös
-[Virallinen Elm Parser dokumentaatio](https://package.elm-lang.org/packages/elm/parser/latest/)
-
-[Tutorial video HTML parsimisesta Elm:ssä](https://www.youtube.com/watch?v=-zJz4S96xN8)
-
-[Practical Elm -blogi HTML parsimisesta](https://dev.to/rtfeldman/parsing-html-in-elm)
+# Katso myös:
+- Dokumentaatio Elm:n HTML-moduulista: https://package.elm-lang.org/packages/elm/html/latest/
+- Html-parseri package: https://package.elm-lang.org/packages/elm/parser/latest/

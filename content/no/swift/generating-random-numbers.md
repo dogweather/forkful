@@ -10,27 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
-Å generere tilfeldige tall er en vanlig oppgave i programmering, og det kan brukes til ulike formål som å lage spill, testing eller tilfeldige valg. 
+# Hva og hvorfor?
 
-## Slik gjør du det
-Det er enkelt å generere tilfeldige tall i Swift ved å bruke rand() eller arc4random() funksjonene. Her er et eksempel på hvordan du kan generere et tilfeldig tall mellom 1 og 10 og skrive det ut i konsollen:
+Å generere tilfeldige tall er en vanlig oppgave for programmerere. Dette innebærer å bruke et datamaskinprogram for å produsere tall som er tilfeldige eller uforutsigbare. Grunnen til at vi gjør dette er for å tilføre variasjon og usikkerhet i programmene våre, og for å løse ulike problemer som krever tilfeldighet, som spill og sikkerhetsprotokoller.
+
+# Hvordan:
+
+Vi kan generere tilfeldige tall enkelt ved hjelp av Swifts innebygde funksjoner. For å generere et tilfeldig tall mellom to tall, kan vi bruke ```Int.random(in: x...y)``` , hvor x og y representerer det laveste og høyeste mulige tallet i rekken. Her er en kodeblokk som illustrerer dette:
 
 ```Swift
-let randomNumber = Int.random(in: 1...10)
-print(randomNumber)
+let randomNum = Int.random(in: 1...10)
+print(randomNum)
 ```
+Dette vil produsere et tilfeldig heltall mellom 1 og 10, og skrive det ut i konsollen.
 
-Dette vil gi forskjellige tall hver gang koden kjøres. Du kan også begrense tallene til et bestemt intervall ved å endre området i Int.random() funksjonen.
+# Dykk dypere:
 
-## Dypdykk
-I Swift, er funksjonen rand() en del av C standard library, mens arc4random() er en nyere og sikrere versjon som bruker en kryptografisk tilfeldig tallgenerator. Det er også mulig å generere tilfeldige flyttall ved å bruke random() funksjonen. 
+Historisk sett har generering av tilfeldige tall vært en kompleks og krevende oppgave. Tidlige datamaskiner brukte fysiske fenomener som radioaktivt henfall og støy for å produsere tilfeldige tall. I dag bruker vi algoritmer og pseudorandom generatorer for å simulere tilfeldighet. En alternativ måte å generere tilfeldige tall på er å bruke eksterne tjenester som tilbyr "hardware entropy", som tar i bruk fysiske verdier som innspill for å generere tilfeldige tall.
 
-En annen nyttig metode er å bruke shuffle() for å blande en liste med tall i tilfeldig rekkefølge.
+Implementasjonen av tilfeldige tall i Swift er basert på en variant av Mersenne Twister algoritmen. Denne algoritmen er utviklet for å produsere høykvalitets tilfeldige tall og er mye brukt i ulike programmeringsspråk og applikasjoner.
 
-For å gjøre genereringen av tall enda mer tilfeldig, kan du også bruke seed() funksjonen for å endre startpunktet for de tilfeldige tallene.
+# Se også:
 
-## Se også
-- [Swift Programmeringsspråk](https://developer.apple.com/swift/)
-- [Offisiell Swift Dokumentasjon](https://docs.swift.org/swift-book/)
-- [Tilfeldige tall i Swift dokumentasjonen](https://developer.apple.com/documentation/swift/numeric/2896015-random)
+For mer informasjon om tilfeldige tall i Swift, se dokumentasjonen for ```Int.random()``` og ```Double.random()```. Du kan også sjekke ut diskusjonsforumet for å få tips og triks fra andre Swift-programmerere om å generere tilfeldige tall.

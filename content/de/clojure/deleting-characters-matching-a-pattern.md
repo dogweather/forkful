@@ -10,45 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+Was & Warum?
 
-Manchmal müssen wir in unseren Programmen bestimmte Zeichen löschen, zum Beispiel Leerzeichen oder Sonderzeichen. Das kann aus verschiedenen Gründen notwendig sein, zum Beispiel um Daten zu bereinigen oder um die Eingabe des Benutzers zu überprüfen.
+Wenn wir von "Löschen von Zeichen, die einem Muster entsprechen" sprechen, meinen wir das Entfernen von bestimmten Zeichen aus einem String, die einem bestimmten Muster entsprechen. Programmierer tun dies, um unerwünschte Zeichen aus einer Zeichenkette zu entfernen oder um ein bestimmtes Format für die Zeichenkette zu erzwingen.
 
-## Wie man es macht
+Wie geht's?
 
-In Clojure gibt es verschiedene Möglichkeiten, um Zeichen basierend auf einem Muster zu löschen. Eine einfache und effektive Möglichkeit ist die Verwendung von regulären Ausdrücken.
+Um Zeichen, die einem Muster entsprechen, in Clojure zu löschen, können wir die Funktion "replace" mit dem Muster und einer leeren Zeichenkette als Argumente verwenden. Sehen wir uns ein Beispiel an:
 
+```Clojure
+(def string "Hallo! Wie geht es dir?")
+(replace #"!" "" string)
 ```
-;; Beispielcode zum Löschen von Leerzeichen aus einer Zeichenkette
-(def text "Dies ist ein Beispieltext.")
-(def neuer-text (clojure.string/replace text #" " ""))
-;; Ausgabe: "DiesisteinBeispieltext."
-```
+Output: "Hallo Wie geht es dir?"
 
-In diesem Beispiel verwenden wir die Funktion `clojure.string/replace`, um alle Leerzeichen in der Zeichenkette `text` mit dem leeren String `""` zu ersetzen. Das `#` vor dem Muster `" "` zeigt an, dass es sich um einen regulären Ausdruck handelt, der alle Leerzeichen in der Zeichenkette matcht.
+Hier haben wir das Ausrufezeichen mit Hilfe des regulären Ausdrucks #"!" gelöscht und eine leere Zeichenkette als Ersatz verwendet. Dies kann auch verwendet werden, um andere unerwünschte Zeichen zu entfernen, indem das entsprechende Muster verwendet wird.
 
-Eine weitere mögliche Lösung ist die Verwendung der Funktion `clojure.string/trim`. Diese Funktion entfernt alle Leerzeichen am Anfang und Ende einer Zeichenkette.
+Tiefeinsicht
 
-```
-(def text "   Ein Beispieltext   ")
-(def neuer-text (clojure.string/trim text))
-;; Ausgabe: "Ein Beispieltext"
-```
+Das Löschen von Zeichen, die einem Muster entsprechen, ist ein häufig verwendetes Verfahren in der Textverarbeitung und beim Parsing von Daten. Es kann hilfreich sein, um unerwünschte Zeichen aus Nutzereingaben zu entfernen oder um die Formatierung von Daten zu vereinheitlichen.
 
-Diese Methode ist nützlich, wenn wir nur Leerzeichen am Anfang oder Ende der Zeichenkette entfernen möchten. Wenn wir jedoch spezifische Zeichen oder Muster entfernen möchten, ist die Verwendung von regulären Ausdrücken die bessere Wahl.
+Eine alternative Methode zum Löschen von Zeichen ist die Verwendung der Funktion "trim" in Kombination mit der Funktion "replace". Diese Methode entfernt alle vorgegebenen Zeichen am Anfang und Ende des Strings und kann auch ein Muster als Argument verwenden.
 
-## Tiefere Einblicke
+Bei der Implementierung des regulären Ausdrucks #"!" werden die Zeichen in einer Zeichenkette Schritt für Schritt überprüft und jedes Zeichen, das dem Muster entspricht, wird durch die angegebene Ersatzzeichenkette ersetzt.
 
-Clojure bietet noch viele weitere Funktionen und Möglichkeiten, um Zeichen basierend auf einem Muster zu löschen. Hier sind einige weitere nützliche Funktionen:
+Siehe auch
 
-- `clojure.string/replace-first`: Entfernt nur das erste Auftreten des Musters und lässt alle anderen unberührt.
-- `clojure.string/replace-nth`: Entfernt das Muster nur an der angegebenen Stelle in der Zeichenkette.
-- `clojure.string/replace-last`: Entfernt nur das letzte Auftreten des Musters.
-- `clojure.string/replace-regex`: Führt die Ausführung eines regulären Ausdrucks auf der Zeichenkette aus.
-
-Es gibt auch die Möglichkeit, benutzerdefinierte Funktionen zu erstellen, um spezifische Zeichen oder Muster zu entfernen. Das Erlernen von regulären Ausdrücken ist in diesem Zusammenhang sehr hilfreich, da wir dadurch mehr Kontrolle über den Löschvorgang haben.
-
-## Siehe auch
-
-- [Clojure Dokumentation zu regulären Ausdrücken](https://clojuredocs.org/clojure.string/replace-regex)
-- [Tutorial zu regulären Ausdrücken in Clojure](https://www.braveclojure.com/regular-expressions/)
+- Clojure-Dokumentation für "replace": https://clojuredocs.org/clojure.core/replace
+- Vergleich von regulären Ausdrücken in Clojure: https://www.oreilly.com/library/view/introducing-clojure/9781449383067/ch04.html#sec_regular
+- Beispiele für die Verwendung von "trim" und "replace" in Clojure: https://www.javatips.net/api/prism-clojure-master/src/main/java/com/cheney/prism/gleaners/clojure/clj/graphics/mc/gleaners/filter/original/CustomChapter2.java

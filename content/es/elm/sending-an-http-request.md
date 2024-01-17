@@ -10,77 +10,66 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# ¿Por qué enviar una solicitud HTTP en Elm?
+## ¿Qué y por qué?
 
-Enviar una solicitud HTTP es una forma esencial de comunicarse con servicios externos y obtener datos o realizar acciones en nuestra aplicación Elm. Aprender a hacerlo nos permitirá ampliar las capacidades de nuestras aplicaciones y aprovechar todo el potencial de la Web.
+El envío de una solicitud HTTP es una forma en que los desarrolladores pueden interactuar con recursos en la web, como páginas web o servicios en línea. Los programadores necesitan enviar solicitudes HTTP para acceder y manipular datos en línea.
 
-## Cómo hacerlo
+## Como hacer:
 
-En Elm, podemos enviar una solicitud HTTP utilizando la función `Http.send`. Primero, debemos importar el módulo HTTP en nuestro archivo:
+Los siguientes son ejemplos de cómo realizar una solicitud HTTP en Elm:
 
 ```Elm
 import Http
-```
-
-Luego, podemos crear una solicitud `Http.Request` pasando la URL y el método HTTP correspondiente, como GET o POST:
-
-```Elm
-request : Http.Request
-request =
-    Http.request
-        { url = "https://my-api.com/users"
-        , method = "GET"
-        }
-```
-
-Podemos enviar esta solicitud utilizando la función `Http.send`, que espera un mensaje de tipo `Http.Response` y una solicitud `Http.Request`:
-
-```Elm
-update : Msg -> Model -> ( Model, Cmd Msg )
-update msg model =
-    case msg of
-        ...
-        FetchUsers ->
-            ( model, Http.send UserListReceived request )
-```
-
-Finalmente, podemos manejar la respuesta en nuestro modelo utilizando el mensaje `Http.Response`, que contendrá un estado, encabezados y posiblemente un cuerpo de respuesta:
-
-```Elm
-type User
-    = User
-        { id : Int
-        , name : String
-        }
-
-type alias Model
-    = { users : List User
-      , loading : Bool
-      }
+import Json.Decode exposing (int, string, list)
 
 type Msg
-    = ...
-    | UserListReceived (Result Http.Error (List User))
+  = GetUsers
+  | UsersResult (Result Http.Error (List User))
 
-update : Msg -> Model -> ( Model, Cmd Msg )
-update msg model =
-    case msg of
-        ...
-        UserListReceived (Ok users) ->
-            ( { model | users = users, loading = False }, Cmd.none )
-        
-        UserListReceived (Err error) ->
-            ( model, Cmd.none )
+msgDecoder : Decoder Msg
+msgDecoder =
+  Json.Decode.where
+    "action" (Json.Decode.succeed GetUsers)
+
+type alias User =
+  { name: String
+  , age: Int
+  }
+
+userDecoder : Decoder User
+userDecoder =
+  Json.Decode.map2 User
+    (Json.Decode.field "name" string)
+    (Json.Decode.field "age" int)
+    
+type alias Error =
+  { status: Int
+  , message: String
+  }
+
+httpGetUsers : Cmd Msg
+httpGetUsers =
+  Http.get
+    { url = "https://example.com/users"
+    , expect = Http.expectJson UsersResult (Json.Decode.list userDecoder)
+    }
+
+main =
+  App.program
+    { init = (model, httpGetUsers)
+    , update = update
+    , view = view
+    , subscriptions = (\msg -> ())
+    }
+
 ```
 
-## Profundizando
+La salida de este código sería una lista de usuarios en formato JSON.
 
-En la solicitud `Http.request`, también podemos incluir un cuerpo y encabezados adicionales, si es necesario. Además, podemos utilizar la función `Http.toBuilder` para construir una solicitud más avanzada con opciones personalizadas.
+## Inmersión profunda:
 
-Además, con la biblioteca adicional [elm-lang/http](https://package.elm-lang.org/packages/elm-lang/http/latest/), podemos manejar errores y autenticación en nuestras solicitudes HTTP, así como configurar un manejo de intercepción para modificar las solicitudes antes de ser enviadas.
+El envío de solicitudes HTTP ha sido una parte fundamental del desarrollo web durante años, y hay muchas alternativas disponibles, como JQuery o Fetch API. En Elm, el módulo Http proporciona una forma segura y fácil de realizar solicitudes HTTP, utilizando efectos de comando y decodificadores para manejar posibles errores.
 
-# Ver también
+## Ver también:
 
-- [Documentación oficial de Elm para enviar solicitudes HTTP](https://guide.elm-lang.org/effects/http.html)
-- [Elm for Beginners: Sending HTTP Requests](https://www.elm-tutorial.org/en/08-fetching-resources/02-request.html)
-- [Biblioteca elm-lang/http](https://package.elm-lang.org/packages/elm-lang/http/latest/)
+Para obtener más información sobre el envío de solicitudes HTTP en Elm, puede consultar la documentación oficial de Elm: https://guide.elm-lang.org/effects/http.html. Encontrará información detallada sobre cómo usar el módulo Http y las diferentes opciones disponibles.

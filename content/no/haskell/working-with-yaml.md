@@ -1,7 +1,7 @@
 ---
-title:                "Arbeid med yaml"
-html_title:           "Haskell: Arbeid med yaml"
-simple_title:         "Arbeid med yaml"
+title:                "Arbeide med yaml"
+html_title:           "Haskell: Arbeide med yaml"
+simple_title:         "Arbeide med yaml"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Data Formats and Serialization"
@@ -10,35 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hva & Hvorfor?
 
-Hvis du skal jobbe med data eller konfigurasjonsfiler i Haskell, vil du sannsynligvis støte på YAML-formatet. YAML (YAML Ain’t Markup Language) er et populært format for å representere datastrukturer, og er spesielt godt egnet for å lagre konfigurasjonsinnstillinger.
+Å jobbe med YAML handler om å organisere og lagre informasjon på en enkel og lesbar måte. Det brukes ofte av programmerere for å lagre konfigurasjonsdata og strukturere komplekse datastrukturer. 
 
-## Hvordan
+## Slik gjør du det:
 
-For å kunne jobbe med YAML-filer i Haskell, må du først importere noen moduler. Du trenger modulene `System.IO`, `Data.Yaml` og `Control.Exception` for å kunne lese og skrive YAML-filer. Her er et eksempel på hvordan du kan lese en YAML-fil og konvertere den til en Haskell-datastruktur:
+Her er et eksempel på hvordan du kan lage en YAML-fil og lese den i Haskell:
 
 ```Haskell
-import System.IO (withFile, IOMode (ReadMode))
-import Data.Yaml (decodeFileThrow)
-import Control.Exception (try)
+-- For å jobbe med YAML, må vi importere biblioteket
+import Data.Yaml
 
-data Person = Person
-    { name :: String
-    , age :: Int
-    , occupation :: String
-    } deriving (Show, Generic)
+-- Definer en datastruktur, i dette tilfellet en liste av tall
+data Numbers = Numbers [Int] deriving (Show, Generic) 
 
-instance FromJSON Person
+-- Lagre dataen som YAML i en fil
+let data = Numbers [1, 2, 3]
+encodeFile "numbers.yml" data
+
+-- Les dataen fra YAML-filen og skriv ut
+numbers <- decodeFileThrow "numbers.yml" :: IO Numbers
+print numbers
+
+-- Output: Numbers [1, 2, 3]
 ```
 
-Funksjonen `withFile` åpner filen for lesing, og funksjonen `decodeFileThrow` dekoder den til en Haskell-datastruktur. `try`-blokken tar hånd om eventuelle feil som kan oppstå under lesing. Som en bonus er det også brukt `Generic` for å automatisk generere en `FromJSON`-instance for `Person`.
+## Dypdykk:
 
-## Dypdykk
+YAML (Yet Another Markup Language) dukket opp i 2001 og er inspirert av programmeringsspråket Python. Det brukes ofte som et alternativ til JSON for å representere kompleks data, og er spesielt nyttig for å konfigurere komplekse systemer. I Haskell, brukes biblioteket "Data.Yaml" for å enkelt arbeide med YAML-data. 
 
-Hvis du vil lære mer om YAML og hvordan det fungerer, kan du sjekke ut YAML-spesifikasjonen (https://yaml.org/spec/) som kan gi deg en bedre forståelse av formatet. Det er også mulig å bruke YAML-biblioteker som kan hjelpe deg med å generere og validere YAML-kode.
+## Se også:
 
-## Se også
-
-- Offisiell YAML-spesifikasjon: https://yaml.org/spec/
-- Haskell-pakker for å jobbe med YAML: https://hackage.haskell.org/packages/search?terms=yaml
+- [Offisiell YAML-nettside] (https://yaml.org/)
+- [Haskell Yaml bibliotek] (https://hackage.haskell.org/package/yaml)

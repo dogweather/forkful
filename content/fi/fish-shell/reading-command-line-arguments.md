@@ -10,66 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
-Kun käytämme komentoriviä, usein haluamme suorittaa tietyt toiminnot mahdollisimman nopeasti ja tehokkaasti. Fish Shell mahdollistaa komentorivin yksinkertaisen ja helposti luettavan muodon, joka tekee siitä erinomaisen työkalun koodin suorittamiseen. Tässä artikkelissa näytämme, miten voit lukea komentorivin argumentteja Fish Shell -ohjelmoinnin avulla.
+## Mikä ja miksi?
+Komentoriviparametrien lukeminen, tai "reading command line arguments", on tapa saada ohjelmalle annettuja syötteitä suoraan komentoriviltä. Tämä on tärkeää, sillä se mahdollistaa ohjelman joustavan käytön ja mahdollistaa sen mukauttamisen erilaisiin tarpeisiin.
 
-## Kuinka
-Fish Shell tarjoaa useita tapoja lukea komentorivin argumentteja. Yksi tapa on käyttää sisäänrakennettuja komentoja kuten `argparse` ja `argv`. Tässä on yksinkertainen esimerkki, joka tulostaa ensimmäisen komentorivin argumentin:
-
-```Fish Shell
-argparse -n1
-echo $argv[1]
+## Miten:
+### Esimerkki 1:
+```Fish Shell``` käyttää ```$argv``` muuttujaa komentoriviparametrien lukemiseen. Voit tulostaa kaikki annetut parametrit käyttämällä seuraavaa komentoa:
 ```
-
-Tulostus:
-
-```Fish Shell
-Hello
-```
-
-Voit myös hakea kaikki komentorivin argumentit kerralla käyttäen `argv`:
-
-```Fish Shell
-for arg in $argv
-  echo $arg
-end
-```
-
-Tulostus:
-
-```Fish Shell
-Hello
-World
-```
-
-## Syvälle sukellus
-Kuten näemme, Fish Shell tarjoaa käteviä tapoja lukea komentorivin argumentteja. Voit myös käyttää `argparse`-komennon parametreja muuttamaan argumenttien lukemista. Esimerkiksi, jos haluat hakea vain tietyn argumentin indeksin, voit käyttää `-s` parametria:
-
-```Fish Shell
-argparse -s2 -n1
-echo $argv[1]
-```
-
-Tulostus:
-
-```Fish Shell
-World
-```
-
-Jos haluat käyttää pidempiä argumentteja, voit käyttää `argparse`-komennon `-l` parametria:
-
-```Fish Shell
-argparse -n2 -l Hello World
 echo $argv
 ```
+Tulostuksena näet listan komentoriviparametreista. Esimerkiksi jos syötit komennon ```fish omat_komennot.fish 123 abc```, tulostuksena näkyy ```123 abc```.
 
-Tulostus:
+### Esimerkki 2:
+Voit myös käyttää ```$argv```:n indeksointia, jolloin voit valita tietyn parametrin tulostettavaksi. Esimerkiksi komento ```echo $argv[1]``` tulostaa ```123```.
 
-```Fish Shell
-Hello World
-```
+## Syväsukellus:
+Komennon riviparametrien lukeminen on ollut osa käyttöjärjestelmien toimintaa jo pitkään. Aiemmin tätä tehtiin usein C-kielellä, mutta nykyisin erilaiset kielivalinnat, kuten Fish Shell, tarjoavat helpomman tavan lukea komentoriviparametreja.
 
-## Katso myös
-- [Fish Shellin dokumentaatio] (https://fishshell.com/docs/current/index.html)
-- [Fish Shellin GitHub-sivut] (https://github.com/fish-shell/fish-shell)
-- [Komentorivin argumentit Pythonissa] (https://realpython.com/python-command-line-arguments/)
+Vaihtoehtoisia tapoja käsitellä komentoriviparametreja on esimerkiksi käyttää erillisiä kirjastoja kuten ```getopt```, joka tarjoaa mahdollisuuden helpompaan parametrien käsittelyyn.
+
+Fish Shellissä ```$argv``` muuttuja on käytettävissä ohjelman käynnistyksen alusta asti, mikä mahdollistaa komentoriviparametrien käsittelyn myös varhaisessa vaiheessa.
+
+## Katso myös:
+- [Fish Shellin dokumentaatio](https://fishshell.com/docs/current/index.html)
+- [getopt kirjaston dokumentaatio](https://www.gnu.org/software/libc/manual/html_node/Getopt.html)

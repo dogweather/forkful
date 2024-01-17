@@ -10,49 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä ja miksi?
+Tekstitiedoston lukeminen tarkoittaa, että ohjelma lukee tiedostossa olevan tekstin ja käsittelee sitä haluamallasi tavalla. Ohjelmoijat tekevät tätä esimerkiksi tietojen lukemiseksi tiedostoista tai käyttäjän syötteen käsittelyyn.
 
-Miksi lukea tiedostoa Go-ohjelmoinnilla? Tämä artikkeli kertoo kuinka tekstitiedosto voidaan lukea Go-kielellä ja tarjoaa syvempää tietoa aiheesta.
-
-## Kuinka
-
-Käyttäjät voivat käyttää Go-ohjelmointikieltä lukemaan erilaisia tiedostoja, mukaan lukien teksti-tiedostoja. Tämä tapahtuu käyttämällä *os* ja *io/ioutil* paketteja. Seuraava koodiesimerkki näyttää kuinka tekstitiedosto voidaan lukea ja tulostaa konsoliin.
+## Kuinka tehdä se:
+Käyttämällä Go-ohjelmointikieltä, voit käyttää ```os.Open()``` -funktiota avataksesi tiedoston ja sitten ```bufio.Scanner``` -pakettia lukemaan tiedoston yksi rivi kerrallaan. Seuraavassa koodiesimerkissä avataan tiedosto nimeltä "tekstitiedosto.txt", luetaan yksi rivi ja tulostetaan se konsoliin.
 
 ```Go
-package main
+tiedosto, err := os.Open("tekstitiedosto.txt")
+if err != nil {
+    fmt.Println("Virhe:", err)
+    return
+}
+defer tiedosto.Close()
 
-import (
-	"fmt"
-	"io/ioutil"
-	"os"
-)
-
-func main() {
-	// Avaa haluttu tiedosto
-	file, err := os.Open("tekstitiedosto.txt")
-	if err != nil {
-		fmt.Println(err)
-	}
-	defer file.Close()
-
-	// Lukee tiedoston sisällön ([]byte muodossa)
-	content, err := ioutil.ReadAll(file)
-	if err != nil {
-		fmt.Println(err)
-	}
-
-	// Tulostaa tiedoston sisällön konsoliin
-	fmt.Println(string(content))
+skanneri := bufio.NewScanner(tiedosto)
+for skanneri.Scan() {
+    fmt.Println(skanneri.Text())
 }
 ```
 
-Koodin suorittamisen jälkeen, konsoliin tulostuu tekstitiedoston sisältö. Huomaa, että *err* muuttujaa käytetään virheiden käsittelyssä. On tärkeää huolehtia mahdollisista virhetilanteista tiedostoa luettaessa.
+Tuloste:
 
-## Syvällisempää tietoa
+```
+Tämä on ensimmäinen rivi.
+Tämä on toinen rivi.
+Tervetuloa Go-ohjelmointiin!
+```
 
-*os* ja *io/ioutil* paketit tarjoavat useita metodeja tiedoston käsittelyyn. Esimerkiksi, *ioutil.ReadFile()* voi lukea koko tiedoston sisällön *[]byte* muodossa, kun taas *ioutil.ReadFileToString()* muuttaa tiedoston sisällön *string* muotoon. Lue lisää näistä paketeista Go:n virallisesta dokumentaatiosta. 
+## Syväsukellus:
+Tiedostojen lukeminen on yksi tärkeimmistä toiminnoista ohjelmoinnissa, ja sitä tarvitaan usein tietojen käsittelyssä. Tekstivirtojen lukeminen on ollut osa ohjelmointia jo pitkään, ja Go tarjoaa tehokkaan tavan tehdä se helposti ja yksinkertaisesti.
 
-## Katso myös
+On myös muita tapoja lukea tekstitiedostoja Go-kielellä, kuten ```ioutil.ReadFile()``` -funktiolla, mutta ```bufio.Scanner``` tarjoaa enemmän joustavuutta ja paremman suorituskyvyn tiettyjen olosuhteiden alaisena.
 
+Jos haluat syvällisempää tietoa lukemisesta tiedostoihin, voit tutustua Go:n dokumentaatioon ja katsella muita esimerkkejä.
+
+## Katso myös:
+- [bufio.Scanner dokumentaatio](https://golang.org/pkg/bufio/#Scanner)
 - [Go:n virallinen dokumentaatio](https://golang.org/doc/)
-- [Go-paketit tiedostojen käsittelyyn](https://golang.org/pkg/os/)

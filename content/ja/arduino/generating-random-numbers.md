@@ -1,7 +1,7 @@
 ---
-title:                "ランダムな数字の生成"
-html_title:           "Arduino: ランダムな数字の生成"
-simple_title:         "ランダムな数字の生成"
+title:                "ランダム数字を生成する"
+html_title:           "Arduino: ランダム数字を生成する"
+simple_title:         "ランダム数字を生成する"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Numbers"
@@ -10,27 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
-ランダムな数値を生成することに興味がある人々は、ゲームやシミュレーション、セキュリティなどの分野で使用できるためです。Arduinoを使用したランダムな数値の生成は、そのような場面で役に立ちます。
+## 概要
 
-## How To
-ランダムな数値を生成するには、`random()`関数を使用します。この関数は、引数として最小値と最大値を受け取り、その範囲内でランダムな数値を返します。以下は、0から10までのランダムな数値を生成するArduinoコードの例です。
+Arduinoにおいて、ランダムな数値を生成することができます。プログラマーたちは、ランダムな数値を生成することで、アプリケーションやゲームの振る舞いをよりランダムにすることができます。
+
+## 使い方
 
 ```Arduino
-int randomNumber = random(0, 10); // 0から10までのランダムな数値を生成
-Serial.println(randomNumber); // ランダムな数値をシリアルモニターに表示
+// 1から10までのランダムな数値を生成する例
+int random_number = random(1, 10);
+Serial.println(random_number); // 例：5
 ```
 
-このように、`random()`関数を使用することで簡単にランダムな数値を生成することができます。
+## 詳細を調べる
 
-## Deep Dive
-Arduinoには、様々なランダムな数値の生成方法があります。`random()`関数だけでなく、`randomSeed()`関数を使用して最初のシード値を決めることで、より本格的なランダム性を実現することができます。
+生成されるランダムな数値は、疑似乱数と呼ばれます。これは、厳密には真のランダム性を持たない数値ですが、十分なランダム性を発生することができます。
 
-また、マイクロコントローラーのランダムな起動や使用時間などを使用して、よりシード値をランダム化することもできます。さらに、Arduinoには乱数を生成するためのライブラリもあり、様々な方法でランダムな数値を生成することができます。
+疑似乱数の生成には、様々な手法があります。Arduinoでは、乱数生成アルゴリズムの一つであるメルセンヌ・ツイスター法が使用されています。
 
-## See Also
-- [Arduino公式サイト](https://www.arduino.cc/)
-- [Arduino開発環境のダウンロード](https://www.arduino.cc/en/software) 
-- [Arduinoプロジェクト集光器](https://create.arduino.cc/projecthub)
+代替手段として、ハードウェアによる真の乱数生成器を使用することもできます。しかし、このような方法は高価であるため、Arduinoではあまり使用されません。
 
-以上で、ランダムな数値の生成についての基本的な情報を説明しました。これらの方法を使用して、さまざまなプロジェクトで有益なランダム性を実現してください。
+ランダムな数値は、さまざまなアプリケーションで利用されています。例えば、ゲームの敵の出現、アニメーションの再生順序の決定などに使用されます。
+
+## 関連リンク
+
+- [Arduino Reference - random()](https://www.arduino.cc/reference/en/language/functions/random-numbers/random/)
+- [Wikipedia - Pseudorandom number generator](https://en.wikipedia.org/wiki/Pseudorandom_number_generator)
+- [Wikipedia - Mersenne Twister](https://en.wikipedia.org/wiki/Mersenne_Twister)
+- [SparkFun - Random Numbers](https://learn.sparkfun.com/tutorials/random-numbers)

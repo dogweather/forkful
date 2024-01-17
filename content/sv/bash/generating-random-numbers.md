@@ -1,7 +1,7 @@
 ---
-title:                "Generering av slumpmässiga nummer"
-html_title:           "Bash: Generering av slumpmässiga nummer"
-simple_title:         "Generering av slumpmässiga nummer"
+title:                "Skapa slumpmässiga nummer"
+html_title:           "Bash: Skapa slumpmässiga nummer"
+simple_title:         "Skapa slumpmässiga nummer"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Numbers"
@@ -10,26 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
-Du kanske undrar varför man skulle vilja använda slumpmässiga nummer i sitt Bash-program. En anledning kan vara för att skapa variation i ett spel eller för att generera slumpmässiga lösenord.
+## Vad & Varför?
 
-## Hur man gör det
-För att generera slumpmässiga nummer i Bash kan man använda kommandot "shuf". Det här kommandot är en del av GNU Core Utilities och finns förinstallerat på de flesta Linux-distributioner. Här är ett exempel på hur man kan använda det:
+Att generera slumpmässiga nummer är känt som en viktig del av programmering. Det innebär att skapa nummer som inte följer något förutbestämt mönster. Programmerare använder slumpmässiga nummer av olika skäl, till exempel för att simulera spel eller generera slumpmässiga data för testning av sina program.
+
+## Hur gör man:
 
 ```Bash
-# Genererar ett slumpmässigt heltal mellan 1 och 10
-shuf -i 1-10 -n 1
+# Generera ett slumpmässigt heltal mellan 1 och 10
+echo $((RANDOM % 10 + 1))
 
-# Genererar ett slumpmässigt lösenord med 8 tecken från bokstäver, siffror och specialtecken
-shuf -zer -n 8 -e {A..Z} {a..z} {0..9} !"#$%&'()*+,-./:;<=>?@[\]^_{|}~
+# Generera ett slumpmässigt flyttal mellan 0 och 1
+echo $((RANDOM / 32767.0))
+
+# Generera en lista med 5 slumpmässiga ord från en textfil
+shuf -n 5 textfil.txt
 ```
 
-Kommandot "shuf" tar in flera argument som styr hur de slumpmässiga numrerna ska genereras. I det första exemplet använder vi argumenten "-i 1-10" för att ange att vi vill generera ett tal mellan 1 och 10, och "-n 1" för att endast få en output. I det andra exemplet använder vi argumentet "-n 8" för att få en output med 8 tecken och "-e" för att specificera vilka tecken som ska ingå i lösenordet.
+Output:
+```
+7
+0.6597
+äpple
+boll
+giraff
+skrivare
+```
 
-## Djupgående
-Det finns flera sätt att generera slumpmässiga nummer i Bash. Förutom "shuf" kan man också använda kommandot "od" eller "jot". Det går även att använda "$RANDOM" variabeln för att få ett slumpmässigt heltal mellan 0 och 32767. Genom att kombinera dessa olika tekniker kan man skapa mer avancerade sätt att generera slumpmässiga nummer, till exempel genom att välja ut slumpmässiga delar av ett ord eller en fras.
+## Djupdykning:
 
-## Se även
-- GNU Core Utilities man-sida för "shuf": https://www.gnu.org/software/coreutils/manual/html_node/shuf-invocation.html
-- "od" man-sida: https://www.gnu.org/software/coreutils/manual/html_node/od-invocation.html
-- "jot" man-sida: https://www.freebsd.org/cgi/man.cgi?query=jot&sektion=1
+Slumpmässiga nummer har funnits sedan starten av datorer och är en viktig del av många programmeringsspråk, inklusive Bash. Till en början användes pseudoslumpmässiga nummer, som är beräknade nummer som kan låta som slumpmässiga men egentligen följer ett förutbestämt mönster. Idag används mer avancerade algoritmer för att generera verkligt slumpmässiga nummer.
+
+Det finns flera sätt att generera slumpmässiga nummer, inklusive internt i Bash med kommandot ```$RANDOM``` eller med hjälp av externa program som ```shuf``` eller ```od```.
+
+## Se även:
+
+- [Bash dokumentation om variabel $RANDOM](https://www.gnu.org/software/bash/manual/html_node/Bash-Variables.html#index-RANDOM_002c-shell-variable)
+- [Wikipedia sida om slumpmässiga nummer](https://sv.wikipedia.org/wiki/Slumpm%C3%A4ssiga_nummer)

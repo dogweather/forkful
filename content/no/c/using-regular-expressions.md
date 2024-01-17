@@ -10,64 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hvorfor
+## Hva & Hvorfor?
+Bruk av regulære uttrykk er en vanlig praksis blant programmerere for å søke og manipulere data i tekststrenger. Dette kan være spesielt nyttig når man ønsker å finne eller erstatte spesifikke mønstre i en tekst. Regulære uttrykk hjelper også med å gjøre kode mer effektiv og lesbar.
 
-Regulære uttrykk, eller "regular expressions" på engelsk, er et kraftig verktøy for tekstbehandling og mønstermatching i programmering. Ved å lære å bruke regulære uttrykk, kan man effektivt finne og manipulere tekst i en stor mengde filer, noe som er veldig nyttig i mange programmeringsoppgaver.
-
-# Slik gjør du det
-
-Å lære seg regulære uttrykk i C er enkelt! De følgende eksemplene viser hvordan man kan bruke regulære uttrykk til å finne og endre mønstre i en streng.
+## Hvordan:
+Her er et eksempel på hvordan man kan bruke regulære uttrykk i C for å finne og endre et tall i en tekststreng:
 
 ```
-/*
- * Dette programmet bruker regulære uttrykk til å finne og endre mønstre i en streng.
- */
- 
 #include <stdio.h>
+#include <string.h>
 #include <regex.h>
 
-int main() {
-    // Definer en regex for å finne alle tall i en streng
+int main(void) {
+    char str[] = "Dette er en tekst med tallet 12345";
+    char pattern[] = "([0-9]+)";
     regex_t regex;
-    const char *pattern = "[0-9]+";
+    regmatch_t match[2];
     
-    // Kompilèr regexet til å bruke det for å finne mønstre
-    regcomp(&regex, pattern, REG_EXTENDED);
-    
-    // Søk etter regexet i en streng
-    char *string = "Hello123World";
-    regmatch_t match;
-    regexec(&regex, string, 1, &match, 0);
-    
-    // Skriv ut alle tall som ble funnet
-    printf("Funnet tall: ");
-    for (int i = match.rm_so; i < match.rm_eo; i++) {
-        printf("%c", string[i]);
+    if (regcomp(&regex, pattern, REG_EXTENDED) != 0) {
+        printf("Kan ikke kompilere uttrykket!\n");
+        return 1;
     }
-    printf("\n");
     
-    // Endre alle tall til stor bokstav og skriv ut den modifiserte strengen
-    regsub(&regex, string, "X", &string);
-    printf("Modifisert streng: %s\n", string);
+    if (regexec(&regex, str, 2, match, 0) == 0) {
+        int start = match[1].rm_so;
+        int end = match[1].rm_eo;
+        char num[6];
+        strncpy(num, &str[start], end-start);
+        num[end-start] = '\0';
+        printf("Fant tallet %s\n", num);
+    }
     
-    // Frigjør ressurser og avslutt programmet
     regfree(&regex);
     return 0;
 }
 ```
 
-Eksempelutgang:
+Dette vil skrive ut "Fant tallet 12345". Her brukes `regex.h` biblioteket for å kompilere og bruke et regulært uttrykk på teksten.
 
-```
-Funnet tall: 123
-Modifisert streng: HelloXWorld
-```
+## Dypdykk:
+Regulære uttrykk ble introdusert av Ken Thompson i 1968 som en del av programmet QED. Det har etter det blitt en standardfunksjon i mange programmeringsspråk. I tillegg til å bruke `regex.h` i C, finnes det også alternative biblioteker som PCRE (Perl Compatible Regular Expressions) og Boost.Regex som gir mer avanserte funksjoner for å arbeide med regulære uttrykk.
 
-# Dykk dypere
+Når man bruker regulære uttrykk er det viktig å vite at de er språkuavhengige, noe som betyr at koden vi viste i eksempelet over kan brukes i andre programmeringsspråk også. Det eksisterer også mange online verktøy for å teste og leke med regulære uttrykk. 
 
-For å lære mer om regulære uttrykk i C, kan du lese dokumentasjonen for "regex.h" biblioteket og utforske ulike funksjoner og flags som kan brukes. Det er også mange ressurser tilgjengelig på nettet som kan hjelpe deg med å bli mer komfortabel med å bruke regulære uttrykk.
-
-# Se også
-
-- [Dokumentasjon for regex.h i C](https://www.systutorials.com/docs/linux/man/3-regex/)
-- [Regulære uttrykk CheatSheet](https://www.debuggex.com/cheatsheet/regex/c)
+## Se også:
+- [PCRE Offisiell Side](https://www.pcre.org/)
+- [Boost.Regex Dokumentasjon](https://www.boost.org/doc/libs/1_75_0/libs/regex/doc/html/index.html)
+- [Regular Expressions Cheat Sheet](https://cheatography.com/davechild/cheat-sheets/regular-expressions/)

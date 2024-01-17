@@ -1,7 +1,7 @@
 ---
-title:                "Analiza składni HTML"
-html_title:           "Rust: Analiza składni HTML"
-simple_title:         "Analiza składni HTML"
+title:                "Analiza html."
+html_title:           "Rust: Analiza html."
+simple_title:         "Analiza html."
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "HTML and the Web"
@@ -10,54 +10,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+# Czym jest parsowanie HTML i dlaczego programiści to robią?
 
-Parsowanie HTML-u jest częstym wyzwaniem, z którym spotykają się programiści przy tworzeniu aplikacji internetowych. Wprowadzając Rust, język z wydajną składnią i narzędziami do obsługi błędów, możemy uprościć ten proces i uzyskać niezawodne wyniki.
+Parsowanie HTML to proces analizowania kodu HTML, czyli języka wykorzystywanego do tworzenia stron internetowych. Programiści często wykonują ten proces, aby wyodrębnić informacje ze stron internetowych, takie jak nagłówki, treści, linki czy obrazy.
 
-## Jak to zrobić
+# Jak to zrobić?
 
-Pierwszym krokiem w parsowaniu HTML-u jest pobranie zawartości strony internetowej. Możemy to zrobić za pomocą biblioteki `reqwest`, importując ją do naszego projektu:
-
-```Rust
-use reqwest::blocking::get;
-```
-
-Następnie, używając metody `get()` i podając adres URL, pobieramy zawartość strony i zapisujemy ją do zmiennej:
+Parsowanie HTML w Rust można wykonać za pomocą biblioteki o nazwie "html5ever". Przyjrzyjmy się przykładowemu kodowi:
 
 ```Rust
-let res = get("https://example.com").unwrap();
-let body = res.text().unwrap();
-```
+use html5ever::parse_document;
+use html5ever::rcdom::{Document, Doctype, Element, RcDom};
+use html5ever::tendril::TendrilSink;
 
-Teraz, aby przetworzyć ten dokument HTML w sposób łatwy i niezawodny, możemy skorzystać z biblioteki `select`, którą również importujemy do naszego projektu:
+fn parse_html(html: &str) {
+    let mut dom = parse_document(RcDom::default(), Default::default())
+        .from_utf8()
+        .read_from(&mut html.as_bytes())
+        .unwrap();
 
-```Rust
-use select::document::Document;
-use select::predicate::Name;
-```
+    let doctype = dom.document.doctype.as_ref().map(|d: &Doctype| d.name.as_ref().to_string());
 
-Korzystając z metody `Document::from()` możemy przekazać pobraną zawartość strony i uzyskać obiekt typu `Document`. Następnie, wewnątrz bloku `for` i korzystając z predykatu `Name()`, możemy iterować po wszystkich elementach HTML i wybierać tylko te, które nas interesują:
+    let mut children = dom.document.children.borrow_mut();
 
-```Rust
-for p in Document::from(&body).find(Name("p")) {
-    println!("{}", p.text());
+    match children.next().unwrap().node {
+        Element(ref name, _, _) => assert_eq!(name.local, local_name!("html")),
+        _ => unreachable!(),
+    }
+
+    match children.next().unwrap().node {
+        Element(ref name, _, _) => assert_eq!(name.local, local_name!("head")),
+        _ => unreachable!(),
+    }
+
+    match children.next().unwrap().node {
+        Element(ref name, _, _) => assert_eq!(name.local, local_name!("body")),
+        _ => unreachable!(),
+    }
+
+    assert!(children.next().is_none());
 }
 ```
 
-Przykładowy output może wyglądać tak:
+W tym przykładzie stosujemy bibliotekę "html5ever" do parsowania dokumentu HTML i wyodrębnienia jego elementów. Jest to tylko jedna z wielu dostępnych bibliotek w Rust, które umożliwiają parsowanie HTML.
 
-```
-Pierwszy paragraf.
-Drugi paragraf.
-Trzeci paragraf.
-```
+# Głębsza analiza
 
-## Głębsze zagadnienia
+Parsowanie HTML jest istotne dla tworzenia skutecznych i wydajnych aplikacji internetowych. Dzięki temu możemy łatwo pobierać informacje ze stron internetowych i wykorzystywać je w naszych programach.
 
-Parsowanie HTML-a może być skomplikowanym i czasochłonnym procesem, szczególnie w przypadku stron o różnych strukturach i zagnieżdżonych elementów. Dlatego warto zapoznać się z dokumentacją biblioteki `select` oraz innymi dostępnymi narzędziami, takimi jak `scraper`, `html5ever` czy `htmlbird`.
+Alternatywą dla parsowania HTML jest używanie gotowych API dostarczanych przez niektóre serwisy internetowe. Jednak w przypadku budowania aplikacji, które wymagają pobierania różnych danych z różnych stron internetowych, wykorzystanie własnego parsera może być bardziej efektywne.
 
-## Zobacz także
+W implementacji parsowania HTML ważne jest uzyskanie precyzyjnego i zgodnego ze standardem wyniku. Dlatego też wiele bibliotek w Rust jest regularnie aktualizowanych, aby zapewniać wysoką jakość parsowania.
 
-- [Dokumentacja biblioteki `select`](https://docs.rs/select)
-- [Porównanie parserów HTML w Rust](https://perf.rust-lang.org/html-parsing-comparison/)
-- [Kod źródłowy przykładowego projektu do parsowania HTML w Rust](https://github.com/example/rust-html-parser)
+# Zobacz także
+
+- [Dokumentacja biblioteki "html5ever"](https://docs.rs/html5ever)
+- [Porównanie wydajności parserów HTML w Rust](https://github.com/petdance/html-parsers-benchmark)
+- [Artykuł o parsowaniu HTML w Rust na blogu "The Rust Programming Language"](https://doc.rust-lang.org/book/first-edition/parsing.html)

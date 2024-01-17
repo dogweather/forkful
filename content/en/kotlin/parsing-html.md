@@ -10,53 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-Parsing HTML, or extracting meaningful data from HTML documents, is a useful skill to have in today's digital age. Whether you are a web developer, data scientist, or simply someone trying to scrape information from a website, knowing how to parse HTML can come in handy. 
+## What & Why?
 
-## How To
-To start parsing HTML in Kotlin, we first need to import the necessary libraries. In this case, we will be using the popular Jsoup library for its simplicity and convenience.
+Parsing HTML is the process of analyzing and extracting data from HTML code. Programmers use this method to gather and manipulate information from web pages. It is an essential technique for data scraping, web crawling, and web scraping.
 
-```Kotlin
-import org.jsoup.Jsoup
-import org.jsoup.nodes.Document
+## How to:
+
+```Kotlin 
+val doc = Jsoup.connect("https://www.example.com").get()
+val title = doc.title() 
+println("The website title is: $title")
 ```
 
-Next, we will need to fetch the HTML document we want to parse. This can be done using the `Jsoup.connect()` method, passing in the URL of the webpage as a parameter. We can also specify a timeout period for the connection in milliseconds.
+The above code uses the Jsoup library to connect to a website and retrieve the HTML code. It then uses the "title()" function to extract the title tag from the code, which represents the webpage's title. Finally, the program prints out the title.
 
-```Kotlin
-val doc: Document = Jsoup.connect("https://example.com")
-                .timeout(5000)
-                .get()
-```
+## Deep Dive:
 
-Now that we have the HTML document, we can start extracting the data we want. Jsoup provides various methods for selecting specific elements based on attributes, classes, or even CSS selectors.
+Parsing HTML has been around since the early days of the internet, with the first HTML parser being developed in 1993. It has since become a widespread practice among programmers due to the growth of web technologies and the increasing demand for data-driven applications.
 
-```Kotlin
-// Selecting all links on the webpage and printing their text and URLs
-val links = doc.select("a")
-for (link in links) {
-    val linkText = link.text()
-    val linkUrl = link.attr("abs:href")
-    println("$linkText - $linkUrl")
-}
-```
+While HTML parsing can be done manually, using tools and libraries like Jsoup makes the process much more efficient and reliable. Other alternatives to HTML parsing include using Regular Expressions or building custom parsers from scratch, but these can be more time-consuming and error-prone compared to using specialized libraries.
 
-We can also use Jsoup's built-in methods to extract specific elements or information from the HTML document.
+Under the hood, HTML parsing involves converting the HTML code into a structured document object model (DOM) and then using this model to extract the desired data. It follows a set of rules defined by the HTML specification to ensure that the extracted data is accurate and in the correct format.
 
-```Kotlin
-// Extracting the page title and meta description
-val pageTitle = doc.title()
-val metaDescription = doc.select("meta[name=description]")
-                        .attr("content")
-```
+## See Also:
 
-The possibilities are endless when it comes to parsing HTML using Kotlin and Jsoup. With a little practice, you'll be able to extract any data you need from any webpage.
-
-## Deep Dive
-Under the hood, Jsoup uses a combination of DOM parsing and CSS selector to navigate and select elements from HTML documents. It emulates a web browser's DOM tree, making it easy to manipulate and extract data from the HTML.
-
-One benefit of using Jsoup over other parsing libraries is its flexibility in handling malformed HTML. It can still extract data from poorly written HTML, making it perfect for web scraping projects.
-
-## See Also
-- [Jsoup Documentation](https://jsoup.org/cookbook/extracting-data/dom-navigation)
-- [Kotlin Language Reference](https://kotlinlang.org/docs/reference/)
+- [W3C HTML5 Specification](https://www.w3.org/TR/2017/REC-html52-20171214/)
+- [Jsoup Library Documentation](https://jsoup.org/apidocs/)
+- [Tutorial: How to Parse HTML in Kotlin](https://www.baeldung.com/kotlin-html-parsing)

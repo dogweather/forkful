@@ -1,7 +1,7 @@
 ---
-title:                "Comparando duas datas."
-html_title:           "C++: Comparando duas datas."
-simple_title:         "Comparando duas datas."
+title:                "Comparando duas datas"
+html_title:           "C++: Comparando duas datas"
+simple_title:         "Comparando duas datas"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Dates and Times"
@@ -10,72 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que comparar duas datas?
+## O que e porque?
+Comparar duas datas significa verificar se uma data é anterior, posterior ou igual a outra data. Esse processo é útil para programadores que precisam ordenar ou filtrar dados com base em datas.
 
-Comparar datas é uma tarefa muito comum em programação e pode ser útil em diversas situações, como verificar a validade de um documento, calcular a diferença entre duas datas ou ordenar eventos cronologicamente. Aprender a comparar datas em C++ pode oferecer uma maior compreensão de como lidar com dados temporais em seus projetos.
-
-## Como fazer a comparação de datas em C++?
-
-Para comparar duas datas em C++, você precisa utilizar a biblioteca padrão <ctime> e seus métodos específicos para manipulação de tempo e datas. O exemplo abaixo mostra como comparar duas datas fornecidas pelo usuário e imprimir o resultado:
-
+## Como fazer:
 ```C++
 #include <iostream>
 #include <ctime>
 
-using namespace std;
-
 int main() {
-  // Exemplo de comparação de datas
-  struct tm data1, data2;
-  int diferenca;
+  // Definindo as datas a serem comparadas
+  struct tm t1 = {0, 0, 0, 1, 0, 119, 0, 0, -1}; // 01/01/2019
+  struct tm t2 = {0, 0, 0, 1, 0, 120, 0, 0, -1}; // 01/01/2020
 
-  // Recebe os valores de dia, mês e ano para a primeira data
-  cout << "Insira o dia da primeira data: ";
-  cin >> data1.tm_mday;
-  cout << "Insira o mês da primeira data: ";
-  cin >> data1.tm_mon;
-  cout << "Insira o ano da primeira data: ";
-  cin >> data1.tm_year;
+  // Convertendo as datas para o formato de timestamp
+  time_t timestamp1 = mktime(&t1);
+  time_t timestamp2 = mktime(&t2);
 
-  // Recebe os valores de dia, mês e ano para a segunda data
-  cout << "Insira o dia da segunda data: ";
-  cin >> data2.tm_mday;
-  cout << "Insira o mês da segunda data: ";
-  cin >> data2.tm_mon;
-  cout << "Insira o ano da segunda data: ";
-  cin >> data2.tm_year;
-
-  // Calcula a diferença entre as datas em dias
-  diferenca = difftime(mktime(&data1), mktime(&data2)) / (60 * 60 * 24);
-
-  // Imprime o resultado
-  cout << "A diferença entre as datas é de " << diferenca << " dias." << endl;
+  // Comparando as datas
+  if (timestamp1 < timestamp2) {
+    std::cout << "A data 01/01/2019 é anterior a 01/01/2020." << std::endl;
+  } else if (timestamp1 > timestamp2) {
+    std::cout << "A data 01/01/2019 é posterior a 01/01/2020." << std::endl;
+  } else {
+    std::cout << "As datas 01/01/2019 e 01/01/2020 são iguais." << std::endl;
+  }
 
   return 0;
 }
 ```
-
-Exemplo de entrada e saída:
-
+Output:
 ```
-Insira o dia da primeira data: 10
-Insira o mês da primeira data: 8
-Insira o ano da primeira data: 2021
-Insira o dia da segunda data: 20
-Insira o mês da segunda data: 8
-Insira o ano da segunda data: 2021
-A diferença entre as datas é de -10 dias.
+A data 01/01/2019 é anterior a 01/01/2020.
 ```
 
-O código acima utiliza a função `difftime()` para calcular a diferença de tempo em segundos entre as duas datas e, em seguida, divide esse valor pelo número de segundos em um dia para obter a diferença em dias.
+## Mergulho profundo:
+Comparar datas é uma tarefa importante em programação, pois muitas vezes é necessário trabalhar com dados em ordem cronológica. Existem outras formas de realizar essa comparação, como utilizar funções disponíveis em bibliotecas de terceiros. Internamente, a comparação de datas em C++ é feita convertendo as datas para o formato de timestamp e comparando os valores inteiros.
 
-## Aprofundando na comparação de datas em C++
-
-Para a comparação de datas em C++, é importante entender como a estrutura `struct tm` funciona. Ela armazena valores referentes à data e hora em variáveis inteiras, como `tm_mday` para o dia do mês, `tm_mon` para o mês (0-11), `tm_year` para o ano (1900+), entre outros.
-
-Além disso, é preciso ter cuidado na hora de comparar datas com anos bissextos, pois eles possuem 366 dias em vez de 365. Por isso, recomenda-se utilizar a função `mktime()` ao invés de `time()` para garantir que as datas sejam devidamente ajustadas.
-
-## Veja também
-
-- [Funções de tempo e data em C++ (em inglês)](https://www.cplusplus.com/reference/ctime/)
-- [Tutorial sobre estruturas em C++ (em português)](https://www.cplusplus.com/doc/tutorial/structures/)
+## Veja também:
+- [Documentação da função `mktime` em C++](https://www.cplusplus.com/reference/ctime/mktime/)
+- [Biblioteca Boost.Date_Time para manipulação de datas em C++](https://www.boost.org/doc/libs/1_71_0/doc/html/date_time.html)

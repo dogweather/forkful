@@ -1,7 +1,7 @@
 ---
-title:                "Sjekke om en mappe eksisterer"
-html_title:           "Clojure: Sjekke om en mappe eksisterer"
-simple_title:         "Sjekke om en mappe eksisterer"
+title:                "Sjekker om en mappe eksisterer"
+html_title:           "Clojure: Sjekker om en mappe eksisterer"
+simple_title:         "Sjekker om en mappe eksisterer"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Files and I/O"
@@ -10,36 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hva & Hvorfor?
+Sjekking av om en mappe eksisterer er en vanlig oppgave for programmere. Dette gjøres for å sikre at filoperasjoner kan gjennomføres uten feil og for å sørge for at riktig handling blir utført hvis mappen ikke eksisterer.
 
-Lurer du på om en mappe eksisterer i Clojure-kode? Det kan være nyttig å sjekke dette i tilfelle feil, eller hvis du trenger å gjøre noe spesifikt med innholdet i mappen.
-
-## Hvordan gjøre det
-
+## Slik Gjør Du:
 ```Clojure
-;; Først må du importere biblioteket for å jobbe med filer og mapper
-(ns user
-  (:require [clojure.java.io :as io]))
+(def directory "/Users/username/documents")
 
-;; Sjekk om mappen eksisterer ved å bruke funksjonen "file?" og gi banen til mappen som argument
-(file? "sti/til/mappen")
-
-;; Hvis mappen eksisterer, vil konsollen returnere "true", hvis ikke, vil det returnere "false"
+(if (clojure.java.io/file directory)
+  "Mappen finnes"
+  "Mappen finnes ikke")
 ```
+Output: "Mappen finnes"
 
-For eksempel, hvis du vil sjekke om mappen "bilder" eksisterer i "bilder/mappe1/mappe2" i ditt prosjekt, kan du bruke følgende kode:
+## Dypdykk:
+Det å sjekke om en mappe eksisterer har vært en del av programmering siden de første operative systemene ble utviklet. Det finnes også alternativer til å bruke Clojure sin innebygde funksjon for å sjekke om en mappe eksisterer, som for eksempel å bruke shell-kommandoer eller å bruke et bibliotek som spesialiserer seg på filbehandling. Implementasjonen av Clojure sin `file`funksjon vil variere fra system til system, da det er avhengig av hvordan systemet håndterer filbehandling.
 
-```Clojure
-(file? "bilder/mappe1/mappe2/bilder")
-```
+## Se Også:
+[Offisiell Dokumentasjon for clojure.java.io](https://clojure.github.io/clojure/clojure.java.io-api.html#clojure.java.io/file)
 
-Den vil returnere "true" hvis mappen eksisterer, og "false" hvis ikke.
+[Clojure Cookbook for Filbehandling](https://clojure-cookbook.github.io/file-handling/)
 
-## Deep Dive
-
-Under overflaten, bruker "file?"-funksjonen Clojure sin "clojure.java.io" bibliotek, spesifikt funksjonen "file-seq". Dette konverterer banen til en fil og bruker deretter "ex-"prefiks på funksjonen som sjekker om filen eksisterer. Hvis det eksisterer, returneres filen, hvis ikke, returneres "nil".
-
-## Se også
-
-- Clojure sin dokumentasjon for Java sin "io"-bibliotek: https://clojure.github.io/clojure/clojure.java.io-api.html
-- En artikkel om hvordan man kan jobbe med filer og mapper i Clojure: https://www.habrador.com/tutorials/clojure-file-io/
+[Funksjon for Sjekking av Filstatus i Clojure](https://github.com/pomin5/clj-fstat)

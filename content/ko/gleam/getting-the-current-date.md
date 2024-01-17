@@ -10,50 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+### 지금은 무엇이며 왜?: 
 
-현재 날짜를 얻는 방법에 대해 궁금해 졌다면, 당신은 고민할 필요가 없습니다! Gleam에서 제공하는 내장 함수를 사용하여 쉽게 현재 날짜를 얻을 수 있습니다.
+현재 날짜를 얻는 것은 일반적으로 프로그래머들이 자주 사용하는 기능입니다. 이는 현재 시간에 따라 프로그램의 동작을 조정하는 데 사용되거나 날짜와 시간에 대한 정보를 저장하고 표시하는 데 사용될 수 있기 때문입니다.
 
-## 사용 방법
+### 방법:
 
-``` Gleam
-import gleam/time
-
-let today = time.now()
-
-// 2021-05-27T14:18:06+00:00
+```Gleam
+import time
+Gleam.time.now
+```
+```
+2021-08-23T22:44:19.3908
 ```
 
-위의 코드는 현재 날짜와 시간을 UTC로 출력합니다. 만약 자신의 타임존에 맞게 출력하고 싶다면, `now()` 함수를 `now_tz()`로 바꾸어 사용할 수 있습니다.
-
-``` Gleam
-let today = time.now_tz("Asia/Seoul")
-
-// 2021-05-27T23:18:06+09:00
+```Gleam
+import time
+Gleam.time.now(date_format="%Y년 %m월 %d일")
+```
+```
+2021년 08월 23일
 ```
 
-또한, `local_now()` 함수를 사용하여 현재 로컬 시간을 얻을 수도 있습니다.
+### 깊이 들어가기:
 
-``` Gleam
-let now = time.local_now()
+현재 날짜를 얻는 기능은 거의 모든 프로그래밍 언어에서 제공됩니다. 이는 운영체제에서 시간과 날짜를 관리하기 때문입니다. 대부분의 언어에서는 시간과 날짜를 다루는 라이브러리를 제공하며, Gleam 역시 time 라이브러리를 제공합니다.
 
-// 2021-05-27T23:18:06+09:00
-```
+현재 날짜를 얻는 방법에는 여러 가지가 있습니다. 예를 들어 유닉스 시간(epoch time)을 얻는 방법과 다양한 형식으로 날짜를 표시하는 방법 등이 있습니다.
 
-더 많은 사용 예제를 보려면 [Gleam 공식 문서](https://gleam.run/documentation/standard-library/#dates-and-time)를 참고해주세요.
+대부분의 경우 날짜 및 시간을 다루는 라이브러리를 사용하는 것이 가장 간단하고 효율적인 방법입니다. 그러나 프로그래머는 필요에 따라 다른 방법을 사용할 수 있으며, Gleam은 여러 가지 옵션을 제공하여 유연성을 높입니다.
 
-## 더 들어가기
+### 관련 자료:
 
-Gleam에서는 내장 함수를 통해 현재 날짜를 얻는 것 외에도 다양한 작업을 할 수 있습니다. 예를 들어, `add()` 함수를 사용하면 날짜에 일정 기간만큼 더하거나 빼는 것도 가능합니다. 또한, `format()` 함수를 사용하여 날짜를 원하는 형식으로 표현할 수 있습니다.
-
-더 많은 내장 함수와 예제는 [Gleam 공식 문서](https://gleam.run/documentation/standard-library/#dates-and-time)에서 확인할 수 있습니다.
-
-## 더 알아보기
-
-현재 날짜를 얻는 것은 프로그램에서 매우 중요한 작업입니다. Gleam에서는 일반적으로 사용되는 구문을 내장 함수로 제공하므로 더 간단하게 현재 날짜를 다룰 수 있습니다. 하지만, 이 내장 함수들이 어떻게 동작하는지 궁금하다면 [Gleam의 소스 코드](https://github.com/gleam-lang/gleam/blob/master/lib/std/src/time.gleam)를 살펴보는 것도 좋은 학습 방법입니다.
-
-## 관련 링크
-
-[Gleam 날짜와 시간 관련 공식 문서](https://gleam.run/documentation/standard-library/#dates-and-time)
-
-[Gleam 소스 코드에서 날짜와 시간 관련 내장 함수 확인하기](https://github.com/gleam-lang/gleam/blob/master/lib/std/src/time.gleam)
+- [Gleam time 라이브러리 문서](https://gleam.run/modules/gleam_stdlib#time)
+- [날짜 형식 지정 방법](https://docs.gleam.run/language/formats#dates)

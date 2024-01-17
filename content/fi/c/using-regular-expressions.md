@@ -10,45 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi: Miksi käyttää säännöllisiä lausekkeita?
+## Mitä ja miksi?
 
-Säännölliset lausekkeet ovat erittäin hyödyllisiä työkaluja ohjelmoinnissa, kun halutaan etsiä, korvata tai tarkistaa merkkijonoja. Ne tarjoavat tehokkaan ja joustavan tavan käsitellä tekstiä, joten ne ovat välttämättömiä monissa ohjelmointiprojekteissa.
+Säännöllisten lausekkeiden käyttäminen on tapa löytää ja käsitellä tietoa tarkasti ja tehokkaasti. Koodareiden on usein tarpeen suodattaa tai muokata tietoa monimutkaisten sääntöjen mukaan, ja tällöin säännöllisistä lausekkeista (tunnetaan myös nimellä regex tai regexp) on suuri apu. Säännölliset lausekkeet ovat jousiterävä työkalu jokaisen ohjelmoijan työkalupakissa.
 
-## Kuinka: Esimerkkejä ja tulosteita käyttäen "```C ... ```" koodilohkoja.
+## Näin teet sen: 
 
-```C
+Näyttävien esimerkkien kera opimme helposti, miten säännölliset lausekkeet toimivat. Katso alla olevaa koodia ja sen tuottamaa tietoa. Voit kokeilla myös itse kirjoittamalla koodin ajettavaksi.
+
+```C 
 #include <stdio.h>
 #include <regex.h>
 
-// Luodaan säännöllinen lauseke
-char pattern[] = "^([A-Z]{4})[0-9]{4}$";
+int main() {
+  // Määritellään sääntö, joka tunnistaa "Hei" sanat
+  regex_t regex;
+  regcomp(&regex, "Hei", 0);
 
-// Alustetaan regex-tietorakenne
-regex_t regex;
+  // Etsitään säännön määrittelemaä tekstiä
+  char txt[] = "Hei, mitä kuuluu?";
+  int result = regexec(&regex, txt, 0, NULL, 0);
 
-// Tarkistetaan annettu merkkijono esimerkkilausetta vastaan
-int result = regcomp(&regex, pattern, 0);
+  // Tulostetaan tulos
+  if (!result){
+    printf("Löytyi!\n");
+  } else {
+    printf("Eipä löytynyt.\n");
+  }
 
-// Tulostetaan tulos
-if (result == 0) {
-    printf("Onnistunut tulos!");
-} else {
-    printf("Epäonnistunut tulos...");
+  return 0;
 }
-
-// Vapautetaan tietorakenne
-regfree(&regex);
-
+```
+Tulostus:
+```
+Löytyi!
 ```
 
-Tässä esimerkissä käytetään säännöllistä lauseketta tarkistamaan, onko annettu merkkijono samanlainen kuin esimerkkilauseke. Tämä osoittaa, kuinka tehokkaasti säännöllisiä lausekkeita voi käyttää tekstien käsittelyyn.
+## Sukella syvemmälle:
+Säännölliset lausekkeet ovat olleet käytössä jo yli 60 vuotta ja ovat edelleen tärkeä osa ohjelmointia. Niihin voi tutustua esimerkiksi lukemalla Brian Kernighanin ja Rob Piken artikkelin "Run-Time Pattern Matching", jossa esiteltiin ensimmäinen säännöllisiä lausekkeita käyttävä ohjelmointikieli. Nykyään on olemassa myös muita vaihtoehtoja, kuten awk ja sed, jotka on suunniteltu erityisesti säännöllisten lausekkeiden käyttämiseen. C:n regex-kirjasto on myös usein verrattuna muihin ohjelmointikieliin, kuten Pythoniin, jossa säännöllisten lausekkeiden käyttäminen on helppoa.
 
-## Syväsukellus: Lisätietoa säännöllisten lausekkeiden käytöstä
-
-Säännölliset lausekkeet koostuvat merkeistä ja erikoismerkeistä, jotka muodostavat haettavan kaavan. Ne voivat sisältää esimerkiksi erilaisia sijoitetietoja ja metakarakterit, jotka mahdollistavat monipuolisen haun ja muokkauksen merkkijonoista. C:n nykyisessä versiossa on laaja tuki säännöllisille lausekkeille, joten niiden käyttö on helppoa ja tehokasta.
-
-## Katso myös
-
-- C:n virallinen dokumentaatio säännöllisistä lausekkeista: https://www.iso.org/ISO-9899.html
-- Hyödyllisiä vinkkejä säännöllisten lausekkeiden käyttöön: https://www.regextester.com
-- Interaktiivinen säännöllisten lausekkeiden opas: https://regexone.com
+## Katso myös:
+- [Brian Kernighanin ja Rob Piken artikkeli "Run-Time Pattern Matching"](https://www.cs.princeton.edu/courses/archive/spring09/cos333/beautiful.html)
+- [Document Foundation:n dokumantaatio säännöllisistä lausekkeista C:ssä](https://docs.libreoffice.org/sfx2/html/regex_8h.html)

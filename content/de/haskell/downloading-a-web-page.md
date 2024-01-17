@@ -1,7 +1,7 @@
 ---
-title:                "Eine Webseite herunterladen"
-html_title:           "Haskell: Eine Webseite herunterladen"
-simple_title:         "Eine Webseite herunterladen"
+title:                "Webseite herunterladen"
+html_title:           "Haskell: Webseite herunterladen"
+simple_title:         "Webseite herunterladen"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "HTML and the Web"
@@ -10,79 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was & Warum?
 
-Warum sollte man sich mit dem Herunterladen einer Webseite beschäftigen? Nun, es kann viele Gründe geben. Vielleicht möchtest du automatisch Daten von einer bestimmten Webseite sammeln oder einen Teil einer Webseite in deiner eigenen Anwendung verwenden. Oder du möchtest einfach lernen, wie du in Haskell Dateien herunterladen kannst.
+Webseiten zu downloaden bedeutet, dass man den Inhalt einer Webseite herunterlädt. Programmierer tun dies, um den Inhalt einer Webseite für ihre Anwendungen oder Analysen zu nutzen.
 
-## So geht's
+## Wie:
 
-Um eine Webseite in Haskell herunterzuladen, gibt es einige Schritte zu beachten. Zunächst müssen wir die HTTP-Bibliothek "HTTP.Simple" implementieren, um die Verbindung zur Webseite zu ermöglichen.
-
-```
+```Haskell
 import Network.HTTP.Simple
 
-```
-
-Als nächstes müssen wir eine Anfrage an die gewünschte URL senden und die Antwort speichern.
-
-```
-
-request <- parseRequest "https://www.example.com"
-response <- httpLBS request
-
-```
-
-Jetzt können wir die heruntergeladene Seite im HTML-Format bekommen.
-
-```
-let html = getResponseBody response :: ByteString
-```
-
-Um die Seite als Text zu erhalten, können wir die Funktion "decodeUtf8" aus der Bibliothek "Data.ByteString.Lazy.Char8" verwenden.
-
-```
-import qualified Data.ByteString.Lazy.Char8 as L8
-import Data.Text.Encoding (decodeUtf8)
-
-let text = decodeUtf8 (L8.toStrict html)
-```
-
-Schließlich können wir die heruntergeladene Seite ausdrucken.
-
-```
-
-putStrLn text
-```
-
-Der gesamte Code sieht also wie folgt aus:
-
-```
-
-import Network.HTTP.Simple
-import qualified Data.ByteString.Lazy.Char8 as L8
-import Data.Text.Encoding (decodeUtf8)
-
-main :: IO ()
 main = do
-    request <- parseRequest "https://www.example.com"
-    response <- httpLBS request
-    let html = getResponseBody response :: ByteString
-        text = decodeUtf8 (L8.toStrict html)
-    putStrLn text
-
+  request <- parseRequest "GET https://www.example.com"
+  response <- httpLBS request
+  print $ getResponseBody response
 ```
 
-Die Ausgabe sollte ähnlich aussehen wie die Seite, die wir heruntergeladen haben.
+Das obige Beispiel zeigt, wie man mit Hilfe der "HTTP Simple" Bibliothek in Haskell eine GET-Anfrage an eine Webseite stellt und den Inhalt der Antwort ausgibt. Zum Ausführen wird ein GHC Compiler benötigt.
 
-## Tiefergehende Informationen
+### Ausgabe:
+```
+"<!doctype html>\n<html>\n<head>\n<title>Example Domain</title>\n<meta charset=\"utf-8\" />\n<meta http-equiv=\"Content-type\" content=\"text/html; charset=utf-8\" />\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />\n<style type=\"text/css\">\nbody {\n\tbackground-color: #f0f0f2;\n\tmargin: 0;\n\tpadding: 0;\n\tfont-family: \"Open Sans\", \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n\t\n}\ndiv {\n\twidth: 600px;\n\tmargin: 5em auto;\n\tpadding: 50px;\n\tbackground-color: #fff;\n\tborder-radius: 1em;\n}\na:link, a:visited {\n\tcolor: #38488f;\n\ttext-decoration: none;\n}\na:hover, a:active {\n\tcolor: #ff0000;\n}\n</style>    \n</head>    \n\n<body>  \n<div>\n<h1>Example Domain</h1>\n<p>This domain is established to be used for illustrative examples in documents. You may use this\n    domain in examples without prior coordination or asking for permission.</p>\n<p><a href=\"https://www.iana.org/domains/example\">More information...</a></p>\n</div>\n</body>\n</html>\n"
+```
 
-Wenn du tiefer in die Welt des Herunterladens von Webseiten in Haskell eintauchen möchtest, gibt es viele Bibliotheken und Funktionen, die dir dabei helfen können. Zum Beispiel könnte die Bibliothek "Network.HTTP.Conduit" dabei nützlich sein, wenn du authentifizierte Anfragen senden möchtest. Oder du könntest die Bibliothek "Network.Curl" verwenden, um das Herunterladen von Webseiten parallel zu gestalten.
+## Tiefere Einblicke:
 
-Egal welche Bibliothek du verwendest, es ist wichtig, dass du verstehst, wie HTTP-Anfragen funktionieren und wie du die erhaltenen Daten verarbeiten kannst. Mit genügend Übung wirst du in der Lage sein, jede Webseite erfolgreich herunterzuladen und zu nutzen.
+Webseitenfinale dient nicht nur zum Anzeigen von Inhalten, sondern kann auch verwendet werden, um Daten oder Informationen aus dem Internet zu sammeln. Alternativen zu der von uns verwendeten "HTTP Simple" Bibliothek sind beispielsweise "HTTP Conduit" oder die "Network.HTTP" Bibliothek. Es ist wichtig zu beachten, dass beim Herunterladen von Webseiten auch Sicherheitsrisiken bestehen und daher sollte immer auf vertrauenswürdige Quellen vertraut werden.
 
-## Siehe auch
+## Siehe auch:
 
-- [Haskell Documentation](https://www.haskell.org/documentation/)
-- [HTTP.Simple Package on Hackage](https://hackage.haskell.org/package/http-client)
-- [Network.HTTP.Conduit Package on Hackage](https://hackage.haskell.org/package/http-conduit)
-- [Network.Curl Package on Hackage](https://hackage.haskell.org/package/http-client-curl)
+- [HTTP Simple Dokumentation](https://hackage.haskell.org/package/http-simple)
+- [HTTP Conduit GitHub Repository](https://github.com/snoyberg/http-kit)
+- [Network.HTTP Dokumentation](https://hackage.haskell.org/package/network)

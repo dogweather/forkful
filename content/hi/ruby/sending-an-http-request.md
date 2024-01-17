@@ -1,7 +1,7 @@
 ---
-title:                "Hindi में http अनुरोध भेजना"
-html_title:           "Ruby: Hindi में http अनुरोध भेजना"
-simple_title:         "Hindi में http अनुरोध भेजना"
+title:                "एक एचटिट्पी अनुरोध भेजना"
+html_title:           "Ruby: एक एचटिट्पी अनुरोध भेजना"
+simple_title:         "एक एचटिट्पी अनुरोध भेजना"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "HTML and the Web"
@@ -10,33 +10,22 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-आज कल आप अपने स्मार्टफोन या कंप्यूटर से जितनी भी एप्लिकेशन्स या वेबसाइट्स का इस्तेमाल करते हैं, वे सभी HTTP (HyperText Transfer Protocol) का इस्तेमाल करके काम करते हैं. यह एक कमाल की प्रोटोकॉल है जो आपको अपनी डेटा को अन्य सर्वरों या सर्विसेस के साथ संचार करने में मदद करता है. इसलिए आपको भी HTTP रिक्वेस्ट भेजना आने वाले समय में बहुत ही उपयोगी हो सकता है.
+## यह क्या है और क्यों?
+HTTP अनुरोध भेजना क्या होता है और इसे क्यों प्रोग्रामर्स करते हैं, इसको समझना महत्वपूर्ण है। HTTP अनुरोध भेजना साधारणतया एक वेब ऐप्लिकेशन के साथ कुछ डेटा भेजने का तरीका है, परिणामस्वरूप उस वेब साइट से आपको उपयुक्त डेटा मिलता है।
 
-## How To
-
-आप रुबी का इस्तेमाल करके भी आसानी से HTTP रिक्वेस्ट भेज सकते हैं. पहले हम आपको बताएंगे कि कैसे आप आसानी से किसी वेबसाइट पर GET रिक्वेस्ट भेज सकते हैं:
-
+## कैसे करें:
 ```Ruby
 require 'net/http'
-uri = URI("https://your-website.com") # Change this to the website you want to send a request to
-response = Net::HTTP.get_response(uri)
-puts response.body
+uri = URI('https://www.example.com/')
+response = Net::HTTP.get(uri)
+puts response
 ```
+यहाँ, हम `require` के द्वारा net/http लाइब्रेरी को लोड करते हैं और एक यूआरआई का उपयोग करके एक HTTP अनुरोध भेजते हैं। उत्तर उस साइट के साथ संबंधित डाटा प्रदर्शित करता है।
 
-ऊपर दिए गए कोड से आप आसानी से किसी भी वेबसाइट पर GET रिक्वेस्ट भेज सकते हैं और रिस्पॉन्स को अपनी जरूरत के अनुसार प्रिंट कर सकते हैं. अब हम बात करते हैं कि कैसे POST रिक्वेस्ट भेजा जा सकता है:
+## गहराई में जाएं:
+HTTP का उदभव 1991 में टिम बर्नर्स-ली द्वारा किया गया था। यह अनुरोध भेजने की एक जटिल प्रक्रिया है जिसमें कई साधनों का प्रयोग किया जाता है। कुछ अल्टर्नेटिव्स के रूप में, HTTP अनुरोध भेजने का प्रयोग करने के लिए आप कुछ और लाइब्रेरी का भी प्रयोग कर सकते हैं, जैसे कि [Typhoeus](https://github.com/typhoeus/typhoeus) या [Faraday](https://github.com/lostisland/faraday)। HTTP अनुरोध भेजने के लिए, आमतौर पर `Net::HTTP` की जगह कुछ और क्लास का प्रयोग किया जाता है।
 
-```Ruby
-require 'net/http'
-require 'uri'
-uri = URI("https://your-website.com") # Change this to the website you want to send a request to
-res = Net::HTTP.post_form(uri, 'key1' => 'value1', 'key2' => 'value2') # Change the key-value pairs according to your needs
-puts res.body
-```
-
-ऊपर दिए गए कोड से आप आसानी से POST रिक्वेस्ट भेज सकते हैं. आपको सिर्फ वेबसाइट का URL और अपने द्वारा भेजने वाले डेटा को बताना होगा. अब हम बात करते हैं कि कैसे आप अपने रिक्वेस्ट में कुछ और हेडर्स और पैरामीटर्स भी डाल सकते हैं:
-
-```Ruby
-require 'net/http'
-require 'uri'
-uri = URI("https://your-website.com") # Change this to the website you want to send
+## इसके अलावा देखें:
+- [Ruby-doc.org](https://ruby-doc.org/stdlib-2.7.2/libdoc/net/http/rdoc/Net/HTTP.html)
+- [HTTP Request Methods](https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html)
+- [HTTP Request and Response Basics](https://www.informit.com/articles/article.aspx?p=1831382&seqNum=2)

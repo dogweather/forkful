@@ -10,38 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+Was und Warum?
 
-Die Erstellung von temporären Dateien kann in vielen Situationen nützlich sein. Zum Beispiel kann es erforderlich sein, Daten temporär zu speichern, während ein größeres Projekt ausgeführt wird, oder es kann eine Möglichkeit bieten, auf kurzfristige Daten zuzugreifen, ohne bleibende Spuren zu hinterlassen.
+Bevor wir uns in die Details stürzen, lassen Sie uns zunächst klären, was das Erstellen einer temporären Datei bedeutet. Eine temporäre Datei ist eine Datei, die vorübergehend erstellt wird, um Daten zu speichern oder zu übertragen und dann gelöscht wird. Programmierer nutzen temporäre Dateien, um beispielsweise Zwischenergebnisse zu speichern oder bestimmte Prozesse zu optimieren.
 
-## Wie geht das?
+Wie geht's?
 
-Die Verwendung von temporären Dateien in Arduino ist relativ einfach. Zunächst muss die Standardbibliothek für Dateiverwaltung mit `#include <SD.h>` importiert werden. Dann kann eine temporäre Datei mit den folgenden Schritten erstellt werden:
+In der Arduino-Programmierung gibt es einige Möglichkeiten, temporäre Dateien zu erstellen. Hier sind zwei Beispiele mit den entsprechenden Codeblöcken:
 
-- Ein Objekt der Klasse `SDFile` erstellen und einer vorhandenen Datei zuweisen:
-`SDFile tempFile = SD.open("temp.log", FILE_WRITE);`
+1. Verwendung der `File`-Klasse:
 
-- Daten in die temporäre Datei schreiben:
 ```Arduino
-tempFile.println("Messwerte:");
-tempFile.println(value);
+File tempFile; // Erstellen Sie eine Variable vom Typ "File"
+tempFile = SPIFFS.open("/temp.txt", "w+"); // Öffnen oder erstellen Sie eine temporäre Datei namens "temp.txt"
+tempFile.println("Temporäre Datei erstellt!"); // Schreiben Sie Daten in die Datei
+tempFile.close(); // Schließen Sie die Datei
 ```
 
-- Die Datei schließen, wenn sie nicht mehr benötigt wird:
-`tempFile.close();`
+2. Verwendung der `Filesystem`-Bibliothek:
 
-Die erstellte temporäre Datei kann wie jede andere Datei im SD-Kartenlaufwerk behandelt werden.
-
-## Tiefere Einblicke
-
-Es ist wichtig zu beachten, dass temporäre Dateien nicht automatisch gelöscht werden, sobald der Arduino ausgeschaltet wird. Um sie zu löschen, muss die Datei manuell geöffnet und dann gelöscht werden. Zum Beispiel:
 ```Arduino
-SD.remove("temp.log");
+Filesystem.createTemporaryFile("/temp.txt"); // Erstellen Sie eine temporäre Datei namens "temp.txt"
 ```
 
-Es gibt auch Möglichkeiten, eine temporäre Datei zu erstellen, ohne sie direkt auf der SD-Karte zu speichern. Dies kann durch die Verwendung von dynamischem Speicher erreicht werden, um einen Zwischenspeicher zu erstellen, in den die Daten geschrieben werden. Dieser Speicher wird dann verwendet, um die Daten später auf die SD-Karte zu schreiben.
+Wenn Sie die erste Option wählen, können Sie die `.write()`-Methode verwenden, um Daten in die temporäre Datei zu schreiben, während Sie mit der zweiten Option eine bestimmte Dateigröße festlegen können.
 
-## Siehe auch
+Tiefer ins Detail
 
-- [Offizielle Arduino SD library Documentation](https://www.arduino.cc/en/Reference/SD)
-- [Tutorial: How to Use SD Card with Arduino](https://www.circuitspecialists.com/blog/using-an-sd-card-with-the-arduino/)
+In der Vergangenheit wurden temporäre Dateien häufig verwendet, um Daten zwischen verschiedenen Programmen oder Prozessen auszutauschen. Heutzutage wird jedoch häufiger der interne Speicher des Computers verwendet, da dieser schneller und effizienter ist. Alternativ können auch temporäre Variablen oder Arrays verwendet werden, um Daten zu speichern und zu übertragen.
+
+Zur Implementierung von temporären Dateien wird normalerweise eine Datenstruktur verwendet, um die Daten zu speichern, bis sie in die endgültige Datei übertragen werden. Viele Programmiersprachen, einschließlich Arduino, stellen bereits Funktionen oder Bibliotheken zur Verfügung, um temporäre Dateien einfach zu erstellen und zu verwalten.
+
+Siehe auch
+
+Weitere Informationen zu temporären Dateien finden Sie in der offiziellen Arduino-Dokumentation: <https://www.arduino.cc/reference/en/libraries/spiffs/open/>.
+
+Weitere Informationen zu alternativen Methoden der Datenübertragung finden Sie hier: <https://www.howtogeek.com/179265/10-useful-options-you-can-configure-in-your-computers-bios/>

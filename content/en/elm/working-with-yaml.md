@@ -10,55 +10,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-Are you tired of dealing with complex and verbose data structures in your programming language? Look no further, YAML is here to save the day! With its simple and human-readable syntax, YAML makes working with data a breeze. 
+Working with YAML in Elm is a way to store and organize data in a human-readable and easily configurable format. Programmers use YAML to create and modify configurations for projects or applications, as well as storing data for web applications. It allows for a concise and organized way of representing complex data structures, making it a popular choice for managing settings and data in code.
 
-## How To
+## How to:
 
-If you're not familiar with YAML, don't worry! It's easy to pick up and integrate into your Elm projects. All you need to do is install the `elm-yaml` package and start using it in your code. Let's take a look at a simple example of how to encode and decode YAML in Elm:
+Using YAML in Elm is quite straightforward. The ```Yaml.Decode``` and ```Yaml.Encode``` packages, available on Elm's package repository, provide functions to parse YAML data into Elm data types and vice versa.
 
-```Elm
-import Yaml exposing (..)
+To begin, start by importing the needed packages:
 
--- Define a sample data structure
-type alias User = 
-   { name : String
-   , age : Int
-   , email : String 
-   }
-
--- Encode the data structure into YAML
-myUser : User 
-myUser = 
-   { name = "John Smith"
-   , age = 25
-   , email = "johnsmith@email.com" 
-   }
-
-encodedUser : String
-encodedUser = encode myUser
--- Output: 
--- name: John Smith
--- age: 25
--- email: johnsmith@email.com
-
--- Decode YAML into a data structure
-decodedUser : User
-decodedUser = decode encodedUser
--- Output: User "John Smith" 25 "johnsmith@email.com"
+```
+import Yaml.Decode exposing (..)
+import Yaml.Encode as Encode
 ```
 
-As you can see, YAML allows us to easily store and retrieve data in a human-readable format. It supports a variety of data types, including strings, numbers, lists, and maps, making it a versatile tool for working with data. 
+Next, let's take a look at how to decode YAML into Elm data types. The ```Yaml.Decode``` package provides a ```decodeString``` function that takes in a YAML string and returns a decoder. We can then use the ```decode``` function to convert this decoder to a specific data type, such as a ```Dict``` or a ```List```.
 
-## Deep Dive
+```
+yamlString =
+"""
+name: John Doe
+age: 25
+"""
 
-YAML stands for "YAML Ain't Markup Language" and is often used for configuration files, serialization, and metadata. It is a popular choice for data exchange formats due to its easy-to-read syntax, making it a great alternative to JSON or XML. YAML is also extensible, allowing developers to create custom YAML tags for specific purposes.
+decoder = decodeString yamlString
+    |> andThen dict
+```
 
-When working with YAML in Elm, it's important to pay attention to indentation. Indentation is used to represent different levels of data, similar to how curly braces are used in JSON. Additionally, YAML does not support comments, so it's best to use descriptive key names to make the data easier to understand.
+This will return a ```Dict``` in the form of ```Dict String String```. To decode the YAML into a different data type, simply change the function used in ```andThen``` to the desired data type. Similarly, to encode Elm data types into YAML, the ```Encode.encode``` function can be used.
 
-## See Also
+```
+elmData =
+    dict
+        [ ( "name", "John Doe" )
+        , ( "age", "25" )
+        ]
 
-- [The official Elm documentation on working with YAML](http://package.elm-lang.org/packages/NoRedInk/elm-yaml/latest/)
-- [A beginner-friendly tutorial on using YAML in Elm](https://dev.to/azerthoth/yaml-in-elm-4b5k)
-- [A comparison between YAML, JSON, and XML](https://stackabuse.com/yaml-vs-json-vs-xml/)
+encodedYaml = encode elmData
+```
+
+This will return a YAML string in the form of ```"name: John Doe\nage: 25"```.
+
+## Deep Dive:
+
+YAML, which stands for "YAML Ain't Markup Language", was first created in 2001 by Clark Evans and Ingy döt Net. It was designed to be a human-readable data serialization language and is often used in place of JSON due to its more flexible syntax. It supports comments, multiple data types, and inheritance, making it a more robust choice for complex data structures.
+
+Alternatives to using YAML in Elm include JSON and XML. However, compared to these options, YAML offers a more compact and readable syntax, making it a popular choice for managing settings and data in code.
+
+The implementation of YAML in Elm is based on the YAML specification, version 1.2. The ```Yaml.Decode``` package uses a parser written in Elm to convert YAML syntax into Elm data types, while the ```Yaml.Encode``` package uses a custom encoder that translates Elm data types into YAML syntax.
+
+## See Also:
+
+- Official YAML website: https://yaml.org/
+- Elm package repository for ```Yaml.Decode``` and ```Yaml.Encode```: https://package.elm-lang.org/packages/elm/core/latest/
+- YAML tutorial for beginners: https://docs.ansible.com/ansible/latest/reference_appendices/YAMLSyntax.html

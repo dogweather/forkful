@@ -1,7 +1,7 @@
 ---
-title:                "文字列を大文字にする"
-html_title:           "Go: 文字列を大文字にする"
-simple_title:         "文字列を大文字にする"
+title:                "「文字列の大文字化」"
+html_title:           "Go: 「文字列の大文字化」"
+simple_title:         "「文字列の大文字化」"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Strings"
@@ -10,37 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+## What & Why?
 
-文字列を大文字に変換する理由を、最大2つの文で説明します。
+文字列の大文字化とは、プログラマーが文字列を全て大文字に変換することを指します。プログラマーはこのような操作を行うことで、文字列の比較や整形をより簡単に行うことができます。
 
-Go言語では、文字列の大文字と小文字は異なるものとして扱われます。あるプログラムで大文字に変換された文字列を別のプログラムで処理する際に、一致しないと予期せぬエラーが発生する可能性があります。そのため、文字列を一貫して大文字に変換することで、予期せぬエラーを防ぐことができます。
+## How to:
 
-## 使い方
-
-文字列を大文字に変換する方法は、Go言語では```strings.ToUpper()```関数を使用します。例えば、「hello」を大文字に変換するには、以下のようにコードを書きます。
+Go言語を使って文字列を大文字化する方法はとても簡単です。下記のコードをご覧ください。
 
 ```Go
 package main
 
 import (
-	"fmt"
-	"strings"
+    "fmt"
+    "strings"
 )
 
 func main() {
-	str := "hello"
-	fmt.Println(strings.ToUpper(str))
+    str := "hello world"
+    fmt.Println(strings.ToUpper(str))
 }
 ```
 
-出力結果は、```HELLO```となります。
+このコードを実行すると、"HELLO WORLD"という出力が得られるはずです。stringsパッケージのToUpper関数を使うことで、文字列を大文字に変換することができます。また、stringsパッケージには他にもToLower関数やTitle関数など、文字列の操作に便利な関数がたくさんありますので、ぜひ使ってみてください。
 
-## 深堀り
+## Deep Dive:
 
-Go言語では、大文字と小文字の区別は非常に重要です。なぜなら、様々なプログラムやライブラリが使われる際に、区別が一致しないことで予期せぬエラーが発生する可能性があるからです。そのため、文字列を大文字に変換することは、ソフトウェアの安定性と互換性を保つために重要な役割を果たします。
+文字列の大文字化は、プログラミング言語によって実装方法が異なります。それぞれの言語における大文字化の方法を覚えることで、より効率的なコーディングが可能になります。
 
-## 関連記事
+Go言語では、stringsパッケージにあるToUpper関数のように、文字列を大文字に変換する機能が用意されています。他の言語では、大文字化のために特別なライブラリや関数を用意する必要があるかもしれません。また、アルファベット以外の文字を大文字化する方法も、言語ごとに異なる場合がありますので、注意が必要です。
 
-- [Go言語で文字列を小文字に変換する方法](https://example.com)
-- [文字列を扱う際の注意点](https://example.com)
+## See Also:
+
+- [Go strings package documentation](https://golang.org/pkg/strings/)
+- [A Beginner's Guide to String Manipulation in Go](https://dev.to/digitalocean/a-beginner-s-guide-to-string-manipulation-in-go-43cm)
+- [Best Practices for Working with Strings in Go](https://blog.learngoprogramming.com/golang-strings-cheat-sheet-6b3049e85aff)

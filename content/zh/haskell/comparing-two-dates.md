@@ -10,28 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-为什么：为什么要比较两个日期？可能是因为我们需要知道哪个日期更早或者更晚，或者我们需要按照日期对数据进行排序。
+## 什么是比较日期？为什么要比较日期？
 
-如何：
-比较两个日期是一个很简单的任务，Haskell提供了一种便捷的方法来完成它。我们可以使用`diffDays`函数来计算两个日期之间的天数差异，然后根据返回的结果进行条件判断。下面是一个简单的例子：
+比较日期是将两个日期进行比较，并确定它们的关系是相等、大于还是小于。程序员经常需要比较日期，以便在各种应用程序中进行日期和时间的操作，比如事件调度、数据分析和日历应用程序。
 
-```Haskell
+## 如何使用Haskell来比较日期？
+
+在Haskell中，我们可以使用"Data.Time"库中的"UTCTime"模块来比较日期。下面是一个简单的例子：
+
+```
 import Data.Time
 
--- 定义两个日期
-date1 = fromGregorian 2021 8 1
-date2 = fromGregorian 2021 8 10
+-- 创建两个日期变量
+date1 = UTCTime (fromGregorian 2020 1 1) (secondsToDiffTime 0)
+date2 = UTCTime (fromGregorian 2020 1 2) (secondsToDiffTime 0)
 
--- 比较两个日期并打印结果
-main = print $ diffDays date1 date2
+-- 比较两个日期并打印输出
+main = do
+  print $ date1 == date2
+  print $ date1 < date2
+  print $ date1 > date2
 ```
 
-运行以上代码，我们可以得到`9`作为输出结果，表示`date1`比`date2`早9天。
+输出结果将是：
 
-深入了解：
-除了比较两个日期的天数差异，我们也可以通过其他函数来进行更多的比较。例如，`diffJulianDuration`函数可以计算两个日期之间的Julian时间间隔，`compare`函数可以比较两个日期之间的大小关系。此外，Haskell还提供了一系列的日期处理函数，例如`addDays`和`addGregorianMonthsClip`等，可以让我们更灵活地操作日期。
+```
+False
+True
+False
+```
 
-见下文：
+## 深入了解
 
-- [Haskell官方文档](https://www.haskell.org/documentation/)
-- [Haskell Data.Time模块文档](https://hackage.haskell.org/package/time-1.10.0.3/docs/Data-Time.html)
+历史背景：在过去，人们使用天文观测和日历来确定日期。随着计算机的发展，程序员需要一种方法来比较日期并进行日期和时间的操作。
+
+其他选择：除了Haskell，我们还可以使用其他编程语言来比较日期，比如Python和Java。每种语言的语法和方法可能略有不同，但基本原理相同。
+
+实现细节：在Haskell中，日期由"UTCTime"数据类型表示，该类型包含"Day"和"DiffTime"类型的值。"Day"类型表示日期的日部分，"DiffTime"类型表示日期的时间部分，它以秒为单位。
+
+## 参考资料
+
+- [Haskell "Data.Time"文档](https://hackage.haskell.org/package/time/docs/Data-Time.html)
+- [比较日期的其他方法](https://stackoverflow.com/questions/27217545/whats-the-best-way-to-compare-dates-in-haskell)

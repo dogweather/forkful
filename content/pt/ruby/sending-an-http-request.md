@@ -10,39 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Por que enviar uma solicitação HTTP é importante?
+# O que é e por que fazer:
 
-Enviar uma solicitação HTTP é essencial para interagir com a internet. Seja para acessar uma página da web, enviar dados para um servidor ou fazer uma chamada de API, todo esse processo é feito por meio de solicitações HTTP.
+Enviar uma solicitação HTTP (Hypertext Transfer Protocol) é essencialmente enviar uma mensagem para um servidor de hospedagem web. Os programadores fazem isso para obter informações ou executar ações em um site ou aplicativo, como acessar dados, enviar formulários ou receber respostas de APIs.
 
-## Como fazer isso em Ruby?
+# Como fazer:
 
-Para enviar uma solicitação HTTP em Ruby, precisamos usar a biblioteca padrão Net::HTTP. Primeiro, precisamos criar um objeto de URL usando a URL do servidor que queremos acessar. Em seguida, criamos um objeto de solicitação HTTP especificando o tipo de solicitação, os cabeçalhos e os parâmetros necessários. Por fim, usamos o método `start` e `request` para enviar a solicitação e receber a resposta do servidor.
-
-```Ruby
-require 'net/http'
-
-# Criando um objeto de URL
-url = URI("https://example.com/api/users")
-
-# Criando um objeto de solicitação HTTP
-request = Net::HTTP::Post.new(url)
-request['Content-Type'] = 'application/json'
-request.body = { name: 'John', email: 'john@example.com' }.to_json
-
-# Enviando a solicitação e recebendo a resposta
-response = Net::HTTP.start(url.host, url.port, use_ssl: true) do |http|
-  http.request(request)
-end
-
-puts response.body # Imprime a resposta do servidor
-puts response.code # Imprime o status code da resposta
+```ruby
+require 'net/http' # importa a biblioteca para enviar solicitações HTTP
+uri = URI('https://www.example.com') # define a URI (Uniform Resource Identifier) do site ou API que você deseja acessar
+response = Net::HTTP.get_response(uri) # envia a solicitação e espera pela resposta do servidor
+puts response.body # exibe o conteúdo da resposta do servidor
 ```
 
-## Mergulho Profundo
+Output:
 
-Além do método `start` e `request`, a classe `Net::HTTP` possui outros métodos úteis para lidar com solicitações HTTP, como `get`, `post`, `put`, `delete`, entre outros. Também podemos configurar opções adicionais, como o timeout da solicitação ou o uso de um proxy. Além disso, podemos acessar informações do cabeçalho e corpo da resposta do servidor para tratar a resposta de acordo com nossas necessidades.
+```
+<!DOCTYPE><html>
+<head>
+    <title>Example Domain</title> <!-- resposta do servidor -->
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style type="text/css">
+    /* ... */
+    </style> 
+</head>
 
-## Veja também
+<!--
+    Solicitação HTTP pode ser usada para acessar qualquer tipo de conteúdo em um site ou aplicativo, como HTML, JSON e imagens, 
+    além de poder executar ações específicas, como fazer POST em um formulário ou autenticar um usuário.
+-->
 
-- Documentação Oficial do Net::HTTP: https://ruby-doc.org/stdlib-2.7.0/libdoc/net/http/rdoc/Net/HTTP.html
-- Tutorial sobre o uso do Net::HTTP: https://www.rubyguides.com/2018/08/ruby-http-request/
+# Profundando:
+
+1. Contexto histórico:
+O HTTP foi proposto em 1989 por Tim Berners-Lee, o pai da World Wide Web. É um protocolo universal e independente de plataforma para comunicação entre servidores e clientes, facilitando a troca de dados na internet.
+
+2. Alternativas:
+Além do Net::HTTP, que vem incluído na biblioteca padrão do Ruby, existem outras bibliotecas, como HTTParty e Faraday, que oferecem recursos mais avançados para enviar solicitações e receber respostas HTTP.
+
+3. Detalhes de implementação:
+A biblioteca Net::HTTP é construída em torno de uma classe homônima, que possui métodos para configurar a solicitação, adicionar cabeçalhos, autenticar com HTTP Basic ou Digest, entre outros recursos. Além disso, ela também usa um objeto Net::HTTPResponse para armazenar a resposta do servidor.
+
+# Veja também:
+
+- [Ruby documentação sobre Net::HTTP](https://ruby-doc.org/stdlib-2.6.3/libdoc/net/http/rdoc/Net/HTTP.html)
+- [HTTParty](https://github.com/jnunemaker/httparty)
+- [Faraday](https://github.com/lostisland/faraday)

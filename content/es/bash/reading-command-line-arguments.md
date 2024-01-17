@@ -1,7 +1,7 @@
 ---
-title:                "Leyendo argumentos de línea de comandos"
-html_title:           "Bash: Leyendo argumentos de línea de comandos"
-simple_title:         "Leyendo argumentos de línea de comandos"
+title:                "Leyendo argumentos de la línea de comandos."
+html_title:           "Bash: Leyendo argumentos de la línea de comandos."
+simple_title:         "Leyendo argumentos de la línea de comandos."
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Files and I/O"
@@ -10,59 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¿Qué y por qué?
 
-Si estás aprendiendo Bash o simplemente quieres mejorar tus habilidades en línea de comandos, es importante entender cómo leer argumentos de línea de comandos. Esto te permitirá crear scripts más dinámicos y automatizar tareas de manera más eficiente.
+Leer argumentos de línea de comando en Bash es una forma de permitir que los programas acepten información del usuario al ejecutarse. Los programadores lo hacen para que sus programas puedan ser más interactivos y personalizables.
 
-## Cómo hacerlo
+## Cómo:
 
-Para leer los argumentos de línea de comandos en Bash, puedes usar la variable especial $@. Esta variable contiene todos los argumentos pasados ​​al script en una sola línea. Veamos un ejemplo:
-
-```Bash
-#!/bin/bash
-echo "Los argumentos de línea de comandos son: $@"
-```
-
-La salida de este script sería:
-
-```Bash
-$./ejemplo.sh arg1 arg2 arg3
-Los argumentos de línea de comandos son: arg1 arg2 arg3
-```
-
-Como puedes ver, los argumentos se almacenan como una sola cadena, separada por espacios.
-
-Pero ¿qué pasa si quieres leer los argumentos uno a uno? Para eso, puedes utilizar un bucle for para iterar sobre cada argumento. Veamos otro ejemplo:
+Los argumentos de línea de comando se pueden leer en Bash utilizando la variable especial "$@", que contiene una lista de todos los argumentos ingresados al ejecutar un programa. Por ejemplo:
 
 ```Bash
 #!/bin/bash
-for arg in "$@"
-do
-  echo "El argumento es: $arg"
-done
+echo "El primer argumento es: $1"
+echo "El segundo argumento es: $2"
 ```
 
-La salida sería:
+Si ejecutamos este programa con los argumentos "hola" y "mundo", el resultado sería:
 
 ```Bash
-$./ejemplo.sh arg1 arg2 arg3
-El argumento es: arg1
-El argumento es: arg2
-El argumento es: arg3
+$ bash programa.sh hola mundo
+El primer argumento es: hola
+El segundo argumento es: mundo
 ```
 
-También puedes utilizar la variable especial $#, que contiene el número total de argumentos pasados al script. Esto puede ser útil si necesitas realizar una acción específica dependiendo de la cantidad de argumentos recibidos.
+## Profundizando:
 
-## Profundizando
+Los argumentos de línea de comando han estado presentes en los sistemas operativos Unix desde hace décadas, lo que los hace una herramienta fundamental para la interacción con el usuario. Además de leer los argumentos con la variable "$@", también es posible utilizar el comando "getopts" para leer argumentos con opciones y argumentos con valores. Otras alternativas para leer argumentos en Bash incluyen el uso de la función "read" y la implementación de opciones con la librería "getopt".
 
-Existen varias opciones avanzadas para leer argumentos de línea de comandos en Bash, como flags (argumentos con valores específicos) y opciones. Puedes leer más sobre estas técnicas en la documentación oficial de Bash.
+## Ver también:
 
-También es importante mencionar que existen herramientas de línea de comandos en Bash, como getopt, que facilitan la lectura de argumentos más complejos.
-
-## Ver también
-
-- [Documentación oficial de Bash](https://www.gnu.org/software/bash/)
-- [Uso de getopt para leer argumentos en Bash](https://www.linuxjournal.com/content/bash-getopt-big-dogs)
-- [Ejemplos avanzados de uso de argumentos en Bash](https://catonmat.net/bash-one-liners-explained-part-three)
-
-¡Sigue practicando y pronto serás un experto en leer argumentos de línea de comandos en Bash!
+- [Documentación de la variable especial "$@"](https://www.gnu.org/software/bash/manual/html_node/Special-Parameters.html)
+- [Documentación del comando "getopts"](https://www.gnu.org/software/bash/manual/html_node/Bourne-Shell-Builtins.html#Bourne-Shell-Builtins)
+- [Ejemplo de implementación de opciones en Bash](https://github.com/spf13/cobra/blob/master/cmd/cobra/create.go)

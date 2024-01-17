@@ -10,84 +10,70 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+Co i dlaczego?
 
-Wysyłanie żądania HTTP z uwierzytelnieniem podstawowym może być przydatne, gdy chcemy uzyskać dostęp do chronionego zasobu lub wykonania określonej czynności na zdalnym serwerze.
+Wysyłanie żądania HTTP z podstawowym uwierzytelnieniem to proces, w którym programista pobiera dane z internetu poprzez przesłanie specjalnego żądania do serwera. Programiści często stosują tę metodę z uwagi na jej prostotę i bezpieczeństwo.
 
-## Jak to zrobić
+Jak to zrobić:
 
 ```Arduino
-#include <WiFiClientSecure.h> // dołącz bibliotekę WiFiClientSecure
+// Uwierzytelnienie podstawowe
+#include <WiFiClientSecure.h>
+#include <ArduinoHttpClient.h>
 
-char ssid[] = "nazwa_sieci"; // wprowadź nazwę sieci WiFi
-char pass[] = "hasło"; // wprowadź hasło sieci WiFi
-char host[] = "adres_url"; // wprowadź adres URL dla żądania HTTP
-int port = 443; // podstawowy port dla HTTPS
-
-WiFiClientSecure client; // inicjalizuj obiekt klienta WiFiClientSecure
+char host[] = "example.com";
+char username[] = "username";
+char password[] = "password";
 
 void setup() {
-  Serial.begin(9600); // inicjalizuj port szeregowy
-  
-  WiFi.begin(ssid, pass); // połącz z siecią WiFi
-  Serial.println("Connecting to WiFi...");
-  
-  while (WiFi.status() != WL_CONNECTED) { // oczekuj na połączenie
-    delay(500);
-    Serial.print(".");
-  }
-
-  Serial.println("Connected!"); // jeśli połączenie nawiązane, wyświetl komunikat
-
-  // Wykonaj żądanie HTTP do serwera
-  Serial.println("Making HTTPS request to server...");
-  if (client.connect(host, port)) { // połącz się z serwerem
-    client.print("GET / HTTP/1.1\r\n"); // ustaw metodę, ścieżkę i wersję protokołu
-    client.print("Host: ");
-    client.print(host);
-    client.print("\r\n");
-    client.print("Authorization: Basic YWxhZGRpbjpvcGVuc2VzYW1l\r\n"); // dodaj nagłówek uwierzytelniania
-    client.print("\r\n");
+  Serial.begin(9600);
+  WiFiClientSecure client;
+  Serial.println("Connecting to WiFi");
+  Serial.println("Sending HTTP request");
+  if (client.connect(host, 443)) {
+    Serial.println("Connected to server");
+    client.println("GET / HTTP/1.1");
+    client.print("Authorization: Basic ");
+    client.println(base64Encode(username, password));
+    client.println("Host: example.com");
+    client.println("Connection: close");
+    client.println();
   }
 }
 
 void loop() {
-  if (client.connected() && !client.available()) { // sprawdź czy połączenie jest aktywne i nie ma już dostępnych danych
-    Serial.println("No more data!"); // jeśli nie ma już danych, wyświetl komunikat
-    client.stop(); // zamknij połączenie
-    while(true); // zatrzymaj pętlę
+  // waiting for server response
+  while (client.available()) {
+    char c = client.read();
+    Serial.print(c);
   }
-  
-  while(client.available()) { // dopóki są dostępne dane
-    char c = client.read(); // odczytaj znak
-    Serial.print(c); // wyświetl go na monitorze szeregowym
+  if (!client.connected()) {
+    Serial.println();
+    Serial.println("Server disconnected");
+    client.stop();
+    for(;;);
   }
 }
 
+String base64Encode(String username, String password) {
+  char auth[100] = {0};
+  strcpy(auth, username.c_str());
+  strcat(auth, ":");
+  strcat(auth, password.c_str());
+
+  char encoded[100] = {0};
+  base64_encode(encoded, auth, strlen(auth));
+
+  return String(encoded);
+}
 ```
 
-### Przykładowy wynik
+Głębszy zanurzenie:
 
-Po wykonaniu żądania HTTP z basic authentication, otrzymamy odpowiedź serwera zawierającą informacje lub wykonującą określoną akcję.
+Wysyłanie żądania HTTP z podstawowym uwierzytelnieniem jest stosowane od początków sieci WWW, aby zapewnić bezpieczne przesyłanie danych użytkowników. Alternatywnymi metodami są uwierzytelnianie oparte na tokenach lub uwierzytelnianie z użyciem certyfikatów SSL.
 
-```
-HTTP/1.1 200 OK
-Date: Sun, 22 Aug 2021 17:00:00 GMT
-Server: Apache
-Content-Type: text/html
-Content-Length: 15
+Zobacz także:
 
-Hello from server
-```
+Dokumentacja biblioteki ArduinoHttpClient: https://www.arduino.cc/en/Reference/HttpClient
 
-## Deep Dive
-
-Podczas wysyłania żądania HTTP z uwierzytelnieniem podstawowym, należy wysłać nagłówek "Authorization" zawierający kodowania Base64 nazwy użytkownika i hasła, oddzielone dwukropkiem (np. "Authorization: Basic YWxhZGRpbjpvcGVuc2VzYW1l").
-
-W przypadku uwierzytelniania podstawowego, informacje te są wysyłane w otwartym tekście i nie stanowią idealnego sposobu zabezpieczenia naszych danych. W przyszłości warto rozważyć korzystanie z innego rodzaju uwierzytelniania, takiego jak uwierzytelnianie z użyciem tokenu.
-
-## Zobacz także
-
-- [Podstawowe kody odpowiedzi serwera HTTP](https://developer.mozilla.org/pl/docs/Web/HTTP/Status)
-- [Dokumentacja biblioteki WiFiClientSecure](https://www.arduino.cc/en/Reference/WiFiClientSecure)
-- [Dokumentacja protokołu HTTP](https://developer.mozilla.org/pl/docs/Web/HTTP)
+Informacje na temat HTTP i uwierzytelnienia: https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication

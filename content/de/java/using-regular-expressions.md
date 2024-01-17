@@ -10,52 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was ist das & Warum?
+Reguläre Ausdrücke sind spezielle Zeichenfolgen, die verwendet werden, um bestimmte Muster in Texten zu erkennen. Programmierer nutzen sie, um schnell und effizient große Mengen von Text zu durchsuchen und zu manipulieren.
 
-Warum sollte man sich mit regulären Ausdrücken beschäftigen? Ganz einfach: Sie sind ein leistungsstarkes Werkzeug, um Texte anhand bestimmter Muster zu durchsuchen und zu bearbeiten. Sie sind in vielen Programmiersprachen verfügbar, einschließlich Java, und können bei der Arbeit mit großen Textmengen enorm nützlich sein.
-
-## Anleitung
-
-Die Verwendung von regulären Ausdrücken in Java ist relativ einfach. Zunächst müssen Sie die Klasse `Pattern` aus dem Paket `java.util.regex` importieren. Dann können Sie mithilfe von `Pattern.compile()` einen regulären Ausdruck erstellen und diesen auf einen Text anwenden. Hier ist ein Beispiel, um alle Vorkommen von "Hallo" in einem String zu finden:
+## Wie funktioniert es?
+Java bietet standardmäßig eine Klasse namens "Pattern", die es uns ermöglicht, reguläre Ausdrücke zu erstellen und auf Text anzuwenden. Zum Beispiel können wir mit dem folgenden Code eine E-Mail-Adresse aus einem Text extrahieren:
 
 ```Java
-import java.util.regex.*;
-
-String text = "Hallo, ich bin David und ich sage gerne Hallo.";
-Pattern pattern = Pattern.compile("Hallo");
+String text = "Meine E-Mail-Adresse ist max_mustermann@example.com";
+Pattern pattern = Pattern.compile("[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,4}");
 Matcher matcher = pattern.matcher(text);
-while (matcher.find()) {
-    System.out.println("Gefunden: " + matcher.group());
+if (matcher.find()) {
+  System.out.println("Gefundene E-Mail-Adresse: " + matcher.group());
 }
-
-// Output: Gefunden: Hallo, Gefunden: Hallo
 ```
 
-Sie können auch Platzhalter verwenden, um bestimmte Muster zu suchen. Zum Beispiel `.` steht für ein beliebiges Zeichen, `*` für beliebig viele Vorkommen und `+` für mindestens ein Vorkommen eines Zeichens. Hier ist ein Beispiel, um alle Wörter mit drei Buchstaben in einem Text zu finden:
+Ausgabe: Gefundene E-Mail-Adresse: max_mustermann@example.com
 
-```Java
-import java.util.regex.*;
+## Eintauchen in die Details
+Reguläre Ausdrücke haben ihren Ursprung in den 1950er Jahren in der theoretischen Informatik. Heutzutage gibt es viele Alternativen zu regulären Ausdrücken, wie z.B. das "String"-Objekt in Java. Bei der Verwendung von regulären Ausdrücken ist es wichtig zu beachten, dass sie sehr leistungsfähig sind, aber auch sehr komplex. Daher ist es ratsam, sie nur dann zu verwenden, wenn sie tatsächlich benötigt werden.
 
-String text = "Das Katze ist süß.";
-Pattern pattern = Pattern.compile("\\b[A-Za-z]{3}\\b");
-Matcher matcher = pattern.matcher(text);
-while (matcher.find()) {
-    System.out.println("Gefunden: " + matcher.group());
-}
-
-// Output: Gefunden: Das, Gefunden: ist
-```
-
-Reguläre Ausdrücke bieten viele weitere Möglichkeiten, um Text zu durchsuchen und zu bearbeiten, wie z.B. das Einfügen oder Ersetzen von Zeichen. Es ist daher empfehlenswert, sich eingehender mit der Syntax und den verschiedenen Möglichkeiten von regulären Ausdrücken auseinanderzusetzen.
-
-## Tiefergehende Informationen
-
-Die Syntax von regulären Ausdrücken in Java basiert auf der sogenannten Perl-kompatiblen Notation und ist relativ komplex. Es können nicht nur einzelne Zeichen oder Wörter gesucht werden, sondern auch Gruppen von Zeichen und spezielle Schreibweisen wie z.B. Suchen nach Groß- oder Kleinschreibung. Reguläre Ausdrücke können jedoch sehr mächtig sein, wenn sie richtig verwendet werden.
-
-Eine hilfreiche Ressource für das Lernen von regulären Ausdrücken in Java ist die offizielle Java-Dokumentation. Dort finden Sie eine detaillierte Beschreibung der Syntax sowie viele Beispiele und Anweisungen zur Verwendung.
-
-## Siehe auch
-
-- [Java Regex Tutorial](https://www.javatpoint.com/java-regex)
-- [Regex Cheat Sheet](https://www.rexegg.com/regex-quickstart.html)
-- [Java Pattern Class Documentation](https://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html)
+## Weitere Informationen
+- Java Regex Tutorial: https://www.javatpoint.com/java-regex
+- Pattern-Klasse in der Java-Dokumentation: https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html

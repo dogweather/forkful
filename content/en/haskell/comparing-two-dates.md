@@ -10,57 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-If you've ever needed to compare two dates in your code, whether to determine which one is earlier or to check for a certain time interval, then reading this article might just save you some time and headaches. Comparing dates may seem like a simple task, but it can become tricky and error-prone due to differences in date formats and time zones. With Haskell, we have the tools to easily and accurately compare dates, making our code more efficient and reliable.
+## What & Why?
 
-## How To
-To compare two dates in Haskell, we first need to import the Data.Time library, which provides functions and types for working with dates and times. We will also use the Data.Time.Clock module, specifically the UTCTime type, which represents a Universal Coordinated Time (UTC) in Haskell. Let's see how we can compare two dates using some examples.
+Comparing two dates is the process of determining which of the two dates is earlier or later. Programmers often do this to sort a list of dates, find out the time difference between two dates, or validate user input.
 
-### Example 1: Checking if date is before another date
-```Haskell
-import Data.Time
+## How to:
 
--- Function to compare two dates
-compareDates :: UTCTime -> UTCTime -> Ordering
-compareDates date1 date2 = compare date1 date2
+In Haskell, there are various ways to compare two dates depending on the specific use case. Here are two simple examples:
 
--- Sample dates
-today :: IO UTCTime
-today = getCurrentTime
-tomorrow = addUTCTime (86400 :: NominalDiffTime) today
-
--- Output
->>> compareDates <$> today <*> tomorrow
-LT
 ```
-In this example, we first import the Data.Time library and define a function called `compareDates` that takes in two UTC dates and uses the built-in `compare` function to return an `Ordering` value, which can be either `LT` (Less Than), `GT` (Greater Than), or `EQ` (Equal). We then create two sample dates using the `getCurrentTime` and `addUTCTime` functions, and finally, we use the `compareDates` function to compare them, outputting `LT` since `tomorrow` comes after `today`.
+-- Using the default Ord instance for the Date type
+compareDates :: Date -> Date -> Ordering
+compareDates d1 d2 = compare d1 d2
 
-### Example 2: Checking if date falls within a certain time interval
-```Haskell
-import Data.Time
-
--- Function to check if date is within a time interval
-withinInterval :: UTCTime -> UTCTime -> UTCTime -> Bool
-withinInterval date start end = date <= end && date >= start
-
--- Sample dates
-today :: IO UTCTime
-today = getCurrentTime
-startOfNextMonth = addUTCTime (2592000 :: NominalDiffTime) today
-endOfNextMonth = addUTCTime (5184000 :: NominalDiffTime) today
-
--- Output
->>> withinInterval <$> startOfNextMonth <*> today <*> endOfNextMonth
-True
+-- Custom comparison function for comparing years
+compareYears :: Date -> Date -> Ordering
+compareYears d1 d2 = compare (year d1) (year d2)
 ```
-In this example, we define a function called `withinInterval` that takes in a date, a start date, and an end date and checks if the date falls within the specified time interval. We use the `getCurrentTime` and `addUTCTime` functions to create sample dates, and then use the `withinInterval` function to check if `today` falls within the interval between the `startOfNextMonth` and `endOfNextMonth`, which returns `True` since `today` is indeed within that interval.
 
-## Deep Dive
-The `compare` function used in `compareDates` is a part of the Ord typeclass, which is used for types that have an ordering. This means that we can use it not only for dates but also for other types such as numbers or strings. Similarly, the `<=` and `>=` operators used in `withinInterval` are also part of the Ord typeclass, allowing us to compare dates just like we would compare other types.
+Sample output:
+```
+compareDates (Date 2020 12 7) (Date 2021 1 1) -- LT
+compareYears (Date 2020 12 7) (Date 2021 1 1) -- LT
+```
 
-When comparing dates in Haskell, it's important to keep in mind that dates are represented as UTC values, so if you're working with dates in a different time zone, you may need to adjust them using functions such as `ZonedTime` in the Data.Time.LocalTime module.
+## Deep Dive:
 
-## See Also
-- [Data.Time documentation](https://hackage.haskell.org/package/time/docs/Data-Time.html)
-- [Comparison Operators in Haskell](https://hackage.haskell.org/package/base/docs/Prelude.html#t:Ord)
-- [Working with time zones in Haskell](https://hackage.haskell.org/package/time/docs/Data-Time-LocalTime.html)
+There are alternative ways to compare dates using functions like `diffDays` or `compareCalendarTime`, but they require additional libraries or conversions to the `Day` or `CalendarTime` types. It is important to note that dates are complex entities with varying formats and time zones, so it is recommended to use a well-tested library like `time` for accurate and reliable comparisons.
+
+## See Also:
+
+- [Haskell Time Library](https://hackage.haskell.org/package/time)
+- [Date and Time in Haskell](https://wiki.haskell.org/Date_and_time)
+- [Difference between two dates in Haskell](https://stackoverflow.com/questions/30799011/difference-between-two-dates-in-haskell)

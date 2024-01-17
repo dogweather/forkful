@@ -1,7 +1,7 @@
 ---
-title:                "HTML:n jäsentäminen"
-html_title:           "TypeScript: HTML:n jäsentäminen"
-simple_title:         "HTML:n jäsentäminen"
+title:                "Html-analysointi"
+html_title:           "TypeScript: Html-analysointi"
+simple_title:         "Html-analysointi"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "HTML and the Web"
@@ -10,40 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä & Miksi?
+HTML:n jäsentäminen on prosessi, jossa tietokone lukee ja ymmärtää HTML-koodia ja muuttaa sen rakenteeksi, jota voidaan käsitellä ja näyttää selaimessa. Tämä on tärkeää, koska se mahdollistaa dynaamisten ja monipuolisten verkkosivujen luomisen, joilla on monia erilaisia elementtejä ja sisältöä.
 
-Miksi joku haluaisi analysoida HTML:ää? Yksinkertaisesti sanottuna, HTML-analyysi on tärkeä osa verkkosivujen ja -sovellusten kehittämistä ja ylläpitoa. HTML-analyysin avulla voidaan hakea ja käsitellä verkkosivujen sisältöä, mikä auttaa esimerkiksi tiedon scrapettamisessa, SEO-analyysissä ja testaamisessa.
-
-## Kuinka
-
-HTML-analyysiin on olemassa monia erilaisia tapoja, mutta tässä artikkelissa keskitymme TypeScript-kieleen. TypeScript on suosittu JavaScriptin laajennus, joka tarjoaa vahvemman tyyppitarkastuksen ja muita kehittäjäystävällisiä ominaisuuksia.
+## Kuinka tehdä:
+Seuraavissa koodiesimerkeissä näet, kuinka voit jäsentää HTML-koodia TypeScript-ohjelmointikielellä ja saada tulosteen, joka näyttää rakenteen ja sisällön.
 
 ```TypeScript
-// Tuo tarvittavat moduulit
-import * as cheerio from "cheerio";
-import * as request from "request";
-
-// Haetaan verkkosivun sisältö
-request("https://www.example.com", (error, response, body) => {
-  // Avataan sisältö cheerio-kirjaston avulla
-  const $ = cheerio.load(body);
-  // Haetaan otsikko elementti
-  const title = $("h1").text();
-  // Tulostetaan otsikko konsolille
-  console.log(`Sivun otsikko on: ${title}`);
-});
+const html = "<div><h1>Tervetuloa!</h1><p>Tervetuloa sivullemme!</p></div>";
+const parser = new DOMParser();
+const doc = parser.parseFromString(html, "text/html");
+console.log(doc);
 ```
 
-Tämä yksinkertainen koodiesimerkki näyttää, kuinka verkkosivun sisältö voidaan hakea ja käsitellä cheerio-kirjaston avulla. Kirjasto tarjoaa samankaltaisen syntaksin kuin jQuery ja helpottaa HTML-elementtien hakemista ja manipulointia verkkosivun sisällöstä.
+Tulostus:
 
-## Syvällisempi tarkastelu
+```
+#document
+<html>
+  <head></head>
+  <body>
+    <div>
+      <h1>Tervetuloa!</h1>
+      <p>Tervetuloa sivullemme!</p>
+    </div>
+  </body>
+</html>
+```
 
-Vaikka cheerio on yksi suosituimmista kirjastoista HTML-analyysiin TypeScriptillä, on olemassa myös muita vaihtoehtoja, kuten jsdom ja HTML-parseri. Näitä kirjastoja voidaan käyttää samalla tavalla kuin cheeriota ja niitä kannattaa tutkia, jos haluaa vertailla ominaisuuksia ja suorituskykyä.
+## Syvempi sukellus:
+HTML:n jäsentäminen on kehittynyt yhdessä verkon kehityksen kanssa ja on olennainen osa modernia verkkokehitystä. On myös muita tapoja jäsentää HTML-koodia, kuten käyttämällä Regular Expression -lausekkeita, mutta DOM-hierarkian käyttäminen on yleisesti suositeltavaa. HTML-jäsennys suoritetaan yleensä selaimen sisällä, mutta se voidaan myös tehdä palvelimella ennen kuin sivu lähetetään selaimelle. Tämä voi parantaa verkkosivujen latausnopeutta ja suorituskykyä.
 
-Lisäksi HTML-analyysin syvällisempi ymmärtäminen auttaa kehittäjiä tehokkaammin hyödyntämään sitä. Esimerkiksi ymmärtämällä CSS-selectorien toimintaa voi helpommin hakea tiettyjä elementtejä verkkosivun sisällöstä. Lisäksi on hyvä tietää, kuinka DOM-puu toimii ja kuinka sitä voidaan käyttää HTML-elementtien manipulointiin.
-
-## Katso myös
-
-- [Cheerio-kirjasto](https://github.com/cheeriojs/cheerio)
-- [JavaScript DOM API](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model)
-- [HTML-analyysi TypeScriptillä opetusohjelma](https://dev.to/nniaemeka/html-parsing-with-typescript-4f5a)
+## Tutustu myös:
+- [MDN Web Docs: HTML-parsing](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction)
+- [Cheatsheet: TypeScript HTML parsing](https://dev.to/andresfedeli/javascript-parse-html-to-json-objects-4d1l)
+- [GitHub: TypeScript-DOM-parser](https://github.com/Cyb3rrJack/TypeScript-DOM-parser)

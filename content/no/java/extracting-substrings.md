@@ -1,7 +1,7 @@
 ---
-title:                "Ekstrahering av substringer"
-html_title:           "Java: Ekstrahering av substringer"
-simple_title:         "Ekstrahering av substringer"
+title:                "Ekstrahering av delstrenger"
+html_title:           "Java: Ekstrahering av delstrenger"
+simple_title:         "Ekstrahering av delstrenger"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Strings"
@@ -10,39 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hva & Hvorfor?
 
-Hvorfor skulle man bry seg med å trekke ut substrings? Vel, substrings er en viktig konsept innenfor strengmanipulering, og å kunne trekke ut deler av en streng kan være nyttig for å bearbeide data eller filtrere informasjon.
+Å trekke ut delstrenger er en prosess der man henter ut en del av en tekststreng. Dette er en vanlig oppgave for programmører når de behandler tekstlige data, som for eksempel å finne et bestemt mønster i en tekst eller å manipulere en tekststreng for å få ønsket resultat.
 
-## Slik Gjør Du Det
-
-Koden nedenfor viser hvordan man kan trekke ut en substring fra en streng ved å bruke `substring()` metoden i Java:
+## Slik gjør du det:
 
 ```Java
-String tekst = "Dette er en test av substrings";
-String substring = tekst.substring(13, 18); // Trekker ut substring fra indeks 13 til 18
-System.out.println(substring); // Output: "en test"
+// Eksempel på å trekke ut delstrenge fra en tekststreng
+String tekst = "Dette er en tekst";
+String delstreng = tekst.substring(5); // Starter på indeks 5 (e) og henter ut resten av strengen
+
+System.out.println(delstreng); // Skriver ut "er en tekst"
 ```
 
-For å forstå koden bedre, la oss bryte den ned:
+## Dypdykk:
 
-- Først definerer vi en streng, `tekst`, som vi ønsker å trekke ut en substring fra.
-- Deretter bruker vi `substring()` metoden på `tekst`-strengen. Denne metoden tar inn to parametere, `startIndeks` og `sluttIndeks`, som indikerer hvor i strengen substringen skal starte og slutte.
-- Til slutt skriver vi ut resultatet ved å bruke `println()` metoden, som sørger for at resultatet blir printet til konsollen.
+Det å trekke ut delstrenger har vært en del av programmering siden de tidlige dager. Det finnes flere måter å gjøre det på, som for eksempel ved å bruke indeksering eller regulære uttrykk. I Java finnes det også flere metoder for å trekke ut delstrenger, som for eksempel ```substring()``` som vi viste i eksempelet.
 
-Merk at indeksen starter på 0 i Java, så for å trekke ut ordet "en", som er fra indeks 13 til 15 i `tekst`-strengen, må vi bruke `substring(13, 15)`.
+## Se også:
 
-## Dypdykk
-
-For å få en bedre forståelse av substring-konseptet, la oss se på hvordan metoden `substring()` fungerer under panseret. 
-
-`Substring()`-metoden er en del av `String`-klassen i Java, og den tar inn to parametere, `startIndeks` og `sluttIndeks`. Når metoden blir kalt, blir en ny streng opprettet ved å kopiere deler av den opprinnelige strengen mellom indeksene som blir spesifisert. Den nye strengen blir returnert som et resultat. 
-
-Det er viktig å merke seg at den opprinnelige strengen forblir uendret - metoden returnerer kun en kopi av delen av strengen du har bedt om å trekke ut. Dette betyr at kun en ny instans av en streng blir opprettet, noe som er mer effektivt enn å lage en hel ny streng ved å manipulere den opprinnelige.
-
-## Se Også
-
-For mer informasjon om strenger og substring-manipulering i Java, sjekk ut disse ressursene:
-
-- [Java Docs: String Class](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html)
-- [W3Schools: Java Substring() Method](https://www.w3schools.com/java/ref_string_substring.asp)
+- [Oracle Java dokumentasjon om hvordan man bruker ```substring()```](https://docs.oracle.com/javase/10/docs/api/java/lang/String.html#substring)
+- [Java Tutorials: Manipulating Characters in a String](https://docs.oracle.com/javase/tutorial/java/data/manipstrings.html)

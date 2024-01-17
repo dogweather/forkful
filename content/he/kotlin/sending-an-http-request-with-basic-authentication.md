@@ -10,36 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##למה
-מנסיון השימוש באפליקציות והתכנתות, כדאי לשרוד את משתמשי האפליקציות עם הרבה אפוסי LTC שמונים על חלוקת סיסמה בשירות האתר שלהם.כמו כן, מספק יתרונות כמו טביעת אצבעות, צידודיות, אבטחת אבטחת אתר וכו ' כדי למנוע חשיפת פרטים אישיים.
+מה ולמה?
 
-##איך ל
-תכנות HTTP POST ב-Kotlin יכול להיות קל ופשוט עם אימות בסיס של כיתוב בסיסי. למשל, בשימוש בספרייה okhttp3 תוכל<br> להשתמש ב- `Request.Builder()` כדי לבנות את הבקשה ולכלול את השיטה `.header()` כדי להוסיף אימות בסיסי עם שם המשתמש והסיסמה. הנה דוגמאת קוד מלא עם אימות בסיסי:
+שליחת בקשת HTTP עם אימות בסיסי היא פעולה שנעשית על ידי מתכנתים כדי לאמת את זהותם ולקבל גישה למידע מאתרי אינטרנט שונים. תהליך זה נותן למתכנתים גישה מאובטחת למידע באתר רק על ידי זיהוי ואימות של המשתמש.
+
+כיצד לבצע?
+
+קודים ופלט מדוגמא ניתנים להבנה על ידי קידום השורות בקודים פקודה-כאן. טכניקות לחישוב של ריצודות ותוכלי להשתמש במאפיינים מובחנים ב-building (java.util.scanner) בקוד java.
+
+Kotlin /**
 
 ```Kotlin
-fun sendPostRequest() {
-    val url = "https://example.com/api"
-    val requestBody = "Some data to be posted"
-    
-    val credentials = Credentials.basic("username", "password")
-    val request = Request.Builder()
-        .url(url)
-        .post(requestBody.toRequestBody())
-        .header("Authorization", credentials)
-        .build()
-        
-    val client = OkHttpClient()
-    val response = client.newCall(request).execute()
-    println(response.body()?.string())
-}
-```
+fun sendHttpRequestWithAuthentication() {
+    val url = URL("http://example.com") // אתר שליחת בקשה
+    val connection = url.openConnection() as HttpsURLConnection // חיבור HTTP
+    connection.setRequestMethod("GET") // HTTP GET בקשה עם אימות בסיסי
+    connection.setRequestProperty("Authorization", "Basic " + Base64.getEncoder().encodeToString("username:password".toByteArray())) // הוספת תוכן אימות בין תוכן לתוכן של אימות בסיסי כדי לאמת את המשתמש
+    val responseCode = connection.getResponseCode() // קוד תגובה מהמרחק
+    println("Response Code : $responseCode") // הדפסת הקוד של התגובה
+    val bufferedReader = BufferedReader(InputStreamReader(connection.getInputStream())) // קריאת תגובת האימות
+    var inputLine: String?
+    val response = StringBuffer()
+    while ((inputLine = bufferedReader.readLine()) != null) {
+        response.append(inputLine)
+    }
+    bufferedReader.close()
+    println("Response: ${response.toString()}") // הדפסת תגובת האימות
+}�```
 
-יציאה לדוגמא הנ"ל תהיה: `"Some data to be posted"`, תעבור בהצלחה תוך A `200 OK`.
 
-## צליל משנה
+עומק נכנס:
+לפני הצפיפות של תוכניות הגנה, אימות בסיסי היה נהוג כדרך קלה ופשוטה לאמת את זהות המשתמש. אם רוצים רמה נוספת של אבטחה, ישנם אלטרנטיבות כמו OAuth או OpenID שמאפשרות אימות עם מכשירי טוקנים ייחודיים. בנוסף, היכולת לשלוח בקשות HTTP עם אימות בסיסי מאפשרת למתכנתים לקבל גישה למידע מאתרים שונים ולאמת את זהות המשתמש באופן בטוח ומאובטח.
 
-כעת, נכנסים לתמצית עמוקה יותר על פרוטוקול ה- HTTP ואימות בסיסי. האחריות העיקרית של אימות בסיסי היא למנוע גישה למידע סודי וגישה לפעולות ללא רשיות. כאשר משתמש מתחבר לאתר עם אימות בסיסי, הם יצטרכו לספק שם משתמש וסיסמה. הפרטים האלו ישמו לטבלת המשתמשים של האתר/אפליקציה כדי לוודא שהמשתמש יש מספיק רשיות ועד לשלב זה האתר יאשר את המשתמשות. 
-
-##ראה גם
-- [אימות בסיסי ב-Kotlin עם אופן התכנות](https://www.baeldung.com/kotlin-http-post-request)
-- [HTTP ואימות ב
+ראו גם:
+למידע נוסף על אימות HTTP בסיסי, ניתן להשתמש במקורות הקשורים הבאים:
+- [טכניקות אימות כבדות](https://www.tutorialspoint.com/http/http_authentication.htm)
+- [מדריך לשליחת בקשות HTTP בסיסיות בפייתון](https://www.pythonforbeginners.com/requests/using-requests-in-python-basic-authentication/)
+- [התיעוד של Kotlin על פעולות מערכת HTTP](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.-text/base64-encoding/index.html)

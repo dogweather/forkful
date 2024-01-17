@@ -10,12 +10,13 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 왜
-폴더가 존재하는지 확인하는 것이 중요한 이유는 프로그램이 동적으로 파일을 조작하고 생성해야 할 때, 사용자에게 오류를 피해주기 위해 필수적이기 때문입니다.
+## 무엇 & 왜?
+디렉토리가 존재하는지 확인하는 것은 파일 시스템에서 매우 일반적인 작업입니다. 프로그래머들은 이를 사용하여 디렉토리가 이미 존재하는지 확인하고, 필요한 경우 새로운 디렉토리를 생성할 수 있습니다.
 
-# 방법
+## 방법:
+### 디렉토리 존재 여부 확인:
 ```Kotlin
-val directory = File("path/to/directory")
+val directory = File("/path/to/directory")
 if (directory.exists()) {
     println("Directory exists!")
 } else {
@@ -23,13 +24,26 @@ if (directory.exists()) {
 }
 ```
 
-위의 코드는 경로를 지정하여 파일 객체를 생성하고, `exists()` 메소드를 사용하여 폴더가 존재하는지를 확인합니다. 만약 폴더가 존재한다면 "Directory exists!"를 출력하고, 존재하지 않는다면 "Directory does not exist."를 출력합니다.
+### 새로운 디렉토리 생성:
+```Kotlin
+val directory = File("/path/to/new/directory")
+if (directory.mkdir()) {
+    println("Directory created successfully!")
+} else {
+    println("Failed to create directory.")
+}
+```
 
-# 더 들어가기
-폴더가 존재하는지 확인하기 위해서는 파일 객체를 생성한 후 `exists()` 메소드를 사용하는 것 외에도 다른 방법들을 검토할 수 있습니다. 예를 들어, `java.nio.file` 패키지에서 제공하는 `Files.exists()` 메소드를 사용할 수도 있습니다. 또는 `directory.isDirectory()`를 사용하여 해당 폴더가 디렉토리인지를 확인할 수도 있습니다.
+## 깊이 들어가보기:
+### 역사적 배경:
+디렉토리 존재 여부 확인은 오래된 개념이며, 다양한 운영체제에서 사용되었습니다. 예를 들어, 윈도우 운영체제에서는 `dir` 명령어를 사용하여 디렉토리의 존재 여부를 확인할 수 있습니다. 리눅스 운영체제에서는 `ls` 명령어를 사용합니다.
 
-# 더 알아보기
-- [Kotlin - Checking if File or Directory Exists](https://javarevisited.blogspot.com/2019/01/kotlin-check-file-directory-exists.html)
-- [How to Check If a Directory Exists in Kotlin](https://attacomsian.com/blog/check-if-directory-exists-kotlin)
-- [Kotlin - java.io.File.exists() instead of java.nio.Files.exists() vs kotlin.io.File.exists()](https://stackoverflow.com/questions/54800696/kotlin-java-io-file-exists-instead-of-java-nio-files-exists-vs-kotlin-io-file)
-- [Kotlin - java.io.Directory](https://docs.oracle.com/javase/8/docs/api/java/io/File.html#isDirectory--)
+### 대안:
+`File` 클래스의 `exists()` 메서드 외에도, `Files` 클래스의 `exists()` 메서드를 사용하여 디렉토리의 존재 여부를 확인할 수 있습니다. 또한 `listFiles()` 메서드를 사용하여 디렉토리에 포함된 파일 및 디렉토리의 리스트를 가져올 수도 있습니다.
+
+### 구현 세부 사항:
+`File` 클래스의 `exists()` 메서드는 해당 파일을 생성하거나 수정할 수 있는 권한이 있는지 검사합니다. 이를 통해 사용자가 여러 가지 작업을 수행할 수 있도록 보호합니다.
+
+## 관련 자료:
+- [Java Documentation on File and Directory Operations](https://docs.oracle.com/javase/tutorial/essential/io/file.html)
+- [Kotlin，주석](https://kotlinlang.org/spec/documentation.html)

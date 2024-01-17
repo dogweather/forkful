@@ -1,7 +1,7 @@
 ---
-title:                "Procurando e substituindo texto"
-html_title:           "Javascript: Procurando e substituindo texto"
-simple_title:         "Procurando e substituindo texto"
+title:                "Busca e substituição de texto"
+html_title:           "Javascript: Busca e substituição de texto"
+simple_title:         "Busca e substituição de texto"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Strings"
@@ -10,40 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
-Você já se deparou com a necessidade de substituir um determinado texto em um arquivo ou em uma grande quantidade de dados? Sabia que o Javascript possui uma função específica para isso? Aprenda a usar o método "replace()" e facilite suas tarefas de busca e substituição de texto!
+## O que & porquê?
+Substituir e pesquisar por texto é uma tarefa comum em programação. Isso envolve encontrar um determinado trecho de texto em um código e substituí-lo por outro. Os programadores realizam essa tarefa para corrigir erros, atualizar informações ou refatorar seu código.
 
-## Como fazer
-Para substituir um texto em Javascript, utilizamos o método "replace()". A sintaxe é simples: primeiro, informamos o texto que queremos substituir entre aspas, seguido pelo texto que será inserido no lugar. Veja um exemplo:
+## Como fazer:
+Para substituir e pesquisar por texto em Javascript, podemos usar o método replace() da classe String. Este método aceita dois parâmetros: o texto a ser substituído e o novo texto que será usado para substituir o texto antigo.
 
-```Javascript
-let texto = "Olá, mundo!";
-let novoTexto = texto.replace("mundo", "meu amigo");
-console.log(novoTexto); // Saída: Olá, meu amigo!
+Exemplo:
+```
+let texto = "Olá mundo!";
+texto = texto.replace("mundo", "amigos");
+console.log(texto);
 ```
 
-Podemos também usar o método "replace()" com expressões regulares para buscar e substituir padrões específicos. Por exemplo, para substituir todas as ocorrências de um determinado nome em um texto, podemos utilizar o símbolo "g" (global) junto com a expressão regular, como mostrado no exemplo abaixo:
-
-```Javascript
-let texto = "Olá, João! Como vai, João?";
-let novoTexto = texto.replace(/João/g, "Pedro");
-console.log(novoTexto); // Saída: Olá, Pedro! Como vai, Pedro?
+Saída:
+```
+Olá amigos!
 ```
 
-## Mergulho profundo
-Além da função básica de buscar e substituir textos, o método "replace()" também permite utilizar uma função como segundo parâmetro. Essa função é executada para cada correspondência encontrada na string, permitindo um maior controle sobre a substituição.
+## Aprofundamento:
+A substituição e pesquisa de texto é uma técnica amplamente utilizada desde os primeiros dias da programação. Inicialmente, os programadores precisavam escrever seus próprios algoritmos para realizar essa tarefa. Com o avanço das linguagens de programação, como o Javascript, surgiram métodos e funções que facilitam essa tarefa.
 
-Além disso, ao utilizar uma expressão regular como primeiro parâmetro, é possível utilizar "grupos de captura" para inserir partes específicas do texto substituto. Veja um exemplo:
+Uma alternativa ao método replace() é o método split() da classe String, que divide uma string em um array de substrings com base em um separador especificado. Combinado com o método join(), também da classe String, podemos criar um código semelhante ao método replace().
 
-```Javascript
-let texto = "Meu nome é Marcos, e eu gosto de programar!";
-let novoTexto = texto.replace(/(Marcos),/g, "Meu nome é $1,");
-console.log(novoTexto); // Saída: Meu nome é Marcos, e eu gosto de programar!
+Exemplo:
+```
+let texto = "Olá mundo!";
+texto = texto.split("mundo").join("amigos");
+console.log(texto);
 ```
 
-Neste exemplo, utilizamos os parênteses para criar um "grupo de captura" com o nome "Marcos". Em seguida, no texto substituto, podemos inserir esse grupo utilizando o símbolo "$" seguido pelo número do grupo. Isso permite substituir apenas uma parte do texto enquanto mantém o restante intacto.
+Saída:
+```
+Olá amigos!
+```
 
-## Veja também
-- [Documentação do método "replace()"](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
-- [Tutorial sobre substituição de textos com expressões regulares](https://www.devmedia.com.br/usando-expressoes-regulares-em-javascript/39019)
-- [Videoaula explicando como substituir textos em Javascript](https://www.youtube.com/watch?v=cpE58GvuGHM)
+## Veja também:
+- [Método replace() no Mozilla Developer Network](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
+- [Método split() no Mozilla Developer Network](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/split)
+- [Método join() no Mozilla Developer Network](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/join)

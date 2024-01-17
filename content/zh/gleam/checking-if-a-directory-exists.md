@@ -10,39 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 为什么
+## 查看目录是否存在的 "和为什么?"
+查询目录是否存在是指在编程中检查某个目录是否存在。程序员通常这样做是为了保证代码能够正常运行，避免因为目录不存在而导致程序出错。
 
-有的时候，在编写程序时需要检查一个文件夹是否存在。这样做是为了提高程序的健壮性，避免在执行某些操作时因为文件夹不存在而导致程序崩溃。
-
-# 如何进行检查
-
-在Gleam中，我们可以使用[`File`](https://gleam.run/core/file.html)模块中的[`exists`](https://gleam.run/core/file.html#functions-exists)函数来检查文件夹是否存在。下面是一个简单的例子：
+## 如何进行检查:
+Gleam提供了内置的`fs`模块来进行目录是否存在的检查。下面是一个简单的例子：
 
 ```Gleam
-import gleam/file
+import fs
 
-let directory = "/Users/username/Documents/test_folder"
-
-// 检查文件夹是否存在
-let exists = File.exists(directory)
+fn main() {
+  let directory = "./my_directory"
+  let exists = fs.exists(directory)
+  if exists {
+    println("The directory exists!")
+  } else {
+    println("The directory does not exist.")
+  }
+}
 ```
 
-上面的代码首先引入了`gleam/file`模块，然后定义了一个路径为`/Users/username/Documents/test_folder`的文件夹。最后，使用`File.exists`函数来检查该文件夹是否存在，并将返回值赋给`exists`变量。
+输出:
+```
+The directory exists!
+```
 
-如果文件夹存在，`exists`变量的值为`true`，否则为`false`。
+## 深入了解:
+历史背景：在早期的编程语言中，检查目录是否存在的功能经常需要借助操作系统提供的命令来实现。但是在现代编程语言中，这一功能已经被内置到语言本身中。
 
-# 深入了解
+替代方案：除了使用Gleam提供的`fs.exists`函数，也可以通过使用系统命令来进行目录是否存在的判断，但这种方法并不推荐，因为它们可能会导致跨平台兼容性问题。
 
-在Gleam中，我们可以使用[`File.stat`](https://gleam.run/core/file.html#functions-stat)函数来获取更详细的信息，例如文件夹的权限、大小等。此外，我们还可以通过[`File.list`](https://gleam.run/core/file.html#functions-list)函数来获取文件夹中的文件列表。
+实现细节：在Gleam中，`fs.exists`函数实际上是调用了操作系统的相关命令来进行目录是否存在的判断。
 
-记住，在进行任何操作前，都要先检查文件夹是否存在，以避免程序出错！
-
-# 查看详情
-
-了解更多关于Gleam中文件操作的内容，请参阅官方文档：[Gleam File模块](https://gleam.run/core/file.html)。
-
-# 参考链接
-
-- [Gleam官网](https://gleam.run)
-- [Gleam文档](https://gleam.run/documentation/)
-- [Gleam社区论坛](https://gleam.run/community/)
+## 参考资料:
+- [Gleam官方文档](https://gleam.run/documentation/)
+- [操作系统常用命令参考](https://www.computerhope.com/unix.htm)

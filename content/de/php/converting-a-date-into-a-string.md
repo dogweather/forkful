@@ -1,7 +1,7 @@
 ---
-title:                "Umwandeln eines Datums in einen String"
-html_title:           "PHP: Umwandeln eines Datums in einen String"
-simple_title:         "Umwandeln eines Datums in einen String"
+title:                "Umwandlung eines Datums in eine Zeichenfolge"
+html_title:           "PHP: Umwandlung eines Datums in eine Zeichenfolge"
+simple_title:         "Umwandlung eines Datums in eine Zeichenfolge"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Dates and Times"
@@ -10,36 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+# Was & Warum?
 
-Wer mit PHP programmiert, kommt nicht darum herum, mit Datumsangaben zu arbeiten. Oft ist es nötig, diese Datumsangaben in Strings umzuwandeln, zum Beispiel um sie in einer bestimmten Formatierung auf der Webseite auszugeben. In diesem Artikel erfährst du, wie du das in PHP ganz einfach umsetzen kannst.
+Das Umwandeln von einem Datum in eine Zeichenfolge bedeutet, dass wir ein Datum, das in einem bestimmten Format vorliegt, in eine lesbarere und benutzerfreundlichere Form bringen. Programmierer nutzen diese Funktion, um beispielsweise das Datum in einem leserlichen Format auf einer Webseite anzuzeigen.
 
-## Wie Geht's
+# Wie geht das?
 
-Um ein Datum in einen String umzuwandeln, gibt es in PHP die Funktion `date()`, die folgendermaßen aufgebaut ist:
-
-```PHP
-$string = date ( string $format [, int $timestamp = time() ] );
-```
-
-Das bedeutet, dass die Funktion zwei Parameter erwartet: Das Format des Strings, in den das Datum umgewandelt werden soll, und optional ein Timestamp, der das Datum angibt, das umgewandelt werden soll. Wenn kein Timestamp angegeben wird, verwendet die Funktion automatisch das aktuelle Datum.
-
-Als Beispiel wollen wir das aktuelle Datum in der Formatierung "Tag.Monat.Jahr" ausgeben. Dafür sieht der Code folgendermaßen aus:
+Um ein Datum in eine Zeichenfolge umzuwandeln, können wir in PHP die Funktion `date()` verwenden. Hier ist ein Beispielcode, der das aktuelle Datum in dem Format "d.m.Y" (Tag.Monat.Jahr) ausgibt:
 
 ```PHP
-$string = date("d.m.Y");
-echo $string;
+$currentDate = date("d.m.Y");
+echo $currentDate;
+// Output: 13.08.2021
 ```
 
-Das Ergebnis wäre in diesem Fall zum Beispiel `02.03.2020`.
+Wir können auch die Zeit hinzufügen, indem wir ein zusätzliches Argument an die Funktion übergeben. Zum Beispiel können wir das aktuelle Datum und die Zeit im Format "d.m.Y, H:i:s" (Tag.Monat.Jahr, Stunden:Minuten:Sekunden) ausgeben lassen:
 
-## Deep Dive
+```PHP
+$currentDateTime = date("d.m.Y, H:i:s");
+echo $currentDateTime;
+// Output: 13.08.2021, 15:23:06
+```
 
-Das Format, in dem das Datum ausgegeben werden soll, wird mithilfe von Platzhaltern definiert. Zum Beispiel steht `d` für den Tag im Monat mit zwei Ziffern, `m` für den Monat mit zwei Ziffern und `Y` für das Jahr mit vier Ziffern. Eine vollständige Liste der verfügbaren Platzhalter findest du in der offiziellen PHP-Dokumentation.
+# Tiefer tauchen
 
-Wenn du das aktuelle Datum nicht ausgeben möchtest, sondern ein festgelegtes Datum umwandeln möchtest, kannst du den zweiten Parameter der `date()`-Funktion verwenden. Dafür muss der Timestamp des gewünschten Datums angegeben werden. Dieser kann entweder als Integer-Wert oder mithilfe der Funktion `strtotime()` definiert werden.
+Die Funktion `date()` wurde bereits in der ersten Version von PHP eingeführt und ist seitdem eine der am häufigsten genutzten Funktionen. Es gibt auch alternative Wege, ein Datum in eine Zeichenfolge umzuwandeln, wie zum Beispiel die Funktion `strftime()`, welche zusätzliche Formatierungsoptionen bietet.
 
-## Siehe Auch
+Die Implementierung der Funktion `date()` basiert auf den Unix Timestamp, welcher die Anzahl der vergangenen Sekunden seit dem 1. Januar 1970 darstellt. Dieses Datum wurde von Unix als Basis für Datumsangaben gewählt und hat sich seitdem in der Programmierwelt etabliert.
 
-- [Offizielle PHP-Dokumentation zur date() Funktion](https://www.php.net/manual/de/function.date.php)
-- [Übersicht über alle verfügbaren Platzhalter](https://www.php.net/manual/de/function.date.php#refsect1-function.date-parameters)
+# Weitere Informationen
+
+Weitere Informationen zu Datumsumwandlungen in PHP findest du in der offiziellen Dokumentation: https://www.php.net/manual/de/function.date.php
+
+Für eine detailliertere Erklärung des Unix Timestamps und seiner Verwendung kannst du diesen Artikel lesen: https://de.wikipedia.org/wiki/Unixzeit
+
+# See Also
+
+- Offizielle Dokumentation zu `date()`: https://www.php.net/manual/de/function.date.php
+- Alternative Funktion `strftime()`: https://www.php.net/manual/de/function.strftime.php
+- Geschichte des Unix Timestamps: https://de.wikipedia.org/wiki/Unixzeit

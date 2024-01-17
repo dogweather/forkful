@@ -1,7 +1,7 @@
 ---
-title:                "Työskentely csv:n kanssa"
-html_title:           "Elixir: Työskentely csv:n kanssa"
-simple_title:         "Työskentely csv:n kanssa"
+title:                "Työskentely csv-tiedostojen kanssa"
+html_title:           "Elixir: Työskentely csv-tiedostojen kanssa"
+simple_title:         "Työskentely csv-tiedostojen kanssa"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Data Formats and Serialization"
@@ -10,47 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi CSV:n kanssa kannattaa työskennellä?
+## Mikä ja miksi?
+CSV-tiedostojen (Comma-Separated Values) käsittely on tärkeä osa ohjelmointia, sillä usein data tallennetaan CSV-muodossa. CSV-muoto mahdollistaa tiedon tallentamisen helposti riveinä ja sarakkeina.
 
-CSV (Comma-Separated Values) on yleisesti käytetty tiedostomuoto tietojen tallentamiseen ja jakamiseen. Se on helppo lukea ja kirjoittaa, ja sen avulla on mahdollista käsittää suuria määriä tietoa tehokkaasti. Elixirin avulla CSV:llä työskentely on myös vaivatonta ja tehokasta, joten se on erittäin hyvä valinta mille tahansa ohjelmistokehittäjälle, joka tarvitsee työkaluja tiedon käsittelyyn.
-
-## Kuinka työskennellä CSV:n kanssa
-
-Elixir tarjoaa `CSV`-moduulin, jolla voi lukea ja kirjoittaa CSV-tiedostoja. Alla on esimerkki, miten voit lukea CSV-tiedoston käyttäen `File.stream!`-funktiota ja `CSV`-moduulia:
+## Miten?
+Elixir tarjoaa kätevän tavan käsitellä CSV-tiedostoja `CSV`-moduulin avulla. Alla oleva esimerkkikoodi näyttää, kuinka voit lukea CSV-tiedoston ja muuttaa sen listaksi:
 
 ```Elixir
-File.stream!("tiedosto.csv")
-|> Stream.map(&CSV.decode_stream/1)
-|> Stream.map(&Enum.to_list/1)
+data = File.stream!("tiedosto.csv")
+|> CSV.decode()
+|> Enum.to_list()
 ```
 
-Tämä koodi lukee CSV-tiedoston ja palauttaa listoja, jotka sisältävät jokaisen rivin tiedot. Voit myös kirjoittaa CSV-tiedoston käyttäen `CSV.encode`-funktiota:
+Tämän jälkeen `data`-muuttujaan tallentuu lista, jonka jokainen alkio edustaa yhtä riviä CSV-tiedostossa. Voit käyttää `Enum`-moduulia käsitelläksesi listaa edelleen ja tehdäksesi esimerkiksi laskutoimituksia tiedon kanssa.
+
+CSV-tiedoston luominen on yhtä helppoa, sillä voit käyttää `CSV`-moduulia myös tiedoston kirjoittamiseen. Alla oleva koodi tallentaa `data`-muuttujan sisältämän listan uuteen CSV-tiedostoon:
 
 ```Elixir
-CSV.encode([["Sarake 1", "Sarake 2"], ["Arvo 1", "Arvo 2"]])
+File.write!("uusi_tiedosto.csv", CSV.encode(data))
 ```
 
-Tämä tuottaa seuraavan tulosteen:
+## Syväsukellus
+CSV-muoto kehitettiin jo vuonna 1972 ja se on edelleen suosittu tapa tallentaa taulukkomuotoista dataa. Sen yksinkertaisuus ja helppokäyttöisyys tekevät siitä suositun ohjelmointikielistä riippumatta.
 
-```
-"Sarake 1","Sarake 2"
-"Arvo 1","Arvo 2"
-```
+Elixirin lisäksi on olemassa muitakin työkaluja CSV-tiedostojen käsittelyyn, kuten esimerkiksi Pythonin `csv`-moduuli tai Rubyyn sisäänrakennettu `CSV`-luokka. Näiden lisäksi on myös olemassa monia erilaisia kirjastoja, jotka tarjoavat erilaisia toiminnallisuuksia CSV-tiedostojen käsittelyyn.
 
-## Syvemmälle CSV:n maailmaan
-
-CSV-tiedostossa on usein tietoa, joka ei ole vain yksinkertaisia arvoja ja sarakeotsikoita. Elixirin `CSV`-moduuli tukee myös monimutkaisempia tietorakenteita, kuten listoja ja hajautustaloja. Alla on esimerkki, miten voit lukea CSV-tiedoston ja käyttää sitä Elixirin `Enum`-moduulin kanssa:
-
-```Elixir
-CSV.decode_file!("tiedosto.csv")
-|> Enum.map(&List.to_tuple/1)
-|> Enum.each(fn({otsikko, arvot}) -> IO.puts "#{otsikko}: #{arvot}" end)
-```
-
-Tässä ensin dekoodataan CSV-tiedosto ja muutetaan jokainen rivi tupleiksi, jonka jälkeen käydään läpi jokainen tuple ja tulostetaan otsikko ja siihen liittyvät arvot.
+Elixirin `CSV`-moduuli on erityisen hyödyllinen, sillä se käsittelee dataa tehokkaasti ja tarjoaa monia hyödyllisiä toimintoja, kuten automaattisen rivitäyttökyvyn ja mahdollisuuden työskennellä tiedostoa streamina eli käsitellä dataa rivi kerrallaan.
 
 ## Katso myös
-
-- [Elixirin virallinen dokumentaatio CSV:lle](https://hexdocs.pm/elixir/CSV.html)
-- [CSV: n tiedostomuodon spesifikaatiot](https://tools.ietf.org/html/rfc4180)
-- [CSV-tiedostojen manipulointi Elixirissä](https://kaisersblog.blogspot.com/2018/09/working-with-csv-files-in-elixir.html)
+- [Elixirin virallinen dokumentaatio CSV-moduulille](https://hexdocs.pm/csv/)
+- [Grokking CSV in Elixir](https://rossta.net/blog/grokking-csv-in-elixir.html)
+- [CSV-muodon historia](https://en.wikipedia.org/wiki/Comma-separated_values#History)

@@ -1,7 +1,7 @@
 ---
-title:                "Kuvion vastaavien merkkien poistaminen"
-html_title:           "Bash: Kuvion vastaavien merkkien poistaminen"
-simple_title:         "Kuvion vastaavien merkkien poistaminen"
+title:                "Mallia vastaavien merkkien poistaminen"
+html_title:           "Bash: Mallia vastaavien merkkien poistaminen"
+simple_title:         "Mallia vastaavien merkkien poistaminen"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Strings"
@@ -10,46 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä & Miksi?
 
-Joskus ohjelmoinnissa tulee tilanteita, joissa haluamme poistaa tietyt merkit tai merkkijonot koodista. Tämä voi olla esimerkiksi turhien välimerkkien poistaminen tai tiettyjen haitallisten merkkien suodattaminen. Bash-skriptien avulla tämä onnistuu helposti ja tehokkaasti.
+Poistaminen merkkejä vastaavaa mallia on prosessi, jossa poistetaan kaikki tekstissä esiintyvät merkit, jotka vastaavat haluttua kaavaa. Tämä on tärkeää ohjelmoijille, jotka haluavat nopeasti ja tehokkaasti muokata tekstipohjaisia tiedostoja.
 
-## Miten
+## Kuinka tehdä se?
 
-Bash tarjoaa joukon käteviä komentoja poistamaan merkkejä tai merkkijonoja halutun kaavan perusteella. Käytämme seuraavia komentoja poistaaksemme merkkejä:
-
-```Bash 
-# Poistaa kaikki numerot merkkijonosta "hello123world"
-echo "hello123world" | tr -d [:digit:] 
-# Output: helloworld
-```
-
-Käytännössä komento ```tr``` (lyhenne sanasta "translate") korvaa kaikki annetun kaavan mukaiset merkit tyhjällä merkillä, jolloin ne poistuvat kokonaan merkkijonosta. Näin ollen se sopii hyvin poistamaan tiettyjä merkkejä tai merkkijonoja.
+Esimerkiksi, jos haluat poistaa kaikki välilyönnit tiedostosta, voit käyttää seuraavaa komentoa:
 
 ```Bash
-# Poistaa kaikki isoilla kirjaimilla kirjoitetut sanat merkkijonosta "Bash is AMAZING"
-echo "Bash is AMAZING" | tr -d [:upper:] 
-# Output: is 
+sed 's/ //g' tiedosto.txt
 ```
 
-Käyttämällä komentoa ```sed``` (lyhenne sanasta "streamline editor"), voimme myös poistaa tiettyjä merkkijonoja tai sanoja laajemmin. Käytämme tällöin säännöllisiä lausekkeita (regular expressions) määrittelemään poistettavat merkkijonot.
+Tämä komento käyttää "sed" -työkalua poistamaan kaikki välilyönnit tiedostosta ja tulostaa uuden version alkuperäisestä tiedostosta.
 
-```Bash
-# Poistaa kaikki viisi kirjainta pidemmät sanat merkkijonosta "This article is awesome"
-echo "This article is awesome" | sed 's/\b[A-Za-z]\{5,\}\b//g' 
-# Output: This is 
-```
+## Syvällinen sukellus
 
-Tässä tapauksessa komento ```sed``` etsii sanoja, jotka ovat vähintään viisi kirjainta pitkiä ja korvaa ne tyhjällä merkillä. Tämän ansiosta esimerkiksi sanat "article" ja "awesome" poistuvat kokonaan merkkijonosta.
+Poistamisen merkkejä vastaava malli on alunperin kehitetty 1970-luvulla Unix-käyttöjärjestelmälle. Sittemmin siitä on tullut tärkeä työkalu ohjelmoijille ja tekstiä käsitteleville ammattilaisille.
 
-## Syvemmälle
+On myös muita tapoja poistaa merkkejä vastaava malli, kuten "tr" -työkalu, joka on erikoistunut yksittäisten merkkien poistamiseen ja korvaamiseen. Myös "awk" -työkalulla voi suorittaa monimutkaisempia merkkien poistamisen operaatioita.
 
-Kuten edellisistä esimerkeistä näkyy, Bash tarjoaa monipuolisia ja tehokkaita keinoja poistaa tarpeettomia merkkejä tai merkkijonoja koodista. On myös hyvä huomata, että komentojen yhdistelemällä ja erilaisia säännöllisiä lausekkeita käyttämällä pystytään ratkaisemaan monimutkaisempiakin ongelmia.
-
-Lisäksi Bash-skripteihin on mahdollista luoda myös omia funktioita tai käyttää valmiita komentoriviohjelmia, kuten "awk" tai "grep", poistamiseen. Tästä syystä kannattaa tutustua Bashin eri ominaisuuksiin ja mahdollisuuksiin syvemmin ja löytää juuri itselle sopiva tapa poistaa merkkejä koodista.
+Poistamisen merkkejä vastaava malli käyttää säännöllisiä lausekkeita löytääkseen ja poistaakseen merkit halutun kaavan perusteella. Tämä tarkoittaa, että se voi olla hyödyllinen myös monimutkaisemmissa tekstipohjaisissa tiedostoissa, kuten lokeissa ja konfiguraatiotiedostoissa.
 
 ## Katso myös
 
-- [Bash-skriptikielen virallisilta sivuilta](https://www.gnu.org/software/bash/)
-- [Bash-skriptin kirjoittamisen perusteet](https://www.codecademy.com/learn/learn-the-command-line/modules/bash-scripting)
-- [Käyttäjän määrittelemien funktioiden luominen Bashissa](https://www.shellscript.sh/functions.html)
+- [sed-komento-opas](https://www.gnu.org/software/sed/manual/sed.html) - virallinen sed-komento-opas GNU-sivustolla
+- [tr -man sivu](https://www.gnu.org/software/coreutils/manual/html_node/tr-invocation.html) - man-sivu tr-työkalulle
+- [awk-komento-opas](https://www.gnu.org/software/gawk/manual/gawk.html) - virallinen awk-komento-opas GNU-sivustolla

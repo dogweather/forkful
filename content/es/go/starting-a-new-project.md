@@ -10,44 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¿Qué y Por qué?
+Comenzar un nuevo proyecto en programación es simplemente eso: iniciar un nuevo proyecto o programa de software desde cero. Los programadores hacen esto para crear soluciones a problemas o para mejorar y actualizar programas existentes.
 
-¡Hola a todos! Si estás aquí, es posible que estés considerando empezar un nuevo proyecto con Go. Y déjame decirte, ¡es una gran elección! Go es un lenguaje de programación moderno y altamente eficiente que está ganando popularidad en la comunidad de desarrollo. Ya sea que estés buscando crear una aplicación web, escribir herramientas de línea de comandos o construir sistemas de gran escala, Go es una excelente opción para llevar tus ideas al siguiente nivel.
+## ¿Cómo hacerlo?
+Para comenzar un nuevo proyecto en Go, simplemente sigue estos pasos:
 
-## Cómo
+-1. Abre tu editor de código preferido y crea un nuevo archivo con la extensión ".go".
+-2. Importa el paquete "fmt", que es utilizado para imprimir o mostrar resultados en la consola.
+-3. Escribe tu código dentro de la función principal "main".
+-4. Ejecuta el código y ve el resultado en la consola.
 
-Antes de sumergirnos en los detalles de cómo iniciar un nuevo proyecto en Go, es importante verificar que tengas instalado Go en tu computadora y que tengas un buen editor de texto (como Visual Studio Code o Atom) para escribir tu código. Una vez que estés listo, ¡vamos a empezar!
+Aquí hay un ejemplo de cómo se vería el código en Go, y la salida que obtendrías en la consola:
 
-Para crear un nuevo proyecto en Go, primero debes crear un directorio en tu computadora donde almacenarás todos los archivos relacionados con tu proyecto. Luego, dentro de ese directorio, crea un archivo llamado "main.go". Este será nuestro punto de entrada para el código de nuestro proyecto. Ahora, dentro del archivo "main.go", escribe el siguiente código:
-
-```Go
-package main
-
-import "fmt"
-
-func main() {
-	fmt.Println("¡Hola, mundo!")
-}
 ```
-
-¡Genial! Acabas de escribir tu primer programa en Go. Ahora, para ejecutarlo, abra una ventana de terminal, vaya al directorio donde creaste tu archivo "main.go" y escribe el siguiente comando:
-
-```Go
-go run main.go
+Go fmt   
+func main() {  
+	fmt.Println("¡Hola, Mundo!")  
+} 
 ```
+Salida: ¡Hola, Mundo!
 
-Deberías ver el mensaje "¡Hola, mundo!" impreso en la terminal. ¡Felicidades, acabas de ejecutar con éxito tu primer programa en Go!
+## Profundizando
+Go fue creado en 2009 por Google con el objetivo de ser un lenguaje de programación sencillo, eficiente y robusto. Algunas alternativas populares a Go son Java, Python y C++, pero Go se enfoca en ser más sencillo y rápido de aprender que estos lenguajes.
 
-## Inmersión Profunda
+Cuando se trata de comenzar un nuevo proyecto en Go, es importante tener en cuenta la estructura del proyecto y cómo organizar tus paquetes y archivos. También se recomienda utilizar herramientas como "go fmt" y "go vet" para dar formato y revisar el código antes de ejecutarlo.
 
-Comenzar un nuevo proyecto en Go implica mucho más que simplemente escribir un "¡Hola, mundo!" en la terminal. Puedes utilizar la gran variedad de paquetes y herramientas disponibles en el lenguaje para llevar tus proyectos al siguiente nivel. Algunas de las características notables de Go incluyen su recolector de basura automático, concurrencia incorporada y una sintaxis concisa y legible.
-
-Además, Go tiene una comunidad activa y en constante crecimiento, lo que significa que siempre puedes encontrar ayuda o recursos en línea para ayudarte a resolver cualquier problema que encuentres en tu proyecto. Así que no dudes en explorar y experimentar con diferentes paquetes y herramientas para encontrar las mejores soluciones para tu proyecto.
-
-## Ver también
-
-[The Go Programming Language](https://golang.org/)
-
-[A Tour of Go](https://tour.golang.org/)
-
-[Aprende Go con Ejercicios](https://github.com/golang-es/ejercicios)
+## Ver También
+- [Documentación oficial de Go] (https://golang.org/doc/)
+- [Tutorial de Go en español] (https://www.tutorialesprogramacionya.com/goya/)
+- [Repositorio de proyectos en Go] (https://github.com/golang/go)

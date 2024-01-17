@@ -10,38 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+# Mitä ja miksi?
 
-Stringien yhdistäminen on tärkeä osa ohjelmoinnin prosessia, sillä se mahdollistaa muuttujien, käyttäjän syötteen ja tekstin yhdistämisen yhdeksi kokonaisuudeksi. Täten voit luoda dynaamista ja helpommin luettavaa koodia.
+Jonojen yhdistäminen on perustoiminto, jota Ruby-ohjelmoijat käyttävät usein. Se tarkoittaa, että kaksi tai useampi merkkijonoa yhdistetään yhdeksi isoksi merkkijonoksi. Tämä on hyödyllistä esimerkiksi tekstipohjaisten sovellusten kehittämisessä, joissa halutaan luoda pidempiä lauseita tai viestejä yhdistelemällä useita lyhyitä merkkijonoja.
 
-## Miten
+# Miten tehdä se?
+
+Jonojen yhdistäminen onnistuu yksinkertaisesti käyttämällä plus-merkkiä (+) tai konkatenointioperaattoria (<<) kahden tai useamman merkkijonon välissä. Seuraavassa esimerkissä yhdistetään kolme erillistä merkkijonoa, "Tämä", "on" ja "hyvä!" yhdeksi kokonaiseksi lauseeksi "Tämä on hyvä!":
 
 ```Ruby
-# Yksinkertainen tapa yhdistää kaksi merkkijonoa eli stringiä
-'Hello ' + 'World'
-=> "Hello World"
+jono1 = "Tämä"
+jono2 = "on"
+jono3 = "hyvä!"
 
-# Voit myös yhdistää muuttujan ja tekstin
-name = 'John'
-puts 'Hello ' + name
-=> "Hello John"
+yhdessa = jono1 + " " + jono2 + " " + jono3
+# Tämä on hyvä!
 
-# Voit myös käyttää '<<' -operaattoria yhdistämiseen
-verb = 'Learn'
-verb << 'ing'
-=> "Learning"
+# tai käyttäen konkatenointioperaattoria:
 
-# Voit käyttää myös 'concat' -metodia
-course = "Ruby"
-course.concat(" Programming")
-=> "Ruby Programming"
+yhdessa = jono1 << " " << jono2 << " " << jono3
+# Tämä on hyvä!
 ```
 
-## Syvällisemmin
+# Syvä sukellus
 
-Stringien yhdistäminen voi tapahtua eri tavoin ja se vaikuttaa myös suorituskykyyn. Yleisesti ottaen kannattaa käyttää '<<' -operaattoria tai 'concat' -metodia, sillä ne ovat nopeimpia tapoja yhdistää stringejä. Lisäksi on hyvä muistaa, että liian suuren määrän stringien yhdistäminen voi aiheuttaa suorituskyvyn heikkenemistä ja kannattaa harkita esimerkiksi käyttäjän syötteen käsittelyä eri tavalla.
+Jonojen yhdistämisellä on tärkeä rooli ohjelmoinnissa, sillä se mahdollistaa monipuolisen ja dynaamisen tekstin luomisen. Sitä käytetään muun muassa tekstin muotoiluun ja muuttuja-arvojen yhdistämiseen osaksi isompaa merkkijonoa.
 
-## Katso myös
+Kuitenkin kannattaa huomata, että jonojen yhdistäminen voi olla tehottomampaa kuin yhdistettyjen merkkijonojen tallentaminen uuteen muuttujaan. Myös Ruby tarjoaa muita tapoja yhdistää merkkijonoja, kuten käyttämällä interpolointia tai tekemällä merkkijonoista taulukoita.
 
-- [Ruby Dokumentaatio: Stringit](https://ruby-doc.org/core-2.7.0/String.html)
-- [Ruby Monastery: Yhdistäminen](https://rubymonk.com/learning/books/1-ruby-primer/chapters/5-strings/lessons/33-concatenation)
+Jonojen yhdistämisen tekniikka voi vaihdella kielestä ja ohjelmointistandardista riippuen, mutta pääperiaate pysyy yleensä samana.
+
+# Katso myös
+
+Jos haluat lisätietoa jonojen yhdistämisestä tai Ruby-ohjelmoinnista yleisesti, suosittelemme tutustumaan seuraaviin lähteisiin:
+
+- Rubyn virallinen dokumentaatio (https://www.ruby-lang.org/en/documentation/)
+- Codecademyn Ruby-kurssi (https://www.codecademy.com/learn/learn-ruby)
+- RubyGuidesin artikkeli jonojen yhdistämisestä (https://www.rubyguides.com/2019/02/ruby-string-append-concat-operators/)

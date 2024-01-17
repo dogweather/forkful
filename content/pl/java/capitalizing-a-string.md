@@ -1,7 +1,7 @@
 ---
-title:                "Zapisywanie ciągu znaków"
-html_title:           "Java: Zapisywanie ciągu znaków"
-simple_title:         "Zapisywanie ciągu znaków"
+title:                "Zmiana tekstu na wielkie litery"
+html_title:           "Java: Zmiana tekstu na wielkie litery"
+simple_title:         "Zmiana tekstu na wielkie litery"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Strings"
@@ -10,46 +10,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i dlaczego?
 
-Często w programowaniu występuje potrzeba zmiany wielkości liter w ciągach znaków. Może być to przydatne przy porównywaniu lub wyświetlaniu tekstu. Własciwa obsługa zmiany wielkości liter jest istotna dla poprawnego funkcjonowania programu.
+Podczas programowania często spotykamy się z pojęciem kapitalizacji ciągów znaków. Kapitalizacja oznacza konwersję wszystkich pierwszych liter w łańcuchu znaków na wielkie litery. Programiści stosują tę technikę w celu poprawy czytelności i spójności swojego kodu.
 
-## Jak to zrobić
+## Jak to zrobić:
 
-Aby zamienić wszystkie litery w ciągu znaków na duże lub małe, wystarczy wykorzystać wbudowane metody klasy `String`.
-
-Przykład dla zamiany na duże litery:
 ```Java
-String string1 = "to jest przykładowy tekst";
-System.out.println(string1.toUpperCase());
+String str = "hello world";
+String capitalized = str.toUpperCase();
+System.out.println(capitalized);
 ```
-**Output:** TO JEST PRZYKŁADOWY TEKST
+Output: HELLO WORLD
 
-Przykład dla zamiany na małe litery:
-```Java
-String string2 = "TO JEST PRZYKŁADOWY TEKST";
-System.out.println(string2.toLowerCase());
-```
-**Output:** to jest przykładowy tekst
+## Zanurz się:
 
-Jeśli chcemy zmienić jedynie pierwszą literę w ciągu na dużą, należy wykorzystać klasę `StringBuilder` oraz metodę `charAt()` i `toUpperCase()`.
+Kapitalizacja ciągów znaków jest powszechnie stosowana w programowaniu, ponieważ ułatwia czytanie i zrozumienie kodu. Alternatywnym sposobem na kapitalizację jest użycie klasy `Character` i jej metody `toUpperCase()`. Implementacja kapitalizacji może być również dostosowywana przez programistów do swoich indywidualnych potrzeb poprzez użycie różnych metod dostępnych w języku Java.
 
-Przykład:
-```Java
-String string3 = "to jest przykładowy tekst";
-StringBuilder stringBuilder = new StringBuilder(string3);
-stringBuilder.setCharAt(0, Character.toUpperCase(stringBuilder.charAt(0)));
-System.out.println(stringBuilder.toString());
-```
-**Output:** To jest przykładowy tekst
+## Zobacz także:
 
-## Deep Dive
-
-W przypadku gdy mamy do czynienia z większą ilością tekstu, przydatne może być użycie metody `split()` do podzielenia tekstu na tablicę wyrazów i następnie połączenie ich z odpowiednio zmienionymi pierwszymi literami przy użyciu pętli.
-
-Warto również pamiętać, że metody `toUpperCase()` i `toLowerCase()` działają tylko na literach angielskiego alfabetu. W przypadku innych języków mogą pojawić się problemy ze zmianą wielkości liter.
-
-## Zobacz również
-- [Java - klasa String](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html)
-- [Java - klasa StringBuilder](https://docs.oracle.com/javase/7/docs/api/java/lang/StringBuilder.html)
-- [Metody manipulacji łańcuchami znaków w Java](https://www.javatpoint.com/java-string-methods)
+Więcej informacji na temat kapitalizacji ciągów znaków w języku Java można znaleźć w oficjalnej dokumentacji: https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#toUpperCase--. Istnieje również wiele narzędzi i bibliotek, które można wykorzystać do kapitalizacji tych ciągów. Przykładem jest biblioteka Apache Commons Text: https://commons.apache.org/proper/commons-text/apidocs/org/apache/commons/text/WordUtils.html#capitalize-java.lang.String...

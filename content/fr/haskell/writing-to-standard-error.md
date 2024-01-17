@@ -1,7 +1,7 @@
 ---
-title:                "Écriture de l'erreur standard"
-html_title:           "Haskell: Écriture de l'erreur standard"
-simple_title:         "Écriture de l'erreur standard"
+title:                "L'écriture sur l'erreur standard"
+html_title:           "Haskell: L'écriture sur l'erreur standard"
+simple_title:         "L'écriture sur l'erreur standard"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Files and I/O"
@@ -10,43 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Quoi et Pourquoi?
 
-Écrire dans la sortie d'erreur standard peut être utile lorsque l'on souhaite afficher des messages d'erreur personnalisés ou des informations de débogage tout en exécutant un programme Haskell.
+Ecrire vers la sortie d'erreur standard (stderr) est une pratique courante pour les programmeurs en Haskell. Cela permet d'afficher des messages d'erreur et de débogage, ainsi que de mieux gérer les exceptions. Cela peut également améliorer la lisibilité du code en séparant les messages d'erreur du reste de la sortie du programme. 
 
-## Comment faire
+## Comment:
 
-Il suffit d'utiliser la fonction `hPutStrLn` en lui passant en paramètre l'index de la sortie d'erreur standard (`stderr`) ainsi que le message à afficher, comme ceci :
-
-```Haskell
-import System.IO
-
-main = do
-  hPutStrLn stderr "Il y a quelque chose qui ne va pas !"
-```
-
-Cela affichera le message "Il y a quelque chose qui ne va pas !" dans la sortie d'erreur standard. Vous pouvez également utiliser `hGetContents` pour lire la sortie d'erreur standard dans une chaîne de caractères et la traiter ensuite.
+Voici un exemple simple d'utilisation de la sortie d'erreur standard en Haskell:
 
 ```Haskell
-import System.IO
+import System.IO (hPutStrLn, stderr)
 
+main :: IO ()
 main = do
-  hPutStrLn stderr "Il y a quelque chose qui ne va pas !"
-  contents <- hGetContents stderr
-  putStrLn ("Contenu de la sortie d'erreur standard : " ++ contents)
+    hPutStrLn stderr "Ceci est un message d'erreur"
+    putStrLn "Ceci est le reste de la sortie du programme"
 ```
 
-Lorsque vous exécutez ce code, vous obtiendrez une sortie semblable à ceci :
+La sortie de ce programme sera:
 
 ```
-Contenu de la sortie d'erreur standard : Il y a quelque chose qui ne va pas !
+Ceci est le reste de la sortie du programme
+Ceci est un message d'erreur
 ```
 
-## Plongée en profondeur
+Remarquez comment le message d'erreur apparaît après la sortie du programme. Cela peut être utile pour identifier où et pourquoi une erreur s'est produite. 
 
-Il est important de noter que l'affichage dans la sortie d'erreur standard ne doit être utilisé que pour les messages d'erreur ou les informations de débogage. Pour les messages qui doivent être affichés normalement, il est préférable d'utiliser la sortie standard (`stdout`). Vous pouvez également utiliser `hPutStr` ou `hPutStrLn` pour afficher des messages dans d'autres fichiers de votre choix.
+## Plongée en Profondeur:
 
-## Voir aussi
+Initialement, la sortie d'erreur standard était utilisée uniquement pour les messages d'erreur, mais elle est également devenue un moyen populaire pour les messages de débogage et les rapports d'exception. Cela est dû en partie à la popularité des systèmes de journalisation tels que "log4j" en Java. 
 
-- [Documentation sur les fonctions `System.IO`](https://hackage.haskell.org/package/base-4.12.0.0/docs/System-IO.html)
-- [Guide pour débuter en Haskell](https://wiki.haskell.org/How_to_start_programming_in_Haskell)
+Des alternatives à l'écriture vers la sortie d'erreur standard incluent l'utilisation de bibliothèques de journalisation telles que "log" ou la création de votre propre fonction pour gérer les messages de débogage. Ces alternatives peuvent fournir une meilleure gestion et organisation des messages d'erreur et de débogage. 
+
+Pour implémenter l'écriture vers la sortie d'erreur standard en Haskell, il suffit d'utiliser la fonction "hPutStrLn" du module "System.IO". Cette fonction prend deux arguments : le flux de sortie, dans ce cas "stderr", et la chaîne de caractères à écrire.
+
+## Voir Aussi:
+
+- [Documentation officielle de Haskell](https://www.haskell.org/)
+- [Module System.IO](https://hackage.haskell.org/package/base-4.14.1.0/docs/System-IO.html)
+- [Bibliothèque de journalisation "log"](https://hackage.haskell.org/package/log-0.12.0/docs/System-Log-Logger.html)

@@ -10,49 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+# 무엇 & 왜?
+텍스트 파일을 읽는 것은 프로그래머가 텍스트 데이터를 읽고 처리하는 것을 의미합니다. 이 작업은 데이터를 분석하거나 가공할 때 종종 필요한 기본적인 작업입니다.
 
-텍스트 파일을 읽는 방법을 알려주는 것이 여러분에게 도움이 될 것입니다. 이를 통해 여러분은 더 많은 데이터를 다룰 수 있고, 코드 작성에 유용한 정보를 얻을 수 있습니다.
-
-## 어떻게
-
-텍스트 파일을 읽는 것은 아주 쉬운 작업입니다. 다음 예제 코드를 따라해보세요.
-
+## 어떻게:
 ```Ruby
-file = File.open("sample.txt") # 읽을 파일의 경로를 정확하게 입력하세요.
+# 파일 읽기 모드로 파일 열기
+file = File.open("example.txt", "r")
 
-while(line = file.gets) # 파일에서 한 줄씩 읽어옵니다.
-  puts line # 그 줄을 출력합니다.
-end
+# 파일 내용 읽어오기
+file_data = file.read
 
-file.close # 파일을 닫아 줍니다.
+# 파일 닫기
+file.close
+
+# 읽어온 내용 출력
+puts file_data
 ```
 
-위 코드를 실행하면, 해당 파일의 모든 내용이 출력됩니다. 만약 특정 단어를 검색해서 출력하고 싶다면, 다음과 같이 코드를 수정할 수 있습니다.
+위의 코드 예제는 "example.txt"라는 이름의 파일을 읽어 그 내용을 출력하는 간단한 방법을 보여줍니다.
 
-```Ruby
-file = File.open("sample.txt") # 읽을 파일의 경로를 정확하게 입력하세요.
-search_word = "Ruby" # 검색할 단어를 지정합니다.
+## 깊이 파싱:
+텍스트 파일을 읽는 작업은 프로그래밍의 기본적인 부분 중 하나입니다. 코드에서 데이터를 입력받는 방법을 배우게 되면 파일을 읽는 작업도 필연적으로 배우게 됩니다.
 
-while(line = file.gets) # 파일에서 한 줄씩 읽어옵니다.
-  if line.include?(search_word) # 현재 줄에 검색할 단어가 포함되어 있다면
-    puts line # 그 줄을 출력합니다.
-  end
-end
+텍스트 파일을 읽는 작업에는 여러 가지 대안이 존재합니다. 예를 들어 위의 예제에서는 `File` 클래스를 이용하였지만 `IO` 모듈을 이용하는 방법도 있습니다. 그리고 파일을 한 번에 전체적으로 읽는 대신 한 줄씩 읽는 방법도 존재합니다.
 
-file.close # 파일을 닫아 줍니다.
-```
+파일을 읽을 때는 파일이 항상 존재한다는 것을 가정하고 사용하는 것이 좋습니다. 그리고 만약 예상치 못한 오류가 발생할 수 있는 경우 `begin-rescue-end` 블록을 사용하여 예외를 처리하는 것이 좋습니다.
 
-위 코드는 해당 파일에서 입력한 단어가 포함된 모든 줄을 출력합니다.
+## 참고자료:
+- [Ruby 파일 IO](https://www.rubyguides.com/2015/05/working-with-files-ruby/)
+- [IO 모듈](https://ruby-doc.org/core/IO.html)
+- [Ruby 예외 처리](https://www.ruby-lang.org/en/documentation/exceptions/)
 
-## Deep Dive
-
-텍스트 파일은 여러분이 처리해야 할 대량의 데이터를 포함할 수 있습니다. 이를 처리하기 위해 Ruby는 여러 가지 방법을 제공합니다. 위 예제에서는 파일을 한 줄씩 읽어오지만, `read` 메서드를 사용하면 파일 전체를 읽어서 하나의 문자열로 반환할 수도 있습니다. 또는 `each_byte` 메서드를 사용하면 파일을 바이트 단위로 하나씩 읽을 수도 있습니다.
-
-이 외에도 Ruby는 텍스트 파일 다루기에 유용한 많은 메서드를 제공하고 있으니, 여러분은 필요에 따라서 찾아보고 활용할 수 있습니다.
-
-## See Also
-
-- [Ruby 파일 다루기](https://www.daleseo.com/ruby-file/)
-- [Ruby 문서 - 파일 클래스](https://ruby-doc.org/core-3.0.0/File.html)
-- [Ruby 파일 입출력 가이드](https://www.rubyguides.com/ruby-file-io/)
+이 문서는 Ruby의 `File` 클래스를 이용해 파일을 읽는 방법을 간단하게 소개하고 있습니다. 더 깊이 파고들고 싶다면 위의 참고자료를 참고하여 더 많은 정보를 얻을 수 있습니다.

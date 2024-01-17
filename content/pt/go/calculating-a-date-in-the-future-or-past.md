@@ -1,7 +1,7 @@
 ---
-title:                "Calculando uma data no futuro ou no passado"
-html_title:           "Go: Calculando uma data no futuro ou no passado"
-simple_title:         "Calculando uma data no futuro ou no passado"
+title:                "Calculando uma data no futuro ou passado"
+html_title:           "Go: Calculando uma data no futuro ou passado"
+simple_title:         "Calculando uma data no futuro ou passado"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Dates and Times"
@@ -10,52 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+## O que & Por quê?
+Calcular uma data no futuro ou passado é uma tarefa comum para programadores que precisam lidar com datas e horários em seus códigos. Isso pode ser útil, por exemplo, para agendar tarefas em um sistema ou para criar funções de lembrete.
 
-Quem nunca precisou saber uma data no futuro ou no passado? Talvez você precise calcular uma data de entrega, um prazo para completar uma tarefa ou simplesmente saber qual dia da semana cai no seu aniversário no próximo ano. Com Go, podemos facilmente calcular datas no futuro ou no passado usando a biblioteca de tempo padrão.
-
-## Como fazer
-
-Primeiro, vamos importar a biblioteca de tempo com a seguinte linha de código:
-
+## Como fazer:
 ```Go
+// Importar a biblioteca de data e hora
 import "time"
+
+// Definir uma data e hora de referência
+refDate := time.Date(2020, time.March, 25, 12, 00, 00, 00, time.UTC)
+
+// Calcular a data 3 dias no futuro
+futureDate := refDate.AddDate(0, 0, 3)
+
+// Calcular a data 2 meses no passado
+pastDate := refDate.AddDate(0, -2, 0)
+
+// Imprimir os resultados
+fmt.Println(futureDate) // 2020-03-28 12:00:00 +0000 UTC
+fmt.Println(pastDate) // 2020-01-25 12:00:00 +0000 UTC
 ```
 
-Para calcular uma data no futuro, vamos usar a função `AddDate()` que aceita três parâmetros: anos, meses e dias. Vamos supor que queremos saber a data daqui a um ano:
+## Mergulho Profundo:
+Para calcular datas no futuro ou passado, a linguagem Go possui uma biblioteca de data e hora completa que permite manipular e formatar datas de diversas formas. Além disso, existem também bibliotecas externas, como a "dateparse", que oferecem funcionalidades extras, como o parsing de datas em diferentes formatos. Outras alternativas para calcular datas podem incluir a utilização de bibliotecas de terceiros, dependendo do uso em específico.
 
-```Go
-future := time.Now().AddDate(1, 0, 0)
-```
-
-Isso irá retornar um valor do tipo `Time` com a data calculada. Agora, se quisermos saber a data no passado, podemos usar valores negativos para os parâmetros. Por exemplo, para saber a data de um ano atrás, podemos usar:
-
-```Go
-past := time.Now().AddDate(-1, 0, 0)
-```
-
-Para imprimir o resultado, podemos usar o formato de data `02-Jan-2006`, que é a data usada no layout padrão para formatação de datas. Por exemplo:
-
-```Go
-futureString := future.Format("02-Jan-2006")
-fmt.Println("A data no futuro é:", futureString)
-
-pastString := past.Format("02-Jan-2006")
-fmt.Println("A data no passado é:", pastString)
-```
-
-A saída será:
-
-```
-A data no futuro é: 26-Jul-2022
-A data no passado é: 26-Jul-2020
-```
-
-## Mergulho Profundo
-
-Além da função `AddDate()`, a biblioteca de tempo também possui outras funções úteis para calcular datas, como `Add()`, `Sub()` e `Date()`. Você pode conferir a documentação completa da biblioteca em [golang.org/pkg/time](https://golang.org/pkg/time/).
-
-## Veja também
-
-- [Manipulando Datas no Go](https://www.callicoder.com/golang-manipulating-dates/)
-- [Documentação da biblioteca de tempo](https://golang.org/pkg/time/)
+## Veja Também:
+- [Time and date in Go](https://golang.org/pkg/time/)
+- [Dateparse library](https://github.com/araddon/dateparse)

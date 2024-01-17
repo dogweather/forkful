@@ -1,7 +1,7 @@
 ---
-title:                "Lähetetään http-pyyntö perusautentikoinnilla"
-html_title:           "Go: Lähetetään http-pyyntö perusautentikoinnilla"
-simple_title:         "Lähetetään http-pyyntö perusautentikoinnilla"
+title:                "Lähettämällä http-pyyntö perusautentikoinnilla"
+html_title:           "Go: Lähettämällä http-pyyntö perusautentikoinnilla"
+simple_title:         "Lähettämällä http-pyyntö perusautentikoinnilla"
 programming_language: "Go"
 category:             "Go"
 tag:                  "HTML and the Web"
@@ -10,62 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+Mitä & Miksi?: Lähettäminen HTTP-pyyntö perusautentikoinnilla on tapa tarkistaa käyttäjän tunnistetiedot ennen pääsyä tiettyihin verkkopalveluihin. Tämä on tärkeää, jotta estäisi luvattomat käyttäjät pääsemästä pääsyä tietojärjestelmiin.
 
-HTTP-pyyntöjen lähettäminen perusautentikaation avulla on yleinen tapa tietojen lähettämiseen ja vastaanottamiseen tietoverkoissa. Tämän menetelmän avulla voit luoda turvallisen yhteyden palvelimelle ja varmistaa, että vain valtuutetut käyttäjät voivat käyttää tietoja. 
+Miten: Alla on esimerkki koodista Go-kielellä, jossa lähetetään HTTP-pyyntö perusautentikoinnilla ja tulostetaan vastauksen statuskoodi sekä sisältö:
 
-## Miten
-
-```Go
+'''
 package main
 
 import (
-    "fmt"
-    "net/http"
-    "encoding/base64"
+	"fmt"
+	"net/http"
+	"io/ioutil"
 )
 
 func main() {
-    // Luodaan HTTP-pyyntö osoitteeseen "example.com"
-    req, err := http.NewRequest("GET", "https://www.example.com", nil)
-    if err != nil {
-        fmt.Println(err)
-        return
-    }
+	// Määritellään pyyntö
+	req, _ := http.NewRequest("GET", "https://example.com", nil)
 
-    // Lisätään "Authorization" header pyyntöön, jossa on käyttäjätunnus ja salasana 
-    username := "käyttäjätunnus"
-    password := "salasana"
-    auth := username + ":" + password
-    base64Auth := base64.StdEncoding.EncodeToString([]byte(auth))
-    req.Header.Set("Authorization", "Basic " + base64Auth)
+	// Lisätään autentikointi headeriin
+	req.SetBasicAuth("käyttäjänimi", "salasana")
 
-    // Lähetetään pyyntö
-    resp, err := http.DefaultClient.Do(req)
-    if err != nil {
-        fmt.Println(err)
-        return
-    }
-    defer resp.Body.Close()
+	// Lähetetään pyyntö
+	resp, _ := http.DefaultClient.Do(req)
 
-    // Tulostetaan vastauskoodi ja mahdollinen virheilmoitus
-    fmt.Println("Vastauskoodi:", resp.Status)
-    fmt.Println("Virheilmoitus:", resp.StatusText)
+	// Tulostetaan vastauksen statuskoodi
+	fmt.Println("Status: ", resp.Status)
+
+	// Luetaan vastauksen sisältö
+	body, _ := ioutil.ReadAll(resp.Body)
+
+	// Tulostetaan sisältö
+	fmt.Println("Sisältö: ", string(body))
 }
-```
+'''
 
-**Tulostus:**
+Tulostaa:
 
-```
-Statuskoodi: 200 OK
-Virheilmoitus: OK
-```
+Status: 200 OK
+Sisältö: <h1>Tervetuloa</h1>
 
-## Syvempi sukellus
+Deep Dive: Perusautentikointi on yksi vanhimmista tavoista tunnistautua verkkopalveluun ja se on yhä tärkeä osa monien verkkosovellusten turvallisuutta. On myös muita tapoja lähettää HTTP-pyyntöjä, kuten määrittää API-avain tai OAuth-tunnistus, mutta perusautentikointi on yhä käytössä esimerkiksi sisäisten järjestelmien välisessä kommunikaatiossa.
 
-Perusautentikaatio toimii lähettämällä käyttäjätunnus ja salasana HTTP-pyynnön "Authorization" header-kentässä. Tällöin käyttäjätunnus ja salasana ovat Base64-merkistössä, joten tietoja ei voi lukea selkeänä tekstinä. Palvelin tarkistaa pyynnön "Authorization" kentän ja varmistaa, että se vastaa tallennettuja käyttäjätunnuksia ja salasanoja. Mikäli pyyntö vastaa, palvelin lähettää vastauksen tietojen tai pyydetyn toiminnon mukaisesti.
-
-## Katso myös
-
-- [https://golang.org/pkg/net/http/#Request](https://golang.org/pkg/net/http/#Request)
-- [https://golang.org/pkg/encoding/base64/](https://golang.org/pkg/encoding/base64/)
+Katso myös: Jos haluat oppia lisää perusautentikoinnista ja sen toteutuksesta Go-kielellä, niin suosittelemme lukemaan Go-kirjaston "net/http" dokumentaatiota ja kokeilemaan erilaisia lähestymistapoja lähettää HTTP-pyyntö perusautentikoinnilla. Voit myös tutustua muihin HTTP-tunnistusmenetelmiin, kuten Digest-autentikointiin, joka tarjoaa paremman salauksen salasanoille.

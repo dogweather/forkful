@@ -1,7 +1,7 @@
 ---
-title:                "Sökning och ersättning av text"
-html_title:           "Rust: Sökning och ersättning av text"
-simple_title:         "Sökning och ersättning av text"
+title:                "Söka och byta ut text"
+html_title:           "Rust: Söka och byta ut text"
+simple_title:         "Söka och byta ut text"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -10,34 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Varför
-En av de vanligaste uppgifterna inom programmering är att söka och ersätta text i en fil eller en sträng. Det kan vara för att korrigera stavfel, byta ut namn eller helt enkelt uppdatera innehållet. Med Rusts inbyggda funktioner för sökning och ersättning blir denna process både enkel och effektiv.
+## Vad & Varför?
+Att söka och ersätta text är en vanlig uppgift för programmerare. Genom att använda specifika sökmönster kan man hitta och ersätta specifika delar av en text på ett effektivt sätt. Detta är särskilt användbart när man behöver göra stora ändringar i en textfil eller kod.
 
-# Såhär gör du
-För att använda Rusts inbyggda funktioner för sökning och ersättning behöver du först importera standardbiblioteket "std::str". Sedan kan du använda funktionerna "replace" och "replace_first" för att söka efter en specifik text och ersätta den med en given sträng. 
+## Hur man gör:
+För att söka och ersätta text i Rust kan man använda funktionen `replace()` från standardbiblioteket `std::string::String`. Nedan finns ett exempel på hur man kan använda denna funktion för att ersätta alla förekomster av ett visst ord i en text med ett annat ord:
 
-```
-use std::str;
-
-let original = "Hej världen!";
-let ny_text = str::replace(original, "Hej", "Hallå"); // ersätter "Hej" med "Hallå"
-let ny_text2 = str::replace_first(original, "Hej", "Hallå"); // ersätter endast den första förekomsten av "Hej" med "Hallå"
-
-println!("Originalsträng: {}", original);
-println!("Ny sträng: {}", ny_text);
-println!("Ny sträng 2:  {}", ny_text2);
+```Rust
+let text = "Hej världen!";
+let ersatt = text.replace("Hej", "Hallå");
+println!("{}", ersatt);
 ```
 
-Output:
-```
-Originalsträng: Hej världen!
-Ny sträng: Hallå världen!
-Ny sträng 2:  Hallå världen!
-```
+Detta kodexempel kommer att skriva ut "Hallå världen!" eftersom `replace()` söker efter alla förekomster av "Hej" i texten och ersätter dem med "Hallå". Detta är ett enkelt sätt att utföra en sök-och-ersätt-operation i Rust.
 
-# Djupdykning
-Utöver de inbyggda funktionerna för sökning och ersättning finns det även en rad olika bibliotek och paket som kan hjälpa till med denna uppgift. Ett populärt paket är "regex" som ger möjlighet att använda reguljära uttryck för att söka och ersätta text. Detta kan vara speciellt användbart vid mer avancerade sökningar där man vill hitta mönster i texten istället för specifika ord eller fraser.
+## Fördjupning:
+Sök- och ersättningsfunktioner har funnits i programmeringsvärlden i många år och är en nödvändig del av textbehandling och bearbetning. Det finns dock också andra sätt att utföra dessa operationer, som att använda ett reguljärt uttryck eller ett textredigeringsprogram. Implementeringen av sök- och ersättningsalgoritmer kan också variera beroende på programmeringsspråk.
 
-# Se även
-- [Rust Standardbiblioteket](https://doc.rust-lang.org/stable/std/)
-- [Regex paketet för Rust](https://crates.io/crates/regex)
+## Se även:
+Här är några resurser som kan vara användbara för att lära sig mer om sökning och ersättning i Rust:
+
+- Rust Dokumentation för `replace()` funktionen: [https://doc.rust-lang.org/std/string/struct.String.html#method.replace](https://doc.rust-lang.org/std/string/struct.String.html#method.replace)
+- Regex-Cheat-Sheet för att lära dig att använda reguljära uttryck i Rust: [https://cheats.rs/#regex](https://cheats.rs/#regex)
+- "Learn Rust With Entirely Too Many Linked Lists" - en resurs för att lära sig mer om Rusts streckade listor och sökning och ersättning: [https://rust-unofficial.github.io/too-many-lists/](https://rust-unofficial.github.io/too-many-lists/)

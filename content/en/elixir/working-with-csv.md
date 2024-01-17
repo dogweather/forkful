@@ -10,36 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-CSV (Comma Separated Values) is a widely used format for storing and exchanging data, making it essential for any programming language to have robust support for it. Elixir, with its functional and scalable nature, is a perfect choice for handling CSV data.
+## What & Why?
+Working with CSV (Comma Separated Values) in Elixir is a way to easily manipulate tabular data stored in text files or databases. Programmers often use CSV to transfer data between systems or to analyze large datasets, as it provides a simple and flexible format for organizing data.
 
-## How To
-To start working with CSV in Elixir, you need to first install the CSV library. In your project's `mix.exs` file, add `{:csv, "~> 2.4"}` to the `deps` function. Then run `mix deps.get` to install the CSV library.
+## How to:
+To read a CSV file in Elixir, we can use the built-in CSV library and its ```parse_file/2``` function. This function takes in the file path of the CSV file and returns a list of lists where each inner list represents a row in the CSV file. Here's an example:
 
-Next, you need to import the CSV module in your Elixir file:
-```Elixir
-import CSV
+```
+Elixir
+rows = CSV.parse_file("my_data.csv")
+# [["Name", "Age", "Country"],
+#  ["John", "25", "USA"],
+#  ["Jane", "30", "Canada"]]
 ```
 
-Now let's see some examples of working with CSV data. First, we will read a CSV file and store its data into a variable:
-```Elixir
-data = CSV.parse_file("~/my_data.csv")
+To write a list of data to a CSV file, we can use the ```write/2``` function from the CSV library. This function takes in a list of lists and a file path and will write the data to the specified file. Here's an example:
+
 ```
-This will give us a list of lists, where each inner list represents a row in the CSV file. 
+Elixir
+rows = [
+  ["Name", "Age", "Country"],
+  ["John", "25", "USA"],
+  ["Jane", "30", "Canada"]
+]
 
-To write data to a CSV file, we simply need to pass in a list of lists to the `write` function:
-```Elixir
-CSV.write("~/output.csv", [[1, 2], [3, 4], [5, 6]])
+CSV.write(rows, "my_data.csv")
+# The CSV file "my_data.csv" is created with the data from the list of lists.
 ```
-This will create a CSV file with the provided data.
 
-You can also pass options to the `parse_file` and `write` functions to customize the CSV parsing and writing behavior. For example, you can specify the delimiter, quote character, and headers among other options.
+## Deep Dive:
+CSV was first introduced in the early 1970s and has become a widely used data format due to its simplicity and compatibility with various software systems. While CSV is a popular choice for storing data, other alternatives such as JSON or XML may be preferred for certain use cases.
 
-## Deep Dive
-The CSV library in Elixir comes with a variety of helper functions to make working with CSV data easier. Some of the most commonly used functions are `encode`, `decode`, `parse_stream`, and `write_stream`.
+In Elixir, the CSV library is included in the standard library, making it easily accessible for developers. This library also provides functions for customizing the delimiter and handling headers in the CSV file.
 
-Additionally, the library also supports working with RFC 4180 format, which is widely used for CSV files. It also has support for working with CSV data encoded in different character sets.
-
-## See Also
-- [CSV library documentation](https://hexdocs.pm/csv)
-- [Elixir official website](https://elixir-lang.org/)
+## See Also:
+- [Elixir CSV documentation](https://hexdocs.pm/csv/CSV.html)
+- [CSV file format](https://tools.ietf.org/html/rfc4180)

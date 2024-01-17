@@ -1,7 +1,7 @@
 ---
-title:                "Konvertering av en streng til små bokstaver"
-html_title:           "Kotlin: Konvertering av en streng til små bokstaver"
-simple_title:         "Konvertering av en streng til små bokstaver"
+title:                "Konvertering av streng til små bokstaver"
+html_title:           "Kotlin: Konvertering av streng til små bokstaver"
+simple_title:         "Konvertering av streng til små bokstaver"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Strings"
@@ -10,51 +10,19 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
-Så du lurer kanskje på hvorfor noen ville ønske å konvertere en streng til små bokstaver? Vel, det kan være flere grunner til det. Å konvertere en streng til små bokstaver kan gjøre det enklere å håndtere og sammenligne tekst, spesielt når du jobber med brukerinndata eller databasedata som kan variere i hoved- og små bokstaver.
+## Hva & Hvorfor?
+Konvertering av en streng til små bokstaver refererer til å endre alle bokstaver til små, ikke-uthevede versjoner av seg selv. Dette er en vanlig oppgave for programmerere å gjøre når de trenger å behandle tekst som ikke er tilgjengelig i det det øyeblikket.
 
-## Hvordan gjøre det
-La oss se på et eksempel på hvordan du kan konvertere en streng til små bokstaver i Kotlin:
-
+## Slik gjør du:
+```Kotlin 
+var uppercaseStr = "HELLO WORLD" 
+var lowercaseStr = uppercaseStr.toLowerCase() 
+println(lowercaseStr)
 ```
-fun main() {
-    val string = "Hei, dette er en Streng!"
-    println(string.toLowerCase())
-}
-```
+Dette kodeeksempelet vil endre verdien av `uppercaseStr` til `hello world` og skrive ut den nye verdien. 
 
-**Output:**
-> hei, dette er en streng!
+## Dykk dypere:
+Historisk sett har konvertering av strenger til små bokstaver vært en vanlig oppgave i programmering. Alternativt kan man også bruke `toUpperCase()` for å endre alle bokstaver til store bokstaver. Implementasjonsdetaljer varierer avhengig av programmeringsspråk, men det finnes vanligvis dedikerte funksjoner eller metoder for å konvertere strenger til både små og store bokstaver.
 
-For å konvertere en streng til små bokstaver kan du bruke Kotlin's `toLowerCase()` metode, som returnerer en ny streng med små bokstaver. Dette er en ikke-destruktiv operasjon, noe som betyr at originalstrengen blir uendret.
-
-En annen måte å konvertere en streng til små bokstaver er å bruke `operator` nøkkelordet og `String`'s `plus()` metode. Her er et eksempel på hvordan det kan gjøres:
-
-```
-fun main() {
-    val string = "Hei, dette er en Streng!"
-    val newString = string + string
-    println(string.toLowerCase())
-    println(newString.toLowerCase())
-}
-```
-
-**Output:**
-> hei, dette er en streng!
-> hei, dette er en streng!hei, dette er en streng!
-
-Som du kan se, returnerer `toLowerCase()` metoden en ny streng, mens `plus()` operatoren endrer den eksisterende strengen og legger til en ny streng med små bokstaver.
-
-## Dypdykk
-Nå som du vet hvordan du kan konvertere en streng til små bokstaver, la oss se på noen ting du bør være oppmerksom på når du jobber med dette i Kotlin.
-
-**NullPointerException (NPE)**
-Hvis du prøver å bruke `toLowerCase()` metoden på en `null`verdi, vil du få en NPE. For å unngå dette, må du først sjekke om strengen er `null` før du konverterer den til små bokstaver.
-
-**Foreground og background tråder**
-Kotlin's `toLowerCase()` metode utfører operasjonen på hovedtråden, noe som kan føre til ytelsesproblemer hvis strengen er lang og behandlingen tar lang tid. For å unngå dette, kan du bruke `toLowerCase(Locale.getDefault())` metoden, som vil utføre konverteringen i en bakgrunnstråd. Dette vil forbedre ytelsen og sikre at appen din ikke fryser mens den konverterer strengen.
-
-## Se også
-- [Kotlin's Strings og Characters dokumentasjon](https://kotlinlang.org/docs/reference/basic-types.html#strings)
-- [Hvordan sammenligne små og store bokstaver i Kotlin](https://www.programiz.com/kotlin-programming/making-comparisons#ignoring-case) 
-- [Hvordan håndtere nullverdier i Kotlin](https://www.baeldung.com/kotlin-null-safety)
+## Se også:
+For mer informasjon og eksempler på hvordan konvertere strenger til små bokstaver i Kotlin, sjekk ut Kotlin dokumentasjonen på https://kotlinlang.org/docs/reference/basic-types.html#strings

@@ -1,7 +1,7 @@
 ---
-title:                "Praca z json"
-html_title:           "Rust: Praca z json"
-simple_title:         "Praca z json"
+title:                "Praca z formatem json"
+html_title:           "Rust: Praca z formatem json"
+simple_title:         "Praca z formatem json"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Data Formats and Serialization"
@@ -10,54 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co & Dlaczego?
 
-Sporządzanie i odczytywanie danych w formacie JSON jest ważnym elementem programowania. React, Angular i inne technologie webowe wykorzystują JSON do przesyłania danych między front-endem a serwerem. Dlatego warto nauczyć się pracy z tym formatem danych.
+JSON (JavaScript Object Notation) jest powszechnym formatem do przechowywania i przesyłania danych w postaci tekstu. Programiści używają JSON w celu łatwiejszego przechowywania i przetwarzania danych, szczególnie w przypadku komunikacji między różnymi systemami lub językami programowania.
 
-## Jak to zrobić
+## Jak:
 
-Sama praca z JSON w języku Rust jest bardzo prosta. Wystarczy użyć biblioteki `serde` i jej makra, aby łatwo serializować i deserializować dane. Oto kilka przykładów kodu:
+Przykładowy kod w języku Rust do konwersji danych z JSON na obiekty:
 
-```Rust
-// importowanie biblioteki serde
-extern crate serde;
-use serde::{Serialize, Deserialize};
-
-// struktura danych do serializacji
-#[derive(Serialize, Deserialize)]
-struct Person {
-    name: String,
-    age: u8,
-    address: Address,
+```
+use serde_json::{Result, Value};
+use std::fs;
+ 
+fn main() -> Result<()> {
+    // Wczytanie danych z pliku JSON
+    let data = fs::read_to_string("data.json").expect("Nie udało się odczytać pliku.");
+ 
+    // Parsowanie danych do obiektu Value
+    let json_data: Value = serde_json::from_str(&data)?;
+ 
+    // Przykładowe wykorzystanie danych
+    println!("Imię: {}", json_data["name"]);
+    println!("Wiek: {}", json_data["age"]);
+ 
+    Ok(())
 }
+```
+Wynik:
 
-// przykładowe dane do serializacji
-let person = Person {
-    name: "John".to_string(),
-    age: 25,
-    address: Address {
-        city: "New York".to_string(),
-        country: "USA".to_string(),
-    }
-};
-
-// serializacja do formatu JSON
-let json = serde_json::to_string(&person).unwrap();
-println!("{}", json); // {"name":"John","age":25,"address":{"city":"New York","country":"USA"}}
-
-// deserializacja z formatu JSON
-let new_person: Person = serde_json::from_str(&json).unwrap();
-println!("{}, {}, {}", new_person.name, new_person.age, new_person.address.city); // John, 25, New York 
+```
+Imię: Anna
+Wiek: 25
 ```
 
-Powyższy kod pokazuje jak łatwo można serializować i deserializować struktury danych do i z formatu JSON. W przypadku bardziej złożonych danych, można łatwo użyć makra `serde` do określenia niestandardowej struktury danych. 
+## Głębsza analiza:
 
-## Vertigo Dive
+1. JSON został stworzony w 2001 roku przez Douglasa Crockforda jako prosty format wymiany danych w JavaScript. Obecnie jest powszechnie używany przez wiele języków programowania.
 
-Jeśli interesuje Cię bardziej szczegółowe informacje na temat pracy z JSON w języku Rust, to polecam odwiedzić stronę [dokumentacji biblioteki serde](https://serde.rs/index.html). Znajdziesz tam dokładne wyjaśnienia działania makr i przykłady z bardziej skomplikowanymi strukturami danych. 
+2. Istnieją inne formaty do przechowywania i przetwarzania danych, takie jak XML czy CSV, jednak JSON jest uważany za bardziej czytelny i łatwiejszy w użyciu.
 
-## Zobacz także
+3. Implementacja biblioteki serde_json w języku Rust zapewnia szybkie i wydajne przetwarzanie danych JSON.
 
-- [https://doc.rust-lang.org/stable/book/second-edition/ch16-00-concurrency.html#working-with-json](https://doc.rust-lang.org/stable/book/second-edition/ch16-00-concurrency.html#working-with-json)
-- [https://serde.rs/index.html](https://serde.rs/index.html)
-- [https://github.com/serde-rs/json](https://github.com/serde-rs/json)
+## Zobacz też:
+
+- [Dokumentacja serde_json](https://docs.rs/serde_json/latest/serde_json/)
+- [Wprowadzenie do JSON](https://www.json.org/json-pl.html)
+- [Porównanie JSON z innymi formatami danych](https://www.lifewire.com/json-vs-xml-3469129)

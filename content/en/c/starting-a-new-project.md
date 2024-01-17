@@ -10,46 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
+Starting a new project is just another way of saying that a programmer is creating a new piece of software. This could be a mobile app, a website, or a computer program. Programmers start new projects to solve a problem, create something useful, or simply to exercise their coding skills. It's like a blank canvas waiting to be filled with code.
 
-Starting a new project can be exciting and daunting at the same time. Whether you're an experienced programmer or a newbie, it's always a good idea to have a clear idea of why you're embarking on a new programming journey.
-
-Perhaps you have a brilliant idea for a software application that will solve a problem or entertain users. Or maybe you want to improve your programming skills and challenge yourself with a new project. Whatever the reason may be, starting a new project allows you to push your boundaries and create something new.
-
-## How To
-
-To start a new project in C, you will need a text editor or an integrated development environment (IDE) such as Visual Studio or Code::Blocks. Once you have your coding environment set up, follow these steps:
-
-1. Create a new C file with the extension ".c"
-2. Write your code using the C language syntax, including functions, variables, and control structures
-3. Save your file and compile it using a C compiler, which will generate an executable file
-4. Test and debug your program, making any necessary changes
-5. Once you are satisfied with your code, you can distribute or publish your project.
-
-Here's a simple "Hello World" program in C:
-
+## How to:
+To start a new project in C, follow these steps:
 ```C
 #include <stdio.h>
 
 int main() {
-  printf("Hello World!\n");
-  return 0;
+    printf("Hello World!");
+    return 0;
 }
 ```
+Output: Hello World!
 
-Output:
-```
-Hello World!
-```
+This simple program uses the standard library function `printf()` to display the words "Hello World!" on the screen. The `int` before `main()` indicates that the function returns an integer value, and the `return 0` statement ends the program. This is the basic structure of a C program.
 
-## Deep Dive
+## Deep Dive:
+C was developed in the 1970s by Dennis Ritchie at Bell Labs. It is a high-level programming language known for its efficiency and portability. Starting a new project in C allows you to have complete control over your code, as it is a low-level language that gives you access to system resources and memory management.
 
-Starting a new project in C can also involve some deeper considerations, such as choosing the right development environment, understanding the C language specifications, and implementing efficient coding practices. It's also important to have a clear project plan and roadmap, including setting realistic goals and deadlines.
+An alternative to starting a new project in C is to use a higher-level language such as Java or Python. These languages offer more built-in features and are easier to learn, but they may not offer the same level of control as C.
 
-Doing research and seeking guidance from experienced programmers can also help in starting a successful project. And don't forget to constantly review and improve your code to ensure it is well-structured, readable, and maintainable.
+When starting a new project in C, it is important to plan out your code and decide on a proper file structure. Organizing your code into separate files can make it easier to maintain and make changes in the future.
 
-## See Also
-
-- [C Programming Language](https://en.wikipedia.org/wiki/C_(programming_language))
-- [Choosing the Right IDE for C Development](https://medium.com/@mohmohthiriya/choosing-the-right-ide-for-c-development-2b0d36f4be89)
-- [Writing Efficient C Code](https://medium.com/code-efficiency/writing-efficient-c-code-5-tips-to-save-memory-time-and-frustration-e505f6b7434c)
+## See Also:
+- [History of C language](https://www.tutorialspoint.com/history_of_c_language/index.htm)
+- [Alternative programming languages](https://www.techopedia.com/6-alternatives-to-c-programming-language/2/33581) 
+- [C programming file structure](https://www.unixwiz.net/techtips/style-cleanup.html)

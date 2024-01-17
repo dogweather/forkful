@@ -10,56 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+# Was & Warum?
 
-CSV-Dateien (Comma-Separated Values) sind eine der häufigsten Dateiformate, die in der Programmierung verwendet werden. Sie sind einfach zu erstellen und zu lesen, und können Daten in einer tabellarischen Form organisieren. Daher ist es wichtig, zu verstehen, wie man mit CSV-Dateien in Elixir arbeiten kann.
+Als Programmierer kommt man häufig in Situationen, in denen man Daten in CSV-Dateien verarbeiten oder exportieren muss. CSV steht für "Comma Separated Values" und ist ein weit verbreitetes Dateiformat für den Austausch von Tabellen oder Listen. Durch das Arbeiten mit CSV können Programmierer Daten einfach importieren und exportieren und sie in verschiedenen Anwendungen nutzen.
 
-## Wie geht's?
+# Wie geht's?
 
-Das Erlernen des Umgangs mit CSV in Elixir ist relativ einfach und erfordert nur wenige Schritte. Zunächst müssen wir das `CSV`-Modul importieren, indem wir `require CSV` in unser Elixir-Skript oder in die Elixir-Eingabeaufforderung eingeben. Anschließend können wir die Funktion `CSV.parse` verwenden, um eine CSV-Datei zu lesen und sie in eine Liste von Listen zu konvertieren.
-
-```Elixir
-require CSV
-
-data = CSV.parse("data.csv")
-IO.inspect data
-
-# Output:
-[["Name", "Alter"],
- ["Maria", "35"],
- ["Alex", "42"],
- ["Julia", "27"]]
-```
-
-Wie Sie sehen können, wird die CSV-Datei in eine Liste von Listen konvertiert, wobei jede Zeile der Datei als separate Liste behandelt wird. Um auf die Daten zuzugreifen, können wir einfach auf die entsprechenden Elemente in der Liste zugreifen.
+Das Arbeiten mit CSV in Elixir ist dank des Moduls "CSV" sehr einfach. Wir können eine CSV-Datei mit der Funktion ```CSV.parse``` einlesen und sie mit ```CSV.encode``` wieder in das CSV-Format zurückkonvertieren. Ein Beispiel sieht wie folgt aus:
 
 ```Elixir
-# Zugriff auf den Namen der ersten Person
-IO.puts(data[1][0]) # Output: Maria
+input = File.read!("data.csv")
 
-# Zugriff auf das Alter der dritten Person
-IO.puts(data[3][1]) # Output: 27
-```
+# Einlesen der Datei
+{:ok, data, _} = CSV.parse(input) 
 
-Wenn wir Änderungen an der CSV-Datei vornehmen oder eine neue CSV-Datei erstellen möchten, können wir die Funktion `CSV.encode` verwenden, um eine Liste von Listen in eine CSV-Datei zu konvertieren.
+# Ausgabe der Daten in der Konsole
+data |> Enum.each(fn row -> IO.inspect row end) 
 
-```elixir
 # Erstellen einer neuen CSV-Datei
-new_data = [["Name", "Beruf"],
-            ["Lisa", "Ingenieur"],
-            ["Tom", "Lehrer"]]
-
-CSV.encode("new_data.csv", new_data)
+output = CSV.encode(data)
+File.write!("neue_data.csv", output)
 ```
 
-## Tiefer in die Materie
+Die Ausgabe wird etwa so aussehen:
 
-Es gibt viele Optionen, die wir beim Lesen und Schreiben von CSV-Dateien in Elixir nutzen können. In der `CSV.parse`-Funktion können wir zum Beispiel verschiedene Parameter wie `headers` oder `converters` angeben, um die Daten in gewünschter Form zu erhalten. Ebenso können wir in der `CSV.encode`-Funktion zusätzliche Optionen wie `col_sep` oder `quote_char` angeben, um das Format der CSV-Datei anzupassen.
+```
+["Name","Alter","Ort"]
+["Max",29,"Berlin"]
+["Anna",25,"Hamburg"]
+["Tom",32,"München"]
+```
 
-Außerdem gibt es noch das `Ecto.Adapters.CSV`-Modul, das speziell für die Arbeit mit CSV-Dateien in Kombination mit der Datenbank-Abstraktionsschicht Ecto entwickelt wurde. Dieses Modul ermöglicht es uns unter anderem, CSV-Daten direkt in eine Datenbank zu importieren oder sie aus einer Datenbank zu exportieren.
+# Tiefere Einblicke
 
-## Siehe auch
+CSV ist ein relativ einfaches Dateiformat, das seit den 1970er Jahren existiert. Es wurde entwickelt, um Daten zwischen verschiedenen Anwendungen auszutauschen, da es plattformunabhängig ist und von vielen Programmen unterstützt wird.
 
-- Offizielle Elixir CSV-Dokumentation: https://hexdocs.pm/elixir/CSV.html
-- Ecto.Adapters.CSV-Modul: https://hexdocs.pm/ecto/Ecto.Adapters.CSV.html
-- Elixir School Tutorial zum Arbeiten mit CSV in Elixir: https://elixirschool.com/de/lessons/advanced/csv/
+In Elixir gibt es auch andere Möglichkeiten, mit CSV zu arbeiten, wie zum Beispiel das "ErlCSV" Paket, das komplexere Funktionen zum Lesen und Schreiben von CSV-Dateien bietet.
+
+Die Implementierung von CSV in Elixir ist sehr effizient, da Elixir auf der Erlang Virtual Machine (VM) basiert, die sich insbesondere für die gleichzeitige Verarbeitung von Daten eignet.
+
+# Siehe auch
+
+- Offizielle Dokumentation zu "CSV" Modul in Elixir: https://hexdocs.pm/csv/CSV.html
+- "ErlCSV" Paket: https://github.com/vishnevskiy/Erlang-CSV

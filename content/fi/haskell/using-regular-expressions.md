@@ -10,35 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä ja miksi?
 
-Haluatko muokata tekstejäsi tavalla, joka säästää aikaa ja vaivaa? Sisällöntuottajat, ohjelmoijat ja tietojenkäsittelijät voivat hyödyntää säännöllisiä lausekkeita (regular expressions) kaikenlaisiin tekstikäsittelytehtäviin.
+Säännöllisillä lausekkeilla (regular expressions) tarkoitetaan tekstinkäsittelyyn tarkoitettuja ilmaisuja, jotka kuvaavat tiettyjä merkkijonoja tai merkkijonojen joukkoja. Näitä ilmaisuja käytetään usein ohjelmointitehtävissä, kuten tekstien haussa ja korvaamisessa. Säännölliset lausekkeet helpottavat näiden tehtävien suorittamista ja säästävät aikaa ja vaivaa.
 
-## Miten
+## Miten:
 
-Säännölliset lausekkeet ovat joukko merkkijonoja, jotka mahdollistavat tarkkojen hakuehtojen määrittämisen. Käytä yleistä RegExp-kirjastoa lisätäksesi säännöllisiä lausekkeita Haskell-koodiisi. Katso esimerkiksi seuraavaa koodinpätkää ja sen tuottamaa tulostetta.
+Haskellissa säännölliset lausekkeet ovat osa kirjastoa nimeltään "Text.Regex". Niiden käyttö vaatii kirjaston tuomisen näkyville, jonka jälkeen voimme aloittaa ilmaisujen käytön esimerkiksi seuraavasti:
 
 ```Haskell
-import Text.Regex.PCRE
+import Text.Regex
 
--- Valitaan regex-yhteensopiva merkkijono
-s = "Tämä on esimerkkilause 123"
+teksti = "Tervetuloa Haskelliin!"
 
--- Etsitään kaikkia numeroyhdistelmiä merkkijonosta
-tulokset = s =~ "[0-9]+"
-
--- Tulostetaan löydetyt numerot
-print tulokset
+match "Haskell" teksti
 ```
-Tulostaa: ["123"]
+Tulos olisi ```Just ("Haskell", "")```, koska tekstissä esiintyy sana "Haskell" ja se vastaa säännöllistä lauseketta.
 
-## Syventymistä
+Toinen esimerkki, jossa säännöllisiä lausekkeita käytetään korvaamiseen:
+```Haskell
+replace "Haskell" "Hask" teksti
+```
+Tulos olisi sana "Tervetuloa Haskiin!", koska lauseke korvattiin uudella sanalla.
 
-Nyt kun tiedät, kuinka luoda säännöllisiä lausekkeita Haskellilla, voit tutustua erilaisiin ominaisuuksiin ja toimintoihin, kuten tiettyjen merkkien korvaamiseen, usean haun suorittamiseen samanaikaisesti ja paljon muuhun. Voit lukea lisää säännöllisistä lausekkeista ja niiden käytöstä esimerkiksi seuraavilta sivuilta:
+## Syväsukellus:
 
-- [WikiBooks](https://en.wikibooks.org/wiki/Haskell/Regular_expressions)
-- [Haskell.org](https://www.haskell.org/hoogle/?hoogle=regex)
+Säännölliset lausekkeet ovat peräisin matematiikasta ja ovat kehitetty tekstien käsittelyyn jo 1950-luvulla. Nykyään lähes jokaisella ohjelmointikielellä, mukaan lukien Haskell, on mahdollisuus käyttää säännöllisiä lausekkeita. On myös muita vaihtoehtoja, kuten rekursiivinen tekstien käsittely, mutta säännölliset lausekkeet ovat yleisesti hyväksytty ja tehokas tapa suorittaa näitä tehtäviä.
 
-## Katso myös
+Sisäisesti säännölliset lausekkeet käännetään deterministisiksi automaateiksi, jotka suorittavat vertailut ja korvaukset. Ne ovat siten nopeampia kuin manuaalinen tekstien käsittely koodilla.
 
-[Säännölliset lausekkeet Cheat Sheet (englanniksi)](https://www.cheatography.com/davechild/cheat-sheets/regular-expressions/)
+## Katso myös:
+
+- [Haskellin dokumentaatio säännöllisistä lausekkeista](https://hackage.haskell.org/package/regex-base)
+- [RegExr - interaktiivinen säännöllisten lausekkeiden testaus- ja oppimisalusta](https://regexr.com/) 
+- [Säännöllisten lausekkeiden perusteet - opetusvideo (englanniksi)](https://www.youtube.com/watch?v=5hjLQVFLDs4)

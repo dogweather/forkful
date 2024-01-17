@@ -1,7 +1,7 @@
 ---
-title:                "Génération de nombres aléatoires."
-html_title:           "Arduino: Génération de nombres aléatoires."
-simple_title:         "Génération de nombres aléatoires."
+title:                "Générer des nombres aléatoires"
+html_title:           "Arduino: Générer des nombres aléatoires"
+simple_title:         "Générer des nombres aléatoires"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Numbers"
@@ -10,40 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+# Génération de nombres aléatoires sur Arduino
 
-Si vous êtes un passionné d'électronique ou un bricoleur qui aime expérimenter avec l'Arduino, vous pourriez être intéressé par la génération de nombres aléatoires. Cela peut être utile pour créer des jeux, des concours ou même pour ajouter une touche de hasard dans vos projets.
+## Quoi & pourquoi?
 
-## Comment faire
+L'utilisation de nombres aléatoires est une méthode courante en programmation pour générer des valeurs aléatoires pour diverses applications. Cela peut être utile pour simuler des situations aléatoires telles que des jeux de hasard, pour générer des données pour des tests ou pour apporter une touche de variété dans un programme. Les programmeurs utilisent la génération de nombres aléatoires pour rendre leurs programmes plus dynamiques et plus intéressants.
 
-Générer des nombres aléatoires en utilisant l'Arduino est assez simple. Tout d'abord, vous devez inclure la bibliothèque "Random.h" dans votre code. Ensuite, vous pouvez utiliser la fonction random() pour générer des nombres aléatoires dans une plage spécifique.
+## Comment faire:
+
+Générer des nombres aléatoires sur Arduino est très simple. Tout d'abord, nous devons déclarer une variable pour stocker le nombre aléatoire, puis nous utilisons la fonction `random(min, max)` pour générer un nombre aléatoire compris entre la valeur minimale et la valeur maximale spécifiées. Par exemple, si nous voulons générer un nombre aléatoire entre 0 et 9, nous pouvons utiliser la fonction suivante:
 
 ```Arduino
-#include <Random.h>
-
-int nombreAleatoire = 0;
-
-void setup() {
-  Serial.begin(9600);
-}
-
-void loop() {
-  nombreAleatoire = random(0, 10); // génère des nombres aléatoires entre 0 et 10
-  Serial.println(nombreAleatoire); // affiche le nombre aléatoire dans le moniteur série
-  delay(1000); // attend une seconde avant de générer un nouveau nombre
-}
+int randomNum = random(0, 10);
 ```
 
-Dans cet exemple, nous avons utilisé la fonction random() pour générer un nombre aléatoire dans la plage de 0 à 10 et l'avons affiché sur le moniteur série toutes les secondes. Vous pouvez également utiliser la fonction randomSeed() pour initialiser la séquence de nombres aléatoires avec une valeur spécifique.
+Vous pouvez également utiliser la fonction `random(max)` si vous souhaitez simplement générer un nombre aléatoire compris entre 0 et un nombre spécifié. Par exemple, si vous voulez un nombre aléatoire entre 0 et 100, vous pouvez utiliser la fonction suivante:
 
-## Plongée en profondeur
+```Arduino
+int randomNum = random(101);
+```
 
-L'Arduino utilise un générateur de nombres pseudo-aléatoires, ce qui signifie qu'il suit une séquence prévisible de nombres en fonction de la valeur utilisée pour initialiser la séquence. Cependant, pour la plupart des projets, cela suffit amplement.
+Ensuite, vous pouvez utiliser cette variable dans votre programme comme bon vous semble pour ajouter une touche de hasard.
 
-Si vous voulez générer des nombres vraiment aléatoires, vous pouvez utiliser un circuit externe, tel qu'un générateur de bruit blanc, pour fournir une entrée aléatoire à l'Arduino. Cela peut être utile pour les projets de cybersécurité ou de cryptographie.
+## Plongée en profondeur:
 
-## Voir aussi
+La génération de nombres aléatoires sur Arduino est rendue possible grâce à l'utilisation d'un générateur de nombres pseudo-aléatoires. Cela signifie que les nombres ne sont pas vraiment aléatoires, mais plutôt générés à partir d'un algorithme qui produit des séquences de nombres qui semblent aléatoires. Ce processus est appelé "pseudo-aléatoire" car le résultat final peut être reproduit si les mêmes paramètres sont fournis.
 
-- [Documentation officielle sur la génération de nombres aléatoires avec Arduino](https://www.arduino.cc/reference/en/language/functions/random-numbers/random/)
-- [Article sur la génération de nombres aléatoires réels avec l'Arduino](https://create.arduino.cc/projecthub/circuito/io-103-how-to-create-real-random-numbers-with-arduino-0795ef)
-- [Vidéo sur la génération de nombres aléatoires avec l'Arduino](https://www.youtube.com/watch?v=8Xq9CAX0YkM)
+Il existe différentes manières de générer des nombres aléatoires sur Arduino, en utilisant différentes bibliothèques telles que la bibliothèque `stdlib.h` ou la bibliothèque `random.h`. Chacune de ces bibliothèques utilise des algorithmes différents pour générer des nombres aléatoires, il est donc important de comprendre comment elles fonctionnent afin de choisir celle qui convient le mieux à votre programme.
+
+## Voir aussi:
+
+Vous pouvez en apprendre plus sur la génération de nombres aléatoires sur Arduino en consultant les liens suivants:
+
+- [Documentation officielle pour la fonction random() sur Arduino](https://www.arduino.cc/reference/en/language/functions/random-numbers/random/)
+- [Un tutoriel sur la génération de nombres aléatoires sur Arduino](https://learn.adafruit.com/random-numbers-with-arduino/arduino-random)
+- [Un article expliquant le fonctionnement des générateurs de nombres pseudo-aléatoires](https://www.geeksforgeeks.org/pseudo-random-number-generator-prng/)

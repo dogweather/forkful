@@ -10,48 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+## O que & Por quê?
 
-Você já se deparou com uma página da web que solicitava um nome de usuário e senha antes de permitir o acesso? Isso é conhecido como autenticação básica e, neste artigo, vamos explorar por que e como enviar uma solicitação HTTP com autenticação básica usando Python.
+Enviar uma solicitação HTTP com autenticação básica é quando um programa envia uma solicitação a um servidor da web usando um nome de usuário e senha para verificar a identidade do usuário. Os programadores fazem isso para garantir que as informações confidenciais permaneçam restritas apenas a usuários autorizados.
 
-## Como Fazer
+## Como fazer:
 
-Primeiro, precisamos importar o módulo `requests` em nosso código Python:
-
-```Python
+```python
 import requests
+
+url = "https://exemplo.com/login"
+username = "usuario"
+password = "senha"
+
+response = requests.get(url, auth=(username, password))
+
+print(response.text)
 ```
 
-Agora, podemos definir as informações de autenticação básica, incluindo o nome de usuário e senha, e adicioná-las ao cabeçalho da nossa solicitação:
+Este exemplo usa o módulo `requests` para enviar uma solicitação GET para a URL especificada, com um nome de usuário e senha fornecidos para a autenticação básica. A resposta da solicitação é então impressa no terminal.
 
-```Python
-username = "seu_nome_de_usuario"
-password = "sua_senha"
+## Mergulho Profundo:
 
-headers = {"Authorization": f"Basic {username}:{password}"}
-```
+A autenticação básica é um método de autenticação simples que foi introduzido pela primeira vez no protocolo HTTP em 1995. Ele foi projetado para ser facilmente implementado por servidores e clientes e, portanto, usa apenas informações de nome de usuário e senha como credenciais.
 
-Em seguida, podemos enviar a solicitação HTTP para o URL desejado, incluindo o cabeçalho que acabamos de criar:
+Uma alternativa à autenticação básica é a autenticação de desafio-resposta, que é mais segura, pois o servidor cria um desafio para o cliente provar sua identidade. No entanto, a autenticação básica ainda é comumente usada em muitos sistemas e aplicativos.
 
-```Python
-url = "https://www.exemplo.com"
-response = requests.get(url, headers=headers)
-```
+Ao implementar autenticação básica em seu programa, é importante garantir que as informações de autenticação sejam codificadas em arquivo ou enviadas por HTTPS para evitar que sejam interceptadas.
 
-Por fim, podemos imprimir o código de status da resposta para verificar se a solicitação foi bem-sucedida:
+## Veja também:
 
-```Python
-print(response.status_code)
-```
-
-Se tudo correr como planejado, você deve receber um código de status `200`, indicando que a solicitação foi bem-sucedida.
-
-## Deep Dive
-
-A autenticação básica é um método simples de autenticação, mas não é tão seguro quanto outros métodos mais avançados. Quando enviamos uma solicitação HTTP com autenticação básica, o nome de usuário e senha são codificados em Base64, mas não são criptografados. Isso significa que, se alguém interceptar a solicitação, pode decifrar facilmente as informações de autenticação e acessar a sua conta. Portanto, é importante sempre usar a autenticação básica em conjunto com HTTPS (HTTP seguro) para garantir a segurança das suas informações.
-
-## Veja Também
-
-- [Documentação oficial do módulo requests](https://docs.python-requests.org/en/master/)
-- [Tutorial de autenticação básica utilizando Python](https://www.freecodecamp.org/news/basic-authentication-in-python/)
-- [Explicação detalhada sobre autenticação básica](https://www.restapitutorial.com/httpstatuscodes.html#basicauthentication)
+- Documentação oficial do módulo `requests`: https://docs.python-requests.org/
+- Tutorial sobre autenticação básica com `requests`: https://www.digitalocean.com/community/tutorials/how-to-use-basic-authentication-with-http-with-python-3

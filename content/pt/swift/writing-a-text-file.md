@@ -1,7 +1,7 @@
 ---
-title:                "Escrevendo um arquivo de texto"
-html_title:           "Swift: Escrevendo um arquivo de texto"
-simple_title:         "Escrevendo um arquivo de texto"
+title:                "Escrevendo um arquivo de texto."
+html_title:           "Swift: Escrevendo um arquivo de texto."
+simple_title:         "Escrevendo um arquivo de texto."
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Files and I/O"
@@ -10,34 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+## O que & Porquê?
 
-Escrever um arquivo de texto é uma das habilidades básicas de programação em Swift. Ele permite que você armazene informações e dados de forma organizada e acesse esses dados posteriormente. Isso é especialmente útil para armazenar configurações, dados de usuário e qualquer outro tipo de informação que você queira manter em seu aplicativo.
+Escrever um arquivo de texto é o ato de criar um documento em formato de texto que pode ser lido e editado por humanos, bem como por máquinas. Programadores geralmente escrevem arquivos de texto para armazenar e organizar informações importantes, como configurações, dados de usuários e códigos.
 
-## Como Fazer
+## Como fazer:
 
-Para escrever um arquivo de texto em Swift, você precisará seguir três etapas básicas: criar o arquivo, escrever os dados desejados e salvar o arquivo.
+Para escrever um arquivo de texto em Swift, você pode seguir os seguintes passos:
 
-Comece criando uma variável com um caminho de arquivo para onde deseja salvar o arquivo. Em seguida, você pode usar a função `String()` para converter os dados que deseja escrever em uma string. Por fim, utilize o método `write(toFile:, atomically:)` para salvar a string no arquivo.
-
-Veja um exemplo de código abaixo:
-
-```
-var filePath = "caminho/do/arquivo"
-var data = String("Este é um exemplo de dados que serão escritos no arquivo")
-data.write(toFile: filePath, atomically: true)
+1. Importe o framework `Foundation`:
+```Swift
+import Foundation
 ```
 
-Ao executar o código acima, você criará um arquivo chamado "arquivo" no caminho especificado e o conteúdo "Este é um exemplo de dados que serão escritos no arquivo" será salvo nele.
+2. Crie um objeto `URL` que especifica o local onde o arquivo será criado:
+```Swift
+let fileURL = URL(fileURLWithPath: "caminho/do/arquivo/nome_do_arquivo.txt")
+```
 
-## Profundidade
+3. Crie um objeto `String` que contenha o conteúdo que será escrito no arquivo:
+```Swift
+let fileContent = "Este é o conteúdo que será escrito no arquivo."
+```
 
-Existem algumas coisas importantes a serem consideradas ao escrever um arquivo de texto em Swift. Uma delas é o fato de que a função `write(toFile:, atomically:)` possui um segundo parâmetro chamado ´atomically´. Se estiver definido como `true`, o sistema garantirá que o arquivo seja escrito de forma atômica, ou seja, o arquivo só será salvo se foram escritos todos os dados com sucesso. Se estiver definido como `false`, o arquivo será salvo imediatamente sem garantia de sucesso.
+4. Use o método `write(to:atomically:encoding:)` do objeto `String` para escrever o conteúdo no arquivo:
+```Swift
+try? fileContent.write(to: fileURL, atomically: true, encoding: .utf8)
+```
 
-Outro fator importante é o uso de diferentes caracteres especiais no texto que será escrito. Certifique-se de que esses caracteres estejam codificados corretamente para evitar problemas na exibição do texto posteriormente.
+5. Pronto! Agora você tem um arquivo de texto criado e preenchido com o conteúdo desejado.
 
-## Veja Também
+## Profundando mais:
 
-- Documentação oficial da Apple sobre o método `write(toFile:, atomically:)`:  https://developer.apple.com/documentation/foundation/nsstring/1410790-writetofile
-- Exemplos práticos de escrita de arquivos em Swift: https://github.com/AndrewKhrystyan/ios-core-data-documents/tree/master/ios-core-data-basic-level/ios-core-data-basic-level/ios-core-data/documents-db
-- Outros artigos sobre programação em Swift: https://www.hackingwithswift.com/
+Escrever arquivos de texto é uma tarefa comum na programação, pois é uma forma eficiente de armazenar dados importantes. Embora existam muitas alternativas, como bancos de dados e arquivos binários, os arquivos de texto são simples e universais, podendo ser abertos e alterados facilmente em qualquer plataforma.
+
+Na implementação mostrada acima, usamos o encoding `.utf8`, que é um dos padrões de codificação mais populares para arquivos de texto. Porém, existem outros tipos de codificação, como `isoLatin1` e `ascii`, que podem ser usados dependendo do conteúdo que será escrito.
+
+## Veja também:
+
+- [Documentação oficial da Apple sobre escrita de arquivos](https://developer.apple.com/documentation/foundation/filemanager/1412642-write)
+- [Tutorial sobre escrita de arquivos em Swift](https://www.hackingwithswift.com/example-code/system/how-to-write-strings-to-a-text-file-on-disk)

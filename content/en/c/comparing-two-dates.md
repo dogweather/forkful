@@ -10,58 +10,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-Date comparison is a common task in many programming projects. Whether you need to check if a certain date occurred before or after another date, or if two dates are equal, having a good understanding of how to compare dates is crucial for writing efficient and reliable code.
+Comparing two dates in programming involves checking if one date is before, after, or equal to another date. Programmers do this to perform operations such as sorting and filtering data, calculating time differences, and scheduling tasks.
 
-## How To
+## How to:
+Here's a simple example of how to compare two dates in C:
 
-Comparing dates in C is a straightforward process. First, you will need to create two date variables using the `time_t` type. Then, you can use the `difftime()` function to calculate the difference between the two dates in seconds. Finally, you can use conditional statements or the `strcmp()` function to compare the result and determine the relationship between the two dates.
-
-Here's an example of comparing two dates in C:
-
-```C
+```
 #include <stdio.h>
 #include <time.h>
 
 int main() {
-	time_t date1, date2;
-	double difference;
+    // Creating two structs to represent dates
+    struct tm date1 = { .tm_mday = 25, .tm_mon = 11, .tm_year = 2020};
+    struct tm date2 = { .tm_mday = 1, .tm_mon = 2, .tm_year = 2021 };
 
-	// Define the first date
-	date1 = time(NULL); // current date and time
+    // Converting structs to time_t type for comparison
+    time_t time1 = mktime(&date1);
+    time_t time2 = mktime(&date2);
 
-	// Define the second date
-	date2 = time(NULL) - 86400; // 24 hours before the current date and time
+    // Using difftime() function to compare time difference in seconds
+    double diff = difftime(time2, time1);
 
-	// Calculate the difference in seconds between the two dates
-	difference = difftime(date1, date2);
+    // Outputting result
+    if (diff > 0) {
+        printf("Date 2 is after Date 1.");
+    } else if (diff < 0) {
+        printf("Date 2 is before Date 1.");
+    } else {
+        printf("Date 1 and Date 2 are equal.");
+    }
 
-	// Compare the result and print the appropriate message
-	if (difference > 0) {
-		printf("The first date occurs after the second date.\n");
-	} else if (difference < 0) {
-		printf("The first date occurs before the second date.\n");
-	} else {
-		printf("The two dates are equal.\n");
-	}
-
-	return 0;
+    return 0;
 }
 ```
+**Output:**
+```
+Date 2 is after Date 1.
+```
 
-The output of this code would be: `The two dates are equal.`
+## Deep Dive:
 
-## Deep Dive
+### Historical Context:
+In older versions of C, dates were commonly represented as a quantity of seconds since a specific epoch time. However, this could cause issues with different interpretations of leap years and daylight saving time. Therefore, the use of structured data types, such as tm, was introduced in the C standard library.
 
-When comparing two dates, it's important to understand the underlying data type, `time_t`. This type represents the current time in seconds since the epoch (January 1, 1970). Therefore, when you use `time(NULL)` to get the current time, you are essentially getting the number of seconds that have passed since the epoch.
+### Alternatives:
+Apart from the difftime() function used in the example, there are other ways to compare two dates in C. One alternative is to use the timecmp() function from the POSIX standard library. Another option is to use a library specifically designed for handling dates and time, such as Boost.Date_Time or GLib GDateTime.
 
-The `difftime()` function takes two `time_t` variables as parameters and returns the difference between them in seconds. In the example above, we subtracted 24 hours in seconds from the current time to get a difference of 86400 seconds.
+### Implementation details:
+In C, dates can be represented using the struct tm data type, which contains information such as year, month, day, and time. The mktime() function is used to convert this data type into a time_t type, which represents a specific point in time. The difftime() function then calculates the difference in seconds between two time_t values, allowing for easy comparison.
 
-Additionally, when comparing dates in C, it's important to consider leap years and daylight saving time. These can affect the number of days, hours, and seconds in a given time period and must be taken into account when comparing dates.
-
-## See Also
-
-- [C time.h documentation](https://www.tutorialspoint.com/c_standard_library/time_h.htm)
-- [Using the time function in C](https://www.guru99.com/c-time-date.html)
-- [Date comparison in C - GeeksforGeeks](https://www.geeksforgeeks.org/c-program-compare-two-dates/)
+## See Also:
+- [C Standard Library - Date and Time Functions](https://www.cplusplus.com/reference/ctime/)
+- [POSIX Time Functions](https://pubs.opengroup.org/onlinepubs/9699919799/functions/index.html)
+- [Boost.Date_Time library](https://www.boost.org/doc/libs/1_74_0/doc/html/date_time.html)
+- [GLib GDateTime reference](https://developer.gnome.org/glib/stable/glib-Dates-and-Times.html)

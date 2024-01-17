@@ -10,29 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
-문자열을 대문자로 바꾸는 것의 이유는 서로 다른 형식의 문자열을 통합하거나 사용자가 입력한 문자열을 통일된 형식으로 저장하기 위해서입니다.
+## 무엇이며 왜?
 
-## 하는 방법
-문자열을 대문자로 바꾸는 가장 간단한 방법은 `strtoupper()` 함수를 사용하는 것입니다. 아래는 코드 예제와 함께 출력 결과도 함께 제공됩니다.
+문자열을 대문자로 변환하는 것을 컴퓨터 프로그래밍에서 대문자 변환(capitalizing)이라고 합니다. 프로그래머들이 대문자 변환을 하는 이유는 검색 엔진과 같은 기능을 할 때 문자열의 대소문자를 구별해야 하기 때문입니다. 예를 들어, 'apple'과 'Apple'은 다른 단어로 인식되지만, 대문자로 변환하면 둘 다 'APPLE'로 인식되어 하나의 단어로 취급할 수 있습니다.
 
-```PHP
-<?php
-$name = "john";
-echo strtoupper($name); // JOHN
-```
+## 하는 법:
 
-또 다른 방법은 `ucwords()` 함수를 사용하는 것인데, 이 함수는 각 단어의 첫 글자를 대문자로 바꿔줍니다. 아래는 코드 예제와 함께 출력 결과도 함께 제공됩니다.
+PHP에서 문자열을 대문자로 변환하는 방법은 `strtoupper()` 함수를 사용하는 것입니다. 예를 들어, `strtoupper("apple")`을 실행하면 `APPLE`이라는 결과가 출력됩니다.
 
 ```PHP
 <?php
-$name = "john doe";
-echo ucwords($name); // John Doe
+echo strtoupper("apple"); // 결과: APPLE
+?>
 ```
 
-## 깊이 파헤치기
-PHP는 문자열을 다루는 다양한 내장 함수를 제공합니다. 이러한 함수를 사용하면 보다 정교하게 문자열을 바꿀 수 있습니다. 예를들어, `mb_strtoupper()` 함수는 멀티바이트 문자열도 대문자로 바꿔주는데, `strtoupper()` 함수는 ASCII 문자열만 변환할 수 있습니다. 또한 `str_replace()` 함수를 사용하면 특정 문자나 문자열을 다른 문자나 문자열로 바꿀 수도 있습니다. 이 함수를 사용하면 여러 개의 문자열을 동시에 바꿀 수도 있습니다.
+또는, 문자열 변수에 할당하여 사용할 수도 있습니다.
 
-## 관련 자료 보기
-[PHP 공식 문서](https://www.php.net/manual/en/function.strtoupper.php)  
-[PHP 문자열 관련 함수들](https://www.php.net/manual/en/ref.strings.php)
+```PHP
+<?php
+$string = "apple";
+echo strtoupper($string); // 결과: APPLE
+?>
+```
+
+## 깊이 들어가보기:
+
+대문자 변환은 운영체제에 따라 다른 결과를 출력할 수도 있습니다. 예를 들어, 윈도우 운영체제에서는 한글의 경우 `strtoupper()` 함수를 통해 대문자로 변환하지 않고 그대로 출력됩니다. 그러나 리눅스 운영체제에서는 대문자로 변환됩니다. 이는 운영체제가 문자 인코딩 방식이 다르기 때문입니다. 또한, `strtoupper()` 함수는 영문자 외의 문자에 대해 제대로 작동하지 않을 수 있으므로 이 점을 명심해야 합니다.
+
+대문자 변환 외에도 소문자 변환 함수인 `strtolower()`도 있습니다. 두 함수는 문자열 안의 모든 문자를 대문자 또는 소문자로 변환해주는 기능을 합니다.
+
+## 관련 링크:
+
+- PHP `strtoupper()` 함수 설명서: https://www.php.net/manual/en/function.strtoupper.php
+- PHP `strtolower()` 함수 설명서: https://www.php.net/manual/en/function.strtolower.php

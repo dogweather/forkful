@@ -10,39 +10,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Qu'est-ce que c'est et pourquoi faire ?
+Obtenir la date courante signifie obtenir la date et l'heure actuelles sur votre système ou serveur. Cela peut être utile pour une variété de raisons, telles que suivre l'heure d'exécution d'un programme, synchroniser des données, ou simplement afficher l'heure actuelle dans une application.
 
-De nos jours, l'utilisation de la date et de l'heure actuelles est essentielle dans de nombreuses applications et systèmes informatiques. En utilisant la programmation en Elixir, obtenir la date actuelle peut être fait en un rien de temps grâce à la simplicité et la puissance du langage.
+## Comment faire :
+Pour obtenir la date courante en Elixir, vous pouvez utiliser la fonction `DateTime.utc_now()` ou `NaiveDateTime.utc_now()`. Voici un exemple qui imprime la date et l'heure actuelles :
 
-## Comment Faire
-
-```elixir
-Date.utc_today()
-#=> ~D[2020-11-17]
+```
+DateTime.utc_now()
+=> ~U[2021-09-28 11:10:32.305479Z]
 ```
 
-Pour obtenir la date et l'heure exactes, nous pouvons utiliser la fonction `utc_today()` de la bibliothèque standard Elixir. Cela renvoie un objet Date avec la date en format ISO 8601. Si nous voulons afficher la date et l'heure en utilisant un fuseau horaire spécifique, nous pouvons utiliser la fonction `now()` et lui donner le fuseau horaire comme argument, comme ceci :
+## Plongée en profondeur :
+La fonction `DateTime.utc_now()` renvoie un objet de type `DateTime` qui représente la date et l'heure en temps universel. D'autre part, la fonction `NaiveDateTime.utc_now()` renvoie un objet de type `NaiveDateTime` qui n'a pas de fuseau horaire et est utilisée pour effectuer des calculs de temps sans avoir à se soucier des fuseaux horaires.
 
-```elixir
-DateTime.now("Europe/Paris")
-#=> ~U[2020-11-17 15:42:30Z]
-```
+Si vous préférez afficher la date et l'heure dans un format différent, vous pouvez utiliser la fonction `strftime` pour formater la date et l'heure actuelles selon vos besoins.
 
-L'utilisation de la fonction `now()` renvoie un objet DateTime avec la date et l'heure actuelles dans le fuseau horaire spécifié. Nous pouvons également obtenir la date et l'heure actuelles en utilisant le fuseau horaire du système en utilisant la fonction `local_now()`, comme ceci :
+## Voir aussi :
+Pour en savoir plus sur la manipulation des dates et heures en Elixir, vous pouvez consulter la documentation officielle de la fonction `DateTime` et la fonction `NaiveDateTime`.
 
-```elixir
-DateTime.local_now()
-#=> ~U[2020-11-17 10:42:30Z]
-```
-
-## Plongée en Profondeur
-
-Maintenant que nous savons comment obtenir la date et l'heure actuelles en utilisant Elixir, explorons brièvement comment cela fonctionne en coulisses. Les fonctions que nous avons utilisées (`utc_today()`, `now()` et `local_now()`) font partie d'un module appelé `DateTime` qui fait partie de la bibliothèque standard Elixir.
-
-Ce module utilise une bibliothèque externe appelée `tzdata` pour gérer les fuseaux horaires et garantir que les dates et heures renvoyées sont précises et cohérentes. Il utilise également une fonctionnalité intégrée d'Elixir appelée `Erlang Calendar` pour manipuler les dates et les heures.
-
-## Voir Aussi
-
-- Documentation officielle d'Elixir pour le module `DateTime` : https://hexdocs.pm/elixir/Date.html
-- Liste des fuseaux horaires pris en charge par la bibliothèque `tzdata` : https://hexdocs.pm/tzdata/readme.html
-- Documentation officielle d'Erlang pour les opérations de calendrier : http://erlang.org/doc/man/calendar.html
+Documentation officielle DateTime : https://hexdocs.pm/elixir/DateTime.html
+Documentation officielle NaiveDateTime : https://hexdocs.pm/elixir/NaiveDateTime.html

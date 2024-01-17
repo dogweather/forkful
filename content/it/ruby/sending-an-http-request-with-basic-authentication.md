@@ -10,30 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+Cosa & Perché? 
 
-Se stai sviluppando un'applicazione web o un'API, potresti aver bisogno di autenticazione di base per proteggerla e limitare l'accesso solo agli utenti autorizzati. Invio di una richiesta HTTP con autenticazione di base è un modo semplice ed efficace per garantire la sicurezza delle tue risorse.
+In poche parole, l'invio di una richiesta HTTP con autenticazione di base è un modo per accedere a un server web protetto inserendo un nome utente e una password. I programmatori utilizzano questo metodo quando hanno bisogno di accedere a risorse riservate o protette, come ad esempio un'API.
 
-## Come fare
+Come fare: 
 
-Per inviare una richiesta HTTP con autenticazione di base in Ruby, puoi utilizzare la libreria ```Net::HTTP``` inclusa nella libreria standard di Ruby. Ecco un esempio di come creare un'istanza di ```Net::HTTP``` e inviare una richiesta GET con autenticazione di base:
+Utilizzando la libreria standard di Ruby "Net::HTTP", è possibile inviare una richiesta HTTP con autenticazione di base semplicemente specificando l'header "Authorization" con le credenziali desiderate nel seguente modo:
 
+```ruby
+require 'net/http'
+
+uri = URI('http://www.example.com')
+req = Net::HTTP::Get.new(uri)
+
+# Inserisci la tua password
+req.basic_auth 'username', 'password'
+
+res = Net::HTTP.start(uri.hostname, uri.port) {|http|
+  http.request(req)
+}
+
+puts res.body
 ```
-uri = URI('http://esempio.com')
-http = Net::HTTP.new(uri.host, uri.port)
-request = Net::HTTP::Get.new(uri)
-request.basic_auth('nome_utente', 'password')
-response = http.request(request)
-puts response.body 
-```
 
-Il codice sopra invia una richiesta GET all'URL fornito e passa le credenziali di autenticazione tramite il metodo ```basic_auth```. Se la richiesta ha successo, il corpo della risposta verrà stampato a schermo.
+Output: 
 
-## Approfondimenti
+La risposta della richiesta sarà una stringa contenente il corpo della risorsa richiesta, o un codice di errore se le credenziali fornite non sono valide.
 
-Per comprendere meglio come funziona l'autenticazione di base in una richiesta HTTP, è utile esaminare il formato dei dati che vengono inviati. L'autenticazione di base richiede che le credenziali siano codificate in Base64 e inserite all'interno dell'header ```Authorization```. Questo processo di codifica rende le credenziali leggibili solo al server e non ai possibili spettatori delle richieste HTTP. Puoi saperne di più sulla codifica Base64 e sull'header Authorization nella documentazione ufficiale di HTTP.
+Deep Dive: 
 
-## Vedi anche
+L'autenticazione di base è uno dei metodi di autenticazione più antichi e semplici, che fa parte delle specifiche HTTP 1.0 del 1996. Questo metodo trasmette le credenziali utilizzando un codice di autorizzazione codificato in base64 all'interno dell'header "Authorization". Tuttavia, a causa della mancanza di sicurezza dei dati trasmesse, è stato sostituito da metodi di autenticazione più sicuri come l'autenticazione digest o l'utilizzo di certificati SSL.
 
-- [Documentazione ufficiale di HTTP](https://tools.ietf.org/html/rfc2617)
-- [Libreria Net::HTTP di Ruby](https://ruby-doc.org/stdlib-2.7.2/libdoc/net/http/rdoc/Net/HTTP.html)
+See Also: 
+
+Per approfondire su come gestire l'autenticazione di base in Ruby, puoi consultare la documentazione ufficiale della classe "Net::HTTP" (https://ruby-doc.org/stdlib-2.7.2/libdoc/net/http/rdoc/index.html). In alternativa, puoi utilizzare anche altre librerie di terze parti come "rest-client" o "faraday".

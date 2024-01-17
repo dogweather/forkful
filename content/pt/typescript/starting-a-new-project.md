@@ -10,39 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que iniciar um novo projeto com TypeScript?
+## O que e por que iniciar um novo projeto?
+Iniciar um novo projeto é o processo de criar um novo código a partir do zero para atender às necessidades específicas de um projeto. Programadores iniciam novos projetos para ter um código limpo e organizado, e para estar no controle total do seu código.
 
-Se você está procurando por uma linguagem de programação versátil e eficiente para iniciar um novo projeto, o TypeScript pode ser a escolha perfeita para você. Além de ser uma linguagem de código aberto, o TypeScript oferece a vantagem de poder ser usado tanto para desenvolvimento frontend como backend, proporcionando uma experiência de desenvolvimento consistente em todo o seu projeto.
+## Como fazer:
+Para iniciar um novo projeto em TypeScript, é necessário ter o Node.js instalado em seu computador. Em seguida, siga os seguintes passos:
 
-## Como começar um projeto com TypeScript
-Para começar um novo projeto com TypeScript, siga estes passos simples:
+1. Crie uma nova pasta para o seu projeto.
+2. Abra o terminal e navegue até a pasta que você acabou de criar.
+3. Dentro da pasta, execute o comando ```npm init``` para criar um package.json para o seu projeto.
+4. Em seguida, instale o TypeScript executando o comando ```npm install typescript --save-dev```.
+5. Crie um arquivo TypeScript com a extensão .ts dentro da sua pasta.
+6. Agora, escreva seu código TypeScript dentro do arquivo criado.
+7. Para transpilar seu código TypeScript para JavaScript, execute o comando ```tsc nome-do-arquivo.ts```.
+8. O código transpilado será criado com a extensão .js na mesma pasta.
 
-1. Certifique-se de ter o Node.js e o TypeScript instalados em sua máquina.
-2. Crie uma pasta para o seu projeto e navegue até ela no terminal.
-3. Execute o comando `npm init` para inicializar um novo projeto npm.
-4. Instale o TypeScript como dependência de desenvolvimento com o comando `npm install -D typescript`.
-5. Crie um arquivo `tsconfig.json` para configurar o seu projeto. Dentro dele, adicione os parâmetros básicos como `target`, `module` e `outDir`.
-6. Crie um arquivo `index.ts` e comece a escrever seu código TypeScript.
-7. Execute o comando `tsc index.ts` para compilar seu código TypeScript em JavaScript.
-8. Agora você pode executar o seu código JavaScript com o comando `node index.js` e ver seus resultados.
+## Mergulho Profundo:
+A ideia de iniciar um novo projeto não é nova, pois da mesma forma que artistas iniciam novas obras do zero, programadores também criam novos códigos do zero para evitar conflitos com códigos antigos. Outra alternativa para iniciar um novo projeto é a utilização de um gerador de projetos, como o Angular CLI, que já cria a estrutura inicial de um projeto para você. Para implementar corretamente um novo projeto, é importante definir as especificações e requisitos antes de iniciar o desenvolvimento.
 
-Veja um exemplo de código TypeScript abaixo:
-
-```TypeScript
-const mensagem: string = "Olá mundo!";
-console.log(mensagem);
-```
-
-Quando este código for compilado e executado, você verá a seguinte saída:
-
-```
-Olá mundo!
-```
-
-## Profundidade em iniciar um novo projeto com TypeScript
-Ao iniciar um novo projeto com TypeScript, é importante entender alguns conceitos-chave, como o sistema de tipo estático e a compilação de código. O TypeScript é uma linguagem de programação baseada em JavaScript que adiciona recursos de tipagem estática e objetos de classe, proporcionando uma experiência de programação mais robusta e escalável. Além disso, a compilação de código TypeScript para JavaScript garante compatibilidade com navegadores e ambientes de execução.
-
-## Veja também
-- [Tutorial do TypeScript](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html)
+## Veja também:
 - [Documentação oficial do TypeScript](https://www.typescriptlang.org/docs/)
-- [Repositório GitHub do TypeScript](https://github.com/Microsoft/TypeScript)
+- [Node.js](https://nodejs.org/en/)
+- [Angular CLI](https://cli.angular.io/)

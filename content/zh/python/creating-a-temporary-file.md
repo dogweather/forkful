@@ -1,7 +1,7 @@
 ---
-title:                "建立临时文件"
-html_title:           "Python: 建立临时文件"
-simple_title:         "建立临时文件"
+title:                "创建临时文件"
+html_title:           "Python: 创建临时文件"
+simple_title:         "创建临时文件"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Files and I/O"
@@ -10,74 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## 什么是临时文件？为什么程序员要创建它？
+临时文件是计算机中暂时存储数据的文件，通常用于在程序运行过程中临时保存数据。程序员使用临时文件可以避免对原始数据的更改，并且在需要时轻松地删除它们，从而保持程序的稳定性和安全性。
 
-为什么：创建临时文件对于编程是很有用的，它允许我们临时保存数据，避免占用大量内存或磁盘空间。
-
-当我们需要在代码中暂时存储数据时，临时文件是非常有用的。它允许我们将数据写入文件并在需要时再读取。这也可以帮助我们避免因为数据量过大而导致的程序崩溃。
-
-## How To
-
-要使用Python创建临时文件，我们可以使用内置的`tempfile`模块。首先，我们需要导入这个模块：
-
+## 如何创建临时文件？
 ```Python
 import tempfile
-```
 
-然后，我们可以使用`tempfile.NamedTemporaryFile()`方法来创建一个临时文件。这个方法会返回一个`NamedTemporaryFile`对象，我们可以指定`delete=False`来让Python不删除这个临时文件，从而允许我们手动删除它。
-
-```Python
-# 创建临时文件
-temp_file = tempfile.NamedTemporaryFile(delete=False)
-
-# 将数据写入临时文件
-temp_file.write("Hello World!".encode('utf-8'))
-
-# 关闭文件，保存数据
-temp_file.close()
-
-# 读取临时文件中的数据
-with open(temp_file.name, 'r') as file:
-    print(file.read())
-
-# 输出: Hello World!
-```
-
-我们也可以使用`with`语句来自动关闭文件，从而避免忘记关闭文件而造成的资源浪费。
-
-```Python
-# 使用with语句创建临时文件
-with tempfile.NamedTemporaryFile(delete=False) as temp_file:
-    # 将数据写入临时文件
-    temp_file.write("Hello World!".encode('utf-8'))
-
-    # 读取临时文件中的数据
-    print(temp_file.read())
-
-# 输出: Hello World!
-```
-
-## Deep Dive
-
-除了`NamedTemporaryFile`方法，`tempfile`模块还提供了其它方法来创建临时文件。比如，我们可以使用`tempfile.TemporaryFile()`方法来创建一个无需命名的临时文件。这个文件会在关闭后自动删除。
-
-```Python
-# 创建无需命名的临时文件
+# 创建一个临时文件
 temp_file = tempfile.TemporaryFile()
 
-# 将数据写入临时文件
-temp_file.write("Hello World!".encode('utf-8'))
+# 写入数据到临时文件
+temp_file.write(b"Hello world! This is a temporary file.")
 
-# 关闭文件，并且文件会自动删除
+# 读取临时文件中的数据
+temp_file.seek(0)
+print(temp_file.read())
+
+# 关闭临时文件
 temp_file.close()
 ```
 
-另一个有用的方法是`tempfile.gettempdir()`，它会返回系统上的临时文件夹路径。我们可以使用这个路径来访问和管理系统中的临时文件。
+输出：
+```
+b"Hello world! This is a temporary file."
+```
 
-## See Also
+## 深入探讨
+1. 历史背景：在过去，计算机内存容量较小，程序员经常使用临时文件来存储额外的数据，而不是将所有数据存储在内存中。
+2. 替代方法：除了临时文件，程序员也可以使用内存缓冲区或数据库来存储临时数据。
+3. 创建临时文件的实现方式：Python中的tempfile模块提供了各种方法来创建和管理临时文件，包括TemporaryFile()和NamedTemporaryFile()函数。
 
-更多关于`tempfile`模块的信息，请查看以下链接：
-
-- [Python官方文档 - tempfile模块](https://docs.python.org/3/library/tempfile.html)
-- [w3schools - Python tempfile模块教程](https://www.w3schools.com/python/module_tempfile.asp)
-- [Python技术论坛 - 创建临时文件的几种方法](https://python.tech.blog/2018/11/29/creating-temporary-files-in-python/)
+## 相关链接
+1. Python官方文档 - tempfile模块: https://docs.python.org/3/library/tempfile.html
+2. 关于临时文件的更多信息: https://en.wikipedia.org/wiki/Temporary_file

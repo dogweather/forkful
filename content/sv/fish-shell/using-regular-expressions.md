@@ -1,7 +1,7 @@
 ---
-title:                "Användning av regelbundna uttryck"
-html_title:           "Fish Shell: Användning av regelbundna uttryck"
-simple_title:         "Användning av regelbundna uttryck"
+title:                "Användning av reguljära uttryck"
+html_title:           "Fish Shell: Användning av reguljära uttryck"
+simple_title:         "Användning av reguljära uttryck"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -10,40 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & varför?
 
-Det finns många anledningar till att använda regelbundna uttryck (regular expressions) i Fish Shell. Det främsta syftet är att söka och manipulera text på ett snabbt och effektivt sätt. Reguljära uttryck kan också användas för att kontrollera indata och validera användarinput.
+Reguljära uttryck är en enhetlig och kraftfull metod för att söka efter mönster och matcha textsträngar. Programmörer använder dem för att snabbt och effektivt manipulera data och utföra komplexa sökningar och ersättningar.
 
-## Så här gör du
+## Hur man:
 
-För att använda regelbundna uttryck i Fish Shell använder du kommandot "grep" med flaggan "-E" för att aktivera stöd för reguljära uttryck. Nedan finns ett exempel på hur du kan söka efter specifika mönster i en fil och få ut alla matchningar.
-
+### Grunda dig
 ```
-fish grep -E “[a-z]+” example.txt
-```
+Fish Shell har inbyggt stöd för reguljära uttryck genom kommandot "grep". Du kan använda det på följande sätt:
 
-Detta kommer att söka igenom filen "example.txt" efter alla ord som består av minst en liten bokstav och skriva ut dem i terminalen.
+grep <mönster> <filnamn>
 
-För att ersätta en viss text med hjälp av reguljära uttryck kan du använda kommandot "sed". Till exempel om du vill ändra alla förekomster av ordet "hund" till "katt" i en fil kan du använda följande kommando:
+Till exempel:
 
-```
-fish sed -E “s/hund/katt/g” example.txt
+grep "hund" djur.txt
 ```
 
-Detta kommer att ändra alla "hundar" till "katter" i filen "example.txt".
+### Kombinera med andra kommandon
+```
+Du kan också kombinera grep med andra Fish Shell kommandon för att få mer avancerad funktionalitet. Till exempel:
 
-## Djupdykning
+ls | grep "txt"
 
-När du använder reguljära uttryck i Fish Shell finns det några viktiga saker att tänka på. För det första är det viktigt att förstå de grundläggande regler och syntax för reguljära uttryck. Om du inte är bekant med detta kan det vara till hjälp att titta på guider eller tutorials online.
+Det här kommandot kommer att lista alla .txt-filer i din nuvarande mapp.
+```
 
-För det andra är det viktigt att vara medveten om de olika flaggorna och alternativen som finns tillgängliga för kommandon som "grep" och "sed". Genom att läsa manualerna för dessa kommandon kan du lära dig mer om de olika funktionerna och hur du kan använda dem för att göra mer avancerade sökningar och manipulationer.
+## Djupdykning:
 
-Slutligen är det viktigt att testa och öva på dina reguljära uttryck för att få en bättre förståelse för hur de fungerar och hur de kan användas på olika sätt. Det finns flera onlineverktyg som kan hjälpa till med detta, som till exempel "Regex101" och "RegExr".
+### Historisk kontext
+Reguljära uttryck utvecklades ursprungligen för användning inom datavetenskap på 1950-talet. Sedan dess har de blivit en viktig del av programmering och används inom många olika programmeringsspråk och verktyg.
 
-## Se även
+### Alternativ
+Det finns många olika verktyg och bibliotek för reguljära uttryck, men Fish Shell's inbyggda stöd för grep är ett enkelt och effektivt sätt att komma igång med reguljära uttryck.
 
-Här är några användbara länkar för att lära dig mer om reguljära uttryck och hur de kan användas i Fish Shell:
+### Implementation detaljer
+Fish Shell använder sig av standardbiblioteket för reguljära uttryck, PCRE (Perl Compatible Regular Expressions), vilket ger en flexibel och kraftfull funktionalitet.
 
-- [Fish Shell dokumentation](https://fishshell.com/docs/current/index.html)
-- [En guide till reguljära uttryck för nybörjare](https://www.digitalocean.com/community/tutorials/an-introduction-to-regular-expressions)
-- [Regex Cheat Sheet](https://www.rexegg.com/regex-quickstart.html)
+## Se också:
+- [Fisk shell dokumentation för reguljära uttryck](https://fishshell.com/docs/current/cmds/grep.html)
+- [En interaktiv handledning för reguljära uttryck](https://regexone.com/)

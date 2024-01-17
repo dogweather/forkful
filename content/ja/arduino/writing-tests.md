@@ -1,7 +1,7 @@
 ---
-title:                "「テストの書き方」"
-html_title:           "Arduino: 「テストの書き方」"
-simple_title:         "「テストの書き方」"
+title:                "テストの書き方"
+html_title:           "Arduino: テストの書き方"
+simple_title:         "テストの書き方"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Testing and Debugging"
@@ -10,35 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜテストを書くのか？
+## 何＆どうして？
+テストとは何かを説明するために、テストを作成する理由を説明します。プログラマーは、コードの品質や信頼性を確認するためにテストを行います。
 
-あなたはArduinoを使って何かを作ろうと思ったことがありますか？もしもあなたがプロジェクトを通して理想的な動きを達成したいと思っているなら、テストを書くことは非常に重要です。テストは、コードの正しさを確認し、バグを見つけるのに役立ちます。そうすることで、プロジェクトの動きが期待通りになるように保証することができます。
+## 方法：
+以下に、Arduinoでテストを作成する方法を示します。下のコードブロックに示すように、Arduinoプログラム内にテストケースを追加するだけです。
 
-## テストの書き方
-
-まず、テストのための新しいディレクトリを作成します。そこに、すべてのテストを含む「test.ino」ファイルを作成します。テストのコードは、実際のコードに依存していないことが重要です。そのため、別々の「test.(機能名).ino」ファイルを作成することをお勧めします。例えば、もしスイッチの機能をテストしたい場合、ファイル名を「test.switch.ino」とします。
-
-```Arduino
-// ユニットテストの例
-
-include <ArduinoUnit.h> // テスト用のライブラリ
-
-testCase(SwitchTest) {
-  int pin = 2; // スイッチのピン番号
-  pinMode(pin, INPUT); // pinを設定
-  assertEqual(digitalRead(pin), LOW); // ピンの状態がLOWになることを確認
+```
+// 例：LEDが点灯するかをテストする
+void testLED() {
+  pinMode(LED_PIN, OUTPUT); // テスト対象のピンを出力モードに設定
+  digitalWrite(LED_PIN, HIGH); // ピンから電流を流し、LEDを点灯
+  delay(500); // 0.5秒待機
+  digitalWrite(LED_PIN, LOW); // ピンから電流を止め、LEDを消灯
 }
 
-// 出力例
-✅ TEST PASSED: SwitchTest
+// テストを実行するためのメインループ
+void loop() {
+  testLED(); // テストを実行
+}
 ```
 
-## 詳しくテストの書き方を学ぶ
+## もっと詳しく：
+テストの歴史的背景や、他の代替手段など、テストに関するさまざまな情報があります。また、テストを実装する方法についても検討することができます。詳細な情報はオンラインのリソースを参照してください。
 
-もしもテストの書き方についてより詳しい情報を学びたい場合は、[ArduinoUnit公式サイト](https://github.com/mmurdoch/arduinounit)を参考にしてください。そこにはより多くのテストの例があり、ArduinoUnitについてより深く学ぶことができます。
+## 関連リンク：
+テストに関する詳細な情報やチュートリアル、サンプルコードなどを含む、他のリソースを紹介します。
 
-## 他にも参考になる情報
-
-- [Arduinoの公式ドキュメント](https://www.arduino.cc/en/Guide/Introduction)
-- [Arduinoのチュートリアル](https://www.arduino.cc/en/Tutorial/HomePage)
-- [Arduinoユーザーフォーラム](https://forum.arduino.cc/)
+- [Arduino公式ページ](https://www.arduino.cc/)：Arduinoに関する情報やコミュニティを見つけることができます。
+- [Arduino Software Testing Library](https://github.com/igormiktor/ArduinoSoftwareTesting)：Arduino向けのテストライブラリです。
+- [Arduinoのテスト方法ガイド](https://www.oreilly.com/library/view/arduino-cookbook/0596802471/ch10.html)：実際のArduinoプロジェクトでテストを実装する方法について説明されています。

@@ -10,46 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
+## JSON क्या है और क्यों करते हैं?
+JSON (JavaScript Object Notation) क्या होता है और क्यों और कैसे प्रोग्रामर्स द्वारा उपयोग किया जाता है, इसके बारे में आम लोगों को काफी समझना भी आसान है। JSON पीछले दशक में जावास्क्रिप्ट के साथ जुड़ने और वेब डेवलपमेंट में एक प्रमुख भूमिका निभाने के साथ साथ अन्य प्रोग्रामिंग भाषाओं पर भी बढ़ती मान्यता के कारण बहुत ही लोकप्रिय हो गया है।
 
-JSON डेटा प्रोसेसिंग को करने से पहले, यह जानना जरूरी है कि इसका इस्तेमाल डेटा को आसान और संरचित रूप में संगठित करने के लिए होता है। यह डेटा इंटरएक्शन को सरल बनाने के लिए एक प्रैसेसिंग टूल के रूप में भी काम करता है।
-
-## कैसे करें
-
+## कैसे करें:
 ```C
 #include <stdio.h>
 #include <stdlib.h>
-#include <json-c/json.h>
+#include <json.h>
 
-int main(){
-  // डेटा बनाएं
-  json_object *sample_data = json_object_new_object();
-  json_object *name = json_object_new_string("John Doe");
-  json_object *age = json_object_new_int(25);
-  json_object *is_married = json_object_new_boolean(false);
-
-  // डेटा को प्रिंट करें
-  printf("नाम: %s \nउम्र: %d \nशादीशुदा: %s", json_object_get_string(name), 
-                                        json_object_get_int(age), 
-                                        json_object_get_boolean(is_married) ? "हां": "नहीं");
-
-  // डेटा को फ्री करें
-  json_object_put(name);
-  json_object_put(age);
-  json_object_put(is_married);
-  json_object_put(sample_data);
-
+int main()
+{
+  // Sample JSON data
+  char *json_data = "{ \"name\": \"John Smith\", \"age\": 30, \"city\": \"New York\" }";
+  
+  // Parsing the JSON data
+  json_value* value = json_parse(json_data, strlen(json_data));
+  
+  // Printing the parsed data
+  printf("Name: %s\n", json_stringify(value->u.object.values[0].value));
+  printf("Age: %d\n", value->u.object.values[1].value->u.integer); 
+  printf("City: %s\n", json_stringify(value->u.object.values[2].value));
+  
   return 0;
 }
 ```
+```
+Output:
+Name: John Smith
+Age: 30
+City: New York
+```
 
-आप ऊपर दिए गए कोड ब्लॉक को कॉपी-पेस्ट करके, एक प्रोग्राम चला सकते हैं जो नाम, उम्र और शादीशुदा होने की स्थिति के साथ एक्सट्रैक्ट किए गए जेसन डेटा को प्रिंट करेगा।
+## गहराई में जाएं:
+JSON एक लाइटवेट और आसान फॉर्मेट है जो गणनीय तरीके से डाटा को स्टोर और ट्रांसपोर्ट करने के लिए डिज़ाइन किया गया है। यह वर्तमान में वेब डेवलपमेंट और अन्य डेटा संबंधित डिवेलपमेंट्स में एक स्टैण्डर्ड बना हुआ है। इसका प्रयोग करने के लिए अन्य विकल्प भी उपलब्ध हैं जैसे XML, CSV आदि, लेकिन JSON किसी भी प्रोग्रामिंग भाषा में सरलता से इम्प्लीमेंट किया जा सकता है और यह लाइटवेट और पढ़ने में आसान होता है।
 
-## गहराई में समझें
-
-जब आप जेसन दो या अधिक ऑब्जेक्ट्स को कम्पाइल करते हैं, तो आपको जेसन कोडिंग प्रणाली को समझने की आवश्यकता होती है। जेसन-सी बाइंडिंग आपको एक प्रोग्रामिंग भाषा की तरह डेटा को स्ट्रक्चरली बनाएं और एक पहनावा बेंट को इंटरफेस करता है। इसमें, आप जेसन जावास्क्रिप्ट से भिन्न होते हैं जो ब्राउज़र या वेबसाइट में उपयोग किया जाता है।
-
-## इस आलेख को और भी देखें
-
-- [JSON-सी गाइड](https://github.com/json-c/json-c/wiki)
-- [ज
+## और देखें:
+- [JSON के बारे में और जानें](https://www.json.org/json-en.html)
+- [C में JSON पार्सिंग कैसे करें?](https://www.codeproject.com/Articles/20027/JSON-Serialization-and-Deserialization-in-C)
+- [JSON पर JSON प्रोजेक्ट](https://github.com/json-c/json-c)

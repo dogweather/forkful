@@ -1,7 +1,7 @@
 ---
-title:                "Uttrekk av delstrenger"
-html_title:           "Swift: Uttrekk av delstrenger"
-simple_title:         "Uttrekk av delstrenger"
+title:                "Utvinne delstrenger"
+html_title:           "Swift: Utvinne delstrenger"
+simple_title:         "Utvinne delstrenger"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -10,41 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hva & Hvorfor?
+Hva er egentlig uttrekking av substringer? Kort sagt, det er å få tak i deler av en tekststreng i et program. Det kan være nyttig når du for eksempel ønsker å manipulere en del av en tekst eller hente ut spesifikk informasjon fra en større tekststreng. Programmerere bruker dette ofte for å gjøre koden sin mer effektiv og for å automatisere handlinger som ellers ville tatt mye tid og krefter å gjøre manuelt.
 
-Du har sannsynligvis støtt på et scenario hvor du trenger å hente ut en del av en tekststreng. Dette er hvor substring-ekstraksjon kommer inn i bildet. Det lar deg enkelt få tilgang til og manipulere en del av en tekststreng, noe som kan være nyttig i mange programmeringsscenarier.
-
-## Slik gjør du det
-
-For å ekstrahere en substring i Swift, kan du bruke den innebygde funksjonen `prefix`, `suffix` eller `range`. La oss se på et eksempel hvor vi skal hente ut delen av en tekststreng som begynner på indeks 3 og går til indeks 6:
+## Hvordan:
+For å uttrekke en substring i Swift, bruker vi funksjonen ```substring(from: )```. Her er et eksempel som viser hvordan vi kan bruke denne funksjonen for å få tak i delen av teksten "verden" fra strengen "Hei verden!":
 
 ```Swift
-let tekst = "Hei, dette er en tekststreng"
-let startIndeks = tekst.index(tekst.startIndex, offsetBy: 3)
-let sluttIndeks = tekst.index(tekst.startIndex, offsetBy: 6)
-let subTekst = tekst[startIndeks...sluttIndeks]
-
-print(subTekst) // Resultat: "dett"
+let tekst = "Hei verden!"
+let substring = tekst.substring(from: 4)
+print(substring)
 ```
 
-I dette eksempelet bruker vi `index`-metoden til å finne start- og sluttpunktene for vår substring. Deretter bruker vi disse indeksene til å hente ut selve substringen fra den opprinnelige tekststrengen. Hvis vi ønsker å ha et mer fleksibelt område, kan vi også bruke en `range` i stedet for å spesifisere eksplisitte indekser. For eksempel, hvis vi bare vil ha de første tre ordene i tekststrengen, kan vi gjøre følgende:
+Output:
+```verden!```
+
+Som du ser, så teller vi starten av strengen som index 0, dermed må vi bruke tallet 4 for å få tak i "verden". Du kan også uttrekke en substring ved å angi både start- og sluttpunktet, som vist i dette eksempelet:
 
 ```Swift
-let minRange = tekst.range(of: " ", options: .backwards,
-                           range: tekst.startIndex...tekst.startIndex)
-let subTekst = tekst[..<minRange!.lowerBound]
-
-print(subTekst) // Resultat: "Hei, dette er"
+let tekst = "Blomster er fine"
+let substring = tekst.substring(from: 0, to: 7)
+print(substring)
 ```
 
-Her bruker vi `range(of:options:range:)`-metoden til å finne posisjonen til den første mellomromstegnet. Deretter bruker vi dette intervallet til å hente ut substringen fra starten av tekststrengen til mellomrommet.
+Output:
+```Blomster```
 
-## Dypdykk
+## Dykk dypere:
+Uttrekking av substringer har vært en del av programmering i lang tid, og er en vanlig funksjon i mange programmeringsspråk. I tillegg til å bruke ```substring(from: )``` i Swift, kan du også bruke ```prefix(_:)``` og ```suffix(_:)``` for å uttrekke deler av en streng basert på begynnelsen eller slutten av teksten. Det finnes også forskjellige algoritmer og metoder som kan brukes for å uttrekke substringer, avhengig av hva slags oppgave du ønsker å løse.
 
-Hvis du ønsker å lære mer om hvordan Swift behandler substrings, kan du sjekke ut dokumentasjonen for `StringProtocol`-protokollen. Dette er protokollen som alle strenger i Swift implementerer, og den har mange nyttige metoder for å jobbe med substrings. Du kan også lese mer om manipulasjon av tekst i Swift i ["Strings and Characters" av Swift Programming Language Guide](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html). 
+## Se også:
+Hvis du ønsker å lære mer om uttrekking av substringer i Swift, kan du sjekke ut disse ressursene:
 
-## Se Også
-
-- [Swift String API Reference](https://developer.apple.com/documentation/swift/string)
-- [Swift Programming Language Guide](https://docs.swift.org/swift-book/)
-- [Playground eksempel på substring ekstraksjon](https://developer.apple.com/library/archive/documentation/Swift/Conceptual/Swift_Programming_Language/GuidedTour.html)
+* [Apple-dokumentasjon: Substrings](https://developer.apple.com/documentation/swift/string/2894564-substring)
+* [Swift by Example: Strings](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#ID265)
+* [Ray Wenderlich: Substrings in Swift](https://www.raywenderlich.com/221-swift-3-strings-and-characters)

@@ -10,62 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
+# 什么是字符串连接及为什么程序员要这么做？
 
-当我们需要将几个字符串合并成一个大字符串时，就需要使用concatenation（字符串拼接）功能。这在编写程序时非常有用，特别是在处理文本数据时。
+字符串连接是将两个或多个字符串合并成一个字符串的过程。程序员通常会这样做是因为在编程过程中，需要将多个字符串一起使用来创建新的字符串或者从数据库或文件中读取数据。
 
-## 怎样做
+# 如何实现字符串连接？
 
-要使用Haskell中的字符串拼接功能，我们可以使用"++"操作符。下面是一个简单的例子：
-
-```Haskell
-myString = "Hello" ++ "World"
-```
-
-这将创建一个新的字符串，"HelloWorld"，并将其赋值给myString变量。我们也可以将多个字符串连接在一起：
+在Haskell中，使用`++`操作符来连接字符串。下面是一个简单的例子：
 
 ```Haskell
-combinedString = "I" ++ " " ++ "love" ++ " " ++ "Haskell!"
+"Hello" ++ " " ++ "World"
 ```
 
-这将创建一个新的字符串，"I love Haskell!"，并将其赋值给combinedString变量。请注意，我们需要使用空格字符串来确保单词之间有空格。
+该代码将会输出`Hello World`。
 
-我们也可以使用函数来拼接字符串。比如，函数`concat`可以将列表中的所有字符串连接在一起：
+# 深入探讨
 
-```Haskell
-myList = ["I", "love", "Haskell!"]
-combinedString = concat myList
-```
+## 历史背景
 
-在这个例子中，combinedString的值将是"I love Haskell!"。
+字符串连接在编程中一直是一个必要的操作，因为程序员需要将多个字符串合并成一个。在早期的编程语言中，通常需要使用特定的函数来完成这个操作。但是Haskell提供了更简便的方法，使得字符串连接更加易于实现。
 
-## 深入了解
+## 替代方法
 
-除了使用"++"操作符和`concat`函数之外，Haskell还提供了其他一些方法来拼接字符串。比如，我们可以使用`intercalate`函数来在字符串列表中插入一个分隔符：
+除了`++`操作符外，在Haskell中也可以使用`concat`函数来实现字符串连接。这个函数接受一个包含多个字符串的列表作为参数，并将它们连接成一个字符串。
 
-```Haskell
-myList = ["apple", "banana", "orange"]
-combinedString = intercalate ", " myList
-```
+## 实现细节
 
-这将创建一个新的字符串，"apple, banana, orange"，并将其赋值给combinedString变量。
+在Haskell中，字符串是由字符的列表组成的，因此可以使用列表操作来实现字符串连接。`++`操作符实际上是将两个字符串的字符列表合并成一个新的字符列表。通过这种方式，可以避免重新分配内存空间，提高程序执行的效率。
 
-我们还可以使用`foldl`或`foldr`函数来在字符串列表中添加一些额外的逻辑。比如，我们可以使用`foldl`函数来计算字符串列表中所有字符串的长度，并将它们连接在一起：
+# 查看相关资料
 
-```Haskell
-myList = ["Hello", "World", "!"]
-combinedString = foldl (\acc x -> acc ++ " " ++ show (length x)) "" myList
-```
-
-在这个例子中，combinedString的值将是"5 5 1"，因为Hello有5个字符，World有5个字符，而"!"只有1个字符。
-
-## 参考资料
-
-- [Haskell的字符串文档](https://haskell.org/tutorial/strings.html)
-- [Haskell的字符串函数](https://hackage.haskell.org/package/base-4.15.0.0/docs/Data-List.html)
-- [Haskell的fold函数](https://hackage.haskell.org/package/base-4.15.0.0/docs/Prelude.html#v:foldl)
-
-## 参见
-
-- [Haskell的基础知识](https://www.hellohaskell.com/)
-- [Haskell的字符串处理教程](https://www.tutorialspoint.com/haskell/haskell_strings.htm)
+- [Haskell字符串操作教程](https://www.tutorialspoint.com/haskell/string_operations_in_haskell.htm)
+- [Haskell官方文档](https://www.haskell.org/documentation/)

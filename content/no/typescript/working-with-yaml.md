@@ -1,7 +1,7 @@
 ---
-title:                "Arbeid med yaml"
-html_title:           "TypeScript: Arbeid med yaml"
-simple_title:         "Arbeid med yaml"
+title:                "Å jobbe med yaml"
+html_title:           "TypeScript: Å jobbe med yaml"
+simple_title:         "Å jobbe med yaml"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Data Formats and Serialization"
@@ -10,47 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
-YAML (YAML Ain't Markup Language) er et tekstbasert format som brukes til å lagre og utveksle data. Det er enklere å lese og skrive enn andre dataformater som JSON, og er derfor populært blant utviklere og systemadministratorer som ønsker en mer leservennlig måte å lagre data på.
+## Hva & Hvorfor?
+YAML er et tekstformat som brukes til å representere data strukturer på en enkel og lesbar måte. Programmere bruker YAML fordi det er enklere å lese og skrive sammenlignet med andre tekstformater som XML og JSON.
 
-## Slik gjør du det
-For å kunne jobbe med YAML i TypeScript må du først installere en YAML-pakke fra npm. Det finnes flere ulike pakker å velge mellom, men en populær og godt dokumentert pakke er "js-yaml".
-
-For å bruke "js-yaml" i et TypeScript-prosjekt, må du først installere pakken ved å kjøre følgende kommando i terminalen:
+## Hvordan:
 ```TypeScript
-npm install js-yaml
+import YAML from 'yaml';
+
+// Definerer en YAML-streng
+const yamlString: string = `
+  bruker:
+    navn: John
+    alder: 30
+    kjønn: Mann
+`;
+
+// Konverterer YAML-strengen til et JSON-objekt
+const result = YAML.parse(yamlString);
+console.log(result);
+// Output: { bruker: { navn: 'John', alder: '30', kjønn: 'Mann' } }
 ```
 
-Deretter kan du importere pakken i TypeScript-filen din:
-```TypeScript
-import * as yaml from 'js-yaml';
-```
+## Dypdykk:
+YAML står for "YAML Ain't Markup Language" og ble først publisert i 2001 av Clark Evans. Det er et enkelt og leselig format som er ideelt for å representere konfigurasjonsfiler og metadata. Alternativene til YAML inkluderer XML og JSON, men YAML er vanligvis foretrukket på grunn av sin enkelhet og lesbarhet. I TypeScript kan man bruke "yaml" pakken for å lese og skrive YAML-filer.
 
-For å lese en YAML-fil med "js-yaml", kan du bruke følgende kode:
-```TypeScript
-const fileContents = fs.readFileSync('data.yaml', 'utf8');
-const data = yaml.load(fileContents);
-console.log(data);
-```
-
-For å skrive til en YAML-fil med "js-yaml", kan du bruke følgende kode:
-```TypeScript
-const data = {
-  name: 'John',
-  age: 30,
-  hobbies: ['programming', 'reading', 'hiking']
-};
-
-const yamlString = yaml.dump(data);
-fs.writeFileSync('data.yaml', yamlString);
-```
-
-## Dypdykk
-YAML er et hierarkisk format som er bygget opp av nøkler og verdier. Det brukes ofte til å konfigurere programmer og til å lagre datastrukturer. I TypeScript kan man arbeide med YAML ved hjelp av "js-yaml"-pakken, og få tilgang til alle nøkler og verdier i filen ved å bruke objektmetoden "load()". Man kan også konvertere JavaScript-objekter til YAML-format ved hjelp av "dump()" -metoden.
-
-En praktisk funksjon ved YAML er at man kan inkludere andre YAML-filer i en eksisterende YAML-fil ved hjelp av "<<"-operatoren. Dette gjør det mulig å lage gjenbrukbare YAML-konfigurasjonsfiler som kan brukes i ulike programmer.
-
-## Se også
-- [js-yaml dokumentasjon](https://www.npmjs.com/package/js-yaml)
-- [YAML spesifikasjon](https://yaml.org/spec/)
-- [TypeScript dokumentasjon](https://www.typescriptlang.org/docs/home.html)
+## Se også:
+- [YAML offisiell hjemmeside](https://yaml.org/)
+- [TypeScript offisiell hjemmeside](https://www.typescriptlang.org/)

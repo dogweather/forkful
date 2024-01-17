@@ -10,45 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
 
-Att konvertera ett datum till en sträng är en vanlig uppgift för många Javascript-utvecklare, då det ofta behövs för att visa ett datum på ett tydligt sätt i en applikation eller webbsida.
+När vi pratar om att konvertera ett datum till en sträng i Javascript, så syftar vi på att ändra formatet på datumet från ett numeriskt värde till en läsbar textsträng. Detta görs oftast när vi vill presentera datum på ett mer lättförståeligt sätt för användaren. 
 
-Att använda Javascript för att konvertera ett datum till en sträng ger också flexibilitet för utvecklare och möjliggör anpassning av datumformatet baserat på användarens preferenser.
+Programmerare använder denna funktion för att visa datum på ett sätt som gör det enkelt för användaren att läsa och förstå. Dessutom kan det användas för att sortera datum i en viss ordning eller för att jämföra datum i ett program.
 
-## Hur man gör det
+## Så här gör du:
 
-```Javascript
-// Skapa ett nytt datumobjekt med dagens datum
-const datum = new Date();
-
-// Använd metoderna från Date-objektet för att hämta år, månad och dag
-const år = datum.getFullYear();
-const månad = datum.getMonth() + 1; // +1 eftersom getMonth() ger nummer på månaden från 0 till 11
-const dag = datum.getDate();
-
-// Skapa en sträng med formatet YYYY-MM-DD
-const datumSträng = `${år}-${månad}-${dag}`;
-console.log(datumSträng); // Output: 2020-10-01
-```
-
-I exemplet ovan används de inbyggda metoderna i Date-objektet för att hämta det aktuella datumet och skapa en sträng i önskad format. Det går också att använda andra metoder för att få en mer detaljerad eller specifik sträng. 
-
-## Djupdykning
-
-Javascript tillåter också utvecklare att använda olika bibliotek eller ramverk för att hantera datumkonverteringar. Ett populärt val är biblioteket moment.js, som har en mängd olika funktioner för att arbeta med datum. 
+För att konvertera ett datum till en sträng i Javascript kan vi använda inbyggda funktioner som `toISOString()` eller `toLocaleString()`. Här är ett exempel på hur man använder `toLocaleString()` för att konvertera ett datum till en textsträng:
 
 ```Javascript
-// Använda moment.js för att få en lokaliserad sträng baserat på användarens språkinställning
-moment.locale('sv');
-// Konvertera ett datum till en sträng i det svenska formatet
-const datumSträng = moment().format('LL');
-console.log(datumSträng); // Output: 1 oktober 2020
+let today = new Date(); // skapar ett nytt datumobjekt
+let stringDate = today.toLocaleString(); // konverterar datumet till en sträng
+console.log(stringDate); // output: "YYYY-MM-DD HH:mm:ss" 
 ```
 
-Att använda ett bibliotek som moment.js kan underlätta arbete med datum och ger utvecklare fler möjligheter att anpassa och formatera datum på ett enkelt sätt.
+Om du önskar ett annat format på din datumsträng, kan du specificera önskad formatering med hjälp av en `options` parameter. Nedan är ett exempel på en konvertering med en specifik formatmall:
 
-## Se även
+```Javascript
+let today = new Date();
+let options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }; // specifierar formatmall
+let stringDate = today.toLocaleString('sv-SE', options); // konverterar datumet till en sträng med formatmallen
+console.log(stringDate); // output: "Tisdag, 2 februari 2021"
+```
 
-- [Moment.js dokumentation](https://momentjs.com/docs/)
-- [Date-objektet på MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
+## Djupdykning:
+
+Historiskt sett har det funnits olika sätt att representera och presentera datum i olika länder och kulturer. Detta har lett till utvecklingen av standarder som ISO 8601 som används för att förenkla kommunikationen av datum över gränser. Därför är `toISOString()` enligt denna standard och ger alltid ett datum i formatet "YYYY-MM-DDTHH:mm:ss.sssZ". 
+
+I vissa fall kan det vara lättare att hantera datum som numeriska värden, som antalet millisekunder som förflutit sedan Epoch (1 januari 1970). Då kan man använda funktionen `new Date()` för att konvertera dessa värden till ett datumobjekt och sedan använda sig av ovanstående metoder för att omvandla det till en sträng.
+
+Om du behöver mer flexibilitet i formateringen av datumsträngen kan du också använda dig av tredjepartsbibliotek som Moment.js eller Day.js som ger fler alternativ och möjligheter att anpassa formateringen efter dina behov.
+
+## Se även:
+
+- [JS Date Object - W3Schools](https://www.w3schools.com/jsref/jsref_obj_date.asp)
+- [Date - MDN web docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [ISO 8601 Date - Wikipedia](https://en.wikipedia.org/wiki/ISO_8601)

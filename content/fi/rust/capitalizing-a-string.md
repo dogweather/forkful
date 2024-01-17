@@ -1,7 +1,7 @@
 ---
-title:                "Merkkijonon muuttaminen isoiksi kirjaimiksi"
-html_title:           "Rust: Merkkijonon muuttaminen isoiksi kirjaimiksi"
-simple_title:         "Merkkijonon muuttaminen isoiksi kirjaimiksi"
+title:                "Stringin ensimmäisten kirjainten merkitys"
+html_title:           "Rust: Stringin ensimmäisten kirjainten merkitys"
+simple_title:         "Stringin ensimmäisten kirjainten merkitys"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -10,37 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+Mitä & Miksi?
+Tekstijonojen muuttaminen isolla alkukirjaimella viittaa siihen, että kaikki jonojen ensimmäiset kirjaimet muutetaan isoksi. Ohjelmoijat tekevät tätä yleensä yhdenmukaistamaan ja helpottamaan jonojen vertailua ja käsittelyä.
 
-Miksi ihmiset haluavat muuttaa stringin ensimmäisen kirjaimen isoksi? Tämä voi olla tarpeen esimerkiksi, jos halutaan noudattaa tiettyä nimeämiskäytäntöä tai korostaa tiettyä sanaa lauseessa.
-
-## Miten
-
-Capitalizing stringin Rustissa on helppoa! Ensimmäinen askel on tuoda käyttöön standardikirjaston `String` moduli, jotta voimme käyttää sen metodeja. Sitten käytämme `to_uppercase` -metodia muuttaaksemme stringin ensimmäisen kirjaimen isoksi. Tässä yksinkertainen esimerkki:
+Kuinka:
+Esimerkki 1:
 
 ```Rust
-use std::string::String;
-
-let s = String::from("hello rust");
-let capitalized = s.to_uppercase();
-
-println!("{}", capitalized); // Tulostaa "HELLO RUST"
+let string = "tämä on tekstijono";
+let capitalized_string = string.to_uppercase();
+println!("Alkuperäinen jono: {}", string);
+println!("Isolla alkukirjaimella: {}", capitalized_string);
+```
+Output:
+```
+Alkuperäinen jono: tämä on tekstijono
+Isolla alkukirjaimella: TÄMÄ ON TEKSTIJONO
 ```
 
-## Syvällinen sukellus
-
-Vaikka `to_uppercase` on kätevä tapa muuttaa stringin ensimmäinen kirjain isoksi, on tärkeää huomata, että tämä metodi ei tule muuttamaan stringin alkuperäistä arvoa. Sen sijaan se palauttaa uuden `String` -olion, joka sisältää muutetun version.
-
-Lisäksi, jos haluat muuttaa vain yksittäisen stringin kirjaimen isoksi, voit käyttää `to_uppercase` metodia suoraan merkin `char` kanssa.
-
+Esimerkki 2:
 ```Rust
-let c = 'a';
-let capitalized_char = c.to_uppercase();
+fn capitalize(string: &str) -> String {
+    let mut new_string = String::from(string);
+    new_string.replace_range(0..1, &string[0..1].to_uppercase());
+    new_string
+}
 
-println!("{}", capitalized_char); // Tulostaa "A"
+println!("{}", capitalize("tämä on toinen esimerkki"));
 ```
 
-## Katso myös
+Output:
+```
+"Tämä on toinen esimerkki"
+```
 
-- [Rust Standard Library](https://doc.rust-lang.org/std/string/index.html)
-- [to_uppercase - Dokumentointi](https://doc.rust-lang.org/std/string/struct.String.html#method.to_uppercase)
+Deep Dive:
+Tekstijonojen muuttaminen isolla alkukirjaimella on osa laajempaa tietojen käsittelyä ohjelmoinnissa. Se auttaa yhdenmukaistamaan erilaisia tietoja ja helpottamaan niiden vertailua ja käsittelyä. Tekniikka on ollut käytössä jo pitkään ja sitä käytetään eri ohjelmointikielissä.
+
+Vaihtoehtoisia tapoja muuttaa tekstijonoja isolla alkukirjaimella on esimerkiksi käyttää merkkijonoitten manipulointiin tarkoitettuja kirjastoja tai itse kirjoittaa algoritmi, joka tekee muutokset. Rustissa on valmiita toimintoja, kuten `to_uppercase()`, jotka helpottavat tätä.
+
+Tekstiä käsiteltäessä Rustissa on hyvä tietää, että merkkijonojen sisältämä data on pitkälti muuttumaton. Tämä tarkoittaa sitä, että kun muokkausoperaatio tehdään merkkijonolle, siitä ei luoda uutta kopioita vaan tehdään muutokset alkuperäisessä muuttumattomassa merkkijonossa.
+
+See Also:
+- [Rust String Documentation](https://doc.rust-lang.org/std/string/struct.String.html)
+- [Rust String Methods](https://doc.rust-lang.org/std/string/struct.String.html#impl-String)
+- [Rust String Manipulation Libraries](https://crates.io/keywords/string-manipulation)

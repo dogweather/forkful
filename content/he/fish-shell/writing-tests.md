@@ -10,31 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## למה
+## מה ולמה?
+כתיבת בדיקות היא תהליך שבו מתבצעים בדיקות על קוד תוכנית כדי לוודא שהוא פועל כפי שצופה ממנו. במהלך כתיבת הקוד, מתבצעות תיקונים ושינויים, ולכן חשוב לבדוק כי הקוד עדיין עובד כפי שצריך גם אחרי השינויים הללו.
 
-כדי לוודא שהקוד שלנו עובד כמו שצריך ולהפסיק טעויות עתידיות.
+## איך לעשות?
+בדיקות גולש בעזרת סביבת הפיתוח Fish Shell הוא תהליך פשוט ויעיל. הנה כמה דוגמאות של קוד בשפת Fish Shell והתוצאות שיעזרו לכם להבין טוב יותר:
 
-## איך לכתוב ב Fish Shell
-```Fish Shell
-function test -d "This is a fish test"
-  echo "This is a test."
+```fish
+# בדיקת האם קיים קובץ
+if test -f file.txt
+    echo "הקובץ קיים"
+else
+    echo "הקובץ לא קיים"
 end
 ```
 
-```Fish Shell
-test
+```fish
+# בדיקת האם מספר המשתמשים גדול מ-5
+if test (count (ls /home)) -gt 5
+    echo "יש יותר מ-5 משתמשים"
+else 
+    echo "פחות או שווה ל-5 משתמשים"
+end
 ```
 
-```Fish Shell
-Expected Output: "This is a test."
-Actual Output: "This is a test."
-```
+## צלילה עמוקה
+כתיבת בדיקות קיימת כבר עשרות שנים והיא נחשבת לשיטה נפוצה לבדיקת קוד תוכנה. ישנן גם שפות תכנות אחרות שמציעות פלטפורמה נוחה יותר לכתיבת בדיקות גולש, כגון Python ו-Java. פלטפורמת Fish Shell מציעה מגוון כלים ופקודות שלא רק מקלות על כתיבת הבדיקות, אלא גם מאפשרות לתת תוצאות מדויקות יותר.
 
-## התעמקות
-
-כתיבת בדיקות היא חלק חשוב מתהליך הפיתוח ויכולה לעזור לנו למצוא באופן מהיר את הבעיות בקוד שלנו. כתיבת טסטים מאפשרת לנו גם להדגים לאנשים אחרים איך להשתמש בקוד שלנו ומה הפלט המצופה שלו.
-
-## ראה גם
-
-* [כתיבת טסטים ב Fish Shell על ידי טיול באוניברסיטה](https://fishshell.com/docs/current/tutorial.html#writing-tests)
-* [מדריך מלא ל Fish Shell](https://fishshell.com/docs/current/index.html)
+## ראו גם
+בלינקים שלמטה תמצאו מידע נוסף על כתיבת בדיקות ושימוש בפלטפורמת Fish Shell:
+- [מדריך בסיסי לכתיבת בדיקות בשפת Fish Shell](https://fishshell.org/docs/current/Tutorial.html#tut_tests)
+- [מאמר על היתרונות של כתיבת בדיקות ושימוש בפיתוח תוכנה](https://martinfowler.com/articles/testing-cultures.html)
+- [אתר הרשמי של Fish Shell](https://fishshell.org/)

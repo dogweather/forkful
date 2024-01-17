@@ -1,7 +1,7 @@
 ---
-title:                "コンピュータープログラミングの記事のタイトル:「コマンドライン引数を読む」"
-html_title:           "PHP: コンピュータープログラミングの記事のタイトル:「コマンドライン引数を読む」"
-simple_title:         "コンピュータープログラミングの記事のタイトル:「コマンドライン引数を読む」"
+title:                "コンピュータプログラミングの記事タイトル：コマンドライン引数の読み取り"
+html_title:           "PHP: コンピュータプログラミングの記事タイトル：コマンドライン引数の読み取り"
+simple_title:         "コンピュータプログラミングの記事タイトル：コマンドライン引数の読み取り"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Files and I/O"
@@ -10,59 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜCLI引数を読む必要があるのか
+## 何？なぜ？
+コマンドライン引数を読み取ることは、PHPプログラマーにとって非常に重要です。コマンドライン引数とは、PHPスクリプトに渡されるコマンドライン上のパラメーターのことです。プログラマーはこれを行うことで、ユーザーからの入力を受け取り、それに基づいてスクリプトの動作を制御することができます。
 
-CLI引数を読むことは、ユーザーから入力を受け取るために非常に便利です。例えば、スクリプトを起動するときに様々なオプションやパラメーターを指定できます。これにより、より柔軟なプログラムを作成することができます。
+## 方法：
+PHPの```argv```変数を使用して、コマンドライン引数を読み取ることができます。以下の例では、コマンドライン上で指定した数値を加算するプログラムを作成します。
 
-## CLI引数を読む方法
+```php
+// PHPスクリプトを実行する際、引数を指定します
+// 例：php add.php 3 4
 
-CLI引数を読むには、`$argv`配列を使用します。以下のコードを参考にしてください。
-
-```PHP
 <?php
-// 引数が渡されたかを確認
-if (isset($argv[1])) {
-    // 第1引数を出力
-    echo "Hello, " . $argv[1] . "!";
-} else {
-    echo "Hello, world!";
-}
-
-// 結果例：
-// $ php script.php John
-// Hello, John!
-// $ php script.php
-// Hello, world!
+// コマンドライン引数を読み取る
+$num1 = $argv[1];
+$num2 = $argv[2];
+// 加算する
+$result = $num1 + $num2;
+echo "Result: " . $result . "\n";
+?>
 ```
 
-## 深堀り
+上記の例では、コマンドライン上で```php add.php 3 4```というコマンドを実行することで、結果として```Result: 7```が出力されます。
 
-CLI引数には、長いオプション名と短いオプション名の両方を指定することができます。長いオプション名は`--`で始まる文字列で指定します。短いオプション名は`-`で始まる文字で指定します。
+## 詳細：
+コマンドライン引数を読み取る方法はPHP以外にもあります。例えば、```$_SERVER['argv']```を使用することもできます。また、コマンドラインオプションを解析するためのライブラリも存在します。
 
-また、CLI引数をパースするために`getopt()`関数を使用することもできます。これにより、引数の順序に依存せずにオプションが読み取られます。以下のコードを参考にしてください。
+PHPでは、コマンドライン引数が```argv```変数として提供されます。この変数には、コマンドライン上の引数が配列として格納されます。最初の要素には実行したスクリプト名が含まれ、その後の要素にはコマンドライン上で指定した引数が順番に格納されます。
 
-```PHP
-<?php
-// オプションやパラメーターを指定
-$options = getopt("l:n:");
-
-// オプションが指定された場合は値を出力
-if (isset($options['l'])) {
-    echo "Language: " . $options['l'];
-}
-
-// パラメーターが指定された場合は値を出力
-if (isset($options['n'])) {
-    echo "Name: " . $options['n'];
-}
-
-// 結果例：
-// $ php script.php -l PHP -n John
-// Language: PHP
-// Name: John
-```
-
-## 他に見るべきもの
-
-- [PHP CLI引数ドキュメント](https://www.php.net/manual/ja/features.commandline.php)
-- [getopt()関数ドキュメント](https://www.php.net/manual/ja/function.getopt.php)
+## 関連情報：
+- [PHP: コマンドラインサポート](https://www.php.net/manual/ja/features.commandline.php)
+- [PHP: 配列](https://www.php.net/manual/ja/language.types.array.php)
+- [PHP: コマンドラインオプション解析](https://www.php.net/manual/ja/function.getopt.php)

@@ -1,7 +1,7 @@
 ---
-title:                "Web-sivun lataaminen"
-html_title:           "Gleam: Web-sivun lataaminen"
-simple_title:         "Web-sivun lataaminen"
+title:                "Verkkosivun lataaminen"
+html_title:           "Gleam: Verkkosivun lataaminen"
+simple_title:         "Verkkosivun lataaminen"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "HTML and the Web"
@@ -10,29 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+# Mitä & Miksi?
+Kun puhutaan verkkosivun lataamisesta, tarkoitetaan sitä, että tietokone hakee ja näyttää tietyn verkkosivun sisällön käyttäjälle. Tähän voi sisältyä esimerkiksi kuvien, tekstien ja HTML-koodin lataaminen. Näin verkkosivuilla oleva tieto saadaan näkyviin ja käsiteltäväksi.
 
-Miksi haluaisit ladata verkkosivun? Ehkä työskentelet webskraping-projektissa tai haluat vain tallentaa sivun myöhempää käyttöä varten. Riippumatta syystä, Gleam tarjoaa helpon ja tehokkaan tavan ladata verkkosivuja.
+Ohjelmoijat lataavat verkkosivuja useista eri syistä. Se voi auttaa heitä keräämään dataa, kuten uutisia, ja työstämään sitä edelleen. Lisäksi se voi myös auttaa heitä testaamaan sivujen toimivuutta ja tarkistamaan virheitä. Yleisesti ottaen verkkosivujen lataaminen on välttämätöntä monille ohjelmointitoiminnoille, jotka liittyvät uusimpien tietojen käyttämiseen ja käsittelemiseen.
 
-## Kuinka
+## Miten:
+Jos haluat ladata verkkosivun Gleamilla, sinun tulee käyttää moduulia `http_` ja sen toimintoa `get`. Tämä lähettää HTTP GET -pyynnön määrittämäsi URL-osoitteeseen ja palauttaa vastauksen sekä mahdollisen virhekoodin. Seuraava koodi esimerkki näyttää, miten tämä tapahtuu:
+```
+Gleam import http_
 
-Annamme sinulle esimerkin kuinka ladata verkkosivu käyttäen Gleamia:
+let response =
+    http_.get("https://www.example.com")
 
-```Gleam import Html download
-  
-  url = "https://www.example.com"
-  response = Html.download(url)
-  page = response.body
-  print(page)
+case response {
+    Ok(resp) -> {
+        // käsittele vastaus tässä
+    }
+    Error(code) -> {
+        // käsittele virhekoodi tässä
+    }
+}
 ```
 
-Tämä palauttaa sivun HTML-koodin ja tulostaa sen konsoliin.
+Jos kaikki onnistuu, vastauksena saat `Ok` -arvon mukana kaikki tarvittavat tiedot, kuten HTTP-tilakoodin, otsikot ja vastauksen rungon. Sen sijaan, jos vastaanotat virhekoodin, se tulee `Error` -arvon mukana ja voit käsitellä sen haluamallasi tavalla.
 
-## Syvällinen tarkastelu
+## Syvällinen sukellus:
+HTTP-pyyntöjen lähettämiseen on olemassa useita vaihtoehtoja, kuten `httpc` ja `hackney` -moduulit. Nämä tarjoavat lisäominaisuuksia ja mukavampia tapoja käsitellä vastauksia.
 
-Gleamilla on erityisiä toimintoja, kuten `download_with_timeout` ja `download_with_headers`, jotka antavat sinun säätää latausprosessia. Voit myös käyttää `download_to_file` tallentaaksesi sivun suoraan tiedostoon.
+Verkkosivujen lataamiseen voi myös käyttää muita tekniikoita, kuten web-skrapingia ja REST APIen kutsumista. Näitä on kuitenkin hyvä käyttää harkiten ja vastuullisesti, jotta ei aiheuteta liikaa kuormitusta ja häiriöitä kyseisellä verkkosivustolla.
 
-## Katso myös
+HTTP-kielen tausta on hyödyllistä ymmärtää syvemmin, jotta voit hyödyntää sitä tehokkaasti. HTTP on protokolla, jota käytetään kommunikoimaan tietokoneiden välillä, jotta tiedot voidaan välittää selaimillemme. Se on myös perusta monille muille internetin tekniikoille, kuten web-selainohjelmoinnille ja web-sivustojen toiminnalle.
 
-- [Gleamin virallinen dokumentaatio](https://gleam.run/documentation/)
-- [Codecademyn opetusohjelma Gleamista](https://www.codecademy.com/learn/learn-gleam)
+## Katso myös:
+- HTTP-moodulin dokumentaatiot: https://gleam.run/modules/http.
+- Katso esimerkkejä HTTP-pyyntöjen lähettämisestä: https://github.com/gleam-lang/gleam_stdlib_examples/tree/master/http.

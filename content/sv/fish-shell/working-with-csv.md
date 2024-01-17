@@ -1,7 +1,7 @@
 ---
-title:                "Att arbeta med csv"
-html_title:           "Fish Shell: Att arbeta med csv"
-simple_title:         "Att arbeta med csv"
+title:                "Arbeta med csv"
+html_title:           "Fish Shell: Arbeta med csv"
+simple_title:         "Arbeta med csv"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Data Formats and Serialization"
@@ -10,41 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+# Vad & Varför?
+CSV står för Comma Separated Values och är ett vanligt filformat som används för att lagra tabelldata. Det används ofta av programmerare för att hantera och manipulera stora mängder data på ett enkelt sätt. Det är också ett vanligt format för att exportera och importera data mellan olika program.
 
-CSV (Comma Separated Values) är en vanligt använd format för att lagra och dela data. Genom att kunna hantera CSV i Fish Shell kan du enkelt hantera och manipulera datafiler utan att behöva använda andra program eller verktyg.
+# Hur?
+Fish Shell innehåller inbyggda funktioner som gör det enkelt att arbeta med CSV-filer. Här är några exempel på hur du kan använda Fish Shell för att hantera CSV-data:
 
-## Hur man gör
-
-För att arbeta med CSV i Fish Shell behöver du först installera ett tillägg, som heter "csv", med hjälp av "fisher" pakethanteraren. Använd följande kommando:
-
+### Skriv ut en CSV-fil
 ```Fish Shell
-fisher install csv
+cat file.csv
 ```
+Detta kommer att skriva ut innehållet i filen "file.csv" i konsolen.
 
-När tillägget är installerat kan du börja använda kommandon som är speciellt utformade för att hantera CSV-filer. Här är ett exempel på hur man läser och visar innehållet i en CSV-fil:
-
+### Sortera en CSV-fil
 ```Fish Shell
-csv read sample.csv | csv pretty
+sort -k 2 file.csv
 ```
+Detta kommer att sortera filen "file.csv" baserat på andra kolumnen och skriva ut den nya ordningen i konsolen.
 
-Det här kommandot läser filen "sample.csv" och visar innehållet i ett läsbart format. Du kan också använda "csv clean" kommandot för att ta bort onödiga rader eller kolumner från en CSV-fil.
-
-## Djupdykning
-
-För att utföra avancerade operationer på CSV-filer, kan du använda "csv" tilläggets inbyggda funktioner. Med "csv select" kommandot kan du filtrera data baserat på specifika kriterier. Här är ett exempel på hur man väljer rader från en CSV-fil baserat på ett visst värde i en viss kolumn:
-
+### Välj specifika kolumner
 ```Fish Shell
-csv select --columns "Name, Age" --where "Age = 25" sample.csv
+cut -d "," -f 1,3 file.csv
 ```
+I detta exempel väljer vi bara första och tredje kolumnen i filen "file.csv" och skriver ut dem i konsolen.
 
-"csv select" kommandot kan också användas för att sortera data och välja endast vissa kolumner enligt behov. Det finns också andra kommandon som kan användas för att manipulera och bearbeta CSV-filer i Fish Shell, som "csv merge" och "csv cut".
+# Djupdykning
+CSV-formatet har funnits sedan 1972 och är ett av de vedertagna formaten för tabelldata. Tidigare användes det främst för att överföra data mellan olika databaser, men det har nu blivit allt vanligare även för andra typer av data.
 
-## Se även
+Det finns flera andra filformat som också används för att lagra tabelldata, som t.ex. JSON och XML. Dessa format har vissa fördelar jämfört med CSV, som t.ex. att de kan hantera mer komplex data. Men för enkla tabeller är CSV fortfarande ett mycket användbart och effektivt format.
 
-För mer information om Fish Shell och dess tillägg, kolla in följande länkar:
+Fish Shell använder ett externt kommando kallat "csvkit" för att hantera CSV-filer. Detta kommando tillhandahåller olika verktyg för att hantera och manipulera CSV-data, som t.ex. "csvsort", "csvcut" och "csvgrep". Du kan läsa mer om dessa kommandon och deras användning genom att köra "man csvkit" i terminalen.
 
-- [Fish Shell Officiell Hemsida](https://fishshell.com/)
-- [Fish User Documentation](https://fishshell.com/docs/current/)
-- [Fisher Pakethanterare](https://github.com/jorgebucaran/fisher)
-- [CSV Tilläggsinformation](https://github.com/ebelitov/csv.fish)
+# Se även
+- [Fish Shell dokumentation](https://fishshell.com/docs/current/index.html)
+- [Csvkit dokumentation](https://csvkit.readthedocs.io/en/latest/)
+- [Wikipedia - CSV](https://en.wikipedia.org/wiki/Comma-separated_values)

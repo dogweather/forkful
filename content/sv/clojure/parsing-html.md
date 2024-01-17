@@ -1,7 +1,7 @@
 ---
-title:                "Dekodning av html"
-html_title:           "Clojure: Dekodning av html"
-simple_title:         "Dekodning av html"
+title:                "Parsa html"
+html_title:           "Clojure: Parsa html"
+simple_title:         "Parsa html"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "HTML and the Web"
@@ -10,44 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
-Du kanske undrar, varför skulle någon vilja lära sig att parsa HTML med Clojure? Svaret är enkelt: HTML-parsing är ett vanligt problem inom webbutveckling och med Clojure kan du enkelt hantera och behandla detta dataformat på ett effektivt sätt.
+### Vad & Varför?
+Parsing HTML är processen där man omvandlar HTML-kod till ett mer läsbart format för att kunna manipulera och använda den på ett mer flexibelt sätt. Detta är användbart för programmerare som behöver extrahera data från webbsidor eller bearbeta deras innehåll.
 
-## Hur man gör det
-För att parsa HTML med Clojure behöver du först importera biblioteket [enlive](https://github.com/cgrand/enlive/) som ger dig verktyg för att hantera och manipulera HTML-strukturer. När du väl har importerat biblioteket kan du använda funktionen `html-resource` för att hämta HTML från en URL:
+### Hur man gör det:
+```Clojure
+(require '[clojure.data.xml :as xml])
+(xml/parse-str "<h1>Hello, world!</h1>")
+```
+Detta kodexempel visar hur du kan använda Clojure's xml bibliotek för att konvertera en HTML taggsträng till en datastruktur som lätt kan bearbetas och navigeras igenom. Resultatet från ovanstående kod skulle vara en vektor som innehåller en map med attribut och ett barn som representerar innehållet av h1 taggen.
 
 ```Clojure
-(ns min-app.core
-  (:require [net.cgrand.enlive-html :as html]))
-
-(def html-tree (html/html-resource "https://example.com"))
+(xml/parse-str "<ul><li>Item 1</li><li>Item 2</li></ul>")
 ```
+Detta exempel visar hur du kan hantera mer komplexa HTML-strukturer, som en lista av element. Resultatet skulle vara en vektor av vektorer, där varje inre vektor representerar innehållet av varje li tagg.
 
-Nu har du ett HTML-träd som du kan navigera i för att hitta och extrahera den information du behöver.
+### Djupdykning:
+Medan användandet av ett xml-bibliotek är det mest vanliga sättet att parsar HTML med Clojure, finns det alternativ som kan vara bättre lämpade för vissa användningsfall. Till exempel kan du använda biblioteket Enlive för att söka igenom och manipulera HTML-dokument med hjälp av CSS-selektorer. Du kan också använda ClojureScript för att parsar HTML i front-end applikationer.
 
-En bra övning är att försöka hämta ett visst element från HTML-dokumentet, till exempel en rubrik, och spara det som en sträng:
+Det finns också mer avancerade tekniker för parsing av HTML, som använder sig av regular expressions eller parsers som bygger på grammatikregler. Dessa kan vara användbara för specifika ändamål, men kan vara överkurs för de flesta användare.
 
-```Clojure
-(def headline (html/select html-tree [:h1])) ; väljer alla h1-element
-(def headline-str (html/text (first headline))) ; sparar den första som en sträng
-```
-
-Du kan också använda en kombination av selektorer och attribut för att välja specifika element, till exempel alla länkar med en viss klass:
-
-```Clojure
-(def links (html/select html-tree [:a.class "my-link"]))
-```
-
-## Djupdykning
-En viktig del av att parsa HTML är att förstå hur selektorer fungerar. Enlive använder Clojures vektorer och map-funktioner för att välja och bearbeta element. Till exempel kan du använda `text` för att hämta texten från ett valt element, `attr` för att hämta ett attributvärde eller `html-snippet` för att hämta en del av HTML-koden.
-
-Det finns också en mängd olika funktioner för att hantera och manipulera HTML-strukturer som kan vara användbara för mer avancerad parsing.
-
-## Se även
-Här är några resurser för att fördjupa din kunskap om att parsa HTML med Clojure:
-
-- [Clojure for the Brave and True](https://www.braveclojure.com/clojure-for-the-brave-and-true/) - en utmärkt bok som täcker en mängd ämnen inom Clojure, inklusive HTML-parsing.
-- [The Clojure Enthusiast](https://clojure.org/community/enthusiast) - en community av Clojure-entusiaster som delar kunskap och resurser.
-- [Clojure for Data Science](https://clojure.org/science) - en samling av data science-tutorials på Clojure:s officiella hemsida.
-
-Lycka till med din HTML-parsing med Clojure!
+### Se även:
+- [Clojure Data Xml](https://github.com/clojure/data.xml) - det officiella xml biblioteket för Clojure.
+- [Enlive](https://github.com/cgrand/enlive) - ett HTML manipulation bibliotek som använder CSS-selektorer. 
+- [ClojureScript](https://clojurescript.org/) - ett språk som kompilerar till JavaScript, vilket gör det möjligt att använda Clojure för front-end utveckling.

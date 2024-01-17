@@ -1,7 +1,7 @@
 ---
-title:                "Lesen von Befehlszeilenargumenten"
-html_title:           "Javascript: Lesen von Befehlszeilenargumenten"
-simple_title:         "Lesen von Befehlszeilenargumenten"
+title:                "Lese Befehlszeilenargumente"
+html_title:           "Javascript: Lese Befehlszeilenargumente"
+simple_title:         "Lese Befehlszeilenargumente"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Files and I/O"
@@ -10,30 +10,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Warum
-Bist du bereit, deine Javascript-Kenntnisse auf die nächste Stufe zu bringen? Dann bist du hier genau richtig! In diesem Artikel lernst du, wie du Befehlszeilenargumente in deinem Javascript-Code lesen und nutzen kannst.
+Was & Warum?
+Das Lesen von Befehlszeilenargumenten ist eine Möglichkeit für Programmierer, externe Eingaben in ihr Skript einzubinden. Dies kann hilfreich sein, um Benutzereingaben oder Konfigurationsparameter direkt von der Kommandozeile aus abzurufen.
 
-# Wie es geht
-Um Befehlszeilenargumente in Javascript zu lesen, müssen wir die `process.argv`-Methode verwenden. Diese Methode gibt ein Array zurück, das alle Argumente enthält, die bei der Ausführung des Skripts in der Befehlszeile angegeben wurden. Ein Beispielcode könnte so aussehen:
+Wie geht's?
+In Javascript können Befehlszeilenargumente über das globale Objekt "process" gelesen werden. Das Argument-Array kann mit "process.argv" abgerufen werden. Hier ist ein Beispielcode, der das zweite Argument ausgibt:
+```Javascript
+const argument = process.argv[2];
+console.log(argument);
 ```
-Javascript
-// Beispiel für process.argv
-console.log(process.argv);
+Wenn wir diesen Code mit dem Befehl "node script.js hello" ausführen, wird "hello" als Output zurückgegeben.
 
-// Beispiel-Output wenn der folgende Befehl in der Befehlszeile ausgeführt wird:
-// node readArguments.js hello world
-// Output:
-// [ 'node', 'readArguments.js', 'hello', 'world' ]
-```
-Wie du sehen kannst, gibt es zwei vordefinierte Argumente in dem Array: `node`, welches den Pfad zu deinem Node.js-Programm enthält, und der Dateiname deines Skripts. Alle weiteren Argumente, die nach dem Dateinamen angegeben werden, werden in diesem Array gespeichert.
+Deep Dive
+Das Lesen von Befehlszeilenargumenten ist keine neue Funktion in der Programmierung. Es wurde bereits in älteren Programmiersprachen wie C oder Bash verwendet. Auch in anderen Sprachen wie Python oder Java gibt es ähnliche Möglichkeiten, Befehlszeilenargumente zu lesen. Alternativ können auch Benutzereingaben über eine grafische Benutzeroberfläche abgefragt werden.
 
-Du kannst auch einzelne Argumente aus dem Array extrahieren, indem du ihren Index verwendest. Zum Beispiel, um das erste eingegebene Argument "hello" zu erhalten, könntest du `process.argv[2]` verwenden.
+Die Implementierung von Befehlszeilenargumenten in Javascript ist relativ einfach und kann in vielen Anwendungsfällen nützlich sein. Es ist jedoch wichtig zu beachten, dass alle übergebenen Argumente als Zeichenketten interpretiert werden und zuerst auf den entsprechenden Datentyp konvertiert werden müssen. Auch die Validierung der Eingaben ist in der Verantwortung des Programmierers.
 
-# Deep Dive
-Um das Lesen von Befehlszeilenargumenten besser zu verstehen, ist es wichtig zu wissen, dass `process.argv` Teil des "process" Objekts in Node.js ist. Dieses Objekt enthält viele nützliche Methoden und Informationen über den aktuellen Prozess.
-
-Um Befehlszeilenargumente noch effektiver zu nutzen, kannst du auch das `yargs`-Modul verwenden. Dieses Modul erleichtert das Parsen und Validieren von Befehlszeilenargumenten und bietet zusätzliche Funktionen wie die Unterstützung von Abkürzungen und Aliasen für Argumente.
-
-# Siehe auch
-- [Node.js-Dokumentation für process.argv](https://nodejs.org/api/process.html#process_process_argv)
-- [yargs GitHub-Repository](https://github.com/yargs/yargs)
+See Also
+Für weitere Informationen und Beispiele zum Lesen von Befehlszeilenargumenten in Javascript empfehlen wir folgende Quellen:
+- Die offizielle Dokumentation von Node.js zum Thema "process" und "process.argv"
+- Eine kurze Einführung in Befehlszeilenargumente in Javascript auf dem Blog von freecodecamp.org
+- Ein ausführliches Tutorial über die Verwendung von process.argv auf Medium.com

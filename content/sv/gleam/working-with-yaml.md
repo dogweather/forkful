@@ -1,7 +1,7 @@
 ---
-title:                "Att arbeta med yaml"
-html_title:           "Gleam: Att arbeta med yaml"
-simple_title:         "Att arbeta med yaml"
+title:                "Arbeta med yaml"
+html_title:           "Gleam: Arbeta med yaml"
+simple_title:         "Arbeta med yaml"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Data Formats and Serialization"
@@ -10,58 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+# Vad & Varför?
+Att arbeta med YAML, eller YAML Ain't Markup Language, är ett sätt för programmerare att strukturera och ordna data på ett läsbart och logiskt sätt. Det används ofta för att konfigurera och lagra inställningar, men kan också användas för att strukturera data och information i ett projekt.
 
-Att arbeta med YAML i Gleam gör det enkelt att hantera strukturerad data, vilket i sin tur kan underlätta utvecklingen av dina program och öka deras effektivitet.
+# Hur du gör:
+För att använda YAML i ditt Gleam-projekt, behöver du först importera YAML-paketet. Sedan kan du skapa en variabel och tilldela den värden från en YAML-fil genom att använda funktionen `decode` tillsammans med filnamnet och typen av data du vill ha.
 
-## Hur man gör
+```
+import gleam/yaml
 
-För att använda YAML i ditt Gleam-projekt, behöver du först installera paketet "yaml" genom att köra kommandot:
-
-```Gleam
-bash -c "sh <(curl -sL https://bit.ly/gleam-yaml)"
+let settings: Map(String, String) =
+    yaml.decode("settings.yml", Map(String, String))
 ```
 
-För att sedan importera det i din kod, lägg till följande rad högst upp i din fil:
+För att skriva till en YAML-fil, kan du använda funktionen `encode` tillsammans med den variabel du vill skriva till filen och filnamnet.
 
-```Gleam
-import yaml
+```
+let example_settings =
+    Map.from_list(
+        [
+            ("language", "Swedish"),
+            ("theme", "Dark"),
+            ("notifications", "On")
+        ]
+    )
+
+yaml.encode(example_settings, "new_settings.yml")
 ```
 
-Nu kan du använda YAML-koden i dina program! Här är ett exempel på hur du kan läsa en YAML-fil och skriva ut dess innehåll:
+# Djupdykning:
+YAML introducerades först 2001 som ett alternativ till XML-formatet för att strukturera data. YAML är utformat för att vara läsbart för både människor och maskiner, vilket gör det lätt att arbeta med och underhålla. Det finns också andra format för datastrukturering, såsom JSON och TOML, men YAML har fördelen av att vara mer lättförståeligt och lättare att läsa.
 
-```Gleam
-let file = path.join("folder", "test.yml")
-let contents = File.read(file)
-let data = yaml.parse(contents)
-io.println("Ditt YAML-innehåll: " ++ show(data))
-```
+När du arbetar med YAML i Gleam, används biblioteket `gleam/yaml` som implementerar libyaml under huven. Detta betyder att du kan lita på att din YAML-kod kommer att vara effektiv och tillförlitlig för ditt projekt.
 
-### Resultat
-```Gleam
-Ditt YAML-innehåll: Ok(Terminal.Etymology.MenYikes)
-```
-
-## Djupdykning
-
-YAML erbjuder en enkel och läsbar syntax för att representera data i en fil. Du kan använda nycklar och värden för att strukturera dina data, samt inkludera listor och objekt. Här är ett exempel på hur en YAML-fil kan se ut:
-
-```YAML
-favorite_fruits:
-    - apple
-    - banana
-    - orange
-    - pineapple
-age: 25
-name: "Elin"
-```
-
-För att hämta data från denna fil kan du använda dot-notering och indexering, till exempel: `data["favorite_fruits"][0]` skulle ge värdet "apple". Det är också möjligt att använda punkt-notering, till exempel `data.age` skulle ge värdet 25.
-
-## Se även
-
-Här är några användbara länkar och resurser för att fortsätta lära dig mer om YAML och Gleam:
-
-- [YAML.org](https://yaml.org/) - officiell webbplats för YAML
-- [Gleam's YAML-paket](https://github.com/gleam-lang/yaml) - källkod för YAML-paketet i Gleam
-- [Gleam's offentliga Slack](https://gleam-lang.slack.com/) - chatta med andra Gleam-användare för att få hjälp och stöd
+# Se även:
+- Gleams YAML-paket: https://github.com/gleam-lang/yaml
+- YAML-specifikationen: https://yaml.org/spec/
+- Alternativa format för datastrukturering: JSON, TOML

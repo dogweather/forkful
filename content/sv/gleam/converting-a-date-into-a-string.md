@@ -1,7 +1,7 @@
 ---
-title:                "Omvandla ett datum till en sträng"
-html_title:           "Gleam: Omvandla ett datum till en sträng"
-simple_title:         "Omvandla ett datum till en sträng"
+title:                "Omvandling av datum till sträng"
+html_title:           "Gleam: Omvandling av datum till sträng"
+simple_title:         "Omvandling av datum till sträng"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Dates and Times"
@@ -10,38 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
+Att konvertera ett datum till en sträng är en viktig uppgift för programmerare eftersom det ger dig möjlighet att visa datumet på ett sätt som är läsbart för mänskliga användare. Det kan vara avgörande för användbarheten i ett program eller en applikation.
 
-Att konvertera ett datum till en sträng kan vara användbart för att visa datum på ett läsbart sätt eller för att utföra beräkningar med datum. Det är också vanligt för datavetare och utvecklare att arbeta med datum i program.
+## How to:
+Du kan använda inbyggda funktioner i Gleam för att enkelt konvertera ett datum till en sträng. Här är ett exempel på hur du kan göra det:
 
-## Så här gör du
-
-För att konvertera ett datum till en sträng i Gleam behöver du först importera Time-paketet. Sedan kan du använda funktionen `format` för att formatera ditt datum enligt önskat format. Här är ett exempel:
-
-```Gleam
+``` Gleam
 import gleam/time
 
-// Skapa ett datum
-let date = Time.make(2021, 6, 1)
-
-// Konvertera till en sträng med formatet YYYY-MM-DD
-let formatted_date = Time.format(date, "%Y-%m-%d")
-
-// Skriv ut resultatet
-gleam/io.print("Datum: " ++ formatted_date)
-
-// Output: Datum: 2021-06-01
+let now = time.now()
+let string = time.format(now, "%Y-%m-%d %H:%M:%S")
 ```
 
-För att få en fullständig lista över möjliga formatalternativ kan du kolla in dokumentationen för Time-paketet. Notera att det också finns andra funktioner för att konvertera datum som `DateTime.to_string` och `Date.to_string`.
+Detta kodexempel skulle ge utmatningen "2021-10-29 12:00:00" baserat på det aktuella datumet och tiden.
 
-## Djupdykning
+## Deep Dive:
+Att konvertera ett datum till en sträng är en vanlig uppgift i många programmeringsspråk. Det finns många olika sätt att göra det på, men i Gleam använder man funktionen "format" från tidspaketet för att göra det.
 
-För att förstå hur konvertering av datum till strängar fungerar i Gleam kan det vara bra att veta att datum och tidsinformation representeras som tal i form av timestamp, där 1 sekund motsvarar 1000 millisekunder. Detta innebär att det finns en algoritm som omvandlar ett timestamp till en läsbar representation baserat på det önskade formatet.
+En alternativ metod för att konvertera datum till strängar är att lägga till en operator för att göra det enklare. Detta har föreslagits i diskussioner om utveckling av Gleam, men är för närvarande inte implementerat.
 
-Du kan också märka att vissa formatalternativ är unika för Gleam, till exempel `%L` som står för millisekunder. Detta kan vara användbart för exakta tidsberäkningar eller för att visa millisekunder i en loggning.
-
-## Se även
-
-- [Gleam Time Package Documentation](https://hexdocs.pm/gleam/gleam.time.html)
-- [Gleam Formatting String Reference](https://hexdocs.pm/gleam/gleam.time.html#module-formatting-strings)
+## See Also:
+För mer information om konvertering av datum till strängar i Gleam, rekommenderar vi att du läser dokumentationen för tidpaketet och nyhetsaggregeraren Gleam Weekly för de senaste uppdateringarna inom Gleam-utveckling.

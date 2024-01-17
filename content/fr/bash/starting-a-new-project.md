@@ -1,7 +1,7 @@
 ---
-title:                "Lancement d'un nouveau projet"
-html_title:           "Bash: Lancement d'un nouveau projet"
-simple_title:         "Lancement d'un nouveau projet"
+title:                "Commencer un nouveau projet"
+html_title:           "Bash: Commencer un nouveau projet"
+simple_title:         "Commencer un nouveau projet"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Getting Started"
@@ -10,58 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi 
+##### Quoi & Pourquoi?
+Commencer un nouveau projet est simplement le processus de créer quelque chose d'entièrement nouveau dans le domaine de la programmation. Les programmeurs le font généralement pour résoudre un problème spécifique, pour créer un nouveau produit ou pour améliorer un produit existant.
 
-Si vous êtes prêt à vous lancer dans un nouveau projet, Bash peut être un excellent choix pour la programmation. Avec sa facilité d'utilisation et sa grande flexibilité, Bash est un langage de programmation populaire pour les tâches quotidiennes et les projets de toutes sortes.
-
-## Comment Faire 
-
-Avant de commencer à coder en Bash, assurez-vous d'avoir une compréhension de base du langage et de ses concepts fondamentaux, tels que les commandes, les variables et les boucles. Ensuite, vous pouvez utiliser les exemples de code suivants pour vous aider à démarrer:
-
-```Bash 
-# Créez une variable avec une valeur
-nom="Jane"
-# Utilisez la commande 'echo' pour afficher la variable
-echo "Bonjour $nom!"
-```
-
-Cet exemple utilise la fonction 'echo' pour afficher le texte "Bonjour" suivi de la valeur stockée dans la variable 'nom', créant ainsi une phrase complète. Voici le résultat de l'exécution de ce code:
-
-```
-Bonjour Jane!
-```
-
-Vous pouvez également utiliser des boucles pour répéter des actions en Bash. Par exemple, voici comment écrire une boucle 'for' pour afficher les nombres de 1 à 5:
+##### Comment faire:
+Voici un exemple de code Bash pour commencer un nouveau projet:
 
 ```Bash
-# Boucle 'for' utilisant la commande 'seq'
-for i in $(seq 1 5); do 
-  echo "$i"
-done
+mkdir nouveau_projet
+cd nouveau_projet
+touch fichier1.txt
+touch fichier2.txt
+echo "Nouveau projet créé avec succès!"
 ```
 
-L'utilisation de la commande "seq" génère une séquence de nombres de 1 à 5, qui sont ensuite affichés à l'aide de la commande 'echo'. Voici le résultat:
+Le résultat de cette commande sera la création d'un nouveau dossier appelé "nouveau_projet" avec deux fichiers vides à l'intérieur. L'utilisation de l'option "echo" permet d'afficher un message à l'utilisateur pour confirmer que le nouveau projet a été créé avec succès.
 
-```
-1
-2
-3
-4
-5
-```
+##### Plus en détail:
+Il existe de nombreuses alternatives pour commencer un nouveau projet en programmation. Certains programmeurs préfèrent utiliser des outils de gestion de projet tels que Git ou GitHub, tandis que d'autres préfèrent simplement créer un nouveau dossier et commencer à coder.
 
-## Plongée Profonde 
+Implémenter un nouveau projet peut varier en fonction des langages de programmation utilisés et de la complexité du projet lui-même. Cependant, les étapes de base restent les mêmes: créer un nouveau dossier, ajouter des fichiers et commencer à coder.
 
-Maintenant que vous avez une idée de comment écrire du code en Bash, voici quelques conseils pour bien commencer un nouveau projet en utilisant ce langage:
-
-- Planifiez et réfléchissez soigneusement à votre projet avant de commencer à écrire du code. Cela vous aidera à mieux structurer votre code et à éviter les erreurs.
-- Utilisez des commentaires pour expliquer votre code et faciliter la compréhension pour les autres développeurs qui peuvent être amenés à travailler sur votre projet.
-- N'hésitez pas à utiliser des outils de débogage pour vous aider à trouver et à résoudre les erreurs plus facilement.
-
-Avec ces conseils en tête, vous êtes prêt à vous lancer dans votre nouveau projet en utilisant Bash !
-
-## Voir aussi 
-
-- [Documentation officielle de Bash](https://www.gnu.org/software/bash/manual/)
-- [Tutoriels de programmation Bash](https://bash.cyberciti.biz/guide/Main_Page)
-- [Exemples de scripts Bash](https://github.com/awesome-lists/awesome-bash)
+##### Voir aussi:
+Pour en savoir plus sur la création de nouveaux projets en programmation, consultez les ressources suivantes:
+- [Git Tutorial](https://www.atlassian.com/git/tutorials)
+- [GitHub Guides](https://guides.github.com/)
+- [Creating a New Project in Python](https://www.codementor.io/@sheena/how-to-create-a-new-project-in-python-na89nw4vc)
+- [Creating a New Project in Java](https://dev.to/victortrac/starting-a-new-project-in-java-4fc)

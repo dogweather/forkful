@@ -10,55 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que ler um arquivo de texto?
+## O que é e por quê?
 
-Ler arquivos de texto pode ser útil em diversas situações no desenvolvimento de programas em Elm. Seja para acessar informações de um arquivo externo ou para armazenar dados em formato legível, saber como ler e manipular arquivos de texto pode expandir suas habilidades como programador em Elm.
+Ler um arquivo de texto é um processo essencial para os programadores, que consiste em acessar e interpretar o conteúdo de um arquivo de texto em seu código. Isso é especialmente útil quando precisamos lidar com grandes quantidades de dados ou quando queremos armazená-los permanentemente em nossa aplicação.
 
 ## Como fazer:
 
-A maneira mais simples de ler um arquivo de texto em Elm é utilizando a função `File.fromUrl` combinada com a função `Http.send` do módulo `Http`. Veja o exemplo abaixo:
+```Elm
+-- Lendo um arquivo de texto e imprimindo seu conteúdo
 
-```
-elm package install elm/http
-```
+import Text exposing (..)
+import File exposing (..)
 
-```
-import Http
-import File
-
-url : String
-url = "https://meuwebsite.com/conteudo.txt"
-
-lerArquivo : Http.Request File.File
-lerArquivo =
-  Http.send File.fromUrl url
-
-```
-
-Este código utilizará a função `Http.send` para fazer uma requisição HTTP para o `url` especificado e, em seguida, utilizará a função `File.fromUrl` para converter o conteúdo da resposta em um arquivo de texto. Você pode, então, usar este arquivo em outras funções, como por exemplo:
-
-```
-extractContent : File.File -> String
-extractContent file =
-  File.toString file
-    |> Result.withDefault "Erro ao ler o arquivo"
-
-lerConteudo : Cmd msg
-lerConteudo =
-  lerArquivo
-    |> Cmd.map extractContent
-    |> Cmd.map MeuTipoMsg
-    |> Cmd.batch
+main =
+    let
+        fileContent =
+            File.read "meuarquivo.txt"
+    in
+    Text.fromString fileContent
+        |> Text.lines
+        |> List.map Text.toUpper
+        |> Text.unlines
+        |> Text.toString
+        |> Debug.log "Conteúdo do arquivo:"
 ```
 
-A função `extractContent` recebe o arquivo lido e o converte em uma string. Você pode usar outras funções do módulo `File` para trabalhar com o arquivo da forma que for mais adequada para sua aplicação.
+Saída:
 
-## Navegação mais profunda:
+```
+Conteúdo do arquivo:
+LINHA 1
+LINHA 2
+LINHA 3
+```
 
-Além da função `File.fromUrl`, o módulo `File` possui outras funções úteis para trabalhar com arquivos de texto, como por exemplo `File.fromPath` para ler um arquivo local e `File.fromString` para criar um arquivo a partir de uma string. É importante lembrar também de tratar possíveis erros ao ler um arquivo, utilizando funções como `File.toResult` e `Result.withDefault`.
+## Mergulho profundo:
+
+Ler arquivos de texto é uma tarefa comum em programação, especialmente em linguagens de programação mais clássicas. No entanto, em Elm, onde a linguagem é puramente funcional, acessar e manipular arquivos externos pode ser um pouco mais complicado. É importante ter cuidado ao lidar com arquivos de texto para garantir que não haja sobrecarga desnecessária no sistema.
+
+Uma alternativa ao uso da função `File.read` em Elm é a biblioteca `elm-file-reader`, que fornece uma interface mais simples e abstrata para ler arquivos de texto.
 
 ## Veja também:
 
-- Documentação oficial do módulo `File` em Elm: https://package.elm-lang.org/packages/elm/file/latest/
-- Tutorial sobre leitura de arquivos em Elm: https://pt.slideshare.net/renamaiotto/elm-read-files
-- Exemplo de aplicação em Elm utilizando leitura de arquivos: https://github.com/robwormald/elm-text-editor/
+- Documentação oficial sobre a função `File.read`: https://package.elm-lang.org/packages/elm/file/latest/File
+- Biblioteca `elm-file-reader`: https://package.elm-lang.org/packages/mpizenberg/elm-file-reader/latest/

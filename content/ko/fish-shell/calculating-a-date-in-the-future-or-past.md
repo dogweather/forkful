@@ -10,33 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Fish Shell을 프로그래밍하면서 날짜를 미래나 과거로 계산하는 이유는 간단합니다. 우리는 우리의 일정을 관리하고 예정된 이벤트를 알기 위해서 날짜를 계산해야 합니다.
+# Fish Shell 프로그래밍: 날짜 계산하기
 
-## 왜
+## 무엇인가요?
 
-우리는 Fish Shell을 사용하여 날짜를 계산하는 이유는 간단합니다. 우리는 다가오는 이벤트와 일정을 정확하게 파악하기 위해서입니다. 또한 Fish Shell을 사용하면 명령어를 입력하는 과정에서 달력을 불러올 필요 없이 편리하게 날짜를 계산할 수 있습니다.
+날짜 계산은 미래나 과거에서 특정한 날짜를 계산하는 것을 말합니다. 예를 들어, 오늘에서 며칠 후의 날짜나 몇 주 전의 날짜 등을 계산하는 것이 있습니다. 이 작업은 프로그래머들이 자주 사용하는 기능 중 하나입니다.
 
-## 사용 방법
+## 왜 그렇게 하나요?
 
-Fish Shell을 사용하여 날짜를 계산하는 방법은 아래와 같습니다. 
+프로그래머들은 날짜 계산을 수행하여 미래나 과거에서 특정 날짜를 쉽게 파악할 수 있기 때문입니다. 이를 통해 일정 관리나 시간 계획 등의 작업을 효율적으로 수행할 수 있습니다.
 
-```fish
-set today (date +"%m/%d/%Y") #오늘 날짜 설정
-set future_date (date -d '1 day' +"%m/%d/%Y") #오늘로부터 1일 전 날짜 계산
-set past_date (date -d '1 week' +"%m/%d/%Y") #오늘로부터 1주 전 날짜 계산
+## 방법:
 
-echo "오늘 날짜: $today" #오늘 날짜 출력
-echo "미래 날짜: $future_date" #미래 날짜 출력
-echo "과거 날짜: $past_date" #과거 날짜 출력
+날짜 계산을 위해서는 다음과 같이 쉘에서 코드를 입력해야 합니다.
+
+```Fish Shell을 사용할 때:
+date 를 사용하여 현재 날짜를 확인합니다.
+ex) date +'%Y-%m-%d' #오늘의 날짜를 년-월-일로 표시합니다.
+따라서 다음과 같이 미래 또는 과거 날짜를 계산할 수 있습니다.
+
+```Fish Shell을 사용할 때:
+date -d '2 days' +'%Y-%m-%d' #오늘 기준 2일 후의 날짜를 년-월-일로 표시합니다.
 ```
 
-위의 예제 코드에서는 today 변수를 통해 오늘 날짜를 설정합니다. 그리고 future_date와 past_date 변수를 이용하여 미래나 과거로부터 원하는 시간을 계산할 수 있습니다. 마지막으로 echo 명령어를 사용하여 결과를 출력하면 됩니다.
+위와 같은 방법으로 다양한 날짜 계산을 할 수 있습니다.
 
-## 깊게 들어가기
+## 깊이 파보기:
 
-Fish Shell의 date 명령어를 사용하여 날짜를 계산하는 것은 매우 편리합니다. 이 명령어는 일, 주, 달, 년 단위로 날짜를 계산할 수 있습니다. 또한 요일, 특정 날짜의 차이 등 다양한 기능을 제공하기 때문에 일정 관리에 매우 유용합니다.
+날짜 계산은 오래된 컴퓨터 프로그래밍에서 이미 사용되고 있습니다. 예를 들어, 1970년 1월 1일을 기준점으로 잡아 이전 날짜는 음수, 이후 날짜는 양수로 계산하는 방식이 있었습니다. 이 때문에 시간 표현의 문제로 오류가 발생하기도 했습니다.
 
-See Also
-- [Fish Shell 공식 문서](https://fishshell.com/docs/current/cmds/date.html)
-- [날짜 계산하는 다른 방법](https://stackoverflow.com/questions/24814159/how-to-calculate-dates-using-fish-shell)
-- [Fish Shell을 이용한 일정 관리](https://medium.com/@brunokoga/practical-work-with-fish-shell-date-and-bash-cooking-837be411ffc8)
+하지만 최근에는 날짜 계산을 위한 전용 라이브러리나 프로그램들이 개발되어 좀 더 정확한 계산이 가능해졌습니다. 이외에도 다양한 알고리즘과 방식을 이용하여 날짜 계산을 하는 방법도 있습니다.
+
+## 관련 자료:
+
+다른 라이브러리나 프로그램을 이용하여 날짜 계산을 해보고 싶으시다면 다음 링크를 참고해보세요.
+
+- [Moment.js](https://momentjs.com/) : JavaScript에서 날짜와 시간 관련 작업을 쉽게 처리할 수 있는 라이브러리
+- [Dateutil](https://dateutil.readthedocs.io/en/stable/) : 파이썬에서 날짜와 시간 관련 작업을 처리하는 라이브러리
+- [Calendar API](https://www.w3schools.com/Jsref/jsref_obj_date.asp) : JavaScript에서 날짜 계산을 위한 내장된 함수들을 제공하는 API

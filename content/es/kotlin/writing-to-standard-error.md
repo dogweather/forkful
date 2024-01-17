@@ -1,7 +1,7 @@
 ---
-title:                "Escribiendo en el error estándar"
-html_title:           "Kotlin: Escribiendo en el error estándar"
-simple_title:         "Escribiendo en el error estándar"
+title:                "Escreviendo a error estándar"
+html_title:           "Kotlin: Escreviendo a error estándar"
+simple_title:         "Escreviendo a error estándar"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Files and I/O"
@@ -10,31 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué escribir en la salida estándar de error?
+## Qué & Por qué?
 
-Acostumbramos a escribir en la salida estándar cuando queremos mostrar mensajes al usuario, pero a veces es necesario mostrar mensajes de error. Escribir en la salida estándar de error es una buena práctica ya que nos permite distinguir fácilmente los mensajes de error de los mensajes normales y nos ayuda a identificar y solucionar problemas en nuestro código.
+Escribir a la salida de error estándar es una práctica común entre los programadores. Consiste en enviar mensajes de error o información adicional a la consola de la terminal mientras se ejecuta un programa. Esto se hace para facilitar la depuración y el monitoreo del código durante la ejecución.
 
-## Cómo hacerlo
+Los programadores utilizan la salida de error estándar para mostrar mensajes de error cuando el código encuentra un error en tiempo de ejecución. También se puede utilizar para imprimir información adicional que puede ser útil para entender la causa de un error o el comportamiento del programa.
 
-Utilizar la salida estándar de error en Kotlin es muy sencillo. Solo se necesita utilizar el objeto `System` y llamar al método `err` para acceder a la salida estándar de error. Luego, se puede utilizar el método `println` para escribir el mensaje de error deseado. Por ejemplo:
-
-```Kotlin
-System.err.println("¡Ha ocurrido un error!")
-```
-
-Esto imprimirá en la consola el mensaje "¡Ha ocurrido un error!" en rojo, lo que lo distingue claramente de los mensajes normales en la salida estándar.
-
-## Profundizando
-
-Al utilizar la salida estándar de error, también es posible especificar el tipo de error que se ha producido utilizando el método `forErr`. Por ejemplo, si se produce un `IOException`, se puede escribir:
+## Cómo:
 
 ```Kotlin
-System.err.forErr(IOException::class.java).println("¡Ha ocurrido un error de entrada y salida!")
+fun main() {
+    val num = 0
+    try {
+        val result = 10 / num
+    } catch (e: ArithmeticException) {
+        System.err.println("¡No se puede dividir entre cero!")
+    }
+}
 ```
 
-Esto imprimirá el mensaje con la etiqueta "[IOException]" al principio, lo que facilita la identificación del tipo de error. Además, se pueden utilizar otros métodos como `printf` en lugar de `println` para formatear el mensaje de error de manera más específica, utilizando argumentos como en el conocido método `printf` de Java.
+Output: No se puede dividir entre cero!
 
-## Ver también
+En el ejemplo anterior, el mensaje de error se imprime en la salida de error estándar, lo que permite al programador identificar el error y tomar medidas para solucionarlo.
 
-- [Documentación oficial de Kotlin sobre la salida estándar de error](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-output-stream/err.html)
-- [Artículo sobre la diferencia entre la salida estándar y la salida estándar de error](https://www.pluralsight.com/guides/kotlin-error-handling-stdout-stderr-difference-and-examples)
+## Inmersión Profunda:
+
+La práctica de escribir a la salida de error estándar es común en varios lenguajes de programación, incluyendo Kotlin. Sin embargo, algunos lenguajes como Java tienen la opción de escribir mensajes de error a la salida estándar utilizando la función `e.printStackTrace()`. La diferencia es que al utilizar `System.err.println()`, el mensaje se mostrará con un color diferente en la consola, lo que lo hace más fácil de distinguir.
+
+Además, también es posible redirigir la salida de error estándar a un archivo, utilizando el operador `>` en la línea de comandos al ejecutar el programa.
+
+En cuanto a la implementación, escribir a la salida de error estándar se logra utilizando la clase `System` y su propiedad `err`. A través de esta propiedad, se puede acceder al flujo de la salida de error estándar y escribir mensajes utilizando el método `println()`.
+
+## Ver También:
+
+* [System Class in Kotlin](https://www.tutorialspoint.com/kotlin/kotlin_system_class.htm)
+* [Cómo redirigir la salida de error estándar a un archivo en Linux](https://www.tecmint.com/redirect-linux-terminal-output-to-file/)

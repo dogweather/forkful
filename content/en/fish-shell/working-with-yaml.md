@@ -10,56 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
+Working with YAML is a common task for programmers as it allows for easy configuration and data storage in a human-readable format. YAML stands for "YAML Ain't Markup Language" and is often used in place of XML due to its simplicity and readability.
 
-Working with YAML files is essential for any programmer, as it allows for easy configuration and data storage. YAML is a human-readable data format that is commonly used in various applications, making it a valuable skill to have as a developer.
-
-## How To
-
-To work with YAML files in Fish Shell, we need to use the `yq` tool. First, we need to install it using `brew`:
-
+## How to:
+Coding examples in the ```Fish Shell``` can greatly simplify working with YAML. For example, to print the contents of a YAML file, you can use the following command:
 ```
-brew install yq
+cat sample.yaml
 ```
 
-Next, we can use `yq` to read from and write to YAML files. Let's start by creating a simple YAML file called `config.yml` with the following content:
-
+This will display the YAML file's contents in the terminal. You can also use the ```YAMLCPP``` Fish Shell library to interact with YAML in your script. Here's a sample code that creates a YAML file and adds key-value pairs to it:
 ```
-fruit:
-  - apple
-  - banana
-  - orange
-price: 2.50
+yaml create sample.yaml
+yaml set sample.yaml key value
 ```
 
-To read the contents of this file, we can use the `yq read` command:
-
+The resulting YAML file will look like this:
+```yaml  
+key: value  
 ```
-yq read config.yml
-```
-
-This will output the YAML data in a readable format. We can also use `yq` to modify the contents of the YAML file. For example, if we want to change the price of apples to $3.00, we can use the `yq write` command:
-
-```
-yq write config.yml fruit[0] "apple 3.00"
-```
-
-This will update our `config.yml` file with the new price. We can also use `yq` to format and validate YAML files, making it a powerful tool for working with data.
 
 ## Deep Dive
+YAML was first designed in 2001 as a more user-friendly alternative to XML. It stands out with its easy indentation-based syntax and lack of closing tags. Some alternative data formats include JSON and TOML, but YAML remains a popular choice due to its balance of readability and complexity.
 
-Behind the scenes, `yq` uses the `jq` library to manipulate YAML and JSON data. This means that we can also use `jq` commands to work with YAML files in Fish Shell. Additionally, Fish Shell has built-in support for working with YAML files, as it can handle indented lists and key-value pairs without the need for extra syntax.
-
-One useful trick is to use the `grep` command to filter YAML data. For example, if we want to only see the fruit list in our `config.yml` file, we can use the following command:
-
-```
-grep fruit config.yml
-```
-
-This will output only the fruit list. We can also pipe this output to other commands, such as `sed` to modify the data, or `wc` to count the number of items in the list.
+The ```YAMLCPP``` library for Fish Shell is based on the YAML-CPP library written in C++. It provides a powerful set of functions for manipulating YAML data, such as ```yaml get```, ```yaml insert```, and ```yaml delete```. This makes working with YAML in the Fish Shell even easier.
 
 ## See Also
-
-- [Official Fish Shell documentation on YAML](https://fishshell.com/docs/current/tutorial.html#accessing-list-items)
-- [YAML documentation](https://yaml.org/) 
-- [`yq` repository on GitHub](https://github.com/kislyuk/yq)
+To learn more about working with YAML in the Fish Shell, check out the official documentation at https://fishshell.com/docs/current/index.html. You can also find more information on the ```YAMLCPP``` library at https://github.com/jbeder/yaml-cpp.

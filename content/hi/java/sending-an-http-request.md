@@ -1,7 +1,7 @@
 ---
-title:                "एक http अनुरोध भेजना"
-html_title:           "Java: एक http अनुरोध भेजना"
-simple_title:         "एक http अनुरोध भेजना"
+title:                "http अनुरोध भेजना"
+html_title:           "Java: http अनुरोध भेजना"
+simple_title:         "http अनुरोध भेजना"
 programming_language: "Java"
 category:             "Java"
 tag:                  "HTML and the Web"
@@ -10,46 +10,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
+## क्या है और क्यों?
+HTTP अनुरोध भेजना एक प्रोग्रामर की डेवलपमेंट में एक आवश्यक क्रिया है। यह एक सरल प्रक्रिया है जो सभी अनुरोधों को डाउनलोड करने और सर्वर द्वारा प्रतिसाद लेने की अनुमति देती है। अधिकांश ब्राउज़र राउटिंग, फॉर्म भरने, डाउनलोडिंग फ़ाइल्स जैसे कार्यों के लिए HTTP अनुरोधों का उपयोग करते हैं।
 
-जब आप इंटरनेट पर साइटों का इस्तेमाल करते हैं तो आपके द्वारा किसी दूसरे सर्वर पर जानकारी का अनुरोध किया जाता है। उदाहरण के लिए, जब आप वेब पेज को खोलते हैं तो आपके द्वारा सर्वर से आपके ब्राउजर में HTML दस्तावेज़ डाउनलोड होता है। हम इस प्रक्रिया को समझने के लिए "HTTP अनुरोध" कहते हैं।
-
-## कैसे
-
-कोडिंग उदाहरण के साथ डेस्कटॉप अनुरोध भेजना काफी सरल हो सकता है। नीचे दिए गए सामान्य स्टेप्स के माध्यम से आप एक "GET" अनुरोध भेज सकते हैं:
+## कैसे करें:
+ब्राउज़र डाउनलोडिंग या अन्य कार्यों को करने के लिए HTTP अनुरोधों का उपयोग करता है। आपको अपने अनुरोध को बाहरी सेवा या सर्वर को भेजने के लिए सार्वजनिक आईपी या डोमेन नाम के साथ URL के साथ पहुंच करने के लिए HttpURLConnection ऑब्जेक्ट को बनाना पड़ेगा। उदाहरण के लिए:
 
 ```Java
-import java.io.IOException;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.util.Scanner;
-
-public class HttpExample {
-    public static void main(String[] args) {
-        try {
-            // उदाहरण यूआरएल: google.com
-            URL url = new URL("अपना URL यहां डालें");
-            HttpURLConnection con = (HttpURLConnection) url.openConnection();
-            con.setRequestMethod("GET");
-            // सर्वर से अनुरोध करने के लिए:
-            int responseCode = con.getResponseCode();
-            System.out.println("अनुरोध का प्रतिक्रिया कोड:" + responseCode);
-            // सर्वर से डेटा पाने के लिए:
-            Scanner in = new Scanner(con.getInputStream());
-            while (in.hasNextLine()) {
-                String data = in.nextLine();
-                System.out.println(data);
-            }
-            in.close();
-        } catch (IOException e) {
-            System.out.println("An error occurred: " + e);
-        }
-    }
-}
+URL url = new URL("http://www.example.com");
+HttpURLConnection con = (HttpURLConnection) url.openConnection();
+con.setRequestMethod("GET");
+System.out.println(con.getResponseCode());
 ```
 
-आप इस कोड को कंपाइल और रन कर सकते हैं, जिससे आपको अपने द्वारा दिए गए यूआरएल से सर्वर से जुड़े आसानी से सामग्री को देख सकते हैं। आप में 'POST', 'PUT', और 'DELETE' भी लिख सकते हैं और उनके लिए भी संबंधित अनुरोध स्क्रिप्ट भेज सकते हैं।
+उपरोक्त कोड सर्वर से जवाब को लाने के लिए ब्राउज़र निर्देशित करेगा। अगर सफलतापूर्वक वह एक आपको यूआरएल के मुख्य भाग में सर्वर से संबंध रखने के लिए आपकी वेबकासुरथा से संबंधित उत्तर को पेश करेगा।
 
-## गहराई में जाएँ
+## Deep Dive:
+HTTP या हाइपर टेक्स्ट ट्रांस्फर प्रोटोकॉल एक एप्पलिकेशन लेयर प्रोटोकॉल है जो इंटरनेट पर संचार को संभव बनाता है। यह सीमित रूप से निर्वाचित डेटा पर आयात और निर्यात करने का प्रमुख माध्यम है। HTTP का प्रयोग आमतौर पर वेब सेवा कॉल, रीडिंग डॉक्यूमेंट और डाटा को अन्य स्रोतों से डाउनलोड करने के लिए किया जाता है। अन्य विकल्पों में AJAX, WebSockets, और उदहारणात्मक अनुरोधों का उपयोग किया जाता है। HttpURLConnection एपीआई और Apache HttpComponents प्रकार के लाइब्रेरी HTTP अनुरोध भेजने के लिए उपयोगी हैं।
 
-"HTTP अनुरोध" एक TCP/IP बेस्ड कम्यूनिकेशन प्रोटोकॉल है। इसका उपयोग डाटा प्वाइंट सर्विसेज, एप
+## See Also:
+- [Oracle डॉक्यूमेंटेशन: HttpURLConnection](https://docs.oracle.com/javase/8/docs/api/java/net/HttpURLConnection.html)
+- [Apache HttpComponents](https://hc.apache.org/)

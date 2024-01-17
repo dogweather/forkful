@@ -10,47 +10,22 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co & Dlaczego?
+Wypisywanie do standardowego błędu jest często wykorzystywaną praktyką w programowaniu. Polega ona na wypisywaniu komunikatów o błędach lub ostrzeżeniach w kodzie, które są później wyświetlane w oknie konsoli. Programiści stosują to, aby ułatwić sobie debugowanie i odnajdywanie problemów w swoim kodzie.
 
-Pisanie do standardowego błędu może wydawać się nudnym i niepotrzebnym zadaniem w programowaniu, ale faktem jest, że jest to bardzo ważne. Pisanie do standardowego błędu pozwala nam na przechwytywanie i wyświetlanie informacji o błędach, co ułatwia debugowanie naszego kodu i poprawianie ewentualnych problemów.
-
-## Jak to zrobić
-
-Aby pisać do standardowego błędu w Javascript, należy skorzystać z obiektu console, który dostarcza nam metody do wyświetlania różnego rodzaju informacji w konsoli. Jedną z tych metod jest `console.error()`, która służy do wyświetlania błędów.
-
-Przykładowy kod wykorzystujący `console.error()` wyglądałby następująco:
-
+## Jak to zrobić:
+Przykładowy kod wypisania do standardowego błędu wygląda następująco:
 ```Javascript
-var x = 10;
-var y = "abc";
-
-if(typeof x !== "string") {
-  console.error("x nie jest ciągiem znaków!");
-}
-
-if(typeof y !== "number") {
-  console.error("y nie jest liczbą!");
-}
+console.error("To jest przykładowy komunikat o błędzie.");
 ```
-
-Po uruchomieniu tego kodu w konsoli otrzymamy następujący output:
-
+Po uruchomieniu kodu powyżej, w oknie konsoli zostanie wyświetlona taka informacja:
 ```
-x nie jest ciągiem znaków!
-y nie jest liczbą!
+To jest przykładowy komunikat o błędzie.
 ```
+W ten sposób programista może szybko zauważyć, że w kodzie znajduje się pewien błąd i przystąpić do jego naprawy.
 
-W ten sposób możemy wykorzystać pisanie do standardowego błędu do wychwytywania i wyświetlania informacji o błędach w naszym kodzie.
+## Zagłębienie:
+Wypisywanie do standardowego błędu jest częścią standardu języka Javascript. Jest to alternatywa dla wypisywania do standardowego wyjścia (console.log), które jest częściej wykorzystywane do wyświetlania informacji o działaniu programu. Wypisywanie do standardowego błędu można też wykorzystać do monitorowania wydajności aplikacji lub raportowania szczegółowych informacji o błędach.
 
-## Deep Dive
-
-W Javascript, standardowy błąd jest reprezentowany przez obiekt `Error`, który zawiera informacje takie jak wiadomość błędu, nazwa błędu, ścieżka i linia, w której wystąpił błąd. Istnieje również wiele typów błędów, takich jak `SyntaxError`, `TypeError` czy `ReferenceError`, które specyfikują rodzaj błędu.
-
-Aby wyświetlić pełną informację o błędzie, możemy użyć funkcji `console.trace()`, która wyświetli nam cały stos wywołań funkcji prowadzących do wystąpienia błędu.
-
-Możemy także przechwytować i obsługiwać błędy za pomocą instrukcji `try...catch`, co pozwala nam na kontrolowane przejście przez błędy i wykonanie odpowiednich akcji w zależności od rodzaju błędu.
-
-## Zobacz również
-
-- [Dokumentacja console w Javascript](https://developer.mozilla.org/en-US/docs/Web/API/Console)
-- [Artykuł o pisanie do standardowego błędu w Javascript](https://www.sitepoint.com/proper-error-handling-javascript/)
+## Zobacz też:
+[Dokumentacja Javascript](https://developer.mozilla.org/pl/docs/Web/JavaScript/Reference/Global_Objects/console#error)

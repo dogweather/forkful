@@ -10,56 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä ja miksi?
+HTML:n parsiminen on prosessi, jossa tietokone lukee ja analysoi HTML-koodia nähdäkseen, miten verkkosivu on rakennettu. Ohjelmoijat käyttävät tätä tekniikkaa usein, kun he haluavat poimia tietoa verkkosivuilta tai muokata sivuston rakennetta.
 
-HTML-analysointi on tärkeä taito, jos haluat kerätä tietoa verkkosivuilta tai luoda skriptejä, jotka toimivat verkkosivujen kanssa. Se on myös hyödyllistä, kun haluat poimia tietoa tai tarkistaa tiettyjä elementtejä sivulla.
-
-## Kuinka tehdä
-
-HTML-analysointi voidaan tehdä helposti Pythonin avulla. Käytämme BeautifulSoup-kirjastoa, joka auttaa meitä purkamaan HTML-koodin. Alla on yksinkertainen esimerkki, joka näyttää, miten voimme tulostaa kaikki otsikot sivulta:
+## Kuinka tehdä se:
+Seuraavassa on esimerkkejä HTML:n parsimiseen käytettävästä koodista ja tulos, joka siitä voidaan saada:
 
 ```Python
 from bs4 import BeautifulSoup
-import requests
 
-# määritämme sivun url-osoitteen
-url = "https://www.example.com"
+html = "<html><body><h1>Hello, world!</h1></body></html>"
 
-# teemme pyynnön sivulle
-page = requests.get(url)
+soup = BeautifulSoup(html, 'html.parser')
+print(soup.h1)
 
-# luodaan BeautifulSoup-objekti html-koodista
-soup = BeautifulSoup(page.content, 'html.parser')
-
-# etsimme kaikki h1-elementit ja tulostetaan ne
-for h1_tag in soup.find_all('h1'):
-    print(h1_tag.text)
+# Tulos: <h1>Hello, world!</h1>
 ```
 
-Tässä esimerkissä me teimme pyynnön verkkosivulle, loimme BeautifulSoup-objektin ja etsimme sitten kaikki h1-elementit sivulta. Lopuksi tulostimme jokaisen elementin tekstin.
+```Python
+from lxml import etree
 
-Esimerkkitulostus:
+html = "<html><body><h1>Hello, world!</h1></body></html>"
 
+tree = etree.fromstring(html)
+h1 = tree.xpath('//h1/text()')
+print(h1)
+
+# Tulos: Hello, world!
 ```
-Esimerkkisivu
-Tervetuloa esimerkkisivulle
-```
 
-Joten voimme nähdä, että HTML-analysointi on helppoa Pythonilla ja voi auttaa meitä keräämään tietoa verkkosivuilta.
+## Syvempi sukellus:
+HTML:n parsiminen alkoi jo 1990-luvulla, kun ensimmäiset web-selaimet kehitettiin. Aiemmin se oli hankalaa ja hidasta, mutta nykyään on kehitetty monia kirjastoja ja työkaluja, kuten BeautifulSoup ja lxml, jotka helpottavat tätä prosessia. On myös muita vaihtoehtoja, kuten käyttöliittymien automaatiotekniikka Selenium, joka voi suorittaa toimintoja selaimessa ja parsia sivuja.
 
-## Syventävä tieto
+Yksi tärkeä asia, jota kannattaa muistaa HTML:n parsimisessa, on sen oikeaoppinen käyttö. Koska HTML-koodi voi vaihdella sivulta toiselle, on tärkeää varmistaa, että käytetty koodi on yhteensopiva kyseisen sivun kanssa.
 
-HTML-analysointiin liittyy paljon erilaisia tekniikoita ja kirjastoja, jotka voivat auttaa meitä työskentelemään verkkosivujen kanssa. Tässä muutamia vinkkejä, joita voit kokeilla:
+Lisäksi monimutkaisten verkkosivujen kanssa voi esiintyä haasteita, koska tiedon poimiminen ja sivun rakenteen muuttaminen voi olla monimutkaista. Siksi on tärkeää ymmärtää HTML:n rakennetta ja käyttää oikeita kirjastoja ja työkaluja.
 
-- Voit käyttää CSS-valitsimia, kuten "find" ja "find_all", etsiäksesi haluamiasi elementtejä sivulla.
-- Voit myös käyttää "select" -metodia, joka toimii samalla tavalla kuin CSS-valitsimet ja auttaa meitä etsimään tiettyjä elementtejä sivulta.
-- Voit käyttää "get_text" -metodia poimiaksesi tekstin haluamastasi elementistä.
-- Voit myös käyttää Regex-kirjastoa, joka auttaa meitä sovittamaan elementtiä vastaaviin kaavoihin.
-
-Joten vaikka tämä oli vain pieni johdanto HTML-analysointiin Pythonilla, toivottavasti se innostaa sinua kokeilemaan lisää ja löytämään omia tapoja työskennellä verkkosivujen kanssa.
-
-## Katso myös
-
-- [BeautifulSoup-kirjaston dokumentaatio](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
-- [Requests-kirjaston dokumentaatio](https://requests.readthedocs.io/en/master/)
-- [Regex-kirjaston dokumentaatio](https://docs.python.org/3/library/re.html)
+## Katso myös:
+- [BeautifulSoup-dokumentaatio](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
+- [lxml-dokumentaatio](https://lxml.de/)
+- [Selenium-dokumentaatio](https://www.selenium.dev/documentation/en/)
+- [Regex ja web-skraping](https://hackernoon.com/web-scraping-tutorial-with-python-tips-and-tricks-db070e70e071)

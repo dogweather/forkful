@@ -10,51 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+"
 
-Writing to standard error, also known as stderr, is a common practice in programming. It allows developers to print out error messages and other important information that can help with debugging and troubleshooting. Additionally, writing to stderr ensures that these messages are separate from regular output, making them easier to identify and handle.
+## What & Why?
+Writing to standard error in Go is a way for programmers to communicate error messages or other important information to the user or other parts of the code. This is done through the standard error stream, which is separate from the standard output stream.
 
-## How To
-
-To write to stderr in Go, we can use the `fmt.Fprintf()` function and specify `os.Stderr` as the first argument. Let's take a look at an example code:
-
-```Go
-package main
-
-import (
-    "fmt"
-    "os"
-)
-
-func main() {
-    fmt.Fprintf(os.Stderr, "This is an error message.")
-}
+## How to:
+To write to standard error in Go, you can use the ```fmt.Fprintln()``` function with the standard error stream as the first argument. For example:
+```
+Go fmt.Fprintln(os.Stderr, "Error: file not found")
 ```
 
-Running this code will print the message "This is an error message." to the standard error output. We can also format the message as we would with `fmt.Printf()`, adding variables and other information as needed.
+This will print the error message to the standard error stream and will not affect the standard output stream. It is important to note that you must import the "fmt" and "os" packages to use this function. 
 
-We can also use `fmt.Errorf()` to create a formatted error message and write it directly to stderr:
+## Deep Dive:
+Writing to standard error is not a new concept and has been used in various programming languages for a long time. It is a standard way of handling error messages and preventing them from interrupting or corrupting the output of a program.
 
-```Go
-// ...
-err := fmt.Errorf("An error occurred: %d", 404)
-fmt.Fprintln(os.Stderr, err)
-```
+An alternative to writing to standard error in Go is to use the ```log``` package which has functions specifically for writing to standard error. However, the use of ```fmt.Fprintln()``` is a more versatile choice as it allows for formatting and other options.
 
-This will print the following to the standard error output:
+When writing to standard error, it is important to note that the standard error stream is not buffered, which means that the messages will be printed out immediately without waiting for a newline character. This can be helpful for printing instant error messages or for debugging purposes.
 
-```
-An error occurred: 404
-```
+## See Also:
+To learn more about writing to standard error in Go, check out the official Go documentation here: https://golang.org/pkg/fmt/ 
 
-## Deep Dive
-
-Internally, standard error is represented by a file descriptor, similar to standard input and output. By default, stderr is associated with the console or terminal where the program is executed. However, we can redirect stderr to a file or another output stream for better error handling.
-
-We can also use the `log` package in Go to write to both stdout and stderr simultaneously. This can be helpful for printing informative messages to both streams while also capturing errors in the log file.
-
-## See Also
-
-- [Official fmt Package Documentation](https://golang.org/pkg/fmt/)
-- [Error Handling in Go](https://blog.golang.org/error-handling-and-go)
-- [Logging in Go with Logrus](https://www.loggly.com/blog/logging-with-golang-part-one/)
+You can also explore other packages and functions related to error handling and logging in Go, such as the ```log``` package mentioned earlier.

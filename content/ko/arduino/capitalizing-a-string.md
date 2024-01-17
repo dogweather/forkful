@@ -1,7 +1,7 @@
 ---
-title:                "문자열 대문자로 변환하기"
-html_title:           "Arduino: 문자열 대문자로 변환하기"
-simple_title:         "문자열 대문자로 변환하기"
+title:                "문자열 대문자 변환하기"
+html_title:           "Arduino: 문자열 대문자 변환하기"
+simple_title:         "문자열 대문자 변환하기"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Strings"
@@ -10,32 +10,22 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
-문자열을 대문자로 변환하는 것의 이유는 단순하다. 대문자로 변환하지 않으면 만약에 그 문자열이 일치하거나 비교하고자 하는 대상이 대문자인 경우에는 일치/비교를 실패하게 된다. 알아보기 쉽고 비교 및 일치 확률을 높이기 위해서 문자열을 대문자로 이번 프로그래밍에서는 변환하는 방법에 대해 알아보자.
+## 무엇이며 왜
 
-## 어떻게
-아두이노에서 문자열을 대문자로 변환하는 방법은 간단하다. 우선 `upperCase()` 함수를 사용해서 문자열을 대문자로 변환한다. 예를 들어, `hello`라는 문자열을 입력하면 `HELLO`라는 결과가 나오게 된다.
+문자열을 대문자로 바꾼다는 것은 문자열의 모든 문자를 대문자로 변환하는 것을 의미합니다. 프로그래머들은 이를 자주 사용하는 이유는 두 가지가 있습니다. 첫째, 대문자로 된 문자열을 사용하면 더욱 더 쉽게 읽을 수 있습니다. 둘째, 대문자로 된 문자열을 사용하는 것은 일관된 형식을 유지하고 코드를 더욱 깔끔하게 만들 수 있습니다.
+
+## 사용 방법
+
 ```Arduino
-String str = "hello";
-str = str.upperCase();
-Serial.println(str); // 출력 결과: HELLO
+String myString = "hello world";
+myString.toUpperCase(); // 출력: HELLO WORLD
 ```
 
-전체 코드를 보자면 다음과 같다.
-```Arduino
-String str = "hello";
-str = str.upperCase();
-Serial.println(str); // 출력 결과: HELLO
-```
+## 깊이 파고들기
 
-## 딥 다이브
-`upperCase()` 함수는 문자열을 대문자로 변환해주는 내장 함수이다. 이 함수가 정확히 어떻게 작동하는지 궁금할 수 있다. 대문자로 변환하는 과정은 문자열의 각 문자를 순회하면서 ASCII 코드에서 32를 빼주는 방식으로 이루어진다. 예를 들어, `a`의 ASCII 코드는 97이며, 대문자 `A`의 ASCII 코드는 65이기 때문에 `a`에서 32를 빼주면 `A`가 된다.
+대문자로 문자열을 바꾸는 것은 오래된 컴퓨터 시스템에서 사용되던 기능입니다. 이 기능은 전통적으로 문자열의 첫 번째 문자를 대문자로 만들고 나머지 문자는 모두 소문자로 변환하는 방식으로 작동합니다. 대문자로 문자열을 바꾸는 대신, 프로그래머는 문자열 내의 각 문자를 개별적으로 변환하는 대안을 사용할 수도 있습니다. 이는 일부 언어에서 더욱 효율적일 수 있습니다.
 
-또는 `toupper()` 함수를 사용해서 문자열을 대문자로 변환할 수도 있다. 이 함수는 단일 문자에만 적용되기 때문에 반복문을 사용해서 문자열의 모든 문자에 대해 적용해야 한다.
+## 관련 자료
 
-## 참고
-- [Arduino 공식 사이트](https://www.arduino.cc/)
-- [ASCII 코드표](https://www.asciitable.com/)
-
-## 더 보기
-- [Arduino에서 문자열 다루기](https://arduinogetstarted.com/reference/arduino-string)
+- [우아한형제들 기술 블로그 - 문자열 대/소문자 변환](https://woowabros.github.io/tools/2017/07/17/to_upper_lower.html)
+- [C Language Tutorial - String Functions](https://www.tutorialspoint.com/cprogramming/c_string_functions.htm)

@@ -10,43 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¿Qué y por qué?
 
-En ocasiones, es posible que necesitemos eliminar ciertos caracteres de un archivo o texto que coincidan con un patrón específico. Esto puede ser útil para limpiar datos o para realizar cambios en un conjunto de archivos de manera eficiente.
+Eliminar caracteres que coincidan con un patrón en un código es un proceso útil para los programadores, ya que les permite manipular y limpiar datos de manera eficiente y precisa.
 
-## Cómo hacerlo
+## ¿Cómo hacerlo?
 
-Para eliminar caracteres que coincidan con un patrón en Fish Shell, podemos utilizar el comando `string replace`. Este comando acepta tres argumentos: el patrón a buscar, el texto a reemplazar y el texto original donde se realizará el reemplazo.
+Aquí te mostramos dos formas de eliminar caracteres que coincidan con un patrón en Fish Shell:
 
-```Fish Shell
-set texto_original "Hola Mundo"
-string replace "o" "" $texto_original
+Fish Shell ofrece un comando integrado para eliminar caracteres que coincidan con un patrón específico. Simplemente usa el siguiente formato:
+
+```
+Fish Shell
+string replace "patrón" "nuevo carácter" -- "cadena original"
 ```
 
-La salida de este comando sería "Hl Mund", ya que elimina todas las letras "o" del texto original. También podemos utilizar expresiones regulares para buscar patrones más complejos. Por ejemplo, para eliminar todas las vocales de un texto, podríamos usar la expresión regular `"[aeiou]"` como patrón.
+Por ejemplo, si tienes una cadena de texto que contiene números separados por comas y quieres reemplazar las comas por espacios, puedes usar el siguiente comando:
 
-```Fish Shell
-set texto_original "Este es un texto de ejemplo"
-string replace "[aeiou]" "" $texto_original
+```
+Fish Shell
+string replace "," " " -- "1,2,3"
 ```
 
-La salida sería "st s n txt d mpl", ya que se eliminaron todas las vocales del texto original.
+Esto te dará una salida de: `1 2 3`.
+
+Otra opción es utilizar el comando `sed`, que también es compatible con Fish Shell. En este caso, el formato sería el siguiente:
+
+```
+Fish Shell
+sed "s/ patrón /nuevo carácter/g" "cadena original"
+```
+
+Siguiendo con el mismo ejemplo anterior, puedes usar `sed` de la siguiente manera para lograr el mismo resultado:
+
+```
+Fish Shell
+sed "s/,/ /g" "1,2,3"
+```
 
 ## Profundizando
 
-El comando `string replace` también tiene algunas opciones que pueden ser útiles en ciertas situaciones. Por ejemplo, podemos utilizar la opción `-r` para realizar el reemplazo de manera recursiva en un directorio completo.
+Este proceso de eliminar caracteres que coincidan con un patrón es una técnica común en la programación y ha sido utilizado por décadas en diferentes lenguajes de programación como UNIX y Perl.
 
-Otra opción útil es la `-s`, que permite reemplazar solo la primera aparición del patrón en cada línea. Esto podría ser útil si solo queremos hacer un cambio específico en un texto sin afectar otras instancias del mismo patrón.
+Además de los métodos mencionados anteriormente, también puedes utilizar otras herramientas de manipulación de texto en Fish Shell, como `grep` y `awk`, para lograr resultados similares.
 
-```Fish Shell
-set texto_original "123 456 789"
-string replace " " "," -s $texto_original
-```
-
-La salida sería "123,456 789" ya que solo se reemplazó el primer espacio en blanco con una coma.
+Para los desarrolladores interesados en los detalles técnicos, Fish Shell utiliza expresiones regulares y el comando `tr` detrás de escena para lograr esta funcionalidad.
 
 ## Ver también
 
-- Documentación oficial del comando `string replace`: https://fishshell.com/docs/current/cmds/string-replace.html
-- Tutorial de expresiones regulares en Fish Shell: https://fishshell.com/docs/current/tutorial.html#tutorial-regexes
-- Ejemplos de uso del comando `string replace`: https://fishshell.com/docs/current/tutorial.html#string-manipulation-options
+- [Documentación de string replace en Fish Shell](https://fishshell.com/docs/current/commands.html#string-replace)
+- [Guía de expresiones regulares en Fish Shell](https://fishshell.com/docs/current/index.html#regexp)
+- [Manipulación de texto en Fish Shell](https://fishshell.com/docs/current/tutorial.html#execute-commands-in-the)

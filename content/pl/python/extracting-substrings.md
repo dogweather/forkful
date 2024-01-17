@@ -1,7 +1,7 @@
 ---
-title:                "Wydobywanie podciągów"
-html_title:           "Python: Wydobywanie podciągów"
-simple_title:         "Wydobywanie podciągów"
+title:                "Wycinanie podciągów."
+html_title:           "Python: Wycinanie podciągów."
+simple_title:         "Wycinanie podciągów."
 programming_language: "Python"
 category:             "Python"
 tag:                  "Strings"
@@ -10,51 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+Czego i po co?
 
-W dzisiejszych czasach, coraz więcej danych jest dostępnych w formie tekstowej. Dzięki wydobyciu podciągów tekstu, jesteśmy w stanie łatwiej i szybciej przetwarzać i analizować te dane, co może być niezbędne w różnych zastosowaniach, od analizy danych po automatyzację procesów biznesowych.
+Wycinanie podłańcuchów, czyli wyłączanie fragmentów tekstu z całego ciągu znaków, jest jedną z powszechnie używanych operacji w programowaniu. Programiści używają go głównie w celu filtrowania i manipulacji tekstem, na przykład wyodrębniania konkretnych informacji z dłuższego ciągu znaków.
 
-## Jak to zrobić
+Jak to zrobić:
 
-W Pythonie istnieją różne metody i funkcje pozwalające na wydobycie podciągów tekstu z ciągów znaków. Przykładowym sposobem jest użycie metody `slice()`, która pozwala na wybranie wybranego fragmentu tekstu, korzystając z indeksów.
+```Python
+# Przykładowy ciąg znaków
+text = 'Python jest wspaniałym językiem programowania'
 
-```python
-text = "To jest przykładowy tekst."
-substring = text[8:19]
+# Wyodrębnienie podłańcucha z indeksem
+print(text[0:6])  # Wynik: 'Python'
 
-print(substring)
+# Wyodrębnienie podłańcucha z wykorzystaniem funkcji split()
+words = text.split(' ')
+print(words[0])  # Wynik: 'Python'
 
-# Output: przykładowy
+# Wyodrębnienie podłańcucha z wykorzystaniem metody find()
+index = text.find('językiem')
+print(text[index:])  # Wynik: 'językiem programowania'
 ```
 
-Można również użyć funkcji `find()`, aby zlokalizować indeks pierwszego wystąpienia danego podciągu w tekście, a następnie wykorzystać indeksy, aby wybrać odpowiedni fragment tekstu.
+Głębszy zanurzenie:
 
-```python
-text = "To jest przykładowy tekst."
-substring = text[text.find("przykładowy"):text.find("tekst")]
+Wycinanie podłańcuchów jest możliwe dzięki indeksowaniu i cięciu w Pythonie, co jest inspirowane podobnymi funkcjami w języku C. Istnieje wiele alternatywnych sposobów na wycinanie podłańcuchów, w tym wykorzystanie wyrażeń regularnych lub biblioteki string. Warto również pamiętać, że wycięte podłańcuchy są typem danych `str`, który można dalej manipulować.
 
-print(substring)
+Zobacz też:
 
-# Output: przykładowy
-```
-
-Inną przydatną funkcją jest metoda `split()`, która dzieli dany tekst na podciągi, korzystając z określonego separatora. Może to być przydatne np. przy przetwarzaniu danych z plików CSV.
-
-```python
-text = "Jan,Alicja,Mateusz,Kasia"
-names = text.split(",")
-
-print(names)
-
-# Output: ['Jan', 'Alicja', 'Mateusz', 'Kasia']
-```
-
-## W czym tkwi sedno
-
-Podczas wydobywania podciągów, ważne jest, aby wiedzieć jaką metodę i jakie parametry wybrać w zależności od danego zastosowania. Możliwość precyzyjnego określenia indeksów czy wykorzystania funkcji `find()` czy `split()` może znacznie ułatwić przetwarzanie tekstów.
-
-## Zobacz też
-
-- [Oficjalna dokumentacja Pythona](https://docs.python.org/pl/3/library/stdtypes.html#common-sequence-operations)
-- [Tutorial wideo o wydobyciu podciągów w Pythonie](https://www.youtube.com/watch?v=JaUJzj7Gids)
-- [Pytania i odpowiedzi na Stack Overflow dotyczące wydobycia podciągów](https://stackoverflow.com/questions/tagged/python+substring)
+- [Dokumentacja Python](https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str)
+- [Tutorial wyciągania podłańcuchów](https://www.programiz.com/python-programming/string-slicing)
+- [Poradnik wyrażeń regularnych](https://realpython.com/regex-python/)

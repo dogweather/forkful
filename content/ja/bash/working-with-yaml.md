@@ -1,7 +1,7 @@
 ---
-title:                "「yaml を使用する」"
-html_title:           "Bash: 「yaml を使用する」"
-simple_title:         "「yaml を使用する」"
+title:                "yamlとの作業方法"
+html_title:           "Bash: yamlとの作業方法"
+simple_title:         "yamlとの作業方法"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Data Formats and Serialization"
@@ -10,46 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
-YAMLを使ったプログラミングに取り組む理由を最大2文で説明します。
+## 何&なぜ？
+YAML (YAML Ain't Markup Language) とは、構造化されたデータを人間が読みやすい形式で表現するためのフォーマットです。プログラマーがYAMLを使用する理由は、構造化されたデータを管理しやすくするためです。
 
-YAMLは人間にとって読みやすく、機械にとっても処理しやすいフォーマットであり、多くのアプリケーションで使用されています。そのため、開発者がデータ構造を定義し、データを格納するのに役立ちます。
+## 方法：
+以下に、BashプログラミングでYAMLを使用する方法の例を示します。
 
-## 使い方
-```Bash
-# YAMLファイルを作成
-touch example.yaml
+```
+# YAMLファイルの読み込み
+yaml_file = "sample.yaml"
+cat $yaml_file
 
-# vimを使用してYAMLファイルを開く
-vim example.yaml
+# YAMLファイルの書き込み
+echo "person:
+  name: John
+  age: 30" > $yaml_file
 
-# データをYAML形式で定義
-name: John Doe
-age: 30
-hobby:
-  - hiking
-  - photography
+# YAMLファイルの内容を変数に格納
+yaml_content=$(cat $yaml_file)
 
-# ファイルを保存して終了
-:wq
+# 変数からデータを取得
+name=$(echo $yaml_content | grep "name" | cut -d ":" -f2)
+echo "Name: $name"
 
-# YAMLファイルを読み込んで出力する
-cat example.yaml
-
-# 出力例
-name: John Doe
-age: 30
-hobby:
-  - hiking
-  - photography
+# 数値を含むYAMLデータの扱い
+array=(1, 2, 3, 4)
+echo "array: $array" > $yaml_file
+echo "Array with numbers: $(grep "array" $yaml_file | awk '{print $2}')"
 ```
 
-## より詳しく
-YAMLは、キーと値を持つマッピング形式や、配列を持つシーケンス形式をサポートしています。また、インデントを使って階層構造を表すことができ、複雑なデータ構造を簡潔に表現することができます。
+上記コードの出力:
 
-また、YAMLの拡張子は「.yaml」や「.yml」のように使用でき、多くのプログラミング言語でパースすることができます。
+```
+person:
+  name: John
+  age: 30
+Name: John
+Array with numbers: 1, 2, 3, 4
+```
 
-## 関連リンク
-- [YAML公式サイト](https://yaml.org/)
-- [YAMLチュートリアル](https://learnxinyminutes.com/docs/yaml/)
-- [YAMLの名前について](https://qiita.com/tmurakami1234/items/099c5ca982d2c0dafcf3)
+## 詳細：
+YAMLは、ホームページやソフトウェアの設定ファイルなど、様々なアプリケーションで使用されてきました。他のフォーマットと比べて、YAMLはシンプルで読みやすい書き方ができることが特徴です。同様のフォーマットとしてJSONやXMLがありますが、YAMLはより人間にとって親しみやすく、データを管理しやすいと言われています。
+
+## 参考：
+[YAML.org](https://yaml.org/)
+
+[YAMLの使い方](https://www.iana.org/protocols/yang/yang.html)
+
+[YAMLの概要](https://ja.wikipedia.org/wiki/YAML)

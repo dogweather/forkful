@@ -10,26 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜:
+## 무엇 & 왜?
 
-문자열의 길이를 찾는 것에 참여하는 이유는 자주 사용되고, 많은 문제에서 필요한 기본적인 작업입니다.
+문자열의 길이를 찾는 것은 매우 유용합니다. 이를 통해 우리는 어떤 문자열이 몇 개의 문자로 이루어져 있는지 알 수 있습니다. 프로그래머들은 이를 통해 사용자가 입력한 값의 길이를 확인하거나, 특정 문자열이 조건에 부합하는지를 검사할 때 자주 사용합니다.
 
-## 어떻게:
+## 방법:
 
 ```Clojure
-(def str "Hello, world!")
-(count str)
+(count "Hello World")
+;; Output: 11
 
-;; Output: 13
+(count "안녕하세요")
+;; Output: 5 
 ```
 
-자주 사용되는 `count` 함수를 사용해서 문자열의 길이를 찾을 수 있습니다. 이 함수는 문자열의 모든 요소를 순회하고, 요소의 개수를 리턴합니다.
+## 깊게 들어가보기:
 
-## 깊이 파헤치기:
+문자열의 길이를 구하는 방법은 간단합니다. Clojure에서는 ```count``` 함수를 사용하여 문자열에 포함된 문자의 개수를 반환합니다. 이 함수는 Clojure의 기본 함수이기 때문에 별도의 라이브러리 설치가 필요하지 않습니다. 다른 언어들에서는 보통 문자열의 길이를 구하는 함수가 따로 있지만, Clojure에서는 컬렉션에 포함된 요소들의 개수를 구할 때 사용할 수 있도록 일반화된 함수를 제공합니다. 또한, 문자열의 길이를 구하는 대신 인덱스의 길이를 구할 수도 있습니다. 문자열의 경우, 첫번째 글자의 인덱스는 0이기 때문에 count 함수의 결과값에 1을 더해주면 인덱스의 길이를 구할 수 있습니다.
 
-사실, `count` 함수는 더 많은 일을 할 수 있습니다. 예를 들어, `vector`, `set`, `map` 등의 컬렉션뿐만 아니라, 문자열을 비롯한 모든 시퀀스의 길이도 찾을 수 있습니다. 또한, `count` 함수는 `seq` 함수와 함께 사용할 때, 시퀀스의 실제 길이를 구하는 것이 가능합니다. 
+## 더 알아보기:
 
-## 참고:
+더 자세한 정보를 원한다면, [Clojure docs](https://clojuredocs.org/clojure.core/count)를 참고해보세요. 또한, 다른 언어의 문자열 길이 구하는 방법과 비교해보면 흥미로울 수 있으니 참고해보세요.
 
-- [문자열 길이 찾기 함수 (Official Clojure Documentation)](https://clojuredocs.org/clojure.core/count)
-- [Clojure 문자열 함수 (Modus Create)](https://moduscreate.com/blog/clojure-string-functions/)
+## 관련 자료:
+
+- [Clojure docs](https://clojuredocs.org/clojure.core/count)
+- [Stack Overflow - How to get the length of a string in Clojure](https://stackoverflow.com/questions/20461895/how-to-get-the-length-of-a-string-in-clojure)

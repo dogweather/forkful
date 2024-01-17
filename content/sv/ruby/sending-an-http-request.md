@@ -1,7 +1,7 @@
 ---
-title:                "Skicka en http-begäran"
-html_title:           "Ruby: Skicka en http-begäran"
-simple_title:         "Skicka en http-begäran"
+title:                "Skicka en http-förfrågan."
+html_title:           "Ruby: Skicka en http-förfrågan."
+simple_title:         "Skicka en http-förfrågan."
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "HTML and the Web"
@@ -10,43 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför?
+## Vad & Varför?
 
-För att hämta data från en webbsida eller API, krävs det att skicka en HTTP-anrop. Detta gör att det blir möjligt att få tillgång till information från olika webbplatser och använda den i dina egna applikationer.
+Att skicka en HTTP-begäran är när en programör använder ett programmeringsspråk som Ruby för att skicka ett begärande med specifik information till en annan server. Detta kan inkludera att hämta data från en annan webbsida eller att skicka information till en annan applikation.
 
-## Hur man gör
+Varför skickar programörer HTTP-begäran? Detta kan bero på olika skäl, till exempel att hämta information och använda den i sin egen applikation, eller att integrera med andra applikationer för ett smidigare användarupplevelse.
 
-För att skicka en HTTP-anrop i Ruby, kan du använda dig av Ruby's inbyggda Net::HTTP modul. Detta är ett exempel på hur du kan göra ett GET-anrop till en webbplats:
+## Hur gör man:
 
-```Ruby
+För att skicka en HTTP-begäran med Ruby, kan du använda "Net::HTTP" modulen som finns tillgänglig i Ruby standardbiblioteket. Låt oss säga att vi vill hämta innehållet på en specifik webbsida, till exempel Wikipedia:s startsida:
+
+```
 require 'net/http'
 
-url = URI.parse('https://www.example.com')
-http = Net::HTTP.new(url.host, url.port)
-http.use_ssl = true # Om webbplatsen använder HTTPS
-response = http.get(url)
-puts response.body # Skriver ut den hämtade datan
+uri = URI('https://sv.wikipedia.org/wiki/Wikipedia:Huvudsida')
+response = Net::HTTP.get_response(uri)
+
+puts response.body
 ```
 
-```Ruby
-require 'net/http'
+Detta kommer att skriva ut hela innehållet på Wikipedia:s huvudsida i vår terminal, eftersom vi använder "puts" för att skriva ut innehållet i "response.body" variabeln.
 
-url = URI.parse('https://www.example.com/api')
-params = { key: 'value' } # Data som jag vill skicka
-http = Net::HTTP.new(url.host, url.port)
-http.use_ssl = true # Om webbplatsen använder HTTPS
-response = http.post(url, params)
-puts response.body # Skriver ut svaret från servern
-```
+## Djupdykning:
 
-## Djupdykning
+I dagens internetålder är det vanligt för applikationer att behöva integrera med andra applikationer, och därför är skicka HTTP-begäran en viktig del av en programmerarens verktygslåda. Innan "Net::HTTP" modulen fanns tillgänglig i standardbiblioteket, behövde man använda tredjepartsbibliotek som "HTTParty" eller "RestClient" för att skicka HTTP-begäran.
 
-För att skicka ett HTTP-anrop behöver du förstå de olika delarna av ett HTTP-anrop. Detta inkluderar metoden (GET, POST, PUT etc.), URL-en, och eventuell data som ska skickas med anropet.
+Om du är intresserad av att lära dig mer om HTTP, kan du läsa på om dess historiska kontext och olika versioner för att få en djupare förståelse för protokollet. Det finns också alternativa sätt att skicka HTTP-begäran, som till exempel att använda cURL kommandoraden i terminalen.
 
-Du kan också sätta HTTP-headers i ditt anrop för att skicka ytterligare information. Till exempel, om du ska skicka autentiseringsuppgifter till en API, kan du sätta en "Authorization" header i ditt anrop.
+## Se även:
 
-## Se även
-
-- [Net::HTTP dokumentation](https://ruby-doc.org/stdlib-2.7.4/libdoc/net/http/rdoc/Net/HTTP.html)
-- [HTTP Request Methods](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods)
-- [HTTP Headers](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers)
+- [Ruby standardbiblioteket: Net::HTTP](https://ruby-doc.org/stdlib-2.7.1/libdoc/net/http/rdoc/Net/HTTP.html)
+- [HTTParty](https://github.com/jnunemaker/httparty)
+- [RestClient](https://github.com/rest-client/rest-client)
+- [En djupdykning i HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP)

@@ -1,7 +1,7 @@
 ---
-title:                "Começando um novo projeto"
-html_title:           "Go: Começando um novo projeto"
-simple_title:         "Começando um novo projeto"
+title:                "Iniciando um novo projeto"
+html_title:           "Go: Iniciando um novo projeto"
+simple_title:         "Iniciando um novo projeto"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Getting Started"
@@ -10,42 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+## O que e Por que?
 
-Iniciar um novo projeto pode ser uma tarefa assustadora, mas também pode ser uma oportunidade empolgante para explorar novas ideias e aprender novas habilidades. Com a linguagem de programação Go, você pode criar aplicativos eficientes, confiáveis e escaláveis, atraindo uma grande comunidade de desenvolvedores e empresas.
+Começar um novo projeto em programação é a criação de um novo conjunto de códigos para realizar uma certa tarefa ou desenvolver um novo programa. Programadores fazem isso para resolver problemas específicos, melhorar processos ou criar algo novo e inovador.
 
-## Como Fazer
+## Como fazer:
 
-Começar um novo projeto em Go é simples e divertido. Aqui está um exemplo básico de como escrever um "Hello World" em Go:
+Dê uma olhada em alguns exemplos simples de como começar um novo projeto em Go. Lembre-se de importar o pacote "fmt" para usar a função "Println" e ver o resultado de seu código.
 
-```Go
-package main
+```
+Go package main
 
-import "fmt"
+import (
+    "fmt"
+)
 
 func main() {
-	fmt.Println("Hello World")
+	fmt.Println("Olá Mundo!")
 }
 ```
 
-Com apenas algumas linhas de código, você já criou um programa funcional. Agora, vamos mergulhar um pouco mais no processo de iniciar um novo projeto em Go.
+Você verá a saída "Olá Mundo!" no terminal após executar este código.
 
-## Mergulho Profundo
+## Mergulho Profundo:
 
-Antes de começar a escrever qualquer código em Go, é importante instalar o compilador e configurar seu ambiente de desenvolvimento. Você pode seguir o guia de instalação oficial do Go [aqui](https://golang.org/doc/install) ou procurar um tutorial específico para o seu sistema operacional.
+Go foi criado em 2009 por Robert Griesemer, Rob Pike e Ken Thompson do Google. É uma linguagem de programação de código aberto que foi projetada para ser simples, eficiente e fácil de aprender. Uma das alternativas populares ao Go é a linguagem de programação Python, que também é conhecida por sua sintaxe simples e versatilidade. Ao começar um novo projeto em Go, é importante entender sua estrutura de pacotes e a eficácia de seu compilador.
 
-Uma vez que o Go esteja configurado, você pode começar a escrever código em um arquivo com a extensão ".go". O código sempre começa com um pacote principal e uma função `main`, que é o ponto de entrada do seu programa. A partir daí, use os pacotes e funções da biblioteca padrão do Go e escreva seu código como de costume.
+## Veja Também:
 
-Para executar seu código, abra o terminal, navegue até o diretório do arquivo e use o comando `go run <nome_do_arquivo.go>`. Isso compilará e executará seu código, exibindo a saída no terminal.
-
-Não tenha medo de experimentar e explorar as capacidades do Go, e lembre-se sempre de procurar documentação e exemplos para ajudá-lo ao longo do caminho.
-
-## Veja Também
-
-Para continuar a sua jornada no mundo do Go, aqui estão algumas sugestões de leitura:
-
-- [Tour interativo do Go](https://tour.golang.org/welcome/1)
-- [Documentação oficial do Go](https://golang.org/doc/)
-- [Repositório oficial do Go no GitHub](https://github.com/golang/go)
-
-Divirta-se criando seus próprios projetos em Go e entre na comunidade de desenvolvedores apaixonados por essa linguagem de programação versátil e poderosa. Boa codificação!
+Para mais informações sobre como iniciar um novo projeto em Go, confira a documentação oficial no site: https://golang.org/doc/ ou dê uma olhada em alguns tutoriais online no YouTube.

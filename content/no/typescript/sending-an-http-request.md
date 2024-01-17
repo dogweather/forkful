@@ -10,51 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hva & Hvorfor?
+Sending av en HTTP-forespørsel er en måte for programmerere å kommunisere med en annen datamaskin eller server ved hjelp av internett. Dette lar dem få tilgang til og hente data eller informasjon fra en annen kilde. Programmere gjør dette for å kunne bygge komplekse applikasjoner, hente oppdaterte data og kommunisere med tredjeparts API-er.
 
-`*Hvorfor skulle noen ønske å sende en HTTP forespørsel?*`
-
-HTTP ("Hypertext Transfer Protocol") er et vanlig protokoll for å kommunisere mellom en klient og en server over internett. Ved å sende en HTTP forespørsel, kan en klient be om data fra en server og motta et svar tilbake. Dette er en nøkkelkomponent i nettapplikasjoner, da det tillater klienter å få tilgang til og bygge inn informasjon fra forskjellige servere.
-
-## Hvordan gjøre det
-
-For å sende en HTTP forespørsel i TypeScript, må du først initialisere en ny XMLHttpRequest-objektet.
-
+# Hvordan:
 ```TypeScript
-// Initialisere en ny XMLHttpRequest-objekt
-let xhr = new XMLHttpRequest();
+// Eksempel på en HTTP-forespørsel ved hjelp av innbygget Node.js modulet
+
+const https = require('https');
+
+https.get('https://jsonplaceholder.typicode.com/todos/1', (response) => {
+  let data = '';
+  response.on('data', (chunk) => {
+    data += chunk;
+  });
+
+  response.on('end', () => {
+    console.log(JSON.parse(data));
+  });
+
+}).on("error", (err) => {
+  console.log("Feil: " + err.message);
+});
+
+// Eksempel på resultat:
+/* 
+{
+  "userId": 1,
+  "id": 1,
+  "title": "delectus aut autem",
+  "completed": false
+}
+*/
+
 ```
 
-Deretter må du spesifisere hvilken type forespørsel du vil gjøre (GET, POST, PUT, osv.) og URL-en til serveren du vil kommunisere med.
+# Dypdykk:
+HTTP-forespørsler har vært en vanlig måte å kommunisere med andre maskiner og servere på siden internettets tidlige dager. I dag finnes det alternativer som GraphQL og WebSockets som gir mer fleksibilitet og funksjonalitet. Implementasjon av HTTP-forespørsler i TypeScript er relativt enkel ved hjelp av biblioteker som Axios og Fetch.
 
-```TypeScript
-// Åpne en GET-forespørsel til en URL
-xhr.open('GET', 'https://example.com');
-```
-
-Videre kan du spesifisere eventuelle parametere du vil sende med forespørselen ved hjelp av `send()`-metoden.
-
-```TypeScript
-// Sender en GET-forespørsel til en URL med parametere
-xhr.send('param1=value&param2=value2');
-```
-
-Når responsen kommer tilbake fra serveren, kan du få tilgang til dataene ved hjelp av `responseText` eller `responseXML`-egenskapen til XMLHttpRequest-objektet.
-
-```TypeScript
-// Få tilgang til responsdataene
-let data = xhr.responseText;
-console.log(data);
-```
-
-## Dypdykk
-
-I tillegg til å sende HTTP-forespørsler ved hjelp av XMLHttpRequest-objektet, kan du også bruke andre biblioteker som Axios, Fetch eller Superagent. Disse bibliotekene håndterer mye av den komplekse koden bak å sende en forespørsel og behandle responsen.
-
-Det er også viktig å vite hvordan man håndterer HTTP-forespørsler på en sikker måte. Dette inkluderer å validere brukerinput for å unngå cross-site scripting (XSS)-angrep og bruke autentisering og autorisering for å sikre at kun autoriserte brukere kan få tilgang til data fra serveren.
-
-## Se også
-
-- [Axios dokumentasjon](https://github.com/axios/axios)
-- [Fetch API dokumentasjon](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
-- [Superagent dokumentasjon](https://visionmedia.github.io/superagent/)
+# Se også:
+- [What is an HTTP request? (Engelsk)](https://www.cloudflare.com/learning/performance/what-is-an-http-request/) 
+- [Axios dokumentasjon (Engelsk)](https://github.com/axios/axios) 
+- [Fetch API dokumentasjon (Engelsk)](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)

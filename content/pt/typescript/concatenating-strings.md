@@ -10,49 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+## O que é e porquê?
 
-Muitas vezes, quando estamos criando um programa, precisamos combinar diferentes pedaços de texto em uma única string. Isso pode ser feito de várias maneiras, mas a concatenação de strings é a mais comum e eficiente. 
+Concatenar strings é simplesmente juntar duas ou mais strings em uma única string. Os programadores fazem isso para criar mensagens, nomes de arquivos dinâmicas, formatar dados para visualização, entre outros.
 
-## Como fazer
-
-Para concatenar strings no TypeScript, podemos usar o operador "+" ou a template literals. Aqui está um exemplo usando o operador "+":
-
-```TypeScript 
-let nome = "João";
-let sobrenome = "da Silva";
-let nomeCompleto = nome + " " + sobrenome;
-console.log(nomeCompleto); // Saída: "João da Silva"
-```
-
-Também podemos usar template literals para concatenar strings. Isso nos permite inserir valores de variáveis diretamente na string, sem a necessidade de usar o operador "+". Veja um exemplo:
-
-```TypeScript 
-let idade = 25;
-let frase = `Eu tenho ${idade} anos.`;
-console.log(frase); // Saída: "Eu tenho 25 anos."
-```
-
-## Aprofundando
-
-Ao usar o operador "+", o TypeScript converte automaticamente outros tipos de dados em strings antes de concatená-los. Por exemplo:
+## Como fazer:
 
 ```TypeScript
-let num = 10;
-let texto = "O número é " + num;
-console.log(texto); // Saída: "O número é 10"
+// Exemplo 1:
+let str1 = "Olá";
+let str2 = "mundo";
+let str3 = str1 + " " + str2;
+console.log(str3); // Output: "Olá mundo"
+
+// Exemplo 2:
+let str4 = "1";
+let str5 = "2";
+let str6 = str4 + str5;
+console.log(str6); // Output: "12"
+
+// Exemplo 3:
+let str7 = "O valor é: ";
+let num = 28;
+let str8 = str7 + num;
+console.log(str8); // Output: "O valor é: 28"
 ```
 
-Podemos também utilizar o método `concat()` para concatenar strings em vez do operador "+". O método `concat()` recebe um ou mais argumentos e os une em uma única string. 
+## Mergulho profundo:
 
-```TypeScript
-let texto1 = "Welcome ";
-let texto2 = "to TypeScript";
-console.log(texto1.concat(texto2)); // Saída: "Welcome to TypeScript"
-```
+Concatenar strings pode ser considerado uma função básica de programação, já que é usada em muitos projetos. A concatenação pode ser feita com o operador `+` ou com o método `.concat()`. Além disso, também é possível utilizar interpolação de string para adicionar variáveis diretamente em uma string.
 
-## Veja também
+## Veja também:
 
-- [Documentação oficial do TypeScript sobre strings](https://www.typescriptlang.org/docs/handbook/basic-types.html#string)
-- [Artigo sobre templates literals em TypeScript](https://blog.logrocket.com/template-literals-typescript-f3c6bc2b72bc)
-- [Mais sobre o método concat()](https://www.w3schools.com/jsref/jsref_concat_string.asp)
+- [Documentação TypeScript para manipulação de strings](https://www.typescriptlang.org/docs/handbook/strings.html)
+- [Guia completo sobre concatenação de strings](https://www.javascripttutorial.net/javascript-string-concatenation/)

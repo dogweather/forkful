@@ -1,7 +1,7 @@
 ---
-title:                "Testiaineistojen kirjoittaminen"
-html_title:           "Fish Shell: Testiaineistojen kirjoittaminen"
-simple_title:         "Testiaineistojen kirjoittaminen"
+title:                "Testien kirjoittaminen"
+html_title:           "Fish Shell: Testien kirjoittaminen"
+simple_title:         "Testien kirjoittaminen"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Testing and Debugging"
@@ -10,36 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+It
 
-Kuvittele, että kirjoitat koodia ja kaikki tuntuu sujuvan hyvin. Sitten joudut tekemisiin erilaisten muutosten ja päivitysten kanssa, ja huomaat, että koodisi ei enää toimikaan odotetulla tavalla. Testien kirjoittaminen voi auttaa välttämään tällaiset yllätykset ja säästää aikaa ja päänsärkyä.
+## Mitä & Miksi?
+Testien kirjoittaminen on prosessi, jossa testataan koodin toimivuutta ja luotettavuutta ennen sen julkaisemista tai käyttöä. Testien kirjoittaminen on tärkeää ohjelmistokehityksessä, sillä se auttaa varmistamaan, että koodi toimii oikein ja ennaltaehkäisemään mahdollisia virheitä ja bugien esiintymistä.
 
-## Kuinka
+## Kuinka:
+```Fish Shell ... ``` koodilohkoissa on esimerkkejä testien kirjoittamisesta ja niiden tulostuksista.
 
-```Fish Shell (nykyinen versio)``` mahdollistaa testien kirjoittamisen omassa erityisessä ```test``` -kansiossa. Tämä kansio sisältää testitiedostoja, jotka ovat nimetty ```filename.test.fish```. Voit testata yksittäisiä funktioita tai koko skriptejä. Testit suoritetaan komennolla ```fish --test tests```. 
+### Yksinkertainen testi
 
-## Syväsukellus
+```Fish Shell
 
-Testien kirjoittaminen Fish Shellille tapahtuu käyttämällä sisäänrakennettuja ```test``` -komennolla. Tässä muutamia esimerkkejä, miten voit testata koodiasi:
-
-1. Testaa funktiota nimeltä ```greet```, joka tulostaa tervehdyksen:
-```
-function greet
-  echo "Hello World"
+function calculate_sum --description "Laskee kahden numeron summan"
+  echo $math(add $argv[1] $argv[2])
 end
 
-test "greet tulostaa tervehdyksen" 
-  greet | grep -q "Hello World"
-end
-```
-2. Voit myös testata koko skriptiä, kunhan varmistat, että ```test``` -komennossa annat skriptin nimen ja tiedoston polun:
-```
-test "Kirjoitettu skripti toimii odotetulla tavalla" 
-  fish ~/Documents/scripts/validate.fish
-end
+# Testauspaikkamerkinnät
+@test 'laskee kahden numeron summan'```
+  calculate_sum  5  7
 ```
 
-## Katso myös
+Tulostus:
 
-- [Fish Shellin virallinen dokumentaatio](https://fishshell.com/docs/current/cmds/test.html)
-- [A detailed guide to writing tests in Fish Shell](https://hackernoon.com/a-detailed-guide-to-writing-tests-in-fish-shell-8ul3z3b9)
+```Fish Shell
+12
+```
+
+## Deep Dive:
+Ohjelmistokehityksen alkuajoista lähtien on ymmärretty testien tärkeys ja niiden käytön merkitys koodin laadun parantamisessa. Testien kirjoittaminen auttaa vähentämään virheiden määrää, nopeuttaa ohjelmiston kehitystä ja parantaa sen ylläpidettävyyttä. Fish Shell tarjoaa runsaasti työkaluja testien kirjoittamiseen, kuten `math`- ja `test`-komennot.
+
+On myös olemassa muita vaihtoehtoja testien kirjoittamiseen, kuten Bashin `exit`-komento tai Pythonin `unittest`-kirjasto. Kuitenkin Fish Shellin älykkäät komennot ja prosessiloukkuihin liittyvät ominaisuudet tekevät siitä erinomaisen valinnan testien kirjoittamiseen.
+
+Testien kirjoittamisen taustalta löytyy myös testauslajien teoria, kuten yksikkötestaus, integraatiotestaus ja hyväksymistestaus, jotka kaikki auttavat varmistamaan ohjelmiston toiminnan eri näkökulmista.
+
+## See Also:
+- [Fish Shell Documentation on Tests](https://fishshell.com/docs/current/tutorial.html#tutorial-testing)
+- [Bash exit command](https://ss64.com/bash/exit.html)
+- [Python unittest documentation](https://docs.python.org/3/library/unittest.html)

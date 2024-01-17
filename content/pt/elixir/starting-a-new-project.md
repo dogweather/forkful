@@ -1,7 +1,7 @@
 ---
-title:                "Iniciando um novo projeto"
-html_title:           "Elixir: Iniciando um novo projeto"
-simple_title:         "Iniciando um novo projeto"
+title:                "Começando um novo projeto"
+html_title:           "Elixir: Começando um novo projeto"
+simple_title:         "Começando um novo projeto"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Getting Started"
@@ -10,44 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+# O que e por que?
 
-Você decidiu começar um novo projeto em Elixir? Bem, há muitas razões pelas quais alguém pode querer começar um novo projeto em Elixir. Talvez seja porque você está procurando uma linguagem de programação funcional que seja fácil de aprender e com desempenho excelente. Talvez seja porque você quer aproveitar a escalabilidade e tolerância a falhas que Elixir oferece. Ou talvez seja porque você quer aprender uma nova linguagem de programação para expandir suas habilidades. Seja qual for a sua razão, vamos ver como começar um novo projeto em Elixir.
+Começar um novo projeto é o processo de iniciar um novo projeto de programação, onde os programadores desenvolvem novos programas ou aplicativos. Isso é feito para solucionar problemas ou atender às necessidades específicas dos usuários. Novos projetos também são criados para melhorar ou substituir programas antigos.
 
-## Como começar um novo projeto em Elixir
+## Como fazer:
 
-Para começar um novo projeto em Elixir, você vai precisar ter o Elixir instalado no seu computador. Depois de instalado, você pode usar o comando `mix new` para criar um novo projeto. Por exemplo:
-
-```elixir
-mix new meu_projeto
+```
+Elixir.new/1
 ```
 
-Isso irá criar uma estrutura básica para o seu projeto, incluindo alguns arquivos e pastas iniciais. Agora você pode adicionar o código do seu projeto nos arquivos criados. Por exemplo, vamos adicionar uma função que imprime "Olá mundo!" no console:
+Este é o comando usado para criar um novo projeto em Elixir. Ele irá criar uma estrutura básica de diretórios e arquivos para o seu novo projeto. Você pode especificar o nome do projeto como argumento. 
 
-```elixir
-defmodule MeuProjeto do
-  def hello do
-    IO.puts("Olá mundo!")
-  end
-end
-
-MeuProjeto.hello
+```
+Elixir.new("meu_projeto")
 ```
 
-Para executar o código acima, use o comando `mix run` seguido do nome do arquivo. No nosso caso, seria:
+A saída será algo como:
 
-```elixir
-mix run lib/meu_projeto.exs
+```
+Generating project meu_projeto
+* creating README.md
+* creating .formatter.exs
+* creating .gitignore
+* creating mix.exs
+* creating config
+* creating config/config.exs
+* creating lib
+* creating lib/meu_projeto.ex
+* creating test
+* creating test/test_helper.exs
+* creating test/meu_projeto_test.exs
+
 ```
 
-Isso irá imprimir "Olá mundo!" no console. Agora você pode explorar mais recursos de Elixir e construir seu novo projeto.
+## Exploração aprofundada:
 
-## Mais sobre começar um novo projeto
+Elixir é uma linguagem de programação funcional, criada em 2011 por José Valim. Ele combina conceitos de outras linguagens, como Erlang e Ruby, para fornecer um ambiente altamente escalável e produtivo.
 
-Ao começar um novo projeto em Elixir, é importante se familiarizar com a estrutura padrão do projeto e os arquivos gerados. Além disso, é recomendado utilizar ferramentas de gerenciamento de dependências, como o Hex, para instalar e gerenciar pacotes externos. E, é claro, não deixe de conferir a documentação oficial de Elixir para obter mais informações.
+Se você não quiser usar o comando `Elixir.new/1` para começar um novo projeto, também pode usar ferramentas como o Phoenix Framework ou o Mix, que oferecem recursos adicionais para criar e gerenciar projetos em Elixir.
 
-## Veja também
+Ao iniciar um novo projeto em Elixir, é importante considerar as estruturas de dados e as funções que serão utilizadas. Elixir possui uma forte ênfase na concorrência e na imutabilidade, o que pode ser útil ao criar aplicativos escaláveis e robustos.
 
-- [Elixir - Página oficial](https://elixir-lang.org/)
-- [Hex - Gerenciador de dependências para Elixir](https://hex.pm/)
-- [Documentação de Elixir](https://hexdocs.pm/elixir/)
+## Veja também:
+
+- [Phoenix Framework](https://www.phoenixframework.org/)
+- [Mix](https://elixir-lang.org/getting-started/mix-otp/introduction-to-mix.html)
+- [Documentação oficial do Elixir](https://elixir-lang.org/docs.html)

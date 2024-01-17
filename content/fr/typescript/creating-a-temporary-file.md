@@ -1,7 +1,7 @@
 ---
-title:                "Création d'un fichier temporaire"
-html_title:           "TypeScript: Création d'un fichier temporaire"
-simple_title:         "Création d'un fichier temporaire"
+title:                "Créer un fichier temporaire"
+html_title:           "TypeScript: Créer un fichier temporaire"
+simple_title:         "Créer un fichier temporaire"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Files and I/O"
@@ -10,48 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi 
+## Quoi & Pourquoi?
 
-Les fichiers temporaires sont utiles dans de nombreuses situations en programmation TypeScript. Ils peuvent être utilisés pour stocker temporairement des données, pour effectuer des tests ou pour faciliter la gestion de certains processus. Ils offrent également une manière pratique de gérer les problèmes de mémoire et de performance lorsqu'on travaille avec de grands ensembles de données. 
+Créer un fichier temporaire en programmation consiste simplement à créer un fichier qui ne durera que pour la durée d'une utilisation spécifique. Les programmeurs le font généralement pour stocker des données temporaires ou pour effectuer des opérations provisoires sans avoir à modifier des fichiers existants.
 
-## Comment faire 
+## Comment faire:
 
-Voici comment créer un fichier temporaire en TypeScript, en utilisant la bibliothèque système `fs` : 
+Voici un exemple de code TypeScript pour créer un fichier temporaire et y écrire des données:
 
-```TypeScript
-import * as fs from 'fs';
+```typescript
+import { createWriteStream } from 'fs';
 
-// Créer une fonction pour générer un nom de fichier aléatoire
-function generateRandomName() {
-    const charset = 'abcdefghijklmnopqrstuvwxyz0123456789';
-    let randomName = '';
-    for (let i = 0; i < 10; i++) {
-        randomName += charset.charAt(Math.floor(Math.random() * charset.length));
-    }
-    return randomName;
-}
-
-// Générer un nom de fichier aléatoire
-const fileName = generateRandomName();
-
-// Utiliser la fonction `fs.mkdtempSync()` pour créer un dossier temporaire avec le nom généré
-const tempDir = fs.mkdtempSync(`./${fileName}`);
-
-// Utiliser la fonction `fs.closeSync()` pour fermer le dossier temporaire après utilisation
-fs.closeSync(tempDir);
-
-// Confirmer la création du fichier temporaire avec un message
-console.log(`Un nouveau fichier temporaire a été créé : ${tempDir}`);
+const tmpFile = createWriteStream('tempfile.txt');
+tmpFile.write('Hello world!');
+tmpFile.end();
 ```
 
-Le résultat de ce code sera un nouveau dossier temporaire avec un nom aléatoire, tel que `a23bcde45f`. Celui-ci peut maintenant être utilisé pour stocker temporairement des données ou effectuer certaines opérations avant d'être supprimé grâce à la fonction `fs.closeSync()`. 
+La sortie sera un fichier texte nommé "tempfile.txt" contenant la phrase "Hello world!". Vous pouvez également spécifier un chemin différent en passant le chemin absolu ou relatif du fichier en tant que paramètre à la fonction `createWriteStream()`.
 
-## Plongée en profondeur 
+## Profondeur de plongée:
 
-La création de fichiers temporaires peut sembler simple, mais elle peut cacher des problèmes potentiels lorsqu'elle est utilisée dans des applications en production. Il est important de prendre en compte les contraintes de performance et de sécurité lors de la gestion des fichiers temporaires. Par exemple, il est préférable de limiter leur taille et leur durée de vie pour éviter des problèmes de mémoire et de sécurité. De plus, il est recommandé d'utiliser des noms de fichiers aléatoires et de les stocker dans un dossier dédié pour éviter des conflits ou des accès non autorisés. 
+Les fichiers temporaires sont une pratique courante en programmation, utilisée depuis les premiers jours de l'informatique. Les alternatives comprennent l'utilisation de variables temporaires en mémoire, mais cela peut parfois entraîner une perte de données en cas d'erreur ou d'arrêt du programme. La création de fichiers temporaires offre une solution plus sécurisée et fiable.
 
-## Voir aussi 
+En TypeScript, la fonction `createWriteStream()` appartient au module `fs` qui fait partie du noyau de Node.js. Cela signifie qu'il est disponible dès l'installation de Node.js, sans nécessiter d'autres modules ou packages.
 
-- [Documentation officielle de la bibliothèque système `fs`](https://nodejs.org/api/fs.html)
-- [Tutoriel sur la gestion des fichiers temporaires en TypeScript](https://codeburst.io/working-with-temporary-files-in-typescript-6ccd70a93b21)
-- [Bonnes pratiques pour la gestion des fichiers en Node.js](https://www.freecodecamp.org/news/node-js-best-practices-8c1e26a3be3d/)
+## Voir aussi:
+
+Pour en savoir plus sur la création de fichiers temporaires en TypeScript, consultez la documentation officielle de Node.js sur le module `fs` (https://nodejs.org/api/fs.html) ainsi que la documentation TypeScript sur l'utilisation des modules (https://www.typescriptlang.org/docs/handbook/modules.html).

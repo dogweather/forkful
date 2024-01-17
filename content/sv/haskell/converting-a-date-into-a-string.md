@@ -1,7 +1,7 @@
 ---
-title:                "Omvandling av ett datum till en sträng"
-html_title:           "Haskell: Omvandling av ett datum till en sträng"
-simple_title:         "Omvandling av ett datum till en sträng"
+title:                "Omvandla ett datum till en sträng"
+html_title:           "Haskell: Omvandla ett datum till en sträng"
+simple_title:         "Omvandla ett datum till en sträng"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Dates and Times"
@@ -10,35 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
 
-Att konvertera en datum-till-sträng kan vara användbart när du vill visa datuminformation för användare, spara datumet i en databas eller manipulera datumet på olika sätt. Med Haskell kan du enkelt konvertera datum till en sträng med hjälp av några inbyggda funktioner.
+Att konvertera ett datum till en sträng är en vanlig uppgift inom programmering. Det betyder helt enkelt att vi vill omvandla ett datum till en läslig text i strängformat. Detta är en användbar funktion eftersom det tillåter program att utdata datum på ett förståeligt sätt för användare.
 
-## Hur man gör
-
-Först måste du importera modulen "Data.Time" för att kunna använda funktionerna för datum och tid i Haskell. Se till att du också har "Control.Monad" modulen importerad för att använda "liftM" funktionen.
+## Hur man gör det:
 
 ```Haskell
-import Data.Time (formatTime, getCurrentTime, defaultTimeLocale)
-import Control.Monad (liftM)
+import Data.Time.Format
+
+-- Skapa ett datum
+let datum = fromGregorian 2019 11 8
+
+-- Konvertera datumet till en sträng med formatet DD.MM.YYYY
+let datumSträng = formatTime defaultTimeLocale "%d.%m.%Y" datum
+
+-- Skriv ut resultatet
+datumSträng
+-- Output: "08.11.2019"
+
 ```
 
-För att konvertera ett datum till en sträng behöver du två saker: datumet självt och ett formateringssträng. Formateringssträngen berättar för Haskell vilken typ av format du vill ha för ditt datum. Du kan använda olika symboler för år, månad, dag, timme, minut och sekund. Här är ett exempel på hur du kan konvertera dagens datum till en sträng i formatet "ÅÅÅÅ-MM-DD":
+## Djupdykning:
 
-```Haskell
-getCurrentTime >>= liftM (formatTime defaultTimeLocale "%Y-%m-%d")
-```
+Konvertering av datum till strängar är en viktig del av en programmers verktygslåda. Detta görs ofta för att möjliggöra utdata i ett visst format, eller för att underlätta användarens läsning av datum. Andra alternativ för datumkonvertering inkluderar att skapa egna funktioner för att formatera datumet eller använda inbyggda bibliotek som `Data.Time.Format`.
 
-Du kan också ta en titt på System.Locale modulen för att se alla möjliga symboler du kan använda i formateringssträngen.
+En intressant faktum är att en stor del av datumen som vi använder idag är baserade på den Gregorianska kalendern, som infördes av påven Gregorius XIII år 1582. Detta har blivit den standardkalendern som används i stora delar av världen idag.
 
-## Djupdykning
+## Se även:
 
-När du använder formatTime funktionen, är det viktigt att förstå hur tidszoner fungerar. Som standard kommer funktionen att använda den lokala tidszonen på din dator. Om du vill använda en annan tidszon, måste du använda "z" eller "Z" symbolen i din formateringssträng och specificera en tidszon som en parameter. Du kan också använda "X" för att få tidszonen i timmar och minuter.
-
-Haskell erbjuder också en "parseTimeM" funktion som gör det möjligt att konvertera en sträng till ett datum, vilket kan vara användbart om du behöver hämta datumet från en databas eller en användare.
-
-## Se även
-
-- [Haskell Datum och Tid](https://wiki.haskell.org/Date_and_time)
-- [Dokumentation för Data.Time-modulen](https://hackage.haskell.org/package/time-1.8.0.2/docs/Data-Time.html)
-- [Tutorial för att arbeta med Datum och Tid i Haskell](https://www.schoolofhaskell.com/user/edwardk/tutorial-for-1-0-1-1-time-module)
+- [Haskell.org](https://www.haskell.org/) - officiell hemsida för Haskell
+- [Data.Time.Format modul](https://www.haskell.org/hoogle/?hoogle=Data.Time.Format) - dokumentation för `Data.Time.Format` biblioteket i Haskell

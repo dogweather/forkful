@@ -10,28 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
-Att skicka en HTTP-begäran med grundläggande autentisering är nödvändigt om man vill använda en webbtjänst som kräver autentisering. Det är en enkel och vanlig metod för att säkra åtkomst och identifiera användare.
+## Vad & Varför?
+Att skicka en HTTP-förfrågan med grundläggande autentisering innebär att man skickar ett användarnamn och lösenord för att få tillgång till ett webbgränssnitt eller en API-tjänst. Program utvecklare använder det för att säkra åtkomsten till sina applikationer och skydda känslig information från obehöriga.
 
-## Så här
-För att skicka en HTTP-begäran med grundläggande autentisering i C# behöver vi först skapa en instans av klassen `HttpClient`. Detta är ett inbyggt C#-verktyg som hjälper oss att hantera HTTP-begäran och svar. Sedan behöver vi definiera URL-en och lägga till vår autentiseringsinformation i vår begäran.
-
+## Så här:
 ```C#
-var client = new HttpClient();              // Skapar en instans av HttpClient
-var url = "https://example.com/api/users";  // Definierar URL-en
-client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(    // Lägger till autentiseringsinformationen
-    "Basic", Convert.ToBase64String(Encoding.ASCII.GetBytes("username:password")));   
+// Skapa en klient för HTTP-förfrågan
+var client = new HttpClient();
+
+// Ange autentisering att använda basic authentication
+var auth = new AuthenticationHeaderValue("Basic", Convert.ToBase64String(Encoding.ASCII.GetBytes("användarnamn:lösenord")));
+
+// Ange användarnamn och lösenord för HTTP-förfrågan
+client.DefaultRequestHeaders.Authorization = auth;
+
+// Skicka en GET-förfrågan till en API-tjänst
+var response = await client.GetAsync("https://exempel.com/api/resurs");
+
+// Hämta svarsinnehållet
+var responseContent = await response.Content.ReadAsStringAsync();
+
+// Skriv ut svaret
+Console.WriteLine(responseContent);
 ```
 
-I ovanstående kod måste vi ersätta "username" och "password" med våra egna autentiseringsuppgifter. Detta konverterar dem till Base64 och lägger till det i vår begäran som en authorization header. Nu kan vi skicka begäran genom att använda `client.GetAsync()` eller `client.PostAsync()`, beroende på vilken typ av begäran vi behöver skicka. Vi bör även hantera eventuella fel som kan uppstå genom att använda `try-catch`-block.
+**Exempelutgång:**
 
-## Deep Dive
-När vi skapar en instans av `HttpClient`-klassen, används en standardkonfiguration som inte tillåter grundläggande autentisering. Vi behöver därför specificera att vi vill använda det i vår begäran genom att ange det som en authorization header.
+```
+{ "status": "success", "data": { "resurs": "information" } }
+```
 
-En annan viktig aspekt att tänka på är att autentiseringsuppgifterna måste krypteras innan de skickas. Detta görs genom att konvertera dem till Base64-kodning, vilket är ett sätt att representera binär data i textform.
+## Djupdykning:
+Under 1990-talet skapades grundläggande autentisering som en enkel form av autentisering för HTTP. Det är enkelt att implementera och kräver bara enkla ändringar i HTTP-förfrågan. Alternativ till grundläggande autentisering inkluderar bearer-token-autentisering och OAuth.
 
-En annan metod för autentisering som är vanligt förekommande är OAuth, som ofta används för API-autentiseringen. Detta är en mer säker metod som innebär att man använder en unik token för att autentisera istället för användarnamn och lösenord.
-
-## Se även
-- [Microsoft Docs - Skicka HTTP-begäran med grundläggande autentisering](https://docs.microsoft.com/sv-se/dotnet/csharp/programming-guide/concepts/linq/sending-a-basic-authentication-request)
-- [MDN Web Docs - Autentisering i HTTP](https://developer.mozilla.org/sv-SE/docs/Web/HTTP/Authentication)
+## Se även:
+- [Microsofts dokumentation för HTTP-basautentisering](https://docs.microsoft.com/en-us/dotnet/api/system.net.http.httpclient?view=netcore-3.1)
+- [Huvudmetoder för HTTP-åtkomstkontroll](https://www.w3schools.com/tags/ref_httpmethods.asp)

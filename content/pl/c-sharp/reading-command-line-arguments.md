@@ -1,7 +1,7 @@
 ---
-title:                "Odczytywanie argumentów wiersza poleceń"
-html_title:           "C#: Odczytywanie argumentów wiersza poleceń"
-simple_title:         "Odczytywanie argumentów wiersza poleceń"
+title:                "Odczytywanie argumentów z linii poleceń"
+html_title:           "C#: Odczytywanie argumentów z linii poleceń"
+simple_title:         "Odczytywanie argumentów z linii poleceń"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Files and I/O"
@@ -10,52 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+# Co i dlaczego?
 
-Dlaczego kiedykolwiek powinieneś zająć się czytaniem argumentów wiersza poleceń? Głównym powodem jest to, że jest to powszechny sposób pobierania danych od użytkowników w wielu programach. Dzięki temu możesz zapewnić interaktywność w swoich aplikacjach i umożliwić użytkownikom dostosowywanie programu do swoich potrzeb.
+Odczytywanie argumentów z wiersza poleceń to częsty aspekt programowania, który pozwala programom działać w zależności od różnych warunków. Programiści używają tej techniki, ponieważ pozwala im na dostosowywanie działania programu bez konieczności zmieniania kodu źródłowego.
 
-## jak to zrobić
+# Jak to zrobić:
 
-Jeśli chcesz nauczyć się czytać argumenty wiersza poleceń w języku C#, oto prosty sposób, aby to zrobić:
+~~~C#
+/* Przykładowy kod w języku C# pokazujący jak odczytać argumenty z wiersza poleceń */
 
-```C#
-static void Main(string[] args)
+using System;
+
+class Program
 {
-    if (args.Length == 0)
+    static void Main(string[] args)
     {
-        Console.WriteLine("Nie podano żadnych argumentów!");
-    }
-    else
-    {
-        Console.WriteLine("Oto lista argumentów, które zostały przekazane:");
-        foreach (string arg in args)
+        // Jeśli wprowadzone zostały argumenty
+        if (args.Length > 0)
         {
-            Console.WriteLine(arg);
+            // Wyświetl pierwszy argument
+            Console.WriteLine("Pierwszy argument: " + args[0]);
+        }
+        else
+        {
+            // Wyświetl informację o braku argumentów
+            Console.WriteLine("Brak wprowadzonych argumentów.");
         }
     }
 }
-```
 
-Przykładowy wynik dla uruchomienia programu z argumentami "arg1" i "arg2" będzie wyglądał następująco:
+/* Przykładowe wywołanie programu z argumentami "argument1 argument2" spowoduje wyświetlenie tekstu "Pierwszy argument: argument1" */
 
-```
-Oto lista argumentów, które zostały przekazane:
-arg1
-arg2
-```
+~~~
 
-Możesz również przyjmować argumenty wiersza poleceń jako liczby i wykonywać na nich operacje matematyczne, czy też przekazywać do nich ścieżki plików lub adresy URL. Możliwości są nieograniczone!
+# Wprowadzenie do tematu:
 
-## głębsze zagłębienie
+Odczytywanie argumentów z wiersza poleceń nie jest nową techniką i powszechnie używana jest w wielu językach programowania. Alternatywą dla ręcznego odczytywania argumentów jest użycie gotowej biblioteki lub frameworka. W języku C# istnieje wiele takich rozwiązań, na przykład biblioteka "Command Line Parser" lub framework "Microsoft.Extensions.CommandLineUtils".
 
-Czytanie argumentów wiersza poleceń może być bardziej skomplikowane niż w powyższym przykładzie. Istnieje wiele różnych metod analizy i manipulowania nimi w programie. Ważne jest, aby pamiętać o sprawdzaniu poprawności danych i obsłudze wyjątków.
+# Zobacz też:
 
-Warto również przestudiować biblioteki i narzędzia dostępne w języku C#, które mogą ułatwić pracę z argumentami wiersza poleceń, takie jak biblioteka CommandLineParser lub narzędzie Command Line Parser.
-
-## Zobacz również
-
-[Porównanie różnych bibliotek do czytania argumentów wiersza poleceń w języku C#](https://github.com/jchook/Command-Line-Parser)
-
-[Dokumentacja biblioteki CommandLineParser](https://github.com/commandlineparser/commandline)
-
-[Narzędzie Command Line Parser](https://github.com/gsscoder/commandline)
+- Dokumentacja dotycząca odczytywania argumentów z wiersza parancov
+- Poradnik dla programistów dotyczący wykorzystania biblioteki "Command Line Parser" w języku C#

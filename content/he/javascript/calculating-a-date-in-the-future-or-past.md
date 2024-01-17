@@ -10,41 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## למה
+## מה ולמה?
+חישוב תאריך בעתיד או בעבר הוא פעולה שמאפשרת לנו להחיל אתריק לתאריך קיים ולקבל החזר תאריך חדש בתאריך המבוקש. תהליך זה משמש תכנותיות נפרדות כאשר יש צורך לכוון את התאריך בתוכנית עם יכולות יעילות ותאומות.
 
-תאר לעצמך שאתה צריך להפחית מסת הנסיעה שלך כדי לקבל חבילת טיול זולה לחו"ל. זה יהיה מאוד שימושי אם תוכל לחשב מתי תגיע לכיוון הטיול, כך שתוכל למקסם את המסת הנסיעה שלך. קלות להתקנה!
+## איך לעשות?
+כדי לחשב תאריך בעתיד או בעבר ב-Javascript, את/ה יכול/ה להשתמש בפונקציה ```Date``` כדי ליצור את התאריך המבוקש ולהשתמש במתודות כגון ```getDate()```, ```getMonth()```, ```getFullYear()```, ועוד כדי לקבל את המידע הרלוונטי מתוך התאריך החדש. לדוגמה:
+```Javascript
+// יצירת תאריך מבוקש
+let futureDate = new Date("February 1, 2022"); // 1 לפברואר 2022
 
-## איך לעשות זאת
-
-```javascript
-//הכנס את תאריך ההתחלה
-let startDate = new Date('2021-10-15');
-
-//הגדר כמה ימים מתלכדים (זו המסת הנסיעה המינימלית)
-let travelDays = 7;
-
-//חשב את תאריך הסיום באמצעות חישוב נוסף לפי מספר הימים המתלכדים
-let endDate = new Date(startDate.getDate() + travelDays);
-
-//הדפס את תאריך הסיום בפורמט מתאים
-console.log(`תאריך הסיום של חבילת הטיול הוא: ${endDate.toDateString()}`);
+// קבלת יום בתאריך החדש
+let day = futureDate.getDate(); // 1
+// קבלת חודש בתאריך החדש
+let month = futureDate.getMonth(); // 1 (כי החודשים באינדקסים מתחילים מ-0)
+// קבלת שנה בתאריך החדש
+let year = futureDate.getFullYear(); // 2022
 ```
 
-פלט:
+## מסע לעומק
+החישוב של תאריך בעתיד או בעבר הוא חלק חשוב בתכנות וישנם כמה דרכים לבצע את הפעולה הזו. חישוב בעזרת המודול ```Moment.js``` או באמצעות מסלול קצר יותר ב-Javascript באמצעות מתודות כגון ```setDate()```, ```setMonth()```, ```setFullYear()```. כמו כן, כדאי לקחת בחשבון את האיזון בין האיחודות שונות בין טכנולוגיות כדי לבחור את הכי יעיל ומתאים לצורכים שלך.
 
-```
-תאריך הסיום של חבילת הטיול הוא: Mon Oct 22 2021
-```
-
-## להעמיק
-
-פונקציות כמו `getDate()` ו- `toDateString()` שימושיות לחישוב תאריכים בפורמטים שונים. ניתן להשתמש בתאריכי JavaScript בקלות נוספת כדי לייצר מועדים רבים, כולל תאריכים בעבר ובעתיד. לפרטים נוספים ניתן לעיין במדריכים הבאים:
-
-- [תאריכי JavaScript נסיעה - W3Schools](https://www.w3schools.com/jsref/jsref_obj_date.asp)
-- [תאריך JavaScript Calculator - FreeCodeCamp](https://www.freecodecamp.org/news/javascript-date-calculator/)
-- [תיבת כלי של תאריך JavaScript - MDN](https://developer.mozilla.org/he/docs/Web/JavaScript/Reference/Global_Objects/Date) 
-
-## ראה גם
-
-- [התחל עם JavaScript - מדריך למתחילים](https://www.udemy.com/course/javascript-beginners-complete-tutorial/)
-- [מסמכי Markdown - GitHub](https://guides.github.com/features/mastering-markdown/)
+## ראו גם
+למידע נוסף על חישוב תאריך בעתיד או בעבר, ניתן לקרוא על הפונקציות המובנות ב-Javascript ואת המודול ```Moment.js```. ניתן גם למצוא מידע רב על תאריכים ושעונים באתר הרשמי של גוגל על ידי חיפוש על "תאריכים מתוחכמים ב-Javascript".

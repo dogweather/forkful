@@ -1,7 +1,7 @@
 ---
-title:                "Suppression des caractères correspondant à un modèle"
-html_title:           "Elm: Suppression des caractères correspondant à un modèle"
-simple_title:         "Suppression des caractères correspondant à un modèle"
+title:                "Supprimer les caractères correspondant à un motif"
+html_title:           "Elm: Supprimer les caractères correspondant à un motif"
+simple_title:         "Supprimer les caractères correspondant à un motif"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -10,38 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Pourquoi
+## Qu'est-ce que c'est et pourquoi le faire ?
+Supprimer des caractères correspondant à un modèle est un moyen pour les programmeurs de manipuler des chaînes de caractères en supprimant des caractères qui correspondent à un motif spécifique. Par exemple, cela pourrait être utile pour supprimer tous les espaces de trop dans un texte pour le rendre plus lisible ou pour supprimer certains caractères spéciaux d'une chaîne avant de la stocker dans une base de données.
 
-Vous êtes peut-être tombé sur cette tâche ennuyeuse : supprimer toutes les occurrences d'un certain caractère ou motif dans une chaîne de caractères. Heureusement, il existe une solution simple en Elm qui vous permettra de vous en débarrasser rapidement et efficacement.
-
-# Comment faire
-
+## Comment faire :
 ```Elm
-deletePattern : String -> Char -> String
-deletePattern str c =
-   String.filter (\char -> char /= c) str
+deleteMatchingPattern : String → String → String
+deleteMatchingPattern pattern string =
+    String.filter (\c -> not (String.contains c pattern)) string
+    
+deleteSpaces : String
+deleteSpaces =
+    deleteMatchingPattern " " "Ce texte contient trop d'espaces."
 
-deletePattern "Hello World" 'l'
--- Output: "Heo Word"
+-- Output: "Ce texte contienttropd'espaces."
 ```
 
-Voici un exemple de code qui supprime toutes les lettres "l" de la chaîne de caractères "Hello World". Vous pouvez remplacer le motif et la chaîne de caractères par ceux de votre choix. La fonction ```deletePattern``` utilise la fonction prédéfinie ```String.filter``` pour parcourir la chaîne de caractères et supprimer toutes les occurrences du caractère spécifié.
+## Plongez plus en profondeur :
+La suppression de caractères correspondant à un modèle est souvent utilisée pour nettoyer ou formater des données avant de les traiter ou de les stocker. Cette technique est également couramment utilisée pour créer des masques de saisie sur des formulaires web ou pour supprimer des caractères spéciaux des messages saisis par les utilisateurs.
 
-# Plongée en profondeur
+Il existe d'autres méthodes pour manipuler des chaînes de caractères, comme les expressions régulières, mais la suppression de caractères correspondant à un modèle est souvent choisie pour sa simplicité et sa rapidité d'exécution.
 
-Si vous souhaitez supprimer plusieurs caractères ou motifs à la fois, vous pouvez utiliser une variante de la fonction ```deletePattern```. Voici un exemple de code qui utilise une liste de caractères à supprimer :
+En termes de mise en œuvre, la fonction `filter` d'Elm est utilisée pour parcourir chaque caractère de la chaîne, et le caractère est supprimé s'il correspond au modèle spécifié.
 
-```Elm
-deletePatterns : String -> List Char -> String
-deletePatterns str cs =
-   String.filter (\char -> not <| List.member char cs) str
-
-deletePatterns "Hello World" ['l', 'o']
--- Output: "He Wrd"
-```
-
-La fonction ```List.member``` vérifie si un caractère est présent dans la liste. Si ce n'est pas le cas, la fonction ```not``` retourne ```True``` et le caractère est conservé dans la chaîne de caractères résultante.
-
-# Voir aussi
-
-Pour en savoir plus sur les fonctions de manipulation de chaînes de caractères en Elm, consultez la documentation officielle : [String](https://package.elm-lang.org/packages/elm/core/latest/String) et [List](https://package.elm-lang.org/packages/elm/core/latest/List).
+## À voir également :
+Pour en savoir plus sur les fonctions de manipulation de chaînes de caractères en Elm, consultez la [documentation officielle](https://guide.elm-lang.org/strings/) ou explorez la [source de la fonction `filter`](http://package.elm-lang.org/packages/elm-lang/core/latest/String#filter).

@@ -1,7 +1,7 @@
 ---
-title:                "Kääntämisen otsikko: Työskentely csv:n kanssa"
-html_title:           "TypeScript: Kääntämisen otsikko: Työskentely csv:n kanssa"
-simple_title:         "Kääntämisen otsikko: Työskentely csv:n kanssa"
+title:                "Työskentely csv:n kanssa"
+html_title:           "TypeScript: Työskentely csv:n kanssa"
+simple_title:         "Työskentely csv:n kanssa"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Data Formats and Serialization"
@@ -10,50 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mikä & Miksi?
+CSV on lyhenne sanoista "comma-separated values" eli pilkuin erotetut arvot. Se on yksi tapa tallentaa ja järjestää taulukkodataa tekstitiedostoon. Ohjelmoijat käyttävät CSV-tiedostoja usein datan tallentamiseen ja jakamiseen eri ohjelmien välillä.
 
-CSV (Comma-Separated Values) on yleinen tiedostomuoto, jota käytetään tietojen tallentamiseen ja jakamiseen. Se on helppolukuinen ja tukee monia eri ohjelmia ja sovelluksia. Tämän vuoksi on hyödyllistä tietää, kuinka työskennellä CSV-tiedostojen kanssa, jotta voi käsitellä tietoja tehokkaasti.
-
-## Kuinka
-
-Jos haluat lukea ja käsitellä CSV-tiedostoja TypeScriptin avulla, voit käyttää [Papaparse](https://github.com/mholt/PapaParse) -kirjastoa. Se tarjoaa kätevän tavan lukea ja muuntaa CSV-tiedostoja JavaScript-objekteiksi.
-
-Asenna kirjasto ensin npm:llä komennolla `npm install papaparse`.
-
-Sitten voit käyttää sitä TypeScriptin kanssa seuraavasti:
-
+## Miten:
 ```TypeScript
-// Importoi kirjasto
-import * as Papa from 'papaparse';
+// Tuodaan CSV-tiedosto käyttäen npm-pakettia "csvtojson"
+import { csv } from 'csvtojson';
 
-// Luo muuttuja CSV-tiedoston sisällölle
-const csv = `
-Nimi, Ikä, Maa
-Matti, 25, Suomi
-Anna, 30, Ruotsi
-`;
+// Luodaan muuttuja, johon tallennetaan tuodun tiedoston sisältö
+const data = await csv().fromFile('data.csv');
 
-// Määritä CSV:n asetukset (valinnainen)
-const options = {
-  header: true // määrittelee, että ensimmäinen rivi sisältää otsikot kullekin sarakkeelle
-};
+// Tulostetaan tiedoston sisältö konsoliin
+console.log(data);
 
-// Käytä parse-funktiota lukemaan ja muuntamaan tiedot
-const result = Papa.parse(csv, options);
+// Esimerkki CSV-tiedoston sisällöstä:
+/*
+nimi, ikä, suosikki_väri
+Matti, 25, sininen
+Anna, 30, punainen
+*/
 
-// Tulosta tulos konsoliin
-console.log(result.data); // tulostaa taulukon JavaScript-objekteja
+// Tuloste:
+/*
+[
+  { nimi: 'Matti', ikä: 25, suosikki_väri: 'sininen' },
+  { nimi: 'Anna', ikä: 30, suosikki_väri: 'punainen' }
+]
+*/
 ```
 
-Tämä koodi luo taulukon kolmesta JavaScript-objektista, joissa jokaisessa on kolme avainta: "Nimi", "Ikä" ja "Maa". Voit käyttää näitä tietoja ohjelmissasi haluamallasi tavalla.
+## Syvällinen sukellus:
+CSV-muoto kehitettiin 1970-luvulla IBM:n käyttöön, mutta se on sittemmin yleistynyt myös muilla alustoilla. CSV ei ole ainoa tapa tallentaa taulukkodataa tekstitiedostoon, mutta se on yksi yleisimmin käytetyistä. Muita vaihtoehtoja ovat esimerkiksi XML, JSON ja YAML. CSV-tiedoston käsittelyyn on olemassa useita erilaisia npm-paketteja ja TypeScript tarjoaa myös omia sisäänrakennettuja työkaluja kuten ```fs```-moduulin.
 
-## Syvempi sukellus
-
-Papaparse-kirjasto tarjoaa myös paljon muita toimintoja, kuten tiedon kirjoittamisen CSV-muotoon, asetusten määrittämisen ja virheiden käsittelyn. Voit lukea lisää [kirjaston dokumentaatiosta](https://www.papaparse.com/docs).
-
-CSV-tiedostot voivat myös sisältää monimutkaisempia tietoja, kuten upotettuja taulukoita ja rivien yhdistämistä. Tässä tapauksessa sinun on ehkä määriteltävä erilaiset asetukset tai käsiteltävä tiedot manuaalisesti. On hyödyllistä tuntea [CSV:n syntaksia](https://en.wikipedia.org/wiki/Comma-separated_values), jotta voit työskennellä kaikenlaisten tiedostojen kanssa.
-
-## Katso myös
-
-- [Papaparse-dokumentaatio](https://www.papaparse.com/docs)
-- [CSV:n syntaksin opas](https://en.wikipedia.org/wiki/Comma-separated_values)
+## Katso myös:
+- [CSV-tiedoston muoto Wikipedia:ssa](https://fi.wikipedia.org/wiki/CSV-tiedoston_muoto)
+- [csvtojson npm-paketti](https://npmjs.com/package/csvtojson)
+- [TypeScriptin ```fs```-moduuli](https://nodejs.org/api/fs.html#fs_fs_readfile_path_options_callback)

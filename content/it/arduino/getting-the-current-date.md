@@ -10,73 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+## Che cos'è e perché?
 
-Perché dovresti preoccuparti di ottenere la data corrente? Semplice, perché è utile per molte cose come la gestione del tempo, il monitoraggio delle attività quotidiane o per creare progetti che richiedono una visualizzazione della data attuale.
+Ottenere la data corrente è un'operazione comune nei programmi, che consiste nel recuperare la data corrente dal sistema in cui viene eseguito. I programmatori spesso utilizzano questa informazione per poter tenere traccia del tempo passato, programmare eventi futuri o semplicemente visualizzare la data sul display.
 
-## Come fare
+## Come fare:
 
-Per ottenere la data corrente sul tuo Arduino, puoi utilizzare la funzione `now()` della libreria `Time`. Ecco un semplice esempio di codice che mostra la data attuale sul monitor seriale:
+Utilizzare la funzione `millis()` è un modo semplice per ottenere la data corrente in millisecondi. Questa funzione restituisce il numero di millisecondi trascorsi da quando il programma è stato avviato. Ad esempio, il codice seguente visualizza la data corrente sul monitor seriale:
 
-```Arduino
-#include <Time.h> 
+```
+Arduino ... Serial.begin(9600);
 
-void setup() {
-  Serial.begin(9600); // Inizializza la comunicazione seriale
-}
-
-void loop() {
-  // Ottieni la data corrente con la funzione now()
-  // La sintassi è ora() + il formato della data desiderato
-  String data = String(ora()) + "/" + String(mese()) + "/" + String(anno());
-
-  // Stampa la data sul monitor seriale
-  Serial.println(data);
-
-  // Aspetta 1 secondo prima di ripetere il loop
-  delay(1000);
-}
+Arduino ... Serial.print("La data corrente è: ");
+Arduino ... Serial.println(millis() / 1000); // millis() restituisce i millisecondi totali, quindi dividiamo per 1000 per ottenere i secondi
 ```
 
-La console seriale dovrebbe mostrare qualcosa del tipo `dd/mm/yyyy`, dove `dd` è il giorno, `mm` il mese e `yyyy` l'anno.
+L'output sarà qualcosa del tipo "La data corrente è: 82851".
 
-Puoi anche utilizzare la funzione `dayStr()` e `monthStr()` per ottenere il giorno della settimana e il nome del mese. Ad esempio, se vogliamo mostrare la data in formato "giorno, dd mm yyyy", possiamo utilizzare questo codice:
+## Approfondimento:
 
-```Arduino
-#include <Time.h> 
+Alternativamente, è possibile utilizzare un modulo RTC (Real Time Clock) che si collega direttamente alla scheda Arduino e fornisce un'accurata data e ora. Un esempio è il modulo DS1307 RTC. In questo caso, è necessario utilizzare una specifica libreria che consente di comunicare con il modulo e leggere la data corrente.
 
-void setup() {
-  Serial.begin(9600); // Inizializza la comunicazione seriale
-}
+Un'altra opzione è quella di utilizzare una fonte esterna, come un server NTP (Network Time Protocol) per ottenere la data e ora correnti tramite una connessione internet. Ciò può risultare utile se si vuole sincronizzare il dispositivo con una fonte affidabile e precisa.
 
-void loop() {
-  // Ottieni la data corrente
-  String day = dayStr(weekday()); // Ottieni il nome del giorno
-  String data = day + ", " + String(ora()) + " " + monthStr(mese()) + " " + String(anno());
+## Vedi anche:
 
-  // Stampa la data sul monitor seriale
-  Serial.println(data);
-
-  // Aspetta 1 secondo prima di ripetere il loop
-  delay(1000);
-}
-```
-
-Ecco un esempio di output: "Lunedì, 14 Settembre 2021".
-
-## Approfondimento
-
-Per utilizzare la libreria `Time`, devi prima impostare l'orologio interno del tuo Arduino. Per farlo, puoi utilizzare un modulo RTC (Real Time Clock) come il DS1307 o il DS3231, che ha un oscillatore di precisione e una batteria per mantenere l'orario anche quando l'Arduino è scollegato.
-
-Puoi anche utilizzare la funzione `setTime()` per impostare manualmente l'orario all'inizio del programma. Ad esempio, se vuoi impostare l'orario alle 12:00 del 1° Gennaio 2021, puoi utilizzare questo codice:
-
-```Arduino
-setTime(12, 0, 0, 1, 1, 2021);
-```
-
-Per ulteriori informazioni sulla libreria `Time` e tutte le sue funzioni, consulta la [documentazione ufficiale](https://www.arduino.cc/en/Reference/Time).
-
-## Vedi anche
-
-- [Libreria Time](https://www.arduino.cc/en/Reference/Time)
-- [Tutorial Clock: uso della libreria Time](https://www.arduino.cc/en/Tutorial/Clock)
+- [Funzione millis()](https://www.arduino.cc/reference/en/language/functions/time/millis/)
+- [Modulo DS1307 RTC](https://www.adafruit.com/product/264)
+- [Libreria per DS1307 RTC](https://github.com/adafruit/RTClib)
+- [Server NTP](https://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/ntptime.html)

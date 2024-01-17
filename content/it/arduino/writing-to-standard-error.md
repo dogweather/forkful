@@ -1,7 +1,7 @@
 ---
-title:                "Scrivere su standard error"
-html_title:           "Arduino: Scrivere su standard error"
-simple_title:         "Scrivere su standard error"
+title:                "Scrivere su errore standard"
+html_title:           "Arduino: Scrivere su errore standard"
+simple_title:         "Scrivere su errore standard"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Files and I/O"
@@ -10,51 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+## Cosa & Perché?
+Scrivere sull'errore standard è una tecnica comunemente usata dai programmatori per visualizzare gli errori o le informazioni di debug durante l'esecuzione del codice. Questo metodo fornisce una rapida e facile visualizzazione dei messaggi senza interrompere il flusso del programma.
 
-Scrivere su standard error può essere utile per diagnosticare e risolvere eventuali errori all'interno del codice. È uno strumento prezioso per gli sviluppatori in fase di debug.
-
-## Come fare
-
-Per scrivere su standard error in Arduino, puoi utilizzare la funzione `Serial.println()` seguita dal messaggio che desideri visualizzare. Ad esempio:
+## Come fare:
+Ecco un esempio semplice per scrivere su stderr utilizzando la libreria Arduino SoftwareSerial:
 
 ```Arduino
-Serial.println("Errore: il valore inserito è troppo alto.");
+#include <SoftwareSerial.h>
+
+SoftwareSerial mySerial(10, 11); // RX, TX
+
+void setup() {
+  Serial.begin(9600); // inizializza la porta seriale predefinita
+  mySerial.begin(9600); // inizializza la porta seriale su pin 10 e 11
+}
+
+void loop() {
+  mySerial.println("Questo è un messaggio di debug"); // scrive il messaggio su stderr
+}
 ```
+L'esempio illustra come è possibile utilizzare la classe SoftwareSerial per impostare una porta seriale su pin diversi da quelli predefiniti di Arduino. Utilizzando la funzione `println()` è possibile scrivere un messaggio su stderr e visualizzarlo tramite un monitor seriale come il "Monitor seriale" nell'IDE di Arduino.
 
-Questa istruzione scriverà il messaggio "Errore: il valore inserito è troppo alto" sulla porta di comunicazione seriale, che può essere visualizzato sulla console del computer tramite un'interfaccia seriale.
+## Approfondimento:
+Scrivere su stderr è un'abilità fondamentale per i programmatori, poiché consente di identificare facilmente gli errori e le informazioni di debug durante lo sviluppo dei programmi. Questa tecnica è stata introdotta per la prima volta nel linguaggio di programmazione C, che è stato il predecessore del linguaggio di Arduino. Alcune alternative a stderr includono l'utilizzo di LED o display LCD per visualizzare le informazioni di debug.
 
-Puoi anche utilizzare la funzione `Serial.print()` per scrivere solo una parte del messaggio, seguita dalla funzione `Serial.println()` per andare a capo. Ad esempio:
+Per implementare la scrittura su stderr su Arduino, è possibile utilizzare diverse librerie come SoftwareSerial, come mostrato nell'esempio sopra, o la libreria standard `Serial` di Arduino. Inoltre, è importante sapere che la libreria Arduino scrive automaticamente su stderr gli errori di compilazione, quindi non è necessario aggiungere alcun codice aggiuntivo per questi tipi di errori.
 
-```Arduino
-Serial.print("Valore inserito non valido. Riprova.");
-Serial.println("."); //andando a capo
-```
-
-Questo scriverà il messaggio "Valore inserito non valido. Riprova." sulla stessa linea della console, seguito da un andando a capo che inserirà il cursore su una nuova linea.
-
-## Approfondimento
-
-La funzione `Serial.println()` in realtà invia il messaggio alla porta di comunicazione seriale come un'array di caratteri (char array), quindi è importante conoscere il tipo di dato che si sta utilizzando. Se si utilizza una variabile di un altro tipo (ad esempio un int o un float), sarà necessario convertirla in una stringa utilizzando la funzione `String()`. Ad esempio:
-
-```Arduino
-int errore = 404;
-String messaggio = String("Codice di errore: ") + String(errore);
-Serial.println(messaggio);
-```
-
-Questo scriverà il messaggio "Codice di errore: 404".
-
-È inoltre possibile utilizzare la funzione `Serial.write()` per scrivere singoli byte sulla porta seriale. Questo è utile se si deve inviare un valore numerico compreso tra 0 e 255, come ad esempio un codice ASCII o un segnale PWM. Ad esempio:
-
-```Arduino
-byte codice = 65; //equivalente al carattere 'A' nella tabella ASCII
-Serial.write(codice);
-```
-
-Questo scriverà il carattere 'A' sulla porta seriale.
-
-## Vedi anche
-
-- Documentazione Arduino su scrittura su standard error: https://www.arduino.cc/en/Serial/Print
-- Tutorial di Arduino sulle stringhe: https://www.arduino.cc/en/Reference/String
+## Vedi anche:
+Per ulteriori informazioni sulla scrittura su stderr e sulle alternative, puoi consultare la documentazione ufficiale di Arduino o la community di sviluppatori. Inoltre, puoi trovare molti tutorial e progetti che utilizzano questa tecnica su siti di programmazione come GitHub e StackOverflow.

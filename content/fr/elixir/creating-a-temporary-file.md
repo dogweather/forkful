@@ -1,7 +1,7 @@
 ---
-title:                "Création d'un fichier temporaire"
-html_title:           "Elixir: Création d'un fichier temporaire"
-simple_title:         "Création d'un fichier temporaire"
+title:                "Créer un fichier temporaire"
+html_title:           "Elixir: Créer un fichier temporaire"
+simple_title:         "Créer un fichier temporaire"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Files and I/O"
@@ -10,38 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Quoi & Pourquoi?
+Créer un fichier temporaire est une pratique courante en programmation qui consiste à créer un fichier qui ne restera que temporairement sur le système. Les programmeurs utilisent souvent cette méthode pour stocker temporairement des données ou des informations pendant l'exécution d'un programme.
 
-Si vous avez déjà créé un programme pour effectuer une tâche temporaire, vous savez à quel point cela peut être fastidieux de devoir créer des fichiers temporaires à chaque fois. C'est là qu'entre en jeu la création de fichiers temporaires en Elixir, une solution simple et efficace pour gérer les données temporaires.
-
-## Comment procéder
-
-Dans Elixir, la création de fichiers temporaires peut être réalisée en utilisant la fonction `File.temp_file/1` qui se trouve dans le module `File`. Voici un exemple de code utilisant cette fonction :
+## Comment faire:
+Pour créer un fichier temporaire en utilisant Elixir, vous pouvez utiliser la fonction `Tempfile` du module `File`. Voici un exemple de code:
 
 ```Elixir
-file_path = File.temp_file("prefix")
-IO.puts file_path
+{:ok, file} = File.tempfile("my_temp_file")
+IO.puts file.path
 ```
 
-Le code ci-dessus va créer un fichier temporaire avec le préfixe "prefix" et cela va renvoyer le chemin complet du fichier créé. Si vous exécutez le code plusieurs fois, vous verrez que chaque fichier temporaire a un nom différent grâce au préfixe unique.
+Dans cet exemple, nous utilisons la fonction `tempfile` pour créer un fichier avec le préfixe "my_temp_file" dans le répertoire de travail actuel. La fonction retourne un tuple contenant l'atome `:ok` et l'objet de type `File`. Nous pouvons ensuite utiliser la méthode `path` pour obtenir le chemin du fichier temporaire créé.
 
-## Plongée en profondeur
+## Plongée en profondeur:
+La création de fichiers temporaires est une pratique qui a été largement utilisée depuis les débuts de la programmation. Avant l'arrivée des ordinateurs à disque dur, les fichiers temporaires étaient créés en utilisant des bandes magnétiques ou des cartes perforées. De nos jours, il existe plusieurs alternatives pour créer des fichiers temporaires, notamment en utilisant la mémoire vive (RAM) ou en utilisant des bases de données.
 
-Lorsque vous utilisez la fonction `File.temp_file/1`, le fichier temporaire est créé dans le dossier temporaire système par défaut, c'est-à-dire `/tmp` sur la plupart des systèmes Linux. Cependant, vous pouvez spécifier un autre dossier en ajoutant un deuxième argument à la fonction, comme ceci :
+En ce qui concerne Elixir, la fonction `tempfile` utilise en fait la mémoire RAM pour stocker temporairement le fichier avant de l'écrire sur le disque dur. Cela le rend plus rapide que les autres méthodes de création de fichiers temporaires.
 
-```Elixir
-file_path = File.temp_file("prefix", "/path/to/directory")
-```
-
-De plus, si vous souhaitez ajouter un suffixe au nom du fichier temporaire, vous pouvez le faire en ajoutant un troisième argument à la fonction.
-
-```Elixir
-file_path = File.temp_file("prefix", "/path/to/directory", ".txt")
-```
-
-Cette fonction renvoie également un tuple contenant le chemin complet du fichier temporaire et un flux binaire représentant le fichier lui-même. Cela peut être utile si vous avez besoin de manipuler le fichier avant de le renvoyer ou de le supprimer.
-
-## Voir aussi
-
-- [Documentation sur la fonction `File.temp_file/1`](https://hexdocs.pm/elixir/File.html#temp_file/1)
-- [Documentation sur les fichiers en Elixir](https://elixir-lang.org/getting-started/file.html)
+## À voir aussi:
+- [Documentation sur `File` dans Elixir](https://hexdocs.pm/elixir/File.html#tempfile/2)
+- [Plus d'informations sur la création de fichiers temporaires en programmation](https://www.baeldung.com/java-temporary-files)
+- [Article sur les avantages et les inconvénients de différentes méthodes de création de fichiers temporaires](https://unix.stackexchange.com/questions/31991/temporary-file-for-shell-script)

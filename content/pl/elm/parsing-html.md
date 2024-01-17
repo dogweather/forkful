@@ -1,7 +1,7 @@
 ---
-title:                "Parsowanie HTML"
-html_title:           "Elm: Parsowanie HTML"
-simple_title:         "Parsowanie HTML"
+title:                "Analiza html"
+html_title:           "Elm: Analiza html"
+simple_title:         "Analiza html"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "HTML and the Web"
@@ -10,64 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i Dlaczego?
+Parsing HTML (parsowanie HTML) to proces analizowania kodu HTML w celu wydobycia informacji z niego. Programiści często wykonują tę czynność, aby pobrać konkretne dane ze stron internetowych, np. tytuły, obrazy lub linki.
 
-Jeśli jesteś web developerem lub programistą, który pracuje z HTML, prawdopodobnie zetknąłeś się z koniecznością analizowania struktury kodu HTML. Może to być wyzwanie, zwłaszcza gdy czujesz się przytłoczony długim i nieuporządkowanym kodem. W takich przypadkach, narzędzie takie jak Elm może być bardzo pomocne.
+## Jak to zrobić:
+Przykłady kodowania i wyników znajdują się w blokach kodu ```Elm ...```
 
-## Jak to zrobić?
+1. Przy użyciu modułu `Html.Parser` możemy łatwo sparsować kod HTML i uzyskać go w formie drzewa. W przykładowym kodzie wykorzystano płynny operator `<!>` do oznaczania jednowierszowych wyrażeń.
 
-Elm jest językiem programowania funkcyjnego, który jest używany do budowy interaktywnych aplikacji webowych. Co więcej, zawiera wbudowane narzędzia do analizowania i parsowania dokumentów HTML. Sprawia to, że jest idealnym narzędziem do przetwarzania elementów HTML i wyodrębniania potrzebnych danych.
-
-Poniższy przykład pokazuje, jak użyć funkcji ```Html.parser``` do wyciągnięcia linków znajdujących się wewnątrz ```<a>``` tagów w dokumencie HTML.
-
-```
-import Html exposing (..)
-import Html.Attributes exposing (..)
-import Html.Events exposing (..)
-import Html.Parser as Parser exposing (..)
-import String
-
-document = "
-<html>
-<body>
-<a href='https://example.com'>Link 1</a>
-<a href='https://example2.com'>Link 2</a>
-</body>
-</html>"
-
-parseLinks : String -> List String
-parseLinks html =
-    let
-        links =
-            Parser.map (\a -> a.href)
-                (Parser.a [] Parser.attribute)
-    in
-        Parser.run links html
+```Elm
+import Html
+import Html.Parser exposing (..)
 
 main =
-    text (String.join "\n" (parseLinks document))
+    let
+        html = "<h1>Hello, World!</h1><a href="https://example.com">Link</a>"
+        parsedHtml = parse html
+    in
+        Html.text (firstChild parsedHtml)
 ```
 
-**Output:**
+**Output:** `Hello, World!` (tytuł jest zwracany jako element HTML)
 
+2. Możemy także użyć modułu `Html.Attributes` do parsowania atrybutów elementów. W poniższym kodzie uzyskamy adres URL linku z poprzedniego przykładu.
+
+```Elm
+import Html
+import Html.Parser exposing (..)
+import Html.Attributes exposing (..)
+
+main =
+    let
+        html = "<h1>Hello, World!</h1><a href="https://example.com">Link</a>"
+        parsedHtml = parse html
+    in
+        Html.text (getAttribute "href" (firstChild parsedHtml))
 ```
-https://example.com
-https://example2.com
-```
 
-W powyższym przykładzie najpierw importujemy moduły Html i Html.Parser, a następnie definiujemy dokument HTML jako zmienną ```document```. Następnie wykorzystujemy funkcję ```parseLinks```, która przyjmuje jako argument dokument HTML, a następnie wykorzystuje wbudowaną funkcję ```Parser``` do przetworzenia go. W wyniku otrzymujemy listę linków, które są wyświetlane przy użyciu funkcji ```text```.
+**Output:** `https://example.com`
 
-## Deep Dive
+## Głębsze Zagłębianie:
+1. Parsowanie HTML jest powszechnie używane w programowaniu internetowym, aby szybko i łatwo uzyskać potrzebne informacje z wybranej strony internetowej.
 
-Podczas dokładniejszego przyjrzenia się przykładowi kodu, możemy dojść do następujących wniosków:
+2. Alternatywne metody parsowania HTML to korzystanie z innych języków programowania, takich jak JavaScript czy Python, lub z użyciem zewnętrznych bibliotek.
 
-- ```Html.parser``` jest funkcją, która przyjmuje dwa argumenty: parser zróżnicowany (w tym przypadku ```links```) oraz dokument HTML.
-- Parser ten wykorzystuje funkcję ```map```, która przyjmuje jako argument parser ```a```, funkcję manipulującą (w tym przypadku pobierającą wartość atrybutu ```href```), a także parser atrybutu.
-- Wywołanie funkcji ```run``` z parserem ```links``` oraz dokumentem HTML spowoduje zwrócenie listy linków znajdujących się w dokumencie.
+3. W Elm, parsowanie HTML jest zintegrowane z innymi modułami i narzędziami, dzięki czemu jest szybkie i wydajne. 
 
-W przypadku bardziej zaawansowanych analiz, funkcja ```Html.parser``` może zostać rozbudowana za pomocą funkcji takich jak ```andThen```, ```oneOf```, ```sequence```, aby obsłużyć bardziej złożone struktury HTML.
-
-## Zobacz także
-
-- Oficjalna dokumentacja Elm: https://guide.elm-lang.org/
-- Przykłady HTML parsing w Elm: https://github.com/elm/parser/tree/master/examples
+## Zobacz także:
+- [Dokumentacja Elm - Parsowanie HTML](https://package.elm-lang.org/packages/elm/parser/latest/Html-Parser)
+- [Przykładowy kod parsowania HTML w Elm](https://dev.to/choonkeat/parsing-html-in-elm-3582)

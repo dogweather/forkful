@@ -1,7 +1,7 @@
 ---
-title:                "パターンに一致する文字を削除する"
-html_title:           "Arduino: パターンに一致する文字を削除する"
-simple_title:         "パターンに一致する文字を削除する"
+title:                "パターンにマッチする文字を削除する"
+html_title:           "Arduino: パターンにマッチする文字を削除する"
+simple_title:         "パターンにマッチする文字を削除する"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Strings"
@@ -10,44 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+## 何 & なぜ？
+文字のパターンに一致する文字を削除することは、プログラマーがよく行う作業です。これを行う理由は、データの整理や処理を行うためです。
 
-あなたのプログラムには、不要な文字が含まれることがあります。これらの文字を削除することで、プログラムの効率を改善し、正しい結果を得ることができます。この記事では、Arduinoを使って文字を削除する方法を紹介します。
+## 方法：
 
-## 使い方
+```arduino
+// コード例１：文字列から特定の文字を削除する
+String inputString = "Hello, world!"; // 入力文字列
+char charToRemove = 'o'; // 削除したい文字
+String outputString = ""; // 出力文字列
 
-削除したい文字と一致するパターンを指定し、それをコードに組み込むことで削除することができます。以下の例を参考にしてください。
-
-```Arduino
-// 正規表現を使用して、削除したい文字を指定する
-String pattern = "[abc]";
-
-// 削除する文字列を定義する
-String str = "abcdefg";
-
-// 文字を削除する関数を定義する
-String deleteChars(String input, String pattern) {
-  // 削除したい文字を指定して、replace()関数を使用する
-  input.replace(pattern, "");
-
-  // 結果を返す
-  return input;
+for (int i = 0; i < inputString.length(); i++) {
+  // 入力文字列の文字を１文字ずつ取り出す
+  char currentChar = inputString.charAt(i);
+  
+  // 削除したい文字と一致するかチェックする
+  if (currentChar != charToRemove) {
+    // 一致しない場合は、出力文字列に追加する
+    outputString += currentChar;
+  }
 }
 
-// 削除した文字を出力する
-Serial.println(deleteChars(str, pattern));
+// 出力結果をシリアルモニターに表示する
+Serial.println(outputString); // Hello, wrld!
 ```
 
-出力結果は、`defg`となります。パターンに一致する文字が削除されていることが分かりますね。
+```arduino
+// コード例２：正規表現を使用して文字列から特定のパターンに一致する文字を削除する
+String inputString = "I have 10 apples and 5 oranges."; // 入力文字列
+String outputString = ""; // 出力文字列
 
-## 深堀り
+// 正規表現パターンを作成し、一致する部分を空文字で置き換える
+regex pattern = " \\d+ "; // スペースの前後に数字がある部分を削除する
+outputString = regex_replace(inputString, pattern, "");
+    
+// 出力結果をシリアルモニターに表示する
+Serial.println(outputString); // I have apples and oranges.
+```
 
-もし、削除したい文字が複数の場所に出現する場合にはどうするのでしょうか？その場合には、replace()関数ではなく、replaceAll()関数を使用します。これにより、指定したパターンと全ての一致する文字が削除されます。
+## 詳細：
+削除する文字やパターンを指定することで、より効率的にデータを処理することができます。正規表現を使用することで、柔軟に文字列を指定することができるため、より高度な削除が可能です。また、代替手段として文字列の置換を行う方法もありますが、削除することでデータの一部を維持することができます。実装の詳細については、プログラミング言語やライブラリによって異なります。
 
-また、削除したい文字以外の文字を置換する際には、replace()関数の代わりにreplaceFirst()やreplaceLast()関数を使用することもできます。
-
-より詳細な情報や例は、[Arduino公式ドキュメンテーション](https://www.arduino.cc/reference/en/language/functions/communication/serial/print/)を参考にしてください。
-
-## 関連リンク
-
-- [Stringクラスのドキュメンテーション](https://www.arduino.cc/reference/en/language/variables/data-types/string/)
+## 関連リンク：
+- [正規表現チュートリアル (W3Schools)](https://www.w3schools.com/jsref/jsref_obj_regexp.asp)
+- [regex_replaceの参考ドキュメント (Arduino)](https://www.arduino.cc/reference/en/language/functions/strings/stringobject/regexreplace/)

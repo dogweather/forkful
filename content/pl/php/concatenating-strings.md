@@ -10,68 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i dlaczego?
+Konkatynacja ciągów w programowaniu oznacza łączenie kilku łańcuchów znaków w jeden dłuższy ciąg. Programiści często stosują tę technikę, aby ułatwić sobie manipulację i przetwarzanie danych tekstowych.
 
-Concatenacja w programowaniu jest nieodłącznym elementem tworzenia aplikacji internetowych. Jest to proces łączenia dwóch lub więcej ciągów znaków w jeden ciąg. Może to być przydatne w wielu przypadkach, takich jak wyświetlanie tekstu, łączenie zmiennych lub generowanie URL-ów.
+## Jak to zrobić:
+Przedstawię teraz kilka praktycznych przykładów pokazujących, jak skorzystać z konkatynacji ciągów w PHP. Wszystkie przykłady będą używać wbudowanej funkcji `concat()`. 
 
-## Jak
-
-Przeprowadzenie operacji konkatenacji w PHP jest bardzo proste. Wystarczy użyć operatora kropki (.) do połączenia dwóch ciągów znaków. Przykładowo, jeśli chcielibyśmy wyświetlić tekst "Hello World", wykonajmy następujący kod:
-
+### Przykład 1:
 ```PHP
-<?php
-    $greeting = "Hello";
-    $target = "World";
-    echo $greeting . " " . $target;
-?>
+$imie = 'Kasia';
+$nazwisko = 'Kowalska';
+$login = concat($imie, $nazwisko);
+
+echo $login; // wyświetli 'KasiaKowalska'
 ```
 
-Output: `Hello World`
-
-Możemy również łączyć zmienne i tekst w jednym ciągu. Na przykład:
-
+### Przykład 2:
 ```PHP
-<?php
-    $name = "John";
-    echo "Hello, my name is " . $name . " and I am a PHP developer.";
-?>
+$data = '30-09-2021';
+$godzina = '18:00';
+$wydarzenie = 'Spotkanie zespołu';
+$opis = concat('Dzisiaj o', $godzina, 'odbędzie się', $wydarzenie, 'o temacie', $data);
+
+echo $opis; // wyświetli 'Dzisiaj o 18:00 odbędzie się Spotkanie zespołu o temacie 30-09-2021'
 ```
 
-Output: `Hello, my name is John and I am a PHP developer.`
-
-## Deep Dive
-
-W języku PHP, ciąg znaków może być również konkatenowany za pomocą funkcji `sprintf()`. Funkcja ta przyjmuje dwa argumenty - pierwszy to szablon lub ciąg znaków z placeholderami, a drugi to lista zmiennych lub wartości, które zostaną wstawione w odpowiednie miejsca.
-
-Przykładowo, jeśli chcielibyśmy wyświetlić tekst "I have 3 dogs and 2 cats", możemy użyć funkcji `sprintf()` w ten sposób:
-
+### Przykład 3:
 ```PHP
-<?php
-    $dogs = 3;
-    $cats = 2;
-    $text = sprintf("I have %d dogs and %d cats", $dogs, $cats);
-    echo $text;
-?>
+$adres = 'http://www.example.com/';
+$sekcja = 'blog';
+$id = 123;
+$artykul = 'Nowe wpisy na naszym blogu: ' . $adres . $sekcja . '?id=' . $id;
+
+echo $artykul; // wyświetli 'Nowe wpisy na naszym blogu: http://www.example.com/blog?id=123'
 ```
 
-Output: `I have 3 dogs and 2 cats`
+## Głębszy wgląd:
+Ten sposób łączenia ciągów znaków istnieje w wielu językach programowania. W PHP wykorzystuje się funkcję `concat()`, jednak w innych językach możemy spotkać bardziej znany operator `+` lub inny sposób zapisu. Ważne jest, aby pamiętać o połączeniu każdego elementu oddzielnie, a także o odpowiednim sposobie zapisu zmiennych, aby uniknąć ewentualnych błędów. Można również wykorzystać funkcję `sprintf()` aby lepiej kontrolować format wyjścia.
 
-Wartości mogą być również wstawiane w tekst za pomocą zmiennej używając symbolu `%s`. Na przykład:
-
-```PHP
-<?php
-    $name = "Lisa";
-    $text = sprintf("My name is %s and I have 2 children.", $name);
-    echo $text;
-?>
-```
-
-Output: `My name is Lisa and I have 2 children.`
-
-Funkcja `sprintf()` jest szczególnie przydatna, gdy chcemy sformatować wyjście w określony sposób, na przykład wyświetlić dokładną liczbę miejsc po przecinku w liczbie zmiennoprzecinkowej.
-
-## Zobacz również
-
-- [PHP manual - String Operators](https://www.php.net/manual/en/language.operators.string.php)
-- [PHP manual - sprintf() function](https://www.php.net/manual/en/function.sprintf.php)
-- [PHP: The Right Way - Concatenation](https://phptherightway.com/#concatenation)
+## Zobacz też:
+Dowiedz się więcej o konkatynacji ciągów w PHP na stronie dokumentacji języka: https://www.php.net/manual/en/function.concat.php

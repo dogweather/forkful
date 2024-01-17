@@ -1,7 +1,7 @@
 ---
-title:                "Arbeta med json"
-html_title:           "Rust: Arbeta med json"
-simple_title:         "Arbeta med json"
+title:                "Arbeta med JSON"
+html_title:           "Rust: Arbeta med JSON"
+simple_title:         "Arbeta med JSON"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Data Formats and Serialization"
@@ -10,88 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
+Working with JSON (JavaScript Object Notation) is a way for programmers to store and exchange data in a readable and structured format. It's commonly used for communication between different programs and systems, making it an essential skill for any programmer.
 
-Varför skulle man vilja arbeta med JSON i Rust? JSON (JavaScript Object Notation) är ett populärt format för datautbyte och används ofta i webbutveckling och API:er. Genom att lägga till stöd för JSON i dina Rust-projekt kan du enkelt implementera möjligheten att både läsa och skriva data i detta format, vilket kan vara användbart för många olika applikationer.
+## Så här:
+Vi kan använda Rust's inbyggda Bibliotek serde för att enkelt hantera JSON-data. Här är ett exempel på hur vi kan läsa och skriva JSON-data, samt skriva ut det till konsolen:
 
-## Så här gör du
+```Rust
+use serde_json::{Value, Result};
 
-För att arbeta med JSON i Rust behöver du först importera "serde" biblioteket och dess "serde_json" modul genom att lägga till följande kod i din "Cargo.toml" fil:
+fn main() -> Result<()> {
+    // Läs data från fil
+    let data = "{\"name\": \"Emma\", \"age\": 25, \"hobby\": \"programming\"}";
 
-```rust
-[dependencies]
-serde = { version = "1.0", features = ["derive"] }
-serde_json = "1.0"
-```
+    // Konvertera till JSON-objekt
+    let json: Value = serde_json:: from_str(data)?;
 
-Därefter kan du importera serde och serde_json i din Rust-kod med hjälp av följande kod:
+    // Skriv ut JSON-data
+    println!("{} is {} years old and her hobby is {}", json["name"], json["age"], json["hobby"]);
 
-```rust
-extern crate serde;
-extern crate serde_json;
-
-use serde::{Deserialize, Serialize};
-```
-
-Nu är det dags att skapa en struktur i din kod för att representera den data du vill läsa eller skriva. Du kan göra detta genom att använda "derive" makrona och ange #[derive (Serialize, Deserialize)] ovanför din struktur enligt följande:
-
-```rust
-#[derive(Serialize, Deserialize)]
-struct Person {
-    name: String,
-    age: u8, 
-    address: String,
+    // Konvertera tillbaka till sträng och skriv till fil
+    let data_written = serde_json::to_string(&json)?;
+    println!("{}", data_written);
+    Ok(())
 }
 ```
 
-För att läsa data från en JSON-fil och konvertera den till vår Person-struktur, kan vi använda serde_json biblioteket och dess "from_reader" funktion. Låt oss anta att vi har en fil som heter "person.json" med följande innehåll:
-
-```json
-{
-    "name": "Anna",
-    "age": 25,
-    "address": "Göteborg"
-}
+Output:
+```
+Emma is 25 years old and her hobby is programming
+{"name":"Emma","age":25,"hobby":"programming"}
 ```
 
-Vi kan läsa innehållet i denna fil och konvertera den till vår Person-struktur med hjälp av följande kod:
+## Djupdykning:
+JSON har funnits sedan 2001 och är en populär ersättning för XML-formatet. Det är lättare att läsa och skriva än XML, men saknar vissa av dess funktioner, som möjligheten att validera data mot ett schema. Andra alternativ till JSON är CSV (Comma Separated Values) och YAML (YAML Ain't Markup Language). Men JSON är fortfarande det mest använda formatet för datautbyte.
 
-```rust
-let file = File::open("person.json").expect("File not found.");
-let reader = BufReader::new(file);
-let person: Person = serde_json::from_reader(reader).expect("Failed to read from file.");
-```
+I serde-biblioteket används en datastruktur som heter "Value" för att representera JSON-data, vilket kan vara en sträng, ett nummer, en bool eller en annan Value. Detta tillåter flexibilitet när man läser eller skriver JSON-data, men också kräver lite extra kod för att hämta specifika värden.
 
-På samma sätt kan vi även skriva data till en JSON-fil från vår Person-struktur med hjälp av serde_json och dess "to_writer" funktion:
-
-```rust
-let file = File::create("person.json").expect("Failed to create file.");
-let writer = BufWriter::new(file);
-serde_json::to_writer(writer, &person).expect("Failed to write to file.");
-```
-
-## Djupdykning
-
-Det finns många olika möjligheter när det kommer till att arbeta med JSON i Rust. Ett annat användbart verktyg är "json!" makrona som finns i serde_json biblioteket. Den gör det möjligt att skapa en JSON-sträng direkt från din kod utan att behöva skapa en struktur först. Exempel:
-
-```rust
-let person_json = json!({
-    "name": "Erik",
-    "age": 30,
-    "address": "Stockholm"
-});
-```
-
-Du kan också använda serde_json för att konvertera en JSON-sträng till ett dynamiskt objekt med hjälp av "json::from_str" funktionen. Detta kan vara användbart om du vill läsa en okänd JSON-sträng och accessa dess värden dynamiskt.
-
-```rust
-let json_string = r#"{"name": "Maria", "age": 22, "address": "Malmö"}"#;
-let dynamic_object = serde_json::from_str(json_string).expect("Failed to parse JSON string.");
-println!("Name: {}", dynamic_object["name"]); //output: Name: Maria
-```
-
-## Se även
-
-- [Serde documentation](https://docs.rs/serde/)
-- [Serde JSON documentation](https://docs.rs/serde_json/)
-- [Rust JSON crate list](https://rust-lang-nursery.github.io/rust-cookbook/web/clients/json.html)
+## Se också:
+- [serde_json Dokumentation](https://docs.serde.rs/serde_json/) - Officiell dokumentation för serde-biblioteket för JSON-hantering i Rust.
+- [Rust Cookbook - Läsa och Skriva JSON](https://rust-lang-nursery.github.io/rust-cookbook/web/encoding/working_with_json.html) - Ett brett utbud av kodexempel för att hantera JSON i Rust.
+- [JSON Formatter & Validator](https://jsonformatter.org/) - En användbar online-verktyg för att formatera och validera JSON-data.

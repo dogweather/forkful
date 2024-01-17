@@ -1,7 +1,7 @@
 ---
-title:                "Arbeid med csv"
-html_title:           "Javascript: Arbeid med csv"
-simple_title:         "Arbeid med csv"
+title:                "Å jobbe med csv"
+html_title:           "Javascript: Å jobbe med csv"
+simple_title:         "Å jobbe med csv"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Data Formats and Serialization"
@@ -10,36 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
-Hvorfor skulle noen ønske å jobbe med CSV-formatet? Vel, dette formatet er enkelt å forstå og brukes ofte til å lagre og dele data. Det er også utbredt innenfor webutvikling og kan være svært nyttig for å håndtere store datasett.
+## Hva & Hvorfor?
 
-## Slik gjør du det
-Å arbeide med CSV i Javascript er enkelt og krever bare noen få linjer med kode. Først må vi laste inn et bibliotek, for eksempel "csv-parser", ved hjelp av npm. Deretter kan vi begynne å bruke funksjonene til dette biblioteket:
+CSV står for "Comma Separated Values", og er en vanlig måte å lagre og organisere data på. CSV-filer består av rader og kolonner, der hver kolonne tilsvarer en attributt og hver rad tilsvarer en entry. Programmere jobber med CSV-filer fordi de ofte blir brukt til å importere eller eksportere data fra et program eller å analysere store mengder data.
+
+## Hvordan:
+
+For å kunne jobbe med CSV-filer i Javascript, trenger du et bibliotek som heter "csv-parser". Dette kan enkelt installeres ved å kjøre "npm install csv-parser" i terminalen din. Etter installasjonen kan du bruke dette biblioteket i koden din ved å skrive følgende:
 
 ```Javascript
 const csv = require('csv-parser');
-const fs = require('fs');
 
-fs.createReadStream('data.csv')
+fs.createReadStream('myCsvFile.csv')
   .pipe(csv())
   .on('data', (row) => {
-    // Gjør noe med hver rad i CSV-filen
-    console.log(row);
+    // gjør noe med hver rad i CSV-filen
   })
   .on('end', () => {
-    // Ferdig!
-    console.log('Lesing av CSV-fil fullført.');
-  });
+    // ferdig med å lese gjennom alle radene i filen
+  })
 ```
 
-Med denne koden leser vi innholdet i en CSV-fil og utfører en handling på hver rad. Vi kan også bruke andre funksjoner fra "csv-parser" for å filtrere, sortere eller endre dataene i filen.
+Dette eksempelet viser hvordan man kan lese data fra en CSV-fil og gjøre noe med hver rad ved å bruke "on('data')" metoden. Det er også mulig å skrive data til en CSV-fil ved å bruke "csv-writer" biblioteket. Du kan utforske flere muligheter ved å lese dokumentasjonen til disse bibliotekene.
 
-## Dypdykk
-Nå som vi har fått en enkel forståelse for å arbeide med CSV-filer i Javascript, kan vi gå dypere inn i dette formatet. CSV står for "Comma Separated Values" og er en måte å organisere og lagre data på. Hver rad i en CSV-fil representerer en rekke data-verdier, og hver verdi er adskilt med et komma.
+## Dypdykk:
 
-Selv om CSV kan virke ganske enkelt, er det noen fallgruver å se opp for. For eksempel kan det være vanskelig å håndtere data som inneholder komma eller linjeskift, og noen ganger må vi bruke spesifikke kodingssystemer for å sikre at dataene våre er riktig representert.
+CSV-formatet ble først introdusert på 1970-tallet og har blitt en standard for å lagre og utveksle data mellom ulike systemer. Det finnes også flere alternative formater som JSON og XML, men CSV er fortsatt en populær og enkel måte å håndtere data på.
 
-## Se også
-- [csv-parser pakken på npm](https://www.npmjs.com/package/csv-parser)
-- [Offisiell CSV-nettside](https://en.wikipedia.org/wiki/Comma-separated_values)
-- [En enkel guide for å jobbe med CSV-filer i Javascript](https://www.syncfusion.com/blogs/post/working-with-csv-files-using-javascript.aspx)
+Å jobbe med CSV-filer i Javascript kan være nyttig når man trenger å importere eller eksportere data fra en database eller applikasjon. Det kan også være nyttig når man ønsker å analysere store mengder data, siden CSV-filer er lett å lese og manipulere.
+
+## Se også:
+
+- CSV-parser dokumentasjon: https://csv.js.org/parse/
+- CSV-writer dokumentasjon: https://csv.js.org/stringify/

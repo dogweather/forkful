@@ -1,7 +1,7 @@
 ---
-title:                "Надсилання HTTP-запиту з основною аутентифікацією"
-html_title:           "Java: Надсилання HTTP-запиту з основною аутентифікацією"
-simple_title:         "Надсилання HTTP-запиту з основною аутентифікацією"
+title:                "Надсилання запиту http з базовою аутентифікацією"
+html_title:           "Java: Надсилання запиту http з базовою аутентифікацією"
+simple_title:         "Надсилання запиту http з базовою аутентифікацією"
 programming_language: "Java"
 category:             "Java"
 tag:                  "HTML and the Web"
@@ -10,41 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Чому
-Цей процес - необхідна частина багатьох веб-додатків і служб для доступу до захищених даних та інформації. Використання базової аутентифікації дозволяє вам передавати логін та пароль у зашифрованому вигляді, тим самим забезпечуючи безпеку ваших даних.
+## Що & Чому?
+З комунікаційного протоколу HTTP ви можете відправити запит на сервер, щоб отримати певні дані. Іноді, для захисту цих даних, потрібно надіслати запит з обов'язковим аутентифікаційним ключем. Це дозволяє серверу перевірити вашу ідентичність та дозволити доступ до цінних даних. Це важливий інструмент для програмістів, які працюють з веб-додатками та API.
 
-## Як
+## Таке собі: 
 ```java
-// Для відправлення HTTP-запиту з базовою аутентифікацією, спочатку необхідно створити об'єкт типу HttpURLConnection
-URL url = new URL("http://example.com/api");
-HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+URL url = new URL("http://example.com"); 
 
-// Встановіть HTTP-метод і заголовок "Authorization" з логіном та паролем у форматі "Basic"
-connection.setRequestMethod("GET");
-String basicAuth = "Basic " + Base64.getEncoder().encodeToString("логін:пароль".getBytes());
-connection.setRequestProperty("Authorization", basicAuth);
+HttpURLConnection connection = (HttpURLConnection) url.openConnection(); 
 
-// Отримайте відповідь із запиту
-int responseCode = connection.getResponseCode();
+String username = "username"; 
+String password = "password"; 
+String authentication = username + ":" + password; 
+String basicAuth = "Basic " + new String(Base64.getEncoder().encode(authentication.getBytes())); 
 
-// Виведіть код відповіді та повідомлення у консолі
-System.out.println("Response Code: " + responseCode);
-System.out.println("Response Message: " + connection.getResponseMessage());
+connection.setRequestProperty("Authorization", basicAuth); 
+String response = ""; 
+try(InputStream is = connection.getInputStream()) { 
+Scanner sc = new Scanner(is); 
+while(sc.hasNextLine()) { 
+response += sc.nextLine(); } } 
+
+System.out.println("Output: " + response);
 ```
 
-Завдяки цьому коду, ви зможете прикладати HTTP-запити з базовою аутентифікацією і обробляти отримані дані.
+## Глибоке врязування:
+HTTP-протокол був створений у 1991 році та став основним засобом комунікації для веб-додатків. Це стало узагальненням відправки запитів серверам, щоб отримати відповіді. Одним з альтернативних методів аутентифікації є механізм "Bearer", який використовує токени доступу замість стандартного способу базової аутентифікації. Щоб імплементувати відправку запита з базовою аутентифікацією, необхідно створити об'єкт URL та додати заголовок з аутентифікаційним ключем до запиту.
 
-**Вихід:**
-
-```java
-Response Code: 200
-Response Message: OK
-```
-
-## Глибоке занурення
-Система базової аутентифікації використовує заголовок "Authorization" для передавання у зашифрованому вигляді логіну та паролю. Цей заголовок має формат "Basic *логін:пароль*", де *логін* та *пароль* перетворюються в шифрований формат Base64 та додаються до слова "Basic". Це забезпечує безпеку від перехоплювання у відкритому вигляді вашого логіну та паролю.
-
-## Дивіться також
-- [Документація Java для HttpURLConnection](https://docs.oracle.com/javase/10/docs/api/java/net/HttpURLConnection.html)
-- [How to Use Base64 Encoding in Java](https://www.baeldung.com/java-base64-encode-and-decode)
-- [Understanding Basic and Digest Authentication in Java](https://www.baeldung.com/java-basic-digest-authentication)
+## Дивіться також:
+- [Документація Java по класу HttpURLConnection](https://docs.oracle.com/javase/8/docs/api/java/net/HttpURLConnection.html)
+- [Стаття про базову аутентифікацію на сайті Mozilla](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#Basic_authentication_scheme)

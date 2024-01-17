@@ -10,40 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ使うのか
+## 何 & 何故？
+正規表現を使うとは何か？それをしている理由はなんですか？
+正規表現は、文字列内で特定のパターンを検索するためのツールです。プログラマーは、データ処理やバリデーションなど、さまざまな目的で正規表現を使用します。
 
-正規表現を使うことの利点は、テキストからパターンを検索したり、特定の形式に合う文字列を取り出したりすることができることです。
-
-## 使い方
-
-まずは、Swiftで正規表現を使うために必要なインポートをします。以下のコードは、単語のリストから「cat」が含まれるものを見つけ出す例です。
-
+## 方法：
 ```Swift
-import Foundation
+let str = "Hello, world!"
+let pattern = "Hello"
 
-let words = ["cat", "dog", "bird", "catfish", "lion"]
-
-for word in words {
-    if let range = word.range(of: "cat") {
-        print("\(word) contains 'cat'")
-    }
+if let range = str.range(of: pattern) {
+    print("パターンが見つかりました。")
+} else {
+    print("パターンは見つかりませんでした。")
 }
 ```
-上記のコードを実行すると、以下の出力が得られます。
+上記のコードでは、文字列内で "Hello" というパターンを検索し、見つかった場合にメッセージを表示します。
 
-```
-cat contains 'cat'
-catfish contains 'cat'
-```
+## 深堀り：
+正規表現は、1960年代に誕生したテキスト処理の技術です。しかし、シンプルな検索や置換の機能を持つ正規表現に代わるより高度なテキスト処理ツールもあります。実装の詳細に関しては、正規表現エンジンの種類や、各言語でのサポートの違いなどがあります。
 
-正規表現パターンには、「cat」の他にも「c[a-z]+t」といった表現を使うこともでき、より柔軟な文字列の検索が可能になります。
-
-## 応用情報
-
-正規表現には、さまざまなオプションや特殊な記号があります。例えば、大文字と小文字を区別しないようにするオプションや、グループ化して文字列を取り出す方法もあります。詳細な情報は、オンラインドキュメントや書籍を参考にしてください。
-
-## 参考リンク
-
-- [Swift Regular Expressions - NSRegularExpression](https://developer.apple.com/documentation/foundation/nsregularexpression)
-- [正規表現入門 (1) マッチさせる・パターンを記述する (基本編) | bermuda](https://www.bermuda-labo.com/regexp/)
-- [Swiftで正規表現を使おう！](https://qiita.com/shiz/items/085d2344d64189643c2f)
+## 関連リンク：
+1. [正規表現チュートリアル (英語)](https://regexone.com/)
+2. [正規表現オンラインテストツール (英語)](https://regexr.com/)

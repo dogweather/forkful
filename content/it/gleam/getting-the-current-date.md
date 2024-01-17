@@ -1,7 +1,7 @@
 ---
-title:                "Ottenere la data corrente"
-html_title:           "Gleam: Ottenere la data corrente"
-simple_title:         "Ottenere la data corrente"
+title:                "Ottenere la data corrente."
+html_title:           "Gleam: Ottenere la data corrente."
+simple_title:         "Ottenere la data corrente."
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Dates and Times"
@@ -10,33 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+## Cosa e Perché?
 
-La possibilità di ottenere la data attuale è un'informazione utile in molte applicazioni, come ad esempio nei programmi di gestione della fatturazione, nei sistemi di prenotazione online o nei calendari. Inoltre, utilizzare la data attuale può semplificare il processo di calcolo di scadenze o di generazione di report.
+Ottenere la data corrente è una funzione essenziale per i programmatori. Si tratta semplicemente di recuperare la data corrente dal sistema operativo, che può essere utilizzata per una varietà di scopi come registrazione di eventi, tempistica delle attività o sincronizzazione con altri sistemi.
 
-## Come fare
+## How to:
 
-Per ottenere la data attuale in Gleam, è possibile utilizzare la funzione `Calendar.now()`. Si consiglia di assegnare il valore della funzione a una variabile per poterlo utilizzare successivamente nel codice. Un esempio di codice potrebbe essere il seguente:
+Per ottenere la data corrente in Gleam, è sufficiente utilizzare la funzione "date.now()" seguita dal formato desiderato. Ad esempio:
 
-```
-// Importa il modulo Calendar per accedere alle funzioni per la gestione delle date
-import gleam/calendar
-
-// Assegna alla variabile `data_attuale` la data attuale
-data_attuale = calendar.now()
-
-// Stampa la data attuale nel formato `dd/mm/yyyy`
-// In questo esempio, la data verrebbe stampata come `16/09/2021` 
-io.println(calendar.format(data_attuale, "%d/%m/%Y"))
+```Gleam
+let current_date = date.now() |> date.format("%m/%d/%Y") 
 ```
 
-L'ouput di questo esempio sarebbe `16/09/2021`, ma è possibile utilizzare diversi formati di visualizzazione della data utilizzando la funzione `calendar.format`.
+Il risultato sarà una stringa contenente la data corrente formattata nel formato specificato.
 
-## Approfondimento
+Ecco un esempio di output: 
 
-La funzione `Calendar.now()` utilizza il fuso orario locale del sistema in cui viene eseguito il codice. Se si vuole ottenere la data in un fuso orario diverso, è possibile specificarlo come argomento della funzione. Ad esempio, `Calendar.now("America/New_York")` restituirà la data attuale nel fuso orario di New York.
+```
+06/26/2021
+```
 
-## Vedi anche
+## Deep Dive
 
-- API della libreria `gleam/calendar`: https://gleam.run/modules/gleam/calendar/latest
-- Documentazione ufficiale di Gleam: https://gleam.run/documentation
+L'implementazione di come ottenere la data corrente varia a seconda del sistema operativo. Tuttavia, la maggior parte dei linguaggi di programmazione, tra cui Gleam, fornisce una libreria standard per semplificare questa operazione. 
+
+In alternativa, è possibile utilizzare una libreria di terze parti per ottenere date più precise o con formati personalizzati.
+
+Per gli sviluppatori più esperti, è possibile implementare manualmente l'acquisizione della data utilizzando la libreria FFI (Foreign Function Interface) per comunicare con il sistema operativo.
+
+## See Also
+
+- [Documentazione ufficiale di Gleam per la funzione date.now()](https://gleam.run/stdlib/date.html#now)
+- [Esempi di formati di data supportati da Gleam](https://gleam.run/stdlib/date.html#format_flags)
+- [Libreria di terze parti per ottenere date e orari più precisi](https://github.com/gleam-lang/calendar)
+- [Documentazione di FFI per Gleam](https://gleam.run/ffi/)

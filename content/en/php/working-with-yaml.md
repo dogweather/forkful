@@ -10,108 +10,86 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-YAML, short for "YAML Ain't Markup Language", is a popular language used for data serialization. It offers a human-readable and easy-to-use syntax, making it a preferred choice for storing and transferring data in various applications. In the world of PHP programming, understanding how to work with YAML can be incredibly useful and beneficial.
+Working with YAML in PHP allows programmers to easily store and retrieve data in a human-readable format. It is a popular choice for configuration files, as well as for exchanging data between different systems. It offers a more compact and structured alternative to languages like XML or JSON.
 
-## How To
+## How to:
 
-First, we need to make sure that the YAML extension is enabled in our PHP configuration. To do so, we can check the "Loaded Configuration File" section in phpinfo() or use the command "php -i | grep yaml". If the extension is not enabled, we can follow these steps to enable it:
-
-```PHP
-// Install YAML extension on Ubuntu
-sudo apt-get install php-yaml
-
-// Install YAML extension on CentOS
-sudo yum install php-pecl-yaml
-
-// Enable YAML extension manually
-vi /path/to/php.ini
-// Add the following line at the end
-extension=yaml.so 
-```
-
-Once the extension is enabled, we can start working with YAML in our PHP code. Let's take a look at some coding examples:
-
-### Writing YAML
+To get started with working with YAML in PHP, you will need to install the YAML extension. You can do this by running the following command in your terminal:
 
 ```PHP
-<?php 
-$myArray = array(
-   'name' => 'John',
-   'age' => 25,
-   'hobbies' => array(
-       'reading',
-       'hiking',
-       'painting'
-   )
-);
-
-// Convert array to YAML string
-$yamlStr = yaml_emit($myArray);
+pecl install yaml
 ```
 
-The output of this will be:
+Next, you will need to enable the extension by adding the following line to your php.ini file:
 
+```PHP
+extension=yaml.so
 ```
+
+Once the extension is installed and enabled, you can start using it in your PHP code. The ```yaml_parse()``` function can be used to convert a YAML string into a PHP array, and ```yaml_emit()``` can be used to convert a PHP array into a YAML string. Here is an example of how to use these functions:
+
+```PHP
+// Create a YAML string
+$yaml_string = "
 name: John
 age: 25
 hobbies:
-    - reading
-    - hiking
-    - painting
+  - coding
+  - hiking
+";
+
+// Convert YAML string to PHP array
+$php_array = yaml_parse($yaml_string);
+
+// Convert PHP array back to YAML string
+$new_yaml_string = yaml_emit($php_array);
+
+// Output new YAML string
+var_dump($new_yaml_string);
 ```
 
-### Reading YAML
+The output will be:
 
-```PHP
-<?php 
-// YAML string 
-$yamlStr = "
-name: John
+```
+string(47) "name: John
 age: 25
 hobbies:
-    - reading
-    - hiking
-    - painting
-";
-// Convert YAML string to array
-$myArray = yaml_parse($yamlStr);
-// Access specific values using array keys
-echo "Name: " . $myArray['name']; // Output: Name: John
-echo "Hobby 1: " . $myArray['hobbies'][0]; // Output: Hobby 1: reading 
+    - coding
+    - hiking"
 ```
 
-## Deep Dive
-
-YAML offers a wide range of features such as support for complex data types, comments, and references. It also has the ability to merge multiple YAML documents into one, making it a powerful tool for handling large and complex data structures.
-
-One of the most useful features of YAML is the support for anchors and aliases. This allows us to define a value once and refer to it in different places in the document. This is especially helpful when dealing with nested data structures.
-
-### Anchors and Aliases Example
+You can also use the ```dump()``` function to output the PHP array in a more human-readable format. Here is an example:
 
 ```PHP
-<?php 
-$yamlStr = "
-book1:
-    title: Wings of Fire
-    author: Tui T. Sutherland
-    genre: fantasy
-book2:
-    <<: *book1
-    title: The Lost Heir
-";
-
-// Convert YAML string to array
-$books = yaml_parse($yamlStr);
-
-// Access specific values using array keys
-echo "Book 1 title: " . $books['book1']['title']; // Output: Book 1 title: Wings of Fire
-echo "Book 2 title: " . $books['book2']['title']; // Output: Book 2 title: The Lost Heir (inherits values from book1)
+// Output PHP array
+dump($php_array);
 ```
 
-## See Also
+The output will be:
 
-- Official YAML website: https://yaml.org/
-- PHP documentation for YAML: https://www.php.net/manual/en/book.yaml.php
-- A beginner's guide to YAML: https://www.digitalocean.com/community/tutorials/an-introduction-to-yaml
+```
+array:3 [▼
+  "name" => "John"
+  "age" => 25
+  "hobbies" => array:2 [▼
+    0 => "coding"
+    1 => "hiking"
+  ]
+]
+```
+
+## Deep Dive:
+
+YAML stands for "YAML Ain't Markup Language" and was first released in 2001. It was originally designed as a human-friendly way to create configuration files that are easy to read and update. The syntax is simple and similar to writing lists or dictionaries in other languages.
+
+Alternative options for storing and exchanging data in PHP include XML and JSON. XML is often used for more complex data structures, but its syntax can be cumbersome. JSON is also a popular choice, but it has stricter formatting requirements and can be challenging to maintain for large data sets.
+
+Under the hood, the YAML extension in PHP uses the libyaml library, which has C functions for parsing and emitting YAML strings. This makes it a faster and more efficient option compared to some PHP-based YAML libraries.
+
+## See Also:
+
+- [Official Documentation for YAML in PHP](https://www.php.net/manual/en/book.yaml.php)
+- [YAML Specification](https://yaml.org/spec/1.2/spec.html) 
+- [Alternative Data Formats: XML vs JSON vs YAML](https://www.sitepoint.com/data-formats-json-xml-csv/)

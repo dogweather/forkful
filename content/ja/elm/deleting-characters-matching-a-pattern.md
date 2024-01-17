@@ -1,7 +1,7 @@
 ---
-title:                "パターンにマッチする文字を削除する"
-html_title:           "Elm: パターンにマッチする文字を削除する"
-simple_title:         "パターンにマッチする文字を削除する"
+title:                "パターンに一致する文字を削除する"
+html_title:           "Elm: パターンに一致する文字を削除する"
+simple_title:         "パターンに一致する文字を削除する"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -10,36 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+## 何となぜ?
+文字列のパターンにマッチする文字を削除することは、プログラマーがよく行う作業です。これには、余分な文字を削除したり、不要な情報を取り除いたりするための目的があります。
 
-あなたは、特定のパターンにマッチする文字を削除することが必要になるかもしれません。そのような場合、ループや条件分岐を使わずに簡単に実現できる方法をご紹介します。
-
-## 方法
-
-まず、`List.filter`関数を使用して削除したい文字を除外します。次に、`String.join`関数を使ってリスト内の文字を結合し、最終的な文字列を作成します。
-
+## 方法:
 ```Elm
-deleteCharacters : String -> String
-deleteCharacters str =
-    str
-        |> String.toList
-        |> List.filter (\c -> c /= 'a') -- 文字をフィルタリング
-        |> String.fromList
+deletePattern : String -> String -> String
+deletePattern pattern str =
+    String.replace pattern "" str
 ```
 
-上記の例では、文字列中の`a`を削除することができます。他の文字を削除したい場合は、`c`の条件を変更すれば良いでしょう。
+入力された文字列から、指定したパターンにマッチする文字を除外します。例えば、```deletePattern "e" "elm"```を実行すると、"lm"が返されます。
 
-例えば、`List.filter (\c -> c /= ' ' && c /= '.')`とすれば、空白とピリオドを削除することができます。
+## 深堀り:
+- 歴史的背景:
+文字列のパターンを削除する作業は、文書処理やテキスト解析などの分野で古くから行われてきました。プログラミング言語における実装もさまざまありますが、Elmでは```String.replace```関数を使用することで簡単に実現できます。
+- 代替手段:
+文字列のパターンを削除する方法は、他にも多く存在します。例えば、正規表現や自作のアルゴリズムを用いることもできますが、Elmの場合は```String.replace```が簡単で効率的な方法です。
+- 実装の詳細:
+Elmの```String.replace```関数は、Haskellの関数を参考にして実装されています。文字列のパターンマッチングには、KMPアルゴリズムが使われています。
 
-`str`に`"Hello, world!"`と入力した場合、出力は`"Helloworld"`になるはずです。
-
-## 深堀り
-
-この方法は、文字列をリストに変換してから処理することで実現されます。文字列をリストに変換するコストはほとんどありませんが、文字列処理の場合は少し気軽に使うようにしてください。
-
-## 参考
-
-- [`String.filter` - Elm パッケージドキュメント](https://package.elm-lang.org/packages/elm/core/latest/String#filter)
-- [`List.filter` - Elm パッケージドキュメント](https://package.elm-lang.org/packages/elm/core/latest/List#filter)
-- [`String.toList` - Elm パッケージドキュメント](https://package.elm-lang.org/packages/elm/core/latest/String#toList)
-- [`String.fromList` - Elm パッケージドキュメント](https://package.elm-lang.org/packages/elm/core/latest/String#fromList)
+## 関連リンク:
+- [Elm String Documentation](https://package.elm-lang.org/packages/elm/core/latest/String)
+- [KMP Algorithm Explanation](https://www.geeksforgeeks.org/kmp-algorithm-for-pattern-searching/)
+- [Haskell String Replace Implementation](https://hackage.haskell.org/package/base-4.14.0.0/docs/Data-String.html#v:replace)

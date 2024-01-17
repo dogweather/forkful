@@ -10,71 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-Do you ever need to quickly know the current date? Maybe you need to keep track of project timelines or simply curious about the day. With Bash, you can easily retrieve the current date with a single command.
+Getting the current date means retrieving the current system date and time. Programmers often need the current date for tasks such as timestamping files or tracking when a script was run.
 
-## How To
-
-```Bash
-date
-```
-
-Running this command will output the current date and time in the format of "Day of the Week Month Day HH:MM:SS Timezone Year". For example:
+## How to:
 
 ```
-Wed May 19 10:24:57 UTC 2021
+Bash
+# To get the current date in the format "Month Day, Year":
+date +"%B %d, %Y"
+# Output: May 27, 2021
+
+# To get the current date and time in the format "Day/Month/Year Hour:Minute:Second":
+date +"%d/%m/%Y %H:%M:%S"
+# Output: 27/05/2021 13:17:42
 ```
 
-If you want to customize the date and time format, you can use the `date` command with the `+` option and specify the format you want. Here are a few examples:
+## Deep Dive:
 
-- To display only the current date in YYYY-MM-DD format:
+* Historical Context:
+Getting the current date has been a common programming task since the early days of computing, when computers were primarily used for data processing and time-sensitive operations.
 
-```Bash
-date +%F
-```
+* Alternatives:
+Other programming languages and tools have their own methods for getting the current date. For example, in Python you can use the `datetime` module, and in JavaScript you can use the `Date()` object.
 
-Output: `2021-05-19`
+* Implementation Details:
+The `date` command in Bash is part of the GNU Core Utilities, which were developed by the Free Software Foundation. It uses the system's clock to retrieve the current date and time, and then formats it according to the given string.
 
-- To display only the current time in HH:MM:SS format:
+## See Also:
 
-```Bash
-date +%T
-```
-
-Output: `10:24:57`
-
-- To display the current date and time in a custom format:
-
-```Bash
-date +"Today is %A, %B %d, %Y. The time is %I:%M %p."
-```
-
-Output: `Today is Wednesday, May 19, 2021. The time is 10:24 AM.`
-
-For a full list of available date and time format options, check out the `date` command's manual page by running `man date` in the terminal.
-
-## Deep Dive
-
-The `date` command retrieves the current date and time from your system's hardware clock. This clock keeps track of the time, even when the system is turned off. When you turn on your system, the hardware clock's time is used to set the system's clock.
-
-You can update the hardware clock's time and, by extension, your system's time, by using the `hwclock` command. This command requires root privileges, so you'll need to use `sudo` before the command.
-
-To set the hardware clock to the current system time, run:
-
-```Bash
-sudo hwclock --systohc
-```
-
-If you're using a server or virtual machine hosted in a different timezone, you can specify the timezone for the `hwclock` command using the `--utc` option. For example, to set the hardware clock to UTC time, run:
-
-```Bash
-sudo hwclock --systohc --utc
-```
-
-## See Also
-
-- `man date`: Displays the `date` command's manual page for more detailed information.
-- `man hwclock`: Displays the `hwclock` command's manual page for more detailed information.
-- [Bash Beginner's Guide](https://www.tldp.org/LDP/Bash-Beginners-Guide/html/): A comprehensive guide to learning Bash scripting.
-- [Bash Cheat Sheet](https://devhints.io/bash#dates-and-times): A quick reference guide for Bash commands and syntax.
+For more information on the `date` command and its options, you can check out the [GNU Core Utilities manual](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html). You can also learn more about working with dates and times in Bash from [Bash Date Command Examples](https://linuxize.com/post/bash-date-command).

@@ -1,7 +1,7 @@
 ---
-title:                "删除匹配模式的字符"
-html_title:           "Haskell: 删除匹配模式的字符"
-simple_title:         "删除匹配模式的字符"
+title:                "删除符合模式的字符"
+html_title:           "Haskell: 删除符合模式的字符"
+simple_title:         "删除符合模式的字符"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -10,40 +10,21 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-为什么：在编程的过程中，我们经常会遇到需要删除特定模式字符的情况，这个技巧能帮助我们更高效地处理文本数据。
+## 什么 & 为什么？
+删除匹配模式的字符是指从一个字符串中移除特定的字符组合。程序员常常会这样做来处理字符串中不必要的字符，从而使字符串更加清晰和可读。
 
-怎么做：我们可以使用Haskell中的`filter`函数来删除符合我们要求的字符。比如我们想要删除字符串中所有的小写字母,我们可以使用下面的代码：
-
+## 如何：
+Haskell中删除匹配模式的字符可以使用函数`filter`。该函数接受一个谓词函数作为输入，并返回该谓词函数为`True`的元素组成的新列表。下面是一个示例代码及其输出，展示如何使用该函数来删除字符串中的所有数字和标点符号：
 ```Haskell
-filter (\x -> x `elem` ['A'..'Z']) "HelloWorld"
+str = "Hello, 1 world!"
+output = filter (\x -> not (x `elem` ['0'..'9'] ++ [' ','!'])) str
 ```
 
-输出结果为`HW`.
+输出结果为`"Hello,world"`。在这个例子中，我们使用谓词函数`\x -> not (x `elem` ['0'..'9'] ++ [' ','!'])`来判断输入的字符是否为数字或标点符号，如果不是，则该字符被保留在输出结果中。
 
-深入探讨：我们可以进一步使用`map`函数来一次性删除多个字符。比如我们想要删除字符串中的所有数字和标点符号，我们可以使用下面的代码：
+## 深入：
+历史上，删除匹配模式的字符是通过遍历字符串并逐个比对字符来实现的。但是，这种做法效率较低且容易出错。Haskell中的`filter`函数提供了一种更加简洁高效的实现方式。除了使用`filter`函数，程序员还可以使用正则表达式来实现删除匹配模式的字符。正则表达式是一种强大的模式匹配工具，可以更灵活地处理字符串中的字符。
 
-```Haskell
-filter (\x -> not (x `elem` ['0'..'9'])) (map toLower "Hello, 123World!")
-```
-
-输出结果为`helloworld`。
-
-另外，我们也可以使用`delete`函数来删除指定字符，该函数接受两个参数，第一个参数是要删除的字符，第二个参数是要删除的字符串。比如我们想要删除字符串中的所有感叹号，可以使用下面的代码：
-
-```Haskell
-delete '!' "Hello, World!!!"
-```
-
-输出结果为`Hello, World`.
-
-值得注意的是，`delete`函数只能删除一个字符，如果我们想要一次性删除多个字符，可以使用`foldl`函数来实现。具体实现可以参考`delete`函数的源码。
-
-另外，如果我们想要删除字符串中的所有空格，可以使用`concatMap`函数来实现，具体实现可以参考`dropSpace`函数的源码。
-
-查看更多例子可以参考[Haskell的文档](https://haskell.org/documentation)。
-
-## 参考链接
-
-- [Haskell文档](https://haskell.org/documentation)
-- [Haskell语言序列教程](https://www.haskell.org/tutorial/index.html)
-- [Haskell语言官网](https://www.haskell.org/)
+## 看也：
+- [Haskell文档中关于`filter`函数的解释](https://hackage.haskell.org/package/base-4.14.0.0/docs/Prelude.html#v:filter)
+- [正则表达式在Haskell中的应用](https://www.haskell.org/haskellwiki/Regular_expressions)

@@ -10,24 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
-HTMLを解析することの重要性は、現在のウェブ開発で必須となっています。HTMLを解析することで、ウェブサイトやアプリケーションのデータを有効に取得し、表示することができます。
+## 何で?
+HTMLパースとは、HTMLコードを読み込んで、それをより分かりやすい形式に変換することです。プログラマーがHTMLをパースする理由は、HTMLコードを整形したり、データを抽出したりすることができるためです。
 
-## 方法
+## 方法:
 ```Javascript
-const html = "<div id='title'>タイトル</div>"
-const parser = new DOMParser();
-const { documentElement: doc } = parser.parseFromString(html, "text/html");
-const title = doc.querySelector('#title').textContent;
-console.log(title); // タイトル
+// HTMLコードをパースする方法
+let html = "<html><body><h1>Hello World!</h1></body></html>";
+let parser = new DOMParser();
+let xmlDoc = parser.parseFromString(html, "text/html");
+
+// タグ名を指定して要素を取得する例
+let heading = xmlDoc.getElementsByTagName("h1");
+console.log(heading[0].innerText);
+// Output: "Hello World!"
 ```
 
-HTMLの解析には、DOMパーサーを使用します。まずは、`DOMParser`オブジェクトを作成し、HTMLを解析する前の状態に設定します。次に、`parseFromString`メソッドを使用して、HTMLと解析を行うタイプを指定します。最後に、`querySelector`メソッドを使用して、目的の要素を取得し、そのテキストコンテンツを取得します。
+```Javascript
+// パースしたHTMLコードからデータを抽出する方法
+let html = "<ul><li>Apple</li><li>Orange</li><li>Banana</li></ul>";
+let parser = new DOMParser();
+let xmlDoc = parser.parseFromString(html, "text/html");
 
-## ディープダイブ
-HTMLを解析する際には、特定の要素や属性を取得することが重要です。`querySelector`メソッドを使用して、CSSセレクターを指定することで、目的の要素をより簡単に取得することができます。また、`querySelectorAll`メソッドを使用すると、複数の要素を一度に取得することができます。HTML解析は、より高度なウェブスクレイピングやデータ収集にも応用することができます。
+// リストアイテムを配列として取得する例
+let itemList = xmlDoc.getElementsByTagName("li");
+for (let i = 0; i < itemList.length; i++) {
+  console.log(itemList[i].innerText);
+} 
+// Output: "Apple", "Orange", "Banana"
+```
 
-## その他の参考文献
-- [MDN Web Docs: DOMParser](https://developer.mozilla.org/ja/docs/Web/API/DOMParser)
-- [JavaScriptでHTMLの解析とDOM操作を行う方法](https://www.sejuku.net/blog/66578)
-- [Node.jsでHTMLを解析しよう！](https://qiita.com/zaburo/items/dcd43481d835e0b96038)
+## 詳細:
+1. HTMLパースは古くから存在しており、ユーザーインターフェースの開発やスクレイピングなど、さまざまな用途で使用されてきました。
+2. HTMLパースの代替手段として、正規表現やCSSセレクターなどがありますが、正規表現はコードが複雑になりやすく、CSSセレクターでは必要なデータを取得できないことがあります。
+3. 実装上の詳細として、```DOMParser```クラスを使用することでHTMLコードをパースし、パースされた結果をXMLドキュメントとして取得できます。その後、XMLドキュメントから必要な要素を取得して操作することができます。
+
+## さらに見る:
+- [MDN Web Docs - DOMParser](https://developer.mozilla.org/ja/docs/Web/API/DOMParser)
+- [w3schools - JavaScript DOMParser](https://www.w3schools.com/jsref/dom_obj_document.asp)
+- [Codecademy - Introduction to the DOM](https://www.codecademy.com/learn/learn-the-dom)

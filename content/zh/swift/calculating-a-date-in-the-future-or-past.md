@@ -10,37 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
-如果你正在为一个未来或过去的日期进行计算，你可能是要编写一个日历应用程序、计划旅行安排或者只是想知道几天后的某个特殊日子是星期几。
+什么是日期计算及为什么程序员要做它？
+日期计算是指通过编程来计算日期在未来或过去的情况。程序员通常需要这样做是为了构建具有时间敏感性的应用程序。
 
-## 如何进行计算
-```swift
-// 获取当前日期
-let today = Date()
-// 创建一个日期计算器
-let dateCalculator = DateComponents()
-// 将日期计算器的组合设置为所需的日期差异
-dateCalculator.day = 7 // 计算一周后的日期，可根据需要更改
-// 获取计算后的日期
-let futureDate = Calendar.current.date(byAdding: dateCalculator, to: today)
-// 定义日期格式
-let dateFormatter = DateFormatter()
-dateFormatter.dateFormat = "YYYY年MM月dd日"
-// 显示计算后的日期
-print(dateFormatter.string(from: futureDate!)) // 示例输出: 2021年08月04日
+如何进行日期计算：
+```Swift
+//导入日期处理包
+import Foundation
+
+//获取当前日期
+let currentDate = Date()
+
+//计算5天后的日期
+let futureDate = Calendar.current.date(byAdding: .day, value: 5, to: currentDate)
+
+//计算10天前的日期
+let pastDate = Calendar.current.date(byAdding: .day, value: -10, to: currentDate)
+
+//输出结果
+print("当前日期为：\(currentDate)")
+print("5天后的日期为：\(futureDate)")
+print("10天前的日期为：\(pastDate)")
+
+//运行结果：
+//当前日期为：2021-01-01 00:00:00 +0000
+//5天后的日期为：2021-01-06 00:00:00 +0000
+//10天前的日期为：2020-12-22 00:00:00 +0000
 ```
 
-## 深入学习
-日期计算可以使用`Date`, `DateComponents`和`Calendar`三个类来实现。可以通过设置`DateComponents`类的属性来定义日期之间的差异，然后使用`Calendar`类的`date(byAdding:to:)`方法来获取计算后的日期。最后，通过使用`DateFormatter`类来定义日期的格式并将其转换为一个字符串。 
+深入了解：
+日期计算在程序开发中起着重要的作用，它们可以让程序根据不同的时间条件来执行不同的操作。除了通过Swift内置的日期处理包进行计算，还可以使用其他第三方日期库来完成相同的任务，如Moment、Chronology等。实现日期计算的关键在于了解和使用不同的日期格式化符号，以及理解不同日期单位之间的换算规则。
 
-## 参考链接
-- [Swift Date类](https://developer.apple.com/documentation/foundation/date)
-- [Swift DateComponents类](https://developer.apple.com/documentation/foundation/datecomponents)
-- [Swift Calendar类](https://developer.apple.com/documentation/foundation/calendar)
-- [Swift DateFormatter类](https://developer.apple.com/documentation/foundation/dateformatter)
-- [Swift 语言编程指南](https://docs.swift.org/swift-book/LanguageGuide/TheBasics.html)
-
-## 更多阅读
-- [如何在Swift中格式化日期和时间](https://www.hackingwithswift.com/example-code/system/how-to-format-a-date-to-a-string-using-dateformatter)
-- [计算日期之间的间隔](https://www.swiftbysundell.com/articles/calculating-days-between-two-dates-in-swift/)
-- [使用日期计算器类来计算日期差异](https://www.techotopia.com/index.php/Working_with_Dates_and_Times_in_Swift_3#The_Date_Components_Class)
+相关链接：
+- Swift日期处理包文档：https://developer.apple.com/documentation/foundation/date
+- Moment日期库文档：https://momentjs.com/docs/
+- Chronology日期库文档：https://github.com/davedelong/Chronology

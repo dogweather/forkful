@@ -10,50 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi lire un fichier texte
+## Qu'est-ce que c'est et pourquoi le faire?
+Lire un fichier texte consiste à accéder et à extraire des données à partir d'un fichier texte stocké sur un ordinateur. Les programmeurs utilisent cette technique pour traiter de grandes quantités de données, telles que des bases de données ou des fichiers de configuration.
 
-Si vous êtes un programmeur C, il y a de fortes chances que vous ayez besoin de lire des fichiers texte à un moment donné. Que ce soit pour récupérer des données ou pour effectuer des opérations sur un fichier, il est important de savoir comment lire un fichier texte en utilisant ce langage de programmation. Dans cet article, nous vous expliquerons comment le faire de manière simple et concise.
-
-## Comment faire
-
-Pour lire un fichier texte en C, nous utiliserons la fonction `fopen()` pour ouvrir le fichier et la fonction `fscanf()` pour lire son contenu. Voici un exemple de code :
+## Comment faire:
+Voici un exemple simple de code qui lit un fichier texte en utilisant la fonction `fscanf()` :
 
 ```
-FILE *fichier;
-char mot[20];
+C
+#include <stdio.h>
 
-fichier = fopen("mon_fichier.txt", "r"); //ouverture en mode lecture
-
-while(fscanf(fichier, "%s", mot) != EOF) { //boucle jusqu'à la fin du fichier
-    printf("%s ", mot); //affichage du mot lu
+int main() {
+  FILE *file = fopen("fichier.txt", "r");
+  int num;
+  char str[50];
+  while(fscanf(file, "%d %s", &num, str) != EOF) {
+    printf("Numéro : %d, Mot : %s\n", num, str);
+  }
+  fclose(file);
+  return 0;
 }
-
-fclose(fichier); //fermeture du fichier
 ```
 
-En utilisant `fscanf()`, nous pouvons lire le contenu du fichier mot par mot. La boucle se répétera jusqu'à ce que nous atteignons la fin du fichier (EOF). À chaque itération, un mot sera stocké dans la variable `mot` et sera ensuite affiché à l'écran. Une fois tous les mots lus, nous fermons le fichier en utilisant `fclose()`.
-
-## Plongée plus profonde
-
-Il est également possible de lire un fichier texte ligne par ligne en utilisant la fonction `fgets()`. Cette fonction prend trois paramètres : un pointeur vers une chaîne de caractères qui stockera la ligne lue, la taille maximale de cette chaîne et un pointeur vers le fichier. Voici un exemple :
-
+Supposons que le contenu du fichier `fichier.txt` soit le suivant :
 ```
-FILE *fichier;
-char ligne[500];
-
-fichier = fopen("mon_fichier.txt", "r");
-
-while(fgets(ligne, 500, fichier) != NULL) { //boucle jusqu'à la fin du fichier
-    printf("%s", ligne); //affichage de la ligne lue
-}
-
-fclose(fichier);
+1 Bonjour
+2 Monde
 ```
 
-En utilisant `fgets()`, nous pouvons lire des fichiers avec des lignes de longueurs différentes et stocker chaque ligne dans la variable `ligne`.
+Le code ci-dessus affichera la sortie suivante :
+```
+Numéro : 1, Mot: Bonjour
+Numéro : 2, Mot : Monde
+```
+Il est important de noter que le fichier doit être ouvert avec le mode "r" pour pouvoir être lu.
 
-## Voir aussi
+## Plongée en profondeur:
+Lire des fichiers texte remonte aux premiers jours de la programmation informatique. C'était à l'époque où les ordinateurs stockaient les programmes et les données sur des cartes perforées. Aujourd'hui, il existe de nombreuses alternatives pour lire des fichiers de données, telles que les bases de données et les fichiers XML.
 
-- [Documentation complète sur `fopen()`](https://www.cplusplus.com/reference/cstdio/fopen/)
-- [Documentation complète sur `fscanf()`](https://www.cplusplus.com/reference/cstdio/fscanf/)
-- [Documentation complète sur `fgets()`](https://www.cplusplus.com/reference/cstdio/fgets/)
+La fonction `fscanf()` elle-même peut être un peu délicate à utiliser, car elle peut être sensible aux erreurs de formatage du fichier. Une alternative courante est la fonction `fgets()`, qui peut être utilisée pour lire une ligne complète à la fois.
+
+## Voir aussi:
+- [Documentation de `fscanf()` sur cppreference.com](https://en.cppreference.com/w/c/io/fscanf)
+- [Documentation de `fgets()` sur cppreference.com](https://en.cppreference.com/w/c/io/fgets)

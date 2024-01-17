@@ -1,7 +1,7 @@
 ---
-title:                "Tarkistetaan, onko hakemisto olemassa"
-html_title:           "Gleam: Tarkistetaan, onko hakemisto olemassa"
-simple_title:         "Tarkistetaan, onko hakemisto olemassa"
+title:                "Tarkistaakko hakemisto on olemassa"
+html_title:           "Gleam: Tarkistaakko hakemisto on olemassa"
+simple_title:         "Tarkistaakko hakemisto on olemassa"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Files and I/O"
@@ -10,44 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Miksi
+## Mikä & Miksi?
 
-Miksi haluaisit tarkistaa, onko hakemisto olemassa? Yksinkertaisesti sanottuna, haluat ehkä varmistaa, että kyseinen hakemisto on olemassa ennen kuin yrität tehdä siihen jotain, kuten tallentaa tiedostoja tai hakea tietoja sieltä.
+Tarkistaa onko hakemisto olemassa. Tämä on tärkeä askel monissa ohjelmoinnin projekteissa, koska luoja määritelmän täytyy tietää onko hakemisto olemassa tai ei.
 
-## Miten
-
-```Gleam
-let result = File.Directory.exists("polku/hakemistoon")
-
-match result {
-  Ok(val) -> // Hakemisto löytyi, tee tarvittavat toimenpiteet
-  Err(err) -> // Hakemistoa ei löytynyt, tee tarvittavat toimenpiteet
-}
-```
-
-Tässä esimerkissä käytetään `File.Directory.exists` -funktiota tarkistaaksesi, onko annettu hakemisto olemassa. Jos hakemisto löytyy, `Ok` -haaraa käytetään suorittamaan kyseisiä toimenpiteitä. Jos hakemistoa ei löydy, `Err` -haaraa käytetään käsittelemään virheellinen tilanne.
+## Miten:
 
 ```Gleam
-let hakemisto = File.Directory.create("polku/uusi_hakemisto")
-
-match hakemisto {
-  Ok(val) -> // Hakemisto luotiin onnistuneesti
-  Err(err) ->
-    match err {
-      DirectoryAlreadyExists -> // Hakemisto on jo olemassa, tee tarvittavat toimenpiteet
-      _ -> // Jokin muu virhe, käsittele se
-    }
-}
+let exists = os.fs.exists("hakemisto")
 ```
-Tässä toisessa esimerkissä käytämme `File.Directory.create` -funktiota luodaksemme uuden hakemiston annettuun polkuun. Jos hakemisto luodaan onnistuneesti, `Ok` -haaraa käytetään. Muussa tapauksessa tarkistamme `Err` -haaran avulla, onko kyseessä `DirectoryAlreadyExists` -virhe, eli hakemisto on jo olemassa, vai jokin muu virhe.
 
-## Syvemmälle
+Tässä yksinkertaisessa esimerkissä käytämme Gleamin `os.fs` -pakettia tarkistamaan, onko hakemisto nimeltään "hakemisto" olemassa. Tulos tallennetaan muuttujaan `exists`, joka on joko `true` tai `false`.
 
-Gleamin `File.Directory` -moduuli tarjoaa muutamia hyödyllisiä käytännön toimintoja tarkistaaksesi ja hallitaksesi hakemistoja. Esimerkiksi `File.Directory.list` -funktio antaa sinulle listan hakemistoon sisältyvistä tiedostoista ja alihakemistoista. `File.Directory.delete` -funktio puolestaan poistaa annetun hakemiston, jos se on olemassa.
+## Syvemmälle:
 
-Ja jos haluat päästä vielä syvemmälle Gleamin tiedostojärjestelmän maailmaan, voit tarkistaa [viralliset dokumentaatiot](https://gleam.run/modules/file.directory.html) tai tutustua [tiedostojärjestelmän käsitteisiin](https://gleam.run/concepts/file-system.html) Gleamin oppaassa.
+Hakemistojen olemassaolon tarkistaminen on tullut tärkeäksi nykyaikaisissa ohjelmoinnin projekteissa, joissa tarvitaan tiedostojen ja hakemistojen käsittelyä. Se auttaa varmistamaan, että halutut tiedostorakenteet ovat olemassa ennen kuin niihin yritetään viitata.
 
-# Katso myös
+Vaihtoehtoisesti hakemiston olemassaolon voi tarkistaa myös käyttämällä operatiivijärjestelmän komentoja, kuten `ls` tai `dir`. Gleam tarjoaa kuitenkin yksinkertaisen ja suoraviivaisen tavan tehdä tämä suoraan ohjelmassa.
 
-- [Gleamin `File.Directory` -moduulin dokumentaatio](https://gleam.run/modules/file.directory.html)
-- [Tiedostojärjestelmän käsitteet Gleamin oppaassa](https://gleam.run/concepts/file-system.html)
+Tämän toteuttamiseksi Gleam käyttää operatiivijärjestelmän `stat` -komentoa, joka palauttaa tiedon tiedostosta tai hakemistosta. Tämän tiedon avulla Gleam voi tarkistaa onko hakemisto olemassa vai ei.
+
+## Katso myös:
+
+- [Gleamin virallinen dokumentaatio](https://gleam.run/)
+- [Gleam `os.fs` -paketin dokumentaatio](https://gleam.run/news/0.15.0-released.html)
+- [Operatiivijärjestelmän `stat` -komennon dokumentaatio](https://en.wikipedia.org/wiki/Stat_(system_call))

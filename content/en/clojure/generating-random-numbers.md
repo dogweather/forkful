@@ -10,47 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-Generating random numbers may seem like a trivial task, but it has many practical use cases. It can be used for games, simulations, cryptography, and even to test code and algorithms.
+Generating random numbers is a way for programmers to create a sequence of numbers that are chosen entirely at random. This may be useful in a variety of situations, such as in gaming applications, cryptography, or simulations.
 
-## How To
+## How to:
 
-To generate a random integer between 0 and 10, we can use the `rand-int` function from the `clojure.core` library. It takes in one argument, the upper bound, and returns a random integer between 0 (inclusive) and the upper bound (exclusive).
+Clojure provides a built-in function for generating random numbers called `rand`. It takes a single argument `n` which specifies the upper bound (exclusive) of the range of numbers to be generated.
 
-```Clojure
-(clojure.core/rand-int 10) ; output: 7
+```
+Clojure (rand n) ;returns a random number between 0 (inclusive) and n (exclusive)
 ```
 
-To generate a random decimal number between 0 and 10, we can use the `rand` function. It takes no arguments and returns a decimal number between 0 (inclusive) and 1 (exclusive).
+To generate a random number between 1 and 10, we would use `(rand 10)`.
 
-```Clojure
-(clojure.core/rand) ; output: 0.6732492319784195
+```
+Clojure (rand 10) ;possible output: 7.489625
 ```
 
-We can also use the `rand-nth` function to generate a random element from a collection. It takes in a collection as an argument and returns a random element from that collection.
+In addition to `rand`, Clojure also has a `rand-int` function which specifically generates whole numbers.
 
-```Clojure
-(def fruits ["apple" "banana" "orange"])
-(clojure.core/rand-nth fruits) ; output: "orange"
+```
+Clojure (rand-int n) ;returns a random integer between 0 (inclusive) and n (exclusive)
 ```
 
-## Deep Dive
+## Deep Dive:
 
-Clojure uses a pseudo-random number generator (PRNG) to generate random numbers. This means that the numbers are not truly random, but they are generated using an algorithm that produces a sequence of numbers that appear to be random.
+Historically, generating random numbers was a difficult task that often relied on physical processes, such as tossing a coin or rolling dice. With the advent of computers, pseudo-random number generators (PRNGs) were developed, which use mathematical algorithms to produce seemingly random numbers.
 
-The PRNG in Clojure is based on the Mersenne Twister algorithm, which is a widely used PRNG in many programming languages. It is highly efficient and has a very large state space, which means it can produce a massive amount of unique random numbers before repeating itself.
+One alternative to using built-in functions like `rand` is to use the `Random` class from the Java standard library. However, this requires more verbose code and may not be as efficient as the built-in functions in Clojure.
 
-To ensure that the generated numbers are truly random, it is recommended to seed the PRNG with a unique value. This can be done using the `set!` function followed by the `*random-seed*` variable.
+Clojure's `rand` function is based on the Mersenne Twister PRNG algorithm, which is considered to have a good balance between randomness and speed. It is seeded with the current time, making subsequent calls to `rand` produce different results.
 
-```Clojure
-(set! *random-seed* 12345)
-```
+## See Also:
 
-## See Also
-
-- Official Clojure Documentation on Randomness: https://clojure.org/reference/randomness
-
-- Mersenne Twister Wikipedia page: https://en.wikipedia.org/wiki/Mersenne_Twister
-
-- Java API for random numbers: https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Random.html
+- [Clojure docs on random numbers](https://clojuredocs.org/clojure.core/rand)
+- [Explanation of PRNGs and Mersenne Twister](https://www.stat.auckland.ac.nz/~ihaka/downloads/lexical.pdf)

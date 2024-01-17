@@ -1,7 +1,7 @@
 ---
-title:                "Utmatning av felsökningsresultat"
-html_title:           "Ruby: Utmatning av felsökningsresultat"
-simple_title:         "Utmatning av felsökningsresultat"
+title:                "Utskrift av felsökningsutdata"
+html_title:           "Ruby: Utskrift av felsökningsutdata"
+simple_title:         "Utskrift av felsökningsutdata"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Testing and Debugging"
@@ -10,41 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+### Vad & Varför?
+Printning av debug-utmatning är när en programmerare inkluderar kod för att skriva ut information om vad som händer i ett program, vanligtvis för att lösa problem eller förstå koden bättre.
 
-Att skriva kod kan vara rörigt och ibland är det lätt att komma bort sig. Genom att skriva ut debuggmeddelanden kan du enkelt spåra vad som händer i koden och hitta och åtgärda eventuella fel. Det är ett viktigt verktyg för att förbättra din kod och göra den mer robust.
+## Hur man:
+För att printa debug-utmatning i Ruby, använd "p" eller "puts" kommandot följt av den variabel eller kod du vill skriva ut, inom ```Ruby ... ``` kodblock. Här är ett exempel på hur man printar en variabel "name":
 
-## Så här gör du
-
-För att skriva ut debuggmeddelanden i Ruby, använder du metoden `puts` och skriver ut det du vill undersöka. Till exempel:
-
-```Ruby
-puts "Hello World!"
 ```
-Detta kommer att skriva ut "Hello World!" i konsolen när du kör ditt program. Du kan också skriva ut variabler eller uttryck för att se deras värde. Till exempel:
-
-```Ruby
-x = 5
-puts x
+name = "Ruby"
+p name
 ```
-Detta kommer att skriva ut värdet 5 till konsolen. Det kan vara användbart när du vill följa värdet på en variabel genom koden.
 
-## Djupdykning
+Detta kommer att ge utmatning "Ruby" i terminalen. Det kan också vara användbart att printa olika steg i en loop eller olika värden i en array för att följa hur koden fungerar.
 
-När du skriver ut debuggmeddelanden är det viktigt att vara noggrann och bara skriva ut relevanta saker. Att skriva ut för mycket kan göra det svårt att hitta det du letar efter. Det kan också påverka prestandan i ditt program.
+## Djupdykning:
+Printning av debug-utmatning är ett vanligt felsökningsverktyg för programmerare, särskilt när det kommer till att förstå koden bättre och hitta problem. Innan datorer var vanliga, använde programmerare ofta utskrifter på papper för att se vad som låg i variabler eller vad som hände vid en viss punkt i koden. Numera har vi terminalen för att göra detta enklare och mer effektivt.
 
-Istället för att skriva ut samma meddelande flera gånger kan du använda placeholders och interpolering för att visa variabler och uttryck. Till exempel:
+En annan metod för att printa debug-utmatning är att använda ett debugging verktyg, som till exempel Pry. Detta kan vara mer användbart för mer komplexa problem eller när man behöver debugga i realtid.
 
-```Ruby
-name = "Lisa"
-puts "Hello #{name}!"
-```
-Detta kommer att skriva ut "Hello Lisa!" och ger dig möjlighet att använda variabler i dina meddelanden.
+## Se också:
+Om du vill lära dig mer om printning av debug-utmatning i Ruby, kolla in följande resurser:
 
-Det finns också andra metoder som `p` och `pp` som kan skriva ut mer detaljerad information om objekt och hjälpa dig att felsöka mer komplexa problem.
-
-## Se också
-
-- [Ruby's officiella dokumentation om debugging](https://ruby-doc.org/core-2.6.5/Kernel.html#method-i-p)
-- [En guide till Ruby's debugger](https://www.rubyguides.com/2017/07/ruby-debugger/)
-- [Tips och tricks för debugging i Ruby](https://www.rubylangugaejournal.com/blog/how-to-debug-ruby-code/)
+- [Ruby debugging tutorial](https://www.rubyguides.com/2019/04/ruby-debugging/)
+- [Pry debugging tool](https://rubygems.org/gems/pry)
+- [Debugging with print statements](https://ruby-doc.org/core-3.0.1/Kernel.html#method-i-p) (officiell dokumentation)

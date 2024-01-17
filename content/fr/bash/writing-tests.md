@@ -1,7 +1,7 @@
 ---
-title:                "Écrire des tests"
-html_title:           "Bash: Écrire des tests"
-simple_title:         "Écrire des tests"
+title:                "Écriture de tests"
+html_title:           "Bash: Écriture de tests"
+simple_title:         "Écriture de tests"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Testing and Debugging"
@@ -10,43 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Quoi & Pourquoi?
+Ecrire des tests en programmation, c'est vérifier que notre code fonctionne correctement et qu'il ne contient pas d'erreurs. Les programmeurs le font pour s'assurer que leur code fonctionne tel qu'ils l'ont prévu et pour éviter les bugs dans leurs programmes.
 
-Écrire des tests est un élément crucial du développement logiciel. Il permet de s'assurer que le code fonctionne correctement et de détecter les erreurs avant qu'elles ne se manifestent dans un environnement de production. Cela peut également aider à améliorer la qualité et la fiabilité du code.
-
-## Comment faire
-
-Pour écrire des tests en Bash, nous allons utiliser l'utilitaire de test intégré appelé "test" ou "[ ]". Il permet de vérifier si une expression est vraie ou fausse, et donc de déterminer si le test réussit ou échoue.
-
-Voici un exemple de code Bash avec un test simple :
+## Comment faire:
+Voici comment écrire des tests dans Bash:
 
 ```Bash
-#!/bin/bash
+# Définir une fonction pour tester
+function addition {
+  result=$(( $1 + $2 ))
+  echo $result
+}
 
-# Vérifie si un fichier existe
-if [ -f "mon_fichier.txt" ]; then
-    echo "Le fichier existe."
-else
-    echo "Le fichier n'existe pas."
-fi
+# Appeler la fonction et stocker le résultat dans une variable
+result=$(addition 3 5)
+
+# Afficher le résultat attendu
+echo $result
 ```
 
-Dans cet exemple, nous utilisons l'option "-f" pour vérifier si le fichier "mon_fichier.txt" existe. Si c'est le cas, le test réussit et affiche un message correspondant. Sinon, le test échoue et affiche un autre message.
+Résultat attendu: 8
 
-Il existe de nombreuses autres options et conditions que vous pouvez utiliser pour écrire des tests plus complexes en Bash. N'hésitez pas à consulter la documentation officielle pour en savoir plus.
+## Plongez plus profondément:
+L'utilisation de tests en programmation a gagné en popularité dans les années 1960 avec l'émergence des méthodes de développement logiciel telles que le TDD (Test Driven Development). Alternativement, certains programmeurs préfèrent utiliser des outils spécifiques pour les tests tels que PHPUnit ou Mocha. Dans Bash, nous pouvons utiliser des assertions pour vérifier si les résultats obtenus correspondent aux résultats attendus.
 
-## Plongée en profondeur
+Pour implémenter des tests dans vos scripts Bash, vous pouvez utiliser des outils comme BATS (Bash Automated Testing System) ou Shunit2 pour écrire des tests unitaires automatisés.
 
-Lorsque vous écrivez des tests en Bash, il est important de garder à l'esprit certains éléments :
+## Voir aussi:
+Vous pouvez en savoir plus sur la façon d'écrire des tests en Bash en consultant ces sources utiles:
 
-- Utilisez des variables pour stocker les valeurs à tester afin de faciliter la maintenance et de rendre votre code plus lisible.
-- N'oubliez pas d'utiliser des guillemets pour les chaînes de caractères afin de gérer les espaces et les caractères spéciaux.
-- Pensez à inclure des tests pour les cas limites et les erreurs possibles, afin de vous assurer que votre code fonctionne correctement dans toutes les situations.
-
-Il est également important de suivre les bonnes pratiques de programmation, telles que l'utilisation de fonctions et la séparation du code en différentes parties pour faciliter la maintenance.
-
-## Voir aussi
-
-- La documentation officielle de "test" en Bash : https://www.gnu.org/software/bash/manual/html_node/Bash-Conditional-Expressions.html#Bash-Conditional-Expressions
-- Un tutoriel en français sur l'écriture de tests en Bash : https://wiki.hackzine.org/sysadmin/linux_shell_scripting_tutorial#tester
-- Un autre article sur les bonnes pratiques pour écrire des tests en Bash : https://www.tldp.org/LDP/abs/html/testbranch.html
+- [BASH Programming - Introduction HOW-TO](https://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO-2.html)
+- [BATS Documentation](https://github.com/sstephenson/bats)
+- [Shunit2 Documentation](https://github.com/kward/shunit2)

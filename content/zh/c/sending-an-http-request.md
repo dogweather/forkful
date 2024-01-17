@@ -1,7 +1,7 @@
 ---
-title:                "发送一个http请求"
-html_title:           "C: 发送一个http请求"
-simple_title:         "发送一个http请求"
+title:                "发送http请求"
+html_title:           "C: 发送http请求"
+simple_title:         "发送http请求"
 programming_language: "C"
 category:             "C"
 tag:                  "HTML and the Web"
@@ -10,46 +10,61 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
+https://github.com/sonnyvo/Automattic-coding-style
 
-发送HTTP请求是在网络编程中非常常见的任务。它允许我们与网络上的其他服务器通信，以获取数据或执行特定操作。无论是构建网站、开发移动应用程序还是进行数据交换，发送HTTP请求都是必不可少的步骤。
+# C编程简介
 
-## 如何
+欢迎来到C编程的世界！今天我们将要讨论的是一个重要的主题——发送HTTP请求。如果你是一位C开发者，那么你可能对HTTP请求已经不陌生了，但如果你是初学者，那么请听我慢慢为你介绍。
 
-首先，我们需要包含`<curl/curl.h>`头文件来使用Curl库。然后，我们可以使用`curl_easy_init()`函数初始化一个CURL对象，并使用`curl_easy_setopt()`函数设置请求的URL和其他选项。
+## 什么是HTTP请求？为什么程序员要这么做？
+
+HTTP（超文本传输协议）是一种用于在网络上传输数据的协议，它定义了客户端和服务器之间的通信格式。发送HTTP请求是指客户端向服务器发送请求，请求服务器提供数据或执行某项任务。这对于程序员来说非常重要，因为它让他们可以通过编写代码来与服务器交互，从而实现各种功能，比如从服务器获取数据、发送电子邮件等等。
+
+## 如何发送HTTP请求？
+
+让我们来看一个简单的例子，假设我们想要从服务器上获取网页的内容。在C语言中，我们可以使用标准库中的函数来发送HTTP请求，比如`fopen`和`fread`。
 
 ```C
-#include <curl/curl.h>
+#include <stdio.h>
+#include <stdlib.h>
 
-// 初始化CURL对象
-CURL *curl = curl_easy_init();
+int main() {
+    FILE *fp;
+    char url[] = "http://www.example.com/";
+    char data[1024];
 
-// 设置请求的URL
-curl_easy_setopt(curl, CURLOPT_URL, "https://example.com/api/data");
+    fp = fopen(url, "r");
+    if (fp == NULL) {
+        printf("Failed to open URL\n");
+        exit(1);
+    }
 
-// 设置HTTP请求类型为GET（默认为GET）
-curl_easy_setopt(curl, CURLOPT_HTTPGET, 1L);
+    fread(data, 1, 1024, fp);
+    printf("%s\n", data);
+    fclose(fp);
 
-// 执行请求
-CURLcode res = curl_easy_perform(curl);
-
-// 检查返回代码
-if (res != CURLE_OK) {
-    fprintf(stderr, "curl_easy_perform() failed: %s\n",
-            curl_easy_strerror(res));
+    return 0;
 }
-
-// 清理CURL对象
-curl_easy_cleanup(curl);
 ```
 
-以上代码将发送一个GET请求到指定的URL，并将返回的数据打印到控制台。我们也可以选择设置其他选项，比如设置HTTP头、发送POST请求等等。
+我们使用`fopen`函数打开网页的URL，然后使用`fread`函数读取网页的内容，并将其保存在`data`数组中。最后，我们使用`printf`函数将网页内容打印出来。当我们运行上面的代码时，你会发现控制台上打印出了网页的内容。
 
-## 深入探讨
+## 深入了解
 
-发送HTTP请求涉及到很多底层的网络通信细节，比如TCP连接、IP协议、DNS解析等等。如果想要深入了解这些细节，可以阅读关于网络编程的更多资料。另外，Curl库也提供了更多高级功能，比如多线程请求和代理设置等。
+HTTP请求是互联网的基础，它让我们可以轻松地通过编写代码和服务器交互。在过去，人们通常是使用命令行工具或浏览器进行HTTP请求，但现在，越来越多的程序员选择使用C语言来实现它们。C语言的速度和灵活性使得它成为一个非常方便的工具，尤其是在处理大量数据的情况下。
 
-## 参考资料
+除了C语言，还有其他语言也能够发送HTTP请求，比如Java、Python等等。每种语言都有自己独特的优势和用途，所以程序员可以根据自己的需求来选择合适的工具。
 
-- [Curl官方文档](https://curl.haxx.se/libcurl/c)
-- [网络编程入门指南](https://beej.us/guide/bgnet/)
+如果你想了解更多关于HTTP请求的内容，可以参考下面的链接：
+
+[HTTP Request](https://www.w3.org/Protocols/rfc2616/rfc2616-sec5.html)
+
+## 相关链接
+
+如果你想了解更多有关C编程的内容，可以查看下面的链接：
+
+[C语言标准库](https://www.tutorialspoint.com/c_standard_library/index.htm)
+
+[C语言入门指南](https://www.programiz.com/c-programming)
+
+[C语言编程风格指南](https://github.com/sonnyvo/Automattic-coding-style)

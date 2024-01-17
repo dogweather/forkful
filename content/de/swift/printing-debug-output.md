@@ -1,7 +1,7 @@
 ---
-title:                "Ausgabe von Debug-Informationen"
-html_title:           "Swift: Ausgabe von Debug-Informationen"
-simple_title:         "Ausgabe von Debug-Informationen"
+title:                "Fehlerausgabe drucken"
+html_title:           "Swift: Fehlerausgabe drucken"
+simple_title:         "Fehlerausgabe drucken"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Testing and Debugging"
@@ -10,64 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+# Was & Warum?
 
-Debugausgabe ist ein entscheidendes Werkzeug bei der Entwicklung von Software. Mit Hilfe von Debugausgaben können wir den Fluss des Programms verfolgen, Variablenwerte überprüfen und eventuelle Fehler identifizieren. Dadurch wird die Fehlersuche und Fehlerbehebung wesentlich einfacher.
+Debugging Output ausgeben ist einfach ein Weg für Programmierer, um ihre Programme zu überwachen und zu überprüfen. Es ist besonders nützlich, wenn man versucht, Probleme im Code zu finden und zu beheben. Durch das Drucken von Debug Ausgaben können Programmierer den Wert von Variablen und den Ablauf ihres Codes verfolgen, um Fehler besser zu verstehen.
 
-## So geht's
+# Wie geht's?
 
-Um Debugausgaben in Swift zu verwenden, können wir die `print()` Funktion verwenden. Hier ist ein Beispiel:
+Das Drucken von Debug Ausgaben ist in Swift sehr einfach. Verwenden Sie einfach die Funktion `print()`, um eine Nachricht oder den Wert einer Variable auszugeben. Hier ist ein Beispiel:
 
 ```Swift
 let name = "Max"
-let age = 25
-
-print("Name:", name, "Alter:", age)
+print("Hallo, ich bin \(name)")
 ```
+Ausgabe: Hallo, ich bin Max
 
-Die Ausgabe dieses Codes sieht wie folgt aus:
-
-```
-Name: Max Alter: 25
-```
-
-Wie Sie sehen können, können wir mehrere Argumente an die `print()` Funktion übergeben und sie werden automatisch durch Leerzeichen getrennt.
-
-Wir können auch Variablenwerte direkt in der Debugausgabe überprüfen, indem wir sie in geschweifte Klammern setzen:
+Sie können auch mehrere Werte in einer Debug Ausgabe zusammenfügen, indem Sie sie mit einem Komma trennen:
 
 ```Swift
-print("Das Alter von \(name) ist \(age)")
+let num = 5
+print("Die Zahl ist", num)
 ```
+Ausgabe: Die Zahl ist 5
 
-Die Ausgabe dieses Codes wäre:
+# Tiefere Einblicke
 
-```
-Das Alter von Max ist 25
-```
+Das Drucken von Debug Ausgaben wird schon seit den Anfängen der Programmierung verwendet, um Fehler zu finden und zu beheben. In Swift gibt es jedoch auch alternative Methoden, wie z.B. das Hinzufügen von Breakpoints oder das Loggen von Fehlern in einer Konsole.
 
-Wir können sogar bedingte Ausgaben erstellen, indem wir die `print()` Funktion innerhalb von `if` -Bedingungen verwenden:
+Um eine Debug Ausgabe noch nützlicher zu machen, gibt es auch die Möglichkeit, benutzerdefinierte Funktionen zu erstellen, die spezielle Informationen ausgeben. Diese Funktionen können z.B. den Zustand des Programms zu einem bestimmten Zeitpunkt anzeigen oder spezifische Fehlermeldungen ausgeben.
 
-```Swift
-if name == "Max" {
-    print("Willkommen, Max!")
-} else {
-    print("Willkommen, Fremder!")
-}
-```
+# Siehe auch
 
-Die Ausgabe dieses Codes wäre:
-
-```
-Willkommen, Max!
-```
-
-## Tiefergehende Informationen
-
-Es gibt viele weitere Funktionen, die wir nutzen können, um unsere Debugausgaben an unsere Bedürfnisse anzupassen. Zum Beispiel können wir die Trennzeichen und das Endzeichen der Debugausgabe ändern, sowie viele weitere Optionen.
-
-Um mehr über die `print()` Funktion und ihre Möglichkeiten zu erfahren, können Sie die offizielle Dokumentation von Apple lesen: https://developer.apple.com/documentation/swift/1541053-print.
-
-## Siehe auch
-
-- [Offizielle Swift Webseite](https://swift.org/)
-- [Swift für Anfänger: Ein Leitfaden zur Programmierung in Swift](https://thenextweb.com/news/swift-for-beginners-a-programming-guide)
+Für weitere Informationen und Beispiele können Sie die offizielle Dokumentation von Apple über das Drucken von Debug Ausgaben in Swift lesen: [Debugging in Swift](https://developer.apple.com/documentation/swift/debugging).

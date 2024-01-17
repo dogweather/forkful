@@ -10,45 +10,22 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 为什么要找到字符串的长度？
+## 什么是字符串长度？为什么程序员需要它？
+字符串长度指的是字符串中字符的个数。程序员经常需要获取字符串的长度，以便检查字符串是否符合特定的长度要求，或者处理字符串的不同部分。它是一种重要的字符串处理操作。
 
-在编写JavaScript程序时，字符串是一个常见的数据类型。计算字符串的长度是必要的，它可以帮助我们确定字符串的大小和特征。举个例子，我们可能需要检查字符串的长度是否符合某个特定的限制，或者根据字符串的长度来进行不同的操作。因此，学习如何找到字符串的长度是非常重要的。
-
-## 如何执行
-
-在JavaScript中，计算字符串的长度非常简单。我们可以使用内置的属性 `length` 来获取字符串的长度。让我们看一个简单的例子：
-
+## 如何计算字符串长度：
 ```Javascript
-const str = "我爱JavaScript"
+const str = "Hello World";
 console.log(str.length);
-// output: 9
 ```
+输出结果为：11
 
-在这个例子中，字符串 "我爱JavaScript" 的长度被打印为 9。这是因为该字符串由 9 个字符组成（包括汉字和空格）。我们也可以使用 `length` 属性来检查空字符串的长度：
+## 深入了解：
+字符串长度的概念可以追溯到计算机科学的早期。在过去，字符串长度是由计算机的硬件决定的，因为每个字符都占据特定的存储空间。随着技术的发展，现代计算机可以动态地分配存储空间，因此字符串长度也不再由硬件决定。
 
-```Javascript
-const emptyStr = "";
-console.log(emptyStr.length);
-// output: 0
-```
+除了直接使用.length属性来获取字符串长度外，也可以使用循环来计算字符的个数。另外，一些编程语言还提供了内置的函数来计算字符串长度，可以根据具体语言的文档来了解更多详情。
 
-我们可以看到，空字符串的长度为 0，这是因为它不包含任何可见的字符。
-
-## 深入了解
-
-计算字符串长度的方法背后的原理是，`length` 属性会返回字符串中字符的总数，包括空格和标点符号。这也意味着，字符串的长度和它的真实长度不一定相同。让我们看一个例子：
-
-```Javascript
-const str = "Hello, 世界";
-console.log(str.length);
-// output: 9
-```
-
-在这个例子中，字符串 "Hello, 世界" 的长度打印为 9。但实际上，它包含 8 个字符和一个逗号，因此真正的长度为 8。这是因为 `length` 属性只计算字符的数量，而不考虑字符的宽度。
-
-此外，这个方法也适用于数组。我们可以使用 `length` 属性来获取数组中元素的数量。
-
-See Also:
-
-- [MDN - String length property](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length)
-- [MDN - Array length property](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/length)
+## 参考资料：
+- [MDN web docs - String.length](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/length)
+- [菜鸟教程 - JavaScript字符串](https://www.runoob.com/js/js-strings.html)
+- [科普-计算机中的字符串长度](https://www.sohu.com/a/154893884_546801)

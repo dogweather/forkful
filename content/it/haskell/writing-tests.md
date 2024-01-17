@@ -10,51 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+## Cosa è e perché?
 
-Scrivere test è uno degli aspetti più importanti della programmazione. Ciò consente di verificare che il codice funzioni correttamente e di evitare potenziali errori e bug durante il processo di sviluppo. Inoltre, i test possono aiutare a mantenere il codice organizzato e leggibile.
+Scrivere test di programma significa creare codice che verifica e prova le funzionalità del nostro software. I programmatori lo fanno per garantire che il loro codice funzioni correttamente e per trovare eventuali errori prima che i loro programmi vengano utilizzati da utenti reali.
 
-## Come fare
-
-Per scrivere test in Haskell, è necessario utilizzare un framework di testing come HUnit o QuickCheck. Ad esempio, se vogliamo testare una funzione che calcola la somma di due numeri interi, possiamo utilizzare HUnit in questo modo:
+## Come si fa:
 
 ```Haskell
--- Importa il modulo HUnit
+-- Importa il modulo di test di Haskell
 import Test.HUnit
 
--- Definizione della funzione da testare
-somma :: Int -> Int -> Int
-somma x y = x + y
+-- Definisci una funzione da testare
+somma :: Int -> Int
+somma x = x + 5
 
--- Definizione del caso di test
---(nome del test) = TestCase (assertion)
-testSomma = TestCase (assertEqual "somma" 5 (somma 2 3))
+-- Definisci una lista di test
+tests = TestList [
+  "Somma 3" ~: somma 3 ~?= 8, -- Verifica che la somma di 3 sia 8
+  "Somma 7" ~: somma 7 ~?= 12 -- Verifica che la somma di 7 sia 12
+]
 
--- Esecuzione del test
--- restituirà una lista di risultati
-main = runTestTT testSomma
+-- Esegui i test e stampa l'output
+main = do
+  counts <- runTestTT tests -- Il risultato dei test viene assegnato a 'counts'
+  print counts -- Stampa il numero di test superati e falliti
 ```
 
-L'output del test sarà il seguente:
-
 ```
-Cases: 1  Tried: 1  Errors: 0  Failures: 0
-                              
-   Cases: 1  Tried: 1  Errors: 0  Failures: 0
+Cases: 2  Tried: 2  Errors: 0  Failures: 0
+Counts {cases = 2, tried = 2, errors = 0, failures = 0}
 ```
 
-Il primo riepilogo riporta il numero totale di casi testati, mentre il secondo riassume il singolo caso di test specificato.
+## Approfondimento:
 
-Esistono anche altre opzioni per testare il codice in Haskell, come QuickCheck che esegue test di proprietà casuali e rappresenta un approccio più efficiente per testare il codice.
-
-## Approfondimento
-
-Scrivere test in Haskell può sembrare una procedura noiosa e ridondante a volte, specialmente per le funzioni più semplici. Tuttavia, i test possono essere estremamente preziosi quando si tratta di modificare il codice o aggiungere nuove funzionalità, poiché possono rivelare eventuali errori o cambiamenti inaspettati in modo rapido ed efficiente.
-
-Inoltre, i test possono essere di grande aiuto quando si lavora con codebase di grandi dimensioni e complesse, poiché aiutano a mantenere il codice organizzato e facilmente manutenibile.
-
-## Vedi anche
-
-- [HUnit](https://hackage.haskell.org/package/HUnit)
-- [QuickCheck](https://hackage.haskell.org/package/QuickCheck)
-- [Introduzione al testing in Haskell](http://learnyouahaskell.com/modules#testing)
+Scrivere test è una pratica comune tra i programmatori per garantire la qualità del loro codice e facilitare la manutenzione. In passato, i programmatori dovevano testare manualmente ogni parte del loro software, ma con l'avvento dei moder

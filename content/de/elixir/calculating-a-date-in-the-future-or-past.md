@@ -1,7 +1,7 @@
 ---
-title:                "Berechnen eines Datums in der Zukunft oder Vergangenheit"
-html_title:           "Elixir: Berechnen eines Datums in der Zukunft oder Vergangenheit"
-simple_title:         "Berechnen eines Datums in der Zukunft oder Vergangenheit"
+title:                "Berechnung eines Datums in der Zukunft oder Vergangenheit"
+html_title:           "Elixir: Berechnung eines Datums in der Zukunft oder Vergangenheit"
+simple_title:         "Berechnung eines Datums in der Zukunft oder Vergangenheit"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Dates and Times"
@@ -10,42 +10,19 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was & Warum?
+Die Berechnung eines Datums in der Zukunft oder Vergangenheit ist eine häufige Aufgabe für Programmierer. Dabei handelt es sich um eine Funktion, die ein bestimmtes Datum um eine festgelegte Anzahl von Tagen, Wochen, Monaten oder Jahren verschiebt. Programme benötigen diese Funktion, um zukünftige Termine zu planen oder vergangene Ereignisse zu verfolgen.
 
-Das Berechnen von Daten in der Zukunft oder Vergangenheit kann in vielen Programmierprojekten sehr nützlich sein. Zum Beispiel kann es in der Finanzbranche verwendet werden, um zukünftige Zahlungen vorherzusagen oder in der Logistik, um Liefertermine zu planen.
+## Wie geht's?
+Um ein Datum in Elixir zu berechnen, kannst du die Funktion `Date.add/2` verwenden. Sie nimmt zwei Argumente an: das ursprüngliche Datum und die Anzahl der Tage, Wochen, Monate oder Jahre, um die es verschoben werden soll. Zum Beispiel:`ElixirDate.add({2021, 6, 1}, 2)` ergibt das Datum 3. Juni 2021.
 
-## Wie
+Um eine bestimmte Einheit zu verwenden, kannst du zusätzliche Funktionen verwenden, wie z.B. `Date.add_days/2`, `Date.add_weeks/2`, `Date.add_months/2` und `Date.add_years/2`. Zum Beispiel:`ElixirDate.add_weeks({2021, 6, 1}, 2)` ergibt das Datum 15. Juni 2021.
 
-Um ein Datum in der Zukunft oder Vergangenheit zu berechnen, können wir die `Date` Klasse in Elixir verwenden. Hier ist ein Beispielcode, der das Datum von heute ausgibt:
+## Tiefer Einblick
+Die Berechnung von Daten in der Zukunft oder Vergangenheit ist ein häufiges Problem in der Programmierung und es gibt viele verschiedene Ansätze, um es zu lösen. Manche Programmiersprachen haben integrierte Funktionen, um dies zu tun, während andere auf externe Bibliotheken angewiesen sind. In Elixir ist es einfach dank der eingebauten `Date`-Klasse.
 
-```Elixir
-Date.today()
-```
+Es ist auch wichtig zu beachten, dass bei der Berechnung von Daten in der Zukunft oder Vergangenheit Faktoren wie Schaltjahre und Schaltmonate berücksichtigt werden müssen. In Elixir können diese komplexen Berechnungen mit der `Date.shift`-Funktion durchgeführt werden.
 
-Um ein zukünftiges Datum zu berechnen, können wir die Funktion `add` verwenden, die eine positive Anzahl von Tagen als Argument erhält. Zum Beispiel, um das Datum von morgen zu berechnen:
-
-```Elixir
-Date.add(Date.today(), 1)
-```
-
-Ähnlich können wir ein vergangenes Datum berechnen, indem wir eine negative Anzahl von Tagen als Argument übergeben. Zum Beispiel, um das Datum von gestern zu berechnen:
-
-```Elixir
-Date.add(Date.today(), -1)
-```
-
-Um ein bestimmtes Datum zu berechnen, können wir auch die Funktion `from_erl!` verwenden, die ein Tuple mit dem Datum als Argument erhält. Zum Beispiel, um den 1. Januar 2020 zu berechnen:
-
-```Elixir
-Date.from_erl!({2020, 1, 1})
-```
-
-## Deep Dive
-
-Die `Date` Klasse in Elixir verwendet eine interne Repräsentation von Datumswerten als Tuple mit drei Elementen: Jahr, Monat und Tag. Dadurch kann sie effizient und präzise Berechnungen durchführen. Es ist auch wichtig zu beachten, dass die Funktionen `add` und `from_erl!` immer neue Datumswerte zurückgeben und das ursprüngliche Datum nicht ändern.
-
-## Siehe Auch
-
-- [ExCalendar: Einfache Datum- und Zeitmanipulation in Elixir](https://github.com/lau/ex_calendar)
-- [Erlang Date and Time Functions Dokumentation](http://erlang.org/doc/man/calendar.html)
-- [Elixir Date Modul Dokumentation](https://hexdocs.pm/elixir/Date.html)
+## Sieh dir auch an
+- [Elixir-Dokumentation zu Datum und Zeit](https://hexdocs.pm/elixir/Date.html)
+- [Einführung in Elixir: Eine funktionale Sprache für elegante Codierung](https://www.educba.com/introduction-to-elixir/)

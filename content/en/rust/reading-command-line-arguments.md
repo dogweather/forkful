@@ -10,51 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##Why
-So, you've just started learning Rust and you're wondering why you would need to know how to read command line arguments. Well, first of all, command line arguments are used to pass information to a program at the time of its execution. This can be useful for providing input or options to your program, making it more dynamic and versatile.
+## What & Why?
 
-##How To
-Reading command line arguments in Rust is fairly simple. Let's take a look at an example using a simple program that takes in a name as a command line argument and prints out a greeting.
+Reading command line arguments is the process of accepting user inputs from the command line when running a program. This is a common practice among programmers to enable their programs to be customizable and dynamic based on user input.
+
+## How to:
+
+To read command line arguments in Rust, we can use the ```args()``` function from the ```std::env``` module. This function returns an iterator that provides the command line arguments as strings. We can then iterate through the arguments and perform any necessary operations.
+
+Example:
 
 ```
-Rust
 use std::env;
 
 fn main() {
-    let args: Vec<String> = env::args().collect(); // collect command line arguments into a vector
-
-    // check if an argument was provided
-    if args.len() > 1 {
-        let name = &args[1]; // extract the first argument
-        println!("Hello, {}!", name);
-    } else {
-        println!("Please provide a name as an argument.");
+    let arguments: Vec<String> = env::args().collect();
+    for argument in arguments {
+        println!("{}", argument); // prints out each command line argument
     }
 }
 ```
 
-Now, if we were to run this program with "John" as the argument, we would get the following output:
+Sample output:
 
 ```
-$ ./program John
-Hello, John!
+> rustc main.rs
+> ./main hello world 123
+./main
+hello
+world
+123
 ```
 
-We can also pass in multiple arguments, as long as we specify which one we want to use in our code. For example, if we wanted to pass in a first and last name, we could do so like this:
+## Deep Dive:
 
-```
-$ ./program John Doe
-Hello, John!
-```
+Command line arguments have been used since the early days of computer programming, where they were necessary for running programs on command-line-only operating systems. In modern programming, command line arguments are still used for the same reasons, but they have also been replaced by more user-friendly graphical user interfaces in many cases.
 
-Note that when multiple arguments are passed in, they are separated by spaces.
+An alternative to reading command line arguments in Rust is the ```clap``` crate, which provides a more robust and structured way of handling command line arguments. However, for simple programs, using the ```args()``` function should suffice.
 
-##Deep Dive
-Now that we've seen how simple it is to read command line arguments in Rust, let's take a deeper look at what's happening in our code. The ```env::args()``` function returns an iterator over the command line arguments, which we then collect into a vector. This vector can be accessed using ```args[index]``` where index represents the position of the argument. In our example, we used ```args[1]``` because the first argument (index 0) is the name of our program. We then used the ```&``` symbol to create a reference to the argument, as Rust doesn't allow us to pass values by reference without using this symbol.
+It is worth noting that command line arguments are not limited to strings, but can be any data type that can be parsed from a string. For example, using the ```parse()``` method on a string, we can convert it to a desired data type such as integer or float.
 
-##See Also
-- [Rust documentation on command line arguments](https://doc.rust-lang.org/std/env/fn.args.html)
-- [Rust programming language homepage](https://www.rust-lang.org/)
-- [Command line arguments in other programming languages](https://www.geeksforgeeks.org/command-line-arguments-in-c-cpp/)
+## See Also:
 
-That's it! You now have a basic understanding of how to read command line arguments in Rust. Happy coding!
+- [The Rust Standard Library](https://doc.rust-lang.org/std/#command-line-arguments)
+- [The clap crate](https://docs.rs/clap/2.33.1/clap/): Alternative for handling command line arguments in Rust

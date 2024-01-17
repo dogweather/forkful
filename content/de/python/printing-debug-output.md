@@ -10,45 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
-Egal ob du ein Anfänger oder erfahrener Entwickler bist, das Drucken von Debug-Ausgaben ist ein wichtiger Schritt beim Entwickeln von Python-Programmen. Es hilft dabei, Fehler zu erkennen und den genauen Ablauf des Codes zu verstehen.
+## Was & Warum?
 
-## Wie
-```Python
-# Ein einfaches Beispiel
-name = "Max"
-print("Der Name ist:", name)
+Print-Ausgabe ist eine Methode, die Programmierer verwenden, um Fehler in ihrem Code zu identifizieren und zu beheben. Indem sie relevante Informationen während des Programmierprozesses drucken, können sie den Zustand ihres Codes überprüfen und mögliche Fehlerquellen finden.
 
-# Ausgabe:
-# Der Name ist: Max
-```
+## Wie geht's?
+
+Um Debug-Informationen in Python zu drucken, verwenden Sie die Funktion `print()`. Sie können beliebige Variablen oder Ausdrücke in diese Funktion einfügen und sie werden dann während der Ausführung des Programms ausgegeben. Hier ist ein Beispiel:
 
 ```Python
-# Debug-Ausgabe mit Variablen
-a = 5
-b = 10
-c = a + b
-print("Ergebnis:", c)
-
-# Ausgabe:
-# Ergebnis: 15
+nummer = 10
+print(nummer)
 ```
+**Ausgabe:**
+```Python
+10
+```
+
+Sie können auch mehrere Werte durch Kommas trennen, um sie in einer Zeile auszugeben. Hier ist ein Beispiel, bei dem wir die Ausgabe formatieren, um sie lesbarer zu machen:
 
 ```Python
-# Debug-Ausgabe in Schleifen
-for i in range(3):
-    print("Aktuelle Schleifenzahl:", i)
-
-# Ausgabe:
-# Aktuelle Schleifenzahl: 0
-# Aktuelle Schleifenzahl: 1
-# Aktuelle Schleifenzahl: 2
+name = "Hannah"
+alter = 27
+print("Mein Name ist", name, "und ich bin", alter, "Jahre alt.")
+```
+**Ausgabe:**
+```Python
+Mein Name ist Hannah und ich bin 27 Jahre alt.
 ```
 
-## Deep Dive
-Das Drucken von Debug-Ausgaben kann mit dem `print()`-Befehl einfach und effektiv durchgeführt werden. Es kann auch mit anderen Funktionen wie `logging` oder Modulen wie `pdb` kombiniert werden, um detailliertere Ausgaben zu erhalten. Es ist auch wichtig, Debug-Ausgaben nur während der Entwicklung zu verwenden und sie dann zu entfernen, um die Leistung des finalen Programms nicht zu beeinträchtigen.
+Wenn Sie mehr Kontrolle über die Ausgabe haben möchten, können Sie die Formatierungsfunktion `format()` verwenden. Hier ist ein Beispiel, bei dem wir die Anzahl der Nachkommastellen einschränken:
+
+```Python
+pi = 3.141592653589793
+print("Der Wert von Pi ist {:.2f}.".format(pi))
+```
+**Ausgabe:**
+```Python
+Der Wert von Pi ist 3.14.
+```
+
+## Tief eintauchen
+
+Die Methode, Debugging-Informationen über die Ausgabe zu drucken, ist eine der einfachsten und am besten zugänglichen Möglichkeiten, um Fehler in Ihrem Code zu finden. In frühen Tagen der Programmierung war dies oft die einzige Möglichkeit, Fehler zu identifizieren und zu beheben. Heute gibt es jedoch andere Tools und Techniken, die ebenfalls für das Debugging verwendet werden können, wie z.B. integrierte Entwicklungsumgebungen (IDEs), Debugger und Logging-Bibliotheken.
+
+Wenn Sie mehr über das Debugging in Python erfahren möchten, können Sie sich die Dokumentation von Python über Debugging ansehen oder sich mit spezifischeren Themen wie dem Verwenden von Breakpoints oder dem Einbinden von externen Bibliotheken für das Debugging beschäftigen.
 
 ## Siehe auch
-- [Python-Dokumentation zu `print()`](https://docs.python.org/de/3/library/functions.html#print)
-- [Debuggen von Python-Code mit `pdb`](https://docs.python.org/de/3/library/pdb.html)
-- [Effektives Debuggen in Python](https://realpython.com/python-debugging-pdb/)
+
+- [Python-Debugging-Tutorial](https://realpython.com/python-debugging-tips/)
+- [Offizielles Python-Debugging-Handbuch](https://docs.python.org/3/library/debug.html)
+- [Python-Logging-Bibliothek](https://docs.python.org/3/library/logging.html)

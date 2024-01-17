@@ -10,39 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+# Was & Warum?
 
-Das Lesen von Befehlszeilenargumenten in Haskell ist eine nützliche Fähigkeit für Entwickler, die Programme schreiben und ausführen möchten, die mit Benutzereingaben interagieren. Durch das Verstehen dieser Funktion können Sie z.B. verschiedene Einstellungen für Ihr Programm festlegen oder es an individuelle Bedürfnisse anpassen.
+Das Lesen von Befehlszeilenargumenten ist eine Möglichkeit, Eingaben von Benutzern direkt über die Kommandozeile zu erhalten. Programmierer nutzen diese Funktion, um ihre Programme flexibler zu gestalten und Benutzerinteraktion zu ermöglichen.
 
-## Wie geht's
-
-Um Befehlszeilenargumente in Haskell auszulesen, müssen Sie zunächst das `System.Environment`-Modul importieren. Dann können Sie die Funktion `getArgs` verwenden, um eine Liste mit den übergebenen Argumenten zu erhalten. Diese Liste können Sie dann entsprechend verarbeiten. Hier ist ein Beispielcode:
+# Wie geht das?
 
 ```Haskell
 import System.Environment
 
 main = do
-  args <- getArgs
-  putStrLn ("Es wurden " ++ show (length args) ++ " Argumente übergeben:")
-  mapM_ putStrLn args
+    args <- getArgs
+    putStrLn $ "Die übergebenen Argumente lauten: " ++ unwords args
 ```
 
-Wenn wir diesen Code mit dem Befehl `runhaskell args.hs argument1 argument2` ausführen, erhalten wir die Ausgabe:
+Dieses Beispiel zeigt, wie mit dem 'System.Environment'-Modul die Befehlszeilenargumente in Haskell ausgelesen werden können. Mit der 'getArgs'-Funktion werden alle Argumente als Liste von Strings zurückgegeben. Diese können dann durch die 'unwords'-Funktion zu einem einzelnen String zusammengefügt und ausgegeben werden.
 
+Beispiel-Ausgabe:
+```Haskell
+Die übergebenen Argumente lauten: Hallo Welt!
 ```
-Es wurden 2 Argumente übergeben:
-argument1
-argument2
-```
 
-## Tiefer Einblick
+# Tiefer schauen
 
-Die Funktion `getArgs` liefert eine Liste vom Typ `IO [String]`, da es sich um eine Aktion in der `IO` Monad handelt. Dies bedeutet, dass wir innerhalb einer `do`-Blockstruktur arbeiten müssen, um das Ergebnis der `getArgs`-Funktion zu verwenden. Die Funktion `mapM_` in unserem Beispiel nimmt eine Funktion und eine Liste und führt die Funktion für jedes Element der Liste aus. Darüber hinaus können wir auch das erste Argument (den Befehlsnamen) aus der Liste der Argumente entfernen, indem wir `getProgName` verwenden.
+Das Konzept des Lesens von Befehlszeilenargumenten stammt aus den Anfängen der Programmierung, als interaktive Echtzeitprogramme in der Regel über die Kommandozeile ausgeführt wurden. Mittlerweile gibt es jedoch auch alternative Möglichkeiten, Eingaben von Benutzern zu erhalten, wie z.B. über grafische Benutzeroberflächen.
 
-Weitere Informationen zu Command Line Arguments in Haskell finden Sie in der offiziellen Dokumentation des `System.Environment`-Moduls [hier](https://hackage.haskell.org/package/base-4.15.0.0/docs/System-Environment.html).
+Die Implementierung dieser Funktion in Haskell basiert auf dem Unix-orientierten Betriebssystem, wo die Befehlszeilenargumente als strings in eine Liste gespeichert werden. 
 
-## Siehe auch
+# Siehe auch
 
-* [Einleitung zu Haskell](https://www.haskell.org/) - Offizielle Website von Haskell
-* [Hoogle](https://hoogle.haskell.org/) - Eine Suchmaschine für Haskell-Funktionen und -Module
-* [Learn You a Haskell](http://learnyouahaskell.com/) - Ein interaktives Online-Buch, das die Grundlagen von Haskell vermittelt
+Für weitere Informationen und Beispiele zur Verwendung von Befehlszeilenargumenten in Haskell, folgen Sie den folgenden Links:
+
+- Offizielle Dokumentation des 'System.Environment'-Moduls von Haskell: https://hackage.haskell.org/package/base/docs/System-Environment.html
+- "Command-line Arguments in Haskell" von KenopoTech: https://www.fpcomplete.com/blog/2017/09/command-line-arguments-in-haskell

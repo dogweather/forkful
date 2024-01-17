@@ -1,7 +1,7 @@
 ---
-title:                "Wydrukowanie wyniku debugowania"
-html_title:           "C: Wydrukowanie wyniku debugowania"
-simple_title:         "Wydrukowanie wyniku debugowania"
+title:                "Wydrukowanie wyników debugowania"
+html_title:           "C: Wydrukowanie wyników debugowania"
+simple_title:         "Wydrukowanie wyników debugowania"
 programming_language: "C"
 category:             "C"
 tag:                  "Testing and Debugging"
@@ -10,53 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co & Dlaczego?
 
-Debugowanie jest nieodłączną częścią tworzenia oprogramowania. Czasami, aby znaleźć błąd w kodzie, niezbędne jest wyświetlanie dodatkowych informacji. W tym artykule dowiesz się, dlaczego warto wykorzystywać funkcję wyświetlania informacji debugowych i jak to zrobić w języku C.
+Debugowanie kodu może być frustrującym wyzwaniem dla programistów. Dlatego często stosuje się drukowanie informacji debugujących, czyli wydruków danych lub informacji o wykonywanym kodzie. Jest to przydatna metoda, która pomaga zlokalizować błędy i ułatwia naprawianie ich.
 
-## Jak To Zrobić
+## Jak to zrobić:
 
-Kodowanie informacji debugowych w języku C jest proste i wymaga wykorzystania funkcji `printf ()`. Aby wyświetlić wartość zmiennej w celu jej sprawdzenia, użyj specjalnej składni:
-
-```C
-printf("Wartość zmiennej x: %d \n", x);
-```
-
-W powyższym przykładzie, `%d` oznacza, że zostanie wyświetlona wartość zmiennej typu integer, a `\n` dodaje znak nowej linii po wyświetleniu. Możesz również wyświetlić więcej niż jedną zmienną lub łączyć wartości z tekstem:
+Oto kilka przykładowych sposobów wydruku informacji debugujących w języku C:
 
 ```C
-printf("Suma x i y: %d + %d = %d\n", x, y, x + y);
+// Wyświetlenie zawartości zmiennej int
+int x = 10;
+printf("Wartość x to %d\n", x);
+
+// Wyświetlenie sekwencji znaków
+char str[] = "Hello World";
+printf("Tekst: %s\n", str);
+
+// Wyświetlenie wartości ciągu znaków
+char* str2 = "Hello World";
+printf("%s\n", str2);
 ```
 
-Jeśli potrzebujesz wyświetlić ścieżkę pliku lub nazwę funkcji, użyj funkcji `__FILE__` i `__FUNCTION__`:
+Po wykonaniu powyższego kodu powinniśmy zobaczyć następujący wydruk:
 
-```C
-printf("Aktualnie wykonywany plik: %s\n", __FILE__);
-printf("Aktualnie wykonywana funkcja: %s\n", __FUNCTION__);
+```
+Wartość x to 10
+Tekst: Hello World
+Hello World
 ```
 
-Warto również pamiętać, że można użyć różnych specyfikatorów formatu, na przykład `%c` dla znaku, `%s` dla tekstu, `%f` dla liczb zmiennoprzecinkowych. Pełna lista jest dostępna w dokumentacji funkcji `printf ()`.
+## Deep Dive:
 
-## Deep Dive
+Drukowanie informacji debugujących jest praktyką, która ma wiele lat i jest szeroko stosowana w programowaniu. Metoda ta jest szczególnie przydatna w przypadku problemów z wykonywaniem kodu na różnych platformach lub w przypadku złożonych systemów.
 
-Wyświetlanie informacji debugowych może być bardzo pomocne w procesie debugowania, ale należy pamiętać, że nie należy używać go w kodzie produkcyjnym. Wyświetlanie dużej liczby informacji debugowych może znacznie spowolnić działanie programu.
+Alternatywą dla drukowania informacji debugujących może być użycie debuggera, czyli narzędzia programistycznego do analizy wykonywanego kodu.
 
-Aby uniknąć nadmiernego wyświetlania informacji, można wykorzystać kompilatorowy wariant `#ifdef DEBUG` i `#endif` wokół kodu debugowania:
+Implementacja drukowania informacji debugujących w języku C jest prosta i odbywa się za pomocą funkcji `printf()`, która jest dostępna w standardowej bibliotece języka C.
 
-```C
-#ifdef DEBUG
-printf("Wartość zmiennej x: %d\n", x);
-#endif
-```
+## Zobacz również:
 
-W ten sposób, kod debugowania będzie wykonany tylko w przypadku, gdy zostanie zdefiniowana flaga `DEBUG` podczas kompilacji.
+Za więcej informacji na temat drukowania informacji debugujących i innych sposobów debugowania w języku C, zapoznaj się z poniższymi źródłami:
 
-Innym sposobem na wygodne debugowanie w języku C jest wykorzystanie narzędzi, takich jak gdb czy Valgrind, które oferują zaawansowane funkcjonalności do śledzenia błędów i analizowania pamięci.
-
-## Zobacz także
-
-Jeśli chcesz dowiedzieć się więcej o debugowaniu w języku C, polecamy zapoznanie się z poniższymi artykułami:
-
-- [Debugowanie programów w języku C - Dokumentacja Microsoft](https://docs.microsoft.com/pl-pl/visualstudio/debugger/debugging-c-programs)
-- [Debugowanie w języku C - Samouczek na Codecademy](https://www.codecademy.com/learn/learn-c/modules/learn-c-debugging)
-- [Gdb - Dokumentacja oficjalna](https://www.gnu.org/software/gdb/documentation/)
+- [Drukowanie informacji debugowania w języku C](https://www.programiz.com/c-programming/c-output)
+- [Debagowanie kodu w języku C z użyciem GDB](https://www.gnu.org/software/gdb/)
+- [Częste błędy w programowaniu w języku C](http://www.cprogramming.com/debugging/errors.html)

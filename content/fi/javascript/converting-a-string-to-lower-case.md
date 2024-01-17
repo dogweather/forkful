@@ -1,7 +1,7 @@
 ---
-title:                "Merkkijonon muuntaminen pieniksi kirjaimiksi"
-html_title:           "Javascript: Merkkijonon muuntaminen pieniksi kirjaimiksi"
-simple_title:         "Merkkijonon muuntaminen pieniksi kirjaimiksi"
+title:                "Merkkijonon muuttaminen pienaakkosiksi"
+html_title:           "Javascript: Merkkijonon muuttaminen pienaakkosiksi"
+simple_title:         "Merkkijonon muuttaminen pienaakkosiksi"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Strings"
@@ -10,26 +10,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä ja miksi?
+Konvertointi merkkijonon pienikirjainmuotoon tarkoittaa merkkijonon muuttamista niin, että kaikki isot kirjaimet muutetaan vastaaviksi pieniksi kirjaimiksi. Ohjelmoijat tekevät tämän yleensä sen vuoksi, että he haluavat muuttaa merkkijonon tiedot yhtenäisempään muotoon, jolloin esimerkiksi hakutoiminnot ovat helpompia suorittaa.
 
-Miksi joku haluaisi muuttaa merkkijonon pienaakkosiksi? On monia tilanteita, joissa tämä voi olla hyödyllistä, kuten tarkistettaessa käyttäjän syöttöä tai vertailtaessa merkkijonoja.
-
-## Miten tehdä se
-
+## Kuinka?
 ```Javascript
-let name = "JOHN DOE";
-console.log(name.toLowerCase());
+// Esimerkki koodi
+const merkkijono = "TÄMÄ ON ESIMERKKI";
+const pienikirjainmuoto = merkkijono.toLowerCase();
+
+console.log(pienikirjainmuoto);
+// output: "tämä on esimerkki"
 ```
 
-Tuloste: john doe
-
-Merkkijonon muuttaminen pienaakkosiksi tehdään käyttäen `.toLowerCase()` -metodia. Tämä muuttaa kaikki merkkijonon kirjaimet pieniksi.
-
-## Syvemmälle
-
-JavaScriptin `.toLowerCase()` -metodi perustuu Unicode-merkistöön, joten se toimii eri kielillä ja erikoismerkeillä. Tämän avulla voidaan varmistaa, että merkkijonot toimivat oikein myös kansainvälisissä sovelluksissa.
+## Syvempää tietoa
+1. Konvertointi merkkijonon pienikirjainmuotoon tuli käytettäväksi ensimmäisen kerran Unix-käyttöjärjestelmässä.
+2. Vaihtoehtoisesti merkkijonon pienikirjainmuotoon voi muuttaa myös käyttämällä "String.toLowerCase" -funktiota.
+3. Tämän toiminnon toteuttaminen tapahtuu lähdekoodissa usein käyttämällä "for" -silmukkaa ja muuttamalla jokainen kirjain erikseen.
 
 ## Katso myös
-
-- [JavaScript String Methods](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
-- [Unicode Character Database](https://www.unicode.org/ucd/)
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase

@@ -1,7 +1,7 @@
 ---
-title:                "使用正则表达式"
-html_title:           "Swift: 使用正则表达式"
-simple_title:         "使用正则表达式"
+title:                "用正则表达式"
+html_title:           "Swift: 用正则表达式"
+simple_title:         "用正则表达式"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -10,18 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
+# 什么是正则表达式？
 
-### 在编程中，有时候我们需要快速地搜索和匹配文本中的特定模式，而不是逐个字符查找。这时候，正则表达式就能帮上大忙。它是一种强大的工具，能够根据规则匹配文本中的模式，并进行相应的操作。使用正则表达式可以提高程序的效率和可读性。
+正则表达式是一种用于匹配文本模式的工具，它允许程序员通过使用特殊字符和语法来查找和操作文本。程序员通常会使用正则表达式来查找或提取特定格式的数据，例如电话号码、电子邮箱地址或者日期。
 
-## 如何使用
+为什么程序员要使用正则表达式？
 
-### 首先，我们需要导入正则表达式的库，以便使用其中的函数。```Swift import Foundation```然后，声明一个正则表达式对象，并传入要匹配的模式和选项。```Swift let regex = try! NSRegularExpression(pattern: "[a-z]+", options: [])```接下来，我们可以使用```match```函数来查找文本中满足模式的字符串。```Swift let matches = regex.matches(in: "Hello World", options: [], range: NSRange(location: 0, length: 11))```最后，我们可以通过遍历```matches```数组来获取匹配的结果。```Swift for match in matches { let range = match.range(at: 0) print("Matched string: \(String(text[range]))") }```结果输出：```Swift Matched string: Hello Matched string: World```
+使用正则表达式可以让程序员更加高效地处理和操作文本数据，因为它们不仅可以匹配简单的字母和数字，还可以使用特殊的匹配规则来查找更复杂的文本模式。这样，程序员就可以轻松地从文本数据中提取所需的信息，而不需要手动处理大量的文本。
 
-## 深入了解
+## 如何使用？
 
-### 使用正则表达式时，可以使用各种选项来精确匹配想要的结果。比如忽略大小写，限定匹配的数量等等。同时，也可以使用特殊符号来表达更复杂的模式，如匹配邮件地址或手机号等。使用正则表达式不仅限于字符串匹配，也可以应用于其他类型的数据，如日期、数字等。通过充分理解正则表达式的语法和功能，可以大大提高程序的效率和灵活性。
+使用正则表达式的第一步是构建一个模式，该模式描述了想要匹配的特定文本格式。例如，如果想要查找所有的邮箱地址，可以使用以下正则表达式模式：```[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,64}```。然后，可以使用该模式来搜索或提取文本数据，例如：
+
+```Swift 
+let text = "我的邮箱地址是hello@example.com"
+if let emailRange = text.range(of: "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,64}", options: .regularExpression) {
+    let email = text[emailRange]
+    print(email)
+}
+
+// 输出： hello@example.com
+```
+
+注意：在Swift中，可以使用```range(of:options:)```方法和```regularExpression```选项来搜索或提取文本数据。
+
+## 深入挖掘
+
+- 历史背景：正则表达式最早是由计算机科学家Ken Thompson和Alfred Aho在上世纪60年代提出的，并在Unix操作系统中得到了应用。
+- 替代方案：除了使用正则表达式，程序员还可以使用字符串方法、自定义函数或者其他文本匹配工具来处理文本数据。
+- 实现细节：正则表达式由特殊的字符和语法组成，每个字符都代表不同的匹配规则。例如，```[A-Z]```表示匹配任意一个大写字母，而```+```表示匹配一个或多个相同的字符。
 
 ## 查看更多
 
-### - [The Swift Programming Language: Regular Expressions](https://developer.apple.com/library/archive/documentation/CoreFoundation/Conceptual/CFStrings/introCFStrings.html#//apple_ref/doc/uid/TP40003167-CH3-SW1) - [Regular Expressions 101: A Beginner's Guide](https://medium.com/swiftlearning/regular-expressions-101-a-beginner-s-guide-5f4ee43f0f04) - [Regular Expressions Cookbook](https://www.anandtech.com/show/11182/getting-started-with-swift-regular-expressions)
+- [Swift正则表达式指南](https://www.avanderlee.com/swift/regular-expressions/)
+- [正则表达式30分钟入门教程](https://deerchao.cn/tutorials/regex/regex.htm)
+- [语法参考](https://docs.swift.org/swift-book/ReferenceManual/LexicalStructure.html#grammar_lexical-structure-regular-expression-literal)

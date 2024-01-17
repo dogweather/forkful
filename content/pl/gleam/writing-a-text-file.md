@@ -10,32 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i dlaczego?
+Zapisywanie pliku tekstowego to proces, w którym programiści tworzą plik zawierający tekstowe informacje. Jest to powszechna praktyka w projektowaniu oprogramowania, ponieważ pozwala na zapisywanie danych, takich jak ustawienia, wyniki lub dane wejściowe, które mogą być wykorzystane później przez program.
 
-Pisanie plików tekstowych jest niezbędnym procesem w programowaniu i może być wymagane w różnych sytuacjach, takich jak tworzenie aplikacji webowych czy obsługa bazy danych. Jest to nie tylko umiejętność potrzebna w codziennym życiu programisty, ale także ważna w dzisiejszym świecie technologii.
-
-## Jak to zrobić
-
-Język programowania Gleam oferuje prosty i intuicyjny sposób na pisanie plików tekstowych. Można to zrobić za pomocą funkcji `File.write`, która przyjmuje dwa argumenty: ścieżkę do pliku i zawartość, którą chcemy zapisać. Poniżej przedstawiony jest przykład użycia tej funkcji wraz z wyjściem:
+## Jak to zrobić:
+### Wysyłanie tekstu bezpośrednio do pliku
+Gleam posiada wbudowany moduł `File` do zarządzania plikami tekstowymi. Aby utworzyć nowy plik i zapisać do niego tekst, wystarczy wywołać funkcję `File.write`, podając ścieżkę do pliku i tekst, który chcemy zapisać.
 
 ```Gleam
-let file_path = "moj_plik.txt"
+import File
 
-let content = "To jest przykładowy tekst, który zostanie zapisany w moim pliku."
-
-File.write(file_path, content)
+File.write("ścieżka/do/pliku.txt", "To jest tekst, który zostanie zapisany do pliku!")
 ```
 
-Po uruchomieniu tego kodu, w folderze, w którym znajduje się plik, zostanie utworzony plik tekstowy z podaną ścieżką i zawartością. Pamiętaj, że ścieżka może być podana jako względna lub bezwzględna, w zależności od tego, jak chcesz organizować swoje pliki.
+### Dodawanie tekstu do istniejącego pliku
+Aby dodać nowy tekst do istniejącego pliku, można użyć funkcji `File.append`, która działa w podobny sposób do `File.write`.
 
-## Głębsze zanurzenie
+```Gleam
+import File
 
-Podczas pisania plików tekstowych za pomocą języka Gleam, warto pamiętać, że istnieje wiele możliwości manipulacji nimi. Możliwe jest na przykład odczytanie zawartości już istniejącego pliku, dopisywanie do istniejącego pliku, czy też tworzenie nowych plików w różnych miejscach.
+File.append("ścieżka/do/pliku.txt", "To jest kolejna linijka tekstu, która zostanie dodana!")
+```
 
-Dzięki dostępnym bibliotekom i funkcjom w Gleam, możliwości są nieograniczone i z łatwością można dostosować pisanie plików tekstowych do własnych potrzeb. Warto również pamiętać o obsłudze wyjątków, aby nasz program był bezpieczny i nie powodował błędów.
+### Odczytywanie tekstu z pliku
+Jeśli chcemy odczytać zawartość pliku tekstowego i zapisać ją do zmiennej, można użyć funkcji `File.read`.
 
-## Zobacz również
+```Gleam
+import File
 
-- Dokumentacja Gleam: [https://gleam.run/](https://gleam.run/)
-- Biblioteka standardowa Gleam: [https://github.com/gleam-lang/gleam_stdlib](https://github.com/gleam-lang/gleam_stdlib)
-- Przykładowe projekty w Gleam: [https://github.com/gleam-lang/awesome-gleam](https://github.com/gleam-lang/awesome-gleam)
+let text = File.read("ścieżka/do/pliku.txt")
+```
+
+```text
+// W przypadku pliku zawierającego tekst: 
+To jest tekst, który zostanie zapisany do pliku!
+To jest kolejna linijka tekstu, która zostanie dodana!
+// Wartość zmiennej `text` będzie:
+"To jest tekst, który zostanie zapisany do pliku!\nTo jest kolejna linijka tekstu, która zostanie dodana!"
+```
+
+## Deep Dive:
+Historia plików tekstowych sięga początków komputerów i jest jednym z najważniejszych sposobów przechowywania i udostępniania informacji. Alternatywami dla plików tekstowych mogą być bazy danych lub pliki binarne, ale w wielu sytuacjach są one mniej intuicyjne lub trudniejsze w użyciu.
+
+Implementacja modułu `File` w Gleamie wykorzystuje standardową bibliotekę języka Erlang, co gwarantuje stabilne i wydajne działanie.
+
+## Zobacz też:
+- Dokumentacja modułu `File` w Gleamie: https://gleam.run/lib/std#file
+- Wprowadzenie do programowania w Gleamie (w języku polskim): https://gleam.run/book/pl/

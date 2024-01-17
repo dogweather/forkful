@@ -10,40 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+## Cosa e Perché?
 
-Probabilmente sei qui perché stai cercando un modo per stampare l'output del tuo codice di debug in modo più efficace ed efficiente. Fortunatamente, grazie al Fish Shell, puoi farlo in modo semplice e veloce.
+Stampare l'output di debug è un modo per i programmatori di visualizzare informazioni che possono aiutare a identificare e risolvere eventuali problemi nel codice durante il processo di sviluppo. Questo è particolarmente utile quando ci sono errori o comportamenti inattesi e si desidera avere una maggiore comprensione di cosa sta accadendo nel programma.
 
-## Come fare
+## Come fare:
 
-Per stampare output di debug in Fish Shell, puoi utilizzare il comando "echo". Ad esempio:
+Utilizzando il Fish Shell, è possibile stampare l'output di debug utilizzando il comando `echo`. Questo comando consente di stampare una o più variabili o stringhe all'interno del terminale. Ecco un esempio di codice e del relativo output:
 
-```Fish Shell
-echo "Debug output"
+```
+# Codice:
+set variabile "Hello World"
+echo $variabile
+
+# Output:
+Hello World
 ```
 
-Questo comando stampa "Debug output" nella console di terminale.
+Si noti che il simbolo `$` deve essere utilizzato prima del nome della variabile per fare in modo che il valore venga stampato correttamente.
 
-Puoi anche stampare il contenuto di una variabile utilizzando il comando "set -l" seguito dal nome della variabile e da "echo". Ad esempio:
+## Approfondimento:
 
-```Fish Shell
-set -l variable "questo è il contenuto di una variabile di debug"
-echo $variable
-```
+La pratica di stampare l'output di debug ha radici nella storia del debugging del codice. Prima dell'avvento dei moderni strumenti di debugging, i programmatori dipendevano spesso dall'inserimento di comandi di stampa all'interno del codice per ottenere informazioni utili durante il processo di sviluppo.
 
-Inoltre, puoi utilizzare il comando "perror" per stampare errori di debug nella console di terminale.
+Oggi ci sono anche altre alternative per visualizzare l'output di debug, come l'utilizzo di debugger o la stampa su file di log. Tuttavia, la stampa diretta all'interno del terminale rimane uno strumento semplice ed efficace per visualizzare informazioni di debug.
 
-```Fish Shell
-perror "Questo è un errore di debug"
-```
+Inoltre, il Fish Shell offre alcune funzionalità aggiuntive come il supporto per la formattazione dell'output di debug e la possibilità di abilitare e disabilitare facilmente il debug mode tramite il comando `set -x`.
 
-## Approfondimenti
+## Vedi anche:
 
-Ci sono molte altre opzioni e funzionalità disponibili per la stampa di debug output in Fish Shell. Puoi utilizzare la sintassi delle stringhe di formato per formattare l'output, o utilizzare il comando "debug" per attivare la modalità di debug e stampare informazioni sui comandi e sulle variabili.
-
-Per ulteriori informazioni, puoi consultare la documentazione ufficiale di Fish Shell o cercare online esempi di codice di debug con Fish Shell.
-
-## Vedi anche
-
-- Documentazione ufficiale di Fish Shell: https://fishshell.com/docs/current/
-- Esempi di codice di debug con Fish Shell: https://github.com/search?q=fish+shell+debug+examples
+- [Documentazione ufficiale del Fish Shell](https://fishshell.com/docs/current/)
+- [Guide per il debugging del codice](https://www.freecodecamp.org/news/a-beginners-guide-to-debugging-in-javascript/)
+- [Come fare il debugging con il Fish Shell](https://medium.com/nerd-for-tech/more-effective-debugging-with-fish-shell-c67b8d32b9ae)

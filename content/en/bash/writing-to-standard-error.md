@@ -10,42 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-Writing to standard error in Bash can be useful when troubleshooting or debugging scripts. It allows you to see any error messages or warnings that your script may produce, which can help in identifying and fixing any issues.
+Writing to standard error in Bash refers to sending error messages or other important information to the standard error stream, known as "stderr." This is different from the standard output stream, or "stdout," which is used for regular program output. Programmers often use this method to differentiate between regular program output and error messages, making it easier to identify and troubleshoot problems.
 
-## How To
+## How to:
 
-To write to standard error in Bash, you can use the `echo` command followed by the `>&2` redirection operator. For example:
-
-```Bash
-echo "This is an error message" >&2
-```
-
-This will print the message to standard error instead of standard output. You can also use the `printf` command with the `%2>&1` format specifier to achieve the same result:
+To write to standard error in Bash, you can use the "echo" command followed by the ">&2" redirect operator. For example:
 
 ```Bash
-printf "%2" "This is an error message"
+echo "Error: Something went wrong." >&2
 ```
 
-To see the difference, you can try running the same command without the `>&2` or `%2>&1` redirection and see the message will be printed to standard output instead.
+This will print the error message to the standard error stream instead of the standard output stream. The "&" character is used to indicate that the following number is a file descriptor, and "2" refers to the standard error stream.
 
-## Deep Dive
-
-By default, any error messages or warnings produced by a command will be printed to standard error. However, some commands may also have an option to redirect errors to a different location. For example, the `grep` command has a `-q` option which suppresses all error messages.
-
-Additionally, you can display both standard output and standard error using the `|&` operator, also known as "pipe and ampersand". This can be useful when you want to save all output, including errors, to a file. For example:
+You can also use the "printf" command to format the error message before sending it to standard error. For example:
 
 ```Bash
-ls -lR |& tee output.txt
+printf "%s\n" "Error: File not found." >&2
 ```
 
-This will list all files and directories recursively and save both standard output and standard error to the `output.txt` file.
+This will send the formatted error message to standard error.
 
-## See Also
+## Deep Dive:
 
-For more information on standard error and redirection in Bash, check out these resources:
+Writing to standard error originated in the UNIX operating system, where standard streams were used for communication between programs. This concept was later adopted by other operating systems, including Linux. Alternative methods for writing to standard error include using the "error" or "errmsg" functions in C programming, or using the "LOG_ERR" level in the "syslog.h" header file.
 
-- [Bash Redirections](https://www.gnu.org/software/bash/manual/html_node/Redirections.html)
-- [Linux I/O Explained](https://www.computerhope.com/unix/uio.htm)
-- [Understanding Shell Script's idiom: 2>&1](https://www.ibm.com/support/knowledgecenter/ssw_aix_71/osmanagement/2ampersand.htm)
+In Bash, using the ">&2" redirect operator is the most common and recommended way to write to standard error. It is also possible to redirect both standard output and standard error to the same file by using the "2>&1" redirect operator.
+
+## See Also:
+
+- [Bash Basics: Writing to Standard Error](https://linuxize.com/post/bash-redirect-stderr-to-file/)
+- [UNIX tutorial: Standard Streams](https://www.tutorialspoint.com/unix/unix-basic-concepts.htm)
+- [Using standard streams in C](https://www.geeksforgeeks.org/using-unistd-h-write-function/)
+
+Note: Keep in mind that writing to standard error can sometimes be used to suppress error messages, so use it wisely in your Bash scripts.

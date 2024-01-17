@@ -1,7 +1,7 @@
 ---
-title:                "Tekstitiedoston lukeminen"
-html_title:           "Elixir: Tekstitiedoston lukeminen"
-simple_title:         "Tekstitiedoston lukeminen"
+title:                "Tiedostojen lukeminen"
+html_title:           "Elixir: Tiedostojen lukeminen"
+simple_title:         "Tiedostojen lukeminen"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Files and I/O"
@@ -10,29 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+Mitä ja miksi?
+Tiedoston lukeminen on prosessi, jossa ohjelma lukee tietoja tiedostosta ja käsittelee niitä. Tämä on tärkeä osa ohjelmointia, sillä usein haluamme käsitellä tietoja, jotka on tallennettu tiedostoihin, kuten tekstitiedostoihin tai CSV-tiedostoihin.
 
-Monissa ohjelmointiprojekteissa on tarve lukea tekstitiedostoja. Tämä voi olla esimerkiksi datan käsittelyä tai tiedostojen kopiointia varten. Elixirin avulla tämä on helppoa ja tehokasta.
-
-## Miten
-
-Lueessa tekstitiedostoja Elixirillä, käytetään File moduulia. Ensiksi, avataan haluttu tiedosto `File.open()` funktion avulla. Tämän jälkeen voidaan käyttää `IO.stream()` funktiota luomaan datavirta tiedostolle. Lopuksi tiedosto suljetaan `File.close()` avulla.
-
+Kuinka:
 ```Elixir
-file = File.open("tiedosto.txt", [:read])    # Avaa tiedosto
-stream = IO.stream(file)                    # Luo datavirta
-IO.read(stream, :all)                       # Tulostaa koko tekstin
-File.close(file)                            # Sulje tiedosto
+File.read("tiedostopolku.txt")
+```
+Tällä yksinkertaisella koodirivillä voimme lukea tekstitiedoston ja tallentaa sen muuttujaan. Voimme myös käyttää muita Elixirin tiedostonkäsittelytoimintoja, kuten ```File.stream!```, joka palauttaa tulostusvirran, tai ```File.write!```, jolla voimme kirjoittaa tietoja tiedostoon.
+
+Syöte:
+```
+Tämä on esimerkkiteksti.
+```
+Ulostulo:
+```
+{:ok, "Tämä on esimerkkiteksti."}
 ```
 
-Output: `"Tämä on esimerkki tekstiä."`
+## Syväsukellus:
+Tekstitiedostojen lukeminen on ollut osa ohjelmointia jo pitkään. Ennen digitaalista aikakautta ohjelmoijat lukevat tietoja paperilta ja kirjoittivat ne käsin ohjelmakoodiin. Nykypäivänä tiedostojen lukeminen on tärkeää, sillä tiedot tallennetaan yleensä tiedostoihin, jotta niitä voidaan käyttää myös muiden ohjelmien kanssa.
 
-## Syvemmälle
+On myös muita tapoja lukea tiedostoja Elixirissä, kuten käyttämällä ulkoisia kirjastoja, kuten ```FileParser``` tai ```FastCSV```. Näitä voi olla tarpeen käyttää, jos ohjelmaa täytyy lukea monimutkaisempia tiedostoja, kuten XML- tai JSON-muodossa olevia tiedostoja.
 
-Reading files in Elixir is actually done synchronously, meaning that the entire file is read into memory at once. This may not be ideal for very large files, as it could potentially cause memory issues. To overcome this, Elixir also offers the option to read files asynchronously using `File.read()` and `Stream.resource()`.
+Kun Elixiriä käytetään web-sovelluksissa, tiedostojen lukeminen voi olla tarpeen, esimerkiksi käyttäjän yllä lähettämien kuvien tai dokumenttien käsittelyssä. Tällöin tiedoston lukeminen Tiedostojärjestelmä-moduulilla on hyödyllinen tapa käsitellä tiedostoja.
 
-## Katso myös
+Edellä mainitut esimerkit ovat yksinkertaisia ja perustuvat oletuksiin onnistuneesta tiedostojen lukemisesta. Kuten aina ohjelmoinnissa, on tärkeää käsitellä myös virhetilanteet. Oikeanlaiset virhekäsittelymekanismit ja virheiden tarkka lukeminen ovat tärkeitä osia ohjelmiston kehityksessä.
 
-- [File moduuli](https://hexdocs.pm/elixir/File.html)
-- [IO moduuli](https://hexdocs.pm/elixir/IO.html)
-- [Stream moduuli](https://hexdocs.pm/elixir/Stream.html)
+## Katso myös:
+Virallinen dokumentaatio Tiedostojärjestelmä-moduulista: https://hexdocs.pm/elixir/File.html

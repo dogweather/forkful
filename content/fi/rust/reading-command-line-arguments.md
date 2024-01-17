@@ -1,7 +1,7 @@
 ---
-title:                "Puuttujien komentoriviparametrien lukeminen"
-html_title:           "Rust: Puuttujien komentoriviparametrien lukeminen"
-simple_title:         "Puuttujien komentoriviparametrien lukeminen"
+title:                "Lukemalla komentoriviparametrit"
+html_title:           "Rust: Lukemalla komentoriviparametrit"
+simple_title:         "Lukemalla komentoriviparametrit"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Files and I/O"
@@ -10,45 +10,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä & Miksi?
+Lue komentorivi argumentteja on tekniikka, joka mahdollistaa käyttäjien syöttämien tietojen lukemisen ohjelmaan komentoriviltä. Tämä antaa ohjelmoijille mahdollisuuden muokata ohjelmiaan käyttäjän tarpeiden mukaan.
 
-Miksi vaivautuisit lukemaan komentoriviparametreja Rustilla? Komentoriviparametrit ovat tapa välittää tietoa ohjelmalle ennen sen suorittamista. Näiden avulla voit esimerkiksi määrittää, mitä tiedostoja ohjelma käsittelee tai mikä toiminto suoritetaan.
-
-## Kuinka
-
-Käytössäsi saattaa olla ohjelma, joka vaatii komentoriviparametreja. Tällöin sinun täytyy lukea nämä parametrit ohjelman suorittamista varten. Alla on muutamia esimerkkejä Rustilla kirjoitettuna:
-
-```Rust
-use std::env;
-
-// Hakee ensimmäisen parametrin
-let argument = env::args().nth(1);
-
-// Tulostaa toisen parametrin
-let second_argument = env::args().nth(2);
-println!("Toinen parametri: {}", second_argument);
+## Kuinka tehdä:
+Esimerkiksi, voit lukea komentorivi argumentteja Rust-ohjelmassa käyttämällä vakioa ```args```. Tämä vakio sisältää vektorin komentorivi argumenteista ja sen avulla voit käsitellä saatuja tietoja.
 ```
-
-Jos haluat käsitellä kaikki parametrit yhdessä, voit käyttää `args()`-metodia ja `collect()`-funktiota:
-
-```Rust
 use std::env;
+fn main() {
+    let args: Vec<String> = env::args().collect();
 
-// Hakee kaikki parametrit ja tallentaa ne vektroille
-let arguments: Vec<String> = env::args().collect();
-
-// Tulostaa kaikki parametrit
-println!("Komentoriviparametrit: {:?}", arguments);
+    println!("Ensimmäinen argumentti on: {}", args[1]);
+}
 ```
+Kun käyttäjä antaa komentorivi argumentin, kuten ```rust ohjelma.rs argumentti```, ohjelma tulostaa: "Ensimmäinen argumentti on: argumentti".
 
-## Syväsukellus
+## Syvä sukellus:
+Komentorivi argumenttien lukeminen on ollut tärkeä osa ohjemointia jo pitkään. Ennen kuin komentoriviohjelmia kehitettiin, käyttäjien piti luoda ja tallentaa syötteet erilliseen tiedostoon ja sitten antaa ohjelmalle tiedoston nimi parametrina. Toinen tapa lukea käyttäjän syötteitä on käyttää standardeja tietovirtoja (```stdin``` ja ```stdout```), mutta nämä eivät anna mahdollisuutta ohjelman käytön mukauttamiseen komentorivillä.
+Rust-kieltä käytetään usein järjestelmien ohjelmointiin, jossa käyttäjän syötteet ja parametrit voivat olla erittäin vaihtelevia. Siksi komentorivi argumenttien lukeminen on tärkeä osa Rustin kanssa työskentelyä.
 
-Rustilla on käytössä `std::env`-kirjasto, joka sisältää monia hyödyllisiä toimintoja komentoriviparametrien käsittelyyn. Voit esimerkiksi käyttää `args_os()`-metodia, joka palauttaa `OsString`-tyyppisen vektorin parametreista. Tämä on hyödyllistä, jos haluat säilyttää parametrien alkuperäisen muodon.
-
-Voit myös käyttää `current_dir()`-metodia saadaksesi polun nykyiseen työhakemistoon tai `var_os()`-metodia hakemaan ympäristömuuttujan arvon.
-
-## Katso myös
-
-- [Rustin virallinen dokumentaatio komentoriviparametreista](https://doc.rust-lang.org/std/env/#command-line-arguments)
-- [Hyödyllisiä Rust-komentorivikirjastoja](https://www.rust-lang.org/learn/cli-crates)
-- [Keskustelua Rust-komentoriviparametreista Rust-keskustelufoorumilla](https://users.rust-lang.org/t/command-line-arguments/4145)
+## Katso myös:
+Rustin dokumentaatio args-vakion käytöstä: https://doc.rust-lang.org/std/env/fn.args.html

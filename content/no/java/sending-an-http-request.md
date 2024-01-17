@@ -1,7 +1,7 @@
 ---
-title:                "Å sende en http-forespørsel"
-html_title:           "Java: Å sende en http-forespørsel"
-simple_title:         "Å sende en http-forespørsel"
+title:                "Sende en http-forespørsel"
+html_title:           "Java: Sende en http-forespørsel"
+simple_title:         "Sende en http-forespørsel"
 programming_language: "Java"
 category:             "Java"
 tag:                  "HTML and the Web"
@@ -10,45 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hvorfor
+## Hva og hvorfor?
+Sending av HTTP-forespørsler er en vanlig oppgave for programmerere når de ønsker å hente data fra en annen server. HTTP står for HyperText Transfer Protocol og er protokollen som brukes når man kommuniserer med nettsider over internett.
 
-HTTP-forespørsler er en avgjørende del av webutvikling, da de muliggjør kommunikasjon mellom klienter og servere. Ved å lære å sende HTTP-forespørsler i Java, kan du utvikle robuste og pålitelige webapplikasjoner.
-
-# Hvordan
-
-For å sende en HTTP-forespørsel i Java, må du følge disse trinnene:
-
-1. Importer "java.net" pakken i koden din.
-2. Opprett en URL-objekt ved å spesifisere URL-en til nettstedet eller API-et du vil sende en forespørsel til.
-3. Åpne en forbindelse til URL-en ved å bruke "openConnection ()" metoden.
-4. Sett metoden for forespørselen (f.eks. GET, POST, PUT) ved å bruke "setRequestMethod ()" metoden.
-5. Legg til eventuelle nødvendige header-felt ved å bruke "setRequestProperty ()" metoden.
-6. Hvis du sender en POST- eller PUT-forespørsel, må du angi kroppsdataene til forespørselen ved å bruke "setDoOutput (true)" og skrive dataene til forbindelsen.
-7. Kjør forespørselen ved å bruke "getResponseCode ()" metoden, og få responsen ved å bruke "getInputStream ()" metoden.
-
-La oss ta en titt på et eksempel som sender en GET-forespørsel til "https://www.google.com":
+## Slik gjør du det:
+For å sende en HTTP-forespørsel i Java kan du bruke klassen HttpURLConnection. Denne klassen er en del av standard Java-pakken og lar deg opprette og sende HTTP-forespørsler enkelt. Et eksempel på hvordan du kan sende en GET-forespørsel til en nettside ser slik ut:
 
 ```Java
-URL url = new URL("https://www.google.com");
-HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-connection.setRequestMethod("GET");
-int responseCode = connection.getResponseCode();
-System.out.println("Response Code: " + responseCode);
-InputStream inputStream = connection.getInputStream();
+URL url = new URL("https://www.example.com");
+HttpURLConnection con = (HttpURLConnection) url.openConnection();
+con.setRequestMethod("GET");
+
+int status = con.getResponseCode();
+System.out.println("Statuskode: " + status);
+
+BufferedReader in = new BufferedReader(
+    new InputStreamReader(con.getInputStream()));
+String inputLine;
+StringBuilder response = new StringBuilder();
+while ((inputLine = in.readLine()) != null) {
+    response.append(inputLine);
+}
+in.close();
+
+System.out.println("Svar fra server: " + response.toString());
 ```
 
-Dette vil gi følgende utgang:
+Det første du må gjøre er å opprette et URL-objekt som inneholder adressen til nettsiden du ønsker å hente data fra. Deretter oppretter vi en HttpURLConnection som bruker denne URL-en. Vi setter også metoden til å være GET siden vi ønsker å hente informasjon fra nettsiden. Deretter gjør vi et kall til nettsiden og leser svaret fra serveren. Til slutt skriver vi ut statuskoden og svaret fra serveren.
 
-```
-Response Code: 200
-```
+## Dypdykk:
+HTTP-protokollen ble utviklet på slutten av 80-tallet og har blitt den mest brukte protokollen for å kommunisere med nettsider over internett. Det finnes også andre måter å sende HTTP-forespørsler på, som for eksempel å bruke tredjeparts biblioteker som Apache HttpComponents eller OkHttp.
 
-# Dypdykk
+En HTTP-forespørsel består av en tittel og en valgfri kropp. Tittelen identifiserer hvilken metode som skal brukes (GET, POST, PUT, osv.) og kroppen kan inneholde data som skal sendes til nettsiden. I Java-koden ovenfor brukte vi GET-metoden, som er den mest vanlige metoden for å hente data fra nettsider.
 
-HTTP-forespørsler har forskjellige metoder, som brukes for å utføre forskjellige handlinger. GET-metoden brukes for å hente data fra en bestemt URL, mens POST-metoden brukes for å sende data til en spesifisert URL. Du kan også angi header-felt for å sende ytterligere informasjon til serveren, for eksempel autorisasjonsparametere. Det er også viktig å håndtere feilresponsene ved å sjekke responskoden og ta nødvendige handlinger.
-
-# Se Også
-
-- [Offisiell dokumentasjon for HttpURLConnection](https://docs.oracle.com/javase/10/docs/api/java/net/HttpURLConnection.html)
-- [Guide for å håndtere HTTP-forespørsler i Java](https://www.baeldung.com/java-http-request)
-- [Enkle HTTP-forespørsler i Java](https://www.codejava.net/java-se/networking/how-to-send-http-request-getpost-in-java)
+## Se også:
+- [Oracle-beskrivelse av HttpURLConnection](https://docs.oracle.com/javase/8/docs/api/java/net/HttpURLConnection.html)
+- [Apache HttpComponents](https://hc.apache.org/httpcomponents-client-4.5.x/index.html)
+- [OkHttp](https://square.github.io/okhttp/)

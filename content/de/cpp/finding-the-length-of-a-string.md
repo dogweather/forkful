@@ -1,7 +1,7 @@
 ---
-title:                "Die Länge eines Strings finden"
-html_title:           "C++: Die Länge eines Strings finden"
-simple_title:         "Die Länge eines Strings finden"
+title:                "Die Länge eines Strings berechnen"
+html_title:           "C++: Die Länge eines Strings berechnen"
+simple_title:         "Die Länge eines Strings berechnen"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -10,75 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Warum
+## What & Why?
 
-Es ist wichtig, die Länge einer Zeichenkette in C++ zu finden, da dies eine grundlegende Funktion ist, um mit Texten zu arbeiten. Durch das Erlernen dieser Fähigkeit können Sie effektivere und effizientere Programme schreiben.
+Die Länge einer Zeichenkette zu finden ist ein häufiges Problem bei der Programmierung. Es bezieht sich auf die Anzahl der Zeichen in einer Zeichenkette und ist wichtig, um mit dem Inhalt von Zeichenketten zu arbeiten. Da Zeichenketten in der Programmierung häufig verwendet werden, ist es wichtig zu wissen, wie man ihre Länge bestimmen kann.
 
-# Wie man die Länge einer Zeichenkette in C++ findet
+## How to:
 
-Eine Zeichenkette in C++ ist eine Sequenz von Zeichen, die entweder von einem Einfachzeichen oder einer Reihe von Zeichenkonstanten umgeben ist. Um die Länge einer Zeichenkette zu finden, müssen wir die Anzahl der Zeichen zählen, die in der Zeichenkette enthalten sind.
-
-Hier ist ein Beispielcode, um die Länge einer Zeichenkette zu finden:
+Verwenden Sie die built-in-Funktion ```C++ size()``` um die Länge einer Zeichenkette zu erhalten:
 
 ```C++
 #include <iostream>
-#include <string>
+#include <string> 
 
 using namespace std;
 
 int main() {
-  string zeichenkette = "Hallo Welt!";
-  int laenge = zeichenkette.length();
-
-  cout << "Die Länge der Zeichenkette ist: " << laenge << endl;
-  return 0;
+    string str = "Hallo World!";
+    cout << "Die Länge der Zeichenkette ist: " << str.size() << endl;
+    return 0;
 }
 ```
+Output: Die Länge der Zeichenkette ist: 12
 
-Das obige Beispiel zeigt, wie Sie die `length()` Funktion der `string` Klasse verwenden können, um die Länge der Zeichenkette zu finden. Diese Funktion gibt die Anzahl der Zeichen in der Zeichenkette zurück.
-
-Die Ausgabe des oben genannten Codes wird sein:
-
-```
-Die Länge der Zeichenkette ist: 11
-```
-
-## Tiefergehende Informationen
-
-Bei der Verwendung der `length()` Funktion ist es wichtig zu wissen, dass die Indizierung von Zeichenketten in C++ bei 0 beginnt. Das bedeutet, dass das erste Zeichen in der Zeichenkette an Position 0 steht und nicht an Position 1.
-
-Um auf ein bestimmtes Zeichen in der Zeichenkette zuzugreifen, können Sie die `at()` Funktion verwenden, die ein Zeichen basierend auf einer angegebenen Position zurückgibt. Wenn Sie jedoch versuchen, auf ein Zeichen an einer ungültigen Position zuzugreifen, wird ein Fehler ausgelöst.
+Sie können auch eine Schleife verwenden, um die Anzahl der Zeichen in einer Zeichenkette zu zählen:
 
 ```C++
 #include <iostream>
-#include <string>
 
 using namespace std;
 
 int main() {
-  string zeichenkette = "Hallo Welt!";
-  
-  // Gib das 3. Zeichen in der Zeichenkette aus
-  cout << "Das 3. Zeichen ist: " << zeichenkette.at(2) << endl;
-  
-  // Versuche, auf ein ungültiges Zeichen zuzugreifen
-  cout << "Das 20. Zeichen ist: " << zeichenkette.at(19) << endl;
-  
-  return 0;
+    string str = "Hallo World!";
+    int count = 0;
+    while (str[count] != '\0') {
+        count++;
+    }
+    cout << "Die Länge der Zeichenkette ist: " << count << endl;
+    return 0;
 }
 ```
 
-Die Ausgabe des obigen Codes wird wie folgt sein:
+Output: Die Länge der Zeichenkette ist: 12
 
-```
-Das 3. Zeichen ist: l
-terminate called after throwing an instance of 'std::out_of_range'
-  what():  basic_string::at: __n (which is 19) >= this->size() (which is 11)
-```
+## Deep Dive:
 
-In diesem Beispiel sehen Sie, wie das Programm wegen des ungültigen Zeichenzugriffs abgebrochen wurde.
+Die Funktion ```C++ size()``` ist Teil der Standard Template Library (STL) und wurde in der Version C++98 eingeführt. Sie wird verwendet, um die Größe oder die Länge einer Datenstruktur zu ermitteln, einschließlich Zeichenketten. Alternativ können Sie auch die Funktion ```C++ strlen()``` verwenden, um die Länge einer Zeichenkette zu erhalten. Diese Funktion ist jedoch etwas weniger effizient als ```C++ size()```.
 
-# Siehe Auch
+Die Länge einer Zeichenkette kann auch durch die Verwendung von Pointern und Schleifen ermittelt werden. Dies ist eine grundlegende Methode, die jedoch in der Praxis nicht empfohlen wird, da sie anfällig für Fehler ist und nicht so effizient wie die Verwendung von built-in-Funktionen. 
 
-- [string::length() Referenz](https://www.cplusplus.com/reference/string/string/length/) 
-- [string::at() Referenz](https://www.cplusplus.com/reference/string/string/at/)
+## See Also:
+
+Weitere Informationen zur Funktion ```C++ size()``` finden Sie in der offiziellen C++ Dokumentation: https://en.cppreference.com/w/cpp/string/basic_string/size
+
+Weitere Möglichkeiten, um die Länge einer Zeichenkette in C++ zu ermitteln, finden Sie in diesem Tutorial: https://www.geeksforgeeks.org/length-of-a-string-using-pointers/

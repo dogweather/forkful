@@ -10,34 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co & Dlaczego?
+Czytanie pliku tekstowego to proces, w którym program przegląda i odczytuje zawartość istniejącego pliku z tekstem. Programiści często korzystają z tej funkcji, aby uzyskać dostęp do informacji przechowywanych w plikach tekstowych lub przeprowadzić operacje na danych zawartych w takich plikach.
 
-Cześć Czytelniku! Czy kiedykolwiek zastanawiałeś się, jak przeczytać plik tekstowy w Bash? Może próbowałeś wcześniej, ale masz wrażenie, że nie wiesz do końca, jak się za to zabrać? Nie martw się, ten artykuł jest właśnie dla Ciebie! Dowiesz się tutaj w jaki sposób możesz łatwo i szybko odczytać plik tekstowy w języku Bash.
-
-## Jak to zrobić
-
-Aby przeczytać plik tekstowy w Bash, potrzebujemy dwóch komend - 'cat' i 'less'. Pierwsza komenda, 'cat' (od 'concatenate'), wyświetla zawartość pliku na ekranie. Możemy użyć jej w następujący sposób:
+## Jak to zrobić:
+Poniżej znajdują się przykładowe kody oraz wyniki wywołania, które pokazują, jak używać polecenia ```cat``` do odczytania zawartości pliku tekstowego, ```grep``` do przefiltrowania wyników i ```wc -l``` do zliczenia ilości linii w pliku.
 
 ```Bash
-cat moj_plik.txt
+# Przykładowy plik tekstowy "dane.txt":
+
+Imię: Michał
+Nazwisko: Nowak
+Wiek: 28
+Zawód: programista
+
+# Polecenie "cat" odczytuje zawartość pliku tekstowego:
+cat dane.txt
 ```
 
-Ta komenda wyświetli całą zawartość pliku tekstowego 'moj_plik.txt' na ekranie terminala. Proste, prawda?
+Wynik:
 
-Alternatywną komendą jest 'less', która działa podobnie jak 'cat', ale umożliwia przewijanie w górę i w dół tekstu przy użyciu strzałek na klawiaturze. Możemy użyć jej w następujący sposób:
+``` 
+Imię: Michał
+Nazwisko: Nowak
+Wiek: 28
+Zawód: programista
+```
 
 ```Bash
-less moj_plik.txt
+# Polecenie "grep" przefiltrowuje wyniki:
+cat dane.txt | grep "Nazwisko"
+```
+Wynik:
+```
+Nazwisko: Nowak
 ```
 
-Aby przewijać w dół, należy nacisnąć strzałkę w dół, a aby wyjść z trybu przewijania należy wpisać 'q' na klawiaturze. Proste, prawda?
+```Bash
+# Polecenie "wc -l" zlicza ilość linii w pliku:
+wc -l dane.txt
+```
+Wynik:
+```
+4 dane.txt
+```
 
-## Deep Dive
+## Deep Dive:
+Czytanie plików tekstowych jest jedną z podstawowych funkcji w systemie operacyjnym Unix, którą można wykorzystać do wielu celów, takich jak przetwarzanie danych, analiza logów czy przeszukiwanie danych w plikach. Alternatywnymi sposobami odczytu pliku tekstowego są m.in. wykorzystanie narzędzi jak ```head```, ```tail``` lub ```sed```. Proces czytania pliku odbywa się w dwóch etapach: najpierw system operacyjny odczytuje zawartość pliku do pamięci, a następnie program odczytuje dane z pamięci.
 
-Aby lepiej zrozumieć jak działają te komendy, musimy cofnąć się do podstaw działania systemów operacyjnych. Linux i MacOS (oraz inne podobne systemy UNIX) traktują wszystko jako pliki. Oznacza to, że zarówno pliki tekstowe, jak i foldery są po prostu plikami. W przypadku plików tekstowych, komenda 'cat' odczytuje je w całości i wyświetla ich zawartość, a 'less' umożliwia nam przewijanie, ponieważ jest to bardziej zaawansowana komenda.
-
-## Zobacz też
-
-- Dokumentacja systemu Linux: [www.linux.die.net/man/1/cat](www.linux.die.net/man/1/cat)
-- Dokumentacja systemu MacOS: [developer.apple.com/library/archive/documentation/](developer.apple.com/library/archive/documentation/)/OpenSource/Reference/ManPages/man1/cat.1.html
-- Strona domowa języka Bash: [www.gnu.org/software/bash/](www.gnu.org/software/bash/)
+## Zobacz także:
+- [Dokumentacja polecenia "cat"](https://www.gnu.org/software/coreutils/manual/html_node/cat-invocation.html)
+- [Porównanie polecenia "cat" z innymi narzędziami do odczytywania plików tekstowych](https://www.geeksforgeeks.org/cat-command-in-linux-with-examples/)
+- [Inne sposoby odczytu pliku tekstowego w systemie Unix](https://www.lifewire.com/how-to-read-a-text-file-line-by-line-2623446)

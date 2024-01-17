@@ -1,7 +1,7 @@
 ---
-title:                "ניתוח דפי HTML"
-html_title:           "Elm: ניתוח דפי HTML"
-simple_title:         "ניתוח דפי HTML"
+title:                "פיענוח html"
+html_title:           "Elm: פיענוח html"
+simple_title:         "פיענוח html"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "HTML and the Web"
@@ -10,33 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## למה
+## מה ולמה?
 
-כשמחפשים ליצור אתר אינטרנט או אפליקציה בעזרת קוד, כדאי להשתמש בקוד חדשני ויצירתי שיכול להקל על התכנות ולקצר את תהליך הפיתוח. אחד הכלים המצוינים לכך הוא אפליקציית Elm, שמציעה כמה תכונות מצוינות כגון פיתוח דינמי, סימנטי ומעודכן. אחת מהתכונות המנצחות של Elm היא את יכולתה לפענח ולהתמודד עם קוד HTML, וכך לאפשר יצירת חווית משתמש מושלמת.
+פרסום HTML הינו תהליך שבו מתבצע קריאת קוד ה-HTML והמרה שלו למבנה נתונים שניתן לעבוד איתו בקלות וביעילות. תהליך זה חיוני לפיתוח אתרים ואפליקציות ווב, והוא מאפשר ללקוחות להציג מידע מתועלת מהמקור המקורי של האתר.
 
-## איך לפענח HTML באמצעות Elm
+## איך לעשות?
 
-הנה כמה דוגמאות קוד פשוטות לדוגמאות לכיצד לפענח HTML באמצעות קוד Elm. ניתן לשלב את הקוד שלהלן עם קוד אחר כדי ליצור אתרים ואפליקציות מתקדמים בעזרת Elm.
+לפניכם תוכלו למצוא דוגמאות לקוד והפלט המתקבל באמצעות שיטת פרסום HTML בשפת Elm.
 
-```elm
-import Html exposing (..) 
-import Html.Parser exposing (..)
+\```Elm
+-- פרסום אלמנט מסוים
+import Html exposing (div)
 
-main : Html msg
 main =
     let
-        htmlString = "<h1>Hello World</h1>"
-        parsedHtml = parse htmlString
+        element =
+            div [ class "container", id "element" ] [ text "Hello, World!" ]
     in
-        div []
-            [ h1 [] [ text "Header" ]
-            , p [] [ text "Paragraph" ]
-            , parsedHtml
-            ]
-```
+    Html.node "div" [] [ element ]
+-- פלט המקבל: 
+-- <div><div class="container" id="element">Hello, World!</div></div>
+\```
 
-בקוד המופיע לעיל, אנו מייבאים את המודולים Html ו- Html.Parser באמצעות ההצהרות המאפשרות לנו לגשת לתכונות ולפונקציות שלהם. באמצעות התכונה parse, אנו מעבירים את הטקסט של HTML בתבנית מחרוזת ומקבלים חזרה מבנה נתונים של Elm המתאים לכתיבה בקוד.
+\```Elm
+-- פרסום רשימת פריטים
+import Html exposing (ul, li)
 
-## מעמקים נמוכים
+main =
+    let
+        items =
+            [ "Apple", "Banana", "Orange" ]
+        list =
+            ul [] (List.map (\item -> li [] [ text item ]) items)
+    in
+    Html.node "div" [] [ list ]
+-- פלט המקבל: 
+-- <div><ul><li>Apple</li><li>Banana</li><li>Orange</li></ul></div>
+\```
 
-השתמשנו כאן בפונקציית parse לייצר עץ נתונים המספק מבנה מובן יותר מהטקסט המקורי. את העץ ניתן לעבוד עליו מעמקים נמוכים באמצעות פונקציות כמו nodeType, attributes וכו'. ניתן להשתמש בפונקציות אלו כדי למצוא אלמנטים ספציפי
+## כניסה מעמיקה
+
+פרסום HTML נחשב לאחד התהליכים הבולטים במגוון המרת נתונים במבנה נתונים, ותהליך זה קיים כבר מזמן רב. פרסום HTML בשפת Elm מאפשר למתכנתים לפרסם מבני HTML תוך שימוש בחזון קוד נקי ומאורגן.
+
+אחת האלטרנטיבות לפרסום HTML בשפת Elm היא שימוש בספריית jQuery, אך זאת דורשת ידע נוסף ועלות נוספת. בנוסף, ספריית jQuery מאפשרת רק תפעול בטיחותי של אלמנטים במסמך HTML, אבל לא פרסום אלמנטים חדשים לעץ האלמנטים.
+
+פרסום HTML מתבצע בשלב הגרפי של שפת Elm ולכן אינו חלק מלוגיקה העסקתית של האפליקציה. חיבור מבני HTML בכך אינו מורכב כמו בשפות אחרות שמאפשרות תפעולים כגון רגעים או כפתורים. זה הופך את פרסום HTML נקי ויעיל כשהוא מהווה מחלקה נפרדת באינטרפייס.
+
+## ראה גם
+
+למידע נוסף על פרסום HTML בשפת Elm, ניתן לבדוק מקורות נוספים מתאימים, כגון:
+
+* תיעוד רשמי: https://package.elm-lang.org/packages/lucamug/elm-html-parser/latest/
+* מדריכים וטקסטים: http://elm-radio.com/episode/beginners-parser
+* סרטוני הדרכה: https://www.youtube.com/watch?v=P3pL85n9_5s&ab_channel=ElmCast

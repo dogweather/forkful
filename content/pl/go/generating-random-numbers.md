@@ -10,48 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Dlaczego?
+## Co i dlaczego?
 
-Generowanie liczb losowych jest często wykorzystywane w programowaniu w celu symulacji różnych scenariuszy lub do tworzenia unikatowych identyfikatorów. Jest to również ważny element wielu gier komputerowych czy aplikacji mobilnych. W języku Go istnieje dedykowany pakiet "math/rand", który umożliwia generowanie liczb losowych.
+Generowanie losowych liczb to ważna część programowania, gdyż pozwala na losowe działanie programów oraz na wprowadzenie elementu losowości do aplikacji. Programiści korzystają z generatorów losowych w celu testowania kodu, symulowania wyników i wiele innych.
 
-# Jak to zrobić?
+## Jak to zrobić:
 
-Wygenerowanie losowej liczby w języku Go jest bardzo proste i sprowadza się do kilku kroków. Pierwszym krokiem jest importowanie pakietu "math/rand". Następnie należy użyć funkcji "Seed" w celu ustawienia ziarna dla generatora liczb pseudolosowych. W końcu, używając funkcji "Intn", możemy wygenerować liczbę losową w określonej przez nas przedziale. Oto przykładowy kod:
+Wygenerowanie losowej liczby w języku Go jest bardzo proste - po prostu użyj polecenia "rand.Intn(n)", gdzie "n" to maksymalna wartość, jaką chcesz wygenerować. Przykładowy kod wyglądałby następująco:
 
-```Go
-import "math/rand"
+```
+Go package main
+
+import (
+	"fmt"
+	"math/rand"
+)
 
 func main() {
-	rand.Seed(time.Now().UnixNano())
-	randomNumber := rand.Intn(100)
-	fmt.Println(randomNumber)
+	fmt.Println("Wylosowana liczba to:", rand.Intn(100))
 }
 ```
+W powyższym przykładzie, liczba losowa będzie z zakresu od 0 do 100.
 
-W powyższym przykładzie, korzystając z funkcji "Intn(100)", wygenerujemy liczbę losową w zakresie od 0 do 99. Możemy także wykorzystać funkcję "Intn(100) + 1", aby wygenerować liczbę losową z zakresu od 1 do 100.
+## Głębsze zagadnienia:
 
-# Deep Dive
+Generowanie losowych liczb jest częścią programowania już od dawna, jednak istnieje wiele różnych sposobów ich generowania. W języku Go, używany jest algorytm "MT19937" do generowania liczb losowych. Alternatywą dla tego algorytmu jest na przykład "Xorshift" lub "Mersenne Twister".
 
-Generator liczb pseudolosowych w pakiecie "math/rand" opiera się na algorytmie "linear congruential generator" (LCG). Polega on na generowaniu kolejnych liczb pseudolosowych na podstawie poprzedniej liczby według wzoru:
+## Zobacz również:
 
-```Go
-Xn+1 = (a * Xn + c) mod m
-```
-
-gdzie:
-- Xn - kolejna liczba pseudolosowa
-- a, c, m - stałe określające zachowanie generatora liczb pseudolosowych
-
-Znak "mod" oznacza resztę z dzielenia. W przypadku pakietu "math/rand" stałe są ustalone na:
-- a = 6364136223846793005
-- c = 1442695040888963407
-- m = 1 << 63
-
-Ponadto, w celu uzyskania większej różnorodności liczb losowych, generator ten używa zmiennej "src" przechowującej informacje o aktualnym stanie. Każde wywołanie funkcji "Intn" powoduje modyfikację tej zmiennej i generację nowej liczby pseudolosowej.
-
-# Zobacz także
-
-Jeśli chcesz dowiedzieć się więcej o pakiecie "math/rand" i sposobie generowania liczb pseudolosowych w języku Go, polecamy zapoznać się z dokumentacją oficjalną: 
-- https://golang.org/pkg/math/rand/
-- https://blog.golang.org/go-ranges
-- https://gobyexample.com/random-numbers
+Aby dowiedzieć się więcej na temat generowania liczb losowych w języku Go, polecamy następujące źródła:
+- Dokumentacja Go: https://golang.org/pkg/math/rand/
+- Przewodnik po języku Go: https://tour.golang.org/basics/23
+- Blog "The Go Programming Language": https://blog.golang.org/strings

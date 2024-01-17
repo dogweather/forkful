@@ -10,43 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
+Reading command line arguments is the process of taking input from the user through the command line interface. It allows programmers to make their PHP scripts more versatile and interactive, as they can specify different inputs when running the script each time.
 
-Have you ever run into a situation where you needed to pass arguments to your PHP script from the command line? Maybe you want to run a script with different options depending on the arguments given. Whatever the case may be, understanding how to read command line arguments in PHP can be a handy tool in your programming arsenal.
-
-## How To
-
-Reading command line arguments in PHP is a simple process. First, we need to access the arguments passed to the script by using the predefined variable `$argv`. This variable is an array that contains all the command line arguments, with the first argument being the name of the script itself.
-
-Let's say we have a script called `greeting.php` and we want to pass in a name and a greeting as arguments. We can do so by running the following command in our terminal:
+## How to:
+To read command line arguments in PHP, we use the ```$argv``` array, which stores all the arguments passed in through the command line. The first argument, ```$argv[0]```, always contains the name of the PHP script being executed. Let's look at an example:
 
 ```
-php greeting.php John "Hello, nice to meet you!"
+<?php 
+// script.php
+var_dump($argv);
+?>
 ```
 
-Next, we can access these arguments in our script by simply using `$argv[1]` and `$argv[2]` respectively. Let's see an example of how we can use these arguments to output a personalized greeting:
+Running this script in the command line with the arguments "arg1 arg2" will output the following:
+```
+$ php script.php arg1 arg2
 
-```PHP
-// greeting.php
-
-$name = $argv[1]; // "John"
-$greeting = $argv[2]; // "Hello, nice to meet you!"
-
-echo "$greeting, $name!"; // "Hello, John!"
+array(3) {
+  [0]=>
+  string(10) "script.php"
+  [1]=>
+  string(4) "arg1"
+  [2]=>
+  string(4) "arg2"
+}
 ```
 
-Running our script with these arguments will output "Hello, John!" on our terminal. We can also add more complex logic to our script to handle different combinations of arguments.
+We can also use the special variable ```$argc``` to get the number of arguments passed in. This can be useful when we want to perform different actions based on the number of arguments given.
 
-## Deep Dive
+## Deep Dive:
+Command line arguments have been used by programmers for a long time to provide more flexibility to their scripts. In PHP, the ```$argv``` array was introduced in PHP 4 to allow easy access to command line arguments. Before this, developers had to use the special function ```getopt()``` or parse the ```$argc``` and ```$argv``` variables manually.
 
-In addition to using `$argv`, PHP also provides us with the `argc` variable, which holds the number of arguments passed to the script. This can be useful if we need to perform different actions based on the number of arguments given.
+An alternative to using command line arguments in PHP is using environment variables, which can be accessed through the ```$_ENV``` superglobal array. However, using command line arguments is generally preferred as it allows specific and dynamic inputs for each script execution.
 
-We can also use the `getopt()` function to parse command line options and flags. This is particularly useful when our script needs to handle different options, like `-h` for displaying a help message or `-f` for specifying a file to read from.
-
-There are also third-party libraries, like Symfony's Console component, that can help with more complex command line argument handling. These libraries offer features such as automatic validation and error handling.
-
-## See Also
-
-- [PHP Manual: Handling Command Line Arguments](https://www.php.net/manual/en/features.commandline.arguments.php)
-- [Symfony Console component](https://symfony.com/doc/current/components/console.html)
-- [Getting Started with getopt() in PHP](https://www.php.net/manual/en/function.getopt.php)
+## See Also:
+- [PHP Documentation on Command Line Interface](https://www.php.net/manual/en/features.commandline.php)
+- [PHP Manual on Variable Scope](https://www.php.net/manual/en/language.variables.scope.php)
+- [PHP Manual on Superglobals](https://www.php.net/manual/en/language.variables.superglobals.php)

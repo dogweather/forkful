@@ -1,7 +1,7 @@
 ---
-title:                "Capitalizzare una stringa"
-html_title:           "Fish Shell: Capitalizzare una stringa"
-simple_title:         "Capitalizzare una stringa"
+title:                "Maiuscolizzare una stringa"
+html_title:           "Fish Shell: Maiuscolizzare una stringa"
+simple_title:         "Maiuscolizzare una stringa"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -10,55 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
-Capitalize è una funzione utile per ottenere la versione maiuscola di una stringa, che può essere utile in diversi casi, come l'ordinamento di elenchi o la formattazione di testi.
+## Cosa & Perché?
 
-## Come
-```Fish Shell
-set text "ciao mondo"
-echo (string capitalize $text)
-```
+Capitalize è la pratica di rendere maiuscola la prima lettera di ogni parola in una stringa di testo. I programmatori spesso lo fanno per migliorare la leggibilità e la formattazione del loro codice.
 
-Output: Ciao mondo
+## Come fare?
 
-Se si vuole capitalizzare solo la prima lettera di una stringa, si può utilizzare la funzione `string upper`:
+Utilizzare la funzione `capitalize` nel Fish Shell per capitalizzare una stringa. Ecco un esempio di codice e di output:
 
 ```Fish Shell
-set text "ciao mondo"
-echo (string upper --first $text)
+set my_string "ciao mondo"
+capitalize $my_string
 ```
 
-Output: Ciao mondo
-
-## Deep Dive
-La funzione `capitalize` è implementata nel modulo `string` di Fish Shell. Esaminiamo come funziona all'interno del codice sorgente:
-
-```C
-void string_capitalize(const wchar_t *text) {
-    while (*text) {
-        fwprintf(stderr, L"%lc", towupper(*text));
-        text++;
-    }
-}
-
-// Codice sorgente abbreviato
-
-function -d -t string capitalize --description "Capitalizza una stringa.<br />In caso contrario restituisce una stringa vuota." --argument summary --namespace string uppercase --no-scope --terse uppercase ->
-    if test (count $argv) -gt 0
-        for text in $argv
-            string capitalize $text
-        end
-    else
-        while read -l line
-            string capitalize $line
-        end
-    end
-end
+Output:
+```
+Ciao Mondo
 ```
 
-La funzione si basa su una semplice iterazione sulle lettere della stringa, utilizzando la funzione standard `towupper` per ottenere la versione maiuscola di ogni carattere. Invece, il codice della funzione `uppercase` sfrutta la funzione `capitalize` interna di Fish Shell per gestire tutti i casi possibili di input.
+## Approfondimento
+
+Capitalizing è stato originariamente introdotto come un modo per distinguere tra i titoli delle persone (es. Signor, Signora) e i titoli dei loro nomi (es. Smith, Johnson). Tuttavia, nel mondo della programmazione, la capitalizzazione è diventata una pratica comune per migliorare la leggibilità del codice e aiutare a identificare le variabili e i comandi.
+
+In alternativa alla funzione `capitalize`, è possibile utilizzare altri strumenti come `sed` o `awk` per ottenere lo stesso risultato. Inoltre, alcune lingue di programmazione hanno già incorporato funzioni per capitalizzare una stringa, quindi non è necessario farlo manualmente.
+
+Per quanto riguarda l'implementazione, Fish Shell utilizza un algoritmo di capitalizzazione che tiene conto delle regole grammaticali inglesi, come ad esempio la non capitalizzazione di preposizioni neutre o verbi ausiliari.
 
 ## Vedi anche
-- Documentazione ufficiale di Fish Shell: https://fishshell.com/docs/current/
-- Tutorial su Fish Shell: https://www.linux.it/~ott/al_colophon/tutorial/fish.html
-- Lista di funzioni di stringhe di Fish Shell: https://fishshell.com/docs/current/cmds/string.html
+
+- [Documentazione ufficiale di Fish Shell sulla funzione `capitalize`](https://fishshell.com/docs/current/cmds/capitalize.html)
+- [Come capitalize in altri linguaggi di programmazione](https://www.tutorialspoint.com/how-to-capitalize-the-first-letter-of-a-string-in-various-programming-languages)

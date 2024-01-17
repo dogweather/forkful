@@ -1,7 +1,7 @@
 ---
-title:                "Tworzenie pliku tekstowego"
-html_title:           "Haskell: Tworzenie pliku tekstowego"
-simple_title:         "Tworzenie pliku tekstowego"
+title:                "Pisanie pliku tekstowego"
+html_title:           "Haskell: Pisanie pliku tekstowego"
+simple_title:         "Pisanie pliku tekstowego"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Files and I/O"
@@ -10,36 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co & Dlaczego?
 
-### Dlaczego warto pisać pliki tekstowe w Haskellu?
+Pisanie pliku tekstowego to proces zapisywania danych na dysku twardym komputera w postaci tekstu. Programiści często wykorzystują to narzędzie, aby zapisywać wyniki działania swoich programów lub przechowywać ważne informacje.
 
-Pisanie plików tekstowych jest niezbędnym elementem programowania w języku Haskell dla wielu powodów. Jednym z głównych powodów jest to, że umożliwia on wygodne przechowywanie i przetwarzanie danych w sposób zrozumiały dla użytkownika. Dodatkowo, w Haskellu istnieje wiele funkcji i bibliotek do obsługi plików tekstowych, co ułatwia programowanie i zwiększa wydajność.
-
-## Jak to zrobić
-
-### Przykład kodu
-
-Aby zapisać tekst do pliku w Haskellu, możemy użyć funkcji `writeFile`. Przykładowy kod wygląda następująco:
+## Jak to zrobić:
 
 ```Haskell
-main = do
-    let text = "To jest przykładowy tekst, który zostanie zapisany do pliku."
-    writeFile "plik.txt" text
+import System.IO
+
+main = do 
+  writeFile "plik.txt" "To jest tekst, który zostanie zapisany do pliku."
 ```
 
-### Wyjście
+W powyższym przykładzie wykorzystaliśmy funkcję `writeFile` z modułu `System.IO`, aby zapisać tekst do pliku o nazwie "plik.txt". Możemy także wczytać już istniejący plik używając funkcji `readFile`.
 
-Po wykonaniu tego kodu, w katalogu powinien pojawić się plik o nazwie `plik.txt` z wprowadzonym tekstem.
+## Wgląd w temat:
 
-## Wszystko na temat
+Pisanie plików tekstowych jest jednym z podstawowych narzędzi, które programiści wykorzystują w swojej pracy. Od czasów mainstreamowego rozwoju informatyki, pisanie plików tekstowych było jedynym sposobem na zapisywanie danych na dysku. Obecnie istnieją również inne sposoby, takie jak bazy danych czy chmury, ale pisanie plików tekstowych nadal jest niezwykle ważnym elementem programowania.
 
-### Głębsze spojrzenie na pisanie plików tekstowych w Haskellu
+## Zobacz też:
 
-W Haskellu, do obsługi plików tekstowych możemy wykorzystać wiele funkcji i bibliotek. Jednym z najczęściej używanych modułów jest `System.IO`, który zawiera funkcje takie jak `writeFile`, `readFile` czy `appendFile`. Dodatkowo, istnieją również specjalne mechanizmy do obsługi plików binarnych oraz plików o dużych rozmiarach.
+Dokumentacja modułu [System.IO](https://hackage.haskell.org/package/base-4.14.0.0/docs/System-IO.html) z funkcjami do operacji na plikach.
 
-## Zobacz też
-
-- [Dokumentacja języka Haskell](https://www.haskell.org/documentation/)
-- [Kurs programowania w Haskellu](http://learnyouahaskell.com/)
-- [Repositorium z przykładowymi projektami w Haskellu](https://github.com/dagit/haskell-projects)
+Więcej o historii rozwoju programowania i wykorzystywaniu plików tekstowych można przeczytać w artykule na [Wikipedii](https://pl.wikipedia.org/wiki/Plik_tekstowy).

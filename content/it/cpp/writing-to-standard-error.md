@@ -10,35 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+Cosa e perché?
+Scrivere sulla standard error è un modo utile per i programmatori per comunicare con i loro utenti attraverso il terminale del sistema operativo. Questo è particolarmente utile quando si vogliono mostrare errori o messaggi informativi durante l'esecuzione del programma.
 
-Scrivere su standard error (stderr) è utile quando si vuole fornire informazioni di debug o errori durante l'esecuzione di un programma, senza influenzare l'output del programma stesso.
-
-## Come fare
-
-Per scrivere su stderr in C++, è necessario includere la libreria ```<iostream>``` e utilizzare l'operatore ```<<``` per inserire il messaggio desiderato seguito da ```std::cerr```. Di seguito un esempio di codice:
+Come fare:
+Nella programmazione in C++, è possibile scrivere sulla standard error utilizzando la funzione "cerr" o "std::cerr". Ciò consente di stampare messaggi sulla finestra del terminale, invece che sulla standard output. Ecco un esempio di come fare:
 
 ```C++
 #include <iostream>
 
 int main() {
-  int numero = 0;
-  if (numero == 0) {
-    std::cerr << "Errore: il numero deve essere diverso da zero!\n";
-    return 1;
-  }
+  std::cerr << "Questo è un messaggio di errore!" << std::endl;
   return 0;
 }
 ```
 
-L'output di questo programma sarà "Errore: il numero deve essere diverso da zero!", stampato su stderr.
+Output:
+```
+Questo è un messaggio di errore!
+```
 
-## Approfondimento
+Deep Dive:
+Scrive sulla standard error ha una lunga storia nella programmazione. Prima dell'avvento dei sistemi operativi moderni, i programmatori spesso utilizzavano la standard error per comunicare con gli utenti e avvisarli di eventuali errori durante l'esecuzione dei loro programmi.
 
-Standard error è uno dei tre canali di output disponibili in C++. Gli altri due sono standard output (stdout) e standard log (stdlog). A differenza di stdout, il contenuto di stderr viene stampato sullo schermo anche se il programma è in fase di redirect, a meno che non si specifichi diversamente.
+Una delle alternative più comuni per scrivere sulla standard error è utilizzare la funzione "fprintf" della libreria standard di C. Questo consente di scrivere su qualsiasi file aperto, compresa sia la standard output che la standard error.
 
-## Vedi anche
+Per quanto riguarda l'implementazione, scrivere sulla standard error funziona allo stesso modo della standard output, ma richiede l'utilizzo della funzione "cerr" o "std::cerr".
 
-- Guida completa a standard output e input in C++: [link al tutorial](https://www.learncpp.com/cpp-tutorial/186-basic-standard-output-and-input-cout-cin/)
-- Come gestire gli errori in C++: [link all'articolo](https://www.geeksforgeeks.org/error-handling-c/)
-- Documentazione ufficiale di C++: [link al sito](https://en.cppreference.com/w/)
+Vedi anche:
+- [La funzione "fprintf" di C](https://www.cplusplus.com/reference/cstdio/fprintf/)
+- [Informazioni sulle standard streams in C++](https://www.learncpp.com/cpp-tutorial/standard-input-output-cout-cin-and-cerr/)
+- [Istruzioni di Microsoft su "printf" e "fprintf"](https://docs.microsoft.com/en-us/cpp/c-runtime-library/crt-functions/fprintf-fprintf-l-printw-printw-l?view=msvc-160)

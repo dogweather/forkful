@@ -1,7 +1,7 @@
 ---
-title:                "Arbeiten mit JSON"
-html_title:           "Go: Arbeiten mit JSON"
-simple_title:         "Arbeiten mit JSON"
+title:                "Arbeiten mit json"
+html_title:           "Go: Arbeiten mit json"
+simple_title:         "Arbeiten mit json"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Data Formats and Serialization"
@@ -10,72 +10,78 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was & Warum?
+JSON steht für "JavaScript Object Notation" und ist ein einfaches Datenformat, das verwendet wird, um Daten zwischen Anwendungen auszutauschen. Programmierer verwenden JSON, um strukturierte Daten zu speichern und zu übertragen, da es einfach zu lesen und zu schreiben ist.
 
-Warum sollte man mit JSON arbeiten? Ganz einfach: JSON ist ein einfaches und effizientes Datenformat, das in der heutigen webbasierten Entwicklung weit verbreitet ist. Es ermöglicht die Übertragung und Speicherung von strukturierten Daten auf einfache und menschenlesbare Weise.
+## Wie geht's:
+Um mit JSON in Go zu arbeiten, musst du zunächst das Paket "encoding/json" importieren. Dann kannst du die Funktionen "Marshal" und "Unmarshal" nutzen, um Daten in JSON zu konvertieren oder umgekehrt.
 
-## Wie geht es?
-
-Um mit JSON in Go zu arbeiten, müssen Sie zuerst das `encoding/json` Paket importieren. Dann können Sie Ihre Datenstrukturen wie folgt definieren:
-
+Ein Beispiel für das Konvertieren von Daten in JSON:
 ```Go
 type Person struct {
-    Name string `json:"name"`
-    Age int `json:"age"`
+    Name     string `json:"name"`
+    Age      int    `json:"age"`
+    Location string `json:"location"`
 }
+
+person := Person{
+    Name:     "Max Mustermann",
+    Age:      25,
+    Location: "Berlin",
+}
+
+jsonData, err := json.Marshal(person)
+if err != nil {
+    fmt.Println(err)
+}
+
+fmt.Println(string(jsonData))
+```
+Ergebnis:
+```bash
+{"name":"Max Mustermann","age":25,"location":"Berlin"}
 ```
 
-Der Schlüssel `json` in den Feldern legt fest, wie das JSON Objekt benannt werden soll. Jetzt können Sie ein JSON Objekt aus einer Person-Instanz erstellen und es codieren:
-
+Ein Beispiel für das Lesen von Daten aus einer JSON-Datei:
 ```Go
-func main() {
-    p := Person{Name: "Max", Age: 25}
-    b, err := json.Marshal(p)
-
-    if err != nil {
-        fmt.Println("Fehler beim Codieren: ", err)
-    }
-
-    // b ist ein []byte Objekt mit den JSON Daten
-    fmt.Println(string(b))
+type Fruit struct {
+    Name  string `json:"name"`
+    Color string `json:"color"`
 }
-```
 
-Die Ausgabe dieses Beispiels wäre:
+var fruits []Fruit
 
-```JSON
-{"name": "Max", "age": 25}
-```
-
-Um ein JSON Objekt zu dekodieren und in eine Go Struktur zu bringen, verwenden Sie `json.Unmarshal()`:
-
-```Go
-func main() {
-    b := []byte(`{"name": "Max", "age": 25}`)
-    var p Person
-    err := json.Unmarshal(b, &p)
-
-    if err != nil {
-        fmt.Println("Fehler beim Dekodieren: ", err)
-    }
-
-    fmt.Println("Name:", p.Name, "Alter:", p.Age)
+jsonFile, err := os.Open("fruits.json")
+if err != nil {
+    fmt.Println(err)
 }
+
+defer jsonFile.Close()
+
+byteData, _ := ioutil.ReadAll(jsonFile)
+json.Unmarshal(byteData, &fruits)
+
+fmt.Println(fruits)
+```
+JSON-Datei "fruits.json":
+```bash
+[
+    {"name": "Apple", "color": "Red"},
+    {"name": "Banana", "color": "Yellow"},
+    {"name": "Strawberry", "color": "Red"}
+]
+```
+Ergebnis:
+```bash
+[{Apple Red} {Banana Yellow} {Strawberry Red}]
 ```
 
-Die Ausgabe dieser Codezeilen wäre:
+## Tiefentauchen:
+JSON wurde ursprünglich von Douglas Crockford in den 1990er Jahren entwickelt und ist seitdem zu einem beliebten Format für den Austausch von Daten geworden. Es gibt auch alternative Datenformate wie XML oder YAML, aber JSON ist aufgrund seiner Einfachheit und Lesbarkeit ein häufig gewähltes Format.
 
-``` 
-Name: Max Alter: 25
-```
+Der "encoding/json" Stdlib in Go bietet auch die Möglichkeit, benutzerdefinierte Marshaler und Unmarshaler zu erstellen, um spezifische Felder zu ignorieren oder zu verarbeiten.
 
-## Deep Dive
-
-Manchmal kann es vorkommen, dass Sie mit komplexen JSON Strukturen arbeiten müssen, die aus mehreren verschachtelten Objekten bestehen. In solchen Fällen kann es hilfreich sein, die Funktion `json.RawMessage` zu verwenden, um das decodierte JSON in ein Byte-Array zu speichern. Dies ermöglicht es Ihnen, das JSON später zu analysieren und die benötigten Daten auszuwählen.
-
-Eine weitere nützliche Funktion ist `json.Decoder`, mit der Sie ein JSON Objekt schrittweise lesen und dekodieren können, anstatt es auf einmal zu laden.
-
-## Siehe auch
-
-- Offizielle Dokumentation des `encoding/json` Pakets: https://golang.org/pkg/encoding/json/
-- Eine Einführung in JSON mit Go: https://blog.golang.org/json-and-go
+## Siehe auch:
+- [Offizielle Dokumentation von "encoding/json" in Go](https://golang.org/pkg/encoding/json/)
+- [Einführung in JSON von Mozilla](https://developer.mozilla.org/de/docs/Learn/JavaScript/Objects/JSON)
+- [Vergleich von JSON mit anderen Datenformaten](https://www.json.org/xml.html)

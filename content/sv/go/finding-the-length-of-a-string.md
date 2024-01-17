@@ -1,7 +1,7 @@
 ---
-title:                "För att hitta längden på en sträng"
-html_title:           "Go: För att hitta längden på en sträng"
-simple_title:         "För att hitta längden på en sträng"
+title:                "Att hitta längden på en sträng"
+html_title:           "Go: Att hitta längden på en sträng"
+simple_title:         "Att hitta längden på en sträng"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Strings"
@@ -10,29 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
+Att hitta längden på en sträng är ett vanligt problem som programmerare stöter på i sitt arbete. Det handlar helt enkelt om att räkna antalet tecken i en sträng, vilket kan vara användbart för att till exempel validera användarinput eller manipulera data i en applikation.
 
-Det är ofta användbart att kunna hitta längden på en sträng i sitt kodprojekt för att kunna hantera data på ett effektivt sätt.
-
-## Hur man gör
-
-För att hitta längden på en sträng i Go, kan du använda funktionen `len()` tillsammans med variabeln som innehåller strängen. Här är ett exempel på hur du kan göra det:
+## Hur gör man:
+Go-språket har inbyggda funktioner för att hitta längden på en sträng, som kan användas på enklast möjliga sätt:
 
 ```Go
-text := "Hej på dig!"
-length := len(text)
-fmt.Println(length) // Output: 11
+str := "Hej, världen!"
+strLen := len(str)
+fmt.Println(strLen)
 ```
 
-Funktionen `len()` returnerar antalet tecken i strängen, i detta fall 11. Det är viktigt att notera att funktionen hanterar även specialtecken och diakritiska tecken korrekt.
+Detta kommer att skriva ut 13, eftersom strängen "Hej, världen!" består av 13 tecken. Det är viktigt att komma ihåg att den här funktionen räknar antalet bytes och inte antalet tecken, så om strängen innehåller specialtecken som t.ex. åäö kan längden vara annorlunda än förväntat.
 
-## Deep Dive
+För att fixa detta kan man använda paketet "unicode/utf8" och dess funktion "RuneCountInString" som returnerar antalet tecken i en sträng:
 
-För att förstå hur funktionen `len()` fungerar bakom kulisserna, kan vi titta på kodens interna struktur. I Go är en sträng egentligen en sekvens av tecken som lagras i en byte-array. När du använder `len()` på en sträng, räknar funktionen helt enkelt antalet bytes i den arrayen. Detta förklarar också varför funktionen hanterar specialtecken korrekt, eftersom varje tecken är lagrat som en eller flera bytes.
+```Go
+import "unicode/utf8"
 
-Det finns också en annan metod för att hitta längden på en sträng i Go, nämligen `unicode/utf8` paketet. Detta paket innehåller funktionen `utf8.RuneCountInString()` som räknar antalet tecken i en sträng. Detta är användbart om du vill hantera flerspråkiga strängar som innehåller tecken från olika alfabet.
+str := "Hej, världen!"
+strLen := utf8.RuneCountInString(str)
+fmt.Println(strLen)
+```
 
-## Se även
+Detta kommer nu att skriva ut 12, vilket är det korrekta antalet tecken i strängen.
 
-- [Go Språkspecifikation](https://golang.org/ref/spec)
-- [Go Dokumentation](https://golang.org/doc/)
+## Djupdykning:
+Att hitta längden på en sträng är ett grundläggande problem som har funnits länge i programmeringsvärlden. I äldre språk som till exempel C var det inte lika enkelt att hitta längden på en sträng, och det krävde oftast en egen implementering av en funktion för detta ändamål.
+
+Det finns också alternativ till Go-språkets inbyggda funktioner för att hitta längden på en sträng. Ett exempel är funktionen "Count" från paketet "strings", som låter dig räkna antalet gånger en viss del av en sträng förekommer:
+
+```Go
+import "strings"
+
+str := "Hej, världen!"
+subStr := "l"
+count := strings.Count(str, subStr)
+fmt.Println(count)
+```
+
+Detta kommer att skriva ut 2, eftersom tecknet "l" förekommer två gånger i strängen.
+
+## Se även:
+För mer information och användbara funktioner för hantering av strängar i Go-språket, se dokumentationen för paketet "strings": https://golang.org/pkg/strings/

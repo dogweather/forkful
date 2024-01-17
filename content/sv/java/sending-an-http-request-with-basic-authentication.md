@@ -1,7 +1,7 @@
 ---
-title:                "Sända en http-förfrågan med grundläggande autentisering"
-html_title:           "Java: Sända en http-förfrågan med grundläggande autentisering"
-simple_title:         "Sända en http-förfrågan med grundläggande autentisering"
+title:                "Sända en HTTP-begäran med grundläggande autentisering"
+html_title:           "Java: Sända en HTTP-begäran med grundläggande autentisering"
+simple_title:         "Sända en HTTP-begäran med grundläggande autentisering"
 programming_language: "Java"
 category:             "Java"
 tag:                  "HTML and the Web"
@@ -10,81 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
+När en programmerare skickar en HTTP-förfrågan med grundläggande autentisering, betyder det att de inkluderar ett inloggningsnamn och lösenord i förfrågningshuvudet. Detta används för att säkert identifiera användaren som gör förfrågan och åtkomst till skyddad data. Det är viktigt att använda grundläggande autentisering för att skydda känslig information och säkerställa att endast auktoriserade användare har tillgång till den.
 
-Att skicka HTTP-förfrågan med grundläggande autentisering är ett användbart verktyg för att säkert kommunicera med en server. Det möjliggör också för användare att få åtkomst till skyddade resurser som kräver autentisering.
+## Så här gör du:
+Här är ett enkelt kodexempel som visar hur du skickar en HTTP-förfrågan med grundläggande autentisering i Java:
 
-## Hur man gör
+```
+URL url = new URL("http://www.example.com/api/endpoint");
+HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 
-För att skicka en HTTP-förfrågan med grundläggande autentisering i Java, följ dessa steg:
+// Lägg till inloggningsuppgifter i förfrågningshuvudet
+String login = "användarnamn";
+String password = "lösenord";
+String auth = login + ":" + password;
+byte[] encodedAuth = Base64.getEncoder().encode(auth.getBytes());
+String authHeaderValue = "Basic " + new String(encodedAuth);
+connection.setRequestProperty("Authorization", authHeaderValue);
 
-1. Importera nödvändiga paket:
-```:Java
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.nio.charset.StandardCharsets;
-import java.util.Base64;
+// Skicka förfrågan och läs svarskoden
+int responseCode = connection.getResponseCode();
+System.out.println("Svarskod: " + responseCode);
 ```
 
-2. Skapa en URL-objekt för den server som du vill kommunicera med:
-```:Java
-URL url = new URL("https://www.example.com");
+Förväntad utmatning:
+
+```
+Svarskod: 200
 ```
 
-3. Öppna en anslutning med hjälp av `HttpURLConnection`-objektet:
-```:Java
-HttpURLConnection con = (HttpURLConnection) url.openConnection();
-```
+Detta exempel visar hur man skickar en GET-förfrågan med grundläggande autentisering. Det är också möjligt att använda det här tillvägagångssättet för att skicka andra typer av förfrågningar som POST, PUT, DELETE, etc.
 
-4. Ange önskad metod (ex. GET, POST, PUT) och egenskaper för anslutningen:
-```:Java
-con.setRequestMethod("GET"); // Byt ut GET mot önskad metod
-con.setRequestProperty("Authorization", "Basic " + getEncodedCredentials()); // Skicka med autentiseringsuppgifter
-```
+## Djupdykning:
+HTTP-grundläggande autentisering har funnits sedan det första HTTP-protokollets utveckling på 1990-talet. Det är den enklaste formen av autentisering och stöds av de flesta webbservrar och klienter. Det finns dock alternativ till grundläggande autentisering, såsom Digest Authentication och OAuth, som erbjuder bättre säkerhetsnivåer.
 
-5. Skicka förfrågan och hantera responsen:
-```:Java
-int response_code = con.getResponseCode();
+För att implementera grundläggande autentisering i Java, kan du använda klassen "HttpURLConnection" som visas i exemplet ovan eller använda ett HTTP-bibliotek som Apache HttpClient eller OkHttp.
 
-// Läs in svar från servern
-BufferedReader in = new BufferedReader(
-    new InputStreamReader(con.getInputStream()));
-
-String line;
-StringBuilder response = new StringBuilder();
-
-// Lägg samman alla rader från servern till en sträng
-while ((line = in.readLine()) != null) {
-    response.append(line);
-}
-in.close();
-
-// Skriv ut svaret från servern
-System.out.println(response.toString());
-```
-
-För att kryptera användarnas autentiseringsuppgifter innan de skickas med förfrågan kan du använda Base64-kodning. För att enkelt implementera detta kan du använda Java's `Base64`-klass:
-```:Java
-// Kodar användarnas autentiseringsuppgifter med Base64
-private String getEncodedCredentials() {
-    String username = "användarnamn";
-    String password = "lösenord";
-    String credentials = username + ":" + password;
-    byte[] encodedAuth = Base64.getEncoder().encode(credentials.getBytes(StandardCharsets.UTF_8));
-    return new String(encodedAuth);
-}
-```
-
-## Djupdykning
-
-En HTTP-förfrågan med grundläggande autentisering består av en rubrik som tillhandahåller autentiseringsuppgifter i form av användarnamn och lösenord. Denna rubrik är en del av HTTP-protokollet och finns tillgänglig för alla webbservrar som stöder grundläggande autentisering.
-
-När autentiseringsuppgifterna skickas med en förfrågan måste de först krypteras med Base64-kodning. Detta gör att uppgifterna inte är synliga för någon som övervakar nätverkstrafiken. Därför är det viktigt att använda en säker anslutning (HTTPS) när du skickar autentiseringsuppgifter.
-
-## Se även
-
-- [HTTP med Java](https://www.baeldung.com/java-http-request)
-- [Basic Authentication i Java](https://www.javatpoint.com/java-http-url-connection)
-- [Java's Base64-klass](https://docs.oracle.com/javase/8/docs/api/java/util/Base64.html)
+## Se även:
+- [HttpURLConnection Class](https://docs.oracle.com/javase/8/docs/api/java/net/HttpURLConnection.html)
+- [Basic Authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#Basic_authentication_scheme)

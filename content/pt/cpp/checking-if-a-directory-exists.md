@@ -10,82 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+## O que & Por quê?
 
-Você pode estar se perguntando por que é necessário verificar se um diretório existe em seu programa em C++. Existem várias razões pelas quais isso pode ser útil, como garantir que seu programa esteja lidando corretamente com arquivos e diretórios, ou permitindo que o usuário especifique seu próprio diretório de arquivos.
+Verificar se um diretório existe é uma tarefa comum para programadores de C++. Isso permite que o programa execute ações específicas dependendo da existência ou não de um diretório específico. É uma maneira de garantir que o programa funcione corretamente e lide com situações inesperadas.
 
-## Como Fazer
+## Como fazer:
 
-Existem várias maneiras de verificar se um diretório existe em C++. Aqui estão duas abordagens possíveis, utilizando as funções `opendir()` e `filesystem::path::exists()`.
+Para verificar se um diretório existe em C++, podemos usar a função `std::filesystem::exists()`. Esta função retorna verdadeiro se o diretório especificado existe e falso caso contrário.
 
-Primeiro, vamos ver como fazer isso usando a função `opendir()`:
-
-```C++
-#include <iostream>
-#include <dirent.h>
-
-int main() {
-    // especificando o diretório a ser verificado
-    const char* directory = "./meu_diretorio";
-    
-    // abrindo o diretório
-    DIR* dir = opendir(directory);
-
-    // verificando se o diretório foi aberto com sucesso
-    if(dir) {
-        std::cout << "O diretório existe." << std::endl;
-        // faz algo se o diretório existe
-        // ...
-        
-        // fechando o diretório
-        closedir(dir);
-    } else {
-        std::cout << "O diretório não existe." << std::endl;
-    }
-   
-    return 0;
-}
 ```
-
-A saída deste código será "O diretório não existe.", pois não criamos o diretório "meu_diretorio" para fins de demonstração. Mas se você alterar o valor da variável `directory` para um diretório existente em seu sistema, como por exemplo "C:\Arquivos", a saída será "O diretório existe."
-
-Agora, vamos ver como fazer isso usando a função `filesystem::path::exists()`:
-
-```C++
 #include <iostream>
 #include <filesystem>
 
-namespace fs = std::filesystem;
+using namespace std;
 
 int main() {
-    // especificando o diretório a ser verificado
-    fs::path directory = "./meu_diretorio";
-    
-    // verificando se o diretório existe
-    if(fs::exists(directory)) {
-        std::cout << "O diretório existe." << std::endl;
-        // faz algo se o diretório existe
-        // ...
+    string diretorio = "/Users/usuario/pasta"; // Substitua pelo diretório desejado
+    if (filesystem::exists(diretorio)) {
+        cout << "O diretório existe!" << endl;
     } else {
-        std::cout << "O diretório não existe." << std::endl;
+        cout << "O diretório não existe!" << endl;
     }
-   
     return 0;
 }
 ```
 
-A lógica aqui é a mesma, mas agora estamos usando a biblioteca `filesystem` do C++17. Mais uma vez, a saída será "O diretório não existe." se o diretório especificado não existir, ou "O diretório existe." se o diretório existir.
+Saída:
+```
+O diretório existe!
+```
 
-## Detalhes Avançados
+## Mergulho profundo:
 
-Se você quiser entender mais sobre como essas funções funcionam, aqui estão algumas informações adicionais.
+### Contexto histórico:
+A verificação da existência de diretórios tem sido uma tarefa importante para a programação desde os primórdios do C++. Em versões anteriores da linguagem, os programadores precisavam usar funções personalizadas para realizar essa tarefa.
 
-A função `opendir()` é definida na biblioteca `<dirent.h>` e é usada para abrir um diretório e retornar um ponteiro para uma estrutura `DIR`. Se essa função falhar, ela retornará `NULL`.
+### Alternativas:
+Além da função `std::filesystem::exists()`, também é possível utilizar a função `std::experimental::filesystem::exists()` ou as funções personalizadas `opendir()` e `closedir()`.
 
-Já a função `filesystem::exists()` é definida na biblioteca `<filesystem>` e é usada para verificar se um caminho existente no sistema de arquivos existe. Ela retorna `true` se o caminho existir, `false` caso contrário.
+### Detalhes de implementação:
+A função `std::filesystem::exists()` faz parte da biblioteca `<filesystem>` introduzida no C++17. Para usá-la, é necessário adicionar a opção `-std=c++17` ao compilar o programa. Além disso, também é necessário incluir a diretiva `using namespace std::filesystem` antes do uso da função.
 
-## Veja Também
+## Veja também:
 
-- [Gerenciamento de Arquivos em C++](https://pt.wikipedia.org/wiki/Gerenciamento_de_arquivos_em_C%2B%2B)
-- [Documentação da Função `opendir()`](https://en.cppreference.com/w/cpp/io/c/opendir)
-- [Documentação da Função `filesystem::exists()`](https://en.cppreference.com/w/cpp/filesystem/exists)
+- [Documentação da função `std::filesystem::exists()`](https://en.cppreference.com/w/cpp/filesystem/exists)
+- [Exemplo completo de como verificar a existência de um diretório em C++](https://www.geeksforgeeks.org/how-to-check-if-directory-exists-in-c-language/)
+- [Outras funções úteis da biblioteca `<filesystem>`](https://www.techiedelight.com/filesystem-library-cpp17/)

@@ -1,7 +1,7 @@
 ---
-title:                "Perusautentikoinnin lähettäminen http-pyynnöllä"
-html_title:           "Bash: Perusautentikoinnin lähettäminen http-pyynnöllä"
-simple_title:         "Perusautentikoinnin lähettäminen http-pyynnöllä"
+title:                "HTTP-pyynnön lähettäminen perusautentikoinnilla"
+html_title:           "Bash: HTTP-pyynnön lähettäminen perusautentikoinnilla"
+simple_title:         "HTTP-pyynnön lähettäminen perusautentikoinnilla"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "HTML and the Web"
@@ -10,37 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+MITÄ & MIKSI?
 
-Ison luokan verkkosivustot käyttävät usein autentikaatiota varmistaakseen, että vain oikeilla käyttäjillä on pääsy tiettyihin osiin sivustosta. Tämä tarkoittaa, että sinun täytyy olla täysin tunnistetun käyttäjän lähettäessäsi HTTP-pyynnön tällaiseen sivustoon. Tämä artikkeli näyttää sinulle, miten voit tehdä sen Bashilla käyttäen perustason autentikaatiota.
+HTTP-pyynnöt ja perusautentikointi -varmenteen lähettäminen on yksinkertainen tapa lähettää salattua tietoa palvelimelle. Ohjelmoijat käyttävät tätä tekniikkaa esimerkiksi käyttäjätunnusten ja salasanojen lähettämiseen palvelimelle tai suojatun sivuston käyttämiseen.
 
-## Kuinka
+MITEN?
 
-Autentikointiprosessi sisältää yleensä käyttäjän tietojen lähettämisen salattuna sivuston palvelimelle. Tämä tapahtuu tavallisesti HTTP-pyynnön otsakkeessa lähetetyn "Authorization" -kentän kautta. Alla on esimerkkejä siitä, miten voit lähettää perustason autentikaatiopäällikön käyttäen "curl" -komennolla. Korvaa `-u` -parametrin arvot omilla käyttäjätiedoillasi.
-
-```Bash
-# Autentikointi käyttäen käyttäjänimeä ja salasanaa
-curl -u username:password URL
+Voit lähettää HTTP-pyynnön perusautentikoinnilla käyttämällä `curl` komentoa Bashissa. Seuraavassa esimerkissä lähetämme pyynnön GitHubin API:lle käyttäen käyttäjätunnusta ja salasanaa:
 ```
-
-```Bash
-# Autentikointi käyttäen käyttäjänimeä ja tyhjää salasanaa
-curl -u username: URL
+curl -u käyttäjätunnus:salasana https://api.github.com/user
 ```
+Tämän komennon pitäisi tulostaa käyttäjän tiedot, jos tunnistautuminen onnistui.
 
-Kun oikeat tiedot on lähetetty, saat vastauksena pyynnön onnistuneen lähetyksen ilmoituksen.
+SYVÄDYYKKAUS
 
-```
-Enter host password for user 'username':
-<html><body><h1>It works!</h1></body></html>
-```
+HTTP-pyynnöt ja perusautentikointi ovat olleet käytössä jo 90-luvulta lähtien. Basic-varmenteen lähettämisen sijaan voit käyttää myös Digest-varmennetta, joka tarjoaa paremman tietoturvan mutta on myös monimutkaisempi implementoida. Voit myös lähettää varmenteen käyttämällä Base64-koodausta, mutta tämä ei ole yhtä turvallinen kuin HTTPS-yhteys.
 
-## Syvällinen katsaus
+LISÄLUESTA
 
-Perustason autentikaatio perustuu HTTP-pyynnön otsakkeisiin, erityisesti "Authorization" -kenttään, joka sisältää käyttäjän tietojen salatun version. Autentikaatioprosessi voidaan myös toteuttaa käsin, lähettämällä "Authorization" -kenttä itse. Tämä vaatii tarkan koodin luomista ja ymmärrystä perustason autentikaation toiminnasta.
-
-## Katso myös
-
-- [curl manuaali](https://curl.se/docs/manpage.html)
-- [HTTP-perusautentikointi](https://developer.mozilla.org/fi/docs/Web/HTTP/Authentication)
-- [Linux Bashin perusteet](https://wiki.ubuntu-fi.org/Bashin_perusteet)
+Lisätietoja HTTP-pyynnöistä ja perusautentikoinnista löydät seuraavista lähteistä:
+- [HTTP-pyynnöt - W3Schools](https://www.w3schools.com/tags/ref_httpmethods.asp)
+- [Perusautentikointi - MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
+- [cURL Dokuwiki - Basic Authentication](https://curl.haxx.se/docs/httpscripting.html#BasicAuthentication)

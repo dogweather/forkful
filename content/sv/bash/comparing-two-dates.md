@@ -1,7 +1,7 @@
 ---
-title:                "Jämförande av två datum"
-html_title:           "Bash: Jämförande av två datum"
-simple_title:         "Jämförande av två datum"
+title:                "Jämföra två datum"
+html_title:           "Bash: Jämföra två datum"
+simple_title:         "Jämföra två datum"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Dates and Times"
@@ -10,32 +10,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
+Jämföra två datum är när man kontrollerar om ett datum är tidigare, senare eller lika med ett annat datum. Programmörtar gör detta för att automatisera uppgifter som är beroende av olika datum, t.ex. att skapa en kalender eller schemalägga uppgifter.
 
-Att jämföra två datum kan vara användbart för att se om ett datum har passerat, om två datum ligger nära varandra i tid eller för att sortera datum i en lista. Detta kan vara särskilt användbart i datumhanteringssystem eller för att utföra tidsberäkningar.
-
-## Hur man gör det
-
-För att jämföra två datum i Bash kan du använda "date" kommandot tillsammans med "-d" flaggan. Du kan skriva "date -d '2020-01-01'” för att visa datumet 1 januari 2020, eller “date -d 'tomorrow + 1 month'” för att få datumet en månad framåt från imorgon.
-
+## Så här gör du:
+Kolla om två datum är lika:
 ```Bash
-tag=`date +%d%m%Y`
-if [ $tag  -ge 01032019 ]; then
-echo "Datumet är efter 1 mars 2019"
-else
-echo "Datumet är före 1 mars 2019"
+date1="2020-08-10"
+date2="2020-08-10"
+if [ "$date1" == "$date2" ]; then
+  echo "Datumen är lika!"
 fi
 ```
+Output:
+```
+Datumen är lika!
+```
 
-I det här exemplet jämför vi ett datum skrivet i formatet "ddmmyyyy" med datumet 1 mars 2019 i samma format. Om datumet är efter 1 mars 2019 skrivs "Datumet är efter 1 mars 2019" ut, annars skrivs "Datumet är före 1 mars 2019" ut.
+Kolla om ett datum är tidigare än ett annat:
+```Bash
+date1="2020-08-10"
+date2="2020-08-11"
+if [[ "$date1" < "$date2" ]]; then
+  echo "Datumet $date1 är tidigare än $date2"
+fi
+```
+Output:
+```
+Datumet 2020-08-10 är tidigare än 2020-08-11
+```
 
-## Deep Dive
+Kolla om ett datum är senare än ett annat:
+```Bash
+date1="2020-08-10"
+date2="2020-08-11"
+if [[ "$date1" > "$date2" ]]; then
+  echo "Datumet $date1 är senare än $date2"
+fi
+```
+Output:
+```
+Ingen output eftersom villkoret inte är uppfyllt.
+```
 
-Vid jämförelse av datum är det viktigt att tänka på att datumet måste formateras på rätt sätt för att kunna jämföras korrekt. Om man till exempel jämför ett datum i formatet "yyyymmdd" med ett datum i formatet "ddmmyyyy" kommer jämförelsen inte att fungera som väntat. Det är också viktigt att ange tider vid jämförelser om man vill inkludera det i resultatet.
+## Djupdykning:
+Att jämföra datum kan vara viktigt inom programmering eftersom många uppgifter är beroende av datum, t.ex. för att säkerställa att en viss uppgift utförs på rätt dag eller för att beräkna ålder.
 
-För att jämföra två datum i ett skript, är det också viktigt att ta hänsyn till variabeltyper. Om både variabelna är i formatet "mmmddyyyy" kan jämförelsen se annorlunda ut än om ena variabeln är i formatet "yyyy-mm-dd". Att förstå variabeltyper kan hjälpa till att undvika felaktiga datumjämförelser.
+Det finns också andra sätt att jämföra datum inom Bash, t.ex. med kommandot "diff" som kan visa skillnaden mellan två datum. Det är också möjligt att konvertera datum till andra format för enklare jämförelse.
 
-## Se även
+Implementeringen av jämförelsen beror på vilket format som används för datum, t.ex. kan datum skrivas som "åååå-mm-dd" eller "dd/mm/åååå". Det är viktigt att använda samma format för att få korrekta resultat.
 
-- [Bash Guide - Date Commands](https://bash.cyberciti.biz/guide/Month,_weekday,_year_(_etc.)_in_simple_output_format)
-- [Bash Reference Manual - Shell Arithmetic](https://tiswww.case.edu/php/chet/bash/bashref.html#Shell-Arithmetic)
+## Se även:
+- Kommandot "diff" för att jämföra skillnaden mellan två filer eller kataloger: https://www.gnu.org/software/diffutils/
+- Konvertera datum till andra format med "date" kommandot: https://www.gnu.org/software/coreutils/date
+- Mer om datum i Bash: https://www.dostips.com/DtTipsDateTime.php

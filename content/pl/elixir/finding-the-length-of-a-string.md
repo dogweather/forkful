@@ -1,7 +1,7 @@
 ---
-title:                "Znajdowanie długości łańcucha znaków"
-html_title:           "Elixir: Znajdowanie długości łańcucha znaków"
-simple_title:         "Znajdowanie długości łańcucha znaków"
+title:                "Znalezienie długości ciągu znaków"
+html_title:           "Elixir: Znalezienie długości ciągu znaków"
+simple_title:         "Znalezienie długości ciągu znaków"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -10,56 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
-Na pierwszy rzut oka, znajdowanie długości ciągu znaków może wydawać się nieistotnym zadaniem. Jednak w rzeczywistości jest to często wykorzystywany aspekt programowania, szczególnie przy pracy z tekstem i manipulacji ciągami znaków. Pozwala nam to na dokładne przetwarzanie i analizę danych tekstowych.
+## Co i dlaczego?
+Znalezienie długości ciągu znaków jest kluczowym aspektem programowania. Pozwala nam to na mierzenie wielkości danych oraz wykonywanie różnych operacji, na przykład porównywanie lub wycinanie części tekstu. 
 
-## Jak to zrobić
-W języku Elixir, istnieje kilka sposobów na znalezienie długości ciągu znaków. Możemy wykorzystać funkcję `String.length/1`, która przyjmuje jeden argument – ciąg znaków – i zwraca jego długość. Przykładowy kod wyglądałby tak:
-
+## Jak to zrobić:
+W Elixirze, możemy użyć funkcji `String.length/1`, która przyjmuje jeden argument - ciąg znaków - i zwraca jego długość. Przykładowo, jeśli chcemy znaleźć długość słowa "Programowanie", wpisujemy:
 ```Elixir
-string = "Hello, world!"
-length = String.length(string)
-
-IO.puts "Długość ciągu znaków: #{length}"
+String.length("Programowanie")
 ```
+I otrzymujemy wynik: `13`. 
 
-W tym przypadku, rezultatem wywołania funkcji `String.length/1` jest liczba 13, ponieważ tyle znaków zawiera nasz ciąg. Istnieje również możliwość wykorzystania funkcji `length/1`, która działa na dowolnym typie sekwencyjnym, w tym również na ciągach znaków. Przykładowy kod wyglądałby tak:
-
+Możemy również wykorzystać funkcję `Enum.count/1`, która zlicza ilość elementów w danym ciągu znaków. W tym przypadku argument musi być listą, więc musimy sparsować nasz ciąg do listy, za pomocą funkcji `String.split/2`. Przykładowo:
 ```Elixir
-string = "Hello, world!"
-length = length(string)
-
-IO.puts "Długość ciągu znaków: #{length}"
+String.split("Lorem ipsum dolor sit amet", "") |> Enum.count()
 ```
+I otrzymujemy wynik: `26`.
 
-W tym przypadku, rezultatem wywołania funkcji `length/1` jest również liczba 13. Możemy również wykorzystać operator `<>` do konkatenacji kilku ciągów znaków i na końcu wywołać funkcję `length/1`. Przykładowy kod wyglądałby tak:
+## Głębszy wykład:
+Długość ciągu znaków jest integralną częścią wielu języków programowania, w tym Elixira. Wcześniejsze wersje języka wykorzystywały funkcję `length/1`, jednak w wersji 1.7 została ona zastąpiona przez `String.length/1`, aby podkreślić, że jest specyficzna dla ciągów znaków. Alternatywnym sposobem zliczania długości jest użycie funkcji `byte_size/1`, która zwraca ilość bajtów w danym ciągu. 
 
-```Elixir
-string1 = "Hello"
-string2 = ", "
-string3 = "world!"
-
-length = length(string1 <> string2 <> string3)
-
-IO.puts "Długość ciągu znaków: #{length}"
-```
-
-W tym przypadku, zmienne `string1`, `string2` i `string3` są połączone w jeden ciąg znaków "Hello, world!", którego długość wynosi 13.
-
-## Głębsze zagadnienia
-W języku Elixir, ciągi znaków są traktowane jako listy pojedynczych znaków, dlatego też możemy wykorzystać do nich funkcje związane z listami. Na przykład, jeśli chcemy znaleźć długość ciągu pomijając znak spacji, możemy wykorzystać funkcję `Enum.count/2` w połączeniu z funkcją `String.graphemes/1` do zwrócenia listy pojedynczych znaków obecnych w ciągu. Przykładowy kod wyglądałby tak:
-
-```Elixir
-string = "Hello, world!"
-length = Enum.count(String.graphemes(string), fn char -> char != " " end)
-
-IO.puts "Długość ciągu znaków (bez spacji): #{length}"
-```
-
-W tym przypadku, rezultatem wywołania funkcji `Enum.count/2` jest liczba 11, ponieważ dwie spacje zostały pominięte podczas liczenia.
-
-## Zobacz też
-- [Dokumentacja Elixir - Funkcja String.length/1](https://hexdocs.pm/elixir/String.html#length/1)
-- [Dokumentacja Elixir - Funkcja length/1](https://hexdocs.pm/elixir/Kernel.html#length/1)
-- [Dokumentacja Elixir - Funkcja Enum.count/2](https://hexdocs.pm/elixir/Enum.html#count/2)
-- [Dokumentacja Elixir - Funkcja String.graphemes/1](https://hexdocs.pm/elixir/String.html#graphemes/1)
+## Zobacz również:
+- Dokumentacja Elixira dla funkcji `String.length/1`: [https://hexdocs.pm/elixir/String.html#length/1](https://hexdocs.pm/elixir/String.html#length/1)
+- Inne przydatne funkcje dla pracy z ciągami znaków w Elixirze: [https://blog.openfrost.pl/operacje-na-ciagach-znakow-w-elixir/](https://blog.openfrost.pl/operacje-na-ciagach-znakow-w-elixir/)

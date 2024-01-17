@@ -1,7 +1,7 @@
 ---
-title:                "Ściąganie strony internetowej"
-html_title:           "Gleam: Ściąganie strony internetowej"
-simple_title:         "Ściąganie strony internetowej"
+title:                "Pobieranie strony internetowej"
+html_title:           "Gleam: Pobieranie strony internetowej"
+simple_title:         "Pobieranie strony internetowej"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "HTML and the Web"
@@ -10,45 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i Dlaczego?
 
-Jeśli chcesz pobrać stronę internetową lub jej zawartość, Gleam jest idealnym narzędziem do tego celu. Dzięki temu możesz łatwo i szybko uzyskać dostęp do danych, co może być przydatne w wielu przypadkach, takich jak przetwarzanie, analiza lub tworzenie kopii zapasowych.
+Pobieranie strony internetowej to proces pozyskiwania informacji z sieci. Programiści wykorzystują to narzędzie, aby uzyskać dostęp do danych z różnych stron internetowych, co pozwala im na tworzenie aplikacji, które wymagają dostępu do aktualnych informacji z sieci.
 
-## Jak To Zrobić
+## Jak to zrobić:
 
-Korzystając z Gleam, możesz wykonać proste polecenie, które pobierze zawartość wybranej strony. Oto przykład kodu:
-
-```Gleam
-import gleam/http
-
-let result = http.get("https://www.example.com")
-```
-
-W tym kodzie wykorzystujemy wbudowaną bibliotekę "http", która zawiera funkcję "get". Wewnątrz funkcji podajemy adres URL strony, którą chcemy pobrać. Następnie przypisujemy wynik do zmiennej "result".
-
-Teraz możemy skorzystać z pobranej zawartości np. wyświetlając ją na ekranie:
+W duchu Gleam uruchomić (zagnieździć) kod pod spodem i wypisać wiadomości otrzymane ze strony internetowej do konsoli:
 
 ```Gleam
-import gleam/string
-import gleam/io
 
-fn display(result) {
-  string.uppercase(result)
-}
+let url = "https://www.example.com"
 
-let _ = io.println(display(result))
+Url.fetch(url)
+    .then(
+        Fn.compose_ok(|_string| {
+            IO.print("Pobieranie strony się powiodło!")
+        })
+    )
+    .catch(
+        Fn.compose_err(|_error| {
+            IO.print("Pobieranie strony nie powiodło się.")
+        })
+    )
 ```
 
-W tym przykładzie wykorzystujemy biblioteki "string" i "io" do przetworzenia pobranej zawartości i wyświetlenia jej na ekranie.
+## Głębsza Analiza:
 
-## Dogłębna Analiza
+Pobieranie stron internetowych jest ważnym narzędziem dla programistów od początków Internetu. Istnieje wiele alternatywnych sposobów pobierania danych z sieci, takich jak wykorzystanie protokołu HTTP, bibliotek zewnętrznych lub specjalnych programów. W Gleam, używamy funkcji "Url.fetch" do pobierania stron internetowych poprzez protokół HTTP, który jest powszechnie stosowany w przesyłaniu informacji w sieci.
 
-Gleam oferuje też wiele innych funkcji i możliwości, które mogą być przydatne podczas pobierania stron internetowych. Możesz np. ustawić nagłówki żądania, obsługiwać błędy lub korzystać z innych metod komunikacji z serwerem, takich jak "post" czy "put".
+## Zobacz też:
 
-Warto także pamiętać o bezpieczeństwie i nie przesyłać poufnych informacji wprost przez żądania HTTP. W tym celu można skorzystać z biblioteki "crypto", która oferuje funkcje szyfrowania i deszyfrowania danych.
-
-## Zobacz też
-
-- Dokumentacja Gleam (https://gleam.run)
-- Przykładowe kody i projekty (https://github.com/gleam-lang)
-- O blog Gleam (https://bloggleam.com)
+- Dokumentacja Gleam: https://gleam.run/documentation/
+- Przykłady pobierania stron internetowych w Gleam: https://github.com/gleam-lang/example-projects/tree/master/url-fetch

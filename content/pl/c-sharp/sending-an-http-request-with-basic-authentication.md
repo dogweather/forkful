@@ -1,7 +1,7 @@
 ---
-title:                "Wysyłanie żądania http z podstawową autoryzacją"
-html_title:           "C#: Wysyłanie żądania http z podstawową autoryzacją"
-simple_title:         "Wysyłanie żądania http z podstawową autoryzacją"
+title:                "Wysyłanie żądania HTTP z podstawową autoryzacją"
+html_title:           "C#: Wysyłanie żądania HTTP z podstawową autoryzacją"
+simple_title:         "Wysyłanie żądania HTTP z podstawową autoryzacją"
 programming_language: "C#"
 category:             "C#"
 tag:                  "HTML and the Web"
@@ -10,46 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+# Co i dlaczego? 
+Wysyłanie żądań HTTP z podstawową autoryzacją to proces, który pozwala na uwierzytelnianie użytkownika w serwisie internetowym za pomocą loginu i hasła. Programiści często wykorzystują ten mechanizm w celu uzyskania dostępu do chronionych zasobów lub wykonywania operacji na serwerze.
 
-Przesyłanie żądania HTTP z podstawowym uwierzytelnianiem jest niezbędne, aby uzyskać dostęp do chronionych zasobów w sieci. W niektórych przypadkach, jest to również wymagane przez serwery, aby potwierdzić tożsamość użytkownika.
-
-## Jak to zrobić
-
+## Jak to zrobić:
+### Przykładowe kody i wyniki:
 ```C#
-var client = new HttpClient();
+// Wysłanie żądania z autoryzacją:
+var request = (HttpWebRequest)WebRequest.Create("https://example.com/protected");
+request.Method = "GET";
+request.Headers[HttpRequestHeader.Authorization] = "Basic " + Convert.ToBase64String(Encoding.ASCII.GetBytes("username:password"));
+var response = (HttpWebResponse)request.GetResponse();
+Console.WriteLine("Response status code: " + response.StatusCode);
 
-// Ustawienie nagłówka uwierzytelnienia
-var byteArray = Encoding.ASCII.GetBytes("username:password");
-client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", Convert.ToBase64String(byteArray));
-
-// Wysłanie żądania GET do wybranej strony
-var response = await client.GetAsync("https://example.com");
-
-// Pobranie wartości zwracanej przez serwer
-var result = await response.Content.ReadAsStringAsync();
-Console.WriteLine(result);
+// Otrzymanie odpowiedzi z danymi:
+var responseStream = response.GetResponseStream();
+using(var streamReader = new StreamReader(responseStream))
+{
+    var responseData = streamReader.ReadToEnd();
+    Console.WriteLine("Response data: " + responseData);
+}
 ```
 
-**Wynik:**
+## Głębszy wgląd:
+### Kontekst historyczny:
+Podstawowa autoryzacja została wprowadzona w protokole HTTP w 1999 roku i jest jednym z najstarszych i najprostszych sposobów uwierzytelniania w sieci. Jest często wykorzystywana w połączeniach typu "client-server" oraz w systemach API.
 
-```
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Przykładowa strona</title>
-</head>
-<body>
-	<h1>Witaj, użytkowniku!</h1>
-</body>
-</html> 
-```
+### Alternatywy:
+Istnieją również inne metody uwierzytelniania w sieci, takie jak tokeny OAuth lub uwierzytelnianie oparte na kluczu API. Jednakże, podstawowa autoryzacja jest prosta w implementacji i jest często wykorzystywana w przypadku prostych zastosowań.
 
-## Głębszy wgląd
+### Szczegóły implementacji:
+Podstawowa autoryzacja jest realizowana poprzez dodanie nagłówka ```Authorization``` z odpowiednio zakodowaną nazwą użytkownika i hasłem w formacie ```username:password```, oddzielonym dwukropkiem oraz zakodowanym w formacie Base64. Po zoptymalizowaniu nagłówka wygeneruja on postać: ```Basic <base64(username:password)>```
 
-Podstawowe uwierzytelnienie jest najbardziej podstawową metodą uwierzytelniania dostępu HTTP. Polega na przesyłaniu informacji o uwierzytelnieniu w nagłówku żądania, poprzez zakodowanie loginu i hasła do postaci Base64. Serwer następnie sprawdza te dane i udziela dostępu do zasobów lub odmawia dostępu w przypadku nieprawidłowych danych uwierzytelniających.
-
-## Zobacz też
-
-- Dokumentacja Microsoft na temat przesyłania żądań HTTP w C#: https://docs.microsoft.com/pl-pl/dotnet/csharp/
-- Tutorial na YT na temat HTTP w C#: https://www.youtube.com/watch?v=7YcW25PHnAA
+## Zobacz także:
+- https://tools.ietf.org/html/rfc2617 - specyfikacja podstawowej autoryzacji dla protokołu HTTP
+- https://api.example.com/docs - przykładowa dokumentacja API wykorzystująca autoryzację

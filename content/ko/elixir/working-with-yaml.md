@@ -1,7 +1,7 @@
 ---
-title:                "yaml로 작업하기"
-html_title:           "Elixir: yaml로 작업하기"
-simple_title:         "yaml로 작업하기"
+title:                "Yaml 작업하기"
+html_title:           "Elixir: Yaml 작업하기"
+simple_title:         "Yaml 작업하기"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Data Formats and Serialization"
@@ -10,49 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-<!--한글 번역-->
+# YAML와 함께하는 프로그래밍
 
-## 왜 YAML을 사용하는가?
+## 무엇이고 왜?
 
-YAML은 Elixir에서 데이터를 효율적으로 저장하고 전달하는 데에 사용할 수 있는 간단하고 인간 친화적인 형식입니다. 따라서 YAML을 사용하는 것은 개발자들이 코드를 작성하고 데이터를 관리하는 데에 시간을 절약할 수 있는 좋은 방법입니다.
+YAML은 코드를 쉽게 읽고 작성할 수 있는 사람과 기계가 모두 이해할 수 있는 포맷을 가지고 있습니다. 프로그래머들은 YAML을 사용하여 데이터 구조를 정의하고 설정 파일을 작성하는 등 다양한 용도로 활용합니다.
 
-## 어떻게 사용할까?
-
-YAML을 Elixir에서 사용하기 위해서는 먼저 이를 지원하는 라이브러리를 설치해야 합니다. 예를 들어, `YamlElixir` 라이브러리를 사용하면 다음과 같이 간단하게 YAML 파일을 파싱할 수 있습니다.
+## 어떻게 하나요?
 
 ```Elixir
-yaml = """
-name: John
-age: 30
-occupation: Developer
-"""
-
-YamlElixir.parse(yaml)
+username: "John"
+password: "password123"
 ```
 
-위의 코드는 YAML 파일을 `:erlang` 모듈로 변환해주는 `YamlElixir.parse/1` 함수를 호출합니다. 이 함수의 반환값은 Elixir 데이터 형식으로 `{:ok, %{"name" => "John", "age" => 30, "occupation" => "Developer"}}`와 같이 튜플 형태로 반환됩니다.
+YAML에서는 위와 같이 `key:value` 형태로 데이터를 표현합니다. 쉽게 읽을 수 있고, 들여쓰기를 통해 데이터의 계층 구조를 표현할 수 있습니다. 위 예시에서는 `username`과 `password`라는 키와 그에 해당하는 값들이 정의되어 있습니다.
 
-또는, `Eyaml` 모듈을 사용하여 YAML 파일을 로드할 수도 있습니다.
+## 깊이 있는 알아보기
 
-```Elixir
-Eyaml.load_file("config.yml")
-```
+1. 역사적 배경: YAML은 2001년에 처음 등장했고, 인간이 쉽게 읽을 수 있도록 디자인된 것이 특징입니다.
 
-로드된 YAML 파일은 `q` 마크와 `x` 마크를 포함하여 `{"key", "value"}` 형식의 튜플로 변환됩니다.
+2. 대안들: YAML 대신 XML, JSON 등의 다른 데이터 포맷을 사용할 수 있지만, YAML은 읽기 쉽고 구조적으로 명확하게 표현할 수 있어서 많은 프로그래머들이 선호합니다.
 
-## 깊게 파헤치기
+3. 구현 세부사항: YAML은 주로 들여쓰기로 계층 구조를 나타내기 때문에 들여쓰기에 규칙을 따라야 합니다. 또한 Elixir에서는 `YAML` 모듈을 사용하여 YAML 파일을 읽고 쓰는 기능을 제공합니다.
 
-YAML 파일에는 다양한 데이터 형식을 저장할 수 있습니다. 이를 지원하기 위해 `YamlElixir` 라이브러리는 다음과 같은 기능을 제공합니다.
+## 관련 자료
 
-- 데이터 형식을 Elixir 타입으로 변환
-- Elixir 타입을 YAML 형식으로 변환
-- Elixir 맵을 YAML 파일로 저장
-- YAML 파일 내의 데이터 검색
-- YAML 파일에 데이터 추가 또는 수정하기
-
-더 자세한 정보는 `YamlElixir` 공식 문서를 참고하시기 바랍니다.
-
-## 또 다른 정보들
-
-- [YamlElixir 공식 문서](https://hexdocs.pm/yaml_elixir/readme.html)
-- [Eyaml 공식 문서](https://hexdocs.pm/eyaml/)
+- [YAML 공식 사이트](http://yaml.org/)
+- [Elixir YAML 모듈 문서](https://hexdocs.pm/elixir/YAML.html)

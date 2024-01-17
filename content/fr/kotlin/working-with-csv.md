@@ -10,51 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Pourquoi travailler avec des fichiers CSV en Kotlin
+## Qu'est-ce que c'est et pourquoi?
 
-Si vous travaillez avec des données tabulaires, vous avez probablement déjà rencontré des fichiers CSV. Les fichiers CSV (Comma-Separated Values) sont un format couramment utilisé pour stocker et échanger des données entre différentes applications. Heureusement, Kotlin offre de nombreux outils pour travailler avec des fichiers CSV de manière simple et efficace.
+Travailler avec des fichiers CSV (valeurs séparées par des virgules) est une façon courante pour les programmeurs de stocker et d'organiser des données tabulaires. Les CSV sont largement utilisés dans les applications et les bases de données en raison de leur format simple et facilement lisible.
 
-# Comment travailler avec des fichiers CSV en Kotlin
+## Comment faire:
 
-Pour travailler avec des fichiers CSV en Kotlin, vous aurez besoin d'importer la bibliothèque ** kotlinx-datetime-csv **. Cette bibliothèque fournit des fonctions pratiques pour lire et écrire des données à partir de fichiers CSV.
+Voici un exemple de code en Kotlin pour lire un fichier CSV et imprimer chaque ligne:
 
-Voici un exemple de code pour lire des données à partir d'un fichier CSV :
-
-```
-import kotlinx.datetime.csv.*
+```Kotlin
 import java.io.File
 
-val file = File("data.csv")
-val data = file.readCSV()
-
-println(data) // affiche les données du fichier CSV
+fun main() {
+    val file = File("data.csv").bufferedReader()
+    file.forEachLine { line ->
+        println(line)
+    }
+    file.close()
+}
 ```
 
-Et voici un exemple de code pour écrire des données dans un fichier CSV :
+Sortie:
 
 ```
-import kotlinx.datetime.csv.*
-import java.io.File
-
-val data = listOf(listOf("John", "Doe", "35"), listOf("Jane", "Doe", "30"))
-
-val file = File("data.csv")
-file.writeCSV(data)
-
-println("Données écrites avec succès dans le fichier CSV !")
+Colonne 1, Colonne 2, Colonne 3
+Valeur 1, Valeur 2, Valeur 3
+Valeur 4, Valeur 5, Valeur 6
 ```
 
-Grâce à la bibliothèque kotlinx-datetime-csv, vous pouvez facilement lire et écrire des données dans des fichiers CSV en Kotlin.
+## Plongée en profondeur:
 
-# Plongée en profondeur
+Les CSV ont été créés dans les années 1970 comme un moyen d'importer et d'exporter des données dans un format standardisé. Bien qu'ils soient toujours largement utilisés, il existe maintenant des alternatives telles que JSON et XML pour stocker des données tabulaires. Kotlin offre différentes bibliothèques externes pour travailler avec des fichiers CSV, telles que OpenCSV et Kotlin CSV.
 
-La bibliothèque kotlinx-datetime-csv offre également une grande flexibilité en termes de manipulation des données CSV. Par exemple, vous pouvez définir des délimiteurs personnalisés pour vos fichiers CSV en utilisant la classe `CSVFormat`.
+## Voir aussi:
 
-De plus, si vous avez besoin de travailler avec des données de date et d'heure dans un fichier CSV, la bibliothèque offre des fonctions pour les afficher dans différents formats et les convertir en objets `kotlinx-datetime`. Cela peut s'avérer très utile pour des applications nécessitant un traitement des données temporelles.
-
-# Voir aussi
-
-- [Documentation de kotlinx-datetime-csv](https://github.com/Kotlin/kotlinx-datetime/wiki/CSV-Format/)
-- [Tutoriel sur la manipulation de fichiers CSV en Kotlin](https://www.baeldung.com/kotlin-csv)
-
-En utilisant la bibliothèque kotlinx-datetime-csv, vous pouvez travailler avec des fichiers CSV en toute simplicité en utilisant Kotlin. N'hésitez pas à explorer davantage la bibliothèque et à découvrir toutes ses fonctionnalités.
+- [Documentation officielle de Kotlin pour le traitement des CSV](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-csv-reader/)
+- [OpenCSV: Une bibliothèque pour lire et écrire des fichiers CSV en Java et Kotlin](http://opencsv.sourceforge.net/) 
+- [Kotlin CSV: Une bibliothèque simple pour lire et écrire des fichiers CSV en Kotlin](https://github.com/doyaaaaaken/kotlincsv)

@@ -1,7 +1,7 @@
 ---
-title:                "「文字列のキャピタライズ」"
-html_title:           "TypeScript: 「文字列のキャピタライズ」"
-simple_title:         "「文字列のキャピタライズ」"
+title:                "文字列の先頭を大文字化する"
+html_title:           "TypeScript: 文字列の先頭を大文字化する"
+simple_title:         "文字列の先頭を大文字化する"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -10,36 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##なぜ
+## 何が:
+文字列をキャピタライズするとは何かを説明し、プログラマーがそれを行う理由を説明します。
 
-文字列を大文字にすることで何ができるのか疑問に思ったことはありませんか？大文字の文字列は、プログラミングにおいても多くの場面で必要とされます。例えば、ユーザーが入力した文字列を正規化したり、データベース内での検索を簡単にしたりするために使われます。今回は、TypeScriptを使って文字列を大文字にする方法を紹介します。
+文字列をキャピタライズするとは、文字列の最初の文字を大文字にすることを指します。プログラマーは、見やすさや一貫性のために、しばしば文字列をキャピタライズすることがあります。
 
-##やり方
-
-まずは、大文字にしたい文字列を用意しましょう。例として、"hello world"という文字列を大文字に変換したいとします。
+## 方法:
 
 ```TypeScript
-let str = "hello world";
-let capitalizedStr = str.toUpperCase();
-console.log(capitalizedStr);
+const str = "hello world";
+const capitalizedStr = str.charAt(0).toUpperCase() + str.slice(1);
+console.log(capitalizedStr); // Output: "Hello world"
 ```
 
-上記のコードを実行すると、"HELLO WORLD"という結果が得られます。まず、toUpperCase()というメソッドを使うことで、文字列の全ての文字を大文字に変換することができます。その後、変数capitalizedStrに結果を格納し、console.log()を使って結果を出力しています。
+```TypeScript
+const capitalize = (str: string) => {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
 
-もし文字列がすでに大文字の場合は、何も変化しません。また、このメソッドは元の文字列を変更するのではなく、新しい文字列を返します。そのため、元の文字列を保持したまま大文字に変換することができます。
+const str = "こんにちは世界";
+const capitalizedStr = capitalize(str);
+console.log(capitalizedStr); // Output: "こんにちは世界"
+```
 
-##ディープダイブ
+## 深く潜れ:
 
-今回使ったtoUpperCase()メソッドはStringクラスに属しており、文字列に対して使うことができるメソッドの一つです。Stringクラスには他にも、文字列を別の文字列で置き換えるreplace()メソッドや文字列を分割するsplit()メソッドなど、便利なメソッドが多数あります。
+キャピタライズすることの歴史的な文脈、代替手段、そして実装の詳細について説明します。
 
-また、TypeScriptでは文字列の型付けが厳密に行われるため、バグを防いだり安全性の高いプログラミングを行うことができます。文字列を扱う際は、型付けにも注意しましょう。
+キャピタライズすることは、主に見やすさや一貫性のために行われてきました。人間の目は、大文字の方が小文字よりもすぐに認識できるため、文字列をキャピタライズすることでより読みやすくなります。また、多くのプログラミング言語では、文字列に対してキャピタライズする関数が用意されています。
 
-##参考リンク
+キャピタライズする代替手段としては、CSSのtext-transformプロパティを使用することができます。このプロパティを使用することで、HTML上のテキストを容易に大文字に変換することができます。
 
-- [String - JavaScript | MDN](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String)
-- [TypeScript: String Operations](https://www.typescriptlang.org/docs/handbook/strings.html)
-- [String.prototype.toUpperCase() - JavaScript | MDN](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase)
+実装の詳細では、上記のコード例で使用したcharAt()、toUpperCase()、そしてslice()というメソッドについて説明します。charAt()は、指定された位置にある文字を返すメソッドであり、toUpperCase()は文字列を大文字に変換するメソッドです。slice()は、指定された位置から終了位置までの文字列を返すメソッドです。
 
-##もっと学ぼう
+## 他に見る:
 
-今回は文字列を大文字に変換する方法を紹介しましたが、実際のプロジェクトではさらに多くの文字列操作が必要になるかもしれません。ぜひ、参考リンクを読んでさらに知識を深めてみてください。また、TypeScriptの公式ドキュメントもぜひチェックしてみてください。
+- [JavaScript string methods: capitalize, upper/lowercase, and more](https://zellwk.com/blog/dynamic-case-changing-string-capitalize-ucfirst-upcase/)
+- [TypeScript string methods](https://www.typescriptlang.org/docs/handbook/2/types-from-types.html#keyof-type-operators)

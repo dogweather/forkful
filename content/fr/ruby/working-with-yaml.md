@@ -10,86 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Qu'est-ce que c'est & Pourquoi?
 
-Travailler avec YAML peut sembler intimidant pour les nouveaux programmeurs, mais c'est en réalité un format très utile et facile à comprendre pour stocker et échanger des données structurées. Que vous travailliez sur un projet personnel ou professionnel, apprendre à utiliser YAML peut être un ajout précieux à vos compétences en programmation.
+Travailler avec YAML signifie écrire du code pour lire et écrire des données au format YAML. Les programmeurs utilisent YAML car c'est un format de données simple et lisible par les humains, ce qui le rend pratique pour stocker et échanger des informations.
 
-## Comment faire
+## Comment faire:
 
-La première étape pour travailler avec YAML est d'installer la gem YAML pour votre projet Ruby. Vous pouvez le faire en utilisant la commande suivante dans votre terminal:
-
-```Ruby
-gem install yaml
-```
-
-Ensuite, vous devez utiliser la méthode `require` pour charger la gem YAML dans votre code Ruby:
+Voici un exemple de code qui utilise la bibliothèque YAML pour lire un fichier et afficher son contenu:
 
 ```Ruby
 require 'yaml'
+
+data = YAML.load(File.read('mon_fichier.yml')) # charger les données à partir du fichier YAML
+puts data.inspect # affiche les données lues
 ```
 
-Maintenant, vous êtes prêt à commencer à travailler avec YAML! Voici un exemple de code pour créer une structure de données simple en YAML et l'écrire dans un fichier:
+Et voici un exemple de code qui utilise la bibliothèque YAML pour écrire des données dans un fichier:
 
 ```Ruby
-data = { :nom => 'Jean', :age => 25, :ville => 'Paris' }
-yaml_data = data.to_yaml
-File.open('fichier.yaml', 'w') { |f| f.write(yaml_data) }
+require 'yaml'
+
+data = { :cle_1 => 'valeur 1', :cle_2 => 'valeur 2' } # créer un hash contenant les données à écrire
+File.write('mon_fichier.yml', data.to_yaml) # écrire les données au format YAML dans le fichier
 ```
 
-Et voici le résultat que vous trouverez dans votre fichier YAML:
+## Plongée en profondeur:
 
-```YAML
----
-:nom: Jean
-:age: 25
-:ville: Paris
-```
+YAML (YAML Ain't Markup Language) a été créé en 2001 pour fournir une alternative plus simple et plus facile à utiliser à l'XML. Il est largement utilisé dans les applications web et les projets open source pour la configuration et le stockage de données. Bien qu'il soit principalement utilisé en tant que format de données, YAML peut également être utilisé en tant que langage de balisage.
 
-Vous pouvez également utiliser YAML pour lire des données à partir d'un fichier et les stocker dans une variable en utilisant la méthode `load_file`:
+Une alternative populaire à YAML est le format JSON, qui est plus couramment utilisé pour les applications web et les échanges de données. Cependant, YAML offre des fonctionnalités supplémentaires telles que le support des références et des types de données personnalisés.
 
-```Ruby
-mon_fichier = File.open('fichier.yaml', 'r')
-donnees = YAML.load_file(mon_fichier)
-```
+Pour implémenter YAML dans votre code Ruby, vous pouvez utiliser la bibliothèque officielle YAML ou des alternatives telles que Psych ou Yamlrb.
 
-Maintenant, vous pouvez accéder aux données comme vous le feriez avec n'importe quelle autre variable en utilisant les clés que vous avez définies. Par exemple:
+## Voir aussi:
 
-```Ruby
-puts "Le nom de cette personne est #{donnees[:nom]}"
-```
-
-## Plongée en profondeur
-
-YAML est un format de données structuré très flexible et puissant. Il prend en charge plusieurs types de données tels que les chaînes, les nombres, les listes et les structures de données complexes. Vous pouvez également utiliser YAML pour représenter des objets de classe Ruby. Voici un exemple de code qui montre comment le faire:
-
-```Ruby
-class Utilisateur
-  attr_accessor :nom, :age, :ville
-  def initialize(nom, age, ville)
-    @nom = nom
-    @age = age
-    @ville = ville
-  end
-end
-
-utilisateur = Utilisateur.new('Sophie', 30, 'Lyon')
-yaml_data = utilisateur.to_yaml
-puts yaml_data
-```
-
-Cela produira la sortie suivante:
-
-```YAML
----
-!ruby/object:Utilisateur
-nom: Sophie
-age: 30
-ville: Lyon
-```
-
-En savoir plus sur YAML et ses fonctionnalités peut être très utile pour créer des applications plus complexes et sophistiquées. N'hésitez pas à explorer la documentation et à expérimenter avec différents types de données et de structures.
-
-## Voir aussi
-- [Documentation officielle YAML](https://yaml.org/)
-- [Introduction à YAML sur Sitepoint](https://www.sitepoint.com/yaml-tutorial/)
-- [Tutoriel YAML sur Codecademy](https://www.codecademy.com/learn/learn-yaml)
+- Documentation officielle YAML: https://yaml.org/spec/
+- Bibliothèque YAML Ruby: https://ruby-doc.org/stdlib-2.6.3/libdoc/yaml/rdoc/YAML.html
+- Yamlrb: https://github.com/apluslms/yamlrb

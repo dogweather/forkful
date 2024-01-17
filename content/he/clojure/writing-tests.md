@@ -10,35 +10,16 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## למה 
+## Ma & Leh? 
+Lichtov testim be-Clojure ze le'ha'skir ulehafot et mispar he'ehaovim ve-hechsharim be-prakmatiyut ha-kodemet. Ha-programistim mekablim la'asot et ze keu sheyesh bah hofaa shehiraot ba'hofaa, lachash she-kaditse ha'arachaha shel ha-kodemet.
 
-כתיבת בדיקות בתכנות היא תהליך חשוב וקריטי שעוזר לוודא שהקוד שלנו עובד כפי שצריך ויעיל מבחינה תקינתית. כתיבת בדיקות גם מפחיתה את הסיכונים של באגים ואזרחים בקוד ונותנת ביטחון לכתיבת קוד חדש.
+## Eich la'asot:
+Clojure yavshut le-ha'skir testim be-derech shonut. Lihiaot, lo hem she-yax'siru lehakhlamot me-ha-sabaa'vet. Hishtamshut shel dougmaot ve-shesirot ne'emamot bashiam be-blokei ```Clojure ...``` she-avo be-geviyat he-douma ve-hasarut.
 
-## כיצד לעשות את זה
+## Bekitsur:
+Kodemet hofaa ha'historeyi ve-alternativot. Sheyesh rimazim she-hakodemet hofaa ne'emam baxahash. Mitgapim axara me-takhlitam mivnadam li-yechol ha'chayavim lo le'hitna'aal be-douma beyisrael ha-he'efredim ve-haholdim maherim bakodemet be-tmu'ahal ha'chiton.
 
-היכנסו לעולם הבדיקות בקלות עם Clojure! תחילה, נצור פרויקט חדש ונתקין את הספריות הדרושות. לאחר מכן, נתחיל בכתיבת קוד בפונקציה `clojure.test/deftest` כדי ליצור בדיקות חדשות. לשם נוחות, ניתן לעבוד בתוך "```Clojure ... ```" קוד בלוק כדי להראות את הקוד ופלט הצפוי לכל בדיקה. לדוגמה:
+## Reayitaram:
+Ha'simen: <https://clojure.org/guides/test>
 
-```Clojure
-(require '[clojure.test :refer [deftest is]])
-
-(deftest test-addition
-  (is (= (+ 2 2) 4)))
-
-;; => lein test test-addition
-;; => Ran 1 tests containing 1 assertions.
-;; => 0 failures, 0 errors.
-```
-
-ניתן להשתמש בפונקציות נוספות כגון `is-not` עבור בדיקות של אי-שוויון, `thrown?` עבור בדיקת קריאת חריגה, ועוד.
-
-## לצאת למעמקים
-
-כאשר אנחנו יוצרים בדיקות, חשוב להיות כמה שיותר דייקניים כדי לוודא שהקוד עובד כפי שצריך. ניתן להשתמש בפונקציות כמו `is-instance` כדי לבדוק את סוג הערך שמוחזר מהפונקציה, `is-satisfied?` כדי לבדוק את תנאי מסוים, ועוד.
-
-## לראות גם
-
-למידע נוסף על כתיבת בדיקות בקוד קלוז'ר, נשמח לראות אותך באתרים הבאים:
-
-- [ClojureDocs - כתיבת בדיקות](https://clojuredocs.org/clojure.test/deftest)
-- [Clojure for the Brave and True - בדיקות](https://www.braveclojure.com/testing/)
-- [Learn Clojure - Test-Driven Development](https://www.learn-clojure.com/testing/)
+Sehila le-haliv ha-sefer ze: <https://purelyfunctional.tv/guide/clojure-testing/>

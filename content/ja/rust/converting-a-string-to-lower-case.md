@@ -1,7 +1,7 @@
 ---
-title:                "「文字列を小文字に変換する」"
-html_title:           "Rust: 「文字列を小文字に変換する」"
-simple_title:         "「文字列を小文字に変換する」"
+title:                "文字列を小文字に変換する"
+html_title:           "Rust: 文字列を小文字に変換する"
+simple_title:         "文字列を小文字に変換する"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -10,26 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ: 文字列を小文字に変換する必要性
-Rust言語では、文字列を小文字に変換する必要がある場合があります。例えば、ユーザーから入力された文字列を正しく処理するためには、事前に小文字に変換しておく必要があります。また、文字列の比較や検索を行う際にも、大文字と小文字を区別することができないため、文字列を小文字に変換する必要があります。
+## 何で？：文字列を小文字に変換することは何ですか？プログラマーがそれをする理由は何ですか？
 
-## 方法: 文字列を小文字に変換するコード例
-文字列を小文字に変換するには、Rust言語の標準ライブラリで使用できる`to_lowercase()`関数を使用します。以下のコード例をご覧ください。
+文字列を小文字に変換することは、文字列内のすべてのアルファベットを小文字に変換することを意味します。プログラマーは、文字列を正規化するために文字列を小文字に変換することがあります。これにより、同じ文字列であっても大文字と小文字の違いによるエラーを回避することができます。
+
+## 方法：
 
 ```Rust
-fn main() {
-    let string = String::from("Hello World!");
-    let lowercase_string = string.to_lowercase();
-    println!("{}", lowercase_string);
-}
+let my_string = "Hello, WORLD";
+let lower_case = my_string.to_lowercase();
+
+println!("{}", lower_case);
 ```
+出力：hello, world
 
-このコードを実行すると、出力結果は`hello world!`となります。
+## 詳細：
 
-## 深い掘り下げ: 文字列を小文字に変換する際の注意点
-Rust言語では、文字列は不変な値として扱われます。つまり、文字列を小文字に変換しても元の文字列は変化しません。また、`to_lowercase()`関数はUnicodeに対応しており、日本語のようなマルチバイト文字にも正しく変換することができます。
+1. 歴史的な文脈：文字列を小文字に変換することは、プログラミング言語によっては標準の機能として提供されている場合もあります。しかし、Rustでは標準のメソッドや関数は存在せず、文字列を小文字に変換するためにはto_lowercase()メソッドを使用する必要があります。
 
-## 参考リンク
-- [Rust Documentation: to_lowercase()](https://doc.rust-lang.org/std/string/struct.String.html#method.to_lowercase)
-- [Rust Programming Language](https://www.rust-lang.org/)（公式サイト）
-- [Rustのメリットとデメリットを分かりやすく解説！](https://eng-entrance.com/rust-moreless)（Rustの紹介記事）
+2. 代替手段：文字列を小文字に変換する方法として、パターンマッチングや正規表現を使用することもできます。しかし、to_lowercase()メソッドを使用する方が簡単であり、パフォーマンスも優れているため、推奨されます。
+
+3. 実装の詳細：to_lowercase()メソッドは、内部でUnicodeの大文字と小文字に関する規則を使用して文字列を変換します。そのため、複雑な言語であっても適切に変換されることが保証されます。
+
+## 関連情報：
+
+- [Rust公式ドキュメント](https://doc.rust-lang.org/std/string/struct.String.html#method.to_lowercase)
+- [文字列を小文字に変換する方法のベンチマークテスト](https://internals.rust-lang.org/t/psa-how-to-better-optimize-string-related-ops-like-comparison/8868/6)

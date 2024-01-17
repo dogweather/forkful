@@ -10,40 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Pourquoi: Les expressions régulières sont un outil puissant et flexible pour manipuler des chaînes de caractères dans vos programmes Clojure. Elles peuvent être utilisées pour extraire des données spécifiques, valider des entrées utilisateur et même transformer des données en masse.
+Qu'est-ce que c'est et pourquoi les programmeurs l'utilisent-ils?
+Les expressions régulières sont des séquences de caractères qui permettent de rechercher et de manipuler du texte en utilisant des motifs spécifiques. Les programmeurs utilisent les expressions régulières pour simplifier et accélérer la manipulation de texte dans leurs programmes.
 
-Comment faire: Voici quelques exemples pratiques de l'utilisation des expressions régulières en Clojure:
-
-### Chercher et remplacer une chaîne de caractères
-
+Comment faire?
+Clojure offre de nombreuses façons de travailler avec les expressions régulières. Voici quelques exemples courants :
 ```Clojure
-user=> (clojure.string/replace "Bonjour le monde!" #"le" "la")
-"Bonjour la monde!"
+(re-seq #"([A-Z])\w+" "Hi there, my name is John")
+; => ("Hi" "John")
+
+(re-find #"(\d{3})-(\d{3})-(\d{4})" "123-456-7890")
+; => ["123-456-7890" "123" "456" "7890"]
+
+(re-matches #"Hello (\w+)" "Hello world")
+; => ["Hello world" "world"]
 ```
 
-Dans cet exemple, nous utilisons la fonction `replace` de la bibliothèque standard `clojure.string` pour remplacer toutes les occurrences de "le" par "la" dans la chaîne de caractères donnée. Notez que nous avons également utilisé des expressions régulières pour spécifier le motif à remplacer.
+Plongez plus en profondeur :
+Les expressions régulières ont été inventées dans les années 1950 par le mathématicien américain Stephen Kleene. Bien qu'elles soient largement utilisées dans de nombreux langages de programmation, elles peuvent être difficiles à lire et à comprendre pour les débutants. Heureusement, il existe également des alternatives pour manipuler du texte, telles que les fonctions de manipulation de chaînes de caractères intégrées à Clojure. Les expressions régulières utilisent également des concepts avancés de traitement de texte tels que les groupes de capture, qui permettent de récupérer des parties spécifiques d'un texte correspondant.
 
-### Extraire des informations d'une chaîne de caractères
-
-```Clojure
-user=> (re-find #"\d{3}-\d{2}-\d{4}" "Mon numéro de sécurité sociale est 123-45-6789")
-"123-45-6789"
-```
-
-Ici, nous utilisons la fonction `re-find` de la bibliothèque standard `clojure.core` pour extraire un numéro de sécurité sociale à 9 chiffres d'une chaîne de caractères donnée. L'expression régulière `\d{3}-\d{2}-\d{4}` correspond à un motif de trois chiffres, suivis d'un tiret, puis de deux chiffres, puis d'un autre tiret, puis de quatre chiffres.
-
-### Valider une adresse email
-
-```Clojure
-user=> (re-matches #"^[a-z0-9]+@[a-z]+\.[a-z]{2,3}$" "utilisateur@test.com")
-true
-```
-
-Dans cet exemple, nous utilisons la fonction `re-matches` de la bibliothèque standard `clojure.core` pour valider une adresse email donnée en utilisant une expression régulière. Le motif `^[a-z0-9]+@[a-z]+\.[a-z]{2,3}$` correspond à une chaîne de caractères commençant par des lettres ou des chiffres, suivie d'un symbole "@", puis d'un domaine composé de lettres et se terminant par une extension de deux ou trois lettres.
-
-Plongée en profondeur: Les expressions régulières sont basées sur la syntaxe PCRE (Perl Compatible Regular Expressions) et peuvent être utilisées dans de nombreux langages de programmation, y compris Clojure. Elles sont extrêmement polyvalentes et peuvent être particulièrement utiles pour nettoyer, extraire ou valider des données dans vos programmes. Cependant, il est important de noter que les expressions régulières peuvent être complexes et difficiles à comprendre pour les débutants. Il est donc recommandé de suivre des tutoriels ou d'utiliser des outils de test en ligne pour vous familiariser avec leur syntaxe et leur fonctionnement.
-
-Voir aussi: 
-- [Documentation Clojure sur les expressions régulières](https://clojuredocs.org/clojure.core/re-pattern)
-- [Exemples et exercices pour pratiquer les expressions régulières](https://regexone.com/)
-- [Outil de test en ligne pour les expressions régulières](https://regex101.com/)
+Voir aussi :
+- Guide de référence de l'API Clojure regex : https://clojure.github.io/api/#clojure.string/replace
+- Tutoriel de base sur les expressions régulières : https://www.regular-expressions.info/tutorial.html

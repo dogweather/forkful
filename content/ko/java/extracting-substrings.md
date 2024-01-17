@@ -1,7 +1,7 @@
 ---
-title:                "부분 문자열 추출"
-html_title:           "Java: 부분 문자열 추출"
-simple_title:         "부분 문자열 추출"
+title:                "서브스트링 추출하기"
+html_title:           "Java: 서브스트링 추출하기"
+simple_title:         "서브스트링 추출하기"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Strings"
@@ -10,44 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜? 
+# 무엇 & 왜?
 
-서브스트링을 추출하는 이유는 문자열 처리와 관련하여 자주 사용하는 기능 중 하나이기 때문입니다. 이를 통해 사용자는 문자열에서 원하는 부분만을 선별적으로 가져와 다양한 용도로 활용할 수 있습니다.
+자바 프로그래밍에서 substrings을 추출하는 것은 문자열에서 특정 부분만을 분리하는 것을 의미합니다. 이를 통해 우리는 문자열을 더 쉽게 다룰 수 있습니다.
 
-## 어떻게 할까요?
+이 작업을 하는 이유는 여러 가지가 있지만 가장 큰 이유는 우리가 목표로 하는 문자열의 일부분만을 다루고자 할 때입니다. 예를 들어, 여러분이 어떤 문장에서 특정 단어만을 가져오고 싶을 때, substrings을 추출하는 것은 매우 유용합니다.
 
-```Java
-// 문자열에서 일부분 추출하기
-String str = "Hello, world!";
-String sub = str.substring(2, 6); // 결과: "llo," 
-System.out.println(sub); // "llo,"
+# 하는 법:
+
+```
+// 문자열에서 부분 추출 예제
+
+public class SubstringExample {
+    public static void main(String[] args) {
+
+        String sentence = "Java Programming is fun";
+        String substring = sentence.substring(5, 16);
+        
+        System.out.println(substring);
+        
+        // 출력 결과: Programming
+    }
+}
 ```
 
-```Java
-// 변수를 사용하여 추출 범위 지정하기
-String str = "Java programming";
-int start = 5; // 추출을 시작할 인덱스
-int end = 12; // 추출을 끝낼 인덱스 + 1
-String sub = str.substring(start, end); // 결과: "program"
-System.out.println(sub); // "program"
-```
+위 코드에서는 문자열에서 5번째부터 16번째까지의 문자만을 추출하여 substring 변수에 저장하고 있습니다. 이렇게 함으로써 우리는 sentence 변수에 저장된 문자열을 더 쉽게 다룰 수 있습니다.
 
-자바에서는 `substring()` 메소드를 사용하여 원하는 범위의 문자열을 추출할 수 있습니다. 이때, 첫 번째 매개변수는 추출을 시작할 인덱스를, 두 번째 매개변수는 추출을 끝낼 인덱스의 다음 값을 지정합니다. 위의 예시에서는 `str` 문자열에서 5번째 인덱스부터 12번째 인덱스의 이전 값까지인 "program"을 추출한 것입니다.
+# 깊이 들어가보기:
 
-```Java
-// 문자열의 끝까지 추출하기
-String str = "Korean language";
-String sub = str.substring(7); // 결과: "language"
-System.out.println(sub); // "language"
-```
+1) 역사적 배경: substrings을 추출하는 개념은 프로그래밍 언어마다 조금씩 다를 수 있지만, 대부분의 언어에서 지원하고 있습니다. 예를 들어, C 언어에서는 문자열을 포인터로 다루기 때문에 문자열에서 원하는 부분만을 추출하기가 어려웠지만, 자바에서는 문자열을 메모리에 저장하는 클래스가 있기 때문에 더 쉽게 추출할 수 있습니다.
 
-추출 범위를 지정하지 않고 첫 번째 매개변수만 사용하여 추출하면 해당 인덱스부터 문자열의 끝까지를 추출할 수 있습니다. 위의 예시에서는 `str` 문자열에서 7번째 인덱스부터 끝까지인 "language"를 추출한 것입니다.
+2) 대안: substrings을 추출하는 것은 문자열을 다루기 위한 가장 기본적인 방법 중 하나입니다. 다른 대안으로는 정규식을 사용하는 방법이 있습니다. 정규식을 사용하면 문자열에서 특정 패턴을 검색하고 추출할 수 있습니다.
 
-## 더 자세히 알아보기
+3) 구현 세부사항: 자바에서는 String 클래스에 내장된 substring() 메소드를 사용하여 서브스트링을 추출할 수 있습니다. 이 메소드는 첫 번째 매개변수로 시작 인덱스를, 두 번째 매개변수로 끝 인덱스를 전달받습니다. 또한, substring() 메소드는 문자열의 시작 인덱스를 0부터 셀 뿐만 아니라 마지막 인덱스를 포함하지 않는다는 것에 주의해야 합니다.
 
-자바에서는 `substring()` 메소드 외에도 `subSequence()` 메소드를 사용하여 문자열 부분을 추출할 수 있습니다. 또한, 추출한 문자열을 다른 타입으로 변환하는 방법도 존재합니다. `substring()` 메소드의 반환값이 `String` 타입이기 때문에, `parseInt()` 메소드를 사용하여 추출한 문자열을 `int` 타입으로 변환하는 등 다양하게 활용할 수 있습니다.
+# 관련 자료:
 
-## 이외에도 참고할 링크들
-
-- [Oracle Java Documentation: String class](https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html)
-- [Tutorials Point: Java - String substring() Method](https://www.tutorialspoint.com/java/java_string_substring)
+- [Java String 클래스](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
+- [Java 정규식](https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html)

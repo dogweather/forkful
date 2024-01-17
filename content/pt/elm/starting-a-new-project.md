@@ -1,7 +1,7 @@
 ---
-title:                "Iniciando um novo projeto"
-html_title:           "Elm: Iniciando um novo projeto"
-simple_title:         "Iniciando um novo projeto"
+title:                "Começando um novo projeto"
+html_title:           "Elm: Começando um novo projeto"
+simple_title:         "Começando um novo projeto"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Getting Started"
@@ -10,40 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que começar um novo projeto em Elm?
+## O que & Por quê?
+Iniciar um novo projeto é o ato de começar a trabalhar em um novo software ou aplicativo. Programadores iniciam novos projetos para criar novas soluções para problemas, melhorar sistemas existentes ou simplesmente praticar suas habilidades em uma nova linguagem ou tecnologia.
 
-Se você está à procura de uma linguagem de programação funcional, que seja fácil de aprender e que ofereça alta performance, o Elm pode ser a solução ideal para o seu próximo projeto. Além disso, a sua sintaxe declarativa e a robustez do sistema de tipos ajudam a garantir que o código seja mais previsível e menos propenso a erros.
+## Como fazer:
+O Elm é uma linguagem de programação funcional que foi criada para facilitar a criação de interfaces de usuário. Começar um novo projeto no Elm é simples e direto. Basta criar um novo arquivo com a extensão ".elm" e começar a escrever seu código. Aqui está um exemplo básico:
 
-## Como começar um projeto em Elm
 
-Para começar, é necessário ter o Elm instalado em seu computador. A forma mais simples de fazer isso é por meio do npm, o gerenciador de pacotes do Node.js. Basta digitar o seguinte comando em seu terminal:
-
-```Elm
-npm install -g elm
 ```
-
-Com o Elm instalado, podemos criar um novo projeto utilizando o comando `elm init`, que irá gerar uma estrutura de arquivos básica para o nosso projeto.
-
-Dentro da pasta do projeto, podemos criar um arquivo `Main.elm` que será o ponto de partida para a nossa aplicação. Nele, podemos importar os módulos necessários e definir as funções e tipos que serão utilizados.
-
-```Elm
-module Main exposing (..)
+module Main exposing (main)
 
 import Html exposing (text)
 
-main = text "Hello, world!"
+main =
+  text "Olá, mundo!"
 ```
 
-Para compilar o nosso código, basta executar o comando `elm make src/Main.elm`, que irá gerar um arquivo `index.html` com o nosso código pronto para ser executado.
+Esse código irá imprimir "Olá, mundo!" na tela quando você executá-lo. Você também pode adicionar mais funcionalidades à medida que seu projeto avança.
 
-## Uma visão mais profunda sobre a criação de um projeto em Elm
+## Profundando mais:
+O Elm foi criado pelo programador Evan Czaplicki em 2012. Ele é projetado para ser uma alternativa mais amigável e segura para o JavaScript, oferecendo recursos como segurança de tipos e mensagens de erro amigáveis. Além disso, o Elm também é compatível com React e outras bibliotecas populares de JavaScript, tornando-o uma ótima escolha para projetos de front-end.
 
-Ao começar um projeto em Elm, é importante entender os conceitos fundamentais da linguagem, como funções puras, tipagem estática e imutabilidade. Também é importante conhecer as ferramentas disponíveis, como o debugger integrado, que ajuda a encontrar e corrigir erros de forma mais eficiente.
+Além disso, o Elm possui uma comunidade ativa e um compilador poderoso que pode ajudá-lo a encontrar e solucionar erros em seu código. Isso torna mais fácil e rápido o processo de desenvolver e depurar seu projeto.
 
-Além disso, é recomendado seguir as práticas recomendadas pela comunidade, como utilizar o buscador de pacotes `elm-package`, que facilita a instalação de bibliotecas, e realizar testes unitários para garantir a qualidade do código.
+## Veja também:
+Se você está interessado em aprender mais sobre o Elm e suas vantagens, aqui estão alguns links que podem ser úteis:
 
-## Veja também
-
-- [Documentação oficial do Elm](https://guide.elm-lang.org/)
-- [Elm Casts - vídeos sobre Elm em português](https://www.youtube.com/playlist?list=PLbvnARcdVmgDgGbM9MsWNzMwoR1BCoB7o)
-- [Exemplos de projetos em Elm](https://github.com/elm/projects)
+- [Site oficial do Elm](https://elm-lang.org/)
+- [Documentação do Elm](https://guide.elm-lang.org/)
+- [Elm no GitHub](https://github.com/elm)
+- [Elm Discuss (fórum)](https://discourse.elm-lang.org/)

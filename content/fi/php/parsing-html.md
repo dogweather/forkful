@@ -10,44 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä & Miksi?
 
-HTML-analyysi on tärkeä taito PHP-ohjelmoijille, koska se mahdollistaa tietojen keräämisen verkosta ja niiden käsittelyn omassa koodissa. Tämä voi säästää aikaa ja vaivaa manuaalisesta tiedon keräämisestä ja parantaa ohjelman tehokkuutta.
+HTML-analysointi tarkoittaa HTML-koodin käsittelemistä ja siihen liittyvien tietojen erottamista. Ohjelmoijat tekevät tätä esimerkiksi verkkosivujen sisällön keräämiseen tai sivustojen suunnittelutyökalujen luomiseen.
 
-## Kuinka tehdä
-
-Analysointikoodin suorittaminen:
+## Miten:
 
 ```PHP
-$html = '<h1>Otsikko</h1><p>Tämä on esimerkkiparagraafi<h2>Toinen otsikko</h2>';
-$dom = new DOMDocument();
-$dom->loadHTML($html);
-$elements = $dom->getElementsByTagName('h1');
+// Esimerkki HTML-koodista:
+$html = '<h1>Tervetuloa maailmaan</h1>';
+// Käytä PHP-funktiota simplexml_load_string() erottamaan koodin avainelementit (tag) ja tekstit (text):
+$xml = simplexml_load_string($html);
 
-foreach ($elements as $element) {
-    echo $element->nodeValue; // Tulostaa "Otsikko"
-}
+// Tulostaa avainelementin (tag):
+echo $xml->getName(); // output: h1
 
-$paragraphs = $dom->getElementsByTagName('p');
-foreach ($paragraphs as $paragraph) {
-    echo $paragraph->nodeValue; // Tulostaa "Tämä on esimerkkiparagraafi"
-}
-
-// Voit myös hakea elementtejä id-tunnisteella:
-$element = $dom->getElementById('id-tunniste');
-echo $element->nodeValue; // Tulostaa kyseisen elementin sisällön
+// Tulostaa tekstin:
+echo $xml; // output: Tervetuloa maailmaan
 ```
 
-Voit myös hakea tietoja eri tyyppisistä HTML-elementeistä, kuten linkeistä, kuvista ja lomakkeista. Kun olet hakenut tiedot haluamistasi elementeistä, voit käsitellä niitä haluamallasi tavalla, esimerkiksi tallentaa ne tietokantaan tai näyttää ne käyttäjälle.
+## Syventyminen:
 
-## Syvempi sukellus
+HTML-analysointi alkoi jo varhain, kun ensimmäiset verkkosivut alkoivat ilmestyä internetiin 1990-luvulla. Nykyään on olemassa myös muita tapoja käsitellä HTML-koodia, kuten DOM-ext tai HTML-parsereita kuten Simple HTML DOM. Käyttövaihtoehtoihin kuuluu myös käyttää JavaScript-kirjastoa nimeltä jQuery, joka tarjoaa yksinkertaisen ja helpon tavan analysoida HTML-sivuja.
 
-HTML-analyysin käyttö on tärkeä taito PHP-ohjelmoijille, sillä se mahdollistaa monipuolisen tiedon keräämisen ja käsittelyn. Analysoimalla HTML:ää voit myös parantaa verkkosivujen suorituskykyä, esimerkiksi optimoimalla CSS- ja JavaScript-tiedostoja tai poistamalla tarpeettoman koodin.
+## Katso myös:
 
-On tärkeää muistaa, että HTML-tietojen analysointi ei ole täysin virheetöntä, sillä sivustojen rakenne ja koodin laatu vaihtelevat. Siksi on hyvä testata analysointikoodia erilaisilla sivustoilla ja ottaa huomioon mahdolliset virheelliset tulokset.
-
-## Katso myös
-
-- [PHP:n viralliset dokumentaatiot HTML-analyysista](https://www.php.net/manual/en/domdocument.loadhtml.php)
-- [W3Schools HTML-analyysin harjoituksia](https://www.w3schools.com/php/php_ref_dom.asp)
-- [Stack Overflowin ohjeita HTML-analyysin käyttöön](https://stackoverflow.com/questions/tagged/html-parsing?sort=votes)
+- [W3Schools: PHP SimpleXML -funktio](https://www.w3schools.com/PHP/func_simplexml_load_string.asp)
+- [W3Schools: HTML DOM -esitehtävä](https://www.w3schools.com/js/js_htmldom.asp)
+- [jQuery:n virallinen verkkosivusto](https://jquery.com/)

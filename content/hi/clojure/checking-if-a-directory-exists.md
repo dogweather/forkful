@@ -1,7 +1,7 @@
 ---
-title:                "प्रॉग्रामिंग पर लेख: डायरेक्टरी मौजूद है या नहीं जाँचें"
-html_title:           "Clojure: प्रॉग्रामिंग पर लेख: डायरेक्टरी मौजूद है या नहीं जाँचें"
-simple_title:         "प्रॉग्रामिंग पर लेख: डायरेक्टरी मौजूद है या नहीं जाँचें"
+title:                "डायरेक्टरी मौजूद है या नहीं की जांच"
+html_title:           "Clojure: डायरेक्टरी मौजूद है या नहीं की जांच"
+simple_title:         "डायरेक्टरी मौजूद है या नहीं की जांच"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Files and I/O"
@@ -10,35 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Kyu:
-Yeh article directory ka existent/maujudgi ko check karna kyu important hai, iske pehle mai aapko batana chahta hoon ki hum kya karenge. Agar humare paas koi file ya folder exist karta hai, to hum usme changes ya modifications kar sakte hain. Lekin agar woh directory hi maujud na ho, to hume koi kaam nahi kar sakte. Isliye yeh janna bahut zaroori hai ki directory exist karta hai ya nahi.
+रणनीति जांचें कि क्या निर्देशिका मौजूद है और क्यों करते हैं इसका कारण है कि इस लेख में हम आपको बताएंगे।
 
-## Kaise Kare:
-Jaise ki maine bataya ki directory ki existent ko check karna bahut zaroori hai, ab mai aapko batata hoon ki hum isse kaise kare. Code examples aur sample output ke saath "```Clojure ... ```" code blocks mein coding karene ki koshish karein.
+## क्या और क्यों?
 
-```
-Clojure (mkdir "/path/to/directory")
-```
-Yeh code hume ek new directory create karna sikhta hai. Agar hume kisi specific directory ki existent ko check karna hai, to niche diye gaye code ko follow karein.
+निर्देशिका मौजूद है जैसे जांचना एक रणनीति है जो रेखाएं सुनिश्चित करता है कि एक निर्देशिका क्या संख्या मौजूद है या नहीं। यह प्रोग्रामर्स अपने कोड में शामिल करते हैं क्योंकि यह अपनी सुनिश्चित करता है कि उनका कोड उचित ढंग से काम कर रहा है और निर्देशिका अगर मौजूद नहीं है तो वे उचित तरीके से हांगोउप हो सकते हैं।
 
-```
-Clojure 
-(if (.isDirectory (io/file "/path/to/directory")) true false)
+## पहले यह करें:
+
+आपके कोड में निर्देशिका का अस्तित्व जांचने के लिए निम्नलिखित आसान से है:
+```Clojure
+(defn dir-exists? [dir-path]
+  (clojure.java.io/file dir-path))
 ```
 
-Is code se hum directory ki existent ko check kar sakte hain. Agar directory exist karta hai, to output `true` hoga, warna `false` hoga.
+तो आप उसे उपयोग कर सकते हैं और वह आपको सुनिश्चित करता है कि निर्देशिका मौजूद है या नहीं।
 
-## Deep Dive:
-Directory ki existent ko check karne ke liye hum `io/file` function ka use karte hain. Ye function ek directory (folder) ya file ke path ko lekar naya ek file object banata hai.
+## गहराई खोज
 
-```
-(io/file "/path/to/file")
-```
+यह रणनीति पहले से ही बहुत समय से प्रोग्रामिंग में उपयोग किया जाता है और आम रूप से सबसे अच्छा तरीका है एक दिए हुए डिरेक्टिव के अस्तित्व को जाँचने का। अन्य विकल्पों में, आप एक निर्देशिका में एक खाली निर्देशिका की जांच कर सकते हैं, लेकिन ऐसा करने में आपको कुछ एक्सट्रा कोड को लिखने की जरूरत होती है। इसलिए, रणनीति का उपयोग करना अपनी सरलता के कारण एक बेहतर विकल्प है।
 
-Is code se `file` object banta hai, jise hum phir `isDirectory` method ke saath use kar sakte hain. `isDirectory` method ek boolean value return karta hai, jo bataega ki file object ek directory hai ya nahi.
+## उसे भी देखें:
 
-## See Also:
-Agar aapko Clojure ke aur tutorials aur articles padhne hain, to aap in links par ja sakate hain:
-- [Official Clojure website](https://clojure.org/)
-- [Clojure Docs](https://clojure.org/index)
-- [Learn Clojure in Y minutes](https://learnxinyminutes.com/docs/clojure/)
+- [Official Clojure Documentation](https://clojure.org/reference/java_interop#file)
+- [Simple ways to check if a folder exists in Clojure](https://www.baeldung.com/clojure/check-folder-exists)
+- [Check if a directory exists in Java](https://docs.oracle.com/javase/7/docs/api/java/io/File.html)

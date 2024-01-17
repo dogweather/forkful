@@ -1,7 +1,7 @@
 ---
-title:                "CSV के साथ काम करना"
-html_title:           "Go: CSV के साथ काम करना"
-simple_title:         "CSV के साथ काम करना"
+title:                "सीएसवी के साथ काम करना"
+html_title:           "Go: सीएसवी के साथ काम करना"
+simple_title:         "सीएसवी के साथ काम करना"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Data Formats and Serialization"
@@ -10,110 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+GO में CSV फाइलों के साथ काम करना: एक आसान और महत्वपूर्ण काम
+अगर आप गो (Go) भाषा के प्रोग्रामर हैं तो आपने CSV फाइलों के साथ काम करने का अनुभव ज़रूर होगा। CSV फाइलें आमतौर पर डेटा को संग्रहीत करने और साझा करने के लिए उपयोग की जाती हैं। किसी भी प्रकार के स्प्रेडशीट या डेटा बेस्ड अनुप्रयोगों में, CSV फाइलें भी काफी प्रचलित हैं।
 
-CSV (Comma Separated Values) is a popular format used for storing and exchanging tabular data. If you're working with data, whether it's for data analysis, database management, or any other task, chances are you'll come across CSV files. Learning how to work with CSV in Go can greatly improve your ability to manage and manipulate data efficiently.
+## कैसे करें?
+यदि आपने अभी तक CSV फाइलों के साथ काम नहीं किया है, तो चिंता न करें। गो (Go) भाषा में CSV फाइलों के साथ काम करना काफी आसान है। निम्नलिखित कोड ब्लॉक के माध्यम से आप एक CSV फाइल से डेटा पढ़ सकते हैं और उसे कॉन्सोल पर प्रिंट कर सकते हैं:
 
-## How To
+```Go
+// CSV पैकेज इम्पोर्ट करें
+import "encoding/csv"
 
-Working with CSV in Go is made easy with the built-in "encoding/csv" package. Let's take a look at a simple example of how to read data from a CSV file and display it in the console:
+// डेटा संग्रहित करने के लिए स्लाइस का बनाव  करें
+data := [][]string{{"आईडी", "नाम", "उंचाई"}, {"1", "आकाश", "5.5"}, {"2", "अयुष", "5.8"}}
 
-```
-package main
-
-import (
-	"encoding/csv"
-	"fmt"
-	"os"
-)
-
-func main() {
-
-	// Open the CSV file
-	file, err := os.Open("data.csv")
-	if err != nil {
-		fmt.Println("Error opening file:", err)
-		return
-	}
-
-	// Create a new CSV reader
-	reader := csv.NewReader(file)
-
-	// Read all rows from the CSV file
-	rows, err := reader.ReadAll()
-	if err != nil {
-		fmt.Println("Error while reading file:", err)
-		return
-	}
-
-	// Loop through rows and display data
-	for _, row := range rows {
-		fmt.Println(row)
-	}
+// CSV फाइल खोलें
+file, err := os.Create("data.csv")
+if err != nil {
+  log.Fatal("CSV फाइल खोलने में त्रुटि:", err)
 }
-```
+defer file.Close()
 
-In this code, we first import the "encoding/csv" package, which provides us with the necessary functions to work with CSV files. Then, we open our CSV file and create a new CSV reader. Using the "ReadAll()" function, we can easily read all the rows from the file. Finally, we loop through the rows and display each row in the console.
+// CSV फाइल लिखने के लिए FileWriter का बनाव करें
+writer := csv.NewWriter(file)
 
-Now, let's see how we can write data to a CSV file using Go:
-
-```
-package main
-
-import (
-	"encoding/csv"
-	"fmt"
-	"os"
-)
-
-func main() {
-
-	// Create a new CSV writer
-	file, err := os.Create("new_data.csv")
-	if err != nil {
-		fmt.Println("Error creating file:", err)
-		return
-	}
-
-	writer := csv.NewWriter(file)
-
-	// Write data to the CSV file
-	data := [][]string{
-		{"Name", "Age", "Country"},
-		{"John", "25", "USA"},
-		{"Jane", "30", "Canada"},
-		{"Tom", "22", "UK"},
-	}
-
-	for _, row := range data {
-		err := writer.Write(row)
-		if err != nil {
-			fmt.Println("Error writing row:", err)
-			return
-		}
-	}
-
-	// Flush and close the writer
-	writer.Flush()
-	file.Close()
+// डेटा लिखें
+for _, value := range data {
+  err := writer.Write(value)
+  if err != nil {
+    log.Fatal("CSV फाइल में डेटा लिखने में त्रुटि:", err)
+  }
 }
+writer.Flush()
 ```
+आपका कोड सफलतापूर्वक एक CSV फाइल पर डेटा लिखेगा। उसके बाद, आप नेटवर्क के माध्यम से इसे अन्य प्रोग्रामों या ऐप्स के साथ साझा कर सकते हैं।
 
-We first create a new CSV writer and then use the "Write()" function to write our data to the file. It is important to call the "Flush()" function to ensure all the data is written to the file before closing it.
+## गहराई में जाएं
+CSV, या Comma Separated Values, फाइलें प्रिंट स्क्रीन के लिए डेटा प्रिंट करने के लिए संग्रहीत करने के लिए बनाई गईं। इससे पहले, प्रिंट स्क्रीन का उपयोग अधिकांश कंप्यूटर प्रोग्रामों में डेटा प्रसंस्करण के लिए अधिक सामान्य था। लेकिन आज भी कई अन्य फॉर्मेट, जैसे XML और JSON, डेटा संग्रहीत करने और साझा करने के लिए उपयोग होते हैं।
 
-## Deep Dive
+कुछ अन्य तरीकों से CSV फाइलों के साथ काम करना भी संभव है, जैसे Excel या Google Sheets के साथ इंटरेक्टिव और उपयोगकर्ता अनुकूल फार्मेटों के रूप में। आप इसका अध्ययन कर सकते हैं और अपने आवश्यकताओं के हिसाब से सबसे उपयुक्त तरीका चुन सकते हैं।
 
-The "encoding/csv" package also provides us with additional functionalities for working with CSV files. Some notable ones include:
-
-- Customizing the delimiter (default is comma)
-- Adding headers to the CSV file
-- Reading specific columns instead of all columns
-- Reading and writing to and from a CSV file using struct types
-
-For more information, you can refer to the official documentation of the "encoding/csv" package or check out some of the helpful resources in the "See Also" section below.
-
-## See Also
-
-- Official Documentation: https://golang.org/pkg/encoding/csv/
-- Working with CSV files in Go (tutorial): https://www.sohamkamani.com/golang/working-with-csv-files/
-- CSV file handling in Go (video): https://youtu.be/vruvz_WW0Bc
+CSV पैकेज Go भाषा में ब

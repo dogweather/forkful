@@ -1,7 +1,7 @@
 ---
-title:                "Å bruke regelmessige uttrykk"
-html_title:           "TypeScript: Å bruke regelmessige uttrykk"
-simple_title:         "Å bruke regelmessige uttrykk"
+title:                "Å bruke regulære uttrykk"
+html_title:           "TypeScript: Å bruke regulære uttrykk"
+simple_title:         "Å bruke regulære uttrykk"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -10,40 +10,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hva & Hvorfor?
+Bruk av regulære uttrykk (også kjent som regex) er en måte å søke og manipulere tekst på i programmering. Det er mye brukt av utviklere for å finne og utskifte deler av tekst eller for å validere tekstformater. Regex er en kraftig verktøy som kan gjøre tekstbehandling enklere og mer effektivt.
 
-Det finnes mange gode grunner til å bruke regulære uttrykk (regular expressions) i TypeScript koden din. Først og fremst kan de hjelpe deg med å finne, manipulere og validere tekstbaserte data på en effektiv måte. Dette kan være svært nyttig når du jobber med ting som validering av skjemaer, parsing av filer eller søk i lange dokumenter.
-
-## Hvordan
-
-Bruken av regulære uttrykk i TypeScript er ganske likt som i andre programmeringsspråk. La oss se på noen enkle eksempler og tilhørende output.
+## Hvordan:
+Bruk av regex i TypeScript er enkelt. I følgende eksempel viser vi hvordan vi kan finne alle tall i en tekst og skrive dem ut:
 
 ```TypeScript
-// Matcher en streng som starter med en stor bokstav og inneholder minst ett tall
-const regex = /^[A-Z].*\d+$/;
-
-console.log(regex.test('Hei123')); // Output: true
-console.log(regex.test('Hei')); // Output: false
+let tekst = "Jeg har 3 epler og 5 bananer.";
+let tall = tekst.match(/\d+/g);
+console.log(tall);
 ```
+Output vil være `[ '3', '5' ]` som innebærer at vi har funnet og fanget to tall fra teksten.
 
-Dette uttrykket starter med `/` og slutter med `/`, som er vanlig syntaks for regulære uttrykk. `^` betyr "start of line" mens `$` betyr "end of line". Strengen må altså starte med en stor bokstav og inneholde minst ett tall for å være en match.
+## Dypdykk:
+Regulære uttrykk har eksistert siden 1950-tallet og blir brukt i flere programmeringsspråk. I tillegg til TypeScript, kan du også bruke regex i språk som Python og Perl. Alternativene til regex inkluderer stringmetoder som søking og erstattning, men disse er ikke like kraftige som regex og kan bli mer komplisert når man håndterer komplekse mønstre. Implementeringen av regex i TypeScript er basert på standarden for regulære uttrykk fra ECMAScript.
 
-```TypeScript
-// Erstatter alle tall i en streng med *
-const regex = /\d/g;
-
-console.log('Hei123'.replace(regex, '*')); // Output: Hei***
-```
-
-I dette eksempelet bruker vi funksjonen `replace` til å erstatte alle tall i en streng med `*`. `\d` matcher alle tall og `g` betyr "global", altså alle forekomster i strengen.
-
-## Dypdykk
-
-Det finnes mange forskjellige metoder og funksjoner for å jobbe med regulære uttrykk i TypeScript. Det kan også være lurt å være klar over at noen spesielle tegn, som `.` og `*`, må escapes med `\` for å tolkes som vanlige tegn og ikke som del av selve uttrykket.
-
-En annen ting å være klar over er at regulære uttrykk er case-sensitive, med mindre du bruker flagget `i` for "case-insensitive". Dette kan være spesielt viktig å tenke på ved validering av brukerinput.
-
-## Se også
-
-- [Regulære uttrykk i TypeScript dokumentasjonen](https://www.typescriptlang.org/docs/handbook/regular-expressions.html)
-- [Regular Expression Tester](https://regex101.com/) for å teste og eksperimentere med uttrykk.
+## Se også:
+- [W3Schools tutorial on Regular Expressions in TypeScript (Engelsk)](https://www.w3schools.com/jsref/jsref_obj_regex.asp)
+- [Official TypeScript Documentation - Regular Expressions (Engelsk)](https://www.typescriptlang.org/docs/handbook/regular-expressions.html)
+- [Introduksjon til regulære uttrykk for norske programmerere (Norsk)](https://www.dagensit.no/viewtopic.php?f=16&t=1882)

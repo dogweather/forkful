@@ -10,66 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co to jest i dlaczego?
 
-Pobieranie stron internetowych jest niezbędnym narzędziem w świecie programowania. Dzięki temu możemy automatycznie pobierać dane, analizować je i wykorzystywać w naszych projektach.
+Pobieranie stron internetowych to proces, w którym program pobiera zawartość strony internetowej z serwera internetowego i zapisuje ją w formie pliku na lokalnym urządzeniu komputerowym. Programiści często wykonują ten proces w celu przetwarzania danych lub wykorzystania ich do dalszych działań.
 
-## Jak to zrobić
+## Jak to zrobić:
 
-Aby pobrać stronę internetową w Java, musimy użyć klasy `URL`. Najpierw musimy ją zaimportować:
-
-```Java
+```java
 import java.net.URL;
-```
+import java.io.BufferedInputStream;
+import java.io.FileOutputStream;
 
-Następnie, tworzymy nowy obiekt `URL` podając jako argument adres URL strony, którą chcemy pobrać:
-
-```Java
-URL url = new URL("https://example.com");
-```
-
-Teraz musimy utworzyć połączenie z tą stroną, używając metody `openConnection()`:
-
-```Java
-URLConnection connection = url.openConnection();
-```
-
-Aby pobrać zawartość strony, musimy użyć obiektu `InputStream` oraz metody `openStream()`:
-
-```Java
-InputStream stream = connection.getInputStream();
-```
-
-Mając już dostęp do strumienia danych, możemy je odczytywać. Przykładowo, możemy wyświetlić zawartość strony w konsoli:
-
-```Java
-int data = stream.read();
-while(data != -1) { // dopóki nie będzie koniec strumienia
-    System.out.print((char) data); // wyświetlamy kolejne znaki
-    data = stream.read(); // wczytujemy kolejne dane
+public class PobierzStrone {
+    public static void main(String[] args) throws Exception {
+        // utwórz obiekt URL do strony internetowej
+        URL url = new URL("https://www.example.com");
+        // otwórz połączenie z serwerem i pobierz dane
+        BufferedInputStream bis = new BufferedInputStream(url.openStream());
+        // zapisz pobrane dane do pliku
+        FileOutputStream fis = new FileOutputStream("strona.html");
+        byte[] buffer = new byte[1024];
+        int count;
+        while ((count = bis.read(buffer)) != -1) {
+            fis.write(buffer, 0, count);
+        }
+        // zamknij strumienie danych
+        fis.close();
+        bis.close();
+        // poinformuj o poprawnym pobraniu strony
+        System.out.println("Strona została pobrana pomyślnie!");
+    }
 }
 ```
 
-Kod powyżej odczytuje plik po bajcie i wyświetla go w konsoli, aż do osiągnięcia końca strumienia (oznaczanego przez wartość -1). Możemy także odczytywać dane w inny sposób, na przykład wiersz po wierszu:
+## Głębszy zanurzenie:
 
-```Java
-BufferedReader reader = new BufferedReader(new InputStreamReader(stream));
-String line = reader.readLine(); // czytamy pierwszy wiersz
-while(line != null) { // dopóki nie będziemy mieć końca pliku
-    System.out.println(line); // wypisujemy wiersz na konsoli
-    line = reader.readLine(); // czytamy kolejny wiersz
-}
-```
+Pobieranie stron internetowych było wykorzystywane od dawna w celu tworzenia katalogów stron, wyszukiwarek internetowych i innych narzędzi do przetwarzania danych z internetu. Alternatywnie, można również użyć biblioteki JSoup lub HttpClient do pobrania stron internetowych z wykorzystaniem metod HTTP. Implementacja pobierania stron internetowych może wymagać również uwierzytelniania lub ustawienia nagłówków żądania w przypadku stron wymagających uwierzytelnienia lub konkretnych ustawień.
 
-## Dogłębna analiza
+## Zobacz także:
 
-Powyższe przykłady pokazują sposób prosty na pobieranie stron internetowych, ale wciąż istnieją pewne problemy związane z tą metodą. Po pierwsze, nie wszystkie strony mogą być pobierane w ten sam sposób - mogą one wymagać ustawienia nagłówków lub autoryzacji. Po drugie, nie wszystkie strony są statyczne - niektóre używają JavaScriptu do generowania zawartości w przeglądarce, więc nie da się jej pobrać w ten sam sposób.
-
-Istnieją różne biblioteki do pobierania stron internetowych w Java, takie jak JSoup czy HttpComponents. Poprzez wykorzystanie takiej biblioteki, upraszczamy proces pobierania stron i nie musimy przejmować się takimi problemami jak wyżej wymienione.
-
-## Zobacz też
-
-- [Java.net.URL](https://docs.oracle.com/javase/10/docs/api/java/net/URL.html)
-- [Java.net.URLConnection](https://docs.oracle.com/javase/10/docs/api/java/net/URLConnection.html)
-- [JSoup](https://jsoup.org/)
-- [HttpComponents](https://hc.apache.org/index.html)
+- [Biblioteka JSoup](https://jsoup.org/)
+- [Apache HttpClient](http://hc.apache.org/httpcomponents-client-ga/)
+- [Pobieranie stron internetowych w Javie przy użyciu biblioteki JSoup](https://www.baeldung.com/java-httprequest)

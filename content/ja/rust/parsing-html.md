@@ -1,7 +1,7 @@
 ---
-title:                "htmlの解析"
-html_title:           "Rust: htmlの解析"
-simple_title:         "htmlの解析"
+title:                "HTMLを解析する"
+html_title:           "Rust: HTMLを解析する"
+simple_title:         "HTMLを解析する"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "HTML and the Web"
@@ -10,42 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+## どうやってHTMLをパースするの？
 
-HTMLを解析することが重要なのでしょうか？それは、現代のWeb開発においてHTMLは不可欠な役割を果たしており、Webサイトやアプリケーションのコンテンツを効率的に表示するために必要な情報を含んでいるからです。しかし、そのままではHTMLは読みにくく、理解しづらいため、パース（解析）してデータを取得することが必要になります。
+パースとは、コンピューターが人間が読める形式（テキスト）から、コンピューターが理解しやすい形式（データ構造）に変換することです。HTMLをパースすることは、HTMLドキュメントを構成するタグや属性などの構造を解析し、プログラムがその情報を利用できるようにすることを意味します。プログラマーがHTMLをパースするのは、ウェブアプリケーションやウェブスクレイピングなどの目的で、HTMLからデータを取得したり、処理したりするためです。
 
-## 使い方
+## 方法：
 
-まずはRustでHTMLをパースする方法を学びましょう。以下のコードブロックには、HTMLをパースし、特定の要素を取得する基本的な例があります。
+次のRustコードブロックを見てください。これは、はじめてのHTMLパーサーを作成する方法を示しています。main関数でHTMLドキュメントを読み込み、ループを使用してタグを検索し、そのタグの内容を取得する処理を行います。この例では、h1タグの中身をコンソールに出力します。
 
 ```Rust
-use select::document::Document;
-use select::predicate::Name;
+fn main() {
+    let html = "<html><head><title>My Page</title></head><body><h1>Hello World!</h1></body></html>"; // HTMLドキュメント
 
-let html = r#"<div class="container">
-    <h1>Hello Rust</h1>
-    <p>Welcome to my article!</p>
-</div>
-"#;
-let document = Document::from(html);
+    let mut inside_h1 = false; // h1タグの中身を読み込むかどうかのフラグ
 
-for element in document.find(Name("h1")) {
-    println!("Heading: {}", element.text());
+    for c in html.chars() {
+        if inside_h1 {
+            if c == '>' {
+                inside_h1 = false;
+            } else {
+                print!("{}", c); // h1タグの中身を出力
+            }
+        } else {
+            if c == '<' {
+                inside_h1 = true;
+            }
+        }
+    }
 }
-
-// Output: Heading: Hello Rust
 ```
 
-この例では、HTMLを`Document`という型に変換して、`find`メソッドと`Name`プレディケートを使用して`h1`タグの要素を検索し、`text`メソッドを使用して要素のテキストを取得しています。このように、Rustのパーサーライブラリを使用することで、HTMLの構造を理解し、必要な要素を取得することが可能になります。
+上記のコードを実行すると、コンソールに「Hello World!」という文字列が出力されるはずです。
 
-## 深堀り
+## 詳細を掘り下げる：
 
-HTMLをパースする方法について詳しく見ていきましょう。RustにはいくつかのHTMLパーサーライブラリがありますが、その中でも人気なのが`html5ever`と`select`です。
+HTMLパーサーは、ウェブブラウザーやウェブコンテンツを作成するために、ウェブの黎明期から使用されてきました。今日では、HTMLパーサーを自作するよりも、既存のライブラリやフレームワークを利用することが一般的です。例えば、Rustで有名なライブラリである「rustc-web」を使えば、HTMLパーサーを自作する必要はありません。
 
-`html5ever`はHTML5の仕様に準拠したパーサーで、非常に高速かつ安定性が高いと評価されています。一方、`select`はCSSセレクターを使用してHTMLを検索するためのライブラリです。これら2つを組み合わせることで、HTMLを簡単にパースし、必要な要素を取得することができます。
+また、HTMLパーサーを作成する際には、RFC 822、RFC 1036、RFC 2822などの仕様書を参照することが推奨されます。これらは、HTMLパーサーの開発者にとって重要な参考資料になるでしょう。
 
-## 関連リンク
+## 関連リンク：
 
-- [Rust公式サイト](https://www.rust-lang.org/)
-- [html5everドキュメント](https://docs.rs/html5ever/0.25.1/html5ever/)
-- [selectドキュメント](https://docs.rs/select/0.5.0/select/)
+- [rustc-web](https://github.com/japaric/rustc-web)
+- [RFC 822](https://tools.ietf.org/html/rfc822)
+- [RFC 1036](https://tools.ietf.org/html/rfc1036)
+- [RFC 2822](https://tools.ietf.org/html/rfc2822)

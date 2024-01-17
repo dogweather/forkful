@@ -1,7 +1,7 @@
 ---
-title:                "Yaml: Työskentely ohjelmointikielen kanssa"
-html_title:           "Gleam: Yaml: Työskentely ohjelmointikielen kanssa"
-simple_title:         "Yaml: Työskentely ohjelmointikielen kanssa"
+title:                "Työskentely yaml:n kanssa"
+html_title:           "Gleam: Työskentely yaml:n kanssa"
+simple_title:         "Työskentely yaml:n kanssa"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Data Formats and Serialization"
@@ -10,81 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+Mikä & miksi?
 
-Yksi tärkeimmistä tekijöistä, jotka tekevät YAML:stä tärkeän, on sen yksinkertaisuus ja helppokäyttöisyys. YAML-tiedostot ovat loistava tapa tallentaa ja jakaa rakenteellisia tietoja.
+Gleam on ohjelmointikieli, joka mahdollistaa YAML-tiedostojen käsittelyn. YAML on eräänlainen tiedostomuoto, joka on suunniteltu ihmisluettavaksi ja helposti käsiteltäväksi myös ohjelmointikielillä. Monet ohjelmoijat käyttävät YAML-tiedostoja, koska ne ovat selkeitä ja helppoja ymmärtää.
 
-## How To
+Kuinka tehdä:
 
-Käyttääksesi YAML:ää kätevästi Gleamissa, tarvitset `gleam-serial` -kirjaston, jota voit asentaa seuraavalla komennolla:
-
-```gleam
-gleam install gleam-serial
-```
-
-Seuraavaksi sinun tulee määrittää kuinka haluat käyttää YAML:ää tietojen tallentamiseen. Voit esimerkiksi luoda rakenteen, joka sisältää merkkijonon, kokonaisluvun ja listan, ja muuntaa sen YAML-muotoon seuraavasti:
-
-```gleam
-import gleam/serial
-
-pub struct Henkilo {
-  nimi: String,
-  ika: Int,
-  harrastukset: List(String),
-}
-
-let mina: Henkilo = Henkilo (
-  nimi: "Matti",
-  ika: 25,
-  harrastukset: ["luistelu", "lukeminen", "sisustaminen"]
-)
-
-let yaml = serial.encode(mina)
-
-gleam/core/format.println(yaml)
-```
-
-Tulostus:
+Gleamilla on helppo lukea ja kirjoittaa YAML-tiedostoja. Voit esimerkiksi luoda uuden YAML-tiedoston ja lisätä siihen haluamasi tiedot käyttämällä ```Gleam.from_yml("tiedoston_nimi.yml")``` komentoa. Voit myös muuntaa YAML-tiedoston Gleam-taulukoksi käyttämällä ```Gleam.to_map(tiedoston_nimi.yml)``` komentoa. Alla on esimerkkejä koodista ja tulostatuloksista:
 
 ```
-nimi: Matti
-ika: 25
-harrastukset:
-  - luistelu
-  - lukeminen
-  - sisustaminen
-```
+Gleam.from_yml("kayttaja.yml")
 
-Voit myös luoda Gleam-tyyppejä suoraan YAML-tiedostosta käyttämällä `decode` -funktiota:
-
-```gleam
-let tulokset = serial.decode[Henkilo](yaml)
-
-gleam/core/format.println(tulokset)
+käyttäjä: "Matti"
+ikä: 30
+sähköposti: "matti@example.com"
 
 ```
 
-Tulostus:
+Tulostettu tulos olisi taulukko, jossa käyttäjän nimi on "Matti", ikä 30 ja sähköpostiosoite "matti@example.com".
 
-```
-Result.Ok(
-  Henkilo(
-    nimi: "Matti",
-    ika: 25,
-    harrastukset: ["luistelu", "lukeminen", "sisustaminen"]
-  )
-)
-```
+Syvemmälle:
 
-## Deep Dive
+YAML on alunperin luotu yhdistämään eri ohjelmointikielten siirtymä- ja tallennusformaattia. YAML-tiedostot ovat yleistymässä, sillä ne ovat ihmisen luettavissa ja helposti ymmärrettävissä. Muiden ohjelmointikielien lisäksi, on olemassa myös muita vaihtoehtoja YAML:lle, kuten XML ja JSON. Gleamin ansiosta voit kuitenkin käsitellä YAML-tiedostoja monimutkaisemmin ja tehokkaammin.
 
-YAML-tiedosto koostuu avaimista ja arvoista, jotka on jaoteltu sisennyksillä. Avaimet ja arvot ovat erotettu kaksoispisteellä (`:`), ja arvot voivat olla joko yksittäinen arvo (esim. merkkijono tai luku) tai lista.
+Lisätietoja:
 
-Kun käytät `decode` -funktiota, määrittele Gleam-tyyppi sen mukaan, millaisen YAML-tiedoston haluat luoda. Jos haluat määritellä hiontalistan, voit käyttää `List(Henkilo)`.
+Voit lukea lisää Gleamista ja YAML-tiedostoista täältä: [Gleamin käsikirja](docs.gleamlang.org), [YAML.org](yaml.org), [XML vs JSON vs YAML](https://www.educba.com/xml-vs-json-vs-yaml/) ja [Osaohjelmointikielten vertailu](https://www.xml.com/pub/a/2004/07/21/json.html).
 
-Gleam-serial tarjoaa myös mahdollisuuden käsitellä virheitä `decode` -funktion kanssa käyttämällä `Result` -tyyppiä. Tämä on erityisen kätevää, jos haluat varmistaa, että YAML-tiedosto on oikein muotoiltu.
-
-## Katso myös
-
-- [YAML-syntaksiopas](https://rollout.io/blog/yaml-tutorial-everything-you-need-get-started/)
-- [Gleam-serialin dokumentaatio](https://github.com/gleam-lang/serial)
+Tämän artikkelin tarkoituksena ei ole olla kattava opas Gleamin UART-kehitykselle, mutta toivomme sen antavan sinulle hyvän lähtökohdan aloittamiseen YAML-tiedostojen käsittelyssä Gleamilla. Onnea matkaan!

@@ -10,47 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché scaricare una pagina web
+Cosa è l'Elixir e perché è utile per scaricare le pagine web
 
-Scaricare una pagina web può essere un'operazione utile in diverse situazioni, ad esempio per l'estrazione di dati o per l'analisi di un sito. Con l'utilizzo di Elixir, questa operazione può essere automatizzata in modo efficace e veloce.
+L'Elixir è un linguaggio di programmazione funzionale open-source che è diventato sempre più popolare negli ultimi anni, grazie alla sua facilità di apprendimento e alla sua flessibilità. Uno dei suoi utilizzi più comuni è il download di pagine web, ovvero il processo di ottenere il contenuto di una pagina da internet. Questa operazione è molto importante per i programmatori perché consente di estrarre informazioni da siti web per svolgere azioni come il web scraping, l'analisi dei dati o il testing.
 
-## Come fare
+Come fare il download di una pagina web utilizzando Elixir
 
-Per iniziare a scaricare una pagina web utilizzando Elixir, è necessario installare e importare la libreria `HTTPoison` nel codice:
+Per fare il download di una pagina web utilizzando Elixir, è possibile utilizzare una libreria esterna chiamata HTTPoison. Questa libreria semplifica il processo di download e gestisce automaticamente alcune funzionalità, come la gestione delle richieste HTTP e degli header. Di seguito un esempio di codice che utilizza HTTPoison per fare il download di una pagina web:
 
-```
-Elixir
-defp deps do
-  [{:httpoison, "~> 1.0"}]
-end
-```
-
-Successivamente, è possibile utilizzare la funzione `HTTPoison.get/2` specificando l'URL della pagina da scaricare e una lista di opzioni. Ad esempio, per scaricare la pagina del sito "google.com" si può utilizzare questo codice:
-
-```
-Elixir
-response = HTTPoison.get("https://google.com", [])
+```Elixir
+url = "https://www.example.com"
+response = HTTPoison.get(url)
+html = response.body
 ```
 
-Il risultato di questa chiamata sarà un'ottima struct contenente i dati della pagina scaricata, come l'header, il body e lo status code.
+In questo esempio, la variabile `url` rappresenta l'indirizzo del sito web che vogliamo scaricare e viene assegnata alla funzione `get` di HTTPoison per ottenere la risposta del server. La variabile `html` conterrà il contenuto HTML della pagina web.
 
-Per facilitare l'utilizzo di questa libreria, è possibile utilizzare anche un wrapper come `HTTPotion` o `HttPoison` che offrono una sintassi più semplice e intuitiva. Ad esempio, con `HTTPotion` il codice per scaricare la pagina di Google diventa semplicemente:
+Approfondimenti su come scaricare le pagine web utilizzando Elixir
 
-```
-Elixir
-response = HTTPotion.get("https://google.com")
-```
+Nel passato, il linguaggio più comune per fare il download delle pagine web era Ruby. Tuttavia, con l'aumento della popolarità di Elixir, molti programmatori hanno iniziato a utilizzare questo linguaggio per il download delle pagine web grazie alla sua scalabilità e alla sua capacità di gestire più richieste in parallelo in modo efficiente.
 
-Inoltre, con queste librerie è possibile specificare ulteriori opzioni per la richiesta, come ad esempio l'utilizzo di proxy o di autenticazione.
+Inoltre, esistono anche altre librerie disponibili per scaricare le pagine web utilizzando Elixir, come ad esempio Tesla o Tesla Async. Queste offrono funzionalità ancora più avanzate per gestire le richieste HTTP e possono essere utilizzate a seconda delle esigenze del progetto.
 
-## Approfondimento
+Per quanto riguarda l'implementazione, il download di una pagina web in Elixir utilizza principalmente la libreria standard `HTTPoison`, che offre delle semplici interfacce per effettuare le richieste HTTP. Inoltre, è possibile utilizzare librerie esterne come Floki per effettuare il parsing del contenuto HTML della pagina scaricata.
 
-Il processo di download di una pagina web non è solo una semplice operazione di scaricamento dei dati, ma è anche influenzato da una serie di aspetti come la gestione degli errori, l'efficienza nel download e la gestione delle richieste concorrenti.
+Vedi anche
 
-Con l'utilizzo di librerie come `HTTPoison`, è possibile gestire efficacemente tutti questi aspetti senza dover scrivere codice ridondante. Inoltre, grazie all'utilizzo di Elixir e della programmazione funzionale, è possibile sfruttare al massimo il paradigma di concorrenza e parallelismo per aumentare le prestazioni del download di una pagina web.
-
-## Vedi anche
-
-- [Documentazione di HTTPoison](https://hexdocs.pm/httpoison/)
-- [Documentazione di HTTPotion](https://hexdocs.pm/httpotion/)
-- [Documentazione di HttPoison](https://hexdocs.pm/hackney/)
+- La documentazione ufficiale di HTTPoison: https://hexdocs.pm/httpoison/
+- Un tutorial su come fare il download di una pagina web utilizzando Elixir: https://pragmaticstudio.com/tutorials/scrape-web-pages-with-elixir
+- L'elenco delle librerie esterne disponibili per il download delle pagine web in Elixir: https://devtalk.com/t/download-of-web-pages/3028

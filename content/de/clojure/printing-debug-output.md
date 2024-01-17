@@ -1,7 +1,7 @@
 ---
-title:                "Ausgabe von Debugging-Daten"
-html_title:           "Clojure: Ausgabe von Debugging-Daten"
-simple_title:         "Ausgabe von Debugging-Daten"
+title:                "Ausgabe von Debugging-Informationen drucken"
+html_title:           "Clojure: Ausgabe von Debugging-Informationen drucken"
+simple_title:         "Ausgabe von Debugging-Informationen drucken"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Testing and Debugging"
@@ -10,75 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+Was ist das & Warum?
+Debug-Ausgaben sind Textnachrichten, die von Programmierern in ihrem Code platziert werden, um bei der Fehlerbehebung und Verfolgung von Programmabläufen zu helfen. Sie können eine nützliche Methode sein, um herauszufinden, was ein Programm zu einem bestimmten Zeitpunkt macht und wo mögliche Fehler auftreten könnten.
 
-Wenn du an einem Clojure Programm arbeitest und Fehlerbeseitigung betreibst, kann das Drucken von Debug Ausgaben sehr hilfreich sein. Es ermöglicht dir, den Programmfluss zu verfolgen und zu verstehen, was genau im Code passiert.
+Wie geht das?
+Es gibt verschiedene Möglichkeiten, Debug-Ausgaben in Clojure zu machen. Eine einfache Möglichkeit ist die Verwendung von ```(println "Debug message")```, um die gewünschte Nachricht auf der Konsole auszugeben. Eine andere Möglichkeit ist die Verwendung von Clojure's integrierter Logging-Bibliothek, ```clojure.tools.logging```, um genauere Steuerung über die Ausgabe zu haben.
 
-## Wie geht man vor?
-
-Um Debug Ausgaben in Clojure zu drucken, kann man die Funktion `println` verwenden. Diese Funktion gibt die übergebenen Argumente in der Konsole aus. Hier ist ein Beispiel:
-
+Ein Beispiel mit println:
 ```Clojure
-(defn foo [x]
-  (println "Der Wert von x ist" x)
-  (+ x 2))
+(defn add [a b]
+  (println "Adding" a "and" b)
+  (+ a b))
 
-(foo 5)
+(add 2 3)
 ```
 
-Die Ausgabe dieses Codes ist:
+Dieses Beispiel wird die Ausgabe ```Adding 2 and 3``` produzieren.
 
-```
-Der Wert von x ist 5
-=> 8
-```
-
-Man kann auch Variablen innerhalb von Debug Ausgaben ausgeben, um ihren aktuellen Wert zu sehen:
-
+Ein Beispiel mit Logging:
 ```Clojure
-(defn bar []
-  (let [x 10]
-    (println "Der Wert von x ist" x)
-    (+ x 5)))
+(require '[clojure.tools.logging :as log])
 
-(bar)
+(defn subtract [a b]
+  (log/debug "Subtracting" a "from" b)
+  (- b a))
+
+(subtract 5 2)
 ```
 
-Die Ausgabe ist:
+Dieses Beispiel wird die Debug-Nachricht ```Subtracting 2 from 5``` produzieren.
 
-```
-Der Wert von x ist 10
-=> 15
-```
+Tiefer tauchen
+Debug-Ausgaben sind eine häufig verwendete Methode, um bei der Entwicklung von Software zu helfen. Früher war es üblich, sich dauerhaft auf Debug-Ausgaben zu verlassen, um Fehler zu finden. In der heutigen Zeit gibt es jedoch leistungsfähigere Tools wie Debugger und Testframeworks, die bei der Fehlerbehebung helfen können. Trotzdem kann es immer noch nützlich sein, Debug-Ausgaben zu machen, um zum Beispiel die Ausführungsreihenfolge von Funktionen zu überprüfen oder zu sehen, welche Werte bestimmte Variablen annehmen.
 
-## Tiefes Eintauchen
+Eine Alternative zum Ausdrucken von Debug-Nachrichten ist das Einrichten eines Debuggers, der es einem ermöglicht, Schritt für Schritt durch den Code zu gehen und Variablenwerte anzuzeigen. Einige Entwickler bevorzugen auch die Verwendung von Clojure's dynamischen Typsystem, um während der Laufzeit Informationen über Variablen zu erhalten.
 
-Es gibt einige Dinge, die man beachten sollte, wenn man Debug Ausgaben in Clojure verwendet. Zuerst ist es wichtig, die `println` Funktion nur für Debug Zwecke zu verwenden, da sie die Lesbarkeit des Codes beeinträchtigen kann.
-
-Eine alternative Möglichkeit, Debug Ausgaben zu drucken, ist die Verwendung von `clojure.pprint/pprint`, welche eine schön formatierte Ausgabe erstellt. Hier ist ein Beispiel:
-
-```Clojure
-(require '[clojure.pprint :refer [pprint]])
-
-(defn baz []
-  (let [x 5
-        y 10]
-    (pprint {:x x :y y})))
-
-(baz)
-```
-
-Die Ausgabe ist:
-
-```
-{:x 5,
- :y 10}
-=> nil
-```
-
-Eine weitere Sache, die man beachten sollte, ist, dass man Debug Ausgaben in Funktionen verwenden sollte, die keine Seiteneffekte haben. Wenn die Funktion Seiteneffekte hat, wie zum Beispiel das Ändern von globalen Variablen, kann dies zu unerwarteten Ergebnissen führen, wenn man Debug Ausgaben verwendet.
-
-## Siehe auch
-
-- [Clojure Dokumentation über Debugging](https://clojure.org/guides/debugging)
-- [Artikel über Debugging in Clojure](https://www.baeldung.com/clojure-debugging)
+Siehe auch
+- Die offizielle Dokumentation zu Clojure's Debugging-Tools: https://clojure.org/guides/tools_logging
+- Eine Einführung in Clojure's dynamisches Typsystem: https://clojure.org/reference/types#dynvars

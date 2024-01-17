@@ -1,7 +1,7 @@
 ---
-title:                "Merkkijonon isoittaminen"
-html_title:           "Java: Merkkijonon isoittaminen"
-simple_title:         "Merkkijonon isoittaminen"
+title:                "Merkitsevä ketju isoilla kirjaimilla"
+html_title:           "Java: Merkitsevä ketju isoilla kirjaimilla"
+simple_title:         "Merkitsevä ketju isoilla kirjaimilla"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Strings"
@@ -10,37 +10,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä & Miksi?
+Stringin isojen kirjainten käyttö tarkoittaa merkkijonon ensimmäisen kirjaimen muuttamista isoksi kirjaimeksi ja loppuosan kirjainten muuttamista pieniksi kirjaimiksi. Tämä tehdään usein ohjelmoinnissa, jotta merkkijonojen ulkoasu olisi yhtenäinen ja paremmin luettavissa.
 
-Joskus ohjelmoijan täytyy muuttaa merkkijonon kirjaimet isolla alkukirjaimella alkaviksi. Tässä artikkelissa näytämme, miten se voidaan tehdä helposti Java-kielellä.
+## Kuinka tehdä:
+Esimerkkikoodi Java-koodilohkoissa näyttää, kuinka muuntaa merkkijono isojen kirjainten käyttöön ja mikä on lopputulos.
+```Java
+// Stringin isojen kirjainten käyttö
+String s = "stringin isojen kirjainten käyttö";
+System.out.println("Alkuperäinen merkkijono: " + s);
+System.out.println("Merkkijono isojen kirjainten käytöllä: " + s.toUpperCase());
 
-## Miten
-
-Käyttäen String-luokan metodia "toUpperCase()", voimme muuttaa merkkijonon kaikki kirjaimet isoiksi. Tämän jälkeen voimme käyttää "substring()" metodia, jotta saadaan alkukirjain isolla mutta loput kirjaimet pienillä. Alla olevassa esimerkissä oletetaan, että annettu merkkijono on "hello world".
-
-```java
-String s = "hello world";
-s = s.toUpperCase();
-s = s.substring(0, 1) + s.substring(1).toLowerCase();
-System.out.println(s); // Tulostaa "Hello world"
+//Mikä on lopputulos:
+Alkuperäinen merkkijono: stringin isojen kirjainten käyttö
+Merkkijono isojen kirjainten käyttö: STRINGIN ISOJEN KIRJAINTEN KÄYTTÖ
 ```
 
-## Syvempää tietoa
+## Syvemmälle:
+Stringien isojen kirjainten käyttö on ollut osa ohjelmointia jo vuosikymmenten ajan. Tietyissä ohjelmointikielissä, kuten C:llä ja BASIC:lla, kirjaimien käsitteleminen tapahtuu manuaalisesti merkkien ASCII-koodien avulla. Jotkin modernit ohjelmointikielet, kuten Python, tarjoavat valmiin funktion merkkijonon isojen kirjainten käyttöön. Java-kielessä tätä tehtävää varten löytyy metodi ```toUpperCase()```.
 
-Java-kielellä on myös muita tapoja muuttaa merkkijonon kirjaimia isolla alkukirjaimella. Voimme esimerkiksi käyttää "split()" ja "join()" metodeja yhdistettynä "toUpperCase()" ja "toLowerCase()" metodeihin. Tämä voisi näyttää seuraavalta:
-
-```java
-String s = "hello world";
-String[] parts = s.split(" ");
-for (int i = 0; i < parts.length; i++) {
-  parts[i] = parts[i].substring(0, 1).toUpperCase() + parts[i].substring(1).toLowerCase();
-}
-s = String.join(" ", parts);
-System.out.println(s); // Tulostaa "Hello World"
-```
-
-## Katso myös
-
-- [String-luokka Java API:ssa](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
-- ["toUppercase()" Java API:ssa](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#toUpperCase--)
-- ["substring()" Java API:ssa](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#substring-int-int-)
+## Katso myös:
+Lisää tietoa merkkijonojen muokkaamisesta ja Java-kielestä saat Java-oppaista ja verkkosivuilta, kuten Stack Overflow ja Oracle.

@@ -1,7 +1,7 @@
 ---
-title:                "Arbeiten mit YAML"
-html_title:           "Ruby: Arbeiten mit YAML"
-simple_title:         "Arbeiten mit YAML"
+title:                "Arbeiten mit yaml"
+html_title:           "Ruby: Arbeiten mit yaml"
+simple_title:         "Arbeiten mit yaml"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Data Formats and Serialization"
@@ -10,35 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Warum
+## Was & Warum?
+YAML ist eine einfache und lesbarere Art, Daten zu speichern und zu übertragen. Programmer verwenden es, um Code- oder Konfigurationsdateien zu erstellen, da es leicht zu lesen und zu bearbeiten ist.
 
-YAML ist eine einfache und intuitive Möglichkeit, Daten in einem formatierten und strukturierten Format darzustellen. Es ist besonders nützlich für die Konfiguration von Programmen oder das Lesen und Schreiben von Dateien. Wenn du in der Ruby-Programmierung tätig bist, ist es hilfreich, YAML zu beherrschen, da es ein häufig genutztes Format ist.
+## Wie?
+Um YAML in Ruby zu verwenden, müssen Sie zuerst das YAML-Modul importieren. Dann können Sie JSON-ähnliche Strukturen erstellen und sie mit der Methode `to_yaml` in ein YAML-Format konvertieren. Umgekehrt können Sie mit `YAML.load` YAML-Dateien in ein Ruby-Objekt umwandeln. Hier ist ein Beispiel:
+```Ruby
+require 'yaml'
 
-# Wie man YAML in Ruby verwendet
+# Creating a YAML file
+hash = { name: "John", age: 30 }
+File.write("person.yml", hash.to_yaml)
 
-```ruby
-require "yaml"
-
-# Daten in YAML-Format speichern
-data = { name: "Max Mustermann", alter: 35, hobbies: ["Lesen", "Reisen"] }
-File.write("daten.yml", data.to_yaml)
-
-# Daten aus YAML-Datei auslesen
-daten = YAML.load(File.read("daten.yml"))
-puts daten[:name]
-# => Max Mustermann
-puts daten[:alter]
-# => 35
-puts daten[:hobbies]
-# => ["Lesen", "Reisen"]
+# Loading YAML file
+person = YAML.load(File.read("person.yml"))
+puts person[:name] # Output: John
 ```
 
-# Tiefer Einblick
+## Tiefer tauchen
+YAML wurde ursprünglich vom japanischen Programmierer Ingy döt Net entwickelt und steht für "YAML Ain't Markup Language". Es ist eine Alternative zu anderen Datenformaten wie XML und JSON und verwendet eine einfache Syntax, die auf Einrückungen basiert. YAML ist auch in anderen Programmiersprachen wie Python und Java beliebt. Für weitere Informationen über die YAML-Syntax und -Funktionen können Sie die offizielle Dokumentation konsultieren.
 
-YAML steht für "YAML Ain't Markup Language" und wurde entwickelt, um eine menschenlesbare Alternative zu XML zu bieten. Ähnlich wie bei JSON, können in YAML Datenstrukturen wie Hashes und Arrays dargestellt werden. Eine Besonderheit von YAML ist die Verwendung von Einrückungen, um die Struktur der Daten zu definieren. Dies macht YAML besonders gut lesbar.
-
-# Siehe auch
-
-- [YAML-Dokumentation auf ruby-doc.org](https://ruby-doc.org/stdlib-2.7.1/libdoc/yaml/rdoc/YAML.html)
-- [YAML-Spezifikation auf yaml.org](https://yaml.org/spec/)
-- [YAML-Tutorial auf SitePoint](https://www.sitepoint.com/yaml-tutorial-beginners-guide/)
+## Siehe auch
+- Offizielle YAML-Dokumentation: https://yaml.org/
+- Einführung in YAML: https://www.codecademy.com/articles/what-is-yaml

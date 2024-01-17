@@ -1,7 +1,7 @@
 ---
-title:                "भविष्य या भूतकाल में एक दिन की गणना"
-html_title:           "Arduino: भविष्य या भूतकाल में एक दिन की गणना"
-simple_title:         "भविष्य या भूतकाल में एक दिन की गणना"
+title:                "Bhavishya ya Bhoot ki Tarikh ka Ganana"
+html_title:           "Arduino: Bhavishya ya Bhoot ki Tarikh ka Ganana"
+simple_title:         "Bhavishya ya Bhoot ki Tarikh ka Ganana"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Dates and Times"
@@ -10,21 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
-अगर आप अपने अर्डुइनो प्रोजेक्ट में एक नए फीचर का आस्वादन करना चाहते हैं जो आपकी प्रोजेक्ट को और उत्थम बना सकता है, तो आप मुख्य तारीख को भविष्य में या भूतकाल में गणना करने का सामर्थ्य हो सकता है। यह आपको अपनी प्रोजेक्ट में अधिक गति और शुद्धता प्रदान करेगा।
+# क्या और क्यों?
+पीछे या आगामी में एक तारीख को गणना करना एक आम कार्य है जो कि प्रोग्रामर इस्तेमाल करते हैं। इसे एक संज्ञात तारीख तक पहुंचने के लिए या एक निश्चित तारीख से पीछे जाने के लिए किया जाता है।
 
-## कैसे करें
-आप अपने अर्डुइनो में तारीख को भविष्य या भूतकाल में गणना करने के लिए एक लंबी से शुरू कर सकते हैं। आपको इसके लिए कुछ मूल परिचय चाहिए होंगे। यदि आपको इसमें कॉन्फ्यूजन हो रही है, तो मैंने कुछ एकसाथ करने का उदाहरण दिया है। जरूरी लाइब्रेरी टेबल ऑफ़ कॉन्‍टेंट्स के साथ प्रस्तुत किया गया है।
+# कैसे करें?
+Arduino के साथ एक तारीख को आगे या पीछे गणना करने के लिए निम्नलिखित कोड का उपयोग कर सकते हैं।
 
-```arduino
-#include <DateTime.h> // अब हमें इसलिए हमें DateTime लाइब्रेरी चाहिए
-extern void printDateTimeNow(  ); // अगर हमें समय मिले तो हम अगले लंबी बात करेंगे
-                                    // जो हम अभी तक देखे हैं।
-int startDay = 1; // जो पर्च्यापी से clear या days करे संस्थापित हैं।
-unsigned long threeDays = 3; // अब इसे बार हरे बनाओ: संस्थापित।
-void turnDateTime(DateTime nertz); // यह अभी हमसे महत्त्व
-                                    // नंदन mainsched समयोजन
-                                    // प्रत्याशित हैं। Linux विभाजक से हम सामग्री संस्थापित करते हैं।
-uint16_t midnightInRange =.350; // जब हम समयोजन करेंगे तो modifyEoy-Day
-                                    // की संस्थापना मुद्दे से नत्र अधिरंणमों का प्रयोग कक्षा दिखावे बार Program
-                                    // की और प्रतिभाशाली
+```
+Arduino या संबंधित कोड
+
+#include <RTClib.h>
+
+DateTime currentDate = DateTime(year, month, day, hours, minutes, seconds);
+DateTime futureDate = currentDate + TimeSpan(days, hours, minutes, seconds);
+DateTime pastDate = currentDate - TimeSpan(days, hours, minutes, seconds);
+
+Serial.print(futureDate.unixtime());
+Serial.print(pastDate.unixtime());
+```
+
+यह आउटपुट निम्नवत होगा:
+
+```
+XXXXXXX
+XXXXXXX
+```
+
+यहां, XXXXXXX तारीख और समय को Unix फॉर्मेट में लिखते हैं।
+
+# गहराई गवाह
+इतिहास की संदर्भ में, प्रोग्रामर्स एक तारीख को गणना करने के लिए अन्य तरीकों पर भी काम कर सकते हैं। यह साधारणतः इस्तेमाल किया जाता है जब आपको प्रोग्राम को एक तारीख या दो तारीखों के बीच अंतर की आवश्यकता हो।
+
+इस काम को करने के लिए, आपको सबसे पहले Arduino को एक RTC (Real Time Clock) शॉल्डर के साथ कनेक्ट करना होगा। RTC शॉल्डर में एक टाइमर होता है जो आपको सही समय और दिनांक की जानकारी देता है। उपयोगकर्ता का स्थानांतरण प्रणाली या समय क्षेत्र के आधार पर, RTC शॉल्डर को डेटा होल्ड संचालित करता है और सक्रिय रखता है।
+
+# अधिक जानकारी के लिए
+आप अधिक जानकारी के लिए निम्न लिंकों पर जा सकते हैं:
+
+- Arduino की आधिकारिक वेबसाइट: https://www.arduino.cc/
+- RTClib लाइब्रेरी: https://github.com/adafruit/RTClib
+- समय को Unix फॉर्मेट में मापना: https://en.wikipedia.org/wiki/Unix_time

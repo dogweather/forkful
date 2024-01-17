@@ -1,7 +1,7 @@
 ---
-title:                "Att hitta längden på en sträng"
-html_title:           "C#: Att hitta längden på en sträng"
-simple_title:         "Att hitta längden på en sträng"
+title:                "Att hitta längden av en sträng"
+html_title:           "C#: Att hitta längden av en sträng"
+simple_title:         "Att hitta längden av en sträng"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Strings"
@@ -10,33 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
+Att hitta längden på en sträng är en grundläggande del av programmering som innebär att mäta antalet tecken i en given sträng. Detta kan vara användbart för att utföra olika manipulationer på strängen eller för att jämföra den med andra strängar. Detta är en viktig färdighet för alla programmerare att ha i sitt verktygsfack.
 
-Att kunna hitta längden på en sträng är en grundläggande färdighet inom programmering och är användbart i många olika sammanhang. Det kan till exempel vara för att kontrollera input från användare eller för att manipulera textsträngar på olika sätt.
-
-## Så här gör du
+## Hur?
+Att hitta längden på en sträng i C# är mycket enkelt, tack vare den inbyggda metoden `Length`. Här är ett exempel på hur du kan använda den:
 
 ```C#
-string myString = "Det här är en sträng";
-
-// Använd metoden Length för att hitta längden på strängen
+string myString = "Hej! Hur mår du?";
 int length = myString.Length;
-
-Console.WriteLine(length); // output: 19
+Console.WriteLine(length);
 ```
+Output: 15
 
-För att hitta längden på en sträng i C# kan vi använda metoden Length som finns tillgänglig för alla strängar. Metoden returnerar antalet tecken i strängen och är ett enkelt sätt att få fram längden på en sträng.
+Som du kan se, returnerar `Length`-metoden antalet tecken i den givna strängen och sparar det i en variabel `length`. Detta värde skrivs sedan ut i konsolen.
 
-## Djupdykning
+## Deep Dive
+Att hitta längden på en sträng kanske verkar som en enkel uppgift, men det är faktiskt en viktig del av programmeringen som har en intressant historisk bakgrund. I äldre språk som C, var det vanligt att man behövde ange längden på en sträng manuellt, vilket innebar att man behövde hålla reda på antalet tecken och se till att det stämde överens vid varje manipulation. Med C# och andra moderna programmeringsspråk är detta inte längre nödvändigt, eftersom `Length`-metoden gör det åt dig.
 
-Det som faktiskt händer bakom kulisserna när vi använder metoden Length är att den tar emot en parameter av typen string och sedan räknar ut antalet tecken genom att iterera över varje enskilt tecken i strängen. Detta kan verka som en enkel uppgift, men det finns vissa saker att tänka på när vi arbetar med strängar och längden på dem.
+Det finns också alternativ till `Length`-metoden, som `Count`-metoden som används på listor och andra samlingar. Detta kan vara användbart om du vill hitta antalet element i en lista istället för tecken i en sträng.
 
-För det första är det viktigt att komma ihåg att längden som returneras av metoden Length inte är samma sak som indexeringen av en sträng. Längden är antalet tecken i strängen medan indexeringen börjar på 0 och går upp till längden minus en. Detta kan orsaka problem om vi inte är medvetna om det, så det är alltid bra att dubbelkolla längden på en sträng innan vi räknar ut vilken karaktär som finns vid ett visst index.
-
-Ett annat viktigt koncept att förstå är att längden på en sträng är dynamisk, vilket innebär att den kan ändras under programmets körningstid. Till exempel, om vi tar bort ett tecken från en sträng, kommer längden att minska. Detta kan påverka vårt program om vi gjort antaganden om längden när vi vill manipulera strängen på något sätt.
+Om du är intresserad av att veta mer om hur `Length`-metoden faktiskt implementeras, kan du titta på C#-källkoden där det är en enkel returnering av en intern variabel som håller reda på antalet tecken.
 
 ## Se även
+Om du vill lära dig mer om strängmanipulering och andra grundläggande koncept i C#, kan du kolla in dessa källor:
 
-- [Microsofts officiella dokumentation om metoden Length](https://docs.microsoft.com/en-us/dotnet/api/system.string.length?view=netcore-3.1)
-- [En tutorial om strängar i C#](https://www.c-sharpcorner.com/UploadFile/ff2f08/strings-in-C-Sharp/)
-- [C# for Beginners: Learn by Coding in C# (Udemy course)](https://www.udemy.com/course/c-sharp-tutorial-for-beginners/)
+- Dokumentationen för `Length`-metoden: https://docs.microsoft.com/en-us/dotnet/api/system.string.length
+
+- En tutorial om strängmanipulering i C#: https://www.tutorialspoint.com/csharp/csharp_strings.htm
+
+- Officiella C#-dokumentationen: https://docs.microsoft.com/en-us/dotnet/csharp/

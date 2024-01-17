@@ -1,7 +1,7 @@
 ---
-title:                "Concatenando strings"
-html_title:           "Bash: Concatenando strings"
-simple_title:         "Concatenando strings"
+title:                "Criando sequências de caracteres"
+html_title:           "Bash: Criando sequências de caracteres"
+simple_title:         "Criando sequências de caracteres"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Strings"
@@ -10,32 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
-Concatenar strings é uma tarefa comum em programação e pode ser útil para juntar diferentes textos e variáveis em uma única string. Isso pode ser útil em várias situações, como imprimir mensagens personalizadas, criar nomes de arquivos ou URLs dinamicamente, entre outras.
+## O que & Porquê?
 
-## Como Fazer
-```Bash
-# Criando uma string a partir de variáveis
-nome="João"
+Concatenar strings é o processo de combinar duas ou mais strings em uma única string. Programadores fazem isso para criar strings maiores e mais complexas que podem ser usadas em seus programas. Isso pode ser útil para criar mensagens de saída personalizadas, criar nomes de arquivos dinâmicos ou até mesmo formar URLs.
+
+## Como fazer:
+
+Para concatenar strings em Bash, basta usar o operador de concatenação ```$``` entre as strings que deseja combinar. Aqui está um exemplo:
+
+```
+nome="Maria"
 sobrenome="Silva"
-mensagem="Olá, $nome $sobrenome, bem-vindo!"
-echo $mensagem
-# Saída: Olá, João Silva, bem-vindo!
-
-# Concatenando strings manualmente
-string1="Python"
-string2="Bash"
-concatenada=$string1$string2
-echo $concatenada
-# Saída: PythonBash
-
-# Utilizando o comando `cat` para juntar strings de arquivos
-cat arquivo1.txt arquivo2.txt > concatenado.txt
+nome_completo="$nome $sobrenome"
+echo "Meu nome completo é $nome_completo."
 ```
 
-## Mergulho Profundo
-Em Bash, existem várias maneiras de concatenar strings, como mostrado nos exemplos acima. Além disso, é possível utilizar o operador de concatenação `+=` para adicionar mais strings a uma variável já existente. Também é importante notar que a ordem em que as strings são concatenadas pode afetar o resultado final. Outra dica é utilizar aspas duplas `"` ao invés de aspas simples `'` para que as variáveis dentro da string sejam expandidas.
+Isso irá gerar a seguinte saída:
 
-## Veja Também
-- [Documentação do Bash](https://www.gnu.org/software/bash/)
-- [Guia de Referência Rápida do Bash](https://shellmagic.xyz/)
+```
+Meu nome completo é Maria Silva.
+```
+
+## Mergulho profundo:
+
+Concatenar strings em Bash é uma funcionalidade básica e útil, mas também pode ser feito de outras maneiras. Por exemplo, você também pode usar o comando ```cat``` para combinar o conteúdo de arquivos em uma única string. Além disso, é possível usar o operador de concatenação ```+``` se estiver usando a linguagem de script do Bash.
+
+Para implementar a concatenação de strings em seu código Bash, é importante lembrar que é preciso usar o operador ```$``` e também inserir as strings entre aspas duplas para que sejam interpretadas corretamente.
+
+## Veja também:
+
+- [The Linux Command Line: Concatenating Strings in Bash](http://www.linuxjournal.com/content/concatenating-strings-bash)
+- [Stack Overflow: Concatenate string in Bash](https://stackoverflow.com/questions/4181703/how-to-concatenate-string-variables-in-bash)

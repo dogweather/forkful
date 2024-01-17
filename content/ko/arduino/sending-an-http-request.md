@@ -10,54 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-서울 환영합니다! 오늘은 아두이노로 HTTP 요청을 보내는 방법에 대해 알아보겠습니다. 아두이노를 사용하여 HTTP 요청을 보내는 것은 인터넷을 통해 다른 장치나 서비스와 통신하는 데 유용합니다. 자, 그래서 왜 HTTP 요청을 보내야 할까요?
+## 무엇이고 왜?
 
-## 왜?
+HTTP 요청을 보내는 것은 인터넷을 통해 다른 컴퓨터나 서버에 데이터를 요청하는 것을 말합니다. 프로그래머들은 주로 웹 서비스나 API와 연동하기 위해서 이 작업을 수행합니다.
 
-아두이노로 HTTP 요청을 보내는 것은 다양한 서비스나 장치와 통신하기 위해서입니다. 예를 들어, 온도나 습도를 측정하는 센서를 이용하여 해당 데이터를 웹서버에 업로드하고 다른 장치에서 이를 활용할 수 있습니다. 또는 인터넷으로 제어 가능한 장치를 만들 때, 웹서버에서 HTTP 요청을 보내면 해당 장치를 제어할 수 있습니다. 아두이노로 HTTP 요청을 보내는 것은이와 같은 다양한 용도로 사용될 수 있습니다.
+## 어떻게:
 
-## 어떻게?
-
-아두이노에서 HTTP 요청을 보내기 위해서는 Wi-Fi 모듈이나 이더넷 쉴드와 같은 인터넷 연결 모듈이 필요합니다. 이 모듈을 사용하여 인터넷에 연결한 후, 아래 코드를 이용하여 HTTP 요청을 보낼 수 있습니다.
-
-```Arduino
-#include <WiFi.h> // Wi-Fi 모듈 사용을 위한 라이브러리 불러오기
-
-char ssid[] = "Wifi 이름"; // Wi-Fi 이름
-char pass[] = "비밀번호"; // Wi-Fi 비밀번호
-char server[] = "웹서버 주소"; // HTTP 요청을 보낼 웹서버 주소
-
-void setup() {
-    Serial.begin(9600); // 시리얼 모니터를 사용하기 위한 설정
-    WiFi.begin(ssid, pass); // Wi-Fi 연결 시작
-    while (WiFi.status() != WL_CONNECTED) { // Wi-Fi 연결이 완료될 때까지 대기
-        delay(500);
-        Serial.print(".");
-    }
-    Serial.println("Connected to WiFi!"); // Wi-Fi 연결이 완료되면 메시지 출력
+```
+ArduinoClient client;
+int port = 80;
+if (client.connect("www.example.com", port)) {
+  client.println("GET /index.html HTTP/1.1");
+  client.println("Host: www.example.com");
+  client.println();
 }
-
-void loop() {
-    if (WiFi.status() == WL_CONNECTED) { // Wi-Fi 연결 상태를 확인
-        HTTPClient http; // HTTP 요청을 보낼 수 있는 라이브러리 생성
-        http.begin(server); // HTTP 요청을 보낼 웹서버 주소 설정
-        int httpCode = http.GET(); // GET 방식으로 HTTP 요청 보내기
-        
-        if (httpCode > 0) { // HTTP 요청 성공 시
-            String response = http.getString(); // 웹서버의 응답 받아오기
-            Serial.println(httpCode); // HTTP 응답 코드 출력
-            Serial.println(response); // 웹서버 응답 출력
-        }
-        else { // HTTP 요청 실패 시
-            Serial.println("Error on HTTP request"); // 에러 메시지 출력
-        }
-        http.end(); // HTTP 요청 종료
-    }
-    else { // Wi-Fi 연결 실패 시
-        Serial.println("Error on WiFi connection"); // 에러 메시지 출력
-    }
-    delay(60000); // 1분마다 HTTP 요청을 보내도록 대기
+while (client.available()) {
+  char c = client.read();
+  Serial.write(c);
 }
 ```
 
-위 코드는 Wi-Fi 모듈을 사용하여 HTTP 요청을 보내는 예제입니다. `ssid`와 `pass` 변수에 자신의 Wi-Fi 정보를 입력하고, `server` 변수에는 HTTP 요청을 보낼 웹서버의 주소를 입력합니다. 이후 `http.begin()` 메소드를 사용하여 웹서버 주소를 설정하고, `http.GET()` 메소드를 사용하여 `GET` 방식으로 HTTP 요청을 보냅니다. 그리고 HTTP 응답을 받아와 읽어오기 위해 `http.getString()` 메소드를 사용합니다.
+위의 코드는 예시로, www.example.com 에서 index.html 파일을 요청하고, 해당 서버에서 보내는 응답을 아두이노로 받아서 출력합니다.
+
+## 깊게 파고들기:
+
+HTTP 요청은 현재 인터넷에서 가장 일반적으로 사용되는 프로토콜 중 하나입니다. 다른 대안으로는 FTP, SMTP 등이 있습니다. HTTP는 데이터를 요청하고 응답받는 과정을 정확하게 지정한 규약으로, 이를 따르는 서비스나 API는 다양한 시스템에서 연동 가능합니다.
+
+## 관련 자료:
+
+[HTTP 프로토콜 소개](https://www.w3schools.com/js/js_ajax_intro.asp)
+
+[아두이노에서 HTTP 요청 보내기 예시](https://www.arduino.cc/en/Tutorial/HttpClient)
+
+[HTTP와 다른 프로토콜 비교](https://medium.com/@rcdexta/the-difference-between-http-and-other-protocols-51cd0c13e071)

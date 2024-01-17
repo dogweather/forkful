@@ -10,40 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mikä & Miksi?
 
-Temporary-tiedoston luominen on hyödyllinen toiminto ohjelmointia tehtäessä, sillä se mahdollistaa tiedon tallentamisen ja käsittelyn ilman pysyvää muutosta alkuperäisessä tiedostossa. Näin ollen voit kokeilla erilaisia muutoksia ja testata niiden vaikutuksia ennen kuin teet pysyviä muutoksia tiedostoon.
+Luodaan ensin selvyyttä siihen, mitä on väliaikaisen tiedoston luominen. Tässä yhteydessä väliaikaisella tiedostolla tarkoitetaan tiedostoa, joka on luotu väliaikaisesti ohjelman suorituksen aikana, ja se poistetaan automaattisesti lopuksi. Ohjelmoijat tekevät tämän useimmiten silloin, kun he haluavat tallentaa väliaikaisia tietoja muistiin, mutta eivät halua pitää niitä pysyvästi.
 
-## Miten
+## Kuinka tehdä?
 
-Fish Shell tarjoaa kätevän tavan luoda väliaikaisia tiedostoja. Voit käyttää ```mktemp``` komentoa luodaksesi yksilöllisen väliaikaisen tiedoston, joka tallentaa sisältönsä oletusarvoisesti ```/tmp``` hakemistoon.
-
-```
-Fish Shell käyttö: mktemp [-du] [-p hakemisto] [-t sijainti] [malli]
-```
-
-Tässä on esimerkki kuinka voit luoda väliaikaisen tiedoston, tallentaa siihen sisältöä ja lukea sen sisältöä:
+Fish Shellissa väliaikaisen tiedoston luominen on helppoa. Käytä vain seuraavaa komentoa:
 
 ```
-mktemp >> /tmp/tilapainen.txt
-echo "Tämä on väliaikainen tiedosto" >> /tmp/tilapainen.txt
-cat /tmp/tilapainen.txt
+set tmpfile (mktemp)
 ```
 
-Tulostus:
+Tämä luo väliaikaisen tiedoston nimeltä `$tmpfile`. Voit nyt tallentaa siihen haluamiasi tietoja ja käyttää niitä ohjelmassasi. Kun ohjelma on valmis, väliaikainen tiedosto poistetaan automaattisesti.
+
+Voit myös luoda väliaikaisen tiedoston tietyssä kansiossa lisäämällä `--tmpdir` -vaihtoehdon, kuten esimerkissä:
+
 ```
-Tämä on väliaikainen tiedosto
+set tmpfile (mktemp --tmpdir ~/Documents)
 ```
 
-Voit myös määrittää haluamasi tiedoston nimen, käyttämälle esimerkiksi komentoa ```mktemp -t tiedostonimi```.
+Tämä luo väliaikaisen tiedoston nimeltä `~/Documents/tmpfile`.
 
-## Syvenny
+## Syvemmälle sukeltaminen
 
-Fish Shellin ```mktemp```-komento perustuu Unixin ```mktemp```-komentoon ja tarjoaa saman toiminnallisuuden, mutta käyttäjäystävällisemmällä tavalla. Tämän komennon käyttö on hyödyllistä, kun haluat tehdä tilapäisiä muutoksia tiedostoihin ilman vaaraa pysyvien muutosten tekemisestä.
+Historiallinen konteksti: Väliaikaiset tiedostot ovat olleet käytössä jo vuosia ja ovat vakiintunut tapa tallentaa väliaikaisia tietoja. Alkuperäinen UNIX-komentorivi-työkalu on nimeltään `mktemp`.
 
-Tämä komento tukee myös vaihtoehtoja, kuten ```-d``` joka luo hakemiston sijasta tilapäisen tiedoston ja ```-u``` joka varmistaa, että tiedoston nimi on uniikki monissa prosesseissa.
+Vaihtoehtoja: On olemassa myös muita tapoja luoda väliaikaisia tiedostoja kuin `mktemp`, kuten `mkstemp` ja `mkdtemp`. Nämä antavat enemmän hallintaa luotujen tiedostojen nimille ja sijainneille, mutta ovat myös monimutkaisempia käyttää.
+
+Toteutusyksityiskohdat: `mktemp` on käytännössä vain yksinkertainen Bash-scripti, joka käyttää `/dev/urandom` -lähde luodakseen uniikin tiedostonimen.
 
 ## Katso myös
 
-- Man-sivu: ```mktemp(1)```
-- Fish Shellin dokumentaatio: [Creating temp files](https://fishshell.com/docs/3.1/cmds/mktemp.html)
+[Käyttöohjeet Fish Shell-lle](https://fishshell.com/docs/current/)
+
+[sinkronoi.io - Artikkeli Fish Shellistä](https://www.sinkronoi.io/article/fish-shell)
+
+[Tietoa UNIX:ista ja mktemp-komennosta](https://en.wikipedia.org/wiki/Mktemp)

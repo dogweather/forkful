@@ -1,7 +1,7 @@
 ---
-title:                "Leggere un file di testo"
-html_title:           "C: Leggere un file di testo"
-simple_title:         "Leggere un file di testo"
+title:                "Lettura di un file di testo"
+html_title:           "C: Lettura di un file di testo"
+simple_title:         "Lettura di un file di testo"
 programming_language: "C"
 category:             "C"
 tag:                  "Files and I/O"
@@ -10,46 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+## Cosa & Perché?
+Leggere un file di testo è semplicemente il processo di aprire e leggere un file di testo presente sul computer. I programmatori lo fanno principalmente per accedere a dati strutturati in un formato comune e utilizzarli nel proprio codice.
 
-Leggere un file di testo è una delle attività più comuni in programmazione, soprattutto quando si lavora con input proveniente dall'utente o da altri sistemi. Conoscere come leggere un file di testo in C può aiutare a gestire meglio i dati e rendere il codice più efficiente.
-
-## Come
-
-Per leggere un file di testo in C, è necessario utilizzare alcune funzioni della libreria standard, come `fopen`, `fread` e `fclose`. Ecco un esempio di come aprire un file di testo in modalità di lettura e leggerne il contenuto:
+## Come fare:
+Una volta aperto il file, è possibile utilizzare la funzione `fscanf` per leggere i dati uno alla volta e salvare i valori in variabili o array. Ecco un esempio:
 
 ```C
-#include <stdio.h>
-
-int main() {
-    // Dichiarazione di una variabile per il file
-    FILE *fp;
-    // Apertura del file in modalità di lettura
-    fp = fopen("test.txt", "r");
-    // Controllo se il file è stato aperto correttamente
-    if (fp == NULL) {
-        printf("Impossibile aprire il file.");
-        return 1;
-    }
-    // Lettura del file carattere per carattere fino alla fine del file
-    char ch;
-    while ((ch = fgetc(fp)) != EOF) {
-        printf("%c", ch);
-    }
-    // Chiusura del file
-    fclose(fp);
-    return 0;
+FILE *file = fopen("dati.txt", "r"); // "r" indica che il file è aperto in modalità lettura
+if (file == NULL) {
+    printf("Impossibile aprire il file.");
+    return -1;
 }
+
+int numero;
+char carattere;
+
+// Leggi un numero intero e un carattere dalla prima riga del file
+fscanf(file, "%d %c", &numero, &carattere);
+
+// Ora è possibile utilizzare le variabili "numero" e "carattere" nel proprio codice
+
+fclose(file); // Chiude il file per evitare perdite di dati
 ```
 
-In questo esempio, utilizziamo la funzione `fgetc` per leggere il file carattere per carattere fino alla fine del file, rappresentata dal carattere `EOF` (end of file). È importante ricordare di chiudere il file dopo averlo utilizzato, utilizzando la funzione `fclose`.
+Il contenuto del file "dati.txt" potrebbe essere ad esempio:
 
-## Deep Dive
+```
+10 A
+```
+e il risultato dell'esempio sarebbe:
 
-Per leggere un file di testo in modo più efficiente, è possibile utilizzare la funzione `fread`, che legge un blocco di dati dal file invece di un singolo carattere. Questo può essere utile quando si devono leggere grandi quantità di dati da un file, in modo da ridurre il numero di letture dal disco.
+```
+numero = 10
+carattere = 'A'
+```
 
-Oltre alla modalità di lettura, `fopen` offre altre opzioni per aprire un file, come la modalità di scrittura o di append. Inoltre, è possibile utilizzare la funzione `fgets` per leggere una riga intera dal file invece di un singolo carattere.
+## Approfondimento:
+Leggere un file di testo era una delle prime funzioni disponibili nelle prime versioni del linguaggio C, risalenti agli anni '70. Oggigiorno, esistono anche altre modalità di lettura dei dati, come ad esempio l'utilizzo di API per accedere a database o l'utilizzo di protocolli di comunicazione come HTTP.
 
-## Vedi anche
-- Tutorial su file di testo in C: https://www.tutorialspoint.com/cprogramming/c_file_io.htm
-- Documentazione ufficiale su funzioni di lettura file in C: https://en.cppreference.com/w/c/io/fread
+## Vedi anche:
+- La documentazione ufficiale di C per la funzione `fscanf`: https://www.cplusplus.com/reference/cstdio/fscanf/
+- Un esempio di lettura di un file di testo in C++: https://www.geeksforgeeks.org/read-write-file-c/

@@ -1,7 +1,7 @@
 ---
-title:                "Tworzenie pliku tymczasowego"
-html_title:           "Gleam: Tworzenie pliku tymczasowego"
-simple_title:         "Tworzenie pliku tymczasowego"
+title:                "Tworzenie pliku tymczasowego."
+html_title:           "Gleam: Tworzenie pliku tymczasowego."
+simple_title:         "Tworzenie pliku tymczasowego."
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Files and I/O"
@@ -10,38 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i dlaczego?
 
-Jeśli jesteś programistą, pewnie już wiesz, że praca z plikami jest nieodłączną częścią tworzenia oprogramowania. Czasem jednak potrzebujemy dostępu do pliku tylko na chwilę, bez konieczności jego trwałego przechowywania. W tym przypadku korzystamy z tzw. plików tymczasowych, które są idealnym rozwiązaniem dla tego typu potrzeb. W tym artykule opowiemy o tym, jak w języku Gleam stworzyć i korzystać z plików tymczasowych, a także dlaczego warto z nich korzystać.
+Tworzenie tymczasowych plików jest powszechnym zadaniem dla programistów. Polega ono na tworzeniu plików, które są używane tylko przez krótką chwilę i nie są potrzebne dłużej. Programiści często używają tego mechanizmu do przechowywania danych tymczasowych, np. podczas przetwarzania dużych zestawów danych.
 
-## Jak To Zrobić
-
-Stworzenie pliku tymczasowego w języku Gleam jest bardzo proste. Możemy to zrobić przy użyciu modułu `Tempfile`. Poniżej znajduje się przykładowy kod, który stworzy plik tymczasowy i wypisze jego zawartość:
+## Jak to zrobić:
 
 ```Gleam
-import Tempfile
+import gleam/temp
 
-let temp_file = Tempfile.create()
+let temp_file = temp.file(temp.FileOptions{})
 
-IO.write(temp_file, "To jest zawartość pliku tymczasowego!")
-
-let content = IO.read(temp_file)
-
-assert content == "To jest zawartość pliku tymczasowego!"
+IO.print("Nazwa tymczasowego pliku to: {}", temp_file.name)
 ```
 
-W pierwszej linii kodu importujemy moduł `Tempfile`, który zawiera funkcje do pracy z plikami tymczasowymi. Następnie, przy użyciu funkcji `create()` tworzymy plik tymczasowy, który jest automatycznie usuwany po zakończeniu programu. Możemy również użyć funkcji `create_with()` aby określić prefiks nazwy pliku.
+Output:
 
-W drugiej części kodu przekazujemy treść, którą chcemy zapisać do pliku tymczasowego, przy użyciu funkcji `write()`. Następnie, przy użyciu funkcji `read()` odczytujemy zawartość pliku i przypisujemy ją do zmiennej `content`.
+`Nazwa tymczasowego pliku to: rLPT5l.tmp`
 
-Na koniec, przy użyciu funkcji `assert` sprawdzamy, czy zawartość pliku jest taka sama, jaką wcześniej zapisaliśmy.
+## Głębsze wiertła:
 
-## Głębsze Zanurzenie
+Tworzenie tymczasowych plików jest stosunkowo nowym konceptem w programowaniu. Poprzednio programiści musieli ręcznie zarządzać tworzeniem, używaniem i usuwaniem tymczasowych plików. Dzięki bibliotece temp w Gleam tworzenie i zarządzanie tymczasowymi plikami jest znacznie prostsze i bezpieczniejsze.
 
-Pliki tymczasowe są szczególnie przydatne w przypadku pracy z dużymi i skomplikowanymi danymi, takimi jak bazy danych czy pliki graficzne. Poza tym, są również przydatne w testowaniu i debugowaniu aplikacji, ponieważ nie zanieczyszczają naszego projektu stałymi plikami.
+Alternatywą dla tworzenia tymczasowych plików jest przechowywanie danych w pamięci RAM. Jednak ta metoda może być niepraktyczna przy przetwarzaniu dużych zestawów danych, ponieważ zajmuje ona pamięć komputera i może spowodować jej wyczerpanie.
 
-Warto również zwrócić uwagę na fakt, że pliki tymczasowe są tworzone w systemowym katalogu tymczasowym. W systemie Windows jest to zazwyczaj folder `Temp`, a w systemach Unixowych `tmp`. Należy pamiętać, że pliki tymczasowe nie są odporne na awarie systemu i mogą zostać usunięte przez system operacyjny w trakcie działania aplikacji.
+Implementacja tworzenia tymczasowych plików w Gleam jest oparta na standardowej bibliotece języka Erlang. Wykorzystuje ona unikalny identyfikator procesu, aby generować unikalne nazwy dla tworzonych plików.
 
-## Zobacz Również
+## Zobacz także:
 
-Jeśli jesteś zainteresowany dalszą lekturą na temat plików tymczasowych w języku Gleam, polecamy zapoznać się z dokumentacją [modułu Tempfile](https://gleam.run/modules/tempfile/) oraz przeczytać artykuł [Working with temporary files in Gleam](https://rasheduddin.me/working-with-temporary-files-in-gleam/).
+- [Gleam Docs - Temp](https://gleam.run/modules/temp/)
+- [Erlang Docs - temp](http://erlang.org/doc/man/temp.html)

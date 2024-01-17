@@ -10,39 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜?
+## 무엇이고 왜?
+HTML을 파싱하는 것은 웹 페이지에서 제공하는 정보를 읽고 처리하는 작업입니다. 프로그래머들은 HTML 파싱을 통해 보다 효율적이고 유용한 데이터를 추출하고 활용할 수 있기 때문에 이 작업을 수행합니다.
 
-HTML 파싱을 처음 하려면 많은 사람들이 당황할 수 있습니다. 하지만, Fish Shell을 사용하면 이것이 얼마나 쉬운 작업인지 깨닫게 될 것입니다. 이 기술은 깔끔하고 간편하며, 웹 스크래핑 또는 데이터 추출 등의 다양한 작업에 활용할 수 있습니다.
+## 방법:
+`Fish Shell`을 사용해 HTML 파싱을 하는 방법을 소개해드리겠습니다. 아래의 코드 블록을 참고하시면 됩니다.
 
-## 방법
-
-Fish Shell 내에서 HTML 파싱은 매우 간단합니다. 아래의 코드 블록에서 예시 코드와 함께 살펴보겠습니다.
-
-```Fish Shell
-# HTML 파일을 다운로드하는 예시.
-curl -O https://example.com/index.html
-
-# 'pup' 이라는 CLI 도구를 사용하여 원하는 태그의 내용을 추출합니다.
-# 여기서는 'h1' 태그의 내용을 추출하도록 하겠습니다.
-pup 'h1' < index.html
-
-# 결과: "환영합니다!" 
 ```
+fish -c "curl http://example.com | sed -n '/<div class=\"title\">/,/<\/div>/p'"
+```
+위의 예제는 `curl`을 사용하여 원하는 URL에서 HTML 코드를 가져온 후, `sed`를 이용해 `<div>` 태그를 찾아서 해당하는 내용을 출력하는 것입니다.
 
-## 깊이 파고들기
+## 깊이 들어가기:
+HTML 파싱에 대한 역사적인 맥락을 살펴보면, 웹이 발전하면서 실질적인 정보를 추출하기 위해 이를 처리하는 방법이 항상 중요한 역할을 하였습니다. 다양한 언어와 라이브러리가 존재하지만 `Fish Shell`을 사용하여 파싱하는 것은 익숙한 환경에서 효과적인 작업을 할 수 있어 많은 프로그래머들에게 선호됩니다.
 
-Fish Shell에서 HTML 파싱을 할 수 있는 다양한 도구가 있습니다. 우선, 위의 예시에서 사용한 'pup'은 "Parsing HTML at the Command Line" 프로젝트로 유명한 tool입니다. 이 외에도 'hquery'와 'tidy' 등 여러가지 옵션이 있으니 꼭 한 번쯤 찾아보세요.
+또한, HTML 파싱을 위해 사용할 수 있는 다른 대안에는 `Python`의 `Beautiful Soup`이나 `Ruby`의 `Nokogiri` 등이 있습니다.
 
-## 관련 링크
+구현 방식에 대해 알아보면, `Fish Shell`은 이미 설치되어 있는 다양한 Unix 명령어를 이용하므로 파싱을 위해 추가적인 도구나 패키지가 필요하지 않습니다. 간단하게 `sed`나 `awk`와 같은 명령어를 조합하여 파싱을 할 수 있기 때문에 더 유용합니다.
 
-- [Parsing HTML at the Command Line](https://github.com/EricChiang/pup)
-- [hquery - Lightweight HTML Parsing for Shells](https://github.com/npryce/hquery)
-- [tidy - HTML Syntax Checker and Pretty Printer](https://www.html-tidy.org/)
-
-## 참고 자료
-
-이 글에서 소개한 것 외에도 Fish Shell을 활용한 다양한 작업 방법이 있습니다. 자세한 내용은 아래 링크를 참고해보세요.
-
-- [Fish Shell 공식 문서](https://fishshell.com/docs/current/)
-
-그리고 HTML 파싱은 다양한 웹 스크래핑 및 데이터 추출 작업에서 중요한 역할을 합니다. 따라서, 관련 분야에 관심이 있다면 꼭 기초적인 지식을 습득해두시는 것이 좋습니다. 감사합니다.
+## 참고 자료:
+- `Fish Shell` 공식 문서: https://fishshell.com/docs/current/index.html
+- `sed` 공식 문서: https://www.gnu.org/software/sed/manual/html_node/index.html
+- `awk` 공식 문서: https://www.gnu.org/software/gawk/manual/gawk.html
+- `Beautiful Soup` 문서: https://www.crummy.com/software/BeautifulSoup/bs4/doc/
+- `Nokogiri` 문서: https://nokogiri.org/

@@ -10,42 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
+Debugging is a crucial part of programming, where developers track down and fix errors in their code. Printing debug output is a technique used by programmers to display information in the console during runtime, helping them understand the state of their program and locate any potential issues.
 
-Debugging is an essential part of the software development process, and being able to print out debug output provides valuable information for understanding and fixing errors in our code. Even in the era of advanced debugging tools, the humble print statement remains a powerful and often-used tool by developers.
-
-## How To
-
-Printing debug output in Kotlin is straightforward. We can use the `println()` function to print a string to the console. For example:
+## How to:
+To print debug output in Kotlin, we use the ```println()``` function, which stands for "print line". It takes a parameter or multiple parameters enclosed in parentheses and displays their values. Here's an example code:
 
 ```Kotlin
-println("Debugging is important")
-```
-
-This will print the string "Debugging is important" to the console. We can also print out the value of variables by using string interpolation:
-
-```Kotlin
-val num = 10
-println("The value of num is: $num")
-```
-
-This will print out "The value of num is: 10". Additionally, we can also use `print()` instead of `println()` if we don't want to add a new line after the output.
-
-## Deep Dive
-
-In Kotlin, we can use the `debug()` function to print out debug output instead of using `println()`. This function takes in a lambda expression as a parameter and only executes it in debug mode. This means that the code inside the lambda will only run if the app is built in debug mode. This can help improve performance in production builds by removing unnecessary debug output statements.
-
-```Kotlin
-debug {
-    val message = "This will only be printed in debug mode"
-    println(message)
+fun main() {
+    val name = "John"
+    val age = 27
+    println("Name: $name, Age: $age")
 }
 ```
 
-Apart from printing to the console, there are other ways to view debug output in Kotlin. We can use logging libraries like Timber or SLF4J to log debug messages to a file for later analysis. These libraries offer more advanced features for filtering and managing the logged output.
+Output:
+```
+Name: John, Age: 27
+```
 
-## See Also
+## Deep Dive:
+Printing debug output has been a common practice among programmers since the early days of software development. It allows developers to inspect the inner workings of their code, see the values of variables, and trace the flow of execution.
 
-- [Official Kotlin Documentation on Debugging](https://kotlinlang.org/docs/reference/debugging.html)
-- [Debugging tutorial for Kotlin](https://www.raywenderlich.com/5138519-kotlin-debugging-tutorial-for-android) 
-- [Debugging best practices for Android developers](https://medium.com/androiddevelopers/best-practices-for-remote-debugging-70e498e40f7b)
+An alternative to printing debug output is using a debugger tool, which provides a more interactive and in-depth analysis of code. However, printing debug output is still preferred by many developers due to its simplicity and ease of use.
+
+In Kotlin, the ```println()``` function is implemented as an extension function on the ```Any``` type. This means that every type in Kotlin can access the ```println()``` function, making it a versatile tool for printing debug output.
+
+## See Also:
+To learn more about debugging in Kotlin, check out the official documentation on [debugging and testing](https://kotlinlang.org/docs/tutorials/debugging.html).
+
+For more tips on how to effectively debug your code, take a look at this article on [debugging techniques](https://medium.com/@marcopegolotti/8-debugging-techniques-for-efficient-developers-138739e60f7f).
+
+Happy debugging! 🚀

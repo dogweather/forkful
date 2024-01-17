@@ -10,33 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##Por que usar YAML na linguagem Fish?
+## O que é e porquê?
 
-YAML (Yet Another Markup Language) é um formato de dados que é comumente usado para fazer configurações em arquivos de texto simples. Ele possui uma sintaxe amigável e é fácil de aprender, o que o torna uma excelente escolha para ser utilizado na linguagem Fish. Além disso, com a chegada da versão atual do Fish, seu suporte para YAML se tornou mais robusto e prático de ser utilizado.
+Trabalhar com YAML é algo que muitos programadores fazem em seus projetos. Esse formato de dados é bastante utilizado para armazenar e organizar informações em um formato legível para humanos e máquinas. YAML é especialmente útil em projetos de configuração e implantação de software, pois permite que os desenvolvedores definam variáveis e propriedades de forma clara e concisa. 
 
-##Como usar YAML na linguagem Fish
+## Como fazer:
 
-Para utilizar o YAML na linguagem Fish, é necessário ter a versão mais recente do Fish instalada em seu sistema. Em seguida, basta seguir os seguintes passos:
+Para trabalhar com YAML no Fish Shell, é necessário primeiro instalar a extensão `fish-yaml`. Você pode fazer isso usando o gerenciador de pacotes `fisher`. Depois, basta importar o módulo `yaml` em seus scripts e aplicar as funções disponíveis. Aqui está um exemplo básico de como ler um arquivo YAML e imprimir seu conteúdo:
 
-1. Crie um arquivo com a extensão ".yaml" e abra-o com o editor de sua preferência. Por exemplo: `meu_arquivo.yaml`
-
-2. Insira os dados desejados seguindo a sintaxe do YAML, que utiliza espaços para delimitar estruturas (não utilize tabs).
-
-3. Para acessar os dados presentes no arquivo, basta usar o comando `yaml` seguido do caminho do arquivo e o nome do dado desejado. Por exemplo: ```Fish Shell
-yaml meu_arquivo.yaml meu_dado
+```fish
+fisher install jorgebucaran/fish-yaml # instalar a extensão fish-yaml
+source ~/.config/fish/functions/yaml.fish # importar o módulo yaml
+set doc (yaml -l ./config.yaml) # ler o arquivo yaml e armazenar na variável doc
+echo $doc # imprimir o conteúdo do arquivo
 ```
 
-4. Você também pode utilizar o YAML para armazenar variáveis e depois acessá-las em seu script Fish. Para isso, utilize o comando `set -g VAR (yaml (cat meu_arquivo.yaml) meu_dado)`, onde `VAR` é o nome da variável e `meu_dado` é o nome do dado que será atribuído a ela.
+A saída será o conteúdo do arquivo YAML, que pode ser usado para definir variáveis ou executar outras ações em seus scripts.
 
-##Aprofundando-se no YAML
+## Profundidade do Mergulho:
 
-O YAML possui um conjunto de regras e convenções que devem ser seguidas para que a sintaxe seja corretamente interpretada. Existem diversas formas de se estruturar um arquivo YAML, como utilizando listas, dicionários e tags.
+O YAML foi lançado em 2001 como uma maneira simples de representar dados em formato de grafo. Ele foi criado em resposta ao perda de popularidade do formato XML, que era mais verboso e difícil de ler. Além disso, YAML é compatível com várias linguagens de programação, tornando-o uma escolha popular para projetos em equipe. 
 
-Além disso, é possível realizar operações e filtragens nos dados utilizando ferramentas como o `jq`, que auxiliam na manipulação de dados em formato JSON (que é semelhante ao YAML). Com isso, é possível criar scripts Fish mais robustos e dinâmicos.
+Embora o Fish Shell tenha suporte nativo para leitura e escrita de arquivos YAML, também existem outras opções, como os módulos `yaml2l`, `yamlexport`, e `darjeeling`. Cada um tem suas próprias vantagens e desvantagens, então é importante experimentá-los e escolher o que melhor se adapta às suas necessidades.
 
-##Veja também
+Ao trabalhar com YAML no Fish Shell, é importante lembrar que nem todas as funcionalidades disponíveis em outras linguagens de programação serão suportadas. É sempre uma boa prática testar seus scripts e verificar a documentação oficial para garantir que você está usando a sintaxe correta e aproveitando ao máximo as funcionalidades disponíveis.
 
-- [Documentação Oficial do Fish](https://fishshell.com/docs/current/)
-- [Especificação Oficial do YAML](https://yaml.org/spec/)
-- [Projeto Fish no GitHub](https://github.com/fish-shell/fish-shell)
-- [Repositório do `jq` no GitHub](https://github.com/stedolan/jq)
+## Veja também:
+
+- [Site oficial do YAML](https://yaml.org/)
+- [Página do módulo yaml no GitHub](https://github.com/jorgebucaran/fish-yaml)
+- [Documentação oficial do Fish Shell](https://fishshell.com/docs/current/)

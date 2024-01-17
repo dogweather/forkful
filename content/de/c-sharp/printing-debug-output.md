@@ -1,7 +1,7 @@
 ---
-title:                "Ausgabe von Debugging-Ergebnissen"
-html_title:           "C#: Ausgabe von Debugging-Ergebnissen"
-simple_title:         "Ausgabe von Debugging-Ergebnissen"
+title:                "Ausgabe für die Fehlerbehebung drucken"
+html_title:           "C#: Ausgabe für die Fehlerbehebung drucken"
+simple_title:         "Ausgabe für die Fehlerbehebung drucken"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Testing and Debugging"
@@ -10,47 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was & Warum?
+Bevor wir uns mit dem schönen Thema des Debuggens beschäftigen, gibt es einen wichtigen Vorsatz, den du dir merken solltest: Debugging ist der Prozess des "Zeitverschwendens". Ja, du hast richtig gehört. Es ist etwas, das wir Programmierer tun, um Probleme in unserem Code zu finden und zu beheben. Wir tun dies, weil wir wollen, dass unser Code ohne Fehler läuft und unsere Programme reibungslos funktionieren. Aber warte, gibt es nicht bessere Möglichkeiten, Probleme im Code zu lösen? Natürlich gibt es sie, aber Debugging ist immer noch ein wichtiger Teil des Programmierens und hilft uns, bessere Entwickler zu werden.
 
-Es gibt verschiedene Gründe, warum man sich für die Ausgabe von Debug-Informationen im Code interessieren könnte. Einer der Hauptgründe ist, dass es hilft, Probleme im Programm besser zu verstehen und zu debuggen. Auch kann es nützlich sein, um den Ablauf des Codes zu verfolgen und die Korrektheit der Ausführung zu überprüfen.
-
-## Wie es geht
-
-Um Debug-Ausgaben in C# einzubauen, gibt es verschiedene Methoden. Eine simple Möglichkeit ist die Verwendung der `Console.WriteLine()` Methode, um eine Nachricht auf der Konsole auszugeben. Hier ein Beispiel:
+## Wie geht's:
+Um Debugging in C# durchzuführen, gibt es unterschiedliche Ansätze. Der einfachste Weg ist die Verwendung von Debug.WriteLine(), um Text auf der Konsole auszugeben. Dieser Text wird nur angezeigt, wenn das Programm im Debug-Modus läuft. Zum Beispiel:
 
 ```C#
-int num = 5;
-Console.WriteLine("Die Variable num hat den Wert: " + num);
+// Hier wird der Text "Hallo Welt!" in der Konsole ausgegeben.
+Debug.WriteLine("Hallo Welt!");
 ```
 
-Dies würde folgende Ausgabe erzeugen:
-
-```
-Die Variable num hat den Wert: 5
-```
-
-Eine weitere Möglichkeit ist die Verwendung des `Debug` Klassen aus dem `System.Diagnostics` Namespace. Diese bietet verschiedene Methoden, um Debug-Ausgaben zu formatieren und zu verwalten. Hier ein Beispiel:
+Wenn du jedoch mehr Kontrolle über den Debug-Output haben möchtest, kannst du auch die Klasse System.Diagnostics.Debug verwenden. Mit dieser Klasse kannst du nicht nur Text ausgeben, sondern auch Variablenwerte überprüfen und sogar Breakpoints setzen, um den Ablauf deines Codes zu untersuchen.
 
 ```C#
-int num1 = 5;
-int num2 = 8;
-Debug.WriteLine($"Die Summe von {num1} und {num2} ist {num1 + num2}");
+// Hier wird eine Variable mit dem Wert 5 ausgegeben.
+int zahl = 5;
+Debug.Print(zahl);
+
+// Hier wird ein Breakpoint gesetzt, um den Ablauf des Codes anzuhalten.
+// Du kannst dann Schritt für Schritt durch deinen Code gehen und überprüfen, welche Werte deine Variablen haben.
+Debug.WriteLine("Programm startet...");
+
+// Dein Code hier
+
+Debug.WriteLine("Programm beendet...");
 ```
 
-Dies würde folgende Ausgabe erzeugen:
+## Tief einsteigen:
+Debugging existiert schon seit den Anfängen des Programmierens. Früher benutzten Programmierer spezielle Hardware, um Bugs in ihren Programmen zu finden und zu beheben. Heutzutage haben wir viel fortgeschrittenere Tools und Methoden, aber Debugging bleibt ein wichtiger Bestandteil des Programmierens.
 
-```
-Die Summe von 5 und 8 ist 13
-```
+Neben der Verwendung von Debugging-Tools gibt es auch alternative Techniken, um Probleme im Code zu finden, wie zum Beispiel das Schreiben von Unit-Tests oder die Verwendung von Codeüberprüfungen durch andere Entwickler. All diese Methoden können zusammenarbeiten, um unseren Code fehlerfrei zu machen.
 
-## Tiefer Einblick
+Wenn es um die Implementierung von Debugging in C# geht, ist es wichtig zu beachten, dass Debugging-Code normalerweise nur im Debug-Modus ausgeführt wird. Wenn dein Code in einer Produktionsumgebung läuft, werden Debug-Anweisungen einfach ignoriert. Dies ermöglicht es uns, Debugging in unserem Code zu haben, ohne dabei die Performance unseres Programms zu beeinträchtigen.
 
-Es gibt noch viele weitere Möglichkeiten, Debug-Ausgaben in C# zu nutzen. Dazu zählen unter anderem die Verwendung von Logger-Bibliotheken wie NLog oder Log4net, die es ermöglichen, die Ausgaben zu filtern und in verschiedene Protokolldateien oder -kanäle zu schreiben. Auch ist es möglich, eigene Debug-Ausgabefunktionen zu entwickeln, die spezifische Anforderungen erfüllen.
+## Siehe auch:
+Wenn du tiefer in die Welt des Debuggens eintauchen möchtest, gibt es viele nützliche Ressourcen, die du nutzen kannst. Hier sind einige, die dir den Einstieg erleichtern werden:
 
-Generell empfiehlt es sich, Debug-Ausgaben nur in Entwicklungsumgebungen einzubauen und diese für Produktivumgebungen zu deaktivieren, um die Performance des Programms nicht zu beeinträchtigen.
+- [Debugging in C# mit Visual Studio](https://docs.microsoft.com/en-us/visualstudio/debugger/)- eine offizielle Dokumentation von Microsoft, die alles erklärt, was man über das Debuggen in C# wissen muss.
+- [C# Debugging Tutorial](https://www.tutorialsteacher.com/csharp/csharp-debugging)- ein ausführliches Tutorial, das dir Schritt für Schritt zeigt, wie du dein C#-Programm debuggen kannst.
+- [Debugging Tips and Tricks](https://stackify.com/debugging-tips-tricks/) - eine Sammlung von nützlichen Tipps und Tricks zum Debuggen in C#.
 
-## Siehe auch
-
-- [Microsoft Dokumentation zu Debugging in C#](https://docs.microsoft.com/en-us/visualstudio/debugger/debugger-feature-tour?view=vs-2019)
-- [Tutorial: Einführung in Debugging in C#](https://www.tutorialspoint.com/csharp/csharp_debugging.htm)
-- [NLog - eine beliebte Logger-Bibliothek für C#](https://nlog-project.org/)
+Also zögere nicht, Debugging in deinem Code zu verwenden. Es mag für viele wie eine Zeitverschwendung erscheinen, aber es ist besser, Probleme in deinem Code aufzudecken und zu beheben, bevor sie zu größeren Problemen führen. Happy debugging!

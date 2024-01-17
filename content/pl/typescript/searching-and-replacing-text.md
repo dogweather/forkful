@@ -1,7 +1,7 @@
 ---
-title:                "Wyszukiwanie i zastępowanie tekstu"
-html_title:           "TypeScript: Wyszukiwanie i zastępowanie tekstu"
-simple_title:         "Wyszukiwanie i zastępowanie tekstu"
+title:                "Wyszukiwanie i zamienianie tekstu"
+html_title:           "TypeScript: Wyszukiwanie i zamienianie tekstu"
+simple_title:         "Wyszukiwanie i zamienianie tekstu"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -10,62 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co & Dlaczego?
 
-Poszukiwanie i zamiana tekstu jest nieodłączną częścią programowania i może pomóc w szybkim i dokładnym wprowadzaniu zmian w kodzie. W przypadku języka TypeScript, umiejętność wyszukiwania i zamiany tekstu jest szczególnie przydatna ze względu na statyczne typowanie i silne zasady typów.
+Szukanie i zamiana tekstu to jedna z najczęstszych czynności wykonywanych przez programistów. Polega to na znalezieniu konkretnego ciągu znaków w tekście i jego zamianie na inny. Programiści często wykonują te czynności, aby szybko i łatwo zmieniać, poprawiać lub aktualizować kody źródłowe.
 
-## Jak to zrobić
-
-W języku TypeScript, istnieją dwa sposoby na przeprowadzenie wyszukiwania i zamiany tekstu: przy użyciu wbudowanej metody String `replace` lub za pomocą wyrażeń regularnych.
-
-### Użycie `replace`:
-
-Podstawowe użycie metody String `replace` wygląda następująco:
+## Jak to zrobić:
 
 ```TypeScript
-const name = "John";
-const updatedName = name.replace("John", "Jane");
+// Przykład 1:
+let text = "Witaj świecie";
+let newText = text.replace("Witaj", "Hello");
+// Output: "Hello świecie"
 
-console.log(updatedName); // Output: Jane
+// Przykład 2:
+let text2 = "Lorem ipsum dolor sit amet";
+let newText2 = text.replace("sit", "sitting");
+// Output: "Lorem ipsum dolor sitting amet"
 ```
 
-Metoda `replace` przyjmuje dwa argumenty: pierwszy to ciąg znaków lub wyrażenie regularne do wyszukania, a drugi to nowa wartość, która zastąpi znalezione wystąpienie.
+## Głębszy Przegląd
 
-### Użycie wyrażeń regularnych:
+Wyszukiwanie i zamiana tekstu jest jedną z podstawowych operacji edycyjnych, z którą programiści mają do czynienia od początków programowania. Wcześniej była wykonywana ręcznie, ale dziś istnieje wiele narzędzi i funkcji w edytorach kodu, które ułatwiają ten proces. Alternatywą do szukania i zamiany jest użycie wyrażeń regularnych, które są bardziej zaawansowaną metodą manipulacji tekstem. W implementacji tekstowej, ważne jest uwzględnienie obecnej formy, wielkości liter i innych czynników.
 
-Wyrażenia regularne są potężnym narzędziem w wyszukiwaniu i zamianie tekstu. Przy użyciu flagi globalnej (`g`), można przeprowadzić zamianę wszystkich wystąpień zamiast tylko pierwszego.
+## Zobacz również
 
-Przykład użycia z wykorzystaniem wyrażeń regularnych:
-
-```TypeScript
-const string = "There is a cow in the field";
-
-const updatedString = string.replace(/cow/g, "horse");
-
-console.log(updatedString); // Output: There is a horse in the field
-```
-
-W tym przykładzie, wyrażenie regularne `/cow/g` będzie wyszukiwać wszystkie wystąpienia słowa "cow" i zamieni je na "horse".
-
-## Głębsza analiza
-
-Podczas dokładniejszego badania wyszukiwania i zamiany tekstu w języku TypeScript, można zauważyć, że metoda `replace` zwraca nowy ciąg znaków, a oryginalny pozostaje bez zmian. Może to być przydatne w przypadku, gdy trzeba zachować oryginalną wartość, ale także wprowadzić zmiany w nowym ciągu.
-
-Ponadto, w przypadku użycia wyrażeń regularnych, można również użyć grup w celu określenia części tekstu, który ma zostać zachowany w nowym ciągu. Na przykład:
-
-```TypeScript
-// Zamiana daty z formatu MM/DD/YYYY na DD/MM/YYYY
-const dateString = "12/25/2021";
-
-const updatedDateString = dateString.replace(/(\d{2})\/(\d{2})\/(\d{4})/g, "$2/$1/$3");
-
-console.log(updatedDateString); // Output: 25/12/2021
-```
-
-W tym przykładzie, grupy `(\d{2})`, `(\d{2})` oraz `(\d{4})` są użyte do wyodrębnienia odpowiednio miesiąca, dnia i roku, a następnie wykorzystywane są w kolejności `$2/$1/$3` w zamianie ciągu.
-
-## Zobacz także
-
-- [Dokumentacja TypeScript: Metoda String `replace`](https://www.typescriptlang.org/docs/handbook/2/template-literal-types.html#string-replace)
-- [Dokumentacja JavaScript: Wyrażenia regularne](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
-- [Kurs języka TypeScript na Codecademy](https://www.codecademy.com/learn/learn-typescript)
+- [Dokumentacja TypeScript - String Replace](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-1.html#template-literal-types)
+- [Poradnik dla początkujących - Zamienianie tekstu w TypeScript](https://www.digitalocean.com/community/tutorials/typescript-zamienianie-tekstu)

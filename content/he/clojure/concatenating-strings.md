@@ -1,7 +1,7 @@
 ---
-title:                "קישור מחרוזות"
-html_title:           "Clojure: קישור מחרוזות"
-simple_title:         "קישור מחרוזות"
+title:                "מחברים מחרוזות"
+html_title:           "Clojure: מחברים מחרוזות"
+simple_title:         "מחברים מחרוזות"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -10,37 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## למה?
+## מה ולמה?
 
-String Concatenation היא פעולה חשובה ל-code formatting וכתיבת הקוד הברור והקריא. באמצעות חיבור תווים, מתבצעת היכולת להגדיר קבועים דינמיים וליצור תנאים הנבוכים ביותר.
+שמירת מחרוזות היא תהליך שבו ניתן להפעיל מחרוזות כמילים אחת בתוך מחרוזת אחרת. בתור מתכנתים, נשתמש בפעולה זו כדי ליצור מחרוזות חדשות המשלבות מספר מחרוזות קיימות ותוכן נוסף.
 
-## איך לבצע?
+## איך לעשות?
 
-לפניכם מספר דוגמאות קוד כדי להדגים כיצד לבצע String Concatenation ב-Clojure.
-
-```Clojure
-; דוגמה 1
-(def name "יניב")
-(def greeting (str "שלום, " name "!" ))
-(prn greeting) ;output: שלום, יניב!
-
-; דוגמה 2
-(def width 6)
-(def area (str "האזור של הריבוע הוא " width " על " width " =" (* width width)))
-(println area) ;output: האזור של הריבוע הוא 6 על 6 = 36
-
-; דוגמה 3
-(def nums [1 2 3])
-(def joined (apply str nums))
-(prn joined) ;output: 123
+```clojure
+(println (str "שלום " "לכולם!"))
 ```
+פלט: "שלום לכולם!"
 
-## חפירה עמוקה
+```clojure
+(def string1 "אני לומד/ת ")
+(def string2 "Clojure!")
+(println (str string1 string2))
+```
+פלט: "אני לומד/ת Clojure!"
 
-String Concatenation היא פעולה שמשתמשת בקורסורים כדי לחבר תווים יחד לסדרת תווים אחת. ב-Clojure, ניתן להשתמש בפונקציות כמו str, join,  ו-apply כדי לבצע String Concatenation. בנוסף, Clojure תומך בכתיבת פורמטים מתקדמים עבור String Concatenation כדי לאפשר יצירת תבניות דינמיות יותר של סדרות תווים.
+## חקירה מעמיקה
 
-## ראו גם
-
-- [Official Clojure Documentation for String Concatenation](https://clojuredocs.org/clojure.core/str)
-- [A Beginner's Guide to Clojure Programming](https://www.freecodecamp.org/news/a-beginners-guide-to-clojure-programming-7f8f9e0a85f4/)
-- [Mastering Clojure: Strings](https://vvvvalvalval.github.io/posts/clojure-strings.html)
+1. היסטוריה: הפעולה של שמירת מחרוזות הייתה קיימת מהנדס תוכנה ופרופסור רוסמורי נילסן מ-Norwegian Computing Center בשנת 1960.
+2. אלטרנטיבות: י

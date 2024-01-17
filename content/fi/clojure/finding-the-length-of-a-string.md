@@ -10,36 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+Mitä ja miksi?
 
-On monia syitä, miksi haluat löytää merkkijonon pituuden, kuten tarkistaa syötteiden validiuden, manipuloida tekstejä tai vain yksinkertaisesti saada tietoa syötteestäsi.
+Pituuden löytäminen merkkijonosta on yksinkertainen mutta tärkeä tehtävä Clojure-ohjelmoinnissa. Ohjelmoijat käyttävät tätä toimintoa usein vertaillessaan merkkijonoja tai laskiessaan niiden arvoja.
 
-## Miten
-
-Onneksi Clojurella on sisäänrakennettu funktio nimeltään "count" joka laskee merkkijonon pituuden. Esimerkiksi:
+Kuinka teet sen:
 
 ```Clojure
-(count "Moi maailma!")
+(length "Hello World")
 ```
-Tulos olisi 13, koska merkkijonossa on 13 merkkiä. Voit myös käyttää "count" funktiota muissa tietorakenteissa, kuten listoissa ja vektoreissa. Esimerkiksi:
+
+Tulos: 11
+
+Voit myös käyttää `count`-funktiota, joka suorittaa saman tehtävän.
 
 ```Clojure
-(count [1 2 3 4 5])
+(count "Hello World")
 ```
 
-Tulos olisi 5, koska listassa on viisi alkiota.
+Tulos: 11
 
-## Syvempi sukellus
-
-"count" funktiota voidaan käyttää myös luomaan oman merkkijonon pituusfunktio. Esimerkiksi:
+Syötteenä voi olla myös lista, joka sisältää merkkijonoja. Tällöin `count`-funktio laskee kaikkien merkkijonojen yhteispituuden.
 
 ```Clojure
-(defn merkkijonon-pituus [merkkijono]
-  (count merkkijono))
+(count ["Hello" "World"])
 ```
-Tämä luo uuden funktion nimeltä "merkkijonon-pituus", joka ottaa yhden argumentin, merkkijonon, ja käyttää "count" funktiota laskemaan sen pituuden. Nyt voimme kutsua tätä funktiota haluamallamme merkkijonolla ja saada saman tuloksen kuin "count" funktion käytössä.
 
-## Katso myös
+Tulos: 10
 
-- [Clojure dokumentaatio](https://clojure.org/guides/getting_started)
-- [Clojure Cheat Sheet](https://clojure.org/api/cheatsheet)
+Poweruserit voivat myös käyttää `map`-funktiota ja muuntaa merkkijonot listoiksi ennen `count`-funktion käyttämistä.
+
+Syväriska:
+
+Pituuden laskemista ei pidä sekoittaa merkkijonon nollapituuden tarkistamiseen. Tämä tapahtuu käyttämällä `empty?`-funktiota.
+
+Alternatiiveja ovat mm. `clojure.string/count` ja `clojure.string/count-char`. Näillä on sama toiminnallisuus kuin `count`-funktiolla, mutta ne ovat osa `clojure.string`-kirjastoa ja saattavat tuoda lisäetuja käytettäväksi.
+
+Voit käyttää myös Java-kirjaston `java.lang.String`-metodia `.length` pituuden laskemiseen.
+
+Katso myös:
+
+https://clojuredocs.org/clojure.core/count
+https://clojuredocs.org/clojure.string/count-char

@@ -10,39 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-Writing to standard error, also known as stderr, is a common practice in programming. It allows for errors, warnings, and other important messages to be displayed to the user, separate from the regular output of a program. This ensures that the user can easily identify and address any issues that may arise.
+Writing to standard error is a common practice in programming where error messages or debugging information are outputted. This is a way for developers to communicate with the user or other programs during the execution of a script. 
 
-## How To
-
-To write to standard error in Fish Shell, we use the `echo` command with the `-e` flag and redirect the output to `stderr` using `>&2`. Here's an example:
+## How to:
 
 ```Fish Shell
-echo -e "Error: Something went wrong" >&2
+echo "This is a sample error message" >&2
 ```
 
-This command will print the error message "Something went wrong" to the standard error channel, designated as `2` in Fish Shell.
-
-To further customize the message, we can use the `set_color` function to add colors and formatting. For example:
+**Sample Output:**
+```bash
+This is a sample error message
+```
 
 ```Fish Shell
-set_color red
-echo -e "Error: Something went wrong" >&2
+printf "The value of x is %s\n" "$x" >&2
 ```
 
-This will print the error message in red text.
+**Sample Output:**
+```bash
+The value of x is 10
+```
 
-## Deep Dive
+## Deep Dive:
 
-In Fish Shell, stderr is just another output stream, along with stdout (standard output) and stdin (standard input). It can be redirected to a file, just like stdout, using the `>` and `>>` operators.
+Writing to standard error has been a common practice in programming for many years. It allows developers to differentiate between error messages and regular output. This is especially useful when debugging a script or program, as error messages can help identify the source of the issue.
 
-Additionally, Fish Shell allows for merging stderr and stdout into a single output stream using `&>`. This can be useful for storing both regular and error messages in the same logfile.
+An alternative to writing to standard error is writing to a log file. However, this approach requires setting up a log file and constantly checking it for errors. Writing to standard error is a more immediate and convenient way to output error messages.
 
-It's also worth noting that in Fish Shell, error messages are automatically displayed to the user, unlike other shells where they may need to be explicitly printed to the screen using `echo`.
+In implementation, writing to standard error is achieved by using the ">&2" notation after the message, which redirects the output to standard error instead of standard output.
 
-## See Also
+## See Also:
 
-For more information about output streams in Fish Shell, check out the official documentation: 
-- https://fishshell.com/docs/current/tutorial.html#redirecting-streams
-- https://fishshell.com/docs/current/commands.html#echo
+For more information on writing to standard error, you can check out the official fish shell documentation: https://fishshell.com/docs/current/tutorial.html#tut_stderr. Additionally, you can also explore other shell scripting languages such as Bash or Zsh that also support writing to standard error.

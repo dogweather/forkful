@@ -1,7 +1,7 @@
 ---
-title:                "भविष्य या भूत की तारीख की गणना"
-html_title:           "Swift: भविष्य या भूत की तारीख की गणना"
-simple_title:         "भविष्य या भूत की तारीख की गणना"
+title:                "भविष्य या अतीत में तारीख की गणना"
+html_title:           "Swift: भविष्य या अतीत में तारीख की गणना"
+simple_title:         "भविष्य या अतीत में तारीख की गणना"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Dates and Times"
@@ -10,35 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## आखिर क्यों
+## क्या है और क्यों?
+एक तिथि को भविष्य या अतीत में गणना करना यह है कि हम देखते हैं कि एक निश्चित समय के बाद / पहले की तारीख क्या होगी। प्रोग्रामर्स ऐसा इसलिए करते हैं कि वे अपने प्रोग्राम में इस विशेषता को शामिल कर सकें जो कुछ दिनों, हफ्तों या सालों के बाद / पहले कैसे होगा।
 
-अगर आप को लगता है कि आपको भविष्य में किसी तारीख को पता होना है या जानना है कि कितने दिन पहले या बाद कितने दिनों आगे तक तारीख है, तो आपको आज सीखना चाहिए कि स्विफ्ट प्रोग्रामिंग में इसे कैसे करते हैं।
-
-## कैसे करें
-
-अगर आपको किसी विशेष दिन की तारीख को पता करना है, तो मेरे पास कुछ स्विफ्ट कोड उदाहरण है जो आपको इस प्रकार का काम करने में मदद कर सकते हैं:
-
+## कैसे करें:
 ```Swift
-// अगले साल की आज की तारीख को लेना
-let currentDate = Date()
-var dateComponent = DateComponents()
-dateComponent.year = 1
-let nextYear = Calendar.current.date(byAdding: dateComponent, to: currentDate)
+// एक निश्चित तारीख कोांडनोंल करें
+let date = Date()
 
-// पिछले साल की आज की तारीख को लेना
-let previousYear = Calendar.current.date(byAdding: .year, value: -1, to: currentDate)
+// तारीख को एक मास आगे देखना
+let futureDate = Calendar.current.date(byAdding: .month, value: 1, to: date)
 
-// आज से 30 दिन आगे तारीख को लेना
-dateComponent = DateComponents()
-dateComponent.day = 30
-let thirtyDaysFromNow = Calendar.current.date(byAdding: dateComponent, to: currentDate)
+// तारीख को एक साल पहले देखना
+let pastDate = Calendar.current.date(byAdding: .year, value: -1, to: date)
 
-// आज से 30 दिन पहले तारीख को लेना
-let thirtyDaysAgo = Calendar.current.date(byAdding: .day, value: -30, to: currentDate)
+// तारीख को एक हफ्ते आगे देखना
+let futureDate = Calendar.current.date(byAdding: .day, value: 7, to: date)
 ```
 
-इस तरह से आप स्विफ्ट के क्लास और तारीख तथा समय के साथ मिलकर आसानी से भविष्य में या अतीत में तारीख को पता कर सकते हैं।
+## गहराई में खोजें:
+इतिहासी परिवेश, विकल्प और तारीख को भविष्य या अतीत में गणना करने के तरीके के लिए विस्तृत जानकारी।
 
-## डीप डाइव
-
-जब हम स्विफ्ट में तारीख को कैल्कुलेट करते हैं, तो हम अक्सर `Date` और `DateComponents` किंतु क्लास का इस्तेमाल करते हैं। `Date` एक स्पष्ट तारीख औऱ समय को दर्शाते होता है, जबकि `DateComponents` एक निर्दिष्ट तारीख के तत्वों को नया तारीख बनाने के लिए इस्तेमाल होता है। आप `DateComponents` के माध्यम से विभिन्न तारीखीय यूनिट जैसे दिन, महीने,
+## देखें भी:
+जुड़े हुए स्रोतों के लिंक।

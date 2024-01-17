@@ -10,26 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miks
-Miksi joku ylipäätään haluaisi yhdistellä merkkijonoja? On olemassa monia tilanteita, joissa tarvitaan dynaamista sisältöä tai muokattavia viestejä, kuten esimerkiksi verkkosivujen rakentamisessa tai automatisoiduissa viesteissä. Yhdistämällä merkkijonoja, pystyt luomaan joustavia ratkaisuja tällaisiin tarpeisiin.
+## Mikä & Miksi?
+Jonojen yhdistäminen on tapa yhdistää kaksi tai useampaa merkkijonoa yhdeksi. Tämä on hyödyllistä esimerkiksi silloin, kun haluat yhdistää nimet ja sukunimet yhdeksi kokonaisuudeksi. Ohjelmoijat käyttävät jonojen yhdistämistä lähinnä tiedon esittämiseen ja käsittelyyn.
 
-## Näin
-Yhdistäminen tapahtuu Clojuren `.concat`-funktion avulla. Tässä esimerkissä luodaan uusi merkkijono yhdistämällä kolme erillistä merkkijonoa.
-
+## Kuinka tehdä?
 ```Clojure
-(let [string1 "Tämä on "
-      string2 "yksi merkkijono, "
-      string3 "joka yhdistetään"]
-  (str string1 string2 string3))
+(def etunimi "Mikko")
+(def sukunimi "Virtanen")
+(str etunimi " " sukunimi) ; "Mikko Virtanen"
 ```
 
-Tuloksena saadaan merkkijono "Tämä on yksi merkkijono, joka yhdistetään". Huomaa, että `str`-funktio yhdistää automaattisesti annetut arvot merkkijonoiksi.
+Voit myös yhdistää useampia merkkijonoja samassa lauseessa:
 
-## Syvemmälle
-Clojuren merkkijonojen yhdistäminen on tehokasta ja suorituskykyistä. Tämä johtuu siitä, että merkkijonot ovat muuttumattomia tietorakenteita, mikä tarkoittaa sitä, että tallennetun merkkijonon sisältöä ei voida muuttaa. Tämä nopeuttaa ohjelman suoritusta, kun merkkijonoja yhdistellään, sillä ei tarvitse huolehtia mahdollisista muutoksista.
+```Clojure
+(str "Hei " etunimi " " sukunimi "!") ; "Hei Mikko Virtanen!"
+```
 
-Voit myös käyttää `.concat`-funktion sijaan `str`-funktiota, joka yhdistää merkkijonot tehokkaammin ja tarjoaa lisää mahdollisuuksia dynaamisiin ratkaisuihin.
+## Syväsukellus
+Jonojen yhdistäminen on yleinen käytäntö monissa ohjelmointikielissä. Joissakin kielissä käytetään erillisiä operaattoreita, kuten "+" tai "&", kun taas Clojuressa käytetään funktiota "str". Myös muutamat sisäänrakennetut tietotyypit, kuten listat ja vektorit, voidaan yhdistää käyttämällä funktiota "into".
+
+Mikäli haluat yhdistää suuren määrän merkkijonoja, voi olla tehokkaampaa käyttää Clojuressa sisäänrakennettua "StringBuilder" luokkaa.
 
 ## Katso myös
-- [Clojure opetusohjelma](https://clojure.org/guides/learn/syntax)
-- [Clojure merkkijonon toimenpiteet](https://clojuredocs.org/clojure.string/replace)
+Lisää tietoa jonojen yhdistämisestä löydät [Clojure-dokumentaatiosta](https://clojure.org/reference/strings). Voit myös tutustua muihin tapoihin manipuloida merkkijonoja Clojuressa [tästä artikkelista](https://clojurefundamentals.com/10-manipulating-strings-in-clojure/).

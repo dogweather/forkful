@@ -10,75 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
-Go (znany także jako Golang) jest jednym z najpopularniejszych języków programowania obecnie używanych. Jest wykorzystywany do tworzenia szybkich i efektywnych aplikacji internetowych, narzędzi systemowych, a nawet gier. Jedną z zalet Go jest jego wszechstronność i możliwość obsługi różnych formatów danych, w tym YAML. W tym artykule dowiesz się, dlaczego warto poznać Go w kontekście pracy z YAML.
+# Co i Dlaczego?
+Praca z YAML to nic innego jak obsługa pewnego rodzaju formatu danych w programowaniu. Programiści używają go do przechowywania ustrukturyzowanych informacji w plikach, które mogą być łatwo odczytywane przez ludzi i komputery.
 
-## Jak
-Aby rozpocząć pracę z YAML w Go, wystarczy importować odpowiedni pakiet. Następnie możesz użyć funkcji Unmarshal, aby wczytać dane z pliku YAML do struktury w Go lub użyć Marshal do zapisania danych z Go do formatu YAML. Poniżej znajdują się przykłady kodu, które pokazują te operacje w praktyce.
+# Jak to zrobić:
+    ```Go
+    // Zaimportuj pakiet yaml
+    import "gopkg.in/yaml.v2"
 
-```Go
-import (
-    "fmt"
-    "io/ioutil"
+    func main() {
+        // Tworzenie mapy zawierającej przykładowe dane
+        data := map[string]interface{}{
+            "imie": "Anna",
+            "wiek": "27",
+            "hobby": "programowanie",
+        }
 
-    "gopkg.in/yaml.v2"
-)
+        // Kodowanie mapy w formacie YAML
+        output, err := yaml.Marshal(data)
+        if err != nil {
+            panic(err)
+        }
 
-// Struktura danych w Go
-type Person struct {
-    Name string `yaml:"name"`
-    Age int `yaml:"age"`
-}
-
-func main() {
-    // Otwórz plik YAML
-    data, err := ioutil.ReadFile("person.yaml")
-    if err != nil {
-        panic(err)
+        // Wyświetlanie wygenerowanego tekstu YAML
+        fmt.Println(string(output))
     }
+    ```
+    Wynik:
+    ```yaml
+    imie: Anna
+    wiek: 27
+    hobby: programowanie
+    ```
+    
+# Zagłębienie się:
+- YAML (YAML Ain't Markup Language) został stworzony w 2001 roku przez Clarka Evansa, Ingy'ego döt Net i Oren Ben-Kikiego. Jest to bezpieczny, łatwy w czytaniu format danych, który jest często używany w konfiguracji aplikacji i komunikacji między aplikacjami.
+- Alternatywami dla YAML są JSON i XML, jednak YAML jest bardziej czytelny dla człowieka i może łatwiej przetwarzać puste wartości i tablice wielowymiarowe.
+- Biblioteka yaml.v2 jest wbudowana w język Go i udostępnia funkcje do kodowania i dekodowania danych w formacie YAML.
 
-    // Stwórz nową instancję struktury Person i zadeklaruj zmienną do przechowywania danych z pliku YAML
-    var p Person 
-    // Wykorzystaj funkcję Unmarshal do wczytania danych z pliku do struktury Person
-    err = yaml.Unmarshal(data, &p)
-    if err != nil {
-        panic(err)
-    }
-
-    // Wyświetl dane wczytane z pliku YAML
-    fmt.Println("Imię:", p.Name)
-    fmt.Println("Wiek:", p.Age)
-
-    // Stwórz nową instancję struktury Person i przypisz wartości do jej pól
-    john := Person{
-        Name: "John Doe",
-        Age: 35,
-    }
-
-    // Utwórz mapę do przechowywania danych w formacie YAML
-    m := make(map[string]interface{})
-    // Wykorzystaj funkcję Marshal, aby zapisać dane z instancji john do formatu YAML i przypisz do mapy m
-    out, err := yaml.Marshal(&john)
-    if err != nil {
-        panic(err)
-    }
-    // Wyświetl dane w formacie YAML
-    fmt.Println(string(out))
-
-}
-```
-
-Output:
-
-Imię: John Doe
-Wiek: 35
-
-name: John Doe
-age: 35
-
-## Deep Dive
-Go oferuje także wiele innych funkcji związanych z pracą z YAML. Możesz na przykład używać tagów w strukturze danych, aby kontrolować nazwy pól w pliku YAML lub użyć funkcji Encoder i Decoder do bardziej zaawansowanej pracy z formatem YAML. W przypadku większych plików zaleca się także korzystanie z funkcji Decoder zamiast Unmarshal, ponieważ jest ona bardziej wydajna i nie wymaga wczytywania całego pliku na raz. Aby dowiedzieć się więcej o tych funkcjach, warto zapoznać się z dokumentacją biblioteki ``gopkg.in/yaml.v2``.
-
-## Zobacz także
-- Dokumentacja Go: https://golang.org/doc/
-- Biblioteka YAML w Go: https://gopkg.in/yaml.v2
+# Zobacz również:
+- [Dokumentacja pakietu yaml.v2](https://pkg.go.dev/gopkg.in/yaml.v2)
+- [Porównanie formatów YAML, JSON i XML](https://www.edrawsoft.com/comparison-yaml-json-xml.html)
+- [Oficjalna strona YAML](https://yaml.org/)

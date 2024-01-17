@@ -10,40 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+# Générer des nombres aléatoires en Gleam
 
-La génération de nombres aléatoires est une fonctionnalité essentielle pour de nombreux programmes informatiques, en particulier lorsqu'il s'agit de jeux, de simulations ou de tests. Elle permet d'introduire une certaine variabilité dans le comportement du programme, ce qui le rend plus intéressant et plus réaliste pour les utilisateurs.
+## Quoi & Pourquoi?
+La génération de nombres aléatoires est une fonctionnalité importante pour les programmeurs. Cela leur permet de créer des valeurs aléatoires pour différentes applications, telles que des jeux, des simulations ou des tests de logiciels. Cela peut également être utile pour améliorer la sécurité de certaines applications en générant des jetons aléatoires.
 
-## Comment faire
+## Comment faire:
+Pour générer des nombres aléatoires en Gleam, vous pouvez utiliser la fonction `gleam/random.int` qui prend en argument une valeur maximale et renvoie un nombre entier aléatoire compris entre zéro et la valeur maximale spécifiée. Voici un exemple de code:
 
-Pour générer des nombres aléatoires en utilisant le langage de programmation Gleam, vous pouvez utiliser la bibliothèque standard `random` en l'important avec `import random`.
+```Gleam
+import Random
 
-Ensuite, vous pouvez utiliser la fonction `random.int` pour générer un nombre aléatoire entre deux valeurs spécifiées. Par exemple, pour générer un nombre aléatoire entre 1 et 10, vous pouvez utiliser le code suivant :
-
-```
-Gleam import random
-
-let random_number = random.int(1, 10)
-```
-
-Vous pouvez également générer des nombres aléatoires à virgule flottante en utilisant la fonction `random.float`, qui prend en compte une limite supérieure (exclue) en plus de la limite inférieure (incluse). Par exemple :
-
-```
-Gleam import random
-
-let random_float = random.float(0.0, 1.0)
+Random.int(10)
+// Output: 7
 ```
 
-Le code ci-dessus générera un nombre aléatoire compris entre 0.0 inclus et 1.0 exclu.
+Vous pouvez également générer des nombres aléatoires en utilisant la fonction `gleam/random.float` qui renvoie un nombre à virgule aléatoire entre zéro et un. Voici un autre exemple de code:
 
-## Plongée profonde
+```Gleam
+import Random
 
-La génération de nombres aléatoires utilise des algorithmes et des techniques mathématiques complexes pour garantir que les nombres générés sont vraiment aléatoires. Cependant, il est important de noter que les nombres générés par les ordinateurs ne sont jamais complètement aléatoires, mais plutôt pseudo-aléatoires.
+Random.float()
+// Output: 0.4581623889
+```
 
-Pour en savoir plus sur les différents types de génération de nombres aléatoires et sur la façon dont Gleam les implémente, vous pouvez consulter la documentation de la bibliothèque standard sur `random` ainsi que d'autres ressources en ligne telles que des tutoriels et des articles.
+## Plongée en profondeur:
+La génération de nombres aléatoires est un concept qui existe depuis longtemps dans le domaine de l'informatique. Cela remonte aux années 1940, lorsque des ordinateurs ont été utilisés pour simuler des phénomènes aléatoires. Il existe également d'autres alternatives pour générer des valeurs aléatoires en Gleam, telles que l'utilisation de générateurs pseudo-aléatoires avec une graine spécifiée.
 
-## Voir aussi
+Pour implémenter la génération de nombres aléatoires en Gleam, la fonction `gleam/random.int` utilise en réalité une fonction de hachage interne pour créer un nombre aléatoire à partir de la valeur maximale spécifiée. Cela garantit une distribution uniforme des nombres générés.
 
-- Documentation sur la bibliothèque standard `random` : [lien vers la documentation]
-- Tutoriel sur la génération de nombres aléatoires en Gleam : [lien vers le tutoriel]
-- Article sur les différents types de génération de nombres aléatoires : [lien vers l'article]
+## Voir aussi:
+Pour en savoir plus sur la génération de nombres aléatoires en Gleam, vous pouvez consulter la documentation officielle de la bibliothèque standard de Gleam. Vous pouvez également explorer d'autres sujets liés à la programmation en Gleam en visitant leur site web et en parcourant leur communauté en ligne.

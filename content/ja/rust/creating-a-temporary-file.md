@@ -10,44 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
-一時ファイルを作成することに興味がある読者の皆さん、こんにちは！一時ファイルを作成することは、プログラマーにとって非常に役立つことがあります。たとえば、テスト中に一時的なデータを作成することで、コードをテストすることができます。また、一時ファイルを使用して、中間データを保存することもできます。
+## 何となぜ？
+一時ファイルの作成とは、プログラマーがプログラムの中で一時的に使用するためにファイルを作成することです。プログラマーたちは一時ファイルを作成することで、データを一時的に保存し、後で必要になった時に取り出すことができます。
 
-## 作り方
-Rustでは、標準ライブラリに「tempfile」という便利なモジュールが用意されています。以下の例のように、一時ファイルを作成することができます。
-
-
+## 作り方：
 ```Rust
-// tempfileモジュールを使用する
 use std::fs::File;
 use std::io::prelude::*;
-use tempfile::NamedTempFile;
 
-// 一時ファイルを作成し、中身を書き込む
-let mut file = NamedTempFile::new().expect("Failed to create temporary file!");
-write!(file, "Hello, world!").expect("Failed to write to temporary file!");
+fn main() {
+    let mut temp_file = File::create("temp.txt").expect("Unable to create file");
+    write!(temp_file, "This is a temporary file.").expect("Unable to write to file");
+}
+```
+```Rust
+use std::fs::File;
+use std::io::prelude::*;
 
-// 作成した一時ファイルのパスを取得する
-let path = file.path();
-
-// ファイルを開いて中身を読み込む
-let mut contents = String::new();
-File::open(path).expect("Failed to open file!")
-  .read_to_string(&mut contents).expect("Failed to read file!");
-
-println!("{}", contents); // "Hello, world!"が出力されます
+fn main() {
+    let temp_file = File::open("temp.txt").expect("Unable to open file");
+    let mut contents = String::new();
+    temp_file.read_to_string(&mut contents).expect("Unable to read file");
+    println!("{}", contents); // Output: "This is a temporary file."
+}
 ```
 
-## 深堀り
-一時ファイルを作成する際には、いくつかの留意点があります。まず、一時ファイルを作成した後は、明示的に削除する必要があります。作成したファイルはプログラムが終了した後も残り続けるため、不要なディスク使用量を増やさないように注意しましょう。
+## 詳細説明:
+一時ファイルの作成は、コンピューターの歴史が古く、メモリが限られていた時代に開発された手法です。しかし、現代のプログラムでも一時ファイルを使用することにより、実行速度やメモリの使用を最適化することができます。また、一時ファイルを使う代わりに、メモリ上でデータを処理する方法もありますが、一時ファイルの方が可読性や保守性が高いとされています。
 
-また、Rustの「std::path::PathBuf」を使用することで、一時ファイルやディレクトリを安全に扱うことができます。さまざまな操作を行うことで、ファイルの存在確認や削除などを実行することができます。
-
-## 参考リンク
-- [Rust公式: tempfileモジュール](https://doc.rust-lang.org/std/fs/struct.NamedTempFile.html)
-- [Path API - PathBuf](https://doc.rust-lang.org/std/path/struct.PathBuf.html)
-
-## 関連記事
-- [Rustの基本的な文法を習得する](https://qiita.com/iko_soba/items/05610f934c7a6185ed49)
-- [テストで役立つRustの機能まとめ](https://qiita.com/hatoo@github/items/3f79d3f4a004c9181fc0)
-- [パス操作の基礎を学ぶ - Path APIの使い方](https://qiita.com/ritukiii/items/64a748ab8d7b61d2cce3)
+## 関連情報:
+- [Rustのファイル操作](https://doc.rust-lang.org/std/fs/struct.File.html)
+- [一時ファイルの使用例](https://www.cs.rutgers.edu/~pxk/416/notes/c-tutorials/demofile.html)
+- [プログラミングでの一時ファイルの効率的な使い方](http://www.codesynthesis.com/~boris/blog/2010/04/21/temporary-file-management/)

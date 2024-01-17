@@ -10,89 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-Reading a text file is a common task in programming, especially when dealing with large amounts of data. By learning how to read a text file in Python, you can easily access and manipulate the data within it, making your code more efficient and effective.
+Reading a text file in Python is essentially the process of accessing and extracting data from a plain text document. Programmers often do this to either analyze the data or perform further processing on it.
 
-## How To
+## How to:
 
-To read a text file in Python, we will first need to open the file using the built-in `open()` function. This function takes two parameters: the path to the file and the mode in which we want to open the file. In this case, we will use the `"r"` mode, which stands for "read-only".
-
-```Python
-# Opening a file in "r" mode
-file = open("example.txt", "r") 
-```
-
-Next, we can use the `read()` method to read the entire contents of the file and store it in a variable.
-
-```Python
-# Reading the contents of the file
-data = file.read() 
-```
-
-We can also specify the number of characters we want to read using the `read()` method. This is useful when dealing with large files and we only need to process a specific portion of it.
-
-```Python
-# Reading 100 characters from the file
-data = file.read(100) 
-```
-
-After we're done reading the file, we should always close it using the `close()` method to free up system resources.
-
-```Python
-# Closing the file
-file.close() 
-```
-
-To make the code more efficient, we can use the `with` statement. This automatically closes the file once we're done with it.
-
-```Python
-# Using "with" statement to automatically close the file
-with open("example.txt", "r") as file: 
-    data = file.read()
-```
-
-Now, let's create a `example.txt` file with the following contents:
+To read a text file in Python, you can use the built-in `open()` function. Here is a simple example:
 
 ```
-Hello World!
-This is a text file.
+with open('example.txt', 'r') as f:
+    data = f.read()
+    print(data)
 ```
 
-When we run the above code, the `data` variable will contain the contents of the file as a string.
+This code opens a file named `example.txt` in read mode and stores its contents in the `data` variable. The `with` statement ensures that the file is closed automatically after use. Finally, the `print()` function outputs the file's contents to the console.
+
+If you want to read the file line by line, you can use the `readlines()` method instead of `read()`. Here is an example:
 
 ```
-Hello World!
-This is a text file.
+with open('example.txt', 'r') as f:
+    for line in f.readlines():
+        print(line.rstrip())
 ```
 
-## Deep Dive
+This code reads each line from the file and uses the `rstrip()` method to remove any trailing whitespace before printing it.
 
-When reading a text file, it's important to keep in mind the file's encoding. This is the way the characters are encoded and stored in the file. By default, Python uses the system's default encoding. However, we can specify the encoding using the `encoding` parameter in the `open()` function.
+## Deep Dive:
 
-```Python
-# Opening a file with a specific encoding
-file = open("example.txt", "r", encoding="utf-8") 
-```
+Historically, reading text files was an essential part of programming as most data was stored in plain text documents. However, with the rise of more complex data storage formats like databases and XML, reading text files is now not as common.
 
-Another useful method for reading text files is `readlines()`. This method returns a list where each element is a line from the file.
+In Python, there are also other ways to read text files, such as using the `csv` module or the `pandas` library. These alternatives offer additional features and functionality, making it easier to work with specific data formats.
 
-```Python
-# Reading and storing each line as a separate element in a list
-with open("example.txt", "r") as file: 
-    data = file.readlines() 
-```
+When reading a text file in Python, you can also specify the encoding to use. By default, it will use the system's default encoding, but you can specify a different one if needed. The `open()` function also allows for different modes, such as read/write or append, depending on your specific needs.
 
-We can also use a `for` loop to read the file line by line.
+## See Also:
 
-```Python
-# Reading the file line by line using a "for" loop
-with open("example.txt", "r") as file: 
-    for line in file: 
-        print(line) 
-```
-
-## See Also
-
-- [Reading and Writing Files in Python](https://www.geeksforgeeks.org/reading-writing-text-files-python/)
-- [File Input and Output in Python](https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files)
+To learn more about reading text files in Python, you can refer to the official documentation for the `open()` function at https://docs.python.org/3/library/functions.html#open. You can also check out other resources such as the Real Python article on "Reading and Writing Files in Python" at https://realpython.com/read-write-files-python/. Happy coding!

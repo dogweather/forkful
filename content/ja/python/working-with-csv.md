@@ -1,7 +1,7 @@
 ---
-title:                "csv ファイルを操作する"
-html_title:           "Python: csv ファイルを操作する"
-simple_title:         "csv ファイルを操作する"
+title:                "「csvとの作業」"
+html_title:           "Python: 「csvとの作業」"
+simple_title:         "「csvとの作業」"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Data Formats and Serialization"
@@ -10,61 +10,64 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-CSV（Comma-Separated Values）ファイルは、データを簡単に保存し、読み取ることができる形式です。Pythonを使うと、CSVファイルを効率的に処理でき、データ解析の作業がスムーズになります。
+## 概要
 
-## How To
-CSVファイルを読み取るには、Pythonの標準ライブラリである「csv」モジュールを使用します。以下のコード例を参考に、CSVファイルを読み取り、データを出力する方法をご紹介します。
+CSV（Comma Separated Values）とは、コンマで区切られたテキストファイルの形式です。プログラマーがCSVを操作する理由は、データを扱いやすくするためです。これは、スプレッドシートやデータベースなどの多様なデータ形式に変換することができます。
+
+## 方法：
+
+CSVファイルを操作する方法はいくつかありますが、Pythonを使うことで簡単にデータを読み書きすることができます。以下は、CSVファイルを読み込み、データを表示する例です。
 
 ```Python
 import csv
 
-# CSVファイルの読み取り
-with open('data.csv') as csv_file:
-    reader = csv.reader(csv_file, delimiter=',')
-    # 一行ずつデータを読み取り、リストとして保存
+with open('data.csv', 'r') as file:
+    reader = csv.reader(file)
     for row in reader:
         print(row)
 ```
 
-このコードでは、`data.csv`というファイルを読み取り、CSVファイル内のデータを一行ずつ`row`というリストに保存しています。`print()`を使うことで、データをターミナル上に出力することができます。
+実行結果は以下のようになります。
 
-もし、CSVファイル内の特定の列だけを抽出したい場合は、以下のようにコードを書くことができます。
-
-```Python
-# 列の指定
-with open('data.csv') as csv_file:
-    reader = csv.reader(csv_file, delimiter=',')
-    for row in reader:
-        # 2列目のみを抽出
-        print(row[1])
+```
+['宮崎', '佐藤']
+['東京', '山田']
+['大阪', '鈴木']
 ```
 
-また、データをCSVファイルに書き込むには、`csv.writer()`を使用します。以下のコード例では、新しいCSVファイルにヘッダー行とデータを書き込んでいます。
+データを加工して新しいCSVファイルに書き込むことも可能です。以下は、CSVファイルに新しい行を追加する例です。
 
 ```Python
 import csv
 
-# データ
-data = [
-    ['名前', '年齢', '性別'],
-    ['太郎', 25, '男性'],
-    ['花子', 30, '女性'],
-    ['次郎', 22, '男性']
-]
+with open('data.csv', 'r') as file:
+    reader = csv.reader(file)
+    data = list(reader)
 
-# 新しいCSVファイルを作成し、データを書き込む
-with open('new_data.csv', 'w') as csv_file:
-    writer = csv.writer(csv_file, delimiter=',')
+data.append(['福岡', '伊藤'])
+
+with open('new_data.csv', 'w', newline='') as file:
+    writer = csv.writer(file)
     writer.writerows(data)
 ```
 
-このコードを実行すると、`new_data.csv`という新しいCSVファイルが作成され、各列のデータが書き込まれます。
+実行結果は、`new_data.csv`ファイルに以下のように書き込まれます。
 
-## Deep Dive
-CSVファイルのデータを取得する方法や書き込む方法だけでなく、`csv`モジュールにはさまざまな機能があります。例えば、列のタイトルを指定してデータを取得したり、ファイルを上書きするか追記するかを選択したりすることができます。詳細な情報は、[公式ドキュメント](https://docs.python.org/3/library/csv.html)を参照してください。
+```
+宮崎,佐藤
+東京,山田
+大阪,鈴木
+福岡,伊藤
+```
 
-## See Also
-- [Pythonの標準ライブラリ：csvモジュール](https://docs.python.org/ja/3/library/csv.html)
-- [CSVファイルを読み書きする方法](https://note.nkmk.me/python-pandas-csv-io-read-write/)
-- [PythonでCSVファイルを扱う際の注意点](https://qiita.com/niyanchun/items/084faa6393dda568eb39)
+## 詳細
+
+CSVファイルの形式は、1972年にデータ処理用のドキュメントとして提案されました。以来、広く使われているデータ形式の一つです。Python以外にも、ExcelやGoogleシートなどのアプリケーションでもCSVファイルを扱うことができます。
+
+CSVファイルはコンマでデータを区切るだけではなく、タブやセミコロンなどの区切り文字を使うこともできます。また、テキストファイルなので簡単に編集も可能です。
+
+## 関連リンク
+
+- [Python公式ドキュメント - CSVモジュール](https://docs.python.org/ja/3/library/csv.html)
+- [CSVファイルの基礎知識](https://qiita.com/tomomoto/items/947dcadccdf3a95227b7)
+- [CSVファイルのフォーマット詳細](https://tools.ietf.org/html/rfc4180)

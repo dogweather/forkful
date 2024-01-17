@@ -10,58 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Чому
+## Що це таке і для чого це потрібно?
+Робота з YAML - це один зі способів зберігання та обміну даними в програмуванні. Цей формат дозволяє зберігати структуровану інформацію у зрозумілій для комп'ютера формі, що є важливим для великих та складних проєктів.
 
-В даній статті ми розглянемо, що таке YAML та чому це корисно для програмістів. Якщо ви працюєте зі структурованими даними, YAML буде незамінним інструментом для збереження та передачі інформації.
-
-## Як
-
-Якщо ви вже знайомі з мовою програмування C#, пропоную перейти до практичної частини та розглянути реалізацію YAML. Для цього нам знадобиться встановити пакет [YamlDotNet](https://github.com/aaubry/YamlDotNet) за допомогою [NuGet пакет менеджера](https://docs.microsoft.com/uk-ua/nuget/quickstart/install-and-use-a-package-in-visual-studio).
+## Як цим користуватися?
+Давайте розглянемо приклади написання коду та виведення результатів використовуючи YAML у C#.
 
 ```C#
-// Підключаємо необхідні бібліотеки
+// Завантажуємо бібліотеку десеріалізації даних
 using YamlDotNet.Serialization;
-using System.IO;
 
-// Створюємо клас для збереження даних
+// Оголошуємо клас для зберігання інформації
 public class User
 {
-  public string Name { get; set; }
-  public int Age { get; set; }
-  public bool IsMarried { get; set; }
+    public string Name { get; set; }
+    public int Age { get; set; }
 }
 
-// Створюємо екземпляр класу та заповнюємо його даними
-User user = new User()
+// Створюємо екземпляр класу та заповнюємо даними
+User user = new User
 {
-  Name = "John",
-  Age = 25,
-  IsMarried = false
+    Name = "Іван",
+    Age = 25
 };
 
-// Ініціалізуємо серіалізатор та задаємо формат даних
-Serializer serializer = new SerializerBuilder().Build();
+// Конвертуємо об'єкт в YAML-рядок
+var serializer = new SerializerBuilder().Build();
+string yaml = serializer.Serialize(user);
 
-// Серіалізуємо об'єкт в формат YAML
-var yamlOutput = serializer.Serialize(user);
-
-// Зберігаємо дані у файл
-File.WriteAllText("data.yml", yamlOutput);
-
-// Десеріалізуємо дані з файлу назад до об'єкту
-var obj = serializer.Deserialize<User>(File.ReadAllText("data.yml"));
-
-// Виводимо дані в консоль
-Console.WriteLine(obj.Name); // "John"
-Console.WriteLine(obj.Age); // 25
-Console.WriteLine(obj.IsMarried); // False
+// Виводимо результат в консоль
+Console.WriteLine(yaml);
 ```
 
-## Глибше в деталі
+Результат:
 
-YAML - це формат для збереження даних в людино-читабельному вигляді, що дозволяє представляти складні структури даних, такі як об'єкти та масиви. Це сильний інструмент для передачі та обміну даними між різними системами.
+```
+name: Іван
+age: 25
+```
 
-## Дивись також
+## Глибші деталі
+Історично YAML є альтернативою формату JSON, проте він має більш людина-подібний синтаксис, що робить його більш зрозумілим для людей. Крім того, YAML підтримує багато корисних функцій, таких як коментарі та згортки даних, що дозволяє зробити код більш читабельним та компактним.
 
-- [Офіційна документація YamlDotNet](https://github.com/aaubry/YamlDotNet/wiki/Documentation)
-- [Вступ до YAML в C#](https://www.codeproject.com/Articles/1214409/Beginners-Guide-to-yaml-in-csharp)
+У програмуванні також є інші формати для зберігання даних, наприклад XML чи CSV. Однак, YAML має переваги, які роблять його більш популярним для більш складних проєктів.
+
+Імплементація YAML в C# використовує бібліотеку YamlDotNet, яка є відкритою та безкоштовною для використання. Також існують інші бібліотеки, але YamlDotNet є найбільш популярною та добре документованою.
+
+## Дивіться також
+- Офіційна документація YamlDotNet: https://github.com/aaubry/YamlDotNet
+- Інші бібліотеки для роботи з YAML в C#: https://github.com/search?q=c%23+yaml

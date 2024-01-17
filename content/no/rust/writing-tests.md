@@ -10,49 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hva & Hvorfor?
 
-Å skrive tester er en viktig del av utviklingen av programvare. Det bidrar til å avdekke feil og sikre at koden fungerer som den skal, noe som resulterer i mer pålitelige og robuste applikasjoner.
+Å skrive tester er en viktig del av programmering. Det er en måte å sikre at koden vi skriver fungerer som forventet og unngå feil og bugs. Ved å skrive tester kan vi også få en bedre forståelse av koden vår og den gir mulighet for enklere debugging hvis noe går galt.
 
-## Hvordan
+## Hvordan:
 
-For å skrive tester i Rust, må du først importere test-rust biblioteket ved å legge til følgende linje øverst i filen din:
-
-```Rust
-use test_rust::assert_eq;
-```
-
-Deretter kan du bruke `assert_eq` funksjonen for å sammenligne verdier og sikre at de er like. Her er et eksempel på en enkel testfunksjon som sjekker om to tall er like:
+Testing i Rust er enkelt og intuitivt. Nedenfor vises et enkelt eksempel på hvordan man kan skrive en test for en funksjon som multipliserer to tall:
 
 ```Rust
-fn test_addition() {
-    let num1 = 2;
-    let num2 = 3;
-    let result = num1 + num2;
-    assert_eq(result, 5);
+fn multiply(x: i32, y: i32) -> i32 {
+    x * y
+}
+
+#[test]
+fn test_multiply() {
+    assert_eq!(multiply(2, 3), 6);
 }
 ```
 
-Når du kjører testene dine, vil du få følgende utgang:
+I dette eksempelet bruker vi funksjonen `assert_eq!` for å sjekke om resultatet av multiplikasjonen er lik forventet verdi. Hvis dette ikke er tilfelle, vil testen feile og gi en feilmelding som hjelper oss med å finne og løse feilen.
 
-```
-test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out
-```
+## Dypdykk:
 
-Dette betyr at testen bestått og at koden fungerer som forventet. Hvis testen hadde feilet, ville du fått en feilmelding med informasjon om hva som gikk galt.
+Å skrive tester har blitt en vanlig praksis innen programmering. Det sikrer at koden vår er pålitelig og fungerer som forventet. Alternativet til å skrive tester, er å manuelt teste koden vår hver gang vi gjør endringer, noe som tar mye tid og kan føre til menneskelige feil. I Rust, er tester en integrert del av språket og kompilatoren vår.
 
-## Dypdykk
+For å skrive effektive tester, er det viktig å forstå konseptet med enhetstesting og å kjenne til forskjellige typer tester som kan implementeres.
 
-Tests i Rust er basert på enhetstesting, som fokuserer på å teste enkeltdeler av koden. Dette gjør at du kan isolere og teste mindre deler av koden din, noe som gjør det lettere å finne og rette feil.
+## Se Også:
 
-For å skrive kvalitets tester, må du sørge for å teste både positive og negative scenarier. Det vil si å teste at koden fungerer som forventet når alt går rett, men også når noe går galt. Dette vil bidra til å sikre at koden din er robust og kan håndtere uventet input.
-
-Det er også viktig å opprettholde en god dekningsgrad på testene dine. Det vil si at testene bør dekke så mye av koden din som mulig for å sikre at alle deler fungerer som de skal. Rust har et innebygd verktøy, `cargo`, som kan hjelpe deg med å måle testdekningsgraden din.
-
-## Se også
-
-For mer informasjon om testing i Rust, sjekk ut følgende ressurser:
-
-- [The Rust Book](https://doc.rust-lang.org/book/ch11-00-testing.html)
-- [Rust Coding Guidelines for Testing](https://doc.rust-lang.org/1.10.0/book/advanced-testing.html)
-- [Offisiell Rust Dokumentasjon for Test](https://doc.rust-lang.org/test/)
+- [Rust Testing Library](https://doc.rust-lang.org/book/ch11-00-testing.html) - Offisiell dokumentasjon for testing i Rust.
+- [Unit Testing in Rust](https://medium.com/@jamesesutton/unit-testing-in-rust-549c78f36ada) - En guide til enhetstesting i Rust.
+- [Rust Programming Language](https://www.rust-lang.org/) - Hjemmesiden til Rust-språket med ressurser og informasjon.

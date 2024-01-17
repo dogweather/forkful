@@ -1,7 +1,7 @@
 ---
-title:                "Nedlasting av en nettside"
-html_title:           "Clojure: Nedlasting av en nettside"
-simple_title:         "Nedlasting av en nettside"
+title:                "Å laste ned en nettside"
+html_title:           "Clojure: Å laste ned en nettside"
+simple_title:         "Å laste ned en nettside"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "HTML and the Web"
@@ -10,44 +10,19 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hva & hvorfor?
+Nedlasting av en nettside er å hente informasjon fra en nettside ved hjelp av en datamaskin. Dette er nyttig for programmerere for å samle data eller automatisere oppgaver.
 
-Å laste ned en webside er en viktig og vanlig oppgave for utviklere og designere. Det kan være nyttig for å teste og feilsøke nettsider, eller for å få tilgang til innhold som ikke er tilgjengelig på en annen måte.
-
-## Hvordan gjøre det
-
+## Hvordan:
 ```Clojure
-;; Importer de nødvendige bibliotekene
 (require '[clojure.java.io :as io])
-(require '[clojure.data.json :as json])
-
-;; Definer URL og filbane
-(def url "https://example.com")
-(def filepath "example.html")
-
-;; Bruk 'clojure.java.io' for å laste ned filen
-(io/copy (io/input-stream url) (io/output-stream filepath))
+(io/copy (io/input-stream "https://www.example.com") (io/output-stream "example.html"))
 ```
+Dette eksemplet viser hvordan du kan bruke Clojure til å laste ned en nettside og lagre den som en fil kalt "example.html". Du trenger bare å erstatte nettadressen med adressen for nettsiden du vil laste ned.
 
-Dette vil laste ned nettsiden og lagre den som en HTML-fil på den angitte filbanen.
+## Dypdykk:
+Å laste ned nettsider fra internett har vært en viktig del av programmering i mange år. Det finnes også alternativer til Clojure for å gjøre dette, som for eksempel Python og Ruby. For å implementere dette i Clojure, bruker vi funksjonen "copy" fra Java biblioteket for å kopiere informasjonen fra nettsiden og lagre den som en fil.
 
-```Clojure
-;; Bruk 'clojure.data.json' for å lese innholdet av filen til en rekke datastrukturer
-(def content (json/read-str (slurp filepath)))
-```
-
-Her kan du bruke forskjellige funksjoner fra 'clojure.data.json' biblioteket for å behandle og analysere innholdet av filen på en måte som passer for dine behov.
-
-## Dypdykk
-
-Laste ned en webside kan også gjøres på mer avanserte måter, for eksempel ved å bruke biblioteker som 'clj-http' eller 'clj-webdriver'. Disse gir flere muligheter for å konfigurere og håndtere forespørsler og svar.
-
-Det kan også være nyttig å bruke sporingsverktøy som 'mitmproxy' for å analysere HTTP-trafikk og feilsøke problemer med nettstedene du laster ned.
-
-## Se også
-
-- [Dokumentasjon for clojure.java.io biblioteket](https://clojure.github.io/clojure/clojure.java.io-api.html)
-- [Dokumentasjon for clojure.data.json biblioteket](https://clojure.github.io/data.json/)
-- [Clj-http biblioteket](https://github.com/dakrone/clj-http)
-- [Clj-webdriver biblioteket](https://github.com/semperos/clj-webdriver)
-- [Mitmproxy](https://mitmproxy.org/)
+## Se også:
+- Offisiell "clojure.java.io" dokumentasjon: https://clojure.github.io/clojure/clojure.java.io-api.html
+- En tutorial for å laste ned nettsider i Clojure: https://practicalli.github.io/clojure-webapps/about/01_2-html.html#downloading_an_existing_webpage

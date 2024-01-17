@@ -1,7 +1,7 @@
 ---
-title:                "Konvertere en streng til små bokstaver"
-html_title:           "Bash: Konvertere en streng til små bokstaver"
-simple_title:         "Konvertere en streng til små bokstaver"
+title:                "Konverterer en streng til små bokstaver"
+html_title:           "Bash: Konverterer en streng til små bokstaver"
+simple_title:         "Konverterer en streng til små bokstaver"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Strings"
@@ -10,40 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hva & Hvorfor?
 
-Har du noen gang lurt på hvordan du kan konvertere en streng til små bokstaver i Bash-programmering? Her vil vi vise deg hvorfor det er nyttig og hvordan du kan gjøre det.
+Konvertering av en streng til små bokstaver er en vanlig operasjon i programmering. Dette betyr rett og slett å endre alle store bokstaver i en streng til små bokstaver. Dette gjøres ofte for å sammenligne to strenger med ulik casing, eller for å få en mer enhetlig formatering.
 
-## Slik gjør du det
-
-Så, hvordan kan du enkelt konvertere en streng til små bokstaver i Bash? Heldigvis har Bash en innebygd funksjon som heter "tr" som står for "translate" og den gjør akkurat det vi trenger. Se på eksempelet nedenfor:
+## Hvordan:
 
 ```Bash
-string="HELLO WORLD"
-echo "Original streng: $string" # Original streng: HELLO WORLD
-string=$(echo $string | tr '[:upper:]' '[:lower:]')
-echo "Konvertert streng: $string" # Konvertert streng: hello world
+# Bruk kommandoen "tr" for å konvertere en streng til små bokstaver
+# Eksempel:
+echo "DIg It??" | tr 'A-Z' 'a-z'
+
+# Output:
+dig it??
 ```
 
-La oss bryte ned koden. Først definerer vi en variabel "string" som inneholder en streng i store bokstaver. Deretter bruker vi "echo" for å skrive ut den originale strengen. Deretter tilordner vi variabelen "string" på nytt ved å kjøre et subshell med "echo" og rører resultatet til "tr" kommandoen. "tr" kommandoen spesifiserer at vi vil oversette alle store bokstaver til små bokstaver ved å bruke "[upper:]" og "[lower:]" uttrykkene. Til slutt skriver vi ut den konverterte strengen.
+## Dypdykk:
 
-Du kan også konvertere en streng til små bokstaver ved hjelp av "sed" kommandoen på følgende måte:
+Historisk sett har casing av tekst vært en utfordring i programmering. Tidligere var det vanlig å bruke store bokstaver for variabelnavn og funksjonsnavn, men dette kunne føre til forvirring og feil siden casing var viktig. Derfor har mange programmeringsspråk nå støtte for å konvertere en streng til små bokstaver for å unngå slike problemer.
 
-```Bash
-string="HELLO WORLD"
-echo "Konvertert streng: $(echo $string | sed 's/./\L&/g')" # Konvertert streng: hello world
-```
+Det finnes også alternative måter å konvertere en streng til små bokstaver på, som for eksempel å bruke innebygde funksjoner i programmeringsspråket eller å bruke regex-uttrykk. Implementasjonen av denne operasjonen varierer også fra språk til språk, så det kan være lurt å se på dokumentasjonen til det aktuelle språket for nøyaktig syntaks og funksjonalitet.
 
-"sed" kommandoen tar nytte av "&" tegnet som representerer den første bokstaven i en streng og "\L" for å gjøre om det til små bokstaver.
+## Se også:
 
-## Dypdykk
-
-Denne metoden for å konvertere en streng til små bokstaver i Bash er nyttig når du arbeider med tekst og ønsker å konvertere den til en ensartet form. Det kan også være nyttig når du skal sammenligne strenger fordi det eliminerer forskjellene mellom store og små bokstaver.
-
-Det er viktig å merke seg at "tr" kommandoen bare fungerer med ASCII-tegnsett. Hvis du trenger å arbeide med ikke-ASCII-tegn, kan du bruke "sed" kommandoen som støtter multibyte-tegn. Du kan også bruke andre kommandoer og metoder for å konvertere en streng til små bokstaver i Bash, men "tr" og "sed" er de mest effektive og enkle å forstå.
-
-## Se også
-
-- [Bash dokumentasjon](https://www.gnu.org/software/bash/)
-- [tr kommandoen](https://www.gnu.org/software/coreutils/manual/html_node/tr-invocation.html)
-- [sed kommandoen](https://www.gnu.org/software/sed/)
+- [Dokumentasjon for "tr" kommandoen i Bash](https://www.gnu.org/software/coreutils/manual/html_node/tr-invocation.html)
+- [Diskusjon om hvorfor casing er viktig i programmering](https://stackoverflow.com/questions/777416/why-should-javas-string-to-lowercase-method-not-be-used-when-converting-from-fo)

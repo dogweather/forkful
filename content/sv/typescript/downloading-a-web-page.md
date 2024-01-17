@@ -10,55 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
+Att hämta en webbsida innebär att ladda ner all HTML, CSS och JavaScript-kod som utgör webbsidan från dess webbadress. Detta gör det möjligt för programmerare att manipulera och använda denna kod för att skapa dynamiska webbapplikationer och -tjänster.
 
-Om du är intresserad av webbutveckling och vill lära dig ett kraftfullt programmeringsspråk, kan det vara värt att ta en titt på TypeScript. Det är ett modernt objektorienterat språk som kompilerar till ren JavaScript-kod och ger utvecklare möjlighet att skriva kod på ett mer strukturerat och robust sätt.
-
-## Hur man gör
-
-För att använda TypeScript för att ladda ner en webbsida behöver du först installera Node.js och NPM på din dator. När det väl är installerat kan du enkelt installera TypeScript genom kommandot `npm install -g typescript`. Sedan kan du följa dessa steg för att ladda ner en webbsida:
-
-1. Skapa en ny mapp och öppna den i din terminal eller kommandoprompt.
-2. Skapa en ny fil, till exempel `downloader.ts`, och öppna den i din favoritkodredigerare.
-3. Skriv följande kod i filen:
-
+## Hur gör man:
 ```TypeScript
-import * as fs from 'fs';
-import * as https from 'https';
-
-// Ladda ner webbsida och spara den som en textfil
-https.get('https://www.example.com', (response) => {
-  response.setEncoding('utf8');
-
-  // Skapa en ström från responsen för att skriva till en fil
-  const writeStream = fs.createWriteStream('output.html');
-
-  // Skriv responsen till vår fil
-  response.on('data', (chunk) => {
-    writeStream.write(chunk);
-  });
-
-  // När all data har skrivits klart stänger vi strömmen och sparar filen
-  response.on('end', () => {
-    writeStream.end();
-    console.log('Webbsida laddad ner och sparad som "output.html"');
-  });
-}).on('error', (error) => {
-  console.error(`Fel vid nedladdning av webbsida: ${error.message}`);
+import * as http from 'http';
+const url = 'https://www.example.com';
+http.get(url, (response) => {
+    let data = '';
+    response.on('data', (chunk) => {
+        data += chunk;
+    });
+    response.on('end', () => {
+        console.log(data);
+    });
 });
 ```
+Detta exempel använder Node.js inbyggda modul "http" för att hämta en webbsida från adressen https://www.example.com. Kodblocket skapar en GET-förfrågan och tar emot svaret som strömmar in som "chunk"-ar. Därefter samlas all data ihop och loggas.
 
-4. Spara filen och gå tillbaka till din terminal eller kommandoprompt.
-5. Kör kommandot `tsc downloader.ts` för att kompilera filen till JavaScript.
-6. Kör sedan kommandot `node downloader.js` för att köra din kod.
+## Djupdykning:
+Hämtning av webbsidor introducerades för att göra det möjligt att utveckla dynamiska webbplatser och applikationer, där innehållet kan ändras utan att sidan behöver laddas om. Det finns andra metoder för att hämta webbsidor såsom "fetch" API:t, men "http" modulen i Node.js är fortfarande en vanlig metod för att utföra denna uppgift.
 
-Du borde nu ha en ny fil som heter "output.html" i din mapp, som innehåller den nedladdade webbsidan.
-
-## Djupdykning
-
-I exemplet ovan använde vi `https`-modulen för att skicka en HTTP-begäran till webbsidan och hämta responsen. Vi använde också `fs`-modulen för att skapa en ström och skriva responsen till en fil. Det finns många andra funktioner som kan användas för att anpassa din kod och lägga till funktioner som hantering av fel, parsning av HTML och mycket mer.
-
-## Se även
-
-- [Officiell TypeScript-dokumentation](https://www.typescriptlang.org/docs/)
-- [Node.js-dokumentation](https://nodejs.org/en/docs/)
+## Se även:
+- https://nodejs.org/api/http.html#http_http_get_options_callback för mer information om hur man hämtar webbsidor med "http" modulen.
+- https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API för information om "fetch" API:t och dess möjligheter.

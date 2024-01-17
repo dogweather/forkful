@@ -10,33 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
+## 什么 & 为什么?
+打印调试输出是一种在程序中显示信息以帮助程序员进行调试的方法。程序员会使用这种方法来查看程序运行时的值，以及检查代码是否按照预期执行。
 
-在编写代码时，调试输出是一种非常有用的工具。它可以帮助开发人员发现代码中的错误并进行调试。在Kotlin中打印调试输出可以让我们更容易地理解代码的运行情况，从而更轻松地修复问题。
-
-## 怎么做
-
-在Kotlin中，我们可以使用`println()`函数来打印调试输出。我们可以将需要调试的变量放在括号内，例如：
+## 如何:
+下面是使用Kotlin语言打印调试输出的示例代码和样本输出。
 
 ```Kotlin
-var num = 5
-println(num)
+fun main() {
+    // 使用println()函数打印简单的文本输出
+    println("Hello World!")
+
+    // 声明一个变量并打印其值
+    val num = 10
+    println(num)
+}
 ```
 
-运行以上代码，控制台将会输出`5`，这样我们就可以知道`num`变量的值是多少了。
+输出:
+```
+Hello World!
+10
+```
 
-## 深入探讨
+## 深入探究:
+在过去，程序员会使用像log（）或print（）这样的函数来打印调试输出。但现在，大多数编程语言都提供了内置的打印函数，使得打印调试输出更加方便。当然，你也可以使用自定义的log和print函数来打印调试输出。
 
-除了使用`println()`函数之外，Kotlin还提供了更多的调试输出方法。例如，我们可以使用`Log`类来打印调试信息到Logcat中，从而更方便地查看代码运行过程中的变量值和错误信息。我们也可以使用`assert()`函数来进行断言，如果断言不成立，就会抛出异常并打印出相应的调试信息。此外，我们还可以使用Kotlin的调试器来逐步执行代码并观察变量的值。
+除了使用内置的打印函数，程序员也可以使用调试器来调试他们的代码。调试器是一种工具，允许程序员在代码中设置断点，以便在执行程序时观察变量的值。
 
-## 参考链接
-
-- [Kotlin官方文档 - 调试](https://kotlinlang.org/docs/tutorials/debugging.html)
-- [Android开发中的调试方法](https://developer.android.com/studio/debug)
-- [使用Kotlin调试器进行调试](https://medium.com/@yuriymolchan/debugging-kotlin-code-on-android-cbfdf6136b63)
-
-## 查看更多
-
-- [Kotlin官方文档](https://kotlinlang.org/docs/home.html)
-- [Android开发中的Kotlin](https://developer.android.com/kotlin)
-- [了解Kotlin - 从入门到精通](https://www.udemy.com/course/kotlin-for-android-beginner-to-advanced/)
+## 参考:
+- [Kotlin 官方文档](https://kotlinlang.org/docs/)
+- [使用调试器调试代码](https://www.jetbrains.com/help/idea/debugging.html)

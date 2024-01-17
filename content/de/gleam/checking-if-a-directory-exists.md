@@ -1,7 +1,7 @@
 ---
-title:                "Überprüfen, ob ein Verzeichnis vorhanden ist"
-html_title:           "Gleam: Überprüfen, ob ein Verzeichnis vorhanden ist"
-simple_title:         "Überprüfen, ob ein Verzeichnis vorhanden ist"
+title:                "Überprüfen, ob ein Verzeichnis existiert"
+html_title:           "Gleam: Überprüfen, ob ein Verzeichnis existiert"
+simple_title:         "Überprüfen, ob ein Verzeichnis existiert"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Files and I/O"
@@ -10,38 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Warum
-
-Hast du dich jemals gefragt, wie du in deinem Code überprüfen kannst, ob ein bestimmtes Verzeichnis existiert? In diesem Artikel werden wir uns ansehen, wie du das mit Gleam ganz einfach machen kannst.
+## Was ist das und warum sollte man das überprüfen?
+Das Überprüfen, ob ein Verzeichnis existiert, ist eine häufige Aufgabe in der Programmierung. Es bedeutet, dass man prüft, ob ein bestimmtes Verzeichnis auf dem Computer vorhanden ist oder nicht. Programmierer tun dies, um sicherzustellen, dass ihr Code fehlerfrei ausgeführt wird und um Probleme zu vermeiden, die auftreten können, wenn ein Verzeichnis nicht existiert.
 
 ## Wie geht das?
+Hier sind zwei Möglichkeiten, um in Gleam zu überprüfen, ob ein Verzeichnis existiert:
 
-Um zu überprüfen, ob ein Verzeichnis existiert, können wir die `fs` Bibliothek von Gleam verwenden. Diese enthält die Funktion `exists`, die wir aufrufen können und als Argument den Pfad des Verzeichnisses übergeben.
-
-```Gleam
-import fs
-
-let path = "/home/user/files"
-let exists = fs.exists(path)
 ```
+// Mit der Funktion `exists` aus der `gleam_std/file` Bibliothek:
+let result = file.exists("/pfad/zum/verzeichnis")
+match result {
+    Ok(exists) -> if exists {
+        log.info("Das Verzeichnis existiert!")
+    } else {
+        log.info("Das Verzeichnis existiert nicht!")
+    }
+    Err(error) -> log.error(error.message)
+}
 
-Das gibt uns ein `Result`-Objekt zurück, das entweder `Ok(true)` oder `Ok(false)` sein kann. Wir können dieses mit einem `case`-Statement verarbeiten, um je nachdem ob das Verzeichnis existiert oder nicht, verschiedene Aktionen auszuführen.
+// Mit dem `file_exists`-Modul aus der `gleam_os/filesystem` Bibliothek:
+use gleam_os::filesystem
 
-```Gleam
-case exists {
-    Ok(true) -> println("Das Verzeichnis existiert!")
-    Ok(false) -> println("Das Verzeichnis existiert nicht.")
-    Err(err) -> println("Ein Fehler ist aufgetreten: {err}")
+let result = filesystem.file_exists("/pfad/zum/verzeichnis")
+match result {
+    Ok(exists) -> if exists {
+        log.info("Das Verzeichnis existiert!")
+    } else {
+        log.info("Das Verzeichnis existiert nicht!")
+    }
+    Err(error) -> log.error(error)
 }
 ```
 
-## Tiefer tauchen
+Die Ausgabe wird je nachdem, ob das Verzeichnis existiert oder nicht, unterschiedlich sein. Wenn das Verzeichnis existiert, wird die Meldung "Das Verzeichnis existiert!" ausgegeben, ansonsten "Das Verzeichnis existiert nicht!".
 
-Bei der Verwendung von `fs.exists` müssen wir beachten, dass es nur auf lokalen Dateisystemen funktioniert. Wenn wir überprüfen wollen, ob ein Verzeichnis auf einem entfernten Server vorhanden ist, müssen wir auf andere Bibliotheken und Protokolle zugreifen.
+## Tiefergehende Informationen
+Überprüfen, ob ein Verzeichnis existiert, ist eine wichtige Fähigkeit in der Programmierung, da es dabei hilft, fehlerhaften Code zu vermeiden. Diese Funktion ist auch nützlich, wenn man sicherstellen möchte, dass bestimmte Dateien oder Verzeichnisse vorhanden sind, bevor man mit ihnen arbeitet.
 
-Außerdem können wir auch andere Funktionen aus der `fs` Bibliothek verwenden, wie z.B. `create_dir`, um ein Verzeichnis zu erstellen, oder `list`, um alle Dateien und Unterverzeichnisse in einem Verzeichnis aufzulisten.
+Es gibt verschiedene Möglichkeiten, um in Gleam auf das Dateisystem zuzugreifen, wie zum Beispiel die `gleam_std/file` und die `gleam_os/filesystem` Bibliotheken. Jede Bibliothek bietet verschiedene Funktionen und Methoden, um auf Dateien und Verzeichnisse zuzugreifen.
+
+Bei der Implementierung der Funktion zur Überprüfung, ob ein Verzeichnis existiert, muss man beachten, dass Gleam eine strikt typisierte Sprache ist. Das bedeutet, dass die Funktion immer einen bestimmten Datentyp zurückgeben muss, entweder einen boolean-Wert oder eine Fehlermeldung.
 
 ## Siehe auch
+Weitere Informationen zum Überprüfen von Dateien und Verzeichnissen in Gleam findet man in der offiziellen Dokumentation unter: [https://gleam.run](https://gleam.run).
 
-- [Gleam Dokumentation zu `fs.exists`](https://gleam.run/modules/gleam/fs/latest/api)
-- [Tutorial: Working with Files in Gleam](https://dev.to/patyhuertas/tutorial-working-with-files-in-gleam-361g) (Englisch)
+Für allgemeine Informationen zur Programmierung mit Gleam empfehlen wir die Lektüre des Buches "Gleam: Functional language for building scalable systems" von Louis Pilfold, das auf [https://pragprog.com](https://pragprog.com/) erhältlich ist.

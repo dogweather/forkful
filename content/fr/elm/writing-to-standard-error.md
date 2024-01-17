@@ -1,7 +1,7 @@
 ---
-title:                "L'écriture dans la sortie d'erreur standard"
-html_title:           "Elm: L'écriture dans la sortie d'erreur standard"
-simple_title:         "L'écriture dans la sortie d'erreur standard"
+title:                "Écrire vers l'erreur standard"
+html_title:           "Elm: Écrire vers l'erreur standard"
+simple_title:         "Écrire vers l'erreur standard"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Files and I/O"
@@ -10,46 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Qu'est-ce que c'est et pourquoi le faire?
 
-Si vous êtes un programmeur Elm passionné, vous savez déjà que l'une de ses forces est la gestion des erreurs. Cela signifie que votre application Elm sera moins susceptible de planter ou de générer des erreurs imprévues. Cependant, il peut être utile de comprendre comment écrire dans la sortie d'erreur standard pour déboguer votre code et détecter les erreurs plus rapidement.
+Ecrire vers le standard error (erreur standard) en programmation Elm signifie écrire des messages d'erreur qui peuvent être affichés lors de l'exécution de votre code. Les programmeurs le font pour débugger leurs applications et pour obtenir des informations précises sur les erreurs qui se produisent. 
 
-## Comment procéder
+## Comment faire:
 
-Pour écrire dans la sortie d'erreur standard, tout ce que vous avez à faire est d'utiliser la fonction `Debug.crash` avec une chaîne de caractères en tant que paramètre. Cette fonction provoque une erreur et affiche la chaîne de caractères dans la sortie d'erreur standard. Voici un exemple de code pour illustrer cela :
+Il existe une manière simple de rédiger vers le standard error en Elm en utilisant la fonction `Debug.log`. Voici un exemple de code:
 
-```elm
-import Debug exposing (crash)
-
-main =
-  crash "Une erreur est survenue"
+```Elm
+main = Debug.log "Message d'erreur" (toString 10)
 ```
 
-Lorsque vous exécutez ce code, vous devriez voir "Une erreur est survenue" s'afficher dans la sortie d'erreur standard. Cela peut être utile pour déterminer où se situe une erreur dans votre code et pour vous aider à la corriger.
+Ce code va écrire "Message d'erreur : 10" dans le standard error lorsque le programme s'exécute. Notez que la fonction `toString` sert à convertir le nombre 10 en une chaîne de caractères pour pouvoir l'afficher dans le message. Vous pouvez aussi utiliser `String.fromInt` pour convertir un entier en chaîne de caractères.
 
-## Explorer en profondeur
+## Plongée plus profonde:
 
-En plus de la fonction `Debug.crash`, nous pouvons également utiliser la fonction `Debug.log` pour écrire dans la sortie d'erreur standard. Cette fonction prend deux paramètres : une chaîne de caractères et une valeur. Elle affichera la chaîne de caractères suivie de la valeur dans la sortie d'erreur standard. Voici un exemple :
+L'écriture vers le standard error a été introduite pour la première fois dans le langage Elm dans sa version 0.18. Avant cela, les programmeurs utilisaient `Debug.log` pour écrire vers la console, ce qui pouvait être confus car les messages étaient affichés dans le navigateur plutôt que dans l'éditeur de code.
 
-```elm
-import Debug exposing (log)
+Une alternative à l'utilisation de `Debug.log` est l'utilisation du débogage à l'aide d'un débogueur. Cela peut être utile pour les applications plus complexes où l'utilisation de `Debug.log` peut rapidement devenir fastidieuse. Cependant, cela nécessite des connaissances supplémentaires et peut être plus complexe à mettre en place.
 
-main =
-  log "La longueur de la chaîne est : " (String.length "Elm est génial !")
-```
+## A voir aussi:
 
-Cela affichera "La longueur de la chaîne est : 16" dans la sortie d'erreur standard. Vous pouvez également utiliser la fonction `toString` pour afficher des valeurs de types différents dans la sortie d'erreur standard. Par exemple :
-
-```elm
-import Debug exposing (log)
-
-main =
-  log "La valeur de mon entier est : " (toString 10)
-```
-
-Cela affichera "La valeur de mon entier est : 10" dans la sortie d'erreur standard.
-
-## Voir aussi 
-
-- [`Debug` module in the Elm documentation](https://package.elm-lang.org/packages/elm/core/latest/)
-- [Article sur la gestion des erreurs en Elm](https://www.parlez-vous.org/2017/05/29/error-handling-in-elm/)
+Pour en savoir plus sur l'écriture vers le standard error en Elm, vous pouvez consulter la documentation officielle sur `Debug.log` ainsi que sur le débogage en général. Vous pouvez également explorer les différentes méthodes de débogage en Elm et décider quelle méthode convient le mieux à vos besoins.

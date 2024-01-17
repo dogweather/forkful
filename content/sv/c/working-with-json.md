@@ -1,7 +1,7 @@
 ---
-title:                "Arbeta med json"
-html_title:           "C: Arbeta med json"
-simple_title:         "Arbeta med json"
+title:                "Att arbeta med json"
+html_title:           "C: Att arbeta med json"
+simple_title:         "Att arbeta med json"
 programming_language: "C"
 category:             "C"
 tag:                  "Data Formats and Serialization"
@@ -10,86 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+Vad & varför?
+Att arbeta med JSON innebär att man hanterar data som är formaterade som en sträng. Det är vanligt att programmerare använder JSON för att enkelt kunna dela och läsa in data från tredjepartsapplikationer eller webbtjänster.
 
-JSON (JavaScript Object Notation) är en vanlig filformat som används för att lagra och överföra data. Det är snabbt, lättläst och platsbesparande, vilket gör det till ett populärt val för webbutveckling och andra applikationer. Genom att kunna arbeta med JSON i C kan du enkelt hantera och manipulera data för dina projekt och integrera med andra applikationer.
+Hur gör man?
+Det finns många vägar att genomföra JSON-hantering i C. Du kan till exempel använda externa bibliotek som json-c eller Jansson. Men om du vill hantera JSON-data på ett snabbt och enkelt sätt kan du använda C's inbyggda bibliotek "jsmn". Nedan följer ett exempel på hur man kan läsa in JSON-data från en fil och skriva ut den i terminalen:
 
-## Hur man gör
-
-För att arbeta med JSON i C behöver du ett bibliotek som heter cJSON, som hjälper till att enkelt skapa, läsa och ändra data i JSON-format. Nedan följer ett exempel på hur du kan använda cJSON för att skapa ett JSON-objekt och skriva ut dess innehåll:
-
-```
+```C
 #include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include "cJSON.h"
+#include "jsmn.h" // inkludera jsmn-biblioteket
 
 int main() {
-    // Skapar ett tomt cJSON-objekt
-    cJSON *json = cJSON_CreateObject();
+  FILE* fp = fopen("example.json", "r"); // öppna json-filen
+  fseek(fp, 0, SEEK_END); // gå till slutet på filen
+  long file_size = ftell(fp); // få filstorlek
+  fseek(fp, 0, SEEK_SET); // gå tillbaka till början av filen
+  char* json_str = (char*)malloc(file_size * sizeof(char)); // allokera minne för json-strängen
+  fread(json_str, sizeof(char), file_size, fp); // läs in json-data från filen och spara i strängen
+  fclose(fp); // stäng filen
 
-    // Lägger till ett nytt element
-    cJSON_AddItemToObject(json, "namn", cJSON_CreateString("Lisa"));
+  jsmn_parser p;
+  jsmntok_t t[128]; // skapa token-array för max 128 tokens
+  jsmn_init(&p); // initiera parsern
+  int r = jsmn_parse(&p, json_str, strlen(json_str), t, sizeof(t)/sizeof(t[0])); // parsra json-data och spara tokens i arrayen
+  if (r < 0) { // kolla om något gick fel vid parsningen
+    printf("Fel vid parsning av JSON: %d\n", r);
+    return 1;
+  }
 
-    // Lägger till ett annat element med en array som värde
-    cJSON_AddItemToObject(json, "frukter", cJSON_CreateStringArray(["äpple", "banan", "jordgubbe"]));
+  for (int i = 0; i < r; i++) { // loopa genom alla tokens
+    if (t[i].type == JSMN_STRING) { // kolla om token är en sträng
+      char* token_str = strndup(json_str + t[i].start, t[i].end - t[i].start); // skapa sträng av token
+      printf("%s\n", token_str); // skriv ut strängen
+      free(token_str); // frigör minne för strängen
+    }
+  }
 
-    // Skriver ut JSON-objektet i konsolen
-    printf("%s\n", cJSON_Print(json));
-
-    return 0;
+  free(json_str); // frigör minne för json-strängen
+  return 0;
 }
 ```
-**Resultat:**
-```
-{
-    "namn": "Lisa",
-    "frukter": [
-        "äpple",
-        "banan",
-        "jordgubbe"
-    ]
-}
-```
 
-För att läsa data från en befintlig JSON-fil kan du använda funktionen `cJSON_ParseFile()` och sedan komma åt data genom att använda `cJSON_GetObjectItem()`. Här är ett exempel på hur du kan läsa en JSON-fil och skriva ut ett visst element i den:
+Djupdykning:
+JSON, eller JavaScript Object Notation, har funnits sedan början av 2000-talet och är en populär standard för att representera strukturerad data. I C finns det flera alternativ för att hantera JSON, men på grund av språkets enkelhet och snabbhet är det vanligt att programmerare väljer att göra det utan externa bibliotek. Istället använder de inbyggda funktioner som strängmanipulering och array-indexering för att läsa och hantera JSON-data.
 
-```
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include "cJSON.h"
-
-int main() {
-    // Läser in en JSON-fil och skapar ett cJSON-objekt
-    FILE *fp = fopen("exempel.json", "r");
-    cJSON *json = cJSON_ParseFile(fp);
-    fclose(fp);
-
-    // Kommer åt ett element i JSON-objektet
-    cJSON *element = cJSON_GetObjectItem(json, "namn");
-    printf("Namn: %s\n", element->valuestring);
-
-    return 0;
-}
-```
-**Resultat:**
-```
-Namn: Lisa
-```
-
-Det finns många fler funktioner och möjligheter med cJSON-biblioteket, så det är värt att utforska det själv och experimentera med olika scenarion för att få en bättre förståelse av hur man kan hantera JSON i C.
-
-## Djupdykning
-
-Ett annat användbart sätt att arbeta med JSON i C är att konvertera mellan JSON och C-strängar. Detta kan göras med hjälp av `cJSON_Print()` och `cJSON_Parse()`. Det är också möjligt att skapa mer komplexa JSON-strängar med olika typer av värden och inbäddade objekt eller arrayer.
-
-En annan utmärkt funktion i cJSON är `cJSON_StripWhitespace()`, som kan användas för att ta bort onödiga mellanslag och radbrytningar från en JSON-sträng. Detta är särskilt användbart om du behöver skicka eller mottaga JSON-data via en nätverksanslutning.
-
-Ytterligare möjligheter med cJSON inkluderar att validera JSON-strängar och jämföra olika JSON-objekt för att se om de är lika.
-
-## Se även
-
-- cJSON-dokumentation: http://cjson.org
-- C-appen för JSON-manipulering: https://github.com/DaveGamble/cJSON
-- En korrekt formaterad JSON-fil: https://www.json.org/example.html
+Se även:
+- https://github.com/json-c/json-c
+- https://github.com/akheron/jansson

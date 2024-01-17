@@ -10,49 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+# Quoi & Pourquoi?
 
-Si vous êtes un développeur Elm, vous avez sûrement rencontré des bugs dans votre code. Pour les résoudre efficacement, il est souvent nécessaire d'afficher des informations de débogage, c'est-à-dire des informations supplémentaires sur l'état de votre programme à un moment donné. Dans cet article, nous allons plonger dans la méthode recommandée pour afficher ces informations de débogage en utilisant la fonction `Debug.log`.
+L'impression de sortie de débogage est une pratique courante pour les programmeurs Elm. Elle consiste à afficher des informations sur l'état et le fonctionnement du programme dans la console du navigateur. Cela permet aux développeurs de comprendre plus facilement ce qui se passe dans leur code et de détecter les éventuels problèmes.
 
-## Comment faire
+# Comment faire:
 
-Pour utiliser `Debug.log`, vous devez d'abord l'importer dans votre fichier Elm. Ensuite, vous pouvez l'utiliser en lui passant deux arguments : une chaîne de caractères et une valeur que vous souhaitez afficher. Par exemple :
+Voici un exemple simple d'utilisation de l'impression de sortie de débogage en Elm:
 
 ```
+elm-sandbox 0.19.1
+
+import Html exposing (text)
 import Debug
 
-myValue = 42
-
-Debug.log "Ma valeur est :" myValue
---> Affiche "Ma valeur est : 42" dans la console de votre navigateur
+main =
+  text (Debug.toString 42)
 ```
 
-Vous pouvez également utiliser `Debug.log` pour afficher le contenu d'une variable ou d'une expression plus complexe à l'intérieur d'une fonction, ce qui peut être utile pour comprendre ce qui se passe dans votre code. Par exemple :
+Le résultat de cette impression sera ```42``` dans la console du navigateur.
 
-```
-import Debug
+# Plongée en profondeur:
 
-myList = [1, 2, 3, 4, 5]
+L'impression de sortie de débogage était déjà présente dans la version précédente d'Elm, mais elle a été améliorée dans la version actuelle. Il existe également d'autres alternatives pour le débogage en Elm, telles que l'utilisation d'outils de débogage externes ou la mise en place de tests unitaires. Pour mettre en place l'impression de sortie de débogage, Elm utilise la fonction ```toString``` pour convertir les valeurs en chaînes de caractères.
 
-squareList list = 
-  List.map (\x -> Debug.log "Valeur à l'intérieur de la fonction :" x * x) list
+# Voir aussi:
 
-squareList myList
---> Affiche "Valeur à l'intérieur de la fonction : 1", "Valeur à l'intérieur de la fonction : 4", etc. dans la console de votre navigateur
---> Retourne [1, 4, 9, 16, 25] comme résultat de la fonction
-```
-
-## Plongée en profondeur
-
-Il y a plusieurs choses à garder à l'esprit lorsque vous utilisez `Debug.log`. Tout d'abord, il s'agit d'une fonction de débogage et ne doit pas être utilisée dans votre code de production final, car elle peut considérablement ralentir votre application.
-
-Deuxièmement, il est important d'utiliser `Debug.log` de manière sélective et de ne pas en abuser. Trop d'informations de débogage peuvent rendre votre code difficile à lire et à suivre.
-
-Enfin, gardez à l'esprit que les informations de débogage s'affichent dans la console de votre navigateur et peuvent donc être vues par les utilisateurs de votre application. Veillez à ne pas afficher d'informations sensibles ou confidentielles avec `Debug.log`.
-
-## Voir aussi
-
-- [La documentation officielle sur Debug.log](https://package.elm-lang.org/packages/elm/core/latest/Debug#log)
-- [Cet article en anglais pour plus d'informations sur l'utilisation de Debug.log](https://thoughtbot.com/blog/debugging-with-debug-log-in-elm)
-
-Maintenant que vous connaissez la meilleure méthode pour afficher des informations de débogage dans votre code Elm, vous pouvez facilement résoudre les bugs et rendre votre code plus robuste. N'oubliez pas de ne pas trop en abuser et de ne pas les afficher dans votre code de production final !
+Pour plus d'informations sur l'impression de sortie de débogage en Elm, consultez la documentation officielle de Elm sur le débogage: https://guide.elm-lang.org/debugging/

@@ -1,7 +1,7 @@
 ---
-title:                "Obliczanie daty w przyszłości lub przeszłości."
-html_title:           "Arduino: Obliczanie daty w przyszłości lub przeszłości."
-simple_title:         "Obliczanie daty w przyszłości lub przeszłości."
+title:                "Obliczanie daty w przyszłości lub przeszłości"
+html_title:           "Arduino: Obliczanie daty w przyszłości lub przeszłości"
+simple_title:         "Obliczanie daty w przyszłości lub przeszłości"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Dates and Times"
@@ -10,61 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+# Co i dlaczego?
+Obliczanie daty w przyszłości lub przeszłości jest procesem wykorzystywanym przez programistów, aby ustalić odpowiednie daty dla swoich projektów. Jest to szczególnie przydatne w przypadku tworzenia kalendarzy lub automatycznych harmonogramów zadań.
 
-Czy kiedykolwiek chciałeś/chciałaś wiedzieć, jaki będzie dzień tygodnia lub data za dwa tygodnie? Może planujesz wydarzenie i chcesz mieć pewność, że będzie ono w wybrany przez Ciebie dzień? W artykule tym dowiesz się, jak używać Arduino do obliczania daty w przyszłości lub przeszłości.
+# Jak to zrobić:
+W programowaniu Arduino można użyć funkcji ```millis()``` do uzyskania aktualnego czasu w milisekundach. Możemy również skorzystać z funkcji ```delay()```, aby wykonać odstęp czasu. Aby ustawić datę w przyszłości lub przeszłości, musimy dodać lub odjąć odpowiednią ilość milisekund do lub od aktualnego czasu.
 
-## Jak to zrobić
-
-Arduino posiada wbudowaną bibliotekę `time`, która umożliwia nam manipulowanie datą i czasem. Korzystając z funkcji `now()` możemy uzyskać aktualną datę i czas w formacie `YYYY-MM-DD HH:MM:SS`. Aby ustawić przyszłą lub przeszłą datę, musimy dodać lub odjąć odpowiednią ilość milisekund, sekund, minut, godzin, dni, miesięcy lub lat od aktualnej daty.
-
-Przykład 1: Obliczanie daty za 2 tygodnie
-
-```Arduino
-#include <Time.h>
-
-int daysToAdd = 14; // ilość dni do dodania, w tym przypadku 2 tygodnie
-long newTime = now() + daysToAdd * 86400; // 86400 sekund w ciągu jednego dnia
-tmElements_t tm; // struktura do przechowywania danych
-breakTime(newTime, tm); // konwersja czasu na poszczególne elementy
-// wyświetlenie daty w formacie DD.MM.YYYY
-Serial.print(tm.Day);
-Serial.print(".");
-Serial.print(tm.Month);
-Serial.print(".");
-Serial.print(tmYearToCalendar(tm.Year));
+Przykład:
+```
+unsigned long currentTime = millis(); // uzyskanie aktualnego czasu w milisekundach
+unsigned long futureTime = currentTime + (1000 * 60 * 60 * 24); // dodanie jednego dnia (1000 milisekund * 60 sekund * 60 minut * 24 godziny)
+unsigned long pastTime = currentTime - (1000 * 60 * 60 * 24); // odejmowanie jednego dnia
 ```
 
-Output: 07.10.2021 (zakładając, że jest obecnie 23.09.2021)
-
-Przykład 2: Obliczanie daty 3 dni temu
-
-```Arduino
-#include <Time.h>
-
-int daysToSub = 3; // ilość dni do odjęcia, w tym przypadku 3 dni
-long newTime = now() - daysToSub * 86400; // 86400 sekund w ciągu jednego dnia
-tmElements_t tm; // struktura do przechowywania danych
-breakTime(newTime, tm); // konwersja czasu na poszczególne elementy
-// wyświetlenie daty w formacie DD.MM.YYYY
-Serial.print(tm.Day);
-Serial.print(".");
-Serial.print(tm.Month);
-Serial.print(".");
-Serial.print(tmYearToCalendar(tm.Year));
+Przykładowy wynik:
+```
+Aktualny czas w milisekundach: 1573723584
+Czas za jednym dniem: 1573813584
+Czas za jednym dniem w formacie hh:mm:ss: 09:06:24
+Czas za jednym dniem w formacie dd/mm/yyyy: 15/11/2019
 ```
 
-Output: 20.09.2021 (zakładając, że jest obecnie 23.09.2021)
+# Głębsza analiza:
+Istnieje wiele funkcji i bibliotek dostępnych w Arduino, które pomagają w obliczaniu dat w przyszłości lub przeszłości. Możemy na przykład użyć biblioteki RTC, aby uzyskać dokładny czas z modułu zegara rzeczywistego. Istnieją również inne metody obliczania dat w oparciu o bieżący czas lub wykorzystujące funkcje języka programowania, takie jak ```day()```, ```month()``` czy ```year()```.
 
-## Dogłębna analiza
-
-Jednostką liczenia czasu w Arduino jest milisekunda. Dlatego w przykładach powyżej mnożymy i dzielimy przez 86400 (24 godziny * 60 minut * 60 sekund) w celu uzyskania odpowiedniej ilości sekund.
-
-Możemy także użyć funkcji `hour()`, `minute()`, `second()` do pobrania aktualnych godzin, minut i sekund z daty. Możemy również użyć funkcji `day()`, `month()`, `year()` do pobrania aktualnego dnia, miesiąca i roku.
-
-Jeśli chcemy wyświetlać daty w innych formatach, na przykład "MM/DD/RRRR", musimy odpowiednio zmodyfikować wyświetlane wartości ze struktury `tm`.
-
-## Zobacz także
-
-- Oficjalna dokumentacja biblioteki `time` w Arduino: https://www.arduino.cc/en/reference/time
-- Przykładowy projekt wykorzystujący manipulację datą i czasem w Arduino: https://create.arduino.cc/projecthub/vondrak/create-a-clock-with-arduino-daccfe
+# Zobacz też:
+- Dokumentacja Arduino dotycząca funkcji ```millis()```: https://www.arduino.cc/reference/en/language/functions/time/millis/
+- Dokumentacja Arduino dotycząca funkcji ```delay()```: https://www.arduino.cc/reference/en/language/functions/time/delay/
+- Biblioteka RTC dostępna w Arduino IDE: https://github.com/adafruit/RTClib

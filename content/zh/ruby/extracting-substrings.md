@@ -10,32 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
+## 什么 & 为什么?
 
-有时候在编写程序时，我们需要从一个字符串中提取特定的部分，这就是提取子字符串的原因。在Ruby中，提取子字符串非常简单，只需要使用几个内置的方法就可以实现。
+提取子串是指从一个字符串中获取指定的一部分字符。程序员经常这样做是因为当他们需要处理大量的文本时，只有部分字符是需要的，每次处理整个字符串会浪费时间和资源。
 
-## 如何做
+## 如何实现？
 
-首先，我们需要一个包含字符串的变量。例如，`message = "你好，世界"`。
+在Ruby中，我们可以使用```[]```方法来提取子串。这个方法接受两个参数，第一个是起始位置，第二个是子串的长度。例如，我们有一个字符串"Hello World"，想要提取"Hello"作为子串，我们可以这样做：
+```
+string = "Hello World"
+substring = string[0, 5]
+puts substring
+```
+输出将会是："Hello"
 
-#### 提取从索引2开始的所有字符
+## 深入探究
 
-我们可以使用`message[2..-1]`来提取从索引2到最后一个字符的所有字符。输出结果为`"，世界"`。
+提取子串的想法可以追溯到低级语言，比如C。在C中，提取子串的方法有点复杂，需要使用指针来实现。在高级语言中，比如Ruby，我们有更简单的方法来提取子串。
 
-#### 提取特定范围的字符
+除了使用```[]```方法，还有其他方法可以提取子串，比如使用正则表达式。这种方法可以更灵活，但是需要一定的正则表达式知识。
 
-如果我们想要提取特定范围的字符，我们可以使用`message[start_index, length]`来指定开始的索引和需要提取的字符数量。例如，`message[1,3]`将会提取从索引1开始的3个字符，输出结果为`"好，世"`。
+## 参考资料
 
-#### 使用正则表达式来提取
+[Ruby String Documentation](https://ruby-doc.org/core-2.7.0/String.html)
 
-我们也可以使用正则表达式来提取特定模式的字符串。例如，`message[/好.*界/]`会提取所有在“好”和“界”之间的字符串，输出结果为`"好，世界"`。
-
-## 深入探讨
-
-在Ruby中，提取字符串的方法有很多种，可以满足不同的需求。除了上面提到的方法，还有很多其他有用的方法，如`scan`、`match`和`split`。这些方法在提取特定模式的字符串时非常有用，可以帮助我们更快地处理数据。
-
-## 参考链接
-
-- [Ruby文档-String类](https://ruby-doc.org/core-2.7.1/String.html)
-- [Ruby文档-Regular Expression](https://ruby-doc.org/core-2.7.1/Regexp.html)
-- [Ruby Guides-Extracting Substrings](https://www.rubyguides.com/2018/11/extract-substring-in-ruby/)
+[Ruby Regex Documentation](https://ruby-doc.org/core-2.7.0/Regexp.html)

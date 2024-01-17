@@ -1,7 +1,7 @@
 ---
-title:                "Vergleich von zwei Daten"
-html_title:           "Gleam: Vergleich von zwei Daten"
-simple_title:         "Vergleich von zwei Daten"
+title:                "Zwei Daten vergleichen"
+html_title:           "Gleam: Zwei Daten vergleichen"
+simple_title:         "Zwei Daten vergleichen"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Dates and Times"
@@ -10,50 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+# Was & Warum?
 
-Vergleichen von zwei Daten ist eine Möglichkeit, um festzustellen, welches Datum früher oder später ist. Diese Funktion kann nützlich sein, um z.B. zu überprüfen, ob ein Termin schon vorbei ist oder ob ein Ereignis in der Zukunft liegt.
+Vergleichen von zwei Daten ist eine gebräuchliche Programmieraufgabe, bei der zwei Datumsangaben miteinander verglichen werden, um herauszufinden, welches Datum früher oder später liegt. Diese Aufgabe ist wichtig, um das Verhalten von Programmen zu steuern, die von Zeitangaben abhängig sind.
 
-## Wie geht's
+# Wie gehts?
 
-Der einfachste Weg, um zwei Daten zu vergleichen, ist die Verwendung der `compare_dates`-Funktion in Gleam. Schauen wir uns ein Beispiel an:
-
-```Gleam
-let date_a = Date.create(2020, 10, 15)
-let date_b = Date.create(2020, 8, 30)
-let comparison = Date.compare_dates(date_a, date_b)
-```
-
-In diesem Beispiel haben wir zwei Daten `date_a` und `date_b` erstellt und dann die `compare_dates`-Funktion verwendet, um sie zu vergleichen. Die Funktion gibt `greater` zurück, wenn `date_a` später ist als `date_b`, `less` wenn `date_b` später ist als `date_a` und `equal` wenn beide Daten gleich sind.
-
-Die Ausgabe von `comparison` ist `greater`, da `date_a` später im Jahr liegt als `date_b`.
-
-Um sicherzustellen, dass die Daten wirklich gleich sind, können wir auch die `equal_dates`-Funktion verwenden:
+Man kann zwei Datumsangaben verwenden, um sie miteinander zu vergleichen. Mit der eingebauten Funktion `Date.compare` in Gleam können wir zwei Zeiten direkt vergleichen. Die Funktion gibt `Order` zurück, das angibt, ob das erste Datum früher (`LT`), später (`GT`) oder gleich (`EQ`) dem zweiten Datum ist.
 
 ```Gleam
-let date_c = Date.create(2020, 10, 15)
-let comparison = Date.equal_dates(date_a, date_c)
+let now = Date.now()
+let lastWeek = Date.from_calendar(2020, 7, 21)
+let order = Date.compare(now, lastWeek)
 ```
 
-In diesem Beispiel wird `comparison` als `true` zurückgegeben, da beide Daten am selben Tag, im selben Monat und im selben Jahr erstellt wurden.
+Das obige Beispiel zeigt, wie wir `Date.compare` verwenden, um das aktuelle Datum `now` mit dem Datum der vergangenen Woche `lastWeek` zu vergleichen. In diesem Fall würden wir `GT` erhalten, da `lastWeek` früher als `now` ist.
 
-## Tiefere Einblicke
+# Tiefere Einblicke
 
-Beim Vergleichen von Daten muss man sich bewusst sein, dass die Zeitkomponente ebenfalls berücksichtigt wird. Das bedeutet, dass zwei Daten mit derselben Uhrzeit als gleich angesehen werden, auch wenn sie an unterschiedlichen Tagen oder in unterschiedlichen Monaten liegen.
+Das Vergleichen von Daten ist eine gängige Programmieraufgabe, die jedoch in der Vergangenheit zu einigen Problemen führte. In älteren Programmiersprachen wie C und Java mussten wir komplexe Berechnungen durchführen, um zwei Daten zu vergleichen. Dank moderner Sprachen wie Gleam wird dieser Prozess viel einfacher und fehlerfreier.
 
-Es ist auch wichtig zu wissen, dass die `compare_dates`-Funktion Daten mit unterschiedlicher Genauigkeit vergleichen kann. Zum Beispiel können wir eine Zeitangabe angeben, während die anderen Daten nur Jahr, Monat und Tag enthalten:
+Alternativ zur `Date.compare` Funktion gibt es auch die `Date.less_than` und `Date.greater_than` Funktionen, die ebenfalls zur Vergleich von Daten verwendet werden können. Diese Funktionen geben einfach einen booleschen Wert zurück, anstatt sich auf die Bestimmung der Reihenfolge zu konzentrieren.
 
-```Gleam
-let date_d = Date.create(2020, 10, 15, (3, 30, 0, 0))
-let date_e = Date.create(2020, 10, 15)
-let comparison = Date.compare_dates(date_d, date_e)
-```
+In der Implementierung wird `Date.compare` letztendlich auf die `compare` Funktion des `Date.OrderedType` Protokolls zurückgeführt. Dies ermöglicht es, die Funktion für benutzerdefinierte Datumsformate zu implementieren.
 
-In diesem Beispiel wird `0` zurückgegeben, da die Zeitkomponente bei beiden Daten gleich ist. Wenn wir jedoch die `equal_dates`-Funktion verwenden, wird immer noch `true` zurückgegeben, da die Daten am selben Tag, im selben Monat und im selben Jahr erstellt wurden.
+# Siehe auch
 
-## Siehe auch
-
-Weitere Informationen zum Vergleichen von Daten und anderen Gleam-Funktionen finden Sie in der offiziellen Dokumentation:
-
-- [Date Module](https://gleam.run/modules/stdlib/Date.html)
-- [Official Gleam Documentation](https://gleam.run/)
+- [Gleam Dokumentation über die Date Library](https://gleam.run/articles/dates)
+- [Gleam Protocols](https://gleam.run/articles/protocols)
+- [Gleam Standard Library](https://gleam.run/lib/standard)

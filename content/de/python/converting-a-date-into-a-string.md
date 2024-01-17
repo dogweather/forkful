@@ -1,7 +1,7 @@
 ---
-title:                "Ein Datum in einen String umwandeln"
-html_title:           "Python: Ein Datum in einen String umwandeln"
-simple_title:         "Ein Datum in einen String umwandeln"
+title:                "Umwandlung eines Datums in einen String"
+html_title:           "Python: Umwandlung eines Datums in einen String"
+simple_title:         "Umwandlung eines Datums in einen String"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Dates and Times"
@@ -10,31 +10,22 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+# Was ist das und warum?
+Die Umwandlung eines Datums in einen String bedeutet, dass ein bestimmtes Datum (z. B. 10. Juni 2020) in eine lesbare Zeichenfolge (z. B. "10.06.2020") umgewandelt wird. Programmierer nutzen dies, um Daten in einem klareren Format anzeigen oder speichern zu können.
 
-Das Konvertieren von Datum zu einer Zeichenfolge ist eine nützliche Fähigkeit für alle, die mit Datum und Zeit in ihren Python-Programmen arbeiten. Es ermöglicht die Darstellung von Datum und Zeit in einem lesbareren Format für Benutzer und vereinfacht die Verarbeitung von Daten in verschiedenen Formaten.
+## So geht's:
+```
+Python from datetime import datetime
+now = datetime.now()
+print(now.strftime("%d.%m.%Y"))
 
-## Wie geht's
-
-Die Konvertierung von Datum zu einer Zeichenfolge kann mit der `strftime()` Funktion in Python durchgeführt werden. Diese Funktion verwendet eine formatierte Zeichenfolge als Argument, um das Datum und die Zeit in das gewünschte Format umzuwandeln.
-
-```Python
-import datetime
-
-today = datetime.datetime.today()
-print(f"Heute ist der {today.strftime('%d.%m.%Y')}.")
+# Output: 10.06.2020
 ```
 
-Output:
-Heute ist der 22.08.2021.
+## Tiefentauchen:
+Die Umwandlung von Datum in Zeichenfolge ist ein wichtiger Bestandteil der Datumsmanipulation, um Daten übersichtlicher darzustellen. Es gibt jedoch auch andere Möglichkeiten, wie zum Beispiel die Umwandlung von Zeichenfolgen in Datum und die Verwendung von Modulen wie "python-dateutil" für fortgeschrittenere Funktionen. Bei der Implementierung ist es wichtig zu beachten, dass das Formatieren von Datum in eine Zeichenfolge von regionalen Einstellungen abhängen kann.
 
-## Tiefer gehen
-
-Die `strftime()` Funktion akzeptiert verschiedene Formatierungsoptionen, um das Ausgabeformat anzupassen. Zum Beispiel kann `%d` verwendet werden, um den Tag des Monats als zweistellige Zahl darzustellen, oder `%b` für eine dreistellige Abkürzung des Monatsnamens.
-
-Es gibt auch eine `strptime()` Funktion, die das Umgekehrte von `strftime()` tut - sie konvertiert eine Zeichenfolge in ein `datetime` Objekt. Beide Funktionen sind hilfreich, um mit Datum und Zeit zu arbeiten, und es gibt viele nützliche Formatierungsoptionen, die in der Dokumentation von Python zu finden sind.
-
-## Siehe auch
-
-- [Python-Datums- und Zeitformate](https://docs.python.org/3/library/datetime.html#strftime-and-strptime-format-codes)
-- [Umrechnen von Zeichenfolgen in Datum und Zeit in Python](https://www.programiz.com/python-programming/datetime/strptime)
+## Siehe auch:
+• [Python-Dokumentation zu Datetime](https://docs.python.org/3/library/datetime.html)
+• [Python-Dokumentation zu python-dateutil](https://dateutil.readthedocs.io/en/stable/)
+• [Stack Overflow zu Datumsformatierung](https://stackoverflow.com/questions/7716630/converting-python-date-format-to-mysql)

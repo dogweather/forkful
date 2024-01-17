@@ -1,7 +1,7 @@
 ---
-title:                "Beräkna ett datum i framtiden eller förflutna"
-html_title:           "Swift: Beräkna ett datum i framtiden eller förflutna"
-simple_title:         "Beräkna ett datum i framtiden eller förflutna"
+title:                "Beräkna ett datum i framtiden eller det förflutna"
+html_title:           "Swift: Beräkna ett datum i framtiden eller det förflutna"
+simple_title:         "Beräkna ett datum i framtiden eller det förflutna"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Dates and Times"
@@ -10,33 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
 
-Att räkna ut ett datum i framtiden eller förflutet kan vara användbart för att planera möten eller evenemang, eller för att hålla koll på deadlines. Det är också en bra övning för att lära sig hantera datum i Swift.
+Beräkning av ett datum i framtiden eller det förflutna är en vanlig uppgift som många programmerare stöter på. Det är processen att använda ett startdatum och en tidsperiod för att generera ett nytt datum i relation till det ursprungliga.
 
-## Hur man gör
+Detta behövs ofta inom applikationsutveckling, särskilt för att hantera scheman och händelser. Genom att kunna beräkna datum i framtiden eller förflutna kan vi skapa mer dynamiska och anpassningsbara program.
 
-För att räkna ut ett datum i framtiden eller förflutet behöver du använda dig av Swifts inbyggda Calendar- och Date-klasser. Här är ett exempel på hur du kan beräkna ett datum som ligger en månad framåt:
+## Så här:
+
+Enklaste sättet att beräkna ett datum i framtiden eller förflutna är att använda metoden `addingTimeInterval` från `Date`-klassen. Nedan är ett exempel på hur du kan använda denna metod för att få ett datum 30 dagar från det aktuella datumet.
 
 ```Swift
-let calendar = Calendar.current
-let today = Date()
-let futureDate = calendar.date(byAdding: .month, value: 1, to: today)
+let currentDate = Date()
+let thirtyDaysFromNow = currentDate.addingTimeInterval(30*24*60*60) // 30 dagar har 24 timmar, 60 minuter och 60 sekunder
+print(thirtyDaysFromNow) 
 
-print(futureDate ?? "No date found!")
+// Output:
+// 2021-05-07 01:45:36 +0000
 ```
 
-I det här exemplet används `Calendar.current` för att hämta den aktuella kalendern och `Date()` för att få dagens datum som utgångspunkt. Sedan använder vi `calendar.date(byAdding:to:)` för att lägga till en månad till dagens datum och få det nya datumet som output.
+Det finns också andra metoder för att beräkna datum i framtiden eller förflutna såsom `addingWeekOfYear` och `addingMonth` som kan vara praktiska beroende på din specifika användning.
 
-För att räkna ut ett datum som ligger i förflutet behöver du bara byta ut `.month` till `.month` och ett negativt värde för `value` för att dra av istället för att lägga till.
+## Djupt dyk
 
-## Fördjupning
+Att kunna beräkna datum i framtiden eller förflutna har blivit enklare med utvecklingen av programmeringsspråk och ramverk. Förr i tiden, när de flesta enheter inte var anslutna till internet, var det vanligt att programmerare behövde skriva mer komplexa algoritmer för att göra dessa beräkningar.
 
-När du räknar ut datum i Swift är det viktigt att förstå att det inte bara handlar om antalet dagar. Det finns många faktorer som påverkar beräkningarna, till exempel vilken tidszon som används och om det är skottår.
+Alternativa sätt att beräkna datum inkluderar användning av bibliotek såsom `DateUtils` som tillhandahåller mer avancerade funktioner för att manipulera datum. Men för enkelheten, är det fortfarande vanligt att använda inbyggda metoder som `addingTimeInterval`.
 
-För att fördjupa dig ännu mer i hur datumberäkningar fungerar i Swift kan du läsa Swifts officiella dokumentation om Calendar och Date.
+Implementeringen av dessa beräkningsfunktioner brukar använda sig av Gregoriankalendern som är den mest använda kalendern i världen. Men det finns också metoder som kan använda andra kalendrar beroende på ditt behov.
 
 ## Se även
 
-- [Swift - Calendar](https://developer.apple.com/documentation/foundation/calendar)
-- [Swift - Date](https://developer.apple.com/documentation/foundation/date)
+Om du vill lära dig mer om hur du beräknar datum i framtiden eller förflutna, kan du besöka Apples dokumentation för `Date`-klassen och utforska de olika metoderna som finns tillgängliga. Du kan också läsa på om andra kalendrar och hur de kan användas i programmeringssammanhang.
+
+Källor:
+- [Apple Documentation - Date](https://developer.apple.com/documentation/foundation/date) 
+- [DateUtils Library](https://github.com/malcommac/DateUtils) 
+- [Gregorian Calendar](https://en.wikipedia.org/wiki/Gregorian_calendar)

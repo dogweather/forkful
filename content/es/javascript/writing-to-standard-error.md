@@ -1,7 +1,7 @@
 ---
-title:                "Escribiendo en el error estándar"
-html_title:           "Javascript: Escribiendo en el error estándar"
-simple_title:         "Escribiendo en el error estándar"
+title:                "Escribiendo a la salida de error estándar"
+html_title:           "Javascript: Escribiendo a la salida de error estándar"
+simple_title:         "Escribiendo a la salida de error estándar"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Files and I/O"
@@ -10,34 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##¿Por qué escribir en error estándar?
+## ¿Qué y por qué?
 
-Escribir en error estándar es una práctica común en el mundo de la programación. Puede ser útil en situaciones donde se necesita registrar errores o mensajes importantes que no deberían ser ignorados. También puede ser utilizado para depurar y monitorear el rendimiento de una aplicación.
+Hola a todos los programadores, hoy hablaremos sobre cómo escribir en la "salida de error" en Javascript. Esto se refiere a una forma de imprimir mensajes o información en la consola del navegador de una manera diferenciada de la salida estándar. Los programadores suelen escribir en la salida de error para mostrar mensajes de error o información de depuración que no desea aparecer para el usuario promedio.
 
-## Cómo hacerlo:
+## ¿Cómo hacerlo?
 
-Para escribir en error estándar en Javascript, puedes utilizar el objeto `console` y su método `error()`. Por ejemplo:
+Veamos un ejemplo rápido de cómo escribir en la salida de error en Javascript:
 
 ```Javascript
-console.error("¡Error! No se pudo encontrar el archivo solicitado.");
+console.error("¡Ups! Algo salió mal."); // imprimirá el mensaje de error en la consola del navegador
 ```
 
-El resultado en la consola sería:
+En este ejemplo, estamos utilizando el método `.error()` de la consola para imprimir nuestro mensaje en la salida de error. También puedes utilizar otros métodos como `.warn()` para imprimir advertencias o `.info()` para imprimir información de depuración.
 
+```Javascript
+console.warn("¡Cuidado!"); // imprimirá una advertencia en la consola
+console.info("La variable i tiene el valor de " + i); // imprimirá información de depuración en la consola
 ```
-¡Error! No se pudo encontrar el archivo solicitado.
-```
 
-Este método también acepta múltiples argumentos, por lo que se pueden incluir variables u otros mensajes en el mismo comando. Puedes utilizar este método en cualquier parte de tu código donde quieras registrar un mensaje de error.
+Ahora, puedes preguntarte por qué deberías usar la salida de error en lugar de simplemente imprimir en la consola de manera regular. La razón principal es que, en algunos escenarios, es importante diferenciar entre los diferentes tipos de mensajes. Por ejemplo, si estás desarrollando una aplicación para usuarios finales, es posible que no quieras que vean los mensajes de error. Pero si sucede algo inesperado, quieres asegurarte de que los mensajes importantes de error se impriman en la salida de error para que puedas detectar y solucionarlos rápidamente.
 
-## Profundizando en el tema:
+## Profundizando
 
-Escribir en error estándar no solo es útil para registrar errores, sino que también te permite monitorear el rendimiento de tu aplicación. Puedes utilizar herramientas de terceros para interceptar y analizar los mensajes de error, lo que puede ayudar a identificar problemas y mejorar el rendimiento de tu código.
+La idea de escribir en la salida de error no es algo nuevo en el mundo de la programación. De hecho, proviene de los sistemas operativos Unix y es una práctica común en varios lenguajes de programación. En lugar de imprimir los mensajes en la consola, en Unix, los mensajes se envían a distintos dispositivos, como la salida estándar o la salida de error.
 
-Además, al escribir en error estándar, estás siguiendo buenas prácticas de programación y facilitando el trabajo de otros programadores que puedan necesitar depurar o mantener tu código en el futuro.
+Además de usar el método `.error()` de la consola, también puedes utilizar el objeto `console` para escribir en la salida de error utilizando `process.stderr` en su lugar. Sin embargo, es importante tener en cuenta que esto puede no funcionar en todos los navegadores.
 
-## Ver También:
+## Ver también
 
-- [Documentación de console.error en MDN](https://developer.mozilla.org/es/docs/Web/API/Console/error)
-- [Introducción a la escritura en error estándar](https://www.toptal.com/c/standard-error-piping-and-logging-in-node-js)
-- [Herramientas para analizar y monitorizar errores en Javascript](https://blog.logrocket.com/javascript-debugging-tricks-tools/)
+Si te interesa aprender más sobre la salida de error y cómo escribir en ella en otros lenguajes de programación, puedes consultar estos recursos:
+
+- Documentación oficial sobre la consola en MDN: https://developer.mozilla.org/en-US/docs/Web/API/console
+- Artículo sobre la salida de error en Node.js: https://nodejs.org/dist/latest-v10.x/docs/api/console.html#console_console_error_data_args
+- Guía de errores básicos en Javascript: https://www.digitalocean.com/community/tutorials/an-introduction-to-error-handling-in-javascript

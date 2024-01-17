@@ -10,90 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 为什么
+# 什么是命令行参数？为什么程序员需要使用它？
 
-在开发软件时，我们经常需要从命令行接收用户输入的参数。读取命令行参数是一种重要的技能，能够帮助我们更灵活地控制程序的行为。如果你想要提升自己的软件开发技能，那么学习读取命令行参数是一个不错的选择。
+命令行参数是指在命令行界面输入的参数，它们可以传递给程序并影响程序的执行。程序员使用命令行参数来增强程序的灵活性，使程序可以根据运行时输入的不同参数来改变其行为。
 
-# 如何做
+# 如何使用Kotlin读取命令行参数？
 
-```Kotlin
-fun main(args: Array<String>) {
-    // 遍历所有命令行参数
-    for (arg in args) {
-        println(arg)
-    }
-}
-```
-
-在上面的代码中，我们使用`Array<Sting>`来接收所有的命令行参数，并使用`for`循环来遍历每一个参数并打印出来。运行此程序，我们就可以在命令行中看到所有的参数。
-
-```shell
-$ kotlin CommandLineArgsExample.kt argument1 argument2 argument3
-
-argument1
-argument2
-argument3
-```
-
-如果我们只想获取特定位置的参数，可以使用索引来指定。
+Kotlin中可以使用`main`函数的`args`参数来读取命令行参数。下面是一个简单的例子：
 
 ```Kotlin
 fun main(args: Array<String>) {
-    // 获取第一个参数
-    val firstArg = args[0]
-    println("First argument: $firstArg")
-
-    // 获取第二个参数
-    val secondArg = args[1]
-    println("Second argument: $secondArg")
+    println("Hello, ${args[0]}!")
 }
 ```
 
-在上面的代码中，我们使用索引来获取第一个和第二个参数，并打印出来。运行此程序，我们可以看到对应位置的参数被正确获取了。
+如果我们在命令行输入`kotlin MyProgram.ktm John`，程序将输出`Hello, John!`。
 
-```shell
-$ kotlin CommandLineArgsExample.kt arg1 arg2
+# 深入了解命令行参数的背景和实现细节
 
-First argument: arg1
-Second argument: arg2
-```
+命令行参数一直是程序员们使用的重要工具，在早期的操作系统中，它们是唯一的交互方式。现在，我们也可以使用其他方式来传递参数，比如配置文件或者图形用户界面。Kotlin从JVM中继承了读取命令行参数的方式，使用`main`函数的`args`参数来进行传递。
 
-# 深入了解
+# 相关资源
 
-除了使用索引，我们也可以使用Kotlin标准库提供的`CommandLine.kt`来读取命令行参数。通过使用`commandLine`函数，我们可以轻松地获取命令行参数的名称和值。
-
-```Kotlin
-import kotlin.system.exitProcess
-
-fun main(args: Array<String>) {
-    // 检查是否存在-a参数
-    if ("-a" in args) {
-        println("Option -a detected.")
-        exitProcess(0)
-    }
-    
-    // 获取-b参数的值
-    val bValue = with(commandLine) {
-        // 获取参数值，如果不存在则返回null
-        getOptionValue("b")
-    }
-    
-    if (bValue != null) {
-        println("Value of -b: $bValue")
-    }
-}
-```
-
-在上面的代码中，我们首先使用了`exitProcess`函数来终止程序，并使用`in`操作符来检查是否存在特定的参数。接着，我们使用了`getOptionValue`函数来获取参数的值，并将其打印出来。运行此程序，我们可以看到对应参数的信息被正确地获取和处理。
-
-```shell
-$ kotlin CommandLineArgsExample.kt -a -b value
-
-Option -a detected.
-Value of -b: value
-```
-
-# 参考链接
-
-- [Kotlin官方文档 - 命令行参数](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.system/command-line.html)
-- [Kotlin官方文档 - 带有命令行参数的应用程序](https://kotlinlang.org/docs/tutorials/command-line.html)
+- [Kotlin中读取命令行参数的官方文档](https://kotlinlang.org/docs/command-line.html#command-line-arguments)
+- [命令行参数的历史发展](https://en.wikipedia.org/wiki/Command-line_interface)

@@ -1,7 +1,7 @@
 ---
-title:                "Henting av nåværende dato"
-html_title:           "Python: Henting av nåværende dato"
-simple_title:         "Henting av nåværende dato"
+title:                "Hente nåværende dato"
+html_title:           "Python: Hente nåværende dato"
+simple_title:         "Hente nåværende dato"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Dates and Times"
@@ -10,48 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hvorfor
+# Hva er og hvorfor bruker vi den nåværende datoen?
 
-Det er alltid nyttig å kunne få tak i den nåværende datoen når man programmerer. Enten det er for å registrere når en bruker opprettet en konto, for å lage dynamiske timersystemer eller bare for å få en bedre forståelse av hvor lang tid som har gått siden en hendelse. Ved å bruke Python kan man enkelt få tak i den nåværende datoen og bruke den til å utvikle mer effektive programmer.
+Å få nåværende dato er et vanlig behov for mange programmerere, enten det er å spore tid, lage tidsstempler eller utføre beregninger basert på datoen. Det er viktig for programmerere å ha nøyaktig informasjon om tiden for å sikre at deres koder fungerer riktig og effektivt.
 
-## Slik gjør du det
-
-For å få tak i den nåværende datoen i Python, kan man bruke innebygde funksjoner og moduler. Det er flere måter å gjøre dette på, og her vil vi vise to eksempler:
+# Hvordan:
 
 ```Python
+
+# Importer datetime modulen
 import datetime
 
-# Få tak i den nåværende datoen ved å bruke datetime biblioteket
-current_date = datetime.date.today()
-print(current_date)
+# Bruk datetime.now () -funksjonen for å få nåværende dato og lagre den i en variabel
+current_date = datetime.now()
 
-# Output: 2021-05-10
+# Skriv ut nåværende dato i dag / måned / år-format
+print(current_date.strftime("%d/%m/%Y"))
 
-# Få tak i datoen og klokkeslettet ved å bruke datetime biblioteket
-current_datetime = datetime.datetime.now()
-print(current_datetime)
+# Skriv ut nåværende dato i dagens navn, månedsnavn, år-format
+print(current_date.strftime("%A, %B %Y"))
 
-# Output: 2021-05-10 12:45:09.277694
 ```
 
-## Dykk dypere
+```
+Output:
 
-I eksemplene over brukte vi datetime biblioteket for å få tak i den nåværende datoen og klokkeslettet. Dette biblioteket har flere nyttige funksjoner som kan hjelpe deg med å manipulere datoen og klokkeslettet på ulike måter. For eksempel kan du bruke strftime() metoden for å formatere datoen og klokkeslettet på en spesifikk måte.
-
-```Python
-import datetime
-
-# Få tak i datoen i et bestemt format
-current_date = datetime.date.today().strftime("%A, %B %d, %Y")
-print(current_date)
-
-# Output: Monday, May 10, 2021
+19/11/2021
+Friday, November 2021
 ```
 
-Det er også verdt å merke seg at datoen og klokkeslettet som blir returnert av disse funksjonene, er basert på datamaskinens nåværende dato og tid. Dette betyr at hvis datamaskinen din er satt til å bruke et annet tidssone, vil dette reflekteres i datoen og klokkeslettet som blir returnert. Man kan også bruke forskjellige funksjoner for å manipulere datoen og klokkeslettet, for eksempel å legge til eller trekke fra et gitt antall dager.
+# Dykk dypere:
 
-# Se også
+Det finnes flere måter å få nåværende dato på i Python, som å bruke time-modulen eller calendar-modulen. Du kan også spesifisere tidssone, formatere dato og til og med utføre matematiske operasjoner med datoer ved hjelp av datetime-modulen.
 
-- [Python datetime dokumentasjon](https://docs.python.org/3/library/datetime.html)
-- [Python datetime modul tutorial](https://realpython.com/python-datetime/)
-- [W3Schools tutorial om Python datetimer](https://www.w3schools.com/python/python_datetime.asp)
+# Se også:
+
+- Python dokumentasjon for datetime-modulen: https://docs.python.org/3/library/datetime.html
+- Tutorialspoint sin artikkel om hvordan å få nåværende dato i Python: https://www.tutorialspoint.com/python/time_strftime.htm

@@ -10,57 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Vad är YAML och varför borde du använda det med Arduino?
+## Vad & Varför?
+Att arbeta med YAML i Arduino betyder att man kodar och strukturerar data i ett format som är lättläst och förståeligt för både människor och maskiner. Det finns många anledningar till att programmerare väljer att använda YAML, bland annat för dess enkelhet och flexibilitet.
 
-YAML står för "YAML Ain't Markup Language" och det är ett format för att strukturera data som är lätt att läsa och skriva för människor. Det är också lätt att läsa för datorer och används ofta för konfigurationsfiler inom mjukvaruutveckling. Med YAML kan du skapa och ändra datastrukturer på ett enkelt sätt, vilket är särskilt användbart när du arbetar med Arduino.
-
-## Varför
-
-Det finns många anledningar till varför du skulle vilja använda YAML med Arduino. Ett av de främsta skälen är att det gör det möjligt att skriva och läsa datastrukturer på ett enkelt sätt, vilket är perfekt för att hantera konfigurationsfiler som styr din Arduino-kod.
-
-Med YAML kan du också enkelt göra ändringar i dina datastrukturer utan att behöva ändra koden i din Arduino-sketch. Detta gör det mycket lättare att hantera och uppdatera dina projekt.
-
-## Så här gör du
-
-För att använda YAML inom Arduino behöver du lägga till ett bibliotek som heter "YamlDuino" i din uppsättning av Arduino-bibliotek.
+## Så här:
+Det första steget för att använda YAML i Arduino är att installera biblioteket "Arduino-yaml". Därefter kan man läsa och skriva data genom att använda funktioner som `YAML.read` och `YAML.write`. Exempel på kod och output kan ses nedan:
 
 ```Arduino
-#include <YamlDuino.h>
-YAML.begin();
+#include <YAML.h>
+
+void setup() {
+  YAML.begin();
+  // Skapa en strukturerad dataström
+  YAML.create();
+
+  // Läsa data från en YAML-fil
+  YAML.read("min_fil.yaml");
+  int värde = YAML.get("variabel");
+  Serial.println(värde); // Visar det lästa värdet
+
+  // Skriva data till en YAML-fil
+  YAML.put("variabel", 42);
+  YAML.write("min_fil.yaml"); // Lägger till eller ersätter värdet i filen
+}
+
+void loop() {
+  // Kod för att köra kontinuerligt
+}
 ```
 
-Sedan kan du skapa dina datastrukturer i YAML-format genom att använda funktionen `YAML.load()` och ge den en sträng som innehåller din YAML-kod.
-
-```Arduino
-String myData = "name: John\nage: 30";
-YAMLObject dataObj = YAML.load(myData);
+Output:
+```console
+42
 ```
 
-Nu kan du enkelt hämta och ändra värdena i din datastruktur med hjälp av punktnotation.
+## Djupdykning:
+YAML, eller "YAML Ain't Markup Language", är ett format för strukturerad data som är designat för att vara lättläst och portabelt mellan olika språk och plattformar. Det används ofta för konfigurationsfiler och databankshantering. Alternativ till YAML är till exempel JSON och XML, men YAML erbjuder en mer intuitiv syntax och stöd för mer komplexa datastrukturer.
+YAML är också ett stöd för flera programmeringsspråk, vilket gör det enkelt att använda i olika projekt.
 
-```Arduino
-String name = dataObj.name;
-int age = dataObj.age;
-
-dataObj.age = 31;
-```
-
-Du kan också skapa och spara nya YAML-filer direkt på ditt Arduino-kort med hjälp av funktionen `YAML.save()`.
-
-```Arduino
-String newFile = "newData.yaml";
-YAML.save(newFile, dataObj);
-```
-
-## Djupdykning
-
-En av de största fördelarna med YAML är dess enkelhet och läsbarhet för människor. Detta gör det mycket lätt att ändra och uppdatera datastrukturer efter behov.
-
-En annan fördel är att YAML stöder olika typer av data, inklusive strängar, heltal, flyttal och listor. Detta gör det möjligt att skapa komplexa datastrukturer som är lättare att hantera och bearbeta.
-
-För att lära dig mer om YAML och dess olika funktioner, se till att läsa dokumentationen för YamlDuino-biblioteket samt YAMLs officiella hemsida.
-
-## Se även
-
-- [YamlDuino biblioteket](https://github.com/gmag11/YamlDuino)
-- [YAML officiella hemsida](https://yaml.org)
+## Se även:
+- [YAML.org](https://yaml.org/)
+- [Arduino-yaml bibliotek](https://github.com/zs5n/Arduino-YAML)

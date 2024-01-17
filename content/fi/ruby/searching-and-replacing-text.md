@@ -1,7 +1,7 @@
 ---
-title:                "Tekstin haku ja korvaaminen"
-html_title:           "Ruby: Tekstin haku ja korvaaminen"
-simple_title:         "Tekstin haku ja korvaaminen"
+title:                "Tekstin etsiminen ja korvaaminen"
+html_title:           "Ruby: Tekstin etsiminen ja korvaaminen"
+simple_title:         "Tekstin etsiminen ja korvaaminen"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Strings"
@@ -10,41 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
-Monet ohjelmoinnin tehtävät, kuten tietojen muokkaaminen, vaatii tekstiä etsimistä ja korvaamista. Rubyssa on monipuoliset työkalut tekstin etsimiseen ja korvaamiseen, mikä tekee siitä hyödyllisen ohjelmointikielen moniin tarkoituksiin.
+## Mitä & Miksi?
 
-## Miten
-Alta löydät muutamia esimerkkejä Rubyssa käytettävistä toiminnoista tekstin etsimiseen ja korvaamiseen. Koodiesimerkit ja niiden tuottama lähtö näytetään "```Ruby ... ```" koodilohkoissa.
+Hakeminen ja korvaaminen tarkoittavat tekstissä esiintyvien tiettyjen merkkijonojen etsimistä ja niiden korvaamista toisilla merkkijonoilla. Ohjelmoijat tekevät tätä voidakseen tehokkaasti muokata ja päivittää suuria määriä dataa, esimerkiksi kooditiedostoja.
 
-### Etsiminen tekstistä
-Ruby tarjoaa useita tapoja etsiä tekstiä. Yksi yleisimmin käytetyistä on `include?`-metodi, joka tarkistaa, löytyykö annettu teksti toisesta. Esimerkiksi:
+## Näin teet sen:
 
 ```Ruby
-if "Tämä on esimerkkiteksti".include?("esimerkki")
-  puts "Teksti sisältää sanan 'esimerkki'."
-end
+teksti = "Tervetuloa Ruby:n ihmeelliseen maailmaan!"
+
+# Etsi sana "maailma" ja korvaa se sanalla "kieli"
+puts teksti.gsub("maailma", "kieli")
+
+# => Tervetuloa Ruby:n ihmeelliseen kieliin!
 ```
 
-Tulostus:
-`Teksti sisältää sanan 'esimerkki'.`
+## Sukella syvemmälle:
 
-### Korvaaminen tekstissä
-Rubylla on myös useita eri tapoja korvata teksti. Yksinkertaisin tapa on käyttää `gsub`-metodia, joka korvaa kaikki annetun tekstin esiintymät toisella tekstillä. Esimerkiksi:
+Hakeminen ja korvaaminen ovat olleen käytössä jo kauan ennen Ruby-ohjelmointikielen keksimistä. On olemassa myös muita tapoja suorittaa tämä toiminto, kuten käyttämällä säännöllisiä lausekkeita tai erikoistyökaluja, kuten sed ja awk. Rubyssa hakeminen ja korvaaminen tehdään ```gsub```-metodilla, joka toimii vastaavalla tavalla kuin sed.
 
-```Ruby
-teksti = "Tämä on esimerkkiteksti"
-korvattu_teksti = teksti.gsub("esimerkki", "esikuva")
+## Katso myös:
 
-puts korvattu_teksti
-```
-
-Tulostus:
-`Tämä on esikuva teksti`
-
-## Syvällinen sukellus
-Ruby tarjoaa myös muita vaihtoehtoja tekstin etsimiseen ja korvaamiseen. Joitakin vaihtoehtoisia metodeja ovat muun muassa `scan`, `match` ja `sub`. Voit lukea lisää näistä metodeista Ruby-dokumentaatiosta [täältä](https://ruby-doc.org/core-2.7.1/String.html).
-
-## Katso myös
-- [Ruby-dokumentaatio](https://ruby-doc.org/core-2.7.1/String.html)
-- [Codecademy: String Methods in Ruby](https://www.codecademy.com/courses/learn-ruby/lessons/string-methods-i-in-ruby)
-- [TutsPlus: Rubyists Can’t String Together Text Manipulation Methods in Ruby](https://code.tutsplus.com/tutorials/rubyists-cant-string-together-text-manipulation-methods-in-ruby--net-19475)
+- [Ruby String -dokumentaatio](https://ruby-doc.org/core-2.6.3/String.html)
+- [Artikkeli hakemisesta ja korvaamisesta Rubyssa](https://www.sitepoint.com/find-replace-words-in-ruby/)
+- [Perl Compatible Regular Expression](https://rubular.com/), työkalu säännöllisten lausekkeiden testaamiseen ja muokkaamiseen.

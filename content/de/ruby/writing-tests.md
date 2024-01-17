@@ -1,7 +1,7 @@
 ---
-title:                "Test schreiben"
-html_title:           "Ruby: Test schreiben"
-simple_title:         "Test schreiben"
+title:                "Programmieren von Tests"
+html_title:           "Ruby: Programmieren von Tests"
+simple_title:         "Programmieren von Tests"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Testing and Debugging"
@@ -10,39 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+# Was & Warum?
 
-Tests sind unerlässlich, um die Qualität und Zuverlässigkeit von Ruby-Code sicherzustellen. Mit Tests können Fehler frühzeitig erkannt und behoben werden, was wiederum zu einem reibungsloseren Arbeitsablauf und einem insgesamt besseren Endprodukt führt.
+Tests schreiben ist ein wichtiger Teil des Programmierens, bei dem man Code auf seine Funktionalität und Korrektheit überprüft. Durch das Schreiben von Tests können Programmierfehler frühzeitig erkannt und behoben werden, was zu einer besseren Codequalität und Robustheit führt.
 
-## Wie man Tests schreibt
+# Wie geht's:
 
-Tests in Ruby werden mit dem beliebten Framework RSpec geschrieben. Hier ist ein einfaches Beispiel für einen Test, der überprüft, ob eine Methode die richtige Ausgabe zurückgibt.
+Hier sind zwei Beispiele, wie man Tests in Ruby schreiben kann:
 
-```ruby
-def add(a, b)
-  a + b
+```Ruby
+require 'minitest/autorun'
+class Calculator
+  def add(x, y)
+    return x + y
+  end
 end
-
-describe "#add" do
-  it "adds two numbers correctly" do
-    result = add(2, 3)
-    expect(result).to eq(5)
+class TestCalculator < Minitest::Test
+  def test_add
+    calc = Calculator.new
+    assert_equal 5, calc.add(2, 3)
   end
 end
 ```
 
-In diesem Beispiel erstellen wir eine Methode namens `add`, die zwei Zahlen addiert. Im Test überprüfen wir, ob die Methode die richtige Ausgabe zurückgibt, in diesem Fall 5. Wenn der Test erfolgreich ist, wird die grüne Farbe in der Konsole angezeigt, was bedeutet, dass unser Code ordnungsgemäß funktioniert. Wenn es zu einem Fehler kommt, wird die rote Farbe angezeigt und wir wissen, dass etwas behoben werden muss.
+Die Ausgabe des Tests sollte "  " lauten.
 
-Ein weiteres nützliches Feature von RSpec ist die Möglichkeit, sogenannte Mocks und Stubs zu verwenden, um externe Abhängigkeiten in den Tests zu simulieren. Dadurch können wir unsere Tests unabhängig von externen Ressourcen durchführen und garantieren, dass sie immer konsistent sind.
+```Ruby
+require 'minitest/autorun'
+class User
+  attr_accessor :name
+  def initialize(name)
+    @name = name
+  end
+end
+class TestUser < Minitest::Test
+  def test_initialize
+    user = User.new("John")
+    assert_equal "John", user.name
+  end
+end
+```
 
-## Tiefere Einblicke
+Die Ausgabe dieses Tests sollte "true" lauten.
 
-Eine gute Praxis beim Schreiben von Tests ist es, jeden Aspekt des Codes abzudecken und sicherzustellen, dass alle möglichen Szenarien getestet werden. Dies wird als "Testabdeckung" bezeichnet und kann mit Tools wie SimpleCov gemessen werden. Eine hohe Testabdeckung gibt uns Vertrauen in unseren Code und hilft uns, potenzielle Fehler frühzeitig zu erkennen.
+# Tiefere Einblicke:
 
-Es gibt auch verschiedene Arten von Tests, wie zum Beispiel Unit Tests, Integrationstests und End-to-End-Tests. Das Verständnis der Unterschiede und wann sie angewendet werden sollten, kann sehr hilfreich sein, um die Teststrategie zu optimieren.
+Tests zu schreiben ist nicht nur eine moderne Praxis, sondern hat auch eine interessante historische Bedeutung. Das Testen von Code war bereits in den frühen Tagen der Softwareentwicklung wichtig, um die Qualität des Codes zu gewährleisten und Probleme frühzeitig zu identifizieren. Alternativen zu Ruby's Minitest sind beispielsweise RSpec oder Cucumber. Auch die Verwendung von Test-Driven Development ist eine beliebte Methode im Ruby-Ökosystem. Die Implementierung von Tests in Ruby erfolgt mithilfe von Assertions und Mocking-Bibliotheken wie MiniTest::Assertions und MiniTest::Mock.
 
-## Siehe auch
+# Sieh dir auch an:
 
-- [RSpec Dokumentation](https://rspec.info/documentation/)
-- [Einführung in Test-Driven Development (TDD)](https://medium.com/@waqarahmadjustdoit/test-driven-development-tdd-an-introduction-4c91ba038cea)
-- [Die Bedeutung von Testabdeckung](https://medium.com/swlh/what-is-code-coverage-and-why-should-you-care-14b21a16fca1)
+- [Minitest Dokumentation](https://github.com/seattlerb/minitest)
+- [RSpec](https://rspec.info/)
+- [Cucumber](https://cucumber.io/)
+- [Test-Driven Development in Ruby](https://www.rubyguides.com/2018/07/test-driven-development-by-example/)

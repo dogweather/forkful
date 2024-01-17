@@ -10,59 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
-Varför skulle någon vilja skapa en temporär fil när man programmerar i C? Det finns flera användningsområden för temporära filer, bland annat för att lagra temporära data eller för att testa kod innan den implementeras permanent.
+## Vad & Varför?
+Skapandet av en tillfällig fil är en vanlig händelse inom programmering. En tillfällig fil är en temporär fil som skapas och används under körningen av ett program, men som sedan raderas när programmet avslutas. Detta används ofta för att lagra data eller utföra vissa operationer som inte behöver sparas permanent.
 
-## Så här gör du
-Det första steget för att skapa en temporär fil i C är att inkludera header-filen "stdio.h". Sedan använder du funktionen "tmpfile()" för att skapa filen och får tillbaka en pekare till filen.
-
-```C
+## Så här gör du:
+För att skapa en tillfällig fil i C kan du använda funktionen "tmpfile()". Detta returnerar en pekare till en ny temporär fil och öppnar den för skrivning. Du kan då skriva data till filen med hjälp av till exempel funktionen "fprintf()". När programmet avslutas kommer filen automatiskt att raderas.
+```
+C
 #include <stdio.h>
-
 int main() {
-    FILE* temp_file = tmpfile();
-
-    if (temp_file == NULL) {
-        printf("Kunde inte skapa den temporära filen!");
-        return 1;
-    }
-
-    fprintf(temp_file, "Det här är en temporär fil!");
-    fclose(temp_file);
-
-    return 0;
+   FILE *fp;
+   fp = tmpfile();      // skapar en temporär fil
+   fprintf(fp, "%s", "Hej världen!");
+   fclose(fp);          // stänger filen och raderar den
+   return 0;
 }
 ```
-
-När du är klar med filen måste den stängas med "fclose()" för att frigöra minnet. Om du vill läsa från en temporär fil istället för att skriva till den, kan du använda funktionen "tmpnam()" för att skapa en temporär fil med ett namn och sedan öppna den med "fopen()".
-
-```C
-#include <stdio.h>
-
-int main() {
-    char* temp_name = tmpnam(NULL);
-    FILE* temp_file = fopen(temp_name, "r");
-
-    if (temp_file == NULL) {
-        printf("Kunde inte öppna den temporära filen!");
-        return 1;
-    }
-
-    char buffer[50];
-    while (fgets(buffer, sizeof(buffer), temp_file) != NULL) {
-        printf("%s", buffer);
-    }
-
-    fclose(temp_file);
-
-    return 0;
-}
+Output:
+```
+$ cat /tmp/tmp.abc2468
+Hej världen!
 ```
 
-## Djupdykning
-Förutom "tmpfile()" och "tmpnam()", finns det också andra funktioner för att skapa temporära filer i C. Till exempel kan "mkstemp()" användas för att skapa en temporär fil med en unik filnamnsprefix, medan "mkdtemp()" används för att skapa en temporär katalog. Det finns också möjlighet för att skapa en temporär fil i en specifik katalog istället för den vanliga temporära mappen, med funktionen "tmpfile64()". Det är viktigt att notera att namnen på temporära filer och kataloger generellt inte är garanterat att vara unika, så det är bäst att ta hänsyn till detta när du skapar temporära filer i dina program.
+## Djupdykning:
+Anledningen till att skapa en tillfällig fil är oftast för att spara data under körningen av ett program utan att behöva skriva till en permanent fil. Detta kan vara användbart när man vill testa eller experimentera utan att riskera permanenta förändringar på filer eller databaser.
 
-## Se även
-- [Officiell dokumentation för "tmpfile()"](https://www.gnu.org/software/libc/manual/html_node/Opening-Temporary-Files.html)
-- [En guide till att hantera temporära filer i C](https://www.educative.io/edpresso/how-to-create-temporary-files-in-c)
-- [Kodexempel för hantering av temporära filer i C](https://www.programiz.com/c-programming/examples/temporary-file)
+En annan vanligt förekommande metod för att skapa tillfälliga filer är genom att använda funktionen "mkstemp()". Denna funktion tillåter användaren att välja namn på den temporära filen och dess placering.
+
+När en tillfällig fil skapas, lägger operativsystemet till en slumpmässig sträng som prefix till filnamnet. Detta garanterar att filen har ett unikt namn och undviker konflikter om flera program samtidigt skapar tillfälliga filer.
+
+## Se även:
+- [tmpfile()](https://www.tutorialspoint.com/c_standard_library/c_function_tmpfile.htm)
+- [mkstemp()](https://www.tutorialspoint.com/c_standard_library/c_function_mkstemp.htm)
+- [Filmanipulation i C](https://www.codementor.io/@bhidesagar551/filhantering-i-c-eenwy53q3)

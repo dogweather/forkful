@@ -1,7 +1,7 @@
 ---
-title:                "json으로 작업하기"
-html_title:           "Java: json으로 작업하기"
-simple_title:         "json으로 작업하기"
+title:                "JSON으로 작업하기"
+html_title:           "Java: JSON으로 작업하기"
+simple_title:         "JSON으로 작업하기"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Data Formats and Serialization"
@@ -10,67 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+## 무엇 & 왜?
+JSON 작업이란 무엇이며, 프로그래머들이 왜 이것을 수행하는지 알려드리겠습니다. JSON(JavaScript Object Notation)은 데이터를 교환하기 위한 가벼운 형식으로, 자바스크립트와 비슷한 기능을 가지고 있습니다. 이것은 데이터를 보다 간단하게 관리하고 요청하기 위해 사용됩니다.
 
-Java에서는 JSON(JavaScript Object Notation)을 다루는 것이 매우 흔하고 중요합니다. JSON은 데이터를 구조화하여 서버와 클라이언트 간 데이터 교환을 더 간편하게 만들어주며, Java는 JSON을 다루는데 매우 효율적인 방법을 제공합니다.
-
-## 방법
-
-Java에서는 JSON을 다루는 데에 두 가지 기본적인 방법이 있습니다: JSONObject와 JSONArray. JSONObject는 key-value 쌍으로 구성되어 있으며, 해당하는 데이터를 얻기 위해서는 key 값으로 접근해야 합니다. JSONArray는 여러 데이터 값을 담는 JSONArray 입니다. 이 두 가지 방법 모두 "org.json" 패키지에서 제공됩니다.
-
-### JSONObject 예제
+## 하는 방법:
+아래 코드 블록에서 코딩 예제와 샘플 출력을 확인해보세요. JSON을 사용하여 데이터를 생성하고 처리하는 간단한 예제를 보여드리겠습니다.
 
 ```Java
-import org.json.JSONObject;
+// JSON 데이터 생성
+JSONObject json = new JSONObject();
 
-JSONObject person = new JSONObject();
-person.put("name", "John");
-person.put("age", 28);
-person.put("occupation", "engineer");
+// 데이터 추가
+json.put("name", "John");
+json.put("age", 28);
+json.put("major", "Computer Science");
 
-System.out.println(person.toString());
+// JSON 데이터 출력
+System.out.println(json.toString());
+
+// 출력 결과: {"name":"John","age":28,"major":"Computer Science"}
 ```
 
-출력 결과:
+## 심층 탐구:
+JSON이 무엇인지 이해하기 위해선, 이것의 역사적 배경과 대안에 대해 조금 더 알아볼 필요가 있습니다. JSON은 처음에는 XML이 대중적이었던 시기에 개발된 것으로, 간결하고 보다 가벼운 데이터 형식으로 인기를 끌게 되었습니다. 이제는 웹 서비스에서 빠르고 쉽게 데이터를 교환하기 위해 주로 사용되며, 다양한 프로그래밍 언어에서 지원하고 있습니다.
 
-```
-{"name":"John","age":28,"occupation":"engineer"}
-```
-
-### JSONArray 예제
-
-```Java
-import org.json.JSONArray;
-
-JSONArray fruits = new JSONArray();
-fruits.put("apple");
-fruits.put("orange");
-fruits.put("banana");
-
-System.out.println(fruits.toString());
-```
-
-출력 결과:
-
-```
-["apple","orange","banana"]
-```
-
-## 심층 탐구
-
-JSON을 다룰 때 유의해야 할 몇 가지 중요한 사항들이 있습니다. 먼저, JSON 데이터는 출처를 신뢰할 수 있는지 확인해야 합니다. 악의적인 코드나 해킹을 방지하기 위해 JSON 데이터를 검증하는 것이 중요합니다.
-
-또한, JSON은 내부에 또 다른 JSON을 포함할 수 있습니다. 이를 재귀적으로 처리하기 위해서는 반복문이나 재귀 함수를 사용해야 합니다.
-
-또 다른 중요한 사항은 데이터의 형식을 확인하는 것입니다. 만약 데이터가 JSON 형식과 일치하지 않는다면 JSONException이 발생할 수 있으므로 예상치 못한 오류를 방지하기 위해 형식을 확인하는 것이 중요합니다.
-
-## 관련 링크
-
-- [JSON 공식 사이트](https://www.json.org/json-en.html)
-- [The Ultimate Guide to JSON Parsing with Java](https://dzone.com/articles/the-ultimate-guide-to-json-parsing-with-java)
-- [Java JSON Tutorial](https://www.baeldung.com/java-json)
-- [Java - JSON 데이터 처리](https://www.tutorialspoint.com/java/java_json_processing.htm)
-
-## 참고
-
-모든 Java 개발자들은 JSON 데이터를 다룰 줄 알아야 합니다. 이를 통해 서버와 클라이언트 간 데이터 교환을 더욱 신속하고 쉽게 할 수 있습니다. 하지만 항상 출처를 확인하고 데이터 형식을 검증하는 것을 잊지 마세요.
+## 더 알아보기:
+관련 정보를 확인하고 싶다면 아래 링크를 참고해보세요.
+- [JSON 공식 사이트](https://www.json.org/json-ko.html)
+- [Java에서 JSON 데이터 다루기](https://www.tutorialspoint.com/java_json/java_json_tutorial.pdf)
+- [JSON vs XML: 무엇이 더 좋을까?](https://www.ibm.com/developerworks/library/ws-xmljava/)

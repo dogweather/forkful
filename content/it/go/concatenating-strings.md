@@ -10,65 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+## Che cos'è e perché?: 
+La concatenazione di stringhe è un'operazione comune nel mondo della programmazione, dove due o più stringhe vengono unite per formare una nuova stringa più lunga. È spesso utilizzata per creare messaggi di output personalizzati o per manipolare e combinare dati. In Go, la concatenazione di stringhe viene eseguita utilizzando l'operatore "+".
 
-Una delle operazioni più comuni in programmazione è la concatenazione di stringhe, ovvero l'aggiunta di una stringa a un'altra. Questo è spesso utile quando si vuole creare un output più complesso, come un messaggio personalizzato o un documento di testo.
+## Come fare: 
+Di seguito sono riportati alcuni esempi di codice che mostrano come eseguire la concatenazione di stringhe in Go utilizzando l'operatore "+". 
 
-## Come Fare
-
-```Go
-package main
-
-import "fmt"
-
-func main() {
-    greeting := "Ciao,"
-    name := "Mario"
-    message := greeting + " " + name // concatenazione delle stringhe
-    fmt.Println(message) 
-}
 ```
-
-Questo codice produce l'output "Ciao, Mario". Come si vede nell'esempio, per concatenare le stringhe in Go si utilizza il simbolo "+" tra di esse. È possibile anche concatenare più stringhe in una sola istruzione, semplicemente aggiungendo un altro simbolo "+" tra due nuove stringhe.
-
-Qui di seguito è un altro esempio di concatenazione di stringhe che utilizza la funzione `fmt.Sprintf()` per formattare una stringa utilizzando variabili definite in precedenza:
-
-```Go
-package main
-
-import "fmt"
-
-func main() {
-    age := 35
-    message := fmt.Sprintf("Mario ha %d anni", age) // formattazione con variabili
-    fmt.Println(message)
-}
+fmt.Println("Hello " + "World")
 ```
+Output: `Hello World`
 
-Questo codice produce l'output "Mario ha 35 anni".
-
-## Approfondimento
-
-In Go, le stringhe sono tipi di dato immutabili, il che significa che una volta definite non possono essere modificate. Per questo motivo, ogni volta che si effettua una concatenazione di stringhe, ne viene creata una nuova, piuttosto che modificarne una esistente. Questo può influire sulle prestazioni in caso di concatenazioni ripetute di stringhe molto lunghe.
-
-Per evitare questo problema, in Go esiste il pacchetto `strings` che fornisce funzioni apposite per manipolare le stringhe, tra cui la funzione `Join()` che consente di concatenare una slice di stringhe senza creare nuove variabili. Ecco un esempio:
-
-```Go
-package main
-
-import "fmt"
-import "strings"
-
-func main() {
-    names := []string{"Mario", "Luigi", "Principessa Peach"}
-    message := strings.Join(names, ", ") // join di una slice di stringhe
-    fmt.Println("Saluti da", message)
-}
 ```
+str1 := "Hello "
+str2 := "World"
+fmt.Println(str1 + str2)
+```
+Output: `Hello World`
 
-Questo codice produrrà l'output "Saluti da Mario, Luigi, Principessa Peach". In questo caso la funzione `Join()` unisce le stringhe della slice utilizzando la virgola come separatore.
+```
+num := 10
+msg := "I have " + strconv.Itoa(num) + " apples."
+fmt.Println(msg)
+```
+Output: `I have 10 apples.`
 
-## Vedi Anche
+## Approfondimento:
+La concatenazione di stringhe è stata introdotta in Go nel 2016 con la versione 1.10 del linguaggio. Prima di allora, gli sviluppatori dovevano utilizzare la funzione `fmt.Sprintf()` per concatenare le stringhe. Tuttavia, l'utilizzo dell'operatore "+" è molto più semplice e veloce.
 
-- [Documentazione ufficiale di Go sulle stringhe](https://golang.org/pkg/strings/)
-- [Altre funzioni utili del pacchetto `strings`](https://www.programming-books.io/essential/go/joining-strings-b940abf041e44c5e8547a202321d1fb2)
+In alternativa all'operatore "+", è anche possibile utilizzare il pacchetto `strings` che offre alcune funzioni utili per la manipolazione delle stringhe, come ad esempio `Join()` per unire una lista di stringhe.
+
+Per quanto riguarda l'implementazione, l'operatore "+" è un'operazione non esclusiva di Go e può essere trovata in molti altri linguaggi di programmazione, come Java e Python.
+
+## Vedi anche:
+- Documentazione ufficiale di Go sulla concatenazione di stringhe: https://golang.org/ref/spec#Operators
+- Esempi di codice su come utilizzare l'operatore "+" in Go: https://gobyexample.com/string-concatenation

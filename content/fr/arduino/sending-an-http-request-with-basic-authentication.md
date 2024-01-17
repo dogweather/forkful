@@ -1,7 +1,7 @@
 ---
-title:                "Envoyer une demande http avec une authentification de base"
-html_title:           "Arduino: Envoyer une demande http avec une authentification de base"
-simple_title:         "Envoyer une demande http avec une authentification de base"
+title:                "Envoi d'une requête http avec une authentification de base"
+html_title:           "Arduino: Envoi d'une requête http avec une authentification de base"
+simple_title:         "Envoi d'une requête http avec une authentification de base"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "HTML and the Web"
@@ -10,67 +10,66 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Qu'est-ce que c'est et pourquoi ?
+En programmation, l'envoi d'une requête HTTP avec une authentification basique est une méthode pour envoyer des informations à un serveur en utilisant un nom d'utilisateur et un mot de passe. Les programmeurs utilisent cette méthode pour communiquer avec des API externes ou pour accéder à des ressources protégées sur un serveur.
 
-Vous vous demandez peut-être pourquoi quelqu'un voudrait envoyer une requête HTTP avec une authentification de base lors d'une programmation Arduino. Eh bien, cela peut être utile lorsque vous devez accéder à des données sensibles sur un serveur distant, telles qu'une API de données météorologiques ou une base de données IoT.
-
-## Comment faire
-
-La première étape pour envoyer une requête HTTP avec une authentification de base est de déterminer l'URL de destination et les informations d'identification nécessaires. Ensuite, vous devrez inclure la bibliothèque WiFiClientSecure et créer un nouvel objet WiFiClientSecure. Enfin, utilisez la méthode connect() pour établir une connexion sécurisée au serveur et utilisez la méthode print() pour envoyer votre requête.
-
-Voici un exemple de code pour une requête HTTP GET avec une authentification de base:
+## Comment faire :
+Voici un exemple de code pour envoyer une requête avec une authentification basique en utilisant Arduino. Les informations d'identification sont stockées dans des variables et le code utilise la bibliothèque ESP8266WiFi.h pour se connecter à internet.
 
 ```
-#include <WiFiClientSecure.h>
+// Inclure la bibliothèque nécessaire
+#include <ESP8266WiFi.h>
 
-const char* ssid = "MON_RESEAU_WIFI";
-const char* password = "MON_MOT_DE_PASSE_WIFI";
+// Définir les informations d'identification
+const char* ssid = "MonSSID";
+const char* password = "MonMotDePasse";
+const char* server = "www.example.com";
+const int port = 80;
+const char* username = "MonNomUtilisateur";
+const char* userpass = "MonMotDePasseUtilisateur";
 
-const char* url = "MON_URL";
-const char* auth = "MON_NOM_D'UTILISATEUR:MON_MOT_DE_PASSE";
-// Remplacez les informations ci-dessus par les vôtres
-
-WiFiClientSecure client;
-
+// Mettre en place la connexion WiFi
+WiFiClient client;
 void setup() {
-  Serial.begin(115200);
   WiFi.begin(ssid, password);
-  Serial.print("Connexion au WiFi...");
+  // Vérifier la connexion
   while (WiFi.status() != WL_CONNECTED) {
-    Serial.print(".");
     delay(500);
   }
-  Serial.println();
-  Serial.println("Connecté au WiFi!");
 }
 
+// Effectuer la requête HTTP
 void loop() {
-  if (client.connect(url, 443)) {
-    Serial.println("Connexion établie!");
-    String request = "GET / HTTP/1.1\r\nAuthorization: Basic ";
-    request += base64::encode(auth) + "\r\n\r\n";
-    client.print(request);
-    Serial.print("Requête envoyée: ");
-    Serial.println(request);
+  // Se connecter au serveur
+  if (client.connect(server, port)) {
+    // Envoyer les informations d'identification
+    client.print(String("GET /action HTTP/1.1\r\n") +
+                 "Host: " + server + "\r\n" +
+                 "Authorization: Basic " + String(username) + ":" + String(userpass) + "\r\n" +
+                 "Connection: close\r\n\r\n");
+    // Lire la réponse du serveur
+    while (client.available()) {
+      String line = client.readStringUntil('\r');
+      Serial.print(line);
+    }
+    // Fermer la connexion
+    client.stop();
   }
-  else {
-    Serial.println("La connexion a échoué.");
-  }
+  // Attendre 10 secondes avant de renvoyer la requête
+  delay(10000);
 }
 ```
 
-Lors de l'exécution de ce code, vous devriez voir dans la sortie série que la connexion est établie et que la requête est envoyée avec succès.
+### Résultat attendu :
+Si tout se passe bien, le code affichera la réponse du serveur dans la console de série. Assurez-vous que les informations d'identification soient correctes pour recevoir une réponse valide.
 
-## Deep Dive
+## Plongée en profondeur :
+L'authentification basique a été introduite en 1999 dans la spécification HTTP dans le but de fournir un moyen simple pour authentifier les utilisateurs. Cependant, cette méthode n'est pas très sécurisée car les informations d'identification sont transmises en clair sur le réseau. Il existe des alternatives plus sécurisées, comme l'authentification par clé API ou OAuth, qui peuvent être utilisées en fonction de la situation.
 
-Envoyer une requête HTTP avec une authentification de base implique d'encoder les informations d'identification en utilisant l'algorithme Base64. Cela convertit les caractères ASCII en une chaîne de texte codée, qui empêche les utilisateurs malveillants de lire facilement les informations d'identification.
+L'implémentation de cette méthode en utilisant Arduino peut varier en fonction de la bibliothèque utilisée et du type de connexion WiFi. Il est important de consulter la documentation de la bibliothèque et de s'assurer que le code est adapté à votre situation.
 
-De plus, vous pouvez également spécifier une méthode autre que GET dans votre requête, telle que POST ou PUT, en incluant la ligne "Content-Type: application/x-www-form-urlencoded" dans votre requête et en ajoutant les données souhaitées après la ligne vide dans la requête. Cela peut être utile si vous souhaitez envoyer des données à un serveur pour les traiter.
-
-## Voir aussi
-
-Pour en savoir plus sur les requêtes HTTP avec Arduino, vous pouvez consulter les liens suivants:
-
-- [Documentation officielle des bibliothèques WiFiClientSecure et WiFi](https://www.arduino.cc/en/Reference/WiFiClientSecure)
-- [Tutoriel vidéo sur l'utilisation de la bibliothèque WiFiClientSecure](https://www.youtube.com/watch?v=dO2ic6oBlhU)
-- [Guide étape par étape pour envoyer des données à un serveur avec Arduino](https://randomnerdtutorials.com/esp8266-http-get-post-requests/)
+## À voir également :
+- [Tutoriel d'Arduino sur l'utilisation de la bibliothèque ESP8266WiFi pour se connecter à internet](https://www.arduino.cc/en/Tutorial/WiFiWebClient)
+- [Spécification HTTP - Section d'authentification basique](https://datatracker.ietf.org/doc/html/rfc7617)
+- [Article sur les différentes méthodes d'authentification pour les API](https://blog.restcase.com/http-basic-authentication-explained/)
+- [Site officiel de la bibliothèque ESP8266WiFi](https://github.com/esp8266/Arduino/tree/master/libraries/ESP8266WiFi)

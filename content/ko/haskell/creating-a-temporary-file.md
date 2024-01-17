@@ -10,51 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+## 무엇 & 왜?
 
-임시 파일을 만들고 사용하는 이유는 주로 프로그램이나 스크립트에서 일시적으로 데이터를 저장하고 다루기 위해서입니다. 이러한 임시 파일은 프로그램 실행 중에 일시적으로 생성되고 사용되며, 사용이 끝나면 자동으로 삭제됩니다.
+프로그래머들은 일시적인 파일을 만들고 사용하는 이유는 여러 가지가 있습니다. 일시적인 파일은 메모리를 더 사용할 수 없는 경우에 유용합니다. 또는 일시적인 파일을 사용하면 프로그램이 계산을 계속 할 수 있기 때문에 재시작할 필요가 없습니다.
 
-## 방법
+## 사용 방법:
 
-임시 파일을 만드는 가장 간단한 방법은 `withSystemTempFile` 함수를 사용하는 것입니다. 이 함수는 임시 파일을 만들고 파일의 경로와 핸들을 전달 받은 뒤, 지정된 작업을 수행한 후에 임시 파일을 자동으로 삭제합니다.
-
-```Haskell
-import System.IO.Temp (withSystemTempFile)
-
--- 임시 파일의 경로와 핸들을 전달받아 사용하는 예제
-main = withSystemTempFile "temp.txt" $ \path handle -> do
-  hPutStrLn handle "Hello world!"
-  hClose handle
-  putStrLn $ "임시 파일 경로: " ++ path
-```
-
-프로그램을 실행하면 "temp.txt" 파일에 "Hello world!" 문자열이 쓰여지고, "임시 파일 경로: ..." 형태의 메세지가 출력됩니다.
-
-## 속이기
-
-임시 파일을 생성하는 더 깊은 내용을 살펴보기 전에 임시 파일의 경로를 어떻게 생성되는지 살펴보겠습니다. `withSystemTempFile` 함수는 `IO` 모나드를 사용하여 임시 파일의 경로를 생성합니다. 다시 말해, 임시 파일은 프로그램이 실행되는 기기에 따라 다르게 설정될 수 있습니다.
-
-경로 생성 방법을 더 세부적으로 설정하려면 `withSystemTempFile` 대신 `withTempFile` 함수를 사용할 수 있습니다. 이 함수는 `FilePath` 타입의 `tmpDir` 인자를 전달받아 임시 폴더를 지정할 수 있습니다.
+이 기능을 사용하려면 아래와 같이 코드를 작성하면 됩니다:
 
 ```Haskell
-import System.IO.Temp (withTempFile)
+import System.IO
 
-{- 사용자가 지정한 임시 폴더에서 임시 파일을 만드는 예제 -}
-main = withTempFile "C:\\Temp\\" "temp.txt" $ \path handle -> do
-  hPutStrLn handle "Hello world!"
-  hClose handle
-  putStrLn $ "임시 파일 경로: " ++ path
+main = do
+  tempFile <- openTempFile "." "temp"
+  hClose $ snd tempFile
+
+  putStrLn $ "새로운 일시적인 파일이 " ++ (fst tempFile) ++ "에 생성되었습니다."
+  putStrLn $ "일시적인 파일을 사용하여 기능을 수행합니다."
+  writeFile (fst tempFile) "Hello, World!"
+
+  putStrLn $ "기능이 끝나면 파일을 삭제합니다."
+  removeFile (fst tempFile)
+
+  putStrLn "완료!"
 ```
 
-프로그램을 실행하면 "C:\Temp\temp.txt" 파일에 "Hello world!" 문자열이 쓰여지고, "임시 파일 경로: ..." 메세지가 출력됩니다.
+이 예제에서는 시스템 모듈의 `openTempFile` 함수를 사용하여 일시적인 파일을 만들고 `hClose` 함수를 사용하여 파일을 닫습니다. 그리고 파일의 경로를 `fst` 함수를 사용하여 가져와서 기능을 수행합니다. 마지막으로 `removeFile`을 사용하여 파일을 삭제합니다.
 
-## 더 들어가기
+예상 출력:
 
-임시 파일은 `withSystemTempFile` 함수를 사용하여 쉽게 생성하고 사용할 수 있지만, 임시 파일을 직접 다루는 방법을 알아두는 것도 중요합니다. 임시 파일 핸들을 사용하여 파일을 읽고 쓰는 방법을 익히는 것은 프로그래머로서 필수적인 기술입니다.
+```
+새로운 일시적인 파일이 /Users/temp에 생성되었습니다.
+일시적인 파일을 사용하여 기능을 수행합니다.
+기능이 끝나면 파일을 삭제합니다.
+완료!
+```
 
-또한, 이 임시 파일들을 자동으로 삭제하는 방법도 알아 두는 것이 좋습니다. `withSystemTempFile` 함수는 자동 삭제를 해주지만, 직접 삭제를 해줘야하는 경우를 대비하여 임시 파일을 삭제하는 방법도 알아두는 것이 좋습니다.
+## 깊은 듯:
 
-## 더 읽어보기
+(1) 일시적인 파일은 프로그래머들에게 많은 이점을 제공합니다. 예를 들어, 운영체제의 제한으로 인해 메모리를 더 이상 사용할 수 없을 때 유용합니다. 또한 일시적인 파일은 재시작 없이 계산을 계속할 수 있도록 해주며, 매번 많은 작업을 수행할 필요가 없기 때문에 더욱 효율적입니다.
 
-- [Haskell Document Template System](https://hackage.haskell.org/package/doclayout) - 임시 파일을 만드는 더 많은 옵션을 제공하는 라이브러리
-- [Using Temporary Files in Haskell](https://mpickering.github.io/posts/2016-07-21-temporary-files.html) - 임시 파일을 만들고 다루는 더 많은 예제와 정보를 제공하는 블로그 포스트
+(2) 일시적인 파일을 만드는 다른 방법으로는 `withSystemTempFile` 함수와 `withTempFile` 함수가 있습니다. 이들 함수는 자동으로 파일을 생성하고 삭제해주기 때문에 더욱 편리합니다.
+
+(3) 일시적인 파일은 일시적으로만 사용되기 때문에 디스크 공간을 낭비하지 않는 것이 중요합니다. 따라서 일시적인 파일은 프로그래밍 언어 레벨에서 최적화되어야 합니다.
+
+## 관련 자료:
+
+- [Haskell 언어 공식 웹사이트](https://www.haskell.org/)
+- [중급 하스켈 프로그래밍 강좌](https://wiki.haskell.org/A_tutorial_for_Programming_in_Haskell)
+- [시스템 모듈 문서](http://hackage.haskell.org/package/base-4.8.2.0/docs/System.html)

@@ -10,35 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
+## 什么和为什么？
 
-如果你是一个开发者，你经常需要读取文件来处理其中的数据。阅读文本文件是一个重要的技能，它可以帮助你更有效地处理数据并构建更好的应用程序。
+读取文本文件是指将存储在计算机中的文本内容提取出来并加载到程序中的过程。程序员经常这样做是为了获取包含重要信息的文件中的文本，并在程序中使用它们。
 
-## 如何
-
-使用Elm语言，我们可以轻松地读取文本文件并从中提取数据。下面是一个简单的例子，展示了如何读取一个名为“data.txt”的文本文件并将其内容打印出来：
+## 如何：
 
 ```Elm
 import File
 
+textFile : Task x String
+textFile =
+  File.read "file.txt"
+
+main : Program Never
 main =
-  File.read "data.txt"
-    |> Task.perform show
+  textFile
+    |> Task.andThen (\result ->
+        case result of
+          Ok file ->
+            textFile
+              |> Task.andThen (\text ->
+                  renderText text
+              )
+
+          Err _ ->
+            log "Error reading file"
+      )
+
+renderText : String -> Html Msg
+renderText text =
+  div [] [ text ]
 ```
 
-这段代码首先导入了File模块，然后使用`read`函数读取了“data.txt”文件。接着，我们使用`Task.perform`函数将读取的数据传递给`show`函数，它会在控制台打印出数据。在Package中添加`file`依赖后，你就可以运行这段代码并查看正确的输出。
+输出：文本文件中的文本将被加载到程序中并显示在HTML页面中。
 
-## 深入了解
+## 深入探讨：
 
-在深入学习如何读取文本文件之前，我们先来了解一下Elm中的Task和Cmd模块。Task模块允许我们执行一个任务，并传递结果给一个函数。而Cmd模块则允许我们执行一些和浏览器通信的副作用。
+读取文本文件在计算机编程中具有重要作用，因为它允许程序员访问并使用外部文件的内容。除了使用Elm的`File`模块外，还有其他方式可以读取文本文件，例如使用HTTP请求或读取文件流。在实现文本文件读取功能时，必须考虑一些因素，比如文件格式、编码等。
 
-回到读取文本文件的例子，`File.read`函数实际上返回了一个`Task`类型的值。这意味着当我们调用`Task.perform`函数时，Elm会开始执行这项任务。一旦任务完成，它会将数据传递给我们指定的函数，并展示出来。
+## 查看更多：
 
-如果你想读取文件的特定行或特定字符，你可以使用`String.lines`和`String.slice`函数来解析读取的数据。这样你就可以使用Elm语言的强大功能来处理文本文件中的数据啦！
-
-## 参考链接
-
-- [Elm官方网站](https://elm-lang.org/)
-- [Elm中文网](https://elm-lang.org/docs/zh-CN)
-- [Elm教程](https://www.tutorialspoint.com/elm/)
-- [Elm文件模块文档](https://package.elm-lang.org/packages/elm/file/latest/File)
+- [Elm File 模块官方文档](https://package.elm-lang.org/packages/elm/file/latest/)
+- [Elm HTTP 模块官方文档](https://package.elm-lang.org/packages/elm/http/latest/)
+- [Elm 编程语言官方网站](https://elm-lang.org/)

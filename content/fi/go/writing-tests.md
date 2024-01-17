@@ -10,39 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+# Mitä ja miksi?
 
-Go on moderni ohjelmointikieli, joka korostaa yksinkertaisuutta ja tehokkuutta. Kirjoittaessa testeja Go:lla, voit varmistaa koodisi toimivuuden ja luotettavuuden, mikä auttaa sinua luomaan laadukkaampia sovelluksia.
+Testien kirjoittaminen on prosessi, jolla ohjelman toiminnallisuutta varmistetaan koodin kirjoittamisen jälkeen. Testien avulla varmistetaan, että ohjelma toimii ja käyttäytyy odotetulla tavalla. Näin ohjelman suorittamista voidaan jatkuvasti testata ja varmistaa sen toimivuus.
 
-## Miten
+# Miten:
 
-Kirjoittaa testeja Go:lla on helppoa ja tehokasta. Tässä on esimerkki, miten voit luoda yksinkertaisen testin Go:n testilokerolle:
+Esimerkkejä testien kirjoittamisesta ja niiden tulosteista:
 
-```Go
-package test
+Go esimerkki:
 
-import "testing"
-
-func TestAddition(t *testing.T) {
-	result := 2 + 2
-	if result != 4 {
-		t.Error("Expected 4, got", result)
+```
+func TestSum(t *testing.T) {
+	total := Sum(4, 5)
+	if total != 9 {
+		t.Errorf("Expected result to be 9, but got %d instead", total)
 	}
 }
+
 ```
 
-Tässä esimerkissä luodaan yksinkertainen funktio, joka testaa kahden numeron yhteenlaskua. Testilokeron avulla voit määrittää odotetun tuloksen ja varmistaa, että funktiosi palauttaa oikean arvon.
+Tuloste:
 
-Testilokeron käyttöönotto vaatii vain yhden tuontilausekkeen "testing", ja sen avulla voit käyttää monia erilaisia testaukseen liittyviä toimintoja, kuten "t.Error()", joka kertoo meille, jos testi epäonnistuu. Testilokeroa käytetään myös "go test" -komennolla, joka ajaa kaikki testisi ja ilmoittaa, jos jokin niistä epäonnistuu.
+```
+--- FAIL: TestSum (0.00s)
+    main_test.go:6: Expected result to be 9, but got 8 instead
+FAIL
+FAIL    example.com/testing    0.014s
+```
 
-## Syvä sukellus
+# Syvempi sukellus:
 
-Testaaminen on tärkeä osa ohjelmointia ja voi auttaa sinua löytämään virheitä ja bugeja koodistasi varhaisessa vaiheessa, mikä säästää aikaa ja vaivaa myöhemmin. Go käyttää "go test" -toimintoa, joka sisältää sisäänrakennetut testaukseen liittyvät toiminnot, joten sinun ei tarvitse etsiä ja tuoda kirjastoja tai ohjelmia, jotka auttavat sinua testauksessa.
+Testien kirjoittaminen on tärkeä osa ohjelmointiprosessia, sillä se auttaa varmistamaan ohjelman luotettavuuden ja toimivuuden. Testien kirjoittamisella voi myös säästää aikaa ja vaivaa, sillä ne auttavat havaitsemaan mahdolliset virheet ja ongelmat jo koodaamisen aikana.
 
-Lisäksi Go:lla on käytettävissä myös muita testaukseen liittyviä työkaluja, kuten "go cover", joka auttaa seuraamaan testien kattavuutta ja löytämään osat koodista, jotka eivät ole tarpeeksi testattuja.
+Muita vaihtoehtoja testien kirjoittamiseen ovat esimerkiksi manuaalinen testaus ja integraatiotestaus. Go tarjoaa testaamiseen erilaisia toimintoja, kuten testeittäin suorittamisen ja kattavuusraporttien luomisen.
 
-## Katso myös
+Testien kirjoittamisessa käytetään yleensä yksikkö- ja integraatiotestejä. Yksikkötestit testaavat yksittäisiä koodilohkoja ja integraatiotestit testaavat eri osien välistä yhteistoimintaa.
 
-- [Virallinen Go:n dokumentaatio testauksesta](https://golang.org/pkg/testing/)
-- [Go Bootcamp -sarja, joka sisältää paljon tietoa Go:n testauksesta](http://www.golangbootcamp.com/book/testing)
-- [Go:n viralliset esimerkit testaamisesta GitHubissa](https://github.com/golang/go/wiki/LearnTests)
+# Katso myös:
+
+- [Go testauksen viralliselta sivustolta](https://golang.org/pkg/testing/)
+- [Martin Fowlerin artikkeli testien refactoroinnista](https://martinfowler.com/articles/refactoring-test-code.html)
+- [Go testauksen aloittelijan opas](https://blog.alexellis.io/golang-writing-unit-tests/)

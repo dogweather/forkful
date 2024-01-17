@@ -10,33 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¿Qué y por qué?
 
-Convertir una fecha a un string puede ser útil para mostrar información de manera más legible en una interfaz de usuario, generar nombres de archivos o formatear fechas para ser incluidas en URL. En general, es una habilidad importante para tener en la programación.
+Convertir una fecha en una cadena de texto es una tarea común para los programadores. Usualmente se hace para manipular y mostrar fechas en diferentes formatos, como por ejemplo para mostrar la fecha en un formato legible para los usuarios. Además, algunas funciones o herramientas requieren que las fechas sean representadas como cadenas de texto para poder ser procesadas correctamente.
 
-## Cómo hacerlo
+## Cómo:
 
-Para convertir una fecha a un string en Gleam, se puede utilizar la función `Date.to_string` y especificar el formato deseado. Aquí hay un ejemplo:
+Gleam proporciona diferentes maneras de convertir fechas en cadenas de texto. Una forma sencilla es utilizando la función ```strftime```, la cual permite formatear una fecha en un estilo personalizado. Por ejemplo, si queremos formatear la fecha actual en formato "DD/MM/AAAA", podríamos utilizar el siguiente código:
 
 ```Gleam
-let fecha = Date.from_string("2021-06-15", "YYYY-MM-DD")
-let fecha_string = Date.to_string(fecha, "DD/MM/YYYY")
-println(fecha_string) // Salida: "15/06/2021" 
+import Time
+
+let date = Time.now()
+let formatted_date = Time.strftime("%d/%m/%Y", date)
+
 ```
 
-## Inmersión profunda
+El resultado sería "28/02/2021".
 
-La función `Date.to_string` acepta cualquier formato compatible con la librería de formateo de fechas de Rust (la cual Gleam utiliza). Además de especificar el año, mes y día con "YYYY", "MM" y "DD", también se pueden incluir información sobre la hora, minutos, segundos y zona horaria. Por ejemplo:
+Otra opción es utilizar la función ```format``` que viene incluida en el módulo ```Calendar```. Esta función recibe un objeto de fecha y una cadena de formato, y devuelve la fecha en el formato especificado. Por ejemplo:
 
-- `"HH:mm:ss"`: escribe la hora en formato de 24 horas (13:45:30)
-- `"hh:mm:ss aa"`: escribe la hora en formato de 12 horas con AM o PM (01:45:30 PM)
-- `"ZZ"`: escribe la zona horaria en formato de dos dígitos (UTC: +00, Nueva York: -04)
-- `"ZZZ"`: escribe la zona horaria en formato de tres dígitos con minutos (UTC: +00:00, Nueva York: -04:00)
+```Gleam
+import Calendar
 
-Para ver una lista completa de los formatos disponibles, se puede consultar la documentación de la librería de formateo de fechas de Rust.
+let date = Calendar.local_now()
+let formatted_date = Calendar.format(date, "%B %d, %Y")
 
-## Ver también
+```
 
-- [Documentación de la librería de formateo de fechas de Rust](https://doc.rust-lang.org/std/time/format/index.html)
-- [Guía de Gleam sobre tipos de datos](https://gleam.run/book/tour/types.html#af29-cada-bbf7-tvot0)
-- [Página de inicio de Gleam](https://gleam.run/)
+El resultado sería "febrero 28, 2021".
+
+## Profundizando:
+
+La necesidad de convertir fechas en cadenas de texto ha existido desde los primeros días de la programación. Anteriormente, muchos lenguajes de programación no tenían formas integradas de trabajar con fechas y horas, por lo que era necesario utilizar funciones de biblioteca externas o escribir código personalizado para manejarlas.
+
+Además de las funciones ```stftime``` y ```format```, existen otras opciones para trabajar con fechas en Gleam, como el módulo ```DateTime``` y la función ```parse``` del módulo ```ISO8601```. También es importante tener en cuenta el sistema de tipos en Gleam, que permite trabajar con fechas de forma segura y sin errores comunes relacionados con formatos incorrectos.
+
+## Ver también:
+
+- Documentación oficial de Gleam sobre fechas y tiempos: https://gleam.run/documentation/stdlib_time
+- Ejemplos de uso de fechas y tiempos en Gleam: https://github.com/luminous-io/gleam/blob/master/stdlib/time/test/time_test.gleam
+- Introducción al sistema de tipos de Gleam: https://gleam.run/book/static-types

@@ -1,7 +1,7 @@
 ---
-title:                "Parseando HTML"
-html_title:           "Ruby: Parseando HTML"
-simple_title:         "Parseando HTML"
+title:                "Analisando html"
+html_title:           "Ruby: Analisando html"
+simple_title:         "Analisando html"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "HTML and the Web"
@@ -10,39 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+## O que é e por que fazer?
+Parsing HTML é o processo de analisar um documento HTML e extrair informações específicas dele. Programadores usam essa técnica para automatizar tarefas e manipular dados em páginas da web.
 
-Você pode se perguntar por que alguém se envolveria na análise de HTML. Bem, a capacidade de extrair informações de páginas da web é essencial para muitas tarefas de programação, como coletar dados para análise, criar crawlers de web e automatizar tarefas de visitas a sites.
-
-## Como fazer
-
-Embora existam muitas bibliotecas e ferramentas disponíveis para analisar HTML, o Ruby também possui uma ótima opção nativa chamada "Nokogiri". Veja como você pode usá-la para extrair informações de uma página HTML:
-
+## Como fazer:
 ```Ruby
 require 'nokogiri'
 require 'open-uri'
 
-page = Nokogiri::HTML(open("https://www.example.com"))
+# Fazendo a requisição para uma página web
+html = open("https://www.example.com")
+# Analisa o HTML da página
+doc = Nokogiri::HTML(html)
 
-# Extrai o título da página
-page.css('title').text
+# Extrai o texto do elemento <title>
+puts doc.css("title").text
 
 # Extrai todos os links da página
-page.css('a').each do |link|
-  puts link['href']
+links = doc.css("a")
+links.each do |link|
+    puts link["href"]
 end
 ```
 
-A saída será o título da página e todos os links encontrados. Você também pode usar seletores CSS para extrair elementos específicos ou até mesmo analisar páginas HTML aninhadas.
+## Aprofundando:
+O parsing HTML é uma técnica fundamental na construção de aplicações web e robôs de web scraping. Existem outras ferramentas além do Nokogiri para fazer o parsing, como o Beautiful Soup em Python e o jsoup em Java. Além disso, é possível implementar parsers customizados usando bibliotecas como o Regex ou o XPath.
 
-## Mergulho profundo
-
-Nokogiri é uma biblioteca poderosa que suporta XPath, CSS e algumas outras opções para selecionar elementos em uma página HTML. Você também pode usar expressões regulares para encontrar padrões em tags ou texto.
-
-Além disso, você pode usar a funcionalidade de traversing do Nokogiri para navegar facilmente entre os elementos HTML e acessar seus atributos e conteúdo.
-
-## Veja também
-
-- [Documentação do Nokogiri](https://nokogiri.org/)
-- [Ruby on Rails: Como extrair dados de páginas da web](https://www.tutorialspoint.com/ruby-on-rails/rails-programs.htm)
-- [Tutorial de análise de dados com Ruby](https://www.datacamp.com/community/tutorials/ruby-data-science)
+## Veja também:
+- Documentação do Nokogiri: https://nokogiri.github.io/
+- Tutorial de web scraping com Ruby e Nokogiri: https://www.rubyguides.com/2018/10/web-scraping-ruby-nokogiri/
+- Alternativas ao Nokogiri: https://stackshare.io/nokogiri/alternatives

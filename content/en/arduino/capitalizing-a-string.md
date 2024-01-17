@@ -10,53 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
+Capitalizing a string means converting all of its letters to uppercase. Programmers often do this to standardize data or to make it easier to search for specific words or phrases within a string.
 
-Capitalizing strings may seem like a minor aspect of programming, but it can greatly improve the functionality and readability of your code. Whether you are creating a text-based game or parsing user input, properly capitalized strings can make a significant difference in the outcome.
+## How to:
+To capitalize a string in Arduino, use the `toUpperCase()` function. This function takes in a string as its argument and returns the capitalized version of the string.
 
-## How To
-
-To capitalize a string in Arduino, we can utilize the `toUpperCase()` function. This function takes in a string as an argument and converts all lowercase letters to uppercase.
-
-```Arduino
-String name = "john doe";
-name.toUpperCase();
-Serial.println(name); //Output: JOHN DOE 
+```
+Arduino String myString = "hello world";
+myString.toUpperCase(); // will return "HELLO WORLD"
 ```
 
-In the above example, we first create a string variable named "name" and assign it the value of "john doe". Then, we use the `toUpperCase()` function to convert the string to all uppercase letters. Lastly, we use the `Serial` library to print out the modified string to the serial monitor.
+To save the capitalized string, assign the returned value to a new string variable.
 
-But what if we only want to capitalize the first letter of the string? In this case, we can use the `substring()` function to extract the first character and then use the `toUpperCase()` function on it.
-
-```Arduino
-String name = "john doe";
-String firstLetter = name.substring(0,1);
-firstLetter.toUpperCase();
-Serial.println(firstLetter); //Output: J
+```
+Arduino String myString = "hello world";
+Arduino String capitalizedString = myString.toUpperCase(); // will return "HELLO WORLD"
 ```
 
-Notice how we used the `substring()` function to extract the first character, which is then converted to uppercase. This method can be useful when dealing with user inputs or creating personalized greetings.
+If you want to print the capitalized string to the serial monitor, use the `println()` function.
 
-## Deep Dive
-
-While the above examples cover the basics of capitalizing a string in Arduino, there are more complex situations where a deeper understanding of strings is necessary. One important thing to note is that strings in Arduino are essentially an array of characters. This means we can use a `for` loop to iterate through each character and convert them individually.
-
-```Arduino
-String sentence = "this is a phone";
-for (int i = 0; i < sentence.length(); i++) {
-  if (sentence[i] == ' ') { //check for empty space
-    sentence[i+1] = toupper(sentence[i+1]); //convert next character to uppercase
-  }
-}
-Serial.println(sentence); //Output: This Is A Phone 
+```
+Arduino String myString = "hello world";
+Serial.println(myString.toUpperCase()); // will print "HELLO WORLD" to the serial monitor
 ```
 
-In the above code, we use the `length()` function to determine the number of characters in the string. Then, using a `for` loop, we go through each character and check if it is a space. If it is, we use the `toupper()` function to convert the next character to uppercase. This results in every word in the string being capitalized.
+## Deep Dive:
+Capitalizing strings has been a common practice in computer programming for decades. It can be useful in situations where data needs to be uniform or when performing string searches. 
 
-## See Also
+An alternative to the `toUpperCase()` function is the `toUpper()` function, which is part of the `<ctype.h>` library. This function takes in a character as its argument and returns the uppercase version of that character. This means that to capitalize a string using `toUpper()`, you would need to iterate through each character in the string and convert them one by one. However, the `toUpperCase()` function already does this for you, making it a more efficient option.
 
-For more information on manipulating strings in Arduino, check out the following resources:
+In terms of implementation, the `toUpperCase()` function is part of the Arduino `String` class, which is specifically made for manipulating strings. This class also has other useful functions for string manipulation, such as `concat()` and `substring()`. These functions can come in handy when working with data that requires string processing.
 
-- [String reference](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/)
-- [Arrays in Arduino](https://www.arduino.cc/reference/en/language/variables/data-types/array/)
-- [Tutorials on string manipulation in Arduino](https://create.arduino.cc/projecthub/tags/strings)
+## See Also:
+- Arduino String Reference: https://www.arduino.cc/reference/en/language/variables/data-types/string/
+- C Programming - String Functions: https://www.tutorialspoint.com/c_standard_library/string_h.htm

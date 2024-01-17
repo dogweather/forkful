@@ -10,50 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+## O que e por que?
 
-Você pode precisar calcular uma data no futuro ou no passado ao lidar com tarefas e eventos relacionados a tempo no seu código. Isso pode ser feito de forma eficiente utilizando a linguagem de programação Ruby.
+Calcular uma data no futuro ou passado é um processo comum em programação, no qual se determina uma data específica que está a determinada quantidade de tempo antes ou depois de outra data. Os programadores fazem isso para criar funcionalidades de agendamento ou para lidar com datas de uma forma mais dinâmica.
 
-## Como fazer
-
-O Ruby possui uma biblioteca padrão chamada `Date` que possui métodos que permitem calcular datas no futuro ou no passado. Primeiro, vamos importar a biblioteca utilizando `require`:
+## Como fazer:
 
 ```Ruby
-require 'date'
+# Calcular a data atual
+puts Date.today
 
-date = Date.new(2020, 5, 1) # definindo uma data inicial
+# Calcular a data daqui a 3 dias
+puts Date.today + 3
+
+# Calcular a data de 1 semana atrás
+puts Date.today - 7
 ```
 
-Para calcular uma data no futuro, podemos utilizar o método `next_day` e passar como argumento o número de dias que desejamos avançar:
+Saída:
 
 ```Ruby
-date.next_day(10) # calcula 10 dias no futuro
-=> #<Date: 2020-05-11 ((2458981j,0s,0n),+0s,2299161j)>
+# Data atual
+2021-06-29
+
+# Data daqui a 3 dias
+2021-07-02
+
+# Data de 1 semana atrás
+2021-06-22
 ```
 
-Da mesma forma, para calcular uma data no passado, podemos usar o método `prev_day`:
+## Mergulho profundo:
 
-```Ruby
-date.prev_day(5) # calcula 5 dias no passado
-=> #<Date: 2020-04-26 ((2458966j,0s,0n),+0s,2299161j)>
-```
+Calculadora de datas é uma funcionalidade que tem sido usada há muito tempo em programação, desde os primórdios da computação. Hoje em dia, existem várias bibliotecas e métodos em diferentes linguagens de programação, incluindo Ruby, que facilitam e simplificam o processo de calcular datas no futuro ou passado. Além disso, algumas alternativas incluem utilizar timestamps ou realizar cálculos com intervalos de tempo específicos.
 
-Se preferir, também podemos utilizar o operador de adição `+` e subtração `-` para calcular datas no futuro e no passado, respectivamente:
+## Veja também:
 
-```Ruby
-date + 15 # calcula 15 dias no futuro
-=> #<Date: 2020-05-16 ((2458996j,0s,0n),+0s,2299161j)> 
+Links relacionados:
 
-date - 7 # calcula 7 dias no passado
-=> #<Date: 2020-04-24 ((2458964j,0s,0n),+0s,2299161j)>
-```
-
-## Mergulho profundo
-
-Além dos métodos mencionados, a biblioteca `Date` também possui outros métodos úteis para trabalhar com datas, como `next_year`, `next_month`, `next_week`, `prev_year`, `prev_month` e `prev_week`. Esses métodos permitem avançar ou retroceder datas em anos, meses e semanas. Você pode consultar a documentação oficial do Ruby para mais detalhes.
-
-## Veja também
-
-- [Documentação oficial do Ruby sobre a biblioteca Date](https://ruby-doc.org/stdlib-2.7.1/libdoc/date/rdoc/index.html)
-- [Tutorial sobre a biblioteca Date em Ruby](https://www.tutorialspoint.com/ruby/ruby_date_time.htm)
-- [Exemplos práticos de uso da biblioteca Date em Ruby](https://www.oreilly.com/library/view/ruby-in-a/9780596809502/ch06s07.html)
+- [Documentação oficial do Ruby sobre DateTime] (https://ruby-doc.org/stdlib-2.7.1/libdoc/date/rdoc/DateTime.html)
+- [Tutorial sobre cálculos de datas em Ruby] (https://www.rubyguides.com/2019/08/ruby-date-time/)
+- [Outra biblioteca útil para cálculos de datas em Ruby] (https://github.com/alphagov/pension_date_helper)

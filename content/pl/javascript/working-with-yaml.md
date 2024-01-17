@@ -1,7 +1,7 @@
 ---
-title:                "Praca z YAML"
-html_title:           "Javascript: Praca z YAML"
-simple_title:         "Praca z YAML"
+title:                "Praca z yaml"
+html_title:           "Javascript: Praca z yaml"
+simple_title:         "Praca z yaml"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Data Formats and Serialization"
@@ -10,74 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i Dlaczego?
 
-Dlaczego warto pracować z YAML? Otóż jest to prosty i elastyczny format dla przesyłania danych, który jest bardzo popularny w świecie programowania. Pozwala na łatwe zapisywanie struktury danych w czytelnej dla człowieka formie.
+Pracowanie z YAML to metoda konwertowania danych strukturalnych do łatwego do czytania formatu. Programiści wykorzystują to do łatwiejszego przechowywania i przetwarzania danych w plikach tekstowych.
 
-## Jak to zrobić
+## Jak:
 
-Kodowanie w YAML jest bardzo proste i intuicyjne, a dzięki temu może być używane przez programistów o różnym poziomie zaawansowania. Poniżej znajdziesz kilka przykładów kodu i wyników, aby zapoznać się z podstawami:
+Aby zacząć korzystać z YAML, wystarczy zainstalować odpowiednie moduły za pomocą menedżera pakietów i wywołać komendy w dowolnym pliku Javascript. Przykładowy kod wygląda tak:
 
-### Tworzenie obiektu YAML
-```Javascript
-const person = {
-  name: "Kasia",
-  age: 25,
-  city: "Warszawa"
-};
-
-const yamlString = YAML.stringify(person);
-console.log(yamlString);
-```
-### Wynik
-```
-name: Kasia
-age: 25
-city: Warszawa
-```
-
-### Tworzenie listy YAML
-```Javascript
-const fruits = ["Jabłko", "Banan", "Truskawka", "Pomarańcza"];
-const yamlList = YAML.stringify(fruits);
-console.log(yamlList);
-```
-### Wynik
-```
-- Jabłko
-- Banan
-- Truskawka
-- Pomarańcza
-```
-
-### Wczytywanie danych z pliku YAML
-```Javascript
+```JavaScript
+const YAML = require('yaml');
 const fs = require('fs');
-const yamlData = fs.readFileSync('data.yml', 'utf8');
-const data = YAML.parse(yamlData);
-console.log(data);
-```
-### Wynik
-```
-{
-  name: "Adam",
-  age: 30,
-  city: "Kraków"
-}
+
+// zapis do pliku YAML
+fs.writeFileSync('plik.yml', YAML.stringify({a: [1, 2, 3]}));
+
+// odczyt z pliku YAML
+let dane = YAML.parse(fs.readFileSync('plik.yml', 'utf8'));
+
+console.log(dane);
+// wyjście: {a: [1, 2, 3]}
 ```
 
-## Głębsza analiza
+## Głębsza zajawka:
 
-Tworzenie obiektów i list w YAML jest bardzo intuicyjne, jednak warto pamiętać o kilku ważnych szczegółach:
+Kilka lat temu YAML zyskał popularność dzięki swojej czytelności i elastyczności w porównaniu do innych formatów danych, takich jak XML czy JSON. Alternatywami do YAML są np. TOML i INI, ale każdy z nich ma swoją specyfikę i wykorzystanie. Implementacja YAML jest również dostępna dla wielu innych języków programowania.
 
-- Obiekty w YAML są tworzone przy użyciu par klucz-wartość, gdzie dwukropek oddziela klucz od wartości.
-- Listy w YAML są tworzone przy użyciu myślników, a każdy element jest zapisywany w nowej linii.
-- Plik YAML powinien być zapisany w formacie UTF-8, aby uniknąć problemów z kodowaniem.
+## Zobacz też:
 
-Możesz też wykorzystać zalety YAML w swoim projekcie, np. jako format konfiguracyjny dla swojej aplikacji.
-
-## Zobacz też
-
-- Dokumentacja YAML: https://yaml.org/
-- Biblioteka YAML dla Javascript: https://eemeli.org/yaml/#home
-- Artykuł "10 powodów dlaczego warto używać YAML": https://codeenigma.com.au/blog/10-reasons-why-yaml-rules
+- [Dokumentacja YAML](https://yaml.org/)
+- [Porównanie formatów danych](https://www.codeproject.com/Reference/720512/List-of-JSON-XML-and-YAML-Editors-Converters-and-vi)
+- [Pełna lista modułów YAML w npm](https://www.npmjs.com/search?q=yaml)

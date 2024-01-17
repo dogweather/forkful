@@ -1,7 +1,7 @@
 ---
-title:                "Sända en http-begäran med grundläggande autentisering"
-html_title:           "Javascript: Sända en http-begäran med grundläggande autentisering"
-simple_title:         "Sända en http-begäran med grundläggande autentisering"
+title:                "Sända en http-förfrågan med grundläggande autentisering"
+html_title:           "Javascript: Sända en http-förfrågan med grundläggande autentisering"
+simple_title:         "Sända en http-förfrågan med grundläggande autentisering"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "HTML and the Web"
@@ -10,53 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
 
-Att skicka en HTTP-förfrågan med grundläggande autentisering är en vanlig uppgift inom webbutveckling. Det är ett säkert och effektivt sätt att verifiera användare och tillhandahålla åtkomst till skyddade resurser på en webbplats eller API. 
+När en Javascript-programmerare skickar en HTTP-förfrågan med grundläggande autentisering, innebär det att man skickar ett användarnamn och lösenord med förfrågan för att verifiera sin identitet. Detta används vanligtvis för att få tillgång till skyddade resurser på en webbplats eller tjänst.
 
-## Så här gör du
+Programmerare använder grundläggande autentisering för att säkerställa att endast auktoriserade användare kan få tillgång till vissa resurser. Det ger en grundläggande nivå av säkerhet utan att kräva mer komplexa autentiseringsmetoder.
+
+## Så här gör du:
 
 ```Javascript
-// Skapa en ny instans av XMLHttpRequest-objektet
-var xhr = new XMLHttpRequest();
+const username = "användarnamn";
+const password = "lösenord";
 
-// Ange URL:en och begäran
-xhr.open('GET', 'https://example.com/api', true);
+// Skapa en ny förfrågan med grundläggande autentisering
+const request = new XMLHttpRequest();
+request.open("GET", "https://www.example.com/api/resource", true);
+request.setRequestHeader("Authorization", `Basic ${btoa(username + ":" + password)}`);
 
-// Ange autentiseringsuppgifter i en sträng på formatet "username:password" och koda den med base64
-var encodedCredentials = btoa("username:password");
+// Skicka förfrågan och hantera svaret
+request.send();
 
-// Sätt en Authorization-header med det kodade värdet
-xhr.setRequestHeader("Authorization", "Basic " + encodedCredentials);
-
-// Skicka begäran och hantera eventuella svar
-xhr.onload = function() {
-  // Status 200 betyder att begäran lyckades
-  if (xhr.status === 200) {
-    var response = xhr.responseText;
-    console.log(response);
+request.onreadystatechange = function() {
+  if (this.readyState === 4 && this.status === 200) {
+    // Hantera returvärdet från förfrågan
+    console.log(this.responseText);
   }
 };
-
-// Skicka begäran
-xhr.send();
 ```
 
-**Output:**
-```
-{
-  "id": 1234,
-  "username": "john",
-  "email": "john@example.com"
-}
-```
+I exemplet ovan använder vi den inbyggda btoa-funktionen för att koda användarnamn och lösenord i Base64-format och skicka det i en HTTP-förfrågan. När förfrågan har skickats, kan vi hantera svaret genom att använda den inbyggda XMLHttpRequest-metoden.
 
-## Djupdykning
+## Djupdykning:
 
-Vad händer egentligen bakom kulisserna när en HTTP-förfrågan med grundläggande autentisering skickas? När vi sätter en Authorization-header med det bas64-kodade kombinationen av användarnamn och lösenord, tolkas detta av servern som ett HTTP-grundläggande autentiseringscertifikat. Denna autentisering används vanligtvis tillsammans med en säker HTTPS-anslutning för att skydda känslig information.
+Grundläggande autentisering har funnits sedan begynnelsen av internet och används vanligtvis för att skydda resurser som inte kräver hög säkerhet. Det finns dock nackdelar med grundläggande autentisering, som att lösenordet kan ses i klartext om förfrågan avlyssnas.
 
-## Se även
+Alternativen till grundläggande autentisering inkluderar mer avancerade autentiseringsmetoder som OAuth eller användning av API-nycklar. Det är viktigt att noga överväga vilken autentiseringsmetod som bäst passar behoven för din webbapplikation eller tjänst.
 
-- [XMLHttpRequest](https://developer.mozilla.org/sv-SE/docs/Web/API/XMLHttpRequest)
-- [Base64](https://developer.mozilla.org/sv-SE/docs/Web/API/WindowBase64/btoa)
-- [HTTP Basic Authentication](https://developer.mozilla.org/sv-SE/docs/Web/HTTP/Authentication#Basic_authentication_scheme)
+För att implementera grundläggande autentisering på servern, kan man använda en servermiljövariabel som kontrollerar användarinformationen mot en databas eller annan autentiseringslösning. Det är också viktigt att se till att servern använder en säker anslutning (HTTPS) för att skydda användarnas uppgifter.
+
+## Se även:
+
+- [XMLHttpRequest-dokumentation](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest)
+- [Autentisering i webbapplikationer](https://www.owasp.org/index.php/Web_Application_Authentication)

@@ -1,7 +1,7 @@
 ---
-title:                "현재 날짜 받아오기"
-html_title:           "C#: 현재 날짜 받아오기"
-simple_title:         "현재 날짜 받아오기"
+title:                "현재 날짜 가져오기"
+html_title:           "C#: 현재 날짜 가져오기"
+simple_title:         "현재 날짜 가져오기"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Dates and Times"
@@ -10,36 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜?
+# 현재 날짜 가져오기: C# 프로그래머를 위한 가이드
 
-오늘 날짜를 얻는 것의 경우, 개발자에게 가장 일상적이고 기본적인 작업 중 하나입니다. 코드가 현재 날짜를 알고 있다면, 다양한 애플리케이션에서 매우 유용하게 사용할 수 있습니다.
+## What & Why?
+현재 날짜를 가져오는 것은 프로그래머에게 중요한 작업 중 하나입니다. 현재 날짜를 가져오면 프로그램 내에서 다양한 용도로 사용할 수 있습니다. 예를 들어, 이를 활용하여 유효성 검사를 수행하거나 파일 이름에 날짜를 포함할 수 있습니다. 그리고 현재 날짜를 가져오는 것은 프로그램을 보다 정확하고 유용하게 만들어줍니다.
 
-## 어떻게?
-
+## How to:
 ```C#
-DateTime now = DateTime.Now;
-Console.WriteLine("Today is: " + now.ToString("yyyy-MM-dd"));
+DateTime currentDate = DateTime.Now;
+Console.WriteLine(currentDate);
+// 출력 결과: 2020-07-30 10:00:00 AM
 ```
 
-위의 코드를 실행하면 현재 날짜가 출력됩니다. `DateTime.Now` 메소드는 현재 날짜와 시간을 나타내는 `DateTime` 객체를 반환합니다. 이 객체를 사용하여 해당하는 날짜 형식으로 출력할 수 있습니다.
+위의 예시에서는 ```DateTime``` 클래스의 ```Now``` 메소드를 사용하여 현재 날짜와 시간을 가져오고, ```Console``` 클래스의 ```WriteLine``` 메소드를 통해 콘솔에 출력하는 방법을 보여줍니다. 또 다른 방법으로는, ```ToString``` 메소드를 사용하여 원하는 형식에 맞춰 날짜와 시간을 출력할 수도 있습니다.
 
 ```C#
-DateTime now = DateTime.Now;
-Console.WriteLine("Today is: " + now.ToString("dddd"));
+DateTime currentDate = DateTime.Now;
+string formattedDate = currentDate.ToString("MM-dd-yyyy");
+Console.WriteLine(formattedDate);
+// 출력 결과: 07-30-2020
 ```
 
-위의 코드를 실행하면 현재 요일명이 출력됩니다. `dddd` 형식 지정자를 사용하여 날짜를 원하는 형식으로 가져올 수 있습니다. 또한 `DateTime` 객체에서 원하는 날짜 정보를 `Year`, `Month`, `Day`, `Hour` 등의 속성을 사용하여 가져올 수도 있습니다.
+## Deep Dive:
+현재 날짜를 가져오는 ```DateTime``` 클래스는 .NET 프레임워크의 일부로 제공됩니다. 이 클래스는 날짜와 시간을 단일 값으로 저장하고 조작할 수 있는 매우 유용한 기능을 제공합니다. 또한, 시스템 설정에 따라 날짜와 시간의 형식이 달라질 수 있으므로 설정에 주의해야 합니다.
 
-## 깊게 들어가보기
+다른 프로그래밍 언어에서도 현재 날짜를 가져오는 다양한 방법이 있지만, C#의 ```DateTime``` 클래스는 날짜와 시간을 일관된 형식으로 조작할 수 있도록 도와줍니다. 또한, 특정 시간대의 날짜와 시간을 가져오는 기능도 있어 다국적 어플리케이션 개발에 유용합니다.
 
-`.Now` 메소드는 시스템의 현재 시간을 기준으로 한 `DateTime` 개체를 반환합니다. 이는 로컬 시간이 아닌 시스템의 시간을 기준으로 한 것입니다. 따라서 서로 다른 시간대에 있는 두 컴퓨터로부터 동일한 코드를 실행하면, 결과는 다를 수 있습니다.
-
-또한, `DateTime.Now` 메소드는 컴퓨터의 클럭에서 가져오는 시스템 시간을 기준으로 합니다. 따라서 사용자의 컴퓨터 시간이 올바르게 설정되어 있지 않을 경우, 결과 또한 잘못된 날짜와 시간을 반환할 수 있습니다.
-
-## 참고
-
-[DateTime 구조체 - MSDN](https://msdn.microsoft.com/ko-kr/library/system.datetime(v=vs.110).aspx)
-
-[C# 날짜와 시간 포매팅 및 분석 - Microsoft Docs](https://docs.microsoft.com/ko-kr/dotnet/standard/base-types/custom-date-and-time-format-strings)
-
-[KST 지원을 위한 C# 날짜 및 시간 조정하기 - C# 코너](https://www.codeproject.com/Articles/12396/Clock-A-DateTime-based-Adventure-Game#KoreaStandardTime)
+## See Also:
+- [Microsoft Docs: DateTime 구조체](https://docs.microsoft.com/ko-kr/dotnet/api/system.datetime?view=netcore-3.1)
+- [Microsoft School: 날짜와 시간 다루기](https://microsoft.github.io/MicrosoftSchool/korea/datetime.html)
+- [YouTube: C# DateTime 사용하기](https://www.youtube.com/watch?v=cZ-4LMz_WF0)

@@ -10,35 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
+## 什么和为什么？
+标准错误输出是编程中一种常见的技术，它允许程序员在代码运行时将信息打印到特定的位置。程序员通常会使用标准错误输出来调试代码，或者在程序出现错误时提供必要的提示信息。
 
-为什么一个人会使用标准错误来写作？因为标准错误是一种非常有用的方法，可以帮助程序员发现和调试他们的代码中的任何错误。
-
-## 如何
-
-Python中，可以使用`sys`模块中的`stderr`对象来将错误消息写入标准错误流。下面是一个例子：
-
+## 如何：
+下面是一个简单的Python代码示例，展示如何写入标准错误输出：
 ```Python
 import sys
 
-try:
-  # 这里是可能会出错的代码
-  print("Hello world")
-
-except:
-  # 将错误消息写入标准错误
-  sys.stderr.write("出错了！")
-
+sys.stderr.write("这是一个错误信息")
+```
+运行这段代码，可以在终端看到输出结果，例如：
+```
+这是一个错误信息
 ```
 
-运行上述代码，将会在控制台输出`出错了！`。这是一个非常简单的例子，但它展示了如何使用标准错误来提醒程序员出现了错误。
+## 深入探讨：
+标准错误输出最初是为了调试和故障排除而设计的。它与标准输出（通常由print函数使用）相比，不会将信息打印到控制台，而是将其发送到系统的标准错误流中。这使得程序员可以有效地区分出错信息和正常输出信息，更轻松地定位代码中的问题。
 
-## 深入探讨
+除了使用标准错误输出，程序员也可以使用日志记录库来调试代码。日志记录库提供更多功能和灵活性，但需要额外的配置和使用。因此，在简单的调试场景下，使用标准错误输出成为了更方便的选择。
 
-写入标准错误的方法不仅限于在代码中手动添加`sys.stderr.write()`。Python还提供了`logging`模块来帮助程序员记录程序运行过程中的信息。通过设置`level`为`ERROR`，可以将错误消息写入标准错误流中，而且可以通过`format`参数来定制输出格式。这样，程序员就可以更方便地追踪和调试程序中的错误。
+如果想要在Python中将错误信息保存到文件中，可以使用重定向（redirection）技术。重定向可以将终端输出导入到文件中，例如：
+```bash
+python myscript.py > log.txt
+```
 
-## 另请参阅
-
-- [Python官方文档（中文版）](https://docs.python.org/zh-cn/3/tutorial/errors.html)
-- [Python异常处理教程](https://www.runoob.com/python/python-exceptions.html)
-- [Python logging模块文档](https://docs.python.org/3/library/logging.html)
+## 相关链接：
+- [Python官方文档：sys模块](https://docs.python.org/3/library/sys.html)
+- [Python官方教程：错误和异常](https://docs.python.org/3/tutorial/errors.html)

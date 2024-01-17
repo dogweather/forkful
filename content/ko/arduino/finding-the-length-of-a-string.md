@@ -10,45 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+# 무엇이며 왜 거기에 대해?
 
-문자열의 길이를 찾는 것은 많은 프로그래밍 작업에서 필수적입니다. 예를 들어, 문자열을 다루는 게임을 만들거나, 데이터를 처리하는 프로그램을 작성할 때 문자열의 길이를 알아야 합니다.
+String의 길이를 찾는 것은 프로그래머들이 자주 하는 작업입니다. String은 문자들의 시퀀스이며, 우리는 때로는 그 길이를 알아야 할 때가 있습니다. 예를 들어, 사용자로부터 입력받은 문자열이 얼마나 긴지 알고 싶을 수도 있습니다. 또한 문자열 길이는 메모리 할당과 관련하여 중요한 요소입니다.
 
-## 사용 방법
+# 어떻게 하나요?
 
-Arduino에서 문자열의 길이를 찾는 방법은 간단합니다. ```strlen()``` 함수를 사용하면 됩니다. 이 함수는 문자열의 길이를 반환합니다. 예를 들어, "Hello World"라는 문자열의 길이는 11이므로 ```strlen("Hello World")```는 11을 반환합니다.
+코드 블록( ```Arduino ...``` ) 내에서 예제 코드와 샘플 출력을 확인할 수 있습니다.
 
+### 예시 1: String의 길이 구하기
 ```
-Arduino
-// Include the String library
-#include <String.h>
-
-void setup() {
-    // Initialize serial communication
-    Serial.begin(9600);
-
-    // Define a string
-    String str = "Hello World";
-
-    // Find the length of the string
-    int length = strlen(str);
-
-    // Print the length
-    Serial.println(length);
-}
-
-void loop() {
-    // Empty loop
-}
+String myString = "Hello World";
+int length = myString.length();
+Serial.println(length); // 11 출력
 ```
 
-위의 코드를 실행하면 시리얼 모니터에 11이 출력되는 것을 볼 수 있습니다.
+### 예시 2: 사용자로부터 입력받은 문자열의 길이 구하기
+사용자로부터 입력받은 문자열을 ```serial.readString()``` 함수를 이용해서 읽어온 후, 그 길이를 구할 수 있습니다.
 
-## 깊이 파헤치기
+```
+Serial.println("Input a string:");
+String input = Serial.readString();
+int length = input.length();
+Serial.println(length); // 입력받은 문자열의 길이 출력
+```
 
-Arduino의 ```strlen()``` 함수는 문자열의 길이를 찾는 가장 간단하고 효율적인 방법입니다. 하지만 이 함수는 Null 문자를 발견하기 전까지 문자열의 길이를 계산하기 때문에 다른 문자가 추가되었거나 삭제되었을 때 불필요하게 길이가 달라질 수 있습니다. 따라서 정확한 결과를 얻기 위해서는 문자열에 Null 문자를 추가해주는 것이 좋습니다.
+# 더 탐구해보기
 
-## 참고 자료
+## 역사적인 배경
 
-- [Arduino String Library Reference](https://www.arduino.cc/reference/en/language/variables/data-types/string/)
-- [Arduino strlen() 함수 문서](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/strlen/)
+String의 길이를 알아내는 작업은 컴퓨터 과학의 초기부터 존재했습니다. C언어에서는 ```strlen()``` 함수를 이용해 문자열의 길이를 구할 수 있었고, 현재 대부분의 프로그래밍 언어에서도 비슷한 기능을 제공합니다.
+
+## 다른 방법들
+
+문자열의 길이를 구하기 위해 다양한 알고리즘이 개발되어 왔습니다. 일반적으로 가장 짧은 시간에 실행될 수 있는 알고리즘을 선택합니다. 하지만 에너지 효율 등의 다른 요소를 고려할 때, 최적의 알고리즘을 선택하는 것은 어려운 문제입니다.
+
+## 구현 세부사항
+
+문자열의 길이를 구하기 위해서는 문자열의 마지막에 null 문자가 있어야만 합니다. null 문자는 문자열의 끝을 나타내는 특수한 문자로, C언어에서는 ```\0``` 로 표현됩니다.
+
+# 관련 자료
+
+- [Arduino String 라이브러리 문서](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/)
+- [WikiBooks: C Programming - Null Terminated Strings](https://en.wikibooks.org/wiki/C_Programming/Null_terminated_strings)
+- [Stack Overflow: Efficiently finding a string length: longest common substring](https://stackoverflow.com/questions/11173370/efficiently-finding-a-string-length-longest-common-substring)

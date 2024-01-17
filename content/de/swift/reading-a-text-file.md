@@ -10,40 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was & Warum?
+ Zum Lesen einer Textdatei gehört das Einlesen und Verarbeiten von Textinhalt aus einer Datei, die auf Ihrem Computer gespeichert ist. Programmierer tun dies, um Daten aus der Textdatei zu erhalten und sie in ihrer Anwendung zu verwenden.
 
-Wenn du mit Swift programmierst, wirst du oft auf die Notwendigkeit stoßen, Textdateien zu lesen. Dies kann nützlich sein, um Einstellungen oder Benutzereingaben zu speichern oder um Daten von einer externen Quelle zu beziehen. In diesem Artikel zeigen wir dir, wie du mit Swift ganz einfach Textdateien lesen kannst.
-
-## Wie geht's
-
-Um eine Textdatei in Swift zu lesen, gibt es mehrere Schritte, die du befolgen musst. Zuerst musst du die Datei öffnen, dann die Daten daraus lesen und schließlich die Datei wieder schließen. Schauen wir uns das kurz an einem Beispiel an:
-
-```
-// Öffne die Textdatei und speichere sie in einer Variable
-let fileURL = URL(fileURLWithPath: "meineDatei.txt")
-
-// Versuche, die Daten aus der Datei zu lesen
+## Wie geht das?
+Hier ist ein Beispiel, wie Sie eine Textdatei in Swift einlesen können:
+ 
+```Swift
+let fileURL = URL(fileURLWithPath: "example.txt")
 do {
-    // Versuche, den Inhalt der Datei als String zu lesen
-    let content = try String(contentsOf: fileURL, encoding: .utf8)
-
-    // Gib den Inhalt in der Konsole aus
-    print(content)
+    let text = try String(contentsOf: fileURL)
+    print(text)
 } catch {
-    // Wenn ein Fehler auftritt, gib eine Fehlermeldung aus
-    print("Fehler beim Lesen der Datei: \(error)")
+    print("Fehler beim Einlesen der Datei.")
 }
 ```
 
-Wie du sehen kannst, verwenden wir die `URL`-Klasse, um die Textdatei zu öffnen und dann die `String`-Klasse, um den Inhalt als String zu lesen. Beachte, dass wir auch eine `do-catch`-Anweisung verwenden, um Fehler abzufangen, falls beim Lesen der Datei etwas schief geht. 
+Die Ausgabe entspricht dem Inhalt der Textdatei "example.txt".
 
-## Tiefer gehen
-
-Du hast jetzt gesehen, wie du mit Swift eine Textdatei öffnen und lesen kannst, aber du fragst dich vielleicht, was diese `URL`- und `String`-Klassen eigentlich sind. Eine `URL` repräsentiert eine eindeutige Adresse, die auf eine Datei oder eine Ressource im Internet verweist. Und die `String`-Klasse ermöglicht es uns, Texte zu verarbeiten und zu manipulieren.
-
-Es gibt auch noch andere Arten, eine Textdatei in Swift zu lesen, wie zum Beispiel mit dem `FileHandle`-Objekt oder mithilfe von Dritt-Bibliotheken. Du kannst auch verschiedene Methoden nutzen, um die Daten aus der Datei zu lesen, wie zum Beispiel `Data(contentsOf:)` oder `ContentStreamReader`.
+## Tiefer gehende Informationen
+Das Lesen von Textdateien hat eine lange Geschichte in der Programmierung, da es eine grundlegende Methode ist, um Daten in eine Anwendung zu importieren. Alternativ können Programmierer auch auf Datenbanken zugreifen, um ihre Daten zu erhalten. Die Implementierung des Lesens einer Textdatei in einer Anwendung kann je nach Sprache und Framework unterschiedlich sein.
 
 ## Siehe auch
-
-- [Apple Dokumentation zu Dateiverarbeitung](https://developer.apple.com/documentation/foundation/file_management)
-- [ContentStreamReader on GitHub](https://github.com/coliss/ContentStreamReader)
+Wenn Sie mehr über das Lesen von Textdateien in Swift erfahren möchten, können Sie diese Ressourcen nutzen:
+- [Offizielle Swift Dokumentation zu Dateimanager](https://developer.apple.com/documentation/foundation/filemanager)
+- [Swift Cheat Sheets - Datei I/O](https://medium.com/ios-os-x-development/swift-cheat-sheet-file-i-o-9df62593a1b1)

@@ -1,7 +1,7 @@
 ---
-title:                "Lavorare con JSON"
-html_title:           "Swift: Lavorare con JSON"
-simple_title:         "Lavorare con JSON"
+title:                "Lavorare con json"
+html_title:           "Swift: Lavorare con json"
+simple_title:         "Lavorare con json"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Data Formats and Serialization"
@@ -10,46 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
-Se stai sviluppando un'applicazione iOS in Swift, è molto probabile che avrai bisogno di lavorare con JSON. JSON (JavaScript Object Notation) è un formato di scambio dati molto popolare che viene utilizzato per rappresentare e trasmettere informazioni tra server e dispositivi.
+## Cosa & Perché?
+Lavorare con JSON è fondamentale per gli sviluppatori che hanno a che fare con il trasferimento di dati tra diversi sistemi o piattaforme. JSON, acronimo di JavaScript Object Notation, è un formato di scrittura e lettura dei dati strutturato e leggibile dalle macchine. Per questa ragione, è ampiamente utilizzato nella comunicazione tra applicazioni web e mobile.
 
-## Come fare
-Per lavorare con JSON in Swift, devi seguire i seguenti passaggi:
+## Come fare:
+Per lavorare con JSON in Swift, è necessario utilizzare la classe codable. In questo modo è possibile convertire automaticamente i dati tra il formato JSON e i tipi di dati Swift. Di seguito un esempio di codice per decodificare un oggetto JSON in un oggetto di tipo Person:
 
-1. Importa il framework `Foundation` nel tuo file di codice:
 ```Swift
-import Foundation
-```
-
-2. Utilizza il tipo `Data` per rappresentare i dati JSON:
-```Swift
-let jsonData = Data()
-```
-
-3. Converti i dati JSON in un oggetto Swift utilizzando il metodo `jsonObject(with:options:)` della classe `JSONSerialization`:
-```Swift
-do {
-    let jsonObject = try JSONSerialization.jsonObject(with: jsonData, options: [])
-} catch {
-    print("Error converting JSON data: \(error)")
+struct Person: Codable {
+    var name: String
+    var age: Int
 }
-```
 
-4. Accedi ai dati del tuo oggetto Swift utilizzando la sintassi degli optional:
-```Swift
-if let name = jsonObject["name"] as? String {
-    print("Nome: \(name)")
+let json = """
+{
+    "name": "John",
+    "age": 30
 }
+""".data(using: .utf8)!
+
+let decodedPerson = try JSONDecoder().decode(Person.self, from: json)
 ```
 
-## Approfondimento
-Se vuoi imparare di più sul funzionamento di JSON in Swift, ecco alcune informazioni aggiuntive che possono esserti utili:
+L'output sarà un oggetto di tipo Person con il nome "John" e l'età 30.
 
-- JSON può rappresentare quattro tipi di dati: stringhe, numeri, oggetti e array.
-- Puoi utilizzare il tipo `NSObject` per rappresentare un oggetto JSON all'interno del tuo codice.
-- Per accedere ai dati di un oggetto JSON utilizzando il suo chiave, puoi utilizzare la sintassi degli optional o l'operatore `guard let` per gestire i casi in cui il valore potrebbe essere nullo.
+## Approfondimento:
+JSON è stato sviluppato nei primi anni 2000 come una semplice alternativa al formato XML per la trasmissione dei dati. Grazie alla sua semplicità e leggibilità, è diventato presto uno standard ampiamente utilizzato. Alcune alternative a JSON includono YAML e XML, ma JSON rimane uno dei formati più comuni per il trasferimento dei dati.
 
-## Vedi anche
-- [Documentazione ufficiale di Swift su JSON](https://developer.apple.com/documentation/foundation/jsonserialization)
-- [Tutorial su objc.io sulla gestione di JSON in Swift](https://www.objc.io/blog/2017/07/12/json-parsing-in-swift-4/)
-- [Swift Package Manager](https://swift.org/package-manager/), strumento per gestire le dipendenze dei tuoi progetti Swift.
+Un altro concetto importante da comprendere quando si lavora con JSON è la serializzazione, cioè il processo di trasformare una struttura dati in una rappresentazione serializzata, spesso in formato JSON, per consentirne la trasmissione su una rete o il salvataggio su disco.
+
+## Vedi anche:
+Ulteriori informazioni su Codable in Swift: https://developer.apple.com/documentation/swift/codable
+
+Introduzione a JSON: https://www.json.org/

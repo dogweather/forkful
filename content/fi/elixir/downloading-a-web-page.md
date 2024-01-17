@@ -10,38 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi?
+## Mitä & Miksi?
 
-Ladattujen verkkosivujen lukeminen ei ole vain internetin selailun perusosa, vaan myös tärkeä osa web-sovellusten ja -palvelujen kehitystä. Elixirillä on omat tapansa auttaa sinua verkkosivujen lataamisessa ja niiden tietojen käsittelyssä.
+Web-sivun lataaminen tarkoittaa tietojen hankkimista verkkosivulta ja sen tallentamista paikalliselle koneelle. Ohjelmoijat tekevät tätä usein datan keräämiseksi, analysoimiseksi tai käsittelemiseksi.
 
-## Kuinka?
+## Kuinka tehdä:
 
 ```Elixir
-#Käyttö meille HTTP-kirjasto
-defp deps do
-  [
-   {:httpoison, "~> 1.8"}
- ]
-end
-
-#Etsiä sivun lataaminen
-HTTPoison.get("https://www.example.com")
-|> case do
-  {:ok, %HTTPoison.Response{status_code: 200, body: body}} -> 
-    #Tulosta sivun sisältö konsolille
-    IO.puts body
-  {:error, %HTTPoison.Error{reason: reason}} ->
-    #Jos jotain menee pieleen, tulosta virheilmoitus konsolille
-    IO.puts "Virhe: #{reason}"
-end
+# Lataa web-sivu ja tallenna HTML-tiedostoksi
+File.write!("sivu.html", HTTPoison.get!("https://example.com").body)
+# Tulostaa latauksen tilan
+IO.puts("Web-sivu ladattu!")
 ```
 
-## Syvempi sukellus
+## Syvällinen sukellus:
 
-Elixirin HTTP-kirjastoja on monia, mutta suosittelen tutustumaan HTTPoisoniin sen yksinkertaisen käytön vuoksi. Lisäksi voit käyttää Elixirin hienoa pattern matching -ominaisuutta lataamiesi verkkosivujen tietojen käsittelyyn.
+Lataaminen web-sivuilta ei ole uusi asia, mutta Elixirin kanssa se voidaan tehdä helposti ja tehokkaasti hyödyntämällä sen toimintakykyä ja skaalautuvuutta. On myös muita tapoja ladata verkkosivuja Elixirin ulkopuolella, kuten Curl-ohjelma.
 
-Katso myös
+## Katso myös:
 
-- [Elixirin virallinen verkkosivu] (https://elixir-lang.org/)
-- [HTTPoison -dokumentaatio] (https://hexdocs.pm/httpoison/HTTPoison.html)
-- [Elixir Forum] (https://elixirforum.com/)
+- [Elixirin virallinen dokumentaatio](https://elixir-lang.org/getting-started/introduction.html#reading-files-from-the-filesystem)
+- [HTTPoison-kirjaston dokumentaatio](https://hexdocs.pm/httpoison/HTTPoison.html)
+- [Curl-ohjelman dokumentaatio](https://curl.haxx.se/docs/)

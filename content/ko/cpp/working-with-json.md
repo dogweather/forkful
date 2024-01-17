@@ -10,130 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+## 무엇 & 왜?: 
+JSON을 다루는 것은 데이터를 교환하는 데 사용되는 형식 중 하나입니다. 대부분의 웹사이트 및 웹 어플리케이션에서 데이터를 교환하고 저장하는 데 사용됩니다. 프로그래머는 서로 다른 애플리케이션 간에 데이터를 쉽게 공유할 수 있도록 JSON을 사용합니다. 
 
-* JSON은 데이터를 쉽게 교환할 수 있는 포맷으로, C++ 프로그래머들에게 매우 중요합니다.
-* 데이터를 처리하고 저장하는 데에 사용되는 스킬을 새로 배울 수 있어서 흥미로울 수 있습니다.
-
-## 작동 방법
-
-JSON을 사용하는 것은 간단합니다. 그러나 ASCII 코드로 남겨진 널문자를 제거하는 것과 같은 어려운 부분도 있습니다.
-
-### JSON 읽기
-
-아래의 예제는 JSON 파일 내용을 읽는 간단한 방법을 보여줍니다.
+## 방법: 
+JSON을 다루는 간단한 예시를 살펴보겠습니다. 다음 예시에서는 JSON 형식의 데이터를 읽고 출력하는 간단한 코드를 살펴볼 수 있습니다. 
 
 ```C++
 #include <iostream>
-#include <fstream>
-#include <string>
-#include <nlohmann/json.hpp> // JSON 라이브러리
+#include <nlohmann/json.hpp>
+
+using json = nlohmann::json;
 
 int main() {
-  // JSON 파일을 읽기 위해 ifstream 객체 생성
-  std::ifstream file("example.json");
-  
-  // 파일 내용이 담기는 스트링 변수 선언
-  std::string content;
-  
-  // 파일의 내용을 content에 저장
-  file >> content;
-  
-  // json 변수에 파일 내용을 파싱하여 저장
-  auto json = nlohmann::json::parse(content);
-  
-  // 키/값 쌍 출력하기
-  for (auto& [key, value] : json.items()) {
-    std::cout << key << ": " << value << std::endl;
-  }
-  
-  return 0;
+    // 예시로 사용할 JSON 데이터
+    std::string json_data = R"(
+        {
+            "name": "John",
+            "age": 25,
+            "country": "USA"
+        }
+    )";
+
+    // JSON을 파싱하여 객체로 변환
+    json parsed_data = json::parse(json_data);
+
+    // name 필드 출력
+    std::cout << "Name: " << parsed_data["name"] << std::endl;
+
+    // age 필드 출력
+    std::cout << "Age: " << parsed_data["age"] << std::endl;
+
+    // country 필드 출력
+    std::cout << "Country: " << parsed_data["country"] << std::endl;
+
+    return 0;
 }
 ```
 
-예제 파일의 내용이 아래와 같다면,
-
-```json
-{
-  "name": "John",
-  "age": 25,
-  "hobbies": ["programming", "reading", "running"],
-  "address": {
-    "street": "123 Main St.",
-    "city": "New York",
-    "state": "NY"
-  }
-}
+#### 출력:
+```
+Name: John
+Age: 25
+Country: USA
 ```
 
-실행 결과는 다음과 같을 것입니다.
+## 깊이 들어가기: 
+JSON은 원래 JavaScript에서 사용하기 위해 개발되었습니다. 하지만 현재는 다양한 프로그래밍 언어에서 사용되고 있습니다. 또한 JSON 대신 XML이나 CSV와 같은 다른 형식을 사용하여 데이터를 교환할 수도 있지만, JSON은 더 간결하고 쉽게 이해할 수 있는 형식으로 많이 사용됩니다. C++에서 JSON을 사용하기 위해서는 nlohmann의 json 라이브러리를 사용할 수 있습니다. 
 
-```text
-name: John
-age: 25
-hobbies: ["programming", "reading", "running"]
-address: {"street":"123 Main St.","city":"New York","state":"NY"}
-```
-
-### JSON 쓰기
-
-아래의 예제는 C++에서 쉽게 JSON 파일을 쓰는 방법을 보여줍니다.
-
-```C++
-#include <iostream>
-#include <fstream>
-#include <nlohmann/json.hpp> // JSON 라이브러리
-
-int main() {
-  // JSON 파일을 쓰기 위해 ofstream 객체 생성
-  std::ofstream file("example2.json");
-  
-  // data 변수에 저장할 데이터 선언
-  nlohmann::json data;
-  
-  // 데이터 추가
-  data["name"] = "Jane";
-  data["age"] = 30;
-  data["hobbies"] = {"painting", "yoga", "cooking"};
-  data["address"]["street"] = "456 Maple Ave.";
-  data["address"]["city"] = "Los Angeles";
-  data["address"]["state"] = "CA";
-  
-  // 파일에 JSON 데이터 저장
-  file << data << std::endl;
-  
-  return 0;
-}
-```
-
-실행 결과, example2.json 파일에 다음과 같은 내용이 저장될 것입니다.
-
-```json
-{
-  "name": "Jane",
-  "age": 30,
-  "hobbies": ["painting", "yoga", "cooking"],
-  "address": {
-    "street": "456 Maple Ave.",
-    "city": "Los Angeles",
-    "state": "CA"
-  }
-}
-```
-
-## Deep Dive
-
-### JSON 구조
-
-JSON은 다음과 같은 구조를 가지고 있습니다.
-
-* 두 개의 큰 컨테이너: 객체(object)와 배열(array)
-* 객체(object): key-value 쌍으로 이루어진 데이터 구조
-* 배열(array): 하나의 데이터 타입으로 이루어진 목록 구조
-
-### JSON 사용 시 유의할 점
-
-1. 중괄호와 콜론 사용에 주의해야 합니다.
-2. 문자열은 항상 쌍따옴표("")로 감싸야 합니다.
-3. 배열의 요소는 콤마(,)로 구분되어야 합니다.
-4. 파일을 읽고 쓸 때, ASCII
+## 관련 정보 보기: 
+- nlohmann/json 공식 홈페이지: https://github.com/nlohmann/json 
+- JSON의 동작 방식에 대한 상세한 설명: https://www.json.org/json-ko.html
+- JSON 대신 사용할 수 있는 다른 데이터 교환 형식: XML과 CSV

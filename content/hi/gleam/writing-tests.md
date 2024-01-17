@@ -10,25 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Kyun
-Kisi bhi programming language mein, test likhna ek zaroori step hota hai jisse hamare code ki quality aur functionality ko sahi tarah se ensure kiya ja sake. Gleam mein bhi, test likhna ek important aspect hai jisse aap apne code ko safe aur reliable bana sakte hai.
+## क्या & क्यों?
+टेस्ट लेखन क्या है और क्यों प्रोग्रामर इसे करते हैं, यह समझने के लिए हमें पहले प्रोग्रामिंग टेस्ट के लाभों को समझना होगा। प्रोग्रामिंग टेस्ट हैं सरल टेस्ट केस जो हमारे कोड को चलाने के लिए प्रयोग किए जाते हैं। इससे हम यकीनी बन सकते हैं कि हमारा कोड खराब होने की स्थिति में भी सही तरीके से काम करेगा।
 
-## Kaise Kare
-Agar aapne abhi tak test likhna nahi sikha hai, toh Gleam aapke liye ek great language hai jisme test likhna asaan aur effective hai. Neeche diye gaye examples ke saath dekhein:
+## कैसे:
+Gleam के साथ टेस्ट लेखन बहुत ही आसान है। नीचे दिए गए कोड ब्लॉक में, हमने एक प्रोग्राम को टेस्ट करने के लिए एक उदाहरण दिया है। हमें `assert` को उपयोग करना होगा जो हमारे कोड को चलाएगा और सामान्य टेस्ट केस देखेगा।
 
 ```Gleam
-test "Add function should return the sum" {
-  assert.add(2,2) == 4
+import testing
+test "गणितीय ऑपरेशन" {
+  assert testing.plus(2, 2) == 4
 }
 ```
 
-Is code block mein, humne ek test likha hai jisse hamne apne "add" function ke output ko check kiya hai. Agar add function mein koi galat code hota, toh test fail ho jata hai aur hume pata chalta hai ki kuch issue hai aur hume code ko fix karna hai.
+जब हम यह कोड चलाते हैं, तो हमें यह संदेश मिलेगा: `✅ Your test suite passed!` यह दर्शाता है कि हमारा टेस्ट केस सफल रहा है। अगर हमारा कोड गलत छोड़े तो हमें `❌ Your test suite failed!` मिलेगा।
 
-## Deep Dive
-Test likhne ke liye, sabse pehle aapko "test" keyword ka use karna hota hai. Iske baad aap test ka naam likhte hai aur brackets ke andar apne code ko likhte hai jisse aap test karna chahte hai. Iske baad hum "assert" keyword ka use karte hai jisse hum check karte hai ki kya humara code sahi output produce kar raha hai ya nahi. Agar assert ki value true hoti hai, toh test pass ho jata hai, aur agar false hoti hai toh test fail ho jata hai.
+## गहराई में बिना:
+इससे पहले की Gleam, प्रोग्रामर्स ने परीक्षण के लिए अन्य भाषाओं का प्रयोग किया जैसे कि जावा, पाइथन और गो। इन भाषाओं में से कुछ का इस्तेमाल टेस्ट केस चलाने के लिए किया जाता था। Gleam में, `assert` जैसे फ़ंक्शन की मदद से प्रोग्रामर्स को सामान्य टेस्ट केस देखने और अपनी कोड की गुणवत्ता पर नियंत्रण रखने में मदद मिलती है। यह एक सुपरहीरो है जो हमेशा हमारे साथ होता है!
 
-## Dekhiye
-"See Also"  
-- [Gleam Documentation](https://gleam.run/documentation/)
-- [Effective Testing in Gleam blog post](https://medium.com/alwaysacloud/effective-testing-in-gleam-f9b8acd4c3c5)
-- [Gleam Tests YouTube tutorial](https://www.youtube.com/watch?v=87NA-wMwK4E)
+## जुड़े रहिये:
+आप और भी अधिक गहराई में जान सकते हैं, टेस्ट लेखन के बारे में Gleam दस्तावेज़ीकरण पढ़कर। आप सीख सकते हैं कि कैसे गणनात्मक ऑपरेशन, अनुवाद तथा HTTP रिक्वेस्ट्स जैसे आम प्रोग्रामिंग स्किल्स के लिए Gleam के साथ टेस्ट लेखन किया जाता है।
+
+अधिक जानकारी के लिए, Gleam समुदाय से जुड़ें जहां आप शिक्षा और सहायता प्राप्त कर सकते हैं। आप यहां से Gleam को डाउनलोड भी कर सकते हैं।
+
+## देखें भी:
+- [Gleam दस्तावेज़ीकरण](https://gleam.run/documentation)
+- [Gleam समुदाय](https://github.com/gleam-lang/gleam/discussions)
+- [Gleam को डाउनलोड करें](https://gleam.run/getting-started/installation.html)

@@ -1,7 +1,7 @@
 ---
-title:                "तारीख को स्ट्रिंग में रूपांतरण करना"
-html_title:           "Clojure: तारीख को स्ट्रिंग में रूपांतरण करना"
-simple_title:         "तारीख को स्ट्रिंग में रूपांतरण करना"
+title:                "एक तिथि को स्ट्रिंग में रूपांतरण करना।"
+html_title:           "Clojure: एक तिथि को स्ट्रिंग में रूपांतरण करना।"
+simple_title:         "एक तिथि को स्ट्रिंग में रूपांतरण करना।"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Dates and Times"
@@ -10,46 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Kyun
+## क्या और क्यों?
+किसी भी वेब या सॉफ्टवेयर अनुप्रयोग में, दिनांक को स्ट्रिंग में परिवर्तित करना एक आम कार्य है। यह कार्यक्षमता को बढ़ाने और डेटा को सही ढंग से प्रदर्शित करने में मदद करता है। कई प्रोग्रामिंग भाषाओं में हम अपने डेटा को स्ट्रिंग में बदलने के लिए विशेष निर्देशानुसार तरीके अपनाते हैं।
 
-Dosto, aapne kabhi socha hai ki hum date ko string mein kyun badalte hain? Aksar hume apne code mein tareekhon ko kisi dusre format mein dikhana padta hai. Isliye hume date ko string mein badalna bahut zaroori ho jata hai. Iss article mein, hum aapko batayenge ki kaise aap date ko Clojure mein string mein convert kar sakte hain. Chaliye shuru karte hain!
+## कैसे करें?
+क्लोजर में दिनांक को स्ट्रिंग में परिवर्तित करने के लिए हम विभिन्न लाइब्रेरी और फंक्शनों का प्रयोग करते हैं। यहां एक उदाहरण है:
 
-## Kaise karein
-
-Sabse pehle hum `java.time.LocalDate` library ko import karenge. Fir hum `format` function ka istemal karke date ko string mein convert karenge.
-
-```Clojure
-(import 'java.time.LocalDate)
-
-(def now (LocalDate/now))
-(format now "dd/MM/yyyy")
+```clojure
+(require '[clojure.java-time :as time])
+(time/format (time/local-date) "yyyy-MM-dd")
 ```
-Output: "22/07/2021"
+आउटपुट:
+```2021-02-22```
 
-Is coding example mein, humne `dd` ko `day` ke liye aur `MM` ko `month` ke liye replace kiya hai. Is tarah hum apne hisab se kisi bhi format mein date ko convert kar sakte hain. Ab aap khud bhi kuch alag format mein try karein!
+क्लोजर में हम ```clojure.java-time``` लाइब्रेरी का प्रयोग करके दिनांकों को स्ट्रिंग में बदल सकते हैं। हम ```time/format``` फंक्शन के द्वारा दिनांक को फॉर्मेट करते हैं और उपयुक्त फॉर्मेटिंग मापदंड को दिया जाता है।
 
-## Gehri Jankari
+## गहराई में जाइए
+दिनांकों को स्ट्रिंग में बदलने का सिद्धांत प्राचीन काल से ही प्रचलित है। प्रासंगिक उदाहरण के रूप में, श्रावकों को धर्मीय तिथियों को स्मरण करने के लिए दिनांकों को स्ट्रिंग में बदलने का उपयोग किया जाता था। क्लोजर में, आप ```(time/to-local-date-time "2021-02-22T12:00:00")``` का प्रयोग करके दिनांक को स्ट्रिंग में परिवर्तित कर सकते हैं। इस कार्य में, मान्य तिथियों का उपयोग किया गया है जो कई प्रोग्रामर्स को बचाने में मदद कर सकते हैं। अलग अलग प्रोग्रामिंग भाषाओं में, यह कार्य अलग-अलग तरीकों से किया जा सकता है, परंतु महत्वपूर्ण है कि हम इस कार्य की सुविधाओं और परियोजना के लक्ष्यों के साथ समझें।
 
-Date ko string mein convert karne ke liye, hume `format` function mein `java.text.SimpleDateFormat` ka upyog karna padta hai. Iss library mein hume kai saare options milte hain jisse hum date ko apne hisab se customize kar sakte hain.
+## और भी देखें
+आप दिनांक को स्ट्रिंग में परिवर्तित करने के लिए क्लोजर के अलावा भी कई अन्य संचालक भाषाओं का प्रयोग कर सकते हैं। कुछ संभावित विकल्पों में शामिल हैं जावा, पायथन, रबी। यदि आप दिनांक और समय के बारे में और अधिक गहराई को जानना चाहते हैं, तो आप जगह पर जा सकते हैं।
 
-```Clojure
-(import 'java.time.LocalDate)
-(import 'java.text.SimpleDateFormat)
-
-(def now (LocalDate/now))
-
-(def custom-date-format (SimpleDateFormat. "EEE, dd MMMM yyyy"))
-(def custom-time-format (SimpleDateFormat. "hh:mm:ss a"))
-
-(format now custom-date-format)
-(format now custom-time-format)
-```
-Output: "Thu, 22 July 2021" and "12:00:00 PM"
-
-Jaise ki aap dekh sakte hain, humne `format` function mein ek custom format pass kiya hai jo ki humne `SimpleDateFormat` se banaya hai. Iss tarah aap apne hisab se custom formats create kar sakte hain.
-
-# See Also
-
-1) [Official Clojure Documentation](https://clojure.org/)
-2) [java.text.SimpleDateFormat Documentation](https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html)
-3) [A Beginner's Guide to Dates in Clojure](https://purelyfunctional.tv/guide/dates-in-clojure/)
+[Official Clojure documentation on date and time](https://clojure.org/reference/java_interop#_date_and_time)
+[Oracle's Java documentation on formatting dates](https://docs.oracle.com/javase/tutorial/i18n/format/dateFormat.html)
+[T

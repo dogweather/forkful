@@ -1,7 +1,7 @@
 ---
-title:                "부분 문자열 추출하기"
-html_title:           "Javascript: 부분 문자열 추출하기"
-simple_title:         "부분 문자열 추출하기"
+title:                "부분 문자열 추출"
+html_title:           "Javascript: 부분 문자열 추출"
+simple_title:         "부분 문자열 추출"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Strings"
@@ -10,56 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 왜?
+# 무엇이고 왜?
 
-문자열의 일부분을 추출하는 것은 자바스크립트 프로그래밍에서 매우 유용한 기술입니다. 우리는 자주 문자열을 다루는데 그만큼 이 기술을 이해하고 활용하는 것이 중요합니다.
+문자열에서 부분 문자열을 추출한다는 것은, 여러분이 가진 문자열 중 일부분을 따로 떼내어 따로 관리하는 것을 의미합니다. 프로그래머들이 이를 하는 이유는, 문자열에서 원하는 정보를 쉽게 찾고 처리하기 위해서입니다.
 
-## 어떻게?
+## 하는 법:
 
-자바스크립트에서 문자열의 일부분을 추출하는 방법에 대해 알아보겠습니다. 아래의 예제 코드를 살펴보고 결과를 확인해보세요.
+```Javascript
+// 예시 문자열
+let str = "Hello World";
 
-```javascript
-// 문자열 선언
-let str = "안녕하세요! 이번에는 자바스크립트에 대해 알아보려고 합니다.";
+// 부분 문자열 추출
+let subStr1 = str.substring(0, 5); // 출력: "Hello"
+let subStr2 = str.substring(6); // 출력: "World"
 
-// 일부분 추출
-let sub = str.substring(7, 12);
-
-// 결과 출력
-console.log(sub); // '이번에는'
+// 문자열의 일부분을 대체하여 새로운 문자열 생성
+let newStr = str.replace("Hello", "Hi"); // 출력: "Hi World"
 ```
 
-위 코드에서는 `substring()` 함수를 사용하여 원하는 부분의 문자열을 추출하고 있습니다. 첫 번째 매개변수는 시작 인덱스, 두 번째 매개변수는 종료 인덱스를 나타냅니다. 또한 이 함수는 원본 문자열을 수정하지 않고 추출한 부분을 새로운 문자열로 반환합니다.
+## 깊이 파고들기:
 
-## 깊이 파헤치기
+- 역사적 맥락: 부분 문자열 추출은 초기 컴퓨터 시스템에서도 많이 사용되었으며, 지금도 많은 개발자들이 활용하고 있습니다.
+- 대안: 부분 문자열을 다루는 다양한 메소드들이 존재하지만, ```substring()```과 ```replace()``` 메소드는 가장 범용적으로 사용되는 방식입니다.
+- 구현 세부사항: 문자열에서 부분 문자열을 추출하거나 대체할 때, 인덱스 번호를 기준으로 동작합니다. 첫 번째 인자는 추출 시작 인덱스이고, 두 번째 인자는 추출을 멈추는 인덱스입니다. 대체하는 경우에는 첫 번째 인자에 바꿀 부분 문자열을, 두 번째 인자에는 바꿀 문자열을 적어줍니다.
 
-우리는 `substring()` 함수를 사용하여 문자열의 일부분을 추출할 수 있지만, 더 깊게 파헤쳐보겠습니다. 이 함수는 첫 번째 매개변수로 음수 값을 사용할 수 있습니다. 음수 값을 사용하면 문자열의 끝에서부터 인덱싱을 시작합니다.
+## 참고 자료:
 
-```javascript
-// 문자열 선언
-let str = "안녕하세요! 이번에는 자바스크립트에 대해 알아보려고 합니다.";
-
-// 뒤에서 8글자 추출
-let sub = str.substring(-8);
-
-// 결과 출력
-console.log(sub); // '배알때려'
-```
-
-또한, `substring()` 함수 대신 `slice()` 함수를 사용하여 문자열의 일부분을 추출할 수도 있습니다. `slice()` 함수는 시작 인덱스만 매개변수로 받는데, 이는 `substring()` 함수의 두 번째 매개변수를 생략한 것과 같습니다.
-
-```javascript
-// 문자열 선언
-let str = "자바스크립트 짱짱맨!";
-
-// 일부분 추출
-let sub = str.slice(8);
-
-// 결과 출력
-console.log(sub); // '짱맨!'
-```
-
-## 관련 링크
-
-- [MDN substring()](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
-- [MDN slice()](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String/slice)
+- [MDN 문서 - ```substring()``` 메소드](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
+- [MDN 문서 - ```replace()``` 메소드](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String/replace)

@@ -10,33 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i dlaczego?
 
-Tworzenie plików tymczasowych jest niezbędnym elementem programowania w Fish Shell. Często potrzebujemy tymczasowego pliku do przechowywania danych lub wyników działania programu. Tworzenie tymczasowych plików jest szybkie, łatwe i wygodne dzięki wbudowanym funkcjom Fish Shell.
+Tworzenie tymczasowych plików jest procesem, w którym programiści tworzą pliki, które są używane tylko przez krótki czas i później usuwane. Jest to często wykorzystywane przez programistów do przechowywania tymczasowych danych lub do przeprowadzania operacji na plikach, aby uniknąć wpływu na istniejące pliki.
 
-## Jak to zrobić
+## Jak to zrobić?
 
-Aby utworzyć tymczasowy plik w Fish Shell, możemy skorzystać z funkcji `mktemp`, która automatycznie tworzy unikalny plik i zwraca jego ścieżkę. Przykładowy kod wyglądałby następująco:
+Tworzenie tymczasowego pliku w Fish Shell nie jest trudne, wystarczy użyć wbudowanego polecenia ```mktemp```. Wywołanie polecenia z przyrostkiem "-d" spowoduje utworzenie tymczasowego katalogu, a bez przyrostka stworzy plik tymczasowy.
 
-```Fish Shell
-set temp_file (mktemp)
-touch $temp_file
-echo "To jest przykładowa treść" > $temp_file
-cat $temp_file
+Poniżej znajdują się przykłady kodu, które pokazują jak utworzyć tymczasowy plik i jak go wykorzystać:
+
+```
+Fish Shell:
+
+# Tworzenie tymczasowego pliku
+$ mktemp
+
+# Tworzenie tymczasowego katalogu
+$ mktemp -d
 ```
 
-Powyższy kod utworzy tymczasowy plik, doda do niego tekst, a następnie wyświetli jego zawartość. Dzięki użyciu funkcji `mktemp`, nie musimy samodzielnie wymyślać unikalnych nazw plików, co ułatwia nam zadanie.
+Wynikiem wykonania powyższego kodu będzie wyświetlenie ścieżki do utworzonego pliku lub katalogu.
 
-Możemy również utworzyć tymczasowy katalog przy pomocy funkcji `mktemp -d`, a także ustalić prefix lub suffix dla nazwy tymczasowego pliku lub katalogu, na przykład `mktemp -p prefix_ -s _suffix`. Więcej informacji na temat funkcji `mktemp` możemy znaleźć w jej dokumentacji lub wpisując w terminalu komendę `help mktemp`.
+## W głębi
 
-## Deep Dive
+Tworzenie tymczasowych plików jest popularną praktyką w świecie programowania. Po raz pierwszy została wprowadzona w systemie operacyjnym UNIX w latach 70., a od tego czasu jest wykorzystywana w wielu językach i narzędziach programistycznych.
 
-Tworzenie tymczasowego pliku w Fish Shell odbywa się poprzez utworzenie gałęzi wirtualnego systemu plików (VFS), zwanego `tmpfs`. Jest to system plików, który istnieje tylko w pamięci RAM i jest automatycznie usuwany po zakończeniu sesji użytkownika. Dzięki temu pliki tymczasowe są szybkie i nie obciążają dysku twardego.
+Alternatywną metodą tworzenia tymczasowych plików jest użycie polecenia ```tempfile```, jednak jest ono dostępne tylko w niektórych systemach operacyjnych.
 
-Pliki tymczasowe są szczególnie przydatne w przypadku, gdy chcemy przetestować lub wykorzystać jakąś funkcję, ale nie chcemy podpisywać się pod zmianami w pliku źródłowym. Dzięki temu możemy bezpiecznie pracować na kopii, która zostanie automatycznie usunięta po zakończeniu sesji.
+W implementacji tworzenia tymczasowego pliku w Fish Shell, wykorzystywane są funkcje systemowe, które zapewniają bezpieczne i niepowtarzalne nazwy dla plików i katalogów tymczasowych.
 
-## Zobacz także
+## Zobacz również
 
-- Dokumentacja funkcji `mktemp`
-- Poradnik tworzenia tymczasowych plików w Fish Shell na blogu Fisherman.pl
-- Temat na forum Fish Shell dotyczący korzystania z plików tymczasowych
+- Dokumentacja Fish Shell dotycząca polecenia ```mktemp```: [link](https://fishshell.com/docs/current/cmds/mktemp.html)
+- Dokumentacja systemu operacyjnego UNIX dotycząca tworzenia plików tymczasowych: [link](https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html#Bash-Live-Processes)
+- Porównanie metod tworzenia tymczasowych plików w różnych językach programowania: [link](https://stackoverflow.com/questions/2336242/how-to-create-a-temporary-file-in-c)

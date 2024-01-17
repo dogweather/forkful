@@ -10,45 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué?
+## ¿Qué y por qué?
 
-Si estás aprendiendo a programar en C, es importante entender cómo leer los argumentos de línea de comando. Esto te permitirá crear programas que puedan recibir información externa y tomar decisiones basadas en ella. Además, entender cómo funcionan los argumentos de línea de comando puede ayudarte a depurar tu código y hacerlo más eficiente.
+Leer argumentos de línea de comando es una práctica común entre los programadores de C. Consiste en obtener información específica (como valores o opciones) desde el momento en que se invoca un programa mediante la línea de comandos. Esta técnica es utilizada para hacer más flexible y personalizable la ejecución de un programa.
 
-## Cómo hacerlo
+## ¿Cómo hacerlo?
 
-Para leer los argumentos de línea de comando en C, necesitas usar los parámetros de la función `main` y la variable `argc` (count) que contiene el número de argumentos ingresados. Con estos, puedes acceder a los argumentos individuales a través de la variable `argv` (argument vector) y su índice correspondiente. Aquí hay un ejemplo:
+Para leer argumentos de línea de comando en C, se utiliza la función "main" con dos parámetros: "argc" y "argv". "argc" representa el número de argumentos ingresados y "argv" es un arreglo de cadenas que contiene cada uno de ellos. Veamos un ejemplo:
 
-```C
-#include <stdio.h>
-
+```
 int main(int argc, char *argv[]) {
-  printf("Número de argumentos ingresados: %d\n", argc);
-  for (int i = 0; i < argc; i++) {
-    printf("Argumento %d: %s\n", i, argv[i]);
-  }
-  return 0;
+    printf("Se han ingresado %d argumentos\n", argc);
+    printf("El argumento en la posición 1 es: %s\n", argv[1]);
+    return 0;
 }
 ```
 
-Al ejecutar este programa con los siguientes argumentos en la línea de comando `./ejemplo hola mundo`, obtendrías la siguiente salida:
+Si ejecutamos el programa con la siguiente línea de comando:
 
 ```
-Número de argumentos ingresados: 3
-Argumento 0: ./ejemplo
-Argumento 1: hola
-Argumento 2: mundo
+./my_program arg1 arg2
 ```
 
-Si necesitas convertir los argumentos a tipos de datos diferentes, puedes usar las funciones `atoi` o `atof` para convertirlos a enteros o números de punto flotante, respectivamente.
+Obtendremos la siguiente salida:
 
-## Profundizando en el tema
+```
+Se han ingresado 3 argumentos
+El argumento en la posición 1 es: arg1
+```
 
-Además de los argumentos regulares, también puedes acceder a la ubicación del programa ejecutable con `argv[0]` y a los argumentos ingresados como opciones con la librería de funciones `getopt`. También es importante tener en cuenta que los argumentos de línea de comando se pueden pasar en cualquier orden y pueden contener comillas para incluir espacios en blanco dentro de un argumento.
+Podemos ver que se han ingresado 3 argumentos, incluyendo el nombre del programa ("my_program") y que el argumento en la posición 1 es "arg1".
+
+## Sumergirse en los detalles
+
+Los argumentos de línea de comando existen desde los inicios de los sistemas operativos de línea de comandos, como Unix y DOS. Con el auge de las interfaces gráficas, hoy en día son menos utilizados, pero siguen siendo una herramienta útil para los programadores.
+
+Una alternativa al uso de argumentos de línea de comando es utilizar variables de entorno, que son un conjunto de variables globales accesibles para todos los procesos en un sistema operativo. Sin embargo, leer las variables de entorno puede ser más complejo que leer los argumentos de línea de comando, ya que se deben utilizar funciones específicas para ello.
+
+En cuanto a la implementación, las funciones "main" y "argc/argv" son estándar en C y son soportadas por la mayoría de los compiladores y sistemas operativos. Sin embargo, algunas plataformas pueden tener sus propias extensiones o limitaciones en cuanto al número de argumentos o su longitud máxima.
 
 ## Ver también
 
-Si quieres aprender más sobre cómo trabajar con argumentos de línea de comando en C, asegúrate de revisar estos recursos:
-
-- [Documentación oficial sobre argumentos de línea de comando en C](https://pubs.opengroup.org/onlinepubs/9699919799/functions/getopt.html)
-- [Tutorial en español sobre argumentos de línea de comando en C](https://www.leasys.ro/news/mirrors/Various/Programming/moxman/C%20-%20Como%20leer%20argumentos%20de%20linea%20de%20comando.htm)
-- [Ejemplos de código sobre argumentos de línea de comando en C](https://www.thegeekstuff.com/2013/01/c-argc-argv/)
+- [Documentación oficial de la función "main" en C](https://www.gnu.org/software/libc/manual/html_node/Program-Arguments.html#Program-Arguments)
+- [Tutorial sobre argumentos de línea de comando en C](http://www.learn-c.org/en/Command_Line_Arguments)

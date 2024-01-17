@@ -10,25 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä ja miksi?
 
-Testien kirjoittaminen voi tuntua turhalta ja aikaa vievältä, mutta se on kriittinen osa ohjelmoinnin prosessia. Testit varmistavat, että koodi toimii odotetulla tavalla ja auttavat löytämään mahdolliset virheet ja bugeja ennen kuin ne pääsevät käyttöön.
+Testien kirjoittaminen on tärkeä osa ohjelmistojen kehittämistä. Se tarkoittaa, että kirjoitamme pieniä ohjelmia, joilla varmistamme pääohjelmamme toimivuuden. Testien kirjoittaminen auttaa meitä havaitsemaan mahdolliset virheet ja parantamaan koodimme laatua.
 
-## Miten
+Toisin sanoen, testien kirjoittaminen on tapa varmistaa, että ohjelmamme tekee mitä sen pitäisi tehdä ja toimii halutulla tavalla. Se auttaa myös estämään varsinaisten ohjelmien virheitä ja parantamaan niiden suorituskykyä.
 
-```Gleam
-test "Tunnistaa kestotyötyypin"
-  expect(Koodi.työtyyppi(5)).toBe("Kesto")
+## Miten teet sen:
+
+Gleamissa testien kirjoittaminen tapahtuu käyttäen kirjastoa nimeltä `gleam/test`. Tässä esimerkissä testaamme yksinkertaista funktiota, joka palauttaa annetun parametrin.
+
+```
+Gleam test "Testing my function" {
+  assert.equal "Hello!" my_module.my_function("Hello!")
+}
 ```
 
-Ensimmäinen askel testien kirjoittamisessa on määrittää, mitä haluat testata. Tämä tapahtuu testilausekkeilla, jotka käyttävät `test` ja `expect` avainsanoja. Voit myös antaa testeille kuvaavia nimiä, kuten yllä oleva esimerkki osoittaa. Kirjoita koodi, joka testaa odotettua toiminnallisuutta ja käytä `toBe` metodia varmistaaksesi, että toiminto palauttaa oikean arvon.
+Tämä koodi testaa, että funktion `my_function` kutsuttaessa parametrina annettu merkkijono on sama kuin palautettu arvo. Jos testi epäonnistuu, saamme virheilmoituksen. Muutoin testi menee läpi ja voimme olla varmoja, että funktio toimii kuten pitäisi.
 
-## Syväsukellus
+Testeissä voidaan myös käyttää `assert`-lauseita, joiden tarkoituksena on tarkistaa, että tietyt ehdot toteutuvat. Esimerkiksi `assert.true my_module.my_condition()` tarkistaa, että funktio `my_condition` palauttaa totuusarvon `true`.
 
-Testien kirjoittaminen ei ole vain koodin toiminnallisuuden tarkistamista, vaan myös tapa varmistaa, että koodi pysyy toiminnassa tulevaisuudessakin. Hyvien testien avulla voit havaita mahdolliset säröt ja muutokset, jotka voivat vaikuttaa koodin toimintaan. Näin voit minimoida virheiden määrän ja säästää aikaa ja vaivaa tulevassa kehityksessä.
+## Syvemmälle:
 
-## Katso myös
+Testien kirjoittaminen on ollut osa ohjelmistokehittämistä jo pitkään, ja siihen on kehitetty erilaisia menetelmiä ja työkaluja. Usein testeillä pyritään myös kattamaan mahdollisimman monta mahdollista skenaariota, joten kirjoittaminen ja ylläpitäminen vaatii aikaa ja resursseja.
 
-- [Gleam-ohjelmointikielen virallinen sivusto](https://gleam.run/)
-- [Gleam-testausdokumentaatio](https://gleam.run/documentation/testing)
-- [Gleam-testilibraryn käyttöohjeet](https://github.com/gleam-lang/gleam/blob/master/lib/testing/README.md)
+Vaihtoehtoisia tapoja testata ohjelmia ovat muun muassa manuaalinen testaus ja hyväksymistestaus. Näissä testeissä ohjelmaa ajetaan ja tarkastetaan manuaalisesti eri skenaarioissa. Saatavilla on myös muita testaustyökaluja, kuten JUnit ja Selenium, jotka tarjoavat erilaisia testaustoiminnallisuuksia.
+
+Gleamissa testien kirjoittaminen on helppoa ja selkeää, ja `gleam/test`-kirjasto tarjoaa monipuolisia työkaluja testien tekemiseen. Kannattaa kuitenkin muistaa, että pelkästään testien kirjoittaminen ei takaa virheetöntä koodia, vaan se on yksi osa laadukkaan ohjelmiston kehittämistä.
+
+## Katso myös:
+
+- [Gleam-dokumentaatio](https://gleam.run/book/testing.html)
+- [Junit.org](https://junit.org/)
+- [Selenium.dev](https://www.selenium.dev/)

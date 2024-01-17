@@ -10,31 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
 
-Att skriva tester är en viktig del av programutveckling eftersom det hjälper till att säkerställa att koden fungerar som den ska. Det gör det också lättare att upptäcka och åtgärda eventuella buggar eller problem i koden.
+Skrivande av tester (eng. writing tests) är en avgörande del av programmering. Det innebär att man skapar specifika delar av kod som kontrollerar och validerar att ens program fungerar som det ska. Detta är viktigt eftersom det ger en försäkran om att koden fungerar korrekt och hjälper till att upptäcka eventuella fel eller buggar innan de når produktionsfasen.
 
-## Hur man gör det
+## Så här gör du:
 
-För att skriva tester i Fish Shell behöver du först skapa en testfil med .fish förlängning. Sedan kan du använda "test" kommandot för att skriva dina testfall och förväntade resultat. Här är ett exempel på hur en testfil kan se ut:
+**Skapa en testfil:** För att skapa en testfil i Fish Shell, skriver man ```touch test.fish``` i terminalen och trycker på Enter.
 
-```Fish Shell
-#!/usr/bin/env fish
+**Definiera en funktion:** I testfilen definierar man en funktion som ska testas. Till exempel: 
 
-# Importera testmodulen
-source ~/.config/fish/functions/test
-
-# Enkelt test för att se om "ls" kommandot fungerar
-test "Kan utföra ls kommandot" ls = "ls"
 ```
-När du kör din testfil genom att köra kommandot "fish testfil.fish" i terminalen, kommer Fish Shell att köra dina tester och visa resultatet. Om testet lyckades, kommer du att se ett grönt meddelande. Om det var ett fel, kommer du att få ett rött meddelande och en detaljerad förklaring av felet.
+# Testar om summa-funktionen returnerar rätt värde
 
-## Djupdykning
+function summa -d "Summerar två tal"
+  set summa $argv[1] + $argv[2]
+  echo $summa
+end
+```
 
-Att skriva tester handlar inte bara om att säkerställa att koden fungerar, det handlar också om att skriva läsbar och underhållningsbar kod. När du skriver tester, tänk på att namnge dem på ett bra sätt och bryt ner dem i mindre tester för att göra dem mer hanterbara. Det är också viktigt att kontinuerligt uppdatera och underhålla dina tester när du ändrar eller lägger till ny funktionalitet i din kod.
+**Kör tester:** I testfilen kan man sedan köra olika tester för att se om funktionen fungerar som den ska. Till exempel:
+
+```
+# Testar om summa-funktionen returnerar rätt värde för två positiva tal
+test (summa 2 3) = 5
+
+# Testar om summa-funktionen returnerar rätt värde för två negativa tal
+test (summa -2 -3) = -5
+
+# Testar om summa-funktionen returnerar rätt värde för ett positivt och ett negativt tal
+test (summa 2 -3) = -1
+
+# Testar om summa-funktionen returnerar rätt värde för noll
+test (summa 0 0) = 0
+```
+
+**Kör testfilen:** För att köra testfilen, skriver man ```fish test.fish``` i terminalen och trycker på Enter. Om alla tester går igenom kommer man inte få något svar, men om ett eller flera tester misslyckas kommer man få ett felmeddelande som berättar varför.
+
+## Deep Dive
+
+Om man vill läsa mer om writing tests så kan man titta på andra testramverk som till exempel [Bats](https://github.com/bats-core/bats-core) eller [ShUnit2](https://github.com/kward/shunit2). Det finns också andra testramverk som är mer specifika för Fish Shell, som till exempel [Fish-Assertion](https://github.com/fisherman/fish-assertion).
+
+Förutom att testa funktioner kan man också skapa tester för olika scenarion, till exempel input eller output. Det finns även möjlighet att använda sig av Mocking för att "fejka" olika förutsättningar och se hur koden beter sig.
 
 ## Se också
 
-- Fish Shell dokumentation: https://fishshell.com/docs/current/index.html
-- Testmodul för Fish: https://github.com/jorgebucaran/fish-shell-reload
-- Lär dig att skriva testbara Fish Shell-skript: https://fishshell.com/docs/current/tutorial.html#learn-to-write-testable-fish-scripts
+- [Fish Shell dokumentationen om testing](https://fishshell.com/docs/current/tutorial.html#alternate-commands-and-testing)
+- [The Art of Software Testing, 3rd Edition](https://www.amazon.com/Art-Software-Testing-Glenford-Myers/dp/0471358460) (eng.)

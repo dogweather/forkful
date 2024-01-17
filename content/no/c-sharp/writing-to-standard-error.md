@@ -1,7 +1,7 @@
 ---
-title:                "Skriving til standardfeil"
-html_title:           "C#: Skriving til standardfeil"
-simple_title:         "Skriving til standardfeil"
+title:                "Skrive til standardfeil"
+html_title:           "C#: Skrive til standardfeil"
+simple_title:         "Skrive til standardfeil"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Files and I/O"
@@ -10,41 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hva og hvorfor?
+Skrevet til feilutgang er når du sender en melding eller en feilkode til standard feilutgangskanalen i stedet for standard utgangskanalen. Dette gjøres vanligvis når du ønsker å varsle om en uvanlig tilstand eller en feil i programmet ditt.
 
-Det å skrive til standard error er en viktig del av programmørens verktøykasse. Det lar oss uttrykke feil og advarsler på en mer effektiv måte, og hjelper oss med å feilsøke og fange uventede feil i koden vår.
-
-## Hvordan
-
-For å skrive til standard error i C#, kan vi bruke Console.Error.WriteLine() -funksjonen. Denne funksjonen tar inn en string som parameter og skriver ut den gitte teksten til standard error. La oss se på et eksempel:
-
+## Hvordan:
 ```
-Console.Error.WriteLine("Dette er en feilmelding.");
+Console.Error.WriteLine("En uventet feil har oppstått!");
 ```
 Output:
 ```
-Dette er en feilmelding.
+En uventet feil har oppstått!
 ```
 
-Vi kan også bruke Console.Error.Write() -funksjonen hvis vi ikke ønsker å legge til en linjeskift på slutten av teksten. Her er et eksempel på hvordan dette ser ut i koden:
-
 ```
-Console.Error.Write("Dette er en advarsel: ");
-Console.Error.WriteLine("Vær forsiktig!");
+int num1 = 10;
+int num2 = 0;
+
+try
+{
+    int result = num1 / num2;
+}
+catch (DivideByZeroException ex)
+{
+    Console.Error.WriteLine("Kan ikke dele på null!");
+}
 ```
 Output:
 ```
-Dette er en advarsel: Vær forsiktig!
+Kan ikke dele på null!
 ```
 
-## Deep Dive
+## Dypdykk:
+Skrevet til feilutgang har vært en viktig del av programmering siden starten. Det gir en enkel måte å kommunisere feil og unike tilfeller til brukeren, uten å forstyrre standard utgangsmeldingene. Alternativet til å skrive til feilutgang er å bruke debuggervinduet, men dette kan være forstyrrende og mindre fleksibelt. Implementering av skriving til feilutgang i C# er enkelt, og er en metode som finnes i .NET Framework-klassen.
 
-Det å skrive til standard error lar oss adskille utskrifter som er ment for feilhåndtering fra vanlige utskrifter på standard output. Det gir også en bedre organisering av koden vår og gjør det lettere å finne og håndtere feil.
-
-Det er viktig å merke seg at standard error er forskjellig fra standard output, og de to bør ikke forveksles. Standard error blir ofte brukt til å skrive ut feilmeldinger og advarsler, mens standard output brukes til å skrive ut ønsket utdata fra programmet.
-
-## Se Også
-
-- [Console.Error.WriteLine Metode (System)](https://docs.microsoft.com/nb-no/dotnet/api/system.console.error.writeline?view=netframework-4.8)
-- [Console.Error.Write Metode (System)](https://docs.microsoft.com/nb-no/dotnet/api/system.console.error.write?view=netframework-4.8)
-- [Hvordan skrive ut til standard output i C#](https://www.itavisen.no/2020/04/19/c-sharp-skrive-till-standard-output/)
+## Se også:
+- https://docs.microsoft.com/en-us/dotnet/standard/io/errors-and-exceptions
+- https://www.codegrepper.com/code-examples/csharp/write+to+standard+error
+- https://www.c-sharpcorner.com/article/working-with-standard-input-output-and-error-in-C-Sharp/

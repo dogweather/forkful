@@ -10,38 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-Converting a string to lower case is a common task in any web development project. It helps ensure consistency and avoids errors when comparing strings or performing searches. Plus, it's a good practice for user input to always be converted to lower case before processing.
+Converting a string to lower case means changing all the letters in a string to their lower case equivalents. Programmers do this to ensure consistency in their code and to make it easier to compare strings without worrying about case sensitivity.
 
-## How To
+## How to:
 
-To convert a string to lower case in PHP, you can use the built-in function `strtolower()`. This function takes a string as an argument and returns a new string with all characters converted to lower case.
+To convert a string to lower case in PHP, you can use the built-in function `strtolower()`. It takes in one parameter, the string you want to convert, and returns a new string with all lowercase letters. Here's an example:
 
 ```PHP
 $string = "Hello World!";
-echo strtolower($string); // outputs "hello world!"
+echo strtolower($string);
 ```
 
-You can also use the `mb_strtolower()` function for multi-byte encodings, which is useful when dealing with languages such as Chinese or Japanese.
+Output: `hello world!`
+
+If the string contains any non-alphabetic characters, like numbers or symbols, they will remain unchanged. For instance:
 
 ```PHP
-$string = "こんにちは世界！";
-echo mb_strtolower($string); // outputs "こんにちは世界！"
+$string = "HeLLo 123";
+echo strtolower($string);
 ```
 
-It's important to note that these functions only work for ASCII characters. For non-ASCII characters, you may need to use a different method depending on your encoding.
+Output: `hello 123`
 
-## Deep Dive
+## Deep Dive:
 
-In PHP, strings are immutable, meaning they cannot be changed once they are created. So when converting a string to lower case, a new string is actually created with the lower case version of the original string. This is why we need to assign the result to a variable or use it directly in our code.
+### Historical Context
 
-Additionally, when dealing with multi-byte encodings, it's important to make sure that both the string and the server encoding are set correctly. Otherwise, your conversion may not produce the desired results.
+The concept of converting strings to lower case may seem trivial now, but in the early days of computing, it was not uncommon for different systems and programming languages to use different letter cases. This led to compatibility issues and confusion, and thus, the need for a standard emerged. Most programming languages now follow the convention of using lower case letters.
 
-## See Also
+### Alternatives
 
-Here are some additional resources for working with strings in PHP:
+Apart from `strtolower()`, PHP also has two other functions for case conversion: `strtoupper()` and `ucfirst()`. The former converts a string to all upper case, while the latter capitalizes the first letter of a string. Additionally, some programming languages, like JavaScript, have a single `toLowerCase()` method that can convert a string to either lower or upper case depending on the arguments provided.
 
-- [PHP String Functions](https://www.php.net/manual/en/ref.strings.php)
-- [Understanding Case Sensitivity in PHP](https://www.fullstackacademy.com/blog/case-sensitivity-in-php)
-- [UTF-8 and PHP: Handling Collation and Normalization](https://www.toptal.com/php/a-utf-8-primer-for-php-and-mysql)
+### Implementation Details
+
+Behind the scenes, the `strtolower()` function uses the ASCII table to map each character to its lower case equivalent. This means non-ASCII characters, like accented letters or emojis, will not be affected and will remain in their original form.
+
+## See Also:
+
+- [PHP Manual for strtolower()](https://www.php.net/manual/en/function.strtolower.php)
+- [JavaScript toLowerCase() method](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)

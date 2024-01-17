@@ -10,45 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+## O que & Porquê?
 
-Se você já se deparou com programas que têm uma janela preta aparecendo, ou se você já usou o Terminal no seu Mac, então você já se deparou com a entrada de argumentos da linha de comando. Ler esses argumentos é fundamental para entender como controlar e personalizar a execução do seu programa. Neste artigo, vamos aprender a como ler esses argumentos usando Ruby.
+Ler os argumentos da linha de comando é uma habilidade importante para programadores em Ruby. Isso permite que o código receba informações inseridas pelo usuário na linha de comando ao executar o programa. Isso torna o programa mais interativo e permite que as ações do programa sejam controladas pelo usuário.
 
-## Como fazer
+## Como fazer:
 
-Para ler os argumentos da linha de comando em um programa Ruby, usamos o objeto global `ARGV`. Ele é um array que contém todos os argumentos passados ao programa quando ele foi executado na linha de comando. Vamos ver um exemplo de como ler e utilizar esses argumentos:
-
-```
-$ ruby exemplo.rb arg1 arg2
-```
-
-Este comando executará o programa Ruby `exemplo.rb` passando dois argumentos: `arg1` e `arg2`. Agora vamos ver como podemos ler esses argumentos dentro do programa:
-
-```ruby
-argumento1 = ARGV[0]
-argumento2 = ARGV[1]
-
-puts "Argumento 1: #{argumento1}"
-puts "Argumento 2: #{argumento2}"
-```
-
-O output deste programa será:
+**Exemplo 1:**
 
 ```
-Argumento 1: arg1
-Argumento 2: arg2
+Ruby nome_do_programa.rb argumento1 argumento2
 ```
 
-Perceba que os argumentos são lidos na ordem em que foram passados na linha de comando e a contagem começa em 0, não em 1.
+**Exemplo 2:**
 
-## Mergulho profundo
+```
+Ruby soma.rb 2 3
+```
 
-Existem alguns detalhes adicionais que podem ser úteis ao ler argumentos da linha de comando. Primeiramente, é importante notar que os argumentos são sempre lidos como strings, então é necessário convertê-los para os tipos de dados adequados, se preciso. Além disso, é possível utilizar métodos como `ARGV.size` para saber quantos argumentos foram passados e `ARGV.empty?` para verificar se algum argumento foi passado de fato. 
+**Saída:**
 
-Você também pode utilizar a flag `--` para indicar o fim dos argumentos na linha de comando. Qualquer coisa inserida depois desta flag será interpretada como um argumento adicional e não será lida pelo programa. 
+```
+5
+```
 
-## Veja também
+No primeiro exemplo, o programa `nome_do_programa.rb` é executado com dois argumentos - `argumento1` e `argumento2`. No segundo exemplo, o programa `soma.rb` é executado com os números 2 e 3 como argumentos, e 5 é o resultado da soma desses dois números.
 
-- [Documentação oficial do Ruby sobre a classe ARGV](https://ruby-doc.org/core-2.7.2/ARGF.html)
-- [Artigo da Dev.to sobre leitura de argumentos da linha de comando em Ruby](https://dev.to/soybubba/command-line-arguments-parsing-in-ruby-3ffd)
-- [Vídeo tutorial sobre leitura de argumentos da linha de comando em Ruby](https://www.youtube.com/watch?v=JYN87N5NLUQ)
+É importante notar que os argumentos na linha de comando são sempre tratados como strings em Ruby, então é necessário converter para o tipo desejado no código, se necessário.
+
+## Mergulho Profundo:
+
+**Contexto histórico:**
+
+O conceito de ler argumentos da linha de comando é comum em linguagens de programação e sistemas operacionais desde as primeiras versões do Unix, lançadas na década de 1970. Com o uso cada vez mais frequente de interfaces de linha de comando, essa habilidade se tornou essencial para os programadores.
+
+**Alternativas:**
+
+Nem sempre é necessário ler argumentos da linha de comando em Ruby. Dependendo da finalidade do programa, pode ser mais eficiente ou adequado usar outras formas de interação com o usuário, como leitura de entrada do teclado durante a execução do programa.
+
+**Detalhes de implementação:**
+
+Em Ruby, a leitura de argumentos da linha de comando é feita usando a variável especial `$ARGV`, que é um array que contém todos os argumentos fornecidos pelo usuário. Além disso, a classe `OptionParser` da biblioteca padrão `optparse` fornece uma maneira mais abrangente e flexível de processar argumentos da linha de comando em Ruby.
+
+## Veja também:
+
+- [Documentação do Ruby sobre o objeto `$ARGV`](https://ruby-doc.org/core-3.0.0/globals_rdoc.html#label-Command-Line+Arguments)
+- [Documentação do Ruby sobre a classe `OptionParser`](https://ruby-doc.org/stdlib-3.0.0/libdoc/optparse/rdoc/OptionParser.html)

@@ -1,7 +1,7 @@
 ---
-title:                "Pilkkujen poistaminen vastaavan kuvion avulla"
-html_title:           "Gleam: Pilkkujen poistaminen vastaavan kuvion avulla"
-simple_title:         "Pilkkujen poistaminen vastaavan kuvion avulla"
+title:                "Poista merkkejä, jotka vastaavat kaavaa."
+html_title:           "Gleam: Poista merkkejä, jotka vastaavat kaavaa."
+simple_title:         "Poista merkkejä, jotka vastaavat kaavaa."
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -10,62 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+# Mitä & Miksi?
 
-Kaikki ohjelmoijat joutuvat joskus käsittelemään tekstiä ja poistamaan siitä tiettyjä merkkejä. Onneksi Gleamilla on yksinkertainen ja tehokas tapa tehdä tämä! Tässä artikkelissa opit, miten voit käyttää Gleamin sisäänrakennettua toimintoa poistaaksesi merkkejä, jotka vastaavat tiettyä kuvioita.
+Miksi ohjelmoijat poistavat merkkejä, jotka vastaavat tiettyä kaavaa? Yksinkertaisesti sanottuna, tämä auttaa käsittelemään merkkijonoja ja löytämään tietynlaisia merkkejä tietorakenteista. Esimerkiksi voit poistaa kaikki numerot sisältävät merkit tai poistaa ylimääräiset välilyönnit.
 
-## Miten
+# Miten tehdä:
 
-Aluksi sinun tulee määrittää kirjasto `gleam/re` ja lisätä se projektiisi `apps`-kansiossa sijaitsevaan `gleam.toml`-tiedostoon:
+Voit käyttää `Gleam.delete_chars_matching`-funktiota poistaaksesi haluamasi merkit tietystä merkkijonosta. Katso alla olevaa esimerkkiä:
 
 ```
-[dependencies]
-gleam = "0.7.0"
-gleam/re = "0.6.0"
+Gleam.delete_chars_matching("12Hello34", "[0-9]")
 ```
 
-Seuraavaksi sinun tulee tuoda `gleam/re` kirjasto käytettäväksi tiedostossa, jossa aiot käyttää merkkienpoistoa:
+Tämä palauttaa merkkijonon "Hello".
 
-```Gleam
-import gleam/re
-```
+# Syväsukellus:
 
-Nyt voit käyttää `gleam/re` kirjaston `replace`-toimintoa poistaaksesi merkkejä, jotka vastaavat tiettyä kuvioita. Tässä esimerkissä poistamme kaikki välilyönnit merkkijonosta `Hello World`:
+## Historiallinen tausta:
 
-```Gleam
-let str = "Hello World"
+Poistamisen merkkijonojen vastaavien merkkien käyttö on ollut pitkään tärkeä osa ohjelmointia. Ennen vanhaan ohjelmoijat joutuivat usein kirjoittamaan monimutkaisia koodinpätkiä poistaakseen haluamansa merkit, mutta nykyään saatavilla on erilaisia valmiita työkaluja, kuten `Gleam.delete_chars_matching`, jotka helpottavat tätä tehtävää.
 
-let new_str = re.replace(str, " ", "")
+## Vaihtoehtoja:
 
-// new_str: "HelloWorld"
-```
+On myös muita tapoja poistaa merkkijonojen vastaavia merkkejä, kuten käyttämällä säännöllisiä lausekkeita tai iterointia. Kuitenkin `Gleam.delete_chars_matching`-funktiota käyttämällä pääset eroon monimutkaisesta koodista ja voit helposti muokata haluamiasi merkkien poistosääntöjä.
 
-Voit myös käyttää säännöllisiä lausekkeita poistaaksesi erityyppisiä merkkejä. Esimerkiksi seuraava kuvio poistaa kaikki numerot merkkijonosta:
+## Toteutukseen liittyvää:
 
-```Gleam
-let str = "I have 3 cats and 2 dogs"
+`Gleam.delete_chars_matching`-funktio käyttää taustalla `String.filter`-funktiota rakentaakseen uuden merkkijonon, jossa haluamamme merkit eivät enää esiinny. Tämä takaa suorituskykyisen ja tarkan tuloksen.
 
-let new_str = re.replace(str, "\\d", "")
+# Katso myös:
 
-// new_str: "I have  cats and  dogs"
-```
-
-Jos haluat poistaa merkkejä, jotka eivät vastaa tiettyjä kuvioita, voit käyttää `negate`-toimintoa yhdessä `replace`-toiminnon kanssa. Esimerkiksi seuraava kuvio poistaa kaikki merkkipisteet merkkijonosta:
-
-```Gleam
-let str = "This is a sentence."
-
-let new_str = re.replace(str, re.negate("."), "")
-
-// new_str: "This is a sentence"
-```
-
-## Syvempää sukellusta
-
-`replace`-toiminto hyödyntää säännöllisiä lausekkeita poistamaan merkkejä, ja sen avulla voit käyttää monipuolisia kuvioita merkkien poistamiseen. Voit lukea lisää erilaisten säännöllisten lausekkeiden syntaksista ja käyttämisestä Gleamin dokumentaatiosta.
-
-## Katso myös
-
-- Gleam dokumentaatio: https://gleam.run/
-- Gleam/re kirjasto: https://hexdocs.pm/re/readme.html
-- Säännöllisten lausekkeiden opas: https://www.regular-expressions.info/
+Voit lukea lisää `Gleam.delete_chars_matching`-funktiosta [Gleamin virallisesta dokumentaatiosta](https://gleam.run/standard-library.html#delete_chars_matching). Voit myös tutustua `String.filter`-funktioon [täältä](https://gleam.run/standard-library.html#filter-string).

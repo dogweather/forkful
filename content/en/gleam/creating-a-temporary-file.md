@@ -10,49 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-Why would anyone want to create a temporary file? Well, there are a few reasons. Temporary files are often used in programming to store intermediate data or to perform temporary operations. They can also be helpful in testing and debugging code.
+Creating temporary files is a common practice in programming where a temporary file is created and used for storing data temporarily during the execution of a program. One of the main reasons for creating temporary files is to efficiently manage memory usage by freeing up space when it is no longer needed.
 
-## How To
+## How to:
 
-To create a temporary file in Gleam, you can use the `tempfile` module from the standard library. First, we need to import the module using the following code:
-
-```Gleam
-import tempfile
-```
-
-Next, we can create a temporary file using the `create` function from the `tempfile` module. This function takes in a prefix and suffix as optional arguments, which can be used to customize the name of the temporary file.
+In Gleam, creating a temporary file is a simple process. First, we need to import the ```std/file/temporary``` module. Then, we can use the ```create``` function to create a temporary file. Here's an example of how this would look in code:
 
 ```Gleam
-let file = tempfile.create()
+import std/file/temporary
+
+let tmp_file = temporary.create()
+
 ```
 
-Now, we can perform any operations we need on the temporary file. For example, we can write some content to the file:
-
-```Gleam
-tempfile.write("Hello, world!", file)
-```
-
-To access the contents of the temporary file, we can use the `read` function:
-
-```Gleam
-let content = tempfile.read(file)
-```
-
-Finally, we can close and delete the temporary file using the `close` and `remove` functions respectively:
-
-```Gleam
-tempfile.close(file)
-tempfile.remove(file)
-```
+This will create a temporary file and assign it to the ```tmp_file``` variable. We can then use this file to store any data we need. Once the program is finished running, the temporary file will be automatically deleted.
 
 ## Deep Dive
 
-If you want to dive deeper into creating temporary files, the `tempfile` module also provides functions for setting the directory and mode of the temporary file. Additionally, it has functions for creating and writing to secure temporary folders and files, which can be helpful when dealing with sensitive information.
+Creating temporary files has been a common practice for a long time, dating back to the early days of computing. It was originally used to store data that couldn't fit into the limited memory of early computers. However, even with the advancement of technology, the use of temporary files remains relevant for managing memory efficiently.
+
+There are alternatives to using temporary files, such as storing data in memory or using a database. However, temporary files are a simple and efficient solution that is still widely used.
+
+In Gleam, the ```temporary.create()``` function uses the operating system's native temporary file functionality, making it platform-independent and reliable. The files created are unique and will not clash with existing files, ensuring the safety and security of our data.
 
 ## See Also
 
-- The Gleam Standard Library: https://gleam.run/documentation/std-lib
-- The `tempfile` module documentation: https://gleam.run/documentation/std-lib#tempfile
-- A tutorial on temporary files in Python (similar concepts can be applied in Gleam): https://realpython.com/python-tempfile/
+If you would like to learn more about creating temporary files in Gleam, you can refer to the official documentation on the ```std/file/temporary``` module. Additionally, you can explore other file-related modules in the Gleam standard library, such as ```std/file``` and ```std/file/system```. Happy coding!

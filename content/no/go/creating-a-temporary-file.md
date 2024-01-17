@@ -1,7 +1,7 @@
 ---
-title:                "Oppretting av en midlertidig fil"
-html_title:           "Go: Oppretting av en midlertidig fil"
-simple_title:         "Oppretting av en midlertidig fil"
+title:                "Oppretting av midlertidig fil"
+html_title:           "Go: Oppretting av midlertidig fil"
+simple_title:         "Oppretting av midlertidig fil"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Files and I/O"
@@ -10,47 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
-Når man jobber med programmering, kan man ofte trenge å midlertidig lagre data i et filsystem. Dette kan være nyttig for å lagre informasjon som kun trengs midlertidig, som for eksempel cache eller mellomresultater.
+Hva & hvorfor?
+En midlertidig fil er en fil som opprettes midlertidig av en datamaskinprosess og slettes automatisk når prosessen avsluttes. Programmere bruker midlertidige filer for å lagre midlertidig data eller utføre operasjoner som krever en fil som ikke skal lagres permanent.
 
-## Slik gjør du det
-For å opprette et midlertidig fil, kan du bruke funksjonen `os.CreateTemp()`. Denne funksjonen tar inn to argumenter, en prefiks og en suffiks, og oppretter en midlertidig fil med et tilfeldig navn som starter med prefiksen og slutter med suffiksen.
+Hvordan:
+Go har en innebygd funksjon, "ioutil.TempFile", som lar deg opprette midlertidige filer. Her er en kodeeksempel som viser hvordan du kan bruke denne funksjonen:
 
 ```Go
-package main
-
-import (
-	"io/ioutil"
-	"os"
-)
-
-func main() {
-	// Oppretter en midlertidig fil med prefiksen "temp" og suffiksen ".txt"
-	// Returnerer en filreferanse og en eventuell feilmelding
-	fil, err := ioutil.TempFile("", "temp*.txt")
-	if err != nil {
-		// Hvis det oppstår en feil, skrives feilmeldingen ut og programmet stopper
-		fmt.Println(err)
-		os.Exit(1)
-	}
-
-	// Skriver data til den midlertidige filen
-	fil.WriteString("Dette er en midlertidig fil")
-
-	// Lukker den midlertidige filen
-	fil.Close()
-
-	// Sletter den midlertidige filen etter bruk
-	os.Remove(fil.Name())
+f, err := ioutil.TempFile("", "mytempfile")
+if err != nil {
+    panic(err)
 }
+defer os.Remove(f.Name())
 ```
 
-Output for dette eksempelet vil være en midlertidig fil kalt "temp469928219.txt", med teksten "Dette er en midlertidig fil".
+Denne koden vil opprette en midlertidig fil i det gjeldende arbeidsområdet med prefikset "mytempfile" i filnavnet. Ved å bruke "defer" vil filen automatisk bli slettet når funksjonen er ferdig.
 
-## Dykk dypere
-Når man oppretter en midlertidig fil i Go, vil den opprettes i standard temp-mappe for systemet. Denne kan vanligvis nås ved å skrive `os.TempDir()` i koden. Det er også mulig å velge en spesifikk mappe for den midlertidige filen ved å endre på den første argumenten til `CreateTemp()`-funksjonen.
+Dypdykk:
+Opprettelse av midlertidige filer har vært en vanlig praksis i mange programmeringsspråk lenge før det ble innlemmet i Go. Et alternativ til å bruke "ioutil.TempFile" i Go, er å bruke "os.CreateTemp" som også tilbyr mer kontroll over stien og navn på den midlertidige filen.
 
-## Se også
-- Offisiell dokumentasjon for `os.CreateTemp()`: https://golang.org/pkg/io/ioutil/#TempFile
-- Bygg en enkel webapplikasjon med Go: https://www.weheartgo.com/
-- Best practices for Go programmeringsspråket: https://golang.org/doc/effective_go.html
+See Also:
+Du kan lære mer om opprettelse og bruk av midlertidige filer i Go ved å lese dokumentasjonen iGoDocs(https://golang.org/pkg/io/ioutil/#TempFile) og iGoRepo's kildekode(https://github.com/golang/go/tree/master/src/io).
+
+Takk og god kodet! 🚀

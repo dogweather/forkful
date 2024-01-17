@@ -10,48 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué extraer subcadenas en programación?
+## ¿Qué y por qué?
+Extraer subcadenas es una técnica común en la programación que consiste en obtener una parte específica de una cadena de caracteres. Los programadores lo hacen para manipular datos, validar entradas o realizar operaciones específicas con ciertos caracteres.
 
-Extraer subcadenas, también conocidas como substrings, es una habilidad útil en la programación ya que permite manipular y trabajar con cadenas más específicas de un texto. Esto puede ser especialmente útil en situaciones en las que solo se necesita una parte de una cadena de texto, como en la validación de formularios o en la búsqueda de palabras clave.
+## Cómo:
+### Ejemplo 1:
 
-## Cómo hacerlo en PHP
-
-Para extraer subcadenas en PHP, se utiliza la función `substr()` que toma tres parámetros: la cadena original, el índice de inicio y la longitud de la subcadena deseada. Por ejemplo, si tenemos una cadena `Hola Mundo` y queremos extraer la subcadena `Mundo`, podemos usar el siguiente código:
-
-```PHP
+```PHP 
 $cadena = "Hola Mundo";
-$subcadena = substr($cadena, 5, 5);
-echo $subcadena; // Resultado: Mundo
+$subcadena = substr($cadena, 0, 4);
+echo $subcadena;
 ```
 
-También se pueden utilizar números negativos para indicar el índice de inicio en relación al final de la cadena. Por ejemplo, si queremos extraer la última palabra de una cadena, podemos usar:
+### Salida:
+"Hola"
+
+En este ejemplo, utilizamos la función ```substr()``` en PHP para obtener los primeros cuatro caracteres de la cadena "Hola Mundo". Al imprimir la variable ```$subcadena```, obtenemos la subcadena "Hola".
+
+### Ejemplo 2:
 
 ```PHP
-$cadena = "Este es un ejemplo";
-$subcadena = substr($cadena, -7);
-echo $subcadena; // Resultado: ejemplo
+$cadena = "Lorem ipsum dolor sit amet";
+$subcadena = substr($cadena, 6, 5);
+echo $subcadena;
 ```
 
-Además, la función `substr()` también se puede utilizar para reemplazar una parte de la cadena con otra subcadena. Por ejemplo, si queremos reemplazar la primera palabra de una cadena con otra, podemos hacerlo de la siguiente manera:
+### Salida:
+"ipsum"
 
-```PHP
-$cadena = "Hola Mundo";
-$subcadena = substr($cadena, 0, strpos($cadena, " "));
-echo $subcadena . " Amigo"; // Resultado: Amigo Mundo
-```
+En este segundo ejemplo, usamos la función ```substr()``` para obtener una subcadena específica de la cadena "Lorem ipsum dolor sit amet". Con los parámetros proporcionados, obtendremos la subcadena "ipsum" que se encuentra a partir del sexto caracter y con una longitud de 5 caracteres.
 
-## Profundizando en la extracción de subcadenas
+## Profundizando:
+Extraer subcadenas ha sido una técnica utilizada desde los primeros lenguajes de programación. Aunque en PHP existen otras funciones como ```mb_substr()``` para manejar cadenas multibyte, la función ```substr()``` sigue siendo una de las más utilizadas debido a su simplicidad de uso.
 
-Además de la función `substr()`, PHP también cuenta con otras funciones para extraer subcadenas de una manera más específica y avanzada. Algunas de estas son:
+Otra alternativa a la función ```substr()``` es utilizar expresiones regulares, sin embargo, esto puede ser más complejo y menos eficiente en algunos casos.
 
-- `mb_substr()`: similar a `substr()` pero funciona correctamente con caracteres multibyte.
-- `str_split()`: divide una cadena en un array de subcadenas de longitud específica.
-- `preg_match()`: permite extraer una subcadena utilizando expresiones regulares.
+En cuanto a la implementación de la función ```substr()```, es importante tener en cuenta que los índices de los caracteres en una cadena comienzan desde 0, por lo tanto, el primer caracter de una cadena tendría el índice 0.
 
-También es importante tener en cuenta que la extracción de subcadenas en PHP depende del tipo de encoding que se esté utilizando en la cadena original. Por lo tanto, es recomendable revisar la documentación de cada función antes de utilizarlas.
-
-## Ver También
-
-- [Documentación oficial de substr() en PHP](https://www.php.net/manual/es/function.substr.php)
-- [Ejemplos de expresiones regulares en PHP](https://www.php.net/manual/es/reference.pcre.pattern.syntax.php)
-- [Manual de funciones para manipular cadenas en PHP](https://www.php.net/manual/es/ref.strings.php)
+## Ver también:
+- [Documentación oficial de substr() en PHP] (https://www.php.net/manual/es/function.substr.php)
+- [Ejemplos prácticos de uso de substr() en PHP] (https://www.w3schools.com/php/func_string_substr.asp)
+- [Comparación entre las funciones substr() y mb_substr() en PHP] (https://stackoverflow.com/questions/19440498/sub-str-or-mb-sub-str-which-one-is-better-to-use-in-php)

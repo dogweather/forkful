@@ -1,7 +1,7 @@
 ---
-title:                "कंप्यूटर प्रोग्रामिंग में csv के साथ काम करना।"
-html_title:           "Java: कंप्यूटर प्रोग्रामिंग में csv के साथ काम करना।"
-simple_title:         "कंप्यूटर प्रोग्रामिंग में csv के साथ काम करना।"
+title:                "csv के साथ काम करना"
+html_title:           "Java: csv के साथ काम करना"
+simple_title:         "csv के साथ काम करना"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Data Formats and Serialization"
@@ -10,57 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
+क्या और क्यों?
 
-दैनिक उपयोग में, हम कई बार डेटा को स्प्रेडशीट और डेटा बेस की फ़ॉर्मेट में लाभान्वित करते हैं। और वह फ़ॉर्मेट है CSV या "Comma Separated Values". CSV को पढ़ने और लिखने के लिए आसानता के कारण, हम जावा में इसके साथ काम करने आसान होता है।
+क्या आपने कभी CSV के साथ काम किया है? CSV स्प्रेडशीट्स के साथ दस्तावेज़ों में आसानी से डेटा संग्रह करने के लिए इस्तेमाल किया जाता है। अधिकांश प्रोग्रामर इसका उपयोग डेटा स्टोरेज और मैनिपुलेशन के लिए करते हैं।
 
-## कैसे करें
+कैसे करें:
 
-जावा में CSV के साथ काम करने का सबसे आसान तरीका है स्ट्रिंग पाइपलाइनर का उपयोग करना। यह उदाहरण निम्न रूप में हो सकता है।
-
-```Java
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
-
-public class CSVReader {
-
-    public static void main(String[] args) {
-
-        // CSV फ़ाइल को पढ़ें
-        String csvFile = "employees.csv";
-        String line = "";
-        String csvSplitBy = ",";
-
-        try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
-
-            // प्रत्येक पंक्ति को अलग करें और उसे छोड़ें
-            while ((line = br.readLine()) != null) {
-
-                String[] employee = line.split(csvSplitBy);
-
-                // हर स्ट्रिंग को पढ़ें और उचित परिवर्तन करें
-                String name = employee[0];
-                int age = Integer.parseInt(employee[1]);
-                String position = employee[2];
-
-                // प्रिंट करें सूची को
-                System.out.println("Name: " + name + ", Age: " + age + ", Position: " + position);
-
-            }
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-    }
-}
+```
+Java कोड ब्लॉक में कोडिंग उदाहरण और सैंपल आउटपुट के साथ।
 ```
 
-आप भी अपनी कस्टम कोडिंग लॉजिक जोड़ सकते हैं। यह उपरोक्त उदाहरण में सभी पंक्तियां ऊपरी तरफ से सही स्थानों पर हैं और वे कभी-कभी सही विधि में नहीं होंगे। इसलिए, आपको कोड में उत्समता और सावधानी से काम करने हो सकता है।
+```
+// CSV को लोड करें
+Reader reader = new FileReader("myFile.csv");
+CSVReader csvReader = new CSVReader(reader);
 
-## गहरी तकनीक
+// पंक्तियों को एक्सेस करें
+List<String[]> rows = csvReader.readAll();
 
-CSV परिसंबंधित सुझाव:
-- सुनिश्चित करें कि सभी आदेशों के साथ सही विशेषताओं का सामना किया जा रहा है
-- सुनिश्चित करें कि स्पेशल अक्षर ' और " सामान्य पठन-लिखन से भिन्न
+// पंक्ति की छवि
+for (String[] row : rows) {
+    System.out.println(Arrays.toString(row));
+}
+
+// नई इनसर्ट करें
+String[] newRow = {"1", "John", "Doe"};
+rows.add(newRow);
+
+// अपडेट करें
+rows.get(0)[1] = "Jane";
+
+// नया CSV फ़ाइल में सहेजें
+Writer writer = new FileWriter("newFile.csv");
+CSVWriter csvWriter = new CSVWriter(writer);
+csvWriter.writeAll(rows);
+writer.close();
+```
+
+डीप डाइव:
+
+CSV का इतिहास बहुत पुराना है और यह प्रत्येक प्रोग्रामिंग भाषा में उपलब्ध है। अन्य विकल्पों में शामिल हैं JSON, XML और SQL databases। CSV फ़ाइलें अपने सरल स्ट्रक्चर के कारण डेटा को इंटरनली असाधारण तरीके से प्रभावित कर सकती हैं। CSV कोड को समझने के लिए, आपको Java आर्ग्युमेंट डोपिंगी, वायरलोबिलिटी और जी एस पर विस्तार से जानने की आवश्यकता होती है।
+
+सी अल्सो:
+
+जीएसवी संबंधित स्त्रोतों के लिंक।
+- [Oracle's CSV Implementation](https://docs.oracle.com/javase/8/docs/api/javax/swing/text/Csv.html)
+- [CSV Library for Java](https://www.baeldung.com/java-csv-file-array)
+- [Reading and Writing CSV Files in Java](https://www.geeksforgeeks.org/reading-and-writing-csv-files-in-java/)

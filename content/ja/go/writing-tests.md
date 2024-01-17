@@ -1,7 +1,7 @@
 ---
-title:                "テストの書き方"
-html_title:           "Go: テストの書き方"
-simple_title:         "テストの書き方"
+title:                "コンピュータープログラミングにおける「テストの書き方」"
+html_title:           "Go: コンピュータープログラミングにおける「テストの書き方」"
+simple_title:         "コンピュータープログラミングにおける「テストの書き方」"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Testing and Debugging"
@@ -10,41 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜテストを書くのか
+# テストを書くとは？
 
-テストを書くことには様々なメリットがあります。一番の理由は、自分が書いたコードが正しく動作するのかを確かめるためです。また、将来的なバグを防ぐことや、コードの変更に伴う影響を最小限に抑えることができます。
+プログラマーがコードを書く際に、テストを書いて実行することは重要です。テストは、バグを発見しやすくするために、実際のプログラムの機能や挙動を確認するものです。つまり、プログラムが想定通りに動作するかどうかを検証するためにテストを書きます。
 
-## テストの書き方
+## 方法：
 
-まずは「```Go ... ```」のコードブロックを用意しましょう。その中に、「testing」パッケージをインポートし、テスト対象の関数とテストケースを定義します。そして、```go test```コマンドを実行することでテストを実行することができます。実際にコード例を見てみましょう。
+Go言語を使って、テストを書く方法を見てみましょう。下のコードブロック内に、サンプルのコードとその実行結果を示します。
 
-```Go
-package main
+```
+// コード例：
 
-import "testing"
-
-func Add(x, y int) int {
-    return x + y
+// テストする関数
+func add(x, y int) int {
+	return x + y
 }
 
+// テストコード
 func TestAdd(t *testing.T) {
-    result := Add(2, 3)
-    if result != 5 {
-        t.Error("2 + 3 should equal to 5")
-    }
+	result := add(2, 3)
+	if result != 5 {
+		t.Errorf("2 + 3 = %d; want 5", result)
+	}
 }
+
+// 実行結果：
+$ go test 
+ok      _/home/test  0.006s
 ```
 
-## 深堀り
+## ディープダイブ：
 
-テストを書く際には、テストカバレッジを意識することが大切です。テストカバレッジとは、書いたテストのうち実際にコードをカバーしている部分を表すものです。この数値を高く保つことで、より信頼性の高いコードを作ることができます。また、多くの開発者が参加するプロジェクトでは、コードレビューなどの外部からの意見を反映しやすいテストの設計が重要になります。
+テストを書くことで、プログラムの品質をより高く保つことができます。以前は、手動でテストを行うことが一般的でしたが、現在では自動化されたテストが主流です。代表的なテストフレームワークとして、JUnitやSelenium等がありますが、Go言語にはネイティブなテストフレームワークであるtestingパッケージが用意されています。
 
-## それではぜひ！
+## 参考：
 
-この記事を参考にして、Goでのテストの書き方を覚えてみてください。テストを書くことで、より確かなプログラムを作ることができます。また、テストについて学ぶ上での参考サイトも紹介します。
+関連する情報源は、以下のリンクから参照することができます。
 
-## ぜひ参考にしてください！
-
-- [Goの公式ドキュメント](https://golang.org/pkg/testing/)
-- [A tour of Go - Testing](https://go-tour-jp.appspot.com/basics/12)
-- [Effective Go - Testing](https://go-zh.org/doc/effective_go.html#testing)
+- [Go言語 公式ドキュメント](https://golang.org/doc/)
+- [ロバート・C・マーティンによる「Clean Code」](https://www.pearson.co.jp/book/9784822299972.html)
+- [Tests in Go](https://medium.com/@teivah/tests-in-go-8d0709a4eea6)

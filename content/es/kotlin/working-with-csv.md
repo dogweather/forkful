@@ -1,7 +1,7 @@
 ---
-title:                "Trabajando con archivos csv"
-html_title:           "Kotlin: Trabajando con archivos csv"
-simple_title:         "Trabajando con archivos csv"
+title:                "Trabajando con csv"
+html_title:           "Kotlin: Trabajando con csv"
+simple_title:         "Trabajando con csv"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Data Formats and Serialization"
@@ -10,43 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+##¡Qué y por qué? 
+Trabajar con CSV es una forma de manejar y manipular datos en formato de tabla. Puede ser útil para organizar grandes cantidades de información de manera fácilmente legible y accesible. Los programadores a menudo trabajan con CSV para importar y exportar datos entre diferentes aplicaciones y sistemas. 
 
-Si estás buscando una forma rápida y fácil de manipular y leer datos tabulares, entonces trabajar con archivos CSV puede ser la solución perfecta. CSV, o Comma Separated Values, es un formato comúnmente utilizado para almacenar datos tabulares en una forma sencilla y legible por máquina. Esto lo hace ideal para manejar grandes cantidades de datos y realizar operaciones como filtrar, ordenar y analizar.
-
-## Cómo hacerlo
-
-Para trabajar con archivos CSV en Kotlin, primero debes importar la librería `kotlinx-io-csv` en tu proyecto. Luego, puedes utilizar la función `reader` para leer el archivo CSV y almacenar los datos en una variable. A continuación, puedes iterar sobre los datos y utilizar la función `get` para obtener los valores de cada columna.
+## ¡Cómo hacerlo! 
+Kotlin ofrece una forma sencilla de trabajar con CSV utilizando la librería de la [JavaCSV](https://sourceforge.net/projects/javacsv/). Veamos un ejemplo de cómo leer y escribir en un archivo CSV usando Kotlin.
 
 ```Kotlin
-val csv = File("datos.csv").reader().readLines()
-for (line in csv) {
-    val valores = line.split(",")
-    val columna1 = valores.get(0)
-    val columna2 = valores.get(1)
-    println("Columna 1: $columna1, Columna 2: $columna2")
-}
+val reader = CSVReaderBuilder(FileReader("datos.csv")).build()
+val datos = reader.readAll()
+val writer = CSVWriter(FileWriter("nuevos_datos.csv"))
+writer.writeNext(arrayOf("Nombre", "Edad", "Pais"))
+writer.writeAll(datos)
+writer.close()
 ```
 
-Si deseas escribir datos en un archivo CSV, puedes utilizar la función `writer` y escribir cada valor separado por comas utilizando la función `append`.
+El código anterior utiliza la librería JavaCSV para leer los datos de un archivo CSV y almacenarlos en una lista llamada `datos`. Luego, utiliza la misma librería para escribir los datos en un nuevo archivo CSV. Podemos ver que el código es bastante simple y legible, lo que lo hace ideal para trabajar con grandes cantidades de datos.
 
-```Kotlin
-val nuevosDatos = listOf("valor1", "valor2", "valor3")
-File("datosNuevos.csv").writer().use {
-    for (dato in nuevosDatos) {
-        it.append("$dato,")
-    }
-}
-```
+## Profundizando 
+El formato CSV (Comma Separated Values) se ha utilizado desde los años 70 para almacenar y compartir datos en forma de tabla. Aunque se ha vuelto un poco obsoleto con la introducción de otros formatos como JSON, sigue siendo ampliamente utilizado, especialmente para importar y exportar datos en aplicaciones de hojas de cálculo.
 
-## Detalles avanzados
+Existen algunas alternativas a la librería JavaCSV, como [OpenCSV](http://opencsv.sourceforge.net/) y [Apache Commons CSV](https://commons.apache.org/proper/commons-csv/), pero JavaCSV sigue siendo una opción popular entre los programadores de Kotlin debido a su simplicidad y facilidad de uso.
 
-Si deseas trabajar con CSV de manera más avanzada, puedes utilizar la librería `opencsv` que ofrece diversas funcionalidades como la posibilidad de especificar el delimitador utilizado en el archivo CSV, manejar datos con comillas, entre otros.
+Si quieres profundizar en la implementación de la librería JavaCSV y aprender más sobre cómo manejar datos CSV en Kotlin, puedes consultar la [documentación oficial](https://sourceforge.net/p/javacsv/wiki/JavaCsvDocumentation/) de la librería.
 
-Además, puedes utilizar la función `map` para mapear los datos a una clase personalizada y trabajar con ellos de manera más organizada y estructurada.
-
-## Ver también
-
-- Documentación oficial de Kotlin para trabajar con CSV: https://kotlinlang.org/docs/working-with-csv.html
-- Librería kotlinx-io-csv: https://github.com/Kotlin/kotlinx-io/tree/master/csv
-- Librería opencsv: http://opencsv.sourceforge.net/
+## Ver también 
+- [Documentación oficial de JavaCSV](https://sourceforge.net/p/javacsv/wiki/JavaCsvDocumentation/)
+- [Tutorial de manejo de archivos CSV en Kotlin](https://www.youtube.com/watch?v=v5zIbtGhI1c)
+- [Ejemplos de proyectos que utilizan JavaCSV](https://sourceforge.net/p/javacsv/wiki/JavaCsvListOfProjects/)

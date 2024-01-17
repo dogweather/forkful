@@ -1,7 +1,7 @@
 ---
-title:                "「httpリクエストを送信する」"
-html_title:           "Fish Shell: 「httpリクエストを送信する」"
-simple_title:         "「httpリクエストを送信する」"
+title:                "HTTPリクエストを送信する"
+html_title:           "Fish Shell: HTTPリクエストを送信する"
+simple_title:         "HTTPリクエストを送信する"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "HTML and the Web"
@@ -10,55 +10,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+## 何か & 何故？
 
-HTTPリクエストを送信するメリットはたくさんあります。もしデータをサーバーに送信したい場合や、他のウェブサイトから情報を取得したい場合に、HTTPリクエストを使用することができます。本記事では、どのようにFish Shellを使用して簡単にHTTPリクエストを送信するかを解説します。
+HTTPリクエストを送信するとは何か？それは、プログラマーがウェブサイトやウェブアプリケーションを操作したり、データを取得したりするために使う方法です。HTTPリクエストを送信することで、インターネット上のさまざまな情報にアクセスすることができます。
 
-## 使い方
+## やり方：
 
-まずは、Fish Shellを使ってHTTPリクエストを送信するために必要なライブラリをインストールしましょう。
+```
+Fish Shellを使用してHTTPリクエストを送信する方法を見てみましょう。
 
-```Fish Shell
-npm install node-fetch --save
+最初に、以下のコマンドを入力します：
+
+```
+curl -i https://www.example.com/
 ```
 
-次に、以下のコードを使用して、サーバーにHTTPリクエストを送信することができます。
+これにより、指定したURLにGETリクエストが送信されます。そして、サーバーからのレスポンスを受け取り、その情報をターミナルに表示します。
 
-```Fish Shell
-var fetchUrl = require("fetch").fetchUrl;
+```
+HTTP/1.1 200 OK
+Date: Sun, 01 Mar 2020 12:00:00 GMT
+Server: Apache
+Content-Length: 120
+Content-Type: text/html; charset=UTF-8
 
-fetchUrl("https://www.example.com", function(error, meta, body) {
-  console.log(body.toString());
-});
+<!DOCTYPE html>
+<html>
+<head>
+<title>Welcome to Example.com</title>
+</head>
+<body>
+<h1>Hello World!</h1>
+</body>
+</html>
 ```
 
-これで、コンソールにサーバーから返ってきたデータが表示されるはずです。HTTPリクエストをカスタマイズしたい場合は、以下のコードを使用することでヘッダーやクエリパラメーターを追加することができます。
+このように、リクエストを送信することで、ウェブサイトのタイトルやHTMLコードなどの情報を取得することができます。
 
-```Fish Shell
-var fetchUrl = require("fetch").fetchUrl;
-var queryString = require("query-string");
+## 詳しく見る：
 
-var queryStr = queryString.stringify({
-  name: "John",
-  age: 25
-});
+### 歴史的背景：
 
-var url = "https://www.example.com?" + queryStr;
+HTTPリクエストの送信方法には、さまざまな歴史的背景があります。最初のウェブサーバーは、HTTPリクエストを受け取って、ファイルを返すように設計されていました。しかし、今ではHTTPリクエストを使用して、データを取得するだけでなく、送信したり、削除したりすることもできるようになりました。
 
-fetchUrl(url, function(error, meta, body) {
-  console.log(body.toString());
-});
-```
+### 代替案：
 
-以上で、Fish Shellを使用して簡単にHTTPリクエストを送信することができます。
+HTTPリクエストを送信する方法としては、Fish Shell以外にもさまざまな方法があります。例えば、PythonのrequestsモジュールやNode.jsのAxiosモジュールなどがあります。ただし、これらのモジュールを使用するには、それぞれの言語を学習する必要があります。
 
-## ディープダイブ
+### 実装の詳細：
 
-Fish Shellを使用してHTTPリクエストを送信する際には、サードパーティライブラリを使用することをおすすめします。今回は、「node-fetch」というライブラリを使用しましたが、他にも「axios」や「request」などのライブラリを使用することができます。また、コールバック関数の代わりにプロミス（Promise）を使用することで、コードをよりシンプルかつ読みやすくすることもできます。
+Fish Shellでは、curlコマンドを使用することで、簡単にHTTPリクエストを送信することができます。具体的には、URLを指定し、任意のメソッド（GET、POST、PUT、DELETEなど）を使用することができます。
 
-## おすすめリンク
+## 関連情報：
 
-- [node-fetch - npm](https://www.npmjs.com/package/node-fetch)
-- [axios - npm](https://www.npmjs.com/package/axios)
-- [request - npm](https://www.npmjs.com/package/request)
-- [コールバック関数とプロミス（Promise）の違い](https://qiita.com/saxxiota/items/4614eb077bf481481372)
+- [HTTPリクエストとは？](https://developer.mozilla.org/ja/docs/Web/HTTP/Overview)
+- [curlコマンドの使い方](https://curl.haxx.se/docs/manpage.html)
+- [リクエストを送信する他の方法](https://github.com/ggreer/the_silver_searcher/wiki/Fish-Shell-パイプラインでリクエストを送信する方法)

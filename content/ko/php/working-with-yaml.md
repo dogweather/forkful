@@ -1,7 +1,7 @@
 ---
-title:                "yaml로 작업하기"
-html_title:           "PHP: yaml로 작업하기"
-simple_title:         "yaml로 작업하기"
+title:                "Yaml 작업하기"
+html_title:           "PHP: Yaml 작업하기"
+simple_title:         "Yaml 작업하기"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Data Formats and Serialization"
@@ -10,127 +10,63 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜 YAML과 함께 작업할까요?
+## What & Why?
 
-먼저, YAML은 PHP에서 설정 파일과 데이터를 쉽게 다룰 수 있는 형식입니다. 또한 YAML은 다른 형식보다 가독성이 좋고 사용하기도 간단하기 때문에 개발자들 사이에서 인기가 높습니다.
+YAML은 PHP과 함께 작동하는 데이터 직렬화 형식이다. 이는 데이터를 구조화하기 쉽고 보기 쉬운 방식으로 저장하고 전송하기 위해 사용된다. 프로그래머들은 YAML을 사용함으로써 코드의 가독성을 높이고 데이터를 관리하는 작업을 간단하게 만들 수 있다.
 
-## 어떻게 YAML을 사용할까요?
+## How to:
 
-YAML을 PHP에서 사용하는 방법은 매우 간단합니다. 먼저, YAML 파일을 불러오기 위해 `yaml_parse_file()` 함수를 사용합니다.
-
-```PHP
-// YAML 파일 불러오기
-$data = yaml_parse_file('config.yml');
-
-// 배열 구조로 변환
-var_dump($data);
-```
-
-출력 결과는 다음과 같습니다.
+### Create a YAML file:
 
 ```PHP
-array(3) {
-  ["name"]=>
-  string(6) "John"
-  ["age"]=>
-  int(25)
-  ["favorite_color"]=>
-  string(5) "blue"
-}
+<?php
+
+$data = array(
+    'name' => 'John Doe',
+    'age' => 25,
+    'occupation' => 'Web Developer'
+);
+
+$file = fopen('data.yaml', 'w');
+fwrite($file, yaml_emit($data));
+fclose($file);
 ```
 
-YAML 파일 내용은 PHP 배열 구조로 변환되어 반환됩니다. 이제 이 데이터를 `foreach` 루프를 이용해 출력할 수 있습니다.
-
-```PHP
-// 루프를 이용한 출력
-foreach ($data as $key => $value) {
-  echo "$key: $value \n";
-}
-```
-
-위 코드의 출력 결과는 다음과 같습니다.
-
-```
-name: John
-age: 25
-favorite_color: blue
-```
-
-## 깊이 들어가기
-
-YAML은 다양한 데이터 타입을 지원하며, 배열과 마찬가지로 하위 요소로 다른 데이터 타입을 포함할 수 있습니다. 하지만 배열과 달리 키-값 쌍으로 구성되기 때문에 데이터를 보다 가독성 좋게 표현할 수 있습니다.
-
-예를 들어, 다음과 같은 YAML 파일이 있다고 가정해봅시다.
+Sample output:
 
 ```yaml
-name: John Smith
-age: 35
-address:
-  city: New York
-  state: NY
-  country: USA
+age: 25
+name: John Doe
+occupation: Web Developer
 ```
 
-이를 PHP에서 다루기 위해서는 `address`라는 키를 가지는 배열을 추가하고 해당 배열 내부에 `city`, `state`, `country`와 같은 키를 가진 요소를 추가해주면 됩니다. 이를 코드로 표현하면 다음과 같습니다.
+### Read a YAML file:
 
 ```PHP
-// YAML 파일 불러오기
-$data = yaml_parse_file('user.yml');
+<?php
 
-// 배열 구조로 변환
-var_dump($data);
+$file = file_get_contents('data.yaml');
+$data = yaml_parse($file);
+
+echo $data['name'] . ' is ' . $data['age'] . ' years old and works as a ' . $data['occupation'];
 ```
 
-출력 결과는 다음과 같습니다.
-
-```PHP
-array(3) {
-  ["name"]=>
-  string(11) "John Smith"
-  ["age"]=>
-  int(35)
-  ["address"]=>
-  array(3) {
-    ["city"]=>
-    string(8) "New York"
-    ["state"]=>
-    string(2) "NY"
-    ["country"]=>
-    string(3) "USA"
-  }
-}
-```
-
-이제 `foreach` 루프를 이용해 데이터를 출력해보겠습니다.
-
-```PHP
-// 루프를 이용한 출력
-foreach ($data as $key => $value) {
-  if ($key == 'address') {
-    echo "Address: \n";
-    foreach ($value as $addressKey => $addressValue) {
-      echo "  $addressKey: $addressValue \n";
-    }
-    echo "\n";
-  } else {
-    echo "$key: $value \n";
-  }
-}
-```
-
-결과는 다음과 같습니다.
+Sample output:
 
 ```
-name: John Smith 
-age: 35 
-Address: 
-  city: New York 
-  state: NY 
-  country: USA
+John Doe is 25 years old and works as a Web Developer
 ```
 
-## 더 알아보기
+## Deep Dive
 
-현재 PHP 버전에서는 `yaml_parse()` 함수도 제공되지만, 이 함수는 PHP 7.2 이후로는 deprecated되었습니다. 따라서 새로 작업하시는 경우에는 `yaml_parse_file()`를 사용하는 것을 권장합니다.
+YAML은 2001년에 개발된 프로그래밍 언어인 Perl을 기반으로 만들어졌다. 이는 효율적인 방식으로 데이터를 구조화하고 표현하기 위해 만들어졌으며, 쉽고 적은 코드를 사용하여 데이터를 생성하고 읽는 것을 가능하게 한다. YAML은 다른 데이터 직렬화 형식인 JSON과 비슷한 구조를 가지고 있지만, 더 간단하고 직관적인 문법을 사용한다는 장점이 있다.
 
-또한 YAML을 다루는 라이브러리인 "Symfony YAML"이 있으니 참고하
+다른 대안으로는 XML이 있지만, YAML은 코드의 가독성을 높여주고 작업을 더 효율적으로 만들어 준다는 점에서 더 인기가 있다. 또한 PHP에서는 내장 라이브러리로서 YAML을 지원하므로 따로 추가적인 라이브러리를 사용할 필요가 없다.
+
+YAML은 데이터를 구조화하는 편리한 방법이지만, 문자열에 특수 문자를 추가하는 것에 있어서는 주의해야 한다. 이는 코드의 문제를 일으킬 수 있으므로 해결하는 방법을 잘 알고 사용해야 한다.
+
+## See Also
+
+- [Official YAML website](http://yaml.org/)
+- [PHP Manual on YAML functions](https://www.php.net/manual/en/ref.yaml.php)
+- [Comparison of YAML and JSON](https://en.wikipedia.org/wiki/Comparison_of_data-serialization_formats#JSON_vs._YAML)

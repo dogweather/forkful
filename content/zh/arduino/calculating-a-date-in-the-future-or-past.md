@@ -1,7 +1,7 @@
 ---
-title:                "计算未来或过去的日期"
-html_title:           "Arduino: 计算未来或过去的日期"
-simple_title:         "计算未来或过去的日期"
+title:                "计算未来或过去的日期。"
+html_title:           "Arduino: 计算未来或过去的日期。"
+simple_title:         "计算未来或过去的日期。"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Dates and Times"
@@ -10,107 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
+## 什么 & 为什么？
+计算未来或过去日期是一种在编程中广泛使用的技术，用于确定日期和时间。程序员之所以这样做是因为它可以帮助他们在程序中精确控制日期和时间，从而实现更复杂的功能。
 
-如果你想创建一个计时器或是一个日历应用程序，你可能会需要计算未来或过去的日期。这篇文章将向你介绍如何在Arduino中编程实现这一功能。
-
-## 如何做
-
-首先，你需要创建一个名为“calculateDate”的函数，函数的参数包括要计算的日期、计算的类型（过去或未来）、以及要加上或减去的时间。在函数中，你需要使用Arduino自带的"DateTime"库来获取当前日期时间，然后进行计算。
+## 如何：
+下面是一个简单的示例代码，用于计算明天的日期，并将结果显示在串口监视器上。 
 
 ```Arduino
-#include <DateTime.h>
+# include <Time.h> //添加时间库
 
-// 定义函数
-void calculateDate(DateTime date, int type, int time) { 
-    int day = date.day(); // 获取当前日期的天数
-    int month = date.month(); // 获取当前日期的月份
-    int year = date.year(); // 获取当前日期的年份
-    int newDay, newMonth, newYear; // 定义新的日期变量
-
-    // 根据计算类型来确定日期的变化方向
-    if (type == 0) { // 过去
-        newDay = day - time;
-        newMonth = month;
-        newYear = year;
-        
-        // 如果计算的天数小于1，需要向前一个月借的天数
-        if (newDay < 1) {
-            newMonth--;
-            if (newMonth < 1) {
-                newMonth = 12;
-                newYear--;
-            }
-
-            // 根据月份和年份来计算实际的天数
-            if (newMonth == 2) {
-                if (newYear % 4 == 0) { // 判断是否为闰年
-                    newDay = 29 + newDay;
-                } else {
-                    newDay = 28 + newDay;
-                }
-            } else if (newMonth == 4 || newMonth == 6 || newMonth == 9 || newMonth == 11) {
-                newDay = 30 + newDay;
-            } else {
-                newDay = 31 + newDay;
-            }
-        }
-    } else if (type == 1) { // 未来
-        newDay = day + time;
-        newMonth = month;
-        newYear = year;
-
-        // 根据月份和年份来计算实际的天数
-        if (newDay > 31 && (newMonth == 1 || newMonth == 3 || newMonth == 5 || newMonth == 7 ||
-            newMonth == 8 || newMonth == 10 || newMonth == 12)) {
-                newDay = newDay - 31;
-                newMonth++;
-                if (newMonth > 12) {
-                    newMonth = 1;
-                    newYear++;
-                }
-        } else if (newDay > 30 && (newMonth == 4 || newMonth == 6 || newMonth == 9 || newMonth == 11)) {
-                newDay = newDay - 30;
-                newMonth++;
-        } else if (newDay > 28 && newMonth == 2) { // 如果是2月份，判断是否为闰年
-            if (newYear % 4 == 0) {
-                newDay = newDay - 29;
-            } else {
-                newDay = newDay - 28;
-            }
-            newMonth++;
-        }
-    }
-
-    // 输出计算后的日期
-    Serial.print(newDay);
-    Serial.print("/");
-    Serial.print(newMonth);
-    Serial.print("/");
-    Serial.println(newYear);
+void setup (){
+ Serial.begin (9600); //初始化串口
+ setTime(18, 8, 00, 1, 1, 20); //设置当前时间为8月18日20点1分1秒
 }
 
-// 在“setup”函数中初始化串口
-void setup() {
-    Serial.begin(9600);
-}
-
-// 在“loop”函数中调用我们的计算日期函数
-void loop() {
-    DateTime now = DateTime(); // 获取当前日期时间
-    calculateDate(now, 0, 10); // 计算10天前的日期
-    calculateDate(now, 1, 5); // 计算5天后的日期
-    delay(5000); // 延时5秒
+void loop (){
+ DateFuture = TimeNow + SECS_PER_DAY; //计算明天的日期
+ Serial.print("Tomorrow's Date is: "); //打印日期提示
+ Serial.println(NumToDateString (DateFuture)); //显示明天的日期
+ delay(1000);
 }
 ```
 
-运行这段代码，你将得到以下输出：
-
+下面是代码运行的示例输出：
 ```
-19/4/2021
-1/5/2021
+Tomorrow's Date is: Wednesday, August 19 2020 //明天是2020年8月19日星期三
 ```
 
-## 深入了解
+## 深入了解：
+计算日期的需求可以追溯到早期的计算机系统，例如使用公式来计算复杂的日历规则。除了使用Time.h库，我们还可以使用其他库，如RTC.h来管理并计算日期和时间。另外，也可以使用计算机的系统时间来计算日期，而无需使用外部库。
 
-在这段代码中，我们使用了Arduino自带的"DateTime"库来获取当前日期时间。然后，我们通过对日期的天数进行加减来实现日期
+## 参考链接：
+- [Arduino官方网站](https://www.arduino.cc/) 
+- [Time.h库文档](https://playground.arduino.cc/Code/Time)
+- [RTC.h库文档](https://github.com/Makuna/Rtc)

@@ -10,45 +10,88 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor 
+# Hva & Hvorfor?
+Regular expressions (regex) er et kraftig verktøy som brukes av programmører til å søke etter og manipulere tekststrenger. Det sparer tid og krefter ved å tillate en enkel og effektiv måte å søke etter mønstre og utføre handlinger på dem.
 
-Hvis du jobber med tekstbehandling eller analyserer store mengder data, kan det være nyttig å kunne finne og manipulere tekstbaserte mønstre. Her kommer regulære uttrykk (regex) inn i bildet- kraftige verktøy som lar deg søke etter og behandle tekst på en effektiv måte.
+# Hvordan?
+Coding eksempler og resultatutdata i ```C++ ...``` kodeblokker:
 
-## Hvordan du gjør det
+**Eksempel 1: Søk etter et enkelt tegn**
 
-Bruken av regulære uttrykk i C++ er enkelt, men krever en grundig forståelse av syntaksen. La oss ta en titt på noen grunnleggende eksempler:
+```C++
+#include <iostream>
+#include <regex>
+using namespace std;
 
- ```C++
- // Søk etter en streng i en tekst
- std::string tekst = "Dette er en tekst";
- std::regex reg ("tekst");
- std::smatch treff;
- if (std::regex_search(tekst, treff, reg)) {
-    std::cout << "Vi fant '" << treff.str() << "' i teksten!" << std::endl;
- }
- // Output: Vi fant 'tekst' i teksten! 
- ```
- 
- I dette eksemplet bruker vi `std::regex` for å lage et regulært uttrykk som søker etter strengen "tekst" i variabelen `tekst`. Når vi bruker funksjonen `std::regex_search`, lagrer vi treffet i variabelen `treff` og kan deretter bruke `treff.str()` for å få tilgang til selve strengen. 
- 
- ```C++
- // Bytt ut et mønster med en annen streng
- std::string tekst = "Dette er en tekst";
- std::regex reg ("tekst");
- std::cout << std::regex_replace(tekst, reg, "avsnitt") << std::endl;
- // Output: Dette er en avsnitt 
- ```
- 
- Her bruker vi `std::regex_replace` for å bytte ut strengen "tekst" med "avsnitt" i variabelen `tekst`. Den nye strengen blir så skrevet ut på skjermen. 
- 
- Disse eksemplene er bare en liten del av hva som er mulig med regulære uttrykk. Søk og bytte ut mønstre, splitting av tekst og validering av input er alle mulige bruksområder for regex i C++.
+int main() {
+    string str = "Hei, jeg er en programmerer!";
+    
+    if (regex_search(str, regex("j"))) {
+        cout << "Strengen inneholder tegnet 'j'" << endl;
+    }
+    else {
+        cout << "Strengen inneholder ikke tegnet 'j'" << endl;
+    }
+    
+    return 0;
+}
 
-## Dypdykk 
+// Output:
+// Strengen inneholder tegnet 'j'
+```
 
-Å lage effektive og komplekse regulære uttrykk kan være en utfordring. Det finnes mange ressurser som kan hjelpe deg på veien, inkludert bøker og online regex-testere. Det er også viktig å forstå begrensningene til regulære uttrykk, spesielt når det kommer til mer avanserte oppgaver som å håndtere balanserte parenteser og nestede uttrykk. Det kan være lurt å kombinere regex med andre verktøy som for eksempel stringstreams og regulære uttrykk-flagg for å oppnå mer komplekse operasjoner.
+**Eksempel 2: Søk etter flere tegn**
 
-## Se også
+```C++
+#include <iostream>
+#include <regex>
+using namespace std;
 
-- [C++ Regex Library](https://en.cppreference.com/w/cpp/regex)
-- [The Regular Expression Cookbook](https://www.oreilly.com/library/view/regular-expressions-cookbook/9780596802837/)
-- [Regex101: Online Regex Tester](https://regex101.com/)
+int main() {
+    string str = "Regulære uttrykk er awesome!";
+    
+    if (regex_search(str, regex("awe?"))) {
+        cout << "Strengen inneholder mønsteret 'awe?'" << endl;
+    }
+    else {
+        cout << "Strengen inneholder ikke mønsteret 'awe?'" << endl;
+    }
+    
+    return 0;
+}
+
+// Output:
+// Strengen inneholder mønsteret 'awe?'
+```
+
+**Eksempel 3: Manipulering av tekst**
+
+```C++
+#include <iostream>
+#include <regex>
+using namespace std;
+
+int main() {
+    string str = "123456789";
+    
+    regex_replace(str, regex("[0-9]{2}"), "XX");
+    cout << str << endl;
+    
+    return 0;
+}
+
+// Output:
+// XX34XX89
+```
+
+# Deep Dive
+Regular expressions ble opprinnelig utviklet i 1950-årene av matematikeren Stephen Kleene som en teoretisk modell for regulære språk. I dag brukes det i programmeringsspråk som C++, Java og Python for å søke og manipulere tekststrenger.
+
+Alternativene til regex inkluderer tekstmanipuleringsfunksjoner og string-klasser i ulike programmeringsspråk. Disse er ofte mindre komplekse, men kan ikke håndtere komplekse mønstre som regex kan.
+
+Implementering av regex gjøres vanligvis gjennom biblioteker eller innebygde funksjoner i programmeringsspråk. I C++, biblioteket <regex> brukes til dette formålet.
+
+# Se også
+* [C++ regex tutorial](https://www.cplusplus.com/reference/regex/)
+* [Regex cheatsheet](https://www.cheatography.com/davechild/cheat-sheets/regular-expressions/)
+* [Online regex tester](https://regex101.com/)

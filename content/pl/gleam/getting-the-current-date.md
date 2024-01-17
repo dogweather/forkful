@@ -1,7 +1,7 @@
 ---
-title:                "Pobieranie aktualnej daty"
-html_title:           "Gleam: Pobieranie aktualnej daty"
-simple_title:         "Pobieranie aktualnej daty"
+title:                "Pobieranie bieżącej daty"
+html_title:           "Gleam: Pobieranie bieżącej daty"
+simple_title:         "Pobieranie bieżącej daty"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Dates and Times"
@@ -10,64 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i dlaczego?
 
-Aktualna wersja języka programowania Gleam zapewnia wiele przydatnych funkcji, w tym możliwość uzyskania aktualnej daty. Dzięki temu, możemy wykorzystać tę datę w naszym kodzie, np. do tworzenia dynamicznych aplikacji lub generowania raportów. 
+Pobieranie aktualnej daty jest jednym ze sposobów na uzyskanie informacji o bieżącym czasie. Programiści często wykonują tę operację w swoim kodzie, ponieważ jest to niezbędne dla wielu aplikacji, takich jak kalendarze, alarmy, czy systemy rejestracji czasu pracy.
 
-## Jak to zrobić
+## Jak to zrobić?
 
-Aby uzyskać aktualną datę w Gleam, możemy skorzystać z wbudowanej biblioteki ```built_in```, która dostarcza nam moduł ```Time```. W nim znajduje się funkcja ```now/0```, która zwraca aktualną datę i godzinę w formacie ```Time.DateTime```. 
-
-Przykładowy kod: 
-```Gleam 
-import built_in/Time
-
-let current_date = Time.now()
-
-// Output: 2021-03-17T23:27:07 
-```
-
-Możemy również wybrać wygodniejszy dla nas format, korzystając z funkcji ```format/?``` z modułu ```Time.Format```. Przykładowo, jeśli chcemy uzyskać tylko datę w formacie YYYY-MM-DD, możemy użyć takiego kodu: 
+To bardzo proste! Wystarczy użyć wbudowanej funkcji `Date.now` w języku programowania Gleam. Poniżej znajdują się przykłady kodu i wyników dla różnych formatów daty.
 
 ```Gleam 
-import built_in/Time
-import built_in/Time.Format
-
-let current_date = Time.now() |> Time.Format.format("YYYY-MM-DD")
-
-// Output: 2021-03-17 
+// Pobierz datę w formacie rok-miesiąc-dzień
+let bieżąca_data = Date.now("%Y-%m-%d")
+``` 
+```Gleam
+// Wynik: 2021-10-14
 ```
 
-## Głębszy wgląd
-
-Funkcja ```now/0``` zwraca obiekt ```Time.DateTime```, który składa się z różnych pól, takich jak rok, miesiąc, dzień, godzina, minuta, sekunda itp. Możemy więc wykorzystać te pola, aby uzyskać różne wartości, np. rok lub miesiąc, tylko gdy są nam potrzebne. 
-
+```Gleam
+// Pobierz datę w formacie dzień/miesiąc/rok
+let bieżąca_data = Date.now("%d/%m/%Y")
+``` 
 ```Gleam 
-import built_in/Time
-import built_in/Time.Format
-
-let current_date = Time.now()
-
-let year = current_date.year
-let month = current_date.month
-
-// Output:
-year: 2021
-month: 3 
+// Wynik: 14/10/2021
 ```
 
-Możemy również użyć funkcji ```date/0```, aby uzyskać tylko datę bez godziny i minut. 
-
+```Gleam
+// Pobierz godzinę w formacie 24-godzinnym
+let bieżąca_data = Date.now("%H:%M:%S")
+```
 ```Gleam 
-import built_in/Time
-import built_in/Time.Format
-
-let current_date = Time.date()
-
-// Output: 2021-03-17 
+// Wynik: 15:30:12
 ```
 
-## Zobacz także
+## Wgląd w szczegóły
 
-- Dokumentacja biblioteki ```built_in```: https://gleam.run/documentation/builtin 
-- Przykład wykorzystania aktualnej daty w aplikacji Gleam: https://github.com/lpil/monome.norns/tree/master/libs/current_time
+Pobieranie aktualnej daty jest czynnością, którą programiści wykonują od lat, ponieważ jest ona niezbędna do wielu funkcji w aplikacjach. Jednym z alternatywnych sposobów na uzyskanie aktualnej daty jest użycie zewnętrznej biblioteki, jednak wbudowane w język funkcje jak `Date.now` są szybsze i nie wymagają instalacji dodatkowego kodu.
+
+W języku Gleam, pobieranie aktualnej daty jest możliwe dzięki wykorzystaniu standardowej biblioteki czasu (`Time`), która jest zbudowana na języku Erlang. Wewnątrz tej biblioteki istnieje funkcja `now` odpowiadająca za pobieranie bieżącego czasu.
+
+## Zobacz również
+
+Jeśli chcesz dowiedzieć się więcej o formatowaniu dat w języku Gleam, zapoznaj się z dokumentacją na oficjalnej stronie: https://gleam.run/documentation/std-lib/time
+
+Możesz także skorzystać z innych funkcji dostępnych w bibliotece czasu, takich jak obliczanie różnicy czasu między dwoma datami. Od teraz pobieranie aktualnej daty nie będzie już dla Ciebie tajemnicą!

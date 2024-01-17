@@ -1,7 +1,7 @@
 ---
-title:                "Enviando uma requisição http com autenticação básica"
-html_title:           "Rust: Enviando uma requisição http com autenticação básica"
-simple_title:         "Enviando uma requisição http com autenticação básica"
+title:                "Enviando uma solicitação http com autenticação básica"
+html_title:           "Rust: Enviando uma solicitação http com autenticação básica"
+simple_title:         "Enviando uma solicitação http com autenticação básica"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "HTML and the Web"
@@ -10,64 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+## O que & Por quê?
 
-Se você está trabalhando com aplicativos ou websites que precisam obter informações de um servidor, você provavelmente já ouviu falar sobre o protocolo HTTP e a autenticação básica. A autenticação básica é uma maneira de proteger o seu servidor, que exige que os usuários enviem um nome de usuário e senha válidos para acessar as informações. Neste artigo, vamos explorar como podemos enviar uma solicitação HTTP com autenticação básica usando Rust.
+Enviar uma solicitação HTTP com autenticação básica é um processo em que o usuário envia um pedido para um servidor web usando um padrão de segurança conhecido como autenticação básica. Isso é feito para garantir que a conexão entre o usuário e o servidor seja segura e para proteger informações confidenciais.
 
-## Como fazer
+Os programadores usam esse método de autenticação principalmente quando há necessidade de autenticação em aplicativos da web, como sites de compras online e plataformas de redes sociais.
 
-Para enviar uma solicitação HTTP com autenticação básica usando Rust, precisamos de duas bibliotecas externas:
-
-- [reqwest](https://docs.rs/reqwest/0.11.0/reqwest/) - para enviar solicitações HTTP
-- [base64](https://docs.rs/base64/0.11.0/base64/) - para codificar o nome de usuário e senha em formato base64
-
-Em seguida, podemos escrever o código para enviar a solicitação. Primeiro, importamos as bibliotecas externas e definimos as informações de autenticação (nome de usuário e senha) e a URL para a qual queremos enviar a solicitação. Em seguida, usamos o `reqwest::Client` para criar uma nova instância de cliente e `get()` para especificar o tipo de solicitação (GET, POST, PUT, etc.).
+## Como fazer:
 
 ```Rust
-use reqwest;
-use base64;
+use reqwest::blocking::Client;
+use reqwest::header::HeaderValue;
 
-let username = "usuario";
-let password = "senha";
-let url = "https://exemplo.com.br/solicitacao";
+fn main() -> Result<(), Box<std::error::Error>> {
+    let client = Client::builder()
+        .build()?;
 
-let client = reqwest::Client::new();
-let mut response = client.get(url)
-    .basic_auth(username, Some(password))
-    .send()
-    .expect("Falha ao enviar a solicitação");
-```
+    let mut headers = header::HeaderMap::new();
 
-Em seguida, devemos verificar se a solicitação foi bem sucedida ou se houve algum erro. Podemos usar o método `status()` para verificar o código de status da resposta e `text()` para obter o corpo da resposta como uma string.
+    headers.insert(
+        header::AUTHORIZATION,
+        HeaderValue::from_static("Basic QWxhZGRpbjpvcGVuIHNlc2FtZQ==")
+    );
 
-```Rust
-if response.status().is_success() {
-    let body = response.text()
-        .expect("Não foi possível obter o corpo da resposta");
-    println!("Resposta: {}", body);
-} else {
-    println!("Erro: {}", response.status());
+    let res = client
+        .get("https://example.com")
+        .headers(headers)
+        .send()?;
+
+    println!("Status: {:?}", res.status());
+    Ok(())
 }
+
 ```
 
-Com isso, podemos enviar uma solicitação HTTP com autenticação básica usando Rust.
+Neste exemplo, usamos a biblioteca `reqwest` para enviar uma solicitação HTTP com autenticação básica. Primeiro, importamos a biblioteca e construímos um objeto `Client`. Em seguida, adicionamos o cabeçalho de autenticação básica ao objeto `HeaderMap` e enviamos o pedido usando a função `get` do cliente. Finalmente, imprimimos o status da resposta na saída.
 
-## Deep Dive
+## Deep Dive:
 
-Em profundidade, podemos ver que a autenticação básica funciona adicionando um cabeçalho "Authorization" à nossa solicitação. Esse cabeçalho contém o tipo de autenticação (no nosso caso, "Basic") e as informações de nome de usuário e senha codificadas em base64, separadas por dois pontos.
+A autenticação básica foi criada na década de 1990 como um método simples de autenticação para conexões HTTP. No entanto, atualmente, é considerada uma forma fraca de autenticação, pois as informações de autenticação são enviadas como texto simples. Portanto, é recomendável usar outros métodos de autenticação, como OAuth ou autenticação de token.
 
-```Rust
-let username = "usuario";
-let password = "senha";
-let basic_auth = format!("{}:{}", username, password);
-let encoded_auth = base64::encode(&basic_auth);
+Além disso, existem diferentes maneiras de implementar a autenticação básica em Rust, como usando a biblioteca `hyper` ou implementando manualmente o algoritmo de base64 para codificar a chave de autenticação.
 
-println!("Valor do cabeçalho Authorization: Basic {}", encoded_auth);
-```
+## Veja também:
 
-Ao enviar a solicitação, o servidor verifica se essas informações são válidas e, se sim, retorna os dados solicitados. É importante notar que a autenticação básica não é a forma mais segura de proteger um servidor, pois as informações de nome de usuário e senha são enviadas em texto simples. Portanto, se você estiver lidando com informações sensíveis, considere usar outras formas de autenticação mais seguras.
-
-## Veja também
-
-- [Documentação do reqwest](https://docs.rs/reqwest/0.11.0/reqwest/)
-- [Documentação do base64](https://docs.rs/base64/0.11.0/base64/)
+- Documentação oficial do Rust sobre autenticação básica: https://doc.rust-lang.org/std/net/trait.ToSocketAddrs.html
+- Tutorial sobre autenticação básica em Rust: https://www.ameyalokare.com/rust/2018/09/20/rust-and-http-basic-authentication.html

@@ -1,7 +1,7 @@
 ---
-title:                "Vérification de l'existence d'un répertoire"
-html_title:           "Clojure: Vérification de l'existence d'un répertoire"
-simple_title:         "Vérification de l'existence d'un répertoire"
+title:                "Vérifier l'existence d'un répertoire"
+html_title:           "Clojure: Vérifier l'existence d'un répertoire"
+simple_title:         "Vérifier l'existence d'un répertoire"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Files and I/O"
@@ -10,44 +10,21 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi 
+## Qu'est-ce que c'est et pourquoi le faire ?
+Vérifier si un répertoire existe est simplement la vérification pour savoir si un répertoire donné est présent sur votre système de fichiers. Les programmeurs effectuent souvent cette vérification pour s'assurer que les fichiers peuvent être correctement lus ou écrits dans un emplacement donné.
 
-Checking if a directory exists is an important aspect of file operations in any programming language. It helps ensure that your code can handle different scenarios and avoids any potential errors that may occur if a directory does not exist. In Clojure, there are different ways to check for the existence of a directory, making it a useful skill to have in your programming toolkit.
+## Comment faire :
+Voici comment vérifier si un répertoire existe en utilisant Clojure :
 
-## Comment faire 
-
-Pour vérifier si un dossier existe en Clojure, nous pouvons utiliser la fonction `exists?` du module `clojure.java.io`. Cette fonction prend en paramètre le chemin absolu du dossier et renvoie `true` si le dossier existe ou `false` s'il n'existe pas. Voici un exemple de code avec son résultat :
-
-```Clojure
-(require '[clojure.java.io :as io])
-
-(io/exists? "/chemin/absolu/vers/dossier") ; renvoie true
+```
+(if (java.io.File. "/chemin/vers/repertoire").isDirectory())
+  (println "Le répertoire existe !"))
 ```
 
-Nous pouvons également utiliser la fonction `file-seq` du module `clojure.java.io` pour parcourir le contenu d'un dossier et vérifier chaque élément s'il s'agit d'un fichier ou d'un dossier. Voici un exemple de code avec son résultat :
+Le code ci-dessus crée un objet `java.io.File` pour le chemin donné puis utilise la méthode `isDirectory()` pour vérifier s'il s'agit d'un répertoire. Si oui, il affiche un message indiquant que le répertoire existe.
 
-```Clojure
-(require '[clojure.java.io :as io])
+## Plongée en profondeur :
+Dans le passé, cette vérification était effectuée en utilisant la commande système `ls` pour lister les fichiers et répertoires dans un emplacement donné. Cependant, cela n'est pas une méthode fiable car cela dépend du système d'exploitation et des autorisations utilisateur. Aujourd'hui, la méthode la plus courante pour vérifier si un répertoire existe est d'utiliser la classe `java.io.File` comme présenté précédemment.
 
-(def files (file-seq "/chemin/absolu/vers/dossier"))
-
-(some #(and (io/directory? %) (str %)) files) ; renvoie le chemin absolu du dossier s'il existe
-```
-
-## Zoom sur 
-
-En utilisant la fonction `file-seq`, nous pouvons également faire une recherche plus approfondie en utilisant des prédicats de filtrage pour vérifier des conditions spécifiques sur les fichiers ou dossiers dans un répertoire donné. Par exemple, nous pouvons utiliser `filter` pour vérifier si un fichier avec une certaine extension existe dans un dossier. Voici un exemple :
-
-```Clojure
-(require '[clojure.java.io :as io])
-
-(def files (file-seq "/chemin/absolu/vers/dossier"))
-
-(filter #(and (io/file? %) (.endsWith (.getName %) "txt")) files) ; renvoie tous les fichiers avec l'extension .txt dans le dossier
-```
-
-## Voir aussi 
-
-- [Documentation de Clojure : clojure.java.io](https://clojure.github.io/clojure/clojure.java.io-api.html)
-- [Documentation de Java : java.io.File](https://docs.oracle.com/javase/8/docs/api/java/io/File.html)
-- [Article de blog : Quelques astuces pour travailler avec des fichiers en Clojure](https://bbtmp.github.io/files-in-clojure/)
+## Voir aussi :
+Pour en savoir plus sur la manipulation de fichiers en Clojure, vous pouvez consulter la documentation officielle sur les entrées/sorties : https://clojure.org/reference/io. Vous pouvez également consulter la bibliothèque `clj-io` pour faciliter la manipulation de fichiers et répertoires en Clojure : https://github.com/clj-commons/clj-io.

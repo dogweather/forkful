@@ -10,31 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
-En la programación, el envío de solicitudes HTTP es esencial para comunicarse con servidores y obtener datos de la web. Aprender a enviar este tipo de solicitudes te permitirá desarrollar aplicaciones y scripts más potentes y versátiles.
+## ¿Qué y Por qué?
+Enviar una solicitud HTTP es una forma en la que los programadores pueden comunicarse con servidores web para obtener o enviar información. Esto es especialmente útil cuando se están creando aplicaciones que interactúan con otros servicios en línea, como redes sociales o API. 
 
-## Cómo hacerlo
-```Python
+## ¿Cómo hacerlo?
+
+Para enviar una solicitud HTTP en Python, podemos usar el módulo `requests`. Primero, debemos importarlo en nuestro código:
+
+```python
 import requests
-
-# Ejemplo de solicitud GET
-response = requests.get("https://algunaweb.com/api/usuarios")
-
-# Obtener datos de la respuesta
-data = response.json()
-
-# Ejemplo de solicitud POST con datos
-payload = {"nombre": "Juan", "apellido": "Pérez"}
-response = requests.post("https://algunaweb.com/api/usuarios", data=payload)
 ```
-La librería requests de Python permite realizar solicitudes HTTP de manera sencilla. En el primer ejemplo, estamos realizando una solicitud GET a una API de usuarios y guardando la respuesta en la variable "data". En el segundo ejemplo, estamos haciendo una solicitud POST con datos en formato JSON y guardando la respuesta en la variable "response". Además, es importante tener en cuenta que también se pueden enviar solicitudes PUT, PATCH, DELETE, entre otras, dependiendo de las necesidades de tu aplicación.
+
+Luego, podemos crear una solicitud GET a una URL específica usando la función `get()` y guardar la respuesta en una variable:
+
+```python
+response = requests.get('http://www.ejemplo.com/')
+```
+
+Podemos obtener el código de estado de la respuesta usando el atributo `status_code`:
+
+```python
+print(response.status_code)
+```
+
+También podemos ver el contenido de la respuesta usando el atributo `text`:
+
+```python
+print(response.text)
+```
 
 ## Profundizando
-Detrás de cada solicitud HTTP hay un proceso complejo que implica el uso de protocolos de red y encabezados que facilitan la comunicación entre el cliente y el servidor. Al enviar una solicitud HTTP, se establece una conexión TCP con el servidor y se envía una solicitud con una serie de encabezados para especificar el tipo de solicitud y los datos que se están enviando. El servidor, a su vez, responde con una serie de encabezados y el cuerpo de la respuesta que contiene los datos solicitados.
+Las solicitudes HTTP han sido una parte fundamental de la web desde su inicio en los años 90. Sin ellas, no podríamos interactuar con diferentes sitios web y servicios. Además, además del módulo `requests`, también podemos usar la biblioteca estándar `urllib` de Python para enviar solicitudes. 
 
-Existen diferentes tipos de solicitudes HTTP, como GET, POST, PUT, PATCH, DELETE, entre otras. Cada una de ellas tiene un propósito específico y se utiliza en diferentes situaciones. Además, también es importante mencionar que existen códigos de estado que indican si la solicitud fue exitosa, si hubo algún error o si es necesario realizar alguna acción adicional.
+Si deseamos especificar más detalles en nuestra solicitud, como encabezados personalizados o parámetros, podemos hacerlo usando los argumentos opcionales en la función `get()`. También podemos enviar solicitudes POST en lugar de GET cambiando el método en la función de solicitud. 
 
 ## Ver también
-- [Documentación de requests en español](https://requests.readthedocs.io/es/latest/)
-- [Códigos de estado HTTP](https://developer.mozilla.org/es/docs/Web/HTTP/Status)
-- [Protocolo HTTP](https://developer.mozilla.org/es/docs/Web/HTTP/Overview)
+- [Documentación de la biblioteca de Python "requests"](https://docs.python-requests.org/en/master/)
+- [Documentación de la biblioteca estándar de Python "urllib"](https://docs.python.org/3/library/urllib.html)

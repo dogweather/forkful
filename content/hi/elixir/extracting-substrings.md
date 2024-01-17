@@ -1,7 +1,7 @@
 ---
-title:                "उप-स्ट्रिंग निकालना"
-html_title:           "Elixir: उप-स्ट्रिंग निकालना"
-simple_title:         "उप-स्ट्रिंग निकालना"
+title:                "सबस्ट्रिंग निष्कर्षण"
+html_title:           "Elixir: सबस्ट्रिंग निष्कर्षण"
+simple_title:         "सबस्ट्रिंग निष्कर्षण"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -10,35 +10,22 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Kyu
+## क्या और क्यों?
 
-Kabhi kabhi hamara code ek bada string ho jata hai aur hame kuch specific information extract karni hoti hai jaise ki sirf pahle naam ya last naam. Iss samasya ka samadhan karne ke liye hum substrings ka istemal karte hai.
+छोटे-मोटे फाइल से उपस्ट्रिंग्स को निकालना एक आम प्रोग्रामिंग क्रिया है। प्रोग्रामर इसे व्रत के रूप में काम में लेते हैं क्योंकि यह उन्हें अपने प्रोग्राम को डेबग करने और अनुभव को बेहतर बनाने में मदद करता है।
 
-## Kaise Kare
+## तरीका:
 
 ```Elixir
-string = "John Doe"
-IO.puts(String.slice(string, 0..3))
-IO.puts(String.slice(string, 5..8))
-
+String.slice("Hello World", 2, 5)
 ```
 
-Output:
+इस कोड ब्लॉक का उपयोग करके आप "Hello World" से उपस्ट्रिंग्स को निकाल सकते हैं। आपको तीन पैरामीटर पास करने होंगे: स्ट्रिंग, प्रारंभिक इन्डेक्स और उच्चतम इन्डेक्स। इस उदाहरण में, हम 2 से शुरू करके उममव्वत की सीमा को 5 तक सेट करते हैं। आउटपुट "llo" होगा।
 
-```
-John
-Doe
-```
-Is code ke madhyam se aap dekh sakte hai ki humne `String.slice` function ka istemal kiya hai aur usne hame substring return ki hai jise humne range ke saath specify kiya hai. Range ki starting point aur ending point ko humne index numbers ki madad se specify kiya hai. Isse hume string ka specific portion mil jata hai.
+## गहराई में जाओ:
 
-## Deep Dive
+उपस्ट्रिंग्स को निकालना काफी पुरानी प्राथमिकता है। यह प्रोग्रामिंग भाषाओं में अन्य तरीकों से भी निकाले जा सकते हैं। इलिक्सियर में, कई विकल्प हैं जैसे कि ```String.trim_left``` और ```Regex.run```। उपस्ट्रिंग्स को निकालने के लिए, आपको स्ट्रिंग विभाजक को पास करना होगा जिसके अनुसार स्पष्टीकरण होगा। आप इस विज्ञापन भाषा पर अधिक जानकारी के लिए [विक्सियर की आधिकारिक दस्तावेज़](https://hexdocs.pm/elixir/String.html#slice/3) देख सकते हैं।
 
-Substrings extract karne ke liye Elixir me kai functions available hai jaise ki `String.replace`, `String.contains?`, `String.split`, etc. In functions ko istemal karke aap apne string ko manipulate kar sakte hai aur required information extract kar sakte hai.
+## इससे जुड़े भी देखें:
 
-Ek or interesting feature Elixir me hai string interpolation. Isme aap apne string me code add kar sakte hai aur wo code automatically execute ho jata hai. Isse aap apne string ko dynamic bana sakte hai aur substring extraction ko bhi asaan kar sakte hai.
-
-## Dekhein Bhi
-
-- [Elixir String Module](https://hexdocs.pm/elixir/String.html)
-- [String Module Functions](https://hexdocs.pm/elixir/String.html#functions)
-- [String Interpolation in Elixir](https://elixirschool.com/en/lessons/basics/string-interpolation/)
+मार्कडाउन जैसी अन्य भाषाओं में भी स्ट्रिंग समस्याओं का समाधान करने के लिए [ब्रेकिंग क्रीरिन ऑफ हौसेस](https://medium.com/better-programming/string-building-in-markdown-ad20ded2c642) और [अवाज़ांडो डॉक्स कोडटोक](https://dev.to/odaon/elixir-code-talking-with-docs-1556) जेसी आर्टिकिल्स भी उपलब्ध हैं। आप भी इस क्रोमेको समस्या को अधिक समाधान करने के लिए [एक्स्पेक्टोरी](https://hexdocs.pm/ex_doc/ExDoc.html) और [प्लुगडोक] (https://hexdocs.pm/plug/Plug.HTML \Module.html पास कर सकते हैं।

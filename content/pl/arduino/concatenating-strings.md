@@ -1,7 +1,7 @@
 ---
-title:                "Łączenie ciągów znaków"
-html_title:           "Arduino: Łączenie ciągów znaków"
-simple_title:         "Łączenie ciągów znaków"
+title:                "Tworzenie łączonej ciągów znaków"
+html_title:           "Arduino: Tworzenie łączonej ciągów znaków"
+simple_title:         "Tworzenie łączonej ciągów znaków"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Strings"
@@ -10,49 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+Co to jest konkatynacja ciągów znaków i dlaczego jest to ważne dla programistów?
 
-Czy kiedykolwiek zastanawiałeś się, dlaczego warto łączyć łańcuchy w programowaniu Arduino? Może wydawać się to zbędne, ale istnieją wiele sytuacji, w których konieczne będzie połączenie kilku łańcuchów w jedną linię tekstu. W tym artykule dowiesz się dlaczego i jak to zrobić.
+Konkatynacja ciągów znaków w prostych słowach oznacza łączenie ze sobą dwóch lub więcej ciągów znaków w celu utworzenia jednego dłuższego ciągu. Jest to często wykorzystywana technika w programowaniu, ponieważ pozwala na tworzenie bardziej dynamicznych i interaktywnych aplikacji.
 
-## Jak to zrobić
+Jak to zrobić:
 
-Arduino oferuje nam różne sposoby na łączenie łańcuchów, ale dzisiaj skupimy się na trzech najważniejszych: operator "+" (plus), funkcja "concat()" oraz funkcja "sprintf()". 
+Załóżmy, że chcemy połączyć ze sobą dwa ciągi znaków "Hello" i "World". W tym celu możemy wykorzystać funkcję `concat()` i podać jako parametry oba ciągi znaków, a następnie przypisać wynik do nowej zmiennej, na przykład `message`. Przykładowy kod wyglądałby następująco:
 
-```Arduino
-String tekst = "Witaj";
-String imie = "Jan";
-String powitanie = tekst + " " + imie;
-// wynik: "Witaj Jan"
+```
+char str1[] = "Hello";
+char str2[] = "World";
+char message[12];
+
+concat(message, str1, str2);
 ```
 
-```Arduino
-String pierwszy = "Arduino";
-String drugi = "jest";
-String trzeci = "fajne";
-String zdanie = pierwszy.concat(" ", drugi, " ", trzeci);
-// wynik: "Arduino jest fajne"
+Wynikiem tego kodu będzie dłuższy ciąg znaków "HelloWorld", który będzie przechowywany w zmiennej `message`.
+
+Możemy również wykorzystać konkatynację do łączenia ze sobą ciągów znaków i zmiennych liczbowych. Przykładowo, jeśli chcemy wyświetlić komunikat "Temperatura wynosi: 25 stopni", możemy zastosować następujący kod:
+
+```
+int temperatura = 25;
+char str[] = "Temperatura wynosi: ";
+char message[25];
+
+concat(message, str, temperatura);
 ```
 
-```Arduino
-char zdanie[20];
-char pierwszy[] = "Hello";
-char drugi[] = "world";
-sprintf(zdanie, "%s %s", pierwszy, drugi);
-// wynik: "Hello world"
-```
+W tym przypadku, zmienna `message` zawierać będzie pełną informację o temperaturze, która może być następnie wyświetlana na ekranie lub przekazana do innych części kodu.
 
-## Deep Dive
+Głębsze informacje:
 
-Połączenie łańcuchów może być przydatne w różnych sytuacjach, np.:
+Konkatynacja ciągów znaków jest często wykorzystywana w językach programowania, szczególnie w tych, które są przeznaczone do tworzenia aplikacji webowych lub interaktywnych aplikacji użytkowych. Alternatywnym podejściem do łączenia ciągów znaków jest użycie specjalnych znaków, takich jak "+" lub "&", jednakże funkcja `concat()` jest bardziej elastyczna i pozwala na bardziej złożone operacje.
 
-- tworzenie dynamicznych komunikatów w zależności od wartości sensora
-- tworzenie dłuższych linii tekstu w prosty sposób
-- łączenie nazw zmiennych z wartościami w celu wyświetlenia informacji na ekranie
+Jeśli chodzi o implementację, funkcja `concat()` jest zazwyczaj dostępna w większości języków programowania i przypomina jego wykorzystanie w języku C. W przypadku Arduino, funkcja ta jest dostępna w bibliotece `string.h` i może być wykorzystywana wraz z innymi funkcjami do zarządzania ciągami znaków.
 
-Warto również zwrócić uwagę na to, że wszystkie wymienione powyżej sposoby łączenia łańcuchów są dostępne również w wielu innych językach programowania, więc poznając je na Arduino, zyskujesz umiejętności, które możesz wykorzystać również w innych projektach.
+Zobacz także:
 
-## Zobacz również
-
-- Dokumentacja Arduino na temat łączenia łańcuchów: https://www.arduino.cc/reference/tr/language/functions/string-functions/concat/
-- Przykładowe projekty wykorzystujące łączenie łańcuchów w Arduino: https://www.hackster.io/search?i=projects&q=concatenating%20strings%20arduino
-- Wprowadzenie do podstaw programowania w Arduino: https://euske.github.io/arduino/samples/hello.html
+Jeśli chcesz dowiedzieć się więcej o konkatynacji ciągów znaków, polecamy zapoznać się z materiałami dostępnymi w dokumentacji Arduino na temat biblioteki `string.h`. Możesz również spróbować samemu przetestować różne metody konkatynacji i prześledzić wyniki.

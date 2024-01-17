@@ -10,81 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+# Quoi & Pourquoi?
+Vérifier si un répertoire existe est un processus courant dans la programmation pour s'assurer qu'un chemin donné existe et peut être utilisé dans le code. Les programmeurs font cela pour éviter les erreurs ou les problèmes lors de l'exécution de leur programme.
 
-Vous avez besoin de vérifier régulièrement si un dossier existe dans votre projet Go et vous voulez savoir comment le faire efficacement. Cela peut vous aider à gérer les fichiers et les ressources de manière plus dynamique dans votre code.
-
-## Comment faire
-
-Voici un exemple de code pour vérifier si un dossier existe en utilisant la fonction `os.Stat()` :
+# Comment faire :
+```
+Go existe le package `os` avec la fonction `Mkdir` pour créer un nouveau répertoire et la fonction `Stat` pour vérifier l'existence d'un répertoire. Voici un exemple de code pour vérifier si un répertoire existe et afficher un message en conséquence :
 
 ```Go
-package main
-
 import (
-  "fmt"
-  "os"
+	"fmt"
+	"os"
 )
-
+  
 func main() {
-  folderPath := "chemin/vers/mon/dossier"
-
-  // Vérification de la statut du dossier
-  if _, err := os.Stat(folderPath); os.IsNotExist(err) {
-    fmt.Println("Le dossier n'existe pas.")
+  // créer un nouveau répertoire
+  err := os.Mkdir("nouveau_repertoire", 0755)
+  
+  // vérifier s'il y a une erreur
+  if err != nil {
+    // afficher le message d'erreur
+    fmt.Println("Le répertoire existe déjà !")
   } else {
-    fmt.Println("Le dossier existe.")
+    // si aucun erreur, afficher un message de succès
+    fmt.Println("Répertoire créé avec succès !")
+  }
+
+  // vérifier si le répertoire existe avant de le supprimer
+  if _, err := os.Stat("nouveau_repertoire"); !os.IsNotExist(err) {
+    // supprimer le répertoire
+    os.Remove("nouveau_repertoire")
+    // afficher un message de succès
+    fmt.Println("Répertoire supprimé avec succès !")
   }
 }
 ```
 
-Le code ci-dessus utilise la fonction `os.Stat()` pour obtenir la statut d'un dossier spécifique, puis utilise la fonction `os.IsNotExist()` pour vérifier si le dossier n'existe pas. La fonction `IsNotExist()` renvoie un booléen indiquant si le dossier existe ou non.
+# Plongée en profondeur :
+La vérification de l'existence d'un répertoire est un processus important pour s'assurer que notre code peut fonctionner correctement. Auparavant, les programmeurs utilisaient la fonction `syscall.Stat` pour vérifier si un répertoire existe, mais elle était limitée car elle ne fonctionnait que sur les systèmes UNIX. Avec le package `os`, nous pouvons vérifier l'existence d'un répertoire à la fois sur les systèmes UNIX et Windows. De plus, en utilisant la fonction `os.Stat`, nous pouvons également obtenir des informations sur un fichier ou un répertoire telles que la taille, les permissions, etc.
 
-Voici un exemple de sortie si le dossier existe :
+# Voir aussi :
 
-```
-Le dossier existe.
-```
-
-Et voici un exemple si le dossier n'existe pas :
-
-```
-Le dossier n'existe pas.
-```
-
-## Plongée en profondeur
-
-La fonction `os.Stat()` renvoie une erreur si le dossier n'existe pas ou si l'accès est refusé. Vous pouvez également utiliser la fonction `os.IsPermission()` pour vérifier si l'erreur est due à un problème de permissions d'accès.
-
-De plus, si vous avez besoin de créer un dossier si celui-ci n'existe pas encore, vous pouvez utiliser la fonction `os.Mkdir()` pour le créer. Voici un exemple de code qui utilise à la fois la vérification de l'existence du dossier et la création si nécessaire :
-
-```Go
-package main
-
-import (
-  "fmt"
-  "os"
-)
-
-func main() {
-  folderPath := "chemin/vers/mon/dossier"
-
-  // Vérification de la statut du dossier
-  if _, err := os.Stat(folderPath); os.IsNotExist(err) {
-
-    // Création du dossier
-    err := os.Mkdir(folderPath, 0755)
-    if err != nil {
-      fmt.Println("Erreur lors de la création du dossier :", err)
-      return
-    }
-    fmt.Println("Le dossier a été créé.")
-  }
-}
-```
-
-## Voir aussi
-
-- [Documentation officielle de la fonction os.Stat()](https://pkg.go.dev/os#Stat)
-- [Documentation officielle de la fonction os.Mkdir()](https://pkg.go.dev/os#Mkdir)
-- [Article sur la gestion de fichiers avec Go](https://www.digitalocean.com/community/tutorials/how-to-use-the-filesystem-package-in-go-fr)
+- [Package `os` dans la documentation officielle de Go](https://golang.org/pkg/os/)
+- [La fonction `Mkdir` dans la documentation officielle de Go](https://golang.org/pkg/os/#Mkdir)
+- [La fonction `Stat` dans la documentation officielle de Go](https://golang.org/pkg/os/#Stat)

@@ -10,34 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué crear un archivo temporal en Javascript?
+## ¿Qué y por qué?
+Crear un archivo temporal es una tarea común en la programación, se refiere a la creación de un archivo temporal en la computadora para almacenar datos temporales o trabajar con ellos en un código. Los programadores suelen utilizar archivos temporales para organizar y estructurar mejor su código, así como para realizar pruebas y depuración de forma más eficiente.
 
-Hay muchas razones por las que un programador podría querer crear un archivo temporal en su aplicación. Es especialmente útil cuando se trabaja con datos sensibles, como contraseñas o información de pago, ya que permite almacenar temporalmente estos datos para su uso y luego eliminarlos de manera segura.
-
-## Cómo crear un archivo temporal en Javascript
-
-Para crear un archivo temporal en Javascript, se puede utilizar la función `createTempFile()` del módulo `fs`. En este ejemplo, crearemos un archivo temporal con el nombre "temp.txt":
-
-```Javascript
+## Cómo hacerlo:
+``` Javascript
+// Para crear una instancia de un archivo temporal en Node.js:
 const fs = require('fs');
-fs.createTempFile('temp.txt', (err, filePath) => {
-  if (err) {
-    console.error(err);
-  } else {
-    console.log('Archivo temporal creado en: ' + filePath);
-  }
+const tmp = require('tmp'); // Instalar el módulo desde npm first
+tmp.file(function _tempFileCreated(err, path, fd, cleanupCallback) {
+  if (err) throw err;
+
+  // Escribir datos en el archivo temporal
+  fs.write(fd, 'Hello World!', function(err, written, string) {
+    // Actualizar los cambios en el archivo
+    fs.fdatasync(fd, function(err) {
+      // Limpiar y borrar el archivo temporal
+      cleanupCallback();
+    });
+  });
+  // ¡El archivo se ha creado con éxito!
+  console.log(`Se ha creado el archivo temporal en ${path}`);
 });
 ```
 
-Este código generará un archivo temporal en la carpeta especificada por el sistema operativo, y devolverá la ruta del archivo creado en caso de éxito.
+## Detalles en profundo:
+- Históricamente, los archivos temporales se utilizaban principalmente en sistemas operativos multitarea para compartir datos entre procesos o programas y así llevar a cabo tareas complejas.
+- Aunque usar archivos temporales puede ser útil, también puede ser un indicador de un diseño de código poco eficiente. Es preferible utilizar otras técnicas como variables temporales en la memoria en lugar de almacenar datos temporales en archivos.
+- La creación de archivos temporales también se puede realizar utilizando el comando `mktemp` en sistemas UNIX o con la función `tempnam()` en PHP, entre otros métodos.
 
-## Profundizando en la creación de archivos temporales en Javascript
-
-Además de la función `createTempFile()`, el módulo `fs` también ofrece la función `mkdtemp()` para crear una carpeta temporal en lugar de solo un archivo. También se puede especificar una carpeta específica para crear el archivo temporal utilizando la opción `dir` en ambas funciones.
-
-Además, se puede utilizar la opción `keep` para mantener el archivo temporal después de que se cierra el proceso, lo cual puede ser útil para propósitos de depuración.
-
-## Ver también
-
-- [Documentación de Node.js sobre fs.createTempFile()](https://nodejs.org/docs/latest-v10.x/api/fs.html#fs_fs_createtempfile_prefix_options_callback)
-- [Ejemplo práctico de creación de un archivo temporal en Node.js](https://www.digitalocean.com/community/tutorials/how-to-use-the-tmp-directory-in-node-js)
+## Ver también:
+- Más información sobre la creación de archivos temporales en Node.js [aquí] (https://nodejs.org/api/fs.html#fs_fs_mkstemp_prefix_options_callback).
+- Una guía en profundidad sobre la manipulación de archivos temporales en Java [aquí] (https://www.baeldung.com/java-temporary-files).

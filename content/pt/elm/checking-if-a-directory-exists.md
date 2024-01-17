@@ -10,33 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Porquê
+## O que e Por Que?
 
-Se você é um programador ou está aprendendo a linguagem Elm, pode se deparar com a necessidade de verificar se um diretório existe. Isso pode ser útil, por exemplo, para garantir que um diretório necessário para a execução de determinada tarefa ou função esteja presente antes de prosseguir no código.
+Verificar se um diretório existe é um processo comumente utilizado por programadores para confirmar a existência de uma pasta específica em um sistema de arquivos. Isso pode ser útil ao criar uma aplicação que precise acessar ou manipular arquivos armazenados em um diretório específico. 
 
-## Como Fazer
+## Como Fazer:
 
-Felizmente, a linguagem Elm oferece uma forma simples e eficiente de verificar a existência de um diretório. Para isso, basta utilizar a função `File.System.directoryExists`.
+Para verificar se um diretório existe em Elm, podemos usar a função `File.isDirectory` que retorna um `Bool` indicando se o diretório especificado existe ou não. Por exemplo:
 
-Dentro de um código Elm, a forma de utilizar essa função seria a seguinte:
+```Elm
+import File
+import Task
 
+existeDiretorio : String -> Task x Bool
+existeDiretorio diretorio =
+    File.isDirectory diretorio
 ```
--- define o diretório que será verificado
-directory = "caminho/do/diretorio"
 
--- utiliza a função para verificar se o diretório existe
-File.System.directoryExists directory
-```
+No exemplo acima, usamos a função `File.isDirectory` em conjunto com a função `Task` para criar uma tarefa que irá retornar um `Bool`. Podemos chamar essa tarefa usando a função `Task.attempt` e lidando com o resultado usando `Task.andThen` e `Task.onError`.
 
-O resultado da execução desse código será um valor booleano `True` ou `False` indicando se o diretório especificado existe ou não. Por exemplo, se o diretório existir, o resultado será `True`, enquanto se o diretório não existir, o resultado será `False`.
+## Mergulho Profundo:
 
-## Aprofundando-se
+A função `File.isDirectory` foi adicionada à versão 0.19 do Elm e é uma alternativa à função `File.exists` que anteriormente era usada para verificar a existência de um diretório. Ao contrário de muitas outras linguagens de programação, Elm possui um sistema de arquivos virtual, o que significa que não é possível acessar diretamente o sistema de arquivos do computador em que o código está sendo executado. Em vez disso, o Elm usa o sistema de arquivos do usuário para simular o acesso ao sistema de arquivos e proteger a privacidade do usuário.
 
-Por trás da função `File.System.directoryExists`, a linguagem Elm se utiliza do módulo `FileSystem` da biblioteca `elm/file` para acessar o sistema de arquivos. Esse módulo oferece diversas outras funções relacionadas à manipulação de arquivos e diretórios, como `File.System.fileExists` para verificar a existência de um arquivo específico ou `File.System.listDirectory` para listar todos os arquivos e diretórios presentes em um determinado diretório.
+## Veja Também:
 
-Além disso, vale ressaltar que a função `File.System.directoryExists` só pode ser utilizada em ambientes que possuem permissão para acessar o sistema de arquivos, como em aplicações de desktop ou em servidores que foram configurados adequadamente.
-
-## Veja Também
-
-- Documentação oficial da função `File.System.directoryExists`: https://package.elm-lang.org/packages/elm/file/latest/File-System#directoryExists
-- Documentação oficial do módulo `FileSystem`: https://package.elm-lang.org/packages/elm/file/latest/FileSystem
+- Documentação oficial do Elm: [https://elm-lang.org/docs](https://elm-lang.org/docs)
+- Como trabalhar com arquivos em Elm: [https://guide.elm-lang.org/effects/file.html](https://guide.elm-lang.org/effects/file.html)

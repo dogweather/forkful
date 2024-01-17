@@ -10,45 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+#Ciao amici Pythonisti!
+Se siete programmatori, sicuramente avete sentito parlare di "invio di richieste HTTP". Ma cosa significa esattamente e perché i programmatori lo fanno?
 
-Se sei interessato a programmazione o sei un programmatore esperto, probabilmente hai già sentito il termine "HTTP request". In questo articolo, scoprirai perché le richieste HTTP sono fondamentali per l'interazione tra client e server in un'applicazione web. 
+## Cosa & Perché?
+In breve, inviare una richiesta HTTP significa comunicare con un server web per ottenere informazioni o eseguire un'azione. I programmatori lo fanno per creare applicazioni web dinamiche, ad esempio per l'elaborazione dei dati o per l'accesso ai servizi di terze parti.
 
-## Come fare
+## Come fare:
+Ecco un esempio di codice in Python per inviare una richiesta HTTP utilizzando il modulo "requests" e ottenere il codice di risposta e il contenuto della pagina:
 
-Per creare una richiesta HTTP in Python, segui questi semplici passi:
-
-1. Importa il modulo `requests` nella tua applicazione: 
 ```Python
 import requests
+
+response = requests.get("https://www.google.com/")
+print(response.status_code)
+print(response.text)
+```
+Ecco il risultato: 
+```
+200
+<!doctype html><html itemscope="" itemtype="http://schema.org/WebPage" lang="it"><head><meta content="/images/branding/googleg/1x/googleg_standard_color_128dp.png" itemprop="image"><title>Google</title>...
 ```
 
-2. Crea un oggetto `request` specificando l'URL del server e il metodo HTTP desiderato, ad esempio `GET`, `POST`, `PUT` o `DELETE`:
-```Python
-r = requests.get('https://www.example.com')
-```
+## Approfondiamo:
+In passato, i programmatori dovevano scrivere manualmente le richieste HTTP utilizzando il protocollo TCP/IP. Oggi, possono utilizzare librerie come "requests" che semplificano notevolmente il processo. Altre alternative per inviare richieste HTTP includono la libreria urllib e il modulo HTTP di Python standard. Nel dettaglio, una richiesta HTTP è costituita da un metodo (GET, POST, PUT, ecc.), un URL e un insieme di intestazioni e parametri opzionali per personalizzare la richiesta.
 
-3. Opzionalmente, puoi aggiungere dei parametri o dei dati alla tua richiesta, ad esempio se il server richiede un token di autenticazione:
-```Python
-payload = {'token': 'abcd123'}
-r = requests.get('https://www.example.com', params=payload)
-```
-
-4. Invia la richiesta al server e salva la risposta in un oggetto `response`:
-```Python
-response = r.text
-```
-
-5. Puoi quindi utilizzare i metodi e gli attributi dell'oggetto `response` per ottenere informazioni sulla risposta dal server, come ad esempio lo stato della richiesta (`response.status_code`), l'header (`response.headers`), o il contenuto della risposta (`response.text`).
-
-## Approfondimento
-
-Le richieste HTTP sono un modo standard per comunicare tra client e server in un'applicazione web. Utilizzando il protocollo HTTP, un client può inviare richieste al server e ottenere le risposte corrispondenti. Le richieste HTTP sono composte da un URL che identifica il server e il metodo HTTP, come ad esempio `GET`, `POST`, `PUT` o `DELETE`, che specifica l'azione da eseguire sul server.
-
-Il modulo `requests` è uno strumento potente e versatile per inviare richieste HTTP in Python. Oltre all'esempio di base mostrato sopra, offre anche molte altre funzionalità avanzate, come ad esempio l'utilizzo di cookie, gestione di autenticazione, e la possibilità di inviare dati in formato JSON. Ti consigliamo di esplorare la documentazione ufficiale di `requests` per saperne di più.
-
-## Vedi anche
-
-- [Documentazione ufficiale di `requests`](https://requests.readthedocs.io/en/master/)
-- [Guida alla programmazione di HTTP in Python](https://realpython.com/python-requests/)
-- [Che cos'è HTTP e come funziona](https://www.w3schools.com/whatis/whatis_http.asp)
+## Vedi anche:
+- Il tutorial "Requests: HTTP per Esseri Umani" su Python.org
+- La documentazione ufficiale del modulo "requests"
+- Il tutorial su richieste HTTP con Python su Real Python

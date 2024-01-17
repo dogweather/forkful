@@ -1,7 +1,7 @@
 ---
-title:                "Jämförande av två datum"
-html_title:           "Javascript: Jämförande av två datum"
-simple_title:         "Jämförande av två datum"
+title:                "Jämföra två datum"
+html_title:           "Javascript: Jämföra två datum"
+simple_title:         "Jämföra två datum"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Dates and Times"
@@ -10,61 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
+Att jämföra två datum är en vanlig uppgift för programmerare när de arbetar med tidsbaserade funktioner. Genom att jämföra två datum kan vi kontrollera om de är lika, om ett datum är senare än det andra eller om de befinner sig inom ett visst tidsintervall.
 
-Att kunna jämföra två datum är en viktig del av programmering. Det låter oss utföra olika handlingar beroende på hur datumet förhåller sig till varandra, vilket kan vara användbart i olika typer av applikationer.
+## Hur man gör:
+```Javascript
+// Skapa två datum-objekt
+const date1 = new Date('2021-01-01');
+const date2 = new Date('2021-02-01');
 
-## Hur man jämför två datum i JavaScript
+// Jämför om date1 är lika med date2
+if(date1 === date2){
+    console.log("Date 1 är lika med Date 2");
+} else{
+    console.log("Date 1 är inte lika med Date 2");
+}
 
-För att kunna jämföra två datum i JavaScript finns det några olika metoder som kan användas.
+// Jämför om date1 är senare än date2
+if(date1 > date2){
+    console.log("Date 1 är senare än Date 2");
+} else{
+    console.log("Date 1 är inte senare än Date 2");
+}
 
-1. Använda <, >, <= eller >= operatörerna för att jämföra två datum. Till exempel:
-
-```javascript
-const date1 = new Date(2021, 0, 1);
-const date2 = new Date(2021, 5, 1);
-
-if (date1 < date2) {
-  console.log("Datum 1 är tidigare än datum 2");
+//Jämför om date1 är inom ett visst tidsintervall (här 30 dagar) från date2
+if(Math.abs(date1 - date2) <= 1000*60*60*24*30){
+    console.log("Date 1 är inom ett tidsintervall (30 dagar) från Date 2");
+} else{
+    console.log("Date 1 är inte inom ett tidsintervall (30 dagar) från Date 2");
 }
 ```
 
-Output: `Datum 1 är tidigare än datum 2`
-
-2. Använda `getTime()` metoden för att få datumets millisekund-representation och sedan jämföra dessa. Till exempel:
-
-```javascript
-const date1 = new Date(2021, 0, 1);
-const date2 = new Date(2021, 5, 1);
-
-if (date1.getTime() < date2.getTime()) {
-  console.log("Datum 1 är tidigare än datum 2");
-}
+Output: 
+```
+Date 1 är inte lika med Date 2
+Date 1 är inte senare än Date 2
+Date 1 är inom ett tidsintervall (30 dagar) från Date 2
 ```
 
-Output: `Datum 1 är tidigare än datum 2`
+## Djupdykning:
+Att kunna jämföra datum är en viktig del av att kunna hantera tidsbaserade funktioner inom programmering. Historiskt sett har det funnits olika sätt att representera datum inom datorer och ibland kan det finnas skillnader i hur olika programmeringsspråk hanterar datum. Det är därför viktigt att ha en god förståelse för hur just det aktuella programmeringsspråket jämför datum.
 
-3. Använda `valueOf()` metoden som returnerar datumets millisekund-representation i numerisk form. Till exempel:
+En alternativ metod för att jämföra datum är att använda sig av timestamp- eller epoch-formatet, där ett datum representeras som antalet sekunder eller millisekunder som har passerat sedan ett specifikt datum och tidpunkt. Dessa format är vanligtvis mer exakta och pålitliga vid jämförelse av datum.
 
-```javascript
-const date1 = new Date(2021, 0, 1);
-const date2 = new Date(2021, 5, 1);
-
-if (date1.valueOf() < date2.valueOf()) {
-  console.log("Datum 1 är tidigare än datum 2");
-}
-```
-
-Output: `Datum 1 är tidigare än datum 2`
-
-## Djupdykning
-
-Det finns en viktig sak att komma ihåg när man jämför två datum i JavaScript: de jämförs baserat på datumets millisekund-representation. Detta innebär att två olika datum kan ha samma millisekund-värde och därmed anses vara lika, vilket kan leda till oväntade resultat.
-
-För att undvika detta problem kan man använda metoder som `getFullYear()`, `getMonth()` eller `getDate()` för att jämföra specifika delar av datumet istället för hela datumet.
-
-## Se även
-
-- [MDN web docs: Date](https://developer.mozilla.org/sv/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [W3Schools: JavaScript Date Comparison](https://www.w3schools.com/js/js_date_comparisons.asp)
-- [Stack Overflow: How to compare dates in JavaScript](https://stackoverflow.com/questions/49299418/how-to-compare-dates-in-javascript)
+## Se även:
+- [MDN - Date Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [W3Schools - JavaScript Date Comparison](https://www.w3schools.com/js/js_date_methods_compare.asp)

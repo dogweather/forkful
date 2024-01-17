@@ -10,39 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
-Quem nunca precisou comparar duas datas em um código? Seja para verificar a ordem cronológica de eventos ou para calcular a diferença de tempo entre elas, essa é uma tarefa comum em programação. A linguagem Fish Shell oferece uma maneira simples e eficiente de realizar essa comparação.
+O que é e por que comparar duas datas?
+Comparar duas datas é uma tarefa comum para programadores, pois permite verificar a equivalência ou diferença entre duas datas. Isso é especialmente útil quando se trabalha com dados temporais, como registros de eventos ou vencimento de prazos.
 
-## Como fazer
-Para comparar duas datas no Fish Shell, utilizamos o comando `date`. Para isso, precisamos especificar o formato em que as datas serão apresentadas, que é definido pelas letras entre colchetes. Vamos usar `[+%s]` para obter a representação em segundos das datas.
+Como fazer:
+Existem diferentes maneiras de comparar duas datas no Fish Shell. Uma opção é usar o comando ```date``` para obter a data atual e, em seguida, compará-la com a data desejada. Por exemplo:
+
 ```
-# Define as datas a serem comparadas
-set data1 (date -j -f %m/%d/%Y "10/10/2020" +%s)
-set data2 (date -j -f %m/%d/%Y "12/01/2021" +%s)
-
-# Realiza a comparação e exibe o resultado
-echo "Data 1 é anterior a Data 2?:" (test $data1 -lt $data2; and echo "Sim" || echo "Não")
-# Saída: Data 1 é anterior a Data 2?: Sim
+set data_atual (date +%s) # Obtém a data atual em segundos desde 1970
+set data_comparada 1613686800 # Define a data que queremos comparar em segundos desde 1970 
+if test $data_atual -gt $data_comparada # Compara as datas utilizando a opção '-gt' (maior que)
+    echo "A data atual é posterior à data comparada"
+end
 ```
-Para entender melhor esse exemplo, vamos explicar o que cada parte do código faz:
-- Na primeira linha, definimos a variável `data1` que recebe o valor da data "10/10/2020" formatada como segundos usando o comando `date`
-- Da mesma forma, na segunda linha, definimos a variável `data2` com a data "12/01/2021"
-- Na terceira linha, utilizamos o comando `test` em conjunto com o operador `-lt` (menor que) para verificar se `data1` é menor que `data2`
-- Por fim, usamos o operador lógico `&&` para exibir "Sim" se a comparação for verdadeira, e `||` para exibir "Não" se for falsa.
 
-## Mergulho Profundo
-Além de verificar se uma data é anterior ou posterior a outra, também é possível calcular a diferença de tempo entre elas utilizando o mesmo formato `[+%s]`. Vamos ver um exemplo:
+Outra opção é usar o módulo ```date``` do Fish Shell, que possui funções específicas para comparação de datas. Por exemplo:
+
 ```
-set data1 (date -j -f %m/%d/%Y "10/10/2020" +%s)
-set data2 (date -j -f %m/%d/%Y "12/01/2021" +%s)
-
-set diff (math $data2 - $data1)
-echo "A diferença entre as datas é de $diff segundos"
-# Saída: A diferença entre as datas é de 10368000 segundos
+set data_atual (date +%D) # Obtém a data atual no formato DD/MM/YY 
+set data_comparada 18/02/21 # Define a data que queremos comparar 
+if date -f %D -d "$data_atual" > date -f %D -d "$data_comparada" # Compara as datas utilizando a função '-f' (formato) e '-d' (data)
+    echo "A data atual é posterior à data comparada"
+end
 ```
-Nesse exemplo, utilizamos o comando `math` para subtrair o valor da `data1` do valor da `data2` e armazenamos o resultado na variável `diff`. Em seguida, exibimos essa diferença em segundos.
 
-## Veja também
-- [Documentação oficial do Fish Shell](https://fishshell.com/docs/current/index.html)
-- [Tutorial básico de Fish Shell](https://dev.to/bitlang/tutorial-fish-shell-basico-3glj) (em inglês)
-- [Como formatar datas no Fish Shell](https://bobcares.com/blog/format-date-fish-shell/) (em inglês)
+Mergulho profundo:
+Comparar datas pode ser uma tarefa complexa, pois é necessário levar em consideração formatos diferentes, fusos horários, entre outros aspectos. Além das opções mencionadas acima, também é possível utilizar ferramentas externas, como o utilitário ```dateutils```, que permite realizar operações com datas no Fish Shell.
+
+Veja também:
+- Documentação oficial do comando ```date```: https://fishshell.com/docs/current/cmds/date.html
+- Documentação do módulo ```date```: https://fishshell.com/docs/current/cmds/date.html#date
+- Utilitário dateutils: https://github.com/hroptatyr/dateutils

@@ -10,32 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi 
+Qu'est-ce que le traitement JSON et pourquoi les programmeurs l'utilisent?
 
-Si vous êtes un développeur à la recherche d'un moyen efficace de manipuler et de transférer des données, alors travailler avec des fichiers JSON en Clojure pourrait être la solution parfaite. En utilisant Clojure pour traiter des données JSON, vous pouvez bénéficier de la syntaxe concise du langage ainsi que de ses nombreuses bibliothèques et outils qui facilitent le traitement des données.
+JSON, ou JavaScript Object Notation, est un format de données populaire utilisé pour stocker et échanger des informations structurées. Il est principalement utilisé dans le développement web pour transférer des données entre un serveur et un navigateur. Les programmeurs l'utilisent car il est facile à lire et à écrire, et est pris en charge par de nombreux langages de programmation.
 
-## Comment faire 
+Comment faire:
 
-```Clojure (use '[clojure.data.json :as json])
+```Clojure 
+;; pour convertir un objet Clojure en JSON
+(clojure.data.json/write-str {:nom "John" :age 25})
 
-;; Créer un fichier JSON avec des données
-(def data {:nom "Jean" :âge 30 :sexe "homme"})
+// {"nom": "John", "age": 25}
 
-;; Convertir les données en format JSON
-(json/write-str data)
-;; Output : {"nom":"Jean","age":30,"sexe":"homme"}
+;; pour convertir une chaîne JSON en objet Clojure
+(clojure.data.json/read-str "{\"nom\": \"Jane\", \"age\": 30}")
 
-;; Lire un fichier JSON et le convertir en données Clojure
-(json/read-str "{\"nom\":\"Marie\",\"age\":\"25\",\"sexe\":\"femme\"}")
-;; Output : {:nom "Marie", :âge 25, :sexe "femme"}
+// {:nom "Jane", :age 30}
 ```
 
-## Plongée en profondeur 
+Plongée en profondeur:
 
-En travaillant avec Clojure, vous aurez également accès à des bibliothèques telles que `cheshire` et `clj-json` qui fournissent des fonctionnalités avancées pour la manipulation de données JSON. Vous pourriez également trouver utile d'utiliser des outils tels que `json-schema` pour valider la structure de vos fichiers JSON, ou `jsonista` pour simplifier la conversion de données en JSON. N'hésitez pas à explorer ces différentes options pour trouver celle qui correspond le mieux à vos besoins.
+JSON a été créé en 2001 pour résoudre les problèmes liés au traitement des données dans les applications web. Avant JSON, XML était principalement utilisé, mais il était plus compliqué à lire et écrire. D'autres alternatives à JSON incluent YAML et EDN. En interne, Clojure utilise la bibliothèque Jackson pour convertir des données entre Clojure et JSON.
 
-## Voir aussi 
+À voir:
 
-- [Documentation officielle Clojure pour le traitement de données JSON](https://clojure.org/guides/json)
-- [Tutoriel pour travailler avec des données JSON en Clojure](https://www.baeldung.com/clojure-json)
-- [Comparaison des bibliothèques JSON en Clojure](https://www.dailycred.com/article/clojure-json-libraries-compared)
+- Bibliothèque de traitement JSON Jackson: https://github.com/FasterXML/jackson
+- Documentation Clojure pour la bibliothèque de données JSON: https://clojure.github.io/data.json/

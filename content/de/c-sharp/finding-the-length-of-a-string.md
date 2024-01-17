@@ -10,32 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
-
-Das Ermitteln der Länge einer Zeichenfolge ist eine grundlegende und häufig verwendete Funktion in der Programmierung. Sie ermöglicht es uns, die genaue Größe einer Zeichenfolge zu kennen und diese Informationen in unserem Code verwenden zu können. 
-
-## Wie geht's
-
-Um die Länge einer Zeichenfolge in C# zu finden, können wir die Methode ".Length" verwenden. Zum Beispiel: 
-
+## Was & Warum?
+Die Länge eines Strings zu finden bedeutet herauszufinden, wie viele Zeichen ein bestimmter Text enthält. Programmierer tun dies, um die Größe von Strings zu bestimmen und sie effektiv zu nutzen.
+ 
+## So geht's:
+Es gibt verschiedene Möglichkeiten, die Länge eines Strings in C# zu finden. Eine einfache Methode ist die Verwendung der ```Length``` Eigenschaft, wie im folgenden Beispiel:
+ 
 ```C#
-string text = "Hallo Welt";
+string text = "Hallo Welt!";
 int length = text.Length;
-Console.WriteLine("Die Länge der Zeichenfolge beträgt: " + length);
+Console.WriteLine(length); // Output: 11
+```
+Eine weitere Möglichkeit ist die Verwendung der ```Count``` Funktion, die die Anzahl der Elemente in einem String-Array zurückgibt. Hier ist ein Beispiel, das beide Methoden zeigt:
+ 
+```C#
+string text = "Hallo Welt!";
+int length1 = text.Length;
+int length2 = text.ToCharArray().Count();
+Console.WriteLine(length1); // Output: 11
+Console.WriteLine(length2); // Output: 11
 ```
 
-Dieser Code wird "Die Länge der Zeichenfolge beträgt: 11" ausgeben, da es insgesamt 11 Zeichen in der Zeichenfolge "Hallo Welt" gibt. Wenn die Zeichenfolge jedoch leer ist, wird der Wert 0 zurückgegeben.
+## Tief eintauchen:
+Das Finden der Länge eines Strings ist eine grundlegende und häufig verwendete Aufgabe in der Programmierung. Es geht zurück auf die frühen Tage von BASIC, als das Befehlszeilen-Tool ```LEN``` verwendet wurde, um die Länge von Strings zu ermitteln. In C# gibt es mehrere Möglichkeiten, die Länge eines Strings zu finden, einschließlich der Verwendung von Regulären Ausdrücken oder der Implementierung einer eigenen Funktion. Es ist wichtig zu beachten, dass die Länge eines Strings in C# immer die Anzahl der Zeichen und nicht die Anzahl der Bytes im String ist.
 
-Es ist wichtig zu beachten, dass die Methode ".Length" nur auf Zeichenfolgen oder Arrays verwendet werden kann und nicht auf anderen Datentypen.
-
-## Tiefergehende Information
-
-In C# wird die Länge einer Zeichenfolge durch die Anzahl der Unicode-Zeichen in der Zeichenfolge bestimmt. In der veranschaulichten Beispielimplementierung der ".Length"-Methode wird dies durch die Eigenschaft "länge" des "CodePageDataLayer"-Objekts ausgeführt. Die Unicode-Zeichen werden in UTF-16-Codierung gespeichert, was bedeutet, dass die Länge einer Zeichenfolge in C# immer ein Vielfaches von 2 sein wird.
-
-Ein weiterer wichtiger Punkt ist, dass die Methode ".Length" eine "read-only"-Eigenschaft ist, was bedeutet, dass sie nicht geändert werden kann. Wir können also die Länge einer Zeichenfolge nicht direkt modifizieren, sondern nur abfragen.
-
-## Siehe auch
-
-- [String.Length Eigenschaft (C#-Referenz)](https://docs.microsoft.com/de-de/dotnet/api/system.string.length?view=netcore-3.1)
-- [UTF-16 (Wikipedia)](https://de.wikipedia.org/wiki/UTF-16)
-- [Unicode (Wikipedia)](https://de.wikipedia.org/wiki/Unicode)
+## Siehe auch:
+- [MSDN-Dokumentation zu String-Länge](https://docs.microsoft.com/de-de/dotnet/api/system.string.length?view=net-5.0)
+- [C# - String-Länge Online-Beispiel](https://www.tutorialspoint.com/csharp/csharp_string_length.htm)
+- [Video-Tutorial zum Finden der Länge eines Strings in C#](https://www.youtube.com/watch?v=_1BmJlmhPSQ)

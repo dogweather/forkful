@@ -10,64 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-Have you ever needed to compare two dates in your programming projects? Maybe you need to check if an event has passed or if a user's account is still active. Whatever the reason may be, comparing two dates is a common task in the world of programming. In this article, we will explore how to compare two dates in PHP and why it can be useful in your projects.
+Comparing two dates in PHP is the process of determining whether one date is equal to, before, or after another date. This is useful for comparing events, scheduling tasks, and handling time-based data. Programmers use this feature to manipulate dates and ensure accurate and efficient coding.
 
-## How To
+## How to:
 
-To begin, let's look at how to compare two dates in PHP using the built-in `DateTime` class. First, we need to create two `DateTime` objects with the dates we want to compare:
+To compare two dates in PHP, use the `strtotime()` and `date()` functions. The `strtotime()` function converts the date into a Unix timestamp, which represents the number of seconds since January 1, 1970. Then, use the `date()` function to format the timestamp into a readable date format. Below is an example code:
 
-```PHP
-$firstDate = new DateTime('2021-04-01');
-$secondDate = new DateTime('2021-04-15');
+```
+$date1 = "2020-09-23";
+$date2 = "2020-09-24";
+
+$timestamp1 = strtotime($date1);
+$timestamp2 = strtotime($date2);
+
+echo date('d-m-Y', $timestamp1); //Output: 23-09-2020
+echo date('d-m-Y', $timestamp2); //Output: 24-09-2020
+
 ```
 
-Now, let's compare these two dates using the `diff()` method:
+To compare the two dates, simply use comparison operators such as `>`, `<`, or `==` to determine the relationship between the two dates. Below is an example code:
 
-```PHP
-$dateDiff = $firstDate->diff($secondDate);
 ```
-
-This will return a `DateInterval` object, which contains the difference between the two dates in terms of years, months, days, etc. We can then use the `days` property to get the number of days between the two dates:
-
-```PHP
-$days = $dateDiff->days;
-echo "The difference between the two dates is $days days.";
-```
-
-We can also compare the two dates using the `DateTime` objects themselves. The `DateTime` class has a `format()` method which allows us to format the dates in a specific way. We can use this to compare the two dates by converting them to strings and then comparing them:
-
-```PHP
-$firstDateAsString = $firstDate->format('Y-m-d');
-$secondDateAsString = $secondDate->format('Y-m-d');
-
-if ($firstDateAsString === $secondDateAsString) {
-    echo "The two dates are equal.";
-} elseif ($firstDateAsString > $secondDateAsString) {
-    echo "The first date is after the second date.";
+if ($timestamp1 > $timestamp2) {
+  echo "Date 1 is after Date 2";
+} else if ($timestamp1 < $timestamp2) {
+  echo "Date 1 is before Date 2";
 } else {
-    echo "The first date is before the second date.";
+  echo "Date 1 is equal to Date 2";
 }
+
+//Output: Date 1 is before Date 2
 ```
 
-This will give us the flexibility to compare the dates in different formats and also perform different actions depending on the result of the comparison.
+## Deep Dive:
 
-## Deep Dive
+The concept of comparing dates has been around for centuries, as humans have always needed a way to organize and track time-based events. In PHP, there are alternative functions such as `DateTime` and `DateTimeImmutable` that provide more flexibility in date manipulation. However, the `strtotime()` and `date()` functions are still commonly used due to their ease of use and wide support.
 
-When comparing two dates in PHP, it is important to be aware of the time zone your server is set to. The `DateTime` class uses the default time zone set in your `php.ini` file. This means that if your server is set to a different time zone than the one specified in the dates, the comparison may not give the expected results. To avoid this, you can specify the time zone for each `DateTime` object like this:
+When using the `strtotime()` function, it is important to note that it works best with dates in the Y-m-d format, similar to the example code above. Changing the format may result in unexpected outputs. Additionally, the `date()` function offers various date formats that can be used to display the date in different styles.
 
-```PHP
-$firstDate = new DateTime('2021-04-01', new DateTimeZone('America/New_York'));
-$secondDate = new DateTime('2021-04-15', new DateTimeZone('America/New_York'));
-```
+## See Also:
 
-This will ensure that both `DateTime` objects are using the same time zone for the comparison.
-
-Another thing to keep in mind is that when comparing two dates, the comparison is done based on the entire date and time, not just the day. This means that if your dates have different times, the comparison may not give the expected result. To compare only the dates and ignore the time, you can use the `setTime()` method to set the time of both `DateTime` objects to midnight before comparing them.
-
-## See Also
-
-- [PHP DateInterval Class](https://www.php.net/manual/en/class.dateinterval.php)
-- [PHP DateTime Class](https://www.php.net/manual/en/class.datetime.php)
-- [PHP DateTimeZone Class](https://www.php.net/manual/en/class.datetimezone.php)
+- [PHP Manual - Date and Time Functions](https://www.php.net/manual/en/ref.datetime.php)
+- [PHP: Comparison Operators](https://www.php.net/manual/en/language.operators.comparison.php)

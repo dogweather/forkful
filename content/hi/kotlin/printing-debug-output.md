@@ -10,42 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Kyun
+## क्या और क्यों?
+डिबग आउटपुट को प्रिंट करना क्या है और क्यों प्रोग्रामर्स इसे करते हैं? डिबग आउटपुट से आप अपने कोड में खराबी का पता लगाने की अनुमति देता है और उसे सुधारने में मदद करता है। यह आपको अपने कोड की समस्याओं को सुलझाने में मदद करता है और उन्हें दूर करने में आसानी प्रदान करता है।
 
-Kya aapne kabhi apne code mein bug ko dhoondhne ke liye debug output ka upyog kiya hai? Agar haan, to aap jaante honge ki ye koi aasaan kaam nahi hai. Debug output ka upyog karne se aap apne code ki durusti ko jaan sakte hain aur sahi prakaar se sahi jagah par kaam kar raha hai ya nahi. Isliye, debug output ko print karne ka ek accha tarika hai apne code ko improve karne ka.
-
-## Kaise
-
-Debug output ko print karne ke liye, aap ```print()``` ya ```println()``` ka upyog kar sakte hain Kotlin mein. Ye strings, integers, ya booleans jaise kisi bhi data type ki values ko print karte hain. Example ke liye, yahaan ek simple ```print()``` ka code hai:
-
+## कैसे:
 ```Kotlin
-fun main(args: Array<String>) {
-    val name = "John"
-    val age = 25
-    
-    print("Hello, my name is $name and I am $age years old.")
+fun main() {
+   val num1 = 5
+   val num2 = 10
+   val sum = num1 + num2
+   println("Sum = $sum")
 }
 ```
+उपरोक्त कोड में, हमने `println()` फंक्शन का उपयोग करके डिबग आउटपुट प्रिंट किया है। हमने शामिल किए गए दो संख्याओं का योग किया और सम को प्रिंट किया है। आप भी अपने कोड में विभिन्न स्थानों पर डिबग आउटपुट प्रिंट कर सकते हैं और अपनी समस्याओं को सुलझा सकते हैं। 
 
-Is code mein, humne ```name``` aur ```age``` ki values ko print kiya hai. Is tarah se, aap apne code mein kisi bhi variable ko debug output ke liye print kar sakte hain.
+## गहराई से खोज करें:
+डिबग आउटपुट का प्रयोग एक प्राचीन कौशल है जो प्रोग्रामर्स द्वारा अपने कोड की समस्याओं को सुलझाने में मदद करता है। यह उन्हें अपने कोड को दिखाते हैं और खराबियों को ध्यान से देखने और सुलझाने की अनुमति देता है। इसके अलावा, अन्य विकल्प जैसे कि डिबगिंग टूल्स भी उपलब्ध हैं जो डिबगिंग को आसान बनाते हैं। 
 
-## Deep Dive
+कोटलिन में डिबग आउटपुट प्रिंट करने का सबसे आसान तरीका `println()` फंक्शन का उपयोग करना है। हालांकि, आप इसके अलावा भी अन्य तरीकों से डिबग आउटपुट प्रिंट कर सकते हैं जैसे कि लॉगिंग फ्रेमवर्क का उपयोग करना या खुद से एक डिबगिंग फंक्शन लिखना। 
 
-Debug output ka upyog aapke code ko measure karne ka accha tarika hai. Isse aapko pata chalta hai ki aapka code kis hisse mein slow hai ya kis jagah par error aaya hai. Aap apne code mein variables ko print karke unhe monitor kar sakte hain aur sahi jagah par sahi values aa rahe hain ya nahi.
-
-Ek aur acchi baat ye hai ki debug output aapke code ko document bhi banata hai. Agar aap ya aapke team ke members baad mein aapke code ko dekhein to debug output se pata chalta hai ki code kaise kaam karta hai aur usme kya values use ho rahi hain.
-
-## Dekhein Bhi
-
-- https://kotlinlang.org/docs/tutorials/kotlin-for-py/print.html
-- https://www.geeksforgeeks.org/debug-output-kotlin/
-- https://www.raywenderlich.com/1531427-debugging-kotlin-apps-in-android-studio
-- https://www.youtube.com/watch?v=fzjbhgxUYlM
-
-Padhne ke liye dhanyavaad!
-
-## Dekhein bhi
-
-- https://kotlinlang.org/
-- https://www.androidauthority.com/learn-kotlin-for-android-774599/
-- https://github.com/Kotlin
+## और देखें:
+- [कोटलिन डिबगिंग के लिए ऑफिशियल गाइड](https://kotlinlang.org/docs/tutorials/basic-syntax.html#using-kotlin-from-the-command-line) 
+- [कोटलिन लॉगिंग फ्रेमवर्क की डॉक्यूमेंटेशन](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.logging/index.html)
+- [कोटलिन डिबगिंग के लिए विभिन्न टूल्स की सूची](https://kotlinlang.org/docs/tutorials/command-line.html#using-command-line-tools)

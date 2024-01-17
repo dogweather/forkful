@@ -10,45 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué comprobar si un directorio existe?
+## ¿Qué y por qué?
 
-Para los programadores, verificar si un directorio existe es una tarea común al trabajar con archivos y procesos. Esto es especialmente importante si se están desarrollando aplicaciones que necesiten acceder y manipular archivos en una ubicación específica.
+Comprobar si un directorio existe es una tarea común en la programación. Permite a los programadores verificar si un directorio específico existe en una ubicación determinada y tomar las medidas correspondientes en consecuencia. Esta comprobación es especialmente útil cuando se trabaja con archivos y directorios en lugar de almacenamiento en línea.
 
-## Cómo hacerlo
-
-La forma más sencilla de comprobar si un directorio existe en Go es utilizar la función `os.Stat()` y verificar si se produce un error. Si no hay error, significa que el directorio existe. A continuación se muestra un ejemplo de cómo se puede implementar esto en código:
+## Cómo hacerlo:
 
 ```Go
-package main
-
-import (
-    "fmt"
-    "os"
-)
-
 func main() {
-    // Directorio que se desea verificar
-    directorio := "mi/directorio"
+	// Creamos un directorio ficticio para demostrar el proceso
+	err := os.Mkdir("mi_directorio", 0755)
+	if err != nil {
+		fmt.Println("Error al crear el directorio:", err)
+	} else {
+		fmt.Println("Directorio creado correctamente.")
+	}
 
-    // Se utiliza la función os.Stat() para obtener información del directorio
-    _, err := os.Stat(directorio)
-
-    // Si se produce un error, significa que el directorio no existe
-    if os.IsNotExist(err) {
-        fmt.Printf("El directorio \"%s\" no existe.", directorio)
-    } else {
-        fmt.Printf("El directorio \"%s\" sí existe.", directorio)
-    }
+	// Comprobamos si el directorio existe utilizando la función "Exists" de la biblioteca "path/filepath"
+	existe, err := filepath.Exists("mi_directorio")
+	if err != nil {
+		fmt.Println("Error al comprobar si el directorio existe:", err)
+	} else if existe {
+		fmt.Println("El directorio existe.")
+	} else {
+		fmt.Println("El directorio no existe.")
+	}
 }
 ```
 
-Este código imprimirá un mensaje indicando si el directorio existe o no. Si se desea hacer algo más con el directorio existente, se pueden usar las funciones `os.Mkdir()` o `os.MkdirAll()` para crearlo.
+## Profundizando:
 
-## Profundizando
+Comprobar si un directorio existe es una tarea esencial para trabajar con archivos y directorios en Go. Anteriormente, se utilizaba la función "os.Stat" para este propósito, pero esta función solo funciona en sistemas Unix. Afortunadamente, la biblioteca "path/filepath" proporciona la función "Exists" que funciona en todos los sistemas operativos.
 
-Ahora que sabemos cómo verificar si un directorio existe, es importante entender cómo y dónde se aplican estas comprobaciones. En Go, es una buena práctica hacer estas verificaciones antes de manipular archivos o realizar otras operaciones en un directorio. También es importante tener en cuenta que la función `os.Stat()` también se utiliza para comprobar la existencia de un archivo, por lo que se puede utilizar de la misma manera para verificar tanto archivos como directorios.
+## Véase también:
 
-## Ver también
-
-- [Documentación de os.Stat() en la página oficial de Go](https://golang.org/pkg/os/#Stat)
-- [Ejemplo de uso de os.Stat() en el blog de Go by Example](https://gobyexample.com/stat)
+- Documentación oficial de Go sobre "os.Stat": https://golang.org/pkg/os/#Stat
+- Documentación oficial de Go sobre "path/filepath": https://golang.org/pkg/path/filepath/

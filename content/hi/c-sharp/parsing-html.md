@@ -1,7 +1,7 @@
 ---
-title:                "HTML का अनुवाद"
-html_title:           "C#: HTML का अनुवाद"
-simple_title:         "HTML का अनुवाद"
+title:                "एचटीएमएल का विश्लेषण"
+html_title:           "C#: एचटीएमएल का विश्लेषण"
+simple_title:         "एचटीएमएल का विश्लेषण"
 programming_language: "C#"
 category:             "C#"
 tag:                  "HTML and the Web"
@@ -10,46 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
+HTML को पार्स करना क्या है और प्रोग्रामर इसे क्यों करते हैं? 
+HTML, अर्थात HyperText Markup Language, एक भाषा है जो वेब पृष्ठों को दिखाने के लिए इस्तेमाल की जाती है। जब हम किसी वेब पृष्ठ को खोलते हैं तो उसमें हमें संरचित तरीके से इन टैगों का उपयोग दिखाई देता है। पार्सिंग का अर्थ है कि हम इन टैगों को पढ़ कर उसमें दिए गए संरचनाओं को समझते हैं। प्रोग्रामर इसको करते हैं ताकि वे वेब डेवलपमेंट में आसानी से बदलाव कर सकें और डाटा को वेब पृष्ठों से प्राप्त कर सकें।
 
-जब हम वेबसाइटों को खोजते हैं, हमें अक्सर वेब पेजों से विभिन्न जानकारी और डेटा को प्राप्त करने की आवश्यकता पड़ती है। HTML वास्तव में वेब पेजों का रूप बनाता है और हम इस भाषा को उपयोग करके वेब पेजों से महत्वपूर्ण जानकारी को निकाल सकते हैं। इसलिए, HTML पार्सिंग करना हमारे लिए काफी उपयोगी हो सकता है।
+कैसे करें? 
+यहां मैं आपको सी# का उपयोग करके HTML पार्सिंग करने का एक उदाहरण बताऊंगा। इसके लिए हम HtmlAgilityPack नामक लाइब्रेरी का उपयोग करेंगे। सबसे पहले आपको हमारे प्रोग्राम में इस नामक नामस्थान (Namespace) को जोड़ना होगा:
 
-## कैसे करें
-
+```C#
+using HtmlAgilityPack; 
 ```
-C# using System;
-using System.Net;
-using System.IO;
-using HtmlAgilityPack;
 
+अपने वेब पृष्ठ के URL को स्ट्रिंग में निर्दिष्ट करें:
+```C#
 string url = "https://www.example.com";
+```
 
-// वेब पेज से डेटा प्राप्त करने के लिए रिक्वेस्ट भेजें
-HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
-HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+फिर हम इस URL को इंस्टेंस के साथ HtmlWeb क्लास को भेजेंगे जो इसे डाउनलोड करेगा:
 
-// स्ट्रीम रीडर से रिस्पॉन्स डेटा पढ़ें
-Stream dataStream = response.GetResponseStream();
-StreamReader reader = new StreamReader(dataStream);
-string responseFromServer = reader.ReadToEnd();
+```C#
+var web = new HtmlWeb();
+var doc = web.Load(url); 
+```
 
-// HtmlDocument ऑब्जेक्ट बनाएं और उसे वेब पेज डेटा से लोड करें
-HtmlDocument document = new HtmlDocument();
-document.LoadHtml(responseFromServer);
+इसके बाद हम XPath का उपयोग करके वेब पेज के जो भी एलिमेंट्स हमें चाहिए उन्हें चुनेंगे। 
 
-// XPath का उपयोग करके चाहे गए डाटा को निकालें
-string xpath = "//h1";
-HtmlNodeCollection nodes = document.DocumentNode.SelectNodes(xpath);
-
-// निकाले गए डाटा को प्रिंट करें
-foreach (HtmlNode node in nodes)
+```C#
+var nodes = doc.DocumentNode.SelectNodes("//h1");
+foreach(var node in nodes)
 {
-    Console.WriteLine(node.InnerText);
+    Console.WriteLine(node.InnerText); 
 }
 ```
 
-आपको ऊपर दिए गए कोड से समझ आ गया होगा कि हम कैसे एक वेब पेज से डेटा को प्राप्त कर सकते हैं और XPath का उपयोग करके जैसी भी जानकारी हमें चाहिए, उसे वेब पेज से निकाल सकते हैं। इसके अलावा, हम HtmlAgilityPack नामक एक उपयोगी लाइब्रेरी भी उपयोग कर सकते हैं जो कि हमारे लिए पार्सिंग प्रक्रिया को और सरल बना देती है।
+इसका आउटपुट होगा:
 
-## गहराई में
+```C#
+My Website Title 
+```
 
-HTML पार्सिंग करने के लिए अनेक तरीके हैं जो कि खासकर सभी के लिए फायदेमंद हो सकते ह
+गहराई में जाएं: 
+पहले वेब पृष्ठों को पार्स करने के लिए लोग रूटरॉर्स (Regular Expressions) का उपयोग करते थे और इससे कई समस्याएं आ सकती थीं। लेकिन अब हम उनके बजाय XPath या CSS Selector का उपयोग करके पार्सिंग कर सकते हैं जो कि आसान होता है और अधिक पावरफुल है। HtmlAgilityPack बहुत लोकप्रिय है और आसानी से उपयोग किया जा सकता है। इसके अलावा, आप .NET के अन्य लाइब्रेरी को भी प्रयोग करके पार्सिंग कर सकते हैं जैसे जैसे AngleSharp या CsQuery।
+
+जुड़ाव: 
+अगर आप अपनी सी# क्षमता को और बढ़ाना चाहते हैं तो आप वेब संसाधन से सीख सकते हैं। यह आपको अपने कोड को बेहतर और अधिक प्रभावी बनाने में मदद करेगा। आप उनका उपयोग इनटरनेट से डेटा प्राप्त करने के लिए भी कर सकते हैं।
+
+सं

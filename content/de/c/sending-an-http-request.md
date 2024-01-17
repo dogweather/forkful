@@ -10,53 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+# Was & Warum?
 
-Warum sollte man sich die Mühe machen, ein HTTP Request in C zu senden? Nun, wenn du jemals eine Webanwendung oder API programmieren musst, wirst du fast immer HTTP Requests benötigen. Diese ermöglichen es dir, Daten von einem Server zu erhalten oder an einen Server zu senden, was für die meisten Websites und Anwendungen unerlässlich ist. Also lass uns herausfinden, wie man das in C macht!
+Das Senden einer HTTP-Anfrage (Hypertext Transfer Protocol) ist ein wesentlicher Bestandteil der Webprogrammierung. Es ermöglicht es Programmen, Daten von entfernten Servern zu erhalten und zu senden. Dies kann Typen wie Text, Bilder oder JSON enthalten. Programmierer verwenden dieses Werkzeug, um mit APIs zu interagieren, Webseiten zu laden und vieles mehr.
 
-## How To
+# Wie?
 
-Der erste Schritt, um einen HTTP Request in C zu senden, ist das Einbinden der `curl` Bibliothek. Diese Bibliothek ermöglicht es uns, HTTP-ähnliche Requests auf einer Ebene über der Sockets API durchzuführen. Hier ist ein Beispiel, wie man eine einfache GET Request an eine URL sendet:
+Um eine HTTP-Anfrage in C zu senden, verwenden wir die Bibliothek <curl.h>. Wir schaffen eine Verbindung zum entfernten Server und geben eine Zeichenfolge mit der gewünschten Aktion ein. Hier ist ein Beispiel:
 
 ```C
-#include <stdio.h>
 #include <curl/curl.h>
 
-int main(void)
-{
+int main(void) {
   CURL *curl;
   CURLcode res;
-  char *url = "https://example.com/api/data";
+  char *url = "https://example.com";
 
-  curl = curl_easy_init();    //initialisiere curl
+  curl = curl_easy_init();
   if(curl) {
-    //setze die URL
     curl_easy_setopt(curl, CURLOPT_URL, url);
-    //führe die GET Request aus
     res = curl_easy_perform(curl);
-    //überprüfe auf Fehler
     if(res != CURLE_OK)
-      fprintf(stderr, "curl Fehler: %s\n",
+      fprintf(stderr, "curl_easy_perform() failed: %s\n",
               curl_easy_strerror(res));
-    //schließe curl
     curl_easy_cleanup(curl);
   }
   return 0;
 }
 ```
 
-Die Ausgabe wird je nach URL variieren, aber du solltest ein HTML-Dokument sehen, das die Daten des Servers enthält.
+Dieses Beispiel erstellt eine Verbindung zu "https://example.com" und führt eine GET-Anfrage aus. Die Antwort des Servers wird entweder geschrieben oder der Fehler wird ausgegeben.
 
-## Deep Dive
+# Tiefer Einblick
 
-Nun, das war eine sehr einfache GET Request. Aber was ist, wenn du Daten an den Server senden oder spezifischere Informationen in deinem Request haben möchtest? Dafür gibt es verschiedene Optionen, die alle mit der `curl_easy_setopt` Funktion gesetzt werden können.
+Das erste Werkzeug, das für die Übermittlung von HTTP-Anfragen verwendet wurde, war das "Telnet"-Protokoll. Es wurde in den 1960er Jahren entwickelt und ermöglichte es Benutzern, Befehle direkt an entfernte Server zu senden. In den 1990er Jahren wurde das HTTP-Protokoll entwickelt, das speziell für die Übermittlung von Webdaten entwickelt wurde.
 
-Du kannst z.B. einen POST Request senden, indem du die Einstellung `CURLOPT_POSTFIELDS` auf die Daten setzt, die du senden möchtest. Du kannst auch die Header deines Requests mit `CURLOPT_HTTPHEADER` anpassen, um spezifische Anforderungen zu erfüllen.
+Es gibt mehrere Alternativen zu <curl.h>, wie z.B. die Verwendung von "Sockets" direkt in C oder die Verwendung verbreiteter Webframeworks wie "Java Spring".
 
-Eine vollständige Liste aller Optionen findest du in der `curl` Dokumentation.
+Bei der Übermittlung von HTTP-Anfragen gibt es einige Details zu beachten, z.B. die Verwendung von Zertifikaten für sichere Verbindungen, die Verwendung von "Headers" für die Übermittlung von Informationen und die Unterscheidung zwischen GET- und POST-Anfragen.
 
-## Siehe auch
+# Siehe auch
 
-- Offizielle `curl` Dokumentation: https://curl.haxx.se/libcurl/c/
-- Übersicht über HTTP Requests in C: https://www.hackerearth.com/practice/notes/http-request-in-c/
-- Beispielcode für verschiedene Arten von HTTP Requests in C: https://curl.haxx.se/libcurl/c/example.html
+- Offizielle Dokumentation von <curl.h>: https://curl.haxx.se/libcurl/
+- HTTP-Telnet-Client: https://curl.haxx.se/docs/httpscripting.html

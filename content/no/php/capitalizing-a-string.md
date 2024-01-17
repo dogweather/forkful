@@ -1,7 +1,7 @@
 ---
-title:                "Stor bokstav fra streng"
-html_title:           "PHP: Stor bokstav fra streng"
-simple_title:         "Stor bokstav fra streng"
+title:                "Å kapitalisere en streng"
+html_title:           "PHP: Å kapitalisere en streng"
+simple_title:         "Å kapitalisere en streng"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Strings"
@@ -10,36 +10,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor 
+## Hva & Hvorfor?
+Å kapitalisere en streng i programmering betyr å gjøre den første bokstaven i hver eneste ord stor, mens resten av bokstavene forblir små. Dette er vanligvis gjort for å gi en bedre visuell presentasjon av en tekst. Programmerere gjør det for å få koden sin til å se mer ryddig ut og for å gjøre den lettere å lese.
 
-Å øke første bokstav i en streng kan være nyttig når man ønsker å formatere data eller gjøre den mer lesbar for brukeren. Det kan også være nødvendig i visse tilfeller for å kunne søke og sammenligne tekst på en mer nøyaktig måte.
-
-## Slik gjør du det
-
-Det finnes flere måter å kapitalisere en streng på i PHP. Her er to vanlige metoder som kan brukes:
-
+## Hvordan:
 ```PHP
-<?php
-// Metode 1: Bruk ucwords() for å kapitalisere første bokstav i hvert ord i en streng
-$streng = "dette er en tekststreng som skal kapitaliseres";
-$kapitalisert_streng = ucwords($streng);
-echo $kapitalisert_streng; // Output: Dette Er En Tekststreng Som Skal Kapitaliseres
-
-// Metode 2: Bruk ucfirst() for å kun kapitalisere første bokstav i en streng
-$streng = "dette er en tekststreng som skal kapitaliseres";
-$kapitalisert_streng = ucfirst($streng);
-echo $kapitalisert_streng; // Output: Dette er en tekststreng som skal kapitaliseres
+$string = "dette er en setning som skal kapitaliseres";
+echo ucfirst($string); // Output: Dette er en setning som skal kapitaliseres
 ```
 
-Som du kan se, vil begge metodene gi ulikt resultat i de to siste ordene i strengen. Det er derfor viktig å velge riktig metode basert på hva som er ønsket resultat.
+```PHP
+$string = "dette er en annen setning som skal kapitaliseres for kun det første ordet";
+echo ucwords($string); // Output: Dette Er En Annen Setning Som Skal Kapitaliseres For Kun Det Første Ordet
+```
 
-## Dypdykk
+## Dypdykk:
+Det å kapitalisere en streng har eksistert siden de tidlige dagene av programmering, og er ofte brukt i typiske programmeringsspråk som C og Java. Alternativet til å bruke de innebygde funksjonene i PHP er å lage din egen funksjon som utfører det samme, men dette kan være mer tidkrevende og mindre effektivt. Implementeringen av kapitaliseringsfunksjonene i PHP legger også til rette for flere språk, ettersom de tar hensyn til forskjellige regler for store og små bokstaver i hvert språk.
 
-I PHP er begge disse funksjonene avhengig av språkinnstillingene for å kunne virke ordentlig. Dersom du ønsker å kapitalisere en streng uavhengig av språkinnstillingene, kan du bruke ucfirst() istedenfor. 
-
-Å kapitalisere en streng kan også være nyttig når man jobber med databaser eller filbehandling. For eksempel kan man bruke disse funksjonene til å formatere data før de blir lagret i en database, eller til å gjøre data mer lesbar når man leser fra en fil.
-
-## Se også
-
-- [ucwords() dokumentasjon på PHP.net](https://www.php.net/manual/en/function.ucwords.php)
-- [ucfirst() dokumentasjon på PHP.net](https://www.php.net/manual/en/function.ucfirst.php)
+## Se Også:
+[PHP ucfirst() funksjonen](https://www.php.net/manual/en/function.ucfirst.php)
+[PHP ucwords() funksjonen](https://www.php.net/manual/en/function.ucwords.php)

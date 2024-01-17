@@ -10,53 +10,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Qu'est-ce que c'est et pourquoi le faire?
+L'extraction de sous-chaînes est une méthode courante utilisée par les programmeurs Java pour récupérer une partie spécifique d'une chaîne de caractères. Elle est souvent utilisée pour faciliter la manipulation et le traitement des données. Par exemple, si vous voulez trouver le nom d'un utilisateur à partir d'une adresse e-mail, vous pouvez extraire la partie du nom avant le "@" pour obtenir le résultat souhaité. 
 
-Dans certains projets de programmation, il peut être utile d'extraire des sous-chaînes d'une chaîne de caractères plus longue. Cela peut permettre de manipuler plus facilement des données ou de les utiliser dans des algorithmes spécifiques.
-
-## Comment faire
-
-Pour extraire une sous-chaîne en Java, vous pouvez utiliser la méthode substring de la classe String. Cette méthode prend en paramètres l'indice de début et l'indice de fin de votre sous-chaîne et renvoie une nouvelle chaîne contenant les caractères entre ces deux indices.
-
+## Comment le faire:
 ```Java
-//Exemple d'utilisation de la méthode substring
-String message = "Je suis un programmeur en Java.";
+// Déclaration d'une chaîne de caractères
+String str = "Bonjour à tous";
 
-String sousChaine = message.substring(11, 20);
+// Extraction de la sous-chaîne "tout" à partir de la chaîne donnée
+String extractedString = str.substring(11);
 
-System.out.println(sousChaine);
-
-//Output : programmeur
+// Affichage du résultat
+System.out.println(extractedString); // Affiche "tout"
 ```
 
-Si seule l'indice de début est spécifié, la méthode renverra une sous-chaîne à partir de cet indice jusqu'à la fin de la chaîne d'origine. Si l'indice de fin est omis, la méthode renverra une sous-chaîne à partir de l'indice de début jusqu'à la fin de la chaîne d'origine.
+## Plongez plus en profondeur:
+L'extraction de sous-chaînes existe depuis les premières versions de Java. Elle peut également être réalisée en utilisant des méthodes telles que ```StringTokenizer``` et ```StringBuilder```, cependant, la méthode ```substring``` est considérée comme plus efficace. L'implémentation de cette méthode utilise une fonction interne appelée ```System.arraycopy``` qui copie une partie de la chaîne d'origine dans une nouvelle chaîne, ce qui la rend plus rapide et plus efficace.
 
-Il est également possible d'utiliser des indices négatifs pour commencer à compter à partir de la fin de la chaîne. Par exemple, un indice de -1 correspond au dernier caractère de la chaîne.
-
-```Java
-//Exemple d'utilisation d'indices négatifs
-String message = "J'adore programmer en Java !";
-
-String sousChaine1 = message.substring(15);
-
-String sousChaine2 = message.substring(2, -8);
-
-System.out.println(sousChaine1);
-
-System.out.println(sousChaine2);
-
-//Output : Java !
-//Output : adore programmer
-```
-
-## Plongée en profondeur
-
-En Java, les chaînes de caractères sont immuables, ce qui signifie qu'elles ne peuvent pas être modifiées une fois créées. Lorsque vous extrayez une sous-chaîne, une nouvelle chaîne est créée à partir de la chaîne d'origine. Cela peut entraîner un gaspillage de mémoire si vous effectuez de nombreuses extractions de sous-chaînes à partir d'une même chaîne.
-
-Une autre chose à prendre en compte lors de l'extraction de sous-chaînes est la gestion des indices. Faites attention à ne pas dépasser la longueur de la chaîne d'origine et à utiliser des indices valides pour éviter des erreurs d'exécution.
-
-## Voir aussi
-
-- [Documentation officielle de la méthode substring en Java](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#substring-int-int-)
-- [Tutoriel sur les chaînes de caractères en Java](https://www.tutorialspoint.com/java/java_strings.htm)
-- [Article sur l'immuabilité en Java](https://www.javacodegeeks.com/2015/09/immutability-in-java.html)
+## Voir aussi:
+- [Documentation officielle de la méthode substring](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#substring(int))
+- [Autres façons d'extraire une sous-chaîne en Java](http://www.java2s.com/Code/Java/Language-Basics/Extractionsouschaines.htm)

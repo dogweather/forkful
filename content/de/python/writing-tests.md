@@ -1,7 +1,7 @@
 ---
-title:                "Tests schreiben"
-html_title:           "Python: Tests schreiben"
-simple_title:         "Tests schreiben"
+title:                "Testen schreiben"
+html_title:           "Python: Testen schreiben"
+simple_title:         "Testen schreiben"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Testing and Debugging"
@@ -10,26 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
-Der Gedanke, Tests für den eigenen Code zu schreiben, kann zunächst etwas lästig erscheinen. Doch Tests haben viele Vorteile: Sie stellen sicher, dass der Code fehlerfrei funktioniert, vereinfachen die Fehlersuche und ermöglichen es, die Funktionalität bei zukünftigen Änderungen schnell zu überprüfen. Es lohnt sich also, Zeit in das Schreiben von Tests zu investieren.
+# Was & Warum?
+Das Schreiben von Tests ist eine der wichtigsten Aufgaben eines Programmierers. Es ist ein Prozess, bei dem man überprüft, ob der Code richtig funktioniert und die erwarteten Ergebnisse liefert. Es ist wichtig, Tests zu schreiben, um sicherzustellen, dass der Code zuverlässig ist und möglichen Fehlern vorzubeugen.
 
-## Wie geht's
-Das Schreiben von Tests ist in Python sehr einfach. Hier ist ein Beispiel, wie man eine einfache Funktion testen kann:
+# Wie geht das?
+Die beste Möglichkeit, um zu verstehen, wie man Tests schreibt, ist anhand von Beispielen. Im Folgenden sind zwei grundlegende Beispiele für das Schreiben von Tests in Python aufgeführt.
 
 ```Python
-def add(x, y):
-  return x + y
+# Importieren der unittest-Bibliothek
+import unittest
 
-# Testfall
-assert add(2, 3) == 5
+# Erstellen eines einfachen Tests
+class SimpleTest(unittest.TestCase):
+
+    # Definieren einer Testfunktion
+    def test_sum(self):
+        # Berechnen der Summe von 2 und 3 erwartete Ergebnis: 5 
+        result = 2 + 3
+        # Überprüfen, ob das Ergebnis 5 ist
+        self.assertEqual(result, 5)
+
+# Ausführen der Tests
+if __name__ == '__main__':
+    unittest.main()
 ```
 
-Die "assert" Anweisung überprüft, ob die Funktion den erwarteten Wert zurückgibt. Wenn der Test fehlschlägt, wird ein Fehler gemeldet.
+```Python
+# Importieren der pytest-Bibliothek
+import pytest
 
-## Tiefergehende Einblicke
-Es gibt verschiedene Arten von Tests, die man schreiben kann, z.B. Modul- oder Integrationstests. Auch das Schreiben von Mock- und Unittests wird immer wichtiger. Es ist wichtig, die geeigneten Tests für den jeweiligen Code auszuwählen und diese regelmäßig auszuführen, um sicherzustellen, dass der Code fehlerfrei bleibt. Es gibt auch verschiedene Test-Frameworks, die das Schreiben von Tests erleichtern, z.B. das beliebte "pytest" oder "unittest" Modul aus der Python Standardbibliothek.
+# Erstellen eines einfachen Tests mit pytest
+def test_division():
+    # Berechnen der Division von 10 durch 2 erwartete Ergebnis: 5
+    result = 10 / 2
+    # Überprüfen, ob das Ergebnis 5 ist
+    assert result == 5
+```
 
-## Siehe auch
-- [Die Vorteile von Tests in Python (auf Englisch)](https://chrisyeh96.github.io/2017/08/08/definitive-guide-python-imports.html)
-- [Python pytest Dokumentation](https://docs.pytest.org/en/latest/)
-- [Python unittest Dokumentation](https://docs.python.org/3/library/unittest.html)
+# Tiefere Einblicke:
+## Historischer Kontext:
+Der Einsatz von Tests hat sich in den letzten Jahren in der Softwareentwicklung immer weiter verbreitet. Früher wurden Tests manuell durchgeführt, was zu vielen Fehlern führen konnte. Mit dem Aufkommen von automatisierten Tests ist es nun möglich, schneller und zuverlässiger zu testen.
+
+## Alternativen:
+Es gibt verschiedene Arten von Tests, die in der Softwareentwicklung verwendet werden. Neben einfachen Einheitstests, wie in den oben gezeigten Beispielen, gibt es auch Integrationstests, Systemtests und Akzeptanztests. Je nach Anforderungen und Komplexität des Projekts können verschiedene Arten von Tests sinnvoll sein.
+
+## Implementierungsdetails:
+Das Schreiben von Tests erfordert ein gutes Verständnis der zu testenden Funktionen und des erwarteten Verhaltens. Es ist wichtig, gut lesbaren und wartbaren Code zu schreiben, um die Tests effektiv gestalten zu können. Zudem sollte man die Tests regelmäßig ausführen, um mögliche Fehler frühzeitig zu erkennen und zu beheben.
+
+# Siehe auch:
+- [Das unittest-Modul in der Python-Dokumentation](https://docs.python.org/de/3/library/unittest.html)
+- [Das pytest-Framework](https://docs.pytest.org/en/latest/)
+- [Video-Tutorial: Test-driven Development in Python](https://www.youtube.com/watch?v=IN6j2QMkegA)

@@ -1,7 +1,7 @@
 ---
-title:                "Escribiendo pruebas"
-html_title:           "Java: Escribiendo pruebas"
-simple_title:         "Escribiendo pruebas"
+title:                "Pruebas de escritura"
+html_title:           "Java: Pruebas de escritura"
+simple_title:         "Pruebas de escritura"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Testing and Debugging"
@@ -10,38 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¡Qué y por qué?
 
-Escribir pruebas en Java es una práctica esencial para garantizar que nuestro código sea confiable y funcione correctamente. Al escribir pruebas, podemos detectar y corregir errores antes de que lleguen a producción, lo que a su vez nos permite ahorrar tiempo y evitar problemas en el futuro.
+Escribir pruebas (o tests) en Java es una forma de verificar si nuestro código funciona correctamente. Los programadores lo hacen para asegurarse de que su código hace lo que se supone que debe hacer y para evitar posibles errores.
 
-## Cómo hacerlo
+## Cómo:
 
-Para escribir pruebas en Java, necesitaremos utilizar el framework de pruebas JUnit. Aquí hay un ejemplo de cómo podemos crear una clase de prueba y escribir una prueba simple para una función que devuelve el doble de un número:
+Podemos escribir pruebas utilizando la clase `JUnit` en Java. Primero, debemos agregar la dependencia de `JUnit` en nuestro proyecto. Luego, creamos una clase de prueba para cada clase que queremos probar y usamos anotaciones para declarar los métodos de prueba. Finalmente, podemos verificar si el resultado esperado es igual al resultado real utilizando aserciones.
 
 ```Java
-import static org.junit.Assert.assertEquals;
 import org.junit.Test;
+import static org.junit.Assert.assertEquals;
 
-public class PruebaEjemplo {
+public class TestClass {
 
   @Test
-  public void testDoblarNumero() {
-    int resultado = Ejemplo.doblarNumero(5);
-    assertEquals(10, resultado);
+  public void testMethod() {
+    int result = 10 + 20;
+    assertEquals(30, result);
   }
 }
 ```
 
-En este ejemplo, estamos importando el paquete JUnit, creando una clase de prueba y utilizando la anotación `@Test` para indicar que este es un método de prueba. Luego, utilizamos el método `assertEquals()` para verificar si el resultado de la función `doblarNumero()` es igual a 10.
+## Profundizando:
 
-## Profundizando
+Escribir pruebas automatizadas es una práctica común en el desarrollo de software. Fue popularizado por Kent Beck en su libro "Extreme Programming Explained". Además de `JUnit`, existen otras herramientas de pruebas para Java, como `TestNG` y `Mockito`. También podemos escribir pruebas unitarias, de integración y de sistema, dependiendo del nivel en el que queremos probar nuestro código.
 
-Aunque esta es solo una prueba simple, podemos escribir pruebas más complejas utilizando diferentes técnicas y herramientas. Algunas de ellas incluyen la creación de pruebas parametrizadas para probar diferentes valores de entrada, la utilización de aserciones más específicas para verificar diferentes tipos de datos y la integración con herramientas de cobertura de código para evaluar la efectividad de nuestras pruebas.
+## Vea también:
 
-También es importante tener en cuenta que las pruebas deben ser escritas de manera independiente, lo que significa que no deben depender de otras pruebas o del orden en que se ejecutan. Además, es una buena práctica escribir pruebas antes de implementar una nueva funcionalidad, ya que esto nos obliga a pensar en los posibles casos de uso y a diseñar un código más estructurado.
-
-## Ver también
-
-- [Documentación de JUnit](https://junit.org/junit5/docs/current/user-guide/)
-- [Tutorial de pruebas en Java](https://www.tutorialspoint.com/junit/junit_quick_guide.htm)
-- [Escribiendo pruebas en Java con JUnit](https://stackabuse.com/writing-tests-in-java-using-junit/)
+- [Tutorial de JUnit](https://www.baeldung.com/junit)
+- [Qué son las pruebas unitarias y cómo escribirlas en Java](https://www.oracle.com/technical-resources/articles/java/junit-5-testing-in-java.html)
+- [JUnit vs TestNG: ¿Cuál es la diferencia?](https://stackify.com/junit-vs-testng/)

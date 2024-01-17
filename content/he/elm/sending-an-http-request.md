@@ -10,38 +10,17 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##Why
+מה ולמה?
+שליחת בקשת HTTP היא פעולה נפוצה בתכנות, המאפשרת למכשירים ומגררים לתקשורת עם שרתים ולבצע פעולות. תכנים רבים משתמשים בשליחת בקשות HTTP ליצירת אפליקציות דינמיות ותצוגה של תוכן דרך האינטרנט.
 
-כדי לקבל נתונים מאתר או שירות חיצוני, יש לבצע בקשה (HTTP request) בקוד. זה יכול לאפשר טעינת תוכן דינמי בדף אינטרנט או יישומון וכן לאפשר תקשורת בין שתי אתרים.
+איך לעשות זאת:
+לעיל תוכלו למצוא דוגמאות קוד ופלט מתמטי של שליחת בקשת HTTP בשפת Elm.
 
-##How To
+## רבדים עמוקים:
+תוכן המאמר מתמקד בשליחת בקשת HTTP עם שפת ברמת הליבה. כמו כן, ניתן להשתמש בספרית HTTP אחרות כדי להקל ולטפל בפעולת השליחה של הבקשה. לשם כך, כדאי להתמקד בכתיבת קוד כמו דוגמאות למעלה ולטפח את כישורי התכנות שלכם.
 
-כדי לבצע בקשה HTTP ב-Elm, ניתן להשתמש בתפקיד Http.send. כדי להשתמש בו, נצטרך לייבא את המודול Http ולהגדיר פונקציה שתחזיר את הבקשה ולשלוח אותה עם תיבת חיפוש. לדוגמה:
-
-```elm
-...
-import Http
-...
-
-getUser : String -> Cmd msg
-getUser username =
-  Http.send {
-    method = "GET",
-    headers = [],
-    body = Http.emptyBody,
-    url = "https://example.com/users/" ++ username
-  }
-```
-
-כאשר הפונקציה תופעל, היא תשלח בקשה GET לכתובת האתר המתאימה ותחזיר את התוצאות בתור Cmd כדי שנוכל לעבוד איתן.
-
-##Deep Dive
-
-בנוסף לאפשרות לבצע בקשות מסוג GET, ניתן גם לבצע בקשות מסוגים אחרים כדוגמת POST, PUT ו-DELETE. בנוסף, ניתן להוסיף כותרות, גוף ופרמטרים לבקשה בצורה דינמית בכדי לשלוט יותר על התהליך.
-
-##See Also
-
-למידע נוסף על שליחת בקשות HTTP ב-Elm, ניתן לעיין במסמכים הבאים:
-
-- Http.send: https://package.elm-lang.org/packages/elm/http/latest/Http#send
-- עוד על שליחת בקשות HTTP ב-Elm: https://guide.elm-lang.org/effects/http.html
+## ראו גם:
+- [ספרית HTTP בשפת Elm](https://package.elm-lang.org/packages/elm/http/latest/)
+- [API של שפת Elm](https://guide.elm-lang.org/webapps/)
+- [קוד המקור של Elm על GitHub](https://github.com/elm/compiler/tree/master/compiler/src)
+- [מדריכים לשפת Elm בעברית](https://elmprogramming.com/)

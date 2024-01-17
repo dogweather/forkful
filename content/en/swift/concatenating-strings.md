@@ -10,68 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why 
+## What & Why?
+Concatenating strings is the process of combining two or more strings into one. It allows programmers to create longer strings from shorter ones, which is useful when dealing with dynamic content or user input. This technique is commonly used in text processing, data manipulation, and user interface development.
 
-String concatenation is a fundamental skill that every Swift programmer should have in their arsenal. It allows you to combine multiple strings into one, making your code more efficient and easier to read. Whether you need to display a formatted string or manipulate user input, the ability to concatenate strings is crucial in creating dynamic and functional applications.
-
-## How To 
-
-One of the simplest ways to concatenate strings in Swift is by using the addition (+) operator. 
+## How to:
+Concatenating strings in Swift is simple and straightforward. You can use the `+` operator or the `+=` compound assignment operator to join two strings together. Here's an example:
 
 ```Swift
 let firstName = "John"
-let lastName = "Doe"
+let lastName = "Smith"
 let fullName = firstName + " " + lastName
-
-print(fullName) // Output: John Doe
+print(fullName) // Output: "John Smith"
 ```
 
-You can also use the String interpolation method, denoted by the backslash and parentheses (\()). This allows you to insert variables or expressions directly into a string. 
+You can also use string interpolation to combine constants, variables, and expressions into a single string. Simply wrap the desired values with `\()` inside a string. Here's an example:
 
 ```Swift
-let city = "New York"
-let country = "USA"
-let location = "I live in \(city), \(country)."
-
-print(location) // Output: I live in New York, USA.
+let age = 25
+let info = "I am \(age) years old."
+print(info) // Output: "I am 25 years old."
 ```
 
-If you want to join multiple strings together, you can use the `joined(separator:)` method. This takes in a separator as a parameter and returns a single string with the original strings joined by the specified separator. 
+## Deep Dive:
+The concept of concatenating strings has been around since the early days of computing. It originated from the need to combine multiple pieces of text into a single continuous string. Prior to the `+` operator, concatenating strings in Swift was done using the `append()` method, which is still available for use.
+
+In addition to using `+` and `+=` operators, you can also use the `join()` method to concatenate an array of strings. This method adds a separator in between each string, giving you more control over the output. Here's an example:
 
 ```Swift
-let fruits = ["apple", "orange", "banana"]
+let fruits = ["apple", "banana", "orange"]
 let joinedFruits = fruits.joined(separator: ", ")
-
-print(joinedFruits) // Output: apple, orange, banana
+print(joinedFruits) // Output: "apple, banana, orange"
 ```
 
-Another useful method is `appending()` which adds a string to the end of another string. 
+Apart from concatenating strings, there are other techniques that programmers can use to manipulate and format strings in Swift. These include string interpolation, string manipulation methods like `uppercased()` and `lowercased()`, and the use of format specifiers for formatting numerical and date values within a string.
 
-```Swift
-var welcomeMessage = "Welcome"
-welcomeMessage.append(" to my blog!")
+## See Also:
+To learn more about string concatenation in Swift, check out the following resources:
 
-print(welcomeMessage) // Output: Welcome to my blog!
-```
-
-## Deep Dive 
-
-Behind the scenes, when you use the + operator or the `appending()` method, Swift is actually creating a new string containing the combined value. These methods are not mutating the original string, but rather creating a new one, which means you can use them on constants (using `let`) or variables (using `var`). 
-
-String interpolation is also a form of string concatenation. It automatically creates a new string with the interpolated value. However, the original string and interpolated value must be in parentheses. 
-
-```Swift
-let number = 10
-let message = "The number is \(number)" // Equivalent to "The number is " + String(number)
-
-print(message) // Output: The number is 10
-```
-
-If you need to concatenate a large number of strings, it may be more efficient to use the `append()` method on a `String` instance instead of the `+` operator. This is because `append()` modifies the original string in-place, avoiding the creation of a new string each time. 
-
-## See Also 
-
-For more information on working with strings in Swift, check out the following resources:
-
-- [The Swift Programming Language - Strings and Characters](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
-- [Concatenate Strings in Swift](https://www.hackingwithswift.com/example-code/strings/how-to-combine-strings-together)
+- [Strings and Characters - The Swift Programming Language](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+- [String Interpolation - Hacking with Swift](https://www.hackingwithswift.com/syntax/86-string-interpolation)
+- [Building Strings from Multiple Components - Swift by Sundell](https://www.swiftbysundell.com/articles/building-strings-in-swift-from-multiple-components/)

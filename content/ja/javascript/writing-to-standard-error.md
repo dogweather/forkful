@@ -1,7 +1,7 @@
 ---
-title:                "標準エラーへの書き込み"
-html_title:           "Javascript: 標準エラーへの書き込み"
-simple_title:         "標準エラーへの書き込み"
+title:                "「標準エラーへの書き込み」"
+html_title:           "Javascript: 「標準エラーへの書き込み」"
+simple_title:         "「標準エラーへの書き込み」"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Files and I/O"
@@ -10,37 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+## 何がどうして？：
+標準エラーへの書き込みとは何か、またプログラマーがなぜそれを行うのかを説明する文章です。
 
-誰でもエラーを経験するものです。その時、コンソールにメッセージを表示するのではなく、裏でエラーを追跡するために、標準エラーに書き込むことが重要です。これはデバッグにも役立ち、チームメンバーとのコミュニケーションを円滑にするのに役立ちます。
+標準エラーへの書き込みとは、プログラムの実行中に発生したエラー情報を書き込むことを意味します。プログラマーは、エラーが発生したことを知ることで、プログラムの問題を確認し、修正することができます。
 
-## 使い方
+## 方法：
+以下に、標準エラーへの書き込みを行うためのコーディング例と、サンプルの出力を示します。
 
-```javascript
-console.error("これは標準エラーに書き込まれます") 
+```Javascript
+console.error("エラーが発生しました。"); // エラーが発生しました。
 ```
 
-出力：
+標準エラーへの書き込みは、 `console.error()` メソッドを使用して行います。このメソッドは、引数として渡されたメッセージを標準エラーへ出力します。
 
-```
-これは標準エラーに書き込まれます
-```
+## もっと詳しく：
+標準エラーへの書き込みは、プログラミング言語ごとに異なる実装方法があります。例えば、Javascriptでは `console.error()` メソッドを使用して行いますが、Pythonでは `sys.stderr` オブジェクトを通じて行います。
 
-```javascript
-console.error("エラーが発生しました", err) 
-```
+標準エラーへの書き込みは、デバッグやエラーのトラッキングなどに役立ちます。また、標準出力への書き込みとは異なり、標準エラーへの書き込みは常に表示されるため、メッセージの漏れを防ぐことができます。
 
-出力：
-
-```
-エラーが発生しました Error: サンプルエラー
-```
-
-## 深堀り
-
-標準エラーに書き込むには、`console.error()`を使用します。このメソッドは、コンソールにメッセージを出力するのではなく、エラーオブジェクトを受け取ってエラーログを生成します。また、改行できないオブジェクトの場合、`console.error()`は`Object.prototype.toString`メソッドを使用してオブジェクトを文字列に変換し、それをエラーログとして表示します。
-
-## See Also
-
-- [標準エラーに書き込む方法](https://developer.mozilla.org/ja/docs/Web/API/Console/error)
-- [エラーオブジェクト](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Error)
+## 関連リンク：
+- [Javascript console API](https://developer.mozilla.org/en-US/docs/Web/API/Console)
+- [Python sys.stderr module](https://docs.python.org/3/library/sys.html#sys.stderr)

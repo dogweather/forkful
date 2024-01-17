@@ -1,7 +1,7 @@
 ---
-title:                "Läsa kommandoradsargument"
-html_title:           "Gleam: Läsa kommandoradsargument"
-simple_title:         "Läsa kommandoradsargument"
+title:                "Läsning av kommandoradsargument"
+html_title:           "Gleam: Läsning av kommandoradsargument"
+simple_title:         "Läsning av kommandoradsargument"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Files and I/O"
@@ -10,79 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
+Att läsa in kommandoradsargument är ett vanligt förekommande koncept inom programmering. Det innebär helt enkelt att man tar emot värden som användaren matar in i ett program via terminalen eller kommandoraden. Detta är en användbar funktion då det tillåter programmet att interagera med användarna och ge dem en ökad flexibilitet och kontroll över hur programmet körs.
 
-Att kunna läsa in kommandoradsargument är en viktig färdighet för alla som programmerar i Gleam. Det tillåter dig att anpassa ditt program medan det körs och öppnar möjligheter för interaktion mellan användare och program.
-
-## Hur man gör
-
-Att läsa in kommandoradsargument i Gleam är en enkel process. Du behöver bara importera modulen `command_line` och sedan anropa funktionen `parse` för att få en lista med argumenten.
+## Hur man:
+För att läsa in kommandoradsargument i Gleam kan man använda funktionen `gleam/core/io.read_args()` som tar emot en lista av strängar från användaren. Här är ett exempel på hur man kan använda den:
 
 ```Gleam
-external type List(a)
+import gleam/core/io
 
-external type String {
-    Format(a) -> String
+fn main() {
+    let args = io.read_args()
+    io.print("Du matade in följande argument: #{args}")
 }
-
-// Importera modulen command_line
-import gleam/command_line
-
-// Anropa funktionen parse för att få en lista med argumenten
-let arguments = command_line.parse()
-
-// Skriv ut listan med argumenten
-List.map(args, String.Format) |> Debug.log
 ```
 
-### Exempel
+Om vi nu kör detta program med kommandoradsargumenten "hej", "världen", kommer outputen att vara "Du matade in följande argument: [hej, världen]". Det går även att ange kommandoradsargument vid kompileringen av programmet, vilket kan vara användbart vid mer avancerade program.
 
-Om du till exempel kör detta program med kommandoradsargumentet `name=John` kommer listan med argumenten att se ut som `["name=John"]`. Om du vill separera argumentet och värdet kan du använda funktionen `String.split` som visas i exemplet nedan.
+## Djupdykning:
+Att läsa in kommandoradsargument är ett viktigt koncept inom programmering och används ofta för att ge användare en större kontroll över hur ett program körs. Det finns även andra sätt att ta emot input från användaren, som t.ex. via en GUI (grafiskt användargränssnitt). Men att läsa in kommandoradsargument är en snabb och enkel metod som passar väl för många situationer.
 
-```Gleam
-let arguments = command_line.parse()
-
-let [key, value] = case String.split("=", List.head(arguments)) {
-    Some(result) -> result
-    None -> ["", ""]
-}
-
-String.Format("Argumentet `{}` har värdet `{}`", key, value)
-|> Debug.log
-```
-
-#### Körkommando
-
-```bash
-gleam run main.gleam -- name=John
-```
-
-#### Output
-
-```
-Argumentet `name` har värdet `John`
-```
-
-## Djupdykning
-
-Det finns möjligheter att anpassa hur du läser in kommandoradsargument genom att använda funktionerna `parse_with` och `parse_with_help` från modulen `command_line`. Dessa funktioner tar en konfigurationssträng som parameter för att specificera regler för hur argumenten ska tolkas.
-
-### Konfigurationssträngen
-
-Konfigurationssträngen består av flera delar som separeras med ett mellanslag. Den första delen är argumentnamnet som ska följas av en listformatering för att specificera hur argumentet ska tolkas.
-
-#### Listformaten
-
-- `named_flag` - tolkar argumentet som en flagga med en tillhörande boolean som värde
-- `named_argument` - tolkar argumentet som en sträng med en tillhörande värdestring
-- `repeated_named_argument` - tolkar argumentet som en lista med flera värden
-- `program_argument` - tolkar argumentet som en sträng utan ett fördefinierat namn
-
-#### Exempel
-
-Konfigurationssträngen `name:named_argument ` skulle tolka ett argument med namnet `name` som en sträng med ett tillhörande värde.
-
-## Se även
-
-- [Officiell dokumentation för command_line-modulen](https://gleam.run/modules/command_line)
-- [GitHub-repositorium för Gleam](https://github.com/gleam-lang/gleam)
+## Se även:
+För mer information om hur man hanterar kommandoradsargument i Gleam, se dokumentationen för `gleam/core/io` modulen: [länk till dokumentationen](https://gleam.run/modules/gleam_core/io.html#read_args).

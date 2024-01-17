@@ -10,71 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-Printing debug output is an important aspect of programming as it helps developers identify and fix any errors or bugs in their code. It allows for easier troubleshooting and ensures the overall functionality and stability of the program.
+## What & Why?
 
-## How To
-To print debug output in C++, you can use the `cout` or `printf` statements. These statements will output the specified message or variable to the console for debugging purposes. For example:
+Debug output refers to the process of printing information to the console or output window during the execution of a program, for the purpose of troubleshooting and identifying errors. Programmers use this technique to gain insight into the inner workings of their code and to track down the source of bugs.
 
-```
+## How to:
+
+To print debug output in C++, you can use the `cout` function from the `iostream` library. It takes in a string (or any other data type) as a parameter and prints it to the console. For example:
+
+```C++
 #include <iostream>
 
-int main() {
-    int num = 5;
-    // using cout statement
-    std::cout << "The value of num is: " << num << std::endl;
+using namespace std;
 
-    // using printf statement
-    printf("The value of num is: %d\n", num);
+int main() {
+    int num1 = 10;
+    int num2 = 20;
+
+    cout << "The value of num1 is: " << num1 << endl;
+    cout << "The value of num2 is: " << num2 << endl;
+
+    // Output:
+    // The value of num1 is: 10
+    // The value of num2 is: 20
 
     return 0;
 }
 ```
 
-The above code will output: `The value of num is: 5` twice, one using `cout` and the other using `printf`.
+This code snippet will print the values of `num1` and `num2` to the console, allowing the programmer to check if they are correct.
 
-## Deep Dive
-In order to make debug output more efficient and organized, there are a few techniques you can use.
+## Deep Dive:
 
-### Custom Debug Macros
-You can create custom debug macros to print out useful information while debugging. For example:
+Debug output has been a common technique used by programmers for decades. In the early days of programming, it was the only way to track down errors and bugs. However, as computer systems became more advanced, specialized debugging tools were developed, making the process more efficient and less time-consuming.
 
-```
-#include <iostream>
+One alternative to using `cout` for debug output is to use a debugger tool. Debuggers allow programmers to step through their code line by line and inspect variables and code behavior in real-time. Another option is to use logging libraries, which provide more advanced features such as logging levels and formatting.
 
-// custom debug macro
-#define DEBUG_MSG(x) { std::cout << "Debug: " << x << std::endl; }
+When printing debug output, it is important to keep in mind that it can have a performance impact on the program. Therefore, it is recommended to use it sparingly and to remove it once the debugging process is complete.
 
-int main() {
-    int num = 5;
-    // using custom debug macro
-    DEBUG_MSG("The value of num is: " << num);
+## See Also:
 
-    return 0;
-}
-```
-
-This will output: `Debug: The value of num is: 5`.
-
-### Conditional Debugging
-You can also use conditional statements to control when debug output is printed. For example:
-
-```
-#include <iostream>
-
-int main() {
-    int num = 5;
-    // conditional debug output
-    if (num == 5) {
-        std::cout << "Debug: The value of num is: " << num << std::endl;
-    }
-
-    return 0;
-}
-```
-
-This will only print the debug message if `num` is equal to 5.
-
-## See Also
-- [Debugging in C++](https://docs.microsoft.com/en-us/previous-versions/visualstudio/visual-studio-2010/yt4dkbzs(v=vs.100))
-- [Cout vs printf in C++](https://www.geeksforgeeks.org/cout-vs-printf-for-debugging-in-c/)
+- [The History of Debugging: A Love Story](https://www.youtube.com/watch?v=YJnF0XIJkr0)
+- [An Overview of Debugging Tools for C++](https://raygun.com/blog/debugging-tools-for-cpp/)
+- [Introduction to Logging in C++](https://www.codeproject.com/Articles/203887/Introduction-to-Logging-in-Cplusplus)

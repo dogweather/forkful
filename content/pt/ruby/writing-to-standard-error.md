@@ -10,41 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##Por que
-Escrever para a saída padrão de erro (standard error) pode ser útil para solucionar problemas e rastrear erros em um código Ruby. Além disso, é uma boa prática de programação para garantir que seu código esteja funcionando corretamente.
+## O que é isso e por quê?
+Escrever no erro padrão é uma técnica usada por programadores para enviar mensagens de erro específicas para a tela do usuário quando um código apresenta um problema ou falha durante sua execução. Isso ajuda a identificar e corrigir erros com mais facilidade, dando informações detalhadas sobre o que causou o problema.
 
-## Como Fazer
-Você pode usar o método `puts` para imprimir mensagens na saída padrão de erro. Isso irá encerrar a execução do programa e exibir a mensagem no console. Veja um exemplo abaixo:
+## Como fazer:
+Para escrever no erro padrão em Ruby, usamos o método `STDERR.puts` e passamos uma string como argumento. Isso enviará a mensagem para a tela do usuário. Veja abaixo um exemplo:
 
-```Ruby
-puts "Este é um erro de teste"
-puts "O programa será encerrado agora"
+```ruby
+STDERR.puts "Erro: variável não definida"
+```
+```
+Erro: variável não definida
+```
+Essa técnica também pode ser utilizada em conjunto com o `raise`, que é utilizado para gerar uma exceção em caso de erro. Veja um exemplo:
+
+```ruby
+def dividir(x, y)
+  raise "O segundo número não pode ser zero" if y == 0
+  x / y
+end
+
+dividir(10, 0)
+```
+```
+RuntimeError: O segundo número não pode ser zero
 ```
 
-**Saída:**
+## Aprofundando:
+Escrever no erro padrão é uma prática comum em programação, sendo uma extensão natural da ideia de depuração de código. Antes do surgimento de linguagens de programação modernas, era necessário usar técnicas mais complexas para informar o usuário sobre erros, como a impressão direta no console do sistema.
 
-```
-Este é um erro de teste
-O programa será encerrado agora
-```
+Uma alternativa ao uso do `STDERR.puts` é utilizar o método `warn`, que também envia uma mensagem de erro para a tela do usuário, mas de uma forma mais amigável. A implementação deste método é baseada no `STDERR.puts`, então ambos acabam tendo o mesmo resultado final.
 
-Você também pode usar o código de erro `exit` para sair do programa e exibir uma mensagem de erro. Veja o exemplo abaixo:
+## Veja também:
+Para saber mais sobre a escrita no erro padrão em Ruby, veja a documentação oficial: https://ruby-doc.org/core-3.0.0/IO.html#method-i-puts
 
-```Ruby
-exit 1, "Houve um erro na execução do programa"
-```
+Você também pode aprender mais sobre depuração de código em geral no site da Caelum: https://www.caelum.com.br/apostila-ruby-on-rails/usando-o-protractor-desenvolvimento-orientado-a-testes-javascript-com-jasmine-e-protractor/#9-10-depurando-o-codigo
 
-**Saída:**
-
-```
-Houve um erro na execução do programa
-```
-
-## Mergulho Profundo
-Existem alguns métodos adicionais que podem ser úteis ao escrever para a saída de erro. Por exemplo, você pode usar `warn` para exibir uma mensagem de aviso com a cor amarela no console. E para imprimir mensagens em vermelho, você pode usar `STDERR.puts` ou `STDERR.print`.
-
-Além disso, você pode personalizar suas mensagens de erro para incluir informações específicas sobre o erro que está ocorrendo. Isso é especialmente útil para depurar e rastrear problemas em seu código.
-
-## Veja Também
-- [Documentação oficial do Ruby sobre output de erro](https://ruby-doc.org/core-2.7.1/IO.html#method-i-warn)
-- [Exemplos de código do Ruby](https://www.rubyguides.com/ruby-tutorial/puts-vs-print/)
+E para ficar por dentro das novidades e dicas sobre programação, acesse o blog do Ruby Brasil: https://www.rubyonrails.com.br/

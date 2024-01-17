@@ -1,7 +1,7 @@
 ---
-title:                "Att skriva till standard error"
-html_title:           "Clojure: Att skriva till standard error"
-simple_title:         "Att skriva till standard error"
+title:                "Skrivande till standardfel"
+html_title:           "Clojure: Skrivande till standardfel"
+simple_title:         "Skrivande till standardfel"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Files and I/O"
@@ -10,41 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
 
-Att skriva till standardfelutmatning (standard error) är en användbar funktion för felsökning och debugging i Clojure. Genom att skriva felmeddelanden till standard error istället för standardutmatningen kan man enklare skilja mellan utmatning av information och felmeddelanden.
+I Clojure, precis som i många andra programmeringsspråk, kan du skriva till standard error för att skicka felmeddelanden eller andra viktiga texter till en specifik utmatningskanal istället för den vanliga standardutmatningen. Detta kan hjälpa till att tydligt separera olika typer av utskrifter och underlätta felsökning vid behov.
 
-## Hur man gör
+Att skriva till standard error är också en bra praxis eftersom det inte blandas ihop med den vanliga standardutmatningen, vilket kan vara användbart när programmet körs i en konsol eller terminal.
 
-För att skriva till standard error i Clojure, använder man funktionen `print-err`. Denna funktion tar emot en eller flera argument och skriver dem till standard error. 
+## Hur man gör:
 
-```Clojure
-(print-err "Detta är ett felmeddelande")
-```
-
-Detta kommer att skriva ut strängen "Detta är ett felmeddelande" till standard error. Om vi skulle använda funktionen `print` istället, skulle strängen skrivas ut till standardutmatningen. 
-
-Man kan även använda `print-err` med flera argument, precis som `print`. Detta är användbart om man vill skriva ut flera värden eller variabler i samma felmeddelande. 
+Clojure erbjuder flera möjligheter för att skriva till standard error. Den enklaste metoden är att använda funktionen `print-err` från standardbiblioteket `clojure.core`.
 
 ```Clojure
-(def name "Lisa")
-(def age 25)
-(print-err "Användare" name "är" age "år gammal.")
+(print-err "Det här är ett felmeddelande på standard error.")
 ```
 
-Detta skulle skriva ut "Användare Lisa är 25 år gammal." till standard error. 
-
-## Djupdykning
-
-När man skriver till standard error i Clojure, skriver man faktiskt till en Java-stream som heter `System.err`. Därför anropar funktionen `print-err` i själva verket `System.err.print`. Detta betyder att man också kan använda Java-metoder för att skriva till standarderror. En vanlig metod är att använda `println`, som automatiskt lägger till ett radbryt efter värdena som skrivs ut. 
+Om du vill formatera meddelandet eller inkludera flera värden, kan du använda `format`-funktionen istället.
 
 ```Clojure
-(System/err/println "Detta är ett felmeddelande")
+(format-err "Det här är en formaterad text på standard error: %s" "1")
 ```
 
-Man kan också formatera utskriften genom att använda `System.err/format`, som fungerar på samma sätt som `clojure.core/format`. 
+Båda dessa exempel kommer att skriva texten till standard error och ge följande utmatning i en repl-miljö:
 
-## Se även
+```Clojure
+Det här är ett felmeddelande på standard error.
+Det här är en formaterad text på standard error: 1
+```
 
-- [Java I/O streams](https://www.javatpoint.com/file-output-stream)
-- [Clojure Standard Library](https://clojuredocs.org/clojure.core/print-err)
+## Deep Dive:
+
+Skrivning till standard error uppstod som en standard inom Unix-operativsystemet på 1970-talet. Genom att skicka felmeddelanden till en separat utmatningskanal, separeras de från den vanliga användarutmatningen och kan lättare hittas och läsas av felsökningsteamet.
+
+Alternativen till att skriva till standard error inkluderar att skicka meddelanden till en loggfil eller en externt hostad tjänst som kan hantera felmeddelanden. Men i många fall är det fortfarande användbart att använda standard error för omedelbara och viktiga utskrifter.
+
+I Clojure implementeras standard error som en standard utmatningsström vid namn `*err*`, vilket kan ändras med hjälp av funktionen `binding`.
+
+## Se även:
+
+- Clojure Documentation om [standard-io](https://clojuredocs.org/clojure.core/*out*)
+- Unix Manual Page för [sterr](https://man7.org/linux/man-pages/man3/stderr.3.html)

@@ -1,7 +1,7 @@
 ---
-title:                "Calculer une date dans le futur ou le passé"
-html_title:           "Bash: Calculer une date dans le futur ou le passé"
-simple_title:         "Calculer une date dans le futur ou le passé"
+title:                "Calcul d'une date dans le futur ou le passé"
+html_title:           "Bash: Calcul d'une date dans le futur ou le passé"
+simple_title:         "Calcul d'une date dans le futur ou le passé"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Dates and Times"
@@ -10,50 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Qu'est-ce que c'est? Pourquoi?
 
-Calculer une date dans le futur ou dans le passé peut être utile pour planifier des événements ou pour vérifier des dates importantes. Cela peut également être utile pour des tâches de gestion de projet ou tout simplement pour satisfaire sa curiosité.
+Calculer une date dans le futur ou dans le passé est l'action de déterminer une date en utilisant une date de référence et un nombre de jours à ajouter ou à soustraire. Les programmeurs utilisent cette tâche pour automatiser des processus tels que la planification de tâches, la gestion de base de données et la création de rapports.
 
-## Comment faire
+## Comment faire:
 
-Pour calculer une date dans le futur ou dans le passé en utilisant Bash, vous pouvez utiliser la commande `date` en spécifiant la date et le format que vous souhaitez obtenir. Voici quelques exemples :
+Voici deux façons de calculer une date dans le futur ou dans le passé en utilisant Bash:
 
 ```Bash
-# Calculer la date d'aujourd'hui
-date +"%d/%m/%Y"
+# Ajouter 10 jours à la date actuelle
+date -d "+10 days" 
 
-# Calculer la date dans 7 jours
-date --date="+7 days" +"%d/%m/%Y"
-
-# Calculer la date dans 1 mois
-date --date="+1 month" +"%d/%m/%Y"
-
-# Calculer la date dans 5 ans
-date --date="+5 years" +"%d/%m/%Y"
-
-# Calculer la date il y a 2 semaines
-date --date="-2 weeks" +"%d/%m/%Y"
-
-# Calculer la date il y a 1 an
-date --date="-1 year" +"%d/%m/%Y"
+# Soustraire 5 jours de la date actuelle
+date -d "-5 days"
 ```
 
-Output :
-
+Output:
 ```
-05/08/2021
-12/08/2021
-05/09/2021
-05/08/2026
-22/07/2021
-05/08/2020
+Jeudi 11 juin 2020 12:00:00 CST
+Samedi 6 juin 2020 12:00:00 CST
 ```
 
-## Plongée profonde
+## Plongée en profondeur:
 
-La commande `date` peut être utilisée pour calculer une date en utilisant différentes unités de temps telles que les jours, les semaines, les mois et les années. Elle peut également être utilisée pour afficher la date dans un format spécifique en utilisant les spécificateurs de format, tels que `%d` pour le jour, `%m` pour le mois et `%Y` pour l'année. En utilisant la commande `date` avec les options appropriées, vous pouvez facilement calculer des dates dans le futur ou dans le passé.
+1. Contexte historique: Le calcul de dates a été un défi pour les programmeurs, car chaque système d'exploitation ou langage de programmation avait sa propre façon de stocker et de manipuler les dates. Bash utilise une bibliothèque appelée GNU Date pour faciliter cette tâche.
 
-## Voir aussi
+2. Alternatives: En plus de la méthode présentée ci-dessus, vous pouvez également utiliser la commande ```strftime``` pour formater une date dans le futur ou dans le passé. Cependant, cela nécessite une connaissance plus approfondie des formats de date.
 
-- [Documentation de la commande `date`](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html)
-- [Calculer des dates en utilisant la commande `date`](https://www.computerhope.com/unix/udate.htm)
+3. Détails de mise en œuvre: La commande ```date -d``` prend en paramètre une chaîne de caractères qui spécifie la quantité de temps à ajouter ou à soustraire de la date de référence. Elle peut gérer des unités de temps telles que les secondes, les minutes, les heures, les jours, les semaines, les mois et les années.
+
+## Voir aussi:
+
+Pour en savoir plus sur la commande ```date``` de Bash, consultez la documentation officielle: [GNU Date](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html)

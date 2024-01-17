@@ -1,7 +1,7 @@
 ---
-title:                "デバッグ出力を印刷する"
-html_title:           "Javascript: デバッグ出力を印刷する"
-simple_title:         "デバッグ出力を印刷する"
+title:                "デバッグ出力をプリントする"
+html_title:           "Javascript: デバッグ出力をプリントする"
+simple_title:         "デバッグ出力をプリントする"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Testing and Debugging"
@@ -10,40 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+## 何をするのか？
 
-デバッグ出力を表示するのにはどのような意義があるのか？個人的には、コードの実行過程を理解し、問題箇所を特定するためにとても便利です。また、デバッグ出力を活用することで、コードの挙動を視覚的に確認することも可能です。
+デバッグ出力を表示するとは何かを簡単に説明すると、プログラマーがコードの動作を理解するために、コードの特定の部分で値を表示することです。このようにすることで、コードの実行を途中で止めて、その時点での値を確認することができます。
 
-## 方法
+なぜプログラマーはデバッグ出力を表示するのでしょうか？プログラムが正しく動かない場合、どこで問題が発生しているのかを特定するためです。デバッグ出力を使用することで、どのようにコードが動いているかを把握し、エラーの原因をより早く特定することができます。
 
-```Javascript
-console.log('Hello, World!');
-```
+## 方法：
 
-デバッグ出力を表示するには、`console.log()`を使用します。この関数は、引数として与えられた値をコンソールに出力します。上の例では、`'Hello, World!'`という文字列を出力します。
+デバッグ出力を表示する方法は簡単です。まずは、表示したい場所に「console.log()」というコマンドを入力します。次に、括弧の中に出力したい値や変数を入れます。例えば、次のようになります。
 
 ```Javascript
-let num1 = 5;
-let num2 = 10;
-let sum = num1 + num2;
-console.log(sum);
+console.log("Hello World!"); // "Hello World!"という文字列がコンソールに出力される
 ```
 
-変数を使用することも可能です。上の例では、`num1`と`num2`という2つの数値を足した結果を、`sum`という変数に代入し、`console.log()`を使用して出力しています。
-
-## 深堀り
-
-デバッグ出力は、コードを実行する過程での値や変数の状態を確認するのに役立ちます。また、`console.log()`には、複数の引数を渡すことができ、それらをカンマで区切って出力できるようになっています。
+また、変数の値を表示する場合は、次のようになります。
 
 ```Javascript
-let name = 'John';
-let age = 30;
-console.log('Name:', name, 'Age:', age);
+let num = 10;
+
+console.log(num); // 10という値がコンソールに出力される
 ```
 
-上の例では、`name`と`age`という2つの変数を出力し、それぞれの前にラベルを付けています。これにより、より分かりやすいデバッグ出力が可能になります。
+## 詳しく調べる
 
-## 関連リンクを参照
+デバッグ出力を使うのは現在のプログラマーの標準的な方法ですが、実はコンピューターの歴史ではあまり一般的ではありませんでした。コンピューターが登場した頃は、完成したプログラムを実行してから問題を特定することが一般的でした。しかし、これでは問題の発生箇所を特定するのに時間がかかりました。そのため、デバッグ出力のような機能が開発され、プログラムの実行中に値を表示することができるようになりました。
 
-- [MDN Web Docs - console](https://developer.mozilla.org/ja/docs/Web/API/Console) 
-- [JavaScript.info - console, alert, prompt](https://javascript.info/alert-prompt-confirm)
+デバッグ出力以外にも、プログラマーがエラーを特定するための手法はいくつかあります。例えば、デバッガーと呼ばれるプログラムを使うことで、プログラムを一時停止して変数の値やスタックトレースを確認することができます。
+
+いくつかの統合開発環境（IDE）には、デバッグ出力を扱いやすくするための便利な機能があります。例えば、コンソールに出力した値をカラー表示する機能や、デバッグ出力のログを保存する機能などです。
+
+## 関連リンク：
+
+- [console.logの使い方](https://developer.mozilla.org/ja/docs/Web/API/Console/log)
+- [ブラウザのデバッグ機能について](https://techacademy.jp/magazine/5533)
+- [デバッグ出力を使わずにエラーを特定する方法](https://qiita.com/takachan461/items/574ea8d03f6d7a189ae9)
+- [IDEのデバッグ機能について](https://forest.watch.impress.co.jp/docs/serial/yajiuma/1265265.html)

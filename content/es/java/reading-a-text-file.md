@@ -1,7 +1,7 @@
 ---
-title:                "Leyendo un archivo de texto"
-html_title:           "Java: Leyendo un archivo de texto"
-simple_title:         "Leyendo un archivo de texto"
+title:                "Leyendo un archivo de texto."
+html_title:           "Java: Leyendo un archivo de texto."
+simple_title:         "Leyendo un archivo de texto."
 programming_language: "Java"
 category:             "Java"
 tag:                  "Files and I/O"
@@ -10,50 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
-Leer archivos de texto en Java es una habilidad fundamental para cualquier programador. Al poder leer y procesar este tipo de archivos, puedes automatizar tareas y manejar grandes cantidades de datos de forma eficiente.
+## ¿Qué y por qué?
 
-## Cómo hacerlo
-Para leer un archivo de texto en Java, primero debes crear un objeto de la clase `File` que represente el archivo que deseas leer.
+Leer un archivo de texto es una tarea común en la programación, ya que permite a los programadores almacenar y manejar grandes cantidades de datos de manera eficiente. Los archivos de texto son una forma sencilla y legible para almacenar información en un formato que puede ser interpretado por una computadora.
 
-```
-File archivo = new File("ruta/del/archivo.txt");
-```
+## ¿Cómo hacerlo?
 
-Luego, debes crear un objeto de la clase `Scanner` que nos permitirá leer el contenido del archivo. Este objeto necesita como parámetro el objeto `File` que creamos antes.
+La lectura de un archivo de texto en Java es un proceso sencillo que se puede realizar utilizando la clase `Scanner`. Primero, debes asegurarte de tener la ruta del archivo en la que se encuentra el archivo de texto. Luego, puedes utilizar el método `nextLine()` de `Scanner` para leer cada línea del archivo y almacenarla en una variable.
 
-```
-Scanner lector = new Scanner(archivo);
-```
+```Java
+import java.io.*;
+import java.util.Scanner;
 
-Ahora, podemos utilizar el método `nextLine()` del objeto `Scanner` para leer cada línea del archivo.
-
-```
-while(lector.hasNextLine()){
-    String linea = lector.nextLine();
-    // Haz algo con cada línea
-    System.out.println(linea);
+public class FileReader {
+    public static void main(String[] args) {
+        // Ruta del archivo
+        String filePath = "miArchivo.txt";
+        
+        try {
+            // Creamos un objeto Scanner para leer el archivo
+            Scanner scanner = new Scanner(new File(filePath));
+            
+            // Iteramos a través de cada línea del archivo
+            while(scanner.hasNextLine()){
+                // Almacenamos la línea en una variable
+                String line = scanner.nextLine();
+                // Imprimimos la línea en la consola
+                System.out.println(line);
+            }
+            
+            // Cerramos el Scanner
+            scanner.close();
+            
+        } catch (FileNotFoundException e) {
+            System.out.println("Archivo no encontrado: " + e.getMessage());
+        }
+    }
 }
 ```
 
-Finalmente, es importante cerrar el objeto `Scanner` una vez que ya no lo necesitamos.
-
-```
-lector.close();
-```
+El código anterior imprimirá cada línea del archivo de texto en la consola. Si quieres almacenar la información en una estructura de datos, puedes utilizar un ArrayList o un HashMap para almacenar cada línea como un elemento y acceder a ella posteriormente.
 
 ## Profundizando
-Al leer un archivo de texto en Java, hay algunas consideraciones adicionales que debes tener en cuenta. Por ejemplo, puedes especificar el conjunto de caracteres que deseas utilizar al leer el archivo, lo cual puede ser útil si el archivo contiene caracteres especiales.
 
-Para ello, puedes utilizar el constructor de la clase `Scanner` que recibe como parámetro un objeto `Charset`.
+En el pasado, los archivos de texto eran la única forma de almacenar y compartir información entre diferentes computadoras. Con el avance de la tecnología, han surgido otros formatos de archivo, como las bases de datos, que se han vuelto más populares debido a su eficiencia y funcionalidades avanzadas.
 
-```
-Scanner lector = new Scanner(archivo, StandardCharsets.UTF_8);
-```
-
-Además, puedes realizar diversas operaciones con la información leída, como por ejemplo, buscar y extraer ciertos patrones de texto utilizando expresiones regulares.
+Además de la clase `Scanner`, también se pueden utilizar otras librerías como `BufferedReader` o `FileInputStream` para leer archivos de texto en Java. Sin embargo, la clase `Scanner` se considera la opción más sencilla y eficiente para esta tarea.
 
 ## Ver también
-- [Documentación oficial de Java para la clase `File`](https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/io/File.html)
-- [Documentación oficial de Java para la clase `Scanner`](https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/util/Scanner.html)
-- [Tutorial de Java: Leyendo y escribiendo archivos de texto](https://docs.oracle.com/javase/tutorial/essential/io/file.html)
+
+- [Documentación oficial de Java sobre la clase Scanner](https://docs.oracle.com/javase/10/docs/api/java/util/Scanner.html)
+- [Tutorial de Java sobre la lectura de archivos de texto](https://www.javatpoint.com/java-read-file)
+- [Diferentes formas de leer archivos en Java](https://www.geeksforgeeks.org/different-ways-reading-text-file-java/)

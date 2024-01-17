@@ -10,48 +10,21 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+## 何 & なぜ？
+日付を文字列に変換することは、プログラマーにとって非常に重要な作業です。これは、日付をデータとして扱う必要がある場合や、ユーザーにわかりやすい形式で日付を表示する必要がある場合に役立ちます。
 
-日付を文字列に変換する必要性は多々あります。例えば、ユーザーが入力した日付を表示する場合やデータベースに格納する前に文字列に変換する必要がある場合などが考えられます。今回は、Elmを使用して日付を文字列に変換する方法について紹介します。
+## 方法：
+日付を文字列に変換するためには、Elmの組み込み関数である`Format`モジュールを使用します。`Format.date`関数を使用することで、任意の書式で日付を文字列に変換することができます。例えば、以下のように記述することで、現在の日付を年-月-日の形式で表示することができます。
 
-## 方法
-
-まずはDateパッケージをインポートしましょう。
-
-```elm
-import Date
+```Elm
+Elm.Date.Format.date "%Y-%m-%d" (Elm.Date.now)
+-- 例: "2021-10-30"
 ```
 
-次に、Dateパッケージの「fromTime」関数を使用して日付を作成します。ここでは、今日の日付を使用しましょう。
+## 深く掘り下げる：
+日付を文字列に変換する方法には、他にもいくつかのオプションがあります。例えば、Elmの`Time`モジュールを使用することで、タイムゾーンやロケールを考慮したより高度な日付のフォーマットが可能です。また、`Date.toUtcString`関数を使用することで、日付を国際標準のISO 8601形式に変換することもできます。
 
-```elm
-let currentDate = Date.fromTime 0
-```
-
-次に、DateTime.Languageパッケージをインポートし、言語を定義します。ここでは、デフォルトの「ja」を使用します。
-
-```elm
-import DateTime.Language
-let language = DateTime.Language.fromLanguageCode "ja"
-```
-
-最後に、「format」関数を使用して日付を文字列に変換します。
-
-```elm
-let stringDate = Date.format language "%Y/%m/%d" currentDate
-```
-
-上記の例では、日付が「2021年3月23日」となります。
-
-## ディープダイブ
-
-Dateパッケージには多くのフォーマットオプションがあり、日付をより細かく指定することができます。例えば、月や曜日の言語を変更することも可能です。また、「parse」関数を使用することで文字列を日付に変換することもできます。
-
-## はじめてのElm
-
-今回紹介したように、Elmを使用することで日付を簡単に文字列に変換することができます。ぜひ、実際にコードを書いてみて、様々なフォーマットを試してみてください。
-
-## 参考リンク
-
-- [Dateパッケージ - Elm Documentation](https://package.elm-lang.org/packages/elm/core/latest/Date)
-- [DateTime.Languageパッケージ - Elm Documentation](https://package.elm-lang.org/packages/elm-community/date-time/latest/DateTime-Language)
+## 関連情報：
+- Elm公式ドキュメンテーション(https://guide.elm-lang.jp/dates.html)
+- ElmのFormatモジュールのドキュメンテーション(https://package.elm-lang.org/packages/elm/core/latest/Date-Format)
+- ElmのTimeモジュールのドキュメンテーション(https://package.elm-lang.org/packages/elm/time/latest/Time-Format)

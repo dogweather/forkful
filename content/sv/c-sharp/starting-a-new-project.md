@@ -1,7 +1,7 @@
 ---
-title:                "Att börja ett nytt projekt"
-html_title:           "C#: Att börja ett nytt projekt"
-simple_title:         "Att börja ett nytt projekt"
+title:                "Att påbörja ett nytt projekt"
+html_title:           "C#: Att påbörja ett nytt projekt"
+simple_title:         "Att påbörja ett nytt projekt"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Getting Started"
@@ -10,52 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
+Att starta ett nytt projekt i programmering innebär att skapa en plan och struktur för ett nytt program eller applikation. Programmers startar nya projekt för att lösa specifika problem, förbättra befintliga system eller skapa något nytt och innovativt.
 
-Att starta ett nytt projekt i C# kan verka som en skrämmande uppgift, men det finns många fördelar som gör det värt det. C# är ett kraftfullt programmeringsspråk som är användbart inom många olika områden, från webbutveckling till spelutveckling. Genom att lära sig C# kan du öppna dörrar till nya och spännande projekt.
-
-## Hur man gör det
-
-Att starta ett nytt projekt i C# är enkelt och det finns många olika sätt att göra det på. Ett exempel kan se ut som följande:
-
+## Hur gör man:
 ```C#
-using System;
-
-namespace NewProject
-
-{
-
-    class Program
-
-    {
-
-        static void Main(string[] args)
-
-        {
-
-            Console.WriteLine("Välkommen till mitt nya projekt i C#!");
-
-            Console.ReadLine();
-
-        }
-
-    }
-
-}
+Console.WriteLine("Hello World!"); 
 ```
 
-När du kör detta program kommer du att se en utskrift som säger "Välkommen till mitt nya projekt i C#!" på din konsol. Genom att använda C#-syntaxen, som inkluderar kommentarer, variabler, loopar och villkor, kan du bygga alla typer av projekt.
+Output: Hello World!
 
-## Djupdykning
+Om du vill starta ett nytt projekt i C# är det viktigt att du har tillgång till ett utvecklingsverktyg såsom Visual Studio eller Visual Studio Code. Sedan kan du skapa en ny fil och börja koda efter din plan och struktur.
 
-Att starta ett nytt projekt i C# kan också innebära att använda olika utvecklingsverktyg, till exempel Visual Studio eller Visual Studio Code. Genom att välja rätt verktyg för ditt projekt kan du effektivisera din utvecklingsprocess och få tillgång till många användbara funktioner som debugger och integrerad terminal.
+## Djupdykning:
+Att skapa struktur och plan för ett nytt projekt är en viktig del av programmering och hjälper till att undvika problem och kaos senare i processen. Vissa programmerare föredrar att använda projektledningsverktyg såsom Agile eller Scrum för att organisera sitt arbete och samarbeta med andra.
 
-Det är också viktigt att förstå grundläggande programmeringskoncept, såsom datastrukturer, algoritmer och objektorienterad programmering. Genom att ha en bra förståelse för dessa koncept kan du skriva effektiv och strukturerad kod som är lätt att läsa och underhålla.
+Alternativ till att starta ett nytt projekt i C# inkluderar att utnyttja existerande kodbibliotek, använda ett annat programmeringsspråk eller till och med att använda en färdig applikation. Det är viktigt att överväga alla alternativ innan du börjar ett nytt projekt.
 
-## Se även
+När du väl har skapat din plan och struktur är det viktigt att välja rätt designmönster för ditt projekt och implementera det på lämpligt sätt i din kod. Detta hjälper till att hålla koden ren, skalbar och lätt att underhålla.
 
-Här är några användbara länkar för att komma igång med C#-programmering:
-
-- [Microsoft Docs](https://docs.microsoft.com/sv-se/dotnet/csharp/) - Officiell dokumentation för C#
-- [Visual Studio](https://visualstudio.microsoft.com/sv/) - Kostnadsfri IDE för C#-utveckling
-- [Codecademy](https://www.codecademy.com/learn/learn-c-sharp) - Interaktivt lärande för C#
+## Se även:
+- [Learn C# in Y minutes](https://learnxinyminutes.com/docs/csharp/)
+- [Microsoft Visual Studio](https://visualstudio.microsoft.com/sv/)
+- [Agile vs Scrum: What's The Difference?](https://www.atlassian.com/agile/scrum)

@@ -10,42 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i dlaczego?
 
-Pisanie pliku tekstowego może wydawać się proste i mało istotne, ale jest to niezwykle ważna umiejętność w programowaniu. Pliki tekstowe są powszechnie używane w wielu aplikacjach, na przykład do przechowywania ustawień, danych użytkownika czy logów. W tym artykule dowiesz się, jak w łatwy sposób napisać plik tekstowy w języku Kotlin.
+Pisanie plików tekstowych jest ważnym elementem programowania, ponieważ pozwala nam na zapisywanie danych w postaci zrozumiałej dla użytkownika. Programiści często korzystają z tej metody, aby zapisywać informacje, takie jak ustawienia aplikacji lub wyniki obliczeń.
 
-## Jak to zrobić
+## Jak to zrobić:
 
-Aby napisać plik tekstowy w Kotlinie, potrzebujemy dwóch rzeczy: ścieżki do pliku, w którym chcemy zapisać dane oraz samych danych, które chcemy zapisać. Kod będzie wyglądał mniej więcej tak:
+```Kotlin
+val fileName = "moj_plik.txt"
+val file = File(fileName)
 
-```kotlin
-val filePath = "/sciezka/do/pliku/tekstowego.txt"
-val data = "To jest przykład tekstu, który chcemy zapisać do pliku."
+// Tworzenie lub nadpisywanie istniejącego pliku
+file.printWriter().use { out ->
+    out.println("Witaj, to jest mój pierwszy plik!")
+    out.println("Możesz tutaj zapisać dowolną treść.")
+}
+
+// Dodawanie nowych danych do istniejącego pliku
+file.printWriter().appendln().use { out ->
+    out.println("To kolejna linijka tekstu.")
+}
+
 ```
 
-Następnie wykorzystujemy klasę `File` z pakietu `java.io` do utworzenia obiektu reprezentującego nasz plik. W konstruktorze podajemy ścieżkę do naszego pliku:
+Output w pliku `moj_plik.txt`:
 
-```kotlin
-val file = File(filePath)
+```
+Witaj, to jest mój pierwszy plik!
+Możesz tutaj zapisać dowolną treść.
+To kolejna linijka tekstu.
 ```
 
-Teraz wykorzystujemy obiekt `BufferedWriter` do zapisu danych do pliku. Służy on do buforowania danych, co pozwala na szybsze i wydajniejsze zapisywanie dużych ilości tekstu. Kod będzie wyglądał następująco:
+## Wgląd w głąb:
 
-```kotlin
-val writer = BufferedWriter(FileWriter(file))
-writer.write(data)
-writer.close()
-```
+Pisanie plików tekstowych jest popularną metodą zapisywania danych w programowaniu od bardzo dawna. Alternatywą dla tej metody jest wykorzystanie bazy danych, jednak pisanie plików tekstowych jest przydatne w przypadku danych, które nie wymagają złożonej struktury lub przeprowadzania zapytań.
 
-W powyższym kodzie tworzymy obiekt `BufferedWriter`, który przyjmuje jako argument obiekt `FileWriter`, który z kolei przyjmuje jako argument nasz obiekt `file` reprezentujący plik. Potem wywołujemy metodę `write` i przekazujemy jej nasze dane, a na końcu wywołujemy metodę `close`, aby zakończyć zapis do pliku.
+W Kotlinie do pisania plików tekstowych możemy wykorzystać różne metody, takie jak `printWriter()` lub `printStream()`. W obu przypadkach należy pamiętać o ustawieniu trybu "append", jeśli chcemy dodać nowe dane do istniejącego pliku.
 
-## Deep Dive
+## Zobacz także:
 
-Jeśli chcesz poznać więcej sposobów na zapisywanie danych do pliku, możesz zapoznać się z różnymi interfejsami z pakietu `java.io`, takimi jak `Writer`, `DataOutputStream` czy `PrintWriter`. Każdy z nich oferuje inne metody i możliwości, na przykład zapisywanie danych w różnych formatach czy też bardziej zaawansowane manipulacje plikiem.
-
-Ważną rzeczą, którą warto pamiętać podczas pisania pliku tekstowego, jest obsługa wyjątków. Pliki mogą być niestabilne i niezawsze będzie możliwe ich zapisanie. Dlatego należy odpowiednio obsłużyć sytuację, gdy zapis do pliku się nie powiedzie. W tym wypadku warto skorzystać z bloku `try-catch` lub rzucić wyjątek dalej, aby inny fragment kodu mógł go obsłużyć.
-
-## Zobacz też
-
-- Dokumentacja pakietu `java.io` w języku Kotlin: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/index.html
-- Przykładowe projekty z wykorzystaniem plików tekstowych w języku Kotlin na platformie GitHub: https://github.com/search?q=kotlin+file&type=Repositories
+- Dokumentacja Kotlina na temat operacji na plikach: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/
+- Przykładowe wykorzystanie w programie konsolowym: https://www.geeksforgeeks.org/kotlin-file-handling/
+- Przydatny tutorial na temat pisania plików tekstowych w Kotlinie: https://www.tutorialspoint.com/kotlin/kotlin_file_handling.htm

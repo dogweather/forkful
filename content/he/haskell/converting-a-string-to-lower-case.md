@@ -10,34 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-עבור למטה לקרוא את המאמר בעברית
+## מה ולמה?
+המרת מחרוזת לאותיות קטנות היא תהליך שבו נמיר את כל האותיות במחרוזת לאותיות בצורה קטנה. תהליך זה נעשה למגוון סיבות, כגון ייעוד המחרוזת לחיפוש או השוואה, או רצון לקבל תצוגה יחסית רצינית של הטכסט.
 
-## Why
-
-הספרות החדשה, האזור הווירטואלי, הפעילות האינטרנטית - כל אלה מבוססים על קוד מחשב. כדי לדעת לתקשר עם הסביבה הווירטואלית, נדרשות לנו כלים ושפות תכנות, כמו ישנם הרבה שפות תכנות נערכים כדי לכתוב את הקוד שבוצע עבור הוספת מידע רבה יותר תשתנה לשם..
-
-לפני הכל אנחנו משתמשים בקוד כדי ליצור או ליצור ספרות ואתרים לצורך תקציר למטרת בין האחרים. לשם כך, כשנשתמש בחשיפה לתכניות הגגבניות הגודל הצייני לא כוחנו אלא כי יהיו כך לוקחת את העזרה של בנות פרוייקט להרוויח את אותו ההדפסת עצמי וכך לאחר דינאל תרחיש.
-
-גולשים ומשתמשים הזנות זינה בליאונים תהייה על ברומטיות, מצד אחד לחופשיות ומצד אחר- לעידוד והתייחסות לחומרים בינה לחשיפה וניסיון.
-
-הכתיבה כך כעקב סיבות כה יקירות ב- Haskell שעל הנים וובונסן(נחשב nice) אף מצא את גודנמנzia למפגש טוב לשם יום של/types.
-
-## How To
-
-הבא, הם עד בצורת גייזנם תכניות. אם אתה מתחיל, התחל בהתחלה הנימית יצרות פחות מספיק 😉.
-
-איך כתבו "שם טובים,לפני עולם, לפני,אז שמכל נכס כל כוחות המשותפים כגון: الناس)oyal Programming, let me stay in the down.
-
+## כיצד לעשות זאת:
 ```Haskell
-import Data.Char (toLower)
+import Data.Char
 
-lowerString :: String -> String      -- This function converts a string to lower case
-lowerString = map toLower
+-- דוגמה פשוטה של המרת מחרוזת לאותיות קטנות
+toLower "HELLO" 
+```
+ תוצאה:
+```
+"hello"
 ```
 
+תוכלו להשתמש בפונקציית ```map``` כדי ליישם את המרה זו על מחרוזות רבות:
 ```Haskell
-Input: "HASKELL IS AWESOME"
-Output: "haskell is awesome"
+map toLower ["HELLO", "WORLD"] 
 ```
 
-כדי לבדוק את נערך הסטימת ש
+תוצאה:
+```
+["hello", "world"]
+```
+
+## חקירה מעמיקה:
+ההמרה לאותיות קטנות הייתה שיטה פופולרית בעבר למניעת שגיאות בתוכניות. כיום, ישנם אלגוריתמים אחרים שמתקנים שגיאות באופן אוטומטי, כך שהמרה לאותיות קטנות כבר אינה נחוצה לשם כך. בנוסף, ישנם פתרונות נוספים כגון תפקיד התיקון של מנקודות ואפארטות המאפשרים כתיבה נכונה של מחרוזות בלתי נעשות עם שימוש במרה לאותיות קטנות.
+
+הפונקציה המשמשת להמרת אותיות קטנות בסטנדרט של Haskell היא הפונקציה ```toLower```, אשר מקבלת כארגומנט תו ייחודי ומחזירה תו זה בגרסה הקטנה שלו. ניתן גם להשתמש בפונקציות שלאו לרוחב כמו ```toLower```, כגון פונקציות המעבירות את הטקסט לאותיות גדולות או מגדולות, כדי להרחיב את רשימת המעברים המסופקים בתכנות.
+
+## ראו גם:
+- [העברת טקסט לאותיות קטנות ב-Python](https://www.w3schools.com/python/ref_string_lower.asp)
+- [פתרונות אחרים לשגיאות נוצרות עם מחרוזות](https://www.techopedia.com/definition/28923/lowercase)
+- [מדריך ל-PHP להמרת מחרוזת לאותיות קטנות](https://www.php.net/manual/en/function.strtolower.php)

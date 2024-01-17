@@ -10,56 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# ¿Por qué escribir un archivo de texto?
+## ¿Qué y Por qué?
+Los programadores a menudo necesitan escribir archivos de texto como una forma de almacenar y manipular datos en sus aplicaciones. Es una forma sencilla y versátil de guardar información, y también facilita la lectura de datos por otros programas y sistemas.
 
-Escribir un archivo de texto es una forma sencilla y eficiente de almacenar información y datos en un formato legible por humanos. Puede ser una parte esencial en el desarrollo de un programa, ya que permite guardar y acceder a información necesaria para su funcionamiento.
-
-# Cómo hacerlo
-
-Para escribir un archivo de texto en Gleam, necesitaremos utilizar la librería `gleam/io`, la cual nos proporciona funciones para manejar archivos. A continuación, veremos un ejemplo simple de cómo crear un archivo de texto y escribir en él:
+## Cómo hacerlo:
+A continuación se muestra un ejemplo de cómo escribir un archivo de texto en Gleam:
 
 ```Gleam
-import gleam/io
+let data = "Este es un archivo de texto creado con Gleam"
 
-pub fn main() {
-  // Creamos un archivo llamado "mi_archivo.txt"
-  let file = io.write_file("mi_archivo.txt");
-
-  // Escribimos "¡Hola, mundo!" en el archivo
-  io.write(file, "¡Hola, mundo!");
-}
+let resultado = File.write("archivo.txt", data)
+// Esto escribirá el texto en un archivo llamado "archivo.txt"
 ```
 
-Podemos ver que primero importamos la librería `gleam/io` y luego utilizamos la función `write_file` para crear un archivo. Luego, utilizando la función `write`, escribimos la cadena de texto "¡Hola, mundo!" en el archivo.
-
-El resultado de este ejemplo sería un archivo de texto llamado "mi_archivo.txt" con el contenido "¡Hola, mundo!".
-
-# Profundizando
-
-Escribir un archivo de texto no se limita solo a escribir cadenas de texto simples. Podemos utilizar otras funciones y tipos de datos para crear un archivo más complejo. Por ejemplo:
+También es posible escribir en un archivo línea por línea, usando una lista de cadenas como datos:
 
 ```Gleam
-import gleam/io
+let datos = ["Línea 1", "Línea 2", "Línea 3"]
 
-type Person(name: String, age: Int)
-
-pub fn main() {
-  // Creamos un archivo llamado "personas.txt"
-  let file = io.write_file("personas.txt");
-
-  // Creamos dos personas
-  let john = Person("John", 25)
-  let sarah = Person("Sarah", 32)
-
-  // Escribimos sus datos en el archivo
-  io.write(file, john.name ++ " tiene " ++ john.age ++ " años.")
-  io.write(file, sarah.name ++ " tiene " ++ sarah.age ++ " años.")
-}
+let resultado = File.write_lines("archivo.txt", datos)
+// Esto escribirá cada cadena en una línea separada en el archivo "archivo.txt"
 ```
 
-En este ejemplo, creamos un tipo de datos `Person` que representa a una persona con un nombre y una edad. Luego, utilizamos ese tipo de datos para crear dos personas y escribimos su información en el archivo. Al final, el archivo "personas.txt" tendría el contenido "John tiene 25 años. Sarah tiene 32 años."
+## Profundizando:
+Los archivos de texto se han utilizado durante mucho tiempo en la programación como una forma de almacenar y compartir datos. Alternativas más recientes incluyen bases de datos y sistemas de archivos de documentos, que ofrecen más funcionalidades pero pueden resultar más complejos de implementar.
 
-# Ver también
+En Gleam, la función `File.write()` utiliza un bloque de manejo de errores `try` para asegurarse de que el archivo se escriba correctamente. Si algo falla durante la escritura, se lanzará una excepción que puede ser manejada en un bloque `catch`.
 
-- Documentación oficial de `gleam/io`: enlace aquí
-- Tutorial de Gleam para principiantes: enlace aquí
+## Ver también:
+Para obtener más información sobre la escritura de archivos de texto en Gleam, consulta la documentación oficial: https://gleam.run/documentation/standard_library/file.html#write.

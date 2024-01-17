@@ -1,7 +1,7 @@
 ---
-title:                "Imprimer la sortie de débogage"
-html_title:           "C: Imprimer la sortie de débogage"
-simple_title:         "Imprimer la sortie de débogage"
+title:                "Afficher la sortie de débogage"
+html_title:           "C: Afficher la sortie de débogage"
+simple_title:         "Afficher la sortie de débogage"
 programming_language: "C"
 category:             "C"
 tag:                  "Testing and Debugging"
@@ -10,52 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Qu'est-ce que c'est et pourquoi ?
 
-Si vous êtes un développeur en herbe, vous avez sûrement déjà entendu parler de l'importance des messages de débogage. Mais pourquoi est-il si important de les incorporer dans votre code? Eh bien, cela peut sembler évident, mais les messages de débogage peuvent grandement faciliter la détection et la résolution des erreurs dans votre programme. Ils vous permettent de suivre le flux d'exécution et de vérifier les valeurs des variables à différents points du code, ce qui peut vous aider à identifier la source d'un bug plus rapidement et efficacement.
+L'impression de sortie de débogage est une technique couramment utilisée par les programmeurs pour suivre le déroulement d'un programme et vérifier son comportement. Cela consiste à afficher des informations relatives à l'exécution du code, telles que les valeurs des variables ou les étapes de calcul. Cela peut être particulièrement utile pour comprendre et résoudre les erreurs dans le code.
 
-## Comment faire
+## Comment faire :
 
-La bonne nouvelle est qu'il est très simple d'ajouter des messages de débogage dans votre code en utilisant le langage C. Tout ce que vous avez à faire est d'utiliser la fonction `printf()` avec le spécificateur `%d` pour afficher la valeur d'une variable entière ou `%f` pour une variable de type flottant. Voici un exemple de code pour illustrer cela:
+Voici un exemple simple de code en C qui utilise l'impression de sortie de débogage :
 
 ```
 #include <stdio.h>
 
 int main() {
+    int x = 5;
+    int y = 3;
+    int z = x + y;
 
-   int age = 25;
+    printf("x = %d, y = %d, z = %d \n", x, y, z);
 
-   printf("Mon âge est de %d ans.\n", age);
-
-   float poids = 70.5;
-
-   printf("Mon poids est de %f kg.\n", poids);
-
-   return 0;
+    return 0;
 }
 ```
 
-La ligne de code `printf("Mon âge est de %d ans.\n", age);` affichera "Mon âge est de 25 ans." dans la console, tandis que `printf("Mon poids est de %f kg.\n", poids);` affichera "Mon poids est de 70.500000 kg.".
+En exécutant ce code, vous verrez en sortie les valeurs des variables `x`, `y`, et `z` imprimées à l'écran. Cela peut vous aider à comprendre la logique derrière le calcul de `z` et à détecter d'éventuels problèmes.
 
-## Plongeon en profondeur
+## Plongée en profondeur :
 
-Il existe différentes façons d'ajouter des messages de débogage dans votre code en utilisant la fonction `printf()` et ses spécificateurs. Par exemple, vous pouvez utiliser `%s` pour afficher une chaîne de caractères ou `%c` pour un caractère unique. De plus, vous pouvez également afficher plusieurs variables en une seule fois en les séparant par des virgules, comme dans cet exemple:
+L'impression de sortie de débogage est une pratique courante depuis les débuts de la programmation informatique. Cela permet aux programmeurs de mieux comprendre leur code et de le corriger plus rapidement. Toutefois, il existe d'autres méthodes pour déboguer un programme, telles que l'utilisation d'un débogueur (debugger) ou d'un profilage (profiler) pour mesurer les performances du code. Néanmoins, l'impression de sortie de débogage reste une méthode simple et efficace pour comprendre le comportement d'un programme et identifier les erreurs.
 
-```
-int nombre = 10;
-char lettre = 'A';
+En termes d'implémentation, chaque langage de programmation a sa propre syntaxe pour l'impression de sortie de débogage. En C, on utilise la fonction `printf()` de la bibliothèque standard pour afficher des informations à l'écran. Il est également possible d'utiliser des macros spécifiques, telles que `assert()` ou `debug()`, pour envoyer des messages de débogage à la console.
 
-printf("Voici un nombre: %d et une lettre: %c.\n", nombre, lettre);
-```
+## Voir aussi :
 
-Cette ligne de code affichera "Voici un nombre: 10 et une lettre: A." dans la console.
-
-N'oubliez pas que les messages de débogage doivent être retirés de votre code avant de le déployer pour une utilisation réelle, sinon ils pourraient ralentir considérablement votre programme.
-
-## Voir aussi
-
-Maintenant que vous en savez davantage sur l'utilisation des messages de débogage en langage C, voici quelques liens supplémentaires qui pourraient vous intéresser:
-
-- [Documentation officielle de la fonction printf() en langage C](https://www.gnu.org/software/libc/manual/html_node/Formatted-Output-Functions.html)
-- [Un tutoriel interactif sur les messages de débogage en C](https://www.learn-c.org/en/Debugging)
-- [Un article sur l'optimisation des messages de débogage en C](https://www.infoworld.com/article/3303844/debugging-print-tactics-and-how-to-use-them-to-solve-programming-problems.html)
+- [Débogueur (Wikipedia)](https://fr.wikipedia.org/wiki/D%C3%A9bogueur)
+- [Profilage (Wikipedia)](https://fr.wikipedia.org/wiki/Profilage_%28informatique%29)

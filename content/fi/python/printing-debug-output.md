@@ -1,7 +1,7 @@
 ---
-title:                "Tulostetaan vianmääritystulosteita"
-html_title:           "Python: Tulostetaan vianmääritystulosteita"
-simple_title:         "Tulostetaan vianmääritystulosteita"
+title:                "Tulostusvirheenkorjauksen tulostaminen"
+html_title:           "Python: Tulostusvirheenkorjauksen tulostaminen"
+simple_title:         "Tulostusvirheenkorjauksen tulostaminen"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Testing and Debugging"
@@ -10,36 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä ja miksi?
 
-Tiedämme kaikki, että koodin debuggaaminen voi olla haastavaa ja aikaa vievää. Siksi on tärkeää käyttää kaikkia käytettävissä olevia työkaluja ja tekniikoita helpottamaan tätä prosessia. Yksi hyödyllinen tapa on tulostaa debug-lähtöä.
+Tulostettavan debug-tietojen lähettäminen on yksinkertainen ja tehokas tapa tarkastella, mitä ohjelma tekee sen suorituksen aikana. Tämä auttaa ohjelmoijia korjaamaan mahdollisia virheitä ja löytämään tehokkaampia tapoja toteuttaa koodia.
 
-## Miten!
+## Miten:
 
-```python
-def laske_pinta_ala(pituus, leveys):
-  pinta_ala = pituus * leveys
-  print("Pinta-ala on: ", pinta_ala)
+Käytä print()-funktiota tulostamaan halutut tiedot. Voit lisätä muuttujia tulostettavan tekstin joukkoon käyttämällä kaarisulkeita { } ja varmistamaan, että tiedot näytetään oikeassa muodossa esimerkiksi käyttämällä str()-funktiota.
 
-laske_pinta_ala(5, 10)
+```Python
+# Tämä koodinpätkä tulostaa "Hello, world!" viestin
+print("Hello, world!")
+
+# Tämä tulostaa käyttäjän antaman nimen
+nimi = input("Anna nimesi: ")
+print("Tervetuloa, " + nimi + "!")
+```
+Tuloste:
+```
+Hello, world!
+Anna nimesi: John
+Tervetuloa, John!
 ```
 
-Kun suoritamme tätä koodinpätkää, saamme seuraavan tulosteen:
+## Syvältä sukellus:
 
-`Pinta-ala on: 50`
+Debug-tietojen tulostaminen on ollut suosittu tapa koodin tarkasteluun jo vuosien ajan. Se on myös nopea ja helppo tapa tarkistaa muuttujien arvoja ja ohjelman suoritusjärjestystä. Vaihtoehtoisina tapoina voit käyttää esimerkiksi debugger-työkaluja tai loggausta.
 
-Tulostamalla debug-lähtöä pystymme seuraamaan koodin suoritusta ja löytämään mahdollisia virheitä tai epäloogisuuksia. Näin voimme helposti paikantaa ja korjata ongelmia koodissamme.
+Pythonissa on myös muita tapoja tulostaa tietoja, kuten print()-funktion avulla. Tämä on kätevää, sillä se ei muuta ohjelman suoritusnopeutta.
 
-## Syvemmälle
+## Katso myös:
 
-Tulostettavan debug-lähdön määrä ja tarkkuus voivat vaihdella riippuen tilanteesta ja tarpeista. Yleensä paras tapa on tulostaa tiettyjä muuttujia tai arvoja, kun haluamme tarkistaa niiden arvoja koodissamme. Tämä voi auttaa meitä selvittämään, onko arvo oikea ja missä kohtaa koodia se on asetettu.
-
-On myös hyödyllistä lisätä tietoa tulostettuihin rivinumeroihin tai muihin tunnisteisiin, jotta voimme helposti löytää kyseisen kohdan koodista. Tämä voi säästää paljon aikaa, kun etsimme tiettyä koodiriviä suuresta tiedostosta.
-
-## Katso myös
-
-[Pythonin virallinen dokumentaatio debug-lähtöön](https://docs.python.org/3.9/library/builtins.html#print)
-
-[Tutorialspoint: Python Debugging](https://www.tutorialspoint.com/python/python_debugging.htm)
-
-[RealPython: How to Debug Python Like a Pro](https://realpython.com/python-debugging-pdb/)
+- [Pythonin virallinen dokumentaatio tulostamisesta](https://docs.python.org/3/library/functions.html#print)
+- [Debuggaus ja virheenkäsittely - GeeksforGeeks](https://www.geeksforgeeks.org/debugging-in-python/)
+- [Pythonin debuggerin käyttö](https://realpython.com/python-debugging-pdb/)

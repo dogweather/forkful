@@ -10,36 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Pourquoi lire un fichier texte?
+## Qu'est-ce que c'est et pourquoi le faire?
 
-Si vous aimez travailler avec la ligne de commande, alors vous avez sûrement entendu parler de Fish Shell, le shell de terminal convivial et moderne. L'une de ses fonctionnalités les plus utiles est la possibilité de lire et de manipuler des fichiers texte directement depuis le terminal. Dans cet article, nous allons vous montrer comment utiliser Fish Shell pour lire facilement un fichier texte, sans avoir à ouvrir un éditeur de texte séparé.
+Lecture d'un fichier texte est simplement le fait de parcourir et de lire le contenu d'un fichier texte. Les programmeurs le font souvent pour extraire des données utiles ou pour manipuler des données dans un format spécifique.
 
-## Comment faire?
+## Comment faire:
 
-Voici un exemple simple de code qui utilise Fish Shell pour lire un fichier texte:
+```Fish Shell ...``` devrait être votre meilleur ami lorsque vous travaillez avec des fichiers texte. Voici quelques exemples de code pour vous montrer comment cela fonctionne:
 
-```Fish Shell
-cat fichier.txt
+#### Lire un fichier texte:
 ```
-En utilisant la commande `cat`, nous pouvons afficher le contenu du fichier texte directement dans le terminal. Mais que faire si nous voulons seulement afficher une partie spécifique du fichier?
-
-```Fish Shell
-head -5 fichier.txt
+cat monfichier.txt
 ```
-Avec la commande `head`, nous pouvons spécifier le nombre de lignes que nous voulons afficher. Dans cet exemple, nous affichons les 5 premières lignes du fichier.
 
-Nous pouvons également utiliser la commande `tail` pour afficher les dernières lignes d'un fichier. De plus, nous pouvons utiliser des expressions régulières pour effectuer des recherches spécifiques dans un fichier texte.
+#### Lire un fichier texte ligne par ligne:
+```
+while read line
+  echo $line
+end < monfichier.txt
+```
 
-## Plongée en profondeur
+#### Afficher un aperçu d'un fichier texte:
+```
+head monfichier.txt
+```
 
-La commande `cat` que nous avons utilisée précédemment combine plusieurs fichiers en un seul. Si nous voulons uniquement afficher le contenu d'un fichier sans le fusionner avec un autre, nous pouvons utiliser la commande `less`. Cette commande nous permet également de naviguer dans le fichier à l'aide des touches fléchées du clavier.
+#### Copier le contenu d'un fichier texte dans un autre:
+```
+cp monfichier1.txt monfichier2.txt
+```
 
-De plus, Fish Shell offre des fonctionnalités avancées pour lire et manipuler des fichiers texte, telles que la possibilité de créer des alias pour des commandes couramment utilisées et des modules complémentaires pour ajouter de nouvelles fonctionnalités.
+## Plongée en profondeur:
 
-# Voir aussi
+Lecture de fichiers texte est une tâche courante dans la programmation et elle a été rendue encore plus facile avec les avancées en matière de langages de script comme Fish Shell. Avant, les programmeurs devaient utiliser des langages de programmation plus compliqués pour lire des fichiers texte, comme le C ou le Java. Maintenant, avec Fish Shell, il est beaucoup plus simple d'effectuer cette tâche. Bien sûr, il existe des alternatives telles que Python ou Perl, mais si vous travaillez souvent avec Fish Shell, cela peut être le choix le plus pratique.
 
-Pour en savoir plus sur les fonctionnalités de Fish Shell, vous pouvez consulter la documentation officielle et les forums de la communauté. Vous pouvez également explorer les différents modules complémentaires disponibles pour améliorer votre expérience avec Fish Shell.
-
-- Documentation Fish Shell: https://fishshell.com/docs/current/index.html
-- Communauté Fish Shell: https://fishshell.com/community.html
-- Modules complémentaires Fish Shell: https://github.com/fishery/fishery
+## Voir aussi:
+- [Documentation officielle de Fish Shell](https://fishshell.com/docs/current/index.html)
+- [Guide de la ligne de commande Fish](https://fishshell.com/docs/current/tutorial.html)
+- [Lecture d'un fichier texte avec d'autres langages de programmation](https://www.tecmint.com/ways-to-read-a-file-line-by-line-in-shell-script/)

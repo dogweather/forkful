@@ -10,26 +10,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué enviar una solicitud HTTP con autenticación básica?
+## ¿Qué y por qué?
+En la programación, a veces es necesario enviar una solicitud HTTP con autenticación básica, lo que significa que debemos proporcionar un nombre de usuario y contraseña para acceder a una página o servicio. Los programadores hacen esto para asegurarse de que solo usuarios autorizados puedan acceder a la información protegida.
 
-Enviar una solicitud HTTP con autenticación básica es una forma comúnmente utilizada para acceder a recursos protegidos en servidores web. Esto permite a los usuarios autenticarse con un nombre de usuario y contraseña para acceder a contenido restringido o realizar acciones en una aplicación web.
-
-## Cómo hacerlo
-
-Para enviar una solicitud HTTP con autenticación básica en Bash, podemos utilizar el comando "curl" seguido de la bandera "-u" y especificando el nombre de usuario y contraseña en el siguiente formato: usuario:contraseña. Por ejemplo:
-
-```
-curl -u usuario:contraseña https://ejemplo.com/recurso-protegido
+## Cómo:
+Para enviar una solicitud HTTP con autenticación básica usando Bash, podemos utilizar el siguiente comando:
+```Bash
+curl -u username:password URL
 ```
 
-Al presionar Enter, se enviará una solicitud HTTP al servidor con los datos de autenticación incluidos en la cabecera de la solicitud. Si la autenticación es correcta, se devolverá la respuesta del servidor, de lo contrario, se mostrará un código de error.
+Esto enviará una solicitud GET a la URL especificada con las credenciales de autenticación incluidas en la cabecera. Si la autenticación es exitosa, recibiremos una respuesta del servidor.
 
-## Profundizando
+## Profundizando:
+En el pasado, la autenticación básica era el único método de autenticación disponible en HTTP. Sin embargo, ahora se recomienda el uso de otros métodos de autenticación más seguros, como OAuth. Además, al enviar una solicitud con autenticación básica, las credenciales se envían en texto plano y pueden ser interceptadas fácilmente, lo que hace que este método sea vulnerable a ataques de seguridad.
 
-En una solicitud HTTP con autenticación básica, el nombre de usuario y contraseña se codifican en base64 antes de ser enviados al servidor. Esto significa que no se están encriptando los datos, por lo que no se considera una forma segura de autenticación. Para una mayor seguridad, se recomienda utilizar otros métodos de autenticación, como HTTPS o OAuth.
+El comando curl que usamos en el ejemplo anterior también permite especificar otros parámetros, como el tipo de solicitud, los encabezados de la solicitud y el cuerpo de la misma. Esto nos da más control sobre cómo se envía la solicitud y qué información se incluye en ella.
 
-## Ver también
-
-- [Documentación oficial de curl](https://curl.se/docs/manpage.html)
-- [Tutorial sobre solicitudes HTTP en Bash](https://www.baeldung.com/http-request-bash)
-- [Artículo sobre autenticación básica en solicitudes HTTP](https://developer.mozilla.org/es/docs/Web/HTTP/Authentication)
+## Ver también:
+- [Documentación oficial de cURL](https://curl.haxx.se/docs/)
+- [Tutorial de autenticación básica en HTTP](https://www.digitalocean.com/community/tutorials/understanding-basic-authentication-in-http)
+- [Alternativas más seguras a la autenticación básica en HTTP](https://www.owasp.org/index.php/Basic_authentication)

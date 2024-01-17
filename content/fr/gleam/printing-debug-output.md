@@ -1,7 +1,7 @@
 ---
-title:                "Affichage des résultats de débogage"
-html_title:           "Gleam: Affichage des résultats de débogage"
-simple_title:         "Affichage des résultats de débogage"
+title:                "Afficher la sortie de débogage"
+html_title:           "Gleam: Afficher la sortie de débogage"
+simple_title:         "Afficher la sortie de débogage"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Testing and Debugging"
@@ -10,40 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+#Qu'est-ce que c'est et pourquoi le faire?
 
-Vous avez probablement entendu parler de la célèbre phrase “print is not dead”. Eh bien, en programmation, c'est également vrai. L'impression de messages de débogage est un outil utile pour comprendre le comportement de votre code et trouver des erreurs.
+Le "debug output" c'est simplement le fait d'afficher des informations pendant que votre code s'exécute pour le déboguer ou le comprendre. Les programmeurs le font pour trouver des erreurs, suivre le déroulement de leur code et mieux comprendre comment il fonctionne.
 
-## Comment Faire
+#Comment faire:
 
-L'utilisation de la fonction `debug` dans Gleam permet d'imprimer des messages de débogage dans votre code. Voici un exemple:
+Pour afficher du "debug output" dans Gleam, utilisez la fonction `debug` et placez l'information que vous voulez afficher comme argument. Voici un exemple:
 
-```Gleam
-let name = "Jane"
-debug("Hello", name)
+```
+Gleam.debug("Voici un message de débogage")
 ```
 
-Dans cet exemple, nous utilisons la fonction `debug` pour imprimer le message “Hello” suivi du contenu de la variable `name`. Lorsque vous exécutez votre code, le message “Hello Jane” sera imprimé dans votre terminal. Cela peut vous aider à suivre le flux de votre programme et à comprendre comment les valeurs changent au fil du temps.
+Cela affichera "Voici un message de débogage" dans la console lorsque le code sera exécuté.
 
-Vous pouvez également utiliser des conditions pour n'imprimer des messages de débogage que lorsqu'une certaine condition est remplie. Par exemple:
+#Plongée en profondeur:
 
-```Gleam
-let age = 25
-if age > 18 {
-    debug("Vous êtes un adulte!")
-}
-```
+Afficher des informations de débogage n'est pas une pratique nouvelle. Les programmeurs l'utilisent depuis longtemps pour aider à comprendre et dépanner leur code. Il existe également d'autres moyens de déboguer, tels que l'utilisation de débogueurs spéciaux, mais afficher du "debug output" reste une méthode simple et efficace.
 
-Dans cet exemple, le message “Vous êtes un adulte!” ne sera imprimé que si la variable `age` est supérieure à 18.
+Dans Gleam, la fonction `debug` est implémentée à l'aide d'un module standard appelé `gleam_io`. Ce module fournit des fonctions pour l'entrée et la sortie de données, y compris l'affichage du "debug output".
 
-## Plongée Profonde
+#Voir aussi:
 
-L'impression de messages de débogage peut également être utile pour vérifier si votre code fonctionne correctement. Vous pouvez utiliser des messages de débogage pour afficher le contenu de variables à des points spécifiques de votre code, afin de vous assurer que les valeurs sont correctes avant de continuer.
+Pour plus d'informations sur le débogage en général, consultez ces liens utiles:
 
-Il est important d'être sélectif dans les messages de débogage que vous imprimez, car trop de messages peuvent rendre votre code illisible. Utilisez-les avec parcimonie et n'oubliez pas de les supprimer une fois que vous avez corrigé vos erreurs.
-
-## Voir Aussi
-
-- [Documentation Gleam](https://gleam.run/documentation/guide/debugging)
-- [Article Medium sur l'impression de messages de débogage en Gleam](https://medium.com/@middy/improve-your-debugging-skills-with-gleam-27e559f23185)
-- [Guide de débogage en Gleam](https://matthewhammer.org/blog/2020/07/18/gleam-debugging.html)
+- [Site officiel de Gleam](https://gleam.run/documentation/) pour plus d'informations sur la fonction `debug` et d'autres fonctionnalités utiles de Gleam.
+- [Article Wikipédia sur le débogage](https://fr.wikipedia.org/wiki/D%C3%A9bogage) pour en apprendre davantage sur l'historique et les différentes méthodes de débogage.
+- [Vidéo YouTube sur le débogage en pratique](https://www.youtube.com/watch?v=a2Q8AETVpwE) pour voir comment les programmeurs utilisent le "debug output" dans leur processus de développement.

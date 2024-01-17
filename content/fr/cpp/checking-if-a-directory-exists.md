@@ -10,42 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+# Qu'est-ce que c'est et pourquoi le vérifier?
 
-Si vous êtes programmeur, vous savez déjà que les erreurs sont inévitables. L'une des erreurs courantes est d'essayer d'accéder à un fichier ou à un dossier qui n'existe pas. Cela peut entraîner l'échec de votre programme et causer des problèmes à l'utilisateur final. C'est pourquoi il est important de vérifier si un dossier existe avant d'essayer d'y accéder.
+ Vérifier si un répertoire existe est une opération courante en programmation qui permet de s'assurer qu'un dossier donné existe avant de procéder à d'autres actions. Cela peut être utile lors de la création ou de la manipulation de fichiers dans un programme.
 
-## Comment faire
+# Comment faire:
 
-Pour vérifier si un dossier existe en C++, vous pouvez utiliser la fonction `std::filesystem::exists()` de la bibliothèque standard C++17. Voici un exemple simple de code :
+Voici un exemple de code en C++ montrant comment vérifier si un dossier existe:
 
-```C++
+```
 #include <iostream>
-#include <filesystem>
-
-int main() {
-   if (std::filesystem::exists("chemin/vers/votre/dossier")) {
-      std::cout << "Le dossier existe !" << std::endl;
-   } else {
-      std::cout << "Le dossier n'existe pas." << std::endl;
-   }
-   return 0;
+#include <filesystem> // inclure la bibliothèque pour gérer les fichiers
+namespace fs = std::filesystem; // définir un alias pour la bibliothèque
+int main()
+{
+  std::string path = "chemin/vers/le/dossier";
+  if (fs::exists(path)) { // utiliser la fonction exists() pour vérifier si le dossier existe
+    std::cout << "Le dossier existe!";
+  } else {
+    std::cout << "Le dossier n'existe pas.";
+  }
+  return 0;
 }
 ```
+Résultat attendu:
+```
+Le dossier n'existe pas.
+```
 
-Dans cet exemple, nous utilisons la fonction `exists()` pour vérifier si le dossier spécifié existe. Si c'est le cas, nous affichons un message indiquant que le dossier existe, sinon, nous affichons un message indiquant qu'il n'existe pas.
+# Plongée en profondeur:
 
-Vous pouvez également utiliser d'autres fonctions telles que `std::filesystem::is_directory()` pour vérifier si un chemin donné est un dossier ou `std::filesystem::is_regular_file()` pour vérifier si c'est un fichier régulier.
+Il est important de noter que la manière de vérifier si un dossier existe peut varier selon le système d'exploitation utilisé. Par exemple, sur Windows, il est possible que la fonction `fs::exists()` renvoie `true` même si le dossier est vide.
 
-## Plongée en profondeur
+Il existe également d'autres façons de vérifier si un dossier existe, telles que l'utilisation de fonctions spécifiques au système d'exploitation, comme `access()` sur Linux ou `GetFileAttributes()` sur Windows.
 
-Maintenant que vous savez comment utiliser la fonction `exists()` pour vérifier si un dossier existe, il est important de connaître ses limitations. Tout d'abord, cette fonction ne fonctionne que pour les chemins absolus ou relatifs, elle ne peut pas vérifier les chemins réseau. Deuxièmement, elle ne peut pas vérifier les droits d'accès au dossier, elle se contente de vérifier si le chemin existe ou non.
+Enfin, lors de l'implémentation d'une vérification de dossier, il est important de gérer les erreurs potentielles, comme la non-existence du dossier, afin d'éviter des dysfonctionnements dans le programme.
 
-De plus, dans certains cas, cette fonction peut retourner un faux positif, c'est-à-dire qu'elle peut indiquer qu'un dossier existe alors qu'en réalité, il n'existe pas. Cela peut se produire si le dossier est temporairement inaccessible en raison de problèmes de verrouillage ou d'autres processus qui utilisent le dossier.
+# Voir aussi:
 
-Il est donc important de prendre en compte ces limitations lors de l'utilisation de la fonction `exists()` pour vérifier si un dossier existe.
-
-## Voir aussi
-
-- Documentation sur `exists()` : https://en.cppreference.com/w/cpp/filesystem/exists
-- Autres fonctions pour gérer les fichiers et les dossiers en C++ : https://en.cppreference.com/w/cpp/filesystem
-- Tutoriel sur la gestion des fichiers et des dossiers en C++ : https://www.geeksforgeeks.org/file-handling-c-classes/
+- Documentation de la [bibliothèque standard C++ sur la gestion des fichiers](https://en.cppreference.com/w/cpp/filesystem)
+- Tutoriel sur la [manipulation de fichiers en C++](https://www.geeksforgeeks.org/file-handling-c-classes/)

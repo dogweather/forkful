@@ -1,7 +1,7 @@
 ---
-title:                "HTML analysieren"
-html_title:           "Java: HTML analysieren"
-simple_title:         "HTML analysieren"
+title:                "Html analysieren"
+html_title:           "Java: Html analysieren"
+simple_title:         "Html analysieren"
 programming_language: "Java"
 category:             "Java"
 tag:                  "HTML and the Web"
@@ -10,45 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was ist das und warum tun Programmierer es?
 
-Wenn du schon einmal eine Webseite besucht hast, wirst du mit HTML vertraut sein. Es ist die Sprache, mit der Webseiten aufgebaut werden und es ist wichtig zu wissen, wie man HTML-Code liest und analysiert. Das Parsen von HTML ist hilfreich, um Informationen von Webseiten zu extrahieren und sie zu analysieren, zu speichern oder zu verarbeiten.
+Das Parsen von HTML ist ein wichtiger Schritt in der Webentwicklung, bei dem der HTML-Code einer Webseite analysiert und interpretiert wird. Dadurch können Programmierer sicherstellen, dass die Webseite richtig angezeigt wird und der Inhalt korrekt dargestellt wird.
 
-## Wie geht das?
+## Wie geht's:
 
-Das Parsen von HTML in Java ist relativ einfach und kann mit Hilfe von Bibliotheken wie Jsoup durchgeführt werden. Hier ist ein Beispiel, wie man alle Links auf einer Webseite finden und ausgeben kann:
+Um HTML zu parsen, benötigen wir einige Java-Bibliotheken. Eine populäre Wahl ist Jsoup, die es uns ermöglicht, den HTML-Code in ein Document-Objekt einzulesen und dann die Informationen daraus auszulesen.
 
-```Java
-// Importieren der benötigten Bibliotheken
+```
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-// Definieren der URL
-String url = "https://www.example.com";
+// HTML-Code in ein Document-Objekt lesen
+Document doc = Jsoup.parse("<html><body><h1>Willkommen!</h1><p>Dies ist ein Beispieltext.</p></body></html>");
 
-// Verwenden der Jsoup Bibliothek, um die Webseite zu parsen
-Document doc = Jsoup.connect(url).get();
+// Elemente auswählen
+Element heading = doc.select("h1").first();
+Elements paragraphs = doc.select("p");
 
-// Extrahieren aller Links auf der Seite
-Elements links = doc.select("a[href]");
-
-// Schleife durch alle Links und Ausgabe der href Attribute
-for (Element link : links) {
-    System.out.println(link.attr("href"));
-}
+// Ausgabe der ausgewählten Elemente
+System.out.println(heading.text()); // Ausgabe: Willkommen!
+System.out.println(paragraphs.text()); // Ausgabe: Dies ist ein Beispieltext.
 ```
 
-Dieses Beispiel zeigt einen grundlegenden Ansatz, wie man HTML in Java parsen und die gewünschten Informationen extrahieren kann. Mit Hilfe der Jsoup Bibliothek können auch andere Elemente wie Text, Bilder oder bestimmte HTML-Tags extrahiert werden.
+## Tiefentauchen:
 
-## Deep Dive
+Historisch betrachtet war das Parsen von HTML eine komplexe Aufgabe, da HTML-Code oft unregelmäßig und fehlerhaft war. Heutzutage gibt es jedoch robuste Bibliotheken wie Jsoup, die das Parsen vereinfachen.
 
-Jetzt wo du eine Vorstellung davon hast, wie man HTML in Java parsen kann, gibt es noch einige wichtige Dinge zu beachten. Beim Parsen von HTML ist es wichtig zu wissen, dass die Struktur einer Webseite variieren kann und somit auch der Code, um sie zu parsen. Es ist also immer ratsam, verschiedene Webseiten zu testen und den Code entsprechend anzupassen.
+Als Alternative zum Parsen von HTML können Programmierer auch auf APIs zugreifen, die den Inhalt einer Webseite direkt in einem strukturierten Format wie JSON oder XML liefern.
 
-Außerdem ist es möglich, dass Webseiten bestimmte Sicherheitsmaßnahmen haben, um das Parsen von ihrem Code zu verhindern. Das kann dazu führen, dass die Informationen nicht vollständig extrahiert werden können oder gar keine Verbindung hergestellt werden kann. In diesem Fall benötigt man möglicherweise eine andere Herangehensweise oder spezielle Bibliotheken, um diese Hindernisse zu umgehen.
+Die Implementation von HTML-Parsing beinhaltet das Verständnis von DOM (Document Object Model) und CSS-Selektoren, um bestimmte Elemente auszuwählen. Es ist auch wichtig, Fehlerbefall zu erkennen und zu behandeln, um sicherzustellen, dass die Webseite korrekt analysiert wird.
 
-## Siehe auch
+## Siehe Auch:
 
-- Offizielle Jsoup Dokumentation: https://jsoup.org/
-- Weitere Informationen zum Parsen von HTML in Java: https://www.baeldung.com/java-html-parsing
+- [Jsoup Bibliothek](https://jsoup.org/)
+- [DOM (Document Object Model)](https://de.wikipedia.org/wiki/DOM_(Document_Object_Model))
+- [CSS-Selektoren](https://de.wikipedia.org/wiki/Cascading_Style_Sheets#Selektoren)

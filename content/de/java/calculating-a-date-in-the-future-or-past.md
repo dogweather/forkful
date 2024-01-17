@@ -10,43 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was & Warum?
+Das Berechnen eines Datums in der Zukunft oder Vergangenheit bezieht sich auf die Fähigkeit, ein Datum basierend auf einem gegebenen Datum und einer angegebenen Anzahl von Tagen, Monaten oder Jahren zu erhalten. Diese Funktion ist häufig für Anwendungen wie Kalender oder Planungstools erforderlich. Programmierer verwenden diese Methode, um effizient und genau Daten zu berechnen, ohne manuell jedes Datum einzugeben zu müssen.
 
-Warum sollte man sich mit der Berechnung von zukünftigen oder vergangenen Datum auseinandersetzen? Ganz einfach, weil es in vielen Anwendungsfällen notwendig ist, ein bestimmtes Datum zu bestimmen, sei es für die Planung von Terminen oder das Durchführen von Berechnungen.
-
-## Wie es geht
-
-Die Berechnung von zukünftigen oder vergangenen Date kann in Java auf verschiedene Weise erfolgen. Hier sind einige Beispiele:
-
-```java
-// Datum in der Zukunft berechnen
-LocalDate today = LocalDate.now();
-LocalDate futureDate = today.plusYears(2); // Datum in zwei Jahren
-System.out.println(futureDate); // Ausgabe: 2023-09-23 (das Datum kann je nach Ausführung variieren)
-
-// Datum in der Vergangenheit berechnen
-LocalDate today = LocalDate.now();
-LocalDate pastDate = today.minusMonths(6); // Datum vor 6 Monaten
-System.out.println(pastDate); // Ausgabe: 2021-03-23 (das Datum kann je nach Ausführung variieren)
-
-// Datum aus String parsen und berechnen
-DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy"); // Format des Datums angeben
-String date = "15-12-2021";
-LocalDate parsedDate = LocalDate.parse(date, formatter); // Datum aus dem String parsen
-LocalDate calculatedDate = parsedDate.plusWeeks(2); // Zwei Wochen zum Datum hinzufügen
-System.out.println(calculatedDate); // Ausgabe: 2022-01-05
+## Wie funktioniert es:
+In Java gibt es die Klasse `Calendar`, die verschiedene Methoden enthält, um ein Datum in der Zukunft oder Vergangenheit zu berechnen. Hier ist ein Beispiel, um das Datum in 30 Tagen zu berechnen:
 ```
+Java Calendar cal = Calendar.getInstance();
+cal.add(Calendar.DAY_OF_MONTH, 30);
+System.out.println("Datum in 30 Tagen: " + cal.getTime());
+```
+Dieser Code erstellt ein `Calendar` Objekt mit dem aktuellen Datum und fügt dann 30 Tage hinzu. Das Ergebnis wird als `Date` Objekt zurückgegeben und ausgegeben.
 
-## Deep Dive
+Für komplexere Berechnungen können auch andere Methoden wie `add(Calendar.MONTH, int)` oder `add(Calendar.YEAR, int)` verwendet werden, die jeweils die Anzahl der Monate oder Jahre zu einem Datum hinzufügen.
 
-Die Berechnung von Datum in Java basiert auf der Klasse `LocalDate` aus dem java.time Paket. Diese Klasse bietet verschiedene Methoden zum Hinzufügen oder Subtrahieren von Jahren, Monaten, Wochen und Tagen. Es ist auch möglich, ein Datum aus einem String mit einem definierten Format zu parsen.
+## Tiefer Einblick:
+Das Berechnen von Datumswerten geht auf die Einführung des gregorianischen Kalenders im Jahr 1582 zurück. Zuvor wurden verschiedene Kalender verwendet, die zu unterschiedlichen Berechnungen führen konnten. Heutzutage gibt es auch andere Möglichkeiten, Daten zu berechnen, wie zum Beispiel mit der `LocalDateTime` Klasse.
 
-Es gibt auch andere Klassen, die für die Arbeit mit Datum in Java verwendet werden können, wie z.B. `LocalDateTime` für Datum und Uhrzeit oder `Period` für die Berechnung von Zeitdifferenzen.
+Um die Genauigkeit zu gewährleisten, verwendet das `Calendar` Objekt die Zeitzone des Systems, auf dem es ausgeführt wird. Dies kann zu Datenunterschieden führen, wenn sich die Zeitzone ändert oder wenn Programme auf verschiedenen Systemen ausgeführt werden.
 
-## Siehe auch
-
-Für weitere Informationen zur Arbeit mit Datum in Java können Sie diese Links besuchen:
-
-- [Java 16 Dokumentation: java.time Paket](https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/time/package-summary.html)
-- [Tutorial: Java Datum und Uhrzeit](https://www.w3schools.com/java/java_date.asp)
-- [JavaDoc: LocalDate Klasse](https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/time/LocalDate.html)
+## Siehe auch:
+- Oracle Java Dokumentation: https://docs.oracle.com/javase/8/docs/api/java/util/Calendar.html
+- Vergleich zwischen `Calendar` und `LocalDateTime`: https://www.baeldung.com/java-8-date-time-intro

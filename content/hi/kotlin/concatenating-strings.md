@@ -1,7 +1,7 @@
 ---
-title:                "स्ट्रिंग्स को संयुक्त करना"
-html_title:           "Kotlin: स्ट्रिंग्स को संयुक्त करना"
-simple_title:         "स्ट्रिंग्स को संयुक्त करना"
+title:                "स्ट्रिंग्स को जोड़ना"
+html_title:           "Kotlin: स्ट्रिंग्स को जोड़ना"
+simple_title:         "स्ट्रिंग्स को जोड़ना"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Strings"
@@ -10,60 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
+## क्या और क्यों?
+कंकटेंट स्ट्रिंग क्या है और क्यों प्रोग्रामर्स इसे करते हैं, इसके बारे में दो से तीन सेंटेंसों में समझाया जाएगा।
 
-कभी-कभी हमारे पास अलग-अलग भाषाओं में लिखे गए टेक्स्ट होते हैं और हमें उनको एक साथ जोड़ना होता है। इसके लिए हम स्ट्रिंग को bond या concatenate करते हैं।
+कंकटेंटिंग स्ट्रिंग सिर्फ दो या अधिक स्ट्रिंग को एक साथ जोड़ने की प्रक्रिया है। यह प्रोग्रामर्स द्वारा उपयोग किया जाता है क्योंकि यह स्ट्रिंग्स को संपादित, साफ़ और जोड़ने में आसान बनाता है।
 
-## कैसे करें
-
-आपको अपने Kotlin प्रोग्राम में दो स्ट्रिंग को + ऑपरेटर का उपयोग करके जोड़ना है। यह डेमो कोड में दिखाया गया है:
-
+## कैसे करें?
 ```Kotlin
-val hello = "नमस्ते "
-val name = "जॉन"
-val greeting = hello + name
-println(greeting)
-```
-
-आउटपुट:
-
-```Kotlin
-नमस्ते जॉन
-```
-
-## गहराई में जाएं
-
-स्ट्रिंग को जोड़ने के लिए Kotlin में + ऑपरेटर का उपयोग किया जाता है। इसके अलावा, आपको अन्य विकल्प भी मिलते हैं। एक विकल्प है string templates जो पदों को स्थानांतरित करता है, जैसे:
-
-```Kotlin
-val country = "भारत"
-val message = "मैं $country में अपना दौरा पूरा करना चाहता हूं।"
+var greeting = "नमस्ते"
+var name = "अनुष्का"
+var message = greeting + " " + name
 println(message)
 ```
-
-आउटपुट:
-
-```Kotlin
-मैं भारत में अपना दौरा पूरा करना चाहता हूं। 
-```
-
-इसके अलावा, आप स्ट्रिंग संयोजन के लिए ```concat()``` फ़ंक्शन का भी उपयोग कर सकते हो। यह एक युग्मन बनाता है जो दो स्ट्रिंग को जोड़ता है और एक नया स्ट्रिंग लौटाता है। उदाहरण:
+यह कोड आउटपुट में नमस्ते अनुष्का दिखाएगा।
 
 ```Kotlin
-val str1 = "This is "
-val str2 = "sample text"
-val result = str1.concat(str2)
-println(result)
+var number1 = 10
+var number2 = 5
+var sum = "The sum of " + number1 + " and " + number2 + " is " + (number1 + number2)
+println(sum)
 ```
+यह कोड आउटपुट में The sum of 10 and 5 is 15 दिखाएगा।
 
-आउटपुट:
+## गहराई तक जाइए:
+कंकटेंटिंग स्ट्रिंग को निर्देशिका या डेटा संरचनाओं को मूलभूत स्थिति से जोड़ने के लिए बनाया गया था। इसके अलावा, विभिन्न तरीकों से स्ट्रिंग को जोड़ा जा सकता है जैसे + और plus () फ़ंक्शन। कोट्स को जोड़ने के लिए, आपको इसे छोटी या बड़ीतर गोलियों में चारों ओर रखने की आवश्यकता हो सकती है।
 
-```Kotlin
-This is sample text
-```
+## अधिक जानें:
+कंकतेंटिग स्ट्रिंग के अलावा, कोट्स को जोड़ने के लिए आपके पास अन्य विकल्प हैं - String.format () और StringBuilder। इनमें से String.format () सेकेंडरी स्ट्रिंग्स और लूप का उपयोग करने की आवश्यकता को कम करता है। StringBuilder फ़ंक्शन स्ट्रिंग को मूलत: मूलभूत स्थिति से जोड़ता है।
 
-## देखें भी
+## अधिक जानकारी के लिए:
+कंकटेंटिंग स्ट्रिंग को समझने और उसका उपयोग करने में कोई दिक्कत नहीं है। इसके अलावा, आप [कोट्लिन ऑफिशियल डॉक्यूमेंटेशन] (https://kotlinlang.org/docs/reference/basic-types.html#strings) को देख सकते हैं।
 
-- [Kotlin Strings](https://kotlinlang.org/docs/reference/basic-types.html#strings)
-- [Kotlin String Concatenation](https://www.geeksforgeeks.org/kotlin-string-interpolation/)
-- [Kotlin String Templates](https://www.baeldung.com/kotlin-string-templates)
+## अन्य स्रोत:
+- स्ट्रिंग के साथ विभिन्न काम करने के युक्तियाँ https://www.baeldung.com/kotlin/string-operations
+- String format कैसे करें https://www.woolha.com/tutorials/kotlin-string-format-examples-formatting-a-string-in-kotlin
+- String.format () के बारे में अधिक जानने के लिए https://www.jetbrains.com/help/idea/using-string-format-method.html

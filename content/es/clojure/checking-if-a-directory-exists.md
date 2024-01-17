@@ -10,56 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
-¿Alguna vez te has preguntado si un directorio existe antes de intentar manipularlo? Saber si un directorio existe puede ayudarte a evitar errores en tu código y asegurar que tus operaciones se realicen correctamente.
+## ¿Qué y por qué?
 
-## Cómo hacerlo
-La función `file-seq` en Clojure puede ser usada para verificar si un directorio existe. Esta función retorna una secuencia de los archivos y directorios dentro de un directorio específico. Si el directorio no existe, la secuencia será vacía.
+Comprobar si un directorio existe es una forma de verificar si una determinada carpeta o directorio está presente en una ruta de archivos. Los programadores a menudo utilizan esta función para asegurar que un directorio necesario para la ejecución del código esté disponible antes de continuar con la ejecución del programa.
 
-```
+## Cómo hacerlo:
+
 ```Clojure
-(file-seq "/ruta/del/directorio")
-; => ()
-```
-```
+(require '[clojure.java.io :refer [file]])
 
-También puedes utilizar la función `file?` para verificar si un archivo existe. Esta función devuelve `true` si el directorio existe y `false` si no existe.
+;; Verificar si el directorio "mi_carpeta" existe en la ruta "home/usuario"
+(println (file-exists? "home/usuario/mi_carpeta"))
 
-```
-```Clojure
-(file? "/ruta/al/archivo")
-; => true
-```
-```
+;; Output: false
 
-Finalmente, también puedes utilizar la función `exists?` para verificar si un directorio o archivo existe. Esta función devuelve `true` si el directorio o archivo existe y `false` si no existe.
+;; Crear el directorio "mi_carpeta"
+(java.io.File. "home/usuario/mi_carpeta").mkdirs()
 
-```
-```Clojure
-(exists? "/ruta/al/archivo")
-; => false
-```
-```
+;; Verificar si el directorio ahora existe
+(println (file-exists? "home/usuario/mi_carpeta"))
 
-## Profundizando
-La función `file-seq` también acepta un parámetro adicional `recursive`. Si se establece en `true`, la función también incluirá todos los subdirectorios y archivos dentro de ellos en la secuencia.
+;; Output: true
 
 ```
-```Clojure
-(file-seq "/ruta/del/directorio" true)
-; => ("archivo1.txt" "archivo2.txt" "subdirectorio1/archivo3.txt" "subdirectorio2/ archivo4.txt")
-```
-```
 
-La función `exists?` también acepta un segundo parámetro `follow-links`. Si se establece en `true`, la función seguirá y evaluará enlaces simbólicos, lo que puede ayudar a asegurar una verificación más precisa.
+## Inmersión profunda:
 
-```
-```Clojure
-(exists? "/ruta/al/enlace" true)
-; => true
-```
-```
+En versiones anteriores de Clojure (antes de la versión 1.7), la función utilizada para verificar si un directorio existe era ```file-seq```. Sin embargo, esta función ha sido reemplazada por ```file-exists?``` en las versiones más recientes. Alternativamente, se puede utilizar la librería ```java.nio.file``` para realizar la misma acción.
 
-## Ver también
-- Documentación oficial de Clojure sobre las funciones de verificación de archivos y directorios: https://clojuredocs.org/clojure.core/file-seq
-- Ejemplos de uso de `file?` y `exists?`: https://www.braveclojure.com/files-and-directories/
+## Ver también:
+
+- Documentación oficial de Clojure sobre ```file-exists?```: https://clojure.github.io/clojure/clojure.java.io-api.html#clojure.java.io/file-exists%3F
+- Ejemplos de uso de ```file-exists?``` en la comunidad Clojure: https://stackoverflow.com/questions/24126259/ensure-a-directory-exists-in-clojure
+- Más información sobre la librería ```java.nio.file``` : https://docs.oracle.com/javase/tutorial/essential/io/fileio.html

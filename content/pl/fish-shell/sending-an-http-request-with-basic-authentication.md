@@ -1,7 +1,7 @@
 ---
-title:                "Wysyłanie żądania http z uwierzytelnieniem podstawowym"
-html_title:           "Fish Shell: Wysyłanie żądania http z uwierzytelnieniem podstawowym"
-simple_title:         "Wysyłanie żądania http z uwierzytelnieniem podstawowym"
+title:                "Wysyłanie żądania http z podstawową autoryzacją"
+html_title:           "Fish Shell: Wysyłanie żądania http z podstawową autoryzacją"
+simple_title:         "Wysyłanie żądania http z podstawową autoryzacją"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "HTML and the Web"
@@ -10,41 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i dlaczego?
 
-Często jesteśmy zmuszeni do wysyłania żądań HTTP ze standardowym uwierzytelnieniem, czy to w celu autentykacji lub pobrania danych z API. Wykorzystanie podstawowego uwierzytelnienia jest proste i dostępne we wszystkich językach programowania, w tym także w Fish Shell. W tym artykule dowiesz się, jak szybko i łatwo wysłać żądanie HTTP z podstawowym uwierzytelnieniem w Fish Shell.
+Wysyłanie żądania HTTP z podstawową autoryzacją to proces, w którym programista używa swojego identyfikatora i hasła do autoryzacji do zasobów sieciowych. Programiści często wykonują to w celu uzyskania dostępu do chronionych stron internetowych lub API.
 
-## Jak To Zrobić
-
-Aby wysłać żądanie HTTP z podstawowym uwierzytelnieniem, możemy wykorzystać wiersz poleceń cURL. W Fish Shell, możemy wykonać to polecenie używając funkcji `curl`:
+## Jak to zrobić:
 
 ```Fish Shell
-curl -u username:password https://example.com/api
+curl --user "twoje_identyfikator:twoje_hasło" URL_strony
 ```
 
-W przypadku, gdy chcemy wykonać bardziej skomplikowane żądanie HTTP, możemy wykorzystać bibliotekę HTTPie. Najpierw musimy zainstalować ją przy użyciu menedżera pakietów `fisher`:
+Output będzie zawierał odpowiedź ze strony lub API, które próbujesz uzyskać dostęp.
 
-```Fish Shell
-fisher install jorgebucaran/fisher
-fisher install httpie
-```
+## Głębsze wniknięcie:
 
-Następnie, możemy wywołać funkcję `http` i przekazać odpowiednie parametry, w tym uwierzytelnienie, do naszego żądania:
+Wysyłanie żądania HTTP z podstawową autoryzacją jest powszechną praktyką programistów do uzyskania dostępu do zasobów sieciowych. W przeszłości technika ta była wykorzystywana głównie do autoryzacji dostępu do stron internetowych, ale obecnie jest wykorzystywana również do autoryzacji dostępu do API. Istnieją również inne sposoby na wysyłanie żądania HTTP z autoryzacją, takie jak oAuth, ale podstawowa autoryzacja nadal jest popularna ze względu na swoją prostotę.
 
-```Fish Shell
-http -a username:password https://example.com/api
-```
+## Zobacz także:
 
-Uwaga: Pamiętaj, żeby zawsze używać bezpiecznego połączenia (HTTPS) przy wysyłaniu poufnych danych z uwierzytelnieniem.
+Poniżej znajdują się linki do źródeł związanych z wysyłaniem żądania HTTP z podstawową autoryzacją:
 
-## Deep Dive
-
-Podczas wysyłania żądań HTTP z podstawowym uwierzytelnieniem, nasz login i hasło są przesyłane w nagłówku `Authorization`. Jest to metoda bezpieczna, ponieważ użytkownik, który przechwyci nasze żądanie, nie będzie w stanie odczytać naszego hasła bez zdekodowania kodowania Base64, które jest używane do przekazywania informacji uwierzytelniających. Jednakże, należy pamiętać, że z kodowaniem Base64 jest jedynie sposobem zamaskowania informacji, a nie metoda bezpiecznej transmisji.
-
-W przypadku wykorzystania biblioteki HTTPie do wysyłania żądań HTTP z uwierzytelnieniem, nasze hasło zostanie przechowane w pamięci przez krótki okres czasu. Aby uniknąć tego, możemy użyć opcji `--auth-type=none` lub `--auth-type=digest`, co spowoduje, że nasz login i hasło nie będą przechowywane w pamięci.
-
-## Zobacz Również
-
-- [Dokumentacja cURL](https://curl.haxx.se/)
-- [Więcej informacji o HTTPie](https://httpie.org/)
-- [Fish Shell - Oficjalna strona](https://fishshell.com/)
+- [Dokumentacja Fish Shell](https://fishshell.com/docs/current/commands.html#curl)
+- [Podstawowa autoryzacja HTTP](https://developer.mozilla.org/pl/docs/Web/HTTP/Authentication) 
+- [Alternatywne metody autoryzacji HTTP](https://www.redhat.com/en/topics/api/what-is-basic-authentication)

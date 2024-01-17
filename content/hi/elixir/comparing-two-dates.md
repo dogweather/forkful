@@ -1,7 +1,7 @@
 ---
-title:                "दो तारीखों का तुलना करना"
-html_title:           "Elixir: दो तारीखों का तुलना करना"
-simple_title:         "दो तारीखों का तुलना करना"
+title:                "दो तिथियों की तुलना करना"
+html_title:           "Elixir: दो तिथियों की तुलना करना"
+simple_title:         "दो तिथियों की तुलना करना"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Dates and Times"
@@ -10,43 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## क्या और क्यों?
+दो तारीखों को तुलना किया जाता है, जो दो तारीखों के बीच के अंतर को पता करने के लिए किया जाता है। प्रोग्रामर्स इसे दो तारीखों के बीच के अंतर को निर्धारित करने, तारीखों की तुलना करने और अन्य समय संबंधित कार्यों को सही ढंग से करने के लिए करते हैं।
 
-Aksar hume apne code mein do dates ko compare karna hota hai. Aise mein, Elixir mein date comparing ka concept bohot zaroori hai. Is article mein hum jaanenge ki dates ko compare kyun aur kaise karein.
+## कैसे करें?
+यहां हम दो तारीखों की तुलना करने का एक उदाहरण देखेंगे और इसके लिए इक्सियर कोड ब्लॉक में दिखाया गया है।
 
-## How To
+```Elixir
+# दो तारीखों की तुलना करें
+{:ok, date1} = Date.new(2021, 9, 10)
+{:ok, date2} = Date.new(2021, 9, 15)
 
-Elixir mein dates ko compare karne ke liye aap DateTime module ka use kar sakte hain. Iske liye, sabse pehle aapko `DateTime` module ko import karna hoga:
+# दो तारीखों के अंतर को प्राप्त करें
+diff = Date.diff(date1, date2)
+IO.puts("दो तारीखों के बीच का अंतर है: #{diff} days")
 
-```
-defmodule DateComparison do
-  import DateTime
-end
-```
-
-Ab hum apne code mein do dates ko compare kar sakte hain. Iske liye, hum `DateTime.compare/2` function ka use karenge. Is function ke do arguments hote hain, jinmein se pehla date aur dusra date hota hai. Date format ka dhyaan rakhein, kyunki function sahi result tabhi dega jab dono dates ka format same ho.
-
-```
-DateTime.compare(%DateTime{year: 2020, month: 6, day: 5}, %DateTime{year: 2020, month: 5, day: 10})
-=> 1
-```
-
-Is output se humein pata chalta hai ki pehli date badi hai dusri date se. Agar pehla date chota hota, to output -1 hota aur agar dono dates same hote, to output 0 hota.
-
-Isi tarah, hum do dates ke beech mein difference bhi jaan sakte hain, `DateTime.diff/2` function ka use karke. Ye function milliseconds mein difference return karta hai.
-
-```
-DateTime.diff(%DateTime{year: 2020, month: 6, day: 5}, %DateTime{year: 2020, month: 5, day: 10})
-=> 2592000000
+# दो तारीखों की समानता की जांच करें
+equal = Date.equal?(date1, date2)
+IO.puts("दो तारीखों की समानता है: #{equal}")
 ```
 
-## Deep Dive
+आउटपुट:
 
-Elixir mein, dates ko represent karne ke liye `DateTime` data type ka use kiya jata hai. Ye data type `year`, `month`, `day`, `hour`, `minute`, `second` aur `microsecond` keys ke sath hota hai. Isi tarah, saal aur din bhi calculate karne ke liye `Date` module ka use kiya jata hai.
+```
+दो तारीखों के बीच का अंतर है: 5 days
+दो तारीखों की समानता है: false
+```
 
-Dates ko compare karte waqt, Elixir internaly unhe unix timestamps mein convert karta hai, jo ki milliseconds mein hota hai. Isi wajah se, results precise aur accurate hote hain.
+## गहराई में जाएं
+इतिहास को मदद से समझें, फिर अलग विकल्पों को देखें और तारीखों की तुलना करने के लिए अंतिम विवरण जानें। तारीखों को समानता या अंतर की जांच करने के लिए इस्तेमाल किए जाने के लिए इक्सियर में डेट लाइब्रेरी का उपयोग किया जाता है। इसका पूरा स्रोत कोड ओपन-सोर्स है और संजोयनिक रूप से विकसित होता है।
 
-## See Also
-
-- Official Elixir documentation on DateTime module: https://hexdocs.pm/elixir/DateTime.html
-- Official Elixir documentation on Date module: https://hexdocs.pm/elixir/Date.html
+## और भी देखें
+- [Date लाइब्रेरी डॉक्यूमेंटेशन](https://hexdocs.pm/elixir/Date.html)
+- [इक्सियर वेबसाइट](https://elixir-lang.org/)

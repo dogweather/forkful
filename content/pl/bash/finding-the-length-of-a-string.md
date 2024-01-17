@@ -10,37 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-**## Dlaczego**
+## Co & Dlaczego?
 
-Jeśli jesteś początkującym lub nawet doświadczonym programistą, to z pewnością natknąłeś się już na różne zadania związane z manipulacją ciągami tekstowymi. Jednym z takich zadań może być obliczenie długości ciągu znaków. Dlaczego warto poznać ten temat? Ponieważ jest to podstawowa umiejętność, która przyda się w wielu sytuacjach podczas programowania w Bashu.
+Znajdowanie długości ciągu znaków to jedna z podstawowych operacji wykonywanych przez programistów. Polega to po prostu na policzeniu ilości znaków w danym ciągu. Jest to przydatne w wielu sytuacjach, na przykład w celu sprawdzenia, czy użytkownik wprowadził odpowiednią ilość znaków w formularzu lub w celu sprawdzenia, czy dany ciąg został poprawnie zaszyfrowany.
 
-**## Jak to zrobić**
+## Jak to zrobić:
 
-Aby obliczyć długość ciągu znaków w Bashu, musimy skorzystać z wbudowanej komendy `expr`. Przed jej użyciem musimy jednak pamiętać o kilku ważnych rzeczach. Przede wszystkim, `expr` przyjmuje tylko jeden argument, więc jeśli chcemy obliczyć długość ciągu, musimy go umieścić w cudzysłowie. Ponadto, aby przeczytać wynik z komendy `expr`, musimy przekierować go do zmiennej, w której będziemy go przechowywać.
-
-Przykładowy kod wykorzystujący `expr` do obliczenia długości ciągu `Hello World` wyglądałby następująco:
+Możemy wykorzystać polecenie ```wc -c``` w Bashu, aby znaleźć długość ciągu znaków. Przykładowa komenda może wyglądać tak:
 
 ```Bash
-my_string="Hello World"
-length=$(expr length "$my_string")
-
-echo $length # wyświetli 11
-```
-Jeśli chcemy wyświetlić długość ciągu w jednym wierszu wraz z komunikatem, możemy użyć potoku (`|`) i składni `printf`:
-
-```Bash
-printf "Długość ciągu 'Hello World' to: $(expr length 'Hello World')\n"
+string="To jest przykładowy ciąg."
+echo "Długość ciągu: $(echo -n $string | wc -c)"
 ```
 
-**## Deep Dive**
+To spowoduje wyświetlenie na ekranie liczby 26, ponieważ tyle znaków znajduje się w ciągu "To jest przykładowy ciąg."
 
-Jak już wspomnieliśmy wcześniej, `expr` przyjmuje tylko jeden argument, dlatego musimy umieścić ciąg znaków w cudzysłowie. W przeciwnym razie, jeśli ciąg zawiera spacje lub inne znaki specjalne, zostaną one traktowane jako oddzielne argumenty, co może skutkować błędnym wynikiem lub nawet błędem.
+## Głębsze zagadnienia:
 
-Ponadto, warto wiedzieć, że `expr` ma także inne funkcje, takie jak obliczanie wartości arytmetycznych lub porównywanie liczb. Możesz przeczytać więcej o tych funkcjach korzystając z komendy `man expr`.
+Znajdowanie długości ciągu jest procesem prostym i powszechnie stosowanym w programowaniu. Wcześniej wykorzystywano inne sposoby, na przykład pętlę for w celu liczenia każdego pojedynczego znaku, ale polecenie ```wc -c``` jest bardziej wydajne i szybsze. Istnieją również inne sposoby liczenia długości ciągu, takie jak użycie funkcji strlen w języku C.
 
-**See Also**
+## Zobacz także:
 
-Jeśli chcesz dowiedzieć się więcej o manipulacji ciągami znaków w Bashu, możesz przeczytać te artykuły:
-
-- [Manipulacja ciągami znaków w Bashu](https://linuxhint.com/bash_string_manipulation/)
-- [Manipulacja ciągami znaków w Bashu - poradnik dla początkujących](https://blog.balthazar-rouberol.com/manipulating-strings-in-bash)
+- Dokumentacja polecenia ```wc``` w Bashu: https://www.gnu.org/software/coreutils/manual/html_node/wc-invocation.html
+- Inne sposoby liczenia długości ciągu w różnych językach programowania: https://www.geeksforgeeks.org/length-of-a-string-using-recursion

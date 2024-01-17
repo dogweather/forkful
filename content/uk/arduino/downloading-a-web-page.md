@@ -10,55 +10,72 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Чому
+## Що і чому?
+Завантаження веб-сторінки - це процес отримання інформації з Інтернету на ваш пристрій. Програмісти часто використовують цей процес, щоб отримати доступ до корисної інформації для своїх проектів або програм.
 
-Завантаження веб-сторінки може бути необхідним для отримання останніх оновлень, даних або інформації в режимі реального часу. Це також може бути корисним для створення зв'язку з іншими пристроями або додатками.
+## Як це зробити:
+Нижче наведені приклади коду та результату для завантаження веб-сторінки за допомогою Arduino.
 
-## Як
-
-```arduino
-#include <WiFiClient.h> // Бібліотека для з'єднання з Wi-Fi
-#include <ESP8266HTTPClient.h> // Бібліотека для взаємодії із веб-сайтами
-
-const char* ssid = "назва_мережі"; // Замініть на своє значення
-const char* password = "пароль_мережі"; // Замініть на своє значення
+```Arduino
+#include <WiFi.h>
 
 void setup() {
-  Serial.begin(9600); // Ініціалізуємо серійний порт для відображення результатів
-  WiFi.begin(ssid, password); // Підключення до Wi-Fi мережі
-
-  while (WiFi.status() != WL_CONNECTED) { // Чекаємо на підключення до мережі
+  // підключення до Wi-Fi мережі
+  WiFi.begin("назва_мережі", "пароль_мережі");
+  // очікування підключення
+  while (WiFi.status() != WL_CONNECTED) {
     delay(500);
     Serial.println("Підключення до Wi-Fi...");
   }
-  Serial.println("Підключення до Wi-Fi та інтернету успішне!");
-
-  // Вказуємо URL адресу веб-сторінки
-  HTTPClient http;
-  http.begin("https://example.com");
   
-  // Робимо запит на веб-сторінку та зберігаємо результат у змінну
-  int httpCode = http.GET();
-  String response = http.getString();
-
-  // Виводимо результат у консоль
-  Serial.println(httpCode); // Код статусу запиту
-  Serial.println(response); // Відповідь на запит
-
-  // Зупиняємо з'єднання
-  http.end();
+  Serial.println("Підключено до Wi-Fi!");
 }
 
 void loop() {
-  // Ваш код тут
+  // створення об'єкту Wi-Fi клієнту
+  WiFiClient client;
+  // підключення до сервера
+  if (client.connect("www.example.com", 80)) {
+    Serial.println("Підключено до сервера!");
+    // відправка команди GET для отримання веб-сторінки
+    client.println("GET / HTTP/1.0");
+    // очікування відповіді від сервера
+    while (client.available()) {
+      // виведення вмісту веб-сторінки в консоль монітора серійного порту
+      Serial.write(client.read());
+    }
+    // розрив з'єднання з сервером
+    client.stop();
+    Serial.println("З'єднання з сервером закрито!");
+  } else {
+    Serial.println("Помилка з'єднання!");
+  }
+  
+  delay(5000); // очікування 5 секунд
 }
 ```
 
-## Deep Dive
+Результат виводу в консоль монітора серійного порту:
+```
+<!DOCTYPE html>
+<html>
+<head>
+<title>Example Domain</title>
+...
 
-Для завантаження веб-сторінки на Arduino ми використовуємо бібліотеку ESP8266HTTPClient, яка пропонує широкий функціонал для роботи з веб-сайтами. Метод `begin()` використовується для вказівки URL адресу, а метод `GET()` здійснює запит та повертає статус запиту. У випадку успішного запиту, метод `getString()` дозволяє отримати відповідь у вигляді рядка. Також можна використовувати методи `POST()` та `PUT()` для відправки даних на веб-сайт.
+<h1>Example Domain</h1>
+<p>This domain is for use in illustrative examples in documents. You may use this
+domain in literature without prior coordination or asking for permission.</p>
+...
+</body>
+</html>
+```
 
-## Дивіться також
+## Погляд у глибину:
+Історичний контекст: завантаження веб-сторінок є одним із основних функцій Інтернету і постійно вдосконалюється з появою нових технологій і стандартів. Інші альтернативи для програмістів - використання спеціалізованих бібліотек або розробка власних рішень.
 
-- [ESP8266HTTPClient documentation](https://github.com/esp8266/Arduino/blob/master/libraries/ESP8266HTTPClient/src/ESP8266HTTPClient.h)
-- [Arduino Wi-FiClient Library](https://www.arduino.cc/en/Reference/WiFiClient)
+Деталі реалізації: для завантаження веб-сторінок за допомогою Arduino, ми використовуємо бібліотеку WiFi.h, яка дозволяє підключатися до Wi-Fi мережі та використовувати стандартні протоколи Інтернету, такі як HTTP для отримання веб-сторінок.
+
+## Також перегляньте:
+- Документацію бібліотеки WiFi.h для докладнішої інформації про її використання (https://www.arduino.cc/en/Reference/WiFi)
+- Інші способи завантаження веб-сторінок на Arduino (https://randomnerdtutorials.com/esp8266-web-server-arduino-ide/)

@@ -1,7 +1,7 @@
 ---
-title:                "计算字符串的长度"
-html_title:           "Elixir: 计算字符串的长度"
-simple_title:         "计算字符串的长度"
+title:                "查找字符串的长度"
+html_title:           "Elixir: 查找字符串的长度"
+simple_title:         "查找字符串的长度"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -10,41 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-为什么：为什么要计算字符串的长度？因为字符串是程序中最常用的数据类型之一，计算其长度可以帮助我们更有效地处理和操作字符串。
+什么是字符串长度？
+字符串长度是指一个字符串中包含的字符的个数。在编程中，字符串长度通常用来计算一个字符串的大小，并且经常作为程序的重要参数使用。
 
-## 为什么
+为什么程序员要计算字符串长度？
+在编程中，我们经常需要处理文本和字符串数据。为了正确地处理和操作这些数据，我们需要知道它们的长度。比如，当我们需要限制用户输入的字符串长度时，就需要计算字符串长度来确保它不会超出指定的范围。
 
-计算字符串的长度是我们编写程序时经常会遇到的问题。字符串是由一系列字符组成的数据类型，它们可以表示文本、数字或符号等信息。在许多情况下，我们都需要知道一个字符串的长度，比如在验证用户输入时，我们需要判断一个字符串是否符合长度要求。
+如何计算字符串长度？
+在Elixir中，我们可以使用内建函数 `String.length` 来计算字符串的长度，它会返回字符串中字符的个数。下面是一个简单的例子：
 
-## 如何做
-
-在Elixir中，我们可以使用`String.length()`函数来计算字符串的长度，它接受一个字符串作为参数，并返回该字符串的长度，示例如下：
-
-```Elixir
-string = "Hello World!"
-String.length(string)
+```elixir
+sentence = "Hello, world!"
+String.length(sentence)
 ```
 
-运行上述代码，我们会得到输出`12`，即字符串"Hello World!"的长度。需要注意的是，`String.length()`函数会将每个Unicode字符都计算在内，因此它可以准确地计算字符串的长度，不会受到不同语言或符号的影响。
+这段代码将返回 `13`，因为这个字符串由13个字符组成。
 
-另外，在Elixir中，我们也可以使用模式匹配来计算字符串的长度。比如下面这个函数可以返回任意字符串的长度：
+深入了解
+在历史上，计算字符串长度是一个非常耗时的操作，因为它需要遍历整个字符串来计算它的长度。但是在现代编程语言中，这个操作已经被高效地实现，所以我们可以在实际应用中使用它。
 
-```Elixir
-def string_length(string) do
-  {length, _} = String.split_at(string, 1)
-  length
-end
+除了使用 `String.length` 函数，我们也可以使用模式匹配来计算字符串的长度。比如，下面的代码会将字符串中的每个字符绑定到一个变量，并返回它们的长度：
+
+```elixir
+sentence = "Hello, world!"
+length = len(sentence)
+
+def len(""), do: 0
+def len(string), do: len(tl(string)) + 1
 ```
 
-`String.split_at()`函数可以将一个字符串分割为两部分，分别返回分割后的字符串和剩余部分，然后我们只需要取出分割后的字符串的长度即可。
+在这个例子中，我们利用了模式匹配的能力来递归地计算字符串的长度。这种方法在一些特定的场景下可能比使用 `String.length` 函数更快。
 
-## 深入了解
+此外，如果我们需要计算一个字符串的字节数（而不是字符数），我们可以使用 `String.length` 函数的另一个变体 `String.length_codepoints`。
 
-计算字符串长度的实现背后其实也涉及到计算机底层的编码方式。在计算机中，字符实际上是以二进制编码存储的，不同的编码方式会导致字符的长度不同。而Elixir中的`String.length()`函数会自动识别字符串的编码方式，并根据编码方式计算出正确的长度。
-
-此外，Elixir中还提供了其他一些有用的字符串操作函数，比如`String.upcase()`用于将字符串中的字符转换为大写，`String.downcase()`用于将字符串中的字符转换为小写，`String.trim()`用于去除字符串两端的空格等。想要深入了解Elixir中字符串的操作，可以参考官方文档中关于`String`模块的内容。
-
-## 参考链接
-
-- [Elixir官方文档](https://hexdocs.pm/elixir/String.html)
-- [Mastering Elixir Strings](https://towardsdatascience.com/mastering-elixir-strings-891e770a427)
+相关链接
+- [Elixir文档：String.length](https://hexdocs.pm/elixir/String.html#length/1)
+- [Elixir源码：string.ex](https://github.com/elixir-lang/elixir/blob/v1.10.0/lib/elixir/lib/string.ex)

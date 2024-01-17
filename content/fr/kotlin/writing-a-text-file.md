@@ -10,55 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi 
+# Qu'est-ce que c'est et pourquoi le faire?
 
-Ecrire un fichier texte peut sembler être une tâche banale, mais c'est en fait une compétence essentielle pour tout développeur Kotlin. Cela vous permet de stocker et de manipuler des données de manière simple et efficace, ce qui peut être très utile pour de nombreux projets.
+Ecrire dans un fichier texte est une façon pour les programmeurs de stocker des données de façon permanente. Cela leur permet de sauvegarder des informations importantes et potentiellement de les récupérer plus tard.
 
-## Comment faire 
+# Comment faire:
 
-Pour écrire un fichier texte en Kotlin, suivez ces étapes simples: 
-
-1. Tout d'abord, importez les classes nécessaires en utilisant l'instruction `import java.io.File` 
-2. Créez une instance de la classe `File`, en spécifiant le chemin et le nom du fichier que vous souhaitez créer. Par exemple, `val file = File("monfichier.txt")` 
-3. Utilisez la méthode `writeText()` pour écrire du texte dans votre fichier. Par exemple, `file.writeText("Bonjour le monde!")` 
-4. Si vous souhaitez ajouter du texte à un fichier existant, utilisez la méthode `appendText()` au lieu de `writeText()`. 
-5. N'oubliez pas de gérer les exceptions lors de l'utilisation de ces méthodes en utilisant des blocs `try-catch`.
-
-Voici un exemple complet de code pour écrire du texte dans un fichier et le récupérer ensuite en tant que chaîne de caractères:
-
-```Kotlin
-import java.io.File
-
+```kotlin
 fun main() {
-  // Crée un fichier "monfichier.txt"
-  val file = File("monfichier.txt")
-  
-  // Ecrire du texte dans le fichier
-  file.writeText("Bonjour le monde!")
-  
-  // Récupère le contenu du fichier en tant que chaîne de caractères
-  val content = file.readText()
-  
-  println(content) // Affiche "Bonjour le monde!"
+    val data = "Ceci est un exemple de texte à écrire dans un fichier." //Définition des données à écrire
+    val file = File("exemple.txt") //Création d'un objet de type File qui représente le fichier où écrire
+    
+    //Ecriture des données dans le fichier
+    try {
+        file.writeText(data)
+        println("Le texte a été écrit dans le fichier avec succès!")
+    } catch (e: IOException) {
+        println("Une erreur s'est produite lors de l'écriture du fichier.")
+    }
 }
 ```
 
-## Plongée en profondeur 
-
-Maintenant que vous savez comment écrire et récupérer du texte dans un fichier en utilisant Kotlin, voici quelques informations supplémentaires pour améliorer vos connaissances sur le sujet:
-
-- Vous pouvez également utiliser la méthode `printWriter()` pour écrire du texte dans un fichier avec plus de flexibilité, en spécifiant l'encodage, le format de nouvelle ligne, etc.
-- Outre les méthodes `writeText()` et `appendText()`, vous pouvez également utiliser `writeBytes()` pour écrire des données binaires dans un fichier.
-- Kotlin offre également une syntaxe de blocs `use` qui s'assure que le fichier est correctement fermé même en cas d'exception. Par exemple:
-
-```Kotlin
-File("monfichier.txt").printWriter().use { out ->
-  out.println("Bonjour le monde!")
-}
+Output:
+```
+Le texte a été écrit dans le fichier avec succès!
 ```
 
-## Voir aussi 
+# Plongée en profondeur:
 
-- [Documentation officielle Kotlin pour les entrées-sorties](https://kotlinlang.org/docs/tutorials/kotlin-for-py/io.html)
-- [Tutoriel sur la manipulation de fichiers en Kotlin](https://www.tutorialkart.com/kotlin/kotlin-write-to-file/)
-- [Documentation officielle Java pour la classe `File`](https://docs.oracle.com/javase/8/docs/api/java/io/File.html)
+Historiquement, l'écriture dans un fichier texte était utilisée pour stocker des instructions pour les ordinateurs avant l'avènement des langages de programmation modernes. De nos jours, il existe d'autres méthodes pour stocker et récupérer des données telles que les bases de données. Cependant, l'écriture dans un fichier texte reste une méthode simple et efficace pour sauvegarder des informations.
+
+# Voir aussi:
+
+- [Documentation officielle de Kotlin sur l'écriture de fichiers](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/write-text.html)
+- [Tutoriel sur l'écriture et la lecture de fichiers textes en Kotlin](https://www.baeldung.com/kotlin-write-to-file)
+- [Comparaison des différentes façons de stocker des données en programmation](https://www.edgewater.com/2015/05/26/databasevsflatfile/)

@@ -10,68 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 为什么
+# 这是什么 & 为什么?
+打印调试输出是一种程序员用来检查代码中的错误和问题的方法。它可以帮助我们理解程序在运行过程中发生了什么，并且可以提供有用的信息来排除错误。因此，打印调试输出在开发过程中是非常有用的。
 
-在编写Clojure程序时，打印调试输出是一个非常重要的技巧。它可以帮助我们更好地理解程序的运行过程，定位bug，并提高代码的可读性。
-
-
-# 如何进行调试输出
-
+# 如何:
 ```Clojure
-(defn print-debug [x]
-  (println "Debug output:" x))
-  
-(print-debug "Hello World")
+(defn add [a b]
+  (println "a is" a "and b is" b)
+  (+ a b))
+
+(add 3 5)
 ```
 
-输出:
-
 ```
-Debug output: Hello World
-```
-
-
-代码解释:
-
-在这段代码中，我们定义了一个名为`print-debug`的函数，它接受一个参数`x`。在函数体中，我们使用`println`函数打印出 "Debug output:" 字符串和参数`x`的值。然后，我们调用`print-debug`函数，并传入一个字符串“Hello World”作为参数。最后，我们就可以在控制台中看到调试输出了。
-
-# 深入探讨
-
-除了在函数体中使用`println`函数，我们还可以使用`pr`函数来打印对象的字符串表示。比如，我们可以修改上面的例子：
-
-```Clojure
-(defn print-debug [x]
-  (pr "Debug output:" x))
-  
-(print-debug "Hello World")
+a is 3 and b is 5
+8
 ```
 
-输出：
+在上面的例子中，我们定义了一个函数add，它接受两个参数并返回它们的和。我们通过打印参数的值来调试这个函数，并且最后返回他们的和。这样，当我们运行add函数时，我们就可以看到参数的值，并且确定它们是否正确。
 
-```
-Debug output: "Hello World"
-```
+# 深入了解:
+打印调试输出的历史可以追溯到早期的程序开发。在过去，程序员使用print语句来输出调试信息，但这种方法很快被发现是低效且容易产生错误的。而今，许多编程语言都提供了专门的调试工具来帮助程序员更加有效地调试代码。在Clojure中，除了求值打印，我们也可以使用clojure.tools.logging库来打印调试信息。
 
-`pr`函数打印出来的是字符串的实际值，而`println`打印的则是字符串的显示形式。这在调试复杂数据结构时非常有用，可以帮助我们更好地理解数据的组织结构。
+除了打印调试输出，程序员还可以使用断言、日志记录等方法来调试代码。这些方法都有各自的优点和用途，但打印调试输出仍然是最简单和最常用的方法。
 
-除了简单地打印字符串或对象的值，我们也可以使用Clojure提供的`format`函数来格式化输出。比如：
-
-```Clojure
-(defn print-debug [x]
-  (println (format "Debug output: %s" x)))
-  
-(print-debug "Hello World")
-```
-
-输出：
-
-```
-Debug output: Hello World
-```
-
-`format`函数中的`%s`表示字符串的占位符，后面的参数会按照顺序插入到字符串中。这样，我们就可以自定义打印的格式，更方便地进行调试。
-
-# 参考链接
-
-- [Clojure官方文档](https://clojure.org/)
-- [Clojure学习资源](https://github.com/clojure-china/learn-clojure)
+# 参考链接:
+- [Clojure tools logging](https://clojure.github.io/tools.logging/)
+- [Debugging techniques](https://stackoverflow.com/questions/441547/how-can-i-debug-a-code)
+- [Assertions in Clojure](https://clojuredocs.org/clojure.core/assert)

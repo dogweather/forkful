@@ -10,40 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä & Miksi?
 
-Jos haluat käyttää verkkosivuston tietoja tai sisältöä omassa ohjelmassasi tai sovelluksessasi, sinun täytyy ladata se ensin. Tämä on mahdollista käyttämällä PHP:n sisäänrakennettua toimintoa ladata verkkosivu.
+Lataaminen tarkoittaa yksinkertaisesti tiedoston tai verkkosivun hakemista internetistä omalle laitteelle. Tämä on yleinen käytäntö ohjelmoinnissa, koska se antaa mahdollisuuden käsitellä ja manipuloida tietoja paikallisesti. Esimerkiksi web-sivun sisältöä voidaan muokata ja näyttää uudelleen muulla tavoin.
 
-## Miten se tehdään
-
-Lataamiseen liittyvät tärkeimmät PHP-funktiot ovat `file_get_contents` ja `curl`. Alla on esimerkki siitä, miten voit ladata verkkosivun käyttämällä `file_get_contents` -funktiota ja tulostaa sen sisällön:
+## Kuinka:
 
 ```PHP
-$url = "https://www.example.com";
-$html = file_get_contents($url);
-echo $html; 
+<?php
+// Lataa web-sivun sisältö
+$web_sisalto = file_get_contents("https://www.example.com");
+
+// Tulosta sisältö
+echo $web_sisalto;
+?>
 ```
 
-Ja tässä on vastaava esimerkki käyttämällä `curl` -funktiota:
+Tuloste:
 
-```PHP
-$url = "https://www.example.com";
-$ch = curl_init();
-curl_setopt($ch, CURLOPT_URL, $url);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-$output = curl_exec($ch);
-curl_close($ch);
-echo $output;
+```HTML
+<!DOCTYPE html>
+<html>
+<head>
+<title>Esimerkki</title>
+</head>
+<body>
+<h1>Tervetuloa</h1>
+<p>Tämä on esimerkkisivu.</p>
+</body>
+</html>
 ```
 
-Nämä esimerkit olettaa, että PHP:llä on oikeudet ladata verkkosivu. Jos haluat ladata verkkosivun, joka vaatii käyttäjänimiä ja salasanoja, voit käyttää `curl` -funktiota muuttamalla `curl_setopt` -kohtia.
+## Deep Dive
 
-## Syventävä sukellus
+Lataamisen historia juontaa juurensa internetin alkuvaiheisiin, jolloin höyhenenkevyet tiedostot siirrettiin FTP-protokollan avulla. Nykyään ladattavat tiedostot voivat olla paljon monimutkaisempia ja sisältää koodia, muotoiluja ja multimediaa. PHP:n file_get_contents()-funktio helpottaa verkkosivun lataamista ja sen sisällön käsittelyä.
 
-`file_get_contents` ja `curl` -funktioiden lisäksi on olemassa muita tapoja ladata verkkosivuja PHP:llä. Voit esimerkiksi käyttää `fopen` ja `fgets` -funktioita avataksesi yhteyden verkkosivulle ja käsitelläksesi sen sisältöä rivittäin. Voit myös asettaa erilaisia asetuksia `curl` -funktioon, kuten käyttäjänimiä ja salasanoja tai otsikoita, jotta voit ladata tiettyjä verkkosivuja.
+Vaihtoehtoisesti, JSON-formaatissa olevan datan lataamiseen voidaan käyttää file_get_contents():in lisäksi myös file_put_contents()-funktiota. Tässä tapauksessa tarvitaan myös urlencode()-funktio datan koodaamiseen.
 
-## Katso myös
+## Katso myös:
 
-- [PHP:n virallinen dokumentaatio](https://www.php.net/manual/en/function.file-get-contents.php)
-- [Curlin viralliset sivut](https://curl.haxx.se/)
-- [Stack Overflow - Lataa sivu PHP:llä](https://stackoverflow.com/questions/3809763/download-an-html-page-using-php/3809792#3809792)
+W3Schools: https://www.w3schools.com/php/func_filesystem_file_get_contents.asp

@@ -10,70 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
+Concatenating strings in Haskell is the process of combining multiple strings into one longer string. Programmers often use this technique when they need to create longer, more complex strings by piecing together smaller strings. It can also be used for formatting purposes, such as adding spaces or punctuation in between strings.
 
-Concatenating strings is a common task in programming, and can be especially useful in tasks such as data manipulation and text processing. By combining multiple strings into a single string, you can create more complex and meaningful output that can be used in a variety of applications.
+## How to:
+To concatenate strings in Haskell, you can use the `++` operator. Here is an example of using `++` to combine the strings "Hello" and "World" into one string:
 
-## How To
-
-To concatenate strings in Haskell, we can use the `++` operator or the `concat` function. Let's take a look at some code examples and the corresponding output.
-
-```
--- using the ++ operator
-"I love" ++ " " ++ "Haskell"
--- output: "I love Haskell"
-
--- using the concat function
-concat ["Learn", " ", "Haskell"]
--- output: "Learn Haskell"
+```Haskell
+"Haskell" ++ " " ++ "is" ++ " " ++ "fun!" 
 ```
 
-We can also use these methods to concatenate more than just two strings.
+This would output the following:
 
+```Haskell
+"Haskell is fun!"
 ```
--- using the ++ operator
-"The" ++ " " ++ "quick" ++ " " ++ "brown" ++ " " ++ "fox"
--- output: "The quick brown fox"
+You can also use the `concat` function to concatenate a list of strings. Here is an example using the `words` function to split a sentence into a list of words, and then using `concat` to combine the words back into a sentence:
 
--- using the concat function
-concat ["The", " ", "lazy", " ", "dog"]
--- output: "The lazy dog"
-```
-
-We can also use variables or values inside our concatenation.
-
-```
--- using the ++ operator
-let adjective = "happy"
-let noun = "puppies"
-"I am" ++ " " ++ adjective ++ " to see so many " ++ noun
--- output: "I am happy to see so many puppies"
-
--- using the concat function
-let numbers = [1, 2, 3]
-concat ["The numbers", " ", show numbers, " add up to 6"]
--- output: "The numbers [1,2,3] add up to 6"
+```Haskell
+concat (words "Let's learn Haskell together!")
 ```
 
-## Deep Dive
+This would output:
 
-In Haskell, strings are represented as lists of characters. This means we can use all the list functions and operators on strings as well. For example, we can use the `map` function to transform each character in a string to another character.
-
-```
--- using map for character transformation
-map toUpper "hello" -- output: "HELLO"
-map toLower "WORLD" -- output: "world"
+```Haskell
+"Let's learn Haskell together!"
 ```
 
-We can also use the `fold` function to perform more complex operations on strings. For example, to calculate the length of a string, we can use the `foldl` function.
+## Deep Dive:
+Concatenating strings has been a common practice in programming languages since the early days of computer programming. It is a simple and efficient way to manipulate and construct strings. In Haskell, strings are represented as lists of characters, so the `++` operator works by combining two lists of characters into one.
 
-```
--- calculating the length of a string
-let str = "Haskell rules!"
-foldl (\acc _ -> acc + 1) 0 str -- output: 14
-```
+Alternatives to using the `++` operator or the `concat` function include using the `concatMap` function or using the `foldl` function. These functions are more advanced and may be necessary for more complex string concatenation tasks.
 
-## See Also
-
-- [Haskell documentation on concatenating strings](https://hackage.haskell.org/package/base-4.15.0.0/docs/Data-String.html#g:22)
-- [Learn the basics of Haskell](https://learnxinyminutes.com/docs/haskell/)
+## See Also:
+To learn more about concatenating strings in Haskell, check out the [official documentation](https://hackage.haskell.org/package/base-4.14.0.0/docs/Data-List.html#g:22) for the `++` operator and the [Haskell Wiki](https://wiki.haskell.org/Strings_and_characters) page on strings and characters. You can also explore other functions related to string manipulation such as `map` and `filter`. Keep practicing and experimenting with different methods of string concatenation to become more proficient in Haskell programming.

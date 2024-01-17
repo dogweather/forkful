@@ -1,7 +1,7 @@
 ---
-title:                "Att skriva en textfil"
-html_title:           "Elixir: Att skriva en textfil"
-simple_title:         "Att skriva en textfil"
+title:                "Skriva en textfil"
+html_title:           "Elixir: Skriva en textfil"
+simple_title:         "Skriva en textfil"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Files and I/O"
@@ -10,34 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##Varför
+## Vad & Varför?
+Att skriva en textfil innebär att man sparar information i en fil, till exempel i form av text. Det kan vara användbart när man vill spara data för senare användning eller när man vill dela information med andra. Programmerare skriver textfiler för att spara kod eller data som deras program behöver för att fungera korrekt.
 
-Att skriva en textfil är en viktig del av programmering eftersom det låter oss spara information och använda den senare. Det är också ett enkelt sätt att läsa och dela data mellan olika enheter och program.
+## Hur man gör:
+Skriva en textfil i Elixir är enkelt. Du kan använda ```File.write/2``` funktionen för att skapa en ny textfil och skriva innehållet du vill spara. Du kan också använda ```File.append/2``` funktionen för att lägga till nya rader i en befintlig textfil.
 
-##Hur man gör det
+Exempel:
+```Elixir
+File.write("min_textfil.txt", "Detta är en textfil som innehåller viktig information.")
+```
+```Elixir
+File.append("min_textfil.txt", "\nHär är en till rad som läggs till i filen.")
+```
 
-För att skriva en textfil i Elixir, behöver vi först öppna en ny fil med hjälp av funktionen ```File.open()```. Sedan kan vi använda ```IO.write()``` för att skriva vår text in i filen och avsluta med att stänga filen med ```File.close()```. Här är ett exempel på kod och utmatning:
+Resultat (innehåll i min_textfil.txt):
+```
+Detta är en textfil som innehåller viktig information.
+Här är en till rad som läggs till i filen.
+```
 
-````elixir
-# Skapa en ny fil med namnet "hello.txt" och öppna den för skrivning
-{:ok, file} = File.open("hello.txt", [:write])
+## Djupdykning:
+Historiskt sett har textfiler varit ett vanligt sätt att spara och dela information på inom programmering. Det finns många olika filformat för text, men de vanligaste är .txt, .csv och .json. Alternativt kan programmerare också använda databaser för att lagra information istället för textfiler.
 
-# Skriv in texten "Hej världen!" i filen
-IO.write(file, "Hej världen!")
+I Elixir är det möjligt att skriva textfiler på olika sätt, till exempel med hjälp av inbyggda funktioner som ```File.write/2``` och ```File.append/2```, eller genom att använda en tredjepartsbibliotek som ```Elixir-CSV``` för att skriva till .csv filer.
 
-# Stäng filen
-:ok = File.close(file)
-
-# Kontrollera att filen har skapats
-[hello.txt] skapad och "Hej världen!" skrivet in i den.
-````
-
-##Djupdykning
-
-I Elixir finns det flera alternativ för att skriva in data i en textfil. Till exempel kan vi använda ```IO.puts()``` istället för ```IO.write()``` för att automatiskt lägga till en radbrytning efter varje utmatning. Vi kan också använda ```IO.binwrite()``` för att läsa binära data. Dessutom kan vi skapa filer på specifika platser eller ändra filens rättigheter.
-
-##Se även
-
-- [Elixir IO-dokument](https://hexdocs.pm/elixir/IO.html)
-- [Filmodul i Elixir](https://hexdocs.pm/elixir/File.html)
-- [Elixir Markdown](https://hexdocs.pm/elixir/Markdown.html)
+## Se även:
+- [Elixir Documentation on File Module](https://hexdocs.pm/elixir/File.html)
+- [Elixir-CSV Library](https://github.com/beatrichartz/elixir-csv)

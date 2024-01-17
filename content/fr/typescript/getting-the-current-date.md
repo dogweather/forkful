@@ -10,41 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Qu’est-ce que c’est et pourquoi?
+Obtenir la date actuelle est un moyen courant pour les programmeurs de suivre le temps ou de synchroniser les processus avec l'heure actuelle. Cela peut servir à des fins telles que le suivi des délais, la planification de tâches ou l'affichage de l'heure actuelle dans une application.
 
-La fonctionnalité de récupération de la date courante est essentielle pour les développeurs TypeScript lorsqu'ils travaillent avec des applications web ou des projets nécessitant une gestion du temps. Elle permet de manipuler facilement les données liées à la date et de les mettre à jour en temps réel.
-
-## Comment Faire
-
-Pour récupérer la date courante en TypeScript, il suffit d'utiliser la méthode `Date()` fournie par le langage. Cette méthode renvoie un objet Date contenant la date et l'heure actuelles.
-
-```TypeScript
-let date = new Date();
-console.log(date);
+## Comment faire:
+```
+TypeScript const date = new Date ();
+console.log (date);
+```
+Sortie: 
+```
+Tue Feb 02 2021 12: 30: 00 GMT-0500 (Eastern Standard Time)
+```
+Vous pouvez également obtenir la date sous forme de chaîne de caractères dans un format spécifique en utilisant les méthodes intégrées de l'objet Date. Par exemple:
+```
+TypeScript const year = date.getFullYear ();
+const month = date.getMonth ();
+const day = date.getDate ();
+console.log (year + '/' + month + '/' + day);
+```
+Sortie: 
+```
+2021/02/02
 ```
 
-Output:
-`2021-09-22T14:21:38.070Z`
+## Deep Dive:
+Obtenir la date actuelle peut sembler simple de nos jours, mais cela a en fait nécessité beaucoup plus de travail dans le passé. Auparavant, les programmeurs devaient manipuler manuellement les codes de temps Unix ou utiliser des bibliothèques tierces pour obtenir la date actuelle. Maintenant, avec l'objet Date intégré dans TypeScript, ce processus est devenu beaucoup plus simple et plus pratique.
 
-Il est également possible de spécifier une date et une heure spécifiques en utilisant les paramètres de la méthode `Date()`.
+Bien qu'il existe des alternatives pour l'objet Date, telles que Moment.js et Day.js, qui offrent des fonctionnalités supplémentaires pour la manipulation de dates, l'utilisation de l'objet Date intégré de TypeScript est généralement la méthode privilégiée pour obtenir la date actuelle. De plus, en utilisant les méthodes intégrées de l'objet Date, vous pouvez obtenir la date dans n'importe quel format souhaité.
 
-```TypeScript
-let date = new Date(2021, 8, 22, 14, 30);
-console.log(date);
-```
-
-Output:
-`2021-09-22T12:30:00.000Z`
-
-Pour formater la date et l'heure en fonction de ses besoins, il est recommandé d'utiliser la bibliothèque Moment.js qui est compatible avec TypeScript.
-
-## Plongée Profonde
-
-En TypeScript, la méthode `Date()` repose sur la bibliothèque JavaScript du même nom, qui prend en compte le fuseau horaire local de l'utilisateur. Ainsi, si votre application est utilisée dans différents fuseaux horaires, il est important de tenir compte de ce paramètre pour éviter les erreurs liées à la date.
-
-De plus, la méthode `Date()` renvoie non seulement la date et l'heure actuelles, mais également les millisecondes écoulées depuis le 1er janvier 1970. Ce nombre est appelé "timestamp" et peut être utile pour effectuer des calculs de temps dans votre application.
-
-## Voir Aussi
-
-- [La documentation officielle sur la méthode Date() en TypeScript](https://www.typescriptlang.org/docs/handbook/utility-types.html#date)
-- [La documentation de Moment.js](https://momentjs.com/docs/)
+## Voir aussi:
+- [Documentation officielle de l'objet Date en TypeScript](https://www.typescriptlang.org/docs/handbook/standard-library.html#date)
+- [Guide pour travailler avec les dates en TypeScript](https://medium.com/javascript-in-plain-english/working-with-dates-in-typescript-2947f14d1103)
+- [Comparaison des alternatives pour obtenir la date actuelle en JavaScript](https://stackoverflow.com/questions/10211145/getting-current-date-and-time-in-javascript)

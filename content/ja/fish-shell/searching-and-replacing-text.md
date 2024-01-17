@@ -10,31 +10,65 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜFish Shellプログラミングを使うのか
+## 何か&なんで?
 
-Fish Shellは、テキストの検索や置換を簡単に行うことができるため、プログラミングにおいて非常に便利です。また、最新のバージョンではさらに高度な機能が追加され、より効率的に作業を行うことができるようになりました。
+テキストの検索と置換とは何かを説明し、プログラマーがそれをする理由を説明します。
 
-## 如何使い方
+##やり方:
 
-```Fish Shell
-# テキストを検索する例
-grep "キーワード" ファイル名
+```
+Fish Shellを使用して、テキストの検索と置換を行う方法を以下のコーディング例と出力のサンプルを用いて説明します。
 
-# テキストを置換する例
-sed -i 's/古いテキスト/新しいテキスト/g' ファイル名
 ```
 
-上記のコード例では、"grep"コマンドを使用して指定したキーワードを含む行をファイルから検索し、"sed"コマンドを使用して文字列を置換する方法を示しています。これらのコマンドはFish Shellに組み込まれているため、追加のプラグインや外部ツールをインストールする必要はありません。
+### 文字列の検索と置換
 
-## 深層ダイブ
+```
+#文字列の検索と置換
+set my_string "こんにちは!"
+echo $my_string
+# 出力: こんにちは!
 
-Fish Shellの検索と置換の機能は、通常の正規表現にも基づいていますが、独自の構文を持っています。例えば、[ ]を使用することで、複数の文字列を検索することができます。また、&を使用することで、検索された文字列を置換する際に使用できる変数を指定することもできます。
+# 文字列の置換
+set new_string (echo $my_string | sed 's/こんにちは/Hello/')
+echo $new_string
+#出力: Hello!
+```
 
-さらに、Fish Shellでは、**マッチの範囲**という機能を使用することで、検索と置換を特定の範囲に限定することができます。これにより、指定された場所にのみ置換を行うことができ、間違った箇所を誤って置換するリスクを減らすことができます。
+### ファイル内のテキストの検索と置換
 
-## 関連リンク
+```
+#ファイル内のテキストの検索と置換
+set file_name my_file.txt
 
-- [Fish Shell公式サイト](https://fishshell.com/)
-- [Fish Shell GitHubリポジトリ](https://github.com/fish-shell/fish-shell)
-- [Fish Shellユーザーガイド](https://fishshell.com/docs/current/index.html)
-- [Fish Shellコミュニティフォーラム](https://www.reddit.com/r/fishshell/)
+# 検索したい文字列
+set search_string "Hello"
+# 置換したい文字列
+set replace_string "こんにちは"
+
+# ファイル内のテキストを検索し、置換する
+sed -i 's/'$search_string'/'$replace_string'/g' $file_name
+
+# 置換後のファイルの中身を確認
+cat $file_name
+```
+
+## 詳細を見る:
+
+### 歴史的な文脈
+
+テキストの検索と置換は、1970年代に最初に登場したUnixのツールであるsed (Stream Editor)によって導入されました。その後、他のツールやプログラミング言語でも同様の機能が実装されました。
+
+### 代替手段
+
+Fish Shellを使用せずにテキストの検索と置換を行うには、他のシェルやテキストエディタ、プログラミング言語を使用することができます。例えば、bashシェルでは、`sed`コマンドを使用してテキストの検索と置換を実行できます。
+
+### 実装の詳細
+
+Fish Shellは、検索と置換のために標準のUnixツールであるsedとawkを使用しています。これらのツールは、正規表現やパターンマッチングを使用してテキストを検索・置換することができます。
+
+## 関連情報を見る:
+
+- [fish shell公式ウェブサイト](https://fishshell.com/)
+- [Fish Shell on GitHub](https://github.com/fish-shell/fish-shell)
+- [sed - Linux Command](https://www.computerhope.com/unix/used.htm)

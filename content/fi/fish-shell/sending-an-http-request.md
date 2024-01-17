@@ -1,7 +1,7 @@
 ---
-title:                "Lähettämällä http-pyyntö"
-html_title:           "Fish Shell: Lähettämällä http-pyyntö"
-simple_title:         "Lähettämällä http-pyyntö"
+title:                "Lähettää http-pyyntö"
+html_title:           "Fish Shell: Lähettää http-pyyntö"
+simple_title:         "Lähettää http-pyyntö"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "HTML and the Web"
@@ -10,32 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+# Fish Shell ja HTTP Pyyntöjen Lähettäminen
 
-Miksi haluaisit lähettää HTTP-pyynnön Fish Shellillä? Yksinkertaistaen, se antaa sinulle pääsyn verkkoon ja sieltä saatavaan tietoon suoraan komentokehotteesta. Se on nopea ja tehokas tapa kommunikoida internetin kanssa ja voi olla hyödyllinen monissa eri skenaarioissa, kuten hakkeroinnissa tai tiedonkeruussa.
+## Mitä & Miksi?
+HTTP-pyyntöjen lähettäminen on tärkeä osa monien ohjelmoijien työtä. Se on tapa kommunikoida eri verkkosivustojen ja palveluiden kanssa ja saada haluttuja tietoja tai suorittaa tiettyjä toimintoja. Tämä on hyödyllistä esimerkiksi silloin, kun haluat luoda sovelluksia, jotka hakevat dataa ulkopuolisilta lähteiltä tai lähettävät tietoja sinne.
 
-## Kuinka tehdä
+## Kuinka tehdä se?
+Fish Shell tarjoaa helpon tavan lähettää HTTP-pyyntöjä suoraan terminaalissa. Voit tehdä sen käyttämällä `curl` -komentoa, joka on sisäänrakennettu Fish Shelliin. Tässä on esimerkki lähettää GET-pyyntö GitHubin API:lle ja näyttää vastauksen sisältö terminaalissa:
 
-Ensimmäiseksi tarvitset Fish Shellin ja sen uusimman version. Voit ladata sen omalle tietokoneellesi osoitteesta www.fishshell.com. Kun olet asentanut sen, voit aloittaa lähettämään HTTP-pyynnöksiä.
-
-```Fish Shell
-$url = "https://www.example.com"
-$response = curl -X GET $url
-echo $response
+```
+fish shell curl -X GET https://api.github.com
 ```
 
-Tässä esimerkissä luomme muuttujan nimeltä `$url`, joka sisältää verkkosivuston osoitteen. Sitten käytämme `curl`-komentoa lähettämään GET-pyynnön tälle sivustolle ja tallennamme vastauksen muuttujaan `$response`. Lopuksi käytämme `echo`-komentoa tulostamaan vastauksen terminaalissa.
+Tämä tuottaa vastauksen, jossa on kaikki GitHubin API:n saatavilla olevat tiedot.
 
-Voit käyttää myös muita HTTP-metodeja, kuten POST, PUT tai DELETE, muuttamalla `curl`-komennon parametreja. Voit myös lisätä muita parametreja, kuten otsikoita tai tietoja pyynnön mukana. Varoituksena, että Fish Shellin `curl`-komennossa ei ole kaikkia samoja ominaisuuksia kuin perinteisessä curl-ohjelmassa.
+```
+{
+  "current_user_url": "https://api.github.com/user",
+  "authorizations_url": "https://api.github.com/authorizations",
+  "api_endpoint": "https://api.github.com",
+  ...
+}
+```
 
-## Syvemmälle sukeltaminen
+Voit myös lisätä erilaisia parametreja pyyntöön, kuten otsikoita tai lomakedataa, oman tarpeesi mukaan.
 
-Fish Shellin `curl`-komennossa käytetään taustalla `libcurl`-kirjastoa, joka on suunniteltu toimimaan monilla eri protokollilla, kuten HTTP ja HTTPS. Voit lukea lisää tästä kirjastosta osoitteessa https://curl.haxx.se/docs/manpage.html ja löytää kaikki mahdolliset parametrit ja vaihtoehdot.
+## Syvemmälle
+HTTP-pyyntöjen lähettämisen tarve syntyi, kun internetin käyttö alkoi yleistyä ja käyttäjät halusivat tehdä enemmän kuin vain lukea sisältöä. Tämä johti HTTP-protokollaan, joka sallii asiakkaiden lähettää pyyntöjä palvelimille ja vastaanottaa vastauksia.
 
-Voit myös käyttää muita Fish Shellin sisäänrakennettuja käskyjä lähettämään HTTP-pyynnön, kuten `wget` ja `fetch`. Ne ovat hyviä vaihtoehtoja, jos et tarvitse kaikkia curlin ominaisuuksia.
+Fish Shell tarjoaa myös muita tapoja lähettää HTTP-pyyntöjä, kuten käyttämällä `fetch` -komennon, joka on osa Fish Shelliin ladattavaa `fish-fetch` -laajennusta. Voit myös käyttää muita kehitystyökaluja, kuten Postman tai Insomnia, lähettääksesi ja testataksesi HTTP-pyyntöjä.
+
+HTTP-pyyntöjen lähettäminen Fish Shellilla on nopeaa ja kätevää, mutta on tärkeää varmistaa, että käytät sitä vastuullisesti ja kunnioitat muiden palveluiden käyttöehtoja.
 
 ## Katso myös
-
-- Fish Shellin virallinen verkkosivusto: www.fishshell.com
-- `libcurl`-kirjaston dokumentaatio: https://curl.haxx.se/docs/manpage.html
-- Lisää käskyjä Fish Shellissä: https://fishshell.com/docs/current/commands.html
+- [Fish Shellin dokumentaatio](https://fishshell.com/docs/current/index.html)
+- [GitHubin API-dokumentaatio](https://docs.github.com/en/rest)
+- [Fish-fetch-laajennus](https://github.com/Kovah/fish-fetch)
+- [Insomnia](https://insomnia.rest/)
+- [Postman](https://www.postman.com/)

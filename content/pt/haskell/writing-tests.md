@@ -10,38 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que escrever testes em Haskell?
+Todos os programadores sabem que testar seu código é essencial para garantir que ele funcione corretamente e que possíveis erros sejam encontrados antes que o software seja usado. No entanto, nem todos os programadores sabem como escrever testes efetivos. Neste artigo, vamos mostrar como escrever testes em Haskell, a linguagem de programação funcional atualmente mais popular, e por que é importante fazê-lo.
 
-Escrever testes é uma prática essencial para garantir a qualidade do código em qualquer linguagem de programação, e com Haskell não é diferente. Testes podem ajudar a identificar e corrigir bugs de forma mais eficiente, além de proporcionar uma maior confiança no funcionamento do código.
+## O que & Por quê?
 
-## Como escrever testes em Haskell
+Escrever testes é um conjunto de técnicas usadas para garantir que o software que você escreve funciona corretamente. Como programadores, queremos ter certeza de que nosso código está funcionando corretamente e que possíveis falhas foram identificadas antes que o software chegue às mãos dos usuários. Testes bem escritos podem ajudar a detectar bugs e erros de lógica que poderiam passar despercebidos durante o desenvolvimento.
 
-Para escrever testes em Haskell, primeiramente é necessário importar o módulo "Test.HUnit" no início do arquivo, e definir as funções de teste utilizando a sintaxe "testNomeDaFuncao = TestCase (assertEqual \"Descricao\" esperado resultado)".
+## Como fazer:
+
+Para escrever testes em Haskell, primeiro você precisa importar o módulo de teste padrão ```Test.HUnit```. Em seguida, você pode criar uma função de teste usando a função ```TestLabel```, que recebe como argumentos uma String e uma expressão booleana. Esta expressão booleana deve ser uma função que retorne ```True``` quando o teste passar e ```False``` quando falhar.
 
 ```Haskell
-import Test.HUnit
+sumTest = TestCase (assertEqual "Soma incorreta!" 3 (1+2))
 
-soma :: Int -> Int -> Int
-soma x y = x + y
-
-testSoma = TestCase (assertEqual "Deve somar dois números corretamente" 6 (soma 2 4))
-
-tests = TestList [TestLabel "soma" testSoma]
+tests = TestList [TestLabel "Teste de Soma" sumTest]
 
 main = runTestTT tests
 ```
 
-O código acima define uma função "soma" que recebe dois números inteiros e retorna a soma entre eles. Em seguida, é criado um teste "testSoma" que verifica se a função está retornando o resultado esperado, e por fim, o teste é adicionado à lista "tests" que será executada na função "runTestTT" na função "main".
+O exemplo acima cria um teste simples para garantir que a soma de 1 e 2 seja igual a 3. A função ```TestCase``` envolve o resultado da função ```assertEqual```, que compara o valor esperado com o resultado do cálculo da soma. Em seguida, os testes são reunidos em uma lista usando a função ```TestList```. Finalmente, a função ```runTestTT``` executa os testes e retorna o resultado.
 
-## Aprofundando-se em testes
+## Detalhando mais:
 
-Existem diversas ferramentas e bibliotecas disponíveis para escrever testes em Haskell, como o "HUnit" utilizado no exemplo acima, o "QuickCheck" que permite gerar casos de teste aleatoriamente, e o "Tasty" que oferece uma sintaxe mais amigável.
+A prática de escrever testes é conhecida como Test-Driven Development (TDD). Ela surgiu no início dos anos 2000 e tem sido amplamente adotada por muitos programadores por seus benefícios no desenvolvimento de software.
 
-É importante também entender os diferentes tipos de testes, como testes unitários que verificam o comportamento de funções individuais, testes de integração que avaliam a interação entre diferentes componentes do código, e testes de propriedade que garantem que uma determinada propriedade é satisfeita pelo código em todas as situações.
+Existem também outras bibliotecas de teste para Haskell, como o QuickCheck, que permitem gerar dados de teste automaticamente.
 
-## Veja também
+Os testes em Haskell são escritos seguindo o mesmo estilo de programação funcional, o que permite criar testes mais simples e concisos comparados a outras linguagens.
 
-- Documentação oficial do HUnit: https://hackage.haskell.org/package/HUnit
-- Tutorial de testes em Haskell: https://wiki.haskell.org/writing_a_haskell_program_with_tests
-- Biblioteca QuickCheck: https://hackage.haskell.org/package/QuickCheck
-- Biblioteca Tasty: https://hackage.haskell.org/package/tasty
+## Veja também:
+
+-[Documentação do módulo de teste HUnit](https://hackage.haskell.org/package/HUnit)
+-[Introdução ao TDD em Haskell](https://wiki.haskell.org/Test-driven_development)
+-[QuickCheck: propriedades estáticas em Haskell](https://hackage.haskell.org/package/QuickCheck)

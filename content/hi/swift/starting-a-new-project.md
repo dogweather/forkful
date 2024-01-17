@@ -1,7 +1,7 @@
 ---
-title:                "नए परियोजना की शुरुआत"
-html_title:           "Swift: नए परियोजना की शुरुआत"
-simple_title:         "नए परियोजना की शुरुआत"
+title:                "नई प्रोजेक्ट शुरू करना"
+html_title:           "Swift: नई प्रोजेक्ट शुरू करना"
+simple_title:         "नई प्रोजेक्ट शुरू करना"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Getting Started"
@@ -10,45 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Kyun
+## क्या और क्यों?
 
-Kisi bhi naye project ko shuru karne ke peeche kya hai? Ye ek common sawal hai jo har coder ke dimaag mein hota hai. Ye ek challenging aur exciting task hai, jisme aap apne creativity aur coding skills ko test kar sakte hain. Iske alawa, naye project shuru karne se aap apne portfolio ko bhi enhance kar sakte hain aur future mein job opportunities bhi badh sakti hain.
+किसी भी नए प्रोजेक्ट को शुरू करना इसे समझने और उसे लिखने की संदर्भ सूची तैयार करने से पहले सबसे महत्वपूर्ण कदम है। प्रोग्रामर्स नए प्रोजेक्ट को शुरू करते हैं ताकि वे अपनी कौशलता को बढ़ा सकें और नए और रोमांचक काम कर सकें।
 
-## Kaise
+## कैसे करें:
 
-Agar aap ek naya project shuru karna chahte hain Swift mein, toh yeh steps follow kare:
-
-1. Xcode ko open kare aur "Create a new Xcode project" par click kare
-2. Next, aapko project ka naam dena hoga, aur uske baad "Swift" ko select kare
-3. Project save karne ke liye ek folder choose kare
-4. "Main.storyboard" aur "ViewController.swift" files automatically create ho jayenge
-5. "Main.storyboard" mein UI elements jaise buttons, labels, text fields aur images ko drag and drop karke design kare
-6. "ViewController.swift" file mein aapka code likhe jisse UI elements ke saath interaction ho sake
-7. "Run" button par click karke apna project run kare aur dekhe kaise output aata hai.
-
-```Swift 
-// Sample code for creating a button and setting its title
-let myButton = UIButton()
-myButton.frame = CGRect(x: 50, y: 50, width: 100, height: 50)  // sets button's position and size
-myButton.setTitle("Click Here", for: .normal) // sets button's title text
-myButton.addTarget(self, action: #selector(buttonClicked), for: .touchUpInside) // adds action to button
-self.view.addSubview(myButton) // adds button to the view
-
-@objc func buttonClicked() {  // function to be executed when button is clicked
-    // insert code here
-}
+```Swift
+let projectName = "My New Project"
+print("Welcome to \(projectName)!")
 ```
 
-## Deep Dive
+```Swift
+let num1 = 5
+let num2 = 7
+let sum = num1 + num2
+print("The sum of \(num1) and \(num2) is \(sum).")
+```
 
-1. Swift mein project shuru karna kaafi aasan hai, par aapko ek acchi foundation chahiye. Programming concepts aur Swift syntax ko acche se samajhne ke liye, aap tutorials aur online resources ka istemal kar sakte hain.
-2. UI design ke liye, aap Xcode ka interface builder tool use kar sakte hain, jisme aap drag and drop se badiya UI banane mein madad milegi.
-3. Swift mein loops, conditionals, arrays, functions, classes, aur structures jaise concepts ko acche se samajhna project ke liye kaafi zaruri hai.
-4. Project ko organized rakhne ke liye aap files ko groups mein divide kar sakte hain aur proper file naming conventions use kar sakte hain.
-5. Project ke development ke saath saath testing aur debugging bhi equally important hai. Xcode mein available debugging tools ki madad se aap errors ko easily identify aur fix kar sakte hain.
+## गहराई में उतरें:
 
-## Dekhiye Bhi
+मूल रूप से, एक नया प्रोजेक्ट आपके प्रोग्रामिंग कौशल और हाल के स्थिति को दर्शाता है। आमतौर पर, आपको अपने काम के लिए कुछ अन्य विकल्प भी हो सकते हैं, जैसे कि आप किस भाषा में अपने प्रोजेक्ट को शुरू करना चाहते हैं और क्या आप एकल मशीन या अन्य उपकरण पर अपना प्रोजेक्ट लिखने का विचार रखते हैं।
 
-1. [Swift Programming Language Guide in Hindi](https://www.simplifiedios.net/swift-tutorials-in-hindi/)
-2. [Official Apple Documentation for Swift](https://developer.apple.com/swift/)
-3. [Online Swift Tutorials in Hindi](https://www.youtube.com/watch?v=3p7s7-KJ4hU&list=PLZe3ZU0W5JtO6jP5jW7dYcWnhap7o5D_g)
+## और भी देखें:
+
+- [Apple Swift Language Guide](https://docs.swift.org/swift-book/LanguageGuide/TheBasics.html)
+- [Tutorial on Starting a New Swift Project](https://www.raywenderlich.com/367-swift-tutorial-series-overview/)
+- [Comparing Popular Programming Languages](https://www.theserverside.com/feature/Comparing-popular-programming-languages-Java-vs-Ruby-vs-Python)

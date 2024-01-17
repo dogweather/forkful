@@ -10,35 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was & Warum?
+Das Schreiben an den Standardfehler ist eine Methode, die von Programmierern verwendet wird, um Fehler und Warnungen in der Konsole anzuzeigen. Dies ist eine gute Möglichkeit, um den Entwickler auf Probleme aufmerksam zu machen und das Debugging zu erleichtern.
 
-Es gibt verschiedene Gründe, warum man sich dazu entscheiden könnte, in das Standardfehlerausgabefenster zu schreiben. Einer der häufigsten Gründe ist, dass diese Methode dabei hilft, Fehler in der Codeausführung zu identifizieren und zu debuggen. Außerdem ist es eine effektive Möglichkeit, um Fehlermeldungen und Warnungen anzuzeigen, die dem Benutzer wichtige Informationen über die Funktionalität des Programms geben.
-
-## Wie man es macht
-
-Das Schreiben in das Standardfehlerausgabefenster kann in TypeScript auf zwei Arten erreicht werden.
-
-Die erste Methode ist, die `console.error()` Funktion zu nutzen. Diese Funktion akzeptiert eine beliebige Anzahl von Argumenten und gibt diese als Fehlermeldung im Standardfehlerausgabefenster aus.
+## So geht's:
+Um an den Standardfehler zu schreiben, verwenden wir die Funktion "console.error()". Hier ist ein Beispielcode in TypeScript:
 
 ```TypeScript
-console.error("Dies ist ein Beispiel für einen Fehler");
-// Ausgabe: Dies ist ein Beispiel für einen Fehler
+console.error("Ein Fehler ist aufgetreten!");
 ```
+Die Ausgabe dieses Codes wäre:
+`Ein Fehler ist aufgetreten!`
 
-Die zweite Methode ist, die globale Variable `process.stderr` zu verwenden. Diese Variable ist ein Objekt, das den Standardfehlerausgabestrom darstellt. Um in diesen Strom zu schreiben, verwenden wir die `write()` Methode.
+Um eine Variable als Fehlermeldung auszugeben, nutzen wir die Zeichenkette-Variante der Funktion:
 
 ```TypeScript
-process.stderr.write("Dies ist ein Beispiel für einen Fehler");
-// Ausgabe: Dies ist ein Beispiel für einen Fehler
+let num: number = 42;
+console.error("Die Zahl " + num + " ist falsch!");
 ```
+Die Ausgabe wäre dann:
+`Die Zahl 42 ist falsch!`
 
-## Tiefergehende Informationen
+## Tiefere Einblicke:
+Das Schreiben an den Standardfehler ist eine häufig verwendete Technik, um auf Probleme hinzuweisen. Es hat seinen Ursprung in der UNIX-Welt, in der Fehlermeldungen häufig an die Konsole geleitet wurden. Eine Alternative zu dieser Methode ist das Schreiben an den Standardausgang (console.log()), aber dies wird meist für normale Ausgaben und nicht für Fehler verwendet.
 
-Ein wichtiger Unterschied zwischen `console.error()` und `process.stderr.write()` ist ihre Ausgabemethode. Die `console.error()` Funktion gibt standardmäßig eine rote Fehlermeldung aus, während `process.stderr.write()` die Ausgabe im Standardformat ausgibt.
+Die Implementierung des Schreibens an den Standardfehler ist sehr einfach und kann in jedem zugrunde liegenden Betriebssystem oder Laufzeitumgebung anders sein.
 
-Eine weitere wichtige Tatsache ist, dass `console.error()` primär für den Einsatz in der Entwicklungsumgebung gedacht ist, während `process.stderr.write()` für Produktionssysteme besser geeignet ist. Das liegt daran, dass die `console` Funktionen für Entwicklungs- und Testzwecke oft von anderen Modulen überschrieben werden.
-
-## Siehe auch
-
-- [Node.js-Dokumentation zu `process.stderr.write()`](https://nodejs.org/api/process.html#process_process_stderr)
-- [Node.js-Dokumentation zu `console.error()`](https://nodejs.org/api/console.html#console_console_error_data_args)
+## Siehe auch:
+- https://developer.mozilla.org/de/docs/Web/API/console/error
+- https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-3.html#-type-checked-calls-to-console-error-warn-and-info
+- https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-4.html#-new-never-type

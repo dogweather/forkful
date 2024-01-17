@@ -10,55 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
-Att kunna skriva en textfil kan vara väldigt användbart när man arbetar med programmering. Det kan till exempel användas för att spara data eller skapa konfigurationsfiler.
+## Vad & Varför?
 
-## Så här gör du
-Det finns två olika sätt att skriva en textfil i Haskell, antingen med hjälp av standardbiblioteket eller genom att använda en tredjepartsmodul som `Data.Text.IO`. Nedan följer exempel på båda metoderna.
+Att skriva en textfil i Haskell är ett sätt för programmerare att spara data i en permanent och läsbar form. Det är användbart när man behöver spara stora mängder data eller dela information med andra program eller användare.
 
-```Haskell
--- Skriv en textfil med hjälp av standardbiblioteket
-import qualified Data.Text.IO as T
+## Så här gör du:
 
--- Öppna en fil för skrivning
-file <- openFile "textfil.txt" WriteMode
+För att skriva en textfil i Haskell behöver du först importera modulen "System.IO". Sedan kan du använda funktionen "writeFile" för att skapa en textfil och skriva innehållet i den. Ett exempel på kod kan se ut så här:
 
--- Skriv en sträng till filen
-hPutStr file "Det här är en textsträng!"
-
--- Stäng filen
-hClose file
-
--- Läs innehållet i filen och skriv ut det
-T.readFile "textfil.txt"
+``` Haskell 
+import System.IO          -- importerar modulen
+main = do                 -- startar en IO-operation
+    let text = "Hej världen!"  -- definierar texten som vi vill skriva
+    writeFile "mitt_exempel.txt" text   -- skriver texten till filen
 ```
 
-```Haskell
--- Skriv en textfil med hjälp av Data.Text.IO
-import qualified Data.Text.IO as T
+När du kör koden ovan kommer du att få en ny textfil med namnet "mitt_exempel.txt" som innehåller texten "Hej världen!".
 
--- Skapa en textsträng
-let text = "Det här är en textsträng!"
+## Deep Dive:
 
--- Skriv textsträngen till filen
-T.writeFile "textfil.txt" text
+Att skriva textfiler är ett vanligt verktyg för programmerare, men det finns också andra sätt att spara och dela data. Istället för att skriva till en fil kan man till exempel använda en databas eller kommunicera med andra program via ett API. Men att skriva till en textfil är ett enkelt och grundläggande sätt att hantera data.
 
--- Läs innehållet i filen och skriv ut det
-T.readFile "textfil.txt"
-```
+För att få en djupare förståelse av textfiler kan det vara intressant att titta på historiska användningsområden och hur filformatet har utvecklats över tiden. Det finns också många olika bibliotek och funktioner i Haskell som kan underlätta hanteringen av textfiler, såsom att läsa in och manipulera befintliga filer.
 
-Förväntad utgång:
+## Se också:
 
-```Haskell
-"Det här är en textsträng!"
-```
-
-## Deep Dive
-För att kunna skriva en textfil i Haskell behöver man först öppna en fil för skrivning. Detta görs med `openFile` funktionen från standardbiblioteket. Sedan kan man använda funktioner som `hPutStr` eller `hWrite` för att skriva till filen. När man är klar måste filen stängas med `hClose`.
-
-En annan metod är att använda `Data.Text.IO` modulen, där man skapar en textsträng och sedan skriver den till filen med `writeFile` funktionen. Båda metoderna är enkla och effektiva sätt att skriva en textfil i Haskell.
-
-## Se även
-- [Haskell.org](https://www.haskell.org/)
-- [Learn You a Haskell](http://learnyouahaskell.com/chapters)
-- [Real World Haskell](http://book.realworldhaskell.org/read/)
+- [Haskell-funktioner för filhantering](https://hackage.haskell.org/package/base/docs/System-IO.html)
+- [En introduktion till Haskell](https://wiki.haskell.org/Introduction)

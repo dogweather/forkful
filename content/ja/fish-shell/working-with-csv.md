@@ -1,7 +1,7 @@
 ---
-title:                "「CSVの操作」"
-html_title:           "Fish Shell: 「CSVの操作」"
-simple_title:         "「CSVの操作」"
+title:                "「CSV を扱う」"
+html_title:           "Fish Shell: 「CSV を扱う」"
+simple_title:         "「CSV を扱う」"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Data Formats and Serialization"
@@ -10,46 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+## なに & なぜ？
+CSVとは何か、それをプログラマーがする理由を約2〜3文で説明します。
 
-CSVファイルとは何かを知りたいのですか？あるいは、データを操作したいのですか？Fish Shellを使って、簡単にCSVファイルを処理できることをご存知ですか？この記事では、Fish Shellを使ったCSVファイルの操作方法を紹介します。
+CSVとは、コンマで区切られたテキストファイルの形式のことで、データを表形式で保存するためによく使用されます。プログラマーがCSVを扱う理由は、データを取り出したり、処理したりするために簡単な方法を提供するからです。
 
-## 使い方
-
-Fish Shellを使ってCSVファイルを処理するには、まずファイルを開く必要があります。```open```コマンドを使って、ファイルを開きます。
-
-```
-open example.csv
-```
-
-次に、```sed```を使ってCSVファイルのヘッダーを変更する方法を紹介します。
+## 使い方：
+下のコードブロック内のコーディング例とサンプル出力を使い、Fish ShellでCSVを処理する方法をご紹介します。
 
 ```
-sed -i '1s/.*/column1, column2, column3/g' example.csv
+Fish Shellを試すことで、CSVを簡単に操作できることがわかるでしょう。まず、CSVファイルを作成し、データを入力します。
+
+$ vim sample.csv
+
+次に、CSVファイルを読み込んで、データを表示します。
+
+$ fish -c "while read line; echo $line; end < sample.csv"
+
+このコマンドを実行すると、sample.csvファイルに入力されたデータが表示されます。  
+
 ```
 
-これにより、最初の行が"column1, column2, column3"に変更されます。
+## 詳細を探求:
+ここではCSVについての歴史的な文脈、代替手段、そしてCSV処理の実装詳細について説明します。
 
-また、```awk```を使って特定の列のデータを抽出することもできます。
+### 歴史的文脈：
+CSVは1972年に最初に開発され、当初はメインフレームコンピューターのデータベースで使用されていました。その後、パーソナルコンピュータが普及するにつれ、CSVはより一般的に使用されるようになりました。
 
-```
-awk -F ',' '{print $1}' example.csv
-```
+### 代替手段：
+CSV以外にも、データを表形式で保存するためのさまざまなフォーマットがあります。例えば、XMLやJSON、SQLなどがあります。
 
-これにより、CSVファイルの1列目のデータが出力されます。
+### 実装詳細：
+Fish Shellの内部コードは、Open CSV - Java CSVライブラリを使用して書かれています。また、`fish -c`コマンドを使用することで、1行ずつCSVを読み込み、データを処理することができます。
 
-## ディープダイブ
+## 関連情報:
+CSVについてさらに学ぶためのリンクをいくつか紹介します。
 
-Fish Shellでは、CSVファイルの操作に便利なツールがたくさんあります。たとえば、```csvquote```や```in2csv```などのコマンドを使うことで、データの整形や変換を簡単に行うことができます。
-
-また、JSONファイルとの相互変換も可能です。```csvjson```コマンドを使うことで、CSVファイルをJSONファイルに変換できます。
-
-さらに、Fish Shellのプラグインである```fzf-csv```を使うことで、CSVファイルの内容をフィルタリングして表示したり、特定のデータを見つけたりすることができます。
-
-## 参考リンク
-
-- [Fish Shellの公式ドキュメント](https://fishshell.com/docs/current/)
-- [CSVファイルの操作方法](https://www.cyberciti.biz/faq/unix-linux-osx-bsd-appleosx-command-line-handling-a-large-csv-file/)
-- [fzf-csvプラグインのインストール方法](https://github.com/Aloxaf/fzf-tab-completion/wiki/csv)
-- [csvkitコマンドの詳細](https://csvkit.readthedocs.io/en/latest/index.html#)
-- [したいことができるFish Shellのプラグイン一覧](https://fishshell.com/docs/current/commands.html#complete-plugins)
+- [Open CSV - Java CSV library](http://opencsv.sourceforge.net/)
+- [Introducing CSV: Use CSV for data munging](https://opensource.com/article/17/1/csv-munging-hacks)
+- [Comparing CSV Files with diff](https://www.linuxjournal.com/content/comparing-csv-files-diff)
+- [CSVとは - Wikipedia](https://ja.wikipedia.org/wiki/Comma-Separated_Values)

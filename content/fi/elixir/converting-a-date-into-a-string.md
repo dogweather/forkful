@@ -1,7 +1,7 @@
 ---
-title:                "Päivämäärän muuttaminen merkkijonoksi"
-html_title:           "Elixir: Päivämäärän muuttaminen merkkijonoksi"
-simple_title:         "Päivämäärän muuttaminen merkkijonoksi"
+title:                "Päivämäärän muuntaminen merkkijonoksi"
+html_title:           "Elixir: Päivämäärän muuntaminen merkkijonoksi"
+simple_title:         "Päivämäärän muuntaminen merkkijonoksi"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Dates and Times"
@@ -10,27 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
-Kuvittele, että sinulla on ohjelma, jossa haluat näyttää päivämäärän käyttäjälle ymmärrettävässä muodossa, esimerkiksi "14. tammikuuta 2021". Tässä tilanteessa parseeraamalla ja muuntamalla päivämäärän stringiksi voit helposti toteuttaa halutun toiminnallisuuden.
+## Mikä & Miksi?
+Päivämäärän konvertoiminen merkkijonoksi tarkoittaa päivämäärän muuttamista ymmärrettävään muotoon, kuten "ma 14.6.2021". Ohjelmoijat tekevät tämän yleensä, kun heidän täytyy esittää päivämäärä käyttäjälle tai tallentaa se tietokantaan.
 
-## Kuinka
-Käytä Elixirin `Date`-moduulia löytääksesi tarvittavan toiminnon. Voit ensin luoda päivämäärä-olion antamalla sille vuoden, kuukauden ja päivän sisältävät numerot:
-
+## Miten:
 ```Elixir
-date = Date.new(2021, 1, 14)
+import Timex
+
+today = Date.utc_today()
+
+DateTime.to_string(today, "{WDabbrev} {D.}-{M}-{YYYY}")
+# "Ma 14.6.2021"
+
+DateTime.to_string(today, "{D}.{M}.{YYYY}")
+# "14.6.2021"
 ```
 
-Tämän jälkeen voit käyttää `Date`-moduulin `format`-funktiota määrittelemällä halutun formaatin merkkinä:
+## Syventävää tietoa:
+Päivämäärän konvertoiminen merkkijonoksi on ollut tärkeä osa ohjelmointia jo pitkään. Aikaisemmin ohjelmoijien täytyi käyttää monimutkaisia laskutoimituksia ja erityisiä formaatteja saadakseen päivämäärästä haluamansa muodon. Nykyään onneksi ohjelmointikielten standardikirjastot tarjoavat helppokäyttöisiä ratkaisuja tähän ongelmaan. Elixirissä voit käyttää Timex-kirjastoa, joka tarjoaa monipuolisia työkaluja päivämäärän ja ajan manipulointiin.
 
-```Elixir
-string_date = Date.format(date, "%e. %B %Y") # 14. tammikuuta 2021
-```
-
-Muita hyödyllisiä formaattivaihtoehtoja ovat esimerkiksi `%d.%m.%Y` (14.01.2021) ja `%A, %d.%m.%Y` (torstai, 14.01.2021). Voit löytää lisää vaihtoehtoja Elixirin [Dokumentaatiosta](https://hexdocs.pm/elixir/Date.html#module-formatting-and-parsing).
-
-## Syvenny
-`Date`-moduulin takana oleva toiminnallisuus perustuu Erlangin `calendar`-moduuliin, joka mahdollistaa päivämäärä- ja aikatoimintojen käytön Elixirissä. Tämä mahdollistaa myös kansainväliset päivämäärämuodot, kuten esimerkiksi `Date.format(date, "%e %B, %Y", :en)`, joka tulostaa päivämäärän englanniksi (14 January 2021).
-
-## Katso myös
-- [Date-moduulin Dokumentaatio](https://hexdocs.pm/elixir/Date.html)
-- [Elixirin Tietoja ja Opastusta -sivusto](https://elixir-lang.org/)
+## Katso myös:
+- [Elixir Timex-kirjasto](https://hexdocs.pm/timex/readme.html)
+- [Käyttäjän antaman päivämäärän tarkistus Elixirissä](https://akoutmos.com/post/working-with-dates-and-times-in-elixir-the-zero-to-the-zeroth-day-of-christmas)

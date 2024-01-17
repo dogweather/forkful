@@ -10,49 +10,71 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-When working with time-sensitive projects, it is important to keep track of the current date and time. This allows for accurate data logging, scheduling and timing of events, and displaying current information to users.
+## What & Why?
+Getting the current date is the process of retrieving and displaying the current date on a device or program. Programmers often do this in order to keep track of time and make accurate timestamps for data. This is especially important in applications such as data logging and event scheduling.
 
-## How To
-To get the current date on an Arduino board, we will be using the built-in Time library. First, we need to include the Time library in our code by adding `#include <Time.h>` at the top. Next, we will initialize the Time library by calling `setSyncProvider(getExternalTime)` in the `setup()` function. Then, we can use the `now()` function to get the current date and time, and use functions like `year()`, `month()`, and `day()` to extract specific information from the date. Let's take a look at a sample code to see this in action:
+## How to:
+```Arduino
 
-```
-// Including the Time library
-#include <Time.h>
+// Include necessary library
+#include <RTClib.h>
+
+// Create an instance of the RTC_DS3231 class
+RTC_DS3231 rtc;
 
 void setup() {
-  // Initializing the Time library
-  setSyncProvider(getExternalTime);
+    // Initialize serial monitor for debugging
+    Serial.begin(9600);
+    while (!Serial);
+
+    // Initialize RTC
+    if (!rtc.begin()) {
+        Serial.println("Couldn't find RTC");
+        while (1);
+    }
+
+    // Set the date and time for RTC
+    rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
 }
 
 void loop() {
-  // Getting the current date and time
-  time_t current_time = now();
+    // Get current date and time from RTC
+    DateTime now = rtc.now();
 
-  // Extracting the year, month, and day from the date
-  int year = year(current_time);
-  int month = month(current_time);
-  int day = day(current_time);
+    // Print the current date to serial monitor
+    Serial.print(now.day());
+    Serial.print('/');
+    Serial.print(now.month());
+    Serial.print('/');
+    Serial.print(now.year());
+    Serial.println();
 
-  // Printing the current date to the serial monitor
-  Serial.print("Today is: ");
-  Serial.print(month);
-  Serial.print("/");
-  Serial.print(day);
-  Serial.print("/");
-  Serial.println(year);
+    // Print the current time to serial monitor
+    Serial.print(now.hour());
+    Serial.print(':');
+    Serial.print(now.minute());
+    Serial.print(':');
+    Serial.print(now.second());
+    Serial.println();
 
-  // Pausing for 1 second before repeating
-  delay(1000);
+    // Wait one second before repeating loop
+    delay(1000);
 }
 ```
 
-Running this code will output the current date in the format of month/day/year to the serial monitor every second. You can modify the code to display the date in any format you want.
+**Output:**
+```
+29/01/2022
+11:34:57
+```
 
-## Deep Dive
-The `setSyncProvider()` function used in the previous code example has a parameter called `getExternalTime` which is a function that returns the current Unix time. This is the number of seconds that have elapsed since January 1, 1970. The Time library uses this Unix time as a reference to calculate the current date and time. Additionally, the Time library also has functions to set and adjust the system clock, as well as perform time zone calculations.
+## Deep Dive:
+The concept of timekeeping has evolved over the years, from primitive methods such as tracking the sun's movement to modern technology such as atomic clocks. In the world of programming, getting the current date involves using a Real-Time Clock (RTC) module or utilizing an internet connection to access a Network Time Protocol (NTP) server. Both methods have their advantages and disadvantages.
 
-## See Also
-Learn more about the Arduino Time library: https://www.arduino.cc/en/Reference/Time
+An RTC module is a hardware component that keeps track of time even when the device is powered off. This makes it a reliable option for precise timekeeping. On the other hand, using an NTP server requires an internet connection and may not be accurate if there are network issues. However, it allows for automatic synchronization of time across multiple devices.
 
-Get an in-depth understanding of the Unix time: https://www.epochconverter.com/programming/c
+In Arduino, the most commonly used library for retrieving the current date is the RTClib library. This library provides an easy-to-use interface for controlling RTC modules. In the example code above, we used the RTC_DS3231 class from this library to set and get the current date and time.
+
+## See Also:
+- [Arduino RTClib library reference](https://learn.adafruit.com/adafruit-rtc-libraries/rtc-ds3231)
+- [Difference between RTC and NTP](https://www.electronicshub.org/rtc-vs-ntp/)

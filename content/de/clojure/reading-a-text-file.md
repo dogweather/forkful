@@ -10,58 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was & Warum?
 
-Wenn du schonmal ein Computerprogramm geschrieben hast, weißt du, dass es oft notwendig ist, Daten aus einer externen Datei zu lesen. Egal ob es sich um Benutzereingaben, Konfigurationsdateien oder andere Informationen handelt, das Lesen von Textdateien ist eine wichtige Fähigkeit für jeden Programmierer.
+Wenn wir von Lesen einer Textdatei sprechen, meinen wir das Einlesen bzw. Importieren von Inhalten aus einer solchen Datei. Programmierer nutzen dies, um zum Beispiel Daten in eine Datenbank zu importieren oder um Dateien in ein anderes Format zu konvertieren. 
 
-## So geht's
+## Wie geht's?
 
-In Clojure gibt es verschiedene Möglichkeiten, eine Textdatei zu lesen. Eine davon ist die Verwendung der Funktion `slurp`, die den Inhalt einer Datei als String zurückgibt. Hier ist ein Beispiel:
+Die grundlegende Funktion, um eine Textdatei in Clojure zu lesen, ist ```read-string```. Sie nimmt als Argument den Dateipfad und gibt den Inhalt der Datei als String zurück. 
 
-```Clojure
-(def text (slurp "meine-datei.txt"))
+```Clojure 
+(def file-contents (read-string "test.txt"))
+(println file-contents)
 ```
 
-In diesem Beispiel haben wir eine Textdatei mit dem Namen "meine-datei.txt" erstellt und den Inhalt in einer Variablen namens `text` gespeichert. Wir können nun auf den Inhalt der Datei zugreifen, indem wir die Variable verwenden.
-
-Wenn du den Inhalt der Datei zeilenweise lesen möchtest, kannst du die Funktion `line-seq` verwenden, die eine Sequenz von Zeilen aus der Datei zurückgibt. Hier ist ein Beispiel:
-
+Ausgabe: 
 ```Clojure
-(def lines (line-seq (java.io.BufferedReader. (clojure.java.io/reader "meine-datei.txt"))))
+This is a test file.
 ```
 
-In diesem Beispiel verwenden wir die Java-Klasse `BufferedReader` zusammen mit `line-seq`, um den Inhalt der Textdatei Zeile für Zeile in einer Sequenz zu speichern.
-
-## Tiefentauchgang
-
-Beim Lesen von Textdateien ist es wichtig zu beachten, dass der Inhalt als String oder Sequenz von Strings zurückgegeben wird. Wenn du jedoch bestimmte Daten aus der Datei extrahieren möchtest, musst du diese Strings möglicherweise in andere Datenstrukturen wie Vektoren oder Maps umwandeln.
-
-Eine Möglichkeit, dies zu tun, ist die Verwendung der Funktion `clojure.string` zusammen mit regulären Ausdrücken. Beispiel:
+Um die Datei in eine Liste von Zeilen zu konvertieren, können wir die Funktion ```line-seq``` verwenden. Diese Funktion nimmt ebenfalls den Dateipfad als Argument, gibt aber eine Liste von Strings zurück, wobei jeder String eine Zeile aus der Datei repräsentiert. 
 
 ```Clojure
-(require '[clojure.string :as str])
-
-(def text "Name: Max Mustermann Alter: 25")
-
-(str/split text #"Alter: ([0-9]+)")
+(def file-lines (line-seq "test.txt"))
+(println file-lines)
 ```
 
-In diesem Beispiel verwenden wir `str/split`, um den Inhalt der Textdatei an der Stelle zu trennen, an der das Wort "Alter:" und eine beliebige Anzahl an Zahlen folgen. Diese Funktion gibt ein Tupel mit dem entsprechenden Namen und Alter zurück.
-
-Eine andere Möglichkeit besteht darin, die Dateizeilen zunächst in Maps zu konvertieren und dann die gewünschten Daten aus den Maps zu extrahieren. Hier ist ein Beispiel:
-
+Ausgabe: 
 ```Clojure
-(def lines (line-seq (java.io.BufferedReader. (clojure.java.io/reader "meine-datei.txt"))))
-
-(def data (map #(clojure.edn/read-string %) lines))
-
-(get (first data) :name)
+("This is the first line." 
+"This is the second line.")
 ```
 
-In diesem Beispiel verwenden wir `map` zusammen mit `clojure.edn/read-string`, um die Dateizeilen in Maps umzuwandeln. Dann können wir mit `get` den Wert des Schlüssels `:name` aus der ersten Map abrufen.
+## Tiefere Einblicke
+
+Das Lesen von Textdateien ist ein wichtiger Teil der Datenverarbeitung und -manipulation in vielen Programmiersprachen. In Clojure gibt es neben der Funktion ```read-string``` noch andere Möglichkeiten, um Textdateien zu lesen und zu verarbeiten, wie zum Beispiel die Funktion ```slurp``` oder die Bibliothek ```clojure.data.csv```. Diese bieten erweiterte Funktionen und Formate für das Lesen von Textdateien.
 
 ## Siehe auch
 
-- [Clojure Dokumentation zu Dateioperationen](https://clojure.org/guides/io)
-- [Clojure `clojure.string` Referenz](https://clojure.github.io/clojure/clojure.string-api.html)
-- [RegExr - Tool für die Erstellung und Prüfung von regulären Ausdrücken](https://regexr.com/)
+- [Clojure Dokumentation für read-string](https://clojuredocs.org/clojuredocs.org/clojure.core/read-string)
+- [Clojure Data CSV Bibliothek](https://github.com/clojure/data.csv)

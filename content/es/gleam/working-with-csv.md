@@ -10,62 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# ¿Por qué trabajar con CSV?
+## ¿Qué y por qué?
+Trabajar con archivos CSV es una tarea común para los programadores. Estos archivos son utilizados para almacenar y manipular datos tabulares, como listas de clientes o registros de ventas. Al ser un formato sencillo y ampliamente compatible, CSV se ha convertido en la opción preferida para compartir datos entre diferentes sistemas y aplicaciones.
 
-Así que te has decidido a trabajar con archivos CSV. ¡Eso es genial! Pero puede que te preguntes ¿por qué debería usar CSV en primer lugar? Bueno, déjame decirte que hay muchas razones para hacerlo. CSV (Valores Separados por Comas) es un formato de archivo muy popular para almacenar y compartir información tabular. Es ampliamente utilizado en una variedad de industrias, como finanzas, marketing, ciencia de datos y más.
+## Cómo hacerlo:
+Para trabajar con archivos CSV en Gleam, podemos hacer uso del módulo ```gleam/csv```. Este módulo nos ofrece funciones para leer y escribir archivos CSV, así como para manipular y procesar los datos en ellos. A continuación, un ejemplo de cómo leer un archivo CSV y mostrar su contenido:
 
-No importa qué tipo de proyecto estés trabajando, es muy probable que en algún momento necesites trabajar con datos tabulares. Y CSV es una excelente opción para hacerlo. Es simple y fácil de leer, tanto para humanos como para máquinas. Además, la mayoría de los lenguajes de programación tienen bibliotecas que facilitan trabajar con este formato. En resumen, trabajar con CSV te permitirá manejar grandes conjuntos de datos de manera efectiva y eficiente. ¡Así que adelante y sumérgete en el mundo de CSV!
+```
+let archivo = csv.from_file("datos.csv")
+let filas = archivo
+|> csv.rows
+|> List.map(fn (fila) -> fila.(0) end)
 
-# Cómo hacerlo:
-
-En Gleam, trabajar con CSV es muy sencillo gracias a su biblioteca estándar. Digamos que tenemos un archivo CSV llamado "peliculas.csv" con la siguiente estructura:
-
-| Título de la película | Año de lanzamiento | Director |
-| --------------------- | ------------------ | ---------|
-| Toy Story | 1995 | John Lasseter |
-| The Shawshank Redemption | 1994 | Frank Darabont |
-| Inception | 2010 | Christopher Nolan |
-
-Podemos acceder a la información de este archivo de la siguiente manera:
-
-```Gleam
-import csv_files
-
-// Abrir el archivo y leer su contenido
-let csv = csv_files.open("peliculas.csv")
-
-// Obtener los títulos de las columnas
-let [columnas, _] = csv_files.read_cell(csv, Some('"'))
-
-// Obtener los datos de las películas
-let [_, filas] = csv_files.read_rows(csv)
-
-// Recorrer las filas para imprimir la información
-filas
-  |> Vec.iter(|fila| {
-    let [titulo, año, director] = Vec.to_array(fila)
-    gleam_io.info("{titulo} ({año}) dirigida por {director}")
-  })
+println(filas)
 ```
 
-Y el resultado sería:
+En este ejemplo, utilizamos la función ```from_file``` para cargar en la variable "archivo" un archivo CSV llamado "datos.csv". Luego, utilizamos la función ```rows``` para obtener una lista de filas del archivo y, finalmente, mediante la función ```map``` convertimos cada fila en un string y lo mostramos en la consola con la función ```println```.
 
-```Gleam
-Toy Story (1995) dirigida por John Lasseter
-The Shawshank Redemption (1994) dirigida por Frank Darabont
-Inception (2010) dirigida por Christopher Nolan
-```
+## Profundizando:
+Los archivos CSV han existido desde hace décadas y han sido utilizados ampliamente en diferentes áreas, como la informática y las finanzas. Aunque son una opción popular, no son la única forma de almacenar datos tabulares. Otros formatos, como JSON y XML, también pueden cumplir la misma función, pero cada uno con sus ventajas y desventajas.
 
-También hay muchas otras funciones útiles en la biblioteca `csv_files`, como crear archivos CSV, agregar o eliminar filas y columnas, entre otras. Puedes encontrar más información sobre estas funciones en la documentación oficial de Gleam.
+En cuanto a la implementación en Gleam, el módulo ```gleam/csv``` se ha desarrollado para ser simple y fácil de usar, pero también cuenta con opciones avanzadas para personalizar su funcionamiento según nuestras necesidades. Esto lo hace una herramienta versátil y eficaz para trabajar con archivos CSV en nuestro código.
 
-# Detalles adicionales:
-
-Hay algunas cosas importantes a tener en cuenta al trabajar con CSV. Primero, asegúrate de que tus datos estén correctamente formateados y separados por comas. Si utilizas un programa de hoja de cálculo para crear tu archivo CSV, asegúrate de guardarlo en formato "Valores separados por comas" o CSV UTF-8 (delimitado por comas). Además, ten en cuenta que las comillas y los caracteres especiales pueden afectar la lectura de tu archivo CSV, por lo que es recomendable utilizar una biblioteca para manejar estos casos.
-
-En resumen, trabajar con CSV es una tarea relativamente sencilla pero que puede ahorrarte mucho tiempo y esfuerzo al manejar grandes cantidades de datos. Con la biblioteca estándar de Gleam, puedes acceder y manipular información de manera eficiente. Así que no dudes en incluir CSV en tu caja de herramientas de programación.
-
-# Ver también:
-
-- [Documentación oficial de Gleam](https://gleam.run/)
-- [Biblioteca estándar de Gleam - csv_files](https://gleam.run/modules/gleam_io/latest/GleamIO.Csv_file.html)
-- [Formato de archivo CSV](https://support.google.com/docs/answer/37603?hl=es)
+## Ver también:
+Si estás interesado en aprender más sobre el trabajo con archivos CSV en Gleam, puedes revisar la documentación oficial del módulo ```gleam/csv``` en el sitio web de Gleam. También puedes consultar otros recursos en línea que ofrecen ejemplos y explicaciones detalladas sobre cómo utilizar este formato de datos en diferentes situaciones. ¡Anímate a probar y explorar todo lo que Gleam tiene para ofrecer en el manejo de archivos CSV!

@@ -10,33 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Czym jest i dlaczego to robimy?
 
-Czy kiedykolwiek zastanawiałeś się, jak programy czytają tekstowe pliki? Może chcesz napisać własny program, który będzie analizować dane zebranie w pliku tekstowym? W obu przypadkach konieczna jest umiejętność czytania plików tekstowych w języku C#. W tym artykule dowiesz się, dlaczego jest to ważna umiejętność i jak ją wykorzystać.
+Czytasz ten artykuł, co oznacza, że już wiesz, jak ważne jest czytanie. Przeczytanie tekstu jest również ważne dla programistów. W skrócie, czytanie pliku tekstowego to po prostu odczytanie zawartości pliku zapisanego w postaci tekstu.
 
-## Jak to zrobić
+Programiści często czytają pliki tekstowe, ponieważ są one powszechnie wykorzystywane do przechowywania danych, takich jak ustawienia programu czy dane wejściowe dla aplikacji. Czytanie plików tekstowych pozwala programistom na dostęp i manipulację tymi danymi.
 
-```c#
-using System; // importujemy bibliotekę System, aby móc używać funkcji do czytania plików
+## Jak to zrobić:
 
-string path = @"C:\Users\user\Desktop\dane.txt"; // ścieżka do pliku, którego chcemy odczytać
-string[] lines = System.IO.File.ReadAllLines(path); // odczytujemy wszystkie linie z pliku i zapisujemy je jako tablicę linii
-
-foreach (string line in lines) // iterujemy przez każdą linię w tablicy
+```C#
+// Przykładowe kodowanie w C# do odczytania pliku tekstowego
+string[] lines = System.IO.File.ReadAllLines(@"C:\scieżka\do\pliku.txt");
+foreach (string line in lines)
 {
-    Console.WriteLine(line); // wyświetlamy każdą linię na ekranie
+    Console.WriteLine(line);
 }
-
-// Wyjściem programu będzie wyświetlenie wszystkich linii z pliku na ekranie.
 ```
 
-## Głębszy zanurkuj
+Powyższy kod używa metody `ReadAllLines` z klasy `File` z przestrzeni nazw `System.IO`. Ta metoda odczytuje cały plik tekstowy i zwraca jego zawartość jako tablicę napisów. Następnie w pętli `foreach` każda linia tekstu jest wyświetlana na konsoli.
 
-Oprócz funkcji `ReadAllLines()`, istnieją też inne metody do czytania plików tekstowych w języku C#. Na przykład, możemy użyć funkcji `ReadAllText()`, aby odczytać całą zawartość pliku jako pojedynczy ciąg znaków. Możemy także użyć funkcji `ReadLine()`, aby odczytać kolejną linię z pliku i przechodzić przez plik w ten sposób.
+Przykładowy plik tekstowy może wyglądać tak:
 
-Jest również ważne, aby pamiętać o zamknięciu pliku po jego odczytaniu lub zapisaniu. Możemy to zrobić za pomocą funkcji `Close()` lub `Dispose()`. Można również użyć bloku `using`, który automatycznie zamknie plik po wykonaniu kodu wewnątrz bloku.
+```
+Witaj!
+To przykładowy plik tekstowy.
+Jest to druga linia.
+A to trzecia!
+```
 
-## Zobacz także
+Po uruchomieniu przykładowego kodu, na konsoli zostanie wyświetlony następujący wynik:
 
-- [Dokumentacja C# - Przestrzeń nazw System.IO](https://docs.microsoft.com/pl-pl/dotnet/api/system.io?view=netcore-3.1)
-- [How To Read/Write Text Files In C#](https://www.c-sharpcorner.com/article/reading-and-writing-text-file-in-C-Sharp/) (ang.)
+```
+Witaj!
+To przykładowy plik tekstowy.
+Jest to druga linia.
+A to trzecia!
+```
+
+## Głębszy zanurzenie:
+
+Czytanie plików tekstowych jest jednym z najprostszych sposobów na dostęp do danych w programowaniu. W przeszłości, gdy jeszcze nie było baz danych, pliki tekstowe były jedynym sposobem na przechowywanie danych. W dzisiejszych czasach inne metody, takie jak bazy danych czy sieciowe API, są często wykorzystywane do dostępu do danych. Jednak pliki tekstowe nadal są popularne ze względu na prostotę ich użycia.
+
+Alternatywnym podejściem do czytania plików tekstowych może być wykorzystanie klasy `StreamReader` z przestrzeni nazw `System.IO`. Klasa ta pozwala na odczyt pliku linia po linii, co może być przydatne przy dużych plikach, gdy nie chcemy wczytywać całego pliku na raz.
+
+Implementacja odczytywania plików tekstowych w C# jest oparta na platformie .NET Framework, więc jest to dostępne dla programistów na platformach Windows i Linux.
+
+## Zobacz też:
+
+Oficjalna dokumentacja Microsoft dla klasy `File`: https://docs.microsoft.com/pl-pl/dotnet/api/system.io.file <br/>
+Oficjalna dokumentacja Microsoft dla klasy `StreamReader`: https://docs.microsoft.com/pl-pl/dotnet/api/system.io.streamreader

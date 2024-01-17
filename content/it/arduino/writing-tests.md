@@ -1,7 +1,7 @@
 ---
-title:                "Scrivere test"
-html_title:           "Arduino: Scrivere test"
-simple_title:         "Scrivere test"
+title:                "Scrittura di test"
+html_title:           "Arduino: Scrittura di test"
+simple_title:         "Scrittura di test"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Testing and Debugging"
@@ -10,34 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
-Scrivere dei test è fondamentale per garantire il corretto funzionamento dei nostri progetti con Arduino e per ridurre la possibilità di errori. In questo articolo scopriremo come scrivere test efficaci per i tuoi progetti.
+## Cosa & Perché?
 
-## Come fare
-Per iniziare a scrivere test, è necessario impostare l'ambiente di sviluppo correttamente. Assicurati di avere installato la versione più recente di Arduino IDE e di avere una scheda Arduino collegata al tuo computer.
+Scrivere test è il processo di creazione di codice che verifica il corretto funzionamento di altre parti del codice. I programmatori scrivono test per garantire che il loro codice sia affidabile e senza errori, consentendo loro di individuare e risolvere eventuali bug in modo più rapido ed efficiente.
 
-Una volta che tutto è pronto, possiamo iniziare a scrivere i nostri test. Di seguito viene riportato un esempio di un semplice test che verifica se la funzione `analogRead()` restituisce il valore corretto:
+## Come fare:
 
-```Arduino
-int val = analogRead(A0); // legge il valore dal pin analogico A0
-if (val == 512) { // verifica se il valore è uguale a 512
-  Serial.println("Test passed!"); // stampa un messaggio di successo
-} else {
-  Serial.println("Test failed!"); // stampa un messaggio di errore
-}
+Per scrivere test su Arduino, è possibile utilizzare la libreria integrata "Arduino Unit Testing", che consente di eseguire test sul codice del progetto. Di seguito è riportato un esempio di codice che esegue un semplice test su una funzione:
+
+```
+ArduinoUnitTesting myTest;
+int input = 5;
+int expectedOutput = 10;
+
+int actualOutput = myFunction(input);
+
+myTest.assertEquals(expectedOutput, actualOutput);
 ```
 
-Se il valore letto è effettivamente uguale a 512, il test passerà e vedremo il messaggio "Test passed!" stampato sul monitor seriale. In caso contrario, verrà visualizzato il messaggio "Test failed!".
+Se il test fallisce, verrà visualizzato un messaggio di errore indicando quale è il valore atteso e quale è il valore effettivamente ottenuto.
 
-È importante notare che per eseguire i nostri test, dobbiamo avere un modo per visualizzare i messaggi di successo o di errore. Possiamo farlo utilizzando il monitor seriale, come nel codice di esempio sopra, o anche attraverso l'utilizzo di un display LCD o di luci LED.
+## Approfondimento:
 
-## Approfondimento
-Oltre all'esempio sopra, ci sono molti altri tipi di test che possiamo scrivere per i nostri progetti con Arduino. Ad esempio, possiamo verificare il funzionamento di un sensore, la comunicazione tra due moduli o il controllo di una specifica funzionalità del nostro progetto.
+Per eseguire test su Arduino, è possibile utilizzare anche altre librerie come "Unity" e "CppUTest", che offrono maggiori funzionalità e opzioni di personalizzazione. Inoltre, alcune schede di sviluppo di Arduino, come la Arduino Mega, offrono la possibilità di eseguire test di unità hardware tramite pin specifici.
 
-Inoltre, è possibile utilizzare librerie di testing specifiche per Arduino, come ad esempio la libreria `ArduinoUnit`, che ci consentono di scrivere test ancora più complessi e organizzati.
+## Vedi anche:
 
-In generale, è sempre consigliabile scrivere test per ogni parte importante del nostro progetto, in modo da poter essere sicuri che tutto funzioni come previsto.
-
-## Vedi anche
-- [Documentazione ufficiale di Arduino](https://www.arduino.cc/reference/en/)
-- [Libreria ArduinoUnit](https://github.com/mmurdoch/arduinounit)
+- Arduino Unit Testing: https://www.arduino.cc/reference/en/libraries/arduinounittesting/
+- Unity: https://github.com/ThrowTheSwitch/Unity
+- CppUTest: https://cpputest.github.io/
+- Schede di sviluppo Arduino: https://store.arduino.cc/

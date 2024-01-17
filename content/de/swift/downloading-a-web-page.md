@@ -1,7 +1,7 @@
 ---
-title:                "Webseite herunterladen"
-html_title:           "Swift: Webseite herunterladen"
-simple_title:         "Webseite herunterladen"
+title:                "Herunterladen einer Webseite"
+html_title:           "Swift: Herunterladen einer Webseite"
+simple_title:         "Herunterladen einer Webseite"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "HTML and the Web"
@@ -10,52 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
-
-Hast du schon mal eine Webseite heruntergeladen? Wenn nicht, wäre es eine tolle Möglichkeit, deine Fähigkeiten als Swift-Programmierer zu verbessern und gleichzeitig etwas Nützliches zu tun. Mit Swift können wir ganz einfach Webseiten herunterladen und sie lokal auf unseren Geräten speichern. In diesem Artikel zeige ich dir, wie das geht und gebe dir einen Einblick in die Funktionsweise.
+## Was ist das und Warum?
+Das Herunterladen von Webseiten kann als das Abrufen von Inhalten von einer Internetquelle betrachtet werden. Programmierer tun das, um diese Inhalte in ihre Anwendungen einzubinden oder zu verarbeiten.
 
 ## Wie geht's?
-
-Um eine Webseite herunterzuladen, müssen wir zuerst die URL angeben, von der wir sie herunterladen möchten. Zum Beispiel:
-
+Um eine Webseite herunterzuladen, können Sie die folgende Methode verwenden:
 ```Swift
-let url = "https://www.example.com"
-```
-
-Dann verwenden wir die URL-Klasse, um eine Instanz zu erstellen, die auf diese URL verweist:
-
-```Swift
-if let url = URL(string: url) {
-  // do something
-}
-```
-
-Als nächstes verwenden wir die URLSession-Klasse, um eine Verbindung zu öffnen und die Daten von der URL abzurufen. Dazu müssen wir auch eine URLSessionDataTask erstellen, die uns die heruntergeladenen Daten zurückgibt:
-
-```Swift
-let session = URLSession.shared
-let task = session.dataTask(with: url) { (data, response, error) in
-  // handle response
+let url = URL(string: "https://www.example.com")
+let task = URLSession.shared.dataTask(with: url!) { (data, response, error) in
+    guard let data = data, let content = String(data: data, encoding: .utf8) else { return }
+    print(content)
 }
 task.resume()
 ```
 
-Im completionHandler können wir nun die empfangenen Daten verarbeiten und auf unsere lokale Festplatte speichern:
+Das obige Beispiel zeigt, wie man mithilfe von `URLSession` eine Datenanfrage ausführt und die Antwort in Form von Daten erhält. Diese Daten können dann zur weiteren Verarbeitung oder Anzeige verwendet werden.
 
-```Swift
-if let data = data {
-  // save data to local file
-}
-```
+## Tief tauchen
+Das Herunterladen von Webseiten hat eine lange Geschichte in der Programmierung. In den Anfängen des Internets geschah dies mithilfe von Bibliotheken wie `wget`, die die Verarbeitung von URLs und das Herunterladen von Dateien ermöglichten. Heutzutage gibt es jedoch APIs wie `URLSession`, die dies wesentlich einfacher machen.
 
-Das ist alles, was wir brauchen, um eine Webseite herunterzuladen und lokal zu speichern. Natürlich können wir auch zusätzliche Optionen und Einstellungen hinzufügen, je nachdem was wir mit den heruntergeladenen Daten machen möchten.
+Es gibt auch Alternativen zum Herunterladen von Webseiten, wie z.B. das Abrufen von Informationen von APIs oder das Parsen von HTML-Dateien. Letztendlich hängt die Wahl vom konkreten Anwendungsfall ab.
 
-## Deep Dive
-
-Wenn wir uns die Funktionen der URLSession und URLSessionDataTask genauer ansehen, können wir sehen, dass sie auf der unterliegenden Netzwerkschicht des Betriebssystems aufbauen. Dadurch können wir effizient und sicher Daten aus dem Internet herunterladen. Die URLSession-Klasse bietet auch verschiedene Konfigurationsoptionen, z.B. können wir den Timeout oder die Anzahl der gleichzeitigen Verbindungen angeben.
-
-## Siehe auch
-
-- [Apple Developer Documentation for URLSession](https://developer.apple.com/documentation/foundation/urlsession)
-- [Swift By Sundell: Downloading and caching images](https://www.swiftbysundell.com/posts/downloading-and-caching-images-in-swift)
-- [Hacking with Swift: How to download files with URLSession and downloadTask](https://www.hackingwithswift.com/example-code/networking/how-to-download-files-with-nsurlsession-datadownloadtask)
+## Sieh auch
+Weitere Informationen und Beispiele zu diesem Thema finden Sie in der offiziellen Dokumentation von Swift: https://docs.swift.org/swift-book/LanguageGuide/URLSessions.html

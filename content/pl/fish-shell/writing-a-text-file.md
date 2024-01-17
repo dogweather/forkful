@@ -10,34 +10,19 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego pisanie plików tekstowych jest ważne?
+## Co & Dlaczego?
+Pisanie plików tekstowych to podstawowa umiejętność programistów. Polega to na tworzeniu czytelnego tekstu w formacie, który może być przeczytany i zrozumiany przez komputer. Pisanie plików tekstowych jest kluczowe dla tworzenia i przechowywania kodu oraz konfiguracji dla różnych programów i systemów.
 
-Pisanie plików tekstowych jest często postrzegane jako podstawowa umiejętność programistyczna, ale w rzeczywistości jest bardzo przydatna dla każdego, kto pracuje z komputerem. To prosta i wydajna metoda przechowywania danych i informacji, a także sposobu organizacji pracy.
-
-## Jak to zrobić?
-
-```Fish Shell``` jest jednym z najbardziej popularnych narzędzi do pisania skryptów w systemie operacyjnym Unix. Jest też wygodnym i prostym sposobem na tworzenie plików tekstowych. Aby utworzyć nowy plik tekstowy, wystarczy użyć komendy ```touch``` w terminalu, na przykład:
-
-```fish
-touch nowy_plik.txt
+## Jak to zrobić:
+W Fish Shell możemy napisać plik tekstowy za pomocą komendy `echo`. Na przykład, jeśli chcemy utworzyć plik o nazwie `hello.txt` zawierający tekst "Witaj świecie!", możemy użyć następującej komendy: 
 ```
-
-Możesz również użyć polecenia ```nano``` lub ```vim``` do ręcznego edytowania pliku tekstowego. Następnie możesz wprowadzić dowolne informacje i zapisać plik za pomocą kombinacji klawiszy ```Ctrl + S```.
-
-Jeśli chcesz dodać lub edytować już istniejący plik tekstowy, możesz użyć polecenia ```echo``` wraz z przekierowaniem zapisu, na przykład:
-
-```fish
-echo "Nowy tekst" > nowy_plik.txt
+fish shell 
+echo "Witaj świecie!" > hello.txt
 ```
+Każdy tekst, który zostanie wprowadzony po `echo` zostanie zapisany w pliku `hello.txt`.
 
-## Głębsza analiza
+## Głęboki zanurzenie:
+Pisanie plików tekstowych jest jedną z podstawowych czynności w programowaniu. Pliki tekstowe są wykorzystywane do przechowywania kodu, konfiguracji i danych w różnych programach. Alternatywami dla pisania plików tekstowych są na przykład bazy danych lub pliki binarne, ale są one zazwyczaj używane w bardziej zaawansowanych i złożonych projektach.
 
-W przeciwieństwie do niektórych innych narzędzi, ```Fish Shell``` jest bardzo elastyczny i zawsze pomoże ci w tworzeniu plików tekstowych w sposób, który jest najbardziej wygodny dla ciebie. Możesz korzystać zarówno z komendy ```touch```, jak i ```nano```, w zależności od preferencji.
-
-Warto również zauważyć, że plik tekstowy może zawierać różne typy danych, takie jak tekst, liczby, a nawet polecenia systemowe. Dzięki temu jest to bardzo wszechstronny sposób na przechowywanie informacji i warto z niego korzystać przy każdej możliwej okazji.
-
-## Zobacz też
-
-* [Oficjalna strona ```Fish Shell```](https://fishshell.com/)
-* [Funkcje i skrypty ```Fish Shell```](https://fishshell.com/docs/current/tutorial.html)
-* [Przewodnik po podstawach ```Fish Shell```](https://dev.to/fhsinchy/fish-shell-mini-tutorial-59il)
+## Zobacz także:
+Jeśli chcesz dowiedzieć się więcej na temat pisania plików tekstowych w Fish Shell, polecamy zapoznać się z oficjalną dokumentacją: https://fishshell.com/docs/current/index.html.

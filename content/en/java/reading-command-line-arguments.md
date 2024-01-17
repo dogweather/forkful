@@ -10,50 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
+Reading command line arguments is a process of extracting user-inputted data from the command line interface in order to use it in a Java program. This is commonly done by programmers to make their programs more interactive and customizable, allowing users to input specific values or options.
 
-Command line arguments are important for allowing users to pass information to a Java program during runtime. This enables more flexibility and customization, making it a useful feature for both developers and end users.
+## How to:
+To read command line arguments in Java, we use the "args" parameter in the main method. Here's a simple example of a program that reads two arguments and prints them out:
 
-## How To
-
-To read command line arguments in Java, follow these steps:
-
-1. Start by creating a main method, which is required in all Java programs.
-2. Within the main method, declare a String array parameter called `args`. This is where the command line arguments will be stored.
-3. Use the `args` array to access the command line arguments. The first argument will be stored in `args[0]`, the second in `args[1]`, and so on.
-4. You can then use these arguments in your program's logic to provide different functionality based on user input.
-5. To run your program with command line arguments, navigate to the directory where your Java file is located and use the `java [filename] [arguments]` command. All arguments should be separated by a space.
-
-Here is an example code block showing how to read and use command line arguments in Java:
-
-```Java
+```
 public static void main(String[] args) {
-
-    // check if arguments were provided
-    if (args.length > 0) {
-        // print out the first argument
-        System.out.println("The first argument is: " + args[0]);
-    } else {
-        System.out.println("No arguments provided.");
-    }
+  System.out.println("Arguments entered: " + args[0] + " and " + args[1]);
 }
 ```
 
-Sample output when running the code with `java CommandLineArguments hello`:
+Running this program with command line inputs "Hello" and "world" would print: "Arguments entered: Hello and world". Another way to access command line arguments is by using the Scanner class, as shown in the following code:
 
-`The first argument is: hello`
+```
+import java.util.Scanner;
 
-## Deep Dive
+public class CommandLine {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    System.out.println("Enter your name: ");
+    String name = sc.nextLine();
+    System.out.println("Hello " + name + "!");
+  }
+}
+```
 
-There are a few important things to note when working with command line arguments in Java:
+This program prompts the user to enter their name and then prints a greeting using that input.
 
-- The `args` array will always be at least 1 element long, even if no arguments are provided. This is because the name of the Java program itself is always considered the first argument.
-- Arguments passed through the command line are always treated as strings, so be sure to use appropriate type casting if you need to use the arguments as other data types.
-- It is possible to provide multiple arguments when running a Java program. These will be stored in the `args` array in the order they were passed in.
-- Command line arguments can also be used with jar files. Simply use the `java -jar [filename].jar [arguments]` command to run the jar file with the specified arguments.
+## Deep Dive:
+Reading command line arguments has been a part of programming since the inception of Java in 1995. This feature allows programs to become more dynamic and user-friendly. Alternative methods include using system properties, environment variables, or configuration files. 
 
-## See Also
+To read command line arguments, Java uses the "String[]" data type, representing an array of String objects. We can also use the "java.util.Scanner" class to access command line inputs. This class provides methods for reading different data types, making it more versatile for handling user input.
 
-- [Oracle's official documentation on command line arguments in Java](https://docs.oracle.com/javase/tutorial/essential/environment/cmdLineArgs.html)
-- [Stack Overflow discussion on using command line arguments in Java](https://stackoverflow.com/questions/890966/what-is-string-args-parameter-in-main-method-java)
-- [GeeksforGeeks article on using command line arguments in Java](https://www.geeksforgeeks.org/command-line-arguments-in-java/)
+## See Also:
+- [Java String[]](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
+- [Scanner class](https://docs.oracle.com/javase/8/docs/api/java/util/Scanner.html)
+- [Command Line Arguments in Java](https://www.geeksforgeeks.org/command-line-arguments-in-java/)

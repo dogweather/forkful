@@ -10,35 +10,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
+Att parsa HTML är att på ett automatiserat sätt extrahera data från HTML-dokument. Detta är användbart för att kunna bearbeta och analysera stora mängder av information från webbsidor, till exempel för att skapa webbskrapor eller få statistik över olika webbplatser. Programmören vill alltså parsa HTML för att effektivt kunna samla och behandla relevant information från webben.
 
-Har du någonsin suttit och manuellt plockat ut information från en webbsida? Det är inte bara tidskrävande och tråkigt, men också ineffektivt. Att lära sig att programmera i Bash och att kunna parsas HTML kan spara dig en hel del tid och möda.
-
-## Hur man gör det
-
-Att parsas HTML med Bash är inte svårt, men kan vara lite knepigt i början. Här är tre enkla steg för att komma igång:
-
-1. Installera ett program som heter `curl` som gör det möjligt att hämta HTML-innehåll från en webbsida.
-2. Använd `grep` för att filtrera ut den information du vill plocka ut från webbsidan.
-3. Använd någon av Bash's inbyggda kommandon som `sed` eller `awk` för att formatera och presentera informationen på ett önskat sätt.
-
-
-Ett enkelt exempel på hur man kan parsas HTML med Bash är:
+## Hur man gör:
+Ett enkelt sätt att parsa HTML i Bash är att använda verktyget "curl" tillsammans med "grep" eller "sed". Detta kan se ut så här:
 
 ```Bash
-curl https://www.example.com | grep "title" | awk '{print $2}' | sed 's/<.*>//'
+curl <url till webbsida> | grep '<tag>' | sed 's/.*<tag>\(.*\)<\/tag>.*/\1/'
 ```
-Detta kommando hämtar innehållet från example.com, filtrerar ut raden som innehåller "title" och använder sedan `awk` för att plocka ut det andra ordet i raden (som i det här fallet är själva titeln på webbsidan). Sedan använder vi `sed` för att ta bort allt mellan < och >, vilket ger oss en ren titel.
+Detta kommer att hämta innehållet från den angivna webbsidan, filtrera ut allt som matchar det angivna taggen, och sedan extrahera data mellan start- och sluttaggen för taggen. Detta är dock en mycket enkel metod och kan behöva anpassas beroende på hur HTML-koden på den specifika webbsidan ser ut.
 
-## Djupdykning
+## Djupdykning:
+HTML-parsing har funnits länge och är ett viktigt verktyg för att kunna hämta och bearbeta data från webben. En alternativ metod för att parsa HTML är att använda ett programmeringsspråk som är specifikt designat för detta ändamål, till exempel Python med biblioteket BeautifulSoup. Detta ger mer flexibilitet och möjlighet att hantera mer komplex HTML-kod.
 
-Att parsas HTML med Bash handlar inte bara om att läsa och extrahera information, utan också om att följa principerna för en god programmeringspraxis. Här är några tips som kan hjälpa dig när du börjar:
+Implementationen av en HTML-parser kan variera beroende på vilket språk eller bibliotek som används, men i grund och botten går det ut på att läsa in HTML-koden, identifiera start- och sluttaggar för olika element, och sedan extrahera data mellan dessa. Detta kräver god kunskap om HTML-struktur och textbehandling i det valda programmeringsspråket.
 
-- Var noggrann när du väljer grep-kommandon eftersom det finns olika sätt att skriva HTML-kod på och du måste vara säker på att ditt grep-kommando väljer rätt del av webbsidan.
-- Använd Bash's inbyggda variabler, såsom `$IFS` (Internal Field Separator) och `"$@"` (alla kommandoradsargument), för att göra din kod mer flexibel och skalbar.
-- Om du planerar att parsas en stor mängd data, överväg att använda Bashes inbyggda `fork` och `wait` funktioner för att göra parsingsprocessen snabbare och mer effektiv.
-
-## Se även
-
-- En djupare förståelse för Bash och dess kommandon kan vara användbart för att parsas HTML. [Bash's officiella dokumentation](https://www.gnu.org/software/bash/manual/bash.html) är ett bra ställe att börja.
-- Om du vill utöka dina automatiseringsförmågor kan det vara till nytta att lära känna verktyg som `sed` och `awk`. Här är två användbara resurser för att komma igång: [Sed tutorial](https://www.grymoire.com/Unix/Sed.html) och [Awk tutorial](https://www.grymoire.com/Unix/Awk.html) (båda länkar på engelska).
+## Se även:
+- [Curl](https://curl.se/)
+- [Grep](https://www.gnu.org/software/grep/)
+- [Sed](https://www.gnu.org/software/sed/)
+- [BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/)

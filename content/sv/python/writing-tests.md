@@ -1,7 +1,7 @@
 ---
-title:                "Skriva tester"
-html_title:           "Python: Skriva tester"
-simple_title:         "Skriva tester"
+title:                "Att skriva tester"
+html_title:           "Python: Att skriva tester"
+simple_title:         "Att skriva tester"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Testing and Debugging"
@@ -10,42 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
+Att skriva tester är en process där programmerare skapar kod för att testa sin egen kod. Detta används för att säkerställa att koden fungerar som den ska och för att minska risken för buggar och fel.
 
-Att skriva tester är en viktig del av utvecklingsprocessen för att säkerställa att din kod fungerar som den ska. Det hjälper även till att upptäcka fel och förhindrar potentiella buggar i framtiden.
-
-## Så här gör du
-
-För att skriva tester i Python, används det inbyggda testramverket 'unittest'. Det börjar med att importera unittest biblioteket och de funktioner eller klasser som ska testas.
+## Hur gör man:
+För att skriva tester i Python används vanligtvis en modul som heter "unittest". Detta tillåter programmerare att skapa olika tester för sina funktioner och klasser. Här är ett enkelt exempel:
 
 ```Python
+# importera unittest-modulen
 import unittest
 
-def add(num1, num2):
-    return num1 + num2
+# skapa en enkel funktion för att addera två tal
+def add(a, b):
+  return a + b
 
-class TestCalc(unittest.TestCase):
-    
-    def test_add(self):
-        self.assertEqual(add(2,3), 5)
+# skapa ett testfall för att se om funktionen add() fungerar som det ska
+class TestAdd(unittest.TestCase):
 
-if __name__ == '__main__':
-    unittest.main()
+  # en testmetod för att testa en enkel addition
+  def test_simple_add(self):
+    result = add(2, 3)
+    self.assertEqual(result, 5) # jämför resultatet med det förväntade värdet
+
+# kör testerna
+unittest.main()
 ```
 
-I detta exempel skapas en enkel funktion som adderar två tal och sedan testas det med hjälp av 'unittest.TestCase' klassen. AssertEqual-funktionen kontrollerar om resultatet är det förväntade och om så är fallet så passerar testet. Om resultatet inte stämmer så misslyckas testet och en felmeddelande visas.
+Expected output:
+```Python
+.
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
 
-## Djupdykning
+OK
+```
 
-Vid skrivande av tester är det viktigt att täcka alla möjliga fall, både för korrekt och inkorrekt indata. Detta hjälper till att säkerställa att koden hanterar alla scenarier ordentligt och inte orsakar oväntade fel.
+## Deep Dive:
+Att skriva tester är en viktig del av processen för att utveckla programvara. Genom att testa kod regelbundet minskar risken för potentiella buggar och fel, vilket sparar tid och resurser i det långa loppet. Alternativ till "unittest" är bland annat "pytest" och "doctest", men "unittest" är det mest populära alternativet för Python-programmerare. Det är också viktigt att notera att tester ska vara en del av den kontinuerliga utvecklingsprocessen, inte bara något som görs i slutet.
 
-En annan viktig aspekt är att testen bör vara isolerade, vilket betyder att varje test ska köra oberoende av varandra. Detta förhindrar eventuella beroenden mellan olika tester och gör det lättare att felsöka om ett test fallerar.
-
-Det finns också möjlighet att använda externa bibliotek för att hjälpa till med skrivandet av tester, som till exempel 'pytest' och 'nose'. Dessa erbjuder fler funktioner för att underlätta skrivandet av tester och öka testtäckningen för din kod.
-
-## Se även
-
-- [En guide till enhetstester i Python](https://realpython.com/python-testing/)
-- [Dokumentation för unittest](https://docs.python.org/3/library/unittest.html)
-- [Dokumentation för pytest](https://docs.pytest.org/en/latest/)
-- [Dokumentation för nose](https://nose.readthedocs.io/en/latest/)
+## Se även:
+- [Python enhetstester (documentation)](https://docs.python.org/3/library/unittest.html)
+- [pytest](https://docs.pytest.org/en/latest/)
+- [doctest](https://docs.python.org/3/library/doctest.html)

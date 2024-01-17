@@ -10,62 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+##Co i dlaczego?
 
-Pobieranie strony internetowej jest nieodzownym elementem programowania w PHP, szczególnie jeśli chodzi o tworzenie skryptów automatyzujących pobieranie plików lub analizowanie danych z innych stron. Jest to szybki i skuteczny sposób na uzyskanie potrzebnych informacji.
+Pobieranie stron internetowych to proces pobierania danych z serwera internetowego i wyświetlenia ich na ekranie użytkownika. Programiści często wykonują tę czynność, aby uzyskać potrzebne informacje lub dane z innych stron internetowych.
 
-## Jak to zrobić
+##Jak to zrobić:
+
+Pobieranie strony internetowej w PHP jest łatwe i wymaga tylko kilku prostych kroków. Najpierw musimy użyć funkcji `file_get_contents` z odpowiednim adresem URL, aby pobrać treść strony. Następnie możemy użyć funkcji `echo` do wyświetlenia pobranego tekstu na ekranie. Na przykład:
 
 ```PHP
-$url = 'https://www.example.com'; //adres URL strony do pobrania
-
-//inicjalizacja sesji CURL
-$ch = curl_init();
-
-//ustawienie opcji pobierania strony
-curl_setopt($ch, CURLOPT_URL, $url); //ustawienie adresu URL
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); //zwrócenie pobranej strony jako wyniku zamiast wyświetlenia
-curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1); //umożliwienie obsługi przekierowań na stronie
-curl_setopt($ch, CURLOPT_MAXREDIRS, 5); //maksymalna liczba przekierowań
-curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0); //ignorowanie certyfikatów SSL
-
-//wykonanie zapytania i zapisanie wyniku do zmiennej
-$result = curl_exec($ch);
-
-//sprawdzenie czy wystąpił błąd
-if (curl_errno($ch)){
-  echo 'Błąd pobierania strony: ' . curl_error($ch);
-}
-
-//zamknięcie sesji CURL
-curl_close($ch); 
-
-//wyświetlenie pobranej strony
-echo $result;
+$strona = file_get_contents("https://www.example.com");
+echo $strona;
 ```
 
-### Output
-```
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Example Domain</title> //tytuł strony
-  <meta charset="UTF-8"> //kodowanie znaków
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> //ustawienia dla urządzeń mobilnych
-</head>
-<body>
-  <h1>Example Domain</h1> //tytuł strony
-  <p>This domain is for use in illustrative examples in documents. You may use this
-  domain in literature without prior coordination or asking for permission.</p> //tekst na stronie
-</body>
-</html>
+To polecenie pobierze zawartość strony internetowej z adresu URL "https://www.example.com" i wyświetli ją na ekranie.
+
+Możemy także użyć funkcji `file_put_contents` do zapisania pobranego tekstu do pliku na naszym serwerze. Na przykład:
+
+```PHP
+$strona = file_get_contents("https://www.example.com");
+file_put_contents("nazwa_pliku.html", $strona);
 ```
 
-## Deep Dive
+Ten kod spowoduje pobranie strony z adresu URL "https://www.example.com" i zapisze ją jako plik "nazwa_pliku.html" na naszym serwerze.
 
-Pobieranie strony przy użyciu PHP odbywa się za pomocą biblioteki CURL, która jest częścią standardowej instalacji PHP. Biblioteka ta pozwala na ustawienie różnych opcji, takich jak obsługa przekierowań czy ignorowanie certyfikatów SSL. Dzięki temu można dostosować pobieranie do swoich potrzeb.
+##Głębsza Analiza:
 
-## Zobacz również
+Pobieranie stron internetowych jest powszechnie wykorzystywaną techniką w PHP, szczególnie w kontekście zautomatyzowania procesów i pozyskiwania danych. Niektóre alternatywne metody to użycie biblioteki cURL lub funkcji `fopen` wraz z `fread`, jednak funkcja `file_get_contents` jest popularnym i prostszym wyborem.
 
-- Dokumentacja CURL w PHP: https://www.php.net/manual/en/book.curl.php
-- Przydatne informacje o pobieraniu stron w PHP: https://www.codementor.io/@ganesh85/how-to-scrape-a-website-using-php-du108266t
+Podczas pobierania stron internetowych ważne jest również uważać na możliwe błędy związane z niedostępną lub błędną stroną. Dlatego warto dodać obsługę wyjątków do naszego kodu i sprawdzić poprawność adresu URL przed próbą pobrania strony.
+
+##Zobacz również:
+
+Jeśli chcesz dowiedzieć się więcej o funkcji `file_get_contents` w PHP, możesz znaleźć pomocne informacje w poniższych źródłach:
+
+- Dokumentacja PHP: https://www.php.net/manual/en/function.file-get-contents.php
+- Wideo na YouTube o pobieraniu stron internetowych w PHP: https://www.youtube.com/watch?v=m68_qUn-Prw
+- Poradnik na Codecourse o pobieraniu zawartości stron internetowych w PHP: https://www.codecourse.com/lessons/automating-tasks-in-php/995
+
+Wykorzystanie tej funkcji może być bardzo przydatne przy tworzeniu skryptów do automatyzacji różnych działań związanych z pobieraniem danych z internetu. Dlatego warto poświęcić trochę czasu na dokładniejsze poznanie jej działania.

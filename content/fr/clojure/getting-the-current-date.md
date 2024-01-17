@@ -10,46 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+Quelle et pourquoi?
 
-Se préoccuper de la date actuelle peut sembler banal, mais cela peut être très utile dans de nombreuses situations en programmation. Cela peut être pour afficher la date sur une interface utilisateur, pour effectuer des opérations liées à la date, ou simplement pour suivre l'heure à laquelle une fonction ou un processus a été exécuté.
+Obtenir la date actuelle est une fonctionnalité essentielle dans de nombreux programmes informatiques. Les programmeurs utilisent cette fonction pour enregistrer la date et l'heure d'un événement ou pour effectuer des calculs liés au temps.
 
-## Comment faire
-
-Pour obtenir la date actuelle en Clojure, vous pouvez utiliser la fonction `java.util.Date` qui renvoie un objet représentant la date et l'heure actuelles.
+## Comment faire:
 
 ```Clojure
-(import java.util.Date)
+(require '[java.time.LocalDate :as time])
 
-(def current-date (Date.))
+;; Obtenez la date actuelle
+(def current-date (time/local-date))
+
+;; Obtenez l'année actuelle
+(def current-year (time/year current-date))
+
+;; Obtenez le mois actuel
+(def current-month (time/month current-date))
+
+;; Obtenez le jour actuel
+(def current-day (time/day-of-month current-date))
 ```
+Le code ci-dessus utilise la bibliothèque intégrée java.time pour obtenir la date actuelle et extraire des informations telles que l'année, le mois et le jour.
 
-Vous pouvez ensuite utiliser la fonction `format` pour formater la date selon vos besoins.
+Exemple de sortie:
 
-```Clojure
-(require '[clojure.java-time :as t])
-
-(t/format current-date "dd-MM-yyyy") ;; 19-04-2021
 ```
-
-Vous pouvez également utiliser la bibliothèque `java-time` pour une manipulation plus avancée de la date et de l'heure.
-
-```Clojure
-(require '[java-time :as jt])
-
-(jt/year current-date) ;; 2021
-(jt/month current-date) ;; :APRIL
-(jt/day-of-month current-date) ;; 19
+current-date => #object[java.time.LocalDate 0x224e76fd 2021-10-13]
+current-year => 2021
+current-month => #object[java.time.Month 0x5551fa84 OCTOBER]
+current-day => 13
 ```
 
 ## Plongée en profondeur
 
-La fonction `java.util.Date` renvoie un objet mutable, c'est-à-dire que sa valeur peut changer au fil du temps. Il est donc recommandé de l'assigner à une variable plutôt que de l'utiliser directement. De plus, cette fonction utilise le fuseau horaire de l'utilisateur, ce qui peut causer des incohérences dans certains cas.
+Avant l'avènement de la bibliothèque java.time, les programmeurs utilisaient la classe Date de Java pour obtenir la date actuelle. Cependant, cette classe était sujette à des problèmes de performance et de fiabilité. La bibliothèque java.time a été introduite dans Java 8 pour résoudre ces problèmes et fournir une interface plus conviviale pour travailler avec les dates et heures.
 
-Pour éviter ces problèmes, il est préférable d'utiliser la bibliothèque `java-time` qui renvoie un objet immuable et prend en compte le fuseau horaire par défaut.
+Alternatives:
+
+Si vous utilisez une version antérieure de Java qui n'inclut pas la bibliothèque java.time, vous pouvez utiliser la bibliothèque open-source clj-time pour obtenir la date actuelle. Cette bibliothèque fournit des fonctions similaires à celles de java.time mais avec une syntaxe différente.
+
+Détails de mise en œuvre:
+
+La fonction `time/local-date` renvoie une instance de la classe `java.time.LocalDate` qui représente la date actuelle. Ensuite, on peut utiliser les méthodes `year`, `month` et `day-of-month` pour extraire des informations spécifiques de cette date.
 
 ## Voir aussi
 
-- [Documentation Java - Classe Date](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html)
-- [Clojure.java-time](https://github.com/dm3/clojure.java-time)
-- [Manipulation de dates et d'heures en Clojure](https://clojure.org/guides/java_time)
+- Documentation officielle Clojure: https://clojure.org/
+- Bibliothèque java.time: https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html
+- Bibliothèque clj-time: https://github.com/clj-time/clj-time

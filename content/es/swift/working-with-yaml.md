@@ -10,75 +10,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué trabajar con YAML?
+Qué es YAML y por qué los programadores lo usan
+--------------------------------------------------
 
-Si estás programando en Swift, seguro que has oído hablar de YAML. Este formato de datos es ampliamente utilizado en la industria de la tecnología y puede ser una herramienta útil para mejorar tu trabajo como desarrollador. En esta artículo, vamos a explorar por qué trabajar con YAML puede ser beneficioso para ti.
+YAML es un formato de serialización de datos, lo que significa que es una forma de representar información en un archivo legible tanto para humanos como para máquinas. Los programadores usan YAML para almacenar y compartir datos estructurados, como configuraciones de aplicaciones o datos de prueba para realizar pruebas automatizadas.
 
-## Cómo utilizar YAML en Swift
+Cómo utilizar YAML en Swift
+---------------------------
 
-Para empezar, es importante entender qué es YAML. Se trata de un lenguaje de marcado que se utiliza para representar datos en un formato legible para humanos y fácilmente parseable para computadoras. En Swift, puedes trabajar con YAML utilizando el framework "Yams". Aquí te mostraremos cómo utilizarlo:
+Para trabajar con YAML en Swift, primero necesitamos importar la biblioteca `Yams` en nuestro proyecto. Luego, podemos utilizar el método `YAMLDecoder()` para decodificar un archivo YAML en un objeto Swift, o el método `YAMLEncoder()` para codificar un objeto Swift en un archivo YAML.
 
-```Swift
-import Yams
-
-// Crear un diccionario de valores en YAML
-let data = """
-nombre: Juan
-edad: 30
-trabajo: desarrollador
+```
+// Ejemplo de decodificación de un archivo YAML:
+let yamlString = """
+todos:
+  - ir de compras
+  - cocinar la cena
+  - hacer ejercicio
 """
-// Convertirlo a un objeto en Swift
-do {
-    if let yamlObject = try Yams.load(yaml: data) as? [String: Any] {
-        print(yamlObject)
-    }
-} catch {
-    print("Error al parsear YAML")
+let decoder = YAMLDecoder()
+let todos = try decoder.decode([String].self, from: yamlString)
+print(todos)
+// output: ["ir de compras", "cocinar la cena", "hacer ejercicio"]
+
+// Ejemplo de codificación de un objeto Swift:
+struct Empleado: Codable {
+  let nombre: String
+  let departamento: String
 }
+let empleado = Empleado(nombre: "María", departamento: "Ventas")
+let encoder = YAMLEncoder()
+let yamlString = try encoder.encode(empleado)
+print(yamlString)
+// output: "nombre: María\ndepartamento: Ventas\n"
 ```
 
-La salida de este código será un diccionario con los datos del YAML:
+Una mirada más profunda a YAML
+------------------------------
 
-```Swift
-["nombre": "Juan", "edad": 30, "trabajo": "desarrollador"]
-```
+YAML fue creado originalmente por Clark Evans en 2001 y hoy en día es un estándar ampliamente utilizado en la comunidad de programadores. Además de ser fácil de leer y escribir, YAML también es útil porque es independiente del lenguaje, lo que significa que se puede utilizar con cualquier lenguaje de programación.
 
-Ahora puedes trabajar y manipular estos datos en Swift de la misma forma en que lo harías con cualquier otro objeto de tipo diccionario.
+Si bien YAML es una opción popular para almacenar y compartir datos estructurados, también hay otras alternativas como JSON y XML. Cada formato tiene sus propias ventajas y desventajas, por lo que es importante considerar cuál es el mejor para tu proyecto en particular.
 
-## Profundizando en YAML
+En términos de implementación, YAML en Swift requiere el uso de bibliotecas externas como `Yams` o `YamlSwift`, ya que no hay soporte nativo para YAML en el lenguaje. Sin embargo, estas bibliotecas facilitan mucho el proceso de trabajar con YAML en Swift.
 
-Si quieres profundizar en el uso de YAML en Swift, puedes explorar las diferentes opciones y métodos disponibles en el framework "Yams". Por ejemplo, puedes convertir un objeto Swift a YAML utilizando el método `dump`:
+Más recursos sobre YAML
+-----------------------
 
-```Swift
-let dictionary = ["lenguaje": "Swift", "dificultad: "media"]
-do {
-    print(try Yams.dump(object: dictionary))
-} catch {
-    print("Error al convertir a YAML")
-}
-```
+Si quieres aprender más sobre YAML y cómo usarlo en tus proyectos de Swift, aquí te dejamos algunos enlaces útiles:
 
-La salida de este código sería:
+- [Documentación oficial de YAML](https://yaml.org/)
+- [Biblioteca Swift para trabajar con YAML](https://github.com/jpsim/Yams)
+- [Tutorial de YAML para principiantes](https://www.codeproject.com/Articles/1214409/Learn-YAML-in-five-minutes)
+- [Comparación entre YAML, JSON y XML](https://stackify.com/yaml-vs-json-vs-xml/)
 
-```Swift
-lenguaje: Swift
-dificultad: media
-```
-
-También puedes validar si tu YAML es válido utilizando el método `isValid(yaml:)`:
-
-```Swift
-let invalidYaml = """
-lenguaje: Swift
-dificultad: {media}
-"""
-print(Yams.isValid(yaml: invalidYaml)) // Salida: false
-```
-
-## Ver también
-
-Si quieres seguir aprendiendo sobre YAML y su uso en Swift, te recomendamos revisar la documentación oficial del framework "Yams" y explorar otros recursos en línea como tutoriales y ejemplos de código.
-
-- [Documentación de Yams](https://github.com/jpsim/Yams)
-- [Tutorial de YAML en Swift](https://www.raywenderlich.com/786586-yaml-tutorial-get-started-in-swift)
-- [Ejemplos de código en YAML y Swift](https://github.com/jpsim/Yams/tree/master/Examples)
+¡Ahora estás listo para empezar a trabajar con YAML en Swift! Recuerda siempre considerar los requisitos y necesidades de tu proyecto antes de decidir qué formato utilizar para almacenar tus datos estructurados.

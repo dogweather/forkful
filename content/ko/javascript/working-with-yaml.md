@@ -1,7 +1,7 @@
 ---
-title:                "yaml으로 작업하기"
-html_title:           "Javascript: yaml으로 작업하기"
-simple_title:         "yaml으로 작업하기"
+title:                "yaml 사용하기"
+html_title:           "Javascript: yaml 사용하기"
+simple_title:         "yaml 사용하기"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Data Formats and Serialization"
@@ -10,32 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+# 무엇 & 왜?
+YAML 작업이란 무엇인가요? 그리고 왜 프로그래머들은 이 작업을 하나요?
+YAML은 'YAML Ain't Markup Language'의 약자로, 데이터의 구조화된 양식을 다루는 데 사용되는 포맷입니다. 프로그래머들이 YAML을 사용하는 이유는 간단한 구조와 읽기 쉬운 문법으로 텍스트 파일을 다루는 데 매우 유용하기 때문입니다.
 
-YAML을 사용하는 이유는 프로그래밍 시 간결하고 읽기 쉬운 형식으로 데이터를 정리할 수 있기 때문입니다.
-
-## 어떻게
-
-YAML을 사용하려면 우선 YAML 라이브러리를 다운로드해야 합니다. 그리고 다음과 같이 코드를 작성해 보세요.
-
+## 방법:
 ```Javascript
-const yaml = require('yaml');
+// YAML 파일을 다룰 때 사용하는 예제 코드
+var fs = require('fs');
+var yaml = require('js-yaml');
 
-// YAML 파일 불러오기
-const data = yaml.parseFile('example.yaml');
+// YAML 파일을 열어서 데이터를 로드하는 함수
+function loadYAML(filename) {
+  var data = fs.readFileSync(filename, 'utf8');
+  return yaml.safeLoad(data);
+}
 
-// YAML 파일 내용 출력
-console.log(data);
+// 새로운 YAML 파일을 생성하는 함수
+function createYAML(filename, data) {
+  var yamlData = yaml.safeDump(data);
+  fs.writeFileSync(filename, yamlData, 'utf8');
+}
+
 ```
+예제 코드를 실행하면, YAML 파일이 생성되고 데이터가 로드되게 됩니다.
 
-위 코드를 실행하면 YAML 형식으로 작성된 파일인 'example.yaml'의 내용이 출력됩니다. 이외에도 YAML을 사용하여 JSON 데이터를 변환하거나, JavaScript 객체를 YAML 포맷으로 저장하는 등 다양한 작업을 할 수 있습니다.
+## 심층 분석:
+### 역사적 배경:
+YAML은 2001년 최초로 만들어질 당시 데이터 포맷의 표준이었던 XML보다 간단하고 가독성이 뛰어나기 때문에 빠르게 인기를 얻었습니다. 하지만 XML의 복잡한 스키마를 대체할 수는 없었기 때문에 아직까지도 많은 서비스에서 사용되고 있습니다.
 
-## 깊게 파보기
+### 대안:
+YAML의 대안으로는 JSON이 있습니다. YAML보다 구조가 단순하고 문법도 간단하지만, 읽기 쉬운 YAML과는 다르게 JSON은 작은 따옴표를 사용해야 하기 때문에 코드가 더 복잡해질 수 있습니다.
 
-YAML은 주석을 사용할 수 있기 때문에 코드를 문서화하는 데 유용합니다. 또한 커스텀 타입을 정의할 수 있어서 데이터를 더 유연하게 저장할 수 있습니다.
+### 구현 세부사항:
+YAML은 Ruby, Python 등의 다양한 언어에서 사용할 수 있도록 라이브러리가 제공되고 있습니다. JavaScript에서 YAML을 다루기 위해서는 'yaml' 라이브러리를 설치하고, 'js-yaml' 패키지를 이용해야 합니다.
 
-## 더 알아보기
-
-[YAML 공식 문서](https://yaml.org/) <br/>
-[YAML vs JSON](https://stackoverflow.com/questions/1726802/json-vs-yaml-which-is-better-for-config-files) <br/>
-[YAML 파일 사용 예제](https://www.tutorialspoint.com/yaml/index.htm)
+## 관련 자료:
+- YAML 공식 사이트: https://yaml.org/
+- YAML 백서: https://yaml.org/spec/1.2/spec.html
+- yaml 라이브러리: https://www.npmjs.com/package/yaml

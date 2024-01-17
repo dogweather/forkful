@@ -1,7 +1,7 @@
 ---
-title:                "HTTP-pyynnön lähettäminen perusautentikoinnilla"
-html_title:           "Haskell: HTTP-pyynnön lähettäminen perusautentikoinnilla"
-simple_title:         "HTTP-pyynnön lähettäminen perusautentikoinnilla"
+title:                "Perusautentikoinnin käyttö http-pyynnössä"
+html_title:           "Haskell: Perusautentikoinnin käyttö http-pyynnössä"
+simple_title:         "Perusautentikoinnin käyttö http-pyynnössä"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "HTML and the Web"
@@ -10,47 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+# Mitä & Miksi?
 
-HTTP-pyyntöjen lähettäminen perusautentikoinnin avulla on hyödyllistä, kun haluat varmistaa, että vain tietyn oikeutuksen omaavat käyttäjät pääsevät tiettyihin verkkoresursseihin.
+HTTP-pyyntöjen lähettäminen perusautentikoinnilla tarkoittaa yksinkertaisuudessaan HTTP-käytännön käyttämistä salasanan lähettämiseen pyynnölle. Tämä on tärkeää esimerkiksi, kun käytetään API-rajapintoja, jotta voidaan osoittaa pääsyoikeus palveluntarjoajan tarjoamiin tietoihin.
 
-## Kuinka tehdä
+# Kuinka:
 
-Lähettääksesi HTTP-pyynnön perusautentikoinnin avulla, sinun täytyy ensin asettaa Authorization-otsake pyyntöösi. Tämä otsake koostuu käyttäjätunnuksesi ja salasanaasi yhdistävästä Base64-koodatusta merkkijonosta. Voit helposti luoda tämän merkkijonon Haskellilla seuraavalla tavalla:
-
-```Haskell
-import Data.ByteString.Base64 (encode)
-import Data.ByteString.Char8 (pack)
-
-let username = pack "käyttäjätunnuksesi"
-let password = pack "salasanasi"
-let credentials = encode $ pack (username ++ ":" ++ password)
-
-```
-
-Nyt voit lisätä tämän credentials-muuttujan Authorization-otsakkeeseen pyynnössäsi ja lähettää sen verkkoresurssille. Esimerkiksi, jos haluat lähettää GET-pyynnön osoitteeseen https://www.example.com/api, jossa käytetään perusautentikointia, voit tehdä sen seuraavasti:
+Esimerkiksi, jos haluat lähettää GET-pyynnön, joka sisältää käyttäjätunnuksen ja salasanan, voit tehdä sen seuraavasti:
 
 ```Haskell
-import Network.HTTP.Client (parseUrlThrow, newManager, httpLbs, responseBody, Request(..))
-import Network.HTTP.Simple (setRequestMethod, setRequestHeaders)
+import Network.HTTP
+import Network.HTTP.Headers
 
-let url = "https://www.example.com/api"
-let request = setRequestHeaders [("Authorization", pack ("Basic " ++ credentials))]
-              $ setRequestMethod "GET"
-              $ fromJust $ parseUrlThrow url
+-- Luodaan HTTP-pyynnön otsikko, jossa käyttäjätunnus ja salasana base64-koodataan.
+authHeader = mkHeader HdrAuthorization ("Basic " ++ (encodeString "käyttäjätunnus:salasana"))
 
-manager <- newManager defaultManagerSettings
-response <- httpLbs request manager
-putStrLn $ responseBody response
+-- Luodaan GET-pyyntö ja lisätään luotu otsikko.
+request = getRequest "http://esimerkki.com/api/data"
+withAuthority request authHeader
+
+-- Lähetetään pyyntö ja tulostetaan vastauksen koodi ja sisältö.
+response = simpleHTTP request
+print $ rspCode response
+print $ rspBody response
 ```
 
-Tämän esimerkkikoodin avulla saat ladattua verkkoresurssin sisällön ja tulostettua sen konsolille. Muista vaihtaa url-muuttujan arvio oikeaksi pyyntöäsi vastaavaksi.
+Tämä koodi lähettää GET-pyynnön osoitteeseen "http://esimerkki.com/api/data", jossa käyttäjätunnus on "käyttäjätunnus" ja salasana on "salasana". Huomaa, että tässä käytetään vain Network.HTTP-moduulin toimintoja, joten se toimii myös Windowsilla.
 
-## Syventyminen
+# Syväsukellus
 
-On tärkeää huomata, että Base64-koodattu käyttäjätunnuksesi ja salasanasi ovat välitön osa pyyntösi otsaketta. Tämä tarkoittaa, että näitä tietoja ei tulisi lähettää avoimesti ilman suojaa, sillä ne voivat helposti paljastaa pääsyn tärkeisiin verkkoresursseihin. On suositeltavaa käyttää HTTPS-yhteyttä lähettäessäsi perusautentikoituja pyyntöjä, sillä se kryptaa kaiken tiedon välillänne.
+Perusautentikointi on yksi vanhimmista ja yksinkertaisimmista tavoista suojata HTTP-pyyntöjä ja -vastauksia. Siinä käyttäjätunnus ja salasana base64-koodataan ja lähetetään Pohja-autentikointi HTTP-pyyntöjen kautta. Tämä autentikointimuoto ei kuitenkaan ole erityisen turvallinen, sillä käyttäjätunnuksen ja salasanan base64-koodi voidaan helposti purkaa takaisin selkokieliseen muotoon. Siksi sen käyttöä ei suositella, jos tiedonsuoja on ensisijaisen tärkeää.
 
-## Katso myös
+On myös olemassa muita tapoja lähettää pyyntöjä perusautentikoinnilla, kuten käyttäjätunnuksen ja salasanan lisääminen URL-osoitteeseen tai käyttämällä pyyntöä palvelun tarjoaman kirjautumissivun kautta.
 
-- [HTTP-ohjelmointimoduulit Hackage-repositoriossa](https://hackage.haskell.org/packages/search?terms=HTTP)
-- [RFC 2617 - HTTP Authentication: Basic and Digest Access Authentication](https://tools.ietf.org/html/rfc2617)
+HTTP-pyyntöjen lähettämiseen perusautentikoinnilla on olemassa useita tapoja Haskellissa, kuten myös muissa ohjelmointikielissä. Ne vaihtelevat käyttöliittymiltään ja ominaisuuksiltaan, mutta perusperiaatteet pysyvät samoina.
+
+# Katso myös:
+
+- Network.HTTP-moduulin dokumentaatio: https://hackage.haskell.org/package/HTTP/docs/Network-HTTP.html
+- Perusautentikoinnin käyttöoikeus HTTP:llä: https://developer.mozilla.org/fi/docs/Web/HTTP/Authentication

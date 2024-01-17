@@ -10,63 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-¡Hola a todos! Siempre me ha gustado descubrir cosas nuevas y hoy quiero compartir una de ellas con ustedes. ¡Vamos a aprender sobre cómo enviar una solicitud HTTP con autenticación básica en Kotlin! ¿Por qué deberíamos hacer esto? ¡Sigue leyendo para saber más!
+## ¿Qué y por qué?
 
-## ¿Por qué?
+Enviar una solicitud HTTP con autenticación básica es un proceso en el que se envía una solicitud a un servidor web con credenciales básicas de inicio de sesión para acceder a cierta información o recursos protegidos. Los programadores lo hacen para garantizar que solo los usuarios autorizados puedan acceder a ciertos datos o funcionalidades en una aplicación web.
 
-Existen muchas razones por las cuales podríamos querer enviar una solicitud HTTP con autenticación básica. Una de ellas podría ser para acceder a una API o servicio que requiere autorización antes de mostrar o procesar información. En general, este tipo de autenticación es una medida de seguridad importante para proteger los datos y comunicaciones en línea.
+## Cómo:
 
-## ¿Cómo hacerlo?
-
-Para enviar una solicitud HTTP con autenticación básica en Kotlin, primero necesitamos importar las librerías necesarias:
-
-```Kotlin
-import java.net.URL
+``` Kotlin
+// Primero, importamos las bibliotecas necesarias
 import java.net.HttpURLConnection
-import java.util.Base64
+import java.net.URL
+
+// Definimos la URL del servidor y las credenciales de inicio de sesión
+var url = URL("https://ejemplo.com")
+var username = "usuario"
+var password = "contraseña"
+
+// Luego, creamos una conexión HTTP y establecemos la propiedad de autenticación básica
+var connection = url.openConnection() as HttpURLConnection
+var auth = "Basic " + Base64.getEncoder().encodeToString("$username:$password".toByteArray())
+connection.setRequestProperty("Authorization", auth)
+
+// Finalmente, enviamos la solicitud y obtenemos la respuesta
+var responseCode = connection.responseCode
+println("Response Code: $responseCode")
+
+var inputStream = connection.inputStream
+var inputAsString = inputStream.bufferedReader().use { it.readText() }
+println("Response Body: \n$inputAsString")
+
 ```
 
-Luego, podemos crear una variable para almacenar nuestra URL y otra para almacenar nuestros datos de autenticación (en este caso, nombre de usuario y contraseña):
+La consola imprimirá algo similar a:
 
-```Kotlin
-val url = URL("https://api.ejemplo.com/informacion")
-val username = "mi_usuario"
-val password = "mi_contraseña"
+```
+Response Code: 200
+Response Body: 
+{"nombre": "Juan", "apellido": "Pérez"}
 ```
 
-A continuación, creamos nuestro objeto HttpURLConnection y establecemos el método de solicitud, el tipo de autorización y los datos de autenticación en los encabezados de la solicitud:
+## Profundizando
 
-```Kotlin
-val connection = url.openConnection() as HttpURLConnection
-connection.requestMethod = "GET"
-connection.setRequestProperty("Authorization", "Basic " + Base64.getEncoder().encodeToString("$username:$password".toByteArray()))
-```
+La autenticación básica es uno de los métodos más antiguos y simples utilizados para proteger recursos en una aplicación web. Fue introducida en el protocolo HTTP en los años 90 y es compatible con la mayoría de los servidores y navegadores web. Sin embargo, tiene algunas debilidades de seguridad ya que las credenciales se envían en texto claro y pueden ser interceptadas. 
 
-Finalmente, podemos recibir y leer la respuesta del servidor:
-
-```Kotlin
-val responseCode = connection.responseCode
-if (responseCode != HttpURLConnection.HTTP_OK) {
-    throw Exception("Error al realizar la solicitud HTTP")
-} else {
-    val response = connection.inputStream.bufferedReader().readText()
-    println(response)
-}
-```
-
-¡Y eso es todo! Ahora hemos enviado una solicitud HTTP con autenticación básica y recibido una respuesta del servidor.
-
-## ¿Cómo funciona?
-
-Básicamente, lo que estamos haciendo es crear un objeto HttpURLConnection y establecer los métodos y encabezados necesarios para realizar una solicitud con autenticación básica. Luego, el servidor verifica los datos de autenticación en el encabezado de la solicitud y si son correctos, devuelve la respuesta deseada.
-
-## En Resumen
-
-Enviar una solicitud HTTP con autenticación básica en Kotlin es una forma segura de acceder a información o servicios en línea. Simplemente necesitamos importar las librerías necesarias, establecer los encabezados de la solicitud con nuestros datos de autenticación y recibir la respuesta del servidor.
+Otra alternativa para autenticar solicitudes HTTP es mediante el uso de tokens de acceso, que son generados por un servidor de autorización y son más seguros que las credenciales básicas. Sin embargo, es importante tener en cuenta que la implementación correcta de estos métodos de autenticación depende del tipo de aplicación y sus requisitos de seguridad.
 
 ## Ver También
 
-- [Official Kotlin Website](https://kotlinlang.org/)
-- [Kotlin for Android: Learn the Basics](https://developer.android.com/kotlin/basics)
-- [Working with HTTP in Kotlin](https://www.techotopia.com/index.php/Apache_HTTP_with_Kotlin_Tutorial)
-- [Android Networking with Kotlin](https://blog.mindorks.com/android-networking-with-kotlin)
+- [HTTP Basic Authentication en MDN](https://developer.mozilla.org/es/docs/Web/HTTP/Authentication#basic_authentication_scheme)
+- [Kotlin HTTP Requests Tutorial](https://www.tutorialkart.com/kotlin/kotlin-http-request-async-get-post-using-fuel-library/)
+- [Securing Your REST API With Basic Authentication](https://dzone.com/articles/securing-your-rest-api-with-basic-authentication)

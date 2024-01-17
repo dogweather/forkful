@@ -1,7 +1,7 @@
 ---
-title:                "Sända en http-förfrågan med grundläggande autentisering"
-html_title:           "Arduino: Sända en http-förfrågan med grundläggande autentisering"
-simple_title:         "Sända en http-förfrågan med grundläggande autentisering"
+title:                "Skicka en http-begäran med grundläggande autentisering"
+html_title:           "Arduino: Skicka en http-begäran med grundläggande autentisering"
+simple_title:         "Skicka en http-begäran med grundläggande autentisering"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "HTML and the Web"
@@ -10,53 +10,63 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
+Att skicka en HTTP-begäran med grundläggande autentisering innebär att en Arduino-enhet skickar en förfrågan till en server som kräver användarautentisering. Detta är vanligt förekommande när man kommunicerar med webbtjänster, till exempel för att hämta data eller skicka kommandon. Programmerare använder detta för att säkert och pålitligt kunna kommunicera med servrar.
 
-Att skicka en HTTP-förfrågan med grundläggande autentisering kan vara användbart för att säkert kommunicera med en webbtjänst eller ett API. Detta gör det möjligt för din Arduino att hämta eller skicka data till en extern källa.
+## Så här:
+Här är ett exempel på en HTTP-begäran med grundläggande autentisering i Arduino:
 
-## Hur man gör
-
-För att skicka en HTTP-förfrågan med grundläggande autentisering på en Arduino, följ dessa enkla steg:
-
-1. Förbered din kodfil genom att inkludera WifIClientSecure-biblioteket:
 ```Arduino
 #include <WiFiClientSecure.h>
-```
-2. Anslut sedan till ditt trådlösa nätverk med hjälp av ditt SSID och lösenord:
-```Arduino
-WiFi.begin(SSID, password);
-```
-3. Skapa en instans av WiFiClientSecure och anslut till den server som du vill skicka en förfrågan till:
-```Arduino
+ 
+char ssid[] = "wifi-nätverkets-namn";
+char pass[] = "password";
+char server[] = "serverns-adress";
+ 
 WiFiClientSecure client;
-client.connect(server, port);
-```
-4. Skapa sedan en HTTP-GET-förfrågan med rätt autentiseringsuppgifter:
-```Arduino
-client.println("GET /endpoint HTTP/1.0");
-client.println("Authorization: Basic YXNkZjpwYXNkZg=="); 
-client.println();
-```
-5. Slutligen läs och skriv ut svaret från servern:
-```Arduino
-char response[256];
-while (client.available()) {
-  char c = client.read();
-  response[strlen(response)] = c;
+ 
+void setup() {
+  Serial.begin(9600);
+  WiFi.begin(ssid, pass);
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+  }
 }
-Serial.println(response);
+ 
+void loop() {
+  if (client.connect(server, 443)) {
+    Serial.println("Försöker skicka begäran...");
+    String request = "GET / HTTP/1.1\r\nHost: " + String(server) + "\r\n\r\n";
+    client.print(request);
+ 
+    if (client.available()) {
+      while (client.available()) {
+        char c = client.read();
+        Serial.print(c);
+      }
+    }
+ 
+    client.stop();
+    while (client.connected()) {
+      delay(1);
+    }
+  }
+  Serial.println("Begäran skickad!");
+  delay(5000);
+}
 ```
 
-## Djupdykning
+När koden körs, kommer Arduino-enheten ansluta till det angivna WiFi-nätverket och sedan skicka en GET-begäran med grundläggande autentisering till den angivna servern. Om servern svarar kommer svaret att skrivas ut i seriell monitor.
 
-Att skicka en HTTP-förfrågan med grundläggande autentisering innebär att skicka dina autentiseringsuppgifter i det format som kallas "Basic Auth". Detta innebär att användarnamn och lösenord kodas i Base64-format och bifogas som en del av förfrågan.
+## Djupdykning:
+HTTP-begäran med grundläggande autentisering är en säkerhetsfunktion som har funnits sedan HTTP-protokollet skapades. Den används för att skydda kommunikationen mellan en klient och en server genom att kräva en användares godkännande innan åtkomst till resurser tillåts.
 
-För att skapa Base64-kodade autentiseringsuppgifter, använd följande formel: ```base64_encode(username + ':' + password)```
+Det finns flera alternativ till grundläggande autentisering, till exempel OAuth och JWT. Dessa metoder är mer avancerade och ger mer robust autentisering, men de kräver också mer komplicerad kodbearbetning.
 
-Det är också viktigt att notera att vi använder protokollet HTTP/1.0 i vår förfrågan. Detta beror på att Arduino, till skillnad från en webbläsare, inte kan hantera HTTP-förfrågningar med version 1.1 som använder hållbart nätverk. För mer information om detta, läs på Arduinos dokumentation.
+I implementeringen av vår kod används WiFiClientSecure-biblioteket, vilket gör det möjligt att kommunicera över ett säkert anslutet WiFi-nätverk med hjälp av TLS/SSL-kryptering.
 
-## Se även
-
-- [Arduino HTTPClient dokumentation](https://www.arduino.cc/en/Reference/HTTPClientBasicAuth)
-- [Base64-kodningsexempel för Arduino](https://www.arduino.cc/en/Tutorial/StringIndexOfChar)
-- [HTTP/1.0 vs HTTP/1.1 förfrågningar](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview)
+## Se även:
+- [WiFiClientSecure biblioteket](https://www.arduino.cc/en/reference/wificlientsecure/)
+- [HTTP-grundläggande autentisering](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#Basic_authentication_scheme)
+- [OAuth-autentisering](https://oauth.net/)
+- [JWT-autentisering](https://jwt.io/)

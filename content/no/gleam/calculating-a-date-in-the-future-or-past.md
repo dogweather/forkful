@@ -1,7 +1,7 @@
 ---
-title:                "Å beregne en dato i fremtiden eller fortiden"
-html_title:           "Gleam: Å beregne en dato i fremtiden eller fortiden"
-simple_title:         "Å beregne en dato i fremtiden eller fortiden"
+title:                "Beregning av en dato i fremtiden eller fortiden"
+html_title:           "Gleam: Beregning av en dato i fremtiden eller fortiden"
+simple_title:         "Beregning av en dato i fremtiden eller fortiden"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Dates and Times"
@@ -10,47 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
-Hvorfor skulle noen ønske å beregne en dato i fremtiden eller fortiden? Vel, det kan være flere grunner til dette. Kanskje du planlegger en ferie og vil vite nøyaktig når du skal dra, eller kanskje du lurer på når en bestemt begivenhet vil finne sted. Uansett hva grunnen måtte være, kan Gleam gjøre det enkelt å beregne en dato.
+# Hva & Hvorfor?
 
-## Hvordan
-Det første du trenger å gjøre er å importere `gleam/datetime` pakken til koden din. Deretter kan du bruke funksjonene `future` og `past` for å beregne en dato i fremtiden eller fortiden. Her er noen eksempler på hvordan du kan gjøre dette:
+Å beregne en dato i framtiden eller fortiden er en viktig funksjon for mange programmerere. Den lar deg forutsi når en hendelse vil skje eller finne ut når en hendelse har funnet sted. Dette er nyttig for å lage tidssensitive funksjoner eller for å samle og analysere historiske data.
 
-```Gleam
-import gleam/datetime
+# Hvordan:
 
-// Beregne en dato 5 dager fra nå
-let future_date = datetime.future(5, "days")
-// Output: 2021-07-12T22:00:00Z
-
-// Beregne en dato 2 uker fra nå
-let future_date = datetime.future(2, "weeks")
-// Output: 2021-07-26T22:00:00Z
-
-// Beregne en dato 1 måned fra nå
-let future_date = datetime.future(1, "months")
-// Output: 2021-08-09T22:00:00Z
-```
+For å beregne en dato i fremtiden eller fortiden i Gleam, kan du bruke Date-Package biblioteket. Du kan bruke funksjonen `add_days()` for å legge til et bestemt antall dager til en dato, eller `subtract_days()` for å trekke fra dager. Se eksemplene under for å se hvordan dette fungerer.
 
 ```Gleam
-import gleam/datetime
+import Date
 
-// Beregne en dato 2 dager siden
-let past_date = datetime.past(2, "days")
-// Output: 2021-07-01T22:00:00Z
+let date = Date.from_utc(2021, 10, 10)
+let future_date = Date.add_days(date, 30)
+let past_date = Date.subtract_days(date, 10)
 
-// Beregne en dato 1 uke siden
-let past_date = datetime.past(1, "weeks")
-// Output: 2021-06-24T22:00:00Z
+IO.print("Fremtidig dato:", Date.to_string(future_date))
+IO.print("Fortidig dato:", Date.to_string(past_date))
 
-// Beregne en dato 2 måneder siden
-let past_date = datetime.past(2, "months")
-// Output: 2021-05-27T22:00:00Z
 ```
 
-## Deep Dive
-Nå lurer du kanskje på hva som skjer hvis du prøver å beregne en dato i fortiden eller fremtiden med en større enhet enn det som finnes i Gleam? For eksempel, hva om du vil beregne en dato 3 år fra nå? Vel, da vil Gleam automatisk konvertere det til antall dager, som er den minste enheten som kan brukes til å beregne en dato i fortiden eller fremtiden. Så i dette tilfellet, vil `datetime.future(3, "years")` faktisk gi deg datoen 1095 dager fra nå. Samme prinsipp gjelder for å beregne en dato i fortiden.
+Output:
 
-## Se også
-- [Gleam Datetime pakken](https://gleam.run/modules/gleam/datetime/latest/)
-- [Offisiell Gleam dokumentasjon](https://gleam.run/)
+```
+Fremtidig dato: 2021-11-09T23:00:00.000-01:00
+Fortidig dato: 2021-09-30T23:00:00.000-01:00
+
+```
+
+# Dykk dypere:
+
+Funksjonen for å beregne datoer i framtiden og fortiden er en vanlig funksjon i mange programmeringsspråk og biblioteker. Det har blitt utviklet over tid for å gjøre det enklere for programmere å håndtere og manipulere datoer. Noen andre populære alternativer for å beregne datoer er Chrono og Time bibliotekene.
+
+I Gleam, brukes UTC-tidssone som standard. Dette sikrer at datoene man får fra funksjonene alltid er i riktig tidszone og kan sammenlignes med andre datoer korrekt.
+
+# Se også:
+
+- [Date-Package dokumentasjon](https://gleam.run/packages/wolfie/gleam-date/latest/)
+- [Alternativer for å beregne datoer i Rust](https://github.com/chronotope/chrono/issues/207)
+- [Innføring i datoer og tidsstyring i programmering](https://www.theserverside.com/feature/How-to-manage-dates-and-times-in-Java-and-while-programming)

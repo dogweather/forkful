@@ -10,28 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
+什么是删除匹配模式字符，为什么程序员要这样做？
 
-Clojure是一门功能强大且高效的编程语言，它具有简洁的语法和优秀的并发能力。通过学习如何删除匹配某一模式的字符，您可以更好地利用Clojure的功能，提高编码效率。
+删除匹配模式字符是指从字符串中删除所有与特定模式匹配的字符。程序员经常这样做是因为他们需要处理大量的文本数据，并且要在文本中删除特定的信息。这可以帮助他们节省大量的时间和精力，从而提高代码的效率。
 
-## 如何操作
+如何进行删除匹配模式字符？
 
-首先，让我们来看一个简单的例子。假设我们有一个字符串 "hello world!"，现在我们想要删除所有包含"o"的字符，该怎么做呢？请看下方代码示例：
-
-```Clojure
-(def str "hello world!")
-(def pattern #"o")
-(str/replace str pattern "") ; 输出为 "hell wrld!"
+```
+(-> str (replace #"pattern" ""))
 ```
 
-在这个例子中，我们首先定义了一个字符串，然后用正则表达式定义了模式，最后通过`str/replace`函数来删除所有匹配该模式的字符。您也可以使用更复杂的正则表达式来实现更精确的替换。
+示例输出：
 
-## 深入了解
+如果字符串为"Hello world!"，并且模式为"o"，则最终输出为"Hell wrld!"。
 
-除了基本的字符串操作，Clojure还提供了许多其他方法来删除匹配某一模式的字符。比如，[`clojure.string/replace-first`](https://clojuredocs.org/clojure.string/replace-first)可以实现只替换第一次匹配的字符，而[`clojure.string/replace-nth`](https://clojuredocs.org/clojure.string/replace-nth)可以实现只替换第n次匹配的字符。此外，[`clojure.string/replace-regexp`](https://clojuredocs.org/clojure.string/replace-regexp)可以让您使用更复杂的正则表达式来进行替换操作。
+深入了解：
 
-## 参考链接
+- 历史背景：删除匹配模式字符是一种常见的文本处理技术，它起源于正则表达式。最早是在Unix系统中使用的，用于文件搜索和替换操作。
+- 替代方法：除了使用正则表达式的方法外，也可以采用字符串函数来实现同样的功能，比如使用`str/replace`函数。
+- 实现细节：删除匹配模式字符的具体实现取决于所使用的编程语言和工具。在Clojure中，可以使用`re-find`函数来查找匹配模式的字符，然后再使用`str/replace`函数来删除它们。
 
-- [Clojure文档 - 字符串操作](https://clojuredocs.org/clojure.string)
-- [正则表达式入门教程](https://www.runoob.com/regexp/regexp-tutorial.html)
-- [深入了解Clojure的正则表达式](https://clojure.org/reference/java_interop#_java_regular_expression_patterns)
+参考资料：
+
+- Clojure文档：https://clojure.org/api/cheatsheet
+- 同类操作的具体实现：https://www.mkyong.com/regular-expressions/how-to-remove-a-substring-from-a-string-in-java-regex/

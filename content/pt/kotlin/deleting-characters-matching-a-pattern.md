@@ -10,31 +10,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+## O que & Porquê?
+Deletar caracteres que correspondem a um determinado padrão é uma operação comum para programadores. Isso permite a manipulação eficiente de dados em uma string e é uma forma de resolver problemas de forma rápida e sem erros. 
 
-Você pode querer deletar caracteres que correspondam a um padrão em uma string para filtrar e manipular dados em uma aplicação Kotlin.
+## Como fazer:
+Para deletar caracteres que correspondem a um determinado padrão em Kotlin, podemos usar a função ```replace(regex, replacement)```. Por exemplo, se quisermos deletar todos os caracteres que correspondem ao padrão "ABC", podemos usar o seguinte código:
 
-## Como Fazer
-
-```Kotlin
-val string = "HelloKotlin!"
-val pattern = "[A-Z]".toRegex() // criando uma expressão regular para encontrar letras maiúsculas
-val result = string.replace(pattern, "") // substituindo todas as letras maiúsculas por uma string vazia
-println(result) // output: "otlin!"
 ```
+val str = "ABCDABC"
+val newStr = str.replace("ABC", "")
+println(newStr) // output: D
+```
+Neste exemplo, a função ```replace()``` substitui todas as ocorrências do padrão "ABC" por uma string vazia, resultando na exclusão destes caracteres da string original.
 
-## Deep Dive
+## Profundidade:
+Na programação, é comum encontrar situações em que precisamos manipular dados em strings. O processo de deletar caracteres que correspondem a um padrão pode ser feito de forma manual, mas isso pode ser tedioso e propenso a erros. Felizmente, linguagens de programação como Kotlin oferecem funções como a ```replace()``` que facilitam essa tarefa. Outra alternativa para a exclusão de caracteres é o uso de expressões regulares, que são sequências de caracteres que definem um padrão de busca. No caso de Kotlin, a função ```replace(regex, replacement)``` recebe uma expressão regular como parâmetro para a busca do padrão a ser excluído. Por fim, a implementação da função ```replace()``` em Kotlin é baseada no método ```replaceAll()``` da classe String do Java.
 
-Para deletar caracteres que correspondam a um padrão em uma string, você precisará seguir três etapas principais:
-
-1. Criar uma expressão regular com o padrão desejado utilizando a classe `Regex` ou o método `toRegex()`.
-2. Utilizar o método `replace()` da classe `String`, passando a expressão regular e a string de substituição como parâmetros.
-3. Armazenar o resultado da substituição em uma nova variável ou imprimi-lo diretamente utilizando `println()`.
-
-Você pode aprender mais sobre expressões regulares e suas sintaxes na documentação oficial do Kotlin.
-
-## Veja Também
-
-- [Documentação Oficial do Kotlin: Expressões Regulares](https://kotlinlang.org/docs/regex.html)
-- [Tutorial de Expressões Regulares em Kotlin](https://www.javacodegeeks.com/2017/05/regular-expressions-kotlin.html)
-- [Tutorial de Expressões Regulares em Kotlin: Programação Reativa](https://www.thomasnield.com/blog/2017/11/11/filtering-sequences-with-regular-expressions-for-programmers-introducing-reactive-programming-with-kotlin)
+## Veja também:
+- Documentação oficial do Kotlin para a função ```replace()```: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/kotlin.-kt-return-/replace.html
+- Tutorial sobre expressões regulares em Kotlin: https://www.baeldung.com/kotlin-regular-expressions
+- Perguntas frequentes sobre expressões regulares: https://code.tutsplus.com/pt/tutorials/8-regular-expressions-you-should-know--net-6149

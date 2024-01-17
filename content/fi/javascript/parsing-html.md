@@ -1,7 +1,7 @@
 ---
-title:                "HTML:n jäsentäminen."
-html_title:           "Javascript: HTML:n jäsentäminen."
-simple_title:         "HTML:n jäsentäminen."
+title:                "Html:n jäsentäminen"
+html_title:           "Javascript: Html:n jäsentäminen"
+simple_title:         "Html:n jäsentäminen"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "HTML and the Web"
@@ -10,41 +10,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
-HTML-tiedostot ovat nykypäivän web-kehityksessä olennainen osa ja niiden sisällön käsittely on usein välttämätöntä. Tästä syystä HTML-parsing on hyödyllinen taito, joka avaa mahdollisuuksia monenlaisiin tehtäviin koodauksessa.
+## Mitä & Miksi?
+Vedonlyöjät saattavat ihmetellä, mitä tarkalleen ottaen HTML-analysointi tarkoittaa. Se on yksinkertaisesti tapa lukea ja käsitellä HTML-koodia verkkosivuilta. Ohjelmoijat tekevät tätä usein automatisoidun työn helpottamiseksi, kuten tiettyjen elementtien löytämiseksi ja datan keräämiseksi verkkosivuilta.
 
-## Miten
-HTML-parsing voidaan suorittaa useilla eri tavoilla, mutta yksi suosituimmista tavoista on käyttää Javascriptin sisäänrakennettua DOM (Document Object Model) -rajapintaa. Seuraavassa koodiesimerkissä käytetään DOM-metodia `getElementsByTagName()` löytämään kaikki `h1`-elementit ja tulostamaan ne konsoliin:
+## Miten:
+Seuraavassa on esimerkki koodista, jonka avulla voit lukea ja tulostaa HTML-koodia käyttämällä JavaScriptia:
 
 ```Javascript
-let headers = document.getElementsByTagName("h1");
-
-for (let i = 0; i < headers.length; i++) {
-  console.log(headers[i].textContent);
-}
+const parser = new DOMParser();
+const html = "<html><body><h1>Tervetuloa!</h1></body></html>";
+const doc = parser.parseFromString(html, "text/html");
+const title = doc.querySelector("h1").innerHTML;
+console.log(title); //tulostaa "Tervetuloa!"
 ```
 
-Tämän koodin tulostus näyttäisi esimerkiksi seuraavalta:
+## Syväsukellus:
+HTML-analysointi on ollut olennainen osa verkkosivujen luomista ja analysointia alusta alkaen. Ennen JavaScriptin keksimistä JavaScriptin avulla voitiin analysoida vain staattista dataa. Nyt on olemassa myös muita vaihtoehtoja, kuten erilaisia kirjastoja ja ohjelmistoja, jotka voivat auttaa HTML-koodin analysoinnissa. HTML-analysointiin kuuluu myös useita erilaisia tekniikoita ja algoritmeja, joita voidaan käyttää analysoinnin helpottamiseksi.
 
-```
-Otsikko 1
-Otsikko 2
-Otsikko 3
-```
-
-DOM-metodien lisäksi on olemassa myös muita mahdollisuuksia HTML-parsingiin, kuten esimerkiksi käyttämällä erilaisia kirjastoja, kuten jQuery tai Cheerio.
-
-## Syväsukellus
-HTML-parsing voi olla hyödyllistä monin tavoin, kuten esimerkiksi tiedon keräämisessä verkkosivustoilta tai sisällön muokkaamisessa dynaamisesti. Tässä muutamia hyödyllisiä vinkkejä HTML-parsingin suorittamiseen:
-
-- Käytä `querySelector()`-metodia löytääksesi tietyn elementin sivulta käyttämällä sen CSS-valitsinta.
-- Käytä `getAttribute()`-metodia saadaksesi tietyn attribuutin arvon tietyssä elementissä.
-- Voit myös käyttää `innerHTML`-ominaisuutta saadaksesi tai muokataksesi elementin sisältöä.
-
-On myös tärkeää muistaa, että HTML-parsing voi olla hidas prosessi, varsinkin jos käsiteltävä sivu on suuri. Käytä siis tarvittaessa asynkronisia kutsuja tai optimoi koodiasi muilla keinoilla paremman suorituskyvyn saavuttamiseksi.
-
-## Katso myös
-- [MDN web docs - DOM](https://developer.mozilla.org/fi/docs/Web/API/Document_Object_Model)
-- [W3Schools - HTML DOM Methods](https://www.w3schools.com/js/js_htmldom_methods.asp)
-- [jQuery](https://jquery.com/)
-- [Cheerio](https://cheerio.js.org/)
+## Katso myös:
+- [Creating an HTML Parser using JavaScript](https://www.codeproject.com/Articles/395453/Creating-an-HTML-Parser-using-JavaScript)
+- [A Beginner's Guide to Parsing HTML using JavaScript](https://blog.bitsrc.io/a-beginners-guide-to-parsing-html-using-javascript-9c6d43dc4c25)
+- [Introduction to HTML parsing using JavaScript](https://www.internalpointers.com/post/introduction-html-parsing-using-javascript)

@@ -1,7 +1,7 @@
 ---
-title:                "Vergleich von zwei Datumsangaben"
-html_title:           "Clojure: Vergleich von zwei Datumsangaben"
-simple_title:         "Vergleich von zwei Datumsangaben"
+title:                "Vergleich von zwei Daten"
+html_title:           "Clojure: Vergleich von zwei Daten"
+simple_title:         "Vergleich von zwei Daten"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Dates and Times"
@@ -10,30 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Warum
-Warum sollte man sich mit dem Vergleichen von zwei Daten beschäftigen? Ganz einfach: Wenn man in einem Programm zwei verschiedene Zeitpunkte oder Zeitintervalle vergleichen möchte, z.B. um festzustellen, welches Datum früher oder später ist.
+Was & Warum?
 
-# How To
-Um zwei Daten in Clojure zu vergleichen, können wir die Funktion `compare` verwenden. Diese nimmt zwei Argumente entgegen und gibt einen Integer zurück, der angibt, ob das erste Argument kleiner, größer oder gleich dem zweiten Argument ist. Hier ein Beispiel:
+Beim Vergleichen von zwei Daten in der Programmierung geht es darum, herauszufinden, welches Datum früher oder später ist. Dies ist besonders nützlich, wenn man beispielsweise verschiedene Ereignisse in einer bestimmten Reihenfolge sortieren möchte. Programmierer nutzen dieses Konzept häufig, um die Logik ihres Codes zu verbessern.
 
-```Clojure
-(compare 01.01.2021 01.02.2021) ;; gibt -1 zurück, da das erste Datum kleiner ist
-```
-Leicht zu merken: -1 bedeutet kleiner, 1 bedeutet größer und 0 steht für gleich. Wenn wir also prüfen wollen, ob ein Datum später als ein anderes ist, können wir einfach die Funktion `>`, `<` oder `=` verwenden:
+Wie?
+
+Um zwei Daten in Clojure zu vergleichen, können wir die Funktion `compare` verwenden. Diese Funktion gibt entweder -1, 0 oder 1 zurück, abhängig davon, ob das erste Datum früher, gleich oder später als das zweite Datum ist.
 
 ```Clojure
-(> 01.02.2021 01.01.2021) ;; gibt true zurück, da das erste Datum später ist
+;; Beispiel:
+(compare (java.util.Date. 2020 1 1) (java.util.Date. 2020 1 2))
+
+;; Output:
+-1
 ```
 
-# Deep Dive
-In Clojure ist ein Datum im Grunde nur ein spezielles Objekt, das wir mit `java.util.Date` oder `java.time.LocalDate` erstellen können. Es ist wichtig zu beachten, dass diese Objekte immutable sind, d.h. sie können nicht direkt verändert werden. Daher ist es auch nicht möglich, z.B. 2 Tage zu einem Datum dazu zu addieren, da dies ein neues Datum zurückgibt.
-
-Wenn wir jedoch mit `LocalDate` arbeiten, können wir die Funktion `plus` verwenden, um ein neues Datum mit einem bestimmten Zeitintervall zu erstellen. Zum Beispiel:
+Wir können auch die Funktionen `before?` und `after?` verwenden, um zu überprüfen, ob ein Datum vor oder nach einem anderen Datum liegt. Diese Funktionen geben einen booleschen Wert zurück.
 
 ```Clojure
-(plus 01.01.2021 (days 2)) ;; gibt 03.01.2021 zurück
+;; Beispiel:
+(before? (java.util.Date. 2020 1 1) (java.util.Date. 2020 1 2))
+
+;; Output:
+true
 ```
 
-# Siehe auch
-- [Offizielle Clojure Dokumentation über Datum und Zeit](https://clojuredocs.org/clojure.java-time)
-- [Eine umfangreiche Einführung in Clojure auf Deutsch](https://clojure.org/about/translations)
+Tiefer Einblick
+
+Das Konzept des Vergleichens von Daten ist nicht neu und wird in vielen Programmiersprachen verwendet. Es ist jedoch wichtig zu beachten, dass es bei verschiedenen Datentypen, wie zum Beispiel Strings oder Integers, unterschiedliche Implementierungen geben kann. Daher ist es immer wichtig, die Dokumentation der verwendeten Funktionen zu lesen.
+
+Das Vergleichen von Daten kann auch durch andere Methoden wie dem Überladen von Vergleichsoperatoren oder der Verwendung von Bibliotheken wie Joda Time erreicht werden. Diese Alternativen können in bestimmten Fällen effektiver sein.
+
+Siehe auch
+
+- Offizielle Dokumentation für Clojure's `compare` Funktion: https://clojuredocs.org/clojure.core/compare
+- Offizielle Dokumentation für Clojure's `before?` Funktion: https://clojuredocs.org/clojure.core/before_q
+- Offizielle Dokumentation für Clojure's `after?` Funktion: https://clojuredocs.org/clojure.core/after_q
+- Joda Time Bibliothek: https://www.joda.org/joda-time/

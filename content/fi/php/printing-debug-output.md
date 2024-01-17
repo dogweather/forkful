@@ -1,7 +1,7 @@
 ---
-title:                "Tulostaminen vianjäljitystulosteeksi"
-html_title:           "PHP: Tulostaminen vianjäljitystulosteeksi"
-simple_title:         "Tulostaminen vianjäljitystulosteeksi"
+title:                "Virheenkorjaustulosteen tulostaminen"
+html_title:           "PHP: Virheenkorjaustulosteen tulostaminen"
+simple_title:         "Virheenkorjaustulosteen tulostaminen"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Testing and Debugging"
@@ -10,29 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mikä ja miksi?
 
-Usein ohjelmoinnin aikana tarvitsee selvittää, miksi jokin tietty koodi ei toimi odotetusti tai miksi muuttujan arvo ei ole oikea. Tämä ei välttämättä näy ohjelman lopullisessa versiossa, joten käyttöön joudutaan ottamaan debuggaus, joka auttaa selvittämään ongelmien syitä. Tulostamalla debug-tietoja voidaan helposti seurata ohjelman suoritusta ja etsiä mahdollisia virheitä.
+Tulostaminen debug-tulostetta on tapa, jolla voit tarkastella ohjelman suorituskykyä ja virheitä koodin suorittamisen aikana. Useimmat ohjelmoijat käyttävät tätä tekniikkaa, koska se auttaa heitä tunnistamaan ja korjaamaan virheitä nopeammin ja tehokkaammin.
 
-## Miten
+## Kuinka:
 
-```PHP
-<?php
-$muuttuja = "Hei";
-print "Muuttujan arvo: $muuttuja";
+```php
+// Tulosta tekstiä konsoliin
+echo "Debug-tulostus on päällä!";
+
+// Tulosta muuttujan arvo
+$muuttuja = "Tulosta tämä!";
+echo $muuttuja;
+
+// Tulosta taulukon sisällöt
+$taulukko = array("yksi", "kaksi", "kolme");
+print_r($taulukko);
+
+// Tulosta olio
+$laskuri = new Laskuri();
+var_dump($laskuri);
 ```
-Tulostaa:
-```
-Muuttujan arvo: Hei
-```
-PHP:ssä on useita tapoja tulostaa debug-tietoja. Yksi yksinkertainen vaihtoehto on käyttää `print` tai `echo` -komentoa tulostamaan haluttu tieto. Tämä voidaan halutessaan yhdistää muuttujien kanssa käyttämällä muuttujan nimeä ja `$` -merkkiä. Lisäksi voidaan käyttää myös `var_dump()` tai `print_r()` -funktioita, jotka tulostavat tarkempaa tietoa muuttujista ja niiden arvoista. Näiden avulla voidaan esimerkiksi tarkistaa, mitä tietoja toiminto palauttaa tai mitkä arvot muuttujilla on.
 
-## Syvällinen tarkastelu
+Esimerkkilähtö:
 
-Tulostettaessa debug-tietoja, on tärkeää ottaa huomioon myös muut seikat, kuten ohjelman suoritusnopeus ja tietoturva. Huolimaton debug-tulostus voi hidastaa ohjelman suoritusta ja jopa altistaa sen haavoittuvuuksille. Siksi on hyvä käyttää esimerkiksi `error_reporting(0);` -komentoa, joka estää PHP:tä tulostamasta virheitä sivulle ja hidastamasta suoritusta. Lisäksi on hyvä muistaa poistaa kaikki debug-tulostukset lopullisesta versiosta ennen sen julkaisemista.
+```
+Debug-tulostus on päällä!
+Tulosta tämä!
+Array
+(
+    [0] => yksi
+    [1] => kaksi
+    [2] => kolme
+)
+object(Laskuri)#1 (0) {
+}
+```
+
+## Syvään kaivautuminen
+
+Debug-tulostus on ollut osa PHP:ta lähes sen alkuajoista lähtien ja sitä käytetään edelleen yhtenä tärkeimmistä työkaluista virheiden löytämiseen ja korjaamiseen ohjelmointivaiheessa. Sitä voidaan käyttää myös apuna koodin tarkastelussa ja optimoinnissa. Vaihtoehtoisesti voit myös käyttää erillisiä debuggaustyökaluja, kuten Xdebug.
 
 ## Katso myös
 
-- [PHP manuaali](https://www.php.net/manual/en/)
-- [Debuggaus PHP:n avulla](https://www.tutorialspoint.com/php/php_debugging_techniques.htm)
-- [PHP Debug Bar](https://phpdebugbar.com/)
+- https://www.php.net/manual/en/function.print-r.php
+- https://www.php.net/manual/en/function.var-dump.php
+- https://xdebug.org/

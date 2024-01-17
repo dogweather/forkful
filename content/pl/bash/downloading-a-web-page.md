@@ -10,39 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i dlaczego?
 
-Pobieranie stron internetowych może być przydatne w wielu różnych sytuacjach - od tworzenia kopii zapasowych witryny po analizowanie kodu źródłowego lub pobieranie informacji. W tym artykule dowiesz się, jak używać Bash do pobierania stron internetowych w sposób prosty i efektywny.
+Pobieranie strony internetowej to proces pobierania zawartości strony internetowej z internetu i zapisywania jej na lokalnym komputerze. Programiści często pobierają strony internetowe, aby przetwarzać lub analizować ich zawartość w swoim kodzie.
 
-## Jak to zrobić
-
-Najprostszym sposobem na pobranie strony internetowej za pomocą Bash jest użycie narzędzia `curl` oraz przekierowanie wyniku do pliku. Oto przykład kodu:
+## Jak to zrobić:
 
 ```Bash
-curl https://example.com > index.html
-```
-W powyższym przykładzie używamy komendy `curl` do pobrania strony internetowej `example.com` i przekierowania jej zawartości do pliku `index.html`.
-
-Jeśli chcesz pobrać tylko nagłówki strony, możesz użyć opcji `-I`:
-
-```Bash
-curl -I https://example.com
+wget www.example.com
 ```
 
-Jeśli natomiast chcesz pobrać tylko część strony, na przykład tylko elementy tekstu znajdujące się pomiędzy znacznikami `<body>`, możesz skorzystać z narzędzia `grep`:
+Kod powyżej pokaże przykładowe użycie polecenia `wget` w celu pobrania strony internetowej o nazwie domeny "example.com". Po wykonaniu tego polecenia, zawartość strony zostanie zapisana jako plik o nazwie "index.html" w bieżącym katalogu.
 
-```Bash
-curl https://example.com | grep '<body>'
-```
+Aby pobrać inną stronę internetową, wystarczy zmienić adres URL po słowie kluczowym `wget` w kodzie.
 
-## Deep Dive
+## Głębsza analiza:
 
-Powyższe przykłady są tylko niewielką częścią możliwości pobierania stron internetowych za pomocą Bash. W rzeczywistości, możesz wykorzystać różne narzędzia i opcje do precyzyjnego pobrania wybranych fragmentów strony.
+Pierwotnie, przed narzędziami, które mamy obecnie, programiści musieli ręcznie pobierać zawartość strony internetowej. Teraz, dzięki narzędziom, takim jak `wget`, proces ten jest zautomatyzowany i znacznie prostszy.
 
-Na przykład, jeśli chcesz pobierać tylko określone części strony przy użyciu określonych wzorców, możesz skorzystać z narzędzia `awk`. Natomiast, jeśli chcesz pobierać więcej niż jedną stronę naraz, możesz wykorzystać pętlę `for` do wykonania kolejnych zapytań.
+Alternatywnym sposobem pobierania stron internetowych jest użycie narzędzi do wydobywania danych, takich jak Beautiful Soup czy lxml. Jednak, jeśli potrzebujesz pobierać wiele stron, narzędzie do pobierania, takie jak `wget`, jest szybszym i bardziej wydajnym rozwiązaniem.
 
-## Zobacz także
+Implementacja pobierania stron internetowych jest możliwa dzięki protokołowi HTTP / HTTPS, który umożliwia pobieranie danych z serwera internetowego. `wget` korzysta z tego protokołu, aby wysłać zapytanie do serwera i pobrać odpowiedź zawierającą kod HTML strony.
 
-- [Bash Command Line Cookbook — Downloading Web Pages](https://www.oreilly.com/library/view/bash-command-line/0596009658/ch04s07.html)
-- [Bash One-Liners Explained, Part III: All about redirections](https://catonmat.net/bash-one-liners-explained-part-three)
-- [Linux Command Line: Downloading Files](https://ryanstutorials.net/linuxtutorial/downloading.php)
+## Zobacz również:
+
+- [Dokumentacja `wget`](https://www.gnu.org/software/wget/manual/wget.html)
+- [Beautiful Soup - narzędzie do analizowania danych na stronach internetowych](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
+- [lxml - biblioteka Python umożliwiająca analizę danych z plików XML i HTML](https://lxml.de/)

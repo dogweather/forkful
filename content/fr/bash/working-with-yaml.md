@@ -1,7 +1,7 @@
 ---
-title:                "Travailler avec yaml"
-html_title:           "Bash: Travailler avec yaml"
-simple_title:         "Travailler avec yaml"
+title:                "Travailler avec YAML."
+html_title:           "Bash: Travailler avec YAML."
+simple_title:         "Travailler avec YAML."
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Data Formats and Serialization"
@@ -10,55 +10,22 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Qu'est-ce que c'est et pourquoi le font-ils? 
+YAML est un format de données structuré utilisé principalement dans le développement logiciel pour stocker et échanger des configurations. Les programmeurs utilisent YAML car il est facile à lire et à comprendre pour les humains.
 
-Si vous travaillez souvent avec des données structurées, il y a de fortes chances que vous ayez entendu parler de YAML. C'est un format de sérialisation de données qui facilite la manipulation et l'échange de données entre différents programmes. Dans cet article, nous allons explorer les bases de YAML en utilisant Bash comme langage de programmation.
-
-## Comment faire
-
-Pour commencer à utiliser YAML dans vos scripts Bash, vous devez tout d'abord vous assurer que vous avez la dernière version de Bash installée sur votre système. Ensuite, vous pouvez utiliser l'outil de ligne de commande `yq`, qui est disponible pour de nombreuses distributions Linux.
-
-```Bash
-# Installation de yq sur Ubuntu
-sudo apt-get install yq
-
-# Installation de yq sur CentOS
-sudo yum install yq
+## Comment faire?
+Pour travailler avec YAML, vous pouvez utiliser des outils tels que "yq" ou "jq" pour traiter et modifier les données dans un fichier YAML. Par exemple, pour afficher le contenu d'un fichier YAML, vous pouvez utiliser la commande suivante dans votre terminal Bash: 
+```Bash 
+cat mon_fichier.yaml 
 ```
 
-Une fois que vous avez installé `yq`, vous pouvez commencer à manipuler des fichiers YAML en utilisant la commande `yq <commande> <fichier>` dans votre terminal. Par exemple, pour afficher le contenu d'un fichier YAML, vous pouvez utiliser la commande `yq read <fichier>`.
-
+Pour modifier le contenu d'un fichier YAML, vous pouvez utiliser l'outil "yq" avec l'option "-i" pour modifier directement le fichier d'origine. Par exemple, pour changer la valeur de "name" à "John" dans un fichier YAML, vous pouvez utiliser la commande suivante:
 ```Bash
-# Afficher le contenu d'un fichier YAML
-yq read fichier.yml
-```
-
-Pour modifier des données dans un fichier YAML, vous pouvez utiliser la commande `yq write <fichier> <chemin> <valeur>` en spécifiant le chemin d'accès à l'élément que vous souhaitez modifier et la valeur à lui assigner.
-
-```Bash
-# Modifier une valeur dans un fichier YAML
-yq write fichier.yml domaine.domaineTiers.env production
-```
-
-Il est également possible d'utiliser la commande `yq delete <fichier> <chemin>` pour supprimer un élément du fichier YAML spécifié.
-
-```Bash
-# Supprimer un élément dans un fichier YAML
-yq delete fichier.yml domaine.domaineTiers.env
+yq -i '.name="John"' mon_fichier.yaml
 ```
 
 ## Plongée en profondeur
-
-Maintenant que vous avez une idée de base de l'utilisation de YAML avec Bash, voici quelques informations supplémentaires pour vous aider à mieux comprendre ce langage de sérialisation de données.
-
-- YAML signifie "YAML Ain't Markup Language" et est souvent utilisé pour créer des fichiers de configuration et de données.
-- Les données YAML sont formatées sous forme de liste clé-valeur, avec une indentation pour indiquer les relations entre les différentes données.
-- `yq` n'est pas seulement limité à l'édition de fichiers YAML, il peut également être utilisé pour convertir des fichiers au format JSON ou pour extraire des données à partir de fichiers XML.
+Le format YAML a été créé en 2001 pour fournir une alternative plus simple et plus lisible au format XML. Il est basé sur la syntaxe du langage de programmation Python et utilise l'indentation plutôt que les balises pour délimiter les données. D'autres formats de données populaires utilisés dans le développement sont JSON et XML, mais YAML est préféré pour sa simplicité et sa lisibilité.
 
 ## Voir aussi
-
-Vous pouvez en apprendre plus sur YAML en consultant ces ressources :
-
-- [Documentation officielle de YAML](https://yaml.org/)
-- [Documentation officielle de `yq`](https://mikefarah.github.io/yq/)
-- [Guide de démarrage rapide de YAML](https://learnxinyminutes.com/docs/fr-fr/yaml-fr/)
+Pour en savoir plus sur YAML et son utilisation dans le développement logiciel, vous pouvez consulter la documentation officielle sur https://yaml.org/. Vous pouvez également consulter les alternatives telles que JSON et XML pour voir les différences et les cas d'utilisation appropriés.

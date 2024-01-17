@@ -1,7 +1,7 @@
 ---
-title:                "Travailler avec les fichiers CSV"
-html_title:           "Fish Shell: Travailler avec les fichiers CSV"
-simple_title:         "Travailler avec les fichiers CSV"
+title:                "Travailler avec les fichiers csv"
+html_title:           "Fish Shell: Travailler avec les fichiers csv"
+simple_title:         "Travailler avec les fichiers csv"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Data Formats and Serialization"
@@ -10,42 +10,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+Qu'est-ce que c'est et pourquoi le faire? 
+Travailler avec des fichiers CSV peut sembler intimidant pour les programmeurs débutants, mais c'est en fait un moyen pratique de stocker et d'organiser de grandes quantités de données, telles que des feuilles de calcul ou des bases de données. Cela peut être utile lors de la manipulation de données dans un programme ou lors de l'exportation de données vers d'autres applications.
 
-Si vous travaillez avec des données tabulaires, notamment dans un contexte de développement web ou d'analyse de données, vous avez sûrement rencontré des fichiers CSV. Ces fichiers, qui sont des tableaux de données sous forme de texte séparé par des virgules, sont couramment utilisés pour stocker et échanger des données. Dans cet article, nous allons explorer comment utiliser le Fish Shell pour manipuler des fichiers CSV.
+Comment faire:
+Pour lire un fichier CSV dans Fish Shell, utilisez la fonction `csv`. Par exemple, si vous avez un fichier appelé `donnees.csv`, voici comment vous pouvez afficher le contenu:
 
-## Comment
-
-Voici comment utiliser le Fish Shell pour travailler avec des fichiers CSV :
-
-```Fish Shell
-# Charger un fichier CSV dans une variable
-set csv_data (curl http://monfichiercsv.com/donnees.csv)
-
-# Afficher les données du fichier CSV
-echo $csv_data
-
-# Ajouter une colonne "Total" à la fin du fichier
-set csv_data (string join , $csv_data ";Total")
-
-# Enregistrer les modifications dans un nouveau fichier
-echo $csv_data > nouveaudonnees.csv
+```fish
+csv -d ";" foreach line in donnees.csv
+echo $line
+end
 ```
+Ce code utilise la fonction `foreach` pour parcourir chaque ligne du fichier en utilisant le délimiteur `;`. Vous pouvez également spécifier un autre délimiteur en utilisant l'option `-d`. Pour en savoir plus sur les options disponibles, consultez la documentation de `csv` en utilisant la commande `man csv`.
 
-En utilisant ces exemples, vous pouvez exécuter des commandes Shell pour manipuler et modifier les données dans un fichier CSV. Par exemple, vous pourriez remplacer les virgules par des points-virgules ou ajouter des en-têtes de colonne. Le Fish Shell offre également de nombreuses autres fonctionnalités utiles pour travailler avec des fichiers CSV, comme la possibilité de trier et de filtrer des données.
+Plongée en profondeur:
+Les fichiers CSV sont couramment utilisés dans les applications de traitement de données, en particulier dans le domaine de la science des données. Ils ont été introduits dans les années 70 en tant que moyen de stocker des données sous forme de tableaux. Bien qu'ils soient pratiques, ils peuvent également présenter certains inconvénients, tels que la perte de précision lors de la manipulation de nombres à virgule flottante.
 
-## Plongée en profondeur
-
-Maintenant que vous avez une idée de base de la façon dont le Fish Shell peut être utilisé pour travailler avec des fichiers CSV, examinons quelques astuces pour mieux gérer ces fichiers. Tout d'abord, il est important de noter que le Fish Shell prend en charge la manipulation de données multilingues, vous n'aurez donc pas de problèmes avec des caractères spéciaux ou des accents dans vos fichiers CSV.
-
-De plus, le Fish Shell permet d'utiliser des expressions régulières pour traiter les données dans les fichiers CSV. Cela peut être utile pour remplacer des valeurs ou trouver des modèles spécifiques dans vos données. Le Fish Shell offre également des outils de formatage avancés pour afficher les données dans des styles de tableau plus pratiques.
-
-Enfin, il est important de noter que le Fish Shell est fortement axé sur l'automatisation des tâches, ce qui peut être très utile lorsqu'il s'agit de traiter de grandes quantités de données dans des fichiers CSV. Vous pouvez écrire des scripts Shell pour automatiser certaines tâches répétitives ou pour effectuer des opérations complexes sur vos données.
-
-## Voir Aussi
-
-Pour en savoir plus sur l'utilisation du Fish Shell pour travailler avec des fichiers CSV, vous pouvez consulter les liens suivants :
-
-* La documentation officielle du Fish Shell : https://fishshell.com/docs/current/index.html
-* Une liste complète des commandes Shell pour travailler avec des fichiers CSV : https://fishshell.com/docs/current/commands.html
-* Des tutoriels et des exemples pratiques pour manipuler des données CSV avec le Fish Shell : https://github.com/fish-shell/fish-shell/blob/master/doc_src/tutorial.md#reading-and-writing-csv-files
+Voir aussi:
+Si vous souhaitez en savoir plus sur les fichiers CSV et leur utilisation en programmation, consultez ces ressources:
+- [La documentation officielle de Fish Shell](https://fishshell.com/docs/current/index.html)
+- [Un tutoriel sur la manipulation de fichiers CSV en Python](https://realpython.com/python-csv/)
+- [Une introduction aux fichiers CSV sur le site Khan Academy](https://fr.khanacademy.org/computing/hour-of-code/hour-of-code-tutorial/a/reading-and-writing-csv-files)

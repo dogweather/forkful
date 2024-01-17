@@ -10,72 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
+## 什么是测试写作?为什么程序员要这样做？
 
-Java编程中的测试是一个非常重要的步骤。通过编写测试，可以帮助开发人员发现并解决潜在的错误或问题，从而提高代码质量和稳定性。
+测试写作指的是编写测试用例来验证代码的正确性。程序员之所以要这样做，是因为测试写作可以帮助他们在开发过程中发现潜在的错误，从而提高代码的质量和稳定性。这样做还能节省开发时间，减少未来的bug修复难度。
 
-## 如何
+## 如何进行测试写作：
 
-编写测试可以通过JUnit等Java测试框架来实现。首先，需要导入测试框架的库文件，然后创建一个测试类，在类中创建测试方法并使用断言来验证期望的结果。
-
-```java
-import org.junit.Test;
-import static org.junit.Assert.assertEquals;
-
-public class CalculatorTest {
-
-    @Test
-    public void testAdd() {
-        // 假设这是一个加法方法测试
-        Calculator calculator = new Calculator();
-        int result = calculator.add(2, 3);
-        // 使用断言来验证结果是否符合预期
-        assertEquals(5, result);
-    }
+```Java
+// 创建一个测试类
+public class TestCode {
+  // 在类中创建一个测试方法
+  public void test() {
+    // 编写断言语句
+    assert ("Hello".equals("Hello"));
+    // 执行测试方法
+    test();
+  }
 }
 ```
 
-同时，也可以通过注解来标记测试方法，如`@Test`用来标记一个测试方法，`@Before`用来标记在每个测试方法执行前需要执行的方法。
+执行测试方法后，如果断言语句为真，则表示测试通过。如果断言语句为假，则表示测试失败。
 
-```java
-import org.junit.Test;
-import org.junit.Before;
+## 深入了解：
 
-public class CalculatorTest {
-    
-    // 在每个测试方法执行前会先执行该方法
-    @Before
-    public void setup() {
-        // 某些初始化操作
-    }
+测试写作在软件开发过程中起到了非常重要的作用。它可以帮助程序员早期发现错误，降低了开发的难度和风险。传统的测试方法是手动测试，但这种方法耗时且不可靠。因此，现在越来越多的程序员开始使用自动化测试来提高效率和质量。
 
-    // 标记为测试方法
-    @Test
-    public void testSubtract() {
-        // 假设这是一个减法方法测试
-        Calculator calculator = new Calculator();
-        int result = calculator.subtract(5, 3);
-        // 使用断言来验证结果是否符合预期
-        assertEquals(2, result);
-    }
-}
-```
+除了上述的程序断言语句，还可以使用各种测试框架来编写更复杂的测试，如JUnit、TestNG等。这些框架提供了更多的功能和工具，可以帮助程序员编写和执行各种类型的测试用例。
 
-## 深入了解
+## 参考链接：
 
-除了JUnit之外，还有其他一些流行的Java测试框架，如TestNG和Mockito。同时，还可以使用代码覆盖率工具来衡量测试覆盖率，例如JaCoCo。编写测试还可以帮助开发人员实现测试驱动开发，提高代码可维护性。
-
-## 参考资源
-
-- [JUnit官方文档](https://junit.org/junit5/docs/current/user-guide/)
-- [TestNG官方文档](https://testng.org/doc/)
-- [Mockito官方文档](https://site.mockito.org/)
-- [JaCoCo官方文档](https://www.jacoco.org/jacoco/trunk/index.html)
-
-## 查看更多
-
-想了解更多关于Java编程的知识，可以参考以下资源:
-
-- [Java官方文档](https://docs.oracle.com/javase/tutorial/)
-- [Java之父的博客](https://www.jwz.org/blog/)
-- [Java编程社区](https://www.java-forums.org/)
+- [JUnit官方网站](https://junit.org/)
+- [TestNG官方网站](https://testng.org/)
+- [博客：如何使用自动化测试提高软件质量](https://blog.csdn.net/it_xf/article/details/87436003)

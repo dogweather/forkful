@@ -10,38 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+## O que e Porque?
 
-Algumas vezes, ao trabalhar com strings em um programa Elixir, pode ser necessário remover caracteres que correspondam a um determinado padrão. Isso pode ser útil para limpar entradas de dados ou para transformar uma string em um formato específico.
+Encontre e delete caracteres que correspondam a um determinado padrão é um processo comum para programadores Elixir. Isso ajuda a limpar e formatar dados de forma mais eficiente e consistente. Além disso, isso também pode ser usado para filtrar e selecionar dados específicos em uma coleção.
 
-## Como Fazer
-
-Remover caracteres que correspondam a um padrão em Elixir é bastante simples. Você pode usar a função `String.replace/3`, que recebe três argumentos: a string original, o padrão a ser removido e a string de substituição. Veja um exemplo abaixo:
+## Como Fazer:
 
 ```Elixir
-string = "123-45-6789"
-pattern = ~r/-/  # O padrão é um traço
-string_modificada = String.replace(string, pattern, "") # A string modificada não possui mais o traço
+"Hello, world!" |> String.replace("l", "")
 ```
-
-O resultado do código acima seria `"123456789"`.
-
-Outro método útil é a função `String.replace_leading/3`, que remove apenas os caracteres no início da string que correspondam ao padrão especificado. Veja um exemplo:
+`"Heo, word!"`
 
 ```Elixir
-string = "Hello World"
-pattern = ~r/H/   # O padrão é a letra H
-string_modificada = String.replace_leading(string, pattern, "")  # A string modificada tem o H removido do início
+"12345" |>String.replace(~r/\d/, "")
 ```
+`""`
 
-O resultado seria `"ello World"`.
+Para excluir caracteres correspondentes de uma string, basta usar a função `String.replace/3` e passar o padrão a ser correspondido como o segundo argumento. Se o padrão for uma expressão regular, use `~r//` para envolvê-lo. O resultado será a string original com os caracteres correspondentes removidos.
 
-## Profundando
+## Mergulho Profundo:
 
-Além das funções mencionadas acima, Elixir também oferece uma variedade de outras funções para manipulação de strings, como `String.strip`, `String.slice`, `String.split`, entre outras. Existem também diversas opções de padrões que podem ser utilizados, como expressões regulares e listas de caracteres. É importante verificar a documentação do Elixir para escolher a função e o padrão mais adequados para cada situação.
+A exclusão de caracteres correspondentes é um recurso comumente usado em linguagens de programação e Elixir não é exceção. No entanto, vale ressaltar que Elixir é uma linguagem funcional e, portanto, encoraja o uso de funções puras. Isso significa que, em vez de modificar a string original, a função `String.replace/3` retorna uma nova string com os caracteres correspondentes removidos.
 
-## Veja Também
+Além disso, em vez de usar `String.replace/3`, também é possível usar funções como `String.delete_prefix/2` e `String.delete_suffix/2` para remover segmentos específicos de uma string.
 
-- Documentação oficial do Elixir sobre strings: https://hexdocs.pm/elixir/String.html
-- Tutorial sobre strings em Elixir: https://elixirschool.com/pt/lessons/basics/string/
-- Exemplos de expressões regulares em Elixir: https://elixir-examples.github.io/string/regular-expressions/
+## Veja Também:
+
+Documentação oficial do Elixir sobre `String.replace/3`: https://hexdocs.pm/elixir/String.html#replace/3
+
+Outros métodos de manipulação de strings em Elixir: https://dev.to/5t3ph/gentle-introduction-to-manipulating-strings-in-elixir-heo

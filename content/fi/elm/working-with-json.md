@@ -10,68 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+Mitä ja Miksi?
+Työskentely JSON:n kanssa on välttämätöntä monille ohjelmoijille, sillä JSON (JavaScript Object Notation) on yksi yleisimmistä tietojen tallennusmuodoista web-sovelluksissa. Se on erittäin käyttäjäystävällinen ja helppo lukea sekä tulkita, ja siksi sitä käytetään usein tietojen välittämiseen ja tallentamiseen verkkosovelluksissa. JSON mahdollistaa myös tietojen muuttamisen objekteiksi, mikä helpottaa niiden käsittelyä ohjelmoinnissa.
 
-On monia syitä, miksi JSON on oleellinen osa monia nykypäivän ohjelmointikieliä, myös Elm. JSON on helppo lukea ja kirjoittaa sekä samalla se on erittäin tehokas vaihtoehto tiedon tallentamiseen ja siirtämiseen. JSON:in käyttäminen auttaa myös selkeyttämään koodisi rakennetta ja antaa sinulle enemmän mahdollisuuksia muuttaa dataasi tarpeesi mukaan.
+Miten tehdä?
+JSON:n käsittely Elm-kielellä on helppoa ja suoraviivaista. Käytä **Json.Decode** -kirjastoa koodissasi. Alla on esimerkki koodinpätkästä, joka hakee ja tulkkaa JSON-tiedoston:
 
-## Miten
+```Elm
+import Http
+import Json.Decode as Decode
 
-JSON-tietorakenteen luominen Elm:ssä on erittäin yksinkertaista ja selkeää. Voit aloittaa luomalla uuden JSON-arvon käyttäen `Json.encode` funktiota, ja antamalla sille tarvittavat avaimet ja arvot. Alla on esimerkki:
 
-```elm
-import Json.Encode exposing (Value)
+type alias Post = {
+    userId : Int,
+    id : Int,
+    title : String,
+    body : String
+}
 
-myJSON : Value
-myJSON =
-    Json.Encode.object
-        [ ( "name", Json.encode "John" )
-        , ( "age", Json.encode 25 )
-        , ( "hobbies", Json.encodeArray [ Json.encode "skiing", Json.encode "reading", Json.encode "painting" ] )
-        ]
+
+fetchPostList : Cmd Msg
+fetchPostList =
+    Http.get
+        { url = "https://jsonplaceholder.typicode.com/posts",
+          expect = Http.expectJson GotPostList (Decode.list postDecoder)
+        }
+
+
+postDecoder : Decode.Decoder Post
+postDecoder =
+    Decode.map4 Post
+        (Decode.field "userId" Decode.int)
+        (Decode.field "id" Decode.int)
+        (Decode.field "title" Decode.string)
+        (Decode.field "body" Decode.string)
 ```
 
-Tässä esimerkissä luodaan JSON-arvo, joka sisältää nimen, iän ja harrastukset. Huomaa, kuinka jokainen arvo on ensin kääritty `Json.encode` funktion sisään. Tämä on tärkeää, jotta Elm ymmärtää, että kyseessä on JSON-arvo eikä mikään muu.
+Tässä esimerkissä haetaan JSON-tiedosto api-palvelusta ja tulkataan se **Post**-objektiksi. **fetchPostList** -funktio käyttää **expectJson** -funktiota, joka määrittää, minkä tyyppinen tulos odotetaan ja miten se tulee tulkata. **postDecoder** -funktio määrittelee, miten JSON-data tulkataan **Post**-objektiksi.
 
-JSON-tietorakenteen purkaminen Elm:ssä tapahtuu käyttämällä `Json.Decode` moduulia. Voit tulkita JSON-arvon haluamallasi tavalla käyttämällä `Json.Decode` funktioita, kuten `Json.Decode.string`, `Json.Decode.int` ja `Json.Decode.list`. Alla on esimerkki:
+Syvemmällä: JSON:n historiasta, vaihtoehdoista ja toteutuksesta
+JSON kehitettiin vuonna 2001 ja se on saavuttanut suuren suosion ohjelmistokehittäjien ja web-sovellusten keskuudessa. Sen yksinkertaiset syntaksit ja helppo käytettävyys ovat tehneet siitä yhden parhaista vaihtoehdoista tietojen tallentamiseen ja välittämiseen verkkosovelluksissa.
 
-```elm
-import Json.Decode exposing (Value, string, int, list)
+Elm-kielessä on myös muita vaihtoehtoja JSON-tiedostojen käsittelyyn, kuten **elm-json** -kirjasto. Kuitenkin, **Json.Decode** on integroitu osaksi Elm-ympäristöä, mikä tekee sen käytöstä erittäin mukavaa ja tehokasta.
 
-myName : Decode.Value -> String
-myName json =
-    case Json.Decode.decodeValue string json of
-        Ok name ->
-            name
-        Err _ ->
-            "Unknown"
+On myös tärkeää mainita, että JSON ei tue monimutkaisia tietorakenteita kuten binääripuita tai funktioita. Tämä voi olla rajoittava tekijä joillekin projekteille, mutta useimmiten JSON on riittävä vaihtoehto tietojen käsittelyyn ja säilyttämiseen.
 
-myAge : Decode.Value -> Int
-myAge json =
-    case Json.Decode.decodeValue string json of
-        Ok age ->
-            age
-        Err _ ->
-            -1
-
-myHobbies : Decode.Value -> List String
-myHobbies json =
-    case Json.Decode.decodeValue string json of
-        Ok hobbies ->
-            hobbies
-        Err _ ->
-            []
-
-```
-
-Tässä esimerkissä luodaan kolme erillistä funktiota, jotka purkavat JSON-arvon ja palauttavat tarvittavan datan haluttuun muotoon. Kuten huomaat, `Json.Decode.decodeValue` funktio ottaa parametreina `Json.Decode` moduulin funktion ja JSON-arvon. Jos purkaminen onnistuu, funktio palauttaa `Ok` arvon, muuten `Err` arvon.
-
-## Syväsukellus
-
-JSON:in kanssa työskentelyssä on tärkeää muistaa, että se on käytännössä vain merkkijonoina. Tämä tarkoittaa sitä, että kun lähetät tai vastaanotat JSON-tietorakenteita, ne on ensin muutettava merkkijonoiksi käyttämällä `Json.Encode.encode` tai `Json.Decode.decodeString` funktioita. Tämä Varmistaa, että tietosi säilyvät oikein ja että Elm ymmärtää ne oikein.
-
-Elm tarjoaa myös monia hyödyllisiä työkaluja työskentelyyn JSON:in kanssa, kuten `Json.Decode` moduulin funktiot `map`, `andThen` ja `lazy`. Nämä auttavat työskentelemään JSON-tietorakenteen kanssa helpommin ja tehokkaammin.
-
-## Katso myös
-
-- [Elm: JSON dokumentaatio](https://package.elm-lang.org/packages/elm/json/latest/)
-- [Codecademy: Learn JSON](https://www.codecademy.com/learn/
+Katso myös
+- [Elm's official JSON documentation](https://guide.elm-lang.org/interop/json.html)
+- [JSON format specification](https://www.json.org/)
+- [Comparison of different data formats](https://stackify.com/json-vs-xml/)

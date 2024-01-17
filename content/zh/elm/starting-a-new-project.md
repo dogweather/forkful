@@ -10,31 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
+# 做什么和为什么？
+创建一个新项目是指在编程中开始一个新的任务。程序员通常会创建新项目来实践新的编程技能或者解决一个特定的问题。
 
-在开始一个新的项目时，有两个主要原因。首先，它可以提供一个非常有趣的学习机会，让你尝试使用新的技术和工具。其次，它也可以帮助你解决现有项目中出现的问题或需求。
-
-## 如何开始
-
-首先，确保你已经安装了最新版本的Elm。然后，创建一个新的项目文件夹并在命令行中进入该文件夹。接下来，运行以下命令来初始化一个基本的Elm项目：
-
+# 如何：
 ```Elm
-elm init
+module Main exposing (..)
+
+import Html exposing (text)
+
+
+main =
+    text "Hello, world!"
 ```
 
-这将创建一个名为"elm.json"的文件，其中包含项目的基本结构和依赖项。接着，你可以开始编写你的代码，它将以`.elm`结尾。最后，使用以下命令来编译并运行你的代码：
+输出：Hello, world!
 
 ```Elm
-elm make Main.elm
+-- 在 REPL 中输入以下命令来调试代码
+
+main
 ```
 
-这将生成一个JavaScript文件，并在浏览器中打开你的应用程序。
+输出：Hello, world!
 
-## 深入了解
+# 深入探讨：
+- 历史背景：在 Elm 起源于 2012 年，是一种函数式编程语言，目的是构建可靠和高效的用户界面。它受到 Haskell 和 ML 等语言的影响。
+- 其他选择：除了 Elm，其他的选择包括 React、Angular、Vue 等，它们也都是构建用户界面的流行方式。
+- 实现细节：Elm 使用一种名为 Virtual DOM 的技术来提高性能和可靠性，它也支持自动内存管理。
 
-在开始一个新的项目之前，最好先了解一些Elm的基本概念。Elm是一种函数式编程语言，它的主要目的是构建可靠的、可扩展的Web应用程序。它还具有强类型系统和无副作用的特性，这使得它更易于测试和维护。你可以通过查看官方文档来获得更多关于Elm的知识和技巧。
-
-## 参考链接
-
-- [Elm官网](https://elm-lang.org/)
-- [Elm入门指南](https://guide.elm-lang.org/)
+# 参考链接：
+- Elm 官方网站：https://elm-lang.org/
+- Elm 文档：https://guide.elm-lang.org/
+- Elm REPL：https://elm-lang.org/docs/repl

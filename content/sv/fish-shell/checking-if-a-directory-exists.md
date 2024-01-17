@@ -1,7 +1,7 @@
 ---
-title:                "Kontrollera om en mapp finns."
-html_title:           "Fish Shell: Kontrollera om en mapp finns."
-simple_title:         "Kontrollera om en mapp finns."
+title:                "Kontrollera om en katalog existerar."
+html_title:           "Fish Shell: Kontrollera om en katalog existerar."
+simple_title:         "Kontrollera om en katalog existerar."
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Files and I/O"
@@ -10,34 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
+ Att kolla om en mapp finns är en vanlig uppgift för programmerare. Detta gör man för att säkerställa att en mapp är tillgänglig innan man fortsätter med en kodsekvens som är beroende av den.
 
-Att kontrollera om en mapp (eng. directory) existerar är ett vanligt behov när du skriver kod. Det kan till exempel vara användbart för att undvika fel om din programvara förväntar sig att en viss mapp finns.
+## Så här gör du:
+Detta är hur du kollar om en mapp finns i Fish Shell:
 
-## Så här
-
-För att kontrollera om en mapp existerar kan du använda "test"-kommandot och ange sökvägen till mappen du vill kontrollera. Om mappen existerar kommer kommandot att returnera utgångsvärdet 0, vilket betyder att det inte föreligger något fel. Om mappen inte existerar kommer utgångsvärdet att vara 1, vilket betyder att det har uppstått ett fel.
-
-```Fish Shell
-test -d /path/to/directory
+```
+if test -d /mappnamn
+   echo "Mappen finns!"
+else
+   echo "Mappen finns inte."
+endif
 ```
 
-Om du vill göra något beroende på resultatet av kontrollen kan du använda ett "if"-uttryck. I följande kodexempel kontrollerar vi om mappen "documents" finns och skriver ut ett meddelande som svar.
+Om mappen existerar kommer det första uttrycket att skrivas ut, annars kommer det andra.
 
-```Fish Shell
-if test -d documents
-	echo "Mappen existerar!"
-end
-```
+## Deep Dive:
+Historiskt sett har programmerare använt kommandot `test` för att utföra villkorsbaserade kontroller i Unix-baserade operativsystem. Detta kommando har senare inkluderats i shell-program, inklusive Fish Shell.
 
-## Djupdykning
+Alternativet till `test -d` i Fish Shell är kommandot `count`. Detta är ett mer generellt kommando som kan användas för att kontrollera andra typer av filer, inte bara mappar.
 
-Om du vill utföra mer avancerade åtgärder efter att ha kontrollerat om en mapp existerar kan du använda dig av "if"-uttrycken i kombination med andra kommandon. Till exempel kan du använda "set -q" för att kontrollera om en variabel finns tillgänglig innan du utför en åtgärd, eller "and"-operatorn för att utföra flera kontroller i samma uttryck.
+Implementeringsdetaljer: Fish Shell använder sig av POSIX-standarder och använder `test` -kommandot för att utföra en villkorsbaserad kontroll.
 
-Se till att noga läsa dokumentationen för Fish Shell för att lära dig om alla tillgängliga kommandon och uttryck för att kontrollera om en mapp existerar.
-
-## Se också
-
-- [Fish Shell dokumentation](https://fishshell.com/docs/current/)
-- [Snabbguide till Fish Shell](https://fishshell.com/docs/current/tutorial.html)
-- [Testkommandot (i Fish Shell)](https://fishshell.com/docs/current/cmds/test.html)
+## Se även:
+- Fish Shell dokumentation: https://fishshell.com/docs/current/index.html
+- POSIX-standarder: https://en.wikipedia.org/wiki/POSIX

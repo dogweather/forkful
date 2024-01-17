@@ -10,54 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was ist das und warum?
+Das Schreiben einer Textdatei ist eine grundlegende und wichtige Fähigkeit für C-Programmierer. Es ermöglicht uns, Daten dauerhaft zu speichern und später wieder darauf zuzugreifen. Textdateien sind in einfachen und lesbaren Formaten geschrieben, was sie ideal für die Kommunikation zwischen verschiedenen Programmen macht.
 
-Wenn du mit C programmierst, kennst du wahrscheinlich bereits die Verwendung von Konsolenausgaben mit `printf` oder `cout`. Aber hast du schon einmal daran gedacht, eine Datei mit deinem C-Code zu erstellen? Das Schreiben von Textdateien kann sehr nützlich sein, um Daten auf lange Sicht zu speichern oder um mit anderen Programmen zu interagieren.
-
-## Wie es geht
-
-Das Schreiben einer Textdatei in C kann auf verschiedene Arten erfolgen, aber hier sind einige Beispiele, um dir den Einstieg zu erleichtern:
+## Wie geht's?
+Um eine Textdatei in C zu schreiben, müssen wir zuerst die Header-Datei `stdio.h` einbinden. Dann nutzen wir die Funktion `fprintf()`, um Daten in die Textdatei zu schreiben. Hier ist ein Beispiel, das den Text "Hello World!" in eine Datei namens `output.txt` schreibt:
 
 ```C
 #include <stdio.h>
 
 int main() {
+  FILE *file_ptr;
+  
+  // Öffne die Datei im Schreibmodus
+  file_ptr = fopen("output.txt", "w");
 
-    // Öffne eine Datei im “write” Modus
-    FILE *file = fopen("textdatei.txt", "w");
+  // Schreibe den Text in die Datei
+  fprintf(file_ptr, "Hello World!");
 
-    // Überprüfe, ob die Datei erfolgreich geöffnet wurde
-    if (file == NULL) {
-        printf("Fehler beim Öffnen der Datei!");
-        return 1;
-    }
-
-    // Schreibe Text in die Datei
-    fputs("Dies ist eine Textdatei, geschrieben mit C!", file);
-
-    // Schließe die Datei
-    fclose(file);
-
-    return 0;
+  // Schließe die Datei
+  fclose(file_ptr);
+  return 0;
 }
 ```
 
-Dieses Beispiel öffnet eine Datei namens "textdatei.txt" im Schreibmodus und fügt den Text "Dies ist eine Textdatei, geschrieben mit C!" hinzu. Beachte, dass du die Datei immer schließen musst, nachdem du damit fertig bist.
+Die Datei wird im gleichen Verzeichnis wie das Programm erstellt. Wenn die Datei bereits existiert, wird sie überschrieben.
 
-Du kannst auch mit dem `fprintf` Befehl formatierten Text in eine Datei schreiben:
+## Tiefgehende Infos
+Textdateien werden seit den früheren Versionen von C verwendet, um einfache Daten zu speichern. Für komplexere Anwendungen können wir jedoch auch binäre oder strukturierte Dateien verwenden. Eine alternative Methode zum Schreiben von Textdateien ist die `fputs()` Funktion, die einzelne Zeichen oder Zeichenfolgen in eine Datei schreibt.
 
-```C
-fprintf(file, "Dies ist eine Zahl: %d", 10);
-```
+Es ist wichtig, die Datei nach dem Schreiben zu schließen, da sonst möglicherweise nicht alle Daten geschrieben werden. Außerdem müssen wir die Datei im richtigen Modus öffnen, um auch Lese- oder Anhängeoperationen durchführen zu können.
 
-Dies schreibt den formatierten Text in die Datei, in diesem Fall "Dies ist eine Zahl: 10". Du kannst alle gängigen printf-Spezifikationen verwenden, um den Text zu formatieren.
-
-## Tiefergehende Details
-
-Das Schreiben von Textdateien in C erfordert die Verwendung der `FILE` Struktur und die Funktionen `fopen`, `fclose` und `fprintf` oder `fputs`. Diese Funktionen sind in der Header-Datei "stdio.h" deklariert. Du kannst auch den dritten Parameter von `fopen` verwenden, um den Zeichenkodierungstyp der Datei anzugeben, z.B. "w, UTF-8" oder "w, ISO-8859-1". Es ist auch wichtig, zu überprüfen, ob das Öffnen oder Schreiben der Datei erfolgreich war, da dies zu Laufzeitfehlern führen kann.
-
-## Siehe auch
-
-- Die Dokumentation zu [FILE in der C-Referenz](https://www.tutorialspoint.com/c_standard_library/c_function_fopen.htm)
-- Eine [ausführliche Anleitung zum Schreiben von Textdateien in C](https://www.tutorialspoint.com/cprogramming/c_file_io.htm)
-- Eine [Einführung in C](https://www.programiz.com/c-programming) auf Programiz.
+## Weitere Links
+- [Die offizielle C-Sprachreferenz](https://devdocs.io/c/)
+- [Ein ausführliches Tutorial zum Schreiben von Textdateien in C](https://www.tutorialspoint.com/c_standard_library/c_function_fprintf.htm)

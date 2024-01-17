@@ -1,7 +1,7 @@
 ---
-title:                "Cancellazione di caratteri corrispondenti ad un modello"
-html_title:           "Rust: Cancellazione di caratteri corrispondenti ad un modello"
-simple_title:         "Cancellazione di caratteri corrispondenti ad un modello"
+title:                "Eliminazione dei caratteri corrispondenti ad un modello"
+html_title:           "Rust: Eliminazione dei caratteri corrispondenti ad un modello"
+simple_title:         "Eliminazione dei caratteri corrispondenti ad un modello"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -10,29 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## Cosa & Perché?
+La cancellazione di caratteri che corrispondono ad un determinato pattern è una pratica comune tra i programmatori per rimuovere parti di testo indesiderate nei loro codici. Ad esempio, potresti voler eliminare tutti i commenti o spazi vuoti da un file di testo per renderlo più leggibile e meno verboso.
 
-Capita spesso che ci troviamo di fronte alla necessità di cancellare caratteri in una stringa che corrispondono a un certo pattern. Ciò può essere utile quando si vuole pulire una stringa da eventuali caratteri superflui o ridurre la sua lunghezza.
+## Come fare:
+Ecco come puoi eseguire la cancellazione di caratteri che corrispondono ad un pattern in Rust:
 
-## How To
+```Rust
+use regex::Regex;
 
-Per eseguire questa operazione in Rust, possiamo utilizzare il metodo `retain()` associato alle stringhe.
-
+fn main() {
+    // Definisci il tuo pattern
+    let pattern = Regex::new(r"([A-Z]+)\s+([0-9]+)").unwrap();
+    
+    // Crea una stringa su cui eseguire la cancellazione
+    let testo = "COD123 abc456 DEF789";
+    
+    // Esegui la cancellazione del pattern
+    let nuovo_testo = pattern.replace_all(testo, "$1$2");
+    
+    println!("{}", nuovo_testo); 
+}
 ```
-Rust let mut stringa = String::from("Ciao, 12345!");
-stringa.retain(|c| c.is_alphabetic()); //il carattere "1" e "2" saranno cancellati
-println!("{}", stringa); // output: "Ciao!"
-```
 
-In questo esempio, abbiamo utilizzato la funzione `is_alphabetic()` per determinare quali caratteri mantenere nella stringa. Possiamo anche utilizzare altri metodi come `is_numeric()` o `is_whitespace()` per specificare ulteriormente quali caratteri eliminare.
+Questo codice userà una libreria chiamata `regex` per definire un pattern e utilizzarlo per sostituire ogni corrispondenza con una stringa vuota. Nel nostro esempio, vogliamo rimuovere i caratteri dalla stringa iniziale e ottenere "COD123abc456DEF789" come output.
 
-## Deep Dive
+## Approfondimento:
+La cancellazione di caratteri che corrispondono ad un pattern è spesso vista come un'alternativa più efficiente rispetto alla rimozione di singoli caratteri da una stringa. Inoltre, questa pratica è diventata più popolare con l'uso diffuso delle espressioni regolari nelle moderne programmazioni.
 
-Il metodo `retain()` è definito all'interno della struttura `String` in Rust. Esso accetta una funzione come argomento e controlla ogni carattere della stringa corrente. Se la funzione restituisce `true`, il carattere verrà mantenuto, altrimenti verrà eliminato.
+Per implementare questa funzione in Rust, è necessario utilizzare una libreria esterna, come `regex` o `sregex`, che forniscono funzioni di manipolazione delle stringhe basate su espressioni regolari.
 
-È importante notare che, a differenza di altri metodi come `replace()`, `retain()` agisce direttamente sulla stringa e modifica il suo contenuto anziché restituire una nuova stringa.
-
-## See Also
-
-- [La documentazione ufficiale di Rust](https://doc.rust-lang.org/std/string/struct.String.html#method.retain)
-- [Un esempio di utilizzo di `retain()`](https://play.rust-lang.org/?version=stable&mode=debug&edition=2018&gist=aadadca8fc23ff32dc1e501d9fed151b)
+## Vedi anche:
+- [Documentazione della libreria regex](https://docs.rs/regex/1.3.7/regex/)
+- [Esempi di espressioni regolari in uso in Rust](https://github.com/rust-lang/regex/tree/master/examples)

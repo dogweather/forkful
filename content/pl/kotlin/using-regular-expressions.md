@@ -10,47 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co to jest i dlaczego to robią programiści?
 
-Wykorzystanie wyrażeń regularnych jest nieodłączną częścią programowania w Kotlinie. Dzięki nim możemy znacznie ułatwić sobie pracę m.in. w zakresie walidacji danych, przetwarzania tekstów czy wyszukiwania konkretnych wzorców. Większość profesjonalnych programistów powinna umieć korzystać z tego narzędzia, aby móc pisać bardziej efektywny i czytelny kod.
+Regular expressions (wyrażenia regularne) są to wzorce, które służą do wyszukiwania i manipulowania tekstem w sposób bardziej zaawansowany niż tradycyjny napisany ciągiem. Programiści korzystają z wyrażeń regularnych, aby szybko i precyzyjnie przetwarzac dane w swoich programach.
 
-## Jak to zrobić
+## Jak to zrobić:
 
-```Kotlin
-// Przykład użycia wyrażeń regularnych do sprawdzenia formatu adresu email
-
-val regex = Regex("[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,64}")
-val email = "kot@example.com"
-
-if (email.matches(regex)) {
-    println("Format adresu email jest poprawny")
-} else {
-    println("Niepoprawny format adresu email")
-}
-```
-
-W powyższym przykładzie tworzymy nowy obiekt `Regex` z wyrażeniem regularnym, które sprawdza format adresu email. Następnie, przy użyciu metody `matches()`, sprawdzamy czy podany adres `email` odpowiada temu wzorcowi. Dzięki temu możemy w prosty sposób zweryfikować, czy dany tekst spełnia założone kryteria.
+Wykorzystaj operator `match` wraz z wyrażeniami regularnymi, aby sprawdzić, czy dany ciąg znaków pasuje do wzorca. Na przykład, `Kotlin` to wyrażenie regularne, które dopasuje się do wyrazu "Kotlin". Można również użyć wyrażenia regularnego wewnątrz zmiennej `Regex` i wykorzystać metody, takie jak `find`, `replace` czy `split` do przetwarzania tekstu.
 
 ```Kotlin
-// Przykład użycia wyrażeń regularnych do zamiany formatu daty
+val text = "Witajcie w świecie programowania Kotlin!"
+val pattern = Regex("Kotlin")
 
-val regex = Regex("(\\d{4})-(\\d{2})-(\\d{2})")
-val date = "2020-08-27"
-val newDate = date.replace(regex, "$3/$2/$1")
+//sprawdź, czy ciąg znaków pasuje do wzorca
+val matches = pattern.matches(text)
+println(matches)
 
-println(newDate) // Output: 27/08/2020
+//zamień wszystkie wystąpienia wzorca na napis "Java"
+val replacedText = pattern.replace(text, "Java")
+println(replacedText)
+
+//podziel ciąg znaków na podstawie wzorca
+val splittedText = pattern.split(text)
+println(splittedText)
 ```
 
-W tym przykładzie korzystamy z metody `replace()` do zamiany formatu daty z `rrrr-mm-dd` na `dd/mm/rrrr`. Wyrażenie regularne pozwala nam w prosty sposób wyodrębnić części daty i zastosować je w odpowiedniej kolejności przy użyciu operatora `$`.
+Output:
+```
+true
+Witajcie w świecie programowania Java!
+[Witajcie w świecie programowania , !]
+```
 
-## Głębszy wgląd
+## Głębsze zagadnienia:
 
-Wyrażenia regularne są użytecznym narzędziem, jednak mogą wymagać trochę czasu na opanowanie. W Kotlinie możemy wykorzystać je w wielu miejscach, m.in. przy filtrowaniu i przetwarzaniu danych, weryfikowaniu wprowadzonych przez użytkownika danych czy generowaniu raportów.
+Wyrażenia regularne zostały wprowadzone przez matematyka Stephena Kleene'a w latach 50. XX wieku. Obecnie są powszechnie wykorzystywane w wielu językach programowania, m.in. w Kotlinie. Istnieją również alternatywne rozwiązania, takie jak biblioteki do przetwarzania wyrażeń regularnych. W Kotlinie wyrażenia regularne są zaimplementowane za pomocą języka Java i wykorzystują klasę `Pattern` do obsługi wzorców.
 
-Warto również wspomnieć o tzw. "specjalnych sekwencjach znaków", które można wykorzystać w wyrażeniach regularnych. Na przykład, `\d` oznacza dowolną cyfrę, `\w` - dowolny znak alfanumeryczny, a `\s` - dowolny biały znak. Dzięki temu możemy szybko i precyzyjnie zdefiniować wzorce, które chcemy znaleźć lub przetworzyć.
+## Zobacz również:
 
-## Zobacz również
-
-- [Oficjalna dokumentacja języka Kotlin](https://kotlinlang.org/docs/regular-expressions.html)
-- [Kotlin dla początkujących - wyrażenia regularne](https://dev.to/musialikp/kotlin-dla-poczatkujacych-wyrazenia-regularne-7pm)
-- [Wprowadzenie do wyrażeń regularnych w Kotlinie](https://www.baeldung.com/kotlin-regular-expressions)
+- [Dokumentacja: Kotlin Regex](https://kotlinlang.org/docs/reference/regular-expressions.html)
+- [Tutorial: Wyrażenia regularne w Kotlinie](https://www.tutorialkart.com/kotlin/regex-regular-expression/)
+- [Praktyczne zastosowania wyrażeń regularnych](https://www.rexegg.com/)

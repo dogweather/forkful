@@ -1,7 +1,7 @@
 ---
-title:                "Analyse html."
-html_title:           "Go: Analyse html."
-simple_title:         "Analyse html."
+title:                "Analyse de code html"
+html_title:           "Go: Analyse de code html"
+simple_title:         "Analyse de code html"
 programming_language: "Go"
 category:             "Go"
 tag:                  "HTML and the Web"
@@ -10,54 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Pourquoi
+## Qu'est-ce que c'est et pourquoi? 
 
-Si vous travaillez avec des données provenant du web, il est fort probable que vous ayez à un moment donné besoin de traiter du code HTML. Pour extraire des informations spécifiques de pages web, il est nécessaire de comprendre comment parser le HTML.
+Parsing HTML est un processus commun en programmation dans lequel un programme lit et analyse une page HTML pour extraire des données spécifiques. Cela peut inclure des éléments tels que des liens, des images ou du texte. Les programmeurs font cela pour pouvoir utiliser ces données dans leurs propres programmes ou pour effectuer des tâches spécifiques sur des pages HTML telles que le web scraping.
 
-# Comment Faire
+## Comment faire: 
 
-La langue de programmation Go offre une bibliothèque standard complète pour le parsing de HTML appelée "html/template". Elle permet de facilement extraire des données structurées à partir de code HTML. Voici un exemple de code:
-
-```
-package main
+```Go
+package main 
 
 import (
-    "fmt"
-    "strings"
-    "golang.org/x/net/html"
+	"fmt" 
+	"net/http"
+	"io/ioutil"
+	"golang.org/x/net/html"
 )
 
 func main() {
-    // Code HTML brut
-    rawHTML := `<h1>Titre</h1><p>Paragraphe</p>`
-    
-    // Transformation en un objet Node
-    node, err := html.Parse(strings.NewReader(rawHTML))
-    
-    if err != nil {
-        panic(err)
-    }
-    
-    // Récupération du premier élément <h1>
-    h1 := node.FirstChild.FirstChild
-    
-    // Récupération du contenu de l'élément
-    title := h1.FirstChild.Data
-    
-    // Affichage du résultat
-    fmt.Println(title) // Titre
+	//exemples à écrire ici
 }
 ```
-Cet exemple illustre comment utiliser la bibliothèque "html/template" pour parser du HTML et récupérer du contenu structuré. Il est également possible d'utiliser des boucles pour parcourir des éléments spécifiques du document HTML. La documentation complète de la bibliothèque est disponible sur le site officiel de Go.
 
-# Plongée Profonde
+Pour parser du HTML en utilisant Go, nous avons besoin d'utiliser le paquet `html` de la bibliothèque standard de Go. Tout d'abord, nous devons obtenir le contenu HTML de la page que nous voulons parser en utilisant la fonction `http.Get()` pour effectuer une requête HTTP à l'URL de la page. Ensuite, nous utilisons la fonction `ioutil.ReadAll()` pour lire le corps de la réponse de la requête. Enfin, nous pouvons utiliser la fonction `html.Parse()` pour analyser le HTML et obtenir un arbre de nœuds que nous pouvons parcourir pour extraire les données souhaitées.
 
-Pour ceux qui souhaitent aller plus loin, il est intéressant de comprendre comment fonctionne le parsing de HTML en profondeur. Le processus de parsing implique de transformer le code HTML en un arbre de nœuds (nodes). Les balises HTML correspondent aux nœuds de l'arbre et les attributs et le contenu correspondent aux nœuds enfants. Grâce à cette structure, il est possible d'extraire des données précises en utilisant des algorithmes de parcours d'arbre.
+## Plongée en profondeur: 
 
-# Voir Aussi
+L'analyse de HTML est une tâche importante pour de nombreux programmes, en particulier dans le domaine de l'automatisation du web et de la récupération de données. Avant l'utilisation généralisée d'outils tels que jQuery, les programmeurs devaient principalement compter sur le traitement de HTML brut pour extraire des données à partir de pages web. Aujourd'hui, il existe des alternatives telles que l'analyse de JSON ou l'utilisation d'API, mais parsing HTML reste un outil précieux dans la boîte à outils de nombreux programmeurs.
 
-Vous pouvez consulter d'autres ressources en français sur le parsing de HTML en Go:
+La fonction `html.Parse()` utilise un algorithme appelé "algorithme de parcours de l'arbre" pour structurer le HTML en un arbre de nœuds, ce qui facilite la navigation et l'extraction de données spécifiques. Cependant, comme pour tout type de parsing, il peut y avoir des défis à relever en fonction de la complexité de la structure HTML et de la fiabilité des données. Il est également important de noter que l'utilisation d'expressions régulières pour parser HTML est généralement déconseillée, car cela peut conduire à des résultats imprévisibles et à des bogues.
 
-- [Documentation officielle de html/template](https://golang.org/pkg/html/template/)
-- [Article sur le parsing de HTML avec Go](https://awesomeopensource.com/project/aymerick/go-stuff/tree/master/html5)
-- [Tutoriel sur Go et le parsing de HTML](https://kodify.net/go/html-parsing/)
+## Voir aussi: 
+
+- Documentation de la bibliothèque standard de Go pour le paquet `html`: https://golang.org/pkg/html/
+- Un article intéressant sur les différentes méthodes d'analyse de HTML en utilisant Go: https://www.thepolyglotdeveloper.com/2018/08/parsing-html-go/
+- Une vidéo tutoriel sur l'utilisation de l'API `http` et de `html.Parse()` pour parser du HTML en utilisant Go: https://www.youtube.com/watch?v=sJ6pMLp_IKE

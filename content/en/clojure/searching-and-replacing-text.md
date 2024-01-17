@@ -10,34 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
+Searching and replacing text is the process of finding a specific pattern of characters in a piece of text and replacing it with another pattern of characters. Programmers often use this technique to automate the process of making changes to large amounts of code or data.
 
-Have you ever found yourself manually replacing text in a document or code, only to realize you missed a few instances and have to go back and fix them? That's where searching and replacing text comes in handy. It allows you to quickly and efficiently replace text in a document or code with just a few lines of code.
+## How to:
+To search and replace text in Clojure, we can use the `str/replace` function. This function takes three arguments: the string we want to search, the pattern we want to find, and the replacement pattern. For example, to replace all instances of "hello" with "hi" in the string "hello world," we can use the following code:
 
-## How To
-
-To search and replace text in Clojure, you can use the `replace` function from the `clojure.string` library. This function takes in three parameters: the string to search in, the pattern to search for, and the replacement text. Let's take a look at an example:
-
-```
 ```Clojure
-(require '[clojure.string :as str])
-
-(def str-to-replace "Hello World!")
-
-(str/replace str-to-replace "World" "Universe")
+(str/replace "hello world" "hello" "hi") 
 ```
 
-In this example, we first require the `clojure.string` library and bind it to the alias `str`, just for convenience. Then we define a string variable called `str-to-replace` with the value "Hello World!". Finally, we use the `replace` function to replace the word "World" with "Universe" in our string variable.
+The output of this code would be "hi world."
 
-The output of this function call would be the string "Hello Universe!", since it replaces all instances of "World" with "Universe" in the original string.
+We can also use regular expressions as the search pattern. This allows for more complex and dynamic replacements. For example, to replace all numbers in a string with "x," we can use the regular expression `#"\d+"` and the following code:
 
-## Deep Dive
+```Clojure
+(str/replace "I have 123 apples." #"\d+" "x")
+```
 
-The `replace` function supports regular expressions as the pattern to search for, giving you even more flexibility in your search and replace operations. It also has optional parameters for specifying the maximum number of replacements and the starting index to search from.
+The output of this code would be "I have x apples."
 
-Keep in mind that the `replace` function is not limited to strings, but can also be used on other data types such as vectors and maps. This makes it a versatile tool for all your searching and replacing needs.
+## Deep Dive:
+Searching and replacing text has been a common task in programming for many years. In the early days of text editors, programmers had to manually search and replace text in their code. This was a time-consuming and error-prone process. The development of regular expressions and the creation of search and replace functions in programming languages, such as Clojure, has greatly improved this process.
 
-## See Also
+In Clojure, there are other functions and macros available for searching and replacing text, such as `str/replace-first` and `clojure.string/replace-first`, which allow for more targeted replacements. Additionally, there are also libraries, such as `clojure.string` and `str-utils`, that provide more advanced text manipulation functions.
 
-- [Clojure Docs on replace function](https://clojuredocs.org/clojure.string/replace)
-- [ClojureRegex - a helpful library for working with regular expressions in Clojure](https://github.com/luxbock/clojure-regex)
+When using regular expressions for search and replace in Clojure, it's important to keep in mind the syntax and the different "flavors" of regular expressions. Clojure uses the Java regular expression library, which has its own set of syntax rules. Other programming languages may use different rules, so it's important to be aware of this when using regular expressions in cross-language projects.
+
+## See Also:
+- [Clojure documentation for str/replace](https://clojuredocs.org/clojure.string/replace)
+- [Regular expression cheat sheet](https://www.rexegg.com/regex-quickstart.html)

@@ -10,65 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i dlaczego?
+Tworzenie tymczasowych plików to istotny krok w procesie programowania w Go. Polega on na tworzeniu plików tymczasowych, które są używane tylko do określonych celów, a następnie są usuwane. Programiści robią to często w celu przechowywania czasowych danych lub wykonywania operacji, które wymagają tymczasowych zasobów.
 
-Tworzenie tymczasowych plików jest ważnym aspektem programowania, ponieważ często potrzebujemy przechowywać tymczasowe dane lub kod w celu weryfikacji funkcjonalności lub rozwiązywania problemów. W tym artykule dowiesz się, jak w prosty sposób wykorzystać Go do tworzenia tymczasowych plików.
-
-## Jak to zrobić
-
-Aby utworzyć tymczasowy plik w Go, wystarczy użyć funkcji `TempFile` z biblioteki `io/ioutil` i przypisać ją do zmiennej. Następnie możemy wykorzystać tę zmienną do wykonywania operacji na pliku, takich jak pisanie lub odczyt.
+## Jak to zrobić:
+Poniżej przedstawione są przykłady kodu w języku Go, które pokazują, w jaki sposób można tworzyć tymczasowe pliki i korzystać z nich w swoim programie.
 
 ```Go
-package main
+// Importowanie pakietu "io/ioutil"
+import "io/ioutil"
 
-import (
-    "fmt"
-    "io/ioutil"
-)
+// Tworzenie tymczasowego pliku "example.txt" w bieżącym katalogu
+tempFile, err := ioutil.TempFile(".", "example.txt")
 
-func main() {
-    // Tworzenie tymczasowego pliku w bieżącym katalogu
-    tempFile, err := ioutil.TempFile(".", "temp")
-
-    // Sprawdzanie, czy wystąpił błąd
-    if err != nil {
-        fmt.Println(err)
-    }
-
-    // Zwrócenie nazwy pliku tymczasowego
-    fmt.Println("Nazwa pliku tymczasowego:", tempFile.Name())
-
-    // Zapisanie tekstu do pliku
-    tempFile.WriteString("Przykładowy tekst")
-
-    // Odczytanie tekstu z pliku
-    data, err := ioutil.ReadFile(tempFile.Name())
-
-    // Sprawdzanie, czy wystąpił błąd
-    if err != nil {
-        fmt.Println(err)
-    }
-
-    // Wyświetlenie odczytanego tekstu
-    fmt.Println("Zawartość pliku:", string(data))
+// Sprawdzenie czy nie ma błędu podczas tworzenia pliku
+if err != nil {
+    log.Fatal(err)
 }
+
+// Wyświetlenie nazwy i ścieżki tymczasowego pliku
+fmt.Println(tempFile.Name())
+
+// Zapisanie danych do pliku
+fmt.Fprintf(tempFile, "To jest przykładowy tekst")
+
+// Zamknięcie pliku
+tempFile.Close()
+```
+Wyjście:
+```Go
+./example554433221.txt
 ```
 
-Po uruchomieniu powyższego kodu, powinniśmy zobaczyć wyjście:
+## Deep Dive:
+Tworzenie tymczasowych plików jest często używane w celu uzyskania dostępu do tymczasowych zasobów lub przechowywania tymczasowych danych. Przykładowymi zastosowaniami tego procesu są testowanie funkcji zapisu danych do pliku lub przechowywanie danych w formie pliku zamiast używania bazy danych. Alternatywnym rozwiązaniem jest użycie pamięci RAM do przechowywania tymczasowych danych, ale może to prowadzić do problemów wydajnościowych i zwiększonego zużycia pamięci.
 
-```
-Nazwa pliku tymczasowego: ./temp921141634
-Zawartość pliku: Przykładowy tekst
-```
+W języku Go, proces tworzenia tymczasowych plików jest zapewniany przez pakiet "io/ioutil", który oferuje różne metody do tworzenia i używania tych plików. Plik tymczasowy będzie istniał tylko do momentu zamknięcia lub usunięcia go przez użytkownika.
 
-## Deep Dive
-
-Funkcja `TempFile` tworzy tymczasowy plik w bieżącym katalogu z nazwą rozpoczynającą się od prefiksu podanego w drugim parametrze. Domyślnym miejscem, w którym tworzony jest plik, jest katalog systemowy dla plików tymczasowych, który jest różny dla każdego systemu operacyjnego.
-
-Oprócz funkcji `TempFile`, istnieje również funkcja `TempDir`, która pozwala na utworzenie tymczasowego katalogu w podanej ścieżce. Użyteczne jest także wykorzystanie funkcji `Remove` z biblioteki `os`, która pozwala na usunięcie tymczasowego pliku lub katalogu po zakończeniu pracy z nim.
-
-## Zobacz także
-
-- [Dokumentacja biblioteki `io/ioutil` w języku Go](https://golang.org/pkg/io/ioutil/)
-- [Poradnik na temat obsługi plików w Go](https://gobyexample.com/reading-files)
-- [Artykuł o obsłudze błędów w języku Go](https://www.calhoun.io/when-nil-is-not-null-in-go/)
+## Zobacz też:
+- Dokumentacja pakietu "io/ioutil": https://golang.org/pkg/io/ioutil/
+- Przykładowe użycie tymczasowych plików w projekcie Go: https://github.com/golang/go/blob/master/src/cmd/go/internal/get/get_test.go

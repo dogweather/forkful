@@ -1,7 +1,7 @@
 ---
-title:                "Tulevaisuuden tai menneen päivän laskeminen"
-html_title:           "Gleam: Tulevaisuuden tai menneen päivän laskeminen"
-simple_title:         "Tulevaisuuden tai menneen päivän laskeminen"
+title:                "Päivämäärän laskeminen tulevaisuudessa tai menneisyydessä"
+html_title:           "Gleam: Päivämäärän laskeminen tulevaisuudessa tai menneisyydessä"
+simple_title:         "Päivämäärän laskeminen tulevaisuudessa tai menneisyydessä"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Dates and Times"
@@ -10,34 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi: Päivämäärän laskeminen tulevaisuutta tai menneisyyttä varten
-Monet sovellukset ja ohjelmistot vaativat päivämäärän laskemista tulevaisuuteen tai menneisyyteen liittyvissä toiminnoissaan. Esimerkiksi kalenterisovellus voi näyttää jäljellä olevien päivien määrän tärkeään tapahtumaan tai tehtävänmääräpäivään. Gleamin avulla tämä prosessi voidaan tehdä helposti ja tarkasti.
+## Mitä & Miksi? 
 
-## Miten: Koodiesimerkkejä ja tulosteenäytteitä
+Jokaisessa ohjelmassa tarvitaan usein päivämäärän laskemista tulevaisuuteen tai menneisyyteen. Tämä voi tuntua yksinkertaiselta asiaalta, mutta sen toteutus vaatii tarkkaavaisuutta ja hyvää ymmärrystä päivämääristä ja kalenterista. Timanttinen Gleam-ohjelmointikieli tarjoaa hyödyllisiä työkaluja päivämäärän laskemiseen ja käsittelyyn, mikä tekee siitä suositun valinnan monille kehittäjille. 
+
+## Näin teet sen:
+
+Määritä haluamasi päivämäärä ja haluttu määrä päiviä lisättäväksi tai vähennettäväksi. Gleam tarjoaa Date-moduulin, johon on sisällytetty useita käteviä funktioita päivämäärien laskemiseen ja muokkaamiseen. Tässä on esimerkki tulevaisuuden päivämäärän laskemisesta lisäämällä 10 päivää nykyhetkeen:
+
 ```Gleam
-import Gleam.Date
+import Date
 
-let tulevaPäivä = Date.addDays(Date.today(), 30) // Lisätään 30 päivää nykyiseen päivään
-
-let menneiTapahtuma = Date.subtractMonths(Date.today(), 3) // Vähennetään 3 kuukautta nykyisestä päivästä
-
-let päivämäärä = Date.fromString("2022-01-01") // Muunnetaan merkkijono päivämääriksi
-
-let ero = Date.diff(Date.fromString("2022-01-01"), Date.fromString("2021-10-15")) // Lasketaan aikaeron kahden päivämäärän välillä
-
-let onkoTuleva = Date.isAfter(Date.addDays(Date.today(), 30), Date.today()) // Tarkistetaan, onko tuleva päivä myöhemmin kuin nykyinen päivä
-
-let viikonPäivä = Date.getDayName(Date.today()) // Palauttaa nykyisen viikonpäivän nimen
-
-let kuukaudenPäivä = Date.getDayOfMonth(Date.today()) // Palauttaa nykyisen kuukauden päivän numeron
-
-io.print("21. huhtikuuta vuonna 2021 on ", Date.getDayOfWeek(Date.fromString("2021-04-21")), ".") // Tulostaa tiedon, onko kyseinen päivä viikonloppu
-
+let today = Date.now()
+Date.add_days(today, 10)
 ```
 
-## Syvempää tietoa: Päivämäärälaskennan taustaa
-Gleamin Date-moduuli tarjoaa monipuoliset työkalut päivämäärän laskentaan tulevaisuutta tai menneisyyttä varten. Moduuli sisältää erilaisia ​​toimintoja, kuten päivien, kuukausien ja vuosien lisäämistä ja vähentämistä, päivämäärien muuntamista merkkijonoista, päivämäärien välisten aikaerojen laskemista ja viikonpäivien sekä kuukauden päivämäärien palauttamista. Näitä toimintoja voidaan hyödyntää monissa erilaisissa sovelluksissa ja ne mahdollistavat tarkat ja joustavat päivämääräkäsittelyt.
+Tämän koodin suorittamisen jälkeen, `today`-muuttuja sisältää päivämäärän, joka on kymmenen päivää nykyhetkestä. Voit myös vähentää päiviä käyttämällä `subtract_days` -funktiota. 
 
-## Katso myös
-- [Gleamin virallinen dokumentaatio](https://gleam.run/documentation/)
-- [Gleam Date -moduulin tiedostokohtainen lähtö](https://github.com/gleam-lang/date/blob/master/src/gleam/calendar.gleam)
+## Lähempi syventyminen: 
+
+Päivämäärän laskeminen voi olla monimutkaisempi tehtävä kuin miltä se aluksi näyttää. Gleam-kielen Date-moduulin lisäksi on olemassa muita vaihtoehtoja, kuten Moment-moduuli, joka tarjoaa enemmän ominaisuuksia ja joustavuutta päivämäärien käsittelyyn. Vaikka päivämäärän käsittelyssä olisi myös mahdollista käyttää yksinkertaisia algoritmeja, on suositeltavaa käyttää valmiita moduuleita, sillä ne ovat yleensä tarkemmat ja turvallisemmat.
+
+Gleamin Date-moduulin implementaatio perustuu Gregoriaaniseen kalenteriin, jonka avulla voidaan käsitellä tarkasti kaikkia päivämääriä aina 15. lokakuuta 1582 lähtien. Kalenteriin liittyy kuitenkin joitain rajoituksia, jotka on hyvä ottaa huomioon päivämäärien laskemisessa, kuten karkausvuodet ja aikavyöhykkeet.
+
+## Katso myös: 
+
+Jos haluat oppia lisää Gleam-ohjelmointikielestä ja sen mahdollisuuksista, suosittelemme tutustumaan Gleamin viralliseen dokumentaatioon. Sieltä löytyy paljon hyödyllistä tietoa ja esimerkkejä, jotka auttavat sinua kehittämään päivämäärän laskemiseen liittyvää osaamistasi. Voit myös tutustua Moment-moduulin dokumentaatioon lisätäksesi ymmärrystäsi päivämäärien hallinnasta.
+
+Toivottavasti tämä artikkeli auttoi sinua ymmärtämään, miten Gleam-kielellä voi helposti laskea päivämääriä tulevaisuuteen ja menneisyyteen. Päivämäärien laskeminen saattaa vaikuttaa yksinkertaiselta, mutta se vaatii tarkkaavaisuutta ja oikeiden työkalujen käyttöä, jotta lopputulos olisi odotetun kaltainen. Onneksi Gleam-kielellä tämä tehtävä on helppo ja turvallinen toteuttaa. Hyvää ohjelmointia!

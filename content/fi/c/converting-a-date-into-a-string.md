@@ -1,7 +1,7 @@
 ---
-title:                "Päivämäärän muuttaminen merkkijonoksi"
-html_title:           "C: Päivämäärän muuttaminen merkkijonoksi"
-simple_title:         "Päivämäärän muuttaminen merkkijonoksi"
+title:                "Päivämäärän muuntaminen merkkijonoksi"
+html_title:           "C: Päivämäärän muuntaminen merkkijonoksi"
+simple_title:         "Päivämäärän muuntaminen merkkijonoksi"
 programming_language: "C"
 category:             "C"
 tag:                  "Dates and Times"
@@ -10,39 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä ja miksi?
+Päivämäärien muuntaminen merkkijonoksi tarkoittaa päivämäärien muuntamista erottimilla erotelluksi tekstimuodoksi. Ohjelmoijat tekevät tämän esimerkiksi käyttäjän syöttämän päivämäärän tallentamiseksi tai päivämäärän tulostamiseksi käyttökelpoisessa muodossa.
 
-Miksi haluaisit muuntaa päivämäärän merkkijonoksi? Tämä on hyödyllinen taito, jos haluat tallentaa tai tulostaa päivämäärän eri muodossa tai verrata päivämääriä toisiinsa.
-
-## Näin teet sen
+## Miten se tehdään:
+Esimerkkejä koodaamisesta ja esimerkkitulostuksista ```C ... ``` koodipalikoissa.
 
 ```C
 #include <stdio.h>
 #include <time.h>
 
-int main()
-{
-  time_t t = time(NULL);
-  struct tm *today = localtime(&t);
-  char str_date[20];
-  
-  // Muunnetaan päivämäärä merkkijonoksi muodossa DD.MM.YYYY
-  sprintf(str_date, "%02d.%02d.%04d", today->tm_mday, today->tm_mon + 1, today->tm_year + 1900);
-  
-  // Tulostetaan muunnettu päivämäärä
-  printf("Tänään on %s\n", str_date);
-  
-  return 0;
+int main() {
+    // Luo rakenne aika ja aseta haluttu päivämäärä
+    struct tm date = { .tm_mday = 31, .tm_mon = 12, .tm_year = 2020 - 1900 };
+    
+    // Tulosta päivämäärä merkkijonona
+    printf("%d.%d.%d", date.tm_mday, date.tm_mon, date.tm_year + 1900);
+    
+    return 0;
 }
 ```
-Tämä koodiesimerkki käyttää C:n time.h-kirjastoa ja sen sisältämiä toimintoja muuntaakseen nykyisen päivämäärän merkkijonoksi. Ensiksi time(NULL) hakee ajan kuluneena sekunteina ja tallentaa sen muuttujaan t. Sitten käytetään localtime-toimintoa muuntamaan t-ajan rakenteeksi, josta voimme hakea päivämäärä- ja kuukausiarvon sekä vuosiluvun. Lopuksi sprintf-toiminnolla muodostetaan merkkijono (DD.MM.YYYY) ja tallennetaan se str_date-muuttujaan. Tulostamalla tämän muuttujan, saamme nykyisen päivämäärän merkkijonona.
 
-## Syvempää tietoa
+Tulos:
 
-Päivämäärän muuntaminen merkkijonoksi on hyödyllinen taito monessa tilanteessa. C-kielessä tämä tapahtuu usein sprintf-toiminnolla, joka muuntaa erilaisia arvoja merkkijonoiksi. Aikaisemmissa versioissa C:stä, tämä toiminto oli altis ylivuototilanteille ja aiheutti turvallisuusriskejä, mutta nykyisessä C-versiossa oletusarvona on turvallisempi varianssikontrolli, joka sulkee pois nämä riskit.
+```
+31.12.2020
+```
 
-## Katso myös
+## Syvällinen sukellus:
+1. Historiallinen konteksti:
+Aiemmin ohjelmoijat joutuivat muokkaamaan päivämääriä manuaalisesti ja kovakoodaamaan ne ohjelmiin. Nykyään päivämäärien muuntaminen merkkijonoksi on helppoa ja kätevää käyttäen apuna valmiita funktioita.
+2. Vaihtoehtoiset tavat:
+Päivämäärän muuntaminen merkkijonoksi voidaan tehdä myös käyttämällä toisenlaisia funktioita tai kirjastoja, kuten `strftime()` tai `strptime()`.
+3. Toteutusyksityiskohdat:
+Päivämäärien muuntaminen merkkijonoksi voidaan toteuttaa esimerkiksi jakamalla päivämäärä parametreiksi, joista jokainen edustaa yhtä osaa (päivä, kuukausi, vuosi). Näitä parametreja hyödyntäen voidaan koostaa haluttu merkkijono.
 
-- [Aikojen käsittely C:ssä](https://www.sololearn.com/Course/C/)
-- [C-sprintf-toiminto](https://www.tutorialspoint.com/c_standard_library/c_function_sprintf.htm)
-- [C-kielen muotoilumerkinnät](https://www.tutorialspoint.com/c_standard_library/c_function_sprintf.htm)
+## Katso myös:
+- [C-kirjaston aikatyökalut](https://www.tutorialspoint.com/c_standard_library/c_function_struct_tm.htm)
+- [strftime-funktion dokumentaatio](https://www.cplusplus.com/reference/ctime/strftime/)
+- [strptime-funktion dokumentaatio](https://www.cplusplus.com/reference/ctime/strptime/)

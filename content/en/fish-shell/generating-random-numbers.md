@@ -10,56 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-Have you ever needed to generate random numbers for a project or program, but didn't want to hassle with complicated coding? Look no further! Using the Fish Shell, you can easily generate random numbers with just a few simple commands.
+Generating random numbers is a key function in programming that allows developers to create unpredictable and unbiased values. This is important for tasks such as generating unique IDs, creating randomized simulations, and creating game elements such as dice rolls. By incorporating random number generation into their code, programmers can add an element of chance and surprise to their applications.
 
-## How To
+## How to:
 
-Coding examples and sample output are given below in code blocks.
+Fish Shell has a simple built-in command for generating random numbers, `random`. It takes two optional parameters: a minimum value and a maximum value. If both parameters are omitted, the default values are 0 and 32767.
 
-```Fish Shell
-#!/usr/bin/fish
-# Generates 5 random numbers between 1 and 10
-for i in (seq 1 5)
-  echo (math random '(0+1)*10')
-end
 ```
-Output:
-```
-6.003245523
-1.9087369164
-3.4124398362
-9.8653829416
-5.3258921079
+# Generate a random number between 1 and 10
+Fish Shell> random 1 10
+5
+# Generate a random number between 0 and 100
+Fish Shell> random
+42
 ```
 
-```Fish Shell
-#!/usr/bin/fish
-# Generates a random number between 0 and 100
-echo (math random 0 100)
-```
-Output:
-```
-62.873593864
-```
+## Deep Dive:
 
-```Fish Shell
-#!/usr/bin/fish
-# Generates a random integer between 1 and 10
-echo (math random '(0+1)*10' | string replace . '')
-```
-Output:
-```
-7
-```
+Random number generation has been a topic of study in mathematics for centuries, and it's an essential component of various computer algorithms. There are alternative methods for generating random numbers, such as using pseudo-random number generators or utilizing atmospheric noise. However, the `random` command in Fish Shell uses a linear congruential generator (LCG) algorithm, which is a simple and efficient method for generating random numbers.
 
-## Deep Dive
+Fish Shell also offers the `uuidgen` command for creating universally unique identifiers (UUIDs), which are essentially random numbers with a specific structure. These are commonly used for creating unique IDs for database entries or for tracking individual devices.
 
-The `math random` command allows for the generation of random numbers in Fish Shell. The command takes in two optional arguments, a minimum and maximum value. If no arguments are given, `math random` will generate a random decimal between 0 and 1. By providing arguments, the command will generate a random number within the specified range. However, these numbers will still be in decimal form and may contain multiple digits after the decimal point. To generate whole numbers, the `string replace` command can be used to remove the decimal and any subsequent digits.
+## See Also:
 
-## See Also
+For more information on generating random numbers in Fish Shell, check out the official documentation:
+https://fishshell.com/docs/current/cmds/random.html
 
-- [Fish Shell Documentation](https://fishshell.com/docs/current/)
-- [Random number generation in Bash](https://linuxize.com/post/bash-generate-random-number/)
-- [Randomness in programming](https://en.wikipedia.org/wiki/Randomness_in_computing)
+To learn more about the LCG algorithm used in the `random` command, here's a detailed explanation:
+https://en.wikipedia.org/wiki/Linear_congruential_generator
+
+For a deeper dive into the importance and applications of random numbers in computer science, this article provides a good overview:
+https://www.investopedia.com/terms/r/random-number-generator.asp

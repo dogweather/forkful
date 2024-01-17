@@ -1,7 +1,7 @@
 ---
-title:                "Descargando una página web"
-html_title:           "Swift: Descargando una página web"
-simple_title:         "Descargando una página web"
+title:                "Descargar una página web."
+html_title:           "Swift: Descargar una página web."
+simple_title:         "Descargar una página web."
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "HTML and the Web"
@@ -10,52 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¿Qué y por qué?
+Descargar una página web es simplemente obtener el código HTML de una página de Internet y guardarlo en tu dispositivo. Los programadores hacen esto para acceder a la información de una página, como imágenes, texto o datos, para utilizarla en sus propias aplicaciones o herramientas.
 
-Descargar una página web es una tarea común en el desarrollo de aplicaciones y sitios web. Puede ser necesario para acceder a ciertos datos o para mostrar información específica en la pantalla. En este artículo, aprenderemos cómo descargar una página web utilizando el lenguaje de programación Swift.
+## ¿Cómo hacerlo?
+```
+Swift
+import UIKit
+import Foundation
 
-## Cómo hacerlo
+// Definir la URL de la página web que queremos descargar
+let url = URL(string: "https://google.com")!
 
-Para descargar una página web en Swift, utilizaremos la clase `URLSession`. Esta clase nos permitirá hacer peticiones HTTP y recibir los datos de respuesta. Aquí hay un ejemplo de cómo descargar una página web y mostrar su contenido en la consola:
+// Crear una sesión de URLRequest
+let request = URLRequest(url: url)
 
-```Swift
-if let url = URL(string: "https://example.com") {
-    
-    // Creamos una sesión con una configuración predeterminada
-    let session = URLSession(configuration: .default)
-    
-    // Creamos una tarea de datos utilizando la URL
-    let task = session.dataTask(with: url) { (data, response, error) in
-        
-        // Verificamos si hay algún dato de respuesta y si no hay ningún error
-        if let data = data, error == nil {
-            
-            // Convertimos los datos recibidos a una cadena de texto legible
-            if let pageContent = String(data: data, encoding: .utf8) {
-                
-                // Imprimimos el contenido de la página en la consola
-                print(pageContent)
-            }
-        }
+// Realizar la solicitud de descarga
+let task = URLSession.shared.dataTask(with: request) { data, response, error in
+    // Manejar los datos recibidos
+    if let data = data {
+        // Convertir los datos a una cadena de texto
+        let html = String(data: data, encoding: .utf8)
+        print(html)
     }
-    
-    // Iniciamos la tarea
-    task.resume()
 }
+// Iniciar la tarea
+task.resume()
 ```
 
-Este código nos ayudará a descargar la página web y almacenar su contenido en una variable de tipo `String`. Luego, podemos utilizar esa variable para mostrar el contenido en cualquier parte de nuestra aplicación.
-
-## Un vistazo más profundo
-
-Si queremos ser más avanzados en nuestra solicitud de descarga, podemos personalizar nuestra sesión utilizando la clase `URLSessionConfiguration`. Por ejemplo, podemos especificar el tiempo de espera de la solicitud o agregar encabezados personalizados a la petición.
-
-También podemos utilizar diferentes tipos de tareas para descargar una página web, como `downloadTask` para descargar el contenido de una URL en un archivo local.
-
-En resumen, la clase `URLSession` nos permite tener un mayor control sobre las solicitudes HTTP en nuestra aplicación, lo que facilita la descarga de páginas web y otro tipo de contenidos.
+## Profundizando
+Descargar una página web se ha vuelto una habilidad esencial para los programadores modernos, ya que nos permite utilizar información de diversas fuentes en nuestras aplicaciones. Además de utilizar la URLSession en Swift, hay otras formas de descargar una página web, como utilizar librerías de terceros o incluso hacerlo manualmente con sockets.
 
 ## Ver también
-
-- [Documentación oficial de Apple: URLSession](https://developer.apple.com/documentation/foundation/urlsession)
-- [Tutorial: Descargar y mostrar imágenes en Swift](https://www.hackingwithswift.com/example-code/libraries/how-to-download-and-parse-json)
-- [Libro: Swift: Desarrollo de aplicaciones para iOS de manera avanzada](https://www.amazon.es/Swift-Desarrollo-aplicaciones-avanzada-Crash/dp/8426725578)
+- [Apple Developer: URLSession](https://developer.apple.com/documentation/foundation/urlsession)
+- [Swifts: Getting Started with Network Requests](https://www.hackingwithswift.com/read/32/1/introduction)
+- [URLSession Class Reference](https://developer.apple.com/documentation/foundation/urlsession)

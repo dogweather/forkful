@@ -10,40 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que utilizar expressões regulares?
+O que é e Por Que Usar Expressões Regulares?
 
-Expressões regulares são uma ferramenta poderosa e útil para manipular e analisar dados em qualquer tipo de programação. Elas permitem que você procure por padrões específicos em uma string de texto, facilitando a extração de informações importantes e o tratamento de dados de forma eficaz.
+Expressões regulares são padrões de texto utilizados para procurar e manipular strings de caracteres em programas de computador. Programadores usam expressões regulares para facilitar a busca e substituição de padrões específicos de texto, tornando o processo mais rápido e eficiente.
 
-Em suma, usar expressões regulares pode economizar muito tempo e esforço ao lidar com grandes quantidades de dados ou necessidades complexas de manipulação de texto.
-
-## Como utilizar expressões regulares no Fish Shell
-
-Para utilizar expressões regulares no seu código Fish Shell, há algumas coisas importantes para lembrar. Primeiro, você precisará do comando `grep` para fazer a busca e manipulação de texto. Você pode usá-lo dessa maneira:
+Como Fazer:
 
 ```Fish Shell
+# Para procurar um padrão específico de texto, use o comando "grep" seguido de um padrão e um arquivo
 grep "padrão" arquivo.txt
+
+# Para substituir um padrão por outro, utilize o comando "sed" com a sintaxe "s/padrão/substituição/"
+sed "s/padrão/substitução/" arquivo.txt
+
+# Para evitar erros de digitação, use a opção "-i" para fazer as mudanças diretamente no arquivo
+sed -i "s/padrão/substituição/" arquivo.txt
 ```
 
-Isso irá procurar por todas as ocorrências do "padrão" no arquivo.txt e imprimi-las no seu terminal.
+Deep Dive:
 
-Você também pode usar expressões regulares em estruturas de loop e comandos de substituição de texto. Por exemplo, se você quiser substituir todas as letras maiúsculas por minúsculas em um arquivo, pode usar o seguinte comando:
+Expressões regulares tiveram suas origens em ferramentas de busca e edição de texto na década de 1950. Hoje em dia, existem várias alternativas para manipulação de texto, como AWK, Perl e Python, mas expressões regulares ainda são amplamente utilizadas devido à sua simplicidade e eficiência. A linguagem de programação Fish Shell possui suporte nativo para expressões regulares, facilitando o seu uso em tarefas rotineiras de programação.
 
-```Fish Shell
-sed -e 's/[A-Z]/\L&/g' arquivo.txt
-```
+Veja também:
 
-Este comando usa `[A-Z]` como o padrão de busca e `\L&` como a expressão de substituição, que irá converter qualquer letra maiúscula encontrada em sua correspondente minúscula.
-
-## Aprofundando-se em expressões regulares
-
-As expressões regulares podem ser usadas para uma variedade de tarefas de manipulação de texto, incluindo a busca de padrões específicos, filtragem de dados, validação de entradas e muito mais. Elas possuem uma sintaxe lógica e flexível que permite a criação de padrões complexos para atender às suas necessidades.
-
-Alguns conceitos importantes a se lembrar são os caracteres de escape, que permitem que certos caracteres sejam interpretados literalmente, e os metacaracteres, que fornecem funcionalidades especiais, como delimitar grupos de pesquisa ou especificar a quantidade de ocorrências de um padrão.
-
-Existem também diferentes tipos de expressões regulares, como as greedy e non-greedy, que diferem na forma como lidam com padrões repetidos. É importante explorar e praticar diferentes padrões e expressões para se tornar mais proficiente no seu uso.
-
-## Veja também
-
-- [Referência Fish Shell para expressões regulares](https://fishshell.com/docs/current/index.html#regular-expressions)
-- [Tutorial de expressões regulares do RegexOne](https://regexone.com/)
-- [Guia de expressões regulares do Unix](https://www.digitalocean.com/community/tutorials/using-grep-regular-expressions-to-search-for-text-patterns-in-linux)
+- [Documentação oficial da Fish Shell](https://fishshell.com/docs/current/index.html)
+- [Tutorial sobre Expressões Regulares na Fish Shell](https://fishshell.com/docs/current/tutorial.html#using-regular-expressions)

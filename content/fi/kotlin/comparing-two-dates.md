@@ -10,37 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä & Miksi?
+Päivämäärien vertaaminen on yksinkertainen tapa selvittää, mikä päivämäärä on aikaisempi tai myöhempi toiseen verrattuna. Tämä on hyödyllistä esimerkiksi silloin, kun haluat tarkistaa, onko jokin tapahtuma jo tapahtunut vai odotatko sitä vielä. Ohjelmoijat käyttävät tätä toimintoa usein monimutkaisempien sovellusten luomiseen, jotka vaativat päivämäärien vertailua ja päivämääriin liittyvää logiikkaa.
 
-Kaksi päivämäärää voi joskus olla tarpeen vertailla esimerkiksi ohjelmoinnin kontekstissa, kuten tarkasteltaessa, kumpi päivämäärä on myöhempi tai oliko tietty tapahtuma ennen vai jälkeen toisen päivämäärän. Tämä artikkeli tarjoaa yksinkertaisen ja helpon tavan vertailla kahta päivämäärää käyttäen Kotlin-ohjelmointikieltä.
-
-## Kuinka
-
-Vertailemalla kahta päivämäärää Kotlinissa on useita eri tapoja, riippuen siitä mitä haluat tarkalleen saada selville. Tässä esittelemme kaksi yleisintä tapaa vertailla päivämääriä ja niiden tulostusta.
-
+## Näin teet sen:
+### Yksinkertainen vertailu:
 ```Kotlin
-// Luodaan ensimmäinen päivämäärä
-val date1 = LocalDate.of(2020, 11, 15)
-// Luodaan toinen päivämäärä
-val date2 = LocalDate.of(2020, 11, 20)
+val ensimmäinenPäivä = LocalDate.parse("2021-01-01")
+val toinenPäivä = LocalDate.parse("2021-01-05")
 
-// Tapa 1: Käytetään isAfter() ja isBefore() metodeita
-println(date1.isAfter(date2)) //tulostaa "false"
-println(date1.isBefore(date2)) //tulostaa "true"
-
-// Tapa 2: Käytetään compareTo() metodia, joka palauttaa 0 jos päivämäärät ovat samat,
-// negatiivisen luvun jos date1 on ennen date2 ja positiivisen luvun jos date1 on date2 jälkeen
-println(date1.compareTo(date2)) //tulostaa "-5"
+if (ensimmäinenPäivä < toinenPäivä) {
+  println("Ensimmäinen päivä on ennen toista päivää.")
+} else if (ensimmäinenPäivä > toinenPäivä) {
+  println("Ensimmäinen päivä on jälkeen toista päivää.")
+} else {
+  println("Päivämäärät ovat samat.")
+}
+```
+Tulostus:
+```
+Ensimmäinen päivä on ennen toista päivää.
 ```
 
-Tarkemman vertailun tekemiseksi voit myös käyttää päivämäärien sisältämiä arvoja, kuten päivä, kuukausi tai vuosi, ja vertailla niitä haluamallasi tavalla.
+### Tarkempi vertailu:
+```Kotlin
+val ensimmäinenPäivä = LocalDate.parse("2021-01-01")
+val toinenPäivä = LocalDate.parse("2021-01-05")
 
-## Syvempi sukellus
+if (ensimmäinenPäivä.isBefore(toinenPäivä)) {
+  println("Ensimmäinen päivä on ennen toista päivää.")
+} else if (ensimmäinenPäivä.isAfter(toinenPäivä)) {
+  println("Ensimmäinen päivä on jälkeen toista päivää.")
+} else {
+  println("Päivämäärä on sama.")
+}
+```
+Tulostus:
+```
+Ensimmäinen päivä on ennen toista päivää.
+```
 
-Päivämäärien vertailu perustuu niiden sisältämiin arvoihin, kuten päivään, kuukauteen ja vuoteen. Tämä tarkoittaa sitä, että vertailun lopputulos voi vaihdella eri aikavyöhykkeissä. Jos haluat suorittaa tarkemman vertailun, sinun kannattaa tutustua Java.time-paketin dokumentaatioon, joka tarjoaa kattavat työkalut päivämäärien käsittelyyn Kotlinissa.
+## Syventävä tieto:
+Ennen Java 8:aa päivämääriä vertailtiin käyttämällä `Date`-luokan `before()` ja `after()` metodeita. Nykyään Kotlinin `LocalDate`-luokka tarjoaa oman `isBefore()` ja `isAfter()` metodit päivämäärien vertailuun. Lisäksi jotkin kolmannen osapuolen kirjastot, kuten Joda-Time, tarjoavat kattavampia päivämäärätoimintoja.
 
-## Katso myös
-
-- [Kotlin Documentation](https://kotlinlang.org/docs/datetime.html)
-- [Java.time Documentation](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html) 
-- [Comparing LocalDate objects in Java](https://www.geeksforgeeks.org/comparing-localdate-objects-in-java/)
+## Katso myös:
+- [Kotlinin LocalDate-dokumentaatio](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-local-date/)
+- [Java 8:n LocalDate-dokumentaatio](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
+- [Joda-Time-kirjaston kotisivu](https://www.joda.org/joda-time/)

@@ -1,7 +1,7 @@
 ---
-title:                "Satunnaisten numeroiden luominen"
-html_title:           "Elm: Satunnaisten numeroiden luominen"
-simple_title:         "Satunnaisten numeroiden luominen"
+title:                "Satunnaisten numeroiden generointi"
+html_title:           "Elm: Satunnaisten numeroiden generointi"
+simple_title:         "Satunnaisten numeroiden generointi"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Numbers"
@@ -10,44 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+Mitä & Miksi?
+Satunnaislukujen generointi tarkoittaa lukujen luomista, jotka eivät seuraa peräkkäistä järjestystä tai kaavaa. Tätä tehdään usein ohjelmoinnissa sattumanvaraisen tai arvaamattoman toiminnan luomiseksi.
 
-Satunnaislukujen luominen on tärkeä osa ohjelmointia monissa sovelluksissa. Ne voivat auttaa luomaan monipuolisia toimintoja, kuten arpajaisia, salasanoja ja satunnaisia tietokannan viittauksia. Elm tarjoaa tehokkaan ja luotettavan tavan generoida satunnaisia lukuja, joten saatat haluta oppia lisää tästä tärkeästä taidosta.
+Miksi ohjelmoijat tekevät sitä? Satunnaislukujen generointi on hyödyllistä esimerkiksi peleissä, simulaatioissa tai kaikissa ohjelmissa, jotka tarvitsevat sattumanvaraisen toiminnan elementin.
 
-## Miten
-
-Satunnaislukujen luominen Elm:llä on helppoa. Voit käyttää `Random` kirjastoa, joka tarjoaa useita toimintoja satunnaisten lukujen generoimiseen. Tässä on yksinkertainen esimerkki, jossa generoidaan luku väliltä 1-10:
-
+Miten teet sen:
 ```Elm
-import Random exposing (int, step)
+import Random
 
-generateRandomNumber : Random.Generator Int
-generateRandomNumber =
-  Random.step (Random.int 1 10)
-
-main =
-  Random.generate generateRandomNumber
+--generoi kokonaisluku välillä 1-10
+Random.int 1 10
+--output: 6
 ```
 
-Tässä koodin esimerkissä `Random` kirjastosta tuodaan `int` ja `step` toiminnot. `step` toiminto ottaa parametrina `Random.Generator` tyypin ja `Random.int` luo satunnaisen luvun annetulta väliltä. Lopuksi `Random` kirjasto käyttää `generate` toimintoa, joka käyttää `generateRandomNumber` funktiota ja luo satunnaisen luvun.
-
-Suoritettaessa tätä koodia, voit odottaa tuloksena jotakin seuraavan kaltaista:
-
+Voit myös käyttää seediä, jotta saat aina saman satunnaisluvun.
+```Elm
+Random.initialSeed 42
+    |> Random.int 1 10
+--output: 4
 ```
-Ok 7 : Result String Int
-```
 
-Tämä tarkoittaa, että satunnainen luku on luotu onnistuneesti ja sen arvo on 7.
+Syvemmälle:
+Satunnaislukujen generointi ei ole uusi konsepti. Se oli ensimmäisen kerran esitelty vuonna 1946 Bell Labsin tutkijoiden julkaisemassa artikkelissa. Alternatiivina Elmille, voit käyttää muita kieliä, kuten JavaScript, joka sisältää myös satunnaislukujen generoinnin toiminnon.
 
-## Syvällisempi sukellus
+Jos olet kiinnostunut tarkemmista yksityiskohdista, Elm käyttää satunnaislukujen luomiseen XorShift-algoritmia, joka on nopea ja luotettava tapa generoida satunnaislukuja.
 
-Satunnaislukujen generoiminen Elm:llä perustuu `Random` kirjastoon ja sen toimintoihin. Voit käyttää esimerkiksi `float` toimintoa, jos haluat generoida satunnaisia liukulukuja. `int` ja `float` toiminnot hyväksyvät myös `min` ja `max` parametrit, joiden avulla voit määrittää halutun välillä.
-
-Voit myös käyttää `stepWith` toimintoa, joka ottaa parametreina funktion ja `Random.Generator` tyypin. Tämä mahdollistaa monimutkaisempien satunnaislukujen generoinnin, kuten esimerkiksi luvun pohjalta toisen luvun luonti tai tiettyjen ehtojen täyttymisen tarkistaminen ennen luvun generointia.
-
-Olennaista on kuitenkin pitää mielessä, että satunnaisluvut eivät ole täysin "satunnaisia" tietokoneessa, vaan niitä generoidaan tietynlaisen kaavan avulla. Tästä syystä niitä ei tulisi käyttää tietoturvasovelluksissa tai missään muussa tilanteessa, jossa todellinen satunnaisuus on välttämätön.
-
-## Katso myös
-
-- OfBorg satunnaislukugeneraattori Elm-ympäristöön: https://github.com/elm-community/elm-random-extra
-- Elm Random kirjaston dokumentaatio: https://package.elm-lang.org/packages/elm/random/latest/Random
+Katso myös:
+- [Elm Random -dokumentaatio](https://package.elm-lang.org/packages/elm/random/latest/)
+- [Satunnaislukujen generointi JavaScriptillä](https://www.w3schools.com/js/js_random.asp)

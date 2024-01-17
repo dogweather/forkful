@@ -1,7 +1,7 @@
 ---
-title:                "Análise de HTML"
-html_title:           "Rust: Análise de HTML"
-simple_title:         "Análise de HTML"
+title:                "Analisando HTML"
+html_title:           "Rust: Analisando HTML"
+simple_title:         "Analisando HTML"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "HTML and the Web"
@@ -10,58 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+## O quê e por quê?
 
-Existem muitas razões pelas quais alguém pode querer aprender a fazer o parse (analisar) de HTML em Rust. Pode ser para criar um web crawler (rastreador de páginas na web), criar um web scraper (extrator de informações em páginas web) para coletar dados ou até mesmo para criar um site ou aplicativo web personalizado.
+Parsing HTML é o processo de analisar um documento HTML e extrair informações específicas dele. Programadores utilizam o parsing HTML para automatizar tarefas, como por exemplo, extrair dados de uma página web para serem usados em outro lugar.
 
-## Como fazer
-
-Fazer o parse de HTML em Rust pode ser mais simples do que imagina. Primeiro, precisamos importar a biblioteca "html" em nosso código:
-
+## Como fazer:
 ```Rust
-use html::{parse_document, parse_fragment, HTMLElement};
-```
-
-Em seguida, podemos usar a função parse_document para analisar um documento HTML completo:
-
-```Rust
-let document = r#"
+use scraper::{Html, Selector};
+ 
+fn main() {
+    // Cria uma variável com o documento HTML para ser analisado
+    let html = r#"<!DOCTYPE html>
     <html>
         <head>
-            <title>Rust HTML Parser</title>
+            <title>Exemplo de página</title>
         </head>
         <body>
-            <h1>Welcome to my website!</h1>
-            <div>
-                <p>This is an example of parsing HTML in Rust.</p>
-            </div>
+            <p>Este é um parágrafo de exemplo.</p>
+            <ul>
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+            </ul>
         </body>
-    </html>
-"#;
-let parsed_document = parse_document(document).unwrap();
+    </html>"#;
+    
+    // Cria um seletor para os elementos <li>
+    let selector = Selector::parse("li").unwrap();
+    
+    // Converte o documento HTML em uma estrutura de árvore
+    let document = Html::parse_document(html);
+    
+    // Utiliza o seletor para buscar os elementos <li>
+    for li in document.select(&selector) {
+        // Imprime o conteúdo de cada elemento <li>
+        println!("{}", li.inner_html());
+    }
+}
+```
+Output:
+```
+Item 1
+Item 2
+Item 3
 ```
 
-Também podemos usar a função parse_fragment para analisar apenas uma parte específica de um documento HTML:
+## Aprofundando:
+O parsing HTML é um processo fundamental para a web, pois permite que páginas sejam lidas e interpretadas por computadores. Existem diferentes formas de realizar o parsing HTML, como a utilização de bibliotecas ou ferramentas específicas para essa tarefa.
 
-```Rust
-let fragment = r#"
-    <div>
-        <p>This is an example of parsing HTML in Rust.</p>
-    </div>
-"#;
-let parsed_fragment = parse_fragment(fragment).unwrap();
-```
-
-A partir daqui, podemos usar as funções e métodos da biblioteca para acessar e manipular os elementos HTML, como obter o conteúdo de um elemento específico ou adicionar uma classe a ele.
-
-## Mergulho profundo
-
-A biblioteca "html" em Rust é baseada na especificação HTML DOM (Document Object Model), o que significa que a estrutura e os métodos da biblioteca são bastante similares aos do JavaScript. Isso torna a aprendizagem e uso da biblioteca mais intuitivo para aqueles que já têm experiência em fazer o parse de HTML usando outras linguagens.
-
-Além disso, a biblioteca também suporta parsing de HTML5, o que significa que é possível analisar documentos HTML mais complexos e modernos com facilidade.
-
-## Veja também
-
-- [Documentação da biblioteca html](https://docs.rs/html/)
-- [Exemplos de uso da biblioteca html](https://github.com/servo/html5ever/tree/master/html5ever/examples)
-- [Tutorial de Rust para iniciantes](https://www.rust-lang.org/pt-BR/learn/get-started)
+## Veja também:
+- [Documentação oficial do Rust sobre parsing HTML](https://docs.rs/scraper/0.9.0/scraper/)
+- [Exemplo prático de parsing HTML com Rust](https://www.taniarascia.com/web-scraping-with-rust/)
+- [Outra biblioteca de parsing HTML para Rust](https://github.com/selects/select.rs)
+- [Ferramenta para testar seletores e realizar parsing HTML online](https://try.jsoup.org/)

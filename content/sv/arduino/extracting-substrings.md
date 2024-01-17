@@ -1,7 +1,7 @@
 ---
-title:                "Utvinna substrängar"
-html_title:           "Arduino: Utvinna substrängar"
-simple_title:         "Utvinna substrängar"
+title:                "Extrahera delsträngar"
+html_title:           "Arduino: Extrahera delsträngar"
+simple_title:         "Extrahera delsträngar"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Strings"
@@ -10,33 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
-En viktig del av programmering är att kunna hantera textsträngar på ett effektivt sätt. Genom att extrahera delar av en textsträng kan du bearbeta och manipulera den på ett mer precist sätt. Detta är speciellt användbart när du arbetar med användarinput eller sensorvärden.
+## Vad & Varför?
+Att extrahera substrängar är när man tar en del av en större text och använder den enskilda delen på ett separat sätt. Detta kan göras av programmerare för att effektivt hantera och manipulera data.
 
-## Hur man gör
-Extrahera en del av en textsträng genom att använda **substring** funktionen i Arduino. Här är ett exempel på hur man kan använda funktionen för att ta ut en del av en textsträng med hjälp av indexnumren för start- och slutpositionen:
-```Arduino 
-String text = "Hej alla Arduino entusiaster!";
-String substring = text.substring(4, 8);
+## Hur man gör:
+Det är enkelt att extrahera substrängar i Arduino. Du behöver bara använda funktionen ```substring()``` och ange vilken del av texten du vill extrahera och på vilket sätt du vill använda den.
 
-Serial.println(substring); // Output: "alla"
+Exempel:
+```
+String text = "Hej! Det här är en text.";
+String extraheradText = text.substring(4, 13); // Extraherar "Det här är"
 ```
 
-Du kan också använda **indexOf** funktionen för att hitta indexnumret för en specifik symbol eller bokstav i textsträngen. Sedan kan du använda **substring** funktionen för att extrahera texten från detta index och framåt. Till exempel:
-```Arduino 
-String text = "Jag älskar att koda med Arduino!";
-int index = text.indexOf("koda");
-String substring = text.substring(index);
-
-Serial.println(substring); // Output: "koda med Arduino!"
+Resultat:
+```
+extraheradText = "Det här är"
 ```
 
-## Djupdykning
-För att bättre förstå hur substring funktionen fungerar är det viktigt att förstå det binära representationsformatet för text i en dator. Text är representerad som en serie av binära siffror, där varje tecken har en specifik siffra som representerar det i en ASCII-tabell. När du använder substring funktionen tar den dessa binära värden och konverterar dem till en förståelig textsträng baserat på teckenkoderna.
+## Djupdykning:
+Det finns flera olika sätt att extrahera substrängar på, men i Arduino är det vanligaste sättet att använda sig av funktionen ```substring()```.
 
-Det är också värt att notera att Arduino har en begränsning för storleken på en textsträng. Det är viktigt att hålla detta i åtanke när du använder substring funktionen för att undvika minnesöverskridning.
+Historiskt sett har substrängar varit användbara för att samla och hantera data, särskilt i tidiga datorprogram. I dag används det fortfarande flitigt i programmering för att hantera och manipulera textbaserade data.
 
-## Se även
-För mer information om hur du hanterar textsträngar i Arduino, läs gärna följande artiklar:
-- [Arduino Reference - substring](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/substring/)
-- [Arduino Reference - indexOf](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/indexof/)
+Det finns också alternativ till att använda ```substring()```, såsom att använda andra metoder som ```indexOf()``` och ```split()```. Dessa kan också användas för att extrahera substrängar, men i vissa fall kan de vara mindre effektiva.
+
+För implementeringsdetaljer om funktionen ```substring()```, kan du titta på Arduinos dokumentation eller läsa källkoden på GitHub.
+
+## Se även:
+- [Arduinos dokumentation om ```substring()```](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/substring/)
+- [Källkoden för ```substring()``` på GitHub](https://github.com/arduino/ArduinoCore-avr/blob/master/cores/arduino/WString.cpp#L1515)
+- [Andra funktioner för att manipulera text i Arduino](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/)

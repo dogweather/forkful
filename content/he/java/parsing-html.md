@@ -1,7 +1,7 @@
 ---
-title:                "המרת HTML לקוד מכונה"
-html_title:           "Java: המרת HTML לקוד מכונה"
-simple_title:         "המרת HTML לקוד מכונה"
+title:                "פענוח HTML"
+html_title:           "Java: פענוח HTML"
+simple_title:         "פענוח HTML"
 programming_language: "Java"
 category:             "Java"
 tag:                  "HTML and the Web"
@@ -10,36 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## למה
+מה זה parsing HTML ולמה מתכנתים עושים את זה?
 
-מנסות לקרוא על כלי מה מה שאת/ה צריך/ה כדי להתחיל לגלגל לקרוא HTML? איך HTML משמש נשים עם חלקי גוף וכן על כלי משאית ומוצאים סוגי מסים וכן בלים דגמתית.
+הפרסום של HTML הוא תהליך של קריאת קובץ HTML והמרה שלו למבנה נתונים מובהק בשפה שהוא קשור אליה, כמו למשל Java. זה מאפשר למתכנתים לקרוא ולעבוד עם נתונים באופן מבוסס של HTML, כך שהם יכולים לעצב וליצור אפליקציות ואתרי אינטרנט.
 
-## איך לעשות
+איך לעשות זאת?
 
-הפיות לעשות דגמתית עבור כלי ואמצעי התפעלקנאי כדי לקרוא ולפעל פעולות על גבי HTML כלי. שלשתי משורות קוד זה עבור התיקייה בשם "דגמתית" ויתחיל להדפס את מה שנמצא בתוך כל אלמנט תג פעולות.
+הנה דוגמא פשוטה של פריסת HTML עם שימוש בקוד Java:
 
-```Java
-String url = "https://www.example.com";
+```
+// ייבוא מחלקות נדרשות
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.URL;
 
-// Create a new HTML document object
-Document document = Jsoup.connect(url).get();
+public class HTMLParser {
 
-// Get all elements with the "example" class
-Elements exampleElements = document.getElementsByClass("example");
+   public static void main(String[] args) throws IOException {
 
-// Loop through the elements and print their text content
-for (Element el : exampleElements) {
-    System.out.println(el.text());
+      // יצירת קישור לכתובת אתר
+      URL url = new URL("https://www.example.com/");
+      
+      // קריאת קובץ HTML עם שימוש בפעולת BufferedReader
+      BufferedReader br = new BufferedReader(new InputStreamReader(url.openStream()));
+      String line;
+      
+      // קריאת כל קו בקובץ והדפסתו למסך
+      while ((line = br.readLine()) != null) {
+         System.out.println(line);
+      }
+      
+      // סגירת BufferedReader
+      br.close();
+   }
 }
 ```
 
-בפנים הדגמות המוצגות, תוכלו להשתמש בכל אחת מהפונקציות הזמינות בכלי זה כדי לקרוא ולפעל על גבי שלך HTML. כמו כן, ישנם טיפים וטכניקות האפשרויות בכלי זה שנותנים את הכוח לך לכתוב כלי מהיותר יעיל ומהיר.
+כתוצאה מהקוד לעיל, נוכל לקבל את התוכן המלא של האתר שלנו ולעבוד עם הנתונים המכילים אותו.
 
-## טמונות עמוק
+עומק נוסף
 
-אתרים משונים ומספיק נשים יכולות להיות מאוד יעילים כדי להשתמש בכלי זה בכדי לקרוא ולטפל בתוכן ה-HTML שלהם. תוכלו לעשות זאת על ידי קריאת הדף באמצעות מזלג, הכוונה לכלי נלווה על ידי קראת ומחרוזות נטוי. הבדלים טכנולוגי הבדלים תוכלו לשלוט באיכות והכנסת מרימובס תכונות לאינטרנט מחירים נמוכים למטה ממוקדי דיגיטל נטויים.
+עומק נוסף של פריסת HTML כולל היסטוריה ואלטרנטיבות, עם מידע נוסף על איך זה עובד ואיך להפעיל את הקוד.
 
- 
-## ראה גם
+ראו גם
 
-כדי לדעת יותר על HTML כלי ואיך זה יכול להיות מועיל עבורך, ת
+כדי לקבל מידע נוסף על השתמשות בפריסת HTML בשפת Java, כדאי לקרוא את המאמר הבא: https://www.baeldung.com/java-html-parsing.

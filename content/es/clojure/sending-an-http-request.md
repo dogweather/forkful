@@ -1,7 +1,7 @@
 ---
-title:                "Enviando una solicitud http."
-html_title:           "Clojure: Enviando una solicitud http."
-simple_title:         "Enviando una solicitud http."
+title:                "Enviando una solicitud http"
+html_title:           "Clojure: Enviando una solicitud http"
+simple_title:         "Enviando una solicitud http"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "HTML and the Web"
@@ -10,51 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Por qué
+Introducción a la Programación Con Clojure para Realizar Solicitudes HTTP
 
-Los usuarios de Clojure se pueden encontrar en situaciones en las que necesitan comunicarse con un servidor utilizando el protocolo HTTP. Ya sea para obtener datos de una API o enviar información a un servicio en línea, es importante saber cómo enviar una solicitud HTTP desde un programa en Clojure.
+¡Saludos, programadores! Hoy vamos a sumergirnos en el emocionante mundo de Clojure, especialmente en cómo podemos utilizarlo para realizar solicitudes HTTP. Si eres un principiante en el mundo de la programación, no te preocupes, ¡este artículo es para ti!
 
-## Cómo hacerlo
+## ¿Qué y Por Qué?
 
-Para enviar una solicitud HTTP en Clojure, primero debes importar la librería `clojure.http.client` utilizando la función `require`.
+Enviar una solicitud HTTP es una forma de comunicación entre dos sistemas o aplicaciones a través de internet. En términos simples, es como pedirle a alguien que haga algo por nosotros en línea. Los programadores usan solicitudes HTTP para obtener datos de un servidor, enviar formularios o incluso realizar operaciones como compras en línea.
 
-```Clojure
-(require '[clj-http.client :as client])
+## Cómo:
+
+Para realizar una solicitud HTTP en Clojure, primero debemos importar la biblioteca `clj-http`. Luego, podemos utilizar la función `clj-http.client/get` para especificar la URL a la que queremos realizar la solicitud y qué tipo de solicitud queremos hacer (GET, POST, PUT, etc.). A continuación, podemos utilizar la función `:as` junto con un mapa para especificar los encabezados y los parámetros que queremos enviar en la solicitud.
+
+```Clojure 
+(ns mi-proyecto.http
+  (:require [clj-http.client :as client]))
+
+(def respuesta (client/get "https://mi-servidor.com/api" :as {:headers {"Content-Type" "application/json"}
+                                                             :params {:id 1234}
+                                                             :body "Mi cuerpo de solicitud"}))
 ```
 
-Luego, puedes utilizar la función `client/get` para enviar una solicitud `GET` o la función `client/post` para enviar una solicitud `POST`. Ambas funciones aceptan dos parámetros: la URL a la que se enviará la solicitud y un mapa con opciones adicionales.
+La variable `respuesta` devolverá un mapa con diferentes claves, como `:status` para el estado de la solicitud, `:headers` para los encabezados de la respuesta y `:body` para el cuerpo de la respuesta.
 
-Por ejemplo, si queremos enviar una solicitud `GET` a la URL "https://jsonplaceholder.typicode.com/todos/1", podemos hacerlo de la siguiente manera:
+## Deep Dive:
 
-```Clojure
-(client/get "https://jsonplaceholder.typicode.com/todos/1")
-```
+Como se mencionó anteriormente, `clj-http` es una biblioteca de Clojure que nos permite enviar solicitudes HTTP. Sin embargo, también existen otras opciones, como `http-kit`, que es más ligera que `clj-http` y ofrece una API similar. Además, podemos utilizar la biblioteca `clojure.java.io` para construir nuestras propias funciones personalizadas para realizar solicitudes HTTP.
 
-Esto devolverá un `hash-map` con la respuesta del servidor. En este caso, el resultado sería el siguiente:
+En cuanto a la implementación, Clojure aprovecha su inmutabilidad para manejar solicitudes HTTP de forma más eficiente. Esto significa que podemos realizar múltiples solicitudes a la vez sin preocuparnos por compartir datos entre ellas. Además, Clojure también utiliza secuencias de transductores para manejar los datos de manera más eficiente, lo que puede resultar útil al trabajar con grandes conjuntos de datos.
 
-```Clojure
-{:status 200, :headers {"content-type" "application/json; charset=utf-8" "content-length" "83" "connection" "close" "vary" "Origin" "access-control-allow-methods" "GET, POST" "access-control-allow-origin" "*"}, :body "{\"userId\": 1, \"id\": 1, \"title\": \"delectus aut autem\", \"completed\": false}" :trace-redirects [] :original-uri "https://jsonplaceholder.typicode.com/todos/1"}
-```
+## Ver También:
 
-Si deseas enviar una solicitud `POST`, puedes pasar un tercer parámetro en forma de mapa con los datos que deseas enviar al servidor.
-
-```Clojure
-(client/post "https://jsonplaceholder.typicode.com/todos" {:body {:title "Mi nueva tarea" :completed false}})
-```
-
-Esto enviará una solicitud `POST` a la URL especificada con la información proporcionada en el cuerpo de la solicitud en formato JSON.
-
-## Profundizando
-
-La librería `clj-http` tiene muchas más opciones que puedes utilizar para personalizar tus solicitudes HTTP. Algunas de estas opciones incluyen:
-
-- `:headers` - un mapa con encabezados adicionales que deseas incluir en la solicitud.
-- `:timeout` - un número en milisegundos que determina cuánto tiempo esperar antes de abortar la solicitud.
-- `:basic-auth` - un mapa con las credenciales de autenticación básica en caso de que sea necesario.
-- `:multipart?` - una bandera booleana que indica si la solicitud debe ser enviada con formato `multipart` en lugar de `form-urlencoded`.
-
-Puedes encontrar más información sobre estas opciones y otras en la documentación oficial de `clj-http`.
-
-# Ver también
-- [Documentación oficial de clj-http](https://github.com/dakrone/clj-http)
-- [Tutorial de HTTP con Clojure](https://www.clojure-data.cn/doc/book-http.html)
+- Puedes encontrar más información sobre `clj-http` en [su documentación](https://github.com/dakrone/clj-http)
+- Si te interesa aprender más sobre `http-kit`, te recomendamos [este artículo](http://charsequence.blogspot.com/2015/10/experiences-with-http-client-libraries.html)
+- Y si quieres sumergirte aún más en Clojure, puedes explorar [su sitio oficial](https://clojure.org/)

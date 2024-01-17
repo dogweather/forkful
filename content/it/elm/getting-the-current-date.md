@@ -10,75 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché 
- Se ti piace programmare con un linguaggio funzionale e vuoi imparare qualcosa di nuovo, allora conoscere come ottenere la data corrente in Elm potrebbe essere un'ottima sfida per te.
+## Cosa & Perché?
 
-## Come Fare
-Per ottenere la data corrente in Elm, è necessario utilizzare il modulo `Time`. Questo modulo fornisce una funzione chiamata `now`, che restituisce un valore `Posix` rappresentante il timestamp corrente. Iniziamo importando il modulo `Time` e utilizzando la funzione `now`:
+Ottenere la data corrente è un'operazione comune quando si lavora con Elm. Questa operazione permette ai programmatori di accedere alla data corrente e utilizzarla per scopi come la gestione del tempo e la creazione di un vero e proprio calendario con funzioni di ricerca e calcolo. 
 
+## Come fare:
+
+Ecco un esempio di come ottenere la data corrente in Elm:
 ```Elm
 import Time exposing (now)
+import Time.Extra exposing (fromPosix)
 
-main =
-  let
-    currentTime = now
-  in
-    text (toString currentTime)
+now
+    |> fromPosix
+    |> toString
 ```
+Esempio di output: "2021-07-21 11:30:00.000 UTC"
 
-L'output di questo codice sarà qualcosa del tipo `Posix 1551880822285`. Tuttavia, il risultato non è molto leggibile poiché è solo un valore numerico. Per renderlo più leggibile, è possibile utilizzare la funzione `millisToUtcDate`, che restituirà una stringa formattata con la data e l'ora correnti nella timezone UTC.
-
+È possibile personalizzare il formato della data utilizzando la funzione `format` dal modulo Time. Ad esempio, per ottenere solo la data in formato "giorno/mese/anno":
 ```Elm
 import Time exposing (now)
-import Time.Date exposing (millisToUtcDate)
+import Time.Format exposing (format)
+import Date.Extra exposing (shortDate)
 
-main =
-  let
-    currentTime = now
-    formattedTime = millisToUtcDate currentTime
-  in
-    text (toString formattedTime)
+now
+    |> format shortDate
+    |> toString
 ```
+Esempio di output: "21/07/2021"
 
-Adesso l'output dovrebbe essere qualcosa del tipo `DateTime 2019 Mar 6 12 58 49 219` che corrisponde alla data e all'ora attuali nella timezone UTC. Se desideri visualizzare la data e l'ora nella tua timezone locale, puoi utilizzare la funzione `millisToLocalDate` invece di `millisToUtcDate`.
+## Analisi approfondita:
 
-## Deep Dive
-La funzione `now` restituisce un valore `Task` perché è una chiamata asincrona. Ciò significa che dovremo gestire il valore `Task` utilizzando la funzione `Task.perform`, come mostrato nell'esempio seguente:
+Ottenere la data corrente non è nulla di nuovo per i programmatori, ma è comunque un'operazione importante in qualsiasi linguaggio di programmazione. In passato, come il linguaggio JavaScript, doveva essere gestita utilizzando un oggetto chiamato `Date` che era noto per essere molto difficile da comprendere e da utilizzare. Tuttavia, con Elm, ottenere la data corrente è diventato molto più semplice e intuitivo grazie ai moduli `Time` e `Date`.
 
-```Elm
-import Time exposing (now)
-import Platform.Cmd exposing (batch)
-import Task exposing (Task, perform)
-import Time.Date exposing (millisToUtcDate)
+Alternativamente, si può anche utilizzare la libreria `elm-community/time-extra` che offre funzionalità più avanzate per la gestione della data e del tempo.
 
-type Msg
-  = GetTime (Result String (Time.Posix))
+Implementare la funzione per ottenere la data corrente in Elm è abbastanza semplice. Il modulo `Time` offre la funzione `now` che restituisce la data corrente come un valore `Posix` (una rappresentazione in millisecondi del momento in cui viene chiamata la funzione). Quindi, per ottenere la data in un formato leggibile è necessario utilizzare la funzione `toString` dal modulo `Time.Extra` che restituirà la data come una stringa.
 
-getTimeCmd : Task x (Time.Posix)
-getTimeCmd =
-  now
+## Vedi anche:
 
-init : () -> ((), Cmd Msg)
-init _ =
-  ({}, perform GetTime (Ok >> millisToUtcDate) getTimeCmd)
-
-update : Msg -> () -> ((), Cmd Msg)
-update msg _ =
-  case msg of
-    GetTime result ->
-      case result of
-        Ok currentTime ->
-          ({}, Cmd.none)
-        Err error ->
-          ({}, Cmd.none)
-
-view : () -> Html Msg
-view _ =
-  text "Retrieving current time..."
-```
-
-Questa è solo una delle tante possibili implementazioni per gestire un valore `Task`. Puoi anche utilizzare la libreria di Timezone `elm-community/elm-time` per formattare la data e l'ora in modi diversi, oppure puoi creare una funzione personalizzata che restituisca solo la parte della data o dell'ora che ti interessa.
-
-## Vedi Anche
-- Documentazione ufficiale sul modulo `Time`: https://package.elm-lang.org/packages/elm/time/latest/Time
-- Libreria `elm-community/elm-time`: https://package.elm-lang.org/packages/elm-community/elm-time/latest/
+- Documentazione del modulo Time in Elm: https://package.elm-lang.org/packages/elm/time/latest
+- Documentazione del modulo Date in Elm: https://package.elm-lang.org/packages/elm/date/latest
+- Libreria `elm-community/time-extra`: https://package.elm-lang.org/packages/elm-community/time-extra/latest/

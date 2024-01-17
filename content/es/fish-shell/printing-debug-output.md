@@ -1,7 +1,7 @@
 ---
-title:                "Imprimiendo resultados de depuración"
-html_title:           "Fish Shell: Imprimiendo resultados de depuración"
-simple_title:         "Imprimiendo resultados de depuración"
+title:                "Imprimiendo salida de depuración"
+html_title:           "Fish Shell: Imprimiendo salida de depuración"
+simple_title:         "Imprimiendo salida de depuración"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Testing and Debugging"
@@ -10,48 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
-Si eres un programador en Fish Shell, es probable que te encuentres en situaciones en las que necesites encontrar errores o problemas en tu código. Una forma útil de hacerlo es imprimiendo la salida de depuración, lo que te permite ver el estado y los valores de las variables en diferentes puntos de tu programa. En este artículo, te enseñaremos cómo imprimir la salida de depuración en Fish Shell.
+## ¿Qué y Por Qué?
 
-## Cómo hacerlo
-Para imprimir la salida de depuración en Fish Shell, simplemente usa el comando `echo` seguido de la variable o valor que quieras imprimir. Por ejemplo, si quieres imprimir el valor de la variable `numero`, puedes hacerlo de la siguiente manera:
+Imagina que estás escribiendo un programa y algo sale mal. ¿Cómo lo solucionarías? Aquí es donde entra en juego la impresión de la salida de depuración. Los programadores la usan para encontrar errores y problemas en su código y arreglarlos.
 
-```Fish Shell
-echo $numero
+## Cómo:
+
+```Fish Shell``` viene con un comando incorporado llamado ```echo``` que te permite imprimir mensajes en la pantalla. Para añadir un mensaje de depuración en tu código, simplemente coloca el comando ```echo``` seguido del mensaje entre comillas dentro de tu código.
+
+Por ejemplo:
+
+```
+function sumar
+  echo "Sumando dos números"
+  echo "Resultado: "(expr $argv[1] + $argv[2])
+end
 ```
 
-Esto imprimirá el valor actual de la variable `numero` en tu terminal. También puedes imprimir múltiples variables o valores en una sola línea separándolos por un espacio:
+La salida de esto sería:
 
-```Fish Shell
-echo $variable1 $variable2 $valor
+```
+Sumando dos números
+Resultado: 6
 ```
 
-Además, puedes imprimir mensajes de texto junto con tus variables o valores para hacer tus mensajes de depuración más descriptivos:
+## Deep Dive:
 
-```Fish Shell
-echo "El valor de la variable numero es: " $numero
-```
+La impresión de la salida de depuración se originó en los primeros días de la programación, cuando los programadores tenían que inspeccionar manualmente cada línea de código para buscar errores. Con el tiempo, se desarrollaron programas y herramientas que facilitaron este proceso y ahora se ha convertido en una práctica común en todas las formas de programación.
 
-Esto imprimirá "El valor de la variable numero es: [valor de numero]" en tu terminal.
+Algunas alternativas a la impresión de salida de depuración incluyen el uso de herramientas de depuración específicas, como GDB o Xdebug, o el uso de métodos de depuración más avanzados, como la introspección.
 
-## Deep Dive
-Cuando imprimes la salida de depuración en Fish Shell, es importante tener en cuenta que solo estás viendo una instantánea del estado de tu programa en ese momento específico. Si quieres ver cómo cambian los valores de tus variables a medida que avanza tu programa, puedes usar el comando `printf` en lugar de `echo`:
+En cuanto a la implementación, ```echo``` es solo uno de los muchos comandos disponibles en ```Fish Shell``` que facilitan la impresión de la salida de depuración. Otros comandos útiles incluyen ```printf``` para imprimir formatos específicos y ```eerror``` para imprimir mensajes de error.
 
-```Fish Shell
-printf "Valor actual de numero: %s\n" $numero
-```
+## Ver también:
 
-Este comando imprimirá el valor de `numero` en el momento en que se ejecuta, seguido de un salto de línea. Esto es especialmente útil cuando estás realizando bucles o iteraciones y quieres ver cómo cambian los valores en cada iteración.
-
-Además, también puedes usar la opción `--debug` al ejecutar tu script de Fish Shell para que te muestre automáticamente todas las salidas de depuración:
-
-```Fish Shell
-fish --debug mi_script.fish
-```
-
-Esto imprimirá todas las salidas de depuración en tu terminal mientras tu script se está ejecutando.
-
-## Ver también
-- [Documentación oficial de Fish Shell](https://fishshell.com/docs/current/)
-- [Tutorial de Fish Shell](https://medium.com/@jorgebucaran/fish-shell-generation-ebb5062db77a)
-- [Artículo sobre cómo utilizar Fish Shell como tu shell por defecto](https://linuxhint.com/fish_shell_mac/)
+- [Documentación de Fish Shell](https://fishshell.com/docs/current/)
+- [Debugging con GDB](https://www.gnu.org/software/gdb/)
+- [Introspección en programación](https://es.wikipedia.org/wiki/Introspecci%C3%B3n_(programaci%C3%B3n)).

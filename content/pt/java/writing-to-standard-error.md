@@ -10,33 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que escrever para o erro padrão?
+## O Que e Por Que?
 
-Muitas vezes, durante o processo de desenvolvimento de um programa em Java, podem ocorrer erros que precisam ser identificados e corrigidos. Ao escrever mensagens de erro para o erro padrão, podemos ter uma noção mais clara da origem do problema e, assim, facilitar a resolução do mesmo.
+Escrever para o erro padrão é uma técnica comum utilizada pelos programadores para lidar com erros e exceções em seus códigos. Isso significa que, em vez de imprimir mensagens de erro para o usuário, o programa irá escrevê-las no console do desenvolvedor. Isso permite que os programadores identifiquem e resolvam problemas em seus códigos de forma mais eficiente.
 
-## Como fazer isso?
+## Como Fazer:
 
-Para escrever para o erro padrão em Java, usamos o objeto "System.err". Podemos usar os métodos "println()" e "print()" para imprimir uma mensagem no erro padrão, seguido pelo sinal de exclamação (!) para garantir que a mensagem seja exibida.
-
-```
-Java System.err.println("Mensagem de erro!"); 
-```
-
-Ao rodar esse código, teremos a mensagem de erro impressa no console do usuário.
-
-## Mergulho Profundo
-
-Além de imprimir mensagens de erro simples, podemos utilizar a classe "PrintWriter" para escrever log de erros em um arquivo para posterior análise. Isso pode ser útil quando precisamos rastrear e corrigir erros em aplicações mais complexas.
+Um exemplo simples de como escrever para o erro padrão em Java é utilizando o método ```System.err.println()```. Veja o código abaixo:
 
 ```
-Java PrintWriter pw = new PrintWriter(new FileWriter("log.txt"));
-pw.println("Erro encontrado!");
-pw.close();
+try{
+  // códigos que podem gerar um erro ou exceção
+} catch(Exception e){
+  System.err.println("Ocorreu um erro: " + e.getMessage()); // escreve a mensagem de erro no console do desenvolvedor
+}
 ```
 
-Aqui, criamos um objeto PrintWriter que irá escrever em um arquivo de texto chamado "log.txt". Em seguida, utilizamos o método "println()" para escrever a mensagem de erro no arquivo e, por fim, fechamos o objeto PrintWriter. O resultado será um arquivo de log com uma lista de erros encontrados durante a execução do programa.
+O resultado seria algo parecido com isso:
 
-## Veja também
+```
+Ocorreu um erro: Algo deu errado
+```
 
-- [Documentação Oficial do Java](https://docs.oracle.com/javase/8/docs/api/java/lang/System.html#err)
-- [Artigo sobre tratamento de erros em Java](https://www.devmedia.com.br/tratamento-de-erros-em-java/22101)
+## Aprofundando-se:
+
+Essa técnica é amplamente utilizada há muitos anos pelos programadores e é uma forma eficaz de identificar e corrigir problemas em códigos. Além disso, também ajuda a manter a organização e legibilidade do código, já que as mensagens de erro ficam separadas das demais saídas.
+
+Existem outras alternativas para escrever para o erro padrão em Java, como o uso da classe ```System.err``` ou a utilização de bibliotecas externas, como o Log4J. No entanto, o método apresentado anteriormente é o mais simples e amplamente utilizado.
+
+Na implementação, é importante lembrar que o uso excessivo de mensagens de erro pode tornar o código confuso e dificultar a identificação de problemas reais. Portanto, é recomendado utilizá-lo somente em situações necessárias.
+
+## Veja Também:
+
+- [Documentação oficial da classe System](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/System.html)
+- [Tutorial sobre o uso de mensagens de erro em Java](https://www.baeldung.com/java-logging-errors)

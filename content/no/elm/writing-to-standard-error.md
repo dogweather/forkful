@@ -1,7 +1,7 @@
 ---
-title:                "Skriver til standard feil"
-html_title:           "Elm: Skriver til standard feil"
-simple_title:         "Skriver til standard feil"
+title:                "Skriving til standardfeil"
+html_title:           "Elm: Skriving til standardfeil"
+simple_title:         "Skriving til standardfeil"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Files and I/O"
@@ -10,58 +10,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+Hva & Hvorfor?
+Skriver til standardfeil betyr å sende en beskjed eller feilkode til et spesielt utgangspunkt i programmet som kalles "standard error". Dette er en viktig måte for programmerere å kommunisere feil og gjøre det enklere å feilsøke og debugge problemer.
 
-Å skrive til standard error kan være nyttig når du jobber med feilhåndtering og debugging i Elm. Det lar deg skrive feilmeldinger og diagnostisk informasjon direkte til terminalen, i stedet for å måtte logge det til en fil eller konsoll.
+Hvordan:
+Mange programmeringsspråk, inkludert Elm, har en standardfunksjon for å skrive til standardfeil. Dette gjøres ved å bruke funksjonen "Debug.log" og gi den en feilkode som et argument, for eksempel "Debug.log "Feil ved å lese fil". Da vil feilkode og eventuelle tilhørende verdier sendes til standardfeil. Et eksempel på kode og output kan se ut som dette:
 
-## Hvordan
+```Elm
+import Debug
 
-For å skrive til standard error i Elm, kan du bruke funksjonen `Debug.crash` og passere inn en melding som en streng. For eksempel:
+Debug.log "Feilkode" 42
 
-```
-import Debug exposing (..)
-
-main =
-    Debug.crash "Dette er en feilmelding"
-```
-
-Dette vil skrive ut meldingen "Dette er en feilmelding" til standard error når applikasjonen kjører.
-
-Hvis du vil inkludere variabler eller andre data i meldingen, kan du bruke funksjonen `Debug.toString` for å konvertere dem til strenger. For eksempel:
-
-```
-import Debug exposing (..)
-
-main =
-    let
-        errorCode = 404
-    in
-    Debug.crash ("Feil: " ++ (Debug.toString errorCode))
+-- output:
+-- Feilkode: 42
 ```
 
-Dette vil skrive ut meldingen "Feil: 404" til standard error.
+Dypere dykk:
+Skriver til standardfeil har vært en vanlig praksis blant programmere i lang tid. I eldre programmeringsspråk ble det ofte gjort ved å bruke en funksjon som het "printf" eller "print", men i nyere språk som Elm er det en spesiell funksjon som er dedikert til dette formålet. Dette gjør det enklere for programmere å finne feil og feilsøke problemene sine.
 
-Du kan også bruke funksjonen `Debug.log` for å skrive til standard error uten å stoppe kjøringen av applikasjonen. Dette kan være nyttig når du vil logge informasjon underveis i programmet. For eksempel:
-
-```
-import Debug exposing (..)
-
-main =
-    let
-        bruker = "Jon"
-    in
-    Debug.log "Bruker: " bruker
-```
-
-Dette vil skrive ut meldingen "Bruker: Jon" til standard error.
-
-## Dypdykk
-
-Det er viktig å huske at å skrive til standard error ikke alltid er den beste løsningen for feilhåndtering. På grunn av hvordan Elm håndterer feil, kan det være bedre å bruke kanskje bruke `Result` eller`Maybe` typer til å håndtere feil på en mer strukturert måte.
-
-Du bør også være forsiktig med å skrive sensitiv informasjon til standard error, da dette kan bli fanget av feilloggingssystemer og potensielt utgjøre en sikkerhetsrisiko.
-
-## Se også
-
-- [Elm dokumentasjon om feilhåndtering](https://guide.elm-lang.org/error_handling/)
-- [The Elm Architecture](https://guide.elm-lang.org/architecture/)
+Se også:
+For å lære mer om å skrive til standardfeil i Elm, kan du sjekke ut den offisielle Elm dokumentasjonen om Debug-modulen: https://package.elm-lang.org/packages/elm/core/latest/Debug.

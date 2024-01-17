@@ -1,7 +1,7 @@
 ---
-title:                "Calcolare una data nel futuro o nel passato"
-html_title:           "Gleam: Calcolare una data nel futuro o nel passato"
-simple_title:         "Calcolare una data nel futuro o nel passato"
+title:                "Calcolare una data nel futuro o nel passato."
+html_title:           "Gleam: Calcolare una data nel futuro o nel passato."
+simple_title:         "Calcolare una data nel futuro o nel passato."
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Dates and Times"
@@ -10,29 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
-Sebbene la maggior parte dei programmi utilizzino date attuali, potrebbe essere necessario calcolare date in futuro o in passato per svolgere specifiche attività come tracciare scadenze o gestire eventi programmati. In questo articolo, impareremo come utilizzare Gleam per eseguire questo tipo di calcoli.
+## Cosa e Perché?
 
-## Come Fare
-Per calcolare una data futura o passata, possiamo utilizzare la funzione `Calendar.advance` che accetta come argomenti la data di partenza e la quantità di tempo da avanzare (positivo per date future, negativo per date passate) e restituisce la data risultante. Ecco un esempio di codice:
+Calcolare una data nel futuro o nel passato è un'operazione comune nel mondo della programmazione. Gli sviluppatori spesso hanno bisogno di gestire date in un'ampia varietà di scenari, come ad esempio pianificare eventi o generare report. Invece di farlo manualmente, utilizzando semplici calcoli matematici, possiamo sfruttare il potere dei linguaggi di programmazione per automatizzare il processo e risparmiare tempo.
 
-```
-Gleam> Calendar.advance(#year(2021), #day(2), #month(7), 10)
-#date(2021, 7, 12) 
-```
+## Come fare:
 
-In questo esempio, abbiamo calcolato la data risultante di avanzare di 10 giorni a partire dal 2 luglio 2021. Possiamo anche specificare un tempo più preciso, ad esempio avanzare di 2 anni, 7 mesi e 10 giorni:
+Per calcolare una data nel futuro o nel passato con Gleam, ci sono diverse opzioni a disposizione. Possiamo utilizzare il modulo ```Date``` che fornisce funzioni apposite o creare una funzione customizzata. Ecco alcuni esempi:
+
+### Utilizzando il modulo Date:
 
 ```
-Gleam> Calendar.advance(#datetime(#date(2021, 7, 2), #time(10, 30, 0)), #days(2), #months(7), #years(2))
-#datetime(#date(2023, 2, 4), #time(10, 30, 0))
+import Gleam.Date
+
+let future_date = Date.add_days(Date.now(), 30)
+
+let past_date = Date.add_months(Date.now(), -6)
+
+println(future_date) // Output: 2021-11-17T12:00:00.000Z
+
+println(past_date) // Output: 2020-05-17T12:00:00.000Z
 ```
 
-In questo caso, abbiamo utilizzato la funzione `Calendar.datetime` per specificare sia la data che l'orario di partenza.
+### Creando una funzione customizzata:
 
-## Approfondimento
-Calcolare date in futuro o in passato può risultare utile anche nel caso di gestione di fusi orari o durante l'analisi di dati storici. In questi casi, è importante prestare attenzione alle differenze nei formati delle date e ai possibili errori di calcolo dovuti alla presenza di anni bisestili.
+```
+import Gleam.Date
 
-## Vedi Anche
-- Documentazione ufficiale di Gleam sulla gestione delle date: https://gleam.run/documentation//current/lib/calendar.html
-- Esempi di utilizzo di Gleam per il calcolo di date in futuro e in passato: https://github.com/gleam-lang/gleam-examples/tree/master/dates
+fn calculate_future_date(target_date, days) {
+  Date.add_days(target_date, days)
+}
+
+let target_date = Date.from({ year: 2021, month: 1, day: 1 })
+
+let future_date = calculate_future_date(target_date, 60)
+
+println(future_date) // Output: 2021-03-02T12:00:00.000Z
+```
+
+## Approfondimento:
+
+La gestione delle date è sempre stata un'operazione complessa per i programmatori. Nei primi sistemi informatici, le date venivano rappresentate utilizzando un numero sequenziale, scelto come punto di riferimento, che rappresentava il numero di giorni passati da una data specifica, come ad esempio il 1° gennaio 1900. Questo metodo ha portato a problemi di conversione tra formati diversi e ha reso difficile il calcolo di date in futuro o in passato.
+
+In alternativa al modulo ```Date``` di Gleam, possiamo utilizzare librerie esterne come ad esempio "Chronic" o "Calendar" per gestire le date in modo più flessibile.
+
+L'implementazione del calcolo di una data nel futuro o nel passato è possibile grazie all'utilizzo di algoritmi matematici specifici per la conversione di diverse unità di tempo come anni, mesi, giorni, ore, minuti e secondi.
+
+## Vedi anche:
+
+- Documentazione del modulo Date di Gleam: [https://gleam.run/modules/Date.html](https://gleam.run/modules/Date.html)
+- Libreria "Chronic" per la gestione avanzata delle date: [https://github.com/mroth/chronic](https://github.com/mroth/chronic)
+- Libreria "Calendar" per la gestione delle date in Erlang: [https://github.com/lau/calendar](https://github.com/lau/calendar)

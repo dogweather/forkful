@@ -10,42 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+# What & Why?
 
-Converting a string to lower case may seem like a simple task, but it can actually have a big impact on the readability and functionality of your code. By converting a string to lower case, you are making it easier to compare and manipulate strings, which can help improve the overall functionality and efficiency of your code.
+Converting a string to lower case means transforming all the letters in a string to their lowercase equivalent. Programmers do this to standardize data and make it easier to compare strings. It also allows for better data validation and user input handling.
 
-## How To
-
-```Ruby
-# To convert a string to lower case, use the `downcase` method:
-string = "HELLO WORLD"
-
-puts string.downcase
-# Output: hello world
-```
+# How to:
 
 ```Ruby
-# You can also use the `downcase!` method to modify the original string:
-string = "HELLO WORLD"
+# 1. Using the downcase method
+string = "Hello World"
+puts string.downcase # output: hello world
 
-string.downcase!
-
-puts string
-# Output: hello world
+# 2. Using the lowercase modifier (only supported in Ruby 2.4+)
+string = "Hello World"
+puts string.downcase # output: hello world
 ```
 
-```Ruby
-# It's important to note that the `downcase` and `downcase!` methods only work on strings, not on other data types like integers or floats.
-# If you try to use these methods on a non-string object, you will get an error message.
-```
+# Deep Dive
 
-## Deep Dive
+Converting strings to lower case has been a common practice since the early days of programming. In the early programming languages, there was no built-in function for this task, so programmers had to use complex algorithms to achieve the same result. As programming languages evolved, the downcase method was introduced to make this conversion easier and more efficient.
 
-Converting a string to lower case may seem like a simple task, but there are a few key things to keep in mind. Firstly, the `downcase` method will create a new string object with the lower case letters, while the `downcase!` method will modify the original string in place. This can be important when working with immutable strings or if you want to preserve the original string for later use.
+In Ruby, the downcase method is the standard way of converting strings to lower case. However, there is a newer method, lowercase, which was introduced in Ruby 2.4. This method directly modifies the original string, rather than returning a new one like the downcase method.
 
-Additionally, the `downcase` and `downcase!` methods use the rules of the English alphabet. This means that any special characters or letters with accent marks will not be properly converted. To account for this, you can use the `unicode_normalize` method before using the `downcase` and `downcase!` methods.
+The downcase method and lowercase modifier can also be used with non-alphabetic characters, but they will remain unchanged. For example, "123abc" will be converted to "123abc" as all numbers and symbols are ignored.
 
-## See Also
+# See Also
 
-- [String Documentation - Ruby](https://ruby-doc.org/core-2.7.2/String.html)
-- [Case Conversion Methods - Ruby](https://ruby-doc.org/core-2.7.2/String.html#method-i-downcase)
+- [Ruby Documentation on String#downcase](https://ruby-doc.org/core-2.7.1/String.html#method-i-downcase)
+- [Ruby Documentation on String#lowercase](https://ruby-doc.org/core-2.7.1/String.html#method-i-lowercase)
+- [Stack Overflow Article on String Conversions in Ruby](https://stackoverflow.com/questions/1387002/how-to-convert-a-string-to-lower-or-upper-case-in-ruby)

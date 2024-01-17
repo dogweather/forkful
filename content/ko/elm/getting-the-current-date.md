@@ -10,60 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+## 무엇이며 왜?
+현재 날짜를 얻는 것은, 컴퓨터 내부에서 현재 시간을 나타내는 것입니다. 프로그래머들은 이를 사용하여 프로그램 내에서 다양한 시간 기능을 구현하고, 사용자에게 실제 시간을 보여 줄 수 있습니다.
 
-잘봐, 우리가 하루 중 언제든 현재 날짜를 알아내는 것이 유용할 수 있다는 걸 빼놓으면 안 되겠다. 우리는 자주 날짜를 알아내야 할 경우가 있는데, 예를 들면 미팅이나 이벤트 날짜를 정할 때가 있다. Elm을 사용하면 쉽게 현재 날짜를 얻을 수 있다는 것을 알아두자.
-
-## 하우 투
-
-우선, currentDate 변수를 선언하고 어떤 타입의 데이터를 넣을지 지정하자. 예를 들면 다음과 같다.
+## 어떻게:
+Elm에서 현재 날짜를 얻는 방법은 간단합니다. Date 모듈을 사용하면 됩니다.
 
 ```Elm
-currentDate : Date
-currentDate = 
+-- Date 모듈 임포트
+import Date exposing (today)
+
+-- 현재 날짜 가져오기
+currentDate = today
 ```
 
-그리고 ```getCurrentTime``` 함수를 사용해 현재 날짜를 구해보자. 이 함수는 반환 타입으로 [Time](https://package.elm-lang.org/packages/elm/time/latest/Time) 패키지의 [Posix](https://package.elm-lang.org/packages/elm/time/latest/Time#Posix)를 사용한다. 그래서 우리는 기본적으로 Posix로 변환해야 한다. 여기서는 [Date 간단히 구현하기](https://package.elm-lang.org/packages/elm/core/latest/Date) 에서 제공하는 함수를 사용할 것이다.
+이를 실행하면 다음과 같은 결과를 얻을 수 있습니다.
 
 ```Elm
-currentDate : Date
-currentDate = 
-    Time.toDate << Time.getCurrentTime
+{year = 2021, month = 3, day = 21}
 ```
 
-하지만, 만약 우리가 특정 지역의 시간대를 사용하는 것이 좋다고 생각한다면, [Time.Zone](https://package.elm-lang.org/packages/elm/time/latest/Time-Zone) 모듈을 사용할 수 있다. 예를 들면 다음과 같다.
+## 심층 탐구:
+현재 날짜를 얻는 것은 우리가 생각하는 것보다 더 복잡한 작업입니다. 예를 들어, 우리는 타임존 문제를 고려해야 하며, 다른 언어와 도시에 따라 다른 날짜 형식이 있을 수 있습니다. 또한 세계 표준시(UTC)를 기준으로 정확한 현재 날짜를 가져오는 것도 중요합니다.
 
-```Elm
-currentDate : Date
-currentDate = 
-    Time.toDate <|
-        Time.getCurrentTime Time.utc
+현재 날짜를 얻는 다른 방법으로는 `Date.fromString` 함수를 사용하는 것이 있습니다. 이 함수는 지정된 포맷에 따라 문자열을 날짜로 변환해 줍니다. 또는 JavaScript에서 제공하는 `Date` 객체를 이용하여 현재 날짜를 가져올 수 있습니다.
 
-currentDateInSeoul : Date
-currentDateInSeoul = 
-    Time.toDate <|
-        Time.getCurrentTime Time.jst
-```
-
-그리고 이제 currentDate 변수를 사용해 정상적으로 현재 날짜를 출력할 수 있다.
-
-```Elm
-currentDate : Date
-currentDate = 
-    Time.toDate << Time.getCurrentTime
-
-main : Html msg
-main =
-    Html.text <| Date.toIsoString <| currentDate
-```
-
-출력 결과는 아마 ```2021-05-26T13:00:00.000Z```와 비슷할 것이다.
-
-## 딥 다이브
-
-더 공부해볼 만한 주제로는 [Chrono](https://package.elm-lang.org/packages/noahzgordon/elm-chrono/latest/) 패키지를 사용해 다양한 날짜와 시간 포맷을 다루는 것이 있다. 또한, Elm 커뮤니티에서는 날짜와 시간을 다루는 더 많은 패키지를 제공하고 있으니 참조하면 도움이 될 것이다.
-
-## 참고
-
-- [Time 패키지 문서](https://package.elm-lang.org/packages/elm/time/latest/Time)
-- [Elm 커뮤니티에서 제공하는 날짜와 시간 관련 패키지 목록](https://package.elm-lang.org/search?q=time&platform=all&licenses=license)
+## 참고 자료:
+- [Elm 공식 문서 - Date 모듈](https://package.elm-lang.org/packages/elm/time/latest/Date)
+- [JavaScript Date 객체](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Date)

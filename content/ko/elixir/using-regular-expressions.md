@@ -1,7 +1,7 @@
 ---
-title:                "정규 표현식 사용하기"
-html_title:           "Elixir: 정규 표현식 사용하기"
-simple_title:         "정규 표현식 사용하기"
+title:                "정규식 사용하기"
+html_title:           "Elixir: 정규식 사용하기"
+simple_title:         "정규식 사용하기"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -10,32 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 왜 정규식을 사용해야 할까요?
+# 무엇 & 왜?
 
-정규식은 많은 프로그래밍 언어에서 지원하는 강력한 문자열 처리 기능입니다. 이를 사용하면 복잡한 문자열 검색 및 대체 작업을 쉽게 수행할 수 있으며, 코드의 가독성과 유지 보수성을 높일 수 있습니다.
+정규 표현식을 사용하는 것은 문자열에서 패턴을 매칭하는 것을 의미합니다. 프로그래머들은 이를 통해 더 빠르고 정확한 문자열 매칭을 할 수 있습니다.
 
-## 사용 방법
+## 어떻게:
 
 ```Elixir
-# 단어 'cat'을 포함하는 문자열 찾기
- regex = ~r/cat/
- str = "I have a big cat and a small cat"
- Regex.scan(regex, str) # 결과: ["cat", "cat"]
-
-# 이메일 형식이 맞는지 확인
-regex = ~r/^[\w+\-.]+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]{2,}$/i
-email = "email@example.com"
-Regex.match?(regex, email) # 결과: true
+Regex.match?(~r/hello/, "hello world")
 ```
 
-위의 예제처럼 `~r`을 사용하여 정규식을 정의한 후, `Regex` 모듈에서 제공하는 메소드를 사용하여 문자열을 검색하거나 매칭할 수 있습니다. 또한 Elixir의 패턴 매칭 기능과 함께 사용하면 더욱 강력한 기능을 발휘할 수 있습니다.
+위 예제에서는 "hello"라는 패턴과 일치하므로 `true`를 리턴합니다.
 
-## 더 깊게 살펴보기
+```Elixir
+Regex.scan(~r/a\w+/, "banana apple")
+```
 
-정규식은 Perl에서 시작된 다양한 문법과 표현식을 지원합니다. 이를 조합하여 매우 다양한 문자열 검색 및 변형 작업을 수행할 수 있습니다. 또한 Elixir은 정규식을 더욱 효율적으로 사용할 수 있도록, JIT 컴파일러인 `Lager`를 제공하고 있습니다.
+위 예제에서는 문자열에서 "a"로 시작하는 모든 단어를 찾으므로 ["banana", "apple"]을 리턴합니다.
 
-# 더 알아보기
+## 깊이 파기:
 
-- [Elixir 정규식 문서](https://hexdocs.pm/elixir/Regex.html)
-- [정규식 연습 사이트 (영어)](https://regexr.com/)
-- [정규식 생성기 (영어)](https://regex101.com/)
+정규 표현식은 복잡한 패턴을 동적으로 매칭하기 때문에 많은 프로그래머들이 선호하는 방식입니다. Python의 정규 표현식과 비교하여 Elixir의 정규 표현식은 더 강력한 결합 기능을 제공합니다. 
+
+대체 방법으로는 Elixir의 String 모듈도 있지만 정규 표현식은 더 다양한 패턴을 매칭할 수 있습니다. 
+
+Elixir에서는 정규 표현식이 `Regex` 모듈을 사용해 컴파일되고 실행됩니다. `Regex.run/3` 함수는 다양한 매칭 옵션을 제공합니다.
+
+## 참조:
+
+- Elixir 문서: https://hexdocs.pm/elixir/Regex.html
+- 정규 표현식 Tutorial: https://regexone.com/

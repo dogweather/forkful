@@ -1,7 +1,7 @@
 ---
-title:                "디렉토리 존재 여부 확인하기"
-html_title:           "TypeScript: 디렉토리 존재 여부 확인하기"
-simple_title:         "디렉토리 존재 여부 확인하기"
+title:                "디렉토리가 존재하는지 확인하는 방법"
+html_title:           "TypeScript: 디렉토리가 존재하는지 확인하는 방법"
+simple_title:         "디렉토리가 존재하는지 확인하는 방법"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Files and I/O"
@@ -10,42 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+## 무엇이고 왜?:
+디렉토리가 존재하는지 확인하는 것은 프로그래머가 할 일 중 하나입니다. 디렉토리가 있는지 여부를 확인하면 예기치 않은 오류를 방지할 수 있으며, 파일 또는 디렉토리를 생성하기 전에 이미 존재하는 디렉토리인지 확인할 수 있습니다.
 
-디렉토리가 존재하는지 확인하는 것의 중요성을 반드시 이해해야 합니다. 이를 통해 파일 시스템 내에서 지정된 경로에 파일이나 폴더가 존재하는지 여부를 알 수 있습니다.
-
-## 방법
+## 방법:
+TypeScript 내에서 디렉토리가 존재하는지 확인하는 방법은 간단합니다. 아래의 코드를 보세요:
 
 ```TypeScript
-if (fs.existsSync("/경로/디렉토리")) {
-  console.log("디렉토리가 존재합니다.");
+import { existsSync } from 'fs';
+
+if (existsSync('myDirectory')) {
+  console.log('myDirectory exists!');
 } else {
-  console.log("디렉토리가 존재하지 않습니다.");
+  console.log('myDirectory does not exist.');
 }
 ```
 
-위의 코드에서, 우리는 `fs.existsSync()` 함수를 사용하여 디렉토리가 존재하는지 확인할 수 있습니다. 만약 디렉토리가 존재한다면 `true`를 반환하고, 그렇지 않다면 `false`를 반환합니다.
+위의 코드를 실행하면 결과는 작은 폴더 아이콘이 있는지 여부에 따라 다릅니다. 폴더 아이콘이 있으면 `myDirectory exists!`가, 아니면 `myDirectory does not exist.`가 출력됩니다.
 
-```TypeScript
-fs.access("/경로/디렉토리",(err) => {
-  if (err) {
-    console.log("디렉토리가 존재하지 않습니다.");
-  } else {
-    console.log("디렉토리가 존재합니다.");
-  }
-});
-```
+## 깊게 파헤치기:
+디렉토리가 존재하는지 확인하는 기능은 파일 시스템의 기본 기능입니다. 파일 시스템은 다른 파일 시스템을 포함하고있을 수 있으므로, 디렉토리의 존재 여부는 매우 중요합니다. 디렉토리가 있는지 여부를 확인하는 다른 방법으로는 `fs.readdirSync()`메서드를 사용하는 방법이 있습니다. 이 메서드는 디렉토리 내부의 파일 목록을 가져오기 때문에, 이 방법을 사용하면 더 많은 정보를 얻을 수 있습니다.
 
-또 다른 방법으로는 `fs.access()` 함수를 사용하는 것입니다. 이 함수는 파일이나 폴더에 액세스할 수 있는지 확인합니다. 만약 액세스할 수 없다면 에러가 발생하고, 이를 통해 디렉토리가 존재하지 않는지를 알 수 있습니다.
+어떤 프로그래밍 언어를 사용하든 이 기능을 지원합니다. 하지만 TypeScript는 예외가 발생할 수 있는지에 대한 확실한 유형을 가지고 있어서 더 안전한 방식으로 디렉토리를 확인할 수 있게 해줍니다.
 
-## 깊게 들어가보기
-
-위에서 언급한 두 가지 방법 외에도, `fs.lstat()` 함수를 사용하는 방법도 있습니다. 이 함수는 디렉토리가 아닌 파일일 경우 에러를 반환합니다. 이를 통해 디렉토리와 파일을 분류하는 것이 가능합니다.
-
-또한, 옵션 객체를 함께 사용하여 디렉토리의 존재 여부 뿐만 아니라 디렉토리에 대한 다양한 정보를 얻을 수도 있습니다.
-
-## 관련 자료
-
-- [Node.js 공식 문서 - fs 모듈](https://nodejs.org/api/fs.html)
-- [Node.js Tutorial - 파일 시스템 다루기](https://www.tutorialspoint.com/nodejs/nodejs_file_system.htm)
-- [NPM 라이브러리 - fs-extra](https://www.npmjs.com/package/fs-extra)
+## 관련 자료:
+- [Node.js 공식 문서 - 파일 시스템 모듈](https://nodejs.org/api/fs.html)
+- [TypeScript 공식 문서 - 파일 API](https://www.typescriptlang.org/docs/handbook/fine-volumes-1/1-narrowing.html#using-type-predicates)

@@ -1,7 +1,7 @@
 ---
-title:                "Lesen von Befehlszeilenargumenten"
-html_title:           "Bash: Lesen von Befehlszeilenargumenten"
-simple_title:         "Lesen von Befehlszeilenargumenten"
+title:                "Lesen von Eingabeargumenten in der Befehlszeile"
+html_title:           "Bash: Lesen von Eingabeargumenten in der Befehlszeile"
+simple_title:         "Lesen von Eingabeargumenten in der Befehlszeile"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Files and I/O"
@@ -10,27 +10,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
-Du fragst dich vielleicht, warum du überhaupt command line arguments lesen solltest. Nun, es gibt einige Vorteile, wenn du lerst, wie du sie richtig nutzt. Zum Beispiel kannst du damit dein Skript interaktiver gestalten und es flexibler machen, da du verschiedene Optionen und Parameter eingeben kannst.
+### Was & Warum?
+Das Lesen von Befehlszeilenargumenten ist ein wichtiger Bestandteil der Bash-Programmierung. Es ermöglicht dem Programm, Daten oder Parameter vom Benutzer bei der Ausführung zu erhalten. Programmierer nutzen dies, um ihre Skripte anzupassen und verschiedene Aktionen basierend auf den gegebenen Argumenten auszuführen.
 
-## Wie man command line arguments liest
-Die Syntax zum Lesen von command line arguments ist recht einfach, du musst nur folgendes beachten:
-```
-Bash
-$1 $2 $3
-```
-Diese Variablen repräsentieren die ersten, zweiten und dritten Argumente, die du beim Aufruf des Skripts eingibst. Zum Beispiel:
-```
-Bash
-$ ./script.sh argument1 argument2 argument3
+### Wie geht's:
+Das Lesen von Befehlszeilenargumenten in Bash ist einfach. Die Argumente können in Variablen gespeichert werden und dann im Skript verwendet werden. Hier ist ein Beispiel, wie man die Argumente "Hallo" und "Welt" in Variablen speichert und ausgibt:
 
+```Bash
+argument1=$1
+argument2=$2
+echo $argument1 $argument2
 ```
-In diesem Beispiel würde `$1` "argument1", `$2` "argument2" und `$3` "argument3" sein. Du kannst beliebig viele Argumente eingeben und sie mit ` $4`, `$5`, usw. ansprechen.
 
-## Vertiefung
-Wenn du mehr über command line arguments erfahren möchtest, solltest du dich mit der `getopts` Funktion vertraut machen. Damit kannst du Optionen mit dazugehörigen Argumenten angeben, die dein Skript dann auslesen kann. Du kannst auch Flags definieren, die du einfach nur mit `Skriptname -f` eingeben musst. Es gibt viele Möglichkeiten, command line arguments zu lesen und sie zu nutzen, deshalb ist es eine wichtige Fähigkeit für jeden Bash-Programmierer.
+Der Output des Skripts wäre dann: "Hallo Welt". Man kann auch auf einzelne Argumente durch ihre Position zugreifen, z.B. $1 für das erste Argument oder $2 für das zweite Argument und so weiter.
 
-## Siehe auch
-- [Bash Command Line Arguments Tutorial](https://dev.to/eevajonnapanula/read-command-line-arguments-in-bash-scripts-1615/)
-- [Bash scripting cheatsheet](http://cheatsheetworld.com/programming/unix-linux-cheat-sheet/)
-- [getopts documentation](https://www.gnu.org/software/bash/manual/html_node/Bourne-Shell-Builtins.html#index-getopts)
+### Tieferer Einblick:
+Das Konzept des Lesens von Befehlszeilenargumenten stammt aus dem ursprünglichen UNIX-Betriebssystem, auf dem Bash basiert. Es gibt jedoch auch Alternativen wie das Parsen von Umgebungsvariablen oder das Lesen von Eingaben mit dem "read" Befehl. Diese Methoden können nützlich sein, aber das Lesen von Befehlszeilenargumenten ist in der Regel die effizienteste und bevorzugte Methode.
+
+### Siehe auch:
+- [Offizielle GNU Bash Dokumentation](https://www.gnu.org/software/bash/manual/bash.html)
+- [Bash Guide für Anfänger](https://opensourceforu.com/2017/02/bash-guide-for-beginners/)
+- [Bash Befehle Referenz](https://linuxize.com/post/bash-scripting-commands/)

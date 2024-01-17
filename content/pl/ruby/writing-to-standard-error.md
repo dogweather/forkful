@@ -1,7 +1,7 @@
 ---
-title:                "Pisanie do standardowego wyjścia błędu"
-html_title:           "Ruby: Pisanie do standardowego wyjścia błędu"
-simple_title:         "Pisanie do standardowego wyjścia błędu"
+title:                "Pisanie do standardowego błędu"
+html_title:           "Ruby: Pisanie do standardowego błędu"
+simple_title:         "Pisanie do standardowego błędu"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Files and I/O"
@@ -10,44 +10,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+Co i Po co?
 
-Kiedy piszesz kod, ważne jest aby pamiętać o tzw. "błędach", czyli sytuacjach, w których program może się nie wykonać poprawnie. Jednym z narzędzi, które możesz wykorzystać do obsługi błędów w Ruby, jest standardowe wyjście błędów lub w skrócie `stderr`. Dzięki temu narzędziu możemy otrzymać informacje szczegółowe o błędach, co ułatwia nam debugowanie i poprawianie błędów w kodzie. 
+Pisanie na standardowe wyjście błędu jest jednym ze sposobów wyświetlania informacji o błędach lub ostrzeżeń dla użytkownika. Programiści zwykle używają tej metody, aby wyświetlić ważne informacje o swoim kodzie lub aby naprawić błędy w szybki i efektywny sposób.
 
-## Jak to zrobić?
-
-Aby pisać do standardowego wyjścia błędów w Ruby, musimy użyć metody `puts` z parametrem `STDERR`, jak w przykładzie poniżej:
-
+Jak to zrobić:
 ```Ruby
-puts STDERR, "To jest wiadomość wysłana do standardowego wyjścia błędów."
+puts "Hello World!" # wyświetla na standardowym wyjściu
+$stderr.puts "Oops, something went wrong!" # wyświetla na standardowym wyjściu błędu
 ```
-Wynik:
-
+Output:
 ```
-To jest wiadomość wysłana do standardowego wyjścia błędów.
-```
-
-Możemy również użyć notacji `STDERR.puts` zamiast `puts STDERR`, ale oba sposoby są równoważne i wykonują tę samą funkcję.
-
-## Głębsze wyjaśnienie
-
-W Ruby standardowe wyjście błędów jest obiektem typu IO, który jest dostępny globalnie w całym programie. Oznacza to, że możemy korzystać z tej metody w dowolnym miejscu w naszym kodzie. 
-
-W przypadku, gdy chcemy przekierować błędy do innego miejsca, na przykład do zwykłego wyjścia, możemy użyć metody `warn` zamiast `puts` lub `STDERR.puts`. Przykład:
-
-```Ruby
-warn "To jest wiadomość wysłana do zwykłego wyjścia jako ostrzeżenie."
+Hello World!
+Oops, something went wrong!
 ```
 
-Wynik:
+Głębszy zanurzenie:
+Pisanie na standardowe wyjście błędu jest praktykowane od dawna, gdyż jest to prosta i szybka metoda komunikacji z użytkownikiem. Alternatywnymi metodami są wykorzystanie specjalnego loggera lub zapisywanie błędów do pliku. Pisanie na standardowe wyjście błędu może być jednak bardziej wygodne dla programisty podczas szybkiej diagnostyki lub testowania kodu. W Ruby, STDERR (czyli standardowe wyjście błędu) jest globalną zmienną, więc nie wymaga ona dodatkowych importów lub konfiguracji.
 
-```
-To jest wiadomość wysłana do zwykłego wyjścia jako ostrzeżenie.
-```
-
-Dodatkowo, warto zauważyć, że standardowe wyjście błędów nie tylko służy do wypisywania informacji o błędach, ale także może być wykorzystane do wypisywania dowolnego typu komunikatów lub ostrzeżeń podczas działania programu.
-
-## Zobacz również
-
-- [Dokumentacja Ruby o wyjściu błędów](https://ruby-doc.org/core-3.0.0/IO.html#method-c-stderr)
-- [Przewodnik dla początkujących w pisaniu do strumieni w Ruby](https://medium.com/@geebominga/writing-to-streams-in-ruby-f82793f3bea)
+Zobacz także:
+- [Ruby Dokumentacja](https://ruby-doc.org/core-2.6.6/IO.html#class-IO-label-Standard+Streams)
+- [Video o standardowych wyjściach w Ruby](https://www.youtube.com/watch?v=IqcbS0A9ORQ)

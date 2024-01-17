@@ -1,7 +1,7 @@
 ---
-title:                "Sprawdzanie, czy istnieje katalog"
-html_title:           "Gleam: Sprawdzanie, czy istnieje katalog"
-simple_title:         "Sprawdzanie, czy istnieje katalog"
+title:                "Sprawdzanie czy istnieje katalog"
+html_title:           "Gleam: Sprawdzanie czy istnieje katalog"
+simple_title:         "Sprawdzanie czy istnieje katalog"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Files and I/O"
@@ -10,49 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co & Dlaczego?
+Sprawdzanie, czy katalog istnieje, oznacza po prostu sprawdzenie, czy dana ścieżka w systemie plików jest katalogiem. Programiści tego dokonują, aby upewnić się, czy kod będzie działał poprawnie, jeśli mamy do czynienia z katalogiem.
 
-Kiedy piszesz aplikację w Gleam, ważne jest, aby upewnić się, że katalog, z którego próbujesz pobrać lub zapisać plik, istnieje. W przeciwnym razie Twoja aplikacja może zwrócić błędy lub działania mogą nie być wykonane poprawnie. Dlatego warto wiedzieć, jak sprawdzić, czy dany katalog istnieje w Twoim kodzie.
-
-## Jak to zrobić
-
-Sprawdzenie istnienia katalogu w Gleam jest bardzo proste. Wystarczy użyć funkcji `Gleam.OS.Directory.exists` i podać jako argument ścieżkę do katalogu.
-
+## Jak to zrobić:
 ```Gleam
-import Gleam.OS.Directory as Directory
+import gleam/path
+import gleam/fs
 
-let result = Directory.exists("sciezka/do/katalogu")
-
-// Jeśli katalog istnieje, zwróci wartość `ok`. W przeciwnym razie zwróci `Err`.
+path := "/home/"
+fs.exists(path) // zwraca True jeśli istnieje, False jeśli nie
 ```
 
-Możesz również wykorzystać ten sam kod w bloku `match` do sprawdzenia, czy katalog istnieje i podejmowania odpowiednich działań w zależności od tego wyniku.
-
-```Gleam
-import Gleam.OS.Directory as Directory
-
-match Directory.exists("sciezka/do/katalogu") {
-    ok -> "Katalog istnieje!"
-    Err -> "Katalog nie istnieje."
-}
+Przykładowe wyjście:
+```
+False
 ```
 
-## Głębsze zanurzenie
+## Głębsza analiza:
+(1) Sprawdzanie istnienia katalogu jest ważnym procesem w programowaniu, ponieważ daje nam pewność, że kod działa poprawnie. (2) Istnieje również kilka alternatyw do Gleam, takich jak wtyczki do systemów plików lub biblioteki oferowane przez inne języki programowania. (3) Implementacja sprawdzania istnienia katalogu w Gleam opiera się na wykorzystaniu funkcji systemowych dostępnych w danym systemie operacyjnym.
 
-Funkcja `Gleam.OS.Directory.exists` działa na podstawie API systemu plików Twojego systemu operacyjnego. Dzięki temu jest wysoce niezawodna i da ci pewność, że Twój kod będzie działać zgodnie z oczekiwaniami.
-
-Może się zdarzyć, że chcesz sprawdzić, czy dany katalog nie tylko istnieje, ale także jest to katalog regularny lub symboliczny. W takim przypadku możesz skorzystać z bardziej szczegółowej funkcji `Gleam.OS.Directory.metadata` i sprawdzić rodzaj katalogu za pomocą parametru `type`.
-
-```Gleam
-import Gleam.OS.Directory as Directory
-
-match Directory.metadata("sciezka/do/katalogu").type {
-    Directory.File -> "To jest plik, a nie katalog!"
-    Directory.Directory -> "Katalog istnieje."
-}
-```
-
-## Zobacz również
-
-- Dokumentacja Gleam do funkcji `Gleam.OS.Directory.exists`: https://gleam.run/api/Gleam.OS.Directory.html#exists
-- Dokumentacja Gleam do funkcji `Gleam.OS.Directory.metadata`: https://gleam.run/api/Gleam.OS.Directory.html#metadata
+## Zobacz także:
+- [Dokumentacja Gleam o sprawdzania istnienia pliku](https://gleam.run/time/)
+- [Podręcznik Gleam o systemie plików](https://gleam.run/io/)
+- [Inne języki programowania, które oferują funkcje do sprawdzania istnienia pliku](https://stackoverflow.com/questions/416556/using-python-how-can-i-check-if-a-file-exists-in-the-current-directory/927794#927794)

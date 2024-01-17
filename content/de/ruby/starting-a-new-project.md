@@ -10,36 +10,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was und Warum?
+Wenn du als Programmierer ein neues Projekt startest, bedeutet das, dass du eine neue Software oder Anwendung entwickeln möchtest. Das kann aus verschiedenen Gründen passieren, zum Beispiel um eine Geschäftsidee umzusetzen oder um eine bestehende Lösung zu verbessern.
 
-Wenn du ein neues Projekt starten möchtest, hast du wahrscheinlich eine Idee oder ein Problem im Kopf, das du lösen möchtest. Mit Ruby kannst du schnell und effizient Prototypen entwickeln und deine Ideen in die Realität umsetzen.
-
-## Wie geht's
-
-Um ein neues Projekt mit Ruby zu starten, kannst du Folgendes tun:
-
-- Installiere die neueste Version von Ruby auf deinem Computer.
-- Erstelle ein neues Verzeichnis für dein Projekt und navigiere mit der Befehlszeile in dieses Verzeichnis.
-- Füge eine Datei mit der Endung ".rb" hinzu, dies ist die Erweiterung für Ruby-Dateien.
-- Öffne die Datei in einem Texteditor deiner Wahl und fange an zu codieren!
-
-Hier ist ein einfaches Beispiel für eine "Hello World"-Anwendung in Ruby:
+## Wie geht's?
+Das Erste, was du tun musst, ist, die nötigen Werkzeuge und Umgebungen für deine Programmiersprache zu installieren. Wenn du mit Ruby arbeitest, kannst du Ruby Version Manager (RVM) nutzen, um verschiedene Ruby-Versionen zu verwalten. Zum Starten eines neuen Projekts musst du dann nur noch einen neuen Ordner erstellen und eine sogenannte Gemfile mit den benötigten Ruby-Gems erstellen. Anschließend kannst du mit dem Schreiben deines Codes beginnen.
 
 ```Ruby
-# Dies ist ein Kommentar in Ruby
-puts "Hello World!" # Diese Zeile gibt "Hello World!" auf der Konsole aus
+# Beispiel Gemfile
+source 'https://rubygems.org'
+
+gem 'rspec', '~> 3.0'
+gem 'sinatra'
 ```
 
-Das obige Beispiel verwendet die Methode `puts`, um den Text "Hello World!" auf der Konsole auszugeben. Du kannst auch Variablen und Bedingungen verwenden, um deine Anwendung funktionaler und interaktiver zu gestalten.
-
 ## Tiefentauchen
-
-Bei der Erstellung eines neuen Projekts mit Ruby gibt es einige wichtige Dinge zu beachten. Als erstes solltest du dich mit Syntax und grundlegenden Konzepten wie Variablen, Datentypen und Kontrollstrukturen vertraut machen.
-
-Um ein tieferes Verständnis von Ruby zu erlangen, empfehle ich die offizielle Ruby-Dokumentation und Tutorials von erfahrenen Entwicklern zu lesen. Du kannst auch an Meetups oder Konferenzen teilnehmen, um dich mit anderen Ruby-Entwicklern zu vernetzen und von ihnen zu lernen.
+Das Neue-Projekt-Starten ist eine grundlegende Fähigkeit in der Softwareentwicklung, aber es gibt verschiedene Ansätze und Werkzeuge, die dabei helfen können. Eine alternative Methode zum Erstellen von Ruby-Projekten ist die Nutzung des Bundler-Gem. Bundler ist ein Paketmanager, der die Abhängigkeiten deines Projekts automatisch installiert und verwaltet. Somit musst du nicht manuell Ruby-Gems in deine Gemfile einfügen. Außerdem bietet Bundler Funktionen wie das Inkrementieren von Versionen, um eine saubere und gut strukturierte Codebasis zu erhalten.
 
 ## Siehe auch
-
-- [Die offizielle Ruby-Dokumentation](https://www.ruby-lang.org/de/documentation/)
-- [Ruby-Tutorials von Codecademy](https://www.codecademy.com/learn/learn-ruby)
-- [Meetup.com - Ruby Meetups](https://www.meetup.com/topics/ruby/)
+- [Ruby Version Manager](https://rvm.io/)
+- [Bundler](https://bundler.io/)
+- [Offizielle Ruby-Dokumentation](https://www.ruby-lang.org/de/documentation/)

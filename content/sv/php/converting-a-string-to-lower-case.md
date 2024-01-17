@@ -1,7 +1,7 @@
 ---
-title:                "Att konvertera en sträng till gemener"
-html_title:           "PHP: Att konvertera en sträng till gemener"
-simple_title:         "Att konvertera en sträng till gemener"
+title:                "Omvandla en sträng till gemener"
+html_title:           "PHP: Omvandla en sträng till gemener"
+simple_title:         "Omvandla en sträng till gemener"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Strings"
@@ -10,38 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
-Att kunna konvertera en sträng till gemener (lower case) är en viktig funktion inom programmering eftersom den tillåter en mer effektiv och exakt hantering av textdata. Genom att omvandla all text till samma format undviks eventuella problem med att jämföra eller matcha strängar.
+## Vad & Varför?
 
-## Så här gör du
-Det finns flera olika sätt att konvertera en sträng till gemener i PHP, men det enklaste sättet är att använda funktionen **strtolower()**. Denna funktion tar in en sträng som argument och returnerar en kopia av strängen i gemener.
+Att konvertera en sträng till små bokstäver är en vanlig programmeringsteknik som används för att standardisera input och jämföra strängar på ett mer flexibelt sätt. Genom att konvertera alla tecken till små bokstäver kan man enkelt utesluta eventuella skillnader i bokstavsstorlek mellan strängar och fokusera på innehållet istället.
 
-```PHP
-$str = "HEJ vÄrLdEN";
-echo strtolower($str);
-```
-
-Detta skulle ge följande utskrift:
+## Hur gör man?
 
 ```PHP
-hej världen
+$string = "ExempelSTRÄNG";
+echo strtolower($string);
 ```
 
-En annan metod är att använda strängfunktionen **mb_strtolower()** som är specifikt utformad för att hantera specialtecken och diakritiska tecken i flerspråkiga texter. Denna funktion kräver dock att man har aktiverat multibyte-stöd i sin PHP-installation.
+Detta kommer att ge följande output:
 
 ```PHP
-$str = "Hej världen!";
-echo mb_strtolower($str, 'UTF-8');
+exempelsträng
 ```
 
-Detta skulle ge samma utskrift som den första metoden. Det finns även möjlighet att använda regelbundna uttryck för att konvertera en sträng till gemener, men detta är en mer avancerad metod som inte tas upp här.
+Som du kan se har nu alla bokstäver konverterats till små bokstäver vilket gör det enklare att jämföra denna sträng med en annan som också har konverterats på samma sätt.
 
-## Fördjupning
-Att förstå hur man konverterar en sträng till gemener är viktigt, men det är också viktigt att förstå varför man gör det på olika sätt. Funktionen **strtolower()** är snabb och enkel att använda, men om man har att göra med textdata från flera olika språk kan det vara mer effektivt att använda **mb_strtolower()** för att säkerställa att alla specialtecken behandlas korrekt.
+## Grundlig genomgång
 
-Det är också viktigt att komma ihåg att konvertering till gemener kan påverka både jämförelser och sortering av strängar. Om man konverterar en sträng till gemener när man jämför den med en sträng i versaler kommer de inte att matcha korrekt. Detsamma gäller vid sortering, där en sträng konverterad till gemener kommer att hamna i en annan ordning än om den hade behållit sina versaler.
+Att konvertera en sträng till små bokstäver är ett vanligt tillvägagångssätt för att undvika eventuella skillnader i bokstavsstorlek när man jämför strängar. Det grundläggande systemet för teckenkodning, ASCII, använde sig endast av stora bokstäver. Det var först med utvecklingen av Unicode som både små och stora bokstäver inkluderades, och därmed uppstod behovet av att kunna konvertera mellan de två. 
+
+Alternativen för konvertering till små bokstäver i PHP inkluderar även funktionerna `ucfirst` och `ucwords`. Dessa kommer att konvertera den första bokstaven i en sträng till stor bokstav respektive alla första bokstaver i varje ord till stor bokstav. Det är viktigt att notera att `strtolower` endast konverterar alla tecken i strängen och inte påverkar vare sig den första bokstaven eller andra bokstäver i ordet. 
+
+Implementeringen av `strtolower` i PHP är mycket effektiv och använder sig av inbyggda funktioner för att konvertera varje tecken. Detta gör att processen går snabbt och utan större påverkan på prestandan.
 
 ## Se även
-- [PHP: strtolower()](https://www.php.net/manual/en/function.strtolower.php)
-- [PHP: mb_strtolower()](https://www.php.net/manual/en/function.mb-strtolower.php)
-- [PHP: Reguljära uttryck](https://www.php.net/manual/en/reference.pcre.pattern.syntax.php)
+
+Officiell dokumentation för [strtolower()](https://www.php.net/manual/en/function.strtolower.php) i PHP.

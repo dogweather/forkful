@@ -10,29 +10,20 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+何してるの？
+文字列を小文字に変換するとは、プログラマーがやめる理由そのものである。一般的に、文字列を比較する際に大文字と小文字を区別しないために使用されます。
 
-文字列を小文字に変換することにかかわる理由は何でしょうか？文字列を処理する際に、大文字と小文字を区別する必要がない場合があるため、文字列を小文字に変換することで処理がより簡単になります。
-
-## 方法
-
-まず、Gleamの標準ライブラリである`String`モジュールを使う必要があります。その後、`to_lower_case`関数を使用して文字列を小文字に変換することができます。
-
-```Gleam
-import String
-
-let string = "Hello, World!"
-let lower = String.to_lower_case(string)
-
-# Output: "hello, world!"
+手順：
+```
+Gleam.String.to_lower("Hello") // "hello"
+Gleam.String.to_lower("WORLD") // "world"
+Gleam.String.to_lower("") // ""
 ```
 
-## ディープダイブ
+深く掘り下げる：
+この方法は、一般的にデータの処理や文字列の比較などに使用されてきました。そして、大文字と小文字を区別しないことは、多くの言語にとって基本的な機能であるため、さまざまな言語で同じような機能を見つけることができます。実装にあたって、様々なアルゴリズムやデータ構造を使用することにより、文字列を効率的に変換することができます。
 
-`to_lower_case`関数は、文字列を小文字に変換するための手段として使われますが、実際にはどのように動作しているのでしょうか？この関数では、Unicodeの規則に従って、各文字を小文字に変換します。また、UTF-8エンコーディングをサポートしているため、多言語の文字列を処理する際にも使用することができます。
-
-## See Also
-
-- [Gleam公式ドキュメント：Stringモジュール](https://gleam.run/documentation/std_lib/string/)
-- [Unicode正規化と文字の大小比較について](https://blog-ja.textpattern.io/articles/unicode-normalization-and-string-comparison/)
-- [UTF-8エンコーディングの仕組みについて](https://ja.wikipedia.org/wiki/UTF-8)
+参考:
+- [GleamのStringモジュール](https://gleam.run/modules/gleam/string.html)
+- [他の言語でも同様の機能を使用する方法](https://qiita.com/tomasu/items/c4338798bd52f7feee75)
+- [大文字・小文字を区別しない比較の実装方法](https://github.com/microsoft/CodeContracts/issues/319)

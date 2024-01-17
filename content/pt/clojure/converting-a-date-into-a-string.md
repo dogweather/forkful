@@ -1,7 +1,7 @@
 ---
-title:                "Convertendo uma data em uma string."
-html_title:           "Clojure: Convertendo uma data em uma string."
-simple_title:         "Convertendo uma data em uma string."
+title:                "Converter uma data em uma string"
+html_title:           "Clojure: Converter uma data em uma string"
+simple_title:         "Converter uma data em uma string"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Dates and Times"
@@ -10,28 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
- 
-Convertendo uma data em uma string em Clojure pode ser útil em várias situações, como por exemplo exibir a data em um formato específico para apresentação aos usuários ou armazenar a data formatada em um banco de dados.
- 
-## Como fazer
- 
-Para converter uma data em uma string, podemos utilizar a função `format` do namespace `clojure.string`, que aceita como parâmetros a data e um formato de string. Veja um exemplo abaixo:
- 
+## O que & Por quê?
+Converter uma data em uma string é o processo de transformar uma data (formato de dados) em uma sequência de caracteres (formato de texto). Isso é comumente feito para permitir que as datas sejam exibidas ou manipuladas em diferentes formatos, como DD/MM/YYYY ou MM/DD/YYYY. Os programadores frequentemente convertem datas em strings para facilitar a visualização e manipulação de dados em seus programas.
+
+## Como fazer:
 ```Clojure
-(require '[clojure.string :as string])
- 
-(def data (java.util.Date.))
-(string/format data "dd/MM/yyyy")
+;; Importar a biblioteca java.time para trabalhar com datas
+(ns minha-aplicação
+  (:import (java.time LocalDateTime)))
+
+;; Criar uma instância de LocalDateTime com a data atual
+(def data-atual (LocalDateTime/now))
+
+;; Converter a data em uma string no formato DD/MM/YYYY
+(str (LocalDateTime/format data-atual (java.time.format.DateTimeFormatter/ofPattern "dd/MM/yyyy")))
 ```
- 
-Este código retorna uma string no formato "dd/MM/yyyy", que representa dia, mês e ano da data atual. Para mais detalhes sobre os formatos de string disponíveis, consulte a documentação da função `format`.
- 
-## Deep Dive
- 
-A conversão de datas em strings pode ser realizada de diversas maneiras em Clojure, desde o uso da função `format` até a criação de funções personalizadas com a ajuda de outras bibliotecas, como a `clj-time`. Além disso, é importante ter em mente as diferenças entre datas e instâncias de `java.util.Date` e `java.time.LocalDateTime`, pois podem afetar o resultado da conversão. Consulte a documentação e explore as diferentes opções para encontrar a melhor abordagem para o seu caso.
- 
-## Veja também
- 
-- Documentação oficial sobre a função `format`: https://clojure.github.io/clojure/clojure.string-api.html#clojure.string/format
-- Tutorial sobre a biblioteca `clj-time`: https://clj-time.github.io/clj-time/doc/index.html
+
+Saída: "24/09/2021"
+
+## Profundando:
+Converter datas em strings tem sido uma tarefa importante para os programadores desde o início do desenvolvimento de software. Antigamente, essa conversão era feita manualmente, usando métodos matemáticos complexos para calcular o tempo decorrido desde um ponto inicial pré-determinado. No entanto, com o avanço da tecnologia, foram criados padrões e bibliotecas específicas para a manipulação de datas, facilitando muito o trabalho dos programadores.
+
+Uma alternativa à conversão de datas em strings é o uso de objetos de data diretamente em programas, sem a necessidade de strings intermediárias. No entanto, dependendo dos objetivos do programa e do tipo de dados que estão sendo trabalhados, a conversão pode ser mais eficiente e prática.
+
+A implementação da conversão de datas em strings em Clojure é feita usando a biblioteca padrão java.time, que fornece métodos e classes específicas para trabalhar com datas e horas. A partir da versão 1.8, Clojure passou a suportar toda a funcionalidade dessa biblioteca, o que torna a conversão de datas em strings muito mais fácil e intuitiva.
+
+## Veja também:
+- [Documentação da biblioteca java.time em Clojure] (https://clojure.org/reference/java_interop#date_time)
+- [Tutorial de formatação de datas em Clojure] (https://practicalli.github.io/clojure/working-with-dates-and-times/formatting-dates-and-times.html)
+- [Uma visão geral sobre a manipulação de datas em Clojure] (https://www.baeldung.com/clojure-dates)

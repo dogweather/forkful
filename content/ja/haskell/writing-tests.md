@@ -1,7 +1,7 @@
 ---
-title:                "「テストの書き方」"
-html_title:           "Haskell: 「テストの書き方」"
-simple_title:         "「テストの書き方」"
+title:                "テスト作成"
+html_title:           "Haskell: テスト作成"
+simple_title:         "テスト作成"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Testing and Debugging"
@@ -10,37 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+## 何 & なぜ？
 
-Haskellプログラミングをしている人々にとって、テストは非常に重要なツールです。テストを書くことにより、コードの品質を保証し、バグの早期発見につながります。また、将来の変更に対してもコードが正しく機能することを保証することができます。
+テストを書くとは、コードを実際に実行して、その動作が思った通りに動くかどうかを確認することです。プログラマーは、コードの品質を保証し、バグを見つけるために、テストを書きます。
 
-## やり方
+## 方法：
 
-テストを書くためには、まずは通常のコードを書くときと同じようにモジュールをインポートします。次に、テストする関数を定義し、それに対するテストケースを書きます。最後に、`if`文を使ってテスト結果を表示します。
+以下のコードブロック内にある「Haskell ...」コード例とサンプル出力を使って、テストを書く方法を紹介します。
 
 ```Haskell
-import Test.Hspec
-
-main :: IO ()
-main = hspec $ do
-  describe "addition" $ do
-    it "calculates the sum of two numbers" $ do
-      (1 + 2) `shouldBe` 3
+-- 例：
+-- 定義された関数sumのテストを書く
+sumTest = [sum [] == 0,
+           sum [1,2,3] == 6,
+           sum [-1, -2, -3] == -6]
+           
+-- 定義された関数gcdのテストを書く
+gcdTest = [gcd 12 18 == 6,
+           gcd 0 5 == 5,
+           gcd 15 15 == 15]
+           
+-- GHCiで実行して確認する
+*Main> sumTest
+True
+*Main> gcdTest
+True
 ```
 
-このコードでは、`Test.Hspec`モジュールをインポートし、`hspec`関数を使ってテストを実行しています。`describe`関数を使ってテストする関数を指定し、`it`関数によりテストケースを記述しています。最後に、`shouldBe`関数を使って正しい結果が得られるかどうかをチェックしています。
+## 詳細を深める：
 
-## ディープダイブ
+テストを書くことは、コードを品質保証するだけでなく、バグを早期に発見することも可能にします。この手法は、ソフトウェア開発において重要なプラクティスとなっています。Haskellでは、HUnitやQuickCheckといったフレームワークを使ってテストを書くことができます。
 
-テストを書く際には、さまざまなテスト用のモジュールを利用することができます。例えば、`HUnit`や`QuickCheck`などがあります。また、関数のモックやスタブを利用することにより、テストをより柔軟にすることもできます。
+また、テスト駆動開発という手法では、まずテストを書いてからコードを実装することで、コードをより確実に動作させることができます。
 
-## その他
+## 関連情報を見る：
 
-ここでは基本的なテストの書き方について紹介しましたが、より詳細な情報や他のテスト用モジュールの使い方については以下のリンクを参考にしてください。
+テストを書くことは、確実なコードを書くために不可欠です。Haskellには、さまざまなテストフレームワークやテスト駆動開発についての情報があります。以下のリンクを参考にしてください。
 
-## 詳細情報
-
-- [Haskellにおけるテストの書き方のガイド](https://www.fpcomplete.com/blog/2017/07/testing-in-haskell/)
-- [HUnitによるユニットテストの書き方のチュートリアル](https://hspec.github.io/)
-- [QuickCheckによるプロパティベーステストの書き方のチュートリアル](https://downloads.haskell.org/~ghc/latest/docs/html/users_guide/testing-with-quickcheck.html)
-- [Haskellにおける関数のモックやスタブの使い方のチュートリアル](https://tech.trifork.com/undefined-making-object-and-function-mocking-easier-in-haskell/)
+- [HUnit公式ドキュメント](https://hackage.haskell.org/package/HUnit)
+- [QuickCheck公式ドキュメント](https://hackage.haskell.org/package/QuickCheck)
+- [テスト駆動開発の概要](https://qiita.com/jflaw/items/524a162056a381925b67)

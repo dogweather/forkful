@@ -10,60 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+# Rust에서 임시 파일 만드는 법
 
-어느 시점에 하나의 임시 파일을 만들어야 하는 이유가 있을 수 있습니다. 환경 설정, 중간 결과물 저장 등 다양한 경우가 있지만, 이 글에서는 특히 Rust 언어에서 임시 파일을 만드는 방법을 다루고 있습니다.
+## 무엇이고 왜?
 
-## 어떻게
+임시 파일을 만드는 것은 임시적으로 사용할 수 있는 파일을 생성하는 것입니다. 프로그래머는 임시 파일을 사용하는 이유는 주로 메모리를 관리하기 위해서입니다. 일시적인 데이터나 작은 파일을 메모리에 저장하지 않고, 임시 파일을 사용하여 작업을 수행할 수 있습니다.
 
-이번 섹션에서는 Rust 언어를 사용하여 임시 파일을 만드는 방법을 실제 코드 예제와 함께 설명하겠습니다.
+## 하는 법:
 
 ```Rust
 use std::fs::File;
-use std::io::prelude::*;
+use std::io::Write;
+use std::fs::OpenOptions;
 
 fn main() {
-    // 임시 파일을 만들기 위해 필요한 파일명을 지정합니다.
-    let file_name = "temp.txt";
+    // 임시 파일 이름 생성
+    let temp_file_name = "temp.txt";
 
-    // `File::create()` 메서드를 사용하여 파일을 생성합니다.
-    // 결과적으로 `File` 구조체의 인스턴스가 반환됩니다.
-    let mut file = File::create(file_name).unwrap();
+    // 새로운 임시 파일 생성
+    let mut temp_file = File::create(temp_file_name).expect("파일 생성 실패");
 
-    // 파일에 텍스트를 작성합니다.
-    file.write_all(b"Hello, world!").unwrap();
+    // 파일에 쓸 내용
+    let data = b"임시 파일 생성 테스트";
+
+    // 파일에 내용 쓰기
+    temp_file.write_all(data).expect("파일에 쓰기 실패");
+
+    // 파일 닫기
+    drop(temp_file);
+
+    // 임시 파일 삭제
+    fs::remove_file(temp_file_name).expect("파일 삭제 실패");
 }
 ```
 
-위의 코드는 `temp.txt` 파일을 생성하고, 그 안에 "Hello, world!"라는 텍스트를 작성하는 예제입니다. 이렇게 작성된 임시 파일은 현재 디렉토리에 생성되며, 프로그램이 종료될 때 자동으로 삭제됩니다.
+## 깊게 들어가기:
 
-```Rust
-// 이전과 같은 내용
-use std::fs::File;
-use std::io::prelude::*;
+1. 역사적으로 파이썬과 같은 언어에서는 임시 파일을 생성할 때 사용하는 `tempfile` 모듈이 존재했습니다. 하지만 Rust에서는 표준 라이브러리의 `std::fs::File`을 사용하여 직접 임시 파일을 생성할 수 있습니다.
+2. 다른 대안으로는 운영체제에서 제공하는 `mkstemp` 함수를 사용하는 것입니다. 하지만 이 함수는 C 언어로 작성되어 있어서 Rust 보다는 약간 더 복잡한 방식으로 동작합니다.
+3. Rust에서 임시 파일을 생성할 때, 파일 이름에 랜덤한 문자열을 추가하여 중복을 방지하는 방식으로 동작합니다. 또한, 임시 파일 생성 후에는 사용하지 않는 경우 자동으로 삭제됩니다.
 
-fn main() {
-    let file_name = "temp.txt";
-    let mut file = File::create(file_name).unwrap();
-    file.write_all(b"Hello, world!").unwrap();
-    
-    // 임시 파일을 생성한 후, 다시 열어서 읽어올 수도 있습니다.
-    let mut temp_file = File::open(file_name).unwrap();
-    let mut contents = String::new();
-    temp_file.read_to_string(&mut contents).unwrap();
-    println!("{}", contents); // "Hello, world!"
-}
-```
+## 관련 자료:
 
-위의 코드는 임시 파일을 생성한 후, 다시 해당 파일을 열어서 내용을 읽어오는 예제입니다. 이렇게 임시 파일을 다시 열어 사용하는 것도 가능합니다.
-
-## 더 깊이 들어가보기
-
-Rust 언어에서 임시 파일을 만들 때, `File::create()` 메서드를 사용하는 것 이외에도 여러 가지 방법이 있습니다. `tempfile` 라이브러리를 사용하면, 더욱 간단하고 유연하게 임시 파일을 생성할 수 있습니다. 또한, 임시 파일의 이름을 랜덤하게 생성하고 파일 디스크립터를 반환하는 `mkstemp` 함수를 사용할 수도 있습니다.
-
-## 관련 자료
-
-- [Rust 표준 라이브러리 문서 - `std::fs::File::create()`](https://doc.rust-lang.org/std/fs/struct.File.html#method.create)
-- [Rust 표준 라이브러리 문서 - `std::io::prelude` 모듈](https://doc.rust-lang.org/std/io/prelude/index.html)
-- [Rust by Example - File I/O](https://doc.rust-lang.org/rust-by-example/std_misc/file/open.html)
-- [tempfile 라이브러리 문서](https://docs.rs/tempfile/)
+- Rust 공식 문서(https://doc.rust-lang.org/std/fs/struct.File.html)
+- Rust 파일 입출력 예제(https://github.com/rust-lang/rust-by-example/blob/master/std_fs/file/read-write.html)
+- Rust 임시 파일 생성 예제(https://doc.rust-lang.org/std/fs/struct.File.html#examples)

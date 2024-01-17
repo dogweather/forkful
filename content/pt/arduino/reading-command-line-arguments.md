@@ -1,7 +1,7 @@
 ---
-title:                "Lendo argumentos da linha de comando"
-html_title:           "Arduino: Lendo argumentos da linha de comando"
-simple_title:         "Lendo argumentos da linha de comando"
+title:                "Lendo argumentos da linha de comando."
+html_title:           "Arduino: Lendo argumentos da linha de comando."
+simple_title:         "Lendo argumentos da linha de comando."
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Files and I/O"
@@ -10,44 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que ler argumentos da linha de comando?
+# Comandos de Linha: O que são e para que servem?
 
-Quando você programa em Arduino, é importante entender como lidar com argumentos da linha de comando, pois isso permite que você personalize e interaja com seu código de forma mais eficaz. Além disso, aprender a ler argumentos da linha de comando pode expandir suas habilidades de programação e torná-lo um desenvolvedor mais versátil.
+Se você já ouviu falar sobre programação, provavelmente também já deve ter ouvido falar em "comandos de linha" ou "argumentos de linha de comando". Mas o que eles são exatamente e por que os programadores se preocupam com eles? 
 
-## Como fazer isso
+## O que & Porquê?
 
-Para ler argumentos da linha de comando em Arduino, você precisará usar o objeto `Serial`. Aqui está um exemplo de código que lerá os argumentos digitados pelo usuário na porta serial:
+Em termos simples, um comando de linha é uma entrada de texto inserida pelo usuário na linha de comando do Arduino, que pode ser utilizada para modificar o comportamento do programa em execução. Os programadores usam comandos de linha para tornar seus programas mais flexíveis e personalizáveis, já que é possível alterar sua execução sem ter que recompilar o código.
 
+## Como fazer:
+
+Para ler os comandos de linha em um programa Arduino, é necessário seguir alguns passos simples:
 ```
-Arduino void setup() {
-  // Inicializa a porta serial
-  Serial.begin(9600);
-
-  // Aguarda a conexão com a porta serial
-  while (!Serial) {
-    ;
-  }
+ArduinoSerialParser serialParser; //cria um objeto serialParser
+void setup() {
+  Serial.begin(9600); //inicia a comunicação serial
 }
-
 void loop() {
-  // Aguarda a entrada do usuário
-  while (Serial.available()) {
-    // Lê o próximo caractere
-    char c = Serial.read();
-
-    // Imprime o caractere na tela do monitor serial
-    Serial.print(c);
+  if (Serial.available()) { //verifica se há comandos disponíveis
+    //lê o comando e o armazena em uma variável
+    String command = serialParser.readString(Serial);
+    //faz algo com o comando lido
+    Serial.println(command);
   }
 }
 ```
 
-Agora, se o usuário digitar algo na porta serial, como "Hello World!", o código acima irá imprimir "Hello World!" na tela do monitor serial. Experimente digitando diferentes argumentos e veja como o código lida com eles.
+## Aprofundando:
 
-## Aprofundando
+Os comandos de linha não são uma invenção recente, e são utilizados há décadas em diversas linguagens de programação diferentes. Algumas linguagens oferecem suporte nativo para a leitura de comandos de linha, enquanto outras precisam de bibliotecas externas, como é o caso do Arduino.
 
-Existem alguns conceitos importantes a serem entendidos ao ler argumentos da linha de comando em Arduino. Primeiro, você precisa estar ciente do tamanho máximo do buffer da porta serial, que é de 128 bytes. Isso significa que o máximo de caracteres que você pode enviar na porta serial de uma vez é 128. Além disso, é importante lembrar que os argumentos fornecidos pelo usuário são considerados como uma cadeia de caracteres, e você pode usar funções como `strcmp` para compará-los com outras cadeias de caracteres.
+Além disso, existem outras formas de modificar o comportamento de um programa sem precisar alterar o código, como por exemplo, a utilização de variáveis de ambiente ou a passagem de parâmetros via linha de comando. No entanto, os comandos de linha são uma das formas mais simples e diretas de realizar essa tarefa.
 
-## Veja também
+## Veja também:
 
-- [Guia oficial do Arduino para comunicação serial](https://www.arduino.cc/reference/en/language/functions/communication/serial/)
-- [Tutorial sobre como ler entrada do usuário em Arduino](https://www.arduino.cc/en/Tutorial/BuiltInExamples/ReadASCIIString)
+Para saber mais sobre comandos de linha e como utilizá-los em seus programas Arduino, recomendamos as seguintes fontes:
+
+- [Tutorial oficial do Arduino sobre comunicação serial](https://www.arduino.cc/en/Tutorial/ReadASCIIString)
+- [Uso de comandos de linha em programação C](https://www.gnu.org/software/make/manual/html_node/Command-Line.html)
+- [Biblioteca SerialCommand para leitura de comandos de linha](https://github.com/kroimon/Arduino-SerialCommand)

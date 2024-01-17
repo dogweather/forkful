@@ -1,7 +1,7 @@
 ---
-title:                "Arbeta med json"
-html_title:           "Gleam: Arbeta med json"
-simple_title:         "Arbeta med json"
+title:                "Arbeta med JSON"
+html_title:           "Gleam: Arbeta med JSON"
+simple_title:         "Arbeta med JSON"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Data Formats and Serialization"
@@ -10,47 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
 
-Att arbeta med JSON kan vara väldigt användbart eftersom det är ett vanligt format för datautbyte mellan olika applikationer. Oavsett om du bygger en webbapplikation eller utvecklar en mobilapp, kommer du sannolikt att behöva hantera JSON-data på ett eller annat sätt.
+Att arbeta med JSON (JavaScript Object Notation) innebär att manipulera data i ett format som är lättläst för både människor och datorer. JSON används ofta för att överföra och lagra data, särskilt i webbutveckling. Det är populärt bland programmerare på grund av dess enkelhet och flexibilitet.
 
-## Så här gör du
+## Hur Man Gör:
 
-För att börja arbeta med JSON i Gleam, använd `gleam/json` paketet. För att installera paketet, öppna en terminal och kör följande kommando:
+Att arbeta med JSON i Gleam är enkelt och effektivt. För att kunna arbeta med JSON i Gleam måste man först importera modulen "json". Därefter kan man använda funktioner som "decode" och "encode" för att hantera JSON-data. Här är ett exempel som visar hur man kan dekodera JSON-data till en gleamtillströmning:
 
-```
-gleam install gleam/json
-```
-
-När paketet är installerat kan du importera det i din kod genom att lägga till följande längst upp i din `.gleam` fil:
-
-```
-import gleam/json
+```Gleam
+let decoded = json.decode(stream, decode_options)
 ```
 
-För att läsa in JSON-data i en variabel kan du använda funktionen `gleam/json.decode` och ange JSON-strängen och den förväntade typen av data som argument. Till exempel, om du har en JSON-sträng som innehåller en lista med användare, kan du läsa in den i en `User`-lista enligt följande:
+Här är ett annat exempel som visar hur man kan koda en gleamvärde till JSON:
 
-```
-let json_string = "{ "users": [ { "name": "Lisa", "age": 25 }, { "name": "Peter", "age": 30 } ] }"
-
-let users = json.decode(json_string, &[User])
+```Gleam
+let encoded = json.encode(value)
 ```
 
-För att konvertera en Gleam-struktur till en JSON-sträng, kan du använda funktionen `gleam/json.encode` och ange strukturen som argument. Till exempel, om du har en `User`-struktur som du vill skicka som JSON-data, kan du göra det enligt följande:
+För att använda dessa funktioner måste man också förstå hur man hanterar mönstermatchning och unions i Gleam.
 
-```
-let user = User("John", 35)
+## Djupdykning:
 
-let json_string = json.encode(user)
-```
+JSON har funnits sedan 2001 och har blivit ett populärt format för att överföra data på webben. Det finns också alternativ till JSON som XML och YAML, men JSON är ofta föredraget på grund av dess enkelhet och lätta vikt.
 
-## Djupdykning
+Att arbeta med JSON i Gleam möjliggörs tack vare alla funktioner och datavärder som finns tillgängliga. JSON i Gleam stödjer både omskrivning och fogning av JSON-data samt möjligheten att dekodera och kodera olika typer av värden till och från JSON-formatet. Detta gör det lättare att arbeta med komplexa datastrukturer och öppnar upp för mer avancerad datahantering.
 
-När du arbetar med JSON i Gleam, är det viktigt att förstå att JSON-strängar måste följa ett visst format för att kunna läsas in korrekt. Till exempel måste alla nycklar vara omgivna av citattecken och alla värden måste vara antingen ett nummer, en sträng eller en boolean. Om din JSON-sträng inte följer detta format kan den inte läsas in korrekt.
+## Se Även:
 
-En annan viktig sak att komma ihåg är att du måste ange den förväntade typen av data när du läser in JSON. Om typen inte matchar den faktiska datan i JSON-strängen kommer du att få ett felmeddelande.
-
-## Se även
-
-- [Official Gleam Documentation](https://gleam.run/documentation/)
-- [Gleam JSON Package Documentation](https://hexdocs.pm/gleam_json/readme.html)
+- Gleam json modul: https://gleam.run/modules/json/json/latest/
+- JSON.org: https://www.json.org/json-en.html
+- W3Schools JSON tutorial: https://www.w3schools.com/js/js_json_intro.asp

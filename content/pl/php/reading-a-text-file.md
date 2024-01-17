@@ -1,7 +1,7 @@
 ---
-title:                "Odczytywanie pliku tekstowego"
-html_title:           "PHP: Odczytywanie pliku tekstowego"
-simple_title:         "Odczytywanie pliku tekstowego"
+title:                "Odczyt pliku tekstowego"
+html_title:           "PHP: Odczyt pliku tekstowego"
+simple_title:         "Odczyt pliku tekstowego"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Files and I/O"
@@ -10,43 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co & Dlaczego?
+Czytanie pliku tekstowego to proces odczytywania zawartości pliku zapisanego w formacie tekstowym. Programiści często wykonują tę czynność w celu pobrania danych lub przetworzenia informacji z pliku tekstowego.
 
-Czy kiedykolwiek miałeś problem z odczytaniem danych z pliku tekstowego w języku PHP? Jeśli tak, to ten artykuł jest dla ciebie! Przeczytasz tutaj jak w prosty sposób można odczytać dane z pliku tekstowego za pomocą aktualnej wersji PHP. 
-
-## Jak To zrobić?
-
-### Przygotowanie pliku tekstowego
-
-Najpierw utwórzmy prosty plik tekstowy do odczytu. Może to być plik z rozszerzeniem `.txt` lub `.csv` z dowolnymi danymi. Ważne jest, aby pamiętać, że plik musi być dostępny w katalogu, w którym znajduje się nasz kod PHP.
-
-### Kod
-
-Teraz przejdźmy do sedna artykułu - kodu PHP. W poniższym przykładzie użyjemy funkcji `fopen()` do otwarcia pliku do odczytu.
+## Jak to zrobić?
 ```PHP
-$handle = fopen("nazwa_pliku.txt", "r");
+$file = fopen("plik.txt", "r"); //otwórz plik w trybie tylko do odczytu
+if($file) { //sprawdź czy plik został poprawnie otwarty
+    while(($line = fgets($file)) !== false) { //odczytaj plik linia po linii
+        echo $line; //wyświetl linię
+    }
+    fclose($file); //zamknij plik
+}
 ```
-Następnie użyjemy funkcji `fread()` do odczytania zawartości pliku i przypisania jej do zmiennej.
-```PHP
-$contents = fread($handle, filesize("nazwa_pliku.txt"));
+Przykładowa zawartość pliku.txt:
 ```
-Na koniec zamknijmy połączenie z plikiem za pomocą funkcji `fclose()`.
-```PHP
-fclose($handle);
+To jest tekst zapisany w pliku.
+Odczytam go w moim programie PHP.
+Ta linia zostanie wyświetlona jako pierwsza.
+A ta jako druga.
 ```
-### Przykładowy wynik
+Wynik:
+```
+To jest tekst zapisany w pliku.
+Odczytam go w moim programie PHP.
+Ta linia zostanie wyświetlona jako pierwsza.
+A ta jako druga.
+```
 
-Bardzo ważne jest, aby upewnić się, że plik ma odpowiedni format i zawiera poprawne dane do odczytania. W przeciwnym razie, nie będzie możliwe prawidłowe odczytanie danych z pliku. Poniżej jest przykładowy wynik odczytania pliku CSV z danymi.
+## Głębsze zanurzenie
+Obecnie najczęściej stosowanym formatem danych jest format tekstowy. Dzięki niemu pliki są czytelne dla człowieka i prostsze w przetwarzaniu przez programy. Alternatywami dla czytania pliku tekstowego są na przykład czytanie pliku binarnego lub bazy danych. Implementacja czytania pliku tekstowego w PHP jest prosta i wykorzystuje funkcję ```fgets()```, która odczytuje plik linia po linii. W przeszłości, gdy format binarny był popularniejszy, konieczne było wykorzystanie innych funkcji, takich jak ```fread()```.
 
-![przykładowy_wynik](https://user-images.githubusercontent.com/68320777/128888246-2107e730-61df-4cde-a196-01f3d8fcf3b7.png)
-
-## Deep Dive
-
-Funkcja `fopen()` pozwala określić tryb otwarcia pliku, w naszym przykładzie użyliśmy trybu `r` do odczytu. Istnieją również inne tryby dostępne, takie jak `w` do zapisu, `a` do dopisywania lub `x` do tworzenia nowego pliku. Więcej informacji na temat trybów można znaleźć w dokumentacji PHP.
-
-Pamiętaj również o zamknięciu połączenia z plikiem za pomocą funkcji `fclose()`. Jest to ważne nie tylko dla bezpieczeństwa, ale także dla wydajności naszego kodu.
-
-## Zobacz także
-- [Dokumentacja PHP: fread()](https://www.php.net/manual/pl/function.fread.php)
-- [Dokumentacja PHP: fopen()](https://www.php.net/manual/pl/function.fopen.php)
-- [Dokumentacja PHP: fclose()](https://www.php.net/manual/pl/function.fclose.php)
+## Zobacz również
+- Dokumentacja PHP o funkcji [```fgets()```](https://www.php.net/manual/en/function.fgets.php)
+- Przykładowe użycie funkcji [```fgets()```](https://www.w3schools.com/php/func_filesystem_fgets.asp) w prostym programie PHP.

@@ -1,7 +1,7 @@
 ---
-title:                "Sattumanvaraisten lukujen luominen"
-html_title:           "C#: Sattumanvaraisten lukujen luominen"
-simple_title:         "Sattumanvaraisten lukujen luominen"
+title:                "Satunnaislukujen generointi"
+html_title:           "C#: Satunnaislukujen generointi"
+simple_title:         "Satunnaislukujen generointi"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Numbers"
@@ -10,56 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-Kuten kaikissa tietokoneohjelmissa, satunnaisten numeroiden generointia tarvitaan myös C# -ohjelmoinnissa. Satunnaisilla numeroilla voi esimerkiksi simuloida pelattavan pelin eri vaihtoehtoja tai luoda salasanan, joka on mahdollisimman vaikea arvata. 
+Satunnaislukujen generoiminen on tärkeä osa ohjelmointia, sillä se mahdollistaa satunnaisuuden ja vaihtelun luomisen ohjelmien toimintaan. Ohjelmoijat käyttävät satunnaislukuja esimerkiksi peleissä ja simulaatioissa, joissa halutaan eri tuloksia jokaisella suorituskerralla.
 
-## How To
+## How to:
 
-Satunnaisia numeroita voidaan generoida C#:ssa rand() -funktion avulla. Tämä funktio palauttaa liukuluvun välillä 0.0 ja 1.0. Alla on esimerkki, miten sitä voidaan hyödyntää: 
-
-```C#
-using System;
-
-class MainClass {
-  public static void Main (string[] args) {
-    Console.WriteLine("Satunnaisesti generoitu kokonaisluku: " + rand());
-  }
-}
-```
-
-Syötteellä:
+Jos haluat generoida satunnaislukuja C# -ohjelmassa, sinun tulee käyttää Random-luokkaa ja sen Next-metodia. Esimerkiksi seuraava koodi generoi satunnaisen kokonaisluvun väliltä 1-10 ja tulostaa sen konsoliin:
 
 ```
-Satunnaisesti generoitu kokonaisluku: 0.375514
+Random random = new Random();
+int randomNumber = random.Next(1, 11);
+Console.WriteLine(randomNumber); // voi vaihdella välillä 1-10
 ```
 
-Voimme myös määrittää rand() -funktiolle ala- ja ylärajan, jolloin generoidut numerot ovat tällä välillä. Esimerkiksi seuraava koodi generoi satunnaisen kokonaisluvun väliltä 1-10:
+## Deep Dive:
 
-```C#
-using System;
+Satunnaislukujen generoimisen historia juontaa juurensa jo 1900-luvun alkupuolelle, mutta sen yleistyminen ohjelmointikielessä tapahtui vasta 1950-luvulla. Nykyään useimmissa ohjelmointikielissä on valmiita kirjastoja satunnaislukujen generoimiseen.
 
-class MainClass {
-  public static void Main (string[] args) {
-    Random rnd = new Random();
-    int satunnainenNumero = rnd.Next(1,11);
-    Console.WriteLine("Satunnaisesti generoitu kokonaisluku väliltä 1-10: " + satunnainenNumero);
-  }
-}
-```
+On myös olemassa muita tapoja generoida satunnaislukuja kuin Random-luokan avulla. Esimerkiksi voit käyttää Guid-luokkaa, joka tuottaa uniikkeja satunnaisia merkkijonoja. Voit myös käyttää ulkoisia kirjastoja, kuten Numerical Recipes, jotka tarjoavat erilaisia satunnaislukugeneraattoreita.
 
-Syötteellä:
+Satunnaislukujen generoiminen ei ole täysin satunnainen prosessi, vaan luvut luodaan tietyn algoritmin avulla. Jotkut algoritmit ovat toisia parempia ja tuottavat tasaisemmin ja näennäisesti satunnaisempia lukuja.
 
-```
-Satunnaisesti generoitu kokonaisluku väliltä 1-10: 7
-```
+## See Also:
 
-## Deep Dive 
-
-Rand() -funktio käyttää C:n rand() -funktiota, joka perustuu lineaariseen kongruenssimenetelmään. Tämä tarkoittaa, että jokainen generoitu luku riippuu edellisestä generoidusta luvusta ja funktiolla on myös periodisuus eli se palauttaa samat numerot tietyllä toistuvalla syötteellä. Sen vuoksi oikeaoppisessa käytössä suositellaan alkuarvon asettamista seed-toiminnolla ennen rand()-funktion käyttöä. 
-
-## See Also
-
-- [C#:n dokumentaatio satunnaisista numeroista](https://docs.microsoft.com/en-us/dotnet/api/system.random?view=netcore-3.1)
-- [Miksi C# on suosittu kieli ohjelmoinnissa?](https://medium.com/@aeriontech/why-c-has-become-a-popular-language-for-programmers-6546b33ddbfe)
-- [Miten satunnaisia numeroita voidaan käyttää pelinkehityksessä?](https://www.gamasutra.com/blogs/LeviDmith/20170714/300866/Random_Numbers_and_Game_Design.php)
+- [Random-luokan dokumentaatio](https://docs.microsoft.com/en-us/dotnet/api/system.random?view=netcore-3.1)
+- [Numerical Recipes -kirjaston sivu](https://www.nr.com/)
+- [Satunnaislukujen generoimisen historia](https://arxiv.org/abs/1205.4475)

@@ -10,41 +10,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför 
+## Vad & Varför?
+Generering av slumpmässiga nummer är en viktig del av programmering, eftersom det tillåter oss att skapa variation och slumpmässighet i våra program. Detta är särskilt användbart när det kommer till spel, simuleringar, och kryptering.
 
-Randoma nummer behövs för att skapa variation och slumpmässighet i program och spel. Dessutom kan det vara ett användbart verktyg för att testa och simulera olika scenarier i kod.
-
-## Hur man gör 
-
-För att generera slumpmässiga nummer i Kotlin, används funktionen "random()". Detta returnerar ett nummer mellan 0 och 1.
-
+## Så här gör du:
 ```Kotlin
-val randomNumber = random()
+// Genererar ett slumpmässigt heltal mellan 1 och 10
+val slumpNumber = (1..10).random() 
+println(slumpNumber) // Kan genereras olika varje gång programmet körs
+
+// Genererar ett slumpmässigt flyttal mellan 0.0 och 1.0
+val slumpTal = Math.random() 
+println(slumpTal) // Kan genereras olika varje gång programmet körs
 ```
 
-För att få ett nummer inom ett visst intervall, används "nextInt()" funktionen tillsammans med det önskade intervallet som parameter. I följande exempel kommer ett slumpmässigt nummer att genereras mellan 1 och 10.
+## Djupdykning:
+Generering av slumpmässiga nummer är en viktig del av datavetenskapens historia, och algoritmer för detta har utvecklats sedan 1940-talet. Det finns olika sätt att generera slumpmässiga nummer, inklusive pseudo-slumpmässiga algoritmer (som den som används av Kotlin i exemplet ovan) och sann-slumpmässiga algoritmer som använder sig av yttre faktorer, som exempelvis brus från mikrofonen på din dator. Om du behöver generera slumpmässiga nummer med extra hög säkerhet, kan du överväga att använda en krypto-mappare.
 
-```Kotlin
-val randomNumber = nextInt(10) + 1
-```
-
-Om du vill generera slumpmässiga flyttal, används "nextDouble()" funktionen.
-
-```Kotlin
-val randomDecimal = nextDouble()
-```
-
-Slutligen, för att få ett slumpmässigt heltal inom ett visst intervall, kan "nextInt()" användas tillsammans med både start- och slutvärde som parametrar.
-
-```Kotlin
-val randomNumber = nextInt(5, 10)
-```
-
-## Deep Dive 
-
-För att generera slumpmässiga nummer i Kotlin, används Mersenne Twister-algoritmen som är en av de mest använda algoritmerna för slumpmässighet. Detta beror på dess höga hastighet och periodicitet. Enligt dokumentationen för Kotlin, genererar Mersenne Twister-algoritmen ett 32-bitars binärt tal som sedan konverteras till ett flyttal mellan 0 och 1.
-
-## Se även 
-
-- Kotlin's Random class documentation: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.random/-random/index.html
-- Mersenne Twister algorithm: https://en.wikipedia.org/wiki/Mersenne_Twister
+## Se även:
+- [Kotlin Random Dokumentation](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.random/-kotlin.-random/)
+- [Sualin Random (Sann-slumpmässig algoritm)](https://www.cs.princeton.edu/~rs/AlgsDS07/11RadomnessS71.pdf)

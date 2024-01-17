@@ -10,47 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+## O que e por que?
 
-Se você está pensando em começar um novo projeto, provavelmente está em busca de uma linguagem de programação que seja simples, versátil e poderosa. Ruby é justamente isso e muito mais! Com uma sintaxe amigável e uma comunidade ativa, é uma ótima escolha para qualquer projeto.
+Comecando um novo projeto em programacao significa iniciar um novo trabalho com um objetivo especifico em mente, como a criacao de um novo aplicativo ou a resolucao de um problema. Os programadores fazem isso para explorar ideias e tecnologias, ampliar suas habilidades e criar algo novo que possa ser usado por eles ou por outras pessoas.
 
-## Como fazer
+## Como fazer:
 
-Para iniciar um novo projeto em Ruby, basta seguir os seguintes passos:
-
-1. Faça o download e instale o Ruby em sua máquina.
-2. Abra seu editor de código favorito (como o Visual Studio Code ou o Sublime Text).
-3. Crie uma nova pasta para seu projeto e abra-a no seu editor.
-4. Crie um arquivo com extensão ".rb" para escrever seu código.
-5. Agora, basta começar a escrever em Ruby e se divertir!
-
-Aqui está um exemplo simples de código Ruby que exibe "Hello World" no console:
+Para criar um novo projeto em Ruby, siga estes passos simples:
 
 ```Ruby
-# Hello World em Ruby
-puts "Hello World"
+# 1. Crie um novo diretorio para o seu projeto
+mkdir novo_projeto
+
+# 2. Entre no diretorio recem-criado
+cd novo_projeto
+
+# 3. Inicie um novo projeto usando o gem bundler
+bundle init
 ```
 
-E o output seria:
+Apos seguir esses passos, voce tera um novo projeto criado com um Gemfile padrao.
 
-```
-Hello World
-```
+## Profundando na questao:
 
-## Deep Dive
+Historicamente, a criacao de novos projetos em Ruby era feita manualmente, criando uma estrutura de pasta e instalando manualmente as dependencias desejadas. No entanto, com o surgimento do bundler, isso se tornou muito mais facil e padronizado. Alternativas ao bundler incluem o RubyGems e o Rake.
 
-Antes de começar seu projeto, é importante conhecer algumas características importantes de Ruby:
+Para personalizar ainda mais o processo de criacao de um novo projeto, voce pode especificar as dependencias necessarias em seu Gemfile antes de executar o comando `bundle init`. Isso garantira que todas as dependencias necessarias sejam instaladas automaticamente ao iniciar um novo projeto.
 
-1. Sintaxe simples e fácil de aprender: Uma das principais vantagens de Ruby é sua sintaxe amigável e expressiva, que facilita a leitura e escrita do código.
+## Veja tambem:
 
-2. Bibliotecas e frameworks robustos: Ruby possui uma vasta coleção de bibliotecas e frameworks prontos para serem utilizados em seus projetos, tornando o desenvolvimento mais rápido e eficiente.
-
-3. Orientação a objetos: Ruby é completamente orientado a objetos, o que significa que tudo é um objeto - até mesmo os números e strings.
-
-4. Comunidade ativa: A comunidade de Ruby é muito ativa e engajada, oferecendo suporte e recursos valiosos para programadores iniciantes e experientes.
-
-## Veja também
-
-- [Site oficial do Ruby](https://www.ruby-lang.org/pt/)
-- [Documentação oficial do Ruby](https://www.ruby-lang.org/pt/documentation/)
-- [Ruby - Aprenda a programar](https://www.ruby-lang.org/pt/documentation/quickstart/)
+- [RubyGems](https://rubygems.org/)
+- [Rake](https://ruby.github.io/rake/)

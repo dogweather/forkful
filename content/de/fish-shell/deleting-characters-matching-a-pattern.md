@@ -1,7 +1,7 @@
 ---
-title:                "Löschen von Zeichen, die einem Muster entsprechen"
-html_title:           "Fish Shell: Löschen von Zeichen, die einem Muster entsprechen"
-simple_title:         "Löschen von Zeichen, die einem Muster entsprechen"
+title:                "Löschen von Zeichen mit übereinstimmendem Muster"
+html_title:           "Fish Shell: Löschen von Zeichen mit übereinstimmendem Muster"
+simple_title:         "Löschen von Zeichen mit übereinstimmendem Muster"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -10,46 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum?
+# Was & Warum?
+Das Löschen von Zeichen, die einer bestimmten Muster entsprechen, ist das Entfernen von Zeichen, die einem vordefinierten Muster entsprechen. Programmierer tun dies, um Text oder Daten zu bereinigen oder um spezifische Informationen zu extrahieren.
 
-Manchmal möchten wir in unserem Code oder in Textdateien bestimmte Zeichen entfernen, um sie lesbarer oder kompakter zu gestalten. Dies kann besonders hilfreich sein, wenn man mit großen Mengen an Daten arbeitet. Mit der aktuellen Version der Fish Shell können wir dieses Problem effektiv lösen.
+# Wie geht's?
+Der Fish Shell (aktuelle Version) bietet eine einfache und effektive Möglichkeit, Zeichen basierend auf einem Muster zu löschen. Hier sind ein paar Beispiele, die zeigen, wie das geht:
 
-## Wie geht das?
+```
+# Beispiel 1: Löschen eines einzelnen Zeichens
+echo "Hallo Welt" | tr -d "a"
+# Ausgabe: Hllo Welt
 
-Um Zeichen zu löschen, die einem bestimmten Muster entsprechen, können wir das Befehlsmuster `string delete <pattern>` verwenden. Hier ein Beispiel:
+# Beispiel 2: Löschen eines bestimmten Worts
+echo "Hello World" | sed 's/World//g'
+# Ausgabe: Hello
 
-```Fish Shell
-set myString "Hello World"
-echo $myString
+# Beispiel 3: Löschen von Leerzeichen
+echo "Willkommen zur Fish Shell" | tr -d " "
+# Ausgabe: WillkommenzurFishShell
 ```
 
-Dieser Code erstellt eine Variable `myString` mit dem Wert "Hello World" und gibt ihn aus. Nun möchten wir das Leerzeichen im String löschen, damit "HelloWorld" ausgegeben wird. Dazu fügen wir einfach `string delete " "` hinzu:
+# Tiefer Einblick
+Das Löschen von Zeichen basierend auf einem Muster ist eine gängige Funktion in vielen Programmiersprachen und Tools. Früher wurde oft das `tr` Befehl verwendet, aber heutzutage wird häufig `sed` (Stream Editor) verwendet, da es leistungsfähiger und flexibler ist.
 
-```Fish Shell
-set myString "Hello World"
-echo $myString
-set myString (string delete " " $myString)
-echo $myString
-```
+Eine Alternative zu dem Löschen von Zeichen ist das Ersetzen von Zeichen durch andere Zeichen, zum Beispiel mit dem `sed` Befehl `s/old/new/g`, wobei "old" durch "new" ersetzt wird.
 
-Dies wird den String erfolgreich verändern und "HelloWorld" ausgeben.
+Die Fish Shell verwendet die POSIX-spezifische Funktion `sed` für die Zeichendeletion.
 
-## Ausführlicher Einblick
-
-Dieser Befehl verwendet das Muster `string delete`, gefolgt von dem zu löschenden Zeichen oder Muster und der Variable, auf die es angewendet werden soll. Es gibt auch die Möglichkeit, mehrere Zeichen oder Muster gleichzeitig zu löschen, indem sie mit einem Leerzeichen getrennt werden.
-
-Wir können auch einen Bereich von Zeichen löschen, indem wir das Muster `string delete --start <start_index> --end <end_index>` verwenden. Dabei geben wir den Anfangs- und den Endindex des Bereichs an, den wir löschen möchten.
-
-Es gibt auch die Option `--glob`, die es uns ermöglicht, ein globales Muster zu verwenden, um Zeichen zu löschen. Zum Beispiel könnten wir mit `string delete --glob "*.txt" $myString` alle Zeichen löschen, die mit ".txt" enden.
-
-## Weitere Informationen findest du hier
-
-- [Fish Shell Dokumentation zu `string delete`](https://fishshell.com/docs/current/cmds/string.html#string-delete)
-- [Offizielles Fish Shell GitHub Repository](https://github.com/fish-shell/fish-shell)
-- [Fish Shell User Guide (englisch)](https://fishshell.com/docs/current/index.html)
-
----
-**Siehe auch**
-
-- `string replace` Befehl in der Fish Shell
-- `grep -v` Befehl in Bash Shell
+# Weitere Informationen
+- [Fish Shell Dokumentation](https://fishshell.com/docs/current/)
+- [Stack Overflow: Delete Characters Matching A Pattern in Bash](https://stackoverflow.com/questions/25534443/delete-characters-matching-a-pattern-in-bash)

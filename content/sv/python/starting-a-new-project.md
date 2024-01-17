@@ -1,7 +1,7 @@
 ---
-title:                "Att påbörja ett nytt projekt"
-html_title:           "Python: Att påbörja ett nytt projekt"
-simple_title:         "Att påbörja ett nytt projekt"
+title:                "Att börja ett nytt projekt"
+html_title:           "Python: Att börja ett nytt projekt"
+simple_title:         "Att börja ett nytt projekt"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Getting Started"
@@ -10,41 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
-Att starta ett nytt projekt kan vara spännande och utmanande. Det ger dig möjlighet att utforska nya idéer, förbättra dina programmeringsfärdigheter och skapa något som du kan vara stolt över.
+## Vad & Varför?
 
-## Hur man gör det
-För att starta ett nytt projekt i Python behöver du följa några enkla steg:
-1. Skapa en mapp för ditt projekt.
-2. Öppna ett textredigeringsverktyg och spara filen som *main.py* i din projektmapp.
-3. Börja skriva din kod och spara filen ofta.
-4. När du är klar kan du köra ditt program genom att öppna kommandotolken, navigera till din projektmapp och skriva `python main.py`.
+Att starta ett nytt projekt inom programmering innebär att påbörja ett nytt kodningsarbete för att skapa något nytt eller förbättra något befintligt. Programmerare gör det för att utveckla sina färdigheter och för att skapa lösningar på olika problem.
 
-Ett exempel på hur din *main.py*-fil kan se ut:
+## Hur du gör:
+
 ```Python
-print("Välkommen till mitt första Python-projekt!")
-name = input("Vänligen skriv in ditt namn: ")
-print("Hej", name, ", kul att du är här!")
+# Skapa ett nytt projekt med en lista av färger
+colors = ["röd", "blå", "grön"]
+
+# Skriv ut listan för att bekräfta att den har skapats
+print(colors)
+
+# Lägg till en ny färg till listan
+colors.append("gul")
+
+# Skriv ut den uppdaterade listan
+print(colors)
+
+# Ta bort en färg från listan
+colors.remove("blå")
+
+# Skriv ut den uppdaterade listan
+print(colors)
 ```
-Exempelutdata:
+
+Output:
 ```
-Välkommen till mitt första Python-projekt!
-Vänligen skriv in ditt namn: Anna
-Hej Anna, kul att du är här!
+["röd", "blå", "grön"]
+["röd", "blå", "grön", "gul"]
+["röd", "grön", "gul"]
 ```
-## Djupdykning
-Att starta ett nytt projekt i Python handlar inte bara om att skapa en ny fil och börja skriva kod. För att få ett lyckat projekt är det viktigt att ha en tydlig plan och struktur. Här är några tips för att komma igång:
 
-### Välj ett ämne
-Fundera på vad du vill åstadkomma med ditt projekt och välj ett ämne som du är intresserad av. Det kommer att göra det lättare och roligare att arbeta med projektet.
+## Djupdykning:
 
-### Börja med ett enkelt mål
-Det är viktigt att inte överväldigas av ditt projekt redan från början. Börja med ett enkelt mål och bygg sedan på det allt eftersom.
+Att starta ett nytt projekt i programmering har varit en tradition sedan branschen började. Det ger programmerare chansen att utveckla sin kodningskompetens och implementera nya idéer. Det finns olika sätt att starta ett nytt projekt, beroende på vilken programmeringsmiljö man använder. Alternativ som kan övervägas inkluderar att använda en IDE (Integrated Development Environment) eller att skapa ett nytt projekt från grunden i en textredigerare.
 
-### Använd moduler och paket
-Python erbjuder ett stort antal moduler och paket som kan hjälpa dig att skriva effektiv och strukturerad kod. Ta en titt på dokumentationen för att lära dig mer om vad som finns tillgängligt.
+## Se också:
 
-## Se även
-- [Officiell Python-dokumentation](https://docs.python.org/3/)
-- [10 steg för att starta ett Python-projekt](https://towardsdatascience.com/10-steps-to-start-your-python-project-right-1e148fa6cc5c)
-- [Grundläggande programmeringskoncept i Python](https://realpython.com/python-beginner-tips/)
+- [Python.org](https://www.python.org/) - Officiell hemsida för Python programming language.
+- [Real Python](https://realpython.com/) - En resurs för Python-utbildning och artiklar.
+- [Python Projects](https://github.com/tuvtran/project-based-learning/tree/master/python) - En lista med Python-projekt för att öva på kodning.

@@ -10,30 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##なぜ
-文字列を連結することの利点について2文で説明する。
+## 何をするの？なぜするの？
 
-文字列の連結は、プログラミングにおいて重要なスキルであり、効率的でスマートなコードを書く上で不可欠です。特に、長い文を制作する場合や、複数の変数を組み合わせたい場合には、文字列の連結が必要になります。また、見やすいコードを書くことができるため、プロジェクトのメンテナンス性も向上させることができます。
+文字列の連結とは、複数の文字列を一つの文字列にまとめることです。プログラマーがこれを行う理由は、文字列を合成してより複雑な文や、可変的な文を作成するためです。
 
-##やり方
-文字列を連結する方法を ```Swift ... ``` コードブロックを使用して示し、その動作例を記載する。
+## 使い方：
 
-```
+```Swift
 let firstName = "太郎"
 let lastName = "山田"
-let fullName = firstName + " " + lastName
+
+let fullName = firstName + lastName
+
 print(fullName)
-// 出力結果：太郎 山田
+
+// 出力：太郎山田
 ```
 
-文字列を連結する方法は複数あります。上の例では、```+```演算子を使用し、変数と文字列を連結しています。他にも、```String```クラスのメソッドを使用する方法や、```StringBuilder```クラスを使う方法もあります。それぞれの方法の違いを理解し、適切な方法を選択することが重要です。
+```Swift
+let greeting = "こんにちは"
+let name = "太郎さん"
 
-##深堀り
-文字列の連結には、パフォーマンスやメモリの使用量の面で注意する必要があります。大量の文字列を連結する場合、毎回新しい文字列を作成するとメモリを大量に消費し、パフォーマンスにも影響を与える可能性があります。そのため、文字列を連結する際には、メモリ効率の良い方法を選択することが重要です。
+print(greeting + name)
 
-また、文字列の連結には```String```クラスの```append(_:)```メソッドや、```StringBuilder```クラスの```append(_:)```メソッドを使用することで、パフォーマンスを向上させることができます。これらのメソッドは、文字列を連結した際に新しいメモリ領域を確保するのではなく、既存のメモリ領域を再利用するため、パフォーマンスを向上させることができます。
+// 出力：こんにちは太郎さん
+```
 
-##参考リンク
-- [Swift公式ドキュメント - 文字列と文字の操作](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
-- [Swift Tutorial - 3 Ways to Concatenate Strings](https://www.swifttutorialspoint.com/how-to-concatenate-strings-in-swift)
-- [Swift by Sundell - The power of string interpolation in Swift](https://www.swiftbysundell.com/articles/the-power-of-string-interpolation-in-swift/)
+## もっと詳しく：
+
+文字列の連結は、プログラミングにおいて非常に一般的な操作です。古くからある言語では、文字列の連結には複雑な方法が必要でしたが、Swiftでは単純かつ直感的な方法でこれを行うことができます。
+
+文字列の連結には、他にも便利な方法があります。文字列補間と呼ばれる方法では、変数や定数を文字列の中に埋め込むことができます。また、Swiftには高度な文字列操作ができるString型がありますので、より柔軟な文字列の合成が可能です。
+
+## 関連リンク：
+
+- [Swiftの文字列操作について](https://www.yamamanx.com/swift-string-format/)
+- [文字列の連結の別の方法について](https://qiita.com/DaisukeKawamura/items/88ea91a284ed7aca1642)

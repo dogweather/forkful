@@ -1,7 +1,7 @@
 ---
-title:                "Stor bokstaving av en streng"
-html_title:           "TypeScript: Stor bokstaving av en streng"
-simple_title:         "Stor bokstaving av en streng"
+title:                "Store bokstaver i en streng"
+html_title:           "TypeScript: Store bokstaver i en streng"
+simple_title:         "Store bokstaver i en streng"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -10,45 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hva & Hvorfor?
+Å kapitalisere en streng er å gjøre den første bokstaven stor. Dette gjøres ofte for å gjøre tekst mer leselig og ryddig. I programmering, spesielt i strings og variabelnavn, er det en vanlig praksis for å følge god kodekonvensjon.
 
-Å bruke TypeScript for å kapitalisere en streng kan gjøre koden din mer lesbar og enklere å vedlikeholde. Det kan også være nyttig når du trenger å formatere data som skal vises for brukerne.
-
-## Slik gjør du det
-
+## Slik gjør du:
 ```TypeScript
-const unformattedString = "dette er en tekst med små bokstaver";
-const formattedString = unformattedString.toUpperCase();
+// Eksempel 1:
+const navn = "per hansen";
+console.log(navn.charAt(0).toUpperCase() + navn.slice(1));
+// Output: "Per hansen";
 
-console.log(formattedString);
-
-// Output: DETTE ER EN TEKST MED SMÅ BOKSTAVER
+// Eksempel 2:
+const fruit = "eple";
+console.log(fruit[0].toUpperCase() + fruit.slice(1));
+// Output: "Eple";
 ```
 
-I dette eksempelet har vi en tekst med små bokstaver og ved å bruke `.toUpperCase()`-metoden i TypeScript, vil teksten bli konvertert til store bokstaver. Dette er en enkel og effektiv måte å kapitalisere en streng på.
+## Dypdykk:
+Kapitalisering av strings ble først brukt i maskinlesing og maskinoversetting på tidlig 1950-tallet. I dag brukes det i de fleste programmeringsspråk, inkludert TypeScript. Det finnes også ulike metoder for å kapitalisere en streng, som for eksempel å bruke CSS for å style første bokstav.
 
-En annen måte å kapitalisere en streng på i TypeScript er å bruke en `for`-løkke og `'charAt()'`-metoden til å endre bokstaven på hvert index i strengen til en stor bokstav.
-
-```TypeScript
-let unformattedString = "dette er en tekst med små bokstaver";
-let formattedString = '';
-
-for(let i = 0; i < unformattedString.length; i++) {
-  formattedString += unformattedString.charAt(i).toUpperCase();
-}
-
-console.log(formattedString);
-
-// Output: DETTE ER EN TEKST MED SMÅ BOKSTAVER
-```
-
-## Dykk dypere
-
-Når du bruker `.toUpperCase()` i TypeScript, blir alle bokstavene i strengen konvertert til store bokstaver i henhold til Unicode-standarden. Dette betyr at hvis du har en tekst på et annet språk enn engelsk, vil bokstavene bli konvertert til de store bokstavene i det respektive språket.
-
-En annen ting å merke seg er at `.toUpperCase()`-metoden ikke endrer den opprinnelige strengen, den returnerer en ny streng med de kapitaliserte bokstavene.
-
-## Se også
-
-- [TypeScript Offisiell Dokumentasjon](https://www.typescriptlang.org/docs/home.html)
-- [Unicode Character Table](https://unicode-table.com/en/)
+## Se også:
+- [String.prototype.charAt()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/charAt)
+- [String.prototype.toUpperCase()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase)

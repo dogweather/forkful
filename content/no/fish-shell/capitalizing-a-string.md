@@ -1,7 +1,7 @@
 ---
-title:                "Stor bokstaver i en streng"
-html_title:           "Fish Shell: Stor bokstaver i en streng"
-simple_title:         "Stor bokstaver i en streng"
+title:                "Stor bokstav i en streng"
+html_title:           "Fish Shell: Stor bokstav i en streng"
+simple_title:         "Stor bokstav i en streng"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -10,38 +10,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hva & Hvorfor?
+Å gjøre en streng (eller setning) stor forbokstav handler om å gjøre den første bokstaven i strengen stor, uavhengig av hva den var før. For eksempel, "hei" vil bli "Hei". Programmere gjør dette for å gjøre koden mer leselig og konsistent.
 
-Hvorfor skulle noen bry seg om å gjøre om en streng til stor bokstav? Vel, det kan være flere grunner. Kanskje du ønsker å formatere en utskrift for å gjøre den mer lesbar, eller kanskje du trenger å sammenligne strenger i en nøkkelverdiliste. Det kan også bare være en del av din personlige stil som kodespråkbruker. Uansett grunn, er det nyttig å kunne gjøre dette enkelt og effektivt i Fish Shell.
-
-## Slik gjør du det
-
-Hvis du vil gjøre om en streng til stor bokstav i Fish Shell, kan du bruke kommandoen `string upper-case`:
+# Hvordan gjør man det:
+Å gjøre en streng stor forbokstav i Fish Shell er enkelt. Bare skriv følgende kommando i terminalen:
 
 ```
-Fish Shell> string upper-case "dette er en test"
-DETTE ER EN TEST
+Fish Shell string capitalize "streng"
 ```
 
-Du kan også bruke `string lower-case` for å gjøre strengen til små bokstaver.
+Dette vil gi følgende output: "Streng".
 
-```
-Fish Shell> string lower-case "Dette ER En TeSt"
-dette er en test
-```
+# Dykk dypere:
+Å gjøre en streng stor forbokstav er en kodeteknikk som har vært brukt i mange år. Det finnes også alternativer til dette i andre programmeringsspråk, som for eksempel 'upper' funksjonen i Python. I Fish Shell er det også mulig å gjøre en hel streng eller hvert ord i en streng til stor forbokstav ved å bruke hhv. `String capitalize "streng"` og `String uppercase "streng"`. Implementasjonsdetaljer kan variere mellom forskjellige versjoner av Fish Shell, men resultatet vil være det samme.
 
-Hvis du vil gjøre en del av en streng til stor eller liten bokstav, kan du bruke `string sub` kommandoen. Du kan angi start- og sluttindekser for å spesifisere hvilken del av strengen du vil endre.
+# Se også:
+For mer informasjon om å gjøre en streng stor forbokstav i Fish Shell, kan du sjekke ut disse kildene:
 
-```
-Fish Shell> string sub "Dette er en test" 0 5 (string upper-case "dette")
-DETTE er en test
-```
-
-## I dybden
-
-I Fish Shell er `string` en struktur som inneholder forskjellige nyttige kommandoer for strenger, inkludert `upper-case` og `lower-case`. `sub` kommandoen lar deg gjøre endringer på en del av en gitt streng. Du kan også bruke regulære uttrykk med disse kommandoene for å gjøre mer avanserte endringer på tekststrenger.
-
-## Se også
-
-- [Fish Shell dokumentasjon](https://fishshell.com/docs/current/)
-- [Minimum-viable-fish](https://github.com/jorgebucaran/minimum-viable-fish)
+- Fish Shell dokumentasjon: https://fishshell.com/docs/current/cmds/capitalize.html
+- Fish Shell on GitHub: https://github.com/fish-shell/fish-shell
+- Stack Overflow spørsmål om capitalizing strings i Fish Shell: https://stackoverflow.com/questions/27983722/fish-shell-string-capitalize

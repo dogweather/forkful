@@ -1,7 +1,7 @@
 ---
-title:                "Käskynlinja-argumenttien lukeminen"
-html_title:           "Elixir: Käskynlinja-argumenttien lukeminen"
-simple_title:         "Käskynlinja-argumenttien lukeminen"
+title:                "Komentoriviparametrien lukeminen"
+html_title:           "Elixir: Komentoriviparametrien lukeminen"
+simple_title:         "Komentoriviparametrien lukeminen"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Files and I/O"
@@ -10,52 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
-Joskus ohjelmia halutaan suorittaa erilaisilla parametreilla riippuen esimerkiksi käyttötarkoituksesta tai ympäristöstä. Siksi on tärkeää tietää, miten lukea komentoriviparametreja Elixirilla.
+## Mitä ja miksi?
 
-## Miten
-Komentoriviparametrien lukeminen Elixirilla on helppoa ja vaivatonta. Alla on esimerkki yksinkertaisesta koodista, joka lukee annetun komentoriviparametrin ja tulostaa sen:
+Komentoriviparametrien lukeminen on prosessi, jossa ohjelmoija saa käyttäjältä syötettä komentoriviltä, esimerkiksi tietoa tiedostojen poluista tai asetuksista, jota ohjelma käyttää suorituksen aikana. Tämä on tärkeää, jotta ohjelma voi toimia oikein ja käyttäjä voi vaikuttaa sen toimintaan.
 
-```Elixir
-defmodule Args do
-  def print(arg) do
-    IO.puts("Annettu parametri on: #{arg}")
-  end
-end
-
-Args.print(System.argv()[0])
-```
-
-Jos annamme komentorivillä esimerkiksi seuraavanlaisen komennon: `elixir args.exs Hello`, tulostuu "Annettu parametri on: Hello".
-
-Koodissa käytetään `System.argv()`-funktiota, joka palauttaa listan käyttäjän antamista komentoriviparametreista. Funktio palauttaa listan, joka sisältää myös itse ohjelman nimen ensimmäisenä parametrina. Siksi koodissa käytetään `[0]` indeksinä, jotta saadaan vain käyttäjän antama parametri.
-
-## Syväsukellus
-Komentoriviparametrien lukemisen lisäksi Elixirilla on myös mahdollista käsitellä komentoriviparametreja eri tavoin, kuten järjestää ne tai tarkistaa niiden määrä. Alla olevassa esimerkissä luodaan `Args`-moduuli, johon lisätään useita funktioita parametrien käsittelyä varten.
+## Kuinka:
 
 ```Elixir
-defmodule Args do
-  def get_first(args) do
-    Enum.at(args, 0)
-  end
+args = System.argv
+IO.puts "Komentoriviparametrit: #{inspect args}"
+```
+Esimerkissä luodaan muuttuja `args`, joka sisältää käyttäjän antamat komentoriviparametrit. Käyttöjärjestelmän `System` -moduulista kutsutaan `argv` -funktiota, joka palauttaa parametrit listana. Tämän jälkeen kutsutaan `IO.puts` -funktiota, joka tulostaa parametrit konsoliin. 
 
-  def sort(args) do
-    Enum.sort(args)
-  end
-
-  def count(args) do
-    length(args)
-  end
-end
-
-args = System.argv()
-IO.puts("Ensimmäinen parametri: #{Args.get_first(args)}")
-IO.puts("Järjestetyt parametrit: #{Args.sort(args)}")
-IO.puts("Parametrien määrä: #{Args.count(args)}")
+Tulostus voi näyttää esimerkiksi tältä:
+```
+Komentoriviparametrit: ["tiedosto1.txt", "-v", "-o", "tiedosto2.txt"]
 ```
 
-Tässä esimerkissä luodaan ensin `args`-muuttuja, johon tallennetaan käyttäjän antamat parametrit. Tämän jälkeen käytetään `Args`-moduulin funktioita niiden käsittelyyn. Saamme tulostuksena ensimmäisen parametrin, järjestetyt parametrit ja parametrien määrän.
+## Syvemmälle:
 
-## Katso myös
-- Elixirin virallinen dokumentaatio komentoriviparametrien lukemisesta: https://hexdocs.pm/elixir/System.html#argv/0
-- Kaksikielinen Elixir-oppikirja: https://www.gitbook.com/book/antweb/kirja-elixir/details/fi
+Yleensä komentoriviparametrit luetaan ohjelman suorituksen alussa, jolloin ne voivat vaikuttaa sen toimintaan. Historiallisesti, komentoriviparametrit ovat olleet tapa määrittää ohjelman suorituksen oletusarvoja tai asetuksia. Nykyään ne voivat myös olla keino välittää käyttäjän antamaa tietoa ohjelmalle.
+
+Vaihtoehtoisena ratkaisuna komentoriviparametreille, ohjelmoijat voivat myös käyttää ympäristömuuttujia, jotka ovat tietoja, jotka asetetaan käyttöjärjestelmän ympäristöön ja joihin ohjelma voi viitata suorituksen aikana.
+
+Elixirissä komentoriviparametrit luetaan `System.argv` -funktiolla, mutta myös `OptionParser` -moduuli tarjoaa mahdollisuuden käsitellä ja parsia parametreja helpommin.
+
+## Katso myös:
+
+- [Elixirin System-moduuli](https://hexdocs.pm/elixir/System.html)
+- [Elixirin OptionParser-moduuli](https://hexdocs.pm/elixir/OptionParser.html)
+- [Ympäristömuuttujat käyttöjärjestelmässä](https://en.wikipedia.org/wiki/Environment_variable)

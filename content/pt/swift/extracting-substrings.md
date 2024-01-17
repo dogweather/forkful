@@ -10,46 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+## O que é e por que fazer?
 
-Extração de substrings é uma técnica muito útil em programação Swift para obter partes específicas de uma string maior. Isso é especialmente útil para análise de texto e manipulação de dados.
+Extração de substrings é o processo de selecionar e retornar uma parte específica de uma string. Os programadores fazem isso para manipular e trabalhar com diferentes partes de uma string separadamente.
 
-## Como fazer
-
-Para extrair uma substring em Swift, usamos o método `prefix()` ou `suffix()` dependendo do que queremos obter. Por exemplo, se quisermos extrair os primeiros 5 caracteres de uma string, podemos usar o seguinte código:
+## Como fazer:
 
 ```Swift
-let string = "Olá mundo!"
-let substring = string.prefix(5)
-print(substring) // saída: "Olá m"
+// Criar uma string
+let frase = "Eu amo programação em Swift"
+
+// Usando a função substring para extrair uma parte da string
+let programa = frase.substring(with: Range<String.Index>(uncheckedBounds: (lower: String.Index(encodedOffset: 12), upper: String.Index(encodedOffset: 21))))
+
+// Output: "programação"
 ```
 
-Se quisermos extrair os últimos 5 caracteres, usamos o método `suffix()`:
+## Mergulho Profundo:
 
-```Swift
-let string = "Olá mundo!"
-let substring = string.suffix(5)
-print(substring) // saída: "undo!"
-```
+(1) A extração de substrings tem sido uma técnica amplamente utilizada desde os primeiros dias da programação. (2) Uma alternativa à função substring é o uso de operadores de índice, como o ```[ ]``, para acessar partes de uma string. (3) Internamente, a função substring faz uso de uma estrutura de dados chamada "index collection" para armazenar as posições dos caracteres da string e retornar o trecho desejado.
 
-Também podemos utilizar o método `dropFirst()` ou `dropLast()` para remover os primeiros ou últimos caracteres de uma string e retornar o restante como uma substring.
+## Veja também:
 
-```Swift
-let string = "Hello world!"
-let substring = string.dropFirst(6)
-print(substring) // saída: "world!"
-```
-
-Além disso, também podemos usar os métodos `lowercased()` e `uppercased()` para converter a substring para letras minúsculas ou maiúsculas, respectivamente.
-
-## Deep Dive
-
-Extrair substrings em Swift é uma operação eficiente, pois a linguagem tem um desempenho rápido e otimizado para trabalhar com strings. Além disso, as várias opções de métodos para extrair as substrings tornam possível trabalhar com diferentes cenários de programação.
-
-Também é importante notar que ao utilizar os métodos `prefix()` ou `suffix()`, não estamos criando uma nova string, mas sim uma `Substring`. Isso significa que operações subsequentes nessa substring podem ser mais eficientes e não exigem a criação de uma nova string.
-
-## Veja também
-
-- [Documentação oficial da Apple sobre substrings em Swift](https://developer.apple.com/documentation/swift/substring)
-- [Tutorial sobre como extrair substrings em Swift](https://www.hackingwithswift.com/articles/201/6/how-to-extract-a-substring-from-a-string-in-swift)
-- [Guia completo de strings em Swift](https://www.swiftbysundell.com/basics/strings/)
+- Documentação oficial da Swift: [Substring](https://developer.apple.com/documentation/swift/substring)
+- Tutoriais de programação em Swift: [Ray Wenderlich](https://www.raywenderlich.com/swift)

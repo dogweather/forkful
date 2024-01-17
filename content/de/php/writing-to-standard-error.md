@@ -1,7 +1,7 @@
 ---
-title:                "Schreiben auf die Standardfehlerausgabe"
-html_title:           "PHP: Schreiben auf die Standardfehlerausgabe"
-simple_title:         "Schreiben auf die Standardfehlerausgabe"
+title:                "Schreiben auf den Standardfehler"
+html_title:           "PHP: Schreiben auf den Standardfehler"
+simple_title:         "Schreiben auf den Standardfehler"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Files and I/O"
@@ -10,43 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was & Warum?
+Das Schreiben von Fehlernachrichten an die Standardfehlerausgabe ist eine Möglichkeit für Programmierer, Fehler und Warnungen in ihrer Code-Syntax zu identifizieren und zu beheben. Es wird oft verwendet, um Fehler in Echtzeit zu protokollieren und die Debugging-Prozesse zu erleichtern.
 
-Manchmal kann es vorkommen, dass wir in unseren PHP-Programmen Fehlermeldungen oder andere wichtige Informationen ausgeben möchten. Standardmäßig werden diese jedoch auf dem Bildschirm angezeigt, was nicht immer ideal ist. Deshalb ist es wichtig zu wissen, wie man in PHP Informationen an den sogenannten Standardfehler (standard error) ausgeben kann.
-
-## Wie geht das?
-
-Um Informationen an den Standardfehler auszugeben, können wir die Funktion ```fwrite()``` verwenden. Diese Funktion erwartet zwei Parameter: Zuerst den Datei-Handle von ```STDERR```, das für den Standardfehler steht, und dann die zu schreibende Nachricht als String.
+## Wie?
+Um eine Fehlermeldung an die Standardfehlerausgabe zu schreiben, verwenden Sie einfach die Funktion "fwrite", die eine Zeichenfolge an einen offenen Dateizeiger schreibt. Hier ist ein Beispielcode:
 
 ```PHP
-fwrite(STDERR, 'Eine wichtige Fehlermeldung');
-```
-Dieser Code wird die Nachricht "Eine wichtige Fehlermeldung" an den Standardfehler ausgeben.
-
-Eine andere Möglichkeit ist die Verwendung von ```error_log```. Diese Funktion ermöglicht es uns, Informationen direkt an den Standardfehler zu senden, ohne einen Datei-Handle zu öffnen.
-
-```PHP
-error_log('Das ist eine wichtige Information', 0);
+// Öffnen Sie die Standardfehlerausgabe für das Schreiben
+$stderr = fopen('php://stderr', 'w');
+// Schreiben Sie die Fehlermeldung an die Standardausgabe
+fwrite($stderr, "Fehler: Division durch Null\n");
+// Schließen Sie die Datei
+fclose($stderr);
 ```
 
-In beiden Fällen wird die Ausgabe nicht auf dem Bildschirm angezeigt, sondern in einem separaten Log-File gespeichert.
+Dieser Code gibt die Fehlermeldung "Fehler: Division durch Null" in der Standardfehlerausgabe aus.
 
-## Deep Dive
+## Tiefes Eintauchen
+Das Schreiben von Fehlernachrichten an die Standardfehlerausgabe ist ein gängiger Ansatz in der Programmierung, der bereits seit den Anfängen von Unix verwendet wird. Eine Alternative dazu ist das Schreiben von Fehlermeldungen in ein Protokolldatei, was jedoch mehr Systemressourcen in Anspruch nimmt. Die Verwendung von Standardfehlerausgabe ermöglicht eine einfachere und schnellere Fehlerbehandlung.
 
-Standardmäßig ist der Standardfehler in PHP auf die gleiche Log-Datei wie der Standardausgang (standard output) eingestellt. Diese Einstellung kann jedoch durch das Setzen von ```ini_set('display_errors', 0);``` geändert werden. Dadurch werden die Fehlermeldungen nicht mehr auf dem Bildschirm ausgegeben, sondern nur noch in der Log-Datei.
-
-Eine weitere Möglichkeit ist das Umlenken des Standardfehlers in eine eigene Log-Datei. Dies kann erreicht werden, indem man den Datei-Handle von ```STDERR``` auf eine Datei setzt, in die die Fehlermeldungen geschrieben werden sollen.
-
-```PHP
-$file = fopen('error.log', 'a');
-fwrite(STDERR, 'Dies ist eine wichtige Fehlermeldung');
-```
-
-Dieser Code wird die Fehlermeldung in die Datei "error.log" schreiben, anstatt sie auf dem Bildschirm anzuzeigen.
+Um die Standardfehlerausgabe in PHP zu implementieren, wird die Funktion "fwrite" verwendet, die auch zum Schreiben von Daten in Dateien verwendet wird. Die Option "php://stderr" stellt dabei einen Dateizeiger auf die Standardfehlerausgabe her.
 
 ## Siehe auch
-
-- [PHP fwrite() Funktion] (https://www.php.net/manual/de/function.fwrite.php)
-- [PHP error_log() Funktion] (https://www.php.net/manual/de/function.error-log.php)
-- [PHP Standardimput/-ausgang (STDOUT/STDERR)] (https://www.php.net/manual/de/faq.commandline.php#faq.commandline.std)
-- [PHP ini_set() Funktion] (https://www.php.net/manual/de/function.ini-set.php)
+- Offizielle PHP-Dokumentation: https://www.php.net/manual/de/function.fwrite.php
+- Einführung in die Fehlersuche und Debugging in PHP: https://www.phpentwickler.de/php/fehlersuche-debugging/
+- Die Bedeutung von Fehlerbehandlung in der Programmierung: https://www.dev-insider.de/warum-fehlerbehandlung-so-wichtig-ist-a-875199/

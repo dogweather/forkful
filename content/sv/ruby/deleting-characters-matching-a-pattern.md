@@ -10,45 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
+Att ta bort tecken som matchar ett mönster är en användbar funktion inom programmering. Det innebär att vi kan välja vilka tecken som ska tas bort från en sträng baserat på ett specifikt mönster. Detta sparar tid och gör koden mer effektiv.
 
-Att kunna radera tecken som matchar ett visst mönster i en textsträng är en viktig del av Ruby-programmering. Detta gör det möjligt att rensa och manipulera data på ett effektivt sätt.
-
-## Så här gör du
-
-För att radera tecken som matchar ett visst mönster i en textsträng i Ruby använder vi metoden `.gsub!()` och specificerar det mönster vi vill matcha inom parenteserna. Detta är ett exempel på hur vi skulle ta bort alla siffror från en textsträng:
+## Hur man:
+För att ta bort tecken som matchar ett mönster i Ruby, använder vi metoden `.gsub!` tillsammans med en regex (regular expression) för att söka efter mönstret. Här är ett exempel som tar bort alla siffror från en sträng:
 
 ```Ruby
-text = "Det har varit 5 dagar sedan jag senast skrev en text."
-text.gsub!(/\d/,"")
-puts text # Output: "Det har varit dagar sedan jag senast skrev en text."
+str = "ABC123def456"
+str.gsub!(/\d/, "")
+puts str #=> ABCdef
 ```
 
-Vi använder `\d` inuti parenteserna för att matcha alla siffror. Om vi istället vill ta bort alla vokaler från en textsträng, kan vi använda följande kod:
+Här kan vi se att alla siffror (1, 2, 3, 4 och 5) har tagits bort från strängen och endast bokstäverna kvarstår. Vi kan också specificera vilka tecken vi vill ta bort genom att ändra regex-mönstret.
 
-```Ruby
-text = "Det här är en textsträng utan vokaler."
-text.gsub!(/[aeiou]/,"")
-puts text # Output: "Dt hr r n txtrng tn vklr."
-```
+## Djupdykning:
+Att ta bort tecken som matchar ett mönster är en viktig del av regex-programmering, då det möjliggör mer avancerad manipulation av strängar. Regex används ofta för att hitta och ersätta specifika delar av texter eller för att strukturera data på ett snabbare sätt. Alternativt kan metoden `.delete` i Ruby användas för att ta bort tecken baserat på ett visst mönster.
 
-Förutom att bara ta bort ett enskilt tecken kan vi också ta bort flera tecken genom att använda en range. Här är en kod som tar bort alla bokstäver mellan a och f från en textsträng:
+När mönstret matchar flera tecken kan det vara fördelaktigt att använda `.gsub!` istället för `.sub!`, eftersom `.gsub!` kommer ta bort alla förekomster av mönstret medan `.sub!` bara tar bort den första förekomsten.
 
-```Ruby
-text = "abcdefg"
-text.gsub!(/[a-f]/,"")
-puts text # Output: "g"
-```
+## Se också:
+För mer information om regex och dess användning i Ruby, se följande länkar:
 
-## Djupdykning
-
-Som du kanske märkt används `/` runt mönstret i exempelkoden. Detta kallas för ett reguljärt uttryck (regular expression) och möjliggör mer avancerade sökningar än bara vanliga tecken. Det finns en mängd olika metatecken som kan användas för att matcha olika mönster, till exempel `.` för att matcha alla tecken och `+` för att matcha ett eller flera av samma tecken.
-
-Det finns också flera modifierare som vi kan använda för att ändra hur matchningen fungerar, till exempel `i` för att ignorera skillnader i versaler och gemener och `m` för att göra det möjligt att matcha flera rader av en textsträng.
-
-Att ha en grundläggande förståelse för reguljära uttryck och hur de fungerar kan hjälpa dig att bli mer effektiv i ditt arbete med att ta bort tecken som matchar ett visst mönster i en textsträng.
-
-## Se även
-
-- [Ruby's string manipulation methods](https://ruby-doc.org/core-2.5.1/String.html#method-i-gsub-21)
-- [Ruby's regular expressions documentation](https://ruby-doc.org/core-2.5.1/Regexp.html)
+- [The Ruby Programming Language by Yukihiro Matsumoto](https://www.amazon.com/Ruby-Programming-Language-Yukihiro-Matsumoto/dp/0596516177)
+- [RubyMonk - Regular Expressions](https://rubymonk.com/learning/books/1-ruby-primer/problems/158-validation-using-regular-expressions)
+- [Ruby Doc - Regexp](https://ruby-doc.org/core-2.7.0/Regexp.html)
+- [Ruby Doc - String](https://ruby-doc.org/core-2.7.0/String.html)

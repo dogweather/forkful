@@ -1,7 +1,7 @@
 ---
-title:                "Å jobbe med json"
-html_title:           "Elixir: Å jobbe med json"
-simple_title:         "Å jobbe med json"
+title:                "Arbeide med json"
+html_title:           "Elixir: Arbeide med json"
+simple_title:         "Arbeide med json"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Data Formats and Serialization"
@@ -10,54 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hva & Hvorfor?
+JSON (JavaScript Object Notation) er en lettvekts og menneskelesbar måte å lagre og utveksle data på. Det er spesielt nyttig for webapplikasjoner som trenger å kommunisere med servere og utveksle data. Det er også et populært format for å lagre data for senere bruk.
 
-Hvorfor bry seg med å jobbe med JSON i Elixir? Som et programmeringsspråk som fokuserer på samspill mellom systemer og skalerbarhet, er det viktig å kunne arbeide med populære dataformater som JSON. JSON (Javascript Object Notation) er en vanlig måte å strukturere og lagre data på, og er mye brukt i webapplikasjoner og APIer.
+# Slik gjør du det:
+For å jobbe med JSON i Elixir, kan du bruke modulen `Jason`. Her er et eksempel på hvordan du kan konvertere data til JSON-format:
 
-## Hvordan
-
-Det er enkelt å håndtere JSON i Elixir ved hjelp av noen få funksjoner og moduler. Først må du importere modulen `Jason`:
-
-```Elixir
-import Jason
+```
+Elixir iex> data = %{name: "Jane", age: 30}
+%Elixir.Map{age: 30, name: "Jane"}
+Elixir iex> json = Jason.encode(data)
+"{\"name\":\"Jane\",\"age\":30}"
 ```
 
-For å konvertere en liste eller et kart til JSON-format, kan du bruke funksjonen `encode!/1`:
+Du kan også dekode JSON-data ved å bruke `Jason.decode` modulen:
 
-```Elixir
-encode!([1, 2, 3])
-# Output: "[1, 2, 3]"
-
-encode!(%{name: "Elixir", version: 1.12})
-# Output: "{\"name\":\"Elixir\",\"version\":1.12}"
+```
+Elixir iex> json = "{\"name\":\"Jane\",\"age\":30}"
+"{\"name\":\"Jane\",\"age\":30}"
+Elixir iex> data = Jason.decode(json)
+%{age: 30, name: "Jane"}
 ```
 
-For å konvertere JSON tilbake til en liste eller et kart, bruk funksjonen `decode!/1`:
+# Dykk ned i det:
+JSON ble utviklet på 1990-tallet som en enklere måte å utveksle data på. Det er et alternativ til XML-formatet som er mer komplisert og mindre lesbart. For å jobbe med JSON i Elixir, er `Jason` modulen den mest populære og anbefalte løsningen.
 
-```Elixir
-decode!("[1, 2, 3]")
-# Output: [1, 2, 3]
+Andre muligheter for å jobbe med JSON i Elixir inkluderer `Poison` og `JSEX`, men disse modulene er vanligvis mindre stabile og mindre utfyllende enn `Jason`.
 
-decode!("{\"name\":\"Elixir\",\"version\":1.12}")
-# Output: %{name: "Elixir", version: 1.12}
-```
+For å implementere `Jason`, bruker man en parser som er skrevet i Erlang, kalt `jsx`. Dette gir en rask og effektiv måte å håndtere store mengder JSON-data på.
 
-Det er også mulig å håndtere feil ved å bruke funksjoner som `decode/1` og `decode!/2`.
+# Se også:
+Hvis du ønsker å lære mer om JSON i Elixir, kan du sjekke ut disse ressursene:
 
-For mer avansert arbeid med JSON, kan du også bruke biblioteket `jiffy` som tilbyr raske og effektive funksjoner for å lese og skrive JSON-data.
-
-## Utforske videre
-
-Å jobbe med JSON i Elixir handler ikke bare om å konvertere data til og fra JSON-format, men også å håndtere komplekse strukturer og behandle feil. Hvis du ønsker å utforske mer avansert bruk av JSON i Elixir, kan du ta en titt på følgende ressurser:
-
-- [JSON Elixir Dokumentasjon](https://hexdocs.pm/elixir/Json.html)
-- [jiffy - JSON-tilpasning for Elixir](https://github.com/davisp/jiffy)
-- [Elixir forumtråd om JSON-håndtering](https://elixirforum.com/t/json-parsing-and-generation-with-elixir/4391)
-
-## Se også
-
-Her er noen nyttige lenker for å lære mer om Elixir og relaterte emner:
-
-- [Elixir Offisiell Hjemmeside](https://elixir-lang.org/)
-- [Elixir Offisiell Dokumentasjon](https://elixir-lang.org/docs.html)
-- [Elixir Programmeringskurs på Udemy](https://www.udemy.com/course/the-complete-elixir-and-phoenix-bootcamp-and-tutorial/)
+- Offisiell Elixir `Jason` dokumentasjon: https://hexdocs.pm/jason/readme.html
+- Elixir Forum tråd om å arbeide med JSON: https://elixirforum.com/t/how-to-work-with-json-in-elixir/6208

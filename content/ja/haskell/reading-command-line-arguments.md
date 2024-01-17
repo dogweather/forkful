@@ -1,7 +1,7 @@
 ---
-title:                "コンピュータプログラミングにおける「コマンドライン引数の読み取り」"
-html_title:           "Haskell: コンピュータプログラミングにおける「コマンドライン引数の読み取り」"
-simple_title:         "コンピュータプログラミングにおける「コマンドライン引数の読み取り」"
+title:                "コンピュータプログラミングの記事「コマンドライン引数を読む」"
+html_title:           "Haskell: コンピュータプログラミングの記事「コマンドライン引数を読む」"
+simple_title:         "コンピュータプログラミングの記事「コマンドライン引数を読む」"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Files and I/O"
@@ -10,27 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-プログラマーであれば、プログラムを実行するにあたってコマンドライン引数を読み取ることが重要です。コマンドライン引数を読み取ることで、プログラムに対して柔軟性を持たせることができます。
+["
 
-## How To
-コマンドライン引数を読み取るには、`System.Environment`モジュールの`getArgs`関数を使用します。例えば、以下のようなプログラムを作成し、実行するとコマンドライン引数のリストが出力されます。
+## 何とどうして？
+コマンドライン引数の読み取りとは、起動時にプログラムに渡されるデータを取得することです。プログラマーは、ユーザーからの入力や環境に応じてプログラムの動作を変えるためにこの機能を使用します。
+
+## 実際にやってみよう
+以下のコードを使用して、Haskellでコマンドライン引数を読み取る方法をご紹介します。
 
 ```Haskell
-import System.Environment
-
+import System.Environment (getArgs)
 main = do
     args <- getArgs
-    print args
+    putStrLn ("引数: " ++ show args)
 ```
 
-入力：`runhaskell program.hs hello world`
+コマンドラインでプログラムを実行する際に、引数として任意の値を与えることができます。例えば、以下のように実行します。
 
-出力：`["hello", "world"]`
+```
+$ runhaskell example.hs foo bar baz
+```
 
-## Deep Dive
-コマンドライン引数を取得するには、2つの方法があります。まず、コマンドライン引数の数を取得するための`getArgs`関数を使用し、`length`関数を用いて数を取得することができます。また、リストの要素を直接アクセスすることもできます。例えば、コマンドライン引数のリストの先頭の引数を取得するには、`!!0`と書くことができます。
+実行結果は、
+```
+引数: ["foo", "bar", "baz"]
+```
+となります。
 
-## See Also
-- [HaskellのSystem.Environmentモジュールのドキュメント](https://hackage.haskell.org/package/base-4.15.0.0/docs/System-Environment.html)
-- [HaskellコードライブラリーのgetArgs関数の例](https://hackage.haskell.org/package/base-4.15.0.0/docs/System-Environment.html#v:getArgs)
+## 詳しく掘り下げる
+コマンドライン引数の読み取り機能は、Haskellだけでなく他の言語でもよく使用されています。代表的なものとして、Pythonの`sys.argv`やC++の`argc`と`argv`があります。
+
+Haskellでは、`System.Environment`モジュールの`getArgs`関数を使用してコマンドライン引数を取得します。この関数は、プログラム起動時に渡された全ての引数を文字列のリストとして返します。
+
+## 参考リンク
+- [HaskellのgetArgs関数ドキュメント](https://hackage.haskell.org/package/base-4.14.1.0/docs/System-Environment.html#v:getArgs)
+- [Pythonのsys.argvドキュメント](https://docs.python.org/3/library/sys.html#sys.argv)
+- [C++のargcとargvドキュメント](https://en.cppreference.com/w/cpp/language/main_function)

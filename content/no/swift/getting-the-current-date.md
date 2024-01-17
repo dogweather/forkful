@@ -1,7 +1,7 @@
 ---
-title:                "Få nåværende dato"
-html_title:           "Swift: Få nåværende dato"
-simple_title:         "Få nåværende dato"
+title:                "Hente nåværende dato"
+html_title:           "Swift: Hente nåværende dato"
+simple_title:         "Hente nåværende dato"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Dates and Times"
@@ -10,59 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
-Det å få den nåværende datoen kan være nyttig for å informere brukere om når noe ble opprettet, oppdatert eller slettet. Det kan også være praktisk for å planlegge framtidige hendelser eller for å lage dynamiske tidsstempel for logger.
+## Hva & Hvorfor?
 
-## Slik gjør du det
-For å få den nåværende datoen i Swift, kan du bruke Date() -klassen og DateFormatter() -objektet. Først må du importere Foundation-biblioteket i din Swift-fil:
+Å få dagens dato i programmering refererer til å få informasjon om den nåværende datoen og tidspunktet. Dette er nyttig for å føre protokoll, planlegge hendelser og generelt for å holde orden på tidsstempler. Programmere trenger å få dagens dato for å sikre at systemene og applikasjonene deres fungerer riktig og nøyaktig.
 
-```Swift
-import Foundation
-```
-Deretter kan du definere en DateFormatter og sette et ønsket datoformat:
+## Slik
+
+Her er et eksempel på hvordan du kan få dagens dato i Swift:
 
 ```Swift
-let dateFormatter = DateFormatter()
-dateFormatter.dateFormat = "dd/MM/yyyy"
+let date = Date()
+let formatter = DateFormatter()
+formatter.dateFormat = "dd.MM.yyyy HH:mm"
+let currentDate = formatter.string(from: date)
+
+print("Dagens dato er: \(currentDate)")
 ```
 
-Nå kan du bruke Date() -klassen for å få den nåværende datoen, og formattere den med DateFormatter:
-
-```Swift
-let currentDate = Date()
-let formattedDate = dateFormatter.string(from: currentDate)
-print(formattedDate) // Output: 05/10/2021
-```
-Hvis du ønsker å få den nåværende dato og klokkeslett, kan du bruke et annet datoformat:
+Dette vil få dagens dato og tidspunkt og formatere det som et string-objekt. Deretter skrives det ut i konsollen, og du vil få følgende utgang:
 
 ```Swift
-dateFormatter.dateFormat = "dd/MM/yyyy HH:mm:ss"
-let formattedDateTime = dateFormatter.string(from: currentDate)
-print(formattedDateTime) // Output: 05/10/2021 11:34:21
+Dagens dato er: 24.09.2021 14:30
 ```
+
+Du kan også få dagens dato i en annen datoformat ved å endre `dateFormat` til en annen verdi. Det finnes mange ulike datoformateringsalternativer, slik at du kan tilpasse det til dine behov.
 
 ## Dypdykk
-I tillegg til å få den nåværende datoen, kan du også gjøre ulike operasjoner med datoen. For eksempel kan du bruke DateComponents() -objektet for å få tilgang til ulike deler av datoen, som måned, år, dag osv.
 
-```Swift
-let dateComponents = Calendar.current.dateComponents([.year, .month, .day], from: currentDate)
-print(dateComponents.year) // Output: 2021
-print(dateComponents.month) // Output: 10
-print(dateComponents.day) // Output: 5
-```
+I programmering har det alltid vært viktig å jobbe med datoer og tider. Tidligere kunne det være en utfordring å få nøyaktig dato og tid på grunn av forskjellige tidsformater og systeminnstillinger. I dag er det mye enklere takket være et standardisert system for å håndtere datofunksjonalitet.
 
-Du kan også gjøre beregninger med datoer ved å bruke Calendar() -klassen og DateComponents. For eksempel kan du legge til eller trekke fra en viss mengde tid fra den nåværende datoen.
+Som en alternativ måte å få dagens dato på, kan du også bruke `Foundation` biblioteket og bruke `Date()` og `DateFormatter()` metoder.
 
-```Swift
-var dateComponent = DateComponents()
-dateComponent.month = 2
-let newDate = Calendar.current.date(byAdding: dateComponent, to: currentDate)
-print(newDate) // Output: Optional(2021-12-05 10:34:21 +0000)
-```
-
-Det finnes også andre nyttige metoder for å arbeide med datoer, som for eksempel å finne forskjellen mellom to datoer, teste om en dato er før eller etter en annen, eller om en dato faller innenfor et bestemt tidsintervall. For å lære mer, kan du se dokumentasjonen for Date() og Calendar() -klassene.
+Implementeringen av å få dagens dato og tid er avhengig av operativsystemet og datofunksjonaliteten som er tilgjengelig. I Swift kan du også bruke tredjepartsbiblioteker for å få mer avanserte funksjoner for håndtering av dato og tid.
 
 ## Se også
-- [Apple Dokumentasjon: Date](https://developer.apple.com/documentation/foundation/date)
-- [Apple Dokumentasjon: Calendar](https://developer.apple.com/documentation/foundation/calendar)
-- [Swift by Sundell: Working with Dates & Times in Swift](https://www.swiftbysundell.com/basics/date-properties/)
+
+For mer informasjon om hvordan du kan håndtere dato og tid i Swift, kan du se følgende ressurser:
+
+- [Uoffisiell Swift Style Guide](https://swift.org/documentation/api-design-guidelines/#date-and-time)
+- [Apple's Swift programmeringsguide](https://developer.apple.com/documentation/foundation/date)
+- [Tredjepartsbiblioteker](https://cocoapods.org/search?q=date+and+time) for dato og tid håndtering i Swift.

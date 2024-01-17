@@ -10,59 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
+Regular expressions, also known as regex, are special sequences of characters used to find and manipulate patterns in text. They are commonly used in programming to search, replace, and validate text data. This makes it easier and more efficient for programmers to process large amounts of data, especially when dealing with complex patterns.
 
-Regular expressions, also known as regex, are a powerful and versatile tool for text processing. They allow us to search, match, and manipulate patterns of text, making it easier and more efficient to work with strings of data. Whether you're a web developer, data scientist, or just need to extract information from a text file, regular expressions can greatly enhance your coding capabilities.
+## How to:
+Using regular expressions in PHP is simple and straightforward. The ```preg_match()``` function is used to search for a specific pattern in a string, while the ```preg_replace()``` function is used to replace a pattern with a specified string. Let's take a look at some examples:
 
-## How To
-To use regular expressions in PHP, we first need to create a pattern using a combination of symbols and characters. Here's an example of a simple regex pattern using the `preg_match()` function:
+#### Searching for a Specific Pattern
+In this example, we want to find all email addresses in a given string. We can use the ```preg_match()``` function along with a regular expression to do this.
 
-```PHP
-$string = "Hello, world!";
-$pattern = "/^[A-Za-z, ]+$/";
+```
+$email = "john@example.com, jane@example.net";
 
-if(preg_match($pattern, $string)){
-  echo "Pattern matched!";
-} else {
-  echo "No match found.";
-}
+// Using preg_match() to find email addresses
+preg_match("/[\w.-]+@[\w.-]+\.[a-z]{2,3}/", $email, $matches);
 
-// Output: Pattern matched!
+// $matches[0] will contain the first match
+echo $matches[0]; // john@example.com 
 ```
 
-In this example, we're checking if the string only contains letters, commas, and spaces. Let's break down the pattern:
-- `/` - Starting delimiter
-- `^` - Anchor at the beginning of the string
-- `[A-Za-z, ]+` - Character group that includes letters, comma, and space; the `+` means that this group should occur one or more times
-- `$` - Anchor at the end of the string
-- `/` - Closing delimiter
+#### Replacing a Pattern
+In this example, we want to replace all instances of "apple" with "orange" in a given string. Again, we can use the ```preg_replace()``` function with a regular expression to achieve this.
 
-We can also use regex to extract data from a string. Take this example:
+```
+$text = "I love apples, apples are my favorite fruit.";
 
-```PHP
-$string = "Email: example@example.com";
-$pattern = "/\b[A-Za-z]+@[A-Za-z]+\.[A-Za-z]+/";
+// Using preg_replace() to replace "apple" with "orange"
+$new_text = preg_replace("/apple/", "orange", $text);
 
-preg_match($pattern, $string, $matches);
-print_r($matches);
-
-// Output: Array ( [0] => example@example.com )
+echo $new_text; // I love oranges, oranges are my favorite fruit.
 ```
 
-In this case, we're extracting an email address from the string by using the `\b` word boundary and `\.` to match the dot in the email domain.
+## Deep Dive:
+Regular expressions have been around since the 1950s and have become an integral part of many programming languages including PHP. They were first used in Unix tools like grep, sed, and awk for text processing and have since been adopted by many other languages.
 
-## Deep Dive
-Regular expressions can be complex and intimidating, but they are a valuable skill to have as a programmer. Here are some tips to help you dive deeper into regex:
+While regular expressions are great for text processing, they do have their alternatives. These include using string functions like ```strpos()``` and ```str_replace()```, or using PHP's built-in ```filter_var()``` function with the appropriate filter.
 
-- Use online regex testers to experiment and fine-tune your patterns.
-- Familiarize yourself with the different symbols and characters used in regex, such as anchors, character classes, and quantifiers.
-- Given a task, break it down into smaller parts and create patterns for each step. Then, combine them to create a complete regex solution.
-- Utilize the power of capturing groups to easily extract specific parts of a string.
-- Take advantage of the various flags available, such as `i` for case-insensitive matching and `g` for global search.
+When implementing regular expressions in PHP, it's important to use delimiters. These act as start and end markers for the regular expression and are usually a forward slash (/), but any non-alphanumeric character can be used as long as it's consistently used throughout the expression. 
 
-Remember, practice makes perfect. The more you use regex, the more comfortable and confident you'll become in using it.
-
-## See Also
-- [PHP Regular Expressions Documentation](https://www.php.net/manual/en/book.pcre.php)
-- [Regex101 - Online Regex Tester](https://regex101.com)
-- [The Regex Coach - Interactive Online Tutorial](https://www.weitz.de/regex-coach)
+## See Also:
+- [PHP Manual on Regular Expressions](https://www.php.net/manual/en/regexp.reference.php)
+- [Regular Expressions Guide for PHP Developers](https://www.freecodecamp.org/news/php-regular-expressions-examples/)
+- [A Visual Guide to Regular Expressions](https://dev.to/sarah_chima/a-visual-guide-to-regular-expressions-210j)
+- [Online regex tester](https://regex101.com/)

@@ -1,7 +1,7 @@
 ---
-title:                "Skrive en tekstfil"
-html_title:           "C: Skrive en tekstfil"
-simple_title:         "Skrive en tekstfil"
+title:                "Å skrive en tekstfil"
+html_title:           "C: Å skrive en tekstfil"
+simple_title:         "Å skrive en tekstfil"
 programming_language: "C"
 category:             "C"
 tag:                  "Files and I/O"
@@ -10,32 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
-Å skrive en tekstfil er en vanlig og nyttig oppgave for de som jobber med programmering. Det er en enkel og effektiv måte å lagre og organisere data på, og kan brukes til en rekke formål som å lagre brukerinnstillinger, loggfiler og annen viktig informasjon. Ved å skrive en tekstfil, kan du enkelt lagre og gjenopprette data når det er nødvendig.
+# Hva & Hvorfor?
+ Å skrive en tekstfil i C er en enkel prosess som lar programmerere lagre data i et format som er enkelt å redigere og lese for mennesker. Dette er nyttig for å lagre konfigurasjonsinnstillinger, logge data og lagre informasjon som kan brukes senere.
 
-## Hvordan
-For å skrive en tekstfil i C, må du følge noen enkle trinn. Først må du åpne en filstrøm ved hjelp av ```fopen```-funksjonen, og gi navnet til filen du vil skrive til og modusen du vil åpne filen i. For eksempel, hvis du vil åpne en fil for å skrive til den, kan du bruke følgende kode:
+# Hvordan:
+La oss se på et enkelt eksempel på hvordan man skriver en tekstfil ved hjelp av C. Vi skal bruke fopen () -funksjonen for å åpne en fil og deretter bruke fprintf () -funksjonen for å skrive data til filen. Her er et eksempel på hvordan koden kan se ut:
 
-```C
-FILE *fp;
-fp = fopen("minfil.txt", "w");
+```
+#include <stdio.h>
+
+int main() {
+  FILE *file;
+  char text[100];
+  
+  //åpne filen for skriving
+  file = fopen("min_fil.txt", "w");
+  
+  //skriv data til filen
+  fprintf(file, "Dette er en linje med tekst som skal skrives til filen.");
+  
+  //lukk filen
+  fclose(file);
+  
+  return 0;
+}
 ```
 
-Deretter kan du bruke ```fprintf```-funksjonen til å skrive data til filen. Dette kan gjøres ved å bruke et spesifikt format, for eksempel ```%d``` for heltall og ```%s``` for strenger. For å legge til en ny linje i filen, kan du bruke ```\n```. Her er et eksempel på å skrive en tekststreng til filen:
+Kjører denne koden vil opprette en fil kalt "min_fil.txt" og skrive den gitte teksten til filen. Du kan åpne filen med en tekstredigerer for å se den skrevne teksten.
 
-```C
-char *tekst = "Dette er en tekststreng";
-fprintf(fp, "%s\n", tekst);
-```
+# Dykk dypere:
+Det å skrive tekstfiler i programmering har blitt brukt i mange år for å lagre data på en enkel måte. Mens C er et populært språk for å skrive tekstfiler, finnes det også andre alternativer som Python og Java.
 
-Til slutt, må du huske å lukke filstrømmen ved hjelp av ```fclose```-funksjonen når du er ferdig med å skrive til filen.
+Det finnes også forskjellige måter å skrive data til en tekstfil på. I eksemplet ovenfor brukte vi fprintf () -funksjonen, men det finnes også andre funksjoner som fput () og fputs (), som kan brukes til å skrive til filer.
 
-## Dypdykk
-Nå som du vet hvordan du kan skrive en tekstfil i C, kan det være nyttig å vite litt mer om noen av de andre funksjonene og modusene som kan brukes. For eksempel, hvis du vil legge til data til en eksisterende fil istedenfor å overskrive den, kan du bruke modusen "a" i ```fopen```-funksjonen. Hvis du vil lese en tekstfil, kan du bruke ```fscanf```-funksjonen på samme måte som ```fprintf```-funksjonen. Det finnes også andre nyttige funksjoner som ```rewind``` for å gå tilbake til starten av filen og ```ftell``` for å finne posisjonen til lese-/skrivepekeren i filen.
+En detaljert forståelse av hvordan filer fungerer og hvordan de håndteres i C kan være nyttig når man arbeider med tekstfiler. Dette kan også hjelpe til med feilsøking hvis det oppstår problemer med å skrive eller lese data fra en fil.
 
-En annen viktig ting å merke seg er at når du skriver en tekstfil, så blir den lagret som en ren tekstfil uten noe form for formatering. Dette betyr at du ikke kan lagre variabler eller datastrukturer direkte til filen. I stedet må du konvertere dataene til tekststrenger før du skriver dem til filen, og så konvertere dem tilbake når du leser dem.
+# Se også:
+Hvis du ønsker å lære mer om å skrive tekstfiler i C, kan du sjekke ut følgende ressurser:
 
-## Se også
-- [C programmering – Wikibooks](https://no.wikibooks.org/wiki/C_programmering)
-- [File Input/Output i C – TutorialsPoint](https://www.tutorialspoint.com/cprogramming/c_file_io.htm)
-- [C-biblioteket – CppReference](https://en.cppreference.com/w/c/io)
+- https://www.cprogramming.com/tutorial/cfileio.html
+- https://www.tutorialspoint.com/cprogramming/c_file_io.htm
+- https://www.geeksforgeeks.org/writing-text-file-c/

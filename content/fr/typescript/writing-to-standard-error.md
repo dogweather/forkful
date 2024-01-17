@@ -1,7 +1,7 @@
 ---
-title:                "Ecriture vers l'erreur standard"
-html_title:           "TypeScript: Ecriture vers l'erreur standard"
-simple_title:         "Ecriture vers l'erreur standard"
+title:                "Écrire vers la sortie d'erreur standard"
+html_title:           "TypeScript: Écrire vers la sortie d'erreur standard"
+simple_title:         "Écrire vers la sortie d'erreur standard"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Files and I/O"
@@ -10,47 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Qu'est-ce que c'est et pourquoi?
+Ecrire sur la sortie d'erreur standard (standard error output) est une pratique courante dans la programmation qui consiste à afficher des messages d'erreur lorsqu'un programme rencontre un problème. Cela permet aux programmeurs de déboguer et de résoudre les erreurs plus facilement.
 
-L'utilisation de la fonction de sortie standard d'erreur (standard error) peut sembler intimidante pour les développeurs débutants, mais c'est en fait un outil très utile pour déboguer du code en fournissant des informations détaillées sur les erreurs rencontrées lors de l'exécution de votre programme.
+## Comment procéder:
+Ci-dessous, vous trouverez des exemples de code en ```TypeScript``` montrant comment écrire sur la sortie d'erreur standard et le résultat attendu :
 
-## Comment faire
-
-C'est très simple d'écrire vers la sortie standard d'erreur en TypeScript. Tout d'abord, vous devez importer la classe "process" en haut de votre fichier :
-
-```TypeScript
-import { process } from 'process';
+**Exemple 1 :**
+```
+console.error("Erreur : Impossible de diviser par zéro");
 ```
 
-Ensuite, vous pouvez utiliser la méthode "stderr.write" pour écrire un message vers la sortie standard d'erreur :
-
-```TypeScript
-process.stderr.write("Une erreur est survenue !");
+**Résultat attendu :**
+```
+Erreur : Impossible de diviser par zéro
 ```
 
-Vous pouvez également utiliser des placeholders pour inclure des variables dans votre message :
-
-```TypeScript
-let nom = "John";
-let age = 25;
-
-process.stderr.write(`Bonjour ${nom}, tu as ${age} ans.`);
+**Exemple 2 :**
+```
+try {
+  // du code qui génère une erreur
+} catch (error) {
+  console.error(`Erreur : ${error.message}`);
+}
 ```
 
-Lorsque votre programme s'exécutera, le message sera écrit dans la console avec un préfixe "Erreur" pour vous aider à le repérer facilement :
-
+**Résultat attendu :**
 ```
-Erreur: Bonjour John, tu as 25 ans.
+Erreur : Undefined is not a function
 ```
 
-## Plongeon en profondeur
+## Plongée en profondeur:
+Ecrire sur la sortie d'erreur standard est une pratique qui remonte aux premiers jours de la programmation informatique. Avant l'utilisation généralisée des ordinateurs personnels, les programmeurs devaient utiliser des terminaux pour accéder aux ordinateurs centraux par le biais desquels ils pouvaient voir les messages d'erreur sur la sortie d'erreur standard.
 
-Maintenant que vous savez comment utiliser la sortie standard d'erreur en TypeScript, il est important de comprendre quand l'utiliser. Il est recommandé d'écrire vers la sortie standard d'erreur pour les erreurs critiques qui peuvent causer des dysfonctionnements ou des plantages du programme. Vous pouvez également utiliser cette fonctionnalité pour fournir des informations de débogage détaillées lors du développement de votre application.
+Une alternative à l'écriture sur la sortie d'erreur standard est l'utilisation de fichiers journaux (logs) pour enregistrer les erreurs plutôt que de les afficher à l'écran. Cependant, cela peut être plus lourd et entraîner des problèmes de performance si le programme génère beaucoup d'erreurs.
 
-Il est également important de noter que la sortie standard d'erreur est différente de la sortie standard (standard output). La sortie standard est utilisée pour afficher des messages normaux, tandis que la sortie standard d'erreur est spécifiquement conçue pour afficher des erreurs. Vous pouvez donc utiliser les deux méthodes en combinaison pour améliorer la façon dont vous gérez les messages dans votre code.
+En TypeScript, le module ```console``` fournit différentes méthodes pour écrire sur la sortie d'erreur standard, telles que ```console.error``` et ```console.warn```. L'utilisation de ces méthodes peut être utile pour signaler des erreurs ou des avertissements dans votre code.
 
-## Voir aussi
-
-- [Documentation de la classe Process en TypeScript](https://nodejs.org/api/process.html)
-- [Guide pour le débogage en TypeScript](https://basarat.gitbook.io/typescript/debugging)
-- [Utiliser la fonction console.error() en JavaScript](https://developer.mozilla.org/fr/docs/Web/API/Console/error)
+## Voir aussi:
+Pour en apprendre plus sur les méthodes de débogage en TypeScript, vous pouvez consulter la documentation officielle de TypeScript et des exemples de code sur le site de référence OpenClassrooms.

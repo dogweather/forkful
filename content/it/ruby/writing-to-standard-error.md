@@ -1,7 +1,7 @@
 ---
-title:                "Scrivere su errore standard"
-html_title:           "Ruby: Scrivere su errore standard"
-simple_title:         "Scrivere su errore standard"
+title:                "Scrivere a standard error"
+html_title:           "Ruby: Scrivere a standard error"
+simple_title:         "Scrivere a standard error"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Files and I/O"
@@ -10,39 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+## Che cos'è e perché?
 
-Ci sono molte ragioni per cui potresti dover scrivere sullo standard error in Ruby. Ad esempio, potresti voler segnalare un errore durante l'esecuzione del tuo programma o scrivere informazioni di debugging per aiutarti a risolvere eventuali problemi.
+Quando scriviamo un programma in Ruby, di solito la nostra prima opzione per visualizzare un output è tramite il metodo `puts`. Tuttavia, c'è un'altra opzione che spesso gli sviluppatori preferiscono: l'uso di `STDERR.puts`. Questa istruzione scrive al cosiddetto "standard error", che è uno dei tre flussi di output disponibili in un programma Ruby.
 
-## Come fare
+Ma perché utilizziamo `STDERR.puts` invece di `puts`? Ci sono diverse ragioni per cui gli sviluppatori possono preferirlo. A volte, ci sono dei messaggi di errore che vogliamo che siano mostrati solo in caso di problemi, quindi `STDERR.puts` permette di separare questi messaggi dagli output normali del programma. Inoltre, `STDERR` è sempre disponibile, indipendentemente dalla configurazione di output del programma. Infine, l'uso di `STDERR.puts` è considerato una buona pratica di programmazione, in quanto ci aiuta a mantenere il nostro codice più organizzato e facile da debuggare.
 
-Per scrivere sullo standard error in Ruby, è possibile utilizzare il metodo `.puts` seguito da `$stderr`, che rappresenta lo standard error. Ecco un esempio:
+## Come fare:
 
-```Ruby
-puts "Questo messaggio verrà scritto sullo standard output."
-$stderr.puts "Questo messaggio verrà scritto sullo standard error."
+Per scrivere a standard error in Ruby, è sufficiente utilizzare la seguente sintassi:
+
+```ruby
+STDERR.puts "Messaggio di errore"
 ```
 
-L'output sarà il seguente:
+Se vogliamo salvare la nostra istruzione in una variabile, possiamo farlo con `STDERR.puts "Messaggio di errore", var` (usando il secondo parametro opzionale `var`).
 
+Ecco un esempio di output che otterremo utilizzando `STDERR.puts`:
+
+```ruby
+STDERR.puts "Errore: file non trovato"
 ```
-Questo messaggio verrà scritto sullo standard output.
-Questo messaggio verrà scritto sullo standard error.
-```
+Output:
+`Errore: file non trovato`
 
-## Approfondimento
+## Approfondimento:
 
-Ci sono alcune differenze fondamentali tra lo standard output e lo standard error in Ruby. Prima di tutto, lo standard output viene visualizzato a schermo, mentre lo standard error viene scritto su un file di log di errore. Inoltre, lo standard output viene mostrato solo se il programma viene eseguito correttamente, mentre lo standard error viene comunque mostrato anche in caso di errori.
-È importante anche notare che lo standard output e lo standard error possono essere reindirizzati in luoghi diversi. Ad esempio, è possibile inviare lo standard output ad un file di log e lo standard error a schermo. È possibile farlo utilizzando il carattere `>` seguito dal nome del file desiderato. Ad esempio:
+In passato, la scrittura a standard error era molto più comune, ma con l'avvento dei log e dei sistemi di gestione degli errori più sofisticati, non è più così comune. Tuttavia, alcune librerie e framework ancora preferiscono utilizzare `STDERR` per gestire i messaggi di errore.
 
-```
-ruby programma.rb > output.log
-```
+Un'alternativa a `STDERR.puts` è `STDERR.write`, che accetta una stringa e la scrive direttamente senza aggiungere automaticamente una nuova riga come fa `STDERR.puts`. Questo può essere utile se vogliamo controllare l'output più dettagliatamente.
 
-Lo standard output del programma verrà ora scritto nel file `output.log`, mentre lo standard error verrà ancora mostrato a schermo.
+Per quanto riguarda l'implementazione, è interessante notare che il "standard error" è solo un nome convenzionale e non ha alcuna correlazione con errori reali. Invece, è solo uno dei tre flussi di output standard disponibili in Ruby, gli altri due sono "standard input" e "standard output". 
 
-## Vedi anche
+## Vedi anche:
 
-- [Documentazione ufficiale di Ruby su $stderr](https://ruby-doc.org/core-2.7.0/IO.html#method-c-new-label-Io+from+Files)
-- [Tutorial su come gestire gli errori in Ruby](https://www.rubyguides.com/2019/02/ruby-errors/)
-- [Una spiegazione dettagliata delle differenze tra lo standard output e lo standard error](https://www.semicolonworld.com/question/59817/the-difference-between-puts-and-stdputs-in-ruby)
+- [Documentazione ufficiale di Ruby su StandardError](https://ruby-doc.org/docs/keywords/1.9/Object.html#label-StandardError)
+- [Articolo su RubyGuides sull'uso di `STDERR` e `STDOUT`](https://www.rubyguides.com/2019/02/ruby-standard-error/)
+- [Spiegazione approfondita di STDOUT e STDERR su TheStreets](https://medium.com/we-are-the-streets/the-difference-between-stderr-and-stdout-cab4175120a7)

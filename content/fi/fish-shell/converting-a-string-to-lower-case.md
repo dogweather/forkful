@@ -1,7 +1,7 @@
 ---
-title:                "Merkkijonon muuttaminen pieniksi kirjaimiksi"
-html_title:           "Fish Shell: Merkkijonon muuttaminen pieniksi kirjaimiksi"
-simple_title:         "Merkkijonon muuttaminen pieniksi kirjaimiksi"
+title:                "Merkkijonon muuntaminen pienaakkosiksi"
+html_title:           "Fish Shell: Merkkijonon muuntaminen pienaakkosiksi"
+simple_title:         "Merkkijonon muuntaminen pienaakkosiksi"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -10,44 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Miksi 
+## Mitä & Miksi?
 
-On monia syitä, miksi haluat muuttaa merkkijonon pieniksi kirjaimiksi. Yksi yleinen syy on, että haluat varmistaa, että merkkijono on yhtenäisessä muodossa ja omalla kielelläsi. Tämä on hyödyllistä esimerkiksi vertaillessa merkkijonoja keskenään.
+Miksi convertata merkkijono pieniksi kirjaimiksi? Tämä on yleinen toimenpide ohjelmoinnissa, kun halutaan varmistaa, että syötetty merkkijono vastaa tiettyä standardeja tai vertailu tapahtuu oikein. Pienillä kirjaimilla varmistetaan myös yhdenmukainen muotoilu.
 
-# Miten tehdä
+## Miten tehdä:
 
-Fish Shellilla merkkijonon muuttaminen pieniksi kirjaimiksi on helppoa. Käytä vain `string tolower` komentoa, ja anna haluamasi merkkijono parametrina.
-
-```
-Fish Shell
-string tolower "TÄMÄ ON MERKKIJONO"
-```
-
-Tämä koodi tuottaa seuraavan tulosteen:
+Fish Shell tarjoaa helpon tavan muuttaa merkkijonon pieniksi kirjaimiksi. Tämä tapahtuu käyttämällä `string tolower` komentoa ja antamalla haluttu merkkijono argumenttina.
 
 ```
-tämä on merkkijono
+Fish Shell> string tolower "HELSINKI"
+helsinki
 ```
 
-# Syvemmälle
-
-Fish Shellin `string tolower` komento toimii muuntamalla merkkijonon jokaisen kirjaimen pieneksi kirjaimeksi. Tämä tarkoittaa, että se myös muuttaa kirjaimet, jotka ovat jo pieniä kirjaimia, kuten aakkoset ja välimerkit.
-
-Voit myös käyttää `string match -r` komentoa yhdistettynä `string tolower` komentoon, jotta muuntaisit vain tiettyjä kirjaimia haluamassasi merkkijonossa. Esimerkiksi, jos haluat muuttaa vain sanat "fish" ja "shell" merkkijonossa pieniksi kirjaimiksi, voit käyttää seuraavaa koodia:
+Mikäli halutaan tallentaa pienet kirjaimet muuttujaan, komennolla voi käyttää myös `-o` flagia, joka asettaa muutetun merkkijonon muuttujaan.
 
 ```
-fish shell
-string match -r "(fish|shell)" | string tolower
+Fish Shell> set city "HELSINKI"
+Fish Shell> string tolower -o city
+Fish Shell> echo $city
+helsinki
 ```
 
-Tämä tuottaa tuloksen:
+## Syvempi sukellus:
 
-```
-fish shell
-```
+Historiallisesti, merkkijonon konverttaaminen pieniksi kirjaimiksi on ollut tarpeellinen osa tietokoneohjelmointia, sillä eri käyttöjärjelmät käsittävät kirjaimia eri tavoin. Esimerkiksi IBM mainframe tietokoneet käyttävät isoja kirjaimia, kun taas UNIX pohjaiset järjestelmät käyttävät pieniä kirjaimia. Fish Shellin toiminto perustuu käyttöjärjestelmän `tr` komentoon, joka suoritetaan taustalla.
 
-# Katso myös
+Mikäli Fish Shell ei ole käytettävissä, vastaavan komennon voi suorittaa myös Bash Shellissä käyttämällä `tr` komentoa ja `[:upper:]` ja `[:lower]` merkkisarjoja.
 
-- Fish Shellin virallinen dokumentaatio: https://fishshell.com/docs/current/index.html
-- "String Processing in Fish Shell" opetusohjelma: https://www.tecmint.com/useful-string-processing-features-in-fish-shell/
-- "Learn Fish Shell: A Beginner's Guide" opetusohjelma: https://medium.com/swlh/learn-fish-shell-a-beginner-s-guide-6b62d64c4383
+## Katso myös:
+
+-  Fish Shellin virallinen dokumentaatio: https://fishshell.com/docs/current/cmds/string.html
+-  `tr` komennon dokumentaatio: https://www.ibm.com/support/knowledgecenter/ssw_ibm_i_73/rtref/stroupperlower.htm
+-  `tr` komennon julkaisuhistoria: https://manpages.debian.org/testing/coreutils/tr.1.en.html

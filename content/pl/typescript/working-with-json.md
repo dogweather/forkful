@@ -1,7 +1,7 @@
 ---
-title:                "Praca z formatem json"
-html_title:           "TypeScript: Praca z formatem json"
-simple_title:         "Praca z formatem json"
+title:                "Praca z json"
+html_title:           "TypeScript: Praca z json"
+simple_title:         "Praca z json"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Data Formats and Serialization"
@@ -10,108 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co to jest i dlaczego? 
 
-Jeśli chcesz pracować z danymi w formacie JSON, TypeScript jest idealnym narzędziem dla Ciebie. Pozwala on na łatwą manipulację tym formatem danych, dzięki czemu możesz szybko i sprawnie przetwarzać różnego rodzaju informacje.
+Artykuł ten przedstawia metodę pracy z JSON w języku TypeScript oraz wyjaśnia, dlaczego programiści decydują się na jej użycie. JSON (JavaScript Object Notation) jest to lekki format wymiany danych, który jest wygodny i prosty w użyciu. Programiści często wybierają JSON, ponieważ jest wygodnym sposobem na przechowywanie i przesyłanie danych wewnątrz aplikacji.
 
-## Jak to zrobić
+## Jak to zrobić?
 
-### Przygotowanie danych JSON
-
-Aby rozpocząć pracę z danymi w formacie JSON, musisz najpierw przygotować odpowiednią strukturę danych. W przypadku TypeScript, wystarczy zadeklarować zmienną typu `object` i przypisać do niej odpowiednie wartości. 
+Aby rozpocząć pracę z JSON w TypeScript, należy zaimportować odpowiedni moduł:
 
 ```TypeScript
-let user = {
-    name: "Jan",
-    age: 25,
-    location: "Warszawa"
-};
+import { JSON } from 'typescript-json';
 ```
 
-### Zapis i odczyt danych
-
-Aby zapisać dane w formacie JSON, warto skorzystać z wbudowanej metody `JSON.stringify()`. Przykładowo, możesz zapisać dane użytkownika z poprzedniego przykładu w formie ciągu znaków.
+Następnie można przekonwertować obiekt JavaScript na format JSON, używając metody ```stringify()```:
 
 ```TypeScript
-let userJSON = JSON.stringify(user);
-console.log(userJSON);
-// wynik: {"name":"Jan","age":25,"location":"Warszawa"}
-```
-
-Aby odczytać dane z formatu JSON, możesz użyć metody `JSON.parse()`, która zamienia ciąg znaków z powrotem na obiekt.
-
-```TypeScript
-let parsedUser = JSON.parse(userJSON);
-console.log(parsedUser.name);
-// wynik: Jan
-```
-
-### Praca z zagnieżdżonymi danymi
-
-JSON pozwala na przechowywanie zagnieżdżonych danych, czyli obiektów lub tablic wewnątrz innych obiektów lub tablic. W przypadku TypeScript, możesz odwoływać się do nich po prostu przez kolejne właściwości lub indeksy.
-
-```TypeScript
-let product = {
-    name: "Mydło",
-    description: "Naturalne mydło o zapachu eukaliptusa",
-    category: {
-        name: "Kosmetyki",
-        subcategory: "Higiena"
-    }
+let myObject = {
+    name: "John",
+    age: 30,
+    address: "123 Main Street"
 };
 
-console.log(product.category.name);
-// wynik: Kosmetyki
-console.log(product.category.subcategory);
-// wynik: Higiena
+let myJSON = JSON.stringify(myObject);
+
+console.log(myJSON); // output: {"name":"John","age":30,"address":"123 Main Street"}
+```
+
+Aby przekonwertować dane z formatu JSON na obiekt JavaScript, używa się metody ```parse()```:
+
+```TypeScript
+let myJSON = '{"name":"John","age":30,"address":"123 Main Street"}';
+
+let myObject = JSON.parse(myJSON);
+
+console.log(myObject.name); // output: John
 ```
 
 ## Głębsza analiza
 
-### Typowanie danych JSON w TypeScript
+Historia JSON sięga roku 2001, kiedy to Douglas Crockford wprowadził ten format jako alternatywną metodę przechowywania danych w języku JavaScript. JSON jest teraz powszechnie wykorzystywany w aplikacjach internetowych i mobilnych. Jedną z alternatyw dla JSON jest XML, jednak JSON jest znacznie lżejszy, prostszy w użyciu i szybszy w przetwarzaniu danych.
 
-Jedną z zalet korzystania z TypeScript jest możliwość definiowania typów danych. Dzięki temu, możesz mieć pewność, że dane, które przetwarzasz są zgodne z tym, co oczekujesz.
+W języku TypeScript możliwe jest również wykorzystanie interfejsów w celu definiowania struktury danych w formacie JSON. Dzięki temu można uniknąć popełniania błędów w przekonwertowaniu danych z formatu JSON na obiekt JavaScript.
 
-```TypeScript
-interface User {
-    name: string,
-    age: number,
-    location: string
-};
+## Zobacz również
 
-let user: User = {
-    name: "Jan",
-    age: 25,
-    location: "Warszawa"
-};
-```
-
-W przykładzie powyżej, zadeklarowaliśmy interfejs `User`, który określa strukturę danych dla zmiennej `user`. Dzięki temu, jeśli spróbujemy przypisać do niej wartość innego typu, TypeScript poinformuje nas o błędzie.
-
-### Praca ze strukturalnymi typami danych
-
-Jedną z najbardziej przydatnych funkcji TypeScript jest możliwość pracy z obiektami o nieznanej strukturze lub tablicami o różnej długości. Możemy to osiągnąć przez użycie tzw. strukturalnych typów danych.
-
-```TypeScript
-interface Post {
-    title: string,
-    content: string
-};
-
-let posts: Post[] = [
-    {
-        title: "Nowy film",
-        content: "Zapraszamy na premierę naszego najnowszego filmu!"
-    },
-    {
-        title: "Wakacyjna oferta",
-        content: "Spędź wakacje w piękny krajobrazach przyrody!"
-    }
-];
-```
-
-Nasza tablica `posts` może teraz zawierać dowolną ilość elementów o strukturze zgodnej z interfejsem `Post`.
-
-## Zobacz także
-
-- [Oficjalna dokumentacja TypeScript](https://www.typescriptlang.org/docs/home.html)
+- [Oficjalna dokumentacja TypeScript](https://www.typescriptlang.org/docs)
+- [Strona projektu JSON](https://www.json.org/)
+- [Porównanie JSON i XML](https://json.vscode.rocks/)

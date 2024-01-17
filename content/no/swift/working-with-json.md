@@ -1,7 +1,7 @@
 ---
-title:                "Arbeide med json"
-html_title:           "Swift: Arbeide med json"
-simple_title:         "Arbeide med json"
+title:                "Å jobbe med json"
+html_title:           "Swift: Å jobbe med json"
+simple_title:         "Å jobbe med json"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Data Formats and Serialization"
@@ -10,35 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hva & Hvorfor?
+Arbeid med JSON er en vanlig oppgave for Swift-programmerere. JSON står for JavaScript Object Notation, og er et format for lagring og overføring av data. Programmerere bruker JSON for å enkelt kunne lagre og utveksle data mellom ulike applikasjoner og systemer.
 
-JSON (JavaScript Object Notation) er en populær måte å lagre og utveksle data på i moderne programvareutvikling. Å jobbe med JSON i Swift er viktig for å kunne bruke og behandle data fra forskjellige kilder, som APIer og databasesystemer.
-
-## Slik gjør du det
-
-For å jobbe med JSON i Swift, må du først importere `Foundation`-rammeverket. Deretter kan du bruke `Foundation`-klassen `JSONSerialization` for å konvertere JSON-data til Swift-objekter og vice versa. Her er et eksempel på hvordan du kan hente JSON-data fra en URL:
+## Slik gjør du det:
+Her er et enkelt eksempel på hvordan du kan arbeide med JSON i Swift:
 
 ```Swift
-// Opprett URL-objekt
-let url = URL(string: "https://api.example.com/data")
+// Opprett en dictionary med informasjon om en person
+let person = ["navn": "Anna", "alder": 30, "hobbyer": ["sykling", "løping"]]
 
-// Hent JSON-data fra URL
-if let data = try? Data(contentsOf: url) {
-  // Konverter data til Swift-objekter
-  if let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
-    // Gjør noe med ditt Swift-objekt
-    print(json)
-  }
+// Konverter dictionaryen til JSON-data
+let jsonData = try JSONSerialization.data(withJSONObject: person)
+
+// Skriv ut JSON-data som en lesbar tekststreng
+if let jsonString = String(data: jsonData, encoding: .utf8) {
+  print(jsonString)
 }
+
+// Output:
+// {"navn":"Anna", "alder":30, "hobbyer":["sykling","løping"]}
 ```
 
-I dette eksempelet bruker vi `Data`-klassen for å hente JSON-data fra en URL og deretter `JSONSerialization` for å konvertere data til et Swift-objekt. Pass også på at du håndterer eventuelle feil som kan oppstå ved konvertering av data.
+## Dypdykk:
+Historisk sett har JSON blitt brukt som et alternativ til XML, et annet format for lagring og overføring av data. JSON er mye lettere å lese og skrive for mennesker, og tar også mindre plass i datalagringen. 
 
-## Dypdykk
+I Swift er JSON-støtte innebygd i språket, ved hjelp av `JSONSerialization`-klassen. Denne klassen gjør det enkelt å konvertere data til og fra JSON-format.
 
-Når du jobber med JSON i Swift, er det viktig å forstå forskjellen mellom forskjellige datastrukturer og hvordan de kan konverteres til Swift-objekter. JSON-data kan være enkle verdier som strenger og tall, eller det kan være komplekse objekter og matriser av data. Det er viktig å vite hvordan disse forskjellige datastrukturene kan tolkes og behandles i Swift for å kunne bruke dem effektivt i programmene dine.
+For mer informasjon om arbeid med JSON i Swift, kan du sjekke ut Apple's offisielle dokumentasjon: https://developer.apple.com/documentation/foundation/jsonserialization
 
-## Se også
-
-- [Foundation API reference](https://developer.apple.com/documentation/foundation/jsonserialization)
-- [Introduction to JSON in Swift](https://www.raywenderlich.com/2694-creating-and-parsing-json-in-swift)
+## Se også:
+- En grundig guide til JSON i Swift: https://www.raywenderlich.com/8274-json-tutorial-for-ios-getting-started
+- En sammenligning mellom JSON og XML: https://medium.com/@waqas_malik/json-vs-xml-which-one-is-better-based-on-technical-strengths-8587a834aeb0
+- Informasjon om Swift's `JSONEncoder` og `JSONDecoder`-klasser for enda enklere håndtering av JSON-data.

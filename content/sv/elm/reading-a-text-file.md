@@ -1,7 +1,7 @@
 ---
-title:                "Läsa en textfil"
-html_title:           "Elm: Läsa en textfil"
-simple_title:         "Läsa en textfil"
+title:                "Läsning av en textfil"
+html_title:           "Elm: Läsning av en textfil"
+simple_title:         "Läsning av en textfil"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Files and I/O"
@@ -10,34 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+Vad & Varför?
+Läsning av textfiler är processen att hämta data från en fil som innehåller text och använda den informationen i ett program. Detta är en vanlig uppgift för programmerare, eftersom textfiler innehåller viktig data som kan användas i en mängd olika program.
 
-Att kunna läsa en textfil är en grundläggande funktion som kan vara användbar för många olika typer av programmeringsprojekt. Genom att läsa en textfil kan du enkelt få tillgång till data som har sparats i ett format som är läsbart för både människor och datorer.
+Hur man:
+Det finns flera sätt att läsa en textfil i Elm, men det enklaste sättet är med hjälp av funktionen "file" i Elm-filpaketet. Du kan använda denna funktion för att läsa en textfil från din dator och spara den till en variabel.
 
-## Hur man gör det
+```Elm
+import File
 
-Att läsa en textfil i Elm är ganska enkelt. Det första steget är att importera funktionspaketet `File` genom att lägga till följande rad i början av filen:
-
-```elm
-import File exposing (text)
+file : String -> Cmd Msg
+file name =
+  let
+    reader =
+      List.toMaybe << String.lines
+  in
+    File.input name reader
 ```
 
-Sedan kan du använda funktionen `text` för att läsa innehållet i en textfil och spara det som en `Result`-typ. Här är ett exempel på hur man läser innehållet i en fil som heter "textfil.txt":
+När du använder denna funktion måste du ange filnamnet som en sträng och sedan definiera en "reader" som bestämmer hur datan från filen ska behandlas. I exemplet ovan omvandlas datan till en lista av rader.
 
-```elm
-File.text "textfil.txt"
-    |> Result.map (\text -> text)
+Här är ett exempel på hur du kan använda funktionen "file" för att läsa datan från en textfil:
+
+```Elm
+file "textfil.txt"
 ```
 
-För att använda datat i filen kan du till exempel skriva ut det på skärmen eller spara det i en variabel för senare användning.
+Efter att datan har lästs in kan du använda den i ditt program på valfritt sätt. Till exempel kan du skriva ut innehållet i filen på din webbsida med hjälp av en "view" funktion.
 
-## Djupdykning
+Alternative:
+Det finns även andra sätt att läsa en textfil i Elm, till exempel med hjälp av elm/http-paketet eller genom att använda Json.decode-funktionen. Det är viktigt att välja det sätt som bäst passar dina behov och din kodstruktur.
 
-När du läser in en textfil i Elm, kommer innehållet i filen att läsas in som en enda lång sträng. Det betyder att alla tecken, inklusive radbrytningar, kommer att sparas i samma sträng. Om filen innehåller speciella tecken, som till exempel åäö, kommer dessa också att sparas korrekt i strängen.
+Djupdykning:
+Historiskt sett har läsning av textfiler varit en utmaning för programmerare, men tack vare moderna språk och bibliotek är det nu enklare än någonsin. Genom att använda Elm-filpaketet, kan du enkelt läsa textfiler och använda den informationen i ditt program.
 
-Det är också värt att nämna att det är viktigt att filen som du läser finns på samma server som din Elm-applikation. Om filen finns på en annan server, kommer du istället att behöva använda en HTTP-förfrågan för att hämta filen och sedan läsa dess innehåll.
-
-## Se även
-
-* Elm-biblioteket: https://package.elm-lang.org/packages/elm/file/latest/
-* Elm Guide: https://guide.elm-lang.org/
+Se även:
+För mer information om hur du kan använda filpaketet i Elm, kolla in dokumentationen på Elm:s officiella hemsida. Det finns också flera exempel på hur man kan läsa och använda datan från en textfil på olika sätt.

@@ -10,38 +10,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co to jest i dlaczego?
 
-Zastanawiasz się, dlaczego warto pisać testy w Go? To prostsze niż myślisz! Testy są niezwykle ważne w procesie tworzenia oprogramowania, ponieważ pozwalają upewnić się, że kod działa poprawnie i jest odporny na błędy.
+Pisanie testów jest często nieodłączną częścią procesu programowania. Polega to na tworzeniu małych fragmentów kodu, które sprawdzają, czy pozostałe elementy programu funkcjonują zgodnie z oczekiwaniami. Programiści piszą testy, aby upewnić się, że ich kod jest poprawny i wykona się bez problemów.
 
-## Jak To Zrobić
-
-Aby napisać testy w Go, musisz użyć wbudowanego narzędzia "testing", które oferuje wiele przydatnych funkcji. Możesz zdefiniować testy za pomocą specjalnych funkcji, takich jak `func TestXxx(t *testing.T)`, gdzie Xxx to nazwa testowanej funkcji. Wewnątrz tej funkcji możesz użyć asercji, aby sprawdzić, czy otrzymane wyniki są zgodne z oczekiwaniami. Oto przykładowy kod:
+## Jak to zrobić:
 
 ```Go
-func TestSum(t *testing.T) {
-    total := sum(2, 3)
-    expected := 5
-    if total != expected {
-        t.Errorf("Sum of %d and %d expected to be %d, but got %d", 2, 3, expected, total)
+// Zdefiniuj funkcję, dla której chcemy napisać testy
+func reverse(str string) string {
+    runes := []rune(str)
+    for i, j := 0, len(runes)-1; i < len(runes)/2; i, j = i+1, j-1 {
+        runes[i], runes[j] = runes[j], runes[i]
+    }
+    return string(runes)
+}
+
+// Importujemy pakiet "testing" do naszego kodu
+import "testing"
+
+// Definiujemy test funkcji reverse(), nadając mu nazwę TestReverse
+func TestReverse(t *testing.T) {
+    actual := reverse("Hello World")
+    expected := "dlroW olleH"
+    // Jeśli wynik jest niezgodny z oczekiwaniami, zgłaszamy błąd
+    if actual != expected {
+        t.Errorf("Got %v, want %v", actual, expected)
     }
 }
+
+// Uruchamiamy testy
+go test
 ```
 
-Powyższy test sprawdza, czy funkcja `sum()` zwraca poprawny wynik dla podanych argumentów. Jeśli wynik nie jest zgodny z oczekiwaniami, test jest oznaczony jako nieudany i zostaje wyświetlony błąd. Możesz również użyć funkcji `t.Log()` aby wyświetlić dodatkowe informacje dla błędów.
+Wyjście powinno wyglądać następująco:
 
-## Deep Dive
+```Go
+--- FAIL: TestReverse (0.00s)
+	testing.go:173: Got dlroW olleH, want Hello World
+FAIL
+exit status 1
+FAIL    /path/to/your/code/package 0.012s
+```
 
-Pisanie testów w Go nie musi być trudne. Musisz tylko pamiętać o kilku ważnych rzeczach:
+## Zagłębienie:
 
-- Nazwy testów muszą zaczynać się od słowa "Test", aby były wykryte przez narzędzie `testing`.
-- Asercje powinny być umieszczone wewnątrz funkcji `func TestXxx(t *testing.T)` i powinny używać metody `t.Errorf()` do raportowania błędów.
-- Możesz użyć funkcji `t.Run()` do grupowania testów i wyświetlania bardziej szczegółowych informacji o nieudanych testach.
+Pisanie testów jest ważną częścią tzw. "test-driven development", czyli programowania wyznaczanego przez testy. Praktyka ta promuje tworzenie testów przed faktycznym pisaniem kodu. Istnieją również inne metodyki, takie jak "behaviour-driven development", w których testy są bardziej opisowe niż techniczne.
 
-Należy również pamiętać, że pisanie testów to tylko część procesu. Ważne jest również uruchamianie tych testów i sprawdzanie ich wyników regularnie. W tym celu możesz wykorzystać narzędzia takie jak Continous Integration (CI), które automatycznie uruchamiają testy i informują o wynikach.
+Główną alternatywą dla pakietu "testing" jest narzędzie "ginkgo", które oferuje lepszą czytelność i więcej funkcjonalności. Jednak pakiet "testing" jest częścią standardowej biblioteki języka Go i jest łatwo dostępny do użycia.
 
-## Zobacz również
+## Zobacz również:
 
-- [Dokumentacja oficjalna Go o testowaniu](https://golang.org/pkg/testing/)
-- [Artykuł na Medium o pisaniu testów w Go](https://medium.com/@matryer/5-simple-tips-and-tricks-for-writing-unit-tests-in-golang-619653f90742)
-- [Wideo na Youtube o testowaniu w Go](https://www.youtube.com/watch?v=ndmB0bj7eyw)
+- [Testing in Go] (https://golang.org/pkg/testing/)
+- [Ginkgo] (https://github.com/onsi/ginkgo)
+- [Test-Driven Development] (https://pl.wikipedia.org/wiki/Test-driven_development)

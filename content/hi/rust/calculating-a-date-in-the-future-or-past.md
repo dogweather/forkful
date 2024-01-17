@@ -1,7 +1,7 @@
 ---
-title:                "भविष्य या भूत की तारीख की गणना"
-html_title:           "Rust: भविष्य या भूत की तारीख की गणना"
-simple_title:         "भविष्य या भूत की तारीख की गणना"
+title:                "भविष्य या भूतकाल में तारीख की गणना"
+html_title:           "Rust: भविष्य या भूतकाल में तारीख की गणना"
+simple_title:         "भविष्य या भूतकाल में तारीख की गणना"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Dates and Times"
@@ -10,30 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
+# Date की गणना क्या है और क्यों करते हैं?
 
-डेटा की तारीख की गणना से कोई छूट नहीं की जा सकती है। इसलिए, इसका उपयोग शायद आपके दैनिक कार्यों में समय का निर्धारण करने में सहायक हो सकता है।
+Date की गणना एक तिथि या समय की गणना है, जो पहले या बाद में एक निश्चित मात्रा में बदलने के लिए किया जाता है। प्रोग्रामर्स तिथियाँ गणना करते हैं ताकि वे अपने कोड में समय संबंधी कार्यों को अधिक सुविधाजनक बना सकें।
 
-## कैसे करें
+## कैसे करें:
 
-```rust
-use chrono::{Utc, Local, Date, Datelike, NaiveDate};
-fn calculate_date(year: i32, month: u32, day: u32) -> Date<Local> {
-    let current_date = Local::today();
-    let future_date = NaiveDate::from_ymd(year, month, day);
-    let days_diff = future_date.num_days_from_ce() - current_date.num_days_from_ce();
-    current_date + chrono::Duration::days(days_diff)
+```
+Rust fn calculate_date(month: u32, day: u32) {
+    println!("Month: {}, Day: {}", month, day);
 }
 
 fn main() {
-    let future_date = calculate_date(2021, 12, 25);
-    let output = future_date.format("%A, %B %e, %Y").to_string();
-    println!("{}", output);
+    // calculate date for July 12
+    calculate_date(7, 12);
 }
 ```
 
-उपरोक्त उदाहरण में, हम दिए गए तारीख की गणना करने के लिए `calculate_date` फ़ंक्शन का उपयोग करते हैं। यह हमें एक तारीख देता है जो आज से निर्धारित दिनों के बाद होती है। हम इस नए की प्रिंट किया हुआ प्रारूप को प्राप्त करने के लिए `format` फ़ंक्शन का भी उपयोग करते हैं। आप `'format'` की जगह पर अपनी पसंदीदा प्रारूप का उपयोग कर सकते हैं।
+आउटपुट:
+Month: 7, Day: 12
 
-## गहराई में जाएं
+## गहराई में जाएं:
 
-डेटा की तारीख की गणना करने के लिए, हम `chrono` लाइब्रेरी का उपयोग कर सकते हैं। इसमें दो मुख्य सेटिंग्स हैं - समय क्षेत्र और अवधि शैली। हम `Local` को स्थानीय समय क्षेत्र के लिए और `Utc` को संयुक्त राष्ट्र के समय क्षेत्र के लिए उपयोग करते हैं। इन समय क्षेत्रों के साथ, आप अपने वर्तमान या भविष्य की तारीख को प्राप्त कर सकते हैं। हम `format` फ़ंक्शन के साथ तस्वीर तारीख का प्रारूप भी निर्दिष्ट कर सकते हैं, जो आपको ए
+तिथियाँ गणना करने के लिए कई विभिन्न तरीके हैं, जैसे डेट टाइम (Django), chrono (Rust), आदि। अलग-अलग भाषाओं जैसे Java, Python भी इसे समर्थित करते हैं। इसके अलावा, आप अपने जगह के समय क्षेत्र को ध्यान में रखकर तारीखों को गणना कर सकते हैं।
+
+## इसी तरह देखें:
+
+अधिक जानकारी के लिए, आप निम्न लिंकों को देख सकते हैं:
+- [डेट टाइम (Django)]: https://docs.djangoproject.com/en/3.2/ref/templates/builtins/#date
+- [chrono (Rust)]: https://docs.rs/chrono/0.4.19/chrono/index.html
+- [Java]: https://docs.oracle.com/javase/8/docs/api/java/util/Calendar.html
+- [Python]: https://docs.python.org/3/library/datetime.html

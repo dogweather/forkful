@@ -1,7 +1,7 @@
 ---
-title:                "Uttrekking av substringer"
-html_title:           "Kotlin: Uttrekking av substringer"
-simple_title:         "Uttrekking av substringer"
+title:                "Utvinning av delstrenger"
+html_title:           "Kotlin: Utvinning av delstrenger"
+simple_title:         "Utvinning av delstrenger"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Strings"
@@ -10,42 +10,22 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
-Hvorfor bry seg med å trekke ut delstrenger i Kotlin? Fordi det ofte er nødvendig å manipulere tekststrenger i programmeringsverdenen. Enten det er for å sortere, filtrere eller søke gjennom en streng, er det viktig å kunne kjenne til og bruke funksjoner for å ekstrahere delstrenger.
+## Hva & Hvorfor?
+Utvinning av delstrenger er en prosess der vi tar ut en del av en større tekst eller en streng. Dette gjøres ofte for å få tilgang til en spesifikk del av teksten, slik som et ord eller en setning. Programmere gjør dette for å manipulere data og få mer presis kontroll over arbeidet sitt.
 
-## Slik gjør du det
-Det er flere måter å trekke ut delstrenger i Kotlin på, avhengig av dine behov og preferanser. Her er noen eksempler:
-
-### Eksempel 1: Få en del av en streng
-For å trekke ut en del av en streng, kan du bruke `substring()`-funksjonen. Denne funksjonen tar to parametere: startindeksen og sluttpindeksen for den delen av strengen du vil hente ut.
-
+## Slik gjør du:
+Kotlin har innebygde funksjoner for å ekstrahere delstrenger, som gjør det enkelt og effektivt å bruke. La oss si du har en streng som heter ```tekst = "Dette er en tekst"```, og du vil bare ha ordet "tekst" fra den. Her er et eksempel på hvordan du kan gjøre dette:
 ```Kotlin
-val tekst = "Dette er en teststreng"
-val delstreng = tekst.substring(5, 13)
-println(delstreng) // output: er en test
+val start = tekst.indexOfFirst { !it.isLetterOrDigit() } + 1
+val end = tekst.indexOfLast { !it.isLetterOrDigit() } + 1
+val delstreng = tekst.substring(start, end) // delstreng vil nå være "tekst"
+println(delstreng) // Vil skrive ut "tekst"
 ```
 
-### Eksempel 2: Få deler av en streng basert på et mønster
-Hvis du vil hente ut deler av en streng basert på et spesifikt mønster, kan du bruke `split()`-funksjonen. Denne funksjonen deler opp en streng i en liste av delstrenger, basert på det spesifiserte mønsteret.
+## Dykk dypere:
+Denne teknikken blir ofte brukt i tekstbehandling og analyse, og har vært en viktig del av programmering siden tidlig i datamaskinens historie. Det finnes også andre måter å få tilgang til delstrenger på, som for eksempel ved hjelp av regulære uttrykk eller maskering. Det er viktig å huske at indeksering i de fleste programmeringsspråk begynner med 0, så første bokstav i en streng vil ha indeks 0.
 
-```Kotlin
-val tekst = "Velkommen, dette er en tekst"
-val delstrenger = tekst.split(", ")
-println(delstrenger[1]) // output: dette er en tekst
-```
-
-### Eksempel 3: Bytt ut en del av en streng
-Hvis du vil bytte ut en del av en streng med en annen, kan du bruke `replace()`-funksjonen. Denne funksjonen tar to parametere: den delen av strengen du vil bytte ut, og den nye delen du vil erstatte den med.
-
-```Kotlin
-val tekst = "Dette er en test"
-val nyTekst = tekst.replace("test", "øvelse")
-println(nyTekst) // output: Dette er en øvelse
-```
-
-## Dypdykk
-For å trekke ut delstrenger i Kotlin, bruker man ofte funksjoner som `substring()`, `split()` og `replace()`. Disse funksjonene er nyttige verktøy for å manipulere tekststrenger, men det er også viktig å forstå indeksene og mønstrene bak dem for å kunne bruke dem effektivt.
-
-## Se også
-- [Kotlin dokumentasjon: String Manipulation](https://kotlinlang.org/docs/basic-types.html#string-literals)
-- [Kotlin Cheat Sheet by Ray Wenderlich](https://www.raywenderlich.com/817602-kotlin-cheat-sheet-and-quick-reference)
+## Se også:
+- [Kotlins offisielle dokumentasjon om delstrenger](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-string/substring.html)
+- [Tutorial om delstrenger i Kotlin](https://www.programiz.com/kotlin-programming/substring)
+- [The Coding Train: Extracting Substrings in Kotlin](https://www.youtube.com/watch?v=1rUPaF6nQZo)

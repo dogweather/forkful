@@ -10,67 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-Parsing HTML, or the process of extracting information from HTML code, is a crucial task in web development. Whether you want to scrape data from a website, build a web scraper, or create a web page, understanding how to parse HTML is essential.
+## What & Why?
 
-## How To
-To parse HTML in Elm, we can use the `elm/parser` library. First, let's import the library:
-```Elm
-import Html exposing (Html)
-import Parser exposing (Parser, (|.), succeed, oneOf, map, Parser)
-import Parser.RegularExpressions exposing (regex)
-```
-Next, we define a type for our parse tree. This will help us organize the information we parse later on.
-```Elm
-type HtmlNode
-    = Tag String HtmlNodeList
-    | Text String
-    | Comment String
-    | Doctype String
+Parsing HTML is the process of breaking down HTML code into its individual components to be processed by a program. Programmers do this in order to extract specific information from a webpage or to manipulate the HTML code itself.
 
-type HtmlNodeList
-    = SingleNode HtmlNode
-    | NodeList List HtmlNode
-```
-We can now start writing our parser. Let's start with a function that parses a tag. We use the `regex` function to match the opening and closing tags, and the `oneOf` function to match any character inside the tag.
+## How to:
+
 ```Elm
-parseTag : Parser HtmlNode
-parseTag =
-    regex "^<([a-z]+)>" |> map (\tag -> Tag tag (SingleNode (Text tag)))
-```
-Next, we can write a parser for text between tags.
-```Elm
-parseText : Parser HtmlNode
-parseText =
-    regex "^(.*?)<" |> map Text
-```
-We can also parse comments and doctypes using similar functions.
-```Elm
-parseComment : Parser HtmlNode
-parseComment =
-    regex "^(<!--.*?-->)" |> map Comment
-    
-parseDoctype : Parser HtmlNode
-parseDoctype =
-    regex "^(<!doctype.*?)>" |> map (\doctype -> Doctype doctype)
-```
-Finally, we can combine all our parsers into one using the `oneOf` function.
-```Elm
-parseHtml : Parser HtmlNode
-parseHtml =
-    oneOf [ parseTag, parseText, parseComment, parseDoctype ]
-```
-We can now test our parser by passing in a string of HTML code and seeing the output.
-```Elm
-Parser.run parseHtml "<h1>Hello, world!</h1>"
---> Tag "h1" (SingleNode (Text "Hello, world!"))
+-- Import the appropriate library
+import Html.Parser
+
+-- Create a function to parse the HTML
+parseHTML : String -> Result String (List (Html Parser.Node))
+parseHTML str =
+    -- Use the `parse` function from the Html.Parser library
+    Html.Parser.parse str
+
+-- Use the function to parse an HTML string and print the results
+Html.Parser.fromString "<h1>Welcome!</h1>"
+    |> parseHTML
+    |> case of
+        -- Handle the success case where the HTML is valid
+        Ok nodes ->
+            Debug.toString nodes
+
+        -- Handle the error case where the HTML is invalid
+        Err error ->
+            "Error: " ++ error
 ```
 
-## Deep Dive
-The `elm/parser` library also provides many useful functions for parsing more complex HTML structures, such as attributes, nested tags, and self-closing tags. We can also use the `Parser.map` function to transform our parsed data into a more organized format.
+The output of this code would be:
 
-For a more in-depth understanding of parsing HTML in Elm, I highly recommend reading the official documentation for the `elm/parser` library.
+Ok [Elm.Node (tagName "h1") [] [Elm.TextNode "Welcome!"]]
 
-## See Also
-- [Elm Parser Library Documentation](https://package.elm-lang.org/packages/elm/parser/latest/)
-- [Parsing HTML with elm/parser](https://dev.to/werner/practical-applying-parser-theory-in-elm-parsing-html-with-elmparser-54f1) by Werner Echezuría
+This output is a list of nodes, with each node representing an element in the HTML code. You can also use this output to access specific elements or attributes within the HTML.
+
+## Deep Dive:
+
+Parsing HTML has been an important aspect of web development since the early days of the internet. Before the creation of HTML parsers, web developers had to manually sift through HTML code to extract the information they needed. With the introduction of parsers, this process became much more efficient.
+
+While there are other languages and libraries that offer HTML parsing functionality, Elm's built-in Html.Parser library is a great choice for those already working with Elm. Additionally, Elm is a functional language, which allows for concise and efficient parsing of HTML code.
+
+When parsing HTML in Elm, the library uses its own custom data structures to represent the HTML code. This allows for a more strict and structured approach to parsing, ensuring that only valid HTML code is accepted.
+
+## See Also:
+
+- [Elm Documentation on Html.Parser](https://package.elm-lang.org/packages/elm/html/latest/Html-Parser)
+- [MDN Web Docs on HTML Parsing](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction)

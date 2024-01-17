@@ -10,39 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-If you're working with text-based data, chances are you'll need to combine different strings together at some point. Whether you're creating a sentence, a user input prompt, or building a URL for an API call, string concatenation is a useful and necessary skill to have when programming.
+Concatenating strings in Clojure is the process of combining two or more strings into a single string. Programmers use this technique to create new strings from existing ones, allowing for more flexibility in data manipulation and text formatting.
 
-## How To
+## How to:
 
-Concatenating strings in Clojure is a simple process. First, you'll need to define the strings you want to combine. Let's use the example of creating a sentence using user input. 
+Concatenating strings in Clojure is done using the `str` function. This function takes in any number of string arguments and returns a new string with all the arguments combined.
+
+```Clojure
+(str "Hello, " "world!")
+;; Output: "Hello, world!"
+```
+
+Concatenation can also be used with variables or other data types, as long as it can be converted to a string.
 
 ```Clojure
 (def name "John")
-(def age 25)
-(def sentence (str "Hello, my name is " name " and I am " age " years old."))
+(str "My name is " name ".")
+;; Output: "My name is John."
 ```
 
-The `def` function is used to define variables, in this case, `name` and `age` are strings while `sentence` is a combination of these strings using the `str` function. 
+## Deep Dive:
 
-When we call `sentence`, the output will be "Hello, my name is John and I am 25 years old."
+In historical context, string concatenation has been an important technique in programming since the early days. In Clojure specifically, the `str` function has been a core part of the language since its release in 2007.
 
-## Deep Dive
+Alternatives to `str` for concatenating strings include the `format` function, which allows for more control over formatting the resulting string, and the `join` function, which can concatenate a collection of strings with a specified delimiter.
 
-In Clojure, the `str` function is used to concatenate strings. It takes any number of arguments and returns a string that is the result of concatenating them. It can also take other datatypes, such as numbers or booleans, and convert them to strings automatically.
+In terms of implementation, Clojure's `str` function uses a `StringBuilder` under the hood, which efficiently handles the combination of strings. This results in better performance compared to other string concatenation methods.
 
-Clojure also has a `join` function that can be used to concatenate strings with a separator character. This function is useful when combining strings from a collection of elements.
+## See Also:
 
-```Clojure
-(def fruits ["apple" "banana" "pear"])
-(def fruit-list (str/join ", " "My favorite fruits are: " fruits))
-```
-
-In this example, the `fruit-list` variable will contain the value "My favorite fruits are: apple, banana, pear". The first argument in the `str/join` function is the separator character, while the second argument is the initial string that the collected strings will be added to.
-
-## See Also
-
-- [ClojureDocs - Str function](https://clojuredocs.org/clojure.core/str)
-- [ClojureDocs - Join function](https://clojuredocs.org/clojure.string/join) 
-- [Clojure for the Brave and True](https://www.braveclojure.com/)
+- [Clojure docs on str](https://clojuredocs.org/clojure.core/str)
+- [Format strings in Clojure](https://www.theserverside.com/blog/Coffee-Talk-Java-News-Stories-and-Opinions/Adding-Formatting-to-Clojure-Strings)
+- [Joining strings in Clojure](https://www.clojure.com/blog/2016/12/27/joining-strings.html)

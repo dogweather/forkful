@@ -10,29 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
+Checka om en mapp finns är en viktig del av programmering eftersom det tillåter programmet att göra vissa åtgärder beroende på om en viss mapp finns eller inte. Detta hjälper till att göra koden mer robust och kraschsäker.
 
-Att känna till hur man kontrollerar om en katalog finns kan vara otroligt användbart för programutvecklare. Det kan bidra till en mer robust och pålitlig kod, då man kan undvika felmeddelanden och hantera potentiella fel på ett bättre sätt.
-
-## Hur man gör
+## Hur du gör:
+Kolla om en mapp finns i PHP är enkelt tack vare den inbyggda funktionen `file_exists()`. Här är ett kodexempel:
 
 ```PHP
-if (is_dir('/sökväg/till/katalog')) {
-    echo "Katalogen finns!";
+if (file_exists("min_mapp")) {
+    echo "Mappen finns";
 } else {
-    echo "Katalogen finns inte...";
+    echo "Mappen finns inte";
 }
 ```
 
-Om du försöker testa en katalog som inte finns, kommer du att få utskriften 'Katalogen finns inte...'. Om katalogen däremot finns på den angivna sökvägen, kommer du istället att få utskriften 'Katalogen finns!'.
+Detta kodexempel kommer att kolla om en mapp med namnet "min_mapp" finns och skriva ut ett lämpligt meddelande baserat på resultatet. Om mappen finns, kommer det att skriva ut "Mappen finns", annars kommer det att skriva ut "Mappen finns inte".
 
-##deep dive
+## Djupdykning:
+Att kolla om en mapp finns är en viktig del av fil- och mapphantering i PHP. Innan inbyggda funktioner som `file_exists()` fanns, var det nödvändigt att använda mer komplexa metoder som att köra systemanrop för att utföra samma uppgift. Nu kan vi enkelt använda den inbyggda metoden som gör att koden blir mer effektiv.
 
-För att utföra denna kontroll använder vi PHP-funktionen `is_dir()` som tar emot en sökväg som parameter och returnerar en `boolean`-värde beroende på om katalogen finns eller inte.
+Om du letar efter en mer specifik metod för att kolla om en mapp finns, kan du också använda `is_dir()` som returnerar sant om sökvägen leder till en mapp. Detta kan vara användbart om du bara vill kontrollera om en specifik sökväg pekar på en mapp eller inte.
 
-Det är också viktigt att notera att denna funktion endast fungerar för lokala sökvägar och inte externt via URL: er.
-
-## Se även
-
-- [PHP: is_dir() - Manual](https://www.php.net/manual/en/function.is-dir.php)
-- [PHP: Directory Functions - Manual](https://www.php.net/manual/en/ref.dir.php)
+## Se också:
+- [PHP manual för file_exists()](https://www.php.net/manual/en/function.file-exists.php)
+- [PHP manual för is_dir()](https://www.php.net/manual/en/function.is-dir.php)

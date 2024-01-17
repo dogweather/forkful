@@ -1,7 +1,7 @@
 ---
-title:                "Søke og erstatte tekst"
-html_title:           "Bash: Søke og erstatte tekst"
-simple_title:         "Søke og erstatte tekst"
+title:                "Søke og erstatte tekster"
+html_title:           "Bash: Søke og erstatte tekster"
+simple_title:         "Søke og erstatte tekster"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Strings"
@@ -10,37 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hva & Hvorfor?
 
-Å utveksle tekster i en fil kan være en tidkrevende og kjedelig oppgave. Heldigvis er det enkelt å automatisere denne prosessen ved hjelp av Bash. Ved å bruke søke- og erstatningskommandoer kan du spare tid og få et mer effektivt arbeidsflyt.
+Søking og erstatning av tekst er en vanlig oppgave for programmerere. Dette innebærer å finne et bestemt stykke tekst og erstatte det med en annen. Å gjøre dette kan hjelpe til med å endre eller forbedre en kode eller tekstfil. Det er en effektiv måte å automatisere endringer på og sikre konsistens i koden din.
 
-## Hvordan
+## Hvordan:
 
-Søke- og erstatningskommandoene i Bash lar deg finne og erstatte spesifikk tekst i en fil. For å søke etter et bestemt ord, kan du bruke `grep` kommandoen som følger:
+Vi kan bruke "sed" kommandoen i Bash for søking og erstatning av tekst. Dette er et kraftig verktøy som lar oss søke etter et bestemt mønster i en fil og deretter erstatte det med en annen tekst eller en annen fil. La oss si at vi har en fil kalt "hello.txt" som inneholder følgende tekst:
 
-```Bash
-grep "ord" filnavn
 ```
-Dette vil søke etter ordet "ord" i filen "filnavn" og returnere alle linjene der den finnes.
-
-For å erstatte ordet med et annet ord, kan du bruke `sed` kommandoen som følger:
-
-```Bash
-sed -i 's/ord/nytt_ord/g' filnavn
+Hello world! Dette er en test.
 ```
 
-Dette vil erstatte alle forekomster av "ord" med "nytt_ord" i filen "filnavn". Det `-i` flagget sørger for at endringene blir lagret i filen.
+Hvis vi vil erstatte "Hello world" med "Hei verden" kan vi bruke følgende kommando:
 
-## Dypdykk
+```
+sed -i 's/Hello world/Hei verden/g' hello.txt
+```
 
-Bash har en rekke ulike søke- og erstatningskommandoer, som `awk` og `perl`. Disse kommandoene tilbyr mer avanserte funksjoner og muligheter for å finne og erstatte tekst i en fil.
+Denne kommandoen vil søke gjennom filen, finne mønsteret "Hello world" og erstatte det med "Hei verden". "-i" -flagget lar oss gjøre endringene direkte i den opprinnelige filen. Merk at "s" betyr "substitute" (erstatte) og "g" betyr "global", dette betyr at alle forekomster av mønsteret vil bli erstattet.
 
-Det er også mulig å bruke regulære uttrykk (regex) for å spesifisere hva du skal søke etter og erstatte med. Dette kan være nyttig hvis du ønsker å søke etter et mønster istedenfor et spesifikt ord.
+## Dypdykk:
 
-Bash tilbyr også muligheten til å endre flere filer på en gang. Du kan bruke `sed` kommandoen sammen med `find` kommandoen for å gjøre endringer i flere filer i én kommando.
+Søking og erstatning av tekst ble først introdusert i ed teksteditoren på 1970-tallet og har siden blitt en standardfunksjon i mange programmeringsspråk og verktøy. I tillegg til sed, kan vi bruke grep, awk, perl og andre språk for å utføre lignende oppgaver. Det er også verdt å nevne at det finnes grafiske programmer som kan utføre disse oppgavene på en mer brukervennlig måte. Hvis du vil gå mer i dybden på hvordan søking og erstatning fungerer, kan du lese om regulære uttrykk (regex) som er et kraftig verktøy for å finne og manipulere tekst.
 
-## Se også
+## Se også:
 
-* [Bash offisiell nettside](https://www.gnu.org/software/bash/)
-* [Bash Tutorial fra Linuxize](https://linuxize.com/post/bash-search-and-replace/)
-* [Bash regex tutorial fra Digital Ocean](https://www.digitalocean.com/community/tutorials/using-grep-regular-expressions-to-search-for-text-patterns-in-linux)
+- [Bash sed dokumentasjon](https://www.gnu.org/software/sed/manual/sed.html)
+- [Introduksjon til regulære uttrykk](https://www.regular-expressions.info/)
+- [10 grep-kommandoer alle bør kjenne til](https://www.linode.com/docs/tools-reference/tools/10-grep-command-examples/)

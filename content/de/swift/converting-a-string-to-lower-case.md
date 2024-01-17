@@ -1,7 +1,7 @@
 ---
-title:                "Eine Zeichenkette in Kleinbuchstaben umwandeln"
-html_title:           "Swift: Eine Zeichenkette in Kleinbuchstaben umwandeln"
-simple_title:         "Eine Zeichenkette in Kleinbuchstaben umwandeln"
+title:                "Umwandlung einer Zeichenkette in Kleinbuchstaben"
+html_title:           "Swift: Umwandlung einer Zeichenkette in Kleinbuchstaben"
+simple_title:         "Umwandlung einer Zeichenkette in Kleinbuchstaben"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -10,41 +10,20 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was & Warum?
+Beim Umwandeln eines Strings in Kleinbuchstaben handelt es sich um eine Methode in der Programmierung, bei der alle Großbuchstaben in einem String zu Kleinbuchstaben umgewandelt werden. Programmierer nutzen dies, um sicherzustellen, dass die Eingabe unabhängig von der Groß- und Kleinschreibung korrekt verarbeitet wird.
 
-Wenn du schon einmal mit Strings in deinem Swift-Code gearbeitet hast, bist du vielleicht auf die Funktion `lowercased()` gestoßen. Aber warum ist es überhaupt wichtig, eine Zeichenkette in Kleinbuchstaben zu konvertieren?
-
-Die Antwort ist, dass es viele Gründe dafür gibt, wie zum Beispiel für die String-Vergleich oder die Formatierung von Benutzereingaben. Es kann auch helfen, ungewollte Fehler in deinem Code zu vermeiden.
-
-## Wie man eine Zeichenkette in Kleinbuchstaben konvertiert
-
-Es gibt verschiedene Wege, um eine Zeichenkette in Kleinbuchstaben zu konvertieren. Hier sind zwei Beispiele mit dem Code und der dazugehörigen Ausgabe:
+## Wie geht's?
+Das Konvertieren eines Strings in Kleinbuchstaben in Swift ist einfach. Verwenden Sie die Methode "lowercased()" auf dem betreffenden String und weisen Sie das Ergebnis einem neuen String zu. Hier ist ein Beispiel:
 
 ```Swift
-let str1 = "Willkommen"
-let lower1 = str1.lowercased()
-print(lower1) // willkommen 
+let string = "HALLO WELT"
+let lowercaseString = string.lowercased()
+print(lowercaseString) // ausgabe: hallo welt
 ```
 
-```Swift
-var str2 = "Hallo, WELT"
-str2 = str2.lowercased()
-print(str2) // hallo, welt 
-```
-
-In beiden Fällen wird die Funktion `lowercased()` auf die Zeichenketten `str1` und `str2` angewendet. Anschließend wird die Ausgabe in Kleinbuchstaben angezeigt.
-
-## Tiefere Einblicke
-
-Um zu verstehen, wie die Konvertierung von Zeichenketten in Kleinbuchstaben funktioniert, müssen wir uns ein wenig mit Unicode beschäftigen.
-
-Unicode ist ein Standard zur Darstellung von Schriftzeichen und Symbole in Computern. Jeder Buchstabe, jedes Zeichen oder jede Zahl hat in Unicode eine eindeutige Nummer, genannt Codepoint.
-
-Die Funktion `lowercased()` verwendet diese Codepoints, um die Zeichenkette in Kleinbuchstaben umzuwandeln. Dabei werden auch Sonderzeichen, Emojis und andere Symbole berücksichtigt.
-
-Um eine Zeichenkette in Großbuchstaben zu konvertieren, gibt es übrigens die Funktion `uppercased()`.
+## Tief Eintauchen
+Das Konzept, Großbuchstaben in Kleinbuchstaben umzuwandeln, existiert seit Beginn der Programmierung und wird in vielen Sprachen unterstützt. In Swift gibt es auch eine alternative Methode "lowercased(with:)", die es ermöglicht, anzugeben, in welchem Sprachbereich die Umwandlung durchgeführt werden soll. Die Implementierung von "lowercased()" basiert auf Unicode-Regeln und ist daher sehr zuverlässig.
 
 ## Siehe auch
-
-- [String lowercase() Method](https://developer.apple.com/documentation/swift/string/1786177-lowercased)
-- [The Swift Programming Language - Strings and Characters](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+Weitere Informationen zum Thema Zeichenketten und Unicode in Swift finden Sie in der offiziellen Swift-Dokumentation: https://developer.apple.com/documentation/swift/string

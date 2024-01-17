@@ -10,64 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+# Co & Dlaczego?
 
-Przetwarzanie daty na ciąg znaków jest często niezbędnym zadaniem w programowaniu. Wiele aplikacji wymaga wyświetlenia daty w czytelnej formie dla użytkownika lub zapisania jej w odpowiednim formacie do pliku. W tym artykule pokażemy jak łatwo przekształcić datę na ciąg znaków w języku C++.
+Konwersja daty na ciąg znaków jest procesem przekształcania daty w formacie liczbowym na tekstowy. Programiści często wykonują tę operację w celu wyświetlenia daty w przyjaznym dla użytkownika formacie.
 
-## Jak to zrobić
+# Jak to zrobić?
 
-Przedstawimy dwa sposoby na konwersję daty na ciąg znaków za pomocą biblioteki chrono oraz funkcji strftime.
+C++ udostępnia wiele metod konwersji daty na ciąg znaków. Przykłady kodu i wyników znajdują się poniżej.
 
 ```C++
 #include <iostream>
-#include <iomanip>
-#include <chrono>
 #include <ctime>
 
-int main()
-{
-    using namespace std::chrono;
+using namespace std;
 
-    // Uzyskanie aktualnej daty i czasu
-    system_clock::time_point now = system_clock::now();
+int main() {
+    // Pobranie bieżącej daty
+    time_t now = time(0);
 
-    // Konwersja na czas lokalny
-    time_t tt = system_clock::to_time_t(now);
+    // Konwersja daty na ciąg znaków w formacie "mm/dd/rrrr" 
+    char* date = ctime(&now);
+    cout << "Bieżąca data: " << date << endl;
 
-    // Przekształcenie daty do struktury tm
-    struct tm * ptm = localtime(&tt);
-
-    // Użycie funkcji strftime do formatowania daty
-    char date_strftime[20];
-    strftime(date_strftime, 20, "%d/%m/%Y", ptm);
-
-    // Utworzenie ciągu znaków za pomocą metody put_time
-    std::string date_put_time = std::put_time(ptm, "%d/%m/%Y");
-
-    // Wypisanie wyników na ekran
-    std::cout << "Data w formacie strftime: " << date_strftime << std::endl;
-    std::cout << "Data w formacie put_time: " << date_put_time << std::endl;
+    // Konwersja daty na ciąg znaków w formacie "miesiąc dd, rrrr" 
+    tm *ltm = localtime(&now);
+    cout << "Bieżący miesiąc: " << 1 + ltm->tm_mon << " " << ltm->tm_mday << ", " << 1900 + ltm->tm_year << endl;
 
     return 0;
 }
 ```
-
-Powyższy kod najpierw uzyskuje aktualną datę i czas za pomocą funkcji `now()` z biblioteki `chrono`. Następnie wykorzystuje funkcję `localtime()` do przekształcenia daty na stałą strukturę `tm`, która jest wykorzystywana przez funkcję `strftime()` do formatowania daty. Możemy również skorzystać z metody `put_time()` oraz operatora `%` do utworzenia ciągu znaków w wybranym przez nas formacie.
-
-Po wykonaniu powyższego kodu, uzyskamy następujący wynik:
+**Wynik:**
 
 ```
-Data w formacie strftime: 08/03/2021
-Data w formacie put_time: 08/03/2021
+Bieżąca data: Wed Jul 28 12:25:38 2021
+Bieżący miesiąc: 7 28, 2021
 ```
 
-## Deep Dive
+# Głębszy Zanurzenie
 
-Istnieje wiele innych funkcji i metod do konwersji daty na ciąg znaków w języku C++. Dzięki temu możemy indywidualnie dostosować format daty do naszych potrzeb. Istnieje także możliwość zdefiniowania własnego formatu daty za pomocą specjalnych znaków.
+Konwersja daty na ciąg znaków jest powszechna w programowaniu i często wykorzystywana w kontekście wyświetlania dat w formie czytelnej dla użytkownika. Alternatywnym sposobem konwersji daty jest użycie biblioteki Boost, która dostarcza więcej funkcji i może być bardziej szczegółowa w niektórych przypadkach.
 
-Więcej informacji na temat formatowania daty można znaleźć w dokumentacji biblioteki `chrono` oraz funkcji `strftime`.
+Implementacja konwersji daty wymaga wykorzystania funkcji dostępnych w standardowej bibliotece C++ oraz określenia formatu wyjściowego. W przypadku braku odpowiedniego formatu, funkcje mogą zwrócić nieporządane wyniki.
 
-## Zobacz również
+# Zobacz również
 
-- [Dokumentacja biblioteki chrono](https://en.cppreference.com/w/cpp/chrono)
-- [Dokumentacja funkcji strftime](https://en.cppreference.com/w/c/chrono/strftime)
+[Przewodnik dla programistów C++ - Konwersja daty](https://www.cplusplus.com/reference/ctime/strftime/)

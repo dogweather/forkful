@@ -10,32 +10,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué convertir una cadena a minúsculas?
+## ¿Qué y por qué?
+Convertir una cadena de texto a minúsculas es el proceso de transformar todas las letras en una cadena a su forma en minúscula. Los programadores hacen esto para asegurarse de que las comparaciones de cadenas sean precisas y para una mejor manipulación de datos.
 
-Hay varias razones por las que puedes querer convertir una cadena a minúsculas en Clojure. Por ejemplo, puede ser necesario para comparar cadenas de manera más precisa, ya que convertirlas a minúsculas eliminará las diferencias de capitalización. También puede ser necesario para cumplir con ciertas convenciones de estilo en un proyecto de programación.
-
-## Cómo hacerlo
-
-Es muy fácil convertir una cadena a minúsculas en Clojure. Simplemente tienes que usar la función ```clojure (lower-case)``` con la cadena que quieres convertir como argumento. Aquí hay un ejemplo:
-
+## Cómo:
 ```Clojure
- (def my-str "Hola Mundo")
- (lower-case my-str)
+(.toLowerCase "HOLA MUNDO")
+;=> "hola mundo"
+
+(.toLowerCase "¡BIENVENIDO!")
+;=> "¡bienvenido!"
 ```
-*Salida: "hola mundo"*
 
-Como puedes ver, todas las letras en la cadena se han convertido a minúsculas. Además, también puedes aplicar esta función directamente a una cadena literal, como en el siguiente ejemplo:
+## Profundizando:
+- Contexto histórico: Convertir cadenas a minúsculas era una tarea tediosa en los primeros días de la programación, ya que se requería escribir una función específica para ese propósito cada vez que se necesitaba. Sin embargo, con el avance de los lenguajes de programación modernos, esta funcionalidad se ha vuelto mucho más sencilla de implementar.
+- Alternativas: Algunos lenguajes de programación ofrecen funciones específicas para convertir cadenas a minúsculas, mientras que otros requieren que se utilicen métodos específicos de objetos de cadena para lograr el mismo resultado.
+- Detalles de implementación: Convertir una cadena a minúsculas en Clojure es una tarea sencilla gracias a la función incorporada `toLowerCase`. Esta función utiliza la biblioteca Java `String` para realizar la conversión.
 
-```Clojure
- (lower-case "BONJOUR")
-```
-*Salida: "bonjour"*
-
-## Profundizando en la conversión de cadenas a minúsculas
-
-Cuando usas la función ```lower-case``` en una cadena, se aplican las reglas de conversión de minúsculas de Unicode. Estas reglas se basan en el estándar internacional para codificar caracteres. Por lo tanto, la conversión a minúsculas puede variar según el idioma y los caracteres específicos de la cadena. Además, debes tener en cuenta que cualquier caracter que ya esté en minúscula no se verá afectado por esta función.
-
-## Consulta también
-
-- [Documentación oficial de Clojure sobre lower-case](https://clojuredocs.org/clojure.core/lower-case)
-- [¿Cómo convertir una cadena a mayúsculas en Clojure?](https://github.com/your-username/your-project-name/blob/master/README.md) *nota: reemplaza "your-username" y "your-project-name" con tu información correspondiente*
+## Ver también:
+- [Documentación oficial de Clojure sobre `toLowerCase`](https://clojuredocs.org/clojure.core/to-lower-case)
+- [Otra forma de convertir cadenas a minúsculas en Clojure utilizando regex](https://stackoverflow.com/questions/9977880/how-to-convert-clojure-string-to-lower-case/26634953#26634953)

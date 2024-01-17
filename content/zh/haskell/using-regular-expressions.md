@@ -10,35 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么要使用正则表达式
+# 什么是正则表达式以及为什么程序员要用它？
+正则表达式是一种用于匹配、查找或替换文本的工具。程序员使用它来快速有效地检索和处理大量数据。它的灵活性和强大的功能使得编写复杂的文本处理程序变得更加简单和高效。
 
-在编程世界中，需要处理大量文本数据是很常见的情况。而当我们需要对文本进行特定的匹配和替换时，正则表达式就派上了用场。它可以帮助我们快速、灵活地匹配和处理文本，提高编程效率。
-
-## 如何使用
-
-在Haskell中，我们可以使用`Text.Regex.TDFA`模块来支持正则表达式。下面是一个简单的例子，我们可以使用正则表达式来检查一个字符串是否符合特定的模式。
-
+# 如何使用正则表达式：
 ```Haskell
-import Text.Regex.TDFA
+import Text.Regex.Posix ((=~))
 
--- 检查字符串是否符合模式
-checkPattern :: String -> String -> Bool
-checkPattern pattern str = str =~ pattern
+-- 匹配单词以“abc”开头的字符串
+"abc123" =~ "^abc" :: Bool  -- True
+"xyz123" =~ "^abc" :: Bool  -- False
 
-main = do
-  let str = "Hello World!"
-      pattern = "Hello"
-  print $ checkPattern pattern str -- 输出 True
+-- 提取匹配的子字符串
+"1 + 2 = 3" =~ "[0-9]" :: String -- "1"
+
+-- 替换匹配的子字符串
+"Hello World" =~ "World" :: String -- "Hello Universe"
 ```
 
-我们可以使用`=~`符号来表示字符串和模式进行匹配，如果匹配成功则返回`True`，否则返回`False`。当然，在实际中我们也可以使用更复杂的模式，来满足不同的匹配需求。
+# 深入了解：
+正则表达式最早起源于20世纪50年代，随着计算机技术的发展和普及，它逐渐成为现代编程语言中不可或缺的一部分。除了Haskell，其他流行的语言如JavaScript、Python和Perl也都提供了正则表达式的支持。在Haskell中，正则表达式使用`Text.Regex.Posix`模块的函数来处理。通过学习正则表达式的语法和常用的模式匹配方法，可以大大提高文本处理的效率。
 
-## 深入了解
-
-正则表达式是一种很强大的匹配工具，它可以通过不同的模式来实现各种不同的匹配需求。在Haskell中，我们可以通过使用各种不同的函数来进行正则表达式的操作，例如`=~`、`=~~`、`=~~~`等等。另外，我们也可以通过使用`Text.Regex.TDFA.Context`模块来提高正则表达式的性能。
-
-## 参考链接
-
-- [Haskell中文网](https://haskell.cn/)
-- [Haskell正则表达式教程](https://www.cnblogs.com/xk-blogs/p/11506321.html)
-- [Haskell正则表达式库文档](https://hackage.haskell.org/package/regex-tdfa-1.3.1/docs/Text-Regex-TDFA.html)
+# 相关参考：
+- [Haskell正则表达式文档](https://www.haskell.org/ghc/docs/latest/html/libraries/regex-posix-0.96.0.0/Text-Regex-Posix.html)
+- [正则表达式入门教程](https://www.runoob.com/regexp/regexp-tutorial.html)

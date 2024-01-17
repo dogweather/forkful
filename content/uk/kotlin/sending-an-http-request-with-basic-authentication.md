@@ -10,48 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Чому
+Що і навіщо?
 
-Базова автентифікація - це один з найпростіших методів захисту данних при відправці HTTP запитів. Вона дозволяє передавати ідентифікатор користувача та пароль разом з запитом, щоб сервер міг перевірити права доступу і забезпечити безпечне з'єднання.
+Надсилання HTTP-запиту з базовою аутентифікацією - це процес, при якому програміст надсилає запит до сервера, який обробляється і відповідає згідно з правами доступу користувача. Це важливо, коли потрібно отримати обмежений доступ до інформації або здійснити певну дію на сервері.
 
-## Як це зробити
-
-Для відправлення HTTP запиту з базовою автентифікацією використовується `URL` та `HttpURLConnection` класи. Спочатку ми створюємо об'єкт URL з адресою, до якої хочемо зробити запит:
+Як це зробити?
 
 ```Kotlin
-val url = URL("https://example.com/api/endpoint")
+val credentials = "username:password".toByteArray()
+val encodedCredentials = Base64.encode(credentials)
+val url = "https://example.com/api"
+val request = Request.Builder()
+    .url(url)
+    .header("Authorization", "Basic $encodedCredentials")
+    .build()
+val client = OkHttpClient()
+val response = client.newCall(request).execute()
+println(response.body()?.string())
 ```
 
-Далі потрібно створити об'єкт `HttpURLConnection` і встановити метод запиту (GET, POST, PUT тощо):
+Глибоке занурення
 
-```Kotlin
-val connection = url.openConnection() as HttpURLConnection
-connection.requestMethod = "GET"
-```
+Базова аутентифікація була вперше введена в HTTP протокол у 1995 році та представлена в RFC 1945. Це базовий метод аутентифікації, який працює на основі кодування ім'я користувача та пароля в форматі Base64. Є інші методи аутентифікації, такі як OAuth, які забезпечують більш безпечну і автоматичну аутентифікацію.
 
-Тепер можемо встановити базову автентифікацію, передавши ідентифікатор користувача та пароль у вигляді строки кодуваного Base64:
+Також, варто зазначити, що використання базової аутентифікації не є надійним засобом захисту, оскільки ім'я користувача та пароль передаються у відкритому вигляді, тому рекомендується використовувати HTTPS для забезпечення безпеки передачі даних.
 
-```Kotlin
-val username = "user"
-val password = "password"
-val auth = "$username:$password".toByteArray().encodeBase64()
-connection.setRequestProperty("Authorization", "Basic $auth")
-```
+Дивіться також
 
-На останньому кроці потрібно передати запит, отримати відповідь та обробити її результат:
-
-```Kotlin
-val response = connection.inputStream.bufferedReader().use {
-    it.readText()
-}
-println(response) // виводимо отриману відповідь
-```
-
-## Глибший аналіз
-
-Базова автентифікація - це дуже простий метод захисту, який не забезпечує надійного захисту. Якщо для вас важлива безпека данних, рекомендовано використовувати більш сучасні методи аутентифікації, такі як OAuth.
-
-## Дивись також
-
-- [Офіційна документація Kotlin](https://kotlinlang.org/docs/reference/)
-- [Стаття про аутентифікацію в Android за допомогою Retrofit та OkHttp](https://proandroiddev.com/authentication-in-android-using-retrofit-and-okhttp-a2794a415426)
+- https://tools.ietf.org/html/rfc1945 - RFC 1945 про базову аутентифікацію
+- https://oauth.net/2/ - офіційна сторінка OAuth

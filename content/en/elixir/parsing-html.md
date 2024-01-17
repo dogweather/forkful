@@ -10,49 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-Parsing HTML, or converting raw HTML code into a structured document, is a crucial task in web development. It is necessary for building websites, web scrapers, and other web-related applications. With the rise of web technologies, knowing how to parse HTML can be a valuable skill for any programmer.
+Parsing HTML is the process of reading and analyzing HTML code to extract data and information from a webpage. This is an essential task for programmers as it allows them to access and manipulate the content of a webpage in their code. It is particularly useful for web scraping, data extraction, and web automation.
 
-## How To
+## How to:
 
-To parse HTML in Elixir, we can use the popular library, `Floki`. First, we need to install it in our project by adding `{:floki, "~> 0.28.0"}` to our `mix.exs` file's dependencies. Once installed, we can use the `Floki.parse/1` function to parse HTML code. Let's see an example:
+To parse HTML in Elixir, we can use the `Floki` library, which provides a simple yet powerful interface for working with HTML documents. 
 
-```Elixir
-html = "<div><p>Hello!</p></div>"
-
-parsed_html = Floki.parse(html)
-IO.inspect parsed_html
+```
+# Install `Floki` in your project's `mix.exs` file
+def deps do
+  [{:floki, "~> 0.26.0"}]
+end
 ```
 
-The output of this code would be a representation of the HTML code as a nested data structure, making it easier to manipulate and extract information from. In this case, the output would be:
+```
+# Import `Floki` and fetch HTML document from a URL
+import Floki
+html = Floki.html("https://www.example.com")
 
-```Elixir
-[
-  {:div, [], [
-    {:p, [], ["Hello!"]}]}
-]
+# Find and extract information from the HTML document
+titles = ["h1", "h2"] |> Floki.find(html) |> Floki.extract_text
 ```
 
-We can also use `Floki.find/2` to search for specific elements within the HTML code. For example, if we want to find all `h1` tags within our HTML, we can use the following code:
+The above code fetches the HTML document from a URL and uses `Floki.find` to find all the `h1` and `h2` elements in the document. Then, `Floki.extract_text` is used to extract the text content of these elements, which is assigned to the `titles` variable.
 
-```Elixir
-html = "<h1>Welcome to my website</h1><div><h1>Some other heading</h1></div>"
+## Deep Dive:
 
-h1_tags = Floki.find(html, "h1")
-IO.inspect h1_tags
-```
+Parsing HTML has been a fundamental task in web development since the early days of the internet. In the past, this was done mainly using regular expressions, but with the rise of structured data and complex web pages, specialized HTML parsing libraries like `Floki` have become essential.
 
-The output would be a list of all `h1` tags found in the HTML code, in this case, `["Welcome to my website", "Some other heading"]`.
+Alternatives to `Floki` for HTML parsing in Elixir include `ExAgent`, `Meeseeks`, and `Erlsom`. However, `Floki` stands out for its simplicity and ease of use. 
 
-## Deep Dive
+Under the hood, `Floki` uses the `leex` and `yecc` parser generators from Erlang, making it efficient and robust. It also uses an internal data representation called FDOM (Floki Document Object Model) for faster and more flexible handling of HTML data.
 
-Parsing HTML with Elixir is made even more powerful with features like patterns and queries. With patterns, we can search for specific attributes within HTML tags, while queries allow us to navigate the HTML structure more efficiently. Additionally, `Floki` supports CSS selectors, making it easier to locate specific elements within the HTML code.
+## See Also:
 
-To learn more about parsing HTML with `Floki`, check out the official documentation [here](https://hexdocs.pm/floki/api-reference.html).
-
-## See Also
-
-- [Elixir `Floki` Documentation](https://hexdocs.pm/floki/api-reference.html)
-- [Elixir Official Website](https://elixir-lang.org/)
-- [Elixir `mix` Documentation](https://hexdocs.pm/mix/Mix.html)
+- Official `Floki` documentation: https://hexdocs.pm/floki
+- Source code for `Floki` on GitHub: https://github.com/philss/floki
+- Alternatives to `Floki` for HTML parsing in Elixir: https://github.com/h4cc/awesome-elixir#xml--html-parsing

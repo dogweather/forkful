@@ -10,54 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
+Stringkonkatenering är processen att sammanslå flera strängar till en enda sträng. Detta är användbart för programmerare eftersom det ger möjlighet att bygga dynamiska strängar som kan innehålla variabler och andra dynamiska värden.
 
-Att sammanfoga strängar är en vanlig uppgift inom programmering, särskilt inom Bash-scripting. Genom att kombinera flera strängar till en kan du skapa mer dynamiska och intuitiva skript.
-
-## Hur man gör
-
-För att sammanfoga strängar i Bash använder vi operatorn ```+=``` tillsammans med variabler. Vi tilldelar den nya strängen till variabeln genom att använda ```$``` innan variabelnamnet. Här är ett exempel på hur detta kan se ut:
-
+## Såhär gör du:
+För att sammanslå två strängar i Bash kan vi använda kommandot `printf` tillsammans med `%s` argument. Exempelvis:
 ```Bash
-name="Lisa"
-greeting="Välkommen till vår hemsida, "
-greeting+=name
-echo $greeting
+str1="Det var en"
+str2="gång"
+
+printf "%s %s" $str1 $str2
 ```
+Detta kommer att producera strängen "Det var en gång" som output. Observera att de två strängarna separeras med ett mellanslag för att skapa en tydlig sammanslagningspunkt.
 
-Output: Välkommen till vår hemsida, Lisa
-
-Som du kan se har vi sammanfogat variabeln "name" med strängen "Välkommen till vår hemsida, " genom att använda ```+=``` operatorn. Detta skapar en ny sträng som vi sedan skriver ut med hjälp av ```echo``` kommandot.
-
-## Djupdykning
-
-I Bash är det möjligt att sammanfoga flera strängar på en gång genom att använda operatorn ```${var1}${var2}```. Här är ett exempel på hur detta kan se ut:
-
+För att sammanslå fler än två strängar, kan vi använda `$()` syntaxen för att skapa en variabel som innehåller den sammanslagna strängen. Till exempel:
 ```Bash
-firstName="Lisa"
-lastName="Johansson"
-fullName=${firstName}${lastName}
-echo $fullName
+str1="Hej"
+str2="dit"
+str3="!"
+
+result=$(printf "%s %s%s" $str1 $str2 $str3)
 ```
+Variabeln `result` kommer nu att innehålla strängen "Hej dit!".
 
-Output: LisaJohansson
+## Djupdykning:
+Historiskt sett har konkatenering varit en viktig del av programmering, då det tillåter skapandet av dynamiska strängar som kan anpassas baserat på olika variabler och inmatningar. Alternativen för att sammanslå strängar i Bash inkluderar också dubbel citaionsmarkörer (" ") eller användning av `echo` kommandot.
 
-Det är också möjligt att använda strängformatering för att skapa mer strukturerade utskrifter. Ett vanligt sätt att göra detta på är genom att använda ```printf``` kommandot. Här är ett exempel på hur detta kan se ut:
+I bakgrunden använder Bash `printf` kommandot C-programmerare med samma syntax och funktionalitet. Det finns också flera andra språk som erbjuder liknande funktioner för att sammanslå strängar, till exempel Python's `.join()` metod eller PHP's `.` operator.
 
-```Bash
-name="Lisa"
-age=25
-printf "Hej, mitt namn är %s och jag är %d år gammal.\n" $name $age
-```
-
-Output: Hej, mitt namn är Lisa och jag är 25 år gammal.
-
-Det finns även andra sätt att sammanfoga strängar i Bash, såsom användning av ```$(command)``` för att köra kommandon och kombinera deras utdata med strängar.
-
-## Se även
-
-Här är några användbara länkar för att lära dig mer om att sammanfoga strängar i Bash:
-
-- https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html#Shell-Parameter-Expansion
-- https://linuxize.com/post/bash-concatenate-strings/
-- https://www.shellscript.sh/variables1.html
+## Se även:
+- [Bash String Manipulation](https://www.digitalocean.com/community/tutorials/how-to-manipulate-strings-in-bash)
+- [C Concatenate Strings](https://www.tutorialspoint.com/c_standard_library/c_function_strcat.htm)
+- [Python Join Method](https://www.geeksforgeeks.org/python-join-method/)
+- [PHP Concatenation Operator](https://www.w3schools.com/php/php_operators.asp)

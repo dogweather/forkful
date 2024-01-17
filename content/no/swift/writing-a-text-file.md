@@ -1,7 +1,7 @@
 ---
-title:                "Å skrive en tekstfil"
-html_title:           "Swift: Å skrive en tekstfil"
-simple_title:         "Å skrive en tekstfil"
+title:                "Skriver en tekstfil"
+html_title:           "Swift: Skriver en tekstfil"
+simple_title:         "Skriver en tekstfil"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Files and I/O"
@@ -10,32 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+Hva & Hvorfor?
+Å skrive en tekstfil er rett og slett å lage en digital versjon av et dokument eller en tekst. Programmere gjør dette for å lagre og behandle data på en strukturert måte.
 
-Å skrive en tekstfil er en grunnleggende oppgave for enhver programmerer, uavhengig av hvilket språk de bruker. Det lar deg lagre og organisere data som kan brukes i koden din på en effektiv måte.
+Hvordan:
+```Swift
+// Åpne en tekstfil
+let file = "min_tekstfil.txt"
 
-## Hvordan
+// Skriv til filen
+let tekst = "Dette er min tekst som skal lagres i filen."
+try tekst.write(toFile: file, atomically: true, encoding: .utf8)
 
-For å skrive en tekstfil i Swift, kan du følge disse enkle stegene:
+// Les fra filen
+let lagretTekst = try String(contentsOfFile: file, encoding: .utf8)
+print(lagretTekst)
 
-1. Åpne Xcode og opprett et nytt prosjekt eller åpne et eksisterende prosjekt.
-2. Velg "File" og deretter "New File" fra menyen i menylinjen.
-3. I vinduet som dukker opp, velg "Empty" under iOS, og deretter "Swift File".
-4. Gi filen et navn og trykk på "Create".
-5. I koden din, skriv ```Swift let text = "Dette er en tekstfil."```. Dette vil lage en konstant variabel med en tekstfil som verdi.
-6. Nå kan du bruke den nye tekstfilen i koden din, for eksempel ved å skrive den ut på konsollen. Du kan gjøre dette ved å skrive ```Swift print(text)```.
-7. Når du er ferdig med å gjøre endringer, lagre filen ved å trykke på "Command+S" eller ved å velge "File" og deretter "Save" fra menylinjen.
+// Legg til ny tekst
+let nyTekst = "Dette er ny tekst som legges til i filen."
+let fileHandle = try FileHandle(forWritingAtPath: file)
+fileHandle?.seekToEndOfFile()
+fileHandle?.write(nyTekst.data(using: .utf8)!)
+fileHandle?.close()
 
-Nå har du opprettet og brukt en tekstfil i Swift!
+// Nytt innhold i filen:
+// Dette er min tekst som skal lagres i filen.
+// Dette er ny tekst som legges til i filen.
+```
 
-## Dykk dypere
+Deep Dive:
+Tekstfiler har vært brukt i programmering siden de første datamaskinene ble laget. I tillegg til å lagre tekst, kan de også inneholde annen informasjon som tall og symboler. Alternativet til å skrive til en tekstfil er å lagre data i en database. I Swift, kan du også bruke String-interpolering til å skrive variabler og konstanter direkte til en tekstfil.
 
-Det er flere ting du kan gjøre med tekstfiler i Swift, for eksempel å lese eksisterende tekstfiler og håndtere forskjellige formater. Du kan også bruke forskjellige metoder for å skrive til en tekstfil, som for eksempel å bruke "Write" for å skrive til slutten av filen eller "Overwrite" for å slette alt innhold og skrive på nytt. Utforsk og gå dypt inn i hvordan du kan bruke tekstfiler på en effektiv måte i dine Swift-prosjekter.
-
-## Se også
-
-Her er noen nyttige ressurser for å lære mer om å skrive tekstfiler i Swift:
-
-- Swift dokumentasjon om tekstfiler (https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#ID298)
-- Swiftility: Writing to a Text File in Swift (https://www.swiftilities.com/blog/writing-to-a-text-file-in-swift/)
-- Stack Overflow: How to Write Data to a text file in Swift (https://stackoverflow.com/questions/24097826/how-to-write-data-to-a-text-file-in-swift)
+See Also:
+- [Swift Documentation on Writing Files](https://developer.apple.com/documentation/foundation/filewritingoptions)
+- [Difference Between Writing a Text File and Saving Data in a Database](https://www.bbc.co.uk/bitesize/guides/zjb6cj6/revision/1)

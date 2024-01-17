@@ -1,7 +1,7 @@
 ---
-title:                "Skapa en tillfällig fil"
-html_title:           "Gleam: Skapa en tillfällig fil"
-simple_title:         "Skapa en tillfällig fil"
+title:                "Att skapa en tillfällig fil"
+html_title:           "Gleam: Att skapa en tillfällig fil"
+simple_title:         "Att skapa en tillfällig fil"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Files and I/O"
@@ -10,35 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför skapa en tillfällig fil?
+# Vad & Varför?
+Skapande av en tillfällig fil är en vanlig uppgift för programmerare som behöver manipulera data eller spara temporära resultat. En temporär fil är en fil som skapas tillfälligt och sedan raderas efter att den har använts.
 
-Att skapa en tillfällig fil är ett vanligt programmeringsmönster som kan göra det lättare att hantera data som endast behövs temporärt. Till exempel kan det vara användbart när du behöver lagra mellanresultat i en beräkning eller när du vill skriva ut data till en fil utan att permanent spara den.
-
-## Så här gör du det
-
-För att skapa en temporär fil i Gleam använder vi funktionen `temporary_file.create()` från standardbiblioteket `gleam/file`. Här är ett enkelt exempel på hur man skapar och skriver till en temporär fil:
+# Hur?
+För att skapa en temporär fil i Gleam använder du funktionen `File.temp` och anger en prefix och en suffix för filnamnet. I exemplet nedan skapas en temporär fil med prefixet "temp" och suffixet "txt":
 
 ```Gleam
-import gleam/file
+let temp_file = File.temp("temp", "txt")
+```
+När koden körs kommer en temporär fil att skapas med ett unikt nummer för att undvika dubbletter. Du kan sedan använda filen för att läsa eller skriva data och när du är klar kan du radera den genom att använda funktionen `File.remove`:
 
-fn main() {
-  let temp_file = file.temporary_file.create()                // Skapa en temporär fil
-  let _ = temp_file.write_all("Hej, välkommen till Gleam!")   // Skriv till filen
-  let _ = temp_file.close()                                   // Stäng filen
-
-  let data = file.read_all(temp_file.path())                  // Läs in filen
-  debug.println("Data från filen:", data)                     // Skriv ut innehållet i filen
-}
+```Gleam
+File.remove(temp_file)
 ```
 
-Om du kör det här exemplet kommer du att se att innehållet i den temporära filen skrivs ut på skärmen.
+# Djupdykning
+Att använda tillfälliga filer är ett vanligt sätt att hantera data som inte behövs för framtida bruk eller som inte är nödvändigt att permanent spara. Det är även ett sätt att skydda känslig data från att lagras permanent.
 
-## Djupdykning
+Ett alternativ till att skapa en temporär fil är att skapa en temporär strängvariabel och spara data i den istället. Detta är dock inte alltid det bästa alternativet eftersom det kan innebära en större minnesbelastning.
 
-När vi använder funktionen `temporary_file.create()` kommer den att skapa en unik fil baserad på din operativsystemsmiljö. Det finns olika strategier för hur detta görs, men vanligtvis används en kombination av slumpmässiga tecken och tidpunkt. Det är viktigt att notera att den temporära filen automatiskt raderas när programmet avslutas eller när den stängs.
+I Gleam implementeras skapandet av en tillfällig fil genom att använda systemanropet `mkstemp` som finns i de flesta operativsystem.
 
-## Se även
-
-- [https://gleam.run/documentation/standard_library/file/#temporary-file-create](https://gleam.run/documentation/standard_library/file/#temporary-file-create) - Officiell dokumentation för `gleam/file` som beskriver `temporary_file.create()`-funktionen.
-- [https://gleam.run/documentation/standard_library/file/](https://gleam.run/documentation/standard_library/file/) - Översikt över standardbiblioteket `gleam/file`.
-- [https://gleam.run/](https://gleam.run/) - Hemsida för Gleam-programmeringsspråket.
+# Se även
+- [Gleam-dokumentationen för File-modulen](https://gleam.run/libraries/file.html)
+- [Wikipedia-artikeln om tillfälliga filer](https://en.wikipedia.org/wiki/Temporary_file)

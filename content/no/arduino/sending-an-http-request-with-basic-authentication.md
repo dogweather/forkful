@@ -1,7 +1,7 @@
 ---
-title:                "Sende en http-forespørsel med grunnleggende autentisering"
-html_title:           "Arduino: Sende en http-forespørsel med grunnleggende autentisering"
-simple_title:         "Sende en http-forespørsel med grunnleggende autentisering"
+title:                "Å sende en http-forespørsel med grunnleggende autentisering"
+html_title:           "Arduino: Å sende en http-forespørsel med grunnleggende autentisering"
+simple_title:         "Å sende en http-forespørsel med grunnleggende autentisering"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "HTML and the Web"
@@ -10,67 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hvorfor
-HTTP-forespørsler med grunnleggende autentisering er en enkel måte å sikre din kommunikasjon med ulike nettverksenheter. Dette kan for eksempel være nyttig når du ønsker å kommunisere med en API eller en skytjeneste fra dine Arduino-prosjekter. 
+# Hva & Hvorfor?
 
-# Hvordan
-For å sende en HTTP-forespørsel med grunnleggende autentisering i Arduino, trenger du å bruke WiFiClientSecure-biblioteket. Først må du laste ned og installere dette biblioteket fra Arduino IDE ved å gå til "Verktøy" og "Administrer bibliotek". Søk etter "WiFiClientSecure" og last ned det før du følger kodesnuttene nedenfor. 
+Å sende en HTTP forespørsel med grunnleggende autentisering er en måte å kommunisere med en webtjeneste eller nettside på ved å legge til en autentiseringsnøkkel i forespørselen. Dette brukes ofte av programmerere for å få tilgang til beskyttet informasjon eller utføre handlinger på en nettside. 
 
-```Arduino
-#include <WiFiClientSecure.h>
-//Opprett et WiFiClientSecure-objekt:
-WiFiClientSecure client;
-//Oppgi server- og portnummeret for forespørsel:
-const char* server = "https://www.example.com";
-int port = 443;
-//Angi brukernavn og passord for grunnleggende autentisering:
-const char* username = "example";
-const char* password = "password";
-//Koble til serveren og sjekk tilkoblingsstatusen:
-if(client.connect(server, port)){
-  Serial.println("Tilkoblet!");
-  //Legg til brukernavn og passord til HTTP-headeren:
-  client.println("Authorization: Basic " + String(username) + ":" + String(password) + "\r\n");
-  //Send den faktiske HTTP-forespørselen:
-  client.println("GET /index.html HTTP/1.1");
-  //Les og skriv ut responsen fra serveren:
-  while(client.available()){
-    String line = client.readStringUntil('\r\n');
-    Serial.print(line);
-  }
-  //Lukk tilkoblingen:
-  client.stop();
-} else {
-  Serial.println("Kunne ikke koble til serveren!");
+# Hvordan:
+
+Arduino er et kraftig verktøy for å kommunisere med eksterne tjenester ved å bruke HTTP forespørsler. For å sende en HTTP forespørsel med grunnleggende autentisering, kan du følge disse trinnene:
+
+```
+Arduino http.begin(URL); // Angi nettadressen du vil bruke
+http.setAuthorization("username", "password"); // Legg til ditt brukernavn og passord
+http.addHeader("Content-Type", "text/html"); // Legg til innholdstypen du vil bruke
+int httpCode = http.GET(); // Lag en GET forespørsel
+
+if (httpCode > 0) { // Sjekk om forespørselen var vellykket
+  String payload = http.getString(); // Hent svaret fra serveren
+  Serial.println(httpCode); // Skriv ut statuskoden
+  Serial.println(payload); // Skriv ut svaret
 }
+http.end(); // Avslutt forespørselen
 ```
 
-Etter å ha kjørt denne koden, bør du se responsen fra serveren i serieporten, og i dette tilfellet vil det være innholdet i "index.html"-siden fra serveren. Du kan gjøre mer komplekse forespørsler ved å endre HTTP-metoden og innholdet eller legge til flere HTTP-header parametere. Se eksemplene i "Deep Dive" seksjonen for mer informasjon om dette. 
+For å kunne sende en HTTP forespørsel med grunnleggende autentisering, må du ha et gyldig brukernavn og passord som er gitt av serveren du kommuniserer med. Du kan også endre nettadressen og innholdstypen basert på ditt spesifikke behov.
 
-# Deep Dive
-Når du sender en HTTP-forespørsel med grunnleggende autentisering, er det to viktige ting du må huske på: brukernavn og passord må være i base64-koding og du må inkludere "Authorization" HTTP-headeren i forespørselen. Dette betyr at du trenger å lage en streng som følger dette formatet: "username:password" og konvertere den til base64 før du legger den til i "Authorization" HTTP-headeren. Dette gjøres enkelt ved hjelp av Base64-biblioteket i Arduino. Se et eksempel på koding nedenfor:
+Et eksempel på en vellykket HTTP forespørsel med grunnleggende autentisering kan se slik ut:
 
-```Arduino
-#include <Base64.h>
-//Opprett en variabel for base64-koding:
-String base64encoded = "";
-//Kod brukernavn og passord og legg dem til i basen:
-base64encoded.concat(username);
-base64encoded.concat(":");
-base64encoded.concat(password);
-//Konverter til base64 og legg til i "Authorization" HTTP-headeren:
-client.println("Authorization: Basic " + base64encode.encode(base64encoded) + "\r\n");
+```
+200
+<html lang="en">
+<head>
+<title>Arduino Tutorial</title>
+</head>
+<body>
+<h1>Welcome to our tutorial on sending HTTP requests!</h1>
+</body>
+</html>
 ```
 
-Du kan også inkludere flere HTTP-header parametere ved å følge samme format, for eksempel:
+# Dypdykk:
 
-```Arduino
-//Legg til "Content-Type" HTTP-header parametere:
-client.println("Content-Type: application/json");
-```
+Dette konseptet ble først introdusert i HTTP 1.0 standarden i 1996, for å gi en enkel metode for å autentisere brukere og sikre HTTP forespørsler. I dag er grunnleggende autentisering fortsatt en vanlig måte for programmerere å få tilgang til beskyttet informasjon eller utføre handlinger på en nettside. Andre alternativer for autentisering inkluderer Digest, OAuth og API nøkler.
 
-Se dokumentasjonen for API-et eller skytjenesten du kommuniserer med for å finne ut hvilke HTTP-header parametere som er nødvendige for en vellykket forespørsel.
+Når du sender en HTTP forespørsel med grunnleggende autentisering, koder Arduino automatisk brukernavnet og passordet ved hjelp av base64 algoritmen. Dette sikrer at dine autentiseringsdetaljer ikke kan leses av uautoriserte personer under overføringen.
 
-# Se også
-- [WiFiClientSecure bibliotek](https://github.com/esp8266/Arduino/tree/master/libraries/ESP8266WiFi/examples/HTTPSRequest)
-- [Base64 bibliotek](https://www.arduino.cc/en/Reference/Base64)
+# Se også:
+
+Lær mer om HTTP autentisering ved å besøke disse nettstedene:
+
+- [HTTP Basic Authentication: What It Is and How to Use It](https://swagger.io/docs/specification/authentication/basic-authentication/)
+- [HTTPS for Embedders, Part 3: Client Authentication Basics](https://jwkimura.medium.com/https-for-embedders-part-3-client-authentication-basics-997ea0abe8c)

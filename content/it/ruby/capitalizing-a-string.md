@@ -10,64 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+## Cosa & Perché?
+Capitalizzare una stringa significa rendere maiuscola la prima lettera di ogni parola in una frase o un titolo. I programmatori spesso lo fanno per migliorare l'aspetto delle loro stringhe e renderle più leggibili.
 
-Capitalizzare una stringa può essere utile in diverse situazioni, ad esempio nel processo di formattazione di dati per la visualizzazione in un'applicazione o nella creazione di URL amichevoli per i motori di ricerca.
+## Come fare:
+Per capitalizzare una stringa in Ruby, puoi utilizzare il metodo `capitalize` che è disponibile per ogni oggetto di classe String. Basta inserire il nome della stringa seguito da un punto e il metodo `capitalize`.
 
-## Come fare
-
-Per capitalizzare una stringa in Ruby, possiamo utilizzare il metodo `capitalize` come di seguito:
-
+Esempio:
 ```Ruby
-stringa = "ciao mondo"
-puts stringa.capitalize
+my_string = "ciao a tutti"
+puts my_string.capitalize
 ```
-Output: "Ciao mondo"
+Output:
+`Ciao a tutti`
 
-Inoltre, esiste anche il metodo `capitalize!` che modifica direttamente la stringa originale anziché restituire una nuova stringa. Dato che Ruby è un linguaggio orientato agli oggetti, dobbiamo utilizzare il punto esclamativo (`!`) per indicare che il metodo modificherà la variabile originale.
+Puoi anche capitalizzare una stringa utilizzando il metodo `titleize`, che rende maiuscole tutte le parole all'interno di una stringa.
 
+Esempio:
 ```Ruby
-stringa = "ciao mondo"
-stringa.capitalize!
-puts stringa
+my_string = "ciao a tutti"
+puts my_string.titleize
 ```
-Output: "Ciao mondo"
+Output:
+`Ciao A Tutti`
 
-Possiamo anche capitalizzare solo la prima lettera di ogni parola in una stringa utilizzando il metodo `titleize`. Ad esempio:
+## Approfondimento:
+La pratica di capitalizzare le stringhe è nata dalla necessità di rendere più leggibili i testi scritti a mano. Nel mondo della programmazione, è diventata una convenzione per rendere più chiare e comprensibili le variabili e i metodi all'interno del codice.
 
-```Ruby
-stringa = "ciao mondo"
-puts stringa.titleize
-```
-Output: "Ciao Mondo"
+In alternativa, puoi utilizzare il metodo `upcase` per rendere tutte le lettere maiuscole o `downcase` per renderle tutte minuscole.
 
-## Approfondimento
+Implementazione:
+Esistono diverse implementazioni possibili per la capitalizzazione di una stringa, ma in Ruby il metodo `capitalize` è la scelta più comune. Tuttavia, puoi scrivere la tua implementazione utilizzando il metodo `split` per dividere la stringa in un array e il metodo `map` per iterare su ogni parola e capitalizzarla manualmente.
 
-Oltre ai metodi `capitalize` e `capitalize!`, esiste anche il metodo `upcase` che trasforma tutti i caratteri in maiuscolo. Ciò può essere utile quando vogliamo semplicemente rendere una stringa tutta maiuscola, senza dover preoccuparci delle lettere maiuscole o minuscole originarie.
+## Vedi anche:
+Per ulteriori informazioni sulla manipolazione delle stringhe in Ruby, puoi consultare la documentazione ufficiale di Ruby: https://ruby-doc.org/core-2.7.0/String.html
 
-```Ruby
-stringa = "ciao mondo"
-puts stringa.upcase
-```
-Output: "CIAO MONDO"
-
-Inoltre, Ruby ci offre anche il metodo `swapcase` che scambia i caratteri maiuscoli con quelli minuscoli e viceversa. Ad esempio:
-
-```Ruby
-stringa = "Ciao Mondo"
-puts stringa.swapcase
-```
-Output: "cIAO mONDO"
-
-Oltre ai metodi specifici per la capitalizzazione, possiamo anche utilizzare il metodo generale `gsub` per sostituire una stringa con una versione capitalizzata di se stessa. Ad esempio:
-
-```Ruby
-stringa = "ciao mondo"
-puts stringa.gsub(/\b\w/) { |lettera| lettera.upcase }
-```
-Output: "Ciao Mondo"
-
-## Vedi anche
-
-- [Metodi di stringa Ruby (in inglese)](https://ruby-doc.org/core-2.7.0/String.html)
-- [Tutorial di Ruby (in italiano)](https://it.wikibooks.org/wiki/Programmare_in_Ruby)
+Puoi anche approfondire su altri metodi utili per la manipolazione delle stringhe, come `gsub` per sostituire parti di una stringa o `reverse` per invertire l'ordine dei caratteri.

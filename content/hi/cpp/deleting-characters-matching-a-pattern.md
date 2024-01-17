@@ -1,7 +1,7 @@
 ---
-title:                "पैटर्न से मेल खाने वाले अक्षरों को हटाना"
-html_title:           "C++: पैटर्न से मेल खाने वाले अक्षरों को हटाना"
-simple_title:         "पैटर्न से मेल खाने वाले अक्षरों को हटाना"
+title:                "पैटर्न मेल खांडों को हटाना"
+html_title:           "C++: पैटर्न मेल खांडों को हटाना"
+simple_title:         "पैटर्न मेल खांडों को हटाना"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -10,63 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Kyun?
+## क्या और क्यों?
 
-Kabhi-kabhi hum chahte hain ki humare code mein se kuch characters ko hata diya jaaye jo humare pattern se match karte hain. Isse humare code ko clean and efficient banane mein madad milti hai.
+वैसे तो, C++ में कई तरीकों से चरित्रों को हटाया जा सकता है, लेकिन टेक्स्ट के एक खास पैटर्न के अनुसार चरित्रों को हटाना एक बहुत ही महत्वपूर्ण और उपयोगी काम है। इस कार्य को करने से प्रोग्रामर्स को दो फायदे होते हैं- पहला, वे अपने कोड को स्पष्ट और सुव्यवस्थित बनाए रख सकते हैं। दूसरा, उन्हें दिए गए पैटर्न से अलग होने के लिए पर्याप्त स्थान स्पेस का लाभ मिलता है।
 
-## Kaise Karein?
+## कैसे करें?
 
-Hamare paas do tareeko ke options hain character pattern matching ke liye: Regex (regular expressions) ya loop ke upyog se. Neeche diye gaye code blocks mein dono tareeko ka example diya gaya hai:
-
-```C++
-// Regex se character pattern hataayein
-
-#include <iostream> 
-#include <regex> 
-using namespace std; 
-
-int main() 
-{ 
-    string str = "Hello, World!"; 
-    regex unwanted_characters ("[eo]"); //eo characters ko remove karne ke liye
-    cout << regex_replace(str, unwanted_characters, "") << endl; 
-
-    return 0; 
-} 
-```
+यदि आपको एक पैटर्न के अनुसार चरित्रों को हटाना है, तो आपको string के साथ string.erase() फंक्शन का उपयोग करना होगा। नीचे दिए गए कोड ब्लॉक में हमने एक उदाहरण दिया है। यहां, हमने एक string बनाई है जिसमें "Hello World" का प्रतिमान मूर्खता से लिखा गया है। उसके बाद, हमने erase() फंक्शन का उपयोग करके "lo" को हटाया है। अंत में, हमारे बनाए गए string में "Hel Wrd" ही शेष रह गया है।
 
 ```C++
-// Loop se character pattern hataayein
-
-#include <iostream> 
-using namespace std; 
-
-int main() 
-{ 
-    string str = "Hello, World!"; 
-    string new_str = ""; // naya string create karein jaha hum characters ko store karenge
-    for (int i = 0; i < str.length(); i++) { 
-        if (str[i] != 'o' && str[i] != 'e') { // hum unwanted characters ko alag se nikaal dete hain
-            new_str += str[i]; 
-        } 
-    } 
-    cout << new_str << endl; 
-
-    return 0; 
-} 
+string s = "Hlello Woorld";
+s.erase(2, 2);
+cout << s; // Output: Hel Wrd
 ```
 
-## Gehri Jhaanki
+## दीप डाइव
 
-Character pattern matching mein kuch cheezein yaad rakhein:
-- Regex ka upyog karne se pehle `#include <regex>` jaroor karein
-- Pattern ke saamne `\` backslash use karne se special characters ko match kar sakte hain (for example, \d for digits, \s for spaces)
-- `regex_replace()` function ka use karke hum string ko replace kar sakte hain
-- Loop mein hum `str.length()` ka upyog karke string ki length nikal sakte hain
-- `new_str` ka use karke loop ke andar unwanted characters ko nikaal sakte hain 
+C++ में यह काम करते समय, हम दो विभिन्न तरीकों का उपयोग कर सकते हैं- पहला, हम सीधे string.erase() फंक्शन का उपयोग कर सकते हैं और दूसरा, हम std::remove_if() फंक्शन का उपयोग कर सकते हैं। दोनों फंक्शनों के अन्दर उपयोगिता में थोड़ा सा अंतर होता है। सीधे string.erase() फंक्शन का उपयोग, आसान और स्पष्ट होता है, जबकि std::remove_if() का उपयोग समजने में थोड़ा मुश्किल हो सकता है। इसके अलावा, इन दोनों के बीच कई अन्य तार्किक मात्र भिन्न होते हैं। उदाहरण के लिए, std::remove() फंक्शन कम समय लेता है लेकिन नये वेक्टर(स्ट्रिंग) को डालता है, जबकि string.erase() अस्थाई रूप से नये शुरु और अंत का पट्टा छोड़ जाता है।
 
-## Dekhein Bhi
+## और जानिए
 
-- [Regex tutorial in Hindi](https://www.youtube.com/watch?v=gGKxUTSD8eU) 
-- [C++ loops tutorial in Hindi](https://www.geeksforgeeks.org/loops-in-cpp/)
-- [C++ string operations](https://www.tutorialspoint.com/cplusplus/cpp_strings.htm)
+अगर आपको इस विसय में अधिक जानकारी चाहिए तो आप इन वेबसाइटों पर जाकर देख सकते हैं। 
+
+[CPlusPlus.com](https://www.cplusplus.com/reference/string/string/erase/) 
+
+[GeeksForGeeks.org](https://www.geeksforgeeks.org/clearing-a-string-in-cpp/)

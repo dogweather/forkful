@@ -10,28 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
-Att skicka en HTTP-förfrågan med grundläggande autentisering är ett enkelt sätt att skydda din webbapplikation från oönskat åtkomst. Genom att använda en kombination av användarnamn och lösenord i din förfrågan kan du säkerställa att endast auktoriserade användare får tillgång till din resurs.
+# Vad och varför?
 
-## Hur man gör
-För att skicka en HTTP-förfrågan med grundläggande autentisering i Python, följ dessa steg:
+Att skicka en HTTP-förfrågan med grundläggande autentisering är en metod som används av programmerare för att tillåta användare att logga in på en webbplats eller tillämpning genom att ange en användaruppgifter (användarnamn och lösenord). Detta är en standardmetod och används ofta som den mest enkla och pålitliga autentiseringsmetoden.
 
-1. Importera "requests" biblioteket: ```Python
-import requests```
-2. Definiera ditt användarnamn och lösenord: ```Python
-username = "användarnamn"
-password = "lösenord"```
-3. Skapa en förfrågan med grundläggande autentisering: ```Python
-response = requests.get("https://example.com/resurs", auth=(username, password))```
-4. Kolla svaret från servern: ```Python
-print(response.status_code) #200 betyder att förfrågan lyckades
-print(response.text) #visar innehållet i responsen```
+# Hur gör man?
 
-Om du behöver skicka förfrågningar med mer avancerade autentiseringsmetoder, kan du använda "requests.auth" modulen för att implementera det.
+```python
+import requests
 
-## Djupdykning
-Vid autentisering med HTTP-användarnamn och lösenord, skickas dina autentiseringsuppgifter i klartext. Detta innebär att det inte är den säkraste metoden för autentisering, och det rekommenderas att använda HTTPS istället för HTTP för att kryptera din förfrågan. Därför är det viktigt att endast använda grundläggande autentisering på resurser som inte innehåller känslig information.
+url = 'https://exempelwebbplats.com'
+user = 'användarnamn'
+password = 'lösenord'
 
-## Se även
-- Requests bibliotekets officiella dokumentation: https://requests.readthedocs.io/en/master/
-- En introduktion till HTTP-baserad autentisering: https://www.w3.org/Protocols/rfc2616/rfc2616-sec11.html
+response = requests.get(url, auth=(user, password))
+
+print(response.text)
+```
+
+Resultat:
+
+```
+Volvo XC40 har vunnit årets bil 2018!
+```
+
+# Djupdykning
+
+Denna autentiseringsmetod utvecklades först i HTTP-protokollet 1996 och har varit en standardmetod sedan dess. Andra autentiseringsmetoder inkluderar OAuth och digest autentisering, men grundläggande autentisering är fortfarande den mest använda metoden på grund av dess enkelhet och tillförlitlighet.
+
+När du skapar en begäran skickar du dina användaruppgifter över nätverket i klartext, vilket kan vara en potentiell säkerhetsrisk. Det är därför grundläggande autentisering inte är rekommenderad för att skydda känslig information.
+
+# Se även
+
+- [Requests bibliotek för Python](https://requests.readthedocs.io/)
+- [HTTP Basic Authentication - MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#Basic_authentication_scheme)

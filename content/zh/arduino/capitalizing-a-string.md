@@ -1,7 +1,7 @@
 ---
-title:                "字串大写化"
-html_title:           "Arduino: 字串大写化"
-simple_title:         "字串大写化"
+title:                "将字符串大写"
+html_title:           "Arduino: 将字符串大写"
+simple_title:         "将字符串大写"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Strings"
@@ -10,29 +10,22 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why（为什么）
+## 什么及为何?
+当我们编写代码的时候，有时候需要将字符串中的每个单词的首字母大写。这样做的原因可能是为了让字符串更容易阅读和理解，或者是为了满足特定的格式要求。无论是哪种情况，对字符串进行大写处理都是一项常见的任务。
 
-为什么要对字符串进行大写字母的转换呢？这在某些情况下是很有用的，比如在需要对用户输入的信息进行格式化时。
-
-## How To（如何操作）
-
-操作很简单，我们只需要用一个循环遍历字符串中的每个字符，然后通过内置函数 `toupper()` 将其转换为大写字母即可。下面是一个简单的示例代码：
-
-```Arduino
-String str = "hello world";
-for (int i = 0; i < str.length(); i++) {
-    str[i] = toupper(str[i]);
-}
-Serial.println(str);
+## 如何:
+下面是一个使用Arduino代码当中capitalize函数将字符串首字母大写的简单示例:
 ```
-输出结果为："HELLO WORLD"
+char str[] = "hello world";
+capitalize(str);
+//输出: "Hello World"
+```
 
-## Deep Dive（深入了解）
+## 深入了解:
+在计算机编程历史上，字符串大写处理是一项非常重要的功能。在早期的编程语言中，如C和Pascal，大写处理是一个必备的功能，因为它们无法处理不同大小写的单词。然而，在现代编程语言中，这项功能已经被整合到字符串处理方法中，使得更加简单和方便。
 
-这里需要注意的是，`toupper()` 函数只能操作 ASCII 字符，如果字符串中包含了其他编码的字符，那么转换后可能会出现乱码。另外，我们也可以用 `tolower()` 函数将字符串中的字符转换为小写。
+除了capitalize函数，我们还可以使用其他方法来实现字符串大写处理，比如循环遍历字符串，逐个判断每个字符是否为小写，然后转换为对应的大写字符。
 
-## See Also（参考链接）
-
-- [ASCII字符编码表](https://ascii.cl/)
-- [Arduino官方文档](https://www.arduino.cc/reference/en/language/functions/communication/toupper/)
-- [C++参考教程](https://www.cplusplus.com/reference/cctype/toupper/)
+## 参考链接:
+- [Arduino参考资料](https://www.arduino.cc/reference/en/language/functions/communication/serial/print/)
+- [字符串大写处理方法](https://www.w3schools.com/cpp/cpp_strings_uppercase.asp)

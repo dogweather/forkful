@@ -10,61 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why 
+## What & Why?
+Searching and replacing text is the process of finding and replacing specific words, phrases, or patterns within a text document or code file. Programmers often utilize this technique to make changes quickly and efficiently in their code, improving readability and eliminating errors.
 
-Searching and replacing text is a common task in programming, especially when dealing with large amounts of data or working on text-based projects. With the help of Elixir, this process can be made easier and more efficient, saving developers time and effort.
+## How to:
+Coding examples:
+```
+# Replace a word with another word in a string
+my_string = "Hello, world!"
+replaced_string = String.replace(my_string, "world", "Elixir")
 
-## How To 
+# case-sensitive searching and replacing
+my_phrase = "Hello, Hello, hello"
+replaced_phrase = String.replace(my_phrase, "Hello", "Hi", case: :smart)
 
-To search and replace text in Elixir, we can use the `String.replace/4` function. This function takes in four arguments: the original string, the pattern to search for, the replacement text, and a number indicating the maximum number of matches to replace.
-
+# Replace a pattern using regular expressions
+my_sentence = "This is a sentence, not a question."
+replaced_sentence = Regex.replace(~r/question/, my_sentence, "statement")
+```
+Output:
+```
+"Hello, Elixir!" # for the first example
+"Hi, Hi, hello" # for the second example
+"This is a sentence, not a statement." # for the third example
 ```
 
-Elixir:
+## Deep Dive:
+Searching and replacing text has been a common practice among programmers for decades. In the early days of computing, this task was often carried out manually, making it time-consuming and prone to errors. However, with the advancement of programming languages and powerful text editors, programmers can now search and replace text with a few simple commands.
 
-original_string = "Hello, world!"
-pattern = "world"
-replacement = "universe"
+There are several alternatives to the built-in functions in Elixir for searching and replacing text. For instance, the Erlang library provides the module `:regexp`, which allows for searching and replacing using regular expressions. Additionally, libraries such as `StringScanner` and `Timex` also offer options for searching and replacing text in various formats.
 
-String.replace(original_string, pattern, replacement, 1)
-# Output: "Hello, universe!"
+To implement the search and replace functionality, Elixir uses the `String.replace/3` and `Regex.replace/3` functions. Both functions take three arguments - the string or pattern to replace, the string to replace it with, and any options such as case sensitivity or regular expression flags.
 
-If we want to replace all occurrences of the pattern, we can omit the fourth argument or pass in `:global` as the fourth argument.
-
-```
-
-original_string = "Hello, world! It's a beautiful world."
-pattern = "world"
-replacement = "universe"
-
-String.replace(original_string, pattern, replacement)
-# Output: "Hello, universe! It's a beautiful universe."
-
-String.replace(original_string, pattern, replacement, :global)
-# Output: "Hello, universe! It's a beautiful universe."
-
-```
-
-We can also use regular expressions as the pattern to make more complex replacements. For example, if we want to replace all numbers in a string with the word "number", we can do the following:
-
-```
-
-Elixir:
-
-original_string = "I have 5 oranges and 10 apples."
-pattern = ~r/\d+/
-replacement = "number"
-
-String.replace(original_string, pattern, replacement, :global)
-# Output: "I have number oranges and number apples."
-
-## Deep Dive
-
-The `String.replace/4` function uses the `:binary` module under the hood, specifically the `:binary.replace/3` function. This allows for efficient and optimized searching and replacing of text in Elixir.
-
-It's also worth noting that the `String.replace/4` function is not limited to just strings, it can also be used on binaries and lists of characters as well. This allows for more flexibility in handling different types of data.
-
-## See Also 
-
-- Official Elixir documentation for String.replace: https://hexdocs.pm/elixir/String.html#replace/4
-- Elixir tutorial on pattern matching and regular expressions: https://elixirschool.com/en/lessons/basics/pattern-matching/
+## See Also:
+- [Elixir docs on String replace](https://hexdocs.pm/elixir/String.html#replace/3)
+- [Erlang docs on regular expressions](http://erlang.org/doc/man/regexp.html)
+- [Tutorial on using regular expressions in Elixir](https://www.bignerdranch.com/blog/elixir-regex-tutorial/)

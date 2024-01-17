@@ -1,7 +1,7 @@
 ---
-title:                "Pisanie pliku tekstowego"
-html_title:           "C++: Pisanie pliku tekstowego"
-simple_title:         "Pisanie pliku tekstowego"
+title:                "Tworzenie pliku tekstowego"
+html_title:           "C++: Tworzenie pliku tekstowego"
+simple_title:         "Tworzenie pliku tekstowego"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Files and I/O"
@@ -10,67 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i dlaczego?
+Pisanie plików tekstowych jest procesem tworzenia plików z tekstem (zwykle z rozszerzeniem .txt), który może być przeczytany i zinterpretowany przez komputer. Programiści korzystają z tego narzędzia, aby przechowywać dane w postaci tekstowej, która jest łatwa do odczytania przez ludzi i komputery.
 
-Pisanie plików tekstowych jest ważnym elementem programowania w C++. Pozwala ono na przechowywanie i przetwarzanie danych w sposób uporządkowany oraz umożliwia komunikację między programem a użytkownikami.
-
-## Jak to zrobić
-
-```C++
+## Jak to zrobić:
+```
+// Przykład 1: Tworzenie i zapisanie pliku tekstowego
 #include <iostream>
 #include <fstream>
 
 using namespace std;
 
 int main() {
-  // Stwórz obiekt pliku tekstowego
-  fstream plik;
+    ofstream plik("moj_plik.txt"); // Tworzy nowy plik o nazwie "moj_plik.txt"
+    if(!plik) {
+        cout << "Nie mozna utworzyc pliku.";
+        return 0;
+    }
+    plik << "To jest zawartosc pliku tekstowego."; // Zapisuje tekst do pliku
+    plik.close(); // Zamyka plik
+    return 0;
+}
 
-  // Otwórz plik do zapisu
-  plik.open("plik.txt", ios::out);
+// Przykład 2: Dopisywanie tekstu do istniejącego pliku tekstowego
+#include <iostream>
+#include <fstream>
 
-  // Sprawdź, czy plik został poprawnie otwarty
-  if (!plik) {
-    cout << "Błąd otwarcia pliku!" << endl;
-    return 1;
-  }
+using namespace std;
 
-  // Zapisz dane do pliku
-  plik << "To jest przykładowy tekst." << endl;
-  plik << "Ta linia zostanie dodana do pliku." << endl;
-
-  // Zamknij plik
-  plik.close();
-
-  // Otwórz plik do odczytu
-  plik.open("plik.txt", ios::in);
-
-  // Sprawdź, czy plik został poprawnie otwarty
-  if (!plik) {
-    cout << "Błąd otwarcia pliku!" << endl;
-    return 1;
-  }
-
-  // Odczytaj zawartość pliku i wyświetl ją na ekranie
-  string linia;
-  while (getline(plik, linia)) {
-    cout << linia << endl;
-  }
-
-  // Zamknij plik
-  plik.close();
-
-  return 0;
+int main() {
+    ofstream plik("moj_plik.txt", ios::app); // Otwiera plik w trybie dopisywania
+    if(!plik) {
+        cout << "Nie mozna otworzyc pliku.";
+        return 0;
+    }
+    plik << "Kolejna linia tekstu."; // Dopisuje tekst do istniejącego pliku
+    plik.close(); // Zamyka plik
+    return 0;
 }
 ```
+Przykłady wykorzystują bibliotekę ```<fstream>``` do manipulacji plikami.
 
-Przedstawiony powyżej kod pokazuje, jak otworzyć plik do zapisu, zapisać do niego dane, a następnie otworzyć ten sam plik do odczytu i wyświetlić jego zawartość na ekranie. W linii 6 używamy obiektu `fstream` do utworzenia pliku tekstowego. W linii 9 otwieramy plik do zapisu, a w linii 22 otwieramy go do odczytu. W linii 13 i 14 zapisujemy dane do pliku, a w linii 26 i 27 odczytujemy je z pliku.
+## Wnikliwiej:
+Początki pisania plików tekstowych sięgają początków programowania komputerów. Obecnie istnieją również inne formaty zapisu danych, takie jak bazy danych czy pliki binarne, jednak pliki tekstowe są wciąż powszechnie wykorzystywane przez programistów ze względu na swoją prostotę i czytelność. W celu zapisania tekstu w pliku, programista może użyć różnych funkcji dostępnych w bibliotece ```<fstream>```.
 
-## Głęboki zanurzenie
-
-Pisanie plików tekstowych jest ważną częścią programowania w C++. Oprócz przechowywania i przetwarzania danych, pliki tekstowe mogą być również użyte do komunikacji z innymi programami lub użytkownikami. Aby bardziej zaawansowane operacje na plikach, takie jak dodawanie, usuwanie lub przeszukiwanie danych, warto zapoznać się z biblioteką standardową C++ - `<fstream>`, ponieważ dostarcza ona większą ilość funkcji do pracy z plikami.
-
-## Zobacz również
-
-1. Rozmowa z programistą: 10 powodów, dlaczego warto nauczyć się programowania w C++ (https://codecouple.pl/rozmowa-z-programista/10-powodow-dlaczego-warto-nauczyc-sie-programowania-w-c/)
-2. Oficjalna dokumentacja biblioteki `fstream` (https://en.cppreference.com/w/cpp/io/basic_fstream)
+## Zobacz także:
+- [Dokumentacja biblioteki <fstream>](https://en.cppreference.com/w/cpp/header/fstream)
+- [Podstawy tworzenia plików w C++](https://www.geeksforgeeks.org/file-handling-c-classes/)
+- [Różnice między plikami tekstowymi a binarnymi](https://www.guru99.com/difference-text-file-binary-file.html)

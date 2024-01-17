@@ -1,7 +1,7 @@
 ---
-title:                "YAMLでの作業"
-html_title:           "PHP: YAMLでの作業"
-simple_title:         "YAMLでの作業"
+title:                "「yamlとの作業」"
+html_title:           "PHP: 「yamlとの作業」"
+simple_title:         "「yamlとの作業」"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Data Formats and Serialization"
@@ -10,50 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
-YAMLを使ったプログラミングに取り組む理由は多岐にわたりますが、一つの理由としては、YAMLが人間にとって読み書きしやすいフォーマットであるということが挙げられます。
+## なに？ なぜ？
+YAMLとは、プログラマーがデータを表現するためのフォーマットです。プログラマーはYAMLを使用することで、よりシンプルに、かつ読みやすい形式でデータを保存・転送できます。
 
-## 使い方
-まず、PHPでYAMLを読み込む方法を紹介します。以下のコードを使い、`example.yaml`ファイルを読み込んでみましょう。
-
+## 使い方：
 ```PHP
-<?php
-$yaml = file_get_contents('example.yaml');
-$data = yaml_parse($yaml);
-print_r($data);
+$data = [
+    'name' => 'John',
+    'age' => 25,
+    'favorite_foods' => ['pizza', 'sushi', 'tacos'] 
+];
+
+// YAMLフォーマットに変換する
+$yaml = yaml_emit($data);
+echo $yaml;
+// 出力結果：
+// name: John
+// age: 25
+// favorite_foods:
+//   - pizza
+//   - sushi
+//   - tacos
 ```
 
-そして、`example.yaml`ファイルには以下のようなデータが書かれているとします。
+## 詳細:
+YAMLは、2001年にPerl開発者のIngy döt Netによって開発されました。XMLやJSONなどの他のデータフォーマットに比べて、より人間にとって読みやすい形式でデータを表現できます。また、拡張性も高く、他のプログラムや言語でも利用することができるため、広く使われています。
 
-```YAML
-name: John Smith
-age: 25
-favorite_foods:
-  - sushi
-  - pizza
-```
+YAMLの代替としては、JSONやXMLなどがありますが、YAMLはよりコンパクトかつ視覚的に理解しやすいのが特徴です。また、PHPでは内部でYAMLライブラリが使用されているため、追加の設定なしで使用することができます。
 
-上記のコードを実行すると、以下のような結果が表示されます。
-
-```PHP
-Array
-(
-    [name] => John Smith
-    [age] => 25
-    [favorite_foods] => Array
-        (
-            [0] => sushi
-            [1] => pizza
-        )
-)
-```
-
-YAMLは、複数の言語で扱うことができるフォーマットです。そのため、上記のコードは他の言語でも同様に動作します。また、YAMLを使うことで、複雑なデータをよりシンプルに表現することができます。
-
-## より詳しく
-YAMLは、それ自体がプログラミング言語ではありませんが、データの構造を表現するための非常に便利なツールです。YAMLは、タブや空白を使って階層を表現することができ、データをより見やすく記述できるため、コーディングの効率を上げることができます。
-
-## 参考リンク
-- [YAML公式サイト](https://yaml.org/)
-- [PHPマニュアル - yaml_parse](https://www.php.net/manual/en/function.yaml-parse.php)
-- [YAMLを使ってみよう](https://www.oreilly.co.jp/books/9784873113367/)
+## 関連情報：
+- [公式YAMLドキュメント](https://yaml.org/)
+- [PHPのYAMLライブラリドキュメント](https://www.php.net/manual/en/book.yaml.php)
+- [YAML vs. JSON](https://www.educba.com/yaml-vs-json/)
+- [YAML vs. XML](https://www.guru99.com/yaml-vs-xml-difference.html)

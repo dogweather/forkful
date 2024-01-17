@@ -10,71 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué trabajar con YAML
+## ¿Qué y por qué?
 
-Si estás buscando una forma sencilla de almacenar y compartir datos estructurados en tus proyectos de Java, YAML es una excelente opción. Además, es fácil de leer y escribir para humanos, lo que lo hace ideal para configuraciones y archivos de datos.
+Trabajar con YAML es una forma de estructurar datos en formato de texto legible para humanos. Los programadores lo utilizan para almacenar y compartir información de manera organizada y fácilmente interpretable por otros equipos o sistemas.
 
-## Cómo trabajar con YAML
+## ¿Cómo hacerlo?
 
-Para trabajar con YAML en Java, necesitarás agregar una dependencia a tu proyecto, como SnakeYAML or Jackson YAML. Luego, puedes seguir estos pasos:
+Para trabajar con YAML en Java, es necesario importar la librería SnakeYAML y utilizar sus métodos para inicializar, escribir y leer archivos YAML. A continuación se muestra un ejemplo de cómo crear un archivo YAML y leer su contenido:
 
-1. Crear un archivo YAML con la extensión ".yml".
-2. Definir la estructura de tus datos con sangría y espacios.
-3. Cargar el archivo YAML en tu código usando la biblioteca elegida.
-4. Acceder a tus datos utilizando las funciones proporcionadas por la biblioteca.
+```
+import org.yaml.snakeyaml.*;
 
-Un ejemplo de código en Java para cargar y acceder a datos de un archivo YAML podría verse así:
+// Inicializar objeto YAML
+Yaml yaml = new Yaml();
 
-```Java
-import com.fasterxml.jackson.databind.ObjectMapper;
-import java.io.File;
-import java.io.IOException;
-import java.util.Map;
+// Crear archivo y escribir datos
+yaml.dump("nombre: Juan, edad: 28", new FileWriter("datos.yml"));
 
-public class Main {
-  public static void main(String[] args) {
-    // 1. Cargar el archivo YAML en un objeto File
-    File yamlFile = new File("datos.yml");
+// Leer archivo y almacenar datos en un mapa
+Map<String, Object> datosMap = yaml.load(new FileReader("datos.yml"));
 
-    // 2. Crear un objeto ObjectMapper
-    ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
-
-    try {
-       // 3. Mapear el archivo YAML a un mapa de Java
-       Map<String, Object> datos = mapper.readValue(yamlFile, Map.class);
-
-       // 4. Acceder a los datos utilizando la clave y un cast correspondiente
-       String nombre = (String) datos.get("nombre");
-       int edad = (int) datos.get("edad");
-
-       // 5. Output
-       System.out.println("Nombre: " + nombre);
-       System.out.println("Edad: " + edad);
-
-    } catch (IOException e) {
-       e.printStackTrace();
-    }
-  }
-}
+// Imprimir valores individuales
+System.out.println(datosMap.get("nombre")); // Salida: Juan
+System.out.println(datosMap.get("edad")); // Salida: 28
 ```
 
-**Salida:**
+## Profundizando
 
-Nombre: Ana
-Edad: 25
+El formato YAML fue creado en 2001 como una alternativa al formato XML más complejo y difícil de leer. Aunque se parece al formato JSON, YAML se enfoca en ser más legible para humanos y permite comentarios y referencias a otros objetos dentro del mismo archivo.
 
-## Deep Dive
+Algunas alternativas para trabajar con datos estructurados en Java incluyen XML y JSON, pero YAML ha ganado popularidad por su simplicidad y capacidad de ser leído y modificado fácilmente por personas.
 
-Hay algunas consideraciones que debes tener en cuenta al trabajar con YAML en Java:
-
-- Asegúrate de que la biblioteca que estás utilizando sea compatible con la versión de Java que estás utilizando.
-- Presta atención a la estructura y formato de tu archivo YAML, ya que un error de sangría o un espacio adicional pueden causar problemas.
-- Familiarízate con las funciones y métodos proporcionados por la biblioteca elegida para trabajar eficientemente con tus datos YAML.
-
-Recuerda que siempre puedes consultar la documentación de la biblioteca o buscar ejemplos y tutoriales en línea para resolver cualquier problema que puedas tener al trabajar con YAML.
+La implementación de SnakeYAML en Java se basa en la especificación de YAML 1.1 y es compatible con los estándares de Java para trabajar con mapas y objetos.
 
 ## Ver también
 
-- [Documentación de SnakeYAML](https://bitbucket.org/asomov/snakeyaml/src/default/)
-- [Documentación de Jackson YAML](https://github.com/FasterXML/jackson-dataformats-text/tree/master/yaml)
-- [Tutorial de YAML en Java](https://www.baeldung.com/jackson-yaml)
+- Página oficial de SnakeYAML: https://bitbucket.org/asomov/snakeyaml/wiki/Documentation
+- Especificación de YAML 1.1: https://yaml.org/spec/1.1/
+- Ejemplos de YAML: https://docs.ansible.com/ansible/latest/reference_appendices/YAMLSyntax.html

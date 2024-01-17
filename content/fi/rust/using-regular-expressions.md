@@ -10,64 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä & Miksi?
+Regular expressions eli säännölliset lausekkeet ovat keino käsitellä merkkijonoja tavalla, joka on joustava ja monipuolinen. Ohjelmoijat käyttävät niitä usein datan käsittelemiseen, validointiin ja hakemiseen. Säännöllisten lausekkeiden avulla voit etsiä tiettyjä merkkijonon osia ja tehdä niihin muutoksia luovalla tavalla.
 
-Regular expressioneiden käyttö on yksi tehokkaimmista tavoista käsitellä tekstiä ja datan kanssa ohjelmoinnissa. Ne mahdollistavat monimutkaisten haku- ja muokkaustoimintojen suorittamisen yhdellä rivillä koodia.
+## Miten:
+```Rust
+// Esimerkki: Etsi ja korvaa
+let sana = "Tänään on aurinkoinen päivä!";
+let muokattu_sana = sana.replace("aurinkoinen", "sateinen");
 
-## Kuinka käyttää
+println!("Oli sää mikä tahansa, se on aina hyvä päivä. {}", muokattu_sana);
+// Tulostus: Oli sää mikä tahansa, se on aina hyvä päivä. Tänään on sateinen päivä!
+```
 
 ```Rust
-use regex::Regex;
+// Esimerkki: Tarkista sähköpostiosoite
+let osoite = "esimerkki@esimerkki.com";
 
-fn main() {
-    // Luodaan regexp-olio, joka etsii kaikki "rust"- esiintymät tekstissä
-    let re = Regex::new(r"rust").unwrap();
-
-    // Määritetään teksti, josta halutaan etsiä esiintymiä
-    let text = "Tervetuloa Rustin maailmaan! Oletko jo kokeillut Rustia?";
-
-    // Suoritetaan haku tekstistä ja tulostetaan löydetyt esiintymät
-    for mat in re.find_iter(text) {
-        println!("Löydettiin esiintymä: {}", mat.as_str());
-    }
+if osoite.contains("@") && osoite.contains(".") {
+    println!("Sähköposti on kelvollinen.");
+} else {
+    println!("Sähköposti ei ole kelvollinen.");
 }
-```
-```
-Output:
-Löydettiin esiintymä: Rust
-Löydettiin esiintymä: Rust
+// Tulostus: Sähköposti on kelvollinen.
 ```
 
-Voit myös käyttää regular expressioneita muokkaamaan tekstiä haluamallasi tavalla. 
+## Suurennuslasin alla:
+Säännölliset lausekkeet ovat olleet käytössä jo 1950-luvulta lähtien ja niitä käyttävät monet ohjelmointikielet, kuten Perl ja Python. Rust tarjoaa Tetchi-makroja, jotka mahdollistavat säännöllisten lausekkeiden käytön tavallisten ilmaisujen sijaan. Toisin kuin joidenkin muiden kielten tapauksessa, Rustin säännölliset lausekkeet ovat täysin kääntämisaikaisia, mikä tarkoittaa, että ne tarkistetaan jo ennen ohjelman suorittamista. Tämä auttaa havaitsemaan mahdolliset virheet jo ennen ohjelman suorittamista.
 
-```Rust
-use regex::Regex;
-
-fn main() {
-    let re = Regex::new(r"(\w+) (\w+)").unwrap();
-
-    let text = "Tervetuloa Rustin maailmaan!";
-
-    // Korvataan ensimmäinen sana toisella sanalla.
-    let new_text = re.replace(text, "Hei $2,$1!");
-
-    println!("{}", new_text);
-}
-```
-```
-Output:
-Hei maailmaan,Rustin!
-```
-
-## Syvempi sukellus
-
-Regular expressioneita käyttäessä on tärkeää ymmärtää niiden syntax, jotta voit luoda tehokkaita haku- ja muokkaustoimintoja. Rustissa regular expressioneja käsitellään regex-kirjaston avulla, joka tarjoaa monia hyödyllisiä metodeja ja toimintoja.
-
-Kannattaa myös tutustua erilaisiin regex-koukeroihin, kuten säännöllisiin lausekkeisiin ja cattymallisiin. Näillä voi olla suuri merkitys, kun pyrit luomaan tarkkoja hakuja ja sääntöjä.
-
-## Katso myös
-
-- [Rustin virallinen verkkosivusto](https://www.rust-lang.org/fi)
-- [Regex-kirjaston dokumentaatio](https://docs.rs/regex/1.4.3/regex/)
-
-Voit myös löytää monia hyödyllisiä esimerkkejä regular expressioneiden käytöstä Githubista tai Stack Overflow -sivustolta. Onnea matkaan regular expressioneja hyödyntävässä ohjelmoinnissa!
+## Katso myös:
+* [Rustin virallinen dokumentaatio säännöllisistä lausekkeista](https://doc.rust-lang.org/std/regex/)
+* [Hyödyllisiä vinkkejä ja temppuja Rustin säännöllisiin lausekkeisiin](https://medium.com/@krishna14anu/mastering-regular-expressions-in-rust-ba32ca8b8e01)

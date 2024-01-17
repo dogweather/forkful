@@ -1,7 +1,7 @@
 ---
-title:                "Merkkijonon muuttaminen isoiksi kirjaimiksi."
-html_title:           "Kotlin: Merkkijonon muuttaminen isoiksi kirjaimiksi."
-simple_title:         "Merkkijonon muuttaminen isoiksi kirjaimiksi."
+title:                "Aloita merkkijonon kirjoitus suurella alkukirjaimella"
+html_title:           "Kotlin: Aloita merkkijonon kirjoitus suurella alkukirjaimella"
+simple_title:         "Aloita merkkijonon kirjoitus suurella alkukirjaimella"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Strings"
@@ -10,39 +10,22 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Miksi pääoman käyttöönotto merkkijonossa?
+## Mitä & Miksi?
+Miksi ohjelmoijat käyttävät isojentain kirjainten kirjoittamista? Kyseessä on yksinkertainen tapa muuttaa merkkijonoa niin, että jokainen sana alkaa isolla kirjaimella. Tämä tekee tekstin lukemisesta helpompaa ja visuaalisesti miellyttävämpää.
 
-Olet todennäköisesti jo nähnyt, että jotkut ohjelmat esimerkiksi muutavat otsikot ja virkkeiden alkukirjaimet isoihin kirjaimiin. Tätä kutsutaan merkkijonon pääoman käyttöönotoksi ja se on yksi tärkeä työkalu ohjelmoinnissa. Se ei yksinkertaisesti vain tee tekstistä kauniimpaa, vaan sillä voi myös olla merkittävä rooli ohjelman toiminnallisuudessa.
-
-## Kuinka tehdä pääoman käyttöönotto Kotlin-kielellä?
-
-Kotlinilla on sisäänrakennettu `capitalize()`-funktio, joka tekee merkkijonon ensimmäisestä kirjaimesta ison kirjaimen ja muut kirjaimet pieniksi. Voit käyttää tätä funktiota seuraavasti:
-
+## Miten:
+ 
 ```Kotlin
-val sana = "kotlin"
-val isoinaKirjaimina = sana.capitalize()
-
-println(isoinaKirjaimina)
-
-// output: Kotlin
+val name = "kotlin on loistava ohjelmointikieli"
+println(name.capitalize())
+//Tulostaa: "Kotlin on loistava ohjelmointikieli"
 ```
 
-Voit myös käyttää `toUpperCase()`-funktiota, joka muuttaa kaikki merkit isoina kirjaimina:
+Capitalizingia on myös mahdollista käyttää merkkijonon osien muokkaamiseen. Tarkemmat ohjeet löytyvät [täältä](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/capitalize.html).
 
-```Kotlin
-val sana = "kotlin"
-val isoinaKirjaimina = sana.toUpperCase()
+## Syvemmälle:
+Isoksi kirjoittamisen tekniikki on ollut käytössä jo pitkään, sillä se on ollut tapana jo vanhoissa kirjoitustyyleissä. Nykyään sitä käytetään esimerkiksi otsikoissa ja nimissä. On myös olemassa muita tapoja muuttaa merkkijonoja, esimerkiksi käyttämällä funktiota `toUpperCase()`, mutta capitalizing on yleisesti helpommin ymmärrettävä ja käytetympi vaihtoehto.
 
-println(isoinaKirjaimina)
-
-// output: KOTLIN
-```
-
-## Syventävä tieto pääoman käyttöönotosta
-
-Pääoman käyttöönotto on tärkeä osa merkkijonojen käsittelyä ohjelmoinnissa. Se voi auttaa esimerkiksi käyttäjän syöttämän tiedon oikeellisuuden tarkistamisessa, sillä monet käyttäjät eivät välttämättä muista kirjoittaa kaikki isot kirjaimet oikeisiin kohtiin. Lisäksi pääoman käyttöönotto on hyödyllinen esimerkiksi vertaillessa merkkijonoja, sillä isot ja pienet kirjaimet voivat vaikuttaa vertailun tulokseen.
-
-## Katso myös
-
-- [Kotlinin dokumentaatio merkkijonojen käsittelystä](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/java.lang.-string/)
-- [Kotlinin pääoman käyttöönotto Stack Overflow:ssa](https://stackoverflow.com/questions/33003752/how-to-capitalize-the-first-letter-of-a-string-in-kotlin)
+## Katso myös:
+- [Kotlinin virallinen dokumentaatio merkkijonojen käsittelystä](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/)
+- [Funktion `capitalize()` dokumentaatio](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/capitalize.html)

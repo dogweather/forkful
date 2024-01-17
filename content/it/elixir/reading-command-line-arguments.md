@@ -1,7 +1,7 @@
 ---
-title:                "Lettura degli argomenti della linea di comando"
-html_title:           "Elixir: Lettura degli argomenti della linea di comando"
-simple_title:         "Lettura degli argomenti della linea di comando"
+title:                "Lettura degli argomenti da riga di comando"
+html_title:           "Elixir: Lettura degli argomenti da riga di comando"
+simple_title:         "Lettura degli argomenti da riga di comando"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Files and I/O"
@@ -10,52 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+## Cosa & Perché?
+Leggere gli argomenti della riga di comando è un modo per far interagire il tuo codice Elixir con l'utente finale. Puoi far sì che il programma riceva input direttamente dall'utente tramite la riga di comando, invece di dover modificare e ricompilare il codice per cambiare i valori delle variabili.
 
-Se sei un programmatore Elixir, è probabile che tu abbia familiarità con l'uso della riga di comando per eseguire i tuoi script. Ma sai come leggere gli argomenti della riga di comando in Elixir? In questo articolo, imparerai come farlo in modo semplice e intuitivo.
-
-## Come fare
-
-Per leggere gli argomenti della riga di comando in Elixir, è necessario utilizzare il modulo `System` e il suo metodo `argv/0`. Questo metodo restituisce una lista contenente tutti gli argomenti passati al tuo script, escludendo il nome del file.
-
+## Come fare:
+Elixir ha incluso la libreria [`OptionParser`](https://hexdocs.pm/elixir/OptionParser.html) per semplificare la lettura degli argomenti della riga di comando. Ecco un esempio di come usarlo:
 ```Elixir
-# Leggi gli argomenti della riga di comando
-args = System.argv()
-
-# Stampa la lista degli argomenti
-IO.inspect args 
+args = OptionParser.parse!(System.argv)
+```
+Quando esegui questo codice dalla riga di comando, `System.argv` rappresenta tutti gli argomenti passati durante l'esecuzione e `OptionParser.parse!` restituisce una struttura dati contenente i valori degli argomenti come chiavi e valori degli hash. Ad esempio, se esegui questo codice con l'input `elixir program.ex -h true -p 8080`, il risultato sarà:
+```Elixir
+%{
+  "h" => "true",
+  "p" => "8080"
+}
 ```
 
-Se desideri ottenere solo un argomento specifico, puoi utilizzare l'indice della lista come segue:
+## Approfondimento:
+Leggere gli argomenti della riga di comando è un concetto comune nella maggior parte dei linguaggi di programmazione. Tuttavia, in alcuni linguaggi è necessario scrivere del codice aggiuntivo o usare librerie di terze parti per poterlo fare. Inoltre, puoi anche usare [`Application.get_env/2`](https://hexdocs.pm/elixir/Application.html#get_env-2) per ottenere i valori delle variabili di configurazione dalla riga di comando.
 
-```Elixir
-# Leggi il primo argomento della riga di comando
-arg = System.argv()[0]
-
-# Stampa il primo argomento
-IO.inspect arg 
-
-# Output: "Hello"
-```
-
-È importante notare che i valori degli argomenti saranno tutti di tipo stringa, quindi se vuoi utilizzarli come numeri o altri tipi di dati, dovrai convertirli manualmente.
-
-## Approfondimento
-
-Il metodo `argv/0` del modulo `System` non è l'unico modo per leggere gli argomenti della riga di comando in Elixir. Puoi anche utilizzare la funzione `Application.get_env/2` per accedere agli argomenti passati da riga di comando tramite la variabile di ambiente `:elixir_cmdline`.
-
-```Elixir
-# Leggi gli argomenti della riga di comando
-args = Application.get_env(:elixir_cmdline, :argv)
-
-# Stampa la lista degli argomenti
-IO.inspect args 
-```
-
-Questo metodo è utile se stai sviluppando un'applicazione Elixir che deve leggere gli argomenti della riga di comando durante l'esecuzione.
-
-## Vedi anche
-
-- [Documentazione ufficiale di Elixir sul modulo System](https://hexdocs.pm/elixir/System.html#argv/0)
-- [Tutorial su come gestire gli argomenti della riga di comando in Elixir](https://www.poeticoding.com/how-to-handle-command-line-arguments-in-elixir/) 
-- [Altro articolo su come leggere gli argomenti della riga di comando in Elixir](https://elixir-lang.org/getting-started/mix-otp/command-line.html#command-line-options-and-environment-variables)
+## Vedi anche:
+- [HexDocs - OptionParser](https://hexdocs.pm/elixir/OptionParser.html)
+- [HexDocs - Application.get_env/2](https://hexdocs.pm/elixir/Application.html#get_env-2)

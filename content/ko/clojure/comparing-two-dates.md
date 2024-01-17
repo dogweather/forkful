@@ -10,38 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+## 무엇 & 왜?
+이 글에서는 Clojure를 사용하여 두 날짜를 비교하는 방법을 배우게 됩니다. 날짜 비교는 두 날짜가 이전 날짜인지 이후 날짜인지 확인하는 것입니다. 프로그래머들은 날짜 비교를 사용하여 다양한 목적으로 데이터를 정렬하거나 필터링하는 데 사용합니다.
 
-어떤 이가 두 날짜를 비교하는 것에 시간을 쏟을까요? 두 날짜 사이의 차이를 계산하고 날짜의 순서를 알아내는 경우가 있을 수 있습니다.
-
-## 어떻게
-
+## 방법:
 ```Clojure
-(require '[clj-time.core :as t])
+(def date1 (java.util.Date. 120, 1, 2))
+(def date2 (java.util.Date. 120, 1, 1))
 
-(def date1 (t/date 2021 1 1))
-(def date2 (t/date 2021 1 15))
-
-(t/days-between date1 date2)
+(if (.after date1 date2)
+  (println "date1은 date2보다 이후 날짜입니다.")
+  (println "date1은 date2보다 이전 날짜입니다."))
 ```
+출력: `date1은 date2보다 이후 날짜입니다.`
 
-Output: 14
+## 깊게 파고들기:
+- 일부 프로그래밍 언어에서는 날짜와 시간을 비교할 때 문제가 발생했습니다. Clojure는 이러한 문제를 해결하기 위해 `java.util.Date` 클래스를 사용합니다.
+- 날짜 비교에는 `java.util.Date.after()` 메서드를 사용합니다.
+- 다른 예제로는 `clojure.java-time` 라이브러리와 `clj-time` 라이브러리를 사용하여 날짜 비교를 할 수도 있습니다.
 
-```Clojure
-(t/compare-dates date2 date1)
-```
-
-Output: 1
-
-## 깊이 파헤치기
-
-이 두 함수는 `clj-time` 라이브러리에서 제공됩니다. `days-between` 함수는 두 날짜 사이의 일 수를 계산하고 `compare-dates` 함수는 첫 번째 날짜가 두 번째 날짜보다 이전인지, 같은 날인지, 아니면 더 늦은지를 알려줍니다. 두 날짜 모두 `date-time` 데이터 형식이어야 합니다.
-
-## 더 찾아보기
-
-### Clojure 날짜 라이브러리
-- https://github.com/clj-time/clj-time
-- https://github.com/clj-commons/clj-time.format
-### Clojure 날짜 비교 관련 함수
-- https://clojuredocs.org/clojure.core/compare
-- https://clojuredocs.org/clojure.core/<
+## 관련 정보:
+- Clojure 공식 문서: https://clojure.org/reference/java_interop
+- `clojure.java-time` 라이브러리: https://github.com/dm3/clojure.java-time
+- `clj-time` 라이브러리: https://github.com/clj-time/clj-time

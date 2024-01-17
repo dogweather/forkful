@@ -1,7 +1,7 @@
 ---
-title:                "Webページをダウンロードする"
-html_title:           "Clojure: Webページをダウンロードする"
-simple_title:         "Webページをダウンロードする"
+title:                "ウェブページのダウンロード"
+html_title:           "Clojure: ウェブページのダウンロード"
+simple_title:         "ウェブページのダウンロード"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "HTML and the Web"
@@ -10,38 +10,22 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+## なに & なぜ？
+Webページをダウンロードすることは、インターネットからローカルコンピューターにファイルをコピーすることを意味します。プログラマーは、Webページをダウンロードすることによって、そのページの情報を取得し、処理することができます。
 
-Webページをダウンロードする理由は、そのコンテンツをオフラインで閲覧することができるからです。また、Webスクレイピングやデータ収集などの目的にも使われます。
-
-## 方法
-
-Webページをダウンロードするには、Clojureの```clj-http```ライブラリを使用します。まずはClojureプロジェクトを作成し、```project.clj```ファイルに```[clj-http "3.11.0"]```を依存関係として追加します。次に、```core.clj```ファイルを作成し、以下のコードを追加します。
-
+## 方法：
 ```Clojure
-(ns my-project.core
-  (:require [clj-http.client :as client]))
-
-(defn download-page [url]
-  (let [response (client/get url)
-        status (:status response)
-        body (:body response)]
-    (if (= 200 status)
-      body
-      (throw (Exception. (str "Error downloading page: " status))))))
-
-;; ダウンロードしたいWebページのURLを引数として渡します
-(download-page "https://www.example.com")
+(require '[clojure.java.io :as io])
+(def url "https://www.example.com")
+(io/copy (java.net.URL. url) (io/file "example.html"))
 ```
+上記のコードはClojureを使用してWebページをダウンロードする方法の一例です。ダウンロードしたページは、"example.html"という名前のファイルとして保存されます。
 
-このコードでは、```download-page```関数を定義し、指定したURLからページをダウンロードします。ダウンロードが成功した場合は、ページのHTMLコンテンツが返されます。もしダウンロードが失敗した場合は、エラーメッセージをスローします。
+## 深く掘り下げる
+Webページをダウンロードする方法として、上記のコード以外にも様々な手法があります。その中でも最も一般的な方法は、HTTPリクエストを使用する方法です。また、ClojureにはHTTPリクエストをより簡単に扱うことができるライブラリがあります。
 
-## ディープダイブ
-
-```clj-http```の詳細な使い方や設定方法については公式ドキュメントを参照してください。また、Webページのダウンロード以外にも、リクエストヘッダーの設定やクッキーの管理なども可能です。
+Clojureでは、java.net.URLクラスを使用することで、Webページをダウンロードすることができます。このクラスはJavaプログラミング言語の一部であり、Clojureでも使用することができます。
 
 ## 関連リンク
-
-- ```clj-http```公式ドキュメント: https://github.com/dakrone/clj-http
-- WebスクレイピングのためのClojureライブラリ「Enlive」: https://github.com/cgrand/enlive
-- フロントエンド開発に便利なClojureScript: https://clojurescript.org/
+- [Clojureのjava.net.URLクラスのドキュメント](https://docs.oracle.com/javase/8/docs/api/java/net/URL.html)
+- [HTTPリクエストを取り扱うためのClojureライブラリ「clj-http」](https://github.com/dakrone/clj-http)

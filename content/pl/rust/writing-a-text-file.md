@@ -10,37 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego pisać plik tekstowy?
+## Co to jest i dlaczego to robią programiści?
 
-Pisanie plików tekstowych jest nieodłączną częścią programowania w języku Rust. Jest to prosty i skuteczny sposób na przechowywanie i przetwarzanie danych.
+Pisanie plików tekstowych to proces zapisywania informacji na dysku twardym w postaci tekstu. Programiści często piszą pliki tekstowe jako sposób na przechowywanie danych i ich późniejsze odczytywanie przez swoje programy.
 
-## Jak to zrobić?
+## Jak to zrobić:
 
-Pisanie plików tekstowych w języku Rust jest bardzo proste. Wystarczy użyć funkcji `std::fs::File::create` i przekazać jej nazwę pliku, który chcemy utworzyć. Następnie możemy użyć metody `.write_all` na obiekcie pliku, aby zapisać nasz tekst do pliku. Przykładowy kod wyglądałby tak:
+Poniżej przedstawiony jest przykład użycia języka Rust do zapisywania tekstu do pliku o nazwie "test.txt":
 
 ```Rust
 use std::fs::File;
 use std::io::prelude::*;
 
 fn main() {
-    let mut file = File::create("plik.txt").expect("Nie można utworzyć pliku.");
-    file.write_all(b"Witaj, świecie!").expect("Nie można zapisać do pliku.");
+    let mut file = File::create("test.txt").unwrap();
+    file.write_all(b"Hello World!").unwrap();
 }
 ```
 
-Po uruchomieniu tego kodu, powinien zostać utworzony plik `plik.txt` z zawartością "Witaj, świecie!". 
+Powyższy kod otwiera nowy plik "test.txt" i zapisuje do niego tekst "Hello World!".
 
-Aby móc zapisywać tekst w różnych językach, należy dodać odpowiednią deklarację kodowania do metody `write_all`. Przykładowo, jeśli chcemy zapisać polskie znaki, możemy użyć kodowania "UTF-8" w ten sposób:
+## Głębszy zanurzenie:
 
-```Rust
-file.write_all("Witaj, świecie!".as_bytes()).expect("Nie można zapisać do pliku.");
-```
+Pisanie plików tekstowych jest powszechną praktyką w programowaniu od wielu lat. Wcześniej wykorzystywane były różne formaty plików, takie jak CSV czy XML, jednak obecnie powszechnie stosowany jest format tekstowy, który jest prostszy w obsłudze i łatwiejszy do przetwarzania przez programy.
 
-## Czego warto się nauczyć?
+Alternatywną metodą do pisania plików tekstowych jest wykorzystanie bazy danych. W niektórych przypadkach może to być bardziej wydajne i bezpieczne rozwiązanie. Jednak w wielu przypadkach, zwłaszcza przy pracy z mniejszymi ilościami danych, pisanie plików tekstowych jest wystarczająco efektywne.
 
-Pisanie plików tekstowych w języku Rust jest prostym procesem, jednak warto wiedzieć kilka dodatkowych rzeczy. Możemy na przykład korzystać z biblioteki `std::io::LineWriter` lub `std::io::BufWriter`, aby znacznie zwiększyć wydajność naszego programu. Możemy także użyć metody `.flush` aby natychmiastowo zapisać zawartość bufora do pliku.
+Głębsze zrozumienie mechanizmów pisania plików tekstowych może być przydatne podczas pracy z bardziej skomplikowanymi danymi. Ważne jest również zapoznanie się z dokumentacją biblioteki standardowej języka Rust, aby poznać dostępne funkcje i ich dokładne działanie.
 
-## Zobacz także
+## Zobacz także:
 
-- [Dokumentacja języka Rust](https://doc.rust-lang.org/std/fs/struct.File.html)
-- [Przykłady zapisu do pliku w języku Rust](https://dev.to/rubenrp/guide-to-read-write-copy-files-in-rust-4j0p)
+Dokumentacja biblioteki standardowej języka Rust: https://doc.rust-lang.org/std/fs/struct.File.html
+
+Przykładowy projekt wykorzystujący pisanie plików tekstowych w celu przechowywania danych: https://github.com/rust-lang/cargo/wiki/Configuring-Cargo-for-use-behind-a-proxy

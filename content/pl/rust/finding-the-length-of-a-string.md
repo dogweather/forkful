@@ -1,7 +1,7 @@
 ---
-title:                "Znajdowanie długości ciągu znaków"
-html_title:           "Rust: Znajdowanie długości ciągu znaków"
-simple_title:         "Znajdowanie długości ciągu znaków"
+title:                "Znajdowanie długości łańcucha znaków"
+html_title:           "Rust: Znajdowanie długości łańcucha znaków"
+simple_title:         "Znajdowanie długości łańcucha znaków"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -10,61 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## Co i dlaczego?
 
-Czemu powinieneś dowiedzieć się, jak obliczyć długość łańcucha znaków w Rust?
+Znalezienie długości ciągu znaków to podstawowa czynność w programowaniu. Polega ona na obliczeniu liczby znaków w danym ciągu, takich jak litery, cyfry i znaki specjalne. Programiści wykonują tę czynność, aby móc manipulować i analizować dane tekstowe.
 
-Obliczanie długości łańcucha znaków jest częstym zadaniem przy pracy z tekstami i może być przydatne w różnych projektach programistycznych. W tym artykule dowiesz się, jak można to zrobić w języku Rust z przykładami kodu.
-
-## How To
-
-Najprostszym sposobem na obliczenie długości łańcucha znaków w Rust jest użycie metody `len()` na zmiennej typu `String`. Należy jednak pamiętać, że ta metoda zwraca liczbę znaków, a nie bajtów. Przykładowy kod wygląda następująco:
+## Jak to zrobić:
 
 ```Rust
-let my_string = String::from("Hello World!");
-let string_length = my_string.len();
+let string = "Hello World!";
+let len = string.len();
+println!("Długość ciągu: {}", len);
 
-println!("Długość łańcucha znaków: {}", string_length);
+// Output: Długość ciągu: 12
 ```
 
-Ten kod zwróci wartość 12, ponieważ w zmiennej `my_string` znajduje się łańcuch z 12 znakami.
-
-Jeśli chcesz obliczyć długość łańcucha w bajtach, możesz użyć metody `len()` na tablicy bajtów, uzyskanej z `as_bytes()`:
+Możemy wykorzystać funkcję `len()` do obliczenia długości ciągu znaków w Rust. Ta funkcja jest dostępna dla typu `String` oraz dla typów, które implementują `std::ops::Index` trait.
 
 ```Rust
-let my_string = String::from("Hello World!");
-let bytes = my_string.as_bytes();
-let byte_length = bytes.len();
+let name = String::from("Michael");
+let len = name.len();
+println!("Długość imienia: {}", len);
 
-println!("Długość łańcucha w bajtach: {}", byte_length);
+// Output: Długość imienia: 7
 ```
 
-Ten kod zwróci wartość 11, ponieważ znak `ó` w języku polskim zajmuje 2 bajty.
-
-Jeśli chcesz obliczyć długość łańcucha w słowach, możesz podzielić łańcuch na części za pomocą metody `split_whitespace()` i użyć metody `count()` na uzyskanej kolekcji:
+Możemy także wykorzystać metodę `chars()` do zliczenia liczby znaków w ciągu. Ta metoda zwraca iterator, dlatego musimy wykorzystać funkcję `count()` do zliczenia elementów.
 
 ```Rust
-let my_string = String::from("Hello World!");
-let words: Vec<&str> = my_string.split_whitespace().collect();
-let word_count = words.len();
+let message = "Witaj, użytkowniku!";
+let len = message.chars().count();
+println!("Długość wiadomości: {}", len);
 
-println!("Długość łańcucha w słowach: {}", word_count);
+// Output: Długość wiadomości: 19
 ```
 
-Ten kod zwróci wartość 2, ponieważ w zmiennej `my_string` znajdują się tylko dwa słowa.
+## Głębsze zagadnienia:
 
-## Deep Dive
+Wcześniej w języku Rust istniała funkcja `len()` dla typu `str`. Jednak została ona zastąpiona przez metodę `len()` dla typu `String`, aby uniknąć problemów bezpieczeństwa.
 
-Chcesz dowiedzieć się, jak dokładnie działa metoda `len()`? Zajrzyjmy do dokumentacji Rust:
+Alternatywą dla wykorzystania metody `chars()` jest wykorzystanie biblioteki `unicode_segmentation`, która pozwala na dokładniejsze dzielenie ciągu znaków.
 
-> Metoda `len()` nałożona jest na zmienne typów `String`, `Vec` oraz `VecDeque` i zwraca liczbę elementów w kolekcji.
+W implementacji funkcji `len()` wykorzystywany jest wskaźnik do ostatniego bajtu w ciągu, dlatego jest ona wydajniejsza niż wykorzystanie metody `chars()`.
 
-Oznacza to, że metoda ta jest zaimplementowana właśnie dla tych typów i dokładnie definiuje, jak ma być obliczana długość kolekcji.
+## Zobacz także:
 
-Jednym z powodów, dla których metoda `len()` zwraca liczbę znaków, a nie bajtów, jest fakt, że w języku Rust standardowo używa się znaków Unicode, które mogą zajmować więcej niż 1 bajt. Dzięki temu nie musisz martwić się o to, że indeksowanie łańcuchów będzie trudne czy też dojdziemy do problemów z różnymi zestawami znaków w różnych językach.
-
-## See Also
-
-- [Dokumentacja Rust](https://doc.rust-lang.org/std/string/struct.String.html#method.len)
-- [Samouczek Rust](https://doc.rust-lang.org/book/ch08-02-strings.html)
-- [FAQ Rust](https://www.rust-lang.org/faq.html)
+- [Dokumentacja Rust: str::len()](https://doc.rust-lang.org/std/primitive.str.html#method.len)
+- [Dokumentacja Rust: String::len()](https://doc.rust-lang.org/std/string/struct.String.html#method.len)
+- [Dokumentacja Rust: std::ops::Index trait](https://doc.rust-lang.org/std/ops/trait.Index.html)
+- [Biblioteka unicode_segmentation](https://docs.rs/unicode_segmentation/1.8.0/unicode_segmentation/)

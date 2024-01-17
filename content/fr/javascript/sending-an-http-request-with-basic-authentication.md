@@ -1,7 +1,7 @@
 ---
-title:                "Envoyer une demande http avec une authentification de base"
-html_title:           "Javascript: Envoyer une demande http avec une authentification de base"
-simple_title:         "Envoyer une demande http avec une authentification de base"
+title:                "Envoyer une requête http avec une authentification de base"
+html_title:           "Javascript: Envoyer une requête http avec une authentification de base"
+simple_title:         "Envoyer une requête http avec une authentification de base"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "HTML and the Web"
@@ -10,38 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi envoyer une requête HTTP avec une authentification de base?
+## Qu'est-ce que c'est et pourquoi le faire?
 
-L'authentification de base est un moyen simple et courant pour sécuriser les connexions entre un client et un serveur. En utilisant une combinaison d'identifiant et de mot de passe, le serveur peut vérifier l'identité du client avant de lui donner accès aux ressources protégées. Cela est particulièrement utile pour les applications nécessitant une authentification, telles que les API et les sites web sécurisés.
+L'envoi d'une requête HTTP avec une authentification de base est une méthode utilisée par les programmeurs pour sécuriser les communications entre un client et un serveur. Cela permet de s'assurer que seules les personnes autorisées ont accès aux informations échangées.
 
-## Comment le faire?
+## Comment faire:
 
 ```Javascript
-const username = "mon_nom_d_utilisateur";
-const password = "mon_mot_de_passe";
-const url = "https://exemple.com/api/ressource";
-
-fetch(url, {
+fetch('https://mon-serveur.com/api/posts', { // l'url de l'API à appeler
   headers: {
-    Authorization: "Basic " + btoa(username + ":" + password)
+    Authorization: 'Basic ' + btoa('utilisateur:mdp') // encodage en base64 du nom d'utilisateur et du mot de passe
   }
 })
-.then(response => response.json())
-.then(data => console.log(data));
+.then((response) => {
+  return response.json(); // convertit la réponse en JSON
+})
+.then((data) => {
+  console.log(data); // affiche les données récupérées
+});
 ```
 
-Dans cet exemple, nous utilisons la méthode `fetch` pour envoyer une requête HTTP vers l'URL spécifiée. La partie clé est la ligne `Authorization` dans le header de la requête qui contient le mot-clé "Basic" suivi de l'encodage Base64 de la combinaison "nom d'utilisateur: mot de passe".
+L'exemple ci-dessus utilise la méthode [fetch()](https://developer.mozilla.org/fr/docs/Web/API/Fetch_API) pour envoyer une requête HTTP vers une API sécurisée par une authentification de base. Puisque les informations de connexion sont encodées en base64, il est important de souligner que cela ne constitue pas une méthode de sécurisation fiable et qu'il est recommandé d'utiliser une méthode plus robuste telle que l'authentification par jetons (token authentication).
 
-Lorsque le serveur reçoit la requête, il décode l'encodage Base64 pour obtenir la combinaison d'identifiant et de mot de passe. Il peut alors vérifier ces informations et donner ou refuser l'accès en conséquence.
+## Plongée en profondeur:
 
-## Plongée en profondeur
+L'authentification de base a été introduite dans la version 1.0 de HTTP en 1996 et continue d'être utilisée aujourd'hui. Cependant, de nombreuses méthodes d'authentification alternatives ont émergé, offrant une meilleure sécurité et plus de flexibilité. Parmi elles, on peut citer l'OAuth, l'OpenID Connect, et l'authentification par jetons. L'authentification de base fonctionne en encodant en base64 les informations de connexion, ce qui peut être facilement décodé par une application tierce.
 
-L'authentification de base est une méthode simple mais pas très sécurisée car les informations de connexion sont facilement visibles dans le header de la requête. Pour une meilleure sécurité, il est recommandé d'utiliser l'authentification par jeton (token-based authentication) qui utilise un jeton d'accès au lieu d'un nom d'utilisateur et d'un mot de passe.
+## Voir aussi:
 
-Il est également important de noter que l'authentification de base ne chiffre pas les informations d'identification, donc si vous utilisez une connexion non sécurisée (http), ces informations peuvent être interceptées par des tiers. Il est donc préférable de toujours utiliser une connexion sécurisée (https) lors de l'utilisation de l'authentification de base.
-
-## Voir aussi
-
-- [MDN Web Docs: HTTP Authentication](https://developer.mozilla.org/fr/docs/Web/HTTP/Authentication)
-- [Blog d'Okta: Basic vs Token-Based Authentication](https://developer.okta.com/blog/2019/06/04/basic-vs-token-based-authentication)
-- [Blog de Cloudflare: HTTP Basic Auth: How Secure is It?](https://blog.cloudflare.com/http-basic-auth-how-secure-is-it/)
+- [MDN Web Docs - fetch()](https://developer.mozilla.org/fr/docs/Web/API/Fetch_API)
+- [Introduction à l'authentification HTTP](https://developer.mozilla.org/fr/docs/Web/HTTP/Authentication)

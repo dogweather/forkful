@@ -1,7 +1,7 @@
 ---
-title:                "「JSONを使う」"
-html_title:           "Swift: 「JSONを使う」"
-simple_title:         "「JSONを使う」"
+title:                "「JSONを使ったプログラミング」"
+html_title:           "Swift: 「JSONを使ったプログラミング」"
+simple_title:         "「JSONを使ったプログラミング」"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Data Formats and Serialization"
@@ -10,61 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# なぜJSONを使用するのか
+## 何かしら？何のために？
+JSONとは、プログラミングにおいてデータを扱う際に使用される一般的な形式の一つです。プログラマーたちは、JSONを使用することでデータを簡単に処理することができます。
 
-JSONは、ウェブ機能のほとんどで使用されるデータ形式であり、多くのアプリケーションやサービスで重要な役割を果たしています。Swiftを使用してJSONを扱うことで、ウェブサービスのデータを簡単に取得し、アプリケーションに組み込むことができます。
+## 使い方：
+以下に、JSONを取り扱うためのコード例とその出力を示します。
 
-## 使い方
+```Swift
+// JSONをデコードする
+let jsonString = """
+{
+    "name": "Taro",
+    "age": 25,
+    "city": "Tokyo"
+}
+""".data(using: .utf8)!
 
-JSONを扱うためには、まずはSwiftのCodableプロトコルについて理解する必要があります。Codableプロトコルを使用することにより、JSONをSwiftの構造体やクラスに変換し、簡単に取得することができます。
-
-以下の例では、コンピューターのスペックを含むJSONデータを取得し、コンソールに出力する方法を示します。
-
-```swift
-// Codableプロトコルを準拠した構造体を定義する
-struct ComputerSpec: Codable {
-    let processor: String
-    let memory: Int
-    let storage: Int
+struct Person: Codable {
+    let name: String
+    let age: Int
+    let city: String
 }
 
-// JSONデータを取得するURLを作成する
-let url = URL(string: "https://api.computer-specs.com/specs.json")!
+let decoder = JSONDecoder()
+let personData = try decoder.decode(Person.self, from: jsonString)
+print(personData.name) // 出力結果：Taro
+print(personData.age) // 出力結果：25
+print(personData.city) // 出力結果：Tokyo
+```
 
-// JSONデータを取得する
-let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
-    if let data = data {
-        // 取得したデータをComputerSpec構造体に変換する
-        let decoder = JSONDecoder()
-        let computerSpec = try? decoder.decode(ComputerSpec.self, from: data)
-        
-        // コンソールに出力する
-        print("Processor: \(computerSpec?.processor ?? "Unknown")")
-        print("Memory: \(computerSpec?.memory ?? 0)GB")
-        print("Storage: \(computerSpec?.storage ?? 0)GB")
-    }
+```Swift
+// JSONをエンコードする
+struct Person: Codable {
+    let name: String
+    let age: Int
+    let city: String
 }
 
-// タスクを実行する
-task.resume()
+let person = Person(name: "Hanako", age: 28, city: "Osaka")
+let encoder = JSONEncoder()
+let encodedPerson = try encoder.encode(person)
+
+print(String(data: encodedPerson, encoding: .utf8)!) // 出力結果：{"name": "Hanako", "age": 28, "city": "Osaka"}
 ```
 
-上記のコードを実行すると、以下のように出力されます。
+## もっと深く掘り下げる：
+歴史的な文脈としては、JSONは2000年代初頭にJavaScriptオブジェクト記法から派生したものです。代替として使用されたのは、XMLやCSVなどがありますが、JSONは扱いやすさと可読性が高いため、今日では非常に一般的に使用されています。JSONは、iOSやmacOSといったApple製品においても広く使用されています。
 
-```
-Processor: Intel Core i7 3.0GHz
-Memory: 16GB
-Storage: 512GB
-```
-
-## ディープダイブ
-
-JSONを扱う際に注意すべき点として、プロパティのデータ型をJSONと一致させる必要があります。また、オプショナル型を使用する場合には、データが存在しない可能性を考慮して、安全にアクセスする必要があります。
-
-さらに、JSONのネストされたデータを取得する場合には、ネストされた構造体を定義し、Codableプロトコルを準拠させる必要があります。これにより、データをより詳細に解析することができます。
-
-## この記事で紹介したリンク
-
-- [The Basics of JSON](https://www.taniarascia.com/json-the-basics/)
-- [Codable: JSON Encoder and Decoder](https://developer.apple.com/documentation/foundation/jsonencoder)
-- [Handling JSON With Swift](https://developer.apple.com/swift/blog/?id=37)
+## 関連情報：
+- [Swift Documentation - Codable](https://developer.apple.com/documentation/foundation/archives_and_serialization/encoding_and_decoding_custom_types)
+- [Swift Documentation - Encoding and Decoding](https://developer.apple.com/documentation/foundation/archives_and_serialization/encoding_and_decoding_custom_types)
+- [The JSON Data Interchange Format](https://tools.ietf.org/html/rfc7159)

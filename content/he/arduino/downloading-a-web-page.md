@@ -10,67 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## למה
+כתיבת תכנות עם ארדואינו - למה ואיך?
 
-אנשים מורידים דף אינטרנט מעבורת כדי לקבל מידע מעודכן ולהתחבר לעולם המקוון. זה יכול להיות חלק מפרויקט ארדואינו או פשוט כדי להתחיל ללמוד תכנות עם לוח הפיתוח הזה.
+## מה זה ולמה? 
 
-## איך לעשות זאת
+ להוריד עמוד אינטרנט זה להוריד מידע מהרשת העולמית למחשב או למכשיר אחר. תוכניות תכנותיות משתמשות ביכולת זו בכדי לאחזר מידע חיוני כמו את נתוני המזג או את מחירי המניות.
 
-כדי להוריד דף אינטרנט באמצעות ארדואינו, נצטרך להשתמש בספריית "WiFiClient". נתחיל על ידי הכנת הקשר אל הרשת המתאימה:
+## איך לעשות:
 
-```arduino
-#include <ESP8266WiFi.h>      // להתחבר לרשת
-#include <WiFiClient.h>       // ספריית הלקוח
-WiFiClient client;           // הקושח
+הנה שני דוגמאות של קוד ארדואינו להורדת עמוד אינטרנט ותוצאת הפלט: 
+
+```
+Arduino.begin(); 
+webpage = download("https://www.example.com"); 
+print(webpage);
 ```
 
-לאחר מכן, נכניס את הכתובת של הדף המבוקש לתוך קו חדש:
-
-```arduino
-...
-const char* server = "www.example.com"; // כתובת הדף
+```
+Arduino.begin(); 
+webpage = download("https://www.example.com"); 
+print(text(webpage));
 ```
 
-עכשיו הגענו לחלק שבו אנו יוצרים את החברת tcp ושולחים את בקשת GET עבור הדף. זה יכול להיכשל אם החיבור אינטרנט לא פעיל:
+## המעמד לעומק:
 
-```arduino
-...
-int port = 80;  // יצירת חיבור לשרת המבוקש
-if (!client.connect(server, port)) { // שליחת בקשת GET דרך היחידה wifi שלך
-  Serial.println("connection failed");
-  return;
-}
+לפני תיכנות מחשבים, היו חלופות להורדת דפים אינטרנט כמו המדפסת טארטלוט והדפדפן. מתוך  החלפת התוכן והדמיון, תכניות תוכנות יכולות לגורל מיוחד בין מידע ממקור שונה.
 
-client.print("GET /index.html HTTP/1.1\r\n"); // אתחול הקשר ושליחת הבקשה
-client.print("Host: www.example.com\r\n");
-client.print("Connection: close\r\n\r\n");
-```
+## ראו גם:
 
-תוך כמה שניות, אנו מקבלים תגובה מהשרת:
+כדי ללמוד עוד על תכניות תכנות עם ארדואינו: https://www.arduino.cc/en/Guide/HomePing 
 
-```arduino
-...
-while(client.connected()){  // עד החיבור לשרת
-  if (client.available()) { // זמן המתנה עבור התגובה
-    ...
-    // קבלת התוכן והדפסתו
-    char c = client.read();
-    Serial.print(c);
-    ...
-  }
-}
-```
-
-לאחרונה, אנו תופסים את כל הקבצים שעברו ומדפיסים אותם בקלות:
-
-```arduino
-...
-while (client.available() > 0) {
-  String line = client.readStringUntil('\r\n'); // היו אפשרי עבור תגובתאם
-  Serial.print(line);
-}
-```
-
-## דרוקים עמוק
-
-הורדת דף אינטרנט בארדואינו אינה תהליך פשוט, בעיקר בגלל המ
+ עמוד רשמי של תכנת ארדואינו: https://www.arduino.cc/

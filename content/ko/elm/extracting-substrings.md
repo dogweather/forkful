@@ -1,7 +1,7 @@
 ---
-title:                "부분 문자열 추출하기"
-html_title:           "Elm: 부분 문자열 추출하기"
-simple_title:         "부분 문자열 추출하기"
+title:                "문자열 추출하기"
+html_title:           "Elm: 문자열 추출하기"
+simple_title:         "문자열 추출하기"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -10,52 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
-반가워! 오늘은 Elm으로 알아보는 substring 추출에 대해서 알아보자. substring 추출은 문자열에서 특정 부분을 추출하는데 유용하게 사용될 수 있어서 많은 프로그래머들이 자주 사용하고 있어. 지금부터 어떻게 하면 substring을 추출할 수 있는지 살펴보자.
+뭐 & 왜?
 
-## 어떻게 하나요
-이번에는 앞서 말한 것처럼 substring 추출을 위한 코드 예제와 그 결과를 ```Elm... ``` 코드 블록 안에 넣어서 살펴보겠어.
+ 문자열의 일부를 추출하는 것은 간단한 작업처럼 보이지만, 그것이 프로그래밍에서 중요한 이유가 있습니다. 문자열 추출은 일반적으로 원하는 정보를 다룰 때 필요하고, 작업을 더 효율적으로 만들 수 있는 방법으로 사용됩니다.
 
-### 기본 문자열에서 substring 추출하기
+어떻게:
+
+Elm은 문자열 추출을 처리하기 위해 `String.slice` 함수를 제공합니다. 이 함수는 문자열에서 시작 인덱스와 끝 인덱스를 지정하여 추출할 부분 문자열을 선택합니다. 예를 들어, 다음과 같은 코드를 작성하면 "world" 문자열이 추출됩니다.
+
 ```Elm
 let
-    string = "반가워, Elm 프로그래밍!"
-
+  str = "hello, world!"
+  result = String.slice 7 12 str
 in
-    String.left 2 string -- 결과: "반가워"
+  result
 ```
+출력:
 
-### 시작 index와 길이 지정하여 추출하기
-```Elm
-let
-    string = "반가워, Elm 프로그래밍!"
+"world"
 
-in
-    String.slice 7 13 string -- 결과: "Elm 프로그래밍"
-```
+더 깊게 들어가보면:
 
-### 인덱스 범위로 추출하기
-```Elm
-let
-    string = "안녕하세요? Elm은 정말 멋진 언어입니다."
+문자열 추출 기능은 다양한 언어에서 사용 가능하지만, 각각 다른 방식으로 구현되고 있습니다. 일부 언어에서는 `substring` 함수를 사용하며, 다른 언어에서는 문자열을 배열로 변환한 다음 원하는 부분만 선택하는 방식을 사용합니다. Elm에서는 `String.Slice` 함수의 경우 시작과 끝 인덱스가 반드시 해당 문자열의 범위 내에 있어야 한다는 제한적인 적용 범위가 있습니다.
 
-in
-    String.substring 9 15 string -- 결과: "Elm은 정말"
-```
+관련 자료:
 
-## 딥 다이브
-그외에도 ```String.take```와 ```String.drop```을 통해 문자열 앞 뒤로 일부 문자를 추출할 수 있어. 또한 ```String.split```을 사용하면 특정 문자를 기준으로 문자열을 나눌 수도 있어.
-
-## 더 알아보기
-이 외에도 Elm 문자열을 다루는 방법에 대해 더 알고 싶다면 아래 링크들을 참고해보자.
-
-- [Elm 문자열 관련 문서](https://package.elm-lang.org/packages/elm/core/latest/String)
-- [Elm 문자열 관련 예제](https://guide.elm-lang.org/types/strings.html)
-- [Elm 문자열 관련 Q&A](https://discourse.elm-lang.org/t/extract-substring-from-string/208/3)
-
-## 참고
-이번 글이 너에게 도움이 되길 바라며, 더 많은 Elm 관련 정보를 찾고 싶다면 아래 링크들을 참고해보자!
-
-- [Elm 공식 홈페이지](https://elm-lang.org/)
-- [Elm 커뮤니티 블로그](https://blog.elm-community.org/)
-- [Elm 한국 사용자 그룹(Facebook)](https://www.facebook.com/groups/elmkr)
+- [Elm 문자열 관련 공식 문서](https://package.elm-lang.org/packages/elm/core/latest/String#slice)
+- [자바스크립트에서 문자열 추출 방법 비교](https://www.geeksforgeeks.org/javascript-string-slice-vs-substring-vs-substr/#:~:text=extract%20characters%20from%20a%20string,start%20to%20the%20end%20string)
+- [다양한 언어에서의 문자열 추출 기능 비교](https://stackoverflow.com/questions/2243824/in-built-string-extraction-method-in-different-languages)

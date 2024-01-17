@@ -1,7 +1,7 @@
 ---
-title:                "Konwertowanie ciągu znaków na małe litery"
-html_title:           "Swift: Konwertowanie ciągu znaków na małe litery"
-simple_title:         "Konwertowanie ciągu znaków na małe litery"
+title:                "Konwersja ciągu znaków na małe litery"
+html_title:           "Swift: Konwersja ciągu znaków na małe litery"
+simple_title:         "Konwersja ciągu znaków na małe litery"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -10,52 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co to jest i dlaczego to robimy?
 
-Jeśli pracujesz z tekstem w języku Swift, możesz chcieć przekonwertować wprowadzone dane na małe litery. To ważna część przetwarzania tekstu, ponieważ upraszcza porównywanie i analizowanie danych. W tym artykule pokażemy Ci, jak przekonwertować string na małe litery w Swift.
+Konwertowanie tekstu do małych liter (lower case) jest procesem zmieniania wszystkich liter w tekście na ich "niskie" odpowiedniki. Często wykonujemy to, aby ujednolicić nasze dane lub upewnić się, że porównanie tekstu będzie działać poprawnie.
 
-## Jak To Zrobić
+## Jak to zrobić:
 
-Aby przekonwertować string na małe litery w Swift, użyjemy metody ".lowercased()". Oto prosty przykład kodu w języku Swift:
+``` Swift
+let text = "Hello World"
+let lowerCaseText = text.lowercased()
 
-```Swift
-let text = "HEllo WoRLd"
-let lowercasedText = text.lowercased()
-print(lowercasedText)
+print(lowerCaseText)
+
+// Output: hello world
 ```
 
-Ten kod spowoduje wydrukowanie "hello world" w konsoli.
+## Głębszy zanurzenie:
 
-Możesz również użyć metody ".lowercased()" do konwersji pojedynczego znaku na małą literę:
+1. Kontekst historyczny: Konwersja tekstu na małe litery jest praktykowana od dawna, aby ułatwić zarządzanie tekstem i poprawić jego czytelność.
 
-```Swift
-let letter = "A"
-let lowercaseLetter = letter.lowercased()
-print(lowercaseLetter)
-```
+2. Alternatywy: Istnieje wiele innych sposobów na konwersję tekstu na małe litery, m.in. zmiana kodowania lub użycie bibliotek zewnętrznych.
 
-Ten kod spowoduje wydrukowanie "a" w konsoli. Możesz także użyć tej metody na całych wyrażeniach:
+3. Szczegóły implementacji: W języku Swift, konwersję tekstu na małe litery możemy wykonać za pomocą metody `lowercased ()` na typie `String`.
 
-```Swift
-let sentence = "I EnJoy ProgRaMmING"
-let lowercasedSentence = sentence.lowercased()
-print(lowercasedSentence)
-```
+## Zobacz także:
 
-Ten kod spowoduje wydrukowanie "i enjoy programming" w konsoli.
-
-## Głębsza Analiza
-
-Podczas wykorzystywania metody ".lowercased()" należy pamiętać o regionalnych ustawieniach urządzenia użytkownika. Dla przykładu, w niektórych językach, np. w języku łacińskim, wielkie litery są tylko pewnymi wariantami małych liter. W takich przypadkach, metoda ".lowercased()" nie zmieni wielkich na małe litery, ponieważ są one niezmienne w tym kontekście.
-
-W języku Swift istnieje również możliwość przekonwertowania tekstu na wielkie litery, korzystając z metody ".uppercased()". Możesz również skorzystać z metody ".capitalized()", która przekonwertuje pierwszą literę każdego wyrazu na wielką.
-
-## Zobacz Również
-
-Jeśli chcesz dowiedzieć się więcej o pracy z tekstem w języku Swift, zerknij na te linki:
-
-- [Oficjalna dokumentacja Swifta - String](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
-- [Convert String to Lowercase in Swift](https://www.hackingwithswift.com/example-code/strings/how-to-convert-a-string-to-lowercase-in-swift)
-- [Working with Strings in Swift](https://www.swiftbysundell.com/articles/working-with-strings-in-swift/)
-
-Dziękujemy za przeczytanie tego artykułu i miej się dobrze!
+- Dokumentacja Swift: https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html
+- Porównywanie i sortowanie równoznacznych ciągów znaków: https://developer.apple.com/documentation/swift/string/1786178-equal
+- Poradnik na temat zarządzania tekstem w języku Swift: https://www.appcoda.com/swift-string/

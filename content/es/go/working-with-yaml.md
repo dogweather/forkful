@@ -10,72 +10,66 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¿Qué es y por qué se usa?
 
-Si estás buscando una manera sencilla de manejar y almacenar datos estructurados en tu programa, YAML es una excelente opción. Con su sintaxis simple y su compatibilidad con múltiples lenguajes de programación, se ha convertido en una herramienta popular para tareas como la configuración de aplicaciones y la gestión de datos.
+Trabajar con YAML es una forma flexible y sencilla de almacenar datos estructurados en formato de texto. Los programadores utilizan YAML porque es un lenguaje fácil de leer y escribir, y por su capacidad para ser utilizado en diferentes entornos y lenguajes de programación.
 
-## Cómo Hacerlo
-
-Primero, necesitará instalar el paquete "gopkg.in/yaml.v2" en su sistema para poder trabajar con YAML en Go. Luego, importe el paquete en su código utilizando la siguiente sintaxis:
+## Cómo hacerlo:
 
 ```Go
-import "gopkg.in/yaml.v2"
-```
+// Importar el paquete YAML
+import "gopkg.in/yaml.v3"
 
-Ahora, puede crear una estructura de datos en Go para almacenar su información. Por ejemplo, si deseas almacenar la información de un libro, puede crear una estructura con los siguientes campos:
-
-```Go
-type Libro struct {
-    Titulo  string `yaml:"titulo"`
-    Autor   string `yaml:"autor"`
-    Genero  string `yaml:"genero"`
-    Páginas int    `yaml:"paginas"`
+// Definir una estructura para los datos en YAML
+type Persona struct {
+  Nombre string `yaml:"nombre"`
+  Edad int `yaml:"edad"`
+  Hobbies []string `yaml:"hobbies"`
 }
-```
 
-Para convertir esta estructura en un archivo YAML, utiliza la función "Marshal" del paquete YAML:
+// Crear datos en formato YAML
+datosYAML := `
+- nombre: Juan
+  edad: 25
+  hobbies:
+    - Fútbol
+    - Viajar
+- nombre: María
+  edad: 30
+  hobbies:
+    - Fotografía
+    - Cocina
+`
 
-```Go
-libro := Libro{Titulo: "El Principito", Autor: "Antoine de Saint-Exupéry", Genero: "Ficción", Páginas: 96}
-
-datos, err := yaml.Marshal(libro)
+// Decodificar los datos YAML en la estructura definida
+var personas []Persona
+err := yaml.Unmarshal([]byte(datosYAML), &personas)
 if err != nil {
-    log.Fatalf("error: %v", err)
+  panic(err)
 }
-fmt.Println(string(datos))
-```
 
-La salida de este código será un archivo YAML como este:
+// Acceder a los datos
+fmt.Println(personas[0].Nombre) // Juan
+fmt.Println(personas[1].Hobbies[0]) // Fotografía
 
-```yaml
-titulo: El Principito
-autor: Antoine de Saint-Exupéry
-genero: Ficción
-paginas: 96
-```
-
-También puedes convertir un archivo YAML en una estructura de datos en Go utilizando la función "Unmarshal". Por ejemplo, si tienes un archivo llamado "libros.yaml" con la información de varios libros, puedes guardarlos en una lista de estructuras de esta manera:
-
-```Go
-datos, err := ioutil.ReadFile("libros.yaml")
+// Codificar datos en YAML a partir de una estructura
+datos, err := yaml.Marshal(personas)
 if err != nil {
-    log.Fatalf("error: %v", err)
+  panic(err)
 }
 
-var lista []Libro
-err = yaml.Unmarshal(datos, &lista)
-if err != nil {
-	log.Fatalf("error: %v", err)
-}
+fmt.Println(string(datos)) // Imprime en formato YAML
+
 ```
 
-## Profundizando
+## Profundizando:
 
-Además de la creación y lectura de archivos YAML, el paquete "gopkg.in/yaml.v2" cuenta con varias funciones útiles como "Encoder" y "Decoder" para trabajar con flujos de datos, y métodos para actualizar y eliminar campos de una estructura existente. También es posible utilizar etiquetas personalizadas en las estructuras de datos para tener un mayor control sobre la conversión a YAML.
+El formato YAML fue creado en el año 2001 por Clark Evans y Dan Allen, y desde entonces ha ganado popularidad en el mundo de la programación. Una alternativa a YAML es el formato JSON, pero YAML ofrece una sintaxis más legible para los humanos, lo que lo hace muy útil para configurar aplicaciones y sistemas.
 
-Para obtener más información sobre cómo trabajar con YAML en Go, puedes consultar la documentación oficial del paquete y la guía de referencia en línea.
+En Go, el paquete "gopkg.in/yaml.v3" es una implementación de la especificación YAML 1.2. Permite decodificar y codificar datos en formato YAML utilizando structs y tags, lo que lo hace muy sencillo y eficiente de trabajar.
 
-## Ver también
+## Ver también:
 
-- [Documentación oficial del paquete YAML en Go](https://pkg.go.dev/gopkg.in/yaml.v2)
-- [Guía de referencia en línea de YAML](https://yaml.org/)
+- Documentación de la especificación YAML: https://yaml.org/spec/
+- Paquete "gopkg.in/yaml.v3": https://pkg.go.dev/gopkg.in/yaml.v3
+- Comparación entre YAML y JSON: https://www.edivaldobrito.com.br/sintaxe-yaml-e-json/

@@ -10,36 +10,19 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
-Si estás buscando un lenguaje de programación fácil de aprender, versátil y ampliamente utilizado, no busques más allá de Bash. No solo es una excelente opción para la automatización de tareas en sistemas operativos Linux y Unix, sino que también puede ser utilizado para crear scripts y aplicaciones. ¡Incluso puedes utilizarlo como intérprete de comandos en la terminal!
+## Qué y Por Qué?
+Comenzar un nuevo proyecto en Bash es simplemente iniciar un nuevo conjunto de tareas o actividades para lograr un objetivo específico. Los programadores lo hacen para crear soluciones únicas y personalizadas para sus problemas o necesidades.
 
-## Cómo
-Para empezar a utilizar Bash y comenzar un nuevo proyecto, primero necesitas asegurarte de tenerlo instalado en tu sistema operativo. Si estás utilizando Linux o Unix, es muy probable que ya lo tengas instalado. En caso contrario, puedes instalarlo fácilmente utilizando los comandos apropiados para tu sistema operativo.
-
-Una vez que tienes Bash instalado, puedes comenzar a escribir tu código en cualquier editor de texto que prefieras. ¡Incluso puedes utilizar la propia terminal para escribir tus scripts! Aquí te dejamos un ejemplo de un script simple que muestra un mensaje por pantalla:
-
-```Bash
-#!/bin/bash
-echo "¡Hola Mundo!"
+## Cómo:
 ```
+Bash script.sh
+```
+Este comando inicia un nuevo proyecto en Bash llamado "script.sh". A partir de ahí, puedes comenzar a agregar tus comandos y lógica para realizar la tarea deseada.
 
-Nota: El primer comentario es conocido como "shebang" y le indica al sistema que el archivo debe ser ejecutado por Bash.
+## Deep Dive:
+Iniciar un nuevo proyecto en Bash es una práctica común entre los programadores debido a la flexibilidad y potencia de este lenguaje de scripting. Además, Bash es ampliamente utilizado en sistemas basados en Unix, lo que lo convierte en una herramienta esencial para muchos desarrolladores. Alternativas a Bash incluyen otros lenguajes de scripting como Python o Perl, pero Bash sigue siendo una opción popular debido a su familiaridad y simplicidad para tareas básicas de scripting. La implementación de un nuevo proyecto en Bash requiere un conocimiento de los comandos y la sintaxis de este lenguaje, así como una comprensión de cómo funciona en conjunto con el sistema operativo.
 
-Para ejecutar este script, simplemente debes guardar el archivo con una extensión .sh y luego ejecutar el siguiente comando en tu terminal:
-
-`bash mi_script.sh`
-
-Y ¡voilà! Verás el mensaje "¡Hola Mundo!" impreso en la terminal.
-
-## Profundizando
-Ahora que ya tienes idea de cómo escribir un script básico en Bash, vamos a profundizar un poco más en lo que significa comenzar un nuevo proyecto. Lo primero que debes hacer es planificar qué quieres lograr con tu proyecto y qué herramientas de Bash necesitarás para hacerlo.
-
-Una de las ventajas de Bash es su amplia biblioteca de comandos y herramientas integradas que te permiten realizar una amplia gama de tareas. Para tener un conocimiento más profundo de todas las posibilidades de Bash, puedes consultar la documentación oficial o buscar tutoriales en línea.
-
-Además, es importante seguir buenas prácticas de codificación, como utilizar variables descriptivas, comentar tu código y mantenerlo organizado para facilitar su mantenimiento. No tengas miedo de experimentar y explorar nuevas funcionalidades de Bash para mejorar tu proyecto.
-
-## Ver también
-- [Documentación oficial de Bash](https://www.gnu.org/software/bash/manual/bash.html#Introduction)
-- [Guía de referencia de Bash](https://tldp.org/LDP/abs/html/)
-- [10 ejemplos útiles de scripts en Bash](https://linuxconfig.org/bash-scripting-tutorial-for-beginners)
-- [Tutorial interactivo para aprender Bash desde cero](https://www.learnshell.org/)
+## Ver también:
+- [Guía de comandos Bash para principiantes](https://www.hostinger.es/tutoriales/comandos-de-linux/)
+- [Documentación oficial de Bash](https://www.gnu.org/software/bash/manual/bash.html)
+- [Introducción a la línea de comandos de Unix](https://www.tutorialspoint.com/unix_commands/index.htm)

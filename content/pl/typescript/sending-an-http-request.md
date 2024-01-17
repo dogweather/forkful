@@ -1,7 +1,7 @@
 ---
-title:                "Wysyłanie żądania http"
-html_title:           "TypeScript: Wysyłanie żądania http"
-simple_title:         "Wysyłanie żądania http"
+title:                "Wysłanie żądania http"
+html_title:           "TypeScript: Wysłanie żądania http"
+simple_title:         "Wysłanie żądania http"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "HTML and the Web"
@@ -10,55 +10,21 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i Dlaczego?
+Wysyłanie zapytań HTTP to podstawowa funkcjonalność w programowaniu, polegająca na komunikacji z serwerem w celu pobrania lub przesłania danych. Programiści używają tego mechanizmu, aby otrzymać informacje z zewnętrznych źródeł lub przekazać informacje do innej aplikacji.
 
- Wysyłanie żądania HTTP jest niezwykle ważną częścią procesu tworzenia aplikacji internetowych. Pozwala ono na komunikację z serwerem i pobieranie danych, co jest niezbędne do działania wielu aplikacji.
-
-## Jak to zrobić
-
-```TypeScript
-// Przykładowe żądanie GET przy użyciu biblioteki Axios
-import axios from 'axios';
-
-axios.get('https://api.example.com/users')
-  .then((response) => {
-    console.log(response.data);
-  })
-  .catch((error) => {
-    console.log(error);
-  });
+## Jak to zrobić:
+W TypeScriptie można użyć funkcji ```fetch```, aby wysłać zapytanie HTTP. Przykładowe użycie może wyglądać następująco:
 ```
-
-```TypeScript
-// Przykładowe żądanie POST przy użyciu wbudowanych metod języka TypeScript
-const data = {
-  email: 'example@gmail.com',
-  password: 'secretpassword'
-};
-
-fetch('https://api.example.com/login', {
-  method: 'POST',
-  body: JSON.stringify(data)
-})
-  .then((response) => response.json())
-  .then((data) => {
-    console.log(data);
-  })
-  .catch((error) => {
-    console.log(error);
-  });
+fetch('https://example.com/api/users')
+  .then(response => response.json())
+  .then(data => console.log(data));
 ```
+Wynik zapytania będzie przechowywany w zmiennej `data`, która zawiera obiekt zawierający odpowiedź serwera.
 
-#### Szczegółowe informacje
+## Deep Dive:
+Wysyłanie zapytań HTTP jest nieodłączną częścią aplikacji sieciowych od samego początku istnienia internetu. Obecnie różne języki programowania oferują różne metody do realizacji tego zadania. W TypeScript można również użyć biblioteki Axios, która zapewnia bardziej zaawansowane funkcje takie jak obsługa błędów i interakcja z API z użyciem promise'ów.
 
-Wysyłanie żądania HTTP jest możliwe dzięki wykorzystaniu różnych bibliotek i metod w języku TypeScript. Najpopularniejszymi bibliotekami do tego celu są Axios, Request czy Fetch API, które umożliwiają tworzenie żądań HTTP w prosty i efektywny sposób.
-
-Przy wysyłaniu żądań należy zwrócić uwagę na kody odpowiedzi (status code), które dostarczają informacji o statusie wykonanego żądania. Dzięki nim można wykryć ewentualne błędy w komunikacji z serwerem i odpowiednio zareagować.
-
-Wysyłając żądanie HTTP można także przesyłać dane w różnych formatach, np. jako dane JSON lub w formularzu. W takim przypadku należy odpowiednio sformatować ciało żądania przy użyciu metody JSON.stringify lub FormData.
-
-## Zobacz także
-
-- [Dokumentacja Axios](https://github.com/axios/axios)
-- [Dokumentacja Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
-- [Dokumentacja Request](https://github.com/request/request)
+## Zobacz także:
+- [Dokumentacja TypeScript dla funkcji fetch](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-1-7.html#introduction-of-the-built-in-data-types-object-assign-object-entries-object-getownpropertydescriptors-object-values-object-is)
+- [Oficjalna dokumentacja Axios](https://github.com/axios/axios)

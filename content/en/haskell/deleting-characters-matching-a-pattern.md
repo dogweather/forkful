@@ -10,57 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-Often in programming, we encounter situations where we need to manipulate strings to achieve a certain result. Deleting characters matching a specific pattern can be useful when cleaning up user input or processing large amounts of data.
+Deleting characters that match a particular pattern is a common task for programmers. It involves searching through a given string or text and removing any characters that match a specified criteria. This can be useful in data cleaning and formatting, as well as in filtering out unwanted data.
 
-## How To
+## How to:
 
-To delete characters matching a pattern in Haskell, we can use the `filter` function along with a custom predicate. Let's say we want to remove all numbers from a string, we could write a function like this:
+To delete characters matching a pattern in Haskell, we can use the `filter` function. This function takes two arguments - a predicate function and a list. It returns a new list with only the elements that satisfy the given predicate.
 
-```Haskell
-removeNumbers :: String -> String
-removeNumbers xs = filter (\x -> x `notElem` "0123456789") xs
-```
-
-In this example, we use `filter` to remove all characters that are not a number from the given string. The `notElem` function checks if a character is not present in a given list. We can then call this function with our desired string and the output will be the original string without any numbers.
+Let's say we want to remove all vowels from a string. We can define a function that checks if a character is a vowel:
 
 ```Haskell
-removeNumbers "abc123xyz" -- Output: "abcxyz"
+isVowel :: Char -> Bool
+isVowel c = c `elem` "aeiou"
 ```
 
-We can also use regular expressions to remove characters matching a specific pattern. The `subRegex` function from the `Text.Regex` module can be useful for this purpose. Here's an example of a function that removes all vowels from a string using regular expressions:
+Then, we can use `filter` to remove all vowels from a given string:
 
 ```Haskell
-import Text.Regex (subRegex)
-
-removeVowels :: String -> String
-removeVowels xs = subRegex (mkRegex "[aeiou]") xs ""
-
--- `mkRegex` is used to create a regex pattern, and the third argument is the replacement string
+filter isVowel "hello world" -- Output: "hll wrld"
 ```
+
+We can also use more complex patterns or regular expressions with the `filter` function to remove specific characters from a string.
 
 ```Haskell
-removeVowels "hello world" -- Output: "hll wrld"
+import Text.Regex.Posix -- Import the regex library
+
+-- Function that removes all digits from a string
+removeDigits :: String -> String
+removeDigits str = filter (\x -> not (x =~ "[0-9]" :: Bool)) str
+
+removeDigits "ABC123" -- Output: "ABC"
 ```
 
-## Deep Dive
+## Deep Dive:
 
-In Haskell, strings are represented as lists of characters. When we use the `filter` function, it traverses through the entire list, applies the given predicate to each element, and returns a new list with the filtered elements. This makes it an efficient way to delete characters matching a pattern.
+Pattern matching and filtering have been used in programming languages for a long time. In Haskell, the `filter` function is inspired by the mathematical concept of a filter. It takes a list and returns a new list with only the elements that match a certain criteria.
 
-We can also combine multiple predicates to create more complex filters. For example, if we want to remove all uppercase letters and numbers from a string, we can do so by using the `all` function along with `isUpper` and `isDigit` from the `Data.Char` module:
+There are other ways of deleting characters in Haskell, such as using the `map` function or list comprehensions. These methods can also be used for deleting elements that match a pattern, but they may have different syntax and usage.
 
-```Haskell
-import Data.Char (isUpper, isDigit)
+Under the hood, the `filter` function is implemented using recursion. When a condition is met for a particular element, it is added to the result list, and the function is recursively called on the rest of the elements. This continues until all elements have been checked.
 
-removeUpperAndDigits :: String -> String
-removeUpperAndDigits xs = filter (\x -> all (not . ($ x)) [isUpper, isDigit]) xs
-```
+## See Also:
 
-In the above code, we use the `all` function to check if all predicates (i.e. `isUpper` and `isDigit`) return false for a given character, and only then the character gets filtered out.
-
-## See Also
-
-- [Haskell String Manipulation - Real World Haskell](https://www.realworldhaskell.org/v2/io-and-command-line-arguments.html#more-io-stringmanipulation)
-- [Haskell String Functions - Hoogle](https://hoogle.haskell.org/?hoogle=String+-%3E+String)
-- [Working with lists - Learn You a Haskell](http://learnyouahaskell.com/starting-out#ready-set-go)
+- [Haskell filter function](https://hackage.haskell.org/package/base-4.14.1.0/docs/Prelude.html#v:filter)
+- [Regular expressions in Haskell](https://hackage.haskell.org/package/regex-base-0.93.2/docs/Text-Regex-Base-RegexLike.html)

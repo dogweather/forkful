@@ -1,7 +1,7 @@
 ---
-title:                "Imprimer la sortie de débogage"
-html_title:           "Haskell: Imprimer la sortie de débogage"
-simple_title:         "Imprimer la sortie de débogage"
+title:                "Affichage de la sortie de débogage"
+html_title:           "Haskell: Affichage de la sortie de débogage"
+simple_title:         "Affichage de la sortie de débogage"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Testing and Debugging"
@@ -10,60 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Qu'est-ce que c'est et pourquoi le faire?
 
-Il y a souvent des moments où vous souhaitez vérifier et comprendre ce qui se passe dans votre code Haskell pendant son exécution. Imprimer des messages de débogage peut vous aider à suivre le flux de votre programme et à détecter les erreurs ou les bogues plus facilement.
+L'impression de sortie de debug est une pratique courante chez les programmeurs pour afficher des informations supplémentaires sur le fonctionnement d'un programme. Cela peut être utile pour déboguer des erreurs ou suivre le flux d'exécution d'un programme.
 
-## Comment faire
+## Comment faire:
 
-Pour imprimer des messages de débogage en Haskell, vous pouvez utiliser la fonction `print`. Elle accepte n'importe quelle expression en entrée et la convertit en chaîne de caractères avant de l'imprimer dans la console. Par exemple :
-
-```Haskell
-a <- 10
-b <- 5
-print (a + b)
-```
-
-Cela affichera `15` dans la console. Vous pouvez également utiliser la fonction `putStrLn` pour imprimer des chaînes de caractères, comme dans l'exemple suivant :
+Voici un exemple de code Haskell qui utilise la fonction ```print``` pour afficher du texte dans la console:
 
 ```Haskell
-putStrLn "Le résultat est:"
-print (a + b)
-```
-
-Cela affichera :
-
-```
-Le résultat est:
-15
-```
-
-## Plongée en profondeur
-
-Si vous avez besoin d'imprimer des messages de débogage complexes ou d'accéder à des variables dans plusieurs parties de votre code, vous pouvez utiliser la bibliothèque `Debug.Trace`. Elle fournit plusieurs fonctions utiles pour l'impression de débogage, notamment `trace`, `traceM` et `traceIO`.
-
-```Haskell
-import Debug.Trace
-
-myFunction :: Int -> Int
-myFunction x = trace ("Valeur de x : " ++ show x) (x * 2)
-
 main = do
-  let a = myFunction 5
-  print a
+  print "Bonjour, monde!"
 ```
 
-Cela affichera :
+Le résultat de l'exécution de ce code sera l'affichage du texte "Bonjour, monde!" dans la console.
 
-```
-Valeur de x : 5
-10
-```
+## Plongeon plus profond:
 
-Attention cependant, ces fonctions de débogage ne doivent être utilisées que pendant le développement et ne doivent pas être présentes dans votre code final, car elles peuvent avoir des effets indésirables sur les performances.
+L'impression de sortie de debug est une pratique qui existe depuis les premiers jours de la programmation. Avant l'introduction des outils de débogage modernes, c'était le seul moyen pour les programmeurs de suivre l'exécution de leur code.
 
-## Voir aussi
+Bien qu'elle reste utile dans certaines situations, l'impression de sortie de debug peut également être un moyen inefficace et fastidieux de déboguer un code complexe. Heureusement, il existe maintenant des outils plus sophistiqués tels que les débogueurs graphiques, les enregistreurs de stack trace et les analyseurs de performance.
 
-- [Documentation de la fonction `print`](https://hackage.haskell.org/package/base-4.12.0.0/docs/Prelude.html#v:print)
-- [Documentation de la bibliothèque `Debug.Trace`](https://hackage.haskell.org/package/base-4.12.0.0/docs/Debug-Trace.html)
-- [Guide de débogage en Haskell](https://wiki.haskell.org/Debugging)
+L'implémentation de l'impression de sortie de debug dans Haskell est assez simple, grâce à la fonction standard ```print``` et à l'utilisation de la monade IO pour afficher les données dans la console.
+
+## Voir aussi:
+
+- [Haskell Wiki page on debugging](https://wiki.haskell.org/Debugging)
+- [Debugging Techniques - A Functional Programming Approach](https://www.cs.kent.ac.uk/people/staff/sjt/AfpB/)
+- [Debugging and Profiling in Haskell](https://www.fpcomplete.com/blog/2014/08/haskell-debugging-techniques)

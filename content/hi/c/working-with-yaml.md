@@ -1,7 +1,7 @@
 ---
-title:                "यामल के साथ काम करना"
-html_title:           "C: यामल के साथ काम करना"
-simple_title:         "यामल के साथ काम करना"
+title:                "Yaml के साथ काम करना"
+html_title:           "C: Yaml के साथ काम करना"
+simple_title:         "Yaml के साथ काम करना"
 programming_language: "C"
 category:             "C"
 tag:                  "Data Formats and Serialization"
@@ -10,42 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Kyon
-YAML ek bahut prachalit file format hai jise data ko store aur transmit karne ke liye istemal kiya jata hai. YAML samajhne aur likhne mein bahut asaan hai, isliye bahut se developers iska istemal karte hain.
+## क्या और क्यों? 
+यैमल (YAML) क्या होता है? यह एक संरचित पाठ स्वरूप है जो प्रोग्रामरों को अपने डेटा को संगठित और स्पष्ट रूप से प्रबंधित करने की अनुमति देता है। प्रोग्रामर्स आमतौर पर यामल का उपयोग अपने कोड में स्ट्रक्चर्स और कॉन्फ़िगरेशन डेटा को लोड और लिखने के लिए करते हैं। 
 
-## Kaise Kare
-Agar aap C programming language mein YAML ka istemal karna chahte hain, toh aapko ek library install karni hogi jise YAML parser kehte hain. Iss library ko istemal karke aap ek YAML file read aur write kar sakte hain.
+## कैसे करें:
+यामल का उपयोग करने के लिए, आपको पहले यामल ग्रंथिका के साथ एक यामल पार्सर पुस्तकालय का उपयोग करना होगा। एक बार पार्सर प्राप्त करने के बाद, आप अपने कोड में यामल फ़ाइल खोल सकते हैं और सभी डेटा संरचित कर सकते हैं। नीचे दिए गए उदाहरण में, हम एक यामल फ़ाइल से अधिक जानकारी प्राप्त करने के लिए एक कैसे-तो कोड देखेंगे। 
 
-Ek basic YAML file kuch iss tarah dikhta hai:
+``` C 
+// यामल फ़ाइल से डेटा प्राप्त करने के लिए यामल पर्सर को परिभाषित करें 
+YAML_PARSER* parser = YAML_parser_new();
 
-```C
-names:
-  - John
-  - Jane
-  - Bob
+// यामल फ़ाइल खोलें 
+FILE* file = fopen("data.yml", "r"); 
 
-ages:
-  John: 25
-  Jane: 30
-  Bob: 35
+// यामल फ़ाइल से डेटा पार्स करें 
+YAML_parser_load(parser, file); 
+
+// डेटा पार्स करें 
+YAML_NODE* node = YAML_parser_parse(parser); 
+
+// डेटा के लिए कुंजियां और मान प्राप्त करें 
+YAML_KEY_VALUE_PAIR* kvp = YAML_node_get_key_value_pairs(node); 
+
+// डेटा कुंजियां की प्रतिलिपि स्ट्रक प्राप्त करें 
+char* key = YAML_key_value_pair_get_key(kvp);
+// डेटा कुंजियां के मान की प्रतिलिपि स्ट्रक प्राप्त करें 
+char* value = YAML_key_value_pair_get_value(kvp);
+
+// डेटा मान प्रिंट करें 
+printf("%s: %s\n", key, value);
+
+// पार्सर मेमोरी साफ़ करें 
+YAML_parser_destroy(parser); 
+
 ```
 
-Iss file mein `names` aur `ages` dono keys hain jinki values lists aur dictionaries hain. Iss tarah ke structured data ko YAML mein store karke access karna bahut asaan hai.
+उदाहरण आउटपुट: 
+first_name: John 
+last_name: Doe 
+age: 27 
 
-YAML parser library ka istemal karne ke liye, aapko sabse pehle isse include karna hoga:
+## गहराई में जाएं:
+यामल को जन्म दिसंबर 2001 में दर्ज हुआ, और वह तब से एक लोकप्रिय संरचना भाषा बन गई है। प्रोग्रामर लोग यामल का उपयोग अक्सर एक स्ट्रक्चर्ड डेटा स्टोरेज के रूप में करते हैं जो पाठ फ़ाइलों में शामिल होता है। यामल के अलावा, कुछ अल्टर्नेटिव भाषाएं जैसे XML और JSON भी हैं। यामल से आसानी से पार्स किया जा सकता है और यह यूटिलिटी के रूप में भी जाना जाता है। अगर आपको अपने पाठ और स्ट्रक्चर्ड डेटा को प्रबंधित करने की आवश्यकता है, तो यामल आपके लिए बहुत ही उपयोगी हो सकता है। 
 
-```C
-#include <yaml.h>
-```
-
-Iss ke baad, aapko `yaml_parser_t` aur `yaml_document_t` structures ko initialize karna hoga. Phir aapko `yaml_parser_initialize()` aur `yaml_parser_load()` functions ka istemal karke YAML file ko parse karna hoga. Iss process ke baad, aap YAML file ke saare data ko access kar sakte hain.
-
-## Deep Dive
-Agar aap YAML file ko padh karke usme se specific data ko extract karna chahte hain, toh aap `yaml_mapping_t` aur `yaml_scalar_t` structures ka istemal kar sakte hain. `yaml_mapping_t` structure se aap keys aur values ko access kar sakte hain, jabki `yaml_scalar_t` structure se aap particular values ko access kar sakte hain.
-
-Iss tarah se aap C programming language mein YAML ka istemal kar sakte hain aur apne code ko organized aur readable bana sakte hain.
-
-## Dekhein Bhi
-- [YAML Official Website](https://yaml.org/)
-- [YAML Parser Library for C](https://pyyaml.org/wiki/LibYAML)
-- [YAML Tutorials for Beginners](https://www.tutorialspoint.com/yaml/)
+## इससे जुड़ी और भी

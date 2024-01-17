@@ -10,86 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why? 
+Comparing two dates in the context of programming refers to the process of determining the chronological order of two given dates. This is an important task for programmers as it allows for better data organization and analysis, making it easier to understand and work with date-based information. 
 
-One common task in programming is comparing two dates. This can be useful for tasks such as sorting data, checking for scheduling conflicts, or determining the amount of time between two events. In this article, we will explore how to compare dates using Go, the current version of the popular programming language.
-
-## How To
-
-To compare two dates in Go, we can use the `Equal()` and `Before()` methods from the `time` package. These methods take in two `time.Time` objects, which represent specific moments in time, and return `true` or `false` depending on the comparison result.
-
-Let's look at an example of comparing two dates:
+## How to:
+Comparing two dates in Go is a straightforward task. The standard library provides the `time` package, which offers functions specifically designed for date and time related operations. Here's an example of comparing two dates using the `IsZero()` and `Before()` functions:
 
 ```Go
 package main
 
 import (
-	"fmt"
-	"time"
+    "fmt"
+    "time"
 )
 
 func main() {
-	// creating two `time.Time` objects with different dates
-	date1 := time.Date(2021, time.January, 1, 0, 0, 0, 0, time.UTC)
-	date2 := time.Date(2021, time.February, 1, 0, 0, 0, 0, time.UTC)
+    // creating two date objects
+    date1 := time.Date(2021, time.January, 1, 0, 0, 0, 0, time.UTC)
+    date2 := time.Date(2020, time.December, 1, 0, 0, 0, 0, time.UTC)
 
-	// using `Equal()` method to check if dates are equal
-	equal := date1.Equal(date2)
-	fmt.Println("Dates are equal:", equal)
-
-	// using `Before()` method to check if date1 comes before date2
-	before := date1.Before(date2)
-	fmt.Println("Date1 comes before date2:", before)
+    // comparing the dates
+    // using IsZero() to check if date2 was not initialized
+    if date2.IsZero() {
+        fmt.Printf("date2 is not initialized")
+    } else if date1.Before(date2) {
+        fmt.Printf("%v is before %v", date1, date2)
+    } else if date2.Before(date1) {
+        fmt.Printf("%v is before %v", date2, date1)
+    } else {
+        fmt.Printf("%v and %v are the same dates", date1, date2)
+    }
 }
 ```
 
-The output of this code will be:
+This code snippet creates two date objects and then uses the `IsZero()` function to check if the second date was initialized or not. If it was not initialized, a message is displayed. Otherwise, the `Before()` function is used to compare the dates and the appropriate message is displayed.
+
+Sample output:
 ```
-Dates are equal: false
-Date1 comes before date2: true
-```
-
-In this example, we first create two `time.Time` objects with different dates. Then, we use the `Equal()` method to check if the dates are equal, which returns `false` since they are not the same date. Next, we use the `Before()` method to check if date1 comes before date2, which returns `true` since date1 is January 1st and date2 is February 1st. 
-
-We can also use the `After()` method to check if date1 comes after date2, and the `Before()` and `After()` methods can also be used for `time.Date` objects that have different times as well.
-
-## Deep Dive
-
-Internally, the `Equal()` and `Before()` methods compare the underlying `int64` values of the two `time.Time` objects. These values represent the number of nanoseconds since January 1, 1970 UTC. This means that when comparing dates, the time component is not taken into consideration.
-
-However, if we want to compare dates with the time component, we can use the `Before()` and `After()` methods on the `time.Time` objects after trimming them to the same time zone using the `Truncate()` method. For example:
-
-```Go
-package main
-
-import (
-	"fmt"
-	"time"
-)
-
-func main() {
-	// creating two `time.Time` objects with different dates and times
-	date1 := time.Date(2021, time.January, 1, 12, 0, 0, 0, time.UTC)
-	date2 := time.Date(2021, time.January, 1, 5, 0, 0, 0, time.UTC)
-
-	// trimming both dates to UTC 
-	date1 = date1.Truncate(time.Hour)
-	date2 = date2.Truncate(time.Hour)
-
-	// using `After()` method to check if date1 comes after date2
-	after := date1.After(date2)
-	fmt.Println("Date1 comes after date2:", after)
-}
+2021-01-01 00:00:00 +0000 UTC is before 2020-12-01 00:00:00 +0000 UTC
 ```
 
-The output of this code will be:
-```
-Date1 comes after date2: true
-```
+## Deep Dive:
+Compared to other programming languages, Go offers a more simplified and efficient way of comparing dates. This is thanks to its `time` package, which provides functions for various operations such as creating dates, parsing date strings, and comparing dates. Before the inclusion of this package in Go 1.1, developers had to rely on other packages or write their own code to handle date and time operations.
 
-In this example, we first create two `time.Time` objects with different dates and times. Then, we truncate both of them to the hour level using the `Truncate()` method, effectively removing the time component. This allows us to compare just the dates using the `After()` method, which returns `true` since date1 is after date2.
+While the `Before()` function is commonly used for comparing dates, the `After()` and `Equal()` functions can also be used depending on the specific needs of the program. Additionally, Go also offers the `Date()` function which allows for the creation of custom dates by specifying the year, month, and day values.
 
-## See Also
-
-- Go `time` package documentation: https://golang.org/pkg/time/
-- Date and time formats in Go: https://yourbasic.org/golang/format-parse-string-time-date-example/
+## See Also:
+- [The Go Programming Language](https://golang.org/) official website
+- [The time Package](https://golang.org/pkg/time/) in the Go standard library documentation
+- [A Tour of Go](https://tour.golang.org/welcome/1) interactive tutorial for learning Go

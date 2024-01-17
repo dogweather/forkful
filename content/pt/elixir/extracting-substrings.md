@@ -1,7 +1,7 @@
 ---
-title:                "Extraindo subcadeias de caracteres"
-html_title:           "Elixir: Extraindo subcadeias de caracteres"
-simple_title:         "Extraindo subcadeias de caracteres"
+title:                "Extraindo subcadeias"
+html_title:           "Elixir: Extraindo subcadeias"
+simple_title:         "Extraindo subcadeias"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -10,41 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+##O que e Porque?
+Extrair substrings é o processo de obter parte de uma string maior em uma string separada. Programadores frequentemente realizam esta tarefa para tratar strings mais facilmente, trabalhando com apenas a informação necessária em determinado momento.
 
-Extrair subtrings é extremamente útil na programação Elixir quando se trata de manipulação de strings. Ao dividir uma string em partes menores, podemos facilitar a filtragem, busca e substituição de informações específicas.
+##Como fazer:
+Extrair substrings em Elixir é simples e direto. Usando a função `String.slice`, podemos especificar o índice inicial e o tamanho da substring que queremos obter.
 
-## Como Fazer
+    ```Elixir
+      string = "Elixir é uma ótima linguagem de programação"
+      String.slice(string, 7, 5) # retorna "é uma"
+    ```
 
-Extrair subtrings em Elixir é um processo bem simples. Você pode usar a função `slice/2` ou `substring/3` para realizar essa tarefa.
+Também é possível usar a função `String.substr` para especificar apenas o índice inicial e obter o resto da string a partir desse ponto.
 
-Aqui está um exemplo de como a função `slice/2` pode ser utilizada para extrair uma substring de uma string.
+    ```Elixir
+      string = "Elixir é uma ótima linguagem de programação"
+      String.substr(string, 26) # retorna "linguagem de programação"
+    ```
 
-```
-Elixir iex> str = "Programando em Elixir é divertido!"
-iex> String.slice(str, 11..20)
-" Elixir é "
-```
+##Mergulho Profundo:
+Extrair substrings é uma tarefa essencial em muitas linguagens de programação, pois permite que os programadores trabalhem com strings de maneira mais fácil e eficiente. Outras linguagens, como Java e Python, também possuem funções semelhantes para a extração de substrings.
 
-Já a função `substring/3` permite que você defina a posição inicial e final da substring desejada.
+A implementação da função `String.slice` em Elixir é baseada em uma biblioteca C chamada libstring, que contém várias funções para manipulação de strings.
 
-```
-Elixir iex> str = "Programando em Elixir é divertido!"
-iex> String.substring(str, 22, 10)
-"divertido"
-```
-
-Ambas as funções possuem uma vasta gama de opções para lidar com diferentes tipos de strings, como unicode, format string, entre outros.
-
-## Aprofundando
-
-Para entender melhor como essas funções funcionam, é importante saber que em Elixir as strings são representadas como uma lista de caracteres. Isso significa que podemos usar as mesmas funções que usamos em listas para manipular strings.
-
-A função `slice/2`, por exemplo, usa o operador `..` para indicar o intervalo de posições que devem ser selecionadas na lista de caracteres. Já a função `substring/3` usa o operador `:` para indicar o índice inicial e o final.
-
-Você também pode utilizar as funções `bin_to_list/1` e `list_to_bin/1` para converter entre string e lista de caracteres, tornando mais fácil a manipulação desses tipos de dados.
-
-## Veja também
-
-- [Documentação oficial do Elixir sobre strings](https://hexdocs.pm/elixir/String.html)
-- [Mais exemplos de uso da função `slice/2` e `substring/3`](https://medium.com/@diamondgfx/elixir-string-slicing-examples-3d1b7ade981f)
+##Veja Também:
+- [Documentação Oficial do Elixir sobre Strings](https://hexdocs.pm/elixir/String.html)
+- [Página da Biblioteca libstring](https://github.com/sergey-miryanov/libstring)

@@ -10,35 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Quoi & Pourquoi?
+Lire un fichier texte est une tâche courante pour les programmeurs. Cela consiste à accéder et à extraire des données à partir d'un fichier texte, ce qui peut être utile pour effectuer des traitements ultérieurs.
 
-Si vous êtes intéressé par la programmation en Clojure, vous avez probablement déjà entendu parler de la fonctionnalité de lecture de fichiers textes. Mais pourquoi voudriez-vous apprendre à le faire ? Tout d'abord, cela vous permettra de manipuler et d'analyser des données provenant de sources externes, ce qui est souvent nécessaire dans le développement de logiciels. De plus, comprendre comment lire des fichiers textes en Clojure vous permettra de mieux comprendre la manipulation de chaînes de caractères et les fonctions de manipulation de fichiers.
-
-## Comment faire
-
-Pour lire un fichier texte en Clojure, vous allez utiliser la fonction "slurp". Voici un exemple de code pour lire le contenu d'un fichier texte :
+## Comment faire:
+Il existe plusieurs façons de lire un fichier texte en Clojure. L'une des méthodes les plus simples consiste à utiliser la fonction `slurp`, qui permet de lire directement le contenu d'un fichier en une seule ligne de code. Par exemple:
 
 ```Clojure
-(slurp "mon_fichier.txt")
+(def texte (slurp "monFichier.txt"))
 ```
 
-Ce code renverra une chaîne de caractères contenant tout le contenu du fichier. Si vous voulez stocker ce contenu dans une variable, vous pouvez utiliser le "let binding" comme ceci :
+Cela stockera le contenu du fichier texte "monFichier.txt" dans une variable appelée "texte". Vous pouvez ensuite manipuler cette variable comme n'importe quelle chaîne de caractères en utilisant des fonctions de chaînes de caractères telles que `split` ou `substring`.
+
+Vous pouvez également utiliser les fonctions de la bibliothèque standard de Clojure, telles que `with-open`, pour lire un fichier texte ligne par ligne. Par exemple:
 
 ```Clojure
-(let [mon_fichier (slurp "mon_fichier.txt")]
-  (println mon_fichier))
+(with-open [f (clojure.java.io/reader "monFichier.txt")]
+  (doseq [ligne (line-seq f)]
+    (prn ligne)))
 ```
 
-Dans cet exemple, "mon_fichier" sera une variable contenant le contenu du fichier texte et la fonction "println" l'imprimera dans la console.
+Cela imprimera chaque ligne du fichier texte "monFichier.txt" sur une nouvelle ligne dans la console.
 
-## Plongée en profondeur
+## Plongée en profondeur:
+Lire des fichiers texte a été une fonctionnalité de base des langages de programmation depuis longtemps. Cela est dû à la nature omniprésente des fichiers texte dans les systèmes d'exploitation et leur utilité pour stocker des données.
 
-La fonction "slurp" peut également être utilisée pour lire des fichiers en ligne en passant l'URL du fichier en tant que paramètre. De plus, il existe d'autres fonctions de manipulation de fichiers en Clojure telles que "with-open" qui gère automatiquement la fermeture du fichier une fois que vous avez fini de le lire, ou "line-seq" qui lit un fichier ligne par ligne.
+Il existe également d'autres bibliothèques Clojure telles que `pandect`, `flatland/useful` et `data.csv` qui permettent de lire des fichiers texte d'une manière plus spécifique à un cas d'utilisation particulier. Il est important de choisir le bon outil pour la tâche à accomplir.
 
-Il est également important de noter que la fonction "slurp" renvoie une chaîne de caractères brute sans la diviser en lignes. Pour cela, vous pouvez utiliser la fonction "clojure.string/split-lines" pour diviser la chaîne en fonction des retours à la ligne.
+Lorsqu'on lit un fichier texte en Clojure, il est important de comprendre le type de données renvoyé par les différentes fonctions. Par exemple, `slurp` renvoie une chaîne de caractères, tandis que `line-seq` renvoie une séquence de lignes.
 
-## Voir aussi
-
-- Documentation officielle pour la fonction "slurp" : https://clojuredocs.org/clojure.core/slurp
-- Tutoriel sur la manipulation de fichiers avec Clojure : https://clojure.org/guides/io
-- Exemples de code pour lire et écrire des fichiers en Clojure : https
+## Voir aussi:
+- [Documentation officielle de Clojure sur la lecture de fichiers](https://clojuredocs.org/clojure.core/read-string)
+- [Tutoriel vidéo "Reading Files in Clojure" par Technomancy](https://www.youtube.com/watch?v=p4wff_iRZeQ)
+- [Documentation de la bibliothèque Pandect](https://cljdoc.org/d/pandect/pandect/0.5.0/doc/pandect.read)
+- [Documentation de la bibliothèque flatland/useful](https://cljdoc.org/d/flatland/useful/0.14.2/doc/read-file)
+- [Documentation de la bibliothèque data.csv](https://cljdoc.org/d/data.csv/data.csv/1.0.0/doc/read-csv-file)

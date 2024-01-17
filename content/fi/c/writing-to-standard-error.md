@@ -1,7 +1,7 @@
 ---
-title:                "Kirjoittaminen standardivirheeseen"
-html_title:           "C: Kirjoittaminen standardivirheeseen"
-simple_title:         "Kirjoittaminen standardivirheeseen"
+title:                "Standard errorin kirjoittaminen"
+html_title:           "C: Standard errorin kirjoittaminen"
+simple_title:         "Standard errorin kirjoittaminen"
 programming_language: "C"
 category:             "C"
 tag:                  "Files and I/O"
@@ -10,31 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mikä & Miksi?
 
-Kirjoitus virheilmoituksiin eri ohjelmointikielillä voi olla hyödyllistä esimerkiksi virheiden vianetsinnässä tai ohjelman kehityksen aikana. C-kielellä virheiden tulostaminen standardi virhevirtaan (standard error) on tärkeä osa ohjelmointia.
+Kirjoittaminen standardivirheeseen on tapa ilmoittaa ohjelmassa tapahtuneesta virheestä tai epäonnistuneesta toiminnasta. Tätä käytetään usein ohjelmoinnissa, jotta voidaan helposti tunnistaa ja korjata virheitä.
 
-## Kuinka
+## Ohjeet:
 
-Käyttämällä "fprintf" -funktiota voidaan kirjoittaa tekstiä standardi virhevirtaan. Esimerkiksi:
-
+### Esimerkki 1:
 ```C
-fprintf(stderr, "Tämä on esimerkki virheilmoituksesta!");
+#include <stdio.h>
+
+int main() {
+    fprintf(stderr, "Tämä on esimerkki kirjoittamisesta standardivirheeseen.");
+    return 0;
+}
+
+```
+### Tulostus:
+```
+Tämä on esimerkki kirjoittamisesta standardivirheeseen.
 ```
 
-Tämä tulostaa tekstin "Tämä on esimerkki virheilmoituksesta!" standardi virhevirtaan. Voit myös käyttää "perror" -funktiota, joka tulostaa viestin, joka vastaa tiettyä virhenumeroa. Esimerkiksi:
-
+### Esimerkki 2:
 ```C
-perror("Tiedostoa ei löydy!");
+#include <stdio.h>
+
+void function() {
+    fprintf(stderr, "Toinen esimerkki.");
+}
+
+int main() {
+    function();
+    return 0;
+}
+
+```
+### Tulostus:
+```
+Toinen esimerkki.
 ```
 
-tulostaisi tekstin "Tiedostoa ei löydy!: No such file or directory" standardi virhevirtaan.
+## Syväsukellus:
 
-## Syväsukellus
+Kirjoittaminen standardivirheeseen on ollut osa C-ohjelmointia jo pitkään. Sitä käytetään usein yhdessä ```fprintf```-funktion kanssa, joka mahdollistaa tarkemman virheen ilmoittamisen. On myös olemassa muita tapoja käsitellä virheitä, kuten käyttämällä ```errno```-muuttujaa, mutta kirjoittaminen standardivirheeseen on yksi helpoimmista tavoista ilmoittaa virhe ohjelmassa.
 
-Standardi virhevirta (stderr) on yksi kolmesta vakiotiedostovirrasta C-kielessä. Se on tarkoitettu virheilmoitusten ja diagnostiikkatietojen tulostamiseen ohjelmassa. Sen avulla voidaan helposti erottaa normaali tulostus (stdout) ja virheilmoitukset. Voit myös ohjata standardi virhevirran haluamaasi tiedostoon, esimerkiksi virhelokiin, käyttämällä "freopen" -funktiota. Tämä voi olla hyödyllistä esimerkiksi tuotannossa olevassa ohjelmassa.
+## Katso myös:
 
-## Katso myös
-
-- https://www.tutorialspoint.com/c_standard_library/c_function_fprintf.htm
-- https://www.tutorialspoint.com/c_standard_library/c_function_perror.htm
+- [fprintf-funktio](https://www.tutorialspoint.com/c_standard_library/c_function_fprintf.htm)
+- [errno-muuttuja](https://www.tutorialspoint.com/c_standard_library/c_macro_errno.htm)
+- [virheenkäsittely C:ssä](https://www.geeksforgeeks.org/error-handling-c-programs/)

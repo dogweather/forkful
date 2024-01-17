@@ -10,58 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué comparar dos fechas en Haskell?
+## ¿Qué & Por qué?
+Comparar dos fechas es una tarea común para los programadores, ya que les permite determinar la diferencia entre dos momentos en el tiempo. Esto es especialmente útil para aplicaciones que involucran eventos, citas o plazos. Al comparar dos fechas, los programadores pueden calcular la duración exacta entre ellas y tomar decisiones basadas en eso.
 
-Comparar dos fechas es una tarea común en la programación, especialmente en el desarrollo de aplicaciones que manejan eventos o transacciones en diferentes momentos. En Haskell, la comparación de fechas puede ser útil para realizar operaciones lógicas y cálculos de tiempo.
-
-## Cómo hacerlo en Haskell
-
-Para comparar dos fechas en Haskell, podemos utilizar el tipo de dato `Day` de `Data.Time`, que representa una fecha en el calendario gregoriano. Primero, necesitaremos importar este módulo:
+## Cómo:
+Veamos cómo puedes comparar dos fechas en Haskell utilizando la librería "Data.Time". Primero, debes importar la librería en tu código:
 
 ```Haskell
 import Data.Time
 ```
 
-Luego, podemos crear dos variables de tipo `Day`, asignándoles fechas específicas:
+Luego, puedes crear dos objetos de tipo "Day" (que representan una fecha) y utilizar la función "diffDays" para obtener la diferencia entre ellas en días.
 
 ```Haskell
-let fecha1 = fromGregorian 2020 5 5
-let fecha2 = fromGregorian 2020 8 10
+let fecha1 = fromGregorian 2021 9 1 -- 1 de Septiembre de 2021
+let fecha2 = fromGregorian 2021 9 15 -- 15 de Septiembre de 2021
+let diferencia = diffDays fecha2 fecha1 -- devuelve un tipo Int con el valor de días entre las dos fechas
 ```
 
-Y ahora, podemos comparar las fechas utilizando los operadores de comparación (`<`, `>`, `<=` y `>=`):
+## Deep Dive:
+Comparar dos fechas ha sido una tarea importante en la programación desde los primeros días de las computadoras. En décadas pasadas, los programadores tenían que escribir código complejo para manejar fechas y tiempos. Sin embargo, gracias a librerías como "Data.Time", esta tarea se ha vuelto mucho más simple y eficiente.
 
-```Haskell
-fecha1 < fecha2 -- devuelve True
-fecha1 > fecha2 -- devuelve False
-fecha1 <= fecha2 -- devuelve True
-fecha1 >= fecha2 -- devuelve False
-```
+Existen otras formas de comparar fechas en Haskell, como utilizando patrones de coincidencia en una función definida por el usuario. Además, es importante tener en cuenta la diferencia entre comparar dos fechas con precisión en días, o en horas, minutos e incluso segundos. Todo depende del contexto de tu aplicación y lo que necesites calcular.
 
-También es posible realizar comparaciones entre fechas que tengan una precisión mayor, como horas o incluso milisegundos.
-
-## Profundizando en la comparación de fechas en Haskell
-
-En Haskell, cuando comparamos dos fechas utilizando los operadores mencionados anteriormente, lo que realmente estamos comparando son los números enteros que representan los días. Por ejemplo, la función `fromGregorian` toma tres argumentos enteros para construir una fecha.
-
-Por lo tanto, para fechas exactamente iguales, su comparación devolverá `False`, ya que se están comparando los días enteros y no las fechas exactas.
-
-Sin embargo, podemos utilizar la función `compare` para obtener un resultado más específico de la comparación entre dos fechas. Esta función devolverá uno de los siguientes valores:
-
-- `LT`: si el primer argumento es anterior al segundo.
-- `GT`: si el primer argumento es posterior al segundo.
-- `EQ`: si ambos argumentos son iguales.
-
-Por ejemplo:
-
-```Haskell
-compare fecha1 fecha2 -- devuelve LT
-```
-
-También podemos utilizar la función `diffDays` para calcular la diferencia en días entre dos fechas, lo que puede ser útil para realizar cálculos de tiempo.
-
-## Ver también
-
-- [Documentación oficial de Data.Time](https://hackage.haskell.org/package/time/docs/Data-Time.html)
-- [Una guía básica de Haskell para principiantes](https://programacionconhaskell.com/guia-haskell-principiantes/)
-- [Cómo manejar fechas y horas en Haskell](https://tech.fpcomplete.com/haskell/tutorial/datetime)
+## See Also:
+- Documentación para la librería "Data.Time": https://hackage.haskell.org/package/time/docs/Data-Time.html
+- Ejemplos de comparación de fechas en Haskell: https://wiki.haskell.org/Date_and_time
+- Una guía detallada sobre cómo manejar fechas en Haskell: https://www.fpcomplete.com/haskell/tutorial/times-and-dates/

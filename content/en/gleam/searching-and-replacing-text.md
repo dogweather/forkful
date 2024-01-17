@@ -10,48 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##Why
+## What & Why?
 
-Have you ever found yourself with a huge block of text and needed to replace specific words or phrases within it? Maybe you're working on a website and want to update all instances of a certain product name, or you're writing a research paper and need to change the formatting of your citations. Whatever the case may be, using the Gleam programming language, you can quickly and easily search and replace text to make your life a whole lot easier. 
+Searching and replacing text is a common practice among programmers, where they look for a specific word or phrase in a codebase and replace it with another. This can be done manually, but it can be time-consuming and prone to errors, especially in larger codebases. Therefore, programmers use tools like Gleam to automate this process and increase efficiency.
 
-##How To
+## How to:
 
-To search and replace text using Gleam, you'll first need to import the string module. Then, you can use the `replace` function to specify the string you want to search for, and what you want to replace it with. Let's say we have the following block of text and we want to replace all instances of "apple" with "orange": 
+In Gleam, searching and replacing text is made easy with the `replace_all` function. Let's say we have a string variable `greeting` with the value "Hello, world!". If we want to replace "world" with "Gleam", we can do so with the following code:
 
-```
-Gleam code is so much fun. I love eating apples while coding.
-```
-
-Using the `replace` function, our code would look like this:
-
-```
-Gleam string.replace("Gleam code is so much fun. I love eating apples while coding.", "apple", "orange")
+```Gleam
+let new_greeting = replace_all(greeting, "world", "Gleam")
 ```
 
-And our output would be: 
+The output of `new_greeting` would be "Hello, Gleam!", with the previous word "world" replaced by "Gleam". It's that simple!
 
-```
-Gleam code is so much fun. I love eating oranges while coding.
-```
+## Deep Dive:
 
-Simple enough, right? But what if we want to replace multiple words or phrases at once? Gleam's `replace` function also allows us to pass in a tuple of strings and their replacements, making it even easier to search and replace text. For example, if we want to replace "apple" with "orange" and "coding" with "relaxing", our code would look like this:
+Searching and replacing text has been a crucial element of software development since the early days of programming. Initially, this process was done manually, but as programming languages and codebases grew more complex, automated methods were developed.
 
-```
-Gleam string.replace("Gleam code is so much fun. I love eating apples while coding.", [("apple", "orange"), ("coding", "relaxing")])
-```
+Alternatives to the `replace_all` function in Gleam include using regular expressions or other string manipulation methods. However, these can be more complicated and error-prone for certain cases. With Gleam, developers have a simple and reliable function specifically designed for this task.
 
-And our output would be: 
+Internally, the `replace_all` function in Gleam uses the `str::replace` function from the `std.string` module, which is built upon the Rust standard library's `replace` function. This makes it efficient and powerful for handling text replacement in code.
 
-```
-Gleam code is so much fun. I love eating oranges while relaxing.
-```
+## See Also:
 
-##Deep Dive 
-
-In addition to the `replace` function, Gleam also offers the `replace_n` function which allows you to specify the maximum number of replacements you want to make. This can be useful if you only want to replace the first few occurrences of a word or phrase. 
-
-Gleam's `replace` and `replace_n` functions also allow for case-insensitive replacements, so you don't have to worry about variations in capitalization. And for more complex search and replace operations, Gleam's pattern matching capabilities can be used to perform even more specific replacements. 
-
-##See Also
-
-For more on the string module and its functions, check out the official Gleam documentation [here](https://gleam.run/documentation/stdlib/string/). And for further reading on pattern matching, take a look at this guide on functional patterns in Gleam [here](https://medium.com/@lpil/functional-pattern-matching-in-gleam-1674b3b0e6fe).
+- [Gleam's official website](https://gleam.run/)
+- [Gleam's documentation](https://gleam.run/documentation)
+- [Rust standard library documentation on `replace`](https://doc.rust-lang.org/std/string/struct.String.html#method.replace)

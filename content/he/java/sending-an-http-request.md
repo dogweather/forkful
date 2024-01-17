@@ -10,55 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## למה 
+מה ולמה?
 
-למה לשלוח בקשת HTTP? כאשר מתכנתים מפתחים אפליקציות או אתרים, הם לעתים קרובות צריכים לשלוח ולקבל מידע משרתים חיצוניים. בקשת HTTP היא הדרך הנפוצה והנוחה ביותר לעשות זאת.
+שלושת המלים הללו - "שליחת בקשת HTTP" נשמעות כמו משהו מורכב וקשה, אבל בעצם זה פשוט מאוד. כשברשותנו יש צורך לגשת ולקבל מידע מאתר אינטרנט, כמו למשל לשלוח פורמטים עבור הרשמה או לקבל תוצאות מחיפוש גוגל, אנחנו משתמשים בבקשת HTTP. זהו דרך של "לדבר" עם האתר הזה ולבקש ממנו מידע מסוים. מתוך כך בקשת HTTP מאפשרת למתכנתים ליצור אפליקציות מתקדמות יותר וליישם פונקציות מיוחדות על מספר אתרים שונים.
 
-## כיצד לעשות זאת
-
-כדי לשלוח בקשת HTTP ב-Java, נשתמש בממשק `HttpURLConnection` ובאובייקט `URL` כדי ליצור קשר עם השרת הרצוי. להלן דוגמא פשוטה של קוד ששולח בקשת GET לאתר גוגל ומדפיס את התוצאה בקונסולה:
+איך לעשות זאת?
 
 ```java
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 
-public class HTTPRequestExample {
-
-    public static void main(String[] args) throws IOException {
-
-        // יצירת אובייקט URL שמייצג אתר גוגל
-        URL url = new URL("https://www.google.com");
-
-        // יצירת אובייקט HttpURLConnection כדי ליצור קשר עם השרת
-        HttpURLConnection con = (HttpURLConnection) url.openConnection();
-
-        // קביעת שיטת הבקשה ל-GET
-        con.setRequestMethod("GET");
-
-        // קריאת התוכן של התגובה
-        BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
-
-        String inputLine;
-        StringBuffer content = new StringBuffer();
-
-        while ((inputLine = in.readLine()) != null) {
-            content.append(inputLine);
-        }
-
-        // הדפסת התוצאה בקונסולה
-        System.out.println(content.toString());
-
-        // סגירת החיבור
-        in.close();
-    }
+URL url = new URL("https://www.example.com"); //כתובת האתר שבו אנחנו רוצים לשלוח בקשת HTTP
+HttpURLConnection con = (HttpURLConnection) url.openConnection(); //פתיחת חיבור עם האתר
+con.setRequestMethod("GET"); //קביעת שיטת הבקשה כמו GET, POST או PUT כמו שרוצים
+InputStream is = con.getInputStream(); //הקבלת המידע מהאתר בסוג הטקסט המתאים
+BufferedReader br = new BufferedReader(new InputStreamReader(is));
+String line;
+StringBuilder response = new StringBuilder();
+while ((line = br.readLine()) != null) { //קריאת המידע בקוד ושמירתו בתוך משתנה
+    response.append(line);
 }
+br.close();
+System.out.println(response.toString()); //הדפסת התוצאה בקונסול
 ```
 
-בקוד זה, אנו משתמשים בשיטת `GET` כדי לשלוח את הבקשה. ישנן גם שיטות אחרות כמו `POST`, `PUT` ו־`DELETE` המשמשות לתקשורת עם השרת בצורות שונות. כאשר נצטרך לשלוח מידע נוסף כמו פרמטרים או גוף נתונים, נשתמש במחלקת `HttpURLConnection` כדי להגדיר ולשלוח את הפרמטרים המתאימים.
+כאן נראה דוגמה של כיצד לשלוח בקשת HTTP באמצעות קוד Java. נשתמש בספריות מובנות כדי לפתוח חיבור עם האתר הרלוונטי ולקבל את המידע שבו. כמו בדוגמה לעיל, נשתמש בבקשת HTTP מסוג GET בכדי לקבל את התוכן של האתר. כמו כן, נדפיס את התוצאה בקונסול כדי לוודא שהכל עבד כראוי.
 
-## העומק של שליחת בקשת HTTP
+עכשיו נסתכל על מה באמת קורה מאחורי הקלעים ביצירת בקשת HTTP.
 
-בכתבה זו, למדנו כיצד לשלוח בקשת HTTP ב-Java באמצעות הממשק `HttpURLConnection`. ניתן להשתמש בקוד הזה כדי לתקשר עם שרתים חיצוניים ולקבל מידע במגוון צורות כג
+מעמק נראה דרך ותולדות:
+
+מתעלם מכך שתחת כל יישום רשת שאתה משתמש בתוכנית שלך, יש פעולות רשת ברקודאונים. רקודאונים זהו דרך בה תוכנית העובד העם (או יותר מדוייקת הפרוטוקול של רשת ניידת) מתחברת לשרת ברשת ברקודאונים הנו פתח חזית העבודה הנמיכה שדרכו היינו מחברים באינטרנט.
+
+נראה לדוגמה דרך מובן כדי לתקשור עם האתר בדיוק עם שתי ויזעוי רשת אכטו אומת ברקודאונים אחורי רבינות אתרי איגרות. הפתיחת רשת ברקודאנית עם אתר אכטו אומת עוזב את הפרוטוקול של Nieve או מתחבר עם כל הנותני שירות שקיימים עודפים שלא-עהתרים ה-2008RON / UFLUX או ה-	controller之外עשתיות.
+
+ראה גם:
+
+- https://www.w3.org/Protocols/HTTP
+- https://developer.mozilla.org/en-US

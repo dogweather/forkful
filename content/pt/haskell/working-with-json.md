@@ -10,44 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que JSON é importante?
+## O que é e porquê?
+Trabalhar com JSON é uma tarefa fundamental para programadores que lidam com dados estruturados. JSON (JavaScript Object Notation) é um formato de arquivo leve e de fácil leitura, baseado em texto, que é amplamente utilizado para armazenar e transmitir dados entre diferentes sistemas. Programadores utilizam JSON para facilitar a comunicação entre aplicações e garantir que os dados sejam interpretados corretamente.
 
-JSON (JavaScript Object Notation) é um formato de dados amplamente utilizado para transmitir e armazenar informações estruturadas. Em Haskell, o uso de JSON é importante porque permite que os desenvolvedores interajam com APIs, sistemas de banco de dados e diversas outras fontes de dados externas.
-
-# Como trabalhar com JSON em Haskell
-Para começar a trabalhar com JSON em Haskell, você precisará instalar a biblioteca `aeson`. Em seguida, importe o módulo `Data.Aeson` para ter acesso às funções e tipos necessários para lidar com JSON. Abaixo está um exemplo de código mostrando como analisar e codificar dados JSON:
+## Como fazer:
+Para trabalhar com JSON em Haskell, é necessário importar o módulo "Text.JSON". Em seguida, é possível utilizar funções como "readJSON" para ler um arquivo JSON e convertê-lo para um tipo de dado Haskell, e "encode" para transformar um tipo de dado Haskell para JSON. Veja um exemplo abaixo:
 
 ```Haskell
-import Data.Aeson
-
--- Analisando dados JSON
-jsonString = "{ \"nome\": \"João\", \"idade\": 25 }"
-
-person = decode jsonString :: Maybe Person
-
-data Person = Person { nome :: String, idade :: Int } deriving (Show, Generic)
-
-instance FromJSON Person
-
--- Codificando dados para JSON
-car = Car { modelo = "Fusca", ano = 1967, cor = "Azul" }
-
-carJson = encode car
+import Text.JSON
+main :: IO ()
+main = do
+  let jsonString = "{\"nome\": \"João\", \"idade\": 25}" -- Exemplo de string JSON
+  let result = decode jsonString :: Result JSValue -- Converte o JSON para o tipo JSValue
+  case result of
+    Ok value -> putStrLn (encode value) -- Converte o JSValue de volta para JSON e imprime na tela
+    Error msg -> print msg -- Em caso de erro, imprime a mensagem de erro
 ```
 
-A saída do código acima será:
-
+Resultado:
 ```
-Just (Person {nome = "João", idade = 25})
-"{ \"modelo\": \"Fusca\", \"ano\": 1967, \"cor\": \"Azul\" }"
+{"nome":"João","idade":25}
 ```
 
-## Mergulho Profundo
-A biblioteca `aeson` é baseada em tipos de dados algébricos e usa o conceito de "lentes" para permitir a atualização de valores. Além disso, é possível criar instâncias personalizadas de `FromJSON` e `ToJSON` para tipos de dados definidos pelo usuário. Também é possível utilizar a função `parseEither` para tratar possíveis erros durante a análise de dados JSON.
+## Mais detalhes:
+JSON foi criado em 1999 por Douglas Crockford e atualmente é um dos formatos de dados mais populares na web devido à sua simplicidade e interoperabilidade. Além do Haskell, outros linguagens de programação, como JavaScript e Python, também oferecem suporte nativo a JSON. Existem ainda bibliotecas externas em Haskell, como "Aeson" e "JSON2", que oferecem funcionalidades mais avançadas para trabalhar com JSON.
 
-Outra biblioteca útil para trabalhar com JSON em Haskell é a `json-autotype`, que permite gerar automaticamente tipos de dados com suas respectivas instâncias `FromJSON` e `ToJSON` a partir de um exemplo de dados JSON.
-
-## Veja também
-- [Haskell.org](https://www.haskell.org/)
-- [Documentação do `aeson`](https://hackage.haskell.org/package/aeson)
-- [Documentação do `json-autotype`](https://hackage.haskell.org/package/json-autotype)
+## Veja também:
+- [Documentação oficial do módulo "Text.JSON" em Haskell](https://hackage.haskell.org/package/json)
+- [Mais informações sobre o formato JSON](https://www.json.org/json-pt.html)
+- [Outras bibliotecas em Haskell para trabalhar com JSON](https://hackage.haskell.org/packages/search?terms=json)

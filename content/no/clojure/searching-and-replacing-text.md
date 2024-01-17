@@ -1,7 +1,7 @@
 ---
-title:                "Søking og erstatter av tekst"
-html_title:           "Clojure: Søking og erstatter av tekst"
-simple_title:         "Søking og erstatter av tekst"
+title:                "Søking og erstatning av tekst"
+html_title:           "Clojure: Søking og erstatning av tekst"
+simple_title:         "Søking og erstatning av tekst"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -10,61 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hva & hvorfor?
 
-Hvis du skriver mye kode, vil du kanskje finne deg selv i en situasjon der du trenger å erstatte en del av teksten med en annen del. Dette kan være for å rette opp en feil eller for å gjøre en endring i koden din. I slike tilfeller kan det være nyttig å kunne automatisere denne prosessen ved hjelp av Clojure.
+Søk og erstatt tekst er en vanlig oppgave for dataprogrammerere. Det handler om å finne og erstatte et spesifikt uttrykk i en tekstfil eller datamaskinkode. Dette gjøres for å forenkle og effektivisere programmeringsprosessen ved å gjøre store endringer i koden på en enkel måte.
 
-## Hvordan
+## Hvordan:
 
-For å erstatte tekst i Clojure, kan du bruke funksjonen `replace` i `clojure.string` biblioteket. Her er et eksempel på hvordan du kan bruke denne funksjonen:
-
-```Clojure
-(require '[clojure.string :as string])
-
-(def tekst "Dette er en test tekst.")
-
-(string/replace tekst "test" "eksempel")
-```
-
-Dette vil returnere en ny streng med `tekst` erstattet med `eksempel`. Output vil være:
+For å søke og erstatte tekst i Clojure, kan du bruke funksjonen "replace". Denne funksjonen tar inn to argumenter: en tekststreng som den skal søke etter, og en tekststreng som skal erstatte den funne teksten. Se et eksempel nedenfor:
 
 ```Clojure
-"Dette er en eksempel tekst."
+(replace "hund" "katt" "Jeg har en stor hund")
 ```
 
-Du kan også bruke `replace` funksjonen til å erstatte deler av en streng basert på et mønster. For eksempel kan du erstatte alle forekomster av bokstaven `e` med `a` ved å bruke et regex mønster:
+Dette vil resultere i teksten "Jeg har en stor katt".
+
+Du kan også bruke regulære uttrykk for å søke etter mer komplekse mønstre i teksten. For eksempel:
 
 ```Clojure
-(require '[clojure.string :as string])
-
-(def tekst "Dette er en test tekst.")
-
-(string/replace tekst #"e" "a")
+(replace #"([0-9]+)st" "$1nd" "1st, 2nd, 3rd")
 ```
 
-Output vil da være:
+Dette vil resultere i teksten "1st, 2nd, 3rd" siden den finner alle forekomster av ordet "st" etter et tall og erstatter det med "nd".
 
-```Clojure
-"Datta ar an tast ta akt."
-```
+## Dypdykk:
 
-## Dypdykk
+Søk og erstatte funksjonalitet har vært tilgjengelig i programmeringsspråk siden begynnelsen. Alternativer til Clojure inkluderer Java Regex, Python Regex og Perl Regex.
 
-I tillegg til å kunne erstatte tekst, kan du også bruke Clojure til å finne og erstatte tekst basert på bestemte kriterier. Dette kan gjøres ved hjelp av funksjonene `find` og `replace` i `clojure.string` biblioteket.
+I Clojure er søk og erstatte implementert ved hjelp av Java-biblioteket java.util.replace.
 
-For å finne alle forekomster av `test` i en streng, kan du bruke `find` funksjonen:
+## Se også:
 
-```Clojure
-(require '[clojure.string :as string])
-
-(def tekst "Dette er en test tekst.")
-
-(string/find tekst #"test")
-```
-
-Dette vil returnere en liste med alle forekomster av `test`. Du kan deretter bruke denne listen til å erstatte deler av teksten ved hjelp av `replace` funksjonen.
-
-## Se også
-
-- [Clojure dokumentasjon](https://clojure.org/)
-- [Clojure Cookbook](https://clojure-cookbook.com/)
+- Clojure's regex bibliotek: https://clojuredocs.org/clojure.core/re-matcher

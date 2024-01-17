@@ -10,28 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
-Kirjoittaminen on yksi tärkeimmistä ohjelmoinnin osa-alueista, ja tiedostojen käsittely on olennainen osa tätä taitoa. Tekstitiedostojen kirjoittaminen antaa sinulle mahdollisuuden tallentaa tietoja pysyvästi ja jakaa niitä muiden kanssa. Se on myös tärkeää, jos haluat luoda ohjelmia, jotka käyttävät syötettä ja tulostetta.
+## Mitä ja miksi?
+Kirjoittaminen teksti-tiedostoon on tiedon tallentamista tietokoneelle tekstimuodossa. Koodaajat käyttävät teksti-tiedostoja tallentaakseen koodin ja sen tulokset.
 
-## Miten
-Tekstitiedoston kirjoittaminen C:n avulla on helppoa. Ensimmäinen asia mitä sinun tulee tehdä on avata tiedostokahva käyttäen fopen-funktiota ja määrittelemällä tiedoston nimi ja haluamasi kirjoitusmuoto. Esimerkiksi:
-```C
-FILE *tiedosto = fopen("tekstitiedosto.txt", "w");
+## Miten:
 ```
-Tämän jälkeen voit käyttää fprintf-funktiota kirjoittamaan haluamasi tekstitiedoston sisältö. Esimerkiksi:
-```C
-fprintf(tiedosto, "Tämä on tekstiä, jota kirjoitetaan tekstitiedostoon.");
-```
-Kun olet lopettanut kirjoittamisen, muista sulkea tiedostokahva käyttäen fclose-funktiota.
-```C
-fclose(tiedosto);
-```
-Tämän jälkeen voit lukea tekstitiedoston käyttäen esimerkiksi scanf-funktiota.
+#include <stdio.h>
+int main() {
+    char text[] = "Tämä on esimerkki teksti-tiedostoon kirjoituksesta.";
+    // Luodaan osoitin tiedostoon ja avataan se kirjoittamista varten
+    FILE *fptr;
+    fptr = fopen("tekstiedosto.txt", "w");
 
-## Deep Dive
-Tekstitiedostojen kirjoittaminen tarjoaa mahdollisuuden käyttää monia erilaisia C:n tiedostokirjoitusfunktioita, kuten fprintf, fputs ja fwrite. Jokaisella näistä on omat ominaisuutensa ja käyttötapansa. Voit myös käyttää C:n merkkijonofunktiota, kuten fputs ja puts, kirjoittaaksesi tekstitiedostoon. On tärkeää huomata, että tekstitiedostojen kirjoittamisessa tulee aina huolehtia tiedoston sulkemisesta, jotta vältetään mahdolliset ongelmat tiedostojen käsittelyssä.
+    // Kirjoitetaan teksti teksti-tiedostoon
+    fprintf(fptr, "%s", text);
 
-## Katso myös 
-- [C-tiedostokäsittelyopas](https://www.tutorialspoint.com/cprogramming/c_file_io.htm)
-- [C-fprintf opetusohjelma](https://www.codingunit.com/c-tutorial-fprintf-function)
-- [Merkkijonofunktiot C:ssä](https://www.tutorialspoint.com/cprogramming/c_strings.htm)
+    // Suljetaan tiedosto
+    fclose(fptr);
+
+    // Tulostetaan onnistumisviesti
+    printf("Teksti on kirjoitettu tiedostoon.");
+
+    return 0;
+}
+```
+
+```
+Tulostus tiedostoon "tekstiedosto.txt":
+Tämä on esimerkki teksti-tiedostoon kirjoituksesta.
+```
+
+## Syvällinen sukellus:
+Kirjoittaminen teksti-tiedostoon on ollut yksi olennaisimmista tiedon tallentamisen tavoista ohjelmoinnin alkuaikoina. Nykyään on olemassa monia muita tapoja tallentaa tietoa, kuten tietokantoihin tai verkkopalveluihin. Kirjoittaminen teksti-tiedostoon on kuitenkin edelleen tärkeää monissa tilanteissa, esimerkiksi yksinkertaisissa ohjelmissa tai tulosten tallentamisessa koodauksen aikana. Kirjoittamalla teksti-tiedostoon voit myös helposti muokata tiedostoa manuaalisesti.
+
+## Katso myös:
+- [Tiedoston avaaminen kirjoittamista varten C-kielessä](https://www.programiz.com/c-programming/c-file-input-output)
+- [Fopen-funktion dokumentaatio](https://www.cplusplus.com/reference/cstdio/fopen/)

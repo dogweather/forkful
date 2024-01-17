@@ -1,7 +1,7 @@
 ---
-title:                "텍스트 검색 및 대체"
-html_title:           "Arduino: 텍스트 검색 및 대체"
-simple_title:         "텍스트 검색 및 대체"
+title:                "텍스트 검색 및 교체"
+html_title:           "Arduino: 텍스트 검색 및 교체"
+simple_title:         "텍스트 검색 및 교체"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Strings"
@@ -10,32 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
-문자열을 검색하고 바꾸는 방법을 배우는 이유는 더 효율적인 코딩을 위해서입니다.
+## 무엇 & 왜?:
 
-## 어떻게
-많은 텍스트 처리 작업 중 일반적인 작업 중 하나는 특정 문자열을 찾고 해당 문자열을 새로운 문자열로 대체하는 것입니다. 이를 위해 Arduino에서 제공하는 `replace()` 함수를 사용할 수 있습니다. 아래 코드는 `replace()` 함수를 사용하는 간단한 예제입니다.
-```
-ArduinoString myString = "Hello, world!";
-myString.replace("world", "Arduino");
-Serial.println(myString); // 출력 결과: Hello, Arduino!
-```
+텍스트 검색 및 대체가 무엇인지 알고 계세요? 이것은 프로그래머들이 단순히 말하면, 특정 문자나 단어를 찾아서 다른 문자나 단어로 대체하는 과정을 말합니다. 이 기능은 프로그래밍에서 중요한 역할을 합니다.
 
-`replace()` 함수는 원하는 문자열이 여러 번 나와도 모두 찾아서 바꿀 수 있습니다. 또한 대소문자를 구분하지 않고 문자열을 찾아서 바꿀 수도 있습니다. 예를 들어, 아래 코드를 실행하면 `Hello`를 `Arduino`로 바꿔주는 예제 코드입니다.
-```
-ArduinoString myString = "Hello, world!";
-myString.replace("hello", "Arduino", true);
-Serial.println(myString); // 출력 결과: Arduino, world!
+프로그래머들은 텍스트 검색 및 대체를 왜 할까요? 이는 프로그래밍에서 발생하는 버그를 고치기 위해 매우 유용합니다. 예를 들어, 여러 줄의 코드를 한번에 수정해야 할 때 이 기능을 사용하면 시간과 노력을 절약할 수 있습니다.
+
+## 어떻게:
+
+```Arduino
+String text = "안녕하세요, 세상";
+text.replace("세상", "여러분");
+Serial.println(text);
 ```
 
-## 깊이 파고들기
-`replace()` 함수는 두 개의 매개변수를 필요로 합니다. 첫 번째 매개변수는 찾고자 하는 문자열이고, 두 번째 매개변수는 대체할 문자열입니다. 또한, 세 번째 매개변수는 대소문자를 구분할지 여부를 결정하는 불리언 값입니다. 기본값은 `false`이며, `true`로 설정하면 대소문자를 구분하지 않게 됩니다.
+이 코드에서는 "안녕하세요, 세상"이라는 문자열에서 "세상"을 찾아서 "여러분"으로 대체하고, 이를 시리얼 모니터에 출력하는 예제입니다. 결과는 "안녕하세요, 여러분"이 될 것입니다.
 
-`replace()` 함수 외에도 Arduino에서는 `replaceAll()` 함수를 사용하여 문자열을 전체적으로 한 번에 바꿀 수도 있습니다. 이 함수는 `replace()` 함수와 달리 대소문자를 구분하지 않으며, 일치하는 모든 문자열을 찾아서 한 번에 바꿔줍니다.
+## 깊게 알아보기:
 
-또한, Arduino에서는 정규식을 사용하여 문자열을 검색하고 바꾸는 방법도 제공합니다. 이를 위해 `Regex` 라이브러리를 사용하며, `find()`와 `replace()` 함수를 사용하여 정규식을 처리할 수 있습니다. 하지만 정규식은 좀 더 복잡한 패턴을 찾을 때 사용하며, 간단한 문자열 검색과 교체에는 `replace()` 함수를 사용하는 것이 적합합니다.
+텍스트 검색 및 대체는 프로그래밍에서 기본적인 기능으로 생각할 수 있지만, 이 기능이 가능했던 배경을 알면 더욱 흥미로울 것입니다. 예를 들어, 이 기능이 없던 시절에는 매우 번거로운 과정으로 텍스트를 수정해야 했습니다. 또한, 다른 대안으로는 정규식을 사용하는 것이 있지만, 이는 간단한 텍스트 검색 및 대체에 비해 복잡하고 고급 기술입니다.
 
-## 더 알아보기
-- [Official Arduino Reference - replace()](https://www.arduino.cc/reference/ko/language/variables/data-types/string/functions/replace/)
-- [Official Arduino Reference - find()](https://www.arduino.cc/reference/ko/libraries/regex/find/)
-- [Official Arduino Reference - replaceAll()](https://www.arduino.cc/reference/ko/libraries/regex/replaceall/)
+Arduino에서는 ```replace()``` 함수를 사용하여 특정 문자나 단어를 찾아서 다른 문자나 단어로 쉽게 대체할 수 있습니다. 이 함수는 문자열 객체를 사용하기 때문에 문자열을 효율적으로 처리할 수 있고, 이를 통해 더 나은 성능을 얻을 수 있습니다.
+
+## 참고 자료:
+
+- [Arduino String 레퍼런스 페이지](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/)
+- [정규식에 대한 자세한 설명](https://regexone.com/)

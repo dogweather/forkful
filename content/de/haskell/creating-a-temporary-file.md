@@ -10,54 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+**Was & Warum**
+Bei der Erstellung einer temporären Datei handelt es sich um eine kurze Datei, die von Programmierern erstellt wird, um vorübergehende Daten oder Ergebnisse zu speichern. Dies kann nützlich sein, wenn die endgültigen Daten noch nicht verfügbar sind oder wenn eine Zwischenspeicherung für die Ausführung eines Programms erforderlich ist.
 
-Warum sollte man eine temporäre Datei erstellen wollen? Nun, temporäre Dateien sind nützlich, wenn man vorübergehend Daten speichern möchte, die später nicht mehr benötigt werden. Zum Beispiel können sie in der Programmierung verwendet werden, um Zwischenergebnisse zu speichern oder zum Testen von Funktionen, ohne dass es Auswirkungen auf die eigentliche Datei hat.
-
-
-## Wie geht man vor
-
-Das Erstellen einer temporären Datei in Haskell ist ganz einfach. Es gibt mehrere Möglichkeiten, aber hier sind zwei Beispiele:
+**Wie geht's:**
+Um eine temporäre Datei in Haskell zu erstellen, können Sie die `withTempFile` Funktion aus dem `System.IO.Temp` Modul verwenden. Hier ist ein Beispielcode, der eine temporäre Datei mit dem Inhalt "Hello World" erstellt und dann deren Inhalt auf der Konsole ausgibt:
 
 ```Haskell
-import System.IO.Temp -- Dieses Modul muss importiert werden
-import System.IO     -- Für die Verwendung von `hPutStrLn`
+import System.IO.Temp (withTempFile)
+import System.IO (hPrint, hGetContents, hClose)
 
-main = do
-  -- Mit `withSystemTempFile`
-  withSystemTempFile "temp.txt" $ \path handle -> do
-    hPutStrLn handle "Hallo Welt!"
-    hClose handle
-    putStrLn $ "Temporäre Datei erstellt unter: " ++ path
-
-  -- Mit `withTempFile`
-  withTempFile "." "temp.txt" $ \path handle -> do
-    hPutStrLn handle "Hello World!"
-    hClose handle
-    putStrLn $ "Temporäre Datei erstellt unter: " ++ path
+main :: IO ()
+main = withTempFile "temp" ( \path handle -> do
+    hPrint handle "Hello World"
+    contents <- hGetContents handle
+    putStrLn contents
+    )
 ```
 
-Das obige Beispiel verwendet die Funktionen `withSystemTempFile` und `withTempFile` aus dem Modul `System.IO.Temp`. Diese Funktionen erstellen eine temporäre Datei im angegebenen Verzeichnis und führen eine Aktion aus, die auf das Handle der Datei zugreifen kann. Sobald die Aktion beendet ist, wird die Datei automatisch gelöscht. Um die Datei manuell zu löschen, kann die Funktion `removeFile` aus dem Modul `System.Directory` verwendet werden.
+Die Ausgabe dieses Codes wird "Hello World" sein.
 
-Der erste Parameter der Funktionen ist das Verzeichnis, in dem die temporäre Datei erstellt wird. Wenn es mit `Nothing` angegeben wird, wird das Standard-Temp-Verzeichnis des Betriebssystems verwendet. Der zweite Parameter ist der Dateiname, der verwendet wird. Und der dritte Parameter ist die Aktion, die auf das Handle zugreifen kann.
+**Tiefer tauchen:**
+Das Erstellen von temporären Dateien ist eine nützliche Funktion, die in vielen Programmiersprachen verfügbar ist. Es wird häufig verwendet, um temporäre Daten für die Verwendung in einem Programm zu speichern, ohne die endgültigen Daten zu verändern. Darüber hinaus können in Haskell auch andere Methoden zur Arbeit mit temporären Dateien verwendet werden, wie z.B. die `withSystemTempFile` Funktion.
 
+Einige alternative Methoden zum Erstellen von temporären Dateien in Haskell sind:
 
-## Tiefer eintauchen
+- Verwendung des `createTempDirectory` Befehls aus dem `System.Directory` Modul, um eine temporäre Datei herzustellen.
+- Verwendung des `mkstemp` Befehls aus dem `System.Posix.Temp` Modul, um eine temporäre Datei mit dem Betriebssystem-Standard für temporäre Dateien zu erstellen.
 
-Es gibt viele weitere nützliche Funktionen im Modul `System.IO.Temp`, die verwendet werden können, um temporäre Dateien zu erstellen und zu verwalten. Ein paar Beispiele sind:
+Die `withTempFile` Funktion in Haskell hat eine ähnliche Syntax wie die `withTempFile` Funktion in der Sprache Python, was es einfacher macht, Code zwischen den beiden Sprachen zu übertragen. 
 
-- `getCanonicalTemporaryDirectory` - gibt das Standard-Temp-Verzeichnis des Betriebssystems zurück
-- `withTempDirectory` - erstellt ein temporäres Verzeichnis statt einer Datei
-- `createTempDirectory` - erstellt ein temporäres Verzeichnis ohne Aktion
-- `createTempFile` - erstellt eine temporäre Datei ohne Aktion, aber gibt den Pfad zurück
-
-Weitere Informationen finden Sie in der offiziellen Dokumentation zu [`System.IO.Temp`](https://hackage.haskell.org/package/temporary/docs/System-IO-Temp.html).
-
-
-## Siehe auch
-
-- [`System.IO.Temp` Dokumentation](https://hackage.haskell.org/package/temporary/docs/System-IO-Temp.html)
-- [`System.Directory` Dokumentation](https://hackage.haskell.org/package/directory/docs/System-Directory.html)
-- [Haskell Cookbook - Working with Temp Files](https://haskell-cookbook.com/working-with-temp-files.html)
-
-Happy Coding!
+**Siehe auch:**
+Weitere Informationen und Beispiele zum Erstellen von temporären Dateien in Haskell finden Sie in der offiziellen Dokumentation des `System.IO.Temp` Moduls: https://hackage.haskell.org/package/base-4.12.0.0/docs/System-IO-Temp.html

@@ -10,32 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i Dlaczego?
+Zastanawiałeś się kiedyś, jak programiści mogą tak szybko zmieniać setki, a nawet tysiące linii kodu w jednym kroku? To właśnie dzięki technice wyszukiwania i zamiany tekstu. Jest to proces, który pozwala programistom odnaleźć i zmodyfikować określone ciągi znaków w ich kodzie. Jest to niezwykle przydatne narzędzie, które pomaga w szybkim i efektywnym wprowadzaniu zmian w dużych projektach.
 
-Szukanie i zamiana tekstu to podstawowy element programowania. Jest to codzienna czynność dla każdego, kto pracuje z tekstem. W tym artykule opowiemy o tym, jak wykorzystać język Elm do automatyzacji tego procesu i zaoszczędzić czas.
+## Jak to zrobić:
+W Elm istnieje kilka sposobów na przeprowadzenie procesu wyszukiwania i zamiany tekstu. Możesz użyć funkcji `String.replace` aby dokonać zmiany w jednym ciągu znaków lub funkcji `String.replaceList` aby dokonać zmiany w wielu ciągach jednocześnie. Przykładowe użycie tych funkcji wygląda następująco:
 
-## Jak to zrobić
+```elm
+text = "Cześć, witaj w Elm!"
+newText = String.replace "witaj" "hej" text
 
-Za pomocą funkcji `replace` możesz łatwo zmienić wybrany tekst na inny. Poniżej znajduje się przykładowy kod wykorzystujący tę funkcję:
-```Elm
-replace "Hello World!" "Hello" "Hi"
+-- newText = "Cześć, hej w Elm!"
 ```
-W powyższym przykładzie, tekst "Hello World!" zostanie zastąpiony przez "Hi World!". Funkcja `replace` przyjmuje trzy argumenty: tekst, który chcemy zmienić, tekst, który chcemy usunąć oraz tekst, którym chcemy go zastąpić.
 
-Możesz również użyć funkcji `replaceAll` do zmiany wszystkich wystąpień danego tekstu na inny. Poniżej znajduje się kod wykorzystujący tę funkcję:
-```Elm
-replaceAll "aaabbbccc" "a" "x"
+```elm
+phrases = ["Cześć", "witaj"]
+newPhrases = String.replaceList phrases "hej" text
+
+-- newPhrases = ["hej", "hej w Elm!"]
 ```
-W tym wypadku, tekst "aaabbbccc" zostanie zmieniony na "xxxbbbccc".
 
-Każda z funkcji `replace` i `replaceAll` zwraca zmieniony tekst jako wynik. Możesz go przypisać do zmiennej i wykorzystać w dalszej części kodu.
+## Głębsze Zanurzenie:
+Technika wyszukiwania i zamiany tekstu jest powszechnie stosowana we wszystkich językach programowania. Pierwsze narzędzia służące do tego celu pojawiły się w latach 70. XX wieku, kiedy to programiści zaczęli szukać sposobów na automatyzację procesu edycji tekstu w programach. Obecnie istnieje wiele alternatywnych narzędzi do wyszukiwania i zamiany tekstu, takich jak edytory tekstu lub narzędzia online. W Elm jednak korzystając z funkcji `String.replace` i `String.replaceList` możemy wygodnie i efektywnie dokonywać zmian w naszym kodzie.
 
-## Głębsze wgląd
-
-W języku Elm istnieje wiele innych funkcji związanych ze zmianą tekstu, takich jak `removeFirst`, `removeLast`, `trim`, `split`, `join` i wiele innych. Możesz dowiedzieć się więcej o nich w [oficjalnej dokumentacji Elm](https://guide.elm-lang.org/strings/).
-
-Jedną z przydatnych funkcji jest również `replaceChar`, która pozwala na zmianę pojedynczego znaku w tekście. Na przykład, można zmienić wszystkie małe litery w tekście na duże lub na odwrót.
-
-## Zobacz również
-
-Jeśli chcesz dowiedzieć się więcej o tworzeniu aplikacji w języku Elm, polecamy zapoznać się z [oferowanymi przez nich kursami](https://www.elm-in-action.com/) lub zasubskrybować [podręcznik "Elm in Action"](https://www.manning.com/books/elm-in-action).
+## Zobacz też:
+- Dokumentacja funkcji `String.replace` w Elm: https://package.elm-lang.org/packages/elm/core/latest/String#replace
+- Dokumentacja funkcji `String.replaceList` w Elm: https://package.elm-lang.org/packages/elm/core/latest/String#replaceList

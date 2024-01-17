@@ -1,7 +1,7 @@
 ---
-title:                "Att börja ett nytt projekt"
-html_title:           "Rust: Att börja ett nytt projekt"
-simple_title:         "Att börja ett nytt projekt"
+title:                "Att starta ett nytt projekt"
+html_title:           "Rust: Att starta ett nytt projekt"
+simple_title:         "Att starta ett nytt projekt"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Getting Started"
@@ -10,43 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+# Välkommen till att starta ett nytt projekt i Rust!
 
-Har du funderat på att starta ett nytt projekt i Rust men undrar varför du ska göra det? Det finns många bra skäl att ge sig in i Rust-världen. För det första är det ett modernt språk med fokus på prestanda, säkerhet och koncurrens. Det är också ett open-source språk med en aktiv community som ständigt arbetar på att förbättra språket och dess verktyg.
+## Vad & Varför?
+Att starta ett nytt projekt i Rust är att skapa en helt ny kodbas för att lösa ett problem eller bygga en produkt. Programmers start a new project for many reasons, såsom att utveckla en ny funktion, förbättra en befintlig, eller lära sig ett nytt språk.
 
-## Hur man gör
+## Så här gör du:
 
-Att starta ett nytt projekt i Rust är enkelt och rätt roligt! För att komma igång behöver du bara följa några enkla steg:
+För att starta ett nytt projekt i Rust behöver du först installera Rust-compiler och Rust Package Manager (Cargo) på din dator. Du kan hitta en detaljerad guide på hur man installerar Rust på deras officiella hemsida: https://www.rust-lang.org/tools/install.
 
-1. Installera Rust på din dator genom att följa instruktionerna på [Rusts officiella webbplats](https://www.rust-lang.org/).
-2. Skapa en ny mapp för ditt projekt där du vill spara all kod.
-3. Öppna en terminal i mappen och kör kommandot `cargo init` för att skapa en ny Rust-applikation.
-4. Öppna nu mappen i ditt favorit-IDE eller textredigerare och börja koda!
+När du har installerat Rust, kan du skapa ett nytt projekt genom att navigera till den mapp där du vill spara projektet och köra kommandot "cargo new <projektnamn>". Detta kommer att skapa en grundläggande struktur för ditt projekt, inklusive en fil som heter "main.rs" som innehåller ditt första rustkod.
 
-För att testa din kod kan du använda kommandot `cargo run` i terminalen för att bygga och köra applikationen. För att lägga till nya beroenden kan du använda kommandot `cargo add <namn på beroende>`.
+För att köra ditt projekt, navigera till projektets mapp och kör kommandot "cargo run". Detta kommer att kompilera och köra ditt projekt, och du bör se en enkel "Hello, world!"-meddelande i terminalen.
 
-Här är ett exempel på en enkel "Hello World"-applikation i Rust:
+## Djupdykning:
+Rust skapades av Mozilla Research och släpptes för första gången år 2010. Det är ett system programmeringsspråk som fokuserar på samtidighet, hastighet och säkerhet. Alternativ till Rust inkluderar C och C++, men Rusts unika funktioner som egendomsbaserad modellering och kompilering till nära-metallips gör det till ett populärt val för utveckling av högpresterande och säkrare mjukvaruprojekt.
 
-```Rust
-fn main() {
-    println!("Hej världen!");
-}
-```
+En viktig aspekt av att starta ett nytt projekt i Rust är att förstå äganderätt och lån. I Rust får variabler och datastrukturer endast ändras på ett ställe åt gången, vilket minskar risken för buggar och ökar prestandan. Detta åstadkoms genom konceptet av äganderätt, där variabler kan ägas eller lånas ut till andra delar av koden.
 
-Output:
+Om du vill lära dig mer om att starta ett nytt projekt i Rust, kan du bläddra genom Rusts dokumentation på deras officiella hemsida: https://www.rust-lang.org/learn.
 
-`Hej världen!`
-
-## Deep Dive
-
-Att starta ett nytt projekt i Rust ger dig möjlighet att utforska en modern och kraftfull programmeringsvärld. Språket är designat för att hantera problem som ofta uppstår i andra språk, som till exempel minneskorruption och data race. Detta gör det möjligt för Rust att producera snabb och säker kod.
-
-En annan fördel med att använda Rust är dess väl designade pakethanterare - Cargo. Den gör det enkelt att hantera projektberoenden och uppdateringar. Dessutom tillhandahåller Cargo också ett kraftfullt och intuitivt byggsystem.
-
-Den starka typningen i Rust ger dig också säkerhet när det gäller typfel och minneshantering. Detta gör det lättare att undvika buggar och ökar därmed din kodkvalitet.
-
-## Se också
-
-- [Rusts officiella dokumentation](https://doc.rust-lang.org/)
-- [Cargo pakethanterare](https://doc.rust-lang.org/cargo/)
-- [Rust community forum](https://users.rust-lang.org/)
+## Se även:
+- Rusts officiella hemsida: https://www.rust-lang.org/
+- En introduktionsguide till Rust: https://doc.rust-lang.org/book/
+- Rusts dokumentation: https://doc.rust-lang.org/

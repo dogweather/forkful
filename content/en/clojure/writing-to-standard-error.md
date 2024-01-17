@@ -10,46 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
+Writing to standard error, also known as stderr, is a way for programmers to output error messages or log information separate from regular program output, which is usually sent to standard output or stdout. By writing to stderr, programmers can differentiate between normal output and error messages, making it easier to identify and troubleshoot issues in their code.
 
-Have you ever encountered an error while coding and wished you could have more information about what went wrong? Writing to standard error in Clojure allows you to do just that, providing valuable insights into your code's execution and errors.
-
-## How To
-
+## How to:
 ```Clojure
-(defn divide [x y]
-  (if (zero? y)
-    (println "ERROR: Cannot divide by zero!")
-    (println (/ x y))))
+;; To write to stderr, you can use the `pr` function.
+(pr "This is an error message") ;; Outputs "This is an error message" to stderr
 
-(defn -main []
-  (try
-    (divide 10 2)
-    (divide 5 0)
-    (divide 8 4))
-  (catch ArithmeticException e
-    (e.printStackTrace)))
+(prn "This is another error message") ;; Outputs "This is another error message" to stderr with a newline
+
+;; You can also specify the output stream explicitly by using the `pst` function.
+(pst err "Error message with explicit output stream") ;; Outputs "Error message with explicit output stream" to stderr
+
+;; To redirect stdout to stderr, you can use `set!` on the `*out*` global variable.
+(set! *out* *err*) ;; From this point on, all output sent to stdout will be redirected to stderr
+
+;; To revert back to the original stdout, simply set *out* to the original value.
+(set! *out* (io/writer System/out)) ;; Sets *out* to the original value of System/out
+
+;; Finally, you can also use the `eprintln` function to write error messages directly to stderr.
+(eprintln "Another error message") ;; Outputs "Another error message" to stderr
+
 ```
 
-Output:
+## Deep Dive:
+Writing to stderr has been a standard practice in programming for a long time, with its origins dating back to the early Unix systems. Before the introduction of standard streams, error messages and regular output were all mixed together, making it difficult to distinguish between the two. By separating them, programmers could easily identify and troubleshoot errors.
 
-```Clojure
-5
-ERROR: Cannot divide by zero!
-2
-#<ArithmeticException java.lang.ArithmeticException: Divide by zero>
-```
+An alternative to writing to stderr is using logging frameworks or libraries, which provide more advanced functionality such as formatting and filtering of log messages. However, writing to stderr is still a useful practice, especially in scenarios where setting up a logging framework may not be feasible, such as in small scripts or command-line tools.
 
-The `println` function in Clojure prints its arguments to standard output by default. However, by using `e.printStackTrace`, we can print the error to standard error instead. This allows us to distinguish between regular program output and error messages.
+In Clojure, writing to stderr is achieved by using the `pr` and `prn` functions, which are part of the Clojure's core library. By default, `pr` outputs to *out*, while `prn` outputs to *out* followed by a newline character. To output to stderr explicitly, you can use the `pst` function.
 
-## Deep Dive
-
-Writing to standard error in Clojure can be useful when debugging and troubleshooting your code. By writing error messages to standard error, you can separate them from regular program output and easily identify where errors occurred in your code. Additionally, standard error can be redirected to a file for later analysis.
-
-It's important to note that on some platforms, standard output and standard error may be displayed in different colors in the terminal, making it easier to differentiate between the two. This can be especially helpful when dealing with large amounts of log data.
-
-See Also
-
-- [Clojure official website](https://clojure.org/)
-- [Clojure for the Brave and True by Daniel Higginbotham](https://www.braveclojure.com/clojure-for-the-brave-and-true/) 
-- [ClojureDocs](https://clojuredocs.org/)
+## See Also:
+- [https://clojure.org/reference/io] for more information on Clojure's IO functions
+- [https://en.wikipedia.org/wiki/Standard_streams] for a deeper dive into standard streams in programming
+- [https://stackoverflow.com/questions/5828872/why-do-we-output-error-to-stderr] for a discussion on why programmers output errors to stderr.

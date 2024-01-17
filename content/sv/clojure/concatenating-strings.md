@@ -1,7 +1,7 @@
 ---
-title:                "Sammanfogning av strängar"
-html_title:           "Clojure: Sammanfogning av strängar"
-simple_title:         "Sammanfogning av strängar"
+title:                "Sammanslagning av strängar"
+html_title:           "Clojure: Sammanslagning av strängar"
+simple_title:         "Sammanslagning av strängar"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -10,38 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad och Varför?
+Concatenation av strängar handlar om att slå samman två eller flera textsträngar till en enda sträng. Programmers gör det ofta för att skapa dynamiska meddelanden eller för att bygga mer komplexa strukturer såsom HTML-dokument.
 
-Att sammanfoga strängar är en vanlig uppgift inom programmering, oavsett vilket språk man använder. Att kombinera flera strängar till en enda kan vara användbart för att bygga texter eller strängar som behövs för vissa operationer. Det kan också vara användbart för att skapa dynamiska meddelanden eller utskrifter baserat på användarinput.
-
-## Hur man gör
-
-Att sammanfoga strängar i Clojure är enkelt och kan göras på flera sätt. Ett sätt är att använda funktionen `str`, som tar emot flera argument och returnerar dem som en sträng. Här är ett exempel på hur detta kan se ut:
+## Så här gör du:
+Det finns flera sätt att utföra strängkonkatenation i Clojure. Det vanligaste sättet är att använda `str` funktionen, vilket låter dig konkatenare alla typer av värden, inklusive strängar.
 
 ```Clojure
-(str "Hej" "på" "dig") ; resultat: "Hej på dig"
+(str "Hej " "världen!") 
+;; => "Hej världen!"
 ```
 
-Man kan också använda operatorn `+` för att sammanfoga strängar, vilket gör samma sak som `str`-funktionen. Här är ett exempel på detta:
+Om du vill konkaternera flera strängar i en lista, kan du använda `str/join` funktionen.
 
 ```Clojure
-(+ "Välkommen" "till" "första" "artikeln") ; resultat: "Välkommen till första artikeln"
+(str/join ", " ["apple" "banana" "orange"]) 
+;; => "apple, banana, orange"
 ```
 
-Om man vill sammanfoga en vektor med strängar kan man använda funktionen `reduce` tillsammans med `str`-funktionen. Här är ett exempel:
+Du kan också använda `format` funktionen för att få mer kontroll över utmatningen. Detta låter dig till exempel formatera nummer och lägga till variabler i din utmatning.
 
 ```Clojure
-(reduce str ["Hello" " " "world"]) ; resultat: "Hello world"
+(format "Idag är det %d grader ute och %s." 26 "soligt")
+;; => "Idag är det 26 grader ute och soligt."
 ```
 
-## Djupdykning
+## Djupdykning:
+Strängkonkatenering är en vanlig operation i många programmeringsspråk och har funnits sedan tidiga datorer. Alternativ till `str` och `format` funktionerna är `StringBuilder` som används i Java och `concat` funktionen i Clojure.
 
-När man sammanfogar strängar i Clojure är det viktigt att veta att strängar är oföränderliga (immutable). Det betyder att när man sammanfogar två strängar, skapas en helt ny sträng istället för att ändra på den befintliga strängen. Detta kan vara värt att hålla i åtanke om man jobbar med stora datamängder och prestanda är viktigt.
+Implementeringen av `str` i Clojure använder `StringBuilder` under huven för att vara så effektiv som möjligt. Den kan också hantera många olika typer av värden, inklusive nil, utan att krascha.
 
-Det finns också andra funktioner som kan vara användbara när man sammanfogar strängar, såsom `format`, `clojure.string/join` och `clojure.string/replace`. Det kan vara värt att utforska dessa funktioner för att hitta det bästa sättet att sammanfoga strängar i en specifik situation.
-
-## Se även
-
-- [Clojure Cheat Sheet](https://clojure.org/api/cheatsheet)
-- [The Joy of Clojure](https://www.amazon.com/Joy-Clojure-Thinking-Way/dp/1617291412)
-- [Clojure Cookbook](https://clojure-cookbook.com/)
+## Se även:
+Officiell dokumentation för strängkonkatenation i Clojure: https://clojuredocs.org/clojure.core/str

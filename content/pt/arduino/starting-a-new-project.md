@@ -1,7 +1,7 @@
 ---
-title:                "Começando um novo projeto"
-html_title:           "Arduino: Começando um novo projeto"
-simple_title:         "Começando um novo projeto"
+title:                "Iniciando um novo projeto"
+html_title:           "Arduino: Iniciando um novo projeto"
+simple_title:         "Iniciando um novo projeto"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Getting Started"
@@ -10,35 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que começar um novo projeto no Arduino?
+## O que & Por que?
 
-Há várias razões pelas quais alguém pode querer começar um novo projeto no Arduino. Pode ser para desenvolver um protótipo de uma ideia, aprender sobre programação e eletrônica, ou simplesmente se divertir criando algo novo. Seja qual for a razão, o Arduino é uma plataforma acessível e versátil para iniciantes e especialistas em tecnologia.
+Começar um novo projeto no Arduino é simplesmente criar e programar um novo circuito usando o microcontrolador Arduino. Os programadores o fazem para criar dispositivos personalizados e automatizar tarefas com facilidade.
 
-## Como fazer?
-
-Começar um novo projeto no Arduino requer apenas alguns passos simples. Primeiro, é importante ter um Arduino Board, que é o hardware principal da plataforma. Em seguida, conecte o Arduino ao seu computador usando um cabo USB. Agora, basta seguir estes passos para começar a codificar:
+## Como fazer:
 
 ```
-Arduino setup() {
-  pinMode(ledPin, OUTPUT); // Definir o pino do LED como saída
-}
+Arduino.setup(); 
+```
+Esta é a função que inicia um novo projeto no Arduino. Ela define os parâmetros iniciais como o tipo de placa e a porta serial. 
 
-Arduino loop() {
-  digitalWrite(ledPin, HIGH); // Ligar o LED
-  delay(1000); // Esperar 1 segundo
-  digitalWrite(ledPin, LOW); // Desligar o LED
-  delay(1000); // Esperar 1 segundo
+```
+void loop(){
+//código a ser executado
 }
 ```
+Dentro da função "loop", o código principal do seu projeto é escrito. Ela é responsável por executar repetidamente o código até que o Arduino seja desligado.
 
-Ao fazer o upload deste código simples para o Arduino, um LED conectado ao pino especificado irá piscar a cada segundo. Isso é apenas um exemplo básico de como o Arduino pode ser programado para controlar dispositivos externos.
+```
+digitalWrite(LED_BUILTIN, HIGH);
+```
+Este exemplo mostra como acender o LED embutido na placa do Arduino. O "digitalWrite" envia um sinal de alta tensão para o pino especificado, iluminando o LED.
 
-## Mergulho profundo
+## Profundidade de Mergulho:
 
-Iniciar um novo projeto no Arduino pode ser intimidante para iniciantes, mas existem muitos recursos disponíveis para ajudá-lo a dar os primeiros passos. O site oficial do Arduino tem uma seção de documentação abrangente, incluindo tutoriais e exemplos de código para vários projetos. Além disso, há uma comunidade ativa de usuários do Arduino que estão dispostos a compartilhar conhecimentos e ajudar uns aos outros.
+O Arduino foi criado por Massimo Banzi e David Cuartielles em 2005, com o objetivo de tornar a eletrônica acessível para pessoas de todas as habilidades. Existem outras placas de desenvolvimento, como o Raspberry Pi, que também podem ser utilizadas para projetos semelhantes.
 
-## Veja também
+A comunidade Arduino é muito ativa e existem milhares de projetos e tutoriais disponíveis online. O site oficial do Arduino possui uma vasta documentação para ajudar os iniciantes. 
+
+Em termos de implementação, o Arduino possui uma linguagem de programação própria, baseada em C++, e uma IDE (ambiente de desenvolvimento integrado) simples e fácil de usar.
+
+## Veja também:
 
 - [Site oficial do Arduino](https://www.arduino.cc/)
 - [Documentação do Arduino](https://www.arduino.cc/reference/en/)
-- [Fórum do Arduino](https://forum.arduino.cc/)
+- [Comunidade Arduino](https://create.arduino.cc/projecthub)

@@ -10,51 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum 
+## Was & Warum?
 
-In der Welt der Softwareentwicklung gibt es oft Situationen, in denen wir Daten speichern und verarbeiten müssen. Egal ob es sich um Konfigurationsdateien, Datenbanken oder APIs handelt, YAML ist eine beliebte Wahl als Datenformat aufgrund seiner Lesbarkeit und Einfachheit. In diesem Artikel werden wir untersuchen, wie Sie mit YAML in Gleam arbeiten können. 
+YAML ist eine Dateiendung, die hauptsächlich in der Programmierung verwendet wird. Sie steht für "Yet Another Markup Language" und dient zur Strukturierung von Daten in einem menschenlesbaren Format. Programmierer nutzen YAML, um ihre Daten zu organisieren und zu speichern.
 
-## Wie geht das
+## Wie geht's?
 
-Um mit YAML in Gleam zu arbeiten, benötigen wir die bibliothek `gleam-yaml`, die wir zum `rebar.config` unseres Projekts hinzufügen. Als nächstes importieren wir die Funktionen aus der `gleam-yaml` Bibliothek und bereiten unser Beispiel vor, indem wir ein YAML-Dokument erstellen. 
+Hier ist ein Beispiel, wie man in Gleam eine YAML-Datei schreibt:
 
-```Gleam 
-import gleam-yaml 
+```Gleam
+import gleam/encode/yaml as yaml
 
-let my_yaml = 
-    """ 
-    name: Gleam 
-    category: Programming Language 
-    website: https://gleam.run/ 
-    """ 
-``` 
+let person = {name: "Anna", age: 25}
+let yaml_string = yaml.encode(person)
 
-Um das YAML-Dokument zu analysieren und die Daten zu extrahieren, verwenden wir die Funktion `Yaml.parse`. Dies gibt uns ein Gleam-Typ `Result(Yaml.Error, Yaml.Value)`, der entweder eine Fehlermeldung oder die extrahierten Daten enthält. 
+{
+    assert yaml_string == "---\name: "Anna"\nage: 25"
+    yaml_string
+}
+```
 
-```Gleam 
-let parsed_yaml = Yaml.parse(my_yaml) 
-``` 
+Das resultierende Format sieht so aus:
 
-Um auf die Daten zuzugreifen, können wir das `match`-Ausdruck verwenden, um auf die beiden möglichen Fälle, also Fehler oder Erfolg, zu reagieren. 
+```
+---
+name: "Anna"
+age: 25
+```
 
-```Gleam 
-match Yaml.parse(my_yaml) { 
-    Ok(yaml_value) -> 
-        // Hier können wir auf die Daten zugreifen 
-        let name = yaml_value |. Yaml.Key("name") |. Yaml.String 
-    Err(error) -> 
-        // Hier können wir auf den Fehler reagieren 
-        Debug.todo(error) 
-} 
-``` 
+## Tiefer Eintauchen
 
-## Tief eintauchen 
+YAML ist seit 2001 ein offener Standard und wurde entwickelt, um eine einfachere Alternative zu JSON zu bieten. Es wird häufig in Anwendungen verwendet, die viele Konfigurationsdateien haben, wie zum Beispiel Anwendungen auf der Basis von Microservices. Eine Alternative zu YAML ist TOML, das sich jedoch noch nicht so weit verbreitet hat.
 
-Wir haben bereits gesehen, wie wir YAML-Daten in Gleam analysieren können, aber es gibt noch viel mehr zu entdecken. 
-Als nächstes können wir beispielsweise die Daten in ein anderes Format konvertieren, indem wir die Funktion `Yaml.encode` verwenden. Wir können auch komplexere Daten wie Arrays und verschachtelte Objekte analysieren. Um mehr über die verfügbaren Funktionen und Optionen zu erfahren, empfehlen wir Ihnen, die Dokumentation der `gleam-yaml` Bibliothek zu lesen. 
+Die Implementierung von YAML in Gleam basiert auf der Bibliothek "js-yaml". Sie bietet eine schnelle und zuverlässige Möglichkeit, YAML in Gleam zu nutzen.
 
-## Siehe auch 
+## Siehe auch
 
-- [Gleam Dokumentation zu YAML](https://gleam.run/articles/yaml-processing) 
-- [Offizielle YAML-Website](https://yaml.org/) 
-- [Eine Einführung in YAML](https://codebeautify.org/yaml-introduction)
+- [Gleam Dokumentation](https://gleam.run/documentation/)
+- [The Basics of YAML](https://www.codeproject.com/Articles/1214409/The-Basics-of-YAML)
+- [TOML vs. YAML](https://www.toptal.com/developers/toml/toml-vs-yaml)

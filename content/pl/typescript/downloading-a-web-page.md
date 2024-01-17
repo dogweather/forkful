@@ -10,39 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+Cześć programiści!
 
-Pobieranie strony internetowej może być przydatne, jeśli potrzebujesz łatwego dostępu do jej zawartości lub chcesz przeprowadzić analizę danych. Może to również służyć jako podstawa do tworzenia własnych narzędzi lub aplikacji internetowych.
+## O co chodzi & Dlaczego?
 
-## Jak to zrobić
+Ściąganie strony internetowej to proces pobrania zawartości strony internetowej na nasz komputer. Programiści często wykonują ten krok, aby mieć dostęp do informacji lub aby przetworzyć je w programowaniu.
 
-Pobieranie strony internetowej w języku TypeScript jest bardzo prosty i wymaga tylko kilku linijek kodu. Wystarczy użyć wbudowanego modułu `http` oraz funkcji `get()`. Poniżej znajduje się przykładowy kod, który pobiera zawartość strony internetowej i wyświetla ją w konsoli:
+## Jak to zrobić:
 
 ```TypeScript
-import * as http from 'http';
+const request = require('request');
 
-http.get('https://www.example.com', res => {
-    res.setEncoding('utf8');
-    let data = '';
-
-    res.on('data', chunk => {
-        data += chunk;
-    });
-
-    res.on('end', () => {
-        console.log(data);
-    });
+request.get('https://www.example.com/', (error, response, body) => {
+  console.log(body);
 });
 ```
 
-W tym przykładzie, najpierw importujemy moduł `http`. Następnie wywołujemy funkcję `get()` z parametrem zawierającym adres URL strony, którą chcemy pobrać. Funkcja ta przyjmuje również funkcję zwrotną, która zostanie uruchomiona, gdy strona zostanie pobrana. W tej funkcji ustawiamy typ kodowania na `utf8` i deklarujemy zmienną `data`, która będzie przechowywać pobraną zawartość strony. W kolejnych dwóch funkcjach `on()` podłączamy funkcje obsługujące zdarzenia pobierania danych i zakończenia pobierania. W funkcji obsługującej zdarzenie pobierania danych, do zmiennej `data` dodajemy kolejne porcje danych. A w funkcji obsługującej zdarzenie zakończenia, wyświetlamy całą zawartość strony w konsoli.
+Output:
+`<html> ... </html>`
 
-## Deep Dive
+## Wchodzimy w szczegóły:
 
-Pobieranie strony internetowej w języku TypeScript daje nam wiele możliwości. Możemy manipulować pobranymi danymi, przetwarzać je i wykorzystywać do różnych celów. Na przykład, możemy przekazać pobraną zawartość do funkcji `writeFile()` z wbudowanego modułu `fs`, aby zapisać ją w pliku na naszym komputerze. Możemy również analizować pobrane dane w poszukiwaniu konkretnych informacji lub wykorzystać je do automatyzacji zadań internetowych.
+Ściąganie stron internetowych jest jednym z głównych procesów wykorzystywanych w web scrapingu (pobieranie danych z internetu). Innym sposobem na zrobienie tego jest wykorzystanie narzędzi takich jak Selenium, ale jest to bardziej złożony proces i wymaga użycia przeglądarki internetowej.
 
-## Zobacz także
+## Zobacz także:
 
-- Dokumentacja modułu `http` w języku TypeScript: https://nodejs.org/dist/latest-v14.x/docs/api/http.html
-- Przykładowe projekty wykorzystujące pobieranie strony internetowej w języku TypeScript: https://github.com/microsoft/TypeScript-Node-Starter/issues/45https://github.com/aszaharia/Node-TS-Samples/tree/master/src
-- Przykładowe działające kodu pobierającego stronę internetową w języku TypeScript: https://github.com/how-to-node/exercise/tree/master/request-simple
+Jeśli chcesz się dowiedzieć więcej o web scrapingu, możesz przeczytać artykuł "Web Scraping: Co to jest i dlaczego jest ważne?" na stronie [https://www.edureka.co/blog/web-scraping/](https://www.edureka.co/blog/web-scraping/)

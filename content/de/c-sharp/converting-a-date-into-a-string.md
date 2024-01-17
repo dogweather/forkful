@@ -1,7 +1,7 @@
 ---
-title:                "Ein Datum in einen String umwandeln"
-html_title:           "C#: Ein Datum in einen String umwandeln"
-simple_title:         "Ein Datum in einen String umwandeln"
+title:                "Umwandeln eines Datums in einen String"
+html_title:           "C#: Umwandeln eines Datums in einen String"
+simple_title:         "Umwandeln eines Datums in einen String"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Dates and Times"
@@ -10,44 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was & Warum?
 
-Es gibt mehrere Gründe, warum man das Datum in eine Zeichenfolge umwandeln möchte. Dies kann hilfreich sein, um das Datum lesbarer zu gestalten oder es in einem bestimmten Format für die Datenspeicherung oder -übertragung zu konvertieren.
+Wenn wir als Programmierer mit Datumsangaben arbeiten, müssen wir manchmal diese Daten in einen String umwandeln. Das bedeutet, dass wir das Datum in eine lesbare Zeichenkette verwandeln, die wir dann beispielsweise in einer Benutzeroberfläche anzeigen können. Wir müssen dies tun, weil Computer in der Regel Datumsangaben in einem maschinellen Format speichern, das wir Menschen nicht gut lesen können. 
 
-## Wie geht man vor
+## Wie geht es?
 
-Um das Datum in eine Zeichenfolge umzuwandeln, gibt es verschiedene Techniken in C#. Eine Möglichkeit ist die Verwendung der Methode `ToString()`, die in der DateTime-Klasse enthalten ist. Hier ist ein Beispiel:
-
-```C#
-DateTime date = new DateTime(2020, 07, 15);
-string dateString = date.ToString("dd.MM.yyyy");
-Console.WriteLine(dateString);
-```
-
-Ausgabe: `15.07.2020`
-
-In diesem Beispiel wird mit Hilfe der `ToString()`-Methode das Datum in das gewünschte Format `dd.MM.yyyy` (Tag.Monat.Jahr) umgewandelt. Die Methode ermöglicht es, das Datum in verschiedenen Formaten wie zum Beispiel `MM/dd/yyyy` (Monat/Tag/Jahr) oder `yyyy/MM/dd` (Jahr/Monat/Tag) auszugeben.
-
-Eine weitere Möglichkeit ist die Verwendung der String-Interpolation, die in C# 6.0 eingeführt wurde. Dabei werden Variablen direkt in die Zeichenfolge eingefügt, indem sie in geschweifte Klammern gesetzt werden. Hier ist ein Beispiel:
+Um ein Datum in einen String umzuwandeln, können wir in C# die Methode `ToString()` benutzen. Hier ein Beispiel:
 
 ```C#
-DateTime date = new DateTime(2020, 07, 15);
-string dateString = $"{date.Day}/{date.Month}/{date.Year}";
-Console.WriteLine(dateString);
+DateTime now = DateTime.Now; // current date and time
+string dateString = now.ToString(); // dateString is now "9/23/2021 10:21:00 AM"
 ```
 
-Ausgabe: `15/07/2020`
+Wir können auch ein bestimmtes Format für den String angeben, indem wir dem `ToString()` Aufruf einen Parameter übergeben:
 
-In diesem Fall werden die Werte `Day`, `Month` und `Year` aus dem `DateTime`-Objekt verwendet und in die Zeichenfolge eingefügt.
+```C#
+DateTime now = DateTime.Now; // current date and time
+string dateString = now.ToString("dd MMMM yyyy"); // dateString is now "23 September 2021"
+```
 
-## Tiefergehende Informationen
+Wir können verschiedene String-Formate ausprobieren und sehen, welches am besten zu unseren Anforderungen passt. Hier sind einige gängige Formate:
 
-Die Verwendung der `ToString()`-Methode ist die Standardmethode, um ein Datum in eine Zeichenfolge umzuwandeln. Dabei können verschiedene Formatierungsoptionen verwendet werden, um das Ausgabeformat anzupassen. Diese sind in der Dokumentation von Microsoft im Detail erklärt.
+- "dd/MM/yyyy" - 23/09/2021
+- "MM/dd/yyyy" - 09/23/2021
+- "dd MMMM yyyy" - 23 September 2021
+- "yyyy/MM/dd" - 2021/09/23
 
-Eine wichtige Sache zu beachten ist auch die Lokalität oder Region, in der die Anwendung ausgeführt wird. Das hat einen Einfluss auf die Darstellung des Datums, da unterschiedliche Kulturen verschiedene Datumsformate verwenden. Um dieses Problem zu lösen, kann das `CultureInfo`-Objekt verwendet werden, um die Kultur zu spezifizieren, in der die Anwendung ausgeführt wird.
+## Tiefer Einblick
+
+Die Umwandlung eines Datums in einen String hat eine lange Geschichte in der Programmierung. In früheren Programmiersprachen war dies eine komplexe Aufgabe, aber dank moderner Sprachen wie C# ist es jetzt viel einfacher geworden. Es gibt auch alternative Methoden, um Datums-Strings zu formatieren, wie zum Beispiel die`DateTime.ParseExact()`-Methode.
+
+Bei der Implementierung der `ToString()` Methode wird das verwendete Format durch die Systemeinstellungen des Computers bestimmt. Dies bedeutet, dass der gleiche Code auf unterschiedlichen Computern möglicherweise unterschiedliche Ergebnisse liefert. Um dies zu vermeiden, können wir das Format explizit angeben, wie wir im Beispiel oben gesehen haben.
 
 ## Siehe auch
 
-- [DateTime.ToString() Methode (System)](https://docs.microsoft.com/de-de/dotnet/api/system.datetime.tostring)
-- [Verwendung der String-Interpolation (C#-Programmierhandbuch)](https://docs.microsoft.com/de-de/dotnet/csharp/language-reference/tokens/interpolated)
-- [Kulturinformationen in .NET (Microsoft-Dokumentation)](https://docs.microsoft.com/de-de/dotnet/standard/globalization-localization/)
+- [Offizielle Dokumentation von Microsoft zu `ToString()`](https://docs.microsoft.com/en-us/dotnet/api/system.datetime.tostring?view=net-5.0)
+- [C#-Beispiele für die Verwendung von `ToString()`](https://www.c-sharpcorner.com/blogs/how-to-convert-a-datetime-to-string-format-in-c-sharp-programming1)

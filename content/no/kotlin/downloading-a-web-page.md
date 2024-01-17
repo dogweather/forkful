@@ -1,7 +1,7 @@
 ---
-title:                "Å laste ned en nettside"
-html_title:           "Kotlin: Å laste ned en nettside"
-simple_title:         "Å laste ned en nettside"
+title:                "Nedlasting av en nettside"
+html_title:           "Kotlin: Nedlasting av en nettside"
+simple_title:         "Nedlasting av en nettside"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "HTML and the Web"
@@ -10,41 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hva & Hvorfor?
+Nedlasting av en nettside er rett og slett å hente innholdet fra en nettside og lagre det på din egen enhet. Programmere gjør dette for å kunne bruke innholdet på ulike måter, som for eksempel å analysere informasjon, manipulere data eller for å inkludere nettsiden i en annen applikasjon.
 
-Hvorfor ville noen ønske å laste ned en nettside? Vel, det kan være mange grunner til det. Kanskje du vil lagre informasjonen for senere bruk, eller kanskje du vil ha en offline versjon av nettsiden. Uansett hva grunnen din er, er det enkelt å laste ned en nettside ved hjelp av Kotlin. 
+# Hvordan gjør man det?
+```Kotlin 
+import java.net.URL
+import java.io.File
 
-## Hvordan gjøre det
+fun main() {
+    // Opprett et URL objekt med linken til nettsiden du ønsker å laste ned
+    val url = URL("https://www.example.com")
 
-Først må du importere nødvendige pakker. For å laste ned en nettside, trenger du å importere `java.net.URL` og `java.io.File`. Deretter kan du følge disse trinnene:
+    // Les innholdet fra URL og lagre det i en fil
+    File("nettside.html").writeText(url.readText())
 
-1. Lag en `URL`-instans med adressen til nettsiden du ønsker å laste ned, for eksempel: 
-   
-   ```Kotlin
-   val url = URL("https://www.example.com")
-   ```
+    // Skriv ut en beskjed om nedlastingen var en suksess
+    println("Nettsiden ble lastet ned og lagret som 'nettside.html'")
+}
+```
 
-2. Deretter må du opprette en `File`-instans som vil bli brukt til å lagre nettsiden. Du kan velge hvilken som helst filsti og filnavn du ønsker:
-   
-   ```Kotlin
-   val fil = File("sti/til/fil/nettside.html")
-   ```
+# Dykk dypere
+For å forstå hvorfor nedlasting av nettsider er viktig, må vi vite at internettet er bygget opp av ulike protokoller. En av disse er HTTP, som brukes til å hente og sende informasjon mellom klienter og servere. En annen måte å laste ned nettsider på er ved å bruke en nettleser, men dette kan være vanskelig hvis man ønsker å behandle informasjonen videre. I Kotlin kan man også bruke tredjepartsbiblioteker som OkHttp for mer avansert nedlastning av nettsider.
 
-3. Nå er det på tide å laste ned nettsiden! Du kan gjøre det ved å bruke `copyTo()`-funksjonen og angi `File`-instansen som mål:
-   
-   ```Kotlin
-   url.openStream().copyTo(fil.outputStream())
-   ```
-
-4. Og det er alt! Nettsiden er nå lastet ned og lagret på ønsket filsti. Du kan nå åpne filen og se nettsiden offline når som helst.
-
-## Dykk dypere
-
-Det er verdt å merke seg at dette eksemplet bare laster ned selve HTML-siden til nettsiden, ikke hele nettsiden med bilder, CSS og JavaScript. For å laste ned alt dette innholdet, må du bruke en annen metode som involverer å analysere HTML-koden og finne lenker til alle bildene, CSS-filene og JavaScript-filene.
-
-Det kan også være nyttig å legge til litt feilhåndtering i koden din. Dette kan gjøres ved å omgi koden din med et `try-catch`-blokk, og håndtere eventuelle unntak som oppstår under nedlastingsprosessen.
-
-## Se også
-
-- [Official Kotlin Documentation](https://kotlinlang.org/docs/reference/)
-- [How to download a file in Kotlin](https://www.tutorialkart.com/kotlin/how-to-download-a-file-in-kotlin/)
+# Se også
+- [HTTP protokollen](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol)
+- [OkHttp biblioteket](https://square.github.io/okhttp/)

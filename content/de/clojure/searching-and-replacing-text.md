@@ -10,41 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was & Warum?
 
-Das Suchen und Ersetzen von Text ist eine häufige Aufgabe beim Programmieren. Es ermöglicht uns, Teile von Text zu identifizieren und zu ersetzen, um unser Code schneller und effizienter zu machen.
+Suchen und Ersetzen von Text ist ein häufig genutztes Werkzeug in der Programmierung. Es ermöglicht Programmierern, bestimmte Wörter oder Phrasen in einem Text zu identifizieren und durch andere zu ersetzen. Dies ist hilfreich, um wiederkehrende Abschnitte in Code schnell zu ändern oder Fehler zu beheben.
 
-## How To
+## Wie geht's?
 
-Um Text in einer Clojure-Anwendung zu suchen und zu ersetzen, können wir die Funktionen `replace` und `replace-first` verwenden. Diese Funktionen nehmen einen regulären Ausdruck und die zu ersetzenden Werte als Argumente. Hier ist ein Beispiel, wie wir alle Vorkommen von "Hallo" durch "Guten Tag" ersetzen können:
+Die Suchen-und-Ersetzen-Funktion ist in Clojure durch die Verwendung der integrierten Funktion `clojure.string/replace` verfügbar. Hier ein Beispiel, um alle Vorkommen von "Hallo" in einem String durch "Hi" zu ersetzen:
 
-```Clojure
-(replace #"Hallo" "Guten Tag" "Hallo Welt") ; Ausgabe: "Guten Tag Welt"
+```
+(clojure.string/replace "Hallo Welt" "Hallo" "Hi")
 ```
 
-Um nur das erste Vorkommen von "Hallo" zu ersetzen, können wir `replace-first` verwenden:
+Dies ergibt den Output `"Hi Welt"`.
 
-```Clojure
-(replace-first #"Hallo" "Guten Tag" "Hallo Welt") ; Ausgabe: "Guten Tag Welt"
-```
+## Tief eintauchen
 
-Beachten Sie, dass der reguläre Ausdruck immer als Pattern-Objekt übergeben werden muss, daher verwenden wir den `#`-Operator, um einen regulären Ausdruck zu kennzeichnen.
-
-## Deep Dive
-
-In Clojure können wir auch mithilfe von `loop` und `recur` eine rekursive Funktion erstellen, um Text zu suchen und zu ersetzen. Hier ist eine Beispielimplementation:
-
-```Clojure
-(defn ersetzen [text keyword newValue]
-  (loop [result text]
-    (if (re-find keyword result)
-      (recur (clojure.string/replace-first result keyword newValue))
-      result)))
-```
-
-In dieser Funktion wird mittels `loop` und `recur` immer wieder die Funktion aufgerufen, bis alle Vorkommen von `keyword` in `text` gefunden und ersetzt wurden.
+Historisch gesehen war das Suchen und Ersetzen von Text in früheren Programmiersprachen oft umständlicher, da es durch manuelles Iterieren durch die einzelnen Zeichen erfolgen musste. Heutzutage gibt es jedoch viele alternativen, wie z.B. das Verwenden von regulären Ausdrücken für eine präzisere Suche. Die Implementierung von Suchen und Ersetzen in Clojure basiert auf dem Konzept der persistenten Datenstrukturen, was die Effizienz und Performance verbessert.
 
 ## Siehe auch
 
-- Dokumentation zu `replace` und `replace-first`: https://clojuredocs.org/clojure.string/replace
-- Reguläre Ausdrücke in Clojure: https://clojuredocs.org/clojure.core/regex
+- Offizielle Clojure-Dokumentation zur `clojure.string` Bibliothek: https://clojuredocs.org/clojure.string
+- Vergleich von Suchen-und-Ersetzen-Funktionen in verschiedenen Programmiersprachen: https://www.regular-expressions.info/repl.html

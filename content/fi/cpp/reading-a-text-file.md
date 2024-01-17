@@ -1,7 +1,7 @@
 ---
-title:                "Tiedostotekstin lukeminen"
-html_title:           "C++: Tiedostotekstin lukeminen"
-simple_title:         "Tiedostotekstin lukeminen"
+title:                "Tekstitiedoston lukeminen"
+html_title:           "C++: Tekstitiedoston lukeminen"
+simple_title:         "Tekstitiedoston lukeminen"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Files and I/O"
@@ -10,56 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
-Miksi siis avata ja lukea tekstitiedostoja C++:lla? Se on kätevä tapa lukea ja käsitellä suuria määriä dataa, kuten käyttäjän syötteitä tai tiedostoja verkosta.
+## Mitä & Miksi?
+Lue tekstitiedosto (text file) on toiminto, jossa ohjelma lukee ja käsittelee tiedostossa olevaa tekstiä. Ohjelmoijat tekevät tätä, jotta he voivat käyttää ja manipuloida tiedostojen sisältöä koodissaan.
 
-## Kuinka
-Tässä esimerkissä näytämme, kuinka lukea ja tulostaa tiedoston sisältö käyttäen C++:aa.
+## Kuinka:
+Esimerkkejä koodista ja tulosteista käytettäessä C++ -kielen ```...``` koodilohkoja.
 
-```C++
-#include <iostream>
-#include <fstream>
+```c++
+// Avataan tiedosto lukemista varten ja tallennetaan se muuttujaan "tiedosto"
+ifstream tiedosto("tekstitiedosto.txt");
 
-int main() {
-  // Avataan tiedosto objectiksi
-  std::ifstream tiedosto("esimerkki.txt"); 
-  
-  // Tarkistetaan, että tiedosto on avattu
-  if (tiedosto.is_open()) { 
-    
-    // Luetaan ja tulostetaan jokainen rivi tiedostosta
-    std::string rivi;
-    while (std::getline(tiedosto, rivi)) { 
-      std::cout << rivi << std::endl; 
-    }
-    
-    // Suljetaan tiedosto, kun ollaan luettu kaikki rivit
-    tiedosto.close();
-  }
-  
-  return 0;
-}
+// Luetaan tiedostosta yhden rivin verran ja tallennetaan se teksti-muuttujaan
+string teksti;
+getline(tiedosto, teksti);
+
+// Tulostetaan luettu teksti näytölle
+cout << teksti << endl;
+
+// Suljetaan tiedosto
+tiedosto.close();
+
+// Tulos:
+// Tämä on esimerkkiteksti tiedostossa.
 ```
 
-Seuraava koodin pohjalta luotu esimerkkitekstitiedosto "esimerkki.txt" sisältää seuraavan tekstin:
+## Syvällisempi sukellus:
+Tiedostojen lukemisella on pitkä historia tietokoneohjelmoinnissa ja se on edelleen tärkeä osa ohjelmistojen kehittämistä. On olemassa myös muita tapoja käsitellä tiedostojen sisältöä, kuten kirjoittaminen tai muokkaaminen. Tiedostojen luku toteutetaan usein käyttämällä syöte- ja tulostusoperaatioita tai tietokantaohjelmointia.
 
-```
-Tämä on ensimmäinen rivi.
-Tämä on toinen rivi.
-Ja tämä on kolmas.
-```
-
-Kun koodi suoritetaan, tulostuu seuraava:
-
-```
-Tämä on ensimmäinen rivi.
-Tämä on toinen rivi.
-Ja tämä on kolmas.
-```
-
-## Syvällisempi sukellus
-Fstream-kirjasto sisältää monia eri metodeja tiedostojen lukemiseen ja käsittelemiseen. Yksi hyödyllinen metodi on "peek()", joka palauttaa seuraavan merkin tiedostossa ilman sen lukemista. Tämä on hyödyllistä esimerkiksi tiedoston käsittelyssä rivien välistä tyhjän rivin löytämiseen.
-
-## Katso myös
-- [C++ tiedostojen käsittely (w3schools)](https://www.w3schools.com/cpp/cpp_files.asp)
-- [Fstream referenssi (cplusplus.com)](http://www.cplusplus.com/reference/fstream/)
+## Katso myös:
+- [C++ getline() -funktio](https://www.cplusplus.com/reference/string/string/getline/)
+- [Tiedostojen lukeminen C++:lla](https://www.learncpp.com/cpp-tutorial/186-basic-file-io/)

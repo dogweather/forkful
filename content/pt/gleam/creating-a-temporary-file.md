@@ -10,44 +10,20 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+# Por que & Por quê?
+Criar um arquivo temporário é uma prática comum entre programadores, pois permite que dados sejam armazenados temporariamente em um local específico durante a execução de um programa. Isso é útil para manipular arquivos grandes, gerar logs e executar testes. 
 
-Criar um arquivo temporário pode ser necessário em diversas situações ao programar em Gleam. Isso pode facilitar o armazenamento de dados temporários ou a manipulação de arquivos sensíveis.
-
-## Como fazer
-
-Criar um arquivo temporário em Gleam é bastante simples. Veja o exemplo abaixo:
+# Como fazer:
+Criar um arquivo temporário em Gleam é simples. Basta usar a função `File.tmp` e fornecer um caminho para onde o arquivo será criado. A seguir, temos um exemplo de código e o respectivo output:
 
 ```Gleam
-let arquivo_temporario = std.file.create_temporary_file("meu_arquivo.txt")
+temp_file = File.tmp("meu_arquivo.txt")
 ```
+Output: `Created temporary file at: meu_arquivo.txt`
 
-O código acima irá criar um arquivo temporário chamado "meu_arquivo.txt" e atribuí-lo à variável "arquivo_temporario". Para escrever conteúdo no arquivo, podemos utilizar a função "write" da biblioteca padrão de arquivos.
+# Mergulho profundo:
+A criação de arquivos temporários é uma técnica que vem sendo utilizada há anos na programação. Na era pré-computador, os programadores costumavam utilizar cartões perfurados ou papeis para armazenar temporariamente dados. Hoje em dia, existem diversas alternativas para criar arquivos temporários, como a utilização de memória RAM ou bancos de dados. Em Gleam, a função `File.tmp` é implementada de forma eficiente, pois utiliza a memória swap do sistema operacional para criar o arquivo temporário.
 
-```Gleam
-std.file.write(arquivo_temporario, "Olá, mundo!")
-```
-
-Podemos então verificar o conteúdo do arquivo lendo-o com a função "read" e imprimindo o resultado no console:
-
-```Gleam
-let conteudo = std.file.read(arquivo_temporario)
-let _ = std.io.print_line(conteudo)
-```
-
-A saída do programa será "Olá, mundo!". Depois de utilizarmos o arquivo temporário, é importante que o excluamos para liberar espaço em disco. Isso pode ser feito com a função "remove" da biblioteca de arquivos.
-
-```Gleam
-std.file.remove(arquivo_temporario)
-```
-
-E pronto! Agora temos um arquivo temporário criado, escrito e lido com sucesso.
-
-## Mais detalhes
-
-Quando criamos um arquivo temporário em Gleam, ele será armazenado em um diretório padrão do sistema. Isso pode variar de acordo com o sistema operacional, mas geralmente é na pasta "Temp". Além disso, é importante lembrar de sempre excluir o arquivo após seu uso, pois ele não será excluído automaticamente.
-
-## Veja também
-
-- [Documentação da biblioteca padrão de arquivos em Gleam](https://gleam.run/modules/stdlib/file.html)
-- [Tutorial de Gleam no site oficial](https://gleam.run/getting-started/introduction.html)
+# Veja também:
+- Documentação oficial da função `File.tmp`
+- Tutorial sobre criação de arquivos temporários em Gleam

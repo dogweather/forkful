@@ -10,55 +10,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
 
-Att skriva ut debug-utgång är ett vanligt sätt för programmerare att felsöka och hitta fel i sitt kod. Genom att skriva ut värden och variabler i olika delar av programmet kan man få en bättre förståelse för hur koden körs och var eventuella problem uppstår.
+Att skriva ut debuggutdata är ett sätt för programmerare att kontrollera vad som händer i sin kod. Det kan också hjälpa till att hitta och lösa fel i programmet.
 
-## Så här gör du
+## Hur man gör:
 
-För att skriva ut debug-utgång i Fish Shell kan du använda kommandot `echo`. Detta kommando skriver ut en sträng som du anger till standardutgången. I följande exempel skriver vi ut värdet av variabeln `num`:
-```
-Fish Shell
-set num 5
-echo "Värdet av num är $num"
-```
+### Skriv ut till terminalen
 
-Output: 
+```Fish Shell
+echo "Debugging output is here!" 
 ```
-Värdet av num är 5
-```
-
-För att enkelt se skillnaden mellan olika värden kan du också använda `printf` kommandot. Detta kommando tillåter dig att formatera utmatningen enligt specifika instruktioner. I följande exempel skriver vi ut två variabler i olika former:
-```
-Fish Shell
-set num 5
-set text "Det här är en text"
-printf "Värdet av num är %d. %s\n" $num $text
-```
-
 Output:
 ```
-Värdet av num är 5. Det här är en text
+Debugging output is here!
 ```
 
-## Djupdykning
+### Visa variabler
 
-En annan användbar teknik för att skriva ut debug-utgång är att använda `status` kommandot. Detta kommando låter dig se statuskoden för det senaste kommandot som kördes. Detta kan vara särskilt användbart när du vill kontrollera om ett visst kommando har kört korrekt eller inte.
-
+```Fish Shell
+set my_variable "This is a variable"
+echo $my_variable
 ```
-Fish Shell
-status
-```
-
 Output:
 ```
-0
+This is a variable
 ```
 
-Om kommandot kördes utan några problem kommer du att se `0` som resultat. Om det däremot uppstod problem kommer du att se en annan siffra som representerar en felkod.
+### Använd en debuggande funktion
 
-## Se även
+Fish Shell har en inbyggd funktion för att skriva ut debuggutdata i formatet "[DEBUG]: <din utdata>". Detta kan vara ett bra sätt att separera din debuggutdata från andra utskrifter i ditt program.
 
-- [Officiell Fish Shell-dokumentation](https://fishshell.com/docs/current/)
-- [How to Debug in Fish Shell](https://medium.com/@flashpoint.eth/how-to-debug-in-fish-shell-3afa8b5d6b)
-- [Fish Shell Tips and Tricks](https://medium.com/@rafaelcalsaverini/fish-shell-tips-and-tricks-94d1bb66fe3a)
+```Fish Shell
+debug "This is my debugging output"
+```
+Output:
+```
+[DEBUG]: This is my debugging output
+```
+
+## Deep Dive:
+
+### Historiskt sammanhang
+
+Att skriva ut debuggutdata är ett vanligt sätt att kontrollera och felsöka kod i många programmeringsspråk. Det har funnits med sedan de tidigaste dagarna av programmering och är fortfarande en viktig del av utvecklingen idag.
+
+### Alternativ till utskrift i terminalen
+
+Förutom att skriva ut till terminalen finns det andra sätt att visa debuggutdata, till exempel att skriva till en loggfil som kan granskas senare. Det finns också olika verktyg och bibliotek som kan hjälpa dig att granska och analysera din debuggutdata.
+
+### Implementeringsdetaljer
+
+I Fish Shell kan du använda enkla kommandon som `echo` eller `set` för att visa debuggutdata. Du kan också använda funktionen `debug` för att skriva ut i ett mer standardiserat format. Se `man fish` för mer information om varje kommando och dess användningsområden.
+
+## Se även:
+
+- [Fish Shell dokumentation](https://fishshell.com/docs/current/index.html)
+- [The art of debugging](https://hbr.org/2018/02/the-art-of-debugging) (engelska)

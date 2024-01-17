@@ -10,58 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
+Comparing two dates in programming refers to the process of determining if one date is earlier or later than the other. This is important for tasks such as sorting and filtering data based on date values. Programmers often need to compare dates in order to accurately analyze and manipulate data in their code.
 
-Have you ever needed to compare two dates in your Python code? Maybe you're building a program that tracks events or reminders, and you need to know if one date comes before or after another. Being able to compare dates is an essential skill in many programming projects.
+## How to:
+To compare two dates in Python, first import the datetime module which allows for date and time operations. Then, use the `datetime` function to create two date objects. Finally, use comparison operators, such as `<` (less than) and `>` (greater than), to compare the two dates. 
 
-## How To
-
-The good news is that comparing two dates in Python is simple and straightforward. Let's take a look at a few examples using the built-in `datetime` module.
-
-To start, we'll create two `datetime` objects representing different dates:
-
-```Python
+```
+# Import datetime module
 import datetime
 
-date1 = datetime.datetime(2021, 3, 15)
-date2 = datetime.datetime(2021, 3, 20)
+# Create date objects
+date1 = datetime.date(2021, 5, 1)
+date2 = datetime.date(2021, 5, 15)
+
+# Compare dates
+if date1 < date2:
+    print("Date 1 is earlier than Date 2")
+elif date1 > date2:
+    print("Date 1 is later than Date 2")
+else:
+    print("The two dates are equal")
 ```
 
-We can now compare these two dates using the comparison operators `<` and `>`. These operators return a boolean value indicating if the first date is before or after the second date:
+The output in this case would be: `Date 1 is earlier than Date 2`
 
-```Python
-print(date1 < date2)  # Output: True
-print(date1 > date2)  # Output: False
-```
+## Deep Dive:
+In a historical context, comparing dates was much more complex in older programming languages before libraries like the datetime module were created. Programmers had to use a combination of functions and operators to compare dates, often resulting in lengthier and less efficient code.
 
-We can also check if two dates are equal using the `==` operator:
+An alternative to using the datetime module in Python is to use the `timedelta` function, which allows for date and time calculations. However, this may not be necessary for simple date comparisons.
 
-```Python
-print(date1 == date2)  # Output: False
-```
+Under the hood, the comparison operators in Python work by comparing the number of days between the two dates as integers. This is why we can use these operators with date objects.
 
-But what if we want to compare the dates based on their time, not just their date? We can use the `.time()` method to access the time component of a `datetime` object:
+## See Also:
+For more information on comparing dates in Python, check out the official documentation for the datetime module: https://docs.python.org/3/library/datetime.html
 
-```Python
-date3 = datetime.datetime(2021, 3, 15, 8, 0, 0) # 8 AM on March 15th
-
-print(date1.time() < date3.time())  # Output: True
-```
-
-In this example, we are comparing only the time component, so `date3` is considered to be before `date1`.
-
-## Deep Dive
-
-Under the hood, the comparison operators are using the `__lt__` (less than), `__gt__` (greater than), and `__eq__` (equal) methods of the `datetime` class to perform the comparisons. These methods allow us to customize how dates are compared if needed.
-
-Additionally, the `datetime` module includes a handy `timedelta` class that allows us to compare the difference between two dates in terms of days, hours, minutes, etc. For example, we can find the number of days between `date1` and `date2` using the following code:
-
-```Python
-delta = date2 - date1
-print(delta.days)  # Output: 5
-```
-
-## See Also
-
-- [Python datetime documentation](https://docs.python.org/3/library/datetime.html)
-- [Python timedelta documentation](https://docs.python.org/3/library/datetime.html#timedelta-objects)
+For a more in-depth tutorial on working with dates in Python, you can also refer to this guide: https://realpython.com/python-datetime/

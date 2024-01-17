@@ -1,7 +1,7 @@
 ---
-title:                "Ecrire des tests"
-html_title:           "Javascript: Ecrire des tests"
-simple_title:         "Ecrire des tests"
+title:                "Écriture des tests"
+html_title:           "Javascript: Écriture des tests"
+simple_title:         "Écriture des tests"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Testing and Debugging"
@@ -10,41 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Bonjour à tous les lecteurs ! Aujourd'hui, nous allons parler de la rédaction de tests en Javascript et pourquoi c'est important pour votre code.
+## Qu'est-ce que c'est et pourquoi le faire?
 
-## Pourquoi
+Ecrire des tests en Javascript est une pratique courante parmi les programmeurs pour garantir le bon fonctionnement de leur code. Les tests sont des morceaux de code qui vérifient si une partie spécifique du code fonctionne correctement. Cela permet aux programmeurs de détecter et de corriger les erreurs avant qu'elles ne deviennent des problèmes pour les utilisateurs.
 
-La rédaction de tests est un outil essentiel pour tout développeur Javascript. Cela permet de s'assurer que votre code fonctionne correctement et de le protéger contre les éventuels bugs à l'avenir. Les tests permettent également de faciliter la maintenance et les modifications de votre code, en offrant une base solide pour vous assurer que vos changements n'ont pas affecté les fonctionnalités existantes.
+## Comment procéder:
 
-## Comment faire
-
-La première étape pour écrire des tests est de choisir un framework de test en Javascript. Il en existe plusieurs, tels que Jest, Mocha ou Jasmine. Une fois que vous avez choisi votre framework, vous pouvez commencer à créer des fichiers de test pour chaque partie de votre code.
+Pour écrire des tests en Javascript, il est important de comprendre comment les tests sont structurés. Voici un exemple simple de test unitaire pour une fonction nommée "add" qui additionne deux nombres:
 
 ```Javascript
-// Exemple de test avec Jest
-const { add } = require('./mathFunctions');
+function add(a, b) {
+  return a + b;
+}
 
-test('Ajoute correctement deux nombres', () => {
-  expect(add(1, 2)).toBe(3);
+// test unitaire pour la fonction "add"
+test("test add function", () => {
+  const sum = add(5, 10);
+  expect(sum).toBe(15); // vérifie si le résultat est bien égal à 15
 });
 ```
 
-Dans cet exemple, nous importons la fonction d'addition de notre fichier "mathFunctions.js" et nous testons si elle retourne bien le résultat attendu (3) lorsque nous lui donnons deux nombres (1 et 2).
+Dans cet exemple, nous créons une fonction "add" qui prend deux paramètres et renvoie la somme de ces deux nombres. Pour tester cette fonction, nous utilisons la fonction "test" et la méthode "expect" pour vérifier si le résultat de la fonction est bien égal à 15. Si c'est le cas, le test est réussi. Sinon, le test échoue et nous devons réviser notre fonction "add" pour qu'elle fonctionne correctement.
 
-Il est important de tester plusieurs cas de figure pour chaque fonction, en incluant des valeurs limites et des situations d'erreur possibles. Cela permet de s'assurer que votre code est robuste et qu'il gère toutes les situations possibles.
+## Plongée en profondeur:
 
-## Plongée plus profonde
+La pratique de l'écriture de tests en Javascript a pris de l'importance avec l'avènement du développement piloté par les tests (TDD). Cette approche consiste à écrire d'abord des tests avant d'écrire le code réel, ce qui permet de s'assurer que le produit final fonctionne correctement dès le début. Il existe également d'autres frameworks de tests populaires en Javascript tels que Jest, Mocha et Jasmine.
 
-La rédaction de tests ne signifie pas seulement écrire des tests pour valider votre code. Elle implique également la mise en place d'un processus d'intégration continue pour automatiser l'exécution des tests à chaque nouvelle modification de code, garantissant ainsi que toutes les fonctionnalités existantes continuent de fonctionner correctement.
+En plus des tests unitaires, il existe également des tests d'intégration qui vérifient le bon fonctionnement de différentes parties d'une application ensemble. Certains outils, comme Cypress, permettent même d'effectuer des tests end-to-end pour vérifier le comportement d'une application dans son ensemble.
 
-Il est également important de suivre les principes du développement piloté par les tests (Test Driven Development en anglais), en écrivant les tests avant le code. Cela permet de se concentrer sur les fonctionnalités à développer et de s'assurer que la logique du code est correcte avant même de commencer à coder.
+Il est également important de noter que l'écriture de tests ne garantit pas à 100% un code sans erreurs, mais cela aide grandement à minimiser les problèmes et à améliorer la qualité de votre code.
 
-## Voir aussi
+## Voir aussi:
 
-Pour en savoir plus sur la rédaction de tests en Javascript, vous pouvez consulter les ressources suivantes :
-
-- [Documentation de Jest](https://jestjs.io/docs/en/getting-started)
-- [Guide du développement piloté par les tests en Javascript](https://blog.pragmatists.com/test-driven-react-how-to-develop-react-components-tested-atoms-8abb493ba3cd)
-- [Article sur l'importance de la rédaction de tests pour le code de qualité](https://medium.com/javascript-scene/why-i-use-tape-instead-of-mocha-so-should-you-6aa105d8eaf4)
-
-Maintenant, vous êtes prêt à commencer à écrire des tests pour votre code Javascript. N'oubliez pas que c'est un outil précieux pour améliorer la qualité de votre code et assurer son bon fonctionnement à long terme. Alors n'hésitez pas à en utiliser !
+- [Introduction au développement piloté par les tests](https://www.digitalocean.com/community/tutorials/js-intro-testing)
+- [Comparaison des frameworks de tests en Javascript](https://blog.bitsrc.io/which-javascript-testing-library-should-i-use-a-comparison-guide-eventloop-ca5360ed2967)
+- [Guide de Cypress pour les tests end-to-end](https://docs.cypress.io/guides/overview/why-cypress.html)

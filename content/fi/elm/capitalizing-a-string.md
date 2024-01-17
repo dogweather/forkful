@@ -1,7 +1,7 @@
 ---
-title:                "Merkkijonon pääkirjainmuunnos"
-html_title:           "Elm: Merkkijonon pääkirjainmuunnos"
-simple_title:         "Merkkijonon pääkirjainmuunnos"
+title:                "Pienentäminen merkkijonoksi"
+html_title:           "Elm: Pienentäminen merkkijonoksi"
+simple_title:         "Pienentäminen merkkijonoksi"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -10,36 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä & Miksi?
 
-Miksi haluat muuntaa tekstin isoiksi kirjaimiksi? Se voi olla hyödyllistä esimerkiksi, kun haluat korostaa tärkeää sanaa tai otsikkoa.
+Pienellä kirjaimella kirjoitettu merkkijono muuttuu isolla alkukirjaimella kirjoitetuksi merkkijonoksi, kun sitä käytetään koodissa. Ohjelmoijat yleensä tekevät tämän paremman selkeyden ja luettavuuden vuoksi, jotta eri muuttujat erottuvat toisistaan.
 
-## Kuinka
+## Miten:
 
-Yksinkertaisin tapa muuttaa merkkijono isoiksi kirjaimiksi on käyttää `toUpper` -funktiota.
+Capitalize-funktio Elm-ohjelmointikielessä muuttaa merkkijonon ensimmäisen kirjaimen isoksi kirjaimeksi ja jättää loput kirjaimet samalle tavalle. Esimerkiksi ```capitalize "kissa"``` tulostaa ```"Kissa"```.
 
-```Elm
-import String
+Toinen vaihtoehto on käyttää isolla alkukirjaimella kirjoitettua merkkijonoa suoraan koodissa, mutta tämä voi olla hankalaa, jos haluat muuttaa merkkijonon sisältöä myöhemmin.
 
-capitalizedWord = String.toUpper "tämä on isoiksi kirjaimiksi"
--- "TÄMÄ ON ISOIKSI KIRJAIMIKSI"
-```
+## Syvällisempi tarkastelu:
 
-Voit myös muuttaa vain tietyn alueen merkkijonosta isoiksi kirjaimiksi käyttämällä `toUpper` yhdessä `slice` -funktion kanssa.
+Merkkijonojen käsittelyn yhteydessä on tärkeää huolehtia niiden muotoilusta ja selkeydestä. Pienet asiat, kuten merkkijonon ensimmäinen kirjain, voivat vaikuttaa koodin luettavuuteen ja ymmärrettävyyteen.
 
-```Elm
-import String
+On myös muita tapoja muuttaa merkkijonon ensimmäinen kirjain isoksi kirjaimeksi, kuten käyttämällä String-moduulin funktioita tai rakentamalla oma funktio. Jokainen ohjelmoija voi valita itselleen sopivimman tavan.
 
-partialCapitalizedWord = String.slice 0 5 (String.toUpper "tämä on isoiksi kirjaimiksi")
--- "TÄMÄ "
-```
+Implementoinnista riippuen capitalize-funktio voi joko muuttaa merkkijonon alkuperäistä muotoa tai palauttaa uuden muokatun merkkijonon. On tärkeää tarkistaa toiminta ja tarvittaessa muuttaa koodia vastaamaan haluttua lopputulosta.
 
-## Syvällinen sukellus
+## Katso myös:
 
-Elm-kielessä merkkijonot ovat muuttumattomia, mikä tarkoittaa, että merkkijonon muuttaminen vaatii uuden merkkijonon luomista ja alkuperäisen merkkijonon hylkäämistä. Tästä syystä on hyvä välttää merkkijonojen jatkuvaan muokkaamiseen perustuvaa ohjelmointityyliä, sillä se voi aiheuttaa turhaa suorituskyvyn laskua.
-
-## Katso myös
-
-- [Ohjelmoinnin perusteet: Merkkijonon muuttaminen](https://guide.elm-lang.org/language_basics/strings.html)
-- [Elm-paketin dokumentaatio: String](https://package.elm-lang.org/packages/elm/core/latest/String)
-- [Muut tapoja muuntaa merkkijonoja isoiksi kirjaimiksi](https://stackoverflow.com/questions/34995233/how-to-make-a-word-uppercase-in-elm)
+- [Elm-kielen String-moduuli](https://package.elm-lang.org/packages/elm/core/latest/String)
+- [Vinkkejä koodin luettavuuden parantamiseen](https://elmlang.slack.com/archives/C0JNLJZU8/p1486638256021694)

@@ -10,40 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+## O que e por que?
+Converter uma data em uma string é um processo comum entre os programadores, que permite representar uma data de forma legível para humanos. Isso é útil para exibir datas em formato de texto em interfaces do usuário, gerar logs ou salvar dados em um formato específico.
 
-Se você já trabalhou com datas em um projeto de programação, sabe que em algum momento será necessário convertê-las em formato de texto. Isso pode ser útil para exibir a data em um formato específico, como DD/MM/AAAA ou para uso em bancos de dados. Com o TypeScript, essa tarefa pode ser realizada de forma simples e eficiente.
-
-## Como Fazer
-
-Para converter uma data em uma string usando o TypeScript, você pode utilizar o método `toString()` do objeto Date. Veja um exemplo abaixo:
-
-```TypeScript
-let data = new Date(); // Cria uma nova instância do objeto Date, com a data e hora atuais
-let dataString = data.toString(); // Converte a data em uma string
-
-console.log(dataString) // Saída: "Wed Feb 23 2022 15:00:00 GMT-0300"
+## Como fazer:
+```TypeScript 
+const myDate = new Date();
+const dateString = myDate.toDateString();
+console.log(dateString); // Saída: "Thu Jul 22 2021"
 ```
 
-Você também pode especificar o formato em que a data será exibida utilizando os métodos `getDate()`, `getFullYear()` e `getMonth()`. Veja o exemplo abaixo:
-
 ```TypeScript
-let data = new Date(); // Cria uma nova instância do objeto Date, com a data e hora atuais
-let dia = data.getDate();
-let mes = data.getMonth() + 1; // Precisamos adicionar 1 ao mês, pois o retorno do método começa em 0
-let ano = data.getFullYear();
-
-let dataString = dia + "/" + mes + "/" + ano; // Concatenamos as informações para formar a data em texto
-
-console.log(dataString) // Saída: "23/02/2022"
+const myDate = new Date();
+const options: Intl.DateTimeFormatOptions = { weekday: "long", year: "numeric", month: "long", day: "numeric" };
+const dateString = myDate.toLocaleDateString("pt-BR", options);
+console.log(dateString); // Saída: "quinta-feira, 22 de julho de 2021"
 ```
 
-## Aprofundando-se
+## Mergulho profundo:
+A necessidade de converter datas em strings surgiu junto com a criação das primeiras linguagens de programação, que não tinham tipos de dados específicos para representar datas. Atualmente, existem diversas formas de realizar essa conversão, como usando bibliotecas externas ou formatando manualmente a string. A implementação nativa em TypeScript utiliza a classe `Date` e os métodos `toDateString()` e `toLocaleDateString()` para realizar a conversão de acordo com a localização do usuário.
 
-Ao converter uma data em uma string, é importante estar atento ao formato em que ela será exibida. Isso pode variar de acordo com a localização e configuração do seu sistema operacional. Por exemplo, em um sistema com localização em inglês, a data pode ser exibida como "02/23/2022", enquanto em um sistema com localização em português, ela pode ser exibida como "23/02/2022". Além disso, é possível utilizar bibliotecas externas, como o Moment.js, para facilitar a manipulação de datas em JavaScript e TypeScript.
-
-## Veja Também
-
-- Documentação Oficial do TypeScript sobre o objeto Date: https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-2.html#object-types-with-symbol-named-properties
-- Moment.js: https://momentjs.com/
-- Manipulando datas com Moment.js: https://levelup.gitconnected.com/manipulating-dates-with-moment-js-a8ca4f9d7017
+## Veja também:
+- [Documentação oficial do método toDateString()](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Date/toDateString)
+- [Documentação oficial do método toLocaleDateString()](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleDateString)
+- [Tudo sobre datas em TypeScript](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-7.html#support-for-similar-tojson-methods-in-class-declarations)

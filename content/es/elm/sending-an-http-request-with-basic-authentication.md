@@ -10,59 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué enviar una solicitud HTTP con autenticación básica en Elm?
+## ¿Qué y Por qué?
+Enviar una solicitud HTTP con autenticación básica es una forma de asegurar que el servidor sólo pueda ser accedido por usuarios autorizados. Los programadores utilizan esta técnica para proteger sus aplicaciones y asegurar la privacidad de los datos.
 
-Enviar una solicitud HTTP con autenticación básica en Elm es una forma de asegurar la comunicación entre un cliente y un servidor web. Esto es especialmente importante cuando se manejan datos sensibles, como información personal o bancaria, ya que la autenticación básica proporciona una capa adicional de seguridad al requerir un nombre de usuario y una contraseña para acceder a la información.
+## Cómo:
 
-## Cómo hacerlo
+Las solicitudes HTTP con autenticación básica se pueden hacer en Elm utilizando la función `Http.send`. Se debe proporcionar un `Http.Request` que incluya las credenciales de autenticación en el encabezado de la solicitud. A continuación se muestra un ejemplo de código que ilustra cómo hacerlo:
 
-Para enviar una solicitud HTTP con autenticación básica en Elm, primero se debe importar el módulo `Http` y el módulo `Basicauth` de la biblioteca `elm/http`.
+```elm
+Http.send
+    ("GET", "http://mi-servidor.com/api", textDecoder)
+    { headers = [ Http.header "Authorization" "Basic dXNlcm5hbWU6cGFzc3dvcmQ=" ]
+    , expect = Http.expectString Respuesta
+    }
+``` 
 
-```Elm
-import Http
-import Basicauth
-```
+En este ejemplo, se envía una solicitud HTTP GET al servidor con la URL `http://mi-servidor.com/api` y se decodifica la respuesta utilizando un `textDecoder`. El encabezado de la solicitud contiene las credenciales de autenticación codificadas en base64, con el formato `username:password`.
 
-Luego, se debe crear una función que tome como argumentos el nombre de usuario y la contraseña para generar la cadena de autenticación.
+Una vez que la solicitud se envía, se espera una respuesta de tipo `Http.Response string`, que puede ser procesada utilizando una función `Http.expectString` y un tipo de respuesta personalizado.
 
-```Elm
-basicAuth : String -> String -> String
-basicAuth username password =
-    "Basic " ++ (Basicauth.encode username password)
-```
+## Profundizando:
 
-A continuación, se debe definir la función `sendRequest` que se encargará de enviar la solicitud HTTP con la autenticación básica incluida en el encabezado de la solicitud.
+La autenticación básica en HTTP fue introducida en la especificación HTTP/1.0 para proporcionar un método simple de autenticación en la web. Sin embargo, este método no es seguro y se recomienda utilizar métodos de autenticación más avanzados, como OAuth o tokens de acceso.
 
-```Elm
-sendRequest : String -> String -> Cmd Msg
-sendRequest username password =
-    let
-        authString =
-            basicAuth username password
+Una alternativa a la autenticación básica es utilizar HTTPS en lugar de HTTP, lo que asegura que todas las comunicaciones entre el cliente y el servidor estén encriptadas. Sin embargo, aún es importante tener en cuenta que la autenticación básica es vulnerable a ataques de retransmisión y puede ser fácilmente compartida o interceptada si no se utiliza HTTPS.
 
-        request =
-            Http.request
-                { method = "GET"
-                , headers = [ Http.header "Authorization" authString ]
-                , url = "https://myapi.com"
-                , body = Http.emptyBody
-                , expect = Http.expectJson GotData MyDataDecoder
-                }
-    in
-        Http.send GotData request
-```
+En términos de implementación, la autenticación básica en Elm es bastante sencilla gracias a la función `Http.send` y el uso de `Http.expectString` para decodificar la respuesta. Sin embargo, es importante tener en cuenta la seguridad y las vulnerabilidades potenciales al utilizar este método de autenticación.
 
-Finalmente, se invoca la función `sendRequest` con el nombre de usuario y la contraseña deseados para enviar la solicitud HTTP.
-
-```Elm
-sendRequest "miusuario" "micontraseña"
-```
-
-## Profundizando
-
-Al enviar una solicitud HTTP con autenticación básica en Elm, primero se crea una cadena de autenticación que sigue el formato "Basic <credenciales codificadas en base64>" utilizando la función `Basicauth.encode`. Luego, se incluye esta cadena en el encabezado de la solicitud utilizando `Http.header` y se envía la solicitud utilizando `Http.send`. Es importante tener en cuenta que la autenticación básica no proporciona una seguridad absoluta y se recomienda utilizar otros métodos de autenticación más seguros para proteger los datos sensibles.
-
-## Ver también
-
-- [Documentación de la biblioteca Http en Elm](https://package.elm-lang.org/packages/elm/http/latest/)
-- [Documentación de la biblioteca Basicauth en Elm](https://package.elm-lang.org/packages/NoRedInk/elm-basic-auth/latest/)
+## Véase también:
+Para obtener más información sobre la autenticación básica en HTTP y otras formas de autenticación en la web, revisa los siguientes recursos:
+- [MDN: Authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
+- [HTTP Basic authentication](https://www.elastic.co/guide/en/elasticsearch/reference/current/security-basic.html)
+- [HTTP Basics Authentication Tutorial](https://www.tutorialspoint.com/http/http_basic_authentication.html)

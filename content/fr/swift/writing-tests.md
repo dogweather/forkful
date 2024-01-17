@@ -1,7 +1,7 @@
 ---
-title:                "Écrire des tests"
-html_title:           "Swift: Écrire des tests"
-simple_title:         "Écrire des tests"
+title:                "Écriture de tests"
+html_title:           "Swift: Écriture de tests"
+simple_title:         "Écriture de tests"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Testing and Debugging"
@@ -10,51 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi écrire des tests en Swift 
+## Qu'est-ce que c'est et pourquoi le faire?
+Ecrire des tests fait partie intégrante de la pratique de programmation pour les développeurs. Cela signifie écrire des morceaux de code pour vérifier que notre programme fonctionne comme prévu. Les tests permettent de détecter les erreurs avant qu'elles ne se présentent aux utilisateurs et de s'assurer que le code fonctionne correctement même après de futurs changements.
 
-Vous avez peut-être déjà entendu parler de l'importance des tests en programmation, mais pourquoi devriez-vous en écrire spécifiquement en Swift? Eh bien, écrire des tests en Swift vous permet de vérifier que votre code fonctionne correctement et d'éviter des erreurs potentielles. De plus, cela vous aide à garantir que votre application reste fonctionnelle et stable avec les futures mises à jour du langage Swift.
-
-## Comment écrire des tests en Swift 
-
-Pour écrire des tests en Swift, vous pouvez utiliser l'API de test intégrée dans Xcode ou utiliser un outil tel que Quick pour écrire des tests en langage naturel. Voici un exemple de test utilisant l'API de test Xcode :
-
+## Comment faire:
+Voici un exemple simple de test en Swift pour une fonction qui calcule la somme de deux nombres :
 ```Swift
-import XCTest
-
-class CalculatorTests: XCTestCase {
-
-    func testAddition() {
-        let calculator = Calculator()
-        let result = calculator.add(x: 2, y: 2)
-        XCTAssertEqual(result, 4)
-    }
-
-    func testDivision() {
-        let calculator = Calculator()
-        let result = calculator.divide(x: 10, y: 2)
-        XCTAssertEqual(result, 5)
-    }
+func addition(_ a: Int, _ b: Int) -> Int {
+  return a + b
 }
 
-class Calculator {
-    func add(x: Int, y: Int) -> Int {
-        return x + y
-    }
-
-    func divide(x: Int, y: Int) -> Int {
-        return x / y
-    }
+func testAddition() {
+  let result = addition(2, 3)
+  assert(result == 5, "La somme de 2 et 3 devrait être égale à 5, mais le résultat obtenu est \(result).")
 }
+
+testAddition()
 ```
+Nous pouvons ainsi vérifier si notre fonction additionne correctement deux nombres en nous assurant que le résultat est celui attendu. Dans ce cas, la somme de 2 et 3 doit être égale à 5.
 
-Dans cet exemple, nous avons créé une classe de tests contenant deux fonctions de test, une pour l'addition et une pour la division. Nous vérifions ensuite les résultats attendus à l'aide de l'assertion "XCTAssertEqual". Vous pouvez également utiliser des outils externes tels que Quick pour écrire des tests plus lisibles en utilisant des expressions en langage naturel.
+## Plongée en profondeur:
+Les tests ont évolué au fil du temps, mais leur but principal est resté le même: s'assurer que notre code fonctionne correctement. Il existe différentes approches pour écrire des tests, mais celle utilisée en Swift est appelée "Test-Driven Development" (TDD). Cela signifie que nous écrivons les tests avant d'écrire le code réel, ce qui nous permet de connaître à l'avance le comportement attendu du programme. Bien sûr, il existe d'autres approches comme "Behavior-Driven Development" (BDD) et "Acceptance Test-Driven Development" (ATDD). Chacune a ses avantages et ses inconvénients, mais la clé est de toujours écrire des tests pour notre code.
 
-## Plongée en profondeur 
-
-Maintenant que vous avez une idée de la façon d'écrire des tests en Swift, plongeons un peu plus en profondeur. Écrire des tests vous permet non seulement de détecter les bugs, mais aussi de faciliter la maintenance de votre code. Cela vous aide à détecter les problèmes plus rapidement et à les corriger plus facilement grâce à l'utilisation d'un environnement isolé de votre application principale. De plus, en écrivant des tests en même temps que votre code, vous pouvez économiser du temps en évitant de devoir tout retester manuellement à chaque modification.
-
-## Voir aussi
-
-- [Documentation Apple sur l'écriture de tests en Swift](https://developer.apple.com/documentation/xctest/testing_in_xcode)
-- [Quick : un framework de test en langage naturel pour iOS et Swift](https://github.com/Quick/Quick)
-- [Article sur les bonnes pratiques pour écrire des tests en Swift](https://betterprogramming.pub/7-best-practices-for-writing-swift-unit-tests-623a2e33556)
+## Voir aussi:
+Si vous souhaitez en savoir plus sur les tests en programmation Swift, voici quelques ressources utiles :
+- La documentation officielle sur les tests en Swift : https://developer.apple.com/documentation/xctest
+- Une vidéo de WWDC sur le Test-Driven Development en Swift : https://developer.apple.com/videos/play/wwdc2018/404/
+- Un article sur les différents types de tests en Swift : https://www.hackingwithswift.com/articles/90/different-types-of-unit-test-in-swift

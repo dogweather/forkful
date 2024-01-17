@@ -10,51 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hva og hvorfor?
 
-Å skrive en tekstfil er en vanlig oppgave i mange programmeringsspråk, og Kotlin er intet unntak. Å kunne skrive tekstfiler kan være nyttig for å lagre og behandle data i et program.
+Skriving av en tekstfil i Kotlin er en måte å lagre data i et tekstbasert format på. Dette brukes ofte av programvareutviklere for å lagre og behandle data som kan leses og forstås av både mennesker og datamaskiner.
 
-## Hvordan gjøre det
+# Hvordan:
 
-Skriving av en tekstfil i Kotlin er en enkel prosess som kan gjøres på få linjer med kode. Først må vi opprette en variabel som inneholder teksten vi vil skrive til filen:
-
-```Kotlin
-val tekst = "Dette er en tekstfil skrevet med Kotlin"
-```
-
-Deretter må vi bruke en FileWriter-klasse for å åpne en ny fil for skriving, og en BufferedWriter for å skrive teksten til filen:
+For å skrive en tekstfil i Kotlin, kan du bruke funksjonen "writeText()" og spesifisere banen til filen du ønsker å opprette. I eksempelet nedenfor vil vi opprette en tekstfil med navnet "minfil.txt" og skrive innholdet "Hei, verden!".
 
 ```Kotlin
-val skriver = BufferedWriter(FileWriter("tekstfil.txt"))
-skriver.write(tekst)
+fun main() {
+    val fil = "minfil.txt"
+    val innhold = "Hei, verden!"
+    fil.writeText(innhold)
+}
 ```
 
-Til slutt må vi lukke både skriveren og filen:
+Når koden kjøres, vil den opprette en fil med navnet "minfil.txt" og lagre teksten "Hei, verden!" i filen.
 
-```Kotlin
-skriver.close()
-```
+# Dypdykk:
 
-Etter å ha kjørt disse tre linjene med kode, vil teksten bli skrevet til filen "tekstfil.txt".
+Før skriving av tekstfiler var en vanlig praksis, ble data ofte lagret i binærfiler som bare kunne leses og forstås av datamaskiner. Med fremveksten av tekstfiler ble det enklere for mennesker å samhandle med data og også muliggjort for applikasjoner å behandle tekstbasert informasjon mer effektivt.
 
-## Gå dypere
+En alternativ måte å skrive tekstfiler i Kotlin på er ved hjelp av klassen "FileWriter" som gir mer fleksibilitet når det gjelder formatering av data. Men for å sikre enkel og rask skriving av tekstfiler, kan "writeText()" funksjonen være den beste løsningen.
 
-Hvis vi ønsker å legge til mer tekst i filen vår, kan vi bruke metoden "append()" i FileWriter-klassen:
+# Se også:
 
-```Kotlin
-val skriver = BufferedWriter(FileWriter("tekstfil.txt", true))
-skriver.append("Dette er en tilleggslinje")
-```
+For mer informasjon om hvordan du skriver tekstfiler i Kotlin, kan du sjekke ut dokumentasjonen på Kotlin sin offisielle nettside: https://kotlinlang.org/docs/reference/basic-types.html#strings
 
-Vi kan også bruke BufferedWriter til å skrive flere linjer med tekst ved å bruke metoden "newLine()". Dette vil legge til en ny linje i filen vår og gjøre det lettere å lese:
-
-```Kotlin
-skriver.newLine()
-skriver.write("Dette er en ny linje")
-```
-
-## Se også
-
-- [Kotlin Official Documentation](https://kotlinlang.org/docs/home.html)
-- [Writing Text Files in Java](https://www.baeldung.com/java-write-to-file)
-- [Kotlin Tutorials on YouTube](https://www.youtube.com/watch?v=t5N_RtPSsta)
+Lykke til med skriving av tekstfiler i Kotlin!

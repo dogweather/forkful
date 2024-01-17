@@ -1,7 +1,7 @@
 ---
-title:                "Skriving til standardfeil"
-html_title:           "Fish Shell: Skriving til standardfeil"
-simple_title:         "Skriving til standardfeil"
+title:                "Skriving til standard error"
+html_title:           "Fish Shell: Skriving til standard error"
+simple_title:         "Skriving til standard error"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Files and I/O"
@@ -10,32 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
-Å skrive til standardfeil (standard error) kan hjelpe deg med å feilsøke og forbedre koden din. Ved å skrive feilmeldinger og annen viktig informasjon til standardfeil, kan du enkelt fange og håndtere feil i programmet ditt.
+## Hva & Hvorfor?
 
-## Hvordan gjør du det
-Å skrive til standardfeil i Fish Shell er enkelt. Du kan bruke kommandoen "echo" etterfulgt av teksten du vil skrive til standardfeil. For eksempel:
+Hvis du noen gang har programmert eller jobbet med terminalen, har du sannsynligvis sett kommandoer som bruker ">&2" eller "2>" til å skrive til standard error. Dette er måter for programmerere å sende feilmeldinger eller annen informasjon til terminalen.
 
-```
-fish shell -c 'echo "Dette er en feilmelding" >&2'
-```
+Å skrive til standard error kan hjelpe med feilsøking og debugging i programmer. Det lar utviklere sende spesifikk informasjon til terminalen som kan hjelpe dem med å finne og løse feil.
 
-Dette vil skrive "Dette er en feilmelding" til standardfeil. Legg merke til at "&2" brukes for å sende teksten til standardfeil istedenfor standardutgang (standard output).
+## Hvordan:
 
-En annen nyttig måte å skrive til standardfeil på er å bruke kommandoen "printf". Denne kommandoen lar deg formatere teksten du skriver til standardfeil. For eksempel:
+For å skrive til standard error i Fish Shell, bruker du kommandoen "echo" med flagget "-e" og spesifiserer at du vil skrive til standard error ved å bruke ">&2". Se eksempelet nedenfor for å se hvordan dette ser ut i praksis.
 
-```
-fish shell -c 'printf "Det er %s feil i koden din" "3" >&2'
+```Fish Shell
+echo -e "Dette er en feilmelding" >&2
 ```
 
-Dette vil skrive "Det er 3 feil i koden din" til standardfeil.
+Dette vil skrive ut teksten "Dette er en feilmelding" til standard error, som vanligvis vil bli vist i rødt i terminalen.
 
-## Dypdykk
-Å bruke kommandoen ">&2" lar deg sende teksten direkte til standardfeil. Men hva betyr dette egentlig? I Fish Shell er standardutgang (standard output) den standarden som brukes for å vise informasjon til brukeren, mens standardfeil (standard error) er den standarden som brukes for å vise feilmeldinger og annen viktig informasjon.
+## Dypdykk:
 
-Ved å sende teksten direkte til standardfeil, vil den bli vist uavhengig av eventuelle andre kommandoer som kan gjøre endringer på standardutgangen. Dette gjør at du kan være sikker på at feilmeldingene dine vil bli vist til brukeren.
+Skriving til standard error har vært en del av programmering i mange år, og er en del av standarden POSIX som beskriver hvordan Unix-baserte systemer skal fungere. Noen programmerere bruker også kommandoen "error" i stedet for "echo" for å skrive til standard error.
 
-## Se Også
-- [Fish Shell dokumentasjon](https://fishshell.com/docs/current/) 
-- [Echo kommando dokumentasjon](https://fishshell.com/docs/current/cmds/echo.html)
-- [Printf kommando dokumentasjon](https://fishshell.com/docs/current/cmds/printf.html)
+Selv om å skrive til standard error kan være nyttig, kan det også føre til rot og kaos hvis det misbrukes. Det kan være lurt å begrense bruken av det til kun feil- og debuggingsmeldinger for å unngå å forvirre brukeren.
+
+## Se også:
+
+- Fish Shell dokumentasjon: https://fishshell.com/docs/current/
+- Forskjellen mellom standard output og standard error: https://stackoverflow.com/questions/983779/difference-between-stderr-and-stdout
+- Alt om POSIX-standardene: https://en.wikipedia.org/wiki/POSIX

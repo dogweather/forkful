@@ -1,7 +1,7 @@
 ---
-title:                "「文字列の連結」"
-html_title:           "C++: 「文字列の連結」"
-simple_title:         "「文字列の連結」"
+title:                "文字列の結合"
+html_title:           "C++: 文字列の結合"
+simple_title:         "文字列の結合"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -10,43 +10,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
-文字列の連結を行う理由を2文以内で説明します。
+こんにちは！今日は、C++で文字列を連結する方法についてお話ししましょう。プログラマーが文字列を連結する理由ややり方を紹介します。また、深く掘り下げて文字列の連結について詳しくお伝えします。興味のある方は、ぜひ最後の「参考文献」もチェックしてみてくださいね！
 
-文字列を結合することで、より複雑なデータを作成し、プログラムの柔軟性を高めることができます。例えば、複数の文字列を結合してメッセージを作成したり、ファイルパスを作成したりすることができます。
+## What & Why?
 
-## 方法
+文字列を連結するとは、単純に言えば、二つ以上の文字列を繋げることを意味します。プログラマーは、このような方法を使うことで、より複雑な文字列を生成することができます。例えば、名前と姓を合わせてフルネームを作ったり、文章に変数を埋め込んで動的な内容を作ったりする際に利用されます。
+
+## How to:
+
+文字列を連結する最も簡単な方法は、「+」を使うことです。例を見てみましょう。
+
 ```C++
 #include <iostream>
-#include <string>
 
 using namespace std;
 
 int main() {
-  // 2つの文字列を宣言
-  string name = "太郎";
-  string message = "こんにちは、";
-
-  // 文字列を連結して新しいメッセージを作成
-  string greeting = message + name;
-
-  // 結果を出力
-  cout << greeting << endl;
-
+  string firstName = "太郎";
+  string lastName = "田中";
+  string fullName = firstName + lastName;
+  
+  cout << fullName << endl;
+  
   return 0;
 }
 ```
 
-出力結果:
+このコードを実行すると、変数fullNameには「太郎田中」という文字列が格納され、コンソールには「太郎田中」という文字列が表示されます。
+
+さらに、文字列を変数ではなく直接繋げることもできます。
+
+```C++
+#include <iostream>
+
+using namespace std;
+
+int main() {
+  string message = "Hello, " + "World!";
+  
+  cout << message << endl;
+  
+  return 0;
+}
 ```
-こんにちは、太郎
-```
 
-## ディープダイブ
-文字列の連結には、C++では`+`演算子を使用します。これは、左側の文字列に右側の文字列を結合することを意味します。また、`+=`演算子を使用することで、既存の文字列に新しい文字列を追加することができます。
+この場合、messageには「Hello, World!」という文字列が格納されます。
 
-文字列を結合する場合、文字列の長さやコンピュータの処理能力によって、パフォーマンスに影響が出ることがあります。そのため、大量の文字列を多数回結合する場合は、効率的な方法を検討する必要があります。
+## Deep Dive:
 
-See Also:
-- http://www.cplusplus.com/reference/string/string/operator+/
-- http://www.cplusplus.com/reference/string/string/operator+=/
+文字列を連結する方法には、他にもいくつかの方法があります。例えば、C言語ではstrcatという関数を使うことができます。また、文字列を扱うライブラリを使うことで、より高度な操作が可能になります。
+
+また、文字列を連結する際には、メモリ管理に注意が必要です。コンパイラによっては、多くの文字列を連結するときにメモリが不足する場合があります。そのため、文字列を連結する前に必要なメモリを確保するようにコードを書くことが大切です。
+
+## See Also:
+
+- <a href="https://www.programiz.com/cpp-programming/string">C++の文字列操作</a>
+- <a href="https://www.geeksforgeeks.org/string-class-in-cpp/">C++の基本的な文字列操作メソッド</a>

@@ -10,73 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co to jest i dlaczego?
 
-Otwórzmy oczy na prawdę - ktoś z nas nie kocha łączenia stringów? Oczywiście, nie jest to funkcja, która wzbudza zachwyt, ale jest niezbędna w wielu aspektach programowania. Omówimy więc, dlaczego warto poświęcić czas na naukę konkatenacji stringów w Javie.
+Łączenie ciągów znaków to proces łączenia kilku ciągów znaków w jeden długi ciąg znaków. Programiści często używają tej techniki, aby tworzyć bardziej złożone i różnorodne teksty.
 
 ## Jak to zrobić?
 
-Istnieją różne sposoby na łączenie stringów w Javie, ale najpopularniejszym i najprostszym jest użycie operatora "+".
+Łączenie ciągów znaków w języku Java jest proste. Należy użyć operatora "+" w celu połączenia dwóch lub więcej ciągów znaków. Na przykład, jeśli chcemy połączyć "Hello" i "world", należy użyć poniższego kodu:
 
 ```Java
-String firstName = "John";
-String lastName = "Doe";
+String hello = "Hello";
+String world = "world";
 
-String fullName = firstName + " " + lastName;
-
-System.out.println(fullName);
-```
-
-Output: "John Doe"
-
-Możemy również użyć metody "concat()" dostępnej w klasie String.
-
-```Java
-String firstWord = "Hello";
-String secondWord = "World";
-
-String result = firstWord.concat(secondWord);
+String result = hello + world;
 
 System.out.println(result);
 ```
 
-Output: "HelloWorld"
+Konsola wyświetli "Hello world", ponieważ operator "+" połączył dwa ciągi znaków w jedno zdanie.
 
-## Deep Dive
+## Głębszy wgląd
 
-Istnieją również inne metody w klasie String, które pozwalają na łączenie stringów. Jedną z nich jest metoda "join()", która pozwala na połączenie wielu stringów w jeden, przy użyciu określonego separatora.
+Łączenie ciągów znaków jest często używane do budowania złożonych ciągów znaków, takich jak teksty wyświetlane na stronie internetowej lub w aplikacji. Jest to przydatne, ponieważ umożliwia tworzenie bardziej elastycznych i dynamicznych treści.
 
-```Java
-String[] words = {"Hello", "my", "name", "is", "John"};
+Alternatywnym sposobem łączenia ciągów znaków jest użycie metody "concat()", która jest dostępna w klasie String. Jednak używanie operatora "+" jest bardziej czytelne i wygodniejsze.
 
-String result = String.join(" ", words);
+Podczas łączenia ciągów znaków, ważne jest również pamiętanie o wydajności. W przypadku łączenia większej liczby ciągów znaków, zaleca się używanie klasy "StringBuilder", ponieważ jest to bardziej wydajne niż operator "+".
 
-System.out.println(result);
-```
+## Zobacz także
 
-Output: "Hello my name is John"
+Dla bardziej szczegółowych informacji na temat łączenia ciągów znaków w języku Java, można sprawdzić następujące źródła:
 
-Inną ciekawą funkcją jest klasa StringBuffer, która zapewnia lepszą wydajność łączenia wielu stringów w przypadku, gdy potrzebujemy często zmieniać zawartość.
-
-```Java
-StringBuffer sb = new StringBuffer();
-
-sb.append("Hello");
-sb.append(" World");
-
-String result = sb.toString();
-
-System.out.println(result);
-```
-
-Output: "Hello World"
-
-Jedną z najważniejszych rzeczy, które należy pamiętać podczas łączenia stringów, jest to, że tworzą one nowy obiekt, a nie modyfikują istniejący. Dlatego też ważne jest, aby nie używać operatora "+" w pętli, ponieważ może to prowadzić do problemów z wydajnością.
-
-## Zobacz również
-
-Jeśli chcesz dowiedzieć się więcej o łączeniu stringów w Javie, polecamy zapoznać się z dokumentacją Javy oraz innymi artykułami na ten temat:
-
-- [Official Java documentation for String class](https://docs.oracle.com/javase/10/docs/api/java/lang/String.html)
-- [Concatenating Strings in Java](https://www.baeldung.com/java-concatenate-strings)
-- [Effective Java - Item 63: Beware the performance of string concatenation](https://www.informit.com/articles/article.aspx?p=1216151)
+- Dokumentacja Java: https://docs.oracle.com/javase/tutorial/java/data/manipstrings.html
+- GeeksforGeeks: https://www.geeksforgeeks.org/concatenating-strings-in-java/

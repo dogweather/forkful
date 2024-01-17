@@ -10,36 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜?
+## 무엇 & 왜?
 
-텍스트 파일을 작성하는 것은 많은 이유가 있을 수 있습니다. 예를 들어, 작업 중인 프로젝트의 문서를 작성할 때나 개인적인 노트를 남기기 위해 사용할 수 있습니다. 또는 블로그나 웹사이트에 게시할 글을 작성할 때도 사용할 수 있습니다. 어떤 이유든지, 텍스트 파일은 우리가 일상적으로 사용하는 매우 유용한 도구입니다.
+텍스트 파일 쓰기는 개발자들이 컴퓨터에 텍스트를 저장하기 위해 사용하는 방법입니다. 이를 통해 프로그래머들은 생성된 정보를 나중에 다시 사용할 수 있습니다.
 
-## 작성하는 방법
-
-어떻게 텍스트 파일을 작성할 수 있을까요? 다행히도, Rust는 강력한 표준 라이브러리를 제공하여 텍스트 파일을 쉽게 작성할 수 있도록 해줍니다. 먼저, `File` 구조체를 사용하여 쓰기 모드로 파일을 열어야 합니다. 그런 다음, `write_all` 메서드를 사용하여 원하는 텍스트를 파일에 쓸 수 있습니다. 아래는 간단한 예제 코드입니다.
+## 하는 방법:
 
 ```Rust
+// Create a new text file
 use std::fs::File;
+let mut file = File::create("example.txt").expect("Failed to create file");
+
+// Write text to the file
 use std::io::Write;
+file.write_all(b"Hello, world!").expect("Failed to write to file");
 
-fn main() {
-    // 쓰기 모드로 파일을 열기
-    let mut file = File::create("hello.txt").expect("파일 생성에 실패하였습니다.");
-
-    // 파일에 텍스트 작성
-    file.write_all(b"안녕하세요, Rust!").expect("파일 쓰기에 실패하였습니다.");
-}
+// Read text from the file
+use std::fs::File;
+use std::io::Read;
+let mut file = File::open("example.txt").expect("Failed to open file");
+let mut contents = String::new();
+file.read_to_string(&mut contents).expect("Failed to read from file");
+assert_eq!(contents, "Hello, world!");
 ```
 
-위 코드를 실행하면 "hello.txt"라는 파일이 생성되고 해당 파일 안에 "안녕하세요, Rust!"라는 텍스트가 작성됩니다.
+## 깊이 파고들기:
 
-## 깊게 들어가보기
+텍스트 파일 쓰기는 우리가 사용하는 모든 소프트웨어에 필수적인 기능입니다. 이전에는 다양한 방법으로 텍스트를 저장했지만, 현재는 크로스 플랫폼 지원이 가능한 텍스트 파일 쓰기 방법이 우리에게 제공됩니다.
 
-파일을 작성할 때 파일을 만들기 위해 `File::create` 메서드를 사용했습니다. 이 메서드는 새로운 파일을 생성할 때 사용하며, 이미 존재하는 파일을 열고 수정하고자 할 때는 `File::open` 메서드를 사용합니다. 또한, 파일을 열 때는 반드시 `expect` 메서드를 사용하여 오류를 처리해주어야 합니다.
+## 관련 자료:
 
-또한, 텍스트를 파일에 작성할 때 `write_all` 메서드를 사용했습니다. 이 메서드는 파일에 바이트를 그대로 작성하기 때문에 `b""`를 사용하여 해당 바이트가 아닌 문자열을 전달해주어야 합니다.
-
-## 관련 자료
-
-* [Rust 공식 문서](https://doc.rust-lang.org/std/fs/struct.File.html)
-* [Rust Cookbook에서 파일 작성하기 예제](https://rust-lang-nursery.github.io/rust-cookbook/file/handle.html#writing-to-a-file)
+- [Rust 표준 라이브러리](https://doc.rust-lang.org/std/fs/struct.File.html)
+- [Rust 책](https://doc.rust-lang.org/book/ch12-02-reading-a-file.html)

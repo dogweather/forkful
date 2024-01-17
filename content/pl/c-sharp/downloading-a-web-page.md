@@ -10,37 +10,77 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i dlaczego? 
+Pobieranie strony internetowej to proces pozyskiwania zawartości z adresu URL i przeniesienia jej do aplikacji. Programiści często korzystają z tego narzędzia, ponieważ pozwala ono na automatyczne przetwarzanie informacji i wykorzystanie ich w swoich programach.
 
-Pobieranie stron internetowych jest powszechną czynnością w świecie programowania. Często potrzebujemy danych zawartych na stronie lub analizujemy jej zawartość. Dlatego nauka, jak pobrać stronę internetową za pomocą C#, może być bardzo przydatna dla programistów.
+## Jak to zrobić:
+Poniżej znajdują się dwa przykłady kodu w języku C#, które prezentują jak można pobrać zawartość strony internetowej.
 
-## Jak to zrobić
-
-Pierwszym krokiem jest utworzenie projektu w C# i dodanie odpowiednich referencji do kodu. Następnie wykorzystujemy klasę WebClient, aby wykonać żądanie HTTP i pobrać zawartość strony.
-
+Przykład 1: 
 ```C#
-using System.Net;
+using System;
+using System.Net; // Biblioteka zawierająca klasy do pobierania danych z Internetu
 
-//tworzymy obiekt WebClient
-WebClient client = new WebClient();
+class Program
+{
+    static void Main()
+    {
+        // Inicjalizacja klasy WebClient
+        WebClient client = new WebClient();
+        
+        // Pobranie tekstowej zawartości strony
+        string data = client.DownloadString("https://www.example.com");
 
-//wykonujemy żądanie i pobieramy zawartość strony jako string
-string pageContent = client.DownloadString("https://www.example.com");
-
-//wyświetlamy pobraną zawartość w konsoli
-Console.WriteLine(pageContent);
+        // Wyświetlenie pobranej zawartości
+        Console.WriteLine(data);
+    }
+}
 ```
-Ten prosty kod pobierze zawartość strony i wyświetli ją w konsoli. Możemy również zapisać pobraną zawartość do pliku lub przetworzyć ją dalej, na przykład wyodrębnić konkretne dane.
+Wynik:
+> <!DOCTYPE html> <html> <head> <title>Example Domain</title> <link rel="icon" href="https://www.example.com/favicon.ico" type="image/x-icon" /> <body> <h1>Example Domain</h1> <p>This domain is for use in illustrative examples in documents. You may use this domain in literature without prior coordination or asking for permission.</p> <p><a href="https://www.iana.org/domains/example">More information...</a></p> </body> </html>
 
-## Głębsza analiza
+Przykład 2:
+```C#
+using System;
+using System.IO; // Biblioteka do obsługi plików
 
-W powyższym przykładzie użyliśmy metody DownloadString, która pobiera zawartość strony jako string. Jednak w przypadku pobierania plików, możemy użyć metody DownloadFile, która zapisze zawartość do wskazanego pliku.
+class Program
+{
+    static void Main()
+    {
+        // Pobieranie zawartości z adresu URL 
+        string url = "https://www.example.com";
+        
+        // Inicjalizacja klasy HttpWebRequest
+        HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+        
+        // Pobranie odpowiedzi i zapisanie jej w zmiennej response
+        HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+        
+        // Otworzenie strumienia danych i przypisanie do niego odpowiedzi
+        StreamReader sr = new StreamReader(response.GetResponseStream());
+        
+        // Pobranie danych z otwartego strumienia 
+        string data = sr.ReadToEnd();
 
-Dodatkowo, klasa WebClient umożliwia ustawianie nagłówków HTTP oraz obsługę błędów. Jest to szczególnie przydatne, gdy chcemy pobrać dane zabezpieczone uwierzytelnieniem.
+        // Wyświetlenie pobranej zawartości 
+        Console.WriteLine(data);
 
-## Zobacz także
+        // Zamknięcie strumienia
+        sr.Close();
+    }
+}
+```
 
-- Dokumentacja klasy WebClient: https://docs.microsoft.com/pl-pl/dotnet/api/system.net.webclient
-- Tutorial na temat pobierania stron internetowych w C#: https://www.c-sharpcorner.com/article/how-to-download-a-web-page-using-c-sharp
+Wynik:
+> <!DOCTYPE html> <html> <head> <title>Example Domain</title> <link rel="icon" href="https://www.example.com/favicon.ico" type="image/x-icon" /> <body> <h1>Example Domain</h1> <p>This domain is for use in illustrative examples in documents. You may use this domain in literature without prior coordination or asking for permission.</p> <p><a href="https://www.iana.org/domains/example">More information...</a></p> </body> </html>
 
-Dzięki prostym i efektywnym mechanizmom dostępnym w C#, pobieranie stron internetowych nie jest już skomplikowanym zadaniem. Teraz możesz wykorzystać tę wiedzę w swoim projekcie lub analizie danych. Powodzenia!
+## Deep Dive:
+Pobieranie zawartości strony internetowej jest powszechnie używane od początków Internetu. Jednym z popularnych sposobów na pobieranie jest wykorzystywanie biblioteki WebClient lub HttpWebRequest. Istnieją również inne narzędzia i biblioteki, które mogą być wykorzystywane w celu pobrania danych z Internetu.
+
+W celu uniknięcia problemów z pobieraniem zawartości strony zaleca się stosowanie narzędzi, które zapewniają obsługę protokołu HTTPS. Najważniejsze jest również zachowanie zasad etykiety dotyczących praw autorskich i licencji, gdy pobieramy dane z Internetu.
+
+## Zobacz również:
+- [Dokumentacja C# - WebRequest](https://docs.microsoft.com/en-us/dotnet/api/system.net.webrequest?view=net-5.0)
+- [Dokumentacja C# - WebClient](https://docs.microsoft.com/en-us/dotnet/api/system.net.webclient?view=net-5.0)
+- [6 Ways to Download Files with C#](https://www.dreamincode.net/forums/topic/189761-6-ways-to-download-files-with-c%23/)

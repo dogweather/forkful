@@ -10,54 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que escrever testes em Elm?
+## O que & Por quê?
+Escrever testes de código é uma prática comum entre programadores para garantir a qualidade e a funcionalidade do código que estão desenvolvendo. Ao escrever testes, os programadores podem identificar e corrigir erros antes da implementação do código em produção.
 
-Escrever testes é uma prática essencial para qualquer desenvolvedor. Ao escrever testes em Elm, você garante que seu código se comporte da maneira desejada e evita possíveis bugs e erros. Além disso, a escrita de testes pode economizar tempo e garantir a qualidade do seu código no longo prazo.
-
-## Como escrever testes em Elm
-
-Para escrever testes em Elm, é necessário utilizar a biblioteca embutida chamada `elm-test`. Com ele, você pode criar uma estrutura de testes para cada módulo em seu programa. Veja um exemplo simples de teste em Elm:
+## Como fazer:
+Elm possui uma biblioteca de testes integrada chamada `elm-test`, que permite aos programadores escrever testes para suas funções e módulos. Um exemplo simples de teste pode ser visto abaixo:
 
 ```Elm
-module Main exposing (..)
-
 import Test exposing (..)
-import Expect
 
-add : Int -> Int -> Int
 add x y =
     x + y
-
-tests : Test
-tests =
-    describe "Add function"
-        [ test "Basic addition" <|
-            \() ->
-                Expect.equal (add 2 3) 5
+    
+testAdd =
+    describe "add"
+        [ test "adds two numbers" <|
+            \_ ->
+                add 2 3 == 5
         ]
 
-main =
-    run tests
 ```
 
-Neste exemplo, importamos o módulo `Test` e a função `Expect` para comparar os resultados dos testes. Em seguida, definimos uma função `add` que será testada e criamos uma estrutura de testes com o nome "Add function". Dentro desta estrutura, temos um teste que verifica se a função `add` retorna o resultado esperado. Por fim, executamos os testes com a função `run` e obtemos o seguinte resultado:
+A saída do teste seria algo como `Test Passed`.
 
-```
-Add function
-    ✓ Basic addition
+## Mergulho Profundo:
+A prática de escrever testes de código é frequentemente associada com o desenvolvimento ágil de software, que enfatiza a entrega de código funcional em partes menores e mais frequentes. Outras alternativas para escrita de testes incluem Cucumber e RSpec.
 
+O `elm-test` utiliza a biblioteca `elm-expect`, que fornece funções para comparar valores, bem como `elm-json` para fazer o parser de JSON em testes.
 
-1 test passed in 0ms
-```
-
-## Aprofundando nos testes em Elm
-
-Além da função `describe` que utilizamos no exemplo anterior, o `elm-test` possui outras funções para estruturar seus testes, como `suite` e `testOnly`. Além disso, você pode utilizar a função `fuzz` para gerar dados aleatórios e testar seu código com diferentes inputs.
-
-É importante também lembrar de seguir boas práticas ao escrever testes. Dê nomes descritivos aos seus testes e evite repetição de código. Ao testar funções que possuem efeitos colaterais, utilize a função `attempts` para garantir que o teste será executado várias vezes.
-
-## Veja Também
-
+## Veja também:
 - Documentação oficial do `elm-test`: https://package.elm-lang.org/packages/elm-explorations/test/latest/
-- Tutorial de testes em Elm: https://codemilltech.com/getting-started-testing-elm/
-- Artigo sobre boas práticas em testes em Elm: https://thoughtbot.com/blog/how-we-test-elm
+- Exemplos de uso do `elm-test`: https://github.com/elm-community/elm-test#examples
+- Documentação oficial do `elm-expect`: https://package.elm-lang.org/packages/elm-explorations/elm-expect/latest/
+- Documentação oficial do `elm-json`: https://package.elm-lang.org/packages/elm/json/latest/

@@ -1,7 +1,7 @@
 ---
-title:                "Travailler avec les fichiers csv"
-html_title:           "Go: Travailler avec les fichiers csv"
-simple_title:         "Travailler avec les fichiers csv"
+title:                "Travailler avec des fichiers csv"
+html_title:           "Go: Travailler avec des fichiers csv"
+simple_title:         "Travailler avec des fichiers csv"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Data Formats and Serialization"
@@ -10,61 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Le petit guide décontracté pour travailler avec des fichiers CSV en Go
+## Quoi & Pourquoi?
+Travailler avec des fichiers CSV est courant pour les programmeurs car c'est un moyen simple et efficace de stocker et manipuler des données tabulaires. Les fichiers CSV (Comma Separated Values) sont des fichiers texte contenant des données organisées en colonnes séparées par des virgules, ce qui les rend faciles à lire et à éditer avec du code.
 
-## Pourquoi
+## Comment:
+Le processus pour travailler avec des fichiers CSV en Go est assez simple. Tout d'abord, nous devons importer le package "encoding/csv". Ensuite, nous pouvons utiliser la fonction "ReadFile()" pour lire un fichier CSV et stocker les données dans une variable. Enfin, nous pouvons utiliser la fonction "ReadAll()" pour parcourir et manipuler les données dans la variable. Voici un exemple de code et sa sortie:
 
-Si vous travaillez avec des données tabulaires, telles que des feuilles de calcul ou des bases de données, vous allez probablement rencontrer des fichiers CSV. Ces fichiers sont très couramment utilisés pour stocker et échanger des données tabulaires, et travailler avec eux peut grandement simplifier le traitement de ces données.
-
-## Comment faire
-
-Pour travailler avec des fichiers CSV en Go, vous pouvez utiliser la librairie standard encoding/csv. Tout d'abord, importez cette librairie dans votre code :
-
-```Go
-import "encoding/csv"
 ```
+package main
 
-Ensuite, vous devrez ouvrir votre fichier CSV avec la fonction `Open` et un `os.File` :
+import (
+    "encoding/csv"
+    "fmt"
+    "log"
+    "os"
+)
 
-```Go
-file, err := os.Open("mon_fichier.csv")
-```
-
-Puis, vous pouvez utiliser la fonction `NewReader` de la librairie encoding/csv pour créer un lecteur de CSV à partir du fichier ouvert :
-
-```Go
-reader := csv.NewReader(file)
-```
-
-Maintenant que vous avez un lecteur de CSV, vous pouvez parcourir les données ligne par ligne à l'aide de la boucle `for` :
-
-```Go
-for {
-    // Lit une ligne
-    record, err := reader.Read()
-    // Vérifie s'il y a une fin de fichier
-    if err == io.EOF {
-        break
+func main() {
+    // Lecture du fichier CSV
+    f, err := os.Open("donnees.csv")
+    if err != nil {
+        log.Fatal(err)
     }
-    // Traitement de la ligne
-    fmt.Println(record)
+
+    // Stockage des données dans une variable
+    donnees, err := csv.NewReader(f).ReadAll()
+    if err != nil {
+        log.Fatal(err)
+    }
+
+    // Parcours et manipulation des données
+    for _, ligne := range donnees {
+        fmt.Println(ligne[0], ligne[1])
+    }
 }
 ```
 
-Si vous avez besoin d'accéder à des données spécifiques d'une ligne, vous pouvez utiliser l'index de `record` :
+Output :
 
-```Go
-// Accède à la première colonne de la deuxième ligne
-fmt.Println(record[0])
+```
+Alice Smith
+Bob Johnson
+Carla Davis
 ```
 
-Et voilà ! Vous avez maintenant toutes les bases pour travailler avec des fichiers CSV en Go.
+## Plongée en profondeur:
+Les fichiers CSV ont été initialement développés pour être utilisés avec des tableurs, mais ils sont maintenant largement utilisés dans le domaine de la programmation en raison de leur simplicité et de leur compatibilité avec de nombreux langages de programmation. Une alternative à l'utilisation de fichiers CSV est d'utiliser une base de données, mais cela peut être plus complexe à mettre en place et à utiliser. Pour ceux qui souhaitent plus d'informations sur la manipulation de fichiers CSV en Go, le package officiel "encoding/csv" a une documentation complète et claire.
 
-## Plongée en profondeur
+## Voir aussi:
+Pour en savoir plus sur le travail avec des fichiers CSV en Go, voici quelques ressources utiles:
 
-La librairie encoding/csv offre également plusieurs options pour personnaliser votre traitement de fichiers CSV. Vous pouvez, par exemple, spécifier un caractère de délimitation différent de la virgule par défaut, ou ignorer la première ligne du fichier si elle contient un en-tête. Pour plus d'informations sur les options disponibles, vous pouvez consulter la documentation officielle de la librairie Go.
-
-## Voir aussi
-
-- Documentation de la librairie encoding/csv : https://golang.org/pkg/encoding/csv/
-- Exemples de code pour travailler avec des fichiers CSV en Go : https://gobyexample.com/reading-files
+- [Documentation du paquet "encoding/csv"](https://golang.org/pkg/encoding/csv/)
+- [Un tutoriel pratique sur la manipulation de fichiers CSV en Go](https://www.sohamkamani.com/blog/golang/working-with-csv-in-golang/)
+- [Un article expliquant pourquoi les fichiers CSV sont toujours pertinents pour les programmeurs](https://www.techrepublic.com/blog/linux-and-open-source/why-csv-files-can-be-problem-children-for-developers/)

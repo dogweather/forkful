@@ -1,7 +1,7 @@
 ---
-title:                "正規表現を使う"
-html_title:           "Gleam: 正規表現を使う"
-simple_title:         "正規表現を使う"
+title:                "正規表現の使用"
+html_title:           "Gleam: 正規表現の使用"
+simple_title:         "正規表現の使用"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -10,28 +10,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+# ＃＃ 何となぜ？
+正規表現を使うのは、プログラマーが特定のテキストパターンを検索や置換、バリデーションなどの作業をより効率的に行うためです。テキスト操作はプログラミングにおいて非常に重要であり、正規表現はそれをより高度にするために開発された便利なツールです。
 
-正規表現を使う理由はたくさんありますが、主なもののひとつは文字列のパターンを検索や置換するためです。例えば、メールアドレスや電話番号の正しいフォーマットを見つけたり、不正な文字列を置き換えたりすることができます。
+# ＃＃ 試し方：
+Gleamで正規表現を使用する場合は、まず ``` gleam/regex ``` ライブラリをインポートする必要があります。そして以下のようにコードを記述します。
 
-## 使い方
-
-正規表現を使うためには、 ```Gleam regex``` モジュールを使用します。まずはパターンを指定し、検索や置換する文字列を与えます。下記の例では、```"Gleam"``` という文字列を ```"Gleamのプログラミング言語"``` という文字列に置き換えます。
-
-```Gleam
-regex
-  |> Regex.replace_all("Gleam", "Gleamのプログラミング言語")
-  |> Regex.run("Gleamのプログラミング言語") #=> True
-  |> Regex.run("Gleam言語") #=> False
+``` gleam
+let regex = Regex.new("l+[ea]")
+let result = Regex.find(regex, "hello, world")
 ```
-置換する文字列が見つかった場合は ```True```、見つからない場合は ```False``` を返します。
 
-## ディープダイブ
+このコードは、文字列 ``` "hello, world" ``` の中から ``` l,e,lle,la,ell,elll ``` を検索し、その中で最初に見つかったものを返します。
 
-正規表現は、より高度なパターンの検索や置換を可能にする強力なツールです。文字クラスや量指定子などの特殊文字を使うことで、より柔軟なパターンマッチングが可能になります。詳細な情報は[公式のドキュメント](https://hexdocs.pm/gleam/regex.html)を参照してください。
+# ＃＃ ディープダイブ：
+正規表現は、最初にUnixのテキスト処理ツールとして開発されました。その後、多くのプログラミング言語に組み込まれるようになり、現在では非常に一般的なツールとなっています。まだ正規表現を使ったことがない場合は、パターンマッチングの代替として試してみることをお勧めします。
 
-## See Also
-
-- [Gleam公式ドキュメント](https://gleam.run/documentation)
-- [正規表現チュートリアル (日本語)](https://www.javadrive.jp/regex/)
-- [GleamのregexモジュールのAPIリファレンス (日本語)](https://gleam.run/documentation/0.14/libraries/regex.html)
+# ＃＃ 参考：
+- [Gleamで正規表現を使う方法](https://gleam.run/articles/regex.html)
+- [正規表現の基礎](https://developer.mozilla.org/ja/docs/Web/JavaScript/Guide/Regular_Expressions)
+- [正規表現チュートリアル](https://www.regular-expressions.info/tutorial.html)

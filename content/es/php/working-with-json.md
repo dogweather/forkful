@@ -1,7 +1,7 @@
 ---
-title:                "Trabajando con JSON"
-html_title:           "PHP: Trabajando con JSON"
-simple_title:         "Trabajando con JSON"
+title:                "Trabajando con json"
+html_title:           "PHP: Trabajando con json"
+simple_title:         "Trabajando con json"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Data Formats and Serialization"
@@ -10,86 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué trabajar con JSON?
+## ¿Qué y por qué?
+Trabajar con JSON en PHP significa manejar datos en un formato que es fácil de leer y escribir para los humanos, y también fácil de procesar para las computadoras. Los programadores utilizan JSON para intercambiar datos entre diferentes sistemas o para almacenar datos en una base de datos de una manera organizada y eficiente.
 
-En la programación web actual, es común tener que manejar y enviar datos entre el cliente y el servidor. En lugar de utilizar formatos complejos y pesados como XML, JSON ofrece una manera simple y ligera de enviar y recibir datos estructurados. Trabajar con JSON te permitirá mejorar la eficiencia y simplicidad de tu código.
-
-## Cómo hacerlo
-
-Para empezar a trabajar con JSON en PHP, primero debes asegurarte de tener la última versión del lenguaje instalada en tu servidor. Una vez hecho esto, puedes utilizar la función `json_encode()` para convertir un arreglo asociativo en formato JSON. Por ejemplo:
+## ¿Cómo hacerlo?
+En PHP, podemos utilizar las funciones `json_encode()` y `json_decode()` para convertir datos de y hacia el formato JSON. Por ejemplo, si tenemos un array en PHP, podemos convertirlo a JSON utilizando `json_encode()`, y si tenemos una cadena JSON, podemos convertirla a un array utilizando `json_decode()`.
 
 ```
-<?php
-// Arreglo asociativo
-$persona = array(
-    "nombre" => "Juan",
-    "apellido" => "Pérez",
-    "edad" => 30
-);
+$arr = ['nombre' => 'Juan', 'edad' => 25];
+$json = json_encode($arr);
+echo $json; // Salida: {"nombre":"Juan","edad":25}
 
-// Convertir a formato JSON
-echo json_encode($persona);
+$newArr = json_decode($json);
+echo $newArr['nombre']; // Salida: Juan
+echo $newArr['edad']; // Salida: 25 
 ```
 
-Este código producirá la siguiente salida:
+## Profundizando
+JSON, que significa JavaScript Object Notation, es un formato de texto sencillo que fue desarrollado originalmente por Douglas Crockford en la década de 1990. Se basa en la sintaxis de los objetos de JavaScript y se ha vuelto muy popular en la transferencia de datos en la web debido a su simplicidad y facilidad de uso. Alternativas a JSON incluyen formatos como XML y CSV, pero JSON es más ligero y más fácil de leer y escribir para los humanos.
 
-```
-{"nombre":"Juan","apellido":"Pérez","edad":30}
-```
-
-Para convertir un objeto de PHP a JSON, puedes utilizar el método `jsonSerialize()` en la clase y luego utilizar `json_encode()` para convertirlo a formato JSON.
-
-```
-<?php
-class Persona {
-    public $nombre = "Juan";
-    public $apellido = "Pérez";
-    public $edad = 30;
-
-    // Método para serializar el objeto
-    public function jsonSerialize() {
-        return [
-            "nombre" => $this->nombre,
-            "apellido" => $this->apellido,
-            "edad" => $this->edad
-        ];
-    }
-}
-
-// Instanciar objeto
-$persona = new Persona();
-
-// Convertir a formato JSON
-echo json_encode($persona);
-```
-
-La salida será la misma que en el ejemplo anterior. 
-
-Para decodificar un string JSON a un arreglo o objeto de PHP, puedes utilizar la función `json_decode()`. Por ejemplo:
-
-```
-<?php
-// String JSON
-$persona_json = '{"nombre":"Juan","apellido":"Pérez","edad":30}';
-
-// Convertir a objeto de PHP
-$persona = json_decode($persona_json);
-
-echo $persona->nombre; // Imprime "Juan"
-echo $persona->apellido; // Imprime "Pérez"
-echo $persona->edad; // Imprime 30
-```
-
-## Profundizando en JSON
-
-JSON (JavaScript Object Notation) es un formato de intercambio de datos basado en texto que se utiliza ampliamente en la programación web. Está compuesto por pares de clave y valor, donde la clave es siempre un string y el valor puede ser cualquier tipo de dato válido de JSON (números, strings, arreglos, objetos, entre otros).
-
-Una ventaja de trabajar con JSON es que es fácilmente legible para los seres humanos y también puede ser interpretado por diferentes lenguajes de programación. Además, es un formato ligero y por lo tanto, rápido de procesar.
-
-En PHP, es posible también trabajar con JSON usando la función `file_get_contents()` para obtener los datos de un archivo JSON y `file_put_contents()` para escribir datos en un archivo JSON.
+Además de las funciones `json_encode()` y `json_decode()`, PHP también proporciona la función `json_last_error()` para manejar errores al convertir datos a o desde JSON. También podemos utilizar la opción `JSON_PRETTY_PRINT` en `json_encode()` para obtener una cadena JSON con formato y más fácil de leer para los humanos.
 
 ## Ver también
-
-- [Documentación oficial de PHP para trabajar con JSON](https://www.php.net/manual/en/ref.json.php)
-- [Tutorial de Codecourse sobre cómo trabajar con JSON en PHP](https://www.codecourse.com/lessons/how-to-use-json-with-php)
-- [Ejemplos y explicaciones de la función `json_encode()` en CodeWall](https://www.codewall.co.uk/php-array-to-json-encode-how/)
+- Documentación oficial de PHP - [Funciones JSON](https://www.php.net/manual/es/ref.json.php)
+- Introducción a JSON en W3Schools - [Introducción a JSON](https://www.w3schools.com/js/js_json_intro.asp)
+- Tutorial de JSON en Codecademy - [Manipulación de objetos JSON en PHP](https://www.codecademy.com/learn/learn-php/modules/learn-php-arrays/cheatsheet)

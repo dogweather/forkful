@@ -10,62 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que ler argumentos da linha de comando em Go?
+## O que & Porquê?
 
-Se você está começando a aprender a programar em Go, é importante entender como ler argumentos da linha de comando. Isso permitirá que você crie programas mais flexíveis e interativos, que possam receber entrada do usuário através da linha de comando.
+Ler argumentos de linha de comando é uma parte importante da programação Go. Ao ler argumentos de entrada fornecidos pelo usuário, os programadores podem personalizar e controlar o comportamento do programa de acordo com as necessidades do usuário.
 
-## Como ler argumentos da linha de comando em Go?
+## Como fazer:
 
-Para ler argumentos da linha de comando em Go, podemos usar o pacote "os". Vamos primeiro importá-lo em nosso código:
-
-```Go
-import "os"
-```
-
-Em seguida, usamos a função "Args" do pacote "os" para obter uma slice de strings contendo todos os argumentos passados na linha de comando. Aqui está um exemplo:
+Ler argumentos de linha de comando em Go é simples e direto. Tudo o que você precisa fazer é usar a função ```os.Args``` que retorna uma slice contendo os argumentos fornecidos pelo usuário.
 
 ```Go
-args := os.Args
-```
-
-Para acessar argumentos específicos, podemos usar o índice da slice. Por exemplo, o primeiro argumento pode ser acessado com "args[0]". Agora, vamos ver um exemplo completo de um programa que lê argumentos da linha de comando e exibe a saída:
-
-```Go
-package main
-
-import (
-    "fmt"
-    "os"
-)
-
 func main() {
-    args := os.Args
-
-    // Exibe o primeiro argumento
-    fmt.Println("Primeiro argumento:", args[0])
-
-    // Exibe todos os argumentos
-    fmt.Println("Todos os argumentos:", args)
+    arguments := os.Args
+    fmt.Println(arguments)
 }
 ```
-
-Ao executar este programa com o comando "go run programa.go argumento1 argumento2", a saída será:
+Ao rodar o programa e fornecer argumentos de linha de comando, a saída será uma slice com os argumentos fornecidos.
 
 ```
-Primeiro argumento: programa.go
-Todos os argumentos: [programa.go argumento1 argumento2]
+$ go run main.go argumento1 argumento2 argumento3
+["main" "argumento1" "argumento2" "argumento3"]
 ```
 
-## Detalhes sobre a leitura de argumentos da linha de comando em Go
+## Mergulho Profundo:
 
-Além da função "os.Args", podemos usar outras funções do pacote "os" para manipular argumentos da linha de comando em Go. Por exemplo, podemos usar a função "Getenv" para obter o valor de uma variável de ambiente baseado em uma chave.
+A leitura de argumentos de linha de comando é uma técnica comum em muitas linguagens de programação, incluindo Go. Esses argumentos podem ser usados ​​para definir opções e parâmetros para o programa. Alternativas para leitura de argumentos de linha de comando incluem a leitura de arquivos de configuração ou a utilização de variáveis de ambiente. A implementação em Go é feita pela biblioteca padrão e é uma das maneiras mais eficientes e fáceis de ler argumentos de linha de comando.
 
-Também podemos usar o pacote "flag" para ajudar a processar e validar argumentos da linha de comando com mais facilidade. Este pacote oferece recursos como a definição de flags com tipos específicos, tratamento de argumentos obrigatórios e ajuda ao usuário.
+## Veja também:
 
-Em geral, a leitura de argumentos da linha de comando em Go é uma tarefa simples, mas que pode trazer muitos benefícios para nossos programas. É uma habilidade importante a ser dominada por todos os programadores Go.
-
-## Veja também
-
-- Documentação oficial do pacote "os" em Go: https://golang.org/pkg/os/
-- Documentação oficial do pacote "flag" em Go: https://golang.org/pkg/flag/
-- Documentação oficial do comando "go" para leitura de argumentos: https://golang.org/cmd/go/#hdr-Command_line_arguments
+- Documentação oficial do pacote `os`: https://golang.org/pkg/os/
+- Tutorial de leitura de argumentos de linha de comando em Go: https://gobyexample.com/command-line-arguments

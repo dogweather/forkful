@@ -1,7 +1,7 @@
 ---
-title:                "Versaler för en sträng"
-html_title:           "Python: Versaler för en sträng"
-simple_title:         "Versaler för en sträng"
+title:                "Att omvandla en sträng till versaler"
+html_title:           "Python: Att omvandla en sträng till versaler"
+simple_title:         "Att omvandla en sträng till versaler"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Strings"
@@ -10,56 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
-
-Att kapitalisera en sträng är en vanlig operation inom programmering som kan användas för formatering av text eller för att skapa bättre läslighet i utdata.
-
-## Hur man gör det
-
-Det finns flera sätt att kapitalisera en sträng i Python, men det enklaste sättet är att använda inbyggda metoden "capitalize()". Här är ett exempel på hur man kan använda den:
-
+## Vad & Varför?
+När man "capitalizar" en sträng i Python gör man den första bokstaven av varje ord större än de andra. Detta görs för att göra texten mer lättläslig och för att följa konventionen i de flesta språk där den första bokstaven i en mening är större.
+ 
+## Hur gör man:
 ```python
-str = "hej världen"
-str.capitalize()
-print(str)
+# Exempel 1: Enkel
+str = "hej världen!"
+print(str.capitalize())
+Output: "Hej världen!"
 
-# Output: Hej världen
+# Exempel 2: Med flera ord
+str = "välkommen till python-världen"
+print(str.capitalize())
+Output: "Välkommen till python-världen"
 ```
 
-Man kan också använda metoderna "upper()" och "lower()" för att kapitalisera hela strängen eller göra den helt gemener, som i följande exempel:
+## Djupdykning:
+Historiskt sett har man använt metoden capitalize() för att göra den första bokstaven i en mening stor för att lägga till ett behagligt visuellt element. Alternativ till att använda metoden är att manuellt ändra bokstaven eller använda en regex regex för att ändra texten. Implementationen av capitalize() är enkel och kan lätt implementeras i egna funktioner eller program.
 
-```python
-str = "exempel text"
-str.upper()
-print(str)
-
-# Output: EXEMPEL TEXT
-
-str.lower()
-print(str)
-
-# Output: exempel text
-```
-
-Om man vill kapitalisera en specifik del av strängen, som första bokstaven i varje ord, finns det en metod som heter "title()". Den här metoden kapitaliserar varje ord utifrån dess första bokstav, vilket kan vara användbart när man till exempel vill konvertera ett namn till titelcase:
-
-```python
-str = "john doe"
-str.title()
-print(str)
-
-# Output: John Doe
-```
-
-## Djupdykning
-
-När man kapitaliserar en sträng gör Python det genom att omvandla den första bokstaven till stor bokstav och resten av bokstäverna till små bokstäver. Detta kan dock skilja sig åt beroende på det språk som används. Till exempel, i det tyska språket finns det bokstaven "ß" som kan visas som "SS" i versaler. Om man använder "capitalize()" på en tysk sträng som innehåller denna bokstav, kommer den att kapitaliseras på det motsatta sättet.
-
-Det är också viktigt att komma ihåg att string-metoderna "capitalize()", "upper()" och "lower()" returnerar en ny sträng istället för att ändra den ursprungliga strängen. Om man vill ändra den befintliga strängen måste man tilldela resultatet till en variabel eller använda metoden "str.replace()" istället.
-
-## Se även
-
-- [`String capitalize()` dokumentation](https://www.w3schools.com/python/ref_string_capitalize.asp)
-- [`String upper()` dokumentation](https://www.w3schools.com/python/ref_string_upper.asp)
-- [`String lower()` dokumentation](https://www.w3schools.com/python/ref_string_lower.asp)
-- [`String title()` dokumentation](https://www.w3schools.com/python/ref_string_title.asp)
+## Se även:
+- [Python dokumentation för capitalize()](https://docs.python.org/3/library/stdtypes.html#str.capitalize)
+- [Regex tutorial](https://www.regular-expressions.info/)

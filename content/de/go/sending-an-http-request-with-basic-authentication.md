@@ -1,7 +1,7 @@
 ---
-title:                "Senden einer HTTP-Anfrage mit grundlegender Authentifizierung"
-html_title:           "Go: Senden einer HTTP-Anfrage mit grundlegender Authentifizierung"
-simple_title:         "Senden einer HTTP-Anfrage mit grundlegender Authentifizierung"
+title:                "Senden einer http-Anfrage mit grundlegender Authentifizierung"
+html_title:           "Go: Senden einer http-Anfrage mit grundlegender Authentifizierung"
+simple_title:         "Senden einer http-Anfrage mit grundlegender Authentifizierung"
 programming_language: "Go"
 category:             "Go"
 tag:                  "HTML and the Web"
@@ -10,66 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Warum
+Was & Warum?
 
-## Warum sich für Grundauthentifizierung bei HTTP-Anfragen entscheiden?
- 
-Die Grundauthentifizierung ist eine gängige Methode, um die Sicherheit von HTTP-Anfragen zu gewährleisten. Insbesondere wird sie oft bei der Übertragung von sensiblen Nutzerdaten wie Benutzernamen und Passwörtern verwendet. Sie stellt eine einfache Möglichkeit dar, um die Daten vor unautorisiertem Zugriff zu schützen.
+Das Senden eines HTTP-Anforderung mit grundlegender Authentifizierung ist ein wichtiger Schritt beim Programmieren von Webanwendungen. Es ermöglicht den sicheren Austausch von Daten zwischen dem Client und dem Server. Programmierer nutzen grundlegende Authentifizierung, um sicherzustellen, dass die Daten, die sie senden, authentisch sind und nur von berechtigten Benutzern abgerufen werden können.
 
-# How To
+Wie geht das?
 
-## Schritt 1: Einrichtung der HTTP-Anfrage
-
-Zunächst müssen wir eine standardmäßige HTTP-Anfrage in Go erstellen. Dazu verwenden wir die "net/http" Bibliothek:
+Go macht es einfach, eine HTTP-Anforderung mit grundlegender Authentifizierung zu senden. Verwende einfach das Paket "net/http" und die "Request.BasicAuth" Methode, um die Anfrage mit Anmeldedaten zu versehen. Im folgenden Beispiel senden wir eine GET-Anforderung an die URL "http://example.com" mit dem Benutzernamen "user" und dem Passwort "password":
 
 ```Go
-req, err := http.NewRequest("GET", url, nil)
-```
+package main
 
-In diesem Fall erstellen wir eine GET-Anfrage an die URL, die wir in der Variable "url" gespeichert haben. Die Option "nil" gibt an, dass wir keine Daten mit der Anfrage übermitteln möchten.
+import (
+	"fmt"
+	"net/http"
+)
 
-## Schritt 2: Hinzufügen der Grundauthentifizierung
-
-Um die Grundauthentifizierung zu verwenden, müssen wir dem Anfrageobjekt einen Basis Authentifizierungs-Header hinzufügen. Dazu rufen wir die Methode "SetBasicAuth" auf und übergeben Benutzername und Passwort als Parameter:
-
-```Go
-req.SetBasicAuth(username, password)
-```
-
-In diesem Beispiel gehen wir davon aus, dass der Benutzername und das Passwort in den Variablen "username" und "password" gespeichert sind. Wenn die Anfrage ausgeführt wird, wird der Authentifizierungs-Header automatisch zum Request hinzugefügt.
-
-## Schritt 3: Ausführen der Anfrage und Verarbeiten der Antwort
-
-Nachdem wir unsere Anfrage konfiguriert haben, können wir sie ausführen und die Antwort verarbeiten. Dazu können wir die "http" Bibliothek verwenden und die Methode "Do" aufrufen:
-
-```Go
-resp, err := http.DefaultClient.Do(req)
-```
-
-Die Antwort wird in der Variable "resp" gespeichert und kann nun verarbeitet werden. Zum Beispiel können wir auf den "StatusCode" zugreifen, um zu überprüfen, ob die Anfrage erfolgreich war:
-
-```Go
-if resp.StatusCode == 200 {
-    // Anfrage war erfolgreich
+func main() {
+	url := "http://example.com"
+	req, err := http.NewRequest("GET", url, nil)
+	req.SetBasicAuth("user", "password")
+	client := http.Client{}
+	resp, err := client.Do(req)
+	if err != nil {
+		panic(err)
+	}
+	fmt.Println(resp.StatusCode)
 }
 ```
 
-# Deep Dive
+Dies wird eine 200-Statuscode als Antwort zurückgeben, was bedeutet, dass die Anfrage erfolgreich war.
 
-## Weitere Details zur Grundauthentifizierung von HTTP-Anfragen
+Tiefer tauchen
 
-Die Grundauthentifizierung ist ein einfaches, aber anfälliges Verfahren. Da Benutzername und Passwort unverschlüsselt im Header der Anfrage übertragen werden, können sie leicht von Dritten abgefangen werden. Aus diesem Grund sollte die Grundauthentifizierung niemals als alleinige Sicherheitsmaßnahme verwendet werden.
+Grundlegende Authentifizierung ist ein Protokoll, das von HTTP verwendet wird, um Benutzernamen und Passwörter zu überprüfen. Es wird oft verwendet, um den Zugriff auf vertrauliche oder geschützte Informationen zu beschränken. Eine alternative Methode zur Authentifizierung ist die Verwendung von Tokens, bei denen ein einmaliger Code anstelle von Benutzername und Passwort verwendet wird. Beim Senden von HTTP-Anforderungen mit grundlegender Authentifizierung ist es wichtig, dass die HTTP-Verbindung über HTTPS gesichert ist, um zu verhindern, dass die Anmeldeinformationen von Dritten abgefangen werden.
 
-In Go können wir die Grundauthentifizierung auch manuell zum Header hinzufügen, indem wir die Methode "Set" aufrufen und den entsprechenden Schlüssel- und Wertepaare übergeben:
+Siehe auch
 
-```Go
-req.Header.Set("Authorization", "Basic " + base64.StdEncoding.EncodeToString([]byte(username+":"+password)))
-```
-
-Um sicherzustellen, dass die Anfrage über eine sichere Verbindung gesendet wird, können wir auch die Methode "TLSClientConfig" verwenden, um die erforderlichen TLS-Einstellungen anzugeben.
-
-# Siehe auch
-
-- Offizielle Dokumentation zu HTTP-Anfragen mit Go: https://golang.org/pkg/net/http/
-- Tutorial zur Verwendung von Basisauthentifizierung in Go: https://www.codementor.io/@slavko/basicauthenticationin-golang-o19ejv9zv
-- Sicherheitsaspekte bei der Verwendung von Grundauthentifizierung: https://www.owasp.org/index.php/Testing_for_Basic_Authentication_(OWASP-AT-004)
+- [Das net/http Paket in der Go-Dokumentation](https://golang.org/pkg/net/http/)
+- [Ein Tutorial zur grundlegenden Authentifizierung in Go](https://www.sohamkamani.com/golang/basic-authentication/)
+- [Eine Einführung in Go von der offiziellen Website](https://golang.org/doc/tutorial/getting-started)

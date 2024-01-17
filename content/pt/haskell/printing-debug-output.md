@@ -1,7 +1,7 @@
 ---
-title:                "Saida de depuração de impressão"
-html_title:           "Haskell: Saida de depuração de impressão"
-simple_title:         "Saida de depuração de impressão"
+title:                "Imprimindo saída de depuração"
+html_title:           "Haskell: Imprimindo saída de depuração"
+simple_title:         "Imprimindo saída de depuração"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Testing and Debugging"
@@ -10,76 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que imprimir debug output?
+## O que e Por quê?
 
-A impressão de debug output é uma técnica importante para ajudar a entender o que está acontecendo com o seu código. Ao imprimir informações de depuração durante a execução do programa, você pode identificar e corrigir problemas mais facilmente.
+Impressão de saída de depuração é o processo de mostrar mensagens, variáveis ​​e outros dados durante a execução de um programa. Os programadores fazem isso para verificar o estado do programa e detectar possíveis erros.
 
-## Como Fazer
-
-Para imprimir informações de depuração em Haskell, podemos utilizar a função `Debug.Trace.trace`. Vamos ver um exemplo simples:
+## Como fazer:
 
 ```
-Haskell
+-- Exemplo 1:
+debug :: String -> IO ()
+debug msg = putStrLn ("DEBUG: " ++ msg)
+
+main :: IO ()
+main = do
+  let x = 5
+  debug ("O valor de x é " ++ show x)
+  putStrLn ("O dobro de x é " ++ show (x*2))
+
+-- Saída:
+DEBUG: O valor de x é 5
+O dobro de x é 10
+
+-- Exemplo 2:
 import Debug.Trace
 
-fatorial :: Int -> Int
-fatorial 0 = 1
-fatorial n = n * fatorial (n - 1)
-
+main :: IO ()
 main = do
-    let n = 5
-    print $ trace ("Calculando fatorial de " ++ show n) (fatorial n)
+  let list = [1,2,3,4,5]
+  debug ("A lista original é " ++ show list)
+  let newList = trace "Mapeando a lista..." (map (+1) list)
+  debug ("A nova lista é " ++ show newList)
+
+-- Saída:
+DEBUG: A lista original é [1,2,3,4,5]
+Mapeando a lista...
+DEBUG: A nova lista é [2,3,4,5,6]
 ```
 
-Output:
+## Deep Dive:
 
-```
-Calculando fatorial de 5
-120
-```
+A impressão de saída de depuração tem sido usada por muito tempo pelos programadores como uma maneira rápida e fácil de verificar o estado de um programa durante a execução. No entanto, em casos mais complexos, pode ser necessário utilizar uma ferramenta de depuração mais avançada. Algumas alternativas populares incluem o GHCi e o GNU Debugger (GDB). Além disso, é importante ter cuidado ao utilizar a impressão de saída de depuração em código de produção, pois pode prejudicar o desempenho da aplicação.
 
-Neste exemplo, utilizamos a função `trace` para imprimir a mensagem "Calculando fatorial de 5" antes de retornar o resultado do fatorial de 5. Isso nos dá uma visão do que está acontecendo dentro da função `fatorial` e nos ajuda a entender melhor o seu comportamento.
+## Veja também:
 
-Também podemos utilizar o `trace` dentro de uma expressão para imprimir informações específicas em diferentes pontos do código. Por exemplo:
-
-```
-Haskell
-import Debug.Trace
-
-dobro :: Int -> Int
-dobro x = trace ("Calculando dobro de " ++ show x) (x * 2)
-
-main = do
-    let a = 2
-    let b = 3
-    print $ dobro a + dobro b
-```
-
-Output:
-
-```
-Calculando dobro de 2
-Calculando dobro de 3
-10
-```
-
-Podemos ver que o `trace` é executado duas vezes, uma para cada chamada da função `dobro`. Isso nos permite rastrear o valor de `a` e `b` durante a execução do programa.
-
-## Deep Dive
-
-A função `trace` é definida no módulo `Debug.Trace` e possui o seguinte tipo:
-
-```
-Haskell
-trace :: String -> a -> a
-```
-
-Esta função recebe uma mensagem de debug como uma `String` e retorna o segundo argumento (que pode ser de qualquer tipo) sem modificá-lo. Isso permite que o `trace` seja utilizado em qualquer lugar que aceite uma expressão, seja dentro de uma função ou de uma expressão maior.
-
-Uma coisa importante a se notar é que a mensagem de debug só será impressa se o programa for compilado com a flag `-debug` ou utilizando a função `traceIO` em vez de `trace`. Isso é importante para garantir que as mensagens de debug não serão impressas em um ambiente de produção, mas apenas durante a fase de desenvolvimento.
-
-## Veja também
-
-- [Aprenda Haskell](https://www.aprendahaskell.com.br/)
-- [Documentação do Haskell](https://www.haskell.org/documentation/)
-- [Módulo `Debug.Trace`](https://hackage.haskell.org/package/base-4.15.0.0/docs/Debug-Trace.html)
+- [Documentação oficial do GHC](https://downloads.haskell.org/~ghc/latest/docs/html/users_guide/debugging.html)
+- [Tutorial de depuração em GHCi](https://www.fpcomplete.com/blog/step-by-step-guide-to-debugging-haskell-in-ghci)
+- [Tutorial de depuração com GDB](https://www.tutorialspoint.com/haskell/haskell_debugging.htm)

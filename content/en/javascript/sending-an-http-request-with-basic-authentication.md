@@ -10,44 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-If you are a web developer, you may have come across the need to send HTTP requests with basic authentication. This type of authentication is commonly used for secure communication between a client and server, and it ensures that only authorized users can access sensitive data.
+Sending an HTTP request with basic authentication is a method commonly used by programmers to secure their web applications or APIs. It allows for a username and password to be sent along with the request, providing a basic level of authorization and access control. This is particularly useful for restricting access to sensitive data or functionality.
 
-## How To
+## How to:
 
-Sending an HTTP request with basic authentication is fairly simple in Javascript. First, we need to create a new `XMLHttpRequest` object, which allows us to send and receive data from a server. We can do this using the `XMLHttpRequest()` constructor.
-
-Next, we need to set the request method to `GET` or `POST` and specify the URL we want to request. We also need to set the `withCredentials` property to `true` to indicate that we want to use basic authentication.
-
-Once that is done, we can set the `Authorization` header with the username and password separated by a colon, and then encode it using `btoa()`.
-
-Here's an example of sending a GET request to a server with basic authentication:
+To make an HTTP request with basic authentication in Javascript, you will need to use the built-in `fetch()` function, along with some additional options and headers. Here is an example of how to make a GET request to an API endpoint with basic authentication:
 
 ```Javascript
-let xhr = new XMLHttpRequest();
-xhr.open('GET', 'https://example.com/api/users', true);
-xhr.withCredentials = true;
-xhr.setRequestHeader('Authorization', 'Basic ' + btoa('username:password'));
-xhr.send();
+const url = 'https://exampleapi.com/user/profile';
+
+fetch(url, {
+  method: 'GET',
+  headers: {
+    'Authorization': 'Basic ' + btoa('username:password')
+  }
+})
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(error => console.log(error));
 ```
 
-Keep in mind that the server must support basic authentication for this to work.
+In this example, the `Authorization` header is created by encoding the username and password in Base64 format using the `btoa()` function. The resulting string is then prefixed with the word "Basic" to indicate that basic authentication is being used.
 
-## Deep Dive
+The API will then validate the credentials and return the requested data in JSON format, which is then logged to the console. Note that this example is using a GET request, but the same concept can be applied to other HTTP methods such as POST, PUT, or DELETE.
 
-Under the hood, basic authentication works by adding an `Authorization` header to the HTTP request. This header contains the word "Basic" followed by a base64-encoded string that represents the username and password. Here's an example of the header's value:
+## Deep Dive:
 
-```
-Basic dXNlcm5hbWU6cGFzc3dvcmQ=
-```
+Basic authentication has been around since the early days of the World Wide Web, and has since been replaced by more secure methods such as OAuth. However, it is still widely used due to its simplicity and ease of implementation.
 
-In this example, the username is "username" and the password is "password". The `btoa()` function is used to encode this string in base64. On the server side, the username and password can be decoded using a base64 decoder and verified against a user database.
+Alternative methods of securing web applications and APIs include token-based authentication and certificate-based authentication. These methods provide a higher level of security and allow for more granular access control.
 
-It's important to note that basic authentication is not the most secure method of authentication, as the username and password are transmitted in plain text. It's recommended to use a more secure method, such as OAuth, when dealing with sensitive data.
+When implementing basic authentication in Javascript, it is important to note that the `fetch()` function is not supported by all browsers. In these cases, you can use third-party libraries or the traditional `XMLHttpRequest` object to make the HTTP request.
 
-## See Also
+## See Also:
 
-- [XMLHttpRequest Documentation](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest)
-- [Using Fetch with Basic Authentication](https://developers.google.com/web/updates/2015/03/introduction-to-fetch)
-- [Introduction to Basic Authentication](https://www.digitalocean.com/community/tutorials/understanding-basic-authentication-in-nginx-server-blocks)
+- [MDN web docs: Basic authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#Basic_authentication_scheme)
+- [The evolution of web authentication methods](https://www.lucidchart.com/techblog/2018/07/31/the-evolution-of-web-authentication-methods/)
+- [Securing APIs with OAuth](https://www.oauth.com/)

@@ -1,7 +1,7 @@
 ---
-title:                "Slette tegn som matcher et mønster."
-html_title:           "Gleam: Slette tegn som matcher et mønster."
-simple_title:         "Slette tegn som matcher et mønster."
+title:                "Slette tegn som passer mønster"
+html_title:           "Gleam: Slette tegn som passer mønster"
+simple_title:         "Slette tegn som passer mønster"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -10,41 +10,21 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hva & Hvorfor?
+Sletting av tegn som matcher et mønster er en nyttig funksjon i programmering som lar deg enkelt fjerne uønskede tegn fra en tekststreng. Dette brukes ofte til å rengjøre og formatere data, og det sparer programmerere tid og arbeid.
 
-Å slette tegn som matcher et mønster kan være nyttig når du ønsker å rense eller formatere tekstfiler, eller når du jobber med sensitiv informasjon som trenger å bli maskert. I denne artikkelen skal vi se på hvordan dette kan gjøres ved hjelp av Gleam-programmeringsspråket.
-
-## Slik gjør du det
-
-For å slette tegn som matcher et mønster trenger du å bruke standardbiblioteket til Gleam, spesielt funksjonen `String.replace` og `Regex.regex`. Først må du importere disse modulene:
-
+# Hvordan:
 ```
-import string
-import regex
+Gleam.string.delete_pattern("Hei, dette er en tekst", ",") // Output: "Hei dette er en tekst"
+Gleam.string.delete_pattern("1234567890", "[0-9]") // Output: ""
 ```
 
-Så kan du bruke `String.replace` til å erstatte alle tegn som matcher det gitte mønsteret med en tom streng:
+Her ser vi eksempler på hvordan vi kan bruke funksjonen `delete_pattern` i Gleam. Vi gir funksjonen en tekststreng som første argument, og et mønster som skal matches og slettes som det andre argumentet. Resultatet vil være en ny tekst med alle tegn som matcher mønsteret fjernet.
 
-```
-let tekst = "Dette er en hemmelig tekst123"
-let mønster = regex.compile("[a-z]")
-let renset_tekst = string.replace(tekst, mønster, "")
-```
+# Dypdykk
+Sletting av tegn basert på et mønster har vært en vanlig funksjon i programmering siden begynnelsen av datamaskinens tidsalder. Dette er fordi det er en effektiv måte å håndtere og manipulere data på. Alternativene til å slette tegn basert på et mønster inkluderer manuell looping gjennom tegnene, noe som kan være både tidkrevende og feil-introduserende.
 
-I dette eksempelet vil `renset_tekst` bli "123", siden alle små bokstaver fra a-z (inkludert æøå) er slettet fra teksten.
+Gleam implementerer sletting av tegn som matcher et mønster ved å bruke regulære uttrykk, som er et kraftig verktøy for å matche mønstre i tekststrenger. Dette gjør det mulig for Gleam å håndtere mer komplekse slettekrav, som å slette alle tall eller alle bokstaver.
 
-## Grav litt dypere
-
-La oss ta en nærmere titt på hvordan `Regex.regex` fungerer. Den tar to argumenter: et mønster og eventuelle flagg som du kan bruke for å spesifisere søkekriterier. I eksemplet over brukte vi `[a-z]` som mønster, men her er noen andre eksempler:
-
-- `"[0-9]"` vil matche alle tall
-- `"[^a-z0-9]"` vil matche alt som ikke er i alfabetet eller tall
-- `"[A-Z]{3}"` vil matche tre store bokstaver på rad
-
-Du kan også bruke flagg for å gjøre søket ditt mer spesifikt, som for eksempel `i` for å ignorere store/små bokstaver eller `g` for å matche flere ganger i teksten.
-
-## Se også
-
-- Gleam sin offisielle dokumentasjon for mer informasjon om `String.replace` og `Regex.regex`: [https://gleam.run/stdlib/regex](https://gleam.run/stdlib/regex)
-- En annen Gleam-artikkel om å manipulere tekstfiler: [https://gleam.run/articles/text-manipulation-revisited](https://gleam.run/articles/text-manipulation-revisited)
-- En tutorial om hvordan du maskerer sensitiv informasjon ved hjelp av Gleam: [https://gleam.run/articles/encryption-in-gleam](https://gleam.run/articles/encryption-in-gleam)
+# Se også
+For mer informasjon om hvordan Gleam håndterer tekststrenger og bruk av regulære uttrykk, kan du se dokumentasjonen på deres offisielle nettside: https://gleam.run/documentation/text.html#regular-expressions

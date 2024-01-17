@@ -1,7 +1,7 @@
 ---
-title:                "ディレクトリが存在するかどうかの確認。"
-html_title:           "Kotlin: ディレクトリが存在するかどうかの確認。"
-simple_title:         "ディレクトリが存在するかどうかの確認。"
+title:                "ディレクトリが存在するかどうかをチェックする"
+html_title:           "Kotlin: ディレクトリが存在するかどうかをチェックする"
+simple_title:         "ディレクトリが存在するかどうかをチェックする"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Files and I/O"
@@ -10,35 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+## 何 & なぜ？
 
-ディレクトリが存在するかどうかを確認することの利点は、アプリケーションが必要なファイルやリソースを正しく読み込むために重要です。ディレクトリが存在しない場合、プログラムは予期しないエラーを引き起こし、アプリケーションの動作に影響を及ぼす可能性があります。
+ディレクトリの存在をチェックすることは、プログラマーが特定のディレクトリが存在するかどうかを確認することです。プログラマーは、コンピューター上で必要なファイルやフォルダーが存在するかどうかを確認するために、これを行う必要があります。
 
-## 方法
+## 方法：
 
 ```Kotlin
-fun checkDirectory(path: String): Boolean {
-    val directory = File(path)
-    return directory.exists()
-}
-
-fun main() {
-    val path = "data/images"
-    val directoryExists = checkDirectory(path)
-    println("Does $path exist? $directoryExists")
+val file = File("testDirectory")
+if (file.exists()) {
+    println("testDirectory already exists.")
+} else {
+    println("testDirectory does not exist.")
 }
 ```
-実行結果:
+
+出力：
+
 ```
-Does data/images exist? true
+testDirectory does not exist.
 ```
 
-## ディープダイブ
+## 深堀り：
 
-Kotlinの標準ライブラリには、ファイルやディレクトリのようなオペレーティングシステムの特定のリソースにアクセスするための便利なメソッドが用意されています。その中には、ディレクトリの存在を確認するための `exists()` メソッドも含まれています。このメソッドは、該当するファイルやディレクトリが存在する場合に `true` を返し、存在しない場合には `false` を返します。また、`exists()` メソッドの他にも、ディレクトリを作成するための `mkdir()` メソッドや削除するための `delete()` メソッドなど、便利なメソッドが数多くあります。
+ディレクトリの存在をチェックすることは、コンピューターのファイルシステムを理解する上でとても重要です。適切なファイルやフォルダーが存在しない場合、プログラムはエラーを引き起こす可能性があります。このチェックを行う代替手段としては、例外をキャッチしたり、ファイルのパスを変更したりすることがあります。また、この操作はプログラムのパフォーマンスにも影響することがあり、複数のディレクトリをチェックする必要がある場合は、より最適なアルゴリズムを使用することが重要です。
 
-## 関連リンク
+## 参考：
 
-- [Kotlin公式ドキュメント](https://kotlinlang.org/docs/)
-- [Kotlinでディレクトリを作成する方法](https://www.developer.com/lang/how-to-create-directory-in-kotlin.html)
-- [Kotlinでファイルやディレクトリを削除する方法](https://www.tutorialkart.com/kotlin/kotlin-delete-file-and-directory/)
+- [Kotlin 公式ドキュメント](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/exists.html)
+- [Java World: Checking File Existence](https://www.javaworld.com/article/2077707/checking-file-existence.html)

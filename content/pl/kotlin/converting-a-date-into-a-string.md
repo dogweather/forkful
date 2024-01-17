@@ -10,77 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i dlaczego?
+Zamiana daty na ciąg znaków to proces przetwarzania informacji, w którym data zapisana w formacie liczbowym lub kodowym jest konwertowana na zrozumiały dla człowieka ciąg znaków tekstowych. Programiści zajmujący się tworzeniem aplikacji często wykonują tę operację w celu poprawienia czytelności i użytkowości swojego kodu.
 
-Czasami musimy przekonwertować datę na typ tekstowy, aby móc wyświetlić ją w czytelnej formie dla użytkownika lub zapisać w pliku. Na przykład, jeśli tworzysz aplikację kalendarza, będziesz musiał wyświetlić datę wybranego wydarzenia w formacie tekstowym. W takich przypadkach, konwersja daty na string jest niezbędna.
+Dzięki zamianie daty na string, programista może wyświetlić informacje o dacie w wybranym przez siebie formacie, dodając jednocześnie opisy zdarzeń lub warunków. Dzięki temu aplikacja staje się bardziej intuicyjna dla użytkownika, a jej kod bardziej czytelny i łatwiejszy w utrzymaniu.
 
-## Jak To Zrobić
-
-Konwersja daty na string w języku Kotlin jest bardzo prosta. Można to zrobić na kilka sposobów, w zależności od preferencji programisty:
-
-```Kotlin
-// Tworzenie obiektu klasy Date
-val date = Date()
-
-// Wybór formatu, np. DD.MM.YYYY HH:mm:ss
-val dateFormat = SimpleDateFormat("dd.MM.yyyy HH:mm:ss")
-
-// Konwersja daty na typ tekstowy
-val dateString = dateFormat.format(date)
-
-// Wyświetlenie wyniku
-println(dateString) // Output: 21.02.2021 12:30:00
+## Jak to zrobić?
+### Przykład:
+Załóżmy, że chcemy wyświetlić datę w formacie "dzień.miesiąc.rok". W tym celu wykorzystujemy funkcję **toString()** oraz formatowanie tekstu, jak pokazano poniżej:
+```
+Kotlin val date = LocalDate.now()
+println(date.toString("dd.MM.yyyy"))
+```
+### Wynik:
+```
+12.05.2021
 ```
 
-W powyższym przykładzie użyliśmy klasy `Date` do utworzenia obiektu zawierającego aktualną datę i czas. Następnie określiliśmy format, w jakim chcemy wyświetlić datę za pomocą klasy `SimpleDateFormat`. W ostatnim kroku wywołaliśmy metodę `format` z obiektu formatu, podając jako argument nasz obiekt daty, co zwróciło nam datę w postaci tekstowej. Dzięki temu możemy wyświetlić ją lub zapisać w pliku.
+## Głębsze wgląd
+Proces zamiany daty na string ma swoje korzenie w historii informatyki. W przeszłości, komputery nie były w stanie przetwarzać informacji tekstowych i liczbowych jednocześnie, co utrudniało prezentowanie dat w sposób zrozumiały dla człowieka. Z czasem odkryto wiele metod i algorytmów, które pozwoliły na łatwiejsze konwertowanie dat na ciągi znaków.
 
-Jednak nie musimy zawsze tworzyć obiektu klasy `Date` w celu konwersji daty na string. Możemy użyć również funkcji `now()` z klasy `LocalDateTime`, która zwróci aktualną datę i czas w formacie łatwym do czytania:
+Obecnie istnieją różne sposoby na zamianę daty na string, w tym wykorzystanie bibliotek zewnętrznych lub implementacja własnej metody. Programiści powinni jednak pamiętać, że kluczowe jest wybieranie odpowiedniego formatu i metody, zależnie od potrzeb i wymagań aplikacji.
 
-```Kotlin
-println(LocalDateTime.now()) // Output: 2021-02-21T12:30:00.000
-```
-
-Możemy również dostosować format, używając funkcji `format` i klasy `DateTimeFormatter`. Na przykład, jeśli chcemy wyświetlić datę w formacie DD/MM/YYYY, możemy to zrobić w następujący sposób:
-
-```Kotlin
-println(LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy"))) // Output: 21/02/2021
-```
-
-## Sprawdzanie Głębsze
-
-Konwersja daty na string może być również wykonywana w przypadku, gdy chcemy zamienić datę w formacie tekstowym na obiekt klasy `Date` lub `LocalDateTime`.
-
-```Kotlin
-// Tworzenie stringa z datą
-val dateString = "21/02/2021"
-
-// Tworzenie formatu
-val dateFormat = SimpleDateFormat("dd/MM/yyyy")
-
-// Konwersja stringa na obiekt Date
-val date = dateFormat.parse(dateString)
-
-// Wyświetlenie daty
-println(date) // Output: Sun Feb 21 00:00:00 CET 2021
-```
-
-Podobnie, z pomocą funkcji `parse` i klasy `DateTimeFormatter`, możemy przekonwertować stringa na obiekt `LocalDateTime`:
-
-```Kotlin
-val dateString = "21/02/2021"
-
-// Tworzenie formatu
-val dateFormat = DateTimeFormatter.ofPattern("dd/MM/yyyy")
-
-// Konwersja stringa na obiekt LocalDateTime
-val dateTime = LocalDateTime.parse(dateString, dateFormat)
-
-// Wyświetlenie daty
-println(dateTime) // Output: 2021-02-21T00:00
-```
-
-Warto również pamiętać, że w języku Kotlin istnieje wiele gotowych bibliotek, które ułatwiają pracę z datami i czasem, takich jak `java.time` oraz `java.util`. Warto zapoznać się z dokumentacją tych bibliotek, aby wykorzystać pełnię możliwości języka.
-
-## Zobacz również
-
-- Dokumentacja języka Kotlin
+## Zobacz także
+Jeśli chcesz dowiedzieć się więcej na temat konwertowania daty na string w języku Kotlin, polecam zapoznać się z poniższymi źródłami:
+- [Oficjalna dokumentacja języka Kotlin](https://kotlinlang.org/docs/dates-and-times.html#creating-instances)
+- [Blog o programowaniu w Kotlinie](https://blog.kotlin-academy.com/formatting-strings-in-kotlin-made-easy-with-string-templates-and-when-expression-b3c6f6900823)
+- [Kurs "Kotlin w 30 minut" na platformie Udemy](https://www.udemy.com/course/kotlin-w-30-minut-jak-zaczac/)

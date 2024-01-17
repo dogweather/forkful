@@ -10,27 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi käyttää säännöllisiä lausekkeita?
+# Mitä & Miksi?
 
-Säännölliset lausekkeet ovat erittäin hyödyllisiä apuvälineitä koodauksessa, sillä ne mahdollistavat tiettyjen merkkijonojen löytämisen ja käsittelyn tekstissä. Ne ovat erityisen käteviä tekstien etsimisessä ja muokkaamisessa, ja voivat säästää aikaa ja vaivaa monimutkaisten etsintä- ja korvaustoimintojen suorittamisessa.
+Säännölliset lausekkeet ovat työkalu, jota ohjelmoijat voivat käyttää merkkijonojen käsittelyyn. Ne antavat mahdollisuuden tarkistaa, löytää ja muokata tiettyjä merkkijonoja tekstidatasta. Tämä tekee niistä erittäin hyödyllisen työkalun, kun halutaan suorittaa tiettyjä tehtäviä automaattisesti ja tehokkaasti.
 
-## Kuinka käyttää säännöllisiä lausekkeita Clojurella
-
-Säännöllisiä lausekkeita voi käyttää Clojurella eri tavoin, mutta yleisimmin niitä käytetään "re-seq" ja "re-find" funktioiden yhteydessä. "re-seq" palauttaa listan kaikista tekstissä esiintyvistä merkkijonoista, jotka vastaavat määriteltyä säännöllistä lauseketta. "re-find" puolestaan palauttaa ensimmäisen löydetyn vastaavuuden. Käytännön esimerkki näyttää kuinka etsiä ja korvata kaikki ensimmäisen b-kirjaimen jälkeen tulevat h-kirjaimet merkkijonossa:
+# Miten:
 
 ```Clojure
-(def s "abcde fghi jklmn")
-(re-find #"b[\w]*h" s) ; palauttaa bde
-(re-seq #"b[\w]*h" s) ; palauttaa listan [bde, fgh]
-(re-replace #"b[\w]*h" s "replaced") ; palauttaa "areplaced fghi jklmn"
+;; Määritellään säännöllinen lauseke
+(def regex #"[a-z]+")
+
+;; Tarkistetaan, täsmäävätkö merkkijonot lausekkeeseen ja palautetaan
+;; löydetty osa
+(re-matches regex "Hei maailma")
+;; => "Hei"
+
+;; Korvataan löydetyt osat toisella merkkijonolla
+(defn replace-text [text]
+  (let [regex #"[aeiouyäöå]" ;; Määritellään vokaalit
+        replace-fn (fn [m] (str *m \*))] ;; Korvausfunktio
+    (clojure.string/replace text regex replace-fn)))
+
+(replace-text "Hei maailma")
+;; => "H** m***lm*"
 ```
 
-## Syvempi sukellus säännöllisiin lausekkeisiin
+# Syväsukellus:
 
-Säännölliset lausekkeet perustuvat usein merkkijonojen erilaisiin järjestelmiin ja merkistöihin. Ne ovat myös vahvasti käytettyjä tiedonkäsittelyssä ja tiedonlouhinnassa. Clojurella on käytössä Java Regular Expression Syntax, joten Java:n dokumentaatiosta ja esimerkeistä voi olla hyötyä ymmärtämiseen. Säännöllisiä lausekkeita voi myös laajentaa monimutkaisemmaksi käyttämällä esimerkiksi kvantifikaattoreita, ryhmittelemistä ja toistolausekkeita.
+Säännöllisiä lausekkeita käytetään laajasti niin ohjelmoinnissa kuin tekstitiedostojen käsittelyssä. Niiden käyttöön liittyy kuitenkin joitakin haasteita, kuten vaikeaselkoisuus ja virhetilanteiden hallinta. Tärkeää onkin ymmärtää säännöllisten lausekkeiden rakenteita ja syntaksia, jotta niitä osaa käyttää oikein ja tehokkaasti.
 
-## Katso myös
+On myös olemassa vaihtoehtoisia tapoja käsitellä merkkijonoja, kuten funktioita ja kirjastoja, joita voi käyttää yhdessä Clojuren tarjoamien ominaisuuksien kanssa. Näiden avulla voi löytää itselleen sopivan menetelmän merkkijonojen käsittelyyn, joten kannattaa tutustua eri vaihtoehtoihin.
 
-- [Java säännöllinen lausekeopas](https://docs.oracle.com/javase/tutorial/essential/regex/)
-- [Clojure re-seq dokumentaatio](https://clojuredocs.org/clojure.core/re-seq)
-- [Clojure re-find dokumentaatio](https://clojuredocs.org/clojure.core/re-find)
+Säännöllisten lausekkeiden toteutus Clojuressa perustuu Java-kielen RegExp-kirjastoon, joten siitä löytyy runsaasti dokumentaatiota ja esimerkkejä. Lisäksi Clojure tarjoaa omia funktioita lausekkeiden manipulointiin ja käsittelyyn, mikä helpottaa niiden käyttöä.
+
+# Katso myös:
+
+- [Clojure-documentation](https://clojure.org/index)
+- [Java RegExp-kirjasto](https://docs.oracle.com/javase/9/docs/api/java/util/regex/package-summary.html)
+- [Clojure string-functions](https://clojuredocs.org/clojure.string)

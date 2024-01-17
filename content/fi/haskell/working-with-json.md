@@ -1,7 +1,7 @@
 ---
-title:                "Työskentely jsonin kanssa"
-html_title:           "Haskell: Työskentely jsonin kanssa"
-simple_title:         "Työskentely jsonin kanssa"
+title:                "Työskentely JSON:n kanssa"
+html_title:           "Haskell: Työskentely JSON:n kanssa"
+simple_title:         "Työskentely JSON:n kanssa"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Data Formats and Serialization"
@@ -10,47 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä ja miksi?
 
-Haskell on nykypäivänä yksi suosituimmista ohjelmointikielistä, ja sen käyttö JSON-tiedostojen käsittelyyn on erittäin tehokasta ja helppoa. JSON on myös laajasti käytetty tiedostomuoto, joten sen kanssa työskentely voi olla tarpeellista monille ohjelmoijille.
+JSON eli JavaScript Object Notation on kevyt ja yleisesti käytössä oleva muoto serialisointiin, eli tiedon tallentamiseen tai välittämiseen. JSONin yksinkertainen syntaksi ja yhteensopivuus monien ohjelmointikielten kanssa tekee siitä suositun vaihtoehdon tietojen tallentamiseen ja välittämiseen ohjelmistoissa.
 
-## Miten
+## Miten:
 
-Haskellissa JSON-tiedoston lukeminen ja kirjoittaminen tapahtuu käyttämällä Data.Aeson -kirjastoa. Alla on esimerkki koodista, joka lukee JSON-tiedoston ja tulostaa sen sisällön:
+Haskellissa JSON-muotoista dataa voidaan käsitellä helposti käyttämällä Aeson-kirjastoa. Se sisältää valmiit funktiot JSON-muotoisen datan parsimiseen ja luomiseen, sekä työkalut sen käsittelemiseen.
 
+Esimerkiksi, jos haluamme lukea JSON-tiedostosta tiedon ja tallentaa sen muuttujaan `data`, voimme tehdä seuraavaa:
 ```Haskell
+import qualified Data.ByteString.Lazy as B
 import Data.Aeson
-import Data.ByteString.Lazy
 
-main = do 
-    fileContents <- ByteString.Lazy.readFile "example.json"
-    let decodedJSON = decode fileContents :: Maybe Value
-    case decodedJSON of 
-        Just contents -> print contents
-        Nothing -> print "Error decoding JSON"
+main :: IO ()
+main = do
+  file <- B.readFile "tiedosto.json"
+  let jsonData = decode file :: Maybe Value
+  case jsonData of
+    Nothing -> putStrLn "Tiedoston lukeminen epäonnistui!"
+    Just data -> putStrLn "Tiedoston lukeminen onnistui!"
 ```
 
-Kuten nähdään, meidän täytyy ensin lukea tiedosto bytestring-muodossa ja sitten käyttää `decode` -funktiota muuttamaan se `Value`-muodoksi. Tässä tapauksessa käytämme `Maybe`-tyyppiä, jotta voimme käsitellä virhetilanteet.
+## Syvemmälle:
 
-Seuraavaksi esimerkissä näytämme, kuinka voimme luoda ja kirjoittaa JSON-tiedoston sisällön:
+JSON-kielen kehitteli Douglas Crockford 2000-luvun alussa. Mistään uudesta ideasta ei ole kyse, sillä JSON on oikeastaan vain Crockfordin esittämä tapa merkitä JavaScript-olioita. Ennen JSON-muotoa käytettiin usein XML-tiedostoja, mutta XML:n raskas syntaksi tekee siitä hankalan käyttää tarkoituksiin, jotka eivät vaadi kompleksista rakennetta.
 
-```Haskell
-import Data.Aeson
-import Data.ByteString.Lazy
+Haskelliin on myös olemassa muita vaihtoehtoja JSONin käsittelyyn, kuten Attoparsec- ja Parsec-kirjastot, jotka mahdollistavat JSONin käsittelyn parserin avulla. Aeson-kirjasto on kuitenkin suositeltu vaihtoehto, sillä se on käyttöönotoltaan helppokäyttöinen ja tehokas.
 
-main = do 
-    let json = object ["name" .= "John", "age" .= (30 :: Int), "hobbies" .= ["hiking", "coding"]]
-    let byteString = encode json
-    ByteString.Lazy.writeFile "new.json" byteString
-```
+JSONin kyky käsitellä monenlaisia tietotyyppejä, kuten numeroita, merkkijonoja, olioita ja listoja, sekä sen yhteensopivuus monien ohjelmointikielten kanssa tekee siitä kätevän tiedon tallentamiseen ja välittämiseen. JSONia käytetään usein web-palveluissa, sekä selain-pohjaisissa sovelluksissa.
 
-Täällä me ensin luomme `object`-funktiolla JSON-arvon ja sitten käytämme `encode`-funktiota muuttamaan sen bytestring-muotoon. Lopuksi kirjoitamme sisällön uuteen tiedostoon.
+## Katso myös:
 
-## Deep Dive
-
-Haskellissa JSON-tietueet ovat dynaamisia ja samanlaisia kuin JavaScriptin objektit. Ne ovat kuitenkin staattisesti tyypitettyjä ja voimme käyttää vahvistinta (`::`) määrittelemään, millainen tietotyyppi haluamme. Lisäksi voimme käyttää `.`-merkkiä hakeaksemme tietueesta tietyn kentän. Esimerkiksi jos haluamme hakea nimen JSON-tietueesta, käytämme `json . name`.
-
-See Also
-
-- Data.Aeson dokumentaatio: https://hackage.haskell.org/package/aeson-1.4.5.0/docs/Data-Aeson.html
-- Haskell Wikibooks: https://en.wikibooks.org/wiki/Haskell
+- [Aeson kirjaston virallinen dokumentaatio](https://hackage.haskell.org/package/aeson)
+- [JSON käsittelemisestä Haskelliin ja muista kielistä](https://www.json.org/)
+- [Blogikirjoitus, jossa esitellään Aeson-kirjaston käyttöä JSONin käsittelyssä Haskellissa](https://www.snoyman.com/blog/2017/12/beware-of-aeson)

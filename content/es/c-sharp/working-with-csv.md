@@ -10,49 +10,81 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué utilizar CSV en programación?
+## ¿Qué y por qué?
+Trabajar con CSV significa manipular datos en formato CSV (Valores Separados por Comas, por sus siglas en inglés). Los programadores utilizan esta técnica para leer y escribir datos en tablas simples, una forma eficiente de organizar datos.
 
-CSV (valores separados por comas) es un formato comúnmente utilizado para almacenar y compartir datos en una tabla simple. Es una forma sencilla y versátil de organizar información, por lo que es una herramienta útil para cualquier programador.
+## ¿Cómo hacerlo?
+Aquí encontrarás algunas muestras sencillas para manipular archivos CSV en C#:
 
-## Cómo utilizar CSV en C#
-
-Crear y trabajar con archivos CSV en C# es muy sencillo. Aquí vamos a mostrarte algunos ejemplos de código para que puedas empezar a trabajar con este formato de datos.
-
-```C#
-//Importar la librería para trabajar con CSV
+### Cargar datos desde un archivo CSV:
+```
+using System;
 using System.IO;
 
-//Escribir datos en un archivo CSV
-using (StreamWriter sw = new StreamWriter("miArchivo.csv"))
+class Program
 {
-    sw.WriteLine("Nombre, Edad, Ciudad"); //Primera fila con nombres de columnas
-    sw.WriteLine("Pedro, 28, Madrid"); //Segunda fila con datos
-    sw.WriteLine("María, 35, Barcelona");
-}
-
-//Leer y mostrar datos desde un archivo CSV
-using (StreamReader sr = new StreamReader("miArchivo.csv"))
-{
-    string line;
-    while((line = sr.ReadLine()) != null) //Recorre linea por linea hasta el final del archivo
+  static void Main()
+  {
+    // Lee cada línea del archivo y la imprime en la consola
+    using (StreamReader sr = new StreamReader("datos.csv"))
     {
-        string[] columns = line.Split(','); //Divide cada fila en las columnas según la coma
-        Console.WriteLine("Nombre: " + columns[0] + ", Edad: " + columns[1] + ", Ciudad: " + columns[2]);
+      string linea;
+      while((linea = sr.ReadLine()) != null)
+      {
+         Console.WriteLine(linea);
+      }
     }
-    //Salida:
-    //Nombre: Pedro, Edad: 28, Ciudad: Madrid
-    //Nombre: María, Edad: 35, Ciudad: Barcelona
+  }
 }
 ```
 
-## Más información sobre CSV en C#
+**Salida:**
+```
+Nombre, Edad, Ciudad
+Juan, 25, Madrid
+María, 30, Barcelona
+```
 
-Además de leer y escribir datos en formato CSV, también podemos trabajar con librerías específicas para facilitar el manejo de esta estructura de datos, como por ejemplo CsvHelper. Esta librería nos permite mapear los datos de un archivo CSV a una clase C#, lo que facilita el acceso y manipulación de los mismos.
+### Escribir datos en un archivo CSV:
+```
+using System;
+using System.IO;
 
-También es importante tener en cuenta que, aunque CSV es un formato muy utilizado y sencillo, no es adecuado para almacenar datos sensibles o relacionales complejos. En estos casos, sería más conveniente utilizar una base de datos.
+class Program
+{
+  static void Main()
+  {
+    // Arrays con los datos que queremos escribir
+    string[] nombres = {"Juan", "María"};
+    int[] edades = {25, 30};
+    string[] ciudades = {"Madrid", "Barcelona"};
+
+    // Escribe los datos en un archivo CSV
+    using (StreamWriter sw = new StreamWriter("nuevos_datos.csv"))
+    {
+      for (int i = 0; i < nombres.Length; i++)
+      {
+        sw.WriteLine($"{nombres[i]},{edades[i]},{ciudades[i]}");
+      }
+    }
+  }
+}
+```
+
+**Salida (en el archivo nuevos_datos.csv):**
+```
+Juan, 25, Madrid
+María, 30, Barcelona
+```
+
+## Profundizando
+El formato CSV se originó en los años 70, cuando las tabulaciones y los espacios se utilizaban para separar datos en lugar de comas. Aunque se consideraba obsoleto por un tiempo, su simplicidad y versatilidad lo han mantenido como una forma popular para almacenar y compartir datos.
+
+Alternativas al formato CSV incluyen bases de datos relacionales y formatos como JSON, XML y YAML. Sin embargo, CSV sigue siendo una opción eficiente y de fácil acceso para manipular datos en tablas.
+
+Si deseas trabajar con archivos CSV en C#, también puedes considerar las librerías externas como CsvHelper y LumenWorksCsvReader, que ofrecen funcionalidades adicionales como lectura y escritura en archivos grandes, mapeo de datos a tipos específicos y manejo de errores.
 
 ## Ver también
-
-- [Documentación oficial de Microsoft sobre CSV en C#](https://docs.microsoft.com/es-es/dotnet/visual-basic/programming-guide/fileio/how-to-read-from-comma-delimited-text-files)
-- [Librería CsvHelper para C#](https://joshclose.github.io/CsvHelper/)
-- [Formato CSV en Wikipedia](https://es.wikipedia.org/wiki/Valores_separados_por_comas)
+- [Documentación oficial de C# sobre lectura y escritura de archivos CSV](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/file-system/how-to-read-and-write-to-a-newly-created-data-file)
+- [CsvHelper library](https://joshclose.github.io/CsvHelper/)
+- [LumenWorksCsvReader library](https://github.com/phatcher/CsvReader)

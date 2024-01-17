@@ -10,39 +10,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+C - Pisanie pliku tekstowego
 
-Pisanie pliku tekstowego jest jedną z podstawowych operacji w programowaniu w języku C. Jest to niezbędne, jeśli chcemy móc zapisywać trwałe dane, takie jak konfiguracje, wyniki działania programu czy informacje o użytkownikach.
+## Co to jest i dlaczego to robimy?
 
-## Jak to zrobić
+Pisanie pliku tekstowego w języku C polega na zapisaniu danych w formie czytelnej dla człowieka, zwykle w formacie tekstu. Jest to przydatne w przypadku przechowywania informacji lub tworzenia konfiguracji programów. Programiści często korzystają z tej metody, ponieważ pliki tekstowe są łatwe w modyfikacji i dostosowaniu pod indywidualne potrzeby.
 
-Aby zapisać plik tekstowy w języku C, należy wykonać kilka kroków. Najpierw musimy otworzyć plik za pomocą funkcji `fopen()`, która przyjmuje dwa argumenty - nazwę pliku oraz tryb otwarcia. Następnie możemy użyć funkcji `fprintf()` do zapisania danych do pliku. Na koniec musimy pamiętać o zamknięciu pliku za pomocą funkcji `fclose()`.
+## Jak to zrobić:
 
-````C
+```C
 #include <stdio.h>
-
+ 
 int main() {
-    // otwieramy plik w trybie do zapisu
-    FILE *fp = fopen("plik.txt", "w");
+   FILE *plik;
 
-    // zapisujemy tekst do pliku
-    fprintf(fp, "Witaj, to jest przykładowy tekst!");
+   // otwórz plik tekstowy "moj_plik.txt" do zapisu 
+   plik = fopen("moj_plik.txt", "w");
 
-    // zamykamy plik
-    fclose(fp);
+   // sprawdź, czy plik został pomyślnie otwarty
+   if (plik == NULL) {
+      printf("Nie można otworzyć pliku!");
+      return -1;
+   }
 
-    return 0;
+   // zapisz tekst w pliku
+   fprintf(plik, "To jest tekst do zapisania w pliku\n");
+
+   // zamknij plik
+   fclose(plik);
+
+   // wyświetl informację o pomyślnym zapisaniu pliku
+   printf("Plik został pomyślnie zapisany!");
+
+   return 0;
 }
-````
+```
 
-Po uruchomieniu tego programu, w bieżącym folderze powinien pojawić się plik o nazwie "plik.txt" zawierający nasz tekst.
+**Wyjście:**
 
-## Gleboki zanurkowanie
+W pliku "moj_plik.txt" pojawi się następujący tekst:
 
-Pisząc plik tekstowy w języku C, możemy również wykorzystać funkcję `fputc()` do zapisywania pojedynczego znaku oraz funkcję `fputs()` do zapisywania całych łańcuchów znaków. Ważne jest również pamiętanie o prawidłowym obsługiwaniu błędów, wykonując sprawdzenie czy funkcja `fopen()` zwróciła wartość różną od `NULL` - w przeciwnym razie oznacza to, że plik nie został otwarty prawidłowo.
+```text
+To jest tekst do zapisania w pliku
+```
 
-## Zobacz również
+## Głębsze zagadnienia:
 
-- [Dokumentacja funkcji fopen()](https://www.tutorialspoint.com/c_standard_library/c_function_fopen.htm)
-- [Kurs języka C na Codecademy](https://www.codecademy.com/learn/learn-c) 
-- [Inne artykuły na temat programowania w języku C](https://pl.wikibooks.org/wiki/Programowanie_w_j%C4%99zyku_C)
+**Kontekst historyczny:** Pisanie plików tekstowych jest jedną z najstarszych metod zapisu danych, sięgającą początków informatyki. Współcześnie, z powodu rozwoju technologii, zaczęto stosować również inne formaty, takie jak bazy danych czy pliki binarne.
+
+**Alternatywy:** Istnieją również inne sposoby na przechowywanie danych w języku C, takie jak zapisywanie do plików binarnych lub używanie baz danych. Każda z tych metod ma swoje zalety i w zależności od konkretnego zadania, programiści wybierają najbardziej odpowiednią.
+
+**Szczegóły implementacji:** Podczas pisania plików tekstowych, konieczne jest odpowiednie formatowanie tekstu, tak aby był czytelny dla użytkownika. Oprócz tego, ważne jest również prawidłowe otwieranie i zamykanie pliku, oraz przeprowadzenie odpowiednich operacji na danych przed zapisaniem ich w pliku.
+
+## Zobacz także:
+
+Dla więcej informacji na temat pisania plików tekstowych w języku C, zapoznaj się z dokumentacją [stdio.h](https://www.tutorialspoint.com/c_standard_library/stdio_h.htm).

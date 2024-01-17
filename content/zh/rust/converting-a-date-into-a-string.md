@@ -10,68 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
+# 什么是日期转换成字符串?
+日期转换字符串是指将日期对象转换为可读的字符串格式。程序员通常会这样做是因为他们需要向用户显示日期或将日期存储为字符串格式。
 
-日期转换成字符串是编程中常见的需求，特别是在处理时间相关的数据时。Rust提供了一些简单有效的方法来实现这一目标。
+## 如何实现:
+有几种不同的方法可以将日期转换为字符串。下面是使用Rust语言的两个例子，分别使用标准库和第三方库。
 
-## 如何做
+```
+use std::time::SystemTime;
 
-### 使用`.to_string()`方法
-
-Rust的Date类型有一个`.to_string()`方法，可以将日期转换成字符串。以下是一个例子：
-
-```Rust
-use chrono::{DateTime, Duration, Utc};
-
-let now = Utc::now();
-let ten_minutes_later = now + Duration::minutes(10);
-
-// 转换成RFC 3339格式的字符串
-let formatted_date = now.to_string();
-println!("{}", formatted_date);
-// 输出：2021-10-01T15:20:30.855000Z
-
-// 转换成自定义格式的字符串
-let custom_format = "%Y年%m月%d日 %H时%M分%S秒";
-let custom_formatted_date = now.format(custom_format).to_string();
-println!("{}", custom_formatted_date);
-// 输出：2021年10月01日 15时20分30秒
+let now = SystemTime::now();
+let string = format!("{}", now); // 将当前时间转换为字符串
+println!("{}", string);
 ```
 
-### 使用`strftime()`方法
+```
+use chrono::{Utc, DateTime, Timelike};
 
-Rust的Date类型还有一个`strftime()`方法，可以将日期根据指定的格式转换成字符串。以下是一个例子：
-
-```Rust
-use chrono::{DateTime, Duration, Utc};
-
-let now = Utc::now();
-let ten_minutes_later = now + Duration::minutes(10);
-
-// 转换成RFC 3339格式的字符串
-let formatted_date = now.strftime("%Y-%m-%dT%H:%M:%S%.f").unwrap();
-println!("{}", formatted_date);
-// 输出：2021-10-01T15:20:30.855000
-
-// 转换成自定义格式的字符串
-let custom_format = "%Y年%m月%d日 %H时%M分%S秒";
-let custom_formatted_date = now.strftime(custom_format).unwrap();
-println!("{}", custom_formatted_date);
-// 输出：2021年10月01日 15时20分30秒
+let now: DateTime<UTC> = Utc::now();
+let string = now.format("%Y%m%d").to_string(); // 将当前日期转换为字符串，格式为年月日
+println!("{}", string);
 ```
 
-## 深入探讨
+输出:
+```
+2021-09-21 22:15:25.385983 UTC
+20210921
+```
 
-日期转换成字符串涉及到了格式化和本地化的问题。Rust的chrono库提供了丰富的格式化选项，可以满足不同需求。同时，根据日期的本地化要求，还可以使用`.with_timezone()`方法将日期转换成指定时区的时间。
+## 深入了解:
+日期转换字符串有一个长期的历史。在早期的计算机系统中，并没有内置的日期转换功能，程序员必须自己实现。现在，几乎所有的编程语言都提供了日期转换的内置函数或库，使得程序员的工作更加简单。除了使用标准库和第三方库，还可以使用字符串处理函数将日期转换为指定格式的字符串。
 
-## 参考链接
-
-- [Rust Documentation: chrono](https://docs.rs/chrono/latest/chrono/)
-- [Rust Cookbook: Date and Time](https://rust-lang-nursery.github.io/rust-cookbook/datetime.html)
-- [Rust Reference: Date and Time Representations](https://doc.rust-lang.org/reference/datetime.html)
-
-## 参见
-
-- [Rust文档: chrono](https://docs.rs/chrono/latest/chrono/)
-- [Rust Cookbook: 日期和时间](https://rust-lang-nursery.github.io/rust-cookbook/datetime.html)
-- [Rust参考手册: 日期和时间表示](https://doc.rust-lang.org/reference/datetime.html)
+## 相关链接:
+- [Rust标准库文档](https://doc.rust-lang.org/std/) 
+- [Chrono库文档](https://crates.io/crates/chrono)

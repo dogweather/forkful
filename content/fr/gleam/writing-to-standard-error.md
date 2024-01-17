@@ -1,7 +1,7 @@
 ---
-title:                "Écrire dans le canal d'erreur standard"
-html_title:           "Gleam: Écrire dans le canal d'erreur standard"
-simple_title:         "Écrire dans le canal d'erreur standard"
+title:                "Écrire sur la sortie d'erreur standard"
+html_title:           "Gleam: Écrire sur la sortie d'erreur standard"
+simple_title:         "Écrire sur la sortie d'erreur standard"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Files and I/O"
@@ -10,35 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Qu'est-ce que c'est et pourquoi on le fait ?
 
-Ecrire vers l'erreur standard peut sembler être une tâche inutile, mais c'est en fait une étape cruciale dans le processus de débogage de votre code. L'affichage des messages d'erreur sur la sortie standard peut permettre de mieux comprendre les problèmes et de les résoudre plus rapidement.
+L'écriture vers le canal d'erreur standard est une pratique courante en programmation. Cela consiste à envoyer des messages d'erreur vers une sortie spécifique, plutôt que vers la sortie standard. Les programmeurs le font pour améliorer la lisibilité du code et faciliter le débogage des erreurs.
 
-## Comment faire
+## Comment faire ?
 
-Pour écrire vers l'erreur standard en Gleam, vous allez utiliser la fonction `write_stderr` qui accepte une chaîne de caractères en tant que paramètre. Elle va ensuite afficher cette chaîne de caractères dans la sortie d'erreur standard. Voici un exemple de comment utiliser cette fonction :
-
-```
-Gleam
-
+```Gleam
+// Exemple de code montrant l'utilisation de l'écriture vers le canal d'erreur standard
 fn main() {
-  write_stderr("Erreur : Cette fonction n'est pas encore implémentée");
+  // Création d'un message d'erreur
+  let err_message = "Attention : erreur de syntaxe.";
+
+  // Utilisation de la fonction `io::stderr` pour écrire le message vers le canal d'erreur standard
+  Gleam.io.stderr(err_message);
 }
 ```
 
-Output :
+Lorsque ce code sera exécuté, le message d'erreur sera affiché directement vers le canal d'erreur standard. Si vous exécutez le code depuis un terminal, vous pourrez le voir s'afficher en rouge.
 
-```
-Erreur : Cette fonction n'est pas encore implémentée
-```
+## Plongée dans les détails
 
-## Plongée en profondeur
+Historiquement, les programmeurs utilisaient une fonction appelée `printf` pour imprimer des messages d'erreur. Cependant, avec l'avènement des languages fonctionnels, une approche plus sophistiquée a été adoptée, appelée "traitement des erreurs basées sur les types". Cette méthode permet d'utiliser des types de données spécifiques pour représenter les erreurs plutôt que de simplement utiliser du texte brut.
 
-Ecrire vers l'erreur standard peut être utile lorsque votre code rencontre une erreur et que vous souhaitez en avertir l'utilisateur. Cela peut également être utile pour déboguer votre code en affichant des informations supplémentaires sur l'état de votre programme.
+### Alternatives
+Il existe d'autres méthodes pour gérer les messages d'erreur en programmation, comme le lancement d'exceptions ou l'utilisation de variables globales pour stocker les erreurs. Cependant, écrire vers le canal d'erreur standard reste une méthode pratique et efficace pour gérer les erreurs.
 
-Il est important de n'utiliser l'écriture vers l'erreur standard que pour les informations de débogage et de ne pas en faire une méthode de gestion des erreurs dans votre programme. Au lieu de cela, vous devriez utiliser des types d'erreurs et des gestionnaires d'erreurs pour un traitement optimal des erreurs dans votre code.
+### Détails d'implémentation
+En utilisant la fonction `io::stderr`, le message d'erreur sera envoyé vers le canal d'erreur standard en utilisant la fonction système `fwrite` pour l'impression. L'utilisation d'un type spécifique pour représenter les erreurs permet également une meilleure gestion de l'encodage et des caractères spéciaux.
 
-## Voir aussi
+## À découvrir
+Pour en savoir plus sur l'écriture vers le canal d'erreur standard en Gleam, consultez la documentation officielle (https://gleam.run/builtin/io/).
 
-- [Documentation de Gleam sur l'écriture vers l'erreur standard](https://gleam.run/book/tour/writing_to_stderr.html)
-- [Article sur la gestion des erreurs en Gleam](https://gleam.run/articles/handling_errors.html)
+ N'hésitez pas à explorer d'autres sources en ligne pour en apprendre plus sur les différentes méthodes de gestion des erreurs en programmation.

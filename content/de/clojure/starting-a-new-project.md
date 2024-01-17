@@ -1,7 +1,7 @@
 ---
-title:                "Ein neues Projekt beginnen."
-html_title:           "Clojure: Ein neues Projekt beginnen."
-simple_title:         "Ein neues Projekt beginnen."
+title:                "Ein neues Projekt beginnen"
+html_title:           "Clojure: Ein neues Projekt beginnen"
+simple_title:         "Ein neues Projekt beginnen"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Getting Started"
@@ -10,44 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+Hallo liebe Leser:innen,
 
-Warum sollte man sich engagieren, ein neues Projekt zu starten? Nun, es gibt viele Gründe, aber am wichtigsten ist wahrscheinlich die Motivation, etwas Neues zu erschaffen und seine Fähigkeiten als Entwickler auszubauen. Plus, Clojure ist eine spannende und innovative Programmiersprache, die es lohnt, auszuprobieren.
+in diesem Artikel werden wir uns mit dem Erstellen eines neuen Projekts in Clojure beschäftigen. Aber bevor wir in die Details eintauchen, lass uns kurz betrachten, was genau ein neues Projekt ist und warum Programmiere:innen immer wieder neue Projekte starten.
 
-## Wie man startet
+## Was & Warum?
 
-Um ein neues Clojure-Projekt zu starten, gibt es ein paar Schritte, die du befolgen musst. 
+Ein neues Projekt in Clojure zu erstellen bedeutet, eine neue Code-Basis aufzubauen und mit der Programmierung eines neuen Programms oder einer Anwendung zu beginnen. Warum tun wir das? Weil es uns ermöglicht, neue Ideen und Funktionen zu verwirklichen, unsere Fähigkeiten zu verbessern und auch Fehler oder Probleme in unseren alten Projekten zu beheben. Es ist eine aufregende Herausforderung, die uns neue Möglichkeiten eröffnet.
 
-1. Zuerst musst du Clojure auf deinem System installieren, falls du es noch nicht hast. Eine Anleitung findest du [hier](https://clojure.org/guides/getting_started). 
-2. Als nächstes musst du ein neues Projekt-Verzeichnis erstellen. Du kannst dies manuell tun oder ein Tool wie [Leiningen](https://leiningen.org/) verwenden, um dies automatisch zu erledigen. 
-3. Sobald du dein Projekt erstellt hast, kannst du mit dem Codieren loslegen! Hier sind ein paar Beispiele für typische Clojure Syntax:
+## How to:
 
-```Clojure 
-(def message "Hallo, Welt!") 
-(println message) 
+Um ein neues Projekt in Clojure zu erstellen, gibt es ein paar Schritte, die du befolgen kannst:
+
+1. Installiere die neueste Version von Clojure auf deinem Computer.
+2. Öffne eine Lein-Projekt-Datei und gib die spezifischen Details für dein neues Projekt ein, wie z.B. Name, Version und Abhängigkeiten.
+3. Öffne die Terminal oder die Befehlszeile und navigiere zum Verzeichnis deines neuen Projekts.
+4. Führe den Befehl ```lein repl``` aus, um die Clojure REPL zu öffnen.
+5. Nun kannst du deine ersten Code-Zeilen schreiben und dein neues Projekt zum Laufen bringen.
+
+Hier ist ein Beispiel für eine Lein-Projekt-Datei:
+
+```Clojure
+(defproject my-project "1.0.0-SNAPSHOT"
+  :dependencies [[org.clojure/clojure "1.10.1"]]
+  :plugins [[lein-exec "0.3.7"]]
+  :exec-fn -main)
 ```
-Dieser Code erstellt eine Variable mit dem Namen "message" und weist ihr den Wert "Hallo, Welt!" zu. Dann wird der Inhalt der Variable auf der Konsole ausgegeben. 
 
-```Clojure 
-(defn add [x y] (+ x y)) 
-(println (add 4 3)) 
+Und hier ist ein Beispiel für eine einfache Funktion, die die Summe von zwei Zahlen berechnet:
+
+```Clojure
+(defn sum [a b]
+  (+ a b))
+
+(sum 2 3) ; Output: 5
 ```
-Dieser Code definiert eine Funktion namens "add", die zwei Zahlen addiert und das Ergebnis ausgibt. Dann wird die Funktion mit den Werten 4 und 3 aufgerufen und das Ergebnis "7" wird ausgegeben. 
 
-## Tiefere Einblicke
+## Deep Dive:
 
-Es gibt viele Möglichkeiten, ein Clojure-Projekt zu starten, je nachdem, welche Art von Anwendung du entwickeln möchtest. Du kannst auch verschiedene Tools und Bibliotheken verwenden, um dein Projekt effizienter und leistungsfähiger zu machen. Hier sind einige Ressourcen, die dir beim Einstieg helfen können: 
+Clojure ist eine funktionale Programmiersprache, die auf der JVM (Java Virtual Machine) läuft. Sie wurde im Jahr 2007 von Rich Hickey entwickelt und ist stark von anderen funktionalen Programmiersprachen wie Lisp und Scheme inspiriert. Das bedeutet, dass wir in Clojure häufiger mit Funktionen als mit Objekten arbeiten.
 
-- [Clojure Dokumentation](https://clojure.org/) 
-- [Clojure Community](https://clojure.org/community) 
-- [Leiningen](https://leiningen.org/) - ein Build-Tool für Clojure-Projekte 
-- [ClojureScript](https://clojurescript.org/) - eine Clojure-Version für die Webentwicklung 
-- [Ring](https://github.com/ring-clojure/ring) - eine Bibliothek für Webanwendungen in Clojure 
+Es gibt auch andere Möglichkeiten, ein neues Projekt in Clojure zu erstellen, z.B. mit dem Build-Tool Boot oder mit einem integrierten Entwicklungsumfeld wie Cursive oder VSCode. Es ist jedoch immer noch empfehlenswert, Leiningen (kurz "lein") zu nutzen, da es das am weitesten verbreitete und unterstützte Tool ist.
 
-## Siehe auch
+Während des Erstellungsprozesses wird Leiningen automatisch alle benötigten Abhängigkeiten herunterladen und verwalten, so dass wir uns darauf konzentrieren können, Code zu schreiben.
 
-Wenn du mehr über Clojure lernen möchtest, schau dir diese Ressourcen an: 
+## See Also:
 
-- [4Clojure](https://www.4clojure.com/) - eine Plattform zum Üben von Clojure 
-- [PurelyFunctional.tv](https://purelyfunctional.tv/) - eine Online-Plattform mit Kursen und Tutorials zu Clojure und funktionaler Programmierung 
-- [Clojurists Together](https://www.clojuriststogether.org/) - eine Organisation, die die Weiterentwicklung von Clojure unterstützt
+- Clojure Dokumentation: https://clojure.org
+- Leiningen Dokumentation: https://leiningen.org
+- Boot Dokumentation: https://boot-clj.com

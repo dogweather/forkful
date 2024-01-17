@@ -10,42 +10,88 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+# Vad & Varför?
+### Vad är en HTTP-request?
+När en programmerare vill skicka en förfrågan till en server för att få tillbaka data eller utföra en handling, använder de sig av något som kallas en HTTP-request.
 
-Du kanske har hört talas om "HTTP requests", men varför skulle du vilja använda dem i dina Go-program? En HTTP request är en enkel metod för att kommunicera med en annan server och få tillbaka data eller utföra en åtgärd.
+### Varför gör programmerare det här?
+HTTP-requests är en viktig del av webbutveckling och används för att kommunicera med olika servrar och tjänster. Genom att skicka en HTTP-request kan en programmerare hämta information från en API eller utföra en handling på en server.
 
-## Hur man gör
+# Hur gör man?
+### Kodexempel:
+Go erbjuder ett inbyggt paket "net/http" som tillhandahåller ett enkelt sätt att skicka HTTP-requests. Här är ett exempel på hur man kan använda detta paket för att hämta information från en API och skriva ut svaret i terminalen:
+```
+package main
 
-För att skicka en HTTP request i Go behöver du först importera paketet "net/http". Sedan kan du använda funktionen "Get" för att göra en GET request till den önskade URL:en.
+import (
+   "fmt"
+   "net/http"
+   "io/ioutil"
+)
 
-```Go
-import "net/http"
+func main() {
+   response, err := http.Get("https://swapi.dev/api/people/1") // skickar en GET-request till Star Wars API
+   if err != nil {
+      fmt.Println(err)
+      return
+   }
 
-res, err := http.Get("https://www.example.com")
+   defer response.Body.Close()
+
+   data, err := ioutil.ReadAll(response.Body)
+   if err != nil {
+      fmt.Println(err)
+      return
+   }
+
+   fmt.Println(string(data)) // skriver ut svaret i terminalen
+}
+```
+Output:
+```
+{
+   "name": "Luke Skywalker",
+   "height": "172",
+   "mass": "77",
+   "hair_color": "blond",
+   "skin_color": "fair",
+   "eye_color": "blue",
+   "birth_year": "19BBY",
+   "gender": "male",
+   "homeworld": "https://swapi.dev/api/planets/1/",
+   "films": [
+       "https://swapi.dev/api/films/2/",
+       "https://swapi.dev/api/films/6/",
+       "https://swapi.dev/api/films/3/",
+       "https://swapi.dev/api/films/1/",
+       "https://swapi.dev/api/films/7/"
+   ],
+   "species": [
+       "https://swapi.dev/api/species/1/"
+   ],
+   "vehicles": [
+       "https://swapi.dev/api/vehicles"
+   ],
+   "starships": [
+       "https://swapi.dev/api/starships/12/",
+       "https://swapi.dev/api/starships/22/"
+   ],
+   "created": "2014-12-09T13:50:51.644000Z",
+   "edited": "2014-12-20T21:17:56.891000Z",
+   "url": "https://swapi.dev/api/people/1/"
+}
 ```
 
-Detta skickar en GET request till "https://www.example.com" och sparar resultatet i variabeln "res". Om allt går som planerat kommer "err" att vara "nil" och du kan sedan använda "res" för att läsa det data som returnerats från servern.
+# Djupdykning
+### Historisk kontext:
+HTTP-protokollet som används för att skicka dessa requests har funnits sedan 1991 och är en av de grundläggande protokollen för webben. Det har gått igenom flera versioner, den nuvarande är HTTP/2 som introducerades 2015.
 
-```Go
-body, err := ioutil.ReadAll(res.Body)
+### Alternativ:
+Det finns flera olika alternativ för att skicka HTTP-requests, bland annat "curl" och "wget". Men iGo's inbyggda "net/http" paket är ett populärt val för dess enkelhet och funktionalitet.
 
-// Läs in den returnerade datan
-fmt.Println(string(body))
+### Implementation:
+När man skickar en HTTP-request, använder man sig av olika HTTP-metoder såsom GET, POST, PUT och DELETE för att ange vilken typ av handling som ska utföras på servern. Man kan också skicka olika parametrar och data tillsammans med requesten för att anpassa den ytterligare.
 
-// Stäng anslutningen
-res.Body.Close()
-```
-
-I det här exemplet använder vi funktionen "ReadAll" för att läsa all den data som returnerats från servern. Sedan konverterar vi denna data till en sträng och skriver ut den. Slutligen stänger vi anslutningen.
-
-## Deep Dive
-
-Det finns flera olika metoder för att skicka HTTP requests i Go, som "Get", "Post", "Put" och "Delete". Du kan också använda funktionen "NewRequest" för att skicka en mer anpassad request med kundanpassade HTTP headers och body. Det är också möjligt att lägga till timeout-funktioner för att hantera situationer där servern inte svarar.
-
-För att lära dig mer om HTTP requests i Go, kan du kolla in Go's dokumentation om paketet "net/http": https://golang.org/pkg/net/http/
-
-## Se även
-
-- En guide för att lära sig Go på svenska: https://www.learn-golang.org/sv/
-- Officiell dokumentation för Go: https://golang.org/doc/
-- "Gopher" forum för Go-programmerare: https://forum.golangbridge.org/
+# Se även
+- [net/http paketet](https://golang.org/pkg/net/http/)
+- [En guide för att lära sig Go](https://tour.golang.org/welcome)

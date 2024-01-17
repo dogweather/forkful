@@ -1,7 +1,7 @@
 ---
-title:                "現在の日付の取得"
-html_title:           "C#: 現在の日付の取得"
-simple_title:         "現在の日付の取得"
+title:                "今日の日付を取得する"
+html_title:           "C#: 今日の日付を取得する"
+simple_title:         "今日の日付を取得する"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Dates and Times"
@@ -10,45 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
-日付を取得するのに役立つ簡単な方法は、プログラマーにとって絶対に必要なものです。現在の日付を取得して処理することにより、アプリケーションを柔軟に設計し、ユーザーにとって便利な体験を提供することができます。
+## 今日は何ですか？
 
-## 使い方
-まず、日付を取得するには `DateTime` 型の `Now` プロパティを使用します。以下に例を示します。
+現在日付を取得することは、プログラマーがコンピューターに現在の日付を認識させることです。プログラマーは、タイムスタンプや期限付きのタスクを含む多くのアプリケーションで、現在の日付を使用します。
 
-```C#
-DateTime currentDate = DateTime.Now;
-Console.WriteLine(currentDate);
-```
+## 方法：
 
-このコードを実行すると、以下のような出力が得られます。
+*C#*で現在の日付を取得するには、 *DateTime*クラスを使用します。.NETで提供されるこのクラスには、現在の日付を取得する *Today* メソッドがあります。サンプルコードを以下に示します。
 
 ```
-2022/01/01 12:00:00 AM
+DateTime today = DateTime.Today;
+Console.WriteLine(today);
 ```
 
-また、出力形式を自由に変更することもできます。例えば、年月日のみを表示したい場合は `ToString()` メソッドを使用します。
-
-```C#
-DateTime currentDate = DateTime.Now;
-string formattedDate = currentDate.ToString("yyyy/MM/dd");
-Console.WriteLine(formattedDate);
-```
-
-このコードを実行すると、以下のような出力が得られます。
+上記のコードでは、現在の日付が表示されます。以下は出力例です。
 
 ```
-2022/01/01
+3/21/2021 12:00:00 AM
 ```
 
-さらに、特定のタイムゾーンやカレンダーに基づいた日付を取得することもできます。詳細な情報は、[公式ドキュメント](https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=net-6.0)を参照してください。
+短い形式で日付を表示したい場合は、*ToString*メソッドを使用します。以下にサンプルコードを示します。
 
-## 深堀り
-`DateTime.Now` プロパティで取得する日付は、ローカルマシンのシステム時刻を基準としています。これに対し、`DateTime.UtcNow` プロパティはグリニッジ標準時を基準として日付を取得します。このような違いを理解することで、アプリケーションがどのタイムゾーンのユーザーに対しても正確な日付を表示できるようになります。
+```
+DateTime today = DateTime.Today;
+Console.WriteLine(today.ToString("d"));
+```
 
-さらに、`DateTime` 型は不変性を持つため、日付の計算や比較を行う際には新しい `DateTime` オブジェクトを生成する必要があります。これについても公式ドキュメントを参照することをお勧めします。
+上記のコードでは、以下のような出力が得られます。
 
-## 併せて読みたい
-- [DateTime.Now プロパティ (Microsoft Docs)](https://docs.microsoft.com/ja-jp/dotnet/api/system.datetime.now)
-- [DateTime クラス (Microsoft Docs)](https://docs.microsoft.com/ja-jp/dotnet/api/system.datetime)
-- [C# 日付のフォーマット (Microsoft Docs)](https://docs.microsoft.com/ja-jp/dotnet/standard/base-types/custom-date-and-time-format-strings)
+```
+3/21/2021
+```
+
+## より詳しく見る：
+
+プログラマーは、現在の日付を取得する以外にも、他の手段で日付を扱うことができます。例えば、 *DateTime* クラスを使用する代わりに、 *DateTimeOffset* クラスを使用することができます。また、日付を取得するだけでなく、日付の比較や操作を行うこともできます。このような様々な方法を覚えておくことで、より効率的に日付を扱うことができるでしょう。
+
+## 関連情報を見る：
+
+* [C# DateTime.Today メソッド](https://docs.microsoft.com/en-us/dotnet/api/system.datetime.today?view=net-5.0)
+* [DateTime 説明書き](https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=net-5.0)
+* [DateTimeOffset 説明書き](https://docs.microsoft.com/en-us/dotnet/api/system.datetimeoffset?view=net-5.0)

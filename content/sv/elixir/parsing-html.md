@@ -1,7 +1,7 @@
 ---
-title:                "Analysera html"
-html_title:           "Elixir: Analysera html"
-simple_title:         "Analysera html"
+title:                "Att tolka html"
+html_title:           "Elixir: Att tolka html"
+simple_title:         "Att tolka html"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "HTML and the Web"
@@ -10,40 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
+HTML är det språk som används för att strukturera webbsidor och innehåll på internet. Genom parsing, eller bearbetning, av HTML-kod kan vi extrahera och manipulera data från en webbsida i vårt Elixir-program. Detta är särskilt användbart när vi vill automatisera processer eller skapa webbskrapare.
 
-Att extrahera data från HTML-dokument är en viktig uppgift inom webbutveckling. Oavsett om du behöver skrapa data från en webbsida, utföra SEO-analyser eller bygga en webskrapa, så är HTML-parsing en viktig del av processen. Genom att lära dig hur man gör det på rätt sätt med hjälp av Elixir, kan du effektivt och pålitligt hantera ditt HTML-innehåll.
+## Så här:
+```Elixir
+# Installera Paketet Floki i ditt projekt
+mix deps.get floki
 
-## Hur man gör det
+# Importera Floki modulen i ditt Elixir-program
+import Floki
 
-För att parsra HTML med Elixir, kan du använda biblioteket Floki. Här är ett exempel på kod som hämtar länkar från en webbsida och returnerar en lista med URL:er:
+# Hämta en webbsidas HTML-kod
+html = Floki.parse_file("index.html")
 
-```
-page = Floki.parse_document(html) 
-links = Floki.find(page, "a") 
-urls = Enum.map(links, fn link -> Floki.attribute(link, "href") end) 
-```
-
-Denna kod använder sig av Floki-funktioner för att hitta och hämta länkarna från HTML-sidan. Resultatet blir en lista med URL:er som du kan använda för att utföra olika åtgärder, som till exempel att besöka webbplatserna eller spara dem i en databas.
-
-## Djupdykning
-
-När du behöver hantera mer komplexa HTML-strukturer, kan du använda dig av Flokis CSS-selectors för att välja specifika delar av dokumentet. Till exempel, om du vill hämta alla bilder från en sida, kan du använda följande kod:
-
-```
-images = Floki.find(page, "img")
+# Extrahera en specifik tagg eller klass från HTML-koden
+tagg = Floki.find(html, "span")
+klass = Floki.find(html, ".rubrik")
 ```
 
-Du kan också använda Flokis inbyggda funktioner för att filtrera och manipulera HTML-innehållet. Till exempel, om du bara vill hämta länkar som innehåller en viss term, kan du använda följande kod:
+## Djupdykning:
+Parsning av HTML är en viktig del av webbutveckling och automatisering av webbprocesser. Andra alternativ för HTML-parsing i Elixir inkluderar paketet Drab och plugindelen HTML Kontrol. Genom att använda regelbundna uttryck i kombination med Floki kan vi också skriva mer avancerade extractionsskript.
 
-```
-links = Floki.find(page, "a", fn(el) -> String.contains?(Floki.attribute(el, "href"), "elixir") end)
-```
-
-Genom att utforska Flokis olika funktioner och möjligheter kan du effektivt hantera även de mest komplexa HTML-strukturerna.
-
-## Se också
-
-- Officiell Elixir-dokumentation om Floki: https://hexdocs.pm/floki/readme.html
-- En introduktion till Elixir: https://elixir-lang.org/getting-started/introduction.html
-- Elixir-skolan (på svenska): https://elixirskolan.se/
+## Se även:
+- [Floki på Hexdocs](https://hexdocs.pm/floki/readme.html)
+- [Drab på Hexdocs](https://hexdocs.pm/drab/readme.html)
+- [HTML Kontrol på Hexdocs](https://hexdocs.pm/html_kontrol/readme.html)

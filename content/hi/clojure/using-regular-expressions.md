@@ -1,7 +1,7 @@
 ---
-title:                "नियमित अभिव्यक्तियों का उपयोग करना"
-html_title:           "Clojure: नियमित अभिव्यक्तियों का उपयोग करना"
-simple_title:         "नियमित अभिव्यक्तियों का उपयोग करना"
+title:                "रेगुलर एक्सप्रेशंस का प्रयोग करना"
+html_title:           "Clojure: रेगुलर एक्सप्रेशंस का प्रयोग करना"
+simple_title:         "रेगुलर एक्सप्रेशंस का प्रयोग करना"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -10,26 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# लोकप्रियता की क्या मान्यता है?
+Aapne kabhi socha hai ki hum kaise text ko check karte hai ki kya woh humare requirements se match karta hai ya nahi? Yeh kaam karne ke liye hum regular expressions ka istemal karte hai. Regular expressions ek tarah ka pattern hota hai jise hum text mein search kar sakte hai. Yeh text processing mein kaafi kaam aata hai aur isliye programmers ise istemal karte hai.
 
-लोकप्रियता की सौभाग्यशाली स्थिति है। अगर आप किसी भी भाषा प्रोग्रामिंग में प्रवीण नहीं हैं, तो आप किसी भी समस्या को हल करने के लिए इसके आधिकारिक सबसे कामियाब चयन हो सकते हैं।
+## What & Why?
 
-# कैसे करें
+Regular expressions ek tarah ka search pattern hota hai jo hum text mein apply kar sakte hai. Isse hum text ko extract kar, validate kar ya modify kar sakte hai. Regular expressions ko use karke hum bahut saare repetitive task ko automate kar sakte hai aur code ko concise aur efficient banane mein madad milta hai.
 
-आप Clojure में regular expressions का प्रयोग करके उन्हें समझ सकते हैं। रेगुलर एक्सप्रैसन को रूपांतरित करने के लिए आप इस संदर्भ में इस्तेमाल किया जाने वाले धर्मांतरणों के साथ जुड़ते हैं, जिसमें कोई आमतौर पर दूसरे धर्मांतरण का असर नहीं होता है।
+## How to:
 
 ```Clojure
-;; एक चर में विस्तार करना
-(def input-string "मेरा पश्चिमी चन्द्रमा के टॉपोग्राफिक अध्ययनों में डाला गया।")
-(re-find #"पश्चिमी चन्द्रमा" input-string) ;; पश्चिमी चन्द्रमा
+;; Text se matched lines extract karna
+(re-seq #"\d+\s[a-z]+" "1 apple, 2 bananas, 3 oranges")
 
-;; सुविधाओं का मेप
-(def features {"डाला" "insert"
-               "टॉपोग्राफिक" "topographic"
-               "अध्ययनों" "study"})
-(re-seq #"\w+" "एक चर्चा किया कि वे सभी सुविधाओं से पूर्वाह्य सकते हैं, जिनमें topographic studies शामिल हैं") ;; ("एक" "चर्चा" "किया" "कि" "वे" "सभी" "सुविधाओं" "से" "पूर्वाह्य" "सकते" "हैं" "जिनमें" "topographic" "studies" "शामिल" "हैं")
+;; Output:
+("1 apple" "2 bananas" "3 oranges")
+
+;; Text mein pattern search karna
+(re-find #"clojure" "Clojure is awesome.")
+
+;; Output:
+"Clojure"
+
+;; Text ko modify karna
+(replace "awesome" "fun" "Clojure is awesome.")
+
+;; Output:
+"Clojure is fun."
 ```
 
-# अध्ययन करें
+## Deep Dive:
 
-कोडिंग की सबसे महत्वपूर्ण विशेषता है कि उससे आप अपने समस्याओं के साथ आवश्यकताओं को समझ सकते हैं, जैसे कि किसी चीज को स्पष्ट करने के लिए किसी फाइल में सामान्य समान अक्षरों का अभिन्न होना चाह
+Regular expressions humare code mein flexibility laate hai, lekin iske use mein hume kuch factors ka bhi dhyan rakhna hota hai. Regular expressions mein syntax kaafi powerful hai aur hume iske sahi tarah se use karne ki practice karni chahiye. Iske alawa, iske kuch alternatives bhi hai jaise ki string functions aur parser libraries. Regular expressions ka use karne se performance mein kuch kami ho sakti hai, lekin is baat ka hume dhyan rakhna chahiye ki hum regular expressions ko limit mein hi istemal kare.
+
+## See Also:
+
+Regular expressions ke baare mein aur jaankari ke liye aap ye links dekh sakte hai:
+
+- [Official Clojure documentation on regular expressions](https://clojure.org/api/cheatsheet)
+- [Regular expressions tutorial by Derek Banas](https://youtu.be/rsO8o09Ull0)
+- [Online regular expressions tester](https://regex101.com/)

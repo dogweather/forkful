@@ -10,56 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# ¿Por qué imprimir mensajes de depuración en Haskell?
+¡Hola programadores! ¿Alguna vez han tenido errores en su código y han encontrado difícil entender dónde está exactamente el problema? Bueno, ¡printing debug output puede ser la solución perfecta para ustedes! En esta breve guía, les explicaré qué es imprimir debug output, por qué los programadores lo hacen y cómo hacerlo en Haskell.
 
-¿Alguna vez te has encontrado con errores inexplicables en tu código Haskell? ¿Te ha costado horas descubrir el origen de un bug? Imprimir mensajes de depuración puede ser una herramienta útil para solucionar estos problemas de manera más eficiente.
+## ¿Qué y por qué?
+Imprimir debug output es simplemente mostrar mensajes o información adicional en la consola mientras se está ejecutando un programa. Los programadores lo hacen para seguir el progreso del programa y detectar posibles errores o problemas en el código. Puede ser una herramienta muy útil, especialmente cuando se está depurando un programa complejo.
 
-# Cómo hacerlo
-
-En Haskell, podemos imprimir mensajes de depuración utilizando la función `trace` de la biblioteca `Debug.Trace`. Esta función toma un `String` como primer argumento y cualquier tipo de dato como segundo argumento. Por ejemplo:
-
-```Haskell
-import Debug.Trace
-
-sumar :: Int -> Int -> Int
-sumar x y = trace ("sumando " ++ show x ++ " y " ++ show y) (x + y)
-
-main = do
-  let resultado = sumar 5 7
-  print resultado
-```
-Salida:
-```
-sumando 5 y 7
-12
-```
-Podemos ver que la función `trace` imprime el mensaje de depuración en la consola antes de devolver el resultado de la operación.
-
-# Un poco más profundo
-
-La función `trace` es útil para imprimir mensajes de depuración en una sola línea de código, pero ¿qué pasa si necesitamos imprimir varios mensajes en diferentes partes del código? Para ello, podemos utilizar la función `traceShow` que nos permite imprimir un valor junto a su tipo. Por ejemplo:
+## Cómo:
+En Haskell, imprimir debug output es muy sencillo. Simplemente usamos la función `print` para mostrar un valor en la consola. Por ejemplo:
 
 ```Haskell
-import Debug.Trace
-
-multiplicar :: Int -> Int -> Int
-multiplicar x y =
-  traceShow x $
-  traceShow y $
-  x * y
-
-main = do
-  let resultado = multiplicar 2 7
-  print resultado
+print "¡Hola Mundo!" 
 ```
-Salida:
-```
-2
-7
-14
-```
-En este ejemplo, podemos ver que se imprimen los valores de `x` y `y` antes de realizar la multiplicación. Esta técnica puede ser especialmente útil para entender cómo se están utilizando los valores en una función.
 
-# Ver también
-- [Guía de depuración en Haskell](https://wiki.haskell.org/Debugging)
-- [Documentación de `Debug.Trace`](https://hackage.haskell.org/package/base-4.15.1.0/docs/Debug-Trace.html)
+Esto imprimirá "¡Hola Mundo!" en la consola cuando se ejecute el programa. Podemos imprimir variables, expresiones o cualquier otro valor que nos ayude a entender lo que está sucediendo en nuestro código.
+
+```Haskell
+numero = 10
+print (numero * 2)
+```
+
+Esto imprimirá "20" en la consola. Puedes usar `print` en cualquier lugar de tu código, incluso dentro de funciones o en ciclos. Simplemente asegúrate de importar `Debug.Trace` para poder usar la función `trace`, que nos permite imprimir información adicional en la consola.
+
+## Profundizando:
+Ahora que sabemos cómo imprimir debug output, echemos un vistazo a algunos detalles adicionales. Imprimir mensajes de debug ha sido una técnica común en la programación desde los primeros días. Aunque puede ser útil, también puede ser un poco problemático ya que puede hacer que el código sea más difícil de entender y mantener. Por lo tanto, algunos programadores prefieren usar herramientas de depuración como `GHCi` en lugar de imprimir debug output en la consola.
+
+Pero si decides imprimir debug output, es importante tener en cuenta que puede afectar el rendimiento de tu programa. Si tienes muchos mensajes de debug o si lo haces en bucles grandes, puede ralentizar la ejecución del programa. Por lo tanto, siempre es importante tener en cuenta cuántos mensajes estás mostrando y dónde los estás colocando.
+
+## Ver también:
+- [Documentación de la función `print`](https://hackage.haskell.org/package/base-4.14.1.0/docs/Text-Show.html#v:print)
+- [Documentación de la función `trace`](https://hackage.haskell.org/package/base-4.14.1.0/docs/Debug-Trace.html#v:trace)
+- [Debugging in Haskell](https://medium.com/@LambdaFairy/debugging-in-haskell-f684060d1779)

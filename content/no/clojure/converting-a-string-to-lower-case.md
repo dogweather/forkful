@@ -1,7 +1,7 @@
 ---
-title:                "Konvertere en streng til små bokstaver"
-html_title:           "Clojure: Konvertere en streng til små bokstaver"
-simple_title:         "Konvertere en streng til små bokstaver"
+title:                "Konvertering av en streng til små bokstaver"
+html_title:           "Clojure: Konvertering av en streng til små bokstaver"
+simple_title:         "Konvertering av en streng til små bokstaver"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -10,45 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hva & Hvorfor?
+Konvertering av en streng til små bokstaver er en vanlig oppgave for programmerere. Dette innebærer å endre alle bokstavene i en streng til små bokstaver. Dette kan være nyttig for å sikre at brukerens inntasting er i riktig format eller for å sammenligne to strenger uavhengig av store og små bokstaver.
 
-Hvorfor bry seg med å konvertere en streng til små bokstaver? Vel, dette er et vanlig scenarie i programmering hvor du kanskje trenger å sammenligne eller søke gjennom tekst. Ved å konvertere en streng til små bokstaver, kan du sikre at du får korrekte resultater uten å bekymre deg for store og små bokstaver.
-
-## Slik gjør du det
-
-For å konvertere en streng til små bokstaver i Clojure, bruker du funksjonen `clojure.string/lower-case`:
+## Hvordan:
+Convert en streng til små bokstaver er enkelt i Clojure. Du kan bruke funksjonen `lower-case`eller metoden `.toLowerCase()` på en streng. Se eksemplene nedenfor for å se hvordan dette gjøres:
 
 ```Clojure
-(def s "Tekst Til Konvertering")
-(clojure.string/lower-case s)
+; Ved hjelp av lower-case-funksjonen
+(lower-case "HELLO") ; Output: "hello"
+
+; Ved hjelp av .toLowerCase() -metoden
+(.toLowerCase "HELLO") ; Output: "hello"
 ```
 
-Output:
+## Dypdykk:
+Konvertering av en streng til små bokstaver har vært en viktig del av programmering i mange år. Før moderne programmeringsspråk som Clojure, ble dette gjort ved å bruke ulike metoder for å endre bokstaver til små bokstaver, som å trekke fra 32 fra ASCII-verdien eller utføre XOR-operasjoner.
 
-```Clojure
-"tekst til konvertering"
-```
+Alternativene til å bruke `lower-case`-funksjonen i Clojure inkluderer også å bruke en løkke for å gå gjennom hver enkelt bokstav i en streng og endre til små bokstaver ved hjelp av `char-utils` biblioteket.
 
-En annen måte å gjøre dette på er ved å bruke `case`-funksjonen, som lar deg spesifisere hvilken type konvertering du vil gjøre. For å konvertere en streng til små bokstaver bruker du `:lower` som argument:
+`lower-case`-funksjonen er implementert ved hjelp av Java-metoden `toLowerCase()` som er en del av `String`-klassen. Dette betyr at du også kan bruke denne metoden på Java-strenger i Clojure.
 
-```Clojure
-(def s "Tekst Til Konvertering")
-(clojure.string/case s :lower)
-```
-
-Output:
-
-```Clojure
-"tekst til konvertering"
-```
-
-## Dypdykk
-
-Hvis du vil forstå hvordan disse funksjonene fungerer under panseret, kan du tenke på det som å konvertere hver enkelt bokstav i strengen til sitt tilsvarende tilfelle. For eksempel, hvis strengen inneholder store bokstaver, vil funksjonen bytte ut hver bokstav med sin tilsvarende små bokstav.
-
-Det er også viktig å huske på at disse funksjonene følger Unicode-standardene, som betyr at bokstaver fra andre språk også vil bli konvertert til små bokstaver (hvis de har en små bokstav-variant).
-
-## Se også
-
-- Clojure Docs: `clojure.string/lower-case` [https://clojure.github.io/clojure/clojure.string-api.html#clojure.string/lower-case](https://clojure.github.io/clojure/clojure.string-api.html#clojure.string/lower-case)
-- Clojure Docs: `clojure.string/case` [https://clojure.github.io/clojure/clojure.string-api.html#clojure.string/case](https://clojure.github.io/clojure/clojure.string-api.html#clojure.string/case)
+## Se også:
+- Clojure.org: [lower-case](https://clojuredocs.org/clojure.core/lower-case)
+- Java API: [String.toLowerCase()](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#toLowerCase())

@@ -10,48 +10,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & varför?
+Vad är testning och varför borde programmerare göra det? Testning är en process där man kontrollerar att ens kod fungerar som det ska och uppfyller de önskade kraven. Det är viktigt för att säkerställa att programmet är pålitligt och fungerar som det ska när det används av användare. Det är också ett sätt att upptäcka och åtgärda fel i koden innan de når slutanvändaren.
 
-Det finns många anledningar till varför man bör inkludera tester i sin C++-kod. För det första, det kan hjälpa till att upptäcka och förhindra buggar i koden. Det är också ett praktiskt sätt att säkerställa att koden fungerar som den ska och fortsätter göra det även efter eventuella framtida ändringar.
-
-## Så här gör du
-
-Att skriva tester i C++ är inte så svårt som det kanske verkar. Det finns flera olika ramverk som underlättar processen, som till exempel Google Test och Catch2. Nedan följer ett enkelt exempel på hur du kan skriva ett test för en funktion som adderar två tal:
+## Hur man gör det:
+Ett grundläggande sätt att testa sin kod är att använda sig av "assertions". Det innebär att man skriver kod som kontrollerar att ett uttryck är sant, annars kastas ett felmeddelande. Här är ett exempel på en assertion i C++:
 
 ```C++
-#include <iostream>
-
-// Funktionen som ska testas
-int add(int a, int b) {
-    return a + b;
-}
-
-int main() {
-    // En enkel testcase
-    int result = add(2, 3);
-
-    // Om resultatet är rätt så skrivs "Test passed!" ut
-    // Annars skrivs "Test failed!" ut
-    if (result == 5) {
-        std::cout << "Test passed!" << std::endl;
-    } else {
-        std::cout << "Test failed!" << std::endl;
-    }
-
-    return 0;
-}
+assert(2+2 == 4);
 ```
 
-Kom ihåg att testa både positiva och negativa scenarier för att vara säker på att koden fungerar som den ska.
+Om uttrycket är sant kommer inget att hända, men om det är falskt kommer det att kasta ett felmeddelande. Det är ett enkelt sätt att kontrollera att ens förväntningar om vad koden ska göra stämmer överens med vad som faktiskt händer.
 
-## Djupdykning
+## Djupdykning:
+Testning har alltid varit en viktig del av programmering, men i takt med att programmen blir allt mer komplext och används i större skala, blir testning ännu viktigare. Ett annat sätt att testa sin kod är genom att använda sig av testramverk som till exempel Google Test eller Catch2. Dessa ramverk ger fler möjligheter för att skriva och köra tester och ger en mer strukturerad och organiserad approach.
 
-När du skriver tester i C++ är det viktigt att förstå hur testbaserade klasser fungerar. En testbaserad klass är en klass som innehåller en uppsättning tester för en funktionell enhet, som till exempel en klass eller en funktion. Genom att använda dessa klasser kan du enkelt organisera och köra dina tester, vilket gör det enklare att upptäcka och åtgärda buggar.
+Ett annat alternativ är "Test Driven Development" (TDD), där man skriver testkod innan man skriver själva produktionskoden. Detta hjälper till att fokusera på vad koden ska åstadkomma och skapar även en säkerhetsnet för att upptäcka eventuella problem senare.
 
-Du bör också överväga att använda en CI (continuous integration) plattform för att automatiskt köra dina tester varje gång du gör en förändring i koden. Detta hjälper till att identifiera eventuella problem tidigt och säkerställer att koden alltid är i ett fungerande skick.
-
-## Se även
-
+## Se även:
 - [Google Test](https://github.com/google/googletest)
 - [Catch2](https://github.com/catchorg/Catch2)
-- [Continuous Integration](https://medium.com/@onejohi/continuous-integration-vs-continuous-delivery-vs-continuous-deployment-5c3e869d4e65)
+- [Test Driven Development för nybörjare](https://youtu.be/q1xob-rDD2g)

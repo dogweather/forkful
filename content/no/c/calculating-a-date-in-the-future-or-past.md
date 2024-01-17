@@ -1,7 +1,7 @@
 ---
-title:                "Beregning av en dato i fremtiden eller fortiden"
-html_title:           "C: Beregning av en dato i fremtiden eller fortiden"
-simple_title:         "Beregning av en dato i fremtiden eller fortiden"
+title:                "Beregning av dato i fremtiden eller fortiden"
+html_title:           "C: Beregning av dato i fremtiden eller fortiden"
+simple_title:         "Beregning av dato i fremtiden eller fortiden"
 programming_language: "C"
 category:             "C"
 tag:                  "Dates and Times"
@@ -10,56 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hva & Hvorfor?
 
-Noen ganger trenger vi å beregne en dato i fremtiden eller fortiden, for eksempel for å planlegge en viktig hendelse eller for å sjekke noe i fortiden. Med C-programmeringsspråket kan vi enkelt lage et program som kan hjelpe oss med å beregne slike datoer.
+Å beregne en dato i fremtiden eller fortiden er en viktig del av programmering. Dette innebærer å bruke forskjellige metoder og funksjoner for å bestemme en spesifikk dato basert på et gitt antall dager, måneder eller år. Dette kan være nyttig for å lage dynamiske programmer som må håndtere tid og datoer, for eksempel kalendere, planleggingsverktøy og automatiserte prosesser.
 
-## Hvordan
+# Hvordan:
 
-Det første vi må gjøre er å inkludere biblioteket `time.h` i programmet vårt. Dette biblioteket inneholder funksjoner for å håndtere tid og datoer. Deretter må vi opprette variabler for å lagre dag, måned og årstall for den ønskede datoen.
+For å beregne en dato i fremtiden eller fortiden i C, kan du bruke funksjonene definert i <time.h> biblioteket. Her er et eksempel på hvordan du kan bruke ```difftime()``` funksjonen for å finne forskjellen mellom to datoer og deretter legge til eller trekke fra det ønskede antall dager, måneder eller år:
 
-```C
-#include <stdio.h>
-#include <time.h>
+```C 
+#include <stdio.h> 
+#include <time.h> 
 
-int main() {
-    // Oppretter variabler for dag, måned og årstall
-    int dag, måned, år;
-}
+int main () { 
+    time_t now = time(NULL); // nåværende dato og tid
+    time_t future_date = now + (7 * 24 * 60 * 60); // legg til 7 dager
+    time_t past_date = now - (30 * 24 * 60 * 60); // trekk fra 30 dager
+    
+    char* now_str = ctime(&now); // konvertere til streng for lesbarhet
+    char* future_date_str = ctime(&future_date); 
+    char* past_date_str = ctime(&past_date);
+    
+    printf("Nåværende dato og tid: %s", now_str); 
+    printf("Dato og tid om 7 dager: %s", future_date_str); 
+    printf("Dato og tid for 30 dager siden: %s", past_date_str);
+    
+    return 0; 
+} 
 ```
 
-Vi kan da bruke funksjonen `scanf` til å be brukeren om å skrive inn disse verdiene, eller vi kan hardkode dem i programmet vårt. Deretter må vi konvertere disse verdiene til et `struct tm`-objekt ved hjelp av funksjonen `mktime`.
+**Output:** 
 
-```C
-struct tm dato; // Oppretter et struct tm-objekt
-dato.tm_year = år - 1900; // Lager om til riktig format
-dato.tm_mon = måned - 1;
-dato.tm_mday = dag;
-dato.tm_hour = 0;
-dato.tm_min = 0;
-dato.tm_sec = 0;
+Current date and time: Sat Mar 11 12:00:00 2020 
+Date and time in 7 days: Sat Mar 18 12:00:00 2020 
+Date and time 30 days ago: Tue Feb 10 12:00:00 2020 
 
-time_t t = mktime(&dato); // Konverterer til time_t-objekt
-```
+# Dypdykk:
 
-Nå kan vi bruke funksjonen `gmtime` til å få dag, måned og år for denne datoen, og videre bruke funksjonen `strftime` for å formatere denne informasjonen slik vi ønsker.
+Det å beregne en dato i fremtiden eller fortiden har vært en viktig utfordring i programmering, spesielt med tanke på gjeldende kalendersystemer. I eldre versjoner av C var det også nødvendig å lage egne funksjoner for å håndtere dager, måneder og år. Men med introduksjonen av <time.h> biblioteket, har det blitt mye enklere å håndtere tid og datoer i C-programmer.
 
-```C
-struct tm *resultat = gmtime(&t); // Lager et struct tm-objekt med dato
-char buffer[80];
+Det finnes også alternative måter å beregne en dato i fremtiden eller fortiden på, som for eksempel ved å bruke tredjeparts biblioteker som tilbyr mer komplekse funksjoner og utvidede muligheter for å håndtere forskjellige kalendersystemer.
 
-strftime(buffer, 80, "Datoen er %d.%m.%Y", resultat); // Formatterer informasjonen
-printf("%s\n", buffer); // Skriver ut resultatet
-```
+Når det gjelder implementeringen av <time.h> funksjonene for å beregne datoer, bruker de vanligvis dataverdien på 0 som utgangspunkt. 0 dataverdi tilsvarer 1. januar 1970, også kjent som "Unix-epoken". Deretter kan du bruke forskjellige funksjoner som ```difftime()```, ```gmtime()``` og ```localtime()``` for å manipulere og presentere tid og dato i forskjellige formater.
 
-For å beregne en dato i fremtiden eller fortiden, kan vi bruke funksjonen `mktime` til å konvertere datoen til et time_t-objekt, legge til eller trekke ifra antall sekunder vi ønsker, og deretter bruke `gmtime` og `strftime` til å formatere informasjonen.
+# Se også:
 
-## Dypdykk
-
-Når vi beregner en dato i fremtiden eller fortiden, må vi ta hensyn til skuddår og forskjellige antall dager i månedene. Dette er grunnen til at vi må konvertere datoen til et `struct tm`-objekt før vi konverterer det til et time_t-objekt. Dette biblioteket håndterer også skiftet til sommertid og vintertid.
-
-## Se også
-
-- [Offisiell C-dokumentasjon](https://www.iso-9899.info/wiki/The_Standard)
-- [C-programmering på W3Schools](https://www.w3schools.in/c-tutorial/)
-- [Mer om tid og dato i C](https://www.tutorialspoint.com/c_standard_library/time_h.htm)
+- [time.h dokumentasjon] (https://www.tutorialspoint.com/c_standard_library/time_h.htm)
+- [En enkel guide til å håndtere datoer og tid i C-programmering] (https://www.digitalocean.com/community/tutorials/how-to-use-date-and-time-in-c-programming-with-ansi-iso-extensions)

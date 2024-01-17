@@ -10,50 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
+Writing tests is the process of creating code that checks if your program is working as intended. It involves writing small pieces of code that test specific parts of your program's functionality. Programmers do this to ensure that their code is functioning correctly and to catch any bugs that may arise.
 
-Testing is an essential part of the software development process, allowing developers to catch bugs and errors early on, which can save time and resources later on. Writing tests not only ensures that the code is functioning correctly but also acts as documentation for future changes and updates.
+## How to:
+Writing tests in C++ can be done using a library called "Catch2." This library provides an easy-to-use framework for creating and running tests. Here's an example of a test using Catch2:
 
-## How To
-
-To write tests in C++, you will need a testing framework such as Catch2 or Google Test. These frameworks provide useful macros and functions for writing and running tests. Here is an example of how to write a simple test using Catch2:
-
-```
-#include <iostream>
-#define CATCH_CONFIG_MAIN
-#include "catch.hpp"
-
-// Function to be tested
-int addition(int a, int b) {
-    return a + b;
-}
-
-TEST_CASE("Testing addition function", "[addition]") {
-    REQUIRE(addition(2, 3) == 5);
+```C++
+TEST_CASE("Adding Numbers") {
+  REQUIRE(add(2, 3) == 5);
 }
 ```
 
-In the above code, we have included the header file for Catch2, defined our main function, and written a simple test case using the `REQUIRE` macro, which checks if the result of the `addition` function is equal to 5.
-
-To run this test, we need to compile and link it with the Catch2 library, and then execute the resulting executable. Once the test is run, we will get an output like this:
+The test above checks if the `add` function correctly adds two numbers and returns the expected result. If the test fails, Catch2 will provide information on what went wrong. Here's a sample output:
 
 ```
 ===============================================================================
-All tests passed (1 assertion in 1 test case)
+Adding Numbers
+===============================================================================
+test.cpp:3
+...............................................................................
+
+test.cpp:5: FAILED:
+  REQUIRE( add(2, 3) == 4 )
+with expansion:
+  5 == 4
+===============================================================================
+test cases: 1 | 1 failed
+checksum: 3a4e471943a48dd1f014dd1c6a1271aa778da841
 ```
 
-This output indicates that our test was successful. In case the test fails, the output will show which assertion failed, making it easier to identify and fix the issue.
+This output indicates that the test failed because the `add` function did not return the expected result. By writing tests, we can catch these types of errors and fix them before the code reaches the production stage.
 
-## Deep Dive
+## Deep Dive:
+Writing tests has become an essential practice in software development. It originated with the emergence of Test-Driven Development (TDD) in the early 2000s. TDD is a development process that involves writing tests before writing the actual code. This approach helps to ensure that the code meets the desired functionality and catches any bugs early on.
 
-Writing good tests involves more than just checking if the code is producing the correct output. It's also crucial to cover different scenarios and edge cases to ensure the stability and robustness of the code.
+An alternative to using Catch2 is Google Test, a testing framework developed by Google. It shares many similarities with Catch2, but some developers prefer Google Test for its extensive documentation and support for different programming languages.
 
-Apart from the traditional unit tests, there are also other types of tests such as integration tests and system tests, which can help detect errors in the interactions between different components of the software. It's essential to have a good mix of these different types of tests to have thorough coverage.
+Writing tests also allows developers to continuously run and monitor their code's functionality, known as Continuous Integration. This practice ensures that any changes to the code do not break its existing functionality.
 
-Moreover, it's also crucial to continuously update and maintain the tests as the codebase evolves. This helps in catching bugs and regressions early on, saving time and resources in the long run.
-
-## See Also
-
-- [Catch2 homepage](https://github.com/catchorg/Catch2)
-- [Google Test](https://github.com/google/googletest)
-- [Testing Your Code in C++](https://www.ibm.com/docs/en/zos/icc?topic=compiling-testing-code-cpp)
+## See Also:
+- [Catch2 Official Documentation](https://github.com/catchorg/Catch2/blob/master/docs/Readme.md)
+- [Google Test Official Documentation](https://github.com/google/googletest/blob/master/googletest/docs/primer.md)
+- [Test-Driven Development Explained](https://www.agilealliance.org/glossary/tdd/)

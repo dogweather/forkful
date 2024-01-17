@@ -1,7 +1,7 @@
 ---
-title:                "文字列の大文字化"
-html_title:           "Haskell: 文字列の大文字化"
-simple_title:         "文字列の大文字化"
+title:                "文字列を大文字にする"
+html_title:           "Haskell: 文字列を大文字にする"
+simple_title:         "文字列を大文字にする"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -10,50 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-Konnichiwa! Do you ever find yourself needing to capitalize a string in your programming? Maybe you want to make the first letter of a name or title uppercase. Or perhaps you just prefer the look of a capitalized string. Whatever the reason may be, capitalizing a string is a common task in programming and this article will show you how to do it in Haskell.
+#"何 ＆ 何故？"
+文字列を大文字に変換することは何かというと、プログラマーがより読みやすく効率的なコードを書くために行うことです。文字列を大文字に変換することで、コード内の特定の語句を強調することができ、より分かりやすくなります。
 
-## How To
-To capitalize a string in Haskell, we can use the `toUpper` function from the `Data.Char` module. Let's take a look at some simple examples:
+#"やり方："
+文字列を大文字に変換するために、Haskellでは```toUpper```関数を使用します。下記のコードを参考にしてみてください。
 
 ```
+-- Sample code to capitalize a string
 import Data.Char
 
-capitalize :: String -> String
-capitalize "" = ""
-capitalize (x:xs) = toUpper x : xs
-
-capitalize "hello" -- "Hello"
-
-capitalize "haskell" -- "Haskell"
+main = do
+    print $ map toUpper "hello world"
 ```
 
-In the code above, we first import the `Data.Char` module which contains the `toUpper` function. Then, we define a `capitalize` function that takes a `String` as input and outputs a capitalized version of that string. We use pattern matching to check if the string is empty and if it is, we simply return an empty string. Then, in the second line, we use the `toUpper` function to capitalize the first letter of the string and concatenate it with the rest of the string. 
+出力： "HELLO WORLD"
 
-We can also use `map` and `toUpper` to capitalize each letter in a string:
+#"深く潜る："
+文字列を大文字に変換するというアイデアは、古くからあります。パンチカードリーダーが発明された初期の頃、大文字のみの機械で文字を読み取る必要があったため、大文字で書かれたテキストの方がより簡単に読み取ることができました。現在では、Haskell以外にも多くのプログラミング言語で同様の機能が実装されています。
 
-```
-import Data.Char
-
-capitalize :: String -> String
-capitalize "" = ""
-capitalize str = map toUpper str
-
-capitalize "hello" -- "HELLO"
-
-capitalize "haskell" -- "HASKELL"
-```
-
-In the code above, we use `map` to apply the `toUpper` function to each character in the string. This will give us the same result as the previous function, but with a slightly different approach. 
-
-## Deep Dive
-Now, let's take a deeper look at how the `toUpper` function works. In Haskell, characters are represented by numbers using the ASCII system. The lowercase letters range from 97 to 122, while the uppercase letters range from 65 to 90. The `toUpper` function simply takes a character and adds 32 to it (subtracting 32 would give us the lowercase version of the character). This may seem like a strange method, but it is rooted in the history of computing and character representation.
-
-If you want to delve even deeper, you can take a look at the source code for `toUpper` in the `Data.Char` module. It uses a `case` statement to check where the character falls in the ASCII range and applies the appropriate transformation. This is just one example of the power and flexibility of Haskell's pattern matching and functional programming.
-
-## See Also
-If you want to learn more about string manipulation in Haskell, here are some helpful resources to check out:
-
-- [Haskell documentation for Data.Char module](https://hackage.haskell.org/package/base-4.15.0.0/docs/Data-Char.html)
-- [Learn You a Haskell for Great Good! - Chapter 7: Modules](http://learnyouahaskell.com/modules)
-- [Real World Haskell - Chapter 2: Types and Functions](http://book.realworldhaskell.org/read/types-and-functions.html)
+#"参考："
+- [Haskell Documentation on String Functions](https://hackage.haskell.org/package/base/docs/Data-Char.html)
+- [Wikipedia: Capitalization](https://en.wikipedia.org/wiki/Capitalization)

@@ -1,7 +1,7 @@
 ---
-title:                "Yamlin käyttäminen"
-html_title:           "Bash: Yamlin käyttäminen"
-simple_title:         "Yamlin käyttäminen"
+title:                "Työskentely yaml:n kanssa"
+html_title:           "Bash: Työskentely yaml:n kanssa"
+simple_title:         "Työskentely yaml:n kanssa"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Data Formats and Serialization"
@@ -10,37 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mikä ja miksi?
+YAML on ihmislukuisen tietojen esittämistä varten. Se on myös helposti luettava, mikä tekee siitä suositun monien ohjelmoijien keskuudessa.
 
-YAML on helppo ja intuitiivinen tapa tallentaa ja jakaa tietoa eri ohjelmien ja sovellusten välillä. Se on myös hyvin yleisesti käytetty formaatti konfiguraatiotiedostoissa ja muissa tietojen tallennuksessa. 
+## Miten:
+Esimerkkejä koodista ja näytetyistä tuloksista ``Bash ...`` koodilohkojen sisällä.
 
-## Miten
+Esimerkki 1: YAML-tiedoston lukeminen ja tietojen esittäminen Bashilla:
+``Bash
+read -r tiedosto < text.yml
+echo $tiedosto
+``
+Tulostus: 
+``Bash
+nimi: Jani
+ikä: 28
+työ: ohjelmoija
+``
 
-Jos haluat aloittaa työskentelyn YAML:n kanssa, sinun tarvitsee ainoastaan asentaa Bash ja sen mukana tuleva yamlin paketti. Voit käynnistää yamlin käyttämällä komentoa “yamlin” ja kutsumalla sitä Bash-skriptissä käyttämällä komentoa “yamlin <tiedostonimi>”. Alla on yksinkertainen esimerkki, joka näyttää kuinka tallentaa ja lukea YAML-tiedostoa yamlin avulla:
+Esimerkki 2: Tietojen tallentaminen YAML-tiedostoon Bashilla:
+``Bash
+eisa järjestelmä: Linux
+ohjelmisto: Bash
+versio: nykyinen
+``
 
-```Bash
-#!/bin/bash
+Tulostus tiedostoon:
+``Bash
+järjestelmä: Linux
+ohjelmisto: Bash
+versio: nykyinen
+``
 
-# Tallennetaan YAML-tiedostoon tietoja
-yamlin testi.yaml set "nimi: John"
-yamlin testi.yaml set "ikä: 30"
+## Syväsukellus
+YAML (Yet Another Markup Language) luotiin vuonna 2001 ja se on muodostunut suosituksi tietojen esittämistä varten ohjelmoijien keskuudessa sen helppokäyttöisyyden ja luettavuuden vuoksi. Muita vaihtoehtoja YAML:lle ovat esimerkiksi XML ja JSON, mutta YAML on usein helpompi käyttää.
 
-# Luetaan YAML-tiedostosta ja tulostetaan tiedot
-nimi=$(yamlin testi.yaml get nimi)
-ikä=$(yamlin testi.yaml get ikä)
-echo "Käyttäjän $nimi ikä on $ikä vuotta."
-```
-
-Esimerkissä luodaan YAML-tiedosto nimeltä "testi.yaml" ja tallennetaan siihen kaksi tietoa: nimi ja ikä. Tämän jälkeen tiedot luetaan ja tulostetaan Bash-konsolissa. Tulostuksena näemme "Käyttäjän John ikä on 30 vuotta."
-
-## Syvempää sukellusta
-
-Yamlin avulla on mahdollista muokata ja manipuloida YAML-tiedostoja eri tavoin. Voit esimerkiksi käyttää “update”-komennon avulla muuttamaan nykyistä tietoa tai lisäämään uusia tietoja YAML-tiedostoon. Voit myös poistaa tietoja käyttämällä “delete”-komentoa.
-
-Lisäksi yamlin avulla voit myös yhdistää useita YAML-tiedostoja yhdeksi kokonaisuudeksi käyttämällä “merge”-toimintoa. Tämä helpottaa esimerkiksi eri ympäristöjen konfiguraatioiden hallintaa.
+YAML koostuu avain-arvo pareista, jotka on erotettu kaksoispisteillä ja välilyönneillä. Tiedostot päättyvät .yml-päätteellä. Bashilla, YAML-tiedostoja voi käsittellä helposti ja niitä voi käyttää tietojen tallentamiseen tai lukemiseen monissa ohjelmissa ja skripteissä.
 
 ## Katso myös
-
-- YAML: https://yaml.org/
-- YAML-tiedostomuoto: https://en.wikipedia.org/wiki/YAML
-- Yamlint: https://github.com/adrienverge/yamlicious
+- [YAML-tutoriali](https://rollout.io/blog/yaml-tutorial-everything-you-need-get-started/)
+- [Bash-ohjelmointi](https://www.tutorialspoint.com/unix/shell_scripting.htm)
+- [YAML-spesifikaatiot](https://yaml.org/spec/)

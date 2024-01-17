@@ -1,7 +1,7 @@
 ---
-title:                "Å skrive tester"
-html_title:           "C: Å skrive tester"
-simple_title:         "Å skrive tester"
+title:                "Skriver tester"
+html_title:           "C: Skriver tester"
+simple_title:         "Skriver tester"
 programming_language: "C"
 category:             "C"
 tag:                  "Testing and Debugging"
@@ -10,56 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
-Å skrive tester er en viktig del av C-programmering fordi det hjelper deg med å identifisere og løse feil i koden din på en mer effektiv måte. Det gir også en god oversikt over hva koden din gjør og hvordan den fungerer.
+## Hva & Hvorfor?
+Å skrive tester er en viktig del av å være en C programmerer. Det er en måte å forsikre deg om at koden din fungerer som det skal og å sjekke for eventuelle feil før du sender den til produksjon. Tester hjelper deg også med å forstå koden din bedre og gjør det enklere å feilsøke hvis noe går galt senere.
 
-## Hvordan du gjør det
-Å skrive tester i C er enkelt og kan gjøres ved hjelp av et bibliotek som heter "CUnit". Her er et eksempel på hvordan du kan skrive en enkel test for en adderingsfunksjon:
+## Hvordan:
+For å skrive tester i C, bruker vi et bibliotek kalt "assert.h". Dette biblioteket lar oss skrive utsagn som sjekker om en betingelse er sann eller falsk. La oss se på et eksempel:
 
 ```C
+#include <assert.h>
 #include <stdio.h>
-#include "CUnit/CUnit.h" // inkluderer CUnit-biblioteket
-
-void test_add() {
-    int result = add(2, 2); // kaller funksjonen som skal testes og lagrer resultatet
-    CU_ASSERT_EQUAL(result, 4); // sjekker om resultatet er det forventede svaret
-}
 
 int main() {
-    CU_initialize_registry(); // initialiserer testregistrering
-    CU_pSuite suite = CU_add_suite("add_test_suite", NULL, NULL); // lager en test-suite
-    CU_add_test(suite, "test_add", test_add); // legger til testen vår i suite-en
-    CU_basic_run_tests(); // kjører testene
-    CU_cleanup_registry(); // "rydder" etter testkjøringen og frigjør ressurser
+    int num = 5;
+
+    // Sjekker om num er lik 5
+    assert(num == 5);
+
+    printf("%d er lik 5\n", num);
     return 0;
 }
 ```
+Dette eksempelet bruker "assert" -funksjonen til å sjekke om variabelen "num" er lik 5. Hvis den er det, vil programmet fortsette å kjøre som normalt, men hvis den ikke er det, vil programmet krasje og gi deg en feilmelding. Dette gjør det enkelt å oppdage og fikse eventuelle feil i koden din.
 
-Det ferdige resultatet vil være noe slikt:
+## Dykk dypere:
+Historisk sett ble tester skrevet manuelt og var en tidkrevende prosess. I dag finnes det mange verktøy og biblioteker som gjør testprosessen mye enklere og mer effektiv. Noen av disse inkluderer "check" og "CppUTest". Disse verktøyene gir mer avanserte tester og lar deg organisere dem i forskjellige kategorier.
 
-```
-CUnit - Enkle test ved bruk av asserts.
+En annen alternativ tilnærming er å bruke "TDD" - testdrevet utvikling. Dette er en utviklingsmetodikk hvor du skriver testene først, og deretter skriver koden som oppfyller disse testene. Dette kan hjelpe deg med å skrive mer pålitelig og feilfri kode.
 
-Suite: add_test_suite
-  Test: test_add ...passed
+Når du skriver tester, er det viktig å huske å teste både positive og negative scenarier. Tenk på mulige feil som kan oppstå og skriv tester for å håndtere dem.
 
-Run Summary: Type    Total   Ran Passed Failed Inactive
-              suites      1     1    n/a      0        0
-              tests       1     1      1      0        0
-              asserts     1     1      1      0      n/a
-
-Elapsed time =   0.000 seconds
-```
-
-Som du kan se, ble testen vår kjørt og bestått. Du kan også legge til flere tester i samme suite og de vil bli kjørt etter hverandre. Det er også mulig å sette opp flere suites for å organisere testene dine på en bedre måte.
-
-## Deep Dive
-Når du skriver tester, er det viktig å dekke alle aspekter og mulige scenarier i koden din. Dette hjelper deg med å sikre at koden fungerer som den skal i alle tilfeller. Det er også lurt å teste både positive og negative tilfeller for å fange eventuelle feil som kan oppstå.
-
-Ved hjelp av CUnit kan du også sette opp "fixture"-funksjoner som kjøres før og/eller etter hver test. Dette kan være nyttig for å sette opp felles variabler eller ressurser som trengs for flere tester.
-
-Å skrive tester kan virke tidkrevende, men det er absolutt verdt det i det lange løp når du slipper å måtte feilsøke og rette opp i feil i koden din.
-
-## Se også
-- [CUnit dokumentasjon](https://cunit.sourceforge.io/)
-- [En guide til å skrive tester i C](https://www.geeksforgeeks.org/testing-c-code/)
+## Se også:
+- [CppUTest](https://cpputest.github.io/)
+- [Check](https://libcheck.github.io/check/)
+- [Testdrevet utvikling](https://en.wikipedia.org/wiki/Test-driven_development)

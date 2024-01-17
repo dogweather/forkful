@@ -10,31 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-### Miksi käyttää säännöllisiä lausekkeita?
+Kotlin ja säännölliset lausekkeet - mitä ne ovat ja miksi ohjelmoijat niitä käyttävät?
 
-Säännölliset lausekkeet ovat hyödyllisiä, jos haluat hakea ja muokata tekstiä tietyin kriteerein. Ne voivat säästää aikaa ja vaivaa, kun käsittelet suuria määriä tekstiä tai haluat tarkasti etsiä tiettyjä sanoja tai ilmauksia. Säännöllisiä lausekkeita voi myös käyttää monissa ohjelmointikielissä, joten niiden osaaminen on hyödyllistä monessa tilanteessa.
+## What & Why?
 
-### Kuinka käyttää säännöllisiä lausekkeita Kotlinissa
+Säännölliset lausekkeet ovat erityinen merkkijonojen käsittelytekniikka, joka auttaa tarkistamaan ja löytämään tiettyjä merkkijonoja tai malleja tekstissä. Ohjelmoijat käyttävät säännöllisiä lausekkeita useisiin tarkoituksiin, kuten tekstien analysointiin, tiedon hakemiseen ja manipulointiin.
 
-Säännöllisten lausekkeiden käyttäminen Kotlinissa on helppoa ja vaivatonta. Voit aloittaa käyttämällä Regex-luokkaa, joka tarjoaa valmiita toimintoja säännöllisiin lausekkeisiin. Voit luoda Regex-olion antamalla sille säännöllisen lausekkeen merkkijonona. Esimerkkinä voit etsiä kaikki sanat, jotka alkavat kirjaimella "a" ja päättyvät kirjaimeen "i", käyttämällä seuraavaa koodia:
+## How to:
 
+Käyttämällä säännöllisiä lausekkeita Kotlin-ohjelmoinnissa, voit ensin luoda säännöllinen lauseke-luokan käyttämällä Regex() -funktiota ja antamalla sille haluamasi lausekkeen. Sitten voit käyttää erilaisia metodeja, kuten find(), replace() ja match(), hakeaksesi tietoa ja manipuloidaksesi merkkijonoja.
+
+Esimerkki 1: Hae numerot listasta
 ```Kotlin
-val pattern = Regex("a[a-zA-Z]*i")
-val text = "Tämä on esimerkki, jossa on sana abbai."
-val result = pattern.find(text)
-println(result?.value)
+val text = "Tämä on lista numeroista: 1, 2, 3 ja 4"
+val regex = Regex("\\d+")
+val matches = regex.findAll(text)
+matches.forEach { println(it.value) }
+```
+Tulostus:
+```
+1
+2
+3
+4
 ```
 
-Tämä tulostaa "abbai", koska se on ainoa sana, joka vastaa säännöllistä lauseketta. Voit myös käyttää Regex-luokan muita metodeita, kuten esimerkiksi `matches()`, `replace()` ja `findAll()`, joiden avulla voit muokata ja hakea tekstiä haluamallasi tavalla.
+Esimerkki 2: Vaihda sanat listassa
+```Kotlin
+val text = "Tämä on lista sanoista: kissa, koira, lintu ja kala"
+val regex = Regex("\\w+")
+val result = regex.replace(text) { match ->
+    when (match.value) {
+        "kissa" -> "hevonen"
+        "koira" -> "leijona"
+        "lintu" -> "papukaija"
+        "kala"  -> "valas"
+        else -> match.value
+    }
+}
+println(result)
+```
+Tulostus:
+```
+Tämä on lista sanoista: hevonen, leijona, papukaija ja valas
+```
 
-### Syvempi sukellus säännöllisiin lausekkeisiin
+## Deep Dive:
 
-Säännöllisiä lausekkeita voi käyttää monella eri tavalla ja niiden mahdollisuudet ovat lähes rajattomat. Voit esimerkiksi käyttää ns. "capture groups" -toimintoa, joka mahdollistaa tietyn osan tekstin tallentamisen. Tämä on hyödyllistä esimerkiksi silloin, kun haluat muokata tekstin osaa ja palauttaa sen uudelleen muokattuna.
+Säännölliset lausekkeet ovat olleet käytössä jo yli 60 vuotta ja niitä käytetään laajasti eri ohjelmointikielissä. Ne voivat olla hyödyllisiä monissa projekteissa, mutta on myös vaihtoehtoja, kuten string-metodeja ja lambda-funktioita, joiden avulla voidaan saavuttaa samat tavoitteet. Kotlinissa säännölliset lausekkeet on toteutettu Java-kielen Regex-luokan avulla, joten sinun ei tarvitse opetella uutta syntaksia.
 
-Säännöllisiä lausekkeita käytettäessä on myös tärkeää huomioida suorituskyky. Monimutkaiset säännölliset lausekkeet voivat hidastaa ohjelman suoritusta, joten kannattaa tutkia erilaisia vaihtoehtoja ja valita yksinkertaisin mahdollinen ratkaisu.
+## See Also:
 
-### Katso myös
-
-- [Kotlinin virallinen Regex-dokumentaatio](https://kotlinlang.org/docs/regular-expressions.html)
-- [Regex101 - Verkkosivusto, jossa voit testata ja kehittää säännöllisiä lausekkeita](https://regex101.com/)
-- [10 hyvää syytä käyttää säännöllisiä lausekkeita ohjelmoinnissa](https://www.codeindustry.net/10-good-reasons-to-use-regular-expressions/)
+Voit lukea lisää Kotlinin säännöllisistä lausekkeista Kotlin-julkaisukirjasta ja Kotlinin virallisilta verkkosivuilta. Voit myös tutustua Java-kielen Regex-luokan dokumentaatioon, jotta ymmärrät paremmin sen käyttöä Kotlinissa.

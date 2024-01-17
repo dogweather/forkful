@@ -10,81 +10,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Perché inviare una richiesta HTTP in Haskell?
+## Cosa & Perché?
+Mandare una richiesta HTTP significa inviare una richiesta da un client ad un server per ottenere informazioni o eseguire un'azione. I programmatori utilizzano questa tecnologia per scambiare dati tra diverse applicazioni, siti web o dispositivi.
 
-Ci sono molte ragioni per cui potresti voler inviare una richiesta HTTP in Haskell. Potresti aver bisogno di comunicare con un server, accedere a dati da un API o semplicemente testare il tuo codice. In ogni caso, inviare richieste HTTP è fondamentale per molte applicazioni moderne e imparare come farlo in Haskell può essere molto utile.
+## Come fare:
+Esempi di codice e output nella sezione ```Haskell ...```
+Per inviare una richiesta HTTP nella versione attuale di Haskell, è possibile utilizzare la libreria "Network.HTTP.Simple". Questa libreria fornisce funzioni per creare e inviare richieste HTTPS, nonché per gestire la risposta del server. Di seguito un esempio di codice per effettuare una richiesta GET e ottenere il contenuto della pagina web richiesta.
 
-# Come farlo in Haskell
-
-Per inviare una richiesta HTTP in Haskell, utilizzeremo la libreria "http-conduit". Iniziamo importando il modulo:
-
-```Haskell
-import Network.HTTP.Conduit
+```Haskell let request = setRequestMethod methodGet $ setRequestPath path defaultRequest 
+let response = httpLbs request
+print $ getResponseBody response 
 ```
 
-Ora possiamo creare una richiesta GET semplice. Dobbiamo prima definire l'URL della nostra richiesta:
+L'output del codice sarà il contenuto della pagina web ottenuta come una stringa.
 
-```Haskell
-url = "https://www.google.com"
-```
+## Approfondimenti:
+Le richieste HTTP sono stati introdotte nel 1991 come parte del protocollo HTTP 0.9. Oggi, la versione più utilizzata di HTTP è la 1.1, che supporta la persistenza della connessione e il contenuto compresso. È possibile inviare richieste HTTP utilizzando altre libreria di Haskell, come ad esempio "Network.HTTP.Conduit".
 
-Poi possiamo creare la nostra richiesta utilizzando la funzione `parseRequest`. Passiamo il metodo HTTP (in questo caso, "GET") e l'URL:
-
-```Haskell
-request = parseRequest "GET" url
-```
-
-Ora che abbiamo la nostra richiesta, possiamo inviarla utilizzando `httpLbs`. Questa funzione restituisce una struttura di dati che rappresenta la risposta del server. Possiamo utilizzare la funzione `responseBody` per accedere al contenuto della risposta:
-
-```Haskell
-response <- httpLbs request
-let body = responseBody response
-```
-
-Ecco un esempio completo di come inviare una richiesta HTTP e stampare il suo contenuto:
-
-```Haskell
-import Network.HTTP.Conduit
-
-main = do
-    let url = "https://www.google.com"
-    request <- parseRequest "GET" url
-    response <- httpLbs request
-    let body = responseBody response
-
-    putStrLn $ "La risposta di " ++ url ++ " è: "
-    print body
-```
-
-Output:
-
-```
-La risposta di https://www.google.com è:
-"Il corpo della risposta qui"
-```
-
-# Approfondimento
-
-Oltre alle richieste GET, esistono anche altre tipologie di richieste HTTP, come POST, PUT e DELETE. Possiamo utilizzare la funzione `urlEncodedBody` per specificare dei parametri nella nostra richiesta POST, ad esempio:
-
-```Haskell
-request <- parseRequest "POST" url
-let body = "nome=John&cognome=Doe"
-requestWithBody = urlEncodedBody [("nome", "John"), ("cognome", "Doe")] request
-```
-
-Inoltre, possiamo impostare degli header personalizzati nella nostra richiesta utilizzando la funzione `setRequestHeader`. Ad esempio, per specificare il tipo di contenuto della nostra richiesta come JSON, possiamo fare così:
-
-```Haskell
-request <- parseRequest "POST" url
-let body = "nome=John&cognome=Doe"
-let headers = [("Content-Type", "application/json")]
-requestWithBodyAndHeaders = setRequestHeader headers requestWithBody
-```
-
-Ora che abbiamo appreso come inviare richieste HTTP in Haskell, possiamo utilizzarle in varie applicazioni per comunicare con server e accedere a dati. Ricordati sempre di gestire gli errori e di chiudere la connessione HTTP dopo ogni richiesta.
-
-# Vedi anche
-
-- [Documentazione ufficiale di http-conduit](https://hackage.haskell.org/package/http-conduit)
-- [Esempi di utilizzo di http-conduit](https://github.com/snoyberg/http-conduit/blob/master/examples/Examples.hs)
+## Vedi anche:
+- [Network.HTTP.Simple documentation](http://hackage.haskell.org/package/http-client)
+- [Network.HTTP.Conduit documentation](http://hackage.haskell.org/package/http-conduit)
+- [Introduzione a HTTP](https://developer.mozilla.org/it/docs/Web/HTTP/Overview)

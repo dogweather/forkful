@@ -1,7 +1,7 @@
 ---
-title:                "分析HTML"
-html_title:           "TypeScript: 分析HTML"
-simple_title:         "分析HTML"
+title:                "HTML解析"
+html_title:           "TypeScript: HTML解析"
+simple_title:         "HTML解析"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "HTML and the Web"
@@ -10,38 +10,19 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么？
+## 什么 & 为什么？
+解析HTML是将网页代码转换成可读性更强的结构，以便于程序员能够更容易地处理和操作该网页。程序员需要解析HTML是因为它们需要从网页中提取数据，并以可读的方式呈现给用户。
 
-如果你是一名网络开发人员，那么你肯定会遇到需要处理HTML代码的情况。处理HTML代码可能是为了提取出特定标签的内容，或者为了修改网页布局。无论是哪种情况，你都需要使用一种方法来解析HTML代码并对其进行操作。在这篇文章中，我们将会学习如何使用TypeScript来解析HTML代码，并探究一些深层次的信息。
-
-## 怎么做
-
-要使用TypeScript解析HTML代码，首先你需要创建一个HTML文档的副本，并将其作为字符串传递给一个变量。然后，使用TypeScript中提供的`DOMParser`对象，将这个字符串转换为DOM对象。接下来，就可以使用DOM对象中的方法来处理HTML代码了。
-
-```TypeScript
-let htmlString = "<html><body><h1>Hello World</h1></body></html>";
-
-let parser = new DOMParser();
-let htmlDocument = parser.parseFromString(htmlString, "text/html");
-
-let h1 = htmlDocument.getElementsByTagName("h1")[0];
-console.log(h1.textContent);
-
-// Output: Hello World
+## 如何：
+```Typescript
+const html = "<h1>Hello World</h1>";
+const parsedHTML = parseHTML(html);
+console.log(parsedHTML); // Output: h1 { Hello World }
 ```
 
-在这个例子中，我们首先将HTML代码作为字符串存储到`htmlString`变量中。然后，使用`DOMParser`对象的`parseFromString`方法将其转换为DOM对象，并将结果保存到`htmlDocument`变量中。最后，通过使用DOM对象的`getElementsByTagName`方法来获取标签为`h1`的元素，并使用`textContent`属性来访问它的文本内容。
+## 深入探讨：
+解析HTML的历史可以追溯到1990年，在万维网刚刚开始兴起时。现在，有许多不同的方法和工具可以帮助程序员解析HTML，如jQuery和DOM操作。在实现解析HTML时，程序员需要注意代码的性能，因为处理大量的HTML可能会导致性能问题。
 
-## 深入探讨
-
-解析HTML代码并不仅仅是提取特定标签的内容，你还可以通过操作DOM对象来修改网页的布局和样式。可以通过使用DOM对象的`getElementById`、`appendChild`等方法来访问和操作特定的元素。
-
-除了以上提到的方法，TypeScript中还提供了一些其他方法来帮助我们解析HTML代码，比如`querySelector`、`setAttribute`等。
-
-## 参考链接
-
-- [MDN - DOMParser](https://developer.mozilla.org/zh-CN/docs/Web/API/DOMParser)
-- [TypeScript Handbook - DOM操作](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Working%20with%20DOM.html)
-- [W3Schools - DOM教程](https://www.w3school.com.cn/jsref/dom_obj_all.asp)
-
-## 参考链接
+## 参考：
+- [HTML解析介绍](https://zh.wikipedia.org/wiki/HTML%E8%A7%A3%E6%9E%90)
+- [Web解析之旅：DOM破碎](https://www.html5rocks.com/zh/tutorials/internals/howbrowserswork/#The_full_rendering_pipeline)

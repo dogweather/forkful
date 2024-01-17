@@ -1,7 +1,7 @@
 ---
-title:                "Merkkijonojen yhdistäminen"
-html_title:           "Fish Shell: Merkkijonojen yhdistäminen"
-simple_title:         "Merkkijonojen yhdistäminen"
+title:                "Jonojen yhdistäminen"
+html_title:           "Fish Shell: Jonojen yhdistäminen"
+simple_title:         "Jonojen yhdistäminen"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -10,73 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+# Mitä ja miksi?
 
-Miksi kukaan haluaisi yhdistellä merkkijonoja Fish Shellillä? Se voi olla hyödyllistä, kun luodaan monimutkaisempia ja muuttuvia merkkijonoja, esimerkiksi tulostettaessa tietojärjestelmän tilatietoja tai luotaessa dynaamisia komentokieliä.
+"Konkatenaatio" on ohjelmoinnin termi, joka tarkoittaa merkkijonojen yhdistämistä toisiinsa. Tämä voi olla hyödyllistä esimerkiksi silloin, kun halutaan luoda uusi merkkijono, joka sisältää useita erillisiä osia. Ohjelmoijat käyttävät konkatenaatiota, jotta voivat luoda dynaamisesti muuttuvia merkkijonoja, jotka vastaavat tiettyjä tarpeita, kuten tulostusta tai tiedostojen luontia.
 
-## Näin teet sen
+# Miten:
 
-Fish Shellillä stringien (merkkijonojen) yhdistäminen on helppoa ja intuitiivista. Voit käyttää ``echo`` komentoa tai Fish Shellin laajennettua muotoilua (``string.format``) yhteisiin yhdistelytarpeisiin.
 
-```
-# Luodaan yksinkertainen merkkijono
-set greeting "Hei!"
-
-# Liitetään siihen toinen merkkijono
-echo $greeting "Kuinka voit tänään?"
-
-# Output: Hei! Kuinka voit tänään?
-```
-
-Voit myös käyttää ``string.join`` -komennon avulla concatenate useita merkkijonoja yhdeksi. Tämä on erityisen kätevää, kun haluat yhdistää elementtejä listasta tai taulukosta.
+Fish Shell tarjoaa kätevän ja helppokäyttöisen tavan yhdistää merkkijonoja. Voit käyttää "string join" -komennolla yhdistää merkkijonoja erilaisilla erottimilla tai jättää eroittimen kokonaan pois. Alla on esimerkki koodista ja tulosteesta:
 
 ```
-# Luodaan lista lomakohteista
-set destinations Sveitsi Ranska Italia Saksa
-
-# Yhdistetään listan elementit välilyönnillä
-set trip "Matkustetaan maahan:" (string.join " " $destinations)
-
-# Tulostetaan tulos
-echo $trip
-
-# Output: Matkustetaan maahan: Sveitsi Ranska Italia Saksa
+Fish Shell string join example:
+$ set fruits peach mango banana
+$ echo (string join , $fruits)
+peach, mango, banana
 ```
 
-## Deep Dive
+# Syvemmälle:
 
-Fish Shellin laajennettu merkkijonojen käsittely tarjoaa monia hyödyllisiä työkaluja yhdistelyä varten. Voit esimerkiksi käyttää ``string.split`` -komennon avulla jakaa merkkijono osiin haluamasi merkkijonon perusteella.
+Konkatenaatio on ollut käytössä jo pitkään ohjelmoinnissa, ja se on edelleen suosittu ratkaisu tähän päivään asti. Sen lisäksi, että Fish Shell tarjoaa helpon tavan yhdistää merkkijonoja, on olemassa myös muita vaihtoehtoja kuten "string concatenation" -funktiot muissa kielissä kuten Python ja Java. Konkatenaation toteuttaminen Fish Shellissä perustuu useisiin algoritmeihin, jotka optimoivat muistinvarauksia ja parantavat suorituskykyä.
 
-```
-# Luodaan IP-osoite merkkijono
-set ip 192.168.1.1
+# Katso myös:
 
-# Erotellaan IP-osoite osiin pisteiden perusteella
-set ip_parts (string.split "." $ip)
-
-# Tulostetaan osat
-echo $ip_parts[1] # Output: 192
-echo $ip_parts[2] # Output: 168
-echo $ip_parts[3] # Output: 1
-echo $ip_parts[4] # Output: 1
-```
-
-Voit myös käyttää Fish Shellin sisäänrakennettua matematiikkalaskimia merkkijonojen käsittelyyn. Tämä on hyödyllistä esimerkiksi, kun haluat lisätä tai vähentää numeroita merkkijonon sisällä.
-
-```
-# Luo numeromerkkijono
-set number_string "100"
-
-# Muutetaan merkkijono numeroksi ja lisätään siihen 50
-set result (+ (string.to-int $number_string) 50)
-
-# Tulostetaan tulos
-echo $result
-
-# Output: 150
-```
-
-## Katso myös
-
-- [Fish Shellin virallinen dokumentaatio](https://fishshell.com/docs/current/index.html)
-- [Fish Shellin GitHub-sivut](https://github.com/fish-shell/fish-shell)
+Voit lukea lisää Fish Shellin string join -komennosta dokumentaatiosta osoitteessa https://fishshell.com/docs/current/cmds/string.html#join ja tutustua muihin merkkijonojen käsittelyyn liittyviin komentoihin kuten string split ja string length.

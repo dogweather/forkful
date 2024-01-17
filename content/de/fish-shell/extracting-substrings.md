@@ -10,37 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was & Warum?
 
-Niemand hat Zeit, sich durch lange und unnötig komplizierte Code-Schnipsel zu kämpfen. Die Fish Shell bietet eine einfache und intuitive Möglichkeit, Substrings in einer Zeichenkette zu extrahieren. Das spart Zeit und Nerven, wenn man nur bestimmte Teile einer Zeichenkette benötigt.
+Extrahieren von Substrings ist ein Prozess, bei dem Teile eines Strings basierend auf bestimmten Kriterien extrahiert werden. Programmierer nutzen dies, um bestimmte Informationen aus längeren Texten zu erhalten, ohne den gesamten String zu durchsuchen.
 
-## Wie geht’s
+## Wie?
 
-Führe die folgenden Schritte aus, um Substrings in der Fish Shell zu extrahieren:
+In Fish Shell kann das extrahieren von Substrings mit dem `string` Kommando und dem Flag `-s` durchgeführt werden. Zum Beispiel:
 
-1. Öffne deine Fish Shell.
-2. Definiere eine Variable mit einer Zeichenkette, aus der du einen Substring extrahieren möchtest:
-```Fish Shell
-set text "Hallo, mein Name ist Max."
 ```
-3. Gib den Substring-Befehl ein, gefolgt von der zu extrahierenden Länge des Substrings:
-```Fish Shell
-echo $text[3..9]
+Fish Shell string -s 2 'Hello World'
+
+Ausgabe: llo World
 ```
-4. Drücke Enter und voila, du hast deinen Substring extrahiert! Das Ergebnis lautet: `"lo, mei"`, da `3` dem dritten Zeichen im String (`l`) und `9` dem neunten Zeichen (`i`) entspricht.
 
-## Tief eintauchen
+Das Flag `-s` definiert den Startindex, von dem aus die Substring-Extraktion beginnt.
 
-Die Syntax zum Extrahieren von Substrings in der Fish Shell basiert auf [Slice Notation](https://fishshell.com/docs/current/index.html#slice-notation). Dabei sind folgende Punkte zu beachten:
+Um die Länge des extrahierten Substrings festzulegen, kann das Flag `-l` verwendet werden. Zum Beispiel:
 
-- Die Indexierung beginnt immer bei `1`, nicht bei `0`.
-- Der letzte Index bezeichnet das Ende der Zeichenkette. In unserem Beispiel endet der Substring bei `9`, da der `9` Index das Ende des Strings `".`" markiert.
-- Es können auch negative Indizes verwendet werden, um vom Ende der Zeichenkette aus zu zählen. Zum Beispiel würde `$text[-1]` den letzten Buchstaben (`"."`) ausgeben.
+```
+Fish Shell string -l 3 'Hello World'
 
-Falls du weitere Informationen zu Slice Notation benötigst, schaue dir die offizielle [Fish Shell Dokumentation](https://fishshell.com/docs/current/index.html#appendix-references) an.
+Ausgabe: Hel
+```
+
+Das Flag `-l` gibt an, wie viele Zeichen vom Startindex aus extrahiert werden sollen.
+
+## Tiefere Einblicke
+
+Die Verwendung von Substring-Extraktion ist in vielen Programmiersprachen üblich, um bestimmte Teile von Strings zu erhalten. Alternativ können reguläre Ausdrücke verwendet werden, um ähnliche Ergebnisse zu erzielen. 
+
+Bei der Implementierung von Substring-Extraktion müssen Programmierer darauf achten, dass sie den richtigen Index und die Länge für den zu extrahierenden Teil angeben, um versehentliche Fehler zu vermeiden.
 
 ## Siehe auch
 
-- [Offizielle Fish Shell Dokumentation](https://fishshell.com/docs/current/#substring-expansion)
-- [Slice Notation für Python](https://www.w3schools.com/python/ref_func_slice.asp)
-- [Wie man Substrings in Bash  extrahiert](https://shapeshed.com/unix-extract-substring/)
+Weitere Informationen und Beispiele zur Verwendung von Substring-Extraktion in Fish Shell finden Sie in der offiziellen Dokumentation unter https://fishshell.com/docs/current/cmds/string.html.

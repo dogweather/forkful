@@ -1,7 +1,7 @@
 ---
-title:                "Å sende en http-forespørsel"
-html_title:           "Ruby: Å sende en http-forespørsel"
-simple_title:         "Å sende en http-forespørsel"
+title:                "Sende en http-forespørsel"
+html_title:           "Ruby: Sende en http-forespørsel"
+simple_title:         "Sende en http-forespørsel"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "HTML and the Web"
@@ -10,58 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+#Hva & Hvorfor?
 
-Å sende HTTP-forespørsler (HTTP requests) er en viktig del av å utvikle nettsider og applikasjoner. Det gjør det mulig for oss å kommunisere med ulike servere og få tilgang til ulike tjenester og data.
+Sending av HTTP forespørsler er en essensiell del av nettutvikling. Det er en måte å kommunisere med andre servere og få tilgang til og manipulere informasjon. Programmere gjør dette for å hente data fra API-er, lage dynamiske nettsteder og bygge nettapplikasjoner.
 
-## Hvordan
+#Hvordan?
 
-For å sende en HTTP-forespørsel i Ruby, kan du bruke Net::HTTP biblioteket. Først må du importere biblioteket:
+For å sende en HTTP forespørsel i Ruby, kan du bruke innebygde metodene i Net::HTTP biblioteket. Her er et eksempel på hvordan du kan hente data fra en nettside og skrive ut svaret:
 
-```Ruby
+```
 require 'net/http'
+
+url = URI('https://www.example.com')
+response = Net::HTTP.get_response(url)
+puts response.body
 ```
 
-Deretter kan du bruke `Net::HTTP.start` metoden til å åpne en forbindelse til URL-en du ønsker å sende en forespørsel til:
+I dette eksempelet bruker vi 'net/http' modulen for å opprette en URL-objekt og utføre en GET-forespørsel. Svaret blir lagret i en variabel og deretter skrevet ut ved hjelp av puts-metoden.
 
-```Ruby
-url = URI.parse('https://example.com')
-connection = Net::HTTP.start(url.host, url.port)
-```
+#Dypdykk
 
-Nå kan du bruke `Net::HTTP::Get` klasse til å lage en GET forespørsel og sende den gjennom forbindelsen:
+HTTP (Hypertext Transfer Protocol) er et klient-server protokoll som brukes på verdensveb for å sende og motta data. Det ble utviklet på 1990-tallet som et enkelt og universelt protokoll for å kommunisere mellom forskjellige systemer.
 
-```Ruby
-request = Net::HTTP::Get.new(url)
-response = connection.request(request)
-puts response.body # output: <h1>Hello world!</h1>
-```
+I tillegg til Net::HTTP, finnes det også alternative måter å sende HTTP forespørsler i Ruby, som HTTParty og RestClient biblioteker. Disse bibliotekene gir enklere syntaks og flere funksjoner for å håndtere HTTP forespørsler.
 
-Du kan også sende andre typer HTTP-forespørsler som `Net::HTTP::Post`, `Net::HTTP::Put` og `Net::HTTP::Delete` ved å endre på metoden i `Net::HTTP::Get.new()`.
+For å sende en mer kompleks forespørsel, kan du også bruke Net::HTTP::Request-objekter som lar deg angi HTTP-metode, headers og kropp av forespørselen.
 
-## Dypdykk
+#Se også
 
-Man kan også spesifisere flere parametere når man sender en HTTP-forespørsel, som for eksempel headers og body. Her er et eksempel på hvordan man kan legge til headers i en GET forespørsel:
-
-```Ruby
-request = Net::HTTP::Get.new(url)
-request['Content-Type'] = 'application/json'
-response = connection.request(request)
-```
-
-Du kan også bruke `Net::HTTP::Post.new()` for å sende en POST forespørsel med en body som for eksempel et JSON-objekt. For å gjøre dette må du først konvertere objektet til en streng vha. `#to_s` metoden, og deretter sette det som `request.body`:
-
-```Ruby
-request = Net::HTTP::Post.new(url)
-request['Content-Type'] = 'application/json'
-payload = { name: 'John', age: 28 }.to_s
-request.body = payload
-response = connection.request(request)
-puts response.body # output: { message: 'User created successfully' }
-```
-
-## Se også
-
-- [Net::HTTP dokumentasjon](https://ruby-doc.org/stdlib-3.0.0/libdoc/net/http/rdoc/Net/HTTP.html)
-- [Ruby for nybegynnere](https://ruby-for-beginners.rubymonstas.org/)
-- [Ruby Gems](https://rubygems.org/)
+- Dokumentasjon for Net::HTTP: https://ruby-doc.org/stdlib-2.6.5/libdoc/net/http/rdoc/Net/HTTP.html
+- HTTParty bibliotek: https://github.com/jnunemaker/httparty
+- RestClient bibliotek: https://github.com/rest-client/rest-client

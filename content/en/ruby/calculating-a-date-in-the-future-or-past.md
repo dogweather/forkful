@@ -10,44 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why 
-Calculating dates in the future or past is a common and useful task in many programming projects. It can help with tasks such as scheduling events, setting deadlines, or calculating payment due dates. With the flexibility and precision of Ruby's date and time methods, it's easy to manipulate dates to fit your specific needs.
+## What & Why?
 
-## How To
-To calculate a date in the future or past in Ruby, you can use the `Date` or `DateTime` classes and their methods. Here's an example of how to add 5 days to the current date and print the result:
+Calculating a date in the future or past is the process of determining what a specific date will be, either ahead of or behind the current date. Programmers often do this in order to schedule events, set reminders, or track dates for various tasks.
+
+## How to:
+
+To calculate a date in the future or past, we can use the ```DateTime``` class in Ruby. Here's an example of how to find the date 3 weeks from now:
 
 ```Ruby
 require 'date'
 today = Date.today
-future_date = today + 5 # adding 5 days
-puts future_date # outputs 5 days from now
+future_date = today + 21 # 21 days from today
+puts future_date.strftime("%A, %B %e") # outputs the date in the format: Day of week, Month Day 
+# Example output: Friday, October 23
 ```
-Output:
-```
-2021-08-25
-```
-You can also subtract days using a negative value. For example, to get yesterday's date, you can use `today - 1`.
 
-If you need more precise calculations, you can use `DateTime` instead of `Date`. Here's an example of calculating 5 hours and 30 minutes into the future:
+To calculate a date in the past, we can use negative values. Here's an example:
+
 ```Ruby
-require 'date'
-now = DateTime.now
-future_time = now + Rational(5.5, 24) # adding 5.5 hours
-puts future_time # outputs 5.5 hours from now
-```
-Output:
-```
-2021-08-25T05:30:00+00:00
+past_date = today - 7 # 7 days before today
+puts past_date.strftime("%A, %B %e") # outputs the date in the format: Day of week, Month Day 
+# Example output: Friday, September 25
 ```
 
 ## Deep Dive
-Ruby's `Date` and `DateTime` classes offer a variety of methods for calculating dates and times in the future or past. For example, you can use `prev_day` and `next_day` to get the previous or next day, `yesterday` and `tomorrow` for the previous or next day's date, or `strptime` to parse a date from a string.
 
-Additionally, you can use `strftime` to format dates and times according to your needs. This method uses a specific formatting string to output the date and time in a specified format. Check out the [Ruby documentation](https://ruby-doc.org/stdlib/libdoc/date/rdoc/DateTime.html) for a full list of formatting options.
+Calculating dates has been a common practice in programming since the early days of computer programming. Before the creation of high-level languages like Ruby, programmers had to use complex algorithms to determine dates. However, with the ```DateTime``` class in Ruby, the process has become much simpler.
+
+An alternative to using the ```DateTime``` class in Ruby would be to use the ```Time``` class. The main difference is that the ```DateTime``` class is more accurate in terms of accounting for leap years and different time zones.
+
+To implement the calculation of a date in the future or past, the ```DateTime``` class uses the ```+``` and ```-``` methods to add or subtract days, months, or years from a given date. It also has other methods such as ```.next_day``` and ```.prev_day``` for more precise calculations.
 
 ## See Also
-- [Ruby documentation for Date and DateTime classes](https://ruby-doc.org/stdlib/libdoc/date/rdoc/DateTime.html)
-- [Article on time and date calculations in Ruby](https://www.sitepoint.com/ruby-date-time-classes/)
-- [Blog post on manipulating dates in Ruby](https://infinum.com/the-capsized-eight/articles/the-basics-of-time-and-date-manipulation-in-ruby)
 
-**Happy coding!**
+To learn more about the ```DateTime``` class in Ruby, check out the official documentation: https://ruby-doc.org/stdlib-2.7.1/libdoc/date/rdoc/DateTime.html
+
+For an in-depth explanation of how the ```DateTime``` class works, you can read this article: https://open.appacademy.io/learn/full-stack-online/ruby/date-and-time---day-1
+
+To explore other ways of calculating dates in Ruby, you can take a look at the ```Time``` class: https://ruby-doc.org/core-2.7.1/Time.html

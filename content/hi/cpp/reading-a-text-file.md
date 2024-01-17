@@ -1,7 +1,7 @@
 ---
-title:                "टेक्स्ट फाइल पढ़ना"
-html_title:           "C++: टेक्स्ट फाइल पढ़ना"
-simple_title:         "टेक्स्ट फाइल पढ़ना"
+title:                "टेक्स्ट फ़ाइल को देखना"
+html_title:           "C++: टेक्स्ट फ़ाइल को देखना"
+simple_title:         "टेक्स्ट फ़ाइल को देखना"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Files and I/O"
@@ -10,53 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Kyun
+## क्या और क्यों?
+एक पाठ फ़ाइल को पढ़ना यह दर्शाता है कि कैसे आपके कंप्यूटर पर गठित वस्तुओं की जानकारी और डेटा संग्रहित की जा सकती है। प्रोग्रामर्स इसे इसलिए करते हैं क्योंकि इससे उनको संग्रहीत डेटा पर काम करने का सुविधा प्राप्त होती है।
 
-Kai baar hume kisi program ko chalane ke liye ek text file ki jarurat padti hai. Text file me data organized tarah se hota hai aur isse hum sahi tarike se program ke andar load kar sakte hai. Aise cases me, hum text file ko padhna seekhna chahte hai taaki hum apne programming skills ko improve kar paye aur apne programs me data ko sahi tarah se handle kar paye.
-
-## Kaise Kare
-
-Text file ko padhne ke liye, hume `fstream` library ka use karna hoga. Ye library hume file ko open karne aur usme se data ko read karne ka code provide karti hai. Iske liye, hume `ifstream` object banakar usko file ka naam aur file mode dekar initialize karna hoga. Iske baad, hum `>>` operator se file se data ko read kar sakte hai.
+## कैसे करें:
+```
+C++  कोड ब्लॉक के भीतर कोडिंग उदाहरण और नमूना आउटपुट के साथ।
+```
+एक पाठ फ़ाइल को पढ़ने के लिए, हम आमतौर पर फ़िलहाल सबसे ज्यादा पहले पाठ फ़ाइल के पथ का उल्लेख करते हैं जिसको हम पढ़ना चाहते हैं। आप उदाहरण के लिए निम्नलिखित कोड से पाठ फाइल को पढ़ सकते हैं।
 
 ```C++
 #include <iostream>
-#include <fstream>
+#include <fstream> 
 
-using namespace std;
+using namespace std; 
 
-int main() {
-  ifstream file; // ifstream object banaye
-  file.open("example.txt", ios::in); // file ko open kare
+int main() 
+{ 
+	string line; 
+	ifstream file ("Example.txt"); 
+	
+	if (file.is_open()) 
+	{ 
+		while (getline (file, line)) 
+		{ 
+			cout << line << '\n'; 
+		} 
+		file.close(); 
+	} 
 
-  if (!file.is_open()) { // agar file open nahi hoti, error message print kare
-    cout << "File could not be opened." << endl;
-    return 1;
-  }
-
-  string data;
-
-  while (file >> data) { // jab tak file se data read ho raha hai, use print kare
-    cout << data << " ";
-  }
-
-  file.close(); // file ko close kare
-
-  return 0;
-}
+	else cout << "Unable to open file."; 
+	return 0; 
+} 
 ```
 
-`example.txt` file ke content agar "Hello World" hai, tab is program ka output hoga:
-```
-Hello World
-```
+यहां, हमने "Example.txt" नामक फ़ाइल को पढ़ा है जो "cout" के द्वारा आउटपुट किया गया है। आप कितनी भी पाठ फ़ाइलें पढ़ सकते हैं जो आपके सिस्टम में हों।
 
-## Deep Dive
+## गहराई खोज
+खड़े पते पर दृष्टिकोण से, पाठ फाइलों को पढ़ने की मस्जिद और आसान लग सकती है। पूर्ववर्ती भाषाओं जैसे PL/I, Fortran और COBOL में, फ़ाइलें आपके कंप्यूटर में अलग से संग्रहीत हुई थीं, जिसके कारण परिकलन अधिक सवाली था। C की PDP-11 के प्राचीन स्थापनाएँ । लेकिन, इस कमांड को स्टैन्डोलोन आईयरा ने अपने २००४ बुक "Robin दुश्मन को समाप्त करें" में प्रदर्शित किया था, "Unix और C को कभी-कभी पहले C.Dennis रिची या ब्रियन कर्निहन।"
 
-`fstream` library ka use karke hum multiple file modes me text file ko open kar sakte hai. Kuch modes me hum sirf file me se data read kar sakte hai, jabki kuch modes me hum file me naye data ko write bhi kar sakte hai. Isse hum apne programs me file handling ko aur bhi versatile bana sakte hai.
-
-In addition, hum text file me se different data types ko bhi read kar sakte hai using `>>` operator. Jaise ki agar hume int, float, double, ya char ko file se read karna hai, to hum us datatype ke according variable ko define karke usko `>>` operator se read kar sakte hai. Is tarah ki details ke liye, aap `fstream` library ki documentation dekh sakte hai.
-
-## Dekhiye Bhi
-
-- [https://www.geeksforgeeks.org/working-text-files-cpp/](https://www.geeksforgeeks.org/working-text-files-cpp/)
-- [https://www.tutorialspoint.com/cplusplus/cpp_files_streams.htm](https://www.tutorialspoint.com/cplusplus/cpp_files_streams.htm)
+## देखें भी:
+- [पाठ फ़ाइलें पढ़ने के लिए जगह, एक C कोड](https://www.programiz.com/cpp-programming/examples/read-file)
+- [फ़ाइल के आकार का पता लगाना बिल के लिए कोड](https://www.cplusplus.com/doc/tutorial/files/)

@@ -10,49 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+Vad & Varför?
+När du använder en webbplats, skickar din webbläsare kontinuerligt HTTP-förfrågningar till servern för att få åtkomst till innehållet på sidan. HTTP-förfrågan är vad som gör det möjligt för dig att klicka på länkar, fylla i formulär och ladda ner filer. Det är en viktig del av webbutveckling och används av programmerare för att hämta eller skicka data till en server.
 
-Om du utvecklar en webbapplikation eller arbetar med webb-API:er, kan det vara nödvändigt att skicka en HTTP-förfrågan. Detta är grunden för hur din applikation kommunicerar med andra servrar och får tillgång till data och funktioner som erbjuds.
+Så här gör du:
+För att skicka en HTTP-förfrågan från din PHP-kod, använder du funktionen 'file_get_contents ()'. Denna funktion tar en URL som argument och returnerar innehållet på den sidan som en sträng. Se nedan för ett exempel och den resulterande utmatningen.
 
-## Så här gör du
-
-För att skicka en HTTP-förfrågan i PHP behöver du först använda dig av funktionen `curl_init()`. Här anger du den URL du vill skicka förfrågan till och väljer även eventuella parametrar, headers eller metoder.
-
-```PHP
-// Skapa en curl-instans
-$ch = curl_init("https://example.com/api/users");
-
-// Ange önskad metod
-curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "GET");
-
-// Ange önskade headers
-curl_setopt($ch, CURLOPT_HTTPHEADER, [
-    'Content-Type: application/json',
-    'Authorization: Bearer 12345abcde'
-]);
-
-// Exekvera förfrågan och spara svar i en variabel
-$response = curl_exec($ch);
-
-// Stäng curl-instansen
-curl_close($ch);
-
-// Visa svar i konsolen
+``` PHP
+$url = "https://www.example.com/";
+$response = file_get_contents($url);
 echo $response;
 ```
 
-Detta kommer att skicka en GET-förfrågan till URL:en med de angivna headers. Du kan även använda dig av andra metoder, till exempel POST eller PUT, beroende på vad som krävs för att kommunicera med API:et.
+Utskrift:
+``` HTML
+<html>
+<head>
+<title>Exempelsida</title>
+</head>
+<body>
+<h1>Välkommen till exempelsidan</h1>
+<p>Detta är en enkel sida som visar vad som är möjligt med HTTP-förfrågningar i PHP.</p>
+</body>
+</html>
+```
 
-## Djupdykning
+Djupdykning:
+HTTP-förfrågan är en del av HTTP-protokollet som används för kommunikation mellan webbservrar och webbläsare. Det finns också alternativ till funktionen 'file_get_contents ()' som också kan användas för att skicka HTTP-förfrågningar, som till exempel funktionerna 'curl_init ()' och 'fopen ()'.
 
-När du skickar en HTTP-förfrågan finns det flera aspekter att ta hänsyn till. Som utvecklare måste du vara medveten om vilken typ av förfrågan som krävs, vilka headers som måste skickas med, och hur svaret från servern ska hanteras.
+När det gäller implementation i PHP, så är 'file_get_contents ()' den enklaste funktionen att använda, men det kan finnas situationer där andra funktioner är mer lämpliga. Det är viktigt att ha en god förståelse för HTTP-protokollet för att effektivt kunna använda dessa funktioner.
 
-Det finns också möjlighet att lägga till eventuella parametrar eller body-data i en förfrågan, beroende på vad API:et förväntar sig. Det är viktigt att läsa dokumentationen noggrant för att se till att förfrågan är korrekt och kan behandlas av servern.
-
-När du tar emot svar från en HTTP-förfrågan är det också viktigt att hantera eventuella felmeddelanden eller statuskoder för att se till att din applikation fungerar som den ska och kan hantera eventuella problem som kan uppstå.
-
-## Se också
-
-- [PHP cURL dokumentation](https://www.php.net/manual/en/book.curl.php)
-- [HTTP-request i PHP](https://www.php.net/manual/en/function.curl-init.php)
-- [Implementera API:er i PHP-applikationer](https://www.php.net/manual/en/function.curl-exec.php)
+Se även:
+- Dokumentation för funktionen 'file_get_contents ()' i PHP: https://www.php.net/manual/en/function.file-get-contents
+- Mer information om HTTP-protokollet: https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview

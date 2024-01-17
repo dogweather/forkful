@@ -1,7 +1,7 @@
 ---
-title:                "Utilizando expresiones regulares"
-html_title:           "Clojure: Utilizando expresiones regulares"
-simple_title:         "Utilizando expresiones regulares"
+title:                "Uso de expresiones regulares"
+html_title:           "Clojure: Uso de expresiones regulares"
+simple_title:         "Uso de expresiones regulares"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -10,59 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Por qué
+## ¿Qué y por qué?
 
-Si estás trabajando con texto en tus programas de Clojure, es muy probable que en algún momento necesitarás buscar patrones o realizar operaciones de búsqueda y reemplazo. Es ahí donde entran en juego las expresiones regulares, una herramienta poderosa para trabajar con cadenas de texto.
+Usar expresiones regulares es una forma de buscar, encontrar y manipular patrones de texto en una cadena de caracteres. Los programadores las utilizan para realizar tareas como validar datos de entrada y transformar cadenas de texto en un formato específico. 
 
-## Cómo hacerlo
+## ¿Cómo hacerlo?
 
-Para utilizar expresiones regulares en Clojure, primero necesitamos importar la biblioteca `java.util.regex`. Luego, podemos utilizar la función `re-seq` para buscar todas las coincidencias de una expresión regular en una cadena de texto:
+Utiliza el operador `re-find` y el operador `re-matches` para encontrar coincidencias en una cadena de texto según un patrón establecido. 
 
-```Clojure
-(require '[java.util.regex :as re])
+```Clojure 
+(re-find #"hola" "hola mundo") ; => "hola"
+(re-find #"adiós" "hola mundo") ; => nil 
 
-(def texto "Hola, soy un texto de ejemplo!")
-(re-seq #"soy" texto)
-; => ("soy")
+(re-matches #"he(l+)o" "hello") ; => ["hello" "ll"]
 ```
 
-También podemos utilizar la función `re-matches` para verificar si una cadena de texto coincide con una expresión regular:
+Puedes utilizar el operador `cond` para realizar una acción según una coincidencia encontrada. 
 
-```Clojure
-(re-matches #"texto" texto)
-; => "texto"
-```
-
-Otra función útil es `re-find`, que devuelve la primera coincidencia de una expresión regular en una cadena de texto:
-
-```Clojure
-(re-find #"\w+" texto)
-; => "Hola"
-```
-
-También podemos realizar operaciones de búsqueda y reemplazo utilizando la función `re-find` junto con `substitute`:
-
-```Clojure
-(re-find #"\d+" "Tengo 10 años.")
-;(substitute "21" "Tengo ${n} años." %)
-; => "Tengo 21 años."
+```Clojure 
+(cond
+  (re-find #"perro" "Me gusta mi perro") "¡Me encantan los perros!"
+  (re-find #"gato" "Me gusta mi perro") "¿Gatos? ¡No, gracias!"
+  :else "No encontré ningún animal")
+; => "¡Me encantan los perros!" 
 ```
 
 ## Profundizando
 
-Las expresiones regulares son un lenguaje propio con su propia sintaxis y reglas. Algunos patrones comunes incluyen `.*` para representar cualquier caracter, `\w` para representar letras y números, y `\d` para representar solo números. También podemos utilizar `^` para indicar que la cadena debe comenzar con cierto patrón y `$` para indicar que debe terminar con cierto patrón.
-
-Además, es posible utilizar grupos de captura utilizando paréntesis para luego acceder a ellos en las operaciones de reemplazo. Por ejemplo:
-
-```Clojure
-(re-find #"(\w+) (\w+)" "John Doe")
-;(substitute "$2, $1" "${1} ${2}" %)
-; => "Doe, John"
-```
-
-Otra característica interesante es la posibilidad de utilizar modificadores para aplicar diferentes lógicas en nuestras expresiones regulares. Algunos de los modificadores disponibles incluyen `i` para ignorar mayúsculas y minúsculas, `g` para aplicar a todas las coincidencias y `m` para tratar la cadena como una cadena de varias líneas.
+Las expresiones regulares fueron desarrolladas por el matemático Stephen Cole Kleene en la década de 1950 y popularizadas por el informático Ken Thompson en la década de 1960. Son una herramienta poderosa pero pueden resultar difíciles de leer y mantener en patrones complejos. En lugar de utilizar expresiones regulares, también puedes considerar el uso de funciones de cadena de texto como `replace` o `split` para lograr resultados similares. 
 
 ## Ver también
 
-- Documentación oficial de expresiones regulares en Clojure: https://clojure.org/guides/learn/regular_regexes
-- Tutorial interactivo de RegexOne para aprender más sobre expresiones regulares: https://regexone.com/
+Para obtener más información sobre el uso de expresiones regulares en Clojure, consulta la documentación oficial en [clojure.github.io](https://clojure.github.io/clojure/)

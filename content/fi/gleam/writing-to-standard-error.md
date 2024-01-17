@@ -1,7 +1,7 @@
 ---
-title:                "Tietokoneohjelmoinnin kirjoituskäytäntö standardivirheelle"
-html_title:           "Gleam: Tietokoneohjelmoinnin kirjoituskäytäntö standardivirheelle"
-simple_title:         "Tietokoneohjelmoinnin kirjoituskäytäntö standardivirheelle"
+title:                "Kirjoittaminen standardivirheeseen"
+html_title:           "Gleam: Kirjoittaminen standardivirheeseen"
+simple_title:         "Kirjoittaminen standardivirheeseen"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Files and I/O"
@@ -10,33 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä & Miksi?
 
-Kirjoittaminen virheet standardiin antaa sinulle mahdollisuuden nähdä tärkeitä virheilmoituksia, jotka voivat auttaa sinua korjaamaan ohjelmasi ja varmistamaan sen sujuvan toiminnan.
+Kirjoittaminen standardivirheeseen on menetelmä, joka mahdollistaa virheilmoitusten lähettämisen suoraan konsolille. Tämä on tärkeää kehittäjille, koska se auttaa tunnistamaan ja korjaamaan ohjelmistoihin liittyviä ongelmia nopeammin ja tehokkaammin.
 
-## Kuinka tehdä
+## Näin teet sen:
 
-Jos haluat kirjoittaa virheet standardiin Gleamissa, voit käyttää `Logger` moduulia. Seuraava esimerkki näyttää, kuinka voit käyttää sitä:
-
+#### Kirjoittaminen standardivirheeseen:
 ```Gleam
-
-import gleam /logger
-
-fn main() {
-  let message = "Tämä on virheilmoitus"
-  logger.error(message)
-}
+io.println(os.Stderr, "Virheilmoitus")
 ```
 
-Tulostuu lopputulos:
+#### Tuloste konsolilla:
+```Gleam
+Virheilmoitus
+```
 
-`Tämä on virheilmoitus`
+## Syvempi sukellus:
 
-## Syvällinen sukellus
+#### Historiallinen konteksti:
 
-Kun kirjoitat virheitä standardiin, sinun tulisi muistaa muutama asia. Ensinnäkin, varmista, että käytät oikeaa moduulia (`logger` moduulia). Lisäksi varmista, että virheilmoituksesi on selkeä ja informatiivinen. Lopuksi, muista, että standardivirheet ovat hyödyllinen työkalu ohjelmiesi virheiden käsittelyssä.
+Standardivirheeseen kirjoittaminen on peräisin Unix-käyttöjärjestelmästä ja se on yleistynyt myös muissa käyttöjärjestelmissä. Tämä menetelmä on luotettava tapa käsitellä virheitä, ja se on vakiintunut osa ohjelmistojen kehitystä.
 
-## Katso myös
+#### Vaihtoehtoiset menetelmät:
 
-- [Virheet standardivirheille Gleamissa](https://example.com/virheet-standardivirheille-gleamissa)
-- [Gleam Dokumentaatio](https://gleam.run/documentation/)
+Vaikka standardivirheeseen kirjoittaminen on yleisesti hyväksytty menetelmä, on olemassa myös muita tapoja käsitellä virheilmoituksia. Esimerkiksi kirjoittaminen lokiin tai käyttämällä palvelinta tiedon tallentamiseen voivat olla vaihtoehtoisia lähestymistapoja.
+
+#### Toteutusyksityiskohdat:
+
+Kirjoittaminen standardivirheeseen tapahtuu käyttämällä ```io.println``` -funktiota Gleamissa. Tämä toimii samalla tavalla kuin tulostaminen konsolille normaalissa ```print``` -funktiossa, mutta käyttää neljättä parametria (```os.Stderr```) standardivirheen osoittamiseen.
+
+## Katso myös:
+
+- Gleamin viralliset ohjeet: https://gleam.run/book/tour/standard-error
+- Unix-standardi: http://pubs.opengroup.org/onlinepubs/9699919799/functions/stderr.html

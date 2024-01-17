@@ -10,45 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué deberías aprender a extraer subcadenas?
+¿Qué y por qué los programadores extraen subcadenas (substrings)?
 
-Extraer subcadenas es una habilidad fundamental en la programación ya que te permite manipular y trabajar con cadenas de caracteres de manera más eficiente. Al conocer cómo extraer subcadenas, podrás realizar tareas como buscar y reemplazar dentro de una cadena, validar datos de entrada y generar resultados específicos basados en ciertas partes de una cadena.
+Extraer subcadenas (substrings) es un proceso común en el desarrollo de programas en C. Básicamente, se trata de seleccionar una parte de una cadena de texto más grande para usarla en otra parte del programa. Los programadores pueden hacerlo para diferentes propósitos, como manipular datos, buscar patrones o simplemente simplificar el código.
 
-## Cómo hacerlo en C
+¿Cómo hacerlo?
 
-Para extraer subcadenas en C, necesitamos utilizar la función `strncpy()`. Esta función toma tres argumentos: la cadena de destino, la cadena de origen y la cantidad de caracteres a copiar de la cadena de origen a la cadena de destino. Aquí hay un ejemplo de cómo utilizar `strncpy()` para extraer una subcadena:
+Para extraer subcadenas en C, se pueden usar las funciones ```strncpy()``` y ```strstr()```. La primera copia una cantidad específica de caracteres de una cadena a otra, mientras que la segunda busca una subcadena dentro de una cadena más grande. A continuación se muestra un ejemplo de cómo usar estas funciones:
 
 ```C
-#include <stdio.h>
-#include <string.h>
-
-int main() {
-    char nombre[20] = "Juan Perez";
-    // Extraemos la subcadena "Perez"
-    char apellido[20];
-    // Utilizamos strncpy para copiar 5 caracteres de "Perez" a la cadena apellido
-    strncpy(apellido, nombre + 5, 5);
-    // Agregamos un carácter nulo al final de la subcadena
-    apellido[5] = '\0';
-    // Imprimimos la subcadena
-    printf("El apellido es: %s\n", apellido);
-    
-    return 0;
-}
-
-// Output: El apellido es: Perez
+char cadena[] = "¡Hola, mundo!";
+char subcadena[5];
+int tamaño = 4;
+strncpy(subcadena, cadena, tamaño);
+printf("Subcadena: %s", subcadena);
 ```
 
-## En profundidad sobre la extracción de subcadenas
+Esto imprimirá "Hola" ya que ```strncpy()``` toma los primeros cuatro caracteres de la cadena original y los copia en la nueva subcadena. También se puede usar ```strstr()``` para buscar una subcadena específica dentro de otra, como en el siguiente ejemplo:
 
-Ahora que sabes cómo utilizar `strncpy()` para extraer subcadenas, es importante entender cómo funciona exactamente esta función. `strncpy()` copia la cantidad especificada de caracteres de la cadena de origen (el segundo argumento) a la cadena de destino (el primer argumento). Sin embargo, si la cadena de origen es más larga que la cantidad especificada, no se agregará un carácter nulo al final de la cadena de destino. Esto puede causar problemas si, por ejemplo, intentas imprimir la cadena de destino como si fuera una cadena completa.
+```C
+char cadena[] = "¡Hola, mundo!";
+char subcadena[] = "Mundo";
+char* resultado = strstr(cadena, subcadena);
+printf("Subcadena encontrada: %s", resultado);
+```
 
-Para evitar este problema, es importante siempre agregar un carácter nulo al final de la subcadena después de copiar los caracteres necesarios. En el ejemplo anterior, utilizamos `apellido[5] = '\0'` para agregar un carácter nulo al final de la subcadena extraída.
+Esto imprimirá "Mundo" ya que ```strstr()``` encuentra la subcadena dentro de la cadena original y la devuelve como un puntero.
 
-## Ver también
+Profundizando más
 
-Aquí te dejamos algunos enlaces útiles para que puedas profundizar en el tema de la extracción de subcadenas en C:
+La idea de extraer subcadenas no es nueva, de hecho, algunas personas clasifican las funciones ```strncpy()``` y ```strstr()``` como obsoletas debido a su complejidad de uso. Alternativas a considerar son la función ```strncat()```, que concatena dos cadenas y especifica una longitud máxima, y la biblioteca "string.h" que contiene funciones útiles para manipular cadenas de texto.
 
-- [Documentación oficial de `strncpy()` en cplusplus.com](http://www.cplusplus.com/reference/cstring/strncpy/)
-- [Tutorial sobre cadenas en C en SoloLearn](https://www.sololearn.com/Course/C)
-- [Más ejemplos de cómo trabajar con cadenas en C en Tutorialspoint](https://www.tutorialspoint.com/cprogramming/c_strings.htm)
+En cuanto a la implementación de estas funciones, la mayoría de los compiladores de C tienen optimizaciones que pueden acelerar el proceso de extracción de subcadenas. Por ejemplo, algunos usan "Instrucciones SIMD" para realizar múltiples operaciones en una sola instrucción, lo que puede mejorar significativamente el rendimiento.
+
+Para saber más sobre extracción de subcadenas en C, se pueden consultar estos enlaces:
+
+- [Documentación oficial de C](https://devdocs.io/c/)
+- [Explicación detallada de funciones de cadenas en C](https://c-for-dummies.com/blog/?p=1113)
+- [Alternativas a las funciones ```strncpy()``` y ```strstr()```](https://stackoverflow.com/questions/54222956/alternative-functions-to-strncpy-strstr-strcmp-inc-c-string)
+
+¡Ahora ya sabes cómo extraer subcadenas en C! Esperamos que estas funciones te ayuden a simplificar tu código y a ser más eficiente en tu programación. ¡Hasta la próxima!

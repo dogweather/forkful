@@ -1,7 +1,7 @@
 ---
-title:                "Skriva till standardfel"
-html_title:           "Swift: Skriva till standardfel"
-simple_title:         "Skriva till standardfel"
+title:                "Skrivning till standardfel"
+html_title:           "Swift: Skrivning till standardfel"
+simple_title:         "Skrivning till standardfel"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Files and I/O"
@@ -10,26 +10,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
+Skrivning till standardfel är en teknik som används av programmerare för att skicka felmeddelanden eller andra viktiga meddelanden till standardfelströmmen istället för standardutdataströmmen. Detta är användbart för att skilja dessa typer av meddelanden från vanlig programutdata och för att göra det möjligt för utvecklare att enkelt identifiera och hantera fel i sina program.
 
-Att kunna skriva till standard error i din Swift-kod är en viktig färdighet för utvecklare, särskilt när du felsöker dina program. Det låter dig skriva ut specifika meddelanden eller felmeddelanden till terminalen, vilket gör det enklare att identifiera och lösa problem.
+## Hur man:
+Här är ett exempel på hur man skriver ett meddelande till standardfelströmmen i Swift:
 
-## Hur gör man
-
-För att skriva till standard error i Swift, använder du funktionen "write" med parametern "to". Använd "stderr" för att ange att du vill skriva till standard error, och skriv sedan ut ditt meddelande inom paranteser.
-
-```Swift 
-write("Detta är ett felmeddelande!", to: &stderr)
+```
+Swift.print("Det här är ett felmeddelande till standardfelströmmen", to: &standardError)
 ```
 
-Detta kommer att skriva ut "Detta är ett felmeddelande!" till standard error. Notera att "&" tecknet används för att ange en referens till standard error för funktionen.
+Detta kommer att skriva ut meddelandet "Det här är ett felmeddelande till standardfelströmmen" till standardfelströmmen istället för till standardutdataströmmen.
 
-## Djupdykning
+## Djupdykning:
+Historiskt sett användes skrivning till standardfelströmmen för att rapportera eventuella problem eller fel i programmet till användaren. Alternativt kan utvecklare använda en loggningsfunktion för att skicka meddelanden till en loggfil istället för standardfelströmmen.
 
-När du skriver till standard error, skriver du egentligen till standardfelkanalen. Detta är en separat kanal där alla felmeddelanden och utdata från ditt program skrivs ut. Anledningen till att standard error används för felmeddelanden istället för standard output är för att distinkt skilja mellan normal utdata och felmeddelanden, vilket underlättar felsökningen.
+I Swift finns det en inbyggd global variabel som heter "standardError" som används för att specificera standardfelströmmen. Men utvecklare kan också ha sitt eget anpassade felmeddelande-utmatningsobjekt och skicka meddelanden till det istället.
 
-## Se även
-
-- [Swift Documentation](https://docs.swift.org/swift-book/LanguageGuide/TheBasics.html)
-- [Apple Developer Documentation](https://developer.apple.com/documentation/swift/2834607-write)
-- [Ray Wenderlich Tutorial](https://www.raywenderlich.com/990-swift-runtime-essentials/lessons/3)
+## Se även:
+- [Swift Standard Library Documentation](https://developer.apple.com/documentation/swift)
+- [Logging in Swift](https://www.raywenderlich.com/5373-logging-in-swift)

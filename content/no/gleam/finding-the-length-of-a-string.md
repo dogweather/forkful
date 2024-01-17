@@ -1,7 +1,7 @@
 ---
-title:                "Å finne lengden på en streng"
-html_title:           "Gleam: Å finne lengden på en streng"
-simple_title:         "Å finne lengden på en streng"
+title:                "Å finne lengden av en streng"
+html_title:           "Gleam: Å finne lengden av en streng"
+simple_title:         "Å finne lengden av en streng"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -10,25 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
-Hvis du er en nybegynnerprogrammerer, lurer du kanskje på hvorfor du trenger å finne lengden til en streng. Vel, svaret er ganske enkelt - det er en grunnleggende operasjon som kan være nyttig i mange programmeringsscenarier. Ved å finne lengden på en streng, kan du enkelt manipulere og behandle data, og få mer komplekse oppgaver til å bli mye enklere.
+# Hva & Hvorfor?
+Å finne lengden på en streng er en vanlig oppgave for programmerere, spesielt når det gjelder tekstbehandling og å behandle brukerinndata. Lengden på en streng refererer til antall tegn det tar opp i minnet, og dette kan være nyttig for å vurdere og manipulere teksten på riktig måte.
 
-## Hvordan
-For å finne lengden til en streng i Gleam, kan du bruke den innebygde funksjonen "str.len ()". Her er et eksempel på hvordan du kan bruke denne funksjonen:
+# Hvordan:
+Gleam tilbyr en enkel måte å finne lengden på en streng gjennom `String.length` funksjonen. Her er et eksempel på hvordan den kan brukes:
 
 ```Gleam
-let my_string = "Hei, dette er en test!";
-let length = str.len(my_string);
+let string = "Hei Gleam!"  
+let length = String.length(string)
 ```
 
-I dette tilfellet vil variabelen "length" inneholde verdien 24, som er lengden på strengen "Hei, dette er en test!". Så enkelt er det!
+Her vil `length` variabelen inneholde verdien 10, siden strengen "Hei Gleam!" består av totalt 10 tegn. 
 
-## Dykk dypere
-Det er verdt å merke seg at denne funksjonen bare fungerer for ASCII-strenger. Hvis du ønsker å finne lengden på en UTF-8-streng, må du bruke en annen funksjon "str.byte_length ()". Denne funksjonen vil gi deg antall byte i strengen, som ikke alltid vil være det samme som antall tegn.
+# Deep Dive:
+Lengden på en streng har vært et viktig aspekt av dataprogrammering siden begynnelsen. I eldre språk som C, var datatyper som `char` ofte brukt til å representere en enkelt bokstav eller tegn. Å telle lengden på en streng besto derfor av å telle antall tegn før en null-terminal ble funnet. 
 
-I tillegg er det viktig å huske at strenger også kan være tomme, noe som betyr at de ikke inneholder noen tegn. I slike tilfeller vil både "str.len ()" og "str.byte_length ()" returnere verdien 0.
+I dag er dataprogrammering blitt mer avansert, og de fleste moderne språk har dedikerte funksjoner for å finne lengden på en streng. I tillegg til Gleam sin `String.length`, har andre språk som Java og Python også lignende funksjoner.
 
-## Se Også
-- [Offisiell Gleam Dokumentasjon om Strings](https://gleam.run/docs/stdlib/string)
-- [Konverter en streng til en liste av tegn i Gleam](https://gleam.run/docs/cookbook/string-to-char-list/)
-- [Utforsk andre innebygde strengfunksjoner i Gleam](https://gleam.run/docs/stdlib/string-functions)
+# Se også:
+Her er noen ressurser for å lære mer om håndtering av strenger i Gleam:
+- Offisiell dokumentasjon: https://gleam.run/documentation/standard-library/string.html#length
+- Gist tutorial: https://gist.github.com/sjbrown90/b5c21a28922871cbd09be4ea381aea52

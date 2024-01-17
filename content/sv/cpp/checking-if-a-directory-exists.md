@@ -1,7 +1,7 @@
 ---
-title:                "Kontrollera om en mapp existerar"
-html_title:           "C++: Kontrollera om en mapp existerar"
-simple_title:         "Kontrollera om en mapp existerar"
+title:                "Kontrollera om en mapp finns"
+html_title:           "C++: Kontrollera om en mapp finns"
+simple_title:         "Kontrollera om en mapp finns"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Files and I/O"
@@ -10,50 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Varför
-Att kunna kontrollera om en mapp finns är en viktig del av programmering. Detta gör det möjligt att hantera olika scenarier och undvika problem som kan uppstå om en mapp inte finns.
+## Vad & Varför?
+Att kontrollera om en mapp existerar är en process som programmerare använder för att försäkra sig om att en viss mapp eller sökväg finns på en dator eller server. Detta är ett viktigt steg för att säkerställa att programmet kan fortsätta köra utan problem.
 
-# Så här gör du
-Du kan enkelt kontrollera om en mapp finns genom att använda funktionen `opendir()` i C++. Funktionen tar in mappens sökväg som argument och returnerar en pekare till mappen om den finns, annars returneras `NULL`.
+## Hur man:
+Du kan använda C++ biblioteket **<filesystem>** för att kontrollera om en mapp finns eller inte. Här är ett exempel på hur man kan göra det:
 
-```C++
+```
 #include <iostream>
-#include <dirent.h>
-
-int main(){
-
-    // Ange mappens sökväg
-    const char* path = "/Users/user/Documents/ExampleFolder";
-
-    // Kontrollera om mappen finns
-    DIR* dir = opendir(path);
-
-    // Om mappen finns returneras en pekare
-    if (dir){
+#include <filesystem>
+    
+int main() {
+    if(std::filesystem::exists("C:/Users/mappnamn")) {
         std::cout << "Mappen finns!" << std::endl;
-        closedir(dir); // Stäng pekaren
-    }
-    // Annars returneras NULL
-    else{
+    } else {
         std::cout << "Mappen finns inte!" << std::endl;
     }
-
     return 0;
 }
 ```
 
-**Output:**
-```
-Mappen finns inte!
-```
+**Output:** Mappen finns eller Mappen finns inte beroende på om mappen existerar eller inte.
 
-Om du vill kunna göra fler åtgärder beroende på om mappen finns eller inte, kan du använda styrkoden `if/else` som visas i exemplet ovan. Om mappen finns kan du till exempel skapa en ny mapp med samma namn eller läsa innehållet i mappen.
+## Deep Dive:
+Att kontrollera en mappexister är ett vanligt behov för många olika program, speciellt för program som hanterar filer eller mappar på en dator. Alternativet att använda **<filesystem>** biblioteket i C++ är en enkel och effektiv metod för att lösa denna uppgift.
 
-# Djupdykning
-För att kunna kontrollera om en mapp finns måste du använda funktionen `opendir()` från C:s standardasbibliotek. Denna funktion öppnar en filström till den angivna mappen och returnerar en pekare till den. Om mappen inte finns returnerar funktionen `NULL`.
+Det finns också andra metoder för att kontrollera om en mapp existerar i C++, som till exempel att använda **_stat** funktionen eller **GetFileAttributes** funktionen från Windows API. Dessa metoder kräver emellertid mer kod och kan vara svårare att använda än att helt enkelt använda **<filesystem>** biblioteket.
 
-Det är viktigt att nämna att funktionen `opendir()` bara kontrollerar om det finns någon filström till mappen, inte om det verkligen är en mapp eller filer i den. Om du behöver kontrollera om det finns filer i mappen måste du loopa igenom innehållet med hjälp av funktionen `readdir()`.
+När du använder **<filesystem>** biblioteket för att kontrollera om en mapp existerar görs detta genom att söka igenom filsystemet efter den givna sökvägen. Om mappen finns kommer funktionen att returnera **true**, annars kommer den att returnera **false**.
 
-# Se även
-* [Dokumentation för opendir()](https://www.cplusplus.com/reference/cstdio/opendir/)
-* [Hantering av mappar i C++](https://programmerare.se/hantering-av-mappar-i-c/)
+## Se även:
+- [std::filesystem::exists](https://en.cppreference.com/w/cpp/filesystem/exists)
+- [_stat function](https://docs.microsoft.com/en-us/cpp/c-runtime-library/reference/stat-wstat-_stat32-wstat32)
+- [GetFileAttributes function](https://docs.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-getfileattributesa)

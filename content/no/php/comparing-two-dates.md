@@ -10,48 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
-Å sammenligne to datoer kan være nyttig når man skal filtrere eller sortere gjennom store datasett, for eksempel i en database eller i et program. Dette kan også være viktig når man skal vise data på en organisert og forståelig måte for brukere.
+## Hva og Hvorfor?
+Sammenligning av to datoer i programmering er en viktig oppgave for å sjekke og sammenligne tidsvinduer. Dette gjør det mulig å finne ut om en dato kommer før eller etter en annen, eller om de er like.
 
-## Hvordan
-```PHP
-$first_date = '2021-01-10';
-$second_date = '2021-01-15';
+Programmerere gjør dette for å kunne sortere og filtrere data etter dato, for å lage dynamiske tidsbaserte funksjoner, og for å sjekke om en dato har passert eller ikke.
 
-// Bruk strtotime-funksjonen for å konvertere datoene til en tidsstamp
-$first_timestamp = strtotime($first_date);
-$second_timestamp = strtotime($second_date);
-
-// Sammenligne datoene ved å trekke den første fra den andre
-$diff = $second_timestamp - $first_timestamp;
-
-// Resultatet blir i sekunder, så vi kan konvertere det til dager
-$dager = floor($diff/(60*60*24));
-
-echo 'Mellom ' . $first_date . ' og ' . $second_date . ' er det ' . $dager . ' dager.';
-```
-
-Dette kodeeksempelet viser hvordan man kan sammenligne to datoer og få antall dager mellom dem ved å bruke strtotime og enkel matematikk. Output vil være "Mellom 2021-01-10 og 2021-01-15 er det 5 dager."
+## Slik gjør du det:
+For å sammenligne to datoer i PHP, kan du bruke funksjonen `strtotime ()` for å konvertere datoene til en tidsstempel, som er en numerisk representasjon av dato og tid. Deretter kan du bruke sammenligningsoperatørene (`<`, `>`, `==`) for å sammenligne de to tidsstemplene.
 
 ```PHP
-$first_date = '2021-01-20';
-$second_date = '2021-01-10';
+$dato1 = "10.11.2019";
+$dato2 = "15.10.2020";
 
-if ($first_date > $second_date) {
-    echo $first_date . ' er senere enn ' . $second_date;
+$ts_dato1 = strtotime ($dato1);
+$ts_dato2 = strtotime ($dato2);
+
+if ($ts_dato1 < $ts_dato2) {
+  echo "$dato1 kommer før $dato2";
+} else if ($ts_dato1 > $ts_dato2) {
+  echo "$dato2 kommer før $dato1";
 } else {
-    echo $first_date . ' er før ' . $second_date;
+  echo "$dato1 og $dato2 er like";
 }
+
+// Output: 10.11.2019 kommer før 15.10.2020
 ```
 
-I dette eksempelet bruker vi en if/else-setning for å sammenligne to datoer og få en utskrift av hvilken dato som er senere. Output vil være "2021-01-20 er senere enn 2021-01-10."
+I eksemplet ovenfor blir datoene sammenlignet og den riktige setningen blir utskrevet basert på sammenligningsresultatet.
 
-## Deep Dive
-Det er mulig å sammenligne datoer på flere måter, for eksempel ved å bruke funksjoner som DateTime og DateInterval i PHP. Disse kan være nyttige når man trenger å håndtere mer komplekse datoer, som for eksempel med tidsone eller sommer- og vintertid.
+## Dykk ned:
+I tidligere versjoner av PHP, som 4.3.0 og tidligere, ble funksjonen `mktime()` brukt til å sammenligne datoer. Denne funksjonen er nå foreldet og bør ikke lenger brukes.
 
-Det er også viktig å være klar over at datoer kan være forskjellige i ulike deler av verden, på grunn av ulike tidszoner og datostandarder. Derfor er det viktig å være bevisst på hvilken datoformat man bruker og konvertere det til det ønskede formatet før man sammenligner.
+Det finnes også et alternativ til å sammenligne tidsstempler ved å bruke funksjonen `date_diff()`, som beregner forskjellen mellom to datoer og returnerer den i ønsket format.
 
-## Se også
-- [Php.net - strtotime](https://www.php.net/manual/en/function.strtotime.php)
-- [Php.net - DateTime](https://www.php.net/manual/en/class.datetime.php)
-- [Php.net - DateInterval](https://www.php.net/manual/en/class.dateinterval.php)
+## Se også:
+- [PHP date() funksjonen](https://www.php.net/manual/en/function.date.php) for å formatere datoer i PHP.
+- [PHP time() funksjonen](https://www.php.net/manual/en/function.time.php) for å hente nåværende tidsstempel.
+- [PHP strtotime() funksjonen](https://www.php.net/manual/en/function.strtotime.php) for å konvertere en dato til en tidsstempel.

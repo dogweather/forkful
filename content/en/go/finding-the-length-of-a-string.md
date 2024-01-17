@@ -10,34 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-If you're new to Go programming, you may be wondering why it's important to know how to find the length of a string. Knowing the length of a string is crucial for many tasks, such as validating user input, manipulating data, and creating efficient algorithms.
+## What & Why?
 
-## How To
-To find the length of a string in Go, you can use the built-in `len` function. This function returns the number of bytes in a given string. For example:
+Finding the length of a string is a common task in programming where we need to determine the number of characters in a given string. This is useful for tasks like validating input or manipulating text data. By knowing the length of a string, we can perform certain operations on it with precision.
 
-```Go
-name := "John"
-length := len(name)
-fmt.Println(length)
-```
+## How to:
 
-This will output `4`, as there are 4 bytes in the string "John". If you need to find the length of a string in a specific encoding, you can use the `utf8.RuneCountInString` function. For example:
+The Go programming language provides a built-in function called `len()` which we can use to find the length of a string. Here's an example:
 
 ```Go
-message := "こんにちは"
-length := utf8.RuneCountInString(message)
-fmt.Println(length)
+str := "Hello World"
+length := len(str)
+fmt.Println(length) // Output: 11
 ```
 
-This will output `5`, as there are 5 bytes in the string "こんにちは".
+We can also use this function to find the length of a string that contains non-English characters, like in this example:
+
+```Go
+str := "こんにちは" // Hello in Japanese
+length := len(str)
+fmt.Println(length) // Output: 5
+```
 
 ## Deep Dive
-Internally, strings in Go are byte arrays, with each character represented by a byte. This is why the `len` function returns the number of bytes in a string. However, this can lead to unexpected results when dealing with multi-byte characters, as shown in the example above. To handle this, Go provides the `utf8.RuneCountInString` function, which counts the number of runes (characters) in a string, taking into account multi-byte characters.
 
-It's worth noting that in Go, strings are immutable, meaning they cannot be changed. This is why you may see functions like `strings.Repeat` or `strings.Replace` return a new string rather than modifying the original. This is also why the `len` function can only return the length of a string and cannot modify it.
+The concept of finding the length of a string has been around since the early days of programming. In languages like C and C++, the only way to find the length of a string was by iterating over each character and counting them. This was a tedious task, and it was prone to errors.
+
+In contrast, modern languages like Go provide built-in functions like `len()` to make this task simpler. Other languages may use different approaches, such as using a property or method, but the end result is the same - to obtain the length of a string.
 
 ## See Also
-- [Go Strings Package](https://golang.org/pkg/strings/) - Official documentation on handling strings in Go.
-- [Go Tour: Strings](https://tour.golang.org/basics/5) - An interactive tutorial on strings in Go.
-- [Master the World of Golang's Strings](https://www.calhoun.io/mastering-the-world-of-golang-strings/) - A comprehensive guide to working with strings in Go.
+
+If you want to dive deeper into the technical details of finding the length of a string, you can check out the [Go documentation](https://golang.org/pkg/builtin/#len). Additionally, there are many online resources that discuss the various ways to find the length of a string in different programming languages.

@@ -1,7 +1,7 @@
 ---
-title:                "Tarkista, onko kansio olemassa"
-html_title:           "Fish Shell: Tarkista, onko kansio olemassa"
-simple_title:         "Tarkista, onko kansio olemassa"
+title:                "Tarkistetaan, onko hakemisto olemassa"
+html_title:           "Fish Shell: Tarkistetaan, onko hakemisto olemassa"
+simple_title:         "Tarkistetaan, onko hakemisto olemassa"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Files and I/O"
@@ -10,35 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä ja miksi?
 
-Usein ohjelmointityössä tarvitsemme tarkistaa, onko tietty kansio olemassa ennen kuin voimme suorittaa tiettyjä toimintoja. Fish Shellissä on muutamia tapoja tarkistaa tämä ja tässä artikkelissa näytämme, miten se tehdään.
+Tarkistaminen, onko hakemisto olemassa, on yksi ohjelmoijien yleisimmistä tehtävistä. Tämä auttaa varmistamaan, että tarvittavat tiedostot ja hakemistot ovat saavutettavissa ja toimivat oikein. Tarkistamalla, onko hakemisto olemassa, voit myös estää virheitä ohjelmassa.
 
-## Miten tehdä
+## Kuinka tehdä:
 
-Fish Shell tarjoaa kaksi tapaa tarkistaa, onko kansio olemassa: käyttämällä `test` -komentoa tai käyttämällä `if` -lauseketta.
+Fish Shell -tapa esimerkkikoodiin - "Rikitse se mitä hakemiston palauttama tuloste on ...
 
-### Käyttäen `test` -komentoa
-
-```Fish Shell
-test -d [kansion nimi]
 ```
-Tämä komento palauttaa arvon `0` jos kansio on olemassa ja `1` jos se ei ole.
-
-### Käyttäen `if` -lauseketta
-
-```Fish Shell
-if test -d [kansion nimi]
-    echo "Kansio on olemassa!"
+if test -d <hakemiston_nimi>
+    echo "Hakemisto on olemassa"
+else
+    echo "Hakemistoa ei ole olemassa"
 end
 ```
-Käyttämällä `if` -lauseketta, voimme suorittaa toimintoja vain jos kansio on olemassa.
 
-## Syvällinen tieto
+Esimerkki tulosteesta, jos hakemisto on olemassa: 
+```
+Hakemisto on olemassa
+```
 
-Fish Shellin `test` -komennolla on myös muita vaihtoehtoja, kuten tarkistaa onko kyseessä symbolinen linkki tai onko kansio tyhjä. Voit lukea lisää näistä vaihtoehdoista [Fish Shellin dokumentaatiosta](https://fishshell.com/docs/current/cmds/test.html).
+Esimerkki tulosteesta, jos hakemistoa ei ole olemassa: 
+```
+Hakemistoa ei ole olemassa
+```
 
-## Katso myös
+## Syvällisempi sukellus:
 
-- [Fish Shellin dokumentaatio](https://fishshell.com/docs/current/index.html)
-- [Kansioon siirtyminen Fish Shellissä](https://github.com/joonaprojects/Turbo-Code-Tasks/blob/master/Fish-Shell/fint_description.md#kansioon-siirtyminen)
+Historiallinen konteksti:
+Tarkistamisen tarve johtuu siitä, että joskus ohjelmoijat haluavat varmistaa, että tietty hakemisto on olemassa ennen kuin he suorittavat jotain toimintoa. Tämä auttaa estämään virheitä ohjelmassa.
+
+Vaihtoehtoja:
+Fish Shell tarjoaa muita tapoja tarkistaa, onko hakemisto olemassa. Yksi vaihtoehto on käyttää komentoa `test -e <hakemiston_nimi>`, joka tarkistaa, onko tiedosto tai hakemisto olemassa.
+
+Toteutuksesta:
+Fish Shell käyttää standardia UNIX-komentojen kuten `test` ja `if` komentoriviä. Se tarkistaa, onko tiedosto tai hakemisto olemassa ja tulostaa vastaavan viestin sen perusteella.
+
+## Katso myös:
+
+[Määritä ja hanki tämä suurimmista ohjelmointitermeistä, selitettynä](https://zapier.com/blog/programming-terms-glossary/)

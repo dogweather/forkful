@@ -10,53 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-Are you looking for a more organized and readable way to store and work with data in your Arduino projects? Look no further than YAML! This simple yet powerful language allows you to structure your data in a human-friendly format, making it easier to understand and work with.
+Working with YAML is a way for programmers to organize and store data in a human-readable format. It is often used for configuring settings or storing data in applications. Programmers use YAML because it allows them to easily edit and update data without the need for complex coding.
 
-## How To
+## How to:
 
-The first step is to install the Arduino-ESP32 library, which includes a YAML parsing library called "yaml_ard".
-
-```Arduino
-#include "yaml_ard.h"
-```
-
-Next, we need to create a YAML file to store our data. For example, let's say we have a file called "data.yaml" with the following content:
-
-```YAML
-name: Arduino
-version: 1.8.13
-platforms:
-  - AVR
-  - ARM
-  - ESP32
-```
-
-To access this data in our code, we can use the ```yaml_ard_parse()``` function, passing in the filename and a callback function to handle the data.
+To use YAML in your Arduino program, you will first need to download the Arduino YAML library. Once you have the library, you can include it in your code by adding the following line at the top:
 
 ```Arduino
-void setup() {
-  Serial.begin(9600); // initialize serial communication
-  yaml_ard_parse("data.yaml", handle_data); // parse YAML file and pass data to callback function
-}
-
-void handle_data(yaml_ard_entry_t* entry) {
-  Serial.println(entry->name); // print "Arduino"
-  Serial.println(entry->version); // print "1.8.13"
-  Serial.println(entry->platforms[2]); // print "ESP32"
-}
+#include <YAML.h>
 ```
 
-As you can see, the data is now easily accessible through the ```entry``` variable. The example above also shows how to access nested data, in this case, the third element in the "platforms" array. 
+Next, you can create a YAML document by declaring a YAML object:
 
-## Deep Dive
+```Arduino
+YAML::Node document;
+```
 
-YAML is a flexible language and allows for different data types, including strings, integers, booleans, arrays, and objects. You can also add comments in your YAML file using the "#" symbol.
+You can then add data to your YAML document using the appropriate data type:
 
-Additionally, the ```yaml_ard_parse()``` function returns an error code, which can be used to handle any parsing errors. You can also create your own custom callback functions to handle specific data types.
+```Arduino
+document["name"] = "John Doe";
+document["age"] = 30;
+document["city"] = "New York";
+```
 
-## See Also
+To print out the YAML document, you can use the YAML::Node::print() method:
 
-- [YAML Official Website](https://yaml.org/)
-- [Arduino-ESP32 Library](https://github.com/espressif/arduino-esp32)
+```Arduino
+document.print(Serial);
+```
+
+This will print out the following YAML document:
+
+```Arduino
+name: John Doe
+age: 30
+city: New York
+```
+
+## Deep Dive:
+
+YAML, which stands for "YAML Ain't Markup Language", was first released in 2001. It was designed to be a human-readable, cross-platform language for data storage and configuration. YAML is often compared to other markup languages such as XML and JSON, but it has the advantage of being simpler and easier to edit by hand.
+
+There are a few alternatives to using YAML in Arduino programming, such as storing data in arrays or in text files. However, YAML offers a more structured and organized approach to data storage and is especially useful for complex data sets.
+
+Implementing YAML in Arduino is made possible by the Arduino YAML library. This library provides functions for parsing, creating, and manipulating YAML documents. It is based on the popular LibYAML library and is regularly updated.
+
+## See Also:
+
+To learn more about using YAML in your Arduino projects, check out the official YAML website at https://yaml.org/. You can also visit the Arduino YAML library's GitHub page at https://github.com/greiman/YAML for more information and updates. Additionally, the Arduino forums and community are great resources for exchanging tips and ideas on implementing YAML in your projects.

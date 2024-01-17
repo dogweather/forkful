@@ -1,7 +1,7 @@
 ---
-title:                "Last ned en nettside"
-html_title:           "C: Last ned en nettside"
-simple_title:         "Last ned en nettside"
+title:                "Laste ned en nettside"
+html_title:           "C: Laste ned en nettside"
+simple_title:         "Laste ned en nettside"
 programming_language: "C"
 category:             "C"
 tag:                  "HTML and the Web"
@@ -10,39 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
-Det er mange grunner til å laste ned en nettside. Kanskje du vil lagre informasjonen for senere bruk, eller kanskje du vil endre nettsiden og laste den opp igjen. Uansett årsak er det nyttig å vite hvordan man kan laste ned en nettside ved hjelp av C-programmering.
+# Hva & Hvorfor?
+Nedlasting av en nettside handler om å få tilgang til informasjon og data som ligger på en nettside. Dette er en vanlig oppgave for programmerere, da det er nødvendig for å hente inn og behandle data fra nettsider.
 
-## Hvordan gjøre det
-For å laste ned en nettside ved hjelp av C, trenger du først å inkludere standardbiblioteket `stdio.h` og `stdlib.h` i koden din. Deretter må du initialisere en variabel med `fopen` funksjonen for å åpne en kobling til nettsiden du ønsker å laste ned. Deretter bruker du `fputc` funksjonen til å skrive innholdet i nettsiden til en fil. Du kan velge å lese innholdet i nettsiden linje for linje, eller ved hjelp av `getc` funksjonen.
-
+# Hvordan:
 ```C
-#include<stdio.h>
-#include<stdlib.h>
+#include <stdio.h>
+#include <curl/curl.h>
 
-int main(){
-    FILE *fptr;
-    int ch;
-    fptr = fopen("nettside.txt","w"); // Åpner en ny fil kalt nettside.txt
-    FILE *nettsiden = fopen("https://www.example.com", "r"); // Åpner nettsiden som en lesbar fil
-    if(nettsiden == NULL) {
-        printf("Kan ikke åpne nettsiden");
-        exit(1);
-    }
-    // Leser og lagrer nettsiden i en fil
-    while((ch = getc(nettsiden)) != EOF) {
-        fputc(ch, fptr);
-    }
-    fclose(nettsiden);
-    fclose(fptr);
+int main(void) {
+  // Opprette en CURL-variabel
+  CURL *curl;
+  // Opprette en variabel for å lagre nettadressen
+  char *url = "https://example.com";
+  // Initialisere CURL-variabelen
+  curl = curl_easy_init();
+  // Sette nettadressen
+  curl_easy_setopt(curl, CURLOPT_URL, url);
+  // Utføre CURL-operasjonen og lagre resultatet i en variabel
+  CURLcode res = curl_easy_perform(curl);
+  // Sjekke om det skjedde en feil
+  if(res != CURLE_OK)
+    fprintf(stderr, "curl_easy_perform() failed: %s\n",
+            curl_easy_strerror(res));
+  // Rense opp etter CURL
+  curl_easy_cleanup(curl);
+  return 0;
 }
 ```
 
-Dette vil skrive innholdet fra nettsiden til en fil som heter `nettside.txt`. Du kan også bruke `fgets` funksjonen til å lese og skrive en bestemt del av nettsiden.
+**Output:** Ingen synlig output, men resultatet vil være lagret i variabelen 'res'. 
 
-## Dybdeundersøkelse
-Ved å dykke dypere inn i C-programmering, kan man oppdage flere avanserte måter å laste ned en nettside på. For eksempel kan man bruke `libcurl` biblioteket for å hente nettsiden ved hjelp av HTTP-protokoller. Man kan også bruke `getaddrinfo` funksjonen for å hente IP-adressen til nettsiden og åpne forbindelse direkte til serveren.
+# Dypdykk:
+Nedlasting av nettsider har vært en vanlig oppgave for programmerere siden internettets begynnelse. Dette kan gjøres på flere måter, for eksempel ved å bruke biblioteker som CURL eller å skrive egne programmer som kommuniserer direkte med nettverket.
 
-## Se også
-- [Libcurl dokumentasjon](https://curl.haxx.se/libcurl/)
-- [getaddrinfo dokumentasjon](https://man7.org/linux/man-pages/man3/getaddrinfo.3.html)
+En viktig ting å huske på er at nedlasting av en nettside kan være ulovlig hvis man ikke har tillatelse fra eierne av nettsiden.
+
+# Se også:
+- [CURL biblioteket](https://curl.haxx.se/libcurl/)
+- [Alternativer til CURL](https://alternativeto.net/software/curl/)
+- [Hvordan implementere download av nettsider i C++](https://www.codeproject.com/articles/590961/how-to-implement-download-an-html-page-in-Cplusplus)

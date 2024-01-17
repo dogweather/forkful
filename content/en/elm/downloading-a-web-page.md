@@ -10,55 +10,80 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-If you're interested in building web applications using functional programming, then Elm is a great language to explore. With its type safety and declarative syntax, it's gaining popularity among developers. In this article, we'll focus on a common task in web development - downloading a web page - and how to do it in Elm.
+Downloading a web page means retrieving the content of a web page from a remote server and displaying it on our device. Programmers often do this in order to create dynamic and interactive web applications, as well as to retrieve data such as images, text, and videos from websites.
 
-## How To
+## How to:
 
-First, we'll need to import the `Http` module, which contains functions for making HTTP requests. We can do this by adding the following line to the top of our file:
+The process of downloading a web page in Elm is quite simple. First, we need to import the `Http` module to handle HTTP requests. Then, we use the `Http.get` function to specify the URL of the web page we want to download. Finally, we use the `Html.program` function to render the downloaded content on our application's view.
 
 ```Elm
 import Http
-```
+import Html exposing (..)
 
-Next, we'll create a `Request` using the `request` function. This function takes in two arguments - a `method` and a `url`.
+main =
+    Html.program
+        { init = init
+        , update = update
+        , subscriptions = subscriptions
+        , view = view
+        }
 
-```Elm
-let request = Http.request
-    { method = "GET"
-    , url = "https://www.example.com"
-    }
-```
+init =
+    ( "https://www.example.com", Http.get "https://www.example.com" pageResponse )
+ 
+update msg model =
+    case msg of
+        PageResponse response ->
+            ( model, Cmd.none )
 
-After creating our request, we can use the `send` function to actually make the request and receive a response.
+subscriptions model =
+    Sub.batch
+        [ Http.onLoad PageResponse
+        ]
 
-```Elm
-Http.send handleResponse request
-```
+view model =
+    case model of
+        Loading ->
+            text "Loading..."
 
-In the `send` function, we pass in a `handleResponse` function as the first argument. This function will be called when the request is completed, and it will receive a `Result` type with either a `Http.Error` or a `Http.Response`. We can pattern match on this `Result` to handle the different scenarios.
+        Success content ->
+            text content
 
-```Elm
-handleResponse : Result Http.Error Http.Response -> msg
-handleResponse result =
+type Msg
+    = PageResponse (Result Http.Error String)
+
+-----------------------------------------------------------------------------------------------------------
+
+type Model
+    = Loading
+    | Success String
+
+-----------------------------------------------------------------------------------------------------------
+ 
+pageResponse : Result Http.Error String -> Msg
+pageResponse result =
     case result of
         Ok response ->
-            case response.statusCode of
-                200 ->
-                    -- do something with the response body
-                _ ->
-                    -- handle other status codes
-        Err error ->
-            -- handle errors
+            PageResponse (Ok response.body)
+
+        Err err ->
+            PageResponse (Err err)
 ```
 
-## Deep Dive
+Sample Output:
 
-Under the hood, Elm uses `XMLHttpRequest` to handle HTTP requests. This allows for a consistent API across browsers. Additionally, Elm automatically handles cross-origin requests, eliminating the need for CORS. It also handles caching and retries, making it easier to deal with common HTTP scenarios.
+The above code will retrieve the content of the web page from the specified URL and display it in the view of our web application. If the request is successful, the downloaded content will be rendered as a `Success` string, otherwise an error message will be displayed.
 
-## See Also
+## Deep Dive:
 
-- [Official Elm website](https://elm-lang.org/)
-- [Elm documentation](https://package.elm-lang.org)
-- [Elm subreddit](https://www.reddit.com/r/elm/)
+Downloading web pages has been a fundamental aspect of web development since the early days of the Internet. Traditionally, developers used technologies like AJAX or jQuery to make requests to the server and retrieve data. However, with the rise of modern web frameworks like Elm, this process has become simpler and more efficient.
+
+There are also alternative methods for downloading web pages in Elm, such as using third-party libraries like `elm-lang/html` or `elm/http`. The `Http.get` function used in the example above is a part of the `elm/http` library, which is specifically designed for handling HTTP requests and responses.
+
+When making requests using the `Http.get` function, it is important to handle potential errors such as network connectivity issues or invalid URLs. By using `Result` types and pattern matching, we can easily handle errors and provide appropriate feedback to the user.
+
+## See Also:
+
+To learn more about downloading web pages in Elm, check out the official documentation for the `Http` module on the Elm website. You can also explore other useful libraries and tools for web development in Elm such as `elm/url` and `elm/parser`.

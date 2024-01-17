@@ -1,7 +1,7 @@
 ---
-title:                "Envoi d'une demande http avec une authentification de base"
-html_title:           "Kotlin: Envoi d'une demande http avec une authentification de base"
-simple_title:         "Envoi d'une demande http avec une authentification de base"
+title:                "Envoyer une requête http avec une authentification de base"
+html_title:           "Kotlin: Envoyer une requête http avec une authentification de base"
+simple_title:         "Envoyer une requête http avec une authentification de base"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "HTML and the Web"
@@ -10,44 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Qu'est-ce que c'est & Pourquoi?
+Le fait d'envoyer une requête HTTP avec une authentification basique consiste à ajouter des informations d'identification à la requête afin d'accéder à certaines ressources protégées sur le web. Les programmeurs utilisent cette méthode pour sécuriser leurs applications et s'assurer que seules les personnes autorisées peuvent y accéder.
 
-Les requêtes HTTP sont un moyen couramment utilisé pour communiquer avec des serveurs à travers le web. L’utilisation d’une authentification basique permet de sécuriser ces requêtes en vérifiant l’identité de l’utilisateur. 
+## Comment faire:
+Voici un exemple de code en Kotlin qui illustre comment envoyer une requête HTTP avec une authentification basique et afficher la réponse obtenue :
 
-## Comment faire
+```Kotlin
+val username = "john" // Remplacer par votre nom d'utilisateur
+val password = "12345" // Remplacer par votre mot de passe
+val url = URL("https://www.example.com/api/users") // Remplacer par votre URL
 
-Pour envoyer une requête HTTP avec une authentification basique en utilisant Kotlin, vous pouvez suivre les étapes suivantes :
-
-1. Importer la librairie HTTP dans votre code en utilisant `import com.android.volley.toolbox.HttpClient`
-2. Créer une instance d’HttpClient  pour effectuer la requête 
-3. Utiliser la méthode `setCredentials()` pour ajouter les informations d’authentification de base dans l’en-tête de la requête
-
-```
-import com.android.volley.toolbox.HttpClient
-val httpClient = HttpClient()
-httpClient.setCredentials(username, password)
-```
-
-4. Définir l’URL de la requête à l’aide de la méthode `setUrl()`
-5. Utiliser la méthode `setMethod()` pour spécifier le type de requête (GET, POST, etc.)
-6. Enfin, utiliser la méthode `executeRequest()` pour envoyer la requête et récupérer la réponse.
-
-```
-httpClient.setUrl("https://monsite.com/api")
-httpClient.setMethod("GET")
-val response = httpClient.executeRequest()
-println(response)
+val connection = url.openConnection() as HttpURLConnection
+connection.requestMethod = "GET"
+connection.setRequestProperty("Authorization", "Basic " + Base64.getEncoder().encodeToString("$username:$password".toByteArray()))
+val response = connection.inputStream.bufferedReader().readText()
+println(response) // Affiche la réponse obtenue
 ```
 
-Les informations d’authentification fournies seront incluses dans l’en-tête de la requête envoyée.
+## Plongée en profondeur:
+L'authentification basique est l'une des méthodes les plus anciennes pour sécuriser les connexions sur le web. Elle est définie dans le protocole HTTP et utilise une combinaison de nom d'utilisateur et de mot de passe pour vérifier l'identité de l'utilisateur. Bien que cette méthode soit facile à mettre en place, elle présente des vulnérabilités et est généralement remplacée par des méthodes d'authentification plus sécurisées comme OAuth.
 
-## Plongée en profondeur
+Les alternatives à l'authentification basique incluent l'utilisation de méthodes d'authentification par token, où un token est généré et utilisé pour valider l'identité de l'utilisateur, ou l'utilisation d'un serveur d'authentification centralisé tel que Keycloak.
 
-L’authentification basique est un moyen simple mais efficace de sécuriser les requêtes HTTP. Elle utilise un en-tête d’autorisation pour inclure le nom d’utilisateur et le mot de passe de l’utilisateur dans la requête. Le serveur vérifie ensuite ces informations pour valider ou refuser la demande.
+Dans l'exemple de code ci-dessus, nous utilisons l'encodage Base64 pour sécuriser les informations d'identification envoyées dans la requête, mais cela ne garantit pas la sécurité totale de celles-ci. Il est important de prendre en compte les risques de sécurité lors de l'utilisation de l'authentification basique et de mettre en place des mesures de protection supplémentaires si nécessaire.
 
-Il est important de garder à l’esprit que l’authentification basique n’est pas sécurisée par rapport à d’autres méthodes. Les informations d’identification sont envoyées en texte clair, donc elles peuvent être facilement interceptées si elles sont envoyées sur un réseau non sécurisé. Il est également recommandé d’utiliser l’authentification à deux facteurs pour une sécurité accrue.
-
-## Voir aussi
-
-- [Documentation officielle pour l’utilisation de HttpClient en Kotlin](https://developer.android.com/training/volley/request-custom#kotlin)
-- [Guide complet pour l’authentification basique en utilisant Kotlin](https://www.novoda.com/blog/https-authentication-with-android-volley/)
+## Voir aussi:
+- Documentation officielle de Kotlin : https://kotlinlang.org/
+- Guide de référence sur l'envoi de requêtes HTTP avec Kotlin : https://www.baeldung.com/kotlin-http-request

@@ -10,125 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Qu'est-ce que YAML et pourquoi les programmeurs l'utilisent-ils?
 
-Si vous faites du développement d'application iOS ou macOS, il est fort probable que vous ayez déjà entendu parler de YAML. Mais qu'est-ce que c'est et pourquoi serait-il utile pour vos projets ? YAML est un format de données simple et facile à lire qui peut être utilisé pour stocker des informations de configuration dans vos applications. Il est également très pratique pour décrire des objets de manière structurée, ce qui en fait un choix populaire pour les développeurs.
+YAML, ou "YAML Ain't Markup Language", est un langage de sérialisation de données utilisé par les programmeurs pour stocker et transférer des données structurées de manière lisible pour l'homme. Il est souvent utilisé dans les projets de développement de logiciels pour stocker des configurations, des données de test et d'autres informations structurées.
 
-## Comment faire
-
-Pour utiliser YAML dans votre projet Swift, il existe plusieurs options. Vous pouvez utiliser une librairie externe telle que Yams ou utiliser les fonctionnalités intégrées de Foundation. Voici un exemple simple pour écrire une structure dans un format YAML à l'aide de Foundation :
+## Comment faire :
 
 ```Swift
-import Foundation
+// Créer des données YAML :
+let fruits = ["pomme", "banane", "orange"]
+let yamlFruits = try YAMLEncoder().encode(fruits)
+print(yamlFruits)
 
-// Définition de la structure
-struct Person: Codable {
-    let name: String
-    let age: Int
-    let profession: String
-}
-
-// Création d'une instance
-let john = Person(name: "John", age: 25, profession: "Développeur")
-
-// Encodage en YAML
-let encoder = YAMLEncoder()
-do {
-    let data = try encoder.encode(john)
-    if let yamlString = String(data: data, encoding: .utf8) {
-        print(yamlString)
-    }
-} catch {
-    print(error)
-}
-
-// La sortie sera la suivante :
-// name: "John"
-// age: 25
-// profession: "Développeur"
+// Sortie :
+"- pomme\n- banane\n- orange"
 ```
-
-Il est également possible de lire des données YAML à l'aide de Foundation. Voici un exemple pour décoder les données précédentes en une instance de la structure Person :
 
 ```Swift
-import Foundation
+// Décoder des données YAML :
+let yamlCars = "- Chevrolet\n- Ford\n- Toyota"
+let cars = try YAMLDecoder().decode([String].self, from: yamlCars)
+print(cars)
 
-// Définition de la structure
-struct Person: Codable {
-    let name: String
-    let age: Int
-    let profession: String
-}
-
-// Données YAML à décoder
-let yamlData = """
-name: "John"
-age: 25
-profession: "Développeur"
-""".data(using: .utf8)
-
-// Décodage en une instance de Person
-let decoder = YAMLDecoder()
-do {
-    let john = try decoder.decode(Person.self, from: yamlData!)
-    print(john)
-} catch {
-    print(error)
-}
-
-// La sortie sera la suivante :
-// Person(name: "John", age: 25, profession: "Développeur")
+// Sortie :
+["Chevrolet", "Ford", "Toyota"]
 ```
 
-## Plongeon plus profond
+## Plongée en profondeur :
 
-Mais comment fonctionne exactement l'encodage et le décodage YAML avec Foundation ? Foundation utilise des annotations pour indiquer comment encoder et décoder une structure en YAML. Par exemple, nous pouvons ajouter la clé `yaml` aux propriétés de notre structure pour indiquer comment elles doivent être représentées dans le format YAML :
+Le format YAML a été créé en 2001 en réponse à d'autres formats de sérialisation tels que XML et JSON. Sa structure simple et lisible pour l'homme en font un choix populaire pour stocker des paramètres et des configurations dans les projets de développement de logiciels. D'autres formats de sérialisation courants incluent JSON, XML, et plist (pour les projets iOS et macOS).
 
-```Swift
-struct Person: Codable {
-    let name: String
-    let age: Int
-    let profession: String
-    
-    // Annotations pour encoder en YAML
-    let height: Double
-    let isMarried: Bool
-    
-    enum CodingKeys: String, CodingKey {
-        case name
-        case age
-        case profession
-        case height = "taille"
-        case isMarried = "estMarie"
-    }
-}
+## Voir aussi :
 
-let john = Person(name: "John", age: 25, profession: "Développeur", height: 1.8, isMarried: true)
-
-let encoder = YAMLEncoder()
-do {
-    let data = try encoder.encode(john)
-    if let yamlString = String(data: data, encoding: .utf8) {
-        print(yamlString)
-    }
-} catch {
-    print(error)
-}
-
-// La sortie sera la suivante :
-// name: "John"
-// age: 25
-// profession: "Développeur"
-// taille: 1.8
-// estMarie: true
-```
-
-En utilisant ces annotations, nous pouvons personnaliser notre encodage YAML selon nos besoins.
-
-## Voir aussi
-
-Pour en savoir plus sur l'utilisation de YAML avec Swift, vous pouvez consulter ces ressources utiles :
-
-- [Documentation officielle de YAML](https://yaml.org)
-- [Librairie Yams pour l'utilisation de YAML avec Swift](https://github.com/jpsim/Yams)
-- [Article sur Medium expliquant l'utilisation de YAML avec Swift et Vapor](https://medium.com/flawless-app-stories/how-to-use-yaml-with-vapor-62aa6353efc9)
+- La documentation officielle sur YAML : https://yaml.org/
+- Une introduction complète à YAML : https://www.yamsuite.com/fr/blog/yaml-introduction
+- Un outil en ligne pour tester du code YAML : https://yaml-online-parser.appspot.com/

@@ -1,7 +1,7 @@
 ---
-title:                "עבודת יימל:"
-html_title:           "Java: עבודת יימל:"
-simple_title:         "עבודת יימל:"
+title:                "עבודה עם yaml"
+html_title:           "Java: עבודה עם yaml"
+simple_title:         "עבודה עם yaml"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Data Formats and Serialization"
@@ -10,66 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## למה
+# מה ולמה?
+עבודה עם YAML היא תהליך קל ונוח לתיאור והעברת מידע, שמשמשת כדרך נפוצה לשמירת תצורה והגדרות של יישומים מבוססי טקסט. תיקון בעיות ושיתוף קובצי YAML הוא חלק חשוב מקוד פיתוח וכדאי להיות יכול לעבוד עם פורמט זה.
 
-בקוד המודרני, יתרון גדול שלהכיל נתונים מורכבים בקבצים שונים כדוגמת YAML ניתן לחלוטין לוודא את הנכונות של נתונים ולשמור על קוד נקי ומסודר.
-
-## כיצד לעשות זאת
-
-### התקנת ספריית YAML 
-
-כדי לעבוד עם YAML בקוד Java, יש להתקין את הספרייה הרלוונטית בעזרת Maven או Gradle. ניתן להתקין את הספרייה הבאה על ידי הוספת התלות הבאה לקובץ ה-pom שלך:
+# איך לעבוד עם YAML:
+לדוגמה, הנה קטע קוד שמראה כיצד ליצור קובץ YAML בתוך קוד Java:
 
 ```Java
-<dependency>
-  <groupId>org.yaml</groupId>
-  <artifactId>snakeyaml</artifactId>
-  <version>1.26</version>
-</dependency>
+Yaml yaml = new Yaml(); // ייבוא מודול 'Yaml'
+Map<String, Object> data = new HashMap<>(); // יצירת מפתח ערכים ריקה
+data.put("name", "John"); // הוספת שם למפתח
+data.put("age", 30); // הוספת גיל למפתח
+String yamlOutput = yaml.dump(data); // ייצוא המידע לקובץ YAML
 ```
 
-#### יצירת מפתחת YAML חדשה
+וכאן תוכלו לראות את הפלט של הקוד הקודם:
 
-ניתן ליצור מפתחת חדשה בתוך קוד Java כדלקמן:
-
-```Java
-// ייבוא מחלקת המפתחת
-import org.yaml.snakeyaml.Yaml;
-
-// יצירת מפתחת חדשה
-Yaml yaml = new Yaml();
+```yaml
+name: John
+age: 30
 ```
 
-#### כתיבת YAML
+ישנם גם אפשרויות נוספות לעבוד עם קבצי YAML בעזרת מרכיבי תוכנה נוספים, כמו ייבוא וייצוא של קבצי תצורה, וניתוח נתונים של YAML לצורך הצגתם בפורמט מבונה.
 
-עם המפתחת, ניתן לכתוב נתונים לקובץ YAML בעזרת הפונקציה `dump()`:
+# חצי גלים:
+פרוטוקול פיתוח תווים נקיים (YAML) נוצר בשנת 2001 כפתרון פשוט וברור יותר מתחביר ה-XML ותכנון התצורה של LDAP. בעזרת הפוקוס החדש על שימוש בטקסט פשוט ופחות מורכב, YAML עכשיו הפך לפופולרי מאוד בקוד פיתוח.
 
-```Java
-// יציאת הנתונים לקובץ YAML
-String output = yaml.dump(data);
-System.out.println(output);
-```
+האלטרנטיבות לעבוד עם YAML כוללות JSON ו-XML, אך כשמדובר בפתרונות תצורה והתאמה, YAML הוא בדרך כלל הכי ברור ונוח לשימוש.
 
-הפונקציה `dump()` מאפשרת גם להגדיר הגדרות נתונים מתקדמות כדוגמת סדר סחירה ובחירת ערכים חכמים. לדוגמה, מפתחת זו תמיד תיצור ערכים חדשים במיוחד:
+כדי לרוץ על קובץ YAML בתוך קוד Java, יש להשתמש במודול חיצוני כמו SnakeYAML או Jackson, אשר מאפשרים תיבת כלים עם פונקציות נוספות לטיפול בקבצי YAML ופעולות נוספות.
 
-```Java
-// כתיבת YAML עם סידר סחירה וערכים חכמים
-yaml.dump(data, new DumperOptions().setDefaultFlowStyle(FlowStyle.BLOCK));
-```
-
-כדי לכתוב ערכים חכמים בקובץ YAML, ניתן להשתמש ב- `PropertyUtils`:
-
-```Java
-// כתיבת ערכים חכמים עם PropertyUtils
-PropertyUtils output = Factory.getDefaultPropertyUtils();
-Map<String, Object> map = output.map("key123", new Object());
-```
-
-#### קריאת YAML
-
-בקובץ YAML ניתן לקרוא נתונים באמצעות הפונקציה `load()`:
-
-```Java
-// קריאת נתונים מתוך קובץ YAML
-String input = "key123: string";
-Map<String, Object> map = (Map<String, Object>)yaml.load(input);
+# ראו גם:
+למידע נוסף על שימוש ב-YAML בקוד פיתוח, ניתן לעיין בקוד פתוח של מודולים כמו SnakeYAML ו-Jackson, ולהתעמק בטכניקות שונות שניתן להשתמש בהן עם קבצי YAML בקוד Java.

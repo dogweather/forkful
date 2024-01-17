@@ -1,7 +1,7 @@
 ---
-title:                "Tiedoston lukeminen"
-html_title:           "Gleam: Tiedoston lukeminen"
-simple_title:         "Tiedoston lukeminen"
+title:                "Tekstitiedoston lukeminen"
+html_title:           "Gleam: Tekstitiedoston lukeminen"
+simple_title:         "Tekstitiedoston lukeminen"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Files and I/O"
@@ -10,40 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä ja miksi?
+Tiedostojen lukeminen ohjelmoinnissa tarkoittaa tekstin lukemista tiedostosta ja sen käsittelyä ohjelmassa. Tätä hyödynnetään usein ohjelmissa, jotka tarvitsevat tietoa ulkopuolisista lähteistä, kuten tiedostoista tai tietokannoista.
 
-Lukeminen on olennainen osa ohjelmointia ja tekstifilun lukeminen on usein välttämätöntä monissa ohjelmointitehtävissä. Tässä artikkelissa opimme, kuinka voit lukea tekstifiluja Gleam-ohjelmointikielellä ja miksi se voi olla hyödyllistä.
+## Miten:
+### Avaus
+```
+Gleam.IO.File.open("tekstitiedosto.txt", \get_contents)
+__debug__
+```
+### Esimerkki
+```
+person = [name("Matti"), age(32), occupation("Developer")]
 
-## Kuinka
-
-Text-filun lukeminen Gleamilla on helppoa. Se tapahtuu `File.read/1` funktion avulla, joka ottaa yhden argumentin, joka on tekstifilun polku.
-
-```Gleam
-let result = File.read("tiedostonimi.txt")
+person = [name("Liisa"), age(24), occupation("Designer")] gleam_sys.IO.File.open("henkilötiedot.txt", \get_contents)
+__debug__
+```
+### Tuotanto
+```
+person = [name("Matti"), age(32), occupation("Developer")]
+person = [name("Liisa"), age(24), occupation("Designer")]
 ```
 
-Tämä palauttaa tekstifilun sisällön merkkijonona. Voit sitten käsitellä tätä merkkijonoa haluamallasi tavalla. Esimerkiksi tulostaaksesi tekstifilun sisällön voit käyttää `io` moduulia.
+## Syväsukellus
+Tiedostojen lukemisella on pitkä historia ohjelmoinnissa ja se on vakiinnuttanut paikkansa ohjelmointikielten perustoimintojen joukossa. On myös olemassa muita tapoja lukea tekstitiedostoja, kuten tiedostojen lukeminen binääritietoina tai käyttämällä erikoisempia kirjastoja, kuten Regular Expressions.
 
-```Gleam
-import gleam/io
-
-let file_content = File.read("tiedostonimi.txt")
-
-io.println(file_content)
-```
-
-## Syventävä sukellus
-
-Gleam pyrkii helpottamaan tekstifilujen lukemista tarjoamalla selkeitä ja intuitiivisia ohjelmointirakenteita. Voit esimerkiksi halutessasi lukea vain tietyn määrän merkkejä tekstifilusta, voit käyttää `File.read_chunk/2` funktiota. Tämä ottaa kaksi argumenttia, ensimmäinen on tekstifilun polku ja toinen on haluttu lukumäärä merkkejä.
-
-```Gleam
-let result = File.read_chunk("tiedostonimi.txt", 50)
-```
-
-Tämä palauttaa merkkijonon, joka sisältää 50 ensimmäistä merkkiä tekstifilusta.
-
-## Katso myös
-
-- Gleamin virallinen dokumentaatio: https://gleam.run/
-- Ohjeet tekstifilujen lukemiseen Gleamilla: https://hexdocs.pm/gleam/0.14.0/File.html#read/1
-- Esimerkkejä tekstifilujen lukemisesta Gleamilla: https://github.com/gleam-lang/gleam/blob/master/examples/io/file_read.gleam
+## Katso myös:
+- [Gleam dokumentaatio](https://gleam.run)
+- [Tekstitiedostojen lukeminen Pythonilla](https://realpython.com/read-write-files-python/)
+- [Hex luokan hyödyntäminen tekstitiedostojen lukemisessa Java:ssa](https://www.baeldung.com/java-hex-class-reading-file)

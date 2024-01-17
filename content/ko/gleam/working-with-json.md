@@ -1,7 +1,7 @@
 ---
-title:                "Json 작업하기"
-html_title:           "Gleam: Json 작업하기"
-simple_title:         "Json 작업하기"
+title:                "json 작업"
+html_title:           "Gleam: json 작업"
+simple_title:         "json 작업"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Data Formats and Serialization"
@@ -10,47 +10,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+## What & Why?
+JSON(JavaScript Object Notation)을 다루는 것은 데이터를 교환하고 저장하는 데에 매우 유용합니다. JSON은 기본적으로 속성-값 쌍으로 이루어진 데이터 형식이며, 많은 프로그래밍 언어에서 지원하고 있습니다. 따라서, 프로그래머들은 자주 JSON을 사용하여 데이터를 전달하고 저장하는데 이용합니다.
 
-JSON은 현대 프로그래밍에서 필수적인 데이터 형식입니다. Gleam에서는 JSON을 다루는 과정이 매우 간편하고 효율적입니다. JSON을 다뤄야 하는 이유가 무엇인지 자세히 알아봅시다.
-
-## 어떻게
-
-Gleam에서 JSON 데이터를 다루기 위한 기본적인 방법은 다음과 같습니다.
-
+## How to:
+다음은 Gleam에서 JSON을 다루는 예제 코드입니다.
 ```Gleam
-// JSON 데이터 생성
-let person = { "name": "John", "age": 30 }
+import gleam/json
 
-// JSON 데이터를 문자열로 변환
-let json = person |> Json.from(person)
-
-// 문자열에서 JSON 데이터로 변환
-let person_again = json |> Json.to_person()
+let user = json.encode_user({name: "John", age: 30})
+gleam.log(user.name) // 출력 결과: "John"
 ```
+위의 코드는 `gleam/json` 모듈을 이용하여 JSON 포맷으로 유저 정보를 인코딩하고, 해당 정보를 출력하는 예제입니다.
 
-위 예제에서 `Json.from` 함수는 일반적인 Gleam 자료형을 JSON 문자열로 변환해줍니다. 반대로, `Json.to_person` 함수는 문자열로 된 JSON 데이터를 Gleam 자료형으로 다시 변환해줍니다.
+## Deep Dive:
+JSON은 2000년대 초에 더글러스 크록포드(Douglas Crockford)에 의해 만들어진 데이터 형식입니다. 이전에는 XML과 같은 다른 데이터 형식들이 더 널리 사용되었지만, JSON은 더 간단하고 사용하기 쉬운 형식으로 인기를 얻게 되었습니다. 현재까지 JSON은 데이터 교환 및 저장을 위한 가장 인기있는 형식 중 하나로 남아있습니다. 또한, 대부분의 프로그래밍 언어에서 지원하는 것도 이러한 인기에 큰 역할을 합니다.
 
-또 Gleam에서는 `Json.Encode`와 `Json.Decode` 모듈을 이용해 더 유연하게 JSON 데이터를 다룰 수 있습니다. 아래 예제를 살펴봅시다.
-
-```Gleam
-// JSON 데이터 생성
-let person = { "name": "John", "age": 30 }
-
-// JSON 데이터를 바이트 리스트로 직렬화
-let bytes = person |> Json.Encode.encode_bytes()
-
-// 바이트 리스트를 JSON 데이터로 역직렬화
-let person_again = bytes |> Json.Decode.decode_person()
-```
-
-위 예제는 데이터를 바이트 리스트로 직렬화하고 역직렬화하는 방법을 보여줍니다. 이렇게 함으로써, 다양한 데이터 형식을 다른 언어에서 사용하고 있는 경우에도 Gleam을 이용해 쉽게 JSON 데이터를 다룰 수 있습니다.
-
-## 딥다이브
-
-Gleam에서는 다양한 함수들을 이용해 좀 더 복잡하고 동적인 JSON 처리가 가능합니다. 예를 들어, `Json.Decode.one_of`를 사용하면 JSON 데이터에서 여러 개의 다른 필드 중 하나만 선택하여 값을 추출할 수 있습니다. 또한 `Json.Decode.field` 함수를 사용하면 JSON 데이터에서 특정 필드의 값을 읽어올 수 있습니다. 자세한 내용은 공식 Gleam 문서를 참조해주세요!
-
-## 더 알아보기
-
-- 공식 Gleam 문서: https://gleam.run/documentation
-- JSON 라이브러리: https://github.com/arran4/gleam_json
+## See Also:
+더 많은 정보를 원하신다면, 다음 링크들을 참고하세요.
+- [JSON.org](https://www.json.org/): JSON 공식 웹사이트
+- [Gleam 공식 문서](https://gleam.run/): Gleam 언어 공식 문서

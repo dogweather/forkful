@@ -10,48 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was & Warum?
+Das Finden der Länge eines Strings ist ein häufiger Vorgang in der Programmierung, der es uns ermöglicht, die Anzahl der Zeichen in einem Text auszuwerten. Dies ist besonders nützlich, wenn wir z.B. überprüfen wollen, ob die Eingabe eines Benutzers die richtige Länge für ein Passwort oder eine Telefonnummer hat.
 
-Die Länge einer Zeichenkette zu kennen ist wichtig, um effektiv mit Texten in Javascript zu arbeiten. Es kann beispielsweise hilfreich sein, um die Anzahl der Buchstaben oder Wörter in einem Text zu zählen oder um sicherzustellen, dass die Eingabe eines Nutzers nicht zu lang ist.
+## Wie geht das?
+Mit Javascript ist es sehr einfach, die Länge eines Strings zu finden. Dafür verwenden wir die eingebaute Funktion ```length```, die auf jedem String aufgerufen werden kann. Hier ist ein Beispiel:
 
-## Wie geht's
+```
+// Deklaration einer Variable "text" mit einem Wert
+let text = "Hallo Welt!";
 
-Um die Länge einer Zeichenkette in Javascript zu finden, können Sie die `.length` Eigenschaft verwenden. Schauen wir uns ein Beispiel an:
+// Verwendung der "length" Funktion, um die Länge des Strings zu finden
+let laenge = text.length;
 
-```Javascript
-let string = "Hallo Welt!";
-console.log(string.length); // Output: 11
+// Ausgabe der Länge in der Konsole
+console.log(laenge); // Output: 11
 ```
 
-Hier haben wir die Variable `string` mit dem Wert "Hallo Welt!" erstellt und dann die `.length` Eigenschaft aufgerufen, um die Länge der Zeichenkette zu finden. Wir können sehen, dass das Ergebnis 11 ist, da die Leerzeichen und Satzzeichen ebenfalls zur Länge der Zeichenkette zählen.
+## Tiefergehende Informationen
+Die Funktion ```length``` gibt uns die Anzahl der Zeichen in einem String zurück, einschließlich Leerzeichen und Sonderzeichen. Sie ist sehr effizient und kann auf allen modernen Webbrowsern und Plattformen verwendet werden.
 
-Es ist auch möglich, die `.length` Eigenschaft auf Zeichenketten zu verwenden, die aus Variablen bestehen. Schauen wir uns ein weiteres Beispiel an:
+Alternativ können wir auch die Javascript-Methode ```String.prototype.size``` verwenden, die das gleiche Ergebnis liefert. Allerdings ist sie nicht so weit verbreitet und wird daher nicht so oft genutzt.
 
-```Javascript
-let name = "Max";
-let greeting = `Hallo ${name}!`;
-console.log(greeting.length); // Output: 8
-```
-
-Hier haben wir die Variable `greeting` erstellt, die den Wert "Hallo Max!" hat, indem wir den Variablen `name` in einer Template Literal Zeichenkette verwenden. Auch hier zählen die Leerzeichen und Satzzeichen zur Länge der Zeichenkette.
-
-Es ist wichtig zu beachten, dass die `.length` Eigenschaft nur auf Zeichenketten verwendet werden kann, daher funktioniert sie nicht auf Zahlen oder booleschen Werten.
-
-## Tiefer eintauchen
-
-Die `.length` Eigenschaft gibt uns die Gesamtzahl der Zeichen in einer Zeichenkette zurück, einschließlich Leerzeichen und Satzzeichen. Wenn wir jedoch nur die Anzahl der Buchstaben in einer Zeichenkette finden möchten, können wir die `.replace()` Methode verwenden, um alle Leerzeichen und Satzzeichen durch leere Zeichen zu ersetzen und dann die Länge der resultierenden Zeichenkette zu finden.
-
-Schauen wir uns ein Beispiel an:
-
-```Javascript
-let string = "Hallo Welt!";
-let newString = string.replace(/[^\w]/g, ""); // Entfernt alle Leerzeichen und Satzzeichen
-console.log(newString.length); // Output: 9
-```
-
-Hier haben wir die `.replace()` Methode verwendet, um alle Leerzeichen und Satzzeichen aus der Zeichenkette "Hallo Welt!" zu entfernen und in der Variablen `newString` zu speichern. Dann können wir die Länge dieser Variablen abrufen, um die Anzahl der Buchstaben zu finden.
-
-## Siehe auch
-
-- [MDN Web Docs: String length](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length)
-- [MDN Web Docs: String replace()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
+## Weitere Quellen
+- [MDN Web Docs: String.prototype.length](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/String/length)
+- [MDN Web Docs: String.prototype.size()](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/String/size)

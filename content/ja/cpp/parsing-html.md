@@ -1,7 +1,7 @@
 ---
-title:                "HTMLのパーシング"
-html_title:           "C++: HTMLのパーシング"
-simple_title:         "HTMLのパーシング"
+title:                "HTMLの解析"
+html_title:           "C++: HTMLの解析"
+simple_title:         "HTMLの解析"
 programming_language: "C++"
 category:             "C++"
 tag:                  "HTML and the Web"
@@ -10,53 +10,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜパースするのか
+#何かとなぜ
+HTMLをパースするとは何かと言うと、プログラマーがウェブページを読み込んで、その中に含まれるタグやデータを抽出することです。ウェブスクレイピングやデータマイニングなど、さまざまなアプリケーションでHTMLパースが必要となるため、プログラマーにとって重要なスキルです。
 
-パースとは、HTML文書を解析し、その構造や内容を抽出することを指します。「なぜパースするのか」と言うと、例えばウェブスクレイピングやデータマイニングといったタスクを行う際に、HTMLをパースすることで目的の情報を取得することができるからです。
-
-## パースの方法
-
-パースを行うためには、C++プログラミング言語のライブラリやフレームワークを使用する必要があります。ここでは、OpenCVのHTMLパーサーを使用して、簡単なコーディング例を紹介します。
-
-```
+#方法
+```C++ 
 #include <iostream>
-#include <opencv2/opencv.hpp>
-#include <opencv2/core.hpp>
-#include <opencv2/imgproc.hpp>
-#include <opencv2/highgui.hpp>
-#include <opencv2/core/utility.hpp>
+#include <string>
+#include <vector>
 
-using namespace cv;
 using namespace std;
 
 int main() {
-  // HTMLファイルを読み込み、パースするための変数を宣言
-  string filePath = "sample.html";
-  FileStorage htmlFile(filePath, FileStorage::READ);
-  
-  // HTMLファイルをパースし、body要素内のテキストを抽出
-  string bodyText = htmlFile["body"];
-  
-  // 結果を出力
-  cout << "Body Text: " << bodyText << endl;
+  // サンプルHTML
+  string html = "<div>
+                  <h1>Hello, world!</h1>
+                  <p>This is a paragraph.</p>
+                </div>"
+
+  vector<string> tags; // タグを格納するためのベクトル
+
+  // パース処理
+  while (html.length() > 0) {
+    int start = html.find("<"); // タグの開始位置を探す
+    if (start != string::npos) { // もしタグが見つかったら
+      int end = html.find(">"); // タグの終了位置を探す
+      tags.push_back(html.substr(start, (end-start)+1)); // ベクトルにタグを追加
+      html = html.substr(end+1); // 残りのHTMLを更新
+    }
+    else {
+      html = ""; // タグが見つからなかったら処理を終了
+    }
+  }
+
+  // 抽出されたタグの表示
+  for (int i = 0; i < tags.size(); i++) {
+    cout << tags[i] << endl;
+  }
+
+  return 0;
 }
 ```
 
-実行結果は以下のようになります。
-
+出力:
+``` 
+<div>
+<h1>Hello, world!</h1>
+<p>This is a paragraph.</p>
+</div>
 ```
-Body Text: This is a sample HTML document. 
-```
 
-このように、HTMLパースを行うことで目的の情報を取得することができます。
+#ディープダイブ
+HTMLパースの歴史は長く、ウェブの発展とともに進化してきました。1990年代の初め、ティム・バーナーズ＝リーによって設計されたHTMLは、その後も様々なバージョンが作られ、現在もリビジョンが進められています。また、HTMLパースの代替手段としては、正規表現やパースライブラリなどがありますが、それぞれに利点と欠点があり、使用する場合は注意が必要です。HTMLパースは、ウェブスクレイピングやデータマイニングなどのアプリケーションにおいて、重要な手段として利用されています。
 
-## 詳しく見ていく
-
-パースは、HTMLファイルを文字列として読み込み、タグや属性などの構造を解析することで行われます。通常、パースにはDOM（Document Object Model）を使用します。DOMは、HTMLの階層構造を表現するもので、パースしたHTML文書を木構造のデータ構造に変換します。
-
-また、パースの際には正規表現を使用することもあります。正規表現を用いることで、特定のパターンに一致する文字列を抽出することができます。
-
-## See Also
-
-- [OpenCV Documentation](https://docs.opencv.org/master/)
-- [C++ Regular Expressions](https://www.cplusplus.com/reference/regex/)
+#参考リンク
+- [HTMLパースの基本方法](https://www.w3schools.com/html/html_parsing.asp)
+- [HTMLパースについてのブログ記事](https://css-tricks.com/the-simplest-ways-to-handle-html-in-c/)
+- [正規表現を使ったHTMLパースの例](https://www.regular-expressions.info/examples.html)

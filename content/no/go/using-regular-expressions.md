@@ -10,54 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
-Om du ønsker å finne, filtrere eller manipulere tekst på en enkel og effektiv måte, er regular expressions (regex) svaret. Ved å bruke regex, kan du søke etter bestemte mønstre i en tekststreng og deretter utføre spesifikke handlinger basert på disse mønstrene.
+## Hva & Hvorfor?
 
-## Slik gjør du det
-For å bruke regular expressions i Go, må du først importere "regexp" pakken. Deretter kan du bruke funksjonen "MatchString" for å søke etter et gitt mønster i en streng. For eksempel:
+Å bruke regulære uttrykk er en måte for programmerere å søke etter og manipulere tekst på en effektiv måte. Det er spesielt nyttig når man ønsker å finne mønstre i store mengder tekst eller å gjøre omformatering av data. Regulære uttrykk finnes i de fleste programmeringsspråk, inkludert Go, og er et viktig verktøy for å strukturere og prosessere tekst.
+
+## Slik gjør du det:
+
+For å bruke regulære uttrykk i Go, kan du bruke "regexp" pakken. Først må du lage et regulært uttrykk ved å bruke funksjonen "Compile" og angir mønsteret du ønsker å finne. Deretter kan du bruke funksjoner som "Match" eller "FindString" for å finne matchende tekst eller "ReplaceAllString" for å endre teksten.
 
 ```Go
-package main
-
-import (
-	"fmt"
-	"regexp"
-)
-
-func main() {
-	// Definerer en tekststreng
-	text := "Dette er en teststreng for å vise bruk av regex i Go"
-
-	// Søker etter mønsteret "regex" i strengen
-	match, _ := regexp.MatchString("regex", text)
-
-	// Printer ut resultatet
-	fmt.Println(match) // Output: false
-}
+re := regexp.Compile("a+[b-z]+c+")
+matches := re.FindString("abcdefg") // matches = "abc"
+newString := re.ReplaceAllString("abcdefg", "123") // newString = "123defg"
 ```
 
-Som du kan se, returnerer "MatchString" en boolsk verdi avhengig av om mønsteret eksisterer i strengen eller ikke. Du kan også bruke "FindAllString" for å finne alle forekomster av et mønster i en streng og "ReplaceAllString" for å erstatte forekomster av et mønster med en annen streng.
+## Dykk dypere:
 
-## Dypdykk
-Regex uttrykk kan bli ganske komplekse, og det er viktig å forstå de forskjellige elementene som utgjør dem. For eksempel betyr "regex" i vårt første eksempel bare at det skal matches på den eksakte strengen "regex". Men du kan også bruke spesielle symboler og uttrykk for å matche et bredere spekter av tekst. Her er noen vanlige symboler:
+Regulære uttrykk ble først introdusert i programmeringsspråket SNOBOL i 1960-årene. De har siden blitt en viktig del av programmering og finnes i dag i de fleste programmeringsspråk. Noen alternativer til regulære uttrykk er string-manipuleringsfunksjoner som "Split" og "Replace" i Go eller "grep" kommandoen i terminalen. Det er også verdt å merke seg at noen mønstre kan være vanskelige å uttrykke med regulære uttrykk og kan kreve mer komplekse algoritmer.
 
-- "." - Matcher ethvert tegn
-- "^" - Matcher starten av en streng
-- "$" - Matcher slutten av en streng
-- "*" - Matcher null eller flere forekomster av det foregående elementet
-- "+" - Matcher en eller flere forekomster av det foregående elementet
-- "?" - Matcher null eller en forekomst av det foregående elementet
-- "[]" - Matcher ethvert tegn som er inkludert i parentesene
-- "[^ ]" - Matcher ethvert tegn som ikke er inkludert i parentesene
-- "|" - Matcher enten uttrykket til venstre eller til høyre
+## Se også:
 
-For en mer omfattende og detaljert forklaring av regular expressions, anbefaler vi å ta en titt på følgende ressurser:
-
-- [Go Documentation: regexp Package](https://golang.org/pkg/regexp/)
-- [Regular Expressions 101](https://regex101.com/)
-- [Regular Expressions Tutorial på W3Schools](https://www.w3schools.com/jsref/jsref_obj_regexp.asp)
-
-## Se også
-- [Go Dokumentasjon: regexp Pakke](https://golang.org/pkg/regexp/)
-- [Regular Expressions 101](https://regex101.com/)
-- [Regular Expressions Tutorial på W3Schools](https://www.w3schools.com/jsref/jsref_obj_regexp.asp)
+- https://golang.org/pkg/regexp/
+- https://regexr.com/
+- https://www.regular-expressions.info/

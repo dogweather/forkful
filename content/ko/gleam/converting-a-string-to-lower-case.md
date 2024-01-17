@@ -1,7 +1,7 @@
 ---
-title:                "문자열을 소문자로 변환하기"
-html_title:           "Gleam: 문자열을 소문자로 변환하기"
-simple_title:         "문자열을 소문자로 변환하기"
+title:                "스트링을 소문자로 변환하기"
+html_title:           "Gleam: 스트링을 소문자로 변환하기"
+simple_title:         "스트링을 소문자로 변환하기"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -10,31 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+안녕, 프로그래머 여러분!
 
-문자열을 소문자로 변환하는 것에 관심이 있을 수 있습니다. 예를 들어, HTML 양식에서 사용자가 입력한 값을 처리할 때 대문자나 소문자에 구애받지 않도록 하기 위해서입니다.
+Gleam 프로그래밍 언어에서는 문자열을 소문자로 변환하는 기능이 있습니다. 이 기능에 대해서 잠깐 알아보고, 왜 프로그래머들이 이것을 하는지에 대해 알아봅시다.
 
-## 어떻게 하나요?
+## 무엇 & 왜?
 
-```Gleam
-let string = "Hello World"
-let lower_case = String.to_lower_case(string)
-```
+문자열을 소문자로 변환하는 것은, 문자열의 모든 대문자를 소문자로 변환하는 것을 의미합니다. 프로그래머들은 이 기능을 사용하여 문자열을 단순하게 만들고, 정확성을 보장하기 위해 사용합니다.
 
-`String.to_lower_case` 함수를 사용하여 문자열을 소문자로 변환할 수 있습니다. 위의 코드에서는 "Hello World"라는 문자열을 소문자로 변환한 뒤 `lower_case` 변수에 저장되어 있습니다. 코드를 실행하면 `lower_case` 변수에는 "hello world"라는 값이 저장되게 됩니다.
+## 사용 방법:
 
 ```Gleam
-let string = "저를 소문자로 바꿔 주세요"
-let lower_case = String.to_lower_case(string)
+let my_string = "HeLLo"
+my_string |> String.to_lower_case
 ```
+위의 코드는 "hello"를 출력합니다.
 
-위의 코드에서는 한글 문자열도 소문자로 변환할 수 있습니다. 또한, `String.to_upper_case` 함수를 사용하면 문자열을 대문자로 변환할 수도 있습니다.
+문자열이 아닌 다른 객체들을 변환할 수 있습니다. 예를 들어, 숫자나 불린값들도 소문자로 변환할 수 있습니다.
 
-## 깊게 살펴보기
+## 더 깊게 들어가보기:
 
-`String.to_lower_case` 함수를 사용하면 입력된 문자열에 포함된 모든 글자를 소문자로 바꿀 수 있습니다. 이 함수는 영문 대문자, 소문자, 한글 모두를 변환할 수 있습니다. 또한, 특수문자나 숫자는 변환하지 않기 때문에 HTML 태그와 같은 문자열을 처리할 때 유용하게 사용될 수 있습니다.
+이 기능은 미국의 인코딩 규칙인 ASCII 코드에서 시작되었습니다. 이러한 규칙을 따라야 다른 사람들이 쉽게 이해하고 사용할 수 있기 때문입니다. 다른 언어와는 다르게, Gleam에서는 이 기능이 기본적으로 내장되어 있기 때문에, 별도로 라이브러리를 불러오지 않아도 됩니다.
 
-## 다른 글들도 보세요
+때때로, 대문자를 소문자로 변환하는 대안으로는, 문자열을 모두 소문자로 입력하는 방법이 있습니다. 그러나, 이렇게 하게 되면 코드의 길이가 더 길어지고, 가독성이 떨어지게 됩니다.
 
-- [Gleam 공식 문서](https://gleam.run/documentation/#string) - Gleam의 모든 내장 함수에 대한 자세한 설명을 볼 수 있습니다.
-- [Elixir vs Gleam: 뭐가 다를까?](https://gleam.run/posts/elixir_vs_gleam/) - Elixir와 Gleam의 차이점을 알아보는 재미있는 글입니다.
+## 관련 소스 보기:
+
+확인해볼 만한 다른 자료들을 아래 링크를 통해 확인해보세요.
+- [Gleam 공식 문서](https://gleam.run)
+- [Gleam의 String 라이브러리](https://gleam.run/libraries/standard-library/#string)

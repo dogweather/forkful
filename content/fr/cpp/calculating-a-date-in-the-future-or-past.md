@@ -10,42 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+# Qu'est-ce et pourquoi?
 
-Vous êtes peut-être plongé dans une nouvelle application de gestion de tâches ou vous prévoyez un voyage, et vous voulez savoir quelle sera la date dans un mois ou dans un an à partir de maintenant. Cela peut sembler contre-intuitif, mais calculer une date dans le futur ou dans le passé peut être très utile dans de nombreuses situations.
+Calculer une date dans le passé ou le futur est une tâche courante dans la programmation. Cela consiste à trouver une nouvelle date en ajoutant ou en soustrayant un certain nombre de jours, de semaines, de mois ou d'années à une date existante. Les programmeurs le font souvent pour planifier des événements, pour suivre des délais ou pour effectuer des tâches récurrentes à une date spécifique.
 
-## Comment faire
+# Comment faire:
 
-Pour calculer une date dans le futur ou dans le passé en utilisant C++, vous devez d'abord inclure la bibliothèque `<chrono>` qui fournit des fonctions pour travailler avec le temps. Ensuite, vous devez créer un objet de type `std::chrono::system_clock::time_point`, qui contiendra la date actuelle. Ensuite, vous pouvez effectuer des calculs en utilisant les fonctions `std::chrono::duration` et `std::chrono::time_point`. Voici un exemple de code pour calculer et afficher la date dans 10 jours :
+Voici un exemple de code simple en ```C++``` pour calculer une date dans le futur en ajoutant 10 jours à la date actuelle:
 
-```C++
-#include <chrono>
+```
 #include <iostream>
+#include <chrono>
 
-int main() {
-    // Crée un objet time_point avec la date actuelle
-    std::chrono::system_clock::time_point date = std::chrono::system_clock::now();
+using namespace std;
 
-    // Calcule la date dans 10 jours en ajoutant une duration de 10 jours
-    date += std::chrono::duration<int>(10);
+int main()
+{
+    // Date actuelle
+    chrono::system_clock::time_point now = chrono::system_clock::now();
 
-    // Affiche la date dans le format YYYY/MM/DD
-    std::cout << std::chrono::system_clock::to_time_t(date) << std::endl;
+    // Ajout de 10 jours à la date actuelle
+    chrono::hours hrs(24 * 10);
+    chrono::system_clock::time_point future_date = now + hrs;
+
+    // Conversion en forme lisible
+    time_t tt = chrono::system_clock::to_time_t(future_date);
+    tm *ptm = localtime(&tt);
+    cout << "La date dans 10 jours sera : " << ptm->tm_mday << "/" << (ptm->tm_mon+1) << "/" << (ptm->tm_year+1900) << endl;
 
     return 0;
 }
 ```
+**Sortie:**
+```
+La date dans 10 jours sera : 2/9/2020
+```
 
-Le code ci-dessus utilise des fonctions de la bibliothèque `<chrono>` pour ajouter 10 jours à la date actuelle et afficher la nouvelle date au format [UNIX time](https://en.wikipedia.org/wiki/Unix_time). Vous pouvez également utiliser des fonctions telles que `std::chrono::duration_cast` pour convertir la date dans d'autres formats.
+# Plongeons plus profondément:
 
-## Plongée profonde
+- Contexte historique: Calculer une date dans le futur ou le passé a été une tâche difficile avant l'invention des ordinateurs. Les gens utilisaient des calendriers et des formules mathématiques pour le faire.
+- Alternatives: En plus des opérations arithmétiques, les programmeurs peuvent également utiliser des bibliothèques spéciales pour la manipulation de dates, telles que ```boost::date_time```.
+- Détails d'implémentation: Le code ci-dessus utilise la bibliothèque standard ```chrono``` pour effectuer des opérations sur les dates. Il utilise également la fonction ```localtime``` pour convertir la date en une forme lisible.
 
-Si vous voulez en savoir plus sur la manipulation des dates en C++, il y a quelques concepts clés à comprendre. Tout d'abord, il y a les différents types de time_point, qui peuvent être utilisés pour représenter le temps absolu, relatif ou en heures et minutes. Ensuite, il y a les durations, qui sont des unités de temps telles que les jours, les heures, les minutes, etc. En utilisant ces concepts, vous pouvez effectuer des calculs précis avec les dates et les heures en C++.
+# Voir également:
 
-Pour une explication plus détaillée sur l'utilisation de `<chrono>` en C++, vous pouvez consulter la documentation officielle de [C++ référence](https://fr.cppreference.com/w/cpp/chrono).
-
-## Voir aussi
-
-- [Manipulation des dates et heures en C++](https://www.tutorialspoint.com/cplusplus/cpp_date_time.htm)
-- [La bibliothèque <chrono> en C++](https://www.geeksforgeeks.org/time-point-structures-cpp/)
-- [Calculer une date dans le futur ou dans le passé en C++](https://www.softwaretestinghelp.com/calculate-date-and-time-in-cpp/)
+- [Tutorial sur la manipulation de dates en C++](https://www.learncpp.com/cpp-tutorial/51-working-with-dates-and-times/)
+- [Documentation sur la bibliothèque standard «chrono»](https://en.cppreference.com/w/cpp/chrono)

@@ -1,7 +1,7 @@
 ---
-title:                "Lettura di un file di testo"
-html_title:           "Rust: Lettura di un file di testo"
-simple_title:         "Lettura di un file di testo"
+title:                "Leggere un file di testo"
+html_title:           "Rust: Leggere un file di testo"
+simple_title:         "Leggere un file di testo"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Files and I/O"
@@ -10,36 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+## Cosa & Perché?
+La lettura di un file di testo è un'operazione comune per i programmatori, che consiste nell'accedere ai contenuti di un file di testo attraverso il codice. Questo può essere utile per leggere dati da un file di configurazione, un file di log o per elaborare informazioni strutturate contenute in un testo.
 
-Probabilmente stai pensando di leggere un file di testo perché stai lavorando su un progetto di programmazione che richiede l'accesso a dati da un file esterno. La lettura di file di testo è un'operazione comune e fondamentale nella programmazione moderna.
-
-## Come fare
-
-Per leggere un file di testo utilizzando Rust, è necessario prima creare un oggetto `File` che rappresenti il file che si vuole leggere. Ciò può essere fatto utilizzando il metodo `File::open()`, fornendo il percorso del file come argomento. Ecco un esempio di codice che legge un file di testo chiamato "test.txt" e ne stampa il contenuto sulla console:
-
+## Come fare:
 ```Rust
 use std::fs::File;
-use std::io::prelude::*;
+use std::io::BufReader;
+use std::io::BufRead;
 
 fn main() {
-    let file = File::open("test.txt").expect("Errore nell'apertura del file.");
-    let mut contenuto = String::new();
-    file.read_to_string(&mut contenuto).expect("Errore nella lettura del file.");
-    println!("{}", contenuto);
+    let file = File::open("test.txt").expect("Impossibile aprire il file");
+    let reader = BufReader::new(file);
+    for line in reader.lines() {
+        println!("{}", line.unwrap());
+    }
 }
 ```
+Esempio di output:
+```
+Ciao, questo è un file di testo
+utilizzato per mostrare come leggere un file in Rust.
+```
 
-L'output di questo codice dovrebbe essere il contenuto del file "test.txt" stampato sulla console.
+## Deep Dive:
+La lettura di file di testo è supportata nativamente in Rust attraverso il modulo `std::fs` che offre funzionalità per accedere ai file e creare lettore di buffer per la loro lettura. In passato, i programmatori utilizzavano librerie esterne come `std::fs::File` o `std::fs::CanRead` per leggere i file di testo. Tuttavia, a partire dalla versione 1.16 di Rust, è stata introdotta l'implementazione dei lettori di buffer in modo nativo per migliorare le prestazioni e semplificare il processo di lettura dei file.
 
-## Approfondimento
-
-La lettura dei file di testo è una delle operazioni più comuni nella programmazione e Rust offre diverse opzioni per gestirla in modo efficiente. Ad esempio, è possibile specificare l'encoding del file aperto utilizzando il metodo `File::open()`, che ha un argomento opzionale per specificarlo.
-
-Inoltre, è possibile utilizzare il pacchetto `std::fs` per accedere a funzioni più avanzate di gestione dei file, come la lettura e la scrittura di singole linee o il controllo dei permessi di accesso.
-
-## Vedi anche
-
-- [Documentazione ufficiale di Rust su lettura e scrittura di file](https://doc.rust-lang.org/stable/std/fs/index.html)
-- [Esempi pratici di lettura e scrittura di file con Rust](https://www.rust-lang.org/learn/get-started)
-- [Tutorial su input/output in Rust](https://www.tutorialspoint.com/rust/rust_input_output.htm)
+## Vedi anche:
+- [Documentazione del modulo std::fs in Rust](https://doc.rust-lang.org/std/fs/)
+- [Rust Cookbook: Lettura di un file](https://rust-lang-nursery.github.io/rust-cookbook/file/internals.html)

@@ -10,52 +10,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mikä & Miksi?
+Etsiminen ja korvaaminen tekstissä tarkoittaa tekstin tiettyjen merkkien tai sanojen etsimistä ja niiden korvaamista toisilla. Tämä on yleinen tehtävä ohjelmoinnissa, sillä se voi auttaa tehostamaan ja automatisoimaan tekstin muokkausta ja korjaamista.
 
-Syy, miksi rust-kielellä tekstin etsiminen ja korvaaminen on hyödyllistä, johtuu suurelta osin koodin ylläpidettävyydestä. Tekstin korvaamisella voidaan nopeasti tehdä massiivisia muutoksia tekstipohjaisessa koodissa, mikä säästää aikaa ja vaivaa koodin kehityksen ja parantelun yhteydessä.
+## Miten:
+Esimerkkejä koodista ja tulostuksesta ```Rust ...``` koodilohkoissa.
 
-## Miten
+Etsiminen ja korvaaminen tekstissä voidaan toteuttaa Rustin standardikirjaston `replace()` funktiolla. Se ottaa kaksi merkkijonoa argumentteina ja palauttaa uuden merkkijonon, jossa kaikki ensimmäisen argumentin esiintymät on korvattu toisen argumentin sisältämällä merkkijonolla.
 
-Rustilla tekstien etsiminen ja korvaaminen onnistuu helposti käyttäen metodikutsua ```replace```. Tämä kutsu ottaa vastaan kaksi merkkijonoa: etsittävän tekstin ja sen korvaavan tekstin. Esimerkiksi:
-
-```Rust
-let teksti = "Tervetuloa, maailma!";
-let korvaus = teksti.replace("maailma", "Rust-ohjelmoijat");
-println!("{}", korvaus);
-
-//tulostaa "Tervetuloa, Rust-ohjelmoijat!"
+```
+let original = "Tervetuloa, maailma!";
+let uusi = original.replace("Tervetuloa", "Hei");
+println!("{}", uusi); // tulostuu "Hei, maailma!"
 ```
 
-Huomaa, että ```replace``` palauttaa uuden merkkijonon eikä muuta alkuperäistä merkkijonoa. Tämä varmistaa, että alkuperäinen teksti säilyy muuttumattomana ja toimii hyvin tekstien etsintälogiikan kanssa.
+## Syventyvä sukellus:
+Etsiminen ja korvaaminen tekstissä on ollut osa ohjelmointia jo pitkään, ja sitä on toteutettu monilla eri tavoilla eri kielissä. Esimerkiksi Perlissä on omat funktiot tätä tarkoitusta varten. Lisäksi jotkut tekstieditorit, kuten Vim, tarjoavat myös mahdollisuuden etsiä ja korvata tekstiä.
 
-Voit myös rajoittaa, kuinka monessa kohdassa tekstiä korvataan. Tämä tapahtuu antamalla kolmas parametri ```replace```-metodille, joka kertoo korvausten määrän. Esimerkiksi:
-
-```Rust
-let teksti = "Hei kaikki, hei sinä, hei heille!";
-let korvaus = teksti.replace("hei", "moi", 2);
-println!("{}", korvaus);
-
-//tulostaa "Moi kaikki, moi sinä, hei heille!"
-```
-
-Jos haluat etsiä ja korvata tekstiä kirjainkoosta huolimatta, voit käyttää ```replace```-metodin sijasta ```replace_all```-metodia. Tämä metodi korvaa kaikki esiintymät, jotka vastaavat annettua merkkijonoa, riippumatta siitä, ovatko ne isoja vai pieniä kirjaimia. Esimerkiksi:
-
-```Rust
-let teksti = "Kirjautuminen onnistui!";
-let korvaus = teksti.replace_all("ONNISTUI", "epäonnistui");
-println!("{}", korvaus);
-
-//tulostaa "Kirjautuminen epäonnistui!"
-```
-
-## Syvemmällä
-
-Rust tarjoaa myös muita työkaluja tekstin käsittelyyn, kuten säännöllisiä lausekkeita ja string manipulointiin tarkoitettuja kääntäjäbiblioteekkeja. Nämä voivat olla hyödyllisiä monimutkaisemmissa tekstinkäsittelykäytännöissä.
-
-Rustin löydät myös useita käyttäjän luomia paketteja tekstinetsintään ja korvaamiseen, kuten ```regex``` ja ```strsim```. Nämä paketit tarjoavat lisäominaisuuksia ja monipuolisempia vaihtoehtoja kuin Rustin sisäiset vaihtoehdot.
-
-## Katso myös
-
-- https://doc.rust-lang.org/std/string/struct.String.html#method.replace
-- https://doc.rust-lang.org/std/string/struct.String.html#method.replace_all
-- https://github.com/rust-lang/regex
+## Katso myös:
+- [Rustin dokumentaatio replace() funktiosta](https://doc.rust-lang.org/std/primitive.str.html#method.replace)
+- [Perl-in-place -korvaus](https://www.perl.com/pub/2004/08/09/commandline.html/)
+- [Vim - etsi ja korvaa](https://vim.fandom.com/wiki/Search_and_replace)

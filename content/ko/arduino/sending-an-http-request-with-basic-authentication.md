@@ -1,7 +1,7 @@
 ---
-title:                "간단 인증과 함께 http 요청 보내기"
-html_title:           "Arduino: 간단 인증과 함께 http 요청 보내기"
-simple_title:         "간단 인증과 함께 http 요청 보내기"
+title:                "기본 인증과 함께 http 요청 보내기"
+html_title:           "Arduino: 기본 인증과 함께 http 요청 보내기"
+simple_title:         "기본 인증과 함께 http 요청 보내기"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "HTML and the Web"
@@ -10,103 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+우리는 프로그램을 작성할 때 종종 다른 서버 또는 웹사이트와 통신해야 할 때가 있습니다. 이 때 가장 일반적인 방법 중 하나는 HTTP 요청을 보내는 것입니다. 하지만 때로는 이 요청에 추가적인 보안이 필요할 수 있습니다. 이때 자주 사용되는 방법 중 하나가 바로 "기본 인증"이라는 방법입니다. 이 방법을 사용하면 요청을 전송하는 프로그램이나 장치의 신원을 확인할 수 있습니다.
 
-HTTP 요청을 기본 인증과 함께 보내는 것에 참여하는 이유는 서버와 통신하고 데이터를 전송하기 위해서입니다.
+## 무엇인가요? 왜 사용할까요?
+"기본 인증"은 단순히 말해서 서버로 요청을 보낼 때 인증 정보를 포함시키는 것입니다. 이는 보안을 강화하는 한 가지 방법입니다. 프로그래머들은 이 방법을 사용하여 요청을 전송하는 장치나 프로그램의 신원을 확인할 수 있습니다.
 
-## 하는 방법
+## 사용 방법:
+"기본 인증"을 사용하는데는 몇 가지 단계가 필요합니다.
 
-기본 인증과 함께 HTTP 요청을 보내는 방법은 다음과 같습니다.
+1. 먼저 우리는 HTTPClient 라이브러리를 사용하여 원하는 주소의 클라이언트를 만듭니다. 예를 들어, "www.example.com" 주소의 클라이언트를 만들려면 다음과 같이 작성합니다.
 
 ```Arduino
-#include <ESP8266WiFi.h>
-#include <WiFiClientSecure.h>
-
-// Wi-Fi 연결 설정
-const char* ssid = "YourNetworkName";
-const char* password = "YourNetworkPassword";
-
-// 요청할 서버의 URL과 포트 번호
-const char* host = "www.example.com";
-const uint16_t port = 443;
-
-// Basic Authentication에 사용할 사용자 이름과 비밀번호
-const char* username = "YourUsername";
-const char* password = "YourPassword";
-
-// HTTPS 클라이언트 생성
-WiFiClientSecure client;
-
-void setup() {
-  // Wi-Fi 연결
-  Serial.begin(9600);
-  delay(10);
-  Serial.println();
-  Serial.print("Connecting to ");
-  Serial.println(ssid);
-  WiFi.begin(ssid, password);
-  while (WiFi.status() != WL_CONNECTED) {
-    delay(500);
-    Serial.print(".");
-  }
-  Serial.println("");
-  Serial.println("WiFi connected.");
-
-  // HTTPS 연결
-  Serial.print("Connecting to ");
-  Serial.println(host);
-  if (!client.connect(host, port)) {
-    Serial.println("Connection failed.");
-    return;
-  }
-
-  // HTTP 헤더 생성
-  String auth = username;
-  auth.concat(":");
-  auth.concat(password);
-  char base64str[((auth.length() + 2) / 3) * 4] + 1;
-  base64_encode(base64str, auth.c_str(), auth.length());
-  String header = "Authorization: Basic ";
-  header += base64str;
-  header += "\r\n";
-
-  // HTTPS 요청 전송
-  client.println("GET / HTTP/1.1");
-  client.print(header);
-  client.println("Host: www.example.com");
-  client.println("Connection: close");
-  client.println();
-
-  // 응답 내용 출력
-  while (client.connected()) {
-    String line = client.readStringUntil('\n');
-    if (line == "\r") {
-      break;
-    }
-  }
-  String line = client.readStringUntil('\n');
-  Serial.println("Response:");
-  Serial.println(line);
-}
-
-void loop() {
-
-}
+HTTPClient http;
+http.begin("http://www.example.com");
 ```
 
-## 깊이 들어가기
+2. 다음으로 인증 정보를 추가해야 합니다. 이를 위해 setAuthorization 메서드를 사용하며, 첫 번째 매개변수로는 사용자 이름을, 두 번째 매개변수로는 비밀번호를 입력합니다.
 
-기본 인증은 HTTP 헤더에 사용자 이름과 비밀번호를 인코딩하여 전송하는 인증 방식입니다. 이를 통해 서버는 사용자의 인증 정보를 확인하고, 유효한 요청인지 판단할 수 있습니다. 기본 인증은 안전하지 않으므로 HTTPS와 같은 보안 프로토콜을 사용하는 것이 좋습니다.
+```Arduino
+http.setAuthorization("username", "password");
+```
 
-## 참고 자료
+3. 이제 우리가 원하는 작업을 수행하고 결과를 받아올 수 있습니다. 예를 들어, 이메일을 보내는 프로그램을 만든다면 다음과 같이 작성할 수 있습니다.
 
-- [Arduino ESP8266WiFi 라이브러리 문서](https://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/client-secure-class.html)
-- [기본 인증에 대한 HTTP 스펙](https://tools.ietf.org/html/rfc7617)
-- [Base64 인코딩에 대한 위키피디아 글](https://ko.wikipedia.org/wiki/Base64)
+```Arduino
+http.POST("email content");
+```
 
----
-### 참고 자료
+4. 마지막으로, 사용이 끝나면 반드시 연결을 종료해야 합니다. 종료되지 않으면 연결이 계속 유지되며 프로그램이 제대로 작동하지 않을 수 있습니다.
 
-- [Arduino ESP8266WiFi library documentation](https://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/client-secure-class.html)
-- [HTTP specification for Basic Authentication](https://tools.ietf.org/html/rfc7617)
-- [Wikipedia article on Base64 encoding](https://en.wikipedia.org/wiki/Base64)
+```Arduino
+http.end();
+```
+
+## 깊이 파고들기:
+"기본 인증"은 HTTP 요청의 일부분으로 1999년에 처음 정의되었습니다. 이는 네트워크 보안을 강화하기 위해 개발되었으며, 현재도 널리 사용되고 있습니다. 하지만 이 방법은 보안이 강력하지 않아서 중요한 정보를 주고받을 때는 더 안전한 대체 방법을 고려해야 합니다.
+
+Arduino에서 HTTP 요청을 보내는데 "기본 인증"을 사용하는 방법 외에도 다른 방법들이 있습니다. GET 요청을 보낼 때 헤더에 인증 정보를 추가할 수도 있으며, HTTPS를 사용할 수도 있습니다. HTTPS를 사용하면 암호화 된 연결을 제공하여 더 강력한 보안을 제공합니다.
+
+## 더 알아보기:
+다양한 인증 방법을 다루는 샘플 코드 및 자세한 설명은 아래의 링크에서 확인할 수 있습니다.
+
+- [Basic Authentication with HTTPClient library](https://github.com/arduino-libraries/ArduinoHttpClient/blob/master/examples/BasicAuthentication/BasicAuthentication.ino)
+- [ArduinoHttpClient library documentation](https://github.com/arduino-libraries/ArduinoHttpClient)

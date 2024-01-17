@@ -10,71 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué trabajar con JSON en Elixir?
+## ¿Qué y por qué?
+Trabajar con JSON es una forma común en la que los programadores almacenan y transfieren datos en sus aplicaciones. JSON, o Javascript Object Notation, es un formato de intercambio de datos basado en texto que es fácil de leer y escribir para los humanos y fácil de interpretar para las computadoras. Los programadores usan JSON para representar datos estructurados como objetos y arrays, lo que hace que sea más fácil compartir información entre aplicaciones.
 
-Trabajar con JSON (JavaScript Object Notation) puede ser muy útil en el desarrollo de aplicaciones en Elixir. JSON es un formato de intercambio de datos ligero y fácil de leer que se ha convertido en el estándar para la comunicación entre aplicaciones web. Con Elixir, podemos manejar fácilmente los objetos JSON y su manipulación nos permitirá enviar y recibir datos de forma eficiente.
-
-## Cómo hacerlo
-
-Para trabajar con JSON en Elixir, es necesario primero convertir los datos a una estructura compatible con Elixir. Esto se puede hacer utilizando la biblioteca Jason, que es una de las más populares para trabajar con JSON en Elixir.
-
-Primero, es necesario agregar la dependencia de Jason en nuestro archivo `mix.exs`:
+## Cómo:
+Para trabajar con JSON en Elixir, necesitamos utilizar el módulo `Jason`, que viene incluido en la biblioteca estándar de Elixir. Para convertir un término en una cadena JSON, podemos usar la función `encode!/1` del módulo `Jason`.
 
 ```Elixir
-defp deps do
-  [{:jason, "~> 1.2"}]
-end
+iex> data = %{name: "Juan", age: 25}
+%{age: 25, name: "Juan"}
+iex> Jason.encode!(data)
+"{\"name\":\"Juan\",\"age\":25}"
 ```
 
-Luego, podemos utilizar la función `decode/1` para convertir una cadena JSON en una estructura de datos en Elixir. Por ejemplo, si tenemos el siguiente JSON:
+Para convertir una cadena JSON en términos de Elixir, podemos usar la función `decode!/1`. Si queremos acceder a un valor específico en el JSON, podemos utilizar los operadores de acceso como lo haríamos con cualquier otro término de Elixir.
 
 ```Elixir
-json = """
-  {
-    "name": "John",
-    "age": 25,
-    "hobbies": ["running", "reading"]
-  }
-"""
+iex> json = "{\"name\":\"Juan\",\"age\":25}"
+"{\"name\":\"Juan\",\"age\":25}"
+iex> Jason.decode!(json)
+%{age: 25, name: "Juan"}
+iex> Jason.decode!(json)["name"]
+"Juan"
 ```
 
-Podemos convertirlo a una estructura de Elixir de la siguiente manera:
+## Inmersión profunda:
+JSON fue creado originalmente por Douglas Crockford en 2001 y se ha convertido en un formato de intercambio de datos muy popular. Otras alternativas para el intercambio de datos incluyen XML y YAML. Elixir hace que trabajar con JSON sea muy sencillo gracias a la inclusión del módulo `Jason` en su biblioteca estándar. Internamente, `Jason` utiliza el módulo `Poison` para realizar la codificación y decodificación. También tiene funciones de validación y opciones de configuración para personalizar el proceso de codificación y decodificación de JSON.
 
-```Elixir
-Jason.decode(json)
-```
-
-Esto nos devolverá un mapa de Elixir con las claves y valores correspondientes:
-
-```Elixir
-%{"name" => "John", "age" => 25, "hobbies" => ["running", "reading"]}
-```
-
-También podemos utilizar la función `encode/1` para convertir una estructura de datos en Elixir a un formato de cadena JSON:
-
-```Elixir
-Jason.encode(%{"name" => "John", "age" => 25, "hobbies" => ["running", "reading"]})
-```
-
-Esto nos devolverá la cadena JSON correspondiente:
-
-```Elixir
-"{\"name\":\"John\",\"age\":25,\"hobbies\":[\"running\",\"reading\"]}"
-```
-
-## Profundizando
-
-Además de la conversión básica de datos entre JSON y Elixir, la biblioteca Jason también ofrece otras funcionalidades útiles para trabajar con JSON. Algunas de estas funciones son:
-
-- La función `decode!/1` que funciona de la misma manera que `decode/1` pero levanta una excepción en caso de error.
-- La función `encode!/1` que funciona de la misma manera que `encode/1` pero levanta una excepción en caso de error.
-- La función `Encode.stream/2` que nos permite convertir una estructura de datos en una secuencia de codificación, lo que puede ser más eficiente para grandes cantidades de datos.
-- La función `decode_file/2` que nos permite decodificar un archivo JSON directamente en una estructura de datos en Elixir.
-
-Para obtener más información sobre estas y otras funciones de la biblioteca Jason, puedes consultar su [documentación](https://hexdocs.pm/jason/Jason.html).
-
-## Ver también
-
-- [Elixir Docs: Jason](https://hexdocs.pm/jason/Jason.html)
-- [Learn Elixir: Working with JSON](https://www.youtube.com/watch?v=sHc-gKAhU60)
-- [ElixirSchool: Working with JSON](https://elixirschool.com/lessons/basics/json/)
+## Ver también:
+- Documentación oficial de Jason: https://hexdocs.pm/jason/index.html
+- Tutorial para trabajar con JSON en Elixir: https://www.culttt.com/2016/04/04/json-elixir/

@@ -1,7 +1,7 @@
 ---
-title:                "Praca z plikami csv"
-html_title:           "Elixir: Praca z plikami csv"
-simple_title:         "Praca z plikami csv"
+title:                "Praca z plikiem csv"
+html_title:           "Elixir: Praca z plikiem csv"
+simple_title:         "Praca z plikiem csv"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Data Formats and Serialization"
@@ -10,52 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+##Co i Dlaczego?
+Praca z CSV to nic innego jak manipulowanie danymi w formacie tekstowym, gdzie wartości są oddzielone przecinkami. Programiści często używają tego formatu do importowania i eksportowania danych w aplikacjach.
 
-Jeśli jesteś programistą lub programistką, prawdopodobnie spotkałeś się z formatem pliku CSV (Comma-Separated Values) przy pracy z danymi. Może wydawać się on nieco mniej popularny niż inne formaty, ale wciąż jest bardzo użyteczny do przechowywania i przetwarzania informacji w prosty i czytelny sposób. W tym artykule dowiesz się, jak używać języka Elixir do obsługi plików CSV.
-
-## Jak to zrobić
-
-Elixir ma wbudowaną bibliotekę CSV, która pomaga w łatwy sposób zarządzać plikami CSV. Aby rozpocząć pracę, musisz najpierw zainstalować pakiet w swoim projekcie Elixir. Aby to zrobić, odpal następujące komendy:
-
-```Elixir 
-mix deps.get
-mix deps.clean csv
-mix deps.get json_struct
-```
-
-Pakiet json_struct jest opcjonalny, ale jest przydatny do formatowania wyjścia w terminalu.
-
-Następnie, wystarczy, że wczytasz plik CSV używając wbudowanej funkcji ```Elixir CSV.parse ``` i przekażesz jej ścieżkę do pliku. Na przykład:
-
+##Jak to zrobić:
+Aby pracować z CSV w Elixirze, możemy użyć biblioteki CSV. Pierwszym krokiem jest jej zainstalowanie za pomocą mix:
 ```Elixir
-parsed = CSV.parse("dane.csv")
+mix deps.get csv
 ```
-
-Funkcja zwróci listę list, gdzie każda lista reprezentuje wiersz w pliku CSV. Możesz również przekazać opcje do funkcji, aby dostosować jej działanie. Na przykład, jeśli w twoim pliku CSV pierwszy wiersz zawiera nagłówki kolumn, możesz przekazać opcję ```Elixir [:headers] ``` aby przypisać nazwy kolumn do każdego wiersza. Przykład:
-
+Następnie, możemy zaimportować bibliotekę przy użyciu:
 ```Elixir
-parsed = CSV.parse("dane.csv", [:headers])
+iex> {:ok, csv} = File.read("data.csv") |> CSV.decode(delimiter: "\t")
 ```
-
-Inne przydatne opcje do funkcji ```parse ``` to między innymi ```Elixir [:trim] ``` do usuwania białych znaków z danych i ```Elixir [:converters] ``` do konwertowania typów danych.
-
-Jeśli chcesz zapisać dane z listy list do pliku CSV, możesz użyć funkcji ```Elixir CSV.encode ```. Przykład:
-
+Teraz możemy przetwarzać nasze dane tak jak chcemy, na przykład:
 ```Elixir
-CSV.encode("nowe_dane.csv", parsed)
+iex> csv |> CSV.decode |> Enum.take(5)
 ```
+Wyjściem będzie tablica z pierwszymi pięcioma wierszami naszego pliku CSV.
 
-Funkcja ta przyjmie nazwę pliku jako pierwszy argument, a dane jako drugi.
+##Głęboka Fuzja:
+Format CSV został stworzony w celu umożliwienia wymiany danych między różnymi systemami. Jest on powszechnie używany w arkuszach kalkulacyjnych, bazach danych czy programach analitycznych. Alternatywnymi formatami są między innymi JSON i XML.
 
-## Głębszy zanurkować
+Biblioteka CSV w Elixirze jest bardzo wydajna i obsługuje różne opcje jak na przykład zmiana separacji, nagłówka czy obsługa baz danych. Można jej używać zarówno w prostych skryptach, jak i w dużych aplikacjach.
 
-W powyższych przykładach, omówiliśmy podstawową obsługę plików CSV za pomocą wbudowanej biblioteki CSV. Jednak, istnieje wiele innych bibliotek, które mogą ułatwić pracę z tym formatem. Na przykład, biblioteka esv jest często wybierana ze względu na szybkość przetwarzania danych.
-
-Innym przydatnym narzędziem jest kompilator plików CSV, który przetwarza pliki CSV w kod Elixir. Dzięki temu, możesz używać funkcji i wzorców Elixir do manipulowania danymi i tworzenia dynamicznych raportów.
-
-## Zobacz też
-
-- [Biblioteka CSV dla Elixir](https://hexdocs.pm/csv/CSV.html)
-- [Biblioteka esv](https://github.com/beatrichartz/csv)
-- [Kompilator plików CSV dla Elixir](https://github.com/fazibear/csvex)
+##Zobacz także:
+- Dokumentacja biblioteki CSV w Elixirze: https://hexdocs.pm/csv/CSV.html
+- Wprowadzenie do formatu CSV: https://www.ionos.com/digitalguide/websites/web-development/csv-file/
+- Porównanie różnych formatów danych: https://www.programming-idiots.com/choose-right-data-format/

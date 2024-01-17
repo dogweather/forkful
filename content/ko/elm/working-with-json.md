@@ -1,7 +1,7 @@
 ---
-title:                "json 작업하기"
-html_title:           "Elm: json 작업하기"
-simple_title:         "json 작업하기"
+title:                "json과 함께 작업하기"
+html_title:           "Elm: json과 함께 작업하기"
+simple_title:         "json과 함께 작업하기"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Data Formats and Serialization"
@@ -10,53 +10,64 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
-JSON은 Elm에서 가장 일반적으로 사용되는 데이터 형식 중 하나입니다. JSON을 이해하고 다루는 방법을 익히면 Elm 프로그램을 작성하고 데이터를 다룰 때 매우 유용하게 활용할 수 있습니다.
+# 이것은 JSON이 무엇인지와 프로그래머들이 왜 이를 사용하는지에 대해 설명하는 한국어용 Elm (현재 버전) 프로그래밍 기사입니다. 비정형 톤과 간결한 스타일로 작성되었습니다. 불필요한 단어와 문장은 피하였습니다.
 
-## 어떻게
-JSON은 JavaScript에서 사용되는 형식이므로 Elm 코드에서도 매우 간단하게 다룰 수 있습니다. 다음 예제를 통해 JSON 데이터를 다루는 간단한 방법을 살펴보겠습니다.
+
+## What & Why?
+
+JSON은 JavaScript Object Notation의 약자로, 데이터를 저장하고 전송하기 위해 사용되는 경량의 데이터 형식입니다. 프로그래머들은 주로 웹 애플리케이션에서 사용되는 데이터를 처리할 때, JSON을 사용합니다. 이는 간단하며 빠르게 데이터를 구조화하고 다룰 수 있기 때문입니다.
+
+## How to:
+
+Elm에서는 JSON을 다루기 위해 내장된 JSON.Decode 라이브러리를 사용합니다. 예를 들어, 우리가 다음과 같은 JSON으로 된 데이터를 다룬다고 가정해봅시다.
 
 ```Elm
-import Http
-import Json.Decode as Decode
-import Json.Encode as Encode
+{
+    "name": "John",
+    "age": 25,
+    "hobbies": ["coding", "reading", "playing video games"]
+}
+```
 
--- JSON 데이터를 받아와서 파싱하기
-type alias User =
-    { name : String
-    , age : Int
-    }
+이 때, 우리는 다음과 같이 데이터를 디코딩 할 수 있습니다.
+
+```Elm
+import Json.Decode as Decode
 
 userDecoder : Decode.Decoder User
 userDecoder =
-    Decode.map2 User
+    Decode.map3 User
         (Decode.field "name" Decode.string)
         (Decode.field "age" Decode.int)
+        (Decode.field "hobbies" (Decode.list Decode.string))
 
-getUser : Http.Request User
-getUser =
-    Http.get
-        { url = "https://example.com/api/user"
-        , expect = Http.expectJson userDecoder
-        }
-
--- JSON 데이터를 생성하기
-user : User
-user =
-    { name = "John"
-    , age = 25
+type alias User =
+    { name : String
+    , age : Int
+    , hobbies : List String
     }
 
-jsonString : String
-jsonString =
-    Encode.encode 0 user
+user : Result String User
+user =
+    Decode.decodeString userDecoder jsonStr
 ```
-파싱된 데이터를 사용하는 방법은 일반적인 Elm 데이터를 사용하는 것과 같습니다.
 
-## 딥 다이브
-더 복잡한 JSON 객체를 다룰 때는 `map2`, `map3`과 같은 함수를 사용하여 필요한 데이터만 추출할 수 있습니다. 또한, `Json.Decode.Pipeline` 모듈을 사용하면 더욱 간결하게 JSON 데이터를 파싱할 수 있습니다. 더 많은 정보는 Elm 공식 문서에서 확인할 수 있습니다.
+위와 같은 코드를 실행하면, 우리는 다음과 같은 결과를 얻을 수 있습니다.
 
-## See Also
-- [Elm 공식 문서](https://guide.elm-lang.org/effects/json.html)
-- [JSON 데이터 다루기 예제](https://elmprogramming.com/decoding-json-in-elm.html)
-- [Elm 커뮤니티](https://discourse.elm-lang.org/)
+```
+Ok { name = "John", age = 25, hobbies = ["coding", "reading", "playing video games"] }
+```
+
+## Deep Dive:
+
+JSON은 데이터를 저장하고 전송하는 데 매우 유용한 형식입니다. 이는 간단하고 명확한 구조를 갖추고 있어, 데이터를 처리하기에 용이합니다. JSON은 또한 다른 데이터 형식보다 더 적은 코드로 데이터를 다룰 수 있어, 프로그래머가 작업을 더 빠르고 효율적으로 할 수 있도록 도와줍니다.
+
+그러나 다른 형식의 데이터를 사용하는 경우에는, Elm에서는 XML, YAML 및 CSV를 처리 할 수 있는 라이브러리도 제공합니다. 이는 프로그래머가 project에 가장 적합한 데이터 형식을 선택할 수 있도록 도와줍니다.
+
+또한, Elm에서는 JSON뿐만 아니라 다른 형식의 데이터도 디코딩 할 수 있는 라이브러리를 제공합니다. 이는 프로그래머에게 더 다양한 선택권을 제공하며, 데이터 처리에 있어 보다 높은 유연성을 가져올 수 있도록 도와줍니다.
+
+## See Also:
+
+- Elm 공식 가이드: https://guide.elm-lang.org/
+- Elm을 사용한 JSON 처리 예제: https://elmprogramming.com/json-in-elm.html
+- Elm에서 지원하는 다양한 데이터 형식에 대한 라이브러리: https://package.elm-lang.org/packages/elm/json/latest/

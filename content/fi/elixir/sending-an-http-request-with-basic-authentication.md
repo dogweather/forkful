@@ -1,7 +1,7 @@
 ---
-title:                "HTTP-pyynnön lähettäminen perusautentikoinnilla"
-html_title:           "Elixir: HTTP-pyynnön lähettäminen perusautentikoinnilla"
-simple_title:         "HTTP-pyynnön lähettäminen perusautentikoinnilla"
+title:                "Perusautentikoinnin lähettäminen http-pyynnöllä"
+html_title:           "Elixir: Perusautentikoinnin lähettäminen http-pyynnöllä"
+simple_title:         "Perusautentikoinnin lähettäminen http-pyynnöllä"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "HTML and the Web"
@@ -10,38 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mikä & Miksi?
 
-Elixir on dynaaminen, toimintajärjestelmääriippumaton ja funktionaalinen ohjelmointikieli, joka on suunniteltu skaalautuvuuteen ja resilienssiin. Siksi Elixirin avulla voidaan luoda tehokkaita ja luotettavia HTTP-asiakasohjelmistoja, kuten tilintarkastuksia, varmenteita ja kirjautumisia käyttäen.
+Lähettäminen HTTP-pyyntö perusautentikoituna tarkoittaa sitä, että pyyntö sisältää käyttäjän tunnistetiedot autentikointia varten. Tämä on yleinen tapa lähettää salasanallisia pyyntöjä turvallisesti verkkopalvelimelle ja se mahdollistaa käyttäjän tunnistamisen ja oikeiden käyttöoikeuksien antamisen.
 
-## Miten
-
-```elixir
-iex> client = HTTPBasicAuth.client("username", "password")
-{:ok, %HTTPBasicAuth.Client{username: "username", password: "password"}}
-```
-
-Käytä ensin HTTPBasicAuth-kirjastoa luodaksesi asiakkaan ja anna sille käyttäjänimi ja salasana. Tämän jälkeen voit lähettää HTTP-pyynnön seuraavasti:
+## Miten:
 
 ```elixir
-iex> HTTPBasicAuth.get("https://example.com", client)
-{:ok, %HTTPotion.Response{status_code: 200, body: "Success"}}
+# Lähetetään HTTP-pyyntö perusautentikoinnilla käyttäen HTTPoison-kirjastoa
+conn = HTTPoison.BasicAuth.get("https://example.com", "käyttäjänimi", "salasana")
+# Tulostetaan vastaus
+IO.puts(conn.body)
 ```
 
-HTTP-asiakasohjelmiston lähettämä pyyntö sisältää sisäänrakennetun HTTPBasicAuth-salauksen, joka varmistaa, että vain oikeutetut käyttäjät voivat käyttää pyyntöä. Tämä tekee HTTP-pyyntöjen lähettämisestä turvallisen ja luotettavan.
+Esimerkkitulostus:
 
-## Deep Dive
-
-HTTPBasicAuth-kirjaston avulla voit myös vaihtaa käyttäjänimeä tai salasanaa, mikä tekee Elixirista erittäin joustavan ja helppokäyttöisen kielen. Kirjaston avulla voit myös helposti mukauttaa muita autentikointimenetelmiä, kuten Digest, OAuth ja JWT. Seuraavassa on esimerkki siitä, miten voit vaihtaa salasanaa:
-
-```elixir
-iex> updated_client = HTTPBasicAuth.update_password(client, "new_password")
+```
+"Sinut on autentikoitu käyttäjätunnuksella käyttäjänimi" 
 ```
 
-Tällä tavalla voit helposti päivittää käyttäjän salasanan ilman, että sinun tarvitsee luoda uusi asiakas jokaiselle päivitykselle.
+## Sukellus syvyyksiin:
 
-## Katso myös
+Perusautentikointi on ollut käytössä jo pitkään ja se on yksi tapa turvata salasanallisilla tiedoilla olevien pyyntöjen lähettäminen. Toisinaan käytetään myös muita autentikointimenetelmiä, kuten HMAC (Hash-based Message Authentication Code) tai OAuth (Open Authorization).
 
-- [Virallinen Elixir-kotisivu](https://elixir-lang.org/)
-- [HTTPBasicAuth-kirjaston dokumentaatio](https://hexdocs.pm/http_basic_auth/HTTPBasicAuth.html)
-- [HTTP-pyyntöjen lähettäminen Elixirilla (englanniksi)](https://www.slideshare.net/keathley/painless-http-requests-with-elixir)
+Perusautentikoinnin toteutus vaihtelee eri ohjelmointikielissä ja kirjastoissa. Joissakin tapauksissa autentikointitiedot voivat olla suoraan osana pyyntöä (esim. URLin osana), kun taas toisissa ne välitetään erillisen parametrin kautta. On myös mahdollista tallentaa autentikointitiedot muuttujaan ja käyttää niitä useissa pyynnöissä samassa sovelluksessa.
+
+## Katso myös:
+
+- [HTTPoison - Elixir HTTP-kirjasto](https://hexdocs.pm/httpoison/HTTPoison.BasicAuth.html)
+- [Perusautentikointi Wikipedia-sivulla](https://fi.wikipedia.org/wiki/Perusautentikointi)

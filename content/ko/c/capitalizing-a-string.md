@@ -1,7 +1,7 @@
 ---
-title:                "문자열 대문자로 변환하기"
-html_title:           "C: 문자열 대문자로 변환하기"
-simple_title:         "문자열 대문자로 변환하기"
+title:                "문자열의 첫 글자를 대문자로 만들기"
+html_title:           "C: 문자열의 첫 글자를 대문자로 만들기"
+simple_title:         "문자열의 첫 글자를 대문자로 만들기"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -10,33 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
-요즘 대부분의 프로그래밍 언어에서는 문자열을 제어하는 데 많은 기능을 제공합니다. 이 중 하나는 문자열의 첫 글자를 대문자로 변환하는 것입니다. 이 기능을 사용하면 문자열을 더 다양한 방식으로 표현할 수 있고 유용한 기능을 구현할 수 있습니다.
+## 무엇 & 왜?
 
-## 하는 방법
+문자열에 대문자화는 무엇인가요? 그리고 프로그래머들이 왜 이것을 하는 걸까요? 
+
+대문자화란, 문자열의 각 문자를 대문자로 변환하는 것을 말합니다. 보통 이 작업은 대소문자 구분이 필요한 경우, 특히 비밀번호나 사용자 이름 등의 인증 정보를 입력받을 때 사용됩니다. 프로그래머들은 이 작업을 통해 사용자의 입력을 안전하게 처리할 수 있도록 합니다.
+
+## 사용 방법:
+
+바로 들어가서 코드로 예를 들어보겠습니다. 
+
 ```C
 #include <stdio.h>
-#include <string.h>
 
 int main()
 {
-    char str[20] = "hello, world!";
+    char word[10] = "hello";
+    int i;
 
-    // 첫 글자를 대문자로 변환하는 함수
-    str[0] = toupper(str[0]);
+    for (i = 0; i < 5; i++)
+    {
+        word[i] = word[i] - 32; // 대문자로 변환
+    }
 
-    printf("변환된 문자열: %s", str);
-
+    printf("%s", word); // HELLO 출력
+    
     return 0;
 }
 ```
 
-위 코드를 실행하면 "Hello, world!"라는 출력 결과를 볼 수 있습니다.
+위의 코드를 실행하면 "HELLO"라는 결과를 볼 수 있습니다. 이와 같이 문자열 내의 모든 문자를 대문자로 변환하는 것이 대문자화의 기본적인 사용법입니다.
 
-## 깊게 파고들기
-대문자로 변환하는 기능은 문자열을 처리하는 프로그램에서 매우 유용합니다. 예를 들어, 사용자가 입력한 이름을 받은 후, 이를 대문자로 변환하여 데이터베이스와 비교하거나 직접 파일 이름을 적을 때 유용합니다. 또한, 소문자와 대문자가 혼용된 큰 데이터셋을 다룰 때 특정 문자열만 뽑아내기 위해 사용할 수 있습니다.
+## 더 깊게 들어가보기:
 
-## 더 알아보기
-- [C 언어 공식 문서](https://www.iso.org/standard/74528.html)
-- [문자열 함수에 대한 자세한 설명](https://www.geeksforgeeks.org/string-functions-in-c-with-examples/) 
-- [문자열 변환 예제 코드](https://www.programiz.com/c-programming/examples/uppercase-string)
+대문자화는 흔히 사용되는 문자열의 가장 기본적인 처리 중 하나입니다. 그래서 대부분의 언어에서는 내장 함수로 제공하고 있습니다. 예를 들어, JavaScript에서는 `toUpperCase()`라는 함수를 통해 문자열을 대문자로 변환할 수 있습니다. 또 다른 대안으로는 ASCII 테이블을 이용하여 문자의 아스키 코드 값을 변경해주는 방법이 있습니다.
+
+C에서 대문자화는 ASCII 코드 값을 변경하여 대문자로 변환하는 방식으로 이루어집니다. `char` 변수의 범위는 -128에서 127까지이므로, 이 범위를 넘어가는 경우 형 변환을 거쳐 값을 변경해야 합니다. 또한, 유니코드를 지원하는 최신 언어들에서는 대문자화가 좀 더 복잡해지게 됩니다. 이 경우에는 해당 언어에서 제공하는 내장 함수를 사용하거나, 매핑 테이블을 이용하여 대문자로 변환할 수 있습니다.
+
+## 관련 자료:
+
+- [C string functions](https://www.tutorialspoint.com/c_standard_library/c_function_strcmp.htm)
+- [ASCII table](https://www.w3schools.com/charsets/ref_html_ascii.asp)
+- [ASCII 코드에 대한 보다 깊은 이해](https://konradsob.wordpress.com/2013/05/09/ascii-codes-useful-shortcuts-for-developers/)

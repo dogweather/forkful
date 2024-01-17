@@ -1,7 +1,7 @@
 ---
-title:                "Wydrukowanie wyjścia z debugowania"
-html_title:           "Arduino: Wydrukowanie wyjścia z debugowania"
-simple_title:         "Wydrukowanie wyjścia z debugowania"
+title:                "Wyświetlanie wyników debugowania"
+html_title:           "Arduino: Wyświetlanie wyników debugowania"
+simple_title:         "Wyświetlanie wyników debugowania"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Testing and Debugging"
@@ -10,57 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+# Co i dlaczego?
 
-Drukowanie informacji debugowania jest ważnym narzędziem dla programistów Arduino. Pozwala na sprawdzenie poprawności wykonywania programu oraz na łatwe znalezienie błędów i ich rozwiązanie.
+Drukowanie informacji debugowania jest procesem, w którym programista wypisuje szczegóły dotyczące działania swojego kodu w celu ułatwienia analizy i naprawy ewentualnych błędów. Jest to niezbędne narzędzie dla programistów, ponieważ pomaga w szybkim rozwiązywaniu problemów i poprawnym funkcjonowaniu aplikacji.
 
-## Jak to zrobić
+# Jak to zrobić?
 
-Arduino posiada funkcję `Serial.print()`, która pozwala na wypisanie wartości na konsoli, która jest podłączona do płytki. Możemy jej użyć w prosty sposób, podając w nawiasie wartość lub zmienną, którą chcemy wydrukować. Przykład:
+Możesz użyć funkcji `Serial.print()` lub `Serial.println()` w Arduino, aby wypisać tekst lub wartość zmiennej. Możesz także ustawić odpowiednią prędkość transmisji **Serial.begin()** w funkcji `setup()`. Przykładowy kod wygląda tak.
 
 ```Arduino
+Serial.begin(9600);
 int x = 5;
-Serial.print(x); // Wyświetli wartość zmiennej x, czyli 5
+Serial.print("Wartość x wynosi: ");
+Serial.println(x);
 ```
 
-Możemy również wypisać tekst, używając funkcji `Serial.println()`, która automatycznie przechodzi do nowej linii po wypisaniu wartości. Przykład:
+# Głębsza medytacja
 
-```Arduino
-int y = 10;
-Serial.print("Wartość y = "); // Wyświetli napis "Wartość y = "
-Serial.println(y); // Wyświetli wartość zmiennej y, czyli 10 w nowej linii
-```
+Drukowanie informacji debugowania w programowaniu jest praktyką, która ma swoje korzenie w pisaniu aplikacji na komputery. Alternatywą dla tej metody jest korzystanie z narzędzi do debugowania dostępnych w środowisku Arduino lub wykorzystanie biblioteki do obsługi portu szeregowego. Jeśli potrzebujesz bardziej zaawansowanych funkcji, takich jak filtrowanie lub zapis do pliku, możesz skorzystać z biblioteki software serial.
 
-Możemy również wyświetlić dwa lub więcej wartości, używając funkcji `Serial.print()` kilka razy lub `Serial.println()` z połączonym tekstem i zmiennymi. Przykład:
+# Zobacz też
 
-```Arduino
-float a = 1.4;
-float b = 2.6;
-Serial.println("Suma a + b = " + String(a + b)); // Wyświetli tekst "Suma a + b = 4.0"
-```
-
-Możemy także skorzystać z funkcji `Serial.write()`, która przyjmuje dane w postaci bajtowej. Jest to przydatne, gdy chcemy przesłać dane na inny serwer lub urządzenie. Przykład:
-
-```Arduino
-char c[20] = "Arduino";
-Serial.write(c, 7); // Wyświetli pierwsze 7 znaków ciągu znaków z tablicy c, czyli "Arduino"
-```
-
-## Deep Dive
-
-Funkcje `Serial.print()`, `Serial.println()` oraz `Serial.write()` pozwolą nam na wyświetlanie wartości różnego typu: liczbowych, tekstowych oraz bajtowych. Możemy także kontrolować sposób wyświetlania za pomocą specjalnych znaków, takich jak `newline` lub `tab`. Przykład:
-
-```Arduino
-Serial.print("Wartość z = " + String(z) + "\t"); // Wyświetli wartość zmiennej z, a następnie dodatkową spację
-Serial.print("Wartość m = " + String(m) + "\n"); // Wyświetli wartość zmiennej m w nowej linii
-```
-
-Dodatkowo, możemy skorzystać z funkcji `Serial.begin()` w `setup()`, aby ustawić prędkość transmisji na odpowiednią dla naszego projektu.
-
-## Zobacz także
-
-https://www.arduino.cc/reference/en/language/functions/communication/serial/print/
-
-https://www.arduino.cc/reference/en/language/functions/communication/serial/println/
-
-https://www.arduino.cc/reference/en/language/functions/communication/serial/write/
+* [Arduino - Dokumentacja o drukowaniu informacji debugowania](https://www.arduino.cc/reference/en/language/functions/communication/serial/print/)
+* [Inne metody debugowania w Arduino](https://www.arduino.cc/en/Tutorial/Debugging)

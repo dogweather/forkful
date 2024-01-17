@@ -1,7 +1,7 @@
 ---
-title:                "Parsning av html"
-html_title:           "Java: Parsning av html"
-simple_title:         "Parsning av html"
+title:                "Analysera html"
+html_title:           "Java: Analysera html"
+simple_title:         "Analysera html"
 programming_language: "Java"
 category:             "Java"
 tag:                  "HTML and the Web"
@@ -10,49 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
-Innan vi börjar koda, låt oss förstå varför någon skulle vilja utföra parsing av HTML i Java. 
+Vad & Varför?
+När vi pratar om att "parsa HTML" så menar vi att konvertera HTML-kod till ett strukturerat format som en dator kan förstå och bearbeta. Detta är användbart för programmerare eftersom det ger dem möjlighet att automatisera processer som involverar HTML, till exempel att söka efter specifika element eller extrahera data från en webbsida.
 
-HTML är det vanligaste språket för att skapa webbsidor och det finns en mängd olika verktyg som genererar HTML-kod. Att kunna hantera, filtrera och extrahera information från HTML-kod är därför en viktig färdighet för Java-utvecklare.
+Hur fungerar det?
+I Java kan vi använda verktyget Jsoup för att parsa HTML. Detta verktyg gör om HTML-koden till ett trädliknande strukturerat format, vilket gör det lättare att navigera och hämta data från. Här är ett exempel på hur vi kan använda det för att hämta innehållet i en <h1> tagg:
 
-## Hur man gör
-Det finns flera olika metoder för att utföra parsing av HTML i Java. Här är ett enkelt exempel med hjälp av biblioteket Jsoup:
-
-```Java 
-// importera nödvändiga bibliotek
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
-
-// skapa en anslutning till webbsidan
-String url = "https://www.example.com";
-Document doc = Jsoup.connect(url).get();
-
-// välj de element som du vill extrahera information från
-Elements titles = doc.select("h1");
-
-// loopa genom elementen och skriv ut titlarna
-for (Element title : titles) {
-  System.out.println(title.text());
-}
-
-```
-Detta kodexempel hämtar innehållet från webbsidan https://www.example.com och väljer sedan alla h1-element (vanligtvis använda för titlar) från HTML-koden. De valda titlarna skrivs sedan ut till konsolen.
-
-Output:
-```
-Welcome to Example!
+```Java
+Document doc = Jsoup.connect("https://www.example.com").get();
+Element h1 = doc.selectFirst("h1");
+System.out.println(h1.text());
 ```
 
-## Djupdykning
-Det finns olika sätt att filtrera och extrahera information från HTML-kod i Java, beroende på vilka bibliotek och verktyg du väljer att använda. En annan populär metod är att använda DOM (Document Object Model) och XPath för att identifiera och manipulera specifika HTML-element.
+I det här fallet så hämtar vi in hela HTML-koden från webbsidan example.com och använder sedan selectFirst-metoden för att välja den första <h1> taggen som vi hittar. Vi använder sedan metoden .text() för att få ut texten som finns mellan <h1> taggen.
 
-Det är också viktigt att förstå skillnaden mellan static och dynamic parsing. Med en static parser, som Jsoup, hämtas HTML-koden vid en viss tidpunkt och all information som behövs måste finnas tillgänglig vid detta tillfälle. Med en dynamic parser, som Selenium, simuleras en webbläsare och HTML-koden kan hämtas och manipuleras i realtid.
+Djupdykning:
+Parsning av HTML har funnits sedan de tidiga dagarna av webben, när webbsidor först började skapas med HTML-kod. Innan verktyg som Jsoup fanns tillgängliga, var detta en mycket mer komplicerad process som ofta innebar att man behövde skriva mycket kod för att extrahera och bearbeta data från en webbsida.
 
-Det finns även andra aspekter att tänka på när man utför parsing av HTML, som att hantera felaktig eller ovalid HTML-kod och att undvika webbsidor som försöker blockera automatisk parsing.
+Alternativ till Jsoup inkluderar verktyg som HTML Parser och TagSoup. Dessa har liknande funktioner som Jsoup, men de har olika fördelar och nackdelar beroende på vad man behöver göra med HTML-koden.
 
-## Se även 
-- [Jsoup dokumentation](https://jsoup.org/)
-- [DOM (Document Object Model) introduktion](https://developer.mozilla.org/sv/docs/Web/API/Document_Object_Model/Introduction)
-- [Selenium dokumentation](https://www.selenium.dev/documentation/en/)
+Se även:
+- Officiell dokumentation för Jsoup: https://jsoup.org/
+- HTML Parser: https://htmlparser.sourceforge.io/
+- TagSoup: https://github.com/veithen/tagsoup

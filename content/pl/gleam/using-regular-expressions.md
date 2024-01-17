@@ -10,60 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i Dla Czego?
 
-Regular expressions są użytecznym narzędziem w programowaniu, pozwalającym na wyszukiwanie i manipulacje tekstu w sposób precyzyjny i wydajny. Mogą być przydatne w wielu różnych sytuacjach, od walidacji danych po przetwarzanie plików tekstowych.
+Używanie wyrażeń regularnych (regular expressions) jest powszechną praktyką wśród programistów. Jest to sposób na wyszukiwanie, zastępowanie i manipulację tekstem zgodnie z określonymi wzorcami. Dzięki temu, programiści mogą szybko i dokładnie odnaleźć potrzebne im informacje w długich i skomplikowanych plikach tekstowych.
 
-## Jak to zrobić
+## Jak To Zrobić?
 
-Poniżej przedstawimy kilka przykładów użycia regular expressions w języku Gleam. Przykłady te są zapisane w formacie "```Gleam ... ```", więc możesz łatwo je skopiować i wypróbować w swoim własnym kodzie.
-
-### Wyszukiwanie frazy w tekście
-
-Aby wyszukać konkretną frazę w tekście, możemy skorzystać z funkcji `Regex.find()`. Na przykład, jeśli chcemy znaleźć wszystkie wystąpienia słowa "Gleam" w ciągu znaków, możemy użyć następującego kodu:
+Gleam oferuje bogaty zestaw funkcji do obsługi wyrażeń regularnych. Przykładowo, jeśli chcemy odnaleźć wszystkie liczby całkowite w ciągu znaków, możemy użyć funkcji ```Regex.matches``` w ten sposób:
 
 ```Gleam
-my_text = "Hello World! I love Gleam."
-pattern = Regex.compile("Gleam")
-matches = Regex.find(my_text, pattern)
+Regex.matches("[0-9]+", "123 abc 456")
 ```
 
-Wynikiem będzie lista wszystkich indeksów w ciągu znaków, w których znajduje się szukane słowo. W tym przypadku, będzie to `[17]` ponieważ "Gleam" zaczyna się od 17 znaku.
+Output: ["123", "456"]
 
-### Walidacja danych
+Możemy również użyć wildcardów (znak przypominający wielokropek) do dopasowania dowolnego znaku lub ciągu znaków. Na przykład, jeśli chcemy znaleźć wszystkie wyrazy zaczynające się na "a" i kończące się na "b", możemy użyć wyrażenia ```a*b```.
 
-Regular expressions mogą być również wykorzystane do sprawdzania czy dane są poprawnego formatu. Na przykład, jeśli chcemy sprawdzić czy dany ciąg znaków jest poprawnym adresem email, możemy użyć następującego kodu:
+## Zagłębianie Się W Temat
 
-```Gleam
-email = "example@test.com"
-pattern = Regex.compile("[A-Za-z0-9.-_]+@[A-Za-z0-9]+\.[A-Za-z]+")
-is_valid = Regex.matches(email, pattern)
-```
+Wyrażenia regularne mają długą historię i są obecne w wielu językach programowania. Jednym z popularnych zastosowań jest walidacja formularzy na stronach internetowych. Istnieją również inne metody manipulacji tekstem, takie jak użycie parserów lub bibliotek do parsowania HTML.
 
-Wynikiem będzie wartość logiczna `true`, ponieważ email spełnia zdefiniowany przez nas wzorzec.
+Podczas implementacji wyrażeń regularnych, ważne jest zapoznanie się z dostępnymi regexowymi operatorami i składnią. Można także skorzystać z istniejących bibliotek, jeśli potrzebujemy bardziej złożonych funkcji.
 
-### Zamiana tekstu
+## Zobacz Również
 
-Regular expressions umożliwiają również proste i szybkie zamiany w tekście. Na przykład, jeśli chcemy zamienić wszystkie wystąpienia słowa "Gleam" na "Gleam 2.0" w danym tekście, możemy użyć funkcji `Regex.replace()`:
-
-```Gleam
-my_text = "Gleam is the best!"
-pattern = Regex.compile("Gleam")
-new_text = Regex.replace(my_text, pattern, "Gleam 2.0")
-```
-
-Wynikiem będzie "Gleam 2.0 is the best!".
-
-## Deep Dive
-
-Regular expressions w języku Gleam są oparte na standardowej bibliotece `re`. Biblioteka ta oferuje wiele różnych funkcji, które mogą być przydatne w bardziej zaawansowanych sytuacjach. Dokumentacja biblioteki zawiera szczegółowe objaśnienia oraz przykłady użycia.
-
-Dla tych, którzy są bardziej zaawansowani w dziedzinie regular expressions, warto również zapoznać się z różnymi składnikami składni języka Gleam, takimi jak pattern matching, funkcje wyższego rzędu oraz moduły. Mogą one być wykorzystane w połączeniu ze zwykłymi wyrażeniami regularnymi, aby stworzyć jeszcze bardziej potężne narzędzie do przetwarzania tekstu.
-
-## Zobacz również
-
-Dokumentacja języka Gleam: https://gleam.run/
-
-Dokumentacja standardowej biblioteki `re`: https://gleam.run/modules/re.html
-
-Przydatne zagadnienia dotyczące regular expressions: https://regexone.com/
+- Oficjalna dokumentacja Gleam: https://gleam.run/stdlib/regex.html
+- Poradnik na temat wyrażeń regularnych w języku angielskim: https://www.regular-expressions.info/

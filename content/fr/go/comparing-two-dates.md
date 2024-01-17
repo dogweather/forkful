@@ -10,52 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Quoi & Pourquoi?
+Comparer deux dates en programmation signifie comparer les valeurs de dates pour déterminer si elles sont égales, avant ou après l'autre, ou si elles sont dans un intervalle spécifique. Les programmeurs le font souvent pour trier et organiser des données chronologiquement ou pour suivre les changements dans le temps.
 
-Vous êtes-vous déjà demandé comment vous pouvez comparer deux dates en programmation ? Que vous cherchiez à calculer une différence de temps ou à vérifier si une date est antérieure à une autre, il est utile de savoir comment effectuer cette opération en utilisant le langage de programmation Go.
-
-## Comment faire
-
-La comparaison de deux dates en utilisant Go est assez simple. Tout d'abord, vous devez créer deux variables de type `time.Time`, qui représenteront vos dates. Ensuite, vous pouvez utiliser l'une des fonctions de comparaison intégrées de Go pour effectuer la comparaison.
-
+## Comment faire:
+Voici un exemple de code pour comparer deux dates en utilisant la syntaxe de Go:
 ```Go
-import "time"
+date1 := time.Date(2020, 1, 1, 0, 0, 0, 0, time.UTC)
+date2 := time.Date(2021, 1, 1, 0, 0, 0, 0, time.UTC)
 
-// Créez deux dates
-date1 := time.Date(2020, time.January, 1, 0, 0, 0, 0, time.UTC)
-date2 := time.Date(2021, time.January, 1, 0, 0, 0, 0, time.UTC)
-
-// Comparez les dates en utilisant la fonction Before
 if date1.Before(date2) {
-  fmt.Println("La date 1 est antérieure à la date 2")
-} else {
-  fmt.Println("La date 2 est antérieure à la date 1")
-}
-
-// Comparez les dates en utilisant la fonction Equal
-if date1.Equal(date2) {
-  fmt.Println("Les dates sont identiques")
-} else {
-  fmt.Println("Les dates sont différentes")
+  fmt.Println("Date 1 est avant Date 2")
+} else if date1.After(date2) {
+  fmt.Println("Date 1 est après Date 2")
+} else if date1.Equal(date2) {
+  fmt.Println("Date 1 et Date 2 sont égales")
 }
 ```
+Résultat: Date 1 est avant Date 2
 
-La sortie de ce code sera :
+## Plongée en profondeur:
+L'idée de comparer des dates vient de la nécessité de stocker et d'organiser des données dans un ordre chronologique. Les programmeurs peuvent également utiliser des alternatives telles que le format numérique de temps, qui utilise des nombres pour représenter une date et une heure spécifiques. En termes d'implémentation, Go utilise la méthode "Before", "After" et "Equal" pour comparer des dates en utilisant le type de données "time".
 
-```
-La date 1 est antérieure à la date 2
-Les dates sont différentes
-```
-
-Comme vous pouvez le voir, il est également possible d'utiliser la fonction `Equal` pour vérifier si deux dates sont identiques ou non.
-
-## Plongée en profondeur
-
-Go utilise des valeurs de type `time.Time` pour représenter les dates et les heures. Ces valeurs ont de nombreuses fonctions utiles pour effectuer des opérations de comparaison. Par exemple, vous pouvez utiliser les fonctions `Before` et `After` pour vérifier si une date est avant ou après une autre. Vous pouvez également utiliser les fonctions `Add` et `Sub` pour ajouter ou soustraire une durée à une date.
-
-De plus, Go prend en charge l'utilisation de formats de date et d'heure personnalisés en utilisant le package `time.Format`. Cela vous permet de spécifier exactement comment vous souhaitez afficher une date ou une heure dans votre code.
-
-## Voir aussi
-
-- Documentation officielle de Go sur le package `time` : https://golang.org/pkg/time/
-- Tutoriel sur la manipulation des dates en Go : https://www.digitalocean.com/community/tutorials/how-to-manipulate-time-in-go-fr
+## À voir aussi:
+- [Documentation officielle de Go sur la comparaison de dates](https://pkg.go.dev/time?tab=doc#example-Time-Before)
+- [Article de blog sur la comparaison de dates en Go](https://www.calhoun.io/comparing-times-dates-in-go/)

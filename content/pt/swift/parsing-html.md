@@ -1,7 +1,7 @@
 ---
-title:                "Parsing html"
-html_title:           "Swift: Parsing html"
-simple_title:         "Parsing html"
+title:                "Analisando HTML"
+html_title:           "Swift: Analisando HTML"
+simple_title:         "Analisando HTML"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "HTML and the Web"
@@ -10,67 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+# O que é e por que fazemos
+Fazer a análise de HTML é um processo de se extrair informações específicas de um documento HTML. Programadores fazem isso porque é uma maneira eficiente de obter dados de uma página da web, sem a necessidade de lê-la manualmente.
 
-A análise de HTML é um processo importante na programação, pois permite que os desenvolvedores extraiam informações específicas de páginas da web. Isso pode ser útil para criar webscrapers, criar aplicativos que interagem com a web ou analisar dados de páginas da web.
-
-## Como fazer
-
-Para analisar HTML em Swift, podemos usar a biblioteca SwiftSoup. Comece instalando-a em seu projeto através do Cocoapods ou adicionando-a manualmente como um framework. Em seguida, importe a biblioteca em seu arquivo de código:
+## Como Fazer
+Aqui está um exemplo de como fazer a análise de HTML no Swift:
 
 ```Swift
-import SwiftSoup
-```
+guard let url = URL(string: "https://www.exemplo.com") else {
+    print("URL inválida")
+    return
+}
 
-Para iniciar a análise, primeiro precisamos recuperar o conteúdo HTML usando uma URL ou um arquivo local:
-
-```Swift
-let html = "<html><body><p>Hello, world!</p></body></html>"
 do {
-    let doc: Document = try SwiftSoup.parse(html)
+    let html = try String(contentsOf: url, encoding: .utf8)
+    let range = NSRange(location: 0, length: html.utf16.count)
+    let regex = try NSRegularExpression(pattern: "<title>(.*?)</title>")
+    let matches = regex.matches(in: html, range: range)
+
+    for match in matches {
+        let titleRange = match.range(at: 1)
+        if let title = Range(titleRange, in: html) {
+            let trimmedTitle = html[title]
+            print(trimmedTitle)
+        }
+    }
 } catch {
-    print("Error parsing HTML.")
+    print("Erro ao tentar obter dados do site")
 }
 ```
 
-Agora podemos usar o objeto "doc" para selecionar e manipular elementos HTML. Por exemplo, para obter o conteúdo do elemento "p":
+Esse código irá extrair o conteúdo dentro das tags `<title>` do HTML da página especificada e imprimi-lo no console. Aqui está a saída esperada:
 
-```Swift
-do {
-    let p: Element = try doc.select("p").first()!
-    let text: String = try p.text()
-    print(text) // Output: Hello, world!
-} catch {
-    print("Error parsing HTML.")
-}
+```
+Exemplo de página
 ```
 
-## Deep Dive
+## Mergulho Profundo
+Fazer a análise de HTML tem sido uma tarefa importante desde o início da web. Anteriormente, os programadores costumavam fazer isso manualmente ou com ferramentas específicas. No entanto, com o surgimento de linguagens de programação e ferramentas mais avançadas, a análise de HTML agora pode ser automatizada e feita com mais eficiência.
 
-Para selecionar elementos HTML específicos, podemos usar o seletor CSS. Isso nos permite recuperar elementos com base em suas tags, classes, IDs ou hierarquia. Por exemplo, para obter todos os links em uma página:
+Há várias maneiras de fazer a análise de HTML no Swift, incluindo o uso de bibliotecas de terceiros, como o SwiftSoup ou o Kanna. Além disso, algumas das implementações mais avançadas envolvem o uso de árvores XML e modelos de dados para armazenar e manipular os dados extraídos.
 
-```Swift
-do {
-    let links: [Element] = try doc.select("a").array()
-} catch {
-    print("Error parsing HTML.")
-}
-```
+## Veja Também
+Para mais informações sobre análise de HTML em Swift, confira os seguintes links:
 
-Também é possível modificar o conteúdo HTML, adicionando novos elementos ou modificando os existentes. Por exemplo, para adicionar um novo parágrafo ao final do documento:
-
-```Swift
-do {
-    try doc.select("body").first()!.append("<p>This is a new paragraph.</p>")
-    let newHtml: String = try doc.html()
-    print(newHtml) // Output: <html><body><p>Hello, world!</p><p>This is a new paragraph.</p></body></html>
-} catch {
-    print("Error modifying HTML.")
-}
-```
-
-## Veja também
-
-- Documentação oficial do SwiftSoup: https://github.com/scinfu/SwiftSoup
-- Artigo sobre análise de HTML usando Swift: https://medium.com/@jaredjsidwell/parsing-html-in-swift-using-third-party-library-swiftsoup-5d865893df89
-- Exemplos práticos de análise de HTML em Swift: https://github.com/Jakelin568/Swift-HTML-Parsing-Example
+- [Documentação da linguagem Swift](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+- [Biblioteca SwiftSoup](https://github.com/scinfu/SwiftSoup)
+- [Biblioteca Kanna para análise de HTML e XML em Swift](https://github.com/tid-kijyun/Kanna)

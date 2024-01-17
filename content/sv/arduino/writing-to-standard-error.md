@@ -1,7 +1,7 @@
 ---
-title:                "Att skriva till standardfel"
-html_title:           "Arduino: Att skriva till standardfel"
-simple_title:         "Att skriva till standardfel"
+title:                "Skrivning till standardfel"
+html_title:           "Arduino: Skrivning till standardfel"
+simple_title:         "Skrivning till standardfel"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Files and I/O"
@@ -10,38 +10,22 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
+Att skriva till standard error på en Arduino är ett sätt för programutvecklare att snabbt få feedback och felsöka sin kod. Genom att skicka felmeddelanden till standard error istället för standard output, kan utvecklare enkelt identifiera och åtgärda problem i sin kod.
 
-Att skriva till standard error är ett användbart sätt att felsöka ditt Arduino-program. Det gör det möjligt att hitta och åtgärda eventuella fel och meddelanden som kan uppstå under körningen.
-
-## Hur man gör
-
-För att skicka meddelanden till standard error måste du använda funktionen `Serial.print()` och skicka med parametern `ARDUINO_ERROR`. Här är ett exempel på hur du kan skriva ut ett felmeddelande när en variabel inte är större än ett visst värde:
-
-```Arduino
-if (var < 10) {
-  Serial.print("Error: Variabeln är inte större än 10. Värdet är: ");
-  Serial.print(var, ARDUINO_ERROR);
-  Serial.println();
-}
+## Hur?
+För att skriva till standard error på en Arduino, använd syntaxen `Serial.println()` och lägg till prefixet `err` efter punkten. Här är ett exempel:
 ```
-
-Detta kommer att skriva ut följande till din Arduino IDE: 
-
+Arduino Serial.println(err "Felmeddelande här");
 ```
-Error: Variabeln är inte större än 10. Värdet är: 5
-```
-
-Genom att använda `ARDUINO_ERROR` som andra parameter till `Serial.print()` kommer du att se en röd varningstext bredvid ditt meddelande, vilket hjälper dig att hitta det snabbt.
+Detta kommer att skriva ut felmeddelandet på en ny rad till standard error, som kan läsas i seriell monitor eller via USB.
 
 ## Djupdykning
+Att skriva till standard error är ett vanligt sätt att hantera felmeddelanden inom programmering. I stora system där standard output används för andra syften, som att skriva till en loggfil eller kommunicera med en användare, är det viktigt att skilja mellan felmeddelanden och vanliga utskrifter. Att använda standard error gör detta möjligt genom att separera felen från den vanliga utdata.
 
-När du skriver till standard error i Arduino, så skickas dina meddelanden till din dator via USB-porten. Detta gör att du kan se dem direkt i Arduino IDE. Du kan också använda verktyg som "Serial Monitor" för att visa dina meddelanden i realtid.
+Ibland kan programutvecklare använda sig av alternativ som `Serial.availableForWrite()` för att kontrollera om seriell kommunikation är tillgänglig innan de skriver till standard output. Men det är en längre och mer komplex metod jämfört med att skriva till standard error och kan bli svårt att underhålla i stora projekt.
 
-Det finns också möjlighet att skicka meddelanden till standard error på en annan enhet. Du kan använda en extern enhet som är ansluten via Wi-Fi eller Bluetooth för att se dina meddelanden.
+En viktig detalj att notera är att Arduino-programmeringsspråket faktiskt är en implementering av språket Wiring. Det är värt att känna till eftersom vissa funktioner och syntax kan vara annorlunda jämfört med ren C++.
 
-## Se även 
-
-- [Dokumentation om Serial.print()](https://www.arduino.cc/reference/en/language/functions/communication/serial/print/)
-- [Arduino-tutorial för Serial Monitor](https://www.arduino.cc/en/Tutorial/SerialMonitor)
-- [Guide för att använda externa enheter med Arduino](https://www.arduino.cc/en/Tutorial/TroubleshootingSerialCommunication)
+## Se även
+Mer information om att skriva till standard error på en Arduino finns tillgänglig på [Arduino-hemsidan](https://www.arduino.cc/reference/en/language/functions/communication/serialprint/). För utvecklare som känner sig bekväma med att använda standard output för felmeddelanden, kan [WireDebug-biblioteket](https://github.com/Chris--A/WireDebug) vara en användbar lösning.

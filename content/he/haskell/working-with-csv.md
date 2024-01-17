@@ -1,7 +1,7 @@
 ---
-title:                "עבודה עם קובץ csv"
-html_title:           "Haskell: עבודה עם קובץ csv"
-simple_title:         "עבודה עם קובץ csv"
+title:                "עובדים עם קובץ csv"
+html_title:           "Haskell: עובדים עם קובץ csv"
+simple_title:         "עובדים עם קובץ csv"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Data Formats and Serialization"
@@ -10,33 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## למה
+## מה ולמה?
 
-ניתן לעבוד עם קבצי CSV בקלות בשפת Haskell. מכיוון שקבצי CSV הם פופולריים בכל עולם התכנות ובעסקים, ידע בסיסי בעבודה עם CSV יכול להיות מאוד מועיל והכרחי למתכנתים.
+CSV הוא פורמט קובץ נפוץ במיוחד בעולם התכנות ומיועד לאחסון נתונים טבלאיים בצורה פשוטה וקריאה. הפורמט מאפשר לנתונים להיחשב בקלות ולהיכנס בתוך תוכניות שונות, כך שמתכנתים יכולים לעבוד איתם ולעבוד עלייהם באופן מהיר ויעיל. 
 
-## איך לעבוד עם CSV בשפת Haskell
+## איך לעשות?
 
-הפעולה הראשונה שצריך לעשות היא לייבא את מודול ה-CSV של הספריה המובנית Data.Csv. לעבוד עם קבצי CSV, ניתן להשתמש בפונקציות כמו encode ו-decode. לדוגמה, ניתן לקרוא קובץ CSV עם הקוד הבא:
+דוגמאות קוד ניתנות למצוא בתוך המאמר זה, כולן מתוך שפת התכנות Haskell. תוכלו לראות את הקוד הכולל בתוך כוכביות כהערות, על מנת לקלקל את הקוד לתוך השורות הנכונות שנדרשות כדי לעבד נתונים במבנה CSV. הנה כמה דוגמאות קוד ופלט תמונות להדגמה:
 
 ```Haskell
-import Data.Csv
+-- קליטת קובץ CSV כנתוני מילות מפתח
+let csvData = readFile "data.csv"
+let keywords = map (takeWhile (/= ',')) (lines csvData)
 
-main :: IO ()
-main = do
-  csvFile <- readFile "file.csv"
-  csvData <- decode NoHeader csvFile :: Either String (Vector (Vector String))
-  case csvData of
-    Left err -> putStrLn "לא ניתן היה לקרוא את הקובץ:"
-    Right v -> print v
+-- יצירת קובץ CSV מתוך רשימת נתונים טבלאיים
+let tableData = [["שם", "גיל"], ["דניאל", "27"], ["שרה", "25"], ["משה", "30"]]
+let csvString = unlines $ map (intercalate ",") tableData
+writeFile "data.csv" csvString
 ```
 
-תוצאת הקוד הנ"ל תהיה משתנה מסוג Either הכולל או רשימת כל השגיאות שהתקשרו בזמן קריאת הקובץ, או מהנתונים שנקראו בצורה נכונה במיקום Right.
+פלט: "שם,גיל"
+      "דניאל,27"
+      "שרה,25"
+      "משה,30"
 
-## נחישות
+## מעמקים
 
-אם תצטרכו לעבוד עם קבצים CSV בקוד הגדול יותר, כדאי להשתמש במודול Data.Csv ולימוד פונקציות נוספות כמו decodeNamed ו-parse. בנוסף, ניתן לתאר קבצי CSV עם סדר עמודות ללא שם באמצעות התאמת סוגי נתונים באמצעות המחלקה FromNamedRecord.
+CSV הוא אקרונים ל-Comma Separated Values, והטכניקה שמאחורי פורמט הקובץ נוצרה בשנת 1972 ונהפכה למנהג בעולם התכנות. כיום, ישנם תוכניות רבות שמאפשרות עבודה עם CSV ומספקות כלים יעילים למתכנתים. עם זאת, ישנם גם פורמטים אחרים לאחסון נתונים טבלאיים כמו XML ו-JSON. כך שכשמתכנתים יבחרו לעבוד עם CSV, יש להם בדיקה מדוקדקת לעשות מה שתוכניות אחרות לא יעשו.
 
 ## ראו גם
 
-- [התעסקות עם קבצי CSV ב-Haskell](https://www.schoolofhaskell.com/user/Uploads/files/CSV%20in%20Haskell.pdf)
-- [תיעוד מפורט של Data.Csv ב-Haskell](https://hackage.haskell.org/package/csv/docs/Data-Csv.html)
+למידע נוסף על כיצד לעבוד עם קבצי CSV ב-Haskell, בקרו בקישורים הבאים:
+
+- [Haskell wiki page on Working with CSV files](https://wiki.haskell.org/Working_with_CSV_files)
+- [hscsv - A CSV parser and printer for Haskell](https://hackage.haskell.org/package/hscsv)
+- [CSV Basics in Haskell](https://www.schoolofhaskell.com/school/starting-with-haskell/libraries-and-frameworks/text-manipulation/csv-basics)

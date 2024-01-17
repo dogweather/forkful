@@ -10,43 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-Text files are the backbone of programming. They are used for a variety of purposes, from storing data to creating configuration files. Learning how to write a text file in Rust can significantly enhance your coding skills and allow you to manipulate data in a more efficient and structured way.
+## What & Why?
 
-## How To
-Writing a text file in Rust is a straightforward process and can be done in a few simple steps:
+Creating and writing to a text file is a common task in programming that involves storing data in a designated file on a computer. Programmers use text files to store and access information that may need to be retrieved or updated at a later time.
 
-1. First, we need to create a [`File`](https://doc.rust-lang.org/std/fs/struct.File.html) object to work with. This can be done using the [`fs::File::create()`](https://doc.rust-lang.org/std/fs/fn.File.html#method.create) function, which takes in a [`Path`](https://doc.rust-lang.org/std/path/struct.Path.html) object as an argument. The `Path` can be either a relative or absolute path to the file we want to create.
-2. Next, we can use the [`write_all()`](https://doc.rust-lang.org/std/io/trait.Write.html#method.write_all) method on the `File` object to write data to the file. This method takes in a `&[u8]` (byte slice) as its argument, so we need to convert our data to a byte slice before passing it in.
-3. Finally, we need to handle any potential errors that may occur while writing to the file. This can be done using [`Result`](https://doc.rust-lang.org/std/result/) and [`expect()`](https://doc.rust-lang.org/std/result/enum.Result.html#method.expect) to print out an error message if something goes wrong.
+## How to:
 
-Below is an example of how we can write a text file in Rust:
+Writing to a text file in Rust is straightforward and can be accomplished using the standard library's `std::fs` module. The following code shows an example of how to create a new text file called "data.txt" and write the text "Hello world!" to it:
 
-```rust
+```Rust
 use std::fs::File;
 use std::io::prelude::*;
-use std::path::Path;
 
 fn main() {
-    // Create a `File` object
-    let file = File::create(Path::new("example.txt"));
-    
-    // Convert our data to a byte slice
-    let data = "Hello, world!".as_bytes();
-    
-    // Write data to the file
-    file.unwrap().write_all(data).expect("Unable to write file!");
+    // Open the file in write-only mode
+    let mut file = File::create("data.txt")
+        .expect("Failed to create file");
+
+    // Write the text to the file
+    file.write_all(b"Hello world!")
+        .expect("Failed to write to file");
 }
 ```
 
-Running this code will create a new file named "example.txt" in the same directory as our Rust file and write the text "Hello, world!" to it.
+The `File::create()` method creates a new file and returns a `File` object. The `write_all()` method then writes the specified bytes to the file, which, in this case, is the string "Hello world!" converted into bytes using the `b` prefix. The resulting text file will contain the phrase "Hello world!".
 
-## Deep Dive
-The [`File`](https://doc.rust-lang.org/std/fs/struct.File.html) object has various other methods that can be used for writing to a text file, such as [`write()`](https://doc.rust-lang.org/std/io/trait.Write.html#tymethod.write), [`write_fmt()`](https://doc.rust-lang.org/std/io/trait.Write.html#tymethod.write_fmt), [`flush()`](https://doc.rust-lang.org/std/io/trait.Write.html#tymethod.flush), and more. These provide more control over the writing process, such as writing formatted data or flushing the data to the file before it is complete.
+## Deep Dive:
 
-Additionally, Rust also has the [`std::io::BufWriter`](https://doc.rust-lang.org/std/io/struct.BufWriter.html) struct, which can be used to improve performance when writing large amounts of data to a file.
+Writing to a text file has been around since the early days of programming and is still widely used today. Alternatives to writing to a text file include using a database or an in-memory store, but text files remain a simple and effective way to store and access data.
 
-## See Also
-- [Rust Documentation: std::fs](https://doc.rust-lang.org/std/fs/index.html)
-- [Rust Documentation: std::io](https://doc.rust-lang.org/std/io/index.html)
-- [Rust By Example: File I/O](https://doc.rust-lang.org/rust-by-example/std_misc/file.html)
+In Rust, working with files can be accomplished using the standard library or third-party libraries like `fs_extra` or `path_abs`. Under the hood, writing to a text file involves opening a file, handling errors, converting data into bytes, and writing those bytes to the file.
+
+## See Also:
+
+- [Writing files in Rust](https://doc.rust-lang.org/std/fs/struct.File.html)
+- [Rust standard library documentation](https://doc.rust-lang.org/std/)

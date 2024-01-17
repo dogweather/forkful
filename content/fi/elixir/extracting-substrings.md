@@ -1,7 +1,7 @@
 ---
-title:                "Substringien erottelu"
-html_title:           "Elixir: Substringien erottelu"
-simple_title:         "Substringien erottelu"
+title:                "Alaohjelmien eristäminen"
+html_title:           "Elixir: Alaohjelmien eristäminen"
+simple_title:         "Alaohjelmien eristäminen"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -10,32 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
-Oletko koskaan törmännyt tarpeeseen erottaa tietynlainen osa merkkijonosta? Ehkä haluat saada vain osan sähköpostiosoitteesta tai puhelinnumerosta? Tässä Elixir-ohjelmoinnin artikkelissa kerromme, miten voit helposti tehdä tämän käyttämällä substr() -funktiota. 
+## Mitä ja miksi?
 
-## Miten 
+Substringien eristäminen on Elixir-ohjelmointikielessä tapa hakea tietyt osat merkkijonoista. Tämä voi olla hyödyllistä esimerkiksi hakualgoritmeissa tai käyttäjän syötteiden validoimisessa.
+
+## Miten?
+
+Elixirillä on valmiina funktio nimeltä `String.slice` joka ottaa kaksi parametria: merkkijonon ja alueen josta halutaan ottaa osa merkkijonoa. Tämä alue voidaan määritellä joko kahdella luvulla tai luvuilla ja indeksillä. Esimerkiksi:
+
 ```Elixir
-s = "Tämä on merkkijono"
+String.slice("hello world", 2..8)
 ```
-GIVEN -funktio antaa meille merkkijonon, jota haluamme käsitellä. 
+
+Tämä palauttaisi merkkijonon `"llo wor"`.
+
+Toinen tapa eristää substring on käyttämällä funktiota `String.split_at`. Tämä funktio ottaa myös kaksi parametria: merkkijonon ja indeksin kohdan, jossa halutaan jakaa merkkijono kahteen osaan. Esimerkiksi:
 
 ```Elixir
-substring = String.substring(s, 0, 5)
-IO.puts substring
-```
-Nämä kaksi riviä koodia käyttävät substring() funktiota, joka ottaa parametreinä merkkijonon, aloitusindeksin ja lopetusindeksin. Tässä tapauksessa se ottaa 0:n ensimmäisenä ja 5: n viidentenä, mikä tarkoittaa ensimmäisen viiden merkin saamista sana "Tämä". 
-
-```
-Tämä
+String.split_at("hello world", 5)
 ```
 
-Ja nyt meillä on vain haluamamme substrit.
+Tämä palauttaisi tuple-tyyppisen rakenteen jossa ensimmäisenä arvona olisi merkkijono `"hello "` ja toisena arvona merkkijono `"world"`.
 
-## Syvempi sukellus
-Kun käytät substr() -funktiota, on tärkeää huomata, että indeksit alkavat nollasta ja että lopetusindeksi ei sisälly osaan. Esimerkiksi merkkijonolla "Hello" aloitusindeksi on 0, ensimmäinen sana on H ja lopetusindeksi on 4, joten tulos on "Hell". 
+## Syvemmälle
 
-Toinen tärkeä asia on, että substr() -funktion palauttama merkkijono on uusi kopio alkuperäisestä merkkijonosta. Tämä tarkoittaa, että alkuperäinen merkkijono ei muutu substrin ottamisen jälkeen. 
+Substringien eristäminen on ollut osa Elixirin sisäänrakennettuja funktioita alusta asti. Se on nopea ja tehokas tapa hakea tiettyjä osia merkkijonoista. Toisin kuin monissa muissa kielissä, Elixirissä merkkijonot ovat muuttumattomia, joten substringien eristäminen ei muuta alkuperäistä merkkijonoa, vaan palauttaa uuden version.
+
+Jos etsit enemmän ominaisuuksia käsitellä merkkijonoja, voit tarkistaa Elixirin `String`-moduulin dokumentaation. On myös olemassa muita kirjastoja, kuten `Regex`, jotka tarjoavat edistyneempiä tapoja käsitellä merkkijonoja.
 
 ## Katso myös
-- [String.substring/3 virallinen dokumentaatio](https://hexdocs.pm/elixir/String.html#substring/3)
-- [Elixir-nimien ja funktioiden käytäntö](https://hexdocs.pm/elixir/naming-conventions.html)
+
+- [Elixirin dokumentaatio substringien eristämisestä](https://hexdocs.pm/elixir/String.html#slice/2)
+- [Elixirin dokumentaatio String-moduulista](https://hexdocs.pm/elixir/String.html)
+- [Elixirin dokumentaatio Regex-moduulista](https://hexdocs.pm/elixir/Regex.html)

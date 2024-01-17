@@ -1,7 +1,7 @@
 ---
-title:                "Vergleich von zwei Daten"
-html_title:           "Bash: Vergleich von zwei Daten"
-simple_title:         "Vergleich von zwei Daten"
+title:                "Zwei Daten vergleichen"
+html_title:           "Bash: Zwei Daten vergleichen"
+simple_title:         "Zwei Daten vergleichen"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Dates and Times"
@@ -10,66 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was & Warum?
+Das Vergleichen von zwei Daten ist ein gängiger Programmieraufgabe, bei der man untersucht, ob ein Datum früher, später oder gleich ist wie ein anderes Datum. Programmierer nutzen dies, um beispielsweise zu überprüfen, ob ein bestimmtes Datum bereits vergangen ist oder in der Zukunft liegt.
 
-Warum sollte man sich mit der Vergleichung von zwei Daten beschäftigen? Nun, es könnte verschiedene Gründe geben. Vielleicht arbeitet man an einem Projekt, bei dem man Daten aus verschiedenen Quellen zusammenführen muss oder man möchte einfach nur überprüfen, ob zwei Ereignisse an einem bestimmten Tag stattfanden.
-
-## Wie
-
-Um zwei Daten in Bash zu vergleichen, gibt es verschiedene Wege. Hier sind zwei Beispiele:
+## Anleitung:
+Hier sind zwei Beispiele, wie man mit Bash zwei Daten vergleichen kann:
 
 ```Bash
-# Beispiel 1: Vergleich von zwei Daten mit dem Vergleichsoperator "-eq"
-if [[ $date1 -eq $date2 ]]; then
-  echo "Die Daten sind gleich."
+date_1="2021-10-31"
+date_2="2021-11-01"
+
+if [[ "$date_1" -gt "$date_2" ]]; then
+  echo "$date_1 ist später als $date_2"
+elif [[ "$date_1" -lt "$date_2" ]]; then
+  echo "$date_1 ist früher als $date_2"
 else
-  echo "Die Daten sind unterschiedlich."
+  echo "Beide Daten sind gleich"
 fi
 ```
 
 ```Bash
-# Beispiel 2: Vergleich von zwei Daten mit dem "date"-Befehl
-if [[ $(date -d "$date1" +%s) -eq $(date -d "$date2" +%s) ]]; then
-  echo "Die Daten sind gleich."
+date_1="2021-10-31"
+date_2="2021-11-01"
+
+if [[ "$date_1" > "$date_2" ]]; then
+  echo "$date_1 ist später als $date_2"
+elif [[ "$date_1" < "$date_2" ]]; then
+  echo "$date_1 ist früher als $date_2"
 else
-  echo "Die Daten sind unterschiedlich."
+  echo "Beide Daten sind gleich"
 fi
 ```
 
-Die erste Methode verwendet den Bash-Vergleichsoperator "-eq", der für die Vergleichung numerischer Werte verwendet wird. Die zweite Methode nutzt den "date"-Befehl, um beide Daten in Sekunden seit dem 01.01.1970 zu konvertieren und dann miteinander zu vergleichen.
-
-### Ausgabe:
-
+Ausgabe:
 ```Bash
-$ date1="12/13/2020"
-$ date2="12/13/2020"
-$ ./script.sh
-Die Daten sind gleich.
+2021-10-31 ist früher als 2021-11-01
 ```
 
-```Bash
-$ date1="12/13/2020"
-$ date2="12/14/2020"
-$ ./script.sh
-Die Daten sind unterschiedlich.
-```
+## Tiefer Eintauchen:
+Das Vergleichen von Daten hat eine lange Geschichte und wurde bereits in der Anfangszeit der Programmierung verwendet. Es gibt verschiedene Methoden, um zwei Daten zu vergleichen, wie z.B. den Vergleich von Unix-Zeitstempeln oder das Konvertieren von Daten in ein dezimales Format und direkten Vergleich. Die Implementierung hängt auch von der verwendeten Programmiersprache ab.
 
-## Deep Dive
-
-Der Vergleich von Daten in Bash kann auch etwas komplexer sein. Hier sind einige Dinge, die man beachten sollte:
-
-- Verwenden von führenden Nullen: Wenn beide Daten im selben Format sind, ist es wichtig, dass beide Daten führende Nullen aufweisen. Ansonsten könnte es zu fehlerhaften Ergebnissen kommen.
-
-- Berücksichtigung von Zeitzonen: Wenn man mit Daten arbeitet, die an verschiedenen Orten in verschiedenen Zeitzonen erfasst wurden, sollte man diese Informationen berücksichtigen oder die Daten auf eine gemeinsame Zeitzone konvertieren, bevor man sie vergleicht.
-
-- Verwendung von Epoch Time: Die Konvertierung der Daten in Sekunden seit dem 01.01.1970 (Epoch Time) kann hilfreich sein, besonders wenn man mit größeren Datenmengen arbeitet.
-
-Es gibt auch andere mögliche Probleme und Szenarien beim Vergleich von Daten, die man bedenken sollte, je nach den Anforderungen des Projekts.
-
-## Siehe auch
-
-Hier sind einige Links zu weiterführenden Informationen über die Vergleichung von Daten in Bash:
-
-- [Bash-Vergleichsoperatoren](https://wiki.ubuntuusers.de/Bash/Vergleichsoperatoren/)
-- [Der "date"-Befehl in Bash](https://wiki.ubuntuusers.de/date/)
-- [Epoch Time](https://de.wikipedia.org/wiki/Unixzeit)
+## Siehe auch:
+- [Ein W3Schools-Artikel über das Vergleichen von Daten in Bash](https://www.w3schools.com/whatis/whatis_compare.asp)
+- [Ein Wikipedia-Artikel über Datums- und Zeitrechnung](https://de.wikipedia.org/wiki/Datums-_und_Zeitrechnung)
+- [Ein Beitrag über die Geschichtedes Unix-Zeitstempels](https://www.e-tutorial.info/unix-time-and-timezone/)

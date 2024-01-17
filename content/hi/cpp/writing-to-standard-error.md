@@ -1,7 +1,7 @@
 ---
-title:                "``प्रोग्रामिंग में नमूने  पर लिखना``"
-html_title:           "C++: ``प्रोग्रामिंग में नमूने  पर लिखना``"
-simple_title:         "``प्रोग्रामिंग में नमूने  पर लिखना``"
+title:                "स्टैंडर्ड त्रुटि पर लिखना"
+html_title:           "C++: स्टैंडर्ड त्रुटि पर लिखना"
+simple_title:         "स्टैंडर्ड त्रुटि पर लिखना"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Files and I/O"
@@ -10,53 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Kyun
+# क्या और क्यों?
+प्रोग्रामर अपने कोड को रन होने के दौरान स्टैंडर्ड इरर पर लिख सकते हैं। यह उन्हें अपने कोड की गतिविधि को देखने और समस्याओं का पता लगाने में मदद करता है।
 
-Aksar hum programming mein kaam karte huye errors aur bugs se rubaru hote hain. Lekin kya aapko pata hai ki hum kisi bhi error ya warning ko catch kar sakte hain aur usse behtar code likh sakte hain? Isliye, standard error mein likhna humare liye kaafi faydemand ho sakta hai.
-
-## Kaise
-
-Humein apne code mein "cerr" function ka use karna hota hai taki hum kisi bhi error ya warning ko standard error output stream mein likh sakein. Neeche diye gaye C++ code block mein ek example diya gaya hai:
-
+# कैसे करें:
 ```C++
 #include <iostream>
 
 using namespace std;
-
-int main()
-{
-  int num1 = 10, num2 = 0;
-  float result;
-
-  // Divide by zero error
-  if(num2 == 0)
-  {
-    cerr << "Error: Cannot divide by zero!" << endl;
-    return 1;
-  }
-
-  // Calculate result and output
-  result = num1 / num2;
-  cout << "Result: " << result << endl;
-
-  return 0;
+int main() {
+   cerr << "यह स्टैंडर्ड इरर पर लिखा गया संदेश है।" << endl;
+   return 0;
 }
 ```
 
-Output:
+आउटपुट:
+```
+यह स्टैंडर्ड इरर पर लिखा गया संदेश है।
+```
 
-Error: Cannot divide by zero!
+# गहराई तक जाएं:
+स्टैंडर्ड इरर पहले से ही विद्यमान है, और यह प्रोग्रामिंग में लंबे समय से प्रयोग किया जाता है। यह एक अलग से फ़ाइल है जो प्रोग्राम के रन होने के दौरान दोस्तों पर लिखती है। इसके अलावा, प्रोग्रामर गलतियों को सुलझाने के लिए ध्यान से स्टैंडर्ड इरर में लिखे संदेशों को पढ़ सकते हैं। अलग से, प्रोग्रामर इसका उपयोग समस्याओं की गहराई तक पहुंचने के लिए भी करते हैं। इसे अधिक सुनिश्चित करने के लिए, वे अपने कोड में अधिक समझदारी से समस्याओं को ढूंढ सकते हैं।
 
-Is code mein humne "cerr" function ka use kiya hai takki error message standard error output stream mein aaye aur humein pata chal sake ki code kahan par error de raha hai. Is tarah se hum apne code ko troubleshoot kar sakte hain aur behtar code likh sakte hain.
+अधिक विकल्पों के बारे में बात करें, जो प्रोग्रामर अपने गुणवत्ता को मापने के लिए प्रयोग करते हैं, वे "स्टैंडर्ड आउटपुट" के साथ भी काम कर सकते हैं। यह प्रोग्राम के रन होने के दौरान स्क्रीन पर संदेश दिखाता है। इसके अलावा, वे दूसरे फॉर्मेटों, जैसे कि लॉग फ़ाइल और दृश्य परिप्रेक्ष्य के साथ भी अपने संदेश पूरे कर सकते हैं।
 
-## Gehri Jhaank
+स्टैंडर्ड आउटपुट से संबंधित अपनी पसंद के आधार पर आप अपने कोड में कोई भी विकल्प का उपयोग कर सकते हैं। लेकिन जब आप अपने कोड को पढ़ आप स्टैंडर्ड इरर से संबंधित संदेशों को इग्नोर करना चाहेंगे, तो आप इसे बाहरी फ़ाइल में लिख सकते हैं।
 
-Standard error output stream, jiske liye "cerr" function ka use kiya jata hai, humare liye kaafi mahatvapurna hai. Iske through hum apne errors ko handle kar sakte hain aur apne code ko debug kar sakte hain. Iske alawa, hum standard error output stream ko redirect bhi kar sakte hain aur apne errors ko log file mein save kar sakte hain.
-
-Isliye, jab bhi hum code likhein, humein standard error output stream ka use karna chahiye taki humare code mein koi bhi error ho, hum use asani se troubleshoot kar sakein.
-
-## Dekhein Bhi
-
-- [C++ Language Tutorial - Standard Error](https://www.cplusplus.com/doc/tutorial/files/)
-- [Tutorialspoint - C++ Input/Output Streams](https://www.tutorialspoint.com/cplusplus/cpp_input_output.htm)
-- [Guru99 - C++ Error Handling](https://www.guru99.com/c-plus-plus-exception-handling.html)
+# और भी देखें:
+https://www.tutorialspoint.com/cplusplus/cpp_files_streams.htm
+https://www.geeksforgeeks.org/c-error-handling-write-error-messages-to-a-file/
+https://www.learncpp.com/cpp-tutorial/19-basic-file-io/

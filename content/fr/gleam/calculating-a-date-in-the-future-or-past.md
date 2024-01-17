@@ -1,7 +1,7 @@
 ---
-title:                "Calcul d'une date dans le futur ou le passé"
-html_title:           "Gleam: Calcul d'une date dans le futur ou le passé"
-simple_title:         "Calcul d'une date dans le futur ou le passé"
+title:                "Calculer une date dans le futur ou le passé"
+html_title:           "Gleam: Calculer une date dans le futur ou le passé"
+simple_title:         "Calculer une date dans le futur ou le passé"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Dates and Times"
@@ -10,44 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+Salut les codeurs ! Aujourd'hui, nous allons parler d'un sujet assez répandu en programmation : comment calculer une date dans le futur ou le passé. Si vous êtes curieux de savoir ce que cela signifie et pourquoi les programmeurs le font, lisez la suite !
 
-Vous êtes-vous déjà demandé comment calculer une date dans le futur ou dans le passé en utilisant du code ? Peut-être voulez-vous prédire un événement important ou simplement garder une trace de vos prochaines vacances. Dans cet article, nous allons découvrir comment le faire en utilisant Gleam.
+## Quoi & Pourquoi ?
 
-## Comment faire
+Calculer une date dans le futur ou le passé, c'est simplement trouver une date qui n'est pas la date actuelle. Les programmeurs le font souvent pour des tâches telles que la planification d'événements ou la manipulation de données historiques.
 
-Pour calculer une date dans le futur ou dans le passé, nous allons utiliser la fonction `add` du module `Calendar` de Gleam. Voici un exemple de code pour calculer la date d'aujourd'hui dans 5 jours :
+## Comment faire :
 
-```Gleam
-import gleam/calendar.{ add }
+Voici un exemple de code en Gleam pour calculer une date dans le futur :
 
-today = Calendar.today()
-five_days_later = add(today, { days: 5 })
+```
+Gleam
+import gleam/calendar.Calendar
+
+pub fn main() {
+  let now = Calendar.now()
+  let future = Calendar.from_now(now, 10, "days")
+  debug!(future)
+}
 ```
 
-La fonction `add` prend deux arguments : la date de départ et une structure contenant les unités de temps que vous souhaitez ajouter à cette date. Dans cet exemple, nous ajoutons 5 jours à la date d'aujourd'hui. Vous pouvez également utiliser les unités `years`, `weeks`, `months` et `hours`.
+Le code ci-dessus utilise une bibliothèque de calendrier pour trouver la date actuelle, puis ajoute 10 jours à cette date pour obtenir une date dans le futur. Vous pouvez également utiliser la fonction `from_ago` pour trouver une date dans le passé en spécifiant un nombre négatif de jours.
 
-Voici un autre exemple qui calcule la date d'il y a 1 mois :
+Voici une sortie d'exemple pour ce code :
 
-```Gleam
-one_month_ago = add(today, { months: -1 })
+```
+2020-08-20T08:44:27.713Z
 ```
 
-Et voici comment calculer la date d'il y a 2 ans et 3 semaines :
+## Plongée profonde :
 
-```Gleam
-two_years_and_three_weeks_ago = add(today, { years: -2, weeks: -3 })
-```
+Bien que calculer des dates dans le futur ou le passé puisse sembler simple, cela peut être compliqué en fonction de la façon dont vous voulez manipuler les données temporelles. Si vous cherchez des alternatives à Gleam, certaines options populaires sont MomentJS et Joda Time.
 
-Vous pouvez voir que la syntaxe est simple et intuitive.
+Pour les détails de mise en œuvre, vous pouvez creuser dans la logique derrière les bibliothèques de calendrier et voir comment elles calculent les dates à partir d'un point de départ donné.
 
-## Plongée dans les détails
+## Voir aussi :
 
-La fonction `add` utilise la structure `Duration` pour représenter les unités de temps. Cela signifie que vous pouvez personnaliser votre calcul en utilisant d'autres unités telles que `minutes`, `seconds`, `milliseconds` et `microseconds`.
+Si vous voulez en savoir plus sur le calcul de dates dans le futur ou le passé, voici quelques liens utiles :
 
-De plus, la fonction `add` prend également en compte les années bissextiles pour des calculs précis.
+- [Documentation Gleam pour les fonctions de calendrier] (https://gleam.run/doc/gleam/calendar)
+- [MomentJS] (https://momentjs.com/)
+- [Joda Time] (https://www.joda.org/joda-time/)
 
-## Voir aussi
-
-- La documentation officielle sur le module `Calendar` de Gleam : https://gleam.run/modules/gleam/calendar/latest/
-- Un article sur la gestion des dates et heures en Gleam : https://dev.to/johanalbury/managing-dates-and-times-in-gleam-4nad
+Et voilà ! Maintenant vous savez comment calculer des dates dans le futur ou le passé en utilisant Gleam. Amusez-vous bien à coder et n'hésitez pas à explorer d'autres fonctionnalités de Gleam pour améliorer encore plus vos compétences en programmation. À la prochaine !

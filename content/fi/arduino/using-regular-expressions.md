@@ -1,7 +1,7 @@
 ---
-title:                "Käyttäen säännöllisiä lausekkeita"
-html_title:           "Arduino: Käyttäen säännöllisiä lausekkeita"
-simple_title:         "Käyttäen säännöllisiä lausekkeita"
+title:                "Säännöllisten lausekkeiden käyttö"
+html_title:           "Arduino: Säännöllisten lausekkeiden käyttö"
+simple_title:         "Säännöllisten lausekkeiden käyttö"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Strings"
@@ -10,43 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Miksi käyttää säännöllisiä lausekkeita Arduinossa?
+## Mitä ja miksi?
+Säännöllisiä lausekkeita käytetään ohjelmoinnissa etsimään ja manipuloimaan tekstiä. Niiden avulla voit tehdä tarkkoja hakuja ja korvata osia tekstistä tietyin ehdoin. Ohjelmoijat käyttävät säännöllisiä lausekkeita vaivattomasti muuntamaan suuria määriä tekstiä tai tiedostoja kerralla.
 
-Säännölliset lausekkeet ovat hyödyllisiä työkaluja, jotka auttavat käsittelemään tekstiä ja merkkijonoja Arduinossa. Ne antavat enemmän joustavuutta ja tarkkuutta tekstien tutkimiseen ja analysointiin, ja voivat myös säästää aikaa ja vaivaa manuaalisen tekstin käsittelyn sijaan.
-
-## Miten käyttää säännöllisiä lausekkeita Arduinossa?
-
-Säännöllisten lausekkeiden käyttö Arduinossa on helppoa. Ensin sinun täytyy sisällyttää "regex" -kirjasto ohjelmaasi ja määrittää sille säännöllisen lausekkeen muuttuja, esimerkiksi:
-
-```arduino
-#include <regex.h>
-regex_t regex;
+## Miten:
+### Haku
+Arduino-kääntäjässä säännöllisiä lausekkeita käytetään ```Arduino Regex()``` -funktiolla. Funktio ottaa kaksi parametria: lausekkeen ja kohdetekstin. Tässä esimerkissä etsimme tekstistä "LED": ```Arduino
+Arduino Regex ledPattern("LED");
+```
+Voit myös käyttää metakarakteria ```*``` merkitsemään kaikkia mahdollisia kirjaimia sen jälkeen. Tässä esimerkissä etsimme kaikki kirjaimet tekstin "LED" jälkeen: ```Arduino
+Arduino Regex ledPattern("LED*");
+```
+### Korvaaminen
+Regex-funktiolla voit myös korvata tekstistä haluamasi osat. Tässä esimerkissä haluamme korvata kaikki "LED"-sanat tekstillä "valo":```Arduino
+String uusiTeksti = ledPattern.replace("valo"); 
 ```
 
-Sitten voit käyttää säännöllisiä lausekkeita eri toiminnoissa, kuten "regcomp", "regexec" ja "regfree", esimerkiksi:
+Poiketen perinteisistä kielistä, kuten Java, Arduino Regex() -funktio ei palauta boolean-arvoa (totuusarvoa) vaan uuden String-tyyppisen tekstin. 
 
-```arduino
-char string[] = "Hello World!";
-char pattern[] = "^Hello";
-int result = regcomp(&regex, pattern, 0);
-if (result == 0) {
-    result = regexec(&regex, string, 0, NULL, 0);
-    if (result == REG_NOMATCH) {
-        Serial.println("String does not start with Hello");
-    }
-    regfree(&regex);
-}
-```
+## Syväsukellus:
+Säännölliset lausekkeet periytyvät 1950-luvun matematiikasta. Ajoittaisten lausekkeiden lisäksi on olemassa muita tapoja manipuloida tekstiä, kuten makkroja tai kiinteitä hakuja (string pattern matching).
 
-Tässä esimerkissä säännöllinen lauseke tarkistaa, alkavatko merkkijonot "Hello: lla ja tulostaa vastaavan viestin.
-
-## Urautuva syväsukellus
-
-Säännöllisten lausekkeiden käyttö Arduinossa voi olla monimutkaista ja vaatia hieman harjoittelua, mutta niiden avulla voit suorittaa erilaisia kuvioita ja sääntöjä, jotka helpottavat tekstien käsittelyä. Voit esimerkiksi etsiä tietyn sanan tietystä lauseesta tai tarkistaa, täyttääkö merkkijono tietyn muodon. Voit myös käyttää säännöllisiä lausekkeita tekstin korvaamiseen tai poimimiseen.
-
-Jos haluat oppia lisää säännöllisistä lausekkeista Arduinossa, voit tutustua Arduinon "regex" -kirjaston dokumentaatioon tai etsiä online-oppaita ja tarinankerrontaa käyttäjäyhteisöistä ja foorumeista.
-
-## Katso myös
-- [Arduino "regex" -kirjaston dokumentaatio](https://www.arduino.cc/reference/en/language/functions/communication/serial/println/)
-- [Regular Expressions -tutorial](https://regexone.com/)
-- [C++ - regex-tutoriaali](https://www.cplusplus.com/reference/regex/regex_match/)
+## Katso myös:
+- [RegularExpression.com](https://www.regular-expressions.info/tutorial.html)
+- [Arduino Reference - Regex()](https://www.arduino.cc/reference/en/language/functions/regular-expressions/regex/)

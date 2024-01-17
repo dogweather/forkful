@@ -1,7 +1,7 @@
 ---
-title:                "Lavorare con i file csv."
-html_title:           "Swift: Lavorare con i file csv."
-simple_title:         "Lavorare con i file csv."
+title:                "Lavorare con csv"
+html_title:           "Swift: Lavorare con csv"
+simple_title:         "Lavorare con csv"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Data Formats and Serialization"
@@ -10,42 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+## Cosa è & Perché?
+In breve, lavorare con CSV è un modo per gestire e manipolare grandi quantità di dati tabellari. I programmatori spesso utilizzano CSV per importare e esportare dati da varie fonti, come fogli di calcolo o database.
 
-Se sei un programmatore Swift, probabilmente avrai già familiarità con i dati strutturati e la loro rappresentazione in formato CSV. Ma se sei nuovo in questo mondo, potresti chiederti perché dovresti usare il formato CSV nelle tue applicazioni. In realtà, ci sono molte buone ragioni per farlo.
-
-## Come fare
-
-In Swift, ci sono diverse librerie disponibili per leggere e scrivere file CSV. Una delle più popolari è la libreria "SwiftCSV", che rende facile manipolare i dati CSV. Ecco un semplice esempio di come leggere un file CSV e stampare il suo contenuto:
+## Come fare:
+Ecco un esempio di come leggere un file CSV e stampare le righe:
 
 ```Swift
-import SwiftCSV
-
-let csvPath = Bundle.main.path(forResource: "dati", ofType: "csv") // Rileva il percorso del file CSV
-let csvFile = try! CSV(url: csvPath!) // Crea un oggetto CSV con il percorso del file
-let rows = csvFile.namedRows // Estrae le righe del file CSV
-
-for row in rows { // Cicla attraverso le righe
-    print(row["Nome"], row["Cognome"], row["Età"]) // Stampa i valori delle colonne di ogni riga
+if let url = Bundle.main.url(forResource: "dati", withExtension: "csv") {
+    do {
+        let data = try String(contentsOf: url)
+        let rows = data.components(separatedBy: "\n")
+        for row in rows {
+            print(row)
+        }
+    } catch {
+        print("Errore: \(error)")
+    }
 }
 ```
 
-L'output di questo codice sarà simile a questo:
+Output:
 
-```
-John Smith, 35
-Sarah Anderson, 28
-Henry Johnson, 41
-```
+1, Gatto, 10
+2, Cane, 5
+3, Uccello, 2
 
-## Approfondimento
+## Approfondimento:
+CSV, acronimo di Comma Separated Values, è un formato di file molto utilizzato per l'importazione e l'esportazione di dati. In passato era uno standard molto popolare per le basi di dati, ma è stato ampiamente sostituito da formati più strutturati come JSON o XML. Tuttavia, CSV rimane utile per gestire grandi quantità di dati rapidamente e facilmente.
 
-Lavorare con CSV può sembrare semplice, ma ci sono alcune cose da tenere a mente se si desidera utilizzare correttamente questo formato di dati. Ad esempio, dovresti prestare attenzione alla gestione delle virgolette e dei caratteri speciali nei tuoi dati, poiché possono influire sulla struttura del file CSV.
+Esistono anche molti strumenti e librerie che semplificano il lavoro con CSV in Swift, come ad esempio la libreria SwiftCSV. Inoltre, molte app hanno la funzione di esportare dati in formato CSV per facilitare l'analisi dei dati da parte degli utenti.
 
-Inoltre, è importante sapere come manipolare i dati CSV usando librerie come "SwiftCSV" o come strumento di base come il framework "Foundation". Ci sono diverse funzioni disponibili per filtrare, ordinare e manipolare i dati CSV, quindi assicurati di esplorare le opzioni e trova quella che meglio si adatta alle tue esigenze.
+Per implementare una lettura e scrittura di CSV più sofisticata, è possibile utilizzare le API di Foundation, come ad esempio CSVParser e CSVWriter.
 
-## Vedi anche
-
-* [Documentazione di SwiftCSV](https://github.com/swiftcsv/SwiftCSV)
-* [Documentazione di Foundation](https://developer.apple.com/documentation/foundation)
-* [Tutorial su come elaborare i dati CSV in Swift](https://www.raywenderlich.com/925-swift-coding-challenge-process-csv-files)
+## Vedi anche:
+- [SwiftCSV](https://github.com/willowtreeapps/swift-csv)
+- [Apple Foundation Framework](https://developer.apple.com/documentation/foundation)

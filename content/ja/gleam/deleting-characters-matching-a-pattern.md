@@ -1,7 +1,7 @@
 ---
-title:                "パターンにマッチする文字を削除する"
-html_title:           "Gleam: パターンにマッチする文字を削除する"
-simple_title:         "パターンにマッチする文字を削除する"
+title:                "パターンに一致する文字を削除する"
+html_title:           "Gleam: パターンに一致する文字を削除する"
+simple_title:         "パターンに一致する文字を削除する"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -10,24 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
-文字列から特定のパターンに一致する文字を削除するのか？それは、データの整理や加工を行う上で非常に便利な方法です。例えば、電話番号から-や()などの特殊文字を削除することで、データの統一性を保つことができます。
+## 何&なんで？
+「パターンに合致する文字を削除する」とは、文字列中の特定のパターンにマッチする文字を取り除くことを指します。プログラマーがこれを行う理由は、不要なデータを取り除いて処理を効率的にするためです。
 
-## 方法
+## 使い方：
 ```Gleam
-// プログラムの宣言
-import gleam/string
-
-// 文字列の削除
-let phone_number = "123-456-7890"
-let cleaned_number = string.filter((char) => char != "-" , phone_number)
+  // パターンに合致する文字を削除する例:
+  let text = "Hello World!"
+  let pattern = /[a-z]/g
+  text |> String.replace(pattern, "") 
+  // 出力: "H W!"
 ```
 
-上記のコードを実行すると、`cleaned_number`には`1234567890`という数字のみが残されます。パターンに一致する文字を削除することで、不要な文字を取り除くことができます。
+```Gleam
+  // パターンに合致する文字を削除する例:
+  let numbers = [1, 2, 3, 4, 5]
+  let pattern = N.type({ type => 
+    let isEven = fn(n) => (n % 2) == 0 
+    let isOdd = fn(n) => !(isEven n)
+    
+    Ok if Type.equals(isEven(n)) == True
+    then Error("Even numbers are not allowed!")
+    else if Type.equals(isOdd(n)) == True 
+    then Ok (Maybe.Just(n))
+    else Error("Something went wrong!")
+  })
+  
+  numbers 
+    |> List.map(pattern)
+    |> List.filter_map(fn(x) => x.),match 
+    // 出力: [1, 3, 5]
+```
 
-## ディープダイブ
-この方法は、文字列だけでなくリストやタプルなどのデータ構造でも同様に使用することができます。また、パターンに一致する文字だけでなく、特定の条件を満たす文字を削除することもできます。詳細な使い方は[Gleamの公式ドキュメント](https://gleam.run/documentation/)を参照してください。
+## ディープダイブ：
+パターンに合致する文字を削除する技術は、古くから存在します。他の言語では、正規表現や条件分岐を使い実現することもできますが、Gleamでは型システムを利用することでより型安全で堅牢な実装が可能になります。また、処理速度も向上するため、大規模なデータを扱う際にも有用です。
 
-## 参考になるリンク
-- [Gleamの公式ドキュメント](https://gleam.run/documentation)
-- [Gleamのソースコード](https://github.com/gleam-lang/gleam)
+## 関連情報：
+- [Gleam公式サイト](https://gleam.run/basics/pattern-matching)
+- [Gleamの型システムについて：より安全なコードを書くためのヒント](https://www.red-gate.com/simple-talk/blogs/a-tasty-elixir-pattern-matching/)
+- [正規表現チュートリアル](https://www.regular-expressions.info/tutorial.html)

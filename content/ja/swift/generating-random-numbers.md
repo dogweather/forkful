@@ -1,7 +1,7 @@
 ---
-title:                "ランダムな数の生成"
-html_title:           "Swift: ランダムな数の生成"
-simple_title:         "ランダムな数の生成"
+title:                "ランダムナンバーの生成"
+html_title:           "Swift: ランダムナンバーの生成"
+simple_title:         "ランダムナンバーの生成"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Numbers"
@@ -10,34 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+## 何 & なぜ？
+乱数生成とは、プログラマーがコード内でランダムな数値を作成することです。プログラマーは、この機能を使用して、ランダム性が必要なシミュレーションやゲームを作成します。
 
-ランダムな数値を生成することのメリットは、様々なアプリケーションで役立つことです。例えば、ゲームではランダムな要素を加えることでプレイヤーの体験をより面白くすることができます。また、データのサンプリングやテストデータの作成など、コンピュータサイエンスの分野でも重要な役割を果たします。
-
-## 作り方
-
-ランダムな数値を生成するには、Swiftの標準ライブラリである`arc4random_uniform`関数を使用します。この関数は、0から指定した数値までの間でランダムな整数を生成します。例えば、0から10までのランダムな数値を生成するには次のように書きます。
+## 作り方：
+乱数を生成するには、Swiftの標準ライブラリで利用可能なランダム関数を使用します。以下は、円周率の近似値を生成するコード例です。
 
 ```Swift
-let randomNumber = arc4random_uniform(11)
-print(randomNumber) // Output: 9
+let randomValue = Float.random(in: 3.0...4.0)
+let piValue = randomValue * randomValue
 ```
 
-また、この関数を使用する際には、ランダムな数値が欲しい変数の型に合わせてキャストすることを忘れないようにしましょう。例えば、0から10までのランダムな整数をDouble型の変数に代入するには、次のように書きます。
+実行すると、毎回異なる近似値が生成されます。例えば、一度目は3.697524、二度目は3.323656といった具合にです。
 
-```Swift
-let randomNumber = Double(arc4random_uniform(11))
-print(randomNumber) // Output: 9.0
-```
+## 詳細：
+乱数生成の歴史的背景には、計算機における非決定論的アルゴリズムの研究があります。代替手段として、プログラマーは外部の乱数生成器APIを使用することもできます。また、乱数生成はハードウェアによって実装されることもあります。
 
-## ディープダイブ
+## 関連情報：
+乱数生成についてもっと詳しく学ぶには、以下のリンクを参考にしてください。
 
-ランダムな数値を生成するためにSwiftのarc4random_uniform関数を使用することが一般的ですが、実際には乱数生成アルゴリズムの一種であるメルセンヌ・ツイスターを使用しています。このアルゴリズムは、よりランダムな数値を生成するために計算力を多く必要としますが、より高品質なランダム数値を提供します。
-
-また、ランダムな数値を生成する際にはシード値を指定することで、同じ乱数を生成することができます。例えば、ゲームの開始時に同じ乱数を使用することで、プレイヤーが同じスタート地点からゲームを開始することができます。
-
-## 同様に参考になるもの
-
-- <https://developer.apple.com/documentation/swift/int/2884963-arc4random_uniform>：Swiftの公式ドキュメント
-- <https://www.raywenderlich.com/146946/arc4random-and-arc4random_uniform>：Raywenderlichのチュートリアル記事
-- <https://ja.wikipedia.org/wiki/%E3%83%A1%E3%83%AB%E3%82%BB%E3%83%B3%E3%83%8C%E3%83%BB%E3%83%84%E3%82%A4%E3%82%B9%E3%82%BF%E3%83%BC>：メルセンヌ・ツイスターのウィキペディア記事
+- [Appleの公式ドキュメント](https://developer.apple.com/documentation/swift/swift_standard_library/random)
+- [乱数生成に関する記事](https://qiita.com/stellalee23/items/fe8fd3c11dd033d54d39)
+- [疑似乱数生成アルゴリズムについての解説](https://vivivai.net/sar/baseline/random/)

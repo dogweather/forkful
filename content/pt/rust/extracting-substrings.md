@@ -10,44 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+## O que e por quê?
 
-Extrair substrings é uma tarefa comum em programação, seja para manipular dados de texto ou para obter informações específicas de uma determinada string. Em Rust, existem várias maneiras de realizar essa tarefa com eficiência e elegância. Neste artigo, vamos explorar como extrair substrings em Rust e como essa funcionalidade pode facilitar o seu trabalho como programador.
+Extrair substrings é uma técnica muito útil em programação que permite separar uma string em partes menores. Isso pode ser útil para manipular apenas uma parte específica de uma string ou para realizar operações em diferentes partes de uma string.
 
-## Como fazer
+Os programadores geralmente fazem isso para tornar seu código mais legível e organizado, ou para realizar operações mais precisas em uma string.
 
-Extrair substrings em Rust é bastante simples e podemos utilizar algumas funções e métodos nativos para realizar essa tarefa. Por exemplo, se tivermos uma string chamada "Hello World" e quisermos extrair apenas a palavra "World", podemos fazer da seguinte forma:
+## Como fazer:
 
-```Rust
-let string = "Hello World"; // Declara uma string
-let substring = &string[6..]; // Extrai a substring a partir do índice 6 até o final da string
-println!("{}", substring); // Imprime a substring "World"
+Para extrair substrings em rust, você pode utilizar o método "slice" nativo da linguagem. Veja um exemplo de como isso pode ser feito:
+
+```
+let my_string = "Olá Rust!";
+let substring = &my_string[4..8];
+println!("{}", substring); // Saída: Rust
 ```
 
-Outra forma de extrair substrings é utilizando o método `split()` que quebrará a string em partes, de acordo com um determinado caractere ou padrão. Por exemplo, podemos utilizar o método `split()` para extrair apenas os dígitos de uma string, como mostrado no exemplo abaixo:
+Neste exemplo, utilizamos o método "slice" para obter apenas a parte da string que vai do índice 4 ao 8. O resultado é a substring "Rust" que será impressa no console.
 
-```Rust
-let string = "1234abc"; // Declara uma string
-let digits: String = string.split(char::is_alphabetic).collect(); // Extrai apenas os dígitos da string e armazena em uma variável
-println!("{}", digits); // Imprime a string com apenas os dígitos "1234"
-```
+## Profundando:
 
-Além disso, Rust também oferece a função `matches()` que permite extrair múltiplas substrings de uma string que correspondam a um determinado padrão. Veja um exemplo:
+Extrair substrings não é uma técnica nova e é amplamente utilizada em várias linguagens de programação. No entanto, em alguns casos, pode ser necessário utilizar outras abordagens, como usar expressões regulares, para obter substrings mais complexas.
 
-```Rust
-let string = "Brasil 2021"; // Declara uma string
-let substrings: Vec<&str> = string.matches(char::is_numeric).collect(); // Extrai todas as substrings numéricas e armazena em um vetor
-println!("{:?}", substrings); // Imprime as substrings ["2", "0", "2", "1"]
-```
+Em Rust, é importante observar que o método "slice" retorna uma referência à substring original, o que torna o código mais eficiente, mas também pode apresentar alguns desafios em relação à propriedade de mutabilidade.
 
-## Profundidade
+## Veja também:
 
-Ao trabalhar com extrair substrings em Rust, é importante entender alguns conceitos fundamentais, como os índices de strings e o uso de referências imutáveis. É importante lembrar que em Rust, as strings são guardadas em formato UTF-8 e, por isso, seus índices não correspondem necessariamente a cada caractere individual.
-
-Além disso, ao utilizar referências imutáveis ao extrair substrings, estamos apenas fazendo uma "visualização" da string original, sem modificar a sua posição na memória. Isso é importante para garantir um código seguro e sem erros.
-
-## Veja também
-
-- Documentação oficial de strings em Rust: https://doc.rust-lang.org/std/string/index.html
-- Artigo sobre manipulação de strings em Rust: https://blog.logrocket.com/string-manipulation-in-rust/
-- Vídeo tutorial de como extrair substrings em Rust: https://www.youtube.com/watch?v=I_icqEnBMz8
+- [Documentação oficial do Rust sobre Manipulação de strings](https://doc.rust-lang.org/stable/std/string/struct.String.html#method.slice)
+- [Mais informações sobre expressões regulares em Rust](https://docs.rs/regex/1.3.9/regex/)
+- [Guia de estilo informal para escrever em Rust](https://cheats.rs/#style)

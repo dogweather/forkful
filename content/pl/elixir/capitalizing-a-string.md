@@ -1,7 +1,7 @@
 ---
-title:                "Pisownia z wielkiej litery ciągu znaków"
-html_title:           "Elixir: Pisownia z wielkiej litery ciągu znaków"
-simple_title:         "Pisownia z wielkiej litery ciągu znaków"
+title:                "Zmiana ciągu na wielkie litery"
+html_title:           "Elixir: Zmiana ciągu na wielkie litery"
+simple_title:         "Zmiana ciągu na wielkie litery"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -10,43 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Czym jest kapitalizacja ciągu znaków i dlaczego programiści to robią?
 
-Czy kiedykolwiek zastanawiałeś się, dlaczego otrzymując tekst od użytkownika, nazywającego się na przykład "anna", chcesz go zamienić na "Anna"? Czy nie byłoby łatwiej zaoszczędzić sobie czasu i pracy, pozwalając tej osobie na użycie ulubionej wielkości liter w swoim imieniu? Jednak z punktu widzenia estetyki i przyjętych konwencji, ważne jest, aby tekst był poprawnie napisany z punktu widzenia wielkości liter. W Elixirze istnieje narzędzie, które może ci w tym pomóc - funkcja `String.capitalize/1`.
+Kapitalizacja ciągu znaków oznacza zmianę pierwszej litery ciągu na dużą literę, a pozostałych na małe litery. Programiści często wykonują tę operację, aby poprawić czytelność tekstu lub zachować spójność w wyświetlaniu danych.
 
-## Jak to zrobić
-
-W celu użycia funkcji `String.capitalize/1` należy najpierw wprowadzić do swojego kodu moduł `String`, używając polecenia `require String`. Następnie wywołujemy funkcję, podając jako argument nasz tekst, który chcemy zamienić na poprawną wielkość liter. Na przykład:
+## Jak to zrobić?
 
 ```Elixir
-require String
-
-String.capitalize("anna")
-# Wynik: "Anna"
+String.capitalize("hello world")
 ```
-
-Funkcja `String.capitalize/1` jest również w stanie zamienić wielkość liter dla całego tekstu, a nie tylko pierwszej litery. W takim przypadku, dla tekstu "jeśli zdroweś to złóż żądanie", wynikiem będzie "Jeśli Zdroweś To Złóż Żądanie". Można to zrobić, dodając opcję `:all` do funkcji:
+Output: "Hello world"
 
 ```Elixir
-String.capitalize("if you're happy and you know it", :all)
-# Wynik: "If You're Happy And You Know It"
+String.downcase("Elixir")
 ```
+Output: "elixir"
 
-Możliwe jest także użycie funkcji `String.capitalize/1` dla wielu wyrazów jednocześnie, wykorzystując pętlę `Enum.map`:
+## Wnikliwe spojrzenie
 
-```Elixir
-texts = ["anna", "emma", "tomasz"]
+Kapitalizacja ciągu znaków jest popularnym zadaniem w programowaniu i istnieje wiele sposobów jego wykonania, w tym funkcja ```capitalize``` w Elixir oraz metoda ```upper``` w innych językach programowania. Dzięki kapitalizacji, dane są wyświetlane w jednolity sposób, co ułatwia ich przetwarzanie i analizę. W przeszłości, kiedy drukowane teksty były złożone z dużych liter, a maszyny do pisania miały tylko klawisze wielkich liter, kapitalizacja była niezbędnym krokiem w tworzeniu wyraźnych i estetycznych dokumentów.
 
-Enum.map(texts, &String.capitalize/1)
-# Wynik: ["Anna", "Emma", "Tomasz"]
-```
+## Zobacz też
 
-## Głębsze wewnętrzne działanie
-
-Podczas gdy funkcja `String.capitalize/1` jest prosta w użyciu, warto wiedzieć, jak działa wewnętrznie. Otóż, funkcja ta wykorzystuje moduł `String.Special`, który zawiera listę wyjątków oraz reguły do zamiany liter w różnych językach. Dzięki temu, funkcja potrafi obsłużyć specjalne przypadki, takie jak zamiana litery "i" na "I" w jednym słowie, ale nie w drugim.
-
-## Zobacz także
-
-- [Dokumentacja funkcji String.capitalize/1](https://hexdocs.pm/elixir/String.html#capitalize/2)
-- [Dokumentacja modułu String.Special](https://hexdocs.pm/elixir/String.Special.html)
-- [Przewodnik po Elixirze](https://elixir-lang.org/getting-started/introduction.html)
+https://hexdocs.pm/elixir/String.html#capitalize/1
+https://elixir-lang.org/getting-started/case-cond-and-if.html#capitalizing-a-string

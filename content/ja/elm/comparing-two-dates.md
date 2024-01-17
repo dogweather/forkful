@@ -1,7 +1,7 @@
 ---
-title:                "日付を比較する"
-html_title:           "Elm: 日付を比較する"
-simple_title:         "日付を比較する"
+title:                "2つの日付の比較"
+html_title:           "Elm: 2つの日付の比較"
+simple_title:         "2つの日付の比較"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Dates and Times"
@@ -10,54 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+## 何 & なぜ?
 
-二つの日付を比較することが重要なのか、その理由はなんでしょうか？短く説明します。まず、日付の比較は日常生活でよく使われる機能であり、特にアプリケーション開発においても必要不可欠です。例えば、予定管理アプリではイベントの日付を比較することで、重複する予定を特定することができます。
+日付を比較することは、プログラマーにとって重要なタスクの一つです。例えば、古いデータを最新のものと比較し、更新の必要性を判断することがあります。また、特定の日付が他よりも前か後ろかを確認することもあります。プログラマーは日付を比較することで、データの整合性を保つことができます。
 
-## 方法
+## 方法:
 
-Elmを使用して、二つの日付を比較する方法を紹介します。まずは日付を文字列ではなく日付オブジェクトとして処理することが重要です。その後、日付オブジェクトのプロパティを使用して比較ロジックを実装します。
-
-```elm
-import Time
-import Date
-
--- 日付オブジェクトの作成
-date1 : Date
-date1 = Date.fromText "2020-04-01"
-
-date2 : Date
-date2 = Date.fromText "2020-04-15"
-
-date3 : Date
-date3 = Date.fromText "2020-05-01"
-
--- 日付を比較する関数
-compareDates : Date -> Date -> String
-compareDates date1 date2 =
-    if Date.compare date1 date2 == EQ then
-        "同じ日付です"
-    else if Date.compare date1 date2 == LT then
-        Date.toString date1 ++ " より前の日付です"
-    else
-        Date.toString date1 ++ " より後の日付です"
-
--- 比較の実行と結果の表示
-main : Html msg
+```Elm 
+import Date exposing (fromString, before)
+ 
+date1 = String.fromList [ ”2020”, ”07”, ”01” ]
+date2 = String.fromList [ ”2020”, ”07”, ”15” ]
+ 
 main =
-    div []
-        [ text (compareDates date1 date2) -- "2020-04-01 より前の日付です"
-        , text (compareDates date2 date3) -- "2020-04-15 より前の日付です"
-        , text (compareDates date1 date1) -- "同じ日付です"
-        ]
+    case (fromString date1, fromString date2) of
+        (Just d1, Just d2) ->
+            if before d1 d2 then
+                "date1 comes before date2"
+            else
+                "date2 comes before date1"
+        _ ->
+            "invalid date"
 ```
 
-## 深堀り
+```
+date1 comes before date2
+```
 
-日付の比較にはさまざまな方法がありますが、一般的には「年」→「月」→「日」の順番で比較することが推奨されています。Elmでは、内部的には日付をJulian Dayという数値で表現しているため、数値として比較することも可能です。また、日付オブジェクトにはサポートされている機能が多くあり、開発者は必要に応じてそれらを使用してより複雑な比較ロジックを実装することができます。
+## 深堀り:
 
-## おすすめのリンク
+- 日付を比較するための関数は、どの言語でも利用可能ですが、Elmの場合は型安全性が高く、エラーが起きにくいという利点があります。
+- 別の方法として、日付を数字の配列として比較する方法があります。しかし、この方法ではより多くのエラーが発生しやすく、データの整合性が保たれにくいという欠点があります。
+- Elmでは、日付を扱うためのDate型が用意されており、それを利用することでより安全に、正確に日付を比較することができます。
 
-- [Dateモジュールのドキュメント](https://package.elm-lang.org/packages/elm/time/latest/Time)
-- [Elm公式ガイド](https://guide.elm-lang.jp/date-and-time/)
-- [Julian Dayについての詳細な解説](https://www.maths.usyd.edu.au/u/olver/JDN.html)
+## 関連情報:
+
+- [Elm公式ドキュメント: Date](https://package.elm-lang.org/packages/elm/time/latest/Date)
+- [日付を比較する方法: Elm vs JavaScript](https://medium.com/@pablovilloslada/comparing-dates-with-elm-vs-javascript-4a3e7318bab1)

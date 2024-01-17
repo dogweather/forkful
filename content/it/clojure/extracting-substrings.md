@@ -10,49 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+## Cosa & Perché?
+L'estrazione di sottostringhe è il processo di ottenere una stringa più piccola da una stringa più grande. I programmatori spesso lo fanno per manipolare i dati in modo più efficiente e per ottenere solo le parti della stringa che sono pertinenti al loro scopo.
 
-C'è sempre una prima volta per tutto, anche per estrarre sottostringhe in Clojure. Se ti trovi a lavorare con testi e vuoi ottenere una sezione specifica di un determinato testo, potresti trovare utile l'estrazione delle sottostringhe. Potrebbe sembrare un concetto complesso, ma con il giusto approccio, puoi farlo in modo semplice ed efficiente.
-
-## Come fare
-
-L'estrazione delle sottostringhe in Clojure è possibile utilizzando la funzione `subs` insieme agli indici di posizione della sottostringa desiderata.
+## Come fare:
+Utilizzando la funzione ```subs``` di Clojure, possiamo facilmente estrarre una sottostringa da una stringa. Passando alla funzione un parametro che indica l'inizio e un parametro che indica la fine della sottostringa desiderata, otterremo il risultato desiderato. Ad esempio:
 
 ```Clojure
-(def testo "Questo è un testo di esempio")
-
-(subs testo 0 5)
-
-;Output: "Questo"
+(subs "Hello world" 0 5)
+=> "Hello"
 ```
 
-In questo esempio, abbiamo utilizzato `subs` per estrarre la sottostringa da 0 a 5 (compreso) del testo. Puoi anche utilizzare numeri negativi per indicare l'inizio e la fine della sottostringa rispetto alla fine del testo.
+Possiamo anche utilizzare le funzioni di stringa di base, come ```substring```, ```take``` e ```drop```, per ottenere sottostringhe in modi diversi. Ad esempio:
 
 ```Clojure
-(subs testo -7 -1)
+(substring "Hello world" 6)
+=> "world"
 
-;Output: "esempio"
+(take 3 "Hello world")
+=> "Hel"
+
+(drop 6 "Hello world")
+=> "world"
 ```
 
-Puoi anche passare un solo parametro per estrarre la sottostringa dall'inizio o dalla fine del testo.
+## Approfondimento:
+L'estrazione di sottostringhe è un'operazione comune nella programmazione ed è stata utilizzata fin dai primi giorni dei linguaggi di programmazione. Ci sono anche altre alternative, come l'utilizzo di espressioni regolari o il parsing di dati strutturati. Inoltre, le sottostringhe possono anche essere estratte utilizzando gli indici dei caratteri anziché la lunghezza dei caratteri.
 
-```Clojure
-(subs testo 12)
-
-;Output: "testo di esempio"
-
-(subs testo -7)
-
-;Output: "esempio"
-```
-
-## Approfondimento
-
-Oltre alla funzione `subs`, esiste anche la funzione `substring` che accetta tre parametri: il testo di cui estrarre la sottostringa, l'indice di inizio e la lunghezza della sottostringa desiderata.
-
-Inoltre, puoi utilizzare anche espressioni regolari per catturare estrarre sottostringhe basate su un determinato pattern di caratteri.
-
-## Vedi anche
-
-- [Clojure String Manipulation](https://clojure.org/guides/strings)
-- [Clojure Substring Function](https://clojuredocs.org/clojure.core/substring)
+## Vedi anche:
+Per ulteriori informazioni su come estrarre sottostringhe in Clojure, si consiglia di consultare la documentazione ufficiale su come lavorare con le stringhe: https://clojure.org/guides/strings.

@@ -10,46 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+## O que e por que?
 
-Comparar duas datas é uma tarefa comum em programação quando se lida com dados relacionados a tempo, como agendamentos, eventos ou históricos. Entender como fazer essa comparação de maneira eficiente é essencial para um bom desenvolvimento em Go.
+Comparar duas datas no desenvolvimento de software é uma tarefa comum, pois permite verificar se uma data é antes, depois ou igual a outra. Isso é importante para diversas aplicações, como filtrar dados de acordo com a data, validar entradas do usuário ou realizar cálculos baseados nas datas.
 
-## Como fazer
+## Como fazer:
 
-Em Go, é possível comparar datas usando o pacote `time`. Primeiramente, é necessário criar as duas datas que serão comparadas, que podem ser definidas utilizando a função `time.Parse`.
-
-```
-data1 := "2021-01-01"
-data2 := "2021-01-05"
-
-d1, _ := time.Parse("2006-01-02", data1)
-d2, _ := time.Parse("2006-01-02", data2)
-```
-
-Com as datas criadas, é possível realizar a comparação utilizando os operadores de comparação: `<`, `<=`, `>`, `>=`, `==` e `!=`. Por exemplo, para verificar se `d1` é anterior a `d2`, basta utilizar o operador `<`.
+A linguagem Go possui uma função nativa para comparar datas chamada `Equal`. Ela recebe dois parâmetros do tipo `time.Time` e retorna um valor booleano indicando se as datas são iguais ou não. Veja um exemplo abaixo:
 
 ```
-if d1 < d2 {
-    fmt.Println("d1 é anterior a d2")
-}
+data1 := time.Date(2020, time.December, 12, 0, 0, 0, 0, time.UTC)
+data2 := time.Date(2020, time.December, 12, 0, 0, 0, 0, time.UTC)
+
+resultado := time.Equal(data1, data2)
+
+fmt.Println("As datas são iguais?", resultado)
+// Output: As datas são iguais? true
 ```
 
-O resultado esperado do código acima seria "d1 é anterior a d2", já que 01/01/2021 vem antes de 05/01/2021.
+Além da função `Equal`, também é possível utilizar os operadores de comparação `==` (igual), `>` (maior), `<` (menor), `>=` (maior ou igual) e `<=` (menor ou igual) para comparar datas em Go.
 
-## Mergulho Profundo
+## Mais detalhes:
 
-Quando se trata de comparar datas em Go, é importante entender que as datas são do tipo `time.Time`. Isso significa que elas são armazenadas como um número de nanossegundos desde o Unix epoch (1 de janeiro de 1970). Isso permite uma comparação precisa e eficiente de datas.
+Comparar datas é uma tarefa que existe desde os primórdios da computação, pois a manipulação de datas é fundamental para a utilização de sistemas de informação. Além da função `Equal`, existem outras bibliotecas em Go que oferecem funcionalidades para manipulação de datas, como `time.Parse` para converter uma string em uma data e `time.Format` para formatar uma data em uma string.
 
-Outro detalhe importante é que, ao criar uma data, pode-se especificar o fuso horário que deve ser considerado. Isso pode ser feito passando o local como segundo parâmetro na função `time.Parse`. Por exemplo, para criar uma data em São Paulo, pode-se fazer:
+## Veja também:
 
-```
-localSP, _ := time.LoadLocation("America/Sao_Paulo")
-d1, _ := time.ParseInLocation("2006-01-02", data1, localSP)
-```
-
-Isso garante que a data `d1` seja criada com base no fuso horário correto, levando em consideração possíveis alterações de horário devido ao horário de verão.
-
-## Veja também
-
-- [Documentação oficial do pacote `time` em Go](https://golang.org/pkg/time/)
-- [Exemplos práticos de comparação de datas em Go](https://play.golang.org/p/_OA0SSmMFgS)
+- Documentação oficial da função `Equal` em Go: https://golang.org/pkg/time/#Equal
+- Comparação entre datas em outras linguagens de programação: https://www.oreilly.com/library/view/data-algorithms/9781491906170/ch02.html
+- Manipulação de datas em Go: https://www.calhoun.io/parsing-dates-and-times-in-go/

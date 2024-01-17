@@ -10,35 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why 
-Creating temporary files is a common practice in programming to store temporary data or maintain information during the execution of a program. Temporary files are typically deleted once the program has completed its task. 
+## What & Why?
+Creating a temporary file is a common task in programming that enables developers to store and manipulate data during runtime. Temporary files are typically used for temporary storage of data before it is permanently saved or deleted. Programmers use temporary files to improve the efficiency, flexibility, and security of their code.
 
-## How To 
-To create a temporary file in C#, you can use the `System.IO.Path.GetTempFileName()` method. This method creates a unique temporary file name that can then be used to create and write data to the file. Here's an example: 
+## How to:
+To create a temporary file in C#, we can use the `Path.GetTempFileName()` method. This method automatically generates a unique name for the temporary file and creates the file in the system's temporary directory. Here's an example of creating and writing data to a temporary file:
 
 ```C#
-string tempFile = System.IO.Path.GetTempFileName();
-// Write some data to the file
-using (System.IO.StreamWriter writer = System.IO.File.AppendText(tempFile))
+string filePath = Path.GetTempFileName();
+
+using (StreamWriter writer = File.CreateText(filePath))
 {
     writer.WriteLine("This is a temporary file.");
+    writer.WriteLine("It will be deleted automatically when the program ends.");
 }
+
+//Output:
+//The temporary file's name and path: C:\Users\<user>\AppData\Local\Temp\tmp<unique_id>.tmp
+//The temporary file's content: 
+//This is a temporary file.
+//It will be deleted automatically when the program ends.
 ```
 
-To read the contents of the temporary file, you can use the `System.IO.File.ReadAllLines()` method. Here's another example: 
+## Deep Dive:
+Temporary files have been a fundamental part of programming since the early days of computing. Before the advent of modern file systems, programmers would use temporary tapes or disks to store data temporarily. Nowadays, temporary files are more commonly used for performance optimization or to ensure data security.
 
-```C#
-string[] tempFileContents = System.IO.File.ReadAllLines(tempFile);
-```
+One alternative to creating a temporary file is using in-memory data structures. However, this approach can lead to memory leaks and may not be suitable for large amounts of data. Another alternative is to store data in a database, which can be more efficient but may introduce additional complexities and dependencies.
 
-The temporary file created with the `GetTempFileName()` method will be automatically deleted when the program terminates. However, if you need to delete the file before that, you can use the `System.IO.File.Delete()` method. 
+When a temporary file is created, it first gets allocated in the disk's free space as a regular file. As the name suggests, the file's lifespan is temporary and it will be automatically deleted when the program ends. This prevents the accumulation of unnecessary data and frees up disk space for other applications.
 
-## Deep Dive 
-When you create a temporary file, it is typically stored in the system's temporary folder. You can find the path to this folder using the `System.IO.Path.GetTempPath()` method. 
-
-It is important to note that temporary files should only be used for temporary storage. They are not meant to hold sensitive or important data as they can be accessed and modified by other processes. Additionally, when working with temporary files, it is a good practice to handle any exceptions that may be thrown and properly dispose of any resources being used. 
-
-## See Also 
-- [Microsoft Docs on GetTempFileName() Method](https://docs.microsoft.com/en-us/dotnet/api/system.io.path.gettempfilename)
-- [Microsoft Docs on ReadAllLines() Method](https://docs.microsoft.com/en-us/dotnet/api/system.io.file.readalllines)
-- [Microsoft Docs on Delete() Method](https://docs.microsoft.com/en-us/dotnet/api/system.io.file.delete)
+## See Also:
+- [Microsoft Docs on `Path.GetTempFileName()`](https://docs.microsoft.com/en-us/dotnet/api/system.io.path.gettempfilename?view=net-5.0)
+- [C# Guide on File and Stream I/O](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/file-system/how-to-write-to-a-text-file)

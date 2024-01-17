@@ -1,7 +1,7 @@
 ---
-title:                "Convirtiendo una fecha en una cadena"
-html_title:           "Elm: Convirtiendo una fecha en una cadena"
-simple_title:         "Convirtiendo una fecha en una cadena"
+title:                "Convertir una fecha en una cadena de texto."
+html_title:           "Elm: Convertir una fecha en una cadena de texto."
+simple_title:         "Convertir una fecha en una cadena de texto."
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Dates and Times"
@@ -10,44 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué convertir una fecha en una cadena de texto?
+## ¿Qué y por qué?
 
-Si estás trabajando en un proyecto en Elm que involucra fechas, es probable que en algún momento necesites convertir una fecha en una cadena de texto. Por ejemplo, al mostrar una fecha en un formato específico o al guardar una fecha en una base de datos. En este artículo, te enseñaré cómo hacerlo de forma sencilla y eficiente en Elm.
+Convertir una fecha en una cadena es convertir una fecha en un formato legible para humanos, como "27 de marzo de 2021". Los programadores a menudo necesitan convertir fechas en cadenas para fines de visualización o almacenamiento.
 
-## Cómo hacerlo
+## Cómo:
 
-Para convertir una fecha en una cadena de texto en Elm, necesitamos usar la función `Date.toString` del paquete `elm/time`. Esta función acepta una cadena de formato y una fecha y devuelve la fecha en el formato especificado.
-
-Veamos un ejemplo de cómo podemos usar esta función. Supongamos que tenemos una fecha en formato Unix en una variable llamada `unixDate` y queremos mostrarla en formato DD/MM/AAAA. Podríamos hacerlo de la siguiente manera:
-
-```elm
-import Time exposing (Date)
-
-unixDate = 1618920000
-
-dateToString : String
-dateToString =
-    unixDate
-        |> Date.fromTime
-        |> Result.map (\date -> Date.toString "dd/MM/yyyy" date)
-        |> Result.withDefault ""
+``` Elm
+dateToString : Date -> String
+dateToString (month, day, year) =
+  String.fromInt day ++ " de " ++ getMonthName month ++ " de " ++ String.fromInt year
 ```
 
-En este ejemplo, usamos la función `Date.fromTime` para convertir nuestro valor de Unix en un tipo de dato `Date` y luego pasamos ese valor a la función `Date.toString` junto con nuestro formato deseado. Por último, utilizamos la función `Result.withDefault` para manejar el caso en el que la conversión falla y asignamos una cadena vacía como valor por defecto.
+Ejemplo de entrada: (3, 27, 2021)
 
-Al imprimir el valor de `dateToString`, obtendremos la fecha en formato DD/MM/AAAA, en este caso: 19/04/2021.
+Salida: "27 de marzo de 2021"
 
-## Deep Dive
+## Profundizando:
 
-La función `Date.toString` en realidad acepta una variedad de formatos diferentes. Puedes encontrar una lista completa de los formatos disponibles en la documentación del paquete `elm/time`. Aquí te dejo algunos ejemplos para que puedas probar:
+Convertir fechas en cadenas ha sido una tarea esencial en la programación desde los inicios. Antes del uso de los sistemas de fecha y hora de la computadora, las fechas se almacenaban en diferentes formatos en diferentes lugares, lo que dificultaba la comprensión y gestión de los datos. 
 
-- `"yyyy-MM-dd"`: Muestra la fecha en formato AAAA-MM-DD, por ejemplo: 2021-04-19.
-- `"MMMM dd, yyyy"`: Muestra la fecha en formato mes dia, año, por ejemplo: April 19, 2021.
-- `"ddd, d MMM yyyy HH:mm:ss z"`: Muestra la fecha en formato día de la semana, día mes año hora:minuto:segundo zona horaria, por ejemplo: Mon, 19 Apr 2021 00:00:00 UTC.
+Existen varias alternativas para convertir fechas en cadenas en Elm, como la función `DateTime.toGregorianCalendar` que convierte una fecha en un objeto de calendario gregoriano, o la biblioteca extra `elm-community/date-extra` que ofrece funciones más avanzadas de conversión de fechas. 
 
-Además de la función `Date.toString`, también puedes utilizar la función `Date.toIsoString` para obtener la fecha en un formato ISO 8601, que es ampliamente utilizado para representar fechas en intercambios de datos.
+Detrás de escena, la función `dateToString` utiliza la biblioteca `Time` de Elm, que proporciona herramientas útiles para trabajar con fechas y tiempos. Esta función acepta una fecha en formato `Date` y luego utiliza la biblioteca `String` de Elm para concatenar la cadena resultante.
 
-## Ver también
+## Ver también:
 
-- [Documentación oficial de Elm para el módulo Time](https://package.elm-lang.org/packages/elm/time/latest/)
-- [Formato ISO 8601 en Wikipedia](https://es.wikipedia.org/wiki/ISO_8601)
+- La documentación oficial de la función `dateToString` de Elm: https://package.elm-lang.org/packages/elm/time/latest/Time#dateToString
+- La biblioteca `elm-community/date-extra`: https://package.elm-lang.org/packages/elm-community/date-extra/latest/
+- La biblioteca `Time` de Elm: https://package.elm-lang.org/packages/elm/time/latest/

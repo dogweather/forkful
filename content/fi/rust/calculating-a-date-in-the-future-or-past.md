@@ -1,7 +1,7 @@
 ---
-title:                "Päivämäärän laskeminen tulevaisuudessa tai menneisyydessä"
-html_title:           "Rust: Päivämäärän laskeminen tulevaisuudessa tai menneisyydessä"
-simple_title:         "Päivämäärän laskeminen tulevaisuudessa tai menneisyydessä"
+title:                "Tulevaisuuden tai menneen päivämäärän laskeminen tietokoneohjelmoinnissa"
+html_title:           "Rust: Tulevaisuuden tai menneen päivämäärän laskeminen tietokoneohjelmoinnissa"
+simple_title:         "Tulevaisuuden tai menneen päivämäärän laskeminen tietokoneohjelmoinnissa"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Dates and Times"
@@ -10,45 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+# Rustilla tulevaisuuden tai menneen päivämäärän laskeminen
 
-Usein tarvitsemme laskelmia tulevaisuuden tai menneisyyden päivämääristä esimerkiksi sovelluksissa tai projekteissa. Rust-ohjelmoinnissa on helppo ja vaivaton tapa tehdä laskelmia tällaisista päivämääristä.
+## Mitä & Miksi?
 
-## Miten
+Tulevaisuuden tai menneen päivämäärän laskeminen on ohjelmisto-osa, jolla pystytään päivämäärän laskemiseen tietyn ajanjakson päässä nykyisestä päivämäärästä. Tätä tehdään usein liiketoiminnallisissa sovelluksissa, kuten laskutuksessa tai kalenterisovelluksissa.
 
-Laskelmat tulevaisuuden ja menneisyyden päivämääristä onnistuvat Rust-ohjelmoinnissa DateTime-kirjaston avulla. Voit asentaa paketin käyttämällä komentoa `cargo install chrono`.
+## Kuinka:
 
-Sitten voit aloittaa laskelmat luomalla DateTime-olion haluamallesi päivämäärälle käyttämällä `UTC` aikavyöhykkeellä ja `chrono::DateTime` rakennetta:
+Seuraavassa käytetään esimerkkinä Rustin Date Crate -kirjastoa laskemaan tulevaisuuden päivämäärä.
 
 ```Rust
-extern crate chrono; // Käyttää chrono-kirjastoa
+use chrono::{Utc, Duration};
 
-use chrono::{DateTime, Duration, Utc}; // Ottaa käyttöön tarvittavat kirjastot
+let current_date = Utc::today();
+let days_to_add = Duration::days(7);
+let future_date = current_date + days_to_add;
 
-let nyt = Utc::now(); // Hakee nykyisen päivämäärän ja ajan UTC-aikavyöhykkeellä
-let tulevaisuudessa = nyt + Duration::weeks(2); // Lisää kaksi viikkoa nykyiseen päivämäärään
-let menneisyydessä = nyt - Duration::days(5); // Vähentää viisi päivää nykyisestä päivämäärästä
-
-println!("Päivämäärä kaksi viikkoa tulevaisuudessa on: {}", tulevaisuudessa); // Tulostaa tulevaisuuden päivämäärän
-println!("Päivämäärä viisi päivää menneisyydessä oli: {}", menneisyydessä); // Tulostaa menneisyyden päivämäärän
+println!("Nykyinen päivämäärä: {}", current_date);
+println!("7 päivää lisää: {}", future_date);
 ```
 
 Tulostus:
 
 ```
-Päivämäärä kaksi viikkoa tulevaisuudessa on: 2021-09-17T22:25:49.220076800 UTC
-Päivämäärä viisi päivää menneisyydessä oli: 2021-08-13T22:25:49.220076800 UTC
+Nykyinen päivämäärä: 2021-10-04
+7 päivää lisää: 2021-10-11
 ```
 
-## Syväluotaus
+## Syvempi sukellus:
 
-DateTime-rakenteella on monia hyödyllisiä metodeita, joita voi käyttää päivämäärien manipulointiin. Esimerkiksi `checked_add` ja `checked_sub` metodit mahdollistavat päivämäärän lisäämisen tai vähentämisen haluamalla aikavälillä, mutta tarkistavat samalla, ettei päivämäärä ylitä vuoden tai kuukauden rajaa.
+Historiallisessa kontekstissa päivämäärän laskeminen ei aina ollut helppoa, ja monissa vanhemmissa kielissä se vaati melko paljon koodia. Onneksi nykyaikaiset kielet, kuten Rust, tarjoavat kirjastoja, jotka helpottavat päivämäärän laskemista.
 
-Lisäksi DateTime-rakenteella on muun muassa `format` metodi, joka mahdollistaa päivämäärän muotoilun halutun kuvion mukaan. Esimerkiksi `format("%d.%m.%Y")` tuottaa päivämäärän muodossa "13.08.2021".
+On myös muita tapoja laskea päivämäärä, kuten käyttämällä Unix-aikaleimoja tai date-komentoa komentoriviltä. Näitä tapoja voi olla hyödyllistä käyttää erilaisissa skenaarioissa.
 
-Nämä ja muut DateTime-rakenteen metodit löydät [Rustin virallisesta dokumentaatiosta](https://docs.rs/chrono/0.4.19/chrono/) ja voit käyttää niitä haluamallasi tavalla päivämäärien laskemiseen tulevaisuudessa ja menneisyydessä.
+Päivämäärän laskeminen tapahtuu yleensä millisekunneissa, ja tarkkuutta vaikutetaan päivämääräkirjaston avulla. On tärkeää varmistaa, että päivämääräkirjasto on asennettu ja päivitetty, jotta laskenta on tarkkaa.
 
-## Katso myös
+## Katso myös:
 
-- Rustin virallinen dokumentaatio: https://www.rust-lang.org/
-- DateTime-kirjaston dokumentaatio: https://docs.rs/chrono/0.4.19/chrono/
+- [Chrono Crate - Rustin päivämäärä- ja aikanenälkymä](https://docs.rs/chrono/0.4.19/chrono/)
+- [Rustin standardikirjaston Date Crate -näkymä](https://doc.rust-lang.org/std/time/struct.SystemTime.html)
+
+Kiitos, kun luit! Toivottavasti tämä artikkeli auttoi sinua ymmärtämään tarkemmin miten tulevaisuuden tai menneen päivämäärän laskeminen tapahtuu Rustilla.

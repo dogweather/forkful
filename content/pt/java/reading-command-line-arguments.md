@@ -10,41 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por Que
+## O que e por que?
 
-Se você já se perguntou como programas em Java conseguem receber informações dos usuários antes mesmo de serem executados, é porque eles estão lendo os argumentos da linha de comando. Esta é uma habilidade fundamental para qualquer programador em Java, pois permite a interação com o usuário e a personalização da execução do programa.
+Ler argumentos de linha de comando é uma técnica usada pelos programadores para permitir que um programa receba informações diretamente da linha de comando do terminal. Isso pode facilitar a execução de um programa com diferentes argumentos e configurações, sem a necessidade de recompilar o código.
 
-## Como Fazer
+## Como fazer:
 
-Para ler os argumentos da linha de comando em Java, é necessário utilizar o método `main()` e o parâmetro `args[]`. Veja abaixo um exemplo de código que imprime os argumentos fornecidos pelo usuário:
-
-```Java
-public class LeituraArgumentos {
-    public static void main(String[] args){
-        for (int i = 0; i < args.length; i++){
-            System.out.printf("Argumento %d: %s\n", i+1, args[i]);
-        }
-    }
+```
+public static void main(String[] args) {
+    System.out.println("Ola " + args[0] + "!");
 }
 ```
 
-Ao executar este programa com o comando `java LeituraArgumentos argumento1 argumento2`, ele irá imprimir o seguinte resultado:
+Executando o código acima com o seguinte comando: ```java MeuPrograma Alice```, veremos o resultado: ```Ola Alice!```
 
-```
-Argumento 1: argumento1
-Argumento 2: argumento2
-```
+## Mergulho profundo:
 
-Também é possível acessar argumentos específicos através da posição no array `args[]`. Por exemplo, `args[0]` irá retornar o primeiro argumento fornecido pelo usuário.
+Ler argumentos de linha de comando é uma técnica amplamente usada em linguagens de programação, como Java, C++ e Python. Ela se tornou popular com o avanço da automação de tarefas e dos sistemas operacionais baseados em linhas de comando. Existem várias alternativas para ler argumentos de linha de comando, como a biblioteca "getopt" em C++ e a classe "OptionParser" em Python. No entanto, em Java, essa funcionalidade é fornecida pela classe "String[] args" no método main.
 
-## Mergulho Profundo
+## Veja também:
 
-Além de simplesmente imprimir os argumentos, também é possível realizar outras operações com eles, como converter para outros tipos de dados ou validar sua entrada. É importante ressaltar que os argumentos são sempre passados como strings, e cabe ao programador realizar as conversões necessárias.
-
-Também é possível acessar a lista de argumentos diretamente fora do método `main()`, basta utilizar a classe `java.lang.System` e seu método `getProperties()`. Este método irá retornar um objeto da classe `java.util.Properties`, que possui um método `getProperty()` que permite a busca de um argumento específico pelo seu nome.
-
-## Veja Também
-
-- [Documentação do método main() em Java](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Class.html#main(java.lang.String...))
-- [Como passar argumentos na linha de comando em Java](http://www.aprendendo-java.com/2016/09/como-passar-parametros-na-linha-de-comando-em-java.html)
-- [Tutorial de leitura de argumentos da linha de comando em Java](https://www.tutorialspoint.com/java/java_command_line_arguments.htm)
+- [Documentação oficial da classe String[] args](https://docs.oracle.com/javase/tutorial/essential/environment/cmdLineArgs.html)
+- [Tutorial sobre como usar argumentos de linha de comando em Java](https://www.baeldung.com/java-command-line-arguments)
+- [Exemplos práticos de uso de argumentos de linha de comando em Java](https://www.javatpoint.com/command-line-argument-in-java)

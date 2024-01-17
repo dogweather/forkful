@@ -10,63 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
+Skapa temporära filer är en vanlig praxis bland programmerare för att lagra tillfällig data som behövs under körning av ett program. Detta gör det möjligt att spara data för senare användning och hjälper till att organisera och strukturera koden på ett effektivt sätt.
 
-Skapandet av temporära filer är en vanlig uppgift inom programmering, särskilt när det gäller att lagra och hantera data på ett tillfälligt sätt. Det kan också vara användbart för att tillfälligt lagra resultatet av en beräkning eller för att hantera tillfälliga systemresurser.
-
-## Hur man gör
-
-För att skapa en temporär fil i Go, behöver vi importera paketet "io/ioutil" som har funktionen "TempFile" som gör just detta. Nedan är ett exempel på hur man skapar en temporär fil och skriver några data till den:
+## Hur?
+Go har inbyggda funktioner för att skapa temporära filer. Genom att använda ```ioutil.Tempfile()``` kan en temporär fil skapas i det temporära katalogen på datorn. Det finns också möjlighet att ange ett prefix eller suffix till filnamnet genom att lägga till ytterligare argument. Nedan är ett exempel på hur man skapar en temporär fil och skriver till den:
 
 ```Go
-package main
-
-import (
-	"fmt"
-	"io/ioutil"
-)
-
-func main() {
-	// Skapar en temporär fil med prefixet "temp-" i det aktuella arbetskatalogen
-	tempFile, err := ioutil.TempFile("", "temp-")
-	if err != nil {
-		fmt.Println("Kunde inte skapa en temporär fil:", err)
-		return
-	}
-	defer tempFile.Close()
-
-	// Skriver data till den temporära filen
-	data := []byte("Det här är data som ska skrivas till den temporära filen.")
-	_, err = tempFile.Write(data)
-	if err != nil {
-		fmt.Println("Kunde inte skriva data till den temporära filen:", err)
-		return
-	}
-
-	fmt.Println("En temporär fil har skapats:")
-	// Skriver ut den temporära filens namn
-	fmt.Println(tempFile.Name())
+file, err := ioutil.Tempfile("", "example")
+if err != nil {
+    log.Fatal(err)
 }
+defer os.Remove(file.Name())
+fmt.Println("Temporär fil skapad: ", file.Name())
+
+text := []byte("Detta är en tempfil")
+if _, err = file.Write(text); err != nil {
+    log.Fatal(err)
+}
+
+output, err := ioutil.ReadFile(file.Name())
+if err != nil {
+    log.Fatal(err)
+}
+fmt.Printf("Innehåll i tempfilen: %s", output)
 ```
 
-När vi kör detta program kommer följande att skrivas ut i terminalen:
+Det första argumentet i ```ioutil.Tempfile()``` är den katalog där den temporära filen ska skapas, om den lämnas tom används standardkatalogen för temporära filer. Det andra argumentet är prefixet som används för filnamnet, i detta fall "example".
 
-```
-En temporär fil har skapats:
-/tmp/temp-182867733
-```
-
-Som du kan se så har den temporära filen ett namn som innehåller prefixet som vi valt ("temp-" i detta fall) och en unik identifierare som skapas automatiskt.
-
-## Djupdykning
-
-Förutom att skapa en temporär fil i det aktuella arbetsdirectoryt, så kan vi också specificera en annan mapp där den temporära filen ska skapas. Detta görs genom att ange en sökväg som det första argumentet till "TempFile" funktionen.
-
-Utöver det så finns det också en "TempDir" funktion som används för att skapa en temporär mapp istället för en fil.
-
-En annan viktig sak att komma ihåg är att den temporära filen eller mappen kommer att raderas automatiskt när programmet avslutas. Om du behöver behålla den temporära filen efter att programmet har avslutats, så kan du använda "tempFile.Name()" för att få filens sökväg och flytta eller kopiera den till en annan plats.
+## Deep Dive
+Skapandet av temporära filer är en viktig del av många programmeringspråk och används för att lösa problem som behovet av att lagra tillfällig data under körning och organisera koden på ett bättre sätt. Alternativ till Go:s inbyggda funktion för att skapa temporära filer inkluderar att använda operativsystemets kommandon eller använda paket som "os" eller "io/ioutil". Det är viktigt att se till att temporära filer tas bort efter att de inte längre behövs för att undvika att de tar upp onödigt utrymme på datorn.
 
 ## Se även
-
-- [io/ioutil paketets dokumentation på Go.org](https://golang.org/pkg/io/ioutil/)
-- [Skapa och använda temporära filer och mappar i Go - Medium.com](https://medium.com/@arpitvshah/create-and-use-temporary-files-and-directories-in-go-25ed069ffe1b)
+Här är några användbara källor för att lära sig mer om Go och skapandet av temporära filer:
+- Officiell dokumentation för Go: https://golang.org/
+- Tutorial om skapandet av temporära filer i Go: https://www.golangprograms.com/how-to-create-temporary-file-name-with-extension.html
+- Diskussionsforum för Go-programmerare: https://forum.golangbridge.org/

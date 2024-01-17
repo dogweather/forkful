@@ -10,43 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+#Qu'est-ce que la fonction `date` de Fish Shell
 
-Tu te demandes peut-être pourquoi tu devrais t'intéresser à obtenir la date actuelle dans ton programme Fish Shell. Eh bien, c'est parce que la date est une donnée couramment utilisée dans les scripts et les automatisations, en particulier pour les sauvegardes ou les tâches planifiées. Il est donc utile de savoir comment obtenir la date actuelle dans Fish Shell.
+## Qu'est-ce que c'est & pourquoi le font les programmeurs?
 
-## Comment faire
+La fonction `date` de Fish Shell permet aux programmeurs de récupérer la date et l'heure actuelles dans leur script en utilisant une seule commande. Cela évite d'avoir à écrire manuellement la date à chaque fois que cela est nécessaire et assure également que la date utilisée est toujours la plus précise et à jour.
 
-Voici quelques exemples de code pour obtenir la date actuelle dans Fish Shell :
+## Comment faire:
 
-```Fish Shell
-set current_date (date +%d-%m-%Y)
-echo "La date actuelle est $current_date"
+Voici comment vous pouvez utiliser la fonction `date` dans votre code Fish Shell:
+
+```
+date +%Y-%m-%d 
 ```
 
-Ce code utilise la commande `date` avec l'option `%d-%m-%Y` pour formater la date en jour-mois-année, puis l'affiche avec la commande `echo`.
+Cela vous donnera la date actuelle au format année-mois-jour, avec le résultat ressemblant à ceci: `2021-05-14`
 
-Tu peux également utiliser la commande `date` avec l'option `%A` pour obtenir le jour de la semaine :
+Vous pouvez également ajouter d'autres options, comme l'heure ou le fuseau horaire, en utilisant le symbole `%` suivi de la lettre correspondante. Par exemple:
 
-```Fish Shell
-set current_day (date +%A)
-echo "Aujourd'hui, c'est $current_day"
+```
+date +%H:%M:%S 
 ```
 
-Si tu as besoin d'obtenir la date et l'heure, tu peux utiliser l'option `+%d-%m-%Y_%H:%M:%S` :
+Cela vous donnera l'heure actuelle au format heures-minutes-secondes: `13:25:30`
 
-```Fish Shell
-set current_datetime (date +%d-%m-%Y_%H:%M:%S)
-echo "La date et l'heure actuelles sont $current_datetime"
-```
+Pour plus d'options et de détails, vous pouvez consulter la documentation de Fish Shell sur la fonction `date`.
 
-## Plongée en profondeur
+## Plongée en profondeur:
 
-La commande `date` a de nombreuses autres options disponibles. Tu peux taper `man date` dans ton terminal pour voir toutes les options et leur utilisation.
+La fonction `date` est un utilitaire bien établi dans les systèmes d'exploitation Unix, qui a été introduit pour la première fois dans les années 1970. En plus de Fish Shell, il peut également être utilisé dans d'autres shells, comme Bash et Zsh. Cependant, Fish Shell offre un paramètre supplémentaire, `%f`, qui permet de formater la date en utilisant les couleurs du shell.
 
-Tu peux également utiliser des options supplémentaires dans ta commande `echo` pour formater la sortie de la date selon tes préférences. Par exemple, `echo (date +%x)` affichera la date sous la forme "JJ/MM/AAAA".
+Une alternative à la fonction `date` est la commande `cal`, qui affiche le calendrier du mois en cours, ainsi que la date actuelle. Cependant, contrairement à `date`, `cal` ne permet pas de modifier le format de la date.
 
-## Voir aussi
+## Voir aussi:
 
-- [Documentation officielle de Fish Shell](https://fishshell.com/docs/current/index.html)
-- [Guide de démarrage rapide de Fish Shell](https://fishshell.com/docs/current/tutorial.html)
-- [Commandement date dans Fish Shell](https://fishshell.com/docs/current/commands.html#date)
+Pour en savoir plus sur la fonction `date` de Fish Shell, consultez la documentation officielle: https://fishshell.com/docs/current/cmds/date.html
+
+Pour en savoir plus sur les alternatives à la fonction `date`, vous pouvez consulter cet article sur le forum Unix & Linux: https://unix.stackexchange.com/questions/77541/date-alternative-in-shell-scripts

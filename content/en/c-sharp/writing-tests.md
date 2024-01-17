@@ -10,39 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
+Writing tests is the process of creating automated checks to verify that a piece of code behaves as expected. It is an essential part of the software development process as it helps to identify potential bugs and errors in the code. By writing tests, programmers can ensure that their code is functioning correctly, leading to more efficient and reliable software.
 
-Writing tests may seem like an extra step in the development process, but it serves an important purpose. By writing tests, you can catch bugs and errors in your code early on, saving you time and effort in the long run. Not only does it ensure the functionality of your code, but it also improves the overall quality and maintainability of your codebase.
-
-## How To
-
-To start writing tests in C#, you will need to use a testing framework such as NUnit, xUnit, or MSTest. These frameworks provide useful tools and methods for creating and running tests. Let's take a look at an example using NUnit:
+## How to:
+To write tests in C#, we use the built-in testing framework called NUnit. First, we need to create a new console project in Visual Studio. Then, we add the NUnit framework through the NuGet Package Manager. We can then create a new class for our tests and decorate it with the [TestFixture] attribute. Within this class, we can write test methods and use the [Test] attribute to indicate that these methods are tests. Finally, we can run our tests using the Test Explorer in Visual Studio.
 
 ```C#
-[Test]
-public void SquareNumber_InputFive_ReturnsTwentyFive()
+[TestFixture]
+public class CalculatorTests
 {
-    //Arrange
-    int num = 5;
-    int expected = 25;
+    [Test]
+    public void Add_WithPositiveNumbers_ReturnsCorrectResult()
+    {
+        // Arrange
+        int num1 = 5;
+        int num2 = 10;
+        int expectedResult = 15;
 
-    //Act
-    int result = num * num;
+        // Act
+        int result = Calculator.Add(num1, num2);
 
-    //Assert
-    Assert.AreEqual(expected, result);
+        // Assert
+        Assert.AreEqual(expectedResult, result);
+    }
 }
 ```
 
-In this example, we are testing a function that squares a given number. Within the `[Test]` attribute, we provide a descriptive name for the test. In the `Arrange` section, we set up the necessary variables and inputs. Then, in the `Act` section, we execute the function we want to test. Finally, in the `Assert` section, we verify if the expected result matches the actual result. This test will pass since the expected result of squaring 5 is 25.
+Sample output in the Test Explorer:
 
-## Deep Dive
+![Test Explorer](https://image.ibb.co/kSdRDF/test_explorer.png)
 
-When it comes to writing tests, it is important to keep in mind the principles of good testing. Test cases should be designed to cover different scenarios and edge cases. It's also important to have a good balance between unit, integration, and end-to-end tests.
+## Deep Dive:
+Unit testing, the process of testing individual units or components of code, was first introduced in the 1970s with the advent of structured programming. Prior to that, integration testing, where multiple units of code were tested together, was the norm. Today, there are various testing frameworks available for different languages, but NUnit remains one of the most popular for C#.
 
-Another helpful tip is to follow the AAA pattern when writing tests - Arrange, Act, Assert. This keeps the tests organized and easy to read. Additionally, it's a good practice to run tests frequently and in an automated fashion to catch any bugs early on.
+Alternatives to NUnit in C# include Xunit and Microsoft's MSTest framework. While NUnit and Xunit are open-source and cross-platform, MSTest is only available for use within the Windows ecosystem. However, MSTest does offer features such as running tests in parallel and integrating with Azure DevOps.
 
-See Also
-- [Introduction to Unit Testing in C#](https://docs.microsoft.com/en-us/dotnet/core/testing/introduction-to-unit-testing-in-csharp)
-- [The Art of Writing Unit Tests](https://blog.jetbrains.com/dotnet/2019/08/05/art-writing-unit-tests-better-tests-learn-write-tests-right-way/)
-- [Good Unit Tests: A Basic Guide](https://blog.gurock.com/good-unit-tests-basic-guide)
+NUnit supports various assertion methods such as Assert.AreEqual() and Assert.IsTrue(), which can be used to verify the expected results of a test. It also allows for setting up and tearing down test fixtures, which can be useful for setting up common data or objects needed for multiple tests.
+
+## See Also:
+- [NUnit Documentation](https://nunit.org/documentation/)
+- [Introduction to Unit Testing in C#](https://docs.microsoft.com/en-us/dotnet/core/testing/unit-testing-with-nunit)
+- [Xunit Documentation](https://xunit.net/)
+- [MSTest Documentation](https://docs.microsoft.com/en-us/dotnet/core/testing/unit-testing-with-mstest)

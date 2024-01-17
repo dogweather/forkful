@@ -1,7 +1,7 @@
 ---
-title:                "文字列の大文字化"
-html_title:           "PHP: 文字列の大文字化"
-simple_title:         "文字列の大文字化"
+title:                "文字列の先頭を大文字にする"
+html_title:           "PHP: 文字列の先頭を大文字にする"
+simple_title:         "文字列の先頭を大文字にする"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Strings"
@@ -10,20 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why (なぜ)
-文字列を大文字にすることの利点は、読みやすさやデータ整理に優れていることです。
+## 何を、そしてなぜ？
 
-## How To (方法)
+文字列の大文字化とは何かを説明するために、まずは「何を」という疑問にお答えします。文字列の大文字化とは、文字列内のすべての文字を大文字に変換することです。プログラマーがこれを行うのは、データやコードの整形を行い、応答性を向上させるためです。
+
+## 方法：
+
+次に、実際にどのように文字列を大文字化するかをお伝えします。例として、PHPの関数「strtoupper()」を使います。以下のコードブロックに示されるように、関数を使うと任意の文字列を大文字に変換できます。
+
 ```PHP
-$string = "hello, world";
-echo strtoupper($string); // HELLO, WORLD
+$input = "hello world";
+$output = strtoupper($input);
+
+echo $output; // HELLO WORLD
 ```
-このように `strtoupper` 関数を使うことで、文字列を大文字に変換することができます。
 
-## Deep Dive (詳細)
-大文字にすることで、複数の単語から成る文字列を一貫性のある形式に統一することができます。また、データの比較や検索を行う際にも、大文字に統一することで正しい結果を得ることができます。さらに、国際化したアプリケーションを開発する際にも、大文字にすることで言語の違いによる混乱を防ぐことができます。
+上記の例では、変数「input」に「hello world」という文字列を代入し、「strtoupper()」関数によってそれを大文字化した後、変数「output」に代入しています。そして最後に、echoコマンドで変数「output」の値を出力しています。
 
-## See Also (関連リンク)
-- [PHP: strtoupper - Manual](https://www.php.net/manual/en/function.strtoupper.php)
-- [Advantages of using upper case naming](https://stackoverflow.com/questions/6154363/advantages-of-using-upper-case-naming)
-- [Principles of designing for global markets](http://zhenkewu.com/articles/globalization/2005/04/principles-of-designing-for-global-markets/)
+## 深堀り：
+
+文字列を大文字化する方法や理由はわかりましたが、その背景や他の代替手段についても知りたいですよね。文字列の大文字化は、プログラミング言語の発展と共に生まれた概念であり、古き良き時代から存在しています。プログラマーが文字列を大文字化する方法は様々ありますが、今回紹介した「strtoupper()」関数は最も一般的に使われる方法の一つです。
+
+さらに、文字列の大文字化は基本的な処理方法の一つであり、プログラミングの基礎でもあるため、他のプログラミング言語でも同様の処理方法が使われています。
+
+## 参考資料：
+
+文字列の大文字化についてもっと詳しく知りたい方は、以下の参考資料をご覧ください。
+
+- [PHP Manual: strtoupper()](https://www.php.net/manual/en/function.strtoupper.php)
+- [W3Schools - PHP String Functions: strtoupper()](https://www.w3schools.com/php/func_string_strtoupper.asp)
+- [GeeksforGeeks - PHP | strtoupper() function](https://www.geeksforgeeks.org/php-strtoupper-function/)
+
+以上で、PHPを使った文字列の大文字化についての簡単な紹介を終わります。今後もぜひ、この記事を参考にコードをさらに磨き上げていきましょう！

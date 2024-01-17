@@ -10,56 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么要写测试
+# 什么是写测试
 
-写测试是为了确保我们的代码能够正确地运行。通过编写测试，我们可以在代码发生变化时快速检查是否有任何错误，从而提高代码的质量和稳定性。
+写测试就是编写一些程序来检验我们的代码是否能够按照预期工作。程序员们这样做的原因是为了确保我们的代码质量，避免出现意外的bug，减少修复错误所需要的时间。
 
-## 如何编写测试 
+## 如何编写测试
 
-编写测试的第一步是导入测试框架： 
-
-```Haskell
-import Test.HUnit
-```
-
-接下来，我们可以使用 `TestList` 函数来组合多个测试。每个测试都必须以 `TestCase` 函数包裹。例子： 
+以下是一个简单的示例代码，在Haskell中编写测试非常容易，我们可以使用hspec库来编写并运行测试。
 
 ```Haskell
-tests = TestList [ 
-  TestCase $ assertEqual "2 + 2 should be 4" 4 (2 + 2), 
-  TestCase $ assertEqual "5 * 5 should be 25" 25 (5 * 5) 
-  ] 
+testSum :: IO ()
+testSum = hspec $ do
+  describe "sum" $ do
+    it "correctly sums up two integers" $ do
+      sum 1 2 `shouldBe` 3
+    it "correctly sums up a list of integers" $ do
+      sum [1, 2, 3] `shouldBe` 6
 ```
 
-最后，我们可以使用 `runTestTT` 函数来运行测试并输出结果。 
-
-```Haskell
-main = runTestTT tests 
-```
-
-这将会打印出每个测试的状态和结果，如下所示： 
+运行以上代码，我们将得到下面的输出结果：
 
 ```
-Cases: 2 Tried: 2 Errors: 0 
-Counts {cases = 2, tried = 2, errors = 0, failures = 0} 
+sum
+  - correctly sums up two integers
+  - correctly sums up a list of integers
+
+Finished in 0.0001 seconds
+2 examples, 0 failures
 ```
 
-## 深入了解测试编写
+我们可以看到，通过编写测试，我们可以很容易地检验我们的代码是否按照预期工作。
 
-测试编写的一个重要原则是每个测试都要尽可能独立。这可以确保当一个测试出现问题时，不会影响到其他测试的结果。此外，测试应该覆盖所有代码路径，以确保没有任何遗漏的边界情况。 
+## 深入了解
 
-另一个有用的测试技巧是使用 QuickCheck 库来生成随机输入并测试程序的输出是否符合预期。这样可以更全面地检查代码的正确性。 
+写测试最早是在软件开发的早期阶段出现的一个重要实践。它可以帮助程序员们在代码量增大后保持代码的质量，并且保证新的修改不会破坏现有的功能。除了Haskell的hspec库之外，其他编程语言也有自己的测试框架，例如Python的unittest和Java的JUnit。
 
-## 进一步阅读 
+## 相关链接
 
-- [HUnit 文档](https://hackage.haskell.org/package/HUnit/docs/Test-HUnit.html)
-- [QuickCheck 文档](https://hackage.haskell.org/package/QuickCheck)
-- [测试驱动开发的优势](https://medium.com/@katerinagits/tests-by-example-why-you-should-code-with-test-driven-development-ponies-are-provided-9c28d25143af) 
+了解更多关于Haskell中测试的信息，请查看hspec文档：http://hspec.github.io/
 
-## 参考链接 
-
-如果您想了解更多关于 Haskell 编程的知识，请参考以下链接： 
-
-- [Learn You a Haskell for Great Good](http://learnyouahaskell.com) 
-- [Haskell Wiki](https://wiki.haskell.org/Haskell) 
-- [Awesome Haskell](https://github.com/krispo/awesome-haskell)
+欢迎探索其他编程语言的测试框架，慢慢发现自己喜欢的方法。

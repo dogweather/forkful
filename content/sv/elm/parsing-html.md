@@ -1,7 +1,7 @@
 ---
-title:                "Analysera html"
-html_title:           "Elm: Analysera html"
-simple_title:         "Analysera html"
+title:                "Analysera HTML"
+html_title:           "Elm: Analysera HTML"
+simple_title:         "Analysera HTML"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "HTML and the Web"
@@ -10,44 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad och varför?
+HTML är ett vanligt format för att strukturera och presentera innehåll på webben. När webbprogrammerare behöver arbeta med HTML-koden, är det ofta nödvändigt att "parsa" (tolka) den för att kunna förstå och manipulera den. Parsing HTML är alltså en metod för att extrahera och organisera information från en HTML-sida.
 
-Har du någonsin undrat hur din internetbrowser vet vad den ska visa på skärmen när du besöker en websida? En av nyckelkomponenterna är parsing av HTML, som översätter webbsidans kod till något som din dator förstår. I denna artikel kommer vi att undersöka hur man gör detta med hjälp av Elm-programmering.
-
-## Hur man gör det
-
-För att parsar HTML i Elm, behöver vi först importera paketet 'elm/html' och inkludera dess funktioner i vår kod. Sedan kan vi definiera vår HTML struktur med hjälp av 'div', 'p', 'span' och andra taggar. När vi är nöjda med vår layout, använder vi funktionen 'Html.map' för att konvertera vår HTML till en sträng för att kunna använda det på vår webbsida.
+## Hur man gör:
+Att parsa HTML i Elm är relativt enkelt, tack vare det inbyggda paketet elm/parser. Nedan finns ett exempel på hur man tolkar en HTML-sida och extraherar all text från alla p-taggar:
 
 ```Elm
-import Html exposing (..)
-import Html.Attributes exposing (..)
+import Html.Attributes exposing (attribute)
+import Html.Parser exposing (root, map, maybe, oneOf, text, tag, many)
 
--- definiera en HTML struktur
-myHtml =
-    div []
-        [ p [ class "title" ] [ text "Välkommen!" ]
-        , span [] [ text "Detta är en Elm artikel." ]
-        ]
+type alias HtmlPage =
+  { title : String
+  , body : String
+  }
 
--- konvertera till sträng och använda på vår sida
-main =
-    myHtml
-        |> Html.map toString
+htmlParser : Parser m HtmlPage
+htmlParser =
+  map2 (\title body -> { title = title, body = body })
+    (text (tag "title"))
+    (many (text (tag "p")))
+
+getPage : String -> Maybe HtmlPage
+getPage html =
+  case htmlParser |> root (Maybe.map .words) html of
+    Ok page ->
+      Just page
+    Err _ ->
+      Nothing
 ```
 
-Om vi kör denna kod kommer vi att se följande utmatning på vår webbsida:
+## Djupdykning:
+Parsing är en viktig del av webbutveckling, eftersom det gör det möjligt att hämta information från en hemsida och använda den på andra sätt. Det finns dock alternative metoder för detta, som till exempel web scraping, vilket innebär att man hämtar data från webbsidor genom att simulera en webbläsare. Detta är dock oftast mer komplicerat och kräver mer hantering av JavaScript-kod.
 
-```html
-<div><p class="title">Välkommen!</p><span>Detta är en Elm artikel.</span></div>
-```
+Elm/javascript-parsers används ofta för att tillhandahålla en mer strukturerad representation av HTML-koden, och är därför användbart vid till exempel web scraping och automatiserade testning.
 
-## Deep Dive
-
-När vi parsar HTML med Elm, finns det några användbara funktioner som vi kan använda för att manipulera vår HTML struktur. Till exempel, 'Html.map' som vi använde tidigare, låter oss konvertera vår struktur till en sträng. 'Html.map' kan också användas för att mappla över vår struktur och applicera olika transformationer på våra element. Dessutom kan vi också använda funktionen 'Html.Keyed.map' för att identifiera och uppdatera specifika element i vår HTML.
-
-En annan viktig aspekt av HTML parsing är att hantera attribut. I Elm, använder vi 'Html.Attributes' för att lägga till klass, id och andra attribut till våra element. Vi kan även använda CSS för att styla våra HTML-element genom att använda 'Html.Attributes.style'.
-
-## Se även
-
-- Elm Dokumentation: https://guide.elm-lang.org/
-- Elm Architecture: https://guide.elm-lang.org/architecture/
+## Se även:
+- [Elm/parser dokumentation](https://package.elm-lang.org/packages/elm/parser/latest/)
+- [HTML to Elm konverterare](https://mbylstra.github.io/html-to-elm/)
+- [Web scraping med Python](https://realpython.com/beautiful-soup-web-scraper-python/)
+- [Åtkomst av HTML-dokument i olika webbläsare](https://www.w3.org/2007/10/htmldocument.html)

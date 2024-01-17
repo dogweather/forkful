@@ -1,7 +1,7 @@
 ---
-title:                "「正規表現を使う」"
-html_title:           "C++: 「正規表現を使う」"
-simple_title:         "「正規表現を使う」"
+title:                "正規表現を使う"
+html_title:           "C++: 正規表現を使う"
+simple_title:         "正規表現を使う"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -10,59 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+## 何 & なぜ？
+正規表現を使用するとは何でしょうか？それは、文字列のパターンを簡単に検索・置換・抽出するための方法です。プログラマーは、このような機能を利用して、コード内のテキストを効率的に処理することができます。
 
-なぜ私たちは正規表現を使うのか？それは、テキスト内の特定のパターンや文の構造を自動的に検索、抽出、変更するためです。プログラマーにとっては、効率的で便利なツールとなっています。
-
-## 使い方
-
-正規表現を使う最も基本的な方法は、文字列を検索することです。例えば、文字列内に特定の単語が含まれているかどうかを確認したり、複数のバリエーションの単語を一度に検索することができます。
-
-```C++
-#include <iostream>
+## 方法：
+以下のように、C++で正規表現を使用する方法を示します。 ```C++
 #include <regex>
-
 using namespace std;
 
 int main() {
-    string s = "Hello, world!";
-    regex regex_search("world");
-    if (regex_search.search(s)) {
-        cout << "Found world in string!" << endl;
-    }
-    return 0;
+  string text = "こんにちは、私の名前は太郎です。";
+  regex pattern("私の名前は([a-zA-Z]+)です");
+  smatch match;
+
+  if (regex_search(text, match, pattern)) {
+    cout << match.str(1) << endl; // 太郎 が出力されます
+  }
 }
 ```
+上記のコードでは、文字列 `text` の中から、正規表現 `私の名前は([a-zA-Z]+)です` にマッチする部分を探し、マッチした部分の一つ目のグループを出力しています。
 
-上記の例では、`regex`クラスを使用して文字列を検索し、`cout`を使ってその結果を表示しています。もちろん、より複雑な検索パターンを定義することもできます。
+## 詳細：
+正規表現は、1960年代から使われているパターンマッチングの手法です。他の言語にも同様の機能がありますが、C++の場合は `<regex>` ライブラリを利用することで実現できます。代替手段としては、文字列操作を行う関数を自作する方法もありますが、正規表現を使うことでより簡単かつ高速に処理できる可能性があります。
 
-```C++
-regex regex_search("h[eo]llo"); // 'hello'または'hallo'にマッチ
-regex regex_search("[A-Z][a-z]+"); // 最初の文字が大文字の英単語にマッチ
-```
-
-また、正規表現を使って文字列内のパターンを抽出することもできます。
-
-```C++
-string s = "Today is 2020/06/30";
-regex regex_extract("\\d{4}\\/\\d{2}\\/\\d{2}"); // 日付のパターンにマッチ
-smatch matches;
-if (regex_search(s, matches, regex_extract)) {
-    cout << matches.str() << endl; // 結果: 2020/06/30
-}
-```
-
-正規表現を使うことで、より高度な検索や抽出が可能になります。例えば、電話番号やメールアドレス、URLなどの特定のパターンを正確に検出することができます。
-
-## 深堀り
-
-C++では、標準ライブラリの`<regex>`ヘッダーを使用して正規表現を扱うことができます。`regex`クラスの他にも、`smatch`クラスや`match_results`クラスを使用して、検索結果を取得することもできます。
-
-また、C++では正規表現の構文が少し異なるため、他のプログラミング言語で習得した正規表現の知識がそのまま使えるとは限りません。しかし、標準ライブラリのドキュメントを参照することで、必要な構文を簡単に覚えることができます。
-
-## 参考文献
-
-- C++正規表現チュートリアル: https://www.cplusplus.com/reference/regex/
-- RegexOne: Learn Regular Expressions with simple, interactive exercises: https://regexone.com/
-- 正規表現の基礎: https://www.geeksforgeeks.org/introduction-to-regular-expressions-in-c/
-- [この記事のサンプルコード](https://gist.github.com/example)
+## 関連情報：
+より詳しい使い方やアドバンスドなトピックについては、以下のリンクを参考にしてみてください。
+- [正規表現チュートリアル (C++)](https://www.cplusplus.com/reference/regex/regex/)
+- [正規表現オンラインテストツール](https://regex101.com/)
+- [Boost Regex Library](https://www.boost.org/doc/libs/1_76_0/libs/regex/doc/html/index.html)

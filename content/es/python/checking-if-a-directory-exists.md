@@ -10,53 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué?
+## ¿Qué es y por qué se hace?
 
-Antes de aprender cómo verificar si un directorio existe en Python, es importante entender por qué esto puede ser útil. En programación, a menudo trabajamos con diferentes archivos y directorios, y es posible que necesitemos asegurarnos de que un directorio en particular exista antes de realizar ciertas operaciones con él. Al verificar si un directorio existe, podemos evitar errores y asegurarnos de que nuestro código funcione correctamente.
+Comprobar si un directorio existe es una tarea común en la programación en Python. Se utiliza para confirmar si una carpeta específica existe en el sistema antes de realizar alguna operación en ella. Esto puede evitar errores y mejorar la eficiencia en el código.
 
-## Cómo hacerlo
+## ¿Cómo hacerlo?
 
-Para verificar si un directorio existe en Python, podemos utilizar la función `path.exists()` del módulo `os`. Veamos un ejemplo de cómo hacerlo:
+Para verificar si un directorio existe en Python, podemos utilizar la función `os.path.exists()` que devuelve `True` si el directorio existe y `False` si no existe. A continuación se muestra un ejemplo de cómo comprobar si la carpeta "Documentos" existe en el directorio actual:
 
-```python
+```Python
 import os
-
-# Definimos el directorio que queremos verificar
-directorio = "/home/usuario/documentos"
-
-# Verificamos si existe
-if os.path.exists(directorio):
-    print("El directorio existe.")
+if os.path.exists("Documentos"):
+  print("¡El directorio existe!")
 else:
-    print("El directorio no existe.")
+  print("¡El directorio no existe!")
 ```
 
-En este ejemplo, utilizamos la función `path.exists()` para verificar si el directorio `documentos` existe dentro de la ruta `/home/usuario`. Si el directorio existe, se imprimirá "El directorio existe". Si no existe, se imprimirá "El directorio no existe".
+Si queremos confirmar que el directorio es realmente una carpeta y no un archivo, podemos utilizar `os.path.isdir()` que también devuelve `True` o `False`. Por ejemplo:
 
-También podemos utilizar la función `path.isdir()` del módulo `os` para verificar si un directorio es válido:
-
-```python
-import os
-
-# Definimos el directorio que queremos verificar
-directorio = "/home/usuario/documentos"
-
-# Verificamos si es un directorio válido
-if os.path.isdir(directorio):
-    print("Es un directorio válido.")
+```Python
+if os.path.isdir("Documentos"):
+  print("¡Es una carpeta!")
 else:
-    print("No es un directorio válido.")
+  print("¡No es una carpeta!")
 ```
-
-En este caso, si el directorio es válido, se imprimirá "Es un directorio válido". Si no lo es, se imprimirá "No es un directorio válido".
 
 ## Profundizando
 
-En Python, podemos utilizar la función `os.path.exists()` para verificar si un directorio existe en cualquier ubicación del sistema operativo, ya sea en un directorio local o incluso en una ubicación en línea.
+La función `os.path.exists()` se basa en el módulo `os.path` de Python, que ofrece una amplia gama de funciones para manipular rutas y nombres de archivo. Además, existen otras formas de comprobar si un directorio existe, como utilizar la función `os.listdir()` para obtener una lista de todos los elementos en un directorio y luego buscar el directorio en esa lista.
 
-También es importante tener en cuenta que al verificar si un directorio existe, no solo podemos usar una variable que contenga la ruta completa del directorio, sino también partes de la ruta. Por ejemplo, en lugar de escribir `/home/usuario/documentos`, podríamos escribir simplemente `documentos` y Python lo reconocerá siempre y cuando se encuentre dentro del directorio de trabajo actual.
+También hay módulos externos, como `pathlib`, que proporcionan una forma más moderna de interactuar con rutas y archivos en Python.
 
 ## Ver también
 
-- [Documentación oficial de Python sobre la función `os.path.exists()`](https://docs.python.org/es/3/library/os.path.html#os.path.exists)
-- [Ejemplo de uso de `os.path.exists()` en el blog Real Python](https://realpython.com/python-pathlib/)
+- Documentación oficial sobre el módulo `os.path` en Python: https://docs.python.org/3/library/os.path.html
+- Documentación de `pathlib`: https://docs.python.org/3/library/pathlib.html

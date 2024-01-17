@@ -1,7 +1,7 @@
 ---
-title:                "बेसिक प्रमाणीकरण के साथ एक एचटीटीपी अनुरोध भेजना"
-html_title:           "Rust: बेसिक प्रमाणीकरण के साथ एक एचटीटीपी अनुरोध भेजना"
-simple_title:         "बेसिक प्रमाणीकरण के साथ एक एचटीटीपी अनुरोध भेजना"
+title:                "बेसिक प्रमाणीकरण के साथ http अनुरोध भेजना"
+html_title:           "Rust: बेसिक प्रमाणीकरण के साथ http अनुरोध भेजना"
+simple_title:         "बेसिक प्रमाणीकरण के साथ http अनुरोध भेजना"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "HTML and the Web"
@@ -10,57 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Kyun
+## क्या और क्यों?
 
-HTTP request ko basic authentication ke saath bhejna kisi bhi Rust programmer ke liye bahut zaroori hai. Basic authentication request se server ko user ke identity ko verify karne ki permission milti hai.
+बेसिक प्रमाणीकरण के साथ एचटीटीपी अनुरोध भेजना क्या है और क्यों प्रोग्रामर इसे करते हैं? बेसिक प्रमाणीकरण सुरक्षा का एक प्रभावी तरीका है जो एचटीटीपी में डेटा को सुरक्षित रूप से अभिगम करने के लिए इस्तेमाल किया जाता है। प्रोग्रामर उसे सुरक्षा स्तर बढ़ाने और अन्य उपयोगकर्ताओं से डेटा को सुरक्षित रखने के लिए करते हैं।
 
-## Kaise Karein
-
-Request bhejne ke liye, hum `reqwest` library ka istemaal karenge. Sabse pehle, hum is library ko `Cargo.toml` file mein add karenge:
+## कैसे करें:
 
 ```Rust
-[dependencies]
-reqwest = { version = "0.11", features = ["blocking", "json"] }
+use reqwest;
+use reqwest::header::HeaderValue;
+
+fn main() -> Result<(), reqwest::Error> {
+  // एचटीटीपी अनुरोध बनाएं
+  let req = reqwest::Client::new()
+    .get("https://www.example.com/resource")
+    // बेसिक प्रमाणीकरण शामिल करें
+    .basic_auth("username", Some("password".to_string()))
+    .send()?;
+  
+  // जब सर्वर से प्रतिक्रिया मिले, उसे प्रिंट करें
+  let res = req.text()?;
+  println!("{}", res);
+  
+  Ok(())
+}
 ```
 
-Phir, hum apni `main.rs` file mein `reqwest` library ko import karenge:
+उदाहरण के लिए एक यूआरएल से बेसिक प्रमाणीकरण के साथ एचटीटीपी अनुरोध भेजने के परिणाम को नीचे देखें:
 
-```Rust
-use reqwest::blocking::{Client, Response};
+```
+<!DOCTYPE html>
+<html>
+<head>
+  <title>प्रमाणीकरण सफल!</title>
+</head>
+<body>
+  <h1>शुभकामनाएं, आप सफलतापूर्वक लॉग इन हो गए हैं।</h1>
+</body>
+</html>
 ```
 
-Ab hum `Client` instance banaenge jisse hum HTTP request bhejenge:
+## गहराई पर जाएं:
 
-```Rust
-let client = Client::new();
-```
+इस तकनीक को प्रारंभिक अनुरोधों की प्रतिक्रियाओं को सुरक्षित बनाने के लिए विकसित किया गया था। दूसरे प्रमाणीकरण सुरक्षा प्रणालियों के बावजूद, बेसिक प्रमाणीकरण अधिक आसान और प्रभावी होने के कारण आज भी उपयोग में है। यह स्वतंत्रता के साथ इस्तेमाल किया जा सकता है, इसलिए अनुरोधों को अन्य प्रकार के प्रमाणीकरण से अलग करके और कंपनियों को जीत आसान बनाते हुए, और दूसरों की ओर से जांच करने की आवश्यकता न होने के कारण, अधिक पसंद किया जाता है।
 
-Uske baad, hum `RequestBuilder` ko bhi banaenge jisme hum HTTP URL aur method specify karenge:
+## और भी देखें:
 
-```Rust
-let request_builder = client.request(Method::GET, "https://www.example.com");
-```
-
-Ab hum `Authorization` header ko specify karenge jisse hum basic authentication credentials send kar sakte hain:
-
-```Rust
-let auth_header_value = format!("Basic {}:{}", username, password);
-request_builder.header(AUTHORIZATION, auth_header_value);
-```
-
-Finally, hum HTTP request ko bhej sakte hain aur server se response ko receive kar sakte hain:
-
-```Rust
-let response = request_builder.send()?;
-let status = response.status();
-let body = response.text()?;
-```
-
-## Gehri Jaankari
-
-Basic authentication mein, hum username aur password ko base64 encoding ke through send karte hain. Server phir in credentials ko decode karke verify karta hai. Agar credentials sahi hain, server `200 OK` status code ke saath response bhejta hai.
-
-## See Also
-
-- [Rust reqwest library documentation](https://docs.rs/reqwest/0.11.0/reqwest/)
-- [HTTP basic authentication](https://www.digitalocean.com/community/tutorials/how-to-use-basic-authentication-with-http-methods-in-rust) (Rust mein)
+बेसिक प्रमाणीकरण के साथ एचटीटीपी अनुरोध भेजने के लिए यह [रस्ट की आधिकारिक पुस्तकालय]https://doc.rust-lang.org/stable/std/net/struct.HttpClient.html#method.get) में आसान और स्पष्ट उदाहरण उपलब्ध है। आप अन्य प्रधान वेब सामग्री वेबसाइट भी जांच सकते हैं, जहां अलग-अलग तकनीकों का उपयोग करके अनुरोध को भेजने का तरीका दिखाया गया है।

@@ -10,35 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i dlaczego?
 
-Jeśli jesteś programistą, któremu zależy na wykorzystaniu informacji na stronach internetowych, to parsowanie HTML może być przydatną umiejętnością. Pozwoli Ci ono na wyodrębnianie potrzebnych danych z różnych witryn internetowych.
+Parsing HTML to czynność polegająca na analizowaniu i przekształcaniu kodu HTML na bardziej czytelny format. Programiści często wykonują tę czynność w celu pobierania informacji ze stron internetowych lub przetwarzania danych.
 
-## Jak to zrobić
+## Jak to zrobić:
 
-```Python
+Przykłady kodu i wyniki zostały przedstawione poniżej:
+
+```python
+# Importowanie biblioteki BeautifulSoup
 from bs4 import BeautifulSoup
-import requests
 
-# pobranie strony internetowej
-r = requests.get("https://example.com")
-# przekazanie zawartości do biblioteki  BeautifulSoup
-soup = BeautifulSoup(r.content, "html.parser")
-# wyszukanie elementu <h1> i wyświetlenie jego zawartości
-print(soup.find("h1").text)
+# Definiowanie kodu HTML
+html = "<html><head><title>Nagłówek strony</title></head><body><h1>Tytuł artykułu</h1><p>Treść artykułu</p></body></html>"
+
+# Wykorzystanie BeautifulSoup do parsowania kodu HTML
+soup = BeautifulSoup(html, 'html.parser')
+
+# Wyświetlenie tytułu strony
+print(soup.title.text)
+
+# Wyświetlenie treści artykułu
+print(soup.find('p').text)
+
 ```
 
-Wyjście:
+Wynik:
+
 ```
-Przykładowy tytuł strony
+Nagłówek strony
+Treść artykułu
 ```
 
-## Głębsze wgląd
+## W głębi tematu:
 
-Parsowanie HTML polega na wyodrębnieniu informacji z kodu źródłowego strony internetowej. Jest to szczególnie przydatne, gdy chcemy pozyskać dane, takie jak ceny produktów, osiągnięcia sportowe czy aktualności z różnych witryn. Biblioteka BeautifulSoup jest jednym z najpopularniejszych narzędzi do parsowania HTML w Pythonie, oferującym wygodne i proste metody do wyciągania potrzebnych informacji.
+1. Parser HTML został stworzony w latach 90. jako standard do przetwarzania dokumentów HTML.
+2. Alternatywą dla biblioteki BeautifulSoup jest biblioteka lxml, która jest znacznie szybsza, ale mniej intuicyjna w użyciu.
+3. Podczas implementacji parsera HTML, ważne jest wzięcie pod uwagę ewentualnych błędów w kodzie, aby uniknąć nieprzewidzianych problemów.
 
-## Zobacz także
+## Zobacz również:
 
-- [Dokumentacja biblioteki BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
-- [Poradnik do nauki biblioteki BeautifulSoup (język angielski)](https://www.dataquest.io/blog/web-scraping-tutorial-python/)
-- [Inne przydatne narzędzia do parsowania HTML w Pythonie](https://realpython.com/beautiful-soup-web-scraper-python/)
+- Dokumentacja biblioteki BeautifulSoup: https://www.crummy.com/software/BeautifulSoup/bs4/doc/
+- Porównanie bibliotek BeautifulSoup i lxml: https://realpython.com/python-web-scraping-libraries/

@@ -1,7 +1,7 @@
 ---
-title:                "发送HTTP请求"
-html_title:           "C++: 发送HTTP请求"
-simple_title:         "发送HTTP请求"
+title:                "发送一个http请求"
+html_title:           "C++: 发送一个http请求"
+simple_title:         "发送一个http请求"
 programming_language: "C++"
 category:             "C++"
 tag:                  "HTML and the Web"
@@ -10,53 +10,70 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
+## 什么&为什么？
+发送HTTP请求是指在客户端和服务器之间进行通信的过程。程序员通常会因为他们需要从服务器获取数据，或者将数据发送到服务器上而发送HTTP请求。
 
-这篇文章将带你深入了解如何使用 C++ 发送 HTTP 请求。通过发送 HTTP 请求，我们可以与网站、服务器或其他计算机进行通信，从而以交互式的方式获取数据和信息。这是构建现代应用程序所必需的基础知识。
-
-## 如何进行
-
-首先，我们需要引入一个 C++ 的库来处理网络请求，如 [libcurl](https://curl.se/libcurl/)。接下来，我们需要设置一个 [HTTP 请求](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Methods) ，例如 GET、POST 或 PUT。然后，我们需要指定目标 URL，并添加任何必要的请求头和参数。最后，我们使用 [libcurl](https://curl.se/libcurl/) 的函数来发送请求并获取响应状态码和数据。
+## 如何：
+下面是一个简单的示例，展示如何使用C++发送HTTP请求，并获得服务器的响应。
 
 ```C++
-// 引入 libcurl 头文件
+#include <iostream>
 #include <curl/curl.h>
 
-// 创建 HTTP 请求，此处以 GET 请求为例
-CURL* curl = curl_easy_init();
-// 设置请求 URL
-curl_easy_setopt(curl, CURLOPT_URL, "https://example.com/api");
-// 添加必要的请求头和参数
-struct curl_slist *headers = NULL;
-headers = curl_slist_append(headers, "Content-Type: application/json");
-curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
-// 发送请求并获取响应
-CURLcode res = curl_easy_perform(curl);
-long http_code;
-curl_easy_getinfo(curl, CURLINFO_RESPONSE_CODE, &http_code);
-if (http_code == 200) {
-    // 请求成功，处理响应数据
-    ...
-} else {
-    // 请求失败，处理错误信息
-    ...
+//定义回调函数来处理服务器响应
+size_t writeCallback(char* buf, size_t size, size_t nmemb, void* up)
+{
+    for (int c = 0; c < size * nmemb; c++)
+    {
+        //将服务器响应打印到控制台
+        putchar(buf[c]);
+    }
+    return size * nmemb;
+}
+
+int main()
+{
+    //初始化libcurl
+    CURL* curl;
+    curl = curl_easy_init();
+    if (curl)
+    {
+        //设置请求的URL
+        curl_easy_setopt(curl, CURLOPT_URL, "https://www.example.com");
+        //设置回调函数
+        curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, writeCallback);
+        //执行请求
+        CURLcode res = curl_easy_perform(curl);
+        //检查是否有错误发生
+        if (CURLE_OK == res)
+        {
+            std::cout << "请求成功！" << std::endl;
+        }
+        //清除工作内存
+        curl_easy_cleanup(curl);
+    }
+    return 0;
 }
 ```
 
-## 深入了解
+输出示例：
+```
+<html>
+<head>
+<title>Welcome to Example.com</title>
+</head>
+<body>
+<h1 style="color:red;">Hello, world!</h1>
+</body>
+</html>
+请求成功！
+```
 
-发送 HTTP 请求本质上是通过 TCP 协议与目标主机的端口建立连接，并按照 HTTP 协议规定的格式发送请求信息。随后目标主机会返回 HTTP 响应，包含响应状态码、响应头和响应数据。使用 C++ 可以轻松地处理这些信息，并基于网络协议构建强大的应用程序。
+## 深入探讨：
+HTTP协议是由CERN软件工程师Tim Berners-Lee在1991年发明的，它是客户端和服务器之间进行通信的基础协议。除了使用C++，程序员还可以使用其他语言如Java、Python等来发送HTTP请求。
 
-### 维持连接
+实际上，C++并没有提供原生的HTTP请求功能，但是我们可以使用第三方库如cURL来发送HTTP请求。cURL是一个开源的、跨平台的工具，广泛用于发送和接收数据的网络通信。
 
-在发送多个 HTTP 请求时，可以复用同一个连接（使用 [libcurl](https://curl.se/libcurl/) 的 `CURL*`）来提高效率。只需要在每次发送请求前，重置请求头和标识符，即可保持同一个连接。但是需要注意的是，如果请求的目标主机不同，还是需要重新建立连接。
-
-### 异步请求
-
-使用 [libcurl](https://curl.se/libcurl/) 的 `CURLM` API，可以实现发送 HTTP 请求的异步处理，从而提高应用程序的并发性能。这种方式适用于发送大量请求，且每个请求可以独立处理响应的情况。
-
-## 参考链接
-
-- [libcurl 官方文档](https://curl.se/libcurl/)
-- [HTTP 请求方法](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Methods)
-- [C++ 中的网络编程](https://www.geeksforgeeks.org/network-programming-in-c-c/)
+## 参考链接：
+- [C++ cURL文档](https://curl.haxx.se/libcurl/c/)
+- [HTTP协议文档](https://www.w3.org/Protocols/HTTP/1.0/spec.html)

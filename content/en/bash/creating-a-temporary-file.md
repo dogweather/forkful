@@ -10,44 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-Creating temporary files in Bash can be useful for a variety of purposes, such as temporary data storage, logging, or manipulating large amounts of data. Temporary files are typically automatically deleted once the process using them is finished, reducing clutter on your system.
+## What & Why?
 
-## How To
-To create a temporary file in Bash, you can use the `mktemp` command. This will create a unique and secure temporary file in the system's temporary directory. The syntax is as follows:
+Creating a temporary file in Bash is a way for programmers to quickly store and manipulate data without permanently saving it onto their system. This is useful for tasks such as storing error logs, processing large amounts of data, or creating temporary backups during a program's execution.
+
+## How to:
+
+To create a temporary file in Bash, you can use the `mktemp` command followed by the desired filename extension. For example, `mktemp example.txt` will create a temporary file named "example.txt" in the current working directory. You can then use this file in your Bash commands and scripts.
+
+```Bash
+mktemp example.txt
+echo "This is a temporary file" > example.txt
+cat example.txt
 ```
-Bash
-#!/bin/bash
-temp_file=$(mktemp)
+Output:
 ```
-To use the temporary file, you can then append data to it in your script:
+This is a temporary file
 ```
-Bash
-echo "This is a temporary file" >> $temp_file
-```
-You can also specify a prefix for the temporary file name, which can be helpful for organization and clarity:
-```
-Bash
-#!/bin/bash
-temp_file=$(mktemp -t my_temp_file)
-```
-Once you have finished using the temporary file, you can remove it with the `rm` command:
-```
-Bash
-rm $temp_file
-```
-To view the contents of the temporary file, you can use the `cat` command:
-```
-Bash
-cat $temp_file
-```
+
+You can also use the `mktemp` command with the `-d` option to create a temporary directory instead of a file. This can be useful for organizing and storing multiple temporary files within the same directory.
 
 ## Deep Dive
-Behind the scenes, the `mktemp` command creates a secure temporary file using the system's default temporary directory (usually /tmp). The file is given a unique name based on the current time, process ID, and a random number to ensure it is truly unique. This makes it less likely for multiple processes to accidentally use the same temporary file. Additionally, the temporary file has restrictive permissions, making it readable and writable only by the user who created it.
 
-It is important to note that the `mktemp` command does not create the actual file, but rather creates a placeholder for the file. The actual file is not created until data is written to it using a command like `echo` or `printf`.
+Creating temporary files has been a common programming practice for a long time, and Bash is no exception. In the early days of computing, temporary files were often created and used as a way to process data and conserve system resources. With the introduction of more advanced programming languages and techniques, temporary files are still used for similar purposes.
 
-See Also
-- [Bash Man Page - `mktemp` command](https://www.gnu.org/software/bash/manual/html_node/Creating-Temporary-Files.html) 
-- [Linuxize - How to create a temporary file in Bash](https://linuxize.com/post/how-to-create-temporary-files-in-bash/)
-- [The Linux Command Line - Shell Script Basics](http://linuxcommand.org/lc3_writing_shell_scripts.php)
+An alternative to creating temporary files in Bash is to use pipes and redirection to store data in memory instead of writing it to a physical file. This can be more efficient for certain tasks, but temporary files provide a more permanent and tangible way to store and manipulate data.
+
+When creating a temporary file, Bash uses the `mktemp` utility under the hood. This utility allows for more advanced options, such as specifying a specific directory for the temporary file to be created in, and generating unique filenames using a template. The `mktemp` command also has security features built-in to ensure that temporary files are not easily accessible by other users on the system.
+
+## See Also
+
+- [mktemp man page](https://linux.die.net/man/1/mktemp)
+- [Understanding the tmp directory in Linux](https://opensource.com/article/19/4/understanding-tmp-directory-linux)

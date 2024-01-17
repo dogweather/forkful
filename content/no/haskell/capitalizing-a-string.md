@@ -1,7 +1,7 @@
 ---
-title:                "Stor forbokstav i en streng"
-html_title:           "Haskell: Stor forbokstav i en streng"
-simple_title:         "Stor forbokstav i en streng"
+title:                "Stor bokstave en streng"
+html_title:           "Haskell: Stor bokstave en streng"
+simple_title:         "Stor bokstave en streng"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -10,37 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hvorfor
+# Hva & Hvorfor?
+Å kapitalisere en streng i Haskell betyr rett og slett å gjøre den første bokstaven til en stor bokstav. Dette gjøres ofte for å gjøre teksten mer leselig eller for å følge bestemte konvensjoner i koden.
 
-Å kapitalisere en streng er en vanlig operasjon i programmering, spesielt når du jobber med tekstbehandling. Dette betyr å gjøre den første bokstaven i hver ord til en stor bokstav, og det kan være nyttig for presentasjon eller sortering av data.
-
-# Hvordan gjøre det
-
-Den enkleste måten å kapitalisere en streng i Haskell er å bruke funksjonen "toUpper" fra "Data.Char" biblioteket. Her er et eksempel på hvordan du kan bruke det:
+# Hvordan:
+Her er en enkel funksjon som kapitaliserer en string:
 
 ```Haskell
-import Data.Char (toUpper)
-
-capitalizeString :: String -> String
-capitalizeString str = map toUpper str
-
--- sample input and output
-capitalizeString "hello world" -- "Hello World"
-capitalizeString "haskell is fun" -- "Haskell is fun"
+capitalize :: String -> String
+capitalize (x:xs) = toUpper x : xs
 ```
 
-Først importerer vi "toUpper" funksjonen fra "Data.Char" biblioteket. Deretter definerer vi vår egen funksjon "capitalizeString" som tar inn en streng som parameter. Inne i funksjonen bruker vi "map" funksjonen til å gå gjennom hver bokstav i strengen og bruke "toUpper" på den. Dette gjør at bokstavene blir konvertert til store bokstaver. Til slutt kan vi teste vår funksjon med sample input og se den kapitaliserte strengen som output.
+Eksempel på bruk av funksjonen:
 
-# Dypdykk
+```Haskell
+capitalize "haskell"   -- "Haskell"
+capitalize "programming"   -- "Programming"
+capitalize "code"   -- "Code"
+```
 
-Haskell har også flere andre metoder for å kapitalisere en streng. For eksempel kan du bruke funksjonen "toTitle" fra "Data.Text" biblioteket for å kapitalisere hver føste bokstav i hvert ord i en tekststreng. Det er også mulig å bruker "Data.Word" biblioteket for å konvertere en streng til en liste av ord og deretter kapitalisere hver første bokstav i hvert ord.
+# Dykke dypere:
+Kapitalisering av strenger er en vanlig operasjon i mange programmeringsspråk, og det er også tilgjengelig i Haskell. Denne funksjonen kan også brukes til å gjøre mer kompliserte strengmanipulasjoner, som for eksempel å gjøre alle bokstaver unntatt den første til små bokstaver.
 
-Det er viktig å merke seg at disse operasjonene ikke endrer den opprinnelige strengen, men returnerer en ny streng med de kapitaliserte endringene. Derfor er det viktig å tildele den kapitaliserte strengen til en variabel eller bruke den i en funksjon hvis du ønsker å beholde endringene.
+Alternativt kan man også bruke funksjonen `toTitle` fra `Data.Char`-modulen for å kapitalisere en streng. Dette kan være nyttig hvis man trenger å håndtere spesielle tilfeller, som for eksempel akronymer eller forkortelser.
 
-# Se også
+Implementasjonen av `capitalize`-funksjonen er ganske rett frem, da Haskell har innebygde funksjoner for å håndtere bokstaver, slik som `toUpper`, `toLower` og `toTitle`.
 
-- [Haskell dokumentasjon](https://www.haskell.org/documentation/)
-- [Tutorial på kapitalisering av strenger](https://wiki.haskell.org/Tutorials/Programming_Haskell/String_IO)
-- [Data.Char biblioteket](https://hackage.haskell.org/package/base/docs/Data-Char.html)
-- [Data.Text biblioteket](https://hackage.haskell.org/package/text-1.2.3.2/docs/Data-Text.html)
-- [Data.Word biblioteket](https://hackage.haskell.org/package/base/docs/Data-Word.html)
+# Se også:
+- [Haskell String](https://www.haskell.org/tutorial/strings.html)
+- [Data.Char module](https://www.haskell.org/onlinereport/standard-prelude.html#module-data-char)

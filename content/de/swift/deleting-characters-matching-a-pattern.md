@@ -1,7 +1,7 @@
 ---
-title:                "Entfernen von Zeichen, die einem Muster entsprechen"
-html_title:           "Swift: Entfernen von Zeichen, die einem Muster entsprechen"
-simple_title:         "Entfernen von Zeichen, die einem Muster entsprechen"
+title:                "Löschen von Zeichen entsprechend einem Muster"
+html_title:           "Swift: Löschen von Zeichen entsprechend einem Muster"
+simple_title:         "Löschen von Zeichen entsprechend einem Muster"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -10,35 +10,20 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+# Was & Warum?
+Das Löschen von Zeichen, die einem bestimmten Muster entsprechen, ist eine gängige Aufgabe in der Programmierung. Oftmals wird diese Funktion verwendet, um unerwünschte Zeichen aus einer Zeichenkette zu entfernen oder um bestimmte Formatierungen in Texten zu ändern.
 
-Das Löschen von Zeichen, die einem bestimmten Muster entsprechen, kann in Swift vielfältige Anwendungen haben. Zum Beispiel kann dies bei der Datenbereinigung oder der Verarbeitung von Benutzereingaben nützlich sein.
-
-## Wie geht man vor?
-
-Um in Swift Zeichen zu löschen, die einem bestimmten Muster entsprechen, gibt es verschiedene Ansätze. Zunächst muss das zu bearbeitende String-Objekt in ein Mutable String-Objekt umgewandelt werden, da Strings in Swift standardmäßig unveränderlich sind. Anschließend kann entweder die `filter`-Funktion oder die `replacingOccurrences`-Methode verwendet werden, um alle Zeichen, die dem Muster entsprechen, zu entfernen.
+# Wie geht's?
+Das Löschen von Zeichen, die einem bestimmten Muster entsprechen, kann in Swift mit der Methode `removeAll(matching:)` durchgeführt werden. Hier ist ein Beispiel einer Zeichenkette, aus der alle Leerzeichen entfernt werden sollen:
 
 ```Swift
-var text = "Dies ist ein Beispieltext!"
-// Umwandlung in ein Mutable String-Objekt
-text = String(text)
-// Verwendung der filter-Funktion
-let filteredText = String(text.filter { !"aeiou".contains($0)})
-print(filteredText) // Ds st n Bspltxtxt!
-
-// Verwendung der replacingOccurrences-Methode
-let replacedText = text.replacingOccurrences(of: "[ \\!]", with: "", options: .regularExpression)
-print(replacedText) // DiesisteinBeispieltext
+let string = "H e l l o"
+let newString = string.removeAll(matching: " ")
+print(newString) // "Hello"
 ```
 
-## Tiefere Einblicke
+# Tiefgang
+Das Löschen von Zeichen, das einem bestimmten Muster entspricht, ist keine neue Technik und wird schon seit längerer Zeit in der Programmierung verwendet. Es gibt auch alternative Methoden, um diese Aufgabe zu erledigen, wie zum Beispiel die Verwendung von Schleifen und bedingten Anweisungen. Die `removeAll(matching:)` Methode ist jedoch die einfachste und effektivste Möglichkeit, um Zeichen basierend auf einem bestimmten Muster zu löschen.
 
-Wenn man genauer verstehen möchte, wie das Löschen von Zeichen, die einem bestimmten Muster entsprechen, funktioniert, ist es wichtig, die Konzepte von Mutable und Immutable in Swift zu verstehen. Mutable Objekte können verändert werden, während Immutable Objekte unveränderlich sind. In diesem Fall muss das String-Objekt in ein Mutable Objekt umgewandelt werden, damit die Funktion `filter` oder die Methode `replacingOccurrences` angewendet werden können.
-
-Es ist auch wichtig zu beachten, dass die `filter`-Funktion eine neue Kopie des Strings erstellt, während die `replacingOccurrences`-Methode den vorhandenen String verändert. Je nach Anwendungsfall kann es sinnvoller sein, die eine oder die andere Methode zu verwenden.
-
-## Siehe auch
-
-- [Die offizielle Swift Dokumentation](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
-- [Ray Wenderlich Artikel über Strings in Swift](https://www.raywenderlich.com/93964/strings-characters-and-unicode-in-swift)
-- [Hacking with Swift Tutorial über String Manipulation](https://www.hackingwithswift.com/articles/141/4-ways-better-string-manipulation-in-swift)
+# Siehe auch
+Weitere Informationen zu den `removeAll(matching:)` Methode und anderen String-Manipulationsfunktionen finden Sie in der offiziellen Swift-Dokumentation unter https://developer.apple.com/documentation/swift/string oder auf anderen Programmier-Websites wie Stack Overflow.

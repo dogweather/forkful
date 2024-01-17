@@ -10,48 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+"## ¿Qué y por qué?"
+Crear un archivo temporal es una forma común para que los programadores almacenen temporalmente información en sus aplicaciones. Esto se hace para evitar la sobrecarga de almacenar datos en un lugar permanente, lo que puede llevar a una disminución en el rendimiento del sistema.
 
-Crear archivos temporales es una práctica muy útil en programación para almacenar datos de forma temporal y no ocupar espacio en disco innecesariamente. Además, pueden ser utilizados para realizar pruebas y experimentar con diferentes datos sin afectar al funcionamiento del código original.
+"## Cómo:"
+Un ejemplo sencillo de cómo crear un archivo temporal en TypeScript es utilizando la biblioteca incorporada "fs" y la función "writeFileSync". Esto se puede hacer de la siguiente manera:
 
-## Cómo hacerlo
+```
+import fs from 'fs';
 
-Para crear un archivo temporal en TypeScript, podemos utilizar la función `fs.mkdtempSync()` proporcionada por el módulo `fs` de Node.js. Esta función acepta dos parámetros: un prefijo para el nombre del archivo y una función de retorno (callback) que nos devuelve el nombre y la ruta del archivo temporal creado. Veamos un ejemplo:
-
-```TypeScript
-const fs = require('fs');
-const path = require('path');
-
-const prefix = 'tempFile_';
-const tempFile = fs.mkdtempSync(prefix, (err, folder) => {
-  if (err) throw err;
-  return folder;
-});
-
-console.log(tempFile); // output: "tempFile_064faa90-38f9-40b3-b872-9a65f31720d8" (nombre y ruta generados automáticamente)
+fs.writeFileSync('archivoTemporal.txt', 'Este es un archivo temporal');
 ```
 
-Como se puede ver en el código, al ejecutar la función `mkdtempSync()`, se genera automáticamente un nombre para el archivo temporal utilizando el prefijo que le pasamos como parámetro. Además, se le asigna una ruta aleatoria para evitar posibles conflictos de nombres con otros archivos en nuestra aplicación.
+Esto crea un archivo de texto llamado "archivoTemporal.txt" con el contenido "Este es un archivo temporal". También se pueden especificar opciones adicionales, como el modo de archivo y los permisos.
 
-Por otro lado, también podemos utilizar la librería `tmp` para crear archivos temporales de una manera más sencilla y organizada. Esta librería nos permite especificar el prefijo, sufijo, directorio y nombre del archivo temporal que queremos crear. Veamos un ejemplo:
+"## Más detalles:"
+La creación de archivos temporales es una práctica común en la programación, y se ha utilizado durante mucho tiempo para almacenar datos intermedios en aplicaciones. Sin embargo, existen alternativas a la creación de archivos temporales, como el uso de variables de memoria o bases de datos en la nube.
 
-```TypeScript
-const tmp = require('tmp');
+En términos de implementación, la creación de archivos temporales implica la asignación de espacio en el disco duro y la generación de un nombre único para el archivo. La eliminación del archivo también es importante para evitar el desbordamiento de disco y mantener la integridad del sistema.
 
-const tempObj = tmp.fileSync({ prefix: 'tempFile_', postfix: '.txt', dir: '/tmp' });
-console.log(tempObj.name); // output: "/tmp/tempFile_302e5446-f057-6812-a173-04c5f77eca15.txt"
-```
-
-En este caso, la función `fileSync()` nos devuelve un objeto con la información del archivo temporal que hemos creado, incluyendo su nombre y ruta. Como se puede observar, también podemos especificar un sufijo y directorio para el archivo.
-
-## Profundizando
-
-Crear un archivo temporal puede ser útil en diferentes situaciones, por ejemplo, al trabajar con datos sensibles que no queremos almacenar permanentemente en nuestro sistema o al procesar grandes cantidades de información que no queremos guardar en disco.
-
-Es importante tener en cuenta que, al finalizar nuestra aplicación, debemos borrar los archivos temporales que hemos creado para no ocupar espacio de forma innecesaria en nuestro sistema. Para ello, podemos utilizar la función `fs.unlinkSync()` para borrar el archivo, o la función `fs.rmdirSync()` si queremos borrar todo el directorio en el que se encuentra el archivo temporal.
-
-## Ver también
-
-- Documentación oficial de Node.js sobre `fs.mkdtempSync()`: https://nodejs.org/api/fs.html#fs_fs_mkdtempsync_prefix_options_callback
-- Documentación oficial de la librería `tmp`: https://github.com/raszi/node-tmp
-- Artículo sobre la gestión de archivos temporales en TypeScript: https://ilikekillnerds.com/2017/02/managing-temporary-files-node-js-typescript/
+"## Mira también:"
+- [Documentación de Node.js sobre fs](https://nodejs.org/api/fs.html)
+- [Artículo sobre el uso de archivos temporales en TypeScript](https://www.digitalocean.com/community/tutorials/how-to-create-temporary-files-in-node-js-using-the-fs-module)

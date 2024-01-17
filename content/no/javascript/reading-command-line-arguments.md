@@ -1,7 +1,7 @@
 ---
-title:                "Lesing av kommandolinje-argumenter"
-html_title:           "Javascript: Lesing av kommandolinje-argumenter"
-simple_title:         "Lesing av kommandolinje-argumenter"
+title:                "Lesing av kommandolinjeargumenter"
+html_title:           "Javascript: Lesing av kommandolinjeargumenter"
+simple_title:         "Lesing av kommandolinjeargumenter"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Files and I/O"
@@ -10,37 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hva og hvorfor?
+Lesing av kommandolinjeargumenter er en vanlig oppgave for programmere. Det innebærer å lese og behandle verdier som er angitt som parametere når et program blir kjørt fra en terminal eller kommandolinjegrensesnitt. Dette er nyttig for å gi ekstra fleksibilitet til et program, for eksempel ved å tillate brukere å angi ulike verdier for å tilpasse programmet til deres behov.
 
-Å lese kommandolinje-argumenter er en essensiell del av JavaScript-programmering. Dette gir utviklere muligheten til å interagere med brukeren og skrive dynamiske skript som kan kjøres i nettleseren eller på serveren.
+## Hvordan:
+For å lese kommandolinjeargumenter i Javascript, kan du bruke ```process.argv```-objektet. Dette objektet inneholder en liste over argumenter gitt til programmet, der det første argumentet er banen til node-executable og det andre argumentet er banen til Javascript-filen som blir kjørt. Deretter følger eventuelle andre argumenter som blir angitt. For å få tilgang til disse argumentene, kan du bruke indeksering på samme måte som med et vanlig array. 
 
-## Hvordan
+Se et eksempel under for å lese og skrive ut kommandolinjeargumenter:
 
-For å lese kommandolinje-argumenter må du bruke et innebygd objekt i JavaScript kalt "process". Dette objektet gir tilgang til informasjon om den nåværende prosessen, inkludert kommandolinje-argumenter. For å lese argumentene, kan du bruke "process.argv" -metoden som returnerer en matrise med alle argumentene gitt ved kjøring av skriptet.
+```Javascript
+// Les og skriv ut første argument
+console.log("Første argument: " + process.argv[2]);
 
-``` Javascript
-// Eksempel på å lese kommandolinje-argumenter
-
-// Skriv ut alle argumentene i terminalen
-for (let i = 0; i < process.argv.length; i++) {
-  console.log(process.argv[i]);
-}
-
-/* Output:
-path/to/node
-path/to/myScript.js
-Hello
-World 
-*/
+// Les og skriv ut andre argument
+console.log("Andre argument: " + process.argv[3]);
 ```
 
-Hvis du vil ha et spesifikt argument, kan du bruke indeksering på matrisen. Det første argumentet (indeks 0) vil alltid være banen til Node.js-programmet som kjører skriptet, mens det andre argumentet (indeks 1) vil være banen til skriptet selv.
+Kjøre programmet med følgende kommando vil gi følgende output:
 
-## Dypdykk
+```Javascript
+$ node arguments.js argument1 argument2
+Første argument: argument1
+Andre argument: argument2
+```
 
-Det er viktig å merke seg at kommandolinje-argumenter alltid returneres som strenger, uavhengig av om du skriver et tall eller en boolean-verdi som argument. Dette betyr at du må bruke konverteringsmetoder som "parseInt" eller "parseFloat" hvis du vil bruke argumentet som et tall i koden din. Det er også mulig å sende inn egendefinerte argumenter ved å bruke flagg i kommandolinjen, for eksempel "-f" for å angi en fil som skal åpnes.
+## Dypdykk:
+Lesing av kommandolinjeargumenter er en gammel og velkjent oppgave i programmering. I tidligere dager var det vanlig å måtte skrive mye boilerplate-kode for å lese argumenter og gjøre noe nyttig med dem. I nyere versjoner av Javascript og andre programmeringsspråk, har dette blitt forenklet ved hjelp av dedikerte funksjoner og objekter som ```process.argv```.
 
-## Se også
+Det finnes ulike alternativer for å lese og behandle kommandolinjeargumenter, som for eksempel pakken yargs. Dette kan være nyttig for mer komplekse applikasjoner som krever mer avansert håndtering av argumenter.
 
-- [Node.js process dokumentasjon] (https://nodejs.org/dist/latest-v14.x/docs/api/process.html)
-- [Mozilla Developer Network - Command line arguments] (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Command_line_arguments)
+Det kan også være verdt å merke seg at kommandolinjeargumenter kan også leses og prosesseres ved hjelp av et brukergrensesnitt, som for eksempel en grafisk brukergrensesnitt eller webgrensesnitt. Dette kan være mer tilgjengelig for mindre erfarne brukere som ikke er vant til å bruke kommandolinjen.
+
+## Se også:
+- [Node.js dokumentasjon om process.argv](https://nodejs.org/api/process.html#process_process_argv)
+- [yargs pakken](https://www.npmjs.com/package/yargs)
+- [Alternativer for brukergrensesnitt for å lese og behandle kommandolinjeargumenter](https://www.npmjs.com/search?q=command+line+interface)

@@ -1,7 +1,7 @@
 ---
-title:                "Utskrift av felsökningsutdata"
-html_title:           "Clojure: Utskrift av felsökningsutdata"
-simple_title:         "Utskrift av felsökningsutdata"
+title:                "Skriva ut felsökningsutdata"
+html_title:           "Clojure: Skriva ut felsökningsutdata"
+simple_title:         "Skriva ut felsökningsutdata"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Testing and Debugging"
@@ -10,26 +10,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför?
+Vad & Varför?
+Debuggningsutskrift är ett sätt att visa information under körning av programmet för att hjälpa till att identifiera och lösa felaktigheter. Det är ett vanligt verktyg för programmerare att använda för att spåra och felsöka problem i sin kod.
 
-Ibland när du arbetar med Clojure, kan du stöta på problem som du behöver felsökning för att lösa. I dessa situationer kan det hjälpa att använda "utskrift" för att spåra och hitta felaktig kod. Det kan också vara en bra metod för att förstå hur en viss del av din kod fungerar.
-
-## Hur man gör det
-
-För att skriva ut felsökningsutdata i Clojure, använd "println" funktionen. Detta gör att du kan skriva ut en sträng eller ett värde till din konsol. Det finns också andra specialiserade funktioner såsom "prn" och "pprint" som ger ut mer läsbara utdata.
-
+Hur man:
+```Clojure
+(defn add [a b]
+  (println "Adding" a "and" b) ; Utskrift av information
+  (+ a b)) ; Retunerar summan av a och b
 ```
-Clojure
-(let [x 5]
-  (println x)) ;; utdata: 5
+Output:
+```
+Adding 2 and 3
+5
 ```
 
-## Deep Dive
+Djupdykning:
+Debuggningsutskrift har funnits länge och är ett beprövat sätt att felsöka kod. Alternativa metoder som används idag inkluderar loggning och att använda en debugger. Implementationen av utskrift kan variera beroende på programmeringsspråk, men grundprincipen är densamma - att visa information under körning av programmet.
 
-När du använder "println" eller liknande funktioner, ska du vara medveten om värdenas utformning när de skrivs ut. Till exempel om du skriver ut en vektor eller map, ska du komma ihåg att värdena kommer att skrivas ut med parenteser runt sig. Detta kan hjälpa dig att identifiera problem som kanske finns i din datastruktur.
-
-## Se även
-
-- Clojure.org - https://clojure.org/
-- Clojure cheatsheet - https://clojure.org/api/cheatsheet
-- Repl.it - https://repl.it/languages/clojure
+Se också:
+- [The Art of Debugging](https://www.amazon.com/Art-Debugging-Indispensable-Techniques-Software/dp/1118912879) av Matt Telles and Andy Fundinger
+- [Debugging in Clojure](https://clojure.org/guides/debugging) på Clojure.org dokumentationssidan

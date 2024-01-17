@@ -10,39 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-If you're a programmer or someone who works with command-line tools, you may have come across the need to read and manipulate text files. Whether it's parsing data or creating automated tasks, being able to read a text file using Fish Shell can greatly improve your efficiency and productivity.
+Reading a text file simply means accessing the contents of a file in a human-readable form. Programmers often do this to extract important information or manipulate the data in some way.
 
-## How To
+## How to:
 
-To read a text file using Fish Shell, follow these steps:
+To read a text file in Fish Shell, use the built-in `read` command followed by the name of the file. For example:
 
-1. Open your Fish Shell terminal.
-2. Navigate to the directory where the text file is located using the `cd` command.
-3. Use the `cat` command followed by the name of the text file to display its contents in the terminal. For example: 
 ```Fish Shell
-cat sample.txt
-```
-4. Alternatively, you can use the `less` command to view the text file in a more user-friendly format. This allows you to scroll through the file and search for specific words or phrases. For example:
-```Fish Shell
-less sample.txt
-```
-5. You can also use the `head` or `tail` commands to show the first or last few lines of the text file, respectively. For example:
-```Fish Shell
-head sample.txt
-tail sample.txt
+read myfile.txt
 ```
 
-## Deep Dive
+This will print out the contents of `myfile.txt` in the console. To save the output to a variable, use the `-z` flag:
 
-There are various ways to read a text file in Fish Shell, and each of these commands has additional options that allow you to manipulate the output. For example, the `cat` command has the `-n` option which displays line numbers, and the `less` command has the ability to search for specific words using the `/` key.
+```Fish Shell
+set text (read -z myfile.txt)
+```
 
-Additionally, you can use the output of these commands in conjunction with other Fish Shell commands to perform further actions on the text file. For example, you can pipe the output of `cat` or `less` to `grep` to search for specific patterns, or use `awk` to extract specific columns from a text file.
+Now you can use the variable `text` in your code for further manipulation.
 
-Overall, being familiar with how to read and manipulate a text file using Fish Shell can greatly enhance your command-line skills and make you a more efficient programmer.
+## Deep Dive:
 
-## See Also
-- [Fish Shell Official Documentation](https://fishshell.com/docs/current/)
-- [A Beginner's Guide to Fish Shell](https://dev.to/siddharth/latest-dev-tips-introduction-to-fish-shell-3445)
-- [10 Useful Tips for Using the Fish Shell](https://www.tecmint.com/fish-tips-and-tricks/)
+Reading text files has been a common task for programmers since the early days of computing. It allows for easy manipulation of data without having to manually input it into the code. Other alternatives for reading files include using system calls or external programs, but the `read` command in Fish Shell provides a simple and efficient solution.
+
+When reading a text file, Fish Shell reads the contents of the file line by line and prints them out in the console. The `-z` flag tells Fish to store the contents of the file in a variable rather than printing it out. This is useful for storing data that needs to be processed or used later in the code.
+
+## See Also:
+
+- [Fish Shell documentation on `read` command](https://fishshell.com/docs/current/commands.html#read)
+- [GeeksforGeeks article on reading a text file in Fish Shell](https://www.geeksforgeeks.org/how-to-read-a-text-file-in-fish-shell/)
+- [Official Fish Shell website for more information and resources](https://fishshell.com/)

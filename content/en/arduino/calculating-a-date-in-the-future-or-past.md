@@ -10,64 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-Calculating dates in the future or past may be useful in applications such as scheduling and countdown timers. With the Arduino, you can easily incorporate date calculations into your projects.
+Calculating dates in the future or past is the process of determining a specific date based on a given time interval, such as adding or subtracting a certain number of days, weeks, or months from a current date. This is a common task for programmers when working with dates and time in their projects, as it allows for more dynamic and flexible date handling.
 
-## How To
+## How to:
 
-First, we need to initialize the Time.h library, which provides functions for working with time and date on the Arduino. Then, we need to set the current date and time using the `setTime()` function. Here's an example of setting the date to May 5, 2020 at 3:00 PM:
-
-```Arduino
-#include <Time.h>
-
-void setup() {
-  // initialize the Time library
-  setTime(15, 0, 0, 5, 5, 2020);
-}
-```
-
-To calculate a future date, we can use the `now()` function to get the current date and time, and then use simple arithmetic to add the desired time interval. For example, to add 2 days to the current date, we can use the `now()` function and add 2 days in seconds:
+Calculating dates in the future or past can be done using the `millis()` function in Arduino, which returns the number of milliseconds since the board began running the current program. First, we need to define the desired time interval in milliseconds, then we can add or subtract it from the current time using the `millis()` function. 
 
 ```Arduino
-#include <Time.h>
-
-void setup() {
-  // initialize the Time library
-  setTime(15, 0, 0, 5, 5, 2020);
-  
-  time_t now = now(); // get current date and time
-  time_t futureDate = now + (2 * 24 * 60 * 60); // add 2 days in seconds
-}
+unsigned long interval = 86400000; //one day in milliseconds
+unsigned long futureDate = millis() + interval; //calculates the future date by adding the interval to the current time
+unsigned long pastDate = millis() - interval; //calculates the past date by subtracting the interval from the current time
 ```
 
-Similarly, to calculate a past date, we can subtract the desired time interval from the current date. For example, to subtract 3 months from the current date, we can use the `now()` function and subtract 3 months in seconds:
-
-By utilizing the `weekday()` function, we can also determine the day of the week for a given date. This can be helpful in scheduling events on specific days. Here's an example of using the `weekday()` function to determine if a date falls on a Sunday:
+To display the calculated dates, we can use the `Serial.print()` function in Arduino. 
 
 ```Arduino
-#include <Time.h>
-
-void setup() {
-  // initialize the Time library
-  setTime(15, 0, 0, 5, 5, 2020);
-  
-  int day = weekday(2020, 5, 5); // get day of the week for May 5, 2020 (Tuesday)
-  
-  if (day == 1) { // 1 represents Sunday in the weekday function
-    // do something on a Sunday
-  }
-}
+Serial.print("Future Date in milliseconds: ");
+Serial.println(futureDate); //displays the calculated future date in milliseconds
+Serial.print("Past Date in milliseconds: ");
+Serial.println(pastDate); //displays the calculated past date in milliseconds
 ```
 
-## Deep Dive
+The output from the code above will show the future and past dates in milliseconds, which can then be converted to a more readable format using the appropriate conversion formula. 
 
-The Arduino uses a Unix-based time system, where time is represented in the number of seconds that have elapsed since January 1, 1970. This allows for easy calculations using simple arithmetic.
+## Deep Dive:
 
-It's important to note that the Arduino has a limited range for time and date calculations, and can only handle values up to January 19, 2038. After that, the time and date will reset to January 1, 1970. If you require calculations beyond this range, you may need to use a different time library.
+Calculating dates in the future or past is a fundamental task in programming and has been used for centuries in various fields such as astronomy, navigation, and finance. In Arduino, the `millis()` function is used to measure time intervals and is based on the Unix time system, which counts the number of seconds since January 1st, 1970.
 
-## See Also
+An alternative method for calculating dates in the future or past is by using the `DateTime` library in Arduino. This library allows for more precise date and time calculations and formatting. However, it may not be suitable for every project as it takes up more memory and may slow down the code execution.
 
-- [Time library reference](https://www.arduino.cc/en/Reference/Time)
-- [Generating Random Numbers in Arduino](https://github.com/pi-top/pi-topOS-Web-Portal/wiki/Generating-Random-Numbers-in-Arduino)
-- [Using Switch Case in Arduino](https://create.arduino.cc/projecthub/techmirtz/using-switch-case-in-arduino-8c8342)
+Implementation details for calculating dates in the future or past may vary depending on the project and time system used. It is important to understand the underlying concept and to choose the appropriate method for accurate and efficient results.
+
+## See Also:
+
+- Arduino Reference for `millis()`: https://www.arduino.cc/reference/en/language/functions/time/millis/
+- Arduino DateTime Library: https://github.com/PaulStoffregen/Time

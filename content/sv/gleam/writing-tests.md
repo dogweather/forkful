@@ -1,7 +1,7 @@
 ---
-title:                "Skriva tester"
-html_title:           "Gleam: Skriva tester"
-simple_title:         "Skriva tester"
+title:                "Att skriva tester."
+html_title:           "Gleam: Att skriva tester."
+simple_title:         "Att skriva tester."
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Testing and Debugging"
@@ -10,44 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
-Ibland kan det kännas som att det tar längre tid att skriva tester än att faktiskt skriva koden. Så varför ska man göra det? Jo, för att tester gör din kod mer tillförlitlig och hjälper dig att hitta buggar tidigt.
+## Vad & Varför?
+Writing tests, or test-driven development, is the practice of writing automated tests for your code before writing the code itself. This ensures that your code is functioning as expected and avoids unexpected bugs. It also serves as documentation for your code and allows for easier maintenance and refactoring in the future.
 
-## Så här gör du
-Det första du behöver göra är att installera Gleam, antingen manuellt eller genom ett pakethanterare som Homebrew på macOS. När det är klart kan du börja skriva dina tester. Här är ett exempel på en simpel funktion och tillhörande test:
+## Hur man:
+Följande kodblock visar hur man kan skriva tester i Gleam:
 
 ```Gleam
-fn sum(a, b) {
+fn add(a, b) {
   a + b
 }
 
-test "sum function" {
-  assert sum(2, 3) == 5
+test "add adds two numbers" {
+  expect(add(1, 2)) |> to_equal(3)
 }
 ```
 
-Du kan köra testet genom att köra kommandot `gleam test` i terminalen. Du bör få utskriften `1 passed (0 ignored) in 0ms`.
+Outputen vid körning av testet blir:
 
-## Djupdykning
-När du börjar skriva fler tester och behöver organisera dem kan du använda `module` och `suite` för att skapa olika grupper av tester. Detta gör det lättare att hitta och köra specifika tester. Här är ett exempel på hur det kan se ut:
-
-```Gleam
-module math {
-  suite "sum function" {
-    test "sum of two numbers" {
-      assert sum(2, 3) == 5
-    }
-
-    test "sum of negative numbers" {
-      assert sum(-2, -3) == -5
-    }
-  }
-}
+```
+✓ add adds two numbers
 ```
 
-För att köra alla tester i denna modul kan du använda `gleam test math`. Detta kommer att köra båda testerna och du bör få utskriften `2 passed (0 ignored) in 1ms`.
+## Djupdykning:
+Test-driven development kommer från den agila utvecklingsmetodiken och har funnits sedan tidigt 2000-tal. Alternativ till Gleam för att skriva tester är till exempel ExUnit för Elixir eller Jest för JavaScript. I Gleam använder man sig av biblioteket Gleam Expect som tillhandahåller funktioner för att skriva och köra tester.
 
-## Se också
-- [Gleam dokumentation](https://hexdocs.pm/gleam/getting-started.html)
-- [En enkel guide till enhetstestning med Gleam](https://blog.frankel.ch/u-tdd-gleam/) (på engelska)
-- [Kurs om testdriven utveckling med Gleam](https://www.udemy.com/course/functional-programming-test-driven-development/) (på engelska)
+## Se även:
+- [Gleam Expect documentation](https://github.com/gleam-lang/expect)
+- [Test-driven development explained](https://www.agilealliance.org/glossary/tdd/)
+- [Alternative testing frameworks](https://www.slant.co/options/24563/alternatives/~elixir-exunit-alternatives)

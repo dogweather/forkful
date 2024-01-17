@@ -10,30 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué convertir una cadena a minúsculas en Arduino?
+## ¿Qué & por qué?
 
-Hay muchas situaciones en las que necesitas trabajar con cadenas de texto en tu proyecto de Arduino. A veces, es posible que quieras comparar dos cadenas o buscar una determinada palabra en una cadena. En tales casos, tener todas las letras en minúsculas puede facilitar la tarea y evitar errores en la comparación. Por lo tanto, aprender a convertir una cadena a minúsculas en Arduino puede ser muy útil.
+"Convertir una cadena de texto a minúsculas" es un proceso en el que se transforma una cadena de caracteres a una versión en la que todas las letras se encuentran en minúsculas. Este proceso es comúnmente utilizado por programadores para estandarizar los datos y facilitar las comparaciones entre diferentes cadenas de texto. 
 
-## Cómo hacerlo
+## Cómo hacerlo:
 
 ```Arduino
-String texto = "ARDUINO";
-texto.toLowerCase(); // texto ahora es "arduino"
+String texto = "Hola Mundo"; 
+//Creamos una cadena de texto con mayúsculas y minúsculas
+
+texto.toLowerCase(); 
+//Convertimos la cadena de texto a minúsculas
+
+Serial.println(texto); 
+//Imprimimos la cadena de texto convertida a la consola serial
+
 ```
 
-En este ejemplo, declaramos una variable de tipo String llamada "texto" con el valor "ARDUINO". Luego, usamos la función toLowerCase() para convertir toda la cadena a minúsculas. Ahora, si imprimimos la variable "texto", veremos que ha sido modificada a "arduino".
+El resultado de este código sería:
+```
+hola mundo
+```
 
-Otra forma de realizar esta conversión es utilizando la función toLowerCase(char) en un bucle. Esta función toma como parámetro un carácter y lo convierte a minúscula. Entonces, podríamos iterar por cada carácter de la cadena y aplicar la función para obtener una cadena totalmente en minúsculas.
+## Profundizando:
 
-## Profundizando
+### Contexto histórico:
 
-La función toLowerCase() en realidad utiliza la tabla ASCII para convertir los caracteres a minúsculas. Cada letra mayúscula tiene un número asociado en la tabla ASCII, y al sumar 32 a ese número, obtenemos el equivalente en minúscula. Esto podría ser útil si quieres implementar tu propia función para convertir cadenas a minúsculas.
+La transformación de cadenas de texto a minúsculas es un proceso que se ha utilizado desde los inicios de la informática. Antes de la existencia de los lenguajes de programación modernos, los primeros programadores tenían que realizar esta tarea de forma manual utilizando herramientas como la máquina de escribir o el lápiz y papel.
 
-Además, es importante tener en cuenta que la función toLowerCase() solo funciona con letras del alfabeto, por lo que si tienes números u otros símbolos en tu cadena, permanecerán igual. Si deseas convertir toda la cadena a minúsculas, puedes usar la función toLowerCase(char) dentro de un bucle y pasar cada carácter, incluyendo los números y símbolos.
+### Alternativas:
 
-¡Recuerda que siempre puedes consultar la documentación oficial de Arduino para obtener más información sobre esta función y otras!
+Además de la función `.toLowerCase()` utilizada en el ejemplo, también existen otras formas de convertir una cadena de texto a minúsculas en Arduino. Una de ellas es utilizando la biblioteca `String` y la función `.toLowerCase()`. También se puede hacer utilizando la función `String.copy()` junto con la función `tolower()` de la biblioteca `ctype.h`.
 
-## Ver también
+### Detalles de implementación:
 
-- [Documentación oficial de Arduino: toLowerCase()](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/tolowercase/) 
-- [Tabla ASCII](https://es.wikipedia.org/wiki/ASCII)
+La conversión de una cadena de texto a minúsculas se basa en el uso de tablas de caracteres que contienen las equivalencias entre mayúsculas y minúsculas. Estas tablas se encuentran en bibliotecas como `ctype.h` y son utilizadas internamente por la función `.toLowerCase()` para realizar la conversión.
+
+## Ver también:
+
+- [Documentación oficial de Arduino sobre la función .toLowerCase()](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/tolowercase/)
+- [Ejemplo de conversión de cadena de texto a minúsculas utilizando la biblioteca String](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/tolowercase/)
+- [Documentación sobre la biblioteca ctype.h](https://www.cplusplus.com/reference/cctype/)

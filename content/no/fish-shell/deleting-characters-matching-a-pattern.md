@@ -1,7 +1,7 @@
 ---
-title:                "Sletting av tegn som matcher et mønster"
-html_title:           "Fish Shell: Sletting av tegn som matcher et mønster"
-simple_title:         "Sletting av tegn som matcher et mønster"
+title:                "Slette tegn som matcher et mønster"
+html_title:           "Fish Shell: Slette tegn som matcher et mønster"
+simple_title:         "Slette tegn som matcher et mønster"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -10,33 +10,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hva og hvorfor?
+Sletting av tegn som matcher et mønster i koden din er en vanlig oppgave for programmerere. Dette betyr rett og slett å fjerne visse tegn fra en tekststreng basert på et bestemt mønster. Dette kan være nyttig for å rydde opp i koden din eller for å endre visse deler av tekststrengen.
 
-Noen ganger, når vi jobber med tekstfiler eller kommandolinjeverktøy, kan det hende vi trenger å fjerne en spesifikk type tegn fra en tekststreng. Dette kan for eksempel være om vi ønsker å fjerne alle tall fra en tekstfil, eller alle spesielle tegn fra en kommandolinjekommando. Å kunne fjerne karakterer som matcher et bestemt mønster er en nyttig ferdighet å ha i programmering, spesielt når vi jobber med tekstbehandling.
-
-## Slik gjør du det
-
-For å fjerne karakterer som matcher et mønster i Fish Shell, kan vi bruke kommandoen `string delete`, etterfulgt av mønsteret vi ønsker å slette og teksten eller filen den skal brukes på. For eksempel:
+# Hvordan:
+```Fish Shell``` har et praktisk innebygd verktøy for å slette tegn som matcher et mønster. Dette verktøyet heter ```string replace``` og tar to argumenter: mønsteret som skal matches og teksten som det skal søkes i. La oss se på et eksempel:
 
 ```
-Fish Shell> string delete [mønster] [tekst/fil]
+string replace 'hello' 'Hi' 'Hello there!'
 ```
 
-La oss si at vi har en tekstfil med tall og vi ønsker å fjerne alle tall fra den. Vi kan da bruke følgende kommando i Fish Shell:
+Dette vil resultere i ```Hi there!``` som output, da verktøyet har funnet og erstattet alle forekomster av ```hello``` med ```Hi```. Du kan også bruke regulære uttrykk som mønster for mer avanserte søk.
 
-```
-Fish Shell> string delete [0-9] tall.txt
-```
+# Dypdykk:
+Sletting av tegn som matcher et mønster har lenge vært en utfordring for programmerere. Tidligere måtte man bruke kompliserte regex-uttrykk eller eksterne verktøy for å oppnå dette, men med ```Fish Shell``` sitt ```string replace``` er det enklere enn noensinne.
 
-Dette vil fjerne alle tall fra filen `tall.txt` og gi oss en ren tekstfil uten tall.
+Alternativene til ```string replace``` inkluderer andre kommandoer i ```Fish Shell``` som ```string split``` og ```string trim```. Disse kommandoene kan også brukes til å manipulere tekststrenger basert på visse mønstre.
 
-## Dykk dypere
-
-Det er flere måter å definere et mønster på når du bruker kommandoen `string delete`. For eksempel, hvis vi ønsker å fjerne alle tegn fra a til z i en tekststreng, kan vi bruke følgende mønster: `[a-z]`. Vi kan også benytte oss av regex-uttrykk for å fjerne mer komplekse mønstre.
-
-En annen nyttig funksjon i Fish Shell er kommandoen `string replace`, som lar oss velge hva vi ønsker å erstatte et mønster med i teksten eller filen vår. Dette kan være nyttig hvis vi ønsker å endre et mønster til en bestemt verdi.
-
-## Se også
-
-- Fish Shell dokumentasjon: https://fishshell.com/docs/current/
-- Regex tutorial: https://regexone.com/
+# Se også:
+- Fish Shell documentation: https://fishshell.com/docs/current/commands.html#string-replace
+- Regular expressions tutorial: https://www.regular-expressions.info/tutorial.html

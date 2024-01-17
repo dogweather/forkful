@@ -1,7 +1,7 @@
 ---
-title:                "Affichage du débogage"
-html_title:           "Clojure: Affichage du débogage"
-simple_title:         "Affichage du débogage"
+title:                "Affichage de données de débogage"
+html_title:           "Clojure: Affichage de données de débogage"
+simple_title:         "Affichage de données de débogage"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Testing and Debugging"
@@ -10,53 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Quoi & Pourquoi?
 
-La sortie de débogage est un outil essentiel pour comprendre le fonctionnement de votre code et résoudre les problèmes. En imprimant des informations sur l'état de votre programme à différents points d'exécution, vous pouvez identifier les erreurs et suivre le parcours de vos données.
+L'impression de Debug Output est simplement le fait d'afficher des informations pendant l'exécution de votre code, principalement pour résoudre les bugs et trouver des erreurs.
 
-## Comment faire
+Les programmeurs le font souvent pour comprendre exactement ce qui se passe dans leur code et repérer les problèmes plus facilement.
 
-```Clojure
-(defn afficher-statut [statut]
-  (println "Le statut actuel est :" statut))
-  
-(defn operation-complexe [a b]
-  (print "Effectuer une opération complexe avec les valeurs :" a b)
-  (+ a b))
+## Comment:
+
+```clojure 
+(defn print-debug [var]
+  (println "Debug Output:" var))
+
+(print-debug "Hello world!")
 ```
 
-L'exemple ci-dessus montre comment imprimer des informations sur des variables et des expressions dans votre code. En utilisant `println` et `print`, vous pouvez afficher la valeur actuelle des variables ainsi que des messages pour aider à comprendre le contexte de l'exécution du code.
-
-Voici un exemple de sortie de débogage pour la fonction `operation-complexe` avec une valeur de `a` de 2 et une valeur de `b` de 3 :
+Résultat:
 
 ```
-Effectuer une opération complexe avec les valeurs : 2 3
-Le résultat est : 5
+Debug Output: Hello world!
 ```
 
-## Plongée en profondeur
+Vous pouvez également utiliser ```prn``` à la place de ```println``` pour obtenir une représentation imprimable de l'objet.
 
-L'impression de sortie de débogage peut être personnalisée en utilisant des options telles que `pr`, `prn` et `pprint`, qui offrent différentes façons de formater les données pour une lisibilité maximale. Vous pouvez également utiliser des bibliothèques telles que `clojure.tools.logging` pour une meilleure gestion de l'output de débogage.
+## Plongée en profondeur:
 
-Voici un exemple de sortie de débogage avec la fonction `pr` :
+L'impression de Debug Output a été une technique courante pour le débogage depuis les débuts de la programmation informatique. Cependant, il existe maintenant des alternatives telles que l'utilisation d'un débogueur ou d'un logger.
 
-```Clojure
-(defn afficher-nombre [nombre]
-  (pr "Le type de nombre est : " (type nombre))
-  (pr "La valeur de nombre est : " nombre))
-  
-(afficher-nombre 5)
-```
+En utilisant ```println``` ou ```prn```, le débogueur peut influencer les performances de votre code et il est important de le désactiver lorsque vous envoyez votre code en production.
 
-La sortie sera :
+## Voir aussi:
 
-```
-Le type de nombre est : java.lang.Long
-La valeur de nombre est : 5
-```
+Pour en savoir plus sur l'impression de Debug Output en Clojure, vous pouvez consulter les sources suivantes:
 
-## Voir aussi
-
-- [Documentation officielle de Clojure](https://clojure.org/)
-- [Tutoriels Clojure de Clojure for the Brave and True](https://www.braveclojure.com/programming/)
-- [Exemples de code sur GitHub](https://github.com/clojure/clojure)
+- [Documentation officielle de Clojure sur l'impression de Debug Output](https://clojuredocs.org/clojure.pprint/pprint)
+- [Vidéo explicative d'utilisation de ```println``` en Clojure](https://www.youtube.com/watch?v=61VheNAfQVQ)
+- [Article sur les meilleurs outils de débogage en Clojure](https://blog.lono.io/best-clojure-debugging-tools/)

@@ -10,45 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué convertir una fecha en una cadena de texto?
+## ¿Qué y por qué?
 
-Si estás trabajando en un proyecto que requiere el manejo de fechas, es probable que en algún punto necesites convertir una fecha en una cadena de texto. Esto puede ser útil para mostrar la fecha en un formato específico o para realizar cálculos de tiempo. En este artículo, aprenderás cómo hacerlo en Rust de forma rápida y sencilla.
+Convertir una fecha en una cadena de texto es un proceso utilizado por los programadores para mostrar una fecha en un formato legible para los usuarios. Esto es particularmente útil en aplicaciones que requieren mostrar fechas en un formato específico.
 
-## Cómo hacerlo
-
-La forma más sencilla de convertir una fecha en una cadena de texto en Rust es utilizando la función `format!()`. Esta función utiliza una sintaxis similar a la de `println!()` y te permite especificar el formato en el que quieres mostrar la fecha.
-
-Dentro de `format!()`, utilizamos placeholders `{:...}` para indicar qué partes de la fecha queremos mostrar y cómo queremos mostrarlas. Por ejemplo, para mostrar la fecha en formato "día/mes/año", podemos usar `{:d}/{:m}/{:y}`. 
-
-Veamos un ejemplo completo de cómo convertir una fecha en una cadena de texto en Rust:
+## Cómo:
 
 ```Rust
-use chrono::prelude::*;
+use chrono::NaiveDate;
+use chrono::format::strftime::StrftimeItems;
 
-fn main() {
-    // Creamos una fecha: 3 de mayo de 2021 a las 12:00
-    let date = Utc.ymd(2021, 5, 3).and_hms(12, 0, 0);
-
-    // Convertimos la fecha en una cadena de texto con el formato deseado
-    let date_string = format!("{:m}/{:d}/{:y} a las {:H}:{:M}", date);
-
-    // Mostramos la cadena de texto resultante
-    println!("{}", date_string);
-}
+let date = NaiveDate::from_ymd(2021, 12, 25);
+let format = StrftimeItems::new("%d de %B de %Y"); // formato en español
+let string_date = date.format_with_items(format).to_string(); 
 ```
 
-El resultado de este código sería `5/3/21 a las 12:00`.
+En el código anterior, utilizamos la biblioteca `chrono` para convertir una fecha en una cadena de texto en el formato especificado. Primero, creamos una fecha con el año, mes y día deseados. Luego, creamos un objeto `StrftimeItems` con el formato deseado, en este caso, `%d de %B de %Y` que muestra el día del mes, el nombre del mes y el año en español. Finalmente, utilizamos el método `format_with_items` para convertir la fecha en una cadena de texto y luego lo convertimos a un tipo de dato `String`.
 
-## Profundizando
+## Inmersión profunda
 
-Ahora que ya sabes cómo convertir una fecha en una cadena de texto en Rust, es importante entender que esta función se basa en el módulo `chrono`, que es una librería de manejo de fechas y tiempos en Rust. Esta librería ofrece muchas más opciones y formatos para trabajar con fechas, como por ejemplo, el manejo de diferentes zonas horarias.
+La necesidad de convertir una fecha en una cadena de texto se origina en la forma en que las fechas se almacenan y procesan en la computadora. Las fechas se almacenan internamente como números, lo que facilita el procesamiento y cálculo de fechas. Sin embargo, para los usuarios, las fechas en formato numérico pueden ser difíciles de entender. Por lo tanto, los programadores utilizan la conversión a una cadena de texto con un formato legible para mejorar la experiencia del usuario.
 
-Al utilizar `chrono`, también tienes la posibilidad de mostrar la fecha en otros idiomas, siempre y cuando se hayan instalado los correspondientes paquetes de idiomas en tu sistema.
+Aparte de la biblioteca `chrono`, también hay otras formas de convertir fechas en cadenas de texto en Rust, como utilizando la librería `time` o escribir tu propia función de conversión. Sin embargo, `chrono` es una opción popular debido a su amplia funcionalidad y su soporte para distintos formatos y zonas horarias.
 
-Puedes consultar la documentación del módulo `chrono` para obtener más información sobre todas las opciones de formato y funcionalidades que ofrece.
+## Vea también
 
-## Ver también
-
-- Documentación de `chrono`: https://docs.rs/chrono/
-- Tutorial de manejo de fechas en Rust: https://blog.knoldus.com/handling-datetime-in-rust-with-chrono/
-- Repositorio de GitHub de `chrono`: https://github.com/chronotope/chrono
+- Documentación oficial de `chrono`: https://docs.rs/chrono/latest/chrono/format/strftime/index.html
+- Librería `time`: https://docs.rs/time/0.2.25/time/
+- Ejemplo de función de conversión propia: https://stackoverflow.com/questions/52078568/converting-date-to-string-in-rust

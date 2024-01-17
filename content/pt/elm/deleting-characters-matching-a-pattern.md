@@ -1,7 +1,7 @@
 ---
-title:                "Apagando caracteres que correspondem a um padrão."
-html_title:           "Elm: Apagando caracteres que correspondem a um padrão."
-simple_title:         "Apagando caracteres que correspondem a um padrão."
+title:                "Exclusão de caracteres que correspondam a um padrão"
+html_title:           "Elm: Exclusão de caracteres que correspondam a um padrão"
+simple_title:         "Exclusão de caracteres que correspondam a um padrão"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -10,48 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+O que & Por quê?
+Deletar caracteres que correspondam a um padrão é uma técnica usada pelos programadores para remover partes indesejadas de uma String. Isso pode ser útil para limpar dados ou filtrar informações em uma aplicação.
 
-Às vezes, ao lidar com grandes quantidades de texto, pode ser útil excluir caracteres que correspondam a um determinado padrão. Isso pode ser útil, por exemplo, na limpeza de dados para análise posterior.
+Como fazer:
+Para deletar caracteres que correspondam a um padrão em Elm, podemos usar a função `String.filter` combinada com a função `String.startsWith` (para verificar se uma String começa com um determinado padrão) ou `String.regex` (para usar expressões regulares). Aqui está um exemplo de como usar ambas as funções:
 
-## Como fazer
-
-Para excluir caracteres correspondentes a um padrão, iremos utilizar a função `String.filter` do Elm. Esta função recebe uma função de filtro como argumento e retorna uma string com os caracteres que correspondem ao padrão.
-
-Um exemplo simples é excluir todos os caracteres numéricos de uma string:
-
-```Elm
-import String exposing (filter)
-
-stringSemNumeros : String -> String
-stringSemNumeros texto =
-    filter (\char -> not (Char.isDigit char)) texto
 ```
-Exemplo de saída:
-```
-> stringSemNumeros "Olá2 Mundo!"
-"Olá Mundo!"
+Elm String.filter (\char -> not (String.startsWith "a" char)) "apple"
 ```
 
-Em nosso exemplo, utilizamos a função `Char.isDigit` para verificar se o caractere é um número e, em seguida, invertemos o resultado com o uso de `not` para garantir que apenas caracteres que não correspondem ao padrão sejam mantidos.
+Este código retornará "pple" após filtrar os caracteres que começam com "a" na String "apple". Você também pode usar `String.regex` para filtrar usando uma expressão regular, como mostrar o exemplo a seguir:
 
-## Mergulho Profundo
-
-A função `String.filter` é muito versátil e pode ser utilizada de diversas maneiras. Ela também pode ser combinada com outras funções de string para criar filtros mais complexos.
-
-Por exemplo, podemos criar uma função para remover todos os caracteres não alfanuméricos de uma string:
-
-```Elm
-import String exposing (filter, toLower)
-
-stringSemNaoAlfanumerico : String -> String
-stringSemNaoAlfanumerico texto =
-    filter (\char -> Char.isAlpha char || Char.isDigit char || char == " ") (toLower texto)
+```
+Elm String.filter (String.regex "ab+") "apple"
 ```
 
-Neste exemplo, utilizamos as funções `Char.isAlpha` e `Char.isDigit` para verificar se o caractere é alfabético ou numérico, e também adicionamos a condição de que o espaço em branco deve ser mantido. Além disso, utilizamos a função `toLower` para converter todos os caracteres em minúsculos antes de aplicar o filtro.
+Este código irá retornar "e" após filtrar todos os caracteres que correspondem à expressão regular "ab+" na String "apple".
 
-## Veja também
+Aprofundando:
+A técnica de deletar caracteres que correspondam a um padrão tem sido usada há muito tempo pelos programadores em várias linguagens de programação. Outras linguagens, como JavaScript e Python, também têm funções semelhantes que permitem aos programadores filtrar Strings com base em um padrão.
 
-- Documentação oficial do Elm sobre a função `String.filter`: https://package.elm-lang.org/packages/elm/core/latest/String#filter
-- Outras funções úteis do módulo `String`: https://package.elm-lang.org/packages/elm/core/latest/String
+Uma das principais vantagens de usar `String.filter` em Elm é a sua tipagem estática. Isso significa que o compilador do Elm irá detectar erros de tipo em tempo de compilação, o que torna o código mais seguro e reduz a ocorrência de bugs durante o processo de desenvolvimento.
+
+Veja também:
+- Funções `String.filter` e `String.startsWith`: [Documentação do Elm](https://package.elm-lang.org/packages/elm/core/latest/String#filter)
+- Função `String.regex`: [Documentação do Elm](https://package.elm-lang.org/packages/elm/regex/latest/Regex#find)
+- Tutorial sobre como usar `String.filter`: [Elm Tutorials](https://elmprogramming.com/tutorial/strings.html#string-filter)

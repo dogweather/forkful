@@ -10,38 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was ist Capitalizing und weshalb machen Programmierer es?
 
-Du hast sicher schon mal davon gehört, eine Zeichenkette (oder String) zu "capitalizen". Aber warum sollte man das überhaupt tun? Nun, es gibt verschiedene Gründe, warum du möglicherweise in deiner PHP-Programmierung eine Zeichenkette großschreiben möchtest. Einer der häufigsten Gründe ist die Formatierung von Benutzereingaben, um sicherzustellen, dass jeder Eingabe sowie Ausgabe in Großbuchstaben beginnt. Dies kann besonders hilfreich sein, wenn du mit Datenbanken arbeitest und sicherstellen möchtest, dass alle Einträge in einheitlichem Format gespeichert werden.
+Capitalizing ist eine gebräuchliche Methode in der Programmierung, um den ersten Buchstaben in einem String groß zu schreiben. Dies wird oft verwendet, um die Lesbarkeit von Texten zu verbessern oder um bestimmte Konventionen in der Programmierung zu befolgen.
 
-## Wie
-
-Um eine Zeichenkette in Großbuchstaben zu schreiben, gibt es in PHP eine praktische Funktion namens "strtoupper()". Diese Funktion wandelt alle Kleinbuchstaben in der Zeichenkette in Großbuchstaben um. Schauen wir uns dazu ein Beispiel an:
+## Wie funktioniert der capitalize-Befehl?
 
 ```PHP
-$string = "hallo welt";
-echo strtoupper($string);
+$input = "hallo welt";
+echo capitalize ($input);
+// Ausgabe: Hallo welt
+
+$input = "programmieren ist cool";
+echo capitalize ($input);
+// Ausgabe: Programmieren ist cool
 ```
-Ergebnis: HALLO WELT
 
-Wie du siehst, wird der gesamte Text automatisch in Großbuchstaben ausgegeben. Aber was ist, wenn du nur den ersten Buchstaben einer Zeichenkette großschreiben möchtest? Dafür gibt es die Funktion "ucfirst()", die den ersten Buchstaben eines Strings in Großbuchstaben umwandelt. Hier ist ein Beispiel:
+Der `capitalize`-Befehl akzeptiert einen String als Argument und gibt diesen String zurück, wobei der erste Buchstabe großgeschrieben wird. Wenn der String bereits mit einem Großbuchstaben beginnt, bleibt dieser unverändert.
 
-```PHP
-$string = "guten morgen";
-echo ucfirst($string);
-```
-Ergebnis: Guten morgen
+## Eine nähere Betrachtung
 
-Wie du sehen kannst, bleibt der Rest der Zeichenkette in Kleinbuchstaben, während der erste Buchstabe großgeschrieben wird.
+Die Idee des Capitalizings kommt aus der traditionellen Schreibweise in der englischen Grammatik, bei der der erste Buchstabe eines Satzes immer großgeschrieben wird. In der Programmierung wird dies oft verwendet, um Variablen oder Funktionen lesbarer zu machen und um Code-Konventionen einzuhalten. Alternativen zu diesem Befehl können sein, den ersten Buchstaben manuell zu ändern oder eine Schleife zu verwenden, um jeden Buchstaben in einem String zu prüfen und gegebenenfalls großzuschreiben.
 
-## Deep Dive
+## Weitere Informationen
 
-Jetzt, da du gesehen hast, wie einfach es ist, eine Zeichenkette in PHP zu capitalizen, werfen wir einen Blick auf die technischen Details dahinter. In PHP wird der Inhalt einer Variablen als Datentyp "String" gespeichert. Jeder Buchstabe in einer Zeichenkette hat einen bestimmten Code, der ihm zugeordnet ist. Diese Codes werden in einer sogenannten "Character Encoding Table" aufgeführt, die festlegt, welcher Code welchem Buchstaben entspricht. Wenn du mit der Funktion "strtoupper()" oder "ucfirst()" auf eine Zeichenkette zugreifst, wird dieser Code verwendet, um den Buchstaben in Großbuchstaben umzuwandeln.
+Möchtest du mehr über das Capitalizing-Konzept erfahren? Hier sind einige nützliche Links:
 
-Dabei ist es wichtig zu beachten, dass dies von der aktuellen Systemeinstellung abhängt. Je nach verwendetem Betriebssystem oder Spracheinstellung kann die "Character Encoding Table" variieren. Deshalb ist es ratsam, immer zu überprüfen, ob die Ausgabe deiner capitalizierten Zeichenkette korrekt ist.
+- [Offizielle PHP-Dokumentation über den `ucfirst`-Befehl](https://www.php.net/manual/de/function.ucfirst.php)
+- [Weiterführender Artikel über die Verwendung von `ucfirst` in der Programmierung](https://phpenthusiast.com/blog/capitalize-first-letter-of-each-word-with-php)
+- [Diskussion im Stack Overflow-Forum zu Alternativen zum `capitalize`-Befehl](https://stackoverflow.com/questions/5729876/alternative-to-capitalize-string-method)
 
-## Siehe auch
-
-- PHP-Manual: String-Funktionen (https://www.php.net/manual/de/ref.strings.php)
-- YouTube-Video: String Manipulation in PHP (https://www.youtube.com/watch?v=wfk337sE_VQ)
-- Artikel: Character Encoding in PHP (https://www.phptherightway.com/#character_encoding)
+In der Welt der Programmierung gibt es oft mehrere Möglichkeiten, ein bestimmtes Problem zu lösen. Es ist wichtig, sich mit verschiedenen Ansätzen vertraut zu machen und die beste Lösung für deine spezifischen Bedürfnisse zu wählen.

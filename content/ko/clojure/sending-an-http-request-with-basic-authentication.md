@@ -1,7 +1,7 @@
 ---
-title:                "HTTP 요청에 기본 인증을 추가하여 전송하기"
-html_title:           "Clojure: HTTP 요청에 기본 인증을 추가하여 전송하기"
-simple_title:         "HTTP 요청에 기본 인증을 추가하여 전송하기"
+title:                "기본 인증으로 http 요청 보내기"
+html_title:           "Clojure: 기본 인증으로 http 요청 보내기"
+simple_title:         "기본 인증으로 http 요청 보내기"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "HTML and the Web"
@@ -10,32 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 왜
-이번 글에서는 왜 오는 HTTP 요청에 기본 인증을 사용해야 하는지에 대한 이유를 알아보겠습니다. 기본 인증은 인터넷에서 자주 사용되는 보안 방식 중 하나로, 누군가가 링크를 클릭하거나 웹사이트에 접속하면 이를 요청하는 컴퓨터가 최초로 빈자리와 비밀번호 정보를 보내는 방식입니다. 왜 이것이 필요할까요?
+## 무엇인가?
 
-# 어떻게
-이제 실제로 Clojure를 사용하여 기본 인증을 사용하는 HTTP 요청을 보내는 방법을 알아보겠습니다. 먼저 HTTP 요청을 보내기 위해서 clj-http라는 라이브러리를 설치해야 합니다. 그리고 다음과 같은 코드로 HTTP 요청을 보낼 수 있습니다.
- ```Clojure
+HTTP 요청에 기본 인증을 첨부하는 것은 인증 정보가 없는 공용 네트워크를 통해 클라이언트와 서버 사이에 프라이빗 통신을 가능하게 하는 방법입니다. 프로그래머는 이 방법을 사용하여 사용자 이름과 비밀번호를 입력하는 대신 자동으로 데이터를 가져오고 보안된 연결을 설정할 수 있습니다.
+
+## 방법:
+
+`Clojure` 블록 내에서 코딩 예제와 샘플 출력을 표시합니다. 예를 들어:
+
+```Clojure
 (require '[clj-http.client :as client])
 
-(def response (client/post "https://example.com"
-                :basic-auth "username" "password"))
-                
-(println (:resp-body response))
+(defn get-data []
+  (let [username "username"
+        password "password"
+        auth (str username ":" password)
+        url "http://www.example.com"
+        request {:as :json :basic-auth [username password]}
+        response (client/get url request)]
+    (println (:body response))))
 ```
-위 코드는 지정된 주소로 HTTP POST 요청을 보내고, 기본 인증으로 사용할 사용자 이름과 비밀번호를 지정합니다. 그리고 서버로부터 받은 응답을 출력합니다.
 
-클로저에서도 GET 요청을 보내는 것도 동일한 방식으로 가능합니다. 아래의 코드를 참고하세요.
+샘플 출력:
+
 ```Clojure
-(def response (client/get "https://example.com"
-                :basic-auth "username" "password"))
+{:status 200,
+ :headers {"Content-Type" "application/json"},
+ :body "{\"data\": \"example\"}",
+ :trace-redirects ["http://www.example.com/"]}
 ```
-위의 코드는 GET 요청을 보내고, 사용자 이름과 비밀번호를 기본 인증으로 지정하며, 응답을 받아옵니다.
 
-# 깊은 곳으로
-기본 인증은 클라이언트와 서버 간의 정보를 주고받는 데 사용되는 하나의 보안 방식입니다. 이 외에도 여러 가지 보안 방식들이 존재하는데, 클로저에서는 다양한 라이브러리를 사용하여 HTTPS 요청을 보내는 것도 가능합니다. 그리고 HTTP 요청과 응답의 구조도 더 자세히 알아서 보안에 대한 이해를 높일 수 있습니다.
+## 심층 탐구:
 
-# 참고 자료
+(1) 이 방법의 역사적인 배경에는 기존의 취약한 인증 방식이 대체되어 보안 수준이 높아진 이유가 있습니다. (2) 기본 인증 이외에도 기본 인증보다 더 강력한 인증 방식을 사용할 수 있습니다. (3) HTTP 요청을 보내는 방법은 `clj-http` 라이브러리 외에도 여러 가지가 있습니다. 예를 들어, `Java` 코드를 사용하여 직접 수행할 수 있습니다.
+
+## 관련 사이트:
+
+- [Clojure 공식 홈페이지](https://clojure.org/)
 - [clj-http 라이브러리](https://github.com/dakrone/clj-http)
-- [Clojure로 HTTPS 요청 보내기](https://medium.com/hello-world-0909/clojure%EB%A1%9C-https-%EC%9A%94%EC%B2%AD-%EB%B3%B4%EB%82%B4%EA%B8%B0-6e5b198d14e8)
-- [Clojure에서 기본 인증 사용하기](https://stackoverflow.com/questions/6922666/how-do-i-access-a-website-using-basic-authentication-clojure)
+- [HTTP 기본 인증에 관한 자세한 정보](https://en.wikipedia.org/wiki/Basic_access_authentication)

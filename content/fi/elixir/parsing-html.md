@@ -1,7 +1,7 @@
 ---
-title:                "HTML:n jäsentäminen"
-html_title:           "Elixir: HTML:n jäsentäminen"
-simple_title:         "HTML:n jäsentäminen"
+title:                "Html-parsiminen"
+html_title:           "Elixir: Html-parsiminen"
+simple_title:         "Html-parsiminen"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "HTML and the Web"
@@ -10,39 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä ja miksi?
+HTML-parsiminen tarkoittaa web-sivun rakenteen analysointia ja siitä tietojen keräämistä. Ohjelmoijat tekevät sitä usein web-scrapingin yhteydessä, jotta he voivat automatisoida tiedon keräämistä ja käyttöä.
 
-HTML-parsing eli HTML-muodon purkaminen on tärkeä taito monille ohjelmoijille. Se mahdollistaa sivujen sisällön käsittelyn ja hyödyntämisen automatisoidusti, mikä puolestaan säästää aikaa ja vaivaa.
-
-## Miten
-
-Miten sitten toteuttaa HTML-purkaminen Elixirilla? Onneksi Elixir tarjoaa meille kätevän kirjaston eli htmlex, joka helpottaa HTML-sisällön käsittelyä. Alla on yksinkertainen esimerkki, kuinka html-purkaminen onnistuu:
-
-```elixir
-# Tuo htmlex-kirjasto
-import HTMLex
-
-# Hae HTML-sivu ja tallenna se muuttujaan
-html = HTTPoison.get!("https://www.example.com").body
-
-# Käytä htmlex-funktiota purkaaksesi HTML-sisällön
-parsed_html = html |> HTMLex.parse_html
-
-# Tulosta haluttu sisältö, kuten otsikot ja sisältö, hyödyntäen purkamisen jälkeen saatavilla olevia funktioita
-puts parsed_html |> HTMLex.get_title
-puts parsed_html |> HTMLex.get_content
+## Kuinka:
+```Elixir
+# Esimerkki HTML-sivun lataamisesta ja parsimisesta käyttäen Floki-kirjastoa
+html = Floki.parse(html_sivu)
+# Otsikoiden kerääminen
+otsikot = html
+          |> Floki.find("h1")
+          |> Enum.map(&(&1.children))
+          |> Enum.map(&(&1[0]))
 ```
 
-Tässä esimerkissä käytetään HTTPoison-kirjastoa HTML-sivun hakemiseen ja htmlex-kirjastoa purkamiseen. Htmlex tarjoaa meille muun muassa get_title- ja get_content-funktiot, jotka helpottavat sisällön käsittelyä.
+Tulostus:
+```
+["Ensimmäinen otsikko"]
+```
 
-## Syväsukellus
+## Syväluotaus:
+HTML-parsiminen alkoi jo 1990-luvulla, kun internet oli vasta kehittymässä ja koneet tarvitsivat tapoja kommunikoida keskenään. Nykyään on muitakin tapoja hakea tietoja websivuilta, kuten ScrapingHub ja Beautiful Soup. Elixirin Floki-kirjasto hyödyntää HXT-kirjastoa ja mahdollistaa HTML-rakenteen käsittelyn Elixirillä.
 
-HTML-purkamiseen liittyy monia asioita, kuten tiedon hyötysuhteen optimointi, validointi ja virheiden käsittely. On tärkeää varmistaa, että käytetty kirjasto pystyy käsittelemään monipuolisesti erilaisia HTML-sivuja ja mahdollisia virheitä.
-
-On myös hyvä huomioida, että vaikka htmlex on kätevä ja suosittu kirjasto, se ei välttämättä ole ainoa vaihtoehto HTML-purkamiseen Elixirilla. On aina hyvä tehdä hieman tutkimusta eri kirjastojen välillä ja valita tarpeisiin sopivin vaihtoehto.
-
-## Katso myös
-
-- [HTMLex-kirjaston dokumentaatio](https://hexdocs.pm/htmlex/api-reference.html)
-- [HTTPoison-kirjasto](https://hexdocs.pm/httpoison/HTTPoison.html)
-- [Lisätietoa HTML-purkamisesta Elixirilla](https://blog.diacode.com/parsing-html-in-elixir-with-htmlex)
+## Katso myös:
+- https://scrapinghub.com/what-is-web-scraping/
+- https://ksxgithub.github.io/blog/2018/06/30/of-beautifulsoup4-scrapy-floki-hexlib-hxhtml-hxt-scrapinghub-'
+- https://github.com/elixirabs/hxt

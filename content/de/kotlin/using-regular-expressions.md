@@ -10,52 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+### Was & Warum?
+Reguläre Ausdrücke sind ein nützliches Werkzeug für Programmierer, um Textmuster zu suchen und zu manipulieren. Sie bieten eine effiziente Möglichkeit, komplexe Suchmuster zu definieren, anstatt jede einzelne Zeichenfolge zu überprüfen. Dies kann die Effizienz und Lesbarkeit des Codes verbessern.
 
-Du fragst dich vielleicht, warum du überhaupt reguläre Ausdrücke verwenden solltest? Nun, reguläre Ausdrücke sind eine mächtige Möglichkeit, Textmuster zu suchen und zu manipulieren. Sie werden oft in der Softwareentwicklung verwendet, um komplexe Textfilter zu erstellen, Suchvorgänge zu automatisieren oder Daten zu analysieren.
+### Wie geht's?
+In Kotlin sind reguläre Ausdrücke in der Standardbibliothek enthalten und werden durch die Verwendung des ```Regex```-Datentyps unterstützt. Hier ist ein Beispiel dafür, wie Sie mit regulären Ausdrücken in Kotlin arbeiten können:
 
-## Wie geht das?
-
-Um reguläre Ausdrücke in Kotlin zu verwenden, musst du zuerst das "Regex" Modul in deinem Code importieren. Dann kannst du reguläre Ausdrücke erstellen, indem du den String mit der "toRegex()" Funktion in ein Regex-Objekt umwandelst.
-
-```Kotlin
-import kotlin.text.regex.*
-
-val pattern = "Hello (world)+".toRegex()
-
-val result = pattern.find("Hello world world world")
-
-println(result?.value) //Output: Hello world world world
+```
+val regex = Regex("Hallo")
+val text = "Hallo Welt!"
+if (regex.matches(text)) {
+    println("Der Text enthält 'Hallo'")
+} else {
+    println("Der Text enthält nicht 'Hallo'")
+}
 ```
 
-Du kannst auch reguläre Ausdrücke nutzen, um Text zu ersetzen oder zu suchen. Zum Beispiel kannst du mit der "replaceFirst()" Funktion den ersten Treffer eines Musters durch einen anderen String ersetzen.
+Dieses Beispiel definiert eine Regex-Variablen mit dem Muster "Hallo" und überprüft dann, ob der Text "Hallo Welt!" dieses Muster enthält. Die Ausgabe lautet "Der Text enthält 'Hallo'".
 
-```Kotlin
-val pattern = "cot".toRegex()
+### Tiefes Eintauchen
+Reguläre Ausdrücke haben eine lange Geschichte und wurden erstmals in den 1950er Jahren von Stephen Kleene eingeführt. Heutzutage gibt es auch alternative Ansätze wie Parsen oder String-Manipulationsfunktionen, aber reguläre Ausdrücke sind immer noch eine beliebte Wahl für Textmanipulationen. 
 
-val result = pattern.replaceFirst("I have a nice coat", "jacket")
+Die Implementierung von regulären Ausdrücken in Kotlin basiert auf der Java Regex-Library und bietet ähnliche Funktionen. Eine ausführliche Dokumentation zu regulären Ausdrücken in Kotlin finden Sie in der offiziellen Dokumentation unter [Kotlin Regular Expressions](https://kotlinlang.org/docs/regex.html).
 
-println(result) //Output: I have a nice jacket
-```
-
-Du kannst auch Gruppen erstellen, um Teile des Musters zu extrahieren. Diese Gruppen werden mit "( )" gekennzeichnet und können dann in der "replace()" Funktion verwendet werden.
-
-```Kotlin
-val pattern = "([A-Z])".toRegex()
-
-val result = pattern.replace("My name is John", "[$1]")
-
-println(result) //Output: My name is [J]
-```
-
-## Tiefere Einblicke
-
-Wenn du mehr über reguläre Ausdrücke in Kotlin erfahren möchtest, gibt es einige wichtige Konzepte, die du kennen solltest. Zum Beispiel kannst du die String-Escaping-Regel beachten, bei der bestimmte Zeichen wie "." oder "+" mit "\\" maskiert werden müssen, um sie als Teil des Musters zu erkennen.
-
-Ein weiteres wichtiges Konzept ist das "gierige" und "nicht-gierige" Matching. Standardmäßig versuchen reguläre Ausdrücke, so viele Zeichen wie möglich zu erfassen (gieriges Matching). Mit dem "?" Zeichen kannst du jedoch zu einem "nicht-gierigen" Matching wechseln, bei dem nur ein Teil des Musters erfasst wird.
-
-## Siehe auch
-
-- [Offizielle Kotlin Regex-Dokumentation](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-regex/)
-- [RegExr - Reguläre Ausdrücke online testen](https://regexr.com/)
-- [Reguläre Ausdrücke Cheat-Sheet](https://cheatography.com/davechild/cheat-sheets/regular-expressions/)
+### Sieh auch
+- [Kotlin Reference for Regular Expressions](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-regex/)
+- [Regular Expressions in Java](https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html)

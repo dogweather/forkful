@@ -10,39 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
-Det finns många tillfällen där du behöver kombinera flera olika textsträngar för att skapa en större och mer komplett sträng. Det kan till exempel vara för att visa användarinmatningar, skapa rapporter eller skapa anpassade meddelanden. Att kunna koppla ihop strängar är ett viktigt koncept att förstå inom Swift-programmering och kan hjälpa dig att göra din kod mer effektiv och läsbar.
+##Vad och varför?
+Strängkonkatinering är en process där man sammanfogar flera strängar till en enda sträng. Programmerare använder detta för att skapa mer komplett och läsbar kod när de behöver kombinera flera strängar tillsammans.
 
-## Hur man gör
-För att sammanslå två eller flera strängar i Swift använder du operatorn "+" mellan strängarna. Här är ett exempel på hur du kan lägga ihop två strängar och skriva ut resultatet:
-
+##Hur gör man:
+Det är enkelt att konkatenera strängar i Swift. Här är ett exempel på hur man kan kombinera två strängar:
 ```Swift
-let förnamn = "John"
-let efternamn = "Doe"
-let fullständigtNamn = förnamn + " " + efternamn
-print(fullständigtNamn)
+let förnamn = "Maria"
+let efternamn = "Jones"
+
+let helaNamnet = förnamn + efternamn //helaNamnet = "Maria Jones"
 ```
 
-Resultatet av koden ovan kommer att vara "John Doe". Observera att vi använder ett mellanslagsträng mellan förnamn och efternamn för att skapa ett mellanrum i den sammanslagna strängen.
-
-Du kan också använda operatorn "+=" för att lägga till en sträng till en befintlig sträng. Till exempel:
-
+Det är också möjligt att konkatenera en sträng med ett annat dataformat, till exempel en int:
 ```Swift
-var hälsning = "Hej"
-hälsning += " världen"
-print(hälsning)
+let ålder = 28
+let meddelande = "Jag är \(ålder) år gammal." //meddelande = "Jag är 28 år gammal."
 ```
 
-Resultatet blir "Hej världen", där "världen" har lagts till efter "Hej".
+##Djupdykning:
+Strängkonkatinering är en vanlig teknik inom programmering, och det finns flera sätt att utföra det på. I äldre versioner av Swift, användes operatorn "+" för att konkatenera strängar. Men i den senaste versionen, Swift 5, har det införts en ny operator, "&", som är mer effektiv och snabbare än den tidigare. Det finns också metoder som "append()" och "join()" som kan användas för att konkatenera strängar.
 
-## Djupdykning
-När du sammanslår strängar i Swift är det viktigt att vara medveten om hur strängarna hanteras. Swift använder sig av Unicode för att hantera strängar, vilket gör det möjligt att inkludera många olika tecken och språk i en sträng. Det innebär också att en sammanslagen sträng kan bestå av tecken från olika språk och alfabet.
+##Se även:
+[Swift Programming Language Guide](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#ID288)
 
-Det finns också andra sätt att sammanslå strängar i Swift, som att använda metoder som "append" och "append(contentsOf:)" för att lägga till strängar till en befintlig sträng. Dessutom finns det även en metod som heter "join" som kan användas för att sammanslå flera strängar med ett separator-tecken mellan dem.
-
-En annan viktig sak att komma ihåg är att sammanslagna strängar är oföränderliga, vilket innebär att du inte kan ändra en befintlig sträng genom att lägga till en annan sträng till den. Istället skapar du en helt ny sträng när du sammanslår dem.
-
-## Se även
-* [String Operations in Swift](https://medium.com/@aleksandar_raf/why-swift-extensions-are-super-useful-7da8dd7ba57d)
-* [Working with Strings in Swift](https://learnappmaking.com/swift-string-how-to/)
-* [Concatenation in Swift](https://www.hackingwithswift.com/example-code/strings/how-to-join-strings-to-make-a-single-string)
+[Swift String Concatenation Performance](https://stackoverflow.com/questions/50187161/string-concatenation-performance-in-swift-4-1)

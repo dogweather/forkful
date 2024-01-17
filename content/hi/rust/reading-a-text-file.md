@@ -1,7 +1,7 @@
 ---
-title:                "एक पाठ फ़ाइल को पढ़ना"
-html_title:           "Rust: एक पाठ फ़ाइल को पढ़ना"
-simple_title:         "एक पाठ फ़ाइल को पढ़ना"
+title:                "एक टेक्स्ट फाइल पढ़ना"
+html_title:           "Rust: एक टेक्स्ट फाइल पढ़ना"
+simple_title:         "एक टेक्स्ट फाइल पढ़ना"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Files and I/O"
@@ -10,31 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
+## What & Why?
 
-आपने कभी सोचा है कि कैसे हार्डवेयर डिवाइस या सर्वर पर रखे गए बड़े टेक्स्ट फ़ाइलों को पढ़ा जा सकता है? रस्ट एक विशेष और शक्तिशाली भाषा है, जो आपको बड़े टेक्स्ट फ़ाइलों को समझने और संशोधित करने में मदद कर सकती है। इस लेख में, हम आपको बताएँगे कि कैसे आप रस्ट उपयोग करके किसी टेक्स्ट फ़ाइल को पढ़ सकते हैं।
+Text files are a common type of file that contain human-readable text using characters, such as letters, numbers, symbols, and spaces. Reading a text file means accessing and retrieving the contents of the file. Programmers often need to read text files because they contain important information that can be used in their code.
 
-## कैसे करें
+## How to:
 
-यदि आपने पहले से ही रस्ट का उपयोग किया है, तो आप जानते होंगे कि यह कितना आसान भाषा है। लेकिन अगर आप नए हैं और रस्ट को सिखना चाहते हैं, तो हम आपको कुछ तरीके बताएँगे जिनसे आप बड़े टेक्स्ट फ़ाइल को पढ़ना सीख सकते हैं।
+To read a text file in Rust, we can use the `std::fs` module, specifically the `fs::read_to_string()` function. This function takes in the path to the text file as an argument and returns a `Result` enum. Below is an example of how we can use this function to read a text file and print its contents:
 
-```
-// main.rs नाम की फ़ाइल बनाएँ
-use std::fs; // फ़ाइल संबंधित काम करने के लिए आवश्यक
-use std::io; // इनपुट/आउटपुट को मदद शामिल होने के लिए
+```Rust
+use std::fs;
 
-fn main() {
-    println!("टेक्स्ट फ़ाइल पढ़ें!");
+// Read the text file
+let result = fs::read_to_string("./text_file.txt");
 
-    // फ़ाइल का पथ निर्दिष्ट करें
-    let file_path = "example.txt";
-
-    let contents = fs::read_to_string(file_path) // फ़ाइल को पढ़ो और स्ट्रिंग मे भेजो
-        .expect("फ़ाइल नहीं मिली");
-
-    println!("टेक्स्ट फ़ाइल का सामग्री: \n{}", contents);
+// Check if reading was successful
+match result {
+    Ok(contents) => println!("{}", contents),
+    Err(e) => println!("Error reading file: {}", e),
 }
-
 ```
 
-यहां, हमने सर्वर पर किसी टेक्स्ट फ़ाइल ("example.txt") को पढ़ने का सरल तरीका दिखाया है। हमने fs (फ़ाइल सिस्टम) और io (इनपुट/आउटपुट) लाइब्रेरी का उपयोग किया है जो रस्ट के
+The above code will read the text file named `text_file.txt` located in the same directory as our Rust code. The `read_to_string()` function returns an `Ok` variant with the contents of the file if reading was successful, or an `Err` variant with an error message if reading failed.
+
+## Deep Dive:
+
+Reading text files has been an essential part of programming for decades, as text files have been widely used for storing and exchanging information. Before the popularity of the internet, text files were the main format for storing and sharing data. In Rust, there are other ways to read text files, such as using the `fs::read()` function, which returns a `Vec<u8>` of bytes instead of a string.
+
+The `read_to_string()` function uses the encoding of the current environment, but we can also specify the encoding by using the `read_to_string_with_charset()` function, which takes in a `Charset` enum as an argument. This is useful when working with text files that use different character encodings.
+
+## See Also:
+
+To learn more about reading text files in Rust, check out the official documentation for the `fs` module: https://doc.rust-lang.org/std/fs/index.html. You can also explore other methods for reading text files, such as using the `BufRead` trait from the `std::io` module. Happy coding!

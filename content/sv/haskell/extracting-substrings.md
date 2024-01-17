@@ -1,7 +1,7 @@
 ---
-title:                "Extrahering av delsträngar"
-html_title:           "Haskell: Extrahering av delsträngar"
-simple_title:         "Extrahering av delsträngar"
+title:                "Att extrahera substrängar"
+html_title:           "Haskell: Att extrahera substrängar"
+simple_title:         "Att extrahera substrängar"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -10,33 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
+Att extrahera substrängar är en process där man plockar ut en del av en sträng och använder den för ett specifikt syfte, som att hitta en viss del av information. Det är en vanlig teknik som används av programmerare för att manipulera data på ett effektivt sätt.
 
-Du kanske undrar varför någon skulle vilja extrahera substrängar? Ibland kan det vara nödvändigt att dela upp en större sträng i mindre delar för att bearbeta eller söka efter specifika delar av informationen.
+## Så här gör man:
+För att extrahera substrängar i Haskell kan man använda funktionen `take` och `drop`. Dessa funktioner tar in en sträng och returnerar en ny sträng med de specifierade delarna borttagna eller bevarade. Här är ett exempel på hur man kan använda dem:
 
-## Hur man gör det
+```Haskell
+-- Extraherar första tre tecknen från strängen "Hej världen"
+take 3 "Hej världen" --> "Hej"
 
-Att extrahera substrängar är enkelt med hjälp av inbyggda funktioner i Haskell. För att prova det själv, öppna din Haskell-miljö och följ dessa steg:
+-- Tar bort första tre tecknen från strängen "Hej världen"
+drop 3 "Hej världen" --> "världen"
+```
 
-1. Skapa en sträng som du vill extrahera delar från. Till exempel: ```Haskell "Hej alla Haskell-älskare!"```
+## Djupdykning:
+Extrahering av substrängar har funnits sedan tidigare programmeringsspråk som C och Pascal. I dessa språk används vanligtvis funktioner som `substr` och `substring`. I Haskell är metoderna `take` och `drop` mer fördelaktiga eftersom de är rekursiva och inte kopierar hela strängen varje gång de anropas.
 
-2. Använd funktionen "take" för att extrahera en del av strängen, baserat på ett angivet antal tecken. Till exempel: ```Haskell take 3 "Hej alla Haskell-älskare!"``` kommer att returnera "Hej".
+Närliggande metoder för att hantera substrängar inkluderar `splitAt` som delar en sträng i två delar, `subsequences` som genererar alla möjliga delsträngar och `isPrefixOf` som kontrollerar om en sträng är en del av en annan.
 
-3. Använd funktionen "drop" för att ta bort en del av strängen, baserat på ett angivet antal tecken. Till exempel: ```Haskell l "Hej alla Haskell-älskare!"``` kommer att returnera "lla Haskell-älskare!".
-
-4. Använd funktionerna "takeWhile" och "dropWhile" för att extrahera delar av strängen baserat på ett villkor. Till exempel: ```Haskell takeWhile (\x -> x == 'a') "aaaaabbbccc"``` kommer att returnera "aaaaa", medan ```Haskell dropWhile (\x -> x == 'a') "aaaaabbbccc"``` kommer att returnera "bbbccc".
-
-## Djupdykning
-
-Förutom de nämnda funktionerna finns det många fler sätt att extrahera substrängar i Haskell. Här är några tips för dig som vill fördjupa dig i ämnet:
-
-- Använd funktionerna "splitAt" eller "span" för att dela upp strängen vid ett visst index eller villkor.
-- Ta reda på mer om listkomprehension och hur den kan användas för att skapa listor av substrängar baserat på ett villkor eller mönster.
-- Upptäck andra string manipulation bibliotek som kan vara användbara för dina specifika behov.
-
-## Se även
-
-- [Haskell String Manipulation](https://wiki.haskell.org/Strings)
-- [Hackage - String Libraries](https://hackage.haskell.org/packages/search?terms=strings)
-- [Programming in Haskell by Graham Hutton](http://www.cs.nott.ac.uk/~pszgmh/pih.html)
-- [Haskell Wikibook](https://en.wikibooks.org/wiki/Haskell)
+## Se även:
+- [Haskell documentation för `take` och `drop`](https://www.haskell.org/onlinereport/standard-prelude.html#function-selecting-list-elements)
+- [Complete Haskell tutorial](https://wiki.haskell.org/Haskell_in_5_steps)
+- [Online Haskell compiler](https://www.tutorialspoint.com/execute_haskell_online.php)

@@ -1,7 +1,7 @@
 ---
-title:                "Estrazione di sottostringhe"
-html_title:           "Gleam: Estrazione di sottostringhe"
-simple_title:         "Estrazione di sottostringhe"
+title:                "Estrarre sottostringhe"
+html_title:           "Gleam: Estrarre sottostringhe"
+simple_title:         "Estrarre sottostringhe"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -10,46 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+## Che cos'è e perché?
 
-Se stai programmando in Gleam, probabilmente hai bisogno di manipolare stringhe di testo. Spesso, ci troviamo ad avere la necessità di estrarre porzioni specifiche di una stringa più grande, ad esempio per ottenere un sottoinsieme di caratteri o per trovare una corrispondenza in un pattern. In questo articolo, vedremo come utilizzare la funzione `substring` di Gleam per estrarre diverse parti di una stringa.
+Estrarre sottostringhe è un'operazione molto comune nella programmazione, in cui si selezionano parti specifiche di una stringa più grande per essere utilizzate nel codice. I programmatori fanno questo per rendere più semplice la manipolazione dei dati e per ottenere solo le informazioni rilevanti di cui hanno bisogno.
 
-## Come Fare
+## Come fare:
 
-L'estrazione di substrings è un'operazione molto comune durante la programmazione. Fortunatamente, con Gleam è molto semplice. Possiamo utilizzare la funzione predefinita `substring` che accetta tre argomenti: una stringa di input, l'indice di inizio e l'indice di fine della porzione che vogliamo estrarre.
-
-Ecco un esempio di codice che estrae la quarta fino alla sesta lettera di una stringa:
-
-```Gleam
-let stringa = "Ciao Mondo!"
-let substr = substring(stringa, 3, 6)
 ```
-
-Il risultato sarà la parola "o Mo". Nota che l'indice di inizio è 3 perché la prima lettera di una stringa ha indice 0, mentre l'indice di fine è 6 perché la funzione `substring` esclude l'ultimo indice specificato.
-
-Possiamo anche specificare un solo indice, in questo caso l'indice di inizio, per estrarre la parte della stringa a partire da quell'indice fino alla fine:
-
-```Gleam
-let substr = substring("Hello World!", 6)
+Gleam.string.slice("Hello World", 0, 5)
 ```
+Questo codice restituirà "Hello", che è una sottostringa delle prime cinque lettere della stringa originale.
 
-Il risultato sarà "World!".
-
-Se invece vogliamo ottenere una sottostringa di una determinata lunghezza a partire da un indice specificato, possiamo utilizzare la funzione `subslice`:
-
-```Gleam
-let subslice = substring("Programming is fun!", 5, 8)
 ```
+Gleam.string.drop("Hello World", 6)
+```
+Questo codice restituirà "World", data una stringa di partenza di "Hello World" e una lunghezza di 6, la prima parte ("Hello ") verrà eliminata e verrà restituita solo la seconda parte ("World").
 
-Il risultato sarà "ammi".
+## Approfondimento:
 
-## Approfondimento
+Le estrazioni di sottostringhe non sono una novità nella programmazione e sono disponibili in vari linguaggi di programmazione come Java e Python. Tuttavia, Gleam ha la sua implementazione unica e semplice che rende l'estrazione di sottostringhe ancora più facile per i programmatori.
 
-La funzione `substring` è molto utile per l'estrazione di substrings, ma ci sono alcune cose importanti da tenere a mente. Prima di tutto, se il secondo indice (l'indice di fine) è maggiore della lunghezza della stringa, la funzione restituirà un errore. Inoltre, entrambi gli indici devono essere numeri positivi e l'indice di fine deve essere maggiore dell'indice di inizio.
+Alcune alternative all'estrazione di sottostringhe includono l'utilizzo di metodi di manipolazione delle stringhe come la sostituzione o la rimozione di caratteri, ma l'utilizzo delle funzioni di estrazione di sottostringhe è più chiaro e intuitivo.
 
-Un'altra cosa da notare è che la funzione `substring` crea una copia della porzione estratta della stringa, quindi è meglio utilizzarla solo su stringhe relativamente corte per evitare problemi di memoria.
+In Gleam, l'implementazione delle funzioni di estrazione di sottostringhe avviene utilizzando gli indici dei caratteri della stringa, che possono essere specificati dall'utente.
 
-## Vedi Anche
+## Vedi anche:
 
-- [Documentazione ufficiale di Gleam](https://gleam.run/documentation/)
-- [Repository GitHub di Gleam](https://github.com/gleam-lang/gleam)
+- Documentazione Gleam per il modulo `String`: https://gleam.run/documentation/stdlib/string/
+- Articolo su esempi di estrazione di sottostringhe in Java: https://www.programiz.com/java-programming/examples/string-substring

@@ -1,7 +1,7 @@
 ---
-title:                "표준 에러에 쓰기"
-html_title:           "Rust: 표준 에러에 쓰기"
-simple_title:         "표준 에러에 쓰기"
+title:                "표준 오류에 쓰기"
+html_title:           "Rust: 표준 오류에 쓰기"
+simple_title:         "표준 오류에 쓰기"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Files and I/O"
@@ -10,52 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+## 뭐고 왜 하는건데?
 
-왜 누군가가 표준 오류에 쓰기를 하는 것에 참여할까요? 이것은 프로그래밍에서 매우 유용한 기술입니다. 보통 디버깅이나 로그 작성에 사용되며, 코드의 오류를 쉽게 찾을 수 있도록 도와줍니다.
+표준 에러에 쓰는건 물건 두 가지입니다. 첫째로, 우리는 프로그램에서 발생하는 오류 메시지나 디버그 정보를 사용자에게 표시하기 위해서 사용합니다. 두번째로, 우리는 프로그램에서 예기치 않은 이벤트를 감지하고 조치를 취하기 위해서 사용합니다.
 
-## 하는 방법
-
-아래는 Rust를 사용해 표준 오류에 쓰는 예제 코드입니다.
+## 어떻게 하나요?
 
 ```Rust
-use std::io::Write; // 표준 라이브러리에서 Write 트레이트 가져오기
+use std::io::{self, Write};
 
 fn main() {
-    let mut stderr = std::io::stderr(); // 표준 오류를 가리키는 stderr 변수 생성
-    writeln!(stderr, "표준 오류에 쓰기 예제"); // stderr에 문자열 쓰기
+    io::stderr().write(b"Hello from standard error!\n").unwrap();
 }
 ```
-
-실행 결과:
-
-`표준 오류에 쓰기 예제`
-
-위 코드에서 `File::stderr` 함수를 사용해 표준 오류에 쓰는 것도 가능합니다.
-
-```Rust
-use std::fs::File; // 표준 라이브러리에서 File 타입 가져오기
-use std::io::Write; // 표준 라이브러리에서 Write 트레이트 가져오기
-use std::path::Path; // 표준 라이브러리에서 Path 타입 가져오기
-
-fn main() {
-    let stderr_path = Path::new("/dev/stderr"); // 표준 오류를 가리키는 경로 생성
-    let mut file = File::create(&stderr_path).expect("파일을 생성할 수 없습니다."); // 경로를 이용해 파일 생성
-    writeln!(&mut file, "다른 방법으로 표준 오류에 쓰기!"); // 파일에 문자열 쓰기
-}
+출력:
+```bash
+Hello from standard error!
 ```
 
-실행 결과:
+## 더 깊이 파고들어보기
 
-`다른 방법으로 표준 오류에 쓰기!`
+표준 에러에 쓰는 것은 매우 오래된 개념입니다. 초기 컴퓨터에서는 디버깅을 위해서 기록장치에 메시지를 출력했습니다. 그 후에는 표준 출력, 표준 에러와 같은 개념을 도입하여 더욱 효율적인 오류 처리를 할 수 있게 되었습니다.
+대체로 우리는 표준 에러를 사용하지 않고 대신 로그 파일을 사용할 수도 있지만, 에러가 발생할 때마다 로그 파일을 적절히 갱신하는 것은 비용이 크기 때문에 종종 표준 에러를 사용합니다.
+Rust에서는 표준 에러에 쓰는 것을 간단하게 하기 위해 ```io::stderr()``` 함수를 제공합니다.
 
-## 깊이 파고들기
+## 더 알아보기
 
-자세한 내용은 [Rust 공식 문서의 Error Handling](https://doc.rust-lang.org/book/second-edition/ch09-00-error-handling.html) 섹션을 참조해주세요. 이 섹션에는 Error와 Panic, Result 타입 등 러스트에서 에러를 다루는 방법이 나와있습니다.
-
-## 참고
-
-- [The Rust Programming Language](https://www.rust-lang.org/)
-- [Rust 공식 문서](https://doc.rust-lang.org)
-- [Rust 커뮤니티 포럼](https://users.rust-lang.org)
-- [Rust 채널 on Reddit](https://www.reddit.com/r/rust/)
+- [Rust 표준 입력과 출력 라이브러리](https://doc.rust-lang.org/std/io/)
+- [표준 에러에 쓰는 이유](https://stackify.com/what-is-stderr/)

@@ -10,36 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Czym jest łączenie stringów i dlaczego programiści to robią?
 
-Jeśli często pracujesz z zasobami tekstowymi lub plikami, na pewno spotkałeś się z koniecznością łączenia (konkatenacji) ciągów znaków. Jest to często wykorzystywana operacja w programowaniu, pozwalająca na tworzenie nowych informacji na podstawie już istniejących. W tym artykule dowiesz się, jak używać narzędzia Fish Shell do konkatenacji stringów w prosty i skuteczny sposób.
+Łączenie stringów to po prostu łączenie dwóch lub więcej ciągów znaków w jeden. Jest to bardzo powszechne w programowaniu, ponieważ często musimy tworzyć dynamiczne ciągi do wyświetlania lub przetwarzania danych.
 
-## Jak to zrobić?
+## Jak to zrobić w Fish Shell?
 
-Fish Shell posiada wbudowane funkcje, które umożliwiają łatwe łączenie stringów. Aby to zrobić, wystarczy użyć operatora "++", który dodaje dwa ciągi znaków razem, tworząc nowy ciąg. Na przykład:
+Oto kilka przykładów jak skonkatenujemy (łączymy) dwa stringi w Fish Shell:
 
-```Fish Shell
-set first_name "Jan"
-set last_name "Kowalski"
-set full_name $first_name" "$last_name
-echo $full_name
+```
+set first_name "John"
+set last_name "Smith"
+
+echo "Witaj, $first_name $last_name!"  # Output: Witaj, John Smith!
 ```
 
-W tym przykładzie, najpierw tworzymy zmienne "first_name" i "last_name" przechowujące imię i nazwisko. Następnie używamy operatora "++" do połączenia tych dwóch zmiennych i przypisujemy wynik do zmiennej "full_name". W końcu, korzystając z komendy "echo", wyświetlamy zawartość zmiennej "full_name", która jest połączeniem obu ciągów.
+Możemy również użyć operatora `string join` do połączenia kilku stringów:
 
-## Deep Dive
+```
+set fruits "jabłka pomarańcze banany"
 
-Fish Shell oferuje również funkcję "string join", która pozwala na łączenie listy stringów w jeden ciąg znaków. Na przykład:
-
-```Fish Shell
-set fruits "jabłko" "banan" "truskawka"
-string join " " $fruits
+echo (string join ", " $fruits)  # Output: jabłka, pomarańcze, banany
 ```
 
-W tym przykładzie, tworzymy zmienną "fruits", która przechowuje listę trzech różnych owoców. Następnie używamy funkcji "string join", która pozwala na połączenie wszystkich elementów listy w jedno wyrażenie, z separatorem (spacją w tym przypadku) pomiędzy poszczególnymi elementami. 
+## Głębszy zanurzenie
+
+Łączenie stringów jest podstawową częścią programowania, ale ma swoje korzenie w historii komputerów. W starszych językach programowania często należało ręcznie zarządzać pamięcią, włączając w to alokację pamięci na stringi. Dzięki temu łatwiej było połączyć dwa stringi niż tworzyć nowy obiekt stringa zewnętrznie. Jednak dziś większość języków programowania ma wbudowane funkcje do łączenia stringów, jak również automatyczne zarządzanie pamięcią.
+
+Alternatywą dla łączenia stringów jest użycie list lub tablic do przechowywania różnych ciągów, a następnie ich łączenie w jednej pętli. To może być bardziej wydajne dla bardzo długich ciągów, ale jest też bardziej skomplikowane.
+
+W Fish Shell mamy także dostęp do kilku komend, takich jak `string match` i `string replace`, które pozwalają bardziej precyzyjnie operować na stringach.
 
 ## Zobacz również
 
-* Oficjalna dokumentacja Fish Shell: https://fishshell.com/docs/current/index.html
-* Samouczek Fish Shell: https://fishshell.com/docs/current/tutorial.html
-* Popularne komendy Fish Shell: https://fishshell.com/docs/current/cmds.html
+- [Dokumentacja Fish Shell](https://fishshell.com/docs/current/index.html)
+- [Wprowadzenie do programowania w Fish Shell](https://dev.to/jiripavelka/introduction-to-fish-shell-programming-23ig) przez Jiri Pavelka
+- [Wprowadzenie do łańcuchów znaków w programowaniu](https://www.geeksforgeeks.org/string-data-structure/) przez GeekforGeeks

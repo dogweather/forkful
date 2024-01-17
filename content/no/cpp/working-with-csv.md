@@ -1,7 +1,7 @@
 ---
-title:                "Å arbeide med csv"
-html_title:           "C++: Å arbeide med csv"
-simple_title:         "Å arbeide med csv"
+title:                "Arbeid med csv"
+html_title:           "C++: Arbeid med csv"
+simple_title:         "Arbeid med csv"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Data Formats and Serialization"
@@ -10,36 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hva & Hvorfor?
+Programmering med CSV står for Comma-Separated Values og er en vanlig måte å organisere tabell-lignende data. Det er nyttig for programmerere fordi det gjør det lett å lagre og lese strukturerte data.
 
-Hvis du jobber med data, er sjansen stor for at du må håndtere CSV-filer. CSV står for "Comma Separated Values" og er en enkel måte å lagre og utveksle tabellariske data på.
-
-## Slik gjør du det
-
-Å jobbe med CSV-filer i C++ er en enkel prosess. Først må du inkludere <fstream> biblioteket som lar deg lese og skrive filer. Deretter kan du bruke ifstream og ofstream klassene for å lese og skrive til CSV-filer.
+## Hvordan:
+For å arbeide med CSV-strukturer i C++, må du bruke ferdige biblioteker. Et populært alternativ er "CSV-parser" som gjør det enkelt å lese og skrive CSV-filer. Her er et eksempel på hvordan man kan lese data fra en CSV-fil og skrive den ut til konsollen:
 
 ```C++
-#include <fstream>
+#include <iostream>
+#include "csv.h"
 
 int main() {
-    std::ifstream input("data.csv");
-    int num;
-    while (input >> num) {
-        // les data fra filen
+    io::CSVReader<2> in("data.csv"); // Angi filnavn
+    in.read_header(io::ignore_extra_column, "Name", "Age"); // Angi kolonnenavn
+    std::string name;
+    int age;
+    while (in.read_row(name, age)) { // Gå gjennom hver rad
+        std::cout << name << " er " << age << " år gammel." << std::endl; // Skriv ut data
     }
-
-    std::ofstream output("resultat.csv");
-    output << "1,2,3\n";
-    output << "4,5,6\n";
-    output.close();
+    return 0;
 }
 ```
 
-## En dypere dykk
+Her er et eksempel på data som kan være lagret i "data.csv" filen:
 
-Når du arbeider med CSV-filer, er det viktig å være oppmerksom på noen utfordringer. Pass på at filen er korrekt formatert og at du håndterer spesielle tegn som komma eller anførselstegn. Det kan også være lurt å inkludere bibliotek for databehandling, som for eksempel Boost eller Qt.
+```
+Name, Age
+John, 25
+Sarah, 32
+David, 19
+```
+Output: 
+```
+John er 25 år gammel.
+Sarah er 32 år gammel.
+David er 19 år gammel.
+```
 
-## Se også
+## Dypdykk:
+CSV-formatet har vært i bruk siden 1970-tallet og har siden blitt en populær måte å lagre og overføre data på. Alternativene til CSV inkluderer XML og JSON, men CSV er fortsatt et godt valg for enkel og strukturert data.
 
-- [Boost C++ Libraries](https://www.boost.org/)
-- [Qt Framework](https://www.qt.io/)
+Parsing av CSV-data kan være krevende på grunn av forskjeller mellom implementasjoner og varierte formater. Derfor er det ofte en god ide å bruke et pålitelig bibliotek som "CSV-parser" for å sikre riktig håndtering av data.
+
+## Se også:
+For mer informasjon om CSV-formatet og hvordan man kan bruke det i C++, sjekk ut disse kildene:
+
+- [CSV format](https://en.wikipedia.org/wiki/Comma-separated_values)
+- [CSV-parser på GitHub](https://github.com/vincentlaucsb/csv-parser)
+- [Tutorial for å lese og skrive CSV-filer i C++](https://www.ai-camp.net/post/2015/08/a-simple-csv-parser-in-cpp)

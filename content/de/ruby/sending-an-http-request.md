@@ -10,34 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
-Warum sollte man sich mit dem Senden von HTTP-Requests beschäftigen? Nun, viele moderne Anwendungen basieren auf der Kommunikation über das Internet und das Senden von HTTP-Requests ist ein grundlegender Bestandteil davon. Es ermöglicht die Interaktion mit verschiedenen APIs, das Abrufen von Daten von externen Quellen und vieles mehr.
+# Was & Warum?
+Das Senden einer HTTP-Anfrage ist eine grundlegende Methode, um mit Webservern zu kommunizieren und Informationen abzurufen oder zu senden. Programmierer verwenden diese Technik, um Webanwendungen zu erstellen, Daten von APIs zu erhalten oder einfach nur Websites aufzurufen.
 
-## How To
-Das Senden von HTTP-Requests mag zunächst einschüchternd wirken, aber es ist eigentlich recht einfach. Hier ist ein Beispiel mit Ruby:
-
+# Wie geht's?
 ```Ruby
-require 'net/http'
+require 'net/http' # Wir müssen das net/http-Modul importieren
 
-url = URI("https://example.com/api/user")
-# Ersetze URL mit der gewünschten Endpunkt-URL
+# Ein Beispiel für eine GET-Anfrage
+uri = URI('https://example.com/') # Wir geben die URL der gewünschten Seite an
+response = Net::HTTP.get(uri) # Wir verwenden die get-Methode, um eine Antwort von der Seite zu erhalten
+puts response # Wir geben die empfangene Antwort aus
 
-request = Net::HTTP.get(url)
-# Ersetze `get` mit der gewünschten HTTP-Methode, wie z.B. `post`, `put`, `delete`
-
-response = JSON.parse(request.body)
-# Wenn du mit Daten im JSON-Format arbeitest, kannst du sie mit `JSON.parse` in eine verwertbare Form bringen
-
-puts response
-# Gibt die Antwort des Servers aus, abhängig von der gewählten HTTP-Methode
+# Ein Beispiel für einen POST-Antrag mit Daten
+uri = URI('https://example.com/') # Wir geben wieder die URL an
+params = { username: "John", password: "secret" } # Wir erstellen ein Hash-Objekt mit den zu sendenden Daten
+response = Net::HTTP.post_form(uri, params) # Wir verwenden die post_form-Methode, um die Daten zu senden und eine Antwort zu erhalten
+puts response # Wir geben die empfangene Antwort aus
 ```
 
-Das ist nur ein einfaches Beispiel, aber es zeigt dir, wie du mit Ruby einen HTTP-Request senden und die Antwort verarbeiten kannst.
+# Tiefere Einblicke
+Das HTTP-Protokoll wurde in den späten 80er Jahren entwickelt und hat seitdem viele Iterationen und Verbesserungen erfahren. Es ist das grundlegende Kommunikationsprotokoll im World Wide Web und wird von allen gängigen Webanwendungen verwendet. Es gibt auch andere Methoden, um mit Webservern zu kommunizieren, wie z.B. das SMTP-Protokoll für E-Mail-Kommunikation.
 
-## Deep Dive
-Wenn du noch tiefer in das Thema einsteigen möchtest, solltest du dich mit den verschiedenen HTTP-Methoden auseinandersetzen, wie z.B. `get`, `post`, `put`, `patch` und `delete`. Jede dieser Methoden hat eine spezifische Funktion und kann dir bei der Arbeit mit verschiedenen APIs helfen. Außerdem gibt es noch viele weitere Konzepte, die du lernen kannst, wie z.B. die Verwendung von HTTP-Headern, das Arbeiten mit Authentifizierung und das Behandeln von Fehlern.
-
-## Siehe auch
-- [Net::HTTP Dokumentation](https://ruby-doc.org/stdlib/libdoc/net/http/rdoc/index.html)
-- [Ruby on Rails Guides zu HTTP-Requests](https://guides.rubyonrails.org/action_controller_overview.html#http-methods)
-- [RFC 7231 - HTTP/1.1 Methoden](https://tools.ietf.org/html/rfc7231#section-4)
+# Sieh dir auch an
+- [Net::HTTP-Dokumentation](https://ruby-doc.org/stdlib/libdoc/net/http/rdoc/Net/HTTP.html)
+- [Tutorial: HTTP-Anfragen mit Ruby](https://www.rubyguides.com/2018/08/ruby-http-request/)

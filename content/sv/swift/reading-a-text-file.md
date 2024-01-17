@@ -1,7 +1,7 @@
 ---
-title:                "Att läsa en textfil"
-html_title:           "Swift: Att läsa en textfil"
-simple_title:         "Att läsa en textfil"
+title:                "Läsning av en textfil"
+html_title:           "Swift: Läsning av en textfil"
+simple_title:         "Läsning av en textfil"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Files and I/O"
@@ -10,30 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Varför
-Att läsa en textfil är en vanlig uppgift inom programmering, särskilt när man arbetar med data från olika källor. Genom att lära sig hur man läser en textfil i Swift kan man effektivt hantera stora mängder data och göra det tillgängligt för användning i ens kod.
+## Vad & Varför?
 
-## Så här
-Det finns flera olika sätt att läsa en textfil i Swift, men det mest grundläggande sättet är att använda FileHandle-klassen. Först måste vi deklarera en instans av FileHandle och ange sökvägen till vår textfil. Sedan kan vi använda metoden `readDataToEndOfFile()` för att läsa hela filen och lagra datan i en byteström.
+Att läsa en textfil innebär att föra in det innehåll som finns i en textfil till en dator och göra den tillgänglig för programmet som körs. Programmerare gör detta för att kunna använda sig av innehållet i textfilen i sina program, till exempel för att lagra data eller läsa in text för att skriva ut eller manipulera.
 
-```Swift
-let fileHandle = FileHandle(forReadingAtPath: "textfil.txt") // Ange sökvägen till din textfil
-let fileData = fileHandle?.readDataToEndOfFile() // Läs in datan från filen
-```
+## Hur man gör:
 
-En annan metod är att använda String-klassen och dess metod `init(contentsOf: URL)`. Det betyder att vi måste omvandla sökvägen till vår textfil till en URL först. Sedan kan vi enkelt få tillgång till innehållet i filen som en sträng.
+För att läsa en textfil i Swift använder man sig av klassen `FileManager` och metoden `contents(atPath: String)`. Detta returnerar innehållet i form av en binär dataström som kan konverteras till en `String`. Här är ett exempel:
 
 ```Swift
-let fileURL = URL(fileURLWithPath: "textfil.txt") // Omvandla sökvägen till en URL
-let fileContents = try String(contentsOf: fileURL) // Hämta innehållet från filen som en sträng
+do {
+    let fileURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!.appendingPathComponent("textfil.txt")
+    let fileContent = try String(contentsOf: fileURL, encoding: .utf8)
+    print(fileContent)
+} catch {
+    print("Kunde inte läsa filen")
+}
 ```
 
-## Djupdykning
-Det finns olika sätt att läsa en textfil i Swift beroende på dess innehåll och storlek. Om du behöver läsa en fil rad för rad, kan du använda String-klassens metoder `components(separatedBy: String)` och `components(separatedBy: CharacterSet)` för att dela upp filen vid varje radbrytning. Om du arbetar med en större textfil kan du också använda FileHandle-klassens metoder `readData(ofLength: Int)` eller `readData(upToCount: Int)` för att läsa datan i mindre bitar.
+👉 **Output:** Innehållet i `textfil.txt` skrivs ut på konsolen.
 
-# Se även
-Här är några användbara resurser för att lära dig mer om att läsa textfiler i Swift:
+## Djupdykning:
 
-- [Dokumentation: FileHandle](https://developer.apple.com/documentation/foundation/filehandle)
-- [Dokumentation: String](https://developer.apple.com/documentation/swift/string)
-- [Tutorial: Reading and Writing Files in Swift](https://www.raywenderlich.com/100-swhift-tutorial-how-to-read-and-write-files-in-swift)
+Att läsa textfiler är en vanlig uppgift för programmerare eftersom det ofta är ett sätt att lagra och hantera data i deras program. Innan Swift fanns var det vanligt att använda lägre nivå-gränssnitt som `fopen()` och `fread()`, men nu har man förenklat processen med `FileManager`. Det finns också andra sätt att läsa textfiler, till exempel med `InputStream` för större filer eller med hjälp av `Data(contentsOf: URL)` för att få en binär dataström att arbeta med.
+
+## Se även:
+
+- [Apple's Dokumentation för FileManager](https://developer.apple.com/documentation/foundation/filemanager)
+- [Tutorial: Working with Files in Swift](https://www.raywenderlich.com/-levels-of-swift/1967201-tutorial-working-with-files-in-swift)

@@ -1,7 +1,7 @@
 ---
-title:                "Trabalhando com csv"
-html_title:           "Haskell: Trabalhando com csv"
-simple_title:         "Trabalhando com csv"
+title:                "Trabalhando com CSV"
+html_title:           "Haskell: Trabalhando com CSV"
+simple_title:         "Trabalhando com CSV"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Data Formats and Serialization"
@@ -10,34 +10,61 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que trabalhar com CSV em Haskell?
+##Qual a Utilidade do CSV
 
-CSV (Comma-Separated Values) é um formato de arquivo amplamente utilizado para armazenar e compartilhar dados. Ao trabalhar com dados em projetos de programação, muitas vezes nos deparamos com a necessidade de lidar com CSV. Em Haskell, existem diversas bibliotecas e funções que facilitam o manuseio desses arquivos, tornando o processo mais eficiente e organizado.
+Trabalhar com CSV (valores separados por vírgulas) é um processo muito comum em programação, especialmente quando precisamos lidar com grandes quantidades de dados. CSV é um formato de arquivo simples que permite armazenar dados em colunas e linhas, facilitando sua importação e exportação por meio de planilhas eletrônicas. Programadores usam CSV por sua facilidade de uso e eficiência em manipulação de dados.
 
-## Como fazer
 
-Para trabalhar com CSV em Haskell, precisamos importar a biblioteca `csv` e a função `parseCSV` que faz parte dessa biblioteca. Em seguida, podemos utilizar a função `parseCSVFromFile` para ler um arquivo CSV existente e transformá-lo em uma matriz de valores do tipo `[[Field]]`, onde `Field` é uma string.
+##Como Fazer:
+Existe uma biblioteca chamada "haskell-csv" que nos permite trabalhar com CSV em Haskell de maneira fácil e eficiente. Vamos dar uma olhada em como usá-la:
 
-```Haskell
-import Text.CSV 
+Primeiro, precisamos importar o módulo ```Text.CSV``` para termos acesso às funções da biblioteca. Em seguida, podemos criar uma tabela CSV com a função ```parseCSV```, passando uma string contendo os valores separados por vírgulas:
 
--- Le o arquivo CSV e retorna uma matriz de valores
-csvData <- parseCSVFromFile "arquivo.csv" 
+```haskell
+import Text.CSV    
 
--- Acessando o valor na segunda linha e terceira coluna
-let valor = csvData !! 1 !! 2
+main :: IO()    
+main = do    
+  let csv = "1,2,3\n4,5,6\n7,8,9"    
+  let table = parseCSV csv    
+  print table
 ```
 
-Podemos também utilizar a função `printCSV` para imprimir os dados em formato CSV. Se quisermos escrever dados em um novo arquivo CSV, podemos utilizar a função `writeCSV`. Para facilitar a leitura e escrita de dados em formato CSV, podemos usar operações de listas e outras funções auxiliares.
+O resultado será uma tabela contendo cada linha e coluna como uma lista de valores:
 
-## Mergulho profundo
+```haskell
+Right [["1","2","3"],["4","5","6"],["7","8","9"]]
+```
 
-Além das funções mencionadas acima, a biblioteca `csv` também oferece outras ferramentas úteis para o trabalho com CSV em Haskell. Podemos utilizar a função `parseCSVWithHeaders` para ler um arquivo CSV com cabeçalhos e obter uma lista de dicionários com os dados. Outra função interessante é `mapRows`, que permite aplicar uma função a cada linha do arquivo CSV.
+Podemos também usar a função ```printCSV``` para exibir a tabela em formato CSV novamente:
 
-Além disso, Haskell possui outras bibliotecas que podem ser úteis para trabalhar com CSV, como `cassava`, `haskell-csv` e `haskell-data-csv`.
+```haskell
+main = do    
+  let csv = "1,2,3\n4,5,6\n7,8,9"    
+  let table = parseCSV csv    
+  printCSV table
+```
 
-## Veja também
+O resultado será a mesma string de CSV que inserimos anteriormente:
 
-- [Documentação da biblioteca `csv`](https://hackage.haskell.org/package/csv)
-- [Tutorial de como trabalhar com CSV em Haskell](https://riptutorial.com/haskell/example/14364/working-with-csv-files)
-- [Tutorial de como ler e escrever arquivos CSV com a biblioteca `cassava`](https://www.snoyman.com/blog/2016/10/bare-bones-csv)
+```haskell
+1,2,3
+4,5,6
+7,8,9
+```
+
+A biblioteca também nos permite acessar e modificar valores específicos na tabela, bem como adicionar novas linhas e colunas. Para mais detalhes, consulte a documentação oficial da biblioteca.
+
+
+##Aprofundando:
+CSV é um formato de arquivo bastante utilizado na indústria de banco de dados, com sua origem datando das primeiras décadas da computação. Alternativas mais modernas, como JSON e XML, vêm ganhando popularidade para armazenar e transmitir dados, mas CSV ainda é amplamente utilizado devido à sua simplicidade e suporte universal em planilhas eletrônicas.
+
+Em termos de implementação, a biblioteca "haskell-csv" usa o conceito de "parsing", que é a transformação de uma string em uma estrutura de dados mais complexa. Ela usa técnicas avançadas e eficientes de parsing para garantir um desempenho rápido e seguro.
+
+Além disso, a biblioteca é bem documentada e possui código fonte aberto, o que permite aos programadores contribuírem com melhorias e correções de bugs.
+
+
+##Veja Também:
+- [Documentação oficial do "haskell-csv"](https://hackage.haskell.org/package/haskell-csv)
+- [Pacote "haskell-csv" no Hackage](https://hackage.haskell.org/package/haskell-csv)
+- [Exemplo de uso da biblioteca "haskell-csv"](https://wiki.haskell.org/How_to_read_a_csv_file)

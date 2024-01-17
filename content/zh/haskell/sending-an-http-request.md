@@ -1,7 +1,7 @@
 ---
-title:                "发送Http请求。"
-html_title:           "Haskell: 发送Http请求。"
-simple_title:         "发送Http请求。"
+title:                "发送一个http请求"
+html_title:           "Haskell: 发送一个http请求"
+simple_title:         "发送一个http请求"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "HTML and the Web"
@@ -10,80 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
+# "什么是HTTP请求？为什么程序员要使用它？"
 
-发送HTTP请求是在编写程序中经常会遇到的一项任务。当我们需要与其他网络资源交互，获取数据或者访问API时，我们就需要发送HTTP请求来进行通信。使用Haskell语言可以轻松地发送HTTP请求，并且具有高性能和强大的功能，让我们能够更加高效地进行网络通信。
+在编程中，发送HTTP请求是指向某个网络服务器发送请求，以获取或传输信息的过程。程序员通常会使用HTTP请求来与其他服务器上的应用程序进行交互，例如从一个API获取数据或向一个网页发送数据。
 
-## 如何
-
-下面是一个简单的Haskell代码示例，用于发送HTTP请求并打印响应的内容：
-
+# "如何操作："
 ```Haskell
-import Network.HTTP.Simple
+import Network.HTTP
+import Network.URI
 
 main = do
-    response <- httpLBS "http://example.com"
-    putStrLn (responseBody response)
+  -- 创建一个简单的GET请求
+  response <- simpleHTTP (getRequest "http://www.example.com")
+  -- 获取响应的内容
+  responseBody <- getResponseBody response
+  -- 打印出响应内容
+  putStrLn responseBody
+  
+  -- 创建一个带有请求头的GET请求
+  let request = Request {rqURI = fromJust $ parseURI "http://www.example.com",
+                         rqMethod = GET,
+                         rqHeaders = [mkHeader HdrUserAgent "MyCustomUserAgent"],
+                         rqBody = ""}
+  -- 发送请求
+  response2 <- simpleHTTP request
+  -- 获取响应的内容
+  responseBody2 <- getResponseBody response2
+  -- 打印出响应内容
+  putStrLn responseBody2
 ```
 
-运行这个代码，你将得到类似于下面这样的输出：
+# "深入探讨："
+HTTP请求是基于客户端-服务器架构的一种通信协议，它被用于在客户端和服务器之间传输数据。它由Tim Berners-Lee在1989年设计并在1996年正式发布。HTTP请求通常有两种方法：GET方法用于获取数据，POST方法用于向服务器发送数据。除了Haskell，其他编程语言也支持发送HTTP请求，例如Python中的Requests库和Java中的HttpURLConnection类。
 
-```
-<!doctype html>
-<html>
-<head>
-    <title>Example Domain</title>
-    <meta charset="utf-8" />
-    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-</head>
-<body>
-    <div>
-        <h1>Example Domain</h1>
-        <p>This domain is for use in illustrative examples in documents. You may use this
-        domain in literature without prior coordination or asking for permission.</p>
-        <p><a href="https://www.iana.org/domains/example">More information...</a></p>
-    </div>
-</body>
-</html>
-```
-
-这是一个简单的HTTP请求示例，它使用了Haskell网络库中的`httpLBS`函数来发送GET请求，并且使用`responseBody`函数来获取响应内容。
-
-如果我们想要发送带有参数的POST请求，可以使用`RequestBody`和`Request`类型，例如：
-
-```Haskell
-import Network.HTTP.Simple
-
-main = do
-    let request = setRequestBodyURLEncoded [("id", "123"), ("name", "John")] "http://example.com"
-    response <- httpLBS request
-    putStrLn (responseBody response)
-```
-
-在这个例子中，我们使用`setRequestBodyURLEncoded`函数来构造一个包含参数的POST请求，并将其发送到指定的URL。
-
-## 深入探讨
-
-当我们发送HTTP请求时，还可以设置一些其他的选项，例如请求头、认证信息、代理等。让我们来看一个更加复杂的Haskell代码示例：
-
-```Haskell
-import Network.HTTP.Simple
-import Network.HTTP.Client.TLS
-
-main = do
-    manager <- newTlsManager
-    request <- parseRequest "https://example.com"
-    let request' = setRequestMethod "POST" $ setRequestHeader "Content-Type" ["application/json"] $ setRequestBodyJSON [("username", "John"), ("password", "1234")] request
-    response <- httpLbs request' manager
-    putStrLn (responseBody response)
-```
-
-在这个例子中，我们使用了`HTTP.Client.TLS`模块中的`newTlsManager`函数来创建一个支持TLS的HTTP管理器。然后，我们使用`parseRequest`函数来构造一个请求对象，并使用`setRequestMethod`、`setRequestHeader`和`setRequestBodyJSON`函数来设置请求的方法、头部信息和JSON格式的请求体。最后，我们将请求和管理器对象传递给`httpLbs`函数来发送请求，并使用`responseBody`函数来获取响应内容。
-
-总的来说，Haskell语言提供了许多丰富的网络库，可以让我们轻松地发送HTTP请求并处理响应，可以根据实际需求选择合适的库来使用。
-
-## 参考资料
-
-- [Haskell的网络库文档](https://hackage.haskell.org/package/http-client)
-- [Haskell的HTTP请求示例](https://viric.name/entries/http-request-with-haskell)
+# "相关网址："
+- [官方Haskell文档关于HTTP请求的说明](https://hackage.haskell.org/package/HTTP-4000.3.15/docs/Network-HTTP.html)
+- [Tim Berners-Lee关于HTTP的原始论文](https://tools.ietf.org/html/rfc1945)

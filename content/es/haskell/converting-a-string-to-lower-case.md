@@ -10,61 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+¡Hola a todos los lectores! Seguro que alguna vez has oído a los programadores hablar de convertir una cadena a minúsculas. ¿Pero qué significa realmente eso y por qué lo hacen? Bueno, estoy aquí para explicártelo de manera sencilla y directa.
 
-Si estás trabajando con Haskell, es muy probable que en algún momento necesites convertir una cadena de texto a minúsculas. Esto puede ser útil para muchas tareas, como validar entradas de usuario o comparar cadenas de manera más eficiente.
+## ¿Qué & Por qué?
+Convertir una cadena a minúsculas es simplemente tomar una cadena de texto y transformar todas sus letras a su equivalente en minúsculas. Los programadores suelen hacer esto para facilitar la comparación de cadenas, ya que así se aseguran de que las letras no distorsionen el resultado. Además, en algunos lenguajes de programación, las mayúsculas y minúsculas pueden ser tratadas de manera diferente, así que convertir a minúsculas puede evitar posibles errores.
 
-## Cómo hacerlo
-
-La forma más sencilla de convertir una cadena a minúsculas en Haskell es usando la función `toLower` del módulo `Data.Char`. Aquí tienes un ejemplo de cómo usarla en una función:
-
-```Haskell
-import Data.Char (toLower)
-
-toLowerString :: String -> String
-toLowerString = map toLower
-```
-
-La función `toLowerString` usa la función `map` para aplicar `toLower` a cada elemento de la cadena, convirtiendo toda la cadena a minúsculas. Veamos cómo funciona con algunos ejemplos:
+## Cómo:
+En Haskell, podemos convertir una cadena a minúsculas utilizando la función `toLower` del módulo `Data.Char`. Veamos un ejemplo:
 
 ```Haskell
-toLowerString "Hola Mundo!" -- devuelve "hola mundo!"
-toLowerString "123 ABC" -- devuelve "123 abc"
-toLowerString "Haskell" -- devuelve "haskell"
+import Data.Char
+
+toLower "HOLA MUNDO" 
 ```
+**Salida:** "hola mundo"
 
-Otra forma de convertir una cadena a minúsculas es usando la función `map toLower` directamente en la cadena, en lugar de definir una función separada:
+Como se puede ver, todas las letras mayúsculas han sido convertidas a minúsculas. Fácil, ¿verdad?
 
-```Haskell
-map toLower "Hola Mundo!" -- devuelve "hola mundo!"
+## Excavando más profundo:
+Si te interesa conocer más sobre el tema, déjame contarte un poco sobre su origen. En los primeros días de la informática, cuando los ordenadores tenían una capacidad limitada, se almacenaban las letras en formato ASCII (American Standard Code for Information Interchange). En este formato, las letras minúsculas y mayúsculas estaban separadas por un número conocido como el "bit de caso". Actualmente, con la aparición de Unicode, esto ya no es necesario, pero aún sigue siendo una práctica común.
+
+En cuanto a alternativas, existen otras formas de convertir una cadena a minúsculas, dependiendo del lenguaje de programación que uses. Por ejemplo, en Python podemos utilizar la función `lower()` del objeto `str`:
+
+```Python
+"HOLA MUNDO".lower()
 ```
+**Output:** "hola mundo"
 
-Ambos métodos son válidos, pero es importante tener en cuenta que `toLower` solo funciona con letras del alfabeto, ignorando cualquier otro tipo de caracteres. Si necesitas convertir una cadena completamente a minúsculas, incluyendo caracteres especiales y números, puedes usar la función `map toLower` junto con `toCaseFold` del módulo `Data.Text`:
+Finalmente, en cuanto a la implementación, la función `toLower` de Haskell hace uso del estándar Unicode para realizar la conversión de manera eficiente y correcta.
 
-```Haskell
-import Data.Char (toLower)
-import Data.Text (toCaseFold)
+## Echa un vistazo:
+Si quieres profundizar aún más en cómo funciona `toLower`, o si simplemente quieres descubrir más sobre este tema en general, te dejo aquí algunos enlaces útiles:
 
-toLowerString :: String -> String
-toLowerString = unpack . toCaseFold . pack
-```
+- [Documentación oficial de la función `toLower`](https://hackage.haskell.org/package/base-4.15.0.0/docs/Data-Char.html#v:toLower)
+- [Más información sobre ASCII y Unicode](https://www.codigopedia.com/codigo/ascii-y-unicode-diferencias/) 
+- [Comparación de la función `toLower` en diferentes lenguajes de programación](https://rosettacode.org/wiki/Change_letter_case#Haskell)
 
-Aquí hemos utilizado las funciones `pack` y `unpack` para convertir entre `String` y `Text`, ya que `toCaseFold` solo funciona con `Text`. Ahora, la función `toLowerString` funcionará con cualquier tipo de caracteres:
-
-```Haskell
-toLowerString "123 ABC" -- devuelve "123 abc"
-toLowerString "HOLA#$Mundo" -- devuelve "hola#$mundo"
-toLowerString "ĂȘȚĒ" -- devuelve "ășțē"
-```
-
-## Profundizando
-
-En términos más técnicos, `toLower` y `toCaseFold` funcionan mediante el uso de la tabla de Unicode (un estándar que asigna un número a cada carácter utilizado en la mayoría de los sistemas de escritura). Esta tabla contiene información sobre cada carácter, incluyendo si es mayúscula, minúscula o una letra especial. Al usar estas funciones, Haskell busca en la tabla de Unicode para determinar si un carácter tiene una versión en minúsculas y, de ser así, la devuelve.
-
-Por otro lado, si quieres convertir una cadena a mayúsculas, puedes usar la función `toUpper` del módulo `Data.Char`, que funciona de la misma manera que `toLower`, pero convirtiendo los caracteres a su versión en mayúsculas en lugar de minúsculas.
-
-## Ver también
-
-- [Documentación oficial de `Data.Char`](https://hackage.haskell.org/package/base/docs/Data-Char.html)
-- [Documentación oficial de `Data.Text`](https://hackage.haskell.org/package/text/docs/Data-Text.html)
-- [Unicode](https://www.unicode.org/)
+¡Eso es todo por hoy! Espero que este artículo te haya ayudado a entender mejor la conversión de cadenas a minúsculas en Haskell. ¡Hasta la próxima!

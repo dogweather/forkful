@@ -1,7 +1,7 @@
 ---
-title:                "Generera slumpmässiga tal"
-html_title:           "C#: Generera slumpmässiga tal"
-simple_title:         "Generera slumpmässiga tal"
+title:                "Generering av slumpmässiga tal"
+html_title:           "C#: Generering av slumpmässiga tal"
+simple_title:         "Generering av slumpmässiga tal"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Numbers"
@@ -10,52 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
+Generering av slumpmässiga nummer är en vanlig uppgift som programmerare måste hantera. Det hänvisar till att skapa ett nummer utan någon uppenbar logik eller ordning. Programmare gör detta för att skapa variation eller för att simulera slumpmässiga händelser, som i spel eller forskning.
 
-Att generera slumpmässiga nummer är en användbar funktion inom programmering eftersom det tillåter utvecklare att skapa dynamiska och varierande program. Det är också en viktig funktion inom spel och simuleringar.
-
-## Så här gör du
-
-För att generera slumpmässiga nummer i C# kan du använda dig av "Random" klassen. Här är ett enkelt exempel på hur du kan skapa en instans av Random klassen och sedan generera ett slumpmässigt heltal mellan 1 och 10:
+## Hur man:
+För att generera slumpmässiga nummer i C#, kan du använda Random-klassen. Här är ett exempel på kod som skapar fem slumpmässiga heltal mellan 1 och 10:
 
 ```C#
 Random random = new Random();
-int randomNumber = random.Next(1, 11);
-Console.WriteLine(randomNumber); 
+for (int i = 0; i < 5; i++)
+{
+  int num = random.Next(1, 11);
+  Console.WriteLine(num);
+}
+```
+Exempel på utmatning:
+```
+6
+3
+8
+1
+10
 ```
 
-Output: 8
+## Djupdykning:
+Generering av slumpmässiga nummer är en viktig del av datorspråk sedan början av datorerna. Tidiga metoder inkluderade användning av fysiska fenomen som elektronbrus eller radioaktivt sönderfall. Idag används mer avancerade algoritmer i programmeringsspråk som C#.
 
-För att generera ett slumpmässigt decimaltal mellan 0 och 1 kan du använda "NextDouble()" metoden:
+Alternativ till att använda Random-klassen är att använda en tredje parts bibliotek som erbjuder mer avancerade slumpgeneratorer. Dessutom finns det olika algoritmer och tekniker som programmerare kan använda för att skapa mer "slump" i sina nummer, som att använda faktorer såsom systemklockan eller användarens musrörelser.
 
-```C#
-Random random = new Random();
-double randomDecimal = random.NextDouble();
-Console.WriteLine(randomDecimal);
-```
+## Se även:
+https://docs.microsoft.com/en-us/dotnet/api/system.random?view=netcore-3.1 - officiell dokumentation för Random-klassen i C#.
 
-Output: 0.731447659681
+https://en.wikipedia.org/wiki/Random_number_generation - historisk och teknisk information om generering av slumpmässiga nummer.
 
-Du kan också ange ett seed-värde för att få samma slumpmässiga sekvens varje gång du kör koden. Detta kan vara användbart vid felsökning eller för att testa olika scenarier:
-
-```C#
-Random random = new Random(1234);
-int randomNumber = random.Next(1, 11);
-Console.WriteLine(randomNumber);
-```
-
-Output: 3
-
-## Djupdykning
-
-Random klassen använder sig av en algoritm som kallas "Linear Congruential Generator" för att generera slumpmässiga tal. Algoritmen använder en seed-värde som utgångspunkt för att skapa en följd av tal som kan upplevas som slumpmässiga.
-
-Det är viktigt att vara medveten om att algoritmen inte genererar helt slumpmässiga tal utan följer en specifik matematisk formel. Detta betyder att om du känner till seed-värdet och algoritmen, kan du förutsäga nästa tal som kommer att genereras.
-
-För att få en bättre slumpmässighet kan du använda andra metoder, som till exempel att blanda element i en lista eller använda externa faktorer såsom systemets tid eller användarinput som seed-värde.
-
-## Se även
-
-- [Random Klass (C# Programmeringsguide)](https://docs.microsoft.com/sv-se/dotnet/api/system.random?view=net-5.0)
-- [Pseudo-Random Number Generators (Wikipedia)](https://en.wikipedia.org/wiki/Pseudorandom_number_generator)
-- [How to Create Random Numbers in C# (Tutorial)](https://www.tutorialspoint.com/how-to-create-random-numbers-in-c-sharp)
+https://www.baeldung.com/java-random - liknande artikel men för Java-programmeringsspråket.

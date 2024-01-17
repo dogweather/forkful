@@ -1,7 +1,7 @@
 ---
-title:                "Skapande av en temporär fil"
-html_title:           "Arduino: Skapande av en temporär fil"
-simple_title:         "Skapande av en temporär fil"
+title:                "Skapa en temporär fil"
+html_title:           "Arduino: Skapa en temporär fil"
+simple_title:         "Skapa en temporär fil"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Files and I/O"
@@ -10,56 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
+Att skapa en temporär fil är ett vanligt sätt för programmerare att temporärt lagra data eller information som behövs under programkörningen. Det kan vara till nytta för att undvika att behöva skriva data på ett annat ställe eller för att enkelt ta bort denna data när den inte längre behövs.
 
-## Hur man gör
-
-Att skapa en temporär fil kan vara användbart för att spara data temporärt, till exempel när du behöver lagra data under en kort period eller behöver tillfälligt använda ett program som behöver tillgång till en fil. För att skapa en temporär fil med Arduino behöver du använda funktionen `File::createTemp()`.
-
-```Arduino
-#include <FileIO.h>
-
-void setup() {
-  Serial.begin(9600);
-  
-  // Skapar en temporär fil med namnet "temp.txt"
-  File tempFile = File.createTemp("temp.txt");
-  
-  // Skriver något till den temporära filen
-  tempFile.println("Det här är en temporär fil");
-  
-  // Stänger filen
-  tempFile.close();
-  
-  // Öppnar den temporära filen i läsläge och skriver ut innehållet
-  File tempFileRead = File.open("temp.txt", FILE_READ);
-  Serial.println("Innehållet i den temporära filen:");
-  while (tempFileRead.available()) {
-    Serial.write(tempFileRead.read());
-  }
-  tempFileRead.close();
-}
-
-void loop() {
-  // Tom loop, ingen kod behövs i detta fall
-}
-```
-
-Output:
+## Hur gör man?
+För att skapa en temporär fil i Arduino behöver vi först inkludera biblioteket "SD" som ger oss möjlighet att skriva till ett externs SD-kort. Sedan kan vi använda funktionen "open" från SD-biblioteket för att skapa en temporär fil med ett unikt namn. Här är ett exempel på hur detta kan se ut:
 
 ```
-Innehållet i den temporära filen:
-Det här är en temporär fil
+#include <SD.h>
+
+File tempFile;
+tempFile = SD.open("temp.txt", FILE_WRITE);
 ```
 
-## En djupdykning
+Den första raden inkluderar SD-biblioteket och den andra raden skapar en fil med namnet "temp.txt" som vi kan skriva till. Vi kan sedan använda kommandon som "tempFile.println" för att lägga till text eller data i den temporära filen.
 
-Funktionen `File::createTemp()` skapar en temporär fil som sparas i ett speciellt område i Arduinos minne, vilket gör att filen inte påverkar eventuella andra filer som finns på ditt SD-kort. Denna funktion returnerar en `File`-klass som du kan använda för att hantera den temporära filen, precis som du skulle göra med vilken annan fil som helst.
+## Djupdykning
+Att skapa en temporär fil kan vara särskilt användbart när man behöver lagra data som är för stort för att sparas i Arduinos minne. Genom att använda ett extern SD-kort kan vi öka vår möjlighet att lagra större mängder data. Det finns också andra alternativ för att skapa temporära filer, som att använda en USB-enhet eller ett RAM-minne.
 
-Det finns också en möjlighet att tillhandahålla ett andra argument till funktionen `File::createTemp()`, som bestämmer storleken på den temporära filen i antal bytes. Om detta argument inte anges kommer den temporära filen att ha en standardstorlek som beror på din Arduino-modell.
+Det kan också vara värt att notera att det är viktigt att stänga och ta bort den temporära filen när den inte längre behövs för att undvika problem som kan uppstå om filen förblir öppen.
 
 ## Se även
-
-- [Dokumentation för FileIO.h](https://arduino.github.io/arduino-library-api/filesystem_8h_source.html)
-- [Guide för att arbeta med filer på SD-kort](https://www.arduino.cc/en/Reference/SD)
-- [Arduino for Dummies (swedish)](https://www.education.com/download/worksheet/99858/arduino-dummies.pdf)
+Mer information om hur man använder SD-biblioteket för att skapa en temporär fil finns på Arduinos hemsida: https://www.arduino.cc/en/Reference/SD.

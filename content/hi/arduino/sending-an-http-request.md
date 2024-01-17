@@ -10,83 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# क्यों
+क्या है और क्यों?
+हमारे आसपास कुछ ऐसे उपकरण हैं जो इंटरनेट से जुड़ते हैं, जैसे कि स्मार्टफोन, स्मार्ट टीवी या लैपटॉप। आपने शायद सोचा होगा कि कैसे ये उपकरण इंटरनेट से जुड़ते हैं? इसका जवाब है HTTP रिक्वेस्ट! अपने खास डेवाइस से आप एक या एक से अधिक सर्वरों को रिक्वेस्ट भेज सकते हैं। कई प्रोग्रामर्स ऐसा करते हैं ताकि वे अपने उपकरण को दूसरे उपकरणों या सर्वरों से डेटा को सम्भालने या सुविधाओं को हासिल करने के लिए बात करने के लिए इस्तेमाल कर सकें।
 
-एक Arduino में HTTP अनुरोध भेजना सीखना, आपको वेब सर्वर से डेटा को अपनी आईपी अनुमति से प्राप्त करने की अनुमति देता है। 
-
-## कैसे करें
-
-इसके लिए आपको स्केच कोड को वेब साइट के साथ जोड़ना होगा। नीचे दिए गए कोड ब्लॉक में, पुर्तगाली वेबसाइट से डेटा प्राप्त करने के लिए हम एक उदाहरण देंगे।
-
-```Arduino
-#include <SPI.h>
-#include <WiFi.h>
-#include <HttpClient.h>
-
-char ssid[] = "YourNetworkSSID";
-char pass[] = "YourNetworkPassword";
-
-// Your Arduino's IP address
-IPAddress ip(192, 168, 1, 177);
-
-// Server IP address (in this example, a Portuguese website)
-IPAddress server(78, 109, 175, 74);
-
-// Create an instance of the HttpClient
-WiFiClient client;
-HttpClient http(client, server, 80);
-
-void setup() {
-  // Initialize serial communication
-  Serial.begin(9600);
-
-  // Connect to WiFi network
-  WiFi.begin(ssid, pass);
-
-  // Wait for connection to be established
-  while (WiFi.status() != WL_CONNECTED) {
-    delay(500);
-    Serial.println("Connecting to WiFi...");
-  }
-
-  // Print connection status
-  Serial.println("Connected to WiFi!");
-
-  // Configure Arduino's IP
-  WiFi.config(ip);
-}
-
-void loop() {
-  // Send GET request to server and save response in a variable
-  HttpResponse response = http.get("/");
-
-  // Print response status code
-  Serial.println(response.statusCode);
-
-  // Print response body
-  Serial.println(response.body);
-
-  // Wait for 10 seconds before making another request
-  delay(10000);
-}
-```
-
-अब आपका स्केच कम्पाइल करके अपने Arduino बोर्ड पर अपलोड कर सकते हैं। जब आप स्केच को अपने Arduino में अपलोड करते हैं, तो मॉनिटरिंग से अभिंत भाग बनाएं और आईपी अनुमति का इस्तेमाल करके वेबसाइट से एक HTTP अनुरोध भेजेंगे। आप मॉनिटरिंग से कुछ इस तरह की आउटपुट देखेंगे:
+कैसे करें:
+यदि आपको अपने आर्दुइनो बोर्ड से HTTP रिक्वेस्ट भेजने की कोशिश करनी है, तो आपको सर्वर के लिए अपने प्रोग्राम को लिखने की आवश्यकता होगी। नीचे आपको कुछ `Arduino ...` कोड ब्लॉक के साथ कुछ उदाहरण और उसके आउटपुट दिए गए हैं।
 
 ```
-Connecting to WiFi...
-Connecting to WiFi...
-Connecting to WiFi...
-Connected to WiFi!
-200
-<!DOCTYPE html>
-<!--[if lt IE 7]> <html class="ie ie6 lte9 lte8 lte7 os-win"> <![endif]-->
-<!--[if IE 7]>    <html class="ie ie7 lte9 lte8 lte7 os-win"> <![endif]-->
-<!--[if IE 8]>    <html class="ie ie8 lte9 lte8 os-win"> <![endif]-->
-<!--[if IE 9]>    <html class="ie ie9 lte9 os-win"> <![endif]-->
-<!--[if (gte IE 10)|!(IE)]><!--> <html class="os-win"> <!--<![endif]-->
-...
-</html>
+Arduino डिजिटल पिन 9 को हाई सेट करें;
 ```
+इसका मतलब है कि हम डिजिटल पिन 9 को एक्टिवेट करेंजो। आपको सर्वर के लिए इस प्रकार का डेटा भेजना होगा।
 
-आप उस वेबसाइट के हथियारों के साथ कुछ अन्य डेटा प्राप्त करने
+```
+Arduino डिजिटल पिन 9 को लो सेट करें;
+```
+इसका मतलब है कि हम डिजिटल पिन 9 को डे-एक्टिवेट करेंजो। अर्थात, हमें डेटा डेटा को लो लेवल पर लाना होगा।
+
+```
+Arduino डिजिटल पिन 9 पर 1000ms का टाइमआउट';
+```
+यह कोड आपको सर्वर से डेटा पाने के लिए प्रतीक्षा करने के लिए 1000ms का टाइमआउट सेट करेगा। आप इस टाइमआउट को अपनी आवश्यकतानुसार बदल सकते हैं।
+
+गहराई में जाएं:
+कुछ साल पहले, हमारे उपकरण सिर्फ डिवाइस से डिवाइस कोम्यूनिकेशन के लिए उपयोगी थे। पर अब इंटरनेट की विस्तारित दुनिया में, हम अपने उपकरणों को इंटरनेट से भी जोड़ सकते हैं। लेकिन HTTP रिक्वेस्ट भेजने के अलावा भी कई और तरीके हैं जो इंटरनेट से जुड़ने के लिए उपयोगी हो सकते हैं, जैसे कि TCP/IP, UDP या प्रोटोकॉल्स जो कई अन्य ऑपरेशनों के साथ काम कर सकते हैं। आप अपनी आवश्यकतानुसार इनमें से किसी भी प्रोटोकॉल का उपयोग कर सकते हैं, लेकिन

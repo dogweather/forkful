@@ -10,34 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Kyu: Date ko string mein convert karne ke kaaran
-Date ki tarikh ya samay ko string mein badalna ek kaafi common task hai jab hum Bash programming language mein kaam karte hain. Time stamp aur date ki formatting kayi baar alag alag tariko se ki jaati hai aur aapko apne project ke requirements ke according date ko string mein badalna pad sakta hai.
+## क्या & क्यों? 
 
-## Kaise Kare: 
-Date ko string mein convert karne ke liye, hum `date` command ka istemal karenge. Yeh command system date aur time ko print karne ke liye istemal hoti hai. Ismein `+` sign ka istemal karke hum date ke format ko customize kar sakte hain. Neeche diye gaye code snippet mein aapko ek simple example mil jayega:
+एक तारीख को स्ट्रिंग में रूपांतरित करना क्या है और प्रोग्रामर क्यों इसे करते हैं। प्रोग्रामर स्क्रिप्ट बनाने के दौरान अक्सर उन्हें तारीख को स्ट्रिंग में रूपांतरित करने की जरूरत होती है। यह उन्हें तारीख के रूप में जाने वाली जानकारी को स्टोर करने में मदद करता है और कोड को पढ़ने और समझने को आसान बनाता है। 
 
-```Bash
-date +"%m/%d/%Y"
-```
-Is command ko run karne ke baad, aapki screen mein current date ke format mein ek string printed hoga. Is tarah se aap apne hisab se date ki formatting kar sakte hain. Agar aap chahte hain ki output mein time bhi include ho, toh is tarah ka command istemal kar sakte hain:
+## कैसे करें: 
 
-```Bash
-date +"%m/%d/%Y %H:%M:%S"
-```
+```Bash 
+# अगर आपको सुनिश्चित करना है कि आपका स्क्रिप्ट हमेसा अभी के समय को स्ट्रिंग में रूपांतरित करता है
+# Output: 05/08/2021
+date_str=$(date +%d/%m/%Y)
+echo $date_str
 
-### Advanced Example:
-Agar aap chahte hain ki date ko unix timestamp format mein print kare, toh aap `date` command ke saath `+%s` option ka istemal kar sakte hain. Yeh option aapko current date ko seconds mein return karega. Is tarah se:
 
-```Bash
-date +%s
-```
+# यदि आप किसी अलग तारीख व समय को स्ट्रिंग में स्टोर करना चाहते हैं
+# Output: Tuesday 08 June 2021 03:39:08 AM
+date_str=$(date -d "08-06-2021 03:39:08" +"%A %d %B %Y %I:%M:%S %p")
+echo $date_str
+``` 
 
-Is tarah se aap apne project ke requirements ke according date ko string mein convert kar sakte hain.
+## गहराई / विस्तार में 
 
-## Deep Dive:
-Date ko string mein convert karne ke liye, `date` command ke alawa bhi kayi aur options hain jaise ki `strftime`. Yeh option aapko date ko specific format mein print karne ki flexibility deta hai. Aap `man date` command ko istemal karke iske aur bhi options ke bare mein jaan sakte hain.
+इतिहास कंटेंट: डांजरस ट्रैञ्डीक्स
 
-## See Also:
-- [Bash scripting tutorials](https://www.gnu.org/software/bash/manual/html_node/index.html)
-- [Date command documentation](https://man7.org/linux/man-pages/man1/date.1.html)
-- [Stack Overflow discussion on converting date to string in Bash](https://stackoverflow.com/questions/6105820/converting-current-date-into-string)
+तारीख को स्ट्रिंग में रूपांतरित करने की एक पोपुलर और हेल्पफुल ट्रैञ्डीक्स है। यह स्क्रिप्ट को पढ़ने और समझने को आसान बनाता है और डाटा को स्टोर करता है जो अन्य एप्लीकेशंस के साथ इंटरैक्ट करता है। 
+
+वैकल्पिक 
+उपाय: अगर आपको एक कम्पलीट समय तालिका बनाना है तो आप `date` कमांड का उपयोग कर सकते हैं। इसमें आप भिन्न तारीख और समय के साथ अधिक गहराई से काम कर सकते हैं। 
+
+अंतिम तौर पर, अगर आप एक स्ट्रिंग में तारीख को रूपांतरित करने का स्क्रिप्ट बनाना चाहते हैं, तो आप `strftime` फंक्शन का उपयोग कर सकते हैं। यह प्रोग्रामर्स को अन्य भाषाओं के साथ काम करते समय भी सहायता प्रदान करता है। 
+
+## देखें भी 
+
+- `man date` स्क्रिप्टिंग के लिए अधिक जानकारी के लिए। 
+- `strftime` फंक्शन के बारे में अधिक जानने के लिए।

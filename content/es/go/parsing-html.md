@@ -10,13 +10,13 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
-¿Alguna vez has querido extraer información específica de una página web? La respuesta se encuentra en el análisis de HTML. Ya sea para obtener datos de precios de productos en una tienda en línea o para recopilar información de noticias de un sitio de noticias, analizar HTML es una habilidad útil en el mundo de la programación.
+## ¿Qué & ¿Por qué?
+El HTML es el lenguaje utilizado para crear y presentar contenido en la web. Al parsear HTML, los programadores pueden analizar y extraer información específica de una página web para utilizarla en su propio código. Esto es especialmente útil para la automatización de tareas y para obtener datos de fuentes externas.
 
-## Cómo hacerlo
-El lenguaje de programación Go ofrece una forma sencilla y eficiente de analizar HTML. Aquí hay un ejemplo de cómo podemos extraer todos los enlaces de una página web:
+## ¿Cómo hacerlo?
+Utilizando el lenguaje de programación Go, podemos implementar un parser de HTML bastante sencillo. Primero, importamos la biblioteca de Go llamada "html" y luego utilizamos la función "Parse" para analizar el contenido HTML y devolver una estructura de datos que podamos manipular. Aquí hay un ejemplo de código que extrae todos los hipervínculos de una página web y los imprime en la consola:
 
-```go
+```Go
 package main
 
 import (
@@ -27,49 +27,49 @@ import (
 )
 
 func main() {
-    // Obtén la página web que quieres analizar
-    resp, err := http.Get("https://www.example.com")
+    // Recuperar la página web
+    resp, err := http.Get("http://www.example.com")
     if err != nil {
         log.Fatal(err)
     }
     defer resp.Body.Close()
 
-    // Analiza el HTML
+    // Analizar contenido HTML
     doc, err := html.Parse(resp.Body)
     if err != nil {
         log.Fatal(err)
     }
 
-    // Recorre todas las etiquetas <a> y obtén el valor del atributo "href"
-    var links []string
-    var c func(*html.Node)
-    c = func(n *html.Node) {
+    // Función para recorrer árbol HTML y encontrar hipervínculos
+    var findLinks func(*html.Node)
+    findLinks = func(n *html.Node) {
         if n.Type == html.ElementNode && n.Data == "a" {
             for _, a := range n.Attr {
                 if a.Key == "href" {
-                    links = append(links, a.Val)
+                    fmt.Println(a.Val)
                 }
             }
         }
-        // Recorre los nodos secundarios
         for c := n.FirstChild; c != nil; c = c.NextSibling {
-            c(c)
+            findLinks(c)
         }
     }
-    c(doc)
-
-    // Imprime todos los enlaces recopilados
-    for _, link := range links {
-        fmt.Println(link)
-    }
+    findLinks(doc)
 }
 ```
 
-Este código utilizará la biblioteca "golang.org/x/net/html" para analizar el HTML de la página web. Primero, obtenemos la página con la función http.Get y luego la pasamos a html.Parse para obtener un árbol de nodos que representan el HTML de la página. Después, utilizamos una función recursiva para recorrer todos los nodos y obtener los enlaces de cada etiqueta <a>. Finalmente, imprimimos todos los enlaces recopilados.
+Este código utiliza una función recursiva para recorrer cada nodo en el árbol HTML y buscar elementos "a" (hipervínculos) y sus atributos "href" (la dirección URL). Luego, utiliza la función de impresión de Go para mostrar cada hipervínculo encontrado en la consola.
 
 ## Profundizando
-Si deseas profundizar en el análisis de HTML en Go, puedes explorar las opciones de la biblioteca "golang.org/x/net/html". Esta biblioteca te permite acceder a diferentes elementos del HTML, como el texto dentro de las etiquetas, los atributos y los nodos secundarios. También puedes combinar el análisis de HTML con el análisis de código CSS utilizando la biblioteca "github.com/PuerkitoBio/goquery". Con estas herramientas, puedes crear aplicaciones más sofisticadas para analizar y manipular páginas web.
+El parsing de HTML ha sido un tema importante en la creación de aplicaciones web desde los inicios de la web en 1990. Antes de Go, los programadores utilizaban principalmente lenguajes como Python y Java para realizar tareas de scraping o extracción de datos de la web. Sin embargo, con la llegada de Go, se ha vuelto más fácil y rápido implementar esta funcionalidad.
+
+Hay varias bibliotecas de Go disponibles para el parsing de HTML, cada una con sus propias características y fortalezas. Algunas alternativas populares son "goquery" y "selectors". También es posible utilizar otras herramientas como "Regular Expressions" o "Xpath" para el parsing de HTML, pero estas opciones pueden resultar más complicadas.
+
+El paquete "html" de Go también ofrece varias funciones adicionales para manipular y trabajar con el árbol HTML, como "Attr", "Tag", "Parent" y más. Estas pueden ser útiles para tareas más específicas o avanzadas de parsing.
 
 ## Ver también
-- Documentación oficial de la biblioteca "golang.org/x/net/html": https://godoc.org/golang.org/x/net/html
-- Documentación de la biblioteca "github.com/PuerkitoBio/goquery": https://godoc.org/github.com/PuerkitoBio/goquery
+Para obtener más información sobre el parsing de HTML con Go, se pueden consultar las siguientes fuentes:
+
+- Documentación oficial de Go sobre el paquete "html": https://golang.org/pkg/html/
+- Ejemplos de código en el sitio de Go por la comunidad: https://gobyexample.com/html-parsing
+- Tutorial en video sobre parsing de HTML en Go: https://www.youtube.com/watch?v=Cy2HgH0OwXU

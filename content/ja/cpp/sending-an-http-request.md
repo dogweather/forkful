@@ -1,7 +1,7 @@
 ---
-title:                "httpリクエストを送信する"
-html_title:           "C++: httpリクエストを送信する"
-simple_title:         "httpリクエストを送信する"
+title:                "送信のHTTPリクエスト"
+html_title:           "C++: 送信のHTTPリクエスト"
+simple_title:         "送信のHTTPリクエスト"
 programming_language: "C++"
 category:             "C++"
 tag:                  "HTML and the Web"
@@ -10,44 +10,113 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
-HTTPリクエストを送信することの最大の理由は、サーバーからデータを取得する必要がある場合です。このリクエストを使用して、Webページやアプリケーションに必要な情報を取得することができます。
+## 何かとは？
+HTTPリクエストを送信することは、ウェブサイトやアプリケーションからデータを取得するためのプロセスです。プログラマーは、必要なデータを取得するためにHTTPリクエストを送信します。
 
-## 使い方
-```
+## 方法：
+### GETリクエストの送信
+```c++
 #include <iostream>
 #include <curl/curl.h>
 
+// HTTPリクエストを送信する関数
+void sendRequest(std::string url){
+  CURL *curl;
+  CURLcode res;
+
+  // curlの初期化
+  curl = curl_easy_init();
+
+  // リクエストの設定
+  curl_easy_setopt(curl, CURLOPT_URL, url.c_str());
+
+  // サーバーからのレスポンスをデフォルト出力に出力
+  curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_data);
+
+  // リクエストの送信
+  res = curl_easy_perform(curl);
+
+  // エラー処理
+  if(res != CURLE_OK)
+    std::cout << "Error:" << curl_easy_strerror(res) << std::endl;
+
+  // curlの終了処理
+  curl_easy_cleanup(curl);
+}
+
+// main関数
 int main(){
-    CURL *curl;
-    CURLcode result;
-    
-    // curlを初期化する
-    curl = curl_easy_init();
-        
-    // 送信するURLを設定する
-    curl_easy_setopt(curl, CURLOPT_URL, "https://www.example.com");
-    
-    // HTTPリクエストを送信する
-    result = curl_easy_perform(curl);
-    
-    // リクエストの結果をチェックする
-    if(result != CURLE_OK){
-        std::cout << "Error: " << curl_easy_strerror(result) << std::endl;
-    }
-    
-    // curlをクローズする
-    curl_easy_cleanup(curl);
-    
-    return 0;
+  std::string url = "https://example.com/api"; // 送信するURL
+  sendRequest(url);
+
+  return 0;
+}
+
+// curlの出力を受け取り、デフォルト出力に出力する関数
+size_t write_data(void *ptr, size_t size, size_t nmemb, FILE *stream) {
+    std::cout << (char*)ptr;
+    return size * nmemb;
 }
 ```
-この例では、libcurlを使用してHTTPリクエストを送信しています。まず、`curl`変数を初期化し、その後`curl_easy_setopt()`を使用してURLを設定します。最後に、`curl_easy_perform()`を使用してリクエストを送信し、結果をチェックします。最後に、`curl_easy_cleanup()`を使用してcurlをクローズします。
 
-## 深堀り
-HTTPリクエストは、WebアプリケーションやAPIとの通信に欠かせないものです。リクエストを送信することで、サーバーから返ってくるデータを取得して、自分のアプリケーションに組み込むことができます。また、HTTPリクエストにはGET、POST、PUT、DELETEなどの異なるタイプがあり、使用する場面に応じて適切なリクエストを送信することが重要です。
+### POSTリクエストの送信
+```c++
+#include <iostream>
+#include <curl/curl.h>
 
-## 参考リンク
-- [libcurl interface documentation](https://curl.se/libcurl/c/)
-- [HTTP Basics by Mozilla](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics)
-- [cURL tutorial by Tutorials Point](https://www.tutorialspoint.com/cplusplus/cpp_networking.htm)
+// HTTPリクエストを送信する関数
+void sendRequest(std::string url){
+  CURL *curl;
+  CURLcode res;
+
+  // curlの初期化
+  curl = curl_easy_init();
+
+  // リクエストの設定
+  curl_easy_setopt(curl, CURLOPT_URL, url.c_str());
+  curl_easy_setopt(curl, CURLOPT_POSTFIELDS, "param=value&param2=value2"); // 送信するパラメーターを設定
+
+  // サーバーからのレスポンスをデフォルト出力に出力
+  curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_data);
+
+  // リクエストの送信
+  res = curl_easy_perform(curl);
+
+  // エラー処理
+  if(res != CURLE_OK)
+    std::cout << "Error:" << curl_easy_strerror(res) << std::endl;
+
+  // curlの終了処理
+  curl_easy_cleanup(curl);
+}
+
+// main関数
+int main(){
+  std::string url = "https://example.com/api"; // 送信するURL
+  sendRequest(url);
+
+  return 0;
+}
+
+// curlの出力を受け取り、デフォルト出力に出力する関数
+size_t write_data(void *ptr, size_t size, size_t nmemb, FILE *stream) {
+    std::cout << (char*)ptr;
+    return size * nmemb;
+}
+```
+
+## 深く掘り下げる：
+### 歴史的文脈：
+HTTPリクエストは、1990年にTim Berners-Leeによって開発されたウェブの基礎を形作るプロトコルであるHTTP(HyperText Transfer Protocol)の一部です。当初はハイパーテキストドキュメントを転送するために使用されていましたが、次第にウェブ上の様々な要求に応えることができるようになりました。
+
+### 代替案：
+HTTPリクエストを送信するためには、上記の例のようにcurlライブラリを使用する方法の他にも、wgetやlibcurlなどのライブラリを使用することもできます。また、特定のプログラミング言語に特化したHTTPリクエストの送信方法もあります。
+
+### 実装の詳細：
+HTTPリクエストは、ユーザーが指定したURLにアクセスし、そのサーバーからレスポンスを受け取るというプロセスです。GETリクエストでは、URLに指定したパラメーターを使用してデータを取得し、POSTリクエストでは、指定したパラメーターをサーバーに送信します。また、HTTPリクエストには様々なメソッドがあり、各メソッドによってデータのやり取りの仕方が異なります。
+
+## 関連リンク：
+- [curl library](https://curl.haxx.se/)
+- [wget](https://www.gnu.org/software/wget/)
+- [libcurl](https://curl.haxx.se/libcurl/)
+- [HTTP Methods](https://developer.mozilla.org/ja/docs/Web/HTTP/Methods)

@@ -10,48 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co & Dlaczego?
 
-Jeśli jesteś programistą lub uczysz się programowania, prawdopodobnie spotykasz się z różnymi rodzajami plików, w tym także plikami tekstowymi. Czy kiedykolwiek zastanawiałeś się, jak odczytać zawartość pliku tekstowego w swoim kodzie? W tym artykule dowiesz się, dlaczego warto nauczyć się tej umiejętności i jak to zrobić w TypeScript.
+Czytasz ten artykuł, więc prawdopodobnie jesteś programistą lub chcesz nim zostać. W tym przewodniku wyjaśnię, czym jest odczytywanie pliku tekstowego oraz dlaczego jest to ważna umiejętność dla programistów.
 
-## Jak to zrobić
+Odczytywanie pliku tekstowego oznacza w praktyce otwarcie pliku, który zawiera tekst, i odczytanie go w sposób, który program może interpretować i wykorzystać. Dzięki temu twoja aplikacja może uzyskać dostęp do zewnętrznych danych, takich jak lista użytkowników lub konfiguracja.
 
-Oto kilka przykładów kodu, które pokazują, jak odczytywać pliki tekstowe w TypeScript:
+Dlaczego więc programiści czytają pliki tekstowe? Jest to często wykorzystywane w celu konfiguracji lub odczytania danych, które są przechowywane w zewnętrznym źródle, takim jak baza danych. Pozwala to na łatwiejsze dostosowanie aplikacji do konkretnych potrzeb oraz ułatwia przechowywanie i dostęp do dużej ilości informacji.
 
-```TypeScript
-import fs from "fs";
+## Jak to zrobić:
 
-// Funkcja asynchroniczna do odczytywania pliku tekstowego
-async function readTextFile(filename: string) {
-  try {
-    // Wykorzystanie fs.promises.readFile() do odczytania pliku
-    const data = await fs.promises.readFile(filename, "utf8");
-    console.log(data);
-  } catch (error) {
-    console.error(error);
-  }
-}
+TypeScript jest językiem programowania, który umożliwia nam pracę z plikami tekstowymi w sposób prosty i intuicyjny. Przykładowy kod wyglądać może następująco:
 
-// Wywołanie funkcji z nazwą pliku
-readTextFile("tekstowy.txt");
+```
+const fs = require('fs'); // importujemy wbudowany moduł fs
+
+fs.readFile('plik.txt', 'utf8', function(err, data) { //metoda readFile uruchamia funkcję zwrotną, która umożliwia odczytanie danych
+    if (err) throw err;
+    console.log(data); // wyświetlamy odczytane dane w konsoli
+});
 ```
 
-Po uruchomieniu tego kodu, powinieneś zobaczyć zawartość pliku tekstowego "tekstowy.txt" w konsoli.
+Przeanalizujmy teraz krok po kroku co dzieje się w tym kodzie:
 
-Jeśli chcesz odczytać plik synchronicznie, użyj metody fs.readFileSync(). Pamiętaj jednak, że ta metoda blokuje wykonanie kodu aż do momentu odczytania całego pliku, więc lepiej jest używać jej tylko w prostych scenariuszach.
+- Najpierw importujemy wbudowany moduł fs, który pozwala na pracę z plikami.
+- Następnie wykorzystujemy metodę readFile, która przyjmuje jako pierwszy argument ścieżkę do pliku, jako drugi opcje (w tym przykładzie 'utf8' oznacza, że chcemy odczytać plik jako tekst) oraz jako trzeci funkcję zwrotną, która zostanie wywołana po zakończeniu odczytu pliku.
+- W tej funkcji zwrotnej sprawdzamy najpierw, czy wystąpił błąd (jeśli tak, wyrzucamy go), a następnie wyświetlamy odczytane dane w konsoli.
 
-Jeśli chcesz odczytać plik z danych binarnych, możesz użyć metody fs.readFile() z parametrem "utf8" zmienionym jako "binary". Możesz także użyć opcji "encoding" z wartością "binary".
+Według tych prostych kroków, możesz odczytywać pliki tekstowe w swojej aplikacji.
 
-## Deep Dive
+## Wnikliwa analiza:
 
-Metoda fs.promises.readFile() zwraca obiekt typu Promise, który możesz obsłużyć przy użyciu instrukcji async/await lub metody .then(). Po zwróceniu zawartości pliku, możesz przetworzyć ją według własnych potrzeb i wykorzystać w swoim kodzie.
+Odczytywanie plików tekstowych jest jednym z podstawowych zadań, z którymi programiści mają do czynienia. Początki tego procesu sięgają czasów, gdy komputery były jeszcze maszynami wykorzystującymi kartki dziurkowane, a pliki zapisywane były w postaci zwykłych tekstu.
 
-Pamiętaj także, że możesz manipulować plikami tekstowymi w TypeScript za pomocą wielu innych metod z modułu fs, takich jak tworzenie, usuwanie czy zmiana nazwy pliku.
+Alternatywą dla odczytywania plików tekstowych może być przechowywanie informacji w bazach danych lub wykorzystanie innego formatu, jak na przykład XML lub JSON. Jednakże, odczytywanie plików tekstowych jest jedną z najprostszych i najwygodniejszych metod, zwłaszcza gdy mamy do czynienia z prostymi informacjami, takimi jak tabele lub konfiguracje.
 
-Jeśli potrzebujesz więcej informacji na temat operacji na plikach w TypeScript, możesz przejrzeć dokumentację na stronie https://nodejs.org/api/fs.html.
+Do odczytywania plików tekstowych można wykorzystać również wbudowane metody w języku JavaScript, jednak TypeScript oferuje bardziej przejrzyste i zwięzłe rozwiązanie.
 
-## Zobacz także
+Jeśli jesteś zainteresowany dalszą nauką odczytywania plików tekstowych w TypeScript, polecam obejrzeć ten [film](https://www.youtube.com/watch?v=sxONpLdX4m8) oraz zapoznać się z dokumentacją wbudowanego modułu fs.
 
-- https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-8.html - informacje o nowych funkcjach w zakresie operacji plikowych w TypeScript
-- https://www.digitalocean.com/community/tutorials/nodejs-reading-writing-files - przykłady użycia metod do operacji na plikach w Node.js
-- https://www.typescriptlang.org/docs - oficjalna dokumentacja TypeScript
+## Zobacz również:
+
+[Tutorial odczytu plików w TypeScrpt](https://hackernoon.com/handling-file-upload-in-react-and-node-js-server-d8c076c9aede)
+
+[Dokumentacja wbudowanego modułu fs](https://nodejs.org/api/fs.html#fs_fs_readfile_path_options_callback)

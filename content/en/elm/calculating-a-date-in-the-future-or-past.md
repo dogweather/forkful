@@ -10,42 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-Have you ever needed to calculate a future or past date in your programming project? Maybe you're building a personal planner app or a scheduling tool. Either way, Elm has a convenient built-in function that makes date calculations a breeze. Keep reading to learn how to use it!
+Calculating a date in the future or past refers to the process of determining a future or past date based on a given starting date and a specific number of days. Programmers often do this in order to automate tasks such as scheduling events, creating reminders, or calculating deadlines.
 
-## How To
+## How to:
 
-To calculate a date in the future or past, we'll be using the `add` function from the `Time` module. This function takes in two arguments: a `Time` value and an `Int` representing the number of milliseconds to add to the time value.
-
-Let's see an example of how we can use the `add` function to calculate a date 5 days in the future:
+To calculate a date in the future or past in Elm, you can use the `addDays` function from the `Time` library. This function takes in two arguments: the number of days to add (or subtract) and the starting date. Here's an example of how you can use it:
 
 ```Elm
 import Time exposing (..)
 
--- Get current time
-currentTime : Time
-currentTime = Time.millisToPosix <| Time.since Epoch
+start = fromCalendarDate 2020 7 15
+daysToAdd = 30
+futureDate = addDays daysToAdd start
 
--- Calculate date 5 days in the future
-futureDate : Time
-futureDate = add 5 * days currentTime
-
--- Format date as a string
-formatDate : String
-formatDate = toString <| Time.millisToUtcIsoString futureDate
-
--- Output: 2021-09-13T18:38:58.271Z
+-- futureDate is now August 15th, 2020
 ```
 
-In the above code, we import the `Time` module and use the `since` function to get the current time in milliseconds. Then, we call the `add` function with the desired number of days to add and the current time value. Finally, we use the `toString` function to format the date as a string in UTC format. Easy, right?
+You can also use negative values to subtract days, as shown in this example:
 
-## Deep Dive
+```Elm
+import Time exposing (..)
 
-The `add` function can also be used to calculate dates in the past. Instead of adding a positive integer, we can pass a negative integer to subtract time from the current date. Additionally, the `Time` module has other useful functions for working with dates, such as `utcToMillis` and `utcToPosix`. Be sure to check out the official documentation for more details.
+start = fromCalendarDate 2020 7 15
+daysToSubtract = -10
+pastDate = addDays daysToSubtract start
 
-## See Also
+-- pastDate is now July 5th, 2020
+```
 
-- Official Elm Time Module Documentation: https://package.elm-lang.org/packages/elm/time/latest/ 
-- Elm Date and Time Basics Guide: https://elmprogramming.com/elm-dates-times.html 
-- Elm Date Cheat Sheet: https://devhints.io/elm-date
+## Deep Dive:
+
+Historically, calculating dates in the future or past has been a common problem for programmers. Before specific libraries and functions were created to handle this task, programmers had to write their own algorithms to determine future or past dates. This often involved complex calculations and checking for things such as leap years and varying months.
+
+In Elm, the `addDays` function simplifies the process significantly. However, there are alternative approaches, such as using the `Time` modules' `toTime` function to convert to Unix time and then using the `Time.fromPosix` function to convert back to a date.
+
+For those interested in the implementation details, the `Time` library uses the Gregorian calendar to calculate dates. This means that it takes into account leap years, varying month lengths, and other nuances that come with tracking time.
+
+## See Also:
+
+- [Documentation for `Time` library in Elm](https://package.elm-lang.org/packages/elm/time/latest/)
+- [Using Elm's `Time` library for timezone calculations](https://medium.com/@danbruder/using-elms-time-library-for-timezone-calculations-b3c936513808)
+- [Overview of historical calendar and time calculations](https://fetchelmdocs.com/blog/Elm/Introducing-CalendarHs-a-Date-Calculating-Library-for-Elm)

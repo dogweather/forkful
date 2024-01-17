@@ -1,7 +1,7 @@
 ---
-title:                "Comenzando un nuevo proyecto"
-html_title:           "Python: Comenzando un nuevo proyecto"
-simple_title:         "Comenzando un nuevo proyecto"
+title:                "Iniciando un nuevo proyecto"
+html_title:           "Python: Iniciando un nuevo proyecto"
+simple_title:         "Iniciando un nuevo proyecto"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Getting Started"
@@ -10,33 +10,22 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué comenzar un nuevo proyecto
-¿Estás cansado de hacer lo mismo todos los días? ¿Buscas un nuevo desafío? ¡Entonces es hora de comenzar un nuevo proyecto! Ya sea para mejorar tus habilidades de programación o para crear algo útil para la comunidad, iniciar un proyecto puede ser una experiencia emocionante y enriquecedora.
+## ¿Qué y por qué?
+Comenzar un nuevo proyecto en programación es el proceso de crear un nuevo programa o aplicación desde cero. Los programadores lo hacen para solucionar un problema específico o para crear algo nuevo y útil.
 
-## Cómo empezar
-1. Primero, elige un lenguaje de programación que te guste y te sientas cómodo/a utilizando. Como estamos hablando de Python, ¡puedes saltar al siguiente paso!
-2. Instala Python en tu computadora. Puedes descargarlo desde su sitio web oficial y seguir las instrucciones de instalación.
-3. Abre un editor de código (como Visual Studio Code o Atom) y crea un nuevo archivo con la extensión ".py". Este será tu archivo de código donde escribirás tu proyecto.
-4. ¡Hora de empezar a codificar! Aquí hay un ejemplo de un programa básico que imprimirá un mensaje en la terminal.
-```python
-# Esto es un comentario. Puedes escribir notas útiles para entender tu código.
+## ¿Cómo hacerlo?
+Para comenzar un nuevo proyecto en Python, primero debemos crear un archivo con la extensión .py, que será nuestro programa principal. Luego, podemos comenzar a escribir nuestro código utilizando la sintaxis de Python. Aquí hay un ejemplo:
 
-# Imprime el mensaje "Hola, mundo!" en la terminal
-print("Hola, mundo!")
 ```
-5. Una vez que hayas escrito todo tu código, ¡puedes ejecutarlo presionando el botón de "ejecutar" en tu editor de código o en la terminal utilizando el comando "python nombre_del_archivo.py"!
+Python print("¡Hola, mundo!")
+```
 
-## Profundizando
-Si quieres profundizar más en tu nuevo proyecto, aquí hay algunas ideas que podrías explorar:
+La salida de este código sería "¡Hola, mundo!" en la consola.
 
-- Aprender nuevos módulos y librerías de Python para agregar funcionalidades interesantes a tu proyecto.
-- Utilizar una metodología de desarrollo ágil para planificar y organizar tu código.
-- Trabajar en equipo y utilizar sistemas de control de versiones como Git para colaborar con otros programadores.
-- Investigar sobre técnicas de diseño de software para hacer tu código más eficiente y escalable.
-
-Con todas estas herramientas y técnicas, ¡tu nuevo proyecto de Python seguramente será un éxito!
+## Una mirada más profunda
+Desde su lanzamiento en 1991, Python se ha convertido en uno de los lenguajes de programación más populares debido a su simplicidad y versatilidad. Hay otros lenguajes que también se pueden utilizar para comenzar un nuevo proyecto, como Java o C++, pero Python es conocido por ser fácil de aprender y usar. Para implementar nuestro nuevo proyecto, también podemos utilizar varias herramientas y librerías que nos ayudan a desarrollar más rápido y con mayor eficiencia.
 
 ## Ver también
-- [Sitio oficial de Python](https://www.python.org)
-- [Lista de proyectos de código abierto en Python](https://github.com/search?q=python+projects&type=repositories)
-- [Python para principiantes: cómo empezar](https://realpython.com/python-beginner-tips/)
+- La documentación oficial de Python: https://www.python.org/doc/
+- Un tutorial completo para principiantes: https://www.python.org/about/gettingstarted/
+- Una lista de herramientas y librerías útiles para proyectos en Python: https://www.fullstackpython.com/best-python-libraries-frameworks.html

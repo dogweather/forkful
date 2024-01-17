@@ -10,49 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+## Cosa & Perché?
+L'invio di una richiesta HTTP con autenticazione di base è un processo crucial per gli sviluppatori web che desiderano accedere a risorse protette da password. Ciò consente loro di autenticarsi con un server e ottenere accesso ai contenuti desiderati.
 
-Se stai costruendo un'applicazione web che richiede l'autenticazione di base per accedere a determinate risorse, dovrai capire come inviare una richiesta HTTP con l'autenticazione di base. Questa è una tecnica comune per proteggere le informazioni sensibili su una rete.
+## Come si fa:
+```Javascript
+const username = 'esempio';
+const password = 'ciao123';
+const url = 'http://www.esempio.com';
+const headers = new Headers();
+headers.set('Authorization', 'Basic ' + btoa(username + ':' + password));
 
-## Come Fare
-
-Per inviare una richiesta HTTP con l'autenticazione di base in Javascript, dovrai utilizzare la funzione `fetch()` con il parametro `headers` per specificare le credenziali dell'utente. Ecco un esempio di codice:
-
+fetch(url, { headers: headers })
+  .then(response => response.text())
+  .then(data => console.log(data));
 ```
-let url = "http://www.example.com/api/resource"
-let username = "myUsername"
-let password = "myPassword"
+In questo semplice esempio, utilizziamo la funzione `fetch()` per inviare una richiesta GET all'URL specificato con autenticazione di base. Per farlo, dobbiamo costruire un oggetto `Headers` e impostare l'header di autorizzazione utilizzando il metodo `set()`. Successivamente, passiamo questo oggetto come opzione nella nostra chiamata `fetch()`. La risposta del server viene quindi elaborata nel secondo `then()` e il risultato viene stampato nella console.
 
-fetch(url, {
-  method: 'GET',
-  headers: {
-    'Authorization': 'Basic ' + btoa(username + ":" + password)
-  }
-})
-.then(response => {
-  return response.json();
-})
-.then(data => {
-  console.log(data); // output: dati della risorsa
-})
-.catch(error => {
-  console.error(error);
-})
-```
+## Approfondimento:
+L'autenticazione di base è una tecnica di autenticazione molto semplice utilizzata nel protocollo HTTP. È stato introdotto nella specifica HTTP/1.0 e consiste nell'invio di un nome utente e una password, separati da due punti, codificati in Base64 e inseriti nell'header di autorizzazione della richiesta. Sebbene sia molto comune, è considerata non sicura poiché il nome utente e la password sono trasmessi in chiaro e possono essere facilmente intercettati. Un'alternativa più sicura è l'autenticazione basata su token, che utilizza un token generato dal server per verificare l'identità dell'utente.
 
-In questo esempio, stiamo inviando una richiesta GET all'endpoint "http://www.example.com/api/resource" con le credenziali specificate. Nota che usiamo `btoa()` per codificare le credenziali in base64 prima di includerle nell'header di autorizzazione.
-
-## Approfondimento
-
-Quando si invia una richiesta HTTP con autenticazione di base, è importante comprendere alcuni concetti chiave:
-
-- Le credenziali devono essere codificate in base64 per essere incluse nell'header di autorizzazione.
-- Le credenziali inviate in una richiesta HTTP non sono crittografate, quindi è importante utilizzare HTTPS per proteggere la comunicazione.
-- Per decodificare le credenziali in base64, puoi utilizzare la funzione `atob()` in Javascript.
-- Se si riceve un codice di errore 401 (non autorizzato) in risposta alla richiesta, è probabile che le credenziali fornite siano errate.
-
-## Vedi Anche
-
-- [Documentazione ufficiale di MDN su `fetch()`](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
-- [Tutorial su autenticazione di base in Javascript](https://www.sitepoint.com/basic-http-authentication-node-js/)
-- [Articolo sulle best practices per la sicurezza delle API](https://www.owasp.org/index.php/REST_Security_Cheat_Sheet#Communications)
+## Vedi anche:
+- [Autenticazione HTTP di base - MDN Web Docs](https://developer.mozilla.org/it/docs/Web/HTTP/Authentication)
+- [HTTP/1.0 - Specifica RFC](https://tools.ietf.org/html/rfc1945)

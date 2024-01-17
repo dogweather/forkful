@@ -10,39 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-Are you tired of your Elm code being perfect and error-free all the time? Do you miss the thrill of debugging and troubleshooting? Then writing to standard error is the solution for you! With standard error, you can intentionally create errors and see how your code handles them. It's a great way to test and improve your code.
+Writing to standard error in Elm allows programmers to display error messages or debug information to a designated console instead of the regular output. This helps developers to easily identify and troubleshoot issues while their code is running.
 
-## How To
+## How to:
 
-Writing to standard error in Elm is simple. Just follow these steps:
-
-1. Import the `Debug` module by adding `import Debug` at the top of your code.
-2. Use the function `Debug.crash` to create an error. You can pass in a custom error message as a parameter.
-3. If you want to include a custom value in the error message, you can use string interpolation with `Debug.toString` to convert the value to a string.
-4. To view the error message and value, run your Elm code in a browser and open the console.
-
-Here is an example of code with writing to standard error:
+To write to standard error in Elm, you can use the `Debug.crash` function. Here's an example:
 
 ```Elm
-import Debug
+import Debug exposing (crash)
 
-myAge : Int
-myAge = 25
+sayHello : String -> String
+sayHello name =
+    if String.isEmpty name then
+        crash "Name cannot be empty!"
+    else
+        "Hello, " ++ name ++ "!"
 
-Debug.crash ("I am " ++ (Debug.toString myAge) ++ " years old.")
+sayHello ""
 ```
 
-This will create an error in the console that says "I am 25 years old."
+The above code will write the error message "Name cannot be empty!" to the console instead of producing a regular output.
 
-## Deep Dive
+## Deep Dive:
 
-When you use `Debug.crash`, a `Debug.crash` function is called, which in turn calls the Elm function `Native.Debug.crash`. This function creates a JavaScript error with the specified message and value. This error is then caught and displayed in the console.
+In the early days of programming, developers used to print error messages and debug information directly to the output stream, which made it difficult to distinguish them from the regular output. Writing to standard error was introduced as a way to separate these messages and make debugging easier.
 
-One thing to note is that using `Debug.crash` is not recommended for production code. It should only be used for testing and debugging purposes.
+In Elm, the `Debug.crash` function is the only way to write to standard error. Other programming languages may have multiple options for writing to this stream, such as `System.err` in Java or `Console.error` in JavaScript.
 
-## See Also
+## See Also:
 
-- [Elm's official documentation on Debugging](https://elm-lang.org/docs/debugging)
-- [The Debug module in Elm's standard library](https://package.elm-lang.org/packages/elm-lang/core/latest/Debug)
+- [Debug module documentation](https://package.elm-lang.org/packages/elm/core/latest/Debug)
+- [Debugging Elm Application](https://guide.elm-lang.org/debugging/index.html)

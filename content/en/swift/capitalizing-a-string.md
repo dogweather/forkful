@@ -10,36 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+# What & Why?
 
-Capitalizing a string may seem like a trivial task, but it can actually have important use cases in programming. It can make user input more consistent, improve the readability of text, and even comply with specific formatting requirements for data reports or presentations.
+Capitalizing a string means converting the first character of the string to uppercase, and leaving the rest of the characters as is. Programmers do this to standardize the appearance of their output and to make it more readable.
 
-## How To
+# How to:
 
-In Swift, capitalizing a string can be achieved using the `String` method `capitalized` or `capitalizedFirstLetter()`. Let's take a look at some code examples:
+Here is an example of how to capitalize a string in Swift:
 
 ```Swift
-let name = "john"
-let capitalized = name.capitalized
-print(capitalized) // Prints "John"
-
-let sentence = "this is a sentence."
-let capitalizedFirst = sentence.capitalizedFirstLetter()
-print(capitalizedFirst) // Prints "This is a sentence."
+var exampleString = "hello world"
+exampleString.capitalized  // Output: "Hello world"
 ```
 
-In the first example, we used the `capitalized` method to capitalize the first letter of the string "john". In the second example, we used the `capitalizedFirstLetter()` method to capitalize the first letter of each word in the string "this is a sentence."
+You can also make the first letter of every word in a string uppercase, while keeping the rest lowercase, by using the `capitalized(with:)` method. Here's an example:
 
-Keep in mind that these methods will only capitalize the first letter of each word in the string, not the entire string itself.
+```Swift
+var multiWordString = "this is a multi-word string"
+multiWordString.capitalized(with: Locale(identifier: "en_US")) // Output: "This Is A Multi-Word String"
+```
 
-## Deep Dive
+# Deep Dive
 
-The `String` method `capitalized` is based on the current locale of the device, meaning it will follow the capitalization rules of the user's language and location. This can be useful when working with international users or creating localized content.
+Capitalizing strings has been a common practice in programming since the early days of computing. It helps to maintain consistency and readability in code and output. Before Swift, languages like C and Java had built-in functions for capitalizing strings. In Swift, the `capitalized` and `capitalized(with:)` methods were introduced in version 2.0.
 
-Additionally, the `capitalized` method can also take in a parameter specifying the locale to be used. This can be helpful in situations where you need to ensure consistent capitalization across different devices or platforms.
+There are alternative ways to capitalize strings in Swift, such as using the `uppercased()` and `lowercased()` methods or creating a custom function. However, the `capitalized` and `capitalized(with:)` methods are the most convenient and efficient options.
 
-## See Also
+When using the `capitalized(with:)` method, the language and cultural conventions can affect the output. In the example above, we used the "en_US" locale identifier to ensure that the string follows the conventions of American English. You can use "en_UK" for British English, "fr_FR" for French, "de_DE" for German, etc.
 
-- [Apple's documentation on the `capitalized` method](https://developer.apple.com/documentation/swift/string/3126871-capitalized)
-- [A tutorial on capitalizing strings in Swift](https://www.hackingwithswift.com/quick-start/swiftui/how-to-capitalize-the-first-letter-of-a-string)
-- [Using Swift's `capitalized` method with localization](https://useyourloaf.com/blog/localized-string-capitalization-in-swift/)
+# See Also
+
+To learn more about manipulating strings in Swift, you can check out the official documentation on Strings and Characters: https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html

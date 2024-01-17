@@ -10,48 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-Writing to standard error is a common practice in Kotlin programming for displaying error messages and debugging code. It allows developers to catch and handle errors in their code, making the program more robust and user-friendly.
+## What & Why?
 
-## How To
-To write to standard error in Kotlin, you can use the ```System.err.println()``` function. This function takes in a message as a parameter and prints it to the standard error stream.
+Writing to standard error in Kotlin allows programmers to output error messages or log information in their code. This is especially useful for debugging purposes, as it allows developers to identify and fix errors in their code.
 
-```Kotlin
-fun main() {
-   // This message will be written to standard error
-   System.err.println("An error has occurred.")
-}
-```
+## How to:
 
-Running this code will produce the following output in the terminal:
-
-```
-An error has occurred.
-```
-
-Another way to write to standard error is by using the ```System.err.write()``` function. This function takes in a string as a parameter and writes it directly to the standard error stream.
+To write to standard error in Kotlin, use the writeText() function and specify the file "System.err". Here's an example:
 
 ```Kotlin
-fun main() {
-   // This string will be written to standard error
-   System.err.write("This is a standard error message")
-}
+System.err.writeText("Error: File not found")
 ```
 
-Running this code will produce the following output in the terminal:
+This will print the error message "Error: File not found" to the standard error stream.
 
-```
-This is a standard error message
-```
+## Deep Dive:
 
-## Deep Dive
-In Kotlin, standard error is typically used for displaying error messages and logging information. It is different from standard output (using the ```System.out.println()``` function) which is used for regular program output.
+Writing to standard error is a practice that has been around since the early days of programming. Initially, programmers would use it as a way to communicate with the user during runtime. However, as development tools and debugging techniques evolved, writing to standard error became primarily used for debugging purposes.
 
-By writing to standard error, developers can differentiate between normal program outputs and error messages, making it easier to identify and troubleshoot issues in the code. Additionally, using standard error also ensures that the error message is displayed even if the program crashes or throws an exception.
+Although writing to standard error is a common practice, there are alternatives that can also be used, such as writing to the standard output stream or using logging libraries. However, writing to standard error is still preferred for debugging due to its convenience and simplicity.
 
-It is important to note that standard error output is not displayed on the user interface but is typically redirected to the terminal or a log file. This prevents any interruption or clutter in the program's user interface.
+Internally, writing to standard error in Kotlin uses the standard error stream, which is used to output error messages or log information in the console. This stream is separate from the standard output stream, which is used for regular program output.
 
-## See Also
-- [Kotlin Documentation](https://kotlinlang.org/docs/home.html)
-- [System class in Kotlin](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-system/index.html)
-- [Error Handling in Kotlin](https://kotlinlang.org/docs/exceptions.html)
+## See Also:
+
+- [Kotlin Standard Streams Documentation](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-system/err.html)
+- [Logging Libraries for Kotlin](https://kotlinlang.org/docs/reference/logging.html)

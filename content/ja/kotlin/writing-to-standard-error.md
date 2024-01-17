@@ -1,7 +1,7 @@
 ---
-title:                "「標準エラーへの書き込み」"
-html_title:           "Kotlin: 「標準エラーへの書き込み」"
-simple_title:         "「標準エラーへの書き込み」"
+title:                "標準エラーへの書き込み"
+html_title:           "Kotlin: 標準エラーへの書き込み"
+simple_title:         "標準エラーへの書き込み"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Files and I/O"
@@ -10,37 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+## 何し金:
+標準エラーへの書き込みとは、プログラマーがデバッグに使用する方法です。エラーが発生したとき、プログラムは標準エラーにエラーメッセージを出力し、ユーザーに問題を特定するのに役立ちます。
 
-プログラミングをする際、標準エラー（standard error）に書き込むことは非常に重要です。エラーが発生した際に、標準エラーに書き込むことで、エラーの原因やその詳細を把握することができます。これにより、バグを見つける際に役立ちます。
-
-## 方法
-
-ここでは、Kotlinを使用して標準エラーに書き込む方法を紹介します。まず、次のように`System.err`を使用して標準エラーに書き込みます。
+## 方法：
+Kotlinでは、標準エラーにメッセージを書き込むには、System.err.println()メソッドを使用します。下記のコードを参考にしてください。
 
 ```Kotlin
-System.err.println("エラーメッセージ");
-```
-
-上記のコードを実行すると、コンソールにエラーメッセージが表示されます。また、`System.err`の代わりに`System.out`を使用することで、エラーではなく通常のメッセージを標準出力（standard output）に書き込むこともできます。
-
-## 深堀り
-
-標準エラーに書き込むことで、エラーの詳細を把握できます。例えば、以下のように例外（exception）のスタックトレース（stack trace）を標準エラーに書き込むことができます。
-
-```Kotlin
-try {
-  // 例外が発生する可能性のあるコード
-} catch (e: Exception) {
-  // 例外が発生した場合、スタックトレースを標準エラーに書き込む
-  e.printStackTrace(System.err)
+fun main() {
+    // エラーメッセージを標準エラーに書き込む
+    System.err.println("エラーが発生しました。")
 }
 ```
 
-このようにすることで、エラーが発生した箇所を特定し、バグを見つけることができます。
+実行すると、コンソールに「エラーが発生しました。」というメッセージが表示されます。
 
-## 参考リンク
+```Kotlin
+エラーが発生しました。
+```
 
-- [Kotlin公式ドキュメント](https://kotlinlang.org/docs/reference/)
-- [JavaプログラマーのためのKotlin入門](https://www.tohoho-web.com/ex/kotlin.html)
-- [Kotlinで例外処理を作成する方法](https://www.afternerd.com/blog/kotlin-exceptions/)
+## 深掘り：
+標準エラーへの書き込みは、プログラミングの歴史が古くからある方法です。現在では、標準エラーへの書き込みよりもより詳細なデバッグ情報を提供するために、ログやデバッガーを使用することが推奨されています。しかし、標準エラーへの書き込みは依然として標準的なデバッグ方法の1つです。
+
+## 関連サイト：
+- [The Kotlin Standard Library](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-system.err/index.html)
+- [Debugging with Kotlin](https://kotlinlang.org/docs/tutorials/debugging.html)

@@ -1,7 +1,7 @@
 ---
-title:                "문자열 연결하기"
-html_title:           "Elm: 문자열 연결하기"
-simple_title:         "문자열 연결하기"
+title:                "문자열 연결"
+html_title:           "Elm: 문자열 연결"
+simple_title:         "문자열 연결"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -10,61 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+## 무엇 & 왜?
+문자열 연결(concatenation)이란 무엇인지 알고 싶으신가요? 그럼 이 글을 읽어보세요! 문자열 연결은 두 문자열을 합쳐서 새로운 하나의 문자열로 만드는 것을 말합니다. 프로그래머들은 주로 문자열 연결을 사용하여 더 복잡한 문자열을 만들거나 변수에 저장된 값을 문자열로 변환할 때 사용합니다.
 
-문자열을 이어 붙이는 것에 대해 이야기하기 전에, 이것이 어떤 이유로 중요한지 알아야 합니다. 우리가 프로그래밍을 할 때, 종종 다른 문자열들을 합쳐서 더 큰 문자열을 만들어야 할 때가 있습니다. 예를 들어, 사용자 이름과 인사말을 결합하여 사용자에게 반가운 메시지를 보내는 경우가 있을 수 있습니다. 이러한 작업을 할 때, 문자열을 효율적이고 쉽게 이어 붙이기 위해 Elm에서는 `++` 연산자를 제공해줍니다.
-
-## 방법
-
-먼저, 두 개의 문자열을 `++` 연산자로 이어 붙이는 간단한 예제를 살펴보겠습니다.
+## 어떻게:
+문자열 연결을 한 줄로 간단하게 할 수 있어요! 
 ```Elm
-"안녕하세요, " ++ "John"
+let name = "Alice"
+let greeting = "Hello"
+
+let message = greeting ++ " " ++ name  //output: "Hello Alice"
 ```
 
-이 코드를 실행하면 아래와 같은 결과가 나옵니다.
+또는 여러 줄에 나눠서 할 수도 있어요.
 ```Elm
-"안녕하세요, John"
-```
-`++` 연산자는 왼쪽의 문자열에 오른쪽의 문자열을 결합하는 것으로, 두 개의 문자열을 합쳐 하나의 새로운 문자열을 만듭니다. 그리고 여러 개의 `++` 연산자를 연속해서 사용하면 더 많은 문자열을 이어 붙일 수 있습니다.
-```Elm
-"안녕하세요, " ++ "John" ++ "!!"
-```
-위의 코드를 실행하면 아래와 같은 결과가 나옵니다.
-```Elm
-"안녕하세요, John!!"
+let sentence = "This is a" ++ 
+               "long sentence" ++ 
+               "that needs to be" ++
+               "concatenated." //output: "This is a long sentence that needs to be concatenated."
 ```
 
-## 깊게 들어가기
+## 깊이 파고들기:
+(1) 역사적 맥락: 문자열 연결은 컴퓨터 과학에서 오래된 개념이에요. 처음에는 이를 위해 사용하는 별도의 함수가 없었기 때문에 프로그래머들은 더 복잡한 방법으로 문자열을 합치기도 했어요. 하지만 지금은 다양한 언어에서 문자열 연결을 지원하기 때문에 한 줄로 간단하게 할 수 있답니다.
 
-`++` 연산자는 두 개 이상의 문자열을 이어 붙이기가 가능하고, 문자열 뿐만 아니라 다른 데이터 타입도 `++` 연산자를 사용해 결합할 수 있습니다. 하지만 중요한 점은, `++` 연산자는 항상 왼쪽의 첫 번째 인자의 타입을 따라가게 된다는 것입니다. 따라서 두 번째 인자의 타입이 첫 번째 인자의 타입과 다르면 컴파일 에러가 발생합니다. 예를 들어 아래와 같이 정수와 문자열을 이어 붙이면 컴파일 오류가 발생합니다.
-```Elm
-42 ++ " is the answer"
-``` 
-위 코드를 실행하면 아래와 같은 에러가 발생합니다.
-```
--- TYPE MISMATCH ---------------------------------------------------- REPL
+(2) 대안: 더 많은 문자열 처리 옵션을 제공하는 언어도 있지만 대부분의 프로그래머들은 문자열 연결을 택하고 있어요.
 
-The left argument of (++) is causing a mismatch.
+(3) 구현 세부사항: Elm에서는 문자열 연결 연산자 ```++```를 제공하며, 뒤에 오는 문자열을 앞에 오는 문자열 뒤에 붙여줍니다. 
 
-48|   42 ++ " is the answer"
-       ^^
-(++) is expecting the left argument to be:
-
-    String
-
-But the left argument is:
-
-    number
-```
-
-따라서 항상 `++` 연산자를 사용할 때는 인자의 타입을 주의해서 사용해야 합니다.
-
-## 더 알아보기
-
-더 많은 문자열을 이어 붙이는 방법과 `++` 연산자의 특징에 대해 알아보려면 Elm 공식 문서에서 `String` 모듈을 살펴보시기 바랍니다. 또한 아래의 링크에서 저희가 다룬 내용과 관련된 기사들을 읽어보실 수 있습니다.
-
-## 관련 기사
-
-- [Elm 공식 문서](https://guide.elm-lang.org/strings/)
-- [Elm 프로그래밍 강좌: 문자열](https://taehunyl.com/2019/01/29/elm-strings/)
-- [데이터 형 변환](https://taehunyl.com/2019/01/29/elm-data-hycasting/)
+## 관련 자료:
+- Elm 공식 문서: https://guide.elm-lang.org/appendix/syntax.html
+- 문자열 연결 예제: https://elmprogramming.com/string-manipulation.html#concatenation

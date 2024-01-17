@@ -10,43 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+## 무엇 & 왜?
+패턴과 일치하는 문자를 삭제하는 것은 쉘 스크립트에서 종종 사용되는 기술입니다. 예를 들어, 파일 이름에서 특정 문자를 제거하거나, 문자열에서 특정 패턴을 가진 부분을 삭제할 수 있습니다. 프로그래머는 이를 사용하는 이유로는 문자열을 정제하거나 코드를 간결하게 유지하기 위해서입니다.
 
-이번 주제는 "패턴에 일치하는 문자를 삭제하는 방법"입니다. 주어진 작업을 처리하는 다양한 방법 중 하나로 이 기능을 알고 있으면 명령줄 환경에서 유용하게 사용할 수 있습니다.
-
-## 사용 방법
-
-예를 들어, "Hello, World!"라는 문자열에서 "o"를 삭제하는 코드는 다음과 같이 작성할 수 있습니다. 
-
+## 사용 방법:
 ```Bash
-echo "Hello, World!" | sed 's/o//g'
+# 파일 이름에서 .txt 확장자 제거하기
+filename="sample.txt"
+new_filename="${filename%.*}"
+echo "${new_filename}" # sample
+
+# 문자열에서 숫자 문자 제거하기
+string="abc123"
+new_string="${string//[0-9]}" 
+echo "${new_string}" # abc
 ```
+ 
+## 깊게 파헤치기:
+1. 패턴과 일치하는 문자를 삭제하는 기술은 grep이나 sed 같은 다른 명령어와 함께 사용될 수 있습니다.
+2. 또한, 사용자가 직접 삭제 함수를 정의해서 이를 사용할 수도 있습니다.
+3. 이 기능은 Bash 버전 2 이후부터 사용할 수 있습니다.
 
-이 코드는 sed (Stream EDitor) 라는 명령어를 사용하여 "s(o)"" 옵션을 통해 "o"를 빈 문자열로 바꿔주는 작업을 수행합니다. 따라서 출력된 결과는 "Hell, Wrld!"가 됩니다.
-
-## 딥 다이브
-
-패턴을 삭제하는 방식은 다양합니다. 여러분이 익숙한 명령어를 사용해도 되지만, 여기서는 sed를 사용하는 예를 들어보겠습니다. 
-
-- 일반적인 형식: `sed 's/pattern/replacement/flags'`
-
-이때 `pattern`은 삭제할 문자를 가리키며, `replacement`은 대체할 문자를 가리킵니다. `flags`에는 다양한 옵션을 추가하여 작업을 세부적으로 제어할 수 있습니다.
-
-- 예시: `sed 's/John/Doe/'`
-
-위의 예시에서는 "John"이라는 문자열이 "Doe"로 대체됩니다.
-
-이 외에도 `grep`, `awk`, `tr` 등 다양한 명령어를 사용하여 패턴을 삭제할 수 있습니다. 기존에 사용하던 명령어로도 충분히 가능합니다. 다양한 명령어를 알고 있으면 상황에 맞게 유연하게 사용할 수 있습니다.
-
-## 관련 정보
-
-참고할 만한 관련 정보와 링크를 모아봤습니다.
-
-- [Sed Command in Linux/Unix with Examples](https://www.geeksforgeeks.org/sed-command-in-linux-unix-with-examples/)
-- [grep vs sed vs awk: what to use, when?](https://stackoverflow.com/questions/7383287/grep-vs-sed-vs-awk-what-to-use-when)
-- [Linux sed Command Summary and Examples](https://www.guru99.com/sed-linux.html)
-
-## 참고
-
-- [Markdown Syntax Guide](https://www.markdownguide.org/basic-syntax/)
-- [Bash Reference Manual](https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html)
+## 관련 정보:
+- [리눅스 명령어 grep 사용법](https://www.clien.net/service/board/cm_linux/45795)
+- [리눅스 명령어 sed 사용법](https://www.clien.net/service/board/cm_linux/45886)
+- [Bash 버전 업데이트 내역](https://en.wikipedia.org/wiki/Bash_(Unix_shell))

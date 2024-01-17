@@ -1,7 +1,7 @@
 ---
-title:                "Vérifier l'existence d'un répertoire"
-html_title:           "C#: Vérifier l'existence d'un répertoire"
-simple_title:         "Vérifier l'existence d'un répertoire"
+title:                "Vérification de l'existence d'un répertoire"
+html_title:           "C#: Vérification de l'existence d'un répertoire"
+simple_title:         "Vérification de l'existence d'un répertoire"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Files and I/O"
@@ -10,38 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Qu'est-ce que c'est et pourquoi le faire?
 
-Vous vous demandez peut-être pourquoi il serait utile de vérifier l'existence d'un répertoire en utilisant du code C#. Et bien, si vous êtes en train de développer une application qui nécessite l'utilisation de fichiers, une des premières choses à faire est de s'assurer que le répertoire dans lequel vous allez travailler existe bien. Ainsi, vous évitez les erreurs inattendues lors de l'exécution de votre code.
+La vérification de l'existence d'un répertoire est une opération courante pour les programmeurs en C#. Il s'agit simplement de vérifier si un répertoire existe avant de tenter de l'utiliser dans votre code. Cela peut être utile pour éviter les erreurs lors de l'accès à un répertoire qui n'existe pas.
 
-##Comment faire
+## Comment faire:
 
-Pour vérifier si un répertoire existe en utilisant C#, il suffit d'appeler la méthode `Directory.Exists()` en lui passant le chemin du répertoire en paramètre. Voici un exemple de code :
+Il existe plusieurs façons de vérifier si un répertoire existe en C#. La plus simple consiste à utiliser la méthode `Directory.Exists()` de la classe `System.IO`, qui renvoie un booléen indiquant si le répertoire existe ou non. Voici un exemple de code montrant comment utiliser cette méthode:
 
 ```C#
-string chemin = @"C:\Users\Utilisateur\MesDocuments";
-if (Directory.Exists(chemin))
+if (Directory.Exists("chemin/vers/mon/répertoire"))
 {
-    Console.WriteLine("Le répertoire existe !");
+    Console.WriteLine("Le répertoire existe.");
 }
 else
 {
-    Console.WriteLine("Le répertoire n'existe pas");
+    Console.WriteLine("Le répertoire n'existe pas.");
 }
 ```
 
-Si le répertoire existe, vous verrez le message "Le répertoire existe !" apparaître dans la console. Sinon, le message "Le répertoire n'existe pas" s'affichera.
+Cela affichera "Le répertoire existe." si le répertoire existe effectivement, ou "Le répertoire n'existe pas." s'il n'existe pas.
 
-## Plongeon en profondeur
+## Plongeons plus profondément:
 
-Maintenant que vous savez comment vérifier l'existence d'un répertoire en utilisant C#, voici quelques informations supplémentaires qui pourraient vous être utiles :
+Avant la version 4.0 de .NET Framework, la méthode `Directory.Exists()` utilisait la méthode `GetFileAttributes()` de l'API Windows pour déterminer si un répertoire existait. Cependant, cette méthode n'était pas fiable dans certaines situations, comme lorsque l'utilisateur n'a pas les autorisations nécessaires pour accéder au répertoire. Depuis la version 4.0, la méthode utilise la méthode `FindFirstFile()` du système de fichiers Windows, ce qui est plus fiable.
 
-- La méthode `Directory.Exists()` renvoie un booléen : `true` si le répertoire existe, `false` sinon.
-- Si le répertoire donné en paramètre n'existe pas, la méthode `Directory.Exists()` renverra également `false`.
-- Si vous souhaitez créer le répertoire si celui-ci n'existe pas, vous pouvez utiliser la méthode `Directory.CreateDirectory()` qui créera automatiquement le répertoire si celui-ci n'existe pas.
+Une alternative à l'utilisation de `Directory.Exists()` est d'utiliser la méthode `Directory.EnumerateDirectories()` pour obtenir une liste de tous les répertoires dans un chemin spécifique, puis de vérifier si le répertoire recherché est présent dans cette liste.
 
-## Voir aussi
+## Voir aussi:
 
-- [Documentation officielle de Microsoft sur la méthode Directory.Exists()](https://docs.microsoft.com/fr-fr/dotnet/api/system.io.directory.exists?view=netcore-3.1)
-- [Guide complet sur la gestion des fichiers et répertoires en C#](https://docs.microsoft.com/fr-fr/dotnet/csharp/programming-guide/file-system/)
-- [Tutoriel sur la création de répertoires en C#](https://www.youtube.com/watch?v=nuBxZjkiJ7s) (vidéo en anglais)
+- [La documentation officielle sur la méthode Directory.Exists()](https://docs.microsoft.com/fr-fr/dotnet/api/system.io.directory.exists)
+- [Un article de blog sur les différentes façons de vérifier l'existence d'un répertoire en C#](https://www.c-sharpcorner.com/article/how-to-check-if-a-directory-exists-in-C-Sharp/)

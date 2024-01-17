@@ -1,7 +1,7 @@
 ---
-title:                "Att skriva tester"
-html_title:           "TypeScript: Att skriva tester"
-simple_title:         "Att skriva tester"
+title:                "Skriva tester"
+html_title:           "TypeScript: Skriva tester"
+simple_title:         "Skriva tester"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Testing and Debugging"
@@ -10,37 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
 
-Varför ska man bry sig om att skriva tester när man redan har en fungerande kod? Det är en vanlig fråga som många programmerare ställer sig. Men faktum är att tester är en väsentlig del av den moderna utvecklingsprocessen. Genom att skriva tester kan man säkerställa att koden fungerar som den ska och undvika oväntade buggar som kan uppstå när man gör ändringar i koden.
+Skrivande av tester är en metod som används av programmerare för att kontrollera och validera funktionerna i koden. Det hjälper till att upptäcka eventuella fel eller buggar i koden innan den implementeras och bidrar till att säkerställa att koden uppfyller de förväntade kraven.
 
-Att skriva tester är också ett av de bästa sätten att förbättra kvaliteten på sin kod. Genom att testa sin kod kan man hitta och åtgärda eventuella fel och förbättra användarupplevelsen. Dessutom kan tester fungera som dokumentation av koden och underlätta för andra utvecklare att förstå och bidra till projektet.
+## Hur man gör:
 
-## Hur man skriver tester i TypeScript
+För att skriva tester i TypeScript, börja med att importera nödvändiga moduler för tester i din kod. Sedan kan du definiera dina testfall och använda sig av olika assert-funktioner för att kontrollera att resultatet matchar förväntningarna. Nedan finns ett exempel på hur man kan skriva enkla tester för en funktion som beräknar summan av två tal:
 
-Att skriva tester i TypeScript är enkelt. Man kan använda biblioteket "Jasmine" för att skriva enhetstester. Här är ett exempel på hur en simpel test skulle kunna se ut:
+```TypeScript
+import { assert } from 'chai';
 
-````TypeScript
-describe('Calculation functions', () => {
-  it('should add two numbers correctly', () => {
-    const result = add(3, 5);
-    expect(result).toBe(8);
+function add(x: number, y: number): number {
+  return x + y;
+}
+
+describe('add function', () => {
+  it('should return the sum of two numbers', () => {
+    const result = add(3, 2);
+    assert.equal(result, 5);
   });
-});
-````
+})
+```
 
-I detta exempel har vi en describe-funktion som innehåller ett antal olika tester. Inuti detta block använder vi en it-funktion för att specificera vad som förväntas hända. Vi kör funktionen vi vill testa och sedan lovar vi att resultatet ska vara det vi förväntar oss, genom att använda expect-funktionen.
+När testerna körs kommer följande resultat att visas:
 
-## Fördjupning
+```bash
+TAP version 13
+1..1
+ok 1 add function should return the sum of two numbers
+# pass 1
+# skip 0
+# todo 0
+# fail 0
+```
 
-När man skriver tester är det viktigt att tänka på att testa både positiva och negativa scenarier. Detta innebär att man bör testa både förväntade och oväntade användningsfall. Det är också bra att testa gränsvärden för att säkerställa att koden hanterar dem på ett korrekt sätt.
+## Djupdykning:
 
-En annan viktig aspekt av tester är att de bör vara isolerade. Det betyder att varje test bör testa en specifik funktion eller ett specifikt scenario, utan att påverkas av andra delar av koden. Detta gör det enklare att felsöka och underhålla tester i framtiden.
+Att skriva tester har blivit en alltmer populär metod för att förbättra kvaliteten och stabiliteten i kod. Det hjälper till att upptäcka och åtgärda eventuella fel eller buggar i ett tidigt skede av utvecklingsprocessen, vilket minskar risken för problem i produktionsmiljön.
 
-Det finns också olika typer av tester som man kan skriva i TypeScript, såsom integrations- och regressionstester. Det är upp till utvecklaren att bestämma vilken typ av tester som är lämpliga för varje projekt.
+Det finns olika alternativ för att skriva tester, inklusive enhetstester, integreringstester och systemtester. Dessa kan användas tillsammans eller separat beroende på den specifika situationen.
 
-## Se även
+För att implementera tester i TypeScript kan använda sig av populära ramverk som Jasmine, Mocha eller Jest. Dessa ramverk har inbyggda funktioner och verktyg som underlättar skrivandet av tester och ger användaren möjlighet att utföra specifika uppgifter, såsom smidig assertion och simulering av olika scenarier.
 
-- [Jasmine dokumentation](https://jasmine.github.io/)
-- [Hur man tester sin kod i TypeScript](https://www.sitepoint.com/unit-test-javascript-mocha-chai/)
-- [En introduktion till automatiserade tester i TypeScript](https://www.codeproject.com/Articles/1249585/Automated-Tests-in-TypeScript)
+## Se även:
+
+Här är några användbara resurser för att lära dig mer om att skriva tester i TypeScript:
+
+- https://www.typescriptlang.org/docs/handbook/testing.html
+- https://www.sitepoint.com/javascript-testing-beginners-guide-part-1/
+- https://medium.com/@nsisodiya/typescript-testing-f0546ec3993a

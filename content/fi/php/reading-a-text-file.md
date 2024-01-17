@@ -1,7 +1,7 @@
 ---
-title:                "Tiedoston lukeminen"
-html_title:           "PHP: Tiedoston lukeminen"
-simple_title:         "Tiedoston lukeminen"
+title:                "Tekstitiedoston lukeminen"
+html_title:           "PHP: Tekstitiedoston lukeminen"
+simple_title:         "Tekstitiedoston lukeminen"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Files and I/O"
@@ -10,27 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mikä & Miksi?
+Tekstitiedoston lukeminen tarkoittaa tiedon lukemista tekstimuodossa olevasta tiedostosta. Ohjelmoijat käyttävät tätä toimintoa usein, kun he haluavat käsitellä tai tallentaa tietoa, joka ei ole tietokannassa.
 
-Tekstitiedoston lukeminen on olennainen osa PHP-ohjelmointia, sillä usein haluamme käsitellä ja tallentaa tekstimuotoisia tietoja. Tässä artikkelissa näytämme, miten voit lukea tekstitiedostoja PHP:lla ja miten voit hyödyntää tätä taitoa omassa ohjelmointityössäsi.
-
-## Miten tehdä se
-
-Lukeminen tekstitiedosto PHP:lla on helppoa käyttäen file_get_contents()-funktiota. Funktio ottaa parametrinaan tiedoston nimen ja palauttaa tiedoston sisällön merkkijonona. Voit tallentaa palautetun merkkijonon muuttujaan ja käyttää sitä edelleen. Katso alla oleva esimerkki:
-
+## Kuinka:
 ```PHP
-$tiedosto = file_get_contents("tiedostonimi.txt");
-echo $tiedosto;
+$file = fopen("tiedosto.txt", "r"); // Avataan tiedosto lukutilassa
+
+if($file){ // Tarkistetaan, että tiedoston avaaminen onnistui
+
+  while(($line = fgets($file)) !== false){ // Luetaan tiedosto rivi kerrallaan, kunnes saavutetaan tiedoston loppu
+    echo $line; // Tulostetaan rivi
+  }
+
+  fclose($file); // Suljetaan tiedosto
+
+} else{
+  echo "Tiedoston avaaminen epäonnistui.";
+}
+```
+Esimerkkitiedosto (tiedosto.txt):
+```
+Tämä on esimerkkilause.
+Tämä on toinen esimerkkilause.
+```
+Esimerkkituloste:
+```
+Tämä on esimerkkilause.
+Tämä on toinen esimerkkilause.
 ```
 
-Tällä koodilla voit lukea tiedoston ja tulostaa sen sisällön näytölle. Voit myös käyttää muita PHP:n tiedostonkäsittelyfunktioita, kuten fopen() ja fread(), tarkempien lukemismahdollisuuksien saavuttamiseksi.
+## Syvemmälle:
+Tekstitiedoston lukeminen on ollut osa ohjelmointia jo pitkään. Ennen PHP:n suosiota, CGI-skripteissä käytettiin usein Shell-skriptejä tekstitiedostojen lukemiseen ja käsittelyyn. Toinen vaihtoehto tekstitiedoston lukemiseen on käyttää PHP:n file()-funktiota, joka palauttaa tekstitiedoston sisällön taulukkona, jossa jokainen rivi on omassa indeksissään.
 
-## Syventävää tietoa
-
-Tiedoston lukeminen PHP:lla onnistuu myös eri tiedostomuodoissa, kuten CSV ja JSON. Voit käyttää PHP:n sisäänrakennettuja funktioita, kuten fgetcsv() ja json_decode(), näiden tiedostotyyppien käsittelyyn. Lisäksi voit käyttää erilaisia hakutoimintoja tiedoston sisällön tarkasteluun.
-
-## Katso myös
-
-- PHP:n virallinen dokumentaatio tiedostonkäsittelyfunktioista: https://www.php.net/manual/en/ref.filesystem.php
-- W3Schools opetusohjelma tiedoston lukemisesta PHP:lla: https://www.w3schools.com/php/php_file.asp
-- PHP-käyttäjätuen keskusteluketju tiedoston lukemisesta: https://stackoverflow.com/questions/9222973/how-to-read-a-file-line-by-line-to-an-array-in-php
+## Katso myös:
+- PHP:n virallinen dokumentaatio tiedostojen käsittelyyn liittyen: https://www.php.net/manual/en/ref.filesystem.php
+- Tiedostojen käsittely Shell-skripteissä: https://www.shellscript.sh/tips/file_read.html

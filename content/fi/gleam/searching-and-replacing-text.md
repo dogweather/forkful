@@ -1,7 +1,7 @@
 ---
-title:                "Tekstin etsiminen ja korvaaminen"
-html_title:           "Gleam: Tekstin etsiminen ja korvaaminen"
-simple_title:         "Tekstin etsiminen ja korvaaminen"
+title:                "Tekstin etsiminen ja vaihtaminen"
+html_title:           "Gleam: Tekstin etsiminen ja vaihtaminen"
+simple_title:         "Tekstin etsiminen ja vaihtaminen"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -10,33 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä & Miksi?
 
-Oletko koskaan halunnut muuttaa tiettyjä tekstejä koodistasi? Gleamilla tämä onnistuu helposti ja nopeasti.
+Hakeminen ja tekstin korvaaminen on tärkeä osa ohjelmoinnissa! Se tarkoittaa sitä, että voit etsiä tietyt kohdat tiedostosta ja korvata ne uudella tekstillä. Tämä on erityisen hyödyllistä, kun sinun pitää tehdä samanlaisia muutoksia useissa kohdissa koodissasi.
 
-## Kuinka tehdä
-
-Tarvitset vain `replace` toiminnon ja sen parametreiksi annetaan etsittävä teksti, korvaava teksti ja alkuperäinen teksti, jota haluat muokata. Katso alla Gleamilla kirjoitettu esimerkki:
+## Kuinka:
 
 ```Gleam
-replace("vanha", "uusi", "Tämä on vanha teksti.")
+String.replace("Tervetuloa, maa!", "maa", "Gleam")
 ```
 
-Tämä koodi korvaa `Tämä on vanha teksti` tekstin `Tämä on uusi teksti` tekstiksi. Helppoa, eikö?
-
-## Syvemmälle
-
-Jos haluat tehdä monimutkaisempia muutoksia tekstissä, voit käyttää `regex_replace` funktiota. Se mahdollistaa säännöllisten lausekkeiden käytön, jolloin voit etsiä ja korvata tekstejä tietyillä säännöillä.
-
-Tässä esimerkki, jossa haluamme vaihtaa kaikki numerot tekstin "numero" tekstiksi:
+Tämä koodinpätkä korvaa sanan "maa" tekstissä "Tervetuloa, maa!" Gleam-sanalla, ja lopputuloksena on "Tervetuloa, Gleam!".  Voit myös käyttää säännöllisiä lausekkeita hakemiseen ja korvaamiseen:
 
 ```Gleam
-regex_replace("\\d", "numero", "123 - tämä sisältää numeroita.")
+Regex.replace(~r/banaani/, "Äpple", "Minun suosikkiruoka on banaani")
 ```
 
-Tämä tuottaa seuraavan tuloksen: `numero - tämä sisältää numeroita.`
+Tässä esimerkissä säännöllinen lauseke etsii sanan "banaani" ja korvaa sen tekstillä "Äpple", jolloin lopputuloksena on "Minun suosikkiruoka on Äpple".
 
-## Katso myös
+## Syvällinen sukellus:
 
-* Gleamin dokumentaatio "String" moduulista: https://gleam.run/modules/std/string/
-* Regular expressions oppimateriaalit: https://regexone.com/ ja https://www.regular-expressions.info/
+Hakeminen ja tekstin korvaaminen on ollut käytössä ohjelmistoissa jo pitkään. Aiemmin sitä tehtiin manuaalisesti, mutta nykyään siihen on tarjolla monia eri työkaluja ja ohjelmistoja. Esimerkiksi Unix-järjestelmissä käytetään usein komentoja kuten sed ja awk tekstien muokkaamiseen ja korvaamiseen.
+
+## Katso myös:
+
+Voit lukea lisää Gleamin tekstin korvaamisesta dokumentaatiostamme: [https://gleam.run/documentation/strings/](https://gleam.run/documentation/strings/)
+
+Voit myös tutustua muihin hyödyllisiin ohjelmistojen kirjoittamisen vinkkeihin meidän blogistamme: [https://blog.gleam.run/](https://blog.gleam.run/)

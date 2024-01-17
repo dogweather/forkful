@@ -1,7 +1,7 @@
 ---
-title:                "Escrevendo para o erro-padrão"
-html_title:           "Elixir: Escrevendo para o erro-padrão"
-simple_title:         "Escrevendo para o erro-padrão"
+title:                "Escrevendo para o erro padrão"
+html_title:           "Elixir: Escrevendo para o erro padrão"
+simple_title:         "Escrevendo para o erro padrão"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Files and I/O"
@@ -10,33 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+## O que e por que?
 
-Escrever para a saída padrão de erro (standard error) é uma forma de melhorar a usabilidade e confiabilidade de seus programas Elixir. Além disso, isso pode ajudar a solucionar problemas e depurar erros em seu código de forma mais eficiente.
+Escrever para o erro padrão é uma técnica comum usada por programadores para direcionar mensagens de erro e depuração em seus programas. Ao invés de imprimir essas mensagens na saída padrão, elas são enviadas para o erro padrão, que é normalmente redirecionado para o console ou registrado em um arquivo de log. Isso permite que os programadores vejam essas mensagens de forma separada da saída do programa, facilitando a identificação e correção de erros.
 
-## Como Fazer
+## Como fazer:
 
-Usar a função `IO.puts/2` com o `:stderr` como primeiro argumento é a maneira mais simples de escrever para a saída de erro padrão em Elixir. Observe o código abaixo como exemplo:
+```elixir
+IO.puts("Olá, mundo!") # Saída padrão
+IO.puts("Algo deu errado.") # Saída de erro
 
-```Elixir
-IO.puts(:stderr, "Este é um erro de exemplo.")
+# Saída:
+Olá, mundo!
+Algo deu errado.
 ```
 
-Isso irá imprimir a mensagem "Este é um erro de exemplo." na saída de erro padrão. Você também pode usar outras funções de saída, como `IO.inspect/2`, para direcionar a saída para a saída de erro padrão.
+## Mergulho profundo:
 
-## Mergulho Profundo
+Escrever para o erro padrão é uma prática comum que remonta aos primórdios da programação. Antes dos consoles e arquivos de log, os programadores costumavam exibir mensagens de erro diretamente no terminal, mesmo que não fossem lançadas como exceções. Existem diversas formas de se escrever para o erro padrão em Elixir, sendo a mais comum através do uso da função `IO.puts/1`. Outra opção é utilizar o módulo `Logger` para registrar mensagens de erro de forma mais estruturada em arquivos de log.
 
-Além de simplesmente imprimir mensagens de erro, também é possível formatar e colorir a saída para facilitar a identificação dos erros. Você pode usar a biblioteca `ANSI` para adicionar cores aos seus erros, veja o exemplo abaixo:
+## Veja também:
 
-```Elixir
-require ANSI
-
-IO.puts(:stderr, "Este é um " <> ANSI.colorize("erro", :red) <> " de exemplo.")
-```
-
-Isso irá imprimir a mensagem "Este é um erro de exemplo." em vermelho na saída de erro padrão. Além disso, você também pode definir os códigos de saída para diferentes tipos de erros, o que pode ajudar na identificação e tratamento desses erros.
-
-## Veja Também
-
-- Documentação oficial Elixir sobre escrita para a saída de erro padrão: https://hexdocs.pm/elixir/IO.html#puts/2
-- Tutorial sobre saída de erro padrão em Elixir: https://elixircasts.io/error-handling-in-elixir-using-puts-to-print-to-stderr
+- Documentação do Elixir: http://elixir-lang.org/docs.html
+- Comunidade brasileira de Elixir: https://elixir-brasil.org/
+- Blog oficial do Elixir: https://elixir-lang.org/blog/

@@ -10,37 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 为什么
+## 什么是文本文件？为什么程序员要这样做？
+文本文件是一种存储纯文本数据的文件，它只包含可读的字符，而没有任何格式或样式。程序员通常会读取文本文件，因为它可以帮助他们从文件中提取数据，如用户信息或配置设置。
 
-为什么要阅读文本文件？一般来说，文本文件是一种最常见的文件格式，它包含了文本数据，很多软件也都以文本文件作为输入和输出。因此，了解如何读取文本文件是一项非常基础的技能，可以帮助我们更好地处理数据和编写代码。
+## 如何实现读取文本文件？
+参考以下代码示例：
+```
+//首先，我们需要一个文件路径的字符串
+let filePath = "/Users/username/Documents/sample.txt"
 
-# 如何做
-
-阅读文本文件有几种不同的方法，但在Swift中最常用的是使用`String`类的`init(contentsOfFile:encoding:)`方法。首先，我们需要创建一个`String`类型的变量来存储从文本文件读取的内容，然后使用`init`方法来打开我们想要读取的文件。代码示例如下：
-
-```Swift
-if let filePath = Bundle.main.path(forResource: "sample", ofType: "txt") {
-    // filePath为文本文件的路径
-    do {
-        let content = try String(contentsOfFile: filePath, encoding: .utf8)
-        // 在这里我们可以处理从文件中读取的内容
-        print(content)
-    } catch {
-        // 如果出现错误，可以在这里进行处理
-        print(error)
-    }
+//然后，使用FileManager类的实例来检查文件是否存在
+let fileManager = FileManager.default
+if fileManager.fileExists(atPath: filePath) {
+    //如果文件存在，我们可以使用String类的init方法来读取文件内容
+    let fileContent = try! String(contentsOfFile: filePath)
+    print(fileContent) //输出文件内容
+} else {
+    print("文件不存在")
 }
 ```
 
-以上代码中，我们首先使用`Bundle`类的`path(forResource:ofType:)`方法来获取文本文件的路径，再通过`String`的`try`和`catch`语句来捕获可能发生的错误。如果一切顺利，我们就可以通过`content`变量来访问从文本文件中读取的内容。
+输出结果：
+```
+Hello, world!
+This is a sample text file.
+```
 
-# 深入探讨
+## 深入了解
+- 文本文件最早出现于计算机发明之初，它们是一种简单的方式来存储和传输数据。现在仍然被广泛使用。
+- 除了读取文件内容，程序员还可以使用写入文件的方法来修改文本文件。
+- 在Swift中，除了使用String类来读取文本文件，还可以使用NSData类或NSArray类来处理字节和行级数据。
 
-除了使用`String`的`init`方法，还有其他一些方法可以用来读取文本文件。例如，我们可以使用`NSString`类的`contentsOfFile:usedEncoding:error:`方法来获取文件内容和编码，并在代码中进行进一步处理。此外，Swift也提供了一些用于处理文件和目录的API，如`FileManager`和`FileHandle`类。如果想要更深入地了解如何读取文本文件，可以阅读[官方文档](https://developer.apple.com/documentation/foundation/strings_and_text)或搜索相关的教程。
-
-# 参考资料
-
-- [Swift语言官方网站](https://swift.org/)
-- [Swift官方文档](https://developer.apple.com/documentation/swift)
-- [Swift编程语言入门指南](https://docs.swift.org/swift-book/)
-- [开发者社区](https://developer.apple.com/forums/)
+## 参考资料
+- [Swift学习网站](https://swiftgg.com)
+- [Swift的文本处理指南](https://www.hackingwithswift.com/articles/141/the-complete-guide-to-swift-strings)

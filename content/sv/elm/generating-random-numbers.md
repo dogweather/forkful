@@ -1,7 +1,7 @@
 ---
-title:                "Skapa slumpmässiga tal"
-html_title:           "Elm: Skapa slumpmässiga tal"
-simple_title:         "Skapa slumpmässiga tal"
+title:                "Generera slumpmässiga nummer"
+html_title:           "Elm: Generera slumpmässiga nummer"
+simple_title:         "Generera slumpmässiga nummer"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Numbers"
@@ -10,61 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
+Generering av slumpmässiga tal är en viktig del av programmering då det tillåter oss att skapa variation och oväntade resultat i våra program. Det är en vanlig teknik som används för att skapa spel, simuleringar och mycket mer.
 
-Att generera slumpmässiga nummer är en vanlig uppgift inom många programmeringsprojekt. Det kan ha många olika användningsområden, från spelutveckling till datavisualisering. Att kunna producera slumpmässiga nummer är en viktig programmeringsfärdighet som kan hjälpa till att göra programmen mer intressanta och dynamiska.
-
-## Så här
-
-För att generera slumpmässiga nummer i Elm, används funktionen `Random.generate`. Den tar två argument: en generatorfunktion och en signal för att kommunicera med Elm Runtime-systemet. Detta är ett exempel på hur man kan använda funktionen för att generera en lista med 10 slumpmässiga heltal mellan 1 och 100:
+## Hur to?
+Elm har inbyggda funktioner för att hantera slumpmässiga tal, vilket gör det enkelt och effektivt att implementera i våra program. Nedan finns ett exempel på hur man genererar ett slumpmässigt tal mellan 1 och 10 i Elm:
 
 ```Elm
-module Main exposing (..)
+import Random
 
-import Html exposing (text)
-import Random exposing (Generator, int, step, generate)
-
-main =
-  Html.beginnerProgram
-    { model = 0
-    , view = view
-    , update = update
-    }
-
-type Msg
-  = GenerateRandList
-
-view model =
-  text (String.fromInt model)
-
-update msg model =
-  case msg of
-    GenerateRandList ->
-      (model, Random.generate (chosenList 10 1 100) RandList)
-
-chosenList : Int -> Int -> Int -> Generator (List Int)
-chosenList count min max =
-  Random.list count (int min max)
-
-type RandList = RandList (List Int)
-
-randListSignal : Signal RandList
-randListSignal =
-  Signal.map RandList (Random.step chosenList)
-
+getNum : Int
+getNum =
+   Random.int 1 10
 ```
 
-### Output:
-![Output Image](https://i.imgur.com/TEwn9F6.png)
+Detta kommer att returnera ett slumpmässigt heltal mellan 1 och 10 varje gång funktionen anropas. Om du vill generera ett slumpmässigt tal mellan två bestämda gränser kan du använda funktionen `Random.int` med önskade värden.
 
 ## Djupdykning
+Den första implementationen av slumpmässiga tal i datorer var enkel och baserades på användning av fysiska processer, som exempelvis radioaktivt sönderfall. Idag finns det dock många olika sätt att generera slumpmässiga tal, varav vissa är mer effektiva och tillförlitliga än andra. Elm använder en algoritm som heter XorShift för att generera sina slumpmässiga tal, vilket är en populär metod inom programmering.
 
-Elm använder sig av en pseudo-slumpmässig algoritm för att generera de slumpmässiga numren. Detta kan låta som en komplicerad process, men det enda vi behöver veta är att det är tillräckligt för de flesta användningsområden.
-
-För de som är intresserade av att lära sig mer om hur slumpmässiga tal genereras och vilka algoritmer som används, finns det många resurser tillgängliga på nätet. En stor fördel med att lära sig hur detta fungerar är att man kan skapa anpassade generatorfunktioner för att producera specifika typer av slumpmässiga nummer, vilket kan vara användbart i vissa scenarier.
+Det finns också alternativ till Elm för att skapa slumpmässiga tal, som exempelvis PureScript och Haskell. Dessa språk erbjuder också inbyggda funktioner för att hantera slumpmässiga tal och har liknande tillvägagångssätt som Elm.
 
 ## Se även
+Vill du lära dig mer om hur slumpmässiga tal fungerar i Elm? Här är några användbara resurser: 
 
-- [Elm Random package](https://package.elm-lang.org/packages/elm/random/latest/)
-- [Random Number Generator Algorithm](https://en.wikipedia.org/wiki/Random_number_generation)
-- [Generating Random Numbers in Elm](https://www.youtube.com/watch?v=1Gt9eV0dqIY)
+- [Elm's officiella dokumentation om Random Library][https://package.elm-lang.org/packages/elm/random/latest/]
+- [En interaktiv tutorial om Elm][https://elmprogramming.com/]

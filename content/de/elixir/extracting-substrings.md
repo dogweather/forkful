@@ -1,7 +1,7 @@
 ---
-title:                "Extrahieren von Teilzeichenketten"
-html_title:           "Elixir: Extrahieren von Teilzeichenketten"
-simple_title:         "Extrahieren von Teilzeichenketten"
+title:                "Unterstrings extrahieren"
+html_title:           "Elixir: Unterstrings extrahieren"
+simple_title:         "Unterstrings extrahieren"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -10,35 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum 
+## Was & Warum?
 
-Es gibt viele Gründe, warum man in der Programmierung Substrings extrahiert. Zum Beispiel kann es hilfreich sein, wenn man Texte analysieren oder manipulieren möchte. Oder wenn man bestimmte Daten aus einer Zeichenkette extrahieren möchte. In diesem Artikel werden wir uns genauer ansehen, wie man mit Elixir Substrings extrahiert.
+Das Entnehmen von Teilstrings bezieht sich auf die Aktion, bestimmte Teile eines Strings aus einem größeren Text zu extrahieren. Programmierer verwenden dies, um einen bestimmten Teil eines Strings zu isolieren, der für die Ausführung ihres Codes benötigt wird.
 
-## Wie geht's 
+## Wie tue ich das?
 
-Um Substrings in Elixir zu extrahieren, können wir die `String.slice/3` Funktion verwenden. Diese Funktion nimmt drei Argumente: Den String, den Startindex und die Länge des Substrings, den wir extrahieren möchten. Schauen wir uns ein Beispiel an:
-
-```Elixir
-string = "Hallo, wie geht es dir?"
-String.slice(string, 7, 3)
-```
-
-Der obige Code wird den Substring "wie" zurückgeben, da das Wort mit dem Index 7 beginnt und eine Länge von 3 Zeichen hat. Das Ergebnis wird in der Konsole ausgegeben.
+Hier sind einige Beispiele zur Verwendung von ```Elixir String.split```:
 
 ```
-iex> "wie"
+iex> String.split("Hallo Welt", " ") 
+["Hallo", "Welt"]
+
+iex> String.split("123-456-789", "-") 
+["123", "456", "789"]
+
+iex> String.split("Das ist ein längerer Satz", " ", trim: true) 
+["Das", "ist", "ein", "längerer", "Satz"]
+
+iex> String.split("Hund, Katze, Maus", [", ", ","]) 
+["Hund", "Katze", "Maus"]
+
 ```
 
-Wir können auch negative Indizes verwenden, um von hinten nach vorne zu zählen. Zum Beispiel würde `String.slice(string, -3, 3)` den Substring "dir" zurückgeben.
+## Tiefergehende Analyse
 
-Es gibt auch weitere Funktionen, die wir verwenden können, um Substrings zu extrahieren. `String.split/2` teilt einen String in eine Liste von Substrings auf, basierend auf einem Trennzeichen. `String.replace/4` ersetzt einen angegebenen Teil eines Strings durch einen anderen Substring. Experimentiere mit diesen Funktionen, um zu sehen, wie sie funktionieren.
+Das Entnehmen von Teilstrings ist eine häufig verwendete Methode in der Programmierung, um eine bestimmte Anzahl von Zeichen aus einem längeren String auszuwählen. Beispielsweise kann dies für die Verarbeitung von Nutzereingaben oder für das Durchsuchen großer Textdateien nützlich sein.
 
-## Tiefer Einblick 
+Alternativ zum Entnehmen von Teilstrings kann auch das Öffnen und Lesen von Dateien verwendet werden, um bestimmte Informationen zu extrahieren. In Elixir kann dies mit der Funktion "File.open" durchgeführt werden.
 
-Die `String.slice/3` Funktion ist eine der vielen nützlichen Funktionen in Elixir, die uns bei der Arbeit mit Zeichenketten helfen. Wenn du tiefer in die Thematik einsteigen möchtest, gibt es noch einige weitere nützliche Funktionen, die in der offiziellen Elixir Dokumentation aufgeführt sind. Hier sind einige Anleitungen, wie man Substrings in Strings auffinden, zählen und ersetzen kann.
+Es gibt auch mehrere Implementierungen des Entnehmens von Teilstrings in Elixir, z.B. die Funktionen "String.slice" und "String.replace".
 
-## Siehe auch 
+## Siehe auch
 
-- [Offizielle Elixir Dokumentation über Substrings](https://hexdocs.pm/elixir/String.html#slice/3)
-- [Weitere nützliche String-Funktionen in Elixir](https://elixirschool.com/de/lessons/basics/string/)
-- [Einführung in Elixir-Strings](https://medium.com/elixir-mastery/getting-started-with-elixir-strings-2d9577770d9b)
+- [Elixir String.split-Dokumentation](https://hexdocs.pm/elixir/String.html#split/2)
+- [Elixir File.open-Dokumentation](https://hexdocs.pm/elixir/File.html#open/2)
+- [Elixir String.slice-Dokumentation](https://hexdocs.pm/elixir/String.html#slice/3)
+- [Elixir String.replace-Dokumentation](https://hexdocs.pm/elixir/String.html#replace/3)

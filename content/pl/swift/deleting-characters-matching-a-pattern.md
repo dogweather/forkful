@@ -10,39 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i dlaczego?
 
-Czyszczenie tekstu jest ważnym elementem wielu projektów programistycznych. Znajdowanie i usuwanie znaków spełniających określony wzór jest szczególnie przydatne przy analizie danych tekstowych lub implementacji wyrażeń regularnych.
+Usuwanie znaków pasujących do wzorca jest procesem, w którym programiści usuwają określone znaki z tekstu. Jest to przydatna umiejętność, ponieważ pozwala na szybkie i łatwe porządkowanie i przetwarzanie danych tekstowych. Programiści często wykonują ten krok w celu filtrowania danych lub przetwarzania tekstów.
 
-## Jak to zrobić
-
-Jeśli chcesz usunąć znaki pasujące do wzorca w języku Swift, możesz użyć metody `replacingOccurrences(of:with:options:)` na typie `String`. Poniżej znajduje się przykład kodu, który usuwa wszystkie wystąpienia litery "a" z podanego tekstu:
+## Jak to zrobić:
 
 ```Swift
-let text = "abcabcabc"
-let newText = text.replacingOccurrences(of: "a", with: "", options: .literal, range: nil)
-print(newText) // bcbcbc
+let text = "ABC123DEF456GHI789"
+let pattern = "[0-9]+"
+let regex = try! NSRegularExpression(pattern: pattern, options: [])
+let modifiedText = regex.stringByReplacingMatches(in: text, options: [], range: NSRange(text.startIndex..., in: text), withTemplate: "")
+print(modifiedText)
+
+// Output: ABCDEFGHI
 ```
 
-Jest wiele opcji do wyboru, takich jak określenie zakresu, w którym ma zostać wykonana zmiana, czy też wykorzystanie wyrażeń regularnych. Więcej informacji znajdziesz w dokumentacji języka Swift.
+## Duże zmiany:
 
-## Głębszy wgląd
+Koncepcja usuwania znaków pasujących do wzorca ma swoje korzenie w programowaniu funkcyjnym, w którym funkcje są często wykorzystywane do przetwarzania danych. Alternatywą dla wykorzystania wyrażeń regularnych do usuwania znaków jest użycie metod wbudowanych w język Swift, takich jak `filter`. Implementacja tego procesu jest także umożliwiona przy użyciu innych bibliotek do wyrażeń regularnych, takich jak `RegularExpressionKit`.
 
-Usunięcie znaków pasujących do wzorca może być również wykonane przy użyciu wyrażeń regularnych. W języku Swift można skorzystać z biblioteki `NSRegularExpression` i jej metody `replaceMatches(in:options:range:withTemplate:)`. Przykładowe użycie wyrażeń regularnych do zastępowania wszystkich cyfr w tekście zostanie przedstawione poniżej:
+## Zobacz także:
 
-```Swift
-let text = "A1B2C3"
-let regex = try! NSRegularExpression(pattern: "\\d", options: [])
-let newText = regex.stringByReplacingMatches(in: text, options: [], range: NSMakeRange(0, text.count), withTemplate: "")
-print(newText) // ABC
-```
-
-Język Swift oferuje także przydatne metody do walidacji i wykrywania znaków spełniających określone wzorce. Warto zapoznać się z dokumentacją w celu lepszego zrozumienia możliwości tego języka.
-
-## Zobacz także
-
-Jeśli chcesz dowiedzieć się więcej o manipulacji tekstem w języku Swift, polecamy zapoznanie się z poniższymi linkami:
-
-- [Dokumentacja języka Swift](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
-- [Przewodnik po wyrażeniach regularnych w języku Swift](https://www.swiftbysundell.com/basics/regular-expressions/)
-- [Przykłady użycia wyrażeń regularnych w języku Swift](https://code.tutsplus.com/tutorials/swift-3-part-4-intermediate-regular-expressions--cms-27120)
+- Dokumentacja Swift o wyrażeniach regularnych: https://developer.apple.com/documentation/foundation/nsregularexpression#//apple_ref/doc/uid/TP40008757
+- Przykładowe użycie wyrażeń regularnych w języku Swift: https://www.hackingwithswift.com/articles/108/how-to-use-regular-expressions-in-swift

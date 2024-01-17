@@ -10,38 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Qu'est-ce que c'est et pourquoi le faire?
 
-Avez-vous déjà eu besoin de connaître la date et l'heure actuelle dans vos applications Elm ? Il existe plusieurs raisons pour lesquelles vous pourriez avoir besoin de récupérer la date actuelle. Peut-être que vous voulez afficher la date sur une page de votre site ou peut-être que vous voulez utiliser la date pour effectuer des calculs dans votre application. Quelle que soit la raison, récupérer la date actuelle peut être un moyen utile pour améliorer vos applications !
+Obtenir la date actuelle est une fonctionnalité utile pour de nombreux programmes. Cela permet aux programmeurs de travailler avec des informations basées sur le temps, telles que des rappels, des délais ou des enregistrements de données. Cela peut également aider à garder une piste de l'historique des activités d'une application.
 
-## Comment faire
+## Comment faire:
 
-Pour obtenir la date actuelle dans Elm, vous pouvez utiliser la fonction `Time.now` dans le module `Time`. Cette fonction retourne un `Task` avec la date et l'heure actuelles. Voici un exemple de code pour récupérer la date actuelle et l'afficher dans votre navigateur :
+Pour obtenir la date actuelle en Elm, nous pouvons utiliser la fonction `Date.now` de la bibliothèque `Time`, qui renvoie un `Time.Posix` représentant l'instant présent en tant que nombre de millisecondes depuis le 1er janvier 1970 00:00:00 GMT.
 
 ```Elm
-import Time exposing (Time)
-import Task exposing (Task)
-import Html exposing (text)
+import Time exposing (..)
 
-dateActuelle : Task x Time
-dateActuelle = Time.now
-
-view : Time -> Html msg
-view time =
-    text (Time.toString time)
-
-main =
-    dateActuelle
-        |> Task.perform (\_ -> task (\_ -> "Erreur lors de la récupération de la date")) (\t -> view t)
+currentDate : Time.Posix
+currentDate = Date.now
 ```
 
-Lorsque vous exécutez ce code, vous devriez voir la date actuelle s'afficher dans votre navigateur ! Vous pouvez également utiliser la fonction `Time.toIsoString` pour formater la date dans le format ISO standard.
+Le résultat sera un nombre tel que `1517987890000`, qui peut être converti en une forme plus lisible avec d'autres fonctions de la bibliothèque `Time` si nécessaire.
 
-## Plongée en profondeur
+## Plongée plus profonde:
 
-Si vous voulez en savoir plus sur la récupération de la date actuelle dans Elm, il existe d'autres fonctions utiles dans le module `Time`. Par exemple, la fonction `Time.hoursSinceEpoch` retourne le nombre d'heures depuis le premier janvier 1970. Vous pouvez également utiliser des fonctions de conversion pour transformer la date en d'autres unités de temps, telles que les secondes ou les jours.
+La prise en charge du temps et de la date dans les langages de programmation est apparue pour la première fois avec FORTRAN IV en 1962, avec la fonction `DATE` qui renvoie la date actuelle dans un format spécifié. Depuis lors, de nombreux langages ont implémenté leurs propres fonctions pour gérer la date et l'heure.
 
-## Voir aussi
+Dans Elm, outre la fonction `Date.now`, vous pouvez également utiliser la fonction `Date.fromTime` pour convertir un `Time.Posix` en une représentation de date lisible. Vous pouvez également utiliser la bibliothèque [chrono](https://package.elm-lang.org/packages/elm/time/latest/Time-Chrono) pour des manipulations de date plus avancées.
 
-- La documentation sur le module `Time` : https://package.elm-lang.org/packages/elm/time/latest/
-- Un article utile sur l'utilisation de la date et de l'heure dans Elm : https://thoughtbot.com/blog/exploring-time-and-date-in-elm
+## Voir aussi:
+
+- [Documentation Elm - Date.now](https://package.elm-lang.org/packages/elm/time/latest/Time#now)
+- [Documentation Elm - Date.fromTime](https://package.elm-lang.org/packages/elm/time/latest/Time#fromTime)
+- [Documentation Elm - Chrono](https://package.elm-lang.org/packages/elm/time/latest/Time-Chrono#Date)

@@ -10,40 +10,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
-Gdy pracujemy z programowaniem, często potrzebujemy tworzyć tymczasowe pliki w celu przechowania danych lub jako etap pośredni w przetwarzaniu informacji. W takich sytuacjach, ważne jest aby mieć wydajne i niezawodne narzędzie do tworzenia tymczasowych plików. W tym artykule przedstawimy jak rozwiązać ten problem przy użyciu języka programowania Elm.
+## Co i dlaczego?
+Tworzenie tymczasowych plików w programowaniu polega na tworzeniu plików, które są tymczasowe i służą do przechowywania danych lub informacji, które są potrzebne tylko na czas działania programu. Programiści często tworzą tymczasowe pliki, aby zapewnić bezpieczne i wydajne przechowywanie danych.
 
-## Jak to zrobić
-Tworzenie tymczasowego pliku w Elm jest bardzo proste. Wystarczy użyć funkcji "File.createTemp" podając ścieżkę, w której chcemy utworzyć plik, oraz jego nazwę. Przykładowy kod wygląda następująco:
-
-```Elm
-File.createTemp "tmp/" "plik.docx"
-```
-
-Rezultatem będzie utworzenie pliku o nazwie "plik.docx" w folderze "tmp". Możliwe jest również podanie pełnej ścieżki w celu utworzenia pliku w konkretnym miejscu.
-
-Aby upewnić się, że plik został utworzony poprawnie, możemy użyć funkcji "File.exists", która sprawdzi czy plik istnieje. Przykładowy kod prezentuje się tak:
+## Jak to zrobić:
+Elm, ostatnia wersja języka programowania, zapewnia łatwy sposób na tworzenie tymczasowych plików. Wystarczy użyć funkcji `File.temp` i przekazać jej nazwę pliku oraz zawartość pliku jako argumenty. Poniżej znajduje się przykładowy kod:
 
 ```Elm
-File.exists "tmp/plik.docx" --> True 
+File.temp "tempfile" "This is a temporary file"
 ```
 
-Możemy również użyć funkcji "Basics.toString" aby wyświetlić zawartość pliku w konsoli. Należy jednak pamiętać, że w przypadku dużych plików może to wywołać błąd.
+Po uruchomieniu kodu, zostanie utworzony tymczasowy plik o nazwie "tempfile", a w jego wnętrzu znajdować się będzie treść "This is a temporary file".
 
-## Deep Dive
-Funkcja "File.createTemp" jest bardzo użyteczna, ale istnieje kilka rzeczy, o których warto wiedzieć. Po pierwsze, nazwa pliku musi mieć rozszerzenie, które jest zgodne z typem MIME. Na przykład, jeśli chcemy utworzyć plik tekstowy, nazwa powinna kończyć się na ".txt".
+## Dogłębnie:
+Tworzenie tymczasowych plików ma wiele zastosowań w programowaniu. Np. może być wykorzystane do przechowywania lokalnych danych użytkownika, tymczasowych ustawień lub do tymczasowego przechowywania plików pobranych z sieci. Alternatywnym sposobem na przechowywanie danych są bazy danych, jednakże tworzenie tymczasowych plików jest prostsze i szybsze.
 
-Po drugie, jeśli potrzebujemy utworzyć plik tymczasowy, który zostanie usunięty po zamknięciu programu, możemy użyć funkcji "File.withTemp". Przyjmuje ona funkcję jako argument, która zostanie wykonana na utworzonym pliku.
+W Elm, istnieje również możliwość tworzenia tymczasowych katalogów za pomocą funkcji `Directory.temp`. Istnieją także inne metody tworzenia tymczasowych plików, takie jak użycie biblioteki System.IO, jednakże funkcje wbudowane w Elm są zazwyczaj wystarczające.
 
-```Elm
-File.withTemp "tmp/" "log.txt" (\path -> 
-  Basics.append path "Plik został utworzony tymczasowo."
-)
-```
-
-W tym przypadku, funkcja "Basics.append" zostanie wykonana na pliku "log.txt" znajdującym się w folderze "tmp". Po zamknięciu programu, plik ten zostanie automatycznie usunięty.
-
-## Zobacz także
-- Oficjalna dokumentacja Elm: https://guide.elm-lang.org/
-- Operacje na plikach w Elm: https://package.elm-lang.org/packages/elm/file/latest/
-- Przykładowe kody w Elm: https://github.com/elm/compiler/tree/master/examples
+## Zobacz też:
+Dokumentacja Elm: https://guide.elm-lang.org/
+Funkcja `File.temp` w Elm: https://package.elm-lang.org/packages/elm/file/latest/File#temp
+Funkcja `Directory.temp` w Elm: https://package.elm-lang.org/packages/elm/file/latest/Directory#temp

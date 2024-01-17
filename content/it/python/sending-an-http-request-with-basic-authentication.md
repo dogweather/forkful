@@ -10,42 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+## Cosa & Perché?
+Invio di una richiesta HTTP con autenticazione di base è una pratica comune tra i programmatori per accedere a risorse protette su una rete o un server. Questo tipo di autenticazione richiede la fornitura di credenziali login, generalmente un nome utente e una password, per verificare l'identità dell'utente.
 
-Probabilmente ti sarai chiesto almeno una volta: perché dovrei inviare una richiesta HTTP con l'autenticazione di base? La risposta è semplice, con l'autenticazione di base puoi garantire l'accesso sicuro ai tuoi dati e servizi su una rete.
+## Come fare:
+Ecco un esempio di codice che mostra come inviare una richiesta HTTP con autenticazione di base utilizzando il modulo `requests` in Python 3:
 
-## Come usare l'autenticazione di base in Python
-
-Per utilizzare l'autenticazione di base in Python, devi seguire questi semplici passaggi:
-
-1. Importa il modulo "requests" per effettuare richieste HTTP.
-2. Definisci le credenziali dell'utente (nome utente e password) da utilizzare per l'autenticazione.
-3. Passa le credenziali all'intestazione dell'autenticazione di base nella richiesta HTTP.
-4. Fai la richiesta al server desiderato.
-
-Di seguito un esempio di codice che effettua una richiesta GET con autenticazione di base e stampa l'output nella console:
-
-```Python
+```python
 import requests
+from requests.auth import HTTPBasicAuth
 
-username = "mario"
-password = "p@ssw0rd"
+# Specifica le credenziali login
+username = 'username'
+password = 'password'
 
-response = requests.get("https://api.example.com", auth=(username, password))
+# Crea un'istanza della classe HTTPBasicAuth con le credenziali login
+auth = HTTPBasicAuth(username, password)
 
-print(response.text)
+# Invia una richiesta GET al server protetto con autenticazione di base
+r = requests.get('https://example.com/protected', auth=auth)
+
+# Stampa il codice di stato della risposta
+print(r.status_code)
 ```
 
-L'output nella console sarà il contenuto della risposta ricevuta dal server.
+L'output dovrebbe essere il codice di stato `200` che indica una richiesta di successo.
 
-## Approfondimento
+## Approfondimento:
+L'autenticazione di base con richieste HTTP è stato introdotta come parte della specifica HTTP/1.0 e continua ad essere utilizzata come uno dei metodi di autenticazione più semplici e diffusi nelle applicazioni web. Tuttavia, poiché le credenziali vengono inviate in chiaro, questo metodo non è sicuro e si consiglia di utilizzarlo solo in connessioni HTTPS (HTTP over SSL).
 
-L'autenticazione di base è uno dei metodi di autenticazione più semplici e ampiamente utilizzati per garantire la sicurezza delle comunicazioni su una rete. Consiste nell'invio di un nome utente e una password in chiaro all'interno delle intestazioni della richiesta HTTP.
+Un'alternativa all'autenticazione di base è l'utilizzo di un token di autenticazione, che può essere generato una volta e utilizzato per successive richieste senza la necessità di memorizzare e inviare le credenziali di login ogni volta.
 
-Per garantire una maggiore sicurezza, è consigliato utilizzare il protocollo HTTPS, che cifra i dati scambiati tra il client e il server. Inoltre, è importante utilizzare password sicure e non condividerle con nessuno.
-
-## Vedi anche
-
-- [Documentazione ufficiale di Python](https://docs.python.org/3/library/urllib.request.html?highlight=authentication#urllib.request.Request.add_header)
-- [Tutorial su come utilizzare l'autenticazione di base in Python](https://www.geeksforgeeks.org/send-getpost-request-using-python/)
-- [Manuale di riferimento di requests](https://requests.readthedocs.io/en/master/user/authentication/)
+## Vedi anche:
+- [Documentazione ufficiale del modulo `requests`](https://requests.readthedocs.io/en/master/)
+- [Specifica HTTP/1.0](https://tools.ietf.org/html/rfc1945)

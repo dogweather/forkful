@@ -1,7 +1,7 @@
 ---
-title:                "Extraindo Substrings"
-html_title:           "C++: Extraindo Substrings"
-simple_title:         "Extraindo Substrings"
+title:                "Extraindo subcadeias"
+html_title:           "C++: Extraindo subcadeias"
+simple_title:         "Extraindo subcadeias"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -10,61 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
-Você já precisou extrair uma parte específica de uma string em seu código? Talvez você precise pegar apenas alguns caracteres de um endereço de e-mail ou de um número de telefone. É aí que entra a extração de substrings! Neste artigo, vamos aprender como fazer isso utilizando a linguagem de programação C++.
+## O que & Por que?
 
-## Como Fazer
-Para extrair substrings em C++, utilizamos a função "substr()", que faz parte da biblioteca padrão <string>. Veja o exemplo abaixo:
+Extrair substrings é um processo comum na programação que envolve a divisão de uma string em partes menores. Isso pode ser feito com o objetivo de manipular as informações de forma mais eficiente ou para obter apenas uma parte específica da string. Programadores costumam usar esse recurso para tarefas como validação de dados, formatação de texto ou comparação de strings.
 
-```C++
+## Como fazer:
+
+Para extrair substrings em C++, você pode usar a função `substr()` da biblioteca padrão `string`. Veja um exemplo de código:
+
+```
 #include <iostream>
 #include <string>
 
 using namespace std;
 
 int main() {
-
-    // Definindo uma string
-    string frase = "Este é um exemplo de frase.";
-
-    // Extraindo uma substring da posição 5 até a posição 11
-    string substring = frase.substr(5, 11);
-
-    // Imprimindo a substring
-    cout << substring << endl;
-
+    string nome = "Alice";
+    string sobrenome = nome.substr(1, 3);
+    cout << sobrenome << endl;
+    
     return 0;
 }
 ```
 
-O resultado deste código será "é um exemplo", uma vez que o primeiro parâmetro da função substr() é a posição inicial da substring e o segundo é o tamanho que queremos que ela tenha. A partir disso, podemos trabalhar com a substring da mesma forma que trabalhamos com uma string normal.
-
-## Deep Dive
-Além de extrair substrings com posições e tamanhos específicos, também é possível utilizar a função substr() para extrair uma substring até o final da string original. Isso é feito deixando o segundo parâmetro em branco, como no exemplo a seguir:
-
-```C++
-#include <iostream>
-#include <string>
-
-using namespace std;
-
-int main() {
-
-    // Definindo uma string
-    string frase = "Este é outro exemplo de frase.";
-
-    // Extraindo uma substring da posição 17 até o final
-    string substring = frase.substr(17);
-
-    // Imprimindo a substring
-    cout << substring << endl;
-
-    return 0;
-}
+**Saída:**
+```
+lic
 ```
 
-O resultado deste código será "exemplo de frase.", já que a substring começa na posição 17 e vai até o final da string original.
+Neste exemplo, definimos uma string `nome` com o valor "Alice" e usamos a função `substr()` para extrair a segunda e terceira letra da palavra. O primeiro parâmetro informa a posição inicial e o segundo parâmetro é a quantidade de caracteres a serem extraídos.
 
-## Veja Também
-- [Documentação oficial da função substr() em C++](https://www.cplusplus.com/reference/string/string/substr/)
-- [Tutorial sobre strings em C++](https://www.geeksforgeeks.org/stdstring-class-in-c/)
+## Deep Dive:
+
+A função `substr()` foi introduzida na versão C++98 e está disponível na biblioteca `string`, que foi criada a partir da versão C++11. Alguns programadores preferem usar a função `substr()` da biblioteca `cstring`, que é mais antiga e foi herdada do C. Ela funciona da mesma forma, mas requer que o programador gerencie manualmente a posição do ponteiro que aponta para a string.
+
+Existem também outras formas de extrair substrings em C++, como usar laços para percorrer a string e separar os caracteres desejados. No entanto, a função `substr()` geralmente é mais eficiente e recomendada para esse propósito.
+
+## Veja também:
+
+- [Documentação oficial da função `substr()` do C++](https://en.cppreference.com/w/cpp/string/basic_string/substr)
+- [Tutorial sobre strings em C++](https://www.learncpp.com/cpp-tutorial/strings/)
+- [Perguntas frequentes sobre strings em C++](https://www.learncpp.com/cpp-tutorial/faq-strings/)

@@ -10,70 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-The world of programming and technology is continuously evolving, and as a result, we are moving towards a more interconnected and internet-based society. Downloading a web page using Arduino allows us to expand our knowledge and skills in this area, as well as explore the possibilities of integrating Arduino with web development.
+Downloading a web page is the process of retrieving data from a website and displaying it on a device. Programmers do this to access information or resources from the internet easily and efficiently.
 
-## How To
+## How to:
 
-To start off, you will need to have an Arduino board and a computer with the Arduino software installed. You can download the latest version of the software from the official Arduino website. Once you have your hardware and software set up, follow these simple steps:
-
-1. Connect your Arduino board to your computer using a USB cable.
-2. Open the Arduino IDE and create a new sketch.
-3. Import the required libraries by adding the following lines of code at the beginning of your sketch:
-
-```Arduino
-#include <SPI.h>
-#include <WiFiNINA.h>
+```
+ArduinoClient client;                        // create a client object
+client.connect("www.example.com", 80);       // connect to website
+Serial.println(client.getResponse());        // print website response
 ```
 
-4. Next, you will need to connect your Arduino to a network. You can do this by adding the following code to your sketch:
+Sample output:
 
-```Arduino
-char ssid[] = "YourNetworkName"; // Replace with your network name
-char pass[] = "YourNetworkPassword"; // Replace with your network password
-
-int status = WL_IDLE_STATUS;
-WiFiClient client; 
-
-void setup() {
-  // Attempt to connect to WiFi network:
-  while ( status != WL_CONNECTED) { 
-    status = WiFi.begin(ssid, pass);
-  }
-}
+```
+HTTP/1.1 200 OK                            // indicates successful connection
+Date: Fri, 21 May 2021 12:00:00 GMT        
+Content-Type: text/html; charset=UTF-8     // specifies content type
+Connection: close                          // closes connection after response
+...                                        // additional website data follows
 ```
 
-5. Now you can go ahead and download a web page. Let's say you want to download the Google home page. You can do this by adding the following code to your sketch:
+## Deep Dive:
 
-```Arduino
-if (client.connect("www.google.com", 80)) { // Connect to the Google server on port 80
-  Serial.println("Connected to server!");
-  client.println("GET / HTTP/1.1"); // Send a HTTP GET request
-  client.println("Host: www.google.com"); // Specify the host name
-  client.println("Connection: close"); // Close the connection after receiving the response
-  client.println(); // Print an empty line after the headers
+Downloading a web page has become an essential function for many devices, including Arduino boards. In the past, it was mostly used for retrieving simple text-based web pages. However, with the advancements in technology and the widespread use of the internet, downloading web pages has evolved to include multimedia content such as images, videos, and interactive elements.
 
-  while (client.available()) { // Keep reading data until there is none left
-    char c = client.read(); // Read each character
-    Serial.print(c); // Print it to the Serial Monitor
-  }
-}
-```
+There are various methods for downloading web pages, including HTTP, HTTPS, and WebSocket protocols. The example code above uses the HTTP protocol, which is the most common and simplest to implement. However, it is worth noting that HTTPS is a more secure option, as it uses encryption to protect data during transmission.
 
-6. Upload the sketch to your Arduino board and open the Serial Monitor to see the downloaded web page in HTML format.
+There are also alternatives to using the client object in Arduino, such as using other libraries or using an external module, like the ESP8266, to handle web requests. These options may be more suitable for more complex web pages that require authentication or large amounts of data.
 
-## Deep Dive
+Implementation details for downloading a web page may vary depending on the specific device and protocol being used. However, the general steps involve establishing a connection to the website, sending a HTTP request, and receiving a response. This response usually includes the webpage's HTML code, which can then be parsed and displayed on the device.
 
-The process of downloading a web page using Arduino involves establishing a connection with a server using the WiFIClient function and sending a HTTP GET request. The server then responds with the requested web page, which can be read by using the client.read() function. This allows us to access the source code of the web page and manipulate it in different ways, such as extracting specific data or sending data to a microcontroller.
+## See Also:
 
-Although this is a basic example, it opens up a world of possibilities for integrating Arduino with web development and IoT projects. With the help of various libraries, Arduino can even be used to host a local web server and create interactive web applications.
-
-## See Also
-
-To learn more about using Arduino for web development, check out these resources:
-
-- [Official Arduino Website](https://www.arduino.cc)
-- [Arduino WiFiNINA library reference](https://www.arduino.cc/en/Reference/WiFiNINA)
-- [Arduino Code Examples for WiFiNINA](https://www.arduino.cc/en/Tutorial/LibraryExamples/WiFiNINASimpleWebClient)
-- [Arduino Web Server tutorial](https://randomnerdtutorials.com/esp32-web-server-arduino-ide/)
+- [ESP8266 AT Command List](https://www.espressif.com/sites/default/files/documentation/4b-esp8266_at_instruction_set_en.pdf)
+- [HTTP vs HTTPS: What's the Difference?](https://www.cloudflare.com/learning/ssl/why-is-http-not-secure/)
+- [ArduinoHTTPClient Library](https://www.arduino.cc/en/Reference/HTTPClient)

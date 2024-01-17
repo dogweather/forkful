@@ -1,7 +1,7 @@
 ---
-title:                "Eine Webseite herunterladen"
-html_title:           "C++: Eine Webseite herunterladen"
-simple_title:         "Eine Webseite herunterladen"
+title:                "Webseite herunterladen"
+html_title:           "C++: Webseite herunterladen"
+simple_title:         "Webseite herunterladen"
 programming_language: "C++"
 category:             "C++"
 tag:                  "HTML and the Web"
@@ -10,70 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+#Was und Warum?
+Beim Herunterladen einer Webseite geht es darum, die Daten einer Webseite zu erhalten und auf unserem Rechner zu speichern. Dies ist eine praktische Funktion für Programmierer, da sie somit den Inhalt einer Webseite nutzen können, um beispielsweise automatisierte Aufgaben auszuführen oder Daten zu extrahieren.
 
-Du möchtest wahrscheinlich wissen, warum es wichtig ist, eine Webseite zu downloaden. Wenn du z.B. eine Webseite offline durchsuchen möchtest, ohne ständig eine Internetverbindung zu haben, dann ist das Downloaden einer Webseite die beste Option.
-
-## Wie geht es
-
-Das Downloaden einer Webseite mit C++ ist relativ einfach. Zunächst benötigst du eine Bibliothek, die das Herunterladen von Webseiten unterstützt. Eine beliebte Option ist cURL. Hier ist ein Beispielcode, wie du mit cURL eine Webseite in C++ herunterladen kannst:
+#Wie geht das?
+Um eine Webseite herunterzuladen, müssen wir zuerst eine Verbindung zu der gewünschten Webseite herstellen. Dies kann mit der C++ Standardbibliothek und der Funktion `std::get` erfolgen. Wir geben den vollständigen Link der Webseite als Parameter an und die Funktion gibt uns die Daten zurück. Hier ist ein Beispiel:
 
 ```C++
 #include <iostream>
-#include <curl/curl.h> 
+#include <cstdlib>
+
 using namespace std;
- 
+
 int main(){
-  //Initialisierung von cURL
-	CURL *curl;
-	CURLcode res;
-	
-	//URL der zu downloadenden Webseite
-	string url = "https://www.example.com"; 
-	
-	//Initilaerung von cURL
-	curl = curl_easy_init();
-	if(curl) {
-		//Setzen der URL
-		curl_easy_setopt(curl, CURLOPT_URL, url.c_str());
-		
-		//Setzen des HTTP Protokolls
-		curl_easy_setopt(curl, CURLOPT_PROTOCOLS, CURLPROTO_HTTPS);
-		
-		//Herunterladen der Webseite
-		res = curl_easy_perform(curl);
-		if(res!=CURLE_OK) {
-			//Fehlerbehandlung
-			cerr << "Fehler: " << curl_easy_strerror(res) << endl;
-		}
-		//Aufräumen
-		curl_easy_cleanup(curl);
- 	}
-	
-	return 0;
+    // Verbindung herstellen
+    string url = "https://example.com";
+    string data = std::get(url);
+
+    // Daten ausgeben
+    cout << data << endl;
+
+    return 0;
 }
 ```
 
-Der obige Code verwendet cURL, um eine HTTPS-Webseite herunterzuladen. Du kannst auch HTTP oder andere Protokolle verwenden, je nachdem, welches Protokoll die Webseite unterstützt. Nach dem Herunterladen der Webseite kannst du die Ausgabe wie folgt erhalten:
+Die Ausgabe dieses Codes wird die gesamte HTML-Seite der Webseite "example.com" enthalten.
 
-```
-<html>
-<head>
-  <title>Beispiel Webseite</title>
-</head>
-<body>
-  <h1>Willkommen!</h1>
-  <p>Dies ist eine Beispiel Webseite.</p>
-</body>
-</html>
-```
+#Tiefer eintauchen
+Das Herunterladen von Webseiten ist eine weit verbreitete Funktion, die seit den Anfängen des Internets verwendet wird. In früheren Zeiten wurden dafür spezielle Bibliotheken und komplexe Algorithmen verwendet. Jedoch hat sich mit der Entwicklung von Programmiersprachen wie C++ und deren Bibliotheken die Durchführung dieser Aufgabe vereinfacht.
 
-## Deep Dive
+Es gibt auch Alternativen zu dem von uns verwendeten Ansatz, einschließlich des Direktzugriffs auf Socket-Verbindungen oder die Verwendung von Bibliotheken wie `libcurl`. Die Wahl der Methode hängt von den Anforderungen des Projekts und den Kenntnissen des Programmierers ab.
 
-Wenn du tiefer in das Herunterladen von Webseiten mit C++ eintauchen möchtest, kannst du auch die verschiedenen cURL-Optionen erforschen, um eine optimale Konfiguration zu finden. Du kannst auch andere Bibliotheken wie libcurl oder Boost C++ Libraries verwenden.
+Die Implementierung des Herunterladens einer Webseite kann auch komplizierter sein, je nachdem, welche Teile der Webseite benötigt werden. Die Verwendung von regulären Ausdrücken oder das Bearbeiten von HTML-Daten können wichtige Schritte sein, um die gewünschten Daten zu extrahieren.
 
-## Siehe auch
-
-- [cURL Webseite](https://curl.haxx.se/)
-- [libcurl Webseite](https://curl.haxx.se/libcurl/)
-- [Boost C++ Libraries Webseite](https://www.boost.org/)
+#Siehe auch
+- [C++ Standardbibliothek](https://de.cppreference.com/w/cpp/header)
+- [Webseiten herunterladen in C++](https://www.geeksforgeeks.org/downloading-a-webpage-using-curl/)
+- [Regex in C++](https://de.cppreference.com/w/cpp/regex)

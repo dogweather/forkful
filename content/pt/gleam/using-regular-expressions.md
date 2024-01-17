@@ -10,31 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+O que é Expressões Regulares e por que os programadores as utilizam?
 
-Muitas vezes, quando estamos escrevendo um programa, precisamos pesquisar e manipular padrões de texto específicos. É aí que entram as expressões regulares, uma ferramenta poderosa para trabalhar com strings. Elas permitem que você encontre e substitua padrões de uma forma mais eficiente do que simplesmente usando funções padrão de strings.
+As expressões regulares são sequências de caracteres utilizadas para procurar e manipular padrões de texto em strings. Elas são comumente usadas por programadores para buscar e substituir strings, validar formatos de input e realizar outras tarefas relacionadas ao processamento de texto. 
 
-## Como Fazer
+Como realizar operações com Expressões Regulares no Gleam:
 
-Para usar expressões regulares no Gleam, você precisa importar a biblioteca "re". Você pode fazer isso adicionando `import re` no início do seu código. Agora, vamos ver como encontrar um padrão específico em uma string e substituí-lo por outro.
+```Gleam
+import gleam/re
+import gleam/io
+
+// Verificar se uma string contém apenas números
+let string = "123"
+
+let is_num = string
+  |> String.to_char_list
+  |> List.all(x -> Char.is_numeric(x))
+
+assert is_num == Ok(true)
+
+// Substituir caracteres não alfanuméricos por "_"
+let input = "Hello,!Gleam@123?"
+
+let output = input
+  |> Re.replace(#"[^a-zA-Z0-9]"#, "_")
+
+assert output == Ok("Hello_Gleam_123_")
 
 ```
-Gleam import re
 
-fn main() {
-  let regex = `(?i)apple` // Define o padrão que queremos encontrar
-  let string = "Eu amo Apple." // Declara a string que será pesquisada
-  let novo_string = re.replace(string, regex, "abacate") // Substitui "Apple" por "abacate"
-}
-```
+Aprofundando-se nas Expressões Regulares:
 
-Neste exemplo, usamos o sinal `(?i)` para indicar que a busca deve ser feita sem diferenciação entre maiúsculas e minúsculas. Você pode usar outros sinais para especificar diferentes tipos de padrões, como `+` para indicar uma ou mais ocorrências e `*` para indicar nenhuma ou mais ocorrências. Para mais detalhes sobre como criar e usar expressões regulares no Gleam, você pode conferir a documentação oficial da biblioteca "re".
+As expressões regulares foram criadas em 1951 pelo matemático Stephen Kleene como uma forma de descrever linguagens formais. Elas são amplamente usadas em diferentes linguagens de programação, como Perl, Python e, mais recentemente, Gleam. Outra forma de realizar operações semelhantes a expressões regulares é através de funções de manipulação de strings, no entanto, isso pode ser mais trabalhoso e menos eficiente em termos de desempenho. Ao utilizar expressões regulares, os programadores podem escrever menos código e alcançar resultados mais precisos e rápidos na manipulação de texto.
 
-## Mergulho Profundo
+Links Relacionados:
 
-Uma das vantagens de usar expressões regulares é que elas podem economizar tempo e linhas de código. Por exemplo, ao invés de criar várias condições com operadores de strings, você pode usar apenas uma expressão regular para encontrar e manipular padrões específicos. Além disso, as expressões regulares são amplamente utilizadas em diversas linguagens de programação, o que significa que aprendê-las no Gleam pode te ajudar a entender e trabalhar com essas ferramentas em outras linguagens também.
-
-## Veja Também
-
-- Documentação oficial da biblioteca "re": https://gleam.run/modules/re.html
-- Tutorial sobre expressões regulares no Gleam: https://gleam.run/book/tour-regular-expressions.html
+- Documentação oficial do Gleam: https://gleam.run/
+- Tutorial de expressões regulares em Gleam: https://gleam.run/book/tutorials/regular_expressions.html
+- Artigo sobre as origens das expressões regulares: https://www.regular-expressions.info/history.html

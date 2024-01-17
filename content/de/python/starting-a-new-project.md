@@ -1,7 +1,7 @@
 ---
-title:                "Ein neues Projekt starten"
-html_title:           "Python: Ein neues Projekt starten"
-simple_title:         "Ein neues Projekt starten"
+title:                "Ein neues Projekt beginnen"
+html_title:           "Python: Ein neues Projekt beginnen"
+simple_title:         "Ein neues Projekt beginnen"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Getting Started"
@@ -10,44 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+Was ist eine neue Python-Projekt und warum sollte man es starten?
 
-Wenn du dich für das Programmieren in Python interessierst, bist du sicher auch daran interessiert, eigene Projekte zu starten. Mit Python kannst du einfache bis komplexe Projekte umsetzen, die dir dabei helfen können, deine Fähigkeiten zu verbessern und neue Dinge zu lernen. In diesem Artikel zeige ich dir, wie du ein neues Python-Projekt starten kannst.
+Ein neues Python-Projekt ist im Grunde genommen ein neues Programm, das du als Programmierer erstellst. Es kann für verschiedene Zwecke wie z.B. Datenanalyse, Webentwicklung oder Automatisierung verwendet werden. Programmierer starten häufig neue Projekte, um ihre Fähigkeiten zu verbessern, neue Technologien auszuprobieren oder um spezifische Probleme zu lösen.
 
-## Wie geht's?
+Wie man ein neues Projekt startet:
 
-#### Schritt 1: Installation
+```Python
+# Erstelle eine Variable mit dem Namen "name" und weise ihr den Wert "Python-Projekt" zu
+name = "Python-Projekt"
+# Gebe den Wert der Variable aus
+print(name)
+```
+Output:
+```
+Python-Projekt
+```
 
-Bevor du dein Projekt starten kannst, musst du Python auf deinem Computer installieren. Gehe auf die offizielle Website von Python (https://www.python.org/downloads/) und lade die neueste Version herunter.
+Tiefergehende Informationen:
 
-#### Schritt 2: Texteditor oder IDE wählen
+Die Programmiersprache Python wurde 1991 von Guido van Rossum entwickelt und ist seitdem zu einer der populärsten Programmiersprachen geworden. Alternativen zu Python sind z.B. Java, C++ oder JavaScript. Das Erstellen eines neuen Projektes in Python ist relativ unkompliziert, da es eine benutzerfreundliche Syntax und eine große Anzahl an Bibliotheken bietet, die bei verschiedenen Aufgaben helfen können.
 
-Als nächstes musst du einen Texteditor oder eine integrierte Entwicklungsumgebung (IDE) auswählen, um deinen Code zu schreiben. Es gibt viele Optionen, aber einige der beliebtesten sind Visual Studio Code, PyCharm und Atom.
+Robinhood, eine beliebte Trading-App, wurde z.B. in Python erstellt. Auch große Unternehmen wie Google, Dropbox und Netflix nutzen Python in ihren Projekten.
 
-#### Schritt 3: Erstelle einen Ordner für dein Projekt
+Weitere Informationen finden Sie hier: 
 
-Öffne deinen Texteditor oder deine IDE und erstelle einen neuen Ordner für dein Projekt. Dieser Ordner wird alle Dateien enthalten, die für dein Projekt benötigt werden.
+- Guido van Rossum's Blog: https://www.python.org/~guido/
+- Vergleich von Python mit anderen Programmiersprachen: https://www.learnpython.org/en/Python_vs_Other
+- Python Bibliotheken: https://pypi.org/ 
 
-#### Schritt 4: Schreibe deinen Code
-
-Jetzt kannst du mit dem eigentlichen Schreiben deines Codes beginnen. Verwende die Dateiendung ".py" für deine Python-Dateien. Du kannst auch Unterordner erstellen, um deinen Code zu organisieren.
-
-#### Schritt 5: Teste deinen Code
-
-Um sicherzustellen, dass dein Code richtig funktioniert, kannst du ihn testen. Verwende die Terminal- oder Befehlszeile, um zu deinem Projektordner zu navigieren und führe dann den Befehl "python <Dateiname>.py" aus. Wenn keine Fehler auftreten, solltest du dein erwartetes Ergebnis im Terminal sehen.
-
-## Tiefer tauchen
-
-Bevor du dein Projekt veröffentlichst, gibt es noch ein paar Dinge zu beachten:
-
-- Verwende ein Versionierungstool wie Git, um deinen Code zu verwalten.
-- Verwende virtuelle Umgebungen, um Abhängigkeiten und Pakete für dein Projekt zu isolieren.
-- Dokumentiere deinen Code ordentlich, damit andere ihn leichter verstehen können.
-- Nimm dir Zeit, um an der Struktur deines Projekts zu arbeiten. Eine gute Struktur hilft dir, deinen Code organisiert und leicht wartbar zu halten.
-
-## Siehe auch
-
-- https://www.python.org/ - Offizielle Python-Website
-- https://code.visualstudio.com/ - Visual Studio Code
-- https://www.jetbrains.com/pycharm/ - PyCharm
-- https://atom.io/ - Atom Editor
+Kein Fazit notwendig. Viel Spaß beim Erstellen deines nächsten Python-Projekts!

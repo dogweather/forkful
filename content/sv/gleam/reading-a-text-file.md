@@ -1,7 +1,7 @@
 ---
-title:                "Läsa en textfil"
-html_title:           "Gleam: Läsa en textfil"
-simple_title:         "Läsa en textfil"
+title:                "Läsning av en textfil"
+html_title:           "Gleam: Läsning av en textfil"
+simple_title:         "Läsning av en textfil"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Files and I/O"
@@ -10,57 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##Varför
-Att läsa en textfil är en väsentlig del av programmering, särskilt när man arbetar med stora mängder data. Genom att läsa en textfil kan du snabbt få tillgång till information och använda den för att utföra olika åtgärder.
+## Vad & Varför?
+Läsa en textfil är när datorprogram läser och hämtar data från en textfil som innehåller textinformation. Programmarbetare gör detta för att snabbt och effektivt kunna hämta information från en extern källa och använda den i sitt program.
 
-##Så här gör du
-För att läsa en textfil i Gleam, använder du funktionen `File` tillsammans med `open_read()`-funktionen för att öppna och läsa filen. Sedan kan du använda en `while`-loop för att loopa igenom filen och öppna den för läsning. Här är ett exempel på hur du kan läsa en textfil och skriva ut dess innehåll i terminalen:
-
-```Gleam
-import gleam/io
-
-pub fn main() {
-  file := File.open_read("textfil.txt")
-  while let Some(line) = file.read_line() {
-    io.print(line)
-  }
-}
-```
-
-Output:
-
-```
-Det här är en textfil.
-Den innehåller lite exempeltext.
-Det här är den tredje raden.
-```
-
-##Djupdykning
-När du läser en textfil kan du också specificera en kodning, till exempel UTF-8 eller ASCII, beroende på hur filen är formaterad. Detta gör du genom att lägga till `encoding`-argumentet till `open_read()`-funktionen. Om du vill göra utföra ytterligare åtgärder på filens innehåll, som att redigera och spara det, kan du också använda `File.open_write()`-funktionen. Här är ett exempel på hur du kan läsa innehållet i en fil och lägga till ordet "Gleam" på varje rad och sedan spara ändringarna:
+## Hur gör man:
+Att läsa en textfil i Gleam är enkelt och kräver bara en liten mängd kod. Här är ett exempel:
 
 ```Gleam
-import gleam/io
+let fil = File.open("min_textfil.txt")
 
-pub fn main() {
-  file := File.open_read("textfil.txt")
-  new_content := ""
+let rad = File.read_line(fil)
+File.close(fil)
 
-  while let Some(line) = file.read_line() {
-    new_line := line ++ "gleam"
-    new_content = new_content ++ new_line
-  }
-  
-  file.close()
-
-  file_to_write := File.open_write("new_textfil.txt")
-  file_to_write.write(new_content)
-  file_to_write.close()
-}
+IO.print_line(rad)
 ```
 
-##Se också
-För mer information om filhantering i Gleam, ta en titt på följande resurser:
+Output: Den första raden i textfilen skrivs ut.
 
-- [Gleam Language Reference - Fil](https://gleam.run/book/std_lib/files.html)
-- [Gleam Language Guide - Läsa och skriva filer](https://gleam.run/book/tutorials/files.html)
-- [Officiell dokumentation för File-modulen](https://github.com/gleam-lang/gleam_stdlib/blob/master/gleam_io/src/io/file.gleam)
+## Djupdykning:
+Det finns flera olika sätt att läsa textfiler i Gleam, men det enklaste sättet är att använda funktionen ```File.read_line``` som läser en rad i taget från textfilen. Det är också möjligt att läsa hela filen på en gång med funktionen ```File.read_all```, men detta kan vara mindre effektivt om filen är väldigt stor.
+
+En alternativ metod för att läsa textfiler i Gleam är att använda biblioteket ```std/fs``` som innehåller flera funktioner för filhantering, inklusive läsning av textfiler.
+
+## Se även:
+Om du vill lära dig mer om att läsa textfiler i Gleam, rekommenderar vi att du besöker Gleams officiella hemsida där du kan hitta mer information och dokumentation. Du kan också utforska Gleams GitHub-sida eller Slack-community för att få hjälp och stöd från andra Gleam-programmerare.

@@ -1,7 +1,7 @@
 ---
-title:                "Generering av slumpmässiga tal"
-html_title:           "Python: Generering av slumpmässiga tal"
-simple_title:         "Generering av slumpmässiga tal"
+title:                "Generering av slumpmässiga nummer"
+html_title:           "Python: Generering av slumpmässiga nummer"
+simple_title:         "Generering av slumpmässiga nummer"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Numbers"
@@ -10,33 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad och varför?
+Att generera slumpmässiga nummer är en viktig del av programmering, och det handlar helt enkelt om att skapa nummer som inte följer ett förutbestämt mönster eller regel. Programrerare använder slumpmässiga nummer för att skapa variation och realistiska simuleringar, samt för att öka säkerheten i kryptering och spelapplikationer.
 
-Att generera slumpmässiga nummer är ett viktigt verktyg inom programmering och kan användas för många olika ändamål, som till exempel att skapa slumpmässiga data för tester eller simuleringar, skapa spel och lotterier eller för kryptering av data.
-
-## Så här gör du
-
-För att generera slumpmässiga nummer i Python finns det flera olika metoder att välja mellan. Det enklaste sättet är att använda funktionen `random` från standardbiblioteket. Här är ett exempel på hur du kan använda den för att generera ett slumpmässigt tal mellan 1 och 10:
+## Hur gör man:
+Här är ett enkelt exempel på hur man kan använda sig av den inbyggda funktionen "random" i Python för att generera ett slumpmässigt heltal mellan 1 och 10:
 
 ```Python
 import random
-
-tal = random.randint(1, 10)
-print(tal)
+num = random.randint(1, 10)
+print(num)
 ```
 
-Detta kommer att ge ett slumpmässigt tal varje gång koden körs, eftersom det baseras på en algoritm som är beroende av tiden när funktionen anropas.
+Den här kodraden kommer att producera ett slumpmässigt heltal varje gång den körs, vilket kan vara användbart för att skapa variation i spel eller simuleringar.
 
-Om du vill ha mer kontroll över dina slumpmässiga nummer kan du använda `random.seed()` för att ange en startpunkt för algoritmen. Du kan också använda funktioner som `random.choice()` och `random.shuffle()` för att välja slumpmässiga element från en lista eller för att blanda om ordningen på elementen i en lista.
+## Djupdykning:
+Slumpmässiga nummer har använts inom matematiken under lång tid, men det var först på 1900-talet som man började utveckla datorprogram för att skapa dem. En alternativ metod för att generera slumpmässiga nummer är att använda sig av "pseudoslump", vilket skapar mönsterade nummer genom en matematisk beräkning. Dock är dessa nummer inte helt slumpmässiga utan följer en viss ordning.
 
-## På djupet
+I Python använder man sig av en algoritm kallad "Mersenne Twister" för att skapa slumpmässiga nummer. Denna algoritm är väldigt effektiv och genererar högkvalitativa slumpmässiga nummer med få upprepningar.
 
-Bakom kulisserna genererar funktionen `random` slumpmässiga nummer genom att använda en pseudoslumpgenerator. Det betyder att numren är "slumpmässiga nog" för att fungera för de flesta användningsområden, men de är egentligen inte helt slumpmässiga. Det finns vissa algoritmer som kan förutsäga nästa nummer som kommer att genereras, men för de flesta applikationer är detta inte ett problem.
-
-Det finns också andra sätt att generera slumpmässiga nummer i Python, som att använda tredjepartsbibliotek som `numpy` eller `scipy`, som har mer avancerade funktioner för att skapa slumpmässiga datamängder.
-
-## Se även
-
-- [Dokumentation för Python's `random`-modul](https://docs.python.org/3/library/random.html)
-- [Artikel om pseudoslumpgeneratorer](https://en.wikipedia.org/wiki/Pseudorandom_number_generator)
-- [Dokumentation för `numpy.random`-modulen](https://numpy.org/doc/stable/reference/random/index.html)
+## Se också:
+- [Dokumentation för "random" i Python](https://docs.python.org/3/library/random.html)
+- [Artikel om pseudoslump i Wall Street Journal (engelska)](https://www.wsj.com/articles/the-pseudo-random-method-in-computer-science-analogous-to-modernism-1423813258)

@@ -10,38 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué descargar una página web?
+¡Hola programadores! ¿Alguna vez te has preguntado cómo descargar una página web utilizando Go? Bueno, ¡estás de suerte! En este artículo, te mostraremos cómo hacerlo de manera simple y concisa.
 
-Descargar una página web puede ser útil para acceder a su contenido sin necesidad de una conexión a internet o para realizar web scraping, es decir, extraer datos de la página para su posterior análisis.
+## ¿Qué & Por qué?
+Descargar una página web es simplemente obtener el código HTML de una página web determinada. Los programadores lo hacen porque necesitan acceder y analizar el contenido de ese sitio web para diversos fines, como extraer datos o crear herramientas de automatización.
 
-## Cómo hacerlo en Go
+## Cómo:
+En Go, podemos utilizar la biblioteca "net/http" para realizar una solicitud GET a una URL específica y obtener el cuerpo de respuesta, que es el código HTML de la página web. Eso suena complicado, pero en realidad es bastante simple. Echa un vistazo al siguiente código:
 
-Para descargar una página web en Go, podemos utilizar la biblioteca estándar `http` y su método `Get`. A continuación, un ejemplo de código que descarga la página principal de Google y muestra su contenido en la consola:
+```
+package main
 
-```Go
-resp, err := http.Get("https://www.google.com")
-if err != nil {
-    fmt.Println("Error al descargar la página:", err)
+import (
+    "fmt"
+    "net/http"
+)
+
+func main() {
+    // hacemos una solicitud GET a la página web de Google
+    res, err := http.Get("https://www.google.com/")
+
+    // verificamos si hay algún error en la solicitud
+    if err != nil {
+        fmt.Println("¡Hubo un error!")
+    }
+
+    // imprimimos el cuerpo de la respuesta
+    fmt.Println(res.Body)
 }
-defer resp.Body.Close()
-
-body, err := ioutil.ReadAll(resp.Body)
-if err != nil {
-    fmt.Println("Error al leer el cuerpo de la respuesta:", err)
-}
-
-fmt.Println(string(body))
 ```
 
-El resultado de este código sería una gran cantidad de HTML, ya que es el formato en el que se muestra el contenido de una página web.
+El output debería ser algo como esto:
+```
+<!doctype html>
+...
+<!-- el resto del código HTML de la pagina de Google -->
+```
 
-## Profundizando en la descarga de páginas web
+## Deep Dive:
+Ahora, echemos un vistazo más profundo a la biblioteca "net/http". Esta biblioteca proporciona un cliente HTTP interno, lo que significa que no es necesario importar otras bibliotecas para realizar solicitudes HTTP. Además, la biblioteca viene con una variedad de funciones útiles para trabajar con solicitudes y respuestas HTTP.
 
-El método `Get` de la biblioteca `http` también nos proporciona la respuesta completa del servidor, incluyendo el estado de la petición, los encabezados y el cuerpo de la respuesta. Además, podemos utilizar otras bibliotecas como`net/http" y "io/ioutil` para procesar el contenido de la respuesta de una manera más estructurada.
+Si prefieres utilizar una biblioteca de terceros, también puedes utilizar "goquery", que te permite analizar y manipular fácilmente el HTML de la respuesta de la solicitud. Otra opción es "gocolly", que es una biblioteca de web scraping en Go.
 
-En el ejemplo anterior, utilizamos `ioutil.ReadAll` para leer todo el cuerpo de la respuesta y convertirlo en una cadena de texto legible. Sin embargo, también podríamos utilizar otras funciones como `ioutil.ReadAll` para obtener archivos específicos de la página o`html.Parse` de la biblioteca `"golang.org/x/net/html` para analizar el HTML y extraer información específica.
+En cuanto a la implementación, Go utiliza una técnica llamada "goroutines" para manejar múltiples solicitudes HTTP al mismo tiempo, lo que le permite ser altamente eficiente en la realización de solicitudes web.
 
-## Vea también
-
-- [Documentación oficial de la biblioteca http en Go](https://golang.org/pkg/net/http/)
-- [Ejemplos de web scraping en Go](https://github.com/gocolly/colly)
+## Ver También:
+- Documentación oficial de Go sobre la biblioteca "net/http": https://golang.org/pkg/net/http/
+- Documentación oficial de "goquery": https://github.com/PuerkitoBio/goquery
+- Documentación oficial de "gocolly": https://github.com/gocolly/colly

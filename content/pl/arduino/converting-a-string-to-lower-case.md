@@ -1,7 +1,7 @@
 ---
-title:                "Konwersja ciągu znaków na małe litery"
-html_title:           "Arduino: Konwersja ciągu znaków na małe litery"
-simple_title:         "Konwersja ciągu znaków na małe litery"
+title:                "Konwertowanie ciągu znaków na małe litery"
+html_title:           "Arduino: Konwertowanie ciągu znaków na małe litery"
+simple_title:         "Konwertowanie ciągu znaków na małe litery"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Strings"
@@ -10,32 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i dlaczego?
+Konwertowanie ciągu znaków na małe litery jest procesem polegającym na zmianie wszystkich liter w ciągu na ich małe odpowiedniki. Jest to często wykonywane przez programistów w celu ułatwienia porównywania i analizowania tekstów, gdyż litery wielkie i małe są traktowane jako różne znaki.
 
-Konwersja łańcucha znaków na małe litery jest często niezbędna w programowaniu, szczególnie w przypadku pracy z tekstem. Pozwala to na ujednolicenie danych i ułatwia dalsze przetwarzanie. W ten sposób można również uniknąć problemów z błędnym rozpoznawaniem słów czy znaków.
-
-## Jak to zrobić
-
-Konwersja łańcucha znaków na małe litery jest możliwa przy użyciu funkcji `toLowerCase()`, która jest dostępna w języku Arduino. Poniżej przedstawiono przykładowy kod, który wprowadzi cię w temat.
-
-```Arduino
-String slowo = "KOT";
-String male_litery = slowo.toLowerCase();
-
-Serial.println(male_litery); // wyświetli "kot"
+## Jak to zrobić:
+Przykładowy kod do konwersji ciągu znaków na małe litery w Arduino wygląda następująco:
+```
+String tekst = "HELLO WORLD";
+tekst.toLowerCase();
+Serial.println(tekst); // wypisze "hello world"
 ```
 
-Funkcja `toLowerCase()` zamienia wszystkie litery w łańcuchu na ich odpowiedniki w małych literach. Jeśli potrzebujesz tylko pierwszą literę zmienić na małą, możesz skorzystać z funkcji `toLowercase[0]`.
+Można też użyć funkcji write() do wypisania ciągu w postaci małych liter:
+```
+String tekst = "HELLO WORLD";
+for(int i = 0; i < tekst.length(); i++){
+  Serial.write(tolower(tekst[i])); // wypisze "hello world"
+}
+```
 
-## Dogłębna analiza
+## Dogłębna analiza:
+Konwersja ciągu znaków na małe litery ma swoje korzenie w informatyce, kiedy to programiści musieli ręcznie zmieniać wielkość liter w tekście w celu poprawnego porównania lub sortowania. Obecnie istnieją również inne metody konwersji, takie jak użycie liblconv lub metod wbudowanych w inne języki programowania.
 
-Zwróć uwagę, że funkcja `toLowerCase()` zwraca kopię otrzymanego łańcucha, a nie modyfikuje go bezpośrednio. Jeśli chcesz zmienić oryginalny łańcuch, musisz przypisać wartość zwróconą przez funkcję do zmiennej, tak jak w przykładzie powyżej.
-
-Ponadto, funkcja `toLowerCase()` nie działa tylko na pojedynczych znakach, ale również na całych łańcuchach. Możesz więc przekazać do niej zmienną typu `String` lub wprowadzić wartość bezpośrednio.
-
-Innym sposobem na konwersję łańcucha znaków na małe litery jest użycie pętli `for` i funkcji `isAlpha()`, która sprawdza, czy dany znak jest literą. Należy jednak pamiętać, że ta metoda wymaga więcej kodu i może być mniej wydajna.
-
-## Zobacz również
-
-- [Dokumentacja funkcji `toLowerCase()` w języku Arduino](https://www.arduino.cc/reference/en/language/variables/data-types/tostring/)
-- [Tutorial o konwersji łańcuchów znaków na małe litery w języku C](https://www.programiz.com/c-programming/library-function/string/tolower)
+## Zobacz też:
+- Dokumentacja Arduino String: https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/
+- Alternatywne metody konwersji: https://www.oreilly.com/library/view/c-cookbook/0596003390/ch08s16.html

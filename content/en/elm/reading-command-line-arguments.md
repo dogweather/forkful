@@ -10,82 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-Command line arguments are a powerful tool for interacting with applications. They allow users to pass in information when executing a program, giving developers the ability to create more dynamic and customizable software.
+Reading command line arguments is the process of retrieving user input passed through the command line in a program. This allows programmers to create more dynamic and interactive applications, as user input can be used to modify the behavior of the program. It is a fundamental skill for any programmer, as it allows for more advanced and customizable applications.
 
-## How To
-
-Reading command line arguments in Elm is a simple and straightforward process. First, we need to import the `Cmd` and `Platform` modules. Then, we can use the `Platform.worker` function to create a program that accepts command line arguments.
+## How to:
+To read command line arguments in Elm, we first need to import the `Platform` module. Then, we can use the `flagDecoder` function to decode the command line arguments into a `Task` that returns a list of strings. Here's an example of how to use it:
 
 ```Elm
-import Cmd exposing (Cmd)
-import Platform exposing (worker)
+import Platform
 
-main : Program () Model Msg
+main : Program String
 main =
-  worker
-    { init = init
-    , update = update
-    , subscriptions = subscriptions
-    }
-```
+    Platform.worker
+        { init = \_ -> ( [], Cmd.none )
+        , update = \_ model -> ( model, Cmd.none )
+        , subscriptions = flagDecoder (map config [1..3])
+        }
 
-Next, we can use the `Platform.workerArgs` function to handle the command line arguments. This function takes a function as an argument, which will receive a list of strings representing the command line arguments.
-
-```Elm
-import Cmd exposing (Cmd)
-import Platform exposing (worker, workerArgs)
-
-main : Program String Model Msg
-main =
-  workerArgs
-    { init = init
-    , update = update
-    , subscriptions = subscriptions
-    }
-
-init : String -> (Model, Cmd Msg)
-init args =
-  ( Model args, Cmd.none )
-```
-
-Now, we can access the command line arguments within our `init` function and use them however we need to in our program. For example, we can print them out to the console.
-
-```Elm
-init : String -> (Model, Cmd Msg)
-init args =
-  ( Model args, Cmd.none )
-
-type Msg
-  = PrintArguments
-
-update : Msg -> Model -> (Model, Cmd Msg)
-update msg model =
-  case msg of
-    PrintArguments ->
-      ( model, Cmd.none )
-
-subscriptions : Model -> Sub Msg
-subscriptions _ =
-  Sub.none
-```
-
-Now, when we run our program with command line arguments, they will be printed to the console.
+config : List String -> Int -> String -> String
+config args index =
+    "Argument " ++ (toString index) ++ ": " ++ (List.head args) ++ "\n"
 
 ```
-$ elm make Main.elm --output=main.js
-$ node main.js arg1 arg2
-["arg1", "arg2"]
+
+Running this program with the command line arguments `elm make Main.elm -- arg1 arg2 arg3` will produce the following output:
+
 ```
+Argument 1: arg1
+Argument 2: arg2
+Argument 3: arg3
+```
+Note: In the `Platform.worker` function, we are passing in a dummy `update` function and a `Cmd.none` command, as we do not need them for this example.
 
-## Deep Dive
+## Deep Dive:
+Command line arguments have been a widely used feature in programming languages since the early days of computing. They provide a way for users to interact with a program through a simple text interface, making it more versatile and useful. Before command line arguments, programs would often require user input through complicated GUIs or through hardcoded values, which limited their functionality.
 
-In Elm, command line arguments are handled by the `Platform` module. By using the `workerArgs` function, we are creating a program that can receive command line arguments as its initial state. These arguments are then passed to our `init` function, allowing us to access and use them in our program.
+In Elm, there are other ways to get user input, such as using ports or using `Program`s with `subscriptions`. However, command line arguments offer a more direct and simple way to retrieve user input.
 
-It's also worth noting that the `Platform.workerArgs` function will automatically parse command line arguments into a list of strings, breaking at spaces. This is different from other languages, where command line arguments are usually separated by commas or other delimiters.
+To use command line arguments in Elm, we need to use the `Platform` module since it provides functions that allow us to interact with the platform that our application is running on, in this case, the command line. The `flagDecoder` function takes in a decoder and returns a `Task` that decodes the command line arguments into a list of strings, which can then be used in our program.
 
-## See Also
-
-- [Elm Documentation on Platform Module](https://package.elm-lang.org/packages/elm-lang/core/6.0.0/Platform)
-- [Elm Documentation on Cmd Module](https://package.elm-lang.org/packages/elm-lang/core/6.0.0/Cmd)
+## See Also:
+- Elm Documentation: [Command Line Arguments](https://package.elm-lang.org/packages/elm/core/latest/Platform#flagDecoder)
+- Elm Guide: [Customizing Flags](https://guide.elm-lang.org/interop/flags.html)
+- Elm-Lang.org: [Elm homepage](https://elm-lang.org/)

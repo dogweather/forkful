@@ -1,7 +1,7 @@
 ---
-title:                "Buscando e substituindo texto"
-html_title:           "Clojure: Buscando e substituindo texto"
-simple_title:         "Buscando e substituindo texto"
+title:                "Pesquisando e substituindo texto"
+html_title:           "Clojure: Pesquisando e substituindo texto"
+simple_title:         "Pesquisando e substituindo texto"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -10,35 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+## O que é e por quê?
 
-A substituição de texto é uma tarefa comum ao trabalhar com texto em programação. Pode ser necessário alterar nomes de variáveis, corrigir erros de digitação ou fazer alterações em massa em um grande arquivo de texto. A capacidade de efetivamente pesquisar e substituir texto é uma habilidade essencial para melhorar a produtividade e a eficiência na codificação.
+Procurar e substituir texto é uma tarefa comum para os programadores. Isso envolve encontrar e substituir uma determinada sequência de caracteres em uma string por outro conjunto de caracteres. Isso é útil quando você precisa fazer alterações em grande quantidade de texto ou código em um único comando.
 
-## Como fazer
+Os programadores fazem isso para economizar tempo e minimizar erros em tarefas repetitivas de edição de texto. Isso também permite alterar rapidamente várias instâncias de um pedaço de código sem ter que fazer manualmente alterações em cada uma delas.
 
-A substituição de texto em Clojure é realizada usando a função `replace` do namespace `clojure.string`. Esta função leva três argumentos: a string original, o texto a ser pesquisado e o texto de substituição. Aqui está um exemplo de como usar a função `replace` para substituir todas as instâncias do texto "apple" por "banana" em uma string:
-
-```Clojure
-(require '[clojure.string :as str])
-
-(str/replace "I love apple pie" "apple" "banana")
-```
-
-A saída desse código seria `"I love banana pie"`, mostrando que a função `replace` substituiu com sucesso o texto desejado. Além disso, também é possível usar expressões regulares para uma substituição mais sofisticada. Aqui está um exemplo de como substituir todas as letras maiúsculas por letras minúsculas:
+## Como fazer:
 
 ```Clojure
-(str/replace "Hello WORLD" #"[A-Z]" (fn [m] (str/upper-case m)))
+;; Para procurar e substituir texto em uma string, use a função "replace" com uma expressão regular e a string de substituição.
+(replace #"antigo" "novo" "Este é um texto antigo.")
+
+;; Output => "Este é um texto novo."
 ```
 
-Este código produziria a saída `"hello world"`, pois a função de substituição usa uma expressão lambda para converter todas as letras maiúsculas em suas equivalentes minúsculas.
+```Clojure
+;; Você também pode procurar e substituir texto em arquivos usando o clojure.java.io namespace.
+(require '[clojure.java.io :as io])
 
-## Mergulho Profundo
+(with-open [in-file (io/reader "arquivo.txt")
+            out-file (io/writer "arquivo_novo.txt")]
+    (replace #"antigo" "novo" in-file out-file))
 
-A função `replace` é útil para substituições simples, mas existem outras funções em Clojure que podem ser usadas para casos mais complexos. A função `replace-first` substitui apenas a primeira ocorrência do texto pesquisado, enquanto a função `replace-nth` substitui a n-ésima ocorrência. É importante notar que todas essas funções retornam uma nova string, em vez de modificar a string original.
+;; Este exemplo substitui todas as ocorrências de "antigo" por "novo" no arquivo "arquivo.txt" e armazena o resultado em um novo arquivo chamado "arquivo_novo.txt".
+```
 
-Outra opção é usar a função `re-seq`, que retorna um sequenciador de todas as correspondências do texto pesquisado. Isso pode ser útil para situações em que você precisa substituir apenas determinadas ocorrências. Por exemplo, você pode usar `re-seq` em conjunto com `replace-nth` para substituir apenas a segunda ocorrência de um texto.
+## Profundando:
 
-## Veja também
+Substituir texto em arquivos é uma tarefa comum em linguagens de programação e há diferentes abordagens para isso. Alguns programadores preferem usar um editor de texto com recursos de busca e substituição, enquanto outros optam por usar bibliotecas ou ferramentas especializadas para isso.
 
-- [Documentação oficial do Clojure](https://clojure.org/)
-- [Tutorial de Clojure do "Learn X in Y Minutes"](https://learnxinyminutes.com/docs/clojure-pt/)
+Os programadores também podem encontrar expressões regulares (também conhecidas como "regex") úteis para procurar e substituir padrões de texto complexos. No entanto, é importante ter cuidado ao usar expressões regulares, pois elas podem ser facilmente mal interpretadas ou mal utilizadas.
+
+## Veja também:
+
+- [Documentação oficial do Clojure sobre funções de strings](https://clojuredocs.org/clojure.core/replace)
+- [Guias para expressões regulares em Clojure](https://www.lispcast.com/reg-ex)
+- [Ferramenta gratuita para testar expressões regulares em tempo real](https://regexr.com/)

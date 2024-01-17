@@ -10,33 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
-A veces, cuando estamos programando, es necesario comparar dos fechas para realizar ciertas acciones. En Gleam, esta tarea es muy sencilla y puede ahorrarnos tiempo y esfuerzo en nuestro código.
+## ¿Qué y por qué?
 
-## Cómo hacerlo
-Para comparar dos fechas en Gleam, podemos utilizar el módulo `Time` y su función `diff_in_seconds` que nos permite obtener la diferencia en segundos entre dos fechas. Veamos un ejemplo:
+Comparar dos fechas es una tarea común para los programadores. Esto implica tomar dos fechas diferentes y determinar cuál de las dos es mayor, menor o si son iguales. Los programadores suelen hacer esto para ordenar listas de fechas, realizar cálculos de tiempo o para validar fechas de entrada del usuario.
 
-```Gleam
-import Time
+## Cómo:
 
-let fecha1 = Time.from_date(2020, 1, 1)
-let fecha2 = Time.from_date(2020, 1, 2)
+Comparar dos fechas es muy sencillo en Gleam. Primero, debemos importar el módulo de tiempo ```gleam/time```. Luego, podemos usar la función ```compare``` para comparar dos objetos de fecha. Esta función devuelve un número entero que indica si la primera fecha es mayor, menor o igual a la segunda fecha.
 
-let diferencia = Time.diff_in_seconds(fecha1, fecha2)
+```
+Gleam importar/tiempo
 
-Log.info("La diferencia en segundos es {}", [diferencia])
+let fecha1 = Gleam.tiempo.string_a_fecha("2021-03-15")
+let fecha2 = Gleam.tiempo.string_a_fecha("2021-03-16")
 
-// Resultado:
-// La diferencia en segundos es 86400
+Gleam.tiempo.comparar(fecha1, fecha2)  // Devuelve -1
 ```
 
-En este ejemplo, creamos dos fechas diferentes utilizando `Time.from_date` y luego utilizamos la función `diff_in_seconds` para obtener la diferencia en segundos entre ellas. Podemos utilizar esta información para realizar cualquier acción que necesitemos en nuestro código.
+En este ejemplo, la primera fecha es menor que la segunda ya que la función ```compare``` devuelve -1. También podemos usar los operadores ```<, >``` y ```==``` para comparar fechas.
 
-## Profundizando
-La función `diff_in_seconds` en realidad hace uso del módulo `Duration` de Gleam, que nos permite trabajar con intervalos de tiempo y realizar diferentes operaciones con ellos. Podemos obtener la diferencia no solo en segundos, sino también en horas, días, meses, etc.
+## Profundizando:
 
-Además, Gleam también nos ofrece la función `is_before` en el módulo `Time` para comparar si una fecha es anterior a otra, y la función `is_after` para verificar si es posterior. Estas funciones pueden ser muy útiles en diferentes situaciones y nos permiten tener un control preciso de nuestras fechas en el código.
+La comparación de fechas ha sido un problema común en programación desde hace mucho tiempo. Antes de la introducción de tipos de datos nativos de fecha en muchos lenguajes de programación, los programadores tenían que realizar complicados cálculos para comparar fechas. Afortunadamente, en Gleam, este proceso es mucho más sencillo gracias al módulo de tiempo incorporado. Alternativas para comparar fechas incluyen el uso de bibliotecas externas o implementar una solución personalizada.
 
-## Ver también
-- Documentación oficial de Gleam sobre el módulo `Time`: https://gleam.run/modules/time
-- Documentación oficial de Gleam sobre el módulo `Duration`: https://gleam.run/modules/duration
+## Ver También:
+
+- [Documentación del módulo Gleam de tiempo](https://gleam.run/lib/time/)
+- [Documentación de la biblioteca de fechas y hora externa Chronos](https://hexdocs.pm/chronos/readme.html)

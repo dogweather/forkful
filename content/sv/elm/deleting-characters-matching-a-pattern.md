@@ -10,25 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
-Det kan finnas olika skäl till varför man skulle vilja ta bort tecken som matchar ett visst mönster i en text. Det kan till exempel vara för att rensa bort onödiga eller felaktiga tecken, eller för att förbereda texten för vidare bearbetning.
+## Vad & Varför?
 
-## Så här gör du
-För att ta bort tecken som matchar ett visst mönster i Elm finns det flera olika metoder att använda sig av. En av de vanligaste är att använda funktionen `String.filter`, som tar emot två argument - en funktion som avgör vilka tecken som ska behållas och en sträng som ska filtreras. Ett exempel på hur detta kan se ut i kod är:
+Att ta bort tecken som matchar ett mönster, även känt som "deleting characters matching a pattern" på engelska, är en vanlig operation bland programmerare. Det gör att man kan filtrera eller rensa bort vissa tecken från en textsträng baserat på ett visst mönster. Detta kan vara användbart när man vill manipulera data eller extrahera information från en textsträng.
+
+## Så här gör du:
 
 ```Elm
-text = "Det här är en text med olika tecken som ska tas bort 12345"
-filtredText = text |> String.filter (\char -> not (Char.isDigit char))
+import String
+
+-- Ta bort alla förekomster av bokstaven "a" i en sträng
+resultat = String.repeatedly (String.dropLeft 1 >> String.contains "a") "bana" -- "bn"
 ```
+## Fördjupning:
 
-I detta exempel använder vi funktionen `not` tillsammans med `Char.isDigit` för att ta bort alla siffror från texten. Resultatet blir då `Det här är en text med olika tecken som ska tas bort`. Det finns många olika inbyggda funktioner för att hantera tecken och strängar i Elm, vilket gör att det finns många olika sätt att ta bort tecken som matchar ett visst mönster.
+### Historisk kontext:
+Att ta bort tecken som matchar ett visst mönster är en vanlig funktion i många programmeringsspråk och har funnits sedan tidiga dagar av datoranvändande. I moderna språk, som Elm, är det ofta implementerat som en del av standardbiblioteket.
 
-## Djupdykning
-Om man vill gå djupare in i ämnet och förstå hur man kan ta bort tecken som matchar ett mönster i Elm, så finns det en del olika saker man kan titta på. En nyckelkomponent är användningen av funktionen `String.filter`, som nämnts ovan. Genom att förstå hur denna funktion fungerar och hur man kan använda den på olika sätt, kan man lösa olika problem som rör borttagning av tecken i text.
+### Alternativ:
+En annan metod för att ta bort tecken som matchar ett mönster är att använda en reguljär uttrycksökning, vilket ofta är mer kraftfullt men också mer komplicerat. Ett exempel på detta i Elm skulle vara att använda funktionen `Regex.replace` från `elm/regex`-paketet.
 
-Det finns också andra användbara funktioner för att hantera tecken i Elm, såsom `String.slice`, `String.split` och `String.trim`, som kan vara relevanta i olika sammanhang. Dessutom kan det vara viktigt att förstå skillnaderna mellan Unicode och ASCII-kodning och hur man tar hänsyn till dessa när man arbetar med textsträngar.
+### Implementeringsdetaljer:
+I Elm används funktionen `String.repeatedly` tillsammans med funktionerna `String.dropLeft` och `String.contains` för att ta bort tecken som matchar ett mönster. Först används `String.dropLeft` för att ta bort de första tecknen i strängen baserat på ett angivet antal, och sedan kontrolleras om de borttagna tecknen innehåller mönstret med hjälp av `String.contains`. Om mönstret finns i de borttagna tecknen, så tas de bort från strängen helt till dess att det inte finns fler förekomster av mönstret i strängen.
 
-## Se också
-* [Officiell dokumentation för Elm](https://guide.elm-lang.org/)
-* [En guide för att hantera tecken i Elm](https://dev.to/rtfeldman/elm-strings-are-not-just-arrays-of-characters-2pck)
-* [En artikel om Unicode och ASCII i Elm](https://dev.to/mpizenberg/from-javascript-to-elm-unicode-romanization-as-unicode-scripts-feature-2h02)
+## Se även:
+- [Dokumentation för `elm/core`-paketet](https://package.elm-lang.org/packages/elm/core/latest/String)
+- [Dokumentation för `elm/regex`-paketet](https://package.elm-lang.org/packages/elm/regex/latest/)

@@ -1,7 +1,7 @@
 ---
-title:                "HTML 파싱"
-html_title:           "Java: HTML 파싱"
-simple_title:         "HTML 파싱"
+title:                "HTML 구문 분석"
+html_title:           "Java: HTML 구문 분석"
+simple_title:         "HTML 구문 분석"
 programming_language: "Java"
 category:             "Java"
 tag:                  "HTML and the Web"
@@ -10,33 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
-HTML 파싱을 할 이유는 데이터를 추출하거나 웹사이트에서 필요한 정보를 가져오기 위해서입니다.
+## 무엇 & 왜?
+HTML 파싱이 무엇인지를 알고싶다면 이 게시글을 읽어보세요! 파싱은 HTML 문서를 읽고 분석하는 것을 말합니다. 프로그래머들이 이를 하는 이유는 웹 데이터를 가져오거나 웹사이트를 구조화하기 위해서입니다.
 
-## 이렇게 하세요
+## 방법:
+아래에 ```Java ... ``` 코드 블록으로 예제와 출력을 보여드립니다. 이를 따라해보세요!
+
+- 일반적인 방법:
 ```Java
-// Jsoup 라이브러리를 사용해서 HTML을 파싱하는 예제
-String url = "https://www.example.com";
 Document doc = Jsoup.connect(url).get();
-String title = doc.select("title").text();
-
-System.out.println(title); // 결과: Example Domain
+String title = doc.title();
+System.out.println(title);
+```
+```
+결과: Hello World
 ```
 
+- CSS 선택자를 사용하여 데이터 추출하기:
 ```Java
-// Regex를 사용해서 HTML에서 특정 내용을 추출하는 예제
-String html = "<p>Welcome to <b>Java</b></p>";
-Pattern pattern = Pattern.compile("<b>(.*?)</b>");
-Matcher matcher = pattern.matcher(html);
-
-if (matcher.find()) {
-  System.out.println(matcher.group(1)); // 결과: Java
+Elements links = doc.select("a[href]");
+for(Element link : links) {
+	System.out.println(link.attr("href"));
 }
 ```
+```
+결과: https://www.example.com
+```
 
-## 더 깊이 알아보기
-HTML 파싱 과정에서는 주로 자주 사용되는 라이브러리인 Jsoup이나 정규식을 사용합니다. HTML은 트리 구조로 되어 있기 때문에 파싱할 때는 요소의 계층을 잘 파악하고 선택할 수 있어야 합니다.
+## 깊이있게:
+이제 많은 웹 페이지들이 HTML 대신 JavaScript를 사용합니다. 그래서 파싱 시 어려움이 있을 수 있습니다. 하지만 우리는 이를 해결할 수 있는 다른 라이브러리들을 사용할 수 있습니다. 예를 들어, 개발자들이 자주 사용하는 Jsoup 외에도 다른 라이브러리들이 있습니다. 또한, 파싱 작업을 할 때 이해할 수 있는 개념들이 많이 존재합니다.
 
-## 더 알아볼 만한 자료
-- [Jsoup 공식 문서](https://jsoup.org/)
-- [정규식에 대한 자세한 설명](https://www.regular-expressions.info/index.html)
+## 참고:
+- [Jsoup](https://jsoup.org/)
+- [Apache HttpClient](https://hc.apache.org/httpclient-legacy/index.html)
+- [HtmlUnit](https://htmlunit.sourceforge.io/)
+
+이제 HTML 파싱에 대해 더 많이 알았기를 바랍니다. 이를 바탕으로 여러분만의 웹 데이터 추출 프로그램을 만들어보세요!

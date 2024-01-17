@@ -1,7 +1,7 @@
 ---
-title:                "टेस्ट लिखना"
-html_title:           "Elm: टेस्ट लिखना"
-simple_title:         "टेस्ट लिखना"
+title:                "टेस्ट लेखन"
+html_title:           "Elm: टेस्ट लेखन"
+simple_title:         "टेस्ट लेखन"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Testing and Debugging"
@@ -10,52 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
+--
 
-नए सॉफ्टवेयर प्रोजेक्ट्स को डेवलप करने के दौरान आम तौर पर हम समय और परिश्रम को उबाऊ बनाते हैं, लेकिन टेस्टिंग बहुत ही जरूरी है क्योंकि यह हमारे प्रोजेक्ट में बग्स और विपरीत नकारात्मकताओं को अपने उर्जा के निर्माण से आगे रखने में मदद करता है। इसलिए, एल्म डेवलपर्स के लिए एल्म इंटरफेस टेस्टिंग (Elm Interface Testing) का समर्थन निश्चित रूप से जरूरी है।
+हेल्लो Elm प्रोग्रामरों! विशेष रूप से जो प्रोग्रामिंग की दुनिया में नए हैं, उनके लिए आज हम आपको "Elm टेस्टिंग कैसे करें?" के बारे में बताने जा रहे हैं। तो चलिए शुरू करते हैं!
 
-## कैसे करें
+## क्या और क्यों?
 
-एल्म में टेस्ट का निर्माण बहुत ही सरल है। पहले हम `elm-test` टूल को अपने प्रोजेक्ट में इनस्टॉल करते हैं। अब टेस्टिंग करने के लिए `tests` डाइरेक्टरी बनाएं और उसमें `Main.elm` फ़ाइल बनाएं। नीचे एक उदाहरण दिया गया है:
+पूर्ण ट्रांसपेरेंसी के मुद्दे से वेबवर्कर्स प्रत्येक दिन की तरह किसी न किसी एप्लिकेशन को बनाते हैं। इसमें जादा से जादा बग और अनुरूपताएं हो सकती हैं। लेकिन इन बगों को ध्यान रखने के लिए अनेक तरह की टेस्टिंग टूल्स उपलब्ध हैं। ये टूल्स आपको अपने कोड को परीक्षित करने में मदद करते हैं और सुरक्षित इल्म एप्लिकेशन बनाने में सहायता प्रदान करते हैं।
+
+## कैसे करें?
 
 ```Elm
-module Main exposing (..)
+import Test exposing (..)
 
-import Html exposing (..)
-import Expect exposing (..)
-
-greeting : String
-greeting = "Hello, world!"
-
+tests : Test
 tests =
-    [ test "greeting should be Hello, world!" <|
-        \() -> Expect.equal greeting "Hello, world!"
-    ]
-
-main =
-    Html.program
-        { view = \_ -> div [] [ text "Testing in Elm" ]
-        , init = ( (), Cmd.none )
-        , update = \_ _ -> ( (), Cmd.none )
-        , subscriptions = \_ -> Sub.none
-        }
+    describe "गणित कार्यशाला"
+        [ test "2 और 3 का गुणन" <|
+            \_ -> 2 * 3 |> Expect.equal 6
+        , test "2 और 2 का जोड़" <|
+            \_ -> 2 + 2 |> Expect.equal 4
+        ]
 ```
 
-इसके बाद, हम `elm-test` कमांड रन करें तो निम्न आउटपुट मिलेगा:
+यहाँ हम Elm कोड में अनुकूलन निष्पादित स्थितियों को परीक्षण करने के लिए Test पैकेज का उपयोग कर रहे हैं।
 
-```
-➜ elm-test
-
-elm-test 0.19.0-rev3
----------------------
-
-Running 1 test. To reproduce these results, run: elm-test --fuzz 100 --seed 269593148
-
-TEST RUN PASSED(1 test)
-
-elm-test by Elm version 0.19.0-rev3
+**उत्पाद उत्पन्न करने के लिए:**
+```bash
+elm-test
 ```
 
-## गहराईगत समझ
+## गुहार
 
-टेस्ट लेखन हमारे प्रोजेक्ट को सुधारने और दूषित कोड को ढूंढने में मदद करता है। यदि हम एल्म दो आरोही संरचनाएं विभिन्न टेस्ट बनाते हैं जो हमारी परीक्षा फ़ालतू से बचाते हैं तो यह ज्यादा लोकप्र
+अगर आप अभी भी अपने लोकल वेबसाइट पर टेस्टिंग को सीखना चाहते हैं, तो इस ब्लॉग पोस्ट को जरूर देखें: [Elm: The Elm Test Package](https://www.learning-elm.com/introduction/testing/)
+
+## अध्ययन करें
+
+
+इस आर्टिकल में हमने आपको Elm कोड में टेस्टिंग करने का एक सरल तरीका दिखाया है। हालांकि, आप दूसरे टेस्टिंग फ्रेमवर्क्स के बारे में भी अधिक जान सकते हैं। यह फ्रेमवर्क्स आपको अपने कोड को और अधिक उत्पादित बनाने में मदद करते हैं।
+
+## और जानें
+
+- [Elm: The Elm Test Package](https://www.learning-elm.com/introduction/testing/)
+- [Elm: The Test Framework Documentation](https://package.elm-lang.org/packages/elm-explorations/test/latest/)
+- [Elm: The Official Guide for Testing](https://guide.elm-lang.org/testing/)
+- [Elm: The Official Documentation](https://elm-lang.org/docs)

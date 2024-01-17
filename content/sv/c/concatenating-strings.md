@@ -10,56 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+Vad är strängkonkatinering och varför gör programmerare det?
 
-Att sammanslå strängar är en vanlig och nyttig teknik i C-programmering. Det kan användas för att skapa dynamisk text och processa olika typer av data som är lagrade i strängar. Det kan också hjälpa till att skapa mer läsbar och effektiv kod.
+Strängkonkatenering är när man sammanslår flera strängar till en enda sträng. Detta är användbart när man vill skapa en längre sträng utifrån flera mindre delar. Programmerare använder detta för att bygga dynamiska strängar, till exempel i ett meddelande eller en filväg.
 
-## Så här gör du
+Så här gör du det:
 
-För att sammanslå två strängar i C kan du använda funktionen `strcat()`. Här är ett exempel på hur du skulle kunna använda den:
+```C
+// Skapa två strängar
+char förnamn[] = "Karin";
+char efternamn[] = "Svensson";
 
-````C
-#include <stdio.h>
-#include <string.h>
+// Konkatenera dem till en ny sträng
+char namn[50];
+strcat(namn, förnamn);
+strcat(namn, " ");
+strcat(namn, efternamn);
 
-int main() {
-    char str1[20] = "Hello";
-    char str2[20] = "World";
+// Skriv ut den nya strängen
+printf("Namn: %s", namn);
 
-    strcat(str1, str2);
-    printf("%s", str1);
+// Output: Namn: Karin Svensson
+```
 
-    return 0;
-}
+Djupdykning:
 
-````
-**Output:** *HelloWorld*
+Historiskt sett har strängkonkatenering varit en viktig funktion i programmeringsspråk. I äldre språk, som Fortran och COBOL, var det vanligt att använda förutbestämda storlekar på strängarna, vilket gjorde det viktigt att kunna sammanslå strängar för att undvika att överskrida gränserna.
 
-I det här exemplet deklarerar vi två strängar, `str1` och `str2`, med storleken 20 tecken. Sedan använder vi `strcat()` för att sammanslå `str2` till `str1`, vilket lägger till "World" till slutet av "Hello". Slutligen skrivs den sammanslagna strängen ut.
+I moderna programmeringsspråk finns det dock alternativ till strängkonkatenering, som till exempel möjligheten att skapa dynamiska strängar. I vissa språk, som Python, är strängar även immutabla vilket innebär att de inte kan ändras vilket gör strängkonkatenering mindre användbart.
 
-Det är viktigt att notera att storleken på `str1` måste vara tillräckligt stor för att rymma den sammanslagna strängen. Om `str2` är längre än resterande utrymme i `str1` kommer de överflödiga tecknen att kapas eller så kan det uppstå en error. Du kan också använda `strncat()` för att säkerställa att strängen inte blir för lång.
+Implementeringen av strängkonkatenering kan variera beroende på programmeringsspråk och dess funktioner. I C använder man funktionen `strcat()` för att sammanslå strängar, medan man i andra språk kanske använder en operator som `+`.
 
-## Deep Dive
+Se även:
 
-För att förstå hur sammanslagning av strängar fungerar djupare kan vi titta på den faktiska koden bakom `strcat()` funktionen:
+- Dokumentation för `strcat()`: https://www.programiz.com/c-programming/library-function/string.h/strcat
 
-````C
-char *strcat(char *dest, const char *src) {
-    char *ptr = dest + strlen(dest);
-    while (*src) {
-        *ptr++ = *src++;
-    }
-    *ptr = '\0';
-    return dest;
-}
-````
-
-Funktionen `strcat()` tar in två parametrar, en destinationssträng (`dest`) och en källsträng(`src`). Den första raden i koden deklarerar en pekare `ptr` som pekar på slutet av `dest` med hjälp av `strlen()` funktionen. Sedan loopar den igenom `src` tills den når slutet av strängen och lägger till varje tecken till `dest` en efter en. Slutligen sätts ett null-tecken till slutet av `dest` för att indikera att strängen är slut.
-
-Det finns också andra funktioner som kan användas för att sammanslå strängar, som `strncat()` eller `sprintf()`. Det är viktigt att läsa dokumentationen för dessa funktioner för att förstå deras användning och skillnader.
-
-## Se också
-
-- [Dokumentation för strcat()](https://www.tutorialspoint.com/c_standard_library/c_function_strcat.htm)
-- [Exempel på sammanslagning av strängar i C](https://www.geeksforgeeks.org/strcat-strncat-functions-c/)
-- [Tilldelning av strängar i C](https://www.programiz.com/c-programming/c-strings)
+- En jämförelse mellan C och andra programmeringsspråk: https://hackr.io/blog/c-programming-vs-python

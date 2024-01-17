@@ -10,21 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+## これは何？ 
+標準エラーへの書き込みとは、プログラマーがプログラムの実行中に重要なエラーを検出した場合に、それをコンソールに表示することを意味します。プログラマーたちがこの方法を使用する理由は、エラーをすばやく発見し、デバッグするためです。
 
-標準エラーに書き込むことが重要な理由は、プログラミング中に発生したエラーを特定し解決するためです。エラーを標準エラーに書き込むことで、より詳細な情報を得ることができ、問題をより早く解決することができます。
+## 方法：
+```Clojure
+(defn write-to-stderr [error-msg]
+  (io/println (System/err) error-msg))
 
-## 使い方
+(write-to-stderr "An error has occurred")
+```
 
-エラーを標準エラーに書き込むには、```(println)``` を使います。例えば、 ```(println "エラーが発生しました")``` と書くと、標準エラーに "エラーが発生しました" というメッセージが出力されます。
+このコードを実行すると、エラーメッセージが標準エラーに表示されます。
+```
+An error has occurred
+```
 
-もしデバッグのためにエラーの詳細な情報を見たい場合は、 ```(println (str "エラーが発生しました:" err))``` と書くことで、エラーの内容が標準エラーに出力されます。
+## 深堀り：
+標準エラーへの書き込みは、プログラミングの世界で古くから使用されてきたテクニックです。これは、通常の標準出力とは異なり、エラー出力だけに使用されることに注意してください。代替手段としては、ログファイルへの書き込みや、GUIを使用したエラーダイアログの表示があります。標準エラーへの書き込みは、プログラムの実行中に必要な情報を表示するためにも使用されます。
 
-## 詳細を知る
-
-標準エラーに書き込むことで、プログラミング中のエラーをより効率的に解決することができます。また、 ```(eprintln)``` という関数を使うことで、標準エラーに書き込んだ情報を赤色で表示することができるので、より目立たせることができます。
-
-## 参考
-
-- [標準エラーに出力する関数 - Clojureドキュメント](https://clojuredocs.org/clojure.core/eprintln)
-- [例外処理と標準エラーに書き込む方法 - Kageno Blog](https://kageno-blog.com/programming/clojure/exception-handling)
+## 参考：
+- [JavaのSystem.errを使用したエラーメッセージの表示](https://docs.oracle.com/javase/jp/8/docs/api/java/lang/System.html#err)
+- [エラーログの書き込みの標準](https://www.linode.com/docs/uptime/logging/write-log-messages-to-standard-error/)

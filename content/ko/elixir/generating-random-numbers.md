@@ -1,7 +1,7 @@
 ---
-title:                "랜덤 숫자 생성하기"
-html_title:           "Elixir: 랜덤 숫자 생성하기"
-simple_title:         "랜덤 숫자 생성하기"
+title:                "랜덤 숫자 생성"
+html_title:           "Elixir: 랜덤 숫자 생성"
+simple_title:         "랜덤 숫자 생성"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Numbers"
@@ -10,75 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-개요:
-많은 프로그래밍 언어들은 난수 생성에 대한 내장 함수를 제공합니다. 그렇지만, 왜 객체지향적이고 동시성을 지원하는 Elixir로 난수를 생성해야 할까요? 이 글에서 난수 생성을 활용하는 이유와 Elixir로 어떻게 난수를 생성할 수 있는지, 그리고 깊이 들어가는 정보를 알아보겠습니다.
+## 무엇 & 왜?
 
-## 왜
+랜덤 숫자 생성은 랜덤하게 선택된 숫자를 생성하는 것입니다. 프로그래머들은 이를 사용하여 게임 시스템, 보안 기능, 테스트 등 다양한 분야에서 랜덤성을 제공할 수 있습니다.
 
-난수 생성은 많은 소프트웨어에 있어서 필수적인 요소입니다. 무엇보다도 게임, 보안, 랜덤한 테스트 데이터 생성 등에 활용됩니다. Elixir는 객체지향적인 언어로서부터 받은 모듈, 함수, 코루틴 등의 개념을 활용해 난수 생성을 더욱 간편하고 유연하게 할 수 있습니다.
-
-## How To
-
-Elixir는 `:rand` 라이브러리를 통해 난수 생성을 제공해줍니다. `:rand`는 `integer`, `uniform`, `uniform_float` 등의 여러가지 함수를 제공하며 각각 다른 난수를 생성해줍니다.
-
-아래는 `integer` 함수를 사용해 0과 100 사이의 랜덤한 정수를 출력하는 예제입니다.
+## 방법:
 
 ```Elixir
-:rand.integer(0..100)
+# Elixir에서의 랜덤 숫자 생성 예제
+# 1부터 10까지의 숫자 중 랜덤하게 선택하기
+1..10 |> Enum.random()
+# 출력 결과: 7
+
+# 특정 범위 내에서 여러 숫자 랜덤하게 선택하기
+Enum.random(1..100, 3)
+# 출력 결과: [55, 23, 78]
+
+# 표준 정규 분포를 따르는 랜덤한 실수 생성하기
+:rand.normal()
+# 출력 결과: 0.043783642256075855
 ```
 
-출력 예시:
+## 심층 분석:
 
-```Elixir
-44
-```
+1. 랜덤 숫자 생성은 컴퓨터의 의사 난수 알고리즘에 의해 가능해졌으며 이전에는 난수 테이블을 사용하여 구현되었습니다.
+2. Elixir에서는 `Enum.random/2` 함수를 사용하여 범위 내에서 랜덤 숫자를 선택할 수 있으며, `rand.normal/0` 함수를 사용하여 표준 정규 분포에 따른 랜덤 실수를 생성할 수 있습니다.
+3. 기본적으로 Elixir의 난수 생성 함수는 seed 값을 지원하지 않습니다. 따라서 보안을 위해서는 Cryptography 모듈을 사용하여 seed 값을 설정하고 더 강력한 랜덤 숫자를 생성할 수 있습니다.
 
-동일한 방식으로 `uniform` 함수를 사용해 0.0과 1.0 사이의 랜덤한 숫자를 출력할 수 있습니다.
+## 관련 자료:
 
-```Elixir
-:rand.uniform()
-```
-
-출력 예시:
-
-```Elixir
-0.6855220130271914
-```
-
-더욱 정교한 난수 생성을 위해서는 `uniform_float` 함수를 사용할 수 있습니다. 아래는 0.0과 100.0 사이의 소수 두 자리수를 가진 랜덤한 숫자를 출력하는 예제입니다.
-
-```Elixir
-:rand.uniform_float(0.0..100.0, 2)
-```
-
-출력 예시:
-
-```Elixir
-45.32
-```
-
-위에서 소개한 세 가지 함수 외에도 `:rand` 라이브러리에는 다양한 난수 생성 함수가 있으니 자세한 것은 Elixir 공식 문서를 참고하기를 추천합니다.
-
-## 깊이 들어가기
-
-위에서 소개한 함수들은 모두 시드값을 인자로 받을 수 있습니다. 이를 통해 더욱 다양한 형태의 난수를 생성할 수 있습니다. 예를 들어, 동일한 시드값을 사용하면 항상 같은 결과를 출력하게 됩니다.
-
-```Elixir
-:rand.uniform_float(0.0..100.0, 2, 1234)
-```
-
-출력 예시:
-
-```Elixir
-17.12
-```
-
-반면에 시드값을 제외하고 함수를 호출하면 시스템 시간을 기반으로 랜덤한 시드값을 생성해줍니다.
-
-더욱 심화된 이야기로, Elixir에서 제공하는 `:random` 모듈을 활용해 난수 생성과 관련된 세부적인 제어도 가능합니다. 이에 대한 자세한 내용은 공식 문서를 참고해주시기 바랍니다.
-
-## See Also
-
-- Elixir 공식 문서: https://elixir-lang.org/docs.html
-- Elixir의 비동기 처리 능력: https://blog.appscode.com/elixir-async-processing-b08070e138b0
-- 함수형 프로그래밍과 Elixir: https://medium.com/@BastiHz/functional-programming-in-elixir-46c63e820fbd
+- [Elixir 공식 문서 - 랜덤 숫자 생성](https://hexdocs.pm/elixir/Kernel.html#random/0)
+- [Elixir 커뮤니티 포럼 - 랜덤 숫자 생성 관련 토론](https://elixirforum.com/t/how-to-generate-n-numbers-randomly-from-a-list/14525)

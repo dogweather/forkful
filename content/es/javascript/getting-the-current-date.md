@@ -10,43 +10,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¿Qué y por qué?
+Obtener la fecha actual en programación es una forma de obtener información sobre la fecha y hora actual del sistema en el que se está ejecutando el código. Los programadores pueden hacerlo para realizar tareas como mostrar la fecha actual en una interfaz de usuario o para realizar cálculos basados en la fecha actual.
 
-¿Alguna vez has necesitado saber la fecha y hora exacta en la que se está ejecutando tu código? ¡Obtener la fecha y hora actual es crucial para muchas aplicaciones y tareas de programación! Afortunadamente, en Javascript hay una manera sencilla de obtener la fecha actual y usarla en tu código.
-
-## Cómo hacerlo
-
-Obtener la fecha actual en Javascript es bastante sencillo. Solo necesitas usar el método `Date()` de la siguiente manera:
+## Cómo hacerlo:
+Para obtener la fecha actual en Javascript, simplemente podemos utilizar el objeto `Date` incorporado y su método `getDate()`. Este método devuelve un número que representa el día del mes actual. Por ejemplo:
 
 ```Javascript
-let fechaActual = new Date();
+let date = new Date();
+console.log(date.getDate()); // Output: 3 (si hoy es 3 de mayo)
 ```
 
-Este código crea un objeto `fechaActual` que contiene la fecha y hora actuales en una instancia de `Date`.
+También podemos utilizar otros métodos como `getFullYear()` para obtener el año actual, `getMonth()` para obtener el mes actual o `getDay()` para obtener el día de la semana.
 
-Si quieres obtener la fecha y hora específica de una zona horaria en particular, puedes usar el método `toLocaleString()` junto con el objeto `Date()` de la siguiente manera:
+## Profundizando:
+Historicamente, obtener la fecha actual en programación era una tarea más compleja que involucraba conversiones y cálculos. Sin embargo, con la incorporación del objeto `Date` en los lenguajes de programación, ahora es más fácil. Además, existen bibliotecas y módulos que ofrecen funcionalidades más avanzadas para trabajar con fechas y horas.
 
-```Javascript
-let fechaActual = new Date().toLocaleString("es-CO", { timeZone: "America/Bogota" });
-```
-
-Este código obtendrá la fecha y hora en formato de cadena de texto en la zona horaria especificada (en este caso, Colombia).
-
-## Profundizando
-
-¿Qué pasa si quieres obtener solo la fecha o solo la hora actual? En Javascript, puedes usar una variedad de métodos para acceder a diferentes partes de un objeto `Date()`. Algunos de ellos son:
-
-- `.getFullYear()`: Devuelve el año completo de la fecha.
-- `.getMonth()`: Devuelve el mes actual (comenzando desde 0 para enero).
-- `.getDate()`: Devuelve el día del mes.
-- `.getHours()`: Devuelve la hora actual.
-- `.getMinutes()`: Devuelve los minutos actuales.
-- `.getSeconds()`: Devuelve los segundos actuales.
-
-Estos son solo algunos de los métodos disponibles para acceder a diferentes partes de una fecha. Puedes consultar la documentación de MDN para ver la lista completa.
-
-## Ver también
-
-- [Documentación de Date en MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [Más formas de obtener la fecha actual en Javascript](https://www.codegrepper.com/code-examples/javascript/get+current+date+and+time+javascript)
-- [Cómo trabajar con fechas y horas en Javascript](https://www.w3schools.com/js/js_dates.asp)
+## Ver también:
+- [MDN web docs: Date](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [Moment.js](https://momentjs.com/) - Una biblioteca popular para trabajar con fechas en Javascript.
+- [Luxon](https://moment.github.io/luxon/) - Una alternativa a Moment.js.

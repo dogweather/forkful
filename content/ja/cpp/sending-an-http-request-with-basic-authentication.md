@@ -1,7 +1,7 @@
 ---
-title:                "ベーシック認証を使用してhttpリクエストを送信する"
-html_title:           "C++: ベーシック認証を使用してhttpリクエストを送信する"
-simple_title:         "ベーシック認証を使用してhttpリクエストを送信する"
+title:                "基本認証を使用してhttpリクエストを送信する"
+html_title:           "C++: 基本認証を使用してhttpリクエストを送信する"
+simple_title:         "基本認証を使用してhttpリクエストを送信する"
 programming_language: "C++"
 category:             "C++"
 tag:                  "HTML and the Web"
@@ -10,62 +10,96 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-なぜ？
-HTTPリクエストで基本認証を行う必要があるのでしょうか？
-基本認証は、Webサーバーとのやり取りにおいて、セキュリティを確保するための重要な手段の一つです。特定のWebリソースにアクセスするためには、認証情報を提供する必要があります。そのため、基本認証を用いてHTTPリクエストを送信することによって、安全にリソースにアクセスすることができます。
+## 何？なぜ？
+HTTPリクエストを基本認証付きで送るとは何かと、プログラマーがそれを行う理由について2-3文で説明します。
 
-## How To
-どのようにすればいいの？
-まず、基本認証を行うためには、コンピューター上で実行されるプログラムを用いて、HTTPリクエストを送信する必要があります。以下のようなC++のコードを使って、基本認証を行ったHTTPリクエストを送信することができます。
-
+## 方法：
+以下のような、Ｃ＋＋コードブロック内のコーディング例やサンプル出力を使用して説明します。
 ```
+// ライブラリの読み込み
 #include <iostream>
 #include <curl/curl.h>
 
-using namespace std;
+// リクエスト用の構造体を定義
+struct MemoryStruct {
+  char *memory;
+  size_t size;
+};
 
-int main()
-{
-  // curlセッションの初期化
-  CURL *curl;
-  curl = curl_easy_init();
-  
-  if(curl)
-  {
-    // URLの設定
-    curl_easy_setopt(curl, CURLOPT_URL, "https://www.example.com/");
-    
-    // 認証情報の設定
-    curl_easy_setopt(curl, CURLOPT_USERPWD, "username:password");
-    
-    // HTTPリクエストの実行
-    CURLcode res = curl_easy_perform(curl);
-    
-    // エラーハンドリング
-    if(res != CURLE_OK)
-    {
-      cerr << "An error has occurred: " << curl_easy_strerror(res) << endl;
-      curl_easy_cleanup(curl);
-      return 1;
-    }
-    
-    // curlのクリーンアップ
-    curl_easy_cleanup(curl);
+// リクエスト用のコールバック関数を定義
+static size_t WriteMemoryCallback(void *contents, size_t size, size_t nmemb, void *userp) {
+  size_t realsize = size * nmemb;
+  struct MemoryStruct *mem = (struct MemoryStruct *)userp;
+
+  mem->memory = (char *)realloc(mem->memory, mem->size + realsize + 1);
+  if (mem->memory == NULL) {
+    /* out of memory! */
+    std::cout << "not enough memory (realloc returned NULL)\n";
+    return 0;
   }
+
+  memcpy(&(mem->memory[mem->size]), contents, realsize);
+  mem->size += realsize;
+  mem->memory[mem->size] = 0;
+
+  return realsize;
+}
+
+int main(void) {
+  // 変数の初期化
+  CURL *curl_handle;
+  CURLcode res;
+  struct MemoryStruct chunk;
+  chunk.memory = (char *)malloc(1);  /* will be grown as needed by the realloc above */
+  chunk.size = 0;    /* no data at this point */
+
+  // cURLの初期化
+  curl_global_init(CURL_GLOBAL_ALL);
+
+  // cURLのハンドルを取得
+  curl_handle = curl_easy_init();
+
+  // URLを指定
+  curl_easy_setopt(curl_handle, CURLOPT_URL, "https://example.com");
+
+  // 基本認証を使用するためのオプションを設定
+  curl_easy_setopt(curl_handle, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
+  curl_easy_setopt(curl_handle, CURLOPT_USERPWD, "username:password");
+
+  // リクエストを送信し、結果を取得
+  curl_easy_setopt(curl_handle, CURLOPT_WRITEFUNCTION, WriteMemoryCallback);
+  curl_easy_setopt(curl_handle, CURLOPT_WRITEDATA, (void *)&chunk);
+  res = curl_easy_perform(curl_handle);
+
+  // 送信結果を出力
+  if (res != CURLE_OK) {
+    fprintf(stderr, "curl_easy_perform() failed: %s\n",
+            curl_easy_strerror(res));
+  }
+  else {
+    printf("%lu bytes retrieved\n", (long)chunk.size);
+    printf("%s\n", chunk.memory);
+  }
+
+  // ハンドルを解放
+  curl_easy_cleanup(curl_handle);
+
+  // メモリを解放
+  free(chunk.memory);
+
+  // cURLを終了
+  curl_global_cleanup();
+
   return 0;
 }
 ```
 
-上記のコードでは、curlライブラリを使用して、基本認証のためのユーザー名とパスワードを設定し、HTTPリクエストを送信しています。成功した場合は、WebサイトのHTMLページが取得され、それがcoutに出力されます。
+## もっと深く：
+基本認証を使用してHTTPリクエストを送ることは、コンピュータネットワークの歴史と深く関わっています。プログラマーが基本認証を選択する理由としては、シンプルで簡単に実装できることや、ユーザー名とパスワードの組み合わせでのセキュリティが提供されることが挙げられます。代替手段としては、OAuthやOpenIDなどのより安全な認証方式がありますが、基本認証は依然としてメジャーな選択肢です。
 
-## Deep Dive
-詳細な情報
-基本認証には、ユーザー名とパスワードを平文で送信するというセキュリティ上の問題があります。そのため、HTTPSを使うことで暗号化することが推奨されています。また、基本認証を行う際には、認証情報を保持するためのセッションを確立する必要があります。これにより、同じ認証情報を繰り返し送信することなく、複数のリクエストを行うことができます。
+## 関連情報：
+基本認証を使用したHTTPリクエストの詳細については、以下のリンクを参照してください。
 
-## See Also
-詳細な情報が必要な場合は、以下のリンクを参考にしてください。
-
-- [HTTP Basic認証の仕組みと実装方法](https://qiita.com/RyosukeTai/items/641d0675e2b8ab0db1aa)
-- [HTTP Authentication](https://developer.mozilla.org/ja/docs/Web/HTTP/Authentication)
-- [curl ライブラリのドキュメント](http://curl.se/libcurl/c/)
+- curlライブラリ：https://curl.haxx.se/
+- cURLライブラリのドキュメント：https://curl.haxx.se/libcurl/
+- cURLの基本認証に関するドキュメント：https://curl.haxx.se/libcurl/c/CURLOPT_HTTPAUTH.html

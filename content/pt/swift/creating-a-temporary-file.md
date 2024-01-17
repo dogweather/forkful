@@ -10,33 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+## O que e por que?
+Criar um arquivo temporário, como o nome sugere, é criar um arquivo que só é necessário por um curto período de tempo e será deletado assim que a tarefa for concluída. Programadores geralmente criam arquivos temporários para armazenar dados temporários que serão usados ​​em seu código. Isso ajuda a manter o código organizado e evita a sobrecarga de dados desnecessários.
 
-Criar arquivos temporários pode ser uma tarefa útil em projetos de desenvolvimento de software. Eles permitem que você armazene dados temporários de maneira eficiente e segura, sem ocupar espaço no disco rígido do seu dispositivo.
+## Como fazer:
+````Swift 
+let temporaryURL = URL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent("meuArquivoTemporario.txt")
 
-## Como Fazer
-
-```Swift
-let tempDirectory = URL(fileURLWithPath: NSTemporaryDirectory(), isDirectory: true)
 do {
-    let tempFile = try FileManager.default.url(for: .itemReplacementDirectory, in: .userDomainMask, appropriateFor: tempDirectory, create: true)
-    print("Arquivo temporário criado em \(tempFile)")
+  try "Hello World".write(to: temporaryURL, atomically: true, encoding: .utf8)
+  print("Arquivo temporário criado com sucesso!")
 } catch {
-    print("Não foi possível criar o arquivo temporário: \(error)")
+  print("Erro ao criar arquivo temporário: \(error.localizedDescription)")
 }
-```
+````
+ Output: Arquivo temporário criado com sucesso!
 
-Saída:
+## Deep Dive:
+Criar arquivos temporários é comum na programação desde os primeiros dias da computação. Antes da existência de sistemas de arquivos de alto nível, programadores criavam arquivos temporários diretamente em memória. Hoje em dia, existem alternativas para a criação de arquivos temporários, como o uso de caches e bancos de dados. Em Swift, também é possível criar diretamente um arquivo temporário sem a necessidade de especificar seu caminho completo.
 
-```
-Arquivo temporário criado em file:///Users/usuario/Library/Containers/com.example.app/Documents/file.tmp/
-```
-
-## Deep Dive
-
-Criar um arquivo temporário envolve alguns conceitos importantes. Primeiramente, é essencial entender os diferentes tipos de diretórios no sistema de arquivos, como o diretório temporário e o diretório de substituição de item (item replacement directory). Além disso, o uso do gerenciador de arquivos (FileManager) e tratamento de erros são fundamentais para garantir que o arquivo temporário seja criado com sucesso.
-
-## Veja Também
-
-- [Documentação oficial do Swift sobre o gerenciador de arquivos](https://developer.apple.com/documentation/foundation/filemanager)
-- [WWDC 2015: Working with Files and the File System](https://developer.apple.com/videos/play/wwdc2015/707/)
+## See Also:
+Para mais informações sobre a criação de arquivos temporários em Swift, consulte a documentação oficial em: https://developer.apple.com/documentation/foundation/nsfilemanager/1407737-
+url_forcreatesubdirectory

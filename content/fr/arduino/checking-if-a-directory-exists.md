@@ -1,7 +1,7 @@
 ---
-title:                "Vérification de l'existence d'un répertoire"
-html_title:           "Arduino: Vérification de l'existence d'un répertoire"
-simple_title:         "Vérification de l'existence d'un répertoire"
+title:                "Vérifier si un répertoire existe"
+html_title:           "Arduino: Vérifier si un répertoire existe"
+simple_title:         "Vérifier si un répertoire existe"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Files and I/O"
@@ -10,44 +10,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
-Si vous utilisez Arduino pour stocker des données dans une carte SD, il peut être utile de vérifier si le répertoire dans lequel vous souhaitez stocker ces données existe déjà. Cela permet d'éviter d'écraser involontairement des données précieuses.
+## Quoi & Pourquoi?
+Vérifier si un répertoire existe est une fonctionnalité importante pour les programmeurs travaillant avec des systèmes de fichiers. Cela permet de s'assurer qu'un répertoire nécessaire pour le bon fonctionnement d'un programme est bien présent sur l'appareil.
 
-## Comment faire
+## Comment faire:
+Utiliser la fonction ```ArduinoFile.exists()``` permet de vérifier simplement si un répertoire existe ou non. Si le répertoire existe, cette fonction renverra "true" et si ce n'est pas le cas, elle renverra "false". Voici un exemple de code qui utilise cette fonction:
+
 ```Arduino
-#include <SD.h>
-
-bool directoryExists(const char* path) {
-  if (SD.exists(path)) {
-    return true;
-  } else {
-    return false;
-  }
-}
-
-void setup() {
-  Serial.begin(9600);
-  SD.begin(10);  // Démarre la communication avec la carte SD
-}
-
-void loop() {
-  if (directoryExists("/monRepertoire")) { // Vérifie si le répertoire existe
-    Serial.println("Le répertoire existe!");
-  } else {
-    Serial.println("Le répertoire n'existe pas");
-  }
+if (ArduinoFile.exists("/monRepertoire")) {
+  Serial.println("Le répertoire existe !");
+} else {
+  Serial.println("Le répertoire n'existe pas !");
 }
 ```
 
-Sortie: 
-```
-Le répertoire existe! // Si le répertoire existe
-Le répertoire n'existe pas // Si le répertoire n'existe pas
-```
+Lorsque ce code est exécuté, le moniteur série affichera "Le répertoire existe !" si le répertoire "/monRepertoire" existe, sinon il affichera "Le répertoire n'existe pas !".
 
-## Plongée en profondeur
-La fonction ```SD.exists(path)``` est incluse dans la bibliothèque SD pour Arduino. Elle renvoie ```true``` si le chemin spécifié existe et ```false``` sinon. Il est important de noter que cette fonction vérifie uniquement l'existence du répertoire, et non son contenu.
+## Plongée en profondeur:
+La possibilité de vérifier si un répertoire existe est venue avec l'ajout des systèmes de fichiers dans les versions récentes d'Arduino. Avant cela, les programmeurs devaient utiliser des bibliothèques tierces pour accéder et gérer les fichiers sur leurs appareils. Il existe également d'autres façons de vérifier si un répertoire existe, comme utiliser la commande système "ls".
 
-## Voir aussi
-- [Documentation officielle de la bibliothèque SD pour Arduino](https://www.arduino.cc/en/Reference/SD)
-- [Tutoriel vidéo sur l'utilisation de la carte SD avec Arduino](https://www.youtube.com/watch?v=bmu0M6ud5S8)
+## Voir aussi:
+Vous pouvez trouver plus d'informations sur la fonction ```ArduinoFile.exists()``` sur la [documentation officielle d'Arduino](https://www.arduino.cc/en/Reference/ArduinoFilesExists). Vous pouvez également consulter des tutoriels en ligne pour en apprendre davantage sur la gestion des fichiers avec Arduino.

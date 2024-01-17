@@ -1,7 +1,7 @@
 ---
-title:                "Trovare la lunghezza di una stringa"
-html_title:           "Clojure: Trovare la lunghezza di una stringa"
-simple_title:         "Trovare la lunghezza di una stringa"
+title:                "Trova la lunghezza di una stringa"
+html_title:           "Clojure: Trova la lunghezza di una stringa"
+simple_title:         "Trova la lunghezza di una stringa"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -10,38 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+## Cosa & Perché?
 
-Ciao a tutti! Se sei qui, probabilmente vuoi scoprire come trovare la lunghezza di una stringa utilizzando Clojure. Beh, la buona notizia è che è abbastanza semplice! Tutto quello che devi fare è seguire questo breve articolo e imparerai tutto ciò che c'è da sapere.
+ Trovare la lunghezza di una stringa è fondamentale per i programmatori di Clojure. Questa operazione ci permette di ottenere il numero di caratteri presenti in una stringa, che può essere utile in molte situazioni diverse.
 
-Ma perché dovresti interessarti di trovare la lunghezza di una stringa? Bene, ci sono molte situazioni in cui questa operazione può essere utile. Potresti aver bisogno di limitare l'input dell'utente a una certa lunghezza, o forse devi controllare se una stringa è più lunga di un certo numero di caratteri. Inoltre, comprendere come funziona questo concetto di base di Clojure può aiutarti a semplificare e risolvere problemi più complessi.
+## Come fare: 
 
-## Come Fare
-
-Per trovare la lunghezza di una stringa, utilizziamo la funzione `count`. Questa funzione ci permette di contare il numero di elementi in una sequenza, che nel nostro caso sarà la stringa stessa. Ecco un esempio di come utilizzare `count` per trovare la lunghezza di una stringa:
-
-```
-(count "Ciao a tutti!")
+Per trovare la lunghezza di una stringa in Clojure, possiamo utilizzare la funzione `count` che accetta come argomento una stringa e restituisce il numero di caratteri presenti. 
+```Clojure
+(count "ciao")
+4
 ```
 
-Questo codice restituirà il numero di caratteri presenti nella stringa, in questo caso 13. Se vuoi salvare questo valore in una variabile, puoi farlo in questo modo:
-
+Possiamo anche utilizzare il metodo `.length` sulle stringhe che restituisce la lunghezza della stringa senza spazi. 
+```Clojure
+(.length "ciao")
+4
 ```
-(def lunghezza (count "Ciao a tutti!"))
-```
 
-Ora la variabile `lunghezza` conterrà il valore 13. Tieni presente che la funzione `count` funziona anche su altre sequenze, come le liste o gli array.
+## Approfondimento:
 
-## Approfondimento
+La funzione `count` è stata introdotta già nella prima versione di Clojure e si basa sul concetto di "seq", dove una stringa è trattata come una sequenza di caratteri. 
+Un'alternativa alla funzione `count` è l'utilizzo del metodo `str-length` che può essere più efficiente in alcune situazioni in quanto non richiede la creazione di una sequenza temporanea. 
+Inoltre, possiamo trovare la lunghezza di una sequenza utilizzando la funzione `clojure.core/long` che accetta come argomento una collezione qualunque e ne restituisce la lunghezza in formato numerico.
 
-Ora che hai imparato come trovare la lunghezza di una stringa in Clojure, facciamo un breve approfondimento sul funzionamento della funzione `count`.
+## Vedi anche:
 
-In realtà, `count` non è solo una funzione, ma un protocollo che può essere implementato da qualsiasi tipo di sequenza. Questo significa che possiamo creare le nostre sequenze personalizzate e utilizzarle con `count`. Ad esempio, potremmo creare una sequenza che conta tutte le vocali presenti in una stringa. Per farlo, possiamo definire una nostra implementazione di `count`, che attraverserà la stringa e restituirà il numero di vocali che trova.
-
-Questo è solo un esempio di come la conoscenza di funzioni di base come `count` può portare a soluzioni creative e personalizzate per problemi specifici.
-
-## Vedi Anche
-
-- Documentazione ufficiale di Clojure su `count`: https://clojure.org/reference/sequences#count
-- Tutorial su Clojure per principianti: https://www.tutorialspoint.com/clojure/index.htm
-- Esempi di codice Clojure su GitHub: https://github.com/search?q=clojure+examples&type=Repositories
+- Documentazione ufficiale di Clojure sulla funzione `count`: https://clojuredocs.org/clojure.core/count
+- Altro metodo utile per trovare la lunghezza di una stringa con Clojure: https://techwayahead.com/clojure/2017/04/23/count-vs-length-in-clojure.html

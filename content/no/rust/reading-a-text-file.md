@@ -1,7 +1,7 @@
 ---
-title:                "Å lese en tekstfil"
-html_title:           "Rust: Å lese en tekstfil"
-simple_title:         "Å lese en tekstfil"
+title:                "Leser en tekstfil"
+html_title:           "Rust: Leser en tekstfil"
+simple_title:         "Leser en tekstfil"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Files and I/O"
@@ -10,52 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hva & Hvorfor?
+Lesing av en tekstfil er en vanlig operasjon i programmering der man henter informasjon fra en tekstfil og behandler den på en eller annen måte. Dette gjøres vanligvis for å få tilgang til data som er lagret i en tekstfil eller for å behandle store mengder data på en effektiv måte.
 
-Lurer du på hvordan du kan lese tekstfiler i en Rust-applikasjon? Fortvil ikke, det er faktisk en enkel prosess!
-
-## Hvordan
-
-```Rust
-use std::fs;
-
-fn main() {
-    let file = fs::read_to_string("filnavn.txt")
-        .expect("Kunne ikke lese filen");
-    
-    println!("Innholdet i filen er:\n{}", file);
-}
-```
-
-Output:
-```Rust
-Innholdet i filen er:
-Dette er en tekstfil som skal leses i en Rust-applikasjon.
-```
-
-## Dypdykk
-
-For å lese en tekstfil i Rust, bruker vi funksjonen `read_to_string`, som returnerer en `String` som inneholder hele filens innhold. Denne funksjonen tar inn filnavnet som parameter og håndterer eventuelle feil, som vi ser i eksempelet over.
-
-Det er også mulig å lese en fil linje for linje ved hjelp av en iterator. Et eksempel på dette kan være:
-
+## Hvordan:
 ```Rust
 use std::fs::File;
-use std::io::{BufReader, BufRead};
 
-fn main() {
-    let file = File::open("filnavn.txt").expect("Kunne ikke åpne filen");
-    let reader = BufReader::new(file);
-    for line in reader.lines() {
-        println!("{}", line.unwrap());
-    }
-}
+// Åpner en tekstfil og leser innholdet som en String
+let mut file = File::open("tekstfil.txt").expect("Kunne ikke åpne fil");
+let mut contents = String::new();
+file.read_to_string(&mut contents).expect("Kunne ikke lese fil");
+
+// Skriver ut innholdet i filen
+println!("{}", contents);
 ```
 
-Dette vil skrive ut hver linje i filen separat.
+For å lese en tekstfil, må vi først åpne filen ved å bruke `File::open` funksjonen fra standardbiblioteket `std::fs`. Deretter oppretter vi en variabel for å lagre filinnholdet og bruker `read_to_string` funksjonen for å lese innholdet som en `String`. Til slutt skriver vi ut innholdet ved å bruke `println!` makroen.
 
-## Se også
+## Dypdykk:
+Lesing av tekstfiler har vært en del av programmering siden de første programmeringsspråkene ble utviklet. I dag finnes det mange alternative måter å lese tekstfiler på, for eksempel ved å bruke `io::BufReader` fra Rusts standardbibliotek eller ved å bruke tredjepartsbiblioteker som `serde` for å lese innholdet og konvertere det til andre datatyper.
 
-- [Rust dokumentasjon](https://doc.rust-lang.org/std/fs/fn.read_to_string.html)
-- [Rust lærebøker](https://www.rust-lang.org/learn)
-- [Rust forum](https://users.rust-lang.org/)
+Når man leser en tekstfil i Rust, vil filinnholdet bli lagret som en `String`. Dette kan føre til problemer hvis filen er veldig stor, da dette kan føre til at programmet bruker mye minne. Derfor kan det være lurt å vurdere alternative måter å lese filen på, avhengig av hva slags informasjon man ønsker å hente ut fra filen.
+
+## Se også:
+- https://doc.rust-lang.org/std/fs/struct.File.html
+- https://doc.rust-lang.org/std/io/struct.BufReader.html
+- https://serde.rs/

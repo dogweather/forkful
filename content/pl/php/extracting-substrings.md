@@ -1,7 +1,7 @@
 ---
-title:                "Wydobywanie podłańcuchów"
-html_title:           "PHP: Wydobywanie podłańcuchów"
-simple_title:         "Wydobywanie podłańcuchów"
+title:                "Wyciąganie podciągów"
+html_title:           "PHP: Wyciąganie podciągów"
+simple_title:         "Wyciąganie podciągów"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Strings"
@@ -10,47 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co & Dlaczego?
 
-Często podczas tworzenia skryptów w PHP, jesteśmy zmuszeni do manipulacji ciągami znaków. Jednym z powszechnych zadań jest wyciąganie fragmentów (substring) z istniejącego ciągu znaków. W tym artykule dowiesz się, dlaczego i jak to zrobić w PHP.
+Wyciąganie podciągów (lub części) jest jedną z podstawowych operacji w programowaniu. Polega ona na pobraniu wybranego fragmentu tekstu z ciągu znaków. Programiści często używają tej techniki do przetwarzania i analizowania danych tekstowych, na przykład podczas tworzenia systemów wyszukiwania lub filtrowania danych.
 
-## Jak to zrobić
+## Jak to zrobić:
 
-Aby wyciągnąć fragment ciągu znaków w PHP, musimy użyć funkcji `substr()`. Jej składnia jest następująca: `substr($string, $start, $length)`, gdzie `$string` to ciąg znaków, z którego chcemy wyciągnąć fragment, `$start` to indeks początkowy, a `$length` to długość wyciąganego fragmentu. Na przykład:
-
-```PHP
-<?php
-$string = "Hello World";
-echo substr($string, 0, 5); // wypisze "Hello"
-```
-
-Jeśli chcemy wyciągnąć fragment od końca ciągu, możemy użyć ujemnego indeksu. Na przykład `$start = -5` oznacza, że będziemy zaczynać od piątego znaku od końca. Możemy również pominąć parametr `$length`, wtedy zostanie wyciągnięty cały dostępny fragment od wybranego indeksu. Przykład:
+W PHP istnieje kilka wbudowanych funkcji do wyciągania podciągów, w tym `substr ()`, `mb_substr ()` i `explode ()`. Oto przykładowy kod, który wykorzystuje funkcję `substr ()` do pobrania części tekstu:
 
 ```PHP
-<?php
-$string = "Hello World";
-echo substr($string, -5); // wypisze "World"
+$text = "Witaj na mojej stronie internetowej!";
+$substring = substr($text, 6, 9);
+
+echo $substring; // wynik: "na mojej"
 ```
 
-## Deep Dive
+W powyższym przykładzie, funkcja `substr ()` pobiera tekst od szóstego znaku (licząc od zera) i zwraca długość dziewięciu znaków. Można również użyć funkcji `mb_substr ()` do wyciągania znaków z uwzględnieniem wielokrotności bajtów, co jest przydatne podczas obsługi danych wielojęzycznych. Aby rozdzielić ciąg znaków na części, można użyć `explode ()`, co zwróci tablicę z podanymi ciągami jako elementami.
 
-Funkcja `substr()` może również służyć do podstawiania znaków w ciągu. W tym celu możemy podać trzeci parametr, który będzie traktowany jako znaki, które chcemy wstawić w wybranym miejscu. Przykład:
+## Głębokie Nurkowanie:
 
-```PHP
-<?php
-$string = "Hello World";
-echo substr($string, 6, 0, "to the "); // wypisze "Hello to the World"
-```
+Wyciąganie podciągów jest powszechną techniką, która istnieje od dawna w programowaniu. Wcześniej programiści często musieli tworzyć własne funkcje do tego celu, jednak obecnie większość języków programowania ma wbudowane funkcje do wyciągania podciągów. Alternatywnie, można również użyć wyrażeń regularnych do bardziej skomplikowanych przypadków, takich jak wyszukiwanie określonych wzorców w tekście.
 
-Dodatkowo, możemy użyć funkcji `strpos()` do znalezienia indeksu danego słowa lub znaku w ciągu, a następnie użyć tej wartości jako parametr `$start`. Przykład:
+## Zobacz także:
 
-```PHP
-<?php
-$string = "Hello World";
-$start = strpos($string, "World"); // zwraca 6
-echo substr($string, $start, 5); // wypisze "World"
-```
+Jeśli chcesz dowiedzieć się więcej na temat wyciągania podciągów w PHP, poniżej znajdują się przydatne linki:
 
-## Zobacz również
-
-Jeśli interesuje Cię więcej o ciągach znaków w PHP, zajrzyj do dokumentacji na oficjalnej stronie PHP lub przeczytaj artykuł o wyrażeniach regularnych w PHP.
+- [Dokumentacja PHP o funkcji substr ()](https://www.php.net/manual/en/function.substr.php)
+- [Wskazówki dotyczące wykorzystywania wyrażeń regularnych w PHP](https://www.php.net/manual/en/regexp.reference.php)

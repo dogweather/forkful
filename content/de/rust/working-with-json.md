@@ -1,7 +1,7 @@
 ---
-title:                "Das Arbeiten mit Json"
-html_title:           "Rust: Das Arbeiten mit Json"
-simple_title:         "Das Arbeiten mit Json"
+title:                "Arbeiten mit JSON"
+html_title:           "Rust: Arbeiten mit JSON"
+simple_title:         "Arbeiten mit JSON"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Data Formats and Serialization"
@@ -10,41 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
-JSON ist eine äußerst nützliche Möglichkeit, Daten in einem menschenlesbaren Format darzustellen. Es wird häufig in der Webentwicklung, aber auch in anderen Bereichen, zur Kommunikation und Speicherung von Daten verwendet. Die Arbeit mit JSON in Rust ermöglicht es, diese Daten effizient zu verarbeiten und zu manipulieren, was in vielen Anwendungsfällen von Vorteil sein kann.
+# Was & Warum?
+JSON ist ein gängiges Datenformat, das häufig von Programmierern verwendet wird, um Daten zu speichern und auszutauschen. Es steht für JavaScript Object Notation und ist eine einfache und effektive Möglichkeit, strukturierte Daten zu speichern, die von verschiedenen Programmiersprachen interpretiert werden können. 
+Programmierer nutzen JSON, um Daten zwischen verschiedenen Anwendungen oder Diensten auszutauschen oder um Daten in ihren Programmen zu speichern.
 
-## Wie geht’s
-Die Verarbeitung von JSON in Rust ist dank der Standardbibliothek serde besonders einfach. Zunächst muss jedoch das serde crate in der Cargo.toml-Datei aufgeführt werden. Dann kann ein JSON-Dokument mithilfe des von serde bereitgestellten Makros ```serde_json::from_str``` in ein entsprechendes Rust-Objekt umgewandelt werden. Ein Beispiel dafür sieht folgendermaßen aus:
+## Wie geht's?
+Um mit JSON in Rust zu arbeiten, gibt es einige praktische Funktionen und Bibliotheken. Hier ist ein Beispiel, um eine JSON-Datei zu lesen und die enthaltenen Daten anzuzeigen:
 
 ```Rust
-use serde_json::from_str;
+use serde_json::{from_str, Value};
 
-fn main() {
-    let json_data = r#"{"name": "Max Mustermann", "age": 30, "hobbies": ["programming", "reading"]}"#;
-    
-    let obj: Value = from_str(json_data).unwrap();
-    println!("Name: {}", obj["name"]);
-    println!("Age: {}", obj["age"]);
-    
-    let hobbies = obj["hobbies"].as_array().unwrap();
-    println!("Hobbies: {:?}", hobbies);
-}
+let data = r#"{
+    "name": "Max Mustermann",
+    "age": 28,
+    "hobbies": [
+        "programming",
+        "reading",
+        "hiking"
+    ]
+}"#;
+
+// JSON-Daten in ein Rust-Value-Objekt umwandeln
+let value: Value = from_str(data).unwrap();
+
+// Werte auslesen und ausgeben
+let name = &value["name"];
+let age = &value["age"];
+let hobbies = &value["hobbies"];
+
+println!("Name: {}", name); // Name: Max Mustermann
+println!("Alter: {}", age); // Alter: 28
+println!("Hobbys: {:?}", hobbies); // Hobbys: ["programming", "reading", "hiking"]
 ```
 
-Dieser Code liest ein JSON-Dokument als String ein und wandelt es in ein Value-Objekt um, das die verschiedenen Felder und Werte des Dokuments enthält. Diese können dann über den Zugriff auf das Objekt mit eckigen Klammern und dem entsprechenden Schlüssel abgerufen werden. Hier wird die Value-Methode ```as_array``` verwendet, um ein Vektor-Objekt der Hobbies zu erhalten, das wiederum mittels ```println!``` ausgegeben wird. Das Ergebnis sollte folgende Ausgabe erzeugen:
-
-```
-Name: Max Mustermann
-Age: 30
-Hobbies: ["programming", "reading"]
-```
-
-## Tiefere Einblicke
-Obwohl die Verarbeitung von JSON in Rust dank der serde-Bibliothek sehr einfach ist, gibt es einige Dinge, die man beachten sollte. Zum einen muss das JSON-Dokument korrekt formatiert sein, da sonst ein Fehler beim Versuch der Umwandlung in ein Rust-Objekt auftritt. Zudem sollte man sich bewusst machen, dass es verschiedene Möglichkeiten gibt, die JSON-Daten in Rust-Objekte zu transformieren – je nachdem, welches Ergebnis man erzielen möchte. So können beispielsweise mithilfe von ```serde_json::to_value``` beliebige Rust-Objekte in JSON konvertiert werden.
-
-Es ist auch wichtig zu wissen, dass bei der Verarbeitung von JSON-Daten in Rust Leistungseinbußen auftreten können. Dies liegt meist an der Notwendigkeit, die Daten zu parsen und zu validieren. Um die Leistung zu optimieren, kann es hilfreich sein, sich mit den verschiedenen Optionen und Einstellungen von serde auseinanderzusetzen.
+## Tiefsee-Tauchen
+JSON wurde in den 1990er-Jahren entwickelt und ist ein Subset von JavaScript. Heutzutage wird es aber auch von vielen anderen Programmiersprachen unterstützt, darunter auch Rust. 
+Es gibt auch andere Datenformate wie XML oder YAML, aber JSON ist aufgrund seiner Einfachheit und Lesbarkeit immer noch sehr beliebt. 
+Die Verwendung von Bibliotheken wie serde_json oder json-rust erleichtert das Arbeiten mit JSON in Rust, da sie das Parsen und Erstellen von JSON-Objekten einfacher machen.
 
 ## Siehe auch
-- [JSON in Rust verarbeiten mit serde](https://serde.rs/)
-- [Cargo.toml Datei](https://doc.rust-lang.org/cargo/guide/cargo-toml-vs-package-manifest.html)
-- [serde_json Crate](https://crates.io/crates/serde_json)
+- [serde_json Dokumentation](https://docs.rs/serde_json/1.0.64/serde_json/)
+- [json-rust Dokumentation](https://docs.rs/json-rust/0.11.16/json_rust/)
+- [JSON-Tutorial für Anfänger](https://www.w3schools.com/js/js_json_intro.asp)

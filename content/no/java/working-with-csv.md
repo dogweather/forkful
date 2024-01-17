@@ -1,7 +1,7 @@
 ---
-title:                "Arbeid med csv"
-html_title:           "Java: Arbeid med csv"
-simple_title:         "Arbeid med csv"
+title:                "Å jobbe med CSV"
+html_title:           "Java: Å jobbe med CSV"
+simple_title:         "Å jobbe med CSV"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Data Formats and Serialization"
@@ -10,79 +10,62 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hva & Hvorfor?
+CSV står for "Comma-Separated Values", og er en vanlig måte å lagre og håndtere data på. Det er et tekstbasert format hvor data er organisert som tabell med kolonner og rader, og verdiene er separert med komma. Programmere bruker CSV fordi det er enkelt å håndtere og kan leses og skrives av de fleste programmer.
 
-CSV (Comma Separated Values) er et populært format for å lagre og dele data i en tabellstruktur. Derfor er det viktig å kunne arbeide med CSV-filer når du jobber med data, spesielt i Java-programmering. Det tillater deg å enkelt behandle og manipulere store mengder data og utveksle informasjon med andre programmer.
-
-## Slik gjør du det
-
-For å arbeide med CSV-filer i Java, må du først importere "java.io" og "java.util" pakker. Deretter må du initialisere FileReader og BufferedReader objekter for å lese filen, og String og String array variabler for å lagre dataene. Du kan deretter bruke en while-løkke for å lese linje for linje, og splitte hver linje basert på separator tegnet (vanligvis komma). Her er et eksempel på hvordan koden vil se ut:
-
+# Hvordan:
 ```java
+// Leser en CSV-fil og skriver ut dataene
+import java.io.File;
 import java.io.FileReader;
-import java.io.BufferedReader;
-import java.util.Scanner;
+import java.io.IOException;
 
-public class CSVReader {
-    public static void main(String[] args) {
-        String fileName = "data.csv";
-        String[] data;
-        try {
-            FileReader reader = new FileReader(fileName);
-            BufferedReader bufferedReader = new BufferedReader(reader);
-            
-            String line = "";
-            while ((line = bufferedReader.readLine()) != null) {
-                data = line.split(",");
-                for (String value : data) {
-                    System.out.println(value);
-                }
-            }
-            
-            bufferedReader.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+public class LesCSV {
+
+  public static void main(String[] args) {
+    // Oppretter en fil og en filleser
+    File fil = new File("data.csv");
+    FileReader filleser = null;
+
+    try {
+      // Åpner filen og oppretter en filleser
+      filleser = new FileReader(fil);
+
+      // Leser filen linje for linje og skriver ut dataene
+      int c;
+      while ((c = filleser.read()) != -1) {
+        System.out.print((char) c);
+      }
+
+      // Lukker filleser
+      filleser.close();
+    } catch (IOException e) {
+      System.out.println("Feil ved lesing av fil: " + e.getMessage());
+      e.printStackTrace();
     }
+  }
 }
 ```
-
-La oss si at vi har en CSV-fil kalt "data.csv" som inneholder følgende informasjon:
-
-```csv
-Navn,Alder,Stilling
-Petter,30,Ingeniør
-Lena,25,Advokat
-Ole,35,Lærer
+Eksempel på input-fil (data.csv):
+```
+Fornavn,Etternavn,Alder
+Maria,Garcia,24
+Juan,Hernandez,32
+Emilia,Rodriguez,29
+Pablo,Chavez,27
+```
+Eksempel på output:
+```
+Fornavn,Etternavn,Alder
+Maria,Garcia,24
+Juan,Hernandez,32
+Emilia,Rodriguez,29
+Pablo,Chavez,27
 ```
 
-Kjøring av koden vil gi følgende utskrift:
+# Dykk dypere:
+CSV ble opprinnelig utviklet for å lagre data på en enkel måte på maskiner med begrenset kapasitet på 1970-tallet. Alternativer til å håndtere data inkluderer XML og JSON, men CSV er fortsatt et populært valg på grunn av sin enkelhet og lesbarhet. Implementering av CSV kan variere avhengig av programmeringsspråk, men prinsippene er de samme.
 
-```
-Navn
-Alder
-Stilling
-Petter
-30
-Ingeniør
-Lena
-25
-Advokat
-Ole
-35
-Lærer
-```
-
-Dette eksemplet viser hvordan du enkelt kan lese og prosessere data fra en CSV-fil i Java.
-
-## Dypdykk
-
-Når du arbeider med CSV-filer, er det viktig å være oppmerksom på at separator tegnet kan variere fra fil til fil. Vanligvis er det enten komma, kolon eller semikolon, men det kan også være andre tegn som er brukt. Derfor kan det være lurt å bruke et Scanner objekt for å lese dataene og bruke Scanner delimiter metoden til å sette den riktige separator tegnet.
-
-I tillegg bør du alltid håndtere eventuelle feil eller unntak som kan oppstå under lesing av en CSV-fil, som vist i eksempelet ovenfor. Dette sikrer at programmet ditt ikke feiler og kan håndtere uventede situasjoner.
-
-## Se også
-
-- Java Official Documentation: https://docs.oracle.com/javase/8/docs/api/java/io/package-summary.html
-- Tutorialspoint: https://www.tutorialspoint.com/java/io/java_io_filewriter.htm
-- Baeldung: https://www.baeldung.com/java-buffered-reader
+# Se også:
+- [Wikipedia: Comma-separated values](https://no.wikipedia.org/wiki/Comma-separated_values)
+- [Oracle dokumentasjon: Working with CSV Files in Java](https://docs.oracle.com/javase/8/docs/api/java/io/Reader.html)

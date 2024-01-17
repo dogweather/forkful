@@ -1,7 +1,7 @@
 ---
-title:                "Yaml के साथ काम करना"
-html_title:           "Java: Yaml के साथ काम करना"
-simple_title:         "Yaml के साथ काम करना"
+title:                "यामल के साथ काम करना"
+html_title:           "Java: यामल के साथ काम करना"
+simple_title:         "यामल के साथ काम करना"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Data Formats and Serialization"
@@ -10,41 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
+## यह क्या है और क्यों?
+ YAML काम करने का एक साधन है जिसके माध्यम से डेटा को संगठित रूप में रखा जा सकता है। यह एक आसान और आरामदायक तरीके से डेटा को तरल रूप में संगठित करता है। यह प्रोग्रामरों को इस्तेमाल करने के लिए करता है क्योंकि इससे उन्हें कोड को हार्ड कोड करने की जरूरत नहीं होती है और प्रोग्राम को बदलने के लिए तुरंत प्रतिक्रिया मिलती है।
 
-क्यों YAML के साथ काम करना है? YAML (YAML Ain't Markup Language) एक आसान और स्वचालित सुरक्षा के साथ स्ट्रक्चर्ड भाषा है, जो डेटा संरचना और विन्यास जैसे कार्यों को सरल बनाती है। यह संरचना में उतना अच्छा है कि यह कई अन्य भाषाओं के बीच विन्यास को संसाधित कर सकता है, जो इसे आसान बनाता है।
+## कैसे करें:
+ ```java
+ import org.yaml.snakeyaml.Yaml;
 
-## कैसे करें
+ // डेटा बनाएं
+ Map<String, Object> data = new HashMap<>();
+ data.put("name", "जॉन डो"); 
+ data.put("age", 25); 
+ data.put("address", "न्यूयॉर्क");
+ 
+ // यामल ऑब्जेक्ट बनाएं 
+ Yaml yaml = new Yaml(); 
+ String output = yaml.dump(data); 
+ System.out.println(output); 
 
-```Java
-// Maven की मदद से YAML डिपेंडेंसी जोड़ें
-<dependency>
-    <groupId>org.yaml</groupId>
-    <artifactId>snakeyaml</artifactId>
-    <version>1.27</version>
-</dependency>
-```
+ // अब उपयोग करें और डालें 
+ Map<String, Object> parsed = (Map<String, Object>) yaml.load(output); 
+ System.out.println(parsed.get("name")); 
+ System.out.println(parsed.get("age")); 
+ System.out.println(parsed.get("address"));
+ ```
+ आउटपुट:
+ ```
+ name: जॉन डो
+ age: 25
+ address: न्यूयॉर्क
+ 
+ जॉन डो 
+ 25
+ न्यूयॉर्क
+ ```
+ 
+## गहराई में जाएं:
+ YAML की शुरुआत 2001 में Dan Karmett द्वारा हुई थी जो Perl में लिखे गए थे। इसके अलावा, दुसरे प्रोग्रामिंग भाषाओं में भी YAML उपलब्ध है। YAML का अविकल्पिक प्रतिदोर्वार जूलियो विदियो ने भी अपने प्रोग्रामिंग भाषा जूलियो के लिए बनाया था। YAML को अन्य सीमाएं और अनुबंधों के भी रूप में भी उपयोग किया जाता है। यह कुछ अलग हो सकता है लेकिन इसे पहचानने और समझने में आसान है।
 
-```Java
-// YAML फ़ाइल को पढ़ें
-File file = new File("data.yaml");
-// YAML ऑब्जेक्ट परस्तुत करें
-Yaml yaml = new Yaml();
-// YAML फाइल से डेटा को लोड करें
-Map<String, String> data = yaml.load(new FileInputStream(file));
-```
-
-```Java
-// स्ट्रिंग स्ट्रीम में यूएसओं जोड़ें
-StringWriter writer = new StringWriter();
-yaml.dump(data, writer);
-String output = writer.toString();
-```
-
-आप ऊपर दिए गए उदाहरण को अपनी जरूरतों के अनुसार संशोधित कर सकते हैं। अधिक जानकारी के लिए, [SnakeYAML documention](https://bitbucket.org/asomov/snakeyaml/src/default/README.markdown) का उपयोग कर सकते हैं।
-
-## गहराई में
-
-YAML संरचनाओं को पढ़ने और लिखने के लिए SnakeYAML के इर्द गिर्द कुछ अच्छे फीचर्स हैं। इनमें कुंजी शब्दों को क्षेत्रों में संग्रहीत करने, ट्रेस पहुँच के बारे में सूचना जुटाने, संभावित निर्देशिकाओं के साथ संख्या निर्धारण करने जैसे फीचर्स शामिल हैं। YAML दस्तावेज़ीकृत करने विशेषताओं की विस्तृत सूची के लिए, [SnakeYAML दस्तावेज़ीकृत लेखन](https://bitbucket.org/asomov/snakeyaml/wiki/Documentation) का देखें।
-
-## देख
+## इसके साथ देखें:
+- [YAML आधिकारिक वेबसाइट](https://yaml.org/)
+- [यामल विकि](https://en.wikipedia.org/wiki/YAML)
+- [JYAML - Java के लिए YAML इम्प्लीमेंटेशन](https://code.google.com/archive/p/jyaml/)

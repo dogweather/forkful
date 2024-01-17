@@ -10,55 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Why
+## What & Why?
 
-Sending HTTP requests with basic authentication is a common practice when working with web APIs. It allows for secure communication by requiring a username and password to access protected resources.
+Sending an HTTP request with basic authentication is the process of adding login credentials to the header of an HTTP request. This is often done by programmers to authenticate and authorize users to access specific resources on a server.
 
-## How To
+## How to:
 
-Sending an HTTP request with basic authentication in Kotlin is simple and straightforward. First, import the necessary packages for working with HTTP requests:
+To send an HTTP request with basic authentication in Kotlin, you can use the `URL` and `HttpURLConnection` classes. First, create a `URL` object with the desired URL, then open a connection using `.openConnection()` and cast it to `HttpURLConnection`. Next, set the request method to `GET` and add the authorization header using the `setRequestProperty` method. Finally, read the response by using the `getInputStream` method and printing it to the console.
+
 ```
-import java.net.HttpURLConnection
-import java.net.URL
-```
-Next, create a URL object using the desired API endpoint:
-```
-val url = URL("https://example.com/api/endpoint")
-```
-Then, create a HttpURLConnection object and set the request method:
-```
+val url = URL("https://example.com/api/resource")
 val connection = url.openConnection() as HttpURLConnection
 connection.requestMethod = "GET"
-```
-To add basic authentication, set the "Authorization" header with the username and password encoded in Base64:
-```
-val username = "username"
-val password = "password"
-val encodedCredentials = Base64.getEncoder().encodeToString("$username:$password".toByteArray())
-connection.setRequestProperty("Authorization", "Basic $encodedCredentials")
-```
-Finally, send the request and handle the response accordingly:
-```
-val responseCode = connection.responseCode
-if(responseCode == HttpURLConnection.HTTP_OK){
-    // Request was successful, do something with the response
-    val inputStream = connection.inputStream
-    // Process the JSON or data received
-} else {
-    // Request failed, handle the error
-}
-
-// Remember to close the connection when finished
-connection.disconnect()
+connection.setRequestProperty("Authorization", "Basic base64EncodedCredentials")
+val response = connection.inputStream.bufferedReader().readText()
+println(response)
 ```
 
-## Deep Dive
+Sample output: `{"message": "Success!"}`
 
-Basic authentication is a simple but effective way to restrict access to resources on a server. It works by requiring a username and password to be sent with each request, which is then encoded in Base64 format. This method should only be used when communicating over HTTPS, as the username and password are easily readable if sent over plain HTTP.
+## Deep Dive:
 
-By sending the credentials in Base64 format, they are not transmitted in plain text and are therefore less susceptible to interception. However, it should be noted that Base64 encoding is not a form of encryption and can be easily decoded. Therefore, it is important to use additional security measures when handling sensitive information.
+Basic authentication has been around since the early days of the internet and is one of the simplest forms of authentication. It works by sending login credentials in plain text, which can be a security concern. Alternative methods, such as OAuth, have been developed to address this issue. One thing to note is that with basic authentication, the credentials are not encrypted, so it's important to only use it over HTTPS connections.
 
-## See Also
-- [Java.net API documentation for HttpURLConnection](https://docs.oracle.com/javase/8/docs/api/java/net/HttpURLConnection.html)
-- [Base64 encoding in Kotlin](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-base64/)
-- [Official documentation for basic authentication in HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
+When implementing basic authentication, the credentials should be base64 encoded for added security. This is because base64 encoding is not an encryption method, but it does obscure the credentials from being seen in plain text.
+
+## See Also:
+
+- Official Kotlin documentation for `URL` and `HttpURLConnection` classes: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-u-r-l/ and https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-http-u-r-l-connection/
+- More information about basic authentication and its vulnerabilities: https://www.owasp.org/index.php/Basic_Authentication
+- Alternative authorization methods, such as OAuth: https://oauth.net/2/

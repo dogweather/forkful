@@ -1,7 +1,7 @@
 ---
-title:                "Laste ned en nettside"
-html_title:           "Go: Laste ned en nettside"
-simple_title:         "Laste ned en nettside"
+title:                "Nedlasting av en nettside"
+html_title:           "Go: Nedlasting av en nettside"
+simple_title:         "Nedlasting av en nettside"
 programming_language: "Go"
 category:             "Go"
 tag:                  "HTML and the Web"
@@ -10,49 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
-Du har sikkert vært på nettet og ønsket å laste ned en nettside for offline bruk. Kanskje du vil lese en artikkel på toget, eller bare lagre en interessant side for senere bruk. Uansett, Go gjør det enkelt å laste ned en web side og lagre den på din lokale enhet.
+# Hva & Hvorfor?
+Når en programmerer laster ned en nettside, tar de en kopi av innholdet fra nettsiden og lagrer det på sin egen datamaskin. Dette kan være nyttig for å beholde en kopi av informasjonen, eller for å analysere og bruke dataen for å utvikle applikasjoner eller automatisere oppgaver.
 
-## Hvordan
-Det er enkelt å laste ned en web side ved hjelp av Go. Først må du importere "net/http" biblioteket. Deretter kan du bruke "http.Get()" funksjonen for å hente data fra en URL. Så kan du bruke "ioutil.WriteFile()" for å skrive dataene til en fil.
-
-Her er et eksempel på hvordan du laster ned og lagrer en web side:
+# Hvordan:
+For å laste ned en nettside i Go, kan du bruke "net/http" pakken og dens "Get" funksjon. Dette eksempelet viser hvordan du kan laste ned en nettside og skrive ut hele innholdet:
 
 ```Go
-package main
-import (
-    "fmt"
-    "net/http"
-    "io/ioutil"
-)
-func main() {
-    // Definer URL
-    url := "https://www.example.com"
-    // Hent data fra URL
-    resp, err := http.Get(url)
-    if err != nil {
-        panic(err)
-    }
-    defer resp.Body.Close()
-    // Les dataene
-    body, err := ioutil.ReadAll(resp.Body)
-    // Skriv dataene til en fil
-    err = ioutil.WriteFile("eksempel.html", body, 0644)
-    // Sjekk for feil
-    if err != nil {
-        panic(err)
-    }
-    // Skriv ut suksessmelding
-    fmt.Println("Nettsiden er lastet ned og lagret i en fil!")
+resp, err := http.Get("https://www.example.com")
+if err != nil {
+    log.Fatal(err)
 }
+defer resp.Body.Close()
+
+body, err := ioutil.ReadAll(resp.Body)
+if err != nil {
+    log.Fatal(err)
+}
+
+fmt.Printf("%s", body)
 ```
 
-Dette vil resultere i en fil som heter "eksempel.html" som inneholder all HTML-koden fra nettsiden.
+Dette vil gi deg en kopi av nettsidens innhold som en byte slice, som deretter kan behandles og brukes som du ønsker.
 
-## Dypdykk
-Nå som du har lært å laste ned og lagre en web side, kan du også utforske mer avanserte funksjoner som å endre brukeragent og håndtere redirects. Du kan også bruke "net/http" biblioteket til å gjøre HTTP-anrop og behandle responsen på ulike måter.
+# Dypdykk:
+Laste ned en nettside har vært en nødvendig del av webutvikling og automatisering i lang tid. Før "net/http" pakken ble introdusert, måtte utviklere bruke "net" og "net/http" pakker sammen for å oppnå samme funksjonalitet.
+Alternativt kan du også bruke tredjeparts biblioteker som "GoQuery" eller "Colly" for mer avanserte funksjoner.
 
-## Se også
-- [Go's net/http pakke](https://golang.org/pkg/net/http/)
-- [Go's ioutil pakke](https://golang.org/pkg/io/ioutil/)
-- [HTTP-forespørsler og svar](https://www.w3.org/Protocols/rfc2616/rfc2616-sec5.html)
+Implementeringen av "net/http" pakken er basert på et modulært design som tillater tilpassing og utvidelse for spesifikke behov. Dette gjør det enkelt å laste ned og behandle ulike typer nettressurser.
+
+# Se også:
+- [Golang.org: net/http](https://golang.org/pkg/net/http/)
+- [GoQuery](https://github.com/PuerkitoBio/goquery)
+- [Colly](http://go-colly.org/)

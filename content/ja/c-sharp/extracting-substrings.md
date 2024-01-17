@@ -1,7 +1,7 @@
 ---
-title:                "「部分文字列の抽出」"
-html_title:           "C#: 「部分文字列の抽出」"
-simple_title:         "「部分文字列の抽出」"
+title:                "部分文字列の抽出"
+html_title:           "C#: 部分文字列の抽出"
+simple_title:         "部分文字列の抽出"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Strings"
@@ -10,31 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
-この記事では、C#でサブストリングを抽出する方法を解説します。サブストリングを抽出することで、文字列の一部を取り出して、必要な部分だけを処理することができます。
+## 何ができて、なぜやるのか？
 
-## 方法
-サブストリングを抽出する方法は、以下のようになります。
+サブ文字列を抽出するとは、文字列から特定の部分文字列を取り出すことを指します。プログラマーがこれを行うのは、より柔軟な文字列操作を実現するためです。
+
+## 方法：
 
 ```C#
-// 元の文字列
-string originalString = "こんにちは、私の名前は太郎です";
+// 文字列の一部を抽出する文字数を指定して抽出する方法
+string str = "こんにちは！私はプログラマーです。";
+string extractedStr = str.Substring(3, 5);
+// 出力：はじめま
 
-// サブストリングを抽出する
-string subString = originalString.Substring(3, 5);
-
-// 出力
-Console.WriteLine(subString); // 出力結果: ちは、私
+// 文字列内の文字で部分文字列を抽出する方法
+// (例：「はじめま」の「は」を抽出)
+string extractedChar = extractedStr.Substring(0, 1);
+// 出力：は
 ```
 
-この例では、`Substring()`メソッドを使用して、元の文字列から3番目の文字から5文字分のサブストリングを抽出し、出力しています。カウントは0から始まることに注意してください。
+## 深く掘り下げる
 
-また、特定の文字列を含むかどうかを判断する場合は、`Contains()`メソッドを使用することで、より簡単に実装することができます。
+抽出したい部分文字列の位置を指定することで、Substringメソッドを使用して任意の長さのサブ文字列を取得することができます。この機能は、文字列操作やデータ処理の際に非常に役立ちます。他のアルゴリズムやデータ構造を使用する代わりに、サブ文字列を抽出することでより柔軟なコーディングを実現できます。
 
-## ディープダイブ
-サブストリングを抽出するには、`Substring()`メソッドの他にも、`Split()`メソッドや正規表現を使用する方法などがあります。また、文字列の先頭や末尾から抽出する場合は、`Trim()`メソッドを使用すると便利です。
+## 関連リンク
 
-## See Also
-- [.NET Strings Cheat Sheet - Substrings in C#](https://cheatography.com/davechild/cheat-sheets/net-strings/)
-- [C# String.Substring Examples](https://www.dotnetperls.com/substring)
-- [Understanding String Manipulation in C#](https://www.c-sharpcorner.com/article/string-manipulation-in-c-sharp/)
+- [C# ドキュメント - Substring メソッド](https://docs.microsoft.com/ja-jp/dotnet/api/system.string.substring)
+- [C# サブ文字列の例](https://docs.microsoft.com/ja-jp/dotnet/standard/base-types/how-to-extract-a-substring-from-a-string)
+- [C# の文字列操作のチュートリアル](https://www.tutorialsteacher.com/csharp/csharp-string)

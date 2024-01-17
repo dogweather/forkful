@@ -1,7 +1,7 @@
 ---
-title:                "프로그래밍 테스트 작성"
-html_title:           "Elixir: 프로그래밍 테스트 작성"
-simple_title:         "프로그래밍 테스트 작성"
+title:                "테스트 작성하기"
+html_title:           "Elixir: 테스트 작성하기"
+simple_title:         "테스트 작성하기"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Testing and Debugging"
@@ -10,53 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜?
+## 무엇을 & 왜?
 
-테스트를 작성하는 이유는 코드를 검증하고 버그를 찾는 것입니다. 테스트는 코드의 신뢰성을 높여주며 개발과 유지 보수를 쉽게 만들어줍니다.
+프로그래머들이 테스트를 작성하는 이유는 애플리케이션의 버그를 찾고 수정하기 위해서입니다. 테스트를 작성하는 것은 코드의 품질을 향상시키고 애플리케이션의 안정성을 보장하는 중요한 단계입니다.
 
-## 방법
-
-우리는 Elixir 언어를 사용하여 간단한 덧셈 함수를 작성하고 이를 테스트해보겠습니다. 먼저 `test` 모듈을 불러와야 합니다.
+## 하는 방법:
 
 ```Elixir
-import ExUnit.Case
-```
+test "나이가 18살 이상인지 체크", do: 
+  assert 18 <= 18 # 이 테스트는 성공함
+``` 
 
-이제 덧셈 함수를 작성해봅시다. 두 수를 더한 결과를 리턴하는 함수입니다.
+테스트를 작성하는 방법은 간단합니다. ```test "테스트 이름", do: ``` 블록 안에 테스트를 작성하고 해당 테스트가 정확한 결과가 나오는지 확인하기 위해 ```assert``` 문을 사용합니다.
 
-```Elixir
-def add(x, y) do
-  x + y
-end
-```
+## 깊이 파헤치기:
 
-이제 `test` 모듈 안에 테스트 케이스를 작성합니다. `assert`를 사용하여 함수가 예상한 결과를 리턴하는지 확인합니다.
+**역사적 배경:** 테스트 주도 개발(Test-driven development)은 민첩한 소프트웨어 개발 방법론 중 하나로, 코드를 작성하기 전에 테스트부터 작성하고 해당 테스트를 성공시켜 나가며 개발을 진행하는 방식입니다. 이는 코드의 품질을 높이고 버그를 사전에 발견하여 애플리케이션의 안정성을 확보합니다.
 
-```Elixir
-test "adding numbers" do
-  assert add(3, 5) == 8
-end
-```
+**대안:** 테스트 주도 개발 방법론 이외에도 다양한 테스트 방식이 존재합니다. 예를 들어, 수동 테스트(manual testing)는 사람이 직접 애플리케이션을 실행하고 기능을 테스트하는 방법입니다. 또한 인수 테스트(acceptance testing)는 애플리케이션이 사용자의 요구사항을 충족하는지를 테스트하는 방식입니다.
 
-이제 터미널에서 `mix test`를 실행하여 테스트를 수행해봅시다. 결과는 아래와 같이 나올 것입니다.
+**구현 세부 사항:** Elixir에서 테스트를 작성하기 위해 ```ExUnit``` 모듈을 사용합니다. 이 모듈은 간단한 다중 패러다임 테스트 프레임워크로, Elixir 코드의 모든 부분을 테스트할 수 있도록 해줍니다.
 
-```Elixir
-Compiling 1 file (.ex)
-..
-Finished in 0.02 seconds
-1 test, 0 failures
-```
+## 더 많은 정보:
 
-테스트를 통과했습니다! 이제 다른 케이스를 추가해서 더 많은 테스트를 작성해보세요.
-
-## 깊이 들어가기
-
-테스트 코드는 `assert` 대신에 `refute`를 사용하여 예상치 못한 결과를 확인할 수도 있습니다. 또한 `setup`과 `teardown` 함수를 사용하여 테스트 실행 전후에 수행되는 작업을 할 수도 있습니다.
-
-더 자세한 내용은 Elixir 공식 문서인 [ExUnit](https://hexdocs.pm/ex_unit/ExUnit.html)을 참고해보세요.
-
-## 연관 항목
-
-- [Elixir 공식 홈페이지](https://elixir-lang.org/)
-- [TDD (Test-Driven Development) 소개 영상](https://www.youtube.com/watch?v=2W1RZflJchQ)
-- [Erlang 언어와의 차이점](https://elixirschool.com/ko/lessons/basics/keywords-and-maps/#11)
+- [Elixir 공식 문서 - 테스트](https://hexdocs.pm/elixir/ex_unit.html)
+- [테스트에 대한 좋은 글](https://medium.com/@WEtl/how-to-write-great-elixir-tests-2b52c7c8733b)

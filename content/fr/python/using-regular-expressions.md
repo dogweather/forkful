@@ -10,44 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi utiliser les expressions régulières en Python?
+## Qu'est-ce que c'est et pourquoi le faire?
+Les expressions régulières sont un moyen puissant de traiter et de manipuler des chaînes de caractères dans un programme Python. Elles permettent de rechercher et de remplacer des motifs spécifiques dans du texte, ce qui les rend utiles pour réaliser des tâches telles que la validation de formulaires ou la recherche de mots-clés dans un document. De nombreux programmeurs utilisent les expressions régulières pour renforcer l'efficacité de leur code et automatiser certaines tâches récurrentes.
 
-Les expressions régulières sont des outils puissants pour la manipulation de chaînes de caractères. Elles permettent de rechercher, de modifier et de valider des motifs dans du texte. Utilisées en Python, elles peuvent simplifier grandement la gestion de données et les opérations sur des chaînes.
-
-## Comment utiliser les expressions régulières en Python
-
-Pour utiliser les expressions régulières en Python, il faut d'abord importer le module `re`:
+## Comment faire:
+Voici un exemple de code Python utilisant des expressions régulières pour vérifier si une adresse email est valide:
 
 ```Python
 import re
+
+email = input("Saisissez votre adresse email: ")
+
+if re.search(r"^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$", email):
+    print("Votre adresse email est valide.")
+else:
+    print("Veuillez saisir une adresse email valide.")
 ```
 
-Ensuite, il faut créer un objet de type `pattern` en utilisant la fonction `compile()`:
-
-```Python
-pattern = re.compile(r'motif')
+**Sortie:**
+```
+Saisissez votre adresse email: example@domaine.com
+Votre adresse email est valide.
 ```
 
-Le motif doit être précédé du caractère `r` pour indiquer qu'il s'agit d'une chaîne brute. Ensuite, on peut utiliser les méthodes `search()` ou `match()` pour rechercher le motif dans une chaîne:
+## Plongée en profondeur:
+Les expressions régulières ont été inventées dans les années 1950 par un mathématicien américain nommé Stephen Cole Kleene. Elles sont basées sur la théorie des automates et elles sont maintenant disponibles dans de nombreux langages de programmation, y compris Python. Bien que puissantes, les expressions régulières peuvent être difficiles à lire et à écrire, surtout pour les débutants. Heureusement, il existe des alternatives telles que les méthodes de manipulation de chaînes de caractères intégrées à Python.
 
-```Python
-result = pattern.search('ceci est un exemple de motif')
-```
-
-Le résultat sera un objet `match` qui pourra être utilisé pour extraire ou modifier le motif trouvé. Par exemple, on peut remplacer le motif par un autre texte avec la méthode `sub()`:
-
-```Python
-new_text = pattern.sub('nouveau motif', 'ceci est un exemple de motif')
-```
-
-## Plongée en profondeur: conseils et astuces pour bien utiliser les expressions régulières en Python
-
-- Les symboles `^` et `$` permettent de délimiter le début et la fin d'une chaîne respectivement. Par exemple, `^motif` recherchera le motif uniquement s'il se trouve au début de la chaîne.
-- Les crochets `[ ]` permettent de définir un ensemble de caractères à rechercher. Par exemple, `[aeiou]` cherchera n'importe lequel de ces voyelles dans une chaîne.
-- L'utilisation de parenthèses `()` permet de capturer des groupes de caractères pour les réutiliser dans la substitution avec la méthode `sub()`.
-- Le symbole `?` permet de rendre un caractère facultatif. Par exemple, `colou?r` cherchera à la fois «color» et «colour».
-
-## Voir aussi
-
-- Documentation officielle de Python sur les expressions régulières: https://docs.python.org/fr/3/library/re.html
-- Tutoriel interactif sur les expressions régulières en Python: https://regexone.com/references/python
+## Voir aussi:
+- [Documentation officielle de Python sur les expressions régulières](https://docs.python.org/fr/3/library/re.html)
+- [Site de regex101 pour tester et apprendre les expressions régulières](https://regex101.com/)

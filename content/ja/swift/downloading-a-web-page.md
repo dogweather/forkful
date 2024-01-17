@@ -1,7 +1,7 @@
 ---
-title:                "ウェブページをダウンロードする"
-html_title:           "Swift: ウェブページをダウンロードする"
-simple_title:         "ウェブページをダウンロードする"
+title:                "ウェブページのダウンロード"
+html_title:           "Swift: ウェブページのダウンロード"
+simple_title:         "ウェブページのダウンロード"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "HTML and the Web"
@@ -10,33 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+## 何してるの？
+ウエブページをダウンロードするとは、インターネットにあるコンテンツを自分のコンピューターに保存することです。プログラマーは、ウエブサイトにあるデータを収集したり、自分のアプリケーションに組み込んだりするために、ダウンロードを行います。
 
-ウェブページをダウンロードする理由はさまざまですが、例えばオフラインで閲覧したい場合や、特定のウェブサイトからデータを収集したい場合には、ウェブページをダウンロードすることが便利です。Swiftを使うと、簡単にウェブページをダウンロードできます。
-
-## ダウンロードの方法
-
-ウェブページをダウンロードするには、まずURLを指定し、そのURLからデータを取得し、そのデータをファイルとして保存する必要があります。以下のコードは、Swiftを使ってウェブページをダウンロードする方法を示しています。
-
+## 方法：
 ```Swift
-// URLを指定
-let url = URL(string: "https://www.example.com")!
-
-// データを取得
-let data = try! Data(contentsOf: url)
-
-// データをファイルとして保存
-FileManager.default.createFile(atPath: "example.html", contents: data, attributes: nil)
+// ウエブページをダウンロードする方法
+if let url = URL(string: "https://www.example.com") {
+  if let data = try? Data(contentsOf: url) {
+    // ダウンロードしたウエブページのデータを利用することができます
+    print(data)
+  }
+}
 ```
 
-上記のコードを実行すると、指定したURLからデータを取得し、"example.html"という名前のファイルとして保存されます。
+## 深く掘り下げる：
+- 歴史的文脈：
+ウエブページのダウンロードは、インターネットの発展とともに発展してきました。今では、多くのプログラマーがウエブサイトのデータを収集するためにダウンロードを利用しています。
 
-## 深堀り
+- 代替手段：
+ウエブページのダウンロードには、さまざまな方法があります。上記のコードでは、Data(contentsOf:)メソッドを使用しましたが、URLSessionを使う方法もあります。
 
-ウェブページをダウンロードする方法はさまざまありますが、上記の方法は簡単なものです。より高度な方法として、リクエストをカスタマイズしたり、非同期処理を行ったりすることができます。また、ダウンロードしたデータをパースすることで、特定の情報だけを取得することもできます。
+- 実装の詳細：
+ウエブページのダウンロードには、ネットワークリクエストを行う必要があります。そのため、ネットワーク接続の確立やエラーハンドリングなど、さまざまなことを考慮する必要があります。
 
-## 参考リンク
-
-- [Swift公式サイト](https://swift.org/)
-- [Swiftコーディングガイドライン](https://swift.org/documentation/api-design-guidelines/)
-- [Swiftでのウェブページのダウンロードの仕方](https://www.hackingwithswift.com/example-code/networking/how-to-download-a-webpage-with-urlsession-and-uitableview)
+## 関連リンク：
+- [APIドキュメント - Data](https://developer.apple.com/documentation/foundation/data)
+- [URLSessionを使用したウエブページのダウンロード](https://www.hackingwithswift.com/example-code/networking/how-to-download-data-from-a-url-2)

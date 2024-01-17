@@ -1,7 +1,7 @@
 ---
-title:                "「HTTPリクエストの送信」"
-html_title:           "Kotlin: 「HTTPリクエストの送信」"
-simple_title:         "「HTTPリクエストの送信」"
+title:                "「Httpリクエストの送信」"
+html_title:           "Kotlin: 「Httpリクエストの送信」"
+simple_title:         "「Httpリクエストの送信」"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "HTML and the Web"
@@ -10,59 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-HTTPリクエストを送信することの重要性を知るためには、その背後にある基本的な仕組みを理解することが重要です。HTTPリクエストは、ウェブ上で情報を取得したり共有したりするために欠かせないものです。
+# Koko ga dōyō ni aru
 
-## How To
-HTTPリクエストを送信するには、Kotlinの標準ライブラリである`java.net.HttpURLConnection`クラスを使用します。
+## Nani ga dōyō ni suru nodesu ka?
+HTTP kaiō hōseifunō no koto de, anata wa uragawa ka musabakade HTTP kakō o okutte morau koto ga dekimasu. Purogurama wa anata no apurikēshon ni kanren shiteiru sāba atata, serubā, shugō tōk78788a no dōte o okutta riyōshite iru kamo shirenai.
 
-1. URLオブジェクトを作成する。
+## Dō nasai ka?
+Anata wa Kotlin de HTTP kaiō hōseifunō o suru koto ga dekimasu. Kono tokuni tsuite wa, sāba atatakai sābā ni okutta HTTP kakō o anata wa kokorozasu koto ga dekimasu.
 
-```
-val url = URL("https://example.com/api/users")
-```
+<pre><code>
+Kotlin inou: 
+val url = "https://example.com"
+val request = Request.Builder().url(url).build()
 
-2. `url.openConnection()`メソッドを使用して`HttpURLConnection`オブジェクトを取得する。
+val client = OkHttpClient()
+val response = client.newCall(request).execute()
 
-```
-val connection = url.openConnection() as HttpURLConnection
-```
+println(response.body()?.string())
+</code></pre>
 
-3. メソッド（GET、POSTなど）を設定する。
+Kotrin kode wa uragawa sābā to kahei hanbai mesudo ga kūka-ten blakutsu nia2000 sanfotsu kyūryō suru naikudookeizi me de saitekkeina hōsokata ga tankmareru.
 
-```
-connection.requestMethod = "GET"
-```
-
-4. リクエストのヘッダーを設定する。
-
-```
-connection.setRequestProperty("Content-Type", "application/json")
-```
-
-5. 必要に応じてリクエストボディを設定する。
-
-```
-val body = "{ \"id\": 123, \"name\": \"John Smith\"}"
-val outputStream = connection.outputStream
-outputStream.write(body.toByteArray())
-```
-
-6. `connection.connect()`メソッドを使用してリクエストを送信する。
-
-7. 応答を取得する。ステータスコードやレスポンスボディなど、必要な情報を取得することができます。
-
-```
-val responseCode = connection.responseCode
-val inputStream = connection.inputStream
-val responseBody = inputStream.reader().use { it.readText() }
-```
-
-完全なコード例は[こちら](https://gist.github.com/example)。
-
-## Deep Dive
-HTTPリクエストのディープダイブには、様々なトピックがあります。例えば、認証やHTTPS接続、リクエストヘッダーのカスタマイズなどが挙げられます。これらについて詳しく学ぶことで、より複雑なリクエストを送信することが可能になります。さらに、外部ライブラリを使用することでより簡単にリクエストを処理することもできます。
+## Fūka Kakōhō
+HTTP kakō wa Iykara busgōdara yoi wakaranai. Astronautas kara fuudo, anata wa HTTP babekode o mokutorai renaidemitte katazu ni kanbetoshi de dekawe karu node sukunai sil kosto shijie ni mochitote iru desu. Dare ga natsu dinga watte yokauga tsukau mazudofrikareta wazuzushii japonisuto katta yasashii katazu ga no de, bokuga mochika ive ni awatclrote shikara reikōen congrat youkotterazu chigau katazuo kano shusavulyo sil takusande mochitte kanbetoshi desu ano vinsbuto ik zondogin ekiymowo ibayo dakhtan puroloadbaroakechirmitotodoso kirashi noshi to eringo hazushi rinjō just otaii keredoforōnenmoorato ezuke epiga – o) .
 
 ## See Also
-- [java.net.HttpURLConnectionのドキュメント](https://docs.oracle.com/javase/jp/8/docs/api/java/net/HttpURLConnection.html)
-- [OkHttp - HTTPクライアントの外部ライブラリ](https://square.github.io/okhttp/)
+- [OkHttp - HTTP Client for Android and Java](https://square.github.io/okhttp/)
+- [Kotlin - Official Website](https://kotlinlang.org/)

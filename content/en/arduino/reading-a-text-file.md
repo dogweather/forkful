@@ -10,65 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-Reading a text file is a crucial task in programming, especially when working with data stored in a file. By learning how to read a text file in Arduino, you can access important information and use it in your code to enhance the functionality of your project.
+## What & Why?
 
-## How To
-To read a text file in Arduino, follow these simple steps:
+Reading a text file means accessing and extracting data from a file that contains text. Programmers often do this in their code when they need to retrieve specific information from a text file, such as configuration settings or user input.
 
-1. First, create a text file with the desired data. You can use any text editor, such as Notepad or Sublime Text, to create the file.
-2. Save the text file with a .txt extension and transfer it to your Arduino board using a USB connection.
-3. Next, open the Arduino IDE and create a new sketch.
-4. Declare a variable to store the data from the text file, for example, `String data;`.
-5. Use the `SD` library to initialize the SD card module and `SD.begin()` to open the connection between the Arduino and the SD card.
-6. Use the `SD.open()` function to open the text file, passing the file name as the parameter.
-7. Use an `if` statement to check if the file is open, and if it is, use the `readString()` function to read the data from the file and store it in the `data` variable.
-8. Use the `SD.close()` function to close the file once you have finished reading it.
-9. You can now use the data from the text file in your code, for example, by printing it to the serial monitor or using it in a calculation.
-
-Take a look at the example code below to see how it all comes together:
+## How to:
+To read a text file in Arduino, you will need to use the SD library. This library enables you to communicate with an SD card to read and write data. To start, you will need to include the SD library in your code:
 
 ```Arduino
-#include <SPI.h>
 #include <SD.h>
+```
 
-String data;
+Next, you will need to initialize an SD card. This is done by using the `SD.begin()` function, which takes in the pin connected to your SD card's chip select (CS) pin. This is usually pin 4 on most Arduino boards.
 
-void setup() {
-  Serial.begin(9600);
-  while (!Serial) {
-    ; // wait for serial port to connect.
-  }
-  if (!SD.begin(4)) {  // change according to your setup
-    Serial.println("SD card initialization failed!");
-    while (true) {}
-  }
-  
-  File myFile = SD.open("data.txt");
-
-  if (myFile) {
-    data = myFile.readString();
-    Serial.println(data);
-    myFile.close();
-  } else {
-    Serial.println("error opening data.txt");
-  }
+```Arduino
+if (!SD.begin(4)) {
+  // SD card initialization failed
+  return;
 }
-
-void loop() {}
 ```
 
-Output:
+Once the SD card is initialized, you can open the text file using the `SD.open()` function. This function takes in the name of the file you want to open and the file mode, which in this case is `FILE_READ` to indicate that we want to read the file.
+
+```Arduino
+File file = SD.open("data.txt", FILE_READ);
 ```
-Hello World!
+
+You can then use the `file.read()` function to read a single character from the file and store it in a variable. This function returns -1 if no character is available, which we can use as a condition in a while loop to iterate through the entire file and print its contents.
+
+```Arduino
+while (file.available()) {
+  char character = file.read();
+  Serial.print(character);
+}
 ```
 
-## Deep Dive
-The `SD` library in Arduino provides convenient functions to work with SD cards. When using the `readString()` function, the data is read from the file until a newline character is encountered. You can also use the `read()` function to read a single character at a time.
+The sample output for this code would be the contents of the text file printed to the serial monitor.
 
-It is important to note that the text file must be saved in the root directory of the SD card for the `SD.open()` function to work. If you want to save the text file in a specific location, you can use the `File` class to specify the path.
+## Deep Dive:
+Reading text files has been a common practice in computer programming for decades. It allows for the storage and retrieval of larger amounts of data in a more organized and easily readable format. Prior to the development of SD cards and the SD library, programmers had to use different techniques, such as reading data from a serial port or using external memory chips.
 
-## See Also
-- [SD library reference](https://www.arduino.cc/en/Reference/SD)
-- [Arduino File class](https://www.arduino.cc/en/Reference/SDFile)
-- [SD Card Module tutorial](https://create.arduino.cc/projecthub/ejsingh/sd-card-module-tutorial-how-to-add-more-data-storage-to-arduino-451098)
+While using the SD library is the most common way to read text files in Arduino, there are other alternatives such as the FileIO library or the SPI library. Each of these options has its own advantages and limitations, so it is important to choose the best one for your specific project.
+
+In terms of implementation, it is worth noting that the `file.read()` function only reads a single character at a time. This means you may need to use additional functions, such as `file.seek()` and `file.seekEnd()` to move through the file and retrieve specific information.
+
+## See Also:
+- SD library reference: https://www.arduino.cc/en/Reference/SD
+- FileIO library: https://github.com/greiman/SdFat
+- SPI library: https://www.arduino.cc/en/Reference/SPI

@@ -1,7 +1,7 @@
 ---
-title:                "Stampa output di debug"
-html_title:           "Clojure: Stampa output di debug"
-simple_title:         "Stampa output di debug"
+title:                "Stampa degli output di debug"
+html_title:           "Clojure: Stampa degli output di debug"
+simple_title:         "Stampa degli output di debug"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Testing and Debugging"
@@ -10,37 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perchè
+## Cos'è e perché: 
+Il printing debug output è una tecnica utilizzata dai programmatori per visualizzare informazioni durante l'esecuzione del codice, al fine di identificare errori e comprendere i processi interni del programma.
 
-Impressionare il proprio codice debug è una tattica utile per identificare problemi e risolverli rapidamente. È un modo semplice ma efficace per comprendere il flusso di esecuzione del proprio programma e individuare eventuali errori.
-
-## Come
-
-L'uso più comune di println in Clojure è per stampare il valore di una variabile durante l'esecuzione del codice. Ecco un esempio:
+## Come fare:
+Ecco un esempio di come stampare debug output in Clojure:
 
 ```Clojure
-(def num 5)
-(println "Il valore di num è:" num)
+(defn calc-sum [a b]
+  (println "Inizio calcolo somma")
+  (let [sum (+ a b)]
+    (println "Fine calcolo somma")
+    sum))
+
+(calc-sum 3 5)
 ```
-
-Questo codice stamperà: "Il valore di num è: 5" nell'output della console. Puoi anche utilizzare println per stampare più variabili, come nel seguente esempio:
-
-```Clojure
-(def str "ciao")
-(def num 10)
-(println "La stringa è:" str ", il numero è:" num)
+Output:
 ```
+Inizio calcolo somma
+Fine calcolo somma
+8
+```
+## Approfondimento:
+Il printing debug output è una tecnica popolare fin dalle prime fasi della programmazione. In passato, i programmatori utilizzavano strumenti come la stampa su carta o il debug visuale per visualizzare informazioni di debug. Oggi, con l'avanzamento della tecnologia, è possibile utilizzare potenti strumenti di debug integrati nei moderni ambienti di sviluppo.
 
-Questo stamperà: "La stringa è: ciao, il numero è: 10". Inoltre, puoi utilizzare println anche per stampare il valore di una funzione durante l'esecuzione del codice.
-
-## Deep Dive
-
-Oltre ad essere utile per stampare il valore di variabili e funzioni, println è uno strumento versatile per il debug del codice. Puoi utilizzarlo per stampare informazioni su una specifica parte del codice, come il risultato di un'operazione o il valore di una variabile in un determinato momento.
-
-Puoi anche utilizzare la funzione prn per stampare i valori in modo più leggibile, poiché aggiunge spazi tra gli elementi stampati. Inoltre, puoi combinare println o prn con la funzione str per formattare l'output in modo più chiaro e organizzato.
-
-## See Also
-
-- [Documentazione ufficiale di Clojure](https://clojuredocs.org/)
-- [Articoli di programmazione di Clojure su Medium](https://medium.com/tag/clojure-programming)
-- [Clojure subreddit](https://www.reddit.com/r/Clojure/)
+## Vedi anche:
+- [Guida di Clojure al debugging](https://clojure.org/guides/debugging)
+- [Come stampare debug output in altri linguaggi di programmazione](https://www.geeksforgeeks.org/debugging-in-python-how-to-get-abstract-dynamic-and-configurable-output/)

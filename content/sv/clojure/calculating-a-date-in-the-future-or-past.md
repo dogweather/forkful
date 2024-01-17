@@ -1,7 +1,7 @@
 ---
-title:                "Beräkna ett datum i framtiden eller förfluten tid."
-html_title:           "Clojure: Beräkna ett datum i framtiden eller förfluten tid."
-simple_title:         "Beräkna ett datum i framtiden eller förfluten tid."
+title:                "Beräkning av ett datum i framtiden eller det förflutna"
+html_title:           "Clojure: Beräkning av ett datum i framtiden eller det förflutna"
+simple_title:         "Beräkning av ett datum i framtiden eller det förflutna"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Dates and Times"
@@ -10,29 +10,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Varför
+## Vad & Varför?
+Att beräkna ett datum i framtiden eller förfluten tid handlar om att få en datobaserad värde för ett visst antal dagar, månader eller år framåt eller bakåt från ett givet datum. Programmerare använder detta ofta för att hantera tidsberoende data eller skapa tidslinjer för projekt.
 
-Att kunna beräkna datum i framtiden eller förfluten tid är ett vanligt problem som många programmerare stöter på. Oavsett om det är för att planera schema eller hantera giltighetsperioder för data, är det viktigt att kunna utföra dessa beräkningar effektivt.
-
-# Såhär gör du
-
-För att beräkna ett datum i framtiden eller förfluten tid i Clojure, kan du använda funktionen "plus" från standardbiblioteket "clojure.core". Den tar emot antalet enheter och tidsenheten (sekunder, minuter, timmar etc.) som argument och ger tillbaka ett nytt datummoln som representerar önskat datum.
-
+## Hur man gör:
 ```Clojure
-(def today (java.util.Date.)) ; sätter dagens datum som variabel
-(plus today 3 :days) ; lägger till 3 dagar till dagens datum
-; => #inst "2021-07-06T17:51:02.000-00:00"
+; För att beräkna ett datum i framtiden: 
+(java.time.LocalDate/plus (java.time.LocalDate/now) (java.time.Period/ofDays 30))
+; Output: #object[java.time.LocalDate 0x6d500aa1 "2020-07-11"]
 
-(plus today -2 :months) ; drar av 2 månader från dagens datum
-; => #inst "2021-04-04T17:52:14.000-00:00”
+; För att beräkna ett datum i förfluten tid: 
+(java.time.LocalDate/minus (java.time.LocalDate/now) (java.time.Period/ofMonths 6))
+; Output: #object[java.time.LocalDate 0x70435479 "2019-12-12"]
 ```
 
-# Djupdykning
+## Djupdykning:
+Historiskt sett har människor behövt kunna beräkna datum i förfluten tid för att hålla reda på tiden och säsonger. Alternativ till att använda Clojure för att beräkna datum är att använda inbyggda funktioner i olika programmeringsspråk eller att använda speciella bibliotek som Joda-Time. I Clojure sker beräkningar av datum genom att använda klassen LocalDate och metoder som plus och minus.
 
-Det är viktigt att notera att funktionen "plus" tar emot datummoln och ger tillbaka ett nytt moln, istället för att ändra på originalet. Detta tillför robusthet till koden och undviker potentiella felaktigheter. Dessutom kan du använda alla standardiserade tidsenheter som tillhandahålls av Java, såsom sekunder, minuter, timmar, dagar, veckor, månader och år.
-
-# Se även
-
-- Dokumentation för Clojure-funktionen "plus": https://clojuredocs.org/clojure.core/plus
-- Datummoln i Clojure: https://clojuredocs.org/clojure.core/date-clouds
-- Java:s java.util.Date-dokumentation: https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Date.html
+## Se även:
+- https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html
+- https://github.com/nablex/thorina.jodatime

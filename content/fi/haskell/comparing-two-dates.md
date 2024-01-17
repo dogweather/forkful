@@ -10,44 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mikä ja miksi?
+Päivämäärien vertailu on yksinkertaisesti kahden päivämäärän välisen eron laskemista. Tämä on hyödyllistä esimerkiksi aikaleimojen käsittelyssä tai tapahtumien järjestämisessä aikajärjestykseen. Ohjelmoijat tekevät tätä usein tarpeen mukaan käsitellessään päivämääriä.
 
-Joskus on tarpeen vertailla kahta päivämäärää, esimerkiksi tarkasteltaessa tapahtumien järjestystä tai laskiessa ajanjaksojen pituuksia. Haskellin avulla tämä onnistuu helposti ja tarkasti.
-
-## Miten tehdä
-
-Vertailemalla päivämääriä käytetään `compare` -funktiota, joka palauttaa järjestysnumeron kahdelle annetulle arvolle. Voimme hyödyntää myös `Day` -tyyppiä, joka mahdollistaa päivämäärän esittämisen.
+## Kuinka?
+Päivämäärien vertailu on helppo toteuttaa Haskellissa käyttämällä standardikirjaston tarjoamaa ```diffDays```-funktiota. Tämä toiminto ottaa kaksi päivämäärää parametreinaan ja palauttaa niiden välisen päivien määrän. Alla on esimerkki koodista ja tulostaa päivien määrän:
 
 ```Haskell
 import Data.Time
-
--- Päivämäärät
-date1 :: Day
-date1 = fromGregorian 2020 2 20 -- 20.2.2020
-
-date2 :: Day
-date2 = fromGregorian 2020 3 10 -- 10.3.2020
-
--- Funktio päivämäärien vertailuun
-compareDates :: Day -> Day -> Ordering
-compareDates = compare
-
--- Vertaillaan date1 ja date2
-compareDates date1 date2 -- Palauttaa "LT" eli "Less Than"
+date1 = fromGregorian 2021 3 1
+date2 = fromGregorian 2021 4 1
+diffDays date1 date2 -- tulostaa 31
 ```
 
-Tuloksena saadaan `Ordering` -tyyppinen arvo, joka voi olla `LT` (Less Than), `GT` (Greater Than) tai `EQ` (Equal). Vaihtoehtoisesti voimme käyttää myös `diffDays` -funktiota, joka laskee päivien määrän kahden päivämäärän välillä.
+## Sukellus syvälle
+Päivämäärien vertailua käytetään jo kauan ennen tietokoneita, jolloin päiviä laskettiin käsin tai käyttämällä mekaanisia laitteita. Ohjelmistoalalla on myös muita tapoja käsitellä ja vertailla päivämääriä, kuten Unix-timestampien käyttö tai päivämääräobjektien vertaaminen.
 
-```Haskell
--- Funktion diffDays käyttö
-diffDays date1 date2 -- Palauttaa -18 päivää
-```
-
-## Syvemmälle
-
-Haskellissa päivämääriä käsittelemiseen on tarjolla myös muita hyödyllisiä työkaluja, kuten `UTCTime` ja `ZonedTime` -tyypit. Lisäksi `Data.Time.Calendar` -kirjastossa on monipuolisia toimintoja päivämäärien käsittelyyn.
+Haskelissa päivämäärien vertailu perustuu Gregoriaaniseen kalenteriin, mutta myös muita kalentereita voidaan käyttää mukauttamalla päivämäärä-tyyppejä.
 
 ## Katso myös
+Lisätietoja päivämäärien vertailusta Haskellissa löytyy [Haskellin dokumentaatiosta](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time.html#g:5).
 
-- [Haskellin virallinen dokumentaatio päivämäärien käsittelyyn](https://www.haskell.org/onlinereport/standard-prelude.html#type-class-Ord)
-- [Päivämäärien vertailun opetusohjelma](https://wiki.haskell.org/Date_and_time_library)
+Voit myös tutustua muihin päivämäärätietoista kertoviin artikkeleihin, kuten [täsmällisempi päivämäärien vertailu](https://www.iki.fi/o/zen/archives/2004/01/datetimecomparison.html) ja [päivämääräobjektien käyttö eri ohjelmointikielissä](https://en.wikipedia.org/wiki/Comparison_of_programming_languages_(date_and_time)).

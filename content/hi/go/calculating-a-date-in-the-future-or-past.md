@@ -1,7 +1,7 @@
 ---
-title:                "भविष्य या अतीत में तिथि की गणना"
-html_title:           "Go: भविष्य या अतीत में तिथि की गणना"
-simple_title:         "भविष्य या अतीत में तिथि की गणना"
+title:                "भविष्य या अतीत में एक तारीख की गणना"
+html_title:           "Go: भविष्य या अतीत में एक तारीख की गणना"
+simple_title:         "भविष्य या अतीत में एक तारीख की गणना"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Dates and Times"
@@ -10,65 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Kyu
-*Agar aap apne program mein kisi bhi tarikh (future ya past) ka calculation karna chahte hain, to aapko is technique ki jaroorat padegi. Ye aapke program ko dynamic aur user-friendly banane mein madad karegi.*
+## क्या और क्यों?
+जब हमें कोई तारीख परिभाषित हो और हम उस तारीख से कुछ दिनों आगे या पीछे की तारीख जानना चाहते हैं, तो हम उस तारीख को गणना करते हैं। प्रोग्रामर्स ऐसा करते हैं क्योंकि इससे प्रोग्रामों में तारीखों के साथ काम करना आसान हो जाता है और तारीखों के बीच के अंतर को सारविस्तार से समझना भी होता है।
 
-## Kaise
-Agar aapko kisi bhi future ya past tarikh ka calculation karna hai, to aapko isme kuch simple steps follow karne honge:
-
-1. Pehle se define kariye - Kis tarikh se aapka calculation start karna hai.
-2. Phir ```time``` aur ```duration``` packages ko import karein.
-3. Ab ```AddDate``` method ka use karein, jiske saath aap apni tarikh ko add kar sakte hain.
-4. Aap apne code mein ```fmt.Printf``` ka use karke desired output print kar sakte hain.
-
-Ab dekhate hain kis tarah se aap is technique ka use kar sakte hain. Neeche diye gaye code blocks mein aapko coding examples aur sample output milenge:
-
-**Calculating a future date:**
-```
+## कैसे करें:
+```Go
 package main
 
 import (
-	"fmt"
-	"time"
+    "fmt"
+    "time"
 )
 
 func main() {
-	start := time.Date(2020, time.April, 5, 8, 30, 0, 0, time.UTC)
-	futureDate := start.AddDate(0, 0, 10) //adding 10 days to start date
-	fmt.Printf("The future date is: %v", futureDate)
+    fmt.Println("आज से 5 दिनों बाद की तारीख:", time.Now().AddDate(0, 0, 5))
 }
 ```
+आउटपुट:
+आज से 5 दिनों बाद की तारीख: 2021-04-27 10:00:00 +0000 UTC
 
-Output:
-```
-The future date is: 2020-04-15 08:30:00 +0000 UTC
-```
-
-**Calculating a past date:**
-```
+```Go
 package main
 
 import (
-	"fmt"
-	"time"
+    "fmt"
+    "time"
 )
 
 func main() {
-	start := time.Date(2020, time.April, 15, 8, 30, 0, 0, time.UTC)
-	pastDate := start.AddDate(0, 0, -10) //subtracting 10 days from start date
-	fmt.Printf("The past date is: %v", pastDate)
+    fmt.Println("आज से 2 महीने और 1 दिन पहले की तारीख:", time.Now().AddDate(0, -2, -1))
 }
 ```
+आउटपुट:
+आज से 2 महीने और 1 दिन पहले की तारीख: 2021-02-01 10:00:00 +0000 UTC
 
-Output:
-```
-The past date is: 2020-04-05 08:30:00 +0000 UTC
-```
+## गहराई में जाएं:
+इतिहासिक पृष्ठभूमि के विषय में, तारीखों को गणना करने की प्रक्रिया पुराने समयों से ही उपलब्ध है। अन्य विकल्पों में, अनुष्ठान की विवरण यथावत बताया गया है। ऐसे कारणों से, हम इस कार्य को प्रोग्रामिंग में उपयोगी ढंग से संगदा कर सकते हैं।
 
-## Deep Dive
-Calculating dates in the future or past is a common task in programming, and Go provides us with the powerful ```time``` package to make this task easier. The ```AddDate``` method takes in three arguments - years, months and days - and adds them to the start date to calculate the desired date. We can also manipulate the dates by adding or subtracting different values for these arguments.
-
-## Dekhiye bhi
-1. [Official Go Language website](https://golang.org/)
-2. [Tutorialspoint - Go Programming Language](https://www.tutorialspoint.com/go/index.htm)
-3. [Code Academy - Learn Go](https://www.codecademy.com/learn/learn-go)
+## देखें भी:
+- Go प्रोग्रामिंग भाषा की आधिकारिक वेबसाइट: https://golang.org/
+- विवरण के साथ उदाहरण और विशिष्ट विषयों पर जानकारी के लिए Go परियोजनाओं और संसाधनों की सूची: https://awesome-go.com/

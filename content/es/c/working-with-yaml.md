@@ -10,43 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué trabajar con YAML 
-Si estás buscando un formato de datos ligero y fácil de leer, entonces YAML es la elección ideal para ti. Con su sintaxis simple y legible, YAML es ampliamente utilizado para la configuración de aplicaciones y archivos de datos.
+# Qué y por qué?
 
-## Cómo usar YAML en tu código
+Trabajar con YAML (YAML Ain't Markup Language) implica usar un formato de datos basado en texto para representar estructuras de datos. Los programadores lo utilizan porque es un formato fácil de leer y escribir, lo que lo hace ideal para configuraciones de aplicaciones y archivos de datos.
 
-Para comenzar a trabajar con YAML en tu código C, primero deberás incluir la biblioteca "yaml.h". Luego, puedes utilizar la función "yaml_emit" para crear tu documento YAML y la función "yaml_load" para cargar datos de un archivo YAML existente.
+# Cómo hacerlo:
 
 ```C
+// Incluye la biblioteca YAML
 #include <yaml.h>
 
-//Ejemplo de creación de un documento YAML
+// Crea un documento YAML
 yaml_document_t document;
-yaml_document_initialize(&document, NULL, NULL, NULL, 0, 0);
+yaml_document_initialize(&document, NULL, 0, 0);
 
-//Agregando un valor al documento YAML
-yaml_node_t *node = yaml_document_add_scalar(&document, NULL, "¡Hola mundo!");
+// Agrega un par clave-valor al documento
+yaml_node_t *root = yaml_document_get_root_node(&document);
+yaml_node_t *key = yaml_document_add_scalar(&document, NULL, "key");
+yaml_node_t *value = yaml_document_add_scalar(&document, NULL, "value");
+yaml_node_pair_t *pair = yaml_document_add_mapping_pair(&document, root, key, value);
+
+// Imprime el documento
+yaml_document_dump(&document, stdout);
+
+// Limpia el documento
+yaml_document_delete(&document);
 ```
 
-El resultado será un documento YAML que contenga el valor "¡Hola mundo!". Ahora, si queremos cargar los datos de un archivo YAML existente, podemos hacerlo de la siguiente manera:
+Salida: ```key: value```
 
-```C
-FILE *archivo;
-archivo = fopen("datos.yaml", "rb");
-...
-void *parser = yaml_parser_initialize(buffer, sizeof(buffer));
-yaml_parser_set_input_file(parser, file);
-yaml_parser_parse(parser, &document);
-```
+# Inmersión profunda:
 
-¡Y listo! Ahora tienes acceso a los datos del archivo YAML en tu código C.
+- YAML fue diseñado originalmente para ser un formato de serialización de datos para lenguajes de programación, pero también se puede utilizar para archivos de configuración y otros usos.
+- Alternativas populares a YAML incluyen JSON y XML.
+- Para implementar YAML en un proyecto de C, se puede utilizar una biblioteca como libyaml.
 
-## Profundizando en YAML
+# Ver también:
 
-Además de la creación y la carga de datos, YAML también ofrece otras funciones útiles, como la manipulación de nodos, la serialización de datos y la validación de documentos YAML. Puedes explorar todas estas funciones en la documentación oficial de YAML para C.
-
-## Ver también
-
-- [Documentación oficial de YAML para C](https://yaml.org/spec/1.2/spec.html)
-- [Ejemplos de código YAML para C](https://github.com/yaml/libyaml/tree/master/tests)
-- [Tutorial introductorio de YAML para C](https://www.melvinvivas.com/yaml-c/)
+- [Sitio oficial de YAML](https://yaml.org/)
+- [Documentación de la biblioteca libyaml](https://pyyaml.org/wiki/LibYAML)
+- [Especificación de YAML](https://yaml.org/spec/)

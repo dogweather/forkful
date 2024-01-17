@@ -1,7 +1,7 @@
 ---
-title:                "HTML parsen"
-html_title:           "Gleam: HTML parsen"
-simple_title:         "HTML parsen"
+title:                "HTML-Verarbeitung"
+html_title:           "Gleam: HTML-Verarbeitung"
+simple_title:         "HTML-Verarbeitung"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "HTML and the Web"
@@ -10,48 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+Was ist HTML Parsen und warum machenProgrammierer das? 
+ HTML Parsen ist der Prozess, bei dem der Computer den Code einer Webseite liest und interpretiert, um die Inhalte darzustellen. Programme, die das parsen von HTML ermöglichen, werden von Programmierern verwendet, um Daten aus dem Internet zu sammeln oder Websites dynamisch zu erstellen.
 
-Parsing von HTML-Dokumenten kann für viele Programmiererinnen und Programmierer eine nützliche Fähigkeit sein, um Daten aus Webseiten zu extrahieren. Es ermöglicht auch das automatisierte Durchsuchen und Verarbeiten von großen Mengen an HTML-Code, was hilfreich sein kann, wenn man beispielsweise Daten für eine Datenbank oder eine Analyse benötigt.
+Wie geht das? 
 
-## Wie geht man vor?
-
-Um HTML mit Gleam zu parsen, verwenden wir das Paket "html-parser", das Code-Blöcke in einer HTML-Datei in Strukturen umwandelt, die in Gleam leichter zu verarbeiten sind. Hier ist ein einfaches Beispiel, wie man Gleam-Code schreibt, um eine HTML-Datei zu parsen:
+Um HTML mit Gleam zu parsen, muss zunächst das Modul 'html-parser' importiert werden. Dann kann die Funktion 'parse' verwendet werden, um den HTML Code einzulesen und als strukturiertes Gleam-Datenmodell zurückzugeben. Zum Beispiel erhält man mit dem folgenden Code die Anzahl der Absätze in einem HTML Dokument:
 
 ```Gleam
 import html-parser
 
-// Den HTML-Code als String deklarieren
-let html = "<html><body><h1>Hello, Gleam!</h1></body></html>"
+html = "<p>Erster Absatz</p><p>Zweiter Absatz</p>"
 
-// Den HTML-Code parsen und in eine Struktur umwandeln
-let parsed = html_parser.parse(html)
+parsed_html = html-parser.parse(html)
 
-// Die Struktur nach Elementen durchsuchen, in diesem Fall <h1>
-let title = parsed
-  .find_all
-  .last()
-  .filter(|e| e.tag == "h1")
-  .unwrap()
+//parsed_html enthält nun die Struktur: [{_, "p", _, [{_, _, "Erster Absatz"}]}, {_, "p", _, {_ _, _, "Zweiter Absatz"}]}]
 
-// Den Inhalt des Elements ausgeben
-io.print(title.content) // Ausgabe: Hello, Gleam!
+parsed_html
+|> List.length
+//Output: 2
 ```
 
-Der Aufruf von `parse()` gibt ein Ergebnis vom Typ `Result(HtmlParserError, List(HtmlElement))` zurück. Wenn die HTML-Datei erfolgreich geparst wird, enthält die Liste alle gefundenen Elemente in der Reihenfolge, in der sie im Dokument auftreten. Mit den Methoden `find_all` und `filter` kann man bestimmte Elemente auswählen, die in einer Liste zurückgegeben werden.
+Tiefere Einblicke 
+Das Parsen von HTML hat eine lange Geschichte seit seinem ersten Auftreten in den 1990er Jahren. Viele Programmiersprachen bieten eigene Bibliotheken für das Parsen von HTML an, wie zum Beispiel BeautifulSoup in Python oder JavaScript mit Cheerio. Alternativ können auch Formatierungsregeln wie reguläre Ausdrücke verwendet werden, obwohl dies oft nicht so robust und effizient ist wie dem Einsatz von spezifischen Bibliotheken.
 
-## Tiefer Einblick
+Implementation Details 
+Gleam verwendet das Modul 'html5ever' aus der Rust-Programmiersprache, um HTML zu parsen. Dies ermöglicht dem Gleam-Code effiziente Implementierung und Robustheit bei der Verarbeitung von HTML. Es ist wichtig zu beachten, dass HTML-Parsing ein komplexer und sich ständig weiterentwickelnder Bereich ist und daher möglicherweise nicht immer fehlerfrei durchgeführt wird.
 
-Das "html-parser" Paket bietet auch die Möglichkeit, bestimmte CSS-Selektoren zu verwenden, um gezielt Elemente auszuwählen. Diese Methode kann besonders nützlich sein, wenn man nur bestimmte Teile einer Webseite benötigt. Zum Beispiel kann man mit dem CSS-Selektor `h1#title` nur das erste `h1`-Element mit der ID "title" auswählen.
-
-Es ist außerdem möglich, die Attribute eines Elements auszulesen, z.B. `class`, `id` oder benutzerdefinierte Attribute. So kann man beispielsweise alle Links auf einer Webseite auslesen, indem man nach dem `a`-Tag filtert und das `href`-Attribut ausgibt.
-
-Zusätzlich bietet das Paket Funktionen zum Verschachteln von Elementen und zum Entfernen von Tags, die nützlich sein können, wenn man nur Text aus einer Webseite extrahieren möchte.
-
-## Siehe auch
-
-- Offizielle Dokumentation zum "html-parser" Paket: https://github.com/gleam-lang/html-parser
-- Einführung in Gleam: https://gleam.run/getting-started/introduction
-- Gleam Community-Forum: https://forum.gleam.run/
-
-Wenn Sie mehr über das Parsen von HTML mit Gleam erfahren möchten, können Sie die offizielle Dokumentation des "html-parser" Pakets durchlesen oder sich in der Gleam Community umsehen. Nutzen Sie diese Fähigkeit, um Ihre Programmierprojekte noch effizienter zu gestalten!
+Weitere Informationen 
+Für weitere Informationen und Beispiele zur Verwendung von HTML-Parsing mit Gleam, besuchen Sie die offizielle Dokumentation unter: https://gleam.run/modules/html_parser.html.

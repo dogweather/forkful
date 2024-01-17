@@ -10,31 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was & Warum?
 
-Lassen Sie uns ehrlich sein, wir alle lieben das Internet. Egal, ob wir nach Informationen suchen, Unterhaltung genießen oder mit Freunden und Familie in Verbindung bleiben wollen, das Web bietet uns endlose Möglichkeiten. Wenn Sie also eine Webseite herunterladen, können Sie sie jederzeit und überall offline lesen, ohne auf eine Internetverbindung angewiesen zu sein. Genial, oder?
+Das Herunterladen einer Webseite bedeutet, dass man sich den Inhalt der Seite auf seinen Computer lädt, um ihn später offline nutzen zu können. Programmierer nutzen dieses Verfahren beispielsweise, um automatisiert Daten von anderen Webseiten zu sammeln oder um Änderungen an bestehenden Webseiten zu überwachen.
 
-## Wie man eine Webseite herunterlädt
+## Wie geht's?
 
-Das Herunterladen einer Webseite mit PHP ist ziemlich einfach und erfordert nur wenige Zeilen Code. Zunächst müssen Sie die URL der Webseite angeben, die Sie herunterladen möchten. Dann verwenden Sie die Funktion `file_get_contents()`, um den Inhalt der Webseite als Zeichenkette zu erhalten. Schließlich können Sie den Inhalt auf Ihrer eigenen Seite ausgeben oder in einer Datei speichern.
+Um eine Webseite mit PHP herunterzuladen, muss man zunächst die Funktion ```file_get_contents()``` verwenden. In den folgenden Beispielen werden wir die Webseite von Google herunterladen und deren Inhalt ausgeben.
 
-```PHP
-$url = "https://example.com";
-$webpage = file_get_contents($url);
-echo $webpage; // Gibt den Inhalt der Webseite aus
-file_put_contents("webseite.html", $webpage); // Speichert den Inhalt in einer Datei
+```
+<?php
+
+// Webseite herunterladen
+$webseite = file_get_contents("https://www.google.de");
+
+// Webseite ausgeben
+echo $webseite;
 ```
 
-Die Funktion `file_get_contents()` kann auch verwendet werden, um Daten von APIs oder anderen Online-Quellen abzurufen. Dies macht sie zu einem nützlichen Werkzeug für die Entwicklung von Webanwendungen.
+Dieses einfache Beispiel lädt die Google-Startseite herunter und gibt sie aus. Man kann auch bestimmte Teile der Webseite auswählen, indem man spezifische Elemente wie zum Beispiel ```<title>``` oder ```<img>``` mithilfe der Funktion `file_get_html()` auswählt. Mehr Informationen dazu findet man in der Dokumentation von PHP.
 
-## Deep Dive
+## Tiefere Einblicke
 
-Wenn Sie sich für die technischen Details interessieren, verwendet die Funktion `file_get_contents()` die HTTP-Stream-Wrapper, um die angegebene Webseite abzurufen und deren Inhalt zurückzugeben. Dieser Inhalt wird als Zeichenkette mit den Header-Informationen der Webseite zurückgegeben. Sie können auch die Funktion `get_headers()` verwenden, um nur die Header-Informationen zu erhalten.
+Das Herunterladen von Webseiten hat eine lange Geschichte und wurde zuerst in Perl eingeführt. Auch in anderen Programmiersprachen wie Python oder Java gibt es ähnliche Funktionen.
 
-Eine andere Möglichkeit, eine Webseite herunterzuladen, ist die Verwendung der cURL-Bibliothek. Sie bietet mehr Flexibilität und Kontrolle über den Herunterladeprozess, ist aber auch etwas komplexer. Ein Beispiel dafür würde den Rahmen dieses Artikels sprengen, aber Sie können im "See Also" Abschnitt nach Links zur cURL-Dokumentation suchen.
+Eine Alternative zur Verwendung von `file_get_contents()` ist die Verwendung von cURL, einer Erweiterung für PHP. Diese bietet zusätzliche Funktionen wie beispielsweise die Unterstützung von HTTPS und Passwortschutz.
+
+Die Implementierung des Herunterladens von Webseiten mit PHP ist relativ einfach, da die Funktion ```file_get_contents()``` vom Betriebssystem unterstützt wird. Das bedeutet, dass man keine zusätzlichen Bibliotheken installieren muss.
 
 ## Siehe auch
 
-- PHP `file_get_contents()` Dokumentation: https://www.php.net/manual/de/function.file-get-contents.php
-- PHP `get_headers()` Dokumentation: https://www.php.net/manual/de/function.get-headers.php
-- cURL Dokumentation: https://www.php.net/manual/de/book.curl.php
+Weitere Informationen zu `file_get_contents()` und anderen nützlichen PHP-Funktionen findet man in der offiziellen PHP-Dokumentation: https://www.php.net/manual/en/function.file-get-contents.php
+
+Für fortgeschrittenere Techniken zur Verarbeitung von Webseiten mit PHP empfehle ich die folgenden Bibliotheken:
+
+- Simple HTML DOM: http://simplehtmldom.sourceforge.net/
+- Goutte: https://github.com/FriendsOfPHP/Goutte

@@ -10,38 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
-Você já se perguntou como programas em C++ conseguem receber informações diretamente da linha de comando? Aprender a ler argumentos da linha de comando pode ser extremamente útil para tornar seus programas mais interativos e flexíveis.
+## What & Why?
 
-## Como Fazer
-A leitura de argumentos da linha de comando em C++ é feita utilizando a função `main` que possui dois parâmetros, `argc` e `argv`. O `argc` representa o número de argumentos passados e o `argv` é um vetor contendo esses argumentos.
+Ler argumentos da linha de comando é uma habilidade importante para programadores em C++. É a capacidade de ler e processar informações fornecidas na linha de comando quando um programa é executado. Isso facilita a interação com o usuário e permite que o programa receba informações essenciais para seu funcionamento.
+
+## How to:
+
+Ao ler os argumentos da linha de comando, é necessário declarar e inicializar a variável argc, que representa o número total de argumentos fornecidos na linha de comando. Também é necessário declarar a variável argv, que é um array de strings que armazena os argumentos individuais.
+
+```C++
+int main(int argc, char *argv[]) {
+    // código do programa
+}
+```
+
+Abaixo está um exemplo de um programa simples que lê um argumento da linha de comando e imprime seu valor:
 
 ```C++
 #include <iostream>
+using namespace std;
 
-// Função main com dois parâmetros
-int main(int argc, char** argv) {
-    // Imprime o primeiro argumento após o nome do programa
-    std::cout << "O primeiro argumento é: " << argv[1] << std::endl;
-
-    // Imprime o segundo argumento
-    std::cout << "O segundo argumento é: " << argv[2] << std::endl;
-
+int main(int argc, char *argv[]) {
+    if (argc > 1) {
+        cout << "O argumento fornecido é: " << argv[1] << endl;
+    } else {
+        cout << "Nenhum argumento fornecido." << endl;
+    }
     return 0;
 }
 ```
 
-Supondo que o programa seja nomeado como `meu_programa.exe` e seja executado com os argumentos `arg1` e `arg2`, a saída seria a seguinte:
+Caso o programa seja executado com o argumento "hello", o output será o seguinte:
 
 ```
-O primeiro argumento é: arg1
-O segundo argumento é: arg2
+O argumento fornecido é: hello
 ```
 
-## Mergulho Profundo
-Nos sistemas operacionais, sempre que um programa é executado, é criado um processo para ele. Esse processo é responsável por armazenar todos os dados necessários para a execução do programa, incluindo os argumentos da linha de comando. Ao utilizar a função `main` com os parâmetros `argc` e `argv`, você está acessando essas informações armazenadas no processo do programa em execução.
+## Deep Dive
 
-## Veja Também
-- [Referência da função main em C++](https://en.cppreference.com/w/cpp/language/main_function)
-- [Tutorial de linha de comando em C++](https://www.tutorialspoint.com/cplusplus/cpp_command_line_arguments.htm)
-- [Leitura de argumentos em C++ utilizando a biblioteca Boost](https://www.boost.org/doc/libs/1_68_0/doc/html/program_options/tutorial.html)
+A habilidade de ler argumentos da linha de comando tem sido usada desde os primeiros dias da linguagem C++. Além disso, existem alternativas para ler informações durante a execução de um programa, como a entrada padrão e argumentos de função.
+
+A implementação da função main com os argumentos argc e argv é um requisito obrigatório para todos os programas C++, conforme definido pelo padrão da linguagem.
+
+## See Also
+
+- [C++ Reference - Arguments](https://www.cplusplus.com/articles/DEN36Up4/)
+- [C++ Tutorial - Command Line Arguments](https://www.tutorialspoint.com/cplusplus/cpp_command_line_arguments.htm)
+- [cppreference - main function](https://en.cppreference.com/w/cpp/language/main_function)

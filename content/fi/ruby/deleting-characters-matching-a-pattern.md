@@ -1,7 +1,7 @@
 ---
-title:                "Hahmonpoisto vastaavaa kuvioita vasten"
-html_title:           "Ruby: Hahmonpoisto vastaavaa kuvioita vasten"
-simple_title:         "Hahmonpoisto vastaavaa kuvioita vasten"
+title:                "Mallin mukaisten merkkien poistaminen"
+html_title:           "Ruby: Mallin mukaisten merkkien poistaminen"
+simple_title:         "Mallin mukaisten merkkien poistaminen"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Strings"
@@ -10,32 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä & Miksi?
+Poistaessasi merkkejä, jotka vastaavat tiettyä kuviona olevaa merkkijonoa, tarkoittaa sitä, että poistat kaikki merkit, jotka täyttävät määritetyn kuvion. Tämä voi olla hyödyllistä, kun haluat puhdistaa tekstin tai datan turhista merkeistä. Ohjelmoinnissa tätä tehdään usein automatisoinnin ja tietojenkäsittelyn helpottamiseksi.
 
-Miksi haluat poistaa merkkejä, jotka vastaavat tiettyä kaavaa? Tämä voi olla hyödyllistä, kun käsittelet tekstimuotoisia tietoja, kuten CSV- tai JSON-tiedostoja, ja haluat jättää pois tietyt merkit, jotka eivät ole tarpeellisia.
-
-## Kuinka tehdä
-
-Poistaaksesi merkit, jotka vastaavat tiettyä kaavaa, voit käyttää `.gsub` -menetelmää. Tämä menetelmä korvaa kaikki merkit, jotka vastaavat määritettyä kaavaa, tyhjällä merkillä. Tässä on esimerkki:
-
+## Miten:
 ```Ruby
-text = "Tämä on esimerkkiteksti (123)."
+# Esimerkki koodista
+text = "Tämä on esimerkki tekstistä!"
+text = text.gsub(/[ä!,]/,"") # poistaa ä ja ! merkit
 
-puts text.gsub(/[()]/, '')
+puts text # tulostaa "Tm on esimerkki tekstist" (huomaa poistetut merkit)
+
+```
+```Ruby
+# Toinen esimerkki: poistaa kaikki välilyönnit tekstistä
+text = "Tämä on toinen esimerkki!"
+text = text.delete(" ") # poistaa kaikki välilyönnit
+
+puts text # tulostaa "Tämäontoinenesimerkki!"
 ```
 
-Tämä tuottaa seuraavan tulosteen:
+## Syvällinen sukellus:
+Poistaminen merkkejä vastaavien kuvion avulla on ollut käytössä ohjelmoinnissa jo pitkään ja sitä käytetään yhä laajasti automatisoinnin ja datan käsittelyn yhteydessä. Vaihtoehtoisesti voit myös käyttää ohjelmointikielinä muita vaihtoehtoisia menetelmiä, kuten split() tai scan() Rubyssä. Tämä toiminto vaatii myös tarkkaa määrittelyä halutuista merkeistä, jotta vahingossa ei poisteta tärkeitä merkkejä.
 
-`Tämä on esimerkkiteksti 123.`
-
-Kuten näet, sulkumerkit on korvattu tyhjällä merkillä ja tekstissä oleva kaikki muu on säilytetty.
-
-## Syvemmälle
-
-Voit käyttää erilaisia RegExp-kaavoja poistaaksesi erilaisia merkkejä. Esimerkiksi voit käyttää `\d` vastaamaan numeroita tai `\w` vastaamaan kirjaimia ja numeroita. Voit myös käyttää `+` -merkkiä vastaamaan useita toistuvia merkkejä. Esimerkiksi kaava `/[()]+/` poistaisi kaikki sulkumerkit, mutta myös välilyönnit, mikäli niitä olisi. Voit kokeilla erilaisia RegExp-kaavoja ja nähdä, miten ne vaikuttavat tekstiin.
-
-## Katso myös
-
-- Ruby String -dokumentaatio: https://ruby-doc.org/core-3.0.2/String.html
-- Säännölliset lausekkeet Rubyn String -esimerkkejä: https://www.rubyguides.com/2019/02/ruby-regex/
-- Ruby String `gsub` -menetelmästä: https://www.rubyguides.com/ruby-tutorial/ruby-string-gsub-method/
+## Katso myös:
+Voit tutustua lisää Ruby ohjelmointikielen mahdollisuuksiin virallisilta nettisivuilta: <https://www.ruby-lang.org/fi/>

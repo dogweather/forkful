@@ -1,7 +1,7 @@
 ---
-title:                "Das Parsen von html."
-html_title:           "Kotlin: Das Parsen von html."
-simple_title:         "Das Parsen von html."
+title:                "HTML Parsen"
+html_title:           "Kotlin: HTML Parsen"
+simple_title:         "HTML Parsen"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "HTML and the Web"
@@ -10,32 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was ist damit gemeint und Warum? 
+HTML-Parsing ist der Prozess des Lesens und Analysierens von HTML-Code. Programmierer tun dies, um Daten von einer Webseite zu extrahieren, um sie in anderen Anwendungen zu nutzen oder um die Struktur und den Inhalt einer Webseite zu verstehen.
 
-Du hast sicherlich schon einmal auf einer Website gesurft und möchtest jetzt bestimmte Informationen oder Daten aus dem HTML-Code herausziehen. Das bedeutet, dass du HTML-Daten parsen musst. Das kann hilfreich sein, wenn du Informationen aus Webseiten sammeln möchtest oder Daten für automatisierte Prozesse benötigst.
+## So geht's: 
+```Kotlin 
+// Importiere die benötigten Bibliotheken 
+import org.jsoup.Jsoup 
+import org.jsoup.nodes.Document 
+import org.jsoup.select.Elements 
 
-## Wie geht's
+// Erstelle eine Verbindung zur Webseite 
+val url = "https://www.example.com" 
+val doc = Jsoup.connect(url).get() 
 
-Das Parsen von HTML-Daten ist in Kotlin relativ einfach und unkompliziert. Zuerst musst du eine HTML-Parser-Bibliothek wie Jsoup importieren. Dann kannst du den gewünschten HTML-Code mit Hilfe von Jsoup parsen und bestimmte Elemente extrahieren. Zum Beispiel, wenn du den Titel einer Webseite extrahieren möchtest, kannst du folgenden Code verwenden:
+// Finde alle Links auf der Webseite 
+val links: Elements = doc.select("a[href]") 
 
-```Kotlin
-val doc = Jsoup.connect("https://www.example.com").get()
-val title = doc.select("title").text()
-println(title)
+// Gebe die gefundenen Links aus 
+for (link in links) { 
+    println(link.attr("href") + " " + link.text()) 
+} 
 ```
 
-Dieser Code verbindet sich mit der angegebenen URL, parsed den HTML-Code und extrahiert dann den Titel der Webseite. In diesem Fall würde der Output "Example Domain" lauten. Du kannst auch spezifischere Selektoren verwenden, um bestimmte Elemente wie Bilder oder Links herauszufiltern. 
+Output: 
+https://www.example.com/Home Startseite 
+https://www.example.com/About Us Über uns 
+https://www.example.com/Contact Kontakt 
 
-Das ist nur ein Beispiel dafür, wie du HTML-Daten parsen kannst. Es gibt viele verschiedene Techniken und Bibliotheken, die du verwenden kannst. Es ist am besten, ein paar zu testen und herauszufinden, welche für dein spezifisches Projekt am besten geeignet sind.
+## Tiefer eingetaucht: 
+HTML-Parsing hat sich im Laufe der Jahre weiterentwickelt und ist in vielen verschiedenen Programmiersprachen verfügbar. Alternativen zu Jsoup sind beispielsweise BeautifulSoup für Python und Nokogiri für Ruby. Beim Parsen von HTML ist es wichtig zu beachten, dass der Code fehleranfällig sein kann, da er von verschiedenen Quellen erstellt wird. Es ist daher wichtig, robuste Parser wie Jsoup zu verwenden, die mit unvollständigem oder fehlerhaftem Code umgehen können.
 
-## Tiefer Einblick
-
-Beim Parsen von HTML-Daten gibt es einige wichtige Dinge zu beachten. Erstens, der HTML-Code kann sich je nach Webseite und Struktur stark unterscheiden. Es ist daher wichtig, ein flexibles und robustes Parsing-System zu verwenden, das auch mit unerwarteten oder fehlerhaften HTML-Daten umgehen kann.
-
-Zweitens, während das Parsen von HTML-Daten hilfreich sein kann, muss auch die Serverbelastung berücksichtigt werden. Wenn du zu viele Anfragen an eine Website schickst, um Daten zu parsen, kann dies zu einer hohen Belastung führen und die Website kann deine Anfragen blockieren. Daher ist es wichtig, beim Parsen von HTML-Daten auch die angemessene Etikette zu wahren.
-
-## Siehe auch
-
-- [HtmlUnit Library](https://www.htmlunit.org/)
-- [JSoup Documentation](https://jsoup.org/cookbook/extracting-data/selector-syntax)
-- [10 Tipps für effizientes Web Scraping](https://kinsta.com/de/blog/web-scraping/)
+## Siehe auch: 
+- Offizielle Jsoup-Dokumentation: https://jsoup.org/
+- BeautifulSoup: https://www.crummy.com/software/BeautifulSoup/
+- Nokogiri: https://nokogiri.org/

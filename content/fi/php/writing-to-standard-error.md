@@ -1,7 +1,7 @@
 ---
-title:                "Kirjoittaminen standardi virheeseen"
-html_title:           "PHP: Kirjoittaminen standardi virheeseen"
-simple_title:         "Kirjoittaminen standardi virheeseen"
+title:                "Kirjoittaminen standardivirheeseen"
+html_title:           "PHP: Kirjoittaminen standardivirheeseen"
+simple_title:         "Kirjoittaminen standardivirheeseen"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Files and I/O"
@@ -10,43 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mikä ja miksi?
+Kirjoittaminen standardivirheeseen (standard error) tarkoittaa virheiden tai ilmoitusten tallentamista koodin suorituksen aikana. Tämä auttaa kehittäjiä korjaamaan sovelluksiin liittyviä ongelmia ja kehittämään nämä sovellukset paremmaksi. 
 
-Kirjoittaminen virheilmoituksille (standard error) on olennainen osa ohjelmointia, sillä se auttaa löytämään ja korjaamaan virheitä koodissa. Se myös helpottaa ohjelmoijaa ymmärtämään, mitä koodissa tapahtuu ja miksi se ei toimi odotetusti.
+Kehittäjät käyttävät kirjoittamista standardivirheeseen saadakseen lisätietoa sovellustensa toiminnasta, kuten virheitä tai mahdollisia suorituskykyongelmia.
 
-## Kuinka kirjoittaa virheilmoituksille (standard error)
-
-Kirjoittamalla virheitä standard erroriin voidaan käyttää PHP:n `fwrite`-funktiota. Se ottaa kaksi parametria; ensimmäinen on tiedostodeskriptori ja toinen on merkkijono, joka tulostetaan standard erroriin. Tiedostodeskriptori voidaan saada käyttämällä `fopen`-funktiota ja parametrina annetaan `php://stderr`.
-
+## Miten tehdä:
 ```
 <?php
-$fd = fopen('php://stderr', 'w');
-fwrite($fd, 'Virhe: Tämä on virheellinen merkkijono.' . PHP_EOL);
-fclose($fd);
+error_log("Tarkista tämä virhe!"); // Lisää teksti "Tarkista tämä virhe!" standardivirheeseen
+echo "Jokin teksti"; // Tulostaa "Jokin teksti" konsoliin
+?>
+```
+Tulostus:
+```
+Tarkista tämä virhe!
+Jokin teksti
 ```
 
-**Tulos:**
->Virhe: Tämä on virheellinen merkkijono.
+## Syvemmälle:
+Kirjoittaminen standardivirheeseen on käytäntö joka on käytössä monissa ohjelmointikielissä, sillä se auttaa kehittäjiä löytämään ja korjaamaan virheitä nopeammin. Tämä auttaa myös kehittäjiä luomaan vakaampia ja luotettavampia sovelluksia. 
 
-## Syventävä tieto
+Pääasiallinen vaihtoehto kirjoittamiselle standardivirheeseen on tallentaa virheet ja ilmoitukset lokitiedostoihin, mutta tämä voi olla hankalampaa löytää ja tarkastella. Kirjoittaminen standardivirheeseen on nopeampi ja helpompi tapa saada lisätietoa sovelluksen suorituksesta.
 
-Standard error on yksi kolmesta tavanomaisesta tiedostovirtareitistä PHP:ssä. Se on tarkoitettu virheilmoitusten ja varoitusviestien tulostamiseen. Virheitä ja varoituksia voidaan myös ohjata toiseen tiedostoon tai jopa järjestelmän lokitiedostoon, mikäli halutaan.
+PHP:ssa, virheitä voi tallentaa käyttämällä funktiona error_log() tai käyttämällä lähteen koodia, kuten esimerkissä nähdään. Virheidentallentaminen voidaan myös kytkeä pois päältä asetuksista, mikäli sitä ei haluta käyttää.
 
-Lisäksi virheilmoituksia voidaan tallentaa myös muuttujaan käyttämällä `stderr`-arvoa `ini_set`-funktiolla. Tämän avulla voidaan myös helposti muokata, mihin virheet ja varoitukset ohjataan.
-
-```
-<?php
-ini_set('error_log', 'virheet.txt');
-ini_set('log_errors', 1);
-
-// ...koodi, joka voi aiheuttaa virheitä...
-
-error_log('Virhe tiedoston avaamisessa.');
-
-```
-
-## Katso myös
-
-- [PHP fwrite-funktio](https://www.php.net/manual/en/function.fwrite.php)
-- [PHP fopen-funktio](https://www.php.net/manual/en/function.fopen.php)
-- [PHP virheenkäsittely ja lokitiedostot](https://www.php.net/manual/en/book.errorfunc.php)
+## Katso myös:
+- PHP: virheitä käsittelevä dokumentaatio: https://www.php.net/manual/en/book.errorfunc.php
+- PHP: error_log-funktio: https://www.php.net/manual/en/function.error-log.php

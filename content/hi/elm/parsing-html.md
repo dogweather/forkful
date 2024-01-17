@@ -1,7 +1,7 @@
 ---
-title:                "HTMl को खोजना"
-html_title:           "Elm: HTMl को खोजना"
-simple_title:         "HTMl को खोजना"
+title:                "हार्डवेयर को समझना"
+html_title:           "Elm: हार्डवेयर को समझना"
+simple_title:         "हार्डवेयर को समझना"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "HTML and the Web"
@@ -10,56 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
+## हम क्या है और क्यों करते हैं?
+HTML को पार्सिंग करना क्या है, यह जानने के लिए हमें समझना होगा कि यह कैसे काम करता है। पार्सिंग का अर्थ है कि हम HTML डॉक्यूमेंट को पढ़ते हैं और उसमें दिए गए टैग और एट्रीब्यूट्स को समझते हैं। इसके माध्यम से हम वेब कंपोनेंट्स को बना सकते हैं जो कि हमारे द्वारा बनाए गए हैं।
 
-क्या आपने कभी सोचा है कि वेब पेज से डेटा निकालने के लिए कैसे प्रोग्रामिंग की जा सकती है? यदि हाँ, तो Elm आपको इस समस्या का समाधान प्रदान कर सकता है। यहाँ हम आपको बताएँगे कि क्यों Elm ही आपका सर्वोत्तम विकल्प हो सकता है।
+## कैसे करें:
+```Elm
+import Html
+import Html.Attributes
 
-## कैसे करें
-
-### एलम में HTML पार्सिंग
-
-एलम में HTML पार्सिंग साधन एक्सल वर्गों का उपयोग करके किया जा सकता है। नीचे दिए गए उदाहरण आपको एलम में HTML पार्सिंग करने की प्रक्रिया का अनुभव कराएंगे।
-
-```elm
-import Html exposing (text, Attribute, Node)
-import Html.Parser exposing (parse, attribute, node)
-
--- एलम कोड से HTML अनुवाद करना
-htmlString =
-    "<div id='article'> <h1>Hello, World!</h1> <p>This is a sample paragraph.</p> </div>"
-
-parsedHtml = parse htmlString
-
--- HTML के Node को उत्पन्न करने के लिए उपयोग अतिरिक्त चरित्र
-Header1 =
-    attribute "tagName" "h1" .. attribute "children" "Hello, World!" |> node
-
-Paragraph =
-    attribute "tagName" "p" .. attribute "children" "This is a sample paragraph." |> node
-
--- अंत में, HTML को Node तक रूपांतरण करके हम एक निष्पादन प्रक्रिया प्राप्त कर सकते हैं
--- parsedHtml वापस Json List देता है, जिसे हम एक मूल Node के रूप में परिवर्तित करते हैं
-main =
-    let
-        extractedNodesInJsonListFormat =
-            case parsedHtml of
-                Ok successfulExtraction ->
-                    successfulExtraction
-
-                Err failedExtraction ->
-                    [Header1, Paragraph]
-    in
-    text <| String.fromList extractedNodesInJsonListFormat
+view : Html msg
+view =
+    Html.div [ Html.Attributes.id "container" ] [ Html.text "Hello World!" ]
 ```
 
-आउटपुट:
+यह एक बुनियादी Elm का कोड है जो कि एक डिव के भीतर है जिसमें हमने "container" नामक एट्रीब्यूट्स के साथ एक "Hello World!" टेक्स्ट को प्रिंट किया है। इस टेक्निक से हम बहुत ही आसानी से HTML को पार्स कर सकते हैं और अपने इंटरैक्टिव वेबसाइट का निर्माण कर सकते हैं।
 
-```elm
-<div id='article'> <h1>Hello, World!</h1> <p>This is a sample paragraph.</p> </div>
-```
+## गहराई में:
+(1) HTML के आते ही, बहुत से डिजाइनर्स ने कई सारे जैसे कि Adobe Dreamweaver आदि में WYSIWYG एडिटर का प्रयोग करके वेबसाइट बनाने की कोशिश की। इन एडिटर्स का उपयोग करने से काफी समय और पैसे बच सकते हैं। (2) पार्सिंग के लिए और एल्टर्नेटिव्स क्या सोचने हैं - क्या पार्सिंग को कोई भी समस्याएं हैं? (3) कैसे Elm के आते ही, डीविलोपर्स को पार्सिंग HTML का समाधान मिल गया है। क्या आप यह जानते हैं कि Elm क्यों पार्सिंग HTML के लिए इतना उत्तेजित है?
 
-संपूर्ण HTML को फ़ॉर्मेट किया गया है, जिसमें ```<`, `>` और `"` जैसे अतिरिक्त चरित्र शामिल हैं।
-
-## भीड़ की गहराई में
-
-एलम में HTML पर्सिंग को गहराई से देखने के लिए, आप एक "फ़ंक्शन" का उपयोग कर सकते हैं जो संदर्भ प्रायः
+## अधिक देखें:
+- [Elm ऑफिशियल वेबसाइट] (https://elm-lang.org/)
+- [Elm की डॉक्यूमेंटेशन] (https://package.elm-lang.org/packages/elm/html/latest)
+- [Elm की Github Repository] (https://github.com/elm/compiler)
+- [Elm की पार्सिंग की विस्तृत जानकारी] (https://guide.elm-lang.org/)

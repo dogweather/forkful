@@ -10,25 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-Converting a string to lower case is a common task in programming that allows for easier manipulation and comparison of text. In Elm, this can be useful for creating text-based applications, performing text analysis, or simply ensuring consistency in user input.
+## What & Why?
+Converting a string to lower case is a process of converting all the characters in a string to their lower case equivalents. This is done to ensure consistency and compatibility when working with strings in a programming language. It also makes comparison and manipulation of strings easier.
 
-## How To
-To convert a string to lower case in Elm, we can use the `String.toLower` function. Here's an example of how it works:
+## How to:
+Converting a string to lower case in Elm is simple and straightforward. It can be done using the `String.toLower` function. This function takes in a string as input and returns a new string with all the characters in lower case.
 
 ```Elm
-string = "ELM PROGRAMMING"
-lowerString = String.toLower string
+myString = "HeLlo WORlD"
+lowerCaseString = String.toLower myString
+-- lowerCaseString = "hello world"
 ```
 
-In this code, we first declare a string variable `string` and assign it the value of "ELM PROGRAMMING". Then, we use the `String.toLower` function to convert the string to lower case and assign it to a new variable `lowerString`. The output of `lowerString` would be "elm programming".
+In the above example, we have a string `myString` which contains a mix of upper and lower case characters. By using the `String.toLower` function, we get a new string `lowerCaseString` with all the characters in lower case.
 
-## Deep Dive
-The `String.toLower` function utilizes the `String.map` function, which applies a function to each character in a string. In this case, the `Char.toLower` function is used to convert each character to its lower case equivalent. It also takes into consideration any unicode characters, making it a reliable and thorough method for converting strings to lower case.
+## Deep Dive:
+Converting strings to lower case has been a basic function in programming languages since the early days. It was first introduced in the programming language BCPL in the 1960s. Today, all major programming languages have a similar function to convert strings to lower case.
 
-Another useful function for manipulating strings is `String.toUpper`, which converts a string to all upper case. In addition, the `String.words` function can be used to split a string into a list of words, making it easier to perform operations on specific parts of the string.
+There are alternative ways to convert strings to lower case in Elm, such as using regular expressions or manually iterating through each character and converting it to lower case. However, the `String.toLower` function is the most efficient and recommended way to do it.
 
-## See Also
-- [Elm Language Official Website](https://elm-lang.org/)
-- [Elm String Documentation](https://package.elm-lang.org/packages/elm/core/latest/String)
-- [Elm String Functions](https://guide.elm-lang.org/strings/index.html)
+The `String.toLower` function internally uses the Unicode standard to determine the lower case equivalent of each character. This ensures compatibility and accuracy when working with different languages and character sets.
+
+## See Also:
+- [String.toLower documentation](https://package.elm-lang.org/packages/elm/core/latest/String#toLower)
+- [Unicode standard](https://unicode.org/)

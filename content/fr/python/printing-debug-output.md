@@ -1,7 +1,7 @@
 ---
-title:                "Affichage des sorties de débogage"
-html_title:           "Python: Affichage des sorties de débogage"
-simple_title:         "Affichage des sorties de débogage"
+title:                "Afficher la sortie de débogage"
+html_title:           "Python: Afficher la sortie de débogage"
+simple_title:         "Afficher la sortie de débogage"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Testing and Debugging"
@@ -10,66 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+# Qu'est-ce que c'est et pourquoi faire?
 
-Il y a plusieurs raisons pour lesquelles vous pourriez vouloir utiliser l'impression de messages de débogage dans votre code Python. Cela peut vous aider à comprendre pourquoi votre programme ne fonctionne pas correctement, à identifier les erreurs et à vérifier les valeurs de vos variables à différents points d'exécution.
+Imprimer les sorties de débogage est le fait de mettre des messages de débogage dans votre code pour comprendre son comportement pendant l'exécution. Cela aide les programmeurs à identifier et résoudre les erreurs dans leur code.
 
-## Comment Faire
+# Comment faire:
 
-Voici un exemple de code Python qui montre comment imprimer un message de débogage à l'aide de la fonction `print()` :
-
-```Python
-x = 5
-y = 10
-print("La valeur de x est :", x)
-print("La valeur de y est :", y)
-```
-
-Le résultat de ce code sera :
+Voici un exemple de code Python utilisant la fonction `print()` pour afficher des messages de débogage:
 
 ```
-La valeur de x est : 5
-La valeur de y est : 10
+num1 = 5
+num2 = 10
+
+# Afficher les valeurs des variables
+print("Valeur de num1:", num1)
+print("Valeur de num2:", num2)
+
+# Effectuer une opération et afficher le résultat
+print(num1 + num2)
 ```
 
-Comme vous pouvez le voir, en utilisant la fonction `print()` avec un message explicite, vous pouvez facilement vérifier la valeur de vos variables à des points spécifiques de votre code. Vous pouvez également utiliser des expressions ou des variables dans vos messages de débogage pour des informations plus détaillées. Par exemple :
-
-```Python
-x = 5
-y = 10
-print("La somme de", x, "et", y, "est égale à", x + y)
-```
-
-## Plongée en Profondeur
-
-L'impression de messages de débogage peut également être utile pour suivre le flux d'exécution de votre code et identifier les erreurs. Vous pouvez utiliser la fonction `print()` pour imprimer des messages avant et après certaines parties de votre code pour voir si elles sont exécutées correctement. Par exemple :
-
-```Python
-x = 5
-y = 10
-print("Début du programme")
-print("La valeur de x est :", x)
-print("La valeur de y est :", y)
-print("Addition de x et y :", x + y)
-print("Fin du programme")
-```
-
-Le résultat de ce code sera :
+Sortie:
 
 ```
-Début du programme
-La valeur de x est : 5
-La valeur de y est : 10
-Addition de x et y : 15
-Fin du programme
+Valeur de num1: 5
+Valeur de num2: 10
+15
 ```
 
-Cela peut vous aider à localiser l'emplacement d'une erreur ou à vérifier si une partie de votre code n'est pas exécutée.
+# Plongée en profondeur:
 
-## Voir aussi
+Le débogage est une partie essentielle du processus de développement de logiciels depuis les premiers jours de la programmation informatique. Avant les avancées technologiques telles que les débogueurs intégrés, les programmeurs utilisaient principalement l'impression de messages pour comprendre et résoudre les erreurs dans leur code.
 
-Pour en savoir plus sur l'impression de messages de débogage en Python, vous pouvez consulter les ressources suivantes :
+En dehors de l'utilisation de la fonction `print()`, il existe d'autres techniques de débogage, telles que l'utilisation de débogueurs intégrés, la mise en place de points d'arrêt ou l'utilisation de journaux pour enregistrer des informations de débogage. Cependant, l'impression de messages reste l'une des méthodes les plus simples et les plus utilisées pour le débogage en Python.
 
-- [La documentation officielle de Python sur la fonction `print()`](https://docs.python.org/fr/3/library/functions.html#print)
-- [Un tutoriel sur le débogage en Python](https://realpython.com/python-debugging-pdb/)
-- [Un guide sur l'utilisation des messages de débogage efficacement](https://www.bogotobogo.com/python/python_debugging_using_logging_module.php)
+# Voir aussi:
+
+Pour en savoir plus sur l'impression de débogage en Python, vous pouvez consulter les ressources suivantes:
+
+- [Documentation Python sur la fonction print()](https://docs.python.org/fr/3/library/functions.html#print)
+- [Article sur le débogage en Python](https://realpython.com/python-debugging-pdb/) sur Real Python (en anglais)

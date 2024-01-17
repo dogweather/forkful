@@ -10,29 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co & Dlaczego?
 
-Czasami w naszych programach chcemy usunąć znaki, które pasują do określonego wzorca. Może to być przydatne, gdy pracujemy z plikami tekstowymi lub analizujemy dane.
+Usuwanie znaków pasujących do określonego wzorca jest jedną z podstawowych operacji, które programiści często wykonują w swoim kodzie. Polega to na usunięciu wszystkich wystąpień znaku lub ciągu znaków, które pasują do danego wzorca.
 
-## Jak to zrobić
+Wykonanie operacji usuwania znaków jest niezbędne w celu poprawienia jakości kodu i jego optymalizacji. Może to pomóc w poprawieniu wydajności i czytelności kodu, a także w wyeliminowaniu błędów.
 
-Możemy użyć funkcji `filter` w języku Haskell, aby wybrać tylko te znaki, które nie pasują do naszego wzorca. Następnie możemy połączyć je ponownie za pomocą funkcji `concat`. Przykładowy kod wyglądałby następująco:
+## Jak to zrobić?
 
-```Haskell
-deleteMatching :: String -> String -> String
-deleteMatching pattern = concat . filter (\c -> not (c `elem` pattern))
+Kodując w Haskell, istnieje wiele sposobów na usuwanie znaków pasujących do wzorca. Poniżej przedstawiamy przykłady kodu z wykorzystaniem różnych funkcji i metod.
+
+### Przykładowy kod:
+```
+-- Usuwanie wystąpień znaku "a" z listy
+delete 'a' "abcabc" 
+-- Wynik: "bcbc"
+
+-- Usuwanie wszystkich cyfr z tekstu
+filter not . Data.Char.isDigit $ "abc123def456" 
+-- Wynik: "abcdef"
 ```
 
-Aby użyć tej funkcji, wystarczy przekazać jej wzorzec oraz napis, z którego chcemy usunąć pasujące znaki. Na przykład, jeśli chcemy usunąć wszystkie spacje z napisu "Hello World", możemy użyć następującego wyrażenia: `deleteMatching " " "Hello World"`. Wynik wyglądałby następująco: "HelloWorld".
+Możemy również zdefiniować własną funkcję, która będzie usuwać odpowiednie znaki. Przykładowy kod poniżej:
 
-## Dogłębna analiza
+```
+-- Usuwanie znaków pasujących do wzorca
+deletePattern :: Char -> String -> String
+deletePattern c = filter (/= c)
 
-Funkcja `filter` działa w ten sposób, że przyjmuje listę i zwraca tylko te elementy, które spełniają określony warunek. W naszym przypadku, warunkiem jest to, że dany znak nie występuje w naszym wzorcu. Następnie, funkcja `concat` po prostu łączy wszystkie znaki w jeden napis.
+-- Usuwanie wszystkich cyfr z tekstu
+deletePattern '1' "abc123def456" 
+-- Wynik: "abc23def456"
+```
 
-Warto również wspomnieć o funkcji `elem`, która sprawdza, czy dany element znajduje się w liście. Dzięki temu możemy wykluczyć wszystkie znaki, które zawierają się w naszym wzorcu.
+## Głębsza analiza
 
-## Zobacz także
+Usuwanie znaków pasujących do wzorca jest jednym z najbardziej podstawowych zadań wykonywanych przez programistów. Można to wykonać przy użyciu wbudowanych funkcji i metod w języku Haskell, takich jak `delete` i `filter`, a także za pomocą własnych funkcji.
 
-- [Dokumentacja funkcji `filter` w Haskellu](https://hackage.haskell.org/package/base-4.15.0.0/docs/Prelude.html#v:filter)
-- [Dokumentacja funkcji `concat` w Haskellu](https://hackage.haskell.org/package/base-4.15.0.0/docs/Prelude.html#v:concat)
-- [Inne przydatne funkcje w Haskellu](https://wiki.haskell.org/Cheatsheet)
+Alternatywnym sposobem na usuwanie znaków jest użycie wyrażeń regularnych. Jest to popularne podejście w innych językach programowania, ale w Haskellu wykorzystanie wbudowanych funkcji jest często preferowane ze względu na silny typowy system języka.
+
+Jeśli chodzi o implementację usuwania znaków pasujących do wzorca w Haskellu, warto zwrócić uwagę na wykorzystanie funkcji wyższego rzędu, takich jak `filter` i `map`. Dzięki nim możemy w łatwy sposób dostosować algorytm do swoich potrzeb.
+
+## Zobacz też
+
+- [Dokumentacja języka Haskell](https://www.haskell.org/documentation/)
+- [Wyrażenia regularne w Haskellu](https://wiki.haskell.org/Regular_expressions)

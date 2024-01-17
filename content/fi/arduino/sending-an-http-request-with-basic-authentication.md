@@ -1,7 +1,7 @@
 ---
-title:                "Lähettämässä http-pyyntöä perusautentikointilla"
-html_title:           "Arduino: Lähettämässä http-pyyntöä perusautentikointilla"
-simple_title:         "Lähettämässä http-pyyntöä perusautentikointilla"
+title:                "Perusautentikoinnin lähettäminen http-pyynnön avulla"
+html_title:           "Arduino: Perusautentikoinnin lähettäminen http-pyynnön avulla"
+simple_title:         "Perusautentikoinnin lähettäminen http-pyynnön avulla"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "HTML and the Web"
@@ -10,61 +10,154 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mikä ja miksi?
+Lähettämällä HTTP-pyynnön perusautentikoinnin kanssa, voit hakea tietoja verkosta ja suojata niitä samalla salasanalla. Tämä on hyödyllistä, sillä se parantaa tietoturvaa ja antaa sinulle mahdollisuuden saada tietoa ulkopuolisista lähteistä.
 
-Miksi haluaisit lähettää HTTP-pyynnön perusautentikoinnilla? Yksinkertaisesti, HTTP-pyynnöt ovat niiden avulla tapa lähettää tietoja verkon yli ja perusautentikointi antaa meille mahdollisuuden suojata tietoja. Tämä on erityisen tärkeää, kun liikenne kulkee julkisen verkon kautta, kuten Internetissä.
+## Miten:
+Esimerkkejä ohjelmoinnista ja tulosteista ```Arduino ... ``` koodilohkoilla.
 
-## Miten
+Esimerkki hakee tietoja Google Maps API:sta autentikoinnin avulla:
 
-Seuraavassa on esimerkki kuinka voit lähettää HTTP-pyynnön perusautentikoinnilla käyttäen Arduinon HTTPClient kirjastoa:
-
-```
-#include <ESP8266WiFi.h>
+```Arduino
+#include <WiFiClient.h>
 #include <ESP8266HTTPClient.h>
 
-const char* ssid = "WiFi-verkon-nimi"; 
-const char* password = "WiFi-verkon-salasana";
+// Replace with your network credentials
+const char *ssid = "YourNetworkName";
+const char *password = "YourNetworkPassword";
 
-void setup() {
+// Replace with your Google Maps API key
+String apiKey = "YourAPIKey";
 
-  Serial.begin(9600);
-  WiFi.begin(ssid, password); // Muodosta yhteys WiFi-verkkoon
-  Serial.println("Trying to connect to WiFi...");
-  while (WiFi.status() != WL_CONNECTED) { // Odota yhteys WiFi-verkkoon 
-    delay(500);
-    Serial.print(".");
+void setup()
+{
+  Serial.begin(115200);
+  WiFi.begin(ssid, password);
+
+  while (WiFi.status() != WL_CONNECTED)
+  {
+    delay(1000);
+    Serial.println("Connecting to WiFi...");
   }
   Serial.println("Connected to WiFi!");
 
-  // Luo HTTP-objekti perusautentikoinnilla
+  // Set up HTTP request
   HTTPClient http;
-  http.begin("http://www.example.com", "username", "password");
+  http.begin("https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&key=" + apiKey);
+  http.addHeader("Content-Type", "application/json");
 
-  int httpCode = http.GET(); // Lähetä GET-pyyntö
-  
-  if (httpCode > 0) { // Tarkista vastaus
+  // Send request with basic authentication
+  http.setAuthorization("username", "password");
+  int statusCode = http.sendRequest();
+
+  // Check for successful response
+  if (statusCode > 0)
+  {
+    // Read response and print to serial monitor
     String response = http.getString();
-    Serial.println(response); // Tulosta vastaus
+    Serial.println(response);
   }
-  else {
-    Serial.println("Error on HTTP request");
+  else
+  {
+    Serial.println("Error in HTTP request");
   }
 
-  http.end(); // Sulje yhteys
+  // Close connection
+  http.end();
 }
 
-void loop() {
-
+void loop()
+{
 }
 ```
 
-Esimerkissä luomme ensin yhteyden WiFi-verkkoon, jonka jälkeen luomme HTTP-objektin käyttäen osoitetta, käyttäjänimeä ja salasanaa. Sitten lähetämme GET-pyynnön ja tulostamme vastauksen sarjaporttiin. Lopuksi suljemme yhteyden.
+Tulostus serial monitoriin:
 
-## Syventävä sukellus
+```
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=UTF-8
+Date: Wed, 14 Aug 2019 00:00:00 GMT
+Expires: Thu, 15 Aug 2019 00:00:00 GMT
+Cache-Control: public, max-age=86400
+Server: ESF
+Content-Encoding: gzip
+X-XSS-Protection: 0
+X-Frame-Options: SAMEORIGIN
+Alt-Svc: quic=":443"; ma=2592000; v="46,43,39"
+Transfer-Encoding: chunked
+Connection: close
 
-Perusautentikoinnissa käyttäjänimet ja salasanat lähetetään selkeässä tekstimuodossa, joka on altis väärinkäytöksille. Vahvemman turvallisuuden takaamiseksi suosittelemme käyttämään SSL/TLS-suojattua yhteyttä tai muita turvallisia autentikointimenetelmiä.
+{
+  "results" : [
+    {
+      "address_components" : [
+        {
+          "long_name" : "1600",
+          "short_name" : "1600",
+          "types" : [ "street_number" ]
+        },
+        {
+          "long_name" : "Amphitheatre Parkway",
+          "short_name" : "Amphitheatre Pkwy",
+          "types" : [ "route" ]
+        },
+        {
+          "long_name" : "Mountain View",
+          "short_name" : "Mountain View",
+          "types" : [ "locality", "political" ]
+        },
+        {
+          "long_name" : "California",
+          "short_name" : "CA",
+          "types" : [ "administrative_area_level_1", "political" ]
+        },
+        {
+          "long_name" : "United States",
+          "short_name" : "US",
+          "types" : [ "country", "political" ]
+        },
+        {
+          "long_name" : "94043",
+          "short_name" : "94043",
+          "types" : [ "postal_code" ]
+        }
+      ],
+      "formatted_address" : "1600 Amphitheatre Pkwy, Mountain View, CA 94043, USA",
+      "geometry" : {
+         "location" : {
+            "lat" : 37.4219999,
+            "lng" : -122.0839589
+         },
+         "location_type" : "ROOFTOP",
+         "viewport" : {
+            "northeast" : {
+               "lat" : 37.4233488802915,
+               "lng" : -122.0826099197085
+            },
+            "southwest" : {
+               "lat" : 37.4206509197085,
+               "lng" : -122.0853078802915
+            }
+         }
+      },
+      "place_id" : "ChIJ2eUgeAK6j4ARbn5u_wAGqWA",
+      "plus_code" : {
+         "compound_code" : "CWC8+W5 Mountain View, California",
+         "global_code" : "849VCWC8+W5"
+      },
+      "types" : [ "street_address" ]
+    }
+  ],
+  "status" : "OK"
+}
+```
 
-## Katso myös
+## Syvempi sukellus:
+Perusautentikointi on yksi vanhimmista ja yksinkertaisimmista tavoista varmistaa tietoturva HTTP-pyynnöissä. Sitä käytetään edelleen monissa sovelluksissa, mutta monet suosivat nyt turvallisempia menetelmiä, kuten Token-autentikointia.
 
-- [ESP8266WiFi kirjasto (ESP8266:n WiFi-toiminnallisuuden ohjaus)](https://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/readme.html)
-- [ESP8266HTTPClient kirjasto (HTTP-yhteyksien hallinta)](https://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/readme.html)
+## Katso myös:
+Tässä on muutamia linkkejä aiheeseen liittyviin lähteisiin:
+
+- [HTTPClient library in Arduino](https://github.com/esp8266/Arduino/tree/master/libraries/ESP8266HTTPClient)
+- [Google Maps API documentation](https://developers.google.com/maps/documentation)
+- [Basic Authentication in HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#Basic_authentication_scheme)

@@ -10,24 +10,22 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-Sending an HTTP request with basic authentication allows you to securely access protected resources on a server, such as a website or API. This type of authentication is commonly used by websites and applications to verify the identity of a user before granting them access to sensitive information.
+## What & Why? 
+Sending an HTTP request with basic authentication involves including a user's credentials in the request header in order to access a protected resource on a server. Programmers use this method to ensure secure communication between a client and server, as the user's credentials are encoded in the request and then decoded by the server.
 
-## How To
-To send an HTTP request with basic authentication, you will need to use two command-line tools: curl and base64. First, you will need to encode your username and password in base64 format, using the following command:
+## How to:
+To send an HTTP request with basic authentication in Bash, you can use the `curl` command with the `-u` flag followed by the username and password. For example:
 ```Bash
-encoded_credentials=$(echo -n "username:password" | base64)
+curl -u username:password https://example.com/protected-resource
 ```
-Make sure to replace "username" and "password" with your actual credentials. Next, you can use the encoded credentials in the Authorization header of your request, using the -u flag in curl:
-```Bash
-curl -u $encoded_credentials https://example.com/api
-```
-This will include the encoded credentials in the request, allowing you to access the protected resource. 
+This will send a GET request to the specified URL with the user's credentials in the request header. The server will then authenticate the user and grant access to the protected resource if the credentials are valid.
 
-## Deep Dive
-Basic authentication, also known as Basic Access Authentication, is a simple method of authentication used by HTTP and other protocols. It works by sending the username and password in clear text, encoded in base64 format, in the Authorization header of the request. Despite its name, basic authentication is not very secure as the credentials can be easily decoded, making it important to only use it with HTTPS connections.
+## Deep Dive:
+- Historical context: Basic authentication is one of the oldest forms of user authentication on the internet and was first introduced in the early 1990s. It is still widely used today, although there are more secure alternatives available.
+- Alternatives: As mentioned, there are more secure methods of authentication available such as Digest authentication or OAuth. These methods use additional encryption and hashing techniques to protect user credentials.
+- Implementation details: Basic authentication works by encoding the username and password in base64 format and then including them in the `Authorization` header of the HTTP request. Once decoded by the server, the credentials are compared to a user database for authentication.
 
-## See Also
-- [HTTP Basic Authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#Basic_authentication_scheme)
-- [curl documentation](https://curl.se/docs/manpage.html)
-- [base64 documentation](https://linux.die.net/man/1/base64)
+## See Also:
+- [HTTP Basic authentication](https://en.wikipedia.org/wiki/Basic_access_authentication)
+- [cURL man page](https://linux.die.net/man/1/curl)
+- [HTTP Authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)

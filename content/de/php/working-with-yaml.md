@@ -1,7 +1,7 @@
 ---
-title:                "Arbeiten mit yaml"
-html_title:           "PHP: Arbeiten mit yaml"
-simple_title:         "Arbeiten mit yaml"
+title:                "Arbeiten mit YAML"
+html_title:           "PHP: Arbeiten mit YAML"
+simple_title:         "Arbeiten mit YAML"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Data Formats and Serialization"
@@ -10,52 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
-Warum solltest du dich mit YAML beschäftigen? Nun, YAML ist eine einfache, menschenlesbare Sprache, die verwendet wird, um Daten in einer strukturierten Form zu speichern. Es ist besonders nützlich für Entwickler, die mit komplexen Datenstrukturen arbeiten, wie z.B. Konfigurationsdateien.
+## Was & Warum?
 
-## Wie funktioniert es
-Um mit YAML in PHP zu arbeiten, musst du zunächst die YAML-Erweiterung installieren. Dies kann entweder manuell oder über einen Paketmanager wie Composer erfolgen. Sobald die Erweiterung installiert ist, kannst du einfache YAML-Dokumente wie folgt parsen:
+YAML steht für "YAML Ain't Markup Language" und ist eine einfache, lesenswerte Datenformatierungssprache. Es wird von Programmierern verwendet, um strukturierte Daten zu speichern und zu übermitteln. YAML ist leicht zu verstehen und somit eine beliebte Alternative zu komplexeren Datenformaten wie XML.
+
+## Wie geht's?
+
+Mit PHP kannst du ganz einfach YAML-Daten lesen, schreiben und bearbeiten. Hier ist ein Beispiel, wie du eine YAML-Datei öffnen und den Inhalt in ein Array speichern kannst:
 
 ```PHP
-$data = yaml_parse('Name: Max
-Alter: 30
-Hobbies:
-    - Laufen
-    - Lesen');
+$yaml = file_get_contents('meine_daten.yml');
+$array = yaml_parse($yaml);
+echo $array['name']; // gibt den Wert des Schlüssels "name" aus
 ```
 
-Die Ausgabe wird dann so aussehen:
+Und so könntest du Änderungen an der Datenstruktur vornehmen und sie wieder als YAML-Datei speichern:
 
 ```PHP
-array(3) {
-  ["Name"]=>
-  string(3) "Max"
-  ["Alter"]=>
-  int(30)
-  ["Hobbies"]=>
-  array(2) {
-    [0]=>
-    string(6) "Laufen"
-    [1]=>
-    string(6) "Lesen"
-  }
-}
-```
-
-Wenn du ein YAML-Dokument in eine Datei schreiben möchtest, kannst du dies ebenfalls mit der Funktion `yaml_emit` tun:
-
-```PHP
-$data = ['Name' => 'Max', 'Alter' => 30, 'Hobbies' => ['Laufen', 'Lesen']];
-$yaml = yaml_emit($data);
+$array['hobbies'][] = 'Fotografie'; // fügt ein neues Hobby hinzu
+$yaml = yaml_emit($array);
 file_put_contents('meine_daten.yml', $yaml);
 ```
 
-## Tief tauchen
-Neben den grundlegenden Funktionen gibt es eine Vielzahl von erweiterten Funktionen und Optionen für die Arbeit mit YAML in PHP. Du kannst beispielsweise benutzerdefinierte Typen erstellen, um deine YAML-Dokumente noch flexibler zu gestalten. Außerdem bietet die YAML-Erweiterung eine integrierte Validierung, um sicherzustellen, dass deine Daten fehlerfrei sind.
+Das war's schon! Mit diesen einfachen Funktionen kannst du problemlos mit YAML-Daten in PHP arbeiten.
 
-Ein wichtiger Aspekt beim Arbeiten mit YAML ist auch die Performance. Durch die Verwendung der in C geschriebenen YAML-Erweiterung anstelle einer reinen PHP-Implementierung wird die Verarbeitung von YAML-Dokumenten deutlich beschleunigt.
+## Tief eintauchen
+
+YAML wurde ursprünglich von Clark Evans als Teil des Projekts "Lightweight Data Interchange Format" entwickelt und 2001 veröffentlicht. Seitdem hat es immer mehr an Beliebtheit gewonnen und wird mittlerweile von vielen Programmiersprachen unterstützt.
+
+Eine andere Möglichkeit, strukturierte Daten in PHP zu speichern, wäre JSON (JavaScript Object Notation). Im Vergleich zu YAML ist JSON jedoch weniger lesbar und benutzerfreundlich. YAML ist also die bessere Wahl, wenn es darum geht, Daten für Menschen lesbar zu machen.
+
+In PHP wird YAML über die Bibliothek "LibYAML" implementiert, die in der Standardbibliothek der Sprache enthalten ist. Damit kannst du sicher sein, dass YAML-Dateien in allen Umgebungen gleich funktionieren.
 
 ## Siehe auch
-- [Offizielle Dokumentation der YAML-Erweiterung](http://www.php.net/manual/de/book.yaml.php)
-- [YAML-Spezifikation](https://yaml.org/spec/1.2/spec.html)
-- [Symfony YAML-Komponente](https://symfony.com/doc/current/components/yaml.html)
+
+- [Offizielle YAML-Website](https://yaml.org/)
+- [PHP-Dokumentation zu YAML](https://www.php.net/manual/en/function.yaml-parse.php)
+- [Einführung in die YAML-Syntax](https://learnxinyminutes.com/docs/yaml/)

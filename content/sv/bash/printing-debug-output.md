@@ -1,7 +1,7 @@
 ---
-title:                "Utskrift av debuggutdata"
-html_title:           "Bash: Utskrift av debuggutdata"
-simple_title:         "Utskrift av debuggutdata"
+title:                "Utmatning av felsökningsresultat"
+html_title:           "Bash: Utmatning av felsökningsresultat"
+simple_title:         "Utmatning av felsökningsresultat"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Testing and Debugging"
@@ -10,97 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+# Vad & Varför?
 
-Att skriva ut debug-utdata är en viktig del av bash-programmering eftersom det ger utvecklare en snabb och effektiv metod att förstå hur deras kod fungerar. Detta är särskilt användbart när man letar efter fel och buggar i sin kod. 
+Debugutskrift är en teknik som används av programmerare för att identifiera och lösa fel i sin kod. Genom att skriva ut olika värden och meddelanden under exekveringen av koden kan man få en bättre förståelse för vad som händer och varför. Detta underlättar felsökningen och resulterar i en mer effektiv kod.
 
-## Så här gör du
+# Så här gör du:
 
-Det är enkelt att skriva ut debug-utdata i bash-programmering. Allt du behöver göra är att använda kommandot "echo" och skriva ut den önskade informationen. Detta kan göras på flera sätt, nedan finns några exempel:
+Det finns flera sätt att skriva ut debug output i Bash. Ett vanligt sätt är att använda kommandot ```echo``` och skriva ut variabler eller textsträngar. Till exempel, om vi har en variabel ```name="John"``` kan vi skriva ut värdet med kommandot ```echo $name``` vilket ger output "John". Det går också att kombinera flera variabler eller textsträngar, t.ex. ```echo "Hello, my name is $name"``` som ger output "Hello, my name is John". 
 
-```Bash
-# Skriv ut en enkel sträng
-echo "Hello World"
+Ett annat sätt är att använda kommandot ```printf``` för att formatera och skriva ut meddelanden. Syntaxen liknar vanlig printf i C-programmeringsspråket, t.ex. ```printf "My name is %s, and I'm %d years old" $name $age``` vilket ger output "My name is John, and I'm 30 years old". Det finns även andra användbara alternativ som ```-v``` för att spara outputen i en variabel och ```-e``` för att tolka escape-tecken som \n (newline) eller \t (tab).
 
-# Skriv ut värdet på en variabel
-name="John"
-echo "My name is $name"
+# Djupdyka:
 
-# Kombinera flera variabler och strängar
-age=25
-echo "Jag är $name och jag är $age år gammal"
-```
+Att skriva ut debug output är en vanlig och betydelsefull del av felsökning inom programutveckling. Det har funnits sedan de tidiga Unix-tiderna och är en naturlig del av Bash-skript som inte har en interaktiv debugger som andra programmeringsspråk. Det finns också andra alternativ som ```set -x``` för att få detaljerad information om exekveringsstegen, eller ```trap``` för att fånga och hantera fel i koden.
 
-Detta skulle generera följande utdata:
+Ett annat användningsområde för debugutskrift är att optimera prestanda och hitta flaskhalsar i koden. Genom att mäta och jämföra utskriftstiden för olika delar av koden kan man identifiera vilka som tar mest tid och behöver optimeras.
 
-```
-Hello World
-My name is John
-Jag är John och jag är 25 år gammal
-```
+Implementationen av debugutskrift är relativt enkel och kan med fördel integreras i utvecklingsprocessen från början. Det är viktigt att hålla koll på vilken typ av information som skrivs ut och att ta bort onödig eller känslig data innan koden går live.
 
-## Djupdykning
+# Se även:
 
-Det finns flera sätt att anpassa och förbättra utskriften av debug-utdata i bash. Ett sätt är att använda flaggan "-e" med echo-kommandot för att tillåta användning av escape-tecken, som tillåter dig att formatera din utdata på ett önskat sätt. Till exempel:
-
-```Bash
-# Använd avstånd mellan olika delar av utdatan
-echo -e "Namn: $name \nÅlder: $age \nLand: Sweden"
-
-# Lägg till färg 
-echo -e "Namn: $name \nÅlder: $age \nLand: \e[34mSweden\e[0m" 
-# \e[34m representerar det blå färgen, medan \e[0m återställer färgen till standard
-
-# Lägg till en horisontell linje
-echo -e "Namn: $name \nÅlder: $age \nLand: United States \n---"
-```
-
-Detta skulle ge ut följande utdata:
-
-```
-Namn: John 
-Ålder: 25 
-Land: Sweden
-```
-
-```
-Namn: John 
-Ålder: 25 
-Land: Sweden
-```
-
-```
-Namn: John 
-Ålder: 25 
-Land: Sweden
-```
-
-Att skriva ut debug-utdata i bash ger dig också möjlighet att spara utdatan till en fil istället för att bara visa den i terminalen. För att göra detta kan du enkelt använda redirection-operatorn ">>". Till exempel:
-
-```Bash
-# Spara utdatan till en fil
-echo "Hello World" >> output.txt
-
-# Kombinera flera variabler och spara till en fil
-echo -e "Namn: $name \nÅlder: $age \nLand: Sweden" >> output.txt
-```
-
-Detta skulle skapa en fil med namnet "output.txt" och spara följande utdata i filen:
-
-```
-Hello World
-```
-
-```
-Namn: John 
-Ålder: 25 
-Land: Sweden
-```
-
-## Se även
-
-Här är några länkar som kan hjälpa dig att lära dig mer om att skriva ut debug-utdata i bash-programmering:
-
-- [Echo Command in Bash](https://linuxize.com/post/echo-command-in-bash/)
-- [How to use colored output in bash script](https://stackoverflow.com/questions/16843382/how-to-use-colored-output-in-bash-script)
-- [Bashing Bash: How to redirect output to a file](https://www.networkworld.com/article/2696144/bashing-bash-how-to-redirect-output-to-a-file.html)
+Det finns många guider och artiklar på internet om hur man skriver ut debug output i Bash. Här är några användbara resurser: 
+- [Bash Debugging Guide](http://tldp.org/LDP/Bash-Beginners-Guide/html/sect_02_03.html)
+- [Debugging Bash Scripts](https://www.shellscript.sh/debugging.html) 
+- [Bash Debugging Techniques](https://www.shell-tips.com/bash/debugging-bash-scripts/)

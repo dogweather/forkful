@@ -1,7 +1,7 @@
 ---
-title:                "Busca e substituição de texto"
-html_title:           "Elixir: Busca e substituição de texto"
-simple_title:         "Busca e substituição de texto"
+title:                "Buscando e substituindo texto"
+html_title:           "Elixir: Buscando e substituindo texto"
+simple_title:         "Buscando e substituindo texto"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -10,38 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+## O que & Por quê?
 
-Se você é um programador que trabalha com texto, provavelmente já teve que lidar com situações em que precisa procurar e substituir palavras ou trechos específicos. Isso pode ser tedioso e demorado se você estiver fazendo manualmente. Felizmente, com a linguagem de programação Elixir, é possível automatizar esse processo com eficiência e rapidez.
+Substituir texto é uma tarefa comum na programação, que consiste em encontrar determinado texto em um arquivo ou string e substituí-lo por outro texto. Os programadores geralmente fazem isso para corrigir erros, atualizar informações ou realizar transformações nos dados.
 
-## Como fazer
-
-Para realizar a busca e substituição de texto em Elixir, utilizamos a função `String.replace/4`. Ela recebe quatro parâmetros: uma string alvo, um padrão a ser procurado, a string de substituição e um conjunto de opções. Por exemplo:
+## Como fazer:
 
 ```
-Elixir> String.replace("Olá mundo!", "mundo", "Elixir")
-"Olá Elixir!"
+Elixir
+str = "Hello World!"
+new_str = String.replace(str, "Hello", "Hi")
+
+IO.puts new_str  # Output: Hi World!
 ```
 
-Podemos também utilizar regex para procurar um padrão mais complexo. No exemplo abaixo, utilizamos `~r/` e `/` para delimitar o padrão e `i` para indicar que a busca deve ser case insensitive:
+No exemplo acima, utilizamos a função `String.replace` para substituir a palavra "Hello" por "Hi" na string "Hello World!". Em Elixir, essa função recebe três argumentos: a string original, o texto a ser substituído e o novo texto.
+
+Você também pode usar expressões regulares para substituir texto com mais precisão. Por exemplo:
 
 ```
-Elixir> String.replace("Eu amo Elixir!", ~r/am[oa]/i, "adoro")
-"Eu adoro Elixir!"
+Elixir
+str = "abc123def456"
+new_str = String.replace(str, ~r/[a-z]+(\d+)/, "\\1")
+
+IO.puts new_str  # Output: 123456
 ```
 
-## Profundando
+No exemplo acima, utilizamos uma expressão regular para encontrar e substituir todos os caracteres alfabéticos seguidos de números por apenas os números.
 
-Além da função `String.replace/4`, Elixir também possui outras funções úteis para manipulação de strings, como `String.replace_at/3`, `String.replace_prefix/3` e `String.replace_suffix/3`. É importante lembrar que essas funções retornam uma nova string modificada e não alteram a string original.
+## Mergulho Profundo:
 
-Outra aplicação útil da busca e substituição de texto é em arquivos. Utilizando a biblioteca `File` e a função `File.write/3`, podemos ler um arquivo, procurar e substituir o padrão desejado e escrever uma nova versão do arquivo com as mudanças feitas.
+A substituição de texto tem sido uma tarefa fundamental na programação desde os primórdios da linguagem de programação. Com o surgimento de expressões regulares, essa tarefa se tornou ainda mais poderosa e flexível.
 
-## Veja também
+Além da função `String.replace`, Elixir também oferece outras opções para substituição de texto, como `String.replace_at`, que substitui o texto em uma posição específica, e `String.replace_prefix`, que substitui o texto no início de uma string. Também existem diversas bibliotecas de terceiros que oferecem funcionalidades adicionais para substituição de texto.
 
-Para mais informações sobre manipulação de strings em Elixir, confira a documentação oficial: [https://hexdocs.pm/elixir/String.html](https://hexdocs.pm/elixir/String.html)
+## Veja também:
 
-Para aprender mais sobre programação com Elixir, veja estes recursos recomendados:
-
-- [Site oficial do Elixir](https://elixir-lang.org/)
-- [Documentação oficial do Elixir](https://hexdocs.pm/elixir/Kernel.html)
-- [Elixir School (em português)](https://elixirschool.com/pt/)
+- [Documentação do Elixir sobre substituição de texto](https://hexdocs.pm/elixir/1.12/String.html#replace/3)
+- [Guia de expressões regulares em Elixir](https://www.thegreatcodeadventure.com/regex-in-elixir/)
+- [Comparação entre as diferentes funções de substituição de texto em Elixir](https://blog.appsignal.com/2021/05/05/elixirs-string-replace-functions.html)

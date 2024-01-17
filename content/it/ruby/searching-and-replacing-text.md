@@ -10,48 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
-Ci sono molte ragioni per cui potresti voler cercare e sostituire del testo all'interno del tuo codice Ruby. Potresti voler aggiornare vecchie variabili, standardizzare la formattazione o semplicemente correggere errori di battitura.
+## Cosa & Perché?
 
-## Come fare
-Per cercare e sostituire del testo in Ruby, puoi utilizzare il metodo `gsub` (abbreviazione di "global substitution") con una combinazione di espressioni regolari e stringhe. Ecco un esempio:
+La ricerca e la sostituzione del testo sono due procedure comuni che i programmatori utilizzano per trovare e modificare parti specifiche di un testo o di un codice. Questo è utile per risparmiare tempo e migliorare l'efficienza del lavoro.
+
+## Come:
+
+Ecco un esempio di come eseguire una ricerca e una sostituzione del testo utilizzando Ruby:
+
+```Ruby 
+text = "Ciao a tutti!"
+p text.sub("Ciao", "Salve")
+```
+
+Output: "Salve a tutti!"
+
+Puoi anche utilizzare le espressioni regolari per rendere la ricerca del testo più flessibile e precisa. Ad esempio:
 
 ```Ruby
-stringa = "Benvenuto al mio blog"
-nuova_stringa = stringa.gsub("blog", "sito web")
-puts nuova_stringa
+text = "Il gatto è seduto sul tappeto"
+p text.gsub(/gatto/, "cane") 
 ```
-Output: "Benvenuto al mio sito web"
 
-Puoi anche utilizzare espressioni regolari per cercare e sostituire più elementi contemporaneamente. Ad esempio, se volessi sostituire tutte le vocali minuscole in una stringa con la lettera "x", puoi usare l'espressione regolare `/[aeiou]/`:
+Output: "Il cane è seduto sul tappeto"
 
-```Ruby
-stringa = "Ciao, come stai?"
-nuova_stringa = stringa.gsub(/[aeiou]/, "x")
-puts nuova_stringa
-```
-Output: "Cxx,xmx sxtx?"
+## Approfondimenti:
 
-## Approfondimento
-Il metodo `gsub` è molto utile quando si lavora con stringhe ma è importante tenere presente che è case sensitive, quindi fa distinzione tra maiuscole e minuscole. Se vuoi sostituire del testo ignorando le maiuscole e le minuscole, puoi utilizzare il metodo `gsub!`, che ha un'opzione per specificare che la ricerca deve essere case insensitive:
+La ricerca e la sostituzione del testo sono procedure che sono state utilizzate a lungo dai programmatori. In passato, questa operazione richiedeva una grande quantità di codice, ma oggi grazie agli avanzamenti tecnologici è diventato molto più semplice.
 
-```Ruby
-stringa = "Benvenuto al mio sito web"
-nuova_stringa = stringa.gsub!(/B/, "C")
-puts nuova_stringa
-```
-Output: "Cenvenuto al mio sito web"
+Alcune alternative alla sostituzione del testo includono l'utilizzo di algoritmi di apprendimento automatico e l'automatizzazione delle attività ripetitive. Inoltre, la sostituzione del testo può essere utilizzata anche per identificare e correggere errori di battitura in grandi quantità di testo.
 
-È inoltre possibile utilizzare il metodo `gsub` su una collezione come un array, per sostituire del testo in tutti gli elementi all'interno di quell'array:
+Per quanto riguarda l'implementazione, Ruby offre molteplici metodi per eseguire la ricerca e la sostituzione del testo, come ad esempio `sub`, `gsub` e `gsub!`. È importante comprendere la differenza tra queste funzioni e quando è più appropriato utilizzare ognuna di esse.
 
-```Ruby
-membri = ["Anna, Bob, Charlie"]
-membri.gsub(/[aeiou]/, "x")
-puts membri
-```
-Output: ["Annx, Bxb, Chxrlxx"]
+## Vedi Anche:
 
-## Vedi anche
-- [Metodo gsub su Ruby Docs](https://ruby-doc.org/core-2.7.0/String.html#method-i-gsub)
-- [Tutorial sulle espressioni regolari in Ruby](https://www.rubyguides.com/2015/06/ruby-regex/)
-- [Video introduttivo su come utilizzare espressioni regolari in Ruby](https://www.youtube.com/watch?v=VrPdJ2YyHL8&t=230s)
+- [API di Stringhe di Ruby](https://ruby-doc.org/core-2.7.3/String.html)
+- [Documentazione su espressioni regolari di Ruby](https://ruby-doc.org/core-2.7.3/Regexp.html)
+- [Un approfondimento sulla sostituzione del testo con Ruby](https://www.tutorialspoint.com/ruby/ruby_strings.htm)

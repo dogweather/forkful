@@ -10,62 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-Writing to standard error is a crucial aspect of programming in Rust, as it allows for debugging and error handling in a more efficient and organized manner. It also helps to provide better user experience by displaying relevant error messages.
+Writing to standard error is a way for programmers to print error messages or other important information to the command line. It can be helpful for debugging and providing feedback to the user. This is different from writing to standard output, which is typically used for regular program output.
 
-## How To
+## How to:
 
-To write to standard error in Rust, we will be using the `eprintln!` macro. This macro works similar to the `println!` macro, except it prints to the standard error stream instead of the standard output stream. Let's take a look at an example:
-
-```Rust
-fn main() {
-    let name = "John";
-    eprintln!("Hello, {}!", name);
-}
-```
-
-In the above code, we are using the `eprintln!` macro to print a greeting to the standard error stream. When we run this code, the output will be:
-
-```
-Hello, John!
-```
-
-Now, let's see how we can use this macro for error handling. Imagine we have a function that performs division and returns a result. We want to print an error if the divisor is zero. We can use the `eprintln!` macro to achieve this:
+To write to standard error in Rust, you can use the ```eprintln!()``` macro. This function takes in a formatting string and any arguments to be inserted into the string. Here's an example of how it would look like when used:
 
 ```Rust
-fn divide(x: i32, y: i32) -> i32 {
-    if y == 0 {
-        eprintln!("Error: Divisor cannot be zero!");
-        return -1;
-    }
-    x / y
-}
-
-fn main() {
-    let result = divide(10, 0);
-}
+eprintln!("An error has occurred: {}", err);
 ```
 
-In the above code, we check for the edge case where the divisor is zero and use the `eprintln!` macro to display an error message. This helps us to identify and handle any potential errors in our code.
+This will print the error message provided by the ```err``` variable to the command line.
+
+You can also use the ```eprint!()``` macro if you don't want to end the output with a new line. This is useful for printing multiple lines of output to standard error without a new line in between each line.
+
+```Rust
+eprint!("First line of output");
+eprint!("Second line of output");
+```
+
+The output for this would be:
+
+```
+First line of outputSecond line of output
+```
 
 ## Deep Dive
 
-In Rust, standard error is represented by the `std::io::stderr` struct. The `eprintln!` macro uses this struct as the destination for printing the message. This means we can also explicitly use the `std::io::Write` trait to write to the standard error stream. Let's take a look at an example:
+In contrast to standard output, standard error is meant for error messages and other important information that the user should see. Standard output is typically for regular program output and can be redirected to a file or another program.
 
-```Rust
-use std::io::{self, Write};
+Before standard error was introduced, programmers would often print error messages to standard output, which would get mixed in with the program's regular output. This made it difficult to differentiate between error messages and regular output. Standard error was created to solve this issue and provide a dedicated channel for important messages.
 
-fn main() {
-    let mut stderr = io::stderr();
-    stderr.write(b"Hello from standard error!\n").unwrap();
-}
-```
+In addition to printing to standard error, some programmers also choose to log errors to a file for future reference. This allows them to go back and analyze any recurring errors or issues with their program.
 
-In the above code, we are using the `write` method from the `std::io::Write` trait to explicitly write to the standard error stream. We use the `unwrap` method to handle any potential errors that may occur.
+There are also other alternatives to writing to standard error, such as using a logging library like ```log``` or ```env_logger```. These libraries provide more robust logging features and can be useful in larger projects.
 
 ## See Also
 
-- [Rust Language Documentation](https://www.rust-lang.org/learn)
-- [Debugging in Rust](https://docs.rs/debugging/)
-- [Rust Error Handling](https://doc.rust-lang.org/error-index.html)
+- [Rust documentation on standard error](https://doc.rust-lang.org/std/io/enum.Stdin.html)
+- [Difference between standard error and standard output](https://askubuntu.com/questions/350208/command-piping-mkdir-error-message-to-text-file)
+- [Logging in Rust with the log and env_logger crates](https://www.reddit.com/r/rust/comments/4asrtr/logging_in_rust_with_the_log_and_env_logger/)

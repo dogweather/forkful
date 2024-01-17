@@ -1,7 +1,7 @@
 ---
-title:                "Arbeid med csv"
-html_title:           "C#: Arbeid med csv"
-simple_title:         "Arbeid med csv"
+title:                "Å jobbe med CSV"
+html_title:           "C#: Å jobbe med CSV"
+simple_title:         "Å jobbe med CSV"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Data Formats and Serialization"
@@ -10,51 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hvorfor
-Hvis du noen gang har håndtert store mengder data, har du sannsynligvis støtt på CSV-filer. Disse komma-separerte filene er et vanlig format for å lagre og utveksle data, og ved å lære hvordan man jobber med dem, kan du effektivt håndtere og manipulere dataene dine.
+Hva & Hvorfor?
 
-## Hvordan
+CSV (Comma Separated Values) eller kommaseparerte verdier er et format for å lagre og utveksle tabellignende data. Det brukes ofte til å lagre data som skal behandles eller analyseres av et dataprogram. Programmere bruker CSV fordi det er en enkel og effektiv måte å organisere og lagre data på.
+
+## Slik gjør du:
+
+CSV er et tekstformat som kan endres og leses av mennesker. Det er enkelt å lage og behandle med C#. Her er et eksempel på hvordan du leser en CSV-fil med C#:
 
 ```C#
-// Les fra en CSV-fil
-var lines = File.ReadAllLines("data.csv");
+using System;
+using System.Collections.Generic;
+using System.IO;
 
-// Loop gjennom hver linje
-foreach (var line in lines)
+var reader = new StreamReader("example.csv");
+List<List<string>> data = new List<List<string>>();
+
+while (!reader.EndOfStream)
 {
-    // Del opp linjen etter komma og lagre i en liste
-    var data = line.Split(',');
-
-    // Hent ut spesifikke data fra linjen
-    var name = data[0];
-    var age = int.Parse(data[1]);
-
-    // Gjør noe med dataene
-    Console.WriteLine($"Navn: {name}, Alder: {age}");
+    string line = reader.ReadLine();
+    List<string> values = line.Split(',').ToList();
+    data.Add(values);
 }
 
-// Skrive til en CSV-fil
-var newData = new List<string>() { "John,25", "Jane,30", "Bob,40" };
-
-// Konvertere dataen til en streng og skrive til filen
-var dataString = string.Join("\n", newData);
-File.WriteAllText("new_data.csv", dataString);
-
-// Eksempel på utdata:
-// Navn: John, Alder: 25
-// Navn: Jane, Alder: 30
-// Navn: Bob, Alder: 40
+foreach (List<string> row in data)
+{
+    foreach (string value in row)
+    {
+        Console.Write(value + " ");
+    }
+    Console.WriteLine();
+}
 ```
 
-## Deep Dive
+Dette eksempelet bruker StreamReader-klassen til å lese en CSV-fil og lagrer dataene i en listestruktur. Dataene kan deretter behandles videre etter behov. Her er et eksempel på output fra koden over:
 
-CSV-filer kan være mer komplekse enn bare en liste med data. De kan også inneholde overskrifter, ulike datatyper og til og med andre tegn enn bare komma for å separere dataene. Det er derfor viktig å ha god kunnskap om hvordan du kan håndtere ulike situasjoner når du jobber med CSV-filer.
+```
+Navn Alder Kjønn
+Andrea 27 Kvinne
+Markus 31 Mann
+Sara 24 Kvinne
+```
 
-En måte å jobbe med CSV-filer på er å bruke et bibliotek som heter CsvHelper. Dette biblioteket gir deg mange nyttige funksjoner for å lese og skrive til CSV-filer, håndtere ulike formater og feil, og også muligheten til å mappe dataene dine til objekter.
+## Dypdykk:
 
-Det kan også være lurt å være oppmerksom på hvordan du håndterer store CSV-filer for å unngå problemer med hukommelsen. En måte å gjøre dette på er å lese inn og behandle dataene linje for linje i stedet for å lese hele filen inn i minnet.
+CSV-formatet har eksistert siden 1972 og har vært et populært valg for å lagre og utveksle data. Alternativer som regneark og SQL-databaser har også blitt mer utbredt, men CSV forblir et praktisk valg for enkel datastrukturering og utveksling.
 
-## Se Også
-- [CsvHelper bibliotek](https://joshclose.github.io/CsvHelper/)
-- [Microsofts dokumentasjon om å jobbe med CSV-filer i C#](https://docs.microsoft.com/en-us/dotnet/api/system.data.csv?view=netcore-3.1)
-- [Artikkel om beste praksis for å jobbe med store CSV-filer](https://www.codeproject.com/Articles/7467/A-Fast-CSV-Reader)
+I tillegg til å lese og skrive CSV-filer, kan C# også generere CSV-filer ved å bruke CsvHelper-biblioteket. Dette gjør det enklere å håndtere store datamengder og spesifisere formatet på dataene.
+
+## Se også:
+
+- [CsvHelper dokumentasjon](https://joshclose.github.io/CsvHelper/)
+- [En oversikt over CSV-formatet](https://en.wikipedia.org/wiki/Comma-separated_values)

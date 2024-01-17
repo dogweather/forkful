@@ -1,7 +1,7 @@
 ---
-title:                "Skrivande till standardfel"
-html_title:           "C++: Skrivande till standardfel"
-simple_title:         "Skrivande till standardfel"
+title:                "Skriva till standardfel"
+html_title:           "C++: Skriva till standardfel"
+simple_title:         "Skriva till standardfel"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Files and I/O"
@@ -10,34 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
+Att skriva till standard error är en vanlig praxis bland programmerare för att skicka felmeddelanden och annan viktig information till standard error-strömmen, istället för att skriva till standard output som kan vara upptagen med annan användardata.
 
-Att skriva till standard error, även känd som stderr, är ett sätt för C++-programmerare att kommunicera felmeddelanden till användaren. Det är ett viktigt verktyg för felsökning och kan hjälpa till att förbättra användarupplevelsen.
+## Så här gör du:
+Du kan skriva till standard error i C++ genom att använda funktionen ```std::cerr```, som finns tillgänglig i standardbiblioteket ```<iostream>```. Här är ett exempel på hur man skriver en felmeddelande till standard error:
 
-## Hur man gör det
-
-För att skriva till stderr behöver du först inkludera standardbiblioteket <iostream> i din kod. Sedan kan du använda funktionen std::cerr för att skriva ditt felmeddelande. Se nedan för ett exempel:
-
-```C++
-#include <iostream> // inkludera standardbiblioteket
+```
+#include <iostream>
+using namespace std;
 
 int main() {
-  std::cerr << "Ett fel inträffade!" << std::endl; // skriv till stderr med felmeddelandet
+  cerr << "Detta är ett felmeddelande!" << endl;
   return 0;
 }
 ```
 
-Detta kommer att skriva ut "Ett fel inträffade!" till stderr och avsluta programmet med en felkod.
+Kör detta program kommer att skriva ut "Detta är ett felmeddelande!" till standard error-strömmen.
 
-## Djupdykning
+## Djupdykning:
+Att skriva till standard error har varit en standardpraxis sedan tidigt skede av programmering, då det var det enda sättet att skicka felmeddelanden. Men numera finns det flera alternativ som ger mer kontroll och flexibilitet, som till exempel loggning med hjälp av bibliotek som Boost Log och spdlog. 
 
-Det finns flera anledningar till varför det är viktigt att använda stderr för att kommunicera felmeddelanden. För det första är det en standardiserad metod som många andra språk och system använder. Det gör det enklare för användare att förstå och hantera felmeddelanden.
+För att optimera prestanda och undvika onödig påverkan på standard output-strömmen, implementeras standard error ibland som en separat ström som är kopplad till en annan fil eller enhet.
 
-För det andra är det viktigt att använda stderr istället för stdout för att skilja mellan vanlig programoutput och felmeddelanden. Detta kan hjälpa till att undvika förvirring och förbättra läsbarheten för användaren.
-
-För det tredje tillåter stderr dig att hantera olika typer av felmeddelanden separat. Till exempel kan du välja att skicka kritiska felmeddelanden till stderr och mindre allvarliga felmeddelanden till stdout.
-
-## Se också
-
-* [C++ iostream referens](https://www.cplusplus.com/reference/iostream/)
-* [Felsökningsguide för C++](https://docs.microsoft.com/sv-se/visualstudio/debugger/navigating-through-code-with-the-debugger?view=vs-2019)
+## Se även:
+- https://en.cppreference.com/w/cpp/io/cerr
+- https://www.boost.org/doc/libs/1_58_0/libs/log/doc/html/index.html
+- https://github.com/gabime/spdlog

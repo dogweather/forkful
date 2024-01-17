@@ -10,58 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
+## 什么是生成随机数？为什么程序员需要这么做？
 
-在编写程序时，我们经常需要使用随机数来做一些决策或者产生一些随机的结果。Elm语言提供了简单易用的工具来生成随机数，让我们来看看如何操作吧！
+生成随机数是在计算机编程中常见的一种操作，它可以让我们产生一个随机的数字或者序列。程序员通常会在创建游戏、模拟实验或者加密数据时需要生成随机数。
 
-## 如何操作
+## 如何实现：
 
-要生成随机数，我们需要使用`Random`模块。首先，让我们导入该模块：
+```Elm
+import Random exposing (..)
 
-```elm
-import Random
+randomInt : Int
+randomInt =
+    generate int (range 1 10)
 ```
+生成的结果可能是 5、8、2 等等。我们可以通过调整 ```range``` 函数内的参数来指定随机数的范围。
 
-接下来，我们可以使用`generate`函数来生成一个可用于随机数的生成器：
+## 深入探讨：
 
-```elm
-Random.generate getRandomNumber
-```
+在编程历史上，生成随机数一直是一个有挑战性的问题。因为计算机程序其实是按照一定的算法运行的，所以它们本质上是不能产生真正的随机数。程序员通常通过伪随机数生成器来模拟随机数，这类似于从一个看似无序的序列中挑选出一个数作为随机数。
 
-这里，`getRandomNumber`是我们自定义的一个函数，它将会接收一个随机数作为参数。我们可以在函数体中定义一些对随机数的操作，例如将其打印出来：
+除了 Elm 中的 ```Random``` 模块，还有其他语言也提供了生成随机数的方法，比如 JavaScript 中的 ```Math.random()``` 函数。
 
-```elm
-getRandomNumber : Int -> Cmd msg
-getRandomNumber randomNumber =
-    Cmd.log randomNumber
-```
+## 参考资料：
 
-我们也可以定义一个范围来限定随机数的值：
+[Elm 文档中的 Random 模块介绍](https://package.elm-lang.org/packages/elm/random/latest/)
 
-```elm
-Random.generate (Random.int 1 10) --> 生成1到10之间的随机整数
-Random.generate (Random.float 0 1) --> 生成0到1之间的随机小数
-```
+[CSDN 文章：随机数算法](https://blog.csdn.net/u013368721/article/details/77977066)
 
-除了整数和小数，我们也可以生成布尔值和字符等其他类型的随机数。具体操作可以参考Elm官方文档中的`Random`模块。
-
-## 深入了解
-
-在生成随机数时，我们可以通过设置种子来控制生成的随机数序列。这在测试中非常有用，因为我们可以固定生成器的种子来确保每次测试都得到相同的随机数。我们可以使用`initialSeed`函数来创建一个指定种子的生成器：
-
-```elm
-Random.initialSeed 1234 --> 以种子1234创建一个生成器
-```
-
-Elm还提供了`Seed`类型来表示种子，我们可以使用`Generator`类型来创建自定义的随机数生成器。这些更深层次的操作可以进一步提高我们使用随机数的灵活性。
-
-## 参考文档
-
-- [Elm官方文档 - Random模块](https://package.elm-lang.org/packages/elm/core/latest/Random)
-- [Elm官方文档 - Seed类型](https://package.elm-lang.org/packages/elm/core/latest/Random#Seed)
-- [Elm官方文档 - Generator类型](https://package.elm-lang.org/packages/elm/core/latest/Random#Generator)
-
-## 相关阅读
-
-- [Elm语言官网](https://elm-lang.org/)
-- [Elm中文网](https://elm-china.org/)
+[Wikipedia：伪随机数生成器](https://en.wikipedia.org/wiki/Pseudorandom_number_generator)

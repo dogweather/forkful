@@ -1,7 +1,7 @@
 ---
-title:                "स्ट्रिंग्स को जोड़ना"
-html_title:           "Arduino: स्ट्रिंग्स को जोड़ना"
-simple_title:         "स्ट्रिंग्स को जोड़ना"
+title:                "स्ट्रिंग्स को मिलाना"
+html_title:           "Arduino: स्ट्रिंग्स को मिलाना"
+simple_title:         "स्ट्रिंग्स को मिलाना"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Strings"
@@ -10,31 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Kyun
-Aksar hume ek se adhik strings ko ek hi string me jodne ki zarurat hoti hai, jaise ki sensor ke readings ko display me dikhana ya messages ko bhejna. Iss liye hum concatenate strings ka use karte hain.
+## क्या और क्यों?
 
-## Kaise Karein
-```Arduino
-String string1 = "Hello";
-String string2 = "World!";
-String result = string1 + " " + string2;
-Serial.println(result);
+कोई भी प्रोग्राम लिखते समय आपने शायद सबसे अधिक स्ट्रिंग (चर सूची) को संयुक्त बनाने का प्रयास किया होगा। यह स्ट्रिंग जोड़ना (concatenating strings) कहलाता है और यह प्रोग्रामर्स के लिए बहुत उपयोगी होता है।
+
+## कैसे करें:
+
 ```
-Output:
+// संयुक्त स्ट्रिंग का उदाहरण
+String firstname = "जॉन";
+String lastname = "डो";
+String full_name = firstname + " " + lastname;
+
+// उत्पादन
+जॉन डो
 ```
-Hello World!
-```
 
-Is code example me, humne do strings, "Hello" aur "World!" ko ek hi string me joda hai, jiska result "Hello World!" hua hai. Iss tarah se hum apni zaroorat ke hisab se strings ko jod sakte hain.
+## गहराई से जानें:
 
-## Deep Dive
-Concatenate strings ka use karne se pehle, humein `String` data type ka use karna hoga, jo ki ek string ko represent karta hai. Hum bhi `+` operator ka use karte hain, jo ki strings ko jod kar ek naya string bana deta hai.
+पहले, स्ट्रिंग जोड़ने (concatenating) की व्यावहारिक स्थिति चर जोड़ने के रूप में शुरू हुई थी, और अब यह भी प्रोग्रामिंग के सभी क्षेत्रों में उपयोगी होता है। इसके अलावा, आप अलग-अलग स्ट्रिंग जोड़ने के लिए विभिन्न तरीकों का भी प्रयोग कर सकते हैं, जैसे की String.concat() और stringstream। इसके लिए, आपको संदर्भ (reference) ध्यान में रखना होगा कि कौन-सा तरीका किस स्थिति में सर्वोत्तम होगा।
 
-Ek important point hai ki strings ko jodne se pehle, humein unhe convert karna padta hai `String` data type me. Iss tarah se hum strings aur variables ko bhi jod sakte hain.
+## भी देखें:
 
-## Dekhein Bhi
-Humne iss article me strings ko concatenate karna sikh liya hai, lekin agar aapko aur complex operations aur functions ke bare me jaanna hai, toh humare listed resources check karein.
-
-"See Also" 
-- [Arduino String Concatenation](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/concat/)
-- [Tutorial: String Operations in Arduino](https://howtomechatronics.com/tutorials/arduino/arduino-string-operations/)
+- [अर्धनगत सुश्रुत](https://en.wikipedia.org/wiki/Concatenation)
+- [अर्धनगत पाथवेया](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/concat/)

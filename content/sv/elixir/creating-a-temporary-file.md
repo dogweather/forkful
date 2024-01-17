@@ -1,7 +1,7 @@
 ---
-title:                "Skapa en temporär fil"
-html_title:           "Elixir: Skapa en temporär fil"
-simple_title:         "Skapa en temporär fil"
+title:                "Skapa en tillfällig fil"
+html_title:           "Elixir: Skapa en tillfällig fil"
+simple_title:         "Skapa en tillfällig fil"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Files and I/O"
@@ -10,26 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
-Att skapa en temporär fil är ett vanligt koncept inom programmering och kan användas för olika ändamål. Det kan vara användbart för att hantera tillfälliga data eller för att testa kodbaser. 
+## Vad & Varför?
+Skapandet av en tillfällig fil är en vanlig programmeringsuppgift som innebär att skapa en temporär fil på ett system för att lagra data eller utföra vissa operationer. Programmerare använder tillfälliga filer när de behöver skapa, läsa eller uppdatera data som inte behöver sparas permanent.
 
-## Så här gör du
-Skapandet av en temporär fil i Elixir är enkelt med hjälp av modulen `File.Temp`. Här är ett exempel på hur man kan skapa en temporär fil och sedan skriva till den:
+## Så här gör du:
+```Elixir
+:temp.file("ex_temp_file")
+```
+Kör detta kommando för att skapa en tillfällig fil i ditt projekt med namnet "ex_temp_file". Du kan sedan använda filen för att lagra eller manipulera data enligt dina behov.
 
 ```Elixir
-{:ok, file} = File.Temp.tmpfile # Skapar en temporär fil och returnerar dess sökväg
-File.write(file, "Hej, världen!") # Skriver till filen
+:temp.file("ex_temp_file", "tmp/")
 ```
-
-För att läsa innehållet i filen kan du använda funktionen `File.read`:
+Om du vill skapa en tillfällig fil i en specifik mapp, till exempel "tmp/", kan du ange mappens namn som det andra argumentet i funktionen.
 
 ```Elixir
-IO.puts File.read(file) # Skriver ut innehållet i den tidigare skapade filen
+{:ok, path} = :temp.file("ex_temp_file", "tmp/", [prefix: "mytemp_"])
 ```
+Förutom filnamnet och mappen kan du även sätta olika tillval i funktionen, till exempel en prefix som läggs till i filnamnet. I detta exempel tilldelas filens sökväg till variabeln "path".
 
-### Djupdykning
-När man skapar en temporär fil med `File.Temp.tmpfile` skapas en unik fil med en slumpmässig namngivning. Det är viktigt att notera att filen automatiskt raderas när processen där den skapats avslutas. Detta är användbart för att undvika oönskat spår av temporär data. 
+## Deep Dive:
+Att skapa tillfälliga filer är en vanlig uppgift inom programmering och finns tillgängligt i olika språk, inklusive Elixir. Detta är användbart när du behöver lagra tillfälliga data för att sedan kunna använda det i dina applikationer eller för att utföra temporära operationer som inte kräver permanent lagring.
 
-## Se även
-- [Elixir Dokumentation: File.Temp](https://hexdocs.pm/elixir/File.Temp.html)
-- [Blogginlägg: Att skapa temporära filer i Elixir](https://medium.com/@alpacatronics/skapa-tempor%C3%A4ra-filer-i-elixir-463573894e9)
+Det finns även andra sätt att skapa tillfälliga filer i Elixir, som att använda sig av Erlang-modulen "file" eller att skapa en fil på operativsystemsnivå med hjälp av Elixir IO-funktioner. Det är viktigt att notera att tillfälliga filer inte behöver raderas manuellt då de automatiskt tas bort när du stänger ner ditt program.
+
+## Se även:
+- [Elixir Funktioner - Tempfiles](https://hexdocs.pm/elixir/master/Kernel.html#tempfile/3)
+- [Elixir Funktioner - Filemodulen](https://hexdocs.pm/elixir/File.html)
+- [Elixir Funktioner - IO](https://hexdocs.pm/elixir/IO.html)

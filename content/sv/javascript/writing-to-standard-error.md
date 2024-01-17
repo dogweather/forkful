@@ -1,7 +1,7 @@
 ---
-title:                "Skrivning till standardfel"
-html_title:           "Javascript: Skrivning till standardfel"
-simple_title:         "Skrivning till standardfel"
+title:                "Att skriva till standardfel"
+html_title:           "Javascript: Att skriva till standardfel"
+simple_title:         "Att skriva till standardfel"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Files and I/O"
@@ -10,34 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
 
-En av de mest användbara aspekterna av att lära sig Javascript är förmågan att skriva till standard error. Denna funktion hjälper dig att spåra fel och felsöka din kod, vilket är en nödvändig färdighet för alla utvecklare.
+Att skriva till standard error är en vanlig praxis bland programmerare för att skicka felmeddelanden eller information om körningen av en kod till konsolen. Det är ett viktigt sätt att kommunicera med användare av en applikation eller programvara och att felsöka eventuella fel som kan uppstå.
 
-## Så här gör du
+## Hur to:
 
-För att skriva till standard error i Javascript, kan du använda `console.error()` funktionen. Detta tar en parameter som är det felaktiga meddelandet och skriver ut det i standard error-flödet.
+Enklaste sättet att skriva till standard error i Javascript är att använda console.error() funktionen. Här är ett exempel på hur man kan använda den:
 
 ```Javascript
 console.error("Ett fel har uppstått!");
+// Output: Ett fel har uppstått!
 ```
 
-Detta skulle ge följande output i standard error-fönstret:
+Funktionen accepterar även variabler och uttryck som argument:
 
+```Javascript
+let num = 5;
+
+console.error("Variabeln num är nu: " + num);
+// Output: Variabeln num är nu: 5
 ```
-Ett fel har uppstått!
-```
 
-## Djupdykning
+## Djupdykning:
 
-Att kunna skriva till standard error är en viktig del av felhanteringen i Javascript. Genom att använda `console.error()` kan du enkelt identifiera var i din kod som ett fel har uppstått och snabbt felsöka det.
+Att skriva till standard error är inspirerat av Unix-kommandot "stderr", som används för att skicka felmeddelanden till konsolen istället för standard output ("stdout"). Det finns även andra sätt att skicka felmeddelanden, såsom att använda try-catch-block i Javascript.
 
-En annan fördel med att skriva till standard error är att det ger en enkel och synlig indikator på eventuella fel för användare av din webbapplikation. Detta är särskilt användbart för användare som inte är bekanta med konsolen och inte kan se felmeddelanden som skrivs till standard output.
+Det är viktigt att använda rätt typ av utskrift beroende på informationen som ska skickas. Standard error borde endast användas för felmeddelanden och inte för vanliga meddelanden eller loggar, som bör skickas till standard output.
 
-## Se också
+## Se även:
 
-För mer information och tips om Javascript, kolla in följande länkar:
-
-- [MDN webbdocs om console.error()](https://developer.mozilla.org/sv-SE/docs/Web/API/Console/error)
-- [Bra praktiska användningar för console.error()](https://stackify.com/console-error/)
-- [Javascript felhanteringstips och tricks](https://www.toptal.com/javascript/guide-javascript-error-handling)
+- [console.error() i MDN](https://developer.mozilla.org/en-US/docs/Web/API/Console/error)
+- [Skicka felmeddelanden med console.error i Javascript](https://www.w3schools.com/js/js_errors.asp)
+- [Skillnaden mellan standard output och standard error i Unix](https://en.wikipedia.org/wiki/Standard_streams#Standard_error_(stderr))

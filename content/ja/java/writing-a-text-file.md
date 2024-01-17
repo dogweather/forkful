@@ -1,7 +1,7 @@
 ---
-title:                "テキストファイルの書き方"
-html_title:           "Java: テキストファイルの書き方"
-simple_title:         "テキストファイルの書き方"
+title:                "テキストファイルを作成する"
+html_title:           "Java: テキストファイルを作成する"
+simple_title:         "テキストファイルを作成する"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Files and I/O"
@@ -10,86 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-Writing a text file is a common task in Java programming, as it allows developers to store and manipulate data outside of the code. This can be useful for storing user input, logging information, and more.
+## 何をするのか？何のために？
+テキストファイルを書くことは、プログラマーがデータを保存したり共有したりするための方法です。プログラマーがテキストファイルを使用する最も一般的な目的は、データを永続化することです。つまり、プログラムが実行されていないときでもデータを保存することです。
 
-## How To
-To write a text file in Java, we will first need to import the necessary classes:
+## 方法：
+```Java
+import java.io.FileWriter; 
+import java.io.IOException;
 
-```
-import java.io.FileWriter;
-import java.io.BufferedWriter;
-```
+public class WriteTextFile {
 
-Next, we will create a FileWriter and BufferedWriter object to handle the writing process:
-
-```
-FileWriter fileWriter = new FileWriter("myFile.txt");
-BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
-```
-
-Now, we can start writing to the file using the `write()` method:
-
-```
-bufferedWriter.write("Hello, world!");
-```
-
-We can also use a for loop to write multiple lines of text:
-
-```
-for (int i = 0; i < 5; i++) {
-    bufferedWriter.write("This is line " + i);
-    bufferedWriter.newLine();
+    public static void main(String[] args) {
+    
+        // ファイルの作成と開く
+        try {
+            FileWriter myWriter = new FileWriter("myFile.txt");
+            
+            // データを書き込む
+            myWriter.write("Hello World!");
+            
+            // ファイルを閉じる
+            myWriter.close();
+            
+            // 完了メッセージを表示
+            System.out.println("ファイルに書き込みました。");
+            
+        // エラー処理
+        } catch (IOException e) {
+            System.out.println("エラーが発生しました。");
+            e.printStackTrace();
+        }
+    }
 }
 ```
-
-And don't forget to close the writer to ensure the changes are saved:
-
 ```
-bufferedWriter.close();
+// ファイルに書き込みました。
 ```
+このサンプルコードでは、最初に`FileWriter`クラスをインポートして、`myFile.txt`というテキストファイルを作成して開きます。`myWriter.write`を使用して、"Hello World!"という文字列をファイルに書き込みます。最後に、`myWriter.close`を使用してファイルを閉じます。エラーが発生した場合は、エラーメッセージが表示されます。
 
-Finally, let's take a look at the contents of our file using a FileReader and BufferedReader:
+## 深堀り：
+テキストファイルの書き込みは、プログラミングの初期から使用されている古い方法です。今では、データベースやクラウドストレージなどの他のオプションがあるため、テキストファイルを使用する必要はありません。しかし、小規模なプログラムやデータを永続化する場合は、テキストファイルが最も単純で便利な方法です。
 
-```
-import java.io.FileReader;
-import java.io.BufferedReader;
-
-FileReader fileReader = new FileReader("myFile.txt");
-BufferedReader bufferedReader = new BufferedReader(fileReader);
-
-String line = bufferedReader.readLine();
-
-while (line != null) {
-    System.out.println(line);
-    line = bufferedReader.readLine();
-}
-
-bufferedReader.close();
-```
-
-Running this code should output:
-
-```
-Hello, world!
-This is line 0
-This is line 1
-This is line 2
-This is line 3
-This is line 4
-```
-
-## Deep Dive
-In the above examples, we used the `BufferedWriter` class because it provides buffering for the write operations, making it more efficient for writing larger amounts of data. However, we can also use the `FileWriter` class directly for simpler operations.
-
-Additionally, we can specify the file encoding when creating the `FileWriter` object, to ensure that special characters are written correctly. For example, we can use the UTF-8 encoding as follows:
-
-```
-FileWriter fileWriter = new FileWriter("myFile.txt", StandardCharsets.UTF_8);
-```
-
-It's also worth noting that both the `FileWriter` and `BufferedWriter` classes have a `append()` method, which can be useful for adding new content to an existing file without overwriting its contents.
-
-## See Also
-- [Java FileWriter class documentation](https://docs.oracle.com/javase/10/docs/api/java/io/FileWriter.html)
-- [Java BufferedWriter class documentation](https://docs.oracle.com/javase/10/docs/api/java/io/BufferedWriter.html)
+## 参考：
+- [Java FileWriter Class](https://www.w3schools.com/java/java_files_create.asp)
+- [Java BufferedReader Class](https://www.w3schools.com/java/java_files_read.asp)
+これらのリンクでは、`FileWriter`と`BufferedReader`クラスを使用してテキストファイルを作成し、読み取る方法が詳しく解説されています。また、オープンソースのコードレポジトリ「GitHub」でもテキストファイルを扱う多くのサンプルコードが閲覧できます。

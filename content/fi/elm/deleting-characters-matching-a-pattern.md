@@ -1,7 +1,7 @@
 ---
-title:                "Mallia vastaavien merkkien poistaminen"
-html_title:           "Elm: Mallia vastaavien merkkien poistaminen"
-simple_title:         "Mallia vastaavien merkkien poistaminen"
+title:                "Kuvion mukaiseen merkkijonon poistaminen."
+html_title:           "Elm: Kuvion mukaiseen merkkijonon poistaminen."
+simple_title:         "Kuvion mukaiseen merkkijonon poistaminen."
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -10,47 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä & Miksi?
+Miksi poistaisit merkkejä, jotka vastaavat tiettyä kuvioa? Tämä on yksi tapa luoda ohjelmia, jotka suodattavat ja järjestävät tietoa. Se on tärkeää, koska se auttaa meitä hallitsemaan suuria tietomääriä tehokkaammin. 
 
-Olet ehkä törmännyt tilanteeseen, jossa sinun täytyy poistaa merkkejä, jotka vastaavat tiettyä kaavaa. Tämä voi olla tarpeellista, jos haluat esimerkiksi poistaa kaikki välilyönnit tai poistaa erikoismerkit käyttäjän syötteestä. Käytännössä tällä toiminnolla on monia eri käyttötarkoituksia, ja se voi tehdä ohjelmoinnista paljon helpompaa.
-
-## Kuinka tehdä
-
-Voit poistaa merkkejä, jotka vastaavat tiettyä kaavaa Elm-kielellä helposti käyttämällä `String.filter` -funktiota. Tämä funktio ottaa kaksi argumenttia: kaavan ja merkkijonon, josta haluat poistaa merkkejä. Tässä on yksinkertainen esimerkki, jossa poistamme kaikki välilyönnit merkkijonosta:
-
-```elm
-import String exposing (..)
-
-removeSpaces : String -> String
-removeSpaces str =
-  str
-    |> filter (\char -> char /= " ")
+## Miten:
+### Poista merkit määritetyn kuvion perusteella:
+```Elm
+List.filter (\char -> char /= "a") ["a", "b", "c", "a", "d"]
+--["b", "c", "d"]
 ```
 
-Tämä funktio ottaa merkkijonon ja kutsuu `filter` -funktiota, jossa jokainen merkki tarkistetaan kaavaa vastaan. Jos merkki ei vastaa kaavaa (eli ei ole välilyönti), se pysyy merkkijonossa. Muut merkit, jotka vastaavat kaavaa, jätetään pois. Tässä on esimerkki, jossa käytämme tätä funktiota ja tulostamme lopputuloksen:
-
-```elm
-main : Html msg
-main =
-  text (removeSpaces "Tämä on  esimerkkiteksti!")
+### Hae parilliset luvut listasta:
+```Elm
+List.filter (\num -> modBy 2 num == 0) [1, 2, 3, 4, 5]
+--[2, 4]
 ```
 
-Tulostus tulee olemaan:
-
+### Lisävinkki:
+Voit myös käyttää `not` toimintoa helpottamaan ehtoja. Esimerkiksi:
+```Elm
+List.filter (not << String.contains "a") ["a", "b", "c", "a", "d"]
+--["b", "c", "d"]
 ```
-"Tämäonesimerkkiteksti!"
-```
 
-Voit käyttää tätä samaa periaatetta poistaaksesi erilaisia merkkejä ja luoda omia toimintoja, jotka vastaavat tiettyjä kaavoja.
+## Syvempi sukellus:
+### Historiallinen tausta:
+Poista merkit toiminto on kehitetty jo alkuaikoina, kun ohjelmointikieliä kehitettiin käsittelemään tietoa. Se on ollut käytössä monissa kielissä, kuten Perl, Python ja Ruby.
 
-## Syvällinen sukellus
+### Vaihtoehtoisia tapoja:
+On olemassa muita tapoja käsitellä tietoja, kuten suodatus, joka käyttää säännöllisiä lausekkeita. Toisaalta, poistamalla merkkejä, jotka vastaavat tiettyä kuvioa, voimme tarkemmin valita, mitkä merkit haluamme poistaa.
 
-Filtteröinti on vain yksi tapa poistaa merkkejä Elm-kielellä. On myös muita vaihtoehtoja, kuten käyttää `String.replace` -funktiota, joka vaihtaa kaavan vastaavat merkit toisilla merkeillä. Voit myös käyttää `String.left` ja `String.right` -funktioita, jotka palauttavat merkkijonon vasemmanpuoleiset ja oikeanpuoleiset merkit tietyltä indeksiltä. Näiden toimintojen yhdistelmällä voit suorittaa monimutkaisempia merkkien poistoja.
+### Toteutuksen yksityiskohdat:
+Poista merkit toiminto käyttää taustalla korkeamman asteen funktioita, kuten `filter` ja `not`. Nämä toiminnot mahdollistavat koodin tiistikkämpää ja helpommin luettavissa. 
 
-Voit myös hyödyntää reguläärejä ilmauksia (regex), jotka ovat erittäin voimakkaita työkaluja merkkien poistamiseen. Elm tekee yhteistyötä JS-kirjaston kanssa käsitelläkseen regexejä, joten voit käyttää samoja sääntöjä kuin JavaScriptillä.
-
-## Katso myös
-
-- [Elm-dokumentaatio merkkijonofunktioista](https://package.elm-lang.org/packages/elm/core/latest/String)
-- [Blogipostaus, jossa käsitellään merkkijonojen käsittelyä Elm-kielellä](https://medium.com/swlh/working-with-strings-in-elm-e13976653c9f)
-- [Regex-oppaat ja -esimerkit](https://regexone.com/)
+## Katso myös:
+- [Official Elm Documentation: Filtering Lists](https://guide.elm-lang.org/lists/filter.html)
+- [Stack Overflow: Deleting Characters Matching a Pattern in Elm](https://stackoverflow.com/questions/50559679/deleting-characters-matching-a-pattern-in-elm)

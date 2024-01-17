@@ -1,7 +1,7 @@
 ---
-title:                "Buscando y reemplazando texto"
-html_title:           "Gleam: Buscando y reemplazando texto"
-simple_title:         "Buscando y reemplazando texto"
+title:                "Búsqueda y reemplazo de texto"
+html_title:           "Gleam: Búsqueda y reemplazo de texto"
+simple_title:         "Búsqueda y reemplazo de texto"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -10,42 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué alguien usaría la función de buscar y reemplazar en Gleam?
+¡Hola programadores! En este artículo vamos a hablar de una de las tareas básicas de programación: buscar y reemplazar texto. ¿Qué es buscar y reemplazar? Es simplemente la acción de encontrar un patrón de texto en un archivo y reemplazarlo con otro texto. Los programadores hacen esto para ahorrar tiempo y para hacer cambios rápidos en sus programas.
 
-Buscar y reemplazar texto es una tarea común en la programación. Puede ser necesario cuando se hacen cambios en un proyecto o se encuentran errores en el código. Usar la función de buscar y reemplazar en Gleam puede ahorrar tiempo y evitar errores manuales.
+## ¿Qué & Por qué?
 
-## Cómo: Ejemplos de código y salida de muestra en bloques de código " ```Gleam ... ```"
+La búsqueda y el reemplazo de texto es una técnica comúnmente utilizada en el desarrollo de software. Permite a los programadores hacer modificaciones rápidas en su código sin tener que cambiar manualmente cada instancia de un patrón de texto.
 
-Para usar la función de buscar y reemplazar en Gleam, se utiliza el operador de doble flecha `=>`. El primer parámetro es el texto que se desea buscar, seguido del texto de reemplazo. A continuación se muestra un ejemplo de cómo cambiar todas las instancias de "Hola" por "Hola mundo":
-
-``` gleam
-let texto = "Hola, qué tal?"
-let nuevo_texto = texto => "Hola mundo"
+## Cómo:
+```Gleam
+// Ejemplo:
+let texto = "Hola mundo"
+texto = replace("mundo", "amigos", texto)
 ```
-La salida de este código sería: `"Hola mundo, qué tal?"`
 
-También se pueden utilizar patrones de búsqueda y reemplazo en lugar de solo cadenas de texto. Por ejemplo, si se desea reemplazar todas las vocales por números, se puede hacer lo siguiente:
+El código de ejemplo muestra cómo se puede utilizar la función `replace` en Gleam para buscar el texto "mundo" y reemplazarlo con "amigos". El resultado final sería "Hola amigos". Esta es una forma simple de buscar y reemplazar texto en un archivo utilizando Gleam.
 
-``` gleam
-let texto = "Hola, cómo estás?"
-let nuevo_texto = texto => case
-  "a" => "1"
-  "e" => "2"
-  "i" => "3"
-  "o" => "4"
-  "u" => "5"
-  _ => texto
-```
-En este caso, la salida sería: `"H1l1, c3m4 2st1s?"`
+## Profundizando:
 
-## Profundizando: Información detallada sobre el uso de la función de buscar y reemplazar en Gleam
+Historia: La búsqueda y el reemplazo de texto ha sido una herramienta útil para los programadores desde los primeros días de la informática. Antes de que existieran herramientas de búsqueda y reemplazo automatizadas, los programadores tenían que hacer cambios manuales en el código, lo cual era un proceso tedioso y propenso a errores.
 
-La función de buscar y reemplazar en Gleam también acepta expresiones regulares como patrones de búsqueda. Estas expresiones regulares pueden ser útiles cuando se busca una cadena de texto más compleja o cuando se desean reemplazar patrones específicos.
+Alternativas: Aunque Gleam ofrece una forma fácil y eficiente de buscar y reemplazar texto, hay otras herramientas disponibles, como Visual Studio Code, que también proporcionan funciones de búsqueda y reemplazo.
 
-Además, la función de buscar y reemplazar en Gleam es inmutable, lo que significa que devuelve una copia del texto original con los cambios realizados. Por lo tanto, si se desea reemplazar el texto original, es importante asignar la salida de la función a una nueva variable.
+Detalles de implementación: La función `replace` en Gleam utiliza expresiones regulares para encontrar y reemplazar patrones de texto. Esto permite una mayor flexibilidad en la búsqueda y el reemplazo de diferentes patrones.
 
-## Ver también
+## Vea también:
 
-- [Documentación de la función de buscar y reemplazar en Gleam](https://gleam.run/docs/std/string#replace)
-- [Tutorial de Gleam](https://gleam.run/docs/tour#strings)
-- [Expresiones regulares en Gleam](https://gleam.run/docs/cheatsheet#regular-expressions)
+¡Ya está! Ahora tienes una comprensión básica de cómo buscar y reemplazar texto en Gleam. ¡Éxito en tus proyectos de codificación! Si quieres profundizar en el tema, aquí tienes algunos recursos adicionales:
+
+- [Documentación de Gleam](https://gleam.run/documentation/)
+- [Visual Studio Code - Búsqueda y reemplazo](https://code.visualstudio.com/docs/getstarted/tips-and-tricks#_find-and-replace)

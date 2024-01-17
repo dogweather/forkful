@@ -1,7 +1,7 @@
 ---
-title:                "कंप्यूटर प्रोग्रामिंग में csv के साथ काम करना"
-html_title:           "Arduino: कंप्यूटर प्रोग्रामिंग में csv के साथ काम करना"
-simple_title:         "कंप्यूटर प्रोग्रामिंग में csv के साथ काम करना"
+title:                "CSV के साथ काम करना"
+html_title:           "Arduino: CSV के साथ काम करना"
+simple_title:         "CSV के साथ काम करना"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Data Formats and Serialization"
@@ -10,47 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# हमारा आज का विषय: Arduino में CSV प्रोग्रामिंग
+## क्या और क्यों?
+CSV का उपयोग डेटा को स्प्रेडशीट जैसे स्ट्रक्चर में संग्रहीत करने के लिए गर्हित होता है। प्रोग्रामर्स इसका उपयोग करके बड़े उपायोगिताओं के साथ डेटा को एकल फॉर्मेट में संगठित कर सकते हैं।
 
-## Why
-क्या आपने कभी सोचा हैं कि हम अपने आर्डुइनो से CSV फाइल को कैसे प्रोसेस कर सकते हैं? इससे हमें कहीं भी अपने डेटा को संग्रहीत करने और उसको एक स्थान से दूसरे स्थान पर ले जाने की सुविधा मिलती हैं। यह आपको दूसरे प्रोग्रामों से डेटा का आसानी से उपयोग भी करने देता हैं।
+## कैसे करें:
+```Arduino
+#include <SPI.h>
+#include <SD.h>
 
-## How To
-सबसे पहले हमें CSV पार्सिंग लाइब्रेरी को इनस्टॉल करना होगा। यह हमें CSV फाइल को प्रोसेस करने में मदद करेगा।
+File dataFile; // फ़ाइल ऑब्जेक्ट बनाएं
 
-```arduino
-#include <ArduinoCSV.h> // CSV पार्सिंग लाइब्रेरी को इन्स्टॉल करें
-CSVReader reader; // फाइल से डेटा लोड करने के लिए CSVReader इंस्टेन्स बनाएं
-while(reader.next()) { // हर रो पर लूप चलाएं
-  String data1 = reader[0]; // पहला स्ट्रिंग कॉलम को भरें
-  int data2 = int(reader[1]); // दूसरे इंटेजर कॉलम को भरें
-  String data3 = reader[2]; // तीसरा स्ट्रिंग कॉलम को भरें
-  // अपने स्केच में डेटा को प्रोसेस करें
+void setup() {
+  Serial.begin(9600); // सीरियल सतरंगी प्रिंट करने के लिए सेट अप करें
+  if (!SD.begin(4)) { // अगर एसडी कार्ड नहीं मिला, तो सतरंगी मूल्य छोड़ें
+    Serial.println("एसडी कार्ड से कनेक्ट नहीं किया गया");
+    return;
+  }
+  dataFile = SD.open("data.csv"); // फ़ाइल को सच्ची करें और CSV फ़ॉर्मेट से डेटा पढ़ें
+  if (dataFile) {
+    while (dataFile.available()) { // सभी डेटा प्रिंट करने के लिए जब तक डेटा उपलब्ध हो
+      Serial.print(dataFile.read());
+    }
+  dataFile.close(); // खोले गए फ़ाइल को बंद करें
+  }
+  else {
+    Serial.println("फ़ाइल खोलने में असफल");
+  }
 }
-```
 
-### Output
-इसके बाद हमें स्केच को अपने आर्डुइनो बोर्ड पर अपलोड करना होगा और सीएसवी फ़ाइल को सीरियल मॉनिटर में देखने के लिए लॉड करना होगा। हमें नंबर और टीम के नाम दोनों लिखने की आवश्यकता होगी।
-
-```csv
-1, Team A, John
-2, Team B, Sarah
-3, Team A, David
-```
-
-हमारे स्केच की आउटपुट कुछ इस तरह से होगी:
+void loop() {}
 
 ```
-Number: 1
-Team: Team A
-Name: John
-Number: 2
-Team: Team B
-Name: Sarah
-Number: 3
-Team: Team A
-Name: David
-```
 
-## Deep Dive
-CSV (Comma Separated Values) एक ऐसा फाइल फॉर्मेट हैं जो डेटा को सं
+## टिप्पणी:
+दूरस्थ सूचना प्रपात करने के लिए CSV का उपयोग 1972 में फ़ॉर्मेटिंग प्रारूप के रूप में पहली बार गर्हित हुआ। वैकल्पिक उपायोगिताओं में JSON, XML, और डेटाबेस आदि शामिल हैं।
+
+## अध्ययन भी:
+- [CSV शुरू करने के लिए Arduino लाइब्रेरी](https://github.com/tonyomy/CSV)
+- [CSV के बारे में और अधिक जानकारी के लिए](https://www.theserverside.com/definition/CSV-Comma-Separated-Values)
+- [CSV से कैसे फ़ाइल खोलें और पढ़ें](https://www.arduino.cc/en/Reference/SDopen)

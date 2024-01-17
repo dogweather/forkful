@@ -1,7 +1,7 @@
 ---
-title:                "Verkettung von Strings"
-html_title:           "Arduino: Verkettung von Strings"
-simple_title:         "Verkettung von Strings"
+title:                "Verkettung von Zeichenketten"
+html_title:           "Arduino: Verkettung von Zeichenketten"
+simple_title:         "Verkettung von Zeichenketten"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Strings"
@@ -10,60 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was ist das und warum sollte man es tun?
 
-Das Verketten von Zeichenfolgen ist ein nützliches Konzept beim Programmieren mit Arduino. Es ermöglicht es, verschiedene Texte zu einem zusammenzufügen und sie anschließend auszugeben oder zu speichern. Auf diese Weise können wir komplexe Aufgaben lösen und unsere Codes effizienter gestalten.
+Das Zusammenfügen von Strings ist eine häufige Aufgabe in der Programmierung, bei der verschiedene Texte oder Zeichenketten miteinander verbunden werden. Das kann nützlich sein, um beispielsweise eine längere Nachricht oder einen variablen Text zu erstellen. Programmierer nutzen das Verfahren, um ihre Code-Effizienz zu steigern und repetitive Aufgaben zu vermeiden.
 
-## Wie man Zeichenfolgen in Arduino verketten kann
+## Wie funktioniert es?
 
-Das Verketten von Zeichenfolgen in Arduino ist relativ einfach. Wir nutzen die `+`-Operator, um zwei oder mehrere Zeichenfolgen miteinander zu verbinden. Hier ist ein Beispiel:
-
-```Arduino
-void setup(){
-  Serial.begin(9600); // Starten der seriellen Kommunikation
-}
-
-void loop(){
-  String name = "Max";
-  String greeting = "Hallo ";
-
-  String message = greeting + name; // Verkettung der beiden Zeichenfolgen
-
-  Serial.println(message); // Ausgabe: Hallo Max
-  
-  delay(1000); // Warten für 1 Sekunde
-}
-```
-
-Die `String`-Variablen `name` und `greeting` werden miteinander verbunden und in der Variable `message` gespeichert. Anschließend wird der Inhalt von `message` über die serielle Schnittstelle ausgegeben. Das Ergebnis wird sein "Hallo Max". Beachte, dass wir keine Leerzeichen in den Strings haben, deshalb müssen wir sie manuell mit dem `+`-Operator hinzufügen.
-
-## Tiefergehende Informationen
-
-In Arduino können wir nicht nur Zeichenfolgen miteinander verknüpfen, sondern auch andere Datentypen wie Zahlen oder Boolesche Werte. Wir können auch eine beliebige Anzahl von Zeichenfolgen verketten, solange wir sie jeweils mit dem `+`-Operator verbinden.
-
-Es gibt auch eine alternative Möglichkeit, Zeichenfolgen zu verketten, indem wir die `concat()`-Funktion verwenden. Diese Funktion nimmt beliebig viele Parameter entgegen und gibt eine neue Zeichenfolge zurück, die alle Parameter miteinander verbindet. Hier ist ein Beispiel:
+Das Zusammenfügen von Strings in einem Arduino Sketch ist einfach und erfordert nur die Verwendung des ```+``` Operators. In folgendem Beispiel wird der Text "Hallo " mit einer Variable ```name``` kombiniert und dann auf dem seriellen Monitor ausgegeben:
 
 ```Arduino
-void setup(){
-  Serial.begin(9600); // Starten der seriellen Kommunikation
-}
-
-void loop(){
-  String name = "Max";
-  String intro = "Ich heiße ";
-  String age = "28 Jahre alt.";
-
-  String message = intro.concat(name, age); // Verkettung der Parameter
-
-  Serial.println(message); // Ausgabe: Ich heiße Max28 Jahre alt.
-  
-  delay(1000); // Warten für 1 Sekunde
-}
+String name = "Max";
+Serial.println("Hallo " + name);
 ```
 
-Es ist immer eine gute Idee, die `concat()`-Funktion zu verwenden, wenn wir viele Zeichenfolgen miteinander verketten müssen, da dies den Code übersichtlicher macht.
+Die Ausgabe würde dann "Hallo Max" sein. Eine weitere Möglichkeit ist die Verwendung der Funktion ```concat()```, die speziell für das Zusammenfügen von Strings in Arduino entwickelt wurde. Zum Beispiel:
 
-## Siehe auch
+```Arduino
+String nachname = "Mustermann";
+String vollerName;
+vollerName.concat("Max");
+vollerName.concat(" ");
+vollerName.concat(nachname);
+Serial.println(vollerName);
+```
 
-- [String-Klasse in der Arduino Reference (Englisch)](https://www.arduino.cc/reference/de/language/variables/data-types/stringobject/)
-- [String-Objekte mit der `String()`-Funktion in Arduino (Englisch)](https://www.arduino.cc/en/Tutorial/StringConstructors)
+Die Ausgabe wäre wiederum "Max Mustermann".
+
+## Tiefere Einblicke
+
+Das Zusammenfügen von Strings ist keine neue Technik und wird bereits seit den frühen Tagen der Programmierung verwendet. In der Arduino-Plattform können auch andere Datentypen wie Zahlen oder Charaktere mit Strings zusammengefügt werden, was die Möglichkeiten erweitert.
+
+Alternativ können Programmierer auch Arrays von Characters (unter Verwendung der Funktion ```strcpy()```) oder die Bibliothek StringOperations nutzen, um Strings zusammenzufügen.
+
+Die Implementierung des Zusammenfügens von Strings in Arduino erfolgt über unterschiedliche Funktionen und Methoden, die je nach Verwendungszweck ausgewählt werden können. Es ist wichtig sicherzustellen, dass genügend Speicherplatz vorhanden ist, da eine große Anzahl von Zusammenfügungen zu einem Fehler führen kann.
+
+## Weitere Informationen
+
+Weitere Informationen zum Zusammenfügen von Strings in Arduino finden Sie in der offiziellen Dokumentation unter [https://www.arduino.cc/reference/tr/language/variables/data-types/stringconcat/](https://www.arduino.cc/reference/tr/language/variables/data-types/stringconcat/).
+
+Weitere nützliche Ressourcen sind das offizielle Arduino Forum [https://forum.arduino.cc/index.php?board=1.0](https://forum.arduino.cc/index.php?board=1.0), in dem Sie Fragen stellen und Antworten finden können, sowie die Entwickler-Community [https://www.arduino.cc](https://www.arduino.cc) mit Tutorials und Beispielen für Anfänger und Fortgeschrittene.
+
+ Viel Spaß beim Programmieren und Happy Hacking!

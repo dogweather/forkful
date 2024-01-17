@@ -1,7 +1,7 @@
 ---
-title:                "Generering av tilfeldige tall"
-html_title:           "Fish Shell: Generering av tilfeldige tall"
-simple_title:         "Generering av tilfeldige tall"
+title:                "Generere tilfeldige tall"
+html_title:           "Fish Shell: Generere tilfeldige tall"
+simple_title:         "Generere tilfeldige tall"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Numbers"
@@ -10,38 +10,21 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hva & Hvorfor?
+Generering av tilfeldige tall er en vanlig oppgave for programmerere. Det er en måte å lage ulike resultat hver gang et program kjøres. Programmerere gjør dette for å skape variasjon og tilfeldighet i sine programmer.
 
-Å generere tilfeldige tall kan være nyttig for en rekke programmeringsoppgaver, for eksempel å skape usikkerhet eller å simulere tilfeldige hendelser. Dette kan være spesielt nyttig for utviklere som jobber med spill, tilfeldige algoritmer eller tester.
+## Hvordan:
+Fish Shell har innebygd funksjonalitet for å generere tilfeldige tall. For å lage et tilfeldig tall mellom 1 og 10, kan du bruke kommandoen ```fish_random 1 10```. Resultatet vil da bli en tilfeldig verdi mellom 1 og 10.
 
-## Hvordan
+Et annet nyttig verktøy er kommandoen ```fish_random-string```, som genererer en tilfeldig streng på 16 tegn.
 
-For å generere tilfeldige tall i Fish Shell, kan du bruke kommandoen `math random`. Dette vil gi deg et tilfeldig desimaltall mellom 0 og 1. For å få et heltall, kan du multiplisere tallet med det maksimale ønskede intervallet og runde av resultatet. La oss si at du vil generere et tilfeldig tall mellom 1 og 10, da kan du bruke følgende kommando:
+## Dykk dypere:
+Generering av tilfeldige tall har vært en viktig del av programmering i lang tid. Tidligere måtte programmere bruke komplekse matematiske algoritmer for å få tilfeldige tall. I dag har de fleste programmeringsspråk, inkludert Fish Shell, innebygd funksjonalitet for å gjøre dette enkelt.
 
-```
-Fish Shell:
+En alternativ metode for å generere tilfeldige tall er å bruke en tilfeldig tallgenerator på en annen kilde, for eksempel et eksternt nettsted eller en fysisk enhet som en terning. Dette kan være nyttig hvis du trenger ekstra sikkerhet og tilfeldighet i dine tilfeldige tall.
 
-math random * 10 | round
-```
+For de som er interessert i implementeringen av tilfeldige tallgenerering, fungerer Fish Shell ved å bruke en pseudorandom generator. Dette er en matematisk algoritme som beregner et tilfeldig tall basert på en startverdi.
 
-Dette vil gi deg et tilfeldig heltall mellom 1 og 10 som output. Du kan også sette dette i en løkke for å generere flere tilfeldige tall:
-
-```
-Fish Shell:
-for x in ( seq 5 )
-	echo (math random * 10 | round)
-end
-```
-
-Dette vil gi deg 5 tilfeldige heltall mellom 1 og 10 som output.
-
-## Deep Dive
-
-Fish Shell bruker en pseudorandom generator for å generere tilfeldige tall. Dette betyr at tallene ikke er helt tilfeldige, men genereres gjennom en beregningsprosess som bruker et initialt tall som kalt en "seed". Den genererte sekvensen av tall vil alltid være den samme for en spesifikk seed. Dette betyr at hvis du ønsker å ha en mer tilfeldig følelse, kan du endre seeden ved å bruke kommandoen `math random-set-seed` med et annet tall som argument.
-
-Et annet nyttig aspekt ved å generere tilfeldige tall i Fish Shell er muligheten til å generere tall innenfor et spesifikt intervall. Ved å bruke kommandoen `math random-seed` med et lavere og øvre tall som argumenter, kan du generere tilfeldige tall innenfor dette intervallet. For eksempel, `math random-seed 1 100` vil generere tall mellom 1 og 100.
-
-## Se også
-
-- [Fish Shell dokumentasjon](https://fishshell.com/docs/current/index.html)
-- [Tilfeldig tallgenerator i andre programmeringsspråk](https://en.wikipedia.org/wiki/Random_number_generation)
+## Se også:
+- [Fish Shell dokumentasjon om tilfeldige tallgenerering](https://fishshell.com/docs/current/cmds/fish_random.html)
+- [En sammenligning av ulike tilfeldige tallgenereringsmetoder](https://www.random.org/randomness/)

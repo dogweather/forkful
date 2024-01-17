@@ -1,7 +1,7 @@
 ---
-title:                "Last ned en nettside"
-html_title:           "Elixir: Last ned en nettside"
-simple_title:         "Last ned en nettside"
+title:                "Last ned en nettstedsside"
+html_title:           "Elixir: Last ned en nettstedsside"
+simple_title:         "Last ned en nettstedsside"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "HTML and the Web"
@@ -10,44 +10,22 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hva & Hvorfor? 
+Å laste ned en nettside betyr å hente informasjon fra en ekstern server og vise den på din egen enhet. Programmere gjør dette for å kunne vise informasjon fra forskjellige nettsteder på en enkel og effektiv måte.
 
-Å laste ned en nettside kan være en nyttig ferdighet å ha for å bygge webapplikasjoner, automatisere oppgaver eller som en del av et større prosjekt. Det kan også være nyttig for å få tilgang til informasjon på en nettside når du ikke har en pålitelig internettilkobling.
+## Slik gjør du: 
+For å laste ned en nettside i Elixir bruker vi funksjonen `HTTPoison.get`. Denne funksjonen tar imot URL-en til nettsiden som et argument og returnerer et svarobjekt med all informasjonen fra nettstedet. Et eksempel på bruk av denne funksjonen kan se slik ut:
 
-## Slik gjør du det
-
-```Elixir
-# Først må vi laste inn HTTP-biblioteket
-require HTTPoison
-
-# Deretter kan vi bruke get-funksjonen for å sende en forespørsel og få tilbake en respons
-HTTPoison.get("https://www.example.com")
-
-# Hvis vi ønsker å lagre responsen i en variabel, kan vi gjøre det ved å bruke pipelining
-response = HTTPoison.get("https://www.example.com")
+```elixir
+url = "https://www.nrk.no"
+response = HTTPoison.get(url)
 ```
 
-Dette vil gi oss en respons-oppføring med informasjon om statuskoder, kropp og headers. For å få tilgang til responskroppen, kan vi bruke:
+Dette vil returnere et svarobjekt som inneholder informasjon om statuskoden, headerne og innholdet på nettsiden.
 
-```Elixir
-response.body
-```
+## Dykk dypere: 
+Å laste ned nettsider har blitt en viktig del av programmering siden introduksjonen av internett. Det finnes flere måter å gjøre dette på, som å bruke biblioteker som `HTTPoison` eller å implementere en egen HTTP-klient. En alternativ måte er å bruke `HTTPoison.stream` som lar deg streame data fra nettsiden i stedet for å vente på at hele nettsiden blir lastet ned før du kan håndtere den.
 
-Dette vil returnere en liste med byte-kode som vi kan konvertere til en streng for å få det endelige resultatet. For å lagre resultatet til en fil, kan vi bruke:
-
-```Elixir
-File.write!("nettsted.html", response.body)
-```
-
-Dette vil lagre nettsiden som en .html-fil i samme mappe som koden.
-
-## Dypdykk
-
-Nå som vi kan laste ned en nettside og lagre den som en fil, kan vi enkelt behandle og manipulere dataene etter behov. Dette kan være nyttig for å analysere nettinnhold, automatisk oppdatering av siden eller for å generere en samling av nettsider.
-
-Det er også mulig å legge til tilleggsparametere i get-funksjonen for å inkludere autentisering, spesifisere HEADERS eller bruke proxy-servere.
-
-## Se også
-
-- [Offisiell Elixir Dokumentasjon (engelsk)](https://elixir-lang.org/docs.html)
-- [HTTPoison GitHub Repository (engelsk)](https://github.com/edgurgel/httpoison)
+## Se også: 
+- [Elixir Documentation for HTTPoison](https://hexdocs.pm/httpoison/HTTPoison.html)
+- [HTTP in Elixir: A deep dive](https://dev.to/boost/elixir-http-a-deep-dive-2knj)

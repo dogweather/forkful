@@ -1,7 +1,7 @@
 ---
-title:                "Pobieranie aktualnej daty"
-html_title:           "Ruby: Pobieranie aktualnej daty"
-simple_title:         "Pobieranie aktualnej daty"
+title:                "Uzyskiwanie bieżącej daty"
+html_title:           "Ruby: Uzyskiwanie bieżącej daty"
+simple_title:         "Uzyskiwanie bieżącej daty"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Dates and Times"
@@ -10,71 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i dlaczego?
+Otrzymanie aktualnej daty jest jedną z podstawowych operacji w programowaniu. Programiści używają jej do śledzenia czasu wykonania swojego kodu lub do wyświetlania informacji o dacie dla użytkownika.
 
-Programowanie z użyciem Ruby jest nie tylko przyjemne, ale także może być bardzo przydatne w codziennej pracy z różnymi projektami. Jednym z często wykonywanych zadań jest pobieranie aktualnej daty i godziny w celu wykonywania różnych operacji. W tym artykule dowiesz się, jak w łatwy sposób uzyskać aktualną datę w języku Ruby.
+## Jak to zrobić:
+Poniżej przedstawiono przykłady kodu Ruby, które pokazują różne sposoby pobierania aktualnej daty i wyświetlania jej formatowanej w odpowiedni sposób.
 
-## Jak to zrobić
-
-Aby uzyskać aktualną datę w języku Ruby, wystarczy wywołać metodę `Time.now`, która zwróci bieżący czas w formacie `YYYY-MM-DD HH:MM:SS +HHMM`. Dla przykładu, jeśli uruchomisz poniższy kod:
-
-```Ruby
-puts Time.now
+```ruby
+Date.today # => #<Date: 2021-08-05 ((2459453j,0s,0n),+0s,2299161j)> # pobiera aktualną datę w formacie obiektu Date
+Time.now # => 2021-08-05 14:35:01 +0200 # pobiera aktualną datę i czas w formacie obiektu Time
+DateTime.now # => #<DateTime: 2021-08-05T14:35:01+02:00 ((2459453j,14101s,0n),+7200s,2299161j)> # pobiera aktualną datę i czas w formacie obiektu DateTime
 ```
 
-Otrzymasz wynik:
+Możesz również sformatować otrzymane daty i czasy według swoich preferencji, korzystając z metody strftime, która działa dla obiektów Time i DateTime.
 
-```Ruby
-2021-06-14 15:30:00 +0200
+```ruby
+Time.now.strftime("%d/%m/%Y") # => "05/08/2021" # wyświetla datę w postaci dd/mm/yyyy
+DateTime.now.strftime("%I:%M %p") # => "02:35 PM" # wyświetla czas w formacie 12-godzinnym z am/pm
 ```
 
-Możesz również użyć metody `strftime`, aby sformatować datę według własnych preferencji. Na przykład, jeśli chcesz wyświetlić tylko dzień miesiąca i nazwę miesiąca, możesz użyć poniższego kodu:
+## Głębsze nurkowanie:
+Pobieranie aktualnej daty niejednokrotnie jest związane z wyświetlaniem jej dla użytkownika lub zapisywaniem jej w bazie danych. Wtedy przydatne może okazać się wykorzystanie gemów takich jak "time" lub "date", które oferują dodatkowe metody do manipulowania datami i czasami.
 
-```Ruby
-puts Time.now.strftime("%d-%B")
-```
+W alternatywnej implementacji języka Ruby, JRuby, wykorzystywana jest natywna biblioteka Javy - Java Time API - do obsługi dat i czasów.
 
-Otrzymasz wynik:
+Aby ułatwić sobie pracę z datami i czasami w Ruby, warto dowiedzieć się więcej o bibliotece standardowej i dostępnych gemach.
 
-```Ruby
-14-czerwiec
-```
-
-Inne przydatne formaty, które możesz użyć z metodą `strftime`, to np. `%a` do wyświetlenia dnia tygodnia w skrócie lub `%H:%M` do wyświetlenia tylko godziny i minut.
-
-## Deep Dive
-
-W Ruby bieżący czas jest przechowywany jako obiekt `Time`, który zawiera informacje o roku, miesiącu, dniu, godzinie, minucie i sekundzie. Możesz wywołać metody takie jak `year`, `month`, `day` itp., aby uzyskać te informacje. Przykładowo:
-
-```Ruby
-today = Time.now
-puts today
-puts today.year
-puts today.month
-puts today.day
-```
-
-Otrzymasz wynik:
-
-```Ruby
-2021-06-14 15:30:00 +0200
-2021
-6
-14
-```
-
-Możesz również wykonywać różne operacje na datach, na przykład dodając lub odejmując dni, godziny lub minuty. Wystarczy użyć metody `+` lub `-` i podać liczbę, którą chcesz dodać lub odjąć. Przykładowo:
-
-```Ruby
-tomorrow = Time.now + 86400 # dodaje 24 godziny
-yesterday = Time.now - 86400 # odejmuje 24 godziny
-next_hour = Time.now + 3600 # dodaje 1 godzinę
-```
-
-## Zobacz również
-
-- [Dokumentacja Ruby o obiektach Time](https://ruby-doc.org/core-3.0.0/Time.html)
-- [Inne sposoby uzyskiwania aktualnej daty w Ruby](https://www.rubyguides.com/ruby-tutorial/get-date-time/)
-- [Poradnik Ruby z przykładami i ćwiczeniami](https://www.ruby-lang.org/pl/documentation/quickstart/)
-
-*Dzięki za przeczytanie! Mam nadzieję, że ten artykuł pomógł Ci w uzyskaniu aktualnej daty w języku Ruby.*
+## Zobacz także:
+- [Dokumentacja Ruby o klasie Date](https://ruby-doc.org/stdlib-2.7.1/libdoc/date/rdoc/Date.html)
+- [Dokumentacja Ruby o klasie Time](https://ruby-doc.org/stdlib-2.7.1/libdoc/time/rdoc/Time.html)
+- [Biblioteka "time" dla Ruby](https://rubygems.org/gems/time)
+- [Biblioteka "date" dla Ruby](https://rubygems.org/gems/date)
+- [Java Time API dla JRuby](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)

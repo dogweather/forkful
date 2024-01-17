@@ -1,7 +1,7 @@
 ---
-title:                "读取命令行参数"
-html_title:           "Swift: 读取命令行参数"
-simple_title:         "读取命令行参数"
+title:                "阅读命令行参数"
+html_title:           "Swift: 阅读命令行参数"
+simple_title:         "阅读命令行参数"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Files and I/O"
@@ -10,41 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 为什么
+# 做什么和为什么？
 
-如果你在编写一个命令行工具或者脚本，读取命令行参数是一个非常重要的技能。通过它，你可以让用户在运行程序时通过命令行传入不同的参数，实现更灵活的操作和定制。
+读取命令行参数是指在命令行输入程序时，程序能够接收并处理输入的数据。程序员通常会这样做是因为它使得程序更加灵活，能够接受用户的输入，并根据输入做出相应的操作。
 
-# 如何实现
-
-读取命令行参数的方法很简单，只需要使用Swift中的CommandLine类。下面是一个例子：
+## 如何：
 
 ```Swift
-// 声明接收参数的变量
-var inputStrings = CommandLine.arguments
-// 移除默认的第一个参数，也就是程序的路径
-inputStrings.removeFirst()
+// 举例：读取命令行参数
+import Foundation
 
-// 遍历并输出所有传入的参数
-for inputString in inputStrings {
-    print(inputString)
+let arguments = CommandLine.arguments
+
+// 打印接收到的所有参数
+// 例如：命令行输入：Swift program.swift "Hello, World!"
+// 输出：["Swift","program.swift","Hello, World!"]
+
+print(arguments)
+```
+
+```Swift
+// 举例：根据命令行参数做出不同操作
+import Foundation
+
+let arguments = CommandLine.arguments
+
+// 判断第一个参数是否为“generate”
+if arguments[0] == "generate" {
+    // 如果是，则打印第二个参数
+    print("生成了一个新的文件：\(arguments[1])")
+} else {
+    // 如果不是，则打印错误信息
+    print("无效的命令")
 }
 ```
 
-假如你把上面的代码保存在一个叫"CommandLineArgs.swift"的文件中，然后在命令行运行它，你会得到类似下面的输出：
+## 深入了解：
 
-```
-$ swift CommandLineArgs.swift hello world
-hello
-world
-```
+读取命令行参数在程序设计中的历史悠久，使用范围广泛。除了使用CommandLine外，还有一些库可以用来处理命令行输入，如Swift Argument Parser。在实现上，读取命令行参数需要使用CommandLine对象和数组来获取用户的输入，并对其进行相应的处理。
 
-# 深入了解
+## 参考链接：
 
-在这里，我们使用的CommandLine类是一个类型安全的命令行参数读取器。它提供了一些方便的方法来解析和存储用户传入的参数。比如，你可以使用`addArgument`方法来添加一个命令行参数，使用`arguments`属性来获取所有参数的数组。除此之外，你也可以通过设置`CommandLine.arguments`来模拟命令行传入的参数，便于调试和测试。
-
-# 参考链接
-
-- [Swift中的CommandLine文档](https://developer.apple.com/documentation/foundation/command_line)
-- [如何使用Swift编写命令行工具](https://medium.com/@vxmute/building-command-line-tools-with-swift-3-dab914632c8a)
-- [Swift命令行参数解析工具: SwiftCLI](https://github.com/jakeheis/SwiftCLI)
-- [Swift命令行开发的一个实例: Swiftline](https://github.com/Swiftline/Swiftline)
+- [Swift Argument Parser](https://github.com/apple/swift-argument-parser)
+- [CommandLine](https://developer.apple.com/documentation/foundation/commandline)

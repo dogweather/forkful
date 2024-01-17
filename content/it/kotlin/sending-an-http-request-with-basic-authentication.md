@@ -10,53 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché inviare una richiesta HTTP con autenticazione di base?
+## Cosa & perché?
+In poche parole, l'invio di una richiesta HTTP con autenticazione di base implica l'inserimento delle credenziali di accesso (nome utente e password) nel codice per accedere a risorse protette su un server. I programmatori lo fanno per garantire la sicurezza delle loro applicazioni e dei dati sensibili che esse possono accedere.
 
-Ci sono molte situazioni in cui è necessario accedere ad un servizio web attraverso un'API che richiede la verifica delle credenziali dell'utente. In questi casi, l'autenticazione di base è un metodo comune e semplice per garantire l'accesso ai propri dati.
-
-## Come fare
-
-Per inviare una richiesta HTTP con autenticazione di base in Kotlin, è necessario prima di tutto importare la libreria Apache HttpClient nel tuo progetto. Puoi farlo aggiungendo questa dipendenza al tuo file di configurazione gradle:
-
-```Kotlin
-dependencies{
-   implementation "org.apache.httpcomponents:httpclient:4.5.9"
-}
-```
-
-Una volta importata la libreria, puoi utilizzarla per creare la tua richiesta HTTP. Ad esempio, per inviare una richiesta GET a un servizio web protetto da autenticazione di base, puoi usare il seguente codice:
+## Come fare:
+Eccoti un esempio di come inviare una richiesta HTTP con autenticazione di base utilizzando Kotlin. Nota che è necessario utilizzare un'istruzione di posta in arrivo e specificare l'URL a cui è indirizzata la richiesta, prima di codificare le credenziali di accesso nella richiesta.
 
 ```Kotlin
 val username = "username"
 val password = "password"
-val url = "https://example.com/api/data"
-val httpClient = HttpClientBuilder.create().build()
 
-val credentials = UsernamePasswordCredentials(username, password)
-val authScope = AuthScope(url, AuthScope.ANY_PORT)
-val credentialProvider = BasicCredentialsProvider().also {
-   it.setCredentials(authScope, credentials)
-}
-
-val httpGet = HttpGet(url)
-httpClient.addDefaultCredentialsProvider(credentialProvider)
-
-val httpResponse = httpClient.execute(httpGet)
-val responseContent = String(httpResponse.entity.content.readBytes())
-
-println(responseContent)
+HttpResponse response = Unirest.get("https://www.example.com")
+.basicAuth(username, password)
+.asEmpty()
 ```
 
-L'output di questo esempio sarà il contenuto della risposta del servizio web.
+L'output dovrebbe essere una risposta dello stato "200 OK", indicando che la richiesta è stata inviata con successo e l'accesso è stato autorizzato.
 
-## Deep Dive
+## Approfondimento:
+L'autenticazione di base è stato il metodo originale per autenticare le richieste HTTP, introdotto nel 1999. Oggi ci sono metodi più sicuri come l'autenticazione OAuth, ma la semplicità e la compatibilità con vecchi sistemi rendono ancora utile l'utilizzo di questo metodo.
 
-Per inviare una richiesta HTTP con autenticazione di base, il client deve inviare un'intestazione "Authorization" nella sua richiesta, contenente il valore "Basic" seguito dalle credenziali utente codificate in base64. Inoltre, è necessario conoscere l'URL del servizio web e le credenziali dell'utente per autenticarsi correttamente.
+Ci sono diverse alternative all'autenticazione di base, come l'autenticazione basata su token o l'autenticazione a chiave pubblica. Tuttavia, l'utilizzo di questi metodi può essere più complesso e richiedere una configurazione aggiuntiva nel server.
 
-Una nota importante è che l'autenticazione di base non è considerata sicura ed è sconsigliata quando si tratta di dati sensibili. In questi casi, è consigliato utilizzare metodi di autenticazione più robusti come OAuth o JWT.
+Per implementare correttamente l'autenticazione di base su un server, è necessario utilizzare un sistema di hashing per crittografare la password e preventivamente criptarla prima di inviarla nella richiesta.
 
-## See Also
-
-- [Apache HttpClient Documentazione](https://hc.apache.org/httpcomponents-client-5.1.x/index.html)
-- [Autenticazione di Base su Wikipedia](https://it.wikipedia.org/wiki/Basic_access_authentication)
-- [Kotlin Standard Library](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/)
+## Vedi anche:
+- [Autenticazione di base HTTP](https://developer.mozilla.org/it/docs/Web/HTTP/Authentication)
+- [Introduzione alle richieste HTTP con Kotlin](https://kotlinlang.org/docs/reference/http-client.html)
+- [Sicurezza nelle applicazioni Kotlin](https://kotlinlang.org/docs/reference/coroners.html)

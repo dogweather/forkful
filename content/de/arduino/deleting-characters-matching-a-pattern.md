@@ -10,39 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Warum: 
-Das Löschen von Zeichen, die einem bestimmten Muster entsprechen, kann in der Arduino Programmierung nützlich sein, um zum Beispiel ungewollte Eingaben bei der Verwendung von Sensoren zu filtern oder um Daten effizienter zu verarbeiten.
+## Was & Warum?
 
-How To: 
-Das Löschen von Zeichen in Arduino ist recht einfach und erfordert nur wenige Zeilen Code. Hier ist ein Beispiel, wie man alle Zeichen löschen kann, die dem Buchstaben 'a' entsprechen:
+Das Löschen von Zeichen, die einem bestimmten Muster entsprechen, ist ein häufig verwendetes Programmierkonzept, um bestimmte Teile eines Texts zu entfernen. Programmierer verwenden dies, um unerwünschte Informationen aus einer Datei oder einem String zu entfernen, um z. B. eine sinnvolle Ausgabe zu erhalten.
 
-```Arduino
-// Deklaration und Initialisierung des Zeichenarrays
-char data[] = "Hallo Arduino";
-// Variable zur Speicherung der Länge des Arrays
-int len = sizeof(data);
-// Schleife zum Durchlaufen des Arrays
-for (int i = 0; i < len; i++) {
-  // Überprüfung ob aktuelles Zeichen dem Muster entspricht
-  if (data[i] == 'a') {
-    // Falls ja, wird das Zeichen aus dem Array gelöscht
-    memmove(data + i, data + i + 1, len - i);
-    // Da ein Zeichen gelöscht wurde, wird die Schleife erneut mit dem aktuellen Index durchlaufen
-    i--;
-  }
-}
-// Ausgabe des geänderten Arrays
-Serial.println(data);
+## Wie geht's:
+
+```
+Arduino code blocks
 ```
 
-Der obige Code nimmt das Zeichenarray "Hallo Arduino" und entfernt alle Zeichen, die dem Buchstaben 'a' entsprechen. Die Ausgabe ist dann "Hllo Arduino".
+Eine Möglichkeit, um Zeichen, die einem bestimmten Muster entsprechen, zu löschen, ist die Verwendung der `remove_if()` Funktion. Diese Funktion löscht alle Zeichen in einem String, die einer Bedingung entsprechen. Zum Beispiel löscht der folgende Code alle Zahlen aus einem String und gibt das Ergebnis aus:
 
-Deep Dive:
-Die Funktion `memmove()` wird in diesem Beispiel verwendet, um das Zeichen aus dem Array zu löschen. Sie gehört zur C Standardbibliothek und ermöglicht es, einen Teil des Speichers zu verschieben. Im Code wird sie verwendet, um das Zeichen an der aktuellen Position durch das nächste im Array stehende Zeichen zu ersetzen. Dadurch wird das Zeichen effektiv "gelöscht". Die Schleife läuft für jedes gelöschte Zeichen erneut mit dem aktuellen Index durch, um sicherzustellen, dass keines der verschobenen Zeichen übersprungen wird.
+```
+Arduino Beispielcode:
+String text = "Die Sonne scheint und es ist 25 Grad";
+text.remove_if(isDigit);
+Serial.print(text);
+// Ausgabe: Die Sonne scheint und es ist Grad
+```
 
-See Also:
-Hier sind einige nützliche Links für weitere Informationen zur Arduino Programmierung und zur Verwendung von Strings und Zeichenarrays:
+Eine andere Möglichkeit, Zeichen zu löschen, ist die Verwendung der `replace()` Funktion. Diese Funktion ersetzt alle Zeichen in einem String, die einem bestimmten Muster entsprechen, durch ein anderes Zeichen. Der folgende Code zeigt, wie man alle Leerzeichen durch Bindestriche ersetzen kann:
 
-- [Arduino Language Reference](https://www.arduino.cc/reference/en/)
-- [C String Tutorial](https://www.arduino.cc/reference/en/language/variables/data-types/string/manipulation/)
-- [Characters and Strings in C](https://www.cprogramming.com/tutorial/c/lesson9.html)
+```
+Arduino Beispielcode:
+String text = "Hallo Welt!";
+text.replace(" ", "-");
+Serial.print(text);
+// Ausgabe: Hallo-Welt!
+```
+
+## Tiefere Einblicke:
+
+Es gibt viele Möglichkeiten, Zeichen zu löschen oder zu ersetzen, je nachdem, was das Ziel ist. Informationen darüber, wie diese Funktionen genau funktionieren und was sie tun, können in der entsprechenden Dokumentation gefunden werden. Es gibt auch andere Programmierkonzepte, wie Reguläre Ausdrücke, die ebenfalls für das Löschen von Zeichen verwendet werden können. Diese erfordern jedoch ein tieferes Verständnis der Programmierung und sind möglicherweise nicht die beste Wahl für Anfänger.
+
+## Weitere Infos:
+
+- [Dokumentation über die remove_if() Funktion](https://www.arduino.cc/reference/de/language/functions/string-manipulation/removeif/)
+- [Dokumentation über die replace() Funktion](https://www.arduino.cc/reference/de/language/functions/string-manipulation/replace/)
+- [Einblick in die Verwendung von Regulären Ausdrücken zur Zeichenlöschung](https://www.regular-expressions.info/)

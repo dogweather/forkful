@@ -1,7 +1,7 @@
 ---
-title:                "Tekstitiedoston kirjoittaminen"
-html_title:           "Kotlin: Tekstitiedoston kirjoittaminen"
-simple_title:         "Tekstitiedoston kirjoittaminen"
+title:                "Tiedoston kirjoittaminen"
+html_title:           "Kotlin: Tiedoston kirjoittaminen"
+simple_title:         "Tiedoston kirjoittaminen"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Files and I/O"
@@ -10,37 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+# Mikä ja miksi?
 
-Kirjoittaessamme ohjelmia, on usein tarpeen tallentaa tai lukea tietoa tekstitiedostosta. Tekstitiedostoja voidaan käyttää esimerkiksi tietokantojen korvikkeena tai tallentamaan käyttäjän syöttämiä tietoja. Kotlinilla tekstitiedoston kirjoittaminen on helppoa ja tehokasta.
+Tekstitiedoston kirjoittaminen tarkoittaa yksinkertaisesti tiedon tallentamista tekstimuodossa. Ohjelmoijat tekevät tätä esimerkiksi tallentaakseen käyttäjän syöttämän datan tai tulostamaan tietoja sovelluksesta.
 
-## Kuinka tehdä se
+# Miten:
 
-Kirjoittaaksesi tekstitiedoston Kotlinilla, sinun tulee ensin luoda tiedosto ja siihen liittyvä BufferedWriter-olio. Seuraavaksi voit kirjoittaa haluamasi tiedot käyttäen BufferedWriterin write-metodia ja lopuksi sulkea tiedosto close-metodin avulla.
-
-```Kotlin
-val tiedosto = File("tiedosto.txt")
-val writer = BufferedWriter(FileWriter(tiedosto))
-
-writer.write("Tämä on esimerkki tekstitiedoston kirjoittamisesta Kotlinilla.")
-writer.write("Voit lisätä haluamiasi tekstejä ja rivinvaihtoja.")
-
-writer.close()
+```Kotlin 
+val tiedosto = File("file.txt")
+tiedosto.writeText("Tämä on esimerkki tekstitiedostosta")
 ```
 
-Tämän jälkeen voit avata tiedoston ja nähdä siellä kirjoittamasi tekstit. Huomaa, että jos tiedostoa ei löydy, se luodaan automaattisesti.
+Tässä esimerkissä luomme tiedoston nimeltä "file.txt" ja kirjoitamme siihen tekstin. Tämän jälkeen voimme lukea tiedoston sisällön käyttäen File-luokan readText() -metodia.
 
 ```
-Tämä on esimerkki tekstitiedoston kirjoittamisesta Kotlinilla.
-Voit lisätä haluamiasi tekstejä ja rivinvaihtoja.
+Tämä on esimerkki tekstitiedostosta
 ```
 
-## Syvennä tietämystäsi
+# Syvemmälle:
 
-Tekstitiedoston kirjoittaminen Kotlinilla käyttäen BufferedWriteria on tehokas tapa tallentaa tietoa, mutta on myös tärkeää ymmärtää, että tiedoston kirjoittaminen on I/O-toiminto, joka voi hidastaa ohjelman suorituskykyä. Tästä syystä on suositeltavaa käyttää esimerkiksi Thread-luokan metodeja kirjoittaessa tekstitiedostoa suorituksen hitaammille alueille.
+Tekstitiedostojen kirjoittamista on käytetty jo vuosikymmenten ajan tietokoneohjelmoinnissa. Nykyään on olemassa myös muita tapoja tallentaa ja käsitellä dataa, kuten tietokannat tai JSON-tiedostot.
 
-## Katso myös
+Tekstitiedostojen kirjoittaminen toteutetaan yleensä käyttäen tietokoneen tiedostojärjestelmään liittyviä komentoja, joten eri käyttöjärjestelmät saattavat vaatia erilaisia koodinpätkiä.
 
-- [Kotlinin viralliset dokumentit](https://kotlinlang.org/docs/tutorials/kotlin-for-py/creating-classes.html)
-- [Java I/O-opetusohjelma](https://docs.oracle.com/javase/tutorial/essential/io/file.html)
-- [Kotlin Standard Library](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-writer-writer-writer.html)
+# Katso myös:
+
+[Java IO-tiedostonkirjoitus](https://docs.oracle.com/javase/tutorial/essential/io/file.html)

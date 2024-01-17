@@ -10,55 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+## O que & Porquê?
 
-Alguma vez você já recebeu uma mensagem de erro ao executar um script PHP e se perguntou como ela foi gerada? Bem, a resposta está em escrever para o erro padrão (standard error). Neste artigo, vamos explorar por que isso pode ser útil e como fazer isso de forma simples em seus próprios códigos PHP.
+Escrever em erro padrão é um recurso importante para programadores PHP, pois permite exibir mensagens de erro e depuração no terminal, em vez de exibi-las na página do website. Isso ajuda a manter uma aparência profissional ao mesmo tempo em que fornece informações valiosas para o desenvolvimento e resolução de problemas.
 
-## Como Fazer
+## Como fazer:
 
-Escrever para o erro padrão pode ser especialmente útil em situações onde você precisa depurar seu código e imprimir valores de variáveis ou mensagens de erro. Para isso, você pode usar a função `fwrite(STDERR, $variavel)` do PHP, que envia o conteúdo da variável para o erro padrão.
+Utilizar a função `fwrite()` com o parâmetro `STDERR` é a maneira mais simples de escrever em erro padrão no PHP. Por exemplo:
 
-Por exemplo, se tivermos o seguinte código PHP que está gerando um erro:
-
-```PHP
+```
 <?php
-$nome = "João";
-if($nome == "Maria")
-    echo "Olá, $nome!";
-else
-    echo "Desculpe, ocorreu um erro!";
+fwrite(STDERR, "Erro ao acessar o banco de dados");
 ```
 
-Podemos adicionar `fwrite(STDERR, $nome);` após a condição `if` para enviar o valor da variável `$nome` para o erro padrão:
+Isso irá exibir a mensagem de erro "Erro ao acessar o banco de dados" no terminal. Também é possível utilizar a função `error_log()`, que permite registrar erros em um arquivo especificado. Por exemplo:
 
-```PHP
+```
 <?php
-$nome = "João";
-if($nome == "Maria")
-    echo "Olá, $nome!";
-else{
-    fwrite(STDERR, $nome);
-    echo "Desculpe, ocorreu um erro!";
-}
+error_log("Erro ao acessar o banco de dados", 3, "./logs/erros.log");
 ```
 
-Isso nos dará o seguinte resultado no console:
+Isso irá registrar a mensagem de erro no arquivo "erros.log" localizado na pasta "logs".
 
-```
-JoãoDesculpe, ocorreu um erro!
-```
+## Profundidade:
 
-Você pode utilizar a função `fwrite()` em qualquer lugar no seu código onde precise enviar uma mensagem para o erro padrão. É uma forma simples de depurar seu código e identificar problemas com variáveis e condições.
+Antes da introdução do recurso de erro padrão, as mensagens de erro e depuração eram exibidas diretamente na página do website, o que pode criar uma experiência ruim para o usuário final. Com a escrita em erro padrão, os programadores podem manter a página limpa e profissional, enquanto ainda têm acesso a informações importantes para o desenvolvimento.
 
-## Deep Dive
+Além disso, existem outras maneiras de lidar com erros no PHP, como a utilização de exceções e o controle de erro por meio de diretivas do PHP.ini.
 
-Agora que você já sabe como escrever para o erro padrão, vamos nos aprofundar um pouco mais em como essa função funciona. Primeiramente, é importante entender que o erro padrão é como um canal de comunicação entre o PHP e o terminal, que é onde as mensagens de erro são exibidas para o usuário.
+## Veja também:
 
-Quando você executa um script PHP no terminal e ele encontra um erro, ele é enviado diretamente para o erro padrão e é exibido no seu console. No entanto, se você quiser exibir alguma informação específica, pode usar a função `fwrite()` para enviar essa mensagem diretamente para o erro padrão.
+Para mais informações sobre escrita em erro padrão no PHP, consulte a documentação oficial: [https://www.php.net/manual/pt_BR/wrappers.php.php](https://www.php.net/manual/pt_BR/wrappers.php).
 
-Além disso, é importante lembrar que o erro padrão é diferente do erro de saída padrão (standard output). O erro de saída padrão é onde as mensagens de saída do seu script são exibidas, enquanto o erro padrão é reservado especificamente para mensagens de erro.
-
-## Veja também
-
-- [Documentação oficial do PHP para a função fwrite](https://www.php.net/manual/en/function.fwrite.php)
-- [Artigo sobre como depurar códigos PHP](https://www.php.net/manual/en/function.fwrite.php)
+Também é possível conferir um exemplo prático de como utilizar a função `fwrite()` para escrever em erro padrão neste artigo: [https://www.php.net/manual/pt_BR/function.fwrite.php](https://www.php.net/manual/pt_BR/function.fwrite.php).

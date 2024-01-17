@@ -1,7 +1,7 @@
 ---
-title:                "Estrarre sottostringhe"
-html_title:           "C#: Estrarre sottostringhe"
-simple_title:         "Estrarre sottostringhe"
+title:                "Estrazione di sottostringhe"
+html_title:           "C#: Estrazione di sottostringhe"
+simple_title:         "Estrazione di sottostringhe"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Strings"
@@ -10,50 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
-Se stai lavorando su un progetto di programmazione in C#, potresti aver bisogno di estrarre delle sottostringhe da una stringa più grande. Questo può essere utile per manipolare i dati o per ottenere informazioni specifiche da un testo più grande.
+## Che cos'è e perché?
 
-## Come
-Estrarre una sottostringa in C# è abbastanza semplice, grazie ai metodi integrati nella classe String. Ad esempio, se vogliamo estrarre una sottostringa che inizia al terzo carattere e finisce al quinto, possiamo utilizzare il metodo `Substring` in questo modo:
+L'estrazione di sottostringhe è il processo di selezione di una parte di una stringa più grande. I programmatori spesso lo fanno per ottenere solo una porzione delle informazioni di una stringa o per manipolare i dati in modo più efficiente.
 
-```C#
-string testo = "Questo è un esempio di stringa.";
-string sottostringa = testo.Substring(3, 3);
+## Come fare:
 
-Console.WriteLine(sottostringa);
+Per estrarre una sottostringa in C#, possiamo utilizzare il metodo ```Substring()``` della classe string. Vediamo un esempio:
+
+```c#
+string frase = "Benvenuti in questo articolo!";
+string sottostringa = frase.Substring(10, 7); // estrae la sottostringa "questo"
+Console.WriteLine(sottostringa); // output: questo
 ```
 
-Questo dovrebbe stampare `sto`, poiché la sottostringa è composta dai caratteri dal terzo al quinto (escluso). È importante notare che il primo parametro del metodo `Substring` è l'indice del carattere a partire dal quale iniziare l'estrazione, mentre il secondo parametro indica il numero di caratteri da estrarre.
+Qui stiamo utilizzando il metodo ```Substring()``` per estrarre una sottostringa dalla posizione 10 della stringa fino a 7 caratteri dopo. Possiamo anche specificare solo la posizione di inizio e ottenere la sottostringa fino alla fine della stringa:
 
-Possiamo anche utilizzare il metodo `Substring` per estrarre una sottostringa a partire da un certo carattere fino alla fine della stringa, semplicemente passando un solo parametro:
-
-```C#
-string testo = "Questa è un'altra stringa di esempio.";
-string sottostringa = testo.Substring(6);
-
-Console.WriteLine(sottostringa);
+```c#
+string ulterioriInformazioni = frase.Substring(22); // estrae "articolo!"
 ```
 
-Questo dovrebbe stampare `è un'altra stringa di esempio.`, poiché il metodo `Substring` inizia l'estrazione dal sesto carattere (escluso) fino alla fine della stringa.
+Notare che le posizioni all'interno di una stringa iniziano da 0.
 
-## Deep Dive
-Oltre ai semplici casi di utilizzo descritti nella sezione precedente, esistono altri metodi per estrarre sottostringhe in C#. Ad esempio, il metodo `Split` può essere utilizzato per dividere una stringa in sottostringhe basate su un determinato carattere di separazione. Vediamo un esempio:
+## Approfondimenti:
 
-```C#
-string testo = "Questo è un esempio di stringa.";
-string[] sottostringhe = testo.Split(' ');
+L'idea di estrarre sottostringhe esiste da molto tempo ed è stata utilizzata in molti linguaggi di programmazione diversi. In C#, ci sono anche altri modi per estrarre sottostringhe, come utilizzare i metodi ```Split()``` e ```Replace()``` o i pattern di ricerca tramite espressioni regolari.
 
-foreach (string s in sottostringhe)
-{
-    Console.WriteLine(s);
-}
-```
+Inoltre, l'estrazione di sottostringhe è spesso utilizzata in congiunzione con altri metodi e funzioni per manipolare e analizzare le stringhe. Ad esempio, possiamo utilizzare la sottostringa ottenuta per cercare una corrispondenza specifica tramite il metodo ```Contains()``` o per convertire i dati in un tipo diverso utilizzando i metodi di casting.
 
-Questo dovrebbe stampare ogni parola della stringa precedente su una nuova riga, poiché stiamo dividendo la stringa utilizzando lo spazio come carattere di separazione.
+## Vedi anche:
 
-Inoltre, possiamo anche utilizzare espressioni regolari per estrarre sottostringhe più complesse, ad esempio basate su un determinato pattern. Anche in questo caso, il C# offre dei metodi utili nella classe Regex per questo scopo.
-
-## See Also
-- Metodo `Substring` - documentazione ufficiale di Microsoft: https://docs.microsoft.com/it-it/dotnet/api/system.string.substring
-- Metodo `Split` - documentazione ufficiale di Microsoft: https://docs.microsoft.com/it-it/dotnet/api/system.string.split
-- Classe Regex - documentazione ufficiale di Microsoft: https://docs.microsoft.com/it-it/dotnet/api/system.text.regularexpressions.regex
+- Documentazione ufficiale su ```Substring()``` in C#: [https://docs.microsoft.com/en-us/dotnet/api/system.string.substring](https://docs.microsoft.com/en-us/dotnet/api/system.string.substring)
+- Esempi di utilizzo di sottostringhe in C#: [https://www.geeksforgeeks.org/c-sharp-string-substring-method/](https://www.geeksforgeeks.org/c-sharp-string-substring-method/)
+- Approfondimenti sulle espressioni regolari in C#: [https://docs.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-language-quick-reference](https://docs.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-language-quick-reference)

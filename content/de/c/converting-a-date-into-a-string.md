@@ -1,7 +1,7 @@
 ---
-title:                "Ein Datum in einen String umwandeln"
-html_title:           "C: Ein Datum in einen String umwandeln"
-simple_title:         "Ein Datum in einen String umwandeln"
+title:                "Umwandlung eines Datums in eine Zeichenfolge"
+html_title:           "C: Umwandlung eines Datums in eine Zeichenfolge"
+simple_title:         "Umwandlung eines Datums in eine Zeichenfolge"
 programming_language: "C"
 category:             "C"
 tag:                  "Dates and Times"
@@ -10,52 +10,70 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+# Was & Warum?
 
-Ein Datum in Form eines Strings umzuwandeln, ist eine häufige und wichtige Aufgabe beim Programmieren in C. Es kann dazu dienen, dem Benutzer das Datum in einer leicht lesbaren Form anzuzeigen oder es als Teil von Dateinamen oder Log-Dateien zu verwenden. In diesem Artikel zeigen wir Ihnen, wie Sie dies in C erreichen können.
+Das Umwandeln von einem Datum in eine Zeichenfolge bedeutet, dass wir ein Datum in einem bestimmten Format darstellen möchten, das für Menschen leichter lesbar ist. Die Programmiere dieses Verfahren, um es einfacher zu machen, mit Datumsangaben zu arbeiten.
 
-## So geht's
+# Wie geht das?
 
-Um ein Datum in C in einen String umzuwandeln, gibt es mehrere mögliche Ansätze. Eine Möglichkeit ist die Verwendung der Standardfunktion `strftime()`. Hier ist ein Beispiel, das das aktuelle Datum in einem benutzerdefinierten Format ausgibt:
+Wir können dieses Verfahren in C auf verschiedene Weise durchführen. Hier sind zwei Beispiele, die ein Datum und eine Uhrzeit in ein lesbare Zeichenfolge umwandeln:
+
+```C
+#include <stdio.h>
+#include <time.h> //für die Zeitfunktionen
+
+int main()
+{
+    time_t now = time(NULL); //aktuelle Zeit in Sekunden seit 1970
+    // erstellen einer struct tm mit der aktuellen Zeit
+    struct tm *timeinfo = localtime(&now);
+    char buffer[100]; //eine Zeichenfolge für die Ausgabe
+    //das Datum und die Uhrzeit in einem bestimmt Format ausgeben
+    strftime(buffer, sizeof buffer, "%d.%m.%y %H:%M:%S", timeinfo);
+    printf("Das aktuelle Datum und die Uhrzeit sind: %s\n", buffer);
+    return 0;
+}
+```
+
+Die Ausgabe wird in etwa so aussehen:
+
+```
+Das aktuelle Datum und die Uhrzeit sind: 28.06.20 13:26:47
+```
+
+Eine andere Möglichkeit, ein Datum in eine Zeichenfolge umzuwandeln, ist die Verwendung der Funktion `sprintf`. Hier ist ein Beispiel, das das gleiche Ergebnis wie das obere Beispiel liefert:
 
 ```C
 #include <stdio.h>
 #include <time.h>
 
-int main() {
-    // aktuelles Datum erhalten
+int main()
+{
     time_t now = time(NULL);
-
-    // Benutzerformat definieren
-    char str[100];
-    char format[] = "%d.%m.%Y";
-
-    // Datum in String umwandeln mithilfe von strftime()
-    strftime(str, 100, format, localtime(&now));
-
-    // Ausgabe
-    printf("Das aktuelle Datum ist: %s\n", str);
-
+    struct tm *timeinfo = localtime(&now);
+    char buffer[100];
+    //das Datum und die Uhrzeit in einem bestimmt Format in die char-Array schreiben
+    sprintf(buffer, "%02d.%02d.%02d %02d:%02d:%02d", timeinfo->tm_mday, timeinfo->tm_mon+1, timeinfo->tm_year+1900, timeinfo->tm_hour, timeinfo->tm_min, timeinfo->tm_sec);
+    printf("Das aktuelle Datum und die Uhrzeit sind: %s\n", buffer);
     return 0;
 }
 ```
 
-Die Ausgabe dieses Codes wird in der Konsole wie folgt aussehen:
+# Tiefer gehen
 
-```
-Das aktuelle Datum ist: 15.12.2021
-```
+Das Konzept, ein Datum in eine Zeichenfolge umzuwandeln, geht zurück bis in die Anfänge der Programmierung. Früher wurde dafür häufig die Funktion `sprintf` verwendet, jedoch ist die Verwendung von `strftime` heutzutage verbreiteter. Es gibt auch verschiedene andere Methoden, um das gewünschte Ergebnis zu erzielen, wie zum Beispiel die Verwendung von `sscanf` und `asctime`.
 
-Es gibt auch andere Funktionen in C, die verwendet werden können, um Datum zu Strings zu konvertieren, wie beispielsweise `asctime()` und `ctime()`. Es ist wichtig, die richtige Funktion basierend auf den Anforderungen und dem gewünschten Format auszuwählen.
+Um die erzeugte Zeichenfolge noch weiter anzupassen, können wir das Format in `strftime` ändern und verschiedene Optionen für das Ausgabedatum und die Uhrzeit verwenden. Hier sind einige Beispiele dafür, was geändert werden kann:
 
-## Werfen wir einen genaueren Blick darauf
+- `%d` steht für die Tagzahl (01-31)
+- `%m` steht für den Monat (01-12)
+- `%y` steht für das Jahr (00-99)
+- `%H` steht für die Stunden im 24-Stunden-Format (00-23)
+- `%M` steht für die Minuten (00-59)
+- `%S` steht für die Sekunden (00-60)
 
-Beim Konvertieren von Datum in Strings gibt es einige wichtige Dinge zu beachten. Zum Beispiel kann das gewünschte Format durch das `format`-Argument in `strftime()` definiert werden. Dieses Argument erlaubt verschiedene spezifische Formatierungen für Datum, Uhrzeit und Wochentag, die verwendet werden können, um den String anzupassen.
+Es gibt noch viele weitere Optionen und auch die Möglichkeit, Text in die Zeichenfolge einzufügen. Eine vollständige Liste der Optionen findet man in der C-Dokumentation.
 
-Eine weitere wichtige Überlegung ist die Verwendung der richtigen Zeitzone, um die korrekte Zeit zu erhalten. Hier haben wir die Funktion `localtime()` verwendet, um das Datum in der lokalen Zeitzone auszugeben. Wenn Sie jedoch ein bestimmtes Datum in einer anderen Zeitzone benötigen, müssen Sie möglicherweise andere Funktionen wie `gmtime()` oder `tzset()` verwenden.
+# Siehe auch
 
-## Siehe auch
-
-- [String von Datum in C erstellen - Beispiel](https://www.programiz.com/c-programming/library-function/strftime)
-- [Datum in C ausgeben mit Systemfunktionen](https://www.tutorialspoint.com/c_standard_library/c_function_asctime.htm)
-- [C Datum und Uhrzeit Funktionen](https://www.tutorialspoint.com/c_standard_library/c_function_localtime.htm)
+Weitere Informationen und Beispiele finden Sie in der [offiziellen C-Dokumentation zu `strftime`](https://devdocs.io/c/ctime/strftime). Sie können auch nach Alternativen suchen, wie zum Beispiel die Verwendung von Bibliotheken wie `stdio.h` oder `boost::date_time`.

@@ -1,7 +1,7 @@
 ---
-title:                "Invio di una richiesta http con autenticazione di base"
-html_title:           "Fish Shell: Invio di una richiesta http con autenticazione di base"
-simple_title:         "Invio di una richiesta http con autenticazione di base"
+title:                "Inviare una richiesta http con autenticazione di base"
+html_title:           "Fish Shell: Inviare una richiesta http con autenticazione di base"
+simple_title:         "Inviare una richiesta http con autenticazione di base"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "HTML and the Web"
@@ -10,39 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+## Che cosa & Perché?
 
-Molti sviluppatori si trovano spesso nella situazione in cui devono inviare una richiesta HTTP ad un server che richiede autenticazione di base. Utilizzando Fish Shell, è possibile automatizzare questo processo ed eseguire facilmente richieste autenticate.
+In questo articolo parleremo di come inviare una richiesta HTTP con autenticazione di base usando il Fish Shell. Questa tecnica è comune tra i programmatori perché consente di accedere a risorse protette su internet tramite una combinazione di nome utente e password.
 
-## Come fare
+## Come fare:
 
-Per inviare una richiesta HTTP con autenticazione di base utilizzando Fish Shell, segui questi semplici passaggi:
+Utilizzando il Fish Shell, è possibile inviare una richiesta HTTP con autenticazione di base in pochi semplici passi. Ecco un esempio di codice:
 
-1. Prima di tutto, assicurati di avere Fish Shell installato sul tuo sistema.
-2. Apri Fish Shell e impostala come shell predefinita se non lo è già.
-3. Utilizza il comando `set -x` per abilitare l'output del debug e `set +x` per disabilitarlo.
-4. Utilizza il comando `curl` per inviare la richiesta HTTP, specificando l'opzione `-u` seguita da nome utente e password separati da `:`.
+```Fish Shell
 
-Ecco un esempio di codice da inserire nella tua shell per inviare una richiesta GET a un server che richiede autenticazione di base:
+set -lx username "username"
+set -lx password "password"
 
-```
-set -x
-curl -u username:password http://www.example.com
-set +x
+set -lx response (curl --user $username:$password http://www.example.com)
+
+echo $response
 ```
 
-L'output di questo comando mostrerà lo status della richiesta e i dati restituiti dal server.
+Questo codice definisce una variabile per il nome utente e una per la password, quindi utilizza il comando `curl` per inviare una richiesta HTTP con autenticazione di base al sito web di esempio. Infine, il codice stampa la risposta ricevuta dal server.
 
-## Approfondimento
+## Approfondimenti:
 
-Per comprendere meglio come funziona l'autenticazione di base nell'invio di richieste HTTP, ecco alcune informazioni aggiuntive:
+La tecnologia di autenticazione di base è stata introdotta per la prima volta nell'HTTP 1.0 nei primi anni '90. Oggi, ci sono metodi di autenticazione più avanzati disponibili, come OAuth, ma l'autenticazione di base rimane ancora un'opzione popolare per molte applicazioni.
 
-- L'autenticazione di base è uno dei metodi di autenticazione HTTP più semplici, in cui il nome utente e la password sono codificati in Base64 e inclusi nell'header della richiesta.
-- Questo metodo è meno sicuro rispetto ad altri metodi di autenticazione, poiché il nome utente e la password sono inviati in chiaro.
-- In Fish Shell, l'header di autenticazione di base viene aggiunto automaticamente all'invio di una richiesta GET, POST, PUT o DELETE con `curl`.
+Un'alternativa all'utilizzo del Fish Shell per inviare una richiesta HTTP con autenticazione di base potrebbe essere l'utilizzo di un programma specifico per questo scopo, come `curl` o `wget`. Tuttavia, utilizzando il Fish Shell è possibile automatizzare ulteriormente questo processo, rendendo più comodo e veloce l'accesso a risorse protette.
 
-## Vedi anche
+Alcune delle implementazioni più comuni della tecnologia di autenticazione di base includono l'utilizzo di un prompt dove viene richiesto all'utente di inserire nome utente e password e l'utilizzo di header personalizzati per includere le credenziali nella richiesta HTTP.
 
-- Documentazione ufficiale di Fish Shell: https://fishshell.com/docs/current/index.html
-- Documentazione ufficiale di cURL: https://curl.haxx.se/docs/
-- Guida all'autenticazione HTTP: https://www.oauth.com/oauth2-servers/basic-and-digest-authentication/
+## Vedi anche:
+
+Per ulteriori informazioni sull'utilizzo del Fish Shell per inviare richieste HTTP, puoi consultare la documentazione ufficiale qui: https://fishshell.com/docs/current/cmds/set.html
+
+Se vuoi approfondire l'utilizzo dell'autenticazione di base, puoi consultare la specifica ufficiale HTTP 1.1 qui: https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.8
+
+E se vuoi saperne di più sulla tua sicurezza online, puoi leggere questo articolo sulla protezione delle password: https://heimdalsecurity.com/it/blog/proteggere-password-importante/

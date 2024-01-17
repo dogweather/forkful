@@ -10,31 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-Checking if a directory exists in Swift may seem like a simple task, but it can be crucial when working with files and directories in your code. It ensures that you are not accidentally overwriting or creating duplicate directories.
+# What & Why?
+Checking if a directory exists means verifying if a particular location on your computer contains a folder or not. Programmers do this to ensure that their code runs smoothly and avoids errors when interacting with directories.
 
-## How To
-To check if a directory exists in Swift, we can use the `FileManager` class. This class provides methods for managing files and directories in our app. Let's take a look at an example:
+# How to:
+To check if a directory exists in Swift, we can use the `FileManager` class and its `fileExists(atPath:isDirectory:)` method. This method takes in the path of the directory and a boolean value indicating if the path is a directory or not, and returns a boolean value indicating if the directory exists or not.
 
 ```Swift
-let folderName = "Documents"
 let fileManager = FileManager.default
-let documentsDir = fileManager.urls(for: .documentDirectory, in: .userDomainMask)[0]
-let folderPath = documentsDir.appendingPathComponent(folderName, isDirectory: true)
-
-// Check if directory exists
-if fileManager.fileExists(atPath: folderPath.path) {
-    print("The \(folderName) directory exists.")
-} else {
-    print("The \(folderName) directory does not exist.")
-}
+let directoryPath = "/Users/John/Documents"
+var isDirectory: ObjCBool = true
+let directoryExists = fileManager.fileExists(atPath: directoryPath, isDirectory: &isDirectory)
+print(directoryExists) // true
 ```
 
-In this example, we first define the name of the folder we want to check for. Then, we use `FileManager` to get the URL for the document directory of our app. We append our folder name to this URL and use the `fileExists(atPath:)` method to check if the directory exists. If it does, we print a message informing the user. Otherwise, we print a different message. 
+# Deep Dive:
+Prior to Swift 4, there was no specific way to check if a directory exists. Programmers had to use the `fileExists(atPath:)` method and check if the path leads to a file or a directory by using the `isDirectory` property of the `FileManager` class. However, since Swift 4, the `fileExists(atPath:isDirectory:)` method was introduced, making it easier to check specifically for directories.
 
-## Deep Dive
-The `FileManager` class also provides us with a few other useful methods for checking the existence of directories. These include `fileExists(atPath:)`, `fileExists(atPath:isDirectory:)`, and `fileExists(atPath:isDirectory:error:)`. Each of these methods takes in the path of the directory we want to check and returns a boolean value indicating whether it exists or not. The main difference between these methods is that the last two also allow us to specify whether we want to check if the path is a directory or not. This can be useful when working with different types of files and directories in our app. 
+An alternative way to check if a directory exists is by using the `URL` and `DirectoryEnumerationOptions` classes. This method allows for more fine-grained control over the enumeration of files and folders within the directory.
 
-## See Also
-- [FileManager - Apple Developer Documentation](https://developer.apple.com/documentation/foundation/filemanager)
-- [Working with Directories in Swift](https://medium.com/fabcoding/working-with-directories-in-swift-f45aa5504ce)
+```Swift
+let directoryURL = URL(fileURLWithPath: "/Users/John/Documents")
+let directoryExists2 = directoryURL.hasDirectoryPath
+print(directoryExists2) // true
+```
+
+# See Also:
+- [Apple's documentation on FileManager class](https://developer.apple.com/documentation/foundation/filemanager)
+- [Apple's documentation on URL class](https://developer.apple.com/documentation/foundation/url)
+- [Swift's implementation of the FileManager class](https://github.com/apple/swift-corelibs-foundation/blob/main/Foundation/FileManager.swift)

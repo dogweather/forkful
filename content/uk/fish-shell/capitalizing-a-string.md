@@ -1,7 +1,7 @@
 ---
-title:                "Капіталізація рядка"
-html_title:           "Fish Shell: Капіталізація рядка"
-simple_title:         "Капіталізація рядка"
+title:                "Перетворення рядка на заголовні літери"
+html_title:           "Fish Shell: Перетворення рядка на заголовні літери"
+simple_title:         "Перетворення рядка на заголовні літери"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -10,29 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Чому
+## Що це таке і для чого?
+Капіталізація рядка - це процес перетворення першої літери рядка на велику. Це широко використовується в програмуванні, особливо при роботі з текстом, для полегшення читання і розрізнення різних рядків.
 
-Запрограмувати у версії Fish Shell у стилі мови розмовного спілкування - це круто! Але якщо ти задумуєшся про те, чому потрібно капіталізувати рядок? Ось декілька прикладів використання цієї функції.
-
-## Як
-
-```Fish Shell
-set my_str "привіт світ!"
-capitalize $my_str
-```
-Виведе: "Привіт світ!"
+## Як це зробити:
+Код і приклади використання капіталізації рядка у Shell Fish (актуальна версія):
 
 ```Fish Shell
-set filename "файл.txt"
-capitalize -t $filename
+set my_string 'hello world'
+echo $my_string # виведе 'hello world'
+
+echo (string match -r '(\w+)' $my_string | string replace -r --uppercase '$1')
+
+# виведе 'Hello World'
 ```
-Виведе: "Файл.txt"
 
-## Глибокий занурення
+## Поглиблене дослідження:
+ - Капіталізація рядка має свої коріння у давній історії друкування, коли кожне слово починалося з великої літери для підвищення читабельності.
+ - Існують інші способи для капіталізації рядків, наприклад, використання функцій програмування, але використання Shell Fish - це швидкий і зручний спосіб для цього.
+ - У Shell Fish, капіталізація рядка реалізована за допомогою вбудованих функцій `string match` та `string replace`.
 
-У версії Fish Shell є функція capitalize, яка дозволяє капіталізувати перший символ рядка. Якщо передати параметр -t, то капіталізується кожне слово в рядку. Також можна використовувати цю функцію для капіталізації назви файлу, що може бути корисно при роботі з файловою системою.
-
-## Дивись також
-
-- [Документація Fish Shell по capitalize](https://fishshell.com/docs/current/cmds/capitalize.html)
-- [Стаття на сайті Fish Shell про capitalize](https://fishshell.com/docs/current/tutorial.html#capitalize)
+## Дивись також:
+Посилання на додаткові інформаційні джерела:
+ - [Fish Shell документація](https://fishshell.com/docs/current/)
+ - [Стаття про капіталізацію рядка на GeekyMentor](https://geekymentor.com/string-capitalization-in-java/)
+ - [Приклади використання Shell Fish на GitHub](https://github.com/fish-shell/fish-shell/wiki/Cookbook-:-Useful-snippets-and-functions)

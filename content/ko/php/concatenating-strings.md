@@ -1,7 +1,7 @@
 ---
-title:                "문자열 연결하기"
-html_title:           "PHP: 문자열 연결하기"
-simple_title:         "문자열 연결하기"
+title:                "문자열 합치기"
+html_title:           "PHP: 문자열 합치기"
+simple_title:         "문자열 합치기"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Strings"
@@ -10,31 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜 
-문자열을 연결하게될 이유에 대한 최대 2 문장의 설명입니다. 
-문자열을 연결하는 것에 대해 궁금 할 수 있으며 기본적인 개념에 대한 이해를 제공합니다. 
+## 무엇인가요? 왜하는 거죠?
 
-## 어떻게 
+문자열 연결(concatenation)이란 여러 개의 문자열을 하나로 합치는 작업을 말합니다. 이는 문자열을 조작하거나 출력할 때 특히 유용합니다. 예를 들어, 여러 개의 이메일 주소를 하나의 문자열로 만들어서 한 번에 전송하거나, 긴 HTML 코드를 하나의 문자열로 만들어서 출력할 수 있습니다.
+
+## 하는 방법은?
+
 ```PHP
-// 문자열을 연결하는 방법은 매우 간단합니다. 문자열간에 점을 사용하여 연결될 수 있습니다. 
-$string1 = "안녕";
-$string2 = "하세요";
-echo $string1 . $string2; // 출력: 안녕하세요
+// 문자열 연결 예제 (Concatenation Example)
+$email1 = "example1@gmail.com";
+$email2 = "example2@gmail.com";
+
+// 문자열 연결 연산자를 사용해서 이메일 주소를 하나의 문자열로 합칩니다.
+$email_string = $email1 . ", " . $email2;
+
+// 합쳐진 문자열을 출력합니다.
+echo $email_string;
+
+// 출력 결과: example1@gmail.com, example2@gmail.com
 ```
-```PHP
-// 변수와 문자열을 함께 연결할 수도 있습니다. 또한 여러 개의 문자열을 한 번에 연결할 수도 있습니다. 
-$name = "James";
-echo "안녕," . $name . "!"; // 출력: 안녕, James!
-echo "여러분은 " . $string1 . $string2 . " 맞습니까?"; //출력: 여러분은 안녕하세요 맞습니까?
-```
 
-## 더 깊이 
-문자열을 연결하는 것은 매우 일반적이고 유용한 작업입니다. PHP에서 문자열을 연결하는 방법은 무제한입니다. 이 덕분에 여러분은 복잡한 문자열을 만들 수 있으며, 다양한 옵션을 사용하여 사용자에게 보다 다채로운 내용을 제공할 수 있습니다. 형식화된 문자열을 만드는 데 매우 유용한 기능입니다. 또한 문자열을 연결할 때 주의해야 할 몇 가지 요소도 있습니다. 이를 잘 이해하고 올바르게 사용하면 사용자들에게 편리한 문자열을 제공할 수 있습니다. 
+## 깊숙히 알아보기
 
-## 연결의 마침표 
-문자열을 연결하는 것은 PHP 프로그래밍에서 매우 일반적이고 중요한 역할을 합니다. 이 기능을 익히고 다양한 방식으로 사용하는 것을 모티브로 하여 더 많은 PHP 기능을 배워보세요. 문자열을 연결하는 방법을 자유롭게 사용하고 문제를 해결하는 데 사용할 수 있습니다. 
+### 역사적 배경
+PHP 언어에서의 문자열 연결은 이미 오래된 역사를 가지고 있습니다. 하지만 최근에는 신기술인 문자열 보간(string interpolation)이 보다 쉽고 간편한 방법으로 문자열 연결을 대체하고 있습니다.
 
-## 연결 관련 자료 
-- [PHP 공식 문서 - 문자열 연결](https://www.php.net/manual/en/language.operators.string.php)
-- [W3Schools - PHP 문자열 연결](https://www.w3schools.com/php/php_operators.asp)
-- [PHP 문자열 연결 예제](https://www.tutorialspoint.com/php/php_string_concatenation.htm)
+### 대안들
+문자열 연결에는 여러 가지 방법이 있습니다. 언어마다 다르지만, PHP에서는 더 편리한 문자열 보간 연산자인 `$`를 사용할 수도 있습니다. 또 다른 대안으로는 `sprintf` 함수를 사용하는 것이 있습니다.
+
+### 세부적인 구현 방법
+PHP에서는 문자열 연결 연산자인 `.`을 사용하면 됩니다. 이 연산자는 왼쪽에서 오른쪽으로 문자열을 합치는 역할을 합니다. 또한, 문자열을 합치는 과정에서 자동으로 문자열을 변환(conversion)하지 않기 때문에 더욱 효율적인 문자열 연결이 가능합니다.
+
+## 관련 자료들
+
+- [PHP 문서 - 문자열 연결(Concatenation)](https://www.php.net/manual/en/language.operators.string.php)
+- [PHP 문서 - 문자열 보간(String Interpolation)](https://www.php.net/manual/en/language.types.string.php#language.types.string.parsing)

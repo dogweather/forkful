@@ -1,7 +1,7 @@
 ---
-title:                "두 날짜 비교하기"
-html_title:           "Arduino: 두 날짜 비교하기"
-simple_title:         "두 날짜 비교하기"
+title:                "날짜 두 개 비교하기"
+html_title:           "Arduino: 날짜 두 개 비교하기"
+simple_title:         "날짜 두 개 비교하기"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Dates and Times"
@@ -10,59 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+## 무엇인가?& 왜 그래? :
+두 개의 날짜를 비교하는 것은 프로그래머들이 날짜를 비교할 때 사용하는 방법입니다. 이는 특정 날짜가 다른 날짜보다 뒤에 있는지 앞에 있는지 알아내는 데 사용됩니다.
 
-아두이노 프로그래밍에서 두 날짜를 비교하는 것은 특정 이벤트를 제어하거나 상황을 판별하는 데에 유용합니다.
+## 하는 법:
+아래는 두 개의 날짜를 비교하는 간단한 샘플 코드입니다. 코드 블록 안에 있는 **Arduino ..** 부분은 실제 Arduino 코드를 작성하는 부분입니다.
 
-## 어떻게
+```Arduino
+int date1 = 20200622; // 첫 번째 날짜
+int date2 = 20200615; // 두 번째 날짜
 
-아래는 두 날짜를 비교하는 간단한 예제 코드입니다. 이 코드를 이용하여 원하는 날짜를 비교할 수 있습니다.
+// 첫 번째 날짜가 더 큰지 비교
+if (date1 > date2) {
+  Serial.println("첫 번째 날짜가 두 번째 날짜보다 뒤에 있습니다.");
+} 
 
-```Arduino 
-#include <DS3231.h> // RTC Library
-DS3231 rtc;
+// 두 번째 날짜가 더 큰지 비교
+if (date2 > date1) {
+  Serial.println("두 번째 날짜가 첫 번째 날짜보다 뒤에 있습니다.");
+} 
 
-//Year, Month, Day, Hour, Minute, Second
-DateTime date1(2020, 4, 5, 15, 30, 0); 
-DateTime date2(2019, 8, 23, 18, 45, 0);
-
-void setup() {
-  Serial.begin(9600); // Serial Monitor를 위한 설정
-  rtc.begin(); // RTC를 초기화합니다.
-}
-
-void loop() {
-  DateTime now = rtc.now(); // 현재 날짜와 시간을 가져옵니다.
-
-  // 두 날짜를 비교합니다.
-  if(now < date1) {
-    Serial.println("Date1은 현재 날짜보다 나중입니다.");
-  } else if(now > date1) {
-    Serial.println("Date1은 현재 날짜보다 이전입니다.");
-  } else {
-    Serial.println("Date1은 현재 날짜와 같습니다.");
-  }
-
-  // 다른 방법으로도 두 날짜를 비교할 수 있습니다.
-  if(date2.isBefore(now)) {
-    Serial.println("Date2는 현재 날짜보다 이전입니다.");
-  } else if(date2.isAfter(now)) {
-    Serial.println("Date2는 현재 날짜보다 나중입니다.");
-  } else {
-    Serial.println("Date2는 현재 날짜와 같습니다.");
-  }
-  
-  delay(1000); // 1초마다 반복합니다.
+// 두 날짜가 같은지 확인
+if (date1 == date2) {
+  Serial.println("두 날짜가 같습니다.");
 }
 ```
 
-위의 코드를 실행하면 아두이노의 시리얼 모니터에 두 날짜를 비교한 결과가 출력됩니다. 이를 통해 현재 날짜가 두 날짜 중 어떤 것과 비교해서 이전, 이후, 같음을 판별할 수 있습니다.
+아래는 상기 코드의 출력 예시입니다. Serial Monitor를 열어서 코드를 실행시켜보세요!
 
-## 딥 다이브
+```
+첫 번째 날짜가 두 번째 날짜보다 뒤에 있습니다.
+```
 
-아두이노의 RTC(Real-Time Clock) 라이브러리를 사용하면 두 날짜를 비교하는 것이 간단해집니다. 이 라이브러리는 DS1307 또는 DS3231과 같은 RTC 모듈과 함께 사용될 수 있습니다. 비교할 날짜는 DateTime 클래스로 생성할 수 있으며, 두 개의 DateTime 객체를 비교하여 작은지, 큰지, 같은지를 판별할 수 있습니다.
+## 깊이 다뤄보기:
+### 역사적 배경:
+날짜를 비교하는 방법은 과거부터 프로그래머들이 많이 사용해온 기술 중 하나입니다. 이를테면 예약 시스템이나 이벤트 관리 시스템에서 자주 사용됩니다.
 
-## See Also
+### 대안:
+날짜 비교를 위해 다양한 알고리즘이나 라이브러리가 존재합니다. 이 중 가장 대표적인 것은 시간 차이를 계산하는 기능을 갖춘 시간 관리 라이브러리입니다. 이를 이용해 특정 날짜와 현재 시간의 차이를 계산할 수 있습니다.
 
-- RTC 라이브러리: https://www.arduino.cc/en/Reference/RTC
-- DS3231 RTC 모듈: https://www.adafruit.com/product/3013
+### 구현 세부사항:
+날짜를 비교할 때는 주로 년, 월, 일을 비교합니다. 이를 비교하기 위해 각각의 날짜를 정수로 변환한 뒤 크기를 비교하는 방법을 사용합니다. 이때 주의해야 할 점은 날짜를 정확하게 입력하는 것이 중요합니다.
+
+## 참고 자료:
+- [Arduino에서 날짜 비교하기](https://circuits4you.com/2016/11/15/arduino-date-time/)
+- [시간 관리 라이브러리](https://playground.arduino.cc/Code/Time/)

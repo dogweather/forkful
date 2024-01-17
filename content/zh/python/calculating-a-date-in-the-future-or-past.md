@@ -10,76 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
+# 为什么要在未来或过去计算日期？
+计算未来或过去的日期是指根据给定的时间间隔，来确定一个特定日期。程序员经常这样做，因为日期是编程中经常用到的重要信息。无论是在创建日历应用还是处理金融交易记录，都离不开日期。
 
-计算未来或过去的日期可能是帮助人们规划日程表或安排活动的一种方式。Python提供了方便的功能来执行此任务，让我们来深入了解一下吧！
-
-## 如何操作
-
-### 1. 导入datetime模块
-
-首先，我们需要导入Python的datetime模块，它包含了许多有用的函数来处理日期和时间。
+## 如何实现
+在Python中，我们可以使用`datetime`模块来进行日期的计算。下面是一个简单的示例代码：
 
 ```Python
 import datetime
+
+# 当前日期
+today = datetime.date.today()
+
+# 未来日期
+future = today + datetime.timedelta(days=7)
+
+# 过去日期
+past = today - datetime.timedelta(days=7)
+
+# 打印结果
+print('当前日期:', today)
+print('未来日期:', future)
+print('过去日期:', past)
 ```
 
-### 2. 获取当前日期
-
-要获取当前日期，我们可以使用datetime模块中的datetime类的today()函数。
-
-```Python
-today = datetime.today()
-print(today)
-```
-
-输出：
+输出结果：
 
 ```
-2021-08-05 21:43:08.638832
-```
-
-### 3. 计算未来或过去的日期
-
-要计算未来的日期，我们可以使用datetime模块中的timedelta类的函数。 timdelta类可以用来表示日期之间的差距。
-
-下面的示例中，我们使用timedelta来计算当前日期后的3天的日期。
-
-```Python
-three_days_later = today + datetime.timedelta(days=3)
-print(three_days_later)
-```
-
-输出：
-
-```
-2021-08-08 21:43:08.638832
-```
-
-同样的，我们也可以计算过去的日期，只需将timedelta的参数改为负数。
-
-```Python
-three_days_ago = today - datetime.timedelta(days=3)
-print(three_days_ago)
-```
-
-输出：
-
-```
-2021-08-02 21:43:08.638832
+当前日期: 2021-09-20
+未来日期: 2021-09-27
+过去日期: 2021-09-13
 ```
 
 ## 深入了解
+在历史上，人们通过天文学来推算日期。然而，随着计算机科学的发展，我们可以使用各种编程语言来计算日期。除了Python的`datetime`模块之外，还有其他额外的库可以实现日期计算，如`dateutil`和`moment`。
 
-datetime模块中还有许多其他有用的函数，例如strftime()函数可以将日期转换为不同的格式，strptime()函数可以将字符串转换为datetime对象。对于需要处理日期和时间的任务，这些函数都是非常实用的。
+实现日期计算的一种方法是使用时间戳。时间戳是从特定时间（通常是格林威治时间1970年1月1日午夜）到给定日期的秒数。然后，我们可以通过添加或减去秒数来计算日期。
 
-此外，Python还有第三方模块dateutil，它提供了更多更灵活的日期和时间操作功能，具体可以查看它的官方文档。
-
-## 参考链接
-
-- [Python datetime模块文档](https://docs.python.org/3/library/datetime.html)
-- [dateutil官方文档](https://dateutil.readthedocs.io/en/stable/index.html)
-
-## 参考
-
-- [Python 100天 - 第26天：datetime模块](https://www.bilibili.com/video/BV1m7411J7Es?p=26)
+## 参考资料
+- [datetime 模块文档](https://docs.python.org/3/library/datetime.html)
+- [dateutil 文档](https://dateutil.readthedocs.io/en/stable/)
+- [moment 文档](https://momentjs.com/docs/)

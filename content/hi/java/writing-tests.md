@@ -1,7 +1,7 @@
 ---
-title:                "टेस्ट लिखना"
-html_title:           "Java: टेस्ट लिखना"
-simple_title:         "टेस्ट लिखना"
+title:                "टेस्ट लेखन"
+html_title:           "Java: टेस्ट लेखन"
+simple_title:         "टेस्ट लेखन"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Testing and Debugging"
@@ -10,27 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
+# Kya & Kyu?
+Testing ek samasya hai jo har programmer ko aati hai. Lekin ye zaroori hai kyuki testing ke bina humare code par kabhi bharosa nahi ho sakta. Testing ke madhyam se hum apne code ki quality ko check karte hai aur bugs ko pehle se hi pata lagate hai, jisse unhe baad me theek karna asaan hojata hai.
 
-तो आप प्रोग्रामिंग में रुचि रखते हैं और आपको अपनी कोड की गुणवत्ता को सुनिश्चित करना है? या आपके कोड में नए बदलाव करने के लिए डीबगिंग करने में बहुत समय लगता है? तो इससे बचने का एक अच्छा तरीका है प्रोग्रामिंग टेस्ट लिखना। आइए जानते हैं कि आप कैसे एक जावा प्रोग्राम में टेस्ट लिख सकते हैं।
+# Kaise kare: 
+```Java 
+public class Calculator {
+  public static void main(String[] args) {
+    // Hum apne program me ek simple calculator banayenge
+    int num1 = 5;
+    int num2 = 10;
 
-## कैसे
+    // Addition
+    int sum = num1 + num2;
+    System.out.println("Addition: " + sum); // Output: Addition: 15
 
-टेस्ट लिखना बहुत आसान है। सबसे पहले, आपको एक टेस्ट केस की आवश्यकता होगी जो आपके कोड के एक खास हिस्से को चेक करेगा। यह टेस्ट केस इस आसान से ```Java
- @Test
-public void testSum() {
-int result = Calculator.sum(2, 3);
-assertEquals(5, result);
+    // Subtraction
+    int diff = num2 - num1;
+    System.out.println("Subtraction: " + diff); // Output: Subtraction: 5
+
+    // Multiplication
+    int product = num1 * num2;
+    System.out.println("Multiplication: " + product); // Output: Multiplication: 50
+
+    // Division
+    int quotient = num2 / num1;
+    System.out.println("Division: " + quotient); // Output: Division: 2
+
+    // Modulus
+    int remainder = num2 % num1;
+    System.out.println("Modulus: " + remainder); // Output: Modulus: 0
+  }
 }
 ```
+Is example me humne ek simple calculator banaya hai jisme hum addition, subtraction, multiplication, division aur modulus operations perform kar rahe hai.
 
-आपको अपने कोड में बदलाव करने के लिए कोई सुझाव या वार्निंग कोड के साथ जुड़ा टेस्ट केस भी लिख सकते हैं। इससे आपको अपने कोड की सुरक्षा और स्थिरता बनी रहेगी।
+# Gehri Jhaanki:
+Testing ka concept pehli baar 1950s me introduce hua tha. Exponentially growing software industry ke saath saath, testing techniques bhi badhte gaye. Aaj kal kayi alternatives available hai jaise manual testing, automated testing, unit testing, integration testing, system testing, regression testing aur bahut kuch.
 
-## गहराई में जाएं
-
-टेस्ट लिखना आपको अपने कोड की गहराई पर जाने का मौका देता है। टेस्ट केस लिखने के दौरान, आप अपने कोड में पोटेंशियल बग्स और समस्याओं को ढूंढ सकते हैं और उन्हें सुधार सकते हैं। यह आपके कोड को स्थिर और आसान बनाता है। इसके अलावा, टेस्ट केस आपको अपने कोड को तेजी से और अलग अलग मानकों के अनुसार टेस्ट करने का मौका देता है।
-
-## देखें भी
-
-- [जावा प्रोग्रामिंग ट्यूटोरियल](https://www.javatpoint.com/java-tutorial)
-- [ज
+# Aur Bhi Dekhe:
+- [JUnit](https://junit.org/junit5/) - A popular Java testing framework
+- [TutorialsPoint - Java Testing](https://www.tutorialspoint.com/java_testing/index.htm) - A comprehensive tutorial on testing in Java

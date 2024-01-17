@@ -1,7 +1,7 @@
 ---
-title:                "Skriving til standardfeil"
-html_title:           "Ruby: Skriving til standardfeil"
-simple_title:         "Skriving til standardfeil"
+title:                "Skriver til standardfeil"
+html_title:           "Ruby: Skriver til standardfeil"
+simple_title:         "Skriver til standardfeil"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Files and I/O"
@@ -10,40 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##Hvorfor
+## Hva & hvorfor?
+Å skrive til standardfeil betyr å sende feilmeldinger til en spesifikk type output i Ruby-programmering. Dette er nyttig fordi det skiller feil- og informasjonsmeldinger, og gjør det enklere å finne og løse problemer i koden.
 
-Mange ganger ønsker vi å vise meldinger eller feilmeldinger til brukeren mens programmet vårt kjører. Dette kan være nyttig for å forklare hva som skjer eller informere om eventuelle problemer. Å skrive til standard error gir en enkel og effektiv måte å gjøre akkurat det.
+## Hvordan gjør man det:
+For å skrive til standardfeil i Ruby, bruker du bare ```$stderr.puts()``` funksjonen i koden din. Dette vil skrive ut meldingene dine i standardfeil-output, i stedet for standard output.
 
-##Slik gjør du det
-
-For å skrive til standard error, kan du bruke metoden `puts` og skrive ut meldingen din etterfulgt av `STDERR` som et argument. For eksempel:
-
-```Ruby
-puts "Dette er en melding til brukeren" + STDERR
+```ruby
+$stderr.puts("Dette er en feilmelding")
 ```
 
-Dette vil skrive ut meldingen til brukeren og vises som en feilmelding på skjermen. Du kan også bruke `warn` metoden, som gjør det samme som `puts` metoden, men bare for standard error. For eksempel:
-
-```Ruby
-warn "Dette er en feilmelding" # Vil skrive ut meldingen på standard error
+Dette vil gi følgende output:
+```
+Dette er en feilmelding
 ```
 
-Du kan også skrive ut variabelverdier i meldinger ved hjelp av string interpolasjon. For eksempel:
+## Hva ligger under overflaten:
+Skriving til standardfeil er en vanlig praksis i programmering og finnes også i andre programmeringsspråk som C og Java. Alternativet til å skrive til standardfeil er å bruke ```$stdout.puts()```, som vil skrive til standard output.
 
-```Ruby
-name = "John"
-warn "Hei #{name}, velkommen til programmet vårt!"
-```
+Når du skriver til standardfeil, bruker du egentlig en funksjon som heter ```$stderr.write()```, som skriver meldingen uten å legge til linjeskift. Dette kan være nyttig når du vil kontrollere hvor linjeskift skal være i koden din.
 
-Dette vil skrive ut "Hei John, velkommen til programmet vårt!" på standard error.
-
-##Dykk dypere
-
-Standard error er en spesiell filstrøm som brukes for å sende feilmeldinger til brukeren. Det er anbefalt å bruke denne strømmen for alle ikke-kritiske meldinger og feilmeldinger, mens standard out bør brukes for den vanlige utdataen til programmet.
-
-En annen grunn til å bruke standard error er at det kan kobles til et loggebibliotek for å lagre alle meldinger og feilmeldinger samlet på ett sted. Dette kan være nyttig for feilsøking av problemer i et større prosjekt.
-
-##Se også
-
-- [Ruby dokumentasjon for StandardError](https://ruby-doc.org/core-2.7.0/StandardError.html)
-- [Enkel guide til Ruby exceptions](https://www.rubyguides.com/2019/03/ruby-exceptions/)
+## Se også:
+- [Ruby dokumentasjon for $stderr](https://ruby-doc.org/core-2.6.3/IO.html#method-c-fs)
+- [Stack Overflow-innlegg om skriving til standardfeil](https://stackoverflow.com/questions/2612369/when-to-use-stderr-instead-of-stdout-in-bash-scripts)

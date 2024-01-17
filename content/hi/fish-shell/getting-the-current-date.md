@@ -10,40 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Kyun
+## क्या और क्यों?
+वर्तमान तारीख को प्राप्त करना अच्छा होता है क्योंकि प्रोग्रामर्स को अपने स्क्रिप्टों या कोड में उसका उपयोग अक्सर करना पड़ता है। इससे कोड को प्रासंगिक और स्वतंत्र बनाने में मदद मिलती है।
 
- Soch rahe ho ki aap abhi kyun taareekh jaan na chahte hain? Shayad aapko apne code me current date ka use karna hai ya fir aapko pata karna hai ki aaj ka din konsa hai. Fish shell me date ko kaise retrieve karna hai, uske baare me hum aaj baat karenge.
-
-## Kaise Kare
-
-Fish Shell me current date ko jaan ne ke liye kuch simple steps follow karen:
-
-1. Sabse pehle apne terminal me "fish" command type kar ke Fish shell ko launch kare. Agar aapke paas ye shell already installed hai to ye kaafi simple hoga, agar installed nahi hai to apne operating system ke hisab se installation kare.
-2. Ab terminal me "date" command type kar ke enter kare. Ye command aapko current date and time ko display karegi. 
-3. Yaha par aapko current date and time ka format (MM/DD/YY) dekhne milega. Agar aapko koi specific format chahiye to aap "date" command ke sath "-s" flag ka use kar sakte hai, jaise ki "date -s '+%d-%b-%Y'" is command ka output aapko current date ko "DD-Mon-YYYY" format me dikhayega.
-
-
-**Fish Shell me date ko display karne ka code example:**
+## कैसे करें?
+जब भी हम अपने फिश शेल में "date" कमांड को चलते हैं, तो हमें स्क्रीन पर वर्तमान तारीख का रिटर्नर्न आता है।
 
 ```Fish Shell
 date
-07/03/2021
-date -s '+%d-%b-%Y'
-03-Jul-2021
 ```
 
-## Gehri Jankari
+इससे हमें अपने सिस्टम में वर्तमान तारीख, दिन, समय और समय क्षेत्र का पता चलता है। अगर हम चाहे तो इसे और अलग के फॉरमेट में भी देख सकते हैं। नीचे दिए गए उदाहरण में हमने इसे "MM/DD/YYYY" फॉरमेट में प्रदर्शित किया है।
 
-Agar aap date ko puri tarah se samajhna chahte hain to Fish Shell ke date command ke sath kuch important flags ke baare me jaan lena jaruri hai. In flags se aap date ko kisi bhi specific format me display kar sakte hain.
+```Fish Shell
+date +"%m/%d/%Y"
+```
 
-- **-u:** Is flag ka use Greenwich Mean Time (GMT) me date and time display karne ke liye kiya jata hai.
-- **-d:** Is flag ka use naya date and time ko display karne ke liye kiya jata hai.
-- **-s:** Is flag ka use current date and time me specific changes karne ke liye kiya jata hai, jaise ki humne pehle bhi bataya ki is flag ke sath hum kisi specific format ka use kar sakte hain.
-- **-h:** Is flag ka use display karne wale date ko usi waqt ki local time zone ke hisab se convert karne ke liye kiya jata hai.
+नीचे दिया गया आउटपुट हमें "01/01/2022" तारीख का रिटर्नर्न देगा।
 
-## See Also
-Aap date ko retrieve karne ke liye kisi specific language me bhi coding kar sakte hain, jaise ki Python, Java, C++ etc.
+```Fish Shell
+01/01/2022
+```
 
-- [Python Date and Time](https://www.programiz.com/python-programming/datetime)
-- [Java Date and Time](https://www.geeksforgeeks.org/java-util-date-class-java/)
-- [C++ Date and Time](https://www.tutorialspoint.com/cpp_standard_library/cpp_date_time.htm)
+## गहरी खोज करें
+इस अध्ययन में, हमने एक साधारण तरीके से देखा है कि कैसे हम अपने फिश शेल के माध्यम से वर्तमान तारीख को प्राप्त कर सकते हैं। लेकिन इसके अलावा भी कई अन्य तरीके हैं जिनसे हम वर्तमान तारीख को प्राप्त कर सकते हैं, जैसे कि "cal" कमांड या अस्पताल क्षेत्र में वर्तमान समय को प्राप्त करना।
+
+गहराई में जाते हुए, स्ट्रक्चर से, वर्तमान तारीख को प्राप्त करने के लिए फिश शेल प्रोग्रामिंग काफी सरल है। यदि आप अपने फिश शेल कार्यों में वर्तमान तारीख का उपयोग करना चाहते हैं, तो आप अपने स्क्रिप्टों या कोड में इसे सही तरीके से उपयोग कर सकते हैं।
+
+## और भी देखें
+अगर आप फिश शेल प्रोग्रामिंग के बारे में और अधिक जानना चाहते हैं, तो आप FISH Shell की आधिकारिक दस्तावेज़ की जाँच कर सकते हैं। आप अपने फिश शेल प्रोग्रामिंग से जुड़े और अधिक उपयोगी चीजों के लिए इसके GitHub पर जाकर कई संसाधनों को भी देख सकते हैं।

@@ -1,7 +1,7 @@
 ---
-title:                "Eine Zukunft oder Vergangenheitsdatum berechnen"
-html_title:           "C: Eine Zukunft oder Vergangenheitsdatum berechnen"
-simple_title:         "Eine Zukunft oder Vergangenheitsdatum berechnen"
+title:                "Ein Datum in der Zukunft oder Vergangenheit berechnen"
+html_title:           "C: Ein Datum in der Zukunft oder Vergangenheit berechnen"
+simple_title:         "Ein Datum in der Zukunft oder Vergangenheit berechnen"
 programming_language: "C"
 category:             "C"
 tag:                  "Dates and Times"
@@ -10,55 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+# Was & Warum?
+Das Berechnen eines Datums in der Vergangenheit oder Zukunft ist ein häufiges Szenario in der Programmierung. Programmierer nutzen diese Funktion, um beispielsweise das Ablaufdatum einer Garantie zu bestimmen oder um Datumsbezüge in einer Anwendung zu erstellen.
 
-Wenn du in deinen C-Programmen mit Datumsangaben arbeitest, möchtest du vielleicht auch in der Lage sein, ein Datum in der Zukunft oder Vergangenheit zu berechnen. Das kann nützlich sein, um beispielsweise eine Benachrichtigung für ein bestimmtes Datum in der Zukunft zu programmieren oder um zu überprüfen, ob ein Datum in der Vergangenheit liegt.
+# How to:
+Um ein Datum in der Zukunft oder Vergangenheit zu berechnen, können wir die Funktion "time.h" in C nutzen. Hier ist ein Beispiel, um das Datum von morgen zu berechnen:
 
-## Wie geht das?
-
-Um ein Datum in der Zukunft oder Vergangenheit zu berechnen, kannst du die Funktionen aus der Zeitbibliothek "time.h" in deinem C-Code verwenden. Hier ist ein Beispiel, wie du ein Datum 10 Tage in der Zukunft berechnen kannst:
-
-```C
+```
 #include <stdio.h>
+#include <stdlib.h>
 #include <time.h>
 
-int main() {
-  // Aktuelles Datum
-  time_t now;
-  // In 10 Tagen
-  time_t tenDays = 10 * 24 * 60 * 60; 
-  // Berechne Datum in der Zukunft
-  now = time(NULL) + tenDays;
-  // Formatierung des Datums
-  printf("In 10 Tagen ist der %s", asctime(localtime(&now)));
-  return 0;
+#define ONE_DAY 86400 // Anzahl der Sekunden in einem Tag
+
+int main()
+{
+    time_t now = time(NULL); // Aktuelles Datum und Uhrzeit abrufen
+    time_t tomorrow = now + ONE_DAY; // Eine Sekunde zum aktuellen Datum und Uhrzeit addieren
+    struct tm *date = localtime(&tomorrow); // In eine lokale Zeitstruktur konvertieren
+    printf("Tomorrow's date is: %d/%d/%d\n", date->tm_mon + 1, date->tm_mday, date->tm_year + 1900); // Das berechnete Datum ausgeben
+    return 0;
 }
 ```
+**Ausgabe:**
+Tomorrow's date is: 3/2/2020
 
-**Output:**
-```
-In 10 Tagen ist der Tue Aug 24 11:25:33 2021
-```
+Das obige Beispiel zeigt, wie wir mithilfe der Funktionen "time.h" und "localtime" ein Datum in der Zukunft berechnen und ausgeben können. Der Code kann auch angepasst werden, um ein Datum in der Vergangenheit zu berechnen.
 
-Du kannst auch ein Datum in der Vergangenheit berechnen, indem du einfach die Anzahl an Tagen mit einem Minuszeichen versiehst, wie in diesem Beispiel:
+# Deep Dive:
+Das Konzept, ein Datum in der Zukunft oder Vergangenheit zu berechnen, geht zurück auf die Entstehung der ersten kalenderbasierten Gesellschaften. Menschen haben schon immer versucht, die Zeit und das Datum zu messen und zu organisieren. Heutzutage nutzt die moderne Technologie komplexe mathematische Algorithmen, um das Berechnen eines Datums in der Zukunft oder Vergangenheit zu erleichtern.
 
-```C
-time_t now;
-time_t tenDays = -10 * 24 * 60 * 60; 
-now = time(NULL) + tenDays;
-printf("Vor 10 Tagen war es der %s", asctime(localtime(&now)));
-```
+Neben der Verwendung der "time.h" Funktion gibt es auch andere Möglichkeiten, um Datumsberechnungen in C durchzuführen. Eine alternative Methode ist die Nutzung von Datetime-Bibliotheken wie "Libdatetime" oder "Libical". Diese erweiterten Libraries bieten zusätzliche Funktionen und Methoden, um den Berechnungsprozess zu optimieren.
 
-**Output:**
-```
-Vor 10 Tagen war es der Mon Aug 09 11:25:33 2021
-```
+Bei der Implementierung der Datumsberechnung in C ist es wichtig, auf die Datentypen und Formatierung zu achten. Die Funktion "localtime" gibt beispielsweise eine lokale Zeitstruktur zurück, während "gmtime" eine GMT-Struktur zurückgibt. Durch die richtige Verwendung der Datentypen können Fehler bei der Berechnung vermieden werden.
 
-## Deep Dive
-
-Um genauer zu verstehen, wie die Funktionen aus der Zeitbibliothek "time.h" arbeiten, kannst du dir die Dokumentation und verschiedene Tutorials zu diesem Thema anschauen. Es ist auch wichtig zu beachten, dass das Ergebnis der Berechnung von Zeitangaben von verschiedenen Faktoren wie z.B. der Zeitzone abhängen kann.
-
-## Siehe auch
-
-- [Offizielle Dokumentation zu "time.h"](https://www.tutorialspoint.com/c_standard_library/time_h.htm)
-- [Tutorial zur Arbeit mit Zeitangaben in C](https://www.geeksforgeeks.org/time-functions-in-c-c/)
+# See Also:
+- [C time.h reference](https://www.tutorialspoint.com/c_standard_library/time_h.htm)
+- [Libdatetime Library](https://docs.python.org/2/library/datetime.html)
+- [Libical Library](https://libical.github.io/libical/)

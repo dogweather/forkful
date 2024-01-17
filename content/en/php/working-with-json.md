@@ -10,52 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
+JSON, or JavaScript Object Notation, is a lightweight data interchange format commonly used in web development. It is used to store and transmit data between a server and a web application, making it a crucial tool for developers who need to parse and handle data in their projects.
 
-JSON (JavaScript Object Notation) is a popular data format used to transfer and store information in a structured way. With the rise of web development and API-based applications, knowledge of working with JSON has become essential for developers in order to effectively communicate and transfer data. It is also supported by a wide range of programming languages, making it a versatile choice for data manipulation.
+## How to:
+To work with JSON in PHP, we can use the built-in functions `json_encode()` and `json_decode()`. Let's take a look at an example:
 
-## How To
-
-To work with JSON in PHP, we can use a few built-in functions: `json_encode()` and `json_decode()`. These functions allow us to convert PHP arrays into a JSON string, and vice versa.
-
-### Encoding Data to JSON
-
-```PHP
-// Sample PHP array
-$data = [
-    'name' => 'John Doe',
+```
+// Encoding data into JSON format
+$data = array(
+    'name' => 'John',
     'age' => 25,
-    'occupation' => 'Web Developer'
-];
+    'hobbies' => array('reading', 'gaming', 'hiking')
+);
 
-// Convert to JSON string
 $json = json_encode($data);
 
-// Output: {"name": "John Doe", "age": 25, "occupation": "Web Developer"}
+// Output: {"name":"John", "age":25, "hobbies":["reading","gaming","hiking"]}
 echo $json;
+
+// Decoding data from JSON format
+$decoded_data = json_decode($json);
+
+// Output: John
+echo $decoded_data->name;
+
 ```
 
-### Decoding JSON to PHP
+As we can see, the JSON data is converted into a string when using the `json_encode()` function and can be easily decoded back into a PHP object using `json_decode()`.
 
-```PHP
-// Sample JSON string
-$json = '{"name": "John Doe", "age": 25, "occupation": "Web Developer"}';
+We can also pass an optional second argument to the `json_decode()` function to specify whether we want to get the data back as an object or an array. For example:
 
-// Convert to PHP array
-$data = json_decode($json, true);
+```
+// Decoding data as an array
+$decoded_data = json_decode($json, true);
 
-// Output: Array ( [name] => John Doe, [age] => 25, [occupation] => Web Developer )
-print_r($data);
+// Output: John
+echo $decoded_data['name'];
 ```
 
-## Deep Dive
+## Deep Dive:
+JSON was first introduced in 2001 as an alternative to the more complex XML format. It quickly gained popularity due to its lightweight and easy-to-read syntax. JSON has become the standard format for data transmission in web development and is widely supported by most languages.
 
-Apart from basic encoding and decoding, there are various other functions in PHP that allow us to work with JSON data. These include `json_last_error()` to get the last occurred error when working with JSON, `JSON_UNESCAPED_UNICODE` flag to encode unicode characters without escaping, and `JSON_PRETTY_PRINT` flag to format the output with indentation for better readability.
+One alternative to working with JSON in PHP is to use the `serialize()` and `unserialize()` functions, which serialize data into a string and unserialize it back into a PHP object. However, this approach is less flexible and not as widely used as JSON.
 
-It is also important to note that JSON supports various data types such as strings, numbers, objects, and arrays, making it a versatile choice for data storage and manipulation. However, it does not support functions or undefined values.
+When working with JSON in PHP, it's important to ensure that the data is properly encoded and decoded to prevent any errors. The `json_last_error()` function can be useful for troubleshooting and handling potential errors when working with JSON.
 
-## See Also
-
-- [PHP Official Documentation on JSON](https://www.php.net/manual/en/book.json.php)
-- [JSON.org](https://www.json.org/json-en.html)
-- [How to Use JSON with PHP - Tutorial by W3Schools](https://www.w3schools.com/js/js_json_php.asp)
+## See Also:
+To learn more about working with JSON in PHP, check out the official PHP documentation on [JSON functions](https://www.php.net/manual/en/ref.json.php). You can also read up on [best practices](https://www.json.org/json-en.html) for working with JSON and how to handle potential security risks.

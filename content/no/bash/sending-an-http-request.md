@@ -1,7 +1,7 @@
 ---
-title:                "Sende en http-forespørsel"
-html_title:           "Bash: Sende en http-forespørsel"
-simple_title:         "Sende en http-forespørsel"
+title:                "Å sende en http-forespørsel"
+html_title:           "Bash: Å sende en http-forespørsel"
+simple_title:         "Å sende en http-forespørsel"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "HTML and the Web"
@@ -10,39 +10,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hva & Hvorfor?
+Å sende en HTTP-forespørsel er en måte for dataprogrammer å kommunisere med servere og utveksle informasjon. Dette kan være nyttig for å hente data, oppdatere informasjon eller utføre handlinger på nettet. Programmere bruker HTTP-forespørsler for å integrere applikasjoner med internett og lage dynamiske nettsider og applikasjoner.
 
-Sending av HTTP-forespørsler er en viktig del av å lage automatiserte prosesser som eksisterer bak kulissene på nettet. Enten man ønsker å hente data fra en nettside, lage automatiserte tester eller integrere databaser og applikasjoner, så kan HTTP-forespørsler være en nyttig løsning.
-
-## Hvordan du gjør det
-
-Det første du må gjøre er å åpne terminalen og skrive `curl` etterfulgt av URLen til nettstedet du ønsker å gjøre en HTTP-forespørsel til. For eksempel:
+## Hvordan:
+Her er et enkelt eksempel på hvordan man kan sende en HTTP-forespørsel ved hjelp av Bash:
 
 ```Bash
-curl https://www.google.com
+curl https://www.example.com/
 ```
 
-Dette vil returnere all HTML-koden til nettsiden. Du kan også legge til forskjellige flagg for å formatere utdataen eller legge til header-informasjon i forespørselen. For å lagre utdataen i en fil kan du bruke `>` og skrive navnet på filen du vil lagre den som, for eksempel:
+Dette vil sende en GET-forespørsel til nettsiden og returnere innholdet på nettsiden som svar. Man kan også angi en rekke forskjellige alternativer for å tilpasse HTTP-forespørselen etter behov.
 
-```Bash
-curl https://www.google.com > google.html
-```
+## Dykk dypere:
+HTTP-forespørsler har eksistert siden starten av World Wide Web og spilte en viktig rolle i utviklingen av internett som vi kjenner det i dag. Det finnes også andre måter å utføre lignende oppgaver på, som for eksempel å bruke verktøy som cURL eller Wget. For å implementere en HTTP-forespørsel i Bash må man først ha en god forståelse av hvordan Bash-kommandoer fungerer og hvordan man kan trekke ut og behandle informasjon fra HTTP-svar.
 
-Dette vil lagre HTML-koden til nettsiden i en fil som heter "google.html". Du kan også bruke `wget` for å laste ned hele nettsiden, inkludert bilder, filer osv. For eksempel:
-
-```Bash
-wget -r -k https://www.google.com
-```
-
-Dette vil laste ned hele nettsiden og lagre den i en mappe som heter "www.google.com".
-
-## Dypdykk
-
-Når du sender en HTTP-forespørsel, sendes det en forespørsel til en server, og serveren sender tilbake informasjon eller data som er etterspurt. Dette skjer gjennom en såkalt "request-response" prosess. Det finnes forskjellige metoder for HTTP-forespørsler, som GET, POST, PUT og DELETE, som brukes til å utføre forskjellige handlinger på serveren. Det finnes også forskjellige statuskoder som indikerer om forespørselen var vellykket eller om det skjedde en feil, som for eksempel 200 for vellykket og 404 for ikke funnet.
-
-## Se også
-
-- ["curl"-kommandoen dokumentasjon](https://curl.se/)
-- ["wget"-kommandoen dokumentasjon](https://www.gnu.org/software/wget/)
-- [HTTP-forespørsler for nybegynnere](https://www.linux.com/training-tutorials/how-handle-http-requests-curl-wget/)
-- [Guide til HTTP-metoder og statuskoder](https://www.restapitutorial.com/httpstatuscodes.html)
+## Se også:
+For mer informasjon om HTTP-forespørsler og hvordan man kan bruke dem i Bash, sjekk ut disse ressursene:
+- [cURL documentation](https://curl.haxx.se/docs/)
+- [Bash scripting tutorial](https://www.shellscript.sh/)
+- [HTTP concepts](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview)
+- [Wget documentation](https://www.gnu.org/software/wget/manual/wget.html)

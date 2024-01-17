@@ -10,42 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
+#### 什么 & 为什么？
 
-下载网页是一个非常常见的操作，可以用来获取网页的内容、数据或者图片。无论是进行数据分析、制作网页备份还是获取信息，都会有下载网页的需求。
+下载网页指的是从互联网上获取网页内容的过程。程序员通常会这样做，是因为他们需要获取特定网页的信息，比如抓取数据或者分析网页结构。
 
-## 如何
+#### 怎么做？
 
-在Clojure中，可以使用 `clj-http` 库来下载网页。首先，需要在项目中引入这个库：
+```Clojure
+(require '[clj-http.client :as client])
 
-```
-[clj-http "3.7.0"]
-```
-
-然后，使用 `client/get` 函数来下载网页，指定网页的URL，并将结果保存在一个变量中：
-
-```
-(def page (client/get "https://www.example.com"))
+(client/get "https://example.com")
 ```
 
-通过 `:body` 键获取网页内容，在控制台上打印网页的内容：
+执行以上代码后，你将会得到一个包含网页内容的响应对象。你可以通过 `.body` 命令来获取网页内容。
 
-```
-(println (:body page))
-```
-
-最后，关闭连接，以释放资源：
-
-```
-(client/close page)
+```Clojure
+(def response (client/get "https://example.com"))
+(.body response)
 ```
 
-## 深入了解
+#### 深入了解
 
-除了基本的下载功能，`clj-http` 还提供了许多其他选项，例如可选的HTTP头、代理设置、错误处理等。可以参考官方文档来了解更多详情。
+下载网页的概念也可以追溯到互联网发展的早期，但在现代，它已经成为众多互联网应用的必备功能。除了Clojure中的clj-http库，还有其他很多库也可以用来下载网页，比如HttpKit和clj-http-lite。从技术上讲，下载网页的过程包括建立HTTP连接、发送HTTP请求、接收响应并处理响应数据的过程。如果你对网络编程感兴趣，不妨深入了解一下这个过程的细节。
 
-## 参考链接
+#### 查看更多
 
-* [Clojure官方网站](https://clojure.org/)
-* [clj-http文档](https://github.com/dakrone/clj-http)
-* [Clojure社区论坛](https://clojureverse.org/)
+- [clj-http库文档](https://github.com/dakrone/clj-http)
+- 互联网上的其他HTTP客户端库
+- HTTP协议文档

@@ -10,49 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Czym jest porównywanie dwóch dat i dlaczego programiści to robią?
+Porównywanie dwóch dat to proces porównywania dwóch punktów w czasie, aby określić, która data jest wcześniejsza lub późniejsza. Jest to przydatne w wielu przypadkach, na przykład w systemach rezerwacji, raportów finansowych lub planowania zadań.
 
-Porównywanie dat może wydawać się prostym zadaniem, ale może okazać się przydatne w wielu przypadkach. Na przykład, gdy chcemy sprawdzić, czy dana data jest przed lub po innej, lub jeśli chcemy znaleźć różnicę między dwiema datami.
+## Jak to zrobić:
+```Elixir
+# Importowanie modułu Date
+import Date
 
-## Jak to zrobić
+# Definiowanie dwóch dat
+date1 = Date.new!(2021, 3, 15)
+date2 = Date.new!(2021, 4, 1)
 
-Porównywanie dat w Elixir jest dość proste dzięki dostępnym funkcjom i operatorom.
-
-Wyobraźmy sobie, że chcemy sprawdzić, czy dana data jest przed inną. Możemy to zrobić za pomocą operatora ">". Przykład:
-
-```elixir
-"2020-05-24" > "2020-05-20"
-# wynik: true
+# Porównywanie dat
+case Date.compare(date1, date2) do
+  :lt ->
+    IO.puts("Data 1 jest wcześniejsza niż data 2")
+  :gt ->
+    IO.puts("Data 2 jest wcześniejsza niż data 1")
+  :eq ->
+    IO.puts("Obie daty są sobie równe")
+end
+```
+Output:
+```
+Data 1 jest wcześniejsza niż data 2
 ```
 
-Możemy również użyć funkcji `Date.compare/2`, aby porównać dwie daty i uzyskać wartość 1, 0 lub -1 w zależności od tego, czy pierwsza data jest większa, równa lub mniejsza niż druga. Przykład:
+## Wnikliwe spojrzenie:
+Porównywanie dat jest możliwe dzięki temu, że Elixir posiada moduł Date, który udostępnia funkcję compare do porównania dwóch dat. Alternatywnie, można użyć operatora `==` lub funkcji Date.diff, aby porównać daty.
 
-```elixir
-Date.compare(~D[2020-05-24], ~D[2020-05-20])
-# wynik: 1
-```
-
-Aby znaleźć różnicę czasu między dwoma datami, możemy użyć funkcji `DateTime.diff/2`, która zwróci różnicę w sekundach. Przykład:
-
-```elixir
-DateTime.diff(~U[2020-05-20T14:00:00Z], ~U[2020-05-15T12:00:00Z])
-# wynik: 432000
-```
-
-Możemy także użyć funkcji `Calendar.DateTime.diff/2`, która zwróci różnicę w postaci krotki z trzema elementami: dni, godzin i sekund. Przykład:
-
-```elixir
-Calendar.DateTime.diff(~U[2020-05-20T14:00:00Z], ~U[2020-05-15T12:00:00Z])
-# wynik: {5, 2, 0}
-```
-
-## Deep Dive
-
-Aby zagłębić się w temat porównywania dat w Elixir, warto wiedzieć, że te funkcje i operatory działają na typach danych `Date`, `DateTime` oraz `NaiveDateTime`. Istnieją również specjalne moduły dla tych typów danych, takie jak `Date` i `DateTime` w module `Calendar`.
-
-Warto również zauważyć, że Elixir używa "Erlang Time" (ang. Erlang Time), czyli liczby sekund od 1 stycznia 1970 roku, jako podstawowego sposobu reprezentacji dat. Jednak dla wygody użytkowników, Elixir dostarcza wygodny składniowo sposób definiowania dat, jak pokazane w przykładach powyżej.
-
-## Zobacz też
-
-- Dokumentacja Elixir dotycząca porównywania dat: https://hexdocs.pm/elixir/DateTime.html#module-comparatons
-- Wprowadzenie do operacji na datach w Elixir: https://elixirschool.com/en/lessons/basics/comparisons/
+## Zobacz również:
+Oficjalny podręcznik Elixira: https://hexdocs.pm/elixir/Date.html#compare/2

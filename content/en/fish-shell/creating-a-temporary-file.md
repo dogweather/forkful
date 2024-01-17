@@ -10,57 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-Creating temporary files can be useful when working with large amounts of data or when running complex scripts that require temporary storage. It allows the user to store and manipulate data without permanently altering existing files.
+Creating a temporary file is a common task in programming. Temporary files are used to store temporary data or intermediate results during a program's execution. This data may be needed for further processing or may be discarded once the program finishes running. 
 
-## How To
+Programmers use temporary files for a variety of reasons, such as optimizing memory usage, preventing data loss in case of program interruptions, or facilitating communication between different parts of a program.
 
-Creating a temporary file in Fish Shell is a simple process. First, we must use the built-in `mktemp` command to generate a unique name for our temporary file. We can do this by running the following command:
+## How to:
 
-```
-Fish Shell code block: 
-```console
-$ tempfile=(mktemp)
-```
-
-This will create a variable named `tempfile` with a unique name for our temporary file. Next, we can use the `echo` command to write data to our temporary file. For example, we can write the text "Hello World" to our file by running the following command:
+To create a temporary file in the Fish Shell, you can use the `mktemp` command followed by the desired file name. For example, to create a temporary file named "mytempfile", you would enter:
 
 ```
-Fish Shell code block:
-```console
-$ echo "Hello World" > $tempfile
+Fish Shell> mktemp mytempfile
 ```
 
-We can then use the `cat` command to view the contents of our temporary file:
+This will create a temporary file with a unique name in the current directory. You can then use the `echo` command to add data to the file, like this:
 
 ```
-Fish Shell code block:
-```console
-$ cat $tempfile
-Hello World
+Fish Shell> echo "This is a temporary file." > mytempfile
 ```
 
-Once we are finished using the temporary file, we can use the `rm` command to remove it from our system:
+To see the contents of the temporary file, you can use the `cat` command:
 
 ```
-Fish Shell code block:
-```console
-$ rm $tempfile
+Fish Shell> cat mytempfile
+This is a temporary file.
 ```
 
-## Deep Dive
+Once the temporary file is no longer needed, you can use the `rm` command to delete it:
 
-When we use the `mktemp` command, it generates a unique name for our temporary file based on a set of rules. By default, it will create a temporary file in the `/tmp` directory with a name in the format of `tmp.XXXXXX`. The `X` characters are replaced with random letters and numbers to ensure a unique name.
+```
+Fish Shell> rm mytempfile
+```
 
-However, the `mktemp` command also allows for customization of the temporary file name. By adding a prefix or suffix to the command, we can have more control over the name of our temporary file. For example, we can specify a prefix of `test` for our temporary file by running `mktemp test.XXXXXX`.
+## Deep Dive:
 
-Additionally, the `mktemp` command has options for creating temporary directories and setting permissions on the file created.
+The concept of temporary files dates back to the early days of computing, when computer memory and storage capacities were much lower than they are today. Temporary files were used to store data that could not fit in memory, allowing programs to run smoothly.
 
-## See Also
+Creating a temporary file is not the only way to store temporary data during program execution. Some alternatives include using environment variables, pipes, or in-memory data structures. However, temporary files offer the advantage of being persistent and easily accessible, making them a popular choice among programmers.
 
-Check out these links for more information on creating temporary files in Fish Shell:
+Internally, the `mktemp` command uses the `mkstemp()` system call to create a unique temporary file. This ensures that each time the command is executed, a new temporary file with a different name is created. The `mktemp` command also creates the file with secure permissions, making it inaccessible to other users on the system.
 
-- Official Fish Shell documentation on `mktemp` command: https://fishshell.com/docs/current/cmds/mktemp.html
-- Tutorial on using temporary files in Fish Shell: https://techstop.github.io/fish-shell-tutorial/2017/09/01/using-tmp-with-fish.html
-- Discussion forum on the benefits of using temporary files in scripting: https://superuser.com/questions/1092753/the-benefit-of-using-temp-files-in-scripts
+## See Also:
+
+- Fish Shell Official Documentation: https://fishshell.com/docs/current/index.html
+- Linux man page for mktemp command: https://linux.die.net/man/1/mktemp
+- Python's tempfile module for creating temporary files: https://docs.python.org/3/library/tempfile.html

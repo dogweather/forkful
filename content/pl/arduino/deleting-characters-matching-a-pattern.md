@@ -10,48 +10,19 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i Dlaczego?
+Usuwanie znaków pasujących do wzorca jest stosowaną techniką programowania polegającą na usunięciu wszystkich znaków z danego zestawu danych, które pasują do określonego wzorca. Programiści często wykorzystują tę technikę do wstępnego przetwarzania tekstów lub filtrowania danych.
 
-Usuwanie znaków odpowiadających wzorcowi może być niezbędne, gdy próbujemy filtrować lub przetwarzać dane, na przykład usuwając błędne znaki z odczytu z czujnika.
-
-## Jak to zrobić
-
-Aby usunąć znaki odpowiadające wzorcowi w programie Arduino, możemy wykorzystać funkcję `strstr()`. Przykładowy kod wygląda następująco:
-
-```
-//deklaracja zmiennych
-char zdanie[] = "To jest przykładowe zdanie";
-char wzorzec[] = "jest";
-char *wystapienie;
-
-void setup() {
-  //ustawienie komunikacji z Monitorem szeregowym
-  Serial.begin(9600);
-  
-  //znajdowanie pierwszego wystąpienia wzorca w zdaniu
-  wystapienie = strstr(zdanie, wzorzec); 
-  
-  //jeśli znaleziono, to usuwamy znaki odpowiadające wzorcowi i wyświetlamy zmienione zdanie
-  if(wystapienie != NULL){ 
-    do{
-      memmove(wystapienie, wystapienie + strlen(wzorzec), 1);
-    }while (wystapienie != NULL);
-    Serial.println(zdanie);
-  }
-}
-
-void loop() {
-  //nie potrzebujemy operować na danych w pętli, więc zostawiamy ją pustą
-}
+## Jak to zrobić:
+```Arduino
+String tekst = "Przykładowy tekst";
+tekst.replace("y", ""); //usunięcie wszystkich wystąpień litery "y"
+Serial.println(tekst); //wypisze "Prkładow tekst"
 ```
 
-W powyższym przykładzie najpierw deklarujemy zmienne `zdanie` i `wzorzec`, a następnie ustawiamy komunikację z Monitorem szeregowym. Następnie za pomocą funkcji `strstr()` znajdujemy pierwsze wystąpienie wzorca w zdaniu. Jeśli jest ono znalezione, to wykorzystujemy pętlę do usuwania kolejnych wystąpień znaków odpowiadających wzorcowi za pomocą funkcji `memmove()`, a następnie wyświetlamy zmienione zdanie. 
+## Głębsza analiza:
+Technika usuwania znaków pasujących do wzorca jest powszechnie stosowana w programowaniu, a jej początki sięgają czasów, gdy programiści musieli ręcznie przetwarzać i filtrować dane tekstowe. W dzisiejszych czasach istnieją również inne podejścia do rozwiązania tego problemu, takie jak wykorzystanie wyrażeń regularnych. W implementacji tej techniki ważne jest, aby dokładnie określić wzorzec, aby uniknąć niepożądanych usunięć znaków.
 
-## Głębsza analiza
-
-Funkcja `strstr()` zwraca wskaźnik do miejsca w ciągu, w którym występuje pierwsze wystąpienie wzorca. W przypadku powyższego kodu, jest to początek słowa "jest". Aby usunąć znaki odpowiadające wzorcowi, przeznaczamy wystąpienie do funkcji `memmove()`, która przesuwa kolejne znaki o długość wzorca. Dzięki temu kolejne wystąpienia wzorca są nadpisane przez kolejne znaki w ciągu, aż nie będzie już żadnego wystąpienia. Należy jednak pamiętać, że w przypadku gdy długość wzorca nie jest równa długości znaku, może dojść do problemów z pamięcią.
-
-## Zobacz też
-
-- [Funkcja strstr() w dokumentacji Arduino](https://www.arduino.cc/reference/en/language/functions/strings/strstr/)
-- [Przykłady z dokumentacji Arduino](https://www.arduino.cc/en/Tutorial/StringIndexOf)
+## Zobacz także:
+- Dokumentacja Arduino - https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/replace/
+- Przykładowe projekty wykorzystujące technikę usuwania znaków pasujących do wzorca - https://create.arduino.cc/projecthub/projects/tags/text/filtering

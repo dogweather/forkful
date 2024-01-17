@@ -10,53 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+# Co & Dlaczego?
 
-Pobieranie stron internetowych jest niezbędne dla wielu programistów, którzy chcą analizować lub przetwarzać dane z internetu. Choć istnieje kilka narzędzi służących do tego zadania, Clojure oferuje wiele wbudowanych funkcji, które ułatwiają pobieranie stron internetowych.
+Pobieranie strony internetowej to proces, w którym program pobiera dane ze strony internetowej, takie jak tekst, obrazy i multimedia, i wyświetla je w czytelnej formie. Programiści często pobierają strony internetowe, aby przeglądać zawartość lub pobierać dane do analizy lub przetwarzania.
 
-## Jak to zrobić
-
-Pobieranie strony internetowej w Clojure jest bardzo proste. Najpierw musimy zaimportować bibliotekę `clojure.java.io` do naszego projektu. Następnie używamy funkcji `slurp`, aby pobrać zawartość strony internetowej i przypisać ją do zmiennej. Na przykład:
+# Jak to zrobić:
 
 ```Clojure
-(require '[clojure.java.io :as io])
-
-(def url "https://example.com")
-
-(def page (slurp url))
+(require '[clojure.java.io :as io])  
+(io/copy (io/input-stream "https://www.example.com") (io/output-stream "output.html"))
 ```
 
-Teraz możemy wydrukować zawartość strony internetowej, aby upewnić się, że została pobrana poprawnie:
+W powyższym kodzie importujemy bibliotekę `clojure.java.io`, a następnie wywołujemy funkcję `copy` z dwoma argumentami: `input-stream` dla adresu strony internetowej i `output-stream` dla pliku, w którym chcemy zapisać pobrane dane. Po uruchomieniu tego kodu, otrzymamy plik `output.html` zawierający pobraną stronę internetową.
 
-```Clojure
-(println page)
-```
+# W pogłębieniu:
 
-Output:
+## Kontekst historyczny:
 
-```
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Przykładowa strona</title>
-</head>
+Wcześniej programiści często używali języka Java do pobierania stron internetowych, ale dzięki rozwojowi Clojure powstały proste i wydajne metody do wykonania tego zadania.
 
-<body>
-  <h1>Witaj!</h1>
-</body>
-</html>
-```
+## Alternatywy:
 
-Jeśli chcemy przetworzyć pobraną stronę, możemy użyć wbudowanych funkcji do manipulacji danymi w formacie HTML lub wykorzystać inny język, jak na przykład ClojureScript, aby przetworzyć dane z pobranej strony.
+Alternatywą dla użycia biblioteki `clojure.java.io` jest użycie specjalistycznych bibliotek, takich jak `clj-webdriver` lub `jython`, ale te wymagają więcej doświadczenia i są skomplikowane dla początkujących.
 
-## Deep Dive
+## Szczegóły implementacyjne:
 
-Clojure oferuje wiele funkcji, które ułatwiają pobieranie i przetwarzanie stron internetowych. Warto zapoznać się z dokumentacją, aby poznać pełną listę dostępnych narzędzi. Między innymi, biblioteka `clojure.java.io` zawiera funkcję `reader`, która umożliwia odczytanie zawartości strony w postaci strumienia danych, co może być przydatne w przypadku przetwarzania dużych stron.
-
-## Zobacz też
-
-Jeśli chcesz dowiedzieć się więcej o pobieraniu stron w Clojure, polecamy zapoznanie się z tymi zasobami:
-
-- Dokumentacja biblioteki `clojure.java.io`: https://clojuredocs.org/clojure.java.io/slurp
-- Poradnik szczegółowo opisujący pobieranie stron internetowych w Clojure: https://purelyfunctional.tv/guide/how-to-download-a-web-page-in-clojure/
-- Oficjalna strona języka Clojure: https://clojure.org/
+W bibliotece `clojure.java.io` funkcja `copy` wykorzystuje metody `URLConnection` z języka Java, aby nawiązać połączenie z adres

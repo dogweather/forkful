@@ -10,58 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
+Att skriva ut felsökningsutdata är en process där man skriver ut extra information i koden för att hjälpa till med felsökning av programvaran. Detta görs för att underlätta för utvecklare att hitta och åtgärda fel i koden.
 
-Att skriva ut debug-utdata är ett viktigt verktyg för att felsöka och förstå vad som händer i din kod. Genom att skriva ut relevant information vid olika steg i koden kan du enklare identifiera problem och förbättra din kod. Det är ett enkelt sätt att få inblick i exakt vad som händer bakom kulisserna.
+## Hur man gör:
+Kotlin har en inbyggd funktion, ```println()```, som används för att skriva ut felsökningsutdata. Den tar ett argument, som kan vara en sträng eller en variabel, och skriver ut värdet på det argumentet i konsolen. 
 
-## Hur man gör
-
-För att skriva ut debug-utdata i Kotlin kan du använda funktionen `println()` eller `print()`. Dessa funktioner skriver ut text utan att lägga till en ny rad efter, vilket gör det bra för att skriva ut variabler eller andra värden, till exempel:
-
-```Kotlin
-val nummer = 10
-println("Detta är värdet av nummer: $nummer")
-```
-
-Detta kommer att skriva ut "Detta är värdet av nummer: 10". Som du kan se används dollartecken och variabelnamnet inom `println()`-funktionen för att skriva ut värdet av variabeln. Detta gör att du kan skriva ut flera variabler eller text i samma `println()`-funktion.
-
-Om du vill lägga till en ny rad efter utskriften kan du använda `println()` med en tom sträng som argument, till exempel:
+Exempel:
 
 ```Kotlin
-val namn = "Anna"
-val ålder = 25 
-println("Namn: $namn")
-println("Ålder: $ålder")
-println()
+var name = "Kotlin"
+println("$name är ett programmeringsspråk.")
 ```
+Output:
 
-Detta kommer att skriva ut:
+Kotlin är ett programmeringsspråk.
 
-```
-Namn: Anna
-Ålder: 25
-```
+## Djupdykning:
+Att skriva ut debug output är ett vanligt felsökningsverktyg som har funnits sedan programmeringens tidiga dagar. Innan moderna felsökningverktyg fanns tillgängliga var det den enda metoden för att hitta och åtgärda fel i koden. 
 
-En annan användbar funktion för debug-utdata är `debug()` som finns i `android.util.Log`-klassen. Denna funktion används vanligtvis i Android-utveckling för att logga information till Android Studio's loggverktyg. Du kan till exempel använda den för att logga ett felmeddelande:
+Idag finns det också andra alternativ för felsökning, såsom debuggingverktyg, som låter utvecklare steg för steg gå igenom koden för att hitta fel. Men att skriva ut debug output kan fortfarande vara ett användbart verktyg för att snabbt identifiera enkla fel och göra snabba korrigeringar i koden.
 
-```Kotlin
-Log.d("TAG", "Ett fel har inträffat.")
-```
+Det är viktigt att komma ihåg att debug output inte bör användas i produktionskod, eftersom det kan påverka prestanda och säkerhet. Det är enbart avsett som ett verktyg för felsökning och bör tas bort eller kommenteras ut när koden publiceras.
 
-Där "TAG" är en sträng som identifierar loggmeddelandet och "Ett fel har inträffat." är det faktiska meddelandet som kommer att visas i loggen.
+## Se även:
+Officiell Kotlin dokumentation om ```println()```: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/println.html
 
-## Fördjupning
-
-Det finns många andra användbara funktioner och metoder som kan hjälpa dig att skriva ut debug-utdata, till exempel `assert()` för att testa förväntade värden och `warn()` för att logga varningar. Du kan också använda `Log.i()` för att logga information och `Log.e()` för att logga felmeddelanden av högre prioritet.
-
-Du kan också använda och formatera strängar med hjälp av `String.format()` för att skapa mer läsbar och strukturerad debug-utdata. Dessutom finns det många tredjepartsbibliotek som kan hjälpa dig att logga, spåra och analysera debug-utdata.
-
-Med alla dessa olika verktyg är det viktigt att vara selektiv med vad du skriver ut. Att ha för mycket debug-utdata kan göra det svårt att hitta viktig information och kan sakta ner din kod. Se till att välja ut relevant information och radera all debug-kod innan du skickar din app till produktion.
-
-## Se även
-
-Här är några användbara resurser för att lära dig mer om debug-utdata med Kotlin:
-
-- [Officiell Kotlin dokumentation för debugging](https://kotlinlang.org/docs/debugging.html)
-- [Stack Overflow: How to debug using println](https://stackoverflow.com/a/51116072)
-- [Android Developers: Logging](https://developer.android.com/reference/android/util/Log)
+En guide om felsökning i Kotlin: https://medium.com/@baphemot/whats-the-debugging-like-for-kotlin-be5749f8f817

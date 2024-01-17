@@ -1,7 +1,7 @@
 ---
-title:                "Praca z plikami csv"
-html_title:           "Go: Praca z plikami csv"
-simple_title:         "Praca z plikami csv"
+title:                "Praca z plikiem csv"
+html_title:           "Go: Praca z plikiem csv"
+simple_title:         "Praca z plikiem csv"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Data Formats and Serialization"
@@ -10,92 +10,68 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Czym jest i dlaczego to robią programiści?
 
-Jeśli często musisz pracować z plikami CSV, czy to w celu analizy danych czy też generowania raportów, Go jest idealnym językiem do tego zadania. Jego szybkość, prostota i wbudowane funkcje do obsługi plików CSV sprawiają, że jest to wybór wart rozważenia.
+Praca z plikami CSV (zwane również plikami z wartościami oddzielanymi przecinkami) jest częstym zadaniem dla programistów w celu manipulacji i analizowania danych. Pliki CSV są plikami tekstowymi zawierającymi informacje w formacie tabelarycznym, gdzie dane są oddzielone przecinkami. Programiści często pracują z plikami CSV, aby pobierać, przetwarzać i eksportować dane do różnych aplikacji.
 
-## Jak to zrobić
+## Jak to zrobić?
 
-Poniżej znajdziesz przykładowy kod w języku Go, który pokazuje, jak łatwo można wczytać plik CSV i wykonać na nim operacje.
-
-```Go
-// Importowanie biblioteki do obsługi plików CSV
-import "encoding/csv"
-
-// Wczytanie pliku CSV
-file, err := os.Open("dane.csv")
-if err != nil {
-  // Obsługa błędów
-}
-
-// Użycie funkcji NewReader do utworzenia nowego czytelnika
-reader := csv.NewReader(file)
-
-// Ustawienie opcji, jeśli plik zawiera nagłówki kolumn
-reader.ReadHeader()
-
-// Pętla przez każdy wiersz w pliku
-for {
-  // Odczytanie kolejnego wiersza
-  record, err := reader.Read()
-  if err != nil {
-    // Koniec pliku lub błąd
-    break
-  }
-
-  // Dostęp do wartości w poszczególnych kolumnach
-  column1 := record[0]
-  column2 := record[1]
-
-  // Wyświetlenie wartości
-  fmt.Println(column1, column2)
-}
-```
-
-Przykładowy plik CSV:
-
-| Imię | Nazwisko | Wiek |
-|------|----------|------|
-| John  | Smith    | 35   |
-| Emily | Jones    | 28   |
-| David | Brown    | 41   |
-
-Przykładowy output:
-
-```
-John Smith
-Emily Jones
-David Brown
-```
-
-## Deep Dive
-
-Go posiada wbudowaną bibliotekę do obsługi plików CSV, co sprawia, że jest to szybkie i wygodne narzędzie w pracy z tym formatem danych. W niektórych przypadkach, gdy plik CSV jest bardzo duży, można skorzystać z funkcji bufferowania, aby zoptymalizować szybkość działania programu.
-
-Spójrzmy na przykładowy kod, który wykorzystuje funkcję bufferowania:
+Go oferuje wiele wbudowanych funkcji i pakietów, które ułatwiają pracę z plikami CSV. Najpierw należy zaimportować pakiet "encoding/csv", aby móc korzystać z funkcji związanych z plikami CSV. Następnie można użyć funkcji "NewReader" lub "NewWriter", aby wczytać lub zapisać dane z pliku CSV.
 
 ```Go
-// Użycie funkcji NewBuffer do utworzenia nowego bufora
-buffer := bufio.NewWriter(file)
+package main
 
-// Pętla po wierszach w pliku
-for i := 0; i < bufferSize; i++ {
-  // Odczytanie kolejnego wiersza
-  record, err := reader.Read()
+import (
+  "encoding/csv"
+  "fmt"
+  "os"
+)
+
+func main() {
+  // wczytywanie danych z pliku CSV
+  file, err := os.Open("dane.csv")
   if err != nil {
-    // Koniec pliku lub błąd
-    break
+  	fmt.Println("Błąd podczas wczytywania pliku CSV:", err)
+  	return
   }
-
-  // Zapisanie wiersza do bufora
-  buffer.Write(record)
+  
+  reader := csv.NewReader(file)
+  records, err := reader.ReadAll()
+  if err != nil {
+  	fmt.Println("Błąd podczas czytania danych z pliku CSV:", err)
+  	return
+  }
+  
+  // wyświetlanie pobranych danych
+  for _, row := range records {
+  	fmt.Println(row)
+  }
+  
+  // zapisywanie danych do pliku CSV
+  data := [][]string{{"Jeden", "1"}, {"Dwa", "2"}, {"Trzy", "3"}}
+  
+  file, err = os.Create("nowe_dane.csv")
+  if err != nil {
+    fmt.Println("Błąd podczas tworzenia pliku CSV:", err)
+    return
+  }
+  
+  writer := csv.NewWriter(file)
+  writer.WriteAll(data)
+  writer.Flush()
 }
-
-// Opróżnienie bufora i zapisanie danych do pliku
-buffer.Flush()
 ```
+
+W powyższym przykładzie pokazano, jak wczytać dane z istniejącego pliku CSV oraz jak zapisać dane do nowego pliku CSV. W przypadku wczytywania danych, każdy wiersz jest zapisywany jako slice stringów, a następnie można na nim wykonywać operacje. Natomiast przy zapisywaniu danych, należy najpierw utworzyć slice stringów zawierający dane w formacie tabelarycznym, a następnie użyć funkcji "WriteAll" i "Flush".
+
+## Głębsze wgląd
+
+Format CSV został wprowadzony w latach 70. i przez wiele lat był popularnym sposobem przechowywania i przetwarzania danych. Alternatywami dla plików CSV są między innymi formaty JSON i XML, ale format CSV jest nadal wykorzystywany przez wiele aplikacji do wymiany danych.
+
+Pakiet "encoding/csv" oferuje również funkcje do obsługi specjalnych znaków, jak np. cudzysłowy wewnątrz pól lub tabulatory jako separatorów. W przypadku wykonywania operacji na dużych plikach CSV, zaleca się wykorzystanie funkcji z pakietu "bufio" do wczytania danych linia po linii, zamiast używania funkcji "ReadAll".
 
 ## Zobacz także
 
-- [Dokumentacja Go do obsługi plików CSV](https://golang.org/pkg/encoding/csv/)
-- [Funkcje buforowania w języku Go](https://gobyexample.com/buffers)
+- Dokumentacja pakietu "encoding/csv": https://golang.org/pkg/encoding/csv/
+- Poradnik na temat pracy z plikami CSV w Go: https://gobyexample.com/reading-files
+- Słowniczek Go: http://www.goworkbook.org/

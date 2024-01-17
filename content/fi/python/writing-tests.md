@@ -10,38 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä ja miksi?
+Ohjelmistokehittäjät käyttävät testien kirjoittamista varmistaakseen, että koodi toimii odotetulla tavalla ja välttääkseen mahdolliset virheet.
 
-Testien kirjoittaminen on tärkeä osa ohjelmointia, sillä se auttaa varmistamaan koodin toimivuuden ja vähentää mahdollisten virheiden riskiä. Käyttäjiltä saadun palautteen mukaan, testien kirjoittaminen myös helpottaa koodin ylläpitoa ja parantaa sen luettavuutta.
-
-## Kuinka
-
-Testien kirjoittamisessa noudatetaan yleensä yksinkertaista kaavaa: määritellään funktio tai luokka, jota halutaan testata ja kirjoitetaan sen toimintoja vastaava testi. Tässä esimerkissä käytämme yksinkertaista funktiota, joka laskee kahden luvun summan:
+## Miten:
+Alla on esimerkki yksinkertaisesta testistä Python-koodissa, joka testaa funktiota, joka laskee kahden luvun summan ja palauttaa arvon:
 
 ```Python
-def laske_summa(luku1, luku2):
-    return luku1 + luku2
-
-# Testataan funktiota
-print(laske_summa(5, 10))
+def sum(a, b):
+  return a + b
+  
+def test_sum():
+  assert sum(2, 3) == 5
+  assert sum(-1, 1) == 0
 ```
 
-Tulostus: 15
-
-Testin avulla voimme varmistaa, että funktio toimii halutulla tavalla. Voimme myös antaa testille syötteitä, jotka olisi hyvä käydä läpi, kuten esimerkiksi negatiivisia ja nolla-syötteitä:
+Testien suorittamiseksi voidaan käyttää esimerkiksi pytest-kirjastoa, joka antaa selkeän raportin testien tuloksista:
 
 ```Python
-print(laske_summa(-8, 6))
+===================== test session starts =====================
+platform linux -- Python 3.8.1, pytest-6.2.4, py-1.10.0, pluggy-0.13.1
+collected 1 item
+
+test_example.py .                                         [100%]
+
+====================== 1 passed in 0.01s ======================
 ```
 
-Tulostus: -2
+## Syvempää tietoa:
+Testien kirjoittaminen on tärkeä osa ohjelmistokehitystä, sillä se auttaa varmistamaan koodin toimivuuden ja vähentämään virheitä. Aiemmin testaaminen tapahtui manuaalisesti, mutta nykyään testauskirjastot ja automaattiset testit ovat yleistyneet ja helpottaneet kehittäjien työtä. Alternatiivisia tapoja testata koodia ovat esimerkiksi yksikkötestaus ja testausrobotit.
 
-## Syvempi sukellus
+Kun halutaan varmistaa kattava testikattavuus, on tärkeää suunnitella testit huolella ja testata myös rajoitustapaukset ja virheelliset syötteet. Testien kirjoittaminen on myös hyvä tapa dokumentoida koodia ja helpottaa muiden kehittäjien koodin ymmärtämistä ja muokkaamista.
 
-Testeissä on myös mahdollista käyttää erilaisia tapoja, kuten yksikkötestauksessa käytettäviä testikehyksiä, kuten `pytest` tai `unittest`. Näillä työkaluilla voidaan tehdä monipuolisempia testejä ja saada parempia raportteja. Lisäksi testien kirjoittamisessa on hyvä noudattaa hyviä käytäntöjä, kuten esimerkiksi yksinkertaisuuden periaatetta ja testien nimeämistapojen standardointia.
-
-## Katso myös
-
-- [Pythonin virallinen dokumentaatio testaamisesta](https://docs.python.org/fi/3/library/unittest.html)
-- [Hyvät käytännöt testeissä](https://codeinstitute.net/blog/python-unit-testing-best-practices/)
-- [Pytest-dokumentaatio](https://docs.pytest.org/en/stable/)
+## Katso myös:
+- https://docs.pytest.org - pytest-dokumentaatio
+- https://www.samueltaylor.org/articles/understanding-pytest-fixtures/ - tietoa pytest-kirjaston käytöstä
+- https://www.youtube.com/watch?v=byS7tuHxMgQ - video testien tärkeydestä ja kirjoittamisesta

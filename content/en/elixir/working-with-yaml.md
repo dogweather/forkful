@@ -10,49 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-If you're a programmer looking to work with data in a more human-readable format, YAML might just be the perfect solution for you. Its simple syntax and flexibility make it a popular choice for data serialization and configuration management.
+Working with YAML in Elixir refers to the process of manipulating YAML files to store and retrieve data. YAML stands for "YAML Ain't Markup Language" and is a human-readable data serialization format. Programmers use YAML because it is easy to read and write, making it a popular choice for storing configuration or data files for applications.
 
-## How To
+## How to:
 
-To start using YAML in your Elixir projects, you'll need to add the [yaml](https://github.com/KronicDeth/yaml_elixir) package as a dependency in your `mix.exs` file:
+To work with YAML in Elixir, you will need to install the "yaml" package, which can be done by adding `{:yaml, "~> 0.9.0"}` to your project's `mix.exs` file and running `mix deps.get`. Once the package is installed, you can use it with `require YAML` in your modules.
 
-```elixir
-defp deps do
-  [{:yaml, "~> 0.0.0"}]
-end
+To read a YAML file, you can use `YAML.load_file("file.yaml")`, which will return a map with the data from the file. To write to a YAML file, you can use `YAML.dump(data, "file.yaml")`, where `data` is a map or struct containing the information you want to store.
+
+```
+Elixir
+# Load data from YAML file
+data = YAML.load_file("config.yaml")
+# Write data to YAML file
+YAML.dump(data, "new_config.yaml")
 ```
 
-Next, you'll need to add `:yaml` to your `applications` list in the same `mix.exs` file in order to make it available in your application:
+## Deep Dive:
 
-```elixir
-def application do
-  [applications: [:yaml]]
-end
-```
+YAML was first released in 2001 and has gained popularity as a data serialization format due to its simplicity and readability. It is often used for configuration files in applications or for storing data in a human-readable format.
 
-Now, let's take a look at how we can write and read YAML data in Elixir using the `YAML` module from the `yaml` package:
+An alternative to YAML is JSON, which is also human-readable but has a stricter syntax. Elixir provides built-in support for working with JSON, but YAML can be a better choice for more complex data structures or situations where readability is more important.
 
-```elixir
-# Writing YAML data
-YAML.write("foo.yml", %{name: "John", age: 28})
-# Output: "---\n:name: John\n:age: 28\n"
+Internally, the "yaml" package uses the LibYAML library, a C library for parsing and emitting YAML. This makes it faster and more efficient than other Elixir libraries that use pure Elixir implementations.
 
-# Reading YAML data
-YAML.read("foo.yml")
-# Output: %{name: "John", age: 28}
-```
+## See Also:
 
-## Deep Dive
-
-YAML, which stands for "YAML Ain’t Markup Language", is a human-readable data serialization language that is easily writable by humans and conveniently parsed by machines. It supports a wide range of data types including strings, integers, booleans, arrays, and maps, making it a versatile choice for storing and transferring data. In addition to Elixir, YAML is also supported by other popular programming languages such as Python, Ruby, and JavaScript.
-
-One of the key features of YAML is its ability to use indentation for structure, making it easy to read and understand the data. It also allows for comments, which can be helpful for adding notes or explanations for different parts of the data. Another advantage of YAML is that its syntax is simple and consistent, making it less prone to errors and easier to maintain compared to other data formats like JSON.
-
-In Elixir, the `YAML` module from the `yaml` package provides us with useful functions for reading and writing YAML data. It also supports more advanced features like custom type handling and tag mappings. You can explore these features and more by checking out the official documentation for the `yaml` package.
-
-## See Also
-
-- [Official `yaml` Package Documentation](https://hexdocs.pm/yaml/readme.html)
-- [YAML Specification](https://yaml.org/spec/)
+- [YAML tutorial](https://rollout.io/blog/yaml-tutorial-everything-you-need-get-started/)
+- [Elixir "yaml" package documentation](https://hexdocs.pm/yaml/YAML.html)
+- [LibYAML homepage](https://pyyaml.org/wiki/LibYAML)

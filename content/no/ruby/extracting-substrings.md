@@ -1,7 +1,7 @@
 ---
-title:                "Uthenting av delstrenger"
-html_title:           "Ruby: Uthenting av delstrenger"
-simple_title:         "Uthenting av delstrenger"
+title:                "Utvinning av substringer"
+html_title:           "Ruby: Utvinning av substringer"
+simple_title:         "Utvinning av substringer"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Strings"
@@ -10,60 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hva & hvorfor?
+Ekstrahering av substrings er en måte å plukke ut en del av en tekststreng i programmering. Dette kan være nyttig når man trenger å hente ut spesifikke deler av en tekst for å bruke i videre beregninger eller manipulasjoner. Det er en vanlig oppgave blant programmerere som jobber med tekstbehandling og dataanalyse.
 
-Noen ganger når vi jobber med tekst i Ruby, trenger vi å trekke ut deler av en streng for å bruke den i vårt program. Dette kan være nyttig når vi ønsker å manipulere data eller få spesifikke deler av teksten.
-
-## Hvordan
-
-Vi kan trekke ut substrings fra en streng ved hjelp av Ruby's `slice` eller `[]` metode. La oss se på et enkelt eksempel:
+## Hvordan:
+Ekstrahering av substrings kan gjøres veldig enkelt i Ruby ved hjelp av en innebygd funksjon kalt "slice", som tar to parametere - start- og sluttposisjonen til den ønskede delen av tekststrengen. Her er et eksempel:
 
 ```Ruby
-text = "Dette er en tekststreng"
-substring = text.slice(6, 12)
-
-puts substring
-# Output: er en tekst
+my_string = "Dette er en tekststreng"
+substring = my_string.slice(8, 2) # Starter på posisjon 8 og tar 2 tegn
+puts substring # Skriver ut "en"
 ```
 
-Vi bruker `slice` for å trekke ut tekst fra posisjon 6 til 12, og lagrer den i variabelen `substring`. Vi kan også bruke `[]` notasjon for å oppnå det samme resultatet:
+Man kan også bruke "[]" og angi posisjoner med tall eller et "range" (et område av tall). Her er et eksempel på å hente ut en del av en tekststreng basert på området av tall:
 
 ```Ruby
-text = "Dette er en tekststreng"
-substring = text[6..17]
-
-puts substring
-# Output: er en tekst
+my_string = "Dette er en tekststreng"
+substring = my_string[8..10] # Henter alt fra posisjon 8 til og med 10
+puts substring # Skriver ut "en "
 ```
 
-Denne gangen bruker vi `[]` notasjon og spesifiserer start- og sluttposisjonen for substringen. Du kan også bruke et enkelt tall som posisjon, og da vil det hente ut enkelt karakter fra strengen.
+## Dypdykk:
+Å kunne ekstrahere substrings har vært en viktig del av programmering siden de tidlige dagene med tekstbaserte programmer. Før i tiden måtte man bruke "substring" -funksjoner som var spesifikke for hver type programmeringsspråk. I dagens moderne språk som Ruby, er dette implementert som en standard funksjon og gjør det mye enklere.
 
-## Dypdykk
+En alternativ metode til å ekstrahere substrings er ved hjelp av Regular Expression (regex), et kraftig verktøy for å finne og manipulere tekst. Dette kan være nyttig hvis man trenger å hente ut mer komplekse deler av en tekststreng.
 
-Vi kan også bruke `slice` og `[]` metoden med et negativt tall som et argument. Dette vil trekke ut tekst fra slutten av strengen. La oss se på et eksempel:
+Når det kommer til implementeringsdetaljer, er "slice" -funksjonen i Ruby veldig effektiv siden den bare kopierer den delen av tekststrengen som blir ekstrahert i stedet for å lage en ny kopi av hele teksten.
 
-```Ruby
-text = "Dette er en tekststreng"
-substring = text.slice(-9..-1)
-
-puts substring
-# Output: tekststreng
-```
-
-Her bruker vi et negativt tall for å velge de siste 9 tegnene fra strengen.
-
-Vi kan også bruke `slice` og `[]` sammen med andre metoder som `gsub` (erstatte deler av en streng) og `split` (splitte strengen inn i en array). Her er et eksempel som kombinerer disse metodene:
-
-```Ruby
-text = "Dette er en tekststreng"
-substring = text.gsub("tekststreng", "viktig tekst")
-puts substring.split(" ")[-2]
-# Output: viktig
-```
-
-Vi bruker `gsub` for å erstatte "tekststreng" med "viktig tekst", og deretter bruker vi `split` for å dele den resulterende strengen inn i en array. Her bruker vi så `-2` som posisjon for å få det nest siste elementet i arrayen, som er "viktig".
-
-## Se også
-
-- [Ruby dokumentasjon for `slice` metoden](https://ruby-doc.org/core-3.0.1/String.html#method-i-slice)
-- [Ruby dokumentasjon for `[]` notasjon](https://ruby-doc.org/core-3.0.1/String.html#method-i-5B-26-5D)
+## Se også:
+- [Ruby dokumentasjon om slice](https://ruby-doc.org/core-2.7.2/String.html#method-i-slice)
+- [Regular Expression tutorial](https://www.regular-expressions.info/tutorial.html)

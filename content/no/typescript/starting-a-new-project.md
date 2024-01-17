@@ -10,34 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hva og hvorfor?
+Når vi sier at vi skal starte et nytt prosjekt, betyr det at vi skal begynne å kode et nytt program eller applikasjon. Dette kan være for å løse et problem, lage noe nytt eller forbedre noe eksisterende. Programmerere starter nye prosjekter for å utvide sine ferdigheter, utforske nye konsepter og skape noe unikt.
 
-Hvorfor bør du starte et nytt prosjekt i TypeScript? Vel, for det første er TypeScript et populært programmeringsspråk som er utviklet av Microsoft. Det er kjent for å være et robust og fleksibelt språk som er godt egnet for store prosjekter. Ved å bruke TypeScript, kan du redusere feilene dine og skrive kode som er enklere å vedlikeholde på lang sikt.
-
-## Hvordan
-
+## Slik gjør du det:
 ```TypeScript
-function greet(name: string) {
-    console.log(`Hei ${name}! Velkommen til mitt nye prosjekt.`)
+const newProject = (name: string, languages: string[]) => {
+  console.log(`Starting new project: ${name}`);
+  console.log(`Using ${languages.join(", ")} languages`);
 }
 
-greet("Lars")
+newProject("Awesome App", ["TypeScript", "HTML", "CSS"]);
 
-// Output: Hei Lars! Velkommen til mitt nye prosjekt.
+// Output:
+// Starting new project: Awesome App
+// Using TypeScript, HTML, CSS languages
 ```
 
-For å starte et nytt prosjekt i TypeScript, må du først sørge for at du har installert TypeScript-compileren på datamaskinen din. Deretter kan du opprette en ny mappe og initialisere et TypeScript-prosjekt ved å kjøre "tsc --init" kommandoen i terminalen din. Dette vil opprette en "tsconfig.json" fil som du kan bruke til å konfigurere prosjektet ditt.
+## Dypdykk:
+Å starte et nytt prosjekt har blitt mye enklere med utviklingen av programmeringsspråket TypeScript. Dette språket bruker syntaks som er lik JavaScript, men legger til typetilordning og kompilering for å unngå feil og gjøre koden mer strukturert. Alternativene til TypeScript inkluderer JavaScript og andre programmeringsspråk, men TypeScript er populært på grunn av sin enkle syntaks og fordelene den gir til store og komplekse prosjekter. For å starte et prosjekt med TypeScript, må du installere TypeScript kompilatoren og konfigurere utviklingsmiljøet ditt til å støtte det.
 
-Når du har opprettet prosjektet ditt, kan du begynne å skrive kode ved å opprette TypeScript-filer med ".ts" utvidelse. Du kan bruke vanlige JS-konsepter som variabler, funksjoner og løkker i TypeScript, men med tillegg av typer for å gjøre koden din mer robust. For å kompilere TypeScript-koden til vanlig JavaScript, kan du kjøre "tsc" kommandoen i terminalen din. Deretter kan du kjøre den kompilerte JavaScript-koden som vanlig.
-
-## Dypdykk
-
-Når du starter et nytt prosjekt i TypeScript, er det viktig å bruke riktige konvensjoner og mønstre for å oppnå en god og vedlikeholdbar kodebase. En av de viktigste tingene å huske på er å bruke typer riktig og konsistent gjennom hele prosjektet. Dette vil bidra til å unngå unødvendige feil og gjøre det enklere å refaktorere koden når det er nødvendig.
-
-I tillegg kan det være lurt å undersøke og bruke flere tredjepartsbiblioteker og rammeverk spesielt designet for TypeScript-prosjekter. Dette kan hjelpe deg med å øke produktiviteten din og forbedre kvaliteten på koden din. Det er også lurt å følge offisielle dokumentasjons- og stilguideanbefalinger for å sikre en konsistent og lesbar kodebase.
-
-## Se også
-
-- [TypeScript Official Documentation](https://www.typescriptlang.org/docs/)
-- [TypeScript Style Guide and Coding Conventions](https://basarat.gitbook.io/typescript/styleguide)
-- [Recommended TypeScript Libraries and Frameworks](https://github.com/topics/typescript-framework)
+## Se også:
+- Offisiell TypeScript dokumentasjon: https://www.typescriptlang.org/docs/
+- En detaljert guide for å komme i gang med TypeScript: https://www.tutorialspoint.com/typescript/typescript_quick_guide.htm 
+- TypeScript eksempler og prosjekter: https://github.com/topics/typescript

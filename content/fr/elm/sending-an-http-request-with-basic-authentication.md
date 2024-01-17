@@ -1,7 +1,7 @@
 ---
-title:                "Envoi d'une demande http avec une authentification de base"
-html_title:           "Elm: Envoi d'une demande http avec une authentification de base"
-simple_title:         "Envoi d'une demande http avec une authentification de base"
+title:                "Envoyer une requête HTTP avec une authentification basique"
+html_title:           "Elm: Envoyer une requête HTTP avec une authentification basique"
+simple_title:         "Envoyer une requête HTTP avec une authentification basique"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "HTML and the Web"
@@ -10,65 +10,64 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+# Quoi et pourquoi?
+Envoyer une requête HTTP avec une authentification de base est un moyen pour les programmeurs d'accéder à des ressources protégées sur le Web. Cela leur permet d'autoriser l'accès à des utilisateurs spécifiques en vérifiant leurs identifiants.
 
-Vous connaissez sûrement le sentiment de devoir entrer des identifiants à chaque fois que vous souhaitez accéder à une API ou un site web qui nécessite une authentification de base. Cela peut devenir fastidieux et prendre du temps, surtout si vous devez le faire fréquemment. Heureusement, en utilisant Elm, il est possible d'automatiser ce processus en envoyant une requête HTTP avec une authentification de base.
-
-## Comment Faire
-
-Pour commencer, assurez-vous d'avoir la dernière version d'Elm installée sur votre ordinateur. Ensuite, suivez ces étapes simples pour envoyer une requête HTTP avec une authentification de base :
-
-1. Tout d'abord, importez le module `Http` dans votre fichier Elm.
-2. Ensuite, créez une fonction `authenticate` qui prendra en paramètres l'URL de l'API ou du site web, ainsi que les identifiants d'authentification.
-3. Utilisez la fonction `Http.basicAuth` pour créer un objet d'authentification en utilisant les identifiants fournis.
-4. Utilisez la fonction `Http.send` pour envoyer une requête GET à l'URL avec l'objet d'authentification en tant que paramètre.
-5. Gérez la réponse de la requête en utilisant un `case` statement et en accédant aux données renvoyées par l'API ou le site web.
-
-Voici un exemple de code Elm qui envoie une requête GET à l'API https://example.com avec une authentification de base :
+# Comment faire:
+Voici un exemple de code en Elm pour envoyer une requête HTTP avec une authentification de base. Le code suivant utilise une bibliothèque HTTP appelée `elm/http` pour effectuer la requête:
 
 ```Elm
 import Http
+import Json.Encode exposing (bool, float, int, list, object, string, value)
 
-authenticate : String -> String -> Http.Request a
-authenticate url credentials =
-    let
-        auth =
-            Http.basicAuth "username" "password"
+type alias User =
+  { username : String
+  , password : String
+  }
 
-        request =
-            Http.get url auth
-    in
-        Http.send handleResponse request
+type Msg
+  = Response (Result Http.Error String)
 
-handleResponse : Http.Response a -> Http.Error -> Platform.Cmd msg
-handleResponse response error =
-    case response of
-        Http.BadUrl _ ->
-            -- gestion d'erreur pour une mauvaise URL
+authenticate : User -> Cmd Msg
+authenticate user =
+  let
+    body =
+      value
+        [ ("username", string user.username)
+        , ("password", string user.password)
+        ]
+  in
+    Http.send Response
+      { method = "GET"
+      , url = "https://example.com"
+      , body = body
+      , expect = Http.expectString -- Utiliser `expectJson` pour un format JSON
+      , headers =
+          [ Http.header "Authorization"
+              ("Basic " ++ Http.base64Encode (user.username ++ ":" ++ user.password))
+          ]
+      }
 
-        Http.Timeout ->
-            -- gestion d'erreur pour une requête expirée ou un délai dépassé
+update : Msg -> Model -> ( Model, Cmd Msg )
+update msg model =
+  case msg of
+    Response (Ok response) ->
+      ( { model | isAuthenticated = True }, Cmd.none )
+    Response (Err error) ->
+      ( model, Cmd.none )
 
-        Http.NetworkError ->
-            -- gestion d'erreur pour une erreur de connexion réseau
-
-        Http.BadStatus _ ->
-            -- gestion d'erreur pour un code d'état HTTP inattendu
-
-        Http.GoodStatus ->
-            -- traitement des données renvoyées par l'API ou le site web
+view : Model -> Html Msg
+view model =
+  button [ onClick (authenticate { username = "john", password = "doe" }) ] [ text "Connexion" ]
 ```
 
-Vous remarquerez que le code utilise un `case` statement pour gérer différentes erreurs qui pourraient survenir lors de l'envoi de la requête. Cela permet de s'assurer que votre application n'échoue pas en cas d'erreur.
+Lorsque vous cliquez sur le bouton "Connexion", la fonction `authenticate` est appelée avec les identifiants de l'utilisateur. Le code génère une requête HTTP avec une méthode GET et un corps de requête qui inclut les identifiants encodés en base64. La réponse est gérée dans la fonction `update` et le modèle est mis à jour en fonction du résultat de la requête.
 
-## Plongée en Profondeur
+# Faire une plongée plus profonde:
+L'authentification de base est l'une des méthodes d'authentification les plus anciennes pour les applications Web. Elle est utilisée pour valider l'identité de l'utilisateur en transmettant ses identifiants en clair à chaque requête. Cependant, cette méthode est considérée comme peu sécurisée car les identifiants peuvent être facilement interceptés.
 
-Maintenant que vous savez comment envoyer une requête HTTP avec une authentification de base en utilisant Elm, il est important de comprendre le fonctionnement de cette méthode d'authentification. En utilisant l'objet d'authentification créé avec la fonction `Http.basicAuth`, Elm ajoute un en-tête `Authorization` à la requête HTTP avec les identifiants encodés en base64. Ce processus assure que les informations d'authentification ne sont pas envoyées en clair, ce qui est important pour la sécurité de vos données.
+Il existe d'autres méthodes d'authentification plus sécurisées telles que l'authentification par jeton qui utilise des clés de sécurité uniques pour chaque utilisateur. Cependant, l'authentification de base est encore utilisée pour des raisons de compatibilité avec les anciennes applications Web.
 
-Il est également possible d'utiliser d'autres méthodes d'authentification en utilisant le module `Http` d'Elm. Par exemple, la fonction `Http.oauth` peut être utilisée pour envoyer une requête OAuth à une API.
-
-## Voir Aussi
-
-- Documentation officielle d'Elm sur l'utilisation du module `Http` : https://package.elm-lang.org/packages/elm/http/latest/
-- Tutoriel sur la gestion des requêtes HTTP en utilisant Elm : https://www.elm-tutorial.org/fr/api/http-requests.html
-- Exemple de code pour une authentification OAuth en utilisant Elm : https://github.com/danyx23/elm-oauth2-sample
+# Voir aussi:
+- Documentation officielle Elm HTTP: https://package.elm-lang.org/packages/elm/http/latest/
+- Tutoriel sur l'authentification de base avec Elm: https://abdulapopoola.com/2017/08/23/on-elm-the-state-of-basic-authentication/

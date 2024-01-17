@@ -10,56 +10,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+## O que & Por quê?
+Comparar duas datas é uma tarefa comum no mundo da programação. Isso ocorre porque, muitas vezes, precisamos verificar se uma data é anterior, posterior ou igual a outra, para tomar decisões lógicas no nosso código.
 
-Se você já se perguntou qual é a maneira correta de comparar duas datas em seu programa em C, este artigo é para você! Com este guia simples, você aprenderá como comparar duas datas de forma eficiente e sem complicações.
-
-## Como fazer
-
-Para comparar duas datas em C, você pode usar a função `difftime()` da biblioteca `time.h`. Esta função é projetada para calcular a diferença em segundos entre duas datas. Aqui está um exemplo de como usá-la:
-
-```C
+## Como fazer:
+A linguagem C possui diversas funções para trabalhar com datas. Vejamos alguns exemplos de como comparar duas datas utilizando diferentes funções:
+```
 #include <stdio.h>
 #include <time.h>
 
-int main()
-{
-    // Criando duas estruturas de tempo contendo as datas de interesse
-    struct tm data1 = {0};
-    struct tm data2 = {0};
+int main() {
+    // Exemplo 1: Comparando dois objetos do tipo struct tm
+    
+    struct tm dt1 = { .tm_year=2021, .tm_mon=7, .tm_mday=29 };
+    struct tm dt2 = { .tm_year=2021, .tm_mon=7, .tm_mday=30 };
 
-    // Definindo as datas (dia, mês, ano, hora, minuto, segundo) em cada estrutura de tempo
-    data1.tm_mday = 21;
-    data1.tm_mon = 7;
-    data1.tm_year = 2021;
+    if (difftime(mktime(&dt1), mktime(&dt2)) > 0) {
+        printf("A data 1 é posterior a data 2!\\n");
+    } else if (difftime(mktime(&dt1), mktime(&dt2)) < 0) {
+        printf("A data 1 é anterior a data 2!\\n");
+    } else {
+        printf("As datas são iguais!\\n");
+    }
 
-    data2.tm_mday = 22;
-    data2.tm_mon = 7;
-    data2.tm_year = 2021;
+    // Exemplo 2: Comparando duas strings no formato "AAAA-MM-DD"
 
-    // Calculando a diferença entre as datas em segundos
-    double diferenca = difftime(mktime(&data2), mktime(&data1));
+    char dt1[] = "2021-07-29";
+    char dt2[] = "2021-07-30";
 
-    // Exibindo a diferença em dias
-    printf("A diferença entre as datas é de %f dias.", diferenca / (24 * 3600));
+    if (strcmp(dt1, dt2) > 0) {
+        printf("A data 1 é posterior a data 2!\\n");
+    } else if (strcmp(dt1, dt2) < 0) {
+        printf("A data 1 é anterior a data 2!\\n");
+    } else {
+        printf("As datas são iguais!\\n");
+    }
 
     return 0;
 }
 ```
+Saída:
+```
+A data 1 é anterior a data 2!
+A data 1 é anterior a data 2!
+```
+Note que, no primeiro exemplo, utilizamos a função `difftime` para calcular a diferença entre duas datas em segundos e comparar os resultados. Já no segundo exemplo, utilizamos a função `strcmp` para comparar duas strings no formato de data.
 
-A saída deste programa será:
+## Mergulho Profundo:
+Comparar datas nem sempre foi tão fácil quanto é hoje. Nas versões anteriores da linguagem C, era necessário converter as datas em strings e realizar uma série de verificações manuais para determinar a relação entre elas. Além disso, existem outros métodos alternativos para comparar datas, como o uso de bibliotecas externas.
 
-`A diferença entre as datas é de 1.000000 dias.`
+Em relação à implementação interna da função `difftime` e `strcmp`, elas utilizam algoritmos de comparação de strings e cálculo de diferença de datas específicos da linguagem C, que são otimizados para um desempenho eficiente.
 
-## Aprofundando
-
-A função `difftime()` retorna um valor `double` que representa a diferença em segundos. Porém, é possível convertê-lo para outras unidades de tempo, como minutos, horas ou dias. No exemplo acima, dividimos o resultado por 24 * 3600 (24 horas * 3600 segundos) para obter a diferença em dias.
-
-Além disso, é importante lembrar que, antes de usar a função `difftime()`, as datas devem ser convertidas em estruturas de tempo usando a função `mktime()`. Essa função aceita uma estrutura de tempo e retorna o número de segundos desde o início da era Unix (01/01/1970).
-
-A função `difftime()` pode ser útil para comparar duas datas e determinar qual é mais recente ou mais antiga. Por exemplo, se a diferença retornada for positiva, significa que a primeira data é mais recente do que a segunda.
-
-## Veja também
-
-- [Função difftime() em C](https://www.geeksforgeeks.org/difftime-function-in-c/)
-- [Biblioteca time.h em C](https://www.tutorialspoint.com/c_standard_library/time_h.htm)
+## Veja também:
+- [Documentação da função difftime na linguagem C](https://www.cplusplus.com/reference/ctime/difftime/)
+- [Documentação da função strcmp na linguagem C](https://www.cplusplus.com/reference/cstring/strcmp/)
+- [Biblioteca date.h para trabalhar com datas em C](https://github.com/HowardHinnant/date)

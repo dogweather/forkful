@@ -1,7 +1,7 @@
 ---
-title:                "パターンに一致する文字の削除"
-html_title:           "Ruby: パターンに一致する文字の削除"
-simple_title:         "パターンに一致する文字の削除"
+title:                "パターンにマッチする文字を削除する"
+html_title:           "Ruby: パターンにマッチする文字を削除する"
+simple_title:         "パターンにマッチする文字を削除する"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Strings"
@@ -10,48 +10,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##なぜ
+## 何? なぜ?
 
-なぜ誰かがパターンにマッチする文字を削除する必要があるのか、その理由を最大2文で説明します。
+文字パターンに一致する文字を削除することは、プログラマーが行う一般的な作業です。これは、特定の条件を満たさない文字を削除することで、コードの効率性や読みやすさを向上させるためです。
 
-パターンにマッチする文字を削除することは、データの前処理や整形に役立ちます。例えば、電話番号やメールアドレスなどの特定の書式に従っていないデータを正しいフォーマットに変換する際に使用されます。
+## 方法:
 
-##やり方
-
-以下は、Rubyで文字を削除する方法の例です。まずは、文字列変数を定義します。
-
-```Ruby
-str = "Ruby is a fun language!"
+### 文字列から特定の文字を削除する方法:
+```Ruby 
+str = "Hello World"
+newStr = str.delete("l") 
+puts newStr
+```
+出力:
+```
+Heo Word
 ```
 
-次に、正規表現を使用して文字列から特定の文字を削除します。
-
-```Ruby
-str.sub(/[aeiou]/, "") # => "Rby s a fn lngg!"
+### 正規表現を使って文字列から特定の文字を削除する方法:
+```Ruby 
+str = "12345678"
+newStr = str.gsub(/[13]/, "")
+puts newStr
+```
+出力:
+```
+245678
 ```
 
-この場合、`sub`メソッドを使用して、文字列中の最初にマッチした文字を削除します。正規表現の`/[aeiou]/`は、母音を表しています。`"Ruby"`の`"u"`が削除されて`"Rby"`になりました。
-
-さらに、`gsub`メソッドを使用することで、文字列中の全てのマッチした文字を削除することもできます。
-
-```Ruby
-str.gsub(/[aeiou]/, "") # => "Rby s  fn lngg!"
+### 配列から特定の文字を削除する方法:
+```Ruby 
+arr = ["apple", "banana", "orange"]
+newArr = arr - ["banana"]
+puts newArr
+```
+出力:
+```
+["apple", "orange"]
 ```
 
-このように、パターンにマッチする文字を削除することで、データの整形が可能になります。
+## 深堀り:
 
-##掘り下げる
+### 歴史的な背景:
+文字パターンに一致する文字を削除するというアイデアは、古くからあるものです。例えば、古代ローマの数学者であるオッキャムのウィリアムが提唱した「オッキャムの剃刀の原理」に由来し、不要なものを削除することで合理的な解決を図るという考え方があることを示しています。
 
-パターンマッチングには、正規表現や`sub`、`gsub`メソッド以外にも様々な方法があります。例えば、`delete`メソッドを使用することで、特定の文字を削除することもできます。
+### 代替方法:
+文字パターンに一致する文字を削除する他の方法としては、特定の文字を検索してから削除する方法や、文字列の一部を取り除く方法があります。それぞれの方法にはメリット・デメリットがあり、状況に応じて使い分けることが大切です。
 
-```Ruby
-str.delete("a-z") # => "by!"
-```
+### 実装の詳細:
+Rubyでは、StringクラスやArrayクラスのメソッドを使って文字パターンに一致する文字を削除することができます。具体的には、.deleteメソッドや.gsubメソッド、-演算子を使うことができます。これらのメソッドや演算子は、文字列や配列を変更せずに新しいオブジェクトを返します。
 
-このように、文字を削除する方法は様々ありますが、正規表現を使用することでより柔軟にパターンにマッチする文字を削除することができます。
+## 関連リンク:
 
-##関連リンク
-
-- [Rubyの正規表現について](https://docs.ruby-lang.org/en/master/doc/ruby_manual.html#label-Regular+Expressions)
-- [gsubメソッドの使い方](https://ruby-doc.org/core-2.7.2/String.html#method-i-gsub)
-- [deleteメソッドの使い方](https://ruby-doc.org/core-2.7.2/String.html#method-i-delete)
+- [Rubyドキュメンテーション](https://docs.ruby-lang.org/ja/2.6.0/class/String.html#I_DELETE)
+- [Rubyガイドブック](https://ruby-book.jnito.com/basics/syntax/string)
+- [正規表現チュートリアル](https://ruby-rails.hatenadiary.com/entry/20141231/1420020245)

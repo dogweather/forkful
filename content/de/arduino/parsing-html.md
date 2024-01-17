@@ -1,7 +1,7 @@
 ---
-title:                "HTML analysieren"
-html_title:           "Arduino: HTML analysieren"
-simple_title:         "HTML analysieren"
+title:                "HTML-Parsing."
+html_title:           "Arduino: HTML-Parsing."
+simple_title:         "HTML-Parsing."
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "HTML and the Web"
@@ -10,62 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was & Warum?
+Parsing HTML ist der Prozess des Lesens und Interpretierens von HTML-Code, um seine Struktur und Inhalte zu verstehen. Programmierer nutzen dies häufig, um Websites zu analysieren oder Daten daraus zu extrahieren.
 
-Haben Sie sich jemals gefragt, wie Sie Daten von einer Website auf Ihrem Arduino erhalten können? Das Parsen von HTML ermöglicht es Ihnen, Daten aus dem Internet zu sammeln und sie auf Ihrem Arduino zu verwenden. Dies kann hilfreich sein, um Informationen von verschiedenen Quellen zu sammeln oder sogar um das Verhalten Ihres Arduino basierend auf Daten aus dem Web zu steuern.
-
-## Anleitung
-
-Um HTML auf Ihrem Arduino zu parsen, benötigen Sie die Bibliothek "HTMLParser". Diese kann über die Arduino IDE installiert werden. Stellen Sie sicher, dass Sie die neueste Version verwenden, um mögliche Fehler zu vermeiden. 
-
-Als nächstes importieren Sie die Bibliothek in Ihrem Sketch mit dem Befehl ```Arduino void setup```. Vergessen Sie nicht, auch die Bibliothek mit einem ```Arduino #include``` Befehl anzugeben.
-
-Erstellen Sie nun eine Instanz der Klasse ```Arduino HTMLParser htmlParser```. Diese Instanz wird zum Parseen des HTML-Codes verwendet. 
-
-Danach müssen Sie eine Funktion erstellen, um die Daten aus dem HTML-Code zu extrahieren. Verwenden Sie dafür den Befehl ```Arduino void handleTag```. In dieser Funktion können Sie dann bestimmte Tags auswählen und die darin enthaltenen Daten speichern.
-
-Schließlich müssen Sie nur noch die Funktion ```Arduino void parse``` aufrufen, die den HTML-Code über ein String-Objekt an die ```Arduino handleTag``` Funktion sendet. 
-
-Hier ist ein Beispielcode, der die Temperatur von einer Wetterwebsite extrahiert und auf dem Seriellen Monitor ausgibt:
-
+## Wie Geht's?
+Um HTML mit Arduino zu parsen, gibt es verschiedene Bibliotheken wie beispielsweise "ArduinoJson" oder "HtmlParser". Hier ist ein Beispielcode, der die Website "www.google.com" liest und die Überschrift ausgibt:
 ```
-#include <HTMLParser.h>
-
-HTMLParser htmlParser;
+#include <ArduinoJson.h>
 
 void setup() {
-  Serial.begin(9600);
-  htmlParser = HTMLParser();
-}
+  Serial.begin(9600); //initialisiere serielle Kommunikation
 
-void handleTag(const char *tag, const char *data) {
-  if (strcmp(tag, "span") == 0) {
-    Serial.println(data);
+  StaticJsonDocument<200> doc; //erstelle ein leeres JsonDocument mit 200 Bytes Speicherplatz
+  String html = ""; //erstelle eine leere String-Variable
+
+  WiFi.begin("SSID", "Password"); //verbinde mit dem WLAN-Netzwerk
+  while (WiFi.status() != WL_CONNECTED) { //warte auf Verbindung
+    delay(500);
+    Serial.println("Connecting to WiFi..");
   }
-}
 
-void parse() {
-  String html = "<span id=\"temp\">25°C</span>";
-  htmlParser.parse(html.c_str(), html.length(), &handleTag);
+  HTTPClient http; //erstelle ein HTTP-Objekt
+  http.begin("http://www.google.com"); //starte die Verbindung mit der Website
+  int httpCode = http.GET(); //führe ein GET-Request aus
+  if (httpCode > 0) { //wenn Verbindung erfolgreich
+    html = http.getString(); //lese den HTML-Code in die String-Variable
+  }
+  else { //sonst
+    html = ""; //setze die String-Variable auf leer
+  }
+  
+  deserializeJson(doc, html); //parsen des HTML-Codes
+  String headline = doc["head"]["title"]; //extrahieren der Überschrift
+  Serial.println(headline); //Ausgabe der Überschrift
 }
 
 void loop() {
-  parse();
+  //nichts hier
 }
 ```
 
-Daraufhin sollte auf dem Seriellen Monitor "25°C" angezeigt werden.
+Die Ausgabe des Beispiels wird in der seriellen Monitor angezeigt und sollte in etwa so aussehen:
+```
+Google
+```
 
-## Tieferer Einblick
+## Tief Tauchen
+Parsing HTML wurde ursprünglich entwickelt, um das World Wide Web zu ermöglichen. Heutzutage gibt es jedoch viele Alternativen wie JSON oder XML, die jeweils ihre eigenen Vor- und Nachteile haben. Bei der Implementierung von HTML-Parsing ist es wichtig, auf die Performance zu achten, da HTML oft sehr umfangreich sein kann.
 
-Das Parsen von HTML auf einem Mikrocontroller wie dem Arduino kann eine Herausforderung sein, da es begrenzte Ressourcen und Rechenleistung hat. Deshalb ist es wichtig, dass Sie den HTML-Code auf das Wesentliche reduzieren, um die Effizienz zu maximieren. Vermeiden Sie die Verwendung von CSS oder JavaScript, da dies den Code unnötig verlängern kann.
-
-Sie können auch verschiedene Bibliotheken ausprobieren, um zu sehen, welche am besten für Ihre spezifischen Anforderungen geeignet ist. Einige mögliche Alternativen sind "EZHTML", "htmlcxx" und "IPWorks PNG HTML5 Parser".
-
-## Siehe auch
-
-Weitere Informationen zum Parsen von HTML auf einem Arduino finden Sie in den folgenden Ressourcen:
-
-- [HTMLParser Bibliothek Dokumentation](https://playground.arduino.cc/Code/HTMLParser)
-- [Tutorial: Parsing HTML mit Arduino und der HTMLParser Bibliothek](https://www.tweaking4all.com/hardware/arduino/arduino-parsing-simple-html-with-the-htmlparser-library/)
-- [Videoanleitung: Daten aus einer Website mit dem Arduino parsen](https://www.youtube.com/watch?v=4vEGE7TYEC0)
+## Siehe Auch
+- [ArduinoJson Bibliothek](https://github.com/bblanchon/ArduinoJson)
+- [HtmlParser Bibliothek](https://github.com/johnnyb/HtmlParser)

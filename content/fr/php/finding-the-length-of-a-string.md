@@ -10,34 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Qu'est-ce que c'est et pourquoi le faire ?
 
-La recherche de la longueur d'une chaîne de caractères est une opération courante en programmation, car cela permet de manipuler des données spécifiques à chaque caractère d'une chaîne. Cela peut également être utile pour vérifier si une chaîne dépasse une certaine limite de longueur.
+Trouver la longueur d'une chaîne de caractères est une tâche courante pour les programmeurs PHP. Cela consiste simplement à déterminer le nombre de caractères composant une chaîne de texte. Cette information est souvent utile pour effectuer des opérations de manipulation de chaînes, telles que la vérification de la validité d'un mot de passe ou la limitation du nombre de caractères dans un champ de saisie.
 
-## Comment faire
+## Comment faire :
 
-Pour trouver la longueur d'une chaîne en PHP, vous pouvez utiliser la fonction prédéfinie `strlen()`. Cette fonction prend une chaîne en tant que paramètre et renvoie le nombre de caractères présents dans cette chaîne.
-
-Exemple de code :
 ```PHP
-$str = "Bonjour tout le monde!";
-echo "La longueur de la chaîne est : " . strlen($str) . " caractères.";
+<?php
+// Utilisation de la fonction strlen() pour trouver la longueur d'une chaîne
+$chaine = "Bonjour le monde";
+echo strlen($chaine); // Affiche 16
+?>
 ```
-Résultat :
+
+```PHP
+<?php
+// Utilisation de la fonction mb_strlen() pour trouver la longueur d'une chaîne multibyte
+$texte = "こんにちは世界"; // Chaîne de caractères en japonais
+echo mb_strlen($texte); // Affiche 6
+?>
 ```
-La longueur de la chaîne est : 21 caractères.
-```
 
-Il est également possible d'utiliser la méthode `mb_strlen()` pour calculer la longueur d'une chaîne prenant en compte les caractères multibytes.
+## Plongée en profondeur :
 
-## Plongeon en profondeur
+La fonction strlen() a été introduite dès la première version de PHP en 1995. Elle a depuis été améliorée pour mieux gérer les caractères multibyte, qui occupent plus d'un octet. Pour cela, la fonction mb_strlen() a été créée. Elle est basée sur la bibliothèque d'extension mbstring et peut gérer efficacement les caractères non-ASCII.
 
-La fonction `strlen()` utilise en fait l'encodage des chaînes de caractères pour compter le nombre de caractères. Cela signifie que, pour les chaînes avec des caractères multibytes, la longueur peut être différente selon l'encodage choisi.
+Cependant, pour les chaînes de caractères très longues, notamment celles provenant de bases de données, utiliser strlen() ou mb_strlen() peut ralentir les performances de votre script. Dans ce cas, il peut être plus efficace d'utiliser la fonction PHP native strcspn() qui permet de trouver la longueur d'une chaîne en utilisant une liste de caractères à ignorer.
 
-De plus, la fonction `strlen()` ne comptera pas les espaces ou les autres caractères spéciaux comme des caractères. Pour prendre en compte ces caractères dans le calcul de la longueur d'une chaîne, vous pouvez utiliser `mb_strlen()` avec l'option `mb_strlen($str, 'UTF-8')`.
+## Voir aussi :
 
-## Voir aussi
-
-- [Documentation officielle de la fonction `strlen()` en PHP](https://www.php.net/manual/fr/function.strlen.php)
-- [Documentation officielle de la fonction `mb_strlen()` en PHP](https://www.php.net/manual/fr/function.mb-strlen.php)
-- [Un guide complet sur la manipulation de chaînes en PHP](https://www.phptherightway.com/#strings)
+- La documentation sur strlen() : https://www.php.net/manual/fr/function.strlen.php
+- La documentation sur mb_strlen() : https://www.php.net/manual/fr/function.mb-strlen.php
+- La documentation sur strcspn() : https://www.php.net/manual/fr/function.strcspn.php

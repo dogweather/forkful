@@ -1,7 +1,7 @@
 ---
-title:                "Att kontrollera om en Mapp existerar"
-html_title:           "Arduino: Att kontrollera om en Mapp existerar"
-simple_title:         "Att kontrollera om en Mapp existerar"
+title:                "Kontrollera om en mapp finns"
+html_title:           "Arduino: Kontrollera om en mapp finns"
+simple_title:         "Kontrollera om en mapp finns"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Files and I/O"
@@ -10,51 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
+Att kontrollera om en katalog finns är ett vanligt förfarande inom programmering. Det innebär helt enkelt att man undersöker om en specifik katalog existerar eller inte. Detta är användbart för att säkerställa att ens program fungerar korrekt och inte försöker att åtkomma en katalog som inte finns.
 
-Att kontrollera om en katalog finns kan vara användbart för att undvika fel och effektivisera kod. Om du till exempel vill spara data till en viss katalog måste du först kontrollera att katalogen verkligen existerar innan du kan spara data till den. Detta säkerställer att din kod fungerar korrekt och undviker att skapa nya kataloger i onödan.
-
-## Så här gör du
-
-För att kontrollera om en katalog finns på din Arduino kan du använda funktionen "exists" från File-klassen. Detta gör det möjligt att söka efter en specifik katalog och få ett booleskt svar på om den finns eller inte.
+## Hur man:
+Här är ett enkelt exempel på hur man kan kontrollera om en katalog med namnet "test" finns:
 
 ```Arduino
-#include <SPI.h>
-#include <SD.h>
-
-void setup() {
-  // Initialiserar SD-kortet
-  if(!SD.begin(10)) {
-    Serial.println("Kunde inte hitta SD-kort.");
-    return;
-  }
-  
-  // Kontrollerar om katalogen "data" finns
-  if(SD.exists("data")) {
-    // Katalogen finns, fortsätt med kod
-  } else {
-    // Katalogen finns inte, gör något annat
-  }
-
-}
-
-void loop() {
-
+if (SD.exists("test")) {
+  Serial.println("Katalogen finns.");
+} else {
+  Serial.println("Katalogen finns inte.");
 }
 ```
+Exempelutskrift:
+```
+Katalogen finns.
+```
+Ovanstående kod använder sig av Arduino SD-biblioteket för att kontrollera om katalogen "test" finns på SD-kortet.
 
-Om katalogen "data" finns kommer funktionen att returnera "true" och därmed kommer den första if-satsen att köras. Om katalogen inte finns kommer funktionen att returnera "false" och därmed kommer den andra if-satsen att köras. Det är också möjligt att använda "exists" för att kontrollera om en fil finns på samma sätt.
+## Djupdykning:
+Att kontrollera om en katalog finns är en viktig del av filhanteringen i ett program. Det är en bra praxis att alltid kontrollera om en katalog finns innan man försöker att använda den för att undvika oförutsedda fel.
 
-## Deep Dive
+Det finns också olika sätt att kontrollera om en katalog existerar, som att använda funktioner som "isDirectory()" eller "existsDir()" beroende på vilket programmeringsspråk man använder. I det här exemplet används funktionen "exists()" från Arduino SD-biblioteket.
 
-För att kunna använda funktionen "exists" måste du ha inkluderat File-biblioteket. Detta gör att du kan använda alla funktioner som finns tillgängliga för att hantera filer och kataloger på ditt SD-kort.
+## Se även:
+[Arduino SD Library Reference](https://www.arduino.cc/en/Reference/SD)
 
-Det finns också möjlighet att använda mer avancerade metoder för att kontrollera om en katalog finns, som till exempel att utföra en sökning på hela SD-kortet för att hitta en specifik katalog. Detta kan vara användbart om du inte vet exakt vad katalogen heter eller om den kan placeras på olika platser på SD-kortet.
-
-## Se även
-
-Här är några användbara resurser för att lära dig mer om att hantera filer och kataloger på din Arduino:
-
-- [File-klassen på Arduino referenssida](https://www.arduino.cc/en/Reference/FileExists)
-- [SD-biblioteket på Arduino referenssida](https://www.arduino.cc/en/Reference/SD)
-- [Guide för att använda SD-kort med Arduino](https://www.arduino.cc/en/Guide/ArduinoSD)
+[How to check if directory exists in C++](https://stackoverflow.com/questions/12774207/how-to-check-if-directory-exists-in-c)

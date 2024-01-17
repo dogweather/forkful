@@ -10,37 +10,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi?
+## Mitä & Miksi?
+Komentoriviparametrien lukeminen on prosessi, jossa ruby-ohjelma lukee käyttäjän syöttämät komennot terminaalin komentoriviltä. Tämä on hyödyllistä, sillä se antaa ohjelmoijille mahdollisuuden antaa dynaamisia komentoja ohjelmalleen ja muokata sen toimintaa haluamallaan tavalla.
 
-Jos olet Ruby-ohjelmoija, saatat joutua käsittelemään komentoriviparametreja. Tämä artikkeli auttaa sinua ymmärtämään, miten voit lukea ja käyttää niitä ohjelmissasi.
-
-## Miten tehdä se?
-
-Komentoriviparametrit voidaan lukea Ruby-ohjelmassa "ARGV" muuttujan avulla. Tämä muuttuja sisältää taulukon kaikista annetuista parametreista.
+## Miten:
+Esimerkiksi, jos haluat ohjelmassasi tulostaa käyttäjän antaman nimen, voit käyttää Ruby-metodia ARGV, joka lukee komentoriviltä annetut parametrit ja tallentaa ne taulukkoon. Tämän jälkeen voit käyttää taulukkoa ja sen sisältämiä parametrejä haluamallasi tavalla.
 
 ```Ruby
-# Luetaan parametrit 
-puts ARGV
-
-# Ajaesessa: ruby testi.rb hello world
-# Tulostaa: ["hello", "world"]
+# Esimerkki koodista
+puts "Hei, " + ARGV[0] + "!" 
 ```
+Syötetyllä nimellä korvataan ARGV[0] ja ohjelma tulostaa esimerkiksi "Hei, Timo!". Tämän lisäksi voit myös käyttää välilyöntiä sekä muita string-metodeja parametrien välissä ja muokata tulostetta haluamallasi tavalla.
 
-Voit myös käyttää "each" metodia käsitelläksesi jokaisen parametrin erikseen:
+## Syväsukellus:
+Komentoriviparametrien lukemista on käytetty jo vuosien ajan ohjelmoinnissa. Se on yksinkertainen, mutta tehokas tapa kommunikoida käyttäjän kanssa ja hallita ohjelman suoritusta. Kuitenkin tätä nykyä on myös muita tapoja lukea syötteitä, kuten esimerkiksi käyttäjän antamaa tietoa ohjelman suorituksen aikana.
 
-```Ruby
-# Tulostetaan jokainen parametri omalle riville
-ARGV.each do |parametri| 
-  puts parametri
-end
-```
+## Muuta:
+Lisätietoja komentoriviparametrien lukemisesta voit löytää Ruby-ohjelmoinnin oppaista ja dokumentaatiosta.
 
-## Syvällistä tietoa
-
-Voit lisätä joustavuutta säätämällä komentoriviparametreja, kuten "required" parametreja tai argumentteja, joilla on oletusarvoja. Voit myös käyttää erilaisia kirjastoja, kuten "optparse" tai "thor", auttaaksesi käsittelyssä ja validoinnissa.
-
-## Katso myös
-
-- [Ruby ARGV dokumentaatio](https://ruby-doc.org/core-2.7.1/ARGV.html)
-- [Optparse kirjasto](https://rubygems.org/gems/optparse)
-- [Thor kirjasto](https://rubygems.org/gems/thor)
+## Katso myös:
+- [Ruby-dokumentaatio](https://www.ruby-lang.org/en/documentation/)
+- [Komentoriviparametrien lukeminen Perl-ohjelmoinnissa](https://perlmaven.com/command-line-arguments-in-perl)

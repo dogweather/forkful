@@ -10,56 +10,76 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+# Was ist das und Warum?
+Using regular expressions in your code allows you to search for patterns in strings of text. It's a powerful tool that saves time and effort for programmers by providing an efficient way to manipulate and extract data from text. 
 
-Wenn du in deiner C#-Programmierung auf effiziente Weise Textmuster erkennen und manipulieren möchtest, dann können reguläre Ausdrücke (Regular Expressions) dir dabei helfen. Diese leistungsstarken Werkzeuge können dir dabei helfen, komplexe Muster zu identifizieren und damit effektiver zu programmieren.
+# Wie geht es?
+## Beispiele
+Hier sind einige Beispiele, um Ihnen einen Einblick zu geben, wie reguläre Ausdrücke in C# verwendet werden können:
 
-## Wie geht das
-
-Um reguläre Ausdrücke in C# zu verwenden, musst du zuerst die Klasse `Regex` importieren. Dann kannst du mit Hilfe von Methoden wie `Match()` und `Replace()` spezifische Textmuster suchen und manipulieren. Schau dir das folgende Beispiel an, um zu sehen, wie einfach es ist:
-
-```C#
-using System.Text.RegularExpressions;
-
-string text = "Hallo, mein Name ist Max. Ich bin 25 Jahre alt.";
-
-// Finde alle Vokale und ersetze sie durch einen Unterstrich
-string transformedText = Regex.Replace(text, "[aeiou]", "_");
-
-// Erwartete Ausgabe: H_ll_, m__n N_m_ _st M_x. _ch b_n 25 J_hr_ _lt.
-Console.WriteLine(transformedText);
+### Beispiel 1: Telefonnummer validieren
 ```
-
-Mit regulären Ausdrücken kannst du auch prüfen, ob ein bestimmtes Muster in deinem Text vorhanden ist oder nicht. Im folgenden Beispiel überprüfen wir, ob die E-Mail-Adresse eines Benutzers in einem bestimmten Format vorliegt:
-
-```C#
 using System;
 using System.Text.RegularExpressions;
 
-string email = "max.mustermann@example.com";
+// Regular expression for a 10-digit phone number
+Regex phoneNumberRegex = new Regex(@"^\d{10}$");
 
-// Überprüfe, ob die E-Mail-Adresse das richtige Format hat
-bool isValidEmail = Regex.IsMatch(email, @"^\w+[\w-\.]*\@\w+((-\w+)|(\w*))\.[a-z]{2,3}$");
+// Valid phone number
+string phoneNumber1 = "1234567890";
+Console.WriteLine(phoneNumberRegex.IsMatch(phoneNumber1)); // Output: True
 
-if (isValidEmail)
-{
-    Console.WriteLine("Die E-Mail-Adresse ist gültig.");
-}
-else
-{
-    Console.WriteLine("Die E-Mail-Adresse ist ungültig.");
-}
-
-// Erwartete Ausgabe: Die E-Mail-Adresse ist gültig.
+// Invalid phone number
+string phoneNumber2 = "1234";
+Console.WriteLine(phoneNumberRegex.IsMatch(phoneNumber2)); // Output: False
 ```
 
-## Tiefere Einsichten
+### Beispiel 2: E-Mail-Adresse prüfen
+```
+using System;
+using System.Text.RegularExpressions;
 
-Reguläre Ausdrücke können noch viel mehr als nur einfache Muster zu suchen und zu ersetzen. Du kannst auch mit Hilfe von Gruppen und Capturing-Groups gezielt Teile des Textes extrahieren oder ersetzen. Außerdem gibt es verschiedene spezielle Zeichen, die du in deinen Ausdrücken verwenden kannst, um das Verhalten zu steuern.
+// Regular expression for a basic email validation
+Regex emailRegex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
 
-Möchtest du mehr über reguläre Ausdrücke erfahren und deine Fähigkeiten in der Verwendung verbessern? Schau dir [diese offizielle C#-Dokumentation](https://docs.microsoft.com/de-de/dotnet/standard/base-types/regular-expressions) an oder finde [hier](https://regex101.com/) praktische Übungen und Beispiele.
+// Valid email address
+string email1 = "example@mail.com";
+Console.WriteLine(emailRegex.IsMatch(email1)); // Output: True
+
+// Invalid email address
+string email2 = "example.com";
+Console.WriteLine(emailRegex.IsMatch(email2)); // Output: False
+```
+
+### Beispiel 3: Zeichenfolgen extrahieren
+```
+using System;
+using System.Text.RegularExpressions;
+
+// Regular expression to extract the domain name from a URL
+Regex urlRegex = new Regex(@"(https?://)?(www\.)?([\w-\.]+)");
+
+// URL with "https://"
+string url1 = "https://www.example.com";
+Match match1 = urlRegex.Match(url1);
+Console.WriteLine(match1.Groups[3].Value); // Output: "example.com"
+
+// URL without "http"
+string url2 = "www.google.com";
+Match match2 = urlRegex.Match(url2);
+Console.WriteLine(match2.Groups[3].Value); // Output: "google.com"
+```
+
+## Tiefergehende Informationen
+### Historischer Kontext
+Reguläre Ausdrücke wurden bereits in den 1950er Jahren entwickelt, als die Notation für reguläre Sprachen eingeführt wurde. Sie wurden dann in den 1960er Jahren von verschiedenen Programmiersprachen übernommen, darunter auch C#.
+
+### Alternativen
+Während reguläre Ausdrücke ein mächtiges Werkzeug für die Textverarbeitung sind, gibt es auch andere Möglichkeiten, bestimmte Aufgaben zu erledigen, z.B. durch die Verwendung von String-Manipulationsfunktionen oder einfachen Bedingungen.
+
+### Implementierungsdetails
+In C# können reguläre Ausdrücke mit der `Regex`-Klasse aus dem `System.Text.RegularExpressions`-Namespace verwendet werden. Diese Klasse bietet eine breite Palette von Möglichkeiten, um verschiedene Muster in Zeichenfolgen zu suchen und zu manipulieren.
 
 ## Siehe auch
-
-- [Offizielle C#-Dokumentation zu regulären Ausdrücken](https://docs.microsoft.com/de-de/dotnet/standard/base-types/regular-expressions)
-- [Praktische Übungen und Beispiele zu regulären Ausdrücken](https://regex101.com/)
+- [Microsoft Documentation on Regular Expressions in C#](https://docs.microsoft.com/en-us/dotnet/standard/base-types/regular-expressions) 
+- [Tutorial on Regex in C#](https://www.c-sharpcorner.com/article/regular-expressions-in-c-sharp/)

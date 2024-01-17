@@ -10,74 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+O que e Por que?
 
-Enviar um pedido HTTP é uma tarefa fundamental ao desenvolver aplicativos web. É a maneira mais comum de obter dados de um servidor e exibi-los no seu aplicativo.
+Enviar uma solicitação HTTP é um processo essencial em programação, pois permite que o seu código faça solicitações a um servidor ou outro recurso online. Isso é especialmente importante quando se trabalha com aplicativos da web ou APIs.
 
-## Como fazer
+Como fazer:
 
-Para enviar um pedido HTTP em TypeScript, primeiro precisamos instalar a biblioteca `axios`. Em um projeto TypeScript existente, abra o terminal e execute o seguinte comando:
-
-```
-npm install axios
-```
-
-Isso adicionará a biblioteca `axios` ao seu arquivo `package.json` e instalará a mesma em seu diretório `node_modules`.
-
-Então, em qualquer arquivo TypeScript em que você deseja enviar o pedido HTTP, importe a biblioteca `axios`:
-
-```
+```TypeScript
 import axios from 'axios';
-```
 
-Para enviar o pedido, usaremos o método `get()` da biblioteca `axios`, que nos permite especificar o URL do servidor e quaisquer parâmetros adicionais. Aqui está um exemplo de um pedido HTTP GET simples para a API de demonstração "jsonplaceholder":
-
-```
-axios.get('https://jsonplaceholder.typicode.com/posts')
-  .then(response => {
+axios.get('https://api.example.com/users')
+  .then((response) => {
     console.log(response.data);
   })
-  .catch(error => {
+  .catch((error) => {
     console.log(error);
   });
 ```
 
-Dentro do método `then()`, temos acesso aos dados recebidos do servidor através da propriedade `data` do objeto `response`. Podemos usar esses dados para atualizar nosso aplicativo ou exibi-los na tela.
-
-Se o pedido for bem-sucedido, a saída será semelhante a esta:
+Saída de amostra:
 
 ```
-[
-  {
-    "userId": 1,
-    "id": 1,
-    "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
-    "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit"
-  },
-  {
-    "userId": 1,
-    "id": 2,
-    "title": "qui est esse",
-    "body": "est rerum tempore vitae\nsequi sint nihil reprehenderit doloremque quia"
-  },
-  //...
-]
+[{name: 'João', age: 25}, {name: 'Maria', age: 30}, {name: 'Carlos', age: 22}]
 ```
 
-Caso ocorra algum erro durante a solicitação, o método `catch()` será acionado e podemos lidar com o erro dentro dele.
+Mergulho profundo:
 
-## Imersão profunda
+Na era moderna da web, enviar solicitações HTTP é uma parte importante da construção de aplicativos. Antes do advento do AJAX (Asynchronous JavaScript and XML), a página inteira precisava ser recarregada para cada solicitação. O AJAX permitiu que o código do lado do cliente fizesse solicitações dinâmicas ao servidor, tornando os aplicativos da web mais rápidos e eficientes. Existem várias bibliotecas e frameworks de JavaScript que facilitam o envio de solicitações HTTP, como o popular Axios.
 
-Ao enviar um pedido HTTP em TypeScript, existem algumas coisas importantes a serem lembradas:
+Veja também:
 
-- Certifique-se de adicionar `;` ao final de cada instrução, é uma boa prática de programação e pode evitar alguns possíveis erros.
-- Use `try` e `catch` ao lidar com erros, assim você pode ter um melhor controle do que está acontecendo em seu aplicativo.
-- Ao adicionar parâmetros ao pedido, certifique-se de usar a sintaxe correta, como por exemplo `?key1=value1&key2=value2`. Isso pode variar dependendo da API que você está usando, então sempre verifique a documentação da API.
-
-Agora que você sabe como enviar um pedido HTTP em TypeScript, pode começar a usar essa habilidade em seus projetos e criar aplicativos web incríveis!
-
-## Veja também
-
-- [Documentação oficial do Axios](https://axios-http.com/docs/intro)
-- [Artigo sobre manipulação de erros em TypeScript](https://medium.com/weekly-webtips/manipulando-erros-em-typescript-de1bb5763cfc?source=friends_link&sk=304d9c62d6fc17240c9b8c5c2b855f2f)
-- [Tutorial sobre como consumir APIs em TypeScript](https://www.freecodecamp.org/news/how-to-make-api-calls-with-axios-and-react-9c5d3e1451b)
+- O guia oficial do TypeScript sobre o uso de bibliotecas de terceiros: [https://www.typescriptlang.org/docs/handbook/declaration-files/library-structures.html](https://www.typescriptlang.org/docs/handbook/declaration-files/library-structures.html)
+- Uma introdução ao conceito de AJAX: [https://developer.mozilla.org/en-US/docs/Web/Guide/AJAX](https://developer.mozilla.org/en-US/docs/Web/Guide/AJAX)
+- Documentação do Axios: [https://github.com/axios/axios](https://github.com/axios/axios)

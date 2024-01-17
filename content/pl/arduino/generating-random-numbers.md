@@ -1,7 +1,7 @@
 ---
-title:                "Generowanie losowych liczb."
-html_title:           "Arduino: Generowanie losowych liczb."
-simple_title:         "Generowanie losowych liczb."
+title:                "Generowanie losowych liczb"
+html_title:           "Arduino: Generowanie losowych liczb"
+simple_title:         "Generowanie losowych liczb"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Numbers"
@@ -10,39 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
-Dlaczego generowanie losowych liczb jest ważne w programowaniu? Wiele projektów wymaga wykorzystania przypadkowych wartości, takich jak gry planszowe, symulacje i generowanie haseł.
+## Co i dlaczego?
 
-## Jak to zrobić
-Aby wygenerować losową liczbę w Arduino, skorzystaj z funkcji ```random()```. Możesz określić zakres liczb, z jakiego ma zostać wybrana wartość, np. ```random(1, 10)``` zwróci losową liczbę z przedziału od 1 do 10.
+Generowanie losowych liczb jest ważnym elementem programowania, ponieważ pozwala na tworzenie różnorodnych i nieprzewidywalnych wyników. Programiści często wykorzystują losowe liczby do symulacji zdarzeń, generowania unikalnych identyfikatorów i wielu innych zastosowań.
 
-```Arduino
-int randomNumber = random(1, 10); // generuje losową liczbę w zakresie od 1 do 10
-Serial.println(randomNumber); // wyświetla liczbę na monitorze szeregowym
-```
-
-W przypadku generowania liczb zmiennoprzecinkowych, możesz użyć funkcji ```randomFloat()```. Przykładowy kod:
+## Jak to zrobić:
 
 ```Arduino
-float randomFloat = randomFloat(0.5, 1.5); // generuje losową liczbę zmiennoprzecinkową z przedziału od 0.5 do 1.5
-Serial.println(randomFloat); // wyświetla liczbę na monitorze szeregowym
+// Losowanie liczby z przedziału 0-99
+int liczba = random(100);
+
+// Wyświetlenie wylosowanej liczby na serial monitorze
+Serial.println(liczba);
 ```
 
-Możesz również użyć funkcji ```randomSeed()``` do ustawienia ziarna generacji, co pozwala na uzyskanie różnych sekwencji liczb w każdym uruchomieniu programu. Przykładowy kod:
-
-```Arduino
-int seed = 123; // ustawia ziarno na 123
-randomSeed(seed); // ustawia ziarno generacji
-int randomNumber = random(1, 100); // generuje losową liczbę w zakresie od 1 do 100
-Serial.println(randomNumber); // wyświetla liczbę na monitorze szeregowym
+**Output:**
+```
+39
 ```
 
-## Deep Dive
-Funkcja ```random()``` w Arduino wykorzystuje generator liczb pseudolosowych typu LCG (ang. Linear Congruential Generator). Działanie tego generatora opiera się na mnożeniu, dodawaniu i odanie modulo liczby n, co pozwala na wygenerowanie sekwencji liczb, które wydają się być losowe. Należy jednak pamiętać, że liczby generowane przez ten algorytm są w rzeczywistości deterministyczne i mogą powtarzać się po pewnym czasie.
+## Wnikliwe zagłębienie:
 
-Jeśli potrzebujesz bardziej zaawansowanej metody generowania losowych liczb, możesz skorzystać z biblioteki ```random()``` lub zainstalować dodatkową bibliotekę, taką jak ```Entropy```, która wykorzystuje losowe fluktuacje sygnału analogowego do generowania bardziej losowych danych.
+### Kontekst historyczny:
+Generowanie losowych liczb jest wykorzystywane już od dawna w informatyce i matematyce. Pierwszą metodą wykorzystywaną do tego celu była tzw. metoda liniowa kongruencji, opracowana w latach 40. XX wieku. Obecnie programiści mogą wybierać spośród wielu różnych algorytmów generujących losowe liczby.
 
-## Zobacz też
-- [Dokumentacja Arduino - random()](https://www.arduino.cc/reference/en/language/functions/random-numbers/random/)
-- [Biblioteka RandomSeed](https://www.arduino.cc/reference/en/libraries/random/)
-- [Biblioteka Entropy](https://github.com/aaronds/arduino-entropy)
+### Alternatywy:
+Arduino posiada wbudowaną funkcję `random()`, jednak można także skorzystać z biblioteki `randomSeed()` do wprowadzenia bardziej losowych danych w procesie generowania liczb. Istnieją również inne sposoby na generowanie liczb pseudolosowych, takie jak np. z wykorzystaniem zewnętrznego generatora losowych liczb (RNG).
+
+### Szczegóły implementacyjne:
+Funkcja `random()` w Arduino korzysta z algorytmu nazwanego "Linear Congruential Generator" (LCG), który jest jednym z najprostszych i najpopularniejszych sposobów na generowanie liczb pseudolosowych. Można także użyć innych algorytmów, takich jak np. "Mersenne Twister" lub "Xorshift".
+
+## Zobacz także:
+
+- Oficjalna dokumentacja Arduino dotycząca funkcji `random()`: https://www.arduino.cc/reference/en/language/functions/random-numbers/random/
+- Poradnik na temat generowania liczb pseudolosowych w Arduino: https://randomnerdtutorials.com/guide-for-random-numbers-with-arduino-and-arduino-due/
+- Wprowadzenie do różnych metod generowania liczb pseudolosowych: https://www.javatpoint.com/cpp-random-number

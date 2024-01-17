@@ -1,7 +1,7 @@
 ---
-title:                "Créer un fichier temporaire"
-html_title:           "Clojure: Créer un fichier temporaire"
-simple_title:         "Créer un fichier temporaire"
+title:                "Création d'un fichier temporaire"
+html_title:           "Clojure: Création d'un fichier temporaire"
+simple_title:         "Création d'un fichier temporaire"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Files and I/O"
@@ -10,29 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+# Qu'est-ce que c'est et pourquoi?
 
-Créer des fichiers temporaires peut sembler être une tâche simple et sans importance, mais c'est en fait une étape essentielle pour de nombreux programmes. Les fichiers temporaires permettent aux applications de stocker temporairement des données, d'exécuter des opérations ou de partager des informations entre différents processus.
+Créer un fichier temporaire en Clojure, c'est créer un fichier qui existe seulement pendant l'exécution du programme et qui est automatiquement supprimé après son utilisation. Les programmeurs créent des fichiers temporaires pour stocker des données de manière temporaire sans encombrer l'espace de stockage permanent.
 
-## Comment faire
+# Comment faire:
 
-Pour créer un fichier temporaire en Clojure, nous pouvons utiliser la fonction standard`with-open`. Cela nous permet d'ouvrir un flux de sortie vers un fichier et de l'utiliser dans une expression. Une fois l'expression terminée, le flux se ferme automatiquement et le fichier temporaire est effacé. Voici un exemple de code:
+Voici comment créer un fichier temporaire en Clojure en utilisant la fonction `with-open` :
 
 ```Clojure
-(with-open [f (java.io.File/createTempFile "prefix" "suffix")]
-  (println "Le chemin du fichier temporaire est:" (.getAbsolutePath f)))
+(with-open [f (java.io.File/createTempFile "temp" ".txt")]
+  (println "Fichier temporaire créé :" (.getPath f)))
 ```
 
-Cela créera un fichier temporaire avec un préfixe "prefix" et un suffixe "suffix" et en affichera le chemin absolu. Une fois le code exécuté, le fichier sera automatiquement effacé.
+La sortie sera quelque chose comme :
 
-## Plongée en profondeur
+```
+Fichier temporaire créé : /var/folders/_7/c79cjys51716015j7_xhszr00000gn/T/temp4878284577772479122.txt
+```
 
-Dans l'exemple précédent, nous avons utilisé la fonction`createTempFile` de la classe Java`java.io.File` pour créer un fichier temporaire. Cette fonction prend en paramètres un préfixe et un suffisant pour générer un nom de fichier unique. Cependant, si vous avez besoin d'un contrôle plus précis sur la création du fichier temporaire, vous pouvez également utiliser la fonction`createTempFile` de la classe`java.nio.file.Files`.
+# Plongée en profondeur:
 
-Cette fonction prend en paramètres un répertoire parent et des options pour la création du fichier, telles que le préfixe, le suffixe, le type de fichier ou les autorisations. Elle renvoie un objet`Path` qui peut ensuite être utilisé pour ouvrir un flux vers le fichier temporaire.
+## Contexte historique:
+Créer des fichiers temporaires est une pratique courante en programmation, présente dans la plupart des langages de programmation. Cela remonte aux débuts de la programmation informatique, lorsque les ressources étaient limitées et qu'il fallait optimiser leur utilisation.
 
-## Voir aussi
+## Alternatives:
+Outre la fonction `createTempFile` utilisée dans l'exemple précédent, il existe d'autres options pour créer des fichiers temporaires en Clojure, telles que `with-open-str` et `with-open-file`. Chacune a ses avantages et il est recommandé de choisir celle qui correspond le mieux à vos besoins.
 
-- [Documentation officielle de Clojure sur la fonction`with-open`](https://clojuredocs.org/clojure.core/with-open)
-- [Documentation officielle de Java sur`java.io.File`](https://docs.oracle.com/javase/8/docs/api/java/io/File.html)
-- [Documentation officielle de Java sur`java.nio.file.Files`](https://docs.oracle.com/javase/8/docs/api/java/nio/file/Files.html)
+## Détails de mise en oeuvre:
+La fonction `createTempFile` utilise la classe `java.io.File` de Java pour créer un fichier temporaire. Elle prend en paramètre un préfixe et une extension pour nommer le fichier temporaire. Elle retourne ensuite un objet de type `File` qui peut être utilisé pour effectuer des opérations de lecture/écriture sur le fichier.
+
+# Voir aussi:
+
+- [Documentation de la fonction `createTempFile`](https://docs.oracle.com/javase/8/docs/api/java/io/File.html#createTempFile-java.lang.String-java.lang.String-)
+- [Plus d'informations sur la classe `java.io.File`](https://docs.oracle.com/javase/8/docs/api/java/io/File.html)

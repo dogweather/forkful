@@ -10,67 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+## O que é e por que fazemos isso?
 
-Você já precisou criar um arquivo temporário em um programa? Criar arquivos temporários é uma tarefa essencial em muitos projetos de programação, seja para armazenar dados temporários ou para realizar alguma operação específica.
+Ao desenvolver software, muitas vezes os programadores precisam criar arquivos temporários para armazenar dados temporariamente. Isso pode ser necessário para diversas tarefas, como realizar testes, armazenar informações temporárias em um programa ou até mesmo para facilitar a organização do código.
 
-## Como Fazer
+## Como fazer:
 
-Para criar um arquivo temporário em Elm, podemos utilizar a biblioteca `elm/file`:
+Em Elm, podemos criar um arquivo temporário usando a função `File.temp` do pacote `elm/file`. Essa função recebe como argumento uma string com o nome do arquivo e retorna um `Result` contendo o caminho completo do arquivo temporário. Veja um exemplo:
 
-```elm
+```Elm
 import File
 
-createTempFile : Task x File.Handle
-createTempFile =
-  File.tempFile "my-temp-file.txt"
-
+fileResult : Result File.Error String
+fileResult =
+  File.temp "meu-arquivo-temporario.txt"
 ```
 
-O código acima utiliza a função `tempFile` da biblioteca `File` para criar um arquivo temporário chamado "my-temp-file.txt". A função retorna um `Task` que irá gerar um `File.Handle`, que pode ser usado para escrever e ler no arquivo.
+Vale lembrar que, caso o arquivo já exista, a função retornará um erro. Para isso, podemos usar a função `File.tempWith` que recebe um segundo argumento como uma função de `Result` para lidar com possíveis erros. Por exemplo:
 
-Podemos então utilizar o `Task` retornado para lidar com o arquivo temporário:
-
-```elm
+```Elm
 import File
-import Task exposing (andThen)
 
-createAndWriteTempFile : String -> Task x ()
-createAndWriteTempFile content =
-  File.tempFile "my-temp-file.txt"
-    |> andThen (\handle -> File.write handle content)
-
+saveFile : String -> Result File.Error String
+saveFile name =
+  File.tempWith (\err -> Err "Arquivo temporário já existe") name
 ```
 
-No exemplo acima, usamos a função `andThen` da biblioteca `Task` para encadear a criação do arquivo temporário com a escrita de conteúdo nele.
+## Deep Dive:
 
-## Deep Dive
+Criar arquivos temporários é uma prática comum na programação e pode ser usada em várias linguagens de programação, não apenas em Elm. Algumas delas possuem funções e pacotes específicos para essa finalidade, como é o caso do Node.js com o pacote `fs` e do Python com a função `tempfile`. 
 
-Por padrão, os arquivos temporários criados com a função `tempFile` serão salvos no diretório temporário do sistema operacional do usuário. Porém, é possível especificar um diretório específico para salvar o arquivo temporário utilizando a função `tempFileIn`:
+Além disso, existem algumas alternativas para criar arquivos temporários em Elm sem utilizar a função `File.temp`. Por exemplo, é possível usar a função `Http.send` para fazer uma requisição a um servidor e receber uma resposta com um arquivo temporário. Outra opção é usar a biblioteca `elm-fs` que oferece várias funções para trabalhar com arquivos.
 
-```elm
-import File
+## Veja também:
 
-createTempFileInHomeDirectory : Task x File.Handle
-createTempFileInHomeDirectory =
-  File.tempFileIn "/home/user/" "my-temp-file.txt"
-
-``` 
-
-Outro aspecto importante a se destacar é que os arquivos temporários geralmente são excluídos automaticamente pelo sistema operacional após serem utilizados. No entanto, se necessário, é possível explicitamente excluir um arquivo temporário utilizando a função `delete` da biblioteca `File`:
-
-```elm
-import File
-import Task exposing (andThen)
-
-deleteTempFile : Task error ()
-deleteTempFile =
-  File.tempFile "my-temp-file.txt"
-    |> andThen File.delete
-
-```
-
-## Veja Também
-
-- [Documentação oficial da biblioteca `elm/file`](https://package.elm-lang.org/packages/elm/file/latest/)
-- [Guia completo de como criar, ler e escrever arquivos em Elm](https://medium.com/@TylerEich/elm-file-io-b56a09a94093)
+- Documentação da função [File.temp](https://package.elm-lang.org/packages/elm/file/latest/File#temp) em Elm.
+- Outras funções para lidar com arquivos em Elm na biblioteca [elm/file](https://package.elm-lang.org/packages/elm/file/latest/File).
+- Fonte [fs do Node.js](https://nodejs.org/api/fs.html) e função [tempfile do Python](https://docs.python.org/3/library/tempfile.html).

@@ -10,50 +10,61 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+# Qu'est-ce que c'est et pourquoi le faire?
 
-Si vous êtes un programmeur en herbe (ou même expérimenté) dans le domaine de la programmation C, vous vous êtes sûrement déjà demandé pourquoi on utilise des nombres aléatoires dans nos programmes. La réponse est simple : les nombres aléatoires ajoutent de la variété et de l'imprévisibilité à nos programmes, leur permettant ainsi de réaliser différentes tâches en fonction des situations aléatoires. Dans cet article, nous allons voir comment générer des nombres aléatoires en langage C et plonger un peu plus en profondeur dans le fonctionnement de ces nombres.
+Générer des nombres aléatoires est une technique utilisée par les programmeurs pour créer des valeurs aléatoires dans leurs programmes. Cela peut être utile pour simuler des scénarios aléatoires, tels que les jeux de hasard ou les jeux vidéo, ou pour générer des données de test aléatoires. Les programmeurs utilisent également des nombres aléatoires pour ajouter un élément de surprise et de variation à leurs programmes.
 
-## Comment Faire
+# Comment faire:
 
-Pour générer des nombres aléatoires en C, nous allons utiliser la bibliothèque "stdlib.h" qui contient des fonctions pour la gestion de la mémoire et la génération de nombres aléatoires.
+Voici un exemple simple de génération de nombres aléatoires en utilisant la fonction rand() en C:
 
-Pour commencer, nous devons initialiser le générateur de nombres aléatoires à l'aide de la fonction "srand". Cette fonction prend en paramètre une graine (seed) qui va permettre de générer des séquences de nombres aléatoires différentes à chaque exécution du programme. Nous pouvons utiliser la fonction "time" de la bibliothèque "time.h" pour obtenir un nombre différent à chaque fois que nous exécutons notre programme.
-
-```
+```c
+#include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 
-int main()
-{
-    int seed = time(NULL);
-    srand(seed);
-    //code pour la génération de nombres aléatoires
+int main() {
+  int i, n;
+  time_t t;
+
+  // Initialise le générateur de nombres aléatoires en utilisant l'heure actuelle comme graine
+  srand((unsigned) time(&t));
+
+  // Génère 10 nombres aléatoires entre 0 et 99
+  printf("Nombres aléatoires : \n");
+  for( i = 0 ; i < 10 ; i++ ) {
+    n = rand() % (100);
+    printf("%d\n", n);
+  }
+  
+  return 0;
 }
 ```
 
-Maintenant que notre générateur est initialisé, nous pouvons utiliser la fonction "rand" pour générer des nombres aléatoires. Cette fonction retourne un entier pseudo-aléatoire compris entre 0 et la constante "RAND_MAX". Pour obtenir un nombre dans une plage précise, nous pouvons utiliser le modulo (%) pour limiter le nombre retourné à la plage souhaitée.
+Voici un exemple de sortie possible:
 
 ```
-int aleatoire = rand() % 10; // retourne un nombre compris entre 0 et 9
+Nombres aléatoires :
+78
+12
+43
+91
+6
+87
+34
+50
+99
+4
 ```
 
-Vous pouvez également utiliser la fonction "rand" en combinaison avec d'autres fonctions pour obtenir des nombres aléatoires plus complexes, tels que des nombres à virgule ou des nombres dans une plage précise.
+# Plongée en profondeur:
 
-## Plongée en Profondeur
+La génération de nombres aléatoires a une longue histoire et a été utilisée dans de nombreux domaines, tels que la cryptographie, la simulation et les jeux. Dans le passé, les programmeurs utilisaient souvent des méthodes basées sur des formules mathématiques pour générer des nombres aléatoires. Cependant, ces méthodes sont devenues obsolètes et peu fiables avec l'avènement de l'informatique moderne. Aujourd'hui, les langages de programmation tels que C ont des fonctions intégrées pour générer des nombres aléatoires de manière plus efficace et plus aléatoire.
 
-Maintenant que nous avons vu comment générer des nombres aléatoires en C, il est important de comprendre comment cette méthode fonctionne réellement.
+Il existe également d'autres méthodes pour générer des nombres aléatoires, telles que l'utilisation de données environnementales telles que le bruit radio ou les vibrations du disque dur. Ces méthodes sont considérées comme plus aléatoires mais peuvent être plus compliquées à implémenter.
 
-En utilisant la fonction "rand", nous générons des nombres pseudo-aléatoires, c'est-à-dire que ces nombres sont produits de façon déterministe en utilisant une formule mathématique complexe, à partir de la graine que nous avons fournie avec la fonction "srand". Cela signifie que ces nombres ne sont pas véritablement aléatoires, mais plutôt imprévisibles pour un observateur extérieur.
+En C, la fonction rand() utilise un générateur de congruence linéaire pour produire des nombres pseudo-aléatoires. Cela signifie que les nombres générés ne sont pas vraiment aléatoires, mais suffisamment aléatoires pour la plupart des utilisations pratiques. Les nombres générés par rand() peuvent être prédits si l'état du générateur est connu. C'est pourquoi il est important d'initialiser le générateur avec une graine différente à chaque exécution du programme.
 
-De plus, le générateur de nombres aléatoires de la bibliothèque "stdlib.h" a une période limitée, ce qui signifie qu'il y aura un moment où les nombres se répéteront. Il est donc conseillé de réinitialiser le générateur régulièrement (par exemple à chaque exécution du programme).
+# Voir aussi:
 
-## Voir Aussi
-
-- [Documentation officielle de la fonction "srand" en C](https://www.gnu.org/software/libc/manual/html_node/Pseudo_002dRandom-Numbers.html)
-- [Article sur la génération de nombres aléatoires en C++](https://www.geeksforgeeks.org/rand-and-srand-in-ccpp/)
-- [Vidéo explicative sur le fonctionnement des nombres aléatoires en informatique](https://www.youtube.com/watch?v=RU7z7EsVl5U)
-
----
-
-*Article rédigé en français par un programmeur passionné, pour les programmeurs en herbe.*
+Pour plus d'informations sur la génération de nombres aléatoires en C, vous pouvez consulter la documentation officielle de rand() sur le site de documentation du langage C. Vous pouvez également trouver des tutoriels et des exemples utiles en ligne, ainsi que des forums où vous pouvez poser des questions et discuter avec d'autres programmeurs.

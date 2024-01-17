@@ -1,7 +1,7 @@
 ---
-title:                "Auslesen von Teilzeichenketten"
-html_title:           "Kotlin: Auslesen von Teilzeichenketten"
-simple_title:         "Auslesen von Teilzeichenketten"
+title:                "Extrahieren von Teilzeichenketten"
+html_title:           "Kotlin: Extrahieren von Teilzeichenketten"
+simple_title:         "Extrahieren von Teilzeichenketten"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Strings"
@@ -10,38 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
-Warum sollte man sich überhaupt mit der Extraktion von Teilstrings beschäftigen? Nun, Teilstrings können sehr nützlich sein, zum Beispiel um bestimmte Teile eines Textes zu isolieren oder um bestimmte Informationen aus einer längeren Zeichenkette herauszufiltern. Wenn du also jemals vor der Aufgabe standest, einen Text zu durchsuchen, um bestimmte Informationen zu finden, dann könnte die Extraktion von Teilstrings genau das Richtige für dich sein.
+## Was und warum?
 
-## Wie geht das?
-Um Teilstrings in Kotlin zu extrahieren, gibt es verschiedene Möglichkeiten. Eine davon ist die Verwendung der `substring()` Funktion. Diese Funktion nimmt zwei Parameter an und gibt einen Teilstring zurück, der zwischen den beiden Parametern liegt. Hier ist ein Beispiel:
+Die Extraktion von Teilstrings, auch bekannt als Substring-Extraktion, ist ein häufig verwendetes Konzept bei der Programmierung. Dabei werden Teile von Texten oder Zeichenketten extrahiert, die benötigt werden, während der Rest ignoriert wird. Dies kann nützlich sein, um bestimmte Informationen aus längeren Texten herauszufiltern oder um Texte in kleinere Einheiten aufzuteilen.
 
+## Wie geht's?
+
+Um Teilstrings in Kotlin zu extrahieren, kannst du die `substring()` Methode verwenden. Diese Methode hat zwei Parameter: den Startindex, an dem die Extraktion beginnen soll, und den endindex, an dem die Extraktion endet. Beide Indizes beziehen sich auf die Positionen der Zeichen in der Zeichenkette.
+
+Beispiel:
 ```Kotlin
-val text = "Hallo Welt!"
-val extracted = text.substring(6, 11)
-println(extracted) // Ausgabe: Welt
+val text = "Hallo Welt"
+val sub = text.substring(0, 5) // "Hallo"
 ```
 
-Ein weiterer Weg ist die Verwendung des `slice()` Operators. Damit kannst du eine bestimmte Anzahl von Zeichen aus einer Zeichenkette auswählen und als Liste zurückgeben lassen. Hier ist ein Beispiel:
+Der Startindex wird dabei inklusive der entsprechenden Zeichen der Zeichenkette enthalten, während der endindex exklusive der entsprechenden Zeichen ist.
 
-```Kotlin
-val text = "Ich liebe Kotlin!"
-val extracted = text.slice(4..8)
-println(extracted) // Ausgabe: liebe
-```
+## Tiefes Eintauchen
 
-In beiden Fällen musst du beachten, dass die Indizes bei 0 beginnen und der letzte Index nicht inklusive ist. Das bedeutet, dass beim `substring()` die Endposition nicht mit in den extrahierten Teilstring einbezogen wird und beim `slice()` die Positionsangabe des letzten Zeichens eins höher sein muss.
-
-## Tieferer Einblick
-Neben den oben genannten Methoden gibt es noch weitere Möglichkeiten, Teilstrings in Kotlin zu extrahieren. Zum Beispiel kannst du den `take()` Operator verwenden, um die ersten x Zeichen eines Strings zu extrahieren. Oder du kannst `drop()` verwenden, um die ersten x Zeichen zu überspringen und den Rest zu extrahieren. Es gibt auch die `split()` Funktion, mit der du eine Zeichenkette an einer bestimmten Stelle teilen und einen Teil davon extrahieren kannst. Du kannst auch reguläre Ausdrücke verwenden, um Teilstrings zu suchen und zu extrahieren.
-
-Die Wahl der Methode hängt von der Aufgabe und deinen persönlichen Vorlieben ab. Es ist immer ratsam, die verschiedenen Möglichkeiten auszuprobieren und zu sehen, welche für dein spezifisches Problem am besten geeignet ist.
+Die Extraktion von Teilstrings ist in vielen Programmiersprachen eine gebräuchliche Technik und ermöglicht es Entwicklern, Texte auf effiziente Weise zu bearbeiten. Eine alternative Methode in Kotlin wäre die Verwendung von regulären Ausdrücken (RegEx), die noch mehr Kontrolle über die Extraktion bieten können, aber auch komplexer zu verwenden sind.
 
 ## Siehe auch
-Hier sind ein paar hilfreiche Links, falls du noch mehr über die Extraktion von Teilstrings in Kotlin erfahren möchtest:
 
-- Offizielle Dokumentation zu Strings in Kotlin: https://kotlinlang.org/docs/reference/basic-types.html#strings
-- Erklärung von Regular Expressions in Kotlin: https://kotlinlang.org/docs/reference/regular-expressions.html
-- Beispiele für die Verwendung von substring(), slice() und anderen Methoden: https://www.baeldung.com/kotlin/extract-substring
-
-Viel Spaß beim Extrahieren von Teilstrings in Kotlin!
+- [Kotlin String API](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+- [Java String substring() Method](https://www.w3schools.com/javaref/met_string_substring.asp) (ähnlicher Ansatz wie in Kotlin)
+- [Regular Expressions in Kotlin](https://kotlinlang.org/docs/regular-expressions.html)

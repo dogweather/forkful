@@ -10,53 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué?
+¿Qué & Por qué?
+Converting a string to lower case, or in Spanish, convertir una cadena a minúsculas, es un proceso común en la programación donde se cambian todas las letras de una cadena de texto a su versión en minúsculas. Los programadores lo hacen para facilitar la comparación de cadenas de texto y para asegurarse de que los datos ingresados por el usuario sean consistentes.
 
-Convertir una cadena de texto a minúsculas puede ser útil en situaciones como el manejo de datos sensibles a mayúsculas y minúsculas, la comparación de cadenas de texto o simplemente por motivos estéticos.
+## Cómo hacerlo:
+Para convertir una cadena a minúsculas en PHP, se puede utilizar la función `strtolower()`. Esta función toma una cadena como parámetro y devuelve la misma cadena con todas las letras en minúsculas.
 
-## Cómo hacerlo
-
-El proceso de conversión de una cadena de texto a minúsculas en PHP es muy sencillo gracias a la función `strtolower()`. Veamos un ejemplo práctico:
-
+Ejemplo de código:
 ```PHP
-<?php
-$cadena = "ESTE TEXTO ESTÁ EN MAYÚSCULAS";
+$cadena = "¡Hola Mundo!";
 echo strtolower($cadena);
 ```
-El código anterior producirá la siguiente salida:
 
-```PHP
-este texto está en mayúsculas
+Resultado:
+```
+¡hola mundo!
 ```
 
-Como se puede ver, la función `strtolower()` convierte todas las letras de la cadena a minúsculas. Incluso si la cadena ya estaba en minúsculas, no habrá cambios en la salida.
+También se puede utilizar la función `mb_strtolower()` para convertir una cadena con caracteres multibyte a minúsculas. Esta función es útil para trabajar con cadenas en otros idiomas que contengan caracteres especiales.
 
-Otra función útil para convertir una cadena a minúsculas es `mb_strtolower()`, que maneja correctamente caracteres multibyte. Esto es especialmente útil en casos donde se están manejando cadenas en idiomas diferentes al inglés.
-
+Ejemplo de código:
 ```PHP
-<?php
-$cadena = "Esta es una cadena con caracteres multibyte ÁÑÕú";
-echo mb_strtolower($cadena, "UTF-8");
+$cadena = "Álvaro";
+echo mb_strtolower($cadena);
 ```
 
-La salida de este código será:
-
-```PHP
-esta es una cadena con caracteres multibyte áñõú
+Resultado:
+```
+álvaro
 ```
 
-## Deep Dive
+## Detalles en profundidad:
+Converting a string to lower case puede remontarse a los primeros sistemas informáticos que utilizaban codificación ASCII, donde no había diferenciación entre mayúsculas y minúsculas. Sin embargo, con la evolución de los lenguajes de programación y la inclusión de caracteres especiales, se hizo necesario tener una forma de convertir las cadenas a un formato estándar.
 
-En PHP, el proceso de conversión a minúsculas se basa en las reglas del conjunto de caracteres utilizado. Por defecto, se utiliza el conjunto ISO-8859-1, que es adecuado para el inglés y otros idiomas europeos occidentales.
+Además de las funciones mencionadas anteriormente, también se pueden utilizar expresiones regulares o métodos manuales para convertir cadenas a minúsculas en PHP. Sin embargo, es importante tener en cuenta que el uso de estas alternativas puede ser menos eficiente y menos confiable que las funciones incorporadas de PHP.
 
-Sin embargo, en la práctica, es importante tener en cuenta el conjunto de caracteres al trabajar con cadenas de texto, especialmente si se manejan diferentes idiomas. En estos casos, es recomendable utilizar la función `mb_strtolower()` y especificar el conjunto de caracteres adecuado para el idioma en el que se está trabajando.
+Para implementar la conversión de cadenas a minúsculas en un programa, es importante tener en cuenta el conjunto de caracteres que se está utilizando. Si se trabaja con idiomas que utilizan caracteres multibyte, se debe utilizar la función `mb_strtolower()` para garantizar que todos los caracteres se conviertan correctamente.
 
-En general, es importante considerar el uso de mayúsculas y minúsculas al comparar cadenas de texto en PHP. Algunas funciones, como `strcmp()` o `strcasecmp()`, son sensibles a mayúsculas y minúsculas, mientras que otras, como `strcoll()` o `strncasecmp()`, no lo son.
-
-Para una comprensión más profunda de cómo funcionan estas comparaciones de cadenas, se recomienda consultar la documentación oficial de PHP.
-
-## Ver también
-
-- [Documentación oficial de PHP sobre strtolower()](https://www.php.net/manual/en/function.strtolower.php)
-- [Documentación oficial de PHP sobre mb_strtolower()](https://www.php.net/manual/en/function.mb-strtolower.php)
-- [Documentación oficial de PHP sobre comparación de cadenas de texto](https://www.php.net/manual/en/book.strings.php)
+## Ver también:
+- [Función strtolower() en la documentación de PHP](https://www.php.net/manual/es/function.strtolower.php)
+- [Función mb_strtolower() en la documentación de PHP](https://www.php.net/manual/es/function.mb-strtolower.php)
+- [Expresiones regulares en PHP](https://www.w3schools.com/php/php_regex.asp)

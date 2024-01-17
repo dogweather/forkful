@@ -1,7 +1,7 @@
 ---
-title:                "Uzyskanie aktualnej daty"
-html_title:           "C++: Uzyskanie aktualnej daty"
-simple_title:         "Uzyskanie aktualnej daty"
+title:                "Pobieranie bieżącej daty"
+html_title:           "C++: Pobieranie bieżącej daty"
+simple_title:         "Pobieranie bieżącej daty"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Dates and Times"
@@ -10,49 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co to jest i dlaczego to robimy?
+Pobieranie aktualnej daty jest ważnym elementem w programowaniu, ponieważ często potrzebujemy aktualnych informacji w celu wykorzystania ich w naszym programie. Programiści używają tej funkcji do ustalania daty i godziny, rejestracji zdarzeń, sprawdzania ważności licencji i wielu innych zadań.
 
-Każdej osobie używającej komputera zdarza się kiedyś potrzebować aktualnej daty. Może to być do celów raportowania, ustawiania terminów, lub po prostu dla własnej świadomości. W tym artykule dowiesz się, jak w prosty sposób uzyskać aktualną datę w języku C++, co może być przydatne w wielu sytuacjach.
-
-## Jak to zrobić
-
+## Jak to zrobić:
+Poniżej przedstawiamy przykładowy kod w języku ```C++```, który pomoże Ci uzyskać aktualną datę w formacie "dd/mm/yyyy":
 
 ```C++
 #include <iostream>
 #include <ctime>
+using namespace std;
 
 int main() {
-
-    // deklaracja i inicjalizacja zmiennej czasowej
-    time_t now = time(0);
-
-    // konwersja czasu na lokalną reprezentację
-    tm* local_time = localtime(&now);
-
-    // wyświetlenie aktualnej daty
-    std::cout << "Aktualna data: " 
-              << local_time->tm_mday << "/" 
-              << local_time->tm_mon + 1 << "/" 
-              << local_time->tm_year + 1900 << std::endl;
-
-    return 0;
+  time_t now = time(0);
+  char* dt = ctime(&now);
+  cout << "Aktualna data i czas: " << dt << endl;
 }
 ```
 
-```bash
-$ g++ current_date.cpp -o current_date
-$ ./current_date
-Aktualna data: 6/4/2021
+Output:
+
+```
+Aktualna data i czas: Thu Jun 17 18:05:36 2021
 ```
 
-W powyższym przykładzie najpierw do zmiennej `now` przypisujemy aktualny czas wyrażony w sekundach od 1 stycznia 1970 roku. Następnie używając funkcji `localtime` konwertujemy ten czas na lokalną reprezentację, czyli dzień, miesiąc i rok. Na koniec, za pomocą obiektu `tm` wyświetlamy odpowiednie elementy daty.
+## Głębsza analiza:
+Pobieranie aktualnej daty jest możliwe dzięki wykorzystaniu biblioteki ```ctime```, która dostarcza funkcje i struktury potrzebne do manipulowania czasem i datą w programie. Alternatywą dla tej metody jest użycie klasy ```std::chrono```, która oferuje większą precyzję i elastyczność przy operacjach na czasie.
 
-## Deep Dive
-
-C++ posiada wiele funkcji związanych z operacjami na czasie i dacie. W przykładzie wykorzystaliśmy funkcję `time` oraz `localtime`, ale istnieją też inne sposoby na uzyskanie aktualnej daty, takie jak na przykład funkcja `asctime`, która pozwala na wyświetlenie daty w czytelnej dla człowieka postaci. Warto zwrócić uwagę, że funkcje związane z czasem i datami różnią się w zależności od systemu operacyjnego, dlatego warto sprawdzić ich dokumentację przed wykorzystaniem.
-
-## Zobacz także
-
-- [cppreference - time](https://en.cppreference.com/w/cpp/chrono/time_point)
-- [GeeksforGeeks - C++ Date and Time](https://www.geeksforgeeks.org/date-and-time-manipulation-in-c/)
-- [cplusplus.com - Dates and Times in C++](https://www.cplusplus.com/reference/ctime/)
+## Zobacz także:
+- Dokumentacja biblioteki ```ctime``` w języku C++: [https://en.cppreference.com/w/cpp/chrono/c/time](https://en.cppreference.com/w/cpp/chrono/c/time)
+- Przykładowe zastosowania pobierania aktualnej daty w programowaniu: [https://www.tutorialspoint.com/cplusplus/cpp_date_time.htm](https://www.tutorialspoint.com/cplusplus/cpp_date_time.htm)
+- Porównanie metod pobierania aktualnej daty: [https://www.chrono-timer.com/cxx-time_fnc.html](https://www.chrono-timer.com/cxx-time_fnc.html)

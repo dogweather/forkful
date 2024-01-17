@@ -1,7 +1,7 @@
 ---
-title:                "एक http अनुरोध भेजना"
-html_title:           "Haskell: एक http अनुरोध भेजना"
-simple_title:         "एक http अनुरोध भेजना"
+title:                "HTTP अनुरोध भेजना"
+html_title:           "Haskell: HTTP अनुरोध भेजना"
+simple_title:         "HTTP अनुरोध भेजना"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "HTML and the Web"
@@ -10,34 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## इसलिए
+"## आप क्या और क्यों करते हैं?"
+एक HTTP अनुरोध भेजना यह अर्थ है कि आप अपने कंप्यूटर से दूसरे कंप्यूटर (सर्वर) को एक प्रश्न पूछ रहे हैं। ये प्रश्न आपकी अनुरोधी कंप्यूटर पर उपलब्ध जानकारी के साथ एकिंकल जवाब के साथ प्रतिक्रिया देगा। इसका मुख्य कारण यह है कि आप अपने एप्लिकेशन में अपनी जरूरत के अनुसार दूसरे सर्वर से जानकारी लेना चाहते हैं।
 
-एचटीटीपी अनुरोध भेजने में क्यों लगता है, इसका कारण यह है कि हम अपनी एपीआई और उसके साथ संवाद करने के लिए इसका उपयोग करते हैं, जो हमारे दैनिक कार्य में बहुत उपयोगी हो सकता है।
-
-## कैसे
-
+"## कैसे?"
 ```Haskell
 import Network.HTTP
 
-main :: IO ()
 main = do
-    -- यहां हमें एचटीटीपी अनुरोध को बनाने के लिए आवश्यक विवरण प्रदान करने की आवश्यकता होती है
-    -- इस उदाहरण में, हम Google वेबसाइट से डेटा लेने के लिए अनुरोध भेज रहे हैं
-    resp <- simpleHTTP (getRequest "http://www.google.com")
-    -- अनुरोध के उत्तर को प्राप्त करने के लिए, हम उसे बाइट स्ट्रीम के रूप में पढ़ने के लिए ResponseBody का उपयोग कर सकते हैं
-    body <- getResponseBody resp
-    -- उत्तर के साथ कुछ छपाई जाएगा
-    print body
+  response <- simpleHTTP (getRequest "https://www.example.com")
+  content <- getResponseBody response
+  print content
 ```
+इस कोड से हम एक HTTP अनुरोध स्थापित करते हैं, सर्वर से एक जवाब प्राप्त करते हैं और उस जवाब की सामग्री को मुद्रित करते हैं। आप ऊपर दिए गए कोड को अपनी जरूरत के अनुसार बदल सकते हैं।
 
-उपरोक्त कोड का नतीजा निम्नलिखित हो सकता है:
+"## गहराई में"
+HTTP (Hypertext Transfer Protocol) के बारे में बात करते हुए, यह एक विशेष तरीके से संरचित तकनीक है जिसका उपयोग विश्वव्यापी वेबसाइटों के मद्देनजर से संचरण करने के लिए किया जाता है। इसमें अतिरिक्त उपयोगों की भी कमी है जैसे कि फ़ाइल अन्तरण और अन्य अन्य कार्यों को वितरित कर आपके ब्राउज़र को एक वेबसाइट पर संचार करने में सहायता मिलती है। यह TCP/IP जैसे अन्य डाटा संचार प्रोटोकॉल से भिन्न है।
 
-```Haskell
-<!doctype html> 
-<html itemscope="" itemtype="http://schema.org/WebPage" lang="en"> 
-<head><meta charset="UTF-8"><meta content="origin" name="referrer"><meta content="IE=Edge" http-equiv="X-UA-Compatible"><meta content="text/html; charset=utf-8" http-equiv="Content-Type"><meta content="width=device-width,initial-scale=1" name="viewport"><meta content="telephone=no" name="format-detection"><meta content="address=no" name="format-detection"><meta content="index,follow" name="robots"><meta content="follow,noindex" name="googlebot">...
-```
+एचटीटीपी अनुरोध प्राप्त करने के लिए अलग-अलग तरीकों का उपयोग किया जा सकता है। अधिकांश एप्लीकेशन लाइब्रेरी हैग भाषा में उपलब्ध हैं। हालांकि यदि आप विभिन्न आवश्यकताओं को पूरा करने के लिए अपना कंप्यूटर से हाइफुटीपी अनुरोध भेजना चाहते हैं, तो आप अपने ऐप्लिकेशन में कस्टम कोड भी लिख सकते हैं।
 
-## गहराई में जाएं
+"## और भी"
+यदि आप HTTP और अन्य डाटा संचार प्रोटोकॉल्स के बारे में अधिक जानकारी के लिए जानना चाहते हैं, तो आप निम्नलिखित स्रोतों के लिए लिंक देख सकते हैं:
 
-एचटीटीपी या Hyper Text Transfer Protocol, इंटरनेट प्रोटोकॉल का एक हिस्सा है, जो वेब के हमारे दैनिक कार्य को सख्त रखता है। यह ऊपर वर्णित उदाहरण से समझ पाना मुश्किल हो सकता है, लेकिन असल में वह एक अत्यंत प्रभावी और उपयोगी उदाहरण है। आप अन्य वेबसाइटों से भी डेटा लेने या अपनी एपीआई को दूसरों को उप
+- [HTTP की विकिपीडिया पृष्ठ](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol)
+- [एचटीटीपी कुल जानकारी परियोजना](https://www.w3.org/Protocols/)
+- [एचटीटीपी कोड्सटेक की विस्तृत झलक](https://developer.mozilla.org/en-US/docs/Web/HTTP)

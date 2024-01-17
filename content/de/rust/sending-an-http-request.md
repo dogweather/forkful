@@ -1,7 +1,7 @@
 ---
-title:                "Das Senden einer HTTP-Anfrage"
-html_title:           "Rust: Das Senden einer HTTP-Anfrage"
-simple_title:         "Das Senden einer HTTP-Anfrage"
+title:                "Senden einer http Anfrage"
+html_title:           "Rust: Senden einer http Anfrage"
+simple_title:         "Senden einer http Anfrage"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "HTML and the Web"
@@ -10,61 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was & Warum?
+Beim Senden von HTTP-Anfragen handelt es sich um die Kommunikation zwischen einem Client und einem Server über das Hypertext Transfer Protocol (HTTP). Programmierer tun dies, um auf Ressourcen oder Daten auf einem Server zuzugreifen, um sie zu nutzen oder zu manipulieren.
 
-Wenn Sie jemals eine Webseite besucht haben, haben Sie auch wahrscheinlich eine HTTP-Anfrage gesendet, ohne es zu merken. Aber hast du dich jemals gefragt, wie das eigentlich funktioniert und wie du in Rust selbst eine HTTP-Anfrage senden könntest? In diesem Artikel werden wir genau das besprechen.
+## Wie geht's?
+Hier ist ein Beispiel, wie man eine HTTP-Anfrage in Rust sendet:
 
-## Wie Geht man Vor
+```Rust
+use reqwest;
 
-Um eine HTTP-Anfrage in Rust zu senden, müssen Sie zuerst das `reqwest`-Paket in Ihrer Cargo.toml-Datei hinzufügen. Dann können Sie die Bibliothek in Ihrem Code importieren und eine Anfrage an eine beliebige URL senden.
+async fn main() -> Result<(), Box<dyn std::error::Error>> {
+    let response = reqwest::get("https://www.example.com")
+        .await?
+        .text()
+        .await?;
 
-```rust
-use reqwest::Error;
-
-async fn main() -> Result<(), Error> {
-    let response = reqwest::get("https://www.example.com").await?;
-
-    println!("Status code: {}", response.status());
-    println!("Body: {}", response.text().await?);
-
+    println!("{}", response);
     Ok(())
 }
 ```
 
-Dieses Beispiel sendet eine einfache GET-Anfrage an die `example.com`-Website und gibt den Statuscode und den Text der Antwort auf der Konsole aus.
+Die Ausgabe des Codes ist der HTML-Inhalt der Website "www.example.com".
 
-## Tief Tauchen
+## Tiefere Einblicke
+Das Senden von HTTP-Anfragen hat eine lange Geschichte und ist ein grundlegender Bestandteil der heutigen Web-Technologie. Es gibt auch Alternativen zum Versenden von HTTP-Anfragen, wie z.B. die Verwendung von Datenaustauschprotokollen wie JSON oder XML. Die Implementierung für das Senden von HTTP-Anfragen in Rust wird durch Bibliotheken wie reqwest erleichtert, die die Funktionalität vereinfachen und die Schreibarbeit reduzieren.
 
-Wenn wir uns genauer ansehen, was hinter den Kulissen passiert, wenn wir eine HTTP-Anfrage senden, sehen wir, dass es verschiedene Arten von Anfragemethoden gibt, wie GET, POST, PUT und DELETE. Wir können auch Parameter und Header zu unserer Anfrage hinzufügen, um bestimmte Ergebnisse zu erhalten.
-
-Um beispielsweise eine POST-Anfrage mit JSON-Körper und benutzerdefinierten Headern zu senden, können wir den folgenden Code verwenden:
-
-```rust
-use reqwest::{Client, Error};
-
-fn main() -> Result<(), Error> {
-    let client = Client::new();
-
-    let response = client.post("https://www.example.com")
-        .header("Authorization", "Bearer TOKEN")
-        .header("Content-Type", "application/json")
-        .json(&json!({
-            "name": "John Doe",
-            "email": "john@example.com"
-        }))
-        .send()?;
-
-    println!("Status code: {}", response.status());
-    println!("Body: {}", response.text().await?);
-
-    Ok(())
-}
-```
-
-Hier verwenden wir die `Client`-Struktur, um unsere Anfrage zu konfigurieren und zu senden. Wir fügen auch benutzerdefinierte Header hinzu und wandeln unseren JSON-Körper in ein `serde_json`-Objekt um, damit er von der Bibliothek verarbeitet werden kann.
-
-## Siehe Auch
-
-- [Offizielle Dokumentation von reqwest](https://docs.rs/reqwest/latest/reqwest/)
-- [HTTP in Rust mit Hyper](https://blog.logrocket.com/http-in-rust-with-hyper/)
-- [Das ultimative Rust Web Framework Shootout](https://www.lpalmieri.com/posts/2020-08-01-performance-shootout-warp-hyper-actix-web/)
+## Sieh dir auch an
+Für weitere Informationen zum Senden von HTTP-Anfragen in Rust, schau dir die offizielle Dokumentation von reqwest an: https://docs.rs/reqwest.

@@ -1,7 +1,7 @@
 ---
-title:                "Senden einer HTTP-Anfrage mit Basic-Authentifizierung"
-html_title:           "Clojure: Senden einer HTTP-Anfrage mit Basic-Authentifizierung"
-simple_title:         "Senden einer HTTP-Anfrage mit Basic-Authentifizierung"
+title:                "Senden einer http-Anfrage mit grundlegender Authentifizierung"
+html_title:           "Clojure: Senden einer http-Anfrage mit grundlegender Authentifizierung"
+simple_title:         "Senden einer http-Anfrage mit grundlegender Authentifizierung"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "HTML and the Web"
@@ -10,50 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##Warum
+Was ist das und warum machen wir das?
 
-Warum sollte jemand eine HTTP Anfrage mit Basic Authentication senden wollen? Nun, Basic Authentication ist ein einfaches und weit verbreitetes Schema für die Authentifizierung von Webanfragen. Es ermöglicht Benutzern den Zugriff auf geschützte Ressourcen durch die Verwendung von Benutzername und Passwort.
+Das Senden einer HTTP-Anfrage mit grundlegender Authentifizierung ist, wenn wir eine Anfrage an einen Server senden, die unsere Benutzername und Passwort enthält, um unseren Zugriff auf die Ressource zu überprüfen. Programmierer machen das, um sicherzustellen, dass nur authentifizierte Benutzer auf ihre Inhalte zugreifen können.
 
-##Wie geht das?
-
-Um eine HTTP Anfrage mit Basic Authentication zu senden, folgen wir diesen einfachen Schritten:
-
-1. Importieren Sie das `clojure.java.net` Paket.
-2. Definieren Sie eine Funktion mit dem Namen `send-request` mit zwei Parametern: `url` und `credentials`.
-3. Erstellen Sie eine Verbindung zu der angegebenen URL mit dem `http-get` Befehl und speichern Sie das Ergebnis in einer Variablen.
-4. Übergeben Sie die `credentials` in Form eines Strings im Format `Benutzername:Passwort` an die `set-request-property` Funktion.
-5. Senden Sie die Anfrage mit der `open-reader` Funktion und speichern Sie die Ausgabe in einer Variablen namens `response`.
-6. Lesen Sie den Inhalt der Antwort aus der `response` Variable mit der `slurp` Funktion und geben Sie diese zurück.
-
-Ein Beispielcode sieht folgendermaßen aus:
+Wie geht das?
 
 ```Clojure
-(ns basic-auth
-  (:require [clojure.java.net :as net]))
+;; Importiere die required-namespace Bibliothek
+(require '[clojure.java.io :as io])
+;; Erstelle eine neue HTTP-Anfrage mit Authentifizierung
+(def req (io/request 
+		"http://www.example.com/posts" 
+		:method :get 
+		:basic-auth {:username "john" :password "mypassword"}))
+;; Sende die Anfrage und erhalte die Antwort
+(io/finish (io/post req))
 
-(defn send-request [url credentials]
-  (let [conn (net/http-get url)
-        _ (net/set-request-property conn "Authorization" (str "Basic " credentials))
-        response (net/open-reader conn)]
-    (slurp response)))
 ```
 
-Die Verwendung dieser Funktion könnte wie folgt aussehen:
+Hier sehen wir, wie wir eine HTTP-Anfrage mit grundlegender Authentifizierung senden und eine Antwort von der angegebenen URL erhalten. Wir verwenden die "clojure.java.io" Bibliothek, um die Anfrage zu erstellen und zu senden. Die "basic-auth" Option ermöglicht es uns, unsere Benutzername und Passwort hinzuzufügen.
 
-```Clojure
-(def response (basic-auth/send-request "https://www.example.com/api" "username:password"))
-```
+Tiefes Eintauchen
 
-Das Ergebnis würde den Inhalt der Antwort in der `response` Variable speichern, die dann weiterverarbeitet werden kann.
+Das Senden einer HTTP-Anfrage mit grundlegender Authentifizierung ist nicht immer die sicherste Methode, da Benutzername und Passwort im Klartext übertragen werden. Eine Alternative ist die Verwendung von OAuth2, das eine sicherere Authentifizierung ermöglicht, ohne dass Benutzernamen und Passwort übertragen werden müssen.
 
-##Tief eintauchen
+In Clojure ist es auch möglich, die Sitzung und Cookies zu verwalten, um die Authentifizierung zwischen verschiedenen Anfragen aufrechtzuerhalten. Dies kann mit der Bibliothek "clj-http" erreicht werden, die auch eine einfache Möglichkeit bietet, HTTP-Anfragen mit grundlegender Authentifizierung zu senden. Darüber hinaus gibt es die Möglichkeit, benutzerdefinierte Header für zusätzliche Authentifizierungsinformationen hinzuzufügen.
 
-Beim Senden einer HTTP Anfrage mit Basic Authentication gibt es einige wichtige Dinge zu beachten:
+Siehe auch
 
-- Die `credentials` müssen im Base64-Format kodiert werden, um von der `set-request-property` Funktion erkannt zu werden.
-- Basic Authentication ist nicht die sicherste Methode der Authentifizierung, da die Credentials im Klartext übertragen werden. Aus diesem Grund wird empfohlen, auf andere Methoden umzusteigen, wie z.B. OAuth oder API-Keys.
-
-##Siehe auch
-
-- [Dokumentation zu `clojure.java.net`](https://clojuredocs.org/clojure.java.net)
-- [Offizielle Clojure Webseite](https://clojure.org/)
+- "Leitfaden für OAuth2 in Clojure" - Ein detaillierter Leitfaden zur Verwendung von OAuth2 in Clojure.
+- "clj-http" - Eine Bibliothek zur Verwaltung von HTTP-Anfragen in Clojure.
+- "Clojure Cookbook" - Kurze Beispiele und Snippets für häufige Aufgaben in Clojure, einschließlich des Sendens von HTTP-Anfragen mit Authentifizierung.

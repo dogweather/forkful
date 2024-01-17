@@ -10,44 +10,22 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä & Miksi?
 
-Tässä artikkelissa opimme, miten vertaillaan kahta eri päivämäärää Gleam-ohjelmoinnissa. Tämä taito on hyödyllinen, kun haluamme esimerkiksi laskea päiviä kahden päivämäärän välillä tai tarkistaa, kumpi päivämäärä on myöhempi.
+Vertaamalla kahta päivämäärää ohjelmoijat voivat tarkistaa, ovatko kaksi tapahtumaa tapahtuneet samana päivänä tai kumpi niistä tapahtui ensin. Tämä on hyödyllistä esimerkiksi aikajärjestyksessä tapahtuvien tapahtumien seuraamisessa tai päivämäärän valinnassa järjestelmässä. 
 
-## Miten
+## Miten:
 
-Vertaillaan ensin kahden päivämäärän eroa. Käytämme Gleam-ohjelmoinnissa `Date.diff()` -funktiota, jolle annamme kaksi päivämäärää parametreina. Tämän jälkeen voimme käyttää `Date.days()` -funktiota saadaksemme eron päivissä.
+Vertailun suorittamiseksi voit käyttää `Date`-moduulia ja sen `equal()` tai `compare()` -funktioita, jotka ottavat vastaan kaksi päivämäärää parametreina. Esimerkiksi:
 
-```Gleam
-import gleam/date.{days, diff}
-
-let date1 = Date.new(2021, 10, 25)
-let date2 = Date.new(2021, 10, 29)
-
-let difference = diff(date1, date2)
-let days_between = days(difference)
-// Tulostaa: 4
 ```
-
-Nyt voimme myös tarkistaa, kumpi päivämäärä on myöhempi käyttämällä `Date.compare()` -funktiota. Funktiolle annetaan kaksi päivämäärää parametreina ja se palauttaa `Ordering` -tyypin, joka voi olla `Lt` (ensimmäinen päivämäärä on ennen), `Eq` (päivämäärät ovat samat) tai `Gt` (ensimmäinen päivämäärä on jälkeen).
-
-```Gleam
-import gleam/date.{compare}
-
-let date1 = Date.new(2021, 10, 25)
-let date2 = Date.new(2021, 10, 29)
-
-let order = compare(date1, date2)
-// Tulostaa: Gt
+Gleam.Date.equal(#date(2021, 12, 25), #date(2022, 1, 1))
+// Palauttaa "false"
+Gleam.Date.compare(#date(2020, 6, 15), #date(2020, 6, 10))
+// Palauttaa "Gt" (greater than)
 ```
+## Syventävä tarkastelu:
+Päivämäärien vertailu on ollut haaste ohjelmointikielistä riippumatta. Usein virheelliset päivämäärämuodot tai aikavyöhykkeet voivat aiheuttaa ongelmia. On myös olemassa muita tapoja vertailla päivämääriä, kuten Unix-ajan käyttäminen. Gleam tarjoaa kuitenkin helppokäyttöiset muokkaimet ja avustajat päivämäärien kanssa työskentelyyn.
 
-## Syvempi sukellus
-
-Gleamilla on myös `DateTime` -tyyppi, joka sisältää myös ajan tiedot. Voimme verrata kahta `DateTime` -tyyppiä käyttämällä `DateTime.diff()` ja `DateTime.compare()` -funktioita samalla tavalla kuin `Date` -tyyppien kanssa.
-
-On myös tärkeää huomata, että Gleam käyttää Gregoriaanista kalenteria, joten päivämäärät ennen vuotta 1582 eivät toimi oikein. Tämä ei kuitenkaan ole ongelma useimmissa tapauksissa.
-
-## Katso myös
-
-- [Gleamin virallinen dokumentaatio](https://gleam.run/)
-- [Gleam eli funktionaalinen ja mobiiliohjelmointi kokoelman hallinnassa](https://fi.wikipedia.org/wiki/Gleam)
+## Katso myös:
+Lisätietoa päivämäärien vertailusta Gleamissa löytyy virallisesta dokumentaatiosta: https://gleam.run/documentation/library/date.html

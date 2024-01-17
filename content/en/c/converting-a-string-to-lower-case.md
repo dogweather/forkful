@@ -10,39 +10,62 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-One common task in programming is converting a string to lower case. This allows for easier comparison and manipulation of strings, making it a useful function to know in many applications.
+## What & Why?
 
-## How To
+Converting a string to lower case is a common task in programming where a string is converted from containing uppercase letters to lowercase letters. This is often done to standardize input or to compare strings without worrying about the case. By converting to lower case, programmers can save time and avoid potential mistakes in their code.
+
+## How to:
+
+To convert a string to lower case in C, we can use the `tolower()` function from the standard library. It takes in a character as an argument and returns its lowercase equivalent. Here's an example:
+
 ```C
 #include <stdio.h>
-#include <string.h>
 #include <ctype.h>
 
 int main() {
-  char str[50] = "Hello World";
-  
-  // Converting to lower case using toupper()
-  for (int i = 0; i < strlen(str); i++) {
-    str[i] = tolower(str[i]);
-  }
-  
-  // Output: hello world
-  printf("%s", str);
-  
-  return 0;
+    char str[] = "HeLlo WoRLd!";
+    for (int i = 0; str[i] != '\0'; i++) {
+        str[i] = tolower(str[i]);
+    }
+    printf("%s", str);
 }
 ```
-To convert a string to lower case in C, we use the `tolower()` function from the `ctype.h` library. This function takes in a character and returns its lower case equivalent. We can loop through the string and apply this function to each character to convert the whole string to lower case.
 
-## Deep Dive
-The `tolower()` function is a part of the ASCII character set, which is an encoding system that maps each character to a unique numeric value. The ASCII value for upper case letters ranges from 65 to 90, while lower case letters range from 97 to 122.
+Output:
+```
+hello world!
+```
 
-In the `for` loop in our example, we use the `strlen()` function from the `string.h` library to determine the length of the string. We then loop through each character, converting it to lower case using `tolower()` and assigning it back to the original string.
+We can also use the `tolower()` function with strings stored in arrays or pointers. Here's another example:
 
-There are also other ways to convert a string to lower case in C, such as using the `strlwr()` function from the `string.h` library or the `strtolwr()` function from the `strings.h` library. However, these functions may not be available on all systems, whereas `tolower()` is a standard function that is supported by all compilers.
+```C
+#include <stdio.h>
+#include <ctype.h>
 
-## See Also
-- [toupper() function in C](https://www.programiz.com/c-programming/library-function/ctype.h/toupper)
-- [ASCII character set](https://www.asciitable.com/)
-- [string.h library in C](https://www.programiz.com/c-programming/library-function/string.h)
+int main() {
+    char *str = "ByE Bye";
+    while (*str != '\0') { 
+        *str = tolower(*str);
+        str++;
+    }
+    printf("%s", str);
+}
+```
+
+Output:
+```
+bye bye
+```
+
+## Deep Dive:
+
+Historically, converting strings to lower case was done by hand using ASCII codes to determine the lowercase equivalent of each character. However, this is prone to errors and can be time-consuming. Hence, the `tolower()` function was introduced in the C programming language to make this task easier and more efficient.
+
+An alternative to using `tolower()` is the `strlwr()` function, but it is not part of the standard library and is only available in certain compilers. It also has some limitations, such as not converting extended ASCII characters.
+
+In terms of implementation, the `tolower()` function can be implemented using bitwise operations to convert the ASCII code of a character to its lowercase equivalent. This is more efficient than using a series of conditional statements.
+
+## See Also:
+
+- [ASCII code](https://www.asciitable.com/)
+- [C library functions](https://www.ibm.com/support/knowledgecenter/en/ssw_ibm_i_74/rtref/clibfunc.htm) for more string manipulation functions.

@@ -10,35 +10,21 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hva & Hvorfor?
+Å kapitalisere en streng betyr å gjøre den første bokstaven stor bokstav, mens de resterende bokstavene er små. Dette brukes vanligvis for å gi tydelighet og konsistens i kode, spesielt når det kommer til funksjonsnavn og variabler.
 
-Kapitalisering av strenger blir ofte brukt for å gjøre tekst mer leselig eller for å følge standard konvensjoner i programmering.
+## Hvordan:
+```Clojure 
+(clojure.string/capitalize "clojure");
+;; => "Clojure"
 
-## Hvordan
-
-For å kapitalisere en streng, kan du bruke funksjonen `clojure.string/capitalize` som tar inn en streng som argument. Her er et eksempel på hvordan du kan bruke denne funksjonen:
-
-```Clojure
-(clojure.string/capitalize "hello world") ; Output: "Hello world"
+(clojure.string/capitalize "code is cool");
+;; => "Code is cool"
 ```
 
-Som du kan se, blir den første bokstaven i strengen endret til stor bokstav. Dette gjelder uansett om den første bokstaven var en stor eller liten bokstav i utgangspunktet.
+## Dypdykk:
+Å kapitalisere strenger er et vanlig konsept i programmering og brukes ofte for å følge konvensjoner og standarder. Alternativet til å bruke `capitalize` -funksjonen er å manuelt endre strengen ved å konvertere første tegn til stor bokstav ved hjelp av `string/upper-case` funksjonen. Implementasjonen av `capitalize` i Clojure er basert på Unicode-standarden, noe som betyr at den ikke bare støtter engelske bokstaver, men også internasjonale bokstaver og symboler.
 
-Hvis du ønsker å kapitalisere alle de første bokstavene i en setning, kan du bruke funksjonen `clojure.string/capitalize-words`:
-
-```Clojure
-(clojure.string/capitalize-words "hello world") ; Output: "Hello World"
-```
-
-Dette vil også gjelde for strenger som består av flere ord.
-
-## Deep Dive
-
-Det er viktig å merke seg at funksjonene `clojure.string/capitalize` og `clojure.string/capitalize-words` ikke bare bytter ut den første bokstaven i en streng. De bruker faktisk Unicode-standard regler for å kapitalisere strengen. Dette betyr at de håndterer spesielle tegn og diakritiske tegn korrekt.
-
-Du kan også bruke funksjonen `clojure.string/upper-case` for å konvertere en hel streng til store bokstaver, og `clojure.string/lower-case` for å konvertere den til små bokstaver.
-
-## Se også
-
-- [Clojure strings dokumentasjon](https://clojure.org/api/cheatsheet)
-- [Utbredte Unicode-standard regler for kapitalisering](https://www.unicode.org/charts/case/)
+## Se Også:
+* [Clojure Offisiell Dokumentasjon](https://clojure.org/api/clojure.string#clojure.string/capitalize)
+* [Unicode Standard](https://unicode.org/standard/standard.html)

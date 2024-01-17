@@ -1,7 +1,7 @@
 ---
-title:                "Http-pyynnön lähettäminen perusautentikoinnilla"
-html_title:           "C++: Http-pyynnön lähettäminen perusautentikoinnilla"
-simple_title:         "Http-pyynnön lähettäminen perusautentikoinnilla"
+title:                "Lähettämällä http-pyyntö perusautentikoinnilla"
+html_title:           "C++: Lähettämällä http-pyyntö perusautentikoinnilla"
+simple_title:         "Lähettämällä http-pyyntö perusautentikoinnilla"
 programming_language: "C++"
 category:             "C++"
 tag:                  "HTML and the Web"
@@ -10,85 +10,61 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+# Mitä ja miksi?
+HTTP-pyyntöjen lähettäminen perustetunnistuksen kanssa on tärkeä osa verkkokehitystä. Se mahdollistaa suojatun tietojen vaihdon palvelimien välillä ja auttaa varmistamaan, että vain oikeutetut käyttäjät pääsevät tiettyihin resursseihin.
 
-HTTP-pyyntöjen lähettämiseen basic authenticationin avulla voi olla monia syitä. Yksi tärkeimmistä on tietoturva. Basic authentication mahdollistaa turvallisen kommunikoinnin web-sovellusten ja palvelinten välillä salakirjoittamalla käyttäjän tunnistetiedot.
-
-## Kuinka
-
-Tässä esimerkissä näytämme, kuinka voit lähettää HTTP-pyynnön basic authenticationin avulla käyttäen C++:ia.
+# Kuinka?
+Käyttämällä C++ -ohjelmointikieltä voit lähettää HTTP-pyynnön perustetunnistuksella helposti ja turvallisesti. Alla on yksinkertainen koodinäyte, joka näyttää, miten se tehdään:
 
 ```C++
-// Määritä tarvittavat kirjastot
 #include <iostream>
-#include <curl/curl.h>
+#include <curl/curl.h> //Tarvittavat kirjastot
 
-using namespace std;
-
-// Alusta muuttujat, jotka sisältävät käyttäjän tiedot
-const string USERNAME = "käyttäjätunnus";
-const string PASSWORD = "salasana";
-
-// Määritä funktio, joka lähettää HTTP-pyynnön
-size_t pyynnon_lahetys_cb(void *contents, size_t size, size_t nmemb, void *userp)
-{ 
-  return size * nmemb; //Palauttaa vastauksen sisällön koon
-}
-
-int main(void)
-{
-  CURL *curl; // Yhteyden muodostamiseen käytettävä CURL-olio
-  CURLcode result; // HTTP-pyynnön lähetyksen tulos tai mahdolliset virheet
-  curl = curl_easy_init(); // Alusta CURL-olio
-
-  if(curl) 
-  {
-    // Aseta CURL-oliolle tarvittavat asetukset
-    curl_easy_setopt(curl, CURLOPT_URL, "http://example.com"); // Määritä pyyntöä vastaanottavan palvelimen URL
-    curl_easy_setopt(curl, CURLOPT_USERNAME, USERNAME.c_str()); // Aseta käyttäjänimi
-    curl_easy_setopt(curl, CURLOPT_PASSWORD, PASSWORD.c_str()); // Aseta salasana
-    curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, pyynnon_lahetys_cb); // Määritä callback-funktio vastauksen käsittelyä varten
-
-    // Lähetä HTTP-pyyntö
-    result = curl_easy_perform(curl);
-
-    // Tarkista pyynnön lähetyksen tulos
-    if(result != CURLE_OK) 
-    {
-      cout << "Virhe: " << curl_easy_strerror(result) << endl; // Tulosta mahdollinen virheilmoitus 
+int main(){
+  CURL *curl;
+  CURLcode res;
+  
+  //Alusta cUrl
+  curl = curl_easy_init();
+  
+  if(curl) {
+    //Aseta pyyntöosoite
+    curl_easy_setopt(curl, CURLOPT_URL, "https://www.example.com");
+    
+    //Aseta tunnistustiedot
+    curl_easy_setopt(curl, CURLOPT_USERPWD, "käyttäjänimi:salasana");
+    
+    //Lähetä HTTP-pyyntö
+    res = curl_easy_perform(curl);
+    
+    //Tarkista vastauskoodi
+    if(res == CURLE_OK){
+      //Tulosta vastaus
+      std::cout << "Vastaus saatu onnistuneesti!" << std::endl;
+    } else {
+      //Tulosta virheilmoitus
+      std::cout << "Virhe: " << curl_easy_strerror(res) << std::endl;
     }
-
-    // Pura CURL-olio
-    curl_easy_cleanup(curl); 
+    
+    //Vapauta curl
+    curl_easy_cleanup(curl);
+  } else {
+    //Jos cUrl on alustettu virheellisesti, tulosta virheilmoitus
+    std::cerr << "cUrl ei alustettu!" << std::endl;
   }
-
+  
   return 0;
 }
 ```
 
-**Esimerkkitulostus:**
+Kun suoritat koodin, tuloste näyttää vastauksen, jos pyyntö onnistuu, tai virheilmoituksen, jos jokin menee pieleen.
 
-```
-<!doctype html>
-<html>
-  <head>
-    <title>Esimerkkisivu</title>
-  </head>
-  <body>
-    <h1>Tervetuloa!</h1>
-    <p>Tervetuloa esimerkkisivulle, käyttäjä tunnistettu!</p>
-  </body>
-</html>
-```
+# Syväsukellus
+Perustetunnistuksen käyttö HTTP-pyynnöissä on ollut käytössä jo pitkään ja se on yksi yleisimmistä tavoista suojata tietojen vaihto verkkopalvelimien välillä. On myös muita vaihtoehtoja, kuten OAuth, joka tarjoaa lisäturvaa ja mahdollisuuden antaa rajoitettu pääsy tiettyihin resursseihin.
 
-## Deep Dive
+C++:ssa perustetunnistuksen käyttöön tarvitaan cUrl-kirjasto, joka tarjoaa käyttöliittymän verkkoprotokollien käyttämiseen. Tällöin tarvittavaa funktiota kutsutaan asettamalla URL, käyttäjänimi ja salasana parametreiksi ja suorittamalla pyyntö.
 
-Basic authentication toimii lisäämällä `Authorization` -otsake HTTP-pyyntöön. Tämä otsake sisältää käyttäjän tunnistetiedot, jotka on koodattu Base64-formaattiin. Kun vastaanottava palvelin vastaanottaa pyynnön, se purkaa koodauksen ja tarkistaa, ovatko tunnistetiedot oikein. Jos ovat, palvelin antaa pääsyn pyydetylle resurssille.
+# Katso myös
+https://curl.haxx.se/docs/httpscripting.html - Lisää tietoa HTTP-pyyntöjen lähettämisestä cUrl:lla.
 
-On tärkeää muistaa, että basic authentication ei tarjoa täydellistä tietoturvaa, sillä tunnistetiedot välitetään edelleen base64-koodattuna. Suositeltavampaa olisi käyttää HTTPS-protokollaa, joka salaa kaiken kommunikoinnin.
-
-## Katso myös
-
-- [CURL](https://curl.se/)
-- [Base64-koodaus](https://en.wikipedia.org/wiki/Base64)
-- [HTTPS-protokolla](https://en.wikipedia.org/wiki/HTTPS)
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication - Tietoa erilaisista verkkotunnistautumismenetelmistä.

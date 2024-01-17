@@ -10,34 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-今日、私たちが使うほとんど全てのプログラムはテキストベースであり、その中には多くの文が含まれています。これらの文には間違いや古い情報があることがあり、それらを手動で変更するのは非常に時間と手間がかかります。そこで、テキストの検索と置換は、プログラミングでよく使われる機能の一つです。
+## 何&なぜ？
 
-## How To
-テキストの検索と置換を行うには、JavaScriptの組み込みメソッドである`replace()`を使用します。このメソッドは、検索する文字列と置換する文字列を引数として受け取り、検索された文字列が置換された新しい文字列を返します。
+検索と置換テキストとは、コンピュータープログラムであるテキストを探し、特定のテキストで置き換えることを指します。プログラマーは、特定のテキストを大量に置き換えたり、複数のファイルで同じ変更を行う必要があるため、これを行います。
 
-例えば、「Hello World」の中の「Hello」を「こんにちは」に置換したい場合、以下のようにコードを書きます。
-
-```javascript
-let str = "Hello World";
-let newStr = str.replace("Hello", "こんにちは");
-console.log(newStr); // こんにちは World
+## 方法：
+```
+// テキストを置換する例
+let str = "Hello world!";
+let newStr = str.replace("world", "universe");
+console.log(newStr);
+// 出力：Hello universe!
 ```
 
-もし、検索する文字列が複数ある場合は、正規表現を使うことができます。正規表現は、検索するパターンを指定するための特殊な文字列です。以下のようにコードを書くことで、文字列内のすべての「a」を「@」に置換することができます。
-
-```javascript
-let str = "apple, banana, orange";
-let newStr = str.replace(/a/g, "@");
-console.log(newStr); // @pple, b@n@n@, or@nge
+```
+// 正規表現を使用して複数のテキストを置換する例
+let str = "I have 3 apples and 5 oranges.";
+let newStr = str.replace(/\d+/g, "2");
+console.log(newStr);
+// 出力：I have 2 apples and 2 oranges.
 ```
 
-## Deep Dive
-`replace()`メソッドは、デフォルトでは最初に見つかった文字列のみを置換します。しかし、`g`フラグを使うことで、すべてのマッチする文字列を置換することができます。また、正規表現では、パターンマッチングに加えて置換時により複雑な処理を行うこともできます。
+## 深い探求:
 
-また、JavaScript以外にも多くのプログラミング言語やテキストエディタなどでも、同様にテキストの検索と置換を行うことができます。そのため、これらの機能を学ぶことは、プログラミングの基本的なスキルの一つとなります。
+検索と置換は、コンピューターが発明された初期から存在していた技術です。最も一般的な方法は、文字列を探索するためのループを使っていましたが、現代のプログラミング言語では効率的なメソッドや正規表現を使用できます。代替手段としては、コマンドラインツールやテキストエディターの置換機能もあります。実装に関する詳細情報は、個々の言語や環境のドキュメントを参照してください。
 
-## See Also
-- [String.prototype.replace() - MDN Web Docs](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
-- [正規表現チュートリアル - Qiita](https://qiita.com/KentaYamamoto/items/d72c6a7f79d5fc91ef58)
-- [正規表現テスター - regex101](https://regex101.com/)
+## 参考文献：
+
+- [MDN web docs: テキストを置換する](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
+- [正規表現チュートリアル](https://www.w3schools.com/jsref/jsref_replace.asp)
+- [テキストエディターの機能を活用する - 検索と置換](https://canvasry.com/web-studio/srch-rplc-slt.html)

@@ -1,7 +1,7 @@
 ---
-title:                "Konvertering av en dato til en streng"
-html_title:           "Rust: Konvertering av en dato til en streng"
-simple_title:         "Konvertering av en dato til en streng"
+title:                "Konvertere en dato til en streng"
+html_title:           "Rust: Konvertere en dato til en streng"
+simple_title:         "Konvertere en dato til en streng"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Dates and Times"
@@ -10,46 +10,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
-Det å konvertere et datoobjekt til en streng kan være svært nyttig når man jobber med datoer og tidsstemplinger i Rust. Det kan hjelpe deg med å presentere datoer på en mer lesbar måte i brukergrensesnitt eller lagre dem i en database.
+# Hva & Hvorfor?
+Konvertering av en dato til en streng er en måte for programmerere å representere datoer i en lesbar form for brukere. Dette er viktig for å gi mer informasjon og kontekst til dataene som blir vist til brukerne.
 
-## Hvordan
-For å konvertere en dato til en streng i Rust, kan du bruke `to_string` metoden til datoobjektet. La oss si at vi har et datoobjekt som ser slik ut: `let dato = NaiveDate::from_ymd(2021, 9, 15);`
+## Hvordan:
+En enkel måte å konvertere en dato til en streng på i Rust er å bruke "strptime" funksjonen fra biblioteket "time". I koden nedenfor ser vi en eksempel på hvordan denne funksjonen kan brukes:
 
-Nå kan vi enkelt konvertere dette til en streng ved å bruke `to_string` metoden slik: `let dato_string = dato.to_string();`
+```Rust
+use std::time::strftime; 
 
-Her er et eksempel på hvordan dette fungerer i praksis:
-
-```rust
-use chrono::prelude::*;
-fn main() {
-    let dato = NaiveDate::from_ymd(2021, 9, 15);
-    let dato_string = dato.to_string();
-    println!("{}", dato_string);
-}
+let time = strftime("%a %b %d %Y", &now);
+println!("Dagens dato er: {}", time);
 ```
+Eksempel output: "Dagens dato er: Lør Mai 01 2021"
 
-Kjører dette programmet vil gi følgende output: `2021-09-15`
+## Dypdykk:
+Før i tiden ble datoer representert i en numerisk form, for eksempel 01/05/2021. Men i dagens samfunn forventes det ofte at datoer vises på en mer lesbar måte, spesielt på internett og i digitale applikasjoner. Alternativer til å konvertere datoer til strenger inkluderer å bruke spesielle formateringsfunksjoner eller å bruke biblioteker som kan håndtere internasjonale datoformater. I Rust, kan man også bruke "chrono" biblioteket for å konvertere datoer til forskjellige språk eller standardformater.
 
-Dette er den standardformaten for datoer i Rust, men du kan også bruke `format` metoden for å tilpasse formatet. For eksempel, hvis du ønsker å vise datoen som `15.09.2021`, kan du bruke følgende kode:
-
-```rust
-use chrono::prelude::*;
-fn main() {
-    let dato = NaiveDate::from_ymd(2021, 9, 15);
-    let dato_string = dato.format("%d.%m.%Y").to_string();
-    println!("{}", dato_string);
-}
-```
-
-Kjører dette vil gi følgende output: `15.09.2021`
-
-## Dypdykk
-Det finnes flere måter å konvertere et datoobjekt til en streng på i Rust, avhengig av hvilket format du ønsker å bruke. I eksemplene over har vi brukt `to_string` og `format` metoden fra Chrono biblioteket. Det finnes også andre biblioteker som tilbyr lignende funksjonalitet, som for eksempel `strftime` fra time biblioteket.
-
-Det er også viktig å være klar over at hvis du ønsker å konvertere datoer til en spesifikk tidsone, må du bruke `with_timezone` metoden sammen med `to_string` eller `format` for å få riktig resultat.
-
-## Se også
-- [Chrono dokumentasjon](https://docs.rs/chrono/0.4.19/chrono/)
-- [Rust Standard Library - Dates and Times](https://doc.rust-lang.org/std/time/index.html)
-- [Time biblioteket](https://crates.io/crates/time)
+## Se også:
+- [Rust dokumentasjon for "time" biblioteket](https://doc.rust-lang.org/time/tm/struct.Tm.html)
+- [Rust dokumentasjon for "chrono" biblioteket](https://docs.rs/chrono/0.4.19/chrono/)

@@ -10,31 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que escrever testes é importante?
+## O que é e porquê?
 
-Escrever testes é uma prática fundamental para todo programador, pois garante a qualidade do código e previne possíveis erros em sua aplicação. Além disso, a criação de testes automatizados ajuda a economizar tempo e esforço em futuras manutenções.
+Escrever testes é uma parte importante do processo de desenvolvimento de software, onde os programadores criam pequenos programas que verificam se o seu código principal está funcionando corretamente. Os testes ajudam a garantir que o código é robusto e funciona como o esperado.
 
-## Como fazer isso no Gleam?
+## Como:
 
-A linguagem de programação Gleam possui um sistema de testes integrado que facilita a criação de testes unitários e funcionais. Para criar um teste, basta criar um arquivo com a extensão .test.gleam e importar o módulo de testes da biblioteca padrão.
+Para escrever testes usando Gleam, importe o módulo `gleam/testing` e use a função `test` passando uma string descritiva e uma expressão a ser verificada. O resultado será `Ok` se a expressão retornar verdadeira, e `Err` se retornar falso.
 
 ```Gleam
-import test
+import gleam/testing
 
-test.test("Meu teste") {
-  assert.equal(2 + 2, 4)
+test "O número 2 é igual a 2" {
+  expect 2 == 2
 }
 ```
 
-Ao executar o comando `gleam test`, todos os testes no arquivo serão executados, mostrando o resultado e os possíveis erros encontrados.
+Para executar seus testes, use o comando `gleam test` no terminal e veja os resultados.
 
-## Aprofundando no assunto
+## Detalhando mais:
 
-Além de simples testes de comparação de valores, o Gleam também permite o uso de blocos de código para realizar testes mais complexos. Além disso, é possível criar testes que simulam erros e falhas para garantir que a aplicação se comportará corretamente nesses cenários.
+Escrever testes é uma prática comum em desenvolvimento de software, pois ajuda a garantir que mudanças no código não introduzem novos bugs. Existem outras ferramentas para escrever testes em Gleam, como `gleam-expect` e `gleam-assert`, que oferecem diferentes maneiras de verificar suas expressões.
 
-Veja mais sobre testes no Gleam em sua [documentação oficial](https://gleam.run/book/testing.html).
+O módulo de testes do Gleam é escrito em Gleam e usa o assertor do `gleam_assert` por baixo dos panos.
 
-## Veja também
+## Veja também:
 
-- [Documentação oficial do Gleam](https://gleam.run/documentation/)
-- [Tutorial de introdução ao Gleam](https://medium.com/@gleamlang/apresentando-o-gleam-uma-linguagem-de-programa%C3%A7%C3%A3o-funcional-33c6375d6355)
+- [Documentação Gleam: Testes](https://gleam.run/book/tour/test.html)
+- [Gleam Expect](https://github.com/gleam-lang/gleam-expect)
+- [Gleam Assert](https://github.com/gleam-lang/gleam-assert)

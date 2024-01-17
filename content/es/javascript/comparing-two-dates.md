@@ -10,51 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por quéComparar fechas es una tarea común en la programación, especialmente en aplicaciones que involucran eventos o tareas programadas. Al comparar dos fechas, podemos determinar qué evento sucedió primero, si dos eventos sucedieron el mismo día, o incluso calcular la diferencia de tiempo entre dos fechas.
+## ¿Qué y Por qué?
 
-## Cómo hacerlo
+Comparar dos fechas en Javascript es una acción recurrente en la programación, especialmente cuando se trabaja con fechas y horarios. Se trata de comparar dos objetos de tipo ```Date```, ya sea para determinar si son iguales, anteriores o posteriores entre sí.
 
-Para comparar dos fechas en JavaScript, podemos utilizar el objeto `Date` y sus métodos `getTime()` y `setTime()`. Estos métodos nos permiten convertir una fecha a un número en milisegundos, lo que facilita la comparación.
+Los programadores realizan esta tarea para poder ordenar listas de fechas, validar la entrada de datos en formularios, calcular la diferencia entre dos fechas y muchas otras tareas relacionadas con el manejo de fechas y tiempos.
 
-Por ejemplo, si queremos comparar dos fechas para determinar cuál sucedió primero, podemos hacerlo de la siguiente manera:
+## ¿Cómo hacerlo?
 
-```
-let fecha1 = new Date("January 1, 2021");
-let fecha2 = new Date("January 15, 2021");
+A continuación se muestran algunos ejemplos de cómo comparar dos fechas en Javascript usando operadores lógicos y métodos específicos de objetos ```Date```. Se incluye también un ejemplo de salida para cada caso.
 
-if (fecha1.getTime() < fecha2.getTime()) {
-  console.log("La fecha 1 sucedió antes que la fecha 2");
-} else if (fecha1.getTime() > fecha2.getTime()) {
-  console.log("La fecha 2 sucedió antes que la fecha 1");
-} else {
-  console.log("Ambas fechas sucedieron el mismo día");
-}
+```Javascript
+let fecha1 = new Date('2021-01-31');
+let fecha2 = new Date('2021-02-28');
 
-// Output: La fecha 1 sucedió antes que la fecha 2
-```
+fecha1 < fecha2; // true
+fecha1 === fecha2; // false
 
-También podemos comparar el año, mes y día de dos fechas utilizando los métodos `getFullYear()`, `getMonth()` y `getDate()` respectivamente. Por ejemplo, si queremos determinar si dos eventos ocurrieron en el mismo mes, podemos hacer lo siguiente:
+fecha1.getTime() < fecha2.getTime(); // true
+fecha1.getTime() === fecha2.getTime(); // false
 
-```
-let evento1 = new Date("February 10, 2021");
-let evento2 = new Date("February 25, 2021");
-
-if (evento1.getFullYear() == evento2.getFullYear() && evento1.getMonth() == evento2.getMonth()) {
-  console.log("Ambos eventos ocurrieron en el mismo mes");
-} else {
-  console.log("Los eventos no ocurrieron en el mismo mes");
-}
-
-// Output: Ambos eventos ocurrieron en el mismo mes
+fecha1.toDateString() === fecha2.toDateString(); // false
+fecha2.toDateString() > fecha1.toDateString(); // true
 ```
 
-## Inmersión profunda
+Salida:
+```
+true
+false
+true
+false
+false
+true
+```
 
-Hay más métodos que podemos utilizar para comparar fechas en JavaScript, como `getHours()`, `getMinutes()` y `getSeconds()`, que nos permiten comparar la hora y el minuto de una fecha. También podemos utilizar el operador de comparación `===` para comparar directamente dos fechas en milisegundos.
+## Profundizando
 
-Además, es importante tener en cuenta que al comparar dos fechas, debemos asegurarnos de usar el mismo formato de fecha para evitar resultados inesperados. Es recomendable convertir ambas fechas a un formato estándar para facilitar la comparación.
+Históricamente, la comparación de fechas ha sido un desafío en la programación debido a la diversidad de formatos y sistemas de representación de fechas en diferentes lugares del mundo. Sin embargo, con la incorporación del objeto ```Date``` en Javascript, esta tarea se ha simplificado considerablemente.
+
+Existen también otras formas de comparar fechas en Javascript, como convertir las fechas a formato numérico y luego utilizar operadores lógicos, o usar librerías externas como moment.js. Sin embargo, la forma mostrada anteriormente es la recomendada por su simplicidad y eficiencia.
+
+Es importante tener en cuenta que al comparar fechas en Javascript, se toman en cuenta también los segundos, minutos, horas y otros aspectos del tiempo. Por lo tanto, puede haber casos en los que dos fechas que parecen iguales en su representación, sean consideradas diferentes al realizar la comparación.
 
 ## Ver también
 
-- Tutorial de JavaScript: Manipulación de fechas (https://www.w3schools.com/js/js_dates.asp)
-- Documentación de MDN: Objeto Date (https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Date)
+- [Documentación de Date en MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [Moment.js](https://momentjs.com/) - Librería externa para el manejo de fechas en Javascript.

@@ -10,51 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
+Starting a new project is the process of creating a new software, application, or program from scratch. Programmers do this to solve a specific problem or fulfill a need, either for themselves or for others.
 
-Starting a new project can be an exciting and rewarding experience. It allows you to create something new, explore your creativity, and learn new skills. Plus, you never know where your project might take you in the future.
+## How to:
+To start a new project in Bash, you can follow these steps:
+```Bash
+# Create a new directory for your project 
+mkdir my_project
+# Move into the directory you just created 
+cd my_project 
+# Initialize the project using Git 
+git init 
+# Create a new file for your project 
+touch app.sh
+```
+You now have a new directory for your project and a blank file to start coding in.
 
-## How To
+## Deep Dive:
+Starting a new project is an essential part of the software development process. It allows programmers to have a clean and organized starting point for their code, making it easier to maintain and add new features as the project evolves.
 
-To start a new project in Bash, follow these simple steps:
+Before the introduction of Git, programmers typically used version control systems like Subversion or CVS to manage their projects. However, Git offers a more flexible and decentralized approach, making it the preferred choice for many developers.
 
-1. Create a new folder for your project: ```Bash mkdir new_project```
+Alternatives to starting a new project in Bash include using a development environment or IDE like Visual Studio Code, which provides built-in project management tools.
 
-2. Change into the project directory: ```Bash cd new_project```
+There are no specific implementation details for starting a new project in Bash, as it is a simple and straightforward process. However, it is essential to set up proper project organization and version control practices to ensure a smooth development journey.
 
-3. Create a new bash script file: ```Bash touch script.sh```
-
-4. Open the script file in your preferred text editor: ```Bash nano script.sh```
-
-5. Start coding your project in the script file. Here's an example of a simple "Hello World" script:
-
-   ```Bash
-   #!/bin/bash
-   echo "Hello World"
-   ```
-   
-   Make sure to save the file after you're done coding.
-
-6. Make the script executable: ```Bash chmod +x script.sh```
-
-7. Finally, run your script: ```Bash ./script.sh```
-
-You should see the output "Hello World" in your terminal. Congratulations, you have started your new project!
-
-## Deep Dive
-
-Starting a new project in Bash is a simple and straightforward process. However, there are a few things to keep in mind to ensure a smooth development process.
-
-First, make sure you have a clear understanding of your project's goal and scope. This will help you plan and organize your code effectively.
-
-Second, take advantage of built-in Bash commands and features to make your coding experience easier. For example, you can use loops and conditional statements to automate repetitive tasks.
-
-Lastly, don't be afraid to seek help from online resources or forums if you encounter any issues or have questions. The Bash community is very supportive and always willing to offer assistance.
-
-## See Also
-
-- [Bash Beginners Guide](https://www.tldp.org/LDP/Bash-Beginners-Guide/html/)
-
-- [Bash Scripting Tutorial](https://linuxconfig.org/bash-scripting-tutorial-for-beginners)
-
-- [Bash Guide for Beginners](https://tille.github.io/bashguide/)
+## See Also:
+- [Bash Guide for Beginners](https://ryanstutorials.net/bash-scripting-tutorial/)
+- [Git Documentation](https://git-scm.com/doc)
+- [Visual Studio Code](https://code.visualstudio.com/)

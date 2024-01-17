@@ -1,7 +1,7 @@
 ---
-title:                "Obtendo a data atual"
-html_title:           "Gleam: Obtendo a data atual"
-simple_title:         "Obtendo a data atual"
+title:                "Obtendo a data atual."
+html_title:           "Gleam: Obtendo a data atual."
+simple_title:         "Obtendo a data atual."
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Dates and Times"
@@ -10,37 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que obter a data atual?
+## O que & Por que?
 
-Obter a data atual é uma tarefa comum em muitos programas. Pode ser útil para registrar quando um evento ocorreu, exibir a data para o usuário ou até mesmo para realizar cálculos de tempo. Felizmente, com Gleam, é muito fácil obter a data atual.
+Obter a data atual é uma tarefa comum na programação, pois permite que os programadores criem programas dinâmicos e interativos que exibem informações atualizadas para os usuários.
 
-## Como obter a data atual
-
-Para obter a data atual em Gleam, podemos usar a função `Time.now()`, que retorna a data e a hora atuais em um formato legível. Veja um exemplo abaixo:
+## Como fazer:
 
 ```Gleam
-import gleam/time
+import Time
 
-let data_atual = Time.now()
+let current_date = Time.now()
+
+// Saída: 2021-10-21T10:23:50.621026Z
 ```
 
-Ao imprimir a `data_atual`, veremos algo como `2021-07-15T13:41:25.135076Z`.
-
-Também podemos acessar partes específicas da data, como o dia, mês e ano. Podemos fazer isso usando a função `Time.date()` e especificando qual parte da data queremos, como no exemplo abaixo:
+O código acima utiliza o módulo 'Time' para chamar a função 'now' e obter a data e hora atuais. É importante lembrar que a data e hora serão apresentadas em UTC (Tempo Universal Coordenado).
 
 ```Gleam
-import gleam/time
+import Time
 
-let data_atual = Time.date(Time.Year)
+let current_date = Time.now()
+let formatted_date = Time.format(current_date, "%Y-%m-%d")
+
+// Saída: 2021-10-21
 ```
 
-Isso retornará apenas o ano atual, que seria `2021`.
+Se desejar exibir apenas a data atual sem a hora, é possível utilizar a função 'format' para formatar a data de acordo com um padrão específico. No exemplo acima, estamos utilizando "%Y-%m-%d" para exibir apenas ano, mês e dia separados por hífen.
 
-## Aprofundando-se
+## Mergulho profundo:
 
-A obtenção da data atual pode não parecer tão complexa, mas na realidade, pode ser difícil de implementar de forma confiável. Isso ocorre porque a data e a hora são influenciadas pela configuração do sistema e pelo fuso horário, que podem mudar com os servidores e as localizações geográficas. É importante levar isso em consideração ao utilizar a função `Time.now()` em seus programas Gleam.
+Embora possível, não é recomendado calcular a data e hora atual por conta própria, pois isso pode levar a imprecisões e erros. Portanto, utilizar um módulo como 'Time' facilita o processo e garante a precisão dos dados.
 
-## Veja também
+No entanto, existem outras abordagens para obter a data atual, como utilizar APIs externas ou integrar a aplicação com serviços de terceiros. Cabe ao programador decidir qual é a melhor opção para o seu projeto.
 
-- Documentação da função `Time.now()`: https://gleam.run/modules/time#now
-- Tutorial sobre como trabalhar com datas em Gleam: https://dev.to/mtnuckle/working-with-dates-in-gleam-124a
+## Veja também:
+
+- Documentação do módulo 'Time': https://gleam.run/modules/time.html

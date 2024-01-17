@@ -10,32 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¿Qué y por qué?
 
-¿Alguna vez te has encontrado en la situación de tener que buscar y corregir errores en tu código? Si es así, entonces sabes lo valioso que es el proceso de depuración. Sin embargo, puede ser difícil encontrar el origen de un error, especialmente en programas más complejos. En este caso, imprimir mensajes de depuración en la consola puede ser una herramienta útil para ayudarte a entender lo que está sucediendo en tu código y dónde puede estar el error.
+Imprimir la salida de depuración es una técnica utilizada por los programadores para obtener información sobre el estado del programa en tiempo de ejecución. Esta información es útil para identificar errores y mejorar el rendimiento del código.
 
-## Cómo Hacerlo
+## ¡Cómo hacerlo!
 
-La versión actual de Gleam ha agregado una nueva función que facilita la impresión de mensajes de depuración en la consola. Aquí hay un ejemplo simple de cómo imprimir un mensaje en Gleam:
+Puedes imprimir la salida de depuración en Gleam utilizando la función `Debug.print`. Aquí hay un ejemplo:
 
-```
-Gleam.debug("Este es un mensaje de depuración")
-```
+```Gleam
+let message = "¡Hola, mundo!"
 
-Este mensaje se mostrará en la consola cuando ejecutes tu código. También puedes imprimir valores de variables en tus mensajes de depuración para tener una mejor comprensión de lo que está sucediendo en tu código:
-
-```
-let nombre = "Juan"
-Gleam.debug("Hola, mi nombre es #{@nombre}")
+let _ = Debug.print(message)
 ```
 
-Esto imprimirá "Hola, mi nombre es Juan" en la consola. También puedes utilizar esta función en estructuras condicionales para imprimir mensajes de depuración solo en ciertas situaciones.
+La salida resultante será:
 
-## Inmersión Profunda
+```
+"¡Hola, mundo!"
+```
 
-La función de depuración en Gleam es útil para imprimir mensajes en la consola, pero también tiene algunas características únicas que pueden ser de ayuda. Por ejemplo, puedes utilizar variables de entorno para activar o desactivar la impresión de mensajes de depuración en diferentes entornos, como producción o desarrollo. También puedes utilizar la función `Gleam.log` para imprimir mensajes de depuración en un nivel de registro específico, lo que puede ser útil para filtrar y organizar tus mensajes en la consola.
+## Inmersión profunda
 
-## Ver También
+La impresión de salida de depuración ha sido una técnica ampliamente utilizada por los programadores desde los primeros días de la programación. Sin embargo, también existen otras formas de depurar un programa, como el uso de un depurador o la implementación de pruebas unitarias.
 
-- Documentación oficial de Gleam sobre la función de depuración: https://gleam.run/book/core-modules#debug
-- Tutorial de Gleam sobre cómo utilizar la depuración en tu código: https://gleam.run/tour/debugging
+En Gleam, la función `Debug.print` utiliza macros en lugar de funciones regulares para mejorar el rendimiento y minimizar la sobrecarga en el código resultante.
+
+## Lee también
+
+- Documentación oficial de Gleam: https://gleam.run/documentation/
+- Artículo de la revista Wired sobre la importancia de la impresión de salida de depuración: https://www.wired.com/story/importance-debugging-output/
+- Tutorial de Codecademy sobre la depuración en Gleam: https://www.codecademy.com/learn/learn-gleam/modules/debugging-in-gleam

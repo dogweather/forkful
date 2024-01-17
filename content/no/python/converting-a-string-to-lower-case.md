@@ -1,7 +1,7 @@
 ---
-title:                "Konvertere en streng til små bokstaver"
-html_title:           "Python: Konvertere en streng til små bokstaver"
-simple_title:         "Konvertere en streng til små bokstaver"
+title:                "Konvertering av en streng til små bokstaver"
+html_title:           "Python: Konvertering av en streng til små bokstaver"
+simple_title:         "Konvertering av en streng til små bokstaver"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Strings"
@@ -10,33 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hva & Hvorfor?
 
-Å konvertere en streng til små bokstaver kan være nyttig når du jobber med tekstdokumenter eller programmering. Dette kan gjøre det enklere å sammenligne tekster og finne bestemte ord eller uttrykk.
+Konvertering av en streng til små bokstaver er en vanlig oppgave for programmerere. Dette er for å sikre at all tekst behandles på samme måte, uavhengig av store eller små bokstaver. Dette er spesielt viktig når vi sammenligner eller søker i tekst, da det kan gi mer nøyaktige resultater.
 
-## Hvordan
+# Slik gjør du det:
 
-For å konvertere en streng til små bokstaver i Python, kan du bruke funksjonen "lower()". Her er et eksempel på hvordan du kan bruke denne funksjonen:
+```python
+# Definer en streng:
+streng = 'HEI på DEG'
 
-```Python
-tekst = "HELLO WORLD"
-print(tekst.lower())
+# Bruk lower() funksjonen for å konvertere til små bokstaver:
+endret_streng = streng.lower()
+
+# Skriv ut den endrede strengen:
+print(endret_streng)
 ```
-Dette vil resultere i utskriften "hello world". Som du kan se, har alle bokstavene blitt konvertert til små bokstaver.
-
-Du kan også bruke "lower()" funksjonen på en variabel som allerede inneholder en streng. For eksempel:
-
-```Python
-navn = "MARTHA"
-print("Hei", navn.lower())
+Output:
 ```
-Dette vil skrive ut "Hei martha". Som du kan se, kan du også kombinere funksjonen med andre Python-kommandoer for å lage mer avansert kode.
+hei på deg
+```
+# Dypdykk:
 
-## Dypdykk
+Historisk sett har konvertering av tekst til små bokstaver vært en utfordring for datamaskiner, spesielt fordi alfabetet var strengt begrenset til store bokstaver. Men i dag støtter de fleste programmeringsspråk funksjoner for å enkelt konvertere tekst til både store og små bokstaver.
 
-Det finnes flere forskjellige måter å konvertere en streng til små bokstaver på i Python, men "lower()" funksjonen er en av de enkleste og mest effektive. Det er også viktig å huske at denne funksjonen bare gjelder for bokstaver, og vil ikke påvirke tall eller symboler i strengen. Du kan også bruke "upper()" funksjonen for å konvertere en streng til store bokstaver.
+I tillegg til lower() funksjonen, er det også en upper() funksjon for å konvertere til store bokstaver. I tillegg kan man også bruke islower() og isupper() for å sjekke om en streng er i henholdsvis små eller store bokstaver.
 
-## Se også
+# Se også:
 
-- [Python dokumentasjon for "lower()" funksjonen](https://docs.python.org/3/library/stdtypes.html#str.lower)
-- [Tutorial om strings i Python (på norsk)](https://realpython.com/python-strings/)
+- [Dokumentasjon for lower() funksjonen](https://docs.python.org/3/library/stdtypes.html#str.lower)
+- [Python string metoder](https://www.w3schools.com/python/python_strings_methods.asp)
+- [Stack Overflow diskusjon om konvertering av strenger til små bokstaver](https://stackoverflow.com/questions/6797984/how-to-convert-string-to-lowercase-in-python)

@@ -10,74 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-Sending HTTP requests with basic authentication is a fundamental part of web development and allows for secure communication between a client and server. It is a necessary step in creating applications that require user authentication.
+Sending an HTTP request with basic authentication is a way for programmers to ensure secure communication between a client and server. It involves including a username and password in the request header, which is then checked by the server to allow access. This is essential for protecting sensitive data and controlling access to web resources.
 
-## How To
+## How to:
 
-To send an HTTP request with basic authentication in Rust, we first need to include the `reqwest` library in our project by adding it as a dependency in `Cargo.toml`.
-
-```Rust
-[dependencies]
-reqwest = { version = "0.11", features = ["json"] }
-```
-
-Next, we need to import the `reqwest` crate into our project.
+Sending an HTTP request with basic authentication in Rust is straightforward. First, import the reqwest crate, which provides a convenient interface for making HTTP requests. Then, use the `basic_auth` function to create a request with a username and password. Finally, send the request using the `send` method and handle the response. Here's an example:
 
 ```Rust
 use reqwest;
-```
 
-We can now create an HTTP request with basic authentication by using the `reqwest::Client` and `RequestBuilder` structs. We can also specify the basic authentication credentials using the `basic_auth()` method.
+let username = "user123";
+let password = "pass456";
 
-```Rust
 let client = reqwest::Client::new();
-let request = client.get("https://example.com")
-    .basic_auth("username", Some("password"));
+let response = client
+    .get("https://example.com")
+    .basic_auth(username, password)
+    .send()
+    .await?;
+
+println!("Status: {}", response.status());
+
+let body = response.text().await?;
+println!("Body: {}", body);
 ```
 
-We can then use the `send()` method to actually send the request.
+Output:
 
-```Rust
-let response = request.send();
+```
+Status: 200 OK
+Body: Hello, world!
 ```
 
-And finally, we can retrieve the response data by using the `text()` or `json()` methods, depending on the format of the response.
+## Deep Dive:
 
-```Rust
-let body = response.text().unwrap();
-```
+Basic authentication has been around since the early days of the internet and is still widely used today. It was originally designed for use in simple client-server architectures, but it has been adapted for use in modern web applications. Other authentication methods, such as OAuth, are now more commonly used due to their added security features, but basic authentication remains a simple and reliable option.
 
-Here is a complete example of sending an HTTP GET request with basic authentication and retrieving the response body.
+In addition to using the `basic_auth` function, the reqwest crate also provides the `basic_auth_header` function, which can be used to manually create the authorization header if needed. This can be useful for custom authentication schemes or for integrating with existing systems.
 
-```Rust
-use reqwest;
+## See Also:
 
-fn main() {
-    let client = reqwest::Client::new();
-    let request = client.get("https://example.com")
-        .basic_auth("username", Some("password"));
-    let response = request.send();
-    let body = response.text().unwrap();
-    println!("{}", body);
-}
-```
-
-The above code will print out the response body in the console.
-
-## Deep Dive
-
-In the above example, we used the `reqwest` library's `basic_auth()` method to specify the basic authentication credentials. This method takes in two parameters: the username and the password, both of which are of type `&str`.
-
-It is important to note that basic authentication is not considered a secure method of authentication as the username and password are sent in plain text. This is why it is recommended to use HTTPS when performing basic authentication.
-
-Additionally, the `reqwest` library also provides other methods for authentication such as `bearer_auth()` for OAuth 2.0 authentication and `digest_auth()` for Digest authentication.
-
-## See Also
-
-For more information on sending HTTP requests with basic authentication in Rust, check out the following resources:
-
-- [The `reqwest` crate documentation](https://docs.rs/reqwest/latest/reqwest/)
-- [Using `basic_auth()` in `reqwest` tutorial](https://www.matthias-endler.de/2017/rust-http-client/)
-- [HTTP authentication schemes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
+- [Rust reqwest crate documentation](https://docs.rs/reqwest)
+- [HTTP Basic Authentication on MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)

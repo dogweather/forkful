@@ -1,7 +1,7 @@
 ---
-title:                "Znajdowanie długości ciągu znaków"
-html_title:           "PHP: Znajdowanie długości ciągu znaków"
-simple_title:         "Znajdowanie długości ciągu znaków"
+title:                "Znalezienie długości ciągu znaków"
+html_title:           "PHP: Znalezienie długości ciągu znaków"
+simple_title:         "Znalezienie długości ciągu znaków"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Strings"
@@ -10,29 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
-Mając do wykonania pewne zadanie związane z manipulacją tekstem w PHP, często potrzebujemy dowiedzieć się, ile znaków składa się na dany string. Poznanie długości stringa jest więc kluczowym krokiem w wielu projektach, dlatego też warto poznać różne sposoby na wykonywanie tego zadania.
+## Co i Dlaczego?
+Poznawanie długości łańcucha to podstawowa czynność, która pozwala programistom na manipulację tekstem. Jest to dokładne określenie liczby znaków w ciągu znaków, co jest niezbędne do wielu operacji, takich jak walidacja danych, generowanie kodów lub obliczanie wpływu na wydajność aplikacji.
 
-## Jak To Zrobić
-```PHP
-// Przykładowy string
-$string = "Programowanie PHP jest super!";
+## Jak to zrobić:
+### Przykłady kodu:
+Podstawowe podejście do znalezienia długości łańcucha w PHP wykorzystuje funkcję wbudowaną `strlen()`. Poniżej znajduje się przykład wykorzystania tej funkcji w programie zwracającym długość łańcucha "Hello World!":
 
-// Wykorzystanie wbudowanej funkcji "strlen()"
-echo strlen($string); 
-// output: 28
-
-// Użycie metody "mb_strlen()" do uwzględnienia wielkości znaków UTF-8
-echo mb_strlen($string);
-// output: 28
+```
+<?php
+$hello = "Hello World!";
+echo strlen($hello);
+?>
 ```
 
-## Deep Dive
-W PHP mamy dostępne dwie podstawowe metody do liczenia długości stringa: `strlen()` i `mb_strlen()`. Pierwsza z nich jest wbudowana w język i zwraca liczbę bajtów, które zajmuje dany string. Natomiast `mb_strlen()` jest funkcją z biblioteki mbstring, która uwzględnia wielkość znaków unicode, dzięki czemu lepiej radzi sobie z językami będącymi poza standardowym alfabetem.
+> Output: 12
 
-Warto również pamiętać, że w PHP istnieje również funkcja `iconv_strlen()`, która umożliwia liczenie długości stringa w danym zestawie znaków. Może to być przydatne, gdy potrzebujemy poznać długość tekstu w formacie innym niż Unicode.
+W celu zabezpieczenia przed możliwością wprowadzenia przez użytkownika niepożądanych znaków, możemy również użyć funkcji `mb_strlen()` do znajdowania długości łańcucha w oparciu o kodowanie znaków. Dzięki temu unikniemy problemów związanych z różnicami między encodowaniem na różnych serwerach.
 
-## Zobacz Również
-- [Oficjalna dokumentacja PHP dla funkcji strlen()](https://www.php.net/manual/en/function.strlen.php)
-- [Oficjalna dokumentacja PHP dla funkcji mb_strlen()](https://www.php.net/manual/en/function.mb-strlen.php)
-- [Oficjalna dokumentacja PHP dla funkcji iconv_strlen()](https://www.php.net/manual/en/function.iconv-strlen.php)
+```
+<?php
+$hello = "Hello World!";
+echo mb_strlen($hello);
+?>
+```
+
+> Output: 12
+
+## Deep Dive:
+Dopóki bezpośrednio nie pracujesz z tekstem, nie ma wiele powodów do ręcznego znajdowania długości łańcucha. W przeciwnym razie może to być przydatne w celu optymalizacji aplikacji, zwłaszcza w przypadku operacji na dużych łańcuchach znaków. W takim przypadku warto korzystać z funkcji `mb_strlen()` lub `strlen()` w zależności od potrzeb.
+
+## Zobacz także:
+- Dokumentacja PHP dla funkcji `strlen()`: http://php.net/manual/pl/function.strlen.php
+- Dokumentacja PHP dla funkcji `mb_strlen()`: http://php.net/manual/pl/function.mb-strlen.php

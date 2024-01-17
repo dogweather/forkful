@@ -10,44 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
-Tout d'abord, pourquoi quelqu'un voudrait-il envoyer une requête HTTP avec une authentification de base ? Eh bien, cette méthode est couramment utilisée pour accéder à des APIs sécurisées en fournissant un nom d'utilisateur et un mot de passe, permettant à l'utilisateur d'authentifier son identité auprès du serveur.
+## Quoi & Pourquoi?
+Envoyer une requête HTTP avec une authentification de base est une méthode couramment utilisée par les programmeurs pour accéder à des ressources en ligne protégées par un nom d'utilisateur et un mot de passe. Cette méthode permet de sécuriser l'accès aux ressources pour empêcher tout accès non autorisé.
 
-## Comment faire
-Tout d'abord, il faut installer le module HTTP de Gleam en utilisant la commande `gleam install gleam/http`. Ensuite, nous pouvons construire notre requête en utilisant la fonction `build_with_basic_auth` de ce module, en passant les paramètres suivants : l'URL de la requête, le nom d'utilisateur et le mot de passe. Voici un exemple de requête GET en utilisant l'API de GitHub :
+## Comment Faire:
+Pour envoyer une requête HTTP avec une authentification de base en utilisant Gleam, vous pouvez suivre ces étapes simples:
 
+1. Importez le module `http` dans votre code Gleam:
 ```Gleam
-let request =
-  Http.build_with_basic_auth(
-   "https://api.github.com/users/octocat",
-   "username",
-   "password"
- )
-  |> Http.get
+import http
 ```
 
-Nous pouvons maintenant envoyer cette requête en utilisant la fonction `execute` du module HTTP, qui renvoie un tuple comprenant le code de statut de la réponse et son corps :
-
+2. Définissez les informations d'authentification de base dans une structure `Http.BasicAuth`:
 ```Gleam
-let response =
-  request
-    |> Http.execute
+let auth = {
+  username: "utilisateur",
+  password: "mot_de_passe"
+}
 ```
 
-Et pour finir, nous pouvons traiter le corps de la réponse en utilisant les différentes fonctions du module `Json.Decode` pour décoder les données JSON retournées. Par exemple, pour accéder à la valeur de `"login"` dans notre réponse, nous pouvons utiliser la fonction `field` :
-
+3. Utilisez la fonction `http.request()` pour envoyer la requête en spécifiant les informations d'authentification:
 ```Gleam
-let login =
-  response
-    |> Json.Decode.decode_string
-    |> Result.and_then(identity)
-    |> Json.Decode.field("login", Json.Decode.string)
+http.request(
+  method = .get
+  url = "https://exemple.com/ressource/"
+  auth = .basic("utilisateur", "mot_de_passe")
+)
 ```
 
-## Plongée en profondeur
-Maintenant que nous avons vu comment envoyer une requête HTTP avec une authentification de base en utilisant Gleam, il est important de comprendre comment fonctionne réellement ce processus. Lorsque nous appelons la fonction `execute`, notre requête est transformée en un objet HTTP et envoyée au serveur. Si l'authentification est acceptée, le serveur renverra une réponse avec un code de statut 200, indiquant que la requête a été réussie. Sinon, un code d'erreur sera retourné avec un message indiquant que l'authentification a échoué.
+4. Vous pouvez également spécifier d'autres options de requête telles que l'en-tête `Content-Type` en utilisant la structure `Http.RequestOptions`:
+```Gleam
+http.request(
+  method = .post
+  url = "https://exemple.com/ressource/"
+  auth = .basic("utilisateur", "mot_de_passe")
+  options = {
+    headers = dict.from_list([("Content-Type", "application/json")])
+  }
+  body = "{\"key\": \"valeur\"}"
+)
+```
 
-## Voir aussi
-- [Documentation du module HTTP de Gleam](https://gleam.run/modules/http.html)
-- [Exemple de requête HTTP avec Gleam](https://github.com/gleam-lang/example-http-request)
-- [Gleam sur GitHub](https://github.com/gleam-lang/gleam)
+## Deep Dive:
+- La méthode d'authentification de base a été introduite pour la première fois dans la spécification HTTP 1.0 en 1996.
+- Une alternative à l'authentification de base est l'authentification par token, où un jeton unique est généré pour chaque utilisateur pour accéder aux ressources protégées.
+- Vous pouvez également implémenter manuellement l'envoi d'une requête HTTP avec authentification de base en utilisant un client HTTP tel que cURL.
+
+## Voir Aussi:
+- Documentation Gleam sur l'envoi de requêtes HTTP: https://gleam.run/modules/http.html
+- Spécification HTTP 1.0: https://tools.ietf.org/html/rfc1945
+- Guide cURL sur l'authentification de base: https://ec.haxx.se/http-auth.html

@@ -10,55 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-Random numbers play a crucial role in many applications, from games to statistical analysis. In Ruby, generating random numbers is a useful skill to have in your coding arsenal. Whether you need to simulate dice rolls or generate a randomized dataset, understanding how to generate random numbers can be beneficial in various scenarios.
+Generating random numbers is a core concept in programming that involves producing a sequence of numbers that appear to be random. Programmers use this to create unpredictability in code, such as randomized outcomes in games or simulations, or to generate unique identifiers.
 
-## How To
+## How to:
 
-Generating random numbers in Ruby can be achieved using the `rand` method. Let's take a look at how this method works:
+To generate a random number in Ruby, we can use the rand() method. Simply include a range or set of numbers within parentheses to specify the range from which the number will be generated. For example:
 
-```Ruby
-# To generate a random float between 0 and 1
-rand # Output: 0.346107832 
-
-# To generate a random integer between 0 and n (inclusive)
-rand(n) # Output: 7
-
-# To generate a random float between m and n
-rand(m..n) # Output: 5.825484193 
+```ruby
+rand(1..10) # this generates a random number between 1 and 10
 ```
 
-You can also pass in a range to the `rand` method to generate a random number within that range. Keep in mind that the generated number will always be less than the upper bound of the range.
+We can also set a seed value using srand() to ensure that the same sequence of random numbers is generated each time the code is run. For example:
 
-```Ruby
-# To generate a random number between 200 and 500
-rand(200..500) # Output: 342 
+```ruby
+srand(1234) # sets the seed value to 1234
+rand(1..10) # this will always generate the number 6
 ```
 
-To generate a random number with a decimal point, we can use `Float` to specify the precision:
+For more complex randomization, we can use the Random class and its methods. A new instance of Random can be created with:
 
-```Ruby
-# To generate a random float with 2 decimal places
-Float(rand(0..9)).round(2) # Output: 3.85
+```ruby
+random = Random.new
 ```
 
-## Deep Dive
+And then we can use methods such as:
 
-The `rand` method uses a pseudo-random number generator (PRNG) to generate random numbers. A PRNG is an algorithm that produces a sequence of numbers that appear to be random, but in reality, they are deterministic. This means that the generated sequence of numbers is predictable, given the initial state of the PRNG.
-
-In Ruby, the PRNG is seeded with the current time by default. This means that if you call the `rand` method multiple times within a short timeframe, you might get the same sequence of numbers. To avoid this, we can use the `srand` method to set a seed before calling the `rand` method. This will ensure that the generated sequence of numbers is different every time the code is executed.
-
-```Ruby
-# To generate a random number using a specific seed
-srand(12345) # Set the seed to 12345
-rand(10) # Output: 2
-rand(10) # Output: 5
-rand(10) # Output: 9
+```ruby
+random.rand(100) # this generates a random number between 0 and 100
 ```
 
-## See Also
+## Deep Dive:
 
-- [Ruby Docs: Random](https://ruby-doc.org/core-3.0.2/Random.html)
-- [Ruby Guides: Random Numbers](https://www.rubyguides.com/2019/11/ruby-random/)
-- [Official Blog: The Basics of Random Number Generation](https://www.ruby-lang.org/en/news/2016/03/19/the-basics-of-random-number-generation-in-ruby/)
+The concept of generating random numbers dates back to ancient Greece, where they were used in games of chance. In modern programming, there are multiple methods and algorithms for generating random numbers, each with their own advantages and potential flaws.
+
+An alternative to using Ruby's built-in methods is to use a third-party gem, such as Faker, which can generate not only random numbers, but also words, names, and other types of data commonly used in applications.
+
+The implementation of random number generation in Ruby uses the Mersenne Twister algorithm, which is a pseudorandom number generator that is faster and more efficient than other methods. However, this also means that the numbers generated are not truly random, but rather appear to be random.
+
+## See Also:
+
+To learn more about generating random numbers in Ruby, check out the official documentation:
+https://ruby-doc.org/core-2.7.1/Random.html
+
+To explore alternative methods for randomization, check out this article:
+https://www.freecodecamp.org/news/random-number-generator-in-ruby/

@@ -10,30 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-אם אתם משתמשים בשפת תכנות רובי, סיכוי גדול שתצטרכו להמיר תאריך מסוים למחרוזת. פעולה זו חשובה לצורך בניית אפליקציות או אתרים תלת-מימדיים שיתלות בשימוש בתאריכים שונים. במאמר זה נלמד איך להמיר תאריך למחרוזת באמצעות שפת רובי.
+# מה ולמה?
+המרת תאריך למחרוזת היא תהליך שבו משתנה תאריך בתור מחרוזת טקסט. כתיבת תאריך בתור מחרוזת טקסט נחשבת לנוחה יותר עבור מפתחי תוכנה על מנת לטפל בתאריכים בצורה יעילה יותר ולהציגם בצורה מתאימה למשתמשים.
 
-## Why
-Converting a date into a string is necessary when working with applications or websites that heavily rely on dates. It allows for easier manipulation and formatting of the date, making it more user-friendly.
+# איך לעשות?
+כדי להמיר תאריך למחרוזת בשפת רוובי, ניתן לעשות זאת באמצעות הפקודה `strftime`. הפקודה מאפשרת לנו להציג את התאריך בפורמט מבוקש, כגון חודש/יום/שנה או יום-חודש-שנה. ניתן לראות דוגמאות של הקוד המלא ותוצאות התצוגה בבלוקי קוד `Ruby ... ` להלן:
 
-## How To
-```ruby
-require 'date'
-# Date object from string
-str_date = "2021-01-01"
-date = Date.parse(str_date)
+```Ruby
+# תאריך כמחרוזת עם יום השבוע
+time = Time.new
+puts time.strftime("%A") #=> "יום ראשון"
 
-# Convert to string
-date_string = date.strftime("%d/%m/%y")
-puts date_string # Output: 01/01/21
-
-# Converting current date
-current_date = Date.today
-current_date_string = current_date.strftime("%B %d, %Y")
-puts current_date_string # Output: January 28, 2021
+# תאריך כמחרוזת עם חודש ושנה
+time = Time.new
+puts time.strftime("%B %Y") #=> "אפריל 2021"
 ```
-כדי להמיר תאריך למחרוזת בשפת רובי, נמצא את הנקודת ההתחלה הרצויה בקובץ על ידי הוספת פקודת `require 'date'` לקוד. נגדיר תאריך מחרוזת באמצעות המשתנה `str_date` ונשתמש בפקודה `Date.parse` כדי להמיר את המחרוזת לאובייקט תאריך. לאחר מכן, נשתמש בפקודת `strftime` כדי להוציא את התאריך בתבנית שנרצה. בדוגמה שנתתי, אני השתמשתי בתבנית "%d/%m/%y" שמכניסה את השנה בפורמט של שני ספרות ואת החודש והיום בפתיחת ברירת המחדל.
 
-כדי להמיר את התאריך הנוכחי למחרוזת, נשתמש בפקודה `Date.today` כדי להגיע לתאריך הנוכחי, ואחר כך נשתמש בפקודת `strftime` עם תבנית רצויה. בדוגמה שנתתי, התבנית "%B %d, %Y" מציגה את החודש באותיות מלאות ואת השנה בפורמט של ארבע ספרות.
+# להעמיק
+המרת תאריך למחרוזת היא נפוצה בשפות תכנות רבות ונעשית בכדי לייצג תאריכים בצורה נוחה יותר לקריאה ושימוש. ניתן גם להשתמש בתפקיד `strftime` בשפת רוובי לביצוע פעולות נוספות כגון השוואת תאריכים או בניית פורמטים מותאמים לצרכי המשתמש.
 
-## Deep Dive
-כאמור, שימוש בפקודת `strftime` מאפשר לנו להוציא את התאריך בתבנית שאנחנו רוצים. ישנן מגוון רחב של ת
+למידע נוסף על `strftime` והשימוש בתאריכים בשפת רוובי, ניתן לעיין במקורות המידע המצורפים למטה.
+
+# ראה גם
+- [תיעוד על `strftime` בשפת רוובי](https://ruby-doc.org/core-#{RUBY_VERSION}/Time.html#method-i-strftime)
+- [המרת תאריך למחרוזת בשפת פייתון](https://www.programiz.com/python-programming/datetime/strftime)
+- [המרת תאריך למחרוזת בשפת JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleString)

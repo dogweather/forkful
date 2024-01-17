@@ -1,7 +1,7 @@
 ---
-title:                "Schreiben auf die Standardfehlerausgabe"
-html_title:           "Clojure: Schreiben auf die Standardfehlerausgabe"
-simple_title:         "Schreiben auf die Standardfehlerausgabe"
+title:                "Schreiben auf Standardfehler"
+html_title:           "Clojure: Schreiben auf Standardfehler"
+simple_title:         "Schreiben auf Standardfehler"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Files and I/O"
@@ -10,35 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was & Warum?
+Das Schreiben in den Standardfehler ist eine Methode, um Fehlermeldungen direkt an den Benutzer zu senden. Programmierer nutzen dies, um wichtige Fehlerinformationen ohne Veränderung des regulären Programmausganges anzuzeigen.
 
-Warum sollte man überhaupt Texte in das Standardfehlerausgabefenster schreiben? Nun, es gibt verschiedene Gründe dafür. Zum Beispiel kann es hilfreich sein, Fehlermeldungen zu debuggen oder generelle Statusmeldungen während der Ausführung eines Programms zu überwachen. Es ist auch eine gute Möglichkeit, Dinge zu protokollieren, die nicht in die reguläre Ausgabe gehören, aber dennoch wichtig sind.
-
-## Wie geht das?
-
-Um Text in das Standardfehlerausgabefenster zu schreiben, gibt es in Clojure die Funktion `(println & xs)`. Diese Funktion nimmt beliebig viele Argumente entgegen und gibt diese nacheinander in das Standardfehlerausgabefenster aus. Hier ein Beispiel:
-
+## So geht's:
 ```Clojure
-(println "Dies ist ein Beispiel")
-(println "für das Schreiben" "in das")
-(println "Standardfehlerausgabefenster.")
+(defn print-stderr [msg]
+  (.println System/err msg))
+
+(print-stderr "Diese Nachricht wird in den Standardfehler geschrieben")
 ```
 
-Das obige Beispiel würde folgende Ausgabe in das Standardfehlerausgabefenster schreiben:
-
+Ausgabe:
 ```
-Dies ist ein Beispiel
-für das Schreiben in das
-Standardfehlerausgabefenster.
+Diese Nachricht wird in den Standardfehler geschrieben
 ```
 
-## Tiefergehende Informationen
+## Tiefergehende Informationen:
+Das Schreiben in den Standardfehler wird oft in der Entwicklung von Kommandozeilenanwendungen verwendet. Es gibt auch die Möglichkeit, in den Standardausgang zu schreiben, jedoch wird hierbei die Ausgabe möglicherweise mit anderen Inhalten vermischt. Eine Alternative zum Schreiben in den Standardfehler ist die Verwendung von Logdateien für Fehlermeldungen. Die Implementierung erfolgt in Clojure mit der Methode ```System/err``` aus der Java-Standardbibliothek.
 
-Das Schreiben in das Standardfehlerausgabefenster kann besonders nützlich sein, wenn man mit mehreren Threads oder Prozessen arbeitet, da die Ausgaben unabhängig voneinander auftauchen und nicht vermischt werden. Außerdem ist es eine gute Möglichkeit, um die Ursache von Fehlern oder unerwartetem Verhalten schnell zu finden. 
-
-Eine Sache, die man beachten sollte, ist, dass das Standardfehlerausgabefenster normalerweise nur während der Ausführung eines Programms sichtbar ist und nicht dauerhaft gespeichert wird. Deshalb ist es ratsam, eine Log-Datei zu erstellen, in die man wichtige Informationen zusätzlich schreibt.
-
-## Siehe auch
-
-- [Offizielle Dokumentation von Clojure](https://clojure.org/)
-- [Ein Tutorial zum Einstieg in Clojure](https://www.tutorialspoint.com/clojure/index.htm)
+## Siehe auch:
+Offizielle Dokumentation zur Clojure Methode "System/err": <link>
+Ein Artikel über die Verwendung von Logdateien in Clojure: <link>
+Java Dokumentation zur Klasse "System": <link>

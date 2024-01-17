@@ -1,7 +1,7 @@
 ---
-title:                "स्ट्रिंग्स को संयोजित करना"
-html_title:           "Elm: स्ट्रिंग्स को संयोजित करना"
-simple_title:         "स्ट्रिंग्स को संयोजित करना"
+title:                "स्ट्रिंग्स को जोड़ना"
+html_title:           "Elm: स्ट्रिंग्स को जोड़ना"
+simple_title:         "स्ट्रिंग्स को जोड़ना"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -10,26 +10,20 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
+## Kya aur Kyun?
+Ek samay tha jab strings ko jodne ke liye keval "+" operator ka upyog hota tha, lekin ab iska asli maqsad", string concatenation" ke roop me jaana jaata hai. Ismein ek ya adhik strings ko sath milkar ek hi string banaaya jaata hai. Programmers iska upyog generally texts, log messages aur APIs mein deta hai.
 
-कोन्केटनेटिंग स्ट्रिंग (concatenating strings) एक आम कार्य है जो प्रोग्रामिंग में अक्सर आवश्यक होता है। यह दो या अधिक स्ट्रिंग (strings) को एक साथ जोड़कर एक ही स्ट्रिंग बनाता है। इसका उपयोग लेखन स्टाइल को सुधारने, डेटा प्रस्तुत करने, और अन्य कार्यों के लिए किया जाता है।
+## Kaise karen?
+Elm mein strings ko join karne ke liye "+" operator ka prayog kar sakte hain. Iske alawa, hum `append` function bhi use kar sakte hain.
 
-## कैसे करें
+```Elm
+"Hello " + "World!"  -- output: "Hello World!"
 
-```elm
-name = "वर्तमान वर्ष"
-greeting = "नव वर्ष की शुभकामनाएं, " ++ name ++ "!"
+append "Hello" "World!" -- output: "HelloWorld!"
 ```
 
-यहां, हमने `greeting` में `name` वैरिएबल को जोड़कर उसमें `नव वर्ष की शुभकामनाएं, वर्तमान वर्ष!` का मान स्थापित किया है। आप वैश्विक वैरिएबल का उपयोग करके कई स्ट्रिंग्स को जोड़ सकते हैं। इसमें यह ध्यान देना महत्वपूर्ण है कि स्ट्रिंग्स को जोड़ने के लिए मान (value) होना चाहिए, प्रयोग किया जाने वाला स्ट्रिंग (argument) नहीं।
+## Gahare Jahaj
+Is feature ki shuruwat C++ aur Java jaise languages mein hui aur aaj kal almost sabhi programming languages me aapko iska support mil jaayega. Alag alag languages mein thoda sa difference ho sakta hai ki kaunsa operator ya function upyog karna hai. Elm mein "+" operator ke alawa, hum `append` function bhi use kar sakte hain jo do strings ko join karke ek naya string bana deta hai.
 
-```elm
-numbers = [42, 7, 98]
-listAsString = "संख्याएं: " ++ List.map String.fromInt numbers
-```
-
-इस उदाहरण में, हमने एक सूची उक्त करके नम्बर्स (numbers) से लिस्ट (list) काँटेन किया है। हमने `List.map` का उपयोग किया है कि हम नंबर्स की क्रमबद्ध सूची को एक सूची स्ट्रिंग को दर्शायें।
-
-## गहराई में
-
-कोनकेटनेटिंग स्ट्रिंग बिना कमेंटारी की सूची में खड़ा हो सकता है, और संवादी भाषा में हम सिर्फ़ सारांशित बातें किया हैं। हमने दो मूल तरीकों को देखा है कि आप कैसे संख्याओं, स्ट्रिंग्स और ल
+## Aur Bhi Dekhein
+Agar aapko strings ko manipulate karna ya join karna pasand hai toh aap [Elm documentation](https://guide.elm-lang.org/types/strings.html) se aur jankari prapt kar sakte hain. Iske alawa, aap `concat` aur `join` jaise functions ke bare mein bhi adhik jaan sakte hain.

@@ -1,7 +1,7 @@
 ---
-title:                "Робота з yaml."
-html_title:           "Haskell: Робота з yaml."
-simple_title:         "Робота з yaml."
+title:                "Робота з yaml"
+html_title:           "Haskell: Робота з yaml"
+simple_title:         "Робота з yaml"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Data Formats and Serialization"
@@ -10,42 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Чому
+Що і чому?
+YAML (YAML Ain't Markup Language) - це формат даних, призначений для збереження структурованої інформації у зручному форматі. Це звичайний текстовий файл, який є більш зрозумілим для людей, ніж машинна мова, тому програмісти використовують YAML для зручності та читабельності.
 
-Для чого комусь займатися роботою з YAML? Це текстовий формат, який дозволяє легко представляти структуровані дані та читати їх людиною.
-
-## Як це робити
+Як це зробити?
+Кодування з YAML дуже просте за допомогою мови програмування Haskell. Для початку, ми повинні імпортувати модуль Data.YAML та вказати, який саме файлик ми хочемо зчитати. Потім, ми можемо використовувати вбудовані функції для обробки даних у форматі YAML. Ось приклад коду та результату виконання:
 
 ```Haskell
-import qualified Data.Yaml as Yaml
-
--- Зчитуємо YAML файл
-yamlFile <- Yaml.decodeFileThrow "example.yaml"
-
--- Виводимо дані з файлу
-putStrLn $ show (yamlFile :: Yaml.Value)
-
--- Створюємо власний YAML об'єкт
-let yamlObject = Yaml.object
-                  [ ("key1", Yaml.string "value1")
-                  , ("key2", Yaml.number 2)
-                  ]
-
--- Записуємо об'єкт у файл
-Yaml.encodeFile "output.yaml" yamlObject
+import Data.YAML
+myYAML <- decodeFile "example.yaml"
+print myYAML
 ```
 
-Виведення:
+Результат:
 
 ```
-Object (fromList [("key1",String "value1"),("key2",Number 2.0)])
+Just (Object (fromList [("name",String "John"),("age",Number 25),("hobbies",Seq [String "coding",String "hiking",String "cooking"])]))
 ```
 
-## Глибоке занурення
+Глибокий пір?
+Дата випуску YAML припадає на 2001 рік, і її створила команда програмістів для полегшення обміну даними у форматі, зрозумілим для людей. Альтернативою YAML є JSON (JavaScript Object Notation), який також має читабельний синтаксис, але є більш популярним у веб-розробці. Реалізація обробки YAML в Haskell базується на стандартних типах даних, тому навчання її використовувати буде корисною навичкою для роботи з іншими форматами даних.
 
-У Haskell є багато бібліотек для роботи з YAML, але одна з найпопулярніших - це `Data.Yaml`. Вона надає можливість зчитувати та записувати дані з YAML формату за допомогою зручної функції `decodeFileThrow` та `encodeFile`. Також у бібліотеці є клас `FromJSON`, який дозволяє автоматично генерувати код для роботи з YAML, що зробить процес ще більш простим і зручним.
-
-## Дивись також
-
-- [Haskell бібліотека для роботи з YAML]()
-- [Learning Haskell в 5 хвилин]()
+Дивись також:
+- [YAML офіційний сайт](https://yaml.org/)
+- [JSON vs YAML: яка різниця?](https://www.educative.io/edpresso/json-vs-yaml-whats-the-difference)
+- [Haskell документація по YAML](https://hackage.haskell.org/package/yaml/docs/Data-YAML.html)

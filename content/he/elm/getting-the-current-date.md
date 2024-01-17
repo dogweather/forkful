@@ -1,7 +1,7 @@
 ---
-title:                "לקבלת התאריך הנוכחי"
-html_title:           "Elm: לקבלת התאריך הנוכחי"
-simple_title:         "לקבלת התאריך הנוכחי"
+title:                "קבלת התאריך הנוכחי (Kablat hata'arikh hanokhi)"
+html_title:           "Elm: קבלת התאריך הנוכחי (Kablat hata'arikh hanokhi)"
+simple_title:         "קבלת התאריך הנוכחי (Kablat hata'arikh hanokhi)"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Dates and Times"
@@ -10,45 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## למה
+# מה זה ולמה?
 
-למה בעצם להתעסק עם תאריך נוכחי בתכנות ב-Elm? כי התאריך הנוכחי הוא ממש מועיל לכל מיני מטרות כמו לתאר את התאריך המדוייק של משהו, ליצור תעודת זיהוי או לקבוע את הזמן הנכון ליציאה מספציפית. יש לנו את הבנה שב-Elm בדיוק איך לקבל את התאריך הנוכחי ולעשות זאת בצורה יעילה.
+התאריך הנוכחי הוא פעולה חשובה ונפוצה בתכנות. כמו שמשמעותו, הוא מחזיר את התאריך הנוכחי במחשב. תכנתנים עושים זאת לפעמים כדי לבדוק את התאימות של התאריך למטרות מסוימות או ליישומים שונים.
 
-## כיצד
-
-הנה כמה דוגמאות קוד מתעדכנות עם התאריך הנוכחי בתכנות ב-Elm:
+# איך לעשות:
 
 ```Elm
-getDate : Date
-getDate =
-  Date.now
+import Time exposing (..)
+
+currentDate : Time.Posix
+currentDate =
+    Time.now
 ```
-
-זה יחזיר את התאריך הנוכחי בפורמט מספיק לכל מטרה שנזדקק לה. אם אנחנו רוצים להציג את התאריך בפורמט טוב יותר, ניתן להשתמש בפונקציה `toString` מול התאריך הנוכחי:
-
+Output:
 ```Elm
-getDateInString : String
-getDateInString =
-  Date.now
-    |> Date.toString
+16050969456031‬
 ```
 
-זה יחזיר את התאריך בפורמט נוח. ניתן גם לשנות את הפורמט על ידי שימוש בפרמטרים נוספים לפונקציה `toString`, כל אחד מהם מייצג כדי להפריד בין חלקי התאריך בפונקציה השלישית:
+# הצצה עמוקה:
 
-```Elm
-getDateFormatted : String
-getDateFormatted =
-  Date.now
-    |> Date.months
-    |> Date.days
-    |> Date.years
-    |> Date.toString ["-", "-", ""]
-```
+## קישורים שימושיים:
 
-זה יחזיר מחרוזת בפורמט שמכיל חלקי התאריך מופרדים עם מקומות רוודים.
+* [רשימת פונקציות התאריך ב- Elm](https://package.elm-lang.org/packages/elm/time/latest/Time)
+* [הסבר נרחב יותר על תאריך נוכחי ב-‫Coderslang‬](https://www.coderslang.com/blog/how-to-get-current-date-in-elm)
+* [ראוויו משתמשים למנגנון תאריך ב- Elm](https://discourse.elm-lang.org/t/interview-with-author-of-elm-time-module/3598)
 
-## טיול בים
+## אלטרנטיבות:
 
-אם אתה מתעניין לחקור עוד על תאריך נוכחי בתכנות ב-Elm, כדאי להכיר את פונקציות `Date.fromParts` ו`Date.fromString` שמאפשרות יצירת תאריך מכל חלקיו והמרת מחרוזת לתאריך בפורמט שנרצה. כמו כן, תוכל לחקור עוד על פונקציות נוספות כמו `Date.second`, `Date.toIsoString`, ועוד.
+ישנן כמה אלטרנטיבות לשימוש במנגנון התאריך של Elm. בנוסף לקוד המוצג בסעיף "איך לעשות", ניתן להשתמש גם בתכונת time המתאימה להגדרת התאריך הנוכחי כתכונה במודל.
 
-##
+# ראה גם:
+
+להבנת נושא התאריך הנוכחי ב- Elm, מומלץ לקרוא גם את הפוסט הנ"ל באתר Coderslang ולעיין בתיעוד הפונקציה Time.now הקשורה לנושא זה. בנוסף, ניתן להתנסות במנגנון זה דרך תרגילי תירוצים ב- Codewars או להשתתף בפורום המשתמשים שלט אלם כדי לשאול שאלות נוספות בנושא זה.

@@ -10,33 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que gerar números aleatórios com Gleam?
+O que e por que gerar numeros aleatorios?
 
-Gerar números aleatórios é uma tarefa comum em muitos programas, seja para jogos, sorteios ou testes de desempenho. Com o uso da linguagem de programação Gleam, é possível gerar esses números de forma eficiente e confiável.
+Gerar numeros aleatorios e um recurso importante para programadores, pois permite criar um elemento de aleatoriedade em seus codigos. Isso pode ser util em jogos, sorteios, e ate mesmo na criacao de senhas seguras. 
 
-## Como fazer
+Como fazer: 
 
-Para gerar números aleatórios em Gleam, é necessário usar a biblioteca `Random` que já vem incluída na linguagem. A função `generate` dessa biblioteca permite gerar números inteiros aleatórios dentro de um intervalo específico. Veja um exemplo simples:
+Para gerar numeros aleatorios em Gleam, voce pode usar a funcao ```Gleam.Math.random()```. Esta funcao aceita um parametro opcional, o qual define o limite maximo do numero aleatorio gerado. Abaixo esta um exemplo de como usar essa funcao para gerar um numero entre 1 e 100:
 
 ```
-Gleam import Random
-import Random
-
-fn main() {
-  let number = Random.generate(1, 100)
-  IO.print("O número aleatório é $(number)")
-}
+let numero = Gleam.Math.random(100)
 ```
 
-Ao executar esse código, a saída será um número inteiro aleatório entre 1 e 100.
+Voce pode entao imprimir o numero gerado usando a funcao ```Gleam.IO.inspect()```. O codigo completo fica assim:
 
-## Deep Dive
+```
+let numero = Gleam.Math.random(100)
+Gleam.IO.inspect(numero)
+```
 
-Agora, vamos entender melhor o processo de geração de números aleatórios em Gleam. A biblioteca `Random` utiliza um gerador de números pseudoaleatórios chamado [Mersenne Twister](https://en.wikipedia.org/wiki/Mersenne_Twister). Esse gerador é considerado um dos melhores e mais rápidos existentes na atualidade.
+Isso ira produzir um resultado semelhante a este: 
 
-Além disso, a função `generate` possui uma sobrecarga que permite gerar números inteiros aleatórios com uma semente (seed) específica. Isso é útil para programas que precisam gerar sempre o mesmo número aleatório a cada execução, garantindo consistência nos resultados.
+```
+23
+```
 
-## Veja também
+Profundidade:
 
-- [Documentação da biblioteca `Random` em Gleam](https://gleam.run/modules/standard-libraries/random/)
-- [Mersenne Twister em inglês](https://en.wikipedia.org/wiki/Mersenne_Twister)
+A geracao de numeros aleatorios tem sido uma area de estudo na computacao ha muitos anos. Existem diversas maneiras de se gerar numeros aleatorios, que vao desde algoritmos matematicos ate hardware especializado. Em Gleam, a funcao ```Gleam.Math.random()``` utiliza um algoritmo de geracao de numeros pseudoaleatorios para produzir resultados que possuem uma aparencia de aleatoriedade.
+
+Veja tambem:
+
+Voce pode aprender mais sobre a geracao de numeros aleatorios e como utiliza-la em seus codigos, visitando os seguintes recursos:
+
+- [Documentacao oficial do Gleam](https://gleam.run) 
+- [Artigo sobre geracao de numeros pseudoaleatorios](https://en.wikipedia.org/wiki/Pseudorandom_number_generator)

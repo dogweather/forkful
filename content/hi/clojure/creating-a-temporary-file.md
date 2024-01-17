@@ -1,7 +1,7 @@
 ---
-title:                "एक अस्थायी फाइल बनाना"
-html_title:           "Clojure: एक अस्थायी फाइल बनाना"
-simple_title:         "एक अस्थायी फाइल बनाना"
+title:                "एक अस्थायी फ़ाइल बनाना"
+html_title:           "Clojure: एक अस्थायी फ़ाइल बनाना"
+simple_title:         "एक अस्थायी फ़ाइल बनाना"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Files and I/O"
@@ -10,30 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
+## क्या और क्यों?
+एक अस्थायी फाइल बनाना यह एक तकनीक है जो कोडिंग में उपयोग किया जाता है। इसका मुख्य उद्देश्य यह होता है कि जब हमारे प्रोग्राम एक फाइल को स्थायी रूप से संचित नहीं कर सकते हैं, तो हम एक अस्थायी फाइल बनाते हैं।
 
-आपने पहले कभी temporary file के बारे में सुना होगा। यह एक अस्थायी फाइल होती है जो काम करने के बाद खुद बन्द हो जाती है। यह फाइलें फाइल सिस्टम पर स्थान का इस्तेमाल कम करती हैं और अनुरोध पर बनाई जाती हैं, जो अनिश्चित समय के लिए हो सकता है। इसलिए, इसका इस्तेमाल नए डेटा को सिस्टम पर स्थान का इस्तेमाल किए बिना आसानी से शुरू करने के लिए किया जाता है।
+## कैसे करें:
+यहां, हम एक अस्थायी फाइल कैसे बनाएं इसके बारे में कुछ कोडिंग उदाहरण देखेंगे।
 
-## कैसे
-
-एक temporary file बनाने के लिए, हम απροχωρητος नामक फंक्शन का इस्तेमाल कर सकते हैं। इसका उपयोग निम्नलिखित स्टेटमेंट के साथ किया जा सकता है:
-
+उदाहरण १:
 ```Clojure
 (with-open [temp-file (java.io.File/createTempFile "prefix" "suffix")]
-  (do-something-with temp-file)
-  (.delete temp-file))
+  (spit temp-file "This is a temporary file.")
+  (println (slurp temp-file)))
+;; आउटपुट: This is a temporary file.
 ```
 
-आप ऊपर दिए गए कोड ब्लॉक में स्टेटमेंट को अपनी आवश्यकतानुसार संशोधित कर सकते हैं। इसमें `prefix` और `suffix` आपके temporary file के नाम को निर्धारित करने के लिए हैं। आप फाइल को उपयोग करने के बाद, उसे .delete फंक्शन से हटा सकते हैं। यदि आप .delete को कॉल नहीं करते हैं तो temporary file स्वचालित रूप से हट गई जाएगी।
-
-## गहराई तक जाएं
-
-आप temporary file में डेटा लिख सकते हैं और पढ़ सकते हैं उसके लिए आप मूल फंक्शन `java.io.RandomAccessFile` का इस्तेमाल कर सकते हैं। आप निम्नलिखित कोड में दिखाए गए `do-something-with` फंक्शन को इस्तेमाल कर सकते हैं:
-
+उदाहरण २:
 ```Clojure
-(with-open [temp-file (java.io.File/createTempFile "prefix" "suffix")]
-  (let [random-file (java.io.RandomAccessFile. temp-file "rw")]
-    (.writeInt random-file 25)
-    (.writeBoolean random-file true)
-    (.writeUTF random-file "नमस्ते")
-    (.
+(with-open [temp-file (java.io.File/createTempFile "prefix" nil)]
+  (let [file-writer (clojure.java.io/writer temp-file)]
+    (binding [*out* file-writer]
+      (println "This is a temporary file.")
+      (println "Another line added."))))
+;; आउटपुट:
+This is a temporary file.
+Another line added.
+```
+
+## गहराई में जाएं:
+अब आप जानते हैं कि अस्थायी फाइल क्या है और हम इसे क्यों घरघराते हैं, आइए इसके गहराई में जाते हैं और इसके पीछे की कुछ और जानकारी प्राप्त करें।
+
+1. इतिहासिक संदर्भ: अस्थायी फाइलों का उपयोग पहले से ही किया जाता था, लेकिन यह शुरुआत में सिस्टम में फाइल लेखन के साथ समस्याओं को हल करने के लिए ही होता था।
+
+2. विकल्प: अस्थायी फाइल बनाने के लिए Clojure में एक और तकनीक है, जहां हम फाइल को अस्थाई रूप से लेखन के लिए mmap (memory-mapped file) का उपयोग कर सकते हैं।
+
+3. प्रयोजन का विवरण: अस्थायी फाइल बनाने के लिए Clojure में java.io.File और java.nio.file.Files श्रेणियों का उपयोग किया जाता है।
+
+## जुड़े रहें:
+अस्थायी फाइलों के बारे में अधिक जानने के लिए निम्नलिखित स्रोतों को जांचें:
+
+- [Clojure डॉक्यूमेंटेशन](https://clojuredocs.org/clojure.java.io/create-temp-file)
+- [Java डॉक्यूमेंटेशन](https://docs.oracle.com/javase/7/docs/api/java/io/File.html#createTempFile%28java.lang.String,%20java.lang.String,%20java.io.File%29)
+- [Stack Overflow चर्चाएं](https://stackoverflow.com/questions/8209998/temporary-files-in-java)

@@ -1,7 +1,7 @@
 ---
-title:                "yaml पर काम करना"
-html_title:           "Swift: yaml पर काम करना"
-simple_title:         "yaml पर काम करना"
+title:                "yaml के साथ काम करना"
+html_title:           "Swift: yaml के साथ काम करना"
+simple_title:         "yaml के साथ काम करना"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Data Formats and Serialization"
@@ -10,43 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
+## क्या और क्यों?
+YAML काम करना और समझने के लिए सरल है, और इसलिए कई प्रोग्रामर इस फाइल फॉर्मेट का उपयोग करते हैं। YAML एक अधिक संरचनात्मक फाइल प्रारूप है जो डेटा को अधिक अनुकूलित और शानदार ढंग से प्रदर्शित करने में मदद करता है।
 
-यैमल की संरचना सुगमता और स्पष्टता के कारण स्विफ्ट आभासशाली प्रोग्रामिंग भाषा के लिए अच्छा विकल्प है। इसके माध्यम से कोड को प्रारूपित करना आसान होता है और डेटा हैंडलिंग को भी सुविधाजनक बनाता है।
-
-## कैसे करें
+## कैसे और क्यों?
+आप अपनी Swift एप्लिकेशन में YAML फ़ाइलें को कैसे सक्रिय कर सकते हैं, इसके लिए निम्नलिखित कोड ब्लॉक का उपयोग करें:
 
 ```Swift
-import YAML
+let yamlString = """
+key1: value1
+key2: [value2a, value2b, value2c]
+key3:
+    - subkey3a: subvalue3a
+    - subkey3b: subvalue3b
+"""
+// एकसाथ तीन तरह के वैल्यू को एक समूह में असाइन करने के लिए उपयोग करें
 
-// डॉक्यूमेंट लोड करें
-let yaml = YAML.load("""
-name: John
-age: 30
-address:
-  street: Main Street
-  city: New York
-""")
+let yamlDict = try! YAMLDecoder().decode([String: Any].self, from: yamlString)
 
-// डॉक्यूमेंट में से डेटा एक्सेस करें
-let name = yaml["name"].string
-let age = yaml["age"].int
-let street = yaml["address"]["street"].string
-let city = yaml["address"]["city"].string
-
-// नए डॉक्यूमेंट बनाएं
-let newDoc = YAML.dictionary(["fruit": "apple", "color": "red"])
-
-print(newDoc)
-// {"fruit": "apple", "color": "red"}
+print(yamlDict["key1"]) // इस तरह से आप वैल्यू को प्रिंट कर सकते हैं।
 ```
 
-## गहराई में जाएं
+आप अपनी YAML फ़ाइलों में प्रारूपन और संरचना के लिए भी उपयोग कर सकते हैं। YAML फ़ाइलों में टैब का उपयोग संख्याओं को अलग करने के लिए उपयोगी हो सकता है, जिससे आपकी फ़ाइल अधिक स्पष्ट हो।
 
-यैमल फॉर्मैट में डेटा टाइप को रिप्रेजेंट करने के लिए विभिन्न टॉपलेवल टाइप जैसे स्ट्रिंग, इंटीजर, बूलियन आदि का उपयोग किया जा सकता है। साथ ही कस्टम डेटा टाइप को भी समर्थन किया जाता है, जो अनुकूलित एप्लिकेशन बनाने में मददगार होता है।
+## गहराई में
+YAML का अर्थ है "YAML अद्यतन मार्कअप भाषा"। YAML एक SML का एक प्रारूप है जो कि सरलता और पारगमन को बढ़ावा देता है। यह भाषा एक और विस्तृत संरचना है जो मानक के रूप में अनुमोदित है।
+
+आप YAML को एक फोर्मैट के रूप में जान सकते हैं, जिससे आप न केवल डेटा को संरचित कर सकते हैं, बल्कि साथ ही साथ अन्य फ़ाइलों को भी YAML में बदल सकते हैं। YAML का उपयोग करने के लिए आपको पहले YAML मानक को समझना होगा।
 
 ## देखें भी
-
-- [YAML डॉक्यूमेंटेशन](https://yaml.org/)
-- [Yams प्रोजेक्ट संग्रहालय](https://github.com/jpsim/Yams)
-- [YAML में स्ट्रिंग और नंबर एक्सेस करने के लिए फंक्शन](https://stackoverflow.com/questions/49481988/how-to-access-string-and-number-in-yaml)
+- [YAML मानक दस्तावेज़ीकरण](https://yaml.org/)
+- [YAML गाइड](https://docs.ansible.com/ansible/latest/reference_appendices/YAMLSyntax.html)
+- [YAML online parser](https://yaml-online-parser.appspot.com/)

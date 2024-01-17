@@ -10,134 +10,62 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+# Qu'est-ce que c'est et pourquoi le faire?
 
-Vous vous demandez peut-être pourquoi travailler avec JSON en Rust ? Eh bien, il s'agit d'un format de données universellement pris en charge, ce qui en fait un choix populaire pour les échanges de données entre différentes applications et systèmes. En utilisant Rust, vous bénéficierez également de sa sécurité et de sa performance, ce qui rend le traitement de fichiers JSON plus rapide et moins sujet aux erreurs.
+Travailler avec JSON, abréviation de JavaScript Object Notation, est courant pour les programmeurs. Il s'agit d'un format de données léger, facile à lire et à écrire pour les humains, mais également facile à analyser et à générer pour les machines. Cela en fait un choix populaire pour le stockage et l'échange de données structurées.
 
-## Comment Faire
+# Comment faire:
 
-Pour commencer à travailler avec JSON en Rust, vous avez besoin d'un crate (package) appelé `serde_json`. Vous pouvez l'ajouter à votre projet en ajoutant la dépendance suivante dans votre `Cargo.toml` :
+Voici quelques exemples de code en utilisant Rust pour travailler avec JSON:
 
-```rust
-[dependencies]
-serde_json = "0.11.2"
+Un json simple peut être analysé en utilisant la fonction `from_str` du module `json`:
+
+```
+use std::str::FromStr;
+use rustc_serialize::json::Json;
+
+let json = "{\"name\": \"John\", \"age\": 30}";
+let data = Json::from_str(json).unwrap();
+
+println!("Name: {}, Age: {}", data["name"].as_string().unwrap(), data["age"].as_u64().unwrap());
 ```
 
-Ensuite, vous pouvez importer le crate dans votre code :
+Cela produira une sortie comme celle-ci:
 
-```rust
-extern crate serde_json;
-use serde_json::json;
+```
+Name: John, Age: 30
 ```
 
-Maintenant, vous êtes prêt à travailler avec JSON ! Voici un exemple simple de création d'un objet JSON et de l'écriture dans un fichier :
+Pour générer du JSON, nous pouvons utiliser la méthode `to_string` de la structure `Json`:
 
-```rust
-use std::fs::File;
-use std::io::prelude::*;
+```
+use rustc_serialize::json::{Object, Json};
 
-fn main() {
-    let name = "John";
-    let age = 30;
-    let hobbies = vec!["reading", "cooking", "hiking"];
+let mut json_obj = Object::new();
 
-    let person = json!({
-        "name": name,
-        "age": age,
-        "hobbies": hobbies,
-    });
+json_obj.insert("name".to_string(), Json::String("John".to_string()));
+json_obj.insert("age".to_string(), Json::U64(30));
 
-    let mut file = File::create("person.json").expect("Unable to create file");
-    file.write_all(person.to_string().as_bytes())
-        .expect("Unable to write data to file");
-}
+let json_str = Json::Object(json_obj).to_string();
+println!("{}", json_str);
 ```
 
-Le résultat sera un fichier `person.json` contenant :
+Cela produira une sortie comme celle-ci:
 
-```json
-{
-    "name": "John",
-    "age": 30,
-    "hobbies": [
-        "reading",
-        "cooking",
-        "hiking"
-    ]
-}
+```
+{"name":"John","age":30}
 ```
 
-Vous pouvez également utiliser `serde_json` pour lire des fichiers JSON et les convertir en structures de données en Rust. Voici un exemple de lecture du fichier `person.json` créé précédemment :
+# Plongeon en profondeur:
 
-```rust
-let file = File::open("person.json").expect("Unable to open file");
-let person: Person = serde_json::from_reader(file).expect("Unable to parse data from file");
+JSON a été inventé par Douglas Crockford en 2001 et a depuis gagné en popularité en tant que format de données dans de nombreux langages de programmation, y compris Rust. Bien qu'il existe d'autres formats de données tels que XML, YAML et CSV, JSON est souvent préféré pour sa simplicité et sa compatibilité avec JavaScript.
 
-println!("Name: {}", person.name);
-println!("Age: {}", person.age);
-println!("Hobbies: {:?}", person.hobbies);
-```
+La plupart des échanges d'informations entre un serveur et un client Web se font en utilisant JSON, ce qui en fait un outil incontournable pour les développeurs Web. Rust dispose d'un support intégré pour JSON avec le module `rustc_serialize`, mais il existe également d'autres bibliothèques telles que `serde_json` pour ceux qui recherchent plus de fonctionnalités.
 
-## Plongée en Profondeur
+# Voir aussi:
 
-`serde_json` offre également une grande flexibilité dans la manipulation de données JSON. Par exemple, vous pouvez utiliser des traits pour définir comment les champs d'une structure doivent être sérialisés ou désérialisés :
+Voici quelques ressources supplémentaires utiles pour en savoir plus sur la manipulation de JSON en utilisant Rust:
 
-```rust
-use serde_json::{Deserializer, ser::Serializer, value::RawValue};
-
-struct Post {
-    title: String,
-    body: String,
-    date: String,
-}
-
-impl Serialize for Post {
-    fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
-    where
-        S: Serializer,
-    {
-        let mut state = serializer.serialize_struct("Post", 3)?;
-        state.serialize_field("title", self.title)?;
-        state.serialize_field("body", self.body)?;
-        state.serialize_field("date", self.date)?;
-        state.end()
-    }
-}
-
-impl<'de> Deserialize<'de> for Post {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: Deserializer<'de>,
-    {
-        #[derive(Deserialize)]
-        #[serde(field_identifier, rename_all = "lowercase")]
-        enum Field { Title, Body, Date }
-
-        struct PostVisitor;
-
-        impl<'de> Visitor<'de> for PostVisitor {
-            type Value = Post;
-
-            fn expecting(&self, formatter: &mut fmt::Formatter) -> fmt::Result {
-                formatter.write_str("struct Post")
-            }
-
-            fn visit_seq<V>(self, mut seq: V) -> Result<Self::Value, V::Error>
-            where
-                V: seq::SeqAccess<'de>,
-            {
-                Ok(Post {
-                    title: seq.next_element()?
-                        .ok_or_else(|| de::Error::invalid_length(0, &self))?,
-                    body: seq.next_element()?
-                        .ok_or_else(|| de::Error::invalid_length(1, &self))?,
-                    date: seq.next_element()?
-                        .ok_or_else(|| de::Error::invalid_length(2, &self))?,
-                })
-            }
-
-            fn visit_map<V>(self, mut map: V) -> Result<Self::Value, V::Error>
-            where
-                V: MapAccess<'de>,
-            {
-                let mut
+- Documentation officielle de Rust pour le module `rustc_serialize`: [https://doc.rust-lang.org/rustc-serialize/rustc_serialize/json/](https://doc.rust-lang.org/rustc-serialize/rustc_serialize/json/)
+- Documentation officielle de Rust pour le module `serde_json`: [https://docs.serde.rs/serde_json/](https://docs.serde.rs/serde_json/)
+- Article de Douglas Crockford sur l'histoire et la spécification de JSON: [https://www.json.org/json-en.html](https://www.json.org/json-en.html)

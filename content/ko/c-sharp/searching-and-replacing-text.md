@@ -10,28 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+## 무엇이며 왜?
+검색 및 교체는 텍스트를 찾고 다른 텍스트로 대체하는 것을 의미합니다. 이는 프로그래머가 코드에서 특정한 부분을 더 효율적이고 빠르게 수정할 수 있도록 도와줍니다.
 
-검색 및 텍스트 교체를 진행하는 이유는 프로그램에서 특정한 문자 또는 단어를 자동으로 찾아 바꿀 수 있기 때문입니다.
-
-## 어떻게
-
-`C#`에서 `Regex` 클래스를 사용하면 간단하게 문자열에서 검색 및 교체를 할 수 있습니다. 아래의 예제 코드를 참고해보세요.
-
+## 하는 방법:
 ```C#
-string originalText = "안녕하세요, 저는 프로그래머입니다.";
-string replacedText = Regex.Replace(originalText, "프로그래머", "개발자");
+// 예시 1: 문자열에서 특정 문자 찾아 바꾸기
+string text = "안녕하세요! 반가워요.";
+text = text.Replace("안녕하세요", "안녕하세요?"); // "안녕하세요? 반가워요." 출력
 
-Console.WriteLine(replacedText);
+// 예시 2: 정규식을 이용한 패턴 매칭 후 대체
+string text = "내 이메일 주소는 abc@xyz.com입니다.";
+string pattern = "[a-z0-9]+@[a-z]+\.[a-z]+";
+string replacement = "xyz@gmail.com";
+Regex regex = new Regex(pattern);
+text = regex.Replace(text, replacement); // "내 이메일 주소는 xyz@gmail.com입니다." 출력
 ```
 
-출력 결과는 `"안녕하세요, 저는 개발자입니다."`가 됩니다. 위 코드에서는 `Regex` 클래스의 `Replace` 메서드를 사용해 원본 문자열에서 특정 단어를 찾아 다른 단어로 바꾸는 작업을 수행하였습니다. 이 외에도 `Regex` 클래스에는 다양한 기능들이 있으니 자세한 사용법은 공식 문서를 참고해보세요.
+## 깊게 들어가보기:
+검색 및 교체는 오래된 기술이며 다양한 언어에서 지원됩니다. 프로그래머는 정규식을 사용하여 더 복잡한 패턴 매칭을 할 수 있습니다. 또한 많은 개발환경에서 검색 및 교체 기능을 제공하며, 명령줄 도구나 GitHub과 같은 협업 도구를 이용하여 코드 전체에서 텍스트를 검색하고 바꿀 수 있습니다.
 
-## 딥 다이브
-
-검색 및 교체 작업을 할 때 유용한 기능 중 하나는 정규식(Regular Expression)을 활용하는 것입니다. 정규식은 특정한 규칙을 가진 문자열의 패턴을 지정하여 검색하거나 교체할 수 있도록 도와줍니다. 예를 들어, `^` 기호를 이용하면 문자열의 시작부분만을 찾아내고, `$` 기호를 이용하면 문자열의 끝부분만을 찾아낼 수 있습니다. 또한 `+` 기호를 이용하면 해당 문자가 한 번 이상 나오는 부분을 찾을 수 있습니다. 이처럼 정규식을 잘 활용하면 더 다양한 문자열을 처리할 수 있으므로 익숙해지는 것이 좋습니다.
-
-## 참고
-
-- [C# Regex 클래스 문서](https://docs.microsoft.com/ko-kr/dotnet/api/system.text.regularexpressions.regex?view=netcore-3.1)
-- [정규식 표현 참고 자료(정규 표현식 30분만에 제대로 배우기)](https://wikidocs.net/259)
+## 관련 자료:
+- [C# 문자열 검색/교체](https://docs.microsoft.com/ko-kr/dotnet/csharp/how-to/search-strings)
+- [정규식에 대하여](https://medium.com/programmers-studio/%EA%B0%95%EC%9D%98-%EC%BD%94%EB%94%A9%EC%9D%84-%EB%A7%8C%EB%82%AC%EB%8B%A4%EB%A6%AC%EA%B8%B0-%EC%A0%95%EA%B7%9C%EC%8B%9D-regex-ecbab2a5b5d4)
+- [GitHub 코드 검색 및 교체](https://docs.github.com/en/free-pro-team@latest/github/searching-for-information-on-github/searching-code)

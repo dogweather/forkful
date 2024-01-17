@@ -1,7 +1,7 @@
 ---
-title:                "Att få den aktuella datumet."
-html_title:           "Haskell: Att få den aktuella datumet."
-simple_title:         "Att få den aktuella datumet."
+title:                "Att få den aktuella datumet"
+html_title:           "Haskell: Att få den aktuella datumet"
+simple_title:         "Att få den aktuella datumet"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Dates and Times"
@@ -10,32 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
-Att kunna hämta den aktuella datum är en viktig funktion som kan hjälpa oss att hålla koll på tiden eller till exempel användas i applikationer för att skapa dynamiska funktioner baserat på aktuell tid.
+## Vad & Varför?
+Att få den nuvarande datumet kan vara användbart för programmörer på många sätt. Det hjälper till med att skapa timestamp, organisera filer baserat på datum, och även för att skapa datumstämplar för loggar eller datainsamling. Det är i princip ett sätt att få en exakt tidpunkt för ett visst ögonblick.
 
-## Så här gör du
+## Hur man:
+För att få den nuvarande datumet i Haskell, kan du använda funktionen 'getCurrentTime' från modulen Data.Time.Clock. Detta ger tillbaka en IO-datetyp, som måste exekversa i en monad. Här är ett enkelt exempel på hur man kan skriva ut resultatet:
+
 ```Haskell
-import Data.Time.Clock
-import Data.Time.Calendar
-
--- Hämta den aktuella tidpunkten
-getCurrTime = getCurrentTime
-
--- Hämta den aktuella datumet
-getCurrDate = getCurrentDay
-
--- Sample output
-> getCurrTime
-2021-04-10 12:00:00 UTC
-> getCurrDate
-2021-04-10
+import Data.Time.Clock (getCurrentTime)
+main = do
+    t <- getCurrentTime
+    print t
 ```
 
-## Djupdykning
-För att hämta den aktuella tidpunkten använder vi funktionen `getCurrentTime` från `Data.Time.Clock` biblioteket. Denna funktion returnerar ett `UTCTime` objekt som innehåller all information om tidpunkten, inklusive datum.
+Output från detta kommer att se ut ungefär såhär:
+```Haskell
+2019-10-08 16:35:10.607701953 UTC
+```
 
-För att få bara datumet, använder vi funktionen `getCurrentDay` från `Data.Time.Calendar` biblioteket. Denna funktion returnerar ett `Day` objekt som bara innehåller datumet utan tidsinformation.
+Du kan också få den nuvarande datumet i annorlunda format, till exempel som en sträng istället för en IO-datetyp. Detta kan åstadkommas med hjälp av funktionen 'formatTime' från modulen Data.Time.Format. Här är ett exempel på hur du kan få datumet i formatet "DD-MM-YYYY":
 
-## Se även
-- [Haskell Official Documentation for Data.Time.Clock] (https://www.haskell.org/cabal/users-guide/developing-packages.html#handling-time)
-- [Haskell Official Documentation for Data.Time.Calendar] (https://www.haskell.org/cabal/users-guide/developing-packages.html#handling-time)
+```Haskell
+import Data.Time.Clock (getCurrentTime)
+import Data.Time.Format (formatTime, defaultTimeLocale)
+main = do
+    t <- getCurrentTime
+    let formattedTime = formatTime defaultTimeLocale "%d-%m-%Y" t
+    print formattedTime
+```
+
+Output från detta kommer att se ut som följande:
+```Haskell
+08-10-2019
+```
+
+## Deep Dive:
+Att få den nuvarande datumet i Haskell började som ett problem 2003 då ingen inbyggd funktion fanns tillgänglig. Detta ledde till utvecklingen av modulen Data.Time. Dock finns det också alternativ såsom modulen System.Time och Data.Time.Clock.POSIX, som ger liknande funktioner. Det finns också en skillnad i precision mellan dessa olika moduler, där Data.Time ger mer noggrannhet jämfört med System.Time.
+
+## Se även:
+- [Haskell Dokumentation för getCurrentTime](https://www.haskell.org/hoogle/?hoogle=getCurrentTime)
+- [Haskell Dokumentation för Data.Time](https://www.haskell.org/hoogle/?hoogle=Data.Time)
+- [Haskell Dokumentation för System.Time](https://www.haskell.org/hoogle/?hoogle=System.Time)
+- [Haskell Dokumentation för Data.Time.Clock.POSIX](https://www.haskell.org/hoogle/?hoogle=Data.Time.Clock.POSIX)

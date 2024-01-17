@@ -10,40 +10,63 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mikä & Miksi?
 
-Miksi sinun kannattaisi kirjoittaa testejä Arduino-ohjelmillesi? Yksinkertaisesti sanottuna, testit auttavat varmistamaan, että koodisi toimii oikein ja välttämään mahdollisia virheitä.
+Testien kirjoittaminen on prosessi, jossa ohjelmoijat tarkistavat ja varmistavat, että heidän koodinsa toimii odotetulla tavalla. Se auttaa vähentämään virheitä ja parantaa koodin luotettavuutta ja laatua.
 
-## Miten
+## Miten:
 
-Aluksi sinun tulee asentaa testikirjasto Arduino-ympäristöösi. Voit tehdä tämän valitsemalla "Manage Libraries" ("Hallitse kirjastoja") Tools-valikosta ja etsimällä "ArduinoUnit" kirjaston. Asenna kirjasto ja käynnistä Arduino-ympäristö uudelleen.
-
-Nyt voit aloittaa testien kirjoittamisen. Kirjoita testikoodi setup-funktioon ja määritä sen lopuksi run-tests-funktioon. Alla on yksinkertainen esimerkki testistä näppäimistön painallusta varten:
+Esimerkki testin kirjoittamisesta:
 
 ```Arduino
-#include <ArduinoUnit.h>
-
-void setup() {
-  test(keypressTest);
-  runTests();
+//määritellään testattava funktio
+int laskeSumma(int a, int b) {
+  return a + b;
 }
 
-test(keypressTest) {
-  Keyboard.press('A');
-  assertEqual('A', Keyboard.read());
-}
+//huom. tässä ei ole määritelty mitään testejä, tätä koodia ei tule suorittaa!
+
 ```
 
-Voit suorittaa testin valitsemalla "Verify and Upload (Compile and Upload)" Tools-valikosta. Jos kaikki menee hyvin, testi ilmoittaa "PASS" ("ONNISTUI"). Jos taas jokin menee pieleen, testi ilmoittaa "FAIL" ("EPÄONNISTUI") ja antaa tarkemman virheilmoituksen.
+Esimerkki testin kirjoittamisesta käyttäen Arduino testikirjastoa:
 
-## Syventävä sukellus
+```Arduino
+#include <ArduinoUnit.h>  //lisätään testikirjasto
 
-Voit myös käyttää muita testikirjastoja, kuten Unity-testikirjastoa, joka tarjoaa enemmän ominaisuuksia ja joustavuutta. Voit myös suorittaa testejä suoraan Arduinolla käyttämällä Serial.print()-komentoja ja tarkkailla tulostusta sarjaportin kautta.
+//testaa laskeSumma-funktion palauttamaa arvoa
+test(summatTesti) {
+  assertEqual(laskeSumma(2,3), 5);
+  assertNotEqual(laskeSumma(2,3), 6);
+}
 
-Testejä kirjoittaessa on hyvä ottaa huomioon myös testaamisen periaatteet, kuten yksikkötestaus ja testien luotettavuus. Näiden avulla varmistat, että testit ovat tehokkaita ja luotettavia.
+//testaa laskeSumma-funktion käsittelyä negatiivisilla luvuilla
+test(negatiivisetLuvut) {
+  assertEqual(laskeSumma(-2,3), 1);
+  assertNotEqual(laskeSumma(-2,3), -1);
+}
 
-## Katso myös
+// "print"-komento tulostaa testin tulokset sarjalähtöporttiin
+unittest_main();
+```
 
-- [ArduinoUnit library documentation](https://www.arduino.cc/en/Reference/ArduinoUnit)
-- [Unity Arduino library](https://github.com/ThrowTheSwitch/Unity)
-- [Arduino Testing for Beginners](https://randrineer.github.io/arduino/testing/2016/04/05/arduino-testing-for-beginners.html)
+Sample output:
+
+```
+TEST: summatTesti
+PASS
+
+TEST: negatiivisetLuvut
+PASS
+
+Suoritetut testit: 2
+Testit onnistuneesti läpäisty: 2
+Testit epäonnistuneesti: 0
+```
+
+## Syvällisemmin:
+
+Testien kirjoittamisella on pitkä historia ohjelmistokehityksessä ja se on vakiintunut käytäntö monissa ohjelmointikielissä. On myös olemassa muita testikirjastoja kuten googletest, jotka tarjoavat samanlaisia toimintoja kuin Arduino testikirjasto. Testien kirjoittaminen auttaa myös dokumentoimaan ja ymmärtämään koodia paremmin sekä helpottaa tulevia muutoksia ja lisäyksiä.
+
+## Katso myös:
+
+- [Arduino Unit Test Library] (https://github.com/mmurdoch/arduinounit)

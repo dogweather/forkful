@@ -1,7 +1,7 @@
 ---
-title:                "스트링을 소문자로 변환하기"
-html_title:           "Elm: 스트링을 소문자로 변환하기"
-simple_title:         "스트링을 소문자로 변환하기"
+title:                "문자열을 소문자로 바꾸기"
+html_title:           "Elm: 문자열을 소문자로 바꾸기"
+simple_title:         "문자열을 소문자로 바꾸기"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -10,48 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+# Elm에서 문자열을 소문자로 변환하기
 
-문자열을 소문자로 변환하는 것의 의의는 어떤 것인가요? 그 이유는 간단합니다. 현재 버전의 Elm은 대소문자를 가리지 않는 프로그래밍 언어이기 때문입니다. 따라서, 문자열을 소문자로 변환하는 것은 일관성 있고 깔끔한 코드 작성을 가능하게 합니다.
+## 무엇인가요? 왜 해야 하나요?
+문자열을 소문자로 변환하는 것은 주어진 문자열을 모두 소문자로 바꾸는 작업을 말합니다. 프로그래머들은 대소문자를 구분하는 언어를 다룰 때 이 작업이 필요할 수 있습니다.
 
-## 사용 방법
-
-우선, 문자열을 소문자로 변환하기 위해서는 `String` 모듈을 가져와야 합니다. 그리고 `String.toLower` 함수를 호출하여 해당 문자열을 소문자로 변환합니다. 아래는 간단한 예제와 실행 결과입니다.
-
+## 방법:
+Elm에서는 이 작업을 간단하게 할 수 있는 내장 함수 `String.toLower`을 제공합니다. 이 함수는 문자열을 인자로 받아 소문자로 변환된 새로운 문자열을 반환합니다. 예시를 살펴보겠습니다.
 ```Elm
 import String exposing (toLower)
 
-result = toLower "Hello, WORLD!"
+myString = "Hello, World!"
+lowercased = toLower myString
 
--- 결과: "hello, world!"
+-- 출력: "hello, world!"
 ```
+세 번째 줄에서 `toLower` 함수를 사용해 `myString` 변수를 소문자로 변환하고, 그 값을 `lowercased` 변수에 저장합니다. 그 다음 인라인 주석에서 확인할 수 있듯이, `lowercased` 변수의 값은 `"hello, world!"`가 됩니다.
 
-더 많은 예제를 살펴보겠습니다. 아래는 `List.map` 를 활용하여 리스트 내의 모든 문자열을 소문자로 변환하는 예제입니다.
+## 깊게 들어가기:
+이 작업을 처음부터 구현해보자면, 각 문자의 아스키 코드 값을 확인해 대문자인 경우 32를 빼는 식으로 구현할 수 있습니다. 하지만 `String.toLower` 함수처럼 미리 구현된 함수를 사용하면 훨씬 간단하고 효율적으로 처리할 수 있습니다. Elm에서는 대소문자를 무시하는 비교 함수 `String.CaseInsensitive.compare`를 사용해 두 문자열을 비교할 수도 있습니다.
 
-```Elm
-import String exposing (toLower)
-
-fruits = ["APPLE", "ORANGE", "BANANA"]
-
-result = List.map toLower fruits
-
--- 결과: ["apple", "orange", "banana"]
-```
-
-위와 같이 `String.toLower` 함수는 입력받은 문자열의 모든 문자를 소문자로 변환하여 반환합니다.
-
-## 깊은 곳으로
-
-Elm의 `String.toLower` 함수는 어떻게 동작할까요? 이 함수는 영어 알파벳 기준으로만 동작합니다. 따라서, 다른 언어의 알파벳은 변환되지 않습니다. 또한, 공백, 숫자, 특수 문자 등은 그대로 남아있습니다. 예를 들어, `"안녕하세요!"` 라는 문자열을 `String.toLower` 함수로 변환하면 `"안녕하세요!"` 로 그대로 출력됩니다.
-
-## 더 알아보기
-
-- [Elm 공식 문서 - String 모듈](https://elm-lang.org/docs/official/latest/strings)
-- [elm-live를 활용한 Elm 개발 환경 구축하기](https://khan.github.io/elm-live/)
-- [프로그래밍 언어 Elm 소개 및 기초 문법 알아보기](https://blog.scottlogic.com/2018/10/05/learning-elm-intro-and-basic-types.html)
-
-## 참고 자료
-
-- [The official Elm guide](https://guide.elm-lang.org/)
-- [Elm 커뮤니티 Slack 채널](https://elmlang.herokuapp.com/)
-- [Elm 공식 홈페이지](https://elm-lang.org/)
+## 관련 자료:
+- [Elm 공식 문서](https://package.elm-lang.org/packages/elm/core/latest/String#FoldCToLower)
+- [문자열 다루기: Elm로 구현하기](https://medium.com/stackfame/elm-string-tutorial-5117c5cc080d)

@@ -10,39 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hva & Hvorfor?
+Sjekking av om en mappe eksisterer er en viktig del av programmering, spesielt når man jobber med filbehandling. Det betyr rett og slett å sjekke om en angitt mappe finnes på datamaskinen din. Dette er viktig for å sikre at programmet ditt kan finne og bruke de nødvendige filene og mappene det trenger.
 
-Å sjekke om en mappe eksisterer er en viktig del av Java-programmering. Det lar deg forsikre deg om at koden din fungerer som den skal, og at du kan håndtere situasjoner der mappen ikke finnes.
-
-## Hvordan
-
-For å sjekke om en mappe eksisterer, kan du bruke metoden `exists()` fra Java's `File` klasse. Først må du importere `File` klassen:
+## Hvordan:
+Her er et enkelt eksempel i Java som viser hvordan du kan sjekke om en mappe eksisterer og om den er lesbar:
 
 ```Java
 import java.io.File;
-```
 
-Deretter kan du opprette en `File` objekt og bruke `exists()` metoden på den. Her er et eksempel som sjekker om mappen "test" eksisterer i nåværende arbeidsmappe:
+public class DirectoryCheck {
+   public static void main(String[] args) {
+      // Angi stien til mappen du vil sjekke
+      String path = "C:/Users/Bruker/Documents/MinMappe/";
 
-```Java
-File mappe = new File("test");
-if (mappe.exists()) {
-    System.out.println("Mappen eksisterer!");
-} else {
-    System.out.println("Mappen eksisterer ikke.");
+      // Opprett et File-objekt for mappen
+      File directory = new File(path);
+
+      // Sjekk om mappen eksisterer
+      if (directory.exists()) {
+         System.out.println("Mappen eksisterer!");
+         
+         // Sjekk om mappen er lesbar
+         if (directory.canRead()) {
+            System.out.println("Mappen er lesbar!");
+         } else {
+            System.out.println("Mappen er ikke lesbar, sjekk tillatelser.");
+         }
+      } else {
+         System.out.println("Mappen eksisterer ikke!");
+      }
+   }
 }
 ```
 
-Dette vil skrive ut enten "Mappen eksisterer!" eller "Mappen eksisterer ikke.", avhengig av om mappen eksisterer eller ikke. Du kan også sjekke om en mappe eksisterer på en spesifikk plassering ved å gi den fullstendige banen i `File` konstruktøren.
+Her er et eksempel på hva som kan være en mulig output fra koden over:
 
-## Dypdykk
+```
+Mappen eksisterer!
+Mappen er lesbar!
+```
 
-Når du bruker `exists()` metoden, må du være oppmerksom på at den ikke bare sjekker om en mappe med det gitte navnet eksisterer. Den kan også returnere `true` hvis en fil med det samme navnet finnes. Dette er fordi `File` klassen representerer både filer og mapper. 
+## Dykk dypere:
+Det har lenge vært en vanlig praksis å sjekke om en mappe eksisterer før man prøver å gjøre operasjoner på den. Dette er spesielt viktig når man jobber med filbehandling i Java, da det kan føre til potensielle feil og krasj hvis man prøver å bruke en mappe som ikke eksisterer.
 
-En annen viktig ting å merke seg er at `exists()` metoden bare sjekker om mappen eksisterer når metoden kalles. Hvis mappen ble opprettet eller slettet etter at metoden ble kalt, vil den ikke reflektere den nye statusen. Derfor er det alltid best å sjekke om mappen eksisterer rett før du skal bruke den.
+Et alternativ til å bruke File-klassen for å sjekke om en mappe eksisterer, er å bruke Paths og Files klassene fra Java NIO (New Input/Output) som ble introdusert i Java 7. Disse klassene gir en enklere og mer lesbar måte å sjekke om en mappe eksisterer og å utføre operasjoner på den.
 
-## Se også
+Implementeringen av sjekking av om en mappe eksisterer i Java varierer også avhengig av hva slags operativsystem man jobber på. For eksempel vil stien til en mappe se annerledes ut på Windows enn på en Unix-basert maskin.
 
-- Dokumentasjon for Java's `File` klasse: https://docs.oracle.com/javase/8/docs/api/java/io/File.html
-- Tutorial om Java filbehandling: https://www.codejava.net/java-se/file-io/4-ways-to-copy-file-in-java
-- Stack Overflow diskusjon om å sjekke om en mappe eksisterer: https://stackoverflow.com/questions/1816673/how-do-i-check-if-a-file-exists-in-java
+## Se også:
+- Official Java documentation: https://docs.oracle.com/javase/tutorial/essential/io/check.html
+- Tutorialspoint: https://www.tutorialspoint.com/check-if-a-directory-exists-in-java

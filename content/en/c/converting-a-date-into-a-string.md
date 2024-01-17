@@ -10,49 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-Converting a date into a string is a basic yet essential task for any programmer. It allows for better manipulation and formatting of date data, which is commonly used in various applications such as scheduling, accounting, and data analysis.
+## What & Why?
 
-## How To
-To convert a date into a string in C, we can use the `strftime()` function from the `<time.h>` library. This function takes in a date and time value and converts it into a formatted string based on the provided format string.
+Converting a date into a string means taking a date in the form of numbers and symbols and turning it into a more readable and understandable format for human users. Programmers do this for various reasons, such as displaying the date on a user interface, or storing it in a database in a standardized format.
 
-To start, we first need to create a `struct tm` variable to hold our date and time information. This struct contains the individual components of a date and time, such as year, month, day, hour, minute, and second.
+## How to:
 
-```
-#include <stdio.h>
-#include <time.h>
+To convert a date into a string in C, we can use the `strftime()` function from the `time.h` library. This function takes in a format string and a `tm` struct, which holds the date and time information, and returns a string representation of the date in the specified format.
 
-int main() {
-    // Creating a struct to hold date and time information
-    struct tm date = { .tm_year=2021, .tm_mon=8, .tm_mday=7,
-                       .tm_hour=14, .tm_min=30, .tm_sec=0 };
+For example, let's say we have a `tm` struct representing the current date:
 
-    // Converting date into a string using strftime()
-    char date_string[20];
-    strftime(date_string, sizeof(date_string), "%Y/%m/%d %H:%M:%S", &date);
-
-    printf("Date: %s\n", date_string); // Output: 2021/09/07 14:30:00
-
-    return 0;
-}
+```C
+tm currentDate; // assume this struct is initialized with the current date
 ```
 
-Here, we first create a `struct tm` variable named `date` and initialize it with the desired values using designated initializers. Then, we use the `strftime()` function to convert it into a string according to the specified format `%Y/%m/%d %H:%M:%S`, which translates to year/month/day hour:minute:second. The resulting string is stored in the `date_string` array and we can use `printf()` to display it.
+To convert this date into a string in the format `MM/DD/YYYY`, we would use the `strftime()` function like this:
+
+```C
+char dateStr[11]; // create a character array with enough space to hold the formatted date
+strftime(dateStr, sizeof(dateStr), "%m/%d/%Y", &currentDate); // convert the date and store it in the character array
+printf("Current Date: %s", dateStr); // output the formatted date
+```
+
+The output would be: `Current Date: 07/23/2020`
 
 ## Deep Dive
-The `strftime()` function provides great flexibility in formatting dates and times into strings. It takes in two arguments - the first one being the format string and the second one being a pointer to the `struct tm` containing the date and time data.
 
-The format string is made up of two types of sequences: formatting sequences and literal characters. The formatting sequences start with a `%` symbol and are replaced with the corresponding value from the `struct tm` when the function is executed. Here are some common formatting sequences:
+Converting dates into strings has been a common task in programming since the early days. In the C language, the `strftime()` function was first introduced in the ANSI C standard in 1989. Prior to that, programmers had to manually format dates using various libraries and functions.
 
-- `%Y`: year with century as a decimal number
-- `%m`: month as a decimal number (01-12)
-- `%d`: day of the month as a decimal number (01-31)
-- `%H`: hour using a 24-hour clock as a decimal number (00-23)
-- `%M`: minute as a decimal number (00-59)
-- `%S`: second as a decimal number (00-59)
+There are also alternative ways to convert dates into strings in C, such as using the `sprintf()` function, which works similarly to `printf()` but outputs the result to a string instead of the console. However, `strftime()` is the recommended method as it allows for more flexibility in formatting the date and avoids buffer overflows.
 
-Apart from these, there are many more formatting sequences available for different date and time components. It is important to note that the order of the sequences in the format string is significant and must match the order of the components in the `struct tm`.
+For programmers needing to work with time zones, the `asctime()` function can be useful for converting a `tm` struct into a string with the time zone information added.
 
 ## See Also
-- [Official C documentation for strftime()](https://en.cppreference.com/w/c/chrono/strftime)
-- [Converting date to string in other programming languages](https://www.tutorialspoint.com/programming-language-conversion)
+
+- [strftime() Function in C](https://www.tutorialspoint.com/c_standard_library/c_function_strftime.htm)
+- [The History of C](https://www.techopedia.com/a-brief-history-of-the-c-programming-language/2/27778)
+- [Alternative Methods to Convert Dates into Strings in C](https://www.geeksforgeeks.org/convert-date-string-using-strftime-c/)
+- [tm Struct in C](https://www.geeksforgeeks.org/time-h-header-file-in-c-with-examples/)

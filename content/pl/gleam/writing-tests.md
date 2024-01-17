@@ -10,38 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego pisać testy w Gleam?
+## Co i Po co?
 
-Pisanie testów to ważna część procesu tworzenia oprogramowania. W Gleam możemy pisać testy szybko i łatwo, co pozwala nam na sprawdzenie poprawności kodu oraz uniknięcie błędów w przyszłości.
+Testowanie kodu to proces sprawdzania, czy nasz program działa zgodnie z oczekiwaniami i nie zawiera błędów. Jest to nieodłączna część pracy każdego programisty, ponieważ pozwala nam uniknąć nieprzewidzianych sytuacji i ułatwia odnajdywanie i naprawianie błędów w kodzie.
 
-## Jak pisać testy w Gleam?
-
-Pierwszym krokiem jest zainicjowanie testów za pomocą modułu `gleam/test`. Następnie tworzymy funkcję testową z pomocą makra `test/2`. Przykładowy kod wygląda następująco:
+## Jak to zrobić:
 
 ```Gleam
-import gleam/test
-
-test "Dodawanie liczb" {
-  assert.equal 2 (1 + 1)
-  assert.equal 3 (1 + 2)
+// Przykładowa funkcja przyjmująca listę liczb i zwracająca ich sumę
+pub fn suma(lista: List(Int)) -> Int {
+  let gdy_lista_pusta = ctor -> 0
+  let gdy_liczba :: reszta = lista -> liczba + suma(reszta)
+  wynik
 }
+
+// Przykładowe dane wejściowe i spodziewany wynik
+let dane_wejsciowe = [3, 5, 2]
+let oczekiwany_wynik = 10
+
+// Wywołanie funkcji i porównanie wyników
+assert suma(dane_wejsciowe) = oczekiwany_wynik
 ```
 
-Po uruchomieniu testów za pomocą polecenia `gleam test` powinniśmy otrzymać następujący wynik:
+## Głębsze zagadnienia:
 
-```Shell
-✓ Dodawanie liczb
-```
+Testowanie kodu stało się nieodłączną częścią programowania wraz z rozwojem metodyk agile i test-driven development. W Gleam istnieje wiele narzędzi i bibliotek do pisania testów, na przykład ```gleam_testing``` oraz wbudowane makra takie jak ```assert``` i ```expect```. Alternatywnymi metodami testowania są na przykład manualne testy czy analiza statyczna kodu. W Gleam możliwe jest również pisanie testów jednostkowych, integracyjnych oraz akceptacyjnych.
 
-W przypadku, gdy testy zawierają błędy, otrzymamy informację o nich wraz z informacją, na której linii kodu wystąpił problem.
+## Zobacz także:
 
-## Głębszy zanurzenie w testach w Gleam
-
-W Gleam możemy pisać testy dla modułów, funkcji oraz typów danych. Możemy także korzystać z metod takich jak `assert.equl`, `assert.true` lub `assert.false` w celu sprawdzenia zachowania naszego kodu.
-
-Dodatkowo, możemy tworzyć testy oparte na warunkach za pomocą makra `test/4`, które pozwala nam na testowanie różnych wariantów danych wejściowych i oczekiwanych wyników.
-
-## Zobacz także
-
-- Dokumentacja Gleam: https://gleam.run/documentation
-- Oficjalne repozytorium Gleam: https://github.com/gleam-lang/gleam
+- [Dokumentacja gleam_testing](https://gleam.run/testing/)
+- [Przykładowe testy w repozytorium Gleam](https://github.com/gleam-lang/gleam/tree/master/examples/testing)

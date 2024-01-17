@@ -10,55 +10,20 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+## 무엇 & 왜?
+문자열 연결이 무엇인지 알아봅시다. 문자열 연결은 문자열을 한 줄로 합치는 것을 의미합니다. 프로그래머는 보통 변수나 함수의 출력 결과를 한 줄로 합쳐서 편리하게 사용하기 위해서 문자열 연결을 하게 됩니다.
 
-글자 연결을 하는 것에 대해 생각해 본 적이 있나요? Fish Shell은 여러 가지 쉬운 방법으로 문자열을 연결하는 것을 제공합니다. 이를 통해 코드를 더 간결하고 가독성 높게 유지할 수 있습니다.
-
-## Fish Shell을 사용하여 문자열 연결하는 방법
-
-먼저, Fish Shell에서는 "+" 기호를 사용하여 문자열을 연결할 수 있습니다. 예를 들어:
+## 하는 방법:
+아래에 코드 블록 형식으로 코딩 예제와 출력 결과를 보여드리겠습니다. Fish Shell에서는 문자열을 연결하는 방법이 다양합니다. 아래 예제를 참고해보세요.
 
 ```Fish Shell
-echo "Hello " + "World"
+set name "John" # "John"이라는 변수를 정의합니다.
+echo "Hello " $name "!" # "Hello John!"이라는 결과가 출력됩니다.
 ```
 
-이 코드를 실행하면 "Hello World"라는 결과를 볼 수 있습니다. 또한, Fish Shell은 변수를 사용하여 더 복잡한 문자열을 만드는 것도 가능합니다. 예를 들어:
+## 더 들어가기:
+문자열 연결은 프로그래밍에서 매우 중요하며, 개발자들이 자주 사용하는 기능입니다. 예전에는 문자열을 합치기 위해 많은 수작업이 필요했지만, 지금은 문자열 연결 함수나 메소드를 제공하는 다양한 언어들이 있습니다. 또한 문자열 보간이라는 기능을 이용해서도 문자열을 연결할 수 있습니다. Fish Shell에서는 ```string concatenate```라는 내장 함수를 제공하므로, 이를 이용하면 더욱 편리하게 문자열을 연결할 수 있습니다.
 
-```Fish Shell
-set greeting "Hello"
-set name "John"
-echo $greeting" "$name
-```
-
-이렇게 실행하면 "Hello John"이라는 결과를 볼 수 있습니다. 또 다른 방법으로는, "string replace" 함수를 사용하여 원하는 부분의 문자열을 변경하는 것도 가능합니다. 예를 들어:
-
-```Fish Shell
-set sentence "I love pie"
-string replace love hate $sentence
-```
-
-이를 실행하면 "I hate pie"라는 결과를 볼 수 있습니다.
-
-## 문자열 연결에 대해 깊이 파헤쳐보기
-
-Fish Shell에서는 문자열 연결에 유용한 몇 가지 함수를 제공합니다. "string join" 함수는 배열의 요소들을 지정한 문자열로 연결할 수 있습니다. 예를 들어:
-
-```Fish Shell
-set names "John Bob Sarah"
-string join ", " $names
-```
-
-이를 실행하면 "John, Bob, Sarah"라는 결과를 볼 수 있습니다. 또한, "string split" 함수를 사용하여 문자열을 배열로 분리할 수도 있습니다. 예를 들어:
-
-```Fish Shell
-set sentence "I love fish"
-string split " " $sentence
-```
-
-이를 실행하면 ["I", "love", "fish"]라는 배열이 생성됩니다.
-
-## See Also
-
-- [Fish Shell 공식 사이트](https://fishshell.com/)
-- [Fish Shell GitHub 저장소](https://github.com/fish-shell/fish-shell)
-- [Fish Shell 문자열 함수 문서](https://fishshell.com/docs/current/cmds/string.html)
+## 관련 정보:
+Fish Shell 공식 문서에서 문자열 연결에 대한 자세한 내용을 확인하실 수 있습니다. [https://fishshell.com/docs/current/cmds/string.html#concatenate](https://fishshell.com/docs/current/cmds/string.html#concatenate) 또한 다양한 프로그래밍 언어에서 문자열을 연결하는 다른 방법들을 알아보고 싶다면 아래 링크를 참고하세요.
+[https://www.w3schools.com/python/python_strings_concatenate.asp](https://www.w3schools.com/python/python_strings_concatenate.asp)

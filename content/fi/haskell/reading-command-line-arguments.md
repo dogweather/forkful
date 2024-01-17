@@ -1,7 +1,7 @@
 ---
-title:                "Komentoriviparametrien lukeminen"
-html_title:           "Haskell: Komentoriviparametrien lukeminen"
-simple_title:         "Komentoriviparametrien lukeminen"
+title:                "Lukeminen komentoriviparametreja"
+html_title:           "Haskell: Lukeminen komentoriviparametreja"
+simple_title:         "Lukeminen komentoriviparametreja"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Files and I/O"
@@ -10,39 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Haskell - mitä hyötyä komentoriviparametrien lukemisella on?
+## Mitä & Miksi?
 
-Monet kokeneet ohjelmoijat voivat hyötyä komentoriviparametrien lukemisesta, sillä se voi säästää aikaa ja vaivaa ohjelmia kirjoitettaessa ja testattaessa.
+Komentoriviparametrien lukeminen on tärkeä osa ohjelmoinnin prosessia. Se tarkoittaa syötteiden vastaanottamista käyttäjältä ohjelman suorituksen aikana. Ohjelmoijat käyttävät tätä toimintoa voidakseen muokata ja mukauttaa ohjelmiaan käyttäjien haluamalla tavalla.
 
-## Miten tehdä se?
+## Miten:
 
-Komentoriviparametrien lukeminen Haskellissa on helppoa. Tarvitset vain muutaman rivin koodia ja käsittelykoodin - ei muuta.
-
-```Haskell
-import System.Environment
-
-main = do
-    args <- getArgs
-    putStrLn $ "Komentoriviparametrit: " ++ show args
-```
-
-Kun ajat tätä esimerkkiä seuraavasti `runhaskell read_args.hs hello world`, saat tuloksen `Komentoriviparametrit: ["hello", "world"]`.
-
-## Syvempi sukellus
-
-Voit huomata, että `getArgs` palauttaa listan `String`-arvoja. Jos haluat lukea parametrin numeroarvoja, voit käyttää `read`-funktiota muuntamalla `String`-arvon haluttuun tyyppiin. Esimerkiksi, jos haluat lukea kokonaisluvun, voit käyttää seuraavaa koodia:
+Komentoriviparametrien lukeminen Haskellissa on helppoa. Voit käyttää `getArgs` -funktiota saadaksesi listan käyttäjän syöttämistä parametreista. Alla on esimerkki koodista ja sen antamasta tulosteesta.
 
 ```Haskell
 import System.Environment
 
 main = do
-    args <- getArgs
-    putStrLn ("Lukemasi luku on " ++ show (read (head args) :: Int))
+  args <- getArgs
+  putStrLn ("Syötit " ++ (show $ length args) ++ " parametria.")
+  putStrLn ("Parametrit olivat: " ++ (show args))
 ```
 
-Joten kun ajat tätä esimerkkiä `runhaskell read_args.hs 5`, saat tuloksen `Lukemasi luku on 5`.
+Tuloste:
+```bash
+$ runhaskell args.hs arg1 arg2 arg3
+Syötit 3 parametria.
+Parametrit olivat: ["arg1", "arg2", "arg3"]
+```
 
-## Katso myös
+## Syväsukellus:
 
-- [Haskellin dokumentaatio: System.Environment](https://www.haskell.org/onlinereport/haskell2010/haskellch26.html#x33-33000026)
-- [Hakukonemyynti: Korkeamman asteen summat](http://hackage.haskell.org/package/base/docs/src/GHC.Float.html#sum)
+Komentoriviparametrien lukeminen on ollut tärkeä osa ohjelmointikieliä jo vuosien ajan. Se mahdollistaa käyttäjien vuorovaikutuksen ohjelmien kanssa ja antaa heille mahdollisuuden muokata ohjelmien toimintaa syöttämiensä parametrien perusteella.
+
+Vaihtoehtoisia tapoja lukea komentoriviparametreja ovat esimerkiksi `getOpt`, `getOptSimple`, ja `cmdargs` -kirjastot. Nämä tarjoavat laajemman valikoiman toimintoja ja mahdollistavat esimerkiksi parametrien väliset vaihtoehdot ja pakotetut argumentit.
+
+Komentoriviparametrien lukeminen Haskellissa käyttää `getArgs` -funktiota, joka perustuu UNIX-järjestelmän tarjoamiin arg-vetoihin. Tämän takia syötteiden muokkaaminen ennen `getArgs` -funktion kutsumista ei välttämättä tuota haluttuja tuloksia.
+
+## Katso myös:
+
+- [Haskellin virallinen dokumentaatio komentoriviparametrien lukemisesta](https://hackage.haskell.org/package/base-4.15.0.0/docs/System-Environment.html)
+- [Tutorial Haskell-komentoriviparametrien lukemisesta](https://www.codecademy.com/learn/learn-haskell/modules/learn-haskell-commands/cheatsheet)

@@ -1,7 +1,7 @@
 ---
-title:                "Tekstin etsiminen ja korvaaminen"
-html_title:           "Python: Tekstin etsiminen ja korvaaminen"
-simple_title:         "Tekstin etsiminen ja korvaaminen"
+title:                "Tekstin etsiminen ja vaihtaminen"
+html_title:           "Python: Tekstin etsiminen ja vaihtaminen"
+simple_title:         "Tekstin etsiminen ja vaihtaminen"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Strings"
@@ -10,35 +10,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä ja miksi?
+Tekstien etsiminen ja korvaaminen on tärkeä osa ohjelmoinnissa käytettyä toimintoa. Se mahdollistaa nopean ja automatisoidun tavan löytää ja muuttaa tiettyä tekstiä koodissa. Tämä säästää aikaa ja vaivaa, jotka muutoin kuluisivat manuaalisen etsimisen ja korvaamisen parissa.
 
-Syytä etsiä ja korvata tekstiä voi olla monia, kuten halu muuttaa tietyn sanan tai lauseen jokaisen esiintymän tai korjata kirjoitusvirheitä.
-
-## Miten
-
-Etsi ja korvaa tekstiä Pythonilla on helppoa! Käytämme tähän replace() -funktiota, joka toimii seuraavalla tavalla:
-
-```Python 
-# Alkuperäinen teksti
-teksti = "Tämä on esimerkkiteksti."
-
-# Korvataan sana "esimerkki" sanoilla "loistava"
-uusi_teksti = teksti.replace("esimerkki", "loistava")
-
-# Tulostetaan uusi teksti
+## Kuinka tehdä?
+Tekstien etsiminen ja korvaaminen onnistuu Pythonin avulla helposti. Alla olevassa esimerkissä käytämme replace()-funktiota, joka etsii ja korvaa kaikki "word" -tekstit "string" -tekstillä.
+```Python
+teksti = "Tämä on esimerkkilause"
+uusi_teksti = teksti.replace("esimerkkilause", "uusi lause")
 print(uusi_teksti)
-
-# Output: Tämä on loistava teksti.
 ```
+Tulostuksena näkyy nyt: "Tämä on uusi lause".
 
-Yllä olevassa esimerkissä olemme ensin tallentaneet alkuperäisen tekstin muuttujaan "teksti". Sitten replace() -funktion avulla olemme korvanneet sanan "esimerkki" sanalla "loistava" ja lopuksi tulostaneet uuden tekstimme. Voit myös vaihtaa vanhan tekstin uuteen muuttamalla sanat ja tekemällä tarvittavat muutokset. 
-
-## Syvemmälle
-
-Replace() -funktio toimii myös kirjaimien ja numeroiden kanssa. Esimerkiksi voit korvata kaikki pienet kirjaimet isoilla kirjaimilla tai poistaa numerot tekstistäsi. Voit myös antaa vaihtoehdon, kuinka monta kertaa tekstiä korvataan. Jos haluat korvata kaikki esiintymät, voit käyttää rstrip() -funktiota. Tarkempia tietoja ja esimerkkejä löydät Pythonin virallisesta dokumentaatiosta.
+## Syvempi sukellus
+Tekstien etsiminen ja korvaaminen on ollut tärkeä osa ohjelmointimaailmaa jo pitkään. Ennen Pythonin replace()-funktiota, eri ohjelmointikielissä oli erilaisia tapoja suorittaa tämä toiminto. Joissain kielissä se oli hyvin monimutkaista ja vaati paljon koodia, mutta Pythonin ansiosta se on nyt yksinkertaista ja helppoa. Korvaamisen lisäksi Pythonin re.sub()-funktio tarjoaa myös ominaisuuden hakea ja korvata tietyn kaavan mukaan tekstistä. Lisäksi, Pythonin avulla pystyy suorittamaan etsimis- ja korvaamistoimintoja myös tiedostoissa.
 
 ## Katso myös
-
-- [Pythonin virallinen dokumentaatio](https://docs.python.org/3/library/stdtypes.html#str.replace)
-- [Tutoriaali videoiden ja esimerkkien kanssa](https://www.youtube.com/watch?v=qEYZDm6vPCQ)
-- [Githubin hakutyökalut](https://www.youtube.com/watch?v=yxXX1aQaAKU)
+Tässä on muutamia lisälähteitä tietojen etsimisen ja korvaamisen aiheista Pythonissa:
+- ["Pythonin tekstien käsittely" -opas](https://dev.to/petercour/learn-python-text-processing-1jdk) (englanniksi)
+- [Regex101-sivusto](https://regex101.com/) - apuväline tekstien etsimisen ja korvaamisen kaavojen luomiseen (englanniksi)
+- [Pythonin virallinen ohjesivusto](https://docs.python.org/3/howto/regex.html) - tiedot Pythonin re-moduulista ja sen tarjoamista toiminnoista tekstin käsittelyyn (englanniksi)

@@ -10,64 +10,62 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä & Miksi?
+Työskentely JSONin kanssa tarkoittaa datan tallentamista ja jakamista selkeässä ja helposti luettavassa muodossa. Ohjelmoijat käyttävät JSONia, koska se on kevyt, helppo ymmärtää ja yleisesti tuettu.
 
-Jos olet koskaan ollut tekemisissä datan kanssa, olet todennäköisesti törmännyt JSONiin. Se on yksi yleisimmistä tiedostomuodoista, joka helpottaa datan tallentamista ja välittämistä eri ohjelmistojen välillä. JSON on myös erittäin hyödyllinen silloin, kun tarvitset rakenteellista dataa esimerkiksi verkkosovellusta kehittäessäsi. Nyt kun tiedät miksi JSON on tärkeä, on aika opetella kuinka sitä käytetään.
+## Miten:
+Koodiesimerkkejä ja esimerkkitulosteita on esitetty ```C++ ... ```-koodilohkoissa.
 
-## Miten
+Esimerkki JSON-tiedoston lukemisesta ja tiedon tallentamisesta:
 
-JSONia käytetään C++:ssa `json.hpp` kirjastolla. Ensimmäiseksi sinun tulee ladata tämä kirjasto osoitteesta https://github.com/nlohmann/json/releases ja sisällyttää se projektiisi. Tämän jälkeen voit aloittaa JSONin käytön seuraavien esimerkkien avulla:
-
-```
+```C++
 #include <iostream>
-#include "json.hpp"
+#include <fstream>
+#include <jsoncpp/json/json.h>
 
 int main()
 {
-    // Luo JSON-olio ja lisää siihen dataa
-    nlohmann::json data = {
-        {"nimi", "Matti Meikäläinen"},
-        {"ikä", 35},
-        {"työpaikka", "Ohjelmistokehittäjä"}
-    };
+    // Luodaan JSON-tiedoston lukemista varten
+    std::ifstream file("esimerkki.json");
 
-    // Tulostaa JSONin sisällön
-    std::cout << data << std::endl;
+    // Alustetaan Json-lukija ja varataan muistia
+    Json::Reader reader;
+    Json::Value root;
 
-    // Voit myös lisätä dataa myöhemmin
-    data["sukupuoli"] = "mies";
+    // Luetaan tiedosto ja tallennetaan data muuttujaan 'root'
+    reader.parse(file, root);
 
-    // Voit hakea tietyn kentän arvon
-    std::string nimi = data["nimi"];
-
-    // Voit myös käydä läpi kaikki kentät
-    for (auto it = data.begin(); it != data.end(); ++it) {
-        std::cout << it.key() << ": " << it.value() << std::endl;
+    // Tulostetaan JSON-tiedoston sisältö
+    std::cout << "Nimi: " << root["nimi"].asString() << std::endl;
+    std::cout << "Ikä: " << root["ikä"].asInt() << std::endl;
+    std::cout << "Harrastukset:" << std::endl;
+    
+    // Käydään läpi kaikki JSON-tiedostossa olevat harrastukset
+    for (int i = 0; i < root["harrastukset"].size(); i++)
+    {
+        std::cout << "- " << root["harrastukset"][i].asString() << std::endl;
     }
 
-    // Voit tallentaa JSONin tiedostoon
-    std::ofstream file("data.json");
-    file << data << std::endl;
-    
     return 0;
 }
 ```
-
-Esimerkki JSON-tiedoston sisällöstä tulostettuna:
-
+**Esimerkkitulos:**
 ```
-{
-  "nimi": "Matti Meikäläinen",
-  "ikä": 35,
-  "työpaikka": "Ohjelmistokehittäjä"
-}
+Nimi: Maija Meikäläinen
+Ikä: 27
+Harrastukset:
+- Valokuvaus
+- Lukeminen
+- Pianonsoitto
 ```
+## Syvempi sukellus:
+JSON, eli JavaScript Object Notation, on dataformaatti, joka kehitettiin helpottamaan datan tallentamista ja jakamista verkossa. Se on tullut yhdeksi suosituimmista tavoista tallentaa dataa sovelluksissa ja web-palveluissa. JSON on helppo lukea ja ymmärtää sekä sen syntaksi on yksinkertainen, mikä tekee siitä hyvin tuetun ja käytetyn formaatin.
 
-## Syväsukellus
+Vaihtoehtoisia tapoja tallentaa dataa ovat esimerkiksi XML tai CSV. Näihin verrattuna JSON on kevyempi ja helpompi lukea ja muokata.
 
-JSONilla on monia muita ominaisuuksia, kuten mahdollisuus sisällyttää muita JSON-tiedostoja, tarkistaa onko data olemassa ja poistaa dataa. Voit myös lukea ja kirjoittaa JSONia muilla kielillä, kuten Python ja Java. Tutustu `json.hpp` dokumentaatioon saadaksesi lisätietoja.
+JSONin käyttöönotto C++:ssa vaatii lisäkirjaston, esimerkiksi jsoncpp-kirjaston, käyttöönoton. Kirjasto sisältää valmiita työkaluja JSON-tiedostojen lukemiseen ja kirjoittamiseen.
 
-## Katso myös
-
-- [JSON-kieliopas](https://www.json.org/json-fi.html)
-- [json.hpp dokumentaatio](https://github.com/nlohmann/json)
+## Katso myös:
+- [JSON for Modern C++](https://github.com/nlohmann/json) - Suosittu JSON-kirjasto C++-ohjelmoijille.
+- [Introducing JSON](https://www.json.org/) - JSON-oppaasta voit löytää lisätietoa JSONin syntaksista ja sen käytöstä.
+- [JSON Validator](https://jsonlint.com/) - Työkalu, jolla voit tarkistaa onko JSON-koodisi oikein muotoiltu.

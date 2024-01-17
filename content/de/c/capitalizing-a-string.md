@@ -1,7 +1,7 @@
 ---
-title:                "Großschreibung einer Zeichenkette"
-html_title:           "C: Großschreibung einer Zeichenkette"
-simple_title:         "Großschreibung einer Zeichenkette"
+title:                "Großschreibung eines Strings"
+html_title:           "C: Großschreibung eines Strings"
+simple_title:         "Großschreibung eines Strings"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -10,80 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+Was ist das Capitalizen einer Zeichenfolge und warum machen Programmierer es?
 
-Strings sind eine wichtige Datenstruktur in C, die oft verwendet werden, um Text in Programmen zu speichern. Das Kapitalisieren eines Strings kann hilfreich sein, um die Lesbarkeit zu verbessern oder bestimmte Anforderungen an den Benutzer eingehalten werden müssen.
+Das Capitalizen einer Zeichenfolge bedeutet, dass alle Buchstaben in einer Zeichenfolge von Klein- zu Großbuchstaben umgewandelt werden. Programmierer tun dies, um die Lesbarkeit und Konsistenz von Code zu verbessern, da es bestimmte Formatierungsanforderungen gibt, die von Programmiersprachen vorgegeben werden und es einfacher ist, diese einzuhalten, wenn die Zeichenfolgen capitalisiert sind.
 
-## Wie geht man vor
+So machen Sie es:
 
-Das Kapitalisieren eines Strings kann auf verschiedene Weise erfolgen, je nach den spezifischen Anforderungen des Programms. Im Folgenden werden zwei Beispiele gegeben:
-
-```C
-// Beispiel 1: Kapitalisierung des gesamten Strings
+```c
 #include <stdio.h>
 #include <ctype.h>
 
 int main() {
-    char string[50];
-    
-    printf("Geben Sie einen String ein: ");
-    fgets(string, 50, stdin); // liest input von der Konsole
-    
+    char string[] = "hallo, welt!";
     int i = 0;
-    while (string[i] != '\0') {
-        string[i] = toupper(string[i]); // wandelt jeden Buchstaben in Großbuchstaben um
+
+    printf("Vor dem Capitalizen: %s\n", string);
+
+    while (string[i]) {
+        string[i] = toupper(string[i]);
         i++;
     }
-    
-    printf("Kapitalisierter String: %s", string);
-    
+
+    printf("Nach dem Capitalizen: %s\n", string);
+
     return 0;
 }
 ```
 
-```C
-// Beispiel 2: Kapitalisierung der ersten Buchstaben in jedem Wort
-#include <stdio.h>
-#include <string.h>
-#include <ctype.h>
+Output:
 
-int main() {
-    char string[50];
-    
-    printf("Geben Sie einen String ein: ");
-    fgets(string, 50, stdin);
-    
-    int i = 0;
-    while (string[i] != '\0') {
-        string[i] = toupper(string[i]); // wandelt ersten Buchstaben in Großbuchstaben um
-        // überprüft, ob vorheriges Zeichen ein Leerzeichen oder Tabulator war
-        // und wandelt anschließend den nächsten Buchstaben in Großbuchstaben um
-        if (string[i] == ' ' || string[i] == '\t') {
-            string[i + 1] = toupper(string[i + 1]);
-        }
-        i++;
-    }
-    
-    printf("Kapitalisierter String: %s", string);
-    
-    return 0;
-}
+```
+Vor dem Capitalizen: hallo, welt!
+Nach dem Capitalizen: HALLO, WELT!
 ```
 
-### Tiefergehende Erklärung
+Tiefgehende Informationen:
 
-Die Funktion `toupper()` aus der Bibliothek <ctype.h> wandelt einen einzelnen Buchstaben in Großbuchstaben um. Dazu wird der ASCII-Wert des Buchstabens verwendet. Bei Kleinbuchstaben muss der ASCII-Wert um 32 verringert werden, um den entsprechenden Großbuchstaben zu erhalten.
+Das Capitalizen von Zeichenfolgen ist eine gängige Praxis in der Programmierung. Es stammt aus der Zeit, als Computer noch nicht in der Lage waren, Groß- und Kleinbuchstaben zu unterscheiden - daher war es einfacher, durchgehend Großbuchstaben zu verwenden. Heutzutage gibt es verschiedene Alternativen zum Capitalizen, z. B. das Konvertieren von Zeichenfolgen in Titel- oder Kamelkasus, je nach spezifischen Anforderungen des Codes. Die Implementierung des Capitalizens in C kann auch mit der Funktion `toupper()` in der Header-Datei `<ctype.h>` erfolgen, die jeden übergebenen Buchstaben in einen Großbuchstaben umwandelt.
 
-Im ersten Beispiel wird in einer Schleife jeder Buchstabe der Reihe nach mit der `toupper()`-Funktion umgewandelt. Dadurch wird der gesamte String in Großbuchstaben geschrieben.
+Siehe auch:
 
-Im zweiten Beispiel wird zusätzlich überprüft, ob der vorherige Buchstabe ein Leerzeichen oder Tabulator war. Wenn dies der Fall ist, wird der Buchstabe dahinter in Großbuchstaben umgewandelt. Dadurch entsteht ein Satz mit großgeschriebenen Anfangsbuchstaben in jedem Wort.
-
-## Weitere Informationen
-
-- [ASCII-Tabelle](https://www.asciitable.com/)
-- [ctype.h-Dokumentation](https://www.tutorialspoint.com/c_standard_library/ctype_h.htm)
-
-## Siehe auch
-
-- [String Operations in C](https://www.geeksforgeeks.org/string-handling-operations-in-c/)
-- [Looping in C](https://www.programiz.com/c-programming/c-for-loop)
+- [Unterschiedliche String Transformationen in C](https://stackoverflow.com/questions/14176122/string-transformations-in-c-uppercase-lowercase-titles) auf Stack Overflow
+- [Die Header-Datei <ctype.h>](https://www.tutorialspoint.com/c_standard_library/ctype_h.htm) auf Tutorials Point

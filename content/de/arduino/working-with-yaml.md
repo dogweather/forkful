@@ -1,7 +1,7 @@
 ---
-title:                "Arbeiten mit YAML"
-html_title:           "Arduino: Arbeiten mit YAML"
-simple_title:         "Arbeiten mit YAML"
+title:                "Arbeiten mit yaml"
+html_title:           "Arduino: Arbeiten mit yaml"
+simple_title:         "Arbeiten mit yaml"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Data Formats and Serialization"
@@ -10,91 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Warum
+## Was ist YAML und warum benutzen Programmierer es?
 
-Wenn du mit Arduino arbeitest, kann es hilfreich sein, Daten in einer übersichtlichen und strukturierten Form zu speichern. YAML ist ein einfaches Format, das dir dabei helfen kann, verschiedene Datentypen wie Zahlen, Texte und Listen zu organisieren.
+YAML ist eine vereinfachte, benutzerfreundliche Möglichkeit, Daten in einem strukturierten Format zu speichern. Es ist besonders nützlich für Entwickler, da es ihnen ermöglicht, verschiedene Arten von Daten zu organisieren und zu verwalten. Es ist auch leicht lesbar und leicht verständlich, was es zu einem beliebten Wahl unter Programmierern macht.
 
-# Wie geht's
+## Wie funktioniert es?
 
-Die Integration von YAML in deine Arduino-Projekte ist sehr einfach. Hier ist ein Beispiel, wie du eine Liste von Sensorwerten in YAML speichern kannst:
+Um mit YAML in Arduino zu arbeiten, müssen wir zunächst die YAML-Header-Datei einbeziehen. Dies geschieht durch Hinzufügen der folgenden Zeile zu Ihrem Code:
 
 ```Arduino
-#include <ArduinoJson.h>
 #include <YAML.h>
-
-void setup() {
-  YAML::Object data;
-  data["sensor1"] = analogRead(A0);
-  data["sensor2"] = analogRead(A1);
-  data["sensor3"] = analogRead(A2);
-
-  String yamlString;
-  YAML::Emitter emitter(yamlString);
-  emitter << data;
-
-  Serial.begin(9600);
-  Serial.println(yamlString);
-}
 ```
 
-Und das ist das Ergebnis, das du im Seriellen Monitor sehen wirst:
+Als nächstes müssen wir eine YAML-Variablendeklaration erstellen, um unsere Daten in einem strukturierten Format zu speichern. Dies kann wie folgt aussehen:
 
 ```Arduino
-sensor1: 18
-sensor2: 240
-sensor3: 551
+YAML::Node myData;
 ```
 
-Wie du sehen kannst, sind die Werte in einer strukturierten und lesbaren Form gespeichert. Du kannst auch komplexere Datenstrukturen wie Arrays und Objekte in YAML speichern. Hier ist ein Beispiel, wie du ein Array von Temperaturwerten speichern kannst:
+Um nun Daten zu speichern, können wir auf die Memberfunktion von YAML zugreifen und einen Schlüsselwert hinzufügen. Zum Beispiel:
 
 ```Arduino
-#include <ArduinoJson.h>
-#include <YAML.h>
-
-#define NUM_SENSORS 5
-
-void setup() {
-  float tempArray[NUM_SENSORS] = {22.5, 23.3, 21.7, 24.8, 20.9};
-  
-  YAML::Object data;
-  data["temperatures"] = tempArray;
-
-  String yamlString;
-  YAML::Emitter emitter(yamlString);
-  emitter << data;
-
-  Serial.begin(9600);
-  Serial.println(yamlString);
-}
+myData["Name"] = "Max Mustermann";
 ```
 
-Und hier ist das Ergebnis:
+Um auf die gespeicherten Daten zuzugreifen, können wir einfach den Schlüsselwert abrufen. Zum Beispiel:
 
 ```Arduino
-temperatures: [22.5, 23.3, 21.7, 24.8, 20.9]
+Serial.println(myData["Name"]);
 ```
 
-# Tiefer eintauchen
+## Tiefere Einblicke
 
-Wenn du mehr über YAML erfahren möchtest, gibt es einige wichtige Konzepte, die du verstehen solltest. YAML verwendet Einrückungen, um Datenstrukturen zu definieren. Zum Beispiel:
+YAML wurde ursprünglich als einfache Auszeichnungs- und Datenformatierungssprache für Programmierer entwickelt. Es ist jedoch in den letzten Jahren immer beliebter geworden und wird mittlerweile auch in anderen Anwendungen wie Konfigurationsdateien und Datenbanken verwendet.
 
-```yaml
-- Sensor1:
-    pin: A0
-    type: analog
-- Sensor2:
-    pin: A1
-    type: analog
-```
+Alternativen zu YAML sind JSON und XML, die ebenfalls strukturierte Daten formen. Der Vorteil von YAML gegenüber diesen Alternativen ist jedoch seine Lesbarkeit und Benutzerfreundlichkeit.
 
-Dies ist ein Array von Objekten, die jeweils aus zwei Schlüssel-Wert-Paaren bestehen. Die Einrückung zeigt, dass die Schlüssel "Pin" und "Typ" zum jeweiligen Sensorobjekt gehören.
+Die Implementierung von YAML in Arduino ist relativ einfach, da es eine offizielle Header-Datei gibt, die in den Arduino Sketch importiert werden kann. Es gibt auch viele Ressourcen und Tutorials online, um Ihnen bei der Arbeit mit YAML in Arduino zu helfen.
 
-Eine weitere wichtige Sache ist, dass YAML dynamisch typisiert ist. Das bedeutet, dass du nicht angeben musst, welche Datentypen du speichern möchtest. YAML erkennt automatisch, ob ein Wert eine Zahl, ein Text oder eine Liste ist und kann entsprechend darauf zugreifen.
+## Weitere Informationen
 
-Für weitere Informationen und Beispiele kannst du die offizielle YAML-Dokumentation lesen.
+Hier sind einige nützliche Links, um mehr über YAML zu erfahren und wie es in Arduino implementiert wird:
 
-# Siehe auch
-
-- [Offizielle YAML-Dokumentation](https://yaml.org/)
-- [ArduinoJson Library](https://arduinojson.org/)
-- [YAML Library für Arduino](https://github.com/inaciose/yaml-arduino)
+- Offizielle YAML-Website: https://yaml.org/
+- Arduino YAML-Bibliothek: https://github.com/arduino-libraries/YAML
+- YAML-Spezifikation: https://yaml.org/spec/
+- Tutorial zur Verwendung von YAML mit Arduino: https://learn.sparkfun.com/tutorials/working-with-yaml/all

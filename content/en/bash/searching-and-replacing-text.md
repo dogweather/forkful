@@ -10,50 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-Have you ever needed to make a quick change to a large text file or multiple files at once? Using the search and replace function in Bash can save you time and effort compared to manually editing each instance.
+## What & Why?
 
-## How To
-To search and replace text in Bash, you can use the "sed" command followed by the search pattern, replacement text, and the file name(s) you want to make the changes in. For example:
+Searching and replacing text is a process of finding specific words or phrases in a piece of text and replacing them with desired ones. Programmers use this technique to quickly make changes to their code without manually going through every line. It's an efficient way to make multiple changes at once, saving time and effort.
 
-```
-sed 's/old_text/new_text/g' file.txt
-```
+## How to:
 
-In this command, "s" stands for substitute, "g" stands for global (meaning all instances in the file), and "file.txt" is the name of the file you want to make the changes in.
+Here's an example of searching and replacing text in Bash:
 
-To make the changes in multiple files at once, you can use the "find" command to search for a specific file pattern and pipe it to sed using the "xargs" command. For example:
-
-```
-find . -name "*.txt" | xargs sed -i 's/old_text/new_text/g'
+```Bash
+# Search for word "Hello" and replace it with "Hi"
+sed -i 's/Hello/Hi/g' example.txt
 ```
 
-This command will search for all files ending in .txt in the current directory and subdirectories and make the desired changes in all of them.
+The `-i` flag is used to make the changes in the file itself. Without it, the changed text will only be displayed in the output. Similarly, we can use the `grep` command to search for specific words in a file:
 
-You can also use regular expressions in your search and replace pattern for more complex changes. For example, using the following command will replace all instances of words starting with "apple" with "orange":
-
-```
-sed -i 's/apple[a-z]*/orange/g' file.txt
-```
-
-## Deep Dive
-To further customize your search and replace, you can use flags and options in the sed command. Some common ones include:
-
-- "-i" flag to make the changes directly in the file instead of just displaying the updated text in the terminal
-- "-e" option to use multiple search and replace patterns in a single command
-- "-r" option to use extended regular expressions for more advanced pattern matching
-
-You can also use variables and backreferences in your replacement text. For example, using the following command will replace all instances of a person's name with their name in all caps:
-
-```
-sed -i 's/([A-Z][a-z]+) ([A-Z][a-z]+)/\U\1 \U\2/g' file.txt
+```Bash
+# Search for lines containing word "apple" in example.txt
+grep "apple" example.txt
 ```
 
-In this case, the "\1" and "\2" are backreferences representing the first and second word in the pattern, respectively.
+This will return all the lines in the file that contain the word "apple". We can also use the `find` command to search for files with specific names or extensions:
 
-Remember to use caution when using the "-i" flag as the changes will be made directly in the file without any confirmation.
+```Bash
+# Find all files with ".txt" extension in current directory
+find . -name "*.txt"
+```
 
-## See Also
-- [GNU Bash Manual](https://www.gnu.org/software/bash/manual/)
-- [Using sed to find and replace text in files](https://www.shellhacks.com/regex-find-and-replace-text-files-sed-awk/)
-- [13 Examples To Use Linux Sed Command To Delete and Replace Text From File](https://www.cyberciti.biz/faq/howto-use-sed-delete-text-string-from-file-only-once/)
+## Deep Dive:
+
+Searching and replacing text has been a common practice since the early days of computing. It was first introduced in the `ed` editor in the 1960s, and later popularized in `sed`, which stands for "stream editor". Nowadays, there are many tools and scripting languages that provide powerful search and replace capabilities, such as Perl, Python, and even plain old command line utilities like `awk`.
+
+One alternative to using command line tools is integrating text search and replace functionality into your text editor. Many modern editors come with this feature built-in or offer plugins that can do it. This can be especially useful when making changes to large projects with multiple files.
+
+In terms of implementation, text searching and replacing is usually done using regular expressions, also known as "regex". Regular expressions define a pattern that the search phrase must match, making the search more flexible and accurate.
+
+## See Also:
+
+- [ed: The Standard Text Editor](https://www.gnu.org/fun/jokes/basics.plus-joke)
+- [sed: Unix Sed utility](https://www.gnu.org/software/sed/)
+- [Regular Expressions in Bash](https://www.gnu.org/software/bash/manual/html_node/Pattern-Matching.html)

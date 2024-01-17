@@ -1,7 +1,7 @@
 ---
-title:                "Usuwanie znaków odpowiadających wzorcowi"
-html_title:           "Javascript: Usuwanie znaków odpowiadających wzorcowi"
-simple_title:         "Usuwanie znaków odpowiadających wzorcowi"
+title:                "Usuwanie znaków pasujących do wzorca"
+html_title:           "Javascript: Usuwanie znaków pasujących do wzorca"
+simple_title:         "Usuwanie znaków pasujących do wzorca"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Strings"
@@ -10,45 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i dlaczego?
 
-Czy kiedykolwiek zastanawiałeś się, dlaczego programiści często usuwają znaki pasujące do określonego wzorca w swoim kodzie? Istnieją wiele powodów, dla których ta praktyka jest powszechnie stosowana, a w tym artykule dowiecie się, dlaczego jest to ważne i jak można to zrobić w JavaScript.
+Usuwanie znaków pasujących do wzorca to czynność, która polega na wyeliminowaniu wszystkich znaków ze stringa, które odpowiadają określonemu wzorcowi. Programiści często wykonują tę czynność w celu oczyszczenia danych lub manipulacji tekstem.
 
-## Jak to zrobić
+## Jak to zrobić:
 
-Proces usuwania znaków pasujących do wzorca jest stosunkowo prosty, ale może wymagać umiejętnego użycia funkcji wbudowanych w JavaScript. Poniżej przedstawiono przykłady kodu i wyniki dla różnych sytuacji:
+Przykłady kodu i wyników:
 
-```Javascript
-const string1 = "To Jest Przykładowy Tekst";
-
-// Usuwa wszystkie spacje
-const textWithoutSpaces = string1.replace(/\s/g, "");
-console.log(textWithoutSpaces);
-// wynik: "ToJestPrzykładowyTekst"
-
-// Usuwa wszystkie małe litery
-const textWithoutLowerCase = string1.replace(/[a-z]/g, "");
-console.log(textWithoutLowerCase);
-// wynik: "TJP"
-
-// Usuwa litery "sz" z tekstu
-const textWithoutSz = string1.replace(/sz/g, "");
-console.log(textWithoutSz);
-// wynik: "To Jest Prykadowy Tekst"
+```javascript
+const string = "Hello, World!";
+console.log(string.replace(/[aeiou]/g, '')); // Hll, Wrld!
 ```
 
-W powyższych przykładach wykorzystano metodę `replace()` wraz z wyrażeniem regularnym, aby zastosować wzorzec i usunąć pasujące znaki. Dzięki temu możemy w łatwy sposób edytować nasz tekst.
+```javascript
+const numbers = [-10, 20, 30, -40, 50];
+console.log(numbers.filter(num => num > 0)); // [20, 30, 50]
+```
 
-## Deep Dive
+## Głębsza analiza:
 
-Istnieje wiele różnych sytuacji, w których jest potrzebne usunięcie znaków pasujących do określonego wzorca. Jednym z najczęstszych zastosowań jest filtrowanie danych wprowadzanych przez użytkowników. Dzięki usunięciu niechcianych znaków, możemy zapobiec błędom lub atakom typu SQL Injection.
+1. Kontekst historyczny: Usuwanie znaków pasujących do wzorca jest jednym z podstawowych zagadnień związanych z manipulacją tekstem w programowaniu. Zostało wprowadzone w językach programowania już w latach 60.
+2. Alternatywy: Oprócz wykorzystania metody `replace` można również użyć metody `filter`, jak pokazano w drugim przykładzie powyżej. Niektórzy programiści mogą również użyć pętli `for` lub `forEach`.
+3. Szczegóły implementacji: W Javascript możemy wykorzystać wyrażenia regularne (RegExp) do precyzyjnego wskazania wzorca znaków, które chcemy usunąć.
 
-W JavaScript istnieje wiele innych funkcji, które mogą pomóc nam w manipulowaniu tekstem. Na przykład, metoda `match()` może zostać wykorzystana do znalezienia wszystkich wystąpień pasujących do wzorca w tekście.
+## Zobacz także:
 
-## Zobacz również
-
-Jeśli chcesz dowiedzieć się więcej o usuwaniu znaków pasujących do wzorca lub o innych funkcjach manipulacji tekstem w JavaScript, polecamy zapoznać się z poniższymi artykułami:
-
-- [MDN - Metoda replace()](https://developer.mozilla.org/pl/docs/Web/JavaScript/Referencje/Obiekty/String/replace)
-- [W3Schools - Wyrażenia regularne w JavaScript](https://www.w3schools.com/js/js_regexp.asp)
-- [Poradnik Webdev - Filtrowanie danych w JavaScript](https://poradnikwebdev.pl/jak-filtrowac-dane-w-javascript/)
+- [Dokumentacja JS o metodzie replace](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
+- [Dokumentacja JS o metodzie filter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)
+- [Artykuł na temat manipulacji tekstem w JS](https://www.digitalocean.com/community/tutorials/how-to-manipulate-strings-in-javascript)

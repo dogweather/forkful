@@ -1,7 +1,7 @@
 ---
-title:                "ランダムな数値の生成"
-html_title:           "Elixir: ランダムな数値の生成"
-simple_title:         "ランダムな数値の生成"
+title:                "ランダムな数字の生成"
+html_title:           "Elixir: ランダムな数字の生成"
+simple_title:         "ランダムな数字の生成"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Numbers"
@@ -10,45 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+"Elixirでランダムな数字を生成する方法"
 
-ランダムな数値を生成することに興味があると思われる方々にとって、Elixirは非常に優れたツールです。Elixirの強力なランダム数生成機能を使うことで、より多くの可能性を持ったプログラムを作ることができます。
+## What & Why?
+ランダムな数字を生成することは、プログラマにとって非常に重要です。これにより、偶然性や多様性を持ったデータを生成することができます。プログラマは、この機能を使用して、ランダムなアイテムを作成したり、ランダム性を持ったゲームをプレイできるようにしたりすることができます。
 
-## 方法
+## How to:
+Elixirでは、ランダム性を生成するために内蔵された```Enum.random/1```関数を使用することができます。この関数は、引数として渡されたリストからランダムな要素を返します。
 
-まず、ElixirのライブラリであるRandomをインポートします。次に、Randomを使用して任意の形式のランダム数を生成する方法を示します。
-
-```elixir
-iex> import Random
-iex> rand() # デフォルトでは0から1までの浮動小数点数を返す
-0.7801630443077161
-
-iex> rand(1..10) # 引数を渡すことで最小値と最大値を指定できる
-6
-
-iex> rand(1.0..5.5) # 浮動小数点数の範囲も指定できる
-4.891950072786604
-
-iex> rand(1..10, 5) # 第二引数で生成する数の個数を指定できる
-[7, 2, 9, 4, 3]
+```Elixir
+numbers = [1, 2, 3, 4, 5]
+Enum.random(numbers)
+# Output: 3
 ```
 
-また、ランダムな文字列を生成することもできます。
+また、特定の範囲内のランダムな整数を生成するには、```:rand.uniform/1```関数を使用することができます。例えば、1から10までの範囲内の整数を生成するには、以下のようになります。
 
-```elixir
-iex> rand_string = Enum.shuffle("abcdefghijklmnopqrstuvwxyz") |> List.first(5) |> Enum.join("") # アルファベットのランダムな5文字の文字列を生成する
-"uqklm"
-
-iex> rand_string = Enum.shuffle(["apple", "banana", "cherry"]) |> List.first() # リストからランダムに要素を取得することもできる
-"banana"
+```Elixir
+:rand.uniform(1..10)
+# Output: 7
 ```
 
-## 深堀り
+## Deep Dive:
+ランダム性を生成する方法は、プログラミング言語によって異なります。Elixirでは、Pseudorandom Number Generator（疑似乱数生成器）と呼ばれるアルゴリズムを使用してランダム性を生成します。疑似乱数生成器は、ある値（seed）をもとにして、予測できないようにランダムな値を生成します。
 
-内部的には、ElixirのRandomはRNG（乱数生成器）モジュールに基づいています。RNGは疑似乱数を生成しますが、それでも実用的な乱数を生成できるように設計されています。また、乱数のシード値を手動で指定することもできます。
+疑似乱数生成器以外にも、真のランダム性を生成する方法としてハードウェアデバイスを使用する方法もあります。Elixirでも、```:rand.uniform/2```関数の第二引数としてランダム性を生成する方法を指定することができます。
 
-## 関連情報
-
-- [ElixirのRandomドキュメント](https://hexdocs.pm/elixir/Random.html)
-- [RubyKaigi 2014：ランダムでErlang を卒業する (John Hainsworth)](https://www.youtube.com/watch?v=4SH_-aI_1ho)
-- [Elixirで疑似乱数がランダムにならない場合の原因と対処法](https://qiita.com/khsk/items/e1b0ebf731fd4fd24a66)
+## See Also:
+- <https://hexdocs.pm/elixir/1.11/Kernel.html#random/1>
+- <https://elixirschool.com/ja/lessons/basics/control-structures/#%E3%83%A9%E3%83%B3%E3%83%80%E3%83%A0%E5%B0%8F%E6%95%B0>
+- <https://www.tutorialspoint.com/elixir/elixir_random_number.htm>

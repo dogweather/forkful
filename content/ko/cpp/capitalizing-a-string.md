@@ -1,7 +1,7 @@
 ---
-title:                "문자열 대문자로 변환하기"
-html_title:           "C++: 문자열 대문자로 변환하기"
-simple_title:         "문자열 대문자로 변환하기"
+title:                "문자열 대문자화"
+html_title:           "C++: 문자열 대문자화"
+simple_title:         "문자열 대문자화"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -10,48 +10,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 왜 
-문자열을 대문자로 변환하는 것에 대해 시도하는 이유는 주로 사용자가 입력한 문자열을 대문자로 바꾸어 다른 함수나 프로그램에서 처리하기 쉽게 하기 위해서입니다.
-하지만 자신만의 프로젝트를 만들거나 기존 코드를 수정하는데 있어서도 대소문자를 일관성있게 사용하는 것이 중요한데, 이를 위해서도 문자열을 대문자로 변환하는 것이 유용합니다.
+# 무엇 & 왜? 
+문자열 대문자화란 무엇인지 설명하고, 프로그래머들이 왜 이렇게 하는지에 대해 간단히 설명합니다.
 
-## 어떻게
-이제 C++을 사용하여 문자열을 대문자로 변환하는 방법을 살펴보겠습니다. 아래의 예시 코드를 참고해주세요.
+먼저, 문자열 대문자화란 문자열의 모든 문자를 대문자로 바꾸는 것을 말합니다. 이는 보통 입력받은 문자열의 형식을 통일시키기 위해서 혹은 검색 기능을 구현할 때 대소문자 구분을 없애기 위해서 사용됩니다. 
+
+## 방법:
+아래 코드 블록을 참고하여, C++ 언어를 사용하여 문자열을 대문자로 변환하는 방법을 소개합니다. 코드 블록 안에 있는 샘플 코드를 참고하여, 실제 출력 결과를 확인할 수 있습니다.
 
 ```C++
-#include <iostream>
-#include <string>
-#include <cctype>
-
-using namespace std;
-
-int main() {
-    // 대문자로 변환할 문자열 입력
-    string str;
-    cout << "문자열을 입력하세요: ";
-    getline(cin, str);
-
-    // 문자열의 각 문자를 대문자로 변환
-    for (int i = 0; i < str.length(); ++i) {
-        str[i] = toupper(str[i]);
+// 입력받은 문자열을 대문자로 변환하는 함수
+string capitalize(string str) {
+    
+    // 문자열의 길이만큼 반복
+    for(int i=0; i<str.length(); i++) {
+        
+        // 현재 문자가 소문자라면
+        if(str[i] >= 'a' && str[i] <= 'z') {
+            // 해당 문자를 대문자로 바꿔줌
+            str[i] -= 32;
+        }
     }
-
-    // 결과 출력
-    cout << "대문자로 변환된 문자열: " << str << endl;
-
-    return 0;
+    
+    // 변환된 문자열을 반환
+    return str;
 }
+
+// 테스트를 위한 입력 문자열
+string input = "Hello, world!";
+
+// capitalize() 함수를 호출하여 입력 문자열을 대문자로 변환
+string output = capitalize(input);
+
+// 변환 결과 출력
+cout << output << endl;
 ```
 
-위의 코드를 실행하면 입력한 문자열이 모두 대문자로 변환되어 출력됩니다. 만약 대문자를 소문자로 바꾸고 싶다면 `toupper` 함수를 대신 `tolower` 함수로 바꿔주면 됩니다.
+위 코드를 실행하면, "HELLO, WORLD!"라는 대문자로 변환된 문자열이 출력됩니다.
 
-## 깊게 들어가보기
-자 그럼 `toupper` 함수에 대해 조금 더 깊게 살펴보도록 하겠습니다. 이 함수는 `<cctype>` 라이브러리에 정의되어 있으며, 해당 문자가 속한 아스키 표의 값과 계산을 통해 대문자로 변환하는 기능을 수행합니다.
-또한, `toupper` 함수는 입력값으로 받은 문자가 소문자인지 검사한 후, 소문자일 경우에만 대문자로 변환하고 그 외의 경우에는 그대로 출력합니다.
+## 깊이 파고들기:
+(1) 과거의 문맥, (2) 대안들, (3) 문자열 대문자화의 구현 세부 사항 등, 문자열 대문자화에 대해 더 깊이 있는 정보를 제공합니다.
 
-# 참고 자료
-- [cplusplus.com - toupper](https://www.cplusplus.com/reference/cctype/toupper/)
-- [HackerRank - String to Uppercase](https://www.hackerrank.com/challenges/whats-in-a-name/problem)
-- [GeeksforGeeks - Convert string to upper case in C++](https://www.geeksforgeeks.org/convert-string-upper-case-using-stl-c/)
- 
-# 참고 문헌
-https://ko.wikipedia.org/wiki/ASCII
+문자열 대문자화는 오래된 방법 중 하나로, 예전에는 컴퓨터에서 영어 이외의 언어들을 처리하는 데에 사용되었습니다. 하지만 현재에는 대부분의 언어에서 대문자/소문자를 구분하지 않는다는 점과, 영어를 사용하는 국가들이 많기 때문에 이 방법이 대중화되었습니다.
+
+C++에서는 대문자로 변환하는 방법 외에도, string 클래스에 내장된 함수인 tolower()와 toupper() 함수를 사용하여 소문자로 변환하는 방법을 제공합니다.
+
+이 외에도, 다른 언어에서도 대문자/소문자 변환에 대한 다양한 방법이 존재합니다. 예를 들어, 자바 스크립트에서는 toUpperCase() 함수를 사용합니다. 각 언어마다 다른 방법을 제공하니, 해당 언어의 공식 문서를 참고하는 것이 좋습니다.
+
+## 관련 자료:
+문자열 대문자화와 관련된 추가적인 정보를 얻을 수 있는 관련 자료들을 아래에 제공합니다.
+
+- [C++ Reference: std::toupper](https://en.cppreference.com/w/cpp/string/byte/toupper)
+- [C++ Reference: std::string::toupper](https://en.cppreference.com/w/cpp/string/basic_string/toupper)
+- [JavaScript Reference: toUpperCase](https://www.w3schools.com/jsref/jsref_touppercase.asp)
+- [Java API: String.toUpperCase()](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#toUpperCase())

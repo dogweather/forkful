@@ -10,91 +10,89 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+Co to jest i po co?
 
-Wysyłanie żądań HTTP jest nieodłączną częścią programowania aplikacji internetowych. Dzięki nim możemy pobierać i wysyłać dane, dzieląc się informacjami z innymi serwerami.
+Wysyłanie żądania HTTP jest jedną z podstawowych umiejętności w programowaniu. Polega ono na wysyłaniu zapytania do serwera internetowego w celu pobrania danych lub wykonania określonej akcji. Programiści często korzystają z tego mechanizmu, aby uzyskać dostęp do zasobów online lub komunikować się z innymi aplikacjami.
 
-## Jak to zrobić
-
-### Przygotowanie
-
-Aby móc wysłać żądanie HTTP w C#, musimy najpierw zaimportować przestrzeń nazw ```System.Net.Http```. Możesz to zrobić, dodając na początku swojego pliku ```using System.Net.Http;```
-
-### Wysyłanie żądania GET
-
-Aby wysłać żądanie GET do określonego adresu URL, możemy skorzystać z klasy ```HttpClient``` oraz metody ```GetAsync```. Poniżej znajduje się przykładowy kod, który wyśle żądanie GET do strony "https://example.com" oraz wyświetli jego zawartość w konsoli.
+Jak to zrobić:
 
 ```C#
-var httpClient = new HttpClient();
-var response = await httpClient.GetAsync("https://example.com");
-var content = await response.Content.ReadAsStringAsync();
+// Example 1: Wysyłanie żądania GET do serwera Google
+using System;
+using System.Net.Http;
 
-Console.WriteLine(content);
-```
-
-Przykładowy output:
-
-```
-<!doctype html>
-<html>
-<head>
-<title>Example Domain</title>
-
-<meta charset="utf-8" />
-<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<style type="text/css">
-body {
-background-color: #f0f0f2;
-margin: 0;
-padding: 0;
-font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-...
-
-</body>
-</html>
-```
-
-### Wysyłanie żądania POST
-
-Aby wysłać żądanie POST, musimy najpierw utworzyć obiekt typu ```HttpRequestMessage```, a następnie przekazać go jako parametr do metody ```PostAsync```. Przykładowy kod poniżej przedstawia wysłanie żądania z danymi w formacie JSON do strony "https://example.com".
-
-```C#
-var httpClient = new HttpClient();
-
-var data = new { name = "John", age = 30 };
-var content = new StringContent(JsonConvert.SerializeObject(data), Encoding.UTF8, "application/json");
-
-var response = await httpClient.PostAsync("https://example.com", content);
-var result = await response.Content.ReadAsStringAsync();
-
-Console.WriteLine(result);
-```
-
-### Obsługa wyjątków
-
-Podczas wysyłania żądań HTTP, możemy napotkać różne problemy, na przykład brak połączenia z serwerem. W takich przypadkach, warto zapewnić obsługę wyjątków, aby odpowiednio reagować na błędy lub je zignorować.
-
-```C#
-try
+class Program
 {
-    // try sending the request
-    var response = await httpClient.GetAsync("https://example.com");
-	var content = await response.Content.ReadAsStringAsync();
+   static async Task Main()
+   {
+      // Utworzenie obiektu HttpClient
+      using var client = new HttpClient();
 
-	Console.WriteLine(content);
+      // Wywołanie metody GetAsync() z adresem URL, który chcemy odwiedzić
+      using var response = await client.GetAsync("https://www.google.com");
+
+      // Sprawdzenie statusu odpowiedzi
+      Console.WriteLine($"Status code: {response.StatusCode}");
+
+      // Pobranie zawartości odpowiedzi
+      var content = await response.Content.ReadAsStringAsync();
+
+      // Wyświetlenie pobranej zawartości
+      Console.WriteLine(content);
+   }
 }
-catch(Exception ex)
-{
-    Console.WriteLine("There was an error: " + ex.Message);
-}
+
+/* Wynik:
+ Status code: 200
+(...Zawartość strony Google...)
+*/
 ```
 
-## Deep Dive
+```C#
+// Example 2: Wysyłanie żądania POST z danymi formularza
+using System;
+using System.Net.Http;
+using System.Collections.Generic;
+using System.Collections.Specialized;
 
-Głębsze zanurzenie w temat wysyłania żądań HTTP wymaga wiedzy na temat różnych metod, nagłówków oraz statusów odpowiedzi HTTP. Warto również zapoznać się ze specyfikacją protokołu HTTP/1.1, aby lepiej zrozumieć proces przesyłania danych w sieci.
+class Program
+{
+   static async Task Main()
+   {
+      // Utworzenie obiektu HttpClient
+      using var client = new HttpClient();
 
-## Zobacz również
+      // Utworzenie kolekcji z danymi formularza
+      var data = new NameValueCollection {
+          { "username", "example" },
+          { "password", "secret" }
+      };
 
-- [Dokumentacja klasy HttpClient](https://docs.microsoft.com/pl-pl/dotnet/api/system.net.http.httpclient?view=net-5.0)
-- [Lista HTTP statusów odpowiedzi](https://developer.mozilla.org/pl/docs/Web/HTTP/Status)
+      // Wywołanie metody PostAsync() z adresem URL i danymi formularza
+      using var response = await client.PostAsync("https://www.example.com/login", new FormUrlEncodedContent(data));
+
+      // Sprawdzenie statusu odpowiedzi
+      Console.WriteLine($"Status code: {response.StatusCode}");
+
+      // Pobranie zawartości odpowiedzi
+      var content = await response.Content.ReadAsStringAsync();
+
+      // Wyświetlenie pobranej zawartości
+      Console.WriteLine(content);
+   }
+}
+
+/* Wynik:
+ Status code: 200
+(...Zawartość strony po zalogowaniu...)
+*/
+```
+
+Pogłębiona analiza:
+
+Wysyłanie żądania HTTP jest powszechnym sposobem pobierania danych lub komunikacji z serwerami internetowymi. Metoda ta została wprowadzona w protokole HTTP, który jest podstawowym mechanizmem komunikacji w sieci. Istnieje także wiele innych alternatywnych sposobów na korzystanie z serwisów online, takich jak protokół FTP czy RPC. Wysyłanie żądań HTTP jest jednak najczęściej stosowane w programowaniu, ponieważ jest prostsze w użyciu i obsługuje większość zasobów internetowych.
+
+Zobacz też:
+
+- Dokumentacja Microsoft dotycząca klasy HttpClient: https://docs.microsoft.com/pl-pl/dotnet/api/system.net.http.httpclient
+- Poradnik na stronie MDN dotyczący żądań HTTP: https://developer.mozilla.org/pl/docs/Web/HTTP/Overview

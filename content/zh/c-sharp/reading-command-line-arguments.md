@@ -10,55 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么要读取命令行参数？
+##什么是命令行参数？为什么程序员要使用它？
+命令行参数（Command Line Arguments）是指在运行一个程序时，通过命令行输入的参数。程序员使用它来为程序提供额外的信息，使程序更加灵活和可定制。
 
-在编程过程中，有时候我们需要从命令行中读取用户输入的参数来实现特定的功能。读取命令行参数可以帮助程序与用户进行交互并且根据不同的输入来执行不同的操作。
+## 如何实现？
+在C#中，可以使用System命名空间下的Environment类的GetCommandLineArgs方法来读取命令行参数。代码示例如下：
+```
+using System;
 
-## 如何获取命令行参数
-
-在C#中，我们可以通过使用`args`这个参数来访问命令行参数。这个参数是一个字符串数组，其中包含用户在命令行中输入的所有参数。我们可以使用循环来遍历这个数组并对每个参数进行处理。
-
-```C#
-// 遍历args数组
-foreach (string arg in args)
+class Program
 {
-    // 对每个参数进行处理
-    // 例如打印参数到控制台
-    Console.WriteLine(arg);
+    static void Main(string[] args)
+    {
+        // 读取命令行参数
+        string[] arguments = Environment.GetCommandLineArgs();
+
+        // 输出参数
+        foreach (string arg in arguments)
+        {
+            Console.WriteLine("Argument: " + arg);
+        }
+    }
 }
 ```
-
-如果我们想要获取特定位置的参数，可以通过索引来访问数组中的元素。第一个参数的索引值为0，依次类推。
-
-```C#
-// 获取第一个参数
-string firstArg = args[0];
+假设我们运行该程序并输入命令行参数"Hello"和"World"，则输出结果如下：
 ```
-
-我们也可以使用`Contains()`方法来检查用户是否输入了特定的参数。
-
-```C#
-// 检查用户是否输入了"-h"这个参数
-if (args.Contains("-h"))
-{
-    Console.WriteLine("这个参数会显示帮助信息");
-}
+Argument: Program.exe
+Argument: Hello
+Argument: World
 ```
 
 ## 深入探讨
+命令行参数的使用可以追溯到早期的计算机操作系统，如Unix。目前，也有其他方式来为程序提供输入，如用户界面（User Interface）或配置文件（Config file）。但是命令行参数仍然是很多程序员首选的方式，因为它简单且易于使用。
 
-除了上述提到的方法，我们还可以使用`GetCommandLineArgs()`方法来获取命令行参数。这个方法会返回一个包含所有参数的字符串数组。另外，在C# 7.1及以上版本中，我们还可以使用新的`Main(string[])`方法来直接获取命令行参数，不需要使用`args`这个参数。
-
-除了读取命令行参数，我们也可以在命令行中传递特定的标志来指示程序执行不同的操作。这个标志可以通过在参数前加上`/`或`-`来表示，并且可以带有一个值。
-
-```C#
-// /m参数后面跟着一个值
-/m:10
-```
-
-读取命令行参数是编写交互式和灵活的程序的重要部分。通过结合使用字符串处理的技巧，我们可以轻松地实现对命令行参数的处理和解析。
-
-## 参考链接
-
-- [MSDN官方文档：使用命令行参数](https://docs.microsoft.com/zh-cn/dotnet/csharp/programming-guide/main-and-command-args/command-line-arguments)
-- [通过命令行参数设置.NET Core控制台应用的行为和配置](https://docs.microsoft.com/zh-cn/dotnet/core/tutorials/cli-arguments)
+##参考资料
+- [C#命令行参数的使用](https://docs.microsoft.com/en-us/dotnet/api/system.environment.getcommandlineargs?view=netframework-4.7.2)
+- [命令行参数介绍](https://en.wikipedia.org/wiki/Command-line_interface#Command-line_argument)

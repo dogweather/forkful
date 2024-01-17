@@ -10,57 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué enviar una solicitud HTTP?
+## Qué y Por Qué?
+Enviar una solicitud HTTP significa enviar un mensaje a un servidor de internet para solicitar información. Los programadores lo hacen para obtener datos de una API, comunicarse con bases de datos y crear aplicaciones web dinámicas.
 
-Enviar una solicitud HTTP es una parte fundamental en el desarrollo de aplicaciones web. Permite a los usuarios enviar y recibir información desde un servidor remoto. Esto puede ser útil para realizar acciones como cargar una página web, enviar datos de un formulario o acceder a una API.
+## Cómo Hacerlo:
+Aquí te mostramos un ejemplo simple de cómo enviar una solicitud HTTP en C++ usando la librería "cpp-httplib":
 
-## Cómo enviar una solicitud HTTP en C++
-
-Para enviar una solicitud HTTP en C++, primero necesitamos incluir la librería estándar `<iostream>` y la librería `<curl/curl.h>` que nos permitirá utilizar la función `curl_easy_perform()`.
-
-```
-#include <iostream>
-#include <curl/curl.h>
-
-using namespace std;
+```C++
+#include <httplib.h>
 
 int main() {
-  // Inicializamos la librería cURL
-  CURL* curl = curl_easy_init();
+    // Creamos un objeto de cliente HTTP
+    httplib::Client cli("https://api.example.com");
 
-  // Creamos un gestor de URL y establecemos la URL de destino
-  curl_easy_setopt(curl, CURLOPT_URL, "https://www.ejemplo.com/");
+    // Realizamos una solicitud GET para obtener información de un usuario
+    auto res = cli.Get("/users/1");
 
-  // Ejecutamos la solicitud y almacenamos el resultado en una variable
-  CURLcode result = curl_easy_perform(curl);
+    // Imprimimos el resultado en la consola
+    if (res) {
+        std::cout << res->body << std::endl;
+    } else {
+        std::cout << "Error al hacer la solicitud." << std::endl;
+    }
 
-  // Verificamos si la solicitud fue exitosa
-  if (result == CURLE_OK) {
-    cout << "Solicitud enviada exitosamente." << endl;
-  } else {
-    cout << "Error al enviar la solicitud." << endl;
-  }
-
-  // Liberamos la memoria
-  curl_easy_cleanup(curl);
-
-  return 0;
+    return 0;
 }
 ```
 
-El resultado de este código sería "Solicitud enviada exitosamente." Esto nos indica que la solicitud ha sido recibida por el servidor correctamente. 
+Este código envía una solicitud GET al servidor en "https://api.example.com" y espera una respuesta con los datos del usuario con ID 1. También maneja el caso de un error en la solicitud.
 
-## Un vistazo más profundo
+## Profundizando:
+Enviar una solicitud HTTP es una parte esencial de la programación web. Aunque C++ no es el lenguaje más comúnmente utilizado para crear aplicaciones web, existen diversas librerías y frameworks que pueden facilitar este proceso. Algunas alternativas a "cpp-httplib" incluyen "libcurl" y "Poco C++ Libraries". Además, hay varias opciones para manejar diferentes tipos de solicitudes, como POST, PUT y DELETE. Para implementar una solicitud HTTP, se utilizan varios métodos y encabezados, y es importante asegurarse de entender su uso correcto para una comunicación exitosa con el servidor.
 
-Al enviar una solicitud HTTP, es importante tener en cuenta los diferentes métodos que se pueden utilizar, como GET, POST, PUT y DELETE. Además, se pueden añadir headers a la solicitud para proporcionar información adicional. También es posible enviar datos junto con la solicitud, por ejemplo en el caso de un formulario.
-
-Para más información acerca de cómo utilizar cURL para enviar solicitudes HTTP en C++, se pueden consultar las siguientes referencias:
-
-- Documentación oficial de cURL: https://curl.se
-- Tutorial de cURL en C++: https://curl.se/libcurl/c/tutorial.html
-- Ejemplos de código de cURL en C++: https://curl.se/libcurl/c/example.html
-
-## Ver también
-
-- [Cómo mejorar tu habilidad de programación en C++](https://platzi.com/blog/mejorar-habilidades-programacion-cpp/)
-- [La importancia de cURL en el desarrollo web](https://symfony.com/doc/current/components/http_client.html)
+## Ver también:
+- [cpp-httplib documentation](<https://github.com/yhirose/cpp-httplib>)
+- [libcurl - a client-side library for transferring data with URL syntax](<https://curl.haxx.se/libcurl/>)
+- [Poco C++ Libraries - a collection of open-source C++ class libraries](<https://pocoproject.org>)

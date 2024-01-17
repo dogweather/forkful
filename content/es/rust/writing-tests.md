@@ -10,36 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué escribir pruebas en Rust?
+# ¡Es hora de escribir pruebas en Rust!
 
-Escribir pruebas en Rust es esencial para garantizar que nuestro código funcione correctamente y para prevenir futuros errores. Además, es una buena práctica de programación que puede ahorrarnos tiempo y esfuerzo a largo plazo.
+## ¿Qué y por qué?
 
-## Cómo escribir pruebas en Rust
+Escribir pruebas en Rust significa escribir código que verifica si nuestro programa funciona como debe. Los programadores hacen esto para asegurarse de que su código sea eficiente y libre de errores. De esta manera, podemos confiar en nuestro código y tener la tranquilidad de que funcionará correctamente.
 
-Para empezar, debemos asegurarnos de que nuestro proyecto tenga la estructura adecuada para incluir pruebas. En la raíz del proyecto, deberíamos tener un directorio llamado "tests" donde colocaremos nuestros archivos de pruebas.
+## Cómo:
 
-Para crear una función de prueba en Rust, simplemente agregamos el atributo `test` encima de la función. Por ejemplo:
+Para escribir pruebas en Rust, necesitamos utilizar la macro `assert!` que nos ayuda a comparar un valor esperado con el valor real. Si los dos valores son iguales, la prueba pasará; si son diferentes, la prueba fallará. Aquí hay un ejemplo:
 
 ```Rust
+fn sum(x: i32, y: i32) -> i32 {
+    x + y
+}
+
 #[test]
 fn test_sum() {
-  let result = sum(2, 3);
-  assert_eq!(result, 5);
+    assert!(sum(2, 3) == 5);
 }
 ```
 
-En el código anterior, hemos creado una función de prueba llamada `test_sum` y hemos utilizado la macro `assert_eq` para verificar que el resultado de nuestra función `sum` sea igual a 5. Si el resultado es diferente, la prueba fallará y obtendremos un mensaje de error.
+## Profundizando
 
-Podemos ejecutar nuestras pruebas escribiendo `cargo test` en la terminal de nuestro proyecto. Esto ejecutará todas las pruebas en nuestro directorio "tests" y nos mostrará un resumen de los resultados.
+Escribir pruebas es una práctica común en la programación. Nos permite detectar errores en el código antes de que lleguen a producción y sean más costosos de arreglar. En Rust, también podemos usar la macro `assert_eq!` para verificar si dos valores son iguales y `assert_ne!` para verificar si son diferentes.
 
-## Profundizando en la escritura de pruebas en Rust
+Hay otras herramientas disponibles para escribir pruebas en Rust, como `cargo test`, que nos permite ejecutar todas las pruebas de nuestro proyecto con un solo comando. También existen bibliotecas de pruebas como `rustfix` y `quickcheck` que pueden facilitar la escritura de pruebas más exhaustivas.
 
-Además de la macro `assert_eq`, Rust también tiene otras macros de aserción como `assert!` y `assert_ne!`, que nos permiten verificar diferentes condiciones en nuestras pruebas. También podemos agrupar nuestras pruebas en módulos para una organización más clara y utilizar la macro `#[ignore]` para omitir pruebas específicas.
+Además, escribir pruebas nos ayuda a documentar nuestro código y a comprender mejor su funcionalidad. Al indicar lo que se espera de nuestro programa en cada prueba, podemos tener una mejor comprensión de cómo debe funcionar y cómo interactúan sus diferentes partes.
 
-Es importante recordar que nuestras pruebas también son parte del código y deben seguir las mismas convenciones de estilo y buenas prácticas. Además, es recomendable escribir pruebas para todos los casos de borde y escenarios posibles para garantizar la robustez de nuestro código.
+## Ver también:
 
-## Ver también
+- [Documentación oficial de Rust sobre pruebas](https://doc.rust-lang.org/book/ch11-01-writing-tests.html)
+- [Ejemplo de proyecto de Rust con pruebas](https://github.com/jonhoo/rust-fuzzing)
+- [¿Por qué es importante escribir pruebas?](https://www.freecodecamp.org/news/why-testing-your-code-is-important/)
 
-- [Documentación de Rust sobre pruebas y aserciones](https://doc.rust-lang.org/book/ch11-00-testing.html)
-- [Tutorial de testing en Rust](https://rust-cli.github.io/book/tutorial/testing.html)
-- [Ejemplos de pruebas en Rust](https://github.com/rust-lang/rust/blob/master/src/test/run-pass)
+¡Ahora que conoces la importancia de escribir pruebas en Rust, asegúrate de integrar esta práctica en tu flujo de trabajo de programación! Con pruebas robustas, podrás confiar en tu código y reducir el tiempo de depuración en el futuro.

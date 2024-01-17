@@ -10,55 +10,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-Sending HTTP requests with basic authentication is a crucial aspect of web development. It allows secure communication between a client and a server, ensuring that only authorized users can access certain resources.
+Sending an HTTP request with basic authentication means including your username and password in the request headers for authentication purposes. This is commonly used by programmers when accessing APIs or web services that require user authentication.
 
-## How To
+## How to:
 
-To send an HTTP request with basic authentication in Elm, we first need to understand the syntax for making HTTP requests in general. The following code block shows a basic example of sending an HTTP GET request and handling the response:
+To send an HTTP request with basic authentication in Elm, you can use the `Http.send` function and pass in a `request` with the `BasicAuth` type.
 
-```Elm
+Example code:
+
+```elm
 import Http
+import Json.Decode exposing (int, string, decodeValue)
+import Task exposing (Task)
 
-type Msg = RequestFailed | RequestSucceeded String
+authRequest : Http.Request
+authRequest =
+    Http.request
+        { method = "POST"
+        , body = Http.emptyBody
+        , headers =
+            [ ( "Authorization", "Basic username:password" )
+            ]
+        , url = "https://www.example.com/api"
+        }
 
-makeRequest : Cmd Msg
-makeRequest =
-  Http.get
-    { url = "https://www.example.com"
-    , expect = Http.expectString RequestSucceeded
-    }
+sendRequest : Task Http.Error String
+sendRequest =
+    Http.send (decodeValue string) authRequest
+
+result : Task.Result Http.Error String
+result =
+    Task.attempt identity sendRequest
+
 ```
 
-Here, we import the `Http` module and define a `Msg` type to handle the response. Then, we use the `Http.get` function with the desired URL and `expect` function to specify the type of response we expect to receive. The `Http.expectString` function expects a `String` as its response, and in this case, we handle it by sending a `RequestSucceeded` message.
+Sample output:
 
-Now, to add basic authentication to our HTTP request, we need to add an `Authorization` header to our request. Here's an example of how we can do that:
+If the request was successful, the result will be the response from the API or web service. If there was an error, the result will be an `Http.Error` containing details about the error.
 
-```Elm
-import Http
-import String
+## Deep Dive:
 
-type Msg = RequestFailed | RequestSucceeded String
+1. Historical context:
+Basic authentication has been around since the early days of the internet and was initially developed as part of the HTTP protocol. However, due to its security vulnerabilities, it is now considered a less secure form of authentication and is often replaced by more modern methods such as OAuth.
 
-makeRequest : Cmd Msg
-makeRequest =
-  Http.get
-    { url = "https://www.example.com"
-    , expect = Http.expectString RequestSucceeded
-    , headers = [ Http.header "Authorization" (String.join " " ["Basic", "username:password"]) ]
-    }
-```
+2. Alternatives:
+As mentioned, basic authentication is not considered the most secure method of authentication. Some alternatives include OAuth, JSON Web Tokens (JWT), and API keys.
 
-In this code block, we import the `String` module and add the `headers` field to our `Http.get` function call. Inside the `headers` field, we use the `Http.header` function to specify our `Authorization` header, which consists of the word "Basic" followed by a space, and then the encoded string of our username and password separated by a colon.
+3. Implementation details:
+In Elm, the `Http.send` function takes in a `request` as an argument, which can include the `Method`, `Url`, `Headers`, and `Body` of the request. The `Authorization` header is where the basic authentication details are specified in the format of "Basic username:password", where the username and password are encoded in Base64.
 
-## Deep Dive
+## See Also:
 
-Now that we know how to add basic authentication to our HTTP requests, let's take a deeper look at what's actually happening behind the scenes. When we send a request with basic authentication, the server expects an `Authorization` header with a value of "Basic" followed by a space, and then the encoded string of our username and password. The encoded string is created using base64 encoding, which is a type of binary-to-text encoding that converts binary data into ASCII characters.
-
-In Elm, we can use the `String.join` function to join our username and password with a colon, and then use the `String.toBase64` function to encode the resulting string.
-
-## See Also
-
-- [Elm HTTP module documentation](https://package.elm-lang.org/packages/elm/http/latest/)
-- [Base64 encoding in Elm](https://package.elm-lang.org/packages/elm-lang/bytes/latest/Bytes-Encode#toBase64)
+- Official Elm documentation on sending HTTP requests: https://package.elm-lang.org/packages/elm/http/latest/Http
+- Understanding basic authentication: https://www.digitalocean.com/community/tutorials/understanding-basic-authentication-in-nginx-server-blocks

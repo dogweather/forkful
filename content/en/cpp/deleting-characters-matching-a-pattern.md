@@ -10,41 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-Sometimes, when working with strings or text data, you may want to remove specific characters that match a certain pattern. This could be to clean up the data or to prepare it for further processing. In such cases, knowing how to delete characters matching a pattern can be very useful.
+Deleting characters matching a pattern in programming refers to removing specific characters from a string that follow a certain pattern. This is often useful for filtering out unwanted or irrelevant information from a large dataset. Programmers use this technique to streamline their code and make it more efficient.
 
-## How To
+## How to:
 
-To delete characters matching a pattern in C++, you can use the `std::regex_replace` function from the `<regex>` library. This function takes in three parameters: the string to be modified, the regular expression pattern, and the replacement string. Here's an example of using this function to remove all digits from a string:
+To delete characters matching a pattern in C++, you can make use of the `std::regex_replace` function from the `<regex>` library. This function takes in three parameters - the string to be modified, the regular expression pattern, and the replacement string.
 
-```C++
+```
 #include <iostream>
 #include <regex>
 
-int main()
-{
-  std::string text = "I have 3 apples and 4 oranges.";
-  std::regex pattern("[0-9]"); // regular expression pattern to match digits
-  std::string replacement = ""; // replacement string, in this case an empty string
-  std::string result = std::regex_replace(text, pattern, replacement); // call to regex_replace
-  std::cout << result << std::endl; // output: "I have apples and oranges."
+int main() {
+  std::string text = "Hello123World";
+  std::cout << "Before: " << text << std::endl;
+  
+  // using regex_replace to remove numbers from string
+  text = std::regex_replace(text, std::regex("[0-9]+"), "");
+  std::cout << "After: " << text << std::endl;
   return 0;
 }
 ```
 
-In this example, we first define the string `text` that contains both numbers and letters. Then, we define the regular expression `pattern` to match any digit (represented by the character class `[0-9]`). Finally, we specify an empty string as the replacement string, as we want to remove the digits from the text. The resulting string is stored in the `result` variable and is printed to the console.
+Output:
+```
+Before: Hello123World
+After: HelloWorld
+```
 
-## Deep Dive
+As you can see, the regular expression `[0-9]+` matches any sequence of numbers in the string and replaces them with an empty string, effectively deleting them.
 
-Regular expressions, often referred to as regex, are patterns used to match and manipulate text. They are widely used in programming languages to perform string operations such as search, replace, and delete. In C++, the `<regex>` library provides various functions for working with regular expressions, including the `std::regex_replace` function used in our example.
+## Deep Dive:
 
-The regular expression pattern can include not just single characters, but also special characters and operators to define complex patterns. In our example, the `[0-9]` character class matches any single digit from 0 to 9. Other commonly used operators in regular expressions include `*` to match zero or more occurrences, `+` to match one or more occurrences, and `?` to match zero or one occurrence.
+Deleting characters matching a pattern has been a widely used technique in programming for a long time. However, with the introduction of regular expressions in C++, this task has become much easier and more customizable.
 
-In addition to the `std::regex_replace` function, the `<regex>` library also provides other useful functions such as `std::regex_match` for validating a string against a regular expression and `std::smatch` for storing matched substrings. Understanding regular expressions can greatly enhance your string manipulation skills in C++.
+One alternative to using regular expressions for deleting characters is the use of loop functions to iterate through each character in the string and remove any that match the desired pattern. While this is a viable option, it often leads to longer and more complex code.
 
-## See Also
+Regular expressions provide a powerful and concise way of finding and replacing patterns in strings. They offer a wide range of metacharacters and special sequences that can be used for more advanced pattern matching.
 
-- [C++ Regular Expressions](https://en.cppreference.com/w/cpp/regex)
-- [Regular Expressions 101](https://regex101.com/) (online regex tester and debugger)
-- [C++ String Class](https://en.cppreference.com/w/cpp/string/basic_string) (for more string operations)
+## See Also:
+
+For more information on regular expressions and their usage in C++, check out the [C++ documentation for std::regex](https://en.cppreference.com/w/cpp/regex) and the [regular expressions tutorial](https://www.regular-expressions.info/tutorial.html).
+
+Other useful resources include [regexr](https://regexr.com/), a live regular expression testing site, and [regex101](https://regex101.com/), a site for building and debugging regular expressions.

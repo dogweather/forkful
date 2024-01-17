@@ -10,35 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hva & Hvorfor?
+Lesing av kommandolinjeargumenter er en vanlig praksis blant PHP-programmerere for å gjøre det mulig å utføre handlinger basert på informasjon som er gitt via kommandolinjen. Dette gjør det mulig å lage fleksible og tilpasningsdyktige skript ved å endre argumentene som blir gitt til programmet.
 
-Vi bruker ofte kommandolinjeargumenter når vi ønsker å gi et spesifikt sett med instruksjoner til et program uten å måtte endre koden. Ved å lese og tolke disse argumentene, kan vi gjøre programmene våre mer dynamiske og tilpasse dem til ulike behov.
-
-## Hvordan
-
-Kommandolinjeargumenter kan leses ved hjelp av en innebygd PHP-funksjon, `getopt()`, som returnerer en assosiativ array med argumentene og verdiene som ble gitt. Her er et eksempel på hvordan du kan lese og bruke argumenter i et PHP-skript:
+## Hvordan:
+For å lese kommandolinjeargumenter i PHP, kan du bruke funksjonen `getopt()` sammen med en liste over ønskede argumenter. Et eksempel på bruk av denne funksjonen kan være som følger:
 
 ```PHP
 <?php
-// På kommandolinjen: $ php script.php -t tips
-$options = getopt("t:"); // Enkelt argument 't'
-if (isset($options['t'])) { // Sjekker om argumentet finnes
-    $tip = $options['t']; // Lagrer verdien i en variabel
-    echo "Takk for tipset: $tip";
-    // Output: Takk for tipset: tips
-}
-?>
+$options = getopt("f:d:h", [
+  'file:',
+  'directory:',
+  'help'
+]);
+print_r($options);
 ```
 
-Her bruker vi enkeltbokstaven `t` som et argument og gir det en verdi på kommandolinjen. Med `isset()`-funksjonen sjekker vi om argumentet eksisterer, og hvis det gjør det, lagrer vi verdien i en variabel og bruker den videre i koden. Output vil være: "Takk for tipset: tips".
+Når dette skriptet blir kjørt med argumentet `-f test.txt -d /home -h`, vil følgende output bli generert:
 
-## Deep Dive
+```
+Array
+(
+    [f] => test.txt
+    [d] => /home
+    [h] => 1
+    [file] => test.txt
+    [directory] => /home
+    [help] => 1
+)
+```
 
-Det er mange flerfunksjonelle måter å bruke `getopt()`-funksjonen på, som for eksempel å kunne godta flere argumenter samtidig og spesifisere om et argument krever en verdi eller ikke. Det er også mulig å legge til egne feilhåndteringsfunksjoner for å sikre at programmene våre håndterer ugyldige argumenter på en god måte.
+Som du kan se, gir funksjonen `getopt()` en assosiativ array av argumenter og deres verdier. Dette gjør det enkelt å håndtere flere argumenter og deres verdier.
 
-Se dokumentasjonen for `getopt()`-funksjonen for mer informasjon om hvordan du kan lese og bruke kommandolinjeargumenter i PHP.
+## Dypdykk:
+Lesing av kommandolinjeargumenter har vært en vanlig praksis i programmering verden i lang tid. Det finnes også alternative måter å håndtere argumenter på, som for eksempel bruk av funksjonen `$_SERVER['argv']`. Dette gir en array av argumenter gitt via kommandolinjen, men det er opp til programmereren å håndtere disse argumentene på riktig måte.
 
-## Se også
+En viktig ting å huske på når du leser kommandolinjeargumenter er å validere og behandle dem forsvarlig. Dette er spesielt viktig når du arbeider med sensitive data eller utfører handlinger som kan påvirke systemet ditt. Det kan også være lurt å dokumentere hvilke argumenter skriptet ditt forventer å motta, slik at andre brukere kan bruke det riktig.
 
-- [Dokumentasjon for getopt()](https://www.php.net/manual/en/function.getopt.php)
-- [Eksempler på PHP med kommandolinjeargumenter](https://www.php.net/manual/en/features.commandline.php)
+## Se også:
+- [PHP: getopt()](https://www.php.net/manual/en/function.getopt.php)
+- [PHP: $_SERVER](https://www.php.net/manual/en/reserved.variables.server.php)

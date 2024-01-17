@@ -1,7 +1,7 @@
 ---
-title:                "Scaricando una pagina web"
-html_title:           "Arduino: Scaricando una pagina web"
-simple_title:         "Scaricando una pagina web"
+title:                "Scaricare una pagina web"
+html_title:           "Arduino: Scaricare una pagina web"
+simple_title:         "Scaricare una pagina web"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "HTML and the Web"
@@ -10,55 +10,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
-Se vuoi integrare la tua scheda Arduino con il mondo online e accedere ai dati di Internet, è fondamentale saper scaricare e analizzare una pagina web. In questo modo potrai creare progetti interattivi e ottenere informazioni direttamente dal web.
+Cosa & Perché?
 
-## Come fare
-Per iniziare a scaricare una pagina web, avrai bisogno di alcune librerie. Per fortuna, il compilatore di Arduino ha una vasta gamma di librerie tra cui scegliere.
+Scaricare una pagina web significa ottenere il codice sorgente di una pagina web dal server e visualizzarlo sul tuo dispositivo. I programmatori lo fanno per accedere a informazioni importanti, come dati, immagini o testo, e utilizzarle all'interno dei loro programmi.
 
-```Arduino
-#include <WiFi.h>
-#include <WiFiClient.h>
-#include <WiFiMulti.h>
-#include <HTTPClient.h>
+Come fare:
+
+```
+Arduino Client: Download a Web Page
 ```
 
-Una volta inclusi questi componenti nel tuo codice, potrai utilizzare l'oggetto `HTTPClient` per connetterti al server web e scaricare una pagina. Di seguito un esempio di codice che scarica la pagina in formato testo e la stampa sulla console seriale.
+Vuoi scaricare una pagina web utilizzando la tua scheda Arduino? E' possibile farlo utilizzando la libreria di Arduino Client. Ecco come:
 
-```Arduino
-WiFiClient client;
-HTTPClient http;
+1. Includi la libreria nel tuo sketch:
+```
+# include <SPI.h>
+# include <Ethernet.h>
+```
 
-// Connetti WiFi
-WiFi.begin(ssid, password);
-while (WiFi.status() != WL_CONNECTED) {
-  delay(500);
-  Serial.println("Sto cercando la rete WiFi...");
-}
-Serial.println("Connesso alla rete WiFi!");
+2. Configura la connessione Internet:
+```
+byte mac [] = { 0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED }; // Cambialo con il tuo MAC
+IPAddress ip (192,168,1,100); // Imposta il tuo indirizzo IP
+Ethernet.begin (mac, ip); // Inizializza la libreria Ethernet
+```
 
-// Connessione al server e scarico della pagina
-Serial.print("Connetto a ");
-Serial.println(webserver);
+3. Prepara la richiesta HTTP:
+```
+client.println ("GET /index.html HTTP / 1.1");
+client.println ("Host: www.example.com");
+```
 
-if (http.begin(client, webserver)) {
-  int httpCode = http.GET();
-  if (httpCode > 0) {
-    String payload = http.getString();
-    Serial.println(payload);
-  }
-  http.end();
-} else {
-  Serial.println("Non posso connettermi al server");
+4. Invia la richiesta e leggi la risposta:
+```
+client.available ();
+while (client.available()) {
+ char c = client.read ();
+ Serial.print (c); // Visualizza la risposta sulla seriale
 }
 ```
 
-Il codice è abbastanza semplice ma molto efficace. Ti consiglio di approfondire con la documentazione delle librerie incluse per personalizzare la tua connessione e i dati da scaricare.
+Deep Dive:
 
-## Approfondimento
-Scaricare una pagina web è solo l'inizio di ciò che puoi fare con l'Arduino e il mondo online. Utilizzando le librerie corrette, potrai anche analizzare il contenuto delle pagine scaricate, reagire in base a determinate informazioni o addirittura controllare il tuo Arduino da remoto tramite il web. Non ci sono limiti alle possibilità!
+In passato, il download di una pagina web richiedeva la necessità di un computer o un dispositivo più avanzato, ma grazie alla tecnologia moderna e alla libreria di Arduino Client, ora puoi farlo utilizzando solo la tua scheda Arduino.
 
-## Vedi Anche
-- [Documentazione ufficiale di Arduino](https://www.arduino.cc/reference/en/)
-- [Esempi delle librerie WiFi e HTTPClient](https://github.com/arduino-libraries/WiFi/tree/master/examples)
-- [Tutorial su come utilizzare l'Arduino con il web](https://create.arduino.cc/projecthub/Matrix-Rex/connect-arduino-wifi-module-with-internet-using-at-commands-4cf6f0)
+Alcune alternative alla libreria Arduino Client includono la libreria Webduino e l'utilizzo di un modulo Ethernet o WiFi per la connessione Internet. Tuttavia, la libreria Arduino Client è semplice e facile da utilizzare, rendendola la scelta più comune tra i programmatori.
+
+Vale la pena notare che il download di una pagina web utilizzando la libreria Arduino Client richiede la conoscenza di HTTP. Se vuoi approfondire o personalizzare ulteriormente il tuo codice, consulta la documentazione ufficiale di HTTP.
+
+Vedi anche:
+
+- Documentazione ufficiale di Arduino Client: https://www.arduino.cc/en/Reference/Client
+- Libreria Webduino: https://github.com/sirleech/Webduino
+- Moduli Ethernet e WiFi per Arduino: https://www.arduino.cc/en/Guide/ArduinoEthernetShield
+- Documentazione ufficiale di HTTP: https://tools.ietf.org/html/rfc1945

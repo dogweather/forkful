@@ -1,7 +1,7 @@
 ---
-title:                "दो दिनांकों की तुलना"
-html_title:           "Python: दो दिनांकों की तुलना"
-simple_title:         "दो दिनांकों की तुलना"
+title:                "दो तिथियों का तुलना करना"
+html_title:           "Python: दो तिथियों का तुलना करना"
+simple_title:         "दो तिथियों का तुलना करना"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Dates and Times"
@@ -10,60 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Kyu
+## क्या और क्यों?
 
-Kya aap kabhi do tareekho ka tulna karke dekha hai? Yadi aapne kiya hai, to shayad aapko pata hoga ki ye ek aasan lekin mahatvapurn kaam hai. Python me tarikhon ka tulna karne ke liye bhi kuchh aasan tareeke hai. Is lekh mein hum dekhenge ki kaise hum do tareekhon ko tulna kar sakte hain aur kya mahatvapurn baatein hain jo is samasya ke samadhan me madad karengi.
+किसी भी प्रोग्राम को बनाने के लिए हमें एक लम्बे समय को आयतन भाव के साथ दो तिथियों के बीच की तुलना करने की आवश्यकता पड़ती है। प्रोग्रामर इसको सही तरीके से करने के लिए तारीखों को तुलना करते हैं।
 
-## Kaise Karein
-
-```Python
-# Pehle hum datetime module ko import karenge
-import datetime
-
-# Fir, do tareekhon ka hamesha ke liye saath me rakhkar ek datetime object banayenge
-date1 = datetime.datetime(2020, 8, 9)
-date2 = datetime.datetime(2021, 8, 9)
-
-# Ab ham compare() method ka upyog karke in dono tareekhon ka tulna kar sakte hain
-result = date1.compare(date2)
-
-# Ab ham output ko dekhte hain
-print(result)
-
-# Iska output humein "1 Year, 0 Months, 0 Days" dega. Yani ki dono tareekhon me ek saal ka antar hai.
-```
-
-Python me, hum datetime module ka upyog karke aasani se do tareekhon ka tulna kar sakte hain. Iske alawa, hum strftime() method ka bhi istemal karke do tareekhon ke beech kitne din, mahine aur varsh ka antar hai, isse bhi pata laga sakte hain. Iske liye, hum %D (Days), %M (Months) aur %Y (Years) format ka upyog kar sakte hain.
+## कैसे करें?
 
 ```Python
-# Pehle hum dono tareekhon ko ek string me convert karenge
-date1 = "2020-08-09"
-date2 = "2021-08-09"
+# दिनांकों को संयोजित करने के लिए date और timedelta मॉड्यूल्स का उपयोग करें
+from datetime import date, timedelta
 
-# Ab hum datetime.strptime() method ka upyog karke in tareekhon ko ek datetime object me convert karenge
-date1 = datetime.strptime(date1, "%Y-%m-%d")
-date2 = datetime.strptime(date2, "%Y-%m-%d")
+# पहली तिथि
+d1 = date(2021, 1, 1)
 
-# Ab hum strftime() method ka upyog karke dono tareekhon ke beech ka antar pata laga sakte hain
-result = date2.strftime("%Y Years, %M Months, %D Days") % (date2 - date1)
+# दूसरी तिथि
+d2 = date(2021, 1, 15)
 
-# Ab ham output ko dekhte hain
-print(result)
+# दो तिथियों के बीच की अंतराल के लिए तुलना करें
+delta = d2 - d1
 
-# Iska output humein "1 Year, 0 Months, 0 Days" dega, jo ki hamare pehle example ke output se bilkul same hai.
+# उपादानों का प्रिंट करें
+print("दूसरी तिथि बाद पहली तिथि " + str(delta.days) + " दिन है")
 ```
 
-## Gehri Jankari
+आउटपुट:
 
-Python me tarikhon ka tulna karna kaafi aasan hai. Lekin kuchh chhoti chijon ko dhyaan me rakhna jaruri hai. Python me tareekhon ka compare() method humesha keval days, seconds aur microseconds ka antar hi pata karta hai. Yadi aap saal, mahine aur dinon ka antar chahte hain, to aapko strftime() method ka upyog karna hoga.
+दूसरी तिथि बाद पहली तिथि 14 दिन है
 
-Ek aur baat jo dhyaan me rakhni hai, wo hai leap years. Python me leap years ko handle karne ke liye calendar module ka upyog kiya ja sakta hai. Iske alawa, hum ye bhi jaan sakte hain ki kisi saal me kitne din hain, ya kisi mahine me kitne din hain, iske liye bhi hum calendar module ka upyog kar sakte hain.
+## गाहना
 
-Isi tarah, Python me tareekhon ka tulna karne ke liye aur bhi kai madadgar modules hain, jaise ki arrow, dateutil, dateparser, etc. Inka upyog karke bhi hum do tareekhon ke beech ka antar pata laga sakte hain.
+प्यारे पाठकों, तुलना करने की ऐतिहासिक प्रणाली पहले से ही काफी पुरानी है। यह सबसे पहले रोमन तमिलाथान संख्याओं का प्रयोग मिथिल राज्य में हुआ था। यह सुलभ, तेज और आसान होने के कारण, देशीय विश्व में कई दशकों से इसका प्रयोग किया जाता है। अगर आपको पास समय नहीं है तो आप तुलनाओं में उपादानों के बीच अंतर के संग्रह से भी इस्तेमाल कर सकते हैं। चूँकिए, तुलना खुद का मुत्ली हैं, इसलिए आप उपादानों को उनके समय संकेतों के आधार पर तुलना कर सकते हैं।
 
-## Dekhein Bhi
+## देखें
 
-Agar aapko Python programming ke bare me aur bhi behtar jankari chahiye, to aap ye links dekh sakte hain:
-
-- [Python Tutorials in Hindi](https://www.geeksforgeeks.org/python-programming-language/)
-- [Official Python
+- [जीटीएक्स डेट ऑब्जेक्ट](https://docs.python.org/3/library/datetime.html#date-objects)
+- [पाइथन में तारीख और समय](https://www.geeksforgeeks.org/python-dates/)
+- [तुलना अंतराल की गणना पाइथन में](https://www.tutorialspoint.com/count-the-occurrences-of-the-difference-between-consecutive-numbers-by-using-python)

@@ -1,7 +1,7 @@
 ---
-title:                "Utilizzando le espressioni regolari"
-html_title:           "Fish Shell: Utilizzando le espressioni regolari"
-simple_title:         "Utilizzando le espressioni regolari"
+title:                "Utilizzare le espressioni regolari"
+html_title:           "Fish Shell: Utilizzare le espressioni regolari"
+simple_title:         "Utilizzare le espressioni regolari"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -10,31 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+## Cosa & Perché? 
 
-Se sei un utente di Fish Shell, potresti chiederti perché dovresti imparare ad utilizzare le espressioni regolari. La risposta è semplice: le espressioni regolari sono uno strumento potente per la ricerca e la manipolazione di testo all'interno della shell. Con una conoscenza delle espressioni regolari, puoi utilizzare il tuo terminale in modo più efficiente e produttivo.
+Usare le espressioni regolari (regex) è una pratica comune tra i programmatori per gestire e manipolare dati di testo. Questi sono modelli di ricerca che consentono di trovare e sostituire testo in modo efficiente in un file o in una stringa di testo. I regex possono essere utilizzati in molti linguaggi di programmazione, incluso Fish Shell.
 
-## Come si usano le espressioni regolari in Fish Shell
+## Come fare:
 
-Le espressioni regolari sono supportate in Fish Shell utilizzando il comando `string match` e l'operatore `=~`. Per esempio, se vogliamo trovare tutti i file di testo nella cartella corrente, possiamo utilizzare la seguente espressione regolare all'interno di un ciclo `for`:
+Utilizzare le espressioni regolari in Fish Shell è semplice e molto simile ad altri linguaggi di programmazione. Di seguito sono riportati alcuni esempi di codice e il loro output utilizzando le espressioni regolari in Fish Shell.
 
-```Fish Shell
-for file in *
-    string match -r '*.txt' $file
-    if test $status -eq 0
-        echo $file
-    end
-end
+```
+Fish Shell> string='La mia password è p@ssw0rd'
+Fish Shell> echo $string | grep -o '\S*@'     
+p@ssw0rd
 ```
 
-Questo codice utilizza l'opzione `-r` per indicare che stiamo utilizzando un'espressione regolare. La stringa `*.txt` indica che vogliamo trovare tutti i file con estensione `.txt`. Se l'espressione regolare corrisponde al nome del file, il comando `string match` restituirà un codice di uscita 0, altrimenti restituirà un codice di uscita diverso da 0. Utilizzando l'operatore `test` possiamo verificare il codice di uscita del comando e procedere di conseguenza.
+In questo esempio, utilizziamo `grep` per estrarre la nostra password dalla stringa utilizzando l'espressione regolare `'\S*@'`, che significa "trova qualsiasi sequenza di caratteri non vuoti seguita da una @". Il risultato che otteniamo è la nostra password, risolta correttamente.
 
-## Approfondimento
+```
+Fish Shell> string='Maria ha 30 anni, Giovanni ne ha 25.'
+Fish Shell> echo $string | grep -o '\d\d'
+30
+25
+```
 
-Se vuoi saperne di più sulle espressioni regolari, puoi consultare la documentazione ufficiale di Fish Shell o fare una ricerca online per trovare tutorial e guide. Una cosa importante da ricordare è che ci sono diverse varianti di sintassi per le espressioni regolari e può essere utile familiarizzare con più di una per essere in grado di utilizzarle in modo flessibile.
+In questo secondo esempio, utilizziamo nuovamente `grep` per trovare tutti i numeri all'interno della stringa, utilizzando il comando `'\d\d'`, che significa "trova qualsiasi sequenza di due numeri consecutivi". Il risultato è l'elenco dei numeri trovati nella stringa.
 
-## Vedi anche
+## Approfondimento:
 
-- [Documentazione ufficiale di Fish Shell](https://fishshell.com/docs/current/)
-- [Sintassi delle espressioni regolari](https://www.regular-expressions.info/fish.html)
-- [Tutorial su espressioni regolari in Fish Shell](https://medium.com/learn-to-code-with-vanilla-javascript/regular-expressions-in-fish-shell-dz-cd0531c8d8d6)
+Le espressioni regolari sono state originariamente sviluppate negli anni '50 e sono state successivamente incorporate in molti linguaggi di programmazione. Alcuni altri strumenti utilizzati per il matching di pattern nei testi sono AWK e SED.
+
+Inoltre, è importante notare che l'uso delle espressioni regolari può differire leggermente tra i vari linguaggi di programmazione. Ad esempio, in Fish Shell, è possibile utilizzare `egrep` invece di `grep`, per ottenere una versione estesa di `grep` che supporta sintassi delle espressioni regolari aggiuntive.
+
+Per approfondire l'uso delle espressioni regolari in Fish Shell, è possibile consultare la documentazione ufficiale sul sito [Fish Shell](https://fishshell.com/docs/current/guides.html).
+
+## Vedi anche:
+
+- [La guida ufficiale delle espressioni regolari in Fish Shell](https://fishshell.com/docs/current/guides.html#regular-expressions)
+- [Introduzione alle espressioni regolari in programmazione](https://www.tutorialspoint.com/regex/)
+- [Utilizzare AWK per operazioni con i dati di testo](https://www.gnu.org/software/gawk/manual/gawk.html#AWK-Introduction)

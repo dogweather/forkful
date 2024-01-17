@@ -1,7 +1,7 @@
 ---
-title:                "Lavorare con yaml"
-html_title:           "TypeScript: Lavorare con yaml"
-simple_title:         "Lavorare con yaml"
+title:                "Programmazione con yaml"
+html_title:           "TypeScript: Programmazione con yaml"
+simple_title:         "Programmazione con yaml"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Data Formats and Serialization"
@@ -10,38 +10,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+## Cosa & Perché?
+Lavorare con YAML significa utilizzare un formato di dati leggibile dall'uomo che viene utilizzato principalmente per la configurazione dei file. I programmatori spesso lavorano con YAML per la sua semplice sintassi e per la sua flessibilità.
 
-Se stai cercando di lavorare con dati strutturati in un ambiente di sviluppo web, YAML potrebbe essere la soluzione perfetta per te. È un formato di dati leggibile dall'uomo che funziona bene con linguaggi di programmazione, come TypeScript, offrendo un modo semplice e flessibile per configurare e gestire dati.
-
-## Come Utilizzarlo
-
-L'utilizzo di YAML con TypeScript è semplice e diretto. Una volta che hai installato il pacchetto YAML, puoi facilmente leggere e scrivere file YAML utilizzando il codice seguente:
+## Come fare:
+Si può facilmente lavorare con YAML in TypeScript utilizzando la libreria ```yamljs```. Ecco un esempio di codice che mostra come leggere un file YAML e accedere ai suoi dati:
 
 ```TypeScript
-import * as yaml from 'yaml';
-
-const data = yaml.parse(`
-  name: John
-  age: 30
-  hobbies:
-    - hiking
-    - reading
-    - cooking
-`);
-
-console.log(data.name); // outputs: John
-console.log(data.age); // outputs: 30
-console.log(data.hobbies); // outputs: [ "hiking", "reading", "cooking" ]
+const yaml = require('yamljs');
+const config = yaml.load('./config.yml');
+console.log(config.name); // output: "John Doe"
 ```
-Il pacchetto YAML offre anche funzionalità per la creazione di oggetti YAML e la conversione di oggetti TypeScript in formato YAML.
 
-## Approfondimento
+## Approfondimento:
+Questa libreria è stata creata da Jason Diamond nel 2007 ed è disponibile per molti linguaggi di programmazione diversi. Alcune alternative familiarità sono JSON (che è il formato parente di YAML) e XML (che è stato molto utilizzato in passato). La libreria ```yamljs``` è basata su una libreria di parsing in JavaScript chiamata ```yamlparser``` e supporta anche la scrittura di file YAML.
 
-Oltre all'utilizzo base di YAML con TypeScript per la gestione di dati strutturati, ci sono alcune funzionalità avanzate che vale la pena esplorare. Ad esempio, YAML consente di definire variabili e di riferirsi ad esse in tutto il documento, rendendo ancora più semplice la gestione dei dati. Inoltre, il formato YAML supporta anche la creazione di strutture complesse con l'utilizzo di indentazioni e punti elenco. Assicurati di consultare la documentazione ufficiale di YAML per un elenco completo di funzionalità e opzioni.
-
-## Vedi Anche
-
+## Guarda anche:
 - Documentazione ufficiale di YAML: https://yaml.org/
-- Pacchetto YAML su npm: https://www.npmjs.com/package/yaml
-- Tutorial su come utilizzare YAML con TypeScript: https://medium.com/hackernoon/using-yalm-with-typescript-83c5d8bcb5c9
+- Libreria di parsing JS: https://github.com/jeremyfa/yamlparser
+- Alternativa a JSON: https://www.json.org/
+- Alternativa a XML: https://www.w3.org/XML/

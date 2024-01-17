@@ -10,36 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Por que usar parsing HTML?
+O que & Por quê?
 
-Se você já trabalhou com conteúdo da web, provavelmente já se deparou com a necessidade de extrair informações específicas de páginas HTML. Isso pode ser um processo tedioso e propenso a erros se feito manualmente. Felizmente, a linguagem de programação Elixir oferece uma solução elegante e eficiente para lidar com essa tarefa: o parsing HTML.
+A análise de HTML é o processo de extrair informações de um documento HTML. Os programadores fazem isso para automatizar o processo de obtenção de dados a partir de sites ou para processar configurações personalizadas para páginas da web.
 
-# Como fazer:
+## Como fazer:
 
-Para iniciar o parsing HTML em Elixir, primeiro precisamos instalar uma biblioteca que nos permitirá trabalhar com HTML. Uma das opções mais populares é o package `Floki`. 
+### Analisando HTML usando a biblioteca Floki:
 
-Aqui está um exemplo de como fazer o parsing de uma página HTML usando `Floki`:
+```elixir
+html = "<html><body><h1>Título</h1><p>Parágrafo</p></body></html>"
 
-```Elixir
-# Primeiro, devemos importar o módulo `Floki`
-iex> import Floki 
+Floki.find(html, "h1")
+# output: "Título"
 
-# Em seguida, vamos acessar a página desejada e armazenar seu conteúdo em uma variável
-iex> html = Floki.parse_file!("caminho/para/arquivo.html") 
-
-# Podemos agora usar o módulo `Floki` para selecionar elementos específicos da página. 
-# Neste exemplo, estamos buscando todos os elementos `h1` da página e imprimindo seu conteúdo.
-iex> Floki.find(html, "h1") |> Floki.text() |> IO.puts()
+Floki.find(html, "p")
+# output: "Parágrafo"
 ```
 
-O código acima irá imprimir todos os títulos `h1` do arquivo HTML em questão. Este é apenas um exemplo simples, mas com o Elixir e o `Floki` é possível realizar parsing em páginas HTML complexas de uma maneira clara e eficaz.
+### Usando a biblioteca Meeseeks para analisar HTML de forma simplificada:
 
-# Mais informações:
+```elixir
+html = "<html><body><a href="https://exemplo.com">Link</a></body></html>"
 
-Se você estiver interessado em aprender mais sobre parsing HTML com Elixir, recomendo a leitura da documentação oficial do `Floki` (https://hexdocs.pm/floki/api-reference.html). Além disso, você pode explorar outras bibliotecas disponíveis para parsing em Elixir, como `htmlparser` e `MochiWeb`.
+Meeseeks.cast_ex(html)
+# output: "Link"
+```
 
-# Veja também:
+## Mergulho Profundo:
 
-- Documentação do `Floki`: (https://hexdocs.pm/floki/api-reference.html)
-- Biblioteca `htmlparser`: (https://hex.pm/packages/htmlparser)
-- Biblioteca `MochiWeb`: (https://hex.pm/packages/mochiweb)
+A análise de HTML é uma técnica importante para a extração de dados da web, mas pode ser difícil e demorado quando feita manualmente. Existem várias bibliotecas em Elixir que facilitam esse processo, como o Floki e Meeseeks mencionados anteriormente, além do HTMLParser e Beautiful Soup.
+
+## Veja Também:
+
+- [Documentação oficial do Floki](https://hexdocs.pm/floki/)
+- [HTMLParser](https://hexdocs.pm/htmlparser/)
+- [Beautiful Soup](https://hexdocs.pm/beautifulsoup/)

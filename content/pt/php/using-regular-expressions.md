@@ -10,32 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que usar expressões regulares em programação?
+## O que é e porquê?
 
-Expressões regulares são uma ferramenta poderosa e versátil que pode ser usada em várias linguagens de programação, incluindo PHP. Elas permitem que você encontre e manipule padrões de texto de forma eficiente, economizando tempo e tornando seu código mais conciso. Se você lida com manipulação de strings em seu trabalho de programação, aprender a utilizar expressões regulares pode ser extremamente benéfico.
+As expressões regulares são uma forma de procurar e manipular texto dentro de uma string. Programadores usam expressões regulares para encontrar e substituir padrões específicos de caracteres em grandes conjuntos de dados, economizando tempo e melhorando a eficiência do código.
 
-## Como usar expressões regulares em PHP
+## Como:
 
-Para usar expressões regulares em PHP, você precisa utilizar as funções `preg_match()` ou `preg_replace()`. Ambas recebem dois argumentos: o padrão de expressão regular que você deseja procurar e a string de texto em que deseja aplicá-lo. Por exemplo:
+```
+// Exemplo 1: Encontrar o número de telefone dentro de uma string
+$string = "Meu número de telefone é (123) 456-7890";
+$pattern = "/[0-9]{3}([0-9]{3})?-([0-9]{4})/";
+preg_match($pattern, $string, $matches);
+print_r($matches);
 
-```PHP
-$texto = "Olá, meu nome é João!";
-if(preg_match("/João/", $texto)){
-  echo "Olá João!";
-} else {
-  echo "Desculpe, não encontrei seu nome no texto.";
-}
+// Output:
+// Array ( [0] => 123-456-7890 [1] => 456 [2] => 7890 )
 ```
 
-Este código utiliza a função `preg_match()` para procurar a string "João" no texto e, se encontrada, exibe uma mensagem de saudação. Se você estiver procurando por um padrão mais complexo, pode usar metacaracteres como `*` para indicar que uma determinada parte do padrão pode ser repetida várias vezes.
+```
+// Exemplo 2: Substituir todas as vogais em uma string com a letra "x"
+$string = "Olá mundo";
+$pattern = "/[aeiou]/";
+$new_string = preg_replace($pattern, "x", $string);
+echo $new_string;
 
-## Aprofundando-se em expressões regulares
+// Output:
+// xlx mxndx
+```
 
-Expressões regulares podem ser um pouco intimidadoras no início, mas com um pouco de prática e entendimento, elas podem ser incrivelmente úteis. É importante lembrar que elas seguem uma sintaxe específica e que pequenos detalhes podem alterar completamente o resultado.
+## Mais detalhes:
 
-Uma das melhores maneiras de aprender a utilizar expressões regulares é praticando. Você pode encontrar vários recursos online que oferecem testes e tutoriais interativos. Além disso, é sempre útil ter um guia de referência à mão para consultar os metacaracteres e suas funções.
+As expressões regulares foram criadas na década de 1950 pelo matemático Stephen Cole Kleene, como uma forma de representar padrões em linguagens formais. Além de ser usada em linguagens de programação, também podem ser encontradas em editores de texto e comandos de busca em sistemas operacionais. Em PHP, as expressões regulares são implementadas através da função `preg_match()` para encontrar padrões e `preg_replace()` para substituí-los.
 
-## Veja também
-- [Site do PHP - Expressões Regulares](https://www.php.net/manual/pt_BR/intro.pcre.php)
-- [Tutorial Expressões Regulares da MDN](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Regular_Expressions)
-- [Regex101 - Verificador de Expressões Regulares](https://regex101.com/)
+## Veja também:
+
+- [Documentação oficial do PHP sobre expressões regulares](https://www.php.net/manual/pt_BR/book.pcre.php)
+- [Tutorial de expressões regulares em PHP](https://www.tutorialspoint.com/php/php_regular_expression.htm)
+- [Mais informações sobre a história das expressões regulares](https://en.wikipedia.org/wiki/Regular_expression#History)

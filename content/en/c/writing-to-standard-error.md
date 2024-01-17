@@ -10,43 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-Is your code producing errors or unexpected results? Or do you want to add custom error messages to make debugging easier? Then writing to standard error in C is the way to go. It allows you to output error messages to the console or terminal, providing useful information for developers and users alike.
+## What & Why?
+In C programming, writing to standard error is a method of printing error messages to the error output stream rather than the standard output stream. This allows for clearer separation of regular output and error messages, making it easier to identify and troubleshoot issues during program execution.
 
-## How To
-Writing to standard error in C is a simple process. First, include the `stdio.h` header file in your code. Then, use the `fprintf()` function to print your error message to `stderr`, which is the standard error stream.
+Programmers use this technique to provide more useful and informative error messages to users or to log errors for later debugging. By default, error messages are printed to the console using the standard error stream, which is usually displayed in red text to differentiate it from regular output.
 
-```
+## How to:
+To write to standard error in C, the `stdio.h` header file must be included in your code. Then, the `fprintf()` function can be used to print to the standard error stream, specified by the stderr pointer.
+
+```C
 #include <stdio.h>
 
-int main()
-{
-  // Print error message to standard error
-  fprintf(stderr, "*** Error: Something went wrong ***\n");
-
+int main() {
+  fprintf(stderr, "This is an error message.");
   return 0;
 }
 ```
 
-The `fprintf()` function takes in multiple arguments, including the `stderr` file pointer, the error message string, and any additional values to be formatted into the message. The `\n` at the end will ensure that the message is printed on a new line.
+This will print the error message "This is an error message." to the console, using the standard error stream. The output may vary based on your IDE or command-line interface, but it will typically be displayed in red text.
 
-When running this program, the error message will appear on the console or terminal instead of the standard output.
+## Deep Dive:
+Writing to standard error has been a fundamental aspect of programming since the early days of UNIX. This method can be seen as an alternative to using the `printf()` function, which prints to the standard output stream. While `printf()` can also be used to print error messages, it is better practice to use `fprintf()` for the reasons mentioned in the "What & Why?" section.
 
-**Output:**
-```
-*** Error: Something went wrong ***
-```
+In some cases, programmers may choose to use a logging library, such as `log4c` or `log4cpp`, to handle error messages and other logs. These libraries allow for more control over the formatting and output of error messages, but they are not a replacement for writing to standard error.
 
-## Deep Dive
-In C, there are three standard streams that can be used for input/output - `stdin`, `stdout`, and `stderr`. `stdin` is used for accepting input, `stdout` is used for outputting regular data, and `stderr` is used for error messages.
+The implementation details of writing to standard error may differ depending on the operating system. However, the general concept remains the same - using the `fprintf()` function to print to the standard error stream.
 
-By default, `stderr` is connected to the console or terminal, allowing for error messages to be displayed during program execution. However, it can also be redirected to a file for logging purposes. This can be done by using the "> " symbol in the command line, followed by the name of the file where you want the error messages to be saved.
-
-`./my_program > error_log.txt`
-
-Keep in mind that `stderr` is unbuffered, meaning that the messages will be displayed immediately without waiting for the program to finish execution.
-
-## See also
-- [C fprintf() function](https://www.geeksforgeeks.org/fprintf-in-c/)
-- [Error Handling in C](https://www.tutorialspoint.com/error-handling-in-c)
-- [Redirecting Standard Output/Standard Error to Files in Linux](https://www.computerhope.com/unix/uredirect.htm)
+## See Also:
+- [C Programming - Error Handling](https://www.geeksforgeeks.org/error-handling-c-programs/)
+- [The `stdio.h` C Header File](https://www.geeksforgeeks.org/stdio-h-c-header-file/)
+- [Logging in C Programs](https://www.geeksforgeeks.org/logging-in-c-programs/)

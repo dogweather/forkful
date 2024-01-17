@@ -10,39 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 왜
+## 무엇 & 왜?
 
-날짜를 문자열로 변환하는 작업은 소프트웨어 개발에서 매우 자주 사용됩니다. 구체적으로는 데이터와 상호작용하거나 사용자 인터페이스에서 날짜를 표시하는데 사용되는 경우가 많습니다.
+날짜를 문자열로 변환하는 것은 날짜 데이터를 사용하기 쉽게 하기 위한 프로그래밍 기술입니다. 프로그래머들이 이를 하는 이유는 우리가 일상에서 다루는 날짜 형식과 컴퓨터가 이해하는 형식 사이의 차이 때문입니다.
 
-# 사용 방법
+## 방법:
 
-날짜를 문자열로 바꾸는 방법은 Kotlin에서 지원하는 여러 가지 방법이 있습니다.
-
-## ```Kotlin
-val date = LocalDate.of(2021, 10, 20)
-val dateString = date.format(DateTimeFormatter.ofPattern("yyyy년 MM월 dd일"))
-println(dateString) 
+**예제 1:** `LocalDate` 객체를 생성한 후 `toString()` 메서드를 사용하여 문자열로 변환하는 방법:
+```Kotlin
+val date = LocalDate.parse("2021-01-01")
+println(date.toString())
 ```
+**결과:** `"2021-01-01"`
 
-위의 예제에서는 먼저 원하는 날짜를 LocalDate 객체로 생성합니다. 그리고 해당 객체를 format() 메서드를 사용하여 지정된 패턴으로 문자열로 변환합니다. 문자열의 출력은 '2021년 10월 20일'과 같이 나오게 됩니다.
-
-또는 다음과 같이 간단하게도 사용할 수 있습니다.
-
-## ```Kotlin
-val today = LocalDate.now()
-val dateString = today.toString() 
-println(dateString) 
+**예제 2:** 현재 날짜를 `Date` 객체로 가져와서 `SimpleDateFormat`을 사용하여 원하는 포맷으로 문자열로 변환하는 방법:
+```Kotlin
+val currentDate = Date()
+val dateFormat = SimpleDateFormat("yyyy-MM-dd")
+println(dateFormat.format(currentDate))
 ```
+**결과:** `"2021-08-25"`
 
-위의 예제에서는 현재 날짜를 LocalDate 객체로 생성하고, toString() 메서드를 사용하여 기본 패턴으로 날짜를 문자열로 출력합니다. 출력은 '2021-05-01'과 같이 기본적인 형식으로 나오게 됩니다.
+## 심층 분석:
 
-# 깊이 파고들기
+(1) 날짜를 문자열로 변환하는 기술은 컴퓨터의 발전과 함께 시작되었습니다. 이전에는 컴퓨터가 날짜를 이해할 수 있는 형식으로 데이터를 입력해야 했기 때문에 이러한 기술은 필수적이었습니다. (2) 다른 대안으로는 날짜 형식을 변경하지 않고도 날짜 정보를 추출하는 것이 있지만, 이는 날짜 데이터의 가독성을 높여주는 이점이 있습니다. (3) 문자열로 변환하는 과정에서 잘못된 형식의 데이터가 입력되면 예외가 발생할 수 있기 때문에 오류 처리가 중요합니다.
 
-Kotlin에서 날짜를 문자열로 변환하는 작업은 자바의 SimpleDateFormat 클래스를 사용하는 것과 유사합니다. 하지만 더 간단하고 안전하며 기능적인 방식으로 제공됩니다.
+## 관련 자료:
 
-또한 Kotlin에서는 문자열이나 숫자 등 다른 데이터 타입과 날짜 간의 변환이 자유롭게 가능합니다. 예를 들어, 위 코드에서 date.format() 대신 date.toString()으로 호출해도 같은 결과를 얻을 수 있습니다. 또한 포맷팅 패턴의 기호도 자유롭게 조합하여 사용할 수 있습니다.
-
-# 관련 항목
-
-- [Kotlin 날짜 처리 공식 문서](https://kotlinlang.org/docs/datetime.html)
-- [Kotlin 날짜와 시간 라이브러리 참고 문서](https://docs.oracle.com/javase/tutorial/datetime/iso/datetime.html)
+- [Kotlin Date and Time](https://kotlinlang.org/docs/datetime/)
+- [Java Date and Time](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
+- [SimpleDateFormat JavaDoc](https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html)

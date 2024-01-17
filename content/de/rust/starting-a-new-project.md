@@ -10,38 +10,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+Was & Warum?
+Neue Projekte zu starten, ist ein wichtiger Teil des Programmierens. Dabei geht es darum, neue Software oder Anwendungen zu entwickeln oder bestehende Projekte zu erweitern. Programmierer starten neue Projekte, um ihre Fähigkeiten zu verbessern, neue Ideen umzusetzen oder kommerzielle Produkte zu erstellen.
 
-Warum sollte man sich engagieren, um ein neues Projekt zu starten? Nun, es gibt viele Gründe dafür! Vielleicht möchtest du deine Programmierfähigkeiten verbessern, ein interessantes Projekt umsetzen oder einfach nur neues ausprobieren. Egal aus welchem Grund, Rust ist definitiv eine gute Wahl für dein neues Projekt.
-
-## Wie geht man vor?
-
-Um ein neues Projekt in Rust zu starten, gibt es ein paar Schritte, die du befolgen solltest. Zuerst musst du Rust auf deinem Computer installieren. Dies ist relativ einfach, da es eine offizielle Installationsanleitung auf der Rust-Website gibt.
-
-Sobald Rust installiert ist, kannst du ein neues Projekt mit dem Befehl `cargo new` erstellen. Dies erstellt eine Standardstruktur für dein Projekt, die ein `src`-Verzeichnis und eine `main.rs`-Datei enthält.
-
-Lass uns ein einfaches Beispiel erstellen, um zu verstehen, wie die Syntax in Rust funktioniert. Hier ist ein Programm, das "Hello, World!" auf der Konsole ausgibt:
+Wie geht's?
+Das Erstellen eines neuen Projekts in Rust ist einfach und unkompliziert. Zunächst müssen Sie die Sprache und Tools auf Ihrem Computer installieren. Dann können Sie ein neues Projekt mit dem Befehl "cargo new" in der Kommandozeile erstellen. Zum Beispiel:
 
 ```Rust
-fn main() {
-    println!("Hello, World!");
-}
+cargo new mein_projekt
 ```
+Dies erstellt ein neues Verzeichnis mit dem Namen "mein_projekt", das alle erforderlichen Dateien und Ordner für Ihr Projekt enthält. Sie können nun Ihre eigene Code-Datei hinzufügen und Ihr Projekt mit dem Befehl "cargo run" ausführen.
 
-Um dieses Programm auszuführen, navigiere in deinem Terminal in das Projektverzeichnis und führe den Befehl `cargo run` aus. Du solltest "Hello, World!" auf deiner Konsole sehen.
+Tiefer ins Detail:
+Rust ist eine relativ neue Programmiersprache, die im Jahr 2010 von Mozilla entwickelt wurde. Sie wurde für die Erstellung sicherer, schneller und effizienter Software entwickelt und hat bereits die Aufmerksamkeit vieler großer Unternehmen auf sich gezogen. Alternativen zu Rust sind Sprachen wie C++, Java oder Python. Rust zeichnet sich jedoch durch seine besondere Fokussierung auf Speichersicherheit und Parallelverarbeitung aus.
 
-Dies ist nur ein einfaches Beispiel, aber es gibt noch viel mehr, was man in Rust tun kann. Schau dir die offizielle Rust-Dokumentation an, um mehr über die Syntax, Datentypen und die verschiedenen Funktionen zu erfahren.
+Weitere Informationen:
+Sie können mehr über das Erstellen von Projekten in Rust erfahren, indem Sie in der offiziellen Rust-Dokumentation nachlesen oder sich an einer Community beteiligen, die sich mit Rust befasst. Darüber hinaus gibt es viele Beispiele und Tutorials online, die Ihnen helfen können, Ihre Fähigkeiten in Rust zu verbessern.
 
-## Tiefer eintauchen
-
-Um tiefer in die Welt von Rust einzutauchen, gibt es einige Dinge, die du beachten solltest, wenn du ein neues Projekt startest. Zuerst solltest du dich mit den Konzepten der Eigentümerschaft und der Borrowing-Regeln vertraut machen, da dies wichtige Konzepte in Rust sind.
-
-Ein weiterer wichtiger Aspekt ist das Verständnis von Lebenszeiten (Lifetimes) in Rust. Dies ist eine fortschrittlichere Konzept, aber es ist wichtig, um die Fehlermeldungen von Rust zu verstehen und effektiv zu programmieren.
-
-Schließlich gibt es noch die Module in Rust, die helfen, deinen Code in einzelne Dateien oder Ordner zu organisieren. Es ist wichtig, dies zu verstehen, um ein strukturiertes und gut wartbares Projekt zu entwickeln.
-
-## Siehe auch
-
-- Offizielle Rust-Website: https://www.rust-lang.org/
-- Rust-Dokumentation: https://doc.rust-lang.org/stable/
-- Rust-Community-Forum: https://users.rust-lang.org/
+Siehe auch:
+- Die offizielle Rust-Dokumentation: https://www.rust-lang.org/de/documentation.html
+- Rust Community: https://www.rust-lang.org/de/community.html
+- Beispiele und Tutorials: https://rustbyexample.com/

@@ -10,67 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que criar um arquivo de texto?
+## O que e Por que?
 
-Criar um arquivo de texto é uma tarefa comum em programação, usada para armazenar dados de forma simples e acessível. Com o C, é possível criar e manipular arquivos de texto de forma eficiente e flexível.
+Escrever um arquivo de texto é simplesmente salvar informações em um arquivo de texto que pode ser lido por humanos, usando palavras e caracteres. Os programadores geralmente fazem isso para armazenar informações importantes ou resultados de suas aplicações.
 
-## Como fazer
+## Como fazer:
 
-Para criar um arquivo de texto no C, é necessário seguir os seguintes passos:
-
-1. Abrir um arquivo usando a função `fopen()` e especificando o modo de leitura ou escrita.
-2. Escrever ou ler dados no arquivo usando as funções `fputc()` e `fgetc()`.
-3. Fechar o arquivo usando a função `fclose()` para evitar perda de dados.
-
-Um exemplo de código que cria um arquivo de texto e escreve uma string nele seria:
+Para escrever um arquivo de texto em C, você pode usar a função `fprintf()` do cabeçalho `stdio.h`. Veja um exemplo abaixo:
 
 ```C
-FILE *arq = fopen("arquivo.txt", "w");
-if(arq == NULL) //verifica se o arquivo foi aberto corretamente
+#include <stdio.h>
+
+int main()
 {
-    printf("Erro ao abrir o arquivo. Verifique o nome e permissões.\n");
-}
-else
-{
-    fputs("Olá mundo!", arq); //escreve a string no arquivo
-    fclose(arq); //fecha o arquivo
-    
-    printf("Arquivo criado e modificado com sucesso!\n");
+    // Criando um ponteiro de arquivo
+    FILE *arquivo;
+
+    // Abrindo o arquivo com permissão de escrita
+    arquivo = fopen("meu_arquivo.txt", "w");
+
+    // Escrevendo no arquivo usando fprintf
+    fprintf(arquivo, "Olá, este é um arquivo de texto criado pelo programa!\n");
+
+    // Fechando o arquivo
+    fclose(arquivo);
+
+    return 0;
 }
 ```
 
-Para ler o conteúdo de um arquivo de texto, podemos usar o seguinte código:
+Isso criará um arquivo chamado "meu_arquivo.txt" no mesmo diretório do seu programa, e escreverá a mensagem "Olá, este é um arquivo de texto criado pelo programa!" nele.
 
-```C
-FILE *arq = fopen("arquivo.txt", "r");
-if(arq == NULL)
-{
-    printf("Erro ao abrir o arquivo. Verifique o nome e permissões.\n");
-}
-else
-{
-    char caracter;
-    while((caracter = fgetc(arq)) != EOF) //enquanto não for alcançado o final do arquivo
-    {
-        printf("%c", caracter); //imprime o caractere
-    }
-    fclose(arq); //fecha o arquivo
-}
-```
+## Mergulho Profundo:
 
-## Profundidade
+Antes do padrão ANSI C, os programadores usavam a função `putc()` para escrever caracteres em um arquivo de texto. No entanto, com o surgimento da função `fprintf()`, tornou-se mais fácil escrever strings e variáveis formatadas em um arquivo. Além disso, outras linguagens de programação, como Python e Java, também possuem funções semelhantes para escrever em arquivos de texto.
 
-Ao criar um arquivo de texto no C, é importante ter em mente algumas características importantes:
+## Veja também:
 
-- Para abrir um arquivo, é necessário especificar o modo de leitura ou escrita desejado. Os modos mais comuns são: `"r"` para leitura, `"w"` para escrita (sobrescrevendo o conteúdo anterior, se existir) e `"a"` para escrita no final do arquivo.
-- Ao usar a função `fputc()`, é necessário lembrar de converter o caractere em um tipo `char` usando a função `char()`.
-- Para ler caracteres de um arquivo, é necessário armazená-los em uma variável do tipo `int`, pois a função `fgetc()` retorna um inteiro que representa o valor ASCII do caractere.
-- É importante sempre verificar se o arquivo foi aberto corretamente antes de realizar operações de escrita ou leitura. Caso contrário, pode haver perda de dados ou falhas na execução do programa.
-
-## Veja também
-
-Aqui estão alguns recursos adicionais para aprimorar seus conhecimentos sobre a criação e manipulação de arquivos de texto em C:
-
-- [Tutorialspoint - Manipulação de arquivos em C](https://www.tutorialspoint.com/cprogramming/c_file_io.htm)
-- [W3Schools - Leitura e escrita de arquivos em C](https://www.w3schools.in/c-tutorial/file-input-and-output/)
-- [Site do Núcleo de Computação da UFES - Manipulação de arquivos com C](http://www.nc.ufes.br/ensino-material/desenvolvimento-de-sistemas/linguagem-c/manipulando-arquivos-em-c)
+- [Manipulação de Arquivos em C](https://www.programiz.com/c-programming/c-file-input-output)
+- [Tutorial C: Escrevendo em Arquivos de Texto](https://www.tutorialspoint.com/cprogramming/c_file_io.htm)
+- [Documentação da função fprintf](https://www.tutorialspoint.com/c_standard_library/c_function_fprintf.htm)

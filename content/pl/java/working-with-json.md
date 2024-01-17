@@ -1,7 +1,7 @@
 ---
-title:                "Praca z formatem json"
-html_title:           "Java: Praca z formatem json"
-simple_title:         "Praca z formatem json"
+title:                "Praca z json"
+html_title:           "Java: Praca z json"
+simple_title:         "Praca z json"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Data Formats and Serialization"
@@ -10,65 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego 
+## Co i dlaczego?
 
-JSON (JavaScript Object Notation) jest powszechnie wykorzystywanym formatem wymiany danych w programowaniu. Jest on lekki, czytelny dla człowieka i łatwy w użyciu. W tym artykule dowiesz się, dlaczego warto znać i umieć pracować z JSON w języku Java.
+Programowanie z JSON- em to proces przetwarzania i przechowywania danych w formacie JSON (JavaScript Object Notation). Jest to popularny sposób na wymianę danych między aplikacjami i serwerami. Programiści używają JSON-a, ponieważ jest on prosty, przenośny i łatwy do zrozumienia.
 
-## Jak 
+## Jak to zrobić:
 
-Aby pracować z JSON w języku Java, będziemy potrzebować dwóch bibliotek: `json-simple` i `Gson`. Pierwsza z nich jest lekka i łatwa w użyciu, natomiast druga obsługuje bardziej zaawansowane opcje. Poniżej przedstawione są przykłady kodów oraz wyjścia dla obu bibliotek.
-
-### Użycie `json-simple`:
-```Java
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
-
+```java
+// Tworzenie obiektu JSON 
 JSONObject obj = new JSONObject();
-obj.put("imie", "Ania");
-obj.put("wiek", 25);
-obj.put("hobby", "programowanie");
 
-System.out.println(obj);
-```
+// Dodawanie danych do obiektu
+obj.put("imie", "Anna");
+obj.put("wiek", 30);
+obj.put("hobby", "piesze wędrówki");
 
-Wyjście:
-```Java
-{"imie":"Ania","wiek":25,"hobby":"programowanie"}
-```
-### Użycie `Gson`:
-```Java
-import com.google.gson.Gson;
-
-class Osoba {
-    String imie;
-    int wiek;
-    String hobby;
-}
-
-Osoba osoba = new Osoba();
-osoba.imie = "Ania";
-osoba.wiek = 25;
-osoba.hobby = "programowanie";
-
-Gson gson = new Gson();
-String json = gson.toJson(osoba);
-
+// Konwertowanie obiektu na string i wyświetlenie
+String json = obj.toString();
 System.out.println(json);
+
+// Wynik: {"imie":"Anna","wiek":30,"hobby":"piesze wędrówki"}
 ```
 
-Wyjście:
-```Java
-{"imie":"Ania","wiek":25,"hobby":"programowanie"}
-```
+## Wprowadzenie w głąb:
+JSON został stworzony w 2001 roku i jest powszechnie używany w dzisiejszych czasach. Istnieją również inne formaty danych, takie jak XML czy CSV, ale JSON jest popularny ze względu na swoją prostotę i elastyczność. W Java, programiści mogą używać różnych bibliotek, takich jak `org.json` lub `GSON`, aby pracować z JSON-em.
 
-## Deep Dive
-
-W przypadku bardziej zaawansowanych operacji na JSON, warto skorzystać z biblioteki `Gson`. Pozwala ona na łatwe mapowanie obiektów Java na JSON i odwrotnie, a także obsługę bardziej złożonych struktur danych. Ponadto, można również skorzystać z klas `JsonReader` i `JsonWriter`, aby czytać i pisać dane JSON bezpośrednio z pliku.
-
-Warto również zapoznać się z różnymi formatami danych, które są obsługiwane przez JSON, np. tekst, liczby, tablice czy obiekty. W przypadku pracy z dużymi i złożonymi strukturami danych, warto również zwrócić uwagę na optymalizację i wydajność operacji na JSON.
-
-## Zobacz także
-
-- Dokumentacja biblioteki `json-simple`: https://code.google.com/archive/p/json-simple/
-- Dokumentacja biblioteki `Gson`: https://github.com/google/gson
-- Tutorial na temat pracy z JSON w języku Java: https://www.mkyong.com/java/how-do-convert-java-object-to-from-json-format-gson-api/
+## Zobacz też:
+- [Oficjalna dokumentacja JSON](https://www.json.org/json-pl.html)
+- [Kurs JSON w Javie na YouTube](https://www.youtube.com/watch?v=071UmQJ1F-U)
+- [Porównanie JSON-a z innymi formatami danych](https://www.geeksforgeeks.org/json-vs-xml/)

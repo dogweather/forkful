@@ -1,7 +1,7 @@
 ---
-title:                "Busca e substituição de texto"
-html_title:           "Gleam: Busca e substituição de texto"
-simple_title:         "Busca e substituição de texto"
+title:                "Buscando e substituindo texto"
+html_title:           "Gleam: Buscando e substituindo texto"
+simple_title:         "Buscando e substituindo texto"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -10,41 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que fazer busca e substituição de texto?
+# O que & Por quê?
 
-Fazer busca e substituição de texto é uma tarefa comum na programação. Imagine que você tenha um código com muitas linhas repetitivas e queira substituir uma parte específica em todas elas. Em vez de fazer a alteração manualmente em cada linha, você pode usar a funcionalidade de busca e substituição para automatizar o processo. Isso economiza tempo e reduz o risco de erros no código.
+Substituir e buscar textos é uma tarefa comum entre os programadores. Isso envolve localizar determinado texto em um arquivo ou documento e substituí-lo por outro. Fazemos isso para economizar tempo e reduzir erros manuais.
 
-## Como fazer busca e substituição em Gleam
+# Como fazer:
 
-Em Gleam, a funcionalidade de busca e substituição é feita com a função `String.replace()`. Esta função recebe dois argumentos: o texto original e o texto a ser substituído.
+Usando o Gleam, podemos facilmente substituir e buscar textos em arquivos. Primeiro, importamos o módulo "Text" e, em seguida, usamos as funções "replace" e "find" para localizar e substituir o texto desejado. Aqui está um exemplo de como fazer isso:
 
-```
-Gleam> String.replace("Hello World!", "World", "Universe")
-"Hello Universe!"
-```
-Neste exemplo, a função substituiu a palavra "World" pela palavra "Universe" na string "Hello World!".
+```Gleam
 
-Se você quiser substituir todas as ocorrências de uma palavra em uma string, pode adicionar o modificador "g" ao final do texto original.
+import Text
 
-```
-Gleam> String.replace("Hello Hello Hello", "Hello", "Hey", "g")
-"Hey Hey Hey"
-```
+let nome = "João"
 
-## Aprofundando na busca e substituição de texto
-
-Além de substituir textos simples, você também pode usar expressões regulares na função `String.replace()`. Expressões regulares são padrões de texto que permitem fazer substituições mais complexas.
-
-Por exemplo, digamos que você queira substituir todas as ocorrências de números em uma string por asteriscos. Você pode usar a expressão regular `[0-9]` para identificar os números e substituí-los por "*".
+nome = Text.replace(nome, "João", "Pedro")
+// Output: Pedro
+Text.find("Pedro", "Isso é uma string contendo o nome Pedro.")
+// Output: true
 
 ```
-Gleam> String.replace("123abc456def", "[0-9]", "*", "g")
-"***abc***def"
-```
 
-Existem muitos outros padrões e combinações que podem ser usados com expressões regulares para realizar substituições precisas e avançadas.
+# Mergulho profundo:
 
-## Veja também
+Substituir e buscar textos é uma tarefa comum na programação, especialmente quando estamos trabalhando com grandes quantidades de código ou lidando com múltiplos arquivos. Antes do surgimento de linguagens de programação e ferramentas de edição, essa tarefa era realizada manualmente, o que era demorado e propenso a erros. Com o avanço da tecnologia, surgiram ferramentas especiais para facilitar essa tarefa, como o Gleam.
 
-- Documentação oficial Gleam sobre `String.replace()`: https://gleam.run/modules/std.String.html#type.string:0x1e720b9771f1a033
-- Tutorial sobre expressões regulares: https://www.regular-expressions.info/tutorial.html
+Existem diversas alternativas ao Gleam para substituir e buscar textos, como o Bash, Perl e Python. No entanto, o Gleam se destaca por sua simplicidade e facilidade de uso, além de ser uma linguagem de programação funcional pura. Além disso, o Gleam é altamente compatível com outras ferramentas e linguagens, o que facilita sua integração em projetos maiores.
+
+Ao procurar e substituir textos com o Gleam, é importante ter em mente que ele é sensível a maiúsculas e minúsculas. Isso significa que se você estiver procurando por "João", ele não encontrará "joão". Além disso, o Gleam também pode trabalhar com expressões regulares, o que permite maior flexibilidade na busca por padrões específicos de texto.
+
+# Veja também:
+
+Se você deseja aprender mais sobre como o Gleam pode ser usado para substituir e buscar textos, aqui estão alguns recursos úteis:
+
+- Documentação oficial do Gleam
+- Exemplos de código para buscar e substituir textos usando o Gleam
+- Um tutorial em vídeo sobre a utilização do Gleam para buscar e substituir textos em nossos projetos.

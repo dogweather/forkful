@@ -1,7 +1,7 @@
 ---
-title:                "Lancement d'un nouveau projet"
-html_title:           "Go: Lancement d'un nouveau projet"
-simple_title:         "Lancement d'un nouveau projet"
+title:                "Commencer un nouveau projet"
+html_title:           "Go: Commencer un nouveau projet"
+simple_title:         "Commencer un nouveau projet"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Getting Started"
@@ -10,44 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Quoi & Pourquoi?
 
-Si vous êtes un passionné de programmation ou un développeur en herbe à la recherche d'un nouveau langage à apprendre, Go pourrait être la solution parfaite pour vous. Avec son approche simple et efficace, Go est un langage populaire pour les projets tels que les applications web, les outils de développement et les serveurs.
+Lancer un nouveau projet en programmation est le fait de commencer un nouveau programme à partir de zéro. Les programmeurs le font souvent pour créer quelque chose de nouveau ou pour améliorer leur compétences en codage.
 
-## Comment commencer en Go
+## Comment faire:
 
-Pour commencer à coder en Go, vous aurez besoin d'installer le compilateur Go et d'un éditeur de code tel que Visual Studio Code ou Atom. Une fois cela fait, vous pouvez suivre les étapes suivantes pour créer votre premier projet en Go.
+Voici un exemple de code en Go pour démarrer un nouveau projet:
 
-Tout d'abord, créez un nouveau dossier pour votre projet et ouvrez-le dans votre éditeur de code. Ensuite, créez un fichier nommé main.go et ajoutez le code suivant à l'intérieur :
-
-```Go
+```
 package main
 
 import "fmt"
 
 func main() {
-    fmt.Println("Salut les amis, bienvenue en Go !")
+	fmt.Println("Bonjour les programmeurs!")
 }
 ```
 
-Ce code permet simplement d'afficher une phrase dans la console lorsqu'elle est exécutée. Pour exécuter le code, ouvrez votre terminal et rendez-vous dans le dossier de votre projet. Ensuite, entrez la commande suivante :
+Résultat:
 
-```Go
-go run main.go
+```
+Bonjour les programmeurs!
 ```
 
-Vous devriez voir la phrase que vous avez écrite s'afficher dans le terminal. Félicitations, vous venez de créer et d'exécuter votre premier programme en Go !
+## Plongée en profondeur:
 
-## Approfondissement
+Le Go est un langage de programmation créé par Google en 2009. Il a été conçu pour être simple, rapide et efficient. Il existe d'autres alternatives pour débuter un nouveau projet telles que Python ou Java. Pour implémenter un nouveau projet en Go, vous avez besoin d'un compilateur Go installé sur votre ordinateur et d'un éditeur de code tel que Visual Studio Code.
 
-Maintenant que vous avez créé et exécuté votre premier programme en Go, vous pouvez plonger plus en profondeur dans ce langage. Voici quelques liens utiles pour en apprendre davantage sur les fonctionnalités et les bonnes pratiques de Go :
+## Voir aussi:
 
-- [Documentation officielle](https://golang.org/doc/)
-- [Tour d'horizon de Go](https://tour.golang.org/welcome/1)
-- [Codecademy : Apprenez Go](https://www.codecademy.com/learn/learn-go)
-- [YouTube : Apprenez Go en une heure](https://www.youtube.com/watch?v=CF9S4QZuV30)
-
-## Voir aussi
-
-- [Découvrez les différentes applications de Go](https://go.dev/)
-- [GitHub : Projets en Go](https://github.com/trending/go)
+- [Tutoriel Go pour débutants](https://ahmet.im/blog/golang-tutorial-part-1-intro/)
+- [Documentation officielle Go](https://golang.org/doc/)

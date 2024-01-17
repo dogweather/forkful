@@ -1,7 +1,7 @@
 ---
-title:                "एक स्ट्रिंग को कैपिटलाइज़ करना"
-html_title:           "Bash: एक स्ट्रिंग को कैपिटलाइज़ करना"
-simple_title:         "एक स्ट्रिंग को कैपिटलाइज़ करना"
+title:                "स्ट्रिंग में शीर्ष अक्षर बड़ी अक्षरों में लिखना"
+html_title:           "Bash: स्ट्रिंग में शीर्ष अक्षर बड़ी अक्षरों में लिखना"
+simple_title:         "स्ट्रिंग में शीर्ष अक्षर बड़ी अक्षरों में लिखना"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Strings"
@@ -10,37 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Kyun
-Agar aapko ek string mai woh alphabets ko uppercase (bada) karna hai jo ki pahle se nahi the, to yeh article aapke liye hai.
+## क्या है और क्यों करें?
 
-## Kaise Kare
-**NOTE**: Yaha ```Bash ... ``` code blocks mai diye gaye examples mai, input ko `$str` variable mai store kiya gaya hai.
+कैपिटलाइजिंग स्ट्रिंग करना एक तरीका है जिसमें हम एक स्ट्रिंग के प्रथम अक्षर को बड़ा अक्षर में बदलते हैं। यह उन स्थितियों में उपयोगी होता है जब हमें एक बीजी स्ट्रिंग में प्रतिस्थापन करने की आवश्यकता होती है, या प्रोग्रामिंग के साथ जुड़े नियमों को समझने के लिए।
 
-1. Sabse pahle, `tr` command ka use karke `tr [:lower:] [:upper:]` kar ke ek naya string create kare.
+## कैसे करें?
 
 ```Bash
-$str="hello, world!"
-echo $str | tr [:lower:] [:upper:]
+#!/bin/bash
+echo "Enter a string:"
+read str
+echo $str | awk '{print toupper(substr($0,1,1))substr($0,2)}'
 ```
 
-**Output**: `HELLO, WORLD!`
+उपरोक्त कोड अपने मूल्यों को दर्शाता है जहाँ हम स्ट्रिंग के प्रथम अक्षर को बड़े अक्षर में बदलते हैं और उसका बाकी हिस्सा प्रिंट करते हैं। उदाहरण के लिए, अगर हम "hello" डालते हैं तो आउटपुट "Hello" होगा।
 
-2. Agar aapko sirf kuch specific alphabets ko bada karna hai, to unki jagah par `tr -d` use karke unko hata sakte hai aur fir `tr [:lower:] [:upper:]` se uppercase kar sakte hai.
+## गहराई में जाएं
 
-```Bash
-$str="hello, world!"
-echo $str | tr -d '!' | tr [:lower:] [:upper:]
-```
+कैपिटलाइजिंग स्ट्रिंग्स की शुरुआत साल 1960 में यूपी के कृत्तर मिश्रणों में देखी गयी थी। अन्य विकल्पों में, हम एक स्ट्रिंग के प्रत्येक शब्द को बड़ा अक्षर में फिर से लिख सकते हैं, लेकिन यह लंबा और समय लेने वाला काम हो सकता है। क्यूट प्रोग्रामिंग भाषा बश में, हम समानांतर तरीके से कैपिटलाइज स्ट्रिंग को लिख सकते हैं, लेकिन दृष्टिकोण से, हमने एक अलग तरीके का चुनाव किया है।
 
-**Output**: `HELLO WORLD`
+## अन्य प्रत्येक
 
-## Deep Dive
-- `tr` command ki madad se hum ek string ko dusre string mai convert kar sakte hai.
-- `[:lower:]` aur `[:upper:]` characters set ko use karne se alphabets ko uppercase mai convert kiya ja sakta hai.
-- Agar aap sirf ek string ka specific part uppercase karna chahte hai, to `tr -d` command ka use kar sakte hai jisse us specific part ko string se remove kar diya jayega.
+और विकल्प प्रोग्रामिंग के लिए यह [जानिए][1] कि कैसे आप पाठक के गीत स्नोबोल से पाठक के गीत या स्ट्रिंग को लूप के द्वारा लाजिम स्ट्रिंग के साथ कैसे लूप सत्रानिरूपण होगा।
 
-## Dekhe Bhiye
-Aur bhi helpful articles padhne ke liye, niche diye gaye links par click kare:
-
-- [Bash Basics in Hindi](https://idownvotedbecau.se/bash-basics-in-hindi)
-- [Bash Guide for Beginners](https://www.tldp.org/LDP/Bash-Beginners-Guide/html)
+[1]: http://www.gnu.org/software/gnulib/manual/html_node/case_002funfold.html

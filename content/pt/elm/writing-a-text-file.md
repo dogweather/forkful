@@ -10,26 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que escrever um arquivo de texto?
-
-Se você é um programador ou está interessado em aprender uma nova linguagem de programação, escrever um arquivo de texto pode ser uma habilidade útil a ser dominada. Isso permite que você armazene e organize informações de forma legível e acessível, seja para fins pessoais ou profissionais.
+## O que & Por quê?
+Escrever um arquivo de texto é uma tarefa comum para programadores, pois é uma forma de armazenar informações importantes em um formato legível por humanos. Além disso, arquivos de texto são frequentemente utilizados para armazenar dados e configurações para serem acessados e manipulados por programas.
 
 ## Como fazer:
+Para escrever um arquivo de texto em Elm, podemos usar a função `File.WriteString` que nos permite especificar o nome do arquivo e o conteúdo que queremos escrever. Veja o exemplo abaixo:
 
-Para escrever um arquivo de texto em Elm, você pode seguir os seguintes passos:
+```Elm
+import File
 
+main =
+    File.WriteString "arquivo.txt" "Olá mundo!"
 ```
-Elm.file.write "arquivo.txt" "Olá, mundo!"
-```
 
-Este é um exemplo simples de como escrever "Olá, mundo!" em um arquivo de texto chamado "arquivo.txt". Você também pode escrever conteúdo mais complexo, como listas ou estruturas de dados, usando a mesma função.
+Após executar este código, um novo arquivo de texto chamado "arquivo.txt" será criado com o conteúdo "Olá mundo!". Bem simples, não é?
 
-## Profundidade nos arquivos de texto:
+## Mergulho profundo:
+O conceito de escrever arquivos de texto tem sido utilizado pelos programadores por décadas. Nas linguagens de programação mais antigas, o processo era mais complicado e envolvia a utilização de bibliotecas externas. No entanto, com o surgimento de novas linguagens como Elm, esse processo se tornou mais simples e acessível.
 
-Existem diversas formas de utilizar e manipular arquivos de texto em Elm. Você pode ler e modificar arquivos existentes, ou até mesmo criar arquivos HTML dinamicamente através da função `Html.file` do Elm. Além disso, você pode utilizar módulos de terceiros, como o `elm/file`, que oferece funções avançadas para lidar com arquivos.
+Embora a escrita de arquivos de texto seja uma forma muito comum de armazenar informações, existem outras opções disponíveis, como bancos de dados e arquivos binários. No entanto, a escrita de arquivos de texto continua sendo uma das maneiras mais simples e práticas de armazenar dados simples.
 
 ## Veja também:
-
-- Documentação oficial do Elm sobre arquivos de texto: https://guide.elm-lang.org/interop/javascript.html
-- Tutorial sobre como manipular arquivos em Elm: https://medium.com/@abhiaiyer/file-manipulation-in-elm-c3602a4e7156
-- Liberdade Digital: Como escrever e ler arquivos em Elm: https://liberdade.digital/como-escrever-e-ler-arquivos-em-elm-5/
+- Documentação oficial do Elm: https://elm-lang.org/docs
+- Repositório do Elm no GitHub: https://github.com/elm-lang
+- Tutorial sobre leitura e escrita de arquivos em Elm: https://guide.elm-lang.org/io/files.html

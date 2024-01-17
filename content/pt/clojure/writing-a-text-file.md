@@ -1,7 +1,7 @@
 ---
-title:                "Escrevendo um arquivo de texto"
-html_title:           "Clojure: Escrevendo um arquivo de texto"
-simple_title:         "Escrevendo um arquivo de texto"
+title:                "Escribir un archivo de texto"
+html_title:           "Clojure: Escribir un archivo de texto"
+simple_title:         "Escribir un archivo de texto"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Files and I/O"
@@ -10,60 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que escrever um arquivo de texto?
+## O quê e por quê?
 
-Existem várias razões pelas quais alguém pode querer escrever um arquivo de texto em Clojure. Algumas dessas razões podem incluir armazenar informações de configuração, gerar relatórios ou criar dados para serem usados em outros programas.
+Escrever um arquivo de texto é um processo de criar um documento de texto que pode ser lido e manipulado por computadores. Os programadores geralmente escrevem arquivos de texto para armazenar e compartilhar informações importantes, como configurações, logs ou dados de entrada.
 
-## Como fazer
-
-Agora que entendemos por que escrever um arquivo de texto pode ser útil, vamos dar uma olhada em como podemos fazer isso em Clojure. Primeiro, vamos criar um novo arquivo de texto chamado "exemplo.txt" usando a função `spit`:
+## Como fazer:
 
 ```Clojure
-(spit "exemplo.txt" "Este é um exemplo de texto em um arquivo criado usando Clojure.")
+(with-open [file (io/writer "arquivo.txt")]  ; Abre o arquivo de texto como escritor
+  (.write file "Olá, mundo!")                ; Escreve "Olá, mundo!" no arquivo
+  (.close file))                             ; Fecha o arquivo
 ```
 
-Isso criará um arquivo chamado "exemplo.txt" que contém o texto especificado. Podemos então usar a função `slurp` para ler o conteúdo do arquivo e exibi-lo no console:
+O código acima utiliza a função `with-open`, que garante que o arquivo seja fechado após a escrita. Também é possível utilizar a função `spit` para escrever em um arquivo de texto:
 
 ```Clojure
-(slurp "exemplo.txt")
+(spit "arquivo.txt" "Olá, mundo!")
 ```
 
-Isso resultará na saída:
+Ambos os exemplos produzem o arquivo "arquivo.txt" com o conteúdo "Olá, mundo!".
 
-```
-Este é um exemplo de texto em um arquivo criado usando Clojure.
-```
+## Profundando:
 
-Também podemos adicionar variáveis ou dados a serem escritos no arquivo, basta usar a sintaxe de interpolação de strings com a função `format`:
+Escrever arquivos de texto tem sido uma parte fundamental da programação desde o início do desenvolvimento de software. Antigamente, era necessário utilizar comandos específicos do sistema operacional para escrever em arquivos de texto, mas com o avanço das linguagens de programação, surgiram funções e bibliotecas para facilitar esse processo.
+
+Além da função `spit` mencionada anteriormente, também é possível utilizar a função `slurp` para ler o conteúdo de um arquivo de texto para uma variável:
 
 ```Clojure
-(def nome "João")
-(def idade 25)
-
-(spit "dados.txt" (format "Nome: %s, Idade: %d" nome idade))
+(def conteudo (slurp "arquivo.txt")) ; Lê o conteúdo do arquivo "arquivo.txt" para a variável "conteudo"
 ```
 
-Isso criará um arquivo chamado "dados.txt" com o seguinte conteúdo:
+Outra alternativa para escrever arquivos de texto é utilizar bibliotecas externas, como a `clomp` ou a `unilog`. Essas bibliotecas oferecem funcionalidades adicionais, como escrever em arquivos de texto em outros formatos, como CSV ou JSON.
 
-```
-Nome: João, Idade: 25
-```
+## Veja também:
 
-## Profundidade
-
-Agora que vimos como criar e ler arquivos de texto em Clojure, podemos nos aprofundar um pouco mais no assunto. Uma coisa importante a se notar é que, ao usar a função `spit`, por padrão, o conteúdo do arquivo é sobrescrito caso ele já exista. Se quisermos adicionar texto ao final do arquivo, podemos usar a opção `:append true`. Além disso, podemos especificar o formato do arquivo a ser criado usando a opção `:encoding`, por exemplo, `:encoding "UTF-8"`.
-
-Além disso, também é possível criar diretórios usando a função `file-seq` e especificando o caminho desejado, por exemplo:
-
-```Clojure
-(file-seq "caminho/do/diretorio")
-```
-
-Isso retornará uma lista de todos os arquivos e diretórios no caminho especificado.
-
-## Veja também
-
-- [Documentação da função `spit`](https://clojuredocs.org/clojure.core/spit)
-- [Documentação da função `slurp`](https://clojuredocs.org/clojure.core/slurp)
-- [Documentação da função `format`](https://clojuredocs.org/clojure.core/format)
-- [Documentação da função `file-seq`](https://clojuredocs.org/clojure.java.io/file-seq)
+- [Documentação oficial sobre arquivos I/O em Clojure](https://clojure.org/reference/io)
+- [Tutorial sobre manipulação de arquivos em Clojure](https://practicalli.github.io/clojure/io.html)
+- [Exemplos de uso da função `spit`](https://purelyfunctional.tv/guide/working-with-files/)

@@ -1,7 +1,7 @@
 ---
-title:                "HTTPリクエストの送信"
-html_title:           "TypeScript: HTTPリクエストの送信"
-simple_title:         "HTTPリクエストの送信"
+title:                "HTTPリクエストを送信する"
+html_title:           "TypeScript: HTTPリクエストを送信する"
+simple_title:         "HTTPリクエストを送信する"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "HTML and the Web"
@@ -10,74 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+「何となぜ？」
 
-人々がHTTPリクエストを送信する理由を最大2文で説明すると、それは外部のAPIやデータベースからデータを取得したり、ウェブサービスとの通信を行うためです。
+HTTPリクエストとは、ウェブサーバー上でデータを要求するためのものです。プログラマーがHTTPリクエストをする理由は、例えばデータベースから情報を取得するためや、外部APIとの通信を行うためです。
 
-## 使い方
+「方法：」
 
-**HTTPリクエストを送信する前に必要な準備**
-
-1. `axios`パッケージをインストールします。
-
-   ```TypeScript
-   npm install axios
-   ```
-
-2. `axios`をインポートします。
-
-   ```TypeScript
-   import axios from 'axios';
-   ```
-
-**GETリクエストを送信する方法**
+TypeScriptでHTTPリクエストをする具体的な例を示します。まずは、requestライブラリをインストールします。
 
 ```TypeScript
-axios.get('https://jsonplaceholder.typicode.com/posts')
-  .then((response) => console.log(response))
-  .catch((error) => console.log(error));
+npm install request
 ```
 
-**POSTリクエストを送信する方法**
+次に、リクエストをするための基本的なコードを書きます。
 
 ```TypeScript
-const data = {
-  title: 'My New Post',
-  body: 'This is a new post about TypeScript.',
-  userId: 1,
-};
+let request = require('request');
 
-axios.post('https://jsonplaceholder.typicode.com/posts', data)
-  .then((response) => console.log(response))
-  .catch((error) => console.log(error));
+request('https://example.com', function (error, response, body) {
+  if (!error && response.statusCode == 200) {
+    console.log(body);
+  }
+});
 ```
 
-**PUTリクエストを送信する方法**
+このコードでは、requestライブラリを使い、指定したURLにリクエストを送り、レスポンスを取得しています。レスポンスが成功した場合には、取得したデータをコンソールに出力しています。
 
-```TypeScript
-const data = {
-  title: 'Updated Post',
-  body: 'This post has been updated.',
-};
+「深堀り：」
 
-axios.put('https://jsonplaceholder.typicode.com/posts/1', data)
-  .then((response) => console.log(response))
-  .catch((error) => console.log(error));
-```
+HTTPリクエストは、1991年に最初に導入されました。他にも、jQueryやAxiosなどのライブラリを使ってリクエストを行うこともできます。また、ブラウザ上でリクエストを行うこともできますが、セキュリティの観点から推奨されません。
 
-**DELETEリクエストを送信する方法**
+「関連情報：」
 
-```TypeScript
-axios.delete('https://jsonplaceholder.typicode.com/posts/1')
-  .then((response) => console.log(response))
-  .catch((error) => console.log(error));
-```
-
-## 詳細を掘り下げる
-
-HTTPリクエストを送信する際、`axios`を使用することで非同期処理を簡単に行えます。また、`catch`メソッドを使用することでエラーハンドリングを行うことができます。さらに、レスポンスデータを取得するには`then`メソッドを使用し、エラーを表示するには`catch`メソッドを使用します。
-
-## 関連リンク
-
-[axios公式ドキュメント](https://axios-http.com/)
-[MDN Web DocsのHTTPリクエストに関する情報](https://developer.mozilla.org/ja/docs/Web/HTTP/Methods)
+- [requestライブラリ](https://www.npmjs.com/package/request)
+- [jQueryライブラリ](https://jquery.com/)
+- [Axiosライブラリ](https://www.npmjs.com/package/axios)

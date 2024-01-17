@@ -10,54 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+# Vad & Varför?
+Att arbeta med JSON är ett sätt för programmerare att hantera och utbyta data på ett enkelt och strukturerat sätt. JSON används ofta för att spara och överföra data mellan olika applikationer eller system.
 
-Har du någonsin behövt arbeta med data i JSON-format? Det är en vanlig filtyp för att lagra och överföra data över webben, och det är också lättläst både för människor och maskiner.
+# Så här gör du:
+```Kotlin 
+// Skapa en ny JSON-object
+val jsonObject = JsonObject()
 
-## Så här gör du
+// Lägg till värden i objektet
+jsonObject.addProperty("id", 123)
+jsonObject.addProperty("name", "Kotlin programmering")
+jsonObject.addProperty("author", "Jane Doe")
 
-Att arbeta med JSON i Kotlin är snabbt och enkelt. Först behöver vi importera biblioteket "kotlinx.serialization" så att vi kan använda "Json" -objektet.
+// Konvertera till JSON-sträng
+val jsonString = jsonObject.toString()
 
-```kotlin
-import kotlinx.serialization.json.Json
+// Skriv ut resultatet
+println(jsonString)
 ```
 
-För att skapa ett nytt JSON-objekt behöver vi bara använda Json-konstruktorn och ange vår data som en sträng.
-
-```kotlin
-val jsonString = """ 
-                    {
-                        "name": "John",
-                        "age": 30,
-                        "hobbies": ["painting", "hiking"]
-                    } 
-                  """
-val json = Json.parse(jsonString)
+Resultat:
+```Kotlin
+{"id":123,"name":"Kotlin programmering","author":"Jane Doe"}
 ```
 
-Vi kan nu använda json-objektet för att få tillgång till vår data. Med hjälp av ".string" eller ".int" kan vi få tag på enskilda datatyper, medan ".getList" låter oss få en lista på ett visst fält.
+# Djupdykning:
+JSON (JavaScript Object Notation) har funnits sedan 90-talet och är ett populärt format för att strukturera data inom webbapplikationer. En av fördelarna med JSON är att den är läsbar för både människor och datorer. Andra alternativ för att hantera strukturerad data är till exempel XML och CSV, men JSON är oftast mer lättförståeligt och enklare att använda.
 
-```kotlin
-val name = json.string("name") // "John"
-val age = json.int("age") // 30
-val hobbies = json.getList("hobbies") // ["painting", "hiking"]
-```
+För att arbeta med JSON i Kotlin finns det flera bibliotek att välja mellan, till exempel Jackson, Gson, och Moshi. Dessa bibliotek erbjuder enkel konvertering mellan JSON och Kotlin-objekt.
 
-Men vad händer om vår JSON-fil innehåller ett stort antal fält och vi vill bara få tag på vissa av dem? Det är där ".getJsonObject" kommer till nytta. Vi kan använda den för att få ett under-JSON-objekt som innehåller de fält vi behöver.
-
-```kotlin
-val ladyJson = json.getJsonObject("lady") // Skapar ett nytt under-JSON-objekt
-val name = ladyJson.string("name") // "Linda"
-val age = ladyJson.string("age") // 28
-```
-
-## Djupdyka
-
-Kotlin har en inbyggd JSON-parser som använder Kotlinx.serialization-biblioteket. Det ger oss enkelhet och effektivitet i vår kod. Men beroende på vår applikation och hur mycket data vi behöver hantera kan det hända att vi behöver använda andra bibliotek som har mer avancerade funktioner.
-
-Ett annat viktigt koncept att förstå när man arbetar med JSON i Kotlin är hur man hanterar noll-värden. I JSON är det möjligt att ha fält som inte har något värde, och det kan leda till problem om vi inte hanterar dem på rätt sätt. I Kotlin kan vi använda "?:"-operatorn för att undvika NullPointerExceptions när vi arbetar med noll-värden.
-
-## Se även
-
-- JSON För Nybörjare: https://kotlinlang.org/docs/tutorials/kotlin-for-py/introduction.html
-- Kotlinx.serialization Dokumentation: https://github.com/Kotlin/kotlinx.serialization
+# Se även:
+- [JSON](https://www.json.org/)
+- [Kotlin Docs: JSON](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/to-pretty-json.html)
+- [JSON and Kotlin: A Perfect Match](https://www.baeldung.com/kotlin-json)

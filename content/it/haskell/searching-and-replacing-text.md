@@ -1,7 +1,7 @@
 ---
-title:                "Ricerca e sostituzione di testo"
-html_title:           "Haskell: Ricerca e sostituzione di testo"
-simple_title:         "Ricerca e sostituzione di testo"
+title:                "Ricercare e sostituire testo"
+html_title:           "Haskell: Ricercare e sostituire testo"
+simple_title:         "Ricercare e sostituire testo"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -10,55 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+# Cos'è & Perché?
+La ricerca e sostituzione di testo è un'operazione comune tra i programmatori che consente di trovare determinati elementi all'interno di un testo e sostituirli con altri. Questa operazione è utile per modificare rapidamente e in modo efficiente grandi quantità di codice, risparmiando tempo e fatica.
 
-Sei stanco di sostituire manualmente ogni singola occorrenza di una parola o frase all'interno di un testo? Vuoi automatizzare questo processo per risparmiare tempo e sforzi? In questo articolo scoprirai come utilizzare Haskell per cercare e sostituire testo in modo efficiente.
+# Come fare:
+Ecco un esempio di come eseguire una ricerca e sostituzione di testo in Haskell:
 
-## Come Fare
+```Haskell
+import Data.Text (replace)
+-- Definiamo una funzione per eseguire la ricerca e sostituzione
+searchAndReplace :: Text -> Text -> Text -> Text
+searchAndReplace old new text = replace old new text
 
-Per iniziare, è necessario importare il modulo "Text.Substitute" per accedere alle funzioni di ricerca e sostituzione di Haskell.
-
-```
-import Text.Substitute
-```
-
-Per eseguire una sostituzione, puoi utilizzare la funzione "sub" fornendo come input la parola o frase da cercare, quella da sostituire e il testo in cui effettuare la sostituzione. Ad esempio:
-
-```
-sub "cane" "gatto" "Il mio cane è bianco"
-```
-
-Questo produrrà il seguente output:
-
-```
-"Il mio gatto è bianco"
+-- Esempio di utilizzo
+let oldText = "casa"
+let newText = "albero"
+let text = "La mia casa è bella."
+searchAndReplace oldText newText text
+-- Output: "La mia albero è bella."
 ```
 
-Per sostituire tutte le occorrenze, puoi utilizzare la funzione "gsub" nello stesso modo.
+# Approfondimento:
+- La ricerca e sostituzione di testo è un concetto che ha origini nel campo dell'editing di testi. Veniva utilizzato per sostituire determinate parole o frasi all'interno di un documento.
+- Ci sono anche altri modi per eseguire una ricerca e sostituzione di testo, ad esempio utilizzando espressioni regolari.
+- Nell'esempio mostrato sopra, abbiamo utilizzato la funzione "replace" del modulo Data.Text, che è una delle opzioni disponibili in Haskell per eseguire questa operazione.
 
-Se vuoi ignorare la differenza tra maiuscole e minuscole, puoi utilizzare la funzione "csub" per effettuare una sostituzione case-insensitive.
-
-Haskell offre anche la possibilità di utilizzare espressioni regolari per cercare e sostituire testo. Per fare questo, è necessario importare il modulo "Text.Regex.Substitute" e utilizzare la funzione "subRegex". Ad esempio, per sostituire tutte le vocali in una frase:
-
-```
-import Text.Regex.Substitute
-
-subRegex "([aeiou])" "*" "Questa è una frase"
-```
-
-Questo produrrà il seguente output:
-
-```
-"Q*st* * *n* fr*s*"
-```
-
-## Approfondimenti
-
-Oltre alle funzioni di base di "Text.Substitute", esistono altre librerie che offrono funzionalità avanzate per la ricerca e la sostituzione del testo in Haskell. Ad esempio, "regexp-tdfa" fornisce una sintassi più semplice per le espressioni regolari.
-
-Inoltre, è possibile utilizzare la funzione "substituteFromList" per effettuare più sostituzioni contemporaneamente fornendo una lista di tuple contenenti la parola da cercare e quella da sostituire.
-
-## Vedi Anche
-
-- [Documentazione ufficiale di "Text.Substitute"](https://hackage.haskell.org/package/text-substitute)
-- [Libreria "regexp-tdfa" per Haskell](https://hackage.haskell.org/package/regexp-tdfa)
+# Vedi anche:
+- [Documentazione di Data.Text](https://hackage.haskell.org/package/text/docs/Data-Text.html)
+- [Tutorial di espressioni regolari in Haskell](https://www.schoolofhaskell.com/user/dshevchenko/cookbook/regexpressions)

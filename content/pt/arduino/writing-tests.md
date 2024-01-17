@@ -10,47 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que escrever testes no Arduino?
+## O Que & Por quê?
+Escrever testes é um processo de verificação para garantir que o código escrito funciona corretamente. Os programadores fazem testes para encontrar e corrigir erros no código antes de colocá-lo em produção.
 
-Escrever testes é uma prática importante em qualquer tipo de programação, incluindo a programação do Arduino. Ao escrever testes, você pode garantir que seu código está funcionando corretamente e detectar possíveis erros antes mesmo de carregá-lo no seu Arduino. Além disso, escrever testes pode ajudar a entender melhor o funcionamento do seu código e a identificar áreas que podem ser melhoradas.
+## Como fazer:
+Escrever testes no Arduino é bastante simples. Primeiro, é necessário incluir a biblioteca "ArduinoUnit.h". Em seguida, escreva o teste usando a função Test(); e execute-o com a função runalltests();. Por exemplo:
 
-## Como escrever testes no Arduino
+```
+#include <ArduinoUnit.h>
 
-Para escrever testes no Arduino, você precisa seguir alguns passos simples. Primeiramente, é necessário definir quais são os objetivos dos seus testes e quais partes do seu código serão cobertas por eles. Em seguida, você deve criar funções de teste que verifiquem se o seu código está funcionando corretamente. Por último, é importante executar esses testes e analisar os resultados.
-
-Um exemplo de teste no Arduino pode ser visto abaixo:
-
-```Arduino
-int pin = 13;
-
-void setup() {
-  pinMode(pin, OUTPUT);
+void setup()
+{
+  Serial.begin(9600);
+  Test.begin();
 }
 
-void loop() {
-  digitalWrite(pin, HIGH);
-  delay(1000);
-  digitalWrite(pin, LOW);
-  delay(1000);
+// Exemplo de teste
+test(led_test) 
+{
+  pinMode(LED_BUILTIN, OUTPUT);
+  digitalWrite(LED_BUILTIN, HIGH);
+  assertEquals(HIGH, digitalRead(LED_BUILTIN));
 }
 
-void testPinState() {
-  digitalWrite(pin, HIGH);
-  assert(digitalRead(pin) == HIGH);
-  delay(1000);
-  digitalWrite(pin, LOW);
-  assert(digitalRead(pin) == LOW);
+void loop()
+{
+  runAllTests();
+  while (Test.available()) {
+    char c = Test.read();
+    Serial.print(c);
+  }
 }
 ```
 
-Neste exemplo, criamos uma função de teste que verifica se o pino 13 está no estado correto. Primeiro, definimos o pino como saída no setup e, em seguida, usamos a função `digitalWrite()` para alterar o estado do pino. Em seguida, usamos a função `digitalRead()` para verificar se o estado do pino corresponde ao que esperamos e usamos a função `assert()` para garantir que o teste falhará caso contrário. Por fim, executamos o código no loop e chamamos a função de teste para verificar se está funcionando corretamente.
+A saída do teste será exibida na porta serial do Arduino. Se todos os testes passarem, a saída será "OK", caso contrário, indicará qual teste falhou e por quê.
 
-## Aprofundando-se nos testes no Arduino
+## Deep Dive:
+O processo de escrever testes é conhecido como Test Driven Development (TDD) e é uma prática comum em desenvolvimento de software. Existem outras bibliotecas de teste disponíveis para o Arduino, como a "Unity" e a "CppUTest".
 
-Uma forma mais avançada de escrever testes no Arduino é usar uma biblioteca de testes, como a [Arduino Unit Testing Library](https://github.com/mmurdoch/arduinounit), que automatiza parte do processo e oferece mais recursos, como a possibilidade de testar múltiplos códigos em um único teste. Além disso, é importante lembrar de manter seus testes atualizados à medida que seu código é alterado e adicionar novos testes sempre que novas funcionalidades forem adicionadas.
-
-## Veja também
-
-- [Tutorial de testes com Arduino](https://www.arduino.cc/en/Guide/UnitTesting)
-- [Tutorial de testes com Arduino Unit Testing Library](https://www.youtube.com/watch?v=dNfZEXLcMgw)
-- [Documentação oficial da Arduino Unit Testing Library](https://github.com/mmurdoch/arduinounit/wiki)
+## Veja também:
+- [Documentação da biblioteca ArduinoUnit] (https://github.com/mmurdoch/arduinounit)
+- [Artigo sobre TDD no Arduino] (https://www.arduino.cc/en/software-testing-tools)
+- [Outras bibliotecas de teste para Arduino] (https://create.arduino.cc/projecthub/?q=testing&t=projects)

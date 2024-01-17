@@ -1,7 +1,7 @@
 ---
-title:                "Перетворення дати в рядок"
-html_title:           "Kotlin: Перетворення дати в рядок"
-simple_title:         "Перетворення дати в рядок"
+title:                "Перетворення дати у рядок"
+html_title:           "Kotlin: Перетворення дати у рядок"
+simple_title:         "Перетворення дати у рядок"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Dates and Times"
@@ -10,32 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Чому
+## Що і чому?
+Конвертація дати в рядок - це процес перетворення дати у формат, який ви можете використовувати для виведення на екран або збереження в базу даних. Програмісти часто це роблять, щоб полегшити спілкування з користувачами або роботою з даними у своїх програмах.
 
-Конвертація дати в строку є дуже корисним процесом в програмуванні, який дозволяє зробити дати більш зрозумілими для користувачів і забезпечити зручну взаємодію із даними.
-
-## Як
-
+## Як це зробити:
+Наступні приклади коду показують, як сконвертувати дату в рядок за допомогою мови Kotlin і вивести його у потрібному форматі:
 ```Kotlin
-// Створюємо об'єкт типу LocalDataTime з поточною датою та часом 
-val currentDateTime = LocalDateTime.now()
+// Створення об'єкта дати
+val date = Date()
 
-// Конвертуємо дату у строку за допомогою методу toString(),
-// передаючи формат, в якому хочемо отримати дату у вигляді строкі
-val stringDate = currentDateTime.toString("dd-MM-yyyy")
+// Форматування дати в рядок за допомогою простого шаблону
+val simpleDateFormat = SimpleDateFormat("dd.MM.yyyy")
+println(simpleDateFormat.format(date)) // вивід: 28.05.2020
 
-// Виводимо отриману строку на екран
-println("Поточна дата у форматі dd-MM-yyyy: $stringDate") 
+// Форматування дати з додаванням назви дня тижня
+val pattern = "EEEE, dd.MM.yyyy"
+val dateFormat = SimpleDateFormat(pattern, Locale("uk", "UA"))
+println(dateFormat.format(date)) // вивід: четвер, 28.05.2020
 
-// Вихід: Поточна дата у форматі dd-MM-yyyy: 29-07-2021
+// Конвертація дати в рядок із заданою часовою зоной
+val timeZone = TimeZone.getTimeZone("Europe/Kiev")
+val timeZoneFormat = SimpleDateFormat("dd.MM.yyyy, HH:mm:ss", Locale("uk", "UA"))
+timeZoneFormat.timeZone = timeZone
+println(timeZoneFormat.format(date)) // вивід: 28.05.2020, 17:30:45
 ```
 
-## Глибше занурення
+## Глибоке дослідження:
+Дати використовуються у програмуванні вже протягом багатьох років і, звичайно, існує багато простіших способів робити це за допомогою стандартних функцій мови Kotlin, таких як ```toString()``` або ```LocalDate.parse()```. Однак, ручне форматування дозволяє більшу гнучкість при виведенні дат у потрібному форматі. Для конвертації дати в рядок також можна використовувати бібліотеки, наприклад, Joda Time або ThreeTen-Extra, які мають більше варіантів форматування та інші корисні функції.
 
-У Kotlin є декілька варіантів конвертації дати в строку: за допомогою методу toString(), за допомогою використання форматувальників (DateTimeFormatter) або за допомогою функції format(). Кожен з цих методів має свої особливості та може бути використаний залежно від конкретної задачі.
-
-## Дивіться також
-
-- [Документація Kotlin про конвертування дати в строку](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.time/-local-date-time/to-string.html)
-- [Стаття на тему форматування дати в Kotlin](https://developer.android.com/guide/topics/ui/look-and-feel/internationalization#date-formats)
-- [Підручник з Kotlin](https://kotlinlang.org/docs/home.html)
+## Додаткові посилання:
+- Офіційна документація Kotlin: https://kotlinlang.org/
+- Приклади конвертації дати в мові Kotlin: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-date-format/
+- Довідник по датам у Kotlin: https://www.baeldung.com/kotlin-date-time

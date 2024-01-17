@@ -10,62 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-Bash is a common Unix shell used to interact with the operating system through the command line. Reading a text file using Bash can be beneficial for those wanting to quickly access and manipulate the contents of a file without having to open a text editor.
+Reading a text file in Bash refers to accessing and extracting data from a file that contains characters and words, rather than binary code. Programmers often need to read text files in order to retrieve information or to modify and manipulate the contents of the file.
 
-## How To
+## How to:
 
-To read a text file using Bash, we can use the `cat` command. This command is used to output the contents of a file onto the command line.
+To read a text file in Bash, you can use the `cat` command along with the file name as an argument. For example, `cat file.txt` will display the contents of the `file.txt` on the terminal.
 
-An example of this would be:
+To read a specific line of a text file, you can use the `sed` command with the `-n` option and specify the line number. For example, `sed -n 5p file.txt` will print the fifth line in the file.
 
-```Bash
-cat example.txt
-```
+You can also use the `head` and `tail` commands to read the first or last few lines of a text file. For example, `head -n 10 file.txt` will show the first 10 lines of the file.
 
-This would output the contents of `example.txt` onto the command line. If the file is large, we can use the `more` or `less` command to scroll through the file.
+## Deep Dive:
 
-```Bash
-more largefile.txt
-less largefile.txt
-```
+Historically, text files were created as a way to store data in a human-readable format. This made it easier for programmers to access and manipulate the information within the file without having to interpret binary code.
 
-We can also search for specific keywords within a text file using the `grep` command. This command allows us to filter out specific lines or phrases from a file.
+Alternatives to reading text files in Bash include using other programming languages such as Python or Java, which have built-in libraries for reading and parsing text files.
 
-An example of this would be:
+When reading a text file in Bash, it is important to understand how the file is structured in terms of characters, lines, and encoding. This can affect how the text is displayed and how it can be manipulated.
 
-```Bash
-grep "keyword" example.txt
-```
+## See Also:
 
-This would output all the lines from `example.txt` that contain the keyword "keyword". We can also use regular expressions with `grep` for more advanced searching.
-
-Lastly, we can read a specific number of lines from a file using the `head` or `tail` command. `head` outputs the first few lines while `tail` outputs the last few lines of a file.
-
-An example of this would be:
-
-```Bash
-head -5 example.txt
-tail -10 example.txt
-```
-
-This would output the first 5 lines and last 10 lines of `example.txt`.
-
-## Deep Dive
-
-Using the `-n` flag with `cat` allows us to read a specific number of lines from a file. For example, `cat -n 15 example.txt` would output the first 15 lines of `example.txt` with line numbers for reference.
-
-We can also use the `wc` command to count the number of words, lines, and characters in a file. The `-l` flag can be used to only count the number of lines in a file.
-
-An example of this would be:
-
-```Bash
-wc -l example.txt
-```
-
-This would output the number of lines in `example.txt`.
-
-## See Also
-- [The Bash Manual](https://www.gnu.org/software/bash/manual/bash.html)
-- [Bash by Example](http://www.freeos.com/guides/lsst/)
+- [Bash Guide for Beginners](http://www.tldp.org/LDP/Bash-Beginners-Guide/html/)
+- [Bash scripting cheat sheet](https://devhints.io/bash)

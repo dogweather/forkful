@@ -1,7 +1,7 @@
 ---
-title:                "Konvertere en streng til små bokstaver."
-html_title:           "Ruby: Konvertere en streng til små bokstaver."
-simple_title:         "Konvertere en streng til små bokstaver."
+title:                "Konvertering av en streng til små bokstaver"
+html_title:           "Ruby: Konvertering av en streng til små bokstaver"
+simple_title:         "Konvertering av en streng til små bokstaver"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Strings"
@@ -10,44 +10,19 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hva & Hvorfor?
+Å konvertere en streng til små bokstaver betyr at alle bokstavene i en tekst blir endret til små bokstaver. Dette er nyttig for å sikre at teksten er konsekvent og enkelt å behandle for programmerere.
 
-Hvis du noen gang har jobbet med tekstbehandling i Ruby, har du kanskje støtt på et tilfelle der du må konvertere en streng til små bokstaver. Dette kan være nyttig for å standardisere data eller for å gjøre de små bokstavene mer leselige.
-
-## Hvordan
-
-Konvertering av strenger til små bokstaver er enkelt med en innebygd Ruby metode kalt `downcase`. Her er et eksempel:
-
-```Ruby
-name = "John Doe"
-puts name.downcase
+## Slik gjør du det:
+```ruby
+tekst = "HELLO WORLD"
+puts tekst.downcase
 ```
-Output:
+Output: hello world
 
-```
-john doe
-```
-Som du kan se, er alle bokstavene i strengen "John Doe" nå konvertert til små bokstaver.
+## Dypdykk:
+Konvertering av strenger til små bokstaver har vært en vanlig programmeringsøvelse siden starten av datamaskinens tid. Tidligere måtte programmører manuelt endre bokstavene for å sikre at teksten var konsekvent. Nå er det heldigvis en enkel funksjon som gjør dette for oss. Det finnes også alternative metoder for å konvertere strenger til små bokstaver, for eksempel ved hjelp av regular expressions. Konverteringsprosessen varierer også avhengig av programmeringsspråk.
 
-Det er også mulig å bruke denne metoden på en mer kompleks streng som inneholder tall eller spesialtegn. Her er et annet eksempel:
-
-```Ruby
-string = "P4$$w0rD!"
-puts string.downcase
-```
-Output:
-
-```
-p4$$w0rd!
-```
-
-## Dypdykk
-
-Nå som du vet hvordan du kan konvertere en streng til små bokstaver, la oss ta en nærmere titt på hvordan denne metoden fungerer. `downcase` funksjonen bruker Unicode tabeller for å vite hvilken bokstav som skal konverteres til små bokstaver. Dette betyr at hvis du jobber med et språk som bruker spesielle tegn eller diakritiske tegn, vil disse også bli konvertert til små bokstaver.
-
-Det er også verdt å nevne at `downcase` ikke endrer selve variabelen som metoden blir brukt på, men returnerer heller en ny streng. Dette betyr at vi kan lagre det konverterte resultatet i en ny variabel eller bare bruke det direkte i utskriften.
-
-## Se også
-
-- [Ruby String Documentation](https://ruby-doc.org/core-2.7.2/String.html)
-- [Unicode Code Charts](https://www.unicode.org/charts/)
+## Se også:
+- Ruby dokumentasjon for String#downcase: https://ruby-doc.org/core-2.7.0/String.html#method-i-downcase
+- "How to convert a string to lowercase in Ruby" (Stack Overflow): https://stackoverflow.com/questions/10262235/how-to-convert-a-string-to-lowercase-in-ruby

@@ -10,46 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why 
+## What & Why?
 
-Sending HTTP requests is an essential task in modern web development. It allows interaction with web servers, enabling data transfer, resources retrieval, and much more.
+Sending an HTTP request is a way for a frontend or backend application to communicate with a web server, usually over the internet. Programmers use HTTP requests to retrieve data from a server, submit form data, or make changes to data stored on the server.
 
-## How To
+## How to:
 
-Sending an HTTP request using TypeScript is made easy with the built-in `fetch` API. Here's a simple example: 
+In TypeScript, we can use the `fetch()` function to send HTTP requests. It takes in a URL and returns a `Promise` that resolves with a `Response` object. Let's take a look at a simple example:
 
-```typescript 
-fetch('https://example.com/api/users')
+```TypeScript
+fetch('https://example.com/users')
   .then(response => response.json())
   .then(data => console.log(data))
+  .catch(error => console.log(error));
 ```
 
-When the above code is executed, it will send a GET request to the specified URL and log the returned data to the console. The `fetch` function returns a `Promise` object, which can be resolved to access the response and use the returned data.
+This code sends a GET request to the `users` endpoint on `example.com` and logs the response data to the console. We use the `then()` and `catch()` methods to handle the asynchronous response in a more readable way.
 
-To send a POST request with data, the `fetch` function can be used in a slightly different way:
+To make a POST request with data, we can pass in an options object as the second parameter:
 
-```typescript 
-fetch('https://example.com/api/users', {
+```TypeScript
+const user = { name: 'John', age: 25 };
+const options = {
   method: 'POST',
-  body: JSON.stringify({ name: 'John', age: 30 })
-})
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify(user)
+};
+fetch('https://example.com/users', options)
   .then(response => response.json())
   .then(data => console.log(data))
+  .catch(error => console.log(error));
 ```
 
-In this example, we are specifying the request method as POST and passing in the data as a JSON string in the `body` option. The server can then handle the data and return a response accordingly.
+In this example, we set the request method to POST, specify the content type as JSON, and pass in the user object as the request body. The server can then read this data and process it accordingly.
 
 ## Deep Dive
 
-The `fetch` function is just one way of sending HTTP requests in TypeScript. There are other popular libraries and frameworks like Axios, SuperAgent, and Angular's HttpClient, which offer more advanced features and options.
+HTTP (Hypertext Transfer Protocol) has been used for communication on the web since the early 1990s. It is a request-response protocol, which means that a client sends a request to a server, and the server responds with a message containing the requested data. This protocol is the foundation of the World Wide Web and enables us to access and share information over the internet.
 
-Additionally, HTTP requests can have headers, which provide additional information about the request or response. These can be set using the `headers` option in the `fetch` function or specific methods provided by other libraries.
+There are also other ways to send data over the web, such as using WebSockets or WebRTC, but HTTP remains the most common and widely supported method.
 
-It is also important to handle errors when making HTTP requests. Most libraries and frameworks allow for error handling through the use of `catch` blocks or error callbacks.
+In addition to using the `fetch()` function, developers can also choose to use third-party libraries like Axios or jQuery to make HTTP requests. These libraries often provide more advanced features, such as automatic parsing of response data or error handling.
 
 ## See Also
 
-- [TypeScript documentation on fetch](https://www.typescriptlang.org/docs/handbook/declaration-files/global-fetch.html)
-- [Axios documentation](https://github.com/axios/axios)
-- [SuperAgent documentation](https://github.com/visionmedia/superagent)
-- [Angular HttpClient documentation](https://angular.io/guide/http)
+- [MDN Web Docs: HTTP Overview](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview)
+- [Axios GitHub Repository](https://github.com/axios/axios)
+- [jQuery AJAX Documentation](https://api.jquery.com/category/ajax/)

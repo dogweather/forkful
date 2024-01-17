@@ -1,7 +1,7 @@
 ---
-title:                "Zufallszahlen generieren"
-html_title:           "Arduino: Zufallszahlen generieren"
-simple_title:         "Zufallszahlen generieren"
+title:                "Erzeugung von Zufallszahlen"
+html_title:           "Arduino: Erzeugung von Zufallszahlen"
+simple_title:         "Erzeugung von Zufallszahlen"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Numbers"
@@ -10,37 +10,22 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+# Was & Warum?
+Das Generieren von zufälligen Zahlen ist ein wichtiger Teil des Programmierens, da es ermöglicht, unvorhersehbare Ergebnisse zu erzeugen. Das kann nützlich sein, um beispielsweise Spiele zu entwickeln oder Sicherheitscodes zu erstellen.
 
-Das Generieren von Zufallszahlen ist eine nützliche Fähigkeit in der Welt des Programmierens, da es viele Anwendungsfälle gibt, in denen wir zufällige Werte benötigen. Zum Beispiel können wir sie verwenden, um zufällige Entscheidungen zu treffen, Spiele zu erstellen oder Verschlüsselung zu verbessern.
+## Wie geht's?
+Das Arduino-Board verfügt über eine integrierte Funktion namens ```random()```, die zufällige Zahlen zwischen 0 und 1 zurückgibt. Sie kann auf verschiedene Arten verwendet werden, um Zahlen mit einem bestimmten Bereich oder Format zu generieren. Hier ist ein Beispiel, um eine zufällige Ganzzahl zwischen 1 und 10 zu erhalten:
 
-## So geht's
-
-Um zufällige Zahlen in Arduino zu generieren, können wir die `random()` Funktion verwenden. Wir müssen jedoch zuerst darauf achten, dass der Zufallszahlengenerator initialisiert wird, indem wir `randomSeed()` verwenden. Schauen wir uns ein Beispiel an:
-
-```Arduino
-// Initialisieren des Zufallszahlengenerators
-randomSeed(analogRead(A0));
-
-// Generieren einer zufälligen Ganzzahl zwischen 0 und 10
-int randomNumber = random(10); 
-
-// Ausgabe der Zufallszahl auf dem seriellen Monitor
-Serial.println(randomNumber); 
+```Arduino 
+int x = random(1, 11); 
 ```
 
-In diesem Beispiel haben wir den Zufallszahlengenerator mit einer analogen Messung initialisiert, um eine unvorhersehbare Ausgangsbasis zu schaffen. Wir haben dann eine zufällige Ganzzahl zwischen 0 und 10 generiert und sie auf dem seriellen Monitor ausgegeben.
+Die Ausgabe könnte zum Beispiel ```5``` sein.
 
-Neben der `random()` Funktion gibt es auch andere Funktionen wie `random(min, max)` zum Generieren von Zufallszahlen in einem bestimmten Bereich, `randomSeed(seed)` zum Festlegen einer benutzerdefinierten Startzahl und `randomize()` zum Aktualisieren des Zufallszahlengenerators basierend auf externen Einflüssen.
-
-## Tiefentauchen
-
-Hinter den Kulissen verwendet der Zufallszahlengenerator in Arduino den linearen kongruenten Generator (LCG) Algorithmus. Dieser Algorithmus ist relativ einfach und schnell, aber er kann bei bestimmten Anwendungsfällen unzuverlässige Ergebnisse liefern, da er periodische Muster aufweisen kann.
-
-Um dieses Problem zu umgehen, gibt es in Arduino auch die `randomBytes()` Funktion, die auf einer Pseudozufallszahlengenerator-Bibliothek basiert und eine bessere Qualität der Zufallszahlen bietet. Dies ist besonders wichtig, wenn es um kryptografische Anwendungen geht.
+## Tiefer Tauchen
+Zufallszahlen spielen in vielen Bereichen der Informatik eine wichtige Rolle. Sie werden nicht nur in Spielen, sondern auch in Kryptographie und statistischen Analysen verwendet. Es gibt auch verschiedene Algorithmen und Methoden, um zufällige Zahlen zu generieren, wie zum Beispiel der Middle-Square-Algorithmus oder der Mersenne-Twister.
 
 ## Siehe auch
-
-- [Arduino - random()](https://www.arduino.cc/reference/en/language/functions/random-numbers/random/)
-- [Arduino - randomSeed()](https://www.arduino.cc/reference/en/language/functions/random-numbers/randomseed/)
-- [Arduino - randomBytes()](https://www.arduino.cc/reference/en/language/functions/random-numbers/randombytes/)
+- [Arduino Referenz zu random()](https://www.arduino.cc/reference/en/language/functions/random-numbers/random/)
+- [Erklärvideo zu Zufallszahlen in der Informatik (auf Deutsch)](https://www.youtube.com/watch?v=TdPL-cAOq8M)
+- [Wikipedia-Artikel über Zufallszahlen](https://de.wikipedia.org/wiki/Zufallszahl)

@@ -10,55 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+¿Qué es y por qué leer argumentos de línea de comando en Python?
 
-¿Te has preguntado alguna vez cómo los programas y scripts en Python pueden recibir información directamente desde la línea de comandos? ¡Eso es gracias a los argumentos de línea de comandos! En este artículo, aprenderás por qué es importante saber cómo leer y usar estos argumentos en tus proyectos de Python.
+La lectura de argumentos de línea de comando en Python se refiere a la capacidad del programa para recibir información o parámetros a través de la línea de comandos al momento de ser ejecutado. Los programadores suelen hacer uso de esta funcionalidad para dar más flexibilidad a sus programas y permitir al usuario personalizar su experiencia de uso.
 
-## Cómo
+## ¿Cómo hacerlo?
 
-Es súper fácil leer los argumentos de línea de comandos en Python. Todo lo que necesitas es utilizar el módulo `sys` y la función `argv`. ¡Echemos un vistazo a un ejemplo!
-
-```Python
-import sys
-
-# Imprime los argumentos de línea de comandos
-print(sys.argv)
-```
-
-Si ejecutamos este código usando `python script.py argumento1 argumento2`, obtendremos la siguiente salida:
-
-```Python
-['script.py', 'argumento1', 'argumento2']
-```
-
-Genial, ¿verdad? Así es como puedes acceder a los argumentos de línea de comandos en tu script. Pero, ¿qué pasa si solo quieres uno de los argumentos? ¡Sigue leyendo para descubrirlo!
-
-## Deep Dive
-
-Además de la función `argv`, el módulo `sys` también nos proporciona la función `arg`, que nos permite acceder a los argumentos individuales de manera más fácil. También podemos utilizar el operador de indexación `[]` para acceder a un argumento específico por su posición en la lista.
-
-Veamos un ejemplo de cómo podemos utilizar esto:
+Para leer argumentos de línea de comando en Python, podemos utilizar el módulo `sys` el cual nos brinda una lista con todos los argumentos pasados al momento de ejecutar el programa. Aquí un ejemplo sencillo:
 
 ```Python
 import sys
 
-# Acceder al tercer argumento de línea de comandos
-print(sys.argv[2])
-
-# Utilizar la función arg para acceder al segundo argumento
-print(sys.arg[1])
+archivo = sys.argv[1] # el primer argumento se encuentra en la posición 1 de la lista
+print("El archivo ingresado es:", archivo)
 ```
 
-En este caso, si ejecutamos el código usando `python script.py argumento1 argumento2 argumento3`, obtendremos la siguiente salida:
+Si ejecutamos este programa con el comando `python programa.py archivo.txt`, el output sería:
 
+```Python
+El archivo ingresado es: archivo.txt
 ```
-argumento2
-argumento2
-```
 
-Ahora ya sabes cómo leer y acceder a los argumentos de línea de comandos en tus proyectos de Python. Puedes utilizar esta información para crear scripts más dinámicos y versátiles que puedan recibir diferentes entradas cada vez que se ejecutan.
+## Inmersión profunda
 
-## Ver También
+La lectura de argumentos de línea de comando es una funcionalidad básica que ha estado presente en lenguajes de programación desde hace mucho tiempo. En Python, esta funcionalidad está disponible gracias al módulo `sys`. Sin embargo, existen también otros módulos que facilitan esta tarea, como por ejemplo `argparse` que nos permite definir opciones y argumentos más complejos a través de código.
 
-- [Documentación oficial de Python sobre módulo `sys`](https://docs.python.org/es/3/library/sys.html)
-- [Tutorial de Programiz sobre argumentos de línea de comandos en Python](https://www.programiz.com/python-programming/command-line-arguments)
+Además, es importante mencionar que la lectura de argumentos de línea de comando tiene una gran importancia en la automatización de tareas y la creación de scripts, ya que nos permite ejecutar comandos de forma más dinámica.
+
+## Ver también
+
+Si quieres saber más sobre cómo utilizar argumentos de línea de comando en Python, puedes consultar la documentación oficial del módulo `sys` y del módulo `argparse`. También puedes leer sobre cómo automatizar tareas con Python en nuestro artículo sobre programación de scripts.

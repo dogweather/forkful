@@ -1,7 +1,7 @@
 ---
-title:                "「二つの日付を比較する」"
-html_title:           "Rust: 「二つの日付を比較する」"
-simple_title:         "「二つの日付を比較する」"
+title:                "「二つの日付の比較」"
+html_title:           "Rust: 「二つの日付の比較」"
+simple_title:         "「二つの日付の比較」"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Dates and Times"
@@ -10,67 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+＃＃それは何ですか？
+日付を比較することは、2つの日付を比べて、どちらが早いかや同じ日付かを確認することです。プログラマーは、日付を比較することで、データを整理したり、特定の条件に基づいて処理を実行したりすることができます。
 
-日付の比較をする理由は何でしょうか？日付の比較は、特定のタスクを実行するために必要な条件分岐を作成するために使用されます。例えば、特定の日付が間にあるかどうかを確認する場合などです。
-
-## 方法
-
-日付を比較するためには、Rustの標準ライブラリである`chrono`パッケージを使用します。まずはこのパッケージをインポートしましょう。
-
+＃＃方法：
 ```Rust
-use chrono::{DateTime, Local, NaiveDate, Duration};
-```
+use std::time::{SystemTime, UNIX_EPOCH}; // 時間を取得するためのライブラリをインポート
+use chrono::{NaiveDate, Local}; // 日付を扱うためのライブラリをインポート
 
-次に、比較したい日付をそれぞれ`DateTime`型や`NaiveDate`型に変換します。この際、`DateTime::parse_from_rfc3339()`や`NaiveDate::parse_from_str()`を使用することで、文字列から日付型に変換することができます。
+// 現在の日付を取得する
+let now = SystemTime::now(); 
 
-```Rust
-let date1 = DateTime::parse_from_rfc3339("2021-04-01T00:00:00+09:00").unwrap();
-let date2 = NaiveDate::parse_from_str("2021-04-05", "%Y-%m-%d").unwrap();
-```
+// UNIXエポックからの経過秒数を取得する
+let since_epoch = now.duration_since(UNIX_EPOCH).expect("Time went backwards"); 
 
-最後に、`date1`と`date2`を比較して、結果を出力します。例えば、次のように条件分岐を作成することができます。
+// 経過秒数を日付オブジェクトに変換する
+let now_date = Local.timestamp(since_epoch.as_secs() as i64, 0); 
 
-```Rust
-if date1 < date2 {
-    println!("{} is earlier than {}", date1, date2);
-} else if date1 == date2 {
-    println!("{} is the same as {}", date1, date2);
+// 比較する日付を定義する
+let date1 = NaiveDate::from_ymd(2021, 6, 20); 
+let date2 = NaiveDate::from_ymd(2021, 6, 30); 
+
+// 日付を比較し、結果を出力する
+if date1 < date2 { 
+    println!("日付 {} は、日付 {} よりも前にあります。", date1, date2);
+} else if date1 > date2 {
+    println!("日付 {} は、日付 {} よりも後ろにあります。", date1, date2);
 } else {
-    println!("{} is later than {}", date1, date2);
+    println!("日付 {} と日付 {} は同じです。", date1, date2);
 }
 ```
 
-実行結果は以下のようになります。
+出力：
+日付 2021-06-20 は、日付 2021-06-30 よりも前にあります。
 
-```
-2021-04-01T00:00:00+09:00 is earlier than 2021-04-05
-```
+＃＃入門：
+日付を比較する方法として、UNIXエポックという時刻の基準を使う方法があります。この基準は、1970年1月1日 00:00:00からの経過秒数を表し、各プログラミング言語で標準的な方法として使用されています。また、一部のライブラリを使用することで、より高度な日付の操作が可能になります。
 
-## 深堀り
+＃＃詳細：
+UNIXエポックは、プログラムで扱いやすいように、秒数単位の数値として表現されます。そのため、日付を比較する際には、まずUNIXエポックからの経過秒数を取得し、それを日付オブジェクトに変換する必要があります。また、Rustで日付を扱う場合は、多くのライブラリがありますが、代表的なものとしては「chrono」があります。
 
-Rustの`DateTime`型や`NaiveDate`型は、それぞれ、タイムゾーンの情報を含んでいるかどうかの違いがあります。`DateTime`型はタイムゾーンの情報を持っているため、異なるタイムゾーンの日付を比較することができますが、`NaiveDate`型はタイムゾーンの情報を持っていないため、同じタイムゾーンである場合にのみ比較ができます。
-
-また、Rustの`Duration`型を使用することで、日付の差分を計算することもできます。例えば、以下のように計算することができます。
-
-```Rust
-let diff = date2.signed_duration_since(date1);
-println!("{} days difference", diff.num_days());
-```
-
-実行結果は以下のようになります。
-
-```
-4 days difference
-```
-
-## おわりに
-
-ご覧いただきありがとうございました。日付の比較については、Rustの`chrono`パッケージを使用することで簡単に実装することができます。さらに詳しい情報は、下記のリンクをご参照ください。
-
-## 関連リンク
-
-- `chrono`パッケージのドキュメント: https://docs.rs/chrono/
-- `DateTime`型のドキュメント: https://docs.rs/chrono/latest/chrono/struct.DateTime.html
-- `NaiveDate`型のドキュメント: https://docs.rs/chrono/latest/chrono/struct.NaiveDate.html
-- `Duration`型のドキュメント: https://docs.rs/chrono/latest/chrono/struct.Duration.html
+＃＃参考：
+- [Rust公式ドキュメント](https://doc.rust-lang.org/nightly/std/time/struct.SystemTime.html)
+- [UNIXエポックについての詳細な解説](https://www.epochconverter.com/)
+- [chronoライブラリのドキュメント](https://docs.rs/chrono/0.4.19/chrono/)

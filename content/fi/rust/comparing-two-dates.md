@@ -10,39 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+# Mitä ja miksi?
 
-Haluatko tietää, miten kaksi päivämäärää vertaillaan? Ehkä olet juuri aloittanut Rust-ohjelmoinnin ja haluat oppia tarkemmin tästä aiheesta. Tämä artikkeli kertoo sinulle kaiken, mitä tarvitset tietää vertaillaaksesi kahta päivämäärää Rust-ohjelmassa.
+Vertaaminen kahden päivämäärän välillä on tärkeä osa ohjelmointia, joka auttaa meitä tekemään päätelmiä ja laskelmia ajan suhteen. Esimerkiksi verkkosivustoilla saattaa olla tarve tarkistaa, onko päivämäärä mennyt tai tuleva. Päivämäärän vertaaminen auttaa myös ohjelmoijia pitämään tiedot järjestyksessä ja suorittamaan tarkkoja ajan määrityksiä.
 
-## Miten
+# Kuinka tehdä?
 
-Vertaaminen Rustissa on helppoa, koska kielessä on valmiiksi sisäänrakennettu tietotyyppi day, joka mahdollistaa päivämäärien käsittelyn. Voit käyttää tämän tietotyypin metodeja vertaillaksesi päivämääriä keskenään.
+Käyttämällä Rust-ohjelmointikieltä, päivämäärän vertaaminen on helppoa ja nopeaa. Voit käyttää  Standard libraryn `chrono`-kirjastoa, joka tarjoaa valmiita työkaluja päivämäärien vertailuun. 
+Alla on yksinkertainen esimerkki kahden päivämäärän vertailemisesta ja tulosten tulostamisesta:
 
 ```Rust
-use std::time::{SystemTime, UNIX_EPOCH};
+use chrono::{DateTime, Duration, Utc};
 
-let today = SystemTime::now().duration_since(UNIX_EPOCH).unwrap().as_secs();
-let yesterday = today - 86400; // 86400 sekuntia on yksi päivä
+fn date_comparison() {
+    let today: DateTime<Utc> = Utc::now();
+    let random_date = "2021-08-01T00:00:00Z".parse::<DateTime<Utc>>().unwrap();
 
-if today > yesterday {
-    println!("Tänään on uudempi päivä kuin eilen.");
-} else if today < yesterday {
-    println!("Eilen oli uudempi päivä kuin tänään.");
-} else {
-    println!("Päivät ovat yhtä suuret.");
+    let difference = random_date - today;
+    println!("Päiviä siihen: {}", difference.num_days());
+    println!("Minuutteja siihen: {}", difference.num_minutes());
 }
+
+date_comparison();
 ```
 
-Tämä koodi luo kaksi päivämäärää: tänään ja eilen. Sitten se vertailee niitä ja tulostaa viestin sen mukaan, kumpi päivä on uudempi. Huomaa, että voit myös vertailla päivämääriä relaatio-operaattoreilla, kuten `>`, `<` ja `==`.
+Tulosteena saamme seuraavan:
 
-## Syvempi sukellus
+```Rust
+Päiviä siihen: 12
+Minuutteja siihen: 17280
+```
 
-Kaksi päivämäärää vertaillaan yleensä tarkastelemalla niiden aikatietoja. Rustin day-tietotyyppi tallentaa päivämäärän aikaleiman sekunteina UNIX-aikaleimaan nähden. Siksi voit laskea näiden aikaleimojen erotuksen ja nähdä, kumpi päivämäärä on edellisempi.
+Kuten näemme, `chrono`-kirjaston `DateTime`-tyyppi mahdollistaa päivämäärien luomisen ja vertailemisen helposti. Voimme myös käyttää `Duration`-tyyppiä laskemaan eron kahden päivämäärän välillä haluamassamme aikayksikössä.
 
-On myös tärkeää huomata, että tietotyypin day käyttö voi olla hieman haasteellista, jos olet tottunut käyttämään päivämääriä muissa kielissä, kuten JavaScript. Esimerkiksi päivämäärän muotoilu ja erilaisten aikavyöhykkeiden huomioiminen voi aiheuttaa vaikeuksia. Siksi on suositeltavaa tarkistaa dokumentaatiosta tarkemmat tiedot ennen päivämäärien vertailua.
+# Syväsukellus
 
-## Katso myös
+Päivämäärien vertaileminen ei ole uusi konsepti, vaan se on ollut osa ohjelmointia jo pitkään. Aikaisemmin, ennen `chrono`-kirjastoa, päivämäärät ja -ajat oli tallennettava ja käsiteltävä monimutkaisissa muodoissa ja vertaileminen oli hankalampaa.
 
-- [Rust-ohjelmointikielen virallinen verkkosivusto](https://www.rust-lang.org/)
-- [Rustin päivämäärä- ja kellotoimintojen dokumentaatio](https://doc.rust-lang.org/std/time/index.html)
-- [Rustin päivämäärät, aikavyöhykkeet ja kellonajat - opas (englanniksi)](https://web.archive.org/web/20170312162801/https://lmg.io/blog/data/2016/11/28/rusts-date-time-and-timezone-lmg.html)
+Nykyisin on myös muita vaihtoehtoja `chrono`-kirjastolle, kuten `time`-kirjasto, joka tarjoaa samanlaisia toiminnallisuuksia. Kuitenkin `chrono` on tällä hetkellä suositumpi ja paremmin ylläpidetty.
+
+# Katso myös
+
+- [Rustin virallinen dokumentaatio DateTime-tietotyypistä](https://doc.rust-lang.org/std/time/enum.DateTime.html)
+- [Time-kirjasto GitHubissa](https://github.com/time-rs/time)
+- [Chrono-kirjasto GitHubissa](https://github.com/chronotope/chrono)

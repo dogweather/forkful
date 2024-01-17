@@ -10,46 +10,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
+Checking if a directory exists is a common task in programming that involves verifying the existence of a specific folder or directory in the file system. Programmers often do this to ensure that their code can successfully access and work with the required files or directories.
 
-If you're a Ruby programmer, you know the importance of error handling and ensuring your code can handle unexpected situations. One common scenario is needing to check if a directory exists before performing operations on it, such as creating a new file inside it. This prevents errors and improves the overall reliability and stability of your code.
-
-## How To
-
-To check if a directory exists in Ruby, you can use the `Dir.exist?` method. Let's take a look at an example:
+## How to:
+To check if a directory exists in Ruby, we can use the ```Dir.exist?``` method. This method takes in a directory path as an argument and returns a boolean value indicating whether the directory exists or not.
 
 ```ruby
-# Check if a 'documents' directory exists
-if Dir.exist?('documents')
-  puts "The 'documents' directory already exists!"
+# Example directory path
+directory_path = "/home/username/Documents"
+
+# Check if directory exists
+if Dir.exist?(directory_path)
+  puts "The directory exists."
 else
-  puts "Creating the 'documents' directory..."
-  Dir.mkdir('documents')
+  puts "The directory does not exist."
 end
 ```
 
-In the example above, we first use the `exist?` method to check if the 'documents' directory exists. If it does, we print a message stating that it already exists. If it doesn't, we use the `mkdir` method to create the directory.
+The output of the above code will be:
 
-You can also use the `Dir.exist?` method in combination with the `File.directory?` method to check if a specific path is a directory, like this:
+```
+The directory exists.
+```
+
+If the directory path specified does not exist, the output will be:
+
+```
+The directory does not exist.
+```
+
+## Deep Dive:
+In previous versions of Ruby, the ```Dir.exists?``` method was used to check if a directory exists. However, this method has been deprecated in favor of using ```Dir.exist?``` for consistency with the ```File.exist?``` method.
+
+Alternatively, we can also use the ```File.directory?``` method to check if a given path leads to a directory. This method returns true if the path leads to a directory, and false if it leads to a file.
 
 ```ruby
-# Check if a specific path is a directory
-path = 'users/john/documents'
-if Dir.exist?(path) && File.directory?(path)
-  puts "'#{path}' is a directory!"
+# Example directory path
+directory_path = "/home/username/Documents"
+
+# Check if directory exists
+if File.directory?(directory_path)
+  puts "The path leads to a directory."
+else
+  puts "The path leads to a file."
 end
 ```
 
-As you can see, we first use the `Dir.exist?` method to check if the path exists, then we use the `File.directory?` method to confirm that it is a directory.
+The output of the above code will be:
 
-## Deep Dive
+```
+The path leads to a directory.
+```
 
-Under the hood, the `Dir.exist?` method uses the `Dir.open` method to open the specified path and check if it is a directory. It then returns a boolean value based on the result. The `File.directory?` method also uses a similar approach, but it also checks for additional details such as permissions and file type.
-
-It's worth mentioning that both these methods will return `true` even if the specified path is a symbolic link to a directory. If you want to specifically check if the actual directory exists, you can use the `File.realdirpath` method.
-
-## See Also
-
-- [Dir.exist? documentation](https://ruby-doc.org/core-2.7.1/Dir.html#method-c-exist-3F)
-- [File.directory? documentation](https://ruby-doc.org/core-2.7.1/File.html#method-c-directory-3F)
-- [File.realdirpath documentation](https://ruby-doc.org/core-2.7.1/File.html#method-c-realdirpath)
+## See Also:
+- [Dir.exist? documentation](https://ruby-doc.org/core-3.0.0/Dir.html#method-c-exist-3F)
+- [File.exist? documentation](https://ruby-doc.org/core-3.0.0/File.html#method-c-exist-3F)
+- [File.directory? documentation](https://ruby-doc.org/core-3.0.0/File.html#method-c-directory-3F)

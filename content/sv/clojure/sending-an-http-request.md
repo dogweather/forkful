@@ -1,7 +1,7 @@
 ---
-title:                "Skicka en http-begäran"
-html_title:           "Clojure: Skicka en http-begäran"
-simple_title:         "Skicka en http-begäran"
+title:                "Sända en http-begäran"
+html_title:           "Clojure: Sända en http-begäran"
+simple_title:         "Sända en http-begäran"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "HTML and the Web"
@@ -10,47 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
 
-Du kanske undrar varför man skulle vilja skicka en HTTP förfrågan. En anledning kan vara att få data från en webbserver, till exempel för att hämta information från en API eller ladda ner en fil.
+Att skicka en HTTP-förfrågan är ett sätt för en programmerare att anropa en extern resurs, som en webbserver, för att få eller skicka information. Det kan användas för att hämta data från en webbplats, skicka formulärdata eller kommunicera med ett API. Det är ett integrerat verktyg för webbutvecklare och en viktig del av internetinfrastrukturen.
 
-## Så här gör du
-
-För att skicka en HTTP förfrågan i Clojure kan du använda funktionen "clj-http.client/request" från biblioteket "clj-http". För att använda det behöver du först importera biblioteket:
+## Så här gör du:
 
 ```Clojure
-(ns min-projekt.core
-  (:require [clj-http.client :as http]))
+(require '[clj-http.client :as client])
+```
+För att skicka en HTTP GET-förfrågan med Clojure, använder vi funktionen `client/get` och anger den URL som vi vill anropa. Detta returnerar en respons som innehåller statuskod, headers och kroppen på svaret.
+```Clojure
+(client/get "https://example.com")
+
+=> {:status 200, :headers {"Content-Type" "text/html"}, :body "<html>...</html>"}
 ```
 
-Sedan kan du använda funktionen, till exempel för att hämta data från en API. I det här exemplet visar vi hur du kan hämta användardata från GitHub API:
-
+Om vi vill skicka en POST-förfrågan och skicka med data i kroppen kan vi använda funktionen `client/post` och ange en `:body` parameter.
 ```Clojure
-(def resultat (http/request
-                {:method :get
-                 :url "https://api.github.com/users/joakimkarud"
-                 :headers {"Accept" "application/json"}}))
-```
+(client/post "https://example.com/api" {:body "name=John&age=30"})
 
-Outputen blir en datastruktur som innehåller all information från förfrågan. För att komma åt specifik data, till exempel användarens namn, kan du använda clojure.core/get:
-
-```Clojure
-(get resultat :body :login) ;; Returnerar "joakimkarud"
+=> {:status 200, :headers {"Content-Type" "application/json"}, :body "{\"message\":\"User created\"}"}
 ```
 
 ## Djupdykning
+HTTP, eller Hypertext Transfer Protocol, är ett protokoll som används för att överföra data över internet. Det infördes redan 1991 av Tim Berners-Lee, som också skapade World Wide Web. Innan dess användes andra protokoll som FTP och Gopher för att överföra data.
 
-När du skickar en HTTP förfrågan finns det flera parametrar som du kan använda för att anpassa din förfrågan. Här är några av de vanligaste:
+Det finns många alternativ till Clojure för att skicka HTTP-förfrågningar, som t.ex. Java-biblioteket Apache HttpComponents eller JavaScript-biblioteket Axios. Men Clojure har den fördelen att det är lätt att integrera med andra delar av Clojure-ekosystemet, som ring, för att hantera HTTP-förfrågningar i en webbapplikation.
 
-- :method: anger vilken typ av förfrågan du skickar, till exempel :get, :post eller :delete.
-- :url: är den URL som du skickar förfrågan till.
-- :headers: innehåller de headers som du vill skicka med förfrågan, som exempelvis "Accept" för att specificera vilket dataformat du vill ha tillbaka.
-- :body: är den data som du vill skicka med din förfrågan, till exempel en JSON-kodad sträng.
-
-Det finns också andra, mer avancerade, parametrar som du kan använda beroende på dina behov.
+När det gäller implementationen av HTTP-förfrågningar i Clojure, använder det sig av Java-biblioteket HttpCore för att hantera kommunikationen med webbservern. Detta betyder att Clojure-utvecklare får tillgång till en kraftfull och stabil implementation av HTTP.
 
 ## Se även
-
-- [Clojure API för HTTP förfrågningar](https://github.com/clj-http/clj-http)
-- [GitHub API dokumentation](https://developer.github.com/v3/)
-- [En tutorial om HTTP förfrågningar i Clojure](https://www.giddyup.co.za/clojure-http-client-tutorial/)
+- [HTTP - Wikipedia](https://sv.wikipedia.org/wiki/Hypertext_Transfer_Protocol)
+- [Clj-http Dokumentation](https://github.com/dakrone/clj-http)
+- [Ring - Clojure Web Application Library](https://github.com/ring-clojure/ring)

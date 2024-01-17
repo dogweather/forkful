@@ -1,7 +1,7 @@
 ---
-title:                "解析 HTML"
-html_title:           "Javascript: 解析 HTML"
-simple_title:         "解析 HTML"
+title:                "解析HTML"
+html_title:           "Javascript: 解析HTML"
+simple_title:         "解析HTML"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "HTML and the Web"
@@ -10,28 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 为什么
+# HTML解析是什么 & 为什么要做？
+HTML解析是将HTML代码转换为可读性更强的文本的过程。这允许我们在网页上进行修改和处理，为开发者提供了更多的控制权。解析HTML也可以帮助网页加载更快，提高用户体验。
 
-为什么会有人选择解析HTML呢？怎么说呢，解析HTML可以让我们更方便地从网页中提取出想要的信息，从而让我们能够更有效地处理数据。
-
-# 怎么做
-
-在Javascript中，我们可以使用内置的`DOMParser`对象来解析HTML。下面是一个简单的例子，我们将解析一个简单的HTML代码，并输出其中的h1标签的内容:
-
+# 如何做：
 ```javascript
-const htmlString = "<h1>Hello, world!</h1>"; // 假设这里是我们从网页上获取的HTML代码
-const parser = new DOMParser(); // 创建DOMParser对象
-const htmlDocument = parser.parseFromString(htmlString, "text/html"); // 使用parseFromString方法解析并生成一个HTML文档对象
-const h1 = htmlDocument.querySelector("h1"); // 使用querySelector方法获取h1标签
-console.log(h1.textContent); // 输出"h1"标签的文本内容，这里会显示"Hello, world!"
+// 在JavaScript中，我们可以使用内置的DOM解析器来解析HTML
+const parser = new DOMParser();
+// 假设我们有一个HTML字符串：
+const htmlString = '<h1>Hello World!</h1>';
+// 使用解析器来解析这段HTML代码并返回一个文档对象
+const doc = parser.parseFromString(htmlString, 'text/html');
+// 现在我们可以通过文档对象来获取HTML元素
+console.log(doc.body.children[0].innerText); // 输出：Hello World!
 ```
 
-# 深入了解
+# 深入了解：
+## 历史背景：
+早期在开发网页时，开发者需要手动解析HTML代码，这是一项费时费力的工作。随着技术的发展，现在我们可以使用现成的工具和库来解析HTML，让开发变得更加高效。
 
-解析HTML其实是一个相对复杂的过程。当我们调用`DOMParser`的`parseFromString`方法时，它实际上会将HTML代码转换成一个完整的HTML文档对象，包括DOM树结构、CSS样式和Javascript代码。因此，我们可以使用一系列的DOM操作方法来从中提取我们需要的内容，比如`querySelector`、`getElementsByTagName`等等。此外，我们还可以使用`innerHTML`属性来直接获取某个元素的内部HTML代码。
+## 替代方案：
+除了使用JavaScript内置的DOM解析器，还可以使用第三方库比如Cheerio来解析HTML。Cheerio提供了类似jQuery的语法来选择和操作HTML元素。
 
-# 参考资料
+## 实现细节：
+在解析HTML时，我们需要注意编码和文档类型的设置，以确保正确解析。此外，解析器还会根据HTML标准处理标签和属性，如自动补全缺失的闭合标签等。
 
-- [MDN - DOMParser](https://developer.mozilla.org/en-US/docs/Web/API/DOMParser)
-- [W3Schools - DOM Nodes](https://www.w3schools.com/js/js_htmldom_nodes.asp)
-- [MDN - Document Object Model (DOM)](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model)
+# 参考资料：
+- [MDN - DOM Parser](https://developer.mozilla.org/en-US/docs/Web/API/DOMParser)
+- [Cheerio Github](https://github.com/cheeriojs/cheerio)
+- [浅谈HTML解析实现原理](https://www.cnblogs.com/wangfupeng1988/p/4325298.html)

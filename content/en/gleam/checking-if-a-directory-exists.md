@@ -10,48 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Why
+## What & Why?
 
-Have you ever encountered an error or malfunction in your code because a directory that was supposed to exist didn't? Checking if a directory exists can save you from these frustrating situations and ensure that your code runs smoothly.
+Checking if a directory exists is a common task in programming where we want to verify whether a given directory exists on the file system or not. This is essential because it allows us to handle situations where the directory may have been deleted or moved. This check is necessary for the smooth functioning of our code and to ensure that we are accessing the correct directory.
 
-# How To
+## How to:
 
-Checking if a directory exists in Gleam is a simple process. First, you need to import the `os` package by using the `import os` statement. Then, you can use the `os.exists` function to check if a directory exists. Here's an example:
+To check if a directory exists in Gleam, we can use the `dir::exists` function from the `gleam/file` module. This function takes in a path to the directory as its argument and returns a boolean value indicating whether the directory exists or not.
 
-```Gleam
-import os
-
-exists := os.exists("/path/to/directory")
-```
-
-The above code will return a Boolean value indicating whether the directory exists or not. You can also use `os.path.exists` for a more detailed check, including checking if the path is a file rather than a directory. Here's an example using `os.path.exists`:
+Let's see an example:
 
 ```Gleam
-import os
+import gleam/file
 
-exists := os.path.exists("/path/to/file")
+pub fn main() {
+  let dir = "path/to/directory/"
+  if dir::exists(dir) {
+    println("Directory exists!")
+  } else {
+    println("Directory does not exist!")
+  }
+}
 ```
 
-The `exists` variable will be set to `True` if the file or directory exists, and `False` if it doesn't.
+If the directory exists, the output will be `Directory exists!`. Otherwise, it will print `Directory does not exist!`.
 
-# Deep Dive
+## Deep Dive:
 
-Behind the scenes, `os.exists` and `os.path.exists` actually use the `Sys.File.stat` function to retrieve the information about the specified path. This function returns a `Sys.File.Info` type, which contains information such as the type of the path (file or directory), the file permissions, and more. 
+In the earlier days of programming, directory checking was usually done by trying to open the directory and checking for any errors. However, this approach was not efficient as it involved a lot of back and forth communication with the file system. Newer languages and libraries like Gleam have built-in functions for this task, making it more efficient and convenient.
 
-If you want to check for the existence of a directory without importing the `os` package, you can also use the `Sys.File.info` function directly. Here's an example:
+An alternative approach to checking if a directory exists is by using the `std::fs` module from the standard library. This module provides the `metadata` function which can be used to retrieve information about a file or directory. However, the approach using `gleam/file` is more straightforward and recommended.
 
-```Gleam
-import Sys.File
+When implemented, the `dir::exists` function uses the `Path.exists` method from the Rust standard library, which ultimately uses the `access` system call to check if the directory exists.
 
-info := Sys.File.info("/path/to/directory")
+## See Also:
 
-is_dir := info.type == Sys.File.Dir
-```
-
-In the above code, the `info` variable will contain the `Sys.File.Info` type for the specified path, and the `is_dir` variable will be set to `True` if the path is a directory.
-
-# See Also
-
-- [Documentation on os.exists](https://gleam.run/packages/std-lib/file/os.html#method-exists)
-- [Documentation on os.path.exists](https://gleam.run/packages/std-lib/file/os.html#method-path-exists)
-- [Documentation on Sys.File.info](https://gleam.run/packages/std-lib/file/File.html#method-info)
+- [`gleam/file` module documentation](https://gleam.run/libraries/file/)
+- [Gleam standard library `std::fs` module documentation](https://gleam.run/stdlib/fs/)
+- [Rust `Path.exists` method documentation](https://doc.rust-lang.org/std/path/struct.Path.html#method.exists)

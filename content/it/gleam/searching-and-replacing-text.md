@@ -10,41 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+## Cosa & Perché?
+La ricerca e la sostituzione di testo è un'attività comune tra i programmatori, che consente di modificare rapidamente e facilmente una grande quantità di testo all'interno di un file o di un progetto. Ciò è particolarmente utile per correggere errori di battitura, cambiare il nome di una variabile o aggiornare l'uso di una determinata parola chiave. In breve, è un modo efficiente per mantenere il codice pulito e preciso.
 
-Sei pronto a migliorare la tua produttività come programmatore? Oppure, sei semplicemente stanco di passare ore a cercare e sostituire del testo all'interno del tuo codice? Con Gleam, puoi semplificare questo compito e risparmiare tempo prezioso grazie alla funzione di ricerca e sostituzione di testo.
-
-## Come Fare
-
-Per utilizzare la funzione di ricerca e sostituzione di testo in Gleam, segui questi semplici passaggi:
-
-1. Apri il tuo progetto o file contenente il testo da cercare e sostituire.
-2. Premi "Ctrl + F" sulla tastiera per aprire la finestra di ricerca.
-3. Immetti il testo che desideri cercare nella casella di ricerca.
-4. Nella casella "Sostituisci con", inserisci il testo con cui vuoi sostituire quello cercato.
-5. Utilizza i pulsanti "Precedente" e "Successivo" per spostarti tra le istanze del testo cercato e visualizzare l'anteprima dei cambiamenti.
-6. Una volta soddisfatto delle sostituzioni effettuate, premi il pulsante "Sostituisci" o "Sostituisci tutto".
-
-Ecco un esempio di codice in Gleam che mostra come utilizzare la funzione di ricerca e sostituzione:
+## Come fare:
+Ecco un esempio di come eseguire una ricerca e sostituzione di testo in Gleam:
 
 ```Gleam
-let testo = "Questo è un esempio di testo da cercare e sostituire."
-let testo_modificato = testo.replace("cercare e", "ricercare e modificare")
-
-let output = testo_modificato
-|> print
+let pi = 3.14
+println("Il valore di pi è $pi.")
 ```
 
-Output: "Questo è un esempio di testo da ricercare e modificare."
+Nell'esempio sopra, vorremmo aggiornare il valore di pi a 3.14159. Per farlo, possiamo utilizzare la funzione di sostituzione "replace" di Gleam:
 
-## Approfondimento
+```Gleam
+let nuovo_pi = replace("3.14", "3.14159", pi)
+println("Il nuovo valore di pi è $nuovo_pi.")
+```
 
-Oltre a semplicemente cercare e sostituire del testo all'interno del codice, Gleam offre anche funzionalità avanzate come la possibilità di utilizzare espressioni regolari nella ricerca e sostituzione. Ciò ti permette di effettuare modifiche in modo più preciso e veloce.
+L'output sarebbe il seguente:
 
-Inoltre, Gleam ti permette di effettuare ricerche case-insensitive (senza differenza tra maiuscole e minuscole), riducendo ancora di più il tempo necessario per trovare e sostituire il testo desiderato.
+```
+Il nuovo valore di pi è 3.14159.
+```
 
-## Vedi Anche
+## Approfondimento:
+La ricerca e la sostituzione di testo è stata introdotta nel linguaggio di programmazione AWK negli anni '70 e da allora è diventata una funzionalità comune in molti linguaggi, tra cui Gleam. Alcune alternative alla ricerca e sostituzione di testo includono l'utilizzo di espressioni regolari e l'uso di editor di testo avanzati. 
 
-- [Documentazione su ricerca e sostituzione in Gleam](https://gleam.run/documentation)
-- [Tutorial su come utilizzare espressioni regolari in Gleam](https://gleam.run/tutorials/regular-expressions.html)
-- [Video tutorial su come utilizzare la funzione di ricerca e sostituzione in Gleam](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
+Dal punto di vista dell'implementazione, la ricerca e la sostituzione di testo solitamente si basa sull'utilizzo di due algoritmi: il "pattern matching" e il "replace". Il primo cerca il testo specificato all'interno di un file, mentre il secondo lo sostituisce con il nuovo testo desiderato. Questi due algoritmi insieme permettono di eseguire una rapida e precisa ricerca e sostituzione di testo.
+
+## Vedi anche:
+- Documentazione di Gleam: https://gleam.run/documentation/
+- Tutorial di ricerca e sostituzione di testo in Gleam: https://gleam.run/tutorials/search-and-replace/

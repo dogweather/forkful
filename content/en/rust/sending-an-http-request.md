@@ -10,65 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-If you're a web developer or creating networked applications, chances are you'll need to send HTTP requests. The HTTP protocol is the backbone of communication on the web, allowing for the transfer of data between servers and clients.
+Sending an HTTP request is a way for programs to communicate with web servers. This is commonly done in order to retrieve data or perform actions on a remote server.
 
-## How To
+Programmers use HTTP requests to create applications that interact with external services and APIs. This allows for a wide range of functionalities, such as retrieving information from websites or sending data to a server for processing.
 
-Sending an HTTP request in Rust is made simple with the Hyper crate. First, add the crate to your dependencies in the Cargo.toml file:
+## How to:
 
-```Rust
-[dependencies]
-hyper = "0.14.2"
-```
-
-Next, import the necessary modules in your code:
+Sending an HTTP request in Rust is made easy with the `reqwest` crate, which provides a simple and flexible API for making HTTP requests. Here's an example of how to send a GET request and print the response using the `reqwest` crate:
 
 ```Rust
-use hyper::Client;
-use hyper::body::HttpBody;
+use reqwest;
+
+let response = reqwest::get("https://www.example.com")?
+ .text()?;
+println!("Response: {}", response);
 ```
 
-Then, create a new HTTP client and specify the URL you want to send the request to:
-
-```Rust
-let client = Client::new();
-let url = "https://www.example.com";
-```
-
-Now, you can create an HTTP request using the `get()` method and passing in the URL:
-
-```Rust
-let request = client.get(url);
-```
-
-Next, send the request using the `send()` method and store the response in a variable:
-
-```Rust
-let mut response = client.send(request).await.unwrap();
-```
-
-To access the response body, you can use the `body_bytes()` method and print it to the console:
-
-```Rust
-let mut body = Vec::new();
-while let Some(chunk) = response.body_mut().data().await {
-    let data = chunk.unwrap();
-    body.extend_from_slice(&data);
-}
-println!("Response body: {:?}", std::str::from_utf8(&body).unwrap());
-```
+This code snippet creates a `GET` request to the URL `https://www.example.com` and uses the `text()` method to retrieve the response body as a string. 
 
 ## Deep Dive
 
-Hyper is built on top of the Tokio asynchronous runtime, allowing for non-blocking and efficient sending of HTTP requests. This means that your code can continue to run while waiting for a response, making it great for creating high-performance web applications.
+HTTP (Hypertext Transfer Protocol) is the underlying protocol used by the World Wide Web. It was first introduced in 1991 and has evolved over the years to become the standard for client-server communication.
 
-Additionally, Hyper allows for easy customization of headers and request parameters, giving you full control over your HTTP requests. It also supports different HTTP methods like POST, PUT, and DELETE, allowing you to create more complex interactions with web servers.
+There are different types of HTTP requests, such as `GET`, `POST`, `PUT`, and `DELETE`, each serving a specific purpose. These requests can carry additional data, known as headers and body, to provide more information to the server.
+
+Other than the `reqwest` crate, there are alternative libraries in Rust for making HTTP requests, such as `hyper` and `ureq`. These provide more low-level control but may require more code to achieve the same functionality as `reqwest`.
+
+Behind the scenes, `reqwest` uses the `hyper` crate to handle the underlying network communication. It also supports features like asynchronous requests and HTTPS.
 
 ## See Also
 
-- [Hyper documentation](https://docs.rs/hyper/0.14.3/hyper/)
-- [Tokio documentation](https://docs.rs/tokio/1.7.1/tokio/)
-
-Sending HTTP requests in Rust is a useful skill to have in your developer toolkit. With the Hyper crate, you can easily make efficient and customizable requests, making your web development projects more robust and powerful. Happy coding!
+- [Official `reqwest` Documentation](https://docs.rs/reqwest/0.11.6/reqwest/)
+- [HTTP Requests in Rust - A Simple Tutorial](https://blog.logrocket.com/http-requests-in-rust-a-simple-tutorial/)
+- [Introduction to HTTP - MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview)

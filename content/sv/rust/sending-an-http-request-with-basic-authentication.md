@@ -10,56 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-#Varför
+## Vad & Varför?
+Att skicka en HTTP-förfrågan med grundläggande autentisering är ett sätt för utvecklare att säkert kommunicera med en webbtjänst. Autentisering används för att verifiera en användares identitet och skydda känslig information från obehöriga. Det är en vanlig praxis för att integrera externa tjänster i applikationer.
 
-För att kommunicera med en server via HTTP, behöver du ibland autentisera dina anrop för att verifiera din identitet. Genom att skicka en HTTP-förfrågan med grundläggande autentisering kan du på ett enkelt och överskådligt sätt hantera och verifiera autentiseringsprocessen.
-
-##Så här gör du
-
-För att skicka en HTTP-förfrågan med grundläggande autentisering i Rust, följ dessa steg:
-
-1. Importera biblioteket `reqwest` i början av din kod.
-
-```rust
+## Så här gör du:
+Här är ett enkelt exempel på hur du kan skicka en HTTP-förfrågan med grundläggande autentisering i Rust:
+```
 use reqwest;
+
+fn main() -> Result<(), Box<dyn std::error::Error>> {
+    let client = reqwest::blocking::Client::new();
+    let mut res = client
+        .get("https://example.com")
+        .basic_auth("username", Some("password"))
+        .send()?;
+
+    println!("Statuskod: {}", res.status());
+    
+    Ok(())
+}
 ```
 
-2. Skapa en `Client` för att hantera anropet till servern.
+Exempelutmatningen visar statuskoden för förfrågan, som i detta fall är förväntat svar 200 OK.
 
-```rust
-let client = reqwest::Client::new();
-```
+## Djupdykning:
+För att förstå hur man skickar en HTTP-förfrågan med grundläggande autentisering är det viktigt att förstå historien bakom det. År 1995 skapades grundläggande autentisering som en del av HTTP-standarderna för att ge en enkel metod för autentisering. Det finns dock alternativ till grundläggande autentisering, som OAuth och JWT, som erbjuder en mer robust och säker autentisering.
 
-3. Konstruera en `RequestBuilder` genom att ange URL:n till servern.
+I Rust används biblioteket Reqwest för att skicka HTTP-förfrågningar. Genom att använda metoden `.basic_auth()` och tillhandahålla användarnamn och lösenord i parametrarna kan en förfrågan med grundläggande autentisering skickas.
 
-```rust
-let builder = client.get("www.example.com");
-```
-
-4. Lägg till autentiseringsinformationen i form av en användarnamn och lösenordskombination.
-
-```rust
-builder.basic_auth("användarnamn", Some("lösenord"));
-```
-
-5. Skicka förfrågan med `send()` och få ett `Response` tillbaka.
-
-```rust
-let response = builder.send().await?;
-```
-
-6. Hantera och använd svaret från servern.
-
-```rust
-let body = response.text().await?;
-println!("{}", body);
-```
-
-##Fördjupning
-
-HTTP-förfrågningar med grundläggande autentisering fungerar genom att skicka autentiseringsuppgifterna i en `Authorization` header som består av autentiseringsprotokollet (i detta fall "Basic") och en Base64-kodad sträng av användarnamn och lösenord. Detta behöver göras för varje enskild förfrågan till servern.
-
-##Se även
-
-- [rust-reqwest paket](https://crates.io/crates/reqwest)
-- [HTTP autentisering](https://developer.mozilla.org/sv/docs/Web/HTTP/Authentication)
+## Se även:
+- Rust Reqwest bibliotekets dokumentation: https://docs.rs/reqwest
+- Mer information om grundläggande autentisering: https://developer.mozilla.org/sv/docs/Web/HTTP/Authentication#indroduction

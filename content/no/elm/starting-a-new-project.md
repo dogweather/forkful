@@ -10,28 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
-Å starte et nytt prosjekt kan virke skremmende, men det kan også være en spennende og givende opplevelse. Ved å begynne et nytt prosjekt i Elm, kan du utfordre deg selv og lære et nytt og spennende programmeringsspråk. Det kan også føre til utvikling av kreativitet og nytenking i prosjektet ditt.
+## Hva & hvorfor?
+Starter et nytt prosjekt betyr å skape en ny eller videreutvikle en eksisterende programvare eller applikasjon. Dette gjøres vanligvis av-programmerere for å møte nye behov, forbedre eksisterende koder eller implementere nye funksjoner.
 
-## Hvordan
-For å starte et nytt prosjekt i Elm, må du først installere Elm på datamaskinen din. Dette kan gjøres ved å følge trinnene på [Elm sin offisielle nettside] (https://guide.elm-lang.org/install.html). Når Elm er installert, kan du åpne kommandolinjen og navigere til den ønskede mappen for prosjektet ditt.
+## Slik gjør du det:
+```Elm
+module Main exposing (..)
+-- Importer alle nødvendige moduler og funksjoner
+-- Ved å bruke "exposing (..)" inkluderer du alle funksjoner
+-- som er tilgjengelige i den importerte modulen
+import Html exposing (..)
+-- En enkel "Hello World" funksjon
+-- som skriver ut en hilsen til brukeren
+-- koden nedenfor vil bli utført ved å kjøre 
+-- `elm reactor` eller `elm make` kommandoen
+main : Program () () ()
+main =
+    Html.text "Hei verden!"
+```
 
-For å opprette et nytt prosjekt, skriv følgende kommando i terminalen:
-```Elm init```
+## Dypdykk:
+Historisk sett, var det å starte et nytt prosjekt en lang og kompleks prosess som krevde mye planlegging og ressurser. Med dagens programmeringsspråk som Elm, kan det nå gjøres raskt og effektivt. Det finnes også andre programmeringsspråk og verktøy som kan brukes til å starte et nytt prosjekt, men Elm tilbyr et elegant og funksjonelt alternativ.
 
-Dette vil generere de nødvendige filene for et grunnleggende Elm-prosjekt. For å kjøre prosjektet i en nettleser, skriv følgende kommando i terminalen:
-```Elm reactor```
-
-Dette vil åpne en lokal server på http://localhost:8000, hvor du kan se prosjektet ditt i nettleseren.
-
-Nå kan du begynne å kode i Elm og teste koden din ved å oppdatere siden i nettleseren.
-
-## Dypdykk
-Når du er klar for å dykke dypere inn i ditt nye Elm-prosjekt, kan du bruke Elm sin dokumentasjon og online ressurser for å lære mer om språket. [Elm sin offisielle nettside] (https://guide.elm-lang.org/) har en guide som tar deg gjennom alt fra grunnleggende konsepter til mer avanserte emner. Det finnes også mange online kurs og tutorials tilgjengelig for å hjelpe deg med å forstå og mestre Elm.
-
-I tillegg er Elm et open source-språk, så du kan dykke inn i kildekoden til prosjektet ditt eller andre prosjekter for å lære mer og få inspirasjon til ditt eget prosjekt.
-
-## Se også
-* [Elm sin offisielle nettside] (https://guide.elm-lang.org/)
-* [Elm sin dokumentasjon] (https://package.elm-lang.org/)
-* [Elm sin subreddit] (https://www.reddit.com/r/elm/)
+## Se også:
+- Elm dokumentasjon: https://guide.elm-lang.org/
+- Elm forum: https://discourse.elm-lang.org/
+- Elm pakker: https://package.elm-lang.org/

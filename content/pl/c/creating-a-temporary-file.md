@@ -1,7 +1,7 @@
 ---
-title:                "Tworzenie tymczasowego pliku"
-html_title:           "C: Tworzenie tymczasowego pliku"
-simple_title:         "Tworzenie tymczasowego pliku"
+title:                "Tworzenie pliku tymczasowego"
+html_title:           "C: Tworzenie pliku tymczasowego"
+simple_title:         "Tworzenie pliku tymczasowego"
 programming_language: "C"
 category:             "C"
 tag:                  "Files and I/O"
@@ -10,52 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i Dlaczego?
 
-Tworzenie tymczasowych plików jest nieodłączną częścią wielu programów w języku C. To ważna umiejętność, ponieważ pozwala na przechowywanie i manipulowanie danymi w sposób bezpieczny i skuteczny.
+Tworzenie pliku tymczasowego to proces, w którym programista tworzy plik, który istnieje tylko czasowo i jest używany do przechowywania danych lub wyników w trakcie wykonywania programu. Programiści często tworzą tymczasowe pliki, aby uniknąć modyfikacji lub przejścia przez wiele kroków, które mogą być potrzebne do wykonania danej czynności.
 
-## Jak To Zrobić
+## Jak to zrobić:
 
-Wykorzystując funkcję `tmpfile()` biblioteki standardowej języka C, można stworzyć tymczasowy plik w prosty sposób. Oto przykładowy kod:
-
+### Przykład 1:
 ```C
 #include <stdio.h>
 
-int main(void)
-{
-  FILE *tmp = tmpfile();
-
-  if (tmp == NULL)
-  {
-    printf("Nie można utworzyć tymczasowego pliku.\n");
-    return 1;
-  }
-
-  fputs("To jest przykładowy tekst.", tmp);
-
-  // Otwórz i odczytaj zawartość tymczasowego pliku.
-  fseek(tmp, 0, SEEK_SET);
-  char c = fgetc(tmp);
-
-  printf("%c\n", c); // Powinno wypisać "T".
-
-  // Usuń tymczasowy plik.
-  fclose(tmp);
-
-  return 0;
+int main() {
+    FILE *temp_file = tmpfile(); //tworzenie tymczasowego pliku
+    fprintf(temp_file, "To jest tymczasowy plik\n");
+    fputs("zawierający dane\n", temp_file);
+    fclose(temp_file); //zamykanie pliku
+    return 0;
 }
 ```
+**Output:**
+Tymczasowy plik będzie zawierał tekst "To jest tymczasowy plik" oraz "zawierający dane".
 
-Ten przykład wykorzystuje funkcję `fseek()` do ustawienia wskaźnika na początek pliku i następnie odczytuje pierwszy znak za pomocą funkcji `fgetc()`. Należy pamiętać, że wszystkie operacje na tymczasowym pliku należy wykonać przed jego zamknięciem, ponieważ po tym użytkownik nie ma już do niego dostępu.
+### Przykład 2:
+```C
+#include <stdio.h>
 
-## Deep Dive
+int main() {
+    FILE *temp_file = fopen("temp.txt", "w+"); //tworzenie pliku tymczasowego o nazwie "temp.txt"
+    fputs("To jest tymczasowy plik", temp_file);
+    fseek(temp_file, 0, SEEK_SET); //ustawianie wskaźnika na początek pliku
+    char buffer[50];
+    fscanf(temp_file, "%s", buffer); //czytanie zawartości pliku i zapisanie jej w buforze
+    printf("%s\n", buffer); //wypisywanie zawartości bufora
+    fclose(temp_file); //zamykanie pliku
+    return 0;
+}
+```
+**Output:**
+Tymczasowy plik "temp.txt" będzie zawierał tekst "To jest tymczasowy plik" i zostanie wypisany na ekran.
 
-Funkcja `tmpfile()` jest często używana podczas przetwarzania dużych plików lub w sytuacjach, gdy potrzebujemy tymczasowego miejsca do przechowywania danych. Wtedy też może się okazać, że stworzenie i usunięcie tymczasowego pliku jest szybsze niż użycie pamięci zwalnianej przez funkcję `malloc()`.
+## Głębsze nurkowanie:
 
-Istnieje również możliwość tworzenia nazwanych tymczasowych plików, dzięki wykorzystaniu funkcji `mkstemp()`. Pozwala to na lepszą kontrolę nad plikiem, ponieważ mamy możliwość nadania mu własnej nazwy.
+Tworzenie tymczasowego pliku jest praktykowane od dawna, gdyż zapewnia wiele korzyści. Głównym powodem jest uniknięcie zaburzenia istniejących plików lub zmiany danych, które mogą być potrzebne do późniejszego wykorzystania. Alternatywą dla tworzenia tymczasowego pliku może być użycie pamięci podręcznej, jednak może to być mniej wydajne. Implementacja tworzenia tempfile w języku C jest zależna od systemu operacyjnego, ale ogólnie korzysta z funkcji fopen() i fclose().
 
-## Zobacz też
+## Zobacz również:
 
-- [Poradnik do języka C](https://pl.wikibooks.org/wiki/Programowanie/Jezyk_C)
-- [Dokumentacja funkcji `tmpfile()`](https://www.cplusplus.com/reference/cstdio/tmpfile/)
-- [Poradnik do pracy z plikami w języku C](https://www.tutorialspoint.com/cprogramming/c_file_io.htm)
+[Funkcja tmpfile() w języku C](https://www.tutorialspoint.com/c_standard_library/c_function_tmpfile.htm)
+
+[Główna strona języka C](https://www.cprogramming.com/)

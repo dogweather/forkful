@@ -10,53 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego?
+## Co i dlaczego?
+Konkatenacja lub łączenie ciągów znaków to proces łączenia dwóch lub więcej ciągów znaków w jeden dłuższy ciąg. Programiści często stosują tę operację, aby tworzyć wyrażenia lub komunikaty składające się z kilku części.
 
-Jeśli jesteś programistą w języku C, bardzo prawdopodobne, że w pewnym momencie będziesz musiał złączyć dwa lub więcej napisów (stringów). Może to być potrzebne do wyświetlenia użytkownikowi czytelniejszej wiadomości lub do przekazania danych do innej funkcji. W tym artykule dowiesz się, jak w prosty sposób połączyć stringi w C.
+## Jak to zrobić:
+```c
+// Przykładowy kod w języku C
+#include <stdio.h>
 
-## Jak To Zrobić?
-
-Aby połączyć dwa stringi, należy użyć funkcji `strcat()`.  W poniższym przykładzie połączymy dwa napisy "Hello" i "World" i wyświetlimy je jako jedną wiadomość:
-
-```C
-#include<stdio.h>
-#include<string.h>
-int main()
-{
-    char string1[20] = "Hello";
-    char string2[20] = "World";
+int main() {
+    char message_one[] = "Witaj";
+    char message_two[] = "Karol!";
     
-    /* używamy funkcji strcat() do połączenia stringów */
-    strcat(string1, string2);
+    char concatenated[50]; // odpowiednio duża tablica dla naszych dwóch wiadomości
     
-    /* wyświetlamy wynik */
-    printf("Połączone napisy: %s", string1);
-    
+    // konkatenacja za pomocą funkcji sprintf
+    sprintf(concatenated, "%s %s", message_one, message_two);
+
+    printf("%s", concatenated);
+
     return 0;
 }
 ```
-
-#### Wynik:
+Wynik:
 ```
-Połączone napisy: HelloWorld
-```
-
-## Deep Dive
-
-Funkcja strcat() jest zdefiniowana w bibliotece string.h i jest częścią standardu języka C. Jej prototyp wygląda następująco:
-
-```C
-char *strcat(char *string1, const char *string2)
+Witaj Karol!
 ```
 
-Pierwszy argument (`string1`) jest napisem, do którego zostanie dołączony drugi argument (`string2`). Funkcja zwraca wskaźnik do pierwszego argumentu `string1`.
+## W zagłębienie:
+Konkatenacja ciągów znaków ma długą historię w programowaniu. W języku C jest to jedna z najczęściej stosowanych operacji, ale na przestrzeni lat powstały też inne metody, takie jak funkcja `strcat` czy operator `+` w języku Python. Warto pamiętać, że operacja ta może być czasochłonna i wymagać odpowiedniej alokacji pamięci dla nowego ciągu.
 
-Należy zwrócić uwagę, że pierwszy argument musi mieć wystarczającą ilość miejsca, aby pomieścić zawartość drugiego argumentu wraz z null-terminatorem, w przeciwnym razie może dojść do przepełnienia bufora.
-
-Więcej informacji na temat funkcji strcat() i innych funkcji związanych z manipulacją napisami w języku C można znaleźć w [dokumentacji](https://en.cppreference.com/w/c/string/byte/strcat).
-
-## Zobacz Również
-
-- [Funkcja strcpy() w języku C](https://www.programiz.com/c-programming/library-function/string.h/strcpy)
-- [Porównywarka stringów w języku C](https://www.geeksforgeeks.org/compare-two-strings-in-c-3-different-ways/)
-- [Operacje na stringach w C](https://www.tutorialspoint.com/cprogramming/c_strings.htm)
+## Zobacz także:
+- [Funkcja `strcat` w języku C](https://www.tutorialspoint.com/c_standard_library/c_function_strcat.htm)
+- [Konkatenacja ciągów w języku Python](https://python.pl/konkatenacja-ciągów-znakowych/)
+- [Porównanie wydajności konkatenacji w różnych językach programowania](https://benchmarksgame-team.pages.debian.net/benchmarksgame/fastest/csharp.html)

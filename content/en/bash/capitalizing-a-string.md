@@ -10,60 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-Capitalizing strings in Bash can be useful for various reasons, such as standardizing user input or displaying data in a consistent format. It not only makes your code more readable but also improves its overall functionality.
+Capitalizing a string in Bash means converting all letters in a string to uppercase. Programmers may do this to normalize input data or for stylistic purposes in their code.
 
-## How To
+## How to:
 
-To capitalize a string in Bash, we can use the `tr` command along with the `[:lower:]` and `[:upper:]` options. First, we need to store the string in a variable. Let's use the name "john" as an example:
-
-```Bash
-name="john"
-```
-
-Next, we will use the `tr` command to capitalize the first letter of the string:
+To capitalize a string in Bash, we can use the built-in ```tr``` command along with the ```[:lower:]``` and ```[:upper:]``` character classes.
 
 ```Bash
-echo "$name" | tr '[:lower:]' '[:upper:]'
+# Syntax:
+# echo [string] | tr [from_chars] [to_chars]
+
+echo "hello world" | tr [:lower:] [:upper:]
+
+# Output:
+HELLO WORLD
 ```
 
-This will output "JOHN". To capitalize the entire string, we can use the `tr` command again, but this time we will use the `[:upper:]` option twice:
+Another way to capitalize a string is by using the parameter expansion feature in Bash. We can use the ```^``` character to capitalize the first letter and ```^^``` to capitalize all letters.
 
 ```Bash
-echo "$name" | tr '[:lower:]' '[:upper:]' | tr '[:upper:]' '[:lower:]'
+# Syntax:
+# ${parameter^} or ${parameter^^}
+
+lowercase="hello world"
+echo "${lowercase^}"
+echo "${lowercase^^}"
+
+# Output:
+Hello world
+HELLO WORLD
 ```
 
-The above command will output "JOHN". Alternatively, we can also use the `toupper` and `tolower` functions in Bash:
+## Deep Dive:
 
-```Bash
-toupper "$name"
-tolower "$name"
-```
+The ```tr``` command has been available in Unix and Unix-like systems since the 1970s and is commonly used for text manipulation. It stands for "translate" and can be used to convert one set of characters to another.
 
-Both of these commands will output "JOHN". Keep in mind that these methods of capitalizing a string will only work for ASCII characters.
+Alternative ways to capitalize a string in Bash include using command substitution or using external programs like ```awk``` or ```sed```. However, the ```tr``` method is the most concise and efficient.
 
-## Deep Dive
+The Bash parameter expansion feature was added in version 4.0 and offers more flexibility in manipulating strings. Apart from capitalizing, we can also convert to lowercase or perform other modifications.
 
-Bash provides various built-in string manipulation functions that can be used to capitalize strings. These include `strtoupper` and `strtolower` which work similar to their counterparts `toupper` and `tolower` but also support non-ASCII characters.
+## See Also:
 
-Additionally, we can use parameter expansion to capitalize the first letter of a string like so:
-
-```Bash
-name="john"
-echo "${name^}"
-```
-
-This will output "John". To capitalize the entire string, we can simply use two caret symbols:
-
-```Bash
-name="john"
-echo "${name^^}"
-```
-
-This will output "JOHN". Parameter expansion provides more flexibility when it comes to manipulating strings in Bash.
-
-## See Also
-
-- Full list of `tr` commands: https://www.gnu.org/software/coreutils/tr
-- Bash information and documentation: https://www.gnu.org/software/bash/
+- [Bash Documentation](https://www.gnu.org/software/bash/manual/bash.html)
+- [tr command in Unix Wiki](https://en.wikipedia.org/wiki/Tr_(Unix))
+- [Bash Parameter Expansion](https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html#Shell-Parameter-Expansion)

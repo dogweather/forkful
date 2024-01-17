@@ -10,32 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+#Qu'est-ce que c'est et pourquoi le faire ?
 
-Vous vous demandez peut-être pourquoi il serait utile de connaître la longueur d'une chaîne de caractères lors de la programmation en Fish Shell. Eh bien, c'est une information importante pour les manipulations et les vérifications des données, en particulier lors de l'écriture de scripts ou de commandes.
+Trouver la longueur d'une chaîne de caractères est simplement le fait de compter le nombre de caractères présents dans cette chaîne. Les programmeurs le font souvent pour vérifier la validité des données entrées par l'utilisateur ou pour effectuer des opérations sur des chaînes de caractères.
 
-## Comment faire
-
-En utilisant la commande intégrée `string length`, nous pouvons facilement trouver la longueur d'une chaîne de caractères. Voici un exemple de code et son résultat :
+#Comment faire :
 
 ```Fish Shell
-set maChaine "Bonjour!"
-echo "La longueur de maChaine est" (string length $maChaine)
+# Pour trouver la longueur d'une chaîne de caractères, utilisez la fonction "string length"
+set chaine "Bonjour!"
+set longueur (string length $chaine)
+echo "La chaîne '$chaine' contient $longueur caractères."
 ```
 
-Résultat :
-
+Résultat attendu :
 ```
-La longueur de maChaine est 9
+La chaîne 'Bonjour!' contient 8 caractères.
 ```
 
-## Deep Dive
+#Plongée en profondeur :
 
-Maintenant, intéressons-nous un peu plus à la commande `string length`. Cette commande renvoie simplement le nombre de caractères dans une chaîne de caractères donnée. Il prend en compte les espaces, les lettres majuscules et minuscules, ainsi que les caractères spéciaux. Par exemple, si nous donnons la chaîne de caractères "Hello, world!" à la commande, elle renverra 13 comme résultat, car il y a 13 caractères dans cette phrase.
+Historiquement, la recherche de la longueur d'une chaîne de caractères était souvent réalisée en bouclant à travers chaque caractère de la chaîne et en comptant manuellement. Cependant, avec l'évolution des langages de programmation, des fonctions prédéfinies telles que "string length" sont disponibles pour simplifier cette tâche.
+Dans d'autres langages de programmation, vous pouvez également utiliser la méthode "length" pour trouver la longueur d'une chaîne de caractères.
 
-Il est également important de noter que la commande `string length` ne peut être utilisée que sur des chaînes de caractères, et non sur des entiers ou d'autres types de données.
+#Voir aussi :
 
-## Voir aussi
-
-- [Documentation Fish Shell sur la commande `string length`](https://fishshell.com/docs/current/index.html#string-length)
-- [Plus de détails sur les manipulations de chaînes de caractères en Fish Shell](https://www.linode.com/docs/guides/fish-string-manipulation/)
+- Documentation officielle sur la fonction "string length" de Fish Shell : https://fishshell.com/docs/current/cmds/string-length.html
+- Documentation officielle sur la méthode "length" en JavaScript : https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/String/length

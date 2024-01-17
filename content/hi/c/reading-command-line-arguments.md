@@ -1,7 +1,7 @@
 ---
-title:                "कम्प्यूटर प्रोग्रामिंग पर कामांड लाइन आर्गुमेंट्स को पठन करना"
-html_title:           "C: कम्प्यूटर प्रोग्रामिंग पर कामांड लाइन आर्गुमेंट्स को पठन करना"
-simple_title:         "कम्प्यूटर प्रोग्रामिंग पर कामांड लाइन आर्गुमेंट्स को पठन करना"
+title:                "कम्प्यूटर प्रोग्रामिंग में कमांड लाइन आर्ग्यूमेंट्स पढ़ना"
+html_title:           "C: कम्प्यूटर प्रोग्रामिंग में कमांड लाइन आर्ग्यूमेंट्स पढ़ना"
+simple_title:         "कम्प्यूटर प्रोग्रामिंग में कमांड लाइन आर्ग्यूमेंट्स पढ़ना"
 programming_language: "C"
 category:             "C"
 tag:                  "Files and I/O"
@@ -10,68 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Kyun
+कमांड लाइन आर्ग्यूमेंट को कैसे पढ़ते हैं और क्यों करते हैं?
+कमांड लाइन आर्ग्यूमेंट किस्से है? इसे कैसे उपयोग किया जाता है? प्रोग्रामर इसका क्यों उपयोग करते हैं?
 
-Kisi bhi programming language mein command line arguments bahut important hote hain. Ye humare programs ko user input se interact karne ka ek tarika hote hain. C programming language mein bhi command line arguments ka use bahut common hai, isliye is article mein hum jaanenge ki command line arguments kya hote hain aur unhe kaise padh sakte hain.
+## What & Why?
 
-## Kaise
+कमांड लाइन आर्ग्यूमेंट एक प्रोग्राम परामीटर है जो प्रोग्राम को रन करने के दौरान पास किए जाते हैं। यह पूर्व-निर्धारित और बदलने योग्य मानों को दर्शाता है जो प्रोग्राम द्वारा स्वीकार किए गए हैं। प्रोग्रामर आमतौर पर अपने प्रोग्राम को उपयोगकर्ताओं के द्वारा प्रदान की गई जानकारी के आधार पर अलग-अलग तरीकों से चलाने के लिए कमांड लाइन आर्ग्यूमेंट का उपयोग करते हैं।
 
-Command line arguments ko padhne ke liye hum `main()` function ke parameters ka use karte hain. `int argc` aur `char *argv[]` parameter hume program ke command line arguments ko hold karta hai. Yahan hum aapko ek simple example de rahe hai jismein hum command line arguments ko print karenge:
+## How to:
 
-```C
+बस संभव है, सरलता के लिए, हम यहां एक परिचय प्रदान कर सकते हैं जिसमें हम जानेंगे कि कमांड लाइन आर्ग्यूमेंट क्या है और कैसे इसका उपयोग किया जाता है। निम्नलिखित स्टेटमेंट एक लेखक के द्वारा एक दिया हुआ कोड मानचित्र का उदाहरण है, जो हमारे पास कोडिंग के बजाय अधिक कंप्रास्ड है।
+
+कोड मानचित्र:
+
+```c
 #include <stdio.h>
 
-int main(int argc, char *argv[]) {
-    int i;
-    for (i=1; i<argc; i++) {
+int main(int argc, char* argv[]) {
+    printf("Welcome to the command line argument tutorial!\n");
+    printf("You have provided %d arguments.\n", argc);
+
+    for(int i = 0; i < argc; i++) {
         printf("Argument %d: %s\n", i, argv[i]);
     }
+
     return 0;
 }
 ```
 
-**Output:**
+आउटपुट:
 
 ```
-Argument 1: Hello
-Argument 2: World
+Welcome to the command line argument tutorial!
+You have provided 3 arguments.
+Argument 0: ./prog
+Argument 1: hello
+Argument 2: world
 ```
 
-Humein baar baar command line arguments ko string mein convert karna padta hai kyunki `argv[]` array sirf strings ko store karta hai. Isliye agar hume kisi argument ko number ya character form mein use karna hai toh hume use `atoi()` aur `atof()` functions se convert karna padega, jaise ki yeh code snippet dikhaata hai:
+उपरोक्त कोड मानचित्र में, हमने ```argc``` और ```argv[]``` प्रदान किए हैं, जिसमें ```argc``` प्रोग्राम द्वारा स्वीकार किए गए आर्ग्यूमेंट की संख्या है और ```argv[]``` उन सभी आर्ग्यूमेंट को संग्रहीत करता है। हमने एक फ़ॉर लूप का उपयोग किया है जो हमारे कोड में प्राप्त होने वाले सभी कमांड लाइन आर्ग्यूमेंट को प्रिंट करता है। संख्या आरजीबी के उपयोग से होने से प्रोग्राम अपनी आर्ग्यूमेंट की गिनती कर सकता है और काजगी C की अलग-अलग संरचनाओं के बारे में अधिक अवधारणाओं को बचाने के लिए इसका उपयोग कर सकता है।
 
-```C
-#include <stdio.h>
-#include <stdlib.h>
+## Deep Dive:
 
-int main(int argc, char *argv[]) {
-    int num = atoi(argv[1]);
-    float dec = atof(argv[2]);
-    printf("Integer value: %d\n", num);
-    printf("Decimal value: %f\n", dec);
-    return 0;
-}
-```
-
-**Command line input:**
-
-```
-./program_name 10 3.14
-```
-
-**Output:**
-
-```
-Integer value: 10
-Decimal value: 3.140000
-```
-
-## Deep Dive
-
-Agar hum baat karein toh command line arguments ko padhne ka kaam bahut simple hai. `argc` variable hume arguments ki total count deta hai aur `argv` array mein hum inko access kar sakte hain. Lekin kya aap jaante hain ki hum kisi bhi program mein command line arguments ko modify bhi kar sakte hain? Haan, hum iske liye `int main()` function ke jagah `int main(int argc, char *argv[], char *envp[])` declare kar sakte hain. Yahan `envp[]` parameter hume environment variables ko hold karta hai aur hum inhe bhi access aur modify kar sakte hain.
-
-## See Also
-
-Is article mein humne sirf basic command line argument handling ke baare mein baat ki hai. Agar aapko aur zyada information chahiye toh aap neeche diye gaye resources ko check kar sakte hain.
-
-- [The Linux Documentation Project - Command Line Arguments in C](https://tldp.org/LDP/lpg/node11.html)
-- [GeeksforGeeks - Command Line Arguments in C/C++](https://www.geeksforgeeks.org/command-line-arguments-in-c-cpp/)
+कमांड लाइन आर्ग्यूमेंट का इतिहास बहुत पुराना है। पहले दौर में, मानों को निर्धारित करने के लिए मानक इनपुट के

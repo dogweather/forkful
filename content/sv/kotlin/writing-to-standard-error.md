@@ -10,46 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
 
-Det finns olika anledningar till varför man ibland behöver använda sig av standard error-utskrift i Kotlin. Det kan vara för att felsöka, skriva ut vissa meddelanden eller bara för att få feedback under körning. Oavsett anledning är det en användbar funktion att ha tillgång till.
+Att skriva till standard error är en vanlig praxis bland programmerare för att skriva ut felmeddelanden och debugging-information. Detta hjälper till att identifiera och åtgärda problem i koden på ett effektivt sätt.
 
-## Så här gör du
-
-Att skriva till standard error i Kotlin är enkelt och kräver bara en liten förändring i din kod. Det finns två sätt att göra det på, antingen genom att använda "System.err" eller genom att använda "printStackTrace()".
-
-Båda metoderna kan användas genom att placera dem inuti en "try-catch" block, som fångar ett visst fel och skriver ut det till standard error. Här är ett exempel på hur det skulle kunna se ut:
+## Hur man gör:
+Kotlin har inbyggda funktioner för att skriva till standard error, vilket gör det enkelt och smidigt för programmerare att använda. Här är ett enkelt exempel på hur man skriver en textsträng till standard error:
 
 ```Kotlin
-try {
-    // Kod som kan orsaka ett fel
-} catch(exception: Exception) {
-    System.err.println("Ett fel inträffade: ${exception.message}")
-    exception.printStackTrace()
+fun main() {
+    System.err.println("Det här är ett felmeddelande.")
 }
 ```
-
-Det finns också ett annat sätt att skriva till standard error, vilket är att använda "printStackTrace()" direkt på ett exception, som visas nedan:
-
-```Kotlin
-try {
-    // Kod som kan orsaka ett fel
-} catch(exception: Exception) {
-    exception.printStackTrace(System.err)
-}
+Output:
 ```
+Det här är ett felmeddelande.
+```
+Det är viktigt att notera att ```System.err.println()``` använder standard output som är tillgänglig för alla användare, medan ```System.out.println()``` används för att skriva till en specifik användare.
 
-Båda metoderna ger samma resultat, där felet skrivs ut till standard error. Det är viktigt att notera att "printStackTrace()" också kan användas utanför en "try-catch" block för att skriva ut stack-trace-informstion.
+## Djupdykning:
+Att skriva till standard error har varit en standard inom programmering sedan tidigare språk som C och Java. Innan dess var det vanligt att använda standard output för att skriva ut felmeddelanden, vilket kunde leda till förvirring och problem med att hitta den exakta orsaken till ett fel.
 
-## Djupdykning
+En alternativ metod för att hantera felmeddelanden är att använda loggbibliotek som Log4j eller SLF4J, vilka tillhandahåller mer avancerade funktioner för att spåra och hantera fel i en applikation.
 
-Standard error är den ström som används för att skriva ut felmeddelanden när en applikation kör. Det är en av de viktigaste skälen till att man bör lära sig hur man skriver till den i Kotlin. Standard error är också en del av Java API och är därför tillgänglig för användning i Kotlin.
+Vid implementering av skrivning till standard error bör man vara medveten om eventuella problem med utdataströmmar och se till att de hanteras på ett korrekt sätt för att undvika potentiella problem.
 
-En annan viktig anledning till att använda standard error är för att få information om vilka delar av koden som orsakade ett exception eller fel. Detta är särskilt användbart vid utveckling och felsökning av en applikation.
-
-Slutligen är det viktigt att notera att meddelanden som skrivs ut med "System.err" kommer att visas i rött i de flesta utvecklingsmiljöer, vilket gör det lättare att se dem bland andra utskrifter.
-
-## Se även
-
-- [The official Kotlin documentation on standard error](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.system/-kotlin.-system.err/index.html)
-- [A tutorial on error handling in Kotlin](https://kotlinlang.org/docs/reference/exceptions.html)
+## Se även:
+- [Kotlin Dokumentation: System.err](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-system.err/)
+- [Log4j](https://logging.apache.org/log4j/)
+- [SLF4J](https://www.slf4j.org/)

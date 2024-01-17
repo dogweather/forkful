@@ -1,7 +1,7 @@
 ---
-title:                "Envoi d'une requête http avec authentification de base"
-html_title:           "TypeScript: Envoi d'une requête http avec authentification de base"
-simple_title:         "Envoi d'une requête http avec authentification de base"
+title:                "Envoi d'une requête http avec une authentification de base"
+html_title:           "TypeScript: Envoi d'une requête http avec une authentification de base"
+simple_title:         "Envoi d'une requête http avec une authentification de base"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "HTML and the Web"
@@ -10,61 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Quoi & Pourquoi?
+L'envoi d'une requête HTTP avec une authentification de base est un moyen pour les programmeurs d'envoyer des informations sensibles de manière sécurisée. Cela permet de s'assurer que seuls les utilisateurs autorisés peuvent accéder aux données.
 
-L'envoi de requêtes HTTP avec une authentification de base est une pratique courante dans le développement d'applications web. Cela permet de sécuriser l'accès à certaines données ou fonctionnalités en vérifiant l'identité de l'utilisateur.
+## Comment faire:
+Voici un exemple de code TypeScript montrant comment envoyer une requête HTTP avec une authentification de base:
 
-## Comment faire
+```
+import axios from 'axios';
 
-```typescript
-// Importer le module "http" de Node.js
-import * as http from 'http';
+const username = 'username';
+const password = 'password';
 
-// Définir les informations d'authentification
-const username = 'utilisateur';
-const password = 'motdepasse';
-
-// Créer l'en-tête d'authentification de base en encodant en base64 les identifiants
-const authHeader = 'Basic ' + Buffer.from(username + ':' + password).toString('base64');
-
-// Définir les options de la requête
-const options = {
-  hostname: 'www.exemple.com',
-  path: '/api/endpoint',
-  method: 'GET',
-  headers: {
-    'Authorization': authHeader // Ajouter l'en-tête d'authentification
+axios.get('https://exemple.com', {
+  auth: {
+    username,
+    password
   }
-};
-
-// Envoyer la requête
-const req = http.request(options, (res) => {
-  console.log(`Status: ${res.statusCode}`); // Afficher le code de statut de la réponse
-  console.log('Headers: ', res.headers); // Afficher les en-têtes de la réponse
-  res.on('data', (data) => {
-    console.log('Body: ', data); // Afficher le corps de la réponse
-  })
+})
+.then(response => {
+  console.log(response.data);
+})
+.catch(error => {
+  console.log(error.message);
 });
-
-// Traitement des erreurs
-req.on('error', (error) => {
-  console.error(error); 
-});
-
-// Terminer la requête
-req.end();
 ```
 
-Dans l'exemple ci-dessus, nous utilisons le module "http" de Node.js pour envoyer une requête HTTP avec une authentification de base. Nous définissons d'abord les informations d'authentification, puis nous créons l'en-tête d'authentification en utilisant l'encodage Base64. Ensuite, nous définissons les options de la requête, en ajoutant l'en-tête d'authentification. Enfin, nous envoyons la requête en utilisant la méthode "http.request()" et traitons la réponse et les éventuelles erreurs.
+L'exemple ci-dessus utilise la bibliothèque axios pour effectuer la requête HTTP et passe les informations d'authentification sous forme de paramètres dans l'objet de configuration de la requête.
 
-## Deep Dive
+## Plongée en profondeur:
+L'authentification de base dans les requêtes HTTP est un concept qui a été introduit dans le standard de base HTTP en 1996. Elle est considérée comme plutôt simple et peu sécurisée en comparaison à d'autres méthodes d'authentification. Une alternative populaire et plus sécurisée est l'authentification par token.
 
-L'authentification de base est la méthode la plus simple pour sécuriser l'accès à une ressource HTTP. Elle utilise un encodage en Base64 pour transmettre le nom d'utilisateur et le mot de passe dans l'en-tête "Authorization" de la requête. Cependant, cette méthode n'est pas sécurisée car les identifiants sont facilement déchiffrables et peuvent être interceptés par un tiers.
+Cependant, l'authentification de base reste utilisée dans certains cas où un niveau de sécurité moins élevé est acceptable.
 
-Pour une sécurité renforcée, il est recommandé d'utiliser d'autres méthodes d'authentification telles que l'authentification par jeton (token) ou à l'aide d'un certificat.
+Dans l'exemple de code ci-dessus, les informations d'authentification sont transmises en clair dans la requête, ce qui peut être un risque pour les données sensibles. Il est donc important d'utiliser des certificats SSL pour chiffrer les données lors de leur transmission.
 
-## Voir aussi
-
-- [Documentation Node.js - module "http"](https://nodejs.org/docs/latest-v16.x/api/http.html)
-- [Guide MDN - Authentication - Basic_Authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#basic_authentication_scheme)
-- [Package "request" pour simplifier les requêtes HTTP en Node.js](https://www.npmjs.com/package/request)
+## Voir aussi:
+- [MDN Web Docs - Basic Authentication](https://developer.mozilla.org/fr/docs/Web/HTTP/Authentication#Authentification_de_base)
+- [Axios Documentation](https://axios-http.com/docs/intro)
+- [Utiliser SSL pour sécuriser les connexions HTTP](https://developer.mozilla.org/fr/docs/Glossaire/SSL)

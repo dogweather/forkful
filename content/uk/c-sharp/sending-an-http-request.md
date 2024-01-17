@@ -1,7 +1,7 @@
 ---
-title:                "Надсилання запиту http"
-html_title:           "C#: Надсилання запиту http"
-simple_title:         "Надсилання запиту http"
+title:                "Надсилання http-запиту"
+html_title:           "C#: Надсилання http-запиту"
+simple_title:         "Надсилання http-запиту"
 programming_language: "C#"
 category:             "C#"
 tag:                  "HTML and the Web"
@@ -10,28 +10,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## З чого почати
+Що і чому?
 
-Надсилання HTTP-запитів є важливим аспектом у веб-розробці. Воно дозволяє вашому програмному коду зв'язуватися з іншими веб-серверами і отримувати дані з них. Наприклад, ви можете використати HTTP-запити для отримання інформації з зовнішнього API або взаємодії з веб-сервісами.
+Надсилання HTTP-запиту є важливою частиною розробки програм. Це дозволяє програмі взаємодіяти з сервером, отримувати та передавати дані. Без надсилання HTTP-запитів програми не змогли би працювати з інтернет-ресурсами, такими як веб-сторінки та додатки.
 
-## Як надіслати HTTP-запит
+Як це зробити:
 
-Для надсилання HTTP-запиту ви можете скористатися класом `HttpClient` збірки `System.Net.Http`. Цей клас надає зручний інтерфейс для створення, відправлення і обробки HTTP-запитів. Давайте розглянемо приклад коду на C#, який надсилає GET-запит на веб-сервер і отримує відповідь в форматі JSON:
+Використовуючи мову програмування C#, надсилання HTTP-запиту стає дуже простим. Ось приклад коду, який надсилає GET-запит до веб-сайту "example.com" і виводить вміст сторінки у консоль:
 
 ```C#
-// Створюємо об'єкт HttpClient
-HttpClient httpClient = new HttpClient();
-// Надсилаємо GET-запит на вказаний URL і отримуємо відповідь у форматі JSON
-string response = await httpClient.GetStringAsync("https://example.com/api/data");
+using System;
+using System.Net.Http;
+
+public class Program {
+    public static async Task Main() {
+        using (var client = new HttpClient()) {
+            var result = await client.GetAsync("http://example.com");
+            string content = await result.Content.ReadAsStringAsync();
+            Console.WriteLine(content);
+        }
+    }
+}
 ```
 
-Після виконання цього коду змінна `response` буде містити отримані дані у форматі JSON. Ви можете використовувати різні методи класу `HttpClient` для відправлення різних типів HTTP-запитів і обробки відповідей. Не забудьте додати відповідні обробники помилок для перехоплення виняткових ситуацій, які можуть виникнути під час надсилання запиту.
+Результат виконання цього коду виведе вміст сторінки "example.com" у консоль:
 
-## Більше інформації про надсилання HTTP-запитів
+```html
+<!doctype html>
+<html>
+<head>
+    <title>Example Domain</title>
+    ...
+</head>
 
-Якщо ви бажаєте отримати більше деталей про надсилання HTTP-запитів у C#, вам може бути цікава документація на офіційному сайті Microsoft. Також ви можете досліджувати різні параметри HTTP-запитів і хедери для кращого керування взаємодією з веб-серверами.
+<body>
+<div>
+    <h1>Example Domain</h1>
+    <p>This domain is for use in illustrative examples in documents. You may use this
+    domain in literature without prior coordination or asking for permission.</p>
+</div>
+</body>
+</html>
+```
 
-## Дивіться також
+Глибоке погруження:
 
-- [Документація Microsoft про клас HttpClient](https://docs.microsoft.com/uk-ua/dotnet/api/system.net.http.httpclient)
-- [Параметри HTTP-запитів](https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html)
+Надсилання HTTP-запитів стало можливим завдяки протоколу HTTP (Hypertext Transfer Protocol), який був розроблений у 1990-х роках. Існують інші альтернативи взаємодії з серверами, наприклад, FTP-протокол для передачі файлів чи SMTP-протокол для електронної пошти. Однак, HTTP є стандартним для надсилання запитів на веб-сайти та інші інтернет-ресурси.
+
+Як ви могли помітити, ми використовували клас HttpClient для надсилання нашого запиту. Цей клас є частиною простору імен System.Net.Http, який надає можливість взаємодіяти з веб-серверами за допомогою HTTP. Також існують інші бібліотеки, такі як RestSharp, які дозволяють більш гнучко взаємодіяти з веб-серверами та обробляти відповіді.
+
+Також, HTTP-запити мають різні методи, такі як GET, POST, PUT, DELETE, які використовуються для звернення до різного типу ресурсів та виконання дій над ними. Для детальнішої інформації про роботу з HTTP-запитами та їх використання, рекомендуємо ознайомитися з документацією Microsoft.
+
+Рекомендовані джерела:
+
+- [Документація Microsoft про надсилання HTTP-запитів](https://docs.microsoft.com/en-us/dotnet/csharp/tutorials/console-webapiclient)
+- [RestSharp - бібліотека для взаємодії з веб-серверами за допомогою REST API](https://restsharp.dev/)
+- [Протокол HTTP на Вікіпедії](https://uk.wikipedia.org/wiki/HTTP)

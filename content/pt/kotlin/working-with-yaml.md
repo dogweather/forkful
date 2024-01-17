@@ -10,69 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que usar YAML em projetos Kotlin?
+## O que é e por que fazer em YAML?
 
-YAML é uma linguagem de serialização de dados simples e legível por humanos, o que a torna uma ótima opção para trabalhar com configurações em projetos Kotlin. Com um formato intuitivo e flexível, YAML pode ajudar a simplificar o gerenciamento de configurações em seus projetos.
+YAML é uma linguagem de marcação que é frequentemente usada por desenvolvedores para armazenar e transmitir dados estruturados. É uma alternativa leve e fácil de ler em comparação com outras linguagens de marcação, como XML e JSON.
+Os programadores optam por trabalhar com YAML por sua simplicidade e flexibilidade, tornando mais fácil lidar com grandes quantidades de dados.
 
-## Como usar YAML em projetos Kotlin
+## Como fazer:
 
-Usar YAML em projetos Kotlin é bastante simples. Primeiro, você precisará adicionar a dependência do YAML Parser em seu arquivo `build.gradle` ou `build.gradle.kts`:
+Para começar a trabalhar com YAML em Kotlin, é necessário importar a biblioteca SnakeYAML através do gerenciador de dependências Gradle. Depois disso, basta seguir os seguintes passos:
 
-```
-// build.gradle
-dependencies {
-    implementation("com.charleskorn.kaml:kaml:0.20.0")
-}
-```
+**1. Criando um arquivo YAML:** Para criar um arquivo YAML, basta criar uma variável do tipo `Map` com os dados desejados e usar o método `dump()` da biblioteca SnakeYAML para convertê-lo em YAML.
 
 ```
-// build.gradle.kts
-dependencies {
-    implementation("com.charleskorn.kaml:kaml:0.20.0")
-}
+val dados = mapOf("nome" to "Maria", "idade" to 25, "cidade" to "São Paulo")
+val yaml = Yaml().dump(dados)
+println(yaml)
+```
+**Output:**
+```
+nome: Maria
+idade: 25
+cidade: São Paulo
 ```
 
-Em seguida, você pode usar o código a seguir para ler um arquivo YAML e obter seus dados:
+**2. Lendo um arquivo YAML:** Para ler um arquivo YAML, basta usar o método `load()` da biblioteca SnakeYAML e especificar o caminho para o arquivo YAML.
 
 ```
-import com.charleskorn.kaml.Yaml
-
-fun main() {
-    val yaml = Yaml.default.decodeFromString<T>(input)
-    // faça algo com os dados YAML aqui
-} 
-
+val yaml = File("arquivo.yaml").readText()
+val dados = Yaml().load<Map<String, Any>>(yaml)
+println(dados)
+```
+**Output:**
+```
+{nome=Maria, idade=25, cidade=São Paulo}
 ```
 
-E aqui está um exemplo de como você pode converter objetos Kotlin em YAML:
+## Mergulho Profundo:
 
-```
-import com.charleskorn.kaml.Yaml
+YAML foi criado em 2001 por Clark Evans como uma alternativa mais fácil de usar para XML. Atualmente, é amplamente utilizado em projetos de desenvolvimento, especialmente em aplicações web. Algumas alternativas para YAML incluem TOML e JSON, mas YAML ainda é considerado o mais adequado para dados complexos e bem estruturados.
 
-data class Pessoa(val nome: String, val idade: Int)
+A biblioteca SnakeYAML é a principal opção para trabalhar com YAML em Kotlin. Ela fornece métodos para converter dados Java em YAML e vice-versa, além de oferecer suporte para recursos avançados, como referências e tipos personalizados.
 
-fun main() {
-    val pessoa = Pessoa("João", 30)
-    val yaml = Yaml.default.encodeToString(pessoa)
-    println(yaml)
-} 
-
-```
-
-Output:
-
-```
-nome: João
-idade: 30
-```
-
-## Mergulho Profundo: Trabalhando com YAML em Projetos Kotlin
-
-Uma das principais vantagens de usar YAML em projetos Kotlin é sua flexibilidade. Por exemplo, você pode facilmente adicionar comentários em seu arquivo YAML usando o símbolo `#`. Além disso, YAML também permite usar referências para evitar repetição de dados e ter um conjunto de dados mais organizado.
-
-Outra funcionalidade útil é a possibilidade de usar chaves de sequência em YAML. Isso permite criar coleções de dados com chaves personalizadas e acessá-las facilmente em seu código Kotlin.
-
-## Veja também
+## Saiba Mais:
 
 - [Site oficial do YAML](https://yaml.org/)
-- [Documentação do Kaml para Kotlin](https://github.com/charleskorn/kaml)
+- [Biblioteca SnakeYAML](https://bitbucket.org/asomov/snakeyaml/wiki/Documentation)
+- [Tutorial de YAML em Kotlin](https://blog.kotlin-academy.com/working-with-yaml-in-kotlin-a-practical-tutorial-8f332fa88de4)

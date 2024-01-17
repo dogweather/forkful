@@ -10,62 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+# Co & Dlaczego?
 
-Jeśli planujesz pracować z dużymi zestawami danych lub przechowywać informacje w strukturalny sposób, to prawdopodobnie będziesz musiał korzystać z plików tekstowych. W tym artykule pokażę Ci jak odczytywać pliki tekstowe za pomocą Arduino, aby ułatwić Ci pracę z danymi.
+Przeczytanie pliku tekstowego to nic innego jak odczytanie zawartości tekstu z pliku i wykorzystanie jej do programu. Programiści korzystają z tej funkcji, aby mieć dostęp do danych, takich jak ustawienia, pomiary lub instrukcje dla urządzeń zewnętrznych.
 
-## Jak to zrobić
+# Jak to zrobić:
 
-Odczytywanie plików tekstowych jest stosunkowo proste w Arduino, dzięki wbudowanej funkcji `File`. W poniższym przykładzie, wykorzystamy tę funkcję do odczytania i wyświetlenia zawartości pliku tekstowego na monitorze szeregowym:
+Arduino ma wbudowaną funkcję ```File.read()```, która odczytuje zawartość pliku tekstowego i zapisuje ją do zmiennej. Można to zrobić w następujący sposób:
 
-```Arduino
-#include <SPI.h>
-#include <SD.h>
-
-File dataFile;
-
-void setup() {
-  Serial.begin(9600);
-  while (!Serial) {
-    ; // czekaj na połączenie
-  }
-
-  Serial.print("Inicjalizacja karty SD...");
-
-  if (!SD.begin(4)) {
-    Serial.println("Błąd!");
-    return;
-  }
-  Serial.println("Gotowe!");
-  
-  dataFile = SD.open("dane.txt"); // otwórz plik tekstowy
-  if (dataFile) {
-    // odczytaj i wyświetl zawartość pliku
-    while (dataFile.available()) {
-      Serial.write(dataFile.read());
-    }
-    dataFile.close(); // zamknij plik
-  }
-}
-
-void loop() {
-  // pętla główna
-}
+```
+File plik = SD.open("nazwa_pliku.txt");  // otwiera plik do odczytu
+String zawartosc = plik.readString();  // zapisuje zawartość pliku do zmiennej
+Serial.println(zawartosc);  // wyświetla zawartość na monitorze szeregowym
+plik.close();  // zamyka plik
 ```
 
-Po wgraniu tego kodu do Arduino i podłączeniu karty SD, możesz zobaczyć zawartość pliku tekstowego na monitorze szeregowym.
+Pamiętaj, aby dodać odpowiednią bibliotekę SD, jeśli plik znajduje się na karcie SD.
 
-## Deep Dive
+# Ciekawostki:
 
-Funkcja `File` jest częścią biblioteki `SD.h`, która pozwala na zarządzanie kartami SD w Arduino. Aby móc jej używać, musimy najpierw odpowiednio ją zainicjować za pomocą funkcji `SD.begin()`. Następnie, możemy otworzyć dysk z kartą SD za pomocą funkcji `SD.open()`, podając jako argument nazwę pliku, który chcemy odczytać.
+Funkcja odczytu pliku istnieje od początku istnienia Arduino, ale pierwotnie była używana tylko do odczytu plików .hex na płytkach. Wraz z rozwojem i popularnością platformy, pojawiły się różne alternatywy do odczytu plików, takie jak SD.h czy SPI.h.
 
-Funkcja `File` posiada wiele metod, które ułatwiają pracę z plikami tekstowymi, takich jak `read()`, `available()` czy `close()`. Szczegółowe informacje o tych metodach możesz znaleźć w dokumentacji biblioteki.
+# Zobacz też:
 
-Pamiętaj, że plik tekstowy musi znajdować się na karcie SD i musi być podłączona do modułu SD w Arduino. W przeciwnym razie, funkcja `SD.open()` zwróci błąd.
-
-## Zobacz także
-
-Sprawdź poniższe linki, aby dowiedzieć się więcej o odczytywaniu plików tekstowych w Arduino:
-
-- Dokumentacja biblioteki `SD.h`: https://www.arduino.cc/en/reference/SD
-- Przykłady i tutoriale: https://www.arduino.cc/en/Tutorial/Files
+https://www.arduino.cc/en/Reference/FileRead
+https://www.arduino.cc/en/Tutorial/FileReadWrite
+https://www.arduino.cc/en/Tutorial/Files

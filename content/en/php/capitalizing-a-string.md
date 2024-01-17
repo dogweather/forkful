@@ -10,40 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-Capitalizing strings is a common task in programming, especially when dealing with user-provided data or when formatting output. It ensures that text is presented in a consistent and readable manner, making it easier for users to understand.
+## What & Why?
 
-## How To
-To capitalize a string in PHP, we can use the `ucwords()` and `strtoupper()` functions. These functions perform different types of capitalization, as shown in the examples below:
+Capitalizing a string means converting the first letter of each word in a string to uppercase. Programmers do this for various reasons, such as creating a more visually appealing output or following proper capitalization rules for titles and names.
 
-```PHP
-$string = "hello world";
+## How to:
 
-//using ucwords() to capitalize first letter of each word
-echo ucwords($string); //output: Hello World
+To capitalize a string in PHP, you can use the built-in function `ucwords()`. It takes a string as an input and returns a new string with the first letter of each word capitalized.
 
-//using strtoupper() to capitalize all letters
-echo strtoupper($string); //output: HELLO WORLD
+Example:
+```
+$input = "hello world";
+$output = ucwords($input);
+echo $output;
 ```
 
-It's important to note that the original string remains unchanged, as these functions return a new string with the desired capitalization. To save the changes, we need to assign the function's output to a variable or directly overwrite the original string.
-
-We can also use the `mb_convert_case()` function to capitalize strings that contain multibyte characters, such as letters with accents or diacritics.
-
-```PHP
-$string = "jàmestown";
-echo mb_convert_case($string, MB_CASE_TITLE, "UTF-8"); //output: Jàmestown
+Output:
+```
+Hello World
 ```
 
-## Deep Dive
-PHP offers a variety of functions for different capitalization needs. The `ucfirst()` function capitalizes only the first letter of a string, while `lcfirst()` lowercase the first letter. These functions are useful when we only want to modify the first letter of a string without affecting the rest.
+If you only want to capitalize the first letter of the first word, you can use the function `ucfirst()` instead.
 
-Another handy function is `ucwords()`, which capitalizes the first letter of each word in a string. It's helpful when formatting names, titles, or sentences. However, it's worth noting that this function may produce unexpected results with certain characters, such as hyphens or quotes.
+Example:
+```
+$input = "hello world";
+$output = ucfirst($input);
+echo $output;
+```
 
-PHP also has the `mb_strtoupper()` and `mb_strtolower()` functions for manipulating strings with multibyte characters. These functions behave similarly to their single-byte counterparts, but they can handle a wider range of characters.
+Output:
+```
+Hello world
+```
 
-Lastly, we can also utilize regular expressions to capitalize strings in PHP. This approach gives us more flexibility to handle special cases or to create custom capitalization patterns.
+## Deep Dive:
 
-See Also 
-- PHP String Functions: https://www.php.net/manual/en/ref.strings.php
-- Regular Expressions in PHP: https://www.php.net/manual/en/book.pcre.php
+Capitalizing strings has its origins in print media, where it was used to make text stand out and appear more formal. In programming, it is often used in conjunction with string manipulation functions or for formatting data.
+
+There are alternative ways to capitalize a string in PHP, such as using regular expressions or built-in string functions like `substr()` and `mb_strtoupper()`. However, the `ucwords()` and `ucfirst()` functions are the most straightforward and efficient methods.
+
+It is worth noting that the `ucwords()` function follows the `setlocale()` setting, which is used to determine the appropriate case conversion for a particular language. So, if you need to capitalize strings in a different language, make sure to set the locale accordingly.
+
+## See Also:
+
+- [PHP Manual: ucwords()](https://www.php.net/manual/en/function.ucwords.php)
+- [PHP Manual: ucfirst()](https://www.php.net/manual/en/function.ucfirst.php)
+- [PHP Manual: setlocale()](https://www.php.net/manual/en/function.setlocale.php)

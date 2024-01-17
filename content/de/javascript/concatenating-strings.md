@@ -1,7 +1,7 @@
 ---
-title:                "Zeichenketten verknüpfen"
-html_title:           "Javascript: Zeichenketten verknüpfen"
-simple_title:         "Zeichenketten verknüpfen"
+title:                "Verkettung von Zeichenketten"
+html_title:           "Javascript: Verkettung von Zeichenketten"
+simple_title:         "Verkettung von Zeichenketten"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Strings"
@@ -10,52 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Warum
+Was & Warum?
+Concatenating strings, oder im Deutschen "Zeichenkettenverknüpfung", ist eine häufig verwendete Technik in der Programmierung, um mehrere Zeichenketten (Wörter, Sätze, Ziffern usw.) zu einer einzigen Zeichenkette zu verbinden. Programmierer nutzen diese Technik, um dynamische Inhalte zu erzeugen, zum Beispiel um personalisierte Nachrichten oder dynamisch generierte URLs zu erstellen.
 
-Bei der Entwicklung von Anwendungen in Javascript ist es oft notwendig, verschiedene String-Werte miteinander zu kombinieren. Dies kann beispielsweise bei der Erstellung von dynamischen Anzeigeelementen oder bei der Verarbeitung von Nutzereingaben hilfreich sein. Im folgenden Artikel zeigen wir Ihnen, wie Sie Strings in Javascript einfach und effektiv verketten können.
-
-# Wie es geht
-
-Die Verkettung von Strings wird in Javascript durch den "+" Operator ermöglicht. Dieser wird verwendet, um zwei oder mehrere Strings zusammenzuführen. Hier ein einfaches Beispiel:
-
+Wie funktioniert es?
+👉 Code-Beispiel: 
 ```Javascript
-let name = "Max";
-let greeting = "Hallo";
-let message = greeting + " " + name;
-console.log(message); //Ausgabe: Hallo Max
+let str1 = "Hallo";
+let str2 = "Welt";
+let result = str1 + " " + str2;
+console.log(result);
 ```
 
-In diesem Beispiel werden die Variablen `greeting` und `name` kombiniert und in der Variable `message` gespeichert. Beachten Sie, dass zwischen den einzelnen Strings Leerzeichen eingefügt werden müssen, um ein korrektes Ergebnis zu erhalten.
-
-Um mehr als zwei Strings zu verketten, können Sie den gleichen Ansatz verwenden:
-
-```Javascript
-let text = "Ich mag" + " " + "Javascript";
-console.log(text); //Ausgabe: Ich mag Javascript
+👉 Ausgabe:
+```Text
+Hallo Welt
 ```
 
-Eine andere Möglichkeit ist die Verwendung von Template-Strings, die es ermöglichen, Variablen direkt in einen String einzufügen. Hier ein Beispiel:
+In diesem Beispiel werden die beiden Zeichenketten "Hallo" und "Welt" mit dem Pluszeichen (+) miteinander verbunden. Der resultierende Output ist die zusammengesetzte Zeichenkette "Hallo Welt". Beachte, dass zwischen den beiden Zeichenketten ein Leerzeichen eingefügt wurde, um ein besseres Leseverständnis zu ermöglichen.
 
-```Javascript
-let city = "Berlin";
-let message = `Willkommen in ${city}`;
-console.log(message); //Ausgabe: Willkommen in Berlin
-```
+Tiefer einladen
+👉 Historischer Kontext:
+Die Verknüpfung von Zeichenketten gibt es schon seit den Anfängen der Programmierung. In frühen Programmiersprachen wie BASIC und COBOL wurde die Verkettung oft mit dem "&"-Symbol verwendet. Mit der Einführung von JavaScript wurden jedoch das Pluszeichen (+) und die Methode .join() bevorzugte Methoden für die Zeichenkettenverknüpfung.
 
-# Tiefergehende Informationen
+👉 Alternativen:
+Eine alternative Methode zur Verknüpfung von Zeichenketten ist die Verwendung von Template Literals, auch bekannt als String Interpolation. Diese Methode ermöglicht es, Variablen direkt in einen Text einzufügen, ohne das Pluszeichen verwenden zu müssen.
 
-Es ist wichtig zu beachten, dass Javascript bei der Verkettung von Strings automatisch in den Datentyp "String" konvertiert. Dies bedeutet, dass auch andere Datentypen wie Zahlen oder Booleans problemlos mit Strings kombiniert werden können. Hier ein Beispiel:
+👉 Details zur Implementierung:
+JavaScript behandelt Zeichenketten als Objekte, wodurch sie verschiedene Methoden wie .concat(), .slice() und .substring() unterstützen. Diese können ebenfalls zur Zeichenkettenverknüpfung verwendet werden, obwohl das Pluszeichen (+) immer noch die gängigste Methode ist.
 
-```Javascript
-let age = 25;
-let message = "Ich bin " + age + " Jahre alt";
-console.log(message); //Ausgabe: Ich bin 25 Jahre alt
-```
+Siehe auch
+Hier sind einige hilfreiche Links zum Thema Zeichenkettenverknüpfung:
 
-Zudem können Sie auch Methoden wie `concat()` oder `join()` verwenden, um Strings in Javascript zu verketten. Weitere Informationen zu diesen Methoden finden Sie in der offiziellen Javascript-Dokumentation.
-
-# Siehe auch
-
-- [Offizielle Javascript-Dokumentation](https://developer.mozilla.org/de/docs/Web/JavaScript)
-- [W3Schools - String Concatenation](https://www.w3schools.com/js/js_string_concat.asp)
-- [MDN Web Docs - Template Strings](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/template_strings)
+- [MDN Web Docs](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/String/concat)
+- [W3Schools](https://www.w3schools.com/jsref/jsref_concat_string.asp)
+- [Stack Overflow](https://stackoverflow.com/questions/18004/how-can-i-concatenate-strings-in-javascript)

@@ -10,43 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+## O que é e Porquê?
 
-Gerar números aleatórios é uma tarefa bastante comum em diversas áreas da programação. Pode ser necessário para criar senhas seguras, testar algoritmos, simular cenários e muito mais.
+Gerar números aleatórios é um processo em que um programa de computador produz números sem seguir um padrão específico, tornando imprevisível o próximo número gerado. Programadores fazem isso para criar jogos, simulações e algoritmos que precisam de aleatoriedade para funcionar corretamente.
 
-## Como fazer
+## Como fazer:
 
-Para gerar números aleatórios em Bash, podemos utilizar o comando "shuf". Ele permite gerar números aleatórios ou embaralhar linhas de um arquivo. Veja um exemplo:
-
-```Bash
-# Gera 5 números aleatórios entre 1 e 10
-shuf -i 1-10 -n 5
-# Saída: 7 2 5 1 9
-
-# Embaralha as linhas de um arquivo
-shuf arquivo.txt
-# Saída: linha3 linha1 linha2 
-```
-## Mais detalhes
-
-O comando "shuf" utiliza um gerador de números aleatórios baseado no algoritmo Mersenne Twister. Ele é considerado um dos mais eficientes e confiáveis para gerar sequências aleatórias.
-
-É importante notar que o comando "shuf" não gera números verdadeiramente aleatórios. Ele utiliza uma semente (seed) para a geração dos números, o que significa que se a mesma semente for utilizada em momentos diferentes, a sequência de números gerados será sempre a mesma. 
-
-Podemos alterar a semente utilizada pelo comando, adicionando o argumento "-r" e um número inteiro após a opção "shuf". Por exemplo:
+Existem várias maneiras de gerar números aleatórios em Bash, mas aqui estão algumas opções simples usando o comando `shuf`:
 
 ```Bash
-shuf -r 123456 arquivo.txt
+# Gerando um número aleatório entre 0 e 100
+echo $(( $(shuf -i 0-100 -n 1) ))
+
+# Gerando um número aleatório entre 1 e 10
+echo $(( $(shuf -i 1-10 -n 1) ))
+
+# Gerando uma letra aleatória entre A e Z
+echo $( shuf -n 1 -e {A..Z} )
 ```
 
-Isso irá gerar uma sequência diferente de números aleatórios a cada vez que o comando for executado. 
+A saída será um número ou uma letra aleatória, dependendo do comando usado.
 
-Além disso, é possível limitar o intervalo de números gerados utilizando as opções "-i" (intervalo) e "-n" (quantidade de números gerados).
+## Profundidade:
 
-Com essas informações, é possível utilizar o comando "shuf" de diversas formas para gerar números aleatórios de acordo com suas necessidades.
+A geração de números aleatórios tem sido uma parte importante da computação desde o início. Um dos algoritmos mais comuns é o Método Congruente Linear, criado em 1949. Outras alternativas em Bash incluem o comando `fold`, que lê dados de entrada e mistura suas linhas de forma aleatória, e o `random`, que gera números aleatórios de 0 a 32767.
 
-## Veja também
+## Veja também:
 
-- Documentação oficial do "shuf": https://www.gnu.org/software/coreutils/manual/html_node/shuf-invocation.html
-- Mais sobre o algoritmo Mersenne Twister: https://en.wikipedia.org/wiki/Mersenne_Twister
-- Outras formas de gerar números aleatórios em Bash: https://linuxhint.com/generate_random_numbers_bash/
+- [Documentação oficial do GNU Bash](https://www.gnu.org/software/bash/)
+- [Tutorial de Bash na Udemy](https://www.udemy.com/course/bash-scripting/)
+- [Job de programador na Caelum](https://www.caelum.com.br/aprenda/programacao/trabalhe-na-caelum/) (precisa saber Bash!)

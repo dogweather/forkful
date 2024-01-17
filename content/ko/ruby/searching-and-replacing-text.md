@@ -1,7 +1,7 @@
 ---
-title:                "텍스트 검색 및 대체"
-html_title:           "Ruby: 텍스트 검색 및 대체"
-simple_title:         "텍스트 검색 및 대체"
+title:                "텍스트 검색 및 교체"
+html_title:           "Ruby: 텍스트 검색 및 교체"
+simple_title:         "텍스트 검색 및 교체"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Strings"
@@ -10,33 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+## 무엇 & 왜?
+텍스트 검색 및 대체란 무엇인가요?
+텍스트 검색 및 대체는 프로그래머가 특정 문자나 단어를 다른 문자나 단어로 바꾸는 작업을 말합니다. 
+이를 통해 코드를 더 효율적이고 간결하게 만들 수 있습니다. 
 
-텍스트를 검색하고 바꾸는 작업은 많은 프로그래밍 언어에서 필수적인 작업입니다. 루비는 간단하고 강력한 메소드를 제공하여 텍스트를 검색하고 바꿀 수 있기 때문에, 더 효율적인 코딩 경험을 제공합니다.
+## 어떻게:
+```Ruby
+# 대문자를 소문자로 바꾸는 예제
+text = "HELLO WORLD"
+puts text.downcase
+# output: hello world
 
-## 사용 방법
-
-```ruby
-# 단어 "Hello"를 "Hola"로 바꿔주는 간단한 예제 코드
-text = "Hello, world!"
-puts text.gsub("Hello", "Hola") # "Hola, world!"가 출력됩니다.
-
-# 특정 문자열을 삭제하는 예제 코드
-text = "This is a sample sentence."
-puts text.gsub("sample ", "") # "This is a sentence."가 출력됩니다.
+# 문자를 다른 문자로 바꾸는 예제
+text = "I love Ruby"
+puts text.gsub("love", "like")
+# output: I like Ruby
 ```
 
-위의 예제 코드에서 보듯이, `gsub` 메소드를 사용하면 텍스트를 쉽게 찾고 바꿀 수 있습니다. `gsub` 메소드의 첫 번째 인자는 바꾸고자 하는 문자열이고, 두 번째 인자는 그 문자열을 어떤 값으로 바꿀지를 나타냅니다. 또한, `gsub` 메소드는 문자열 내에서 모든 일치하는 부분을 바꾸기 때문에 한 번에 여러 개의 문자열을 바꿀 수 있습니다.
+## 깊게 들어가기:
+1. 역사적 배경: 텍스트 검색 및 대체는 단순한 문자열 처리 방법이 아니라 프로그래밍 언어의 발전과 함께 발전해온 기능입니다.
+2. 대체 방법의 대안: 텍스트 검색 및 대체 외에도 정규 표현식, split/join 등 다양한 방법으로 문자열을 처리할 수 있습니다.
+3. 구현 세부사항: Ruby에서는 gsub 메소드를 사용하여 문자열을 대체할 수 있으며, 정규 표현식을 활용할 수도 있습니다.
 
-## 깊이 있는 설명
-
-루비에서 `gsub` 메소드는 정규표현식도 사용할 수 있습니다. 예를 들어, `gsub(/[aeiou]/, "*")`와 같이 사용하면 문자열 내의 모음을 모두 `*`로 바꿀 수 있습니다. 따라서 특정 패턴에 일치하는 문자열을 한 번에 모두 바꿀 수 있습니다.
-
-또한, `gsub` 메소드는 대소문자를 구분하지 않는 `i` 옵션을 지원합니다. 따라서 `gsub(/hello/i, "hola")`와 같이 사용하면 `hello`라는 단어만 찾아서 `hola`로 바꿀 수 있습니다.
-
-## 참고 자료
-
-- [Ruby regular expression reference](https://docs.ruby-lang.org/en/master/Regexp.html)
-- [Ruby string methods](https://ruby-doc.org/core-2.7.0/String.html)
-
-## 더 보기
+## 관련 자료:
+- [Ruby Documentation](https://ruby-doc.org/core-2.7.0/String.html#method-i-gsub)
+- [Regular Expressions in Ruby](https://medium.com/@rameshdharan/regularexpressions-in-ruby-df79635c7dcc)
+- [Splitting and Joining Strings in Ruby](https://ruby-doc.org/core-2.7.0/String.html#method-i-split)

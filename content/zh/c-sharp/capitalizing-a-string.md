@@ -1,7 +1,7 @@
 ---
-title:                "字符串大写处理"
-html_title:           "C#: 字符串大写处理"
-simple_title:         "字符串大写处理"
+title:                "字符串大写化"
+html_title:           "C#: 字符串大写化"
+simple_title:         "字符串大写化"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Strings"
@@ -10,30 +10,62 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
+##什么和为什么？
 
-有时候，我们需要在程序中将字符串的首字母大写。这可能是因为我们想要规范化用户输入的数据，或者美化输出结果。无论是什么原因，C＃提供了一种简单的方法来实现这一目的。
+字符串大写是指将字符串中的所有字母从小写转换为大写。程序员这样做的原因通常是为了统一字符串的格式，从而方便比较、排序和其他操作。
 
-## 如何
+##怎么做？
 
-在C＃中，我们可以使用```string.ToTitleCase()```方法来将字符串的首字母大写。下面是一个简单的例子：
+###在C#中使用.ToUpper()方法
 
-```C#
+```
 string str = "hello world";
-Console.WriteLine(str.ToTitleCase());  //输出结果为 "Hello World"
+string uppercaseStr = str.ToUpper();
+Console.WriteLine(uppercaseStr);
 ```
 
-我们可以看到，在这个例子中，我们首先定义了一个字符串变量 ```str```，然后使用 ```ToTitleCase()```方法将其转换成首字母大写的形式，并将结果打印出来。这个方法会自动识别单词的边界，并将每个单词的首字母大写，其他字母小写。
+输出：
+```
+HELLO WORLD
+```
 
-另外，如果我们想要将字符串的所有字母都转换成大写，可以使用```string.ToUpper()```方法。同样，如果想要转换成全部小写，可以使用```string.ToLower()```方法。
+###使用循环和ASCII码来大写字符串
 
-## 深入探讨
+```
+string str = "hello world";
+string uppercaseStr = "";
 
-在C＃中，字符串是不可变的对象。这意味着一旦我们创建了一个字符串，就无法对其进行修改。因此，当我们调用 ```ToTitleCase()```方法时，实际上是创建了一个新的字符串对象，而不是在原来的字符串上进行修改。
+for (int i = 0; i < str.Length; i++)
+{
+    // 使用ASCII码将小写字母转换为大写字母
+    if ((int)str[i] >= 97 && (int)str[i] <= 122)
+    {
+        uppercaseStr += (char)((int)str[i] - 32);
+    }
+    else // 非字母字符保持不变
+    {
+        uppercaseStr += str[i];
+    }
+}
 
-另外值得注意的是，```ToTitleCase()```方法也会考虑当前的语言文化设置，因此在不同的语言环境下，可能会有不同的结果。
+Console.WriteLine(uppercaseStr);
+```
 
-## 查看也许
+输出：
+```
+HELLO WORLD
+```
 
-- [Microsoft官方文档：String.ToTitleCase 方法](https://docs.microsoft.com/zh-cn/dotnet/api/system.string.totitlecase)
-- [C# 字符串转换为大写和小写](https://www.w3cschool.cn/csharp/csharp-string-toupper.html)
+##深入研究
+
+历史背景：在早期的计算机系统中，字符串是以ASCII码来表示的，其中小写字母和大写字母之间的差距为32。在那个时候，程序员使用ASCII码来转换字符串大小写。
+
+替代方法：除了使用循环和ASCII码来大写字符串外，我们也可以使用正则表达式来实现。不过，正则表达式的性能可能会受到影响，因此在处理大量数据时，最好使用循环和ASCII码方法。
+
+实现细节：在C#中，字符串是不可变的，所以每当我们对字符串进行任何操作时，实际上是创建了一个新的字符串。因此，使用循环和ASCII码的方法相比正则表达式可能会更有效率。
+
+##参考资料
+
+- [C# 文字列のクリーンな大文字変換](https://kuroeveryday.blogspot.com/2011/10/cc.html)
+- [C# - 小文字を大文字に変換する](https://openbook4.me/blog/csharp/to-upper/)
+- [C# 字符串大写的不同方法](https://blog.csdn.net/weixin_42221738/article/details/89433544)

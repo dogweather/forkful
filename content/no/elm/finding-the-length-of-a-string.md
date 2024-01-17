@@ -10,27 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hva & Hvorfor?
+Hva er å finne lengden av en streng? Det betyr å telle hvor mange tegn som er i en tekst. Programmører gjør dette for å håndtere og manipulere tekst på en effektiv måte.
 
-Det kan være mange grunner til å finne lengden på en streng i Elm. Kanskje trenger du å begrense inndata fra brukere, eller kanskje du vil vite hvor mange tegn som er tillatt i en bestemt tekstboks. Å finne lengden på en streng kan også være nyttig når du skal manipulere eller formatere tekster på en dynamisk måte.
-
-## Hvordan
-
-For å finne lengden på en streng i Elm, kan du bruke funksjonen `String.length` som tar imot en streng som argument og returnerer lengden på strengen som et heltall. For eksempel:
+## Hvordan:
+Å finne lengden av en streng i Elm er enkelt. Bruk funksjonen "String.length" og gi strengen som argument. Se på eksempelet under for å se hvordan det fungerer:
 
 ```Elm
-String.length "Hei verden" -- returnerer 11
+String.length "Hei, verden!" -- output: 12
 ```
 
-Du kan også bruke `length` funksjonen på variabler som inneholder strenger. Det er viktig å merke seg at mellomrom og spesialtegn også vil telle som et tegn i strengen.
+Du kan også bruke denne funksjonen på en variabel som inneholder en streng, som vist i eksempelet under:
 
-## Dypdykk
+```Elm
+streng = "Dette er en streng"
+String.length streng -- output: 19
+```
 
-Bak kulissene bruker `String.length` funksjonen `String.fromList` metoden for å konvertere en streng til en liste med tegn. Deretter teller den antall tegn i listen og returnerer resultatet. Du kan også bruke `List.length` metoden for å telle lengden på en liste med tegn.
+## Dykk Dypere:
+Å finne lengden av en streng er et vanlig oppgave i programmering, og det er derfor mange måter å gjøre det på. Før i tiden, da datamaskiner var begrenset til å jobbe med enkeltegn samtidig, brukte man loops for å telle tegnene i en streng. Men i dag med moderne programmeringsspråk som Elm, gjør innebygde funksjoner som "String.length" jobben for oss på en mer effektiv måte.
 
-En annen metode for å finne lengden på en streng er å bruke `String.split` funksjonen og deretter telle antall elementer i den resulterende listen. Dette kan være nyttig hvis du ønsker å skille en streng ved hjelp av et spesifikt tegn og deretter finne lengden på hvert element.
+Hvis du vil lære mer om å håndtere tekst i Elm, kan du sjekke ut dokumentasjonen for "String" modulen og se hvilke andre nyttige funksjoner som er tilgjengelige.
 
-## Se også
-
-- Offisiell dokumentasjon for `String.length` funksjonen i Elm: https://package.elm-lang.org/packages/elm/core/latest/String#length
-- En grundig guide for å håndtere tekster i Elm: https://guide.elm-lang.org/strings/
+## Se Også:
+- Elm Dokumentasjon for "String" modulen: (https://package.elm-lang.org/packages/elm/core/latest/String)
+- Elm offisielle nettside: (https://elm-lang.org/)

@@ -1,7 +1,7 @@
 ---
-title:                "Borrando caracteres que coinciden con un patrón"
-html_title:           "Elixir: Borrando caracteres que coinciden con un patrón"
-simple_title:         "Borrando caracteres que coinciden con un patrón"
+title:                "Eliminando caracteres que coinciden con un patrón"
+html_title:           "Elixir: Eliminando caracteres que coinciden con un patrón"
+simple_title:         "Eliminando caracteres que coinciden con un patrón"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -10,33 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+¿Qué es y por qué? 
+Eliminar caracteres que coinciden con un patrón es una técnica común utilizada por los programadores para manipular cadenas de texto y limpiar datos. Se utiliza para eliminar caracteres no deseados que no encajan en un patrón especificado.
 
-Borrar caracteres que coincidan con un patrón puede ser una tarea útil al trabajar con cadenas de texto en un programa. Puede ayudar a limpiar datos o filtrar resultados específicos.
-
-## Cómo hacerlo
-
-La función `String.replace/4` en Elixir nos permite reemplazar caracteres que coincidan con un patrón en una cadena de texto. Veamos un ejemplo de cómo podríamos borrar todos los espacios en blanco de una cadena:
+Cómo hacerlo:
+Aquí hay un ejemplo sencillo de cómo eliminar caracteres que coinciden con un patrón en Elixir:
 
 ```Elixir
-string = "Hola mundo!"
-replaced_string = String.replace(string, " ", "")
+str = "Eli…..xir"
+clean_str = Regex.replace(~r/[^A-Za-z]/, str, "")
+IO.puts(clean_str)
+# Output: Elixir 
 ```
+En este ejemplo, especificamos un patrón utilizando expresiones regulares (`~r/[^A-Za-z]/`) que coincide con cualquier carácter que no sea una letra. Luego utilizamos la función `Regex.replace()` para reemplazar todos los caracteres que coinciden con este patrón con una cadena vacía. Finalmente, imprimimos el resultado utilizando `IO.puts()` y obtenemos la cadena "Elixir" sin los puntos suspensivos.
 
-El código anterior reemplazará todos los espacios en blanco en la cadena "Hola mundo!" con una cadena vacía, resultando en "Holamundo!". Podemos utilizar esta misma lógica para borrar cualquier otro carácter que coincida con un patrón.
+Profundizando:
+Eliminar caracteres que coinciden con un patrón es una técnica que ha existido desde los primeros días de la programación de computadoras. Se utilizaba principalmente para limpiar datos y eliminar información innecesaria antes de realizar cálculos o análisis. En Elixir, también podemos utilizar la función `String.replace()` para lograr el mismo resultado, pero esta función solo funcionará con patrones más simples sin utilizar expresiones regulares.
 
-## Profundizando
+Alternativas:
+Además de utilizar la función `Regex.replace()`, también podemos utilizar la función `Regex.split()` para dividir una cadena en una lista basada en un patrón determinado y luego manipular la lista resultante. Otra alternativa es utilizar la función `String.delete_suffix()` o `String.delete_prefix()` para eliminar un sufijo o prefijo específico de una cadena.
 
-Además de la función `String.replace/4`, también podemos utilizar la función `String.trim/2` para eliminar caracteres de un determinado patrón al comienzo o al final de una cadena de texto. Por ejemplo, si queremos borrar todos los números del principio de una cadena, podríamos hacer lo siguiente:
+Detalles de implementación:
+La función `Regex.replace()` en Elixir utiliza la librería PCRE (Perl Compatible Regular Expressions, expresiones regulares compatibles con Perl) para procesar los patrones especificados. Esta librería está escrita en lenguaje C y es extremadamente rápida y eficiente. Al utilizar expresiones regulares en Elixir, también podemos aprovechar las características avanzadas de la sintaxis de expresiones regulares de PCRE para realizar operaciones más complejas y avanzadas en nuestras cadenas.
 
-```Elixir
-string = "1234Hola"
-trimmed_string = String.trim(string, "1234")
-```
-
-Esto resultaría en la cadena "Hola". Si queremos borrar todos los símbolos de puntuación al final de una cadena, podríamos utilizar la misma función pero con los símbolos de puntuación como patrón.
-
-## Ver también
-
-  - [Documentación de Elixir para String.replace/4](https://hexdocs.pm/elixir/String.html#replace/4)
-  - [Documentación de Elixir para String.trim/2](https://hexdocs.pm/elixir/String.html#trim/2)
+Ver también:
+- Documentación de la función `Regex.replace()` en la página oficial de Elixir: https://hexdocs.pm/elixir/Regex.html#replace/3
+- Ejemplos de uso de expresiones regulares en Elixir: https://elixir-examples.github.io/string/regex

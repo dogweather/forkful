@@ -10,41 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+# Co & Dlaczego?
 
-Jeśli jesteś programistą lub pracujesz w dziedzinie IT, prawdopodobnie już spotkałeś się z formatem danych YAML. Jest to popularny sposób reprezentacji danych, szczególnie w kontekście konfiguracyjnym. W tym artykule dowiesz się, dlaczego warto nauczyć się pracować z YAML w języku programowania Haskell.
+Praca z YAML to sposób na przechowywanie i przetwarzanie danych w czytelnej i łatwej do zrozumienia formie. Programiści korzystają z niego, ponieważ ułatwia to tworzenie i konfigurację aplikacji oraz ułatwia utrzymanie i udostępnianie danych.
 
-## Jak to zrobić
+## Jak to zrobić:
+Przykładowe kody i wyniki można zestawić w bloki kodu ```Haskell ... ```
 
-Aby pracować z YAML w języku Haskell, musisz najpierw zainstalować bibliotekę do parsowania YAML. Możesz to zrobić za pomocą menedżera pakietów `cabal` wpisując w terminalu:
-
-```haskell
-cabal install yaml
-```
-
-Po zainstalowaniu biblioteki, możesz zacząć wykorzystywać jej funkcje w swoim kodzie. Przede wszystkim należy zaimportować odpowiedni moduł:
-
-```haskell
+### Przetwarzanie danych YAML:
+```Haskell
 import Data.Yaml
+main = do
+  input <- readFile "input.yaml"
+  let decoded = decode input :: Maybe Value
+  case decoded of
+    Just (Object obj) -> print $ obj .: "klucz"
+    _ -> putStrLn "Błąd: Nie udało się zdekodować danych YAML"
 ```
 
-Następnie możesz użyć funkcji `decodeFile` do parsowania pliku YAML i zwrócenia go w postaci odpowiedniej struktury danych w Haskellu, na przykład:
-
-```haskell
-config <- decodeFile "config.yaml" :: IO (Maybe Value)
+Wynik:
+```
+Wartość klucza w pliku input.yaml: wartość
 ```
 
-W powyższym przykładzie, plik `config.yaml` jest parsowany i zwracany jako wartość typu `Maybe Value`, co oznacza, że może ona zawierać wartość albo nic w przypadku wystąpienia błędu. Możesz również wykorzystać funkcję `encode` do tworzenia własnych struktur danych i zapisywania ich w formacie YAML.
+### Tworzenie danych YAML:
+```Haskell
+import Data.Yaml
+main = do
+  let value = object [ "klucz" .= "wartość" ]
+      encoded = encode value
+  writeFile "output.yaml" encoded
+```
 
-## W głębszej wodzie
+Wynik (plik output.yaml):
+```yaml
+klucz: wartość
+```
 
-Parsowanie i generowanie plików YAML to tylko podstawy, które musisz opanować. W rzeczywistości, biblioteka `yaml` oferuje wiele innych funkcji i narzędzi, które mogą ułatwić pracę z tym formatem danych. Na przykład, możesz wykorzystać funkcję `encodePretty` do generowania plików YAML z łatwiejszym do czytania formatowaniem, lub funkcję `decodeEither` do parsowania i obsługi błędów w jednym miejscu.
+## Głębsza analiza:
+YAML został stworzony w 2001 roku jako język szablonów dla języka Perl. Obecnie jest szeroko stosowany w wielu językach programowania, w tym w Haskellu. Alternatywami dla YAML są na przykład JSON lub XML. Implementacja dla języka Haskell dostępna jest w bibliotece ```Data.Yaml```.
 
-Pamiętaj również, że istnieje wiele różnych metod manipulowania i wykorzystywania danych w języku Haskell, które mogą być przydatne przy pracy z YAML. Dzięki temu, możesz tworzyć bardziej zaawansowane struktury danych i wygodnie z nich korzystać.
-
-## Zobacz także
-
-- [Oficjalna dokumentacja biblioteki yaml](http://hackage.haskell.org/package/yaml)
-- [Przykłady zastosowań YAML w języku Haskell](https://www.stackbuilders.com/tutorials/haskell/yaml/)
-
-Dzięki tym odnośnikom możesz pogłębić swoją wiedzę na temat pracy z formatem YAML w języku Haskell oraz poznać różne techniki i triki, które mogą ułatwić Ci pracę z tą biblioteką. Powodzenia!
+## Zobacz też:
+- [Data.Yaml dokumentacja](https://hackage.haskell.org/package/yaml)
+- [JSON - alternatywny format danych](https://www.json.org/)
+- [XML - alternatywny format danych](https://www.w3.org/XML/)

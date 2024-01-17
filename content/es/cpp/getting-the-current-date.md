@@ -10,57 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¿Qué es y por qué se usa?
 
-Obtener la fecha actual es una tarea común en la programación, ya sea para mostrar la fecha actual en una aplicación o para realizar cálculos basados ​​en ella. En esta sección, aprenderás cómo obtener la fecha actual en C++ de manera fácil y eficiente.
+Obtener la fecha actual es una función importante en la programación, ya que permite a los programadores obtener la fecha y hora actual en su código. Esto puede ser útil en muchas situaciones, como en el registro de eventos o para mostrar la fecha en una interfaz de usuario.
 
-## Cómo hacerlo
+## Cómo hacerlo:
 
-Para obtener la fecha actual en C++, necesitamos incluir la librería `ctime`, que proporciona las funciones necesarias para trabajar con fechas y horas.
-
-Dentro de nuestro código, podemos usar la función `time()` que devuelve un valor de tipo `time_t` que representa el número de segundos desde el 1 de enero de 1970. Luego, podemos pasar este valor a la función `localtime()` para obtener una estructura de tipo `tm` con la fecha y hora actual.
-
-Veamos un ejemplo con el código:
+En C++, para obtener la fecha actual se utiliza la función `time()`, que se encuentra en la biblioteca `ctime`. Aquí un ejemplo de cómo se puede utilizar esta función:
 
 ```C++
-#include <iostream>
 #include <ctime>
 
 int main() {
-    // Obtener la fecha y hora actual
-    time_t now = time(0);
-    tm *today = localtime(&now);
-
-    // Imprimir la fecha en formato dd/mm/yyyy
-    std::cout << "Hoy es " << today->tm_mday << "/" << (today->tm_mon + 1) << "/" << (today->tm_year + 1900) << std::endl;
-
-    // Imprimir la hora en formato hh:mm:ss
-    std::cout << "Son las " << today->tm_hour << ":" << today->tm_min << ":" << today->tm_sec << std::endl;
-
-   return 0;
+  // Obtener el tiempo actual en segundos desde 1970
+  time_t now = time(0);
+  
+  // Convertir el tiempo a una cadena de caracteres
+  char* date = ctime(&now);
+  
+  // Imprimir la fecha actual
+  std::cout << "La fecha y hora actuales son: " << date << std::endl;
+  
+  return 0;
 }
 ```
 
-**Salida:**
+Este código imprimirá la fecha y hora actuales en el formato de día de la semana, mes, día, hora y año. Por ejemplo: `Mié Oct 13 15:25:00 2021`.
 
-```
-Hoy es 3/5/2021
-Son las 18:30:00
-```
+## Detalles a fondo:
 
-## Profundizando
+La función `time()` se basa en el llamado *Epoch time*, que es el número de segundos transcurridos desde el 1 de enero de 1970 a las 00:00:00 UTC. Esto se debe a que es una fecha fácilmente convertible y compatible con diferentes sistemas operativos.
 
-La función `localtime()` utiliza la zona horaria del sistema y devuelve la hora local. Sin embargo, si queremos obtener la hora local con un desplazamiento específico, podemos usar la función `localtime_s()` que nos permite especificar este desplazamiento.
+Además de `ctime`, también existen otras funciones para obtener la fecha actual, como `localtime()` y `gmtime()`, que permiten obtener la fecha en formatos específicos.
 
-Algunas otras funciones útiles relacionadas con fechas y horas en C++ son:
+Alternativamente, existen librerías como *boost* y *chrono* que también proporcionan funciones para trabajar con fechas y tiempos en C++.
 
-- `gmtime()` - obtiene la fecha y hora UTC actual.
-- `asctime()` - convierte una estructura de tipo `tm` en una cadena de caracteres.
-- `mktime()` - convierte una estructura de tipo `tm` en el número de segundos desde el 1 de enero de 1970.
+## Vea también:
 
-¡Ahora estás listo para trabajar con fechas y horas en C++!
-
-## Ver también
-
-- [Cómo trabajar con cadenas de caracteres en C++](https://www.ejemplo.com/cadenas-de-caracteres-c++)
-- [Introducción a la utilización de librerías en C++](https://www.ejemplo.com/librerias-c++)
+- [Ejemplo detallado de obtener la fecha actual en C++](https://www.programiz.com/cpp-programming/library-function/ctime/time)
+- [Información sobre el Epoch time](https://en.wikipedia.org/wiki/Unix_time)
+- [Documentación de la biblioteca *boost* para trabajar con fechas y tiempos](https://www.boost.org/doc/libs/1_77_0/doc/html/date_time.html)

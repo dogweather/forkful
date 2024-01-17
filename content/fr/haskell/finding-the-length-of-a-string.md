@@ -10,41 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Pourquoi
+## Quoi et Pourquoi?
 
-Vous avez probablement été confronté à la tâche de trouver la longueur d'une chaîne de caractères lors de vos projets de programmation. Cela peut sembler un problème simple, mais il est important de comprendre comment le faire correctement en utilisant Haskell.
+Trouver la longueur d'une chaîne de caractères est une tâche courante en programmation, qui consiste à compter le nombre de caractères dans une chaîne donnée. Les programmeurs le font pour différents besoins, tels que la validation de données, le traitement de texte, ou simplement pour des statistiques.
 
-# Comment faire
+## Comment faire:
 
-Pour trouver la longueur d'une chaîne de caractères en Haskell, nous pouvons utiliser la fonction `length`. Voyons un exemple:
-
-```Haskell
-length "Bonjour" -- renvoie 7
-```
-
-Nous pouvons également utiliser `length` sur une liste de chaînes de caractères pour trouver la longueur totale de la liste:
+Dans Haskell, il existe plusieurs façons de trouver la longueur d'une chaîne de caractères. Voici deux exemples, avec leur code et sortie correspondante:
 
 ```Haskell
-length ["Bonjour", "mon", "ami"] -- renvoie 13
+-- Exemple 1: Utilisation de la fonction prédéfinie 'length'
+length "Bonjour" -- Sortie: 7
+
+-- Exemple 2: Utilisation d'une fonction récursive
+-- Définition de la fonction 'longueur' prenant une chaîne de caractères en paramètre
+longueur :: String -> Int
+longueur "" = 0 -- Cas de base: la chaîne est vide, la longueur est 0
+longueur (_:xs) = 1 + longueur xs -- Cas récursif: la longueur est 1 plus la longueur du reste de la chaîne
+
+longueur "Bonjour" -- Sortie: 7
 ```
 
-Nous pouvons également définir notre propre fonction pour trouver la longueur d'une chaîne de caractères en utilisant la récursivité:
+## Plongée en profondeur:
 
-```Haskell
-length' :: String -> Int
-length' [] = 0 -- cas de base, une chaîne vide a une longueur de 0
-length' (x:xs) = 1 + length' xs -- pour chaque élément de la chaîne, ajoute 1 à la longueur totale
+Trouver la longueur d'une chaîne de caractères est un concept qui existe depuis les débuts de la programmation. Certaines langues de programmation telles que Java ont des fonctions intégrées pour cette tâche, tandis que d'autres comme Haskell utilisent des fonctions récursives pour calculer la longueur.
 
-length' "Bonjour" -- renvoie 7
-```
+Il existe également des alternatives à la méthode récursive présentée, telles que l'utilisation de la fonction `foldr` ou la compréhension de liste. Cependant, ces méthodes ne sont pas aussi efficaces que la récursion pour des chaînes de caractères de grande taille.
 
-# Plongée en profondeur
+En termes d'implémentation, la fonction `length` en Haskell utilise une technique appelée "strictness analysis" pour optimiser les performances. Elle consiste à forcer la valeur de la longueur à être évaluée à chaque itération, plutôt que d'attendre la fin. Cela peut sembler inutile pour de petits exemples, mais pour des chaînes de caractères plus importantes, cela peut faire une différence significative en termes de temps d'exécution.
 
-Il est important de noter que la fonction `length` renvoie un entier de type `Int` et non un entier de type `Integer`. Cela signifie que si la longueur de la chaîne de caractères dépasse la limite d'un entier, le résultat sera incorrect ou il y aura une erreur de débordement de mémoire.
+## Voir aussi:
 
-De plus, la fonction `length` fonctionne en parcourant entièrement la chaîne de caractères, ce qui peut prendre du temps si la chaîne est très longue. Dans ces cas-là, il peut être plus efficace d'utiliser la fonction `length'` définie précédemment.
-
-# Voir aussi
-
-- [Documentation sur la fonction `length`](https://www.haskell.org/onlinereport/standard-prelude.html#function:length)
-- [Un tutoriel sur les listes en Haskell](https://www.tutorialspoint.com/haskell/haskell_lists.htm)
+- [Documentation Haskell pour la fonction 'length'](https://hackage.haskell.org/package/base-4.14.1.0/docs/Prelude.html#v:length)
+- [Exemples de fonctions récursives en Haskell](https://wiki.haskell.org/Recursion)
+- [Une explication détaillée de la "strictness analysis" en Haskell](https://stackoverflow.com/questions/20501042/strictness-analysis-in-haskell)

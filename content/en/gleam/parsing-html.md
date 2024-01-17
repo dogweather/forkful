@@ -10,42 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-As a programmer, you may come across the need to extract specific information from a web page. This is where HTML parsing comes into play. By parsing HTML, you can easily extract the data you need and use it in your own applications.
+## What & Why?
 
-## How To
-To start parsing HTML with Gleam, you'll need to first import the `gleam/html` package. Then, you can use the `parse` function to parse the HTML content you want to extract data from.
+Parsing HTML is the process of converting HTML code into structured data that can be understood and manipulated by computers. HTML is the standard markup language used to create web pages, so parsing HTML is essential for web developers to build and maintain websites.
 
+## How to:
+
+Gleam, a functional programming language, offers a built-in module for parsing HTML called html-parser. The following code block shows how to use this module to parse a simple HTML document and extract the title element:
 ```
-Gleam.html.parse(html_content)
+Gleam code
+[lang=gleam]
+html <- `
+<html>
+<head>
+<title>Hello, World!</title>
+</head>
+<body>
+<h1>Welcome to My Website</h1>
+<p>Thank you for visiting!</p>
+</body>
+</html>
+`
+document <- html_parser::parse_string(html)
+title <- document["html"]["head"]["title"] |> html_parser::children |> List.head
 ```
+The html variable contains the HTML code as a string, and the html-parser module's parse_string function is used to convert it into a structured data representation. The resulting document is a tree-like structure, and we can use the navigation syntax to access specific elements. In this case, we use the title element inside the head element. Finally, we use the children function to get the title's content, which is a list since there could be multiple elements with the same tag. We use the List.head function to extract the first (and only) element from the list.
 
-This will return a `Result` type with either an HTML tree if the parsing was successful, or an error if there were any parsing issues.
+The output of the code block above should be the string "Hello, World!" representing the title of the HTML document.
 
-To extract information from the HTML tree, you can use the `find_all` function and specify the HTML tag you want to find. Here's an example of how to extract all the links from a web page:
+## Deep Dive:
 
-```
-Gleam.html.find_all(tree, "a")
-```
+Parsing HTML has a long history and has evolved with the development of the web. Before HTML5 was standardized in 2014, web developers had to deal with various versions of HTML and non-standard web browsers, making parsing a challenging task. However, as HTML5 became the dominant standard, parsing HTML has become more standardized and straightforward.
 
-This will return a list of all the `a` tags found in the HTML tree, which you can then loop through and extract the `href` attribute to get the link.
+Apart from using the built-in html-parser module, web developers can also use libraries like xml-peek, htmlel, or elm-html-parsers, which offer more advanced features for parsing HTML and manipulating the resulting structured data.
 
-For more complex extractions, you can use the `find` function and specify a CSS selector to find specific elements. Here's an example of extracting all the paragraph text from a specific class:
+The implementation details of parsing HTML can vary, but the general approach is to use a parser that reads the HTML code and creates a tree-like structure based on the elements, attributes, and their values. This structure can then be traversed to extract the desired data. Therefore, it is crucial to have a good understanding of HTML's structure and syntax to parse it correctly.
 
-```
-Gleam.html.find(tree, ".class-name p")
-```
+## See Also:
 
-This will return a list of all the paragraphs within the specified class.
-
-## Deep Dive
-Under the hood, Gleam uses the [html5ever](https://github.com/servo/html5ever) library for HTML parsing. This library has strong support for HTML5, making it a great choice for parsing modern web pages.
-
-One of the unique features of Gleam's HTML parsing is the use of type annotations to ensure safety and prevent runtime errors. This makes parsing with Gleam a more reliable and enjoyable experience.
-
-If you want to learn more about the inner workings of Gleam's HTML parser, be sure to check out the [documentation](https://gleam.run/packages/gleam/html/) for a complete list of functions and data types.
-
-## See Also
-- [Gleam HTML package documentation](https://gleam.run/packages/gleam/html/)
-- [html5ever library on GitHub](https://github.com/servo/html5ever)
-- [CSS selectors reference by Mozilla](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors)
+- Gleam html-parser module documentation: https://gleam.run/modules/html-parser.html
+- xml-peek library for XML/HTML parsing: https://gleam.run/modules/xml-peek.html
+- htmlel library for HTML parsing in Elm: https://gleam.run/modules/htmlel.html

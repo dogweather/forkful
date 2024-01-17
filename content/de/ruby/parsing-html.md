@@ -1,7 +1,7 @@
 ---
-title:                "HTML Parsen"
-html_title:           "Ruby: HTML Parsen"
-simple_title:         "HTML Parsen"
+title:                "HTML verarbeiten"
+html_title:           "Ruby: HTML verarbeiten"
+simple_title:         "HTML verarbeiten"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "HTML and the Web"
@@ -10,34 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was & Warum?
 
-Wenn du jemals mit HTML-Dokumenten zu tun hattest, hast du wahrscheinlich schon herausgefunden, dass es manchmal notwendig ist, die Informationen aus dem Code zu extrahieren. Das Parsing von HTML ist ein häufiger Prozess, der dies ermöglicht und in vielen Anwendungsfällen nützlich ist.
+Das Parsen von HTML ist der Prozess, bei dem ein Computer Daten aus HTML-Code extrahiert. Programmierer verwenden es, um automatisiert Daten aus Webseiten zu sammeln und zu analysieren.
 
-## Wie es geht
+## Wie geht's?
 
-Das Parsen von HTML in Ruby ist ziemlich einfach und erfordert nur wenige Zeilen Code. Zuerst müssen wir die Nokogiri-Gem installieren, um das Parsen zu ermöglichen. Dann können wir den folgenden Code verwenden, um eine URL zu öffnen und das HTML zu parsen:
+Die Ruby-Bibliothek 'Nokogiri' ist ein leistungsstarkes Werkzeug zum Parsen von HTML. Hier ist ein einfaches Beispiel, das den Titel einer Webseite ausgibt:
 
 ```Ruby
 require 'nokogiri'
 require 'open-uri'
 
-url = "https://www.example.com"
-page = Nokogiri::HTML(open(url))
-
-puts page.css('h1').text
+doc = Nokogiri::HTML(open('https://www.google.com'))
+puts doc.title
 ```
 
-Dieses Beispiel verwendet Nokogiri, um die HTML-Struktur der Seite zu analysieren und den Text des ersten h1-Tags auszugeben. Es gibt viele andere Methoden, um Informationen aus dem HTML zu extrahieren, aber die Verwendung von Nokogiri ist eine der einfachsten Möglichkeiten.
+Dieses Beispiel verwendet die 'open-uri' Bibliothek, um den HTML-Code von der Webseite zu holen, und dann verwendet Nokogiri, um den Titel aus dem HTML-Code zu extrahieren.
 
-## Tieferer Einblick
+## Tiefer Tauchen
 
-Das Parsen von HTML kann komplexer werden, wenn die Seite eine komplexere Struktur aufweist oder wenn du spezifische Informationen extrahieren musst. In diesen Fällen ist es hilfreich, die Dokumentation von Nokogiri zu konsultieren, um die verschiedenen Methoden und Optionen zu verstehen, die für das Parsen verfügbar sind.
+Das Parsen von HTML hat eine lange Geschichte, die bis in die Anfänge des Webs zurückgeht. Frühere Methoden, wie zum Beispiel reguläre Ausdrücke, waren nicht so robust wie heutige Tools wie Nokogiri.
 
-Ein wichtiger Teil des Parsens von HTML ist das Verständnis von CSS-Selektoren. Diese ermöglichen es dir, die Elemente auf einer Seite präzise auszuwählen und so die gewünschten Informationen herauszufiltern. Es lohnt sich, einige Zeit damit zu verbringen, sich mit den verschiedenen Selektoren vertraut zu machen und zu experimentieren, um die besten Ergebnisse zu erzielen.
+Alternativen zu Nokogiri sind unter anderem die Bibliotheken 'Hpricot' und 'Mechanize'. Diese bieten ähnliche Funktionen, sind aber möglicherweise nicht so performant wie Nokogiri.
+
+Die Implementierung von Nokogiri basiert auf der 'libxml2' Bibliothek, die in C geschrieben ist. Dies trägt zur hohen Geschwindigkeit von Nokogiri bei.
 
 ## Siehe auch
 
-- [Nokogiri-Dokumentation](https://nokogiri.org/)
-- [Eine Einführung in CSS-Selektoren](https://www.w3schools.com/cssref/css_selectors.asp)
-- [Weitere Informationen zum Parsen von HTML mit Ruby](https://code.tutsplus.com/tutorials/html-parsing-and-screen-scraping-in-ruby--net-11862)
+Weitere Informationen zu Nokogiri und dem Parsen von HTML mit Ruby finden Sie auf der offiziellen Dokumentationsseite: https://nokogiri.org/
+
+Eine ausführliche Anleitung zum Parsen von HTML mit 'Nokogiri' finden Sie hier: https://www.rubyguides.com/2018/10/parsing-html-in-ruby/
+
+Weitere Alternativen und Vergleiche von HTML-Parsing-Tools finden Sie hier: https://rubygems.org/gems/nokogiri/versions/1.6.2.1.

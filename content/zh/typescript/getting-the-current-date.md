@@ -1,7 +1,7 @@
 ---
-title:                "获取当前日期"
-html_title:           "TypeScript: 获取当前日期"
-simple_title:         "获取当前日期"
+title:                "获取当前日期。"
+html_title:           "TypeScript: 获取当前日期。"
+simple_title:         "获取当前日期。"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Dates and Times"
@@ -10,40 +10,21 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 为什么
+## 是什么 & 为什么?
+获取当前日期是指在程序中获取当天的日期，通常用于记录日志或设置定时任务。程序员经常这样做是因为日期是程序开发中不可或缺的一个信息，它可以帮助我们正确地追踪和记录数据。
 
-首先，让我们来思考一下为什么会有人想要获取当前的日期。通常情况下，我们需要获取当前日期来进行时间相关的操作，比如在日志中记录当前时间，或者在计时功能中显示当前时间。
-
-## 如何操作
-
-要获取当前的日期，我们可以使用TypeScript语言中的内置函数`Date()`。以下是一个简单的示例代码：
-
+## 如何:
 ```TypeScript
-let currentDate = new Date();
-console.log(currentDate);
+const currentDate: Date = new Date();
+console.log(currentDate.toLocaleDateString()); // 2021/07/26
+console.log(currentDate.toLocaleTimeString()); // 10:05:00 AM
 ```
 
-运行以上代码，会得到当前日期的字符串输出，例如`Sat Jan 23 2021 11:39:22 GMT+0800`。我们也可以使用`toLocaleDateString()`函数来对日期进行格式化，比如只显示年月日：
+## 深入探讨:
+1. 历史背景: 在过去，获取当前日期需要使用多种不同的函数和方法来处理，但随着技术的发展，现在我们可以使用更简单的方法来获取日期。
+2. 其他选择: 在TypeScript中，除了使用Date对象来获取当前日期外，还可以使用moment.js库来处理日期。
+3. 实现细节: Date对象中有多种方法可以获取当前日期，如toLocaleDateString()和toLocaleTimeString()。可以根据自己的需求选择使用哪种方法。
 
-```TypeScript
-let currentDate = new Date();
-let formattedDate = currentDate.toLocaleDateString();
-console.log(formattedDate);
-```
-
-输出结果为`1/23/2021`。除此之外，我们还可以通过使用第三方库来更加灵活地获取和处理当前日期，比如`moment.js`。
-
-## 深入了解
-
-在深入了解获取当前日期的过程中，我们需要理解一些基本概念。首先，计算机内部会将时间转换成一种数字形式，称为“时间戳”。这个数字表示自公元1970年1月1日0时0分0秒以来经过的毫秒数。因此，每次我们获取当前日期，计算机实际上是将这个数字转换成我们熟悉的日期格式。
-
-另外，我们也需要了解一些关于时区的知识。由于地球的自转速度不均匀，且不同地区的太阳当地时间也不同，于是人类为了方便统一起见，将地球分为不同的时区，每个时区都有自己的标准时间。当我们获取当前日期时，根据我们所处的时区不同，输出的结果也会有所差异。
-
-## 参考链接
-
-- [TypeScript官方文档：Date对象](https://www.typescriptlang.org/docs/handbook/2/writing-declarations.html#classes)
-- [Moment.js官方文档](https://momentjs.com/docs/)
-- [维基百科：时间戳](https://zh.wikipedia.org/wiki/%E6%97%B6%E9%97%B4%E6%88%B3)
-- [维基百科：时区](https://zh.wikipedia.org/wiki/%E6%97%B6%E5%8C%BA)
-
-## 参见
+## 查看更多:
+- [TypeScript Date 类型文档](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-7.html#ecmascript-version-based-type-libraries)
+- [Moment.js 官方文档](https://momentjs.com/docs/)

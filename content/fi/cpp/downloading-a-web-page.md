@@ -10,45 +10,61 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä & Miksi?
 
-Monet projektit vaativat kykyä ladata web-sivuja, kuten sisällönhallintajärjestelmiä tai verkkosivujen tarkastusohjelmistoja. Tämän artikkelin avulla voit oppia, kuinka ladata web-sivuja C++:lla ja mitä asioita sinun tulisi ottaa huomioon.
+Web-sivun lataaminen tarkoittaa, että ohjelma noutaa tai hakee tietoa Internetistä ja tallentaa sen käyttöä varten. Ohjelmoijat tarvitsevat tätä toimintoa esimerkiksi verkkosivujen sisällön hakemiseen ja käsittelyyn.
 
-## Kuinka tehdä
+## Miten:
 
-Mikä tahansa web-sivu voidaan ladata C++:lla käyttämällä HTTP GET -pyyntöä ja lukemalla vastaus. Tässä esimerkissä käytämme C ++ Biblioteekkia nimeltä "libcurl", joka helpottaa web-sivujen latausta.
-
-```C++ 
+```C++
 #include <iostream>
 #include <curl/curl.h>
- 
-int main(void)
-{
+
+int main() {
     CURL *curl;
     CURLcode res;
- 
     curl = curl_easy_init();
     if(curl) {
-        curl_easy_setopt(curl, CURLOPT_URL, "https://example.com");
+        curl_easy_setopt(curl, CURLOPT_URL, "https://www.example.com/");
         res = curl_easy_perform(curl);
-        if(res != CURLE_OK)
-            fprintf(stderr, "curl_easy_perform() failed: %s\n",
-                curl_easy_strerror(res));
- 
         curl_easy_cleanup(curl);
     }
     return 0;
 }
 ```
 
-Koodin alussa tuomme tarvittavat kirjastot, mukaan lukien "libcurl". Sen jälkeen luomme CURL-objektin ja asetamme sen halutun web-sivun URL-osoitteeseen. Sitten suoritamme pyynnön ja tarkistamme, että kaikki meni hyvin. Lopuksi puhdistamme objektin ja palautamme 0.
+Ulostulo:
 
-## Syvennyksessä
+```
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Example Domain</title>
+        <meta charset="utf-8" />
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+    </head>
+    
+    <body>
+        <div>
+            <h1>Example Domain</h1>
+            <p>This domain is for use in illustrative examples in documents. You may use this domain in literature without prior coordination or asking for permission.</p>
+            <p><a href="https://www.iana.org/domains/example">More information...</a></p>
+        </div>
+    </body>
+</html>
+```
 
-Libcurl tarjoaa lukuisia vaihtoehtoja, joiden avulla voit muokata ja hallita web-sivujen latausta. Esimerkiksi voit asettaa käyttäjätunnuksen ja salasanan, käyttää erilaisia protokollia tai asettaa aikakatkaisun. Voit myös käsitellä vastauksen tarkasti, esimerkiksi katsomalla HTTP-koodia tai lukemalla vastauksen sisältöä.
+## Syväsukellus:
 
-## Katso myös
+Web-sivujen lataamiseen on kehitetty erilaisia tekniikoita ja kirjastoja, joista yksi suosituimmista on libcurl-kirjasto. Se tarjoaa yksinkertaisen ja monipuolisen käyttöliittymän ladata web-sivuja eri protokollien, kuten HTTP, HTTPS ja FTP, kautta.
 
-- [Libcurlin dokumentaatio](https://curl.haxx.se/libcurl/c)
-- [C++:n virallinen sivusto](https://isocpp.org/)
-- [HTTP-pyyntöjen käsittely C++:lla](https://curl.haxx.se/libcurl/c/example.html)
+Vaihtoehtoisesti web-sivun lataamiseen voidaan käyttää myös muunlaisia menetelmiä, kuten REST API -palveluita tai HTML-parsereita, mutta ne voivat olla monimutkaisempia käyttää ja edellyttää enemmän koodausta.
+
+Lisäksi web-sivun lataamisen toteuttaminen voi olla haastavaa, sillä siihen voi liittyä erilaisia ongelmia, kuten virheellisiä yhteyksiä tai hitaita palvelimia. Koodia pitää kirjoittaa huolellisesti ja testata useita eri tietolähteitä, jotta latausprosessi on luotettava ja toimii oikein erilaisissa tilanteissa.
+
+## Katso myös:
+
+- [CURL-kirjaston kotisivut](https://curl.haxx.se/libcurl/)
+- [C++ koodiesimerkki web-sivun lataamiseen](https://github.com/curl/curl/blob/master/docs/examples/simple.c)
+- [HTML Parser -kirjasto C++:lle](https://github.com/AtrCheema/HTML-Parser-Cpp)

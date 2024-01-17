@@ -10,56 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
+Downloading a web page is the act of retrieving the contents of a webpage from the internet. Programmers do it to access the information on the webpage and use it in their code for various purposes, such as data scraping, automation, or integrating web content into their applications.
 
-If you've ever wanted to download a web page, whether it's for archiving purposes, offline viewing, or simply to save an interesting article, Kotlin offers a simple solution.
+## How to:
+To download a web page in Kotlin, we can use the `URL` and `BufferedReader` classes from the `java.net` package. First, we need to create a `URL` object with the desired webpage URL. Then, we can use `openStream()` to get the input stream from the URL connection. Next, we can use `BufferedReader` to read the input stream line by line and store the contents in a string variable. Here’s an example of how we can print the contents of a webpage to the console:
 
-## How To
-
-To download a web page in Kotlin, we can use the `URL` and `BufferedReader` classes from the Java API. First, we need to import these classes:
-
-```Kotlin
-import java.net.URL
-import java.io.BufferedReader
 ```
-
-Next, we'll specify the URL of the web page we want to download and use the `URL` class to open a connection to that URL:
-
-```Kotlin
 val url = URL("https://www.example.com")
-val connection = url.openConnection()
-```
-
-Once we have a connection, we can read the contents of the web page using a `BufferedReader` and its `readLine()` method in a loop:
-
-```Kotlin
-val reader = BufferedReader(InputStreamReader(connection.inputStream))
+val inputStream = url.openStream()
+val bufferedReader = BufferedReader(InputStreamReader(inputStream))
 var inputLine: String?
-
-while (reader.readLine().also { inputLine = it } != null) {
-    println(inputLine)
+while (bufferedReader.readLine().also { inputLine = it } != null) {
+  println(inputLine)
 }
 ```
 
-This will print out the HTML source code of the web page. We can also store this content in a variable for further processing:
-
-```Kotlin
-val content = StringBuilder()
-while (reader.readLine().also { inputLine = it } != null) {
-    content.append(inputLine)
-}
+Sample output:
+```
+<!DOCTYPE html>
+<html>
+<head>
+<title>Example Domain</title>
+…
+</html>
 ```
 
-And that's it! We now have the web page downloaded and stored in the `content` variable.
+## Deep Dive:
+Downloading web pages has been a fundamental task for web developers since the early days of the internet. Before APIs and web services were widely used, web scraping and manually copying information from web pages were common practices. However, with the rise of programming languages like Kotlin, developers now have the ability to automate this process and handle data in a more efficient way. Some alternatives to using the `java.net` package in Kotlin for downloading web pages include using third-party libraries like `OkHttp` or integrating with web scraping frameworks like `Jsoup`. Implementing the `BufferedReader` in Kotlin gives us access to various methods for reading input streams, such as `readLine()` or `readText()`.
 
-## Deep Dive
-
-When downloading a web page, there are a few things to keep in mind. First, the URL must be valid and accessible. If the web page requires authentication, we can use the `URLConnection` class to send authentication credentials. Additionally, the `BufferedReader` has methods for handling timeouts and redirections.
-
-It is also important to note that downloading a web page can be subject to copyright laws, so it's important to check the terms of use of the website before downloading any content.
-
-## See Also
-
-- [Kotlin documentation on URL and BufferedReader](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.net.-u-r-l/index.html)
-- [Java documentation on URL and BufferedReader](https://docs.oracle.com/javase/7/docs/api/java/net/URL.html)
-- [Download a file from URL using Kotlin](https://www.techiedelight.com/download-file-from-url-kotlin/)
+## See Also:
+- Official documentation for the `java.net` package in Kotlin: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.jvm/java.net/index.html
+- Third-party library for handling HTTP requests in Kotlin: https://square.github.io/okhttp/
+- Web scraping framework for Java and Kotlin: https://jsoup.org/

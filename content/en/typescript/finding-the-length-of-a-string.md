@@ -10,39 +10,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why? 
+Finding the length of a string means determining the number of characters in a given string. Programmers often need to find the length of a string in order to perform various operations on it, such as manipulating it, comparing it with other strings, or validating input from users.
 
-Knowing the length of a string is an important aspect of programming. It allows us to easily manipulate and validate user inputs, work with data structures, and more. In this article, we will explore how to find the length of a string in TypeScript and why it is important.
-
-## How To
-
-To find the length of a string in TypeScript, we can use the `length` property. Let's take a look at an example:
+## How to:
+To find the length of a string in TypeScript, we can use the `length` property. Here's an example:
 
 ```TypeScript
-let str: string = "Hello, world!";
-console.log(str.length); // Output: 13
+const str = "Hello world";
+console.log(str.length); // Output: 11
 ```
 
-In this code, we have declared a string variable `str` and assigned it the value of "Hello, world!". Then, by accessing the `length` property, we get the number of characters in the string, which in this case is 13.
+We store the string "Hello world" in a variable `str` and then access the `length` property to find its length. The output of this code will be `11` since there are 11 characters in the string.
 
-We can also use the `length` property to iterate through a string using a loop. For example:
+## Deep Dive:
+- Historical context: The concept of finding the length of a string dates back to the early days of computer programming when strings were stored as arrays of characters. The `length` property was first introduced in the programming language B, which was the predecessor of the widely used programming language C.
+- Alternatives: Apart from using the `length` property, we can also use the `size` method of the `String` object. This method also returns the length of the string.
+- Implementation details: The `length` property is a built-in property of the `String` object in TypeScript. It is read-only and cannot be modified by the programmer.
 
-```TypeScript
-let name: string = "John";
-for (let i = 0; i < name.length; i++) {
-    console.log(name[i]); // Output: J o h n
-}
-```
-
-Here, we are using a for loop to iterate through the string `name` and print each character. As the `length` property returns the number of characters in the string, we can use it as a condition for our loop to make sure we iterate through the entire string.
-
-## Deep Dive
-
-In TypeScript, the `length` property is available for both primitive strings and string objects. However, there is a slight difference between the two. For primitive strings, the `length` property is read-only, meaning we can access it but cannot change its value. For string objects, the `length` property is writable, which means we can modify its value.
-
-It is also worth noting that the `length` property counts the number of UTF-16 code units in a string. This can be a bit confusing as some characters in JavaScript are represented by two code units (known as surrogate pairs). Therefore, the `length` property may not always accurately represent the actual number of visible characters in a string.
-
-## See Also
-
-- [TypeScript Official Documentation on Strings](https://www.typescriptlang.org/docs/handbook/basic-types.html#string)
-- [MDN Web Docs on String Length](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length)
+## See Also:
+- [MDN web docs on length property](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length)
+- [MDN web docs on size method](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/size)

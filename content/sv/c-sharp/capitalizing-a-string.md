@@ -1,7 +1,7 @@
 ---
-title:                "Att Göra En Sträng Stor Begynnelsebokstav"
-html_title:           "C#: Att Göra En Sträng Stor Begynnelsebokstav"
-simple_title:         "Att Göra En Sträng Stor Begynnelsebokstav"
+title:                "Att göra en sträng med stor bokstav"
+html_title:           "C#: Att göra en sträng med stor bokstav"
+simple_title:         "Att göra en sträng med stor bokstav"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Strings"
@@ -10,41 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
 
-Att kapitalisera en sträng är en vanligt förekommande uppgift inom programmering, eftersom det kan göra din kod mer läsbar och förbättra användarupplevelsen i till exempel textbaserade applikationer.
+Att kapitalisera en sträng betyder att göra den första bokstaven stor i varje ord. Detta är en vanlig konvention inom programmering för att göra koden mer läsbar och förståelig. Det hjälper också till att skilja mellan variabler och funktioner.
 
-## Hur man gör
+## Hur man gör:
 
-För att kapitalisera en sträng i C# kan man använda sig av den inbyggda funktionen "ToUpper", som omvandlar alla bokstäver i en sträng till versaler. Här är ett exempel på hur man kan använda det i en enkel konsolapplikation:
-
-```C#
-string input = "hej och välkommen";
-Console.WriteLine(input.ToUpper());
-```
-
-Detta kommer att producera följande utmatning:
-
-```
-HEJ OCH VÄLKOMMEN
-```
-
-Om du bara vill kapitalisera första bokstaven i en sträng kan du använda "ToUpper" i kombination med "Substring" för att ta bort resten av strängen efter den första bokstaven. Här är ett exempel:
+För att kapitalisera en sträng i C# kan du använda metoden ```ToUpper()```. Här är ett exempel:
 
 ```C#
-string input = "god morgon";
-Console.WriteLine(input.Substring(0, 1).ToUpper() + input.Substring(1));
+string str = "hello world";
+Console.WriteLine(str.ToUpper());
 ```
 
-Detta kommer att producera utmatningen "God morgon".
+Detta kommer att producera outputen "HELLO WORLD".
 
-## Fördjupning
+## Djupdykning:
 
-En viktig sak att notera är att "ToUpper" bara konverterar bokstäver baserat på deras ASCII-värden, vilket innebär att vissa bokstäver i icke-latinska språk kanske inte konverteras till versaler på rätt sätt. Om du behöver hantera detta kan du använda dig av "ToUpperInvariant", som använder en mer generell algoritm för att omvandla versaler.
+Konventionen att kapitalisera strängar härstammar från det engelska språket där det används för att skilja mellan ord som börjar med stor eller liten bokstav. Det finns också andra sätt att få en sträng kapitaliserad, som att använda ```Substring()``` och ```String.Format()```.
 
-Det är också viktigt att komma ihåg att "ToUpper" och "ToUpperInvariant" endast skapar en ny sträng med den kapitaliserade versionen, och inte ändrar den ursprungliga strängen. Om du vill uppdatera den befintliga strängen måste du tilldela resultatet av funktionen tillbaka till strängen.
+Det är viktigt att komma ihåg att metoder som ```ToUpper()``` inte ändrar själva strängen, utan returnerar en ny kapitaliserad sträng. Om du vill ändra den ursprungliga strängen måste du tilldela det nya värdet till den ursprungliga variabeln.
 
-## Se också
+## Se även:
 
-- [MSDN Documentation for ToUpper (C# Reference)](https://docs.microsoft.com/en-us/dotnet/api/system.string.toupper)
-- [MSDN Documentation for Substring (C# Reference)](https://docs.microsoft.com/en-us/dotnet/api/system.string.substring)
+- [Officiell dokumentation för C# String.ToUpper()](https://docs.microsoft.com/en-us/dotnet/api/system.string.toupper?view=netcore-3.1)
+- [Alternativa sätt att kapitalisera strängar i C#](https://stackoverflow.com/questions/9645731/substring-first-letter-of-each-word-of-a-string-in-c-sharp)

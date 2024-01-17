@@ -10,57 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¿Qué y por qué?
+Trabajar con JSON (JavaScript Object Notation) es una forma de estructurar y almacenar datos en un formato fácilmente legible por computadoras. Los programadores usan JSON para transferir y almacenar datos, ya que es un formato ligero y ampliamente compatible con diferentes lenguajes de programación.
 
-Trabajar con JSON es una habilidad esencial para cualquier programador TypeScript, ya que es un formato de intercambio de datos ampliamente utilizado en aplicaciones web y móviles. Al aprender a trabajar con JSON, podrás manejar de manera eficiente y efectiva la información en tus proyectos.
-
-## Cómo hacerlo
-
-Para trabajar con JSON en TypeScript, primero debes comprender su estructura básica. JSON es un formato de datos basado en texto que se utiliza para almacenar y transmitir datos. Consiste en una serie de pares de "clave: valor" separados por comas y encerrados entre llaves. Por ejemplo:
+## Cómo hacerlo:
+Para trabajar con JSON en TypeScript, es necesario importar el módulo 'json'. A continuación, puedes utilizar la función 'stringify' para convertir un objeto en una cadena JSON y 'parse' para convertir una cadena JSON en un objeto. A continuación se presentan ejemplos de cómo utilizar estas funciones:
 
 ```TypeScript
-const persona = { 
-  nombre: "María", 
-  edad: 25, 
-  ciudad: "Madrid"
-};
-
-console.log(persona.nombre); // Output: "María"
+// convirtiendo un objeto en una cadena JSON
+import * as json from 'json';
+let miObjeto = { nombre: 'Juan', edad: 26 };
+let miObjetoJSON = json.stringify(miObjeto);
+console.log(miObjetoJSON);
 ```
-
-En el ejemplo anterior, hemos definido un objeto llamado "persona" con tres propiedades: nombre, edad y ciudad. Luego, utilizamos la sintaxis de punto para acceder a la propiedad "nombre" de ese objeto y mostrar su valor en la consola.
-
-También es posible trabajar con JSON en TypeScript utilizando la función `JSON.stringify()` para convertir un objeto en formato JSON y `JSON.parse()` para convertir una cadena JSON en un objeto. Por ejemplo:
+Salida: `{"nombre":"Juan","edad":26}`
 
 ```TypeScript
-const persona = { 
-  nombre: "María", 
-  edad: 25, 
-  ciudad: "Madrid"
-};
-
-const personaJSON = JSON.stringify(persona);
-console.log(personaJSON); // Output: {"nombre":"María","edad":25,"ciudad":"Madrid"}
-
-const personaObjeto = JSON.parse(personaJSON);
-console.log(personaObjeto.nombre); // Output: "María"
+// convirtiendo una cadena JSON en un objeto
+import * as json from 'json';
+let miStringJSON = '{"nombre":"Maria","edad":30}';
+let miObjeto = json.parse(miStringJSON);
+console.log(miObjeto.nombre);
+console.log(miObjeto.edad);
 ```
+Salida:
+`Maria`
+`30`
 
-## Profundizando
+## Inmersión profunda:
+JSON fue creado por Douglas Crockford en 2001 como una alternativa al formato XML para el intercambio de datos en la web. A lo largo de los años, ha ganado popularidad y se ha convertido en un estándar en la industria. Además, hay diferentes bibliotecas de codificación y decodificación de JSON disponibles en muchos lenguajes de programación, lo que lo hace muy versátil y fácil de implementar.
 
-Además de los objetos, también puedes trabajar con arreglos JSON en TypeScript. Un arreglo JSON es una lista ordenada de valores encerrados entre corchetes y separados por comas. Por ejemplo:
-
-```TypeScript
-const frutas = ["manzana", "plátano", "fresa"];
-console.log(frutas[0]); // Output: "manzana"
-```
-
-También puedes utilizar la función `JSON.stringify()` y `JSON.parse()` para trabajar con arreglos JSON de manera similar a los objetos.
-
-Otra funcionalidad útil al trabajar con JSON en TypeScript es la validación de datos. Puedes utilizar la librería `ajv` para validar que un objeto o cadena JSON cumpla con un esquema específico.
-
-## Ver también
-
-- [Documentación oficial de TypeScript sobre JSON](https://www.typescriptlang.org/docs/handbook/declaration-files/do-s-and-don-ts.html) 
-- [JSON en TypeScript - Tutorial para principiantes](https://blog.bitsrc.io/json-in-typescript-tutorial-for-beginners-b17f4af72508) 
-- [Librería ajv para validación de datos en TypeScript](https://github.com/epoberezkin/ajv)
+## Ver también:
+- Documentación oficial de JSON en TypeScript: https://www.typescriptlang.org/docs/handbook/declaration-files/do-s-and-don-ts.html
+- Documentación oficial de JSON: https://www.json.org/json-es.html
+- Tutoriales de programación con TypeScript: https://www.udemy.com/course/aprendiendo-typescript/

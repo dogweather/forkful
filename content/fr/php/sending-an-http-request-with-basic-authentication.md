@@ -10,50 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
-Les requêtes HTTP avec une authentification de base sont couramment utilisées pour accéder à des ressources sécurisées ou pour vérifier l'identité de l'utilisateur avant de lui donner accès à certaines fonctionnalités de l'application.
+## Qu'est-ce que c'est et pourquoi le faire ?
 
-## Comment faire
-Pour envoyer une requête HTTP avec une authentification de base en PHP, vous pouvez utiliser la fonction `curl_init()` et spécifier le nom d'utilisateur et le mot de passe dans les options de la requête. Voici un exemple de code :
+Envoyer une requête HTTP avec une authentification de base est un moyen pour les programmeurs de se connecter à un serveur distant et d'accéder à des données protégées. Cela peut être utile lorsque vous travaillez sur une application qui nécessite l'accès à des informations sensibles telles que des données utilisateurs.
+
+## Comment faire :
 
 ```PHP
-<?php 
-// initialisation de la requête curl
-$curl = curl_init();
+// Utilisation de la fonction curl_init pour initialiser la session
+$ch = curl_init();
 
-// URL de la ressource à accéder
-$url = 'https://example.com/api/resource';
+// Définition de l'URL de destination
+curl_setopt($ch, CURLOPT_URL, "www.exemple.com/api/protected_data");
 
-// options de la requête
-$options = array(
-    CURLOPT_URL => $url,
-    CURLOPT_RETURNTRANSFER => true, // pour récupérer la réponse
-    CURLOPT_USERPWD => "username:password" // spécifier le nom d'utilisateur et le mot de passe
-);
+// Ajout des informations d'authentification de base au header de la requête
+curl_setopt($ch, CURLOPT_HTTPHEADER, array('Authorization: Basic ' . base64_encode("username:password")));
 
-// configuration de la requête curl
-curl_setopt_array($curl, $options);
+// Exécution de la requête
+$result = curl_exec($ch);
 
-// exécution de la requête
-$response = curl_exec($curl);
+// Fermeture de la session
+curl_close($ch);
 
-// gestion des erreurs
-if($response === false){
-    echo 'Erreur : ' . curl_error($curl);
-}
-
-// affichage de la réponse
-echo $response;
-
-// fermeture de la requête curl
-curl_close($curl);
+// Affichage des données protégées
+echo $result;
 ```
 
-Lorsque vous exécutez ce code, vous devriez obtenir une réponse de la ressource avec l'authentification de base réussie.
+## Plongée en profondeur :
 
-## Plongée en profondeur
-L'authentification de base est une méthode simple mais peu sécurisée pour accéder à des ressources. Elle utilise un encodage de base64 pour envoyer le nom d'utilisateur et le mot de passe en clair dans l'en-tête de la requête. Il est recommandé d'utiliser d'autres méthodes d'authentification, telles que l'authentification à base de tokens, pour des raisons de sécurité.
+L'authentification de base est l'une des méthodes les plus anciennes pour sécuriser les transmissions de données entre un client et un serveur. Elle est basée sur l'échange d'un nom d'utilisateur et d'un mot de passe en clair, qui sont ensuite encodés en utilisant le codage base64. Bien qu'elle soit facile à mettre en place, cette méthode n'est pas considérée comme très sécurisée car les informations d'authentification peuvent être facilement interceptées.
 
-## Voir aussi
-- [Documentation officielle de PHP sur les requêtes curl](https://www.php.net/manual/fr/book.curl.php)
-- [Article détaillé sur l'authentification de base en HTTP](https://developer.mozilla.org/fr/docs/Web/HTTP/Authentication)
+Des alternatives plus avancées telles que l'authentification digest ou l'utilisation de tokens sont maintenant couramment utilisées pour plus de sécurité.
+
+## Voir aussi :
+
+- [Documentation officielle de PHP sur cURL](https://www.php.net/manual/fr/book.curl.php)
+- [Article sur les différentes méthodes d'authentification HTTP](https://www.pingidentity.com/en/company/blog/posts/2014/http-basic-authentication.html)
+- [Exemples de requêtes HTTP avec authentification de base en PHP](https://www.php.net/manual/fr/function.curl-setopt.php#example-3840)

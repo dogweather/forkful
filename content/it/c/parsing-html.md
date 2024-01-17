@@ -1,7 +1,7 @@
 ---
-title:                "Elaborazione di HTML"
-html_title:           "C: Elaborazione di HTML"
-simple_title:         "Elaborazione di HTML"
+title:                "Analisi dell'html"
+html_title:           "C: Analisi dell'html"
+simple_title:         "Analisi dell'html"
 programming_language: "C"
 category:             "C"
 tag:                  "HTML and the Web"
@@ -10,37 +10,74 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
-Ti sei mai chiesto perché dovresti impegnarti a parsare HTML? Beh, se sei un programmatore C, probabilmente hai già il tuo buon motivo. Ma se sei ancora indeciso, continua a leggere per scoprire i vantaggi che questo processo può offrire.
+## Che cos'è e perché lo facciamo?
 
-## Come fare
-Per prima cosa, per parsare HTML con C avrai bisogno di una libreria che ti fornisca le funzioni necessarie. Una delle opzioni più comuni è LibXML, disponibile su diverse piattaforme. Una volta inclusa nel tuo progetto, puoi utilizzare la funzione `htmlReadDoc()` per parsare un documento HTML e accedere ai suoi elementi tramite navigazione ad albero o utilizzando le funzioni `xmlGetProp()` e `xmlNodeGetContent()`. Di seguito un esempio di codice:
+Il parse di HTML è la pratica di analizzare il codice HTML di una pagina web per estrarre informazioni utili, come il testo, le immagini, i link e le etichette di formattazione. Lo facciamo per automatizzare il processo di raccolta di dati e per analizzare e manipolare il contenuto delle pagine web in modo efficiente.
 
-````C
+## Come fare:
+
+Per iniziare a fare il parse di HTML in C, dovrai utilizzare una libreria appositamente progettata per questo scopo. Una delle più popolari è libxml2, che puoi installare con il tuo gestore di pacchetti preferito. Ecco un esempio di codice che utilizza libxml2 per fare il parse di una pagina web e estrarre il suo titolo:
+
+```C
 #include <stdio.h>
-#include <libxml/HTMLParser.h>
+#include <libxml/HTMLparser.h>
+
 int main() {
-    htmlDocPtr doc = htmlReadDoc("<html><body><p>Hello world!</p><div><a href="https://www.example.com">Example link</a></div></body></html>", NULL, NULL, HTML_PARSE_RECOVER | HTML_PARSE_NOERROR | HTML_PARSE_NOWARNING);
-    printf("Il documento ha %d elementi HTML\n", xmlChildElementCount(xmlDocGetRootElement(doc)));
-    xmlNodePtr p = xmlDocGetRootElement(doc)->xmlChildrenNode->next->xmlChildrenNode;
-    printf("Il contenuto di <p> è: %s\n", xmlNodeGetContent(p));
-    printf("Il valore dell'attributo href è: %s\n", xmlGetProp(p->next->xmlChildrenNode, "href");
-    xmlFreeDoc(doc);
+
+    // Creare il puntatore al documento
+    htmlDocPtr html_doc;
+    
+    // Caricare il documento HTML
+    html_doc = htmlReadFile("pagina_web.html", NULL, 0);
+    
+    // Ottenere l'elemento radice del documento
+    xmlNodePtr root_node = xmlDocGetRootElement(html_doc);
+    
+    // Ottenere il primo figlio dell'elemento radice (che dovrebbe essere l'etichetta <head>)
+    xmlNodePtr head = root_node->xmlChildrenNode;
+    
+    // Ottenere l'elemento <title> contenuto in <head>
+    xmlNodePtr title = head->xmlChildrenNode;
+    
+    // Stampare il contenuto di <title>
+    printf("%s\n", title->content);
+    
+    // Rilasciare la memoria utilizzata
+    xmlFreeDoc(html_doc);
+    
     return 0;
 }
-````
-
-L'output di questo codice sarà:
-
-```
-Il documento ha 1 elementi HTML
-Il contenuto di <p> è: Hello world!
-Il valore dell'attributo href è: https://www.example.com
 ```
 
-## Approfondimento
-La parsing di HTML non è solo utile per estrarre dati da una pagina web o per analizzare la sua struttura, ma può anche aiutarti a rilevare eventuali errori o problemi di validazione. Inoltre, sebbene ci siano molte opzioni disponibili per parsare HTML, è importante scegliere una libreria affidabile e ben supportata per evitare problemi e perdite di tempo nel tuo progetto.
+Ecco un esempio di output per una pagina web con il seguente codice HTML:
 
-## Vedi anche
-- [LibXML - documentazione ufficiale](http://xmlsoft.org/)
-- [Parsing di HTML con LibXML](https://www.xmlsoft.org/examples/parse2.c)
+```html
+<html>
+<head>
+    <title>Il mio sito web</title>
+</head>
+<body>
+    <h1>Benvenuti nel mio sito!</h1>
+    <p>Questo è un paragrafo di testo.</p>
+    <a href="https://www.example.com">Link al mio sito</a>
+</body>
+</html>
+```
+
+```
+Il mio sito web
+```
+
+## Approfondimenti:
+
+Il parsing di HTML è stato uno dei primi metodi per ottenere informazioni da una pagina web. In passato, si usava spesso il parsing manuale, ossia l'analisi del codice HTML tramite uno script o un programma per estrarre le informazioni desiderate. Oggi, invece, ci sono molte librerie di parsing, come libxml2 e Gumbo, che semplificano notevolmente il processo.
+
+Un'altra alternativa al parsing di HTML è l'utilizzo di API che forniscono i dati tramite richieste HTTP. Tuttavia, questo metodo può essere più complesso, soprattutto per siti web più grandi e complessi.
+
+Per quanto riguarda gli implementation details, libxml2 utilizza una libreria di parsing XML per leggere il codice HTML e creare una rappresentazione ad albero del documento. Questa rappresentazione è molto utile per navigare e manipolare il documento in modo più facile. Inoltre, libxml2 gestisce anche gli errori di parsing e di codifica, rendendolo una scelta affidabile per il parsing di HTML in C.
+
+## Vedi anche:
+
+- [Libxml2 documentazione ufficiale](http://www.xmlsoft.org/html/libxml-parser.html)
+- [Gumbo: Una libreria di parsing HTML5 in C](https://github.com/google/gumbo-parser)
+- [Introduzione al parsing di HTML](https://www.w3.org/2004/04/htmltidy/Tidy.html)

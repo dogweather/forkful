@@ -1,7 +1,7 @@
 ---
-title:                "Encontrando la longitud de una cadena."
-html_title:           "Ruby: Encontrando la longitud de una cadena."
-simple_title:         "Encontrando la longitud de una cadena."
+title:                "Encontrar la longitud de una cadena"
+html_title:           "Ruby: Encontrar la longitud de una cadena"
+simple_title:         "Encontrar la longitud de una cadena"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Strings"
@@ -10,34 +10,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué 
+## ¿Qué y Por qué?
+En programación, encontrar la longitud de una cadena significa determinar la cantidad de caracteres que contiene esa cadena. Los programadores a menudo necesitan encontrar la longitud de una cadena para realizar ciertas operaciones o cálculos en su código.
 
-En la programación, a menudo nos encontramos con situaciones en las que necesitamos saber la longitud de una cadena de texto. Esto puede ser útil para validar la entrada del usuario, manipular y formatear texto, entre otros casos.
+## Cómo:
+```ruby
+# Ejemplo 1
+puts "Hola Mundo".length
+# Output: 10
 
-## Cómo 
-
-Para encontrar la longitud de una cadena en Ruby, podemos utilizar el método `length` o `size`. Veamos un ejemplo de cómo utilizarlos: 
-
-```Ruby
-# Creamos una cadena de texto
-text = "Hola amigos"
-
-# Utilizamos el método 'length'
-puts text.length # Output: 11
-
-# Utilizamos el método 'size'
-puts text.size # Output: 11
+# Ejemplo 2
+my_string = "¡Hola!"
+puts my_string.length
+# Output: 6
 ```
 
-En este ejemplo, hemos creado una variable `text` que contiene la cadena de texto "Hola amigos". Luego, utilizamos el método `length` y `size` para encontrar la longitud de la cadena, que es de 11 caracteres. Ambos métodos nos darán el mismo resultado, por lo que podemos utilizar cualquiera de ellos según nuestras preferencias.
+## Profundizando:
+Algunos lenguajes de programación tienen funciones incorporadas para encontrar la longitud de una cadena, como `len ()` en Python. En Ruby, podemos utilizar el método `.length` en una cadena para encontrar su longitud. También podemos utilizar el método `.size` que funciona de la misma manera. Tenga en cuenta que los espacios en blanco y los caracteres especiales también se cuentan en la longitud de la cadena.
 
-## Deep Dive
-
-En Ruby, el método `length` y `size` funcionan de la misma manera ya que `size` es simplemente un alias de `length`. Ambos métodos recorren la cadena y cuentan la cantidad de caracteres, incluyendo espacios, símbolos y caracteres especiales. 
-
-Además, estos métodos son útiles para validar la entrada del usuario en un formulario. Por ejemplo, podemos verificar si un campo de texto tiene una longitud mínima o máxima antes de procesarlo.
-
-## Ver también
-
-- [Ruby Strings](https://www.ruby-lang.org/en/documentation/quickstart/2/)
-- [Ruby String length Method](https://ruby-doc.org/core-2.5.0/String.html#method-i-length)
+## Ver también:
+- Ruby String Documentation (https://ruby-doc.org/core-3.0.1/String.html)
+- Otros lenguajes de Programación también tienen formas de encontrar la longitud de una cadena, como `length ()` en Java.

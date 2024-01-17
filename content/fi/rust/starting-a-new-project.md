@@ -1,7 +1,7 @@
 ---
-title:                "Aloittaminen uudesta projektista"
-html_title:           "Rust: Aloittaminen uudesta projektista"
-simple_title:         "Aloittaminen uudesta projektista"
+title:                "Uuden projektin aloittaminen"
+html_title:           "Rust: Uuden projektin aloittaminen"
+simple_title:         "Uuden projektin aloittaminen"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Getting Started"
@@ -10,47 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä & Miksi?
+Aloittaessa uutta projektia, ohjelmoijat luovat uuden koodipohjan, jota he voivat muokata ja lisätä uutta toiminnallisuutta. Tämän avulla he voivat luoda uusia sovelluksia ja työkaluja, jotka täyttävät tiettyjä tarpeita.
 
-Ajattele hetki kaikkia niitä upeita projekteja, joita voit luoda käyttäen Rust-ohjelmointikieltä. Ne voivat olla mitä tahansa luotettavista ja nopeista backend-järjestelmistä mielenkiintoisiin etätietokanta-sovelluksiin. Rust tarjoaa vahvan ja modernin ohjelmointikokemuksen ja se onkin monien kehittäjien valinta uusien projektien aloittamiseen.
+## Näin teet sen:
+ ```Rust 
+ fn main() {
+     println!("Tervetuloa uuden projektin koodipohjaan");
+ }
+ ```
+```Rust
+fn main() {
+    // Luodaan uusi muuttuja
+    let nimi = "Maailma";
 
-## Kuinka aloittaa
-
-Rustin asentaminen on yksinkertaista ja nopeaa. Voit mennä osoitteeseen [rustup.rs](https://rustup.rs/), josta löydät asennusohjeet kaikille yleisimmille käyttöjärjestelmille. Kun asennus on valmis, voit luoda uuden projektin käyttäen seuraavaa komentoa terminaalissa:
-
+    // Tulostetaan "Hei, nimi!" käyttäen String-interpolaatiota
+    println!("Hei, {}!", nimi);
+}
 ```
-Rust uusi minun_projekti
-```
+ _Tulostaa:_ Hei, Maailma!
 
-Tämä luo uuden kansiorakenteen, jossa on kaikki tarvittavat tiedostot uuden projektin aloittamiseen. Nyt voit siirtyä projektin juurihakemistoon ja aloittaa koodaamisen!
+## Syvempi sukellus:
+Uuden projektin aloittaminen on ohjelmoinnin perusaskel, joka on tärkeä osa luovaa prosessia. Ennen Rustin käyttöä, on hyödyllistä tutustua sen historiaan ja vaihtoehtoihin. Rustin avulla voit luoda tehokkaita ja luotettavia sovelluksia, joilla on vähemmän muistivirheitä ja turvattomuusriskiä.
 
-Tässä esimerkissä käytetään [Cargo](https://doc.rust-lang.org/cargo/) -työkalua, joka on Rustin virallinen paketinhallintajärjestelmä ja rakennusautomaattori. Voit lisätä uusia riippuvuuksia projektiisi, kääntää ja suorittaa koodisi kätevästi käyttämällä Cargoa.
-
-```
-cd minun_projekti
-cargo run
-```
-
-Näin koodisi kääntyy ja suoritetaan. Voit myös luoda suoritettavan tiedoston käyttämällä seuraavaa komentoa:
-
-```
-cargo build
-```
-
-Ja voit suorittaa sen käyttämällä komentoa:
-
-```
-./target/debug/minun_projekti
-```
-
-## Syvenny
-
-Kun aloitat uuden projektin Rustilla, on tärkeää harkita projektin rakennetta ja arkkitehtuuria. Voit luoda moduleja, jotka jakavat koodin loogisiin osiin, ja käyttää Rustin vahvaa tyyppijärjestelmää varmistaaksesi, että koodi on turvallinen ja luotettava.
-
-Rustilla on myös käytettävissä valtava määrä kolmannen osapuolen kirjastoja, jotka voivat auttaa sinua toteuttamaan erilaisia toiminnallisuuksia projektissasi. Voit lukea lisää [crates.io](https://crates.io/) -sivustolta, jossa on saatavilla yli 60 000 Rust-kirjastoa.
-
-## Katso myös
-
-- [Rust-oppaan aloittaminen](https://doc.rust-lang.org/book/ch01-00-getting-started.html)
-- [Käytetyimmät Rust-paketit](https://crates.io/categories)
-- [Rustin yhteisö ja tuki](https://www.rust-lang.org/community)
+## Katso myös:
+- [Rustin virallinen sivusto](https://www.rust-lang.org/fi)
+- [Rust-tiedonlähteet](https://www.rust-lang.org/fi/learn)
+- [Rust-yhteisö](https://www.rust-lang.org/fi/community)

@@ -10,52 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+Gleam: The Efficient Way to Convert Strings to Lower Case
 
-Converting a string to lower case is a fundamental task in text processing. It allows for easier comparison and manipulation of strings, which is essential in many programming applications.
+## What & Why?
 
-## How To
+Converting a string to lower case is a common task in programming that involves changing all the characters in a string to their lower case equivalents. This is useful for various reasons, such as improving readability, making data more consistent, and comparing strings without worrying about case sensitivity. Most programming languages have built-in functions for this, and Gleam is no exception.
 
-To convert a string to lower case in Gleam, you can use the built-in function `String.to_lower` as shown in the following code block:
+## How to:
 
-```Gleam {linenos=table}
-// Define an example string
-let str = "Hello World"
+Converting a string to lower case in Gleam is a simple and straightforward process. You can use the ```String.to_lower_case()``` function, which takes a string as an argument and returns a new string with all lower case characters. Let's look at an example:
 
-// Convert the string to lower case
-let lower = String.to_lower(str)
-
-// Print the result
-// Output: hello world
-io.println(lower)
+```
+Gleam> let my_string = "Gleam is Awesome"
+Gleam> String.to_lower_case(my_string)
+"gleam is awesome"
 ```
 
-The `String.to_lower` function takes in a string as its argument and returns a new string with all letters converted to lower case. In the code above, we first define an example string "Hello World" and then use the `to_lower` function to convert it. The result is then printed using the `io.println` function.
+As you can see, all the characters have been converted to lower case, making the string easier to read and manipulate. You can also directly use the ```to_lower_case()``` method on any string variable, like this:
 
-You can also use a string pattern matching to convert multiple strings to lower case at once, as shown in the following code block:
-
-```Gleam {linenos=table}
-// Define a list of strings
-let strings = ["Gleam", "Programming", "Is", "Fun"]
-
-// Convert all strings to lower case using pattern matching
-let lower_strings = for string in strings {
-  lower -> String.to_lower(string)
-}
-
-// Print the result
-// Output: ["gleam", "programming", "is", "fun"]
-io.println(lower_strings)
+```
+Gleam> let my_string = "Gleam is Awesome"
+Gleam> my_string.to_lower_case()
+"gleam is awesome"
 ```
 
-In the code above, we use pattern matching to iterate through the list of strings and convert each one to lower case. The `for` loop returns a new list with all the lower case strings, which is then printed using the `io.println` function.
+It's that simple!
 
-## Deep Dive
-Gleam's `String.to_lower` function uses the Unicode standard to handle characters that have different cases, such as ü and Ü. It is also optimized for performance, making it a reliable choice for converting strings to lower case in large-scale text processing.
+## Deep Dive:
 
-You can also utilize external libraries, such as `gunicode`, for more advanced handling of characters and cases in your conversions. These libraries provide additional functions and utilities for working with Unicode characters and text in Gleam.
+Historically, converting strings to lower case has been a challenging task for developers due to the varying case handling among different languages. Gleam handles this issue by using the Unicode standard, which ensures consistency in case handling across different languages. Some alternative methods for converting strings to lower case include using regular expressions or creating a custom function that iterates over each character. However, these methods may not be as efficient or reliable as using Gleam's built-in function.
 
-## See Also
-- [Gleam Standard Library](https://gleam.run/lib)
-- [Gleam by Example](https://github.com/gleam-lang/gleam_by_example)
-- [gunicode Library for Gleam](https://github.com/gleam-lang/gunicode)
+## See Also:
+
+- [Gleam documentation on string functions](https://gleam.run/articles/strings)
+- [Unicode case mapping](https://unicode.org/charts/collation/)
+- [Gleam's GitHub repository](https://github.com/gleam-lang/gleam)

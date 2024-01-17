@@ -1,7 +1,7 @@
 ---
-title:                "Capitaliser une chaîne de caractères"
-html_title:           "Gleam: Capitaliser une chaîne de caractères"
-simple_title:         "Capitaliser une chaîne de caractères"
+title:                "Majuscule d'une chaîne de caractères"
+html_title:           "Gleam: Majuscule d'une chaîne de caractères"
+simple_title:         "Majuscule d'une chaîne de caractères"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -10,62 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Qu'est-ce que la mise en majuscule d'une chaîne?
 
-Vous êtes-vous déjà demandé pourquoi certaines fonctions de traitement de chaînes de caractères en programmation sont en majuscules et d'autres en minuscules ? Ou peut-être avez-vous simplement besoin de capitaliser une chaîne de caractères pour des raisons esthétiques ou dans le cadre d'un projet spécifique. Dans cet article, nous allons vous montrer comment capitaliser une chaîne de caractères en utilisant le langage de programmation Gleam, afin que vous puissiez ajouter cette compétence utile à votre boîte à outils de développement.
+La mise en majuscule d'une chaîne est le processus de conversion de toutes les lettres d'une chaîne en majuscules. Cela peut être utile dans de nombreux cas, tels que lorsque vous avez besoin de comparer deux chaînes sans tenir compte de la casse ou lorsque vous souhaitez simplement que votre texte soit plus lisible.
 
-## Comment faire
+## Comment faire:
 
-Pour capitaliser une chaîne de caractères en utilisant Gleam, nous allons utiliser une fonction intégrée appelée `String.capitalize`. Voici un exemple de code pour capitaliser une chaîne de caractères simple :
-
-```Gleam
-let string = "bonjour"
-let capitalized_string = String.capitalize(string)
-```
-
-Et voici le résultat lorsque nous imprimons la nouvelle chaîne de caractères :
+La mise en majuscule d'une chaîne est très simple à réaliser en utilisant la fonction `String.to_uppercase()` de Gleam. Cette fonction prend une chaîne en entrée et retourne cette même chaîne en majuscules.
 
 ```Gleam
-"Bonjour"
+let my_string = "Bonjour le monde !" 
+let upper_string = String.to_uppercase(my_string)
+
 ```
 
-Comme vous pouvez le voir, la fonction `String.capitalize` prend simplement une chaîne de caractères en paramètre et renvoie une nouvelle chaîne de caractères avec la première lettre en majuscule.
-
-Vous pouvez également utiliser cette fonction sur des chaînes de caractères plus longues, comme dans cet exemple :
+La valeur de `upper_string` sera alors "BONJOUR LE MONDE !". Vous pouvez également utiliser cette fonction directement sur une chaîne littérale.
 
 ```Gleam
-let phrase = "voilà une phrase avec des mots en majuscule"
-let capitalized_phrase = String.capitalize(phrase)
+let upper_string = String.to_uppercase("Bonjour le monde !")
 ```
 
-Et voici le résultat :
+## Zoom en profondeur:
 
-```Gleam
-"Voilà une phrase avec des mots en majuscule"
-```
+La mise en majuscule existe depuis très longtemps et est également appelée "mise en capitales" ou "mise en majuscule". Avant l'utilisation généralisée des ordinateurs, les écrivains utilisaient des caractères manuels pour mettre en majuscule les mots importants dans leurs textes. Aujourd'hui, il existe plusieurs façons de mettre en majuscule une chaîne, telles que l'utilisation de l'alphabet ASCII ou Unicode.
 
-## Plongée en profondeur
+Si vous utilisez Gleam, vous n'avez pas besoin de vous soucier des détails d'implémentation puisque la fonction `String.to_uppercase()` s'occupe de tout pour vous.
 
-Si vous souhaitez capitaliser des chaînes de caractères avec des règles plus spécifiques, Gleam offre également la fonction `String.capitalize_words`. Cette fonction capitalisera chaque mot individuellement, ce qui peut être utile pour des titres ou des noms propres.
+## Voir aussi:
 
-Voici un exemple de code utilisant `String.capitalize_words` :
-
-```Gleam
-let phrase = "le développement avec gleam est amusant"
-let capitalized_phrase = String.capitalize_words(phrase)
-```
-
-Et le résultat :
-
-```Gleam
-"Le Développement Avec Gleam Est Amusant"
-```
-
-Comme vous pouvez le voir, chaque mot a été capitalisé individuellement. Vous pouvez également utiliser cette fonction pour spécifier des exceptions, par exemple si vous voulez que certains mots restent en minuscules.
-
-## Voir aussi
-
-- [Documentation officielle de Gleam] (https://gleam.run/docs/)
-- [Autres fonctions de traitement de chaînes en Gleam] (https://help.disqus.com/)
-
-N'oubliez pas de consulter la documentation officielle de Gleam pour en savoir plus sur les fonctions de traitement de chaînes et comment les utiliser dans vos projets. Et si vous avez des questions ou des commentaires, n'hésitez pas à les partager sur la communauté Gleam !
+Pour en savoir plus sur la mise en majuscule et d'autres opérations de manipulation de chaînes, consultez la documentation officielle de Gleam : https://gleam.run/documentation/standard-library/string.html

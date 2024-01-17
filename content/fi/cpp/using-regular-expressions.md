@@ -10,53 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+Mikä & Miksi?
 
-Regular expressiont ovat tehokas työkalu tekstin jäsentämiseen ja muokkaamiseen. Niiden avulla voidaan helposti etsiä, korvata ja poistaa tiettyjä merkkijonoja, mikä säästää aikaa ja vaivaa manuaaliselta käsittelyltä.
+Säännölliset lausekkeet ovat tapa suodattaa, hakea ja muokata tekstejä C++ -ohjelmoinnissa. Voit käyttää niitä esimerkiksi validoidaksesi käyttäjän syötteen, etsiäksesi tiettyjä sanoja tai muuttaaksesi merkkijonojen muotoa. Ohjelmoijat käyttävät säännöllisiä lausekkeita tehdäkseen tekstin käsittelystä nopeampaa, helpompaa ja tarkempaa.
 
-## Miten
-
-Regular expressionit koostuvat erilaisista säännöistä, joiden avulla määritetään, mitä tiettyä merkkijonoa halutaan etsiä tai muokata. Tässä esimerkissä käytetään `std::regex` -kirjastoa, joka tarjoaa valmiita funktioita regular expressionien käyttämiseen.
+## Kuinka:
 
 ```C++
-// Alustetaan merkkijono, johon regular expressionia käytetään
-std::string teksti = "Tämä on esimerkki kodin osoitteesta: Käytäväkatu 5";
+#include <iostream>
+#include <regex>
 
-// Luodaan sääntö, jolla haetaan kaikki numerot merkkijonosta
-std::regex sääntö("\\d+");
-
-// Alustetaan muuttuja löydetyille merkkijonoille
-std::smatch osumat;
-
-// Etsitään merkkijonosta kaikki numerot säännön avulla
-while (std::regex_search(teksti, osumat, sääntö)) {
-    // Tulostetaan löydetty merkkijono
-    std::cout << osumat.str() << std::endl;
-
-    // Siirrytään seuraavaan löydettyyn kohtaan merkkijonossa
-    teksti = osumat.suffix().str();
+int main() {
+    std::string teksti = "Tämä on esimerkki tekstistä, jonka haluamme käsitellä.";
+    
+    // Muodostetaan säännöllinen lauseke haettavalle sanalle
+    std::regex haku("esimerkki");
+    
+    // Käytetään regex_search -funktiota etsimään haettu sana tekstistä
+    if(std::regex_search(teksti, haku)) {
+        std::cout << "Haettu sana löytyi tekstistä!" << std::endl;
+    } else {
+        std::cout << "Haettua sanaa ei löytynyt tekstistä." << std::endl;
+    }
+    
+    return 0;
 }
 ```
 
-Tulostaa:
+Tuloste:
 
 ```
-5
+Haettu sana löytyi tekstistä!
 ```
 
-## Syventävä tieto
+## Syvä sukellus:
 
-Regular expressionit käyttävät erilaisia merkkejä ja sääntöjä, joilla voidaan tarkentaa haettavaa tai muokattavaa merkkijonoa. Tässä muutamia esimerkkejä yleisesti käytetyistä merkeistä ja säännöistä:
+Säännöllisiä lausekkeita keksittiin jo 1950-luvulla ja ne ovat siitä lähtien olleet olennainen osa monien ohjelmointikielten toiminnallisuutta. C++:ssa käytetään POSIX-säännöllisiä lausekkeita, joita voi olla hieman haastava ymmärtää aluksi. Jos haluat helpomman tavan käyttää säännöllisiä lausekkeita, voit kokeilla bibliotekkeja kuten Boost tai std::experimental, jotka tarjoavat käyttöä helpottavia rajapintoja.
 
-- `.` - Tarkoittaa minkä tahansa merkin paitsi rivin vaihtumisen.
-- `?` - Tarkoittaa, että edellinen merkki tai sääntö voi esiintyä nolla tai yhden kerran.
-- `*` - Tarkoittaa, että edellinen merkki tai sääntö voi esiintyä nolla tai useamman kerran.
-- `+` - Tarkoittaa, että edellinen merkki tai sääntö esiintyy vähintään yhden kerran.
-- `()` - Luo ryhmän, jolla voi olla omia erityisiä sääntöjä.
+## Katso myös:
 
-Regular expressionien käyttö vaatii hieman totuttelua, mutta niiden avulla on mahdollista tehdä erittäin monimutkaisiakin hakuja ja muokkauksia teksteihin.
-
-## Katso myös
-
-- [C++ std::regex -dokumentaatio](https://en.cppreference.com/w/cpp/regex)
-- [Regular expression cheat sheet](https://www.debuggex.com/cheatsheet/regex/cpp)
+- [C++:n regex-dokumentaatio](https://en.cppreference.com/w/cpp/regex)
+- [Boost-regex-dokumentaatio](https://www.boost.org/doc/libs/1_78_0/libs/regex/doc/html/boost_regex/ref/regex_token_iterator.html)
+- [std::experimental -regex-dokumentaatio](https://en.cppreference.com/w/cpp/header/regex)

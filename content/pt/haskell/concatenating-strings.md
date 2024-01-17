@@ -1,7 +1,7 @@
 ---
-title:                "Concatenando strings"
-html_title:           "Haskell: Concatenando strings"
-simple_title:         "Concatenando strings"
+title:                "Juntando strings"
+html_title:           "Haskell: Juntando strings"
+simple_title:         "Juntando strings"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -10,45 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Porquê
+## O que & Porquê?
 
-Você já se deparou com a necessidade de unir ou agrupar pedaços de informação dentro da programação? É comum utilizar concatenado para juntar strings e formar uma nova string. Neste artigo, vamos explorar como realizar essa operação em Haskell de forma simples e eficiente.
+Concatenar strings é o ato de unir duas ou mais strings em uma única string. É uma operação útil para combinar informações e criar novas strings a partir de strings existentes. Programadores geralmente realizam a concatenação de strings para criar saídas de texto mais complexas ou alterar dinamicamente strings em programas.
 
-## Como Fazer
+## Como fazer:
 
-Para concatenar strings em Haskell, podemos utilizar o operador "++" ou a função "concat". O operador "++" une duas strings em uma nova string, enquanto a função "concat" pode receber uma lista de strings e concatená-las em uma única string.
+**Exemplo 1: Concatenando duas strings**
 
 ```Haskell
-"Hello" ++ " World" -- Resultado: "Hello World"
-
-concat ["Hello", " ", "World"] -- Resultado: "Hello World"
+nome = "João"
+sobrenome = "Silva"
+nomeCompleto = nome ++ " " ++ sobrenome
+```
+Output:
+```
+"João Silva"
 ```
 
-Podemos também utilizar funções de manipulação de strings, como "show" e "++" para inserir valores e variáveis dentro de uma string. Veja um exemplo:
-
+**Exemplo 2: Concatenando strings e variáveis**
 ```Haskell
-nome = "Maria"
 idade = 25
-
-"Meu nome é " ++ nome ++ " e tenho " ++ show idade ++ " anos." -- Resultado: "Meu nome é Maria e tenho 25 anos."
+mensagem = "Eu tenho " ++ show idade ++ " anos."
+```
+Output:
+```
+"Eu tenho 25 anos."
 ```
 
-A saída impressa é uma string que contém os valores de "nome" e "idade" inseridos na frase.
+## Mergulho Profundo:
 
-## Deep Dive
+**Contexto histórico**
 
-Em Haskell, strings são listas de caracteres, o que significa que as funções de listas, como "map" e "fold", também podem ser utilizadas para manipular strings. Além disso, a função "intercalate" pode ser utilizada para unir strings em uma lista e adicionar um separador entre elas.
+A concatenação de strings é uma operação comum em programação, usada desde os primeiros dias da linguagem de programação Haskell. Foi introduzida e popularizada pela linguagem de programação Lisp em 1958.
 
-```Haskell
-map toUpper "hello world" -- Resultado: "HELLO WORLD"
+**Alternativas**
 
-foldr (++) " Programming" ["Haskell", " is", " Fun"] -- Resultado: "Haskell is Fun Programming"
+Em Haskell, a concatenação de strings com o operador `` `, entre outros métodos. No entanto, a concatenação de strings com o operador `++` é geralmente mais eficiente.
 
-intercalate ", " ["apple", "bananas", "oranges"] -- Resultado: "apple, bananas, oranges"
-```
+**Detalhes de implementação**
 
-## Veja Também
+Internamente, a operação de concatenação de strings em Haskell é implementada como uma função simples que percorre as strings e as une uma a uma. Isso é feito de forma eficiente, com complexidade de tempo linear em relação ao tamanho das strings.
 
-- [Documentação oficial do Haskell](https://www.haskell.org/documentation/)
-- [Tutorial de Haskell no Wikibooks](https://en.wikibooks.org/wiki/Haskell)
-- [Curso de Programação Funcional com Haskell do Coursera](https://www.coursera.org/learn/programacao-funcional-haskell/)
+## Veja também:
+
+- [Documentação oficial do Haskell sobre strings](http://haskell.org/onlinereport/standard-prelude.html#t%3AString)
+- [Outras operações úteis com strings em Haskell](https://www.tutorialspoint.com/haskell/haskell_strings.htm)
+- [Introdução à linguagem Haskell](https://wiki.haskell.org/Learn_Haskell_in_10_minutes)

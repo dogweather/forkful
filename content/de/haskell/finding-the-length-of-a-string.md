@@ -10,44 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was & Warum?
 
-Es gibt viele Gründe, warum man die Länge einer Zeichenkette in Haskell finden könnte. Vielleicht möchte man zum Beispiel überprüfen, ob eine Eingabe innerhalb eines bestimmten Bereichs liegt, oder man muss die Länge eines Textes für ein bestimmtes Formatierungssystem berechnen. Egal aus welchem Grund, die Länge zu kennen ist ein wichtiger Teil der Programmierung und kann in verschiedenen Situationen sehr nützlich sein.
+Das Finden der Länge eines Strings ist eine häufige Aufgabe, die Programmierer in vielen Programmiersprachen lösen müssen. Die Länge eines Strings bezieht sich auf die Anzahl der Zeichen in einem Text oder einer Zeichenkette. Dies ist wichtig, um bestimmte Manipulationen an einem String durchzuführen oder um zu überprüfen, ob er eine bestimmte Länge hat.
 
-## Wie geht es?
+## Wie geht das?
 
-Die Länge einer Zeichenkette in Haskell zu finden, ist relativ einfach. Es gibt zwei verschiedene Methoden, die wir uns anschauen werden. Aber bevor wir damit beginnen, müssen wir zunächst verstehen, was eine Zeichenkette in Haskell ist. Im Gegensatz zu vielen anderen Programmiersprachen, in denen eine Zeichenkette eine Kette von einzelnen Zeichen ist, ist eine Zeichenkette in Haskell eine Liste von Zeichen. Wir können also die Funktion `length` verwenden, um die Länge einer Zeichenkette zu finden.
+Die Länge eines Strings kann in Haskell auf verschiedene Arten gefunden werden. Eine Möglichkeit besteht darin, die Funktion ```length``` zu verwenden, die in der standardmäßigen Modulbibliothek ```Data.List``` verfügbar ist. Dies ermöglicht es uns, schnell die Länge eines Strings zu finden, indem wir einfach ```length``` gefolgt von dem betreffenden String schreiben.
 
-```
--- Beispiel 1
-length "Hallo" 
+Beispielcode:
 
--- Ausgabe: 5
+```Haskell
+import Data.List
 
--- Beispiel 2
-length "12345"
-
--- Ausgabe: 5
-```
-Wie wir sehen können, gibt die `length` Funktion die Anzahl der Elemente in der Liste zurück, was der Länge der Zeichenkette entspricht.
-
-Eine andere Möglichkeit, die Länge einer Zeichenkette in Haskell zu finden, ist die Verwendung von `genericLength`. Diese Funktion ist ähnlich wie `length`, jedoch arbeitet sie mit allen Arten von Zahlen, nicht nur mit Ganzzahlen.
-
-```
--- Beispiel 
-genericLength "Hallo"
-
--- Ausgabe: 5.0 (aufgrund der Verwendung von Dezimalstellen, um beliebige Zahlen zu unterstützen)
+length "Hallo Welt" -- gibt 11 aus, da der String 11 Zeichen hat.
 ```
 
-## Tiefer Einblick
+Eine andere Möglichkeit besteht darin, die Rekursion zu nutzen, indem wir jedes Zeichen in der Zeichenkette zählen und dann die Anzahl zurückgeben. Dies ermöglicht es uns, die Länge eines Strings unabhängig von einer vorgefertigten Funktion zu finden.
 
-Um besser zu verstehen, wie die `length` Funktion funktioniert, sollten wir uns ihre Implementierung ansehen. In erster Linie ist es wichtig zu wissen, dass die Funktion `length` eine polymorphe Funktion ist, was bedeutet, dass sie mit verschiedenen Datentypen funktioniert. Ihre Typsignatur ist `length :: Foldable t => t a -> Int`, was bedeutet, dass sie eine Liste von Elementen des Datentyps `a` empfängt und eine Ganzzahl zurückgibt.
+Beispielcode:
 
-Die `length` Funktion ist so definiert, dass sie die `null` Funktion verwendet, um zu überprüfen, ob die Liste leer ist. Wenn dies der Fall ist, gibt sie 0 zurück. Wenn die Liste nicht leer ist, verwendet sie die Funktion `foldr` (ein weiteres wichtiges Haskell-Konzept), um eine rekursive Liste zu durchlaufen und dabei jedes Element zu zählen. Auf diese Weise kann die `length` Funktion unabhängig von der Länge der Liste effizient arbeiten.
+```Haskell
+length' :: String -> Int -- Funktion, die eine Zeichenkette als Argument erwartet und eine Ganzzahl zurückgibt.
+length' "" = 0 -- Basisfall, leere Zeichenkette hat Länge 0.
+length' (x:xs) = 1 + length' xs -- Zählt jedes Zeichen und gibt die Länge zurück, indem die Funktion für den Rest der Zeichenkette aufgerufen wird.
+
+length' "Hallo Welt" -- gibt 11 aus, wie auch die vorherige Methode.
+```
+## Tiefergehende Infos
+
+Das Ermitteln der Länge eines Strings ist eine grundlegende Funktion in vielen Programmiersprachen und hat ihren Ursprung in der Theorie der formalen Sprachen und Automaten. Es gibt auch alternative Möglichkeiten, um die Länge eines Strings in Haskell zu finden, wie zum Beispiel die Verwendung der Bibliothek ```Data.Text```. Diese bietet schnellere Operationen auf Texten mit einer größeren Anzahl an Zeichen an. 
+
+In Bezug auf die Implementierungsdetails nutzt die Funktion ```length``` in ```Data.List``` einfache Iteration, um die Länge zu finden, während die rekursive Funktion ```length'``` Zeichen zählt und dann die Anzahl zurückgibt. Es ist wichtig zu beachten, dass die rekursive Funktion möglicherweise schneller ist als die iterative Variante, da sie keine interne Schleife durchläuft.
 
 ## Siehe auch
 
-- [Haskell-Dokumentation zu `length`](https://hackage.haskell.org/package/base-4.15.0.0/docs/Data-List.html#v:length)
-- [Einführung in Haskell für Anfänger](https://www.freecodecamp.org/news/learn-functional-programming-with-haskell-beginners-guide/)
-- [Weitere Methoden zum Arbeiten mit Zeichenketten in Haskell](https://wiki.haskell.org/Strings)
+- Offizielle Dokumentation für ```Data.List```: https://hackage.haskell.org/package/base-4.14.0.0/docs/Data-List.html
+- Offizielle Dokumentation für ```Data.Text```: https://hackage.haskell.org/package/text-1.2.4.1/docs/Data-Text.html

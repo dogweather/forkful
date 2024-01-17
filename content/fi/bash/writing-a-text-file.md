@@ -1,7 +1,7 @@
 ---
-title:                "Tekstitiedoston kirjoittaminen"
-html_title:           "Bash: Tekstitiedoston kirjoittaminen"
-simple_title:         "Tekstitiedoston kirjoittaminen"
+title:                "Tekstin kirjoittaminen tiedostoon"
+html_title:           "Bash: Tekstin kirjoittaminen tiedostoon"
+simple_title:         "Tekstin kirjoittaminen tiedostoon"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Files and I/O"
@@ -10,37 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä ja miksi?
 
-Ehkä joskus sinun on tarvittava kirjoittaa teksti-tiedosto ja sinusta tuntuu siltä, että haluat tehdä sen terminalilla. Tai ehkä olet vain utelias ja haluat oppia uutta taitoa. Tässä artikkelissa opit, kuinka kirjoittaa teksti-tiedosto Bashilla.
+Kirjoittaminen teksti-tiedostoon tarkoittaa tiedostoon tallentamista, joka sisältää tekstiä ja mahdollisesti muita tietoja. Ohjelmoijat tekevät sitä tallentaakseen ja käsitelläkseen tietoja, kuten käyttäjän antamia syötteitä, suorituksen tuloksia tai tiedostojen sisältöä.
 
-## Kuinka
+## Kuinka:
 
-Bash on ohjelmointikieli, jota käytetään yleisesti komentorivin kautta tapahtuvaan tiedostojen hallintaan ja tekstinkäsittelyyn. Kirjoittaaksesi teksti-tiedoston Bashilla, sinun täytyy ensin avata tiedostoeditori ja luoda uusi tiedosto. Tämän jälkeen voit kirjoittaa haluamasi tekstin ja tallentaa tiedoston käyttäen oikeaa komentoa.
-
-Esimerkiksi, jos haluat luoda uuden tiedoston nimeltä "tekstitiedosto.txt", kirjoita ensin komento "touch tekstitiedosto.txt" luodaksesi uuden tyhjän tiedoston. Sen jälkeen kirjoita "nano tekstitiedosto.txt" avataksesi tiedostoneditorin ja kirjoita haluamasi teksti. Kun olet valmis, paina "control + x" tallentaaksesi muutokset ja poistuaksesi editorista.
-
-Tässä on esimerkki kirjoitetusta teksti-tiedostosta:
+Esimerkkejä koodista ja ne "Bash...`"-lohkoja.
 
 ```Bash
-Tämä on teksti-tiedosto, joka on kirjoitettu Bashilla.
-Bash on helppo tapa hallita ja käsitellä tekstitiedostoja.
-Toivottavasti tämä artikkeli auttaa sinua oppimaan lisää!
+# Luodaan ja kirjoitetaan teksti-tiedosto
+touch tiedosto.txt # Luodaan tiedosto nimeltä "tiedosto.txt"
+echo "Tervetuloa Bashin maailmaan!" > tiedosto.txt # Kirjoitetaan tiedostoon teksti
+
+# Näytetään tiedoston sisältö
+cat tiedosto.txt # Tulostetaan tiedoston sisältö
+
+# Lisätään uusi rivi tiedostoon
+echo "Olet oppinut uuden taidon!" >> tiedosto.txt # Lisätään uusi rivi tiedostoon
+
+# Näytetään uusi tiedostosisältö
+cat tiedosto.txt # Tulostetaan tiedoston uusi sisältö
 ```
 
-Voit myös käyttää muita tekstieditoreita, kuten Vim tai Emacs, kirjoittaaksesi Bashilla teksti-tiedostoja. Kaikki toimivat periaatteessa samalla tavalla, mutta niissä voi olla hieman erilaisia komentoja ja toimintoja.
+Tuloste:
 
-## Syvä sukellus
+```
+Tervetuloa Bashin maailmaan!
+Olet oppinut uuden taidon!
+```
 
-Kun kirjoitat teksti-tiedostoa Bashilla, on tärkeää muistaa käyttää oikeita pääteitä ja merkintöjä. Esimerkiksi, jos haluat lisätä uuden rivin tekstiin, sinun täytyy käyttää "\n" merkintää sen sijaan, että painaisit enter-näppäintä. Samoin, jos haluat lisätä välilyönnin, käytä "\ " merkintää sen sijaan, että painaisit välilyöntinäppäintä.
+## Syvemmälle:
 
-Lisäksi, Bashilla on paljon erilaisia komentoja, jotka voit käyttää teksti-tiedostoihin liittyvissä tehtävissä, kuten hakemisto- ja tiedostojen hallinnassa. Kannattaa tutustua näihin komentoihin ja niiden toimintoihin paremmin, jos haluat tehdä enemmän Bashilla teksti-tiedostojen kanssa.
+Historiallinen konteksti: Kirjoittaminen teksti-tiedostoon liittyy läheisesti käskyjen suorittamiseen komentotulkin kautta. Aikaisemmissa UNIX-järjestelmissä tiedoston kutsuttiin usein " tekstitiedostoksi" ja sen päätteeksi käytettiin ".txt". Nykypäivänä tiedostonimi voi olla mikä tahansa ja tiedoston sisältö voi olla muu kuin pelkkää tekstiä.
 
-## Katso myös
+Vaihtoehtoja: Bashin lisäksi muita mahdollisia tapoja kirjoittaa teksti-tiedosto ovat esimerkiksi käyttöliittymäpohjaiset ohjelmat kuten Notepad tai TextEdit, tai toisen ohjelmointikielen, kuten Pythonin, avulla kirjoitettu skripti.
 
-Tässä muutamia hyödyllisiä linkkejä oppimateriaaleihin Bashista ja teksti-tiedoston kirjoittamisesta:
+Toteutuksen yksityiskohdat: Bashin "echo" -komento on yksi tapa kirjoittaa tekstiä tiedostoon. Se tulostaa annetun tekstin ja ohjaa tulosteen tiedostoon. Vaihtoehtoinen tapa on käyttää ">>" ja neliö aaltosulkeita (">>[tekstitiedosto]") kirjoittaaksesi tiedostoon lisää sisältöä ilman, että uusi sisältö korvaa vanhan sisällön.
 
-- https://linuxize.com/post/bash-tutorial-for-beginners/
-- https://www.tutorialspoint.com/unix_commands/echo.htm
-- https://www.codecademy.com/learn/learn-the-command-line
-- https://www.gnu.org/software/bash/
+## Katso myös:
+
+- "Bash Scripting Tutorial" - Bashin perusteet ja käytännön esimerkkejä: https://ryanstutorials.net/bash-scripting-tutorial/
+- "Redirecting Output to a File" - Lisätietoa tiedoston kirjoittamisesta Bashissa: https://www.tldp.org/LDP/abs/html/io-redirection.html#APPENDFILE
+- "Creating a Text File in Bash" - Asiantuntijaoppaan ohjeita tiedoston luomiseen Bashissa: https://www.howtogeek.com/657590/creating-a-text-file-in-bash-scripts/

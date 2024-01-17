@@ -10,29 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-Ever come across a beautiful webpage and thought, "I want to access this offline, without using the internet"? Or maybe you want to scrape and analyze data from a website. Whatever the reason may be, downloading a web page is a valuable skill for any programmer.
+## What & Why?
 
-## How To
-It's actually quite simple to download a web page using Javascript. Just follow these steps:
+Downloading a web page is the process of retrieving information from a website and saving it on your computer. Programmers often do this for tasks such as web scraping, data analysis, or building applications that require data from the web.
 
-1. First, we need to make a request to the URL of the webpage we want to download. This can be done using the `XMLHttpRequest` object or the newer `fetch()` method. Let's use `fetch()` for this example:
+## How to:
+
+To download a web page in Javascript, we can use the built-in `fetch` function. This function takes in the URL of the webpage we want to download and returns a promise that we can use to access the webpage's data. Here is an example of using `fetch` in action:
+
 ```Javascript
-fetch('https://example.com')
-    .then(response => response.text())
-    .then(data => console.log(data))
+fetch("https://www.example.com")
+  .then(response => {
+    // do something with the response data
+  })
+  .catch(error => {
+    // handle any error that may occur
+  });
 ```
-2. Once we have the response from the webpage, we can access the HTML content using the `response.text()` method. This returns a promise, so we use another `then()` method to log the HTML content to the console.
-3. And that's it! We now have the HTML content of the webpage, which we can save to a file or manipulate as we wish.
 
-## Deep Dive
-As mentioned earlier, there are two methods for making a request to a webpage - `XMLHttpRequest` and `fetch()`. Both work similarly and achieve the same result, but `fetch()` is newer and has a cleaner syntax. It also supports promises, making it easier to work with asynchronous code.
+We can also use `async/await` syntax to make our code more readable. Here's an example:
 
-Additionally, we can specify options in the `fetch()` method, such as `credentials` (for authentication) and `headers` (to specify the content type). You can read more about these options and how to use them in the [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch) documentation.
+```Javascript
+async function fetchWebpage() {
+  try {
+    const response = await fetch("https://www.example.com");
+    // do something with the response data
+  } catch (error) {
+    // handle any error that may occur
+  }
+}
 
-It's worth noting that downloading a web page using Javascript is not the same as web scraping. While web scraping involves extracting specific data from a webpage, downloading a webpage simply retrieves the HTML content.
+fetchWebpage();
+```
 
-## See Also
-- [MDN Web Docs: Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
-- [W3Schools: XMLHttpRequest Object](https://www.w3schools.com/xml/xml_http.asp)
-- [Web Scraping vs Web Crawling vs Screen Scraping](https://www.promptcloud.com/blog/web-scraping-web-crawling-screen-scraping/)
+## Deep Dive:
+
+Webpage downloading has been around since the early days of the internet when people used tools like wget and curl. With the rise of languages like Javascript, it has become easier to do with built-in functions like `fetch`. An alternative to using `fetch` is using libraries such as Axios or jQuery's `$.ajax` function which provide more options and customization.
+
+When using `fetch`, we have access to the Response object, which contains information such as the status code and headers. We can also specify the HTTP request method and add any necessary headers. 
+
+## See Also:
+
+To learn more about the `fetch` function in Javascript, check out the following resources:
+
+- [MDN Web Docs on Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
+- [Axios library](https://github.com/axios/axios)
+- [jQuery.ajax()](https://api.jquery.com/jquery.ajax/) function.

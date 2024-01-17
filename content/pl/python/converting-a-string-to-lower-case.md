@@ -10,48 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co to jest i dlaczego? 
+Konwersja ciągu znaków na małe litery jest jedną z podstawowych operacji wykonywanych przez programistów w języku Python. Polega to na zmniejszeniu wszystkich liter w ciągu znaków do ich odpowiedników w małych literach. Programiści wykonują tę operację, aby ujednolicić dane i ułatwić porównywanie i dopasowywanie ciągów znaków.
 
-Konwersja tekstu na małe litery jest powszechnym zadaniem w wielu projektach programistycznych. Często jest to wymagane w celu ułatwienia porównywania i przetwarzania danych. W tym artykule dowiesz się, jak można wykonać tę operację w języku Python.
+## Jak to zrobić: 
+Aby skorzystać z funkcji konwersji ciągu znaków na małe litery w języku Python, należy użyć metody ```lower()```. Przykład:
 
-## Jak to zrobić
+```
+ciag_znakow = "Hello World"
+print(ciag_znakow.lower())
 
-Konwersja tekstu na małe litery w Pythonie jest bardzo prosta i może być wykonana na różne sposoby. Oto kilka przykładowych metod:
-
-1. Metoda `lower()` - jest to metoda, która jest dostępna dla każdego obiektu typu `string` w Pythonie. Wywołanie tej metody na danym tekście spowoduje, że wszystkie jego litery zostaną zamienione na małe.
-
-```Python
-tekst = "HELLO WORLD"
-print(tekst.lower())
 ```
 
-Wynik: `hello world`
+Output: hello world
 
-2. Metoda `casefold()` - jest to podobna metoda do `lower()`, która dodatkowo umożliwia obsługę specyficznych przypadków językowych, takich jak niemiecki znak "ß".
+Możemy również zastosować tę funkcję do zmiennej, która przechowuje dane wprowadzone przez użytkownika:
 
-```Python
-tekst = "STRAßE"
-print(tekst.casefold())
+```
+uzytkownik = input("Podaj swoje imię: ")
+print("Witaj, " + uzytkownik.lower())
+
 ```
 
-Wynik: `strasse`
+Output: Witaj, [imię użytkownika w małych literach]
 
-3. Wyrażenie `str.lower()` - jest to wygodna alternatywa dla metody `lower()`, ponieważ umożliwia bezpośrednie użycie jej na zmiennej typu `string`.
+## Głębszy rozkład: 
+Konwersja ciągu znaków na małe litery jest często wykonana w celu porównania dwóch ciągów znaków bez uwzględniania wielkości liter. Jest to szczególnie przydatne przy przetwarzaniu tekstów, na przykład w wyszukiwaniu lub sortowaniu danych. Alternatywą dla użycia funkcji ```lower()``` jest użycie metody ```casefold``` lub modułu ```unicodedata```, które oferują większą elastyczność w traktowaniu różnych języków i systemów znaków. Implementacja funkcji ```lower()``` jest częścią standardowej biblioteki języka Python, więc nie wymaga dodatkowych importów.
 
-```Python
-tekst = "WELCOME"
-print(tekst.lower())
-```
-
-Wynik: `welcome`
-
-## Deep Dive
-
-Konwersja tekstu na małe litery może wydawać się prostym zadaniem, ale warto znać kilka dodatkowych informacji na temat tej operacji. Po pierwsze, warto zwrócić uwagę, że metoda `lower()` nie zmienia oryginalnej wartości tekstu, tylko zwraca nowy obiekt. W związku z tym, jeśli chcesz zachować zmiany w oryginalnym tekście, musisz przypisać wynik metody do nowej zmiennej.
-
-Ponadto, sposób, w jaki metoda `lower()` zamienia litery, zależy od ustawień językowych Twojego systemu. Dla niektórych języków, takich jak turecki czy grecki, konwersja na małe litery może spowodować nieprawidłowe wyświetlanie znaków. W takich przypadkach, zaleca się użycie metody `casefold()` lub biblioteki `unicodedata`, która umożliwia bardziej precyzyjne kontrole nad konwersją.
-
-## Zobacz także
-
-- Oficjalna dokumentacja Pythona dotycząca konwersji tekstu na małe litery: https://docs.python.org/3/library/stdtypes.html#str.lower
-- Wprowadzenie do wyrażeń regularnych w Pythonie: https://www.programiz.com/python-programming/regex
+## Zobacz także: 
+[Atrybuty metod stosowanych do ciągów znaków w języku Python](https://docs.python.org/3/library/stdtypes.html#string-methods) | [Jakieś pytania? Przemarzaj Python!](https://www.python.org/)

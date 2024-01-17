@@ -10,67 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+## Cosa & Perché?
+L'estrazione di sottostringhe è il processo di selezione di una parte specifica di una stringa più grande, in base a determinate regole o criteri. I programmatori spesso lo fanno per manipolare e gestire meglio i dati all'interno di un programma o uno script.
 
-Se sei un programmatore alla ricerca di un modo semplice e efficiente per estrarre sottocategorie da una stringa, allora dovresti considerare l'utilizzo della shell Fish. Grazie alle sue potenti funzionalità, puoi facilmente estrarre substringhe utilizzando il suo codice semplice e intuitivo.
-
-## Come Fare
-
-Per estrarre una sottostringa da una stringa in Fish, utilizzare il comando `string sub`. Ad esempio, se hai una stringa "Ciao mondo!" e vuoi estrarre solo la parola "mondo", puoi farlo con il seguente codice:
-
+## Come fare:
+Per estrarre sottostringhe in Fish Shell, puoi utilizzare il comando `string sub`. Ad esempio, per estrarre i primi cinque caratteri da una stringa, puoi usare il seguente comando:
 ```
-Fish Shell
-
-string sub "Ciao mondo!" - 5
+string sub -l 5 "questa è una stringa"
 ```
+Questo restituirà `questa`.
 
-La sintassi è semplice: inserisci la parola "string" seguita dall'argomento "sub" e la stringa da cui vuoi estrarre la sottostringa. Inoltre, puoi specificare la posizione iniziale della sottostringa utilizzando un segno meno prima del numero della posizione desiderata.
-
-Il risultato del codice sopra riportato dovrebbe essere il seguente output:
-
+Puoi anche specificare un punto di inizio e uno di fine, utilizzando la sintassi `string sub INIZIO FINE`. Ad esempio, se volessi estrarre i caratteri dalla posizione 3 alla 7, puoi scrivere:
 ```
-Fish Shell
-
-mondo!
+string sub 3 7 "questa è una stringa"
 ```
+Questo restituirà `sta è`.
 
-Puoi anche utilizzare il comando `strindex` per trovare la posizione di un carattere o di una sottostringa all'interno di una stringa. Ad esempio:
+## Approfondimento:
+L'estrazione di sottostringhe è un concetto comune nei linguaggi di programmazione e ha una lunga storia. In Fish Shell, puoi anche utilizzare la sintassi `substring` per estrarre sottostringhe. Alcune alternative per estrarre sottostringhe includono l'utilizzo delle funzioni `cut` o `grep` in combinazione con espressioni regolari.
 
-```
-Fish Shell
+Per quanto riguarda l'implementazione, Fish Shell utilizza la funzione `substr` della libreria string.h per eseguire l'estrazione delle sottostringhe.
 
-string strindex "Ciao mondo!" "mondo!"
-```
-
-Il risultato sarà il seguente:
-
-```
-Fish Shell
-
-5
-```
-
-## Approfondimento
-
-È possibile specificare ulteriori argomenti per ottenere risultati più precisi. Ad esempio, puoi utilizzare l'opzione `start` per indicare la posizione di partenza della sottostringa, e l'opzione `end` per indicare la posizione di fine. Inoltre, puoi utilizzare l'opzione `length` per specificare la lunghezza desiderata della sottostringa.
-
-```
-Fish Shell
-
-string sub "Ciao mondo!" --start 5 --length 5
-```
-
-Il risultato del codice sopra riportato sarà:
-
-```
-Fish Shell
-
-mondo
-```
-
-Sperimenta con questi comandi e le loro opzioni per ottenere i risultati desiderati.
-
-## Vedi Anche
-
-- [Documentazione ufficiale di Fish Shell](https://fishshell.com/docs/current/index.html)
-- [Guida rapida per iniziare con Fish Shell](https://dev.to/mauroker0x/improve-your-terminal-game-with-fish-shell-2538)
+## Vedi anche:
+- [Documentazione ufficiale di Fish Shell su string sub](https://fishshell.com/docs/current/cmds/string.html#sub)
+- [Altre informazioni su espressioni regolari in Fish Shell](https://fishshell.com/docs/current/index.html#regular-expressions)

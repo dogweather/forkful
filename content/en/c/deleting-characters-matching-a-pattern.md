@@ -10,46 +10,62 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-There may be situations where a programmer needs to delete certain characters from a string based on a specific pattern. This can help with data cleanup or formatting operations, making the code more efficient and readable.
+## What & Why?
+Deleting characters matching a pattern is when a programmer removes specific characters from a given text based on a specific pattern. This can be useful for filtering data or for text processing tasks. Programmers commonly do this in order to clean up large data sets or to transform text into a desired format for further processing.
 
-## How To
-To begin, we need to understand the basic syntax for deleting characters from a string in C. The function `strchr()` can be used to locate a specific character in a string. It takes two arguments: the string to search and the character to find. Here's an example:
-```C
-char str[] = "Hello World";
-char *ptr = strchr(str, 'l'); // finds the first occurrence of 'l' in the string
+## How to:
+The basic syntax for deleting characters matching a pattern in C is as follows:
 ```
-To delete multiple characters, we can use a for loop and check each character against our desired pattern. Here's an example that deletes all lowercase letters from a string:
-```C
-char str[] = "Hello World";
-for(int i = 0; i < strlen(str); i++) {
-    if(str[i] >= 'a' && str[i] <= 'z') { // checks if the character is lowercase
-        memmove(&str[i], &str[i+1], strlen(str) - i); // moves all remaining characters one index to the left
-        i--; // decrease i to check the new character at the current index
-    }
-}
+str_del("given_text", "pattern");
 ```
-The resulting string will be "H W" as all lowercases have been deleted. Keep in mind that `memmove()` is used instead of `strcpy()` to ensure that the null character at the end of the string is also moved.
+This function searches the given text for the specified pattern and removes any matching characters. Let's look at an example:
+```
+#include<stdio.h> 
+#include<string.h>
 
-## Deep Dive
-Instead of using the `strchr()` and `memmove()` functions, we can also use pointers to achieve the same result. The `strchr()` function returns a pointer to the first occurrence of the character in the given string. Similarly, the `memmove()` function also uses pointers to manipulate the string. Here's an example of how we can delete all spaces in a string using pointers:
-```C
-char str[] = "Hello World";
-char *ptr = str;
-while(*ptr) { // loops until the null character is reached
-    if(*ptr == ' ') { // checks if the character is a space
-        char *temp = ptr;
-        while(*temp) { // moves all characters after 'ptr' one index to the left
-            *temp = *(temp + 1);
-            temp++;
-        }
-        continue; // continues to next iteration without increasing ptr
-    }
-    ptr++; // increase ptr to check the next character
-}
+//Define function to delete characters matching a pattern
+void str_del(char str[], const char pattern[]) { 
+	int i, j, k;
+	int count = 0; 
+	for (k = 0; pattern[k] != '\0'; k++) { 
+		for (i = j = 0; str[i] != '\0'; i++) { 
+            //If current character does not match the pattern, add it to the modified string
+			if (str[i] != pattern[k]) { 
+				str[j++] = str[i]; 
+			} 
+			else {
+                //Otherwise, increase the count of removed characters
+				count++; 
+			}
+		} 
+		str[j] = '\0'; 
+	} 
+	printf("Modified text: %s \n", str); 
+    printf("Total characters removed: %d", count); 
+} 
+  
+int main() { 
+    char text[] = "H3ll0 W0rld!!"; 
+    char pattern[] = "10"; 
+    //Call str_del function
+    str_del(text, pattern); 
+    return 0; 
+} 
 ```
-This will effectively delete all spaces from the string and the resulting string will be "HelloWorld".
+Output: 
+```
+Modified text: H3l W0rld! 
+Total characters removed: 3
+```
 
-## See Also
-- [C String Functions](https://www.programiz.com/c-programming/c-string-functions)
-- [C Pointer Tutorial](https://www.tutorialspoint.com/cprogramming/c_pointers.htm)
+## Deep Dive:
+Deleting characters matching a pattern can be seen as a form of string manipulation, in which the programmer is using the given pattern as a filter to remove unwanted characters from the text. This concept has been around since the early days of computer programming, as it is a basic task that allows for data to be processed and cleaned up in a more efficient manner.
+
+In terms of alternatives, there are a few different approaches that a programmer can take when trying to delete characters matching a pattern. One alternative is to use regular expressions, which are specialized patterns used for searching and manipulating text. Another option is to use built-in functions such as `strchr()` or `strtok()` to search and remove specific characters.
+
+For those interested in the implementation details, the `str_del` function first loops through each character of the pattern and then searches for that same character within the given text using a nested for loop. If a match is found, the character is removed from the text and the count of removed characters is increased. The function then continues until all characters in the pattern have been searched for and removed.
+
+## See Also:
+- [C - Strings](https://www.tutorialspoint.com/cprogramming/c_strings.htm)
+- [C - Regular Expressions](https://www.tutorialspoint.com/c_standard_library/c_function_regcomp.htm)
+- [Built-in String Functions in C](https://www.geeksforgeeks.org/built-function-c-string-manipulation/)

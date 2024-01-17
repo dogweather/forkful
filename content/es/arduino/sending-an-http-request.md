@@ -1,7 +1,7 @@
 ---
-title:                "Enviando una solicitud http"
-html_title:           "Arduino: Enviando una solicitud http"
-simple_title:         "Enviando una solicitud http"
+title:                "Enviando una solicitud http."
+html_title:           "Arduino: Enviando una solicitud http."
+simple_title:         "Enviando una solicitud http."
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "HTML and the Web"
@@ -10,65 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué?
+## ¿Qué y por qué?
 
-¿Alguna vez has querido controlar tu proyecto de Arduino desde una ubicación remota? En lugar de limitarte a las interacciones locales, un HTTP request te permite comunicarte con tu Arduino a través de internet. ¡Conecta tu placa al mundo entero y toma el control desde cualquier lugar!
+Enviar una solicitud HTTP es una forma en la que los programadores pueden comunicarse con servidores en la web. Es una forma de que su programa reciba información o realice acciones a través de Internet.
 
-## Cómo hacerlo
+## Cómo:
 
-Para enviar un HTTP request desde tu Arduino, necesitas una conexión a internet y una librería llamada "WiFiClientSecure". Aquí hay un ejemplo de cómo puedes enviar un request GET utilizando la URL y la clave de API de una página web:
+Escribir una solicitud HTTP en Arduino es fácil. Primero, asegúrate de tener la biblioteca WiFiClient.h incluida en tu programa. Luego, crea un objeto de tipo WiFiClient y usa su método .connect() para conectarte a la URL deseada. A continuación, escribe tu solicitud usando el formato de solicitud HTTP adecuado y usa el método .print() para enviarla al servidor. Por último, usa el método .read() para recibir la respuesta del servidor y procesarla en tu programa.
 
-```
-Arduino<!-- language: cpp -->
+```Arduino
+#include <WiFiClient.h>
 
-WiFiClientSecure client; //Inicializa el cliente
-const char* host = "www.example.com"; //URL del sitio web
-const int httpsPort = 443; //Puerto seguro HTTPS
-String apiKey = "abcd1234"; //Clave de API proporcionada por el sitio web
-
-if (!client.connect(host, httpsPort)) { //Intenta conectar al servidor
-    Serial.println("Connection failed");
-    return;
-}
-
-//Forma el request GET con la URL y la clave de API
-String getRequest = "GET /getData?key=" + apiKey + " HTTP/1.1\r\n" +
-                    "Host: www.example.com\r\n" +
-                    "User-Agent: ArduinoWiFi/1.1\r\n" +
-                    "Connection: close\r\n\r\n";
-                    
-client.print(getRequest); //Envía el request al servidor
-
-while (client.connected()) { //Lee y muestra la respuesta del servidor
-    String line = client.readStringUntil('\n');
-    if (line == "\r") {
-        Serial.println("Headers received");
-        break;
-    }
-}
-while (client.available()) {
-    String line = client.readStringUntil('\n');
-    Serial.print(line);
-}
-client.stop(); //Cierra la conexión
+WiFiClient client;
+client.connect("www.ejemplo.com", 80); //conexión a la URL y puerto 80
+client.print("GET /index.html HTTP/1.1\r\n"); //solicitud GET para la página "index.html"
+client.print("Host: www.ejemplo.com\r\n"); //se proporciona el nombre del servidor
+client.print("Connection: close\r\n\r\n"); //se cierra la conexión después de recibir la respuesta
+String respuesta = client.readString(); //lee y almacena la respuesta del servidor
 ```
 
-La salida en el monitor serial debería ser como esta:
+## Profundizando:
 
-```
-HTTP/1.1 200 OK
-Date: Tue, 15 Jun 2021 00:00:00 GMT
-Content-Type: text/html; charset=utf-8
+Las solicitudes HTTP se han utilizado desde los inicios de la web para facilitar la comunicación entre servidores y clientes. Aunque ahora existen otras alternativas, como las solicitudes HTTPS más seguras, las solicitudes HTTP siguen siendo una forma eficaz de comunicarse con servidores.
 
-¡Tu solicitud fue exitosa! Aquí está tu dato: 123
-```
+Además de enviar solicitudes GET, como se muestra en el ejemplo anterior, también se pueden enviar solicitudes POST, PUT y DELETE utilizando el mismo formato de solicitud y los métodos .print() y .write() adecuados. También es importante tener en cuenta que algunos servidores pueden requerir ciertos encabezados en la solicitud para que funcione correctamente.
 
-## Exploración en profundidad
+## Ver también:
 
-Este es solo un ejemplo básico, pero hay muchas más cosas que puedes hacer con HTTP requests en Arduino. Por ejemplo, podrías enviar datos de sensores a una página web para monitorearlos en tiempo real o incluso controlar cosas como luces o motores. También puedes utilizar diferentes tipos de requests, como POST o PUT. ¡Las posibilidades son infinitas!
-
-## Ver también
-
-- [Tutorial de HTTP con Arduino y WiFiClienteSecure](https://randomnerdtutorials.com/esp32-http-get-post-arduino/)
-- [Documentación de la librería WiFiClientSecure](https://www.arduino.cc/en/Reference/WiFiClientSecure)
-- [Ejemplos de proyectos de Arduino con HTTP requests](https://create.arduino.cc/projecthub/projects/tags/http%20request)
+- [Documentación oficial de Arduino sobre WiFiClient] (https://www.arduino.cc/en/Reference/WiFiClient/)
+- [Tutorial de Adafruit sobre cómo usar solicitudes HTTP en Arduino] (https://learn.adafruit.com/adafruit-io-basics-simple-internet-of-things-dashboard/arduino-http-requests)
+- [Especificación de HTTP por World Wide Web Consortium] (https://www.w3.org/Protocols/rfc2616/rfc2616-sec5.html)

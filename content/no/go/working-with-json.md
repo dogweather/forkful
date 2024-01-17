@@ -1,7 +1,7 @@
 ---
-title:                "Arbeide med json"
-html_title:           "Go: Arbeide med json"
-simple_title:         "Arbeide med json"
+title:                "Arbeid med json"
+html_title:           "Go: Arbeid med json"
+simple_title:         "Arbeid med json"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Data Formats and Serialization"
@@ -10,95 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+Hva & Hvorfor?
+Å jobbe med JSON innebærer å kunne behandle data gjennom programmeringsspråket Go ved å konvertere informasjon til et enkelt og lettleselig format. Dette gjøres for å effektivt håndtere utveksling av data mellom forskjellige programmeringsspåk eller plattformer.
 
-Å jobbe med JSON er nyttig for å håndtere datautveksling på en enkel og effektiv måte. Det er et populært format som brukes for å overføre og lagre data, og derfor er det viktig å lære hvordan man kan jobbe med det i programmering.
+Hvordan:
+Go tilbyr en enkel og effektiv måte å håndtere JSON på gjennom sitt innebygde "encoding/json" pakke. Ved å bruke funksjoner som "Marshal" og "Unmarshal" kan vi enkelt konvertere data til eller fra JSON-formatet. Se eksempler nedenfor for å få en bedre forståelse:
 
-## Hvordan
-
-Koding med JSON er enkelt i Go, takket være innebygde pakker som "encoding/json". For å starte, må du deklarere en struktur som matcher JSON-dataene du vil jobbe med, og deretter kan du bruke "json.Unmarshal()" for å konvertere JSON-dataene til Go-strukturen. Her er et eksempel:
-
-```
-// Deklarerer en struktur som matcher JSON-data
-type Person struct {
-    Navn    string `json:"navn"`
-    Alder   int    `json:"alder"`
-    Hjemland string `json:"hjemland"`
+```Go
+// Marshal data til JSON
+data := map[string]string{
+  "name": "John",
+  "age": "30",
 }
-
-// Deklarerer JSON-dataen som skal konverteres
-jsonData := `{"navn": "Lise", "alder": 25, "hjemland": "Norge"}`
-
-// Bruker json.Unmarshal() for å konvertere dataen
-var person Person
-err := json.Unmarshal([]byte(jsonData), &person)
+json, err := json.Marshal(data)
 if err != nil {
-    fmt.Println(err)
+  panic(err)
 }
+fmt.Println(string(json))
 
-// Printer ut dataen i Go-strukturen
-fmt.Println(person.Navn) // output: Lise
-fmt.Println(person.Alder) // output: 25
-fmt.Println(person.Hjemland) // output: Norge 
-```
-
-## Dypdykk
-
-Det er også mulig å jobbe med mer komplekse JSON-data, som inneholder nestede strukturer eller arrays. Du kan bruke for-løkker og "json.Unmarshal()" på nytt for å hente ut disse dataene. Du kan også bruke "json.Marshal()" for å konvertere Go-strukturer til JSON-format. Her er et eksempel på hvordan du kan håndtere nestede strukturer:
-
-```
-// Deklarerer en struktur som matcher JSON-data
-type Film struct {
-    Tittel   string `json:"tittel"`
-    Aar      int    `json:"aar"`
-    Sjangre  []string `json:"sjangre"`
-}
-
-// Deklarerer en struktur som inneholder en liste med filmer
-type Filmer struct {
-    Total int `json:"total"`
-    Results []Film `json:"results"`
-}
-
-// Deklarerer JSON-data som skal konverteres
-jsonData := `{
-    "total": 3,
-    "results": [
-        {
-            "tittel": "Ringenes Herre",
-            "aar": 2001,
-            "sjangre": ["Action", "Eventyr", "Fantasy"]
-        },
-        {
-            "tittel": "Star Wars",
-            "aar": 1977,
-            "sjangre": ["Action", "Eventyr", "Sci-Fi"]
-        },
-        {
-            "tittel": "Harry Potter",
-            "aar": 2001,
-            "sjangre": ["Fantasy"]
-        }
-    ]
-}`
-
-// Bruker json.Unmarshal() til å konvertere dataen
-var filmer Filmer
-err := json.Unmarshal([]byte(jsonData), &filmer)
+// Unmarshal JSON til data
+jsonString := `{"name":"John","age":"30"}`
+var data map[string]string
+err := json.Unmarshal([]byte(jsonString), &data)
 if err != nil {
-    fmt.Println(err)
+  panic(err)
 }
-
-// Printer ut dataen i Go-strukturen
-for _, film := range filmer.Results {
-    fmt.Println(film.Tittel) // output: Ringenes Herre
-    fmt.Println(film.Aar) // output: 2001
-    fmt.Println(film.Sjangre) // output: [Action Eventyr Fantasy]
-}
+fmt.Println(data["name"])
 ```
 
-## Se også
+Eksempel utoutput: {"name":"John","age":"30"}
+John
 
-[Go sin offisielle tutorial om JSON](https://golang.org/pkg/encoding/json/)
+Dypdykk:
+JSON (JavaScript Object Notation) ble utviklet på 1990-tallet som en måte å kontekstfritt representere strukturerte data på. Siden da har det blitt en av de mest populære formater for datautveksling på nettet, spesielt i webapplikasjoner. Alternativer til å bruke Go for å jobbe med JSON inkluderer å bruke andre programmeringsspråk som allerede har integrert støtte for det, eller å bruke biblioteker som ikke følger Go's standarder. Å følge Go's standarder kan gjøre det enklere å vedlikeholde og utvide koden på lang sikt.
 
-[En oversikt over populære JSON-pakker for Go](https://awesome-go.com/#json)
+Se også:
+- Offisiell Go dokumentasjon for JSON: https://golang.org/pkg/encoding/json/
+- Eksempler på å bruke "encoding/json" pakken i Go: https://gobyexample.com/json
+- Sammenligning mellom Go og andre programmeringsspråk for å jobbe med JSON: https://medium.com/always-be-coding/abc-go-programming-using-json-36a869eb13e2

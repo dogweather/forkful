@@ -1,7 +1,7 @@
 ---
-title:                "Tarkistetaan onko hakemisto olemassa."
-html_title:           "Haskell: Tarkistetaan onko hakemisto olemassa."
-simple_title:         "Tarkistetaan onko hakemisto olemassa."
+title:                "Tarkistetaan tiedostokansion olemassaolo"
+html_title:           "Haskell: Tarkistetaan tiedostokansion olemassaolo"
+simple_title:         "Tarkistetaan tiedostokansion olemassaolo"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Files and I/O"
@@ -10,49 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
-Joskus ohjelman täytyy tarkistaa, onko tietty kansio olemassa ennen kuin se voi suorittaa halutun toiminnon, kuten tallentaa tiedostoja. Tämä artikkeli näyttää, miten voit tarkistaa kansion olemassaolon Haskell-ohjelmoinnissa.
+# Mitä & Miksi?
+Tiedoston on tärkeä osa ohjelmointia varmistaessa, että hakemisto on olemassa. Näin varmistetaan, että tiedostoja voidaan luoda ja käsitellä onnistuneesti. Ohjelmoijat tekevät tämän tarkistaakseen, että oikeat tiedostot ovat käytettävissä ja välttääkseen virheitä tiedostojen käsittelyssä.
 
-## Miten
-Ensimmäiseksi, tuodaan `System.Directory` -kirjasto, joka tarjoaa toimintoja kansioihin liittyville operaatioille. 
+# Kuinka tehdä:
 ```Haskell
 import System.Directory
-```
-Nyt voimme käyttää `doesDirectoryExist` -funktiota, joka palauttaa `True`, jos annettu polku johtaa olemassa olevaan kansioon ja muulloin `False`.
-```Haskell
-doesDirectoryExist :: FilePath -> IO Bool
-```
-Tässä esimerkissä tarkistetaan, onko "Documents" -kansio olemassa ja tulostetaan tulos:
-```Haskell
-doesDirectoryExist "Documents"
-```
-```
-True
-```
-Voit myös tarkistaa alikansion olemassaolon antamalla polun, joka johtaa alikansioon:
-```Haskell
-doesDirectoryExist "Documents/Pictures"
-```
-```
-True
-```
-Jos annettu kansio ei ole olemassa, tulostetaan `False`:
-```Haskell
-doesDirectoryExist "Music"
-```
-```
-False
+
+checkDirectory :: FilePath -> IO Bool
+checkDirectory path = do
+    exists <- doesDirectoryExist path
+    return exists
+
+main :: IO ()
+main = do
+    let directory = "test" -- replace with desired path
+    exists <- checkDirectory directory
+    if exists
+        then putStrLn "Hakemisto on olemassa."
+        else putStrLn "Hakemistoa ei ole olemassa."
 ```
 
-## Syvä Sukellus
-`doesDirectoryExist` on osa `System.Directory` -kirjaston `Permissions` -moduulia, joka tarjoaa myös muita toimintoja kansioiden oikeuksien ja ominaisuuksien tarkistamiseen. Tässä muutama esimerkki:
-- `getPermissions` -palauttaa `Permissions` -rakenteen, joka sisältää tietoa kansion oikeuksista, kuten luku- tai kirjoitusoikeuksista.
-- `executable` -funktio palauttaa `True`, jos annettu polku viittaa suoritettavaan tiedostoon.
-- `symbolicLink` -funktio tarkistaa, onko annettu polku symbolinen linkki.
+Suoritus:
 
-Nämä toiminnot ovat hyödyllisiä monimutkaisemmissa ohjelmissa, joissa täytyy tarkistaa myös kansion ominaisuuksia.
+```
+>> Hakemistoa ei ole olemassa.
+```
+# Syvällinen Syventyminen:
+## Historiallinen Konteksti:
+Tiedostojen käsittely on ollut merkittävä osa ohjelmointia jo pitkään. Varmistaminen, että hakemisto on olemassa, on välttämätöntä, jotta ohjelmat voivat toimia luotettavasti ja käsitellä tiedostoja oikein.
 
-## Katso myös
-- [System.Directory dokumentaatio](http://hackage.haskell.org/package/directory/docs/System-Directory.html)
-- [Permissions moduulin dokumentaatio](http://hackage.haskell.org/package/directory/docs/System-Directory-Permissions.html)
-- [Haskellin virallinen dokumentaatio](https://www.haskell.org/documentation/)
+## Vaihtoehtoja:
+On olemassa useita tapoja tarkistaa, onko hakemisto olemassa. Yksi vaihtoehto on käyttää UNIX-järjestelmän komentoa "ls", joka listaa tiedostot hakemistossa. Toinen vaihtoehto on käyttää hakemiston ominaisuuksia, kuten "isDirectory", joka palauttaa totuusarvon, onko kyseessä hakemisto.
+
+## Toteutus:
+Tarkistaaksesi, onko hakemisto olemassa, käytetään "doesDirectoryExist" -funktiota, joka on osa "System.Directory" -kirjastoa. Tämä funktio palauttaa "Bool" -arvon, joka ilmaisee, onko hakemisto olemassa vai ei.
+
+# Katso myös:
+- [System.Directory - Haskellin virallinen dokumentaatio](https://hackage.haskell.org/package/directory-1.3.6.1/docs/System-Directory.html)
+- [Tiedostojen käsittely - Haskellin virallinen dokumentaatio](https://www.haskell.org/tutorial/io.html#files-and-directories)

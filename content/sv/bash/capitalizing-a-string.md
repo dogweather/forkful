@@ -1,7 +1,7 @@
 ---
-title:                "Att göra en sträng stor bokstav"
-html_title:           "Bash: Att göra en sträng stor bokstav"
-simple_title:         "Att göra en sträng stor bokstav"
+title:                "Att Göra En Sträng Versal"
+html_title:           "Bash: Att Göra En Sträng Versal"
+simple_title:         "Att Göra En Sträng Versal"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Strings"
@@ -10,30 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
-Att kapitalisera en sträng (göra alla bokstäver stora) är användbart när man vill förbättra läsbarheten och presentationen av en text. Det kan också vara användbart om man vill få ut data i en viss format eller om man behöver söka efter en specifik sträng som är skriven i stora bokstäver.
+## Vad & Varför?
 
-## Hur man gör
-För att kapitalisera en sträng i Bash kan du använda inbyggda funktionen "tr". Här är ett exempel på hur du kan använda den:
+Att kapitalisera en sträng i programmering betyder helt enkelt att ändra alla små bokstäver i en sträng till stora bokstäver. Det är vanligt att göra detta när man behöver argumentera eller jämföra strängar, eftersom vissa programmeringsspråk är fallkänsliga och kommer att skilja på små och stora bokstäver.
 
-```Bash
-echo "hej du!" | tr 'a-z' 'A-Z'
-```
-Det här kommer att producera outputen "HEJ DU!". Du kan också använda regular expressions i "tr" för att specifikt välja vilka bokstäver som ska förändras. Här är ett exempel där vi bara vill göra den första bokstaven stor och resten små:
+## Hur man gör:
+
+För att kapitalisera en sträng i Bash kan du använda kommandot `tr` tillsammans med `[:lower:]` för att byta ut alla små bokstäver till stora bokstäver. Här är ett exempel på hur du kan använda det på terminalen:
 
 ```Bash
-echo "dET sKA sE oUT sÅ hÄR" | tr '[:lower:]' '[:upper:]'
+$ echo "hej alla" | tr '[:lower:]' '[:upper:]'
 ```
-Det här kommer att producera outputen "Det ska se ut så här". 
 
-## Djupdykning
-Det finns också andra sätt att kapitalisera en sträng i Bash, som att använda inbyggda kommandot "awk" eller "sed". Det finns också sätt att göra detta inuti ett shell script, vilket kan vara användbart om man vill förändra flera strängar på en gång. Att förstå hur dessa kommandon fungerar kan också ge dig en bättre förståelse för hur Bash hanterar strängar och format.
+Detta kommer att ge utdata "HEJ ALLA". Du kan också använda andra programmeringsspråk som Python eller Ruby för att utföra detta.
 
-## Se också
-Här är några ytterligare resurser som kan vara hjälpsamma för dig när du vill kapitalisera en sträng i Bash:
+## Djupdykning:
 
-- [Bash tr Command](https://www.geeksforgeeks.org/tr-command-in-unix-linux-with-examples/)
-- [Bash awk Command](https://www.geeksforgeeks.org/awk-command-unixlinux-examples/)
-- [Bash sed Command](https://www.geeksforgeeks.org/sed-command-in-linux-unix-with-examples/)
+Det är intressant att notera att behovet av att kapitalisera strängar har funnits sedan de tidiga dagarna av datavetenskapen. I det första programmeringsspråket, Fortran, behövde man använda speciella funktioner för att jämföra strängar, eftersom det inte fanns inbyggd funktionalitet för detta. Idag har de flesta moderna programmeringsspråken inbyggda funktioner för att hantera detta, men det är fortfarande viktigt att känna till hur man kapitaliserar strängar när det behövs.
 
-Nu har du lärt dig hur du kan kapitalisera en sträng i Bash. Lycka till med dina programmeringsprojekt!
+Det finns också alternativ till att använda `tr` för att kapitalisera strängar, till exempel `sed` eller `awk`. Dessutom kan man använda bibliotek eller paket som är speciellt utformade för att arbeta med strängar, vilket kan vara användbart om man ska hantera stora mängder data.
+
+## Relaterade källor:
+
+- [Bash-tr](https://linux.die.net/man/1/tr)
+- [Sträng hantering i Python](https://docs.python.org/3/library/stdtypes.html#string-methods)
+- [Ryuk sträng manipulationsbibliotek för Bash](https://github.com/nmathewson/ryuk)

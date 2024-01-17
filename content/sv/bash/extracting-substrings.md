@@ -10,40 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
+Som programmerare kanske du har stött på behovet av att önska att kunna extrahera en del av en textsträng, istället för att bara använda hela strängen. Detta är precis vad extrahering av delsträngar handlar om - att plocka ut en del av en textsträng baserat på specifika kriterier. Detta är ett viktigt verktyg för att manipulera och bearbeta data i Bash-programmering.
 
-Vi använder ofta Bash för att hantera och manipulera textsträngar, men ibland vill vi bara extrahera en del av en textsträng istället för hela strängen. Genom att lära dig hur man extraherar substringar i Bash kan du effektivt hantera och manipulera text på ett mer precist sätt.
-
-## Så här gör du
-
-Det finns två vanliga metoder för att extrahera substringar i Bash: använda substringsyntaxen eller använda inbyggda verktyg som cut eller sed.
-
-För att använda substringsyntaxen kan du använda det inbyggda kommandot "expr". Till exempel, om vi vill extrahera de första tre tecknen i en sträng "Hello", kan vi skriva:
+## Hur man gör:
+Ett enkelt sätt att extrahera en delsträng är att använda "cut" kommandot. Detta kommando är utformat för att plocka ut delar av en textsträng baserat på specifika tecken eller positioner. Här är ett exempel på hur man använder "cut" för att extrahera delar av en textsträng:
 
 ```Bash
-expr substr "Hello" 1 3
+text="Hej världen!"
+echo ${text:4:5}
 ```
 
-Vilket ger oss utmatningen "Hel". Notera att det första numret (1) motsvarar startpositionen, medan det andra numret (3) motsvarar längden på den önskade substringen.
-
-En annan vanlig metod är att använda verktyget "cut". Om vi till exempel vill extrahera de tre sista tecknen i samma sträng, kan vi skriva:
+Det här kommer att skriva ut delen av textsträngen som börjar på position 4 och sträcker sig totalt 5 tecken, vilket i det här fallet är "värld". Om du vill plocka ut en delsträng baserat på specifika tecken i texten, kan du använda "grep" kommandot istället. Här är ett exempel på hur man skulle göra det:
 
 ```Bash
-echo "Hello" | cut -c 3-
+text="Hej världen!"
+echo $text | grep -o "värld"
 ```
 
-Denna kommando tar input från "echo" och använder flaggan "-c" för att extrahera tecken från den tredje positionen och framåt, vilket ger oss utmatningen "llo".
+I detta exempel kommer grep att extrahera delsträngen "värld" från texten och skriva ut den.
 
-Det finns också andra användbara verktyg som sed, awk och grep som kan användas för att extrahera substringar baserat på olika mönster.
+## Djupdykning:
+Extrahering av delsträngar är en vanlig praktik inom programmering och används ofta för att söka och manipulera data. Innan Bash introducerades användes "cut" och "grep" mest genom vanliga Unix-kommandon. Bash erbjuder dock inbyggda funktioner för att göra detta ännu enklare och mer flexibelt.
 
-## Fördjupa dig
+En annan approach för extrahering av delsträngar är att använda reguljära uttryck ("regular expressions") för att matcha ett specifikt mönster i en textsträng. Dessa kan användas i kombination med "grep" för att hitta och extrahera mer komplexa delsträngar från text.
 
-När du behärskar dessa grundläggande metoder för att extrahera substringar i Bash kan du också utforska mer avancerade funktioner, som till exempel att extrahera från slutet av en sträng eller använda reguljära uttryck för att hitta mönster för extraherade substringar.
+När du jobbar med Bash-scripts kan du även använda variabler för att lagra delsträngar som du har extraherat. Detta kan vara särskilt användbart när du behöver åtkomst till samma delsträng flera gånger i ditt script.
 
-En annan viktig aspekt att tänka på är att Bash använder nollindexering för positioner i en sträng, vilket betyder att det första tecknet är på position 0, det andra är på position 1 och så vidare. Detta är viktigt att komma ihåg när du använder substringsyntaxen eller något av de inbyggda verktygen som cut.
+## Se även:
+Här är några resurser för dig som vill lära dig mer om extrahering av delsträngar i Bash:
 
-## Se även
-
-- [Bash Guide for Beginners](https://www.tldp.org/LDP/Bash-Beginners-Guide/html/sect_10_05.html)
-- [Linuxize: Bash Substring Extraction](https://linuxize.com/post/bash-substring-extraction/)
-- [The Linux Documentation Project: Command line processing](https://www.tldp.org/LDP/abs/html/cmdsub.html)
+- [Bash Guide for Beginners](https://tldp.org/LDP/Bash-Beginners-Guide/html/sect_09_04.html) - en grundläggande guide som inkluderar information om extrahering av delsträngar.
+- [Regular Expressions in Bash](https://www.regular-expressions.info/posix.html) - en omfattande guide om reguljära uttryck och hur man använder dem i Bash.
+- [Bash dokumentationen](https://www.gnu.org/software/bash/manual/bash.html) - en komplett referens för Bash-kommandon och funktioner.

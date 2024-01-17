@@ -1,7 +1,7 @@
 ---
-title:                "Tekstin hakeminen ja korvaaminen"
-html_title:           "TypeScript: Tekstin hakeminen ja korvaaminen"
-simple_title:         "Tekstin hakeminen ja korvaaminen"
+title:                "Tekstin etsiminen ja korvaaminen"
+html_title:           "TypeScript: Tekstin etsiminen ja korvaaminen"
+simple_title:         "Tekstin etsiminen ja korvaaminen"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -10,41 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+##Mitä & Miksi?
 
-Miksi joku haluaisi etsiä ja korvata tekstiä? Se voi olla hyödyllistä, kun halutaan tehdä massiivisia muutoksia ohjelmakoodiin tai tekstitiedostoihin. Sen avulla voi myös nopeasti korjata kirjoitusvirheitä tai päivittää vanhentunutta sisältöä.
+Tekstin etsiminen ja korvaaminen on prosessi, jossa ohjelmoija etsii tiettyjä merkkijonoja ja korvaa ne toisilla. Tämä voi olla hyödyllistä esimerkiksi, kun halutaan muuttaa tietynlaisia merkkijonoja toisenlaisiksi tai korvata vanhoja koodinpätkiä uusilla. Ohjelmoijat tekevät tätä parantaakseen koodin suorituskykyä ja tehokkuutta, sekä välttääkseen virheitä koodissa.
 
-## Miten
-
-```TypeScript
-// Etsii ja korvaa kaikki "vanha" tekstin "uusi" tekstiksi
-const uusiTeksti = vanhaTeksti.replace(/vanha/g, "uusi");
-console.log(uusiTeksti);
-// Tulostaa "uusi teksti"
-```
+##Miten:
 
 ```TypeScript
-// Etsii ja korvaa vain ensimmäisen esiintymän "vanha" tekstin "uusi" tekstiksi
-const uusiTeksti = vanhaTeksti.replace(/vanha/, "uusi");
+const teksti = "Tämä on esimerkki tekstistä";
+const uusiTeksti = teksti.replace("esimerkki", "toinen");
+
 console.log(uusiTeksti);
-// Tulostaa "uusivanha teksti"
+//Tämä on toinen tekstistä
 ```
 
-```TypeScript
-// Käyttäjän syöttämä teksti ja korvaava teksti
-const etsittavaTeksti = prompt("Kirjoita teksti, josta haluat korvata");
-const korvaavaTeksti = prompt("Kirjoita teksti, jolla haluat korvata");
-const uusiTeksti = vanhaTeksti.replace(etsittavaTeksti, korvaavaTeksti);
-// Tulostaa korvattavan tekstin ja korvaavan tekstin välissä olevan tekstin
-console.log(uusiTeksti);
-```
+Tässä yksinkertaisessa esimerkissä käytetään replace-metodia, joka etsii merkkijonosta "teksti" sanaa "esimerkki" ja korvaa sen sanalla "toinen". Lopputulos tulostetaan konsoliin. Tämä on vain yksi tapa, jolla tekstiä voidaan etsiä ja korvata TypeScriptillä.
 
-## Syventävä tarkastelu
+##Syvällinen sukellus:
 
-Etsiminen ja korvaaminen perustuvat erilaisiin säännöllisiin lausekkeisiin (regex), jotka määrittelevät etsittävän tekstin ja sen korvaavan tekstin. Nämä säännölliset lausekkeet voivat olla hyödyllisiä myös muissa tapauksissa, kuten datan muokkaamisessa ja validoinnissa.
+Historiallisesti tekstiä on etsitty ja korvattu manuaalisesti, mikä on ollut aikaa vievää ja altistanut mahdollisille virheille. Nykyään tähän käytetään yleisesti ohjelmointikieliä ja kirjastoja, kuten TypeScript ja sen sisäänrakennettuja metodeja, kuten replace. On myös muita tapoja, kuten säännölliset lausekkeet (regular expressions), jotka tarjoavat laajempia etsimisen ja korvaamisen mahdollisuuksia.
 
-## Katso myös
+##Katso myös:
 
-- [MDN Regex opas](https://developer.mozilla.org/fi/docs/Web/JavaScript/Guide/Regular_Expressions) 
-- [Ohjeet regexien käyttämiseen TypeScriptissä](https://www.digitalocean.com/community/tutorials/js-regex-typescript)
-- [TypeScriptin virallinen verkkosivusto](https://www.typescriptlang.org/)
+Tässä artikkelissa olemme käsitelleet vain yhtä tapaa käyttää TypeScriptia tekstiä etsiessä ja korvatessa. On tärkeää tutustua myös muihin vaihtoehtoihin ja löytää itselle sopivin tapa tehdä tämä prosessi. Lisätietoa ja esimerkkejä löytyy esimerkiksi TypeScriptin virallisesta dokumentaatiosta (https://www.typescriptlang.org/docs/handbook/basic-types.html#string-handbook-regex) sekä eri ohjelmointifoorumeilta.

@@ -1,7 +1,7 @@
 ---
-title:                "Lähettää http-pyyntö"
-html_title:           "C++: Lähettää http-pyyntö"
-simple_title:         "Lähettää http-pyyntö"
+title:                "Lähettämään http-pyyntö"
+html_title:           "C++: Lähettämään http-pyyntö"
+simple_title:         "Lähettämään http-pyyntö"
 programming_language: "C++"
 category:             "C++"
 tag:                  "HTML and the Web"
@@ -10,55 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä ja miksi?
+HTTP-pyynnön lähettäminen on tärkeä osa web-ohjelmointia. Se tarkoittaa datan tai tiedon lähettämistä yhdestä tietokoneesta (lähtee) toiselle (saaja) verkossa käyttäen HTTP-protokollaa. Tämä on tapa, jolla ohjelmoijat viestivät web-sovellusten kanssa, kuten esimerkiksi lähettävät tietoa palvelimille tai hakukoneita.
 
-HTTP-pyynnön lähettämisellä on monia käyttötarkoituksia, kuten tietojen hakeminen verkkopalvelimelta tai tietojen lähettäminen verkkoon muihin sovelluksiin.
-
-## Miten
-
-Voit lähettää HTTP-pyynnön käyttämällä C++ kielen bibliotekkejä, kuten "cURL" tai "libcurl". Alla on yksinkertainen esimerkki käytöstä ja tulosteesta:
-
+## Miten:
+Koodi-C++ ohjelmoijat käyttävät bibliotekkia, kuten HttpClient, jotta he voivat helposti ja tehokkaasti lähettää HTTP-pyynnön. Alla olevassa esimerkissä näemme, kuinka voidaan lähettää GET-pyynto palvelimelle ja tulostaa vastauksen:
 ```C++
-
-// Esimerkki GET-pyynnön lähettämisestä
-
 #include <iostream>
-#include <curl/curl.h>
+#include "HttpClient.h"
 
-int main() {
+using namespace std;
 
-  // Alusta cURL helppokäyttöisesti
-
-  CURL *curl;
-  CURLcode result;
-
-  // Määritä pyyntöosoite
-
-  curl = curl_easy_init();
-  curl_easy_setopt(curl, CURLOPT_URL, "https://www.example.com");
-
-  // Suorita pyyntö ja tulosta vastaus
-
-  result = curl_easy_perform(curl);
-  std::cout << "Tuloste: " << result << std::endl;
-
-  // Puhdista resurssit
-
-  curl_easy_cleanup(curl);
-  
-  return 0;
+int main()
+{
+    HttpClient client("www.example.com");
+    // Luodaan HTTP-client ja annetaan url
+    string response = client.send_request("GET", "/index.html");  // Lähetetään GET-pyynto
+    cout << response << endl; // Tulostetaan palvelimen vastaus
+    return 0;
 }
-
+```
+**Tuloste:**
+```
+<!DOCTYPE html>
+<html>
+<head>
+<title>Example Domain</title>
+<link rel="bolaan" href="https://maxcdn.bootstrapcdn.com">
+</head>
+<body>
+<div>
+<h1>Example Domain</h1>
+<p>This domain is for use in illustrative examples in documents. You may use this domain in examples without prior coordination or asking for permission.</p>
+<p>More information...</p>
+</div>
+</body>
+</html>
 ```
 
-Tuloste: 200 (onnistunut vastaus)
-
-## Deep Dive
-
-HTTP-pyyntöjen lähettäminen vaatii yhden tai useamman HTTP-metodin (esim. GET, POST, PUT) käyttämistä sekä osoitteen ja tiedon välittämistä käyttämällä tiettyä protokollaa (HTTP tai HTTPS). Tämä mahdollistaa tietojen siirtämisen verkon kautta yksinkertaisella koodilla.
+## Syvällinen sukellus:
+HTTP-pyyntöjen lähettämiseen on olemassa useita eri tapoja ja työkaluja. Ennen bibliotekkien käyttöä, ohjelmoijat voivat myös luoda omia HTTP-pyyntöjä luomalla HTTP-yhteyden ja muodostamalla pyynnön manuaalisesti. Tämä voi olla hyödyllistä tarkemman kontrollin saamiseksi, mutta se voi myös olla aikaa vievää ja monimutkaista.
 
 ## Katso myös
-
-- [cURL-kirjaston virallinen dokumentaatio] (https://curl.se/libcurl/c/)
-- [HTTP-pyyntöjen lähettäminen C++:lla Stack Overflowssa] (https://stackoverflow.com/questions/19899989/how-to-send-a-http-request-in-c)
-- [HTTP-pyyntöjen debuggaaminen Fiddlerin avulla] (https://docs.telerik.com/fiddler/configure-fiddler/tasks/configurefiddlertodetectyourandroiddevice)
+Lisätietoja HTTP-pyyntöjen lähettämisestä löytyy esimerkiksi näistä lähteistä:
+- [W3Schools - HTTP Requests](https://www.w3schools.com/tags/ref_httpmethods.asp)
+- [MDN Web Docs - HTTP Request Methods](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods)
+- [Microsoft Docs - HTTP Request Methods](https://docs.microsoft.com/en-us/dotnet/api/system.net.httpwebrequest.method?view=netcore-3.1)

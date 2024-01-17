@@ -1,7 +1,7 @@
 ---
-title:                "तिथि को स्ट्रिंग में बदलना"
-html_title:           "C: तिथि को स्ट्रिंग में बदलना"
-simple_title:         "तिथि को स्ट्रिंग में बदलना"
+title:                "तारीख को स्ट्रिंग में रूपांतरण करना"
+html_title:           "C: तारीख को स्ट्रिंग में रूपांतरण करना"
+simple_title:         "तारीख को स्ट्रिंग में रूपांतरण करना"
 programming_language: "C"
 category:             "C"
 tag:                  "Dates and Times"
@@ -10,42 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Kyun
-Iss article mein hum sikhenge ki kaise hum C mein ek date ko string mein convert kar sakte hain. Yeh kaam karna aapke programs ko visually appealing aur user-friendly banane mein madad karega.
+## क्या और क्यों?
 
-## Kaise Karein
-Din, mahina aur saal - yeh sab ek date mein hote hain. Lekin C mein hume date ko string mein convert karna padega taki hum usse display aur print kar sakein. Iske liye hum ek library function ka istemal karenge - strftime().
+एक तारीख को स्ट्रिंग में बदलना, यानि उसे शब्दों में दिखाना, एक प्रोग्रामर का लोकप्रिय काम है। इससे, हम उस तारीख को अपनी पसंद के हिसाब से दिखाने और उसके साथ कुछ और जुड़े शब्दों को जोड़ने की सुविधा प्राप्त करते हैं। प्रोग्रामर इसे विभिन्न कारणों से कर सकते हैं, जैसे उपयोगकर्ता के लिए समय को समझने की आसानी या अधिक प्रोफेशनल रूप से उसे प्रदर्शित करने के लिए। 
 
-```
+## कैसे करें:
+
+```C
 #include <stdio.h>
 #include <time.h>
 
-int main()
-{
-    // Ek time structure banayein
-    time_t t = time(NULL);
-    // Jo ki strftime() function ka ek argument hai
-    // Bas ab desired format ka character array bana lein
-    char str[100];
-    // strftime() ka istemal karke date ko string mein convert karein
-    strftime(str, sizeof(str), "%d-%m-%Y", localtime(&t));
-    // Print karein
-    printf("Aaj ka taareekh hai: %s", str);
-
-    return 0;
+int main() {
+  time_t t = time(NULL);
+  struct tm *tm = localtime(&t);
+  char str_time[50];
+  strftime(str_time, sizeof(str_time), "वर्ष: %Y, महीना: %m, दिनांक: %d", tm);
+  printf("%s\n", str_time);
+  return 0;
 }
 ```
 
-Output: Aaj ka taareekh hai: 18-08-2021
+आउटपुट:
 
-Yahaan `%d` date ko, `%m` mahina ko aur `%Y` saal ko represent karta hai. Iske saath saath aap apni marzi ke hisaab se format ko customize kar sakte hain. Iske alawa, aap strftime() function ke aur bhi options explore kar sakte hain jaise ki weekday ya short month name ko display karne ke liye.
+```
+वर्ष: 2020, महीना: 01, दिनांक: 01
+```
 
-## Deep Dive
-Iske alawa, hume ek aur important aspect ko dhyan mein rakhna hoga - timezone. By default, strftime() function UTC (Coordinated Universal Time) ka istemal karega. Lekin agar hume local time ko print karna hai, toh hum localtime() function ka istemal kar sakte hain. Isse humare code mein apne current time zone ka istemal hoga.
+## गहराई में जाएं:
 
-## Dekhen Bhi
-Maine yahan kuch important resources listed ki hain, jinhein aap padhkar aur apne C coding skills ko improve karke date ko string mein convert karne mein aur bhi maahir ban sakte hain:
+तारीख को स्ट्रिंग में बदलने का प्रयोग प्रोग्रामिंग की शुरुआत से ही होता रहा है। पहले लोग विशेष उत्पादन पचार कर रहे थे जैसे अपने लेखों और पुस्तकों के साथ वर्ष, महीना और दिनांक को शामिल करने के लिए। लेकिन सबसे साधारण तरीका इसका उपयोग, उपयोगकर्ताओं को समय को समझने में आसानी भर्ती करने के लिए था। थोड़े विशेष और उत्तरदायी निर्देश नहीं तो तारीख को स्ट्रिंग में बदलना इसके अन्य विकल्पों से अधिक अन्य उपयोगकर्ताओं के द्वारा अधिक सुलभ है। 
 
-- [C strftime() function documentation](https://www.tutorialspoint.com/c_standard_library/time_h.htm)
-- [Different date and time format options in strftime() function](https://en.cppreference.com/w/c/chrono/strftime)
-- [Converting local time to GMT/UTC in C](https://www.geeksforgeeks.org/converting-local-time-gmt-utc-c/)
+## देखें भी:
+
+- [अपनी पसंद के हिसाब से तारीख बनाएं](https://www.programiz.com/c-programming/library-function/time)
+- [तारीख और समय के साथ काम करना](https://www.hackerearth.com/practice/notes/time-and-date-manipulations-in-c/)

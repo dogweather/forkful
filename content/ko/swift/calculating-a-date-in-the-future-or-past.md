@@ -1,7 +1,7 @@
 ---
-title:                "미래나 과거 날짜 계산하기"
-html_title:           "Swift: 미래나 과거 날짜 계산하기"
-simple_title:         "미래나 과거 날짜 계산하기"
+title:                "미래나 과거의 날짜 계산하기"
+html_title:           "Swift: 미래나 과거의 날짜 계산하기"
+simple_title:         "미래나 과거의 날짜 계산하기"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Dates and Times"
@@ -10,36 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+## 무엇 & 왜?
+날짜 계산이란 미래 또는 과거의 특정 날짜를 계산하는 것을 말합니다. 프로그래머들이 이를 하는 이유는 앱이나 웹사이트에서 날짜를 자동으로 계산하여 사용자들에게 현재 시간을 보여주기 위해서입니다.
 
-날짜를 미래나 과거로 계산하는 것은 일상 생활에서 매우 많이 사용되는 기능입니다. 예를 들어, 언제 다음 생일이나 휴가를 가는 날짜가 되는지 알고 싶을 때 유용하게 사용할 수 있습니다.
-
-## 사용 방법
-
-날짜를 미래나 과거로 계산하는 방법은 매우 간단합니다. 우선 `Date()` 함수를 사용하여 현재 시간을 얻은 다음 `Calendar`와 `DateComponents`를 이용하여 미래나 과거로 계산할 날짜를 정의합니다. 그리고 `.date(byAdding: DateComponents, to: Date)` 메소드를 사용하여 계산된 날짜를 얻을 수 있습니다. 아래 예시 코드를 참고하세요.
-
+## 하는 방법:
 ```Swift
-let today = Date() // 현재 날짜
-let calendar = Calendar.current // 현재의 달력을 사용
-var dateComponents = DateComponents() // 날짜 계산에 사용할 DateComponents 객체 생성
-dateComponents.year = 1 // 1년 이후 날짜 계산
-let nextYear = calendar.date(byAdding: dateComponents, to: today) // 계산된 날짜를 변수에 저장
-print(nextYear) // 1년 이후 날짜 출력
+// 현재 날짜를 얻기 위한 Date 객체 생성
+let currentDate = Date()
+
+// 미래의 날짜 계산
+let futureDate = Calendar.current.date(byAdding: .day, value: 1, to: currentDate)
+
+// 과거의 날짜 계산
+let pastDate = Calendar.current.date(byAdding: .day, value: -1, to: currentDate)
+
+print("현재 날짜: \(currentDate)")
+print("미래 날짜: \(futureDate)")
+print("과거 날짜: \(pastDate)")
 ```
 
-출력 결과는 아래와 같이 나타납니다.
-
+**결과:**
 ```
-Optional(2019-07-22 10:00:00 +0000)
+현재 날짜: 2021-03-17 16:00:21
+미래 날짜: 2021-03-18 16:00:21
+과거 날짜: 2021-03-16 16:00:21
 ```
 
-위와 같은 방식으로 원하는 날짜를 계산할 수 있습니다.
+## 깊게 들어가보기:
+1. **역사적 배경:** 날짜 계산은 컴퓨팅의 초기부터 사용되어 왔습니다. 달력을 참조하여 시스템의 시간과 날짜를 계산하는 것은 컴퓨터 프로그래밍에서 중요한 역할을 합니다.
 
-## Deep Dive
+2. **대안:** Swift에서는 날짜를 계산하는 데에 있어 여러 가지 방법이 있습니다. 다른 옵션들로는 DateComponent, TimeInterval 등이 있습니다.
 
-날짜를 계산할 때에는 `Calendar`와 `DateComponents` 객체가 필수적으로 사용됩니다. `Calendar` 객체는 시스템의 달력을 나타내며, `DateComponents` 객체는 날짜 계산에 필요한 단위들을 담고 있습니다. 일반적으로 `Calendar.current`를 사용하면 시스템의 달력을 바로 사용할 수 있습니다. 또한 `DateComponents`는 연도, 달, 일자, 시간, 분, 초 등 날짜의 다양한 단위들을 설정할 수 있습니다.
+3. **구현 세부사항:** Swift에는 날짜 및 시간 조작을 위한 기본 내장 라이브러리인 Foundation이 존재합니다. Foundation에서는 Date, Calendar, DateFormatter 등의 클래스를 제공하여 날짜 계산을 쉽게 할 수 있도록 지원하고 있습니다.
 
-## See Also
-
-- [Swift 공식 문서](https://docs.swift.org/swift-book/LanguageGuide/TheBasics.html#ID341)
-- [Swift 프로그래밍: 초기 단계](https://dubin-lee.github.io/2019/03/28/swift_01/)
+## 관련 자료:
+- [Swift Documentation: Date](https://developer.apple.com/documentation/foundation/date)
+- [Swift Official Site](https://swift.org/)
+- [Raywenderlich: Working with Date and Time in Swift](https://www.raywenderlich.com/1416791-working-with-date-and-time-in-swift#toc-anchor-009)

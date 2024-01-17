@@ -1,7 +1,7 @@
 ---
-title:                "Przesłanie żądania http z podstawowym uwierzytelnieniem"
-html_title:           "Haskell: Przesłanie żądania http z podstawowym uwierzytelnieniem"
-simple_title:         "Przesłanie żądania http z podstawowym uwierzytelnieniem"
+title:                "Przesyłanie żądania http z podstawową uwierzytelnieniem"
+html_title:           "Haskell: Przesyłanie żądania http z podstawową uwierzytelnieniem"
+simple_title:         "Przesyłanie żądania http z podstawową uwierzytelnieniem"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "HTML and the Web"
@@ -10,53 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co & Dlaczego?
 
-Jeśli pracujesz z aplikacjami internetowymi lub tworzysz własną, prawdopodobnie nie unikniesz wysyłania żądań HTTP z uwierzytelnieniem podstawowym. Pozwala to na bezpieczeństwo dostępu do chronionych zasobów, takich jak np. dane użytkowników.
+Wysyłanie żądania HTTP z podstawową autoryzacją to proces, w którym programista wysyła dane do serwera z uwierzytelnieniem poprzez podanie loginu i hasła. Programiści wykorzystują to w celu bezpiecznego i autoryzowanego dostępu do zasobów serwera, takich jak bazy danych czy pliki.
 
-Sending an HTTP request with basic authentication is necessary for accessing protected resources and ensuring security when working with web applications.
+## Jak to zrobić?
 
-## Jak to zrobić
-
-Aby wysłać żądanie HTTP z uwierzytelnieniem podstawowym w języku Haskell, potrzebujesz kilku prostych kroków. Najpierw musisz zaimportować odpowiednie biblioteki:
-
+Przykładowy kod w Haskell wykorzystujący funkcję `httpLBS` z biblioteki `http-conduit` do wysłania żądania HTTP z podstawową autoryzacją:
 ```Haskell
-import Network.HTTP
-import Network.HTTP.Headers
-import Network.HTTP.Base
-import Network.URI
+{-# LANGUAGE OverloadedStrings #-}
+import Network.HTTP.Conduit
+import Control.Monad.IO.Class (liftIO)
+
+main :: IO ()
+main = do
+    request <- parseRequest "https://www.example.com"
+    let requestWithAuth = applyBasicAuth "myUsername" "myPassword" request
+    response <- httpLBS requestWithAuth
+    liftIO $ print response
+```
+Przykładowy output (przy założeniu, że użytkownik i hasło są poprawne):
+```
+Response {
+    responseStatus = Status {statusCode = 200, statusMessage = "OK"},
+    responseVersion = HTTP/1.1,
+    responseHeaders = [...],
+    responseBody = (raw data),
+    responseCookieJar = (empty cookie jar)
+    }
 ```
 
-Następnie należy utworzyć obiekt `Request` z odpowiednimi parametrami, takimi jak metoda żądania, adres URL i nagłówki:
+## Głębszy Zanurzenie
 
-```Haskell
-let url = "https://example.com/api/users/123"
-let method = POST
-let body = "name=John&age=30"
-let headers = [Header HdrAuthorization "Basic <base64encodedCredentials>"]
-let request = Request {rqURI = fromJust $ parseURI url, rqMethod = method, rqBody = body, rqHeaders = headers}
-```
+Funkcja `applyBasicAuth` została wprowadzona w Haskellu w wersji 7.6 w celu ułatwienia wysyłania żądań HTTP z podstawową autoryzacją. Alternatywą dla tej funkcji jest bezpośrednie wykorzystanie nagłówka `Authorization` w żądaniu HTTP. Implementacja autoryzacji podstawowej polega na kodowaniu loginu i hasła przy użyciu kodowania Base64. Wysyłane dane są wciąż podatne na ataki typu "man-in-the-middle", dlatego zaleca się wykorzystanie bardziej zaawansowanych metod uwierzytelnienia, takich jak OAuth.
 
-Warto zauważyć, że nagłówek `HdrAuthorization` musi zawierać poprawnie zakodowane dane uwierzytelniające. Następnie można wysłać żądanie i odbierać odpowiedź:
+## Zobacz także
 
-```Haskell
-response <- simpleHTTP request
-responseBody <- getResponseBody response
-print responseBody
-```
-
-W powyższym przykładzie wykorzystujemy funkcje z biblioteki `Network.HTTP`, takie jak `simpleHTTP` i `getResponseBody`, aby wysłać żądanie i odbierać odpowiedź. Można również użyć bardziej zaawansowanych funkcji, takich jak `sendHTTP`, które pozwalają na bardziej szczegółową kontrolę nad żądaniem i odpowiedzią.
-
-## Głębszy przegląd
-
-Wysyłanie żądania HTTP z uwierzytelnieniem podstawowym polega na dołączeniu nagłówka `Authorization` z odpowiednio zakodowanym ciągiem z uwierzytelniającym użytkownika i hasłem. Warto pamiętać, że w celu bezpieczeństwa hasło powinno być zawsze kodowane przed wysłaniem żądania.
-
-Funkcja `encodeCredentials` z biblioteki `Network.HTTP.Headers` służy do kodowania danych uwierzytelniających w standardzie Basic. Należy pamiętać, że należy przekazać ciąg `"Basic "` jako pierwszy argument do tej funkcji, a następnie własny ciąg z uwierzytelniającymi danymi.
-
-Możliwe jest również wysyłanie żądań z innymi metodami uwierzytelniania, takimi jak np. Digest, używając odpowiednich dodatkowych nagłówków i funkcji kodujących.
-
-## Zobacz również
-
-- [Dokumentacja Haskell HTTP](https://hackage.haskell.org/package/HTTP)
-- [Wysyłanie żądań HTTP z uwierzytelnianiem w Haskell](https://wiki.haskell.org/HTTP_authenticate)
-- [Przykład wysyłania żądania HTTP z uwierzytelnieniem w języku Haskell](https://github.com/mcandre/haskell-httplib/blob/master/http-client.hs)
+- [Dokumentacja biblioteki http-conduit dla funkcji `applyBasicAuth`](https://hackage.haskell.org/package/http-conduit-2.3.8.2/docs/Network-HTTP-Conduit.html#v:applyBasicAuth)
+- [Przykładowe kody w innych językach programowania dla autoryzacji podstawowej](https://www.httpwatch.com/httpgallery/authentication/#http_basicauth)

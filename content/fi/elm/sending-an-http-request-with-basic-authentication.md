@@ -1,7 +1,7 @@
 ---
-title:                "HTTP-pyynnön lähettäminen perusautentikoinnin avulla"
-html_title:           "Elm: HTTP-pyynnön lähettäminen perusautentikoinnin avulla"
-simple_title:         "HTTP-pyynnön lähettäminen perusautentikoinnin avulla"
+title:                "HTTP-pyynnön lähettäminen perusautentikoinnilla"
+html_title:           "Elm: HTTP-pyynnön lähettäminen perusautentikoinnilla"
+simple_title:         "HTTP-pyynnön lähettäminen perusautentikoinnilla"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "HTML and the Web"
@@ -10,57 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi?
+## Mitä ja miksi?
 
-Miksi kukaan haluaisi lähettää HTTP-pyyntöä perusautentikoinnilla? Yksinkertainen vastaus on, että perusautentikointi on yksi tapa suojata verkkosivuston tai sovelluksen tietokantaan tallennettuja tietoja varmistamalla, että ne ovat lähtöisin luotettavasta lähteestä.
+Lähettäessäsi HTTP-pyynnön perustason todennuksella, varmistat että pyyntöön liitetty data on turvallista ja vain oikeutettujen käyttäjien saatavilla. Tämä on tärkeää, koska ilman todennusta kuka tahansa voisi saada pääsyn arkaluontoiseen tietoon ja aiheuttaa vahinkoa.
 
 ## Kuinka?
 
-Aloitetaan luomalla yksinkertainen HTTP-pyyntö, jossa käytetään perusautentikointia Elm-ohjelmointikielellä. Käytämme tätä esimerkkiä osoitteenhakusivustoon, joka vaatii kirjautumisen ennen kuin se palauttaa käyttäjän tietoja. 
+Esimerkiksi, jos haluat lähettää GET-pyynnön, jossa on perustason todennus, voit tehdä sen seuraavalla tavalla Elm-koodilla:
 
 ```Elm
 import Http
-import Http.BasicAuth as Auth
+import Basics exposing (..)
+import Bytes exposing (Bytes)
 
--- Määritä tarvittavat tiedot
-username = "käyttäjä"
-password = "salasana"
-url = "https://www.example.com/api/user"
-
--- Luo HTTP-pyyntö käyttäen BasicAuth -moduulia
-req = Http.toRequest
-    { method = "GET"
-    , headers =
-        [ Auth.header username password
-        ]
-    , url = url
-    , body = Http.emptyBody
-    }
-
--- Lähetä pyyntö ja tulosta vastaus
-Http.send (\_ -> (Auth.authenticate req)) |> Task.attempt handleResponse
- 
--- Määritä vastauksen käsittely
-handleResponse : Result Http.Error String -> Cmd msg
-handleResponse result =
-    case result of
-        Ok response ->
-            "Käyttäjän tiedot: " ++ response |> log
-
-        Err error ->
-            "Virhe: " ++ Http.errorToString error |> log
+httpRequest : Http.Request
+httpRequest =
+  { method = "GET"
+  , headers = [ Http.basicAuth "käyttäjänimi" "salasana" ]
+  , url = "https://www.example.com"
+  , body = Http.emptyBody
+  , expect = Http.expectBytes (\_ -> true)
+  }
 ```
+Tämä luo HTTP-pyynnön, jossa on otsikkona käyttäjänimi ja salasana perustason todennusta varten. Voit myös vaihtaa *GET*-komennon *POST*:iin, jos haluat lähettää tiedon pyyntöön.
 
-Tässä koodissa käytämme `Http.BasicAuth` -moduulia luomaan otsakitiedon, joka sisältää annetun käyttäjänimen ja salasanan. Sitten käytämme `Http.send` -funktiota lähettämään pyynnön ja tulostamme vastauksen `handleResponse` -funktion avulla. Lopuksi käsittelemme vastauksen joko onnistuneena tai virheellisenä ja tulostamme vastaavan viestin.
+## Syvemmälle
 
-## Syväsukellus
+Historiallisesti perustason todennus on ollut yleinen tapa suojata HTTP-pyyntöjä. Nykyään se on kuitenkin korvattu monilla muilla tavoilla, kuten token-todennuksella ja OAuth:lla. Ne tarjoavat lisätoiminnallisuuksia ja enemmän tietoturvaa verrattuna perustason todennukseen.
 
-Perusautentikoinnin käyttäminen HTTP-pyynnöissä on vain yksi tapa varmistaa, että käyttäjän tiedot ovat turvattuja. Samalla tavalla voimme käyttää muita kodin tai muita Autentikoinnin tarjoajia soluun.
-
-Elm tarjoaa myös muita vaihtoehtoja, kuten Web.Sockets, joiden avulla voidaan lähettää ja vastaanottaa tietoja reaaliaikaisesti. Deep Elm -verkkosivusto tarjoaa lisätietoja näistä vaihtoehdoista ja auttaa sinua kehittämään edistynympää toiminnallisuutta käyttäen HTTP-pyyntöjä.
+Elm tarjoaa myös muita biblioteekkeja, kuten *elm-http-builder*, jotka voivat auttaa sinua luomaan HTTP-pyynnön perustason todennuksella eri tavalla. Voit myös tutustua tarkemmin HTTP-protokollan toimintaan ja miten perustason todennus siihen liittyy.
 
 ## Katso myös
 
-- [Elm-lang.org - Basic Auth](https://guide.elm-lang.org/webapps/authentication.html)
-- [Deep Elm - HTTP](https://deep.elm-lang.org/web/http)
-- [Elm Weekly - Resting with Elm](https://elmweekly.nl/issues/51)
+Mahdollisuuksien mukaan suosittelemme aina käyttämään suositeltuja tietoturvakäytäntöjä, kuten token-todennusta. Tutustu myös ELMin virallisiin dokumentaatioihin ja resursseihin, kuten *elm-http*-kirjastoon, oppiaksesi lisää HTTP-pyynnön lähettämisestä ja tietoturvasta.

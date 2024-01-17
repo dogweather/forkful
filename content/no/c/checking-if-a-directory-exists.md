@@ -10,52 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hva og Hvorfor?
+Sjekke om en mappe eksisterer er en viktig del av programmering. Det lar deg kontrollere om en spesifisert mappe faktisk finnes på datamaskinen din. Dette kan være nyttig når du søker etter filer eller ønsker å utføre handlinger bare hvis mappen eksisterer.
 
-Du lurer kanskje på hvorfor det er viktig å sjekke om en mappe eksisterer i et C-program. Det er fordi det kan hjelpe deg med å sikre at programmet ditt kjører riktig og forhindrer eventuelle feil eller krasj.
-
-## Hvordan gjøre det
-
-Det første trinnet er å inkludere "dirent.h" biblioteket i programmet ditt ved å bruke "```#include <dirent.h>```" kommandoen. Dette biblioteket inneholder funksjoner som lar deg jobbe med mapper og filer.
-
-Deretter bruker du "opendir()" funksjonen for å åpne mappen du vil sjekke. Denne funksjonen tar imot navnet på mappen som en streng og returnerer en peker til denne mappen hvis den eksisterer. Hvis mappen ikke eksisterer, vil den returnere NULL.
+## Hvordan:
+For å sjekke om en mappe eksisterer, kan du bruke følgende kode i ditt C-program:
 
 ```C
 #include <stdio.h>
-#include <dirent.h>
+#include <stdlib.h>
+#include <dirent.h> // biblioteket for mappebehandling
 
-int main() {
-    // Sjekk om mappen "test" eksisterer
-    DIR *folder = opendir("test");
-
-    // Sjekk om mappen ble åpnet
-    if (folder != NULL) {
-        printf("Mappen eksisterer!\n");
-        // Gjør andre handlinger her
+int main()
+{
+    // Sett opp variabler
+    DIR *mappe;
+    char *navn = "min_mappe";
+    
+    // Åpne mappen med navnet "min_mappe" i gjeldende katalog
+    mappe = opendir(navn);
+    
+    // Sjekk om mappen eksisterer
+    if(mappe) {
+        printf("%s eksisterer!\n", navn);
+        closedir(mappe); // lukk mappen for å unngå problemer
     } else {
-        printf("Mappen eksisterer ikke!\n");
+        printf("%s eksisterer ikke.\n", navn);
     }
-
-    // Lukk mappen
-    closedir(folder);
-
+    
     return 0;
 }
 ```
-Eksempelutgang:
 
+Dette eksempelet bruker funksjoner fra dirent.h biblioteket, som er spesialisert for mappebehandling i C-programmer.
+
+Kjører du dette programmet, vil du få følgende utskrift:
 ```
-Mappen eksisterer ikke!
+min_mappe eksisterer ikke.
 ```
 
-## Dypdykk
+## Dypdykk:
+I tidligere versjoner av C, måtte man bruke system-kommandoer som "stat" eller "access" for å sjekke om en mappe eksisterer. Dette kunne føre til sikkerhetsrisikoer, spesielt når en bruker brukeren innmatingsverdier.
 
-"opendir()" funksjonen er en del av POSIX-standardene, noe som betyr at den vil fungere på de fleste Unix-like systemer, som Linux og Mac OS. Denne funksjonen tar også imot en absolutt eller relativ filsti som argument, så du kan sjekke mapper uavhengig av hvor programmet ditt er plassert.
+I nyere versjoner av C, som den som brukes i dette eksempelet, finnes det innebygde funksjoner for å lett sjekke om en mappe eksisterer.
 
-En annen nyttig funksjon er "stat()" som lar deg hente informasjon om en fil eller mappe. Du kan da bruke denne informasjonen til å bekrefte at en angitt fil eller mappe faktisk eksisterer. For mer informasjon om denne funksjonen, kan du lese dokumentasjonen her: [https://pubs.opengroup.org/onlinepubs/9699919799/functions/stat.html](https://pubs.opengroup.org/onlinepubs/9699919799/functions/stat.html)
+Det finnes også andre alternativer for mappebehandling i C, som for eksempel "opendir" og "readdir" funksjonene som brukes i dette eksempelet. Disse gir enkle måter å navigere og arbeide med mapper i C-programmer.
 
-## Se også
-
-- [https://www.tutorialspoint.com/c_standard_library/index.htm](https://www.tutorialspoint.com/c_standard_library/index.htm)
-- [https://www.programiz.com/c-programming/c-dirent-h](https://www.programiz.com/c-programming/c-dirent-h)
-- [https://www.ibm.com/docs/en/aix/7.1?topic=g-makedev-testing-pathname-existing](https://www.ibm.com/docs/en/aix/7.1?topic=g-makedev-testing-pathname-existing)
+## Se også:
+- [The Dirent.h Header File in C](https://www.tutorialspoint.com/c_standard_library/dirent_h.htm)
+- [C Programming Tutorial: Directory handling](https://www.techwalla.com/articles/c-programming-tutorial-directory-handling)

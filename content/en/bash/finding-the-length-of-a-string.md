@@ -10,48 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
+Finding the length of a string in Bash is the process of determining the number of characters in a given string. This is useful for various reasons, such as validating user input, manipulating strings, and creating custom output.
 
-You might need to find the length of a string in Bash for a variety of reasons, such as checking for input validation or formatting data correctly for output. It's a useful skill to have in your programming toolkit.
-
-## How To
-
-To find the length of a string in Bash, you can use the built-in `expr` command with the `-length` option. Here's an example:
-
-```Bash
-my_string="Hello World"
-length=$(expr length "$my_string")
-echo "The length of the string is $length characters."
-```
-
-This will output:
+## How to:
+To find the length of a string in Bash, you can use the built-in `expr` command with the `- length` option. Here's an example:
 
 ```
-The length of the string is 11 characters.
+str="Hello World!" 
+len=$(expr length "$str") 
+echo "The length of the string is $len" 
 ```
 
-Another option is to use the `wc` command with the `-c` option, which counts the number of characters in a given file or input. Here's an example:
+This will output: `The length of the string is 12`. 
 
-```Bash
-my_string="Hello World"
-length=$(echo -n "$my_string" | wc -c)
-echo "The length of the string is $length characters."
-```
-
-This will also output:
+Another option is to use the `${#var}` syntax, where `var` is the variable containing the string. Here's an example:
 
 ```
-The length of the string is 11 characters.
+str="Hello World!" 
+len=${#str} 
+echo "The length of the string is $len" 
 ```
 
-## Deep Dive
+This will also output: `The length of the string is 12`.
 
-Behind the scenes, both the `expr` and `wc` commands use the `strlen` function from the standard C library to determine the length of a string. This function calculates the length by counting the number of bytes until it reaches a null character, which marks the end of a string in C.
+## Deep Dive:
+The `expr` command has been a part of Unix since the early days and was designed to be used in shell scripts for basic arithmetic operations. However, it can also handle string operations with the `length` option. 
 
-It's also important to note that the `-length` option in `expr` and the `-c` option in `wc` will include whitespace and special characters in the count, while the `-n` option in `echo` will omit the trailing newline character.
+An alternative to using `expr` is to use the `wc` command with the `-m` option. This will count the number of characters in a file or input, but it can also be used to count characters in a string by redirecting the string to the command. Here's an example:
 
-## See Also
+```
+str="Hello World!" 
+len=$(echo -n "$str" | wc -m) 
+echo "The length of the string is $len" 
+```
 
-- [Bash Scripting Tutorial - String Operations](https://www.tutorialspoint.com/unix/unix-advanced-concepts.htm)
-- [Bash string length, search and replace](https://opensource.com/article/18/4/how-find-length-string-bash)
-- [A brief introduction to Bash string manipulation](https://blog.fanofyan.com/introduction-to-bash-string-manipulation/)
+This will also output: `The length of the string is 12`.
+
+## See Also:
+You can check out the official Bash documentation on `expr` and `wc` for more information and options. Here are the links:
+- [expr](https://www.gnu.org/software/coreutils/manual/html_node/expr-invocation.html)
+- [wc](https://www.gnu.org/software/coreutils/manual/html_node/wc-invocation.html)

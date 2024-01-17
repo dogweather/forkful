@@ -1,7 +1,7 @@
 ---
-title:                "Avviare un nuovo progetto"
-html_title:           "Fish Shell: Avviare un nuovo progetto"
-simple_title:         "Avviare un nuovo progetto"
+title:                "Iniziare un nuovo progetto"
+html_title:           "Fish Shell: Iniziare un nuovo progetto"
+simple_title:         "Iniziare un nuovo progetto"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Getting Started"
@@ -10,61 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+## Cosa & Perché?
 
-Ciao a tutti! Siete pronti a scoprire il mondo della programmazione con Fish Shell? Magari ti stai chiedendo perché dovresti intraprendere questo nuovo progetto, ma la risposta è semplice: Fish Shell offre una sintassi più moderna e intuitiva rispetto ai classici terminali come Bash o Zsh. Inoltre, ha una vasta gamma di funzionalità che lo rendono uno strumento potente per gestire le tue attività di programmazione. Quindi, se vuoi rendere la tua esperienza di codifica più efficiente e divertente, continua a leggere!
+Iniziare un nuovo progetto è il processo di creazione e organizzazione di un nuovo progetto di programmazione. I programmatori lo fanno per creare un'architettura solida per il loro codice e per raggruppare le funzioni e le risorse in modo efficiente.
 
-## Come fare
+## Come fare:
 
-Per iniziare a utilizzare Fish Shell, prima di tutto assicurati di averlo correttamente installato sul tuo sistema operativo. Una volta fatto ciò, puoi accedere al tuo prompt dei comandi e cominciare ad esplorare le sue funzionalità.
+Utilizzando Fish Shell, è possibile creare facilmente un nuovo progetto seguendo questi semplici passaggi:
 
-```
-Fish Shell version 3.2.2
-```
+1. Aprire il terminale e navigare nella cartella in cui si desidera creare il nuovo progetto.
+2. Utilizzare il comando `mkdir` per creare una nuova cartella per il progetto.
+3. Entrare nella nuova cartella utilizzando il comando `cd`.
+4. Utilizzare il comando `touch` per creare un nuovo file vuoto.
+5. Utilizzare `code` per aprire l'editor di testo per iniziare a scrivere il codice del progetto.
 
-### Prompt personalizzato
-
-Una delle prime cose che noterai è il prompt personalizzabile di Fish Shell. Puoi modificarlo a tuo piacimento, aggiungendo colori, emoji, informazioni sul sistema e altro ancora. Ad esempio, se vuoi che il tuo prompt mostri il nome utente, il percorso corrente e la versione di Fish Shell, puoi utilizzare il seguente comando:
-
-```
-set -Ux fish_prompt "╭──({whoami}@[{hostname}]) $(basename ({pwd}))$ fish_shell version {fish_version}╰─➤ "
-```
-
-Ecco come apparirà il tuo nuovo prompt:
+Ecco un esempio di codice che esegue questi passaggi:
 
 ```
-╭──(username@my-computer) Documents$ fish_shell version 3.2.2╰─➤ 
+Fish Shell
+$ mkdir nuovo_progetto
+$ cd nuovo_progetto
+$ touch main.py
+$ code main.py
 ```
 
-### Completamento automatico
+## Approfondimento:
 
-Fish Shell ha un sistema di completamento automatico estremamente efficiente che ti aiuterà a risparmiare tempo durante la scrittura dei comandi. Ad esempio, se devi spostarti in una cartella specifica, puoi semplicemente iniziare a digitare il nome della cartella e premere il tasto "Tab" per completare automaticamente il percorso.
+Creare un nuovo progetto è un passaggio comune nella programmazione e può essere fatto utilizzando anche altri strumenti, come ad esempio l'IDE di sviluppo integrato o una piattaforma di gestione dei progetti. Tuttavia, utilizzando un shell come Fish Shell, è possibile creare un nuovo progetto in modo rapido ed efficiente.
 
-```
-cd m<TAB>
-```
+Inoltre, è importante scegliere un nome significativo per il nuovo progetto e organizzare i file in modo coerente per mantenere il codice pulito e facilmente modificabile in futuro.
 
-Fish Shell completerà automaticamente il resto del nome della cartella, nel caso in cui ci siano più cartelle con lo stesso inizio. Inoltre, puoi utilizzare il comando `bind` per definire i tuoi completamenti personalizzati per risparmiare ancora più tempo.
+## Vedi anche:
 
-### Gestione delle variabili
+Per ulteriori informazioni su come creare e gestire progetti nella programmazione, ecco alcune risorse utili:
 
-Fish Shell offre una gestione delle variabili molto più semplice rispetto ad altri terminali. Per definire una variabile, basta utilizzare il comando `set`, seguito dal nome della variabile e il suo valore. Per accedere alle variabili, usa il simbolo del dollaro `$` come in altri linguaggi di programmazione.
-
-```
-set my_variable "Hello world"
-echo $my_variable
-```
-
-Fish Shell offre anche una sintassi più pulita per le variabili di ambiente, utilizzando il formato `VAR=value` anziché `export VAR=value`.
-
-## Deep Dive
-
-Fish Shell è un progetto open-source e in continua evoluzione, supportato da una comunità attiva di sviluppatori. Se vuoi contribuire al suo sviluppo o segnalare bug, puoi dare un'occhiata al suo repository su GitHub. Inoltre, puoi anche personalizzare ulteriormente il tuo Fish Shell utilizzando i temi disponibili nella galleria dei temi.
-
-Tieni presente che Fish Shell potrebbe richiedere un po' di tempo per abituarsi, soprattutto se sei abituato ai comandi di altri terminali. Ma una volta che imparerai a sfruttarne le funzionalità, non tornerai più indietro!
-
-## Vedi anche
-
-- [Fish Shell documentazione ufficiale](https://fishshell.com/docs/current/index.html)
-- [Fish Shell repository su GitHub](https://github.com/fish-shell/fish-shell)
-- [Galleria dei temi Fish Shell](https://github.com/oh-my-fish/theme-bobthefish)
+- [Creare un nuovo progetto su Visual Studio Code](https://code.visualstudio.com/docs/editor/working-with-extensions/creating-extension).
+- [Come organizzare un progetto di programmazione](https://www.geeksforgeeks.org/structuring-a-python-project/).
+- [Guida alla creazione di progetti in Fish Shell](https://fishshell.com/docs/current/tutorial.html).

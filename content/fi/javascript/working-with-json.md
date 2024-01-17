@@ -10,43 +10,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+# Mitä & Miksi?
+JSON eli JavaScript Object Notation on yleisesti käytetty tapa tallentaa ja vaihtaa dataa eri ohjelmointikielten välillä. Se on helposti luettava ja kirjoitettava, ja sen avulla pystytään tallentamaan monimutkaisiakin tietorakenteita. Ohjelmoijat käyttävät JSONia esimerkiksi web-sovellusten kehittämisessä ja tietokantojen kanssa työskennellessä.
 
-JSON (JavaScript Object Notation) on yksi suosituimpia tiedostomuotoja, jota käytetään datan tallentamiseen ja siirtämiseen JavaScript-sovelluksissa. JSON:in avulla voidaan helposti muuntaa JavaScript-olioita tekstimuotoon ja päinvastoin, mikä tekee siitä erittäin hyödyllisen työkalun kehittäjille.
-
-## Miten JSON toimii
+## Kuinka:
+Käytä JSON-dataa ```Javascript ... ``` koodilohkoissa ja tallenna se muuttujiin. Voit kutsua JSON-objektin arvoja muuttujista käyttäen pistenotaatiota. Esimerkiksi:
 
 ```Javascript
-// Luo JSON-objekti
-const data = {
-    name: "Matti",
-    age: 25,
-    hobbies: ["urheilu", "kirjoittaminen", "valokuvaus"]
+let henkilö = {
+  nimi: "Matti Meikäläinen",
+  ikä: 25,
+  harrastukset: ["urheilu", "kirjoittaminen", "musiikin kuuntelu"]
 };
 
-// Muunna JSON tekstimuotoon
-const jsonData = JSON.stringify(data);
-
-// Tulostaa '{ "name": "Matti", "age": 25, "hobbies": ["urheilu", "kirjoittaminen", "valokuvaus"] }'
-console.log(jsonData);
-
-// Muunna tekstimuoto takaisin JSON-objektiksi
-const parsedData = JSON.parse(jsonData);
-
-// Tulostaa JavaScript-objektin { name: "Matti", age: 25, hobbies: ["urheilu", "kirjoittaminen", "valokuvaus"] }
-console.log(parsedData);
+console.log(henkilö.nimi); //tulostaa "Matti Meikäläinen"
 ```
 
-JSON:in tärkein ominaisuus on sen yksinkertaisuus ja helppokäyttöisyys. Se koostuu avain-arvo pareista ja listoista, ja sen tekstimuotoinen rakenne on helposti luettavissa ihmisille ja tulkittavissa JavaScript:in avulla.
+## Syvemmälle:
+JSON kehitettiin alun perin JavaScriptin osaksi, ja se on tullut erittäin suosituksi kieli- ja teknologia-independent tapa tallentaa dataa. Yksi sen suurista eduista on sen helppokäyttöisyys ja luettavuus ihmisen silmin. Vaikka JSON onkin yleisesti käytetty, on olemassa myös muita vaihtoehtoja dataformaateiksi, kuten XML ja CSV. Voit myös käyttää biblioteekkeja, kuten JSON.parse ja JSON.stringify, auttamaan JSON-datan käsittelyssä.
 
-## Syventävä tieto JSON:ista
-
-JSON tukee erilaisia tietotyyppejä, kuten merkkijonoja, numeroita, boole-arvoja ja listoja. Se myös tukee monenlaisten tietojen rakenteita, kuten objekteja ja listoja sisäkkäin. JSON on myös lähdekoodista riippumaton, mikä tarkoittaa sitä, että se toimii hyvin monissa erilaisissa ohjelmointikielissä.
-
-Yksi tärkeä asia, jota kehittäjän tulisi tietää JSON:ista, on sen käyttö web-sovelluksissa. JSON voidaan nimittäin käyttää tiedon siirtoon clientin ja serverin välillä esimerkiksi AJAX-pyyntöjen yhteydessä. Se on myös yksi tärkeimmistä tiedostomuodoista, joita käytetään REST APIen kanssa kommunikoinnissa.
-
-## Katso myös
-
-- [JSON:n virallinen dokumentaatio](https://www.json.org/json-fi.html)
-- [MDN:n opas JSON:in käyttöön](https://developer.mozilla.org/fi/docs/Learn/JavaScript/Objects/JSON)
-- [JSON:in käyttö REST APIen kanssa](https://developer.mozilla.org/fi/docs/Web/HTTP/Methods/POST)
+## Katso myös:
+Voit lukea lisätietoja JSONista ja sen käytöstä täältä: [Mozilla Developer Network](https://developer.mozilla.org/fi/docs/Web/JavaScript/Reference/Global_Objects/JSON). Voit myös tutustua erilaisiin JSON lähdekoodi-kieliversioihin ja spesifikaatioihin täältä: [JSON.org](https://json.org/json-fi.html).

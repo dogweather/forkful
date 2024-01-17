@@ -1,7 +1,7 @@
 ---
-title:                "Utskrift av felsökningsresultat"
-html_title:           "Swift: Utskrift av felsökningsresultat"
-simple_title:         "Utskrift av felsökningsresultat"
+title:                "Utskrift av felsökningsutdata"
+html_title:           "Swift: Utskrift av felsökningsutdata"
+simple_title:         "Utskrift av felsökningsutdata"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Testing and Debugging"
@@ -10,61 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & varför?
+Debug-utmatning är en process där du som programutvecklare skriver ut information om vad som sker i ditt program under körning. Detta kan hjälpa dig att hitta och lösa fel i din kod.
 
-Att skriva ut debugoutput är ofta ett bra sätt att felsöka och förstå vad som händer i koden. Det kan hjälpa dig att förstå hur olika delar av din kod interagerar och hitta eventuella fel.
-
-## Så här gör du
-
-För att skriva ut debugoutput i Swift, använder du funktionen ```print()```. Det är enkelt att använda och du kan skriva ut olika typer av värden som strängar, nummer och booleska värden.
+## Hur man gör:
+Här är ett exempel på hur du kan skriva ut debug-utmatning i Swift:
 
 ```Swift
-let name = "Anna"
-let age = 25
-let isStudent = true
+// Skapa en variabel som innehåller ett meddelande
+let message = "Välkomna till Swift-programmering!"
 
-print("Namnet är \(name), åldern är \(age) och personen är en student: \(isStudent)")
-// Output: Namnet är Anna, åldern är 25 och personen är en student: true
+// Skriv ut meddelandet till konsolen
+print(message)
 ```
 
-Du kan också skriva ut värden från ett objekt genom att använda punktnotation, som i exemplet nedan.
+Detta kommer att skriva ut "Välkomna till Swift-programmering!" i konsolen när du kör ditt program. Du kan även skriva ut värden från variabler, till exempel:
 
 ```Swift
-struct Person {
-    var name: String
-    var age: Int
-    var isStudent: Bool
-}
+let num1 = 2
+let num2 = 9
 
-let person = Person(name: "Anna", age: 27, isStudent: true)
-
-print("Namnet är \(person.name), åldern är \(person.age) och personen är en student: \(person.isStudent)")
-// Output: Namnet är Anna, åldern är 27 och personen är en student: true
+print("Summan av \(num1) och \(num2) är \(num1 + num2)")
 ```
 
-En annan användbar funktion är ```dump()```, som visar mer detaljerad information om ett objekt, inklusive dess egenskaper och värden.
+Detta kodexempel kommer att skriva ut "Summan av 2 och 9 är 11" i konsolen.
 
-```Swift
-let books = ["Pride and Prejudice", "Jane Eyre", "War and Peace"]
+## Djupdykning:
+Debug-utmatning har varit en viktig del av programmering sedan början av datorernas tid. Innan det fanns graphiska gränssnitt var debug-utmatning det enda sättet att hålla koll på vad som hände i programmen.
 
-dump(books)
-// Output:
-// ▿ 3 elements
-// - 0: "Pride and Prejudice"
-// - 1: "Jane Eyre"
-// - 2: "War and Peace"
-```
+En alternativ metod för debug-utmatning är användandet av s.k. breakpoints, där programmet pausas när en viss kodrad har nåtts. Detta kan vara ett effektivare sätt att hitta buggar i vissa situationer.
 
-## Djupdykning
+I Swift kan du också använda funktionen "assert()" för att skriva ut felmeddelanden om ett visst villkor inte uppfylls.
 
-Att skriva ut debugoutput kan vara ett kraftfullt verktyg för att förstå din kod och hitta fel. Det är också ett användbart sätt att kommunicera med andra utvecklare och dela information om din kod.
-
-En viktig sak att komma ihåg är att ta bort alla utskrifter av debugoutput när du är färdig med din felsökning. Annars kan det leda till prestandaproblem och onödig datautskrift i produktion.
-
-Det finns också andra sätt att skriva ut debugoutput, som att använda en debugger eller loggningsramverk som Log4j. Det är viktigt att undersöka vilka alternativ som är bäst för din specifika kod och arbetsmiljö.
-
-## Se även
-
-- [Debugging in Swift](https://www.raywenderlich.com/10452924-debugging-in-swift)
-- [Printing Debug Information in Swift](https://medium.com/better-programming/printing-debug-information-in-swift-73b65b9da01d)
-- [Debugging with Xcode's LLDB Debugger](https://www.hackingwithswift.com/read/6/3/debugging-with-xcodes-lldb-debugger)
+## Se även:
+[Apple Documentation on Debugging](https://developer.apple.com/documentation/xcode/debugging)

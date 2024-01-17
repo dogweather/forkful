@@ -1,7 +1,7 @@
 ---
-title:                "Aloittaminen uudesta projektista"
-html_title:           "Clojure: Aloittaminen uudesta projektista"
-simple_title:         "Aloittaminen uudesta projektista"
+title:                "Aloittaminen uusi hanke"
+html_title:           "Clojure: Aloittaminen uusi hanke"
+simple_title:         "Aloittaminen uusi hanke"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Getting Started"
@@ -10,33 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä & Miksi?
 
-On monia syitä, miksi aloittaa uusi projekti. Ehkä haluat oppia uutta kieltä ja Clojure on kiinnostava haaste. Tai ehkä haluat luoda jotain uutta ja innovatiivista, joka auttaa muita ihmisiä. Riippumatta siitä, mikä motivoi sinua, aloittamalla uusi projekti voit oppia uutta ja ilmaista oma luovuutesi.
+Aloittaminen uuden projektin kanssa tarkoittaa uuden ohjelmiston, työkalun tai sovelluksen luomista. Ohjelmoijat tekevät tätä parantaakseen tai laajentaakseen olemassa olevia projektejaan tai luodakseen jotain aivan uutta.
 
-## Kuinka aloittaa
+## Miten:
 
-Ensinnäkin, sinun tulee asentaa Clojure ympäristö tietokoneellesi. Voit tehdä tämän käyttämällä esimerkiksi Homebrew -työkalua tai asentamalla Leiningen -ohjelman. Kun olet asentanut Clojure ympäristön, voit aloittaa koodaamisen. Tässä on yksinkertainen esimerkki, kuinka tulostaa "Tervetuloa Clojureen!" konsoliin:
+Käytä Clojurea aloittaaksesi uusi projektisi helposti ja tehokkaasti:
 
 ```Clojure
-(defn tervehdys []
-  (println "Tervetuloa Clojureen!"))
+(ns uusi-projekti.core
+  (:gen-class))
 
-(tervehdys)
+(defn -main
+  "Tämä funktio suoritetaan kun ohjelma käynnistetään"
+  [& args]
+  (println "Tervetuloa uuden projektin maailmaan!"))
 ```
 
-Lue lisää Clojuren syntaksista ja rakenteista, ja kokeile erilaisia koodiesimerkkejä. Voit myös etsiä valmiita kirjastoja ja työkaluja, jotka voivat auttaa kehitystyössäsi.
+Tuloste: Tervetuloa uuden projektin maailmaan!
 
-## Syvemmälle
+Tässä esimerkissä määritämme uuden projektin Clojure-koodin avulla ja tulostamme yksinkertaisen viestin käynnistyksen yhteydessä.
 
-Ennen kuin aloitat uuden projektin, on hyvä miettiä muutamia asioita. Ensinnäkin, mikä on projektisi tarkoitus? Onko se henkilökohtainen projekti vai aiotko jakaa sen muiden kanssa? Tartu rohkeasti uusiin haasteisiin, mutta varmista että projekti vastaa tarpeitasi ja tavoitteitasi.
+## Syväsukellus:
 
-Toiseksi, valitse oikea työkalu projektisi tarpeisiin. On tärkeää valita oikea kehitysympäristö ja kirjastot projektin laajuuden ja tavoitteen perusteella. Tutustu erilaisiin vaihtoehtoihin ja valitse ne, jotka osuvat lähimpänä projektisi tarpeita.
+Historiallisesti Clojure on kehitetty parantamaan Javaa ja toimimaan sen päällä, mutta sen suosio on kasvanut myös itsenäisenä ohjelmointikieleenä. Clojure tarjoaa puhtaamman ja yksinkertaisemman syntaksin kuin Java, mikä tekee siitä hyvän vaihtoehdon monet monimutkaisille projekteille.
 
-Lopuksi, älä pelkää pyytää apua. Clojure-yhteisö on erittäin aktiivinen ja ystävällinen, ja siellä on paljon osaavia kehittäjiä. Jos olet jumissa tai tarvitset neuvoja, voit aina kysyä apua foorumeilta tai Slack-yhteisöstä.
+Clojurella on myös laaja ja aktiivinen yhteisö, joka tarjoaa tukea ja apua projekteissa. Lisäksi Clojuren avoin lähdekoodi tekee siitä helpon integroida muiden teknologioiden kanssa.
 
-## Katso myös
+## Katso myös:
 
-- [Clojure.org](https://clojure.org/)
-- [Clojure-yhteisö](https://clojure.org/community)
-- [Learn Clojure](https://clojure.org/learn)
+Halutessasi tutustua aiheeseen tarkemmin, suosittelemme seuraavia lähteitä:
+
+- [Clojuren virallinen verkkosivusto] (https://clojure.org/)
+- [Clojuren käyttöönotto] (https://clojure.org/guides/getting_started)
+- [Clojuren GitHub-sivu] (https://github.com/clojure/clojure)

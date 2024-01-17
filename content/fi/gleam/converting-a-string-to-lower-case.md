@@ -10,26 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä & Miksi?
 
-Miksi haluaisit konvertoida merkkijonon pienaakkosiksi? Hyvä kysymys! Se voi olla hyödyllistä tiettyjen sovellusten tai algoritmien käsittelyssä, joissa tarvitaan yhtenäistä merkkijonoformaattia.
+Mikä on merkkijonon muuntaminen pieniksi kirjaimiksi ja miksi ohjelmoijat tekevät sitä? 
 
-## Kuinka
+Merkkijonon muuntaminen pieniksi kirjaimiksi tarkoittaa, että muutetaan merkkijonon kaikki kirjaimet pieniksi kirjaimiksi. Tätä tehdään usein jotta voidaan vertailla merkkijonoja, kun halutaan tarkastella niiden kirjainkoosta riippumatta.
 
-Gleam-koodi tarjoaa helpon tavan konvertoida merkkijono pienaakkosiksi. Esimerkissä muutamme merkkijonon "HELLO WORLD" pienaakkosiksi ja tulostamme lopputuloksen.
+Ohjelmoijat tekevät tätä usein siksi, että heidän ohjelmansa toimisi oikein kaikissa tapauksissa. Jos ohjelmassa käytetään esimerkiksi käyttäjän antamaa merkkijonoa, ei voi tietää millaisia kirjaimia se sisältää ja siksi on varmempi muuttaa kaikki kirjaimet pieniksi, jotta vältytään mahdollisilta ongelmilta.
 
-```Gleam
-let teksti = "HELLO WORLD"
-let pienaakkoset = teksti |> String.to_lower_case
-pinoa.Siphelele (pienaakkoset) // Tuottaa "hello world" tuloksen
-```
+## Kuinka: 
 
-## Syvempi sukellus
+````Gleam
+let s = "HeLLo WoRlD"
+gleam_string.to_lower(s)
+````
 
-Gleam tarjoaa muutamia muita hyödyllisiä funktioita merkkijonojen muokkaamiseen. Voit esimerkiksi poistaa välilyöntejä merkkijonosta käyttämällä `String.trim` tai jakaa merkkijonon osiin käyttämällä `String.split`. Voit myös muuttaa merkkijonon ensimmäisen kirjaimen isolla alkukirjaimella käyttämällä `String.capitalize`.
+````Gleam 
+= "hello world"
+````
 
-## Katso myös
+Ensiksi luodaan muuttuja, johon tallennetaan haluttu merkkijono. Sitten käytetään Gleamin to_lower funktiota, jolloin merkkijono muutetaan pieniksi kirjaimiksi. Lopuksi tulostetaan uusi merkkijono, joka sisältää vain pieniä kirjaimia.
 
-- [Gleamin merkkijonojen dokumentaatio](https://gleam.run/articles/strings/)
-- ["Gleam - moderni funktionaalinen ohjelmointikieli" -artikkeli](https://gleam.run/articles/introduction/)
-- [Gleam-yhteisöfoorumi](https://forum.gleam.run/)
+## Syvemmälle:
+
+Merkkijonon muuntaminen pieniksi kirjaimiksi on tehokas tapa vertailla merkkijonoja, sillä kirjainten koolla ei ole enää väliä. Tämä toiminto antaa myös tasapuolisen lopputuloksen, jos merkkijonossa on eri kirjainkokoja.
+
+Toinen tapa muuntaa merkkijono pieniksi kirjaimiksi on käyttää for loopia ja muuttaa kirjaimet pieniksi yksi kerrallaan. Tämä saattaa kuitenkin olla tehottomampi ratkaisu joissain tapauksissa.
+
+Gleamin to_lower funktio käyttää Unicode-taulukkoa muuntamisen toteuttamiseen, joten se pystyy käsittelemään myös erikoismerkkejä ja merkkejä eri kielistä. Tämä tekee Gleamista hyvän ratkaisun monikielisiin ohjelmiin.
+
+## Katso myös:
+
+Viimeisimmät dokumentit ja ohjeet löytyvät osoitteesta [gleam.run/docs](https://gleam.run/docs).

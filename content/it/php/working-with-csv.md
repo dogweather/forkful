@@ -1,7 +1,7 @@
 ---
-title:                "Lavorare con i file CSV"
-html_title:           "PHP: Lavorare con i file CSV"
-simple_title:         "Lavorare con i file CSV"
+title:                "Lavorare con i file csv"
+html_title:           "PHP: Lavorare con i file csv"
+simple_title:         "Lavorare con i file csv"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Data Formats and Serialization"
@@ -10,56 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+## Cosa & Perché?
 
-Se stai lavorando con dati tabellari, come ad esempio elenchi di prodotti o dati di contabilità, è probabile che ti troverai a dover manipolare i dati in formato CSV (Comma Separated Values). PHP offre una semplice e potente libreria per gestire i file CSV, che ti permette di leggere, scrivere e manipolare facilmente i dati.
+Lavorare con CSV, o file di valore separati da virgole, è un modo comune per gestire grandi quantità di dati tabulari in PHP e altri linguaggi di programmazione. I programmatori spesso utilizzano il formato CSV per importare o esportare i dati tra diverse applicazioni e sistemi.
 
-## Come fare
+## Come fare:
 
-Per iniziare a lavorare con file CSV in PHP, prima di tutto assicurati di avere la versione più recente del linguaggio installata sul tuo computer. Successivamente, segui questi passaggi:
-
-1. Importa la libreria CSV di PHP utilizzando il comando `use`:
- 
-`use \SplFileObject;`
-
-Questo ti permetterà di utilizzare le funzionalità di lettura e scrittura fornite dalla libreria.
-
-2. Imposta una variabile con il nome del tuo file CSV:
-
-`$csvFile = "lista_prodotti.csv";`
-
-3. Crea un'istanza della classe `SplFileObject`, specificando il nome del file come parametro:
-
-`$file = new SplFileObject($csvFile);`
-
-4. Per leggere i dati dal file CSV, puoi utilizzare un ciclo `foreach` che itera sulle righe del file:
+Per iniziare, è possibile utilizzare la funzione PHP integrata ```fgetcsv()``` per leggere i dati da un file CSV e memorizzarli in una matrice. Di seguito è riportato un esempio di codice che mostra come ottenere i dati da un file CSV e stampare il contenuto in una tabella HTML:
 
 ```PHP
-foreach($file as $line) {
-  $data = str_getcsv($line); // Converte la riga in un array di dati
-  // Fai qualcosa con i dati, ad esempio stampali a schermo:
-  echo "Nome prodotto: " . $data[0] . PHP_EOL;
-  echo "Prezzo: €" . $data[1] . PHP_EOL;
+<?php
+$csv_filename = "dati.csv";
+$handle = fopen($csv_filename, "r");
+$colonne = fgetcsv($handle, 1000, ",");
+echo "<table>";
+while(($righe = fgetcsv($handle, 1000, ",")) !== false){
+    echo "<tr>";
+    foreach ($righe as $dato) {
+        echo "<td>" . htmlspecialchars($dato) . "</td>";
+    }
+    echo "</tr>";
 }
+echo "</table>";
+fclose($handle);
+?>
 ```
 
-5. Per scrivere su un file CSV, puoi utilizzare il metodo `fputcsv` della classe `SplFileObject`:
+L'esempio sopra utilizza la funzione ```fgetcsv()``` per leggere il contenuto di un file CSV, indicando che il file è stato aperto con il codice ```fopen()```. Ciò assicura che il file sia chiuso correttamente dopo l'uso.
 
-```PHP
-$nuovaRiga = ["Sedia da ufficio", "150.00"];
-$file->fputcsv($nuovaRiga);
-```
+## Approfondimenti:
 
-Questo scriverà una nuova riga con il nome del prodotto e il prezzo specificato nel tuo file CSV.
+Il formato CSV è stato sviluppato negli anni '70 come metodo standard per l'importazione e l'esportazione di dati da fogli di calcolo e database. Nel tempo, sono stati sviluppati altri formati di file per la gestione dei dati tabulari, come il formato JSON. Tuttavia, CSV rimane ancora popolare e funziona bene con molti tipi di dati.
 
-## Approfondimento
+Alcuni sviluppatori preferiscono utilizzare le librerie di terze parti per lavorare con CSV in PHP, come ad esempio la popolare libreria "league/csv". Queste librerie offrono funzionalità aggiuntive e una maggiore flessibilità rispetto alle funzioni integrate di PHP.
 
-Oltre alle funzionalità di base di lettura e scrittura, la libreria CSV di PHP offre anche altri strumenti utili per lavorare con i dati. Ad esempio, puoi specificare un delimitatore diverso dal carattere virgola (`,`) utilizzando il metodo `setCsvControl`. Puoi anche specificare una riga di intestazione nel tuo file CSV e accedere ai dati utilizzando i nomi delle colonne invece degli indici numerici.
+Per implementare in modo efficiente un'elaborazione di grandi quantità di dati CSV, è consigliabile utilizzare un parser CSV, come ad esempio "fgetcsv()", che legge una sola riga di dati alla volta, invece di caricare l'intero file in memoria.
 
-Per ulteriori informazioni e dettagli su tutte le funzioni disponibili, puoi consultare la documentazione ufficiale di PHP sulla libreria CSV.
+## Vedi anche:
 
-## Vedi anche
-
-- [Documentazione ufficiale di PHP sulla libreria CSV](https://www.php.net/manual/en/ref.csv.php)
-- [Tutorial su come lavorare con file CSV in PHP](https://www.tutorialspoint.com/php/php_and_csv.htm)
-- [Esempi di utilizzo della libreria CSV di PHP](https://www.techiediaries.com/php-csv-files-manipulation/)
+- Documentazione PHP: [Funzione fgetcsv()](https://www.php.net/manual/en/function.fgetcsv.php)
+- Libreria "league/csv": [https://csv.thephpleague.com/](https://csv.thephpleague.com/)

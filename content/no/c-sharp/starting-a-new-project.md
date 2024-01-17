@@ -1,7 +1,7 @@
 ---
-title:                "Å starte et nytt prosjekt."
-html_title:           "C#: Å starte et nytt prosjekt."
-simple_title:         "Å starte et nytt prosjekt."
+title:                "Å starte et nytt prosjekt"
+html_title:           "C#: Å starte et nytt prosjekt"
+simple_title:         "Å starte et nytt prosjekt"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Getting Started"
@@ -10,45 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
-Det å starte et nytt program kan være en spennende og givende opplevelse. Det gir deg muligheten til å skape noe helt nytt og utforske dine programmeringsevner. Det er også en flott måte å lære nye teknologier og forbedre dine ferdigheter på.
+Hva & Hvorfor?
+Når du står overfor et nytt programmeringsprosjekt, er det viktig å starte på riktig måte. Det betyr å opprette et nytt prosjekt fra grunnen av. Dette innebærer å sette opp et miljø for utvikling som best passer dine behov, og skrive grunnleggende kode for å få prosjektet i gang.
 
-## Hvordan
-For å starte et nytt C# prosjekt, åpner du Visual Studio og følger disse enkle trinnene:
+Hvordan:
+Det første trinnet i å starte et nytt prosjekt er å opprette en ny C#-løsning i Visual Studio. Deretter kan du legge til prosjekt- og filstrukturer, samt nødvendige biblioteker og pakker. Ta gjerne en titt på følgende kodeeksempler for å se hvordan dette kan gjøres:
 
-1. I startmenyen velger du “Create a new project” (Lag et nytt prosjekt).
-2. Velg C# som språk og velg et passende prosjektnavn.
-3. Velg en plassering for prosjektet ditt og velg “Create” (Lag).
-4. Nå er du klar til å begynne å kode! Du kan begynne med å skrive koden din i main-funksjonen i filen Program.cs, som vil bli kjørt når du starter programmet.
+```
+C# // Opprettelse av en ny løsning
+dotnet new sln -n MinLøsning
 
-Her er et eksempel på en liten “Hello World” applikasjon i C#:
+// Oppretting av prosjekt og filstruktur
+dotnet new console -n MinApplikasjon
+cd MinApplikasjon
+dotnet add reference ../MinLøsning.sln
 
-```C#
-using System;
-
-class Program
-{
-    static void Main(string[] args)
-    {
-        Console.WriteLine("Hello World!");
-        Console.ReadLine();
-    }
-}
+// Legge til nødvendige biblioteker og pakker
+dotnet add package Navn-på-pakken
 ```
 
-Dette vil skrive ut teksten “Hello World!” og vente på at brukeren skal trykke en tast før programmet avsluttes.
+Du kan også bruke Visual Studio-oppsettveiviseren for å opprette et nytt prosjekt. Når grunnleggende strukturer er på plass, kan du begynne å skrive kode for å få prosjektet ditt til å gjøre det du ønsker det skal gjøre.
 
-## Dypdykk
-Når du starter et nytt prosjekt i C#, vil det generere en del filer og mapper for deg. Her er en kort forklaring på noen av de viktigste filene og mappene:
+Dypdykk:
+Å starte et nytt prosjekt er et viktig første skritt i enhver utviklingsoppgave. Det gir deg muligheten til å velge ditt foretrukne miljø og sett med verktøy som best støtter dine behov. Selv om vi brukte Visual Studio som et eksempel, er det viktig å nevne at det finnes andre alternative utviklingsmiljøer for C#, som Visual Studio Code og JetBrains Rider.
 
-- Program.cs: Dette er hovedfilen til prosjektet ditt, der startpunktet for programmet er.
-- bin og obj mapper: Disse mappene inneholder kompilerte filer og midlertidige filer som brukes under byggeprosessen.
-- Packages.config: Denne filen inneholder informasjon om hvilke pakker som er installert i prosjektet ditt fra NuGet, en populær pakkebehandlingstjeneste for .NET.
-- Properties mappe: Denne mappen inneholder en AssemblyInfo.cs fil som inneholder informasjon om prosjektet ditt, som for eksempel versjonsnummer og selskapsnavn.
-
-Du kan også velge å legge til ekstra mapper og filer for å organisere koden din på en mer effektiv måte. Det er også viktig å merke seg at når du bygger og kjører prosjektet, vil det generere en .exe-fil som du kan dele med andre for å kjøre programmet ditt.
-
-## Se Også
-- [C# Programmering: Fra Nybegynner til Ekspert](https://www.c-sharpcorner.com/article/c-sharp-programming/)
-- [Offisiell C# Dokumentasjon](https://docs.microsoft.com/en-us/dotnet/csharp/)
-- [NuGet](https://www.nuget.org/) for å finne og installere pakker til ditt C# prosjekt.
+Se også:
+- https://docs.microsoft.com/en-us/visualstudio/get-started/csharp/tutorial-console?view=vs-2019
+- https://visualstudio.microsoft.com/
+- https://code.visualstudio.com/
+- https://www.jetbrains.com/rider/

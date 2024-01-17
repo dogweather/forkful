@@ -1,7 +1,7 @@
 ---
-title:                "Lasketaan päivämäärä tulevaisuudessa tai menneisyydessä."
-html_title:           "Swift: Lasketaan päivämäärä tulevaisuudessa tai menneisyydessä."
-simple_title:         "Lasketaan päivämäärä tulevaisuudessa tai menneisyydessä."
+title:                "Tulevan tai menneen päivämäärän laskeminen tietokoneohjelmoinnissa"
+html_title:           "Swift: Tulevan tai menneen päivämäärän laskeminen tietokoneohjelmoinnissa"
+simple_title:         "Tulevan tai menneen päivämäärän laskeminen tietokoneohjelmoinnissa"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Dates and Times"
@@ -10,70 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä & Miksi?
 
-On monia syitä miksi ohjelmoijat saattavat haluta laskea tietyn päivän tulevaisuudessa tai menneisyydessä. Yksi yleinen syy on esimerkiksi sovellusten ja ohjelmien luominen, jotka tarjoavat tietoja tulevista tapahtumista tai muistuttavat käyttäjää tärkeistä päivistä.
+Päivämäärän laskeminen tulevaisuuteen tai menneisyyteen tarkoittaa päivämäärän lisäämistä tai vähentämistä tiettyyn ajanjaksoon nykyisestä päivämäärästä. Ohjelmoijat tekevät tätä tarpeen mukaan esimerkiksi laskemalla työpäivien määrän tulevaa tapahtumaa varten tai laskemalla paljonko aikaa on kulunut jostain tietystä päivämäärästä.
 
-## Kuinka
+## Kuinka:
 
-Laskeminen tietyn päivän tulevaisuudessa tai menneisyydessä ei ole monimutkaista Swiftissä. Tässä on muutama esimerkki ja niiden tulosteet, jotka näyttävät kuinka voit tehdä sen helposti käyttämällä Date-luokkaa ja Calendaria.
-
-``` Swift
-// Import Calendar package
-import Foundation
-
-// Get today's date
+```Swift
 let currentDate = Date()
 
-// Calculate date in future
-let futureDate = Calendar.current.date(byAdding: .day, value: 5, to: currentDate)
-print(futureDate)
+// Lisätään 10 päivää nykyiseen päivämäärään
+let futureDate = Calendar.current.date(byAdding: .day, value: 10, to: currentDate)
 
-// Output:
-// "2021-10-07 11:27:27 +0000"
+// Vähennetään 5 viikkoa nykyisestä päivämäärästä
+let pastDate = Calendar.current.date(byAdding: .weekOfMonth, value: -5, to: currentDate)
 
-// Calculate date in past
-let pastDate = Calendar.current.date(byAdding: .year, value: -3, to: currentDate)
-print(pastDate)
-
-// Output:
-// "2018-10-02 11:27:27 +0000"
-
+// Tulostetaan tuleva ja mennyt päivämäärä
+print("Tuleva päivämäärä: \(futureDate)")
+print("Menenyt päivämäärä: \(pastDate)")
 ```
 
-Jos haluat lisätä enemmän joustavuutta laskutoimituksiin, voit myös käyttää DateComponentsia ja DateFormatteria. DateComponentsia voit käyttää määrittämään tarkemmin mitä haluat lisätä tai vähentää päivämäärästä.
+**Tulos:**
 
-``` Swift
-// Import Calendar package
-import Foundation
-
-// Set DateComponents for 5 days
-var dateComponent = DateComponents()
-dateComponent.day = 5
-
-// Get current date
-let currentDate = Date()
-
-// Calculate date in future
-let futureDate = Calendar.current.date(byAdding: dateComponent, to: currentDate)
-
-// Format date to "dd/MM/yyyy" format
-let dateFormatter = DateFormatter()
-dateFormatter.dateFormat = "dd/MM/yyyy"
-print(dateFormatter.string(from: futureDate!))
-
-// Output:
-// "07/10/2021"
+```
+Tuleva päivämäärä: Optional(2020-12-24 01:44:02 +0000)
+Menneyt päivämäärä: Optional(2020-11-14 01:44:02 +0000)
 ```
 
-## Syväsukellus
+## Syväsukellus:
 
-Date-luokka ja Calendar ovat erittäin hyödyllisiä työkaluja päivämäärän laskemisessa tulevaisuudessa tai menneisyydessä Swiftissä. Date-luokka edustaa tiettyä päivämäärää ja kellonlyömää, kun taas Calendar-luokka auttaa laskemaan päivämäärien välistä eroa ja tekemään muutoksia päivämäärään.
+Päivämäärän laskemisen tarve on ollut olemassa jo pitkään ja siihen on olemassa useita erilaisia ratkaisuja ohjelmointikielistä riippuen. Swiftissä päivämäärän laskemiseen käytetään Calendar-luokkaa, jonka avulla voi lisätä tai vähentää päiviä, viikkoja, kuukausia tai vuosia nykyiseen päivämäärään. Lisäksi on olemassa muitakin käteviä työkaluja kuten DateComponents ja DateFormatter.
 
-On myös hyödyllistä muistaa, että päivämäärät voivat vaihdella eri aikavyöhykkeiden välillä, joten sinun tulisi aina tarkistaa ja muuntaa päivämäärät haluttuun aikavyöhykkeeseen ennen laskemista tai näyttämistä.
+## Katso myös:
 
-## Katso myös
-
-- [Swiftin virallinen dokumentaatio päivämäärien laskemisesta](https://developer.apple.com/documentation/foundation/date)
-- [Yleiset päivämäärälaskentavirheet ja niiden ratkaiseminen Swiftissä](https://medium.com/analytics-vidhya/common-date-calculation-errors-in-swift-and-how-to-fix-them-1cc926b7f5ac)
-- [Kuinka lasketaan aikaa ja päivämäärää tulevaisuudessa Swiftissä](https://www.hackingwithswift.com/example-code/system/how-to-calculate-the-difference-between-two-dates)
+- [Swiftin virallinen dokumentaatio päivämäärän laskemisesta](https://developer.apple.com/documentation/foundation/calendar)
+- [Stack Overflow viisi tapaa lisätä päiviä nykyiseen päivämäärään Swiftillä](https://stackoverflow.com/questions/34075675/add-days-to-nsdate-date-in-swift)
+- [Swiftille tehty kirjasto päivämäärän laskemista varten](https://github.com/malcommac/SwiftDate)

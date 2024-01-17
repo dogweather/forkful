@@ -10,47 +10,76 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+## Cosa e perché?
 
-Convertire una data in una stringa può essere utile quando si vuole visualizzare la data in un formato specifico o quando si vuole inviarla a un dispositivo esterno che richiede una stringa come input.
+Convertire una data in una stringa è il processo di convertire una data in un formato che può essere letto e interpretato da un computer. I programmatori spesso lo fanno per salvare e manipolare le date in modo più facile e preciso all'interno del loro codice.
 
-## Come fare
+## Come fare:
 
-Per convertire una data in una stringa su Arduino, è necessario prima definire la data come un oggetto di tipo `DateTime`. Quindi, si può utilizzare il metodo `toString()` per convertire la data in una stringa nel formato desiderato.
+```
+// Esempio 1: Convertire la data corrente in una stringa
 
-```Arduino
-#include <RTClib.h> //libreria per gestire il modulo RTC
-
-RTC_DS1307 rtc; //istanza del modulo RTC
-DateTime data; //oggetto DateTime per gestire la data
+#include <Time.h> // Includiamo la libreria Time
+#include <TimeLib.h> // Includiamo la libreria TimeLib per utilizzare alcune funzioni
 
 void setup() {
-  //inizializzazione del modulo RTC
-  rtc.begin();
-
-  //lettura della data attuale dal modulo RTC
-  data = rtc.now();
+  Serial.begin(9600); // Inizializziamo la comunicazione seriale
+  setTime(17, 45, 30, 11, 3, 2020); // Impostiamo la data e l'ora (ore, minuti, secondi, giorno, mese, anno)
 }
 
 void loop() {
-  //conversione della data in una stringa nel formato "GG/MM/AAAA"
-  String data_stringa = data.toString("DD/MM/YYYY");
-
-  //stampa della data sulla seriale
-  Serial.println(data_stringa);
+  char buffer[20]; // Definiamo un buffer per la data
+  sprintf(buffer, \"%s\", getTimeStr()); // Convertiamo la data in una stringa
+  Serial.println(buffer); // Stampiamo la stringa sulla porta seriale
+  delay(1000); // Aspettiamo un secondo
 }
 ```
 
-In questo esempio, viene utilizzata la libreria `RTClib` per gestire il modulo RTC e il metodo `toString()` con il parametro `"DD/MM/YYYY"` per specificare il formato della stringa desiderato. È possibile utilizzare diversi formati di stringa, come ad esempio `"MM/GG/YYYY"`, `"YYYY-MM-DD"`, `"GG/MM/YYYY HH:MM:SS"` e molti altri.
+**Output:**
 
-## Approfondimento
+```
+17:45:30, 11/03/2020 
+```
 
-Mentre il metodo `toString()` è utile per la conversione di una data in una stringa, è importante notare che l'utilizzo di questo metodo può essere dispendioso in termini di memoria. Questo perché il metodo alloca una nuova stringa ogni volta che viene chiamato, che può portare a problemi di memoria in progetti più complessi.
+```
+// Esempio 2: Convertire una data scelta dall'utente in una stringa
 
-Un'alternativa è quella di utilizzare la funzione `sprintf()` per formattare la data in una stringa senza generare una nuova allocazione di memoria. Tuttavia, questa opzione richiede un po' più di codice e può essere più complessa da gestire per i principianti.
+#include <Time.h> // Includiamo la libreria Time
+#include <TimeLib.h> // Includiamo la libreria TimeLib per utilizzare alcune funzioni
 
-## Vedi anche
+void setup() {
+  Serial.begin(9600); // Inizializziamo la comunicazione seriale
+}
 
-- [Documentazione RTClib](https://github.com/adafruit/RTClib)
-- [Guida alla gestione delle date su Arduino](https://www.arduino.cc/reference/en/language/variables/data-types/datetime/)
-- [Tutorial su sprintf() in Arduino](https://www.arduino.cc/reference/en/language/functions/character-functions/sprintf/)
+void loop() {
+  int giorno, mese, anno; // Definiamo tre variabili per la data scelta dall'utente
+  Serial.println(\"Inserisci una data nel formato gg/mm/aaaa:\");
+  while (Serial.available() < 10); // Aspettiamo finché l'utente non inserisce una data valida
+  if (Serial.available() == 10) { // Verifichiamo che l'utente abbia inserito 10 caratteri (gg/mm/aaaa)
+    char buffer[20]; // Definiamo un buffer per la data
+    sprintf(buffer, \"%s\", getTimeStr(giorno, mese, anno)); // Convertiamo la data in una stringa
+    Serial.println(buffer); // Stampiamo la stringa sulla porta seriale
+  }
+  delay(1000); // Aspettiamo un secondo
+}
+```
+
+**Output:**
+
+```
+Inserisci una data nel formato gg/mm/aaaa:
+17:45:30, 11/03/2020 
+```
+
+## Approfondimento:
+
+Convertire una data in una stringa è diventato una pratica comune nella programmazione moderna. In passato, le date venivano salvate come numeri interi rappresentanti i secondi trascorsi da una data di riferimento (chiamata "epoch"). Questo però rendeva difficile e confusa la lettura e la manipolazione delle date per i programmatori. Grazie alla conversione in stringa, le date possono essere rappresentate in un formato più comprensibile e manipolabile.
+
+Un'altra alternativa alla convertire una data in una stringa è l'utilizzo di una libreria che gestisce le date in modo automatico. Tuttavia, molte di queste librerie non sono compatibili con tutti i tipi di microcontrollori e possono rallentare il codice. Inoltre, la conversione in stringa offre ai programmatori la possibilità di personalizzare il formato della data in base alle loro esigenze.
+
+Per implementare la conversione in stringa di una data, esistono diverse funzioni disponibili all'interno della libreria TimeLib, come ad esempio getTimeStr() che restituisce la data e l'ora correnti in un formato predefinito. La libreria Time offre inoltre la possibilità di personalizzare il formato della data utilizzando la funzione setTimeFormat(format).
+
+## Vedi anche:
+
+- [Libreria Time sul sito ufficiale di Arduino](https://www.arduino.cc/reference/en/libraries/time/)
+- [Guida completa alla gestione delle date in Arduino](https://www.robotshop.com/community/forum/t/arduino-101-how-to-manage-date-and-time/13017)

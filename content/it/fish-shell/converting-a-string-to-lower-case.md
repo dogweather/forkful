@@ -10,57 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché convertire una stringa in minuscolo con Fish Shell?
+Cos'è e Perché?
 
-Se stai utilizzando Fish Shell, potresti aver bisogno di convertire una stringa in minuscolo per vari motivi, come manipolare i dati di un file o confrontare stringhe in modo case-insensitive. In questo articolo vedremo come farlo utilizzando Fish Shell.
+Convertire una stringa in minuscolo è un'operazione fondamentale nel mondo della programmazione. In poche parole, significa cambiare le lettere maiuscole in lettere minuscole all'interno di una stringa di testo. I programmatori lo fanno per rendere uniforme il testo e facilitare le operazioni di confronto e manipolazione.
 
-## Come farlo con Fish Shell
+Come si fa:
 
-La sintassi per convertire una stringa in minuscolo con Fish Shell è semplice:
-
-```
-stringa | string tolower
-```
-
-In questo modo, il valore della stringa verrà convertito in minuscolo e restituito come output.
-
-Ecco un esempio pratico:
-
-```
-echo "Hello World" | string tolower  # output: hello world
+```Fish Shell
+set stringa "Ciao Mondo!"
+set stringa ($stringa|lower)
+echo $stringa
 ```
 
-In questo caso, abbiamo utilizzato `echo` per generare una stringa di testo e il comando `string tolower` per convertire la stringa in minuscolo.
+Output: ciao mondo!
 
-È anche possibile utilizzare questa sintassi all'interno di uno script Fish, in questo modo:
 
-```
-set nome "Marco"
-set nome_lowercase $nome | string tolower 
-echo $nome_lowercase  # output: marco
-```
+Approfondimenti
 
-In questo esempio, abbiamo salvato la stringa "Marco" nella variabile `nome` e poi utilizzato `string tolower` per convertirla in minuscolo e salvarla nella variabile `nome_lowercase`.
+La conversione di una stringa in minuscolo è una pratica comune in molti linguaggi di programmazione. È nata dalla necessità di rendere compatibili i dati in input, in quanto alcune operazioni non sono sensibili alle maiuscole e altre sì. In alternativa, i programmatori possono utilizzare funzioni e metodi predefiniti specifici per la conversione in minuscolo. L'implementazione di questa operazione può variare a seconda del linguaggio e della libreria utilizzata.
 
-## Deep Dive
+Vedi anche
 
-La conversione di una stringa in minuscolo con Fish Shell è possibile grazie all'utilizzo del comando `string tolower`. Una possibile implementazione di questo comando è la seguente:
-
-```
-function string tolower -d "Converts a string to lowercase"
-  set -l result
-  for char in (string by -s $argv[1])
-    set char (string tolower $char)
-    set result $result$char
-  end
-  echo $result
-end
-```
-
-In questo comando, utilizziamo un ciclo `for` per andare attraverso ogni carattere della stringa e utilizzare il comando `string tolower` per convertire ogni carattere in minuscolo. Infine, utilizziamo `echo` per restituire la stringa convertita nel risultato.
-
-## Vedi anche
-
-- Documentazione ufficiale di Fish Shell: https://fishshell.com/docs/current/
-- Converting Strings in Fish Shell: https://www.linux.com/topic/desktop/how-convert-strings-fish-shell/
-- Funzioni Fish Shell avanzate: https://hacksoflife.blogspot.com/2016/03/fish-functions-file-namesubstr.html
+- https://fishshell.com/ - Sito ufficiale di Fish Shell.
+- https://unix.stackexchange.com/questions/477222/shell-script-change-uppercase-to-lowercase - Discussione su Stack Exchange riguardante la conversione di una stringa in minuscolo utilizzando uno script shell.
+- https://github.com/fish-shell/fish-shell - Repository GitHub di Fish Shell.

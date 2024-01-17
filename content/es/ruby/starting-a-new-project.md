@@ -1,7 +1,7 @@
 ---
-title:                "Iniciando un nuevo proyecto"
-html_title:           "Ruby: Iniciando un nuevo proyecto"
-simple_title:         "Iniciando un nuevo proyecto"
+title:                "Comenzando un nuevo proyecto"
+html_title:           "Ruby: Comenzando un nuevo proyecto"
+simple_title:         "Comenzando un nuevo proyecto"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Getting Started"
@@ -10,49 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¿Qué y por qué?
 
-Antes de sumergirnos en cómo empezar un nuevo proyecto en Ruby, es importante entender la razón detrás de ello. La programación en Ruby ofrece una sintaxis simple y elegante, lo que la convierte en una herramienta poderosa y atractiva para desarrolladores de todos los niveles. Empezar un nuevo proyecto en Ruby puede impulsar tu carrera y abrir nuevas oportunidades en el mundo de la tecnología.
+Empezar un nuevo proyecto en programación simplemente significa iniciar un nuevo proyecto de código desde cero. Los programadores hacen esto para crear nuevas aplicaciones, programas o funcionalidades que no existen todavía y así poder resolver problemas o mejorar nuestras vidas.
 
-## Cómo empezar un nuevo proyecto en Ruby
+## ¿Cómo hacerlo?
 
-Empezar un nuevo proyecto en Ruby es simple, pero requiere algunos pasos iniciales para configurar tu entorno de desarrollo. Aquí hay un ejemplo básico de cómo puedes crear y ejecutar tu primer programa en Ruby:
+Es muy sencillo empezar un nuevo proyecto en Ruby. Solo necesitas escribir en tu terminal `ruby new.rb` y automáticamente se creará un nuevo proyecto con una estructura básica. A continuación, puedes empezar a codificar tus ideas dentro de los archivos generados.
 
 ```
-# Crear un nuevo archivo llamado "hola.rb"
-touch hola.rb
+Ruby new.rb
 
-# Abrir el archivo en tu editor de texto favorito
-subl hola.rb
-
-# Escribir el siguiente código en el archivo
-puts "¡Hola, mundo!"
-
-# Guardar y cerrar el archivo
-# Ejecutar el archivo en tu terminal
-ruby hola.rb
-
-# Output:
-# ¡Hola, mundo!
+Nuevo proyecto creado: "mi_proyecto"
+├─ mi_proyecto.rb
+├─ archivo_1.rb
+├─ archivo_2.rb
+├─ ...
 ```
 
-## Iniciando un nuevo proyecto: Detalles importantes
+## Profundizando
 
-Antes de empezar a escribir código, es importante tener una idea clara y definida del objetivo de tu proyecto. ¿Qué problema estás tratando de resolver? ¿Quiénes serán los usuarios finales? ¿Qué características debe incluir tu proyecto? Una vez que tengas un plan claro, puedes seguir estos pasos para iniciar tu proyecto en Ruby:
-
-- Configura tu entorno de desarrollo: Necesitarás tener Ruby instalado en tu computadora y un editor de texto para escribir tu código.
-- Crea una estructura de archivos: Organiza tu proyecto en diferentes archivos y directorios para mantenerlo ordenado y fácil de navegar.
-- Utiliza gemas: Utiliza librerías de código ya existentes (llamadas "gemas" en Ruby) para ahorrar tiempo y esfuerzo en la creación de tu proyecto.
-- Haz pruebas: Antes de lanzar tu proyecto al mundo, asegúrate de probarlo y corregir cualquier error que pueda surgir.
-
-Con estos pasos en mente, estás listo para empezar a escribir tu código y dar vida a tu proyecto en Ruby.
+El concepto de empezar un nuevo proyecto es algo que ha existido desde los inicios de la programación. Sin embargo, con el avance de la tecnología, han surgido otras alternativas como utilizar plantillas o frameworks para agilizar el proceso de inicio de un proyecto. Sin embargo, muchos programadores prefieren empezar desde cero para tener un mayor control y personalización en su código.
 
 ## Ver también
 
-Si quieres profundizar en el mundo de Ruby y seguir aprendiendo sobre cómo iniciar nuevos proyectos, aquí hay algunas lecturas adicionales que pueden resultarte útiles:
-
-- [El tutorial oficial de Ruby](https://www.ruby-lang.org/es/)
-- [Curso interactivo de Ruby en Codecademy](https://www.codecademy.com/learn/learn-ruby)
-- [HispanoRuby - Comunidad de desarrolladores de Ruby en español](https://hispanoruby.net/)
-
-¡Esperamos que este artículo te haya inspirado a empezar un nuevo proyecto en Ruby!
+- [Guía de inicio rápido de Ruby](https://www.ruby-lang.org/es/documentation/quickstart/)
+- [Frameworks populares en Ruby](https://www.ruby-toolbox.com/)
+- [Plantillas de proyectos en GitHub](https://github.com/topics/ruby-templates)

@@ -10,38 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hva & Hvorfor?
+Å skrive til standard error handler er en måte for programmerere å gi ut feilmeldinger eller annen viktig informasjon til brukeren. Dette gjøres vanligvis i tilfeller der programmet må avsluttes på grunn av en feil.
 
-Det er mange grunner til å skrive til standardfeil i C-programmering. Det er en nyttig måte å få informasjon om feil og problemer i programmet ditt, som kan hjelpe deg med å finne og rette feil. Det kan også være nyttig når du tester og debugger koden din.
+## Hvordan:
+```
+#include <stdio.h>
 
-## Hvordan gjøre det
-
-For å skrive til standardfeil i C, kan du bruke funksjonen "fprintf". Dette er en inkludert funksjon i C som lar deg skrive til en filstrøm, inkludert standardfeil. Du må inkludere headerfilen "stdio.h" for å bruke denne funksjonen.
-
-For å bruke "fprintf" funksjonen, må du først åpne filstrømmen ved hjelp av "stderr" som argument, som er standardfeilstrømmen. Deretter kan du bruke vanlig formatering som i "printf" funksjonen for å skrive ut dataene du ønsker å feilstrømmen. For eksempel:
-
-```C
-fprintf(stderr, "Dette er en feilmelding: %s\n", "Feil ved åpning av fil.");
+int main() {
+    fprintf(stderr, "Oops! Det har oppstått en feil.");
+    return 1;
+}
+```
+**Output:**
+```
+Oops! Det har oppstått en feil.
 ```
 
-Dette vil skrive ut en feilmelding til standardfeilstrømmen og inkludere den angitte teksten i formateringen, som i dette tilfellet er "Feil ved åpning av fil.".
+## Dykk dypere:
+Å skrive til standard error er en metode som har vært i bruk siden den første versjonen av C. Det finnes også en annen måte å skrive ut feilmeldinger på, ved å bruke funksjonen ```printf```. Men ved å skrive til standard error kan man gi ut separate meldinger til standard output og standard error, noe som kan være nyttig i feilhåndtering.
 
-Du kan også bruke "stderr" direkte i stedet for "fprintf" funksjonen, men dette begrenser deg til å kun skrive ut en streng uten formatering. For eksempel:
+Implementeringen av standard error handler kan variere avhengig av operativsystem og kompiler. Noen operativsystemer tillater til og med å omdirigere standard error til en annen enhet, som for eksempel en loggfil.
 
-```C
-fprintf(stderr, "Dette er en feilmelding.");
-```
-
-## Dypdykk
-
-Når du bruker "fprintf" funksjonen for å skrive til standardfeil, er det viktig å huske på å inkludere "\n" for å få en nylinje etter meldingen. Dette vil gjøre feilmeldingene dine lettere å lese og skille fra hverandre.
-
-Det kan også være nyttig å inkludere feilkode i feilmeldingene dine for å identifisere og håndtere forskjellige feil. Du kan gjøre dette ved å bruke "errno" variabelen, som inneholder feilkoden for siste funksjonskall.
-
-En viktig ting å huske på er at når du skriver til standardfeil, vil meldingen vises på skjermen selv om programmet ditt kjøres som en daemon eller i bakgrunnen. Dette kan være forvirrende for brukeren og kan føre til sikkerhetsrisikoer, så det er viktig å håndtere feilmeldingene dine på en sikker og effektiv måte.
-
-## Se også
-
-- [The Standard Error Stream](https://www.linuxjournal.com/article/6589)
-- [How to Redirect Standard Error in C](https://www.geeksforgeeks.org/how-to-redirect-stderr-to-a-file-in-c/)
-- [Error Handling in C](https://www.tutorialspoint.com/cprogramming/c_error_handling.htm)
+## Se også:
+- [fprintf documentation](https://www.cplusplus.com/reference/cstdio/fprintf/)
+- [Standard error handler in C](https://stackify.com/standard-error-handler-in-c/)

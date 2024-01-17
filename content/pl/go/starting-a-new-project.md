@@ -10,46 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Dlaczego warto rozpocząć nowy projekt w Go?
+## Co & Dlaczego?
 
-Rozpoczęcie nowego projektu w Go może przynieść wiele korzyści. Ten szybko rozwijający się język programowania jest prosty w użyciu, wydajny i obsługuje wiele platform. Dodatkowo, z powodu rosnącej popularności, Go jest często wybierany przez wielu programistów do tworzenia aplikacji webowych, narzędzi sieciowych czy usług w chmurze.
+Robienie nowego projektu jest możliwością dla programistów, aby rozwinąć nowy kod lub funkcjonalność, która może być przydatna dla użytkowników. Niektórzy programiści mogą również chcieć założyć nowy projekt, aby poczuć się bardziej kreatywnymi i wykorzystać swoje umiejętności w innej dziedzinie.
 
-## Jak to zrobić?
-
-Rozpoczęcie nowego projektu w Go może być łatwe i przyjemne. Najpierw musimy upewnić się, że mamy aktualną wersję Go zainstalowaną na naszym komputerze. Następnie, możemy utworzyć nowy katalog dla naszego projektu i uruchomić w nim terminal. Wpiszmy w nim następujące polecenie, aby utworzyć nowy plik main.go:
+## Jak to zrobić:
 
 ```Go
-touch main.go
-```
+package main
 
-Teraz możemy otworzyć ten plik w naszym edytorze kodu i zacząć pisać! Na początek, dodajmy import dla pakietu "fmt", który będzie nam pomocny podczas wypisywania rezultatów naszego kodu:
-
-```Go
 import "fmt"
+
+func main() {
+  fmt.Println("Witaj, świecie!")
+}
 ```
 
-Następnie, możemy napisać prosty kod, który wypisze "Witaj, świecie!" w terminalu:
+W powyższym przykładzie jest pokazane, jak założyć nowy projekt w języku Go. Pojedyncza linijka kodu jest w stanie wyświetlić prosty napis "Witaj, świecie!" w konsoli. Jest to podstawowy sposób na rozpoczęcie projektu w Go.
 
-```Go
-fmt.Println("Witaj, świecie!")
-```
+## W głębszej analizie:
 
-Teraz zapiszmy nasz kod i wróćmy do terminala. Wprowadźmy polecenie "go run main.go", które skompiluje i uruchomi nasz kod. Rezultat powinien wyglądać następująco:
+Język Go został stworzony przez Google w 2009 roku. Jest on przeznaczony do tworzenia wydajnych i skalowalnych aplikacji sieciowych. Alternatywami dla Go są języki takie jak Java i Python, które również są popularne w tworzeniu aplikacji webowych.
 
-```
-Witaj, świecie!
-```
+Przy rozpoczynaniu nowego projektu w Go, ważne jest, aby zapoznać się z podstawowymi konceptami, takimi jak typy zmiennych, funkcje i pętle. Ponadto, używanie testów jednostkowych jest kluczowym elementem w procesie tworzenia i utrzymywania dobrego kodu.
 
-To wszystko! Jesteśmy już gotowi do rozpoczęcia naszego nowego projektu w Go.
+## Zobacz także:
 
-## Głębsza analiza
-
-Rozpoczęcie nowego projektu w Go jest również doskonałą okazją do nauki tego języka programowania. Go jest prosty w nauce, dzięki swoim czytelnym składniom i intuicyjnym funkcjom. Dodatkowo, korzystanie z narzędzi takich jak Go Modules pozwala na łatwe zarządzanie zależnościami w naszym projekcie.
-
-Kolejną ważną rzeczą podczas rozpoczynania nowego projektu jest wybór odpowiednich narzędzi do pracy. Go posiada wiele przydatnych bibliotek i frameworków, które mogą przyśpieszyć nasz rozwój. Przed rozpoczęciem projektu, warto zapoznać się z dostępnymi rozwiązaniami i wybrać to, które najlepiej odpowiada naszym potrzebom.
-
-# Zobacz także
-
-- [Oficjalna strona Go](https://golang.org/)
-- [Dokumentacja Go](https://golang.org/doc/)
-- [Go Modules](https://github.com/golang/go/wiki/Modules)
+- Oficjalna dokumentacja Go: https://golang.org/doc/
+- Przewodnik dla początkujących: https://tour.golang.org/welcome/1
+- Kurs edX dotyczący języka Go: https://www.edx.org/course/go-golang-beginners-free-textbook

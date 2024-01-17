@@ -1,7 +1,7 @@
 ---
-title:                "Enviando una petición http"
-html_title:           "PHP: Enviando una petición http"
-simple_title:         "Enviando una petición http"
+title:                "Enviando una solicitud http"
+html_title:           "PHP: Enviando una solicitud http"
+simple_title:         "Enviando una solicitud http"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "HTML and the Web"
@@ -10,41 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué enviar una solicitud HTTP?
+## ¿Qué y por qué?
 
-Enviar una solicitud HTTP es importante en la programación web, ya que permite a las aplicaciones comunicarse con servidores y obtener información. Es necesario para obtener datos, enviar formularios, autenticar usuarios y más.
+Enviar una solicitud HTTP significa enviar una petición a un servidor web en busca de información o para realizar una acción. Los programadores realizan solicitudes HTTP para interactuar con otros servicios web o para obtener datos en tiempo real.
 
-## Cómo hacerlo
-Para enviar una solicitud HTTP en PHP, se utiliza la función `curl_init()`. A continuación, se establecen las opciones de la solicitud, como la URL de destino y el método HTTP utilizado. Luego se ejecuta la solicitud con `curl_exec()` y se obtiene la respuesta del servidor.
+## Cómo:
 
 ```PHP
-<?php
-// Iniciar una nueva solicitud
-$ch = curl_init();
+// Usando la función file_get_contents para realizar una solicitud GET a una URL específica
 
-// Configurar URL y otros datos de la solicitud
-curl_setopt($ch, CURLOPT_URL, "https://www.ejemplo.com/");
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+$url = "https://miweb.com/api/users";
+$data = file_get_contents($url);
 
-// Establecer el método HTTP utilizado
-curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "GET");
+// El resultado de la solicitud se almacenará en la variable $data y se puede imprimir o manejar de acuerdo a las necesidades del programador
 
-// Ejecutar la solicitud y obtener la respuesta
-$response = curl_exec($ch);
-
-// Cerrar la solicitud
-curl_close($ch);
-
-// Imprimir la respuesta
-echo $response;
-?>
+echo $data;
 ```
 
-La respuesta será una cadena con el contenido de la página solicitada. Esto se puede utilizar para mostrar datos en una aplicación, almacenarlos en una base de datos o cualquier otra tarea que se necesite.
+La salida de este ejemplo puede ser un archivo JSON con información de los usuarios de una determinada página web.
 
 ## Profundizando
-La función `curl_init()` permite establecer más opciones, como encabezados de solicitud, autenticación, manejo de errores y más. Se recomienda revisar la documentación oficial de PHP para obtener más información sobre las opciones disponibles y cómo utilizarlas correctamente en diferentes escenarios.
+
+Para entender mejor cómo funcionan las solicitudes HTTP, es importante tener en cuenta su contexto histórico. Originalmente, el protocolo HTTP nació en 1989 con el objetivo de intercambiar información entre sistemas informáticos. Sin embargo, en la actualidad, su uso más común es para la comunicación entre el navegador y el servidor web.
+
+Existen diversas alternativas para realizar solicitudes HTTP en PHP, como la función `curl` y la extensión `http`. Sin embargo, la función `file_get_contents` es la opción más sencilla y ampliamente utilizada para fines básicos.
+
+Es importante tener en cuenta que la realización de solicitudes HTTP implica una comunicación entre diferentes sistemas, por lo que es necesario estar familiarizados con los conceptos de autenticación, encabezados y códigos de respuesta.
 
 ## Ver también
-- [Documentación oficial de curl en PHP](https://www.php.net/manual/es/book.curl.php)
-- [Tutorial de curl en Tuts+](https://code.tutsplus.com/es/tutorials/http-requests-in-php-using-curl--net-16275)
+
+- La documentación oficial de PHP sobre la función `file_get_contents`: https://www.php.net/manual/en/function.file-get-contents.php
+- Un tutorial detallado en español sobre cómo realizar solicitudes HTTP en PHP: https://diego.com.es/solicitudes-http-en-php

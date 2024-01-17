@@ -10,30 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
-Så, du har bestemt deg for å starte et nytt prosjekt og vurderer Rust som ditt programmeringsspråk. Men hvorfor? Vel, Rust er et moderne, kraftig og uttrykksfullt språk som kombinerer hastighet og sikkerhet. Det er perfekt for å bygge store og pålitelige systemer som varer.
+# Hva & Hvorfor? 
 
-## Hvordan
-For å komme i gang med Rust, må du først installere Rust-verktøykassen på datamaskinen din. Du kan gjøre dette ved å følge instruksjonene på Rust sin offisielle nettside. Etter at du har installert Rust, kan du åpne en terminal og skrive følgene kommando:
+Når du begynner å jobbe med et nytt prosjekt, starter du en uoppdaget reise i kodesamfunnet. Dette kan være et spennende og utfordrende eventyr, hvor du kan utforske nye idéer og løse problemer.
 
-```Rust
-rustc main.rs
+Programmerere starter nye prosjekter fordi de ønsker å løse et problem eller skape noe nytt og nyttig. Dette gir seg mulighet til å bruke sine kreative ferdigheter og lære nye programmeringskonsepter.
+
+## Hvordan: 
+
+Under viser et eksempel på hvordan du kan starte et nytt prosjekt i Rust og skrive "Hello World" til konsollen: 
+
 ```
-I dette eksempelet kompilerer Rust-programmet ditt `main.rs` og lager en kjørbar fil som du kan kjøre ved å skrive følgene kommando:
-
-```Rust
-./main
+Rust fn main() {
+    println!("Hei, verden!");
+}
 ```
-Når du har fått din første "Hello World!" utskrift, kan du begynne å utforske mer av Rusts funksjoner og muligheter. Det er et vell av dokumentasjon og tutorials tilgjengelig på nettet, samt et aktivt samfunn som er villig til å hjelpe nybegynnere.
 
-## Dyp dykk
-Når du har blitt mer komfortabel med å kode i Rust, kan du begynne å tenke på hvordan du ønsker å organisere og strukturere prosjektet ditt. Rust har et innebygd byggesystem, Cargo, som gjør det enkelt å håndtere avhengigheter og bygge prosjektet ditt. Du kan også bruke biblioteker fra Rusts pakkeindeks (Crates.io) for å legge til ekstra funksjonalitet.
+Konsolloutputen vil være: 
 
-For å optimalisere og forbedre ytelsen til prosjektet ditt, kan du også lese mer om Rusts konvensjoner for minnehåndtering og trådsikkerhet. Disse er grunnleggende for å forstå og dra nytte av Rusts muligheter for å oppnå hastighet og pålitelighet.
+```
+Hei, verden!
+```
 
-## Se også
-- [Offisiell Rust nettside](https://www.rust-lang.org/)
-- [Rust dokumentasjon](https://doc.rust-lang.org/)
-- [Cargo pakkehåndterer](https://doc.rust-lang.org/cargo/index.html)
+## Dykk dypere:
 
-Med dette i tankene har du alt du trenger for å starte et spennende Rust-prosjekt. Lykke til!
+Rust ble utviklet av Mozilla Research og først utgitt i 2010. Språket er designet for å være et trygt og samtidig raskt alternativ til C og C++. Det har også et utvidbart økosystem med et omfattende bibliotek og en aktiv samfunn. Å starte et nytt prosjekt i Rust kan være en flott måte å bli kjent med et kraftig og voksende programmeringsspråk.
+
+Noen alternativer til å starte et prosjekt i Rust inkluderer å bruke C eller C++ eller å bruke et annet programmeringsspråk som Python eller Java. Imidlertid er Rust unikt fordi det tilbyr en blanding av enkel syntaks, lavnivå-kontroll og minneeffektivitet.
+
+For å implementere et nytt prosjekt i Rust, må du først installere Rust-programvaren på datamaskinen din og deretter følge Rusts dokumentasjon for å lære å bygge, teste og publisere din kode.
+
+## Se også:
+
+- Rust dokumentasjon: https://www.rust-lang.org/learn 
+- Rust samfunn: https://www.rust-lang.org/community 
+- Utforske Rusts prosjekteksempler: https://github.com/rust-unofficial/awesome-rust

@@ -1,7 +1,7 @@
 ---
-title:                "Att använda reguljära uttryck"
-html_title:           "Elm: Att använda reguljära uttryck"
-simple_title:         "Att använda reguljära uttryck"
+title:                "Använda reguljära uttryck"
+html_title:           "Elm: Använda reguljära uttryck"
+simple_title:         "Använda reguljära uttryck"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -10,39 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
-Regular expressions är ett kraftfullt verktyg för att söka, ersätta och manipulera textsträngar i programkod. Genom att använda reguljära uttryck kan du snabbt och effektivt redigera stora mängder text på ett precist och strukturerat sätt.
+## Vad & Varför?
+Reguljära uttryck är ett användbart verktyg för programmerare för att matcha och manipulera textsträngar. De består av ett mönster med metatecken som kan matcha olika tecken och uttryck i en sträng. Genom att använda reguljära uttryck kan programmerare effektivt söka och ersätta text, validera inmatningar och mycket mer.
 
-## Hur man gör
-För att använda reguljära uttryck i Elm, behöver du först importera `Regex` modulen. Sedan kan du definiera ett reguljärt uttryck med hjälp av `Regex.regex` funktionen och mata in det i `Regex.find` eller `Regex.replace` beroende på vad du vill göra. Här är ett exempel på hur du skulle söka efter ett visst mönster i en textsträng:
+## Hur man:
+För att använda reguljära uttryck i Elm, måste vi först importera elm/regex biblioteket. Här är ett exempel på hur man kan matcha en sträng med ett enkelt mönster:
 
-```elm
-import Regex
+```Elm
+import elm/regex
 
--- Definiera det reguljära uttrycket
-pattern = Regex.regex "[0-9]+"
-
--- Textsträng att söka i
-text = "Det finns 300 enhörningar i skogen"
-
--- Sök efter mönster med Regex.find
-Regex.find pattern text
---> Just (Regex.match "300" (Regex.at [6, 7, 8] text))
+matcha : Regex-resultat String
+matcha =
+    Regex.match "Hello" "Hello, världen!"
 ```
 
-Som du kan se returnerar `Regex.find` en `Just` typ med en `Regex.match` variabel som innehåller det matchade mönstret. Om det inte finns någon matchning, skulle det returnera `Nothing`. Du kan också använda `Regex.replace` för att ersätta en textsträng med ett annat mönster.
+Output: ```Just "Hello"```
 
-## Djupdykning
-Reguljära uttryck har ett väldigt specifikt syntax som kan verka förvirrande först. Men när du väl lärt dig grunderna, kommer du snabbt att inse hur användbara de är. Här är några saker att tänka på när du arbetar med reguljära uttryck i Elm:
+Vi kan också använda metatecken som "." för att matcha vilket tecken som helst och "*" för att matcha det föregående uttrycket 0 eller fler gånger. Till exempel:
 
-- `|` används för att separera olika möjliga matchningar. Till exempel `[a-z]|[0-9]` kommer att matcha antingen en bokstav i alfabetet eller en siffra.
-- `*` och `+` betyder att föregående matchning ska upprepas noll eller flera gånger. `*` betyder också att mönstret kan vara frånvarande helt. Till exempel `ab*c` skulle matcha `ac`, `abc` eller `abbbc`.
-- `.` representerar en generell karaktär som kan vara vilken som helst.
-- Om du vill matcha en speciell karaktär som normalt används i regex-syntax, som `*` eller `|`, måste du använda `\\` före karaktären för att undvika att den tolkas som en del av syntaxen.
+```Elm
+import elm/regex
 
-Det finns många olika funktioner inom `Regex` modulen som du kan använda för att bygga komplexa reguljära uttryck. Se till att läsa dokumentationen för mer information och exempel.
+matcha : Regex-resultat String
+matcha =
+    Regex.match "h.llo*" "hellooooo"
+```
 
-## Se även
-- [`Regex` modulen i Elm Dokumentation](https://package.elm-lang.org/packages/elm/regex/latest)
-- [RegExr - ett online-verktyg för att testa och lära sig reguljära uttryck](https://regexr.com/)
-- [Reguljära uttryck - tutorial på W3Schools](https://www.w3schools.com/jsref/jsref_obj_regexp.asp)
+Output: ```Just "hellooooo"```
+
+## Djupdykning:
+Regulära uttryck har funnits i decennier och har använts i olika programmeringsspråk, men det är fortfarande ett kraftfullt verktyg som används idag. Det finns också alternativ till reguljära uttryck, som mönstermatchning i Elm, men reguljära uttryck kan fortfarande vara användbara i vissa situationer där vi behöver mer avancerad funktionalitet.
+
+I Elm används reguljära uttryck genom att konvertera dem från strängar till Regex typen, som kan jämföras med andra strängar med hjälp av inbyggda funktioner som "match" och "replace". Det är också möjligt att använda Regex.lowercase för att matcha strängar med olika fall.
+
+## Se även:
+[Elm Regex documentation](https://package.elm-lang.org/packages/elm/regex/latest/)

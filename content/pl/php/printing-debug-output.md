@@ -1,7 +1,7 @@
 ---
-title:                "Wydrukowanie danych do debugowania"
-html_title:           "PHP: Wydrukowanie danych do debugowania"
-simple_title:         "Wydrukowanie danych do debugowania"
+title:                "Dr"
+html_title:           "PHP: Dr"
+simple_title:         "Dr"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Testing and Debugging"
@@ -10,50 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## O co chodzi i po co?
 
-Debugowanie jest nieodłączną częścią tworzenia aplikacji, a wiedza na temat drukowania informacji debugujących jest niezbędna dla każdego programisty. Dzięki temu narzędziu można szybciej znaleźć i naprawić błędy w kodzie, co przyczynia się do poprawy jakości tworzonego oprogramowania.
+W programowaniu, drukowanie wyników debugowania jest ważną częścią procesu tworzenia oprogramowania. Polega to na wyświetlaniu informacji w celu zidentyfikowania błędów i poprawienia działania programu. Programiści drukują wyniki debugowania, aby znaleźć miejsca, w których program nie działa zgodnie z oczekiwaniami.
 
-## Jak to zrobić
+## Jak to zrobić?
 
-Aby drukować informacje debugujące w języku PHP, należy skorzystać z funkcji `echo` lub `print_r`. Oba te polecenia służą do wypisywania danych na ekranie, jednak `print_r` jest przydatniejsze w przypadku drukowania złożonych struktur danych, takich jak tablice czy obiekty.
-
-Przykładowy kod wykorzystujący funkcję `echo`:
+W PHP istnieje kilka sposobów na drukowanie informacji debugowania. Najprostszym jest użycie funkcji `echo` lub `print`. Można też użyć funkcji `var_dump` lub `print_r`, które wyświetlą strukturę danego obiektu lub zmiennej. Przykłady:
 
 ```PHP
-$zmienna = "Hello World!";
-echo $zmienna; // wyświetli "Hello World!" na ekranie
+// użycie funkcji echo
+$imie = "Anna";
+echo "Witaj, $imie!"; // wyświetli "Witaj, Anna!"
+
+// użycie funkcji var_dump
+$dane = array(1, 2, 3);
+var_dump($dane); // wyświetli strukturę tablicy: "array(3) { [0]=> int(1) [1]=> int(2) [2]=> int(3) }"
 ```
 
-A teraz przykład wykorzystujący funkcję `print_r`:
+## W głębi tematu
 
-```PHP
-$tablica = array("jabłko", "banan", "pomarańcza");
-print_r($tablica); // wyświetli zawartość tablicy w formie czytelnej dla człowieka
-```
+Drukowanie informacji debugowania jest powszechną praktyką w programowaniu od lat. Wcześniej programiści musieli polegać na wyświetlaniu wyników na konsoli lub korzystaniu z modułów zewnętrznych, ale wraz z rozwojem PHP, funkcje `echo`, `print`, `var_dump` i `print_r` zostały włączone do języka.
 
-Można także skorzystać z funkcji `var_dump`, która oprócz wyświetlenia wartości danej zmiennej, pokazuje również jej typ oraz długość (w przypadku tablic).
+Alternatywą dla drukowania debug output jest użycie debuggera, czyli narzędzia służącego do analizy i debugowania kodu. Umożliwia ono wstrzymywanie wykonania programu w wybranym miejscu i obserwowanie wartości zmiennych oraz wykonanych kroków, co może być bardziej wygodne niż ręczne drukowanie outputu.
 
-```PHP
-$zmienna = "Hello World!";
-var_dump($zmienna); // wyświetli "string(12) "Hello World!""
-```
+Implementacja funkcji drukowania jest dość prosta, ponieważ są one już zaimplementowane w języku PHP. Zwykle nie wymagają żadnych dodatkowych ustawień lub konfiguracji.
 
-Kolejną przydatną funkcją jest `error_log`, która pozwala na zapisanie informacji debugujących do pliku zamiast wyświetlania ich na ekranie. Użyteczne, gdy nie chcemy pokazywać użytkownikom błędów lub gdy nie mamy dostępu do konsoli.
+## Zobacz też
 
-## Pogłębione informacje
-
-Drukowanie informacji debugujących może być także przydatne przy tworzeniu aplikacji w trybie produkcyjnym. W takiej sytuacji warto skorzystać z funkcji `ini_set`, która pozwala na wyświetlenie błędów na ekranie lub zapisanie ich do pliku, bez potrzeby modyfikowania ustawień serwera.
-
-```PHP
-ini_set('display_errors', 1); // wyświetli błędy na ekranie
-ini_set('log_errors', 1); // zapisze błędy do pliku
-```
-
-Pamiętaj jednak, aby wyłączyć tę funkcjonalność wersji produkcyjnej aplikacji, aby uniknąć wyświetlania wrażliwych informacji użytkownikom.
-
-## Zobacz także
-
-- [Dokumentacja PHP: Debugging Functions](https://www.php.net/manual/en/ref.errorfunc.php)
-- [Blog SitePoint: PHP Debugging with echo and print_r](https://www.sitepoint.com/php-debugging-echo-print-r/)
-- [Dokumentacja PHP: ini_set](https://www.php.net/manual/en/function.ini-set.php)
+- Dokumentacja PHP dotycząca funkcji [echo](https://www.php.net/manual/en/function.echo.php), [print](https://www.php.net/manual/en/function.print.php), [var_dump](https://www.php.net/manual/en/function.var-dump.php) i [print_r](https://www.php.net/manual/en/function.print-r.php)
+- [Wprowadzenie do debugowania w PHP](https://www.thesitewizard.com/php/debugging-php-script.shtml)

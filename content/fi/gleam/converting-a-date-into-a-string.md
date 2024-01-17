@@ -1,7 +1,7 @@
 ---
-title:                "Muunnetaan päivämäärä merkkijonoksi"
-html_title:           "Gleam: Muunnetaan päivämäärä merkkijonoksi"
-simple_title:         "Muunnetaan päivämäärä merkkijonoksi"
+title:                "Muuntaa päivämäärä merkkijonoksi"
+html_title:           "Gleam: Muuntaa päivämäärä merkkijonoksi"
+simple_title:         "Muuntaa päivämäärä merkkijonoksi"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Dates and Times"
@@ -10,39 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Miksi
+## Mitä & Miksi?
 
-Kenties olet törmännyt tarpeeseen muuntaa päivämäärä merkkijonoksi ohjelmassasi. Tämä artikkeli esittelee, miten Gleam-kielen avulla voit helposti ja tarkasti suorittaa tämän konversion.
+Päivämäärän muuttaminen merkkijonoksi tarkoittaa, että muutamme päivämäärän tiedon tietokoneen ymmärtämään muotoon. Tämä on hyödyllistä, koska tietokoneet käsittelevät datoja eri tavalla kuin ihmiset. Ohjelmoijat muuttavat päivämääriä merkkijonoiksi, jotta tietokoneet voivat käsitellä niitä oikein ja näyttää ne käyttäjälle.
 
-# Miten
+## Kuinka:
 
-Aloitetaan luomalla päämoduuli, joka sisältää muutamia päivämääriä eri formaateissa.
+Seuraavassa esimerkissä näytämme miten muutat Gleamillä päivämäärän merkkijonoksi:
 
-```Gleam
-// Haku pakkaukselle "gleam/datetime"
-import gleam/datetime
+```
+Gleam
+import Gleam.Date
 
-// Päivämäärä muodossa "vuosi, kuukausi, päivä"
-let date = datetime.Date.new(2021, 9, 30)
+Gleam.Date.to_string({year: 2021, month: 4, day: 15})
 
-// Aika muodossa "tunti, minuutti, sekunti, millisekunti"
-let time = datetime.Time.new(12, 30, 45, 500)
-
-// Päivämäärä ja aika yhdistettynä
-let datetime = datetime.DateTime.new(date, time)
-
-// Tulostetaan päivämäärä ja aika merkkijonona
-io.println(datetime |> datetime.to_string())
 ```
 
-Tässä esimerkissä käytämme "gleam/datetime" -pakkauksessa olevaa Date ja Time moduuleja luodaksemme päivämäärän ja ajan. Sitten yhdistämme ne DateTime-moduulissa ja lopuksi muunnetaan merkkijonoksi käyttämällä to_string()-funktiota. Tulostetun merkkijonon pitäisi näyttää seuraavalta: "2021-09-30T12:30:45.500Z".
+Tulostus: "2021-04-15"
 
-# Syväsukellus
+Voit myös muuttaa päivämäärän merkkijonoksi haluamallasi tavalla, esimerkiksi näin:
 
-Gleamissa päivämäärän ja ajan muuntaminen merkkijonoksi on mahdollista kielen ydinmoduulien avulla, mutta "gleam/datetime" -pakkauksen avulla voimme tehdä sen paljon helpommin ja tarkemmin. DateTime-moduulissa on myös muita hyödyllisiä funktioita, kuten muunnokset eri aikavyöhykkeiden välillä.
+```
+Gleam.Date.to_string({year: 2021, month: 4, day: 15}, format="%d.%m.%Y")
 
-# Katso myös
+```
 
-- [Gleam-kielen viralliset sivut](https://gleam.run)
-- [Gleam-dokumentaatio](https://gleam.run/documentation)
-- [Gleam/datetime pakkauksen dokumentaatio](https://github.com/gleam-lang/datetime)
+Tulostus: "15.04.2021"
+
+## Deep Dive:
+
+Päivämäärän muuttaminen merkkijonoksi on yleinen tehtävä monissa ohjelmoinnin kielissä. Se auttaa ohjelmoijia käsittelemään tietoja ja esittämään niitä käyttäjille. Aiemmin tämä tehtiin usein manuaalisesti monimutkaisten algoritmien avulla, mutta nykyään monilla kielillä on valmiita kirjastoja, kuten Gleamilla, jotka tekevät tämän tehtävän helpoksi.
+
+Vaihtoehtoisesti ohjelmoijat voivat käyttää erilaisia merkkijonomuotoja päivämääriä ja kellonaikoja varten, kuten ISO 8601-standardia tai maakohtaisia muotoja. Näiden eroavaisuuksien vuoksi on tärkeää käyttää oikeaa muotoa sen mukaan, mitä tietokoneen tulisi käyttäjälle näyttää.
+
+Gleamin Date-moduuli hyödyntää Erlangin kalenterikirjastoa päivämäärien käsittelyyn. Tämä tarkoittaa, että päivämäärän muuttaminen merkkijonoksi toimii samaan tapaan kuin Erlangissakin.
+
+## Katso myös:
+
+Voit lukea lisää Gleamin Date-moduulista [virallisesta dokumentaatiosta] (https://gleam.run/documentation/standard-library/date) tai tutustua enemmän erilaisiin päivämääränmuutostapoihin Gleamissa [Gleamin oppaan] (https://gleam.run/book/tutorials/handling-date-time) avulla.

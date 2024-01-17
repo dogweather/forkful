@@ -1,7 +1,7 @@
 ---
-title:                "Eine Webseite herunterladen"
-html_title:           "Clojure: Eine Webseite herunterladen"
-simple_title:         "Eine Webseite herunterladen"
+title:                "Einen Webseiten-Download durchführen"
+html_title:           "Clojure: Einen Webseiten-Download durchführen"
+simple_title:         "Einen Webseiten-Download durchführen"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "HTML and the Web"
@@ -10,46 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was & Warum?
 
-Warum sollte jemand eine Webseite herunterladen? Nun, es gibt viele Gründe! Manchmal möchte man eine Kopie einer Seite für den Offline-Zugriff haben, andere Male möchte man sie untersuchen und möglicherweise Daten extrahieren. Egal aus welchem Grund, das Herunterladen einer Webpage ist eine nützliche Fähigkeit, die jeder Programmierer in seinem Werkzeugkasten haben sollte.
+Das Herunterladen einer Webseite bezieht sich auf den Prozess, bei dem eine Programmcode-Datei eine bestimmte Webseite von einem Server im Internet abruft und die darin enthaltenen Daten auf dem Computer speichert. Programmierer nutzen diese Funktion häufig, um Daten und Informationen von Webseiten zu extrahieren und in ihre Anwendungen einzubinden.
 
-## Wie geht das?
+## Wie geht's?
 
-Um eine Webseite herunterzuladen, müssen wir zunächst die URL kennen. Diese ist normalerweise in der Adressleiste des Browsers zu finden. Wir können dann die `clojure.java.io` Bibliothek verwenden, um die Seite herunterzuladen und den Inhalt auf der Konsole auszugeben.
+Um eine Webseite in Clojure herunterzuladen, kann die folgende Funktion verwendet werden:
 
 ```Clojure
 (require '[clojure.java.io :as io])
 
-(def url "https://www.beispielwebseite.com/")
-
-(def page (slurp url))
-(io/copy (io/file "heruntergeladene-webpage.html") page)
+(defn download-webpage [url]
+  (io/copy (io/input-stream url) (io/output-stream "webpage.html")))
 ```
 
-Die `slurp` Funktion lädt den Inhalt der URL als String herunter, und die `copy` Funktion speichert diesen Inhalt in einer Datei namens "heruntergeladene-webpage.html". Nun können wir diese Datei öffnen und den Inhalt anzeigen.
+Erst importieren wir die clojure.java.io Bibliothek, um auf Funktionen für das Lesen und Schreiben von Dateien zuzugreifen. Dann definieren wir unsere eigene Funktion namens "download-webpage", die eine URL als Eingabe erwartet. Die Funktion verwendet dann die Funktion "copy" von "clojure.java.io", um den Inhalt der Webseite in eine lokale Datei mit dem Namen "webpage.html" zu kopieren.
 
-```
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Beispielwebseite</title>
-  </head>
-  <body>
-    <h1>Willkommen auf unserer Webseite!</h1>
-    <p>Hier finden Sie alle Informationen, die Sie brauchen.</p>
-  </body>
-</html>
+Um die Funktion auszuführen, können wir Folgendes tun:
+
+```Clojure
+(download-webpage "https://www.meinewebseite.de")
 ```
 
-## Tiefere Einsicht
+Die Webseite wird dann heruntergeladen und in der aktuellen Arbeitsverzeichnis gespeichert.
 
-Das Herunterladen einer Webseite mag einfach erscheinen, aber es gibt viele Dinge, die dabei passieren. Beim Herunterladen wird ein HTTP-Request an den Server geschickt, der dann den Inhalt der Seite als HTTP-Response zurücksendet. Die Daten werden dann in einen String konvertiert und an unsere `page` Variable gebunden.
+## Tiefere Einblicke
 
-Es gibt auch andere Möglichkeiten, eine Webseite herunterzuladen, wie zum Beispiel mit der Bibliothek `clj-http` oder dem Leiningen-Plugin `lein-fetch`. Diese Methoden bieten zusätzliche Funktionen wie das Herunterladen von Bildern oder die Angabe von Benutzernamen und Passwörtern für Webseiten, die eine Authentifizierung erfordern.
+Das Herunterladen von Webseiten ist ein wichtiger Bestandteil vieler Anwendungen und Bibliotheken, da es eine einfache Möglichkeit bietet, Daten aus dem Internet zu extrahieren. Es gibt jedoch auch alternative Lösungen, wie beispielsweise APIs oder Web Scraping-Tools.
+
+Bei der Implementierung einer solchen Funktion ist es wichtig, sicherzustellen, dass die Webseite gespeichert und gelesen werden kann, unabhängig von der Größe oder Format der Datei. Auch die Behandlung von möglichen Fehlern, wie beispielsweise Serverfehlern oder fehlerhaften URLs, sollte berücksichtigt werden.
 
 ## Siehe auch
 
-- [clojure.java.io Dokumentation] (https://clojure.github.io/clojure/clojure.java.io-api.html)
-- [clj-http Dokumentation] (https://github.com/dakrone/clj-http)
-- [Leiningen-Plugin "lein-fetch"] (https://github.com/martinklepsch/lein-fetch)
+Weitere Informationen und Tutorials zu Clojure und dem Herunterladen von Webseiten finden Sie unter:
+
+- "Clojure Dokumentation": https://clojure.org/
+- "Web Scraping in Clojure": https://medium.com/clojure-hosting/scraping-the-web-clojure-3db7725af597

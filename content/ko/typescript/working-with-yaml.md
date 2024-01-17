@@ -1,7 +1,7 @@
 ---
-title:                "yaml 작업하기"
-html_title:           "TypeScript: yaml 작업하기"
-simple_title:         "yaml 작업하기"
+title:                "YAML로 작업하기"
+html_title:           "TypeScript: YAML로 작업하기"
+simple_title:         "YAML로 작업하기"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Data Formats and Serialization"
@@ -10,56 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+## 무엇 & 왜?
 
-여러분은 아마도 프로그래밍 분야에서 YAML을 사용하거나 들어보았을 것입니다. YAML은 데이터 직렬화 언어로, 구문이 간단하고 읽고 쓰기 쉽기 때문에 데이터 구조를 관리할 때 자주 사용됩니다. 이 글에서는 TypeScript에서 YAML을 어떻게 다루는지 알아보겠습니다.
+YAML 작업은 데이터 직렬화 및 구성 파일 생성을 위한 유용한 방법입니다. 프로그래머들은 YAML 작업을 통해 코드를 더 쉽게 읽고 유지 관리할 수 있으며, 가독성이 높은 구성 파일을 생성할 수 있습니다.
 
-## 방법
+## 하고자하는 것:
 
-먼저, `yaml` 패키지를 설치해야 합니다. `npm install yaml` 명령어를 사용하면 됩니다. 그리고 프로그램에서 다음과 같은 코드로 YAML 파일을 읽고 쓸 수 있습니다.
+```Typescript
+// YAML 파일 읽기
+const yaml = require('js-yaml');
+const fs = require('fs');
 
-```TypeScript
-import * as yaml from 'yaml';
+try {
+  // YAML 파일 로드
+  const config = yaml.safeLoad(fs.readFileSync('config.yaml', 'utf8'));
 
-// YAML 파일을 읽어오기
-const data = yaml.parse(fs.readFileSync('config.yaml', 'utf8'));
+  console.log(config);
+} catch (error) {
+  console.log(error);
+}
 
-// YAML 파일에 쓰기
-fs.writeFileSync('new-config.yaml', yaml.stringify(data));
-```
+// YAML 파일 생성
+const yaml = require('js-yaml');
+const fs = require('fs');
 
-위의 코드에서 `yaml.parse()` 함수는 YAML 파일을 읽어서 JavaScript 객체로 변환해줍니다. 이렇게 변환된 객체를 프로그램에서 필요한 대로 다룰 수 있습니다. 마찬가지로 `yaml.stringify()` 함수는 JavaScript 객체를 YAML 형식의 문자열로 변환하여 파일에 쓸 수 있도록 해줍니다.
-
-만약 YAML 파일을 예쁘게 정렬하여 출력하고 싶다면, `yaml.stringify()` 함수에 두 번째 인자로 `{ indentSeq: false }`를 넣어주면 됩니다. 아래 예시를 참고하세요.
-
-```TypeScript
-const data = {
-  name: 'Jane',
-  age: 26,
-  favoriteFoods: ['pizza', 'ice cream', 'sushi']
+const config = {
+  server: 'localhost',
+  username: 'admin',
+  password: '123456'
 };
 
-console.log(yaml.stringify(data, { indentSeq: false }));
-
-// 출력 결과:
-// name: Jane
-// age: 26
-// favoriteFoods:
-//   - pizza
-//   - ice cream
-//   - sushi
+try {
+  // YAML 파일 쓰기
+  fs.writeFileSync('config.yaml', yaml.dump(config));
+} catch (error) {
+  console.log(error);
+}
 ```
 
-## 깊이 있는 설명
+## 깊이 파고들기:
 
-YAML을 사용하면 데이터를 계층적으로 표현할 수 있습니다. 이는 여러분이 복잡한 데이터 구조를 관리할 때 유용합니다. 하지만 주의할 점이 있습니다. YAML에서는 들여쓰기로 계층을 표현하기 때문에, 들여쓰기 규칙을 잘 지켜야 합니다. 들여쓰기에 공백(4칸)과 탭(\t)을 혼용해서 사용하는 것은 좋지 않으며, 같은 파일에서도 일관성을 지켜야 합니다.
+YAML은 2001년에 처음 나타난 마크업 언어인 XML의 대안으로 개발되었습니다. YAML은 코드의 가독성을 높이고, 파일 크기를 줄여주며, 사람이 읽고 수정하기 쉬운 방식으로 데이터를 표현합니다. 다른 대안으로는 JSON이 있지만, YAML은 그보다 사람이 읽고 작성하기 쉽기 때문에 프로그래머들 사이에서 인기가 높습니다. 타입스크립트에서 YAML을 작업하기 위해서는 'js-yaml' 라이브러리를 사용할 수 있습니다.
 
-그리고 YAML에서는 배열을 [] 대신 - 기호를 사용하여 나타냅니다. 예를 들어, `favoriteFoods`에 pizza, ice cream, sushi가 배열로 들어있는 것을 볼 수 있습니다.
+## 더 알아보기:
 
-만약 YAML 파일을 내보내거나 읽는 데 문제가 발생하면, 문법에 오류가 있는지 확인해보세요. YAML 문법은 간단하지만, 잘못된 들어쓰기나 부호를 사용하면 제대로 읽거나 쓸 수 없습니다.
-
-## 참고
-
-- [YAML 사용 예시 (TypeScript)](https://github.com/eemeli/yaml/blob/master/examples/typescript.ts)
-- [YAML 문법](https://yaml.org/spec/1.2/spec.html)
-- [YAML 패키지 문서](https://www.npmjs.com/package/yaml)
+- YAML 공식 사이트: https://yaml.org/
+- YAML 문서: https://yaml.org/spec/
+- 타입스크립트에서 YAML 사용 예제: https://www.npmjs.com/package/js-yaml

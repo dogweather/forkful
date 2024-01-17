@@ -10,101 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+# Czym jest YAML i dlaczego programiści go używają?
 
-Jeśli jesteś programistą w Javie, na pewno spotkałeś się z formatem YAML w swojej pracy lub projektach. YAML jest prostym i przejrzystym formatem danych, który stał się popularnym wyborem do przechowywania i udostępniania konfiguracji aplikacji. W tym artykule dowiesz się, dlaczego warto używać YAML w swoim kodzie Javy.
+YAML jest to język do przetwarzania strukturalnych danych, często wykorzystywany przez programistów w projektach programistycznych. Jest to wygodne narzędzie do przechowywania i przesyłania danych w prosty i czytelny sposób.
 
-## Jak to zrobić
+Jednym z powodów używania YAML przez programistów jest jego prostota i czytelność. Dzięki zastosowaniu struktury w postaci "klucz-wartość", pliki YAML są łatwe do zrozumienia i edycji przez ludzi, a także przez programy komputerowe.
 
-### Tworzenie pliku YAML
+# Jak to zrobić:
 
-Najprostszym sposobem na stworzenie pliku YAML jest użycie klasy `Yaml` z biblioteki SnakeYAML. Poniższy przykład kodu demonstruje jak stworzyć proste drzewo danych i zapisać je do pliku YAML. 
+Aby pracować z YAML w Javie, potrzebujesz biblioteki YAMLBeans, która umożliwia łatwe wczytywanie i zapisywanie plików YAML. Następnie możesz wykorzystać różne metody biblioteki, aby przetwarzać dane w plikach YAML.
 
-```java
-import org.yaml.snakeyaml.Yaml;
-import java.io.PrintWriter;
+Przykładowy kod:
 
-public class CreateYamlExample {
+```Java
+import org.yamlbeans.YamlException;
+import org.yamlbeans.YamlReader;
+import org.yamlbeans.YamlWriter;
 
-    public static void main(String[] args) throws FileNotFoundException {
-        // tworzenie drzewa danych
-        HashMap<String, Object> dataTree = new HashMap<>();
-        dataTree.put("name", "John");
-        dataTree.put("age", 30);
-        dataTree.put("occupation", "developer");
+// wczytanie pliku YAML
+YamlReader reader = new YamlReader(new FileReader("dane.yaml"));
+Object obj = reader.read();
 
-        // inicjalizacja obiektu YAML
-        Yaml yaml = new Yaml();
-        
-        // zapis do pliku
-        PrintWriter writer = new PrintWriter("example.yaml");
-        yaml.dump(dataTree, writer);
-        writer.close();
-    }
-}
+// zapisanie danych do pliku YAML
+YamlWriter writer = new YamlWriter(new FileWriter("dane.yaml"));
+writer.write(obj);
+writer.close();
 ```
 
-Po uruchomieniu tego kodu, zostanie utworzony plik `example.yaml` z zawartością:
+Przykładowe dane w pliku YAML:
 
 ```yaml
-name: John
-age: 30
-occupation: developer
+- autor: John Smith
+  tytul: Java dla początkujących
+- autor: Anna Kowalska
+  tytul: Programowanie w Javie na zaawansowanym poziomie
 ```
 
-### Wczytywanie danych z pliku YAML
+# Głębsze wgląd:
 
-Przy użyciu tej samej biblioteki możemy także wczytać dane z pliku YAML do naszej aplikacji. W poniższym przykładzie wczytujemy dane z pliku `example.yaml` i wyświetlamy je w konsoli.
+YAML został stworzony przez Clarka Evansa w 2001 roku i początkowo był wykorzystywany w języku programowania Perl. Obecnie jest stosowany w wielu językach programowania, w tym w Javie.
 
-```java
-import org.yaml.snakeyaml.Yaml;
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
+Alternatywą dla YAML w świecie Javy jest format XML, jednak YAML jest uważany za bardziej czytelny i łatwiejszy w użyciu. Inne języki programowania wykorzystujące YAML to między innymi Python, Ruby czy PHP.
 
-public class ReadYamlExample {
+Główną zaletą YAML jest jego elastyczność - może być używany do przechowywania różnych typów danych, w tym napisów, liczb, list i słowników.
 
-    public static void main(String[] args) throws IOException {
-        // inicjalizacja obiektu YAML
-        Yaml yaml = new Yaml();
-        
-        // wczytanie pliku
-        FileReader fileReader = new FileReader("example.yaml");
-        Map<String, Object> dataTree = yaml.load(fileReader);
+# Zobacz także:
 
-        // wyświetlenie danych
-        System.out.println("Name: " + dataTree.get("name"));
-        System.out.println("Age: " + dataTree.get("age"));
-        System.out.println("Occupation: " + dataTree.get("occupation"));
-    }
-}
-```
-
-Wynikiem działania tego kodu będzie:
-
-```
-Name: John
-Age: 30
-Occupation: developer
-```
-
-## Dogłębna analiza
-
-### Struktura pliku YAML
-
-Plik YAML składa się z par `klucz: wartość`, gdzie wartość może być dowolnym typem danych, takim jak string, liczba czy lista. Istnieje także możliwość zagnieżdżania danych, co pozwala na tworzenie bardziej złożonych struktur.
-
-### Zalety użycia YAML
-
-Jedną z głównych zalet YAML jest czytelność dla człowieka. Dzięki swojej składni, jest łatwiejszy w interpretacji niż na przykład format JSON. Ponadto, YAML pozwala na przekazywanie danych w postaci hierarchicznej, co może być bardzo przydatne w niektórych przypadkach.
-
-### Biblioteki wspierające pracę z YAML
-
-Poza biblioteką SnakeYAML, istnieje wiele innych bibliotek, które wspierają pracę z YAML w środowisku Javy. Jednym z popularnych wyborów jest biblioteka Jackson, która pozwala na seralizację i deserializację obiektów do i z formatu YAML.
-
-## Zobacz także
-
-- [Strona domowa formatu YAML](https://yaml.org/)
-- [Dokumentacja biblioteki SnakeYAML](https://bitbucket.org/asomov/snakeyaml/wiki/Home)
-- [Przykłady użycia biblioteki Jackson z
+- [Oficjalna strona YAML](https://yaml.org/)
+- [Dokumentacja YAMLBeans](https://yamlbeans.sourceforge.io/)
+- [Porównanie YAML i XML](https://stackify.com/yaml-vs-xml-comparison/)

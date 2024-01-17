@@ -1,7 +1,7 @@
 ---
-title:                "Å arbeide med csv"
-html_title:           "Gleam: Å arbeide med csv"
-simple_title:         "Å arbeide med csv"
+title:                "Arbeide med csv"
+html_title:           "Gleam: Arbeide med csv"
+simple_title:         "Arbeide med csv"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Data Formats and Serialization"
@@ -10,72 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hva og Hvorfor?
+Å jobbe med CSV, eller "Comma Separated Values", er en måte for programmerere å håndtere store mengder data på en strukturert og effektiv måte. CSV-filer er en vanlig måte å lagre data på, og brukes ofte til å overføre informasjon mellom ulike systemer. Programmere benytter seg av CSV fordi det tillater dem å enkelt lese og manipulere data uten å måtte håndtere kompliserte formater.
 
-CSV (Comma-Separated Values) er en utbredt filtype for å lagre og dele data i et lettleselig format. Det er ofte brukt i ulike bransjer som finans, forskning og marked. Å kunne håndtere CSV-filer er en svært nyttig ferdighet for forskere, dataanalytikere og utviklere.
-
-## Hvordan
-
-For å arbeide med CSV-filer i Gleam, er det først nødvendig å importere standardbiblioteket `csv`. Deretter kan du bruke funksjoner som `from_file` for å lese data fra en CSV-fil og `to_file` for å skrive data til en CSV-fil. La oss se på et eksempel:
+## Slik gjør du det:
+For å lese en CSV-fil i Gleam, kan du bruke den innebygde ```File.csv``` modulen. Først må filen importeres ved hjelp av ```import File``` kommandoen. Deretter kan du bruke funksjonen ```read``` for å lese filen og lagre dataene som en liste med rader. Hvis CSV-filen inneholder en overskriftsrad, kan du bruke funksjonen ```with_headers``` for å lagre den første raden som overskrifter i en mappe. Her er et eksempel på hvordan du kan lese og skrive ut dataene i en CSV-fil:
 
 ```Gleam
-import csv
+import File
 
-// Les inn data fra en CSV-fil
-let data = csv.from_file("example.csv")
+let file = File.open("my_csv_file.csv")
+let rows = File.csv.read(file) // Leser CSV-filen og lagrer dataene som en liste
+let headers_and_data = File.csv.with_headers(rows) // Setter første rad som overskrifter
+File.close(file) // Lukke fila når du er ferdig med å bruke den
 
-// Skriver data til en CSV-fil
-let headers = ["Navn", "Alder", "Stilling"]
-let ansatte = [
-  ["Maria", "32", "Markedsfører"],
-  ["Jonas", "24", "Utvikler"],
-  ["Sofia", "27", "Prosjektleder"]
-]
-csv.to_file("ansatte.csv", headers, ansatte)
+for row in rows {
+  println(row) // Skriver ut hver rad i CSV-filen
+}
 
-// Output: CSV-filen "ansatte.csv" vil se slik ut:
-//
-// Navn,Alder,Stilling
-// Maria,32,Markedsfører
-// Jonas,24,Utvikler
-// Sofia,27,Prosjektleder
+for {header, data} in headers_and_data {
+  println(header ++ ": " ++ data) // Skriver ut hver overskrift sammen med tilhørende data
+}
 ```
 
-## Dypdykk
+## Dykk dypere:
+CSV-formatet ble utviklet i 1972 som en enkel måte å lagre data på, og har siden blitt en standard for utveksling av informasjon mellom ulike systemer. Selv om CSV er mye brukt, har det også sine begrensninger. For eksempel støtter det ikke komplekse datastrukturer, som kan gjøre det vanskelig å lagre data på en optimal måte. Alternativer til CSV inkluderer JSON og XML, som begge støtter mer komplekse datastrukturer og er mer utbredt i moderne programmering.
 
-Det er ofte nødvendig å kunne manipulere og bearbeide data fra CSV-filer. Med Gleam kan du bruke funksjoner som `map` og `filter` for å transformere dataene slik du ønsker. La oss se på et dypere eksempel:
+Når du arbeider med CSV i Gleam, bør du være oppmerksom på eventuelle problemer med tegnsett og tegn som kan bryte med CSV-formatet. Det er også viktig å ha en god forståelse av hvordan CSV-dataene dine er strukturert, siden det kan påvirke ytelsen når du leser og manipulerer dataene.
 
-```Gleam
-import csv
-
-// Les inn data fra en CSV-fil
-let data = csv.from_file("tall.csv")
-
-// Mapper data til et nytt format
-let res = data
-  |> List.map((row) =>
-    {
-      "Tall": row.get_column("Tall"),
-      "Doblet": Int.parse(row.get_column("Tall")) * 2
-    }
-  )
-  // Fjerner alle tall som er mindre enn 10
-  |> List.filter((x) => x.Tall > 10)
-
-// Skriver resultatet til en ny CSV-fil
-let headers = ["Tall", "Doblet"]
-csv.to_file("dobla-tall.csv", headers, res)
-
-// Output: CSV-filen "dobla-tall.csv" vil se slik ut:
-//
-// Tall,Doblet
-// 15,30
-// 27,54
-// 33,66
-```
-
-## Se også
-
-- CSV biblioteksdokumentasjon: https://gleam.run/modules/csv/latest/
-- Gleam offisiell nettside: https://gleam.run/
-- Mer om CSV-filer: https://en.wikipedia.org/wiki/Comma-separated_values
+## Se også:
+- [Offisiell Gleam dokumentasjon for File.csv](https://gleam.run/docs/stdlib/file.csv/)
+- [Mer informasjon om CSV-formatet](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/CSV)
+- [Sammenligning av CSV, JSON og XML](https://stackify.com/learn-csv-vs-json-vs-xml/)

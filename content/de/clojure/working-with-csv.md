@@ -10,49 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was & Warum?
+Die Arbeit mit CSV (Comma-Separated Values) ist eine gängige Aufgabe für Programmierer. CSV ist ein Dateiformat, das verwendet wird, um tabellarische Daten zu speichern und zu bearbeiten. Programmierer nutzen CSV, um Daten in einem einfach zu lesenden und zu bearbeitenden Format zu organisieren und zu speichern.
 
-CSV (Comma-Separated Values) Dateien sind ein wichtiges Format, um Daten zu speichern und auszutauschen. Als Programmierer ist es wichtig, die Grundlagen der Arbeit mit CSV Dateien zu verstehen, um effizient und genau mit Daten umgehen zu können.
-
-## Wie
-
-Um eine CSV Datei in Clojure einzulesen, verwenden wir die "clojure.java.io" Bibliothek und die Funktion "read-csv", um die Daten in eine Liste von Listen zu konvertieren. Hier ist ein Beispielcode, der eine CSV Datei mit Produkten einliest:
-
+## Wie geht's:
 ```Clojure
-(ns csv-beispiel.core
-  (:require [clojure.java.io :as io]))
-  
-(def produkte (with-open [produkte-datei (io/reader "produkte.csv")]
-                 (doall (read-csv produkte-datei))))
+;; Eine CSV-Datei lesen
+(require '[clojure.java.io :as io])
+(require '[clojure-csv.core :as csv])
 
-(println produkte)
+(with-open [reader (io/reader "beispiel.csv")]
+  (doall (csv/read-csv reader)))
+
+;; Eine CSV-Datei schreiben
+(require '[clojure.string :as str])
+(require '[clojure-csv.core :as csv])
+
+(with-open [writer (io/writer "beispiel.csv")]
+  (csv/write-csv writer [["Spalte 1" "Spalte 2" "Spalte 3"]
+                         ["Wert 1" "Wert 2" "Wert 3"]
+                         ["Wert 4" "Wert 5" "Wert 6"]]))
+```
+```
+Spalte 1,Spalte 2,Spalte 3
+Wert 1,Wert 2,Wert 3
+Wert 4,Wert 5,Wert 6
 ```
 
-Die Ausgabe dieses Codes ist eine Liste von Listen, wobei jede Liste eine Zeile aus der CSV Datei repräsentiert. Zum Beispiel könnte die Ausgabe folgendermaßen aussehen:
+## Tiefer eintauchen:
+CSV wurde in den 1970er Jahren entwickelt, um den Austausch von Tabellendaten zwischen verschiedenen Programmen zu ermöglichen. Heute ist es ein weit verbreitetes und standardisiertes Dateiformat. Es gibt auch alternative Formate wie TSV (Tab Separated Values) oder JSON (JavaScript Object Notation). In Clojure wird die Bibliothek "clojure-csv" verwendet, um mit CSV-Dateien zu arbeiten.
 
-```
-([Name Preis Farbe] [T-Shirt 20 Blau] [Shorts 30 Schwarz] [Hemd 40 Weiß])
-```
-
-Um Daten in eine CSV Datei zu schreiben, können wir die "write-csv" Funktion verwenden. Hier ist ein Beispielcode, der die Daten aus der vorherigen Liste in eine neue CSV Datei schreibt:
-
-```Clojure
-(ns csv-beispiel.core
-  (:require [clojure.java.io :as io]))
-  
-(def produkte (with-open [produkte-datei (io/writer "neue-produkte.csv")]
-                 (doall (write-csv produkte-datei produkte))))
-```
-
-Dieser Code erstellt eine neue CSV Datei mit dem Namen "neue-produkte.csv", die die gleichen Daten wie die ursprüngliche Datei enthält.
-
-## Deep Dive
-
-Es gibt viele Möglichkeiten, um mit CSV Dateien in Clojure zu arbeiten. Die "clojure.data.csv" Bibliothek bietet beispielsweise Funktionen zum Konvertieren von CSV Daten in andere Formate wie Maps oder Vektoren. Es gibt auch Bibliotheken, wie z.B. "clojure-csv", die zusätzliche Funktionen zum Lesen und Schreiben von CSV Dateien bieten.
-
-Ein wichtiger Punkt beim Arbeiten mit CSV Dateien ist auch die Behandlung von Sonderfällen wie leeren Zeilen oder Spalten, fehlenden Werten und unterschiedlichen Datentypen. Es ist wichtig, diese Fälle beim Lesen und Schreiben von CSV Dateien zu berücksichtigen, um Fehler im Programm zu vermeiden.
-
-## Siehe auch
-
-- [Clojure Dokumentation zu CSV](https://clojure.github.io/clojure/clojure.java.io-api.html#clojure.java.io/read-csv)
-- [Clojure CSV Bibliothek](https://github.com/danmidwood/clojure-csv)
+## Siehe auch:
+- Offizielle Dokumentation von clojure-csv: https://github.com/clojure/data.csv
+- Artikel über CSV in der Programmiersprache Python: https://realpython.com/python-csv/

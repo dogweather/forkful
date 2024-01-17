@@ -1,7 +1,7 @@
 ---
-title:                "Eine String in Kleinbuchstaben umwandeln."
-html_title:           "Gleam: Eine String in Kleinbuchstaben umwandeln."
-simple_title:         "Eine String in Kleinbuchstaben umwandeln."
+title:                "Umwandeln eines Strings in Kleinbuchstaben"
+html_title:           "Gleam: Umwandeln eines Strings in Kleinbuchstaben"
+simple_title:         "Umwandeln eines Strings in Kleinbuchstaben"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -10,30 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+# Was & Warum?
+Das Konvertieren eines Strings in Kleinbuchstaben ist eine Programmieraufgabe, bei der ein String in eine bestimmte Schreibweise umgewandelt wird. Programme können dies aus verschiedenen Gründen tun, z.B. um die Konsistenz in der Ausgabe zu gewährleisten oder um Vergleiche zwischen Strings zu erleichtern.
 
-Es gibt viele Gründe, warum man eine Zeichenfolge in Kleinbuchstaben umwandeln möchte. Zum Beispiel, um einen einheitlichen Vergleich bei der Datenverarbeitung zu ermöglichen oder um Nutzereingaben zu standardisieren. Mit Gleam können wir dies schnell und einfach erreichen.
-
-## So geht's
+# Wie geht's?
+In Gleam gibt es eine praktische Funktion, um einen String in Kleinbuchstaben zu konvertieren. Hier ist ein Beispiel, wie man dies in Code umsetzen kann:
 
 ```Gleam
-let example_string = "Hallo WELT"
-let result = String.to_lower(example_string)
+let string = "HalLo"
+let lowercase = String.to_lower(string)
 ```
 
-Dieses Codebeispiel zeigt, wie wir die Funktion `to_lower` aus dem `String` Modul von Gleam nutzen können, um die Zeichenfolge "Hallo WELT" in "hallo welt" umzuwandeln. Diese Funktion gibt uns immer eine neue Zeichenfolge zurück, um die ursprüngliche Zeichenfolge unverändert zu lassen.
+Das Ergebnis wäre dann der String "hallo".
 
-Das Gleam-Team hat auch dafür gesorgt, dass diese Methode Unicode-Zeichen richtig verarbeiten kann, was bei vielen anderen Programmiersprachen nicht der Fall ist. Das bedeutet, dass unsere Ergebnisse immer akkurat und konsistent sind, unabhängig von der verwendeten Zeichenmenge.
+Ein weiteres Beispiel würde die Verwendung einer String-Variable mit Interpolation demonstrieren:
 
-## Tiefer Einblick
+```Gleam
+let name = "Max"
+let output = String.to_lower("Hallo #{name}!")
+```
 
-Eine Zeichenfolge in Kleinbuchstaben umzuwandeln, klingt vielleicht einfach, aber es gibt einige Dinge zu beachten. Gleam verwendet standardmäßig die utf-8 Codierung, um Zeichenfolgen zu speichern. Das bedeutet, dass es auch Zeichen gibt, die aus mehreren Bytes bestehen können, wie zum Beispiel ß.
+Die Ausgabe wäre dann "hallo max!".
 
-Um diese Zeichen korrekt zu behandeln, muss Gleam jeden einzelnen Buchstaben überprüfen und, falls nötig, in Kleinbuchstaben umwandeln. Das kann bei langen Zeichenfolgen zeitaufwändig sein. Wenn Performance ein wichtiger Aspekt ist, sollten wir uns daher alternative Lösungen ansehen.
+# Tiefer Einblick
+Das Konvertieren von Strings in Kleinbuchstaben ist ein häufiges Problem bei der Datenverarbeitung. In der Vergangenheit war es oft eine zeitaufwändige Aufgabe, aber dank moderner Programmiersprachen wie Gleam ist es jetzt viel einfacher. Alternativ können Programmierer auch andere Methoden wie die Verwendung von regulären Ausdrücken oder Schleifen in ihrem Code wählen. Bei der Implementierung von Gleam wird die eingebaute Funktion `to_lower` verwendet, um einen String in Kleinbuchstaben zu konvertieren, wodurch der Code effizienter und weniger fehleranfällig wird.
 
-Eine solche Alternative wäre die Verwendung von Unicode-Bibliotheken, um Zeichenfolgen in Kleinbuchstaben zu konvertieren. Diese Bibliotheken sind speziell für die Behandlung von Unicode-Charakteren optimiert und können die Konvertierung möglicherweise schneller durchführen.
+# Siehe auch
+Um mehr über die Gleam-Programmiersprache zu erfahren, können Sie die offizielle Dokumentation besuchen: https://gleam.run/
 
-## Siehe auch
-
-- [Die offizielle Gleam-Dokumentation](https://gleam.run/documentation/)
-- [Die Unicode-Bibliothek für Gleam](https://github.com/gleam-lang/unicode)
+Sie können auch Beispiele und Best Practices auf GitHub finden: https://github.com/gleam-lang/gleam

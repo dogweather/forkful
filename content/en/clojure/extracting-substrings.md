@@ -10,49 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+# What & Why?
+Extracting substrings is the act of retrieving a specific portion of a string, rather than the entire string. Programmers often do this to manipulate, manipulate, or analyze data in a more granular way.
 
-Substrings are a fundamental part of string manipulation and are frequently used in data processing and text parsing. Extracting substrings allows for more efficient and powerful string operations, making it a valuable skill for any Clojure programmer.
+# How to:
+```
+Clojure (str "Hello World")  ;; Retrieves the full string "Hello World"
+Clojure (subs "Hello World" 0 5)  ;; Retrieves the first 5 characters "Hello"
+Clojure (subs "Hello World" 6)  ;; Retrieves everything after the 6th character "World"
 
-## How To
-
-To extract substrings in Clojure, we use the `subs` function. It takes in three parameters: the string itself, the starting index of the desired substring, and the ending index (which is non-inclusive).
-
-```Clojure
-(subs "Clojure is awesome" 0 6)
 ```
 
-This will return the substring "Clojur". One thing to note is that the indexes in Clojure start from 0, unlike some other programming languages.
+#Deep Dive:
 
-We can also use the `subs` function with negative indexes to count from the end of the string. For example, if we want to extract the last 5 characters from "Clojure is awesome", we can do:
+(1) Historical context:
+Extracting substrings has been a common task in programming since the early days of string manipulation. In older languages such as C and BASIC, it required writing custom code using pointer arithmetic. However, with the advent of high-level languages like Clojure, this task has become much simpler and more streamlined.
 
-```Clojure
-(subs "Clojure is awesome" -5)
-```
+(2) Alternatives:
+While extracting substrings using the `subs` function is the most common approach, there are alternative methods such as using regular expressions or the `substring` function. However, these methods may require more complex syntax and are not specific to Clojure.
 
-This will return the substring "esome".
+(3) Implementation details:
+The `subs` function in Clojure takes in three arguments - the string to be extracted from, the starting index, and the optional ending index. If no ending index is provided, the function will default to the end of the string. This makes it easy to retrieve both a single character or a range of characters from a string.
 
-If we omit the third parameter, `subs` will extract the substring from the starting index to the end of the string. For instance, if we only want to extract "is awesome" from our example, we can do:
-
-```Clojure
-(subs "Clojure is awesome" 8)
-```
-
-## Deep Dive
-
-The `subs` function is just one way of extracting substrings in Clojure. There are many other functions and libraries that offer similar functionality, such as `substring`, `take`, and `drop`.
-
-One important thing to keep in mind when using `subs` is that it returns a string, not a sequence. This means that you cannot use it in functions that expect a sequence as an input, like `map` or `reduce`. In those cases, you can use `subseq`, which returns a sequence.
-
-Another useful tip is that we can use `subs` in conjunction with the `cl-format` function to do some advanced string formatting. For example, if we want to capitalize the first letter of each word in a string, we can do:
-
-```Clojure
-(cl-format nil "~@(capitalize (subs \"clojure is awesome\" 0 7))~@(capitalize (subs clojure is awesome\" 8 10))~@(subs \"clojure is awesome\" 10)")
-```
-
-This will return the string "Clojure Is Awesome".
-
-## See Also
-
-- [Clojure docs on substrings](https://clojuredocs.org/clojure.core/subs)
-- [Clojure cheatsheet for string functions](https://clojure.org/guides/learn/functions)
+# See Also:
+- [ClojureDocs - subs](https://clojuredocs.org/clojure.core/subs)
+- [The Joy of Clojure - chapter 5](https://www.manning.com/books/the-joy-of-clojure-second-edition)

@@ -10,30 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-Creating temporary files in Java can be useful in situations where the program needs to store temporary data that is only needed for a short period of time. These files can be deleted once they have served their purpose, freeing up space and resources for other tasks.
+## What & Why?
+Creating a temporary file is a common practice among programmers, especially when working with large amounts of data. It involves creating a file that is used for a specific purpose and is meant to be deleted once the task is completed. This helps to keep the system clean and organized, and avoids cluttering up the system with unnecessary files.
 
-## How To
-To create a temporary file in Java, you can use the `createTempFile()` method from the `File` class. This method takes in a prefix, suffix, and a `File` object representing the directory where the file should be created. Here is an example:
-
-```Java
-File tempFile = File.createTempFile("myFile", ".txt", new File("/temp"));
-System.out.println(tempFile.getAbsolutePath());
-```
-
-This will create a temporary file named "myFile" with a ".txt" extension in the specified "/temp" directory. The `getAbsolutePath()` method can be used to display the full path of the created file. 
-
-You can also use the `deleteOnExit()` method to ensure that the temporary file will be deleted when the program exits. For example:
+## How to:
+Creating a temporary file in Java is a simple process. The File.createTempFile() method is used to create a temporary file with a given prefix and suffix. The prefix is a string that is used to name the file, and the suffix is the extension of the file. Here's an example of how to create a temporary file with the prefix "mytempfile" and the suffix ".txt":
 
 ```Java
-tempFile.deleteOnExit();
+File tempFile = File.createTempFile("mytempfile", ".txt");
+System.out.println("Temporary file created: " + tempFile.getAbsolutePath());
+// Output: Temporary file created: C:\Users\username\AppData\Local\Temp\mytempfile20210710103948.txt
 ```
 
-## Deep Dive
-Under the hood, the `createTempFile()` method uses the `createTempFile()` method from the `FileSystem` class to create the temporary file. The `FileSystem` class uses a secure naming scheme to generate unique file names, making it unlikely for multiple programs to accidentally create the same temporary file name.
+The file is automatically created in the default temporary file directory. To specify a different directory, the parent directory of the temporary file can be passed as a parameter to the createTempFile() method.
 
-It is important to note that the `createTempFile()` method creates an empty file with default read and write permissions. If you need to specify different permissions or write data to the file, you can use the `FileOutputStream` or `RandomAccessFile` classes.
+## Deep Dive:
+Creating temporary files has been a common practice since the early days of computing. In the past, when computer memory and storage were limited, creating temporary files was necessary to conserve resources. However, with the advancement of technology, this practice is now more of a preference rather than a necessity.
 
-## See Also
-- [Oracle Java Documentation on temporary files](https://docs.oracle.com/javase/tutorial/essential/io/tempfile.html)
-- [JournalDev article on creating temporary files in Java](https://www.journaldev.com/550/java-create-temporary-file)
+There are alternative methods for creating temporary files in Java, such as using the File.createTempFile() method from the java.io package or using the Files.createTempFile() method from the java.nio.file package. The latter is preferred as it offers more control over the file creation process, such as specifying the file's permissions and attributes.
+
+The implementation of creating temporary files may differ depending on the operating system. For example, in Linux, the temporary file directory is typically located at /tmp, while in Windows, the directory is usually C:\Users\username\AppData\Local\Temp. It's essential to consider these differences when writing cross-platform code.
+
+## See Also:
+- Oracle Java Documentation on File Class: https://docs.oracle.com/javase/8/docs/api/java/io/File.html
+- Oracle Java Documentation on Files Class: https://docs.oracle.com/javase/8/docs/api/java/nio/file/Files.html
+- Stack Overflow thread on creating temporary files in Java: https://stackoverflow.com/questions/106770/creating-temporary-files-in-java

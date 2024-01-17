@@ -1,7 +1,7 @@
 ---
-title:                "עבודה עם YAML"
-html_title:           "Python: עבודה עם YAML"
-simple_title:         "עבודה עם YAML"
+title:                "עובדים עם YAML"
+html_title:           "Python: עובדים עם YAML"
+simple_title:         "עובדים עם YAML"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Data Formats and Serialization"
@@ -10,52 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## למה
+# מה ולמה?
+עבודה עם YAML היא תהליך נפוץ בתכנות שמאפשר למפענחים ולמתכנתים להפעיל וליצור נתונים מסוגים שונים בקובץ נקרא YAML. מספר רב של תכנים כמו בניית קונפיגורציות ותיעוד מבוסס YAML ויכולותיו הגדולות כשמדובר בכתיבת קצרה, עושים עבודה עם קבצי YAML חשובה מאוד למפענחים בשפת Python.
 
-האם אתה חושב על עבודה עם YAML אבל לא חיות לך מספיק ידע על זה? בכתבה זו, אני אסביר לך את הסיבות למה משתמשים ב YAML ואיך ניתן להשתמש בו בקלות עם פייתון.
+# איך ל:
 
-## איך להשתמש
-
-כדי להתחיל לעבוד עם YAML תמיד עדיף ליצור קובץ חדש. השתמש בפקודה `yaml.dump()` כדי ליצור קובץ חדש עם הנתונים הרלוונטיים. לדוגמה, ניתן להשתמש בפקודה הבאה כדי ליצור קובץ YAML דרך קוד פייתון:
-
-```Python
-import yaml
-
-# יוצר קבצים חדשים עם נתונים YAML ללא מנגנון spacing
-yaml.dump(data, default_flow_style=False)
-
-# יוצר קבצים חדשים עם נתונים YAML עם מנגנון spacing 
-yaml.dump(data, default_flow_style=True)
-```
-
-ניתן להשתמש גם בפקודה `yaml.load()` כדי לקרוא קבצי YAML ולהחזיר אותם כסטרים בפייתון. לדוגמה, הנה קוד פייתון שמראה כיצד ניתן לקרוא ולהדפיס את נתוני YAML:
-
-```Python
-import yaml
-
-# קריאה והדפסה של נתוני הקובץ YAML
-with open('my_yaml_file.yml', 'r') as yaml_file:
-    data = yaml.load(yaml_file, Loader=yaml.FullLoader)
-    print(data)
-```
-**פלט**
+הנה דוגמאות של קוד Python כדי להציג התנהגות של קבצים YAML:
 
 ```
-{'name': 'John', 'age': 30, 'profession': 'developer'}
+# ייבוא ספריות הנחוצות
+from yaml import load, dump  
+
+# קבצי ימאל ניתנים לקריאה עם פקודה הבאה
+with open("example.yaml", 'r') as stream:
+    yaml_data = load(stream)
+
+# כדי לכתוב קבצי YAML ניתן להשתמש בפקודה הבאה
+with open("output.yaml", 'w') as out:
+    yaml_data = dump(yaml_data, out)
 ```
 
-לדוגמה, אם נבקש מהמשתמש להכניס נתונים שונים לקובץ YAML ונרצה לקרוא את הנתונים שהוזנו על ידו, ניתן לעשות זאת בקלות עם הקוד הבא:
+# מחקר מעמיק
 
-```Python
-import yaml
+### היסטוריית תאימות
 
-# שומר את הנתונים הרלוונטיים מהמשתמש
-name = input("הכנס את השם שלך: ")
-age = int(input("הכנס את הגיל שלך: "))
-profession = input("הכנס את המקצוע שלך: ")
+נוסד בשנת 2001 על ידי שתי חברות טכנולוגיות גרמניות, YAML היום מחרשיות עם פופולריות ותמיכה רחבה בכמה שפות תכנות כמו Python, C # ו- Java. כיום, YAML משמש כקובץ המכיל מידע תדינמי ויכולת הכתיבה הפשוטה שלו הופכת אותו לאטרקטיבי במיוחד לתכנות פייתון.
 
-# יוצר קובץ YAML עם הנתונים החדשים
-data = {'name': name, 'age': age, 'profession': profession}
-yaml.dump(data, open("my_yaml_file.yml", "w"))
+### אלטרנטיבות
 
-# קריאה והדפסה של נתוני הקוב
+במקום לעבוד עם YAML, אפשר גם להשתמש בפורמטים אחרים כמו JSON או XML. גם אם ישנן תכונות חדשות כמו JSONB ו- JSONS, YAML עדיין נחשב לאחד הפורמטים המוצלחים ביותר בתכנות.
+
+### פיתוח עם YAML בפייתון
+
+כדי להתאים ליישומים בפייתון יותר קשרי YAML ניתן להשתמש בספריית PyYAML, השומרת על קוד בטוח כשמדובר במרחב של פרוטוקולי הקוד בתכנון מערכות.
+
+# ראו גם
+
+* [קובץ YAML הרשמי](https://yaml.org/)
+* [תיעוד YAML עבור שפת Python](https://pyyaml.org/wiki/PyYAMLDocumentation)

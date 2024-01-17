@@ -1,7 +1,7 @@
 ---
-title:                "Läsa en textfil"
-html_title:           "Elixir: Läsa en textfil"
-simple_title:         "Läsa en textfil"
+title:                "Läsning av en textfil"
+html_title:           "Elixir: Läsning av en textfil"
+simple_title:         "Läsning av en textfil"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Files and I/O"
@@ -10,34 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+### Vad & Varför?
+Att läsa en textfil är processen att öppna en fil innehållande text och läsa innehållet i ett program. Programutvecklare gör detta för att kunna bearbeta och manipulera data som finns i en textfil, till exempel att sortera information eller utföra dataanalys.
 
-Att läsa en textfil är en viktig del av många Elixir-program. Det kan användas för att läsa in data, konfigurationsfiler eller för att manipulera stora mängder data. Genom att läsa en textfil kan du enkelt få åtkomst till strukturerad data för att bearbeta den på ett effektivt sätt.
+### Hur?
+Här är ett enkelt exempel på hur man kan läsa en textfil i Elixir:
 
-## Hur du gör det
-
-För att läsa en textfil i Elixir använder du funktionen `File.stream!` tillsammans med `Enum.each`. Detta kommer att läsa in filen rad för rad och låter dig utföra olika åtgärder på varje rad. Använd `IO.puts` för att skriva ut varje rad till terminalen.
-
-```Elixir
-File.stream!("mina_fil.txt") 
-|> Enum.each(&IO.puts/1)
+```
+file = File.open("min_textfil.txt")
+contents = IO.read(file, :line)
+IO.puts(contents)
 ```
 
-Resultatet blir att varje rad i filen skrivs ut på skärmen.
-
-## Utökad förklaring
-
-För att läsa en textfil på ett mer detaljerat sätt, kan du använda funktionerna `File.open!/2` och `IO.read/2`. `File.open!/2` öppnar en fil för läsning och `IO.read/2` läser data från filen. Det är viktigt att nämna att `File.open!/2` returnerar en "fil" struktur vilket betyder att den måste stängas med `File.close/1` när den är klar.
-
-```Elixir
-file = File.open!("mina_fil.txt")
-IO.read(file, :line) # läser filen rad för rad
+```
+Hej!
+Välkommen till min textfil.
+Här finns lite information om mig.
 ```
 
-Denna metod ger dig mer kontroll över hur filinnehållet hanteras och kan vara användbart för mer avancerade användningsfall.
+I koden ovan öppnas filen "min_textfil.txt" och sedan läses innehållet rad för rad med hjälp av ```IO.read```. Slutligen skrivs innehållet ut med ```IO.puts```.
 
-## Se också
+### Deep Dive
+Att kunna läsa och bearbeta textfiler är en viktig del av programmering och används för många olika ändamål. Innan moderna programmeringsspråk, som Elixir, introducerades var det vanligt att programmerare skrev sammanlagda program som endast läste och skrev till textfiler.
 
-- [Elixir File modul](https://hexdocs.pm/elixir/File.html)
-- [Läsa filinnehåll rad för rad](https://stackoverflow.com/questions/21042082/read-a-file-line-by-line-in-elixir)
-- [IO modulen i Elixir](https://hexdocs.pm/elixir/IO.html)
+I Elixir kan vi även använda modulen ```File``` för att läsa innehållet i en textfil. Denna modul ger ytterligare alternativ för att läsa och skriva till filer, som t.ex. att läsa in hela innehållet på en gång istället för rad för rad.
+
+### Se även
+Här är några resurser som du kan använda när du vill lära dig mer om att läsa textfiler i Elixir:
+
+- [Officiell Elixir dokumentation för File modulen](https://hexdocs.pm/elixir/File.html)
+- [Tutorial: Working with Files in Elixir](https://www.codementor.io/@michelleminkoff/tutorial-working-with-files-in-elixir-3vwuq4m9o)
+- [Elixir File IO – How to Read Write](https://qph.fs.quoracdn.net/main-qimg-646bb1ba7c383251ec8b060f5d5f0479.webp)

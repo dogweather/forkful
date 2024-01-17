@@ -10,41 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+## O que e por que?
 
-Muitas vezes, ao escrever programas em Elixir, é necessário obter a data atual. Isso pode ser útil para gerar registros de data e hora ou para realizar cálculos de tempo. Felizmente, a linguagem possui uma função simples para obter a data atual.
+Obter a data atual é um recurso importante para programadores, pois permite que eles obtenham informações precisas sobre o tempo em que seu código é executado. Isso pode ser útil em muitos cenários, como armazenamento de informações de data e hora em bancos de dados, agendamento de tarefas e criação de registros de data e hora para depuração de erros.
 
-## Como fazer
+## Como fazer:
 
-Para obter a data atual em Elixir, utilizamos a função `:calendar.universal_time/0`, que retorna a data e hora atual no formato de tupla:
-
-```Elixir
-{year, month, day, hour, minute, second}
-```
-
-Podemos então desestruturar essa tupla para obter os valores individuais:
+Para obter a data atual em Elixir, podemos usar a função ```Date.utc_today``` que retorna uma data atualizada de acordo com o fuso horário UTC. Podemos formatar a data de várias maneiras, como mostrado abaixo:
 
 ```Elixir
-{year, month, day, hour, minute, second} = :calendar.universal_time()
+Date.utc_today |> Date.to_iso8601
 ```
 
-Para uma representação mais amigável, podemos utilizar a função `IO.inspect/2` para formatar a data e hora:
+Esta linha de código irá retornar a data atual no formato ISO 8601, como "2021-05-17". Além disso, podemos usar a função ```DateTime.now``` para obter a data e hora atual com precisão até o milissegundo.
 
 ```Elixir
-{year, month, day, hour, minute, second} = :calendar.universal_time()
-IO.inspect("#{year}-#{month}-#{day} #{hour}:#{minute}:#{second}")
+DateTime.now
 ```
 
-Isso resultará em algo como: `"2021-08-23 12:00:00"`, dependendo da data e hora atuais.
+Isso irá retornar um valor como "2021-05-17 14:30:00.123456Z". Também podemos utilizar outras funções, como ```Date.day_of_week``` e ```Date.day_of_year``` para obter informações adicionais sobre a data atual.
 
-## Mergulho profundo
+## Mergulho profundo:
 
-Vale mencionar que a função `:calendar.universal_time/0` retorna a data e hora no fuso horário Coordinated Universal Time (UTC). Se você precisar da data e hora em um fuso específico, pode utilizar a função `:calendar.universal_time_to_local_time/1` informando o número de horas de diferença em relação ao UTC.
+Obter a data atual tem sido uma tarefa importante para programadores há muito tempo. Anteriormente, os programadores usavam funções como ```time``` e ```date``` para obter a data e hora do sistema. Mas com o tempo, novas linguagens e bibliotecas surgiram, tornando a obtenção da data atual uma tarefa mais simples e direta.
 
-Também é importante ter em mente que a função `:calendar.universal_time/0` é baseada no relógio do sistema operacional, portanto, qualquer alteração manual na data e hora do sistema refletirá no resultado dessa função.
+Além da função ```Date.utc_today```, também podemos usar a biblioteca ```calendar``` para obter informações sobre a data, como o número de dias em um determinado mês ou o dia da semana de uma data específica.
 
-## Veja também
+## Veja também:
 
-- [Documentação oficial do módulo Calendar em Elixir](https://hexdocs.pm/elixir/Calendar.html)
-- [Artigo sobre como obter a data atual em Elixir](https://elixirforum.com/t/get-current-date-time-in-elixir/12893)
-- [Discussão sobre a função `:calendar.universal_time/0` no Elixir Talk](https://elixirforum.com/t/current-datetime/24937/9)
+- Documentação oficial Elixir: https://hexdocs.pm/elixir/Date.html
+- Documentação da biblioteca calendar: https://hexdocs.pm/calendar/readme.html

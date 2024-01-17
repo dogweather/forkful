@@ -10,31 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
-Warum sollte man sich damit beschäftigen, ein Datum in der Zukunft oder Vergangenheit zu berechnen? Ganz einfach: Es kann uns helfen, bestimmte Aufgaben in unserer Programmierung zu erleichtern. Zum Beispiel könnten wir damit automatisch Geburtstagsnachrichten versenden oder Rechnungen mit fälligen Zahlungsfristen generieren.
+## Was & Warum?
 
-## Wie man es macht
-Um ein Datum in der Zukunft oder Vergangenheit zu berechnen, können wir den eingebauten PHP Befehl `strtotime()` verwenden. Dieser Befehl ermöglicht es uns, einen Zeitstempel aus einer Zeichenkette zu generieren. Hier ist ein Beispiel, um das Datum in sieben Tagen zu berechnen:
+Das Berechnen eines Datums in der Zukunft oder Vergangenheit ist ein häufiger Programmierbedarf, besonders in Anwendungen wie Kalendern oder Terminplanern. Es ermöglicht uns, Datumsangaben zu manipulieren und zu verarbeiten, um dynamische Funktionen zu erstellen.
 
-```PHP
-<?php
-$zukunftsDatum = strtotime("+7 days");
-echo date("Y-m-d", $zukunftsDatum);
-```
-
-Dieser Code erzeugt ein neues Datum, das sieben Tage in der Zukunft liegt, und gibt es im Format `Jahr-Monat-Tag` aus. Wir können auch negative Werte verwenden, um ein Datum in der Vergangenheit zu berechnen. Hier ist ein Beispiel, um das Datum vor zwei Monaten zu berechnen:
+## Wie geht's:
 
 ```PHP
-<?php
-$vergangenheitsDatum = strtotime("-2 months");
-echo date("d.m.Y", $vergangenheitsDatum);
+// Ein Beispiel, um 5 Tage in der Zukunft zu berechnen
+$date = date('d-m-Y');
+echo "Heute ist ".$date;
+$newDate = strtotime('+5 days', strtotime($date));
+echo "In 5 Tagen ist: ".date('d-m-Y', $newDate);
 ```
 
-In diesem Fall verwenden wir ein anderes Datumsformat und erhalten das Datum im Format `Tag.Monat.Jahr`.
+Ausgabe:
+> Heute ist 10-12-2021 <br>
+> In 5 Tagen ist: 15-12-2021
 
-## Tiefer gehende Informationen
-Der `strtotime()` Befehl unterstützt auch die Verwendung von relativen Angaben wie "next Monday" (nächster Montag) oder "last Friday" (letzter Freitag) anstelle von Zahlen. Außerdem können wir auch Datum und Uhrzeit kombinieren, indem wir eine Zeichenkette mit dem gewünschten Datum und einer Uhrzeit an den Befehl übergeben. Wir können auch einen optionalen zweiten Parameter übergeben, der als Basiszeit verwendet wird. Dadurch können wir zum Beispiel ein Datum in Bezug auf ein bestimmtes Datum berechnen, anstatt immer das aktuelle Datum zu verwenden.
+## Tief in die Materie:
 
-## Siehe auch
-- Dokumentation zu `strtotime()`: https://www.php.net/manual/de/function.strtotime.php
-- Praktische Anwendungen für das Berechnen von Datumsangaben: https://www.php.net/manual/de/datetime.formats.relative.php
+Das Konzept des Berechnens eines Datums in der Zukunft oder Vergangenheit ist eine Erweiterung des Unix-Zeitstempels. Dieser stellt die Anzahl der Sekunden seit dem 1. Januar 1970 dar und ermöglicht es uns, Zeitoperationen durchzuführen. Alternativ können wir auch die Funktionen `date_add()` und `date_sub()` verwenden, um jeweils eine bestimmte Anzahl von Tagen, Monaten oder Jahren zu einem gegebenen Datum hinzuzufügen oder davon abzuziehen.
+
+## Siehe Auch:
+
+- [PHP Dokumentation zu Date and Time Functions](https://www.php.net/manual/de/ref.datetime.php)
+- [Unix-Zeitstempel auf Wikipedia](https://de.wikipedia.org/wiki/Unix-Zeit)
+- [Date and Time Manipulation mit PHP von TutsPlus](https://code.tutsplus.com/tutorials/working-with-dates-and-times-in-php--cms-29804)

@@ -1,7 +1,7 @@
 ---
-title:                "Pienempien merkkijonojen erottaminen"
-html_title:           "Gleam: Pienempien merkkijonojen erottaminen"
-simple_title:         "Pienempien merkkijonojen erottaminen"
+title:                "Alimerkkijonojen erottelu"
+html_title:           "Gleam: Alimerkkijonojen erottelu"
+simple_title:         "Alimerkkijonojen erottelu"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -10,27 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+# Mitä & miksi?
 
-Miksi haluaisit erottaa osamerkkijonoja? Substringien erottelu on erittäin hyödyllinen ohjelmoinnin tekniikka, joka voi auttaa sinua tehokkaammin käsittelemään tekstejä ja merkkijonoja.
+Substringien erottaminen on prosessi, jossa ohjelmoijat etsivät merkkijonosta tietyt osat, jotka vastaavat määritettyjä kriteerejä. Useimmiten tätä käytetään tiedon jäsentämiseen ja käsittelyyn, jotta voidaan helpommin käsitellä suuria määriä dataa. Substringien erottaminen on tärkeä työkalu monissa ohjelmointitehtävissä, ja sen avulla voidaan tehdä monimutkaisista tehtävistä helpommin hallittavia.
 
-## Kuinka tehdä
+# Miten?
+
+Gleamilla on monia tapoja toteuttaa substringien erottamista. Yksi yleisimmistä on käyttää funktiota `substring` yhdessä `find`-funktion kanssa, joka etsii merkkijonosta tietyt kohdat. Tässä esimerkissä otamme luvun 123 merkkijonosta "Gleam on ohjelmointikieli", ja palauttaa uuden merkkijonon "ohjelmointikieli" käyttämällä `substring`-funktiota yhdessä `find`-funktion kanssa:
 
 ```Gleam
-let teksti = "Hei maailma!"
-let alku = 0
-let loppu = 3
-let osa = teksti[alku..loppu]
-text.println(osa) // tulostaa "Hei"
+gleam> let s = "Gleam on ohjelmointikieli"
+gleam> let i = find(s, "123")
+Option(10)
+gleam> let substr = substring(s, i, 17)
+gleam> substr
+"Ohjelmointikieli"
 ```
 
-Koodiesimerkissä näytämme, kuinka alusta ja lopusta voi määrittää osamerkkijonon erottelun avulla. Voit myös käyttää negatiivisia lukuja, kuten `-1`, jolloin aloitat lopusta päin. Voit myös käyttää `text.count_chars` -funktiota saadaksesi merkkien määrän.
+# Syvällisemmin
 
-## Syventävä tutkimus
+Substringien erottamista on käytetty ohjelmointitehtävissä jo pitkään, mutta Gleamilla sen toteuttaminen on helpompaa ja kevyempää kuin perinteisillä ohjelmointikielillä. Lisäksi Gleam tarjoaa myös muita vaihtoehtoja kuten `match`-lausekkeen, joka mahdollistaa monimutkaisempien substringien erottamisen. Implementationäpitä levetä käyttämällä `pattern`-avainsanaa ja ohjaamalla kunkin substritudun kohdan oikealle muuttujalle.
 
-Substringien erottelu toimii myös silloin, kun määrittelet vain toisen rajan. Esimerkiksi jos haluat erottaa osan merkkijonosta loppuun asti, voit määrittää vain alun kohdaksi `teksti[2..]`. Voit myös käyttää `text.trim` -funktiota poistaaksesi ylimääräiset välilyönnit sekä alusta että lopusta.
+# Katso myös
 
-## Katso myös
-
-- Gleamin tekstien käsittelydokumentaatio (https://gleam.run/lib/text.html)
-- Gleam-oppaat ja tutoriaalit (https://gleam.run/learn/)
+Käy lukemassa lisää Gleamista ja sen ominaisuuksista sen viralliselta verkkosivulta osoitteesta www.gleam-lang.org. Lisätietoja substringien erottamisesta löydät Gleamin dokumentaatiosta osoitteesta www.gleam-lang.org/docs. Voit myös tarkastella muita vaihtoehtoja, kuten Regex-kirjastoa, joka tarjoaa lisää työkaluja merkkijonojen hallintaan.

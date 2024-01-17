@@ -1,7 +1,7 @@
 ---
-title:                "Last ned en nettside"
-html_title:           "Haskell: Last ned en nettside"
-simple_title:         "Last ned en nettside"
+title:                "Nedlasting av en nettside"
+html_title:           "Haskell: Nedlasting av en nettside"
+simple_title:         "Nedlasting av en nettside"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "HTML and the Web"
@@ -10,37 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hvorfor
-Lurer du på hvordan du kan laste ned en nettside som en fil på din datamaskin? Det kan være mange grunner til å gjøre dette, for eksempel hvis du ønsker å lagre en kopi av en favorittartikkel eller undersøke kildekoden til en side for å lære mer om webutvikling.
+## Hva & Hvorfor?
+Å laste ned en nettside betyr å hente ned all informasjonen som vises på den til din enhet. Dette er nyttig for programmere som ønsker å samle data fra forskjellige kilder eller for å automatisere visse oppgaver.
 
-# Hvordan gjøre det
-Det finnes flere måter å laste ned en nettside på, men vi skal se på hvordan du kan gjøre det ved hjelp av Haskell. Følgende eksempelkoder kan utføres i en Haskell miljø og vil fungere på både Windows, Mac og Linux.
-
+## Hvordan:
 ```Haskell
--- Importerer biblioteket for å håndtere HTTP-forespørsler
-import Network.HTTP.Simple
+import Network.HTTP
 
--- Setter URLen til nettsiden du ønsker å laste ned
-url = "http://www.eksempelnettsted.com"
+main = do
+  let url = "https://www.example.com"
+  getPage url >>= \content -> putStrLn content
 
--- Kobler til nettsiden og lagrer svaret i en variabel
-response <- httpLBS url
-
--- Konverterer svaret til en streng og lagrer det i en fil
-let content = getResponseBody response
-writeFile "nettside.html" content
+getPage url = simpleHTTP (getRequest url) >>= getResponseBody
+```
+Output:
+```
+<!doctype html>
+<html>
+  <head>
+    <title>Example Domain</title>
+  </head>
+  <body>
+    <h1>Example Domain</h1>
+    <p>This domain is for use in illustrative examples in documents. You may use this domain in literature without prior coordination or asking for permission.</p>
+    <p><a href="https://www.iana.org/domains/example">More information...</a></p>
+  </body>
+</html>
 ```
 
-Dette vil lagre nettsiden som en HTML-fil på ditt filsystem. Du kan tilpasse koden for å endre navn på filen eller lagre den i en spesifikk mappe.
+## Dypdykk:
+Å laste ned nettsider har vært en viktig del av internett siden begynnelsen. I dag brukes dette ofte til å samle informasjon til web scraping eller for å hente data til applikasjoner. Alternativene til å bruke Haskell for å laste ned nettsider er å bruke et annet programmeringsspråk som støtter denne funksjonaliteten, eller å bruke et spesialisert verktøy som Wget eller cURL. Implementasjonen av å laste ned en nettside i Haskell er basert på å sende HTTP-forespørsler og behandle svaret.
 
-# Dypdykk
-Det kan være nyttig å vite at `writeFile` funksjonen vil overskrive eventuelle eksisterende filer med samme navn. Hvis du heller ønsker å legge til nettsiden til en eksisterende fil, kan du bruke `appendFile` funksjonen i stedet.
-
-For å få en bedre forståelse av HTTP-forespørsler i Haskell, kan du sjekke ut følgende ressurser:
-
-- [Dokumentasjon for Network.HTTP.Simple](https://hackage.haskell.org/package/http-client)
-- [En enkel guide til HTTP-forespørsler i Haskell](https://www.techempower.com/blog/2013/03/26/everything-you-wanted-to-know-about-http-in-haskell/)
-
-# Se også
-- [Offisiell Haskell dokumentasjon](https://www.haskell.org/documentation/)
-- [Haskell for nybegynnere](https://wiki.haskell.org/Introduction_to_Haskell)
+## Se også:
+- [Network.HTTP dokumentasjon](https://hackage.haskell.org/package/HTTP) for mer informasjon om hvordan å bruke dette biblioteket.
+- [Haskell for nybegynnere](https://www.haskell.org/koans/) for å komme i gang med Haskell-programmering.
+- [Web scraping med Haskell](https://blog.functionally.io/web-scraping-with-haskell/) for å lære mer om hvordan du kan bruke Haskell for å samle informasjon fra nettsider.

@@ -1,7 +1,7 @@
 ---
-title:                "컴퓨터 프로그래밍의 제목: 커맨드 라인 인수 읽기"
-html_title:           "Elm: 컴퓨터 프로그래밍의 제목: 커맨드 라인 인수 읽기"
-simple_title:         "컴퓨터 프로그래밍의 제목: 커맨드 라인 인수 읽기"
+title:                "컴퓨터 프로그래밍을 위한 명령 줄 인수 읽기"
+html_title:           "Elm: 컴퓨터 프로그래밍을 위한 명령 줄 인수 읽기"
+simple_title:         "컴퓨터 프로그래밍을 위한 명령 줄 인수 읽기"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Files and I/O"
@@ -10,65 +10,66 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+## 무엇과 왜?
 
-이번 글은 Elm 언어에서 커맨드 라인 인자를 읽는 방법을 쉽고 빠르게 익힐 수 있도록 안내합니다. 커맨드 라인 인자는 프로그래밍에서 꼭 필요한 요소이며, 이 글을 읽으심으로써 이를 활용하는 방법을 배우고 더 나은 프로그래밍을 할 수 있을 겁니다.
+커맨드 라인 인수를 읽는 것은 프로그래머가 사용자로부터 정보를 입력받는 방법입니다. 이는 사용자가 프로그램을 실행할 때 추가적인 정보를 제공하거나 설정을 변경할 때 유용합니다.
 
-## 어떻게
-
-커맨드 라인 인자를 읽는 방법은 간단합니다. 먼저, `Elm.Command` 모듈을 불러와 줍니다. 그리고 `Elm.Command.program` 함수를 호출하면서 읽어들이고 싶은 타입을 인수로 넘깁니다. 코드로 보면 다음과 같습니다.
+## 하는 법:
 
 ```Elm
-import Elm.Command
+import Platform
+import Html exposing (text)
 
-type MyArgs
-    = Version String
-    | Help
-    | Run String String
+main : Program flags
+main =
+    Platform.worker
+        { init = init
+        , update = update
+        , subscriptions = subscriptions
+        }
 
-main : MyArgs -> Cmd.Cmd msg
-main args =
-    Elm.Command.program defaultConfig
-        |> Elm.Command.argument (String)
-        |> Elm.Command.version "1.0"
-        |> Elm.Command.usage
-        |> Elm.Command.handler
-            (parseArgs args)
+init : flags -> ( Model, Cmd Msg )
+init flags =
+    -- flags 값으로부터 정보를 읽어올 수 있습니다.
+    let
+        argument1 =
+            flags.argument1
 
-parseArgs : MyArgs -> Cmd.Cmd msg
-parseArgs args =
-    case args of
-        Version v ->
-            -- Version을 출력합니다.
-            Cmd.none
+        argument2 =
+            flags.argument2
 
-        Help ->
-            -- 도움말을 출력합니다.
-            Cmd.none
+        argument3 =
+            flags.argument3
+    in
+    -- 이후 해당 값들을 모델로 설정하거나, 업데이트 함수를 통해 사용할 수 있습니다.
+    ( Model argument1 argument2 argument3, Cmd.none )
 
-        Run input output ->
-            -- input을 가지고 output을 생성합니다.
-            Cmd.none
+
+type Msg
+    = DoSomething
+
+update : Msg -> Model -> ( Model, Cmd Msg )
+update msg model =
+    case msg of
+        DoSomething ->
+          -- 모델의 값을 바탕으로 원하는 작업을 수행할 수 있습니다.
+            ( model, Cmd.none )
+
+
+subscriptions : Model -> Sub Msg
+subscriptions model =
+    Sub.none
+
 ```
 
-위 코드에서 `main` 함수는 `Elm.Command.program` 함수를 이용해서 `defaultConfig`와 함께 읽어들이고 싶은 타입을 지정해줍니다. 그 이후 `Elm.Command.argument` 함수를 통해 어떤 타입을 받을지 지정하고, `Elm.Command.version` 함수를 이용해서 버전 정보를 추가해 줍니다. 그리고 마지막으로 `Elm.Command.handler` 함수를 이용해서 인자를 처리할 코드를 작성해줍니다. 여기서는 `parseArgs` 함수를 호출하여 인자를 패턴 매칭해줍니다. 이제 커맨드 라인에서 `--version`, `--help`, 그리고 `--run` 옵션으로 프로그램을 실행시켜보세요. 각각의 옵션이 제대로 처리되는 것을 확인할 수 있을 겁니다.
+Output: 해당 커맨드 라인 인수를 사용하여 프로그램의 모델을 초기화하고, 업데이트 함수를 통해 모델의 값들을 수정하고자 할 때 사용할 수 있습니다.
 
-## 깊이 파보기
+## 심층 분석:
 
-이번에는 인자를 추가적으로 읽는 방법에 대해 알아보겠습니다. `Elm.Command.argument` 함수는 어떤 타입을 받을지를 인수로 전달하는 함수입니다. 그런데 이 함수는 단일 타입만 받을 수 있습니다. 그러면 여러 개의 타입을 받을 수는 없을까요? 그럴 때 사용하는 함수가 바로 `Elm.Command.arguments` 함수입니다. 이 함수는 뒤에 `...`를 붙여 여러 개의 인자를 한 번에 받을 수 있도록 해줍니다. 코드로 보면 다음과 같습니다.
+커맨드 라인 인수를 읽는 기능은 컴퓨터 시스템에서 입력 값을 받는 가장 기본적인 방법 중 하나입니다. 이전에는 입력 값을 읽는데 사용되는 프로그래밍 언어에 따라 정해진 방식이 있었지만, 초창기 개인용 컴퓨터에서는 파일 입출력 등의 다른 방법이 없어 이 방식이 최선의 선택이었습니다. 하지만 현재 Elm을 포함한 많은 프로그래밍 언어들은 다른 방식의 입력 값 읽기 기능을 제공하고 있습니다.
 
-```Elm
-main : List String -> Cmd.Cmd msg
-main inputs =
-    -- 인자를 읽습니다.
-    Cmd.none
+이와 비슷한 기능을 구현하기 위해서는 다른 함수나 라이브러리를 사용할 수 있지만, 커맨드 라인 인수를 읽는 기능은 직접 구현하는 것이 더 간단하고 효율적입니다. 해당 기능은 Elm에서 제공하는 Platform 모듈을 사용하여 구현할 수 있으며, 코드의 범용성을 높히기 위해 플래그 값으로 값을 읽어오는 방식을 사용합니다.
 
-    -- 인자를 출력합니다.
-    | Cmd.map Debug.log inputs
-```
+## 관련 자료:
 
-이 코드에서는 `main` 함수의 인수로 `List String`을 받도록 지정해줍니다. 그리고 나서 `Cmd.none`을 호출하는데, 이는 인자를 읽는 작업이 모두 끝난 뒤에 호출됩니다. 이 코드를 컴파일해서 실행하면 인자로 넘긴 값들이 출력되는 것을 확인할 수 있을 겁니다.
-
-## 더 알아보기
-
-만약 커맨드 라인 인자를 읽는 방법에 대해 더 알고 싶다면 아래의 링크들을 참
+- [Elm의 Platform 모듈 문서](https://package.elm-lang.org/packages/elm/core/latest/Platform)

@@ -1,7 +1,7 @@
 ---
-title:                "正規表現の利用"
-html_title:           "Arduino: 正規表現の利用"
-simple_title:         "正規表現の利用"
+title:                "正規表現を使用する"
+html_title:           "Arduino: 正規表現を使用する"
+simple_title:         "正規表現を使用する"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Strings"
@@ -10,63 +10,66 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-こんにちは、Arduinoプログラマーの皆さん！今回は、定規表現を使ったプログラミングについてお話ししたいと思います。なぜ定規表現を使うのか、どのように使うのか、そしてもっと深く学ぶための情報を紹介します。
+## 何 & なぜ？
+正規表現を使用することは、特定のパターンにマッチする文字列を検索するための便利な方法です。プログラマーがこれを行う理由は、文字列やパターンを効率的に比較できるためです。
 
-## なぜ使うの？
-
-定規表現は、文字列のパターンを検索・抽出するための強力なツールです。例えば、センサーからのデータを解析するときや、特定のデータを抽出するときなどに活用することができます。定規表現を使うことで、より効率的なプログラミングが可能になります。
-
-## 使い方
-
-定規表現を使うには、まず正規表現ライブラリをインポートする必要があります。以下のように、ヘッダーファイルをインクルードしてください。
-
-```Arduino
-#include <RegExp.h>
+## 方法：
 ```
+// コード例1:
+// キーワード「hello」を含むすべての文字列を検索する。
+Arduino ... 
 
-次に、定規表現オブジェクトを作成します。このオブジェクトに文字列と検索するパターンを指定します。
+#include<regex.h>
 
-```Arduino
-RegExp myRegex("検索するパターン");
-```
+// 文字列を定義する。
+String text = "こんにちは、私の名前はJohnです。";
 
-そして、検索対象の文字列を指定し、定規表現を実行します。定規表現がマッチした部分は`match()`メソッドで取得することができます。
+// 正規表現オブジェクトを作成する。
+regex_t regex;
 
-```Arduino
-String str = "検索対象の文字列";
-myRegex.find(str);
-String matched = myRegex.match(0); //マッチした文字列を取得する
-```
+// 「hello」を含むパターンを設定する。
+regcomp(&regex, "hello", 0);
 
-定規表現を使うことで、より簡潔なコードを書くことができます。例えば、以下のようなコードは、
-
-```Arduino
-for(int i = 0; i < length; i++){
-  if(str.substring(i,i+3) == "abc"){
-    //何か処理をする
-  }
+// 文字列がパターンにマッチするかチェックする。
+if(regexec(&regex, text.c_str(), 0, NULL, 0) == 0){
+    // マッチする場合は「hello」が含まれるというメッセージを出力する。
+    Serial.println("この文字列には「hello」が含まれています。");
 }
+
+// 作成した正規表現オブジェクトを消去する。
+regfree(&regex);
 ```
 
-定規表現を使うことで、以下のように書き換えることができます。
+```
+// コード例2:
+// 指定したパターンにマッチするすべての文字列を置換する。
+Arduino ... 
 
-```Arduino
-RegExp myRegex("abc");
-if(myRegex.find(str)){
-  //何か処理をする
-}
+#include<regex.h>
+
+// 文字列を定義する。
+String nameList = "John, Bob, Alice, Kate";
+
+// 正規表現オブジェクトを作成する。
+regex_t regex;
+
+// 「Bob」という文字列を「Mike」に置換するパターンを設定する。
+regcomp(&regex, "Bob", 0);
+
+// 文字列を「Mike」に置換する。
+String updatedList = regreplace(nameList.c_str(), regex, "Mike");
+
+// 置換後の文字列を出力する。
+Serial.println(updatedList);
+
+// 作成した正規表現オブジェクトを消去する。
+regfree(&regex);
 ```
 
-より簡潔で読みやすいコードになりましたね！
+## 深く掘り下げる：
+正規表現は、1960年代から存在している古いテキスト処理方法です。他のパターン検索や置換方法と比較すると、正規表現はより柔軟で強力なツールであると言えます。また、Arduinoはプログラミング言語のC++の一部を使用しており、その言語には既に正規表現の機能が組み込まれています。
 
-## 更に深く学ぶ
-
-定規表現には様々なパターンや特殊な文字があります。より深く学びたい方は、以下のリソースを参考にしてみてください。
-
-- [正規表現チュートリアル（日本語）](https://www.javadrive.jp/regex/)
-- [正規表現クイックリファレンス（英語）](https://www.rexegg.com/regex-quickstart.html)
-
-## 関連リンク
-
-- [正規表現ライブラリのドキュメント（英語）](https://www.arduino.cc/en/Tutorial/Regexp)
-- [正規表現を使ったArduinoプロジェクト例（英語）](https://create.arduino.cc/projecthub/projects/tags/regex)
+## 関連リンク：
+- [正規表現の解説 (Wikipedia)](https://ja.wikipedia.org/wiki/%E6%AD%A3%E8%A6%8F%E8%A1%A8%E7%8F%BE)
+- [Arduino公式サイト](https://www.arduino.cc/)
+- [C++の正規表現の使い方 (cpprefjp)](https://cpprefjp.github.io/reference/regex.html)

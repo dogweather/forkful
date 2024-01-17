@@ -10,53 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
+Writing tests is the process of creating automated code to check the correctness and functionality of your own code. It's like a safety net for your code, catching any mistakes or bugs before they make it to your end users. By writing tests, programmers can ensure that their code is efficient, reliable, and performs as intended.
 
-Writing tests is an essential part of software development, ensuring that the code you write functions as expected. By having tests in place, you can catch and fix any bugs or errors early on in the development process, saving time and effort in the long run.
-
-## How To
-
-To get started with writing tests in Bash, you first need to have a basic understanding of the language and its syntax. Once you have that, you can follow these steps to write your first test:
-
-1. Identify the piece of code you want to test. This could be a function, a script, or a command.
-2. Create a new file and name it something like `test_yourcode.sh`.
-3. Use the `source` command to include the file containing the code you want to test.
-4. Declare your tests inside the `test_yourcode.sh` file, using the `assert` keyword to check if the expected output matches the actual output.
-5. Run the `test_yourcode.sh` file using the `bash` command in your terminal.
-6. Check the output of the tests to see if they pass or fail. If there are any failures, go back and debug your code until all tests pass.
-
-Let's look at an example of testing a simple `add` function:
+## How to:
+Writing tests in Bash is a straightforward process. The `test` command, which is also known as `[`, evaluates a given expression and returns a true or false value. Here's an example of a simple test in Bash:
 
 ```Bash
-# add function
-add() {
-  echo $(( $1 + $2 ))
-}
-
-source add.sh # assuming this file contains the add function
-
-# tests for add function
-assert "add 5 2" "7" # should pass
-assert "add 10 0" "11" # should fail
+[ 5 -gt 3 ]
 ```
 
-Running the `test_add.sh` file would give the following output:
+The above command will return true, since 5 is indeed greater than 3. You can also use the `test` command in conjunction with conditional statements, such as `if` and `while` to create more complex tests. See the example below:
 
+```Bash
+if [ -e file.txt ]  # checks if file.txt exists
+then
+  echo "File exists!"
+else
+  echo "File does not exist"
+fi
 ```
-1 out of 2 tests passed.
-Test 2 failed: Expected 11, got 10.
-```
 
-From this output, we can see that our first test passed, but the second test failed. This indicates that there is an error in our `add` function, which we can then go back and fix.
+Running this script will output "File exists!" if the file.txt exists in the current directory. Otherwise, it will output "File does not exist."
 
-## Deep Dive
+## Deep Dive:
+The `test` command has been a part of the Bash language since its early days. It was created by Stephen Bourne in the 1970s and was included in the first version of Unix. Another popular alternative for writing tests in Bash is the `[[` command, which was introduced in Bash 2.0 and offers additional features such as pattern matching and regular expressions. However, the `test` command is still widely used and is more portable across different platforms.
 
-Writing tests in Bash involves using the `source` command to include the code you want to test, and then using the `assert` keyword to compare the expected output with the actual output. You can also use other keywords such as `assert_exit` to check the exit status of a command and `assert_equal` to compare two variables.
+When writing tests in Bash, it's important to consider the exit status of the `test` command. A successful test will return an exit status of 0, while a failed test will return a non-zero exit status. This is important when using tests in conjunction with other commands or in scripts. You can view the exit status of the previous command by typing `echo $?` in your terminal.
 
-It is important to note that when writing tests in Bash, you should ensure that your code is clean and well-organized. This will make it easier to identify and fix any errors that may arise during the testing process.
-
-## See Also
-
-- [Bash Official Documentation](https://www.gnu.org/software/bash/)
-- [Bash Beginner's Guide](https://tldp.org/LDP/Bash-Beginners-Guide/html/)
-- [Shell Scripting Tutorial](https://www.shellscript.sh/)
+## See Also:
+- [Bash Test Command](https://www.gnu.org/software/bash/manual/html_node/Bash-Builtins.html#Bash-Builtins)
+- [Bash conditional statements](https://www.gnu.org/software/bash/manual/html_node/Conditional-Constructs.html)

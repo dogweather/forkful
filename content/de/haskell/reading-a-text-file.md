@@ -1,7 +1,7 @@
 ---
-title:                "Ein Textdokument lesen."
-html_title:           "Haskell: Ein Textdokument lesen."
-simple_title:         "Ein Textdokument lesen."
+title:                "Das Lesen einer Textdatei"
+html_title:           "Haskell: Das Lesen einer Textdatei"
+simple_title:         "Das Lesen einer Textdatei"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Files and I/O"
@@ -10,83 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+# Was und Warum?
 
-Warum sollten wir uns mit dem Lesen von Textdateien beschäftigen? Nun, zum einen ist es eine Grundfertigkeit, die in der Programmierung immer wieder benötigt wird. Zum anderen kann es sehr nützlich sein, um Daten zu importieren oder zu exportieren und somit mit anderen Anwendungen zu interagieren.
+Das Lesen einer Textdatei ist eine grundlegende Aufgabe, die Programmierer*innen regelmäßig in ihrem Arbeitsablauf durchführen. Dabei wird der Inhalt einer Textdatei von einem Computer eingelesen und zur weiteren Verarbeitung verwendet. Dies kann zum Beispiel das Auslesen von Nutzer*innendaten oder das Lesen von Konfigurationsdateien sein.
 
-## Wie geht's
-
-Um eine Textdatei in Haskell zu lesen, müssen wir zuerst die Module `System.IO` und `Data.Char` importieren.
+# Wie geht's?
 
 ```Haskell
-import System.IO
-import Data.Char
-```
-
-Dann müssen wir eine Datei öffnen, um sie lesen zu können. Dazu verwenden wir die Funktion `openFile`, die den Dateipfad und den Modus, in dem die Datei geöffnet werden soll, als Argumente nimmt. Hier öffnen wir die Datei "beispiel.txt" im Lese-Modus und speichern sie in der Variablen `handle`.
-
-```Haskell
-handle <- openFile "beispiel.txt" ReadMode
-```
-
-Als nächstes müssen wir den Inhalt der Datei lesen. Dazu nutzen wir die Funktion `hGetContents`, die den geöffneten Datei-Handle als Argument nimmt und uns den gesamten Inhalt der Datei als String zurückgibt.
-
-```Haskell
-contents <- hGetContents handle
-```
-
-Der zurückgegebene String enthält nun den gesamten Inhalt der Datei, einschließlich aller Zeilenumbrüche und Leerzeichen. Wenn wir nur die einzelnen Zeilen in einer Liste haben möchten, können wir die Funktion `lines` aus dem Modul `Data.List` verwenden, die den String in eine Liste von Strings aufteilt und dabei die Zeilenumbrüche ignoriert.
-
-```Haskell
-let linesList = lines contents
-```
-
-Jetzt können wir mit diesen Daten weiterarbeiten, beispielsweise sie bearbeiten, filtern oder in ein anderes Format umwandeln. Eine Möglichkeit wäre, die Buchstaben in jedem String in Großbuchstaben umzuwandeln und die Liste der Zeilen mit `unlines` wieder zu einem einzigen String zusammenzufügen.
-
-```Haskell
-let upperLines = map (map toUpper) linesList
-let result = unlines upperLines
-```
-
-Zum Schluss müssen wir die Datei wieder schließen, damit sie nicht im Speicher bleibt und möglicherweise andere Anwendungen blockiert. Dazu verwenden wir die Funktion `hClose` und übergeben den geöffneten Handle.
-
-```Haskell
-hClose handle
-```
-
-Hier ist ein vollständiges Beispiel, das alle obigen Schritte zusammenfasst:
-
-```Haskell
-import System.IO
-import Data.Char
-import Data.List
-
-openAndProcessFile :: FilePath -> IO ()
-openAndProcessFile filePath = do
-    handle <- openFile filePath ReadMode
-    contents <- hGetContents handle
-    let linesList = lines contents
-    let upperLines = map (map toUpper) linesList
-    let result = unlines upperLines
-    putStrLn result
-    hClose handle
-
-main :: IO ()
+-- Öffnen und Lesen einer Textdatei
 main = do
-    openAndProcessFile "beispiel.txt"
+    handle <- openFile "myFile.txt" ReadMode
+    contents <- hGetContents handle
+    putStrLn contents
+    hClose handle
 ```
+Das obige Beispiel zeigt, wie eine Textdatei mit Hilfe der `openFile` und `hGetContents` Funktionen geöffnet und eingelesen werden kann. Die `putStrLn` Funktion gibt den Inhalt der Datei auf der Konsole aus und die `hClose` Funktion schließt die Datei nach dem Lesen wieder.
 
-Die Funktion `openAndProcessFile` öffnet die Datei, liest den Inhalt, wandelt die Zeilen in Großbuchstaben um, gibt das Ergebnis in der Konsole aus und schließt schließlich die Datei. In der `main`-Funktion rufen wir diese Funktion mit dem gewünschten Dateipfad auf.
+# Tiefgehende Analyse
 
-Das obige Beispiel ist sehr einfach gehalten und es gibt noch viele weitere Möglichkeiten, um Textdateien in Haskell zu lesen und zu bearbeiten. Hier sind einige weitere Ressourcen, die weitere Informationen und Beispiele bereithalten:
+Das Lesen von Textdateien ist eine gängige Aufgabe in der Programmierung und wird bereits seit Jahrzehnten genutzt. Früher wurde dafür hauptsächlich die `readFile` Funktion verwendet, die jedoch bei großen Dateien zu Speicherproblemen führen konnte. Mit der Einführung der `hGetContents` Funktion wurde dieses Problem behoben, da sie den Inhalt der Datei stückweise einliest.
 
-## Deep Dive
+Eine Alternative zum Lesen von Textdateien ist der Einsatz von Datenbanken. Diese bieten oft eine effizientere Möglichkeit, die Daten zu speichern und zu verarbeiten.
 
-- [Haskell-Dokumentation zu System.IO](https://hackage.haskell.org/package/base-4.15.0.0/docs/System-IO.html)
-- [Haskell-Dokumentation zu Data.List](https://hackage.haskell.org/package/base-4.15.0.0/docs/Data-List.html)
-- [Haskell-Wiki-Artikel über Eingabe- und Ausgabefunktionen](https://wiki.haskell.org/Introduction_to_Input/Output)
-- [Leitfaden zum Lesen und Schreiben von Textdateien in Haskell](https://www.schoolofhaskell.com/school/starting-with-haskell/libraries-and-frameworks/text-manipulation/reading-and-writing-files)
+Die Implementierung des Lesens einer Textdatei kann je nach System und Programmiersprache variieren, aber der grundsätzliche Vorgang bleibt gleich: Öffnen, Lesen und Schließen der Datei.
 
-## Siehe auch
+# Siehe auch
 
-- [Haskell-Dokumentation zu `openFile`](https://hackage.h
+- [Haskell Dokumentation zu Dateioperationen](https://hackage.haskell.org/package/base/docs/System-IO.html)
+- [Weitere Informationen zu Textdateien](https://de.wikipedia.org/wiki/Textdatei)
+- [Haskell SO-Fragen zu Dateioperationen](https://stackoverflow.com/questions/tagged/haskell+file-io)

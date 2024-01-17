@@ -1,7 +1,7 @@
 ---
-title:                "Envoyer une requête http"
-html_title:           "Javascript: Envoyer une requête http"
-simple_title:         "Envoyer une requête http"
+title:                "Envoi d'une requête http"
+html_title:           "Javascript: Envoi d'une requête http"
+simple_title:         "Envoi d'une requête http"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "HTML and the Web"
@@ -10,40 +10,22 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Quoi & Pourquoi?
+L'envoi d'une requête HTTP est une action courante dans la programmation qui permet aux développeurs de récupérer des données depuis un serveur distant. Cela peut inclure des fichiers, des pages web, ou même des informations pour les applications mobiles. C'est une étape essentielle pour obtenir des informations en temps réel et améliorer l'expérience utilisateur.
 
-Vous vous demandez peut-être pourquoi il est important d'envoyer des requêtes HTTP en Javascript. Eh bien, cela peut être nécessaire pour récupérer des données à partir d'un serveur distant ou pour interagir avec des API.
-
-## Comment faire
-
-Voici un exemple de code pour envoyer une requête GET avec l'API fetch en Javascript :
-
-```Javascript
-fetch('https://example.com/api/users')
-  .then(response => response.json())
-  .then(data => {
-    console.log(data); // Output: {users:[{name: "John", age: 30}, {name: "Jane", age: 28}]}
-  });
+## Comment faire: 
+Voici un exemple simple de code Javascript pour envoyer une requête HTTP en utilisant la méthode GET:
 ```
-
-Vous pouvez également spécifier les options de la requête, telles que la méthode, les en-têtes et le corps, comme ceci :
-
-```Javascript
-fetch('https://example.com/api/users', {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json'
-  },
-  body: JSON.stringify({name: "Bob", age: 35})
-})
-.then(response => console.log(response.status)) // Output: 201 (created)
+fetch('https://monsite.com/donnees') // remplacez "monsite.com" par l'URL de votre choix
+  .then(response => response.json()) // transforme la réponse en JSON
+  .then(data => console.log(data)) // affiche les données récupérées dans la console
 ```
+Output: Les données récupérées seront automatiquement affichées dans la console de votre navigateur.
 
-## Plongeons plus en profondeur
+## Plongée en profondeur: 
+L'envoi de requêtes HTTP est un processus qui existe depuis les débuts du web. Aujourd'hui, il existe différentes méthodes et outils pour le faire, tels que fetch, XMLHttpRequest, et axios. Les développeurs peuvent également utiliser ces outils pour personnaliser les en-têtes de leurs requêtes, définir des paramètres et gérer les erreurs. Cependant, il est important de toujours vérifier si l'API que vous utilisez est sécurisée pour éviter toute exploitation.
 
-Lorsque vous envoyez une requête HTTP en Javascript, vous utilisez une interface appelée XMLHttpRequest (XHR). Cette interface vous permet d'envoyer des requêtes de manière asynchrone et de gérer les réponses. Vous pouvez également utiliser des bibliothèques telles que Axios pour simplifier le processus d'envoi de requêtes HTTP.
-
-## Voir aussi
-
-- [Documentation sur l'API fetch en Javascript](https://developer.mozilla.org/fr/docs/Web/API/Fetch_API)
-- [Tutoriel complet sur l'envoi de requêtes HTTP en Javascript](https://www.datacamp.com/community/tutorials/working-with-apis-using-javascript)
+## Voir aussi: 
+- [MDN Web Docs: Fetch API](https://developer.mozilla.org/fr/docs/Web/API/Fetch_API)
+- [Introduction à Axios pour les développeurs JavaScript](https://blog.logrocket.com/introduction-to-axios-for-developers/) 
+- [XMLHttpRequest et Fetch API: les différences](https://www.opquast.com/blog/difference-entre-xmlhttprequest-et-fetch-api/)

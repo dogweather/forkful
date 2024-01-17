@@ -1,7 +1,7 @@
 ---
-title:                "ניתוח HTML"
-html_title:           "C: ניתוח HTML"
-simple_title:         "ניתוח HTML"
+title:                "פרשים את ה־HTML"
+html_title:           "C: פרשים את ה־HTML"
+simple_title:         "פרשים את ה־HTML"
 programming_language: "C"
 category:             "C"
 tag:                  "HTML and the Web"
@@ -10,53 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מדוע
+## מה ולמה?
+הִיפֶּרְטִינְג (parsing) של ה-HTML הוא תהליך שבו מתבצעת קריאה וניתוח של קוד ה-HTML בכדי להבין וליישם את המידע המכיל בו. תהליך זה חשוב מאוד למתכנתים שמעוניינים לעבוד עם אתרי אינטרנט או לכתוב כלי עזר כגון ניתוחי אתרים אוטומטיים.
 
-למה יש לנו בכלל שימוש בפענוח HTML? הפענוח של מסמכי HTML הוא חלק בלתי נפרד מתהליך התכנות ונחשב לכישור חיוני לכל מפתח תוכנה. במאמר זה, נדון במדוע כדאי ללמוד פענוח HTML ואיך לעשות זאת בשפת C.
-
-## איך לעשות זאת
-
-לפניכם חלקים קצרים עם דוגמאות קוד ופלט, המציגים כיצד ניתן לפענח HTML בשפת C.
-
-```C
+## איך לעשות:
+```
+// כאן מופיע קוד בשפת C 
+// לדוגמה, פונקציה שלדאגת קריאה ופרסור של דף HTML באמצעות ספריית libxml2
 #include <stdio.h>
+#include <libxml/parser.h>
 
-int main() {
-  // הפענוח מתחיל בחיפוש לאן שהתחיל התג <title>
-  char* str = "<html><head><title>הכותרת של הדף</title></head></html>";
-  // מדפיס את המילה שבין התגים title
-  printf("הכותרת של הדף היא: %s\n", get_text_between_tags(str, "title"));
+int main()
+{
+  // הגדרת משתנים רלוונטים
+  xmlDoc *doc = NULL;
+  xmlNode *root_element = NULL;
+
+  // קריאת דף HTML שבו נרצה לבצע פרסור
+  doc = xmlReadFile("example.html", NULL, 0);
+
+  // בדיקה שהקריאה התבצעה בהצלחה
+  if (doc == NULL)
+  {
+    printf("קריאת הדף נכשלה.");
+    return 1;
+  }
+
+  // צימוד לאירועים של הדף ובחירת האלמנט הראשון
+  root_element = xmlDocGetRootElement(doc);
+
+  // הדפסת תוצאות הקריאה והפרסור של הדף HTML
+  printf("שם האלמנט הראשי: %s\n", root_element->name);
+
+  // השתחררות מזיכרון פנימי
+  xmlFreeDoc(doc);
+
   return 0;
 }
-
-// פונקציה המקבלת מחרוזת ותג ומחזירה את הטקסט שבין התגים
-char* get_text_between_tags(char* str, char* tag) {
-  int len = strlen(tag);
-  // מציאת התחלת התג
-  char* start = strstr(str, tag);
-  // מציאת הסוף של התג
-  char* end = strstr(start + len, tag);
-  // יצירת מחרוזת חדשה שמכילה את הטקסט שבין התגים
-  char* text = calloc(end - start - len + 1, sizeof(char));
-  strncpy(text, start + len, end - start - len);
-  return text;
-}
 ```
 
-הפלט של הקוד הנ"ל יהיה:
+## נכיר בעומק:
+תהליך הפרסור של HTML קיים כבר מאז זמן רב והתחיל במטרה להפיק מידע מדויק מקוד ה-HTML בכדי לאפשר לכלי חיפוש כמו גוגל לבנות את המפתחות לניווט באינטרנט. כיום, ישנן אפשרויות רבות לפרסור HTML כגון באמצעות כלי חיצוני כמו פייתון או JavaScript ולא רק עם שפת תכנות גנרית כמו C.
 
-```
-הכותרת של הדף היא: הכותרת של הדף
-```
-
-## למעמיקים לבדוק
-
-למי שמעוניין במידע נוסף על הפענוח של HTML בשפת C, הנה כמה נושאים נוספים לבדיקה:
-
-- כיצד לטפל בתוונתיות שונות בין דפים שונים
-- שימוש בסיבים ובמצבים קצה בפענוח HTML
-- היכן ניתן למצוא מידע מפורט על יישומים אחרים של פענוח HTML בשפת C
-
-## ראו גם
-
-אלו הם כמה מאמרים נוספים שיכולים לעזור לך להמשיך בלימוד הפענוח של HTML ב
+## ראו גם:
+למידה נוספת על הפעולות של פרסור HTML בשפת C והאפשרויות השונות שלו ניתן למצוא בכתב אחר: https://www.geeksforgeeks.org/web-scrapping-c-programming-language/

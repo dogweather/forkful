@@ -10,69 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why 
-Checking if a directory exists is an important task in many programming scenarios. It allows us to handle errors and ensure that our code is functioning as expected, by verifying the existence of a specific directory before performing any operations on it.
+## What & Why?
 
-## How To
-Checking if a directory exists in TypeScript is a straightforward process. We can use the `fs` module from Node.js to access file system methods, including checking for directory existence. Here is a simple example:
+Checking if a directory exists is a common programming task where the code checks if a specified directory exists on the operating system's file system. This is important for programmers so that they can handle cases where the directory does not exist, preventing potential errors in their code.
+
+## How to:
+
+To check if a directory exists in TypeScript, we can use the built-in `fs` (file system) module. First, we need to import the module with `import fs from "fs";`. Then, we can use the `fs.existsSync()` method, passing in the path to the directory we want to check. This method will return a boolean value, `true` if the directory exists and `false` if it does not.
 
 ```TypeScript
-import fs from 'fs';
+import fs from "fs";
 
-const directoryPath = './myDirectory';
-
-// Check if the directory exists
-fs.exists(directoryPath, (exists) => {
-    if (exists) {
-        console.log("The directory exists!");
-    } else {
-        console.log("The directory does not exist!");
-    }
-});
+const directoryPath = "path/to/directory";
+const directoryExists = fs.existsSync(directoryPath);
+console.log(directoryExists); // outputs: true or false
 ```
 
-Running this code in a TypeScript environment will output either "The directory exists!" or "The directory does not exist!" depending on the existence of the specified directory. 
+## Deep Dive:
 
-We can also use the `fs.existsSync()` method to achieve the same result synchronously, which may be useful in certain scenarios. Here is an example:
+The `fs.existsSync()` method is available in all versions of Node.js, but it is considered a legacy API. The recommended way of handling file system operations in newer versions of Node.js is to use the `fs.statSync()` method, passing in the path to the directory and checking the `fs.Stats` object it returns.
 
 ```TypeScript
-import fs from 'fs';
+import fs from "fs";
 
-const directoryPath = './myDirectory';
+const directoryPath = "path/to/directory";
 
-// Check if the directory exists synchronously
-if (fs.existsSync(directoryPath)) {
-    console.log("The directory exists!");
-} else {
-    console.log("The directory does not exist!");
+try {
+  const stats = fs.statSync(directoryPath);
+  console.log(stats.isDirectory()); // outputs: true
+} catch (error) {
+  console.log(error); // outputs: "Error: ENOENT: no such file or directory"
 }
 ```
 
-## Deep Dive
-Under the hood, the `fs.exists()` and `fs.existsSync()` methods use the `fs.stat()` or `fs.lstat()` methods to check for directory existence. These methods return a `Stats` object that contains information about the file or directory. Specifically, the `isDirectory()` method of the `Stats` object can be used to determine if the specified path is a directory or not. Here is an example:
+In addition to the `fs` module, there are other libraries available for file system operations, such as `path` and `graceful-fs`. These libraries provide more advanced features and better error handling when working with directories and files.
 
-```TypeScript
-import fs from 'fs';
+## See Also:
 
-const directoryPath = './myDirectory';
-
-// Get the stats of the specified path
-fs.stat(directoryPath, (err, stats) => {
-    if (err) {
-        // Handle error
-    } else {
-        // Check if the path is a directory
-        if (stats.isDirectory()) {
-            console.log("The path is a directory!");
-        } else {
-            console.log("The path is not a directory!");
-        }
-    }
-});
-```
-
-It is important to note that these methods only check for the existence of a directory, not its permissions or accessibility. Additional checks may need to be implemented for such cases.
-
-## See Also
 - [Node.js `fs` module documentation](https://nodejs.org/api/fs.html)
-- [TypeScript documentation](https://www.typescriptlang.org/docs/home.html)
+- [`path` library documentation](https://nodejs.org/api/path.html)
+- [`graceful-fs` library documentation](https://github.com/isaacs/node-graceful-fs)

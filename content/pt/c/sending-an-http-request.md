@@ -1,7 +1,7 @@
 ---
-title:                "Enviando um pedido http"
-html_title:           "C: Enviando um pedido http"
-simple_title:         "Enviando um pedido http"
+title:                "Enviando uma requisição http"
+html_title:           "C: Enviando uma requisição http"
+simple_title:         "Enviando uma requisição http"
 programming_language: "C"
 category:             "C"
 tag:                  "HTML and the Web"
@@ -10,62 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+## O que é e por quê?
 
-Se você está desenvolvendo um aplicativo ou site que precisa se comunicar com outros servidores ou obter dados da internet, enviar uma solicitação HTTP é essencial para seu funcionamento. Com o uso do C (a versão atual), você pode facilmente enviar solicitações HTTP e receber respostas para o seu programa.
+Enviar uma solicitação HTTP é um processo importante na programação, pois permite que os desenvolvedores interajam com servidores e acessem informações da web. Essa solicitação pode ser feita por meio de um navegador da web ou por meio de um programa de computador.
 
-## Como fazer
+## Como fazer:
 
-Para enviar uma solicitação HTTP em C, você precisará incluir a biblioteca "http.h" e utilizar as funções "http_get" e "http_post" dependendo do tipo de solicitação que deseja fazer. Aqui está um exemplo de como enviar uma solicitação GET e imprimir a resposta no console:
-
+Um exemplo simples de envio de uma solicitação GET pode ser feito da seguinte forma em C:
 ```C
 #include <stdio.h>
-#include <http.h>
+#include <stdlib.h>
+#include <curl/curl.h>
 
-int main() {
-	char *response = http_get("https://www.example.com"); // enviar solicitação GET
-	printf("Resposta da solicitação HTTP: %s", response); // imprimir resposta
-	return 0;
+int main(void)
+{
+  CURL *curl;
+  CURLcode res;
+
+  curl = curl_easy_init();
+  if(curl) {
+    curl_easy_setopt(curl, CURLOPT_URL, "https://exemplo.com"); // URL do servidor
+    res = curl_easy_perform(curl); // solicitação GET
+    if(res != CURLE_OK)
+      fprintf(stderr, "Erro ao enviar solicitação: %s\n",
+              curl_easy_strerror(res));
+    curl_easy_cleanup(curl); // limpar CURL
+  }
+  return 0;
 }
 ```
 
-A saída do programa será algo semelhante a:
+O resultado dessa solicitação seria um código HTML da página do servidor, que pode ser usado para extrair informações específicas ou tomar ações.
 
-```
-Resposta da solicitação HTTP: <html>
-<head>
-...
-</head>
-<body>
-...
-</body>
-</html>
-```
+## Mergulho profundo:
 
-Para enviar uma solicitação POST, você precisará especificar os dados que deseja enviar no corpo da solicitação. Aqui está um exemplo:
+O protocolo HTTP (Hypertext Transfer Protocol) é a base de comunicação da web. Foi desenvolvido no início da década de 1990 e é amplamente utilizado até hoje. Existem outros protocolos que também podem ser usados para enviar solicitações, como HTTPS e FTP.
 
-```C
-#include <stdio.h>
-#include <http.h>
+Além do libcurl, existem outras bibliotecas que podem ser utilizadas para enviar solicitações HTTP em C, como o HTTPClient e a biblioteca nativa do Windows, WinINet. Além disso, muitas linguagens de programação possuem recursos embutidos para enviar solicitações HTTP, como a biblioteca Requests em Python.
 
-int main() {
-	// dados que serão enviados no corpo da solicitação
-	char *data = "nome=exemplo&idade=25&cidade=exemplo";
-	char *response = http_post("https://www.example.com", data); // enviar solicitação POST
-	printf("Resposta da solicitação HTTP: %s", response); // imprimir resposta
-	return 0;
-}
-```
+A implementação exata de uma solicitação HTTP pode variar dependendo da especificação do protocolo e do servidor em questão. É importante estar ciente das diferentes opções e parâmetros disponíveis ao enviar uma solicitação.
 
-## Deep Dive
+## Veja também:
 
-Ao enviar uma solicitação HTTP em C, existem vários parâmetros que você pode especificar, como o cabeçalho da solicitação e a porta que você deseja usar. Se você deseja explorar mais a fundo o envio de solicitações HTTP em C, aqui estão alguns recursos úteis:
-
-- Documentação oficial da biblioteca "http.h": https://www.gnu.org/software/libc/manual/html_node/HTTP.html
-- Tutorial sobre como enviar solicitações HTTP em C: https://www.programiz.com/c-programming/examples/send-data-http-post
-- Vídeo explicando como implementar uma solicitação HTTP em C: https://www.youtube.com/watch?v=H4m1ipT5Wn0
-
-## Veja também
-
-- Como trabalhar com sockets em C: https://www.freecodecamp.org/news/working-with-sockets-in-c-790fad8fcc2d/
-- Como utilizar a API Rest em C: https://medium.com/@cgoxo/utilizando-api-rest-em-c-b631630f920b
+- [Documentação libcurl](https://curl.haxx.se/libcurl/)
+- [Documentação HTTPClient](https://developer.apple.com/documentation/httpclient)
+- [Documentação WinINet](https://docs.microsoft.com/en-us/windows/win32/wininet/wininet?redirectedfrom=MSDN)
+- [Documentação Requests](https://docs.python-requests.org/en/master/)

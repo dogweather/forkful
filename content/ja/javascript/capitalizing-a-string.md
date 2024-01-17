@@ -10,25 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
-文字列を大文字で表示することに関わる理由は、読みやすさやユーザー体験を向上させることができるからです。
+## 何何: 
+文字列のキャピタライズとは何か、そしてなぜプログラマーたちはそれをするのかを説明するための2〜3文。
 
-## 方法
-文字列を大文字で表示するための一般的な方法は、文字列を変数に格納してから `toUpperCase()` メソッドを使用することです。例えば：
+文字列のキャピタライズとは、文字列の最初の文字を大文字にすることです。プログラマーたちは、読みやすさやコードの統一性のために文字列をキャピタライズすることがあります。
 
+## 使い方:
 ```Javascript
-let string = "hello world";
-let capitalizedString = string.toUpperCase();
-console.log(capitalizedString);
+let str = "hello world";
+let capitalizedStr = str.charAt(0).toUpperCase() + str.slice(1);
+console.log(capitalizedStr);
+// Output: "Hello world"
 ```
 
-出力は `HELLO WORLD` となります。
+```Javascript
+let str = "goodbye moon";
+let capitalizedStr = str.replace(/^\w/, c => c.toUpperCase());
+console.log(capitalizedStr);
+// Output: "Goodbye moon"
+```
 
-## 深堀り
-文字列を大文字で表示するというのは、実は文字列の変換に関する重要で基本的な機能です。文字列を大文字で表示することで、使用している言語や文化に関わらず、より一貫性のある表示が可能になります。また、大文字と小文字はインターネット上では異なるものとして認識されるため、セキュリティの面でも重要です。
+## 深く潜る:
+文字列をキャピタライズする方法はいくつかありますが、基本的には最初の文字を大文字に変換する必要があります。歴史的な文脈としては、プログラミング言語によっては文字列をキャピタライズするための特別な関数が用意されている場合があります。また、正規表現を使用することで、より柔軟に文字列をキャピタライズすることもできます。
 
-## 関連リンク
-
-- [JavaScript 公式ドキュメント](https://developer.mozilla.org/ja/docs/Web/JavaScript)
-- [String.prototype.toUpperCase() メソッド](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase)
-- [文字列処理を学ぶ第一歩](https://www.codecademy.com/learn/introduction-to-javascript/modules/learn-javascript-strings/cheatsheet)
+## 関連リンク:
+- [String.prototype.charAt()](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String/charAt)
+- [String.prototype.replace()](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
+- [正規表現を使用した文字列のキャピタライズ方法](https://qiita.com/satoru_takeuchi/items/6f22e1ba2cbf1cd0e9f2)

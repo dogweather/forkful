@@ -10,45 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+Mikä & Miksi?
 
-Joskus haluat tarkistaa, onko tietyssä kansiossa olemassa olevia tiedostoja ennen kuin suoritat tiettyjä toimintoja. Tämä voi auttaa välttämään virheitä ja parantamaan koodisi suorituskykyä.
+Tarkistaa, onko kansio olemassa, on tärkeä osa ohjelmointia. Tämä tarkistus auttaa varmistamaan, että ohjelma ei kohtaa odottamatonta virhettä yrittäessään käyttää kansiota, joka ei ole olemassa tai johon käyttöoikeudet eivät riitä.
 
-## Kuinka tehdä
+Miten:
 
-Tarkistaaksesi, onko kansio olemassa, voit käyttää `fs.existsSync()`-funktiota. Tämä funktio hyväksyy yhden argumentin, joka on polku tarkistettavaan kansioon. Se palauttaa boolean-arvon, joka ilmaisee, onko kansio olemassa vai ei.
-
-```
 ```Javascript
-const fs = require('fs');
-
-if(fs.existsSync('/polku/tarkistettavaan/kansioon')){
-    console.log('Kansio löytyi!');
+if (fs.existsSync(path)) {
+  console.log("Hakemisto löytyy!");
 } else {
-    console.log('Kansiota ei löytynyt.');
+  console.log("Hakemistoa ei löytynyt :(");
 }
 ```
 
-Näet, että käytämme `if`-lausekkeita tarkistamaan, onko funktion palauttama arvo `true` vai `false`. Voit myös käyttää tätä funktiota `try/catch`-rakenneella käsitelläksesi virheitä, jos kansio ei ole olemassa. Tässä on esimerkki:
+Tämä koodiesimerkki käyttää Node.js:n sisäänrakennettua fs-moduulia tarkistaakseen, onko annetussa polussa oleva hakemisto olemassa. Jos hakemisto löytyy, tulostetaan "Hakemisto löytyy!" ja muussa tapauksessa "Hakemistoa ei löytynyt :(". 
 
-```
-```Javascript
-try {
-    fs.existsSync('/polku/tarkistettavaan/kansioon');
-    console.log('Kansio löytyi!');
-} catch(err) {
-    console.log('Kansiota ei löytynyt.');
-}
-```
+Syvemmälle:
+Tarkistus, onko kansio olemassa, on tärkeä osa tiedostojärjestelmän hallintaa. Se auttaa varmistamaan, että ohjelma ei yritä käyttää kansiota, joka ei ole käytettävissä, mikä voi johtaa odottamattomiin virheisiin. Aiemmin, ennen Node.js:ää, sama toiminnallisuus saavutettiin esimerkiksi Perl-ohjelmointikielellä käyttäen stat-funktiota tiedoston olemassaolon tarkistamiseen.
 
-Tämä on hyödyllistä, jos haluat estää ohjelmasi kaatumisen, jos kansio ei ole olemassa.
+On myös muita tapoja tarkistaa, onko kansio olemassa. Yksi vaihtoehto on käyttää try-catch-rakennetta, jossa yritetään käyttää kansiota ja käsitellään virhe, jos kansiota ei löydy. Toinen vaihtoehto on käyttää npm-pakettia kuten "fs-extra", joka tarjoaa yksinkertaisemman tavan tarkistaa tiedoston tai kansion tyyppi.
 
-## Syvällinen sukellus
-
-`fs.existsSync()`-funktio kuuluu Node.js:n `fs`-moduuliin, joka tarjoaa rajapinnan tiedostojärjestelmään. Tämä moduuli sisältää myös muita hyödyllisiä toimintoja tiedostojen ja kansioiden hallintaan. Lisää tietoa löydät [Node.js:n virallisesta dokumentaatiosta](https://nodejs.org/api/fs.html).
-
-## Katso myös
-
-- [Node.js:n `fs`-moduulin dokumentaatio](https://nodejs.org/api/fs.html)
-- [Tiedostojärjestelmän hallinta Node.js:ssä](https://www.digitalocean.com/community/tutorials/how-to-use-node-js-to-manage-file-system)
-- [Tehtävä: Tarkista, onko kansio olemassa](https://www.freecodecamp.org/news/node-js-check-if-a-file-is-existing-or-not-fa47024023ef/)
+Katso myös: 
+- https://nodejs.org/api/fs.html#fs_fs_existssync_path
+- https://www.npmjs.com/package/fs-extra
+- https://perldoc.perl.org/functions/stat.html

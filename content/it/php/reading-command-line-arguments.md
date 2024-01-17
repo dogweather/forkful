@@ -1,7 +1,7 @@
 ---
-title:                "Lettura degli argomenti dalla riga di comando"
-html_title:           "PHP: Lettura degli argomenti dalla riga di comando"
-simple_title:         "Lettura degli argomenti dalla riga di comando"
+title:                "Lettura degli argomenti della linea di comando"
+html_title:           "PHP: Lettura degli argomenti della linea di comando"
+simple_title:         "Lettura degli argomenti della linea di comando"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Files and I/O"
@@ -10,35 +10,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+## Cosa & Perché?
+Leggere gli argomenti della riga di comando è il processo di acquisire gli input specificati quando si avvia un programma da riga di comando. I programmatori spesso lo fanno per consentire agli utenti di personalizzare l'esecuzione del programma.
 
-Molti programmatori scelgono di utilizzare la riga di comando per eseguire i loro script PHP. La lettura degli argomenti dalla riga di comando può sembrare un dettaglio insignificante, ma in realtà è un'abilità importante che può semplificare e migliorare i tuoi script.
-
-## Come fare
-
-Per leggere gli argomenti dalla riga di comando in PHP, è possibile utilizzare la funzione `getopt()` . Questa funzione restituisce un array di opzioni e argomenti passati alla riga di comando.
-
+## Come fare:
 ```PHP
-// Leggi gli argomenti dalla riga di comando
-$options = getopt("a:b:c:");
+//Esempio di lettura di argomenti dalla riga di comando
+// php script.php arg1 arg2
 
-// Stampa l'array di argomenti
-print_r($options);
-
-// Esempio di invio dalla riga di comando: php script.php -a Hello -b World
+$args = $argv; //Salva gli argomenti in una variabile
+echo "Primo argomento: " . $args[1]; //Output: Primo argomento: arg1
+echo "Secondo argomento: " . $args[2]; //Output: Secondo argomento: arg2
 ```
 
-L'output di questo esempio sarà `Array ( [a] => Hello [b] => World )`. Nota che la lettera `a` e `b` corrispondono ai flag utilizzati nella funzione `getopt()`, mentre `Hello` e `World` sono gli argomenti passati dalla riga di comando.
+## Approfondimento:
+La lettura degli argomenti della riga di comando è un'azione comune nei linguaggi di programmazione da riga di comando come PHP, ma è meno utilizzata nei linguaggi di programmazione orientati agli oggetti come Java. Gli sviluppatori possono scegliere di utilizzare un framework come Symfony o Laravel per semplificare la gestione degli argomenti della riga di comando.
 
-Puoi anche utilizzare `getopt()` per accettare opzioni con parametri. Ad esempio, passando `-c test` dalla riga di comando, l'output sarà `Array ( [c] => test )`.
-
-## Deep Dive
-
-La funzione `getopt()` può accettare più flag e opzioni in una sola chiamata. Inoltre, è in grado di gestire flag abbreviati e opzioni non semplici (come numeri o stringhe). Questa funzione è particolarmente utile quando si lavora con script complessi che richiedono l'input dell'utente.
-
-Inoltre, è importante notare che l'ordine degli argomenti è importante: gli argomenti devono essere passati alla riga di comando prima delle opzioni. Ad esempio, se il flag `a` richiede un parametro e il flag `b` non lo richiede, l'input `php script.php -a Hello -b World` funzionerà, mentre `php script.php -b World -a Hello` genererà un errore.
-
-## Vedi anche
-
-- [Documentazione ufficiale di PHP per la funzione getopt()](https://www.php.net/manual/en/function.getopt.php) 
-- [Articolo su come utilizzare la funzione getopt() in PHP](https://www.javatpoint.com/how-to-use-getopt-function-in-php)
+## Vedi anche:
+Altre risorse utili sul linguaggio PHP e sulla gestione degli argomenti della riga di comando:
+- [PHP: Argv](https://www.php.net/manual/en/reserved.variables.argv.php)
+- [Symfony Console Component](https://symfony.com/doc/current/components/console.html)
+- [Laravel Console Commands](https://laravel.com/docs/8.x/artisan)

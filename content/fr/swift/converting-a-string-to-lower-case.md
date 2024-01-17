@@ -10,34 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Qu'est-ce que c'est et pourquoi?
+Convertis une chaîne de caractères en minuscules signifie simplement changer toutes les lettres majuscules d'une chaîne en lettres minuscules. Les programmeurs font cela pour rendre les données plus cohérentes et faciles à manipuler.
 
-Lorsque vous travaillez avec des chaînes de caractères en Swift, il peut être utile de les convertir en minuscules pour différents besoins, tels que la comparaison de chaînes ou la manipulation de données. Dans cet article, nous allons découvrir comment convertir une chaîne de caractères en minuscules en utilisant Swift.
-
-## Comment Faire
-
-Pour convertir une chaîne de caractères en minuscules en Swift, nous utiliserons la méthode `lowercased()` qui est disponible sur n'importe quelle instance de chaîne de caractères. Voyons un exemple de code:
+## Comment:
+Voici quelques exemples de code pour convertir une chaîne de caractères en minuscules en Swift:
 
 ```Swift
-let food = "HAMBURGER"
-let lowercaseFood = food.lowercased()
-print(lowercaseFood)
+let mot = "Bonjour"
+let motEnMinuscules = mot.lowercased()
+print(motEnMinuscules)
 ```
-L'output de ce code sera "hamburger", avec toutes les lettres en minuscules. Nous pouvons également directement utiliser la méthode `lowercased()` sur une chaîne de caractères littérale:
+
+Cela produira la sortie suivante:
+
+```
+bonjour
+```
+
+Vous pouvez également utiliser la fonction `map` pour appliquer la conversion à chaque caractère de la chaîne:
 
 ```Swift
-let drink = "SODA"
-print(drink.lowercased())
+let phrase = "Bonjour à tous!"
+let phraseEnMinuscules = phrase.map { $0.lowercased() }.joined()
+print(phraseEnMinuscules)
 ```
-L'output de ce code sera également "soda". La méthode `lowercased()` renvoie une nouvelle chaîne de caractères avec toutes les lettres en minuscules, sans affecter la chaîne originale.
 
-## Plongeon Profond
+Cela produira la sortie suivante:
 
-La méthode `lowercased()` utilise les règles de casse spécifiées par l'algorithme Unicode. Cela signifie que tout caractère qui a une casse en Unicode sera converti en minuscules, y compris les lettres avec des accents et les caractères spéciaux. Cependant, la conversion en minuscules peut varier selon la langue utilisée, car certaines langues ont des règles spécifiques pour la casse. Par exemple, en turc, la conversion en minuscules d'une lettre i majuscule produit une lettre ı minuscule, tandis qu'en anglais, elle produit une lettre i minuscule.
+```
+bonjour à tous!
+```
 
-Il est également important de noter que la méthode `lowercased()` ne prend pas en compte la localisation de l'utilisateur. Si votre application prend en charge plusieurs langues, il peut être nécessaire d'utiliser des méthodes alternatives pour convertir une chaîne de caractères en minuscules en fonction de la langue de l'utilisateur.
+## Plongée en profondeur:
+Avant Swift, la méthode courante pour convertir une chaîne de caractères en minuscules était d'utiliser la fonction `lowercaseString` disponible dans la classe `NSString` de Foundation. Cependant, cette méthode était lente et ne fonctionnait qu'avec des caractères ASCII. Avec Swift, la fonction `lowercased` est plus rapide et prend en charge tous les caractères de l'unicode.
 
-## Voir Aussi
+Il existe également d'autres méthodes pour convertir une chaîne en minuscules, telles que l'utilisation de l'opérateur d'affectation étendue (`string.lowercased()`) ou l'utilisation de la structure `CharacterSet` pour déterminer les caractères à convertir.
 
-- [Documentation officielle sur les chaînes de caractères en Swift](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
-- [Guide complet sur la manipulation des chaînes de caractères en Swift](https://www.hackingwithswift.com/articles/113/how-to-build-help-nudges-into-your-app-with-swiftstring-extensions)
+## Voir aussi:
+- [La documentation officielle Swift sur la fonction `lowercased`](https://developer.apple.com/documentation/swift/string/2894704-lowercased)
+- [Une comparaison de performances entre les différentes méthodes de conversion en minuscules en Swift](https://www.hackingwithswift.com/articles/174/the-performance-of-strings-in-swift)
+- [La documentation officielle sur la structure `CharacterSet`](https://developer.apple.com/documentation/foundation/characterset)

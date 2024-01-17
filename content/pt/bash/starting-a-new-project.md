@@ -10,41 +10,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que começar um novo projeto?
+## O que é e por quê?
+Começar um novo projeto significa iniciar um novo trabalho de programação. Os programadores fazem isso porque querem criar algo novo e útil para resolver um problema específico ou melhorar um processo existente.
 
-Iniciar um novo projeto pode ser uma ótima maneira de desenvolver suas habilidades em programação e resolver problemas reais. Além disso, pode ser uma oportunidade de explorar novas tecnologias e expandir seu portfólio de projetos.
-
-## Como fazer
-
-Começar um novo projeto em Bash é simples e direto. Aqui estão alguns exemplos de código e saída para ajudar você a dar os primeiros passos:
-
-```Bash
-# Crie um novo diretório para o projeto
-mkdir meu_projeto
-
-# Acesse o diretório
-cd meu_projeto
-
-# Crie um arquivo de script Bash
-touch script.sh
-
-# Abra o arquivo com o editor de texto de sua preferência
-code script.sh
-
-# Adicione os comandos desejados ao script
-echo "Olá, mundo!"
+## Como fazer:
+Criar um novo projeto no Bash é simples. Basta seguir estes passos:
 ```
+Bash mkdir novo_projeto
+cd novo_projeto
+touch arquivo.txt
+```
+Este código criará um novo diretório chamado "novo_projeto" e um arquivo vazio dentro dele.
 
-Ao executar o script com o comando `bash script.sh`, você verá a saída "Olá, mundo!" no seu terminal. Agora, você pode continuar adicionando mais comandos e funcionalidades ao seu projeto.
+## Aprofundando:
+Iniciar um novo projeto no Bash é uma prática comum em programação, já que o Bash é uma linguagem de script amplamente utilizada em sistemas Linux e Unix. Existem outras opções para começar um novo projeto, como linguagens de programação orientadas a objetos, mas o Bash é uma ótima escolha para pequenos projetos e scripts.
 
-## Mergulho profundo
+Ao começar um novo projeto no Bash, é importante manter uma estrutura de arquivos organizada, criando diretórios e arquivos adequados para cada etapa do desenvolvimento. Também é importante utilizar ferramentas de controle de versão, como o Git, para facilitar o gerenciamento do código e manter um histórico de alterações.
 
-Antes de iniciar um novo projeto, é importante ter uma ideia clara do que você deseja criar. Pense em como seu projeto pode ser útil ou interessante para outras pessoas. Além disso, familiarize-se com a sintaxe básica de Bash, como declaração de variáveis, laços e condições.
-
-Uma vez que seu projeto esteja concluído, não se esqueça de documentar seu código para que outras pessoas possam entendê-lo facilmente. Você também pode compartilhar seu projeto no Github ou em outras plataformas para receber feedback e contribuições da comunidade.
-
-## Veja também
-
-- [Tutorial de Bash para iniciantes](https://www.digitalocean.com/community/tutorials/how-to-write-a-simple-bash-script-pt)
-- [Repositório com exemplos de projetos em Bash](https://github.com/learnbyexample/scripting_course/tree/master/Bash)
-- [Comunidade de desenvolvedores Bash no Reddit](https://www.reddit.com/r/bash/)
+## Veja também:
+- [Documentação oficial do Bash](https://www.gnu.org/software/bash/)
+- [Tutorial para iniciantes em Bash](https://linuxconfig.org/bash-scripting-tutorial-for-beginners)

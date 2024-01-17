@@ -10,54 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Qu'est-ce que c'est et pourquoi?
 
-Il est courant en programmation de devoir calculer une date dans le futur ou dans le passé. Cela peut servir dans de nombreuses applications telles que la gestion d'événements, la planification ou la mise à jour de données. Dans cet article, nous allons découvrir comment réaliser ce type de calculs en PHP de manière simple et efficace.
+Calculer une date dans le futur ou le passé est un procédé couramment utilisé par les programmeurs pour déterminer des événements spécifiques en fonction d'une date de référence. Cela peut être utile dans le développement d'applications et de sites web où il est important de planifier des tâches ou de définir des événements dans le temps.
 
-## Comment Faire
+## Comment faire:
 
-Pour calculer une date dans le futur ou dans le passé en PHP, nous allons utiliser la fonction ```date()``` combinée avec la fonction ```strtotime()```. La fonction ```date()``` permet de retourner la date actuelle selon un format spécifié, tandis que la fonction ```strtotime()``` permet de convertir une chaîne de caractères en timestamp, c'est-à-dire en nombre de secondes écoulées depuis le 1er janvier 1970.
+Voici un exemple de code en PHP pour calculer une date dans le futur en utilisant la fonction `date_add()` :
 
-Par exemple, pour calculer la date dans 2 semaines à partir d'aujourd'hui, nous pouvons utiliser la fonction ```strtotime()``` avec le paramètre ```"+2 weeks"```, qui retournera un timestamp correspondant à cette date. Ensuite, en utilisant la fonction ```date()``` avec le format souhaité, nous pouvons afficher cette date de la manière qui nous convient.
+```PHP
+$current_date = new DateTime(); // Date de référence
 
-Voici un exemple de code pour calculer la date dans 2 semaines à partir d'aujourd'hui et l'afficher au format jour/mois/année :
+// Ajouter 1 mois à la date de référence
+date_add($current_date, date_interval_create_from_date_string('1 month'));
 
-```
-<?php
-$date = strtotime("+2 weeks");
-echo date("d/m/Y", $date);
-?>
+echo $current_date->format('Y-m-d'); // Affiche la date dans un format spécifique
 ```
 
-Ce code va afficher la date dans 2 semaines à partir d'aujourd'hui, par exemple : 28/05/2021.
+Output: 2020-08-25 (si la date de référence est 2020-07-25)
 
-Il est également possible de calculer une date en utilisant d'autres unités de temps telles que les jours, les mois, les années, les heures ou les minutes. Voici un exemple pour calculer la date dans 1 mois et 3 jours à partir d'aujourd'hui :
+Pour calculer une date dans le passé, on peut utiliser la fonction `date_sub()` et spécifier l'interval de temps négatif.
 
-```
-<?php
-$date = strtotime("+1 month +3 days");
-echo date("d/m/Y", $date);
-?>
-```
+## Plongée en profondeur:
 
-Cela va afficher la date dans 1 mois et 3 jours à partir d'aujourd'hui, par exemple : 12/06/2021.
+Avant l'avènement du numérique, les calculs de dates se faisaient manuellement ou à l'aide de calendriers. Avec l'utilisation des langages de programmation tels que PHP, il est désormais facile de calculer des dates en fonction de différents paramètres comme les jours ouvrables, les années bissextiles et les fuseaux horaires.
 
-## Deep Dive
+Une alternative à l'utilisation de fonctions PHP pour calculer des dates est l'utilisation de bibliothèques externes telles que Carbon, qui offrent des fonctionnalités plus avancées pour la manipulation de dates.
 
-La fonction ```strtotime()``` peut également être utilisée pour calculer une date à partir d'un timestamp donné. Dans ce cas, nous pouvons utiliser le deuxième paramètre de la fonction pour spécifier le timestamp de référence. Par exemple, si nous voulons calculer une date dans 5 jours à partir du 15/05/2021, nous pouvons utiliser la fonction comme ceci :
+L'implémentation de la fonction `date_add()` utilise un objet DateTime et une intervalle de temps spécifiée pour ajouter cette période au date de référence. Il est important de noter que la date résultante peut être affectée par les réglages de fuseaux horaires et formats de date spécifiques.
 
-```
-<?php
-$date = strtotime("+5 days", strtotime("15/05/2021"));
-echo date("d/m/Y", $date);
-?>
-```
+## Voir aussi:
 
-Cela va afficher la date dans 5 jours à partir du 15/05/2021, soit le 20/05/2021.
-
-Il est également important de noter que la fonction ```strtotime()``` peut traiter une grande variété de chaînes de caractères en plus de celles présentées dans cet article. Vous pouvez trouver plus d'informations sur les formats de dates reconnus en consultant la documentation PHP sur la fonction [strtotime()](https://www.php.net/manual/fr/function.strtotime.php).
-
-## Voir Aussi
-
-- [Documentation PHP sur la fonction date()](https://www.php.net/manual/fr/function.date.php)
-- [Documentation PHP sur la fonction strtotime()](https://www.php.net/manual/fr/function.strtotime.php)
+- Documentation officielle de PHP pour les fonctions `date_add()` et `date_sub()`: https://www.php.net/manual/fr/function.date-add.php et https://www.php.net/manual/fr/function.date-sub.php
+- Documentation de la bibliothèque Carbon : https://carbon.nesbot.com/
+- Autres fonctions utiles de manipulation de dates en PHP : https://www.php.net/manual/fr/ref.datetime.php

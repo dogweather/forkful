@@ -10,30 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i Dlaczego?
 
-Czasem podczas programowania potrzebujemy ustalić długość ciągu znaków (string). Dowiedz się, jak to zrobić w Pythonie i dlaczego jest to przydatne.
+Znalezienie długości ciągu znaków jest jedną z podstawowych czynności, jakie wykonują programiści w języku Python. Polega ona na zliczeniu ilości znaków w danym ciągu, włączając w to spacje, interpunkcję i inne specjalne znaki. Jest to ważne, ponieważ pozwala nam na manipulowanie i analizowanie tekstowych danych w naszych programach.
 
-## Jak to zrobić
+## Jak to zrobić:
 
-```Python
-string = "Hello World!"
-print(len(string))
+```python 
+# Przykładowy ciąg znaków
+text = "To jest przykładowy tekst"
 
-# Output:
-# 12
+# Użycie wbudowanej funkcji len()
+dlugosc = len(text) 
+
+# Wypisanie wyniku
+print(dlugosc)
+
+# Output: 24
 ```
 
-W tym przykładzie tworzymy zmienną "string" zawierającą ciąg znaków "Hello World!". Następnie używamy wbudowanej funkcji "len()", która zwraca długość tego ciągu.
+## Głębszy Przegląd:
+Obliczanie długości ciągu znaków jest powszechnie stosowane w programowaniu od lat. Kiedyś programiści musieli ręcznie zliczać znaki, ale dzięki funkcji len() w języku Python jest to prostsze i szybsze. Istnieją również alternatywne sposoby na zliczanie długości ciągu, na przykład używając pętli, ale funkcja len() jest najbardziej efektywnym rozwiązaniem.
 
-## Deep Dive
+## Zobacz również:
+Poniżej znajdują się przydatne linki do zasobów na temat obliczania długości ciągu znaków w języku Python:
 
-Funkcja "len()" w Pythonie zwraca liczbę elementów w obiekcie. W przypadku ciągu znaków, obiektem jest właśnie ten ciąg, więc funkcja zwraca liczbę znaków w ciągu.
-
-Warto również wiedzieć, że funkcja "len()" może być używana nie tylko dla ciągów znaków, ale również dla innych typów danych, takich jak listy czy krotki.
-
-## Zobacz również
-
-- [Oficjalna dokumentacja Pythona o funkcji "len()"](https://docs.python.org/3/library/functions.html#len)
-- [Kurs "Python dla początkujących" na Codecademy](https://www.codecademy.com/learn/learn-python)
-- [Poradnik "Jak liczyć długość ciągu znaków w Pythonie"](https://realpython.com/python-string-length/)
+- [Dokumentacja Pythona o funkcji len()](https://docs.python.org/3/library/functions.html#len)
+- [Wideo-tutorial z przykładami użycia len()](https://www.youtube.com/watch?v=kBwhtEIXGII)
+- [Artykuł o manipulacji łańcuchami znaków w Pythonie](https://realpython.com/python-strings/)

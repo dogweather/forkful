@@ -10,33 +10,73 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä se on & miksi se on tärkeää?
+YAML on yksi monista tiedostomuodoista, joita ohjelmoijat voivat käyttää tallentamaan ja lukemaan tiedon keräämistä varten. Se on erityisen suosittu web-sovellusten kehittäjien keskuudessa, koska se tarjoaa helpon ja luettavan tavan tallentaa tietoa taulukkoina.
 
-Jos olet PHP-ohjelmoija, joka etsii keinoa tallentaa ja lukea tietoja rakenteellisessa ja helposti luettavassa muodossa, YAML voi olla hyvä vaihtoehto. Se on yksinkertainen ja suosittu tapa käsitellä tietoja, ja sen käyttö voi helpottaa työtäsi.
+## Miten se toimii?
+##### Säännöt:
+---
+- Käytä kaksoispisteitä avaimina ja arvoina:
+    ```
+    name: John
+    age: 30
+    ```
+- Käytä välilyöntejä sisennykseen:
+    ```
+    company:
+        name: XYZ Corp
+        location: Helsinki
+    ```
+- Käytä äsken säälittyä merkintätapaa monirivisten tekstimuotojen tallentamisessa:
+    ```
+    description: |
+        Tämä on
+        pitkä kuvaus
+        useilla riveillä.
+    ```
 
-## Miten tehdä tämä
+##### Esimerkki:
+---
+    ```
+    // Tiedon tallentaminen YAML-muodossa
 
-```PHP 
-<?php
-// Tiedoston avaaminen ja tiedon tallentaminen YAML-muotoon
-$auki = fopen('tiedosto.yml', 'w');
-fwrite($auki, yaml_emit($tiedot));
-fclose($auki);
-// Tiedon lukeminen YAML-tiedostosta
-$tiedot = yaml_parse_file('tiedosto.yml');
-// Tietojen tulostus
-print_r($tiedot);
-```
+    <?php
+    $data = yaml_parse_file("data.yaml");
+    print_r($data);
 
-Esimerkissä käytetään ```yaml_emit()``` ja ```yaml_parse_file()``` -funktioita, joilla voi tallentaa ja lukea tietoja YAML-muodossa. Funktiot ovat osa PHP:n vakioasennusta, joten ylimääräisiä asennuksia ei tarvita. YAML-tiedostot näyttävät samalta kuin taulukot ja ne ovat helppoja muokata.
+    // Tiedon lukeminen YAML-muodosta
 
-## Syvemmälle
+    <?php
+    $data = array("name" => "Marko", "age" => 25, "company" => array("name" => "ABC Ltd", "location" => "Turku"));
+    $output = yaml_emit($data);
+    echo $output;
+    ```
 
-YAML eli "YAML Ain't Markup Language" on tierakenteinen kieli, jota käytetään tallentamaan ja välittämään tietoja ihmisluettavassa muodossa. Sen syntaksi perustuu sisennyksiin ja kolmelle erityiselle merkille ```-```, ```?```, ja ```:```. YAML sopii hyvin esimerkiksi konfigurointitiedostoihin ja yksinkertaisten tietomallien tallentamiseen.
+##### Tuloste:
+---
+    ```
+    Array
+    (
+        [name] => Marko
+        [age] => 25
+        [company] => Array
+            (
+                [name] => ABC Ltd
+                [location] => Turku
+            )
+    )
 
-YAML:n käyttö PHP:ssa on helppoa, sillä funktiot ```yaml_emit()``` ja ```yaml_parse_file()``` tekevät työn puolestasi. Voit myös käyttää muita PHP:n YAML-tukea tarjoavia kirjastoja, kuten Symfony YAML-kirjastoa.
+    name: Marko
+    age: 25
+    company:
+        name: ABC Ltd
+        location: Turku
+    ```
+
+## Syvemmälle YAML:n maailmaan
+YAML kehitettiin alun perin JavaScript Object Notation (JSON) tiedostomuodon vaihtoehdoksi ja se onkin saanut suosiota erityisesti JavaScriptin ympäristössä. JSON on hieman tiukempi muotoilun suhteen, mutta YAML tarjoaa enemmän joustavuutta ja luettavuutta. Joissakin tapauksissa YAML:n käyttö voi kuitenkin hidastaa ohjelman suoritusta verrattuna esimerkiksi XML:ään.
 
 ## Katso myös
-
-- [PHP:n YAML-dokumentaatio](https://www.php.net/manual/en/book.yaml.php)
-- [Symfony YAML -kirjasto](https://symfony.com/doc/current/components/yaml.html)
+- [YAML:n virallinen verkkosivusto](http://www.yaml.org/)
+- [Symfony YAML-komponentti](https://symfony.com/doc/current/components/yaml.html)
+- [Alfred YAML editori](https://yaml-online-parser.appspot.com/)

@@ -10,40 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¿Qué y por qué?
 
-Generar números aleatorios es una habilidad importante en la programación ya que permite crear aplicaciones más dinámicas y divertidas. Además, puede ser útil en casos como la generación de contraseñas seguras o la selección al azar de elementos en una lista.
+Generar números aleatorios es una técnica utilizada por los programadores para obtener valores aleatorios en sus programas. Esto puede ser útil en situaciones como juegos, sorteos o para probar diferentes escenarios en un programa.
 
-## Cómo hacerlo
+## Cómo hacerlo:
 
-Para generar números aleatorios en Swift, podemos utilizar la función `arc4random_uniform` que nos devuelve un número aleatorio dentro de un rango determinado. Por ejemplo:
-
-```Swift
-let randomNumber = arc4random_uniform(10)
-// Esto nos devuelve un número aleatorio entre 0 y 9
-```
-
-También podemos utilizar la función `Int.random(in:)` que nos permite especificar un rango personalizado. Por ejemplo:
+Puedes generar números aleatorios en Swift utilizando la función `random()`, que devuelve un número aleatorio entre 0 y 1. Por ejemplo:
 
 ```Swift
-let randomNumber = Int.random(in: 1...100)
-// Esto nos devuelve un número aleatorio entre 1 y 100
+let randomNumber = random()
+print(randomNumber)
+
+// Output: 0.781243432
 ```
 
-Para obtener un número aleatorio de tipo `Double`, podemos utilizar la función `Double.random(in:)`. Por ejemplo:
+También puedes especificar un rango y obtener un número aleatorio dentro de ese rango utilizando la función `random(in:)`. Por ejemplo:
 
 ```Swift
-let randomNumber = Double.random(in: 0..<1)
-// Esto nos devuelve un número aleatorio entre 0 y 1
+let randomNumberInRange = random(in: 1...10)
+print(randomNumberInRange)
+
+// Output: 7
 ```
 
-## Profundizando
+## Profundizando:
 
-La función `arc4random_uniform` utiliza el generador de números aleatorios Xorshift de 128 bits. Este generador se caracteriza por ser rápido y producir resultados de alta calidad, pero no es adecuado para aplicaciones criptográficas debido a su predecibilidad. Por lo tanto, si se necesita una mayor seguridad en los números generados, se recomienda utilizar la clase `Random` de la biblioteca `CryptoKit`.
+La generación de números aleatorios tiene una larga historia en la informática y ha sido utilizada en una variedad de algoritmos y aplicaciones. Otras formas de generar números aleatorios incluyen utilizar la hora actual como semilla, algoritmos basados en cifrado y generadores de números pseudoaleatorios.
 
-Otro aspecto importante a tener en cuenta al generar números aleatorios es la semilla o "seed" utilizada. La semilla es un número que se utiliza para iniciar el generador de números aleatorios y determina la secuencia de valores que se generarán. Si no se especifica una semilla, la función `arc4random_uniform` utilizará como semilla el reloj del sistema, lo que significa que si se llama varias veces en poco tiempo, se obtendrán números muy similares.
+También es importante tener en cuenta que los números generados aleatoriamente no son verdaderamente aleatorios, sino que se denominan números pseudoaleatorios. Esto significa que siguen un patrón predecible y pueden repetirse si se utiliza la misma semilla.
 
-## Ver también
+## Ver también:
 
-- Documentación oficial de Apple sobre la función `arc4random_uniform`: https://developer.apple.com/documentation/swift/arc4random_uniform
-- Documentación oficial de Apple sobre la clase `Random` en la biblioteca `CryptoKit`: https://developer.apple.com/documentation/cryptokit/random
+Puedes obtener más información sobre la generación de números aleatorios en Swift en la documentación oficial de Apple: https://developer.apple.com/documentation/swift/random. También puedes explorar diferentes métodos para generar números pseudoaleatorios en la documentación de la API de Swift: https://developer.apple.com/documentation/swift/randomnumbergenerator.

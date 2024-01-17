@@ -10,54 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Чому
+## Що & Чому?
+Робота з JSON - це процес, який дозволяє програмі отримувати та обробляти дані у форматі JSON (JavaScript Object Notation). Програмісти використовують цей формат для передачі та отримання даних з веб-серверів або для збереження даних на своєму пристрої.
 
-У сучасному програмуванні, є безліч форматів для обміну даними між додатками. Один із них, JSON, є дуже поширеним завдяки своїй простоті та легкості використання. Розуміння того, як працювати з JSON, дозволить зберігати та обмінюватися даними з різних джерел без зайвих зусиль.
+## Як те робити:
+Давайте розглянемо невеликий приклад, як ми можемо використовувати JSON у нашому коді Swift:
 
-## Як працювати з JSON у Swift
+```Swift
+let jsonData = """
+{
+    "name": "John",
+    "age": 32,
+    "city": "Kyiv"
+}
+""".data(using: .utf8)
 
-Існує кілька способів обробки даних у форматі JSON у Swift, але найбільш простим і найпопулярнішим є використання стандартної бібліотеки Foundation.
+struct Person: Codable {
+    let name: String
+    let age: Int
+    let city: String
+}
 
-Наприклад, якщо ми маємо JSON-файл з даними про користувачів, ми можемо здійснити його парсинг та отримати вміст у вигляді словника Swift за допомогою наступного коду:
-
-```Swift 
-if let path = Bundle.main.path(forResource: "users", ofType: "json") {
-    do {
-        let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
-        let users = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: Any]
-        print(users)
-    } catch {
-        print(error)
-    }
+do {
+    let person = try JSONDecoder().decode(Person.self, from: jsonData!)
+    print(person) // Виведе: Person(name: "John", age: 32, city: "Kyiv")
+} catch {
+    print(error.localizedDescription) // Обробка помилки, якщо дані JSON неможливо розкодувати
 }
 ```
 
-Результат виконання цього коду буде виглядати приблизно так:
+## Занурення:
+JSON був створений у 2001 році як легкий та ефективний формат для обміну даними. Його популярність зросла з розвитком сучасних веб-технологій та мобільного програмування. Існують інші альтернативи JSON, такі як XML та CSV, але JSON залишається найбільш популярним сьогодні.
 
-```
-Optional(["users": <__NSArrayM 0x600002462e10>(
-{
-    "name" = "John";
-    "age" = 25;
-},
-{
-    "name" = "Amanda";
-    "age" = 30;
-},
-{
-    "name" = "Mark";
-    "age" = 20;
-}
-)
-])
-```
+Розбір та створення JSON-даних у Swift здійснюється з використанням протоколу `Codable`, який дозволяє миттєво перетворювати структури даних у формат JSON та навпаки. Також у Swift є багато сторонніх бібліотек, які роблять роботу з JSON ще простішою та зручнішою.
 
-Тут ми звернулися до файлу "users.json", який містить список користувачів та їх вік. Зчитавши цей файл із допомогою методу `Data(contentsOf:options:)` та використавши метод `jsonObject(with:options:)`, ми отримали словник у форматі [String: Any]. Далі, ми можемо легко отримати доступ до конкретної інформації, як наприклад, ім'я першого користувача: `users["users"]?[0]["name"]`.
-
-## Детальніше про роботу з JSON у Swift
-
-Методи `Data(contentsOf:options:)` та `jsonObject(with:options:)` не єдині способи обробки даних у форматі JSON у Swift. Також можна використовувати сторонні бібліотеки, які дозволяють більш зручно та ефективно працювати з JSON-даними.
-
-Наприклад, бібліотека SwiftyJSON дозволяє отримати доступ до JSON-даних за допомогою зручних методів та операцій, зробивши код більш зрозумілим та елегантним. Вона також автоматично переводить типи даних, зменшуючи ризик помилок при роботі з JSON.
-
-Для ознайомлення з іншими бібліотеками та рішеннями для роботи з JSON у Swift, рекоменд
+## Дивіться також:
+- [Apple's documentation on Codable](https://developer.apple.com/documentation/foundation/archives_and_serialization/encoding_and_decoding_custom_types)
+- [SwiftyJSON - a popular third-party library for working with JSON in Swift](https://github.com/SwiftyJSON/SwiftyJSON)
+- [Hacking with Swift's tutorial on working with JSON in Swift](https://www.hackingwithswift.com/read/7/2/working-with-json-in-swift)

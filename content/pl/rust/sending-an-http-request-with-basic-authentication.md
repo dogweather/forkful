@@ -1,7 +1,7 @@
 ---
-title:                "Wysyłanie żądania http z podstawową autoryzacją"
-html_title:           "Rust: Wysyłanie żądania http z podstawową autoryzacją"
-simple_title:         "Wysyłanie żądania http z podstawową autoryzacją"
+title:                "Wysyłanie żądania http z podstawową uwierzytelnieniem"
+html_title:           "Rust: Wysyłanie żądania http z podstawową uwierzytelnieniem"
+simple_title:         "Wysyłanie żądania http z podstawową uwierzytelnieniem"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "HTML and the Web"
@@ -10,44 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i Dlaczego?
+Wysyłanie zapytania HTTP z podstawową autoryzacją to sposób komunikacji między serwerem a klientem, w którym dane uwierzytelniające są przesyłane w nagłówku żądania. Programiści stosują to w celu zabezpieczenia dostępu do zasobów oraz autoryzacji użytkowników.
 
-W dzisiejszych czasach coraz więcej aplikacji wymaga autoryzacji użytkownika. Przesyłanie żądań HTTP z uwierzytelnianiem podstawowym jest jednym z najprostszych sposobów na zapewnienie bezpieczeństwa podczas komunikacji z serwerem. W tym artykule dowiesz się, jak za pomocą Rusta wykonać takie żądanie i otrzymać pożądany wynik.
-
-## Jak wykonać
-
-Rust jest językiem programowania, który jest idealny dla tworzenia szybkich i bezpiecznych aplikacji sieciowych. Aby wykonać żądanie HTTP z uwierzytelnianiem podstawowym, wystarczy użyć biblioteki reqwest.
+## Jak to zrobić:
+Kodowanie przykładów i wyników wywołania w blokach kodu ```Rust...```
 
 ```Rust
-use reqwest::blocking::Client;
+use reqwest::blocking::{Client, Request};
+use reqwest::StatusCode;
 
-let username = "example_username";
-let password = "example_password";
+fn main() {
+    // Tworzenie klienta HTTP
+    let client = Client::new();
+    // Tworzenie żądania z metodą GET i adresem URL docelowym
+    let request = Request::new(reqwest::Method::GET, "https://example.com");
+    // Dodawanie nagłówka uwierzytelniającego do żądania
+    let request = request.header("Authorization", "Basic YWxhZGRpbjpvcGVuc2VzYW1l");
+    // Wysyłanie żądania i pobieranie odpowiedzi
+    let response = client.execute(request).unwrap();
 
-let client = Client::new();
-let response = client.get("https://example.com")
-    .basic_auth(username, Some(password))
-    .send()
-    .expect("Nie udało się wysłać żądania");
-
-println!("Kod odpowiedzi: {}", response.status());
-
-let body = response.text()
-    .expect("Nie udało się odczytać zawartości");
-
-println!("Zawartość odpowiedzi: {}", body);
+    // Sprawdzanie kodu odpowiedzi
+    if response.status() == StatusCode::OK {
+        println!("Sukces! Uzyskano dostęp do zasobu.");
+    } else {
+        println!("Wystąpił błąd: {}.", response.status());
+    }
+}
 ```
 
-Powyższy kod tworzy nowego klienta żądań, ustawiając jednocześnie nazwę użytkownika i hasło do uwierzytelnienia. Następnie wysyła żądanie GET na wskazany adres URL i oczekuje odpowiedzi. W przypadku sukcesu, kod odpowiedzi oraz zawartość odpowiedzi są wyświetlane na ekranie.
+## Głębszy zanurzenie:
+Historia:
+Wysyłanie zapytania HTTP z podstawową autoryzacją zostało wprowadzone w początkowych wersjach protokołu HTTP w latach 90. jako prosty sposób na uwierzytelnianie użytkowników. Współcześnie, jest wykorzystywane w wielu aplikacjach webowych oraz API.
 
-## Deep Dive
+Alternatywy:
+Inne sposoby uwierzytelniania w protokole HTTP to m.in. uwierzytelnianie przez token, digest i NTLM. Każda z metod ma swoje zalety i wykorzystanie zależy od specyfiki projektu.
 
-Podstawowe uwierzytelnianie w protokole HTTP polega na przesyłaniu nazwy użytkownika i hasła w nagłówku "Authorization" żądania. W naszym przykładzie użyliśmy metody `basic_auth` z biblioteki reqwest, która automatycznie tworzy odpowiedni nagłówek. Jeżeli jednak chciałbyś zbudować go ręcznie, musisz dodać prefiks "Basic" przed zakodowanym ciągiem znaków `base64` zawierającym nazwę użytkownika i hasło oddzielone dwukropkiem.
+Szczegóły implementacji:
+Aby wysłać żądanie z podstawową autoryzacją w języku Rust, należy użyć biblioteki reqwest, która umożliwia łatwe tworzenie i wysyłanie żądań HTTP. W przykładzie powyżej, użyliśmy metody blockingu, jednak istnieje również wersja asynchroniczna z użyciem tokio.
 
-Ponadto, należy pamiętać, że podstawowe uwierzytelnianie nie jest bezpieczne, ponieważ nazwa użytkownika i hasło są przesyłane w postaci niezaszyfrowanej. Dlatego też powinno być stosowane tylko w przypadku wyraźnej potrzeby i zawsze powinno być zastępowane bardziej bezpiecznymi metodami uwierzytelniania.
-
-## Zobacz także
-
-- [Dokumentacja biblioteki reqwest](https://docs.rs/reqwest/)
-- [Wykorzystanie nagłówka "Authorization" w protokole HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Authorization)
-- [Bezpieczeństwo uwierzytelniania w protokole HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
+## Zobacz też:
+- Dokumentacja biblioteki reqwest: https://docs.rs/reqwest/
+- Wysyłanie zapytań HTTP w języku Rust: https://www.rust-lang.org/learn/get-started
+- Porównanie różnych metod uwierzytelniania w protokole HTTP: https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication

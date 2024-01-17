@@ -1,7 +1,7 @@
 ---
-title:                "Användning av reguljära uttryck"
-html_title:           "Javascript: Användning av reguljära uttryck"
-simple_title:         "Användning av reguljära uttryck"
+title:                "Använda reguljära uttryck"
+html_title:           "Javascript: Använda reguljära uttryck"
+simple_title:         "Använda reguljära uttryck"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Strings"
@@ -10,50 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+#Vad & Varför?
+Regular expressions, eller regex, är ett sätt att söka efter mönster i textsträngar. Det är ett kraftfullt verktyg som programmörer använder för att hitta och manipulera data i texter. Genom att använda regex kan vi snabbt och effektivt extrahera information från stora mängder text.
 
-Regular expressions, eller Regex, är ett kraftfullt verktyg som används för att söka och manipulera textsträngar i Javascript. Med hjälp av Regex kan du snabbt och enkelt hitta och bearbeta specifika mönster eller tecken i en text.
+#Hur man gör:
+För att använda regex i JavaScript använder vi objektet "RegExp". Här är ett enkelt exempel på hur man hittar matchningar av tecknet "a" i en textsträng:
 
-## Så här gör du
+```JavaScript
+let regex = /a/g; 
+let text = "JavaScript är ett kraftfullt verktyg för webbutveckling."; 
 
-Regex kan användas i Javascript genom att använda inbyggda metoder som "test()" och "match()". För att använda Regex behöver du skriva ett mönster som matchar de tecken eller mönster du letar efter och sedan "matcha" det mot en textsträng.
-
-```Javascript
-let myString = "Hej! Mitt namn är Ivan.";
-let regex = /Ivan/;
-let result = regex.test(myString); // Returnerar true
+let result = text.match(regex); // resultatet blir en array med alla matchningar
+console.log(result); // ["a","a","a","a"];
 ```
 
-Resultatet av detta "test" kommer att returnera antingen "true" eller "false", beroende på om mönstret matchar textsträngen eller inte.
+Vi kan också använda regex för att ersätta delar av en textsträng. I exemplet nedan byter vi ut alla siffror i en textsträng till ett annat tecken:
 
-Du kan också använda Regex för att hitta och ersätta text i en sträng med hjälp av metoden "replace()".
+```JavaScript
+let regex = /[0-9]/g; 
+let text = "Denna text innehåller både siffror (123) och bokstäver."; 
 
-```Javascript
-let myString = "Välkommen, [namn]!";
-let regex = /[namn]/g;
-let result = myString.replace(regex, "Ivan"); // Returnerar "Välkommen, Ivan!"
+let result = text.replace(regex, "*"); // resultatet blir "Denna text innehåller både siffror (*) och bokstäver."
 ```
 
-Du kan använda regex för att hitta och extrahera specifika delar av en textsträng genom att använda metoden "match()". Detta är särskilt användbart när man arbetar med data från externa källor som till exempel en API-anrop.
+#Djupdykning:
+Reguljära uttryck har funnits sedan 1950-talet och har använts inom många olika programmeringsspråk. I JavaScript används de främst för att söka, matcha och ersätta texter. En annan populär metod för strängmanipulering är "string methods", men regex erbjuder ett mer kraftfullt och flexibelt sätt att hantera texter.
 
-```Javascript
-let myString = "Datumet är 02/12/2020";
-let regex = /\d{2}\/\d{2}\/\d{4}/g;
-let result = myString.match(regex); // Returnerar ["02/12/2020"]
-```
+Alternativ till regex är "wildcard patterns" och "string searching algorithms", men dessa är oftast mindre precisa och mer begränsade i funktionalitet.
 
-Det finns också många olika specialtecken som du kan använda i Regex för att göra dina sökningar mer specifika och avancerade. Till exempel kan du använda "[]" för att matcha en specifik uppsättning tecken, "?" för att matcha ett tecken som kan vara där eller inte och många fler.
+Det finns också vissa detaljer att tänka på när man använder regex i JavaScript. Till exempel måste man lägga till "\\" exemplet '/\w/' för att matcha ett tecken som börjar med '\\'. Det finns också några skillnader i hur regex fungerar i olika webbläsare, så det är viktigt att testa koden i olika miljöer.
 
-## Fördjupning
+#Se också:
+För mer information om användning av reguljära uttryck i JavaScript kan du kolla in följande resurser:
 
-Att kunna använda Regex är en viktig färdighet för alla Javascript-utvecklare. Det är en effektiv och kraftfull metod för att hantera textsträngar och kan spara dig mycket tid och frustration när du arbetar med data.
-
-Några saker att tänka på när du använder Regex är att det kan vara känsligt för små skillnader i texten, till exempel skillnaden mellan stora och små bokstäver, så se till att ditt mönster är rätt och att du testar det ordentligt innan du använder det i din kod.
-
-Det finns också många resurser tillgängliga på nätet för att hjälpa dig lära dig mer om Regex, inklusive tutorialer, cheat sheets och community-forum där du kan få hjälp och ställa frågor.
-
-## Se även
-
-- [RegExr](https://regexr.com/) - En interaktiv online editor som hjälper dig att testa och lära dig Regex.
-- [MDN Regex](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions) - En omfattande guide till Regex på MDN.
-- [Regex101](https://regex101.com/) - En annan online editor för att testa och lära dig Regex.
+- MDN docs: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions
+- W3Schools: https://www.w3schools.com/js/js_regexp.asp

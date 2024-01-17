@@ -1,7 +1,7 @@
 ---
-title:                "वर्तमान तिथि प्राप्त करना"
-html_title:           "Arduino: वर्तमान तिथि प्राप्त करना"
-simple_title:         "वर्तमान तिथि प्राप्त करना"
+title:                "वर्तमान तारीख प्राप्त करना"
+html_title:           "Arduino: वर्तमान तारीख प्राप्त करना"
+simple_title:         "वर्तमान तारीख प्राप्त करना"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Dates and Times"
@@ -10,42 +10,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## इसलिए 
-क्या आप यह जानने के लिए उत्सुक हैं कि हम प्रोग्रामिंग में तारीख को कैसे प्राप्त कर सकते हैं? अर्डुइनो कुशल प्रोग्रामर ही नहीं, लेकिन क्या आप इस अंतरिक्ष कार्यक्रमी कंपनी के शानदार उपकरण के साथ हुए बैतैं हैं? यदि ऐसा है. आपको सबसे बढ़िया प्रथम कदम समझ सकते हैं सुरुआत करने के लिए इस "विस्तार में" से पढ़ सकते हैं कि आप कैसे अपने अर्डुइनो के साथ करेंगे, तारीख को प्राप्त करने का प्रयास "रीले हो रहा हे, आपको प्राप्त होता है ना और समय और तारीख पर जानना है कि आप अपने प्रोजेक्ट में संचालकता कितना डता है
+# Arduino में हाल की तारीख प्राप्त कैसे करें: एक सरल गाइड
 
-## कैसे करें
+## आप क्या हैं और इसे क्यों करते हैं?
+हाल की तारीख प्राप्त करना एक प्रोग्रामर के लिए बहुत महत्वपूर्ण है। यह उन्हें इन दिनों से जुड़े हुए तथ्यों को जानने में मदद करता है और अपनी प्रोग्राम को सही तारीख को आधार बनाकर समय सेट करने में भी सहायता प्रदान करता है। 
+
+## कैसे करें:
 ```Arduino
-#include <RTClib.h>
-RTC_DS1307 rtc;
-DateTime now;
+#include <Time.h>
+#include <TimeLib.h>
 
-void setup() {
-  rtc.begin();
+void setup(){
+  setTime(16,26,00,23,4,2021);  //समय और तारीख को सेट करें
+  Serial.begin(9600); //सीरियल मॉनिटर की शुरूआत करें
 }
 
-//getting current date and time
-void loop() {
-  now = rtc.now();
-  Serial.print(now.year(), DEC);
-  Serial.print('/');
-  Serial.print(now.month(), DEC);
-  Serial.print('/');
-  Serial.print(now.day(), DEC);
-  Serial.print(" ");
-  Serial.print(now.hour(), DEC);
-  Serial.print(':');
-  Serial.print(now.minute(), DEC);
-  Serial.print(':');
-  Serial.print(now.second(), DEC);
-  Serial.println();
+void loop(){
+  time_t t = now(); 
+  //वर्तमान समय और तारीख को प्रिंट करें
+  Serial.print("वर्तमान समय: "); Serial.print(hour()); 
+  Serial.print(":"); 
+  printDigits(minute()); 
+  Serial.print(":"); 
+  printDigits(second()); 
+  Serial.print("  वर्तमान तिथि: "); 
+  Serial.print(day()); 
+  Serial.print("/"); 
+  Serial.print(month()); 
+  Serial.print("/"); 
+  Serial.println(year()); 
+  delay(1000); 
+} 
 
-  delay(1000);
+void printDigits(int digits){
+  //दो अंकों के लिए 0 जोड़ें
+  Serial.print(":"); 
+  if(digits < 10) 
+    Serial.print('0'); 
+  Serial.print(digits); 
 }
 ```
+#### समाउत्पाद उदाहरण:
+```
+वर्तमान समय: 16:26:00
+वर्तमान तिथि: 23/4/2021
+```
 
-**आउटपुट:**
+## गहराई तक जाएं:
+समय और तारीख को प्राप्त करने की इस प्रकार की सुलभता को विकसित किया गया था कि यह अब Arduino प्रोग्रामिंग में महत्वपूर्ण हो गया है। इसका विकल्प इतना स्पष्ट नहीं है। आप एक RTC (Real Time Clock) मॉड्यूल का उपयोग भी कर सकते हैं जो समय और तारीख को सीधे प्राप्त कर सकता है। 
 
-2021/5/18 13:30:20
+## जुड़े रहें:
+समय और तारीख को प्राप्त करने के लिए अधिक जानकारी के लिए निम्नलिखित स्रोतों की जाँच करें:
 
-## दीप डाइव
-अर्डुइनो में, मूल्य के लिए आप प्रोग्रामिंग किए गए मूल्य कब त्रुति वक्त होगा, हो सकता है कि आपको अपने सर्किट में भी तारीख और समय को संचालित करने के लिए तारीख समय कार्यक्रमी की आवश्यकता होती है. साध्य हो में भव्य अनुभव है कि आप अपने राजमार्ग का हि योजना करने में मदद करता है, तारीख प्राप्त करने के लिए इस आर्टिकल के साथ आपको प्रैक्टिक्य हैंड - सो से सीख सकते हैं. यदि आप
+- [Time Library for Arduino](https://playground.arduino.cc/Code/time/)
+- [Arduino Real Time Clock Tutorial](https://www.circuitbasics.com/how-to-set-up-an-i2c-rtc-for-arduino-and-esp8266/)

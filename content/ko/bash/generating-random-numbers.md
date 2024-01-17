@@ -1,7 +1,7 @@
 ---
-title:                "랜덤 숫자 생성"
-html_title:           "Bash: 랜덤 숫자 생성"
-simple_title:         "랜덤 숫자 생성"
+title:                "랜덤 숫자 생성하기"
+html_title:           "Bash: 랜덤 숫자 생성하기"
+simple_title:         "랜덤 숫자 생성하기"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Numbers"
@@ -10,43 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+## 무엇 & 왜?
 
-우리는 종종 무작위 숫자를 사용하여 프로그래밍을 할 때가 있습니다. 예를 들어, 게임을 만들거나 무작위로 데이터를 생성하거나 시뮬레이션을 실행할 때 무작위 숫자는 도움이 될 수 있습니다.
+난수 생성이란 무엇일까요? 그리고 프로그래머들이 이것을 왜 하는 걸까요? 난수 생성은 우리가 원하는 범위에서 랜덤하게 숫자를 생성하는 것을 말합니다. 프로그래머들은 이를 사용하여 다양한 알고리즘을 개발하고, 보안을 강화하며, 시스템 테스트를 진행하기 위해 사용합니다.
 
-## 방법
+## 어떻게:
 
-우선, `shuf` (shuffle의 약어)을 사용하여 무작위 숫자를 얻는 것을 살펴보겠습니다. 아래 예제를 실행해보세요.
+```bash
+# 1부터 10까지 무작위 숫자 출력하기
+echo $(( (RANDOM % 10) + 1))
 
-```Bash
-shuf -i 1-10 -n 1
+# 문자열 리스트에서 랜덤한 값 출력하기
+words=("apple" "banana" "orange")
+echo "${words[RANDOM % ${#words[@]}]}"
 ```
 
-위 명령어는 1부터 10까지의 숫자 중에서 무작위로 하나를 출력합니다. `-i` 옵션은 입력 범위를 지정하고, `-n` 옵션은 출력할 숫자의 개수를 지정합니다. 결과는 매번 실행할 때마다 다르게 나올 것입니다.
+### 샘플 출력:
 
-이번에는 `random` 명령어를 사용하여 무작위 숫자를 출력하는 방법을 살펴보겠습니다. 아래 예제를 실행해보세요.
+6
+banana
 
-```Bash
-echo $RANDOM
-```
+## 깊게 알아보기:
 
-`random` 명령어는 이미 Bash 쉘에서 내장되어 있는 명령어이므로 추가적인 설치가 필요하지 않습니다. 위 명령어를 여러 번 실행하면 매번 다른 숫자가 출력됩니다.
+### 역사적인 배경:
 
-마지막으로, 무작위 숫자를 변수로 저장하는 방법을 살펴보겠습니다.
+난수 생성은 컴퓨터 과학과 수학에서 오랜 역사를 가지고 있습니다. 옛날 컴퓨터들은 하드웨어적으로 난수를 생성하는 방식을 사용하였지만, 현대의 컴퓨터에서는 소프트웨어적으로 난수를 생성합니다. 이는 더욱 정확하고 빠르게 무작위성을 제공해줍니다.
 
-```Bash
-random_number=$RANDOM
-echo $random_number
-```
+### 대안:
 
-위 코드는 `echo` 명령어를 사용하여 변수 `random_number`에 저장된 무작위 숫자를 출력합니다. 변수를 사용하면 나중에 해당 숫자를 다시 사용할 수 있습니다.
+Bash 외에도 다른 언어들에서도 난수를 생성할 수 있습니다. 예를 들어, Python의 'random' 라이브러리를 사용할 수 있습니다. 또한, 난수 생성기 알고리즘도 다양하기 때문에, 프로그래머들은 알고리즘 선택에 대해 고려해야 합니다.
 
-## 딥 다이브
+### 구현 세부 사항:
 
-무작위 숫자를 생성하는 방법은 컴퓨터에서 매우 중요한 역할을 합니다. 프로그램의 결과를 예측할 수 없게 만드는 데 사용되며, 암호화나 보안 분야에서도 사용됩니다. 다양한 무작위 숫자 생성 알고리즘에 대해 자세히 공부하고, 프로그램에서 어떻게 활용할 수 있는지 알아보는 것이 좋습니다.
+Bash에서는 '$RANDOM' 변수를 사용하여 난수를 생성할 수 있습니다. 이 변수는 32767까지의 정수를 생성하며, 이를 원하는 범위로 조정할 수 있습니다. 또한, 'shuf'와 같은 유틸리티를 사용하여 파일 내의 무작위 줄을 출력할 수도 있습니다.
 
-## 관련 정보
+## 관련 자료:
 
-- [Bash Reference Manual - RANDOM](https://www.gnu.org/software/bash/manual/html_node/Bourne-Shell-Builtins.html#index-RANDOM)
-- [The Linux Command Line - Generating Random Numbers](http://linuxcommand.org/lc3_wss0150.php)
-- [Random Number Generator in Bash Scripting](https://www.baeldung.com/linux/random-number-generator-in-bash-scripting)
+- [리눅스 기본 명령어들 에대한 정리](https://m.blog.naver.com/PostView.nhn?blogId=gygs566&logNo=110125626744&proxyReferer=https%3A%2F%2Fwww.google.com%2F)

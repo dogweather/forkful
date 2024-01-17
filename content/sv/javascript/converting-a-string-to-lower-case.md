@@ -1,7 +1,7 @@
 ---
-title:                "Konvertera en sträng till gemener"
-html_title:           "Javascript: Konvertera en sträng till gemener"
-simple_title:         "Konvertera en sträng till gemener"
+title:                "Omvandla en sträng till små bokstäver"
+html_title:           "Javascript: Omvandla en sträng till små bokstäver"
+simple_title:         "Omvandla en sträng till små bokstäver"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Strings"
@@ -10,34 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
-Det finns många olika situationer där det kan vara användbart att konvertera en sträng till gemener (lower case) i Javascript. Byd den korrekta formen av ett ord till det korresponderande ordet i gemener, tillåter det en enkel sökning och jämförelse av strängar, samt underlättar läsbarheten av kod.
+## Vad & Varför?
 
-## Så här gör du
-För att konvertera en sträng till gemener i Javascript, används metoden `toLowerCase()` på den aktuella strängen. Nedan finns ett exempel på kod som visar enkel användning av denna metod:
+Konvertering av en sträng till gemener är en vanlig operation inom programmering. Det innebär att alla bokstäver i en sträng ändras till små bokstäver. Detta görs ofta för att underlätta jämförelser mellan olika strängar och för att följa konventionen att variabelnamn i Javascript ska skrivas i camelCase.
 
-```Javascript
-let str = "HEJ";
-let convertedStr = str.toLowerCase();
-console.log(convertedStr);
-```
-
-Det ovanstående exemplet kommer att skriva ut "hej" i konsolen, då strängen "HEJ" har konverterats till gemener. Det är också möjligt att direkt tillämpa `toLowerCase()` på en sträng som en del av en strängoperation, som så:
+## Hur gör man:
+För att konvertera en sträng till gemener i Javascript kan man använda sig av metoden .toLowerCase(). Här är ett exempel på hur man kan göra det:
 
 ```Javascript
-let str = "Hej";
-let modifiedStr = str + " världen".toLowerCase();
-console.log(modifiedStr);
+let str = "HeJ GöR IKrilL"
+console.log(str.toLowerCase());
 ```
+Output: "hej gör ikkrill"
 
-I detta fall skulle konsolen skriva ut "Hej världen", där "världen" har konverterats till gemener. Det är också värt att notera att metoden `toLowerCase()` returnerar en helt ny sträng, så den ursprungliga strängen bibehålls i sin ursprungliga form.
+Notera att det ursprungliga värdet av strängen inte ändras, vi använder bara en funktion för att skapa en tillfällig ny sträng med alla bokstäver i gemener.
 
-## Djupdykning
-Vid konvertering till gemener, tar `toLowerCase()`-metoden hänsyn till det aktuella språket i koden. Detta betyder att bokstäver som har olika former i olika språk (som till exempel "I" och "ı" i engelska och turkiska) kommer att omvandlas korrekt till gemener enligt det aktuella språket. Om det inte finns ett specifikt språk angivet i JavaScript-koden, används vanligtvis standardspråket för webbläsaren.
+## Djupdykning:
+Konvertering av strängar till gemener är inte en ny funktion, det har funnits sedan de första programmeringsspråken. Men i vissa språk, som till exempel C, fanns det inte inbyggda metoder för detta och man behövde använda sig av så kallade ASCII tabeller för att göra konverteringen. Javascript, liksom många moderna programmeringsspråk, har inbyggda metoder för att underlätta denna process.
 
-Det är också värt att nämna att vissa specialtecken och icke-latinbaserade bokstäver kanske inte konverteras korrekt till gemener. Därför är det alltid viktigt att testa koden noggrant och se till att det önskade resultatet uppnås.
+En alternativ metod för att konvertera en sträng till gemener är att loopa genom alla bokstäver och ändra dem manuellt. Detta kan vara användbart för programmerare som vill ha mer kontroll över sin kod, men det kräver mer kod och kan vara mer tidskrävande.
 
-## Se också
-- [MDN webbdocs - String.prototype.toLowerCase()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)
-- [W3Schools - Javascript String toLowerCase() Method](https://www.w3schools.com/jsref/jsref_tolowercase.asp)
-- [JavaScript.info - Changing the register](https://javascript.info/change-case)
+När det kommer till implementationen av .toLowerCase() i Javascript så använder det sig av Unicode-teckenuppsättningen för att konvertera bokstäverna. Detta innebär att även tecken från andra språk, som till exempel accentuerade bokstäver, kan konverteras till gemener på ett korrekt sätt.
+
+## Se även:
+- Javascript String toLowerCase() Method: https://www.w3schools.com/jsref/jsref_tolowercase.asp
+- ASCII Table: https://www.asciitable.com/
+- Unicode: https://unicode-table.com/en/

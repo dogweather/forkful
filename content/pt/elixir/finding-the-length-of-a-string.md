@@ -1,7 +1,7 @@
 ---
-title:                "Encontrando o comprimento de uma string."
-html_title:           "Elixir: Encontrando o comprimento de uma string."
-simple_title:         "Encontrando o comprimento de uma string."
+title:                "Encontrando o comprimento de uma string"
+html_title:           "Elixir: Encontrando o comprimento de uma string"
+simple_title:         "Encontrando o comprimento de uma string"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -10,41 +10,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que?
+## O que & Por que?
+Encontrar o comprimento de uma string é uma operação comum em programação que consiste em determinar quantos caracteres existem dentro de uma string. Os programadores precisam determinar o comprimento de uma string para realizar diversas tarefas, como validar entrada do usuário, manipular dados ou formatar saída de dados.
 
-Você já parou para pensar em como o Elixir consegue determinar o tamanho de uma string? Apesar de parecer algo simples, esse é um assunto interessante e importante para qualquer programador.
-
-## Como Fazer
-
-Para encontrar o tamanho de uma string no Elixir, utilizamos a função `String.length/1`. Veja um exemplo abaixo:
-
+## Como fazer:
 ```Elixir
-iex> String.length("Olá, mundo!")
-11
+String.length("Olá mundo") #=> 9
+```
+### Saída:
+```
+9
 ```
 
-Podemos também utilizar essa função com variáveis:
+## Aprofundando-se:
+A operação de encontrar o comprimento de uma string tem sido uma tarefa básica de programação desde os primeiros dias da criação de linguagens de programação. No entanto, dependendo da linguagem utilizada, pode haver diferenças na sua implementação.
 
-```Elixir
-iex> hello = "Olá, mundo!"
-iex> String.length(hello)
-11
-```
+No caso do Elixir, a função `String.length/1` retorna o número de caracteres na string fornecida como argumento. Outras linguagens, como C++, exigem que o programador crie uma função dedicada para encontrar o comprimento de uma string. Há também a possibilidade de usar a função `String.size/1`, que retorna o número de bytes na string, o que pode ser útil em casos de strings contendo caracteres Unicode.
 
-Nesse caso, a variável `hello` está armazenando a string e a função `String.length/1` é chamada utilizando essa variável como argumento.
-
-## Mergulho Profundo
-
-Ao utilizar a função `String.length/1`, o Elixir conta o número de caracteres da string e retorna esse valor. Mas como ele faz isso?
-
-Na verdade, o Elixir utiliza um conceito de listas encadeadas para armazenar strings. Ou seja, a string "Olá, mundo!" é na verdade uma lista com 11 elementos, onde cada elemento corresponde a um caractere.
-
-Ao chamar a função `String.length/1`, o Elixir percorre essa lista e conta o número de elementos, determinando assim o tamanho da string.
-
-Isso mostra como o Elixir utiliza uma abordagem simples e eficiente para encontrar o tamanho de uma string.
-
-## Veja Também
-
-- [Documentação oficial do Elixir sobre strings](https://hexdocs.pm/elixir/String.html)
-- [Artigo sobre estruturas de dados em Elixir](https://medium.com/@llucasreis/estruturas-de-dados-2ba010fcb2c0)
-- [Vídeo explicando a função `String.length/1` em detalhes](https://www.youtube.com/watch?v=T1lvgI0_c3g)
+## Veja também:
+- [Documentação do Elixir sobre strings](https://hexdocs.pm/elixir/String.html)
+- [Outras formas de encontrar o comprimento de uma string em diferentes linguagens](https://en.wikipedia.org/wiki/String_length)

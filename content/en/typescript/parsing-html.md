@@ -10,40 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
+Parsing HTML is the process of analyzing a string of HTML code in order to extract meaningful information from it. Programmers do this in order to automate tasks such as web scraping or data extraction, as well as to normalize and validate HTML for use in web development.
 
-If you're a frontend developer, you've probably encountered the need to parse HTML at some point. Whether it's extracting data from a web page or manipulating the DOM, HTML parsing is an essential skill to have. With TypeScript, you can easily and safely parse HTML using its built-in features.
-
-## How To
-
-To parse HTML in TypeScript, you can make use of the `DOMParser` class. This allows us to create an HTML document from a string of HTML code. Let's take a look at an example:
-
-```TypeScript
-const htmlString = '<h1>Hello, world!</h1>';
+## How to:
+### Using the built-in DOMParser:
+```
+TypeScript
 const parser = new DOMParser();
-const htmlDoc = parser.parseFromString(htmlString, 'text/html');
-console.log(htmlDoc.body.innerHTML);
+const htmlString = '<html><body><p>Hello World!</p></body></html>';
+const htmlDocument = parser.parseFromString(htmlString, 'text/html');
+console.log(htmlDocument.documentElement.outerHTML);
 ```
-Output:
+Output: `<html><body><p>Hello World!</p></body></html>`
 
-```html
-<h1>Hello, world!</h1>
+### Using third-party libraries:
 ```
+TypeScript
+import * as cheerio from 'cheerio';
+const htmlString = '<html><body><p>Hello World!</p></body></html>';
+const $ = cheerio.load(htmlString);
+$('p').text();
+```
+Output: `Hello World!`
 
-In the code above, we first create a string containing our HTML code. Then, we instantiate a `DOMParser` and use the `parseFromString()` method to convert the string into an HTML document. We specify the `text/html` parameter to indicate that we're parsing HTML. Finally, we can access the HTML document's body and log the inner HTML to the console.
+## Deep Dive:
+Parsing HTML has been around since the early days of the internet, when browsers needed to interpret HTML and display it on the page. As web development advanced, so did the need for more advanced parsing techniques. While the examples above use the built-in DOMParser and the third-party library Cheerio, there are many other approaches to parsing HTML, such as Regular Expressions and custom parsers.
 
-Note that the `DOMParser` class is available in most modern browsers, so there's no need for any external libraries or dependencies.
+The DOMParser is a native JavaScript API, and therefore does not require any external dependencies. It is widely supported by all modern browsers and is the recommended approach for parsing HTML in TypeScript. Cheerio, on the other hand, is a third-party library that simulates a jQuery-like API for traversing and manipulating HTML. It is commonly used in web scraping and data extraction tasks.
 
-## Deep Dive
+When parsing HTML, it is important to understand the different types of nodes in the DOM tree, such as element nodes, text nodes, and comment nodes. It is also important to consider how to handle errors and invalid HTML. Proper handling of these issues will ensure the accuracy and efficiency of your parsing.
 
-Besides extracting data and manipulating the DOM, HTML parsing can also be useful for sanitizing user input. By parsing the HTML and removing any malicious tags or attributes, we can prevent cross-site scripting (XSS) attacks.
-
-The `DOMParser` class also allows for more advanced parsing options, such as parsing a specific section of an HTML document or parsing XML documents. Check out the documentation for more information on these options.
-
-It's worth mentioning that there are also other libraries and tools available for parsing HTML in TypeScript. For example, `htmlparser2` and `cheerio` are popular choices for server-side HTML parsing.
-
-## See Also
-
-- [DOMParser - MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/API/DOMParser)
-- [htmlparser2 - npm](https://www.npmjs.com/package/htmlparser2)
-- [cheerio - npm](https://www.npmjs.com/package/cheerio)
+## See Also:
+- [DOMParser API Documentation](https://developer.mozilla.org/en-US/docs/Web/API/DOMParser)
+- [Cheerio Library Documentation](https://cheerio.js.org/)
+- [Regular Expressions Tutorial](https://www.regular-expressions.info/tutorial.html)

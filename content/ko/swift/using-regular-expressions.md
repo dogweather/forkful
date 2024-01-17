@@ -1,7 +1,7 @@
 ---
-title:                "정규 표현식 사용하기"
-html_title:           "Swift: 정규 표현식 사용하기"
-simple_title:         "정규 표현식 사용하기"
+title:                "정규식을 사용하는 방법"
+html_title:           "Swift: 정규식을 사용하는 방법"
+simple_title:         "정규식을 사용하는 방법"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -10,42 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
-자주 사용하는 정규식을 사용하는 이유는 간단합니다 - 텍스트에서 특정 문자열을 찾거나 대체할 수 있다는 유연성 때문입니다.
+# 무엇이고 왜?
 
-## 사용 방법
-정규식을 사용하려면 ```Swift NSRegularExpression ``` 클래스를 사용하여 패턴을 만들고 ```Swift range(of:options:range:locale:)``` 메소드를 사용하여 텍스트에서 해당 패턴을 찾을 수 있습니다.
+정규 표현식을 사용하는 것은 문자열에서 특정 패턴을 찾거나 매치하는 것을 가능하게 해주는 프로그래밍 기술입니다. 프로그래머들은 정규 표현식을 사용하여 복잡한 텍스트 처리 작업을 간단하고 빠르게 처리할 수 있습니다.
 
-예를 들어, 만약 "apple"이라는 단어를 찾기 위해 정규식을 사용하려면 다음과 같이 코드를 작성할 수 있습니다:
+## 방법:
+
+정규 표현식을 사용하기 위해서는 Swift에서 제공하는 ```NSRegularExpression``` 클래스를 사용해야 합니다. 이 클래스는 패턴과 매치할 문자열을 입력받아 원하는 결과를 도출합니다. 예를 들면:
 
 ```Swift
-guard let regex = try? NSRegularExpression(pattern: "apple", options: [.caseInsensitive]) else {
-  return
-}
-
-let text = "I'm craving for an Apple"
-
-if let range = regex.range(of: text, options: [], range: NSRange(location: 0, length: text.characters.count), locale: nil) {
-  // 찾은 문자열을 출력
-  print(text.substring(with: range))
-}
-else {
-  print("해당 단어를 찾을 수 없습니다.")
+let text = "Hello, World!"
+let pattern = "\\w+"
+let regex = try? NSRegularExpression(pattern: pattern, options: .caseInsensitive)
+let matches = regex?.matches(in: text, options: [], range: NSRange(location: 0, length: text.count))
+matches?.forEach { match in
+    let matchText = text[Range(match.range, in: text)!]
+    print("매치된 문자열: \(matchText)")
 }
 ```
+위의 코드는 문자열에서 알파벳 문자열만 매치하는 예제입니다. 결과는 다음과 같이 출력됩니다:
 
-출력은 다음과 같을 것입니다:
+```
+매치된 문자열: Hello
+매치된 문자열: World
+```
 
-`Apple`
+## 깊이 파고들기:
 
-## 딥 다이브
-정규식은 강력한 도구이지만, 사용하기에는 다소 복잡할 수 있습니다. 예를 들어, 패턴이 너무 길 경우 ```Swift NSRegularExpression ``` 클래스에서 일부 제한 사항이 존재합니다. 또한, 오른쪽에서 왼쪽으로 읽는 지원을 제공하지 않기 때문에 특정 패턴을 찾는 경우에는 첫 번째 일치 항목을 찾지 못할 수 있습니다.
+정규 표현식은 1950년대에 고안된 존 그래워트에 의해 개발되었습니다. 그리고 이후로 계속해서 발전하고 있습니다. 현재는 수많은 언어에서 지원됩니다. 다른 대안으로는 문자열에서 패턴을 매치하는 데 사용하는 정규 표현식 대신 문자열 메소드를 사용할 수도 있습니다. 하지만, 정규 표현식은 적절한 패턴을 사용하면 더 간단하고 빠르게 작업할 수 있습니다. 정규 표현식을 사용할 때, 조금 더 복잡한 수준의 패턴을 이해하고 작성하는 데 시간이 걸릴 수 있지만, 익숙해지면 효율적인 코드 작성에 큰 도움이 됩니다.
 
-정규식을 사용하는 더 많은 방법에 대해서는 [Apple의 공식 문서](https://developer.apple.com/documentation/foundation/nsregularexpression)를 참조하시기 바랍니다.
+## 참고 자료:
 
-## 관련 자료
-[Swift 문서](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#ID290)에서 문자열과 문자에 대한 더 많은 정보를 확인할 수 있습니다.
-
-[Regular-Expressions.info](https://www.regular-expressions.info/)는 간단한 정규식 구문부터 복잡한 패턴에 대한 자세한 정보를 제공합니다.
-
-[Regexr](https://regexr.com/)은 텍스트에서 정규식 패턴을 테스트하고 디버그할 수 있는 좋은 도구입니다.
+- [Swift 공식 문서](https://developer.apple.com/documentation/foundation/nsregularexpression)
+- [정규 표현식 테스트 사이트](https://regexr.com/)

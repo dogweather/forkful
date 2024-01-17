@@ -1,7 +1,7 @@
 ---
-title:                "HTTP 요청 보내기"
-html_title:           "Swift: HTTP 요청 보내기"
-simple_title:         "HTTP 요청 보내기"
+title:                "http 요청 보내기"
+html_title:           "Swift: http 요청 보내기"
+simple_title:         "http 요청 보내기"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "HTML and the Web"
@@ -10,42 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+## 무엇이며 왜?  
+HTTP 요청을 보내는 것은 무엇인지와 프로그래머들이 왜 그것을 하는지에 대해 알아보겠습니다. HTTP 요청이란 네트워크를 통해 서버에 데이터를 요청하는 것을 말합니다. 프로그래머들은 이를 통해 데이터를 받아와서 웹 앱을 만들거나 서드 파티 서비스와 연동할 수 있습니다.
 
-HTTP 요청을 보내는 것은 iOS 앱 개발에서 중요한 부분입니다. 앱은 웹 서버와 통신하여 데이터를 주고받고, 다양한 웹 서비스와 연동되어 사용자에게 더 많은 기능을 제공하기 때문입니다. 따라서 Swift 개발자는 HTTP 요청을 보내는 것을 잘 알아야 합니다.
-
-## 하는 방법
-
-먼저, Foundation에서 제공하는 `URLRequest` 클래스를 사용하여 HTTP 요청 객체를 만듭니다. 이 객체에는 요청을 위한 URL과 HTTP 메소드 등을 설정할 수 있습니다.
+## 하는 방법:
+다음은 Swift를 사용하여 간단한 GET 요청을 보내는 예시입니다.
 
 ```Swift
-let urlString = "https://example.com/api/users"
+// URL을 만들어줍니다.
+let urlString = "https://swapi.dev/api/people/1/"
 guard let url = URL(string: urlString) else { return }
 
-var request = URLRequest(url: url)
-request.httpMethod = "GET"
-```
+// URL을 사용하여 URLRequest를 만들어줍니다.
+let request = URLRequest(url: url)
 
-다음으로, URLSession을 사용하여 요청을 보내고 응답을 받아옵니다. `dataTask(with: completionHandler:)` 메소드를 호출하여 비동기적으로 요청을 처리하며, 응답의 상태 코드와 받아온 데이터를 가지고 클로저가 실행됩니다.
-
-```Swift
-let task = URLSession.shared.dataTask(with: request) { data, response, error in
-    guard let data = data, let response = response as? HTTPURLResponse,
-          response.statusCode == 200 else { return }
-    let result = String(data: data, encoding: .utf8)
-    print(result) // "이 서버에서 받아온 데이터를 처리합니다."
+// URLSession을 이용하여 요청을 보냅니다.
+let task = URLSession.shared.dataTask(with: request) { (data, _, error) in
+    // 요청이 성공하면 받아온 데이터를 출력합니다.
+    if let data = data {
+        print(String(data: data, encoding: .utf8))
+    }
 }
+
+// 요청을 실행합니다.
 task.resume()
 ```
+**아웃풋:**
+```Swift
+Optional("{\"name\":\"Luke Skywalker\",\"height\":\"172\",\"mass\":\"77\",\"hair_color\":\"blond\",\"skin_color\":\"fair\",\"eye_color\":\"blue\",\"birth_year\":\"19BBY\",\"gender\":\"male\",\"homeworld\":\"https://swapi.dev/api/planets/1/\",\"films\":[\"https://swapi.dev/api/films/1/\"],\"species\":[\"https://swapi.dev/api/species/1/\"],\"vehicles\":[\"https://swapi.dev/api/vehicles/14/\"],\"starships\":[\"https://swapi.dev/api/starships/12/\"],\"created\":\"2014-12-09T13:50:51.644000Z\",\"edited\":\"2014-12-20T21:17:56.891000Z\",\"url\":\"https://swapi.dev/api/people/1/\"}")
+```
 
-## 깊이 파고들기
+## 깊게 들어가기:
+HTTP 요청은 현재 인터넷에서 가장 많이 사용되는 프로토콜 중 하나입니다. 이 프로토콜을 통해 웹 페이지를 불러오거나 데이터를 주고받을 수 있습니다. 뿐만 아니라 Swift에서는 `URLSession`을 이용하여 이를 쉽게 구현할 수 있도록 지원하고 있습니다. 다른 대안으로는 `Alamofire`와 같은 서드 파티 라이브러리를 사용할 수도 있습니다.
 
-HTTP 요청에는 GET, POST, PUT, DELETE 등 다양한 메소드가 있으며, 다른 웹 서비스에서는 더 많은 커스텀 메소드를 사용하기도 합니다. 또한, 요청과 응답에는 헤더와 바디의 데이터 형식을 지정할 수 있으며, 인증 등의 추가적인 설정도 가능합니다.
-
-따라서 HTTP 요청을 다루기 전에는 사용할 웹 서비스의 API 문서를 잘 읽어보고, 요청을 보내기 전에 테스트를 진행하는 것이 좋습니다.
-
-## 참고
-
-- [Apple Developer Documentation - URLRequest](https://developer.apple.com/documentation/foundation/urlrequest)
-- [Apple Developer Documentation - URLSession](https://developer.apple.com/documentation/foundation/urlsession)
-- [HTTP Methods for RESTful Services](https://www.restapitutorial.com/lessons/httpmethods.html)
+## 관련 자료:
+* [Apple 공식 문서 - URLSession](https://developer.apple.com/documentation/foundation/urlsession)
+* [Alamofire Git 저장소](https://github.com/Alamofire/Alamofire/)

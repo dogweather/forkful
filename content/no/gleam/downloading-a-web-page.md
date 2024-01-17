@@ -1,7 +1,7 @@
 ---
-title:                "Å laste ned en nettside"
-html_title:           "Gleam: Å laste ned en nettside"
-simple_title:         "Å laste ned en nettside"
+title:                "Laste ned en nettside"
+html_title:           "Gleam: Laste ned en nettside"
+simple_title:         "Laste ned en nettside"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "HTML and the Web"
@@ -10,44 +10,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hva & Hvorfor?
+Å laste ned en nettside handler om å hente all informasjonen fra en bestemt nettside og lagre den på din egen datamaskin. Programmere gjør dette for å få tilgang til og behandle informasjonen på en enklere måte.
 
-Hvorfor laste ned en nettstedsside? Det kan være mange grunner - kanskje du trenger å analysere data fra siden, eller du ønsker å lagre informasjonen for senere bruk.
-
-## Slik gjør du det
-
-For å laste ned en nettstedsside i Gleam, kan du bruke funksjonen `download.binary()` i HTTP biblioteket. Denne funksjonen tar inn en URL som parameter og returnerer en `Result` som enten er en `Ok` med binærdata fra nedlastingen, eller en `Err` med en feilmelding.
-
-```Gleam
-import http
-
-let result = http.download.binary("https://www.example.com")
-
-case result {
-    Ok(data) -> {
-        // Gjør noe med den binære dataen
-        // For eksempel lagre den til en fil
-        File.put_contents("./site.html", data)
-        Ok("Nettstedet ble lastet ned og lagret!")
-    }
-    Err(error) -> {
-        // Håndter eventuelle feil
-        Err(error)
-    }
-}
+## Hvordan:
+Gleam har innebygde funksjoner som gjør det enkelt å laste ned en nettside. Ved å bruke ```Gleam.Download.get```, kan du spesifisere en URL og få tilgang til nettsiden som en streng. Se eksempel nedenfor: 
 ```
-
-Output:
-
+let nettside = http.get("https://www.example.com/")
 ```
-Nettstedet ble lastet ned og lagret!
+Etter å ha lastet ned nettsiden, kan du bruke ```String.split``` for å behandle informasjonen og få ut de delene du trenger, som i eksempelet nedenfor:
 ```
+let deler = String.split("nettside", "<h1>")
+```
+Dette vil dele opp nettsiden basert på titlene på nettsiden og returnere en liste med relevante deler. 
 
-## Dypdykk
+## Dypdykk:
+Å laste ned en nettside har vært en viktig del av webutvikling i lang tid. Før i tiden var det vanlig å bruke kompliserte teknikker for å få tilgang til og behandle informasjonen fra et nettsted, men med fremveksten av programmeringsspråk som Gleam, har det blitt mye enklere. Alternativene til å laste ned en nettside inkluderer også å bruke APIer eller webskraping-verktøy. Implementeringsdetaljer for å laste ned en nettside kan variere avhengig av programmeringsspråket du bruker, men Gleam har gjort det svært enkelt for å få tilgang til og behandle nettsider.
 
-Når du laster ned en nettstedsside, får du tilgang til all informasjonen som er på den siden. Dette kan være svært nyttig for å hente ut data eller holde en kopi av en side for fremtidig referanse. Du kan også bruke Gleam sine innebygde stringfunksjoner for å manipulere og analysere innholdet på siden.
-
-## Se også
-
-- [Gleam HTTP bibliotek](https://gleam.run/documentation/std-lib-http/)
-- [Offisiell Gleam nettside](https://gleam.run/)
+## Se også:
+- [Gleam sin offisielle dokumentasjon](https://gleam.run/documentation/)
+- [En enkel guide til å laste ned en nettside med Gleam](https://tylerbrewer.io/blog/how-to-download-a-webpage-with-gleam)

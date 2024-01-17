@@ -1,7 +1,7 @@
 ---
-title:                "वेब पेज डाउनलोड करना"
-html_title:           "Haskell: वेब पेज डाउनलोड करना"
-simple_title:         "वेब पेज डाउनलोड करना"
+title:                "वेब पेज को डाउनलोड करना।"
+html_title:           "Haskell: वेब पेज को डाउनलोड करना।"
+simple_title:         "वेब पेज को डाउनलोड करना।"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "HTML and the Web"
@@ -10,24 +10,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
+## क्या और क्यों?
+वेब पेज डाउनलोड करना वह कार्य है जो प्रोग्रामर करते हैं ताकि वे वेबसाइट से डेटा को अपने कंप्यूटर पर लाएं और उसे प्रोसेस कर सकें। यह डेटा हो सकता है कि उनकी एप्लिकेशन में उपयोग किया जाए या वेबसाइट के अपडेट्स को लोगों को देखने दिए जाएं। प्रोग्रामर वेब पेज डाउनलोड करते हैं क्योंकि वे अपने प्रोग्राम में नए फीचर्स जोड़ने के लिए वेबसाइट के साथ एक्सेस करना चाहते हैं या तो आसानी से डेटा को प्रोसेस कर सकें।
 
-वैसे तो हम हर रोज़ वेब पेज्स को देखते हैं, पर अगर आपको उनमें से कुछ स्पेशल इन्फ़ोर्मेशन को दूसरी जगह पर स्टोर करना या उपयोग करना हो तो क्या करें? तो इस लेख में हम इस समस्या का हल ढूंढने के लिए हैस्केल प्रोग्रामिंग के उपयोग को समझेंगे। 
-
-## कैसे करें
-
-अतिरिक्त लाइब्ररी की जरूरत न होने से हैस्केल एक कम्पैक्ट भाषा है जो वेबी एपीआई के साथ अच्छा काम करती है। आप वेब पेज को डाउनलोड करने के लिए निम्न एल्गोरिथ्म का उपयोग कर सकते हैं:
-```haskell
+## कैसे:
+`Haskell` कोड ब्लॉक्स के अंदर आप एक web page को डाउनलोड कर सकते हैं और उसके अंतर्गत दिए गए लिंक्स को भी अपने कंप्यूटर पर सहेज सकते हैं।
+```Haskell
 import Network.HTTP
-import System.IO
-main = simpleHTTP (getRequest "www.example.com") >>= getResponseBody >>= putStrLn
+main = do
+  let url = "https://www.example.com"
+  page <- simpleHTTP (getRequest url)
+  content <- getResponseBody page
+  putStrLn content
 ```
-इस कोड का आउटपुट "वहाँ जाने के लिए लंबवत इंतज़ार" हो सकता है, पर यह आपको डाउनलोड होने वाली पूर्ण HTML झलक देगा। 
+यहां, `url` वह वेब पेज है जिसे आप डाउनलोड करना चाहते हैं। कोड ब्लॉक्स के अंत में परीक्षण में, आप पेज के सामग्री को हस्ताक्षर निकाल सकते हैं।
 
-## गहराई में जाएं
+## डीप डाइव:
+अगर आप एक web page को डाउनलोड करना चाहते हैं, तो आपके पास कई विकल्प हैं जैसे कि `Network.HTTP` या `Network.HTTP.Conduit` पैकेज। `Network.HTTP` उस पैकेज का older version है जो historical context के पूछता है कि इसका development किस आधार पर हुआ। `Network.HTTP.Conduit` उस पैकेज का नया version है जो अधूरे काम को करने के लिए आसान interface प्रदान करता है और कई feature को support करता है जैसे कि HTTP/2. आपको किस version को उपयोग करना है, यह आपके टारगेट को डेटा को डाउनलोड करने में आसानी से सक्षम बनाता है।
 
-अधिकांश वेब पेज एचटीएमएल में होते हैं और आपके वेब पेज डाउनलोड करने के बाद आपको हैस्केल को एचटीएमएल पार्स करने दर्शान [[HTML Parsers | http://hackage.haskell.org/package/html-conduit]] की उपयोग कर सकते हैं। यह आपको समझदारी से अपनी डाउनलोड की गयी वेब पेज को खोजने और चुनने की अनुमति देगा। 
-
-## और देखें
-
-[हैस्केल लेखिका श्रेणी | https://wiki.haskell.org/Category:Haskell] [[आम उपयोगिता सकारात्मक | https://wiki.haskell.org/Positive_criticisms]] [स्वायत्त पैकेज मैनेजर | https://hackage.haskell.org/]
+## देखें भी:
+- [Network.HTTP पैकेज](https://hackage.haskell.org/package/HTTP)
+- [Network.HTTP.Conduit पैकेज](https://hackage.haskell.org/package/http-conduit)

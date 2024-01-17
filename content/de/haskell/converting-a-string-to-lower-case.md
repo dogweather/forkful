@@ -1,7 +1,7 @@
 ---
-title:                "Umwandlung eines Strings in Kleinbuchstaben"
-html_title:           "Haskell: Umwandlung eines Strings in Kleinbuchstaben"
-simple_title:         "Umwandlung eines Strings in Kleinbuchstaben"
+title:                "Umwandeln eines Strings in Kleinbuchstaben"
+html_title:           "Haskell: Umwandeln eines Strings in Kleinbuchstaben"
+simple_title:         "Umwandeln eines Strings in Kleinbuchstaben"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -10,47 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
-Es gibt viele Gründe, warum man in Haskell eine Zeichenkette (String) in Kleinbuchstaben umwandeln möchte. Ein häufiger Grund ist zum Beispiel die Vergleichbarkeit von Strings, da Groß- und Kleinschreibung oft nicht beachtet werden soll.
+## Was & Warum?
 
-## Wie Geht's
-Die einfachste Möglichkeit, eine Zeichenkette in Kleinbuchstaben umzuwandeln, ist die Verwendung der Funktion `toLower` aus dem `Data.Char` Modul. Diese Funktion akzeptiert einen einzelnen Buchstaben oder eine ganze Zeichenkette und gibt eine neue Zeichenkette zurück, in der alle Buchstaben in Kleinbuchstaben umgewandelt wurden. Hier ein Beispiel:
+Die Konvertierung eines Strings in Kleinbuchstaben ist ein häufig verwendetes Konzept in der Programmierung. Dabei handelt es sich um die Umwandlung eines Strings, also einer Zeichenkette, in eine neue Zeichenkette, in der alle Buchstaben klein geschrieben sind. Programmierer verwenden diese Methode, um sicherzustellen, dass Benutzereingaben konsistent verarbeitet werden und um Vergleiche zwischen Strings einfacher zu gestalten.
+
+## Wie geht's?
+
+Um einen String in Kleinbuchstaben umzuwandeln, können wir die Funktion `toLower` aus dem Modul `Data.Char` verwenden.
 
 ```Haskell
-import Data.Char (toLower)
+import Data.Char
 
 main = do
-  putStrLn $ toLower "Hallo, WELt!"
-
--- Ausgabe: hallo, welt!
+    let input = "HELLO WORLD"
+    let output = map toLower input
+    print output
 ```
 
-Um zu sehen, wie `toLower` tatsächlich funktioniert, können wir uns den Quellcode anschauen. Dabei werden wir einige Begriffe aus der Haskell Syntax erklären.
+Die Funktion `toLower` nimmt einen Charakter als Argument und gibt den entsprechenden Kleinbuchstaben zurück. Durch die Anwendung der `map` Funktion auf unseren String können wir jeden Buchstaben einzeln in Kleinbuchstaben umwandeln. Das Ergebnis wird dann in der Variablen `output` gespeichert und mit `print` ausgegeben.
 
-```Haskell
--- Die einfache Funktion toLower erwartet einen Char und gibt ebenfalls einen Char zurück.
-toLower :: Char -> Char
+Der Output dieses Programms wäre `hello world`.
 
--- Hier wird ein Pattern Matching verwendet, um die verschiedenen Fälle von Klein- und Großbuchstaben abzudecken.
-toLower c
-  | c >= 'A' && c <= 'Z' = toEnum (fromEnum c + 32) :: Char
-  | otherwise = c
-```
+## Tiefer eintauchen
 
-In diesem Beispiel wird der Charakter `c` überprüft, ob es sich um einen Großbuchstaben handelt. Falls ja, wird mit `fromEnum` der Unicode-Wert des Buchstabens abgerufen und um 32 erhöht. Dieser Wert wird dann mit `toEnum` wieder in einen Charakter umgewandelt und zurückgegeben. Andernfalls wird einfach der original Wert von `c` zurückgegeben.
+Die Notwendigkeit, Strings in Kleinbuchstaben umzuwandeln, ergibt sich aus der Funktionsweise von Computern. In der ASCII-Zeichencodierung (die immer noch in den meisten Programmiersprachen verwendet wird) sind Groß- und Kleinbuchstaben unterschiedliche Zeichen und haben daher unterschiedliche numerische Codes. Wenn wir also den String `"Hello"` mit dem String `"hello"` vergleichen wollen, erhalten wir ein anderes Ergebnis, da die Groß- und Kleinbuchstaben in ASCII unterschiedliche Zahlenwerte haben. Durch die Konvertierung in Kleinbuchstaben können wir sicherstellen, dass beide Strings äquivalent sind.
 
-## Tiefer Tauchen
-Die Funktion `toLower` ist zwar eine einfache Möglichkeit, um Zeichenketten in Kleinbuchstaben umzuwandeln, aber sie ist nicht die einzige. Es gibt auch komplexere Möglichkeiten, die je nach Anforderungen besser geeignet sein könnten. Zum Beispiel können wir auch die Funktionalität der Funktion `toLower` selbst implementieren, indem wir eine Kette von Funktionen anwenden.
+Alternativ zur Verwendung der `toLower` Funktion könnte man auch die `map` Funktion mit `toLower . ord` kombinieren. Dabei wird der Ordinalwert eines Zeichens zuerst in Kleinbuchstaben umgewandelt und dann wieder in ein Zeichen zurückkonvertiert. Dieser Ansatz ist jedoch weniger effizient.
 
-```Haskell
--- Durch das Zusammenspiel mehrerer Funktionen können wir eine Zeichenkette in Kleinbuchstaben umwandeln.
-lowerCase :: String -> String
-lowerCase = map toLower
-```
+Die Implementation der `toLower` Funktion ist abhängig von der verwendeten Compiler-Implementierung. In der gängigsten Implementierung von Haskell, GHC, wird die Funktion durch Aufruf von C-Bibliothekscode implementiert, der wiederum die entsprechende Funktion des Betriebssystems verwendet.
 
-Hier sehen wir eine neue Sache in Haskell, die sogenannten "Kurzen Kompositionen", die durch `loweCase = map toLower` dargestellt werden. Das bedeutet einfach, dass die Funktion `map toLower` die Argumenten dieser Funktion ist. `map` ist eine polymorphe Funktion, die auf einer Liste von Elementen eine gegebene Funktion anwendet. In diesem Fall wenden wir `toLower` auf jeden einzelnen Charakter in der Zeichenkette an, was dazu führt, dass die gesamte Zeichenkette in Kleinbuchstaben umgewandelt wird. Diese Art der Verkettung von Funktionen ist ein wesentlicher Bestandteil der funktionalen Programmierung und ermöglicht es uns, komplexe Operationen auf einfache Weise zu definieren.
+## Siehe auch
 
-## Siehe Auch
-- [Haskell Dokumentation](https://www.haskell.org/documentation/)
-- [Haskell für Umsteiger](https://de.wikibooks.org/wiki/Haskell_f%C3%BCr_Umsteiger)
-- [Einführung in die Funktionale Programmierung mit Haskell](https://www.youtube.com/watch?v=gBf8Btc6r_8) (Video)
+- [Haskells `toLower` Funktion Dokumentation](https://hackage.haskell.org/package/base-4.12.0.0/docs/Data-Char.html#v:toLower)
+- [ASCII Zeichencodierung](https://de.wikipedia.org/wiki/American_Standard_Code_for_Information_Interchange)
+- [Haskell GHC Compiler](https://www.haskell.org/ghc/)

@@ -1,7 +1,7 @@
 ---
-title:                "Opprettelse av midlertidig fil"
-html_title:           "C: Opprettelse av midlertidig fil"
-simple_title:         "Opprettelse av midlertidig fil"
+title:                "Oppretting av en midlertidig fil"
+html_title:           "C: Oppretting av en midlertidig fil"
+simple_title:         "Oppretting av en midlertidig fil"
 programming_language: "C"
 category:             "C"
 tag:                  "Files and I/O"
@@ -10,45 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hva & hvorfor?
+En midlertidig fil er en fil som opprettes og brukes midlertidig av et program under kjøring. Dette kan være nyttig for å lagre midlertidig data eller for å sikre at to eller flere programmer ikke konflikterer med hverandre ved å bruke samme filnavn. Programmere oppretter midlertidige filer for å gjøre programmene sine mer effektive og pålitelige.
 
-Å opprette midlertidige filer er en vanlig praksis i mange programmeringsspråk, inkludert C. Disse filene brukes til å lagre midlertidige data som kun er nødvendige i løpet av programmet og ikke trenger å være lagret permanent.
-
-## Hvordan
-
-For å opprette en midlertidig fil i C kan man bruke funksjonen "tmpfile()". Denne funksjonen returnerer en peker til en åpen midlertidig fil. For eksempel:
-
-```C
+# Hvordan:
+```c
 #include <stdio.h>
-
-int main(){
-    FILE *fp;
-
-    fp = tmpfile();
-    if(fp == NULL){
-        printf("Kunne ikke opprette midlertidig fil.");
-    }
-    else{
-        fprintf(fp, "Dette er data som skal lagres i den midlertidige filen.");
-        printf("Data ble skrevet til den midlertidige filen.");
-    }
+int main() {
+  FILE *tfp = tmpfile(); // opprett en ny midlertidig fil
+  if (tfp != NULL) {
+    fputs("Dette er en midlertidig fil.", tfp); // skriv tekst til filen
+    rewind(tfp); // gå tilbake til starten av filen
+    char str[50];
+    fgets(str, 50, tfp); // les filen og lagre teksten i str arrayen
+    printf("Teksten i den midlertidige filen er: %s\n", str); // skriv ut teksten 
+    fclose(tfp); // lukk filen
+  } else {
+    printf("Kunne ikke opprette en midlertidig fil.");
+  }
+  return 0;
 }
 ```
-
-Output:
-
+Eksempelutgang:
 ```
-Data ble skrevet til den midlertidige filen.
+Teksten i den midlertidige filen er: Dette er en midlertidig fil.
 ```
 
-## Dypdykk
+# Dykk dypere:
+I tidligere tider var det vanlig for programmer å kommunisere ved hjelp av filer, og midlertidige filer ble brukt som en måte for programmer å sende data til hverandre. I dag brukes det ofte andre metoder som filpiping eller socket-kommunikasjon. Alternativer til å bruke midlertidige filer kan være å bruke minnebuffer eller å lagre data direkte i en database. Når du oppretter en midlertidig fil, blir den vanligvis lagret i operativsystemets TEMP-diskplassering. Implementeringen av midlertidige filer kan variere avhengig av operativsystem og programmeringsspråk, men konseptet er det samme.
 
-Det er verdt å merke seg at den midlertidige filen vil bli slettet når programmet avsluttes. Dette kan være nyttig når man ønsker å lagre sensitive data som ikke skal lagres permanent på harddisken.
-
-I tillegg kan man også opprette midlertidige filer ved hjelp av funksjonene "tmpnam()" og "mkstemp()". Disse funksjonene gir mer kontroll over lagringsplassering og filnavn.
-
-## Se også
-
-- [tmpfile() dokumentasjon](https://www.tutorialspoint.com/c_standard_library/c_function_tmpfile.htm) 
-- [Mer om temporary filer i C](https://www.guru99.com/c-temporary-files.html) 
-- [Mer om C programmering](https://www.programiz.com/c-programming)
+# Se også:
+- [tmpfile() function - GeeksforGeeks](https://www.geeksforgeeks.org/c-tmpfile-function/) 
+- [Temporary File - Wikipedia](https://en.wikipedia.org/wiki/Temporary_file)

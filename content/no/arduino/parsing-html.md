@@ -1,7 +1,7 @@
 ---
-title:                "«Parsing av html»"
-html_title:           "Arduino: «Parsing av html»"
-simple_title:         "«Parsing av html»"
+title:                "Parsing av html"
+html_title:           "Arduino: Parsing av html"
+simple_title:         "Parsing av html"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "HTML and the Web"
@@ -10,80 +10,20 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+**Hva & Hvorfor?**
 
-Å parse HTML kan være nyttig hvis du vil hente ut spesifikk informasjon fra en nettside, for eksempel for å lage en vær-app som viser temperaturen fra en nettside. Det kan også være nyttig for å lage automatiserte prosesser, som å hente ut data fra et nettsted og lagre det i en database.
+Parsing HTML er en prosess der data fra en nettside blir analysert og strukturert slik at de kan brukes av en datamaskin. Dette er viktig fordi det gjør det mulig å hente ut spesifikke data fra en nettside, for eksempel prisene på produktene eller værvarselet for en bestemt by.
 
-## Slik gjør du det
+**Hvordan:**
 
-Du trenger en Arduino, en LCD-skjerm og et Ethernet Shield. Følg disse stegene for å parse HTML med Arduino:
+For å parse HTML på Arduino trenger du en Ethernet-skjerm og en internettforbindelse. Først må du bruke ```Ethernet.begin(mac, ip)``` for å sette opp forbindelsen. Deretter må du definere en ```client``` for å koble til nettsiden du vil hente data fra. Du kan bruke ```client.connect(ip, port)``` for å knytte deg til serveren på nettsiden. Når forbindelsen er etablert, kan du bruke ```client.println("GET / HTTP/1.1")``` for å be om nettsidens HTML-kode. Deretter bruker du ```client.readStringUntil('\r')``` for å lese nettsidens HTML-kode linje for linje. Du kan bruke ```Serial.println()``` for å skrive ut koden på seriell monitor, eller du kan bruke ```String```-variabler for å lagre informasjonen og bruke den videre i koden din.
 
-1. Åpne Arduino-programvaren og opprett et nytt sketch.
-2. Koble Ethernet Shield til Arduino og koble en Ethernet-kabel fra shieldet til internett.
-3. Kopier følgende kode inn i sketchet:
+**Dypdykk:**
 
-```Arduino
-#include <SPI.h>
-#include <Ethernet.h>
- 
-byte mac[] = {0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED}; //MAC-adresse til Ethernet Shield
-char server[] = "www.nettside.no"; //nettsiden du vil parse
-byte serverIp[] = {x,x,x,x}; //IP-adresse til nettsiden
- 
-EthernetClient client;
- 
-void setup() {
-  Serial.begin(9600); //initialiser serielkobling
-  Ethernet.begin(mac); //koble til internett
-  Serial.println("Connecting...");
-  if (client.connect(serverIp, 80)) { //koble til nettsiden
-    Serial.println("Connected");
-    client.println("GET / HTTP/1.1"); //hent nettsiden
-    client.println("Host: www.nettside.no");
-    client.println("Connection: close");
-    client.println();
-  }
-}
- 
-void loop() {
-  if (client.available()) { //hvis det er data tilgjengelig
-    char c = client.read(); //les dataen og skriv den til serielkoblingen
-    Serial.write(c);
-  }
- 
-  if (!client.connected()) { //hvis tilkoblingen er brutt
-    Serial.println();
-    Serial.println("Disconnecting.");
-    client.stop(); //stopp tilkoblingen
-    while(true); //stopp programmet
-  }
-}
-```
+Parsing HTML har vært en viktig del av webutvikling siden de tidlige dagene av internett. Før HTML-styler og moderne webdesign ble vanlig, var HTML primært brukt til å generere enkel tekst og lenker. Men med utviklingen av moderne nettsteder som er rike på innhold og data, ble det nødvendig å kunne tolke og strukturere HTML-kode for å hente ut spesifikke data. Alternativer til å parse HTML inkluderer å bruke API-er eller webskraping-verktøy.
 
-4. Bytt ut "www.nettside.no" og "x,x,x,x" med riktig nettside- og IP-adresse.
-5. Last opp koden til Arduinoen.
-6. Åpne serielkoblingen i Arduino-programmet for å se resultatet.
-7. Ser du HTML-koden fra nettsiden? Da har du klart å parse HTML med Arduino!
+Når du parser HTML på Arduino, er det viktig å være oppmerksom på at det kan være utfordrende å hente ut bestemte data fra nettsiden, siden HTML-kode kan variere fra nettside til nettside. Du må også være nøye med å følge riktig syntaks og elementer når du bruker HTML-parseren på Arduino.
 
-## Dypdykk
+**Se også:**
 
-Når du bruker Ethernet Shield med Arduino for å hente en nettside, blir dataen returnert som et HTTP-svar. Dette svaret inkluderer både headers og kode, inkludert HTML-koden. For å få ut kun HTML-koden, kan du bruke en klasse som `String`. For eksempel:
-
-```Arduino
-String response = "";
-while (client.available()) { //les dataen fra serveren
-  char c = client.read();
-  response += c;
-}
-int startIndex = response.indexOf("<html>"); //få indeksen til starten av HTML-koden
-int endIndex = response.indexOf("</html>"); //få indeksen til slutten av HTML-koden
-String htmlCode = response.substring(startIndex, endIndex); //bruk substring for å få ut HTML-koden
-```
-
-Det er også mulig å bruke biblioteker som "ArduinoHTTPClient" for å gjøre dette på en enklere måte.
-
-## Se også
-
-- [ArduinoHTTPClient bibliotek](https://github.com/arduino-libraries/ArduinoHttpClient)
-- [Ethernet bibliotek](https://www.arduino.cc/en/Reference/Ethernet)
-- [HTTP protokoll](https://developer.mozilla.org/en-US/docs/Web/HTTP)
+For mer informasjon om parsing av HTML på Arduino, kan du se på dokumentasjonen for Ethernet-biblioteket og prøve ut forskjellige eksempler for å øve deg på å hente ut data fra forskjellige nettsider. Du kan også se på forumet på Arduino-nettsiden for å få hjelp og råd fra andre brukere.

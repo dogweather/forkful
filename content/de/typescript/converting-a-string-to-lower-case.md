@@ -1,7 +1,7 @@
 ---
-title:                "String in Kleinbuchstaben umwandeln"
-html_title:           "TypeScript: String in Kleinbuchstaben umwandeln"
-simple_title:         "String in Kleinbuchstaben umwandeln"
+title:                "Eine Zeichenfolge in Kleinbuchstaben umwandeln."
+html_title:           "TypeScript: Eine Zeichenfolge in Kleinbuchstaben umwandeln."
+simple_title:         "Eine Zeichenfolge in Kleinbuchstaben umwandeln."
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -10,33 +10,22 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was & Warum?
+Das Umwandeln eines Strings in Kleinbuchstaben ist eine gängige Aufgabe für Programmierer, die es ermöglicht, Texte in einheitlicher Schreibweise zu verarbeiten. Durch die Verwendung von Kleinbuchstaben können auch Vergleiche zwischen verschiedenen Strings erleichtert werden, da die Groß- und Kleinschreibung ignoriert wird.
 
-Es gibt viele Gründe, warum es nützlich sein kann, in der Programmierung eine Zeichenfolge in Kleinbuchstaben umzuwandeln. Eine häufige Verwendung ist die Normalisierung von Benutzereingaben, um sicherzustellen, dass alle Zeichen in derselben Schreibweise vorliegen. Dadurch können Vergleiche und andere Operationen einfacher durchgeführt werden, ohne sich Gedanken über Groß- und Kleinschreibung zu machen.
-
-## Wie geht das
-
-Um eine Zeichenfolge in TypeScript in Kleinbuchstaben umzuwandeln, können wir die `toLowerCase()` Methode verwenden. Diese wird auf einer Zeichenfolge aufgerufen und gibt die Zeichenfolge in Kleinbuchstaben zurück.
-
-```TypeScript
-const name = "Max Mustermann";
-const nameLowerCase = name.toLowerCase(); // "max mustermann"
+## Wie geht's:
+### TypeScript Beispiel:
+```
+const text: string = "Die SONNE scheint"; 
+console.log(text.toLowerCase());
+```
+### Ausgabe:
+```
+die sonne scheint
 ```
 
-Die `toLowerCase()` Methode ist nicht nur auf Zeichenfolgen anwendbar, sondern auch auf Array-Elemente, die Zeichenfolgen enthalten können. Dadurch können wir z. B. alle Elemente eines Arrays in Kleinbuchstaben umwandeln.
+## Vertiefung:
+Um Strings in Kleinbuchstaben umzuwandeln, gibt es verschiedene Ansätze und Funktionen, die in vielen Programmiersprachen verwendet werden. Die Notwendigkeit, alle Buchstaben in einen einheitlichen Fall zu bringen, stammt aus den frühen Tagen der Computersysteme, als die erstellten Codes noch nicht zwischen Groß- und Kleinschreibung unterscheiden konnten. Als Alternative zur ```toLowerCase()``` Funktion gibt es in TypeScript auch die Möglichkeit, ```string.prototype.toLocaleLowerCase()``` zu verwenden, um spezifischere sprachspezifische Regeln für die Umwandlung anzuwenden.
 
-```TypeScript
-const fruits = ["Apfel", "Banane", "Orange"];
-const fruitsLowerCase = fruits.map(fruit => fruit.toLowerCase()); // ["apfel", "banane", "orange"]
-```
-
-## Tiefergehende Informationen
-
-Bei der Umwandlung in Kleinbuchstaben gibt es einige wichtige Aspekte zu beachten. Zum einen kann es Unterschiede zwischen verschiedenen Sprachen geben, wie z. B. die Verwendung von Sonderzeichen oder Akzenten. Die `toLowerCase()` Methode berücksichtigt diese Unterschiede und konvertiert die Zeichenfolge entsprechend. 
-
-Ein weiterer wichtiger Punkt ist, dass die `toLowerCase()` Methode nicht veränderlich ist. Das heißt, sie ändert nicht die ursprüngliche Zeichenfolge, sondern gibt eine neue, konvertierte Zeichenfolge zurück. Es ist daher wichtig, die Rückgabe der Methode in einer Variablen zu speichern, wenn die ursprüngliche Zeichenfolge später weiter verwendet werden soll.
-
-## Siehe auch
-
-- [JavaScript string `toLowerCase()` Methode](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)
-- [TypeScript array `map()` Methode](https://www.typescriptlang.org/docs/handbook/2/iterable-types.html#mapping-types)
+## Siehe auch:
+Weitere Informationen zum Thema Strings in TypeScript finden Sie in der offiziellen Dokumentation von TypeScript: https://www.typescriptlang.org/docs/handbook/strings.html und in diesem nützlichen Artikel über String-Manipulation: https://www.zenva.com/blog/string-manipulation-typescript/

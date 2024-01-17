@@ -1,7 +1,7 @@
 ---
-title:                "Écrire un fichier texte"
-html_title:           "Gleam: Écrire un fichier texte"
-simple_title:         "Écrire un fichier texte"
+title:                "Ecrire un fichier texte"
+html_title:           "Gleam: Ecrire un fichier texte"
+simple_title:         "Ecrire un fichier texte"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Files and I/O"
@@ -10,46 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
-Il est important de savoir comment écrire un fichier texte en programmation afin de stocker et de manipuler des données de manière structurée. Cela peut être utile pour créer des applications, générer des rapports et bien plus encore.
+# Qu'est-ce que c'est et pourquoi le faire?
+Écrire un fichier texte est une tâche courante pour les programmeurs, car cela leur permet de stocker et de transférer des données d'un programme à un autre. Les fichiers texte peuvent être lus et écrits par n'importe quel éditeur de texte, les rendant faciles à utiliser et à partager.
 
-## Comment faire
-
-```Gleam
-let mon_texte = "Voici mon fichier texte"
-
-let fichier = File.write("mon_fichier.txt", mon_texte)
-
-```
-
-Le premier exemple montre comment créer une chaîne de caractères contenant le contenu que l'on souhaite écrire dans le fichier. Ensuite, à l'aide de la fonction `File.write`, nous pouvons écrire cette chaîne de caractères dans un fichier spécifié. Dans cet exemple, le fichier sera nommé "mon_fichier.txt".
-
-Un autre exemple peut être de lire un fichier existant et de modifier son contenu avant de l'écrire dans un nouveau fichier :
+# Comment faire?
+Voici un exemple de code pour écrire une ligne de texte dans un fichier texte en utilisant Gleam:
 
 ```Gleam
-// Lire le contenu du fichier original
-let contenu = File.read("mon_fichier_original.txt")
+// Création d'un fichier texte et ouverture en écriture
+let mon_fichier = File.append("mon_fichier.txt");
+// Écriture d'une ligne de texte
+File.write_line(mon_fichier, "Voici une ligne de texte.");
+// Fermeture du fichier
+File.close(mon_fichier);
 
-// Modifier le contenu
-let nouveau_contenu = contenu ++ "\nCeci est un ajout au fichier original."
-
-// Ecrire le nouveau contenu dans un nouveau fichier
-let fichier_modifie = File.write("mon_fichier_modifie.txt", nouveau_contenu)
-
-```
-Vous pouvez également écrire des données structurées dans un fichier en utilisant la fonction `File.write_json`. Cela peut être utile pour stocker des informations telles que des listes, des dictionnaires ou des données de configuration dans un format facilement lisible par d'autres programmes.
-
-```Gleam
-let mon_dictionnaire = Dict.from_list([("nom", "Paul"), ("age", 25), ("ville", "Paris")])
-let fichier_json = File.write_json("mon_fichier.json", mon_dictionnaire)
+// Lecture du fichier pour vérifier le résultat
+let contenu = File.read("mon_fichier.txt");
 ```
 
-## Approfondissement
-Ecrire un fichier texte peut sembler simple, mais il y a plusieurs options supplémentaires que vous pouvez utiliser pour personnaliser l'écriture de votre fichier. Par exemple, vous pouvez spécifier le mode d'écriture (`"truncate"`, `"append"`, ou `"create"`), définir les permissions du fichier, et même ajouter un en-tête au début de votre fichier.
+Le contenu du fichier "mon_fichier.txt" sera "Voici une ligne de texte.".
 
-De plus, en utilisant des bibliothèques tierces telles que `gleam-csv` ou `gleam-yaml`, vous pouvez écrire des fichiers au format CSV ou YAML respectivement.
+# Plongée en profondeur
+Les fichiers texte ont été utilisés pendant des décennies pour stocker des données ou du code dans un format lisible par l'homme. Les alternatives à l'utilisation de fichiers texte incluent les bases de données, qui peuvent offrir des fonctionnalités plus avancées mais peuvent être plus complexes à mettre en place. Pour écrire un fichier texte en Gleam, la fonction `File.write_line` utilise une bibliothèque sous-jacente appelée "File I/O", qui est basée sur les API de système de fichiers POSIX.
 
-## Voir aussi
-- La documentation officielle de Gleam sur l'écriture de fichiers : https://gleam.run/modules/file#write
-- La bibliothèque `gleam-csv` pour écrire des fichiers CSV : https://github.com/onyxalpha/gleam-csv
-- La bibliothèque `gleam-yaml` pour écrire des fichiers YAML : https://github.com/pawlik/gleam-yaml
+# À voir aussi
+- Documentation de la bibliothèque de fichiers Gleam : https://gleam.run/modules/gleam/files.html
+- Tutoriel sur la lecture et l'écriture de fichiers en Gleam : https://gleam.run/articles/example_8.html

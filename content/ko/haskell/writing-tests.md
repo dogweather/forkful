@@ -1,7 +1,7 @@
 ---
-title:                "테스트 쓰기"
-html_title:           "Haskell: 테스트 쓰기"
-simple_title:         "테스트 쓰기"
+title:                "테스트 작성하기"
+html_title:           "Haskell: 테스트 작성하기"
+simple_title:         "테스트 작성하기"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Testing and Debugging"
@@ -10,33 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 왜
+## 무엇 & 왜?
 
-왜 누군가가 테스트를 작성하는 것에 참여하는지 설명하기는 어렵지 않습니다. 테스트를 작성하는 것은 코드를 더욱 견고하고 안정적이게 만들기 때문입니다. 또한 테스트는 코드를 작성하는 과정에서 자신의 작업을 확인하고 오류를 미리 발견할 수 있도록 도와 줍니다.
+테스트를 작성하는 것은 프로그래머들이 코드의 작동을 확인하고 버그를 발견하기 위해 하는 작업입니다. 테스트를 작성하면 코드의 동작을 검증하기 쉽고 안정적으로 유지할 수 있습니다.
 
-# 방법
+## 진행 방법:
+
+아래의 코드 블록들을 따라하며 테스트 작성 방법을 살펴보세요.
 
 ```Haskell
-import Test.Hspec
-import Test.QuickCheck
+import Test.HUnit
 
-main :: IO ()
-main = putStrLn "Hello World!"
+-- 테스트하고자 하는 함수 작성
+subtractTwo :: Int -> Int
+subtractTwo x = x - 2
+
+-- 테스트 케이스 작성
+test1 = TestCase (assertEqual "substractTwo 5" 3 (subtractTwo 5))
+
+-- 모든 테스트 케이스를 한 곳에 모은 후 실행
+tests = TestList [TestLabel "test1" test1]
+
+-- 실행
+main = runTestTT tests
 ```
 
-위의 예시는 테스트를 작성하기 위해 Hspec와 QuickCheck 라이브러리를 사용하는 방법을 보여줍니다. 먼저 ```main``` 함수를 정의하고 그 안에 ```putStrLn``` 함수를 이용해 "Hello World!" 메시지를 출력합니다. 그리고 이렇게 작성된 테스트는 ```main``` 함수에서 해당 메시지를 출력하는지 확인할 수 있습니다.
+위의 코드를 실행하면 아래와 같은 결과를 볼 수 있습니다.
 
-## Deep Dive
+```Haskell
+Cases: 1  Tried: 1  Errors: 0  Failures: 0
 
-테스트를 작성하는 것은 간단한 작업처럼 보이지만 실제론 코드를 작성하는 것보다 훨씬 더 까다로운 작업입니다. 테스트는 코드의 모든 측면을 다루기 때문에 코드를 더욱 꼼꼼하게 작성해야 합니다. 또한 테스트를 작성하면 코드의 문제를 미리 찾아내기 때문에 디버깅 시간을 줄일 수도 있습니다. 따라서 테스트를 작성하는 것은 코드의 품질을 높이는 중요한 요소입니다.
+Counts {cases = 1, tried = 1, errors = 0, failures = 0}
+```
 
-## 관련 링크
+## 더 깊게 살펴보기:
 
-- [Hspec 공식 홈페이지](https://hspec.github.io/)
-- [QuickCheck 공식 홈페이지](https://hackage.haskell.org/package/QuickCheck)
-- [Haskell 위키백과](https://ko.wikipedia.org/wiki/%ED%95%B8%EC%8A%A4%EC%BC%80%EB%A5%BC)
+테스트 작성은 코드를 작성한 후에 이루어지는 중요한 단계입니다. 이전에는 테스트를 작성하기 위해 수작업으로 코드를 실행하고 결과를 확인하는 번거로운 작업이 필요했지만, 이제는 자동화된 테스트를 작성하여 더 효율적으로 코드를 검증할 수 있습니다. 또한 테스트 작성을 위해 사용할 수 있는 다양한 도구들이 존재하기 때문에 프로그래머들은 사용하기 편리한 도구를 선택하여 유니티하고 안정적인 코드 작성 환경을 구축할 수 있습니다.
 
-# 관련 자료
+## 관련 정보:
 
-- [Haskell 튜토리얼](https://learn.hfm.io/)
-- [Learn You a Haskell for Great Good!](http://learnyouahaskell.com/)
+- [HUnit 개요](https://hunit.github.io/)
+- [QuickCheck 개요](https://github.com/nick8325/quickcheck)
+- [Tasty 개요](https://github.com/feuerbach/tasty)

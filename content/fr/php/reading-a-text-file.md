@@ -10,60 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+Qu'est-ce que c'est et pourquoi le lire?
 
-Si vous êtes un développeur PHP, vous savez peut-être déjà que la lecture de fichiers texte est une tâche courante dans la programmation. Mais peut-être que vous vous demandez pourquoi vous devriez vous embêter à lire cet article. La réponse est simple : apprendre à lire des fichiers texte en PHP peut vous aider à interagir avec des données externes telles que des bases de données ou des fichiers de configuration.
+Lorsque vous programmez avec PHP, vous pouvez avoir besoin de lire des fichiers de texte pour récupérer des données ou pour les afficher à l'écran. Lire un fichier de texte consiste simplement à ouvrir un fichier contenant du texte et à en extraire les informations.
 
-## Comment faire
+Les programmeurs peuvent avoir besoin de lire des fichiers de texte pour une variété de raisons, telles que la récupération de données d'utilisateurs, la création de rapports ou la manipulation de grandes quantités de données.
 
-Pour lire un fichier texte en PHP, vous devez suivre quelques étapes simples :
+Comment faire:
 
-1. Tout d'abord, utilisez la fonction `fopen()` pour ouvrir le fichier et stockez le pointeur de fichier retourné dans une variable. Cette fonction prend deux paramètres : le nom du fichier et le mode d'ouverture.
-2. Ensuite, utilisez la fonction `fgets()` pour récupérer une ligne de texte à la fois. Vous pouvez stocker cette ligne dans une variable pour la traiter plus tard.
-3. Vous pouvez continuer à appeler la fonction `fgets()` jusqu'à ce que vous atteignez la fin du fichier. Une fois que cela se produit, la fonction renvoie `false`.
-4. N'oubliez pas de fermer le fichier en utilisant la fonction `fclose()` une fois que vous avez terminé de le lire.
+Pour lire un fichier de texte en utilisant PHP, vous pouvez utiliser la fonction `file_get_contents()`. Cette fonction ouvre le fichier spécifié et retourne son contenu sous forme de chaîne de caractères. Vous pouvez également utiliser la fonction `fopen()` pour ouvrir un fichier et ensuite utiliser la fonction `fgets()` pour lire chaque ligne du fichier.
 
-```PHP
-$file = fopen("monfichier.txt", "r"); // ouvre le fichier en lecture seule
+```
+// Exemple d'utilisation de file_get_contents()
+$texte = file_get_contents('fichier.txt');
 
-while(!feof($file)) { // tant que ce n'est pas la fin du fichier
-  $line = fgets($file); // récupère une ligne de texte
-  // traitez la ligne de texte ici
+echo $texte; // Affiche le contenu du fichier
+```
+
+```
+// Exemple d'utilisation de fgets()
+$fichier = fopen('fichier.txt', 'r');
+
+// Lit chaque ligne du fichier et l'affiche à l'écran
+while(!feof($fichier)) {
+    echo fgets($fichier) . "<br>";
 }
 
-fclose($file); // ferme le fichier
+fclose($fichier); // Ferme le fichier
 ```
 
-Voici un exemple de fichier texte `monfichier.txt` :
+Plongée plus profonde:
 
-```
-Bonjour
-Je suis un fichier texte.
-Ceci est une autre ligne.
-```
+La lecture de fichiers de texte est une fonctionnalité courante dans de nombreux langages de programmation, et PHP ne fait pas exception. Cependant, avant la sortie de PHP 5 en 2004, il n'était pas possible de lire des fichiers texte en une seule ligne (comme dans l'exemple `file_get_contents()` ci-dessus). Les développeurs devaient donc utiliser des fonctions plus complexes pour y parvenir.
 
-Lorsque vous exécutez le code ci-dessus, vous obtiendrez un résultat similaire au code suivant :
+Il existe également des alternatives à la fonction `file_get_contents()`, telles que `fread()` et `file()`, qui offrent plus de flexibilité dans la gestion des fichiers et la récupération des données.
 
-```
-Bonjour
-Je suis un fichier texte.
-Ceci est une autre ligne. 
-```
+Pour ceux qui souhaitent explorer davantage les possibilités de manipulation de fichiers en PHP, il existe également des extensions telles que Filesystem, qui fournit des fonctions de haut niveau pour créer, modifier ou supprimer des fichiers et des dossiers.
 
-## Deep Dive
+Voir aussi:
 
-Maintenant que vous savez comment lire un fichier texte en PHP, voici quelques informations supplémentaires qui pourraient vous être utiles :
-
-- Vous pouvez spécifier le mode d'ouverture du fichier comme `w` pour écrire dans un fichier ou `a` pour ajouter du contenu à un fichier existant.
-- La fonction `fgets()` prend un deuxième paramètre facultatif qui spécifie le nombre maximum de caractères à lire à la fois.
-- Vous pouvez également utiliser les fonctions `fgetc()` et `fgetss()` pour lire un seul caractère ou une ligne de texte, respectivement.
-- En plus de la lecture, la fonction `fopen()` peut également être utilisée pour écrire ou créer un fichier.
-- Vous pouvez utiliser la fonction `feof()` pour vérifier si vous avez atteint la fin du fichier.
-
-## Voir aussi
-
-Pour plus d'informations sur la lecture de fichiers en PHP, vous pouvez consulter les liens suivants :
-
-- [La documentation officielle de PHP sur `fopen()`](https://www.php.net/manual/fr/function.fopen.php)
-- [Un tutoriel sur la lecture et l'écriture de fichiers en PHP](https://www.tutorialspoint.com/php/php_files.htm)
-- [Des exemples pratiques de lecture et d'écriture de fichiers en PHP](https://www.w3schools.com/php/php_file_create.asp)
+- Documentation officielle PHP sur la fonction `file_get_contents()`: https://www.php.net/manual/fr/function.file-get-contents.php
+- Documentation officielle PHP sur la fonction `fopen()`: https://www.php.net/manual/fr/function.fopen.php
+- Documentation officielle PHP sur la fonction `fgets()`: https://www.php.net/manual/fr/function.fgets.php
+- Extension Filesystem de PHP: https://www.php.net/manual/fr/book.filesystem.php

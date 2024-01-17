@@ -1,7 +1,7 @@
 ---
-title:                "使用YAML"
-html_title:           "C#: 使用YAML"
-simple_title:         "使用YAML"
+title:                "使用yaml进行编程"
+html_title:           "C#: 使用yaml进行编程"
+simple_title:         "使用yaml进行编程"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Data Formats and Serialization"
@@ -10,65 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
-为什么要使用YAML？YAML是一种简单易懂的用于存储和传输数据的格式。它可以帮助程序员更有效地管理和组织数据，同时也可以与其他编程语言和工具轻松交互。
+## 什么是 YAML，为什么要用它？
+YAML 是一种文本格式，用于保存和传输数据。它可以轻松地读写和理解，并且被广泛用于软件开发中。程序员使用 YAML 是为了方便地定义和传递数据，同时保持文本文件的易读性。
 
-## 如何
-要使用YAML，首先需要安装一个C#的YAML库，比如yaml-dotnet。接下来，你可以使用以下代码来读写和操作YAML文件：
-
-```C#
-using YamlDotNet.Serialization;
-using System.IO;
-
-// 读取YAML文件
-var input = File.OpenText("input.yaml");
-var deserializer = new Deserializer();
-var data = deserializer.Deserialize(input);
-
-// 写入YAML文件
-var output = new StringWriter();
-var serializer = new Serializer();
-serializer.Serialize(output, data);
-File.WriteAllText("output.yaml", output.ToString());
-
-// 获得特定值
-var value = data["key1"]["key2"];
-```
-
-你也可以使用YAML来创建一个对象，然后将其序列化为YAML文档：
+## 如何使用 YAML:
+让我们来看一个简单的例子，假设我们想要保存一些学生的信息，包括他们的姓名和年龄。使用 YAML，我们可以这样定义数据：
 
 ```C#
-using YamlDotNet.Serialization;
-
-public class Person
-{
-    public string Name { get; set; }
-    public int Age { get; set; }
-}
-
-// 创建对象
-var person = new Person
-{
-    Name = "John",
-    Age = 25
-};
-
-// 序列化为YAML
-var serializer = new Serializer();
-var yaml = serializer.Serialize(person);
+students:
+- name: John
+  age: 18
+- name: Emily
+  age: 20
 ```
 
-运行以上代码后，你将得到以下输出：
+这样，我们就可以轻松地以结构化的方式读取学生的信息。假设我们想要输出 Emily 的年龄，我们只需要用一行代码就可以实现：
 
-```yaml
-name: John
-age: 25
+```C#
+Console.WriteLine(students[1].age);
 ```
 
-## 深入了解
-YAML支持将数据分层组织，使得数据更加结构化和清晰。它还支持更复杂的数据类型，比如数组和嵌套对象。此外，它还具有一些高级特性，比如引用和锚点，可以帮助程序员更灵活地处理数据。想要更深入地了解YAML的工作原理和语法规则，请查阅[官方文档](https://yaml.org/spec/1.2/spec.html)。
+输出结果将会是 `20`。
 
-## 参考链接
-- [yaml-dotnet官方文档](https://github.com/aaubry/YamlDotNet)
-- [YAML语言规范](https://yaml.org/spec/1.2/spec.html)
-- [使用YAML作为配置文件的好处](https://dev.to/pnkfluffy/why-use-yaml-480c)
+## 深入了解：
+历史上，程序员使用 XML 格式来存储和传输数据。然而，XML 格式的语法繁琐，使得它不易于阅读和编写。YAML 的出现解决了这个问题，它是一种更加简洁、易于理解的替代方案。在 .NET Framework 中，我们可以通过安装 `YamlDotNet.Core` 包来使用 YAML。
+
+## 查看更多：
+- [YAML 入门教程](https://www.yanbin.me/yaml-primer/)
+- [YAML 官方文档](https://yaml.org/spec/1.2/spec.html)

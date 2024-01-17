@@ -1,7 +1,7 @@
 ---
-title:                "स्ट्रिंग को निचे केस में बदलना"
-html_title:           "Elm: स्ट्रिंग को निचे केस में बदलना"
-simple_title:         "स्ट्रिंग को निचे केस में बदलना"
+title:                "स्ट्रिंग को लोअर केस में रूपांतरण करना"
+html_title:           "Elm: स्ट्रिंग को लोअर केस में रूपांतरण करना"
+simple_title:         "स्ट्रिंग को लोअर केस में रूपांतरण करना"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -10,32 +10,16 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Kyun
-Kya aapne kabhi socha hai ki aapke paas ek bada sa string hai aur aapko usse lower case mein convert karna hai? Shayad aap ek programming beginner ho aur apne string manipulation skills ko improve karna chahte ho ya phir aapko kisi project mein yeh functionality integrate karna hai. Iss article mein hum sikhege ki kaise hum Elm programming language mein strings ko lower case mein convert kar sakte hai.
-
-## Kaise Kare
-Agar aapko ek string ko lower case mein convert karna hai toh aapko `String.toLower` function ka use karna padega. Yeh function ek string value accept karta hai aur use lower case mein convert karke return karta hai.
-
-```Elm
-String.toLower "HELLO" -- Output: "hello"
-```
-
-Iske alawa, agar aap apne string variable ko lower case mein convert karna chahte hai toh aap `String.toLower` function ko direct string variable ke saath use kar sakte hai.
-
-```Elm
-stringVariable |> String.toLower
-
--- Old syntax
-String.toLower(stringVariable)
-```
-
-Yeh ek aasan aur effective tareeka hai kisi bhi string ko lower case mein convert karne ka.
-
-## Deep Dive
-Ek string ko lower case mein convert karne ke liye, Elm internally Unicode standard ka use karta hai. Yeh ensure karta hai ki koi bhi language ya character set ka use karke string ko convert karna Unicode standard ke according ho. Aur yeh bhi guarantee karta hai ki aapka code internationalization-ready rehta hai.
-
-Iske alawa, is function ka complexity O(n) hai, jaha n string length hai. Iss wajah se yeh bahut efficient tarika hai kisi bhi string ko lower case mein convert karne ka.
-
-## Dekho Bhi
-- [Official Elm Documentation for `String.toLower`](https://package.elm-lang.org/packages/elm/core/latest/String#toLower)
-- [Elm Packages](https://package.elm-lang.org/)
+## क्या और क्यों?
+कोई भी पाठ को पठने और समझने के लिए, हिंदी भाषा में नीचेरीक्तकरण करने की आवश्यकता हो सकती है|
+नीचेरीक्तकरण का अर्थ होता है कि एक स्ट्रिंग को निम्नांकित अक्षरों में बदलना, जो कि उसमे होने वाले सभी अक्षरों को स्मृति में हर दोआर पूर्ववशानुमानितों से अलग कर देता है| कॉडेबेसीस्टक नमूने या प्रोग्रामर्स आमतौर से स्ट्रिंग से काम करने के समय नीचेरीक्तकरण का प्रयोग करते है|
+## कैसे करे?
+~~~
+Elm .toLower "HELLO" --> "hello"
+~~~
+## गहराई में उतरना 
+नीचेरीक्तकरण का प्रयोग करने से पहले, प्रोग्रामर्स को यह जानना चाहिए कि इसका इतिहास क्या है| इसके अलावा, दूसरे कोई विकल्प भी उपलब्ध हैं जैसे कि common-lisp में "string-upcase" या Ruby में "upcase"|
+इंप्लीमेंटेशन की दृष्टि से, यह आसान तरीके से हो पाता है कि जब स्ट्रिंग में अक्षरों को नकल किया जाता है, तो हर अक्षर को उसी तरीके से बदला होता है| इसलिए, हमें न वह दोआर ने किसी भी प्रकार के अक्षर में उतरने का स्मरण करने की ज़रूरत होती है न ही उसमे से कोई अन्य डाटा का भी प्रभाव पड़ता है|
+## इनमे नाज करे
+संबंधित स्रोतों की लिंक
+- [Elm स्ट्रिंग डक्स माथोड्स](https://package.elm-lang.org/packages/elm/core/latest/String#toLower)

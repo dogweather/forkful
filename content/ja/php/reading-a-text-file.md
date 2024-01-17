@@ -1,7 +1,7 @@
 ---
-title:                "テキストファイルの読み込み"
-html_title:           "PHP: テキストファイルの読み込み"
-simple_title:         "テキストファイルの読み込み"
+title:                "「テキストファイルの読み込み」"
+html_title:           "PHP: 「テキストファイルの読み込み」"
+simple_title:         "「テキストファイルの読み込み」"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Files and I/O"
@@ -10,37 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
-テキストファイルを読み込むことの重要性は、PHPプログラミングにおいて非常に高いです。テキストファイルを読み込むことで、ユーザーからの入力や外部ファイルからのデータを簡単に処理できます。これにより、より動的で効率的なプログラムを作成することができます。 
+## 何か & なぜ？
+テキストファイルを読み込むことは、プログラマーがよく行うタスクの一つです。これは、コンピューターに保存された文字列データを読み取り、処理することができるようにするためです。テキストファイルは、プログラム間でのデータの受け渡しや、設定ファイルの保存によく使用されます。
 
-## 方法
-テキストファイルを読み込むには、まずファイルをオープンする必要があります。 ```fopen()```関数を使用して、ファイルのパスと読み込みモードを指定します。次に、```fread()```関数を使用して、ファイルの内容を読み込みます。例えば、 ```fread($file, filesize($filename))```とすることで、ファイル全体を一度に読み込むことができます。最後に、```fclose()```関数を使用してファイルを閉じます。
+## 方法：
+PHPを使用してテキストファイルを読み込む方法は簡単です。まずは`file`関数を使用して、読み込むテキストファイルのパスを指定します。この関数は、ファイルを配列として読み込みます。次に、`foreach`ループを使用して、行ごとに配列から読み取ったデータを処理します。
 
-**コード例:**
-```PHP
-<?php
-// ファイルをオープンして読み込みモードを指定
-$file = fopen("example.txt", "r");
+``` PHP
+$file = file("sample.txt"); // テキストファイルのパスを指定する
+foreach ($file as $line) {
+	echo $line; // ファイルの内容を1行ずつ出力する
+}
 
-// ファイルの内容を読み込み
-$data = fread($file, filesize("example.txt"));
-
-// ファイルを閉じる
-fclose($file);
-
-// 読み込んだデータを出力
-echo $data;
-?>
+// 出力：
+// This is a sample text file.
+// It contains some important information.
+// This file will be read by our program.
 ```
 
-**出力:**
-`Example text file`
+## 深堀り：
+テキストファイルの読み込みには、PHPの`file`関数以外にも様々な方法があります。例えば、`fopen`関数を使用してファイルを開き、`fread`関数を使用してデータを読み込む方法もあります。また、テキストファイル以外にも、データベースやAPIからデータを読み込むこともできます。
 
-## 深堀り
-テキストファイルを読み込むには、```fopen()```関数の他にも、```file_get_contents()```関数やPHPの```file```関数を使用することもできます。また、ファイルの読み書きには、オプションやパフォーマンスの違いがあるため、使用する関数を選ぶ際に注意が必要です。さらに、テキストエンコーディングや改行コードなど、ファイルの内容によっては追加の処理が必要になることもあります。
+テキストファイルの読み込みの歴史的背景としては、古くはテープやディスクなどの媒体からデータを読み込んでいました。現代では、インターネットやクラウドストレージからデータを読み込むことができるようになりました。
 
-## 他に見る
-- [PHP ファイル入出力 - PHPマニュアル](https://www.php.net/manual/ja/book.filesystem.php)
-- [PHP fopen() 関数 - W3Schools](https://www.w3schools.com/php/func_filesystem_fopen.asp)
-- [PHP file_get_contents() 関数 - TechAcademy](https://www.techacademy.jp/magazine/23285)
-- [PHP file 関数 - PHP.net](https://www.php.net/manual/ja/function.file.php)
+## 関連情報：
+- PHP公式ドキュメント：https://www.php.net/manual/en/function.file.php
+- `file`関数の使い方：https://www.w3schools.com/php/func_file_file.asp
+- テキストファイルの読み書きについての基本的な知識：https://www.geeksforgeeks.org/working-with-text-files-in-php/

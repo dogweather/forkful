@@ -1,7 +1,7 @@
 ---
-title:                "Å starte et nytt prosjekt."
-html_title:           "Fish Shell: Å starte et nytt prosjekt."
-simple_title:         "Å starte et nytt prosjekt."
+title:                "Begynne på et nytt prosjekt"
+html_title:           "Fish Shell: Begynne på et nytt prosjekt"
+simple_title:         "Begynne på et nytt prosjekt"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Getting Started"
@@ -10,40 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hva & Hvorfor?
 
-Å starte et nytt prosjekt kan være en spennende og givende opplevelse. Det kan være noe som hjelper deg med å lære nye ferdigheter, løse et problem du har støtt på, eller bare gi deg muligheten til å utforske noe nytt.
+Når vi starter et nytt prosjekt, begynner vi med en blank skifer - en tom mappe for å holde alt koden vår. Vi gjør dette fordi det gir oss en organisert måte å holde styr på og strukturere koden vår på. Det gjør også at det blir lettere for andre å forstå og bidra til prosjektet vårt.
 
-## Slik gjør du det
+# Hvordan:
 
-For å starte et nytt prosjekt i Fish Shell, kan du følge disse trinnene:
+```Fish Shell``` er en flott måte å opprette en ny mappe for et prosjekt. Du kan enkelt gjøre dette ved å bruke kommandoen ```mkdir``` og angi navnet på mappen du vil opprette. For eksempel:
 
-```Fish Shell
-mkdir mitt-prosjekt
-cd mitt-prosjekt
-touch main.fish
+```
+mkdir minapp
 ```
 
-Dette vil opprette en ny mappe for prosjektet ditt, gå inn i mappen og opprette en tom fil kalt "main.fish" som kan brukes til å skrive din første kode.
+Dette vil opprette en ny mappe kalt "minapp" i gjeldende arbeidsmappe. Du kan også bruke ```cd``` kommandoen for å navigere inn i den nye mappen og begynne å skrive koden din.
 
-Nå kan du åpne filen i en tekstredigerer og begynne å skrive koden din. Her er et eksempel på en enkel "Hello World" kode:
+# Dypdykk:
 
-```Fish Shell
-echo "Hei verden!"
-```
+Gjennom årene har det blitt utviklet forskjellige måter å starte et nytt prosjekt på, inkludert kommandolinjeverktøy og integrerte utviklingsmiljøer (IDEer). Selv om det er noen fordeler ved å bruke IDEer, er Fish Shell en enklere og lettere måte å organisere og starte et nytt prosjekt på. Det er også en mer fleksibel og tilpasningsdyktig løsning for å håndtere ulike typer prosjekter.
 
-Dette vil skrive ut teksten "Hei verden!" når du kjører filen med kommandoen `fish main.fish`.
+# Se også:
 
-## Dypdykk
-
-Når du starter et nytt prosjekt, er det viktig å ha en klar idé om hva du vil oppnå og hvordan du skal komme dit. Du må også ta hensyn til eventuelle avhengigheter og begrensninger, og sørge for at du har en god struktur og organisering av koden din.
-
-En god måte å samle inspirasjon og ideer for et nytt prosjekt er ved å undersøke eksisterende prosjekter og kodeeksempler i Fish Shell-samfunnet. Du kan også lese dokumentasjonen for forskjellige funksjoner og kommandoer i Fish Shell for å hjelpe deg med å forstå hvordan du kan bruke dem i prosjektet ditt.
-
-Når du har fått en god forståelse av hva du skal gjøre, kan du begynne å utvikle og teste koden din. Husk å jevnlig lagre endringene dine og bruke debugging-verktøy for å identifisere eventuelle feil og problemer underveis.
-
-## Se også
-
-- [Fish Shell offisiell nettside](https://fishshell.com/)
-- [Fish Shell dokumentasjon](https://fishshell.com/docs/current/index.html)
-- [Fish Shell GitHub-repositorium](https://github.com/fish-shell/fish-shell)
+- [Offisiell Fish Shell dokumentasjon] (https://fishshell.com/docs/current/index.html)
+- [Sammenligning av Fish Shell og andre programmeringsspråk] (https://fishshell.com/docs/current/comparison.html)
+- [Oppretting av en ny mappe med Fish Shell] (https://fishshell.com/docs/current/cmds/mkdir.html)

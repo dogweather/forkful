@@ -1,7 +1,7 @@
 ---
-title:                "Generowanie losowych liczb"
-html_title:           "Ruby: Generowanie losowych liczb"
-simple_title:         "Generowanie losowych liczb"
+title:                "Tworzenie losowych liczb"
+html_title:           "Ruby: Tworzenie losowych liczb"
+simple_title:         "Tworzenie losowych liczb"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Numbers"
@@ -10,49 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+# Dlaczego & PoCo?
 
-Generowanie losowych liczb jest niezbędną umiejętnością w wielu aplikacjach i projektach programistycznych. Jest to przydatne w celu generowania unikalnych identyfikatorów, losowego wybierania elementów z listy lub nawet w symulacjach i testach. W tej krótkiej instrukcji dowiesz się, jak w prosty sposób generować losowe liczby w języku Ruby.
+Generowanie losowych liczb jest jednym z podstawowych zadań programistów. Pozwala to na tworzenie różnych symulacji, gier, testów i wielu innych rzeczy. Innymi słowy, jest to niezbędne narzędzie w zdecydowanej większości projektów informatycznych.
 
-## Jak To Zrobić
+# Jak to zrobić:
 
-```ruby
-# Generowanie losowego integera w zakresie od 1 do 10
-rand(1..10)
-# => 7
-
-# Generowanie losowego floata w zakresie od 0 do 1
-rand
-# => 0.3514464251832353
-
-# Generowanie losowego integera w zakresie od 1 do 100
-(rand * 100).to_i
-# => 48
-```
-
-Świetnie! Teraz wiedziesz, jak wygenerować losowe liczby w różnych zakresach. Ale co jeśli chcesz mieć większą kontrolę nad generowanymi liczbami? W takiej sytuacji możesz użyć klasy `Random`, która zawiera wiele przydatnych metod do pracy z losowością.
+W Ruby istnieje wiele różnych sposobów na generowanie losowych liczb. Jednym z nich jest użycie metody `rand` z biblioteki `Kernel`. Oto przykład:
 
 ```ruby
-# Generowanie losowego integera w zakresie od 100 do 200
-random = Random.new
-random.rand(100..200)
-# => 184
-
-# Generowanie pięciu różnych liczb całkowitych w zakresie od 1 do 10
-5.times { puts random.rand(1..10) }
-# => 9
-# => 2
-# => 7
-# => 4
-# => 6
+puts rand(10)	# wygenerowanie losowej liczby od 0 do 10
 ```
 
-## Deep Dive
+Wynik może wyglądać na przykład tak: `7`.
 
-Istnieje wiele różnych sposobów generowania losowych liczb w języku Ruby. Jeśli chcesz poznać więcej na ten temat, możesz zajrzeć do dokumentacji języka lub przeczytać o różnych algorytmach generowania liczb losowych. Ważne jest, aby wiedzieć, że niektóre sposoby generowania liczb mogą być bardziej losowe i mniej podatne na powtarzalność niż inne.
+Jeśli chcemy wygenerować wiele liczb naraz, możemy skorzystać z metody `times` w połączeniu z `rand`:
 
-## Zobacz również
+```ruby
+5.times { puts rand(100) }	# wygenerowanie 5 losowych liczb od 0 do 100
+```
 
-- [Dokumentacja języka Ruby](https://ruby-doc.org/core-3.0.1/Random.html)
-- [Wykorzystanie klasy Random w Ruby](https://medium.com/@katopz/generate-the-random-number-in-ruby-6b591f7798f6)
-- [Analiza algorytmów generowania liczb losowych w Ruby](https://spin.atomicobject.com/2017/06/19/random-number-generator-ruby/)
+Możemy również wygenerować liczbę całkowitą z zakresu przy użyciu metody `rand` z podaniem dwóch argumentów, czyli początku i końca zakresu:
+
+```ruby
+puts rand(1..100)	# wygenerowanie losowej liczby całkowitej od 1 do 100
+```
+
+# Głębszy wgląd:
+
+Generowanie losowych liczb jest jednym z najstarszych zadań programistów. Już w latach 50. XX wieku istniały różne algorytmy, które miały na celu generowanie liczb pseudolosowych. Jednym z najbardziej popularnych jest metoda LCG (Linear Congruential Generator). Obecnie jednak istnieje wiele innych, bardziej skomplikowanych i bezpieczniejszych sposobów na generowanie losowych liczb.
+
+W Ruby istnieją również inne biblioteki do generowania liczb losowych, takie jak `SecureRandom`, która zapewnia większe bezpieczeństwo podczas generowania liczb pseudolosowych. Istnieją również biblioteki dedykowane do generowania konkretnych typów liczb, na przykład `RandomInteger` do generowania liczb całkowitych.
+
+# Zobacz również:
+
+- [Ruby Dokumentacja - Metoda `rand`](https://ruby-doc.org/core-3.0.2/Kernel.html#method-i-rand)
+- [Ruby Dokumentacja - Biblioteka `SecureRandom`](https://ruby-doc.org/stdlib-3.0.2/libdoc/securerandom/rdoc/SecureRandom.html)
+- [RandomInteger gem](https://github.com/mayerdan/random_integer)

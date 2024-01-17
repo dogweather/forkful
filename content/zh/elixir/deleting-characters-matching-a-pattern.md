@@ -10,44 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
+# 什么和为什么？
 
-有时候，在编程过程中，我们可能需要删除一些字符串中匹配特定模式的字符。这可以帮助我们简化数据处理过程，或者去除不需要的内容，使得代码更加简洁明了。
+删除匹配模式的字符是指从一个字符串中移除满足特定模式的所有字符。程序员进行这种操作的原因通常是为了清洁数据或者进行数据转换，以便更容易地处理信息。
 
-## 如何做
+## 如何：
 
-在Elixir中，我们可以使用`String.replace`函数来删除字符串中匹配特定模式的字符。下面是一个简单的例子，演示如何删除字符串中的所有数字：
+```Elixir
+# 使用正则表达式删除所有数字
+String.replace("Hello123 World456", ~r/[0-9]/, "")
 
-```elixir
-str = "I have 10 apples, 20 oranges, and 5 bananas."
-new_str = String.replace(str, ~r/[0-9]+/, "")
-IO.puts new_str
-# 输出："I have , , and bananas."
+# 输出：Hello World
 ```
 
-在这个例子中，我们首先定义了一个带有数字的字符串`str`。然后，我们使用`String.replace`函数来替换字符串中匹配到的任何数字，即使用正则表达式`~r/[0-9]+/`来匹配所有连续的数字。最后，我们输出修改后的字符串`new_str`，它已经不再包含数字。
+```Elixir
+# 使用模式列表删除所有元音字母
+String.replace("Hello World", ~w[a e i o u], "")
 
-除了删除特定模式的字符，我们也可以使用`String.replace`函数来替换特定的字符，即将匹配到的字符替换为另一个字符。下面是一个例子，演示将字符串中的所有空格替换为下划线：
-
-```elixir
-str = "Hello World"
-new_str = String.replace(str, " ", "_")
-IO.puts new_str
-# 输出："Hello_World"
+# 输出：Hll Wrld
 ```
 
-## 深入探讨
+## 深入分析：
 
-在Elixir中，我们可以使用多种方式来删除或替换字符。除了`String.replace`函数，我们还可以使用`String.trim`函数来删除字符串中的空白字符，或使用`String.graphemes`函数来分割字符串为字符并进行处理。此外，我们也可以使用`Regex.replace`函数来使用更复杂的正则表达式来匹配和替换字符。
+在历史上，程序员通常使用字符串函数来准备数据进行处理。然而，随着正则表达式的普及，删除字符匹配模式也变得更加容易。另外，Elixir提供了各种函数和操作符来进行字符串处理，使得删除字符匹配模式变得更加方便。
 
-如果想要更深入地了解字符串处理相关的函数和工具，可以参考以下链接：
+## 查看这些资源：
 
-- [Elixir String module documentation](https://hexdocs.pm/elixir/String.html)
-- [Elixir Regex module documentation](https://hexdocs.pm/elixir/master/Regex.html)
-- [Learn regex - interactive tutorial](https://regexone.com/)
-
-## 参考链接
-
-- [Elixir String module documentation](https://hexdocs.pm/elixir/String.html)
-- [Elixir Regex module documentation](https://hexdocs.pm/elixir/master/Regex.html)
-- [Learn regex - interactive tutorial](https://regexone.com/)
+- [Elixir字符串处理函数](https://hexdocs.pm/elixir/String.html)
+- [正则表达式在Elixir中的使用教程](https://elixir-lang.org/getting-started/regex.html)

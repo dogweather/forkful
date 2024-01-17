@@ -10,32 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Varför: Varför Skulle Du Vilja Ladda Ner En Webbplats?
+## Vad & Varför?
+Att hämta en webbsida är en process där man laddar ner en kopia av en webbsida från internet till en dator eller annan enhet. Detta görs vanligtvis av programmerare för att kunna bearbeta och använda data från webbsidor i sina program.
 
-Ibland kan det vara användbart att kunna ladda ner en webbplats för offline användning eller för att analysera dess innehåll. Det kan också vara ett sätt att spara favoritwebbplatser som du vill besöka igen senare, även om de skulle tas bort från internet.
-
-## Så här gör du
-
-För att ladda ner en webbplats med Gleam, används funktionen `httpc.get` tillsammans med funktionen `Gleam.IO.File.write` för att spara den nedladdade sidan som en fil. Här är ett enkelt exempel som laddar ner Glesams hemsida och sparar den som en fil med namnet "gleam.html":
+## Så här gör du:
+För att hämta en webbsida i Gleam kan man använda funktionen `httpc.get(url)` från biblioteket `gleam/httpc`. Detta kommer att returnera en `Result` med antingen en `Ok` med en `HttpResponse` som innehåller den hämtade sidan, eller ett `Error` om något gick fel. Exempel:
 
 ```Gleam
-let request = httpc.get("https://gleam.io")
-request
-  .then(Response.body)
-  .and_then { body -> File.write("gleam.html", body) }
-  .panic
+import gleam/httpc
+
+let result = httpc.get("https://www.example.com")
+
+case result {
+  Ok(response) ->
+    case response.body {
+      Ok(body) ->
+        // Gör något med body
+
+      Err(error) ->
+        // Hantera fel
+    }
+
+  Err(error) ->
+    // Hantera fel
+}
 ```
 
-För att öppna den nedladdade filen i din webbläsare kan du använda funktionen `os.open_browser("gleam.html")`.
+## Djupdykning:
+Att hämta webbsidor är en viktig del av många programmerares arbete, särskilt för webbutveckling och dataanalys. Det finns alternativa lösningar för att hämta webbsidor, såsom att använda verktyg som cURL eller bibliotek från andra programmeringsspråk. Implementeringen av `httpc.get` använder sig av ett bibliotek som heter Mochi, som hanterar HTTP-anrop och returnerar resultatet som en `Result`.
 
-## En djupdykning
-
-Med hjälp av Gleams funktioner kan du anpassa hur du vill ladda ner en webbplats. Till exempel kan du ange specifika headern för din webbläsare genom att använda `httpc.set_header("User-Agent", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0 Safari/605.1.15")` innan du utför din förfrågan.
-
-Du kan också använda `httpc.post` istället för `httpc.get` för att ladda ner sidor som kräver inloggning eller annan form av interaktion.
-
-## Se också
-
-- Mer information om Gleams HTTP-funktionalitet: https://gleam.run/docs/http
-- Provrördet för `httpc.get`: https://gleam.run/provroersel/http/httpc.get
-- Provrördet för `Gleam.IO.File.write`: https://gleam.run/provroersel/file/file.write
+## Se även:
+Läs mer om Gleam på deras officiella webbplats: https://gleam.run/

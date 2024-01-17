@@ -10,40 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##Varför
+## Vad & Varför?
 
-Att söka och byta ut text är en vanlig uppgift för programmerare, oavsett vilket språk de arbetar med. Det kan vara ett viktigt steg i att lösa ett problem eller för att uppdatera kod som har blivit föråldrad. Med Clojure är det lätt att söka och ersätta text på ett effektivt sätt.
+Att söka och ersätta text är en vanlig uppgift för programmerare. Det innebär att hitta en specifik del av en text och ersätta den med en annan. Det kan vara användbart för att göra kodändringar, fixa fel eller uppdatera data.
 
-##Så här gör du
+## Hur:
 
-Du kan enkelt söka och byta ut text i Clojure genom att använda den inbyggda "replace" funktionen. Här är ett enkelt exempel på hur du kan använda den:
+### Enkelt exempel:
+Om vi har en sträng "Hej världen!" och vill ersätta "världen" med "clojure", kan vi använda funktionen ```Clojure (replace "världen" "clojure" "Hej världen!")```. Detta kommer att resultera i "Hej clojure!" som output.
 
-```Clojure
-(replace "hej" "hello" "Hej världen!") 
-```
+### Komplexare exempel:
+I följande kod så söker vi efter alla förekomster av "hund" i en lista med djurnamn och ersätter dem med "katt". Sedan använder vi funktionen ```Clojure (into [] (map #(if (= % "hund") "katt" %) ["hund" "katt" "apa" "hund"]))```, vilket resulterar i ```["katt" "katt" "apa" "katt"]``` som output.
 
-Detta kommer att söka igenom textsträngen "Hej världen!" och byta ut alla förekomster av "hej" med "hello". Detta ger dig följande output:
+## Deep dive:
 
-```Clojure
-"Hello världen!"
-```
+### Historisk kontext:
+Att söka och ersätta text är en vanlig uppgift inte bara för programmerare, utan även för användare av textredigerare eller ordbehandlingssprogram. Det har funnits sedan långt innan programmeringsspråket Clojure, och används idag i många olika sammanhang.
 
-För att söka igenom en hel fil och ersätta text kan du använda funktionen "slurp" för att läsa in filen som en textsträng och sedan använda "replace" på den. Till exempel:
+### Alternativ:
+Det finns flera olika funktioner i Clojure som kan användas för att söka och ersätta text, såsom ```replace```, ```clojure.string/replace``` och ```clojure.walk/postwalk```. Det är också möjligt att använda reguljära uttryck för att göra avancerade sökningar och ersättningar.
 
-```Clojure
-(with-open [file (clojure.java.io/reader "minfil.txt")] 
-  (let [content (slurp file)] 
-    (replace "hund" "katt" content)))
-```
+### Implementation:
+Funktionen ```replace``` i Clojure använder rekursion för att gå igenom en text och hitta alla förekomster av en viss sträng. När en matchning hittas ersätts den med den nya strängen och funktionen fortsätter sedan tills hela texten har gåtts igenom.
 
-Detta kommer att söka igenom filen "minfil.txt" och byta ut alla förekomster av "hund" med "katt". Outputen är den uppdaterade texten från filen.
+## See also:
 
-##Djupdykning
+För mer information och exempel på hur man kan söka och ersätta text i Clojure, rekommenderas följande länkar:
 
-Det finns också andra alternativ för att utföra sökningar och byta ut text i Clojure, såsom att använda reguljära uttryck med funktionen "re-seq" eller att använda molnfunktioner som "sed". Det är viktigt att notera att Clojure används för att manipulera data på en funktionell nivå, vilket gör att sökningar och ersättningar kan bli enklare och mer lättlästa jämfört med andra språk.
-
-##Se även
-
-- [ClojureDocs](https://clojuredocs.org/clojure.core/replace)
-- [En introduktion till Clojure](https://github.com/hjorturlarsen/artikel-clojure)
-- [Tutorial: Att bygga en enkel webbapplikation med Clojure och Ring](https://www.dailydrip.com/blog/clojure-building-web-apps-with-compojure)
+- Clojure-dokumentation för ```replace```: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/replace
+- Officiell guide för reguljära uttryck i Clojure: https://clojuredocs.org/clojure.core/re-matches
+- StackOverflow-fråga om användning av reguljära uttryck i Clojure: https://stackoverflow.com/questions/19761968/using-regular-expressions-in-clojure

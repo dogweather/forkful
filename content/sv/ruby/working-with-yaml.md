@@ -1,7 +1,7 @@
 ---
-title:                "Arbeta med yaml"
-html_title:           "Ruby: Arbeta med yaml"
-simple_title:         "Arbeta med yaml"
+title:                "Att arbeta med yaml"
+html_title:           "Ruby: Att arbeta med yaml"
+simple_title:         "Att arbeta med yaml"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Data Formats and Serialization"
@@ -10,45 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Varför
+## Vad & Varför?
+Arbetar du med Ruby, så är chansen stor att du stött på YAML. YAML (YAML Ain't Markup Language) är ett strukturerat textformat som används för att representera data. Det är ett populärt val bland programmerare på grund av dess enkelhet och läsbarhet.
 
-Om du arbetar med webbutveckling, databaser eller mjukvarutillämpningar är du förmodligen bekant med YAML. Det är ett lättläst dataformat som används för att lagra och överföra data. Att kunna hantera YAML är en viktig färdighet inom programmering, särskilt inom Ruby.
+## Hur man gör:
+```Ruby
+# Skapa en YAML-fil
+yaml_data = { name: "Lisa", age: 25, occupation: "webbutvecklare" }
+File.open("min_fil.yml", "w") do |file|
+  file.write(yaml_data.to_yaml)
+end
 
-# Så här gör du
-
-För att hantera YAML i Ruby behöver du först installera en YAML-paket. Detta kan enkelt göras genom att köra följande kommando i din terminal:
-
-```
-gem install yaml
-```
-
-När det är installerat kan du använda funktionen `require` för att importera YAML i ditt Ruby-program:
-
-```
+# Läsa och bearbeta en YAML-fil
 require 'yaml'
+data = YAML.load_file("min_fil.yml")
+puts "Namn: #{data[:name]}"
+puts "Ålder: #{data[:age]}"
+puts "Yrke: #{data[:occupation]}"
+
+# Exempel på output:
+# Namn: Lisa
+# Ålder: 25
+# Yrke: webbutvecklare
 ```
 
-För att läsa in en YAML-fil och konvertera den till en Ruby-hash används följande kod:
+## Deep Dive:
+YAML utvecklades av Clark Evans under början av 2000-talet och har sedan dess blivit en populär standard för att läsa och skriva datastrukturer i textformat. Ett vanligt alternativ till YAML är JSON, men YAML anses vara mer människoläsbar med sina utrymmen och avskiljare i stället för klammerparenteser. Det finns också ett antal tredjepartsbibliotek för att arbeta med YAML i Ruby, såsom [Psych](https://github.com/ruby/psych) och [YAML](https://github.com/ruby/yaml).
 
-```
-yaml_hash = YAML.load_file('file_name.yml')
-```
-
-För att skriva en YAML-fil från en befintlig hash i Ruby används följande kod:
-
-```
-yaml_string = YAML.dump(hash)
-File.open('file_name.yml', 'w') { |file| file.write(yaml_string) }
-```
-
-Deep Dive
-
-En YAML-fil består av olika nyckel-värde-par som separeras av kolon och indenterade underkategorier som består av listor eller andra nyckel-värde-par. Det är ett enkelt och läsbart format som är användbart för att lagra konfigurationsdata eller andra typer av datastrukturer.
-
-När du arbetar med YAML i Ruby är det viktigt att känna till att YAML-filen automatiskt konverteras till en hash. Detta betyder att om du behöver åtkomst till specifika värden i filen, kan du använda nycklar och metoder för att navigera genom hashen och hämta värdet.
-
-# Se även
-
-- [YAML.org](https://yaml.org/)
-- [YAML Tutorial](https://www.codecademy.com/learn/learn-yaml)
-- [Ruby YAML Documentation](https://ruby-doc.org/stdlib-2.7.1/libdoc/yaml/rdoc/YAML.html)
+## Se även:
+- [YAML Specifikation](https://yaml.org/spec/)
+- [Officiell YAML-sida](https://yaml.org/)
+- [Ruby YAML-dokumentation](https://ruby-doc.org/stdlib-2.7.1/libdoc/yaml/rdoc/YAML.html)
+- [YAML vs JSON: Vilket är bättre för konfigurationsfiler?](https://blog.bugsnag.com/yaml-vs-json/)

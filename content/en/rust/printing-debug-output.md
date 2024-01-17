@@ -10,52 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-Debugging is an essential part of the coding process, and one of the most commonly used techniques is printing debug output. It allows programmers to see the values of variables, function outputs, and other important information at a specific point in their program's execution. This can help identify bugs and errors more quickly, making the debugging process more efficient.
+Printing debug output is the practice of displaying specific information about the code's execution as it runs in order to aid the programmer in identifying bugs and errors. Programmers use this technique to better understand the behavior of their code and troubleshoot any issues that may arise during development.
 
-## How To
+## How to:
 
-There are a few different ways to print debug output in Rust, depending on what you want to see and where you want to see it. Here are some examples using the `println!` macro:
+To print debug output in Rust, use the ```println!()``` macro. This macro takes a string as an argument and displays it on the console when the code is executed. Here's an example:
 
-```Rust
-// Print a string
-let name = "John";
-println!("Hello, {}!", name);
 ```
-
-```Rust
-// Print an integer
-let num = 42;
-println!("The answer to everything is {}.", num);
+fn main() {
+  let num1 = 5;
+  let num2 = 10;
+  println!("The value of num1 is {} and the value of num2 is {}", num1, num2);
+}
 ```
-
-```Rust
-// Print a boolean
-let is_rust_fun = true;
-println!("Is Rust fun? {}", is_rust_fun);
+This will print the following output on the console:
 ```
-
-You can also use the `dbg!` macro to print the value of an expression along with its location in the code:
-
-```Rust
-// Print the length of a vector
-let num_list = vec![1, 2, 3];
-dbg!(num_list.len());
+The value of num1 is 5 and the value of num2 is 10
 ```
+The exclamation mark at the end of ```println!``` indicates that it is a macro rather than a function. This allows it to take a variable number of arguments. You can use this macro to display any variable or expression by adding them as arguments within the curly braces {}
 
-The `eprintln!` and `eprint!` macros can be used to print debug output to the standard error stream, which can be useful for logging errors and messages during the debugging process.
+## Deep Dive:
 
-## Deep Dive
+Historically, printing debug output was a common practice in programming languages. It originated in the early days of computing when mainframe computers were the norm and debugging tools were not yet available. Programmers would have to write out their code and manually check its execution by printing out values to see if their code was behaving as expected.
 
-Rust also offers the `format!` macro, which works similarly to `println!` but returns a `String` instead of printing directly to the console. This can be useful if you want to save the debug output for later use.
+Today, there are many alternatives to printing debug output such as using a debugger or logging libraries. However, this practice is still widely used in Rust due to its simplicity and effectiveness in debugging code.
 
-Additionally, Rust has a powerful logging crate called `log` that allows for more advanced debugging and logging capabilities. It provides macros for different logging levels, allowing you to customize the output based on the severity of the message.
+When using ```println!```, you may also want to use formatting options to show the data in a specific way. For example, you can use the ```{:?}``` formatting option to print out a variable's value in a debug-friendly format. This can be useful when working with complex data structures.
 
-Overall, printing debug output in Rust is an important tool for debugging and error tracking, and there are multiple ways to achieve it, depending on your specific needs.
+## See Also:
 
-## See Also
-
-- [Rust Book: Handling Errors](https://doc.rust-lang.org/book/ch09-00-error-handling.html)
-- [Rust Reference: Debugging in Rust](https://doc.rust-lang.org/edition-guide/rusti/debugging.html)
-- [Rust Pub: log crate](https://crates.io/crates/log)
+- [Rust Documentation on ```println!```](https://doc.rust-lang.org/std/macro.println.html)
+- [Debugging in Rust with ```dbg!```](https://danielkeep.github.io/practical-intro-to-rust/development-setup/debugging.html)
+- [Logging in Rust with the ```log``` crate](https://docs.rs/log/0.4.8/log/)

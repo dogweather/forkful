@@ -1,7 +1,7 @@
 ---
-title:                "디버그 출력 출력하기"
-html_title:           "Arduino: 디버그 출력 출력하기"
-simple_title:         "디버그 출력 출력하기"
+title:                "디버깅 출력하기"
+html_title:           "Arduino: 디버깅 출력하기"
+simple_title:         "디버깅 출력하기"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Testing and Debugging"
@@ -10,47 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+# 뭐고 왜? 
+디버그 출력(printing debug output)이란 무엇일까요? 이는 프로그래머들이 디버깅을 하는 동안 프로그램이 어떻게 동작하고 있는지를 확인하기 위해 사용되는 작업입니다. 디버그 출력은 에러를 추적하고 문제를 해결하는 데 매우 유용합니다. 
 
-이해하기 쉬운 디버그 정보를 출력할 수 있어서 개발자들은 더 쉽게 코드를 디버깅할 수 있고, 문제를 해결할 수 있습니다.
-
-## 방법
-
-디버그 출력을 한 줄에 출력하는 방법:
+# 어떻게: 
+디버그 출력은 아두이노(Arduino)를 사용하여 매우 간단하게 수행할 수 있습니다. 아래 코드 블록을 참조하십시오. 
 
 ```Arduino
-Serial.println("Hello World!"); 
+
+// 디버그 출력을 위한 시리얼 모니터를 설정합니다.
+Serial.begin(9600);
+
+// 디버그 출력을 하기 위해 "Hello World!" 메시지를 보냅니다.
+Serial.println("Hello World!");
+
 ```
 
-여러 개의 변수를 출력하는 방법:
+위의 코드는 아두이노 보드에 연결된 시리얼 모니터를 사용하여 "Hello World!" 메시지를 출력하는 예제입니다. 메시지는 연결된 컴퓨터의 시리얼 포트로 전송되어 콘솔에 표시됩니다. 
 
-```Arduino 
-int num = 5; 
-float decimal = 3.14; 
-String text = "Arduino";
+# 더 깊게: 
+디버그 출력은 프로그래밍의 초창기부터 사용되어 왔습니다. 예전에는 프로그래머들이 디버그 시 메모리에 있는 변수 값을 확인하기 위해 물리적인 디바이스에 연결된 LED 등을 사용했습니다. 하지만 현재는 시리얼 모니터와 같은 디버그 도구를 사용하여 더욱 편리하게 디버깅을 할 수 있습니다. 또한 특정 조건에서만 디버그 출력을 활성화하거나 디버그 메시지의 레벨을 조절하는 등 다양한 방법으로 디버그 출력을 사용할 수 있습니다.
 
-Serial.print("Number: "); 
-Serial.println(num); 
-Serial.print("Decimal: "); 
-Serial.println(decimal); 
-Serial.print("Text: "); 
-Serial.println(text); 
-```
+# 더 많은 정보: 
+더 많은 정보를 원하시면 아래 링크를 참조하십시오. 
 
-센서 값을 출력하는 방법:
-
-```Arduino
-int sensorValue = analogRead(A0); 
-Serial.print("Sensor Value: "); 
-Serial.println(sensorValue);
-```
-
-## 깊은 고민
-
-디버그 출력을 위해서는 `Serial` 라이브러리를 사용해야 합니다. 이 라이브러리는 USB 시리얼 포트를 통해 컴퓨터와 통신하게 해줍니다. 디버그 정보를 출력하고 싶은 함수 내부에서 `Serial.begin()`을 사용해야 합니다. 또한 `Serial`에서는 `println()`과 `print()` 함수를 사용하여 디버그 정보를 출력할 수 있습니다. 디버그 정보를 출력한 후에는 `Serial.end()` 함수를 사용하여 시리얼 통신을 끝내야 합니다.
-
-## 관련 정보
-
-📚 [Arduino Reference - Serial](https://www.arduino.cc/reference/en/language/functions/communication/serial/)
-
-📚 [How to Use Serial Print in Arduino](https://www.makerspaces.com/how-to-use-serial-print-in-arduino/)
+- https://learn.sparkfun.com/tutorials/serial-communication 현재 코드는 아두이노 IDE와 호환되도록 작성되었습니다.

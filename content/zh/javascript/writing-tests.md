@@ -10,43 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么要编写测试
+什么是测试，为什么程序员要这样做？
 
-编写测试是确保代码质量和稳定性的重要步骤。通过编写测试，您可以在做出任何更改或添加新功能时，确保代码的正确性和可靠性。这可以大大减少后期出现的错误，并且提高了代码的可维护性。
+测试是一种评估代码是否达到预期要求的方法。它可以帮助程序员在编写代码之后，利用自动化的方式检查代码是否按照预期执行。这样做可以提高代码的质量，减少bug，最终为用户提供更好的使用体验。
 
-## 如何编写测试
-
-编写测试分为三个步骤：准备、编写和运行测试。
-
-首先，您需要确定需要测试的函数或代码块，并准备测试用例。接下来，在代码中使用断言语句来验证函数的输出是否符合预期。最后，通过运行测试来检查断言是否通过，从而确定代码的正确性。
-
-以下是一个简单的示例：
+如何进行测试：
 
 ```Javascript
-// 准备
-function add(a, b) {
-  return a + b;
+function add(num1, num2) {
+  return num1 + num2;
 }
-const x = 5;
-const y = 10;
 
-// 编写
-const result = add(x, y);
-
-// 运行
-console.log(result); // 15
+let result = add(2, 3);
+console.log(result); // output: 5
 ```
 
-在这个例子中，我们准备了一个简单的加法函数，并使用两个变量x和y作为测试用例。然后，我们调用函数并将结果存储在变量result中。最后，我们使用console.log()来检查结果是否符合预期。
+深入了解：
 
-## 深入了解测试编写
+有时候，复杂的程序需要耗费大量的时间和精力来进行测试，但这也是必要的。过去，程序员通常会手动进行测试，但这样很容易出错，并且耗时。现在，我们有更高效的自动化工具来帮助我们进行测试，比如Jest和Mocha。除了这些工具之外，还有一些其他的替代方法，如Test Driven Development（TDD），即在编写代码之前先编写测试用例。
 
-编写测试的关键在于编写优质的测试用例。测试用例应该覆盖代码中的各种情况，包括正常情况和边界情况。同时，测试代码应该易于维护和更新，并保持灵活性。
+类似资源：
 
-为了更好地组织测试代码，您可以使用测试框架，如Mocha或Jasmine。这些框架提供了一组方法和断言，使测试编写更加容易和有效。您还可以使用代码覆盖率工具来检查测试覆盖率，从而确保您的代码已经得到了充分测试。
-
-## 请参阅
-
-- [Mocha](https://mochajs.org/) - Node.js和浏览器中的简单，灵活，可重用的JavaScript测试框架
-- [Jasmine](https://jasmine.github.io/) - 适用于任何测试环境的强大的行为驱动开发框架
-- [Istanbul](https://istanbul.js.org/) - JavaScript代码覆盖率工具
+- [Jest官方网站](https://jestjs.io/)
+- [Mocha官方网站](https://mochajs.org/)
+- [TDD指南](https://medium.com/javascript-scene/what-is-test-driven-development-in-react-and-how-to-get-started-1a312de92ce9)

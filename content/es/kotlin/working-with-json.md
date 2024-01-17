@@ -10,71 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué trabajar con JSON en Kotlin?
+## ¿Qué es y por qué se utiliza JSON?
 
-Si estás desarrollando en Kotlin, es muy probable que en algún momento tengas que trabajar con estructuras de datos en formato JSON. Este formato es ampliamente utilizado para el intercambio de información entre aplicaciones, por lo que conocer cómo manejarlo en Kotlin es una habilidad esencial para cualquier desarrollador.
+JSON (JavaScript Object Notation) es un formato ligero de intercambio de datos que se utiliza ampliamente en la programación para almacenar y transmitir información. Los programadores usan JSON porque es fácil de leer y escribir, y es compatible con muchos lenguajes de programación y plataformas.
 
-## Cómo trabajar con JSON en Kotlin
+## ¡Cómo hacerlo!
 
-Para trabajar con JSON en Kotlin, necesitaremos importar la librería "kotlinx.serialization", la cual nos proporciona las herramientas necesarias para serializar y deserializar objetos a formato JSON.
+`Kotlin` proporciona una manera fácil de trabajar con JSON a través de la clase `JSONObject`. Podemos crear un objeto JSON utilizando su constructor y agregar pares clave-valor utilizando el operador `put`:
+
 ```Kotlin
-// Importamos la librería
-import kotlinx.serialization.*
-import kotlinx.serialization.json.Json
+val json = JSONObject()
+json.put("nombre", "María")
+json.put("edad", 25)
 ```
 
-A continuación, definiremos una clase que representará un objeto en formato JSON. En este caso, utilizaremos una clase llamada "Persona" con las propiedades "nombre" y "edad".
+También podemos crear objetos JSON a partir de cadenas de texto utilizando el método `JSONObject()` y acceder a sus elementos utilizando el operador `get`:
+
 ```Kotlin
-// Definimos la clase Persona
-@Serializable
-data class Persona(
-    val nombre: String,
-    val edad: Int
-)
+val userJson = JSONObject("{\"nombre\":\"Juan\",\"edad\":20}")
+val nombre = userJson.get("nombre")  // Juan
+val edad = userJson.get("edad")      // 20
 ```
 
-Para serializar una instancia de la clase Persona a formato JSON, utilizaremos la función "stringify" de la librería "kotlinx.serialization", pasándole como parámetro una instancia de la clase y especificando el formato de salida.
+Para convertir un objeto JSON a una cadena de texto, podemos usar el método `toString()`:
+
 ```Kotlin
-// Creamos una instancia de la clase Persona
-val persona = Persona("Juan", 25)
-
-// Serializamos la instancia a formato JSON
-val json = Json.stringify(Pesona.serializer(), persona)
-
-// Imprimimos el resultado
-println(json)
+val jsonString = json.toString() // {"nombre":"María","edad":25}
 ```
 
-La salida de este código sería:
-```Kotlin
-{"nombre":"Juan","edad":25}
-```
+## Inmersión profunda
 
-Para deserializar un objeto JSON a una instancia de la clase Persona, utilizaremos la función "parse" de la librería "kotlinx.serialization", pasándole como parámetro el formato de entrada y el objeto JSON.
-```Kotlin
-// Definimos un objeto JSON
-val json = """{"nombre":"María","edad":30}"""
+JSON fue creado originalmente por Douglas Crockford en 2001, como una alternativa más ligera al formato XML. Ha ganado gran popularidad en la programación web y en el intercambio de datos entre aplicaciones. Algunas alternativas a JSON son YAML, CSV y XML.
 
-// Deserializamos el objeto a una instancia de la clase Persona
-val persona = Json.parse(Persona.serializer(), json)
-
-// Imprimimos el resultado
-println(persona.nombre)
-println(persona.edad)
-```
-
-La salida de este código sería:
-```Kotlin
-María
-30
-```
-
-## Profundizando en el manejo de JSON en Kotlin
-
-Además de serializar y deserializar objetos a formato JSON, la librería "kotlinx.serialization" nos permite realizar operaciones más avanzadas, como la manipulación de objetos anidados, la personalización del proceso de serialización y deserialización, entre otras. Puedes consultar la documentación oficial para obtener más información y ejemplos.
+La implementación de JSON en Kotlin se basa en la biblioteca `org.json` del paquete `Java` y proporciona una API sencilla y eficiente para trabajar con objetos JSON.
 
 ## Ver también
 
-- Documentación oficial de "kotlinx.serialization": https://github.com/Kotlin/kotlinx.serialization
-- Tutorial de JSON en Kotlin: https://www.baeldung.com/kotlin-json
-- Ejemplos de uso de "kotlinx.serialization": https://ktor.io/docs/serialization.html
+- [Documentación oficial de Kotlin sobre JSON](https://kotlinlang.org/docs/reference/json.html)
+- [JSON.org](https://www.json.org/json-es.html)
+- [Introducción a JSON en programación (video en español)](https://www.youtube.com/watch?v=Lxmy7Ww3ndo)

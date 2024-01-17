@@ -10,38 +10,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 为什么要解析HTML？
+## 什么是解析HTML？
+ 解析HTML是指将HTML文档转换为可操作的数据结构的过程。HTML是一种用来描述网页结构和内容的标记语言，通过解析HTML，程序员可以提取和操作其中的元素和数据，从而实现网页的自动化处理。
 
-解析HTML是一个重要且普遍的程序员技能。当我们需要从网页中提取特定信息时，如网页内容、标题和链接，解析HTML就显得尤为重要。通过掌握解析HTML的技巧，我们可以轻松地从网络上收集各种数据，这对开发网站、数据分析和时尚数据整合都非常有用。
+## 为什么程序员要解析HTML？
+解析HTML在网页开发和数据抓取中都有重要的作用。在网页开发中，程序员可以使用解析HTML来提取页面中的特定元素，实现网页的自定义布局和样式。而在数据抓取中，程序员可以利用解析HTML来提取网页中的数据，用于构建数据分析和挖掘的工具。
 
-## 如何解析HTML？
-
-首先，我们需要安装Elixir的一个库，叫做Floki。它是一个轻量级、快速且易于使用的Html解析器。接下来，让我们来看一个简单的例子，如何使用Floki库解析HTML。
-
-```Elixir
-# 安装Floki库
-mix deps.get
-
-# 引入Floki库
-require Floki
-
-# 定义HTML
-html = "<html><head><title>我的网站</title></head><body><h1>欢迎来到我的网站</h1></body></html>"
-
-# 使用Floki解析HTML
-Floki.find(html, "h1")
+## 如何解析HTML：
 ```
-输出将会是一个包含 "欢迎来到我的网站" 字符串的列表。这样，我们就可以轻松地从HTML中获取我们需要的数据了。
+Elixir File.read!("example.html")
+|> Floki.parse_document()
+```
 
-## 深入解析HTML
+解析HTML可以使用Elixir中的Floki库，首先通过File.read!函数读取HTML文档，然后通过Floki.parse_document()函数对HTML进行解析，从而生成一个Floki.Document结构体。程序员可以使用这个结构体来提取和操作HTML文档中的元素和数据。
 
-除了基本的HTML元素外，Floki还可以处理CSS选择器和XPath表达式，使得解析HTML更加精确和灵活。我们也可以使用更高级的方法来解析HTML，如使用agent库中的Parse.HTML函数。
+## 深入探讨：
+解析HTML是一个历史悠久的话题，从早期的文本处理工具到现在的网页开发框架，都有着不同的解析HTML的方式。除了Floki库外，Elixir中还有Nokogiri等库可用于解析HTML。程序员可以根据实际需要选择最适合的库来解析HTML。在实现上，解析HTML的核心是通过解析器和选择器来遍历HTML文档的节点并提取其中的数据。
 
-此外，解析HTML还有许多其他用途。例如，我们可以使用Floki来解析RSS订阅，获取最新的新闻和文章。我们还可以使用它来解析JSON数据，从而将网络数据转换为我们可以使用的格式。
-
-## 参考链接
-
-- Floki库文档: https://hexdocs.pm/floki/readme.html
-- Elixir官方文档: https://elixir-lang.org/docs.html
-- Agent库文档: https://hexdocs.pm/agent/Agent.html
-- XPath文档: https://www.w3schools.com/xml/xpath_intro.asp
+## 参考链接：
+- Floki库文档：https://hexdocs.pm/floki/readme.html
+- Nokogiri库文档：https://hexdocs.pm/nokogiri/readme.html

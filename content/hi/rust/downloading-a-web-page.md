@@ -1,7 +1,7 @@
 ---
-title:                "एक वेब पेज डाउनलोड करना"
-html_title:           "Rust: एक वेब पेज डाउनलोड करना"
-simple_title:         "एक वेब पेज डाउनलोड करना"
+title:                "एक वेब पेज को डाउनलोड करना"
+html_title:           "Rust: एक वेब पेज को डाउनलोड करना"
+simple_title:         "एक वेब पेज को डाउनलोड करना"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "HTML and the Web"
@@ -10,50 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
+## क्या और क्यों?
 
-क्या आप कभी सोचा है कि वेब पेज को कैसे डाउनलोड किया जाता है? Rust भाषा आसान सिंटैक्स और कम स्टेटिक होने के कारण वेब पेज को डाउनलोड करने के लिए अच्छा विकल्प है।
+Web पेज को डाउनलोड करने का मतलब है कि हम इंटरनेट पर उपलब्ध जानकारी को अपने कंप्यूटर पर अपनी खुद की स्थानीय ड्राइव में संग्रहित कर सकते हैं। प्रोग्रामर्स, इसलिए, विभिन्न उपयोगकर्ता चाहे तो वेबसाइटों से डाटा को एकत्र कर सकते हैं या वह अपने ग्राहकों को दैनिक समाचार प्राप्त करने के लिए एक प्रोग्राम बना सकते हैं।
 
-## कैसे करें
-
-यहां हम आपको बताएंगे कि कैसे आप Rust भाषा का उपयोग करके वेब पेजों को डाउनलोड कर सकते हैं - 
+## कैसे करें:
 
 ```Rust
-use std::fs::File;
-use std::io::prelude::*;
-use std::io::Result;
-use std::error::Error;
-use std::path::Path;
-use std::process::Command;
-
-fn main() -> Result<()> {
-    let output = Command::new("curl")
-        .arg("-s")
-        .arg("https://example.com")
-        .output()?;
-    
-    let path = Path::new("example.html");
-    
-    let mut file = File::create(&path)?;
-    
-    file.write_all(output.stdout.as_slice())?;
-    
-    Ok(())
+fn main() {
+    let response = reqwest::blocking::get("https://example.com")?;
+    // Check response status
+    if response.status().is_success() {
+        // Get response body as string
+        println!("{}", response.text()?);
+    }
 }
 ```
 
-इस कोड के द्वारा हमने सरल ढंग से वेबसाइट से डेटा को डाउनलोड किया है और एक नया फ़ाइल में संग्रहीत किया है। आप इस अनुक्रम को अपनी जरूरत के अनुसार बदल सकते हैं।
+उपरोक्त कोड डाउनलोड मेथड के साथ एक साधारण उपयोग दर्शाता है। हम `reqwest` पैकेज को इंस्टॉल करते हैं और उसे उपयोग करते हैं `get()` मेथड से वेब पेज को डाउनलोड करने के लिए। उसके बाद हम जांचते हैं कि क्या प्रतिक्रिया सफल है और अगर हां है, तो हम उसे प्रिंट करते हैं। 
 
-## गहराई में जाएं
+## गहराई में जाएं:
 
-कम्प्यूटर नेटवर्किंग और वेब प्रोटोकॉल्स का आधार रस्ता और इसके प्रयोग का ढूंढ़ना आपको दिलचस्प जानकारी दे सकता है। आप यहां से Rust web development के बारे में और भी जानकारी पा सकते हैं -
+इस कोड के लिए दो पुराने संस्करण उपलब्ध हैं, `reqwest` और `hyper`। `hyper` एक निर्भरता का उपयोग करता है जो इन्टरनेट एएपीआई मोडल को प्रदान करता है, जो कर्नल में होती है। दूसरी ओर सभी वेब पेज डाउनलोड समस्याओं के लिए उन्हे डांगा खेल्ल कहने के लिए धन्यवाद करने की आवश्यकता है, हालांकि, शायद `reqwest` एक अपग्रेड के लिए ईशारा कर रहा है। दोनों ही साथ में हाथ दे जाने के लिए, एक अधिक उन्नत वेब पेज डाउनलोडर के लिए बनाया गया है `curl`।
 
-- [Official Rust Website](https://www.rust-lang.org/)
-- [Rust Web Development Tutorial](https://www.tutorialspoint.com/rust_web_development/index.htm)
-- [Rust Programming Language - Wikipedia](https://en.wikipedia.org/wiki/Rust_(programming_language))
+## इससे जुड़िये:
 
-## देखें भी
-
-- [Hindi Version of Rust Article](https://rustacean.net/hello.html)
-- [Rust Language Tutorial in Hindi](https://www.javatpoint.com/rust-tutorial)
-- [Official Rust Documentation in Hindi](https://doc.rust-lang.org/book/hello-world.html)
+वेब पेज डाउनलोड करने के लिए रस्ट के अलावा भी कई अन्य उपाय हैं। आप `Python` या `JavaScript` का उपयोग कर सकते हैं और `BeautifulSoup` या `Puppeteer` जैसे प्रसिद्ध गतिविधियों का उपयोग कर सकते हैं। आप इन पैकेजों को लर्न कर सकते हैं जो आपको वेब पेज से डाटा डाउनलोड करने की अन्य तरीकों के बारे में सीखाते हैं।

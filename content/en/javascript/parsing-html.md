@@ -10,42 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-Parsing HTML, or extracting structured data from HTML documents, is an essential task for web developers. It allows for easier data manipulation and organization, making it a crucial process for creating efficient and user-friendly websites.
+Parsing HTML is the process of analyzing HTML code to understand its structure and extract relevant information from it. Programmers use parsing HTML to extract data, manipulate it, and display it in a more user-friendly format. This process is essential for creating modern web applications and websites.
 
-## How To
+## How to:
 
-First, we need to understand the basic structure of HTML documents. HTML documents consist of elements, which are enclosed in tags like `<p>` or `<div>`. These elements can have attributes, such as `id` or `class`, and contain content such as text or other nested elements.
-
-To parse HTML in Javascript, we can use the DOM (Document Object Model) methods provided by the browser. For example, the `document.getElementByTagName()` method allows us to select and retrieve specific elements from the document.
+To parse HTML in Javascript, we can use the built-in DOM (Document Object Model) methods. For example, to get a list of all the elements with a specific class, we can use the `getElementsByClassName()` method. Let's say we have the following HTML code:
 
 ```Javascript
-var element = document.getElementsByTagName("p")[0];
-console.log(element.innerText); // Output: This is a paragraph.
+<ul>
+  <li class="fruit">Apple</li>
+  <li class="fruit">Orange</li>
+  <li class="vegetable">Carrot</li>
+</ul>
 ```
 
-In the code above, we first select the first `<p>` element in the document and assign it to a variable named `element`. Then, by using the `innerText` property, we can access the text content inside the selected element.
-
-Another useful method for parsing HTML is `document.querySelectorAll()`, which allows us to select elements using CSS selectors. This can be useful for targeting specific elements with certain attributes or classes.
+To get a list of all the fruits, we can use the following code:
 
 ```Javascript
-var elements = document.querySelectorAll(".class");
-console.log(elements.length); // Output: 3
+const fruits = document.getElementsByClassName("fruit");
 ```
 
-In this example, we are selecting all elements with the class name "class" and using the `length` property to get the number of elements retrieved.
+This will return an array-like object containing all the elements with the class "fruit". We can then loop through this object and access each element to manipulate it or extract data from it.
 
-## Deep Dive
+## Deep Dive:
 
-Parsing HTML can become more complex when dealing with nested elements and more intricate HTML structures. In these cases, it may be beneficial to use a library or framework specifically designed for HTML parsing, such as Cheerio or JSDOM.
+Parsing HTML has been an essential part of web development since the early days of the internet. In the beginning, it was a tedious task, as there were no specialized tools or libraries available. Programmers had to write custom code for each different HTML structure, making it time-consuming and error-prone. However, with the advancements in web development, we now have built-in methods and libraries that make HTML parsing much more manageable.
 
-These tools offer more advanced features, such as traversing through the DOM tree, selecting elements using CSS selectors, and manipulating HTML content. They also handle cases where HTML documents may not be well-formed, making the parsing process more robust.
+As an alternative to using the built-in DOM methods, programmers can also use libraries such as jQuery, Cheerio, and Puppeteer. These libraries provide additional features and make the HTML parsing process even more efficient. Additionally, there are specific libraries focused on parsing HTML for specific purposes, such as extracting data for web scraping or generating PDFs from HTML code.
 
-It's essential to keep in mind that parsing HTML can also be resource-intensive, so it's best to do it only when necessary and optimize the process accordingly.
+When it comes to the implementation details, parsing HTML involves breaking down the code into its individual components, such as tags, attributes, and content, and then processing them to extract the desired information. This process can be challenging due to the complexity of HTML code, especially with dynamic and nested elements. Thus, it requires a strong understanding of HTML and its structure.
 
-## See Also
+## See Also:
 
-- [DOM Methods](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model)
-- [Cheerio](https://cheerio.js.org/)
-- [JSDOM](https://github.com/jsdom/jsdom)
+- [MDN web docs on parsing HTML with DOM methods](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction)
+- [jQuery Official Website](https://jquery.com/)
+- [Cheerio Official Website](https://cheerio.js.org/)
+- [Puppeteer Official Website](https://pptr.dev/)

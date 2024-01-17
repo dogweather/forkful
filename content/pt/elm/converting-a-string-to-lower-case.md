@@ -1,7 +1,7 @@
 ---
-title:                "Transformando uma string em minúsculas."
-html_title:           "Elm: Transformando uma string em minúsculas."
-simple_title:         "Transformando uma string em minúsculas."
+title:                "Convertendo uma string para minúsculas"
+html_title:           "Elm: Convertendo uma string para minúsculas"
+simple_title:         "Convertendo uma string para minúsculas"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -10,24 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
-Há várias razões pelas quais alguém precisaria converter uma string para minúsculas em Elm. Uma das principais é garantir que os dados inseridos pelo usuário sejam consistentes e facilmente comparáveis.
+## O que e por que?
 
-## Como fazer
-Fazer essa conversão é simples em Elm. Basta utilizar a função `String.toLower` e passar a string desejada como argumento. Veja um exemplo abaixo:
+Converter uma string para letras minúsculas é um processo simples que muda todas as letras maiúsculas em uma string para minúsculas. Isso pode ser útil em programação quando se precisa comparar strings sem se preocupar com as diferenças entre letras maiúsculas e minúsculas.
 
-```elm
-nome = "Mariana"
-nomeLowercase = String.toLower nome
+## Como fazer:
+
+Para converter uma string para minúsculas em Elm, podemos usar a função "String.toLower", que recebe uma string como argumento e retorna uma nova string com todas as letras em minúsculo.
+
+```Elm
+str <- "ELM PROGRAMMING"
+lowerStr = String.toLower str
 ```
 
-O output desse código seria `mariana`.
+O valor de "lowerStr" será "elm programming".
 
-## Mergulho Profundo
-Quando se trata de converter uma string para minúsculas em Elm, é importante entender como essa transformação ocorre. A função `String.toLower` utiliza a tabela Unicode para mapear as letras maiúsculas para suas respectivas minúsculas. Isso garante que caracteres acentuados e outros símbolos também sejam convertidos corretamente.
+## Aprofundando:
 
-Outra coisa a se ter em mente é que, ao converter para minúsculas, a string original não é alterada. Em vez disso, é criada uma nova string com a versão em minúsculas. Isso é importante para entender quando lidamos com imutabilidade em Elm.
+Converter strings para minúsculas pode ser importante para garantir que as comparações de strings sejam feitas de maneira consistente. Por exemplo, se estivermos construindo uma aplicação de login, queremos garantir que não haja diferença nos nomes dos usuários devido a letras maiúsculas ou minúsculas. 
 
-## Veja também
-- [Documentação da função `String.toLower` em Elm](https://package.elm-lang.org/packages/elm/core/latest/String#toLower)
-- [Como comparar strings em Elm](https://medium.com/@ilyamilovidov/how-to-compare-strings-in-elm-%EF%B8%8F-8afad2c31bf)
+Além disso, em algumas linguagens de programação, como o JavaScript, é comum encontrar casos em que uma string precisa ser transformada em minúscula para executar uma determinada operação, como uma busca em um banco de dados. Essas situações são resolvidas facilmente com a conversão para minúsculo.
+
+Existem outras maneiras de converter strings para minúsculas em Elm, como a utilização da função "map" em conjunto com a função "Char.toLower" para aplicar a conversão em cada caractere individual de uma string. No entanto, a função "String.toLower" já resolve esse problema sozinha, tornando-a a opção mais simples e direta.
+
+## Veja também:
+
+Para mais informações sobre a função "String.toLower", consulte a [documentação oficial do Elm](https://package.elm-lang.org/packages/elm/core/latest/String#toLower). Também é possível encontrar outras funções relacionadas à manipulação de strings na biblioteca padrão do Elm. Experimente explorá-las para melhorar suas habilidades em programação!

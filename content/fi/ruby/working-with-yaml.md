@@ -1,7 +1,7 @@
 ---
-title:                "Työskentely yaml:n kanssa"
-html_title:           "Ruby: Työskentely yaml:n kanssa"
-simple_title:         "Työskentely yaml:n kanssa"
+title:                "Yamlin kanssa työskentely"
+html_title:           "Ruby: Yamlin kanssa työskentely"
+simple_title:         "Yamlin kanssa työskentely"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Data Formats and Serialization"
@@ -10,48 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mikä & Miksi?
+YAML on ihmisen luettava tietoformaatti, joka on suosittu ohjelmoijien keskuudessa. Sitä käytetään tallentamaan ja siirtämään tietoja, kuten asetuksia ja rakenteita, käyttäen helppolukuista syntaksia. Tämä tekee siitä suositun vaihtoehdon esimerkiksi XML:lle.
 
-YAML on käytännöllinen tiedostomuoto, joka mahdollistaa datan tallentamisen ja välittämisen yksinkertaisella ja luettavalla tavalla. Se on erityisen kätevä ohjelmointiympäristöissä, joissa tiedon järjestäminen ja luku on tärkeää.
+## Kuinka:
+Tässä on muutamia esimerkkejä siitä, kuinka voit käyttää Rubya YAML:in kanssa.
 
-## Kuinka
-
-YAML:n käyttöönotto Rubyssa on helppoa. Ensiksi, asenna paketti `YAML` komennolla:
-
-```Ruby
-gem install yaml
-```
-
-Seuraavaksi, tuo paketti sisään Ruby-skriptissäsi:
-
-```Ruby
+```ruby
 require 'yaml'
+
+# Tallennetaan hash tekstitiedostoon
+settings = { 
+  color: "red", 
+  font_size: 12 
+}
+
+File.open("asetukset.yaml", "w") do |f| 
+  YAML.dump(settings, f) 
+end 
+
+# Luetaan tekstitiedosto takaisin hash muotoon
+asetukset = YAML.load(File.read("asetukset.yaml"))
+puts asetukset["color"] # "red"
+puts asetukset["font_size"] # 12
 ```
 
-Nyt voit tallentaa ja lukea YAML-muotoista dataa käyttämällä `YAML::Store` -luokkaa:
+## Syvällinen sukellus:
+YAML kehitettiin alun perin vuonna 2001, ja se on lyhenne sanoista "YAML Ain't Markup Language". Sittemmin siitä on tullut suosittu vaihtoehto muille tietoformaateille, kuten JSON ja XML. YAML on myös käytössä mm. Ruby on Rails -kehyksessä ja Githubin konfiguraatiotiedostoissa.
 
-```Ruby
-# Tallenna YAML-tiedostoon
-yaml_store = YAML::Store.new("tiedoston_nimi.yaml")
-yaml_store.transaction do
-  yaml_store['avain'] = 'arvo'
-end
-
-# Lue YAML-tiedostosta
-yaml_store = YAML::Store.new("tiedoston_nimi.yaml")
-yaml_store.transaction do
-  puts yaml_store['avain'] # tulostaa "arvo"
-end
-```
-
-## Syväsukellus
-
-YAML tarjoaa useita hyödyllisiä ominaisuuksia, kuten mahdollisuuden tallentaa monimutkaisia tietorakenteita ja sisällyttää kommentteja tiedostoon. Voit myös käyttää jäsennysmetodeja, kuten `YAML::load` ja `YAML::dump`, jotta saat enemmän hallintaa tallennettuun dataan.
-
-YAML:n tarkempi tutkiminen auttaa sinua ymmärtämään sen mahdollisuuksia ja hyödyntämään niitä ohjelmointiprojekteissasi.
-
-## Katso myös
-
-- YAML:n dokumentaatio: https://ruby-doc.org/stdlib-3.0.0/libdoc/yaml/rdoc/YAML.html
-- Ruby:n virallinen verkkosivusto: https://www.ruby-lang.org/fi/
-- Ruby:n asennusohjeet: https://www.ruby-lang.org/fi/documentation/installation/
+## Katso myös:
+- [YAML.org](https://yaml.org/)
+- [Ruby dokumentaatio](https://ruby-doc.org/stdlib-2.7.1/libdoc/yaml/rdoc/YAML.html) 
+- [Rails dokumentaatio](https://guides.rubyonrails.org/configuring.html#configuration-and-customization)

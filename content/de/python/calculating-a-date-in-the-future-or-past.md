@@ -10,35 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was & Warum?
+Die Berechnung eines Datums in der Zukunft oder Vergangenheit ist ein häufiger Programmiertask, bei dem ein Programmierer ein bestimmtes Datum jenseits des aktuellen Datums berechnen muss. Dies kann nützlich sein, um beispielsweise wiederkehrende Ereignisse zu planen oder um mit verschiedenen Zeitzonen umzugehen.
 
-Das Berechnen von zukünftigen oder vergangenen Daten kann in vielen Situationen nützlich sein, z.B. um an einem bestimmten Datum eine Erinnerung zu setzen oder um Terminpläne zu erstellen. Mit Python können wir einfach und genau solche Datumsberechnungen durchführen.
-
-## Wie geht's
-
+## Wie geht's?
 ```Python
-from datetime import datetime, timedelta
-# importiere das datetime-Modul, um auf Datumsfunktionen zuzugreifen
+# Importieren des datetime-Moduls
+import datetime
 
-# Berechnung eines zukünftigen Datums
-heute = datetime.now()  # heute als datetime-Objekt
-zukunft = heute + timedelta(days=5)  # 5 Tage hinzufügen
-print(zukunft)  # gibt das Ergebnis als Datum im Format "YYYY-MM-DD HH:MM:SS" aus
+# Berechnung des Datums in der Zukunft
+future_date = datetime.datetime.now() + datetime.timedelta(days=7)
+print("Das Datum in 7 Tagen wird sein:", future_date.date())
 
-# Berechnung eines vergangenen Datums
-nachher = datetime(2020, 1, 1)  # ein bestimmtes Datum als datetime-Objekt
-vorher = nachher - timedelta(weeks=2)  # 2 Wochen abziehen
-print(vorher)  # gibt das Ergebnis als Datum im Format "YYYY-MM-DD" aus
+# Berechnung des Datums in der Vergangenheit
+past_date = datetime.datetime.now() - datetime.timedelta(days=14)
+print("Das Datum vor 14 Tagen war:", past_date.date())
 ```
 
-Der Code oben zeigt, wie wir mit Hilfe des datetime-Moduls und der timedelta-Funktion ein zukünftiges oder vergangenes Datum berechnen können. Es ist wichtig zu beachten, dass die timedelta-Funktion mit verschiedenen Einheiten wie Tagen, Wochen, Monaten, etc. arbeiten kann.
+Output:
+Das Datum in 7 Tagen wird sein: 2021-09-29
+Das Datum vor 14 Tagen war: 2021-09-09
 
-## Tiefere Einblicke
-
-Das datetime-Modul bietet noch weitere nützliche Funktionen, wie z.B. das Formatieren von Datum und Uhrzeit oder die Umrechnung von Datum in andere Zeitzonen. Außerdem können wir mit der timedelta-Funktion nicht nur Datumsberechnungen durchführen, sondern auch Zeitdifferenzen zwischen zwei Daten bestimmen.
+## Tiefgehende Informationen
+Die Berechnung von Datumswerten in der Zukunft oder Vergangenheit wurde durch die Notwendigkeit geschaffen, mit wechselnden Kalendern und Zeitzonen umzugehen. Es gibt jedoch auch alternative Methoden, wie die Verwendung von Libraries wie "arrow" oder "dateutil". Bei der Implementierung ist es wichtig, das richtige Zeitformat zu verwenden und mit der Zeitzone korrekt umzugehen.
 
 ## Siehe auch
-
-- [Tutorial: Date and Time in Python](https://realpython.com/python-datetime/)
-- [Official Python documentation on datetime module](https://docs.python.org/3/library/datetime.html)
-- [Mastering Python datetime](https://stackabuse.com/mastering-datetime-in-python/)
+- [Python datetime-Modul Dokumentation](https://docs.python.org/3/library/datetime.html)
+- [Python arrow-Modul](https://arrow.readthedocs.io/en/latest/index.html)
+- [Python dateutil-Modul](https://dateutil.readthedocs.io/en/stable/index.html)

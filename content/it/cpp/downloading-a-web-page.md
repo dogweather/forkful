@@ -1,7 +1,7 @@
 ---
-title:                "Scaricare una pagina web."
-html_title:           "C++: Scaricare una pagina web."
-simple_title:         "Scaricare una pagina web."
+title:                "Scaricando una pagina web"
+html_title:           "C++: Scaricando una pagina web"
+simple_title:         "Scaricando una pagina web"
 programming_language: "C++"
 category:             "C++"
 tag:                  "HTML and the Web"
@@ -10,46 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+## Cosa e Perché?
+Scaricare una pagina web significa ottenere il codice sorgente di una pagina web da internet e salvarlo sul nostro computer. I programmatori spesso fanno ciò per analizzare o manipolare il codice per creare applicazioni o per risolvere problemi tecnici.
 
-Scaricare una pagina web può sembrare un'operazione semplice, ma in realtà richiede l'uso di specifiche funzionalità di programmazione per accedere al contenuto desiderato. In questo articolo, impareremo a scaricare una pagina web utilizzando il linguaggio di programmazione C++, fornendo esempi pratici e approfondimenti sul processo.
-
-## Come fare
-
-Per prima cosa, è necessario includere la libreria "Curl", utilizzata per accedere alle funzionalità di scaricamento delle pagine web. Successivamente, è possibile utilizzare la funzione "curl_easy_init()" per inizializzare una nuova sessione di download. Di seguito è riportato un esempio di codice per scaricare il contenuto di una pagina web:
-
+## Come fare:
 ```C++
-// Includi la libreria "Curl"
+#include <iostream>
 #include <curl/curl.h>
 
 int main() {
-    // Inizializza la sessione di download
-    CURL *curl;
-    curl = curl_easy_init();
-
-    // Imposta l'URL della pagina web da scaricare
-    curl_easy_setopt(curl, CURLOPT_URL, "https://www.miapagina.com/");
-
-    // Scarica il contenuto della pagina web
-    curl_easy_perform(curl);
-
-    // Chiudi la sessione di download
-    curl_easy_cleanup(curl);
-
-    return 0;
+  curl_global_init(CURL_GLOBAL_ALL);
+  // inizializza la libreria libcurl
+  
+  CURL *curl = curl_easy_init();
+  // creare la struct CURL 
+  
+  curl_easy_setopt(curl, CURLOPT_URL, "https://www.example.com/");
+  // impostare l'URL da cui scaricare il codice sorgente
+  
+  curl_easy_perform(curl);
+  // eseguire la richiesta
+  
+  curl_easy_cleanup(curl);
+  // pulire la struct CURL
+  
+  curl_global_cleanup();
+  // pulire la libreria libcurl
+  
+  return 0;
 }
 ```
 
-Una volta eseguito questo codice, il contenuto della pagina web verrà scaricato e visualizzato in modo automatico. Inoltre, è possibile impostare delle opzioni aggiuntive per personalizzare il processo di download, come ad esempio l'utilizzo di un proxy o l'impostazione di un agente utente.
+Sample output:
 
-## Approfondimento
+```
+<!doctype html>
+<html>
+<head>
+  <title>Example Domain</title>
+  <meta charset="utf-8" />
+...
+```
 
-Scaricare una pagina web non è solo una questione di utilizzo della libreria "Curl". È necessario comprendere il funzionamento dei protocolli HTTP e HTTPS, che vengono utilizzati per l'accesso alle pagine web. Inoltre, la gestione degli errori è un aspetto importante da tenere in considerazione, poiché potrebbe verificarsi un problema con il download della pagina web.
+## Approfondimento:
+Scaricare una pagina web può essere utile per recuperare informazioni specifiche o per creare applicazioni che interagiscono con il web. Prima dell'uso di librerie come libcurl, i programmatori dovevano scrivere il loro codice per aprire una connessione con un server web, inviare manualmente una richiesta HTTP e analizzare la risposta. Esistono anche alternative per scaricare pagine web, come l'utilizzo di browser automatizzati o web scraping.
 
-Oltre all'utilizzo di "Curl", esistono altre librerie e framework che possono essere utilizzati per scaricare le pagine web in C++, come ad esempio "libcurl" e "Wt". È importante esplorare diverse opzioni e trovare quella più adatta alle proprie esigenze.
-
-## Vedi anche
-
-- https://curl.haxx.se/libcurl/
-- https://www.wtframework.org/
-- https://www.tutorialspoint.com/cplusplus/cpp_web_programming.htm
+## Vedi anche:
+- [libcurl documentation](https://curl.se/libcurl/)
+- [Web scraping with Python](https://realpython.com/beautiful-soup-web-scraper-python/)

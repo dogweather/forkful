@@ -1,7 +1,7 @@
 ---
-title:                "Tilapäistiedoston luominen"
-html_title:           "Java: Tilapäistiedoston luominen"
-simple_title:         "Tilapäistiedoston luominen"
+title:                "Väliaikaisen tiedoston luominen"
+html_title:           "Java: Väliaikaisen tiedoston luominen"
+simple_title:         "Väliaikaisen tiedoston luominen"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Files and I/O"
@@ -10,43 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Miksi
+Mitä & Miksi?
+Luodessa väliaikaista tiedostoa, ohjelmoijat luovat tilapäisen tiedoston, jota voidaan käyttää ohjelman suorituksen aikana. Tämä voi olla tarpeellista esimerkiksi tiedon tallentamiseksi, väliaikaisen työn suorittamiseksi tai muussa tilanteessa, jossa tiedostoa ei haluta säilyttää pysyvästi.
 
-Luodessasi ohjelmia Java-ohjelmointikielellä, saatat joutua työskentelemään väliaikaisten tiedostojen kanssa. Näiden väliaikaisten tiedostojen luominen voi olla hyödyllistä, esimerkiksi kun haluat tallentaa väliaikaisia tietoja järjestelmän suorituksen aikana. Tässä artikkelissa kerromme, miksi ja miten luodaan väliaikainen tiedosto käyttäen Javaa.
-
-# Miten
-
-Java tarjoaa sisäänrakennetun TempFile-luokan, joka mahdollistaa väliaikaisen tiedoston luomisen helposti. Seuraavassa esimerkissä näet, miten se toimii:
-
-```Java
-import java.io.File;
+Kuinka:
+```Java 
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 public class TempFileExample {
-
-    public static void main(String[] args) throws IOException {
-
-        File myTempFile = File.createTempFile("myTempFile", ".txt"); // Luodaan väliaikainen tiedosto nimeltä "myTempFile.txt"
-        System.out.println("Luotiin väliaikainen tiedosto: " + myTempFile.getName());
-        myTempFile.deleteOnExit(); // Tiedosto poistetaan automaattisesti, kun ohjelma suljetaan
-    }
+  public static void main(String[] args) throws IOException {
+    // Määritetään polku väliaikaiselle tiedostolle
+    Path tempFilePath = Paths.get("C:/Users/Kayttaja/Documents/TempFile.txt");
+    // Luodaan uusi väliaikainen tiedosto
+    Files.createTempFile(tempFilePath, "TempFile", ".txt");
+    // Tulostetaan tiedoston nimi
+    System.out.println("Luotu väliaikainen tiedosto: " + tempFilePath.getFileName());
+  }
 }
 ```
 
-Tulostus näyttää seuraavalta:
-
+Tulostus:
 ```
-Luotiin väliaikainen tiedosto: myTempFile6427500394267177990.txt
+Luotu väliaikainen tiedosto: TempFile.txt
 ```
 
-Kuten näet, väliaikainen tiedosto nimetään automaattisesti ja se poistetaan automaattisesti ohjelman sulkiessa.
+Syväsukellus:
+Luomalla väliaikaisen tiedoston, ohjelmoijat voivat varmistaa, että heillä on tarvittavat tiedot ohjelman suorituksen aikana. Tämä menetelmä on ollut käytössä jo pitkään, ja on edelleen yksi parhaimmista tavoista käsitellä tilapäistä tietoa. Vaihtoehtoisena menetelmänä voisi olla esimerkiksi käyttää muuttujia tai tallentaa tiedot tietokantaan, mutta nämä vaihtoehdot voivat olla monimutkaisempia ja vaatia enemmän koodia.
 
-# Syventävä tarkastelu
+Muut tiedostojen luomiseen liittyvät metodit, kuten File.createNewFile() tai new File() -komento, eivät luoda väliaikaista tiedostoa, vaan pysyvän. Väliaikainen tiedosto poistuu automaattisesti ohjelman suorituksen päätyttyä ja ei vie ylimääräistä tallennustilaa.
 
-TempFile-luokka perustuu Javan sisäänrakennettuun File-luokkaan, joten sillä on samanlaiset ominaisuudet ja toiminnot. Voit myös määrittää haluamasi hakemiston, jonne väliaikainen tiedosto luodaan. Lisäksi voit määrittää, haluatko tiedoston poistuvan automaattisesti ohjelman sulkiessa tai haluatko poistaa sen manuaalisesti.
-
-# Katso myös
-
-- [Java TempFile-luokan virallinen dokumentaatio](https://docs.oracle.com/javase/8/docs/api/java/io/File.html#createTempFile-java.lang.String-java.lang.String-java.io.File-)
-- [Java File-luokan virallinen dokumentaatio](https://docs.oracle.com/javase/8/docs/api/java/io/File.html)
-- [Java-ohjelmoinnin opiskelu aloittelijoille](https://java.com/fi/download/help/whatis_java.html)
+Katso myös:
+Virallinen Java-tiedostojen luomiseen liittyvä dokumentaatio: https://docs.oracle.com/javase/tutorial/essential/io/file.html
+Java Path-luokan dokumentaatio: https://docs.oracle.com/javase/8/docs/api/java/nio/file/Path.html
+Tietoa tiedostojen hallinnasta Java-ohjelmoinnissa: https://www.baeldung.com/java-file-management

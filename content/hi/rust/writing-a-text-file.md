@@ -1,7 +1,7 @@
 ---
-title:                "टेक्स्ट फ़ाइल का लिखना"
-html_title:           "Rust: टेक्स्ट फ़ाइल का लिखना"
-simple_title:         "टेक्स्ट फ़ाइल का लिखना"
+title:                "एक पाठ फाइल लिखना"
+html_title:           "Rust: एक पाठ फाइल लिखना"
+simple_title:         "एक पाठ फाइल लिखना"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Files and I/O"
@@ -10,22 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों 
+## Kya Aur Kyu?
+Text file ko likhna ek aam kaam hai jo kisi bhi programming language me kiya ja sakta hai. Text file me hum text ko store kar sakte hain, jaise hum notepad me karte hain. Programmers text file ko likhte hain apne code ko store karne ke liye ya phir data ko save karne ke liye.
 
-क्या आपने कभी सोचा है कि आपके कंप्यूटर या मोबाइल फोन में दिखने वाले सारे हिंदी या अन्य भाषाओं के मैसेज और अप्लिकेशन डेवलपमेंट से बनते हैं? यदि हां, तो आपको पता होना चाहिए कि टेक्नोलॉजी का यह सम्राट है जो यह सब संभव बनाता है, और उस सम्राट में से एक है Rust। आज हम आपको बताएंगे कि Rust में टेक्स्ट फ़ाइल कैसे लिखी जाती है और आप कैसे इस वर्तमान संस्करण का उपयोग करके इससे लाभ उठा सकते हैं। 
+## Kaise:
+Coding ke dwaara hum text file ko Rust me aasan tareeke se likh sakte hain. Neeche diye gaye code blocks me diye gaye examples ko try karein aur output ko dekhein.
 
-## कैसे करें 
+```
+// Ek text file ko create karne ke liye, is tarah se "file.txt" file banana hoga
 
-यदि आप एक प्रोग्रामर हैं, तो आपने पहले से ही कई समस्याओं का सामना किया होगा, उनमें से एक है टेक्स्ट फ़ाइलों में डेटा कैसे लिखा जाता है। रस्ट में, हम इसे बहुत आसानी से कर सकते हैं। निम्नलिखित उदाहरण देखें: 
+use std::fs::File;
+use std::io::prelude::*;
 
-```Rust 
-use std::fs::File; 
-
-fn main() { 
-  let data = "यह हिंदी टेक्स्ट है।"; 
-  let mut file = File::create("example.txt").expect("फ़ाइल बनाकर खोलने में असमर्थ"); 
-  file.write_all(data.as_bytes()).expect("डेटा लेखन में असमर्थ"); 
-} 
+fn main() {
+    let mut file = File::create("file.txt").expect("Unable to create file");
+    file.write_all(b"Hello World!").expect("Unable to write data");
+}
 ```
 
-उपरोक्त कोड द्वारा, हमने एक फ़ाइल पर डेटा लिखने की प्रक्रिया को वर्णित किया है। सबसे पहले, हम एक उपयोगकर्ता को बनाकर "std::fs" और "std::io" मॉड्यूलों का उपयोग करते हैं। इसके बाद, हम टेक्स्ट डेटा "data" पंजीकृत करते हैं और "File::create" फ़ंक्शन के माध्यम से एक नई फ़ाइल "example.txt" बनाते हैं। फ़ाइल बनाने के बाद, हम "write
+```
+// File ko padhne ke liye, is tarah se karenge
+
+use std::fs::File;
+use std::io::prelude::*;
+
+fn main() {
+    let mut file = File::open("file.txt").expect("Unable to open file");
+    let mut contents = String::new();
+    file.read_to_string(&mut contents).expect("Unable to read data");
+    print!("{}", contents); // Output: Hello World!
+}
+```
+
+## Gehre Adhyayan
+Text file ko likhne ka prachalan kayi saalon se hai. Isme hum apne data ko ek simple aur readable format me store kar sakte hain. Kai baar, text file me store kiya gaya code ko doosre programming languages me bhi easily convert kiya ja sakta hai. Isse humare code ka portability badhta hai.
+
+## See Also:
+- https://www.hackerearth.com/practice/notes/understanding-input-output-in-rust/ - Rust me input aur output ke baare me adhik jaankari.
+- https://doc.rust-lang.org/std/fs/struct.File.html - File handling documentation for Rust.
+- https://opensource.com/article/19/5/reading-writing-files-rust - Rust me file handling tutorial.

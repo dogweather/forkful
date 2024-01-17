@@ -1,7 +1,7 @@
 ---
-title:                "Weryfikowanie istnienia katalogu"
-html_title:           "Kotlin: Weryfikowanie istnienia katalogu"
-simple_title:         "Weryfikowanie istnienia katalogu"
+title:                "Sprawdzanie czy katalog istnieje"
+html_title:           "Kotlin: Sprawdzanie czy katalog istnieje"
+simple_title:         "Sprawdzanie czy katalog istnieje"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Files and I/O"
@@ -10,46 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co & Dlaczego?
 
-Sprawdzanie, czy dany katalog istnieje, jest ważnym krokiem w wielu aplikacjach. Może to pomóc w uniknięciu błędów lub zapewnieniu, że aplikacja działa w oczekiwany sposób.
+Sprawdzanie czy katalog istnieje jest procesem, który polega na wykrywaniu istnienia określonego katalogu w systemie plików. Programiści często wykonują to zadanie, aby upewnić się, czy dany katalog został utworzony lub czy istnieje już w strukturze plików.
 
-## Jak to zrobić?
-
-Sprawdzenie istnienia katalogu w języku Kotlin jest bardzo proste. Wystarczy użyć metody `exists()` z klasy `File`. Poniżej znajduje się przykładowy kod z wykorzystaniem tej metody:
+## Jak:
 
 ```Kotlin
-val directory = File("path/to/directory")
-
-if(directory.exists()){
-  println("Katalog istnieje!")
-} else {
-  println("Katalog nie istnieje!")
-}
+val directory = File("ścieżka/do/katalogu")
+val exists = directory.exists()
+println(exists) // true jeśli katalog istnieje, false jeśli nie istnieje
 ```
 
-W tym przykładzie, najpierw tworzymy obiekt `File` z podaną ścieżką do katalogu. Następnie w warunku `if` wywołujemy metodę `exists()` na tym obiekcie. Jeśli zwróci ona wartość `true`, oznacza to, że dany katalog istnieje.
+## Głębsze zanurzenie:
 
-Jeśli chcesz sprawdzić istnienie katalogu w konkretnym miejscu w twoim systemie plików, możesz również użyć metody `exists(path: String)` z klasy `File`. Przykład:
+1. Kontekst historyczny: W starszych wersjach języka Kotlin, sprawdzanie istnienia katalogu było wykonane przez funkcję "File.isDirectory()". Jednak wraz z aktualizacją do wersji 1.0, zaleca się używanie funkcji "File.exists()" zamiast stosowania metody.
 
-```Kotlin
-if(File.exists("another/directory/path")){
-  println("Katalog istnieje!")
-} else {
-  println("Katalog nie istnieje!")
-}
-```
+2. Alternatywy: Istnieją również inne sposoby na sprawdzenie istnienia katalogu w Kotlinie, takie jak wykorzystanie klasy "java.nio.file.Path" lub użycie biblioteki polecenia systemowego "java.nio.file.Files".
 
-## Deep Dive
+3. Szczegóły implementacji: Funkcja "File.exists()" zwraca wartość typu boolean, czyli true jeśli katalog istnieje lub false, jeśli nie istnieje. Wykorzystuje ona metody systemowe do odnalezienia ścieżki do katalogu i sprawdzenia, czy istnieje.
 
-Podczas sprawdzania istnienia katalogu, warto zwrócić uwagę na kilka rzeczy. Po pierwsze, należy pamiętać, że metoda `exists()` może również zwrócić wartość `true`, jeśli podana ścieżka wskazuje na plik, a nie na katalog. Dlatego warto użyć dodatkowej metody, np. `isDirectory()`, aby upewnić się, że obiekt `File` odnosi się do katalogu.
+## Zobacz też:
 
-Kolejną rzeczą, na którą warto zwrócić uwagę, jest to, że metoda `exists()` może również zwrócić wartość `false`, jeśli nie masz uprawnień do sprawdzanego katalogu. W takim przypadku warto sprawdzić, czy masz odpowiednie uprawnienia lub czy katalog istnieje w ogóle.
-
-## Zobacz również
-
-Jeśli chcesz dowiedzieć się więcej o pracy z plikami i katalogami w języku Kotlin, polecamy zapoznać się z poniższymi artykułami:
-
-- [Tworzenie i modyfikowanie plików w języku Kotlin] (https://kotlinlang.org/docs/tutorials/java-interop.html#creating-and-modifying-files)
-- [Zarządzanie katalogami] (https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/-file/)
-- [Tworzenie i działanie z wyjątkami] (https://kotlinlang.org/docs/reference/exceptions.html)
+- Oficjalna dokumentacja języka Kotlin: https://kotlinlang.org/
+- Przewodniki i poradniki dla programistów w języku Kotlin: https://developer.android.com/kotlin
+- Dokumentacja API File w języku Kotlin: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/index.html

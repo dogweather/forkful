@@ -10,39 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Czym jest czytanie pliku tekstowego i dlaczego to robimy?
+Czytanie pliku tekstowego to proces, w którym dane zapisane w pliku są odczytywane i przetwarzane przez program. Programiści często wykorzystują tę funkcję, aby uzyskać dostęp do danych lub konfiguracji, które są przechowywane w plikach tekstowych.
 
-Czy kiedykolwiek chciałeś/-aś przeczytać zawartość pliku tekstowego w swoim kodzie Elixir? Może potrzebowałeś/-aś pobrać dane ze zewnętrznego źródła, a plik tekstowy był jedynym dostępnym sposobem. W tym artykule dowiesz się, jak w łatwy sposób odczytać plik tekstowy w Elixir i wykorzystać jego zawartość w swoim kodzie.
+## Jak to zrobić:
+```Elixir
+File.read("nazwa_pliku.txt")
+|> IO.puts 
+```
+W tym przykładzie wykorzystujemy funkcję `File.read` do odczytania zawartości pliku tekstowego o nazwie `nazwa_pliku.txt`. Następnie za pomocą funkcji `IO.puts` wyświetlamy odczytane dane w konsoli.
 
-## Jak to zrobić
-
-Pierwszym krokiem jest otwarcie pliku tekstowego za pomocą funkcji `File.open/2`, gdzie pierwszym argumentem jest ścieżka do pliku, a drugim tryb dostępu. Następnie możesz odczytać zawartość pliku za pomocą funkcji `IO.read/2`, gdzie pierwszym argumentem jest otwarty plik, a drugim liczba bajtów do odczytania. Na przykład:
-
-```elixir
-file = File.open("plik.txt", [:read, :utf8])
-contents = IO.read(file, 10)
-IO.puts contents
+### Przykładowe wyjście:
+```
+To jest zawartość pliku tekstowego.
+Wszystkie linijki zostaną wyświetlone w konsoli.
 ```
 
-W powyższym przykładzie otwieramy plik "plik.txt" w trybie odczytu i ustawiamy kodowanie na UTF-8. Następnie odczytujemy 10 bajtów z pliku i wypisujemy je na ekran. 
+## Głębszy przegląd:
+Odczytywanie plików tekstowych jest powszechną praktyką w programowaniu. Wcześniej funkcja ta była wykorzystywana głównie w językach programowania takich jak C czy Java, ale dzięki Elixirowi mamy prostsze i bardziej wygodne rozwiązanie.
 
-Możesz również przeczytać całą zawartość pliku jednym poleceniem za pomocą funkcji `File.read/1`:
+Alternatywnym sposobem na odczytanie pliku tekstowego jest użycie funkcji `IO.read_file`, która zwraca dane w postaci binarnej lub zmienia typ danych na string za pomocą funkcji `IO.inspect`.
 
-```elixir
-contents = File.read("plik.txt")
-IO.puts contents
-```
-
-Oczywiście, jeśli nie chcesz czytać całego pliku, możesz również wykorzystać funkcję `IO.read/1` zamiast `File.read/1` i przekazać jej liczbę bajtów do odczytania. 
-
-## Deep Dive
-
-Podczas odczytywania pliku tekstowego w Elixir, warto pamiętać o kilku ważnych rzeczach. Po pierwsze, upewnij się, że kodowanie pliku jest zgodne z tym, który ustawiłeś lub domyślnym dla Twojego systemu. Możesz to zrobić, ustawiając drugi argument w funkcjach `File.open/2` i `File.read/2`.
-
-Kolejną rzeczą do zapamiętania jest sposób w jaki traktowany jest ostatni znak nowej linii w pliku. W Elixir, znak nowej linii jest traktowany jako `'\n'`, jednak niektóre systemy operacyjne mogą używać innego znaku, takiego jak `'\r\n'`. Dlatego warto użyć funkcji `String.trim_trailing/1` lub `String.trim_trailing/2` aby pozbyć się tych znaków nowej linii w odczytanym tekście.
-
-## Zobacz także
-
-- [Dokumentacja Elixir na temat plików](https://hexdocs.pm/elixir/File.html)
-- [Poradnik programowania w Elixir](https://elixirschool.com/pl/)
-- [Pierwsze kroki z Elixir](https://elixir-lang.org/getting-started/introduction.html)
+## Zobacz także:
+Oficjalna dokumentacja Elixir: https://elixir-lang.org/docs.html
+Przykłady wykorzystania funkcji File.read: https://hexdocs.pm/elixir/File.html#read/1

@@ -1,7 +1,7 @@
 ---
-title:                "Analiza składni HTML"
-html_title:           "Go: Analiza składni HTML"
-simple_title:         "Analiza składni HTML"
+title:                "Rozdzielanie html"
+html_title:           "Go: Rozdzielanie html"
+simple_title:         "Rozdzielanie html"
 programming_language: "Go"
 category:             "Go"
 tag:                  "HTML and the Web"
@@ -10,62 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i dlaczego?
 
-Czy kiedykolwiek chciałeś wyciągnąć konkretną informację lub zestaw danych z witryny internetowej? Czy zastanawiałeś się, jak wiele informacji można uzyskać z kodu źródłowego strony internetowej? Właśnie dlatego parsowanie HTML jest tak ważnym narzędziem w programowaniu - umożliwia nam pobieranie i przetwarzanie informacji z witryn internetowych.
+Parsowanie HTML to proces przetwarzania kodu HTML zanim zostanie wyświetlony na stronie internetowej. Programiści wykorzystują ten proces do manipulacji i analizy danych w celu tworzenia dynamicznych stron internetowych.
 
-## Jak to zrobić
+## Jak to zrobić:
 
-```go
-package main
-
-import (
-  "fmt"
-  "net/http"
-  "io/ioutil"
-)
-
-func main() {
-  // Pobierz kod źródłowy strony internetowej
-  resp, err := http.Get("https://www.example.com")
-
-  if err != nil {
-    panic(err)
-  }
-
-  defer resp.Body.Close()
-
-  // Odczytaj dane HTML
-  htmlData, err := ioutil.ReadAll(resp.Body)
-
-  if err != nil {
-    panic(err)
-  }
-
-  fmt.Println(htmlData)
+```Go
+// Wczytanie pliku HTML
+file, err := os.Open("plik.html")
+if err != nil {
+    fmt.Println("Błąd podczas wczytywania pliku.")
+    return
 }
+
+// Utworzenie nowego dokumentu HTML
+doc, err := goquery.NewDocumentFromReader(file)
+if err != nil {
+    fmt.Println("Błąd podczas tworzenia dokumentu HTML.")
+    return
+}
+
+// Wybranie elementów ze strony
+doc.Find("h1").Each(func(i int, s *goquery.Selection) {
+    fmt.Println(s.Text())
+})
 ```
 
-Przykładowy output:
-
-```html
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Przykładowa strona internetowa</title>
-</head>
-<body>
-  <h1>Witaj świecie!</h1>
-</body>
-</html>
+Output:
+```
+Tytuł strony
 ```
 
-## Głębszy zanurzanie się
+## Deep Dive:
 
-Podczas parsowania HTML w Go, istnieje wiele narzędzi i bibliotek do wyboru. Najpopularniejszym z nich jest "goquery", który pozwala na łatwe odwzorowywanie elementów HTML i przeszukiwanie dokumentu za pomocą selektorów CSS. Dzięki temu możesz wybrać określone elementy i odczytać ich wartości w kodzie. Istnieją również inne narzędzia, takie jak "Golang.org/x/net/html" lub "html/template", które mogą być użyteczne w zależności od potrzeb. Nauka parsowania HTML w Go może również przydać się w innych dziedzinach, takich jak automatyczne testowanie stron internetowych lub tworzenie własnych narzędzi do analizowania stron internetowych.
+Parsowanie HTML jest niezbędnym procesem dla tworzenia dynamicznych stron internetowych. W przeszłości, programiści wykorzystywali różne metody takie jak regularne wyrażenia czy własne algorytmy do parsowania HTML, jednak te podejścia często nie były wystarczająco wydajne lub precyzyjne. Dzięki bibliotece goquery w języku Go, programiści mogą łatwo wybrać i manipulować elementami na stronie, dzięki czemu proces parsowania staje się szybszy i bardziej dokładny.
 
-## Zobacz również
+Poza biblioteką goquery, istnieją inne narzędzia i biblioteki do parsowania HTML, takie jak scrapers i crawlers, które mogą być wykorzystywane w różnych celach, jak na przykład pozyskiwanie danych z internetu.
 
-- [Pakiet goquery](https://github.com/go-xmlpath/xmlpath)
-- [Golang.org/x/net/html](https://golang.org/x/net/html)
-- [Pakiet html/template](https://pkg.go.dev/html/template)
+Implementacja procesu parsowania HTML polega na przeszukiwaniu dokumentu HTML i wybieraniu odpowiednich elementów z wykorzystaniem selektorów podobnych do tych używanych w CSS.
+
+## Zobacz też:
+
+- [Oficjalna dokumentacja Go](https://golang.org)
+- [Biblioteka goquery](https://github.com/PuerkitoBio/goquery)

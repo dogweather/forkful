@@ -10,72 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co to jest i dlaczego warto?
 
-CSV (ang. Comma-Separated Values) to popularny format danych używany w biznesie i analizie danych. Podczas prac z danymi, często będziesz mieć do czynienia z plikami CSV, dlatego warto poznać sposób ich obsługi w języku typu TypeScript.
+Praca z plikami CSV jest nieodłączną częścią życia dewelopera. CSV (z ang. Comma-Separated Values) to format pliku, który służy do przechowywania danych w sposób oddzielony przecinkami. Jest to powszechnie używany format do przechowywania i przetwarzania danych, dlatego programiści często muszą umieć pracować z plikami CSV.
 
 ## Jak to zrobić?
 
-Tworzenie plików CSV za pomocą TypeScript jest proste i wygodne. Wystarczy, że wykorzystasz wbudowany moduł "fs" (ang. file system) oraz funkcję "writeFile" z biblioteki "csv-parse". Poniżej przedstawiamy przykładowy kod i oczekiwany output:
+Poniżej przedstawiamy kilka przykładów kodu w języku TypeScript oraz odpowiadające im wyniki.
 
 ```TypeScript
-import { writeFile } from 'fs';
-import { stringify } from 'csv-parse';
+// Tworzenie obiektu CSV z tablicy danych
+const csv = require('csvtojson');
+const data = [['John', 25, 'Male'], ['Jane', 30, 'Female']];
+const csvString = csv.fromArray(data).then(str => console.log(str));
 
-const data = [
-  { id: 1, name: 'John', email: 'john@example.com' },
-  { id: 2, name: 'Jane', email: 'jane@example.com' },
-  { id: 3, name: 'Jack', email: 'jack@example.com' }
-];
+// Wynik: "John,25,Male\nJane,30,Female"
 
-writeFile('users.csv', stringify(data), (err) => {
-  if (err) throw err;
-  console.log('CSV file created successfully!');
-});
+// Parsowanie pliku CSV na tablicę obiektów
+const csv = require('csvtojson');
+const fs = require('fs');
+const csvFilePath = 'dane.csv';
+csv().fromFile(csvFilePath)
+    .then((jsonObj) => {
+        console.log(jsonObj);
+    });
+
+// W pliku CSV: "Imię,Wiek,Płeć\nJohn,25,Male\nJane,30,Female"
+// Wynik: [{ 'Imię': 'John', Wiek: 25, Płeć: 'Male' },{ 'Imię': 'Jane', Wiek: 30, Płeć: 'Female' }]
 ```
 
-Po uruchomieniu powyższego kodu, w katalogu pojawi się plik "users.csv" z zawartością:
+## Głębsze zagadnienia
 
-```
-id,name,email
-1,John,john@example.com
-2,Jane,jane@example.com
-3,Jack,jack@example.com
-```
+Pliki CSV mają swoje korzenie w archaicznym formacie Standard Generalized Markup Language (SGML) z lat 60., jednak w 70. stały się bardziej popularne dzięki programowi Microsoft Excel. Alternatywą dla plików CSV jest format pliku Excel (.xls lub .xlsx), jednak pliki CSV są uniwersalniejsze, ponieważ są wspierane przez większość programów. Przy pracy z plikami CSV należy pamiętać o encodingu, ponieważ pliki w różnych językach mogą mieć różne encodowanie.
 
-Jeśli chcesz odczytać plik CSV, możesz użyć funkcji "parse" z biblioteki "csv-parse":
+## Zobacz także
 
-```TypeScript
-import { readFile } from 'fs';
-import { parse } from 'csv-parse';
-
-readFile('users.csv', (err, data) => {
-  if (err) throw err;
-  parse(data, (err, output) => {
-    if (err) throw err;
-    console.log(output);
-  });
-});
-```
-
-Powinniśmy otrzymać następujący output:
-
-```
-[
-  ['id', 'name', 'email'],
-  ['1', 'John', 'john@example.com'],
-  ['2', 'Jane', 'jane@example.com'],
-  ['3', 'Jack', 'jack@example.com']
-]
-```
-
-## Deep Dive
-
-Istnieje wiele bibliotek, które ułatwiają pracę z plikami CSV w języku TypeScript. Jedną z nich jest "fast-csv", która oferuje wydajne rozwiązania dla odczytu i zapisu plików CSV. Możesz również wykorzystać modularny framework "NestJS", który ma wbudowane narzędzia do obsługi plików CSV.
-
-Innym ważnym aspektem pracy z CSV jest obsługa błędów. W przypadku niepoprawnego formatu danych, możesz użyć funkcji "onError" z biblioteki "csv-parse" lub zaimplementować własny mechanizm obsługi błędów.
-
-## Zobacz też
-
-- [Dokumentacja Node.js o pracy z plikami CSV](https://nodejs.org/api/fs.html#fs_file_system)
-- [NestJS: Working with CSV files](https://docs.nestjs.com/techniques/file-upload#csv-files)
+Jeśli chcesz dowiedzieć się więcej o pracy z plikami CSV w TypeScript, polecamy dokumentację [csvtojson library](https://www.npmjs.com/package/csvtojson) oraz [oficjalny tutorial](https://codeforgeek.com/read-write-csv-file-node-js/). Alternatywą dla biblioteki csvtojson jest [fast-csv](https://github.com/C2FO/fast-csv), która również jest łatwa w użyciu i ma dużą wydajność.

@@ -10,23 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## З чого почати?
- Існує багато причин, чому написання тестів є важливою частиною програмування. Перш за все, це допомагає впевнитися у тому, що ваш код працює правильно і не порушує існуючий функціонал. Крім того, тести можуть бути корисними при налагодженні і тестуванні нового функціоналу, а також при модифікації існуючого.
+Що і для чого?
 
-## Як писати тести в Swift?
-Написання тестів в Swift досить просте і не вимагає великих зусиль. Для прикладу, створимо тест для методу `reverseString`, який повертає зворотній рядок.
-```
-func reverseString(_ input: String) -> String {
-    return String(input.reversed())
+Написання тестів - це процес, що дозволяє програмістам перевірити, чи працює їх код правильно. Вони роблять це, щоб бути впевненими, що їх програма працюватиме без помилок як при значних, так і при невеликих змінах.
+
+Як?
+
+```Swift
+func addTwoNumbers(_ a: Int, _ b: Int) -> Int {
+  return a + b
 }
 
-reverseString("hello") // Output: "olleh"
+// Приклад виклику функції
+addTwoNumbers(3, 5)
+
+// Очікуваний результат - 8
 ```
 
-## Глибоке занурення 
-Існує кілька підходів до написання тестів, таких як Unit тести, Integration тести і UI тести. Ви можете вибрати той, який найбільш підходить для вашого проекту. Крім того, у Swift існує багато різноманітних фреймворків, які допоможуть вам у написанні тестів, наприклад XCTest, Quick і Nimble.
+Глибокий занурення
 
-## Дивіться також
-- [Swift Unit Testing](https://www.raywenderlich.com/622-ios-unit-testing-and-ui-testing-tutorial)
-- [UI Testing in Swift](https://www.raywenderlich.com/609-ios-ui-testing-tutorial-getting-started)
-- [Writing Testable Code in Swift](https://medium.com/flawless-app-stories/writing-testable-code-in-swift-427b3f597778)
+Написання тестів не є новшим явищем у світі програмування. Вони були запроваджені на початку розвитку комп'ютерних науок, але лише у новіших мовах, таких як Swift, вони стали стандартною практикою. Є кілька альтернатив, наприклад, використання живих тестів або ручного тестування коду, але написання тестів дозволяє ефективніше перевірити велику кількість варіантів та забезпечити надійність програми. Щоб побачити приклади найпопулярніших фреймворків для написання тестів у Swift, перегляньте наш покроковий посібник [тут](https://github.com/Quick/Quick) та [тут](https://github.com/Quick/Nimble).
+
+Дивіться також
+
+Ви можете знайти додаткову інформацію щодо написання тестів у Swift у [документації](https://developer.apple.com/library/archive/documentation/DeveloperTools/Conceptual/testing_with_xcode/chapters/01-introduction.html) Apple та на [сайті](https://www.raywenderlich.com/960290-ios-unit-testing-and-ui-testing-tutorial) RayWenderlich.

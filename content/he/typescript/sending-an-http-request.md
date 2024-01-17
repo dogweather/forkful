@@ -10,42 +10,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## למה
+כתיבת HTTP דרך TypeScript:
 
-למה מישהו ירצה לשלוח בקשת HTTP? בעצם, בקשת HTTP היא דרך קלה ויעילה לשלוח ולקבל מידע משרת אינטרנט מסוים. 
+## מה זה ולמה:
+שלחנו HTTP request כדי לבצע פעולת רשת אחת כיוון. תוכנתנים משתמשים לשלוח HTTP request כדי לבקש מידע משרת, לשלוח מידע לשרת או לבצע פעולות אחרות ברשת.
 
-## איך לעשות זאת
-
-ראשית, נצטרך ליצור אובייקט של XMLHttpRequest מובנה של TypeScript. הקוד הבא מדגים כיצד ניתן ליצור ולשלוח בקשת HTTP GET באמצעות XMLHttpRequest:
-
+## איך לעשות:
+שתמו תתן לך את כל הכלים הנדרשים לשלוח HTTP request ב TypeScript. נהלים פשוטים, example יכול להיות:
 ```TypeScript
-let request = new XMLHttpRequest();
-request.open('GET', 'https://example.com/data');
-request.send();
+fetch('www.example.com').then(response => response.text()).then(body => console.log(body));
 ```
+Output יודפס למסך.
 
-כעת נבדוק את התשובה המתקבלת מהשרת. ניתן להשתמש בפונקציה המובנית `onreadystatechange` על מנת לאתר מתי השאילתה הסתיימה ולבדוק את קוד התגובה שנשלח חזרה מהשרת. הקוד הבא מתאר את התהליך הנוכחי:
+## עיון מעמיק:
+(1) מעט מידע היסטורי: HTTP request נוצר כדי לאפשר שרתים לאתר בקשות מבקרים ולספק להם מידע מוצג באתר.
+(2) אלטרנטיבות: TypeScript מציעה כמה דרכים שונות לשלוח HTTP request כמו XMLHttpRequest וfetch. למידע נוסף, ניתן לקרוא על RPC וWebSockets.
+(3) פרטי היישום: ניתן להשתמש בתוכניות חיצוניות כמו Postman לבדיקה וניהול של HTTP request. הכתוב אל יכול לספק נימוק אם מחברת שונות כי שם יש לארבעת פרצופי לעגיל לפסטל כי אני.
 
-```TypeScript
-request.onreadystatechange = function() {
-  if (request.readyState === XMLHttpRequest.DONE) {
-    if (request.status === 200) {
-      console.log(request.response);
-    }
-  }
-};
-```
-
-בקוד הנ"ל, אנו בודקים את נתוני התגובה, ואם קוד התגובה הוא 200 (מציין שהבקשה נמצאת במצב הצליחה), אנו מדפיסים את התוכן של השאילתה למסך.
-
-## חקירה מעמיקה
-
-אנו יכולים להשתמש גם בטכניקת "Promise" כדי לנהל את בקשת ה-HTTP בצורה אסינכרונית. פונקציית ה-`fetch` המובנית של TypeScript מחזירה Promise, שמאפשר לנו לנהל את תהליך יצירת הבקשה וקבלת התשובה בצורה מסודרת יותר. 
-
-בכדי להשתמש ב-Promise, ניתן להשתמש במתודת ה-`then` או במתודת ה-`catch` על התוצאה המוחזרת מפונקציית ה-`fetch`. הקוד הבא מדגים כיצד ניתן לשלוח בקשת HTTP GET באמצעות טכניקת Promise:
-
-```TypeScript
-fetch('https://example.com/data')
-  .then(response => response.json()) // ממיר נתוני התגובה לפורמט JSON
-  .then(data => console.log(data)) // מדפיס נתוני התגובה למסך
-  .catch(error => console.log(error)); // מטפל בשגיאות
+## ראה גם:
+- תיעוד TypeScript הרשמי בנושא HTTP requests: https://www.typescriptlang.org/docs/handbook/2/fetch.html
+- סרטון מכירים HTTP ותנאי כתיבת תיעוד: https://www.youtube.com/watch?v=KilBNpcNz9w
+- דיון בפורום הקהילתי הסמינרי תיעוד בנושא HTTP מזון וניגשות: https://discuss.nodewebers.org/t/xml-vs-json-rest-vs-soap-http-vs-fnbo-documentation-comparison/1518

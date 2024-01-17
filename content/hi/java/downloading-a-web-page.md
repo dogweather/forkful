@@ -1,7 +1,7 @@
 ---
-title:                "वेब पन्ना डाउनलोड करना"
-html_title:           "Java: वेब पन्ना डाउनलोड करना"
-simple_title:         "वेब पन्ना डाउनलोड करना"
+title:                "एक वेब पृष्ठ डाउनलोड करना"
+html_title:           "Java: एक वेब पृष्ठ डाउनलोड करना"
+simple_title:         "एक वेब पृष्ठ डाउनलोड करना"
 programming_language: "Java"
 category:             "Java"
 tag:                  "HTML and the Web"
@@ -10,57 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
+## क्या और क्यों?
+जावा एक उचित आवृत्ति में किसी वेब पृष्ठ को डाउनलोड करना है क्या है और इसे प्रोग्रामर्स क्यों करते हैं।
 
-वेब पेज डाउनलोड करने का काम अगर आपको दिखता है तो आपको संभवतः यह जानने की तलाश होगी कि यह क्यों किया जाता है। यह आमतौर पर डेटा या सामग्री के सम्पादन या वेबआई के माध्यम से डेटा को अपलोड करने के लिए विशिष्ट प्रतिक्रियाओं का हिस्सा होता है।
-
-## कैसे करें
-
-वेब पेज को डाउनलोड करने के लिए, आपको HttpURLConnection वर्ग का उपयोग करना होगा। नीचे दिए गए कोड उदाहरण में, हम सर्वर से सामग्री को प्राप्त करने के लिए इस्तेमाल करते हैं। साथ ही, हम सामग्री को आमतौर पर एक फ़ाइल में सुंचित करते हैं।
-
+## कैसे करे:
+जावा में वेब पृष्ठ को डाउनलोड करने के लिए हम एक रेडर क्लास बना सकते हैं जो URL को प्राप्त करेगा और उसे स्ट्रिंग में अनामित करेगा। उसके बाद हम स्ट्रिंग को फाइल में लिख सकते हैं। निम्न दिए गए कोड ब्लॉक में एक उदाहरण दिया गया है:
 ```Java
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.InputStream;
-import java.net.HttpURLConnection;
-import java.net.URL;
+try{
+    URL url = new URL("https://www.example.com/");
+    BufferedReader reader = new BufferedReader(new InputStreamReader(url.openStream()));
 
-public class WebPageDownloader {
-    public static void main(String[] args) {
-        String url = "https://www.example.com";
-        String filePath = "sample.html";
-        
-        try {
-            // URL बनाने और कनेक्शन खोलने की प्रक्रिया
-            URL webpageUrl = new URL(url);
-            HttpURLConnection connection = (HttpURLConnection) webpageUrl.openConnection();
-            
-            // सर्वर से सामग्री प्राप्त करने के लिए स्ट्रीम खोलना
-            InputStream inputStream = connection.getInputStream();
-            
-            // सामग्री को एक फ़ाइल में सुंचित करना
-            File webpageFile = new File(filePath);
-            webpageFile.createNewFile();
-            
-            FileOutputStream fileOutputStream = new FileOutputStream(webpageFile);
-            int readByte = inputStream.read();
-            while (readByte != -1) {
-                fileOutputStream.write(readByte);
-                readByte = inputStream.read();
-            }
-            
-            // स्ट्रीम को बंद करना
-            inputStream.close();
-            fileOutputStream.close();
-            
-            System.out.println("वेब पेज सफलतापूर्वक डाउनलोड किया गया है!");
-        } catch (Exception e) {
-            System.out.println("एक समस्या उद्भव हुई है: " + e.getMessage());
-        }
+    String line;
+    while ((line = reader.readLine()) != null) {
+        System.out.println(line);
     }
+    reader.close();
+} catch (IOException e) {
+    e.printStackTrace();
 }
 ```
+यहां, हम वेब पृष्ठ से प्रत्येक पंक्ति को प्रिंट करते हैं।
 
-उपरोक्त कोड ने स्तंभित URL से सामग्री को डाउनलोड करके "sample.html" नाम की फ़ाइल में सुंचित किया है। आप किसी भी वेब पेज के लिए इसका उपयोग कर सकते हैं।
+## गहराई में जाएं:
+इतिहासी परिप्रेक्ष्य, वैकल्पिक उपाय और वेब पृष्ठ को डाउनलोड करने के लिए आवश्यक तरीकों जैसे कि HTTP कनेक्शन, कुकी एवं संस्करण जानने के बाद आप स्वयं अपनी कोड में और आसानी से वेब पृष्ठों को डाउनलोड कर सकते हैं।
 
-## गहराई में जाएं
+## देखें भी:
+अधिक जानकारी के लिए, आप निम्न लिंक्स का उपयोग कर सकते हैं:
+- जावा डॉक्यूमेंटेशन: <https://docs.oracle.com/javase/10/docs/api/java/net/URL.html>
+- जावा इमेज को मेमोरी में डाउनलोड करना: <https://www.geeksforgeeks.org/downloading-image-web-using-java/>
+- जावा कोड में वेब पृष्ठों को डाउनलोड करना: <https://mkyong.com/java/how-to-download-file-from-website-java-jsp/>

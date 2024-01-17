@@ -1,7 +1,7 @@
 ---
-title:                "Att få aktuellt datum"
-html_title:           "PHP: Att få aktuellt datum"
-simple_title:         "Att få aktuellt datum"
+title:                "Hämta nuvarande datum"
+html_title:           "PHP: Hämta nuvarande datum"
+simple_title:         "Hämta nuvarande datum"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Dates and Times"
@@ -10,45 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
+Att få den aktuella datumen är ett vanligt uppgift för många programmerare. Genom att hämta det aktuella datumet från systemet, kan man skapa dynamiska applikationer som visar exakta datum och tidsdata baserat på användarens lokala inställningar. Detta är särskilt användbart för skapande av online kalendrar, bokningssystem och andra webbapplikationer som är beroende av korrekt tidsdata.
 
-Att kunna få den aktuella datumet är en viktig färdighet i många programmeringsprojekt. Det kan användas för att skapa loggar, schemalägga uppgifter eller visa datumet till användaren.
-
-## Hur man gör det
-
-Det finns två sätt att få den aktuella datumet i PHP: genom att använda den inbyggda funktionen "date()" eller genom att använda den inbyggda klassen "DateTime". Låt oss undersöka båda metoderna nedan.
-
-### Använda date()
+## Hur man gör:
+För att hämta den nuvarande datumen i PHP, används den inbyggda "date" funktionen. Detta är ett exempel på hur man använder funktionen och vad som skulle visas som utgång:
 
 ```PHP
-$currentDate = date("Y-m-d"); // Formatet för datumet är valfritt
-echo $currentDate; // Output: 2021-11-23
+$today = date("d/m/Y"); 
+echo "Idag är det: " . $today . "<br>"; 
 ```
+Output: Idag är det 30/11/2020
 
-I exemplet ovan används funktionen "date()" med en parameter som anger önskat format för datumet. Det finns olika formatalternativ att välja mellan, såsom "d/m/Y" för att visa datumet i formatet dag/månad/år eller "h:i:s A" för att visa tiden i formatet timme:minut:sekund am/pm.
-
-### Använda DateTime-klassen
+Du kan även ändra formatet på datumet baserat på dina behov genom att ändra parametrarna i "date" funktionen. Här är ett annat exempel där vi visar en tidsstämpel tillsammans med datumet:
 
 ```PHP
-$currentDate = new DateTime(); // Skapar ett nytt DateTime-objekt
-echo $currentDate->format("Y-m-d"); // Output: 2021-11-23
+$timestamp = time(); 
+$today = date("d/m/Y H:i:s", $timestamp); 
+echo "Datum och tid är: " . $today . "<br>"; 
 ```
+Output: Datum och tid är: 30/11/2020 16:32:14
 
-Här skapas ett nytt objekt av klassen "DateTime" som har flera inbyggda metoder för att formatera och manipulera datumet. Genom att använda metoden "format()" med önskat format som parameter kan vi få den aktuella datumet i önskad format.
+## Djupdyka:
+För att ytterligare anpassa tidsdata från systemet, kan du använda funktionen "strtotime" för att konvertera datumet till en Unix-tidsstämpel. Detta gör det möjligt att utföra matematiska operationer med datum, som att lägga till eller ta bort dagar. Det finns också alternativa sätt att hämta den nuvarande datumen i PHP, som att använda funktionen "gmdate" för att hämta tid i GMT-format eller "strftime" för att anpassa utdataformatet.
 
-## Djupdykning
-
-Båda metoderna som nämnts ovan kan också användas för att få mer detaljerad information om datumet, såsom dag i veckan, veckonummer och tidszon. För att få reda på dag i veckan kan vi använda "l" och för veckonummer "W" i formatet.
-
-```PHP
-$currentDate = new DateTime();
-echo $currentDate->format("l"); // Output: Tuesday
-echo $currentDate->format("W"); // Output: 47
-```
-
-Genom att använda metoden "getTimezone()" kan vi också få information om den aktuella tidszonen.
-
-## Se också
-
-- [PHP date-funktionen](https://www.php.net/manual/en/function.date.php)
-- [PHP DateTime-klassen](https://www.php.net/manual/en/class.datetime.php)
+## Se även:
+- [PHP.net Date function](https://www.php.net/manual/en/function.date.php)
+- [PHP.net Strtotime function](https://www.php.net/manual/en/function.strtotime.php)
+- [W3Schools Date function tutorial](https://www.w3schools.com/php/php_date.asp)

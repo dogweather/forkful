@@ -1,7 +1,7 @@
 ---
-title:                "Começando um novo projeto"
-html_title:           "Rust: Começando um novo projeto"
-simple_title:         "Começando um novo projeto"
+title:                "Iniciando um novo projeto"
+html_title:           "Rust: Iniciando um novo projeto"
+simple_title:         "Iniciando um novo projeto"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Getting Started"
@@ -10,47 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+O que é e por que começar um novo projeto?
 
-Se você está prestes a iniciar um novo projeto em Rust, provavelmente já sabe que é uma linguagem de programação moderna e segura, que vem ganhando popularidade entre os desenvolvedores. Além disso, Rust tem uma série de vantagens, como desempenho rápido, baixo consumo de memória e uma forte comunidade de suporte. Então, por que não aproveitar todas essas vantagens em seu próximo projeto?
+Começar um novo projeto é simplesmente iniciar um novo código ou programa do zero. Isso pode ser feito por diversos motivos, como a solução de um novo problema, criação de uma nova funcionalidade ou simplesmente aprimorar uma solução já existente.
 
-## Como fazer
+Como fazer:
 
-Para começar um novo projeto em Rust, siga estes passos simples:
+```Rust
+// Para começar um novo projeto em Rust, você pode usar o comando "new" seguido do nome do seu projeto:
+$ cargo new meu_projeto
 
-1. Instale e configure o compilador Rust, utilizando as instruções do site oficial.
-2. Determine qual tipo de projeto você deseja criar (aplicativo, biblioteca, etc.).
-3. Crie um novo diretório para o projeto e crie um arquivo "Cargo.toml" para gerenciar as dependências e configurações.
-4. Crie seu código fonte dentro do diretório do projeto.
+// Em seguida, navegue até a pasta do seu projeto criado:
+$ cd meu_projeto
 
-Aqui está um exemplo básico de um programa "Hello World" em Rust:
-
-```rust
-fn main() {
-    println!("Olá, mundo!");
-}
+// Agora é só começar a codificar! Você pode usar o comando "run" para executar o seu projeto:
+$ cargo run
 ```
 
-Quando você executar este código, a seguinte saída será gerada:
+Deep Dive:
 
-```
-Olá, mundo!
-```
+Há muitos anos, programadores têm criado novos projetos para solucionar problemas e aprimorar tecnologias existentes. Antes do Rust, a linguagem de programação C era amplamente utilizada para iniciar novos projetos, mas com o passar do tempo, foi percebida a necessidade de uma linguagem mais moderna e segura. Foi então que Rust foi criada, com o objetivo de ser uma linguagem de programação de sistemas eficiente e segura.
 
-Agora você pode seguir em frente e explorar mais recursos e funcionalidades da linguagem para criar seu projeto de forma mais avançada e eficiente.
+Outra alternativa ao iniciar um novo projeto com Rust seria usar outras linguagens de programação, como Java ou Python. No entanto, Rust se destaca por ser uma linguagem de baixo nível e possuir um sistema de tipos estático forte, o que a torna mais eficiente e segura.
 
-## Profundidade
+Veja também:
 
-Ao começar um novo projeto em Rust, é importante ter em mente algumas considerações importantes:
-
-- Rust é uma linguagem de programação fortemente tipada, o que significa que você precisa declarar explicitamente o tipo de dados que está usando.
-- A linguagem apresenta o conceito de "propriedade", que é responsável por garantir a segurança e ausência de erros de memória.
-- Rust também possui um sistema de gerenciamento de pacotes chamado Cargo, que facilita a inclusão de bibliotecas e dependências em seu projeto.
-
-Não tenha medo de explorar a documentação oficial e a comunidade para aprender mais sobre esses e outros conceitos importantes.
-
-## Veja também
-
-- Documentação oficial do Rust: https://www.rust-lang.org/pt-BR/
-- Rust Cookbook: https://rust-lang-nursery.github.io/rust-cookbook/
-- Comunidade oficial do Rust: https://users.rust-lang.org/
+- Documentação oficial do Rust: https://www.rust-lang.org/
+- GitHub do projeto Rust: https://github.com/rust-lang/rust

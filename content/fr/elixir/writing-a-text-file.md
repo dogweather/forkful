@@ -10,28 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi écrire un fichier texte en Elixir?
+# Qu'est-ce que & Pourquoi?
 
-Il y a plusieurs raisons possibles pour lesquelles vous pourriez vouloir écrire un fichier texte en utilisant Elixir. Peut-être que vous voulez créer un journal de bord pour suivre les modifications de votre programme, ou peut-être que vous voulez générer des rapports pour votre application.
+Ecrire un fichier texte, c'est simplement enregistrer des informations sous forme de texte dans un fichier sur votre ordinateur. Les programmeurs le font principalement pour stocker et rendre l'information accessible pour leur application.
 
-## Comment faire:
+# Comment faire :
 
-Pour écrire un fichier texte en Elixir, vous aurez besoin de la fonction `File.write/2`. Voici un exemple de code pour écrire une phrase simple dans un fichier nommé "exemple.txt":
+```
+Elixir
 
-```Elixir
-File.write("exemple.txt", "Bonjour le monde")
+File.write("mon_fichier.txt", "Voici mon texte à enregistrer!")
+
 ```
 
-Le résultat sera un fichier texte contenant la phrase "Bonjour le monde". Vous pouvez également utiliser des variables dans le deuxième argument pour écrire du contenu dynamique.
+Ce code enregistre le texte "Voici mon texte à enregistrer!" dans un fichier appelé "mon_fichier.txt". Vous pouvez ensuite lire ce fichier avec le code suivant :
 
-## Plongez plus en profondeur:
+```
+Elixir
 
-La fonction `File.write/2` utilise des options pour contrôler le mode d'écriture du fichier. Par exemple, vous pouvez spécifier si vous voulez écrire à la fin du fichier ou écraser le contenu existant.
+File.read("mon_fichier.txt")
 
-Vous pouvez également utiliser d'autres fonctions de gestion de fichiers en Elixir, telles que `File.read/1` pour lire le contenu d'un fichier ou `File.rename/2` pour renommer un fichier.
+```
 
-## Voir aussi:
+Ce qui vous donnera l'output suivant :
 
-- [Documentation sur File - Elixir](https://hexdocs.pm/elixir/File.html)
-- [5 façons d'utiliser les fichiers en Elixir](https://dev.to/sneha5/5-ways-to-use-files-in-elixir-h04)
-- [Gestion de fichiers en Elixir - Tutoriel en ligne](https://elixirschool.com/fr/lessons/basics/io/)
+```
+{:ok, "Voici mon texte à enregistrer!"}
+```
+
+# Plongée en profondeur :
+
+Historiquement, les fichiers texte étaient la seule option pour stocker des données. Maintenant, il existe d'autres options telles que les bases de données, mais les fichiers texte restent utiles pour de nombreuses tâches informatiques simples. Dans Elixir, vous pouvez utiliser la librairie stdlib pour travailler avec des fichiers texte en utilisant les modules ```File``` et ```IO```. Vous pouvez également automatiser l'écriture de fichiers texte en utilisant des templates avec des bibliothèques comme EEx.
+
+# Voir aussi :
+
+- Documentation sur la librairie stdlib pour travailler avec des fichiers : https://hexdocs.pm/elixir/File.html
+- Tutoriel sur l'utilisation de fichiers texte en Elixir : https://elixirschool.com/fr/lessons/libraries/file/
+- Tutoriel sur EEx pour automatiser l'écriture de fichiers texte: https://elixirschool.com/fr/lessons/basics/templating-with-eex/

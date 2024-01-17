@@ -1,7 +1,7 @@
 ---
-title:                "Työskentely jsonin kanssa."
-html_title:           "Gleam: Työskentely jsonin kanssa."
-simple_title:         "Työskentely jsonin kanssa."
+title:                "Työskentely jsonin kanssa"
+html_title:           "Gleam: Työskentely jsonin kanssa"
+simple_title:         "Työskentely jsonin kanssa"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Data Formats and Serialization"
@@ -10,42 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä ja miksi?
+JSON on datan tallennus- ja siirtomuoto, jota käytetään usein ohjelmistokehityksessä. Ohjelmoijat käyttävät JSONia helposti luettavan ja muokattavan datan tallentamiseen ja jakamiseen.
 
-JSON on tällä hetkellä yksi markkinoiden suosituimmista tiedonsiirtomuodoista. Se on yksinkertainen ja tehokas tapa välittää tietoja sovellusten välillä, joten jos haluat pystyä työskentelemään tämän päivän ohjelmistomaailmassa, sinun kannattaa olla perillä JSONista.
-
-## Kuinka tehdä
-
-Gleam tarjoaa helpon ja tehokkaan tavan työskennellä JSONin kanssa. Voimme käyttää internetyhteyskirjastoa ja integroida sen Gleamiin seuraavalla tavalla:
-
-```
-Gleam.HTTP.request(
-  url = "https://jsonplaceholder.typicode.com/todos/1",
-  method = "GET",
-  headers = [],
-  body = Gleam.HTTP.empty_body(),
-  expect = Gleam.HTTP.expect_json(Todo.decode)
-)
+## Kuinka:
+Gleamin avulla voit luoda ja lukea JSON-muotoista dataa käyttämällä ```Gleam.Json``` -moduulia. Voit luoda JSON-merkkijonoja käyttämällä ```Gleam.Json.encode``` -funktiota ja lukea JSON-tietoja käyttämällä ```Gleam.Json.decode``` -funktiota. Esimerkiksi:
+```Gleam
+let data = {name: "Tommi", age: 25}
+let json_string = Gleam.Json.encode(data)
+// Tulostaa: {"name":"Tommi","age":25}
+io.println(json_string)
+let decoded_data = Gleam.Json.decode(json_string)
+// Tulostaa: {Ok,{"name":"Tommi","age":25}}
+io.println(show(decoded_data))
 ```
 
-Tässä koodissa lähetämme GET-pyynnön URL-osoitteeseen ja odotamme vastaavan JSON-datan kääntämistä Gleamin Todo-tietorakenteeksi. Voimme myös käyttää Gleamin sisäänrakennettua taulukkotyyppiä ja tehdä tietojen käsittelystä helpompaa:
+## Syvällinen sukellus:
+JSON, lyhenne sanoista JavaScript Object Notation, kehitettiin alunperin JavaScript-kielen yhteyteen, mutta siitä on tullut suosittu dataformaatti myös muiden ohjelmointikielten keskuudessa. JSON koostuu avain-arvo pareista, jotka ovat järjestyksessä oleva lista avaimia ja niihin liittyviä arvoja. Vaikka JSON on suosittu, on olemassa myös muita vaihtoehtoja datan tallentamiseen ja siirtämiseen, kuten XML tai CSV. Gleam tukee myös näiden formaattien käsittelyä useiden moduulien avulla, kuten ```Gleam.Xml``` ja ```Gleam.Csv```.
 
-```
-let json = """{"name": "John", "age": 30, "tags": ["programming", "Gleam"]}"""
-let data = String.to_json(json)
-if Array.member(String.to_upper(String.to_utf8(data.tags)), "GLEAM") {
-  io.println("Tämä henkilö on Gleam-fani!")
-}
-```
-
-Tässä esimerkissä käytämme String-toimintoja muuttamaan JSON-data json-tietotyypiksi. Sitten voimme käyttää taulukoita ja merkkijonojen käsittelyfunktioita helposti datan tarkastelussa.
-
-## Syvällinen sukellus
-
-JSONin kanssa työskentely Gleamilla on helppoa ja intuitiivista. Voit helposti muuntaa JSON-datan oman sovelluksesi tietorakenteeksi ja käsitellä sitä Gleamin sisäänrakennetuilla toiminnoilla. Voit myös käyttää Gleamin tyyppijärjestelmää varmistamaan, että kaikki tiedot vastaavat odotettua tietotyyppiä.
-
-See Also 
-
-- [Gleam JSON-dokumentaatio](https://gleam.run/articles/json)
-- [Gleam internetyhteyskirjasto](https://hexdocs.pm/gleam/Gleam.HTTP.html)
-- [Gleam tietotyypit](https://hexdocs.pm/gleam/Gleam.html#types)
+## Katso myös:
+- Gleamin virallinen dokumentaatio: https://gleam.run
+- JSON-esittely W3 Schools-sivustolla: https://www.w3schools.com/js/js_json_intro.asp
+- Vertailu JSONin ja muiden formaattien välillä: https://www.json.org/json-fi.html

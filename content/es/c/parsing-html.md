@@ -10,57 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##¿Por qué deberías aprender a parsear HTML en C?
+## ¿Qué y por qué?
+El análisis de HTML es cuando los programadores toman el código HTML de una página web y lo convierten en una estructura de datos que se puede manipular en su código. Esto es importante porque permite a los programadores interactuar con la web de forma programática, extrayendo información o realizando acciones automatizadas.
 
-Si estás interesado en desarrollar aplicaciones o sitios web en C, aprender a parsear HTML te permitirá acceder y manipular información importante de una página web de una manera sencilla y eficiente. Además, te ayudará a comprender mejor cómo funciona la estructura de un sitio y cómo interactúa con el código.
+## ¡Cómo hacerlo!
+Aquí hay un ejemplo simple de cómo analizar HTML en C utilizando la biblioteca libxml2:
+```C
+#include <stdio.h>
+#include <libxml/HTMLparser.h>
 
-##Cómo hacerlo
+int main()
+{
+    htmlDocPtr doc = htmlReadFile("mi_pagina.html", NULL, HTML_PARSE_RECOVER | HTML_PARSE_NOERROR | HTML_PARSE_NOWARNING);
+    xmlNodePtr root = xmlDocGetRootElement(doc);
+    
+    xmlNodePtr node = root->children;
+    while (node != NULL)
+    {
+        if (node->type == XML_ELEMENT_NODE)
+        {
+            printf("%s", node->name);
+        }
+        node = node->next;
+    }
 
-```C 
-// Incluye la librería para trabajar con HTML
-#include <htmlparser.h>
-
-// Función para parsear una página web
-void parsearHTML(char *url, char *elemento) {
-
-    // Crea una instancia de HTML Parser
-    htmlparser_t *parser = htmlparser_create();
-
-    // Carga la página web
-    htmlparser_load_url(parser, url);
-
-    // Busca el elemento especificado dentro del HTML 
-    htmlnode_t *nodo = htmlparser_query(parser, elemento);
-
-    // Imprime el contenido del elemento
-    printf("%s", nodo->children[0]->content);
-
-    // Libera la memoria
-    htmlparser_destroy(parser);
-}
-
-int main() {
-    // Llama a la función con la URL y el elemento que quieres parsear
-    parsearHTML("https://www.ejemplo.com", "h1");
+    xmlFreeDoc(doc);
+    xmlCleanupParser();
 
     return 0;
 }
 ```
+Este código utiliza la función `htmlReadFile` de libxml2 para crear una estructura de datos a partir del HTML en el archivo "mi_pagina.html". Luego, utiliza la función `xmlDocGetRootElement` para obtener el nodo raíz y, finalmente, recorre todos los nodos hijos imprimiendo sus nombres.
 
-**Salida:** Este código imprimirá el contenido del primer elemento "h1" encontrado en la página web especificada.
+## Inmersión profunda
+El análisis de HTML ha sido una práctica común en la programación web desde los primeros días de la web. Anteriormente, se utilizaba principalmente para extraer información de páginas web, como precios de productos o resultados deportivos, para su almacenamiento en bases de datos. Sin embargo, hoy en día, también se utiliza para automatizar acciones en la web, como enviar formularios o hacer clic en botones.
 
-```C
-<h1>Bienvenidos a Ejemplo.com</h1>
-```
+Además de libxml2, existen otras bibliotecas de análisis de HTML en C, como libtidy y gumbo-parser. También se pueden utilizar otras herramientas como Expressions regulares para realizar análisis de HTML, pero esto puede ser menos confiable ya que el HTML puede ser muy variable.
 
-##Profundizando en el parsing de HTML
+El análisis de HTML puede ser una tarea complicada, especialmente si el HTML en la página web no está bien estructurado o cumple con las normas. Es importante tener en cuenta que es posible que el código de HTML no se analice correctamente en estos casos, lo que puede llevar a resultados inesperados.
 
-El proceso de parsing de HTML consiste en analizar una página web para identificar sus elementos y estructura, lo que permite obtener y manipular información específica. Una vez que se carga el código HTML, el parser busca patrones y etiquetas para crear una estructura de árbol que representa la página. De esta manera, se pueden acceder a los elementos y sus atributos utilizando funciones y métodos proporcionados por la librería.
-
-Es importante tener en cuenta que el HTML puede variar según el sitio web y su estructura, por lo que es importante familiarizarse con el formato y etiquetas más comunes. Además, existen diferentes opciones de librerías de HTML Parser en C, por lo que es recomendable investigar y elegir la que mejor se adapte a tus necesidades.
-
-##Ver también
-
-- [Documentación de la librería HTML Parser para C](https://htmlparser.sourceforge.io/)
-- [Tutorial para parsear HTML en C](https://www.programmingsimplified.com/c/html-parser-library)
-- [Introducción a HTML para programadores en C](https://riptutorial.com/c/topic/1401/html)
+## Ver también
+- [Documentación de libxml2](http://www.xmlsoft.org/html/index.html)
+- [Documentación de libtidy](http://api.html-tidy.org/)
+- [Documentación de gumbo-parser](https://github.com/google/gumbo-parser)

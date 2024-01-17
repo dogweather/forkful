@@ -10,51 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué enviar una solicitud HTTP
+## ¿Qué y por qué?
+Enviar una solicitud HTTP es una técnica utilizada por los programadores para obtener información o realizar acciones en servidores remotos. Se hace a través de un protocolo de comunicación en línea que permite a las aplicaciones web interactuar con otros sistemas. 
+Los programadores envían solicitudes HTTP por varias razones, como obtener datos de una API, enviar formularios en una página web o acceder a recursos en servidores externos.
 
-Enviar una solicitud HTTP es una parte fundamental de la programación web. Permite que nuestras aplicaciones se comuniquen con servidores externos y accedan a datos importantes. Sin las solicitudes HTTP, nuestras aplicaciones no podrían funcionar correctamente y estarían limitadas en términos de funcionalidad.
-
-## Cómo hacerlo
-
-Para enviar una solicitud HTTP en TypeScript, podemos utilizar la biblioteca "axios". Primero, debemos instalarla en nuestro proyecto utilizando el siguiente comando:
+## Cómo hacerlo:
+Para enviar una solicitud HTTP en TypeScript, podemos utilizar la biblioteca "axios", que nos permite hacer solicitudes HTTP de manera sencilla. Primero, instalamos la biblioteca a través de NPM:
 
 ```TypeScript
 npm install axios
 ```
-
-Luego, importamos la biblioteca en nuestro archivo:
-
+Luego, en nuestro código, importamos la biblioteca y hacemos la solicitud utilizando su método "get":
 ```TypeScript
 import axios from 'axios';
-```
 
-Ahora, podemos utilizar la función "get" de axios para enviar una solicitud GET a un servidor externo y obtener datos. Por ejemplo, si queremos obtener los usuarios de una API externa, podemos hacer lo siguiente:
-
-```TypeScript
-axios.get('https://jsonplaceholder.typicode.com/users')
-  .then((response) => {
-    console.log(response.data);
+axios.get('https://ejemplo.com/api/users')
+  .then(response => {
+    console.log(response.data); // datos obtenidos de la solicitud
   })
-  .catch((error) => {
+  .catch(error => {
     console.log(error);
   });
 ```
 
-En este ejemplo, utilizamos la función "then" para acceder a los datos de respuesta y la función "catch" para manejar cualquier error que pueda ocurrir.
+## Inmersión Profunda:
+La solicitud HTTP es una técnica fundamental en el desarrollo de aplicaciones web y es utilizada en conjunto con otros protocolos como TCP/IP y DNS. Antes de HTTP, la comunicación entre aplicaciones se realizaba a través de pequeñas aplicaciones de red, lo que hacía que el proceso fuera más lento y menos eficiente. 
+Existen varias formas de realizar solicitudes HTTP en TypeScript, como utilizar el módulo nativo "http" de Node.js, pero la biblioteca "axios" es una de las más populares y sencillas de usar. Además, podemos especificar opciones adicionales en nuestras solicitudes, como encabezados personalizados o autenticación.
 
-También podemos enviar otras solicitudes como POST, PUT, DELETE, etc. simplemente cambiando la función utilizada en la llamada a la API.
-
-## Profundizando en las solicitudes HTTP
-
-Enviar una solicitud HTTP no solo implica utilizar una biblioteca como "axios", también es importante comprender cómo funciona el protocolo HTTP y cómo se estructuran las solicitudes y las respuestas.
-
-Las solicitudes HTTP están compuestas por una línea de solicitud, encabezados y un cuerpo opcional. La línea de solicitud contiene el método utilizado (GET, POST, etc.), la ruta y la versión del protocolo. Los encabezados contienen información adicional sobre la solicitud, como el tipo de contenido, la longitud del cuerpo, etc. Y el cuerpo contiene los datos que se están enviando.
-
-Las respuestas HTTP también tienen una línea de estado, encabezados y un cuerpo. La línea de estado contiene el código de estado, que indica si la solicitud fue exitosa o si se produjo algún tipo de error. Los encabezados contienen información adicional sobre la respuesta y el cuerpo contiene los datos devueltos por el servidor.
-
-En resumen, enviar una solicitud HTTP es una parte esencial de la programación web y nos permite acceder a datos externos y hacer que nuestras aplicaciones sean más dinámicas y funcionales.
-
-## Ver También
-
-- Documentación de axios: https://axios-http.com/docs/intro 
-- Tutorial de solicitudes HTTP en TypeScript: https://www.digitalocean.com/community/tutorials/how-to-use-axios-with-typescript
+## Ver también:
+- [Documentación oficial de axios](https://axios-http.com/)
+- [Módulo HTTP de Node.js](https://nodejs.org/api/http.html)

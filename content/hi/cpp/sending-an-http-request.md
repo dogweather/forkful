@@ -1,7 +1,7 @@
 ---
-title:                "एक http अनुरोध भेजना"
-html_title:           "C++: एक http अनुरोध भेजना"
-simple_title:         "एक http अनुरोध भेजना"
+title:                "एक एचटीटीपी अनुरोध भेजना"
+html_title:           "C++: एक एचटीटीपी अनुरोध भेजना"
+simple_title:         "एक एचटीटीपी अनुरोध भेजना"
 programming_language: "C++"
 category:             "C++"
 tag:                  "HTML and the Web"
@@ -10,60 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Kyun
+## क्या और क्यों?
 
-HTTP request bhejna aasaan tareeke se server se data ko prapt karne ka sabse prabhavshali aur prachalit tarika hai. Ye web development, data exchange aur online communication ko sambhav banata hai.
+HTTP अनुरोध भेजना एक कंप्यूटर के साथ अन्य कंप्यूटर के बीच डेटा को एक जगह से दूसरी जगह भेजने की प्रक्रिया है। प्रोग्रामर इसे डेटा को शेयर करने, संचार करने या सर्वर से डेटा प्राप्त करने के लिए करते हैं।
 
-## Kaise Kare
+## कैसे करें:
 
-Aap HTTP protocol ka istemal karke ek request ko bhej sakte hain. Iske liye, aapko ek URL, request method (GET, POST, PUT, DELETE, etc.) aur optional headers aur body data ki zaroorat hoti hai.
-
-```C++
-// Example request code using the cURL library
+```c++
+#include <iostream>
 #include <curl/curl.h>
 
-int main() {
-    // Initialize cURL session
-    CURL *curl = curl_easy_init();
+// हर अनुरोध के लिए एक नया हैंडलर बनाएं
+CURL *curl = curl_easy_init();
 
-    // Set request URL
-    curl_easy_setopt(curl, CURLOPT_URL, "https://example.com");
+// अनुरोध को सेट करें
+curl_easy_setopt(curl, CURLOPT_URL, "https://www.example.com");
 
-    // Set request method (GET, POST, etc.)
-    curl_easy_setopt(curl, CURLOPT_CUSTOMREQUEST, "GET");
+// अनुरोध को भेजें
+curl_easy_perform(curl);
 
-    // Optional headers
-    struct curl_slist *headers = NULL;
-    headers = curl_slist_append(headers, "Content-Type: application/json");
-    curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
-
-    // Optional body data
-    // curl_easy_setopt(curl, CURLOPT_POSTFIELDS, "body=data");
-
-    // Perform the request
-    CURLcode res = curl_easy_perform(curl);
-
-    // Check for errors
-    if (res != CURLE_OK) {
-        fprintf(stderr, "curl_easy_perform() failed: %s\n",
-            curl_easy_strerror(res));
-    }
-
-    // Cleanup
-    curl_easy_cleanup(curl);
-
-    return 0;
-}
+// हैंडलर को साफ करें
+curl_easy_cleanup(curl);
 ```
-### Output
 
-Is code ko execute karne par, aap server se request ko bhejenge aur uska response ko console par dekh sakte hain. Agar koi error aata hai toh uska message dikhega.
+आउटपुट:
 
-## Gehri Jhanjhana
+```
+<!doctype html>
+<html>
+<head>
+    <title>उदाहरण वेबसाइट</title>
+</head>
+<body>
+    <h1>नमस्ते,</h1>
+    <p>यह एक उदाहरण वेबसाइट है।</p>
+</body>
+</html>
+```
 
-HTTP request bhejne ke liye, internetworking protocols aur internet ke sahi se samajh ki zaroorat hai. HTTP request me header fields, status codes, mime types jaise concepts hote hain jo aapko samajhna zaroori hai. Iske alawa, aapko request body ka bhi dhyaan rakhna padega, jiske liye JSON, XML, ya binary data jaise formats ka istemal kiya ja sakta hai.
+## गहराई विस्तार:
 
-See Also
+HTTP अनुरोधों को पहले से ही विभिन्न प्रोटोकॉलों विकसित किया गया है, लेकिन C++ में एक आम प्रयोग है। यह अन्य लोकप्रिय लाइब्रेरी विकल्प जैसे कि libcurl और Poco C++ भी है। एक HTTP अनुरोध भेजने के पहले, एक TCP कनेक्शन स्थापित किया जाता है जो प्रतिक्रिया को प्राप्त करने के बाद समाप्त होता है।
 
-- [HTTP Protocol Explained](https://www.freecodecamp.org/news/http-and-everything-you-need-to-know-about-it/)
-- [cURL Documentation](https://curl.haxx.se/docs/)
+## देखें भी:
+
+- [libcurl डॉक्यूमेंटेशन](https://curl.haxx.se/libcurl/)
+- [C++ से HTTP से संबंधित सवालों का समाधान](https://stackoverflow.com/questions/tagged/c%2B%2B+http)
+- [Poco C++ वेबसाइट](https://pocoproject.org/)

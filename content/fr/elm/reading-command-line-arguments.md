@@ -1,7 +1,7 @@
 ---
-title:                "La lecture des arguments de ligne de commande"
-html_title:           "Elm: La lecture des arguments de ligne de commande"
-simple_title:         "La lecture des arguments de ligne de commande"
+title:                "Lecture des arguments en ligne de commande"
+html_title:           "Elm: Lecture des arguments en ligne de commande"
+simple_title:         "Lecture des arguments en ligne de commande"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Files and I/O"
@@ -10,42 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Quoi & Pourquoi?
+Lire les arguments de ligne de commande est une compétence essentielle pour tout programmeur Elm. Cela implique de fournir des entrées spécifiques lors de l'exécution d'un programme à partir de la ligne de commande, ce qui permet de personnaliser son comportement. Les programmeurs le font pour rendre leurs programmes plus flexibles et personnalisables pour les utilisateurs.
 
-Si vous êtes un programmeur Elm, vous avez probablement déjà été confronté à la nécessité de lire des arguments de ligne de commande dans votre code. Cela peut sembler intimidant au premier abord, mais une fois que vous savez comment le faire, c'est un savoir-faire utile à avoir dans votre boîte à outils de programmation.
-
-## Comment faire
-
-Pour lire les arguments de ligne de commande en Elm, vous pouvez utiliser la bibliothèque [elm-tools/parser](https://package.elm-lang.org/packages/elm-tools/parser/latest/). Voici un exemple simple de code qui lit un argument appelé "nom" et affiche une chaîne de caractères avec le nom fourni:
-
-```Elm
-import Parser exposing (..)
-import Tasks exposing (..)
-
-main : Program ()
-main =
-   Parser.map display 
-      (succeed print <|
-         string "nom" `andThen` 
-         map concat getChompedString)
-   |> parse Process.arguments
-   |> andThen (\x -> performTask x [])
-
-display : String -> Task x ()
-display name =
-   putStrLn ("Bonjour" ++ name ++ "!")
-
+## Comment Faire:
+Dans Elm, il existe une fonction appelée `getArgs` qui permet de lire les arguments de ligne de commande. Voici un exemple de code qui utilise cette fonction:
 
 ```
+Elm Platform-Cli kernel version 0.19.1
+----------------------------
+source-repository-package : Elm.GetArgs
+source-distribution : This is not a library!
+source-homepage : N/A
+source-author : N/A
+source-synopsis : Using getArgs function to read command line arguments in Elm.
+```
 
-Si vous exécutez ce code avec la commande `elm make lire-arguments.elm --nom=Benoit`, vous devriez voir "Bonjour Benoit!" imprimé dans votre terminal.
+## Deep Dive:
+La lecture des arguments de ligne de commande est une pratique courante en informatique depuis les débuts de la programmation. Auparavant, les programmes étaient souvent exécutés à partir d'un terminal, et les lignes de commande étaient la seule façon de spécifier des entrées.
 
-## Plongée en profondeur
+Il existe d'autres façons de passer des entrées aux programmes, telles que les interfaces graphiques ou les fichiers de configuration. Cependant, la lecture des arguments de ligne de commande reste une méthode simple et efficace pour les programmeurs Elm.
 
-La bibliothèque elm-tools/parser vous offre une grande flexibilité dans la façon dont vous lisez les arguments de ligne de commande. Vous pouvez utiliser des combinateurs pour créer des parsers qui correspondent à des expressions régulières ou utiliser des parsers déjà existants pour lire des types de données tels que des nombres ou des booléens. N'hésitez pas à explorer la documentation pour découvrir toutes les possibilités offertes.
+L'implémentation de la fonction `getArgs` est basée sur la bibliothèque standard de Haskell, qui est utilisée par Elm pour gérer les entrées et sorties.
 
-## Voir aussi
-
-- [Documentation de elm-tools/parser](https://package.elm-lang.org/packages/elm-tools/parser/latest/)
-- [Exemple complet de lecture d'arguments de ligne de commande avec elm-tools/parser](https://github.com/elm/library/blob/master/src/Parser.elm)
-- [Guide sur la manipulation des entrées utilisateur en Elm](https://guide.elm-lang.org/interop/user_input.html)
+## Voir Aussi:
+Pour en savoir plus sur la lecture des arguments de ligne de commande en Elm, vous pouvez consulter la documentation officielle de la fonction `getArgs`, ainsi que des exemples de code sur des sites comme GitHub et Stack Overflow. Vous pouvez également explorer d'autres moyens d'interagir avec les utilisateurs de vos programmes en utilisant des interfaces graphiques ou d'autres méthodes de communication.

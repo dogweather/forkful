@@ -10,31 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
-날짜를 비교하는 것이 왜 유용한지 알고 싶으신가요? 예를 들어, 사용자의 생일을 기준으로 나이를 계산하거나, 이전과 이후의 날짜를 비교해 이벤트의 빈도를 분석할 수 있습니다.
+## 무엇 & 왜?
+날짜를 비교하는 것은 무엇인가요? 프로그래머들이 왜 이것을 할까요? 
+날짜를 비교한다는 것은, 두 개의 날짜를 비교하여 그 중 어느 날짜가 앞선 것인지를 판단하는 것을 말합니다. 
+프로그래머들은 이를 자주 사용하는데, 예를 들어 어떤 이벤트가 특정 날짜 이후 일어나야 하는 경우 날짜를 비교하여 이를 구현할 수 있기 때문입니다.
 
-## 방법
-두 날짜를 비교하려면, 먼저 `Date` 형식의 변수를 생성해야 합니다. 그리고 다음과 같은 메서드를 사용하면 됩니다:
+## 방법:
 ```Swift
-let date1 = Date()
-let date2 = Date.init(timeIntervalSinceNow: -86400) //24시간 전의 날짜
+
+// 두 날짜 비교하기
+let formatter = DateFormatter()
+formatter.dateFormat = "yyyy-MM-dd"
+
+let date1 = formatter.date(from: "2020-01-01")!
+let date2 = formatter.date(from: "2020-02-01")!
+
 if date1 < date2 {
-    print("Date 1 is before date 2")
-} else if date2 < date1 {
-    print("Date 2 is before date 1")
+    print("date1 is earlier than date2")
+} else if date1 > date2 {
+    print("date1 is later than date2")
 } else {
-    print("The dates are equal")
+    print("date1 and date2 are the same")
 }
+// 출력: 날짜 1은 날짜 2보다 이른 날짜입니다.
 ```
-> "Date 2 is before date 1"이 출력될 것입니다.
 
-## 깊게 들어가보기
-날짜를 비교할 때 고려해야 할 몇 가지 중요한 점들이 있습니다. 첫째로, 날짜는 `TimeInterval` 형태로 저장되며, 이는 초 단위로 표현됩니다. 따라서 두 날짜를 비교하기 전에, 같은 형식으로 날짜를 변환해주어야 합니다. 또한, `Date`는 시스템의 현재 날짜와 시간을 기준으로 하기 때문에, 시간이나 시간대를 고려할 필요가 있습니다. 이러한 고려를 통해 정확한 날짜 비교를 할 수 있습니다.
+## 깊이 파고들기:
+(1) 날짜를 비교하는 것은 과거에도 많이 사용되었으며, 현재에도 많이 사용되는 기술입니다. (2) 날짜를 비교하는 다른 방법으로는 "compare" 함수를 사용하는 것과 "isBefore" 또는 "isAfter" 함수를 사용하는 것이 있습니다. (3) 날짜를 비교하는 방법에는 다양한 방법이 있지만, 현재 시간을 기준으로 비교하는 것이 일반적입니다.
 
-## 더 알아보기
-날짜를 다루는 더 많은 기능들을 알아보려면 [Apple의 공식 문서](https://developer.apple.com/documentation/foundation/date)를 참고하세요.
-
-## 관련 링크
-- [Swift 날짜 비교 방법](https://medium.com/swift-programming/swift-how-to-compare-dates-39a46090fb8c)
-- [Date Formatter 사용하기](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#ID299)
-- [Swift의 날짜와 시간 다루기](https://www.avanderlee.com/swift/datecomponents-dateformatters/)
+## 또한 보기:
+- [Swift의 DateFormatter](https://developer.apple.com/documentation/foundation/dateformatter)
+- [날짜와 시간 관련 문제 해결을 위한 Swift 지침](https://ericasadun.com/2018/03/12/dates-and-times-in-swift-cheat-sheet/)
+- [Swift에서 날짜를 비교하는 방법](https://blog.karmadust.com/swift-date-comparison-tips/)

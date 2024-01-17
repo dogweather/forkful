@@ -10,59 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+## O que e por que?
 
-Calcular uma data no futuro ou no passado pode ser útil em diversas situações, desde planejar uma viagem até realizar cálculos financeiros. O Bash tem funções e comandos integrados que facilitam esse tipo de cálculo, tornando a tarefa mais simples e rápida.
+Calcular uma data no futuro ou no passado é um processo comum na programação que envolve o cálculo de uma data com base em uma data inicial e uma quantidade específica de tempo. Os programadores podem precisar calcular datas futuras ou passadas para tarefas como agendar eventos, rastrear prazos ou gerar relatórios.
 
-## Como Fazer
+## Como fazer:
 
-Para calcular uma data no futuro ou no passado no Bash, você pode usar o comando `date` combinado com o parâmetro `-d` para especificar uma data e o parâmetro `-v` para adicionar ou subtrair dias, semanas, meses ou anos. Veja alguns exemplos:
-
-```
-# Calcular a data de hoje mais 2 dias
-date -d "+2 days"
-
-# Calcular a data de hoje há 2 meses
-date -d "-2 months"
-
-# Calcular a data de 20/10/2021 mais 1 semana
-date -d "20/10/2021 +1 week"
-
-# Calcular a data de 01/01/2022 há 3 anos
-date -d "01/01/2022 -3 years"
-```
-
-O comando `date` possui uma sintaxe flexível que permite especificar a data de diversas maneiras, como por exemplo:
-
-- MM/DD/YY: mês/dia/ano
-- DD/MM/YY: dia/mês/ano
-- YYYY/MM/DD: ano/mês/dia
-
-Além disso, você também pode usar abreviações para representar as unidades de tempo, como `d` para dias, `w` para semanas, `m` para meses e `y` para anos.
-
-## Deep Dive
-
-Além do comando `date`, o Bash também possui funções internas que podem ser usadas para calcular datas. Um exemplo é a função `dateadd`, que permite adicionar ou subtrair dias, semanas, meses ou anos de uma data específica.
-
-Por exemplo, para calcular a data de hoje mais 2 semanas utilizando a função `dateadd`, você pode usar o seguinte comando:
+Existem várias maneiras de calcular datas futuras ou passadas usando Bash. Aqui estão dois exemplos comuns que utilizam os comandos 'date' e 'strtotime':
 
 ```
-# Calcular a data de hoje mais 2 semanas
-dateadd now +2 weeks
+# Calculando 30 dias no futuro a partir de hoje
+future_date=$(date -d "+30 days" +%Y-%m-%d)
+echo "Data Futura: $future_date"
+
+# Calculando 1 ano no passado a partir de uma data específica
+past_date=$(date -d "2020-01-01 - 1 year" +%Y-%m-%d)
+echo "Data Passada: $past_date"
 ```
 
-Além disso, o Bash também possui a função `dateval`, que permite validar uma data e verificar se ela é válida ou não. Isso pode ser útil para evitar erros em cálculos futuros ou passados.
-
-Para utilizar a função `dateval`, você pode usar o seguinte comando:
+A saída desses comandos seria:
 
 ```
-# Validar a data 30/02/2021
-dateval 30/02/2021
+Data Futura: 2021-02-18
+Data Passada: 2019-01-01
 ```
 
-Se a data for válida, o comando não retornará nenhuma mensagem. Porém, se a data for inválida, ele irá exibir uma mensagem de erro.
+## Mergulho profundo:
 
-## Veja Também
+A capacidade de calcular datas no futuro ou no passado é uma funcionalidade importante para qualquer linguagem de programação, incluindo Bash. Historicamente, esse processo era feito manualmente com matemática básica, mas agora, com a ajuda de comandos como 'date' e 'strtotime', é possível obter resultados mais precisos de forma mais fácil e eficiente.
 
-- [Documentação do Comando `date`](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html)
-- [Funções Internas do Bash](https://www.gnu.org/software/bash/manual/html_node/Bash-Builtins.html)
+Além disso, existem alternativas para calcular datas no Bash, como a biblioteca 'tdate' que fornece funções mais avançadas para cálculos de datas. No entanto, para tarefas simples, os comandos 'date' e 'strtotime' geralmente são suficientes.
+
+É importante notar também que o formato de data usado nos exemplos pode variar dependendo do sistema operacional e do local configurados. Portanto, é sempre bom verificar qual o formato correto a ser utilizado antes de realizar cálculos de datas com o Bash.
+
+## Veja também:
+
+- [Página do Manual do Bash sobre o comando 'date'](https://www.gnu.org/software/bash/manual/html_node/Bash-Builtins.html#index-date)
+- [Página do Manual do Bash sobre o comando 'strtotime'](https://www.gnu.org/software/bash/manual/html_node/Bash-Builtins.html#index-strtotime)
+- [Biblioteca tdate](https://github.com/eckz/tdate)

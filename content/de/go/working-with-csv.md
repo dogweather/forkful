@@ -10,15 +10,15 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Warum
+Was & Warum?
 
-CSV ist ein weit verbreitetes Dateiformat, das zur Speicherung von tabellarischen Daten verwendet wird. Viele Anwendungen erfordern die Verarbeitung von CSV-Dateien, sei es für die Analyse von Finanzdaten, für den Import und Export von Datenbanken oder für die Erstellung von Berichten. Durch die Verwendung von Go können CSV-Dateien schnell und effizient verarbeitet werden, was es zu einer lohnenden Fähigkeit für Entwickler macht.
+"CSV" steht für "Comma Separated Values" und bezieht sich auf ein Dateiformat, welches zur Speicherung von tabellarischen Daten verwendet wird. Programmierer arbeiten häufig mit CSV-Dateien, da sie eine einfache und effiziente Möglichkeit bieten, Daten zu organisieren und zu analysieren.
 
-# Wie geht's
+Wie geht's:
 
-Um mit CSV in Go zu arbeiten, müssen wir zunächst das Standardpaket "encoding/csv" importieren. Dann können wir eine CSV-Datei öffnen und die Daten in ein zweidimensionales Slice (Schnittstelle) speichern, um sie weiter zu verarbeiten.
+Das Arbeiten mit CSV-Dateien ist in Go auch dank der integrierten Pakete "encoding/csv" und "bufio" sehr einfach. Hier ist ein Beispiel für das Lesen einer CSV-Datei und das Drucken der Daten auf der Konsole:
 
-```Go
+```
 package main
 
 import (
@@ -28,45 +28,44 @@ import (
 )
 
 func main() {
-	// CSV-Datei öffnen
+	// Öffne die CSV-Datei
 	file, err := os.Open("meine_daten.csv")
 	if err != nil {
-		fmt.Println("Fehler beim Öffnen der Datei:", err)
-		return
+		panic(err)
 	}
 	defer file.Close()
 
-	// CSV-Datei lesen
+	// Erstelle einen neuen CSV-Reader
 	reader := csv.NewReader(file)
 
-	// Daten in ein Slice speichern
-	data, err := reader.ReadAll()
+	// Lies alle Zeilen der CSV-Datei
+	records, err := reader.ReadAll()
 	if err != nil {
-		fmt.Println("Fehler beim Lesen der Datei:", err)
-		return
+		panic(err)
 	}
 
-	// Ausgabe der Daten in der Konsole
-	fmt.Println(data)
+	// Gehe durch jeden Datensatz und gib die Werte aus
+	for _, record := range records {
+		fmt.Println(record)
+	}
 }
-
 ```
 
-Als Ergebnis sehen wir unsere CSV-Daten in Form eines zweidimensionalen Slices aus Strings in der Konsole.
+Die Ausgabe dieses Programms würde wie folgt aussehen:
 
 ```
-[[Spalte 1 Spalte 2 Spalte 3]
-[Daten 1 Daten 2 Daten 3]]
+[Max Mustermann 25 männlich]
+[Maria Musterfrau 32 weiblich]
+[Paul Beispielmann 19 männlich]
 ```
 
-Wir können nun auf einfache Weise auf die Daten zugreifen und sie nach unseren Bedürfnissen weiterverarbeiten.
+Deep Dive:
 
-# Tiefer eintauchen
+Historisch gesehen wurde CSV in den 1970er Jahren entwickelt und diente ursprünglich der Übertragung von Daten zwischen verschiedenen Computersystemen. Heutzutage wird das Format häufig verwendet, um große Datenmengen zu organisieren und zu analysieren. Es gibt auch Alternativen zu CSV wie JSON oder XML, aber CSV bleibt aufgrund seiner Einfachheit und Verbreitung immer noch ein beliebtes Format.
 
-Beim Arbeiten mit CSV in Go gibt es einige wichtige Dinge zu beachten. Zum Beispiel müssen wir die Struktur und das Format der CSV-Datei verstehen, um sicherzustellen, dass wir die richtigen Daten auslesen. Auch die Verwendung von Optionen wie das Setzen von Trennzeichen oder das Ignorieren von Leerzeilen kann hilfreich sein. Es ist auch wichtig, den korrekten Code für den Umgang mit Fehlern beim Lesen oder Schreiben von CSV-Dateien zu implementieren, um mögliche Probleme zu vermeiden.
+Für diejenigen, die tiefer in das Arbeiten mit CSV-Dateien einsteigen möchten, gibt es viele nützliche Methoden und Funktionen in den "encoding/csv" und "bufio" Paketen. Diese ermöglichen es beispielsweise, bestimmte Teile der Daten zu ignorieren oder spezifische Datenformate zu definieren.
 
-# Siehe auch
+Siehe auch:
 
-- [Go-Standardpaket "encoding/csv"](https://golang.org/pkg/encoding/csv/)
-- [Tutorials zu CSV in Go (auf Deutsch)](https://golang.org/doc/#tutorials)
-- [Praktische Anwendung von CSV in Go (auf Englisch)](https://opensource.com/article/20/9/golang-csv)
+- Dokumentation zu "encoding/csv": https://golang.org/pkg/encoding/csv/
+- Dokumentation zu "bufio": https://golang.org/pkg/bufio/

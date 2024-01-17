@@ -1,7 +1,7 @@
 ---
-title:                "Zamiana daty na ciąg znaków"
-html_title:           "Gleam: Zamiana daty na ciąg znaków"
-simple_title:         "Zamiana daty na ciąg znaków"
+title:                "Konwersja daty na ciąg znaków"
+html_title:           "Gleam: Konwersja daty na ciąg znaków"
+simple_title:         "Konwersja daty na ciąg znaków"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Dates and Times"
@@ -10,43 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i dlaczego?
 
-Czemu w ogóle miałbyś chcieć przekonwertować datę na ciąg znaków? Oto kilka powodów!
+Konwertowanie daty na ciąg znaków jest jednym z najczęściej wykonywanych zadań przez programistów. Polega to na przekształceniu daty zapisanej w formacie liczbowym do formy tekstowej, idealnie dostosowanej do potrzeb programu. Dlaczego? Przede wszystkim po to, by móc łatwo manipulować datami i wyświetlać je w czytelnej formie dla użytkownika.
 
-- Często w aplikacjach internetowych czy mobilnych używamy dat, a niekiedy konieczne jest prezentowanie ich w formie tekstowej.
-- Przekonwertowanie daty na string pozwala na dopasowanie jej do lokalnych ustawień, takich jak format wyświetlania daty czy język.
+## Jak to zrobić?
 
-## Jak to zrobić
-
-Oto przykładowy kod w języku Gleam, który pokazuje, jak przekonwertować datę na string:
+Możemy wykonać to zadanie w Gleam za pomocą wbudowanego modułu `Calendar`. Najpierw musimy zaimportować ten moduł, a następnie używać funkcji z niego, aby skonwertować datę na ciąg znaków.
 
 ```Gleam
-// Importowanie modułu `Date` z biblioteki standardowej
-import gleam/datetime/Date
+import Calendar
 
-// Tworzenie daty za pomocą funkcji `new`
-let my_date = Date.new(2020, 12, 31)
+let date = Calendar.local_time(2021, 02, 03)
 
-// Przekonwertowanie daty na string w formacie `YYYY-MM-DD`
-let my_string = Date.to_string(my_date, "%Y-%m-%d")
-
-// Wyświetlenie wyniku na konsoli
-println(my_string)
+// Konwersja do ciągu znaków w formacie ISO-8601
+let str = Calendar.to_rfc3339(date)
+// "2021-02-03T00:00:00+00:00"
 ```
 
-Ten prosty kod wyświetli "2020-12-31" na konsoli.
+Możemy również użyć innych funkcji z modułu `Calendar`, aby dostosować format wyjściowego ciągu znaków, np. `to_local_date_string()` lub `to_local_time_string()`. Pełną listę funkcji można znaleźć w dokumentacji Gleam.
 
-## Pogląd w głąb
+## Głębsza analiza
 
-W języku Gleam istnieje kilka różnych funkcji, które pozwalają na przekonwertowanie daty na string w różnych formatach. W powyższym przykładzie użyliśmy funkcji `to_string`, ale warto również zapoznać się z funkcją `to_rfc3339`, która zwraca string w formacie RFC3339, czyli standardowym formacie używanym w komunikacji między systemami.
+Historia konwersji daty na ciąg znaków sięga czasów, gdy programy nie mogły bezpośrednio obsługiwać operacji na datach. Wówczas konieczne było przekształcenie daty do postaci tekstowej, aby móc z nią pracować. Współczesne języki programowania, takie jak Gleam, mają już wbudowane funkcje konwertujące daty, co znacznie ułatwia pracę programistów.
 
-Ponadto, przy przekonwertowaniu daty na string, można zastosować maskę (`mask`), która pozwala na ustawienie własnego formatowania daty, np. poprzez dodanie nazw miesięcy czy dni tygodnia w języku lokalnym.
+Alternatywą dla korzystania z wbudowanych funkcji jest użycie bibliotek zewnętrznych, np. `Dateformat` lub `Datetime`. Jednakże, w przypadku Gleam, zaleca się korzystanie z modułu `Calendar`, ponieważ jest to wbudowane rozwiązanie, które jest zgodne z uniwersalnym standardem ISO-8601.
 
-## Zobacz też
+W praktyce, konwersja daty do ciągu znaków wymaga przeprowadzenia kilku operacji, takich jak przekształcenie liczbowych wartości daty w odpowiednie oznaczenia, np. miesiące zamiast liczb, czy dodanie odpowiednich separatorów. Dzięki użyciu wbudowanych funkcji, unikamy błędów i oszczędzamy czas.
 
-Jeśli chcesz dowiedzieć się więcej o pracy z datami w języku Gleam, polecamy zapoznanie się z oficjalną dokumentacją:
+## Zobacz również
 
-- [Oficjalna dokumentacja Date w języku Gleam](https://gleam.run/documentation#date)
-- [Oficjalna dokumentacja mask w języku Gleam](https://gleam.run/documentation#mask)
-- [Oficjalna dokumentacja modułu `Datetime` w języku Gleam](https://gleam.run/documentation#datetime)
+Dokumentacja Gleam dotycząca modułu `Calendar`: https://gleam.run/modules/gleam/calendar/

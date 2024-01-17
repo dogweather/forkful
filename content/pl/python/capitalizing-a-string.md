@@ -1,7 +1,7 @@
 ---
-title:                "Zmiana tekstu na wielkie litery"
-html_title:           "Python: Zmiana tekstu na wielkie litery"
-simple_title:         "Zmiana tekstu na wielkie litery"
+title:                "Zmiana wielkości liter w ciągu znaków."
+html_title:           "Python: Zmiana wielkości liter w ciągu znaków."
+simple_title:         "Zmiana wielkości liter w ciągu znaków."
 programming_language: "Python"
 category:             "Python"
 tag:                  "Strings"
@@ -10,49 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+Czym jest kapitalizacja napisów i dlaczego programiści jej używają?
 
-Może się wydawać, że to prosty i oczywisty krok, ale kapitalizacja ciągów znaków jest bardzo przydatna w programowaniu. Dzięki temu można uzyskać jednolity i czytelny wygląd tekstu wyświetlanego użytkownikowi.
+Kapitalizacja napisów, zwana także dużymi literami, polega na zamianie wszystkich liter w ciągu znaków na wielkie litery. Programiści często stosują tę technikę, ponieważ ułatwia ona wyróżnienie pewnych elementów w kodzie i poprawia czytelność.
 
-## Jak to zrobić
+Jak to zrobić?
 
-Kapitalizacja tekstu w Pythonie jest bardzo łatwa i wymaga użycia wbudowanej funkcji `capitalize()`. Przykład użycia wygląda następująco:
 ```Python
-string = "witaj w świecie Pythona"
-print(string.capitalize())
+napis = "przykładowy tekst"
+print(napis.upper())
 ```
-Wyjściem z powyższego kodu będzie `Witaj w świecie Pythona`. Widzimy tutaj, że funkcja `capitalize()` zmienia tylko pierwszą literę na wielką, pozostawiając resztę tekstu bez zmian. Jeśli chcemy, aby cały tekst był zapisany wielkimi literami, możemy użyć funkcji `upper()`:
-```Python
-string = "witaj w świecie Pythona"
-print(string.upper())
-```
-Tym razem wynikiem będzie `WITAJ W ŚWIECIE PYTHONA`. Natomiast, jeśli chcemy mieć cały tekst zapisany małymi literami, możemy użyć funkcji `lower()`:
-```Python
-string = "Witaj w Świecie Pythona"
-print(string.lower())
-```
-Wynikiem będzie `witaj w świecie pythona`.
+Output: PRZYKŁADOWY TEKST
 
-## Głębszy wgląd
+Deep Dive:
 
-Warto wiedzieć, że funkcje `capitalize()`, `upper()` i `lower()` nie zmieniają oryginalnego tekstu, a jedynie zwracają nowy, zmodyfikowany ciąg znaków. Dzięki temu możemy wykorzystać te funkcje do porównywania tekstów, bez obawy o zmodyfikowanie oryginalnego ciągu.
+Kapitalizacja napisów jest powszechnie stosowanym sposobem formatowania tekstu w programowaniu. Ma zastosowanie głównie w celu wyróżnienia ważnych nazw zmiennych, funkcji lub komentarzy w kodzie. W przeszłości składnia języków programowania była bardziej restrykcyjna, co wymagało używania kapitalizacji w niektórych przypadkach. Jednak obecnie większość języków programowania nie wymaga tego, więc kapitalizacja jest już kwestią preferencji programisty.
 
-Inną przydatną funkcją jest `title()`, która zwraca tekst z każdej wyraz pierwszą literą zapisaną wielką. Na przykład:
-```Python
-string = "witaj w świecie Pythona"
-print(string.title())
-```
-Wynikiem będzie `Witaj W Świecie Pythona`. Warto zauważyć, że w tym przypadku każda wyraz zaczyna się od dużej litery, a nie tylko pierwszy.
+Alternatywną metodą kapitalizacji w Pythonie jest wykorzystanie metody title(). Daje ona efekt zmiany pierwszych liter każdego wyrazu na wielkie.
 
-Interesującym użyciem funkcji `capitalize()` może być również zamiana wyrazów w odwrotnym porządku. Możemy to osiągnąć korzystając z funkcji `split()` i `join()`:
-```Python
-string = "Python jest wspaniały"
-print(" ".join(word.capitalize() for word in string.split()))
-```
-Wynikiem będzie `Wspaniały Jest Python`. Dzięki temu możemy tworzyć różne kombinacje i modyfikować tekst w zależności od potrzeb.
+Implementacja kapitalizacji w języku Python jest bardzo prosta - wystarczy użyć metody upper() na zmiennej zawierającej tekst. Można także dokonać kapitalizacji tylko pojedynczego słowa, wykorzystując metodę capitalize().
 
-## Zobacz także
+Zobacz też:
 
-- [Dokumentacja Pythona dotycząca funkcji `capitalize()`](https://docs.python.org/3/library/stdtypes.html#str.capitalize)
-- [10 przydatnych funkcji do pracy z tekstem w Pythonie](https://realpython.com/python-string-split-concatenate-join/)
-- [Porównywanie i modyfikowanie tekstów w Pythonie](https://www.digitalocean.com/community/tutorials/how-to-compare-strings-in-python-3)
+- Dokumentacja Pythona dotycząca kapitalizacji napisów: https://docs.python.org/3/library/stdtypes.html#string-methods
+- Poradnik na temat formatowania tekstu w programowaniu: https://www.dataquest.io/blog/essential-python-strings-tips-tricks/
+- Omówienie różnic między kapitalizacją a tytułowaniem w Pythonie: https://python-reference.readthedocs.io/en/latest/docs/str/capitalize.html

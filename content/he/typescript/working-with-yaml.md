@@ -1,7 +1,7 @@
 ---
-title:                "עבודה עם YAML"
-html_title:           "TypeScript: עבודה עם YAML"
-simple_title:         "עבודה עם YAML"
+title:                "עבודה עם yaml"
+html_title:           "TypeScript: עבודה עם yaml"
+simple_title:         "עבודה עם yaml"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Data Formats and Serialization"
@@ -10,46 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## למה
-אנשים מתעסקים בכתיבת קוד ב- YAML כיוון שזה מאפשר להם לארגן ולנהל מידע בקוד בפורמט פשוט יותר מ- JSON או XML.
+בואו נדבר על YAML - לשימוש בטיפוסקריפט
 
-## איך לעשות זאת
-תחת ה-"```TypeScript ... ```" התאים, אנו נראה כיצד לכתוב קוד YAML ולהדפיס את התוצאה בעזרת TypeScript. לדוגמה:
+##מה זה ולמה עושים את זה?
+YAML הוא פורמט נתונים פשוט וקריא שמשמש בעיקר לעבודה עם קבצי תצורה (configuration) ונתונים מעוצבים (structured data). מפתחים ומפתחות משתמשים בו בכדי לארגן ולנהל נתונים בצורה ברורה וקלה לקריאה ולכתיבה.
 
-```
-import yaml from 'js-yaml';
+##כיצד לכתוב קוד:
+קוד דוגמה ותוצאות אפשריות ב־TypeScript ניתן לראות בתרגיל הקוד המצורף בהמשך:
 
-// יצירת אובייקט שבתוכו מילים מסוימות
-const words = {
-  greetings: 'שלום',
-  name: 'אדם',
-  age: 30,
-  hobbies: ['יצירה', 'עיצוב', 'טיולים']
-};
+```TypeScript
+// הגדרת משתנה שיופיע כיותר מפעם אחת
+const person = { name: 'John', age: 30, profession: 'developer' };
 
-// המרת האובייקט לקוד YAML
-const yamlCode = yaml.dump(words);
+// הוספה של נתונים נוספים למשתנה
+person.country = 'USA';
 
-// הדפסת הקוד YAML למסך
-console.log(yamlCode);
+// כתיבת הנתונים מכתובת משתנה לתבנית YAML
+const output = `
+name: ${ person.name }
+age: ${ person.age }
+profession: ${ person.profession }
+country: ${ person.country }
+`;
 
-// תוצאה:
-// greetings: שלום
-// name: אדם
-// age: 30
-// hobbies:
-// - יצירה
-// - עיצוב
-// - טיולים
+// הדפסת התבנית
+console.log(output);
 ```
 
-## נכסף
-הדף עומק כבר אנחנו כללות כיצד לכתוב קוד YAML בעזרת TypeScript, הנה כמה עובדות נוספות שיש לדעת:
+תוצאה:
+```
+name: John 
+age: 30 
+profession: developer 
+country: USA
+```
 
-- YAML נחשב לקוד קריא יותר מ- JSON ומתאים יותר לקריאה וניהול של אובייקטים מורכבים.
-- הקוד YAML ניתן להיות מכיל גם נתונים מספריים, בוליאניים ואפינדיום, לא רק מחרוזות כמו ב- JSON.
-- ישנם ספריות כמו "js-yaml" שמאפשרות לנו להמיר קוד YAML לאובייקט ולהפוך, כך שניתן להשתמש בקוד YAML גם בצד השרת וגם בצד הלקוח בקוד TypeScript.
+##עיון מעמיק:
+YAML נוצר לראשונה על ידי מתכנתים של חברת תוכנה ומכיל רעיונות מכל מיני פורמטים קיימים כגון JSON, XML ו־Cמתי. אלטרנטיבות של YAML כוללות פורמטים אחרים שייתכן ותתאימו לא יותר מסוג־מסוג לפרוייקטים ספציפיים. למידע נוסף וביצועים נא לבדוק את המקורות המצורפים למטה.
 
-## ראו גם
-- דגימת קוד YAML וההמרה ל- JavaScript: https://www.npmjs.com/package/js-yaml
-- איך להשתמש בקוד YAML בפייתון: https://www.datacamp.com/community/tutorials/python-yaml-tutorial
+##ראו גם:
+- [The official YAML website](https://yaml.org/)
+- [A Beginner's Guide to YAML by DigitalOcean](https://www.digitalocean.com/community/tutorials/an-introduction-to-yaml)

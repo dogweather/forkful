@@ -10,50 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+Miten lukea komentoriviparametreja Clojuressa
 
-Jos haluat hallita tietokoneesi tai ohjelmasi käynnistystä ja toimintaa komentoriviltä, tarvitset tietoa siitä, miten lukea komentorivin argumentteja. Se on hyödyllistä esimerkiksi skriptien ja ohjelmien kehittämisen ja testaamisen aikana.
+## Mitä & Miksi?
 
-## Miten
+Komentoriviparametrien lukeminen tarkoittaa sitä, että ohjelma pystyy ottamaan vastaan käyttäjältä komentorivillä annettuja lisäparametreja, joita voidaan käyttää ohjelman suorittamisessa. Tällä tavoin ohjelma voidaan muokata erilaisiin tarpeisiin sopivaksi. Kehittäjät käyttävät tätä toimintoa, jotta ohjelmasta saataisiin joustavampi ja monipuolisempi.
 
-Voit lukea komentorivin argumentteja Clojure-kielellä helposti `command-line-args`-funktion avulla. Voit käyttää sitä esimerkiksi seuraavalla tavalla:
+## Miten:
 
-```
-Vaihtoehdot komentoriviltä:
+Clojuressa komentoriviparametrien lukeminen on helppoa ja suoraviivaista. Voit käyttää funktiota ```clojure.core/command-line``` saadaksesi komentoriviparametreista hajautetun rakenteen. Tämän jälkeen voit käyttää normaaleja Clojure-lausujeita käsitelläksesi parametreja.
 
-$ clojure -m ohjelma
-Oletusasetuksilla käynnistyvä ohjelma
+Esimerkki:
 
-$ clojure -m ohjelma -tiedosto testi.txt
-Ohjelma käynnistyy ja lukee tiedoston testi.txt
-```
+```clojure
+(ns komentoriviparametrit)
 
-```Clojure
-(ns ohjelma
-  (:require [clojure.edn :as edn]))
-
-(defn -main
-  [& args]
-  (let [options (edn/read-string (first args))]
-    (println "Vaihtoehdot komentoriviltä:")
-    (println options)
-    (println "Oletusasetuksilla käynnistyvä ohjelma")))
-
-;; Käyttämällä `-m`-vaihtoehtoa, voit antaa ohjelmalle parametreja
+(let [parametrit (command-line)] ; tallennetaan parametrit muuttujaan
+    (println "Tämä ohjelma ottaa vastaan seuraavat parametrit:") ; tulostetaan viesti
+    (doseq [[parametri arvo] parametrit] ; käydään läpi parametrit yksi kerrallaan
+        (println parametri ": " arvo))) ; tulostetaan parametri ja sen arvo
 ```
 
-Tässä esimerkissä käytetään `edn`-kirjastoa lukemaan komentorivin vaihtoehdot ja tulostetaan ne konsoliin.
+Kun suoritat tämän esimerkin komentoriviltä, voit antaa sille erilaisia parametreja ja näet, kuinka ohjelma tulostaa ne kaikki.
 
-## Syväsukellus
+Esimerkkituloste:
 
-Komentorivin argumenttien lukeminen tapahtuu käyttämällä Clojuren integroimaa Java-luokkaa `java.lang.System`. Tässä luokassa on `getProperty`-funktio, joka palauttaa komentorivin argumenttina annetun arvon.
+```
+$ java -jar komentoriviparametrit.jar --nimi John --ika 25
 
-Voit myös käyttää Clojuren `command-line-args`-kirjastoa, joka tekee samaa asiaa mutta käsittelee argumentit suoraan kokoelmaksi.
+Tämä ohjelma ottaa vastaan seuraavat parametrit:
+--nimi : John
+--ika : 25
+```
 
-Voit myös käyttää `getenv`-funktiota, joka lukee ympäristömuuttujista.
+## Syvällinen sukellus:
 
-## Katso myös
+Komentoriviparametrien lukemisen historia ulottuu aina ensimmäisten tietokoneiden ajoista, kun ohjelmia suoritettiin päätermillä käyttäen käsin annettuja parametreja. Nykypäivänä suurin osa ohjelmista pystyy lukemaan komentoriviparametreja, ja Clojure ei ole poikkeus.
 
-- [Clojure-command-line-args](https://github.com/clojure/tools.cli)
-- [Java-luokka System](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/System.html)
-- [Clojure stringien lukeminen komentoriviltä](https://clojure.github.io/clojure/clojure.string-api.html#clojure.string/parse-opts)
+On olemassa myös muita vaihtoehtoja kuin ```command-line```-funktio, kuten esimerkiksi kirjasto ```tools.cli```, joka tarjoaa vieläkin suuremman joustavuuden parametrien käsittelyyn.
+
+Komentoriviparametrien lukeminen Clojuressa perustuu alustariippuvaisiin tietoihin, joten tarkista Clojure-dokumentaatiosta mitä vaihtoehtoja sinulla on koneellasi saatavilla.
+
+## Katso myös:
+
+- [Clojure-dokumentaatio](https://clojure.org/reference/repl_and_main#_command_line_arguments)
+- [tools.cli](https://github.com/clojure/tools.cli)

@@ -10,54 +10,62 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i dlaczego?
+JSON to język znaczników, który jest powszechnie wykorzystywany przez programistów do przechowywania i przesyłania danych między aplikacjami. Jest to kompaktowy i czytelny dla ludzi format, co czyni go idealnym do komunikacji między aplikacjami. Programiści często wykorzystują JSON, ponieważ jest on wygodny w użyciu i prosty do zrozumienia.
 
-Dlaczego warto nauczyć się pracować z JSON w Go? Ponieważ JSON jest popularnym formatem danych, a Go jest szybkim i wydajnym językiem programowania. Dzięki nauce pracy z JSON w Go będziesz w stanie łatwo obsługiwać i przetwarzać dane w swoich projektach.
-
-## Jak to zrobić
-
-Poniżej przedstawiam prosty przykład kodu w Go, który pokazuje jak pracować z JSON:
-
+## Jak to zrobić: 
 ```Go
-package main
-
 import (
     "encoding/json"
     "fmt"
 )
+```
 
-type Person struct {
-    Name string `json:"name"`
-    Age  int    `json:"age"`
+Kod powyżej importuje pakiet "encoding/json", który zawiera funkcje do kodowania i dekodowania danych do formatu JSON. Następnie przy użyciu funkcji json.Marshal() możemy przekonwertować dane do formatu JSON, a funkcja json.Unmarshal() pozwala na dekodowanie danych z formatu JSON. Poniżej znajdują się przykłady wykorzystania tych funkcji:
+
+```Go
+data := map[string]string{"name": "John", "age": "30"}
+
+// Kodowanie danych do formatu JSON
+encoded, err := json.Marshal(data)
+if err != nil {
+    fmt.Println(err)
 }
+// Wyświetlenie wyniku
+fmt.Println(string(encoded))
 
-func main() {
-    jsonStr := `{"name": "Kasia", "age": 25}`
-    var p Person
-    err := json.Unmarshal([]byte(jsonStr), &p)
-    if err != nil {
-        panic(err)
-    }
-    fmt.Println("Imię:", p.Name)
-    fmt.Println("Wiek:", p.Age)
+// Dekodowanie danych z formatu JSON do typu map[string]string
+var decoded map[string]string
+err := json.Unmarshal(encoded, &decoded)
+if err != nil {
+    fmt.Println(err)
 }
+// Wyświetlenie wyniku
+fmt.Println(decoded["name"])
+fmt.Println(decoded["age"])
 ```
 
-W powyższym przykładzie, zaczynamy od zdefiniowania struktury `Person`, która będzie odpowiadać danej osoby w formacie JSON. Następnie, używamy funkcji `Unmarshal` z pakietu `encoding/json` aby przetworzyć dane zmienną `jsonStr` do zmiennej `p` zgodnej z naszą strukturą. Na końcu, wypisujemy imię i wiek osoby na ekran.
-
-Output:
+Powyższy kod wyświetli następujący wynik:
 
 ```
-Imię: Kasia
-Wiek: 25
+{"name":"John","age":"30"}
+John
+30
 ```
 
-## Deep Dive
+## Głębsza analiza:
+### Kontekst historyczny:
+JSON został stworzony w 2001 roku i jest uważany za powszechny format wymiany danych w dzisiejszych czasach. Powstał jako alternatywa dla formatu XML, który często jest uważany za nieefektywny i zbyt złożony.
 
-Do głębszego poznania pracy z JSON w Go warto przeczytać dokumentację pakietu `encoding/json`. W tym pakiecie znajdują się funkcje takie jak `Marshal` i `Unmarshal`, które pozwalają na konwersję danych JSON do danych Go oraz na odwrócenie tego procesu. Możesz także dowiedzieć się więcej o tagach struktury, które są używane do mapowania danych JSON na pola struktury Go.
+### Alternatywy:
+Alternatywą dla JSON może być format XML lub YAML. Jednak JSON cieszy się popularnością ze względu na swoją prostotę i czytelność.
 
-## Zobacz także
+### Szczegóły implementacji:
+Pakiet "encoding/json" w Go został stworzony w celu zapewnienia wygodnego sposobu kodowania i dekodowania danych w formacie JSON. Pakiet ten wykorzystuje refleksję w celu automatycznego dopasowania typów danych, co ułatwia pracę z danymi w różnych formatach.
 
-- [Dokumentacja pakietu encoding/json](https://golang.org/pkg/encoding/json/)
-- [Przykłady użycia JSON w Go](https://gobyexample.com/json)
-- [Wprowadzenie do pracy z JSON w Go](https://medium.com/@jaturongkubert/json-encode-decode-in-golang-6d5e5b422351)
+## Zobacz także:
+W przypadku dalszego zainteresowania tematem, warto zapoznać się z następującymi źródłami:
+
+- Dokumentacja pakietu "encoding/json" w Go: https://golang.org/pkg/encoding/json/
+- Dlaczego warto wybrać format JSON?: https://www.json.org/
+- Porównanie formatów JSON, XML i YAML: https://danielmiessler.com/study/json-xml-yaml-comparison/

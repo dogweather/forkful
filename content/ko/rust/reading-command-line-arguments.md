@@ -1,7 +1,7 @@
 ---
-title:                "컴퓨터 프로그래밍에서의 커맨드 라인 인수 읽기"
-html_title:           "Rust: 컴퓨터 프로그래밍에서의 커맨드 라인 인수 읽기"
-simple_title:         "컴퓨터 프로그래밍에서의 커맨드 라인 인수 읽기"
+title:                "명령줄 인수 읽기"
+html_title:           "Rust: 명령줄 인수 읽기"
+simple_title:         "명령줄 인수 읽기"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Files and I/O"
@@ -10,55 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+# 무엇이며 왜 해야하나요?
 
-커맨드 라인 인수를 읽는 방법에 대해 배우는 것은 프로그래밍에서 중요한 기술입니다. 이를 통해 유지보수가 용이하고 유연한 프로그램을 만들 수 있으며, 사용자와의 상호작용을 쉽게 구현할 수 있습니다.
+커맨드 라인 인자를 읽는 것은 프로그래머들이 커맨드 라인에서 사용자로부터 입력을 받기 위해서 하는 것입니다. 보통 프로그램이 실행될 때, 사용자는 프로그램에게 추가 정보를 제공하기 위해 커맨드 라인 인자를 전달합니다. 따라서 이를 읽는 것은 더 유연한 프로그램을 만드는 데에 도움이 됩니다.
 
-## 어떻게
+## 방법:
 
-커맨드 라인 인수는 프로그램을 실행할 때 전달되는 정보를 담고 있습니다. Rust에서는 `std::env` 모듈을 사용하여 이 정보에 접근할 수 있습니다. 아래는 간단한 예제 코드입니다.
+Rust에서는 `std::env` 모듈을 사용하여 커맨드 라인 인자를 읽을 수 있습니다. `std::env::args()` 함수를 호출하여 커맨드 라인 인자를 벡터로 받아올 수 있습니다. 이 벡터를 순환하며 인자를 사용할 수 있습니다. 아래는 커맨드 라인에서 `name` 인자를 받아 출력하는 간단한 예제입니다.
 
-```rust
+```
+Rust
 use std::env;
 
 fn main() {
-    // 커맨드 라인 인수를 Vec<String> 형식으로 가져옵니다.
     let args: Vec<String> = env::args().collect();
 
-    // 프로그램 이름은 항상 첫 번째 인수로 전달됩니다.
-    let program_name = &args[0];
+    let name = &args[1];
 
-    // 다른 인수들은 1부터 시작되는 인덱스로 접근합니다.
-    let first_arg = &args[1];
-
-    println!("프로그램 이름: {}", program_name);
-    println!("첫 번째 인수: {}", first_arg);
+    println!("Hello, {}!", name);
 }
 ```
 
-위 코드를 컴파일하고 다음과 같이 실행하면,
+커맨드 라인에서 `cargo run` 명령어를 사용하여 위 코드를 실행하면 `Hello, [name]!` 형식으로 인자에 입력한 값이 출력됩니다.
 
-```bash
-$ ./program arg1 arg2
-```
+## 깊게 들어가기:
 
-다음과 같은 결과가 나옵니다.
+커맨드 라인 인자를 처음 사용한 것은 1960년대에 메인 프레임에서 프로그램을 실행하기 위해 사용되었습니다. 현재 대부분의 OS들은 `argc`와 `argv` 매개변수를 제공하여 프로그램에 대한 커맨드 라인 인자를 전달할 수 있도록 지원하고 있습니다.
 
-```
-프로그램 이름: ./program
-첫 번째 인수: arg1
-```
+Rust에서는 `std::env` 외에도 `clap`이라는 오픈 소스 라이브러리를 사용하여 더 유연하고 강력한 방식으로 커맨드 라인 인자를 읽을 수 있습니다. `clap`은 Rust 커뮤니티에서 많이 사용되고 있는 라이브러리이며 다양한 기능을 지원합니다.
 
-## 더 깊이 들어가기
+커맨드 라인 인자를 읽는 방식은 환경에 따라 다를 수 있지만, 보통은 문자열로 전달됩니다. 따라서 문자열 처리에 대한 이해가 필요합니다. 또한 Rust에서는 우리가 전달받는 인자에 대한 타입 정보를 정적으로 추론하여 사용할 수도 있습니다.
 
-커맨드 라인 인수는 문자열(`String`)의 벡터(`Vec`) 형태로 전달됩니다. 따라서 여러 개의 인수를 전달받을 수 있으며, 이를 활용하여 프로그램의 동작을 다양하게 설정할 수 있습니다. 또한, Rust에서는 패턴 매칭을 통해 더 효율적으로 인수에 접근할 수 있습니다.
+## 관련 자료:
 
-## 참고 자료
-
-- [Rust 공식 문서 - 커맨드 라인 인수 읽기](https://doc.rust-lang.org/std/env/index.html)
-- [The Rust Programming Language - Reading Program Arguments](https://doc.rust-lang.org/book/ch12-01-accepting-command-line-arguments.html)
-- [Rust by Example - Command Line Arguments](https://doc.rust-lang.org/stable/rust-by-example/std_misc/arg.html)
-
-## 참고로
-
-커맨드 라인 인수는 주로 터미널 환경에서 프로그램을 실행할 때 사용됩니다. 따라서 터미널을 사용해 보면서 위 코드를 직접 실행하고 다양한 인수를 전달해보는 것을 추천합니다. 이를 통해 더욱 익숙해진다면 프로그래밍의 다양한 분야에서 유용하게 활용할 수 있을 것입니다.
+- [Rust Book - CLI Arguments](https://doc.rust-lang.org/book/ch12-01-accepting-command-line-arguments.html)
+- [The `env` module](https://doc.rust-lang.org/std/env/index.html)
+- [The `clap` library](https://crates.io/crates/clap)

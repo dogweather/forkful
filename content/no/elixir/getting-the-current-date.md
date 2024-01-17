@@ -1,7 +1,7 @@
 ---
-title:                "Få den nåværende datoen"
-html_title:           "Elixir: Få den nåværende datoen"
-simple_title:         "Få den nåværende datoen"
+title:                "Å få gjeldende dato"
+html_title:           "Elixir: Å få gjeldende dato"
+simple_title:         "Å få gjeldende dato"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Dates and Times"
@@ -10,20 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
-Å få den nåværende datoen kan være en svært nyttig funksjon i ethvert programmeringsprosjekt. Det kan hjelpe deg med å spore og organisere data, eller vise brukerne nøyaktig når noe ble opprettet eller endret.
+## Hva & Hvorfor?
+Å få dagens dato i programmering refererer til å hente informasjon om den nåværende datoen fra ditt datamaskin eller server. Dette er en vanlig oppgave som programmerere må mestre, da det ofte er nødvendig for å håndtere tidsbaserte funksjoner, som å logge når en hendelse skjedde eller å planlegge gjentagende oppgaver.
 
-## Hvordan
+## Hvordan:
+Det er flere måter å få dagens dato i Elixir på, avhengig av hvilket nivå av nøyaktighet og formatering du trenger. Her er et eksempel på å hente dagens dato og tid med millisekunder:
+
 ```Elixir
-Date.utc_today() 
-# => ~U[2019:03:21 00:00:00Z]
+DateTime.utc_now() |> DateTime.to_iso8601(~U)f
 ```
-Den enkleste måten å få den nåværende datoen i Elixir er å bruke funksjonen `Date.utc_today()`. Dette vil returnere datoen i UTC-format. Hvis du ønsker å endre tidssonen til datoen, kan du bruke funksjonen `Date.from_erl({{year, month, day}, {hour, min, sec}})` og lagre den i en variabel. Deretter kan du bruke `Date.utc_today() |> Date.to_erl()` for å få datoen i ønsket tidssone.
 
-## Deep Dive
-I Elixir er datoen representert som en struct (en sammensatt datastruktur) som består av attributtene `year`, `month` og `day`. Dette gjør det enkelt å manipulere datoer ved å bruke funksjoner som `Date.add/2` og `Date.sub/2` for å legge til eller trekke fra en bestemt tidsperiode. Det er også en rekke innebygde funksjoner for å hente ut informasjon som ukedag, kalenderuke og år.
+Output: "2021-03-20T14:31:24.123456Z"
 
-## Se Også
-- [Elixir Date Module Documentation](https://hexdocs.pm/elixir/Date.html)
-- [Elixir DateTime Module Documentation](https://hexdocs.pm/elixir/DateTime.html)
-- [Elixir Timezone Database Library](https://hexdocs.pm/tzdata/readme.html)
+Du kan også få dagens dato uten tid og med lokal tidssone med følgende kode:
+
+```Elixir
+Date.utc_today() |> Date.to_iso8601(~D)
+```
+
+Output: "2021-03-20"
+
+## Dypdykk:
+Å hente dagens dato er en viktig del av programmering siden det er nødvendig for mange tidsrelaterte funksjoner. Før moderne programmeringsspråk som Elixir ble utviklet, ble dato og tid håndtert gjennom komplekse datastrukturer som kalles epochs. Med Elixir og andre moderne språk blir dette prosessen enklere og mer intuitiv.
+
+Det finnes også alternative måter å hente dagens dato på, som å bruke en tredjeparts bibliotek som Chronic for å håndtere datoer på en mer naturlig måte.
+
+## Se Også:
+- Offisiell Elixir dokumentasjon om dato:
+https://hexdocs.pm/elixir/DateTime.html
+- Chronic biblioteket:
+https://github.com/akira/ex_chronic

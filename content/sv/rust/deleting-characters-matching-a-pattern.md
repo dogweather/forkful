@@ -10,49 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
+När vi programmerar i Rust kan vi ofta stöta på situationer där vi behöver ta bort tecken som matchar ett visst mönster. Detta kan göras med hjälp av inbyggda funktioner i Rust som gör det möjligt att filtrera och manipulera textsträngar.
 
-Ibland behöver vi ta bort specifika tecken från en sträng eller en fil för att uppnå ett visst mål. Det kan vara för att filtrera ut oönskade tecken eller för att ändra format på data. I det här avsnittet kommer vi att lära oss hur man tar bort tecken som matchar ett visst mönster i Rust.
+Att ta bort tecken som matchar ett mönster är ett vanligt förekommande problem i programmering, särskilt när vi arbetar med data eller hanterar användarinput. Det kan hjälpa oss att rensa oönskade tecken eller extrahera specifika bitar av information från en textsträng.
 
-## Hur man gör
+## Hur gör man:
+Enklaste sättet att ta bort tecken som matchar ett mönster i Rust är genom att använda funktionen `replace`, som kan hittas i standardbiblioteket `std::string::String`. Denna funktion tar två argument: ett mönster att matcha och en ersättningssträng. Alla förekomster av mönstret i strängen kommer att ersättas med ersättningssträngen.
 
-För att ta bort tecken som matchar ett visst mönster i Rust, använder vi funktionen `replace_all` från standardbiblioteket `regex`. Vi börjar med att importera `regex` biblioteket genom att lägga till följande kod i början av vårt program:
-
+```Rust
+let text = String::from("Hej, välkommen!");
+let filtered_text = text.replace("e", ""); // hittar alla 'e' och tar bort dem
+println!("{}", filtered_text); // Hj, välkommn!
 ```
+
+Vi kan också använda funktionen `rm` från `regex` biblioteket för att ta bort tecken som matchar ett mer komplicerat mönster, till exempel alla siffror från en textsträng.
+
+```Rust
+extern crate regex;
 use regex::Regex;
+
+let text = "Ring mig på 070-1234567!";
+let re = Regex::new(r"[0-9]+").unwrap();
+let filtered_text = re.replace_all(text, ""); // tar bort alla siffror
+println!("{}", filtered_text); // Ring mig på -!
 ```
 
-Nästa steg är att skapa en instans av `Regex` som innehåller mönstret som vi vill matcha. Det kan se ut så här:
+## Djupdykning:
+Att ta bort tecken som matchar ett mönster är en viktig del av textmanipulering och stränghantering i programmering. Detta koncept har funnits länge och de flesta moderna programmeringsspråk har inbyggda funktioner för att hantera det.
 
-```
-let re = Regex::new(r"[aeiou]").unwrap();
-```
+En alternativ metod för att ta bort tecken som matchar ett mönster är att använda funktionen `trim`, som tar bort alla förekomster av ett visst tecken (vanligtvis mellanslag) från början och slutet av en sträng.
 
-Detta mönster kommer att matcha alla små bokstäver a, e, i, o, u i en sträng. Nu kan vi använda funktionen `replace_all` för att ersätta alla matchande tecken med en tom sträng. Detta kan göras så här:
-
-```
-let new_string = re.replace_all("Hello World!", "");
-```
-
-Detta kommer att ge oss en ny sträng utan några a, e, i, o, u tecken kvar.
-
-## Djupdykning
-
-Vid användning av `replace_all` funktionen är det viktigt att notera att den returnerar en helt ny sträng och lämnar den ursprungliga strängen oförändrad. Om vi vill ändra den ursprungliga strängen, måste vi tilldela det nya värdet till den ursprungliga variabeln. Till exempel:
-
-```
-let mut my_string = "This is a string".to_string();
-let new_string = my_string.replace_all("is", "was");
+```Rust
+let text = "   Hej och välkommen!   ";
+let trimmed_text = text.trim(); // tar bort alla mellanslag från början och slutet
+println!("{}", trimmed_text); // Hej och välkommen!
 ```
 
-Här kommer `new_string` att innehålla "Thwas was a string" medan `my_string` fortfarande är "This is a string".
+Implementationen av `replace` och `rm` funktionerna är baserade på reguljära uttryck, vilket är en kraftfull metod för strängmatchning. Dessa uttryck kan användas för att hitta specifika mönster inom en textsträng och utföra olika operationer på dem.
 
-Det är också värt att notera att `replace_all` funktionen är fallkänslig. Detta betyder att den kommer att ersätta tecken som matchar mönstret oavsett om de är stora eller små bokstäver. I exemplet ovan skulle "Hello World!" bli "Hll Wld!" eftersom vi inte specificerade att vi bara ville matcha små bokstäver.
-
-## Se även
-
-För mer information och exempel på hur man använder `replace_all` funktionen och `regex` biblioteket i Rust, se följande resurser:
-
-- [Official Rust documentation](https://doc.rust-lang.org/std/str/struct.Regex.html)
-- [Rust Cookbook](https://rust-lang-nursery.github.io/rust-cookbook/science/mathematics/regex.html)
-- [Rust by Example](https://doc.rust-lang.org/rust-by-example/std/str/regex.html)
+## Se även:
+- [Rust Dokumentation](https://doc.rust-lang.org/std/string/struct.String.html#method.replace)
+- [Regex Biblioteket](https://github.com/rust-lang-nursery/regex)

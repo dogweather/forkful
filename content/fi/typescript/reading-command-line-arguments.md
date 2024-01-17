@@ -10,29 +10,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Miksi
+## Mitä & Miksi?
 
-On olemassa monia tilanteita, joissa on hyödyllistä lukea käyttöliittymän argumentteja TypeScriptissä. Esimerkiksi kun haluat muokata ohjelman toimintaa tiettyjen parametrien perusteella.
+Komentorivin argumenttien lukeminen on tapa, jolla ohjelman koodi lukee ja käsittelee syötteitä käyttäjältä. Tämä voi olla hyödyllistä esimerkiksi ohjelman asetusten asettamisessa tai tietokannan käyttäjän tarjoamien hakuehtojen käsittelyssä. Komentorivin argumenttien lukeminen on siis tapa, jolla ohjelmoijat voivat tehdä ohjelmistaan interaktiivisempia ja joustavampia.
 
-# Kuinka
-
-Käyttöliittymän argumenttien lukeminen TypeScriptissä on erittäin helppoa. Sinun tarvitsee vain käyttää `process.argv` muuttujaa, joka sisältää kaikki annetut argumentit.
+## Miten:
 
 ```TypeScript
-// Käytetään splice-funktiota ottamaan ensimmäinen argumentti pois listalta (koska se sisältää tiedoston nimen)
-const argumentit = process.argv.splice(2);
-
-console.log(argumentit);
+const args = process.argv.slice(2); // slice(2) poistaa ensimmäiset kaksi arvoa
+console.log(args); // [ "argumentti1", "argumentti2", ... ]
 ```
+Lähettämällä komennon esimerkiksi `node index.js argumentti1 argumentti2` konsolissa, käyttäjän antamat argumentit tallentuvat process.argv -taulukkoon. Tästä taulukosta voidaan sitten poistaa ensimmäiset kaksi arvoa ja loput argumentit käsitellä halutulla tavalla.
 
-Esimerkiksi, jos ajatellut tiedostoa `node hello.ts arg1 arg2`, `argumentit` -muuttuja sisältää nyt `[arg1, arg2]`.
+## Syvemmälle:
 
-## Syvällisempi katsaus
+Komentorivin argumenttien lukeminen on ollut käytössä jo pitkään, ja sen tarpeellisuus riippuu ohjelman tarkoituksesta. Jos ohjelman ei tarvitse olla interaktiivinen, voidaan käyttää esimerkiksi ympäristömuuttujia tai erillistä konfiguraatiotiedostoa syötteiden asettamiseen.
 
-`process.argv` sisältää todellisen argumentin lisäksi myös 2 lisäargumenttia: node-komentorivin ja tiedoston nimen. Tämä on tärkeää muistaa, kun käsittelet argumentteja TypeScriptissä. Muista myös, että `process.argv` palauttaa aina merkkijonot, joten sinun täytyy muuttaa ne numeroiksi tai muiksi tyypeiksi jos tarvitset niitä.
+## Katso myös:
 
-# Katso myös
+[Tyypillisiä tapoja syötteiden antamiseen komentoriviltä Typescriptissä](https://codeburst.io/typical-ways-to-take-command-line-arguments-in-typescript-c228f7adb793)
 
-- [Node.js -process.argv](https://nodejs.org/api/process.html#process_process_argv)
-- [Reading command line arguments in TypeScript](https://stackoverrun.com/fi/q/1775988)
-- [Using command line arguments in TypeScript](https://medium.com/@xavierafilip/using-command-line-arguments-in-typescript-18fe6f7f25b3)
+[Typescript-blogi: Mitä uutta Typescript 4.2:ssa? (sisältää kohteen null-elnvyttäminen)](https://typescript-blogi.fi/2021/02/26/mita-uutta-typescript-4-2-ssa-sisaltaa-kohteen-null-etnvyttaminen/)

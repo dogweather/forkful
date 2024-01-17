@@ -1,7 +1,7 @@
 ---
-title:                "Omvandla en sträng till gemener"
-html_title:           "Arduino: Omvandla en sträng till gemener"
-simple_title:         "Omvandla en sträng till gemener"
+title:                "Omvandling av en sträng till gemener"
+html_title:           "Arduino: Omvandling av en sträng till gemener"
+simple_title:         "Omvandling av en sträng till gemener"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Strings"
@@ -10,32 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
+När man arbetar med programmering så är det ibland nödvändigt att omvandla en textsträng till små bokstäver. Detta kallas för att konvertera en sträng till lower case. Det är viktigt att hålla strängar i samma format för att undvika problem och för att förenkla jämförelser.
 
-Att konvertera en sträng till gemener är en vanlig operation inom programmering och kan vara användbart för att jämföra strängar eller för att se till att en sträng har en enhetlig formatering.
-
-## Så här gör du
-
-För att konvertera en sträng till gemener i Arduino, kan du använda den inbyggda funktionen `toLowerCase()`. Här är ett exempel på hur du kan använda den:
+## Hur man gör:
+För att konvertera en sträng till lower case i Arduino, använd funktionen ```toLowerCase()```. Nedan är ett exempel på hur man använder denna funktion i en for-loop som går igenom alla bokstäver i en sträng och konverterar dem.
 
 ```Arduino
-String myString = "HEJ!";
-String lowerString = myString.toLowerCase();
-Serial.println(lowerString);
+String str = "HELLO WORLD";
+
+for (int i = 0; i < str.length(); i++) {
+  str[i] = toLowerCase(str[i]);
+}
+
+Serial.println(str); // Output: hello world
 ```
 
-Detta kommer att skriva ut `hej!` på serieporten.
+## Djupdykning:
+Historiskt sett har konvertering av strängar till lower case varit en utmaning när det kommer till teckenkodningar. I vissa teckenkodningar kunde en enkel byte inte representera alla bokstäver i alfabetet, vilket ledde till komplexa algoritmer för att omvandla bokstäver till lower case. Idag är detta mindre av en utmaning på grund av vanliga teckenkodningar som Unicode.
 
-## Djupdykning
+Det finns också andra sätt att konvertera strängar till lower case, såsom att använda en inbyggd funktion i ditt operativsystem eller använda ett tredjepartsbibliotek. Men i Arduino är ```toLowerCase()``` den enklaste och mest effektiva lösningen.
 
-När du använder `toLowerCase()` funktionen i Arduino, är det viktigt att notera att den endast fungerar för ASCII-tecken (tecken med värden mellan 0-127). Om du behöver konvertera strängar med icke-ASCII-tecken, kan du använda en funktion som `toLowerCaseLatin1()` från biblioteket "Arduino String".
+När det kommer till implementationen av ```toLowerCase()```, så använder Arduino en förändringsfunktion som byter ut varje bokstavs bytevärde till dess motsvarande lower case-värde.
 
-En annan viktig sak att komma ihåg är att `toLowerCase()` skapar en ny sträng och returnerar den, istället för att ändra den befintliga strängen. Så om du vill spara den konverterade strängen, som i exemplet ovan, måste du tilldela resultatet till en ny strängvariabel.
-
-## Se även
-
-Här är några användbara länkar för att lära dig mer om konvertering av strängar i Arduino:
-
-- [Arduino Reference - toLowerCase()](https://www.arduino.cc/reference/en/language/functions/string-functions/tolowercase/)
-- [Arduino String Library](https://www.arduino.cc/reference/en/libraries/string/)
-- [ASCII-tecken](https://www.ascii-code.com/)
+## Se även:
+Här är en länk till Arduino's dokumentation om ```toLowerCase()``` funktionen: https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/tolowercase/

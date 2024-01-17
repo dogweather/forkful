@@ -1,7 +1,7 @@
 ---
-title:                "Analisando HTML"
-html_title:           "Java: Analisando HTML"
-simple_title:         "Analisando HTML"
+title:                "Análise de HTML"
+html_title:           "Java: Análise de HTML"
+simple_title:         "Análise de HTML"
 programming_language: "Java"
 category:             "Java"
 tag:                  "HTML and the Web"
@@ -10,33 +10,64 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+## O que e Por que?
 
-Você pode estar se perguntando, por que alguém iria querer se envolver em parsing HTML? Bem, parsing HTML é uma habilidade crucial para trabalhar com dados da web e realizar tarefas de automação, como web scraping e criação de APIs.
+Parsing HTML (ou interpretacao de HTML) e o processo de analisar um documento HTML e extrair informacoes especificas dele. Esse processo e util para programadores pois permite que eles extraiam dados de paginas da web, como textos, imagens, links e outros elementos.
 
-## Como fazer
+## Como fazer?
 
-Realizar o parsing de HTML em Java é uma tarefa relativamente simples. Primeiro, é necessário importar a classe "javax.swing.text.html.parser.ParserDelegator". Em seguida, crie uma nova instância desta classe e passe o link ou o arquivo HTML como parâmetro. Por exemplo:
+Para realizar o parsing de HTML em Java, precisamos usar uma biblioteca chamada Jsoup. Essa biblioteca nos permite manipular e analisar documentos HTML de forma simples e eficiente. Confira o codigo de exemplo abaixo para ver como isso e feito:
 
-```Java
-String url = "https://www.example.com";
-URL website = new URL(url);
-InputStream html = website.openStream();
+```java
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
 
-ParserDelegator parser = new ParserDelegator();
-parser.parse(html, new ParserCallback(), true);
+public class HtmlParser {
+
+    public static void main(String[] args) {
+
+        // define a URL do site que queremos fazer parsing
+        String url = "https://www.example.com";
+
+        try {
+            // conecta-se ao site e obtem o conteudo do HTML
+            Document doc = Jsoup.connect(url).get();
+
+            // obtem todos os links do documento HTML
+            Elements links = doc.select("a[href]");
+
+            // itera sobre os links e imprime o texto e a URL de cada um
+            for (Element link : links) {
+                System.out.println("Texto: " + link.text());
+                System.out.println("URL: " + link.attr("abs:href"));
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
 ```
 
-O código acima irá chamar a classe "ParserCallback", que é responsável por manipular os elementos e atributos do HTML. Você também pode usar outras bibliotecas e ferramentas para facilitar o processamento de dados HTML em Java, como o "jsoup" ou o "HTML Cleaner".
+Aqui esta um exemplo de saida do codigo acima:
 
-## Mergulho profundo
+```java
+Texto: Exemplo de link
+URL: https://www.example.com/link
+Texto: Outro exemplo de link
+URL: https://www.example.com/outro-link
+```
 
-Uma vez que você tenha entendido os fundamentos do parsing de HTML em Java, você pode se aprofundar ainda mais na estrutura do HTML e aprender sobre as diferente s tags e elementos. Isso ajudará você a entender melhor como os dados estão sendo organizados e a extrair informações específicas com mais precisão.
+## Mergulho Profundo
 
-Também é importante estar ciente de que o parsing de HTML pode ser afetado por mudanças na estrutura do site ou na formatação do código, então é sempre importante ter em mente possíveis mudanças e estar preparado para fazer ajustes no seu código.
+O parsing de HTML tem sido uma tarefa comum para programadores desde os primordios da internet, quando as paginas eram simples e nao tinham muita estrutura. Porem, com o passar dos anos, o HTML evoluiu e novas formas de extrair informacoes das paginas surgiram. Algumas alternativas para o parsing de HTML em Java incluem o uso de expressoes regulares e a biblioteca HTMLParser.
 
-## Veja também
+A biblioteca Jsoup, mencionada anteriormente, utiliza o modelo de documento DOM (Modelo de Objeto do Documento) para representar o conteudo HTML. Isso permite que os programadores naveguem e manipulem facilmente os elementos do documento.
 
-- [Documentação oficial do Java sobre parsing HTML](https://docs.oracle.com/javase/tutorial/essential/regex/index.html)
-- [Tutorial de parsing de HTML com a biblioteca jsoup](https://www.baeldung.com/java-html-parse)
-- [Exemplos de web scraping em Java utilizando parsing HTML](https://medium.com/datadriveninvestor/web-scraping-in-java-using-htmlunit-76a13f7e7cd9)
+## Veja Tambem
+
+- [Documentacao do Jsoup](https://jsoup.org/)
+- [Tutorial de Parsing de HTML com Jsoup](https://www.baeldung.com/java-ceiling-function)
+- [Outra biblioteca para parsing de HTML em Java](http://htmlparser.sourceforge.net/)

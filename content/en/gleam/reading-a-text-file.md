@@ -10,44 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-Reading a text file is a common task in programming, whether it's to extract data or to process user input. In this article, we'll explore how to read a text file using Gleam and some useful techniques for handling different types of data.
+Reading text files is a common task for programmers. It involves reading text data from a file, which can then be processed or manipulated within a program. Programmers often need to read text files to access large amounts of data, such as log files or configuration files, for their applications.
 
+## How to:
 
-## How To
-
-To read a text file in Gleam, we'll use the `File` module. First, we need to import it into our project using the following code:
-
-```Gleam
-import gleam/file
-```
-
-Next, we can use the `open_text` function to open a file for reading. This function takes in the file path as a string and returns an `Result` type with the file contents, if successful, or an error if the file cannot be read. Here's an example of how we would use it:
+Reading a text file in Gleam is straightforward. First, we need to import the standard library module `gleam/io` which provides functions for working with files. Then, we can use the `read_file` function to read the contents of a file and store it in a string variable. Let's see an example:
 
 ```Gleam
-let result = file.open_text("sample.txt")
+import gleam/io
+
+let file_contents = read_file("my_file.txt")
+
+_ = println(file_contents)
 ```
 
-Now, we can use pattern matching to handle the `Result` type and extract the file contents. In the case of a successful read, the `Ok` variant will contain the file contents as a string. We can then print it out or use it in other ways, such as splitting it into lines or parsing it for specific data. Here's an example of how we would print the file contents:
-
-```Gleam
-case result {
-    Ok(contents) -> println(contents)
-    Error(err) -> println(err)
-}
-```
-
-For more advanced use cases, we can also specify the file mode and encoding when using the `open_text` function. This allows us to read files in different languages or formats, such as UTF-8 or UTF-16. Additionally, we can use the `read_line` function to read a single line from a file, and the `read_all` function to read the entire file as a binary.
+Running this code will print the contents of the file `my_file.txt` to the console. We can also specify an encoding while reading the file, for example, `read_file("my_file.txt", "UTF-8")`.
 
 ## Deep Dive
 
-When working with larger text files, it's important to consider memory usage and error handling. To avoid memory issues, we can use the `read_into` function to read the file into a buffer instead of loading it all into memory at once. This is especially useful for large files that cannot fit into memory.
+Reading text files has been a fundamental task for programmers since the early days of computing. In the past, the process was more complex as different operating systems had their own file formats and encodings. However, with the advent of standardized encoding formats like ASCII and UTF-8, reading text files has become much simpler and more consistent across different systems.
 
-In terms of error handling, it's best to use the `File` module's `read_line` and `read_all` functions inside a `try` block to catch any potential errors. This will allow for graceful handling of errors and prevent our program from crashing if the file cannot be read.
+There are alternatives to reading text files, such as using databases or storing data in specialized formats. However, reading from text files is still a common approach, especially for simpler projects or when working with legacy systems.
+
+When reading a text file, it is important to consider the encoding in which the file was saved. This can affect the accuracy of the data and how it is interpreted by the program. Gleam's `read_file` function allows for specifying the encoding to ensure that the data is correctly read.
 
 ## See Also
 
-To learn more about working with files in Gleam, check out the official documentation on the `File` module: https://gleam.run/modules/file.html
-
-For more insights on file handling in general, you can also refer to the Rust Programming Language's documentation: https://doc.rust-lang.org/std/fs/struct.File.html
+For more information on reading text files in Gleam, you can refer to the official Gleam documentation on file I/O: https://gleam.run/book/tour/files. Additionally, you can also check out the `gleam/io` module's source code for a deeper understanding of the implementation details: https://github.com/gleam-lang/gleam_stdlib/blob/main/gleam/src/io.gleam.

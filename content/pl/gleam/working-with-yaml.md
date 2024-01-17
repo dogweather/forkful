@@ -10,43 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego?
+## Czym jest YAML i dlaczego jest ważny dla programistów?
+YAML to format pliku używany do przechowywania danych w formie czytelnej dla człowieka. Jest on szczególnie popularny w świecie programowania, ponieważ ułatwia przechowywanie i udostępnianie konfiguracji oraz danych w aplikacjach.
 
-Tworzenie aplikacji to nie tylko pisanie kodu, ale także zarządzanie konfiguracją. W tym celu wykorzystuje się język YAML, który pomaga w łatwej i czytelnej definicji ustawień i opcji aplikacji.
+## Jak tego używać?
+Poniżej znajdują się przykładowe kody oraz wynikowe wyjście, pokazujące, jak używać YAML w języku Gleam.
 
-## Jak to zrobić?
+```
+Gleam.program(
+  "greetings_example",
+  optional_extra_inputs_to_this_code@Gleam.input_optional_names(()),
+  fn(_) {
+    let people_mappings = Gleam.Yaml.from_string("
+      -
+        name: John
+        age: 25
+      -
+        name: Sarah
+        age: 30
+    ")
 
-Instalacja biblioteki `gleam-yaml` jest prosta - wystarczy dodać ją do `gleam.toml` i zaimportować moduł w swoim kodzie. Następnie używając funkcji `load` lub `load_file` można wczytać plik YAML do zmiennej w postaci mapy lub listy.
+    let people = people_mappings
+      |> Gleam.Dict.get("people")
+      |> Gleam.List.map(
+        fn
+          { name, age } ->
+            let greet = fn(person) { "Hello" ++ person.name }
+            greet({ name: person.name, age: person.age })
+        end
+      )
 
-```Gleam
-import gleam/yaml
+    Gleam.io.print(people)
 
-let config = yaml.load_file("config.yml")
+    Gleam.unit
+  },
+)
+
 ```
 
-Możliwe jest również tworzenie, modyfikowanie i zapisywanie nowych plików YAML przy użyciu funkcji `dump` lub `dump_file`. Dzięki temu mamy pełną kontrolę nad konfiguracją naszej aplikacji.
+```
+Hello John
+Hello Sarah
 
-```Gleam
-import gleam/yaml
-
-let new_config = {
-  "version": "1.0",
-  "port": 3000,
-  "database": {
-    "host": "localhost",
-    "username": "admin",
-    "password": "pass123"
-  }
-}
-
-yaml.dump_file(new_config, "new_config.yml")
+()
 ```
 
-## Dogłębne omówienie
+## Wgląd w zagadnienie YAML
+YAML został po raz pierwszy zaprojektowany przez Clarka Evansa w 2001 roku. Alternatywami dla YAML są między innymi formaty JSON i XML. W języku Gleam korzystamy z modułu `Gleam.Yaml` do pracy z plikami YAML.
 
-Język YAML jest znacznie przyjemniejszy w użyciu niż np. format JSON, ponieważ pozwala na wykorzystanie wcięć i formatowania tekstu. Sposób, w jaki jest zapisywany plik YAML, przypomina dokument lub listę, dzięki czemu jest czytelniejszy dla programistów. Warto również pamiętać o konwencjach dotyczących nazw, czyli stosowaniu camelCase lub snake_case, aby ułatwić wprowadzanie i odczytywanie danych.
-
-## Zobacz także
-
-- [Oficjalna dokumentacja biblioteki Gleam YAML](https://gleam.run/packages/gleam-yaml/1.0.0)
-- [Porównanie YAML i JSON](https://www.computronik.com.pl/tekst/cejowy-article-pi9896)
+## Zobacz również
+- Dokumentacja modułu Gleam.Yaml: https://gleam.run/modules/gleam_yaml.html
+- Oficjalna strona YAML: https://yaml.org/

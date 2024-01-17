@@ -10,38 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+Hva & Hvorfor?
 
-Det er viktig for programvareutviklere å sjekke om en mappe eksisterer før de utfører handlinger som å lese eller skrive filer i den. Dette sikrer at programmet ikke krasjer på grunn av å prøve å aksessere en ikke-eksisterende mappe.
+ Å sjekke om en mappe eksisterer er en viktig del av programmeringsprosessen. Dette gjør det mulig for programmet å navigere og utføre handlinger i spesifikke mapper på datamaskinen. Å sjekke om en mappe eksisterer er også en måte å sikre at koden kjører uten å krasje, noe som sparer programmører for tid og frustrasjon.
 
-## Hvordan gjøre det
+Hvordan:
 
-Det er enkelt å sjekke om en mappe eksisterer i C# ved hjelp av File-klassen og dens metoder. Her er et eksempel på kode som viser hvordan du kan sjekke om en gitt mappe eksisterer:
+For å sjekke om en mappe eksisterer i C#, bruker vi Directory.Exists() metoden. Dette returnerer en boolsk verdi (true eller false) avhengig av om mappen finnes eller ikke. Se nedenfor for et eksempel på å sjekke om mappen "Dokumenter" finnes:
 
 ```C#
-string mappenavn = "C:/MinMappe";
-
-// Sjekk om mappen eksisterer
-if (Directory.Exists(mappenavn))
+string path = @"C:\Users\Navn\Dokumenter";
+if (Directory.Exists(path))
 {
-    Console.WriteLine("Mappen eksisterer!");
+    Console.WriteLine("Mappen finnes!");
 }
 else
 {
-    Console.WriteLine("Mappen eksisterer ikke.");
+    Console.WriteLine("Mappen finnes ikke.");
 }
+
+// Output: Mappen finnes!
 ```
 
-Output av dette eksempelet vil være "Mappen eksisterer!" dersom C:/MinMappe faktisk eksisterer, eller "Mappen eksisterer ikke." hvis den ikke gjør det.
+Hvis mappen ikke finnes, vil programmet outputte "Mappen finnes ikke." Vi kan også bruke en try-catch blokk for å fange eventuelle feil som kan oppstå når vi prøver å sjekke om en mappe eksisterer.
 
-## Dypdykk
+Dypdykk:
 
-Det finnes også andre måter å sjekke for eksistensen av en mappe på i C#, som for eksempel å bruke Path-klassen til å bygge en filbane og sjekke om den eksisterer ved hjelp av File.Exists() metoden. Det er viktig å huske på at både Directory.Exists() og File.Exists() metoder returnerer en boolsk verdi (true eller false), og bør derfor brukes i en if-else-uttalelse som vist i eksempelet over.
+Sjekk om en mappe eksisterer er en vanlig operasjon i de fleste programmeringsspråk. I C#, bruker vi Directory.Exists() metoden, men det finnes også andre måter å sjekke om en mappe eksisterer på. Vi kan for eksempel bruke DirectoryInfo klassen til å sjekke om en mappe eksisterer, eller vi kan bruke File.Exists() metoden for å sjekke om en fil finnes i en spesifikk mappe.
 
-En annen ting å huske på er at disse metodene bare sjekker om en mappe eksisterer, men ikke om du har tilgang til den. Det er fortsatt viktig å håndtere eventuelle tillatelser eller unntak dersom man prøver å aksessere filer eller mapper i programmet.
+Se også:
 
-## Se også
+Hvis du ønsker å lære mer om å arbeide med mapper i C#, kan du sjekke ut disse ressursene:
 
-- [Microsofts offisielle dokumentasjon om å sjekke om en mappe eksisterer i C#](https://docs.microsoft.com/en-us/dotnet/api/system.io.directory.exists?view=net-5.0)
-- [En guide til å håndtere filer og mapper i C#](https://www.c-sharpcorner.com/UploadFile/mahakgupta/files-and-folders-in-C-Sharp/)
-- [Tutorial om tillatelser og håndtering av unntak i C#](https://www.tutorialsteacher.com/csharp/csharp-file-io)
+- Microsoft's offisielle dokumentasjon om Directory.Exists(): https://docs.microsoft.com/en-us/dotnet/api/system.io.directory.exists
+- Håndtering av mapper og filer i C#: https://www.c-sharpcorner.com/uploadfile/mahesh/filesysteminfo-class-in-C-Sharp/ 
+- Dette YouTube videoen demonstrerer forskjellige måter å sjekke om en mappe eksisterer i C#: https://www.youtube.com/watch?v=X6erClYPBSI

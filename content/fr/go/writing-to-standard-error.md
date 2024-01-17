@@ -1,7 +1,7 @@
 ---
-title:                "Écrire vers les erreurs standards"
-html_title:           "Go: Écrire vers les erreurs standards"
-simple_title:         "Écrire vers les erreurs standards"
+title:                "Ecrire sur la sortie d'erreur standard"
+html_title:           "Go: Ecrire sur la sortie d'erreur standard"
+simple_title:         "Ecrire sur la sortie d'erreur standard"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Files and I/O"
@@ -10,66 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi écrire vers l'erreur standard ?
+## Qu'est-ce que c'est et pourquoi les programmeurs le font?
 
-Avez-vous déjà rencontré une erreur dans votre code et vous ne pouvez pas le comprendre ? Écrire vers l'erreur standard peut vous aider à identifier et résoudre ces erreurs plus facilement en affichant des messages d'erreur spécifiques.
+Ecrire vers la sortie d'erreur standard est une méthode utilisée par les programmeurs pour afficher des informations sur les erreurs ou les avertissements dans leur code. Cela peut être utile pour déboguer et identifier les problèmes dans un programme.
 
-## Comment faire
+## Comment faire:
 
-Dans Go, vous pouvez écrire vers l'erreur standard en utilisant la fonction `fmt.Fprintf()` ou `fmt.Fprintln()` en spécifiant `os.Stderr` comme premier argument. Voici un exemple de code :
-
-```
-package main
-
-import (
-    "fmt"
-    "os"
-)
-
-func main() {
-    fmt.Fprintf(os.Stderr, "Il y a une erreur dans votre code !")
-}
-```
-
-Lorsque vous exécutez ce code, vous obtiendrez le message d'erreur affiché dans la sortie d'erreur standard : "Il y a une erreur dans votre code !".
-
-## Deep Dive
-
-En écrivant vers l'erreur standard, vous pouvez également spécifier des codes de statut pour indiquer quelle type d'erreur s'est produite. Par exemple, en utilisant `fmt.Fprintln()` avec le code de statut `os.Exit(1)`, vous pouvez signaler une erreur fatale et arrêter l'exécution du programme. Voici un exemple de code :
+Voici un exemple de code en Go qui utilise la fonction "Fprint", qui permet d'écrire du texte dans la sortie d'erreur standard:
 
 ```
 package main
 
 import (
-    "fmt"
-    "os"
+  "fmt"
+  "io"
+  "os"
 )
 
 func main() {
-    fmt.Fprintln(os.Stderr, "Erreur fatale !")
-    os.Exit(1)
+  // Crée une variable contenant le texte à écrire dans la sortie d'erreur
+  msg := "Attention, une erreur s'est produite!"
+  
+  // Utilise la fonction "Fprint" pour écrire le message dans la sortie d'erreur standard
+  _, err := fmt.Fprint(os.Stderr, msg)
+  
+  if err != nil {
+    // En cas d'erreur, affiche la description de l'erreur
+    fmt.Println("Une erreur s'est produite:", err)
+  }
 }
 ```
 
-Vous pouvez également écrire des informations de débogage dans l'erreur standard en utilisant `fmt.Fprintf()` avec le format `%v` qui affiche une valeur sous forme de chaîne de caractères. Par exemple :
+Lorsque vous exécutez ce code, vous devriez obtenir le message d'erreur "Attention, une erreur s'est produite!" dans la sortie d'erreur standard, qui est généralement la console ou le terminal.
 
-```
-package main
+## Plongée en profondeur:
 
-import (
-    "fmt"
-    "os"
-)
+L'écriture vers la sortie d'erreur standard a été introduite dans le langage de programmation C, et de nombreux autres langages ont également adopté cette méthode. Cependant, il existe d'autres alternatives, telles que l'utilisation de fichiers journaux ou de bibliothèques de gestion des erreurs.
 
-func main() {
-    age := 30
-    fmt.Fprintf(os.Stderr, "L'âge est de %v ans.", age)
-}
-```
+La fonction "Fprint" utilisée dans l'exemple ci-dessus est seulement une des nombreuses fonctions disponibles dans la bibliothèque "fmt" de Go qui permettent d'écrire vers la sortie d'erreur standard. Vous pouvez également utiliser "Fprintf" pour formater le texte avant de l'écrire, ou "Fprintln" pour ajouter une nouvelle ligne à la fin du message.
 
-Cela affichera "L'âge est de 30 ans." dans la sortie d'erreur standard.
+## Voir aussi:
 
-## Voir aussi
-
-- Documentation officielle de Go sur les sorties standards : https://golang.org/pkg/os/#package-variables
-- Un tutoriel sur l'utilisation de fmt.Fprintf() : https://www.golangprograms.com/how-to-write-data-to-standard-error-in-golang.html
+- [Documentation officielle de la fonction "Fprint" de Go](https://golang.org/pkg/fmt/#Fprint)
+- [Article sur les méthodes de gestion des erreurs en Go](https://blog.golang.org/defer-panic-and-recover)
+- [Exemple de code utilisant la sortie d'erreur standard dans un programme d'enregistrement de fichiers journaux en Go](https://github.com/vjeantet/log/blob/master/log.go)

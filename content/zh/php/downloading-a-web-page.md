@@ -10,40 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
+# PHP中下载网页的方法
 
-为什么有人会想要下载一个网页呢？这可能是因为他们想要保存网页内容，以便以后参考或离线浏览。另外，网页下载也是一个网站测试和网页抓取的重要步骤。
+## 什么是下载网页？为什么程序员这么做？
+下载网页是指从互联网上获取一个网页的内容，并以文本的形式保存到本地的过程。程序员经常会这么做，因为他们需要从互联网上获取特定的数据，以供后续的处理和分析。
 
-## 如何？
+## 如何实现下载网页？
+你可以使用PHP的file_get_contents函数来下载网页。下面是一个例子：
 
 ```PHP
-<?php
-$url = 'https://www.example.com';
-$output_file = 'example.html';
+$url = "https://example.com"; // 要下载的网页链接
+$html = file_get_contents($url);
 
-$ch = curl_init();
-curl_setopt($ch, CURLOPT_URL, $url);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-$html = curl_exec($ch);
-curl_close($ch);
-
-file_put_contents($output_file, $html);
-
-echo '网页已成功下载并保存在' . $output_file . '文件中。';
+echo $html; // 输出网页内容
 ```
 
-输出：
-
-```
-网页已成功下载并保存在example.html文件中。
-```
+执行这段代码后，你就可以在终端或网页上看到网页的内容了。但要注意，有些网站可能会有反爬虫机制，导致你无法通过这种简单的方法来下载网页。
 
 ## 深入了解
+下载网页在互联网的发展过程中起着重要作用。早期的网页是以HTML语言编写的，因此程序员可以直接通过HTTP请求来获取网页的HTML源代码。随着互联网的发展，出现了更多的技术，例如Ajax和JavaScript，使得下载网页变得更加复杂。此外，也有一些其他的方法可以下载网页，例如使用cURL库。但在大多数情况下，file_get_contents函数已经足以满足你的需求。
 
-网页下载是通过使用一种叫做CURL的库来实现的。CURL是一个通用的用于传输数据的库，它支持各种协议，包括HTTP，HTTPS，FTP等。通过使用CURL，我们可以轻松地设置网页下载的选项，如URL，保存路径，请求头等。
-
-## 参考链接
-
-- [PHP官方CURL文档](https://www.php.net/manual/en/book.curl.php)
-- [CURL官方文档](https://curl.haxx.se/docs/manual.html)
-- [PHP教程-使用CURL下载网页](https://www.php.net/manual/en/book.curl.php)
+## 参考资料
+- [PHP file_get_contents函数文档](https://www.php.net/manual/zh/function.file-get-contents.php)
+- [如何使用PHP下载网页](https://www.thoughtco.com/web-pages-to-php-using-filegetcontents-2693866)

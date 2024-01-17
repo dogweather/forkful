@@ -1,7 +1,7 @@
 ---
-title:                "Csv-tiedostojen käsittely"
-html_title:           "Bash: Csv-tiedostojen käsittely"
-simple_title:         "Csv-tiedostojen käsittely"
+title:                "Työskentely csv-tiedostojen kanssa"
+html_title:           "Bash: Työskentely csv-tiedostojen kanssa"
+simple_title:         "Työskentely csv-tiedostojen kanssa"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Data Formats and Serialization"
@@ -10,38 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä ja miksi?
 
-Jos haluat käsitellä taulukkomuotoisia tietoja, kuten Excel-tiedostoja, CSV-formaatti (comma-separated values) on erittäin kätevä. CSV-tiedostot ovat helppolukuisia ja niitä voidaan käyttää eri ohjelmistoissa ja kielissä. Bash-ohjelmointikielellä voit helposti käsitellä ja muokata CSV-tiedostoja, joten tämä taito voi olla hyödyllinen monissa tilanteissa.
+CSV-tiedostot ovat yleinen tapa tallentaa taulukkomuotoista dataa, kuten tietokantojen tiedot tai Excelin taulukot. Koodarin näkökulmasta CSV:t ovat käteviä, koska ne ovat helppo luoda ja lukea. Useimmat koodauskielit tukevat CSV-tiedostoja, joten niitä voidaan hyödyntää monenlaisissa sovelluksissa.
 
-## Miten
+## Miten:
 
-Bashilla on valmiita työkaluja CSV-tiedostojen käsittelyyn, ja voit myös luoda omia skriptejä tarpeidesi mukaan. Tässä ovat esimerkkejä tyypillisistä CSV-tiedostojen käsittelytoiminnoista, joita voit suorittaa Bashilla.
+Bashin toiminnot CSV-tiedostojen käsittelyyn perustuvat erityisesti komentoriviin ja sen eri työkaluihin. Esimerkiksi `echo`-komennolla voit kirjoittaa CSV-tiedoston sisällön komentoriville ja `cut`-komennolla voit leikata haluamasi sarakkeet tiedostosta. Alla on nähtävillä esimerkki CSV-tiedoston sisällöstä ja sen käsittelystä käytännössä.
 
 ```Bash
-# Näytä CSV-tiedoston sisältö terminaalissa
-cat tiedosto.csv
+# CSV-tiedoston sisältö (tiedoston nimi: tiedosto.csv)
 
-# Järjestä tiedoston sisältö aakkosjärjestykseen ja tallenna uuteen tiedostoon
-sort -t ',' -k 2 tiedosto.csv > jarjestetty.csv
-
-# Hae tiettyjä rivejä tiedostosta ja tallenna ne uuteen tiedostoon
-grep "Helsinki" tiedosto.csv > kaupunki.csv
-
-# Laske tiedoston rivien määrä
-wc -l tiedosto.csv
+Nimi, Ikä, Ammatti
+Juha, 25, Koodari
+Maija, 30, Insinööri
+Matti, 40, Kirjailija
 ```
 
-Näiden lisäksi Bashilla voi suorittaa monia muita toimintoja, kuten tiedostojen yhdistämistä, muuttamista ja suodattamista. Suosittelemme kokeilemaan erilaisia komentoja ja tutustumaan Bashin CSV-työkaluihin lisää.
+```Bash
+# Haetaan tietty sarakkeet tiedostosta ja tulostetaan ne komentoriville
 
-## Syvä sukellus
+cut -d, -f 1,3 tiedosto.csv
+```
 
-CSV-tiedostot sisältävät yleensä vain yksinkertaista tekstiä, joten niitä on helppo käsitellä Bashilla. Voit kuitenkin kohdata haasteita, jos tiedostossa on muuttuvia sarakkeita tai jos sarakkeiden välissä on muita erottimia kuin pilkku. Tässä tilanteessa voit käyttää Basken "IFS" -muuttujaa, joka määrittelee, mitkä merkit erottavat sarakkeet toisistaan.
+```
+Nimi, Ammatti
+Juha, Koodari
+Maija, Insinööri
+Matti, Kirjailija
+```
 
-Lisäksi voit käyttää Bashin silmukka-rakennetta (for, while) käymään läpi tiedoston rivit ja suorittamaan erilaisia toimintoja jokaiselle riville. Tämä on erityisen hyödyllistä, jos CSV-tiedostossa on paljon dataa ja haluat käsitellä sitä rivi kerrallaan.
+## Syväsukellus:
 
-## Katso myös
+CSV-tiedostojen historia juontaa juurensa 1970-luvulle, jolloin ne kehitettiin vastauksena kasvavaan tarpeeseen datan tallentamiseen taulukkomuodossa. Nykyään on olemassa myös muita vaihtoehtoja CSV:lle, kuten XML tai JSON, mutta CSV:t ovat edelleen suosittuja niiden yksinkertaisuuden ja helppokäyttöisyyden vuoksi. Bashissa CSV-tiedostojen käsittelyyn on banyakirjo kirjastoja ja työkaluja, kuten `awk` ja `sed`. Näitä kannattaa tutkia lisää, mikäli CSV:t ovat olennainen osa koodin työstöä.
 
-- Bashin "read" -komennon käyttö CSV-tiedostojen lukemiseen: https://bash.cyberciti.biz/guide/Reads_a_CSV_file_(values_separated_by_commas)
-- Bashin "cut" -komennon käyttö tiettyjen sarakkeiden erottamiseen CSV-tiedostosta: https://www.tutorialkart.com/bash/shell-cut-command-examples-csv-files/
-- Bashin "awk" -komennon käyttö CSV-tiedostojen käsittelyyn ja muokkaamiseen: https://www.codingdefined.com/2014/12/awk-command-to-read-csv-file.html
+## Katso myös:
+
+- [Bash scripting tutorial](https://ryanstutorials.net/bash-scripting-tutorial/)
+- [CSV Wikipedia](https://fi.wikipedia.org/wiki/CSV)

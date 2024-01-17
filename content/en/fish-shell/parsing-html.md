@@ -10,38 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
+Parsing HTML is the process of analyzing a document written in Hypertext Markup Language (HTML) to extract relevant information and manipulate it as needed. Programmers use it to automate tasks, such as data scraping and web development, by extracting data from HTML documents and making it available for further processing.
 
-HTML is the standard markup language used for creating web pages. Parsing HTML allows you to extract and manipulate specific data from a webpage, giving you the ability to automate tasks or gather information quickly and efficiently.
-
-## How To
-
-If you're using Fish Shell, you have access to various HTML parsing tools such as `pup`, `hxselect`, and `htmlq` through its package manager, `fisher`. Here's a simple example of using `pup` to parse and extract data from a webpage:
+## How to:
+Fish Shell provides built-in tools for parsing HTML using its `string` and `fetch` commands. Let's take a look at some examples to see how we can use these commands to parse HTML.
 
 ```
-Fish Shell
-# Install pup using fisher
-fisher install jethrokuan/pup
+# Fetch the HTML content from a website
+set html (fetch https://www.example.com)
 
-# Define a website URL
-set url "https://www.example.com"
+# Extract the title of the webpage
+set title (string match --regex "<title>(.+)</title>" $html | string replace --regex --repl='$1')
 
-# Use pup to parse the webpage and extract a specific element's text
-pup 'h1 span' < $url
+# Print the extracted title
+echo $title
 ```
 
-The output of the above code will be the text within the `<h1>` element with a child `<span>` element on the given webpage. You can also use these tools to manipulate HTML and perform other tasks such as web scraping.
+In the first line, we use the `fetch` command to retrieve the HTML content from the specified URL and store it in a variable called `html`. Then, we use the `string match` command with a regular expression to extract the webpage's title and save it in the `title` variable. Lastly, we use the `echo` command to print the extracted title.
 
-## Deep Dive
+We can also use these commands to extract other elements from the HTML document, such as images, links, and text. With the power of Fish Shell's string and regular expression capabilities, the possibilities for parsing HTML are endless.
 
-While there are several HTML parsing tools available for Fish Shell, `pup` is a popular choice due to its simplicity and powerful features. It uses CSS selectors to navigate and search through the HTML structure, making it easy to target specific elements. You can also use it to manipulate HTML attributes and perform more complex operations like filtering, sorting, and even pagination.
+## Deep Dive:
+Parsing HTML has been a crucial part of web development and data scraping for decades. In the early years of the internet, programmers had to use complex tools or write scripts in other languages to parse HTML. With Fish Shell, the process has become much simpler and more efficient.
 
-HTML parsing is not limited to web pages, you can also use it to extract data from local HTML files or any other source that contains HTML code. This can come in handy when working with data stored in different formats or when trying to automate tasks within a larger program or script.
+There are other alternatives for parsing HTML, such as using dedicated libraries or tools. However, Fish Shell's built-in commands make it a convenient option, especially for simple and quick HTML parsing tasks.
 
-## See Also
+Behind the scenes, Fish Shell uses the `pcre` library to support regular expressions, making it a powerful tool for parsing HTML. Additionally, the `fetch` command utilizes cURL to fetch the HTML content from a website.
 
-- [Fish Shell documentation](https://fishshell.com/docs/current/index.html)
-- [Official Fish Shell GitHub repository](https://github.com/fish-shell/fish-shell)
-- [pup GitHub repository](https://github.com/ericchiang/pup)
-- [hxselect GitHub repository](https://github.com/ericchiang/htmlq)
-- [htmlq GitHub repository](https://github.com/koenrh/htmlq)
+## See Also:
+You can find more information about Fish Shell's `string` and `fetch` commands and their options in the official documentation: https://fishshell.com/docs/current/index.html. Additionally, there are many online resources and tutorials available to help you learn more about parsing HTML with Fish Shell.

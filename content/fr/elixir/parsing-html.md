@@ -1,7 +1,7 @@
 ---
-title:                "Analyser le html"
-html_title:           "Elixir: Analyser le html"
-simple_title:         "Analyser le html"
+title:                "Analyse de html"
+html_title:           "Elixir: Analyse de html"
+simple_title:         "Analyse de html"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "HTML and the Web"
@@ -10,36 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+# Que & Pourquoi?
 
-Parser du HTML peut sembler être une tâche fastidieuse, mais cela peut être incroyablement utile dans de nombreuses situations. Que vous ayez besoin de récupérer des données spécifiques sur un site web ou de créer des applications web automatisées, comprendre comment parser du HTML peut vous faire gagner un temps précieux.
+Le parsing HTML est le processus d'analyse d'un document HTML afin de le convertir en une structure de données que les ordinateurs peuvent comprendre et utiliser. Les programmeurs le font pour traiter les données web de manière efficace et automatisée.
 
-## Comment faire
+# Comment faire:
 
-Pour commencer à parser du HTML en utilisant Elixir, vous aurez besoin d'une librairie appelée Floki. Elle permet de naviguer dans la structure HTML et d'extraire des données spécifiques.
+Utilisez le module "Floki" dans Elixir pour effectuer le parsing HTML. Voici un exemple simple pour extraire le titre d'une page Web:
 
-Voici un exemple de code avec une URL contenant un élément `<ul>` :
+```
+html = "<html><head><title>Mon premier article</title></head><body><h1>Titre principal</h1><p>C'est mon premier article sur Elixir!</p></body></html>"
 
-```Elixir
-url = "https://example.com"
-page = Floki.parse_document(HTTPotion.get(url).body)
-list = page |> Floki.find("ul")
+Floki.find(html, "title")
 ```
 
-La librairie Floki permet de rechercher et d'extraire des éléments en utilisant des balises, des classes ou des IDs. Plus vous en apprendrez sur les fonctionnalités disponibles, plus vous pourrez extraire des données précises.
+Output:
+```
+["Mon premier article"]
+```
 
-## Plongée en profondeur
+Vous pouvez également utiliser la syntaxe CSS pour cibler des éléments spécifiques sur une page:
 
-Pour comprendre comment fonctionne le parsing HTML en utilisant Elixir, il est important de se familiariser avec la structure de base d'un document HTML. Les balises sont la base de la structure HTML, et chaque balise contient des attributs et du contenu.
+```
+Floki.find(html, "h1")
+```
 
-Par exemple, `<a href="https://example.com">Cliquez ici</a>` est une balise "a" avec un attribut "href" et un contenu "Cliquez ici". Avec Floki, vous pouvez facilement extraire ces informations précieuses en utilisant les méthodes appropriées.
+Output:
+```
+["Titre principal"]
+```
 
-N'hésitez pas à explorer davantage les fonctionnalités de la librairie Floki pour mieux comprendre le parsing HTML. Vous pouvez également consulter les nombreux tutoriels et forums en ligne pour obtenir plus d'informations et de conseils.
+# Exploration approfondie:
 
-## Voir aussi
+Le parsing HTML a été introduit pour la première fois en 1967 par Robert F. Cailliau et Tim Berners-Lee dans le but de faciliter l'échange de documents sur Internet. Il existe d'autres méthodes de parsing, telles que le DOM parsing et le SAX parsing, mais le parsing HTML est le plus couramment utilisé.
 
-Pour en savoir plus sur le parsing HTML en utilisant Elixir, voici quelques liens utiles :
+Il existe également des librairies externes telles que "Elixir-HTML" et "Meeseeks", qui offrent des fonctionnalités supplémentaires telles que la validation HTML et la manipulation de documents HTML.
 
-- La documentation officielle de la librairie Floki : https://hexdocs.pm/floki/api-reference.html
-- Un tutoriel détaillé sur le parsing HTML avec Floki : https://medium.com/@andrewarrow/floki-parsing-html-for-data-extraction-tutorial-f3c35ccfe1e3
-- Une discussion sur le forum Elixir concernant la manipulation de données HTML : https://elixirforum.com/t/html-scraping-parser-like-beautifulsoup-in-python/7004
+En termes d'implémentation, le module "Floki" utilise un algorithme appelé "sibling-searching" pour parcourir l'arborescence du document en suivant les relations frères-sœurs. Cela rend le parsing plus efficace et rapide que d'autres méthodes.
+
+# Voir aussi:
+
+- Documentation officielle de Floki: https://hexdocs.pm/floki/api-reference.html
+- Elixir-HTML: https://github.com/bryanjos/elixir-html
+- Meeseeks: https://github.com/artemeff/meeseeks

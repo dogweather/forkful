@@ -10,38 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
-Vi har alle ønsket å starte et nytt prosjekt på et eller annet tidspunkt. Kanskje du har en idé som du vil bringe til livet, eller kanskje du bare er nysgjerrig på å lære mer om Bash-programmering. Uansett årsak, å starte et nytt prosjekt kan være en spennende og givende opplevelse.
+## Hva & Hvorfor?
+Starte et nytt prosjekt betyr å begynne å utvikle et nytt program, script eller annen kode. En grunn til at programmere gjør dette er for å løse nye problemer eller forbedre eksisterende løsninger.
 
-## Slik gjør du det
-For å starte et nytt prosjekt i Bash må du først ha et tekstredigeringsprogram som støtter Bash syntaks, for eksempel GNU Nano eller Vim. Du kan deretter følge disse enkle stegene for å sette i gang:
+## Slik gjør du:
+For å starte et nytt Bash-prosjekt, bruk følgende kommando:
 
-1. Opprett en ny fil ved å skrive `nano nyttProsjekt.sh` (erstatte "nyttProsjekt" med det du ønsker å kalle prosjektet ditt).
-2. Skriv inn følgende kode i filen:
+```Bash
+mkdir mitt_prosjekt
+cd mitt_prosjekt
+touch program.sh
 ```
-#!/bin/bash
 
-# Her kan du skrive din Bash-kode
+Dette vil lage en ny mappe for prosjektet, navigere deg inn i mappen og lage en tom fil kalt "program.sh". Du kan deretter åpne denne filen i en teksteditor og begynne å skrive din kode.
 
+For å kjøre programmet ditt, bruk denne kommandoen:
+
+```Bash
+bash program.sh
 ```
-3. Lagre filen ved å trykke `Ctrl + x`, og deretter `y` for å bekrefte.
-4. Gi filen kjøretillatelse ved å skrive `chmod +x nyttProsjekt.sh`.
-5. Du kan nå kjøre filen ved å skrive `./nyttProsjekt.sh` i terminalen.
 
-For å legge til mer funksjonalitet og logikk i prosjektet ditt, kan du bruke Bash-kommandoer og variabler som du lærer mer om gjennom prøving og feiling.
+## Dykke dypere:
+Bash er et populært verktøy for å automatisere oppgaver og scripte komplekse prosesser. Det ble utviklet i 1989 av Brian Fox og har blitt et av de mest brukte programmeringsspråkene i Unix-lignende systemer.
 
-## Dykk dypere
-For å få en enda dypere forståelse av hvordan du kan starte et nytt prosjekt i Bash, kan du se på følgende ressurser:
+Alternativer til Bash inkluderer andre shellet, som Zsh og Csh, samt andre programmeringsspråk som Python og Ruby. Implementasjonsdetaljer for å starte et nytt prosjekt vil variere avhengig av hvilket operativsystem du bruker og hvilken teksteditor du foretrekker.
 
-- [GNU Nano-brukerhåndbok](https://www.nano-editor.org/dist/v2.8/nano.html)
-- [Vim brukerveiledning](https://vim.sexy)
-- [Offisiell Bash-dokumentasjon](https://www.gnu.org/software/bash/manual/bash.html)
-- [Bash Scripting Tutorial](https://ryanstutorials.net/bash-scripting-tutorial/)
-- [Bash Cheatsheet](https://devhints.io/bash)
-
-Husk, den beste måten å lære Bash på er å bare begynne å kode og å eksperimentere med ulike kommandoer og metoder. Lykke til med ditt nye prosjekt!
-
-## Se også
-- [Bash Scripting for Beginners](https://linuxconfig.org/bash-scripting-tutorial-for-beginners)
-- [Learn Shell](https://learnshell.org)
-- [Bash for Loop](https://linuxize.com/post/bash-for-loop/)
+## Se også:
+- Bash-dokumentasjonen: https://www.gnu.org/software/bash/manual/
+- En guide for nybegynnere: https://linuxconfig.org/bash-scripting-tutorial-for-beginners
+- Bash-skript-eksempler: https://bash.cyberciti.biz/guide/Main_Page

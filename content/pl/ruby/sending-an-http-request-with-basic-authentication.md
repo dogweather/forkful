@@ -1,7 +1,7 @@
 ---
-title:                "Wysyłanie żądania http z podstawowym uwierzytelnieniem"
-html_title:           "Ruby: Wysyłanie żądania http z podstawowym uwierzytelnieniem"
-simple_title:         "Wysyłanie żądania http z podstawowym uwierzytelnieniem"
+title:                "Wysyłanie żądania http z podstawową autoryzacją."
+html_title:           "Ruby: Wysyłanie żądania http z podstawową autoryzacją."
+simple_title:         "Wysyłanie żądania http z podstawową autoryzacją."
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "HTML and the Web"
@@ -10,36 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## O co chodzi i dlaczego? 
+Wysyłanie żądania HTTP z podstawową autoryzacją, to po prostu sposób na uwierzytelnienie żądania do serwera. Programiści robią to, aby zapewnić bezpieczny dostęp do zasobów i chronić je przed niepowołanym dostępem.
 
-Wysyłanie zapytania HTTP z podstawową autoryzacją może być przydatne w wielu sytuacjach, na przykład do pobrania danych zabezpieczonych hasłem lub autoryzowania dostępu do zasobów sieciowych.
-
-## Jak To Zrobić
-
+## Jak to zrobić:
 ```Ruby
 require 'net/http'
+require 'uri'
 
-uri = URI('https://example.com')
-username = 'user'
-password = 'secret'
+uri = URI.parse("https://example.com/")
+http = Net::HTTP.new(uri.host, uri.port)
+http.use_ssl = true
 
-Net::HTTP.start(uri.host, uri.port, use_ssl: uri.scheme == "https") do |http|
-  request = Net::HTTP::Get.new(uri)
-  request.basic_auth(username, password)
-  response = http.request(request)
+request = Net::HTTP::Get.new(uri.request_uri)
+request.basic_auth("username", "password")
 
-  puts response.body
-end
+response = http.request(request)
+
+puts response.code
 ```
+Output:
+200
 
-Po uruchomieniu tego kodu, w konsoli zostanie wyświetlona odpowiedź zasobu sieciowego, do którego się odwołujemy. Zwrócone dane będą zaszyfrowane za pomocą podstawowej autoryzacji, co oznacza, że tylko użytkownicy posiadający prawidłowe dane logowania będą w stanie je odczytać.
+## W parę słów więcej:
+- Podstawowa autoryzacja została wprowadzona w protokole HTTP w 1999 roku.
+- Alternatywą dla tej metody jest wykorzystanie tokenów uwierzytelniających lub OAuth.
+- Implementację można znaleźć w bibliotece Net::HTTP, która jest dostępna w standardowej bibliotece Ruby.
 
-## Głębsza Analiza
-
-Wysyłanie zapytania HTTP z podstawową autoryzacją odbywa się poprzez dodanie nagłówka `Authorization` do żądania. Nagłówek ten zawiera kodowanie Base64 nazwy użytkownika i hasła. Wysłany kod jest następnie weryfikowany przez serwer, a dostęp jest udostępniony tylko jeśli dane logowania są poprawne.
-
-## Zobacz Również
-
-- [Dokumentacja Ruby o podstawowej autoryzacji](https://ruby-doc.org/stdlib-2.7.2/libdoc/net/http/rdoc/Net/HTTP.html#class-Net::HTTP-label-Basic+Authentication)
-- [Artykuł na temat podstawowej autoryzacji w HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#Basic_authentication_scheme) (w języku angielskim)
-- [Przykłady użycia podstawowej autoryzacji w aplikacjach internetowych](https://www.howtogeek.com/361361/what-is-http-authentication-and-how-does-it-work/) (w języku angielskim)
+## Zobacz także:
+- [Net::HTTP documentation](https://ruby-doc.org/stdlib-2.6.3/libdoc/net/http/rdoc/Net/HTTP.html)
+- [HTTP Authentication: Basic and Digest Access Authentication](https://www.ietf.org/rfc/rfc2617.txt)

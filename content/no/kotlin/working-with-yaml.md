@@ -10,65 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hva & Hvorfor?
+YAML står for "YAML Ain't Markup Language" og er en enkel måte for programmerere å lagre og dele strukturert data. Det er mye brukt for konfigurasjonsfiler, da det er enkelt å lese og skrive for både mennesker og maskiner.
 
-Å jobbe med YAML kan være en nyttig ferdighet å lære for å jobbe med konfigurasjonsfiler, spesielt i web- og mobilapplikasjoner. Det er et enkelt og leselig format som gjør det enkelt å organisere og strukturere data.
-
-## Hvordan
-
-For å begynne å jobbe med YAML i Kotlin, må du først importere "kaml" biblioteket i ditt prosjekt. Deretter kan du begynne å lage og behandle YAML-filer.
+# Hvordan:
+Kotlin har innebygd støtte for YAML ved hjelp av biblioteket SnakeYAML. For å bruke dette biblioteket, må du først importere det i prosjektet ditt:
 
 ```Kotlin
-// Importere Yaml-klassen fra kaml-biblioteket
-import kaml.Yaml
-
-// Opprette en YAML-fil
-val yaml = """
-    navn: John Smith
-    alder: 25
-    favorittfarge: blå
-""".trimIndent()
-
-// Endre en verdi og lagre filen
-yaml.put("favorittfarge", "rød")
+implementation 'org.yaml:snakeyaml:1.27'
 ```
 
-#### Resultat:
+Deretter kan du enkelt lese og skrive YAML-filer ved hjelp av følgende kode:
 
 ```Kotlin
-navn: John Smith
-alder: 25
-favorittfarge: rød
+// Les en YAML-fil
+val input = FileInputStream("min_fil.yaml")
+val yaml = Yaml()
+val data = yaml.load(input)
+
+// Skriv til en YAML-fil
+val output = FileWriter("min_ut_fil.yaml")
+yaml.dump(data, output)
 ```
 
-## Dypdykk
+# Dypdykk:
+YAML ble utviklet i 2001 som en enklere alternativ til XML og JSON for å representere datastrukturer. Det brukes i stor grad i konfigurasjonsfiler for programmer og har også fått støtte i populære programmeringsspråk som Java, Python og selvfølgelig Kotlin.
 
-I tillegg til å lage og endre YAML-filer, kan du også bruke kaml biblioteket til å konvertere YAML til Kotlin dataklasser og vice versa. Dette er nyttig når du arbeider med større og mer komplekse datastrukturer.
+Andre alternativer til YAML inkluderer XML og JSON, men YAML skiller seg ut på grunn av sin enkle og menneskelesbare syntaks. En ulempe med YAML er at det ikke er like strukturert som XML, noe som kan føre til problemer med validering.
 
-```Kotlin
-// Opprette en dataklasse
-data class Person(val navn: String, val alder: Int, val favorittfarge: String)
+Den grunnleggende syntaksen til YAML er basert på innrykk og bruk av ulike spesialtegn som kolon og streker. Det er viktig å være nøye med innrykk og bruke riktige spesialtegn for å unngå feil i YAML-filen.
 
-// Konvertere YAML til Kotlin dataklasse
-val person = Yaml.default.decodeFromString(Person.serializer(), yaml)
-
-// Endre favorittfargen
-person.favorittfarge = "grønn"
-
-// Konvertere tilbake til YAML-fil
-val nyttYaml = Yaml.default.encodeToString(Person.serializer(), person)
-```
-
-#### Resultat:
-
-```Kotlin
-navn: John Smith
-alder: 25
-favorittfarge: grønn
-```
-
-## Se Også
-
-- [Offisiell Kotlin Dokumentasjon om YAML](https://kotlinlang.org/docs/yaml.html)
-- [Kaml Biblioteket Dokumentasjon](https://github.com/MicroUtils/kotlin-logging#configuration)
-- [En Gjennomgang av YAML Syntaks](https://www.baeldung.com/yaml-syntax-kotlin)
+# Se Også:
+- [SnakeYAML dokumentasjon] (https://bitbucket.org/asomov/snakeyaml/src/default/)
+- [Introduksjon til YAML] (https://docs.ansible.com/ansible/latest/reference_appendices/YAMLSyntax.html)
+- [JSON vs XML vs YAML] (https://stackoverflow.com/questions/3536898/json-vs-xml-vs-yaml)

@@ -10,38 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
-ディレクトリが存在するかどうかを確認する理由は、プログラムの実行やファイルの読み込みを行う前に、必要な場所やリソースが存在するかを確認するためです。
+## What & Why?
+ディレクトリが存在するかどうかをチェックすることは、プログラマーが特定の処理を実行する前に必要なステップです。ディレクトリが存在しない場合、プログラムがエラーを出力することを防ぐために、コード内で条件分岐を使用してディレクトリの存在を確認することが重要です。
 
-## 方法
-ディレクトリが存在するかどうかを確認するには、以下のコードを使用します。
-
+## How to:
 ```Go
-import "fmt"
-import "os"
-
-func main() {
-    path := "/Users/username/Documents"
-    
-    // ディレクトリが存在するかチェックする
-    if _, err := os.Stat(path); os.IsNotExist(err) {
-        // ディレクトリが存在しない場合の処理
-        fmt.Println("ディレクトリが存在しません")
-    } else {
-        // ディレクトリが存在する場合の処理
-        fmt.Println("ディレクトリが存在します")
-    }
+if _, err := os.Stat("directory"); os.IsNotExist(err) {
+  fmt.Println("The directory does not exist.")
+} else {
+  fmt.Println("The directory exists.")
 }
 ```
+上記のコードは、ディレクトリが存在するかどうかをチェックする基本的な方法です。まず、`os.Stat()`関数を使用して指定したディレクトリの情報を取得し、`os.IsNotExist()`関数を使用してエラーが発生した場合にディレクトリが存在しないことを判断します。もしディレクトリが存在しない場合、エラーを出力するようにプログラムを設定しています。
 
-上記のコードでは、まず`os`パッケージをインポートし、`path`変数に存在を確認するディレクトリのパスを設定します。その後、`os.Stat`を使用してディレクトリが存在するかどうかをチェックします。ディレクトリが存在しない場合、`os.IsNotExist`を使用してエラーを取得し、それに応じて処理を行います。
+## Deep Dive:
+ディレクトリの存在をチェックすることが重要な理由の一つは、プログラムの安全性を確保することです。ディレクトリが存在しない場合、ファイルやデータを読み込もうとするとエラーが発生する可能性があります。しかし、ディレクトリの存在をチェックする方法は他にもあります。`os.Stat()`関数の代わりに、`os.Lstat()`や`os.FileInfo()`などの関数を使用することもできます。
 
-## ディープダイブ
-ディレクトリをチェックする際に使用される`os.Stat`関数は、ファイルまたはディレクトリの情報を返すため、より詳細なチェックを行うことも可能です。たとえば、ファイルの所有者や更新日時などの情報を取得することができます。
+また、ファイルのパーミッションや属性をチェックすることによって、ディレクトリの存在だけでなく、そのディレクトリが読み取り専用であるかどうかなどの情報を取得することも可能です。プログラマーは状況に応じて適切な方法を選択し、コードを設計する必要があります。
 
-また、ディレクトリの存在をチェックするためにもう1つの方法として、`filepath`パッケージの`Exists`関数を使用する方法があります。この関数は、ファイルパスが存在するかどうかを確認して`bool`型で結果を返します。
-
-## 参考リンク
-- [Go ドキュメント - os パッケージ](https://golang.org/pkg/os/)
-- [Go ドキュメント - filepath パッケージ](https://golang.org/pkg/path/filepath/)
-- [A Tour of Go - File Paths](https://tour.golang.org/flowcontrol/8)
+## See Also:
+- [Go Documentation: os.Stat() function](https://golang.org/pkg/os/#Stat)
+- [Go Documentation: os.FileInfo interface](https://golang.org/pkg/os/#FileInfo)
+- [Go Documentation: os.Lstat() function](https://golang.org/pkg/os/#Lstat)

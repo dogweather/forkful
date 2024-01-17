@@ -10,31 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+## Cosa e perché?
 
-Molti programmatori si trovano spesso a dover effettuare ricerca e sostituzione di testo nei loro codici. Questo è necessario per correggere errori di battitura, aggiornare nomi di variabili o implementare funzionalità speciali. Utilizzare Kotlin per eseguire l'operazione di ricerca e sostituzione rende il processo più semplice e veloce.
+La ricerca e la sostituzione di testo è un processo comune tra i programmatori che consiste nel trovare una determinata sequenza di caratteri all'interno di un testo e sostituirla con un'altra sequenza di caratteri. Ciò è utile per automatizzare alcune operazioni di editing e risparmiare tempo. 
 
-## Come fare
+## Come fare:
 
-Per eseguire la ricerca e sostituzione del testo in Kotlin, è necessario utilizzare il metodo `replace` su un oggetto String. Ecco un esempio di codice che sostituisce la parola "ciao" con "salve" in una stringa:
+```kotlin
+// Esempio di ricerca e sostituzione
+val testo = "Questo è un esempio di testo"
+val nuovoTesto = testo.replace("esempio", "modello")
 
+println(nuovoTesto)
+
+// Output: Questo è un modello di testo
 ```
-val str = "Ciao mondo"
-val nuova = str.replace("ciao", "salve")
-println(nuova)
 
-// Output: Salve mondo
+```kotlin
+// Esempio di ricerca e sostituzione con espressione regolare
+val testo = "Questo è un esempio di testo"
+val nuovoTesto = testo.replace(Regex("[aeiou]"), "")
+
+println(nuovoTesto)
+
+// Output: Qst è n mpl d tst
 ```
 
-Utilizzando questo metodo, è possibile sostituire in modo rapido e semplice tutte le occorrenze di una parola o un'espressione in una stringa. Inoltre, è possibile specificare opzioni aggiuntive per modificare il comportamento del metodo, come l'ignorare maiuscole/minuscole o utilizzare un'espressione regolare.
+## Approfondimento:
 
-## Approfondimento
+La ricerca e la sostituzione di testo è un'operazione comune nelle utility di editing di testo, come ad esempio Notepad++, che la implementa utilizzando espressioni regolari. Alcuni linguaggi di programmazione, come Python, hanno funzioni dedicate per la ricerca e la sostituzione di testo, mentre in altri, come C++, ci sono librerie di terze parti che lo permettono. Nella programmazione web, la ricerca e la sostituzione di testo è spesso utilizzata per manipolare i dati e generare dinamicamente il contenuto di una pagina.
 
-Il metodo `replace` accetta due parametri: quello che si sta cercando di sostituire e quello con cui lo si vuole sostituire. Entrambi i parametri possono essere stringhe o espressioni regolari. Quindi, è possibile utilizzare questa funzione anche per eseguire sostituzioni più complesse, come sostituire solo le vocali di una parola con delle stelle.
+## Vedi anche:
 
-Un'altra opzione utile è il metodo `replaceFirst`, che sostituisce solo la prima occorrenza trovata nella stringa. Ciò può essere utile se si vuole sostituire solo una parte specifica della stringa.
-
-## Vedi anche
-
-- Documentazione ufficiale di Kotlin sul metodo `replace`: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/replace.html
-- Tutorial su come utilizzare espressioni regolari in Kotlin: https://kotlinlang.org/docs/regular-expressions.html
+- [Documentazione Kotlin sulle espressioni regolari](https://kotlinlang.org/docs/regex.html)
+- [Cheat sheet di Notepad++ sulle espressioni regolari](https://www.osmosys.asia/blog/regular-expression-search-replace-cheat-sheet/)
+- [Libreria C++ per la ricerca e sostituzione di testo](https://github.com/phil0lucas/replace-latest)

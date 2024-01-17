@@ -10,42 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Qu'est-ce que c'est et pourquoi le faire?
 
-Si vous êtes un programmeur ou une programmeuse, il est possible que vous soyez déjà familier·ère avec le format de données YAML. Mais si vous ne l'êtes pas encore, ne vous inquiétez pas ! Ce format est de plus en plus utilisé dans le monde du développement web et de nombreux langages de programmation le prennent en charge. C'est pourquoi il peut être utile d'apprendre à travailler avec YAML dans votre propre langage de prédilection, comme Elm.
+YAML est un langage de balisage utilisé par les programmeurs pour structurer et organiser des données. Il est populaire dans les applications web, les outils de développement logiciel et les scripts automatisés, car il est facile à lire et à écrire.
 
-## Comment faire
+## Comment:
 
-Pour commencer à travailler avec YAML en Elm, vous devez d'abord installer le package `elm-exploration/yaml`. Ensuite, vous pouvez importer la bibliothèque dans votre code en utilisant la déclaration `import Yaml`. Maintenant, vous êtes prêt·e à convertir des données YAML en valeurs Elm et vice versa.
-
-Voici un exemple de code pour transformer une chaîne YAML en un type de donnée Elm :
+La syntaxe YAML utilise des indentations pour définir la structure des données. Voici un exemple en utilisant le module YAML de Elm:
 
 ```Elm
-myString = "name: John Doe age: 30"
-result = Yaml.fromString myString
+import Yaml exposing (..)
+
+monFichier : String
+monFichier =
+    """
+    fruits:
+        - pomme
+        - banane
+        - fraise
+    legumes:
+        - carotte
+        - tomate
+    """
+
+monFichierEnYaml : Result ParserError Value
+monFichierEnYaml =
+    parse monFichier
 ```
 
-Le résultat de cette expression sera un `Result` contenant un `Value` avec les clés "name" et "age" ainsi que leurs valeurs correspondantes.
+La sortie de la fonction parse sera une structure de données que vous pourrez utiliser dans votre programme. Par exemple, vous pourriez accéder au premier fruit de la liste en utilisant `monFichierEnYaml.fruits[0]`, qui retournerait "pomme".
 
-Si vous voulez créer une chaîne YAML à partir d'un type de données Elm, voici un exemple :
+## Plongée en profondeur:
 
-```Elm
-person = { name = "Jane Doe", age = 25 }
-result = Yaml.toString person
-```
+YAML a été créé en 2001 dans le but de remplacer les fichiers de configuration XML complexes. Il est largement utilisé dans le développement logiciel pour définir des configurations, des ressources et des données structurées. Certains alternatives à YAML sont JSON, qui est également largement utilisé dans le développement web, et TOML, qui se concentre sur la lisibilité pour les humains. En utilisant le module YAML de Elm, vous utilisez en fait le package JavaScript js-yaml, qui est basé sur le langage JavaScript.
 
-Le résultat de cette expression sera une chaîne contenant les clés "name" et "age" ainsi que les valeurs correspondantes du tableau `person`.
+## Voir aussi:
 
-## Plongée en profondeur
+Pour en savoir plus sur YAML et son utilisation avec Elm, veuillez consulter la documentation officielle du module YAML de Elm: https://package.elm-lang.org/packages/NoRedInk/elm-yaml/latest/
 
-Maintenant que vous avez appris à manipuler des données YAML avec Elm, il peut être utile de connaître quelques astuces supplémentaires. Par exemple, si vous avez besoin de spécifier un format personnalisé pour convertir des valeurs en chaînes YAML, vous pouvez utiliser la fonction `Yaml.Encode.encode` avec un `Yaml.Value`.
-
-De plus, vous pouvez également utiliser des types de données personnalisés en utilisant `Json.Decode` pour décoder des valeurs en JSON et les convertir ensuite en YAML.
-
-## Voir aussi
-
-Pour en savoir plus sur la manipulation de données YAML en Elm, vous pouvez consulter les liens suivants :
-
-- La documentation officielle du package `elm-exploration/yaml` : [lien](https://package.elm-lang.org/packages/elm-exploration/yaml/latest/)
-- Un tutoriel vidéo sur l'utilisation de YAML en Elm : [lien](https://www.youtube.com/watch?v=WhpTrg2eSyU)
-- Un exemple pratique utilisant l'intégration de YAML dans un projet Elm : [lien](https://github.com/dillonkearns/elm-yaml)
+Vous pouvez également consulter ces sources pour en apprendre davantage sur YAML et les autres langages de balisage:
+- https://yaml.org/
+- https://www.json.org/
+- https://toml.io/

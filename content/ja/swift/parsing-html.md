@@ -10,59 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+## 何？なぜ？
+HTMLのパースとは、ウェブサイトからデータを取得する方法の一つです。プログラマーがHTMLをパースする理由は、ウェブサイトから必要なデータを取得し、処理するためです。
 
-HTMLを解析することのメリットについて説明します。HTMLはウェブページの基本的な構造を記述する言語であり、解析することでウェブサイトのデータを抽出したり、スクレイピングやデータ収集など多くの用途があります。
-
-## 解析の方法
-
-まず、SwiftでHTMLを解析するために必要なライブラリをインポートします。
+## 方法：
+以下は、SwiftでHTMLをパースする簡単なコーディング例です。詳細なコーディングや出力の例は、以下の ```Swift ... ``` コードブロックを参照してください。
 
 ```Swift
-import Foundation
-import SwiftSoup
-```
-
-次に、解析したいウェブページのURLを指定し、データを取得します。
-
-```Swift
-guard let url = URL(string: "https://example.com") else { return } // 解析したいウェブサイトのURLを指定
-do {
-    let htmlString = try String(contentsOf: url) // データを取得
-} catch {
-    print("Error: Unable to retrieve HTML") // エラー処理
-}
-```
-
-次に、取得したHTMLデータを解析し、特定の要素を抽出します。
-
-```Swift
-do {
-    let doc = try SwiftSoup.parse(htmlString) // HTMLデータを解析
-    let title = try doc.select("h1").first()?.text() // <h1>タグ内のテキストを取得
-    let links = try doc.select("a").array() // <a>タグの配列を取得
-    for link in links {
-        print(link.attr("href")) // リンクを表示
+//HTMLをURLから取得し、パースするためのコード
+if let url = URL(string: "https://www.example.com/"){
+    do {
+        //URLからデータを取得
+        let html = try String(contentsOf: url, encoding: .utf8)
+        //HTMLパーサーを作成
+        let parser = try SwiftSoup.parse(html)
+        //必要な要素を取得
+        let title = try parser.select("title")
+        let paragraph = try parser.select("p")
+        //取得した要素を出力
+        print(title)
+        print(paragraph)
+    } catch {
+        print("エラー: \(error)")
     }
-} catch {
-    print("Error: Unable to parse HTML") // エラー処理
 }
 ```
 
-出力結果は以下のようになります。
+## じっくり見る：
+パースという概念は、ウェブ技術の最も古い要素の一つです。ウェブサイトからのデータ取得は、プログラマーが手動で行う以前は、自動的にできなかったため、パースが開発されました。代替手段として、スクレイピングやウェブクローリングという方法があります。パースの実装において、一般的に利用されるライブラリには、「SwiftSoup」や「Kanna」などがあります。
 
-```Swift
-Example Website
-https://example.com/about
-https://example.com/contact
-https://example.com/blog
-```
-
-## 深堀り
-
-HTML解析は、CSSセレクターを使用して特定の要素を抽出することができます。`doc.select()`メソッドを使用して、HTML要素やCSSクラス、IDなどを指定することで、より精密にデータを取得することができます。また、`doc.select()`メソッドの返り値はElementオブジェクトであり、要素のタグやテキスト、属性などを取得することができます。
-
-## 関連リンク
-
-- [SwiftSoupレポジトリ](https://github.com/scinfu/SwiftSoup)
-- [WWDC 2016 セッション「What’s New in Foundation」](https://developer.apple.com/videos/play/wwdc2016/712/)
+## 関連情報：
+- 「SwiftSoup」ライブラリのGitHubレポジトリ: https://github.com/scinfu/SwiftSoup
+- 「Kanna」ライブラリのGitHubレポジトリ: https://github.com/tid-kijyun/Kanna

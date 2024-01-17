@@ -10,92 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was & Warum?
 
-Wenn du programmierst, möchtest du vielleicht deiner Anwendung ermöglichen, auf verschiedene Arten verwendet zu werden. Das Einlesen von Befehlszeilenargumenten ist eine gängige Methode, um dies zu erreichen.
+Lesen von Kommandozeilenargumenten ist eine grundlegende Fähigkeit für Programmierer. Es ermöglicht Programmen, Befehlszeilenargumente zu erhalten und auf sie zu reagieren. Dies kann nützlich sein, um verschiedene Einstellungen, Dateinamen oder andere Parameter für das Programm festzulegen.
 
-## Wie es geht
+## Wie geht das?
 
-Es gibt mehrere Möglichkeiten, Befehlszeilenargumente in C++ zu lesen. Hier sind zwei Beispiele:
+Die meisten Programmiersprachen, einschließlich C++, bieten eingebaute Methoden oder Bibliotheken, um Kommandozeilenargumente zu lesen. In C++ können wir die Funktion `main` verwenden, die zwei Parameter erwartet: `argc` und `argv`. `argc` gibt die Anzahl der Argumente an, während `argv` ein Array von C-Strings ist, das die tatsächlichen Argumente enthält.
 
-1. **argc und argv:** Mit den Variablen `argc` und `argv` kannst du auf die Befehlszeilenargumente in deinem Programm zugreifen. `argc` enthält die Anzahl der Argumente und `argv` ist ein Array von Zeigern, die auf Strings mit den Argumenten verweisen.
+Um alle Argumente zu lesen, können wir eine Schleife verwenden und `argv` durchlaufen. Zum Beispiel:
 
-```C++
-#include <iostream>
-
+```
 int main(int argc, char* argv[]) {
-  std::cout << "Anzahl der Argumente: " << argc << std::endl;
-  std::cout << "Argumente:" << std::endl;
-  for (int i = 0; i < argc; i++) {
-    std::cout << argv[i] << std::endl;
-  }
+    for (int i = 0; i < argc; i++) {
+        cout << argv[i] << endl;
+    }
+    return 0;
 }
 ```
 
-**Ausgabe:**
+Wenn wir dieses Programm mit dem Befehl `./program argument1 argument2` aufrufen, wird es die Argumente `argument1` und `argument2` auf der Konsole ausgeben.
 
-```
-Anzahl der Argumente: 3
-Argumente:
-./program
-arg1
-arg2
-```
+## Tiefere Einblicke
 
-2. **Boost.Program_options:** Diese Bibliothek bietet eine umfangreichere Möglichkeit, Befehlszeilenargumente zu lesen. Sie ermöglicht die Verwendung von Optionen, die mit oder ohne Werte verwendet werden können, gekennzeichnet mit `--` oder `-`.
+Das Lesen von Kommandozeilenargumenten ist seit langem eine bewährte Methode in der Programmierung. Vor der Verwendung von grafischen Benutzeroberflächen war dies die einzige Möglichkeit, wie Benutzer mit Computern interagieren konnten. Alternativen zu Kommandozeilenargumenten sind beispielsweise Konfigurationsdateien oder Benutzereingaben während der Programmausführung.
 
-```C++
-#include <iostream>
-#include <boost/program_options.hpp>
-
-namespace po = boost::program_options;
-
-int main(int argc, char* argv[]) {
-  try {
-    po::options_description desc{"Options"};
-    desc.add_options()
-      ("help,h", "Hilfe anzeigen")
-      ("input,i", po::value<std::string>(), "Eingabedatei")
-      ("output,o", po::value<std::string>(), "Ausgabedatei");
-
-    po::variables_map vm;
-    po::store(po::parse_command_line(argc, argv, desc), vm);
-    po::notify(vm);
-
-    if (vm.count("help")) {
-      std::cout << desc << std::endl;
-    }
-    else if (vm.count("input")) {
-      std::cout << "Eingabedatei: " << vm["input"].as<std::string>() << std::endl;
-    }
-    else {
-      std::cout << "Kein gültiges Argument eingegeben." << std::endl;
-    }
-  }
-  catch (std::exception& e) {
-    std::cerr << "Fehler: " << e.what() << std::endl;
-    return 1;
-  }
-
-  return 0;
-}
-```
-
-**Ausgabe:**
-
-```
-Benutzung: ./program [OPTIONEN]
-Options:
-  -h [ --help ]         Hilfe anzeigen
-  -i [ --input ] arg    Eingabedatei
-  -o [ --output ] arg   Ausgabedatei
-```
-
-## Tiefer eintauchen
-
-Das Einlesen von Befehlszeilenargumenten kann auch komplexer gestaltet werden, z.B. durch Parsing von Arguments mit Whitespaces oder durch das Erstellen eigener Datenstrukturen für Optionen. Es gibt auch verschiedene Bibliotheken, die noch mehr Funktionalität beim Lesen von Befehlszeilenargumenten bieten, wie z.B. `getopt` oder `Docopt`.
+Wenn wir tiefer gehen, können wir uns ansehen, wie Kommandozeilenargumente in C++ implementiert sind. Beispielsweise kaufen sich `argc` und `argv` direkt auf die C-Standardbibliothek `stdlib.h` und ihre Funktion `getopt`. Diese Funktion ermöglicht es uns, Optionen und Argumente in einer für Unix-ähnliche Systeme üblichen Weise zu lesen.
 
 ## Siehe auch
 
-- [C++-Referenz](https://de.cppreference.com/w/) - Offizielle Referenz von C++
-- [Boost.Program_options-Dokumentation](https://www.boost.org/doc/libs/1_66_0/doc/html/program_options.html) - Dokumentation für die Boost-Bibliothek
+Um mehr über das Lesen von Kommandozeilenargumenten in C++ zu erfahren, können Sie die offizielle Dokumentation von C++ oder andere Online-Tutorials lesen. Hier sind einige weitere hilfreiche Links:
+
+- https://www.tutorialspoint.com/cplusplus/cpp_command_line_arguments.htm
+- https://www.learncpp.com/cpp-tutorial/command-line-arguments/
+- https://en.cppreference.com/w/cpp/language/main_function

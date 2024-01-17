@@ -10,28 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que escrever testes é importante?
+## O que e por que?
 
-Escrever testes pode parecer uma tarefa tediosa e desnecessária para alguns, mas na verdade é uma parte crucial no processo de desenvolvimento de software. Além de garantir que o código funcione corretamente, os testes também ajudam a identificar e corrigir possíveis bugs antes que eles cheguem aos usuários finais.
+Escrever testes em programação é um processo de criar pequenos programas que verificam a funcionalidade do seu código principal. Os programadores fazem isso para garantir que seu código esteja funcionando corretamente e para evitar erros futuros em seu desenvolvimento.
 
-## Como escrever testes em Rust
+## Como fazer:
 
-Escrever testes em Rust é uma tarefa simples e direta. Primeiro, é importante criar uma função de teste marcada com o atributo `#[test]`, seguida por uma chamada à função `assert!` que verifica se o resultado esperado é igual ao resultado real. Aqui está um exemplo de uma função de teste simples que verifica se dois números são iguais:
+O Rust possui sua própria biblioteca de testes integrada, permitindo a escrita de testes diretamente no código fonte. Para criar um novo teste, basta adicionar o atributo `test` acima da função do teste e executá-lo usando o comando `cargo test`.
 
 ```Rust
 #[test]
-fn test_equality() {
-    assert!(10 == 5 + 5);
+fn test_soma() {
+    assert_eq!(2 + 2, 4);
 }
 ```
 
-Ao rodar o comando `cargo test`, você verá uma saída indicando se o teste foi aprovado ou falhou. Se você quiser testar uma função com argumentos, basta passá-los dentro dos parênteses da função `assert!`.
+Se todos os testes passarem com sucesso, você verá uma mensagem indicando que todos os testes foram aprovados.
 
-## Aprofundando nos testes em Rust
+```
+Compiling projeto v0.1.0 (file:///C:/projetos/rust/projeto)
+Finished in 0.063s
+Running target\debug\projeto-9bb9194203a976bb.exe
 
-Existem várias ferramentas disponíveis em Rust para escrever testes mais avançados, como o módulo `std::assert` que oferece mais opções de checagem de valores. Também é possível criar testes que verifiquem se uma função específica retorna um erro esperado. Para isso, basta utilizar o atributo `#[should_panic]` na função de teste. Além disso, é possível criar testes estruturados em diferentes módulos e executá-los em paralelo para aumentar a eficiência dos testes.
+running 1 test
+test test_soma ... ok
 
-## Veja também
-- [Documentação oficial do Rust sobre testes](https://doc.rust-lang.org/book/testing.html)
-- [Exemplos práticos de testes em Rust](https://www.rust-lang.org/learn/get-started)
-- [Artigo sobre a importância dos testes em desenvolvimento de software](https://medium.com/@chrisng93/the-importance-of-testing-in-software-development-290589c1c2d6)
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured
+
+   Running `target\debug\projeto-9bb9194203a976bb.exe`
+```
+
+## Profundidade:
+
+Os testes em programação têm sido cada vez mais importantes à medida que os projetos se tornam maiores e mais complexos. Eles também são uma prática recomendada em metodologias ágeis de desenvolvimento, pois ajudam a detectar problemas no início e a manter o código mais limpo e organizado.
+
+Além da biblioteca de testes do Rust, existem outras alternativas, como a biblioteca de testes `assert`, que oferece funcionalidades adicionais e personalização. É importante escolher a biblioteca de testes mais adequada para o seu projeto, levando em consideração suas necessidades e preferências.
+
+No que diz respeito à implementação, os testes são compilados em uma seção separada do executável final e podem ser facilmente ignorados se você não quiser executá-los. Além disso, o Rust possui uma sintaxe clara e concisa para a criação de testes, tornando o processo mais fácil e rápido.
+
+## Veja também:
+
+Para saber mais sobre testes em Rust, confira a documentação oficial em https://doc.rust-lang.org/book/testing.html e o repositório de exemplos da comunidade em https://github.com/rust-unofficial/awesome-rust#testing.

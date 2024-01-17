@@ -1,7 +1,7 @@
 ---
-title:                "Concatenare stringhe"
-html_title:           "PHP: Concatenare stringhe"
-simple_title:         "Concatenare stringhe"
+title:                "Unire stringhe"
+html_title:           "PHP: Unire stringhe"
+simple_title:         "Unire stringhe"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Strings"
@@ -10,50 +10,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+## Cosa e perché?
+Concatenare le stringhe in informatica significa unire più stringhe di testo per crearne una sola. I programmatori lo fanno spesso per creare un'unica stringa che contenga informazioni diverse e per facilitare la gestione dei dati. Questo è molto utile quando si lavora con grandi quantità di testo o quando si deve formattare un output specifico.
 
-Concatenare le stringhe è un'operazione fondamentale nella programmazione PHP. Consiste nell'unire due o più sequenze di caratteri per creare una nuova stringa. Ciò può essere utile in molte situazioni, ad esempio per costruire messaggi personalizzati o per formattare correttamente i dati prima di salvarli o stamparli.
-
-## Come Fare
-
+## Come fare:
 ```PHP
-$stringa1 = "Ciao ";
-$stringa2 = "amici!";
-$stringa3 = $stringa1 . $stringa2;
-echo $stringa3;
+$stringa1 = "Ciao";
+$stringa2 = "mi";
+$stringa3 = "chiamo";
+$stringa4 = "Marco";
+
+echo $stringa1 . " " . $stringa2 . " " . $stringa3 . " " . $stringa4;
 ```
+Output: Ciao mi chiamo Marco
 
-Questo codice crea tre variabili: `$stringa1`, che contiene la stringa "Ciao ", `$stringa2`, che contiene la stringa "amici!", e `$stringa3`, che unisce le due stringhe precedenti tramite l'operatore `.`. Il risultato sarà la frase "Ciao amici!" stampata a schermo. È importante notare che l'operatore di concatenazione `. `deve essere usato tra le due stringhe per unirle correttamente.
+## Approfondimento:
+La concatenazione di stringhe è stata introdotta per la prima volta nella versione PHP 4 e da allora è diventata una funzione fondamentale nella gestione dei dati. Un'alternativa alla concatenazione di stringhe è l'utilizzo di variabili con una sintassi dinamica, ma ciò richiede più codice e può essere meno efficiente in alcune situazioni. Per implementare la concatenazione di stringhe, PHP utilizza il carattere di concatenazione "." e permette di unire le stringhe in modo rapido e semplice.
 
-È possibile concatenare più di due stringhe aggiungendo l'operatore `.` tra ognuna di esse. È inoltre possibile concatenare stringhe diverse con altri tipi di dati, come ad esempio con numeri o variabili.
-
-```PHP
-$stringa1 = "Il prezzo del prodotto è: ";
-$prezzo = 20;
-$unità = "€";
-$stringa2 = $stringa1 . $prezzo . $unità;
-echo $stringa2;
-```
-
-In questo esempio, viene creato un messaggio personalizzato utilizzando il contenuto di tre variabili: `$stringa1`, che contiene il testo "Il prezzo del prodotto è: ", `$prezzo`, che ha il valore numerico 20, e `$unità`, che contiene il simbolo "€". L'operatore di concatenazione viene utilizzato per unire tutti questi elementi in un'unica stringa stampata a schermo: "Il prezzo del prodotto è: 20€".
-
-## Approfondimento
-
-Oltre all'operatore `.` di concatenazione, PHP offre anche l'operatore `.=`, che combina la concatenazione con l'assegnazione. Questo significa che è possibile unire una stringa a una variabile senza dover specificare nuovamente il nome della variabile. Ad esempio:
-
-```PHP
-$stringa1 = "Il prodotto selezionato è: ";
-$prodotto = "smartphone";
-$stringa1 .= $prodotto;
-echo $stringa1;
-```
-
-L'operatore `.= `aggiunge la stringa "smartphone" alla fine di `$stringa1`, ottenendo come risultato "Il prodotto selezionato è: smartphone". Questo è utile soprattutto quando la stringa è dinamica, ovvero il suo contenuto dipende dalle scelte dell'utente o da altri dati variabili.
-
-Infine, è importante notare che la concatenazione può essere considerata una forma di manipolazione delle stringhe. Ciò significa che è possibile utilizzare funzioni come `strlen()` o `substr()` per manipolare la stringa di output prima della concatenazione. Questo offre molte possibilità di personalizzazione e formattazione nel risultato finale.
-
-## Vedi Anche
-
-- [Documentazione ufficiale PHP sulle stringhe](https://www.php.net/manual/en/language.operators.string.php)
-- [10 esempi di concatenazione in PHP](https://www.codegrepper.com/code-examples/php/how+to+concatenate+string+in+php)
-- [Come manipolare le stringhe in PHP](https://www.tutorialspoint.com/php/php_string_manipulation.htm)
+## Vedi anche:
+- [Documentazione ufficiale su stringhe in PHP] (https://www.php.net/manual/en/language.types.string.php)
+- [Tutorial su come usare la concatenazione di stringhe] (https://www.w3schools.com/php/php_operators.asp)
+- [Video tutorial sulla concatenazione di stringhe] (https://www.youtube.com/watch?v=O4z-B9KbdU0)

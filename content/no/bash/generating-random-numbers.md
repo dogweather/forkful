@@ -10,47 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hva og hvorfor?
+Generering av tilfeldige tall er en vanlig oppgave for programmerere. Dette betyr rett og slett å lage et tall uten noen spesiell sammenheng eller mønster. Dette kan være nyttig for å skape variasjon i data, teste kodesnutter eller for spill og simuleringer.
 
-Det finnes mange situasjoner hvor du kan trenge å generere tilfeldige tall i Bash-programmering. Dette kan for eksempel være for å lage tilfeldig data til testing, lage et spill eller for å generere et passord.
-
-## Hvordan
-
-Det finnes to hovedmetoder for å generere tilfeldige tall i Bash - `$RANDOM`-variabelen og `shuf`-kommandoen. Her er noen eksempler på hvordan du kan bruke disse:
+## Slik gjør du:
+For å generere et tilfeldig tall i Bash, kan du bruke kommandoen ```$RANDOM```. Dette vil gi deg et tall mellom 0 og 32767. For eksempel:
 
 ```Bash
-# Genererer et tilfeldig tall mellom 0 og 100:
-echo $((RANDOM % 101))
+echo $RANDOM 
+# Output: 24988
+```
+Hvis du ønsker et annet tall mellom en spesifikk rekkevidde, for eksempel mellom 1 og 100, kan du bruke følgende kode:
 
-# Lager et tilfeldig passord med 8 tegn:
-passord=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | head -c 8)
-echo $passord
-
-# Lagrer en listen med 5 tilfeldige tall i en fil:
-shuf -i 1-100 -n 5 > tall.txt
-cat tall.txt
+```Bash
+echo $((RANDOM % 100 + 1))
+# Output: 56 (for eksempel)
 ```
 
-Eksempel på output:
+## Dypdykk:
+Generering av tilfeldige tall har vært et viktig konsept innenfor matematikk og informatikk i lang tid. En av de første metodene for å generere tilfeldige tall ble utviklet av den kjente matematikeren John von Neumann på 1940-tallet. I dag finnes det mange algoritmer og teknikker for å generere tilfeldige tall, og noen programmeringsspråk har dedikerte funksjoner for dette.
 
-```
-74
-jKc3Gt4D
-20
-95
-75
-```
+Alternativer til å bruke ```$RANDOM``` i Bash inkluderer å bruke andre programmeringsspråk som har god støtte for tilfeldige tall, som for eksempel Python eller Java. Du kan også bruke eksterne verktøy som ```shuf``` for å sortere tilfeldige tall eller ```openssl``` for å generere kryptografisk sikre tilfeldige tall.
 
-## Dypdykk
+Generering av tilfeldige tall i Bash baserer seg på en algoritme som bruker tid og prosessnumre for å skape variasjon. Dette betyr at tallene ikke er helt tilfeldige, men bare tilfeldige nok for de fleste bruksområder. For mer sensitive applikasjoner bør du bruke kryptografiske metoder for å sikre tilfeldighet.
 
-Både `$RANDOM`-variabelen og `shuf`-kommandoen bruker en pseudorandomiseringsalgoritme for å generere tilfeldige tall. Dette betyr at tallene ikke er helt tilfeldige, men følger en bestemt algoritme.
-
-`$RANDOM`-variabelen genererer tall mellom 0 og 32767, mens `shuf`-kommandoen lar deg spesifisere et intervall ved hjelp av `-i` flagget.
-
-Hvis du trenger å generere kryptografisk sikre tilfeldige tall, bør du heller bruke `openssl rand` kommandoen i stedet.
-
-## Se også
-
-- [The Bash Manual on RANDOM Variable](https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html#Bash-Variables)
-- [The Bash Manual on shuf command](https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html#Bash-Builtins)
-- [The Bash Manual on openssl command](https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html#Bash-Redirections)
+## Se også:
+[How to generate random numbers in Bash](https://opensource.com/article/19/2/random-numbers-bash)

@@ -10,37 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+# Vad & Varför?
+Att skriva tester är en viktig del av programmering, det är helt enkelt att skriva kod för att kontrollera att vår kod fungerar som den ska. Det är ett sätt för oss att försäkra oss om att vår kod fortsätter att fungera även efter vi har gjort ändringar.
 
-Det finns flera anledningar till varför det är viktigt att skriva tester när du programmerar i Haskell. För det första hjälper det till att säkerställa att koden fungerar som den ska och minimerar risken för buggar. Det ger också en bättre förståelse för hur koden fungerar och hur den påverkar andra delar av programmet.
+# Hur gör man?
+För att skriva tester i Haskell, behöver vi ett testramverk som heter HUnit. Detta ramverk låter oss definiera tester i form av testfall och sedan köra dessa för att se om de passerar eller misslyckas.
 
-## Hur man gör
-
-För att börja skriva tester i Haskell behöver du ett testbibliotek som heter Hspec. Detta bibliotek gör det möjligt att skapa enhetstester för din kod. 
-
-För att använda Hspec behöver du först importera det i din kod genom att skriva `import Test.Hspec` i början av filen. Sedan kan du använda `describe` för att beskriva en specifik funktion som du vill testa och `it` för att specificera vad du förväntar dig att funktionen ska göra. Här är ett exempel på en test som kontrollerar om funktionen `square` beräknar korrekt:
+Ett exempel på hur man skriver ett testfall med HUnit i Haskell:
 
 ```Haskell
-describe "Square function" $ do
-  it "Should return the square of a number" $ do
-    square 4 `shouldBe` 16
+import Test.HUnit
+
+-- testfall som kontrollerar att summan av 1 och 2 är lika med 3
+sumTest = TestCase (assertEqual "Sum should be 3" 3 (1+2))
+
+-- lista med alla testfall
+tests = TestList [TestLabel "sumTest" sumTest]
+
+-- kör testen och se resultatet
+main = runTestTT tests
+```
+Exempel på output:
+
+```
+Cases: 1  Tried: 1  Errors: 0  Failures: 0
+Cases: 1  Tried: 1  Errors: 0  Failures: 0
+Counts {cases = 1, tried = 1, errors = 0, failures = 0}
 ```
 
-För att köra testerna använder du kommandot `runhaskell <filnamn>`. Om alla tester passerar kommer du att se följande output:
+# Djupdykning
+Att skriva tester har funnits sedan programmeringens tidiga år, men det var inte förrän på 2000-talet som det blev en mer strukturerad och organiserad process. Tidigare användes ofta manuella tester där en person kontrollerade koden, men det kunde bli långsamt och tidskrävande.
 
-```
-Square function
-   Should return the square of a number
-```
+Ett alternativ till HUnit är QuickCheck, ett testramverk som använder slumpmässiga värden för att testa vår kod. Det är ett bra sätt att upptäcka buggar och gränsfall som vi kanske inte hade tänkt på.
 
-## Djupdykning
+En viktig del av att skriva tester är att försöka täcka så många olika scenarier som möjligt för att få en så pålitlig kod som möjligt. Detta kan ibland vara en utmaning, men det hjälper oss att förbättra vår kod och undvika problem i framtiden.
 
-När du skriver tester är det viktigt att täcka både positiva och negativa fall. Det betyder att du behöver testa både förväntade och oväntade input för att säkerställa att din kod kan hantera alla möjliga scenarion. Det är också viktigt att skriva testerna så tidigt som möjligt i utvecklingsprocessen för att minska risken för buggar.
-
-En annan viktig del av att skriva tester är att hålla dem uppdaterade när du gör ändringar i koden. Om du lägger till ny funktionalitet eller ändrar befintlig kod behöver du också uppdatera dina tester för att säkerställa att allt fortfarande fungerar som det ska.
-
-## Se även
-
-- [Hspec Hackage](https://hackage.haskell.org/package/hspec)
-- [Hspec GitHub](https://github.com/hspec/hspec)
-- [Haskell Testing for Beginners](https://medium.com/dev-genius/haskell-testing-for-beginners-e10eabebf2f1)
+# Se även
+- Officiell dokumentation för HUnit: https://hackage.haskell.org/package/HUnit
+- Officiell dokumentation för QuickCheck: https://hackage.haskell.org/package/QuickCheck

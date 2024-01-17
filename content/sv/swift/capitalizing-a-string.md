@@ -1,7 +1,7 @@
 ---
-title:                "Att konvertera en sträng till versaler"
-html_title:           "Swift: Att konvertera en sträng till versaler"
-simple_title:         "Att konvertera en sträng till versaler"
+title:                "Stor bokstavsättning av en sträng"
+html_title:           "Swift: Stor bokstavsättning av en sträng"
+simple_title:         "Stor bokstavsättning av en sträng"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -10,41 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
+At capitalizing en sträng betyder helt enkelt att göra den första bokstaven till en stor bokstav och resten av bokstäverna till små bokstäver. Programmers brukar göra detta för att göra text mer läsbar och för att följa konventioner inom programmering.
 
-Att kapitalisera en sträng i Swift är ett vanligt behov när man jobbar med textdata. Det är ett enkelt sätt att få en sträng att se mer formell och enhetlig ut, till exempel om den ska visas i en rubrik eller ett meddelande.
-
-## Så här gör du
-
-Kapitalisera en sträng i Swift är enkelt och kan göras på flera olika sätt beroende på dina behov. Här är några exempel på olika metoder:
+## Så här gör du:
+Det är enkelt att capitalizing en sträng i Swift med hjälp av metoden `capitalized`. Se nedan för exempel på kod och det genererade output:
 
 ```Swift
-// Enklaste sättet, genom att använda den inbyggda metoden .uppercased():
-let namn = "anna"
-let kapitaliseratNamn = namn.uppercased()
-print(kapitaliseratNamn) // Resultat: ANNA
-
-// Om du vill ha stora bokstäver för varje ord, använd .capitalized:
-let fras = "jag älskar swift"
-let kapitaliseradFras = fras.capitalized
-print(kapitaliseradFras) // Resultat: Jag Älskar Swift
-
-// Om du bara vill ha första bokstaven kapitaliserad, använd .capitalizedFirstLetter():
-let mening = "hej, välkommen till Swift"
-let kapitaliseradMening = mening.capitalizedFirstLetter()
-print(kapitaliseradMening) // Resultat: Hej, välkommen till Swift
+let sträng = "det här är en teststräng"
+print(sträng.capitalized)
 ```
+Output:
+`Det här är en teststräng`
 
-## Djupdykning
+Du kan också använda `prefix(1)` för att göra första bokstaven till en stor bokstav och `suffix(from: 1)` för att göra resten av bokstäverna till små:
+```Swift
+let sträng = "det här är en annan teststräng"
+print(sträng.prefix(1).capitalized + sträng.suffix(from: 1).lowercased())
+```
+Output:
+`Det här är en annan teststräng`
 
-I Swift finns det flera inbyggda metoder för att hantera strängar, inklusive de som används för att kapitalisera en sträng. Det är viktigt att notera att dessa metoder skapar en helt ny sträng istället för att ändra den befintliga strängen direkt. Detta beror på att strängar i Swift är "value types" istället för "reference types", vilket innebär att de är oföränderliga.
+## Djupdykning:
+Att capitalizing en sträng är en vanlig konvention inom programmering, särskilt när man namnger variabler eller funktioner. Det finns dock alternativ som t.ex. att använda snake_case där ord separeras med understreck istället för att ha alla ord ihopslagna med stor eller liten bokstav. Det finns också möjlighet att anpassa capitalization efter språkregler med hjälp av metoden `capitalized(with: Locale)`. Själva implementationen av capitalization är beroende av språket som används.
 
-Det finns också möjlighet att använda sig av externa bibliotek som erbjuder ytterligare funktioner för att hantera och formatera textdata. Ett exempel på ett sådant bibliotek är SwiftString, som erbjuder en mängd olika metoder för att omvandla och manipulera strängar.
-
-## Se även
-
-Här är några länkar till ytterligare resurser och guider för att arbeta med strängar i Swift:
-
-- [The Swift Programming Language - Strings and Characters](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
-- [Ray Wenderlich - Strings in Swift - Ultimate Guide](https://www.raywenderlich.com/3447256-strings-in-swift)
-- [SwiftString - A lightweight string extension for Swift](https://github.com/amayne/SwiftString)
+## Se även:
+- [Swift String Documentation](https://developer.apple.com/documentation/swift/string) 
+- [Capitalization in Programming](https://www.benjaminwiederkehr.com/explained/capitalization-in-programming/)

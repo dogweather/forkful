@@ -10,47 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hva og Hvorfor?
 
-Hvorfor bry seg om regulære uttrykk (regular expressions)? Regulære uttrykk er et utrolig kraftig verktøy som gjør det enkelt å finne og manipulere tekst i kode. Dette kan være spesielt nyttig når du prøver å søke etter et bestemt mønster eller verv i en streng.
+Regular expressions er en måte å søke og manipulere tekst på i programmering. Det er en nyttig verktøy for å søke etter spesifikke mønstre, som for eksempel e-postadresser eller telefonnummer, i store tekstfiler.
 
-## Hvordan
+Programmerere bruker regelmessige uttrykk for å effektivt behandle og transformere data, spesielt når det kommer til store tekstmengder. Det gjør at de kan automatisk finne og endre tekst på et bestemt mønster, noe som sparer tid og gjør kodingen mer nøyaktig.
+
+## Slik gjør du:
+
+For å bruke regulære uttrykk i Ruby må du først opprette et uttrykk ved å bruke et spesielt syntaks:
 
 ```Ruby
-# Eksempel på bruk av regulære uttrykk
-string = "Jeg elsker å kode i Ruby!"
-
-# Søk etter en streng som inneholder ordet "elsker"
-puts string.match(/elsker/)
-# Output => "elsker"
-
-# Søk etter et ord som starter med "kode"
-puts string.match(/\bkode\w*/i)
-# Output => "kode"
-
-# Erstatt en streng med et annet ord
-puts string.gsub(/elsker/, "hater")
-# Output => "Jeg hater å kode i Ruby!"
+regex = /mønster/
 ```
 
-Som du kan se i eksemplene over, bruker vi `/` for å definere slutten og begynnelsen av vårt regulære uttrykk. Deretter bruker vi spesielle symboler og bokstaver til å definere vårt søkemønster. `match` vil returnere den første forekomsten, mens `gsub` vil erstatte alle forekomster.
+Deretter kan du bruke ulike metoder for å søke etter og manipulere tekst basert på dette mønsteret. For eksempel kan du bruke `match` for å finne alle forekomster av mønsteret i en tekststreng:
 
-## Dypdykk
+```Ruby
+text = "Jeg liker å spise epler og bananer"
+mønster = /epler/
 
-For de som ønsker å dykke dypere inn i regulære uttrykk, er det mange forskjellige symboler og koder som kan brukes for å utføre avanserte søk. Noen av de vanligste inkluderer:
+puts text.match(mønster)
 
-- `.` brukes til å matche hvilken som helst karakter
-- `*` brukes til å matche en forekomst av en karakter null eller flere ganger
-- `+` brukes til å matche en forekomst av en karakter en eller flere ganger
-- `?` brukes til å matche en forekomst av en karakter null eller én gang
-- `()` brukes til å gruppere og ekstrahere deler av et søkemønster
-- `|` brukes til å vise alternativer innen et søkemønster (for eksempel `abc|def` vil matche enten "abc" eller "def")
+# => epler
+```
 
-Det finnes også en rekke korte koder for vanlige typer av karakterer, for eksempel `\d` for tall, `\w` for bokstaver og tall, og `\s` for mellomrom og andre "tomme" karakterer.
+Her blir bare "epler" returnert siden det er det eneste mønsteret i tekststrengen. Du kan også bruke `sub` for å erstatte en tekst som matcher mønsteret med en annen tekst:
 
-Det er viktig å merke seg at regulære uttrykk kan bli komplekse og vanskelige å lese, spesielt for nybegynnere. Men med litt øvelse og tålmodighet, kan de bli et uvurderlig verktøy for tekstbehandling i koden din.
+```Ruby
+text = "Jeg liker å spise epler og bananer"
+mønster = /epler/
 
-## Se Også
+puts text.sub(mønster, "appelsiner")
 
-- [Ruby dokumentrasjon for regulære uttrykk](https://ruby-doc.org/core-3.0.0/Regexp.html)
-- [Rubular](https://rubular.com/): et nyttig verktøy for å teste og øve på regulære uttrykk i Ruby
+# => Jeg liker å spise appelsiner og bananer
+```
+
+## Dypdykk:
+
+Bruken av regulære uttrykk går tilbake til 1950-tallet da det ble utviklet innenfor matematikk og lingvistikk. Det har blitt en viktig del av programmering, spesielt for å arbeide med tekstdata.
+
+Det finnes alternative måter å behandle tekst på i Ruby, som for eksempel `String#scan` metoden. Men regulære uttrykk er ofte foretrukket fordi det tillater mer komplekse og nøyaktige søk. Det er også en del av programmeringskunnskap som er nyttig for å forstå og implementere.
+
+## Se også:
+
+For mer informasjon om bruk av regulære uttrykk i Ruby, sjekk ut disse ressursene:
+
+- [Ruby Regexp dokumentasjon](https://ruby-doc.org/core/Regexp.html)
+- [Pragmatic Programing: Chapter 7 - Regular Expressions](https://pragprog.com/book/btlang/best-of-ruby-quiz)
+- [Regexp-Online](https://www.regexp-online.com)

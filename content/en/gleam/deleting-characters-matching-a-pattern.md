@@ -10,36 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-Are you tired of manually deleting characters that match a specific pattern in your code? Or perhaps you want to clean up messy code and remove unnecessary characters? Look no further, because Gleam has a built-in function that makes deleting characters a breeze!
+Deleting characters that match a specific pattern is a common task for programmers, as it allows for the manipulation and cleaning of text data. This can be useful for tasks such as data parsing or filtering out unwanted information in a dataset.
 
-## How To
+## How to:
 
-To delete characters matching a pattern in Gleam, simply use the `remove_chars` function. This function takes in two arguments: the string you want to modify and the pattern of characters you want to remove.
+To delete characters matching a pattern in Gleam, you can use the `String.replace` function along with a regular expression. Here's an example of deleting all vowels from a string:
 
-```
-Gleam run "```
-let str = "Hello, World!";
-let pattern = ", !";
-let result = remove_chars(str, pattern);
-io.print(result); // Output: "HelloWorld"
-```"
+```Gleam
+my_string = "Hello World!"
+result = String.replace(my_string, regex"[aeiou]", "")
 ```
 
-As you can see, the `remove_chars` function effectively removed the characters `,` and `!` from the original string, leaving us with the desired output of "HelloWorld".
+The output will be `"Hll Wrld!"` as all vowels have been removed from the original string. You can also use this method to delete any other characters that match a particular pattern, such as numbers or special characters.
 
-## Deep Dive
+## Deep Dive:
 
-The `remove_chars` function uses regular expressions to determine which characters to remove. This allows for more flexibility in specifying the pattern of characters. You can use a single character, a range of characters, or even a more complex expression to match your desired pattern.
+While deleting characters using regular expressions is a common method, it's important to consider the alternative of using pattern matching in Gleam. This can provide more flexibility in terms of matching and manipulating specific parts of a string. However, if you are dealing with large datasets or complex patterns, regular expressions may be a more efficient option.
 
-For example, if we wanted to remove all numbers from a string, we could use the pattern `[0-9]`, which represents a range of characters from 0 to 9. Or if we wanted to remove all vowels, we could use the pattern `[aeiou]`, which represents a list of characters.
+It's also worth noting that the `String.replace` function in Gleam uses the Rust [`regex`](https://github.com/rust-lang/regex) library under the hood, making it a powerful tool for string manipulation.
 
-Furthermore, the `remove_chars` function also has an optional third argument, `ignore_case`, which, when set to `true`, will ignore case sensitivity when matching the pattern.
+## See Also:
 
-## See Also
-
-To learn more about the `remove_chars` function and other useful string manipulation functions in Gleam, check out the official documentation:  
-- [Gleam Documentation](https://gleam.run/documentation)
-- [Gleam String module](https://gleam.run/modules/string.html)
-- [Regular Expressions Tutorial](https://regexone.com/)
+- [Gleam Documentation on Regular Expressions](https://gleam.run/documentation/libraries/regular-expressions.html)
+- [Rust `regex` Library Documentation](https://docs.rs/regex/)

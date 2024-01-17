@@ -1,7 +1,7 @@
 ---
-title:                "HTMLの解析"
-html_title:           "Gleam: HTMLの解析"
-simple_title:         "HTMLの解析"
+title:                "HTML パース"
+html_title:           "Gleam: HTML パース"
+simple_title:         "HTML パース"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "HTML and the Web"
@@ -10,53 +10,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+## 何となぜ？
+パーシングHTMLとは、HTMLを分析して必要なデータを取り出すことです。プログラマーがこれを行うのは、例えばWebサイトから情報を収集したり、自動化したりするためです。
 
-HTMLをパースすることが重要かつ便利な理由をご紹介します。
+## 方法：
+```Gleam ... ```のコードブロック内に、コーディング例とサンプルの出力を示します。
 
-パースとは、データを解析することを指します。HTMLはウェブサイトを構築する上で欠かせない言語であり、そのデータを解析することで、より効率的にウェブページを作成することができます。また、ウェブスクレイピングやデータ収集などの用途にも利用することができます。
+**例1：HTMLから特定のテキストを抽出する**
 
-## 方法
+```Gleam 
+let input_html = "
+<html>
+<head>
+<title>Gleam Parsing Article</title>
+</head>
+<body>
+<h1>This is a title</h1>
+<p>This is a paragraph</p>
+</body>
+</html>
+"
 
-以下のようなGleamのコード例を使いながら、HTMLのパースを実践的に学びましょう。
+let parsed = Html.parse(input_html)
+let h1 = Html.get_element(parsed, "h1")
+let p = Html.get_element(parsed, "p")
 
-```Gleam
-// 必要なライブラリをインポート
-import gleam/html
-import gleam/json
-import gleam/http
-
-// ウェブサイトのURLを指定
-let url = "https://example.com"
-
-// ページのデータを取得
-let html = http.get(url).body
-
-// パースしたい要素の指定
-let selector = "h1"
-
-// HTMLのパースを実行
-let result = html |> html.parse |> html.select(selector)
-
-// 結果をJSON形式で文字列に変換
-let json = result |> json.from(html_to_show)
-
-// パースした要素を表示
-pub fn show() {
-  json_to_show |> json.encode |> std_io.format |> std_io.print
-}
+Debug.assert_equal("This is a title", Html.get_text(h1))
+Debug.assert_equal("This is a paragraph", Html.get_text(p)) 
 ```
 
-上記のコードでは、Gleamのライブラリを使用してウェブサイトからHTMLデータを取得し、指定した要素を抽出し、最終的にJSON形式で表示することができます。
+**例2：HTMLをフォーマットする**
 
-## ディープダイブ
+```Gleam
+let input_html = "
+<html>
+<body>
+<h1>This is a title</h1>
+</body>
+</html>
+"
 
-HTMLのパースには、いくつかの方法があります。上記のコードでは、`html.select`メソッドを使用しましたが、他にも`html.parse`や`html.decode`などのメソッドを使用することで、より詳細なパースが可能です。また、正規表現を使うことで、さらに柔軟なパースが可能です。
+let formatted = Html.format(input_html)
+Debug.assert_equal(
+  "<html>\n<body>\n  <h1>This is a title</h1>\n</body>\n</html>",
+  formatted
+)
+```
 
-さらに、Gleamではパターンマッチングを用いた強力なデータ構造が利用できるため、取得したHTMLデータを自由自在に操作することができます。これにより、より高度なウェブスクレイピングやデータ収集を実現することができます。
+## 深く掘り下げる：
+パーシングHTMLは、Web開発の歴史や現在のWebスクレイピングやデータ収集の手法の一つです。他にも、パーシングHTMLの代替手法としてXMLパーサーや正規表現があります。また、GleamでのHTMLパーシングは、一般的なHTMLパーサーよりもシンプルで柔軟な実装が特徴です。
 
-## 参考リンク
-
-- [Gleam公式ドキュメント](https://gleam.run/getting-started/)
-- [GleamのHTMLライブラリのドキュメント](https://gleam.run/packages/html/)
-- [Regular Expressions in Gleam](https://shinseitan.net/gleam-regular-expressions/)
+## 関連情報：
+- [Gleam公式ドキュメント](https://gleam.run/)
+- [HTMLパーサーの一覧](https://github.com/zbjornson/awesome-html-parsing)
+- [正規表現を使ったテキスト抽出の例](https://regexr.com/)

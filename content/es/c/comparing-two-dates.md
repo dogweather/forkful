@@ -10,80 +10,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¿Qué y por qué?
 
-¿Alguna vez te has preguntado cómo se pueden comparar dos fechas en un programa? Comparar dos fechas puede ser útil en muchos casos, como por ejemplo en aplicaciones de gestión de eventos o de seguimiento de tareas. En este artículo, te mostraré cómo puedes comparar dos fechas en C de manera sencilla y eficiente.
+Comparar dos fechas es un proceso común en programación que implica verificar si una fecha es igual, anterior o posterior a otra fecha. Los programadores realizan este tipo de comparaciones para realizar diferentes acciones según el resultado obtenido.
 
-## Cómo hacerlo
-
-Para comparar dos fechas en C, primero debemos entender cómo se manejan las fechas en este lenguaje. En C, las fechas se representan con la estructura `tm`, que contiene información como el año, mes, día, entre otros.
-
-Una forma de comparar dos fechas es convertir ambas en números enteros y luego compararlos. Por ejemplo, si tenemos dos fechas con la estructura `tm`, podemos utilizar la función `mktime` para convertirlas en tipo `time_t` y luego utilizar el operador comparador `>` o `<` para determinar cuál fecha es mayor o menor. Veamos un ejemplo:
+## Cómo hacerlo:
 
 ```C
 #include <stdio.h>
 #include <time.h>
 
-int main() {
-  // Creamos dos estructuras con fechas diferentes
-  struct tm fecha1 = { .tm_year = 2021, .tm_mon = 6, .tm_mday = 10 };
-  struct tm fecha2 = { .tm_year = 2020, .tm_mon = 6, .tm_mday = 10 };
+int main()
+{
+    // Definir dos estructuras tm para representar dos fechas
+    struct tm fecha1, fecha2;
 
-  // Convertimos ambas fechas a tipo time_t
-  time_t t1 = mktime(&fecha1);
-  time_t t2 = mktime(&fecha2);
+    // Asignar valores a las estructuras
+    fecha1.tm_year = 2020 - 1900;
+    fecha1.tm_mon = 11;
+    fecha1.tm_mday = 25;
+    fecha1.tm_hour = 0;
+    fecha1.tm_min = 0;
+    fecha1.tm_sec = 0;
 
-  // Comparamos las fechas utilizando los operadores > y <
-  if (t1 > t2) {
-    printf("La fecha 1 es mayor que la fecha 2\n");
-  } else if (t1 < t2) {
-    printf("La fecha 2 es mayor que la fecha 1\n");
-  } else {
-    printf("Las fechas son iguales\n");
-  }
+    fecha2.tm_year = 2021 - 1900;
+    fecha2.tm_mon = 0;
+    fecha2.tm_mday = 1;
+    fecha2.tm_hour = 0;
+    fecha2.tm_min = 0;
+    fecha2.tm_sec = 0;
 
-  return 0;
+    // Comparar las fechas utilizando la función difftime de la librería time.h
+    double diferencia = difftime(mktime(&fecha2), mktime(&fecha1));
+
+    if (diferencia == 0.0)
+        printf("Las fechas son iguales\n");
+    else if (diferencia > 0.0)
+        printf("La fecha 2 es posterior a la fecha 1\n");
+    else
+        printf("La fecha 1 es posterior a la fecha 2\n");
+
+    return 0;
 }
 ```
 
-El programa imprimirá "La fecha 1 es mayor que la fecha 2", ya que 2021 es mayor que 2020. Sin embargo, esta forma de comparar fechas puede ser un poco tediosa si tenemos que trabajar con muchas fechas diferentes. Para simplificar el proceso, podemos utilizar la función `difftime` que calcula la diferencia entre dos fechas en segundos, y luego dividirla entre la cantidad de segundos que hay en un día (86,400) para obtener el número de días de diferencia.
+La salida de este programa será: "La fecha 2 es posterior a la fecha 1", ya que la fecha 2 es el 1 de enero de 2021 y la fecha 1 es el 25 de diciembre de 2020.
 
-Veamos otro ejemplo, utilizando la función `difftime`:
+## Profundizando:
 
-```C
-#include <stdio.h>
-#include <time.h>
+En el pasado, los programadores debían manejar el cálculo de fechas de forma manual, utilizando algoritmos complejos. Sin embargo, con el avance de la tecnología, se crearon librerías y funciones que facilitaron esta tarea. Algunas alternativas a la función difftime son: la función difftime de la librería chrono de C++, la función datediff de la librería datetime de Python y la función DateDiff de SQL.
 
-int main() {
-  // Creamos dos estructuras con fechas diferentes
-  struct tm fecha1 = { .tm_year = 2021, .tm_mon = 6, .tm_mday = 10 };
-  struct tm fecha2 = { .tm_year = 2020, .tm_mon = 6, .tm_mday = 10 };
+La función difftime se basa en el concepto de timestamp, que representa la cantidad de segundos transcurridos desde el 1 de enero de 1970. Al restar los timestamps de dos fechas, obtenemos la diferencia en segundos. Luego, esta diferencia se puede convertir a días, meses o años utilizando el factor de conversión adecuado.
 
-  // Convertimos ambas fechas a tipo time_t
-  time_t t1 = mktime(&fecha1);
-  time_t t2 = mktime(&fecha2);
+## Ver también:
 
-  // Calculamos la diferencia entre ambas fechas en días
-  double diff = difftime(t1, t2) / 86400;
-
-  // Imprimimos el resultado
-  printf("La diferencia entre las dos fechas es de %.0f días\n", diff);
-
-  return 0;
-}
-```
-
-El programa imprimirá "La diferencia entre las dos fechas es de 365 días", ya que hay un año de diferencia entre 2021 y 2020.
-
-## Deep Dive
-
-En este artículo hemos visto dos formas sencillas de comparar fechas en C. Sin embargo, hay muchas más funciones y métodos que se pueden utilizar para trabajar con fechas y tiempos en este lenguaje. Algunas de ellas son `localtime`, `difftime`, `mktime`, `gmtime` y `strftime`.
-
-También es importante tener en cuenta que las fechas pueden variar dependiendo de la zona horaria en la que se encuentre el usuario. Por eso, es recomendable utilizar funciones específicas que se encarguen de manejar las diferencias horarias.
-
-Para profundizar más en el tema de fechas y tiempos en C, te recomiendo revisar la documentación oficial y practicar con diferentes ejemplos.
-
-## Ver también
-
-- [Documentación oficial de C](https://devblogs.microsoft.com/oldnewthing/20030218-00/?p=42223)
-- [
+- [Documentación de la función difftime de la librería time.h](https://www.cplusplus.com/reference/ctime/difftime/)
+- [Documentación de la función datediff de la librería datetime de Python](https://docs.python.org/3/library/datetime.html#datetime.date.datediff)
+- [Documentación de la función DateDiff de SQL](https://docs.microsoft.com/en-us/sql/t-sql/functions/datediff-transact-sql)

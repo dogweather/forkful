@@ -10,47 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum schreiben wir in die Standardfehlerausgabe? 
+# Was & Warum?
+Schreiben auf den Standardfehler oder "Standard-Error" ist ein Weg für Programmierer, um Fehlermeldungen und wichtige Informationen während der Laufzeit ihres Codes anzuzeigen. Dies ist besonders nützlich, wenn die Ausgabe auf dem Standardausgang oder "Standard-Output" für normale Ergebnisse verwendet wird.
 
-Wenn du in der Fish Shell arbeitest, könnte es vorkommen, dass du Programmierbefehle eingibst, die Fehler verursachen. Um diese Fehler zu erkennen und zu debuggen, ist es wichtig zu wissen, wie du sie in die Standardfehlerausgabe schreibst. In diesem Artikel werde ich erklären, warum wir in die Standardfehlerausgabe schreiben und wie du dies in der Fish Shell durchführen kannst.
-
-## So geht's:
-
-Um in die Standardfehlerausgabe zu schreiben, verwenden wir den Befehl `echo` mit dem Parameter `-e` und dem Redirect-Operator `2>`, der den Ausgabestrom in den Standardfehler umleitet. Hier ist ein Beispiel:
+# Wie geht's?
+Die Fish Shell verfügt über eine integrierte Funktion namens "echoerr", mit der Sie auf den Standardfehler schreiben können. Verwenden Sie einfach den Befehl "echoerr" gefolgt von dem gewünschten Text, und er wird auf dem Standardfehler ausgegeben. Zum Beispiel:
 
 ```Fish Shell
-echo -e "Dies ist ein Fehler." 2>
+echoerr "Oops, something went wrong."
 ```
 
-Diese Zeile wird den Text "Dies ist ein Fehler." in die Standardfehlerausgabe schreiben. Du kannst auch Variablen in die Standardfehlerausgabe schreiben, indem du sie in geschweifte Klammern setzt, wie in diesem Beispiel:
+Ausgabe:
+```
+Oops, something went wrong.
+```
+
+Sie können auch vorhandene Fehlermeldungen mit Ihren eigenen Texten kombinieren, indem Sie einfach den Befehl "echoerr" innerhalb eines "if" -Statements verwenden. Zum Beispiel:
 
 ```Fish Shell
-set variable "Fehler"
-echo -e "Es gab einen ${variable}." 2>
+if [ $num -lt 10 ]
+  echoerr "Die Nummer ist zu klein."
+end
 ```
 
-Die Ausgabe wird folgendermaßen aussehen:
-
+Ausgabe:
 ```
-Es gab einen Fehler.
-```
-
-## Tiefere Einblicke:
-
-Wenn du tiefer in das Schreiben in die Standardfehlerausgabe eintauchen möchtest, gibt es einige weitere Dinge, die du beachten kannst. 
-
-- Du kannst die Fehlermeldungen in Farbe formatieren, indem du den `red` oder `err` Farbcode verwendest. Zum Beispiel `echo -e (err "Fehlermeldung") 2>`.
-- Du kannst auch "Pipefail" verwenden, um Fehler in Pipelines zu erkennen und in die Standardfehlerausgabe zu schreiben. Hier ist ein Beispiel: 
-
-```Fish Shell
-set -o pipefail
-command1 | command2 2>
+Die Nummer ist zu klein.
 ```
 
-Dies wird Fehler in der Pipeline erkennen und in die Standardfehlerausgabe schreiben.
+# Tiefer tauchen
+Das Schreiben auf den Standardfehler ist eine gängige Praxis in der Programmierung und hat seine Wurzeln in den Unix-Systemen. Es ist eine effektive Methode, um wichtige Informationen anzuzeigen und gleichzeitig die Ausgabe auf dem Standardausgang frei zu halten.
 
-## Siehe auch:
+Wenn Sie Fish Shell nicht verwenden, können Sie stattdessen den Befehl "stderr" verwenden, um auf den Standardfehler zu schreiben. Einige andere Shells erfordern möglicherweise die Verwendung von ">" und "2>" , um auf den Standardfehler zu schreiben.
 
-- [Fish Shell Documentation - Standardfehlerausgabe schreiben](https://fishshell.com/docs/current/commands.html#echo)
-- [Fish Shell Tutorial - Fehlerbehandlung](https://fishshell.com/docs/current/tutorial.html#error-handling)
-- [Befehlsreferenz - Fish Shell Befehle](https://fishshell.com/docs/current/cmds.html)
+Die Fish Shell implementiert das Schreiben auf den Standardfehler unter Verwendung des Befehls "2>&1" , der den Standardfehler auf den Standardausgang umleitet. Dadurch können sowohl Fehlermeldungen als auch normale Ausgaben im selben Terminalfenster angezeigt werden.
+
+# Siehe auch
+- [Fish Shell Dokumentation] (https://fishshell.com/docs/current/index.html)
+- [Einführung in die Befehlszeilenschnittstelle] (https://wiki.ubuntuusers.de/Einf%C3%BChrung_in_die_Befehlszeile/)
+- [Kurze Geschichte von Unix] (https://www.computerhope.com/unix.htm)

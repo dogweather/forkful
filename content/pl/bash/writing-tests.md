@@ -1,7 +1,7 @@
 ---
-title:                "Pisanie testów."
-html_title:           "Bash: Pisanie testów."
-simple_title:         "Pisanie testów."
+title:                "Pisanie testów"
+html_title:           "Bash: Pisanie testów"
+simple_title:         "Pisanie testów"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Testing and Debugging"
@@ -10,39 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i Dlaczego?
+Testowanie kodu to proces sprawdzania jego poprawności i działania. Programiści robią to, aby upewnić się, że ich kod działa prawidłowo i aby uniknąć błędów w przyszłości.
 
-Czy kiedykolwiek zastanawiałeś się, dlaczego powinieneś pisać testy w Bashu? Testowanie jest nieodłączną częścią pisania kodu, a w Bashu jest to szczególnie ważne. Dzięki testom możesz mieć pewność, że twoje aplikacje będą działać zgodnie z oczekiwaniami, unikając nieprzewidzianych błędów.
+## Jak to zrobić:
+Poniżej znajdują się przykłady kodu i wyniku, które wyjaśnią, jak pisać testy w Bash. 
 
-## Jak To Zrobić
-
-Pisanie testów w Bashu jest bardzo proste i nie wymaga specjalistycznej wiedzy. Wystarczy najpierw napisać skrypt, który będzie testował określone funkcje lub zachowania, a następnie uruchomić go w terminalu. Poniżej znajdziesz przykładowy kod testu oraz jego wynik.
-
- ```Bash
+```Bash 
 #!/bin/bash
 
-# Przykładowy test sprawdzający czy podana liczba jest parzysta
-result=$(./test.sh 4)
+# Przykładowy skrypt, którego wynik chcemy przetestować
+# Ten skrypt po prostu wyświetla "Hello World"
 
-if [ "$result" = "liczba parzysta" ]; then
-  echo "Test Passed"
+echo "Hello World"
+```
+
+```Bash
+#!/bin/bash
+
+# Skrypt testowy
+# Sprawdzamy, czy wynik wyświetla się poprawnie
+
+EXPECTED="Hello World" 
+# zmienna z oczekiwanym wynikiem
+
+OUTPUT=$(./hello_world.sh)
+# przypisujemy wynik skryptu do zmiennej
+
+if [ "$OUTPUT" == "$EXPECTED" ]; then 
+    # sprawdzamy, czy wyniki są takie same
+    echo "Test passed!" 
+    # jeśli tak, wyświetlamy komunikat o poprawnym teście
 else
-  echo "Test Failed"
+    echo "Test failed!" 
+    # jeśli nie, wyświetlamy komunikat o nieudanym teście
 fi
-
 ```
 
+## Deep Dive:
+Testowanie kodu jest częścią rozwoju oprogramowania, które powstało na początku lat 50. XX wieku. Alternatywą dla pisania testów w Bash jest użycie narzędzia do automatyzacji testów, np. Selenium. W Bash możemy pisać testy jednostkowe dla pojedynczych funkcji w skrypcie lub testować całe skrypty na różnych systemach operacyjnych.
 
- ```Bash
-Test Passed
-```
-
-## Głębszy Wgląd
-
-Istnieje wiele narzędzi, które mogą pomóc Ci w pisaniu testów w Bashu, takich jak np. framework Bats (Bash Automated Testing System) lub wbudowany w Bash funkcjonalność `test`. Ważne jest również, aby pisać testy w taki sposób, aby były przenośne i działały na różnych systemach operacyjnych oraz w różnych środowiskach.
-
-## Zobacz Również
-
-- [Dokumentacja Bats](https://github.com/sstephenson/bats)
-- [Wprowadzenie do testów w Bashu](https://opensource.com/article/18/9/introduction-bash-testing)
-- [Porządki z testami w Bashu](https://www.jeffgeerling.com/blog/2017/testing-your-shell-scripts-bats)
+## Zobacz także:
+- [Bash nieformalny podręcznik](http://intertwingly.net/projects/bashcmd/) - przydatna strona z instrukcjami i przykładami dla początkujących użytkowników Bash.
+- [SeleniumHQ](https://www.seleniumhq.org/) - narzędzie do automatyzacji testów dla stron internetowych.
+- [Testowanie jednostkowe w Bash](https://github.com/lehmannro/assert.sh) - biblioteka pozwalająca na pisanie testów jednostkowych w Bash.

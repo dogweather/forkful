@@ -10,68 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
+Searching and replacing text is the process of finding specific strings of characters and replacing them with new ones. This is a common task for programmers who need to make changes to a large amount of code or data quickly and efficiently.
 
-Searching and replacing text is a common task in programming, especially when working with large files or repetitive tasks. Using the Fish Shell's built-in functions for searching and replacing offers a more efficient and streamlined approach to this task, saving you time and effort.
-
-## How To
-
-To search and replace text in the Fish Shell, we will be using the `sed` and `awk` commands. These commands allow us to specify patterns in a text file and replace them with new text.
-
-To search and replace using `sed`, we use the following syntax:
+## How to:
+To search and replace text using the Fish Shell, you can use the `sed` and `awk` commands. These commands can be used within a `for` loop to iterate through multiple files, making it easier to make changes in bulk.
 
 ```
 Fish Shell:
-sed 's/search/replace/g' file.txt
+
+for file in *.txt
+sed -i 's/old_text/new_text/g' $file
+awk '{gsub("old_text", "new_text")}' $file
+echo "Changes made in $file"
+done
 ```
 
-This command will search for the pattern "search" in the file "file.txt" and replace it with "replace". The "g" at the end of the command ensures that all instances of the pattern are replaced, not just the first one.
+The first line of code sets up a `for` loop to iterate through all files with a `.txt` extension. The `sed` command then finds and replaces all instances of "old_text" with "new_text" in each file, using the `-i` flag to make changes in the original file. The `awk` command does the same, but using a different syntax. Finally, an `echo` statement is included to show which file the changes were made in.
 
-For example, if we have a file named "test.txt" with the following content:
+## Deep Dive:
+The `sed` and `awk` commands have been around since the 1970s and are commonly used for text processing. There are other alternatives like `perl` and `grep`, but `sed` and `awk` are typically faster and more efficient.
 
-```
-This is a test sentence.
-```
+Searching and replacing text can also be accomplished using regular expressions, which allow for more advanced search patterns. These can be used instead of a specific text string in the `sed` and `awk` commands.
 
-And we want to replace all instances of the word "test" with "replace", we can use the following command:
+In the Fish Shell, `sed` and `awk` are implemented as external commands, meaning they are not built into the shell itself. This allows for flexibility and the ability to use other tools for searching and replacing text if needed.
 
-```
-Fish Shell:
-sed 's/test/replace/g' test.txt
-```
-
-The output will be:
-
-```
-This is a replace sentence.
-```
-
-`awk` works in a similar way, but allows us to specify more complex patterns. Here's the syntax for using `awk`:
-
-```
-Fish Shell:
-awk '{gsub(/pattern1/, "replacement string"); print}' file.txt
-```
-
-Using the same example as before, we can use `awk` to replace all instances of "test" with "replace" with the following command:
-
-```
-Fish Shell:
-awk '{gsub(/test/, "replace"); print}' test.txt
-```
-
-The output will be the same as the `sed` command.
-
-## Deep Dive
-
-Both `sed` and `awk` have more advanced options for searching and replacing text. For example, we can use regular expressions with `sed`, allowing us to specify more complex patterns to search for. We can also use flags such as "i" to make the search case-insensitive.
-
-Similarly, `awk` allows us to specify more complex patterns using regular expressions. It also has additional built-in functions for manipulating text, making it a powerful tool for searching and replacing.
-
-For more information on the syntax and available options for `sed` and `awk`, refer to their respective documentations.
-
-## See Also
-
-- [Fish Shell Official Documentation](https://fishshell.com/docs/current/)
-- [sed Command Documentation](https://www.gnu.org/software/sed/manual/sed.html)
-- [awk Command Documentation](https://www.gnu.org/software/gawk/manual/gawk.html)
+## See Also:
+- [Fish Shell Documentation](https://fishshell.com/docs/current/)
+- [sed command tutorial](https://www.geeksforgeeks.org/sed-command-in-linux-unix-with-examples/)
+- [awk command tutorial](https://www.geeksforgeeks.org/awk-command-unixlinux-examples/)

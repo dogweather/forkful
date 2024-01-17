@@ -10,53 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que escrever testes no Fish Shell?
+## O que e Por que?
 
-Testes são uma parte crucial do processo de desenvolvimento de software. Eles permitem que os desenvolvedores encontrem e corrijam bugs antes que o código seja implantado em produção. No Fish Shell, escrever testes é particularmente importante porque ajuda a garantir que nossos scripts e comandos funcionem corretamente e evita surpresas indesejadas ao usá-los.
+Escrever testes como parte do processo de desenvolvimento de software é uma prática comum entre programadores. Esses testes são códigos escritos para verificar se o código principal está funcionando corretamente. Eles são importantes porque ajudam os programadores a detectar e corrigir rapidamente problemas em seu código, garantindo que o software final seja de alta qualidade.
 
 ## Como fazer:
 
-```Fish Shell
-#!/usr/bin/fish
+Os testes podem ser escritos no Fish Shell usando a estrutura de testes integrada, que é conhecida como `fish unittest`. Aqui está um exemplo simples de como escrever um teste para verificar se uma função `add` retorna a soma correta de dois números:
 
-# Importar a biblioteca de testes
-source tests.fish
-
-# Definir uma função que será testada
-function soma
-    set a $argv[1]
-    set b $argv[2]
-    math "$a + $b"
+```
+fish unittest add_test
+function add
+  echo $1 + $2 | bc
 end
 
-# Chamar a função de teste
-test "Soma de 2 + 3 deve ser igual a 5" "soma 2 3" -eq 5
-
-# Executar todos os testes
-run_tests
+add_test "Should return correct sum" 5 2; and status 0; and eq $output 7
 ```
 
-Ao rodar o script, o resultado será exibido em forma de tabela, indicando se os testes passaram ou falharam:
+A primeira linha `fish unittest add_test` define o nome do teste e `function add` define a função `add` a ser testada. Em seguida, é usada a ferramenta `bc` para realizar a adição e o resultado é armazenado em `output`. O último comando verifica se o teste teve êxito, fornecendo uma mensagem personalizada e verificando se o resultado é igual a 7.
 
-```
-SUITE                             PASS FAIL
-----                              ---- ----
-Soma de 2 + 3 deve ser igual a 5  1    0
-```
+## Mergulho Profundo:
 
-## Profundidade:
+Escrever testes é uma prática importante na programação moderna, pois ajuda a garantir que o código seja confiável e tenha poucos bugs. Existem outras ferramentas de teste disponíveis, como o `fish -n` para verificar a sintaxe e a `fish -c` para testar comandos individuais. Também é possível usar a linguagem de script `fish bundle` para escrever testes mais complexos e personalizados.
 
-Ao escrever testes no Fish Shell, é importante entender alguns conceitos básicos:
+## Veja Também:
 
-- Os testes são escritos na forma de funções e podem ser chamados em qualquer lugar do script.
-- A função `test` é usada para definir um teste, ela possui três argumentos: uma mensagem de descrição, o comando a ser testado e a condição de sucesso.
-- A função `run_tests` é usada para executar todos os testes definidos no script.
-
-Outra técnica importante é usar o comando `bt_run` para rodar testes rapidamente enquanto se está trabalhando em um script. Isso permite uma iteração mais eficiente e descobrir possíveis erros de forma mais ágil.
-
-## Veja também:
-
-- [Documentação oficial do Fish Shell](https://fishshell.com/docs/current/index.html)
-- [Como escrever testes automatizados eficientes no Fish Shell](https://spin.atomicobject.com/2016/11/29/shell-script-tested/)
-
-Agora que você já sabe como escrever testes no Fish Shell, experimente e descubra como essa prática pode melhorar a qualidade dos seus scripts e comandos.
+- [Documentação oficial do Fish Shell para testes](https://fishshell.com/docs/current/#fish-unittest)
+- [Artigo sobre práticas de teste no Fish Shell](https://www.signalvnoise.com/posts/3350-test-driven-development-with-fish-shell)
+- [Ferramenta de teste Fish-Mock](https://fish-mock.readthedocs.io/en/latest/)

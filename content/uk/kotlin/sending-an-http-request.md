@@ -1,7 +1,7 @@
 ---
-title:                "Надсилання http запиту"
-html_title:           "Kotlin: Надсилання http запиту"
-simple_title:         "Надсилання http запиту"
+title:                "Надсилання запиту http"
+html_title:           "Kotlin: Надсилання запиту http"
+simple_title:         "Надсилання запиту http"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "HTML and the Web"
@@ -10,42 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Чому
-Відсилання HTTP-запиту є необхідним елементом веб-розробки. Це дозволяє програмістам взаємодіяти з сервером та отримувати необхідну інформацію.
+Що & Чому?
+Відправлення запиту HTTP - це процес, який використовують програмісти для взаємодії зі стороннім сервером і отримання потрібної інформації. Розробники часто використовують цей механізм для отримання даних з інтернету або для отримання відповіді з веб-додатку.
 
-## Як
+Як це зробити:
+Простий приклад відправлення запиту HTTP за допомогою бібліотеки Ktor, який виводить відповідь у консоль:
+
 ```Kotlin
-import java.net.*
-
-// встановлення URL за допомогою строкового значення
-val url = URL("https://example.com")
-
-// створення підключення HTTP за допомогою методу openConnection ()
-val connection = url.openConnection() as HttpURLConnection
-
-// встановлення типу запиту та коду відповіді
-connection.requestMethod = "GET"
-
-// встановлення таймауту та вказівки про використання кешу
-connection.connectTimeout = 5000
-connection.useCaches = true
-
-// отримання вихідного потоку та зчитування даних з відповіді
-val inputStream = connection.inputStream
-val response = inputStream.reader().readText()
-
-// закриття підключення
-connection.disconnect()
-
-// виведення відповіді на екран
-println(response)
+fun main() {
+    val client = HttpClient(CIO)
+    runBlocking {
+        val response: HttpResponse = client.get("https://google.com")
+        println(response.readText())
+    }
+    client.close()
+}
 ```
+Результат виконання: HTML сторінка "https://google.com" виведена у консоль.
 
-## Глибоке дослідження
-Відправка HTTP-запиту використовує протокол TCP (Transmission Control Protocol), який забезпечує надійну передачу даних через інтернет. Щоб побачити, як саме відбувається процес відправки запиту, можна скористатися інструментами для знімання мережевого трафіку, наприклад Wireshark або Fiddler. Це дозволить відстежувати передачу даних під час взаємодії з сервером.
+Поглиблене дослідження:
+Відправлення запитів HTTP є невід'ємною частиною багатьох сучасних веб-додатків. Його метою є отримання даних з інтернету або взаємодія з різними сервісами. Крім стандартного методу GET, є ще інші HTTP методи, такі як POST, PUT, DELETE, які дозволяють передавати дані на сервер або виконувати певні дії. У Kotlin існує декілька бібліотек для взаємодії з сервером, включаючи Ktor, OkHttp і Retrofit.
 
-## Дивіться також
-- [Official Kotlin Website](https://kotlinlang.org)
-- [Java URL class documentation](https://docs.oracle.com/javase/7/docs/api/java/net/URL.html)
-- [Wireshark download](https://www.wireshark.org/download.html)
-- [Fiddler download](https://www.telerik.com/download/fiddler)
+Додатково, Інтернет протокол HTTP використовується для передачі даних між клієнтом і сервером. Цей протокол був розроблений більше 30 років тому і постійно покращується і розширюється. Є також нові версії протоколу, такі як HTTP/2, які дають змогу передавати дані більш ефективно та безпечно.
+
+Дивіться також:
+Існує безліч ресурсів, які можуть бути корисними для подальшого дослідження, включаючи документацію Ktor, OkHttp та Retrofit, а також протоколу HTTP. Крім того, на сайті Codeacademy існує практичний курс, який допоможе вам освоїти навички використання HTTP запитів у своїх проектах.

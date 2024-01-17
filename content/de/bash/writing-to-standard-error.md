@@ -1,7 +1,7 @@
 ---
-title:                "Schreiben auf den Standardfehler"
-html_title:           "Bash: Schreiben auf den Standardfehler"
-simple_title:         "Schreiben auf den Standardfehler"
+title:                "Schreiben zum Standardfehler"
+html_title:           "Bash: Schreiben zum Standardfehler"
+simple_title:         "Schreiben zum Standardfehler"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Files and I/O"
@@ -10,39 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was & Warum?
 
-Warum sollte man überhaupt auf die Standardfehlerausgabe schreiben? Nun, das hat mehrere Gründe. Zum einen kann es helfen, Fehler in einem Bash-Skript zu identifizieren und zu debuggen. Zum anderen kann es auch nützlich sein, um Benutzer über wichtige Informationen oder Fortschritte während der Ausführung eines Skripts zu informieren.
+Das Schreiben von Fehlern auf den Standardfehler ist eine Möglichkeit für Programmierer, Fehler und Probleme in ihrem Code anzuzeigen. Es ist eine gängige Praxis, die es Programmierern ermöglicht, Fehler zu erkennen und zu beheben, um sicherzustellen, dass ihr Code richtig funktioniert.
 
-## Wie es funktioniert
+## Wie geht es?
 
-Das Schreiben auf die Standardfehlerausgabe ist in Bash recht einfach. Man muss einfach den Befehl `echo` followed by `>&2` verwenden, um den Output auf den Standardfehler zu leiten. Hier ist ein Beispiel:
+Um Fehler auf den Standardfehler zu schreiben, kann das "echo" Kommando verwendet werden. Zum Beispiel:
 
-```Bash
-# Beispiel Bash-Skript:
-
-#!/bin/bash
-
-echo "Das ist ein Beispiel für die Standardausgabe." # Dieser Output geht auf die Standardausgabe.
-echo "Dies ist ein Beispiel für den Standardfehler." >&2 # Dieser Output geht auf die Standardfehlerausgabe.
+```Bash 
+echo "Fehler: Datei nicht gefunden" 1>&2 
 ```
 
-Die Ausführung dieses Skripts würde folgendes Ergebnis zeigen:
+Dies wird den Fehler "Datei nicht gefunden" auf den Standardfehler ausgeben, anstatt auf den Standardausgang.
 
-```
-Das ist ein Beispiel für die Standardausgabe.
-Dies ist ein Beispiel für den Standardfehler.
-```
+## Tiefes Eintauchen
 
-Man kann auch Variablen in die Standardfehlerausgabe schreiben, indem man das `>&2` an den entsprechenden Stellen im Skript platziert.
+Das Schreiben von Fehlern auf den Standardfehler hat eine lange Geschichte in der Welt der Programmierung. Frühere Programmiersprachen hatten möglicherweise keine Möglichkeit, Fehler anzuzeigen, was zu einer Vielzahl von Fehlern und ineffizientem Code führte. Eine Alternative zum Schreiben auf den Standardfehler ist die Verwendung eines Protokollierungstools wie "syslog", um Fehler in einem System zu verfolgen.
 
-## Tiefere Einblicke
-
-Es gibt verschiedene Möglichkeiten, auf die Standardfehlerausgabe zu schreiben. Eine Möglichkeit ist die Verwendung des `error` Befehls in Bash, der speziell für diesen Zweck entwickelt wurde. Dieser Befehl erlaubt es auch, den Output in verschiedene Farben zu formatieren, um die Lesbarkeit zu verbessern.
-
-Eine andere Möglichkeit ist die Verwendung der `trap` Funktion, die es einem erlaubt, einen bestimmten Befehl oder ein Skript auszuführen, wenn ein bestimmter Fehler auftritt. Zum Beispiel kann man mit der `trap` Funktion einen benutzerdefinierten Fehlermeldungs-Output auf die Standardfehlerausgabe schreiben, wenn ein Skript aufgrund eines Fehlers abgebrochen wird.
+Die Implementierung des Schreibens auf den Standardfehler in Bash ist relativ einfach und erfordert nur die Verwendung der "echo" und "1>&2" Befehle, um den Fehler auf den Standardfehler auszugeben.
 
 ## Siehe auch
 
-- [Bash-Skripte debuggen](https://linuxhandbook.com/debug-bash-scripts/)
-- [Was ist die Standardfehlerausgabe in Bash?](https://www.linuxjournal.com/content/understanding-bash-what-new-shell-programmer-needs-know-part-iv)
+Weitere Informationen zum Schreiben von Fehler auf den Standardfehler finden Sie in der offiziellen [Bash-Dokumentation](https://www.gnu.org/software/bash/manual/html_node/Bourne-Shell-Builtins.html) und in diesen hilfreichen [Tipps für den Umgang mit Fehlern in Bash](https://www.davidpashley.com/articles/writing-robust-shell-scripts/#id2382187).

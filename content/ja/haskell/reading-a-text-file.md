@@ -1,7 +1,7 @@
 ---
-title:                "「テキストファイルの読み込み」"
-html_title:           "Haskell: 「テキストファイルの読み込み」"
-simple_title:         "「テキストファイルの読み込み」"
+title:                "テキストファイルの読み込み"
+html_title:           "Haskell: テキストファイルの読み込み"
+simple_title:         "テキストファイルの読み込み"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Files and I/O"
@@ -10,57 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+## 何で？：テキストファイルの読み込みとは何か、そしてプログラマーがそれを行う理由を２〜３文で説明します。
 
-テキストファイルを読み込むことは、プログラミングで必要不可欠なスキルです。テキストファイルには、ユーザーからの入力やプログラムの出力など、様々な情報が含まれています。Haskellを使ってテキストファイルを読み込む方法を学ぶことで、より多くのタイプのプログラムを作成することができます。
+プログラマーがテキストファイルを読み込むのは、コンピューター上で文字情報を処理するためです。例えば、プログラムのソースコードやデータファイルを読み込む際に使用されます。
 
-## 使い方
-
-まずは、ファイルを開くための関数をインポートします。
-
-```Haskell
-import System.IO
-```
-
-次に、openFile関数を使用して、ファイルを読み込みモードで開きます。読み込みモード以外にも、書き込みや追記モードなど、さまざまなモードがあります。
+## 使い方：
 
 ```Haskell
 main = do
-  handle <- openFile "file.txt" ReadMode
-  -- ファイルを読み込む処理を記述
+  f <- readFile "example.txt"
+  putStrLn f
 ```
 
-ファイルを読み込む処理は、hGetContents関数を使用して、ファイルの内容を文字列として取得します。また、hClose関数を使用して、ファイルを閉じます。
+上記のコードは、"example.txt"というファイルを読み込んでその内容を画面に出力するものです。ご覧のように、Haskellではテキストファイルを読み込むためにreadFile関数を使用します。また、プログラム内で読み込んだファイルの内容を変数に格納することもできます。例えば、```f <- readFile "example.txt"```でファイルの内容を変数fに格納しています。
 
-```Haskell
-main = do
-  handle <- openFile "file.txt" ReadMode
-  contents <- hGetContents handle
-  putStrLn contents
-  hClose handle
-```
+## 詳細：
 
-これで、ファイルの内容がコンソールに表示されます。
+テキストファイルの読み込みは、古くから使用されていたプログラミングの基本操作の一つです。他にも、バイナリファイルの読み込みやデータベースからのデータの取得といった方法もありますが、テキストファイルの読み込みが最もシンプルで使いやすい方法の一つです。Haskell以外のプログラミング言語でも同様の機能がサポートされています。
 
-## ディープダイブ
+## 関連情報：
 
-openFile関数の第二引数には、どのようなモードを指定することができるのか、詳しく見てみましょう。
+読み込んだテキストファイルを書き込むこともできます。その場合は、```writeFile```関数を使用します。詳しくはHaskellの公式ドキュメントを参照してください。
 
-| モード      | 説明                     |
-|:---------:|:------------------------:|
-| ReadMode  | 読み込みモード           |
-| WriteMode | 書き込みモード（ファイルが存在しない場合は作成） |
-| AppendMode| 追記モード（ファイルが存在しない場合は作成） |
-| ReadWriteMode | 読み書きモード |
-
-また、ファイルを開く際に、文字コードを指定することもできます。デフォルトの文字コードは、システムのデフォルト文字コードになります。
-
-上記のコードの例では、ファイルの内容を文字列として取得していますが、hGetChar関数を使用することで、ファイルから1文字ずつ読み込むこともできます。
-
-詳しい内容や、さらに他の関数については、公式ドキュメントを参照してください。
-
-## 参考リンク
-
-- [Haskell 公式ドキュメント](https://www.haskell.org/documentation/)
-- [Learn You a Haskell for Great Good!](http://learnyouahaskell.com/)
-- [Hoogle - Haskellの関数検索エンジン](https://www.haskell.org/hoogle/)
+参考資料：
+- [Haskell 公式ドキュメント](https://www.haskell.org/documentation)

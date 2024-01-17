@@ -1,7 +1,7 @@
 ---
-title:                "टेक्स्ट फ़ाइल लिखना"
-html_title:           "C: टेक्स्ट फ़ाइल लिखना"
-simple_title:         "टेक्स्ट फ़ाइल लिखना"
+title:                "एक पाठ फ़ाइल लिखना"
+html_title:           "C: एक पाठ फ़ाइल लिखना"
+simple_title:         "एक पाठ फ़ाइल लिखना"
 programming_language: "C"
 category:             "C"
 tag:                  "Files and I/O"
@@ -10,31 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Kyun
-Agar aap C programming language ke sath kaam kar rahe hain toh shayad aapne kabhi na kabhi text files ke jaal ko experience kiya hoga. Text files hamare code ke liye ek essential part hote hain jisko ham user input, output ya storage ke liye istemal karte hain. Is article mein hum baat karenge ki kis tarah se aap C mein text file ko likh sakte hain.
+## क्या और क्यों?
+टेक्स्ट फाइल लिखना एक प्रोग्रामर के लिए काफी महत्वपूर्ण होता है। यह एक साधारण पाठ फ़ाइल है जिसमें भाषा में लिखा गया कोड संग्रहीत होता है। प्रोग्रामर इसका उपयोग अपने काम को आसान बनाने और सारांश देने के लिए करते हैं।
 
-## Kaise
-Sabse pehle hum file handle ko declare karte hain. File handle ek special variable hota hai jiska istemal file ke data ko read aur write karne ke liye kiya jata hai. Iske baad hum `fopen()` function ka istemal karte hain jiska syntax `FILE *fopen(const char *filename, const char *mode)` hota hai. Is function mein filename aur mode specify kiya jata hai. Mode ko "w" assign karne se ek file ko write karne ka permission milta hai. Uske baad hum `fprintf()` function ka istemal karte hain jiska syntax `int fprintf(FILE *f, const char *format, ...)` hota hai. Yeh function text file mein data likhne ke liye use kiya jata hai. Iske baad hum file ko close kar dete hain `fclose()` function ka istemal karke.
+## कैसे:
+```C
+// एक नया टेक्स्ट फाइल कैसे बनाएं
+FILE *fp; // फाइल पॉइंटर बनाएं
+fp = fopen("myfile.txt", "w"); // फाइल खोलें लेकिन अगर फाइल पहले से ही मौजूद है तो उसकी सामग्री मिटा दें
+// यहां आप कुछ भी लिख सकते हैं, जैसे
+fprintf(fp, "यह टेक्स्ट फाइल पर लिखता है");
+// फाइल को बंद करें 
+fclose(fp); 
+```
+
+टेक्स्ट फ़ाइल लिखने के दूसरों तरीके:
 
 ```C
 #include <stdio.h>
-int main() {
-  FILE *fp;
-  fp = fopen("example.txt", "w");
-  fprintf(fp, "Hello, world!");
+int main()
+{
+  char sentence[100];
+
+  printf("कुछ लिखिए: ");
+  fgets(sentence, 100, stdin); // स्टैंडर्ड इनपुट से स्ट्रिंग प्राप्त करें
+  FILE *fp = fopen("myfile.txt", "w");
+  fputs(sentence, fp); // फाइल में स्ट्रिंग लिखें
   fclose(fp);
   return 0;
 }
 ```
+### नतीजा:
+जब आप पहले तरीके से लिखते हैं, तो फ़ाइल में "यह टेक्स्ट फाइल पर लिखता है" लिखा जाता है। और जब आप दूसरे तरीके से लिखते हैं, तो आप जो भी लिखे थे वह फ़ाइल में लिख दिया जाता है।
 
-Jab aap is code ko run karenge, toh aapko current working directory mein "example.txt" naam ka ek text file milega jisme "Hello, world!" likha hua hoga.
+## गहराई में चलंचित होइए:
+एक हज़ार साल पहले, टेक्स्ट फाइल नहीं थे, लेकिन और प्रोग्रामर उन कोडों से परिचित थे जो भाषा में लिखे गए थे। आजकल, टेक्स्ट फाइल अभी भी प्रिंटर, टेक्स्ट एडिटर और ग्राफिकल इंटरफ़ेस जैसे इनपुट डिवाइसेज़ पर लेखन के लिए उपयोगी हैं।
 
-## Deep Dive
-Is section mein hum text file ke likhne ke process ko aur detail mein jaayenge. Sabse pehle `fopen()` function ke baare mein baat karte hain. Is function mein humne `const char *filename` aur `const char *mode` use kiya. `const` ka matlab hai ki hum is variable mein value assign nahi kar sakte hain. `char` data type string ko represent karta hai aur `*` operator ka istemal us variable ki memory address ko point karne ke liye kiya jata hai. `fopen()` function se hume ek pointer return hota hai jo hum file handle mein assign kar sakte hain.
+अन्य विकल्पों में, आप इससे अधिक जान सकते हैं, जैसे किसी अन्य भाषा कोड, जैसे Python में टेक्स्ट फाइल लिखना, जो आपको जिसमें अधिक से अधिक लिखने दे सकता है। आप भी फ़ाइल विकल्प देख सकते हैं, जैसे पेटेंट प्रिंटर या एक हार्ड कापी कोड।
 
-Agar aap text file mein multiple lines likhna chahte hain, toh `fprintf()` function mein `"\n"` ka istemal karke line break kar sakte hain. Iske alawa hum `fprintf()` function mein variables, integers, floats, characters, etc. bhi print kar sakte hain. `fclose()` function ka istemal file ko address ko release karne ke liye kiya jata hai.
+टेक्स्ट फाइल देखने के अपने विकल्प में से एक ब्राउज़र हो सकता है, यह आप के पास फ़ाइल प्रभावन देख सकता है। भी देख: [ये बार टेक्स्ट फ़ाइल](https://mkyong.com/c/how-to-read-file-in-c-programming/)
 
-## See Also
-- [C File Input/Output](https://www.programiz.com/c-programming/c-file-input-output)
-- [File Handling in C](https://www.tutorialspoint.com/cprogramming/c_file_io.htm)
-- [C File Handling Tutorial](https://www.youtube.com/watch?v=1PZ7fVJHwN0)
+## और देखें:
+- [फाइल बनाने के तरीके](https://www.programiz.com/c-program

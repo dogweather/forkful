@@ -1,7 +1,7 @@
 ---
-title:                "Att hämta aktuellt datum"
-html_title:           "Kotlin: Att hämta aktuellt datum"
-simple_title:         "Att hämta aktuellt datum"
+title:                "Att få nuvarande datum"
+html_title:           "Kotlin: Att få nuvarande datum"
+simple_title:         "Att få nuvarande datum"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Dates and Times"
@@ -10,36 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
-Innan vi dyker in i hur man hämtar det aktuella datumet i Kotlin, låt oss först prata om varför det är viktigt. Att kunna hämta det aktuella datumet är en viktig del av många programmeringsuppgifter. Det kan hjälpa oss att hålla reda på när en viss händelse inträffade, spela in tidsstämplingar för transaktioner eller enkelt visa det aktuella datumet för användaren i ett gränssnitt.
+# Vad & Varför?
 
-## Hur man hämtar det aktuella datumet
-Att hämta det aktuella datumet i Kotlin är enkelt och kan göras på flera olika sätt. Ett sätt är att använda klassen `java.util.Calendar` och dess `getInstance()` metod för att skapa en instans av kalendern.
+Att få den nuvarande datumet i en Kotlin-applikation är en enkel men viktig uppgift för programmerare. Det hjälper till att hålla spår på tidsrelaterad data och göra viktiga beslut baserade på aktuell tid. Det är också användbart för att hantera tidszoner och datumformatering i en applikation.
 
-```Kotlin
-val currentDate = Calendar.getInstance()
-println(currentDate.time) // output: Sat Apr 03 14:19:46 EDT 2021
-```
+# Hur?
 
-En annan metod är att använda klassen `java.time.LocalDate` från Javas nya tids-API.
+Använd nedanstående kodexempel för att få den aktuella datumet i Kotlin:
 
 ```Kotlin
-val currentDate = LocalDate.now()
-println(currentDate) // output: 2021-04-03
+val currentDate = java.util.Date()
+println(currentDate)
+```
+Output:
+```
+Sun May 02 14:22:37 CEST 2021
 ```
 
-## Djupdykning
-För de som vill ha lite djupare kunskap om hur man hämtar det aktuella datumet i Kotlin, låt oss titta på det första exempelkodet igen och bryta ner det steg för steg.
+Du kan också få datumet i ett specifikt format genom att använda `SimpleDateFormat` klassen och `format()` metoden. Till exempel:
 
-Först skapar vi en instans av `Calendar` klassen med hjälp av `getInstance()` metoden. Detta ger oss en kalenderinstans med aktuellt datum och tid som standard. Vi kan också ställa in ett specifikt datum och tid på kalendern om det behövs.
+```Kotlin
+val sdf = SimpleDateFormat("dd/MM/yyyy")
+val currentDate = sdf.format(java.util.Date())
+println(currentDate)
+```
+Output:
+```
+02/05/2021
+```
 
-Sedan använder vi `time` metoden för att få ett `java.util.Date` objekt som representerar det aktuella datumet och tiden. Sedan skriver vi ut det till konsolen med `println()`.
+# Djupdykning
 
-Om vi istället använder `LocalDate` måste vi förstå den nya tids-API:et som introducerades i Java 8. Denna API använder den ISO-datum standarden och har förbättrad funktionalitet jämfört med den äldre `Calendar` klassen.
+Förutom att använda standard Java-bibliotek kan du också använda Kotlin Date and Time API för att hantera datum och tid. Detta API tillhandahåller en mängd olika metoder och klasser som gör det enkelt att manipulera datum och tid i en applikation.
 
-## Se även
-Om du vill lära dig mer om att hämta datum i Kotlin, här är några användbara resurser:
+Alternativt kan du använda bibliotek som Joda-Time och ThreeTenABP för mer avancerade funktioner och bättre prestanda inom hantering av datum och tid.
 
-- [Dokumentation för Java Calendar klassen](https://docs.oracle.com/javase/8/docs/api/java/util/Calendar.html)
-- [Dokumentation för Java 8 tids-API](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
-- [Kotlin Standard Library - Datum och tid](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.time/index.html#date-time-apis)
+Vid implementering, se alltid till att hantera datum och tid noga eftersom det kan påverka användarnas upplevelse och applikationens funktion. Se till att hantera tidszoner korrekt och undvika buggar och felaktigheter relaterade till datum och tid.
+
+# Se även
+
+- Kotlin Date and Time API dokumentation: https://kotlinlang.org/docs/datetime.html
+- Joda-Time bibliotek: https://www.joda.org/joda-time/
+- ThreeTenABP bibliotek: https://github.com/JakeWharton/ThreeTenABP

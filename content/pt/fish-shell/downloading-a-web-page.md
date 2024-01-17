@@ -1,7 +1,7 @@
 ---
-title:                "Baixando uma página da web"
-html_title:           "Fish Shell: Baixando uma página da web"
-simple_title:         "Baixando uma página da web"
+title:                "Baixando uma página da web."
+html_title:           "Fish Shell: Baixando uma página da web."
+simple_title:         "Baixando uma página da web."
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "HTML and the Web"
@@ -10,31 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que baixar uma página da web?
+O que é e por que fazer o download de uma página da web?
 
-Você pode querer baixar uma página da web por diversos motivos, como ter acesso offline ao conteúdo ou para realizar tarefas de desenvolvimento de sites. Independentemente do motivo, o Fish Shell oferece uma maneira simples e eficiente de realizar essa tarefa.
+Fazer o download de uma página da web significa salvar o conteúdo de uma página da web em seu computador ou dispositivo. Os programadores fazem isso para acessar o conteúdo da página de forma mais conveniente ou para extrair informações específicas da página para uso em seus projetos.
 
-## Como fazer:
+Como fazer o download de uma página da web usando Fish Shell?
 
-Para baixar uma página da web usando o Fish Shell, basta seguir os seguintes passos:
+Existem várias maneiras de fazer o download de uma página da web usando Fish Shell. Aqui estão duas maneiras simples de fazer isso:
 
-1. Abra o terminal e navegue até o diretório onde deseja salvar a página baixada.
-2. Digite o seguinte comando:
+1. Usando o comando `curl` para baixar o conteúdo da página e salvá-lo em um arquivo:
+
 ```
-fish -c "curl -o nome_do_arquivo.html url_da_página"
+curl -o nome_do_arquivo.html URL_da_página
 ```
-3. Substitua "nome_do_arquivo" pelo nome que deseja dar ao arquivo baixado e "url_da_página" pelo endereço da página que deseja baixar.
 
-Pronto! A página será baixada e salva no diretório especificado.
+2. Usando o comando `wget` para fazer o download de todo o site e salvá-lo em um diretório:
 
-## Aprofundando:
+```
+wget --mirror --convert-links --adjust-extension URL_da_página
+```
 
-Ao utilizar o comando "curl" no Fish Shell, você pode adicionar diversas opções para personalizar a forma como a página é baixada. Por exemplo, você pode especificar um user-agent diferente para simular diferentes navegadores ou adicionar opções de autenticação, caso a página exija um login.
+Estes comandos são ideais para fazer o download do conteúdo de páginas da web estáticas, como documentos HTML. Se você precisar baixar conteúdo dinâmico, como imagens ou vídeos, pode usar outras ferramentas populares como `youtube-dl` ou `scrapy`.
 
-Além disso, é possível automatizar o processo de baixar várias páginas em sequência, por exemplo, utilizando um loop e um arquivo com os endereços das páginas desejadas.
+Mergulho profundo: 
 
-## Veja também:
+Historicamente, o download de páginas da web era feito principalmente usando o protocolo HTTP. No entanto, com a evolução da web, surgiram novas tecnologias, como o protocolo HTTPS, que usa criptografia para proteger a comunicação entre o usuário e o servidor. Isso pode trazer desafios adicionais para os programadores ao fazer o download de páginas da web. Felizmente, o Fish Shell suporta o protocolo HTTPS e pode ser facilmente usado para fazer o download de páginas seguras.
 
-- [Documentação do comando "curl" no Fish Shell (em inglês)](https://fishshell.com/docs/current/cmds/curl.html)
-- [Tutorial sobre a utilização do Fish Shell (em português)](https://dev.to/fernandodoming/the-fish-shell-b9e)
-- [Exemplos de como utilizar o Fish Shell para automatizar tarefas (em inglês)](https://medium.com/@jordankanter/batch-downloading-github-projects-with-fish-ab966145fa4d)
+Além disso, existem outras ferramentas além do Fish Shell que são comumente usadas para fazer o download de páginas da web, como Python com a biblioteca `requests` ou o utilitário `wget`.
+
+Veja também:
+
+- [Documentação do Fish Shell](https://fishshell.com/docs/current/)
+- [Tutorial sobre como fazer downloads usando o Fish Shell](https://fishshell.com/docs/current/tutorial.html#fetcher)
+- [Como baixar páginas da web usando `curl`](https://curl.haxx.se/docs/manual.html)
+- [Como fazer downloads com `wget`](https://www.gnu.org/software/wget/manual/wget.html#Downloading-Options)

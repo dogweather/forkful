@@ -1,7 +1,7 @@
 ---
-title:                "Wydobywanie podciągów"
-html_title:           "C++: Wydobywanie podciągów"
-simple_title:         "Wydobywanie podciągów"
+title:                "Ekstrakcja podłańcuchów"
+html_title:           "C++: Ekstrakcja podłańcuchów"
+simple_title:         "Ekstrakcja podłańcuchów"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -10,68 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego?
+Co i dlaczego?
+Estrakcja podciągów to proces wydobywania fragmentów tekstu z większej całości. Programiści często korzystają z tej funkcji, aby wyodrębnić ważne informacje lub dokonać konkretnych operacji na tekście.
 
-Jeśli często pracujesz z ciągami znaków w swoim kodzie C++, prawdopodobnie musiałeś już wyodrębniać podciągi wewnątrz nich. W tym artykule dowiesz się, dlaczego warto robić to w odpowiedni sposób i jak można to zrobić w praktyce.
-
-## Jak to zrobić?
-
-Aby wyodrębnić podciąg ze stringa, możesz użyć metody `substr()` razem z indeksami początkowym i końcowym, określającymi zakres, z którego ma zostać wycięty podciąg. Na przykład:
-
+Jak to zrobić:
 ```C++
 #include <iostream>
 #include <string>
 
-using namespace std;
-
 int main() {
-    // Deklaracja stringa wejściowego
-    string input = "Cześć świecie!";
+    std::string text = "Przykładowy tekst do ekstrakcji";
     
-    // Wyodrębnienie podciągu od indeksu 6 do końca
-    string output1 = input.substr(6);
-    // Wyodrębnienie podciągu od indeksu 6 do 4 dalej
-    string output2 = input.substr(6, 4);
+    // Wyświetlenie całego tekstu
+    std::cout << "Cały tekst: " << text << std::endl;
     
-    // Wyświetlenie wyników
-    cout << output1 << endl; // "świecie!"
-    cout << output2 << endl; // "świe"
+    // Ekstrakcja pojedynczego znaku
+    char letter = text[6];
+    std::cout << "Szósta litera to: " << letter << std::endl;
+    
+    // Ekstrakcja podciągu od pozycji 6 do 14
+    std::string substring = text.substr(6, 8);
+    std::cout << "Podciąg od 6 do 14: " << substring << std::endl;
     
     return 0;
 }
 ```
 
-W powyższym przykładzie wykorzystaliśmy metody `substr()` wraz z indeksami, aby wyodrębnić odpowiednie podciągi ze stringa. Warto pamiętać, że indeksy numerowane są od zera, a drugi parametr, określający długość wyodrębnionego podciągu, jest opcjonalny.
+Wyczerpujące informacje:
+Estrakcja podciągów jest znana od dawna - pierwotnie była stosowana w języku FORTRAN w latach 60. Alternatywnym podejściem jest wykorzystanie wyrażeń regularnych. W implementacji podciągów w C++ wykorzystywana jest funkcja ```substr()```, który jako argumenty przyjmuje indeks początkowy i długość podciągu.
 
-## Deep Dive
-
-Metoda `substr()` może nie tylko pomagać w wyodrębnianiu podciągów, ale również w łączeniu ich. Jeśli jako drugi parametr przekażesz długość wyodrębnionego podciągu, możesz ustalić także maksymalną długość wyjściowego stringa. Na przykład:
-
-```C++
-#include <iostream>
-#include <string>
-
-using namespace std;
-
-int main() {
-    // Deklaracja dwóch stringów
-    string input1 = "Witaj";
-    string input2 = "świecie";
-    
-    // Wykonanie konkatenacji z wykorzystaniem substr()
-    string output = input1 + input2.substr(1, 3);
-    
-    // Wyświetlenie wyniku
-    cout << output << endl; // "Witawie"
-    
-    return 0;
-}
-```
-
-Powyższy przykład pokazuje, że możemy wykorzystać metodę `substr()` w celu włączenia wyodrębnionego podciągu w innym miejscu wewnątrz stringa. Jest to dużo wygodniejsze niż ręcznie manipulowanie indeksami stringów.
-
-## Zobacz również
-
-- [Dokumentacja metody substr()](https://en.cppreference.com/w/cpp/string/basic_string/substr)
-- [Porównanie wydajności różnych metod wyodrębniania podciągów w C++](https://stackoverflow.com/questions/51712191/c-how-is-stdstring-substr-implemented)
-- [Przydatne porady i triki związane z stringami w C++](https://www.geeksforgeeks.org/tricks-c-string/)
+Zobacz też:
+- https://en.cppreference.com/w/cpp/string/basic_string/substr
+- https://www.geeksforgeeks.org/string-data-structure/
+- https://www.geeksforgeeks.org/c-stringclasssubstr/

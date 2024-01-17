@@ -10,49 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+# 무엇 & 왜?
+검색 및 교체 텍스트는 프로그래머가 코드에서 특정 텍스트를 찾아 다른 텍스트로 대체하는 것을 말합니다. 이것은 버그 수정, 유지 보수 또는 효율적인 코드 작성을 위해 사용될 수 있습니다.
 
-텍스트를 찾아 바꾸는 것의 이유는 프로그램에서 자주 사용하는 동작이며 효율적인 코딩을 위해 필수적입니다.
-
-## 어떻게
-
-텍스트를 찾아 바꾸기 위해서는 `replacingOccurrences(of:with:)` 메서드를 사용해야 합니다. 이 메서드는 원하는 문자를 지정한 문자로 모두 바꿔주는 기능을 합니다. 아래는 간단한 예시 코드입니다.
+## 어떻게:
+텍스트 검색 및 교체는 매우 간단합니다. 먼저 검색할 텍스트를 지정하고, 이를 바꿀 텍스트를 지정한 후에 코드를 실행해주면 됩니다. 아래는 Swift에서 검색 및 교체하는 간단한 예제 코드입니다.
 
 ```Swift
-let sentence = "Hello Swift!"
-let newSentence = sentence.replacingOccurrences(of: "Swift", with: "Kotlin")
-print(newSentence) // Output: Hello Kotlin!
+let originalString = "Hello, world!"
+let replacedString = originalString.replacingOccurrences(of: "world", with: "Swift")
+print(replacedString) // 출력 결과: "Hello, Swift!"
 ```
 
-문자열 내에서 모든 "Swift"를 "Kotlin"으로 바꾸어줍니다. 또 다른 예시로는 `replacingOccurrences(of:with:options:range:)` 메서드를 사용하는 방법이 있습니다. 이 메서드는 옵션을 추가하여 대소문자를 구분하거나 특정 범위에서만 문자를 바꿀 수 있습니다. 아래는 이 방법을 사용한 예시 코드입니다.
+이 코드에서, 우리는 `originalString`이라는 문자열에서 "world"를 "Swift"로 대체했습니다. 이제 `replacedString`에는 "Hello, Swift!"라는 문자열이 저장되어 있습니다.
 
-```Swift
-let sentence = "Hello swift!"
-let newSentence = sentence.replacingOccurrences(of: "swift", with: "Kotlin", options: .caseInsensitive, range: nil)
-print(newSentence) // Output: Hello Kotlin!
-```
+## 깊이 들어가보기:
+텍스트 검색 및 교체는 많은 프로그래밍 언어에서 기본 제공되는 기능입니다. 하지만 Swift에서는 Apple이 제공하는 `replacingOccurrences(of:with:)` 함수를 사용하여 보다 쉽고 간단하게 텍스트를 검색하고 교체할 수 있습니다.
 
-여기서 옵션에 `.caseInsensitive`를 추가하였기 때문에 대소문자를 구분하지 않고 "swift"를 "Kotlin"으로 바꿔줍니다. 또한 마지막 매개변수로 범위를 지정해줄 수도 있습니다.
+또한, 정규식(regular expression)과 같은 다른 방법을 사용하여 보다 복잡한 검색 및 교체를 수행할 수도 있습니다. 하지만 정규식은 복잡하고 이해하기 어렵기 때문에, 적절한 지식 없이는 사용하기 어렵습니다.
 
-## 딥 다이브
-
-텍스트를 찾아 바꾸는 과정에서 문제가 발생할 수 있습니다. 예를 들어, 바꾸려는 문자열을 찾지 못해 원하는 결과를 얻지 못할 수 있습니다. 이때는 `replacingOccurrences(of:with:options:range:)` 메서드의 리턴 값으로 사용되는 `String`을 가져와서 `contains()` 메서드를 사용하여 원하는 문자열이 포함되어 있는지 확인할 수 있습니다. 아래는 이 방법을 사용한 예시 코드입니다.
-
-```Swift
-let sentence = "Hello swift!"
-let newSentence = sentence.replacingOccurrences(of: "Swift", with: "Kotlin", options: .caseInsensitive, range: nil)
-
-if newSentence.contains("Kotlin") {
-    print("Found 'Kotlin'!") // Output: Found 'Kotlin'!
-} else {
-    print("Could not find 'Kotlin'!")
-}
-```
-
-`contains()` 메서드를 사용하여 "Kotlin"이 포함되어 있는지를 확인하고 그에 따라 적절한 메시지를 출력합니다.
-
-## 참고
-
-- [Apple Developer Documentation: String](https://developer.apple.com/documentation/swift/string)
-- [Hacking With Swift: How to use replacingOccurrences() to replace text in a string](https://www.hackingwithswift.com/example-code/strings/how-to-use-replacingoccurrences-to-replace-text-in-a-string) 
-- [Swift by Sundell: Replacing text using ranges in Swift](https://www.swiftbysundell.com/posts/replacing-text-using-ranges-in-swift)
+## 참고하기:
+- Swift 공식 문서: [String.replacingOccurrences(of:with:)](https://developer.apple.com/documentation/foundation/nsstring/1407767-replacingoccurrences)
+- 정규식(regular expression) 사용법: [정규식 완전 해부](https://regexper.com/)

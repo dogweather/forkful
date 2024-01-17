@@ -1,7 +1,7 @@
 ---
-title:                "HTMLの解析"
-html_title:           "Ruby: HTMLの解析"
-simple_title:         "HTMLの解析"
+title:                "「html の解析」"
+html_title:           "Ruby: 「html の解析」"
+simple_title:         "「html の解析」"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "HTML and the Web"
@@ -10,49 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ？
-HTMLをパースする理由は多々あります。例えば、ウェブスクレイピングやスクレイピングされたデータを分析するためなどです。RubyはHTMLを簡単にパースできる強力な言語なので、これから紹介する方法を使ってHTMLをパースしてみましょう！
+# 何？ & なぜ？
 
-## パースする方法
-HTMLをパースするのに必要なのは、Nokogiriというライブラリをインストールすることです。下記のコードをターミナルに入力してください。
+プログラマーは、コンピューターで作成されたウェブページから情報を抽出することができるように、HTMLを解析する必要があります。解析とは、HTMLの構造や要素を理解し、必要なデータを取得することです。
 
-```Ruby
-gem install nokogiri
+## 使い方：
+
+下記のコード例では、Rubyを使用してHTMLを解析し、タグ内の内容を抽出し、コンソールに出力します。更に、特定の属性やクラス名を指定して、より具体的なデータを取得することもできます。
+
 ```
-
-次に、HTMLをパースするためのコードを書いていきましょう。例として、ruby-lang.orgのトップページのタイトルを取得してみます。
-
-```Ruby
 require 'nokogiri'
-require 'open-uri'
 
-doc = Nokogiri::HTML(open("https://www.ruby-lang.org/"))
-puts doc.at_css("title").text
+html = "<html><body><h1>Hello World</h1><p>This is a sample paragraph.</p></body></html>"
+
+doc = Nokogiri::HTML(html)
+
+puts doc.css('h1').text #=> "Hello World"
+
+puts doc.css('p').text #=> "This is a sample paragraph."
+
+puts doc.css('body').text #=> "Hello WorldThis is a sample paragraph."
 ```
 
-上記のコードを実行すると、以下のような出力が得られます。
+## 詳しく見てみよう：
 
-```
-Ruby Programming Language
-```
+HTMLを解析するための代表的なライブラリとして、NokogiriやMechanizeがあります。これらのライブラリは、ウェブスクレイピングやデータ収集などの用途でよく使用されています。
 
-これで、HTMLからタイトルを取得することができました！
+また、HTMLを解析する方法には正規表現を使用する方法もありますが、これは複雑なパターンのHTMLを解析する際にはあまり適していません。
 
-## もっと深く掘り下げる
-もし、より複雑なHTMLをパースしなければならない場合は、CSSセレクターを使うことができます。Nokogiriでは、以下のようにCSSセレクターを使うことで、特定の要素を取得することができます。
+Nokogiriの場合、libxmlと呼ばれるライブラリを使用してHTMLの解析を行っています。libxmlは高速でパワフルな解析エンジンであり、Nokogiriを通じて簡単に利用することができます。
 
-```Ruby
-doc.css("div#top-section .hero")
-```
+## 関連サイトをチェック：
 
-このコードは、idが"top-section"でクラスが"hero"のdiv要素を取得します。また、複数の要素を取得したい場合は、`.each`メソッドを使ってループ処理を行うこともできます。
-
-また、NokogiriではXPathという言語を使ってもHTMLをパースすることができます。XPathは、より柔軟なクエリを書くことができるので、パースするHTMLによってはCSSセレクターよりも便利です。
-
-## 参考リンク
 - [Nokogiri公式ドキュメント](https://nokogiri.org/)
-- [CSSセレクターガイド](https://www.w3schools.com/cssref/css_selectors.asp)
-- [XPathチュートリアル](https://www.guru99.com/xpath-selenium.html)
-
-## 参照
-- [Nokogiriを使ったHTMLのパース](https://www.rubyguides.com/2018/10/nokogiri/)
+- [Mechanize公式ドキュメント](https://mechanize.readthedocs.io/en/latest/)
+- [libxml公式サイト](http://xmlsoft.org/)

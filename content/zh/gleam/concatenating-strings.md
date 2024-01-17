@@ -1,7 +1,7 @@
 ---
-title:                "连接字符串"
-html_title:           "Gleam: 连接字符串"
-simple_title:         "连接字符串"
+title:                "合并字符串"
+html_title:           "Gleam: 合并字符串"
+simple_title:         "合并字符串"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -10,29 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
+以下是您需要知道的关于Gleam编程中连接字符串的一切以及为什么程序员们需要这么做的简单解释。
 
-在编程中，合并字符串是一项非常常见的任务。通过将多个字符串连接在一起，我们可以创建更复杂的文本内容。比如，我们可以将名字和地址合并起来创建一个完整的个人信息，或是将多个文本段落连接在一起形成一篇长文。在Gleam中，合并字符串非常简单，下面就来看看如何做到。
+## 为什么以及什么？
+连接字符串是指将多个字符串拼接成一个字符串。程序员们会这么做是因为在编写代码的时候，我们需要将各种信息在一起显示，例如将姓名和地址连接在一起形成一个完整的邮件地址。这样做可以让我们的代码更加简洁和易于读懂。
 
-## 如何操作
-
-要在Gleam中合并字符串，你需要使用操作符 `++`。这个操作符可以将两个字符串合并在一起，形成一个新的字符串。
+## 如何实现
+以下是一个在Gleam中连接两个字符串的例子：
 
 ```Gleam
-let name = "张三"
-let address = "北京市东城区"
-let info = name ++ "的住址是" ++ address
+fn main() {
+  let greeting = "你好";
+  let name = "小明";
+  let message = greeting ++ name;
+  assert message == "你好小明"
+}
 ```
-输出：张三的住址是北京市东城区
 
-在以上例子中，我们将名字和地址合并在一起，创建了一个新的信息。除了字符串，我们也可以使用变量和数字来进行合并，只要使用 `++` 操作符就可以了。
+在这个例子中，我们使用```++```符号将字符串变量```greeting```和```name```连接成一个新的字符串```message```。然后，我们使用```assert```语句来确保新的字符串是正确的。
 
-## 深入探讨
+## 深入了解
+历史背景：连接字符串在编程中已经有很长的历史了。最早的编程语言之一，Fortran，就支持使用```+```符号来连接字符串。随着编程语言的发展，连接字符串的语法也有所不同。
 
-在Gleam中，字符串实际上是一个字符列表的集合。当我们使用 `++` 操作符时，其实是在对字符列表进行连接操作，最终得到一个新的字符列表。因此，我们可以使用其他字符列表相关的操作符来处理字符串，比如 `|>` 操作符来转换字符列表，在合并字符串时也可以使用。
+替代方案：除了使用```++```符号来连接字符串，还有其他方式可以实现相同的效果。例如，一些编程语言提供了内置的函数来连接字符串，而另一些则使用类似于```&```的符号来连接。
 
-## 参考链接
+实现细节：在Gleam中，连接字符串是通过使用```string:concat```函数来实现的。这个函数接受两个字符串作为参数，并返回一个新的连接后的字符串。
 
-- [Gleam官方文档](https://gleam.run/documentation)
-- [学习Gleam代码样例](https://github.com/gleam-lang/gleam/tree/master/examples)
-- [Gleam编程社区论坛](https://forum.gleam.run/)
+## 参考资料
+如果您想进一步了解关于Gleam编程中连接字符串的内容，请参考以下链接：
+- 官方文档：https://gleam.run/book/concept/string.html
+- 维基百科：https://en.wikipedia.org/wiki/String_concatenation
+- Stack Overflow讨论：https://stackoverflow.com/questions/17606415/what-is-the-most-efficient-way-to-concatenate-strings-in-go

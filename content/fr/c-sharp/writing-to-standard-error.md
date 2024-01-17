@@ -1,7 +1,7 @@
 ---
-title:                "Écrire sur l'erreur standard"
-html_title:           "C#: Écrire sur l'erreur standard"
-simple_title:         "Écrire sur l'erreur standard"
+title:                "Écrire vers l'erreur standard"
+html_title:           "C#: Écrire vers l'erreur standard"
+simple_title:         "Écrire vers l'erreur standard"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Files and I/O"
@@ -10,38 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Pourquoi : Écrire vers l'erreur standard peut être une tâche utile pour les programmeurs lorsqu'ils doivent déboguer leur code et trouver des erreurs. Cela leur permet de voir les messages d'erreur en temps réel et d'identifier plus facilement les problèmes.
+# Pourquoi & Comment?
 
-Comment Faire : Pour écrire vers l'erreur standard en C#, vous pouvez utiliser la méthode Console.Error.WriteLine(). Voici un exemple de code pour comprendre comment l'utiliser :
+Si vous êtes programmeur, vous avez probablement déjà rencontré la notion d'écrire dans l'erreur standard. En bref, c'est le moyen pour un programme de communiquer des messages d'erreur ou de débogage à l'utilisateur ou aux développeurs. C'est une pratique courante dans la programmation, car cela permet de repérer et de résoudre rapidement les problèmes dans le code.
 
-```C#
-Console.Error.WriteLine("Erreur : la variable n'est pas définie.");
+# Comment faire:
+
+Voici un exemple de code en C# pour écrire dans l'erreur standard:
+
+```
+Console.Error.WriteLine("Erreur: impossible d'ouvrir le fichier");
 ```
 
-Cela imprimera le message d'erreur dans la console en rouge, ce qui le rendra plus facilement visible et identifiable. Voici à quoi cela ressemble dans la console :
+La sortie de ce code sera affichée dans la console en tant que message d'erreur. Vous pouvez également utiliser la méthode Console.SetError() pour définir une autre sortie pour l'erreur standard, telle qu'un fichier de journal.
 
-![Exemple de sortie de l'erreur standard en C#](https://i.imgur.com/HmMsfga.png)
-
-Vous pouvez également utiliser la méthode Console.Error.Write() pour écrire directement du texte à l'erreur standard sans retour à la ligne. Voici un exemple :
-
-```C#
-Console.Error.Write("Erreur critique :");
-Console.Error.WriteLine(" Mémoire insuffisante");
+```
+Console.SetError(new StreamWriter("error_log.txt"));
 ```
 
-Cela affichera "Erreur critique : Mémoire insuffisante" sur la même ligne dans la console.
+# Exploration approfondie:
 
-Plongée Profonde : Écrire vers l'erreur standard peut également être utile pour les applications en direct lorsqu'il faut enregistrer des informations de débogage sans interrompre le fonctionnement normal de l'application. Vous pouvez utiliser la propriété Console.Error pour rediriger l'erreur standard vers un fichier de journalisation. Voici un exemple :
+La pratique d'écrire dans l'erreur standard trouve ses racines dans le langage C, où un programmeur pouvait rediriger la sortie d'erreur pour la traiter séparément de la sortie standard. Dans d'autres langages, on peut utiliser des commandes telles que 'syslog' en C++ ou 'logging' en Python pour enregistrer ces messages d'erreur. Il est important de noter que l'écriture dans l'erreur standard ne doit pas être confondue avec les erreurs lancées par le code lui-même. Les messages d'erreur personnalisés doivent toujours être rédigés de manière appropriée.
 
-```C#
-// Rediriger l'erreur standard vers un fichier journal
-Console.SetError(new StreamWriter("log.txt"));
-```
+# Voir aussi:
 
-Cela écrira toutes les sorties de l'erreur standard dans le fichier "log.txt". Cela peut être particulièrement utile pour les applications en direct afin de garder un enregistrement des erreurs et des informations de débogage pour un dépannage ultérieur.
+Voici quelques sources utiles pour en savoir plus sur l'écriture dans l'erreur standard:
 
-Voir Aussi : Pour en savoir plus sur la gestion des erreurs en C#, vous pouvez consulter les liens suivants :
-
-- [Documentation officielle de Microsoft sur la gestion des erreurs en C#](https://docs.microsoft.com/fr-fr/dotnet/csharp/language-reference/keywords/try-catch)
-- [Tutoriel sur les techniques de débogage en C#](https://www.tutorialspoint.com/csharp/csharp_debugging_techniques.htm)
-- [Article sur la redirection de la sortie de la console en C#](https://www.codeproject.com/Articles/4696/Redirecting-the-Console-s-output-to-a-TextBox-in)
+- Microsoft: https://docs.microsoft.com/fr-fr/dotnet/api/system.console.seterror
+- Stack Overflow: https://stackoverflow.com/questions/8877127/print-messages-to-the-console-not-stderror-in-c-sharp-console-applications

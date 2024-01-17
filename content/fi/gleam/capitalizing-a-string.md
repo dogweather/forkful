@@ -1,7 +1,7 @@
 ---
-title:                "Merkkijonon alkukirjainten suuriksi muuttaminen"
-html_title:           "Gleam: Merkkijonon alkukirjainten suuriksi muuttaminen"
-simple_title:         "Merkkijonon alkukirjainten suuriksi muuttaminen"
+title:                "Pienentäminen merkkijonoksi"
+html_title:           "Gleam: Pienentäminen merkkijonoksi"
+simple_title:         "Pienentäminen merkkijonoksi"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -10,29 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+# Mitä & miksi?
+Stringien isojen kirjainten käyttö tarkoittaa tekstin muuttamista niin, että jokaisen sanan ensimmäinen kirjain muutetaan isoksi. Tätä tehdään yleisesti ohjelmoinnissa, jotta teksti näyttäisi siistimmältä ja helpommin luettavalta.
 
-Miksi haluaisimme vaihtaa merkkijonon ensimmäisen kirjaimen isoon alkukirjaimeen? Tämä yksinkertainen muutos voi lisätä merkkijonon luettavuutta ja selkeyttä ohjelmassa.
-
-## Kuinka tehdä
-
-Käytämme Gleam-ohjelmointikieltä tehdäksemme tämän muutoksen. Kirjoitamme funktion nimeltä "capitalize", joka ottaa parametrinaan merkkijonon. Sitten käytämme "String.slice" -funktiota jakamaan merkkijonon kahteen osaan: ensimmäinen kirjain ja loput merkkijonosta. Käytämme sitten "String.to_upper_case" -funktiota muuttaaksemme ensimmäisen kirjaimen isoon alkukirjaimeen ja liitämme sen yhteen lopputuloksen kanssa. Lopuksi, palautamme uuden merkkijonon, jossa ensimmäinen kirjain on vaihdettu isoon alkukirjaimeen.
-
+# Miten:
+### Gleam-koodiesimerkki:
+```Gleam
+"hei, kuka siellä?!" |> String.capitalize
 ```
-Gleam. capitalize (str) ->
-  let first = String.slice(str, 0, 1)
-  let rest = String.slice(str, 1, String.length(str))
-  String.to_upper_case(first) ++ rest
+### Tulos:
+```Gleam
+"Hei, kuka siellä?!"
 ```
 
-Kutsuessaan "capitalize" -funktiota parametrina "hello", se palauttaisi "Hello" merkkijonon.
+### Gleam-koodiesimerkki:
+```Gleam
+"gleam is awesome" |> String.capitalize
+```
+### Tulos:
+```Gleam
+"Gleam is awesome"
+```
 
-## Syvemmälle
+# Syvempi sukellus:
+Isoksi muuttaminen, eli kääntäminen, on ollut käytössä jo kauan ennen ohjelmointia ja sillä oli historiallisesti eri merkitys kuin nykypäivänä. Nykyään isojen kirjainten käyttö liittyy enemmän visuaaliseen ulkoasuun ja helpompaan lukemiseen, mutta historiallisesti sillä pyrittiin myös erottamaan erilaisia sanaluokkia, kuten nimisanoja ja verbejä.
 
-Olet ehkä huomannut, että käytimme "++" -merkkiä lisätäksemme kaksi merkkijonoa yhteen. Tämä on osa Gleamin "String" -moduulia ja se yhdistää kaksi merkkijonoa yhteen uudeksi merkkijonoksi. Toinen hyödyllinen funktio, jonka käytimme, on "String.length", joka palauttaa merkkijonon pituuden. Näiden kahden funktion avulla pystymme leikkaamaan merkkijonoja haluamallamme tavalla.
+Vaihtoehtojakin löytyy, esimerkiksi pienentäminen eli merkkien muuttaminen pieniksi, mutta se ei ole yhtä yleistä kuin isoksi muuttaminen. Stringien käsittelyyn on myös muita tapoja, kuten pilkkominen tai yhdistäminen, mutta jokaisessa tapauksessa on tärkeää huomioida tietojen muotoilu ja oikeellisuus.
 
-## Katso myös
+Gleamissa stringien käsittelyyn käytetään apuna moduulia nimeltä String, joka tarjoaa erilaisia toimintoja, kuten capitalize, pienentäminen ja paljon muuta.
 
-- [String Moduuli Gleamin Dokumentaatiosta](https://gleam.run/core/string.html)
-- [Ohjevideo String Moduulista Gleamilla](https://www.youtube.com/watch?v=MXAaIVT5rbY)
-- [Käytä Syötetiedostotyyppiä Gleamilla](https://medium.com/@louismeunier/using-input-output-types-in-gleam-be696f7c5164)
+# Katso myös:
+- [Gleam Language - dokumentaatio](https://gleam.run/documentation/)
+- [String Moduuli - Gleam Language dokumentaatio](https://gleam.run/documentation/stdlib/string)

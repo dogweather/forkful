@@ -1,7 +1,7 @@
 ---
-title:                "Merkkijonon muuntaminen pieniksi kirjaimiksi"
-html_title:           "Arduino: Merkkijonon muuntaminen pieniksi kirjaimiksi"
-simple_title:         "Merkkijonon muuntaminen pieniksi kirjaimiksi"
+title:                "Stringin muuttaminen pieniksi merkeiksi."
+html_title:           "Arduino: Stringin muuttaminen pieniksi merkeiksi."
+simple_title:         "Stringin muuttaminen pieniksi merkeiksi."
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Strings"
@@ -10,26 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+# Mitä & Miksi?
 
-Miksi haluaisit muuntaa merkkijonon pieniksi kirjaimiksi? Voit esimerkiksi haluta verrata syötteitä ilman että välitä eri kirjainkoosta tai kirjoittaa käyttäjälle ymmärrettävässä muodossa.
+Mikä on merkkijonon muuttaminen pieniksi kirjaimiksi ja miksi ohjelmoijat tekevät sitä? Tämä on prosessi, jossa merkkijonon kaikki kirjaimet muutetaan pieniksi kirjaimiksi. Tämä on tärkeää, koska ohjelmointikielet ovat herkkiä kirjainten koosta, joten tekstin yhdenmukaisuuden varmistamiseksi on parempi käyttää vain pieniä kirjaimia.
 
-## Kuinka
+# Kuinka tehdä:
 
-Muuttaaksesi merkkijonon pieniksi kirjaimiksi, käytä `toLowerCase()` -funktiota. Esimerkiksi:
+```
+ArduinoString teksti = "TÄMÄ ON ESIMERKKI";
 
-```Arduino
-String nimi = "TEKSTI";
-Serial.println(nimi.toLowerCase());
+for (int i = 0; i < teksti.length(); i++) {
+  teksti[i] = tolower(teksti[i]);
+}
+
+Serial.println(teksti); 
 ```
 
-Tämä tulostaisi "teksti" sarjamonitorille.
+Tässä esimerkkikoodissa luomme merkkijonon nimeltä "teksti" ja tallennamme siihen arvon "TÄMÄ ON ESIMERKKI". Sitten käytämme for-silmukkaa, joka käy läpi koko merkkijonon ja muuttaa jokaisen kirjaimen pieneksi käyttämällä "tolower" -funktiota. Lopuksi tulostamme muutetun merkkijonon sarjanäyttöön, mikä näyttää seuraavalta: "tämä on esimerkki".
 
-## Syvempää sukellusta
+# Syvällinen sukellus:
 
-`toLowerCase()`-funktio ei muuta alkuperäistä merkkijonoa, vaan luo uuden muunnetun version. Tämä mahdollistaa alkuperäisen merkkijonon muuttumattomuuden. Funktion sisällä käytetään ASCII-kooditaulukkoa, jotta jokainen kirjain voidaan muuntaa vastaavaksi pieneksi kirjaimeksi.
+Merkkijonon muuntaminen pieniksi kirjaimiksi on tärkeää tietokoneohjelmoinnissa, koska se auttaa välttämään virheitä, jotka johtuvat erilaisten kirjainten käytöstä. Tämän funktion historia juontaa juurensa ASCII-koodaukseen, jossa kirjaimet ja symbolit ovat edustettuina numeroina. On myös muita tapoja toteuttaa tämä toiminto, kuten käyttämällä erilaisia kirjastoja ja funktioita, jotka ovat saatavilla eri ohjelmointikielillä.
 
-## Katso myös
+# Katso myös:
 
-- [Official Arduino Reference: `toLowerCase()`](https://www.arduino.cc/reference/en/language/functions/string/functions/tolowercase/)
-- [ASCII-kooditaulukko](https://www.ascii-code.com/)
+Tässä on lisäresursseja, jotka voivat auttaa sinua ymmärtämään merkkijonon muuntamista pieniksi kirjaimiksi:
+
+- https://www.arduino.cc/reference/en/language/variables/data-types/string/ - lisätietoja "String" -luokasta ja sen toiminnoista Arduino-kielellä.
+- https://www.geeksforgeeks.org/to_lower-function-in-c/ - selvempi kuvaus "tolower" -funktiosta ja sen käytöstä.
+- https://www.rapidtables.com/code/text/ascii-table.html - ASCII-kooditaulukko.

@@ -10,35 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
+# Test Writing in Arduino
 
-写测试是为了确保你的程序能够正确地运行。它可以帮助你检测潜在的错误，并提高程序的可靠性和稳定性。
+## What & Why?
+Writing tests in Arduino is the process of creating test cases to check the functionality and performance of your code. Programmers do this to ensure that their code functions as intended and to catch any potential bugs or errors before they become bigger problems.
 
-## 怎么做
+## How to:
+To write tests in Arduino, you can use the built-in library called "ArduinoUnit". This library allows you to create test cases and compare the expected and actual results.
 
-要写测试，你可以使用Arduino自带的库中的函数，例如`assert()`和`assertEquals()`来测试你的代码。你也可以使用第三方的Arduino库，比如ArduinoUnit来进行测试。以下是一个简单的测试代码的例子：
+```
+ArduinoUnit test;
 
-```Arduino
-#include <ArduinoUnit.h> //导入测试库
+test.assertEqual(5, 2+3);  // This test will pass
+test.assertNotEqual(8, 2*3); // This test will fail
+test.assertTrue(6 > 4 || 6 < 3); // This test will pass
+test.assertFalse(2 < 1); // This test will fail
 
-unittest(basicTest) { //定义一个测试单元
-  int a = 5;
-  int b = 7;
-  assertEquals(a + b, 12); //测试a加b是否等于12
-}
-
-unittest_main() //运行所有的测试单元
+test.done();  // This line marks the end of the test code
 ```
 
-运行测试后，如果所有的测试通过，那么输出就会是`OK`。如果有测试失败，它会告诉你具体的哪个测试出错了。
+## Deep Dive:
+Writing tests has become an essential practice in modern programming, especially in the context of agile development. It helps developers to catch bugs early on and ensures that code changes do not lead to unintended consequences. Before the establishment of formal testing frameworks, developers used manual testing methods, which were time-consuming and prone to errors.
 
-## 深入了解
+Other alternatives to ArduinoUnit include Unity, Google Test, and Catch. These libraries offer more complex and advanced features, but they require additional setup and may not be suitable for small projects.
 
-写测试可以帮助你更有效地调试和修复代码，尤其是当你的程序变得更加复杂的时候。它也可以帮助你避免在未来的修改中引入新的错误。另外，通过使用Arduino's Serial Monitor来输出测试结果，你可以更加方便地查看测试运行的结果。
+To implement test writing in your Arduino code, you will need to have a thorough understanding of the programming language and the Arduino platform. It is also essential to have a well-defined testing strategy and to follow best practices to ensure accurate and efficient testing.
 
-## 参考链接
-
-- [Arduino官方文档](https://www.arduino.cc/reference/en/)
-- [ArduinoUnit官方文档](https://github.com/mmurdoch/arduinounit)
-- [Arduino测试教程](https://create.arduino.cc/projecthub/​)
-- [Arduino代码调试技巧](https://www.instructables.com/id/Arduino-Debugging-Tricks/)
+## See Also:
+- [ArduinoUnit Library](https://github.com/mmurdoch/arduinounit)
+- [Introduction to Test Driven Development in Arduino](https://blog.arduino.cc/2019/08/16/introduction-to-test-driven-development-in-arduino/)
+- [Test Writing in Arduino tutorial](https://canvas.okstate.edu/courses/41515/files/2237283/preview?verifier=edBMdfEHK7g9X98I1G2fxNVFN91GmiGjo37g04p2)

@@ -10,30 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co to jest i dlaczego to robić?
+Pisanie testów jest procesem, w którym programista tworzy małe programy, aby sprawdzić, czy ich kod działa zgodnie z oczekiwaniami. Jest to ważna część procesu tworzenia oprogramowania, ponieważ pozwala uniknąć błędów i zapewnić, że aplikacja działa poprawnie.
 
-Pisanie testów jest ważnym elementem procesu tworzenia oprogramowania, który pomaga w zapewnieniu jakości kodu. Zapewniamy w ten sposób, że nasze aplikacje działają zgodnie z oczekiwaniami i są mniej podatne na błędy.
-
-## Jak to zrobić
-
-Pisanie testów w PHP jest proste i wymaga tylko kilku kroków. Pierwszym krokiem jest zainstalowanie biblioteki PHPUnit przy użyciu narzędzia Composer. Następnie, tworzymy plik z testami o rozszerzeniu .php i importujemy potrzebne klasy. Wewnątrz testów, używamy funkcji assert do sprawdzania czy otrzymane wyniki są zgodne z oczekiwaniami. Oto przykład prostego testu sprawdzającego czy 2+2 równa się 4:
-
+## Jak to zrobić:
 ```PHP
-public function testDodawanie() 
-{
-    $wynik = 2 + 2;
-    $this->assertEquals(4, $wynik);
+// Przykładowy test sprawdzający, czy suma dwóch liczb jest poprawna
+function testSum() {
+  $result = sum(2, 3);
+  if ($result == 5) {
+    echo "Test przeszedł pomyślnie";
+  } else {
+    echo "Test nie przeszedł";
+  }
 }
+
+// Wywołanie funkcji testującej
+testSum();
 ```
 
-Jeśli wszystko przebiegnie pomyślnie, otrzymamy "OK" jako wynik. W przypadku błędnego wyniku, otrzymamy informację o niezgodności oczekiwanego wyniku z rzeczywistym.
+## Deep Dive:
+Pisanie testów jest częścią metodyki TDD (Test Driven Development), która została wprowadzona w 2003 roku przez programistę Kenta Becka. Jest to podejście, w którym testy są pisane przed napisaniem właściwego kodu. Istnieją również inne metody tworzenia testów, takie jak BDD (Behavior Driven Development), gdzie testy są pisane w języku naturalnym, aby lepiej odzwierciedlić oczekiwane zachowanie aplikacji.
 
-## Deep Dive
-
-Istnieje wiele technik i strategii pisania testów w PHP. Należy zawsze pamiętać o dobraniu odpowiednich danych testowych i sprawdzeniu wszelkich możliwych scenariuszy. Ważne jest również, aby pisać czytelne i zrozumiałe testy, aby ułatwić przyszłe modyfikacje i utrzymanie kodu. Istnieją również narzędzia, które mogą pomóc w automatyzacji procesu pisania testów, na przykład dbUnit czy Selenium.
-
-## Zobacz także
-
-- [Oficjalna dokumentacja PHPUnit](https://phpunit.de/documentation.html)
-- [Tutorial dla początkujących: Jak pisać testy w PHP](https://www.codeofaninja.com/2019/06/testing-php-code-with-phpunit.html)
-- [Wideo poradnik: Pisanie testów w PHP](https://www.youtube.com/watch?v=eW2h5kpcXtI)
+## Zobacz również:
+- [10 powodów, dla których testy są ważne w tworzeniu oprogramowania](https://www.softwaretestinghelp.com/why-software-testing-is-important/)
+- [Czym jest TDD i jak z niego korzystać?](https://blog.carbonfive.com/what-is-tdd-and-why-use-it/)

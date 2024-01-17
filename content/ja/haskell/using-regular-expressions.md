@@ -1,7 +1,7 @@
 ---
-title:                "正規表現の利用"
-html_title:           "Haskell: 正規表現の利用"
-simple_title:         "正規表現の利用"
+title:                "正規表現を使用する"
+html_title:           "Haskell: 正規表現を使用する"
+simple_title:         "正規表現を使用する"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -10,57 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## 何 && なぜ？
+正規表現を使用するとは、パターンにマッチするテキストを検索したり、置き換えたりすることができるプログラミング技術のことです。プログラマーは、テキスト処理やデータ検索において、より柔軟かつ効率的な方法を求めて正規表現を使用します。
 
-Regex, or regular expressions, are a powerful tool for text processing in Haskell. They allow you to quickly and efficiently search for specific patterns in strings, making it easier to manipulate and extract information from your data.
-
-## How To
-
-To use regular expressions in Haskell, you first need to import the `Text.Regex` module. This module provides functions for compiling and executing regular expressions. Let's take a look at a simple example:
-
+## 方法：
 ```Haskell
-import Text.Regex
+import Text.Regex.Posix
 
-main = do
-  let str = "Hello World"
-  let matches = matchRegex (mkRegex "o") str
-  
-  print matches
+-- 文字列が正規表現にマッチするかどうかをチェックする例
+match :: String -> String -> Bool
+match str regex = str =~ regex
+
+-- マッチした部分を抽出する例
+extract :: String -> String -> [String]
+extract str regex = getAllTextMatches (str =~ regex :: AllTextMatches [] String)
+
+-- マッチした部分を置き換える例
+replace :: String -> String -> String -> String
+replace str regex replaceWith = subRegex (str =~ regex :: AllTextMatches [] String) regex replaceWith
 ```
 
-Output: Just ["o"]
-
-In this example, we imported the `Text.Regex` module and defined a string `str` that we want to search for matches in. We then used the `mkRegex` function to create a regular expression (in this case, simply the letter "o") and passed it to the `matchRegex` function along with our string. The output shows that the regular expression "o" was successfully matched in the string "Hello World".
-
-You can also use regular expressions for more complex patterns, such as matching a specific sequence of characters or using special characters for meta operations. Here's another example:
-
+### 出力：
 ```Haskell
-import Text.Regex
-
-main = do
-  let str = "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-  let matches = matchRegex (mkRegex "[A-Z][a-z]+") str
-  
-  print matches
+> match "Hello world" "Hello" -- True
+> match "Hello world" "foo" -- False
+> extract "abc123def456" "[0-9]+" -- ["123","456"]
+> replace "My name is John" "John" "Bob" -- "My name is Bob"
 ```
 
-Output: Just ["Lorem", "Lorem", "dolor", "Consectetur"]
+## 深堀り：
+1. 正規表現は、1951年に計算機科学者のKen Thompsonによって発明されました。当初はUNIXのテキスト処理ツールとして使用されていましたが、今ではほとんどのプログラミング言語でサポートされています。
+2. 正規表現以外にも、パターンマッチングのためのパッケージやライブラリがあります。しかし、正規表現はパターンの検索や置き換えのために最も一般的に使用されるツールです。
+3. 実装の詳細としては、正規表現は有限オートマトンと呼ばれる機械の理論を基にしています。これはパターンマッチングをより効率的に行うための方法です。
 
-In this example, we used a regular expression to match all capitalized words in the string. This is just a small glimpse of what regular expressions can do in Haskell. There are many more functions and operations you can use, such as replacing matched patterns and extracting groups.
 
-## Deep Dive
-
-Regular expressions in Haskell are based on the POSIX standard, meaning they follow a set of rules and conventions. Understanding these rules can help you write more efficient and accurate regular expressions. Here are some key points to keep in mind:
-
-- Characters are interpreted literally unless they are special meta characters, such as `*` or `+`.
-- Square brackets `[]` can be used to match any one of the characters within them.
-- Parentheses `()` can be used for grouping and capturing specific parts of a pattern.
-- Use the `.*?` operator to match zero or more characters in a non-greedy way, and the `.+?` operator to match one or more characters.
-- The `|` symbol can be used to specify multiple possible matches.
-
-For a more in-depth guide on regular expressions in Haskell, make sure to check out the official documentation for the `Text.Regex` module.
-
-## See Also
-
-- [Official `Text.Regex` documentation](https://hackage.haskell.org/package/regex)
-- [Regular expressions in Haskell tutorial](https://wiki.haskell.org/Regular_expressions)
+## 関連リンク：
+- [正規表現入門 (wikipedia)](https://ja.wikipedia.org/wiki/%E6%AD%A3%E8%A6%8F%E8%A1%A8%E7%8F%BE)
+- [正規表現チュートリアル (qiita)](https://qiita.com/jnchito/items/57ffda5712636a9a1e62)
+- [正規表現コンパイラの実装 (qiita)](https://qiita.com/shmsw25/items/6a8d31627aad35e1a22e)

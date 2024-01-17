@@ -1,7 +1,7 @@
 ---
-title:                "Beräkning av ett datum i framtiden eller det förflutna."
-html_title:           "Kotlin: Beräkning av ett datum i framtiden eller det förflutna."
-simple_title:         "Beräkning av ett datum i framtiden eller det förflutna."
+title:                "Beräkna ett datum i framtiden eller förflutna"
+html_title:           "Kotlin: Beräkna ett datum i framtiden eller förflutna"
+simple_title:         "Beräkna ett datum i framtiden eller förflutna"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Dates and Times"
@@ -10,47 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-### Varför
+## Vad & Varför?
 
-Kotlin är ett modernt programmeringsspråk som är väldigt populärt i dagens teknikvärld. Med sin enkla syntax och mångsidighet kan det användas för en rad olika uppgifter, inklusive att beräkna datum i framtiden eller det förflutna. Detta kan vara användbart i många olika situationer, till exempel för att planera möten eller resor, eller för att hålla koll på deadlines.
+Beräkning av ett datum i framtiden eller det förflutna är en vanlig uppgift för programmerare. Det är oftast när vi vill hantera datum och tider som ligger utanför det aktuella datumet. Det kan vara att planera ett schema, skapa en kalender eller hantera tidsbegränsade erbjudanden.
 
-### Så här gör du
+## Så här gör du:
 
-För att beräkna ett datum i framtiden eller det förflutna i Kotlin, kan du följa dessa steg:
-
-1. Skapa en variabel för det aktuella datumet genom att använda klassen LocalDate.
+Enklaste sättet att beräkna ett datum i framtiden eller det förflutna är att använda inbyggda klassen `DateTime` från Kotlin's Standard Library. Här är ett exempel där vi beräknar datumet för exakt en månad framåt från det aktuella datumet:
 
 ```Kotlin
-val currentDate = LocalDate.now()
+val currentDate = DateTime.now()
+val futureDate = currentDate.plusMonths(1)
+println("Datumet om en månad är: $futureDate")
 ```
 
-2. Använd sedan klassen LocalDate igen för att skapa en variabel för det datumet du vill beräkna från.
+Detta kommer att producera output som: `Datumet om en månad är: 2021-11-15T16:06:31.356Z`
+
+Om du vill beräkna ett datum i det förflutna, kan du använda funktionen `minus` istället. Till exempel för att beräkna datumet för exakt ett år sedan:
 
 ```Kotlin
-val dateToCalculate = LocalDate.of(2021, Month.FEBRUARY, 15)
+val currentDate = DateTime.now()
+val pastDate = currentDate.minusYears(1)
+println("Datumet för ett år sedan var: $pastDate")
 ```
 
-3. För att beräkna datumet i framtiden, kan du använda metoden plusDays() eller plusMonths() i kombination med variabeln för det aktuella datumet.
+Detta kommer att producera output som: `Datumet för ett år sedan var: 2020-10-15T16:07:30.465Z`
 
-```Kotlin
-val futureDate = currentDate.plusDays(7) //lägger till 7 dagar till det aktuella datumet
-val futureDate = currentDate.plusMonths(1) //lägger till 1 månad till det aktuella datumet
-```
+## Djupdykning:
 
-4. Om du istället vill beräkna ett datum i det förflutna, kan du använda metoden minusDays() eller minusMonths() på samma sätt.
+I det förflutna har beräkning av datum varit en komplicerad uppgift, särskilt när man tar hänsyn till skottår och olika tidszoner. Men tack vare utvecklingen av moderna språk som Kotlin, har det blivit mycket enklare att hantera datum och tider.
 
-```Kotlin
-val pastDate = currentDate.minusDays(7) //drar av 7 dagar från det aktuella datumet
-val pastDate = currentDate.minusMonths(1) //drar av 1 månad från det aktuella datumet
-```
+Det finns också alternativ till Kotlin's `DateTime` klassen som används för att beräkna datum. En av dem är `LocalDateTime` som hanterar datum och tider utan att ta hänsyn till tidszoner.
 
-### Djupdykning
+När man beräknar datum i det förflutna bör man också ta hänsyn till olika tidszoner, eftersom datumet kan variera beroende på var i världen man beräknar det. Om man behöver hantera datum internationellt kan man använda klassen `ZonedDateTime` som hanterar både datum och tider samt tidszoner.
 
-Kotlin har inbyggda klasser och metoder för att hantera datum och tid, vilket gör det enkelt att beräkna datum i framtiden eller det förflutna. Det är också möjligt att använda andra metoder för att göra mer exakta beräkningar, till exempel plusYears(), plusWeeks() eller minusHours().
+## Se även:
 
-Utöver detta kan du också utföra jämförelser mellan olika datum genom att använda metoden compareTo(). Detta kan vara användbart för att se till exempel om ett datum ligger före eller efter ett annat.
-
-### Se även
-
-- [Kotlin dokumentation](https://kotlinlang.org/docs/home.html)
-- [Java Time API](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
+- Kotlin Standard Library's dokumentation för `DateTime`: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-date-time/
+- Joda-Time, ett populärt Java-bibliotek för datum och tider: https://www.joda.org/joda-time/
+- Java's `LocalDate` och `ZonedDateTime` klasser för hantering av datum: https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html, https://docs.oracle.com/javase/8/docs/api/java/time/ZonedDateTime.html

@@ -10,32 +10,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么要将字符串转换为小写
+## 什么 & 为什么？
+将字符串转换成小写是一种常见的编程技术，它允许程序员将字符串中的所有字母都转换成小写形式。程序员通常这样做是因为小写字符串可以更容易地进行比较，从而简化代码的编写和阅读。
 
-对于许多编程任务来说，字符串是一个重要的数据类型。有时候，我们需要对字符串进行格式化和比较，其中一个常见的需求就是将所有的字符转换为小写形式。这篇文章将向您展示如何用 TypeScript 轻松地完成这项任务。
+## 如何：
+在 TypeScript 中，要将一个字符串转换成小写形式，可以使用内置函数 `toLowerCase()` 。下面是一个示例代码和输出，展示了该函数的使用方法。
 
-## 如何做到
-
-```TypeScript
-let originalStr = "Hello World!";
-let lowerStr = originalStr.toLowerCase();
-
-console.log(lowerStr); // output: hello world!
+```typescript
+let str = "HeLLo WoRld";
+let lowerStr = str.toLowerCase();
+console.log(lowerStr); // 输出：hello world
 ```
 
-在这个例子中，我们定义了一个名为 `originalStr` 的字符串变量，并将其初始化为 `"Hello World!"`。然后，我们调用字符串的 `toLowerCase()` 方法，将 `originalStr` 中的所有字符转换为小写形式，并将结果储存在名为 `lowerStr` 的新变量中。最后，我们使用 `console.log()` 来打印 `lowerStr` 的值，以检查转换是否成功。
+在上面的代码中，我们首先声明了一个包含混合大小写字母的字符串 `str` ，然后使用 `toLowerCase()` 函数将其转换成小写形式，并将结果赋值给变量 `lowerStr` ，最后通过 `console.log()` 函数打印出结果。
 
-## 深入探索
+## 深入探讨：
+历史上，计算机软件通常只能处理大写字符，因此在编程中，将字符串转换成小写形式是必要的。但随着技术的发展，现代计算机可以处理小写字符，因此这种转换已不再是必须的。作为替代方案，程序员也可以使用 `toUpperCase()` 函数将字符串转换成大写形式。
 
-若要深入了解字符串转换为小写的实现原理，我们首先需要了解 TypeScript 中的字符串是如何存储的。在 TypeScript 中，字符串是使用 `string` 类型来表示的，它是一种原始数据类型，也就是说它是不可变的，我们不能直接对其进行修改。因此，当我们调用 `toLowerCase()` 方法时，它并不会改变原始字符串的值，而是返回一个新的字符串，其中包含了转换后的结果。
+在实现上，`toLowerCase()` 函数会遍历字符串的每个字符，并将所有大写字母转换成小写字母。这个过程是在运行时完成的，因此可能会对系统性能产生微小的影响，尤其是在大型字符串上。因此，在处理大量字符串时，最好谨慎使用该函数。
 
-此外，值得注意的是，`toLowerCase()` 方法只会将字母字符转换为小写形式，其他字符（比如数字、标点符号等）会保持不变。因此，这个方法适用于大多数情况下，但在某些特殊情况下，我们可能需要自定义转换方式来处理特殊字符。
-
-## 参考链接
-
-- [TypeScript 官方文档 - 字符串操作](https://www.typescriptlang.org/docs/handbook/strings.html)
-- [MDN Web 文档 - toLowerCase() 方法](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)
-
-## 参见
-
-- [TypeScript 字符串操作指南](https://blog.logrocket.com/string-operations-in-typescript/)
+## 参考链接：
+- [官方文档：toLowerCase()](https://www.typescriptlang.org/docs/handbook)

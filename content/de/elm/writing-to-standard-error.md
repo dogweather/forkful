@@ -1,7 +1,7 @@
 ---
-title:                "Schreiben auf den Standardfehler"
-html_title:           "Elm: Schreiben auf den Standardfehler"
-simple_title:         "Schreiben auf den Standardfehler"
+title:                "Schreiben auf Standardfehler"
+html_title:           "Elm: Schreiben auf Standardfehler"
+simple_title:         "Schreiben auf Standardfehler"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Files and I/O"
@@ -10,35 +10,21 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was & Warum?
+Das Schreiben auf den Standardfehler ist ein Weg für Programmierer, um Informationen oder Fehlermeldungen auf der Konsole auszugeben, anstatt auf die Standardausgabe. Dies ist nützlich, um Fehler und Probleme zu identifizieren, insbesondere während der Entwicklung oder beim Debuggen von Code.
 
-Es gibt viele Gründe, warum man standard error (Standardfehler) in Elm schreiben würde. Der Hauptgrund ist, um Fehlermeldungen oder Fehlerinformationen anzuzeigen, wenn ein Programm ausgeführt wird. Dadurch können Entwickler*innen potenzielle Probleme schnell erkennen und beheben.
-
-## Wie geht das?
-
-Um standard error in Elm zu schreiben, gibt es zwei wichtige Schritte:
-
-1. Importiere das `Debug` Modul von Elm in deiner Datei: `import Debug`.
-
-2. Verwende die Funktion `crash` aus dem `Debug` Modul, um deine Fehlermeldung hinzuzufügen: `Debug.crash "Fehlermeldung hier"`.
-
-Um die Fehlermeldung als standard error auszugeben, musst du deine Elm-Datei jetzt nur noch ausführen.
+## Wie geht's?
+Um auf den Standardfehler zu schreiben, können wir die `Debug.log` Funktion verwenden. Diese Funktion akzeptiert zwei Argumente: einen String mit der gewünschten Meldung und einen Wert zum Ausgeben. Hier ist ein Beispiel, wie man sie benutzt:
 
 ```Elm
-import Debug
-
-main =
-    Debug.crash "Oops! Da ist etwas schief gelaufen."
+Debug.log "Benutzername:" "John Smith"
 ```
+Das würde `Benutzername: John Smith` auf der Konsole ausgeben.
 
-Die obige Code-Snippet wird eine standard error Nachricht mit dem Inhalt "Oops! Da ist etwas schief gelaufen." ausgeben, wenn das Programm ausgeführt wird.
-
-## Tiefes Eintauchen
-
-Es gibt viele zusätzliche Optionen, die du beim Schreiben von standard error in Elm berücksichtigen kannst. Du kannst beispielsweise den `Debug` Kontext nutzen, um zusätzliche Informationen zu deinem Fehler hinzuzufügen. Außerdem kannst du auch ein benutzerdefiniertes `Results` Modul erstellen, um spezifischere Fehlermeldungen zu generieren.
+## Tief tauchen
+Das Schreiben auf den Standardfehler ist nicht neu und wird schon seit langer Zeit von Programmiersprachen wie C und Java verwendet. Es ist eine schnelle und einfache Methode, um Informationen auszugeben und Fehler zu beheben. Eine Alternative zur Verwendung von `Debug.log` wäre das Verwenden von `Console.error`, das von der Elm-Bibliothek bereitgestellt wird. Dieses Modul bietet mehrere Funktionen, um auf die Konsole zu schreiben, einschließlich des Schreibens auf den Standardfehler.
 
 ## Siehe auch
-
-- [Offizielle Elm Dokumentation](https://guide.elm-lang.org/error_handling/debugging.html)
-- [Elm Forum Diskussion](https://discourse.elm-lang.org/t/error-handling-how-to-output-an-error-to-the-console/3131)
-- [Github Issue Tracker](https://github.com/elm/compiler/issues/269)
+- [Die Elm-Website](https://elm-lang.org/) für mehr Informationen zur Sprache und ihrer Verwendung.
+- [Die offizielle Elm-Dokumentation](https://package.elm-lang.org/packages/elm/core/latest/) für weitere Details zur `Debug`- und `Console`-Module.
+- [Ein Tutorial zur Elm-Programmierung](https://guide.elm-lang.org/) für Anfänger.

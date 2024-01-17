@@ -10,57 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## למה
+## מה ולמה?
 
-בעזרת שליחת בקשת HTTP ניתן לתקשר עם שרתים רחוקים ולקבל מידע ונתונים מהאינטרנט. פעולה זו חיונית ליצירת תקשורת בין אתרים ואפליקציות.
+שליחת בקשת HTTP היא פעולה שבה מתבצעת בעזרת תקשורת רשת, בה נמצאת הודעה ייחודית המבקשת משאב מסוים מהשרת. מתכנתים משתמשים בפעולה זו כדי לקבל מידע או לבצע פעולות על השרת.
 
-## איך לבצע
+## איך לעשות זאת?
+
+הנה דוגמא פשטנית לשליחת בקשת HTTP באמצעות Elixir:
 
 ```Elixir
-# אימפורטים נחוצים
-iex> require HTTPoison
-iex> require Jason
-
-# שליחת קשיחה עם HTTP GET
-iex> HTTPoison.get("https://example.com")
-{:ok,
- %HTTPoison.Response{
-   body: "<!DOCTYPE html>\n<html>\n<head>\n<title>Example Domain</title>\n<style ......",
-   headers: [
-     {"Content-Type", "text/html; charset=UTF-8"}, {"Pragma", "no-cache"},
-     {"Date", "Thu, 30 Sep 2021 00:00:00 GMT"}, {"Server", "gws"},
-     {"Cache-Control", "private"},
-     {"Set-Cookie",
-      "test_cookie=CookieValue; expires=Thu, 30-Sep-2021 01:00:00 GMT; Max-Age=3600; path=/; domain=example.com"}
-   ],
-   request_url: "https://example.com",
-   status_code: 200
- }}
-
-# שליחת קשיחה עם HTTP POST
-iex> HTTPoison.post("https://example.com", Jason.encode!(%{name: "John", age: 30}))
-{:ok,
- %HTTPoison.Response{
-   body: "<!DOCTYPE html>\n<html>\n<head>\n<title>Example Domain</title>\n<style ......",
-   headers: [
-     {"Content-Type", "text/html; charset=UTF-8"}, {"Pragma", "no-cache"},
-     {"Date", "Thu, 30 Sep 2021 00:00:00 GMT"}, {"Server", "gws"},
-     {"Cache-Control", "private"},
-     {"Set-Cookie",
-      "test_cookie=CookieValue; expires=Thu, 30-Sep-2021 01:00:00 GMT; Max-Age=3600; path=/; domain=example.com"}
-   ],
-   request_body: "%7B%22name%22%3A%22John%22%2C%22age%22%3A30%7D",
-   request_headers: [["content-type", "application/x-www-form-urlencoded"]],
-   request_method: :post,
-   request_url: "https://example.com",
-   status_code: 200
- }}
+HTTP.request(:get, "https://www.google.com") 
+|> HTTPoison.fetch! 
+|> IO.inspect
 ```
 
-## תהליך מעמיק
+פלט הקוד הינו תשובת השרת מסוג HTTP בפורמט מסוים.
 
-כאשר אנו שולחים בקשת HTTP, אנחנו בעצם מבקשים מהשרת לשלוח לנו תוכן חזרה. זה מאפשר לנו לקבל מידע ונתונים בקלות מהאינטרנט ולהשתמש בהם לביצוע פעולות נוספות. ניתן להשתמש בפונקציות כמו `get/2` ו-`post/3` של הספרייה HTTPoison על מנת לשלוח בקשות באינטרנט. על מנת להפעיל יישום זה, עלינו להתקין את הספרייה ולהוסיף את החבילות הנחוצות לפעולת שליחת בקשות HTTP.
+## הורדה עמוקה
 
-## ראה גם
+בעבור היסטוריית התוכנית, שליחת בקשת HTTP התחילה ככלי חשוב בתקשורת רשת בשנות השמונים של המאה ה-20. כיום, ישנן אלטרנטיבות רבות כמו AJAX ו-REST API שמשמשות כדי לשלוח בקשות HTTP.
 
-- [HexDocs: HTTPoison](https://
+המימוש של Elixir של שליחת בקשת HTTP מצויין ותומך בכמה פרוטוקולים שונים כמו HTTP, HTTPS ו-HTTPS2. הוא גם מספק כמה מתודות וכלים נוספים כדי לשפר את תהליך התקשורת ואת ביצועי התכנית.
+
+## ראו גם
+
+קישורים למקורות נוספים:
+
+- [מדריך רשמי של Elixir לשליחת בקשת HTTP](https://hexdocs.pm/elixir/HTTP.html)
+- [פרויקט HTTPoison - ספריית אינטרנט שנכתבה באמצעות Elixir](https://github.com/edgurgel/httpoison)
+- [מאמר "AJAX - התוספות והטבעים המתוחכמים" מאת ג'רמי קיטלן](https://www.adaptivepath.org/ideas/ajax-new-approach-web-applications/)

@@ -10,26 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## למה
-כדי לנהל נתונים בפורמט תקין וקל לקריאה עבור מכשירים ושירותים מגוונים באינטרנט, עבודה עם JSON הוא חיונית למתכנתי TypeScript. כמו כן, מסגרת TypeScript מאפשרת לנו להיעזר במדעי הנתונים וליצור יישומים מורכבים יותר שמתמודדים עם קבצי JSON.
+## מה ולמה? 
+עבודה עם JSON היא תהליך שבו מתכנתים מתאימים נתונים בפורמט JSON. פעולה זו מאפשרת לנו לארגן ולשמור מידע בצורה נוחה ומקומית בקוד שלנו.
 
-## איך לעשות זאת
-תחילה, יש להתקין את גירסת TypeScript האחרונה על ידי הרצת פקודת ההתקנה `npm install -g typescript`. לאחר מכן, ניתן ליצור קובץ חדש בשם "example.ts" ולבצע ייבוא של מודול JSON באמצעות הפקודה `import * as json from 'json'`. לאחר מכן, ניתן להשתמש בפקודה `json.parse()` כדי להמיר טקסט קלט בפורמט JSON לפריט מסוג "object" בפינקציה `console.log()` כדי להדפיס את הפריט הממומש בעזרת גישת מפתח: ערך.`
-
+## כיצד לעשות זאת: 
 ```TypeScript
-import * as json from 'json';
+// כל עובד עם JSON מתחיל עם הגדרת קובץ JSON בתוך משתנה מסוג String.
+let jsonString: string = '{"name":"John", "age":35, "occupation":"developer"}';
 
-let exampleJson = '{"name": "John", "age": 30}'; // טקסט קלט בפורמט JSON
+// כעת, נשתמש בפעולת JSON.parse כדי לקבל אובייקט מהטקסט שלנו.
+let person = JSON.parse(jsonString);
 
-let parsedJson = json.parse(exampleJson); // קבלת פריט מסוג "object"
+// לשינוי אובייקט לתוך טקסט, נשתמש בפעולת JSON.stringify.
+let newJsonString: string = JSON.stringify(person);
 
-console.log(parsedJson["name"]); // 'John', הדפסת הערך המסומן "name" בפריט הממומש
+// כעת, הטקסט שלנו יכיל את השינויים שביצענו באובייקט.
+console.log(newJsonString);
+// Output: {"name":"John", "age":35, "occupation":"developer"}
 ```
 
-## טיול עמוק
-עבודה עם מבנה נתונים פשוט כמו JSON יכולה להיות קלה ונגישה, אך ישנם סיטואציות מורכבות יותר כאשר יצירת יישומים מתבצעת על ידי עיבוד קבצי JSON גדולים יותר. מבחינה זו, מרכיב JSON פתוח ונוח לשימוש, כגון JSON Schema ו-JSON Pointer, יכול להיות מועיל לתחום עבודה זה.
+## חקר עמוק: 
+עבודה עם JSON נפוצה בעיקר ביישומי רשת אשר משתמשים בה כדי לשלוח ולקבל נתונים. בעבר, פורמט XML היה שכיח כמו פתרון לבעיות של פיצול נתונים. אך JSON הוא פתרון פשוט יותר ומתקבל בכל הפלטפורמות. בנוסף, ישנם פתרונות ניתוח נתונים נוספים כמו YAML ו-CSV אך הם פחות נפוצים בעקבות הפשטות של JSON. בפרויקטים גדולים יותר, ניתוח נתונים מומלץ לצד השימוש בביבליות ניתוח נתונים כמו JSON.net.
 
-## ראה גם
-- [מדריך לעבודה עם JSON ב TypeScript](https://www.digitalocean.com/community/tutorials/how-to-work-with-json-in-javascript)
-- [מתי להשתמש ב-JSON Schema vs. TypeScript](https://medium.com/@mbaker_8086/when-to-use-json-schema-vs-typescript-33e1711df1e8)
-- [כתיבת
+## ראה גם: 
+עבודה עם JSON היא חלק חשוב מתכנות בפלטפורמת TypeScript. לכן כדאי לקרוא על פעולות ופנקציות נוספות שניתן להשתמש בהם כדי להפקיד ולעבוד עם נתונים בפורמט JSON:
+
+- תיעוד JSON רשמי של TypeScript: https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-9.html
+- פונקציות נוספות לעבודה עם JSON ב-TypeScript: https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-9.html#new-json-apis
+- ספריית JSON.net לניתוח ויצירת נתוני JSON: https://www.newtonsoft.com/json

@@ -1,7 +1,7 @@
 ---
-title:                "Konvertera en sträng till gemener"
-html_title:           "Fish Shell: Konvertera en sträng till gemener"
-simple_title:         "Konvertera en sträng till gemener"
+title:                "Omvandling av en sträng till gemener"
+html_title:           "Fish Shell: Omvandling av en sträng till gemener"
+simple_title:         "Omvandling av en sträng till gemener"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -10,34 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför du ska använda Fish Shell för att konvertera en sträng till små bokstäver
+## Vad & Varför?
+Att konvertera en sträng till gemener (lower case) innebär att alla bokstäver i strängen omvandlas till små bokstäver. Detta kan vara användbart för att jämföra strängar och göra programmet mer lättläst.
 
-Att konvertera en sträng till små bokstäver är ett vanligt problem inom programmering, och ibland kan det vara svårt att hitta en smidig lösning. Fish Shell, med sin enkla syntax och inbyggda funktioner, kan göra detta till en enkel uppgift.
-
-## Hur du gör det med Fish Shell
-
-För att konvertera en sträng till små bokstäver i Fish Shell, kan du använda kommandot `string tolower`. Här är ett exempel på hur du kan använda detta kommando:
+## Hur?
+Att konvertera en sträng till gemener i Fish Shell är enkelt. Använd kommandot `string tolower` och ange strängen du vill konvertera som argument. Här är ett exempel:
 
 ```Fish Shell
-set my_string "HeLlO wOrLd"
-string tolower $my_string
-```
-Detta skulle ge följande output: `hello world`
-
-Det är också möjligt att använda en pipe för att konvertera en sträng till små bokstäver direkt från en extern källa, som t.ex. en fil:
-
-```Fish Shell
-cat my_file.txt | string tolower
+set sträng "HEJ HEJ"
+echo (string tolower $sträng)
 ```
 
-## Djupare dykning
+Output: `hej hej`
 
-För att få en djupare förståelse för hur `string tolower` fungerar i Fish Shell, är det viktigt att förstå hur Fish Shell behandlar strängar. I Fish Shell är strängar standardmässigt alltid case-sensitiva, vilket innebär att den skiljer mellan små och stora bokstäver. För att undvika detta, kan du använda kommandot `string tolower` för att konvertera en sträng till en version som bara innehåller små bokstäver.
+## Djupdykning
+Att konvertera en sträng till gemener är en vanlig operation inom programmering. Förr i tiden användes olika metoder beroende på vilket språk som användes, men idag finns det inbyggda funktioner i många programmeringsspråk som gör detta enkelt. I Fish Shell används kommandot `string tolower`, men i andra språk kan det heta något annat, som `tolower()` i C++.
 
-Det finns också andra metoder för att konvertera en sträng till små bokstäver i Fish Shell, som t.ex. `string tolower utf8`, som kan hantera specialtecken och unicode.
+Det finns också alternativa sätt att göra samma sak, som att använda `tr`-kommandot eller regelbundna uttryck. Men det beror på personliga preferenser och vilket språk som används.
+
+En viktig aspekt att tänka på när man konverterar en sträng till gemener är skillnaden mellan stora och små bokstäver i olika språk. Till exempel är det inte alltid enkelt att konvertera en sträng till gemener på ett korrekt sätt i svenska då vissa bokstäver som åäö kan ha olika representationer i gemener och versaler.
 
 ## Se även
-
-- [Fish Shell - officiell hemsida](https://fishshell.com/)
-- [Fish Shell dokumentation](https://fishshell.com/docs/current/index.html)
-- [Lista över inbyggda funktioner i Fish Shell](https://fishshell.com/docs/current/cmds.html)
+- Fish Shell dokumentation för `string` kommandot: https://fishshell.com/docs/current/cmds/string.html
+- Utvecklarens guide för programmering i Fish Shell: https://fishshell.com/docs/current/index.html

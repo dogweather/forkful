@@ -10,53 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Навіщо
+Що & Чому?
 
-Екосистема YAML є популярною серед розробників через його простоту та читабельність, що робить його ідеальним для зберігання та обміну даними. Чи ти вже працюєш з Elixir, або тільки починаєш, робота з YAML буде корисною для будь-якого проєкту.
+Працювання з YAML це про те, щоб зберігати та читати структуровані дані в Elixir. Це корисно для програмістів, оскільки вони можуть легше організувати та обробляти велику кількість інформації.
 
-## Як
-
-Найпростішим способом роботи з YAML в Elixir є використання бібліотеки [YAXL](https://hex.pm/packages/yaxl). Ця бібліотека надає багато функцій для зчитування та запису даних у YAML форматі.
+Як:
 
 ```Elixir
-# Читаємо дані з файлу "config.yml"
-{:ok, data} = YAXL.read("./config.yml")
-
-# Змінюємо значення поля "database" та записуємо зміни у новий файл "new_config.yml"
-new_data = data |> Map.put(:database, "postgresql")
-:ok = YAXL.write("./new_config.yml", new_data)
+# Завантажити бібліотеку YAML
+{:ok, yaml} = File.read("config.yml") |> YAML.decode()
+# Змінити значення "count" на 2
+yaml = %{yaml | count: 2}
+# Зберегти зміни
+yaml |> YAML.encode() |> File.write("config.yml")
 ```
 
-### Вивід:
+Результат:
 
-```Elixir
-{:ok, %{application: "my_app", database: "postgresql"}}
+```yaml
+count: 2
 ```
 
-## Детальний огляд
+Глибоке занурення:
 
-Якщо вам потрібно більше контролю над процесом роботи з YAML, ви можете використовувати вбудовану бібліотеку [YAML](https://hexdocs.pm/elixir/YAML.html). Ця бібліотека надає більше опцій та параметрів для зберігання та обробки даних.
+У принципі, YAML створений для людей, щоб було легше створювати та читати структуровані дані. Це було запроваджено в 2001 році та з тих пір отримало популярність у багатьох мов програмування. У Elixir також є інші засоби для роботи зі структурованими даними, такими як JSON та CSV.
 
-```Elixir
-# Читаємо дані з файлу "config.yml" та вказуємо опцію "symbolize_keys" для передачі ключів у вигляді атомів
-{:ok, data} = YAML.file("./config.yml", symbolize_keys: true)
+Дивіться також:
 
-# Додамо пакет "cowboy" до поля "applications" та використаємо опцію "pretty" для більш зрозумілого форматування даних у файлі "new_config.yml"
-new_data = data |> Keyword.put(:applications, [:cowboy | data[:applications]])
-:ok = YAML.write("./new_config.yml", new_data, pretty: true)
-```
-
-### Вивід:
-
-```Elixir
-{:ok,
- %{application: "my_app",
-   applications: [:cowboy, :logger, :elixir],
-   port: 80,
-   version: "1.0.0"}}
-```
-
-## Дивись також
-
-- [YAXL на HexDocs](https://hexdocs.pm/yaxl/readme.html)
-- [YAML на HexDocs](https://hexdocs.pm/elixir/YAML.html)
+- [Офіційна документація для YAML](https://yaml.org/)
+- [Дані структури в Elixir](https://elixir-lang.org/getting-started/structs.html)
+- [Вибір між YAML, JSON та іншими форматами для зберігання даних](https://stackoverflow.com/questions/1726802/what-is-the-difference-between-yaml-and-json-when-to-prefer-one-over-the-other)

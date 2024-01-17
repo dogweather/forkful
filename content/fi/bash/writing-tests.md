@@ -10,48 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä & Miksi?
 
-Kirjoittaminen testeihin auttaa varmistamaan koodin toimivuuden ja vähentää virheiden määrää. Se myös helpottaa löytämään ja korjaamaan mahdollisesti esiintyviä bugeja ennen kuin ne aiheuttavat suurempia ongelmia loppukäyttäjille.
+Kirjoita testejä ohjelmointikieli Bashilla on varmistusprosessi, jolla tarkistetaan koodin toimivuus ja mahdolliset virheet. Testaaminen auttaa varmistamaan ohjelman laadun ja vähentämään mahdollisia bugeja, jotka voivat aiheuttaa ongelmia käytössä. Se säästää aikaa ja vaivaa korjata ongelmia myöhemmin ja auttaa parantamaan ohjelman laatua yleisesti.
 
-## Miten
+## Miten:
 
-Testien kirjoittamisessa on monia lähestymistapoja, mutta tässä on yksi esimerkki käyttäen bashia.
+Esimerkkejä testien kirjoittamisesta Bashilla ja näytteen tulosteista  ```Bash ... ``` koodilohkoissa.
 
+```Bash
+# Testaa, että tiedosto/luokka on olemassa
+if [ -d "$DIRECTORY" ]; then
+  echo "$DIRECTORY löytyy."
+else
+  echo "$DIRECTORY ei löydy."
+fi
 ```
-Bash
-#!/bin/bash
 
-# Funktio, joka tarkistaa onko annettu luku parillinen
-function onko_parillinen {
-  if (( $1 % 2 == 0 )); then
-    echo "$1 on parillinen luku."
-  else
-    echo "$1 ei ole parillinen luku."
-  fi
+```Bash
+# Testaa funktioiden palautusta
+sum() {
+  echo "$(($1+$2))"
 }
-
-# Testi, joka kutsuu funktiota ja vertaa odotettua tulosta
-if [[ $(onko_parillinen 4) == "4 on parillinen luku." ]]; then
-  echo "Testi onnistui!"
+if [ $(sum 4 5) -eq 9 ]; then
+  echo "Testi läpäisty."
 else
   echo "Testi epäonnistui."
 fi
 ```
 
-**Tuloste:**
+Tuloste:
 
-```
-Bash
-4 on parillinen luku.
-Testi onnistui!
-```
+"DIREKTORIO löytyy."
+"Testi läpäisty."
 
-## Syväsukellus
+## Syvemmälle:
 
-Testien kirjoittaminen auttaa varmistamaan, että koodi toimii odotetulla tavalla. Se myös auttaa pysymään organisoituna ja havaitsemaan mahdollisia virheitä ennen kuin ne aiheuttavat ongelmia käyttäjille. Hyvän testin kirjoittaminen vaatii huolellista suunnittelua ja testien kattavuuden tarkkaa määrittämistä. On myös tärkeää varmistaa, että testeihin sisältyy erilaisia tapauksia ja rajapintoja koko koodin kattavuuden varmistamiseksi.
+Kirjoittaessasi testejä Bashilla, on hyvä olla tietoinen siitä, että aiemmat Bash-versiot eivät tue testirakenteita. Voit kuitenkin käyttää muita testauskirjastoja, kuten `Bats` tai `shunit2`. Voit myös luoda omia testausfunktioita, jotka auttavat varmistamaan haluamasi toiminnallisuudet.
 
-## Katso myös
+## Katso myös:
 
-- [Bashin virallinen dokumentaatio](https://www.gnu.org/software/bash/manual/)
-- [Testaus bashissa Stack Overflowissa](https://stackoverflow.com/questions/3000316/how-to-write-a-basic-test-case-in-bash)
+- [Bash testikomennot](https://www.tutorialspoint.com/unix_commands/test.htm)
+- [Bash-bugit: tunnistaminen ja korjaus](https://ryanstutorials.net/bash-debugging.php)
+- [Bats-testauskehys Bashille](https://github.com/sstephenson/bats)
+- [shunit2-testauskehys Bashille](https://github.com/kward/shunit2)

@@ -10,24 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
-Att skriva till standard error kan vara användbart i vissa situationer, till exempel när man vill skicka felmeddelanden eller logga information som inte är avsedd att synas för användaren.
+## Vad & Varför?
 
-## Så här gör du
-För att skriva till standard error i Haskell kan du använda funktionen `hPutStrLn` från modulen `System.IO`. Detta gör det möjligt att skriva en sträng till standard error, vilket vanligtvis är kopplat till terminalen. Nedan visas ett exempel på hur detta kan implementeras:
+Att skriva till standard error är ett sätt för programmerare att skicka meddelanden direkt till felutmatningen istället för den vanliga utmatningen. Detta är användbart när man vill separera olika typer av utmatningar, till exempel felmeddelanden från vanlig programoutput. 
+
+## Hur?
 
 ```Haskell
 import System.IO
-
-main = do
-    hPutStrLn stderr "Det här är ett felmeddelande."
+hPutStr stderr "Felmeddelande: division med noll"
 ```
 
-När detta program körs kommer felmeddelandet att skrivas till standard error, vilket i sin tur kan ses i terminalen. Om du istället vill skriva till standard output kan du använda funktionen `putStrLn` på samma sätt.
+Output:
+```
+Felmeddelande: division med noll
+```
 
 ## Djupdykning
-I Haskell finns det flera olika sätt att hantera felmeddelanden. Det är vanligt att använda antingen `Either` monad eller `IO` monad för att fånga och hantera fel. Att skriva till standard error är ett sätt att logga information om eventuella fel som uppstår i programmet. Det kan också vara användbart att låta felmeddelanden innehålla specifika detaljer som kan hjälpa till att hitta och åtgärda problemet.
+
+I historisk kontext var standard error en del av Unix-systemet och tillät utskrifter på skärmen samtidigt som programmet kördes. Numera är standard error en standardiserad kommunikationskanal för felmeddelanden mellan program och användare. Det finns också alternativ till att använda standard error, som till exempel att logga felmeddelanden istället. Implementeringen av standard error varierar beroende på programmeringsspråk och operativsystem, men implementeringen i Haskell är standardiserad och stöds av System.IO modulen.
 
 ## Se även
-- [Officiell Haskell-dokumentation för hPutStrLn](https://hackage.haskell.org/package/base-4.15.0.0/docs/System-IO.html#v:hPutStrLn)
-- [Haskellers-forumtråd om att skriva till standard error](https://mail.haskell.org/pipermail/haskell-cafe/2018-October/130515.html)
+
+- [HDocs för System.IO modulen](https://hackage.haskell.org/package/base-4.15.0.0/docs/System-IO.html)
+- [En guide till hantering av fel i Haskell](https://mmhaskell.com/blog/2017/4/3/throwing-errors-and-handling-expectations)
+- [Ett diskussionsforum om Haskell](https://www.reddit.com/r/haskell/)

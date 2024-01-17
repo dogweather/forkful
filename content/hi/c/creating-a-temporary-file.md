@@ -10,36 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Kyun
-Temporary file banana ke peeche koi khaas wajah hai. Kabhi kabhi hamare program mein temporary data store karna zaroori hota hai, jaise ki temporary results ko save karna ya temporary input data ko read karna. Temporary file banane se hum apne program ko flexible aur efficient banate hai.
+# क्या और क्यों?
+तो दोस्तों, अपने कोड में कभी-कभी आपको टेंपोररी फाइल सिर्फ थोड़े समय के लिए बनाने की जरूरत पड़ सकती है। टेंपोररी फाइल एक अस्थाई फाइल होती है जो आपको आपके काम के लिए बनाते हैं और जब आपका काम समाप्त हो जाता है तो वे फाइल अपने आप डिलीट हो जाती है। यह इसलिए कि कई बार हमें अस्थाई डेटा को स्टोर करने की जरूरत पड़ती है और उसके बाद उसे हमें डिलीट कर देना होता है। इसके लिए हम टेंपोररी फाइल का इस्तेमाल करते हैं।
 
-## Kaise Karein
-Temporary file banane ke liye, hume sabse pehle "stdio.h" header file ko include karna hoga. Uske baad, hum `fopen` function ka use karke temporary file ko create kar sakte hai. Iske badle hume ek unique file name generate karna hoga, jise `tmpnam()` function ke zariye kar sakte hai. Finally, hume temporary file ko delete karna zaroori hai, iske liye hum `remove()` function ka use kar sakte hai. Niche diye gaye code snippet mein ek example hai:
-
+# कैसे करें?
 ```C
-#include<stdio.h>
+#include <stdio.h>
+#include <stdlib.h>
 
-int main() {
-  FILE *pFile;
-  char tempFile[50];
+int main()
+{
+    // टेंपोररी फाइल बनाने के लिए एक फ़ाइल पॉइंटर बनाएं
+    FILE *temp_file = tmpfile();
 
-  // Temporary file create karna
-  pFile = fopen("temp.txt", "w+");
+    // टेंपोररी फाइल में डेटा लिखें
+    fprintf(temp_file, "यह टेम्प डेटा है");
 
-  // Unique file name generate karna
-  tmpnam(tempFile);
+    // टेंपोररी फाइल से डेटा पढ़ें
+    char data[100];
+    fseek(temp_file, 0, SEEK_SET);
+    fscanf(temp_file, "%s", data);
 
-  // Temporary file ko delete karna
-  remove(tempFile);
+    // टेंपोररी फाइल बंद करें
+    fclose(temp_file);
 
-  return 0;
+    // डेटा दिखाएं
+    printf("%s", data);
+
+    return 0;
 }
 ```
 
-## Deep Dive
-Temporary files, ya temp files, humare program mein temporary data storage ke liye bahut zaroori hote hai. In files ko create karne ka sabse aasan tarika `fopen()` function ka use karna hai. Jab hum temporary file create karte hai, toh hume ek unique file name assign karna zaroori hai, taaki humari existing files ke saath conflict na ho. Iske liye `tmpnam()` function zariye hum unique file names generate kar sakte hai. Temporary file delete karne ke liye, hume `remove()` function ka use karna hai. Isse humari temporary file system se remove ho jayegi.
+यहां हमने सी भाषा के ब्लॉक के अंदर टेंपोररी फाइल के साथ कुछ सामग्री लिखी और उसे फिर से पढ़ा। यहां हमने ```tmpfile()``` फ़ंक्शन का इस्तेमाल किया है जो एक अस्थाई फाइल बनाता है और उसका प्वॉइंटर लौटाता है। फिर हमने ```fprintf()``` फ़ंक्शन का इस्तेमाल करके उस फाइल में कुछ सामग्री लिखी है और फिर हम ```fscanf()``` फ़ंक्शन का इस्तेमाल करके उसी फाइल से डेटा पढ़ा है। और अंत में हमने ```fclose()``` फंक्शन का इस्तेमाल करके उस फाइल को बंद कर दिया है।
 
-## Dekhiye Bhi
-- [C Programming Tutorials Series by Programiz](https://www.programiz.com/c-programming)
-- [Temporary Files in C by GeeksforGeeks](https://www.geeksforgeeks.org/tmpnam-example-c/)
-- [The Importance of Temporary Files in Programming by Javatpoint](https://www.javatpoint.com/temporary-files-in-programming)
+# गहराई में जाएं
+अगर हम थोड़ी दुनिया की बात करें, तो टेंपोररी फाइल का इस्तेमाल बहुत सारे लोग करते हैं। इसके अलावा, अन्य विकल्प जैसे की मेमोरी मैपिंग भी उसी काम में आती है। टेंपोररी फाइल को उस समय बनाया जाता है जब हमें डेटा को स्टोर करने की जरूरत होती है और उसके बाद उसे डिलीट करना होता है। यह बहुत सी एप्लीकेशन्स में मैंने देखा है की टेंपोररी फाइलों का इस्तेमाल सुविधाजनक होता है।
+
+# अन्य स्रोत
+जो लोग अभी भी जानकारी दूर-संग्रह और ऐनथ्रो कैरो द्व

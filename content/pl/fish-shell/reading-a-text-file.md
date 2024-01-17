@@ -1,7 +1,7 @@
 ---
-title:                "Odczytanie pliku tekstowego"
-html_title:           "Fish Shell: Odczytanie pliku tekstowego"
-simple_title:         "Odczytanie pliku tekstowego"
+title:                "Odczytywanie pliku tekstowego"
+html_title:           "Fish Shell: Odczytywanie pliku tekstowego"
+simple_title:         "Odczytywanie pliku tekstowego"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Files and I/O"
@@ -10,42 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co & Dlaczego?
 
-Jeśli jesteś początkującym programistą lub po prostu chcesz nauczyć się nowej umiejętności, której możesz używać w swoim codziennym życiu, jesteś we właściwym miejscu! W tym artykule dowiesz się, jak czytać pliki tekstowe za pomocą Fish Shell, co jest bardzo przydatne w wielu sytuacjach.
+Odczytywanie pliku tekstowego to nic innego jak czytanie zawartości pliku zapisanego w formacie tekstu. Programiści najczęściej robią to w celu uzyskania dostępu do danych przechowywanych w pliku, takich jak ustawienia, konfiguracja czy dane wejściowe do programu.
 
-## Jak to zrobić
+## Jak to zrobić?
 
-Fish Shell jest wygodnym i przyjaznym dla użytkownika narzędziem, które jest dostępne na większości systemów operacyjnych. Aby odczytać plik tekstowy, wystarczy wpisać kilka poleceń w terminalu.
+Aby odczytać plik tekstowy za pomocą Fish Shell, możesz skorzystać z polecenia `cat`. W poniższym przykładzie odczytamy dane z pliku `example.txt`:
 
-```
-Fish Shell - wersja aktualna
-```
-
-Następnie musisz użyć komendy `cat`, która służy do wyświetlania zawartości pliku tekstowego. Na przykład, jeśli chcesz przeczytać plik o nazwie "tekst.txt", wpisz:
-
-```
-cat tekst.txt
+```Fish Shell
+cat example.txt
 ```
 
-Jeśli chcesz wyświetlić tylko kilka pierwszych linii pliku, możesz użyć opcji `-n` razem z liczbą linii, które chcesz wyświetlić. Na przykład:
+Wynik powyższego polecenia zostanie wyświetlony w terminalu.
 
-```
-cat -n 10 tekst.txt
-```
+## Wnikliwe spojrzenie
 
-Spokojnie, jeśli potrzebujesz wyświetlić zawartość pliku w określonej kolejności lub filtrować tylko wybrane linie, Fish Shell daje Ci wiele opcji, takich jak `sort`, `grep`, `head` i wiele innych. Wystarczy użyć opcji `--help`, aby poznać wszystkie dostępne funkcje.
+Odczytywanie plików tekstowych jest jedną z podstawowych czynności wykonywanych przez programistów. Zwykle używa się do tego konkretnego programu lub polecenia w danym języku programowania, tak jak w przypadku polecenia `cat` w Fish Shell.
 
-## Deep Dive
-
-Jeśli chcesz zagłębić się w temat i poznać więcej funkcji Fish Shell do czytania plików tekstowych, znajdziesz wiele przydatnych informacji w dokumentacji Fish Shell. Tam dowiesz się, jak możesz użyć różnych opcji, jak działa przetwarzanie plików tekstowych przez system operacyjny, a także jak możesz tworzyć bardziej zaawansowane skrypty do czytania i przetwarzania plików.
+Jeśli szukasz alternatywnego sposobu odczytania pliku tekstowego, możesz skorzystać z polecenia `less`, które pozwala na przewijanie dużych plików. Możesz także użyć biblioteki do odczytu plików tekstowych w wybranym języku programowania.
 
 ## Zobacz także
 
-Jeśli chcesz dowiedzieć się więcej o Fish Shell i jego możliwościach, możesz odwiedzić poniższe strony:
-
-- Oficjalna dokumentacja Fish Shell: https://fishshell.com/docs/current/index.html
-- Poradnik dla początkujących w Fish Shell: https://fishshell.com/docs/current/tutorial.html
-- Fish Shell na GitHub: https://github.com/fish-shell/fish-shell
-
-Teraz, kiedy już wiesz, jak czytać pliki tekstowe za pomocą Fish Shell, możesz wykorzystać tę umiejętność do wielu zadań, takich jak przetwarzanie danych, wyświetlanie plików konfiguracyjnych czy czytanie logów systemowych. Pamiętaj, aby eksperymentować i odkrywać wszystkie możliwości, jakie daje Ci Fish Shell! Happy coding!
+- Dokumentacja polecenia `cat` w Fish Shell: https://fishshell.com/docs/current/commands.html#cat
+- Przewodnik po odczytywaniu plików tekstowych w różnych językach programowania: https://www.digitalocean.com/community/tutorials/how-to-read-and-parse-a-text-file-in-c

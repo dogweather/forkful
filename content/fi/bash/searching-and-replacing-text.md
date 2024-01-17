@@ -10,43 +10,19 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä ja miksi?
+Hakeminen ja korvaaminen on prosessi, jossa ohjelmoijat korvaavat yhden merkkijonon toisella. Tämä on hyödyllistä silloin, kun halutaan tehdä laajoja muutoksia tekstin sisällössä, tai korvata useita esiintymiä samalla kertaa. Hakeminen ja korvaaminen ovat tärkeitä työkaluja ohjelmoijille, jotka haluavat nopeuttaa työskentelyä ja vähentää inhimillisiä virheitä.
 
-Haluatko puhdistaa tekstiä tai korvata tiettyjä sanoja tai lausekkeita jokaisesta tiedostosta? Etsiminen ja korvaaminen on kätevä keino tehdä tämä Bash-komentojonon avulla.
-
-## Miten
-
-Etsiminen ja korvaaminen voi olla hyödyllistä esimerkiksi skriptien tekemisessä. Voit käyttää komentoa "sed" etsimään tiettyä sanaa ja korvaamaan sen toisella sanalla. Seuraava esimerkki korvaa sanan "kissa" sanalla "koira" tiedostossa "eläimet.txt":
+## Kuinka tehdä?
+Hakeminen ja korvaaminen voidaan tehdä Bashilla helposti käyttämällä "sed" komentoa. Seuraavassa esimerkissä korvaamme kaikki esiintymät sanalla "kissa" sanalla "koira" tiedostossa nimeltä "teksti.txt":
 
 ```Bash
-sed -i 's/kissa/koira/g' eläimet.txt
+sed -i 's/kissa/koira/g' teksti.txt
 ```
+Tämä komento korvaa kaikki "kissa" sanat "koira" sanoilla teksti.txt -tiedostossa ja tallentaa muutokset tiedostoon.
 
-Tämä korvaa kaikki esiintymät sanasta "kissa" tiedostossa "eläimet.txt" sanalla "koira".
-
-Voit myös suorittaa etsinnän ja korvaamisen käyttämällä Bashin muuttujia. Seuraavassa esimerkissä korvaamme sanan "koti" muuttujalla "talo" tiedostossa "osoitteet.txt":
-
-```Bash
-koti="talo"
-sed -i "s/koti/$talo/g" osoitteet.txt
-```
-
-Tässä komennossa muuttuja "koti" nimetään ensin arvolle "talo" ja sitten Bash korvaa kaikki esiintymät sanasta "koti" tiedostossa "osoitteet.txt" arvolla "talo".
-
-## Syvempi sukellus
-
-"sed" -komennon lisäksi Bashilla on muita työkaluja etsimiseen ja korvaamiseen, kuten "awk" ja "grep". Nämä komennot tarjoavat lisää vaihtoehtoja ja mukauttamismahdollisuuksia, jotka voivat olla hyödyllisiä joissakin skenaarioissa.
-
-Voit myös yhdistää etsimisen ja korvaamisen useampaan komentoon yhdellä rivi-, kuten tässä esimerkissä:
-
-```Bash
-cat tiedosto.txt | sed 's/alas ylös/' | sort | uniq > uusi_tiedosto.txt
-```
-
-Tämä komento suorittaa etsimisen ja korvaamisen tiedostossa "tiedosto.txt", sitten järjestää ja poistaa duplikaatit ja tallentaa muutetun tiedoston "uusi_tiedosto.txt".
+## Syväsukellus
+Hakeminen ja korvaaminen ovat olleet käytössä jo 1970-luvulta lähtien ja ne ovat yksi Bashin tärkeimmistä työkaluista. Nykyään on olemassa myös muita keinoja suorittaa vastaavia operaatioita, kuten tekstieditorit ja tietokoneohjelmistot, mutta Bashin sed-komento pysyy yksinkertaisimpana ja nopeimpana vaihtoehtona.
 
 ## Katso myös
-
-- [Bash Basics: Using sed to Find and Replace Text](https://linuxize.com/post/bash-find-and-replace-text-string/)
-- [Bash's official documentation for sed](https://www.gnu.org/software/sed/manual/sed.html)
-- [Other text manipulation tools in Bash](https://www.fosslinux.com/3164/12-examples-of-special-bash-variables-every-linux-user-should-know.htm#text-manipulation)
+Voit lukea lisää Bashista ja sen käyttötavoista Bostwick F. ja Jones J.:n kirjasta "Bash Guide for Beginners". Voit myös tarkistaa Bash-komentorivin Latex Dottorin nettisivuilta, jossa on kattava opas Bashin käytöstä.

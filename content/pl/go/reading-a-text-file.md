@@ -10,53 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Czemu
+## Co i Dlaczego?
+Czytanie pliku tekstowego to jedna z podstawowych czynności programistycznych w języku Go. Polega ona na odczytaniu zawartości pliku tekstowego i wykorzystaniu jej w celu wykonania określonych operacji. Programiści często korzystają z tej funkcji, ponieważ umożliwia ona na łatwe i szybkie pobranie danych z zewnętrznego źródła.
 
-Jeśli jesteś programistą w Go, zapewne często miałeś lub będziesz miał do czynienia z odczytywaniem plików tekstowych. W tym artykule dowiecie się, jak łatwo i szybko można to zrobić w języku Go.
+## Jak to zrobić:
+Go oferuje kilka sposobów na odczytanie pliku tekstowego. Jednym z nich jest użycie funkcji `ReadFile` z biblioteki `io/ioutil`. Przykładowy kod wykorzystujący tę funkcję może wyglądać następująco:
 
-## Jak
-
-Krok 1: Zaimportuj bibliotekę os
-```Go
-import "os"
-```
-
-Krok 2: Otwórz plik za pomocą funkcji Open
-```Go
-file, err := os.Open("tekst.txt")
-```
-
-Krok 3: Obsłuż ewentualne błędy
-```Go
+```Go 
+file, err := ioutil.ReadFile("nazwa_pliku.txt")
 if err != nil {
     panic(err)
 }
+fmt.Print(string(file))
 ```
 
-Krok 4: Przeczytaj zawartość pliku za pomocą funkcji Read
-```Go
-content := make([]byte, 1024)
-_, err = file.Read(content)
-```
+Powyższy kod otwiera plik o nazwie "nazwa_pliku.txt" i odczytuje jego zawartość za pomocą funkcji `ReadFile`. Następnie za pomocą funkcji `string` konwertuje zawartość na postać tekstową i wypisuje ją na ekran. 
 
-Krok 5: Zamknij plik
-```Go
-file.Close()
-```
+## Głębszy Zanurzenie:
+Czytanie plików tekstowych jest częścią programowania od samego początku. W języku Go można również użyć funkcji `Open` z biblioteki `os` lub `bufio` do odczytania pliku wiersz po wierszu. Alternatywnie, można również użyć gotowej biblioteki `FileScanner`. Podczas odczytu pliku ważne jest użycie odpowiedniego kodowania znaków, w przeciwnym razie odczytane dane mogą być niepoprawne. 
 
-Krok 6: Wyświetl zawartość pliku
-```Go
-fmt.Println(string(content))
-```
-
-## Deep Dive
-
-W języku Go funkcja Open z biblioteki os zwraca dwa parametry - obiekt pliku i ewentualny błąd. Zapisujemy je do zmiennych file i err. Jeśli zmienna err jest nierówna nil, oznacza to, że wystąpił błąd i musimy go obsłużyć za pomocą funkcji panic (kończy działanie programu i wyświetla przekazany mu argument).
-
-Funkcja Read zwraca dwa parametry - ilość przeczytanych bajtów (i) oraz ewentualny błąd (err). Warunek _ (podkreślenie) oznacza, że nie chcemy w tym przypadku trzymać wartości i, a jedynie błąd, dlatego go ignorujemy.
-
-## Zobacz też
-
-- Dokumentacja języka Go: https://golang.org/doc/
-- Biblioteka os: https://golang.org/pkg/os/
-- Przykłady kodu w Go: https://github.com/golang/example
+## Zobacz również:
+Możesz przeczytać więcej na temat czytania plików tekstowych w języku Go tutaj:
+- [Oficjalna dokumentacja Go](https://golang.org/pkg/io/ioutil/)
+- [GitHub Go tutorial](https://github.com/golang/go/wiki/Io)
+- [Blog o Go](https://blog.golang.org/io2011)

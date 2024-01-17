@@ -10,27 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
-有时候，我们需要把字符串转换成小写形式。这可能是因为字符串是由用户输入的，我们希望保持统一的格式，或者是因为跟其他字符串进行比较时需要忽略大小写。
+## 什麼 & 為什麼？
 
-## 如何做到
-```Fish Shell```里有内置的函数可以帮助我们把字符串转换成小写形式。让我们来看一个简单的示例：
+將一個字符串轉換為小寫是指將字符串中的字母都轉換為小寫形式。程式設計師會做這件事是因為在編程時，有時候需要比較字母的大小寫，而轉換為小寫可以讓比較更精確。
+
+## 如何：
+
 ```
-set str "Hello World"
-echo $str  # 输出 "Hello World"
+Fish Shell 中，轉換字符串為小寫的語法是：
 
-# 使用 tolower 函数把字符串转换为小写
-set lower_str (tolower $str)
-echo $lower_str  # 输出 "hello world"
+$ echo "Hello, World!" | tr '[A-Z]' '[a-z]'
+
+這樣就可以把字符串轉換為小寫。
+
+輸出結果：hello, world!
+
 ```
-我们可以看到，使用 ```tolower``` 函数可以轻松地把字符串转换成小写形式。另外，如果我们需要在一条命令中同时转换多个字符串，可以使用管道符号 ```|``` 连接多个 ```tolower``` 函数。
 
-## 深入了解
-如果你对于字符串的转换操作感兴趣，可以进一步了解内置函数 ```tolower``` 的工作原理。```tolower``` 函数实际上是使用了字符集转换工具 ```iconv``` 来实现字符串的转换。字符集是一种将字符编码为数字的方式，并且不同的字符集可能对应着不同的编码规则。通过转换字符集，字符串中的大写字母会被转换成相应的小写字母。
+## 深入探討：
 
-## 参考链接
-- [Fish Shell 官方文档](https://fishshell.com/docs/current/index.html)
-- [iconv 文档](http://www.gnu.org/software/libiconv/)
-- [字符集和编码简介](https://www.jianshu.com/p/401b6199d1a3)
+1. 歷史背景：在舊的電腦系統中，只有大寫字母，而小寫字母是在後來才加入的。所以在一些舊的程式設計語言中，標示大小寫是很重要的，而轉換字符串為小寫可以方便比較字母。
 
-## 参见
+2. 其他方法：除了使用 Fish Shell 中的 tr 指令，還可以使用其他程式語言中的函數或方法來轉換字符串為小寫，如 Python 中的 lower() 函數、Java 中的 toLowerCase() 方法等。
+
+3. 實現細節：轉換字符串為小寫的過程其實就是將字符串中的大寫字母替換為相應的小寫字母。
+
+## 請參考：
+
+- Fish Shell 官方文檔：https://fishshell.com/docs/current/
+- tr 指令詳細使用方法：https://zh.wikipedia.org/wiki/Tr_(Unix)
+- 認識舊的電腦系統：https://www.dropbox.com/s/2ep8mhwk3v4b01r/Turning%20Up%20the%20Heat%20-%20Two%20Centuries%20of%20Industrial%20Development.pdf

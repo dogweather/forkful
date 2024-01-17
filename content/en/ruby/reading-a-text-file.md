@@ -10,104 +10,63 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-Reading a text file is a common task in programming, especially when dealing with data processing or file manipulation. In this article, we will explore how to read a text file using Ruby, the popular and user-friendly programming language.
+Reading a text file in Ruby refers to the process of accessing and manipulating the content of a plain text file using Ruby code. This can be useful for tasks such as extracting data, parsing information, or performing text-based operations. Programmers often read text files in order to automate repetitive tasks or to handle large amounts of data in a more efficient and organized manner.
 
-## How To
+## How to:
 
-To read a text file in Ruby, we will use a combination of built-in methods and File.open(). Let's say we have a text file called "data.txt" which contains the following content:
-
-```
-Hello
-World
-```
-
-To read this file, we can use the following code:
+To read a text file in Ruby, we can use the File class and its methods. Let's say we have a file called "data.txt" in our current directory, containing the following text:
 
 ```
-File.open("data.txt").each do |line|
-	puts line
+Hello world!
+This is a sample file.
+```
+
+We can use the `open` method to open the file and access its contents:
+
+```Ruby
+file = File.open("data.txt")
+
+# read the entire file
+puts file.read #=> Hello world!\nThis is a sample file.
+
+# read the first line
+puts file.readline #=> Hello world!
+
+# read all lines as an array
+puts file.readlines #=> ["Hello world!\n", "This is a sample file."]
+
+# close the file
+file.close
+```
+
+We can also use a block to automatically close the file once we are done with it:
+
+```Ruby
+File.open("data.txt") do |file|
+  # read the entire file
+  puts file.read #=> Hello world!\nThis is a sample file.
 end
-```
-
-The ```open``` method opens the file in read-only mode, while the ```each``` method iterates through each line in the file. In this case, it will print out:
-
-```
-Hello
-World
-```
-
-We can also specify a variable to store the content of each line, like this:
-
-```
-File.open("data.txt").each do |line|
-	content = line.chomp
-	puts content
-end
-```
-
-The ```chomp``` method removes any trailing newline characters from the line, ensuring that our output doesn't have any extra line breaks.
-
-We can also specify a block of code to perform for each line, like this:
-
-```
-File.open("data.txt").each do |line|
-	puts "The current line is: " + line
-end
-```
-
-This will output:
-
-```
-The current line is: Hello
-The current line is: World
-```
-
-We can also read the entire text file as a single string using the ```read``` method, like this:
-
-```
-content = File.read("data.txt")
-puts content
-```
-
-This will output:
-
-```
-Hello
-World
 ```
 
 ## Deep Dive
 
-In Ruby, we can also specify the mode in which we want to open the file, using the ```File.open()``` method. For example, if we want to open the file in write-only mode, we can use the mode "w" like this:
+Reading text files has been a fundamental part of programming since the early days of computing. In Ruby, the `File` class was introduced in version 1.9.3 and has since been the go-to method for reading and manipulating text files.
 
-```
-File.open("data.txt", "w").write("This is a new line.")
-```
+Aside from using methods such as `read`, `readline` and `readlines`, we can also use the `foreach` method to iterate over each line in a file:
 
-This will overwrite the existing content of the file with the new string "This is a new line.". We can also use the mode "a" to append content to the end of the file, like this:
-
-```
-File.open("data.txt", "a").write("This is another new line.")
-```
-
-This will add the string "This is another new line." to the end of the file, without overwriting the existing content.
-
-Additionally, we can specify the encoding of the file when opening it, using the optional second argument in the ```File.open()``` method. For example, if our text file is in UTF-8 encoding, we can open it like this:
-
-```
-File.open("data.txt", "r:UTF-8").each do |line|
-	puts line
+```Ruby
+File.foreach("data.txt") do |line|
+  # print each line
+  puts line #=> Hello world!\nThis is a sample file.
 end
 ```
 
-This ensures that any special characters or symbols in the file are properly read and displayed.
+There are other methods that can be used to read from a file, such as `gets` and `getc`, but these are not commonly used for reading text files.
 
 ## See Also
 
-For more information on File I/O in Ruby, check out the following links:
+Check out the official Ruby documentation on the `File` class for more information and examples on reading text files: https://ruby-doc.org/core-2.6.1/File.html
 
-- [Official Ruby documentation on File class](https://ruby-doc.org/core-2.7.1/File.html)
-- [Ruby File Handling Tutorial](https://www.tutorialspoint.com/ruby/ruby_input_output.htm)
-- [Reading and Writing Files in Ruby](https://www.geeksforgeeks.org/reading-and-writing-files-in-ruby/)
+To learn more about manipulating text files in Ruby, you can also refer to the "Ruby File Handling" guide on tutorialspoint: https://www.tutorialspoint.com/ruby/ruby_file_handling.htm

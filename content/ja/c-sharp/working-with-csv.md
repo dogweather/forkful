@@ -1,7 +1,7 @@
 ---
-title:                "「csvとの作業」"
-html_title:           "C#: 「csvとの作業」"
-simple_title:         "「csvとの作業」"
+title:                "「CSVの扱い方」"
+html_title:           "C#: 「CSVの扱い方」"
+simple_title:         "「CSVの扱い方」"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Data Formats and Serialization"
@@ -10,35 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜCSVを扱うのか
-CSVはデータを格納するために最も一般的に使用されるフォーマットの1つです。CSVファイルを読み書きすることができるようになることは、多くの開発者にとって役に立ちます。
+# 何＆なぜ?
 
-## 使い方
-CSVファイルを読み込み、データを処理した後でまた新しいCSVファイルにデータを書き込む方法を学ぶために、以下のコード例を参考にしてください。
+CSVとは、Comma Separated Values (カンマ区切り値) の略称で、データを表形式で保存するためのファイル形式です。プログラマーは、データを処理しやすい形式で保存するために、CSVを使用します。
+
+# 方法：
 
 ```C#
 // CSVファイルを読み込む
-var lines = File.ReadAllLines("sample.csv");
-// データを処理する
-foreach(var line in lines)
-{
-    var data = line.Split(',');
-    // CSVから取得したデータを使った処理をする
-    Console.WriteLine($"Name: {data[0]}, Age: {data[1]}, Gender: {data[2]}");
+using System;
+using System.IO; // System.IOパッケージを使用する
+
+string[] lines = File.ReadAllLines("file.csv"); // CSVファイルを読み込む
+foreach(string line in lines){ // 各行に対して処理を行う
+    string[] values = line.Split(','); // 各行をカンマで分割し、配列に格納する
+    foreach(string value in values){ // 各値に対して処理を行う
+        Console.WriteLine(value); // 値を表示する
+    }
 }
-// 新しいCSVファイルにデータを書き込む
-using (var writer = new StreamWriter("new.csv"))
-{
-    writer.WriteLine("Name,Age,Gender");
-    writer.WriteLine("John,30,Male");
-    writer.WriteLine("Jane,25,Female");
-}
+
+// CSVファイルを書き込む
+string[] lines = {"1,2,3", "4,5,6", "7,8,9"}; // CSVファイルに書き込むデータ
+File.WriteAllLines("file.csv", lines); // ファイルを書き込む
+
 ```
 
-## CSVの詳細
-CSVファイルは、基本的にテキストファイルであり、データをコンマで区切って表現するものです。しかし、データにコンマや改行などの特殊文字が含まれている場合は、その特殊文字をエスケープする必要があります。また、CSVファイル自体にはデータ型の情報が含まれていないため、データの型変換は開発者の責任となります。
+# 深堀り
 
-## See Also
-- [C#でCSVファイルを読み書きする方法](https://programmingwithmosh.com/net/working-with-csv-files-in-csharp/)
-- [Microsoftのドキュメント：CSVファイルを読み込む](https://docs.microsoft.com/ja-jp/dotnet/csharp/programming-guide/file-system/how-to-read-a-text-file-one-line-at-a-time)
-- [CSVのフォーマットの詳細](https://www.loc.gov/preservation/digital/formats/fdd/fdd000323.shtml)
+CSVは、1970年代にIBMによって開発されたデータ形式です。プログラマー以外にも、ビジネスや研究分野などでもよく使用されます。他にも、JSONやXMLといった形式もデータ処理に使用されますが、CSVはよりシンプルな構造を持っているため、データを扱いやすいという利点があります。CSVファイルは、Microsoft ExcelやGoogle Sheetsなどのプログラムでも扱うことができます。
+
+# 関連情報
+
+- [Microsoft Docs: CSVファイルの読み込みと書き込み](https://docs.microsoft.com/ja-jp/dotnet/standard/io/how-to-read-and-write-csv-files)
+- [Wikipedia: CSV](https://ja.wikipedia.org/wiki/CSV)

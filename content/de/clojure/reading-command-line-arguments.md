@@ -1,7 +1,7 @@
 ---
-title:                "Das Lesen von Befehlszeilenargumenten"
-html_title:           "Clojure: Das Lesen von Befehlszeilenargumenten"
-simple_title:         "Das Lesen von Befehlszeilenargumenten"
+title:                "Lesen von Befehlszeilenargumenten"
+html_title:           "Clojure: Lesen von Befehlszeilenargumenten"
+simple_title:         "Lesen von Befehlszeilenargumenten"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Files and I/O"
@@ -10,51 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+Was & Warum?
 
-Wenn du schon einmal eine Anwendung auf der Kommandozeile ausgeführt hast, hast du wahrscheinlich gesehen, dass sie manchmal zusätzliche Argumente erfordert. Diese Argumente ermöglichen es Benutzern, die Funktionalität der Anwendung anzupassen oder bestimmte Operationen auszuführen. In dieser Anleitung werden wir uns ansehen, wie man diese Argumente richtig liest und versteht.
+Das Lesen von Kommandozeilenargumenten ist eine Methode, mit der Programmierer Informationen aus der Eingabeaufforderung erhalten. Dies ermöglicht es ihnen, interaktive Programme zu erstellen und Benutzereingaben zu berücksichtigen.
 
-## Wie geht's
+Wie geht's?
 
-Das Lesen von Befehlszeilenargumenten ist in Clojure ziemlich einfach. Alles, was du dafür brauchst, ist das ```clojure clojure.args``` Paket. Bevor wir jedoch loslegen, lass uns einen einfachen Beispielcode betrachten:
+Um Kommandozeilenargumente in Clojure zu lesen, können Sie den Befehl `*command-line-args*` verwenden. Im Folgenden finden Sie ein Beispiel, wie Sie die Argumente ausgeben können:
 
-```clojure
-(ns arg-example
-  (:require [clojure.args :refer [parse-opts]]))
-
-(defn main
-  [args]
-  (let [[opts _ _] (parse-opts args [["-n" "--name" "Name" "Name des Benutzers"]])]
-    (println "Hallo" (:name opts))))
-
+```Clojure
+(def args *command-line-args*)
+(prn "Eingegebene Argumente:" args)
 ```
 
-Dieses kurze Programm liest einen optionalen Befehlszeilenargument mit dem Namen "Name" und gibt "Hallo Name" aus, wobei "Name" der eingegebene Wert ist. Lass uns nun sehen, was passiert, wenn wir dieses Programm mit verschiedenen Argumenten ausführen:
+Ausgabe:
 
 ```
-$ java -jar arg-example.jar
-Hallo
-
-$ java -jar arg-example.jar -n "Mike"
-Hallo Mike
-
-$ java -jar arg-example.jar --name "Sandra"
-Hallo Sandra
+Eingegebene Argumente: [arg1 arg2 arg3]
 ```
 
-Wie du sehen kannst, kannst du das Argument entweder mit einer Kurzform (```-n```) oder einer Langform (```--name```) angeben, gefolgt von einem Wert. Wenn du das Argument nicht angibst, wird der Standardwert verwendet (in diesem Fall ist es ein leerer String).
+Der Befehl `*command-line-args*` gibt eine Liste von Zeichenketten zurück, die die eingegebenen Argumente darstellen. Diese können dann in Ihrem Programm verwendet werden, um Entscheidungen zu treffen oder Berechnungen durchzuführen.
 
-Der Grund, warum dies so funktioniert, ist, dass das ```parse-opts``` Funktion ein Hashmap zurückgibt, das alle angegebenen Argumente enthält. In unserem Beispiel verwenden wir das ```_``` Symbol, um ungenutzte Argumente zu verwerfen, da wir hier nur an dem einen Argument interessiert sind. Du kannst jedoch beliebig viele Argumente hinzufügen.
+Tiefer tauchen
 
-## Tiefe Tauchgänge
+Das Lesen von Kommandozeilenargumenten ist eine gängige Praxis in der Programmierung und wird seit langem verwendet. Es gibt auch alternative Methoden, wie z.B. das Erstellen von interaktiven Menüs oder die Verwendung von Einstellungen in einer Konfigurationsdatei.
 
-Nun, da du gesehen hast, wie man Befehlszeilenargumente in Clojure liest, lass uns einen Blick auf die ```parse-opts``` Funktion werfen. Diese Funktion nimmt drei Argumente: die Argumente, die an dein Programm übergeben werden (normalerweise ```*command-line-args*```), eine Sequenz von zu parsenden Argumenten und eine optionale Kopfzeile für die Hilfe.
+In Clojure wird die `clojure.main`-Funktion verwendet, um Kommandozeilenargumente zu lesen und an das eigentliche Programm weiterzugeben. Diese Funktion ist Teil der Kernbibliothek von Clojure und daher immer verfügbar.
 
-In unserem Beispiel haben wir nur ein Argument definiert, aber in der Sequenz kannst du beliebig viele Argumente angeben. Jede Argumentdefinition besteht aus einem oder mehreren Flaggen (wie in unserem "Name"-Argument), einem benutzerdefinierten Namen und einer Beschreibung für die Hilfe.
+Siehe auch
 
-Die ```parse-opts``` Funktion sorgt dafür, dass die eingegebenen Argumente den erwarteten Formen entsprechen und gibt dann das Ergebnis als Hashmap zurück, das die benutzerdefinierten Namen als Schlüssel enthält. Es gibt auch die Möglichkeit, Standardwerte für Argumente anzugeben, falls der Benutzer sie nicht angegeben hat.
-
-## Siehe auch
-
-- [Offizielle Dokumentation für Clojure Args](https://clojure.github.io/tools.cli/)
-- [Eine praktische Einführung in das Lesen von Befehlszeilenargumenten in Clojure](https://www.brainfuel.io/blog/how-to-read-command-line-arguments-with-clojure)
+Für weitere Informationen über `*command-line-args*` und andere nützliche Funktionen in Clojure, können Sie die offizielle Dokumentation unter https://clojure.org/api/cheatsheet und https://clojure.github.io/clojure/clojure.main-api.html besuchen.

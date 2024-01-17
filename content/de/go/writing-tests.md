@@ -10,36 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Warum
+## Was & Warum?
 
-Tests schreiben kann den Prozess des Codierens erschweren und manchmal sogar etwas nervig sein, aber sie sind unerlässlich, um sicherzustellen, dass dein Code funktioniert und keine unerwünschten Nebeneffekte hat. Tests helfen auch dabei, Fehler frühzeitig zu erkennen und zu verhindern, dass sie in die Produktion gelangen.
+Tests zu schreiben bedeutet, dass Programmierer ihre Code-Basis auf Fehler und Bugs überprüfen. Das hilft dabei, die Qualität des Codes zu verbessern und sicherzustellen, dass er wie erwartet funktioniert.
 
-# Wie geht man vor
+## Wie geht's?
 
-Um einen einfachen Test in Go zu schreiben, musst du zunächst das `testing` Paket importieren. Dann kannst du die Funktion `testing.T` nutzen, um einen Testfall zu definieren.
+Um Tests in Go zu schreiben, verwende das "testing" Paket. Mit dem Befehl "go test" können dann alle Tests ausgeführt werden. Hier ist ein Beispiel:
 
 ```Go
-import "testing"
+func Sum(a int, b int) int {
+    return a + b
+}
 
-func TestAddition(t *testing.T) {
-    result := 2 + 2
-    expected := 4
-    if result != expected {
-        t.Errorf("Erwartetes Ergebnis war %d, erhaltenes Ergebnis war %d", expected, result)
+func TestSum(t *testing.T) {
+    result := Sum(2, 3)
+    if result != 5 {
+        t.Errorf("Sum(2, 3) should equal 5, but got %d", result)
     }
 }
 ```
 
-Du kannst die Methode `t.Errorf()` nutzen, um eine Fehlermeldung zu erhalten, wenn das Ergebnis nicht den Erwartungen entspricht.
+Die Ausgabe wäre:
 
-# Tiefen-Eintauchen
+```
+--- FAIL: TestSum (0.00s)
+    main_test.go:8: Sum(2, 3) should equal 5, but got 6
+FAIL
+exit status 1
+FAIL    _/Users/user1/test  0.006s
+```
 
-Beim Schreiben von Tests in Go gibt es ein paar wichtige Konzepte zu beachten. Eine davon ist die Verwendung von **table-driven tests**. Das bedeutet, dass du verschiedene Eingaben und erwartete Ergebnisse in einer Tabelle definieren kannst und dann durch alle Kombinationen testen kannst. Dies ist besonders nützlich, um sicherzustellen, dass dein Code für verschiedene Szenarien funktioniert.
+## Tiefergehende Infos
 
-Du kannst auch **Mocking** nutzen, um externe Abhängigkeiten zu ersetzen und somit unabhängige Tests zu schreiben. Das `testing` Paket bietet auch Methoden wie `t.Fatal()` und `t.Skip()` an, um deine Tests zu verbessern.
+Tests in Code zu integrieren ist eine gängige Praxis in der Software-Entwicklung und wird oft als Teil des "Test-driven Developments" verwendet. Alternativen zu Go's "testing" Paket beinhalten "gotest.tools" und "testify". Um mehr über Implementierungsdetails zu erfahren, kannst du die offizielle Dokumentation zu Go's "testing" Paket lesen.
 
-# Siehe auch
+## Siehe auch
 
-- Offizielle Dokumentation für das `testing` Paket in Go: https://golang.org/pkg/testing/
-- Ein Tutorial zu TDD (Test-driven Development) in Go: https://blog.alexellis.io/golang-writing-unit-tests/
-- Ein Artikel über table-driven tests in Go: https://dave.cheney.net/2013/06/09/writing-table-driven-tests-in-go
+Weiterführende Infos und Beispiele findest du hier:
+- [https://golang.org/pkg/testing/](https://golang.org/pkg/testing/)
+- [https://pkg.go.dev/gotest.tools](https://pkg.go.dev/gotest.tools)
+- [https://pkg.go.dev/github.com/stretchr/testify](https://pkg.go.dev/github.com/stretchr/testify)

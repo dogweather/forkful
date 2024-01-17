@@ -10,52 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i dlaczego?
 
-Pisanie plików tekstowych to często wymagana umiejętność w programowaniu. Zapisywanie informacji w postaci tekstu jest nie tylko wygodne, ale także powszechnie używane w różnych dziedzinach.
+Pisanie plików tekstowych jest podstawową czynnością w programowaniu. Polega ono na zapisywaniu tekstu na dysku komputera w postaci pliku. Programiści robią to, aby przechowywać i przetwarzać informacje w ich programach.
 
-## Jak to zrobić
+## Jak to zrobić:
 
-Pisanie plików tekstowych w języku JavaScript jest proste i prostydłaczego mieć kilka przykładowych kodów oraz ich wyjścia. Kod będzie umieszczony w blokach "```javascript ... ```", wystarczy skopiować go do swojego edytora kodu i uruchomić, aby zobaczyć efekt.
+Aby zapisać plik tekstowy za pomocą Javascript, musimy użyć wbudowanej funkcji "fs.writeFile()". Przykładowy kod wygląda następująco:
 
-```javascript
-// Tworzenie pliku tekstowego i zapisanie w nim tekstu
-const fs = require('fs'); // importowanie modułu fs
+```Javascript
+const fs = require('fs'); //importujemy moduł do manipulacji plikami
 
-const tekst = 'To jest tekstowy plik, który zostanie zapisany.'; 
-// deklaracja zmiennej z tekstem do zapisania
+let data = "To jest przykładowy tekst do zapisania w pliku."; //definiujemy tekst do zapisania
 
-fs.writeFile('plik.txt', tekst, (err) => {
-  if (err) throw err; // obsługa błędu
-  console.log('Plik został zapisany.');
-});
-// wywołanie metody writeFile i przekazanie nazwy pliku, tekstu oraz funkcji zwrotnej
-
-// Odczytywanie tekstu z pliku
-fs.readFile('plik.txt', 'utf8', (err, data) => {
+fs.writeFile('plik.txt', data, (err) => { //tworzymy plik o nazwie "plik.txt" i wpisujemy do niego tekst
   if (err) throw err;
-  console.log(data); // wyświetlenie odczytanego tekstu
+  console.log('Plik został zapisany!'); //wyświetlamy informację o zapisaniu pliku
 });
 ```
 
-Przykładowe wyjście:
+Po wykonaniu tego kodu, na naszym dysku zostanie utworzony plik "plik.txt", w którym znajdzie się tekst zdefiniowany w zmiennej "data".
 
-```
-Plik został zapisany.
-To jest tekstowy plik, który zostanie zapisany.
-```
+## Zanurz się głębiej:
 
-## Głębsza analiza
+Pisanie plików tekstowych w Javascript jest możliwe dzięki modułowi "fs", który został wprowadzony w wersji 0.1.8 tej technologii. Istnieje również wiele alternatywnych metod zapisu plików tekstowych, takich jak na przykład używanie aplikacji zewnętrznych lub wykorzystanie innych języków programowania. Ważne jest, aby pamiętać o odpowiednim formatowaniu danych, aby plik był czytelny dla ludzi oraz dla programów.
 
-Operacje na plikach tekstowych w języku JavaScript są możliwe dzięki modułowi fs (File System). Jest to wbudowany moduł, więc nie ma potrzeby instalacji zewnętrznych bibliotek.
+## Zobacz także:
 
-Metoda `writeFile` służy do zapisywania tekstu w pliku o określonej nazwie. Przyjmuje trzy argumenty: nazwę pliku, tekst do zapisania oraz funkcję zwrotną, która zostanie wywołana po zapisaniu pliku. W przypadku wystąpienia błędu, wywołana zostanie funkcja `throw` i wyświetlony zostanie komunikat o błędzie.
-
-Natomiast metoda `readFile` służy do odczytywania tekstu z pliku, również przyjmując trzy argumenty: nazwę pliku, kodowanie tekstu (w tym przypadku `utf8` oznacza, że tekst będzie odczytywany w formacie UTF-8) oraz funkcję zwrotną. W przypadku braku błędów, odczytany tekst zostanie przekazany do wywołania funkcji zwrotnej.
-
-Jeśli chcesz dowiedzieć się więcej o operacjach na plikach tekstowych w języku JavaScript, zapoznaj się z dokumentacją modułu fs lub poszukaj większej ilości przykładów kodów.
-
-## Zobacz także
-
-- Dokumentacja modułu fs: https://nodejs.org/api/fs.html
-- Przykładowe operacje na plikach tekstowych w języku JavaScript: https://www.techiediaries.com/nodejs-tutorial-read-write-files/
+- Dokumentacja funkcji fs.writeFile(): https://nodejs.org/api/fs.html#fs_fs_writefile_file_data_options_callback
+- Przydatny poradnik o manipulacji plikami w Javascript: https://www.w3schools.com/nodejs/nodejs_filesystem.asp
+- Alternatywne sposoby zapisu plików tekstowych: https://blog.fullstacktraining.com/ways-to-write-to-file-in-nodejs/

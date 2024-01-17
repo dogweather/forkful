@@ -10,39 +10,20 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
-Halutessasi tulostaa päivämäärän tekstiksi sinun täytyy ensin muuntaa se asianmukaiseen muotoon, jotta voit näyttää sen haluamallasi tavalla.
+Konvertoidaanko vanha päivämäärä uuteen merkkijonoon? Miksi ohjelmoijat tekevät näin?
 
-## Kuinka
-Javascriptissä on useita tapoja muuntaa päivämäärä merkkijonoksi. Alla on esimerkkikoodia siitä, kuinka tämä voidaan tehdä käyttämällä Moment.js-kirjastoa:
+Konvertointi päivämäärästä merkkijonoon on prosessi, jossa päivämäärä muunnetaan siihen liittyväksi tekstiksi. Tämä on tärkeä toiminto, jota ohjelmoijat tekevät esimerkiksi käyttöliittymien suunnittelussa ja datan tallentamisessa tietokantoihin.
 
-````Javascript
-// Määritä päivämäärä
-let date = new Date();
-// Muuta päivämäärä merkkijonoksi
-let dateString = moment(date).format("DD/MM/YYYY");
-// Tulosta muunnettu päivämäärä
-console.log(dateString);
-````
+### Kuinka tehdä:
+```Javascript
+const date = new Date(); // Luodaan uusi päivämääräobjekti
+const dateString = date.toString(); // Muunnetaan päivämäärä muotoon merkkijono
+console.log(dateString); // Tulostaa esimerkiksi: "Wed Aug 18 2021 13:45:27 GMT+0300 (Eastern European Summer Time)"
+```
 
-Tämä tuottaa tulosteen "12/05/2021".
+### Syvä sukellus:
+Päivämäärän muuntaminen merkkijonoksi ei ole uusi idea, vaan sitä on tehty jo pitkään. On olemassa erilaisia tapoja tehdä tämä, kuten käyttämällä vanhempia Javscriptin funktioita, kuten `.toDateString()` tai `.toGMTString()`. Uudempi tapa on kuitenkin käyttää `toString()` metodia, johon voidaan antaa parametrina haluttu muoto merkkijonolle.
 
-Toinen tapa muuntaa päivämäärä merkkijonoksi on käyttää Date-objectin sisäänrakennettua `toLocaleDateString()`-metodia:
-
-````Javascript
-// Määritä päivämäärä
-let date = new Date();
-// Muuta päivämäärä merkkijonoksi
-let dateString = date.toLocaleDateString("fi-FI");
-// Tulosta muunnettu päivämäärä
-console.log(dateString);
-````
-
-Tämä tuottaa tulosteen "12.5.2021".
-
-## Syvällinen sukellus
-Date-objectissa on myös muita hyödyllisiä metodeita, joilla voit muuntaa päivämäärän haluamaasi muotoon. Esimerkiksi `getDay()`-metodi palauttaa päivän viikonpäivän numerona, `getMonth()`-metodi kuukauden numerona ja `getFullYear()`-metodi vuoden numerona. Näitä voit käyttää yhdessä esimerkiksi taulukon avulla, josta voit tarkastaa, mikä päivämäärä vastaa tiettyä numeroa.
-
-## Katso myös
-- [Moment.js-dokumentaatio](https://momentjs.com/docs/)
-- [Date Object - MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
+### Katso myös:
+- [MDN web docs: Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [W3Schools: Javascript Date toString()](https://www.w3schools.com/jsref/jsref_tostring_date.asp)

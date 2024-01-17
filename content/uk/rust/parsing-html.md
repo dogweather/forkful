@@ -1,7 +1,7 @@
 ---
-title:                "Розбір html"
-html_title:           "Rust: Розбір html"
-simple_title:         "Розбір html"
+title:                "Аналіз html"
+html_title:           "Rust: Аналіз html"
+simple_title:         "Аналіз html"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "HTML and the Web"
@@ -10,44 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Для чого
+## Що & Чому?
+Парсинг HTML - це процес аналізування та інтерпретації HTML-документів. Програмісти використовують цей процес для отримання даних з веб-сторінок і подальшого їх оброблення.
 
-Розбір HTML є важливою задачею для багатьох програм, таких як веб-скрапінг і парсінг вмісту сторінок. Використання мови програмування Rust може спростити цей процес і забезпечити ефективне та швидке рішення.
-
-## Як це зробити
-
-Для початку нам потрібно встановити мову програмування Rust і його залежності. Після цього ми можемо приступити до написання коду.
-
+## Як це зробити:
 ```Rust
-// Підключення необхідного пакету
-use scraper::{Html, Selector};
+use html5ever::{parse_document, tendril::TendrilSink};
 
-// Створення змінної з HTML-кодом
-let html = r#"<div><h1>Hello World</h1></div>"#;
+let html = "<html><body><p>Hello, world!</p></body></html>";
 
-// Створення селектора для вибору елемента
-let selector = Selector::parse("h1").unwrap();
+let dom = parse_document(Default::default()).from_utf8().read_from(html.as_bytes()).unwrap();
+let root = dom.document;
 
-// Використання селектора для отримання потрібного елемента
-let element = Html::parse_document(html).select(&selector).next().unwrap();
-
-// Виведення вмісту елемента
-println!("Вміст елемента: {}", element.inner_html());
+for child in root.descendants() {
+    match child.data() {
+        Element { name, .. } => println!("{}", name.local),
+        Text { contents, .. } => println!("{}", contents.borrow()),
+        _ => (),
+    }
+}
 ```
 
-В результаті ми отримаємо такий вивід:
+Вивід: `html, body, p, Hello, world!`
 
-```
-Вміст елемента: Hello World
-```
+## Глибокий занурення:
+1. Історичний контекст: Парсинг HTML з'явився з появою перших веб-сторінок і є важливою частиною веб-розробки.
+2. Альтернативи: Існують інші мови програмування, такі як Python і JavaScript, які також мають бібліотеки для парсингу HTML.
+3. Деталі реалізації: У Rust для парсингу HTML використовується бібліотека html5ever, яка підтримує стандарти HTML, такі як HTML5 та XHTML.
 
-## Глибше занурення
-
-Одним з головних інструментів для парсінгу HTML в Rust є пакет scraper. Він надає зручний інтерфейс для роботи з HTML-кодом та селекторами, що дозволяє ефективно витягувати потрібні елементи зі сторінки. Також існують інші пакети, такі як select, які надають можливості для роботи з HTML в Rust.
-
-## Дивіться також
-
-- [Документація з пакету scraper](https://docs.rs/scraper/)
-- [Приклади використання пакету scraper](https://github.com/lotabout/scraper/tree/master/examples)
-- [Документація з пакету select](https://docs.rs/select/)
-- [Репозиторій мови Rust на GitHub](https://github.com/rust-lang/rust)
+## Дивіться також:
+- Документація html5ever: https://docs.rs/html5ever/0.24.0/html5ever/
+- Приклади парсингу HTML на Rust: https://github.com/kbknapp/html5ever-examples-rs

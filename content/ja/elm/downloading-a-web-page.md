@@ -10,30 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+概要＆理由：
+Webページのダウンロードとは、インターネット上からコンピュータにデータを取得することです。プログラマーたちは、Webページをダウンロードすることで、ユーザーに情報を提供することができるようにしています。
 
-ウェブページのダウンロードをする理由は様々ですが、例えばオフラインで閲覧したい場合や、コンテンツの更新をチェックするために使用することができます。
-
-## ダウンロードの方法
-
+方法：
 ```Elm
-import Html exposing (text)
 import Http
+import Json.Decode as Json
 
-main =
-    Http.get "www.example.com" -- ダウンロードしたいページのURLを指定
-        |> Http.send
-        |> Task.attempt handleResponse
+type alias Page =
+  { title : String
+  , content : String
+  }
+
+pageDecoder : Json.Decoder Page
+pageDecoder =
+  Json.map2 Page
+    (Json.field "title" Json.string)
+    (Json.field "content" Json.string)
+
+getPage : Cmd Msg
+getPage =
+  Http.get
+    { url = "https://example.com/page"
+    , expect = Http.expectJson pageDecoder PageReceived
+    }
+
+type Msg
+  = PageReceived (Result Http.Error Page)
+
 ```
 
-このコードは`Html.text`をインポートし、`Http`を使って指定したURLからページをダウンロードする方法を示しています。`Task.attempt`という関数を使って、ダウンロードが完了した際に`handleResponse`という関数を実行します。ダウンロードが成功した場合、`handleResponse`はダウンロードされたページのデータを引数として受け取り、欲しいコンテンツを取り出すことができます。
+詳細：
+Webページのダウンロードは、現代のWebアプリケーション開発において欠かせない機能です。HTTPプロトコルを使用して、サーバーからデータを取得し、クライアントのコンピュータに表示することができます。
 
-## 詳細を掘り下げる
+代替手段としては、バックエンドプログラミング言語（例：PHP、Ruby、Python）を使用して、サーバー側でWebページを生成し直接クライアントに提供する方法があります。
 
-ウェブページのダウンロードはElmの`Http`モジュールを使って行うことができます。`Http.get`を使って`GET`リクエストを送信し、ダウンロードしたいページのURLを指定します。ダウンロードが成功した場合、受け取ることができるデータの種類は`Http.expectString`や`Http.expectJson`を使って指定することができます。また、ダウンロードの進捗状況を監視するために`Http.sendProgress`を使用することもできます。
+WebページのダウンロードはElmでも非常にカンタンに実装できます。例えば、```Http.get```関数を使用することで、サーバーからデータを取得し、JSONフォーマットのレスポンスをデコードすることができます。
 
-## 併せて参考にしてください
-
-- [Elm Lang 公式ドキュメント](https://elm-lang.org/)
-- [Elm in Action](https://www.manning.com/books/elm-in-action)
-- [Elm Community](https://discourse.elm-lang.org/)
+関連情報：
+- Elm Documentation (https://guide.elm-lang.org/effects/http.html)
+- HTTP Protocol (https://developer.mozilla.org/ja/docs/Web/HTTP)
+- JSON Data Format (https://www.json.org/)

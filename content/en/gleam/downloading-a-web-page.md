@@ -10,36 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##Why
-So you want to download a web page using the Gleam programming language? Maybe you want to perform some data scraping or automate a task. Whatever your reason may be, Gleam's web page downloading capabilities make it a breeze to extract data from any website.
+# Downloading Web Pages in Gleam
 
-##How To
-To download a web page using Gleam, simply use the `http` library and the `get_text` function. Let's take a look at an example:
+## What & Why?
 
+Downloading a web page in programming is the act of retrieving the content of a web page from the internet. Programmers do this to incorporate data from websites into their own programs, or to scrape information for analysis or automation purposes.
+
+## How to:
+
+To download a web page in Gleam, we can use the `curl` module. First, we need to add it to our project dependencies:
+
+```Gleam
+  gleam_deps = [
+    "lumihq/curl 0.8.0"
+  ]
 ```
-Gleam module DownloadWebPage
 
-import http
+Next, we can use the `curl` module's `get` function to specify the URL of the webpage we want to download. We can then use the `body` function to retrieve the content as a string and print it to the console.
 
-pub fn main() {
-  let response = http.get_text("https://www.example.com").ok()
-  match response {
-    Ok(result) -> {
-      // Process the downloaded web page here
-    }
-    Err(_) -> {
-      // Handle any errors here
-    }
-  }
+```Gleam
+import curl
+
+let url = "https://example.com"
+
+test "Downloading a webpage" {
+  let result = curl.get(url)
+  let content = result.body()
+  assert.equals(content, "This is the webpage content!")
 }
 ```
 
-In the above code, we are using the `get_text` function to download the web page from the URL provided. The `.ok()` method converts the response into a `Result` type, which we can then match against to check for any errors.
+## Deep Dive:
 
-##Deep Dive
-Now, let's take a deeper look at the `get_text` function. This function takes in a `String` of the URL and returns a `Result` with the downloaded page as a `String`. This makes it easy to extract data from the web page using string manipulation methods.
+Downloading web pages has long been an essential task in programming, used for a variety of purposes such as data extraction, API integration, and web scraping. Historically, libraries like Python's `urllib` were popular for this task, but newer languages like Gleam offer more efficient and reliable methods.
 
-If you need more control over the web page downloading process, you can also use the `get` function from the `http` library. This function allows you to customize the request by adding headers or setting a timeout.
+Alternatives to using the `curl` module include using a web scraping tool like Selenium or using an HTTP client library such as `reqwest` for more complex web interactions.
 
-##See Also
-To learn more about the `http` library and its functions, check out the Gleam documentation [here](https://gleam.run/documentation/stdlib/http). You can also explore other useful libraries for web scraping and automation, such as `html` and `jsoup`, to further enhance your web page downloading capabilities. Happy coding!
+The `curl` module in Gleam is a wrapper around the cURL command-line tool, providing an ergonomic and safe API for downloading web pages without the need for external programs or dependencies.
+
+## See Also:
+
+- [Gleam Documentation on `curl`](https://gleam.run/modules/lumihq/curl/latest/)
+- [Comparison of cURL and `reqwest`](https://www.tecmint.com/curl-vs-wget-vs-httrack-best-linux-download-managers/)

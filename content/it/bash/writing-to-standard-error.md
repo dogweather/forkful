@@ -1,7 +1,7 @@
 ---
-title:                "Scrivere su standard error"
-html_title:           "Bash: Scrivere su standard error"
-simple_title:         "Scrivere su standard error"
+title:                "Scrivere su errore standard"
+html_title:           "Bash: Scrivere su errore standard"
+simple_title:         "Scrivere su errore standard"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Files and I/O"
@@ -10,41 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+## Che cos'è e perché?
 
-Scrivere su standard error è un modo per visualizzare messaggi di errore e diagnostica per il codice Bash che stai eseguendo. Ciò è particolarmente utile quando si desidera tenere traccia di eventuali problemi o bug durante l'esecuzione di script.
+Scrivere su standard error, o stderr, è un modo per visualizzare gli errori o messaggi di avviso durante l'esecuzione di uno script Bash. I programmatori utilizzano la scrittura su stderr per identificare e risolvere i problemi durante lo sviluppo di script o programmi.
 
-## Come fare
+## Come fare:
 
-Per scrivere su standard error in Bash, puoi utilizzare il comando `>&2` o `echo "test" 1>&2` all'interno delle tue istruzioni. Ecco un esempio di codice Bash che utilizza `>&2`:
-
+Di seguito è riportato un esempio di codice Bash che scrive su stderr seguito dal risultato fornito:
 ```Bash
-#!/bin/bash
-
-# Questo codice scrive "C'è stato un errore" su standard error
-# se l'utente non specifica il file da copiare
-
-if [ -z "$1" ]; then
-  echo "Usage: $0 <file_origin> <file_destination>" >&2
-  exit 1
-fi
+echo "Messaggio di errore" >&2
+```
+Output:
+```
+Messaggio di errore
 ```
 
-Esempio di output:
+In questo esempio, il messaggio viene scritto su stderr utilizzando `>&2` dopo il comando `echo`.
 
-```Bash
-$ ./copiacartella.sh
+## Approfondimento:
 
-Usage: ./copiacartella.sh <file_origin> <file_destination>
-```
+Scrive su stderr è stato introdotto nell'utilizzo di Unix per consentire ai programmatori di visualizzare messaggi di errore e di warning durante l'esecuzione di script o programmi. Alternativamente, è possibile utilizzare il comando `>/dev/null` per ignorare completamente i messaggi di errore, ma questo può rendere più difficile la risoluzione dei problemi.
 
-## Approfondimento
+Per scrivere su stderr utilizzando l'operatore `>&2`, è necessario comprendere il concetto di redirezione dei flussi di input e output dei comandi in Bash. In questo caso, `>&2` specifica che il risultato del comando deve essere indirizzato al file descriptor 2, che è riservato per stderr.
 
-Il simbolo `>&2` viene utilizzato per redirigere l'output di un comando su standard error invece che su standard output (di default). In questo modo, tutti i messaggi di errore generati dal comando vengono visualizzati in rosso, rendendoli facilmente distinguibili dai messaggi normali. Ciò può essere utile quando si eseguono script più complessi e si desidera tenere traccia di eventuali problemi.
+## Vedi anche:
 
-Un altro modo per scrivere su standard error è utilizzare il comando `echo` con `1>&2`. Per esempio: `echo "test" 1>&2`. In questo caso, il parametro `1` indica che l'output deve andare su standard output (il cui numero è 1) e il simbolo `>&` indica la redirezione su standard error (il cui numero è 2).
-
-## Vedi anche
-
-- [Guida all'uso di Bash](https://www.gnu.org/software/bash/manual/html_node/index.html)
-- [Documentazione di Bash](https://www.gnu.org/software/bash/documentation/)
+- Documentazione ufficiale di Bash: https://www.gnu.org/software/bash/
+- Redirezione dei flussi in Bash: https://www.gnu.org/software/bash/manual/html_node/Redirections.html

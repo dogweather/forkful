@@ -10,76 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i dlaczego?
 
-Testowanie jest nieodłączną częścią procesu programowania i jest niezwykle ważne, aby zapewnić wysoką jakość kodu. Testy pozwalają nam sprawdzić poprawność działania naszego kodu oraz wykryć ewentualne błędy. Dzięki nim możemy być pewni, że nasza aplikacja działa zgodnie z oczekiwaniami.
+Pisanie testów to proces, w którym programiści tworzą kod, który sprawdza poprawność działania ich programów. Jest to ważne, ponieważ pozwala zapewnić, że program będzie działać tak, jak powinien, bez nieoczekiwanych błędów.
 
-## Jak To Zrobić
-
-### Połączenie Arduino z komputerem
-
-Przed przystąpieniem do pisania testów, musimy najpierw połączyć nasze Arduino z komputerem za pomocą kabla USB. Następnie musimy ustawić odpowiedni port szeregowy oraz model płytki w środowisku Arduino IDE.
-
-### Instalacja biblioteki do testowania
-
-Aby móc pisać testy, musimy zainstalować bibliotekę do testowania w naszym środowisku Arduino IDE. Jest to łatwe do zrobienia poprzez Menu "Sketch" > "Include Library" > "Manage Libraries...". Wyszukajmy bibliotekę "ArduinoUnit" i kliknijmy "Install".
-
-### Przygotowanie kodu do testowania
-
-Na początku naszego kodu musimy dodać dyrektywę `#include <ArduinoUnit.h>`, dzięki czemu będziemy mogli korzystać z funkcji testujących. Następnie musimy zdefiniować nasze testy w funkcji `setup()` przy użyciu funkcji `test()` i przekazać do niej nazwę naszego testu oraz kod do wykonania.
+## Jak to zrobić:
 
 ```Arduino
-#include <ArduinoUnit.h>
+int pin = 13;
 
 void setup() {
-  test("Nazwa_testu", [] {
-    // Kod testowy
-  });
+  pinMode(pin, OUTPUT);
 }
 
 void loop() {
-  // Puste - nie jest potrzebne w przypadku pisania testów
+  digitalWrite(pin, HIGH);
+  delay(1000);
+  digitalWrite(pin, LOW);
+  delay(1000);
 }
 ```
 
-### Uruchamianie testów
+W tym przykładzie kodu ukazane jest, jak stworzyć prosty test, którym sprawdzamy, czy dioda na pinie 13 jest włączona i wyłączona co sekundę. Jeśli program działa poprawnie, powinniśmy obserwować takie zachowanie diody.
 
-Aby uruchomić nasze testy, należy kliknąć przycisk "Verify" w środowisku Arduino IDE lub wybrać opcję "Verify/Compile" w menu "Sketch". Jeśli wszystko zostało poprawnie zdefiniowane, powinniśmy zobaczyć komunikat "OK" dla każdego z naszych testów w konsoli.
+## Zagłębienie:
 
-### Przykładowy test
+Pisanie testów jest najczęściej stosowaną metodą w programowaniu. Pozwala ona programistom zapewnić, że kod będzie działał poprawnie i uniknąć nieoczekiwanych błędów. Alternatywną metodą jest debugowanie, jednak testy są uważane za bardziej niezawodne i dające lepsze wyniki.
 
-Poniższy przykład pokazuje, jak możemy przetestować poprawne działanie funkcji `add()` dodającej dwie liczby.
+Pisanie testów jest również ważną częścią podejścia zwinnego w programowaniu. Pozwala to na ciągłe testowanie kodu i poprawianie ewentualnych błędów na bieżąco, co przyspiesza proces tworzenia oprogramowania.
 
-```Arduino
-#include <ArduinoUnit.h>
+Jeśli chcesz dowiedzieć się więcej o pisaniu testów w Arduino, możesz zajrzeć tutaj: https://www.arduino.cc/en/Guide/Introduction (ang.).
 
-void setup() {
-  test("Test dodawania", [] {
-    assertEqual(add(2, 5), 7); // Sprawdza, czy funkcja add(2, 5) zwróci 7
-  });
-}
+## Zobacz też:
 
-void loop() {
-  // Puste - nie jest potrzebne w przypadku pisania testów
-}
-
-// Funkcja dodająca dwie liczby
-int add(int a, int b) {
-  return a + b;
-}
-```
-
-## Deep Dive
-
-Pisząc testy, powinniśmy pamiętać o kilku ważnych praktykach:
-
-- Testy powinny być niezależne i niezależnie od siebie uruchamiane. Każdy test powinien testować tylko jeden konkretny aspekt naszego kodu.
-- Używajmy funkcji `assert...()` do sprawdzania wyników w naszych testach. Funkcje te porównują otrzymany wynik z oczekiwanym i w przypadku niezgodności wyrzucają błąd.
-- Testy powinny być napisane w taki sposób, aby były czytelne i łatwe do zrozumienia dla innych osób.
-- Piszmy testy dla wszystkich funkcji naszego kodu, włączając w to również funkcje pomocnicze.
-
-## Zobacz także
-
-- Oficjalna dokumentacja biblioteki ArduinoUnit: https://github.com/mmurdoch/arduinounit#readme
-- Przykładowe testy dla różnych funkcji w języku Arduino: https://github.com/tjentora/ArduinoTestExamples
-- Poradnik wideo dotyczący pisania
+- https://www.arduino.cc/en/Reference/TestsandMocking (ang.)
+- https://medium.com/@devampro/test-driven-development-for-arduino-68460f36f4fe (ang.)

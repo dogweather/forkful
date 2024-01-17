@@ -1,7 +1,7 @@
 ---
-title:                "Escrevendo no erro padrão"
-html_title:           "Rust: Escrevendo no erro padrão"
-simple_title:         "Escrevendo no erro padrão"
+title:                "Escrevendo para o erro padrão"
+html_title:           "Rust: Escrevendo para o erro padrão"
+simple_title:         "Escrevendo para o erro padrão"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Files and I/O"
@@ -10,51 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que escrever no erro padrão?
+O que é e por que escrever para o erro padrão:
+Ao programar em Rust, às vezes você vai querer escrever mensagens de erro para o console. Isso é feito escrevendo para o erro padrão, que é uma saída diferente da saída padrão do programa. Os programadores fazem isso para permitir que os usuários vejam mensagens de erro específicas e compreensíveis, em vez de erros genéricos.
 
-Escrever no erro padrão é uma prática comum em muitas linguagens de programação, incluindo Rust. Isso é feito para informar sobre possíveis erros ou exceções que podem ocorrer durante a execução do programa. Além disso, também pode ser útil para depuração e registro de informações importantes.
+Como fazer:
+```
+// Exemplo de código para escrever em erro padrão
+use std::io::Write;
 
-## Como Fazer
-
-Para escrever no erro padrão em Rust, podemos usar a função `eprintln!()` que é fornecida pela biblioteca padrão da linguagem. Esta função funciona de maneira semelhante à `println!()` usada para imprimir na saída padrão, mas ao invés de imprimir na tela, ela imprime no erro padrão.
-
-Um exemplo simples de código que usa `eprintln!()` pode ser o seguinte:
-
-```rust
 fn main() {
-
-    let num = 10;
-    let den = 0;
-
-    if den == 0 {
-        // Usando a função eprintln!() para informar sobre o erro
-        eprintln!("Não é possível dividir por zero!");
-        // Finalizando o programa
-        return;
-    }
-
-    let resultado = num / den;
-
-    println!("O resultado é: {}", resultado);
-
+    let mut stderr = std::io::stderr();
+    writeln!(stderr, "Este é um erro de exemplo.").unwrap();
 }
 ```
 
-Saída do programa acima:
-
+Saída de exemplo:
 ```
-Não é possível dividir por zero!
+Este é um erro de exemplo.
 ```
 
-Note que a mensagem de erro foi impressa usando `eprintln!()`.
+Mergulho profundo:
+Para entender melhor por que escrever para o erro padrão é útil, é importante saber que esse recurso existe desde os primeiros sistemas Unix. Na verdade, foi introduzido por Ken Thompson, um dos pioneiros do Unix. Alternativas ao erro padrão incluem escrever para um arquivo de log ou para a saída padrão e redirecioná-la para o console. A implementação do erro padrão em Rust é baseada em um trait chamado "std::io::Write" e é acessível por meio do módulo "std:io".
 
-## Mergulho Profundo
-
-A função `eprintln!()` é uma macro, que em Rust é como uma função, mas com algumas diferenças. Uma dessas diferenças é que ela pode receber uma expressão que será avaliada e convertida em uma string para ser impressa no erro padrão.
-
-Por exemplo, podemos usar a sintaxe `eprintln!("Valor de x: {}", x)` para imprimir o valor da variável `x` no erro padrão. Além disso, é possível formatar a saída usando as mesmas especificações de formatação usadas nas macros `println!()` e `format!()`.
-
-## Veja Também
-
-- [Documentação oficial do Rust sobre escrever no erro padrão](https://doc.rust-lang.org/std/macro.eprintln.html)
-- [Tutorial sobre manipulação de erros em Rust](https://blog.logrocket.com/error-handling-in-rust/)
+Veja também:
+Para mais informações sobre escrever para o erro padrão em Rust, veja a seção sobre "std::io::Write" na documentação oficial do Rust: https://doc.rust-lang.org/std/io/trait.Write.html

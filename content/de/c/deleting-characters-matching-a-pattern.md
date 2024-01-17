@@ -1,7 +1,7 @@
 ---
-title:                "Buchstaben löschen, die einem Muster entsprechen"
-html_title:           "C: Buchstaben löschen, die einem Muster entsprechen"
-simple_title:         "Buchstaben löschen, die einem Muster entsprechen"
+title:                "Löschen von Zeichen, die einem Muster entsprechen."
+html_title:           "C: Löschen von Zeichen, die einem Muster entsprechen."
+simple_title:         "Löschen von Zeichen, die einem Muster entsprechen."
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -10,42 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
-Manchmal kann es in der Programmierung notwendig sein, Zeichen zu löschen, die einem bestimmten Muster entsprechen. Dies kann zum Beispiel hilfreich sein, um unerwünschte Zeichen aus Benutzereingaben zu entfernen oder um Datenbereinigungsaufgaben durchzuführen.
+## Was & Warum?
+Das Löschen von Zeichen, die einem bestimmten Muster entsprechen, ist eine häufige Aufgabe in der C-Programmierung. Programmierer nutzen dies, um beispielsweise unerwünschte Zeichen in einer Zeichenkette zu entfernen oder bestimmte Muster zu erkennen und zu bearbeiten.
 
-## Wie geht das?
-Um Zeichen in C zu löschen, die einem bestimmten Muster entsprechen, gibt es verschiedene Techniken, aber hier werden wir uns auf die Verwendung der Standardbibliotheksfunktion "memmove()" konzentrieren. Diese Funktion kopiert Bytes von einem Speicherort in einen anderen und überschreibt dabei den Zielbereich mit dem kopierten Inhalt. Wir können diese Funktion nutzen, um die unerwünschten Zeichen zu löschen.
+## So geht's:
+Um in C Zeichen zu löschen, die einem bestimmten Muster entsprechen, können wir die eingebaute Funktion `strchr` verwenden. Diese Funktion durchsucht eine gegebene Zeichenkette nach einem bestimmten Zeichen und gibt den Index des ersten gefundenen Vorkommnisses zurück. Mit dieser Information können wir dann die entsprechenden Zeichen löschen. Ein Beispiel dafür könnte so aussehen:
 
 ```C
 #include <stdio.h>
 #include <string.h>
 
-void delete_characters(char *str, char pattern) {
-    int i, j;
-    // Schleife über alle Zeichen im String
-    for (i = 0, j = 0; str[i] != '\0'; i++) {
-        // Wenn das aktuelle Zeichen nicht dem Muster entspricht,
-        // kopiere es in den String an der nächsten Position
-        if (str[i] != pattern) {
-            str[j++] = str[i];
-        }
-    }
-    // Setze das Ende des Strings
-    str[j] = '\0';
+int main () {
+  char string[] = "Hallo Welt!";
+  char *p = strchr(string, 'l');
+  
+  if (p) {
+    strcpy(p, p+1); // Zeichen an gefundener Stelle und das folgende überschreiben
+  }
+  
+  printf("%s\n", string);
+  
+  return 0;
 }
 
-int main() {
-    char str[] = "Hallo Welt!";
-    // Lösche alle Leerzeichen aus dem String
-    delete_characters(str, ' ');
-    printf("%s", str); // Ausgabe: "HalloWelt!"
-    return 0;
-}
+/* Ausgabe:
+Hao Welt!
+*/
 ```
 
-## Tiefergehende Informationen
-Der Code in der "delete_characters()" Funktion kann auch auf komplexere Weise angepasst werden, um beispielsweise mehrere Zeichen gleichzeitig zu löschen oder eine dynamische Mustererkennung zu ermöglichen. Dabei bietet das Verständnis der Arbeit von "memmove()" und wie sie mit Pointer- und Speicherarbeit zusammenhängt eine Möglichkeit, verschiedene effiziente Implementierungen zu designen.
+## Tiefergehend:
+Das Löschen von Zeichen wurde in der C-Programmierung schon seit langer Zeit verwendet, um beispielsweise die Ausgabe von Benutzereingaben zu bereinigen oder um spezielle Zeichen in Dateien zu erkennen und zu bearbeiten. Alternativ zur `strchr`-Funktion gibt es auch die Funktionen `strrchr` und `strpbrk`, welche ähnliche Aufgaben erfüllen, jedoch etwas anders arbeiten. 
 
-## Siehe auch
-- [memmove() Dokumentation](https://www.tutorialspoint.com/c_standard_library/c_function_memmove.htm)
-- [C String Manipulation Guide](https://hackr.io/tutorials/learn-c-string-manipulation)
+Bei der Implementierung von Funktionen zum Löschen von Zeichen sollte darauf geachtet werden, dass der Speicher korrekt verwaltet wird und keine unbeabsichtigten Seiteneffekte auftreten. Es gibt auch spezielle Aspekte zu beachten, wenn es um die Verarbeitung von Unicode-Zeichen geht, welche über die Standard-ASCII-Zeichen hinausgehen.
+
+## Sieh auch:
+- [Dokumentation der `strchr`-Funktion](https://www.tutorialspoint.com/c_standard_library/c_function_strchr.htm)
+- [Weitere nützliche String-Funktionen in C](https://www.thecrazyprogrammer.com/2015/08/string-functions-in-c-programming.html)

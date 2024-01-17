@@ -10,94 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
+Reading command line arguments is a way for programmers to pass information or options to their programs at runtime. This allows for flexibility and customization without having to hard code values within the program itself. 
 
-Have you ever wondered how command line programs are able to take in input from users? This feature is made possible through the use of command line arguments. Learning how to read command line arguments in Go can enhance your programming skills and make your programs more user-friendly.
-
-## How To
-
-To start reading command line arguments in Go, we first need to import the "os" package:
-
-```Go
-import "os"
-```
-
-Next, we can use the "Args" function from the "os" package to retrieve command line arguments as a slice of strings:
-
-```Go
-args := os.Args
-```
-
-To access specific arguments, we can simply use array indexing on the "args" slice:
-
-```Go
-arg1 := args[0]
-arg2 := args[1]
-arg3 := args[2]
-```
-
-We can also check the length of the slice to determine how many arguments were provided:
-
-```Go
-numArgs := len(args)
-```
-
-Let's put it all together and create a program that takes in two command line arguments and prints them out:
+## How to:
+To read command line arguments in Go, we can use the built-in `os` package. Here's an example of a simple program that prints out the arguments passed to it:
 
 ```Go
 package main
 
-import "fmt"
-import "os"
+import (
+    "fmt"
+    "os"
+)
 
 func main() {
-    args := os.Args
-    if len(args) < 3 {
-        fmt.Println("Not enough arguments provided.")
-        return
-    }
-    arg1 := args[1]
-    arg2 := args[2]
-    fmt.Println("First argument:", arg1)
-    fmt.Println("Second argument:", arg2)
+    args := os.Args[1:] // ignore the first argument, which is the program name itself
+    fmt.Println("Arguments:", args)
 }
 ```
 
-Here's an example of running this program in the command line and providing two arguments:
+If we run this program with the command `go run main.go hello world`, the output would be: `Arguments: [hello world]`. We can also access individual arguments by using indexing, such as `args[0]` for the first argument.
 
-```
-$ go run command_line_args.go hello world
-First argument: hello
-Second argument: world
-```
+## Deep Dive:
+Before the advent of command line arguments, programs would often have to be recompiled or edited to change certain values or behaviors. By using command line arguments, programs can be more dynamic and easily customized without needing to change the code.
 
-## Deep Dive
+Another alternative to using command line arguments is using environment variables. However, this is less convenient and can be more complicated to set up. Furthermore, command line arguments allow for more precise control over a program's behavior.
 
-In the above example, we used the "len" function to check the length of the "args" slice. This length includes the name of the program as the first argument. So, if we only wanted to access user-provided arguments, we could use "args[1:]" to create a new slice from the second element to the end.
+When reading command line arguments in Go, it's important to handle any potential errors that may occur. For example, if the user does not provide enough arguments, the program may crash. It's also important to handle any unexpected input or data type conversions.
 
-We can also use the "Flag" package in Go to define and parse command line flags. This is useful for programs that require specific command line options to be provided. Here's an example of how we could use the "Flag" package to create a flag for a user's name:
+## See Also:
+To learn more about reading command line arguments in Go, check out the official Go documentation for the `os` package: https://golang.org/pkg/os/
 
-```Go
-package main
+You can also explore other command line argument parsing libraries in Go, such as `flag` and `cobra`.
 
-import "flag"
-import "fmt"
-
-func main() {
-    namePtr := flag.String("name", "", "The user's name")
-    flag.Parse()
-
-    if *namePtr == "" {
-        fmt.Println("Please provide a name with the -name flag.")
-    } else {
-        fmt.Println("Hello,", *namePtr)
-    }
-}
-```
-
-In the above code, we first create a pointer to a string with the flag name, default value, and description. Then, we call the "Parse" function to assign any provided flag values to the defined pointer. Finally, we can check if a value was provided and use it in our program.
-
-## See Also
-
-- [The "flag" Package in Go](https://golang.org/pkg/flag/)
-- [Reading command-line flags in Go](https://peter.bourgon.org/go-in-production/#command-line-flags)
+Additionally, here's a tutorial on how to build a simple cli tool using Go: https://tutorialedge.net/golang/building-a-cli-in-go/

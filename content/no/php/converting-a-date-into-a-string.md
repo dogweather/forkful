@@ -1,7 +1,7 @@
 ---
-title:                "Konvertere en dato til en streng"
-html_title:           "PHP: Konvertere en dato til en streng"
-simple_title:         "Konvertere en dato til en streng"
+title:                "Omdanne en dato til en tekststreng"
+html_title:           "PHP: Omdanne en dato til en tekststreng"
+simple_title:         "Omdanne en dato til en tekststreng"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Dates and Times"
@@ -10,55 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hva & Hvorfor?
+Konvertering av datoer til strenger er en vanlig oppgave for PHP-programmer. Dette refererer til å endre et datoobjekt til en tekstlig representasjon, for eksempel for å vise datoen på en nettside eller i en e-post. Dette er nyttig for å gjøre datoen mer lesbar for brukere, og for å oppfylle spesifikke formateringskrav.
 
-I denne artikkelen skal vi se på hvordan man kan konvertere en dato til en streng i PHP. Dette er en nyttig ferdighet for å kunne vise datoer i et forståelig format, for eksempel på en nettside eller i en applikasjon. 
-
-## Slik gjør du det
-
-Det finnes flere måter å konvertere en dato til en streng i PHP, avhengig av hva slags format du ønsker å vise den i. Her er noen eksempler: 
-
+## Slik Gjør Du:
+Her er et eksempel på hvordan du konverterer en date til streng i PHP:
 ```PHP
-// Konverter dato til vanlig leselig format
-echo date("d.m.Y"); // Output: 12.05.2021
-
-// Konverter dato til ISO-format
-echo date("Y-m-d"); // Output: 2021-05-12
-
-// Konverter dato til et mer spesifikt format
-$myDate = strtotime("2021-05-12");
-echo date("l, F jS Y", $myDate); // Output: Wednesday, May 12th 2021
+$date = new DateTime('2019-06-15');
+echo $date->format('d-m-Y'); // output: 15-06-2019
 ```
+I dette eksempelet bruker vi DateTime-klassen til å opprette et datoobjekt med en gitt dato. Vi bruker deretter "format" -funksjonen for å konvertere datoen til ønsket strengformat. I dette tilfellet har vi satt formatet til å være dag-måned-år. Det finnes mange forskjellige formateringsalternativer som du kan bruke, avhengig av dine behov.
 
-Det finnes også en funksjon i PHP kalt `strftime()` som kan brukes til å konvertere datoer til tekst basert på et spesifisert format. For eksempel: 
+## Dypdykk:
+Historisk sett har konvertering av datoer til strenger vært en kompleks oppgave for programmerere. Før PHP 5.2 var hovedalternativet å bruke "strftime" -funksjonen, noe som krevde mye koding for å formatere datoer riktig. Med innføringen av DateTime-klassen i PHP 5.2 ble det mye enklere å konvertere datoer til strenger på en mer effektiv måte.
 
-```PHP
-$myDate = strtotime("2021-05-12");
-setlocale(LC_ALL, 'nb_NO'); // Setter locale til norsk for å få norsk format
-echo strftime("%A %d. %B %Y", $myDate); // Output: onsdag 12. mai 2021
-```
+Selv om det er flere måter å gjøre dette på i PHP, er DateTime-klassen den anbefalte metoden. Alternativet "date" -funksjonen kan også brukes, men denne er mer begrenset i formateringsmuligheter og brukes ofte bare til eldre kode.
 
-Som du ser, kan man spesifisere både hvilket språk og hvilket format man ønsker å bruke. Dette er spesielt nyttig for å tilpasse visningen av datoer til ulike land og språk. 
+Når det gjelder implementeringsdetaljer, kan det være nyttig å sjekke ut PHPs offisielle dokumentasjon for å få en fullstendig liste over formateringsalternativer og andre relevante funksjoner.
 
-## Dykk dypere
-
-Når man konverterer en dato til en streng, kan det være nyttig å vite om noen spesielle formateringskoder som kan brukes. De mest brukte er: 
-
-- `d` – dag i måned (to sifre, med null foran hvis nødvendig)
-- `m` – måned (to sifre, med null foran hvis nødvendig)
-- `Y` – år (fire sifre)
-- `l` – dag i uken (helt utskrevet)
-- `F` – månedsnavn (helt utskrevet)
-- `S` – suffiks for dag (st, nd, rd, eller th)
-- `A` – helt klokkeslett (am eller pm)
-- `H` – time (24-timers format)
-- `i` – minutter
-- `s` – sekunder
-
-Det finnes mange flere formateringsmuligheter, og du kan finne en komplett oversikt over dem på PHPs offisielle nettside. 
-
-## Se også
-
-- [date() function](https://www.php.net/manual/en/function.date.php)
-- [strftime() function](https://www.php.net/manual/en/function.strftime.php)
-- [List of formatting options for date() function](https://www.php.net/manual/en/datetime.format.php)
+## Se Også:
+- [PHP DateTime-klassen](https://www.php.net/manual/en/class.datetime.php)
+- [PHP date-funksjonen](https://www.php.net/manual/en/function.date.php)
+- [PHP strftime-funksjonen](https://www.php.net/manual/en/function.strftime.php)

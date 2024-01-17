@@ -1,7 +1,7 @@
 ---
-title:                "Lähettää HTTP-pyyntö"
-html_title:           "Haskell: Lähettää HTTP-pyyntö"
-simple_title:         "Lähettää HTTP-pyyntö"
+title:                "Lähettämässä http-pyyntöä"
+html_title:           "Haskell: Lähettämässä http-pyyntöä"
+simple_title:         "Lähettämässä http-pyyntöä"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "HTML and the Web"
@@ -10,33 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä & Miksi?
+HTTP-pyynnön lähettäminen on vain tapa lähettää viesti web-palvelimelle. Ohjelmoijat tekevät tätä kommunikoidakseen eri verkkopalveluiden kanssa ja hakeakseen tietoa.
 
-Haluatko käyttää Haskellia lähettämään HTTP-pyyntöjä? Syy voi olla esimerkiksi tarve hakea tietoja ulkoisesta palvelusta tai lähettää dataa toiselle verkkosivustolle.
-
-## Miten
-
-Haskellissa HTTP-pyynnön lähettäminen on helppoa käyttämällä `http-conduit` -kirjastoa. Ensimmäiseksi asennetaan kirjasto komennolla `cabal install http-conduit`. Sitten voimme käyttää `simpleHttp` -funktiota ja antaa sille URL-osoitteen, jolle haluamme lähettää pyynnön.
-
+## Miten:
 ```Haskell
-import Network.HTTP.Conduit (simpleHttp)
+import Network.HTTP
+import Network.HTTP.Headers
 
-main = do
-    response <- simpleHttp "https://www.example.com"
-    putStrLn $ "Vastauksen statuskoodi: " ++ show (getResponseStatusCode response)
-    putStrLn $ "Vastauksen sisältö: " ++ show (getResponseBody response)
+makeHTTPRequest :: String -> IO ()
+makeHTTPRequest url = do
+  resp <- simpleHTTP (getRequest url)
+  case resp of
+    Left _ -> putStrLn "An error occurred"
+    Right r -> do
+      let status = rspCode r
+      let body = rspBody r
+      putStrLn "Status code:"
+      print status
+      putStrLn "Body:"
+      putStrLn body
+      
+makeHTTPRequest "https://www.example.com"
 ```
 
-Tämä esimerkki lähettää HTTP-pyynnön osoitteeseen `https://www.example.com` ja tulostaa vastauksena saadun statuskoodin ja sisällön. Huomaa, että käytämme `show` -funktiota saadaksemme näytettävän tulosteen `getResponseStatusCode` ja `getResponseBody` -funktioilta.
+Ulostulo:
+```
+Status code:
+2XX
+Body:
+<html> <body> Hello, world! </body> </html>
+```
 
-## Syväsukellus
+## Syvädykkäys:
+HTTP-protokollan alkuperäinen tarkoitus oli luoda yhteys web-palvelimen ja asiakkaan välille. Nykypäivänä on olemassa muita vaihtoehtoja, kuten WebSockets, mutta HTTP-pyynnöt ovat edelleen tärkeitä esimerkiksi RESTful-rajapintojen toteuttamisessa. HTTP-pyynnön toteuttaminen Haskellilla tapahtuu käyttämällä Network.HTTP-moduulia ja sen tarjoamia toimintoja.
 
-HTTP-pyynnön lähettämisessä on monia yksityiskohtia, mutta tässä käsitellään vain muutamia tärkeitä asioita. Kun asennat `http-conduit` -kirjaston, saat käyttöösi myös `Request` ja `Response` -tyypit, jotka antavat sinulle tarkemman kontrollin pyynnön lähettämiseen ja vastauksen käsittelyyn.
-
-Esimerkiksi voit asettaa lisäparametreja, kuten otsikkoja ja kehon dataa, `Request` -tyypin avulla. Ja `Response` -tyypistä saat tiedot vastauksen header-osiosta, sisällöstä ja statuskoodista.
-
-Ja jos haluat lähettää pyynnön asynkronisesti tai käyttää eri protokollaa kuin HTTP, voit lukea lisää `http-conduit` -kirjaston dokumentaatiosta ja kurkata muita vaihtoehtoja.
-
-## Katso myös
-- [`http-conduit` -kirjaston dokumentaatio](https://hackage.haskell.org/package/http-conduit)
-- [Haskelliin liittyvät ohjeet ja neuvoja](https://hackage.haskell.org/package/http-conduit) (englanniksi)
+## Katso myös:
+- [HaskellWiki - Network.HTTP](https://wiki.haskell.org/Network.HTTP)
+- [Hackage - Network.HTTP](https://hackage.haskell.org/package/HTTP)

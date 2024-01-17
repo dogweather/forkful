@@ -1,7 +1,7 @@
 ---
-title:                "Arbeide med yaml"
-html_title:           "Fish Shell: Arbeide med yaml"
-simple_title:         "Arbeide med yaml"
+title:                "Arbeid med yaml"
+html_title:           "Fish Shell: Arbeid med yaml"
+simple_title:         "Arbeid med yaml"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Data Formats and Serialization"
@@ -10,63 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hva & Hvorfor?
 
-Hvorfor bry seg om YAML? Dette er et populært format for å konfigurere og lagre data, spesielt i webutvikling og systemadministrasjon. Å lære hvordan man arbeider med YAML vil gjøre det enklere å jobbe med ulike typer data og strømlinjeforme arbeidsflyten din.
+Hva er YAML og hvorfor er det viktig for programmere? YAML står for "YAML Ain't Markup Language" og er et tekstformat som brukes til å representere datastrukturer. Det er spesielt nyttig for konfigurasjonsfiler og filformater for utveksling av data mellom forskjellige programmeringsspråk.
 
-## Hvordan
+YAML er populært blant programmere fordi det er enkelt å lese og skrive, og støtter komplekse datastrukturer som lister og nøstede objekter. Det er også enklere å feilsøke og vedlikeholde enn andre formater som JSON eller XML.
 
-Det er veldig enkelt å jobbe med YAML i Fish Shell. Først må du installere det nyeste Fish Shell-programmet på datamaskinen din. Deretter følger du disse enkle trinnene:
+## Hvordan:
 
-```Fish Shell
-# Åpne Fish Shell
-fish
+For å jobbe med YAML i Fish Shell, må du først installere plugin YAML-fish ved å kjøre kommandoen ```fisher install franciscolourenco/yaml-fish```.
 
-# Lag en ny YAML-fil
-touch min_datafil.yml
+For å konvertere YAML til JSON, bruk kommandoen ```tojson``` etterfulgt av filnavn på YAML-filen du vil konvertere, for eksempel ```tojson config.yaml```. Dette vil gi deg JSON-utdata slik at du kan bruke den i andre programmer.
 
-# Åpne filen for å redigere den
-vim min_datafil.yml
+Du kan også bruke kommandoen ```fromjson``` for å konvertere JSON til YAML ved å tillegge filnavn etter kommandoen.
 
-# Skriv inn data i filen, for eksempel:
-navn: Tom
-alder: 28
-favoritt_farge: blå
+## Dykk Dypere:
 
-# Lagre og lukk filen
-:wq
-```
+YAML ble utviklet på 2000-tallet av Ingy döt Net og er inspirert av andre formater som SGML, XML og Python. Det er en del av YAML1.2-spesifikasjonen og har et utvidbart design for å støtte ulike formater og datastrukturer.
 
-YAML-filen din er nå opprettet og klar til bruk. For å lese dataene fra filen, kan du bruke følgende kommando:
+Alternativer til YAML inkluderer JSON og TOML, men YAML skiller seg ut med sin lesbarhet og støtte for kommentarer og variasjon av datastrukturer.
 
-```Fish Shell
-# Les data fra filen
-cat min_datafil.yml
+For å implementere YAML i Fish Shell bruker YAML-fish pluginet en parser kalt SnakeYAML. Denne parseren oversetter YAML til Java-objekter som deretter behandles av Fish Shell-funksjoner.
 
-# Output:
-# navn: Tom
-# alder: 28
-# favoritt_farge: blå
-```
+## Se Også:
 
-Du kan også endre dataene i filen ved hjelp av kommandoen ```sed```. For eksempel, for å endre favorittfargen til "grønn", kan du bruke følgende kommando:
+For mer informasjon om YAML, sjekk ut den offisielle nettsiden: [https://yaml.org/](https://yaml.org/)
 
-```Fish Shell
-# Endre data i filen
-sed -i 's/favoritt_farge: blå/favoritt_farge: grønn/g' min_datafil.yml
-```
-
-## Dykk dypere
-
-YAML har en veldig fleksibel syntaks for å representere data. Dette gjør det enkelt å konfigurere komplekse strukturer og legge til kommentarer for å forklare hva hver del av dataene gjør. For å lære mer om hvordan du bruker YAML, kan du sjekke ut følgende ressurser:
-
-- [YAML offisiell dokumentasjon](https://yaml.org/)
-- [Fish Shell YAML plugins](https://github.com/jorgebucaran/fish-yaml)
-- [YAML tutorials og eksempler](https://docs.ansible.com/ansible/latest/reference_appendices/YAMLSyntax.html)
-- [YAML online validator](https://yamlvalidator.com/)
-
-## Se også
-
-- [Offisiell Fish Shell dokumentasjon](https://fishshell.com/docs/current/index.html)
-- [En guide til å jobbe med JSON i Fish Shell](https://www.datascienceblog.net/post/fishshell_json/)
-- [Introduksjon til Fish Shell og dens funksjoner](https://blog.usejournal.com/fish-a-command-line-shell-for-novices-and-experts-f4c46c273bf9)
+For å lære mer om YAML-fish pluginet, besøk GitHub-siden: [https://github.com/franciscolourenco/yaml-fish](https://github.com/franciscolourenco/yaml-fish)

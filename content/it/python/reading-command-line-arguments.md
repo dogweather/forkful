@@ -1,7 +1,7 @@
 ---
-title:                "Lettura degli argomenti della riga di comando"
-html_title:           "Python: Lettura degli argomenti della riga di comando"
-simple_title:         "Lettura degli argomenti della riga di comando"
+title:                "Leggere gli argomenti dalla riga di comando"
+html_title:           "Python: Leggere gli argomenti dalla riga di comando"
+simple_title:         "Leggere gli argomenti dalla riga di comando"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Files and I/O"
@@ -10,36 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+## Cosa e perché?
+Lettura degli argomenti della riga di comando è quando un programma Python prende i dati direttamente dalla riga di comando, dopo il nome del programma stesso. I programmatori lo fanno per rendere il loro codice più flessibile e versatile, permettendo loro di passare dati diversi al programma ogni volta che viene eseguito.
 
-So che probabilmente il titolo di questo articolo ti ha fatto storcere il naso un po'. Command line arguments? Cosa diavolo sono? Non preoccuparti, non è nulla di complicato. In poche parole, i command line arguments sono delle variabili che puoi passare al tuo programma quando lo esegui da riga di comando. Ad esempio, quando digiti "python programma.py arg1 arg2" stai passando due command line arguments al programma "programma.py". Ora, perché dovresti preoccuparti di questo? Beh, continua a leggere e lo scoprirai.
-
-## Come Fare
-
-E' molto semplice leggere i command line arguments in Python. Ti basterà utilizzare la libreria "sys" e la funzione "argv". Ecco un esempio:
+## Come fare:
+Vediamo un esempio semplice di come leggere gli argomenti della riga di comando in Python:
 
 ```Python
 import sys
 
-# Legge il primo command line argument
-arg1 = sys.argv[1]
+args = sys.argv
 
-# Legge il secondo command line argument
-arg2 = sys.argv[2]
+# Il primo argomento è sempre il nome del programma stesso, quindi saltiamolo e prendiamo il secondo argomento
+numero = int(args[1])
 
-# Stampa i valori dei due argument
-print(arg1) # Output: arg1
-print(arg2) # Output: arg2
+# Stampa il quadrato del numero passato come argomento
+print(numero * numero)
+
+# Esegui questo codice da riga di comando con "python nome_programma.py 5" dove "5" è il numero da elevare al quadrato
 ```
 
-Come puoi vedere, la funzione "argv" restituisce una lista di tutti i command line arguments passati al programma, inclusi il nome del programma stesso. Questo significa che dovrai considerare l'indice di ogni argument all'interno della lista in base all'ordine in cui sono stati passati.
+Output:
+```
+25
+```
 
-## Deep Dive
+## Approfondimento:
+La lettura degli argomenti della riga di comando risale ai primi giorni della programmazione quando i computer non avevano ancora una GUI. In alternativa, i programmatori potrebbero utilizzare variabili "hard-coded" nel codice, ma questo lo renderebbe meno flessibile e più difficile da modificare in futuro. Implementare la lettura degli argomenti della riga di comando richiede una comprensione dei concetti di sys.argv e il loro utilizzo in condizioni di loop e cicli per gestire più argomenti.
 
-Ora che sai come leggere i command line arguments, potresti chiederti perché dovresti farlo. In realtà, ci sono diverse situazioni in cui questa abilità può essere molto utile. Ad esempio, potresti voler creare un programma che si comporti in modo diverso in base agli argument passati, o magari potresti voler automatizzare alcune operazioni utilizzando gli argument come input. Inoltre, i command line arguments possono essere anche utilizzati per passare informazioni sensibili, come username e password, in modo sicuro.
-
-## Vedi Anche
-
-- [Documentazione ufficiale sul modulo sys](https://docs.python.org/3/library/sys.html)
-- [Tutorial su come utilizzare i command line arguments in Python](https://realpython.com/python-command-line-arguments/)
-- [Esempi pratici di utilizzo dei command line arguments](https://www.pythonforbeginners.com/system/python-sys-argv)
+## Vedi anche:
+- [Documentazione ufficiale di Python su sys.argv](https://docs.python.org/3/library/sys.html#sys.argv)
+- [Esempi di codice per la lettura degli argomenti della riga di comando su GitHub](https://github.com/topics/reading-command-line-arguments?l=python)

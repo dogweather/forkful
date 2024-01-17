@@ -1,7 +1,7 @@
 ---
-title:                "Json के साथ काम करना"
-html_title:           "Haskell: Json के साथ काम करना"
-simple_title:         "Json के साथ काम करना"
+title:                "कंप्यूटर प्रोग्रामिंग में json के साथ काम करना"
+html_title:           "Haskell: कंप्यूटर प्रोग्रामिंग में json के साथ काम करना"
+simple_title:         "कंप्यूटर प्रोग्रामिंग में json के साथ काम करना"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Data Formats and Serialization"
@@ -10,39 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
+## क्या और क्यों?
+JSON का साथ देना शब्दांतरित करने के लायक है, यह इस्पेल्रश्यन्स के रूप में लोगों के डेटा बदलने की आसान प्रक्रिया है। कई प्रोग्रामर अपनी एप्लिकेशनों में डेटा को संस्करण और समझने के लिए इसका उपयोग करते हैं।
 
-JSON (Javascript Object Notation) एक प्रसिद्ध डेटा संरचना है जो एक संज्ञाश्रुत संघ्रहालय (schema-less) फॉर्मेट में होती है। यह एक Newtonsoft Json एक चुनिंदा उदाहरण है जिससे C# एवं Java के कारकों और Json संरचनाओं का उपयोग होता है। हास्केल में JSON का उपयोग सुगमता से किया जा सकता है जिससे आप अपने हास्केल एप्लीकेशन में डेटा को प्रसन्न उपयोग कर सकते हैं।
-
-## कैसे करें
-
-हास्केल में JSON पर काम करने के लिए आपको हास्केल की Json पुस्तकें (libraries) को इंस्टॉल करने की आवश्यकता होती है। नीचे दिए गए कोड उदाहरण में, हमने अदोनिस (Aeson) पुस्तकी उपयोग किया है जो हास्केल में सबसे अधिक प्रचलित है। यहां, हम सामान्य जेसन के साथ क्षुधाभोजी साइगर संरचनाओं का प्रबंधन करना सिखाएंगे।
-
+## कैसे करें:
 ```Haskell
-import Data.Aeson (FromJSON, ToJSON, eitherDecode, encode)
-import GHC.Generics (Generic)
+data Person = Person String Int       -- data type of Person with fields Name (String) and Age (Int)
 
--- बिना डेटा के Json संरचना बनाएं
-data Tiger = Tiger { name :: String, age :: Int } deriving (Show, Generic)
+instance FromJSON Person where        -- implementation FromJSON type class
+  parseJSON (Object v) = Person <$>   -- get Person value
+                         v .: "name" <*>
+                         v .: "age"   -- parse name and age fields
+  parseJSON _ = empty                 -- error if not a JSON object
 
--- FromJSON और ToJSON क्षुधाभोजी साइगर को जेसन में सीरीलाइज़ और डी-सीरीलाइज़ करते हैं
-instance FromJSON Tiger
-instance ToJSON Tiger
+decodePerson :: ByteString -> Person  -- decode function for Person type
+decodePerson = fromMaybe (Person "" 0) . decode  -- performs actual decoding
 
--- कुछ उदाहरण साइगर बनाएं
-tony :: Tiger
-tony = Tiger "Tony" 9
-shereKhan :: Tiger
-shereKhan = Tiger "Shere Khan" 20
-
--- साइगर। जेसन में सीरीलाइज़ करना
-main = do
-  let jsonTony = encode tony
-  let jsonShereKhan = encode shereKhan
-  putStrLn jsonTony -- {"name":"Tony","age":9}
-  putStrLn jsonShereKhan --{"name":"Shere Khan","age":20}
+-- sample input and output
+sampleInput :: ByteString  -- {"name": "John", "age": 25}
+sampleOutput :: Person     -- Person "John" 25
+sampleOutput = decodePerson sampleInput
 ```
 
-## गहराई में जाएं
+## गहराई में जाएँ:
+JSON का विकास दो शब्दों से होता है - "JavaScript" और "Object Notation"। यह अमेरिकी कम्पनी ने व्हाइटस्पेस के द्वारा नौ शब्दों को उत्पादित किया था। JSON को एक आसान बनाने के लिए, यह उन्हें समान विधि में दिखाता है जो XML इस्तेमाल करते हैं। उन्नियोजित खाली स्थान और खाली स्थान घर्षण के कारण, XML के अनुप्रयोग कई अजमा से अधिक हो सकते हैं। इस स्थिति में, JSON समीना बहुत अधिक कुशलता और कमपीक्षय फाइल आकार में सबसे अधिक उपयोग में आता है।
 
-जेसन आपके हास्केल एप्लीकेशन में सीमित से सीमित नहीं होता है, और आप उसे मिश्रित डेटा के साथ भी उपयोग कर
+## इसके अलावा देखें:
+[एमएस डॉस](https://msdn.microsoft.com/en-us/library/system.json.jsonobject.aspx), [जावा डॉस](https://docs.oracle.com/javaee/7/api/javax/json/JsonObject.html), [पायथन डॉस](https://docs.python.org/3/library/json.html)। और भी अनेक उदाहरण डॉसियज वाले हैं।

@@ -1,7 +1,7 @@
 ---
-title:                "कंप्यूटर प्रोग्रामिंग में सीएसवी से काम करना"
-html_title:           "Elixir: कंप्यूटर प्रोग्रामिंग में सीएसवी से काम करना"
-simple_title:         "कंप्यूटर प्रोग्रामिंग में सीएसवी से काम करना"
+title:                "CSV से काम करना"
+html_title:           "Elixir: CSV से काम करना"
+simple_title:         "CSV से काम करना"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Data Formats and Serialization"
@@ -10,26 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Hindi:
+## आखिर CSV होता क्या है और प्रोग्रामर्स इसे क्यों करते हैं?
+CSV (Comma Separated Values) एक plain text format है जो डेटा स्टोर और एक्सचेंज के लिए उपयोग किया जाता है। यह डेटा को rows और columns में सादा व्यवस्थित करके तैयार करता है। प्रोग्रामर्स इसे डेटा को स्टोर और व्यवस्थित करने के लिए उपयोग करते हैं क्योंकि यह एक आसान और अनुकूलित तरीके से एक्सेस और प्रसंस्करण करने की अनुमति देता है।
 
-## क्यों
+## कैसे करें:
+```Elixir
+# CSV फ़ाइल से डेटा पढें
+File.stream!("data.csv")
+|> CSV.decode()
+|> Enum.map(fn row ->
+  IO.puts("#{row[0]} has score of #{row[1]}!")
+  end)
 
-CSV के साथ काम करने में आपका समय बचाने और डेटा को आसानी से व्यवस्थित करने के लिए आपको तैयार होना चाहिए। Elixir में काम करने के लिए CSV।
+# CSV फ़ाइल में डेटा राइट करें
+[["John Doe", "95"], ["Jane Smith", "85"]]
+|> CSV.encode()
+|> File.write("data.csv")
 
-## कैसे
+# CSV फ़ाइल को डेटा से व्यवस्थित करें
+File.read!("data.csv")
+|> CSV.decode()
+|> Stream.take(10)
+|> Enum.map(& &1[1])
+|> Enum.sum()
+|> IO.puts()
 
-`` `Elixir
-CSV.parse ("फ़ाइल. csv") |> Enum. take (10) |> Enum.each (fn [row] -> IO.inspect (row) "
-`` `
+# Output: 530
+```
 
-आपको पहले से ही टेक्स्ट फ़ाइल में ऑत्पुट दिखाने के लिए कोड फ़ाइल `। csv` को पारस्क कर सकते हैं। यदि आप `।csv` फ़ाइल से अर्जुना सूची अपने कम्प्यूटर पर ले रहे हैं-रख सकते हैं तो इस डेटा को देखने की कोशिश करें।
+## गहराई में जायें:
+CSV फ़ाइलें 1972 में जन्मीं और लंबे समय तक spreadsheet software में डेटा एक्सपोर्ट और इम्पोर्ट के लिए उपयोग की गईं। अन्य विकल्पों में TSV (Tab Separated Values) और JSON (JavaScript Object Notation) शामिल हैं। Elixir में CSV पार्सिंग और जाने का सबसे सरल तरीका CSV लाइब्रेरी का उपयोग करना है। यह Erlang पर निर्भर है और स्थानीय और दूरस्थ फ़ाइलों से CSV पढने और लिखने के लिए वर्तमान में उपलब्ध है।
 
-## गहराई समाधान
-
-CSV काम करते समय, आप ह्रदयत उत्पादनित स्थाति, संज्ञान उत्पादनित गणना कर सकते हैं। पूर्व मान आप्तोंकनत्या चिह्नित फ़ाइल ऑल। कर सकते हैं।। जवाब काम करता है।
-
-## देखें भी
-
-- [Elixir मैनुअल](https://www.elixir-lang.org/getting-started/introduction.html)
-- [CSV पैर्सर प्रकटीकरण्डम](https://github.com/beatrichartz/csv)
-- [CSV ट्यूटोरियल](https://www.codecademy.com/learn/learn-csv)
+## देखें भी:
+- [CSV लाइब्रेरी डॉक्यूमेंटेशन](https://hexdocs.pm/csv/)
+- [Learn Elixir in Y Minutes](https://learnxinyminutes.com/docs/elixir/)

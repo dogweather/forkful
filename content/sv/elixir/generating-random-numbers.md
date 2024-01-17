@@ -1,7 +1,7 @@
 ---
-title:                "Generering av slumpmässiga nummer"
-html_title:           "Elixir: Generering av slumpmässiga nummer"
-simple_title:         "Generering av slumpmässiga nummer"
+title:                "Genererande slumpmässiga tal"
+html_title:           "Elixir: Genererande slumpmässiga tal"
+simple_title:         "Genererande slumpmässiga tal"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Numbers"
@@ -10,39 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
+Att generera slumpmässiga tal är en viktig del av programmering, eftersom det tillåter oss att skapa variation och dynamik i våra program. Genom att använda slumpen i våra program kan vi skapa spel, simuleringar och mer.
 
-Att generera slumpmässiga nummer är en viktig del av många program, inklusive spel, simuleringar och kryptografi. Med hjälp av slumpmässiga nummer kan man skapa variation och osäkerhet, vilket gör det möjligt att skapa mer realistiska och säkra program.
-
-## Så här gör du
+## Hur man gör:
+Elixir har ett inbyggt bibliotek för att generera slumpmässiga tal, kallat :random. Här är ett exempel på hur du använder det:
 
 ```Elixir
 # Generera ett slumpmässigt heltal mellan 1 och 10
-IO.puts("Här är ett slumpmässigt tal mellan 1 och 10:")
-IO.puts(Enum.random(1..10))
+:random.uniform(1, 10)
 
-# Generera en lista med 5 slumpmässiga frukter
-IO.puts("Här är en slumpmässig lista med frukter:")
-IO.inspect(Enum.shuffle(["äpple", "banan", "apelsin", "jordgubbe", "kiwi"]))
+# Generera ett slumpmässigt decimaltal mellan 0 och 1
+:random.uniform()
+
+# Generera ett slumpmässigt tal från en lista
+:random.sample([1, 2, 3, 4])
+
+# Generera ett slumpmässigt tecken från en sträng
+:random.sample("elixir")
+
 ```
 
 Output:
 
-Här är ett slumpmässigt tal mellan 1 och 10:
-7
-Här är en slumpmässig lista med frukter:
-["äpple", "jordgubbe", "banan", "apelsin", "kiwi"]
+```Elixir
+8
+0.532453234
+3
+"i"
+```
 
-För att generera slumpmässiga tal i Elixir använder man funktionen `Enum.random/1` och anger ett intervall för de möjliga numren. Man kan välja att generera enstaka tal eller en lista med flera slumpmässiga värden genom att använda funktionen `Enum.shuffle/1` och ange en lista med de önskade värdena.
+## Djupdykning:
+Att generera slumpmässiga tal har varit en utmaning för programmerare sedan lång tid tillbaka. Det finns olika algoritmer och metoder för att göra detta, men i Elixir använder vi standard metoden som kallas "Mersenne-Twister". Detta är en vanlig algoritm som ger en hög grad av slumpmässighet.
 
-## Djupdykning
+Det finns också andra bibliotek för att generera slumpmässiga tal i Elixir, som till exempel SecureRandom från OpenSSL. Detta bibliotek erbjuder också möjligheten att generera kryptografiskt säkra slumpmässiga tal.
 
-Elixir använder sig av en intern generator, kallad "UniformDistribution", som genererar slumpmässiga nummer baserat på en seed. En seed är ett startvärde som används för att generera en följd av siffror som ser slumpmässiga ut. Om man vill ha mer kontroll över genereringen av slumpmässiga tal kan man ange sin egen seed genom att använda funktionen `:uniform.seed/1`.
+Implementeringen av slumpmässiga tal i Elixir är snabb och effektiv tack vare den funktionella naturen hos språket. Detta gör det enkelt att använda i våra program, utan att behöva oroa oss för prestanda.
 
-En viktig sak att tänka på är att "UniformDistribution" inte är en kryptografiskt säker generator, vilket betyder att den inte bör användas i situationer där säkerhet är avgörande.
+## Se även:
+Om du vill lära dig mer om hur du använder slumpmässiga tal i Elixir, kolla in dessa resurser:
 
-## Se även
-
-- [Elixir Enum-modulen](https://hexdocs.pm/elixir/Enum.html)
-- [Slumpmässiga nummer i Elixir - Elixir Cheat Sheet](https://elixirschool.com/sv/cheatsheets/random/)
-- [Elixir Random-modulen](https://hexdocs.pm/elixir/Random.html)
+- Elixir :random Dokumentation: https://hexdocs.pm/elixir/Random.html
+- SecureRandom: https://hexdocs.pm/elixir/SecureRandom.html

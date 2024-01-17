@@ -10,58 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+¿Qué y por qué?
 
-¿Alguna vez te has preguntado cómo comparar dos fechas en un programa de Go? ¡Este artículo es para ti! Aprenderás cómo hacerlo de manera sencilla y eficiente en este lenguaje de programación.
+Comparar dos fechas es un proceso común en la programación que consiste en determinar cuál de las dos fechas es más antigua o más reciente. Los programadores realizan esta tarea para ordenar fechas, realizar cálculos de tiempo y manejar lógica condicional.
 
-## Cómo
+¿Cómo hacerlo?
 
-Para comparar dos fechas en Go, primero debemos tener en cuenta que necesitamos trabajar con el tipo de dato `time.Time`. Este tipo nos permite almacenar información sobre la fecha y la hora.
+El lenguaje de programación Go ofrece una función integrada llamada "Before" que permite comparar dos fechas. Aquí hay un ejemplo de cómo usarla en un programa básico:
 
-Para crear dos fechas que queramos comparar, podemos utilizar la función `time.Parse`, que recibe como parámetros un formato y una cadena de texto que representa la fecha. Por ejemplo:
+```
+Go package main
 
-```Go
-// Creamos dos fechas utilizando la función time.Parse
-fecha1, _ := time.Parse("2006-01-02", "2019-12-25")
-fecha2, _ := time.Parse("2006-01-02", "2020-01-01")
+import (
+    "fmt"
+    "time"
+)
 
-// Comparamos las fechas utilizando el operador ==
-if fecha1 == fecha2 {
-  fmt.Println("Las fechas son iguales")
-} else {
-  fmt.Println("Las fechas son diferentes")
-}
+func main() {
+    fecha1 := time.Date(2021, time.January, 1, 0, 0, 0, 0, time.UTC) // Primera fecha
+    fecha2 := time.Date(2021, time.June, 1, 0, 0, 0, 0, time.UTC) // Segunda fecha
 
-// Utilizamos los métodos After y Before para comparar si una fecha es anterior o posterior a otra
-if fecha1.After(fecha2) {
-  fmt.Println("La fecha 1 es posterior a la fecha 2")
-} else if fecha1.Before(fecha2) {
-  fmt.Println("La fecha 1 es anterior a la fecha 2")
-} else {
-  fmt.Println("Las fechas son iguales")
+    if fecha1.Before(fecha2) { // Usando la función "Before" para comparar las dos fechas
+        fmt.Println("La primera fecha es más antigua que la segunda")
+    } else {
+        fmt.Println("La segunda fecha es más antigua que la primera")
+    }
 }
 ```
 
-En el primer ejemplo, utilizamos el operador `==` para comparar dos fechas y en el segundo ejemplo, utilizamos los métodos `After` y `Before` para comparar si una fecha es anterior o posterior a la otra. Como resultado, obtendremos lo siguiente:
+La salida de este programa sería: "La primera fecha es más antigua que la segunda".
 
-```
-Las fechas son diferentes
-La fecha 1 es anterior a la fecha 2
-```
+Profundizando
 
-## Deep Dive
+Esta función de comparación de fechas de Go se basa en el cálculo de segundos desde el 1 de enero de 1970 (conocido como "epoch") para cada una de las fechas. Si la fecha dada tiene una precisión más fina (por ejemplo, incluye horas y minutos), los segundos restantes se agregan al cálculo. Esto permite una comparación precisa incluso con fechas que tienen diferentes niveles de precisión.
 
-Go ofrece una amplia gama de métodos para trabajar con fechas y realizar comparaciones. Algunos de estos métodos son:
+Existe una alternativa a la función "Before" llamada "After", que realiza la comparación inversa. Además, los paquetes externos como "timeutil" proporcionan métodos adicionales para comparar fechas más específicamente, como ignorar el tiempo o las zonas horarias.
 
-- `Date()` que devuelve la fecha en formato `año-mes-día`.
-- `Year()` que devuelve el año de la fecha.
-- `Month()` que devuelve el mes de la fecha.
-- `Day()` que devuelve el día de la fecha.
-- `Before()` y `After()` permiten comparar fechas y devuelven un booleano indicando si una fecha es anterior o posterior a la otra.
+Véase también
 
-Para obtener más información sobre estos y otros métodos, puedes consultar la documentación oficial de Go.
-
-## Ver también
-
-- [Documentación oficial de Go](https://golang.org/doc/)
-- [Tutorial de Go en español](https://www.tutorialesprogramacionya.com/goya/index.php?inicio=0)
+- Documentación oficial de la función "Before" de Go: https://golang.org/pkg/time/#Time.Before
+- Paquete "timeutil" para operaciones adicionales con fechas: https://github.com/golang/timeutil

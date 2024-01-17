@@ -1,7 +1,7 @@
 ---
-title:                "Perusautentikoinnin lähettäminen http-pyyntönä"
-html_title:           "Gleam: Perusautentikoinnin lähettäminen http-pyyntönä"
-simple_title:         "Perusautentikoinnin lähettäminen http-pyyntönä"
+title:                "Lähettämässä http-pyyntöä perusautentikoinnilla"
+html_title:           "Gleam: Lähettämässä http-pyyntöä perusautentikoinnilla"
+simple_title:         "Lähettämässä http-pyyntöä perusautentikoinnilla"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "HTML and the Web"
@@ -10,52 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+Mikä & Miksi?
+Lähettämällä HTTP-pyynnön perustason tunnistautumisella tarkoitetaan sitä, että käyttäjä lähettää pyynnön verkkopalvelimelle, joka vaatii käyttäjän tunnistautumisen. Tämä tapahtuu lisäämällä käyttäjän käyttäjätunnus ja salasana pyyntöön. Ohjelmoijat tekevät tätä voidakseen tehdä asioita, kuten lähettää tietoja palvelimelle tai hakea tietoja tietokannasta.
 
-Miksi haluaisit lähettää HTTP-pyynnön perusautentikoinnilla?
-
-HTTP-pyyntöjen lähettäminen perusautentikoinnilla on tärkeä osa monia web-sovelluksia, joissa käyttäjän täytyy todistaa olevansa oikea henkilö ennen kuin heille annetaan pääsy rajoitettuihin resursseihin. Tämä voi sisältää esimerkiksi salaisia tietokantoja, API-palveluita tai muita herkkiä tiedostoja.
-
-## Miten
-
-Gleamilla on helppo lähettää HTTP-pyyntöjä perusautentikoinnilla käyttäen `httpc` kirjastoa. Katso esimerkki alla:
+Miten:
+Esimerkiksi voidaksesi hakea tietoja käyttäjätunnuksellasi ja salasanallasi suojatulta API:lta, sinun on lisättävä pyyntöösi käyttäjätunnus ja salasana. Tämä tapahtuu käyttämällä Gleamin ```Gleam http.send``` ja ```Gleam http.basic_auth``` funktioita. Alla on esimerkit siitä, miten tämä tehdään:
 
 ```Gleam
-import httpc
-
-fn make_request() {
-  let url = "https://api.example.com/user"
-  let username = "käyttäjänimi"
-  let password = "salasana"
-
-  let response = httpc.request(
-    method: "GET",
-    url: url,
-    headers: [
-      ("Authorization", "Basic {base64_encode(username ++ ":" ++ password)}")
-    ]
+http.send(
+    url: "https://api.example.com/data",
+    method: Http.Get,
+    headers: [basic_auth("kayttajatunnus", "salasana")],
   )
-
-  case response {
-    Ok(httpc.Response(decoder)) -> {
-      let body = decoder.read()
-      // Tee jotain vastaukselle
-    }
-    Error(httpc.Error(err)) -> {
-      // Käsittelyvirheet
-    }
-  }
-}
 ```
 
-Yllä oleva koodi lähettää GET-pyynnön annettuun URL-osoitteeseen ja ottaa käyttäjänimen ja salasanan käyttöön perusautentikointia varten. Vastauksena saatava data voi sitten käsitellä ja hyödyntää tarpeen mukaan. 
+Tuloksen pitäisi olla vastaus, joka sisältää halutut tiedot.
 
-## Syvällinen tarkastelu
+Syvimmälle sukellus:
+Peruskäyttäjätunnistus on yksi monista käytetyistä tunnistusmenetelmistä HTTP-pyynnöissä. Siinä käyttäjän tunnistautumistiedot (käyttäjätunnus ja salasana) toimitetaan Base64-muodossa ja lisätään pyyntöön otsikkoon ```Authorization```. Tämä menetelmä on ollut käytössä jo vuodesta 1999 ja se on yksi yksinkertaisimmista tavoista varmistaa, että käyttäjän tiedot ovat suojassa.
 
-Perusautentikointi käyttää HTTP-pyynnön otsikkona `Authorization`-otsikkoa, jossa kerrotaan käyttäjän nimi ja salasana salausmuodossa. Tässä esimerkissä käytämme base64-koodausta, mutta autentikointimenetelmä voi vaihdella riippuen tarpeista ja käytetyistä palveluista. On tärkeää varmistaa, että käyttäjän salasana ei ole näkyvillä selkeästi käyttäjän koodissa.
+Vaihtoehtoja ovat esimerkiksi Digest-tunnistautuminen, jossa käyttäjän salasanaa ei tallenneta selkokielisenä tietokantaan, sekä OAuth, jossa käyttäjä tunnistetaan palveluntarjoajan sivuston kautta.
 
-## Katso myös
-
-- [Gleam HTTP Client -kirjaston dokumentaatio](https://hexdocs.pm/gleam_httpc/)
-- [HTTP-pyyntöjen lähettäminen Gleamilla](https://gleam.run/articles/http-requests)
-- [HTTP-tilan koodauksen perusteet](https://gleam.run/articles/http-status-codes)
+Katso myös:
+- [Gleamin HTTP-moduuli](https://gleam.run/modules/http)
+- [Base64-koodekointi](https://fi.wikipedia.org/wiki/Base64)

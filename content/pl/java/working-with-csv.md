@@ -10,97 +10,88 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i dlaczego?
 
-W dzisiejszych czasach, praca z ogromnymi danymi stała się nieodłączną częścią wielu dziedzin, począwszy od biznesu po naukę danych. Jednym z powszechnie stosowanych formatów danych jest plik CSV (ang. Comma-Separated Values), który pozwala na przechowywanie i przetwarzanie danych w postaci tabeli. W tym artykule dowiesz się, dlaczego warto poznać i umiejętnie wykorzystywać CSV w swoich projektach opartych na języku Java.
+Pracowanie z plikami CSV jest powszechnym zadaniem dla programistów Java. CSV (ang. Comma-Separated Values) jest to prosty format pliku tekstowego, który zawiera dane w formacie tabelarycznym, gdzie każda linijka odpowiada jednemu rekordowi, a pola są oddzielone przecinkami. Programiści pracują z plikami CSV, ponieważ jest to wygodny i powszechnie stosowany sposób przechowywania danych.
 
-## Jak to zrobić
+## Jak to zrobić:
 
-Pierwszym krokiem jest zaimportowanie klasy CSVReader z pakietu opencsv do Twojego projektu.
+### Wczytywanie pliku CSV:
 
-```Java
-import com.opencsv.CSVReader;
-```
+```java
+// Importujemy niezbędne klasy
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 
-Następnie, musisz utworzyć obiekt CSVReader, który przyjmuje jako parametry plik CSV oraz znak, którym są oddzielone kolumny (zwykle jest to przecinek).
+try {
+    // Tworzymy obiekt czytający plik CSV
+    BufferedReader reader = new BufferedReader(new FileReader("nazwa_pliku.csv"));
+    String line = "";
 
-```Java
-CSVReader reader = new CSVReader(new FileReader("dane.csv"), ',');
-```
+    // Wczytujemy kolejne linijki pliku
+    while ((line = reader.readLine()) != null) {
+        // Dzielimy linijkę na pola, korzystając z separatora ","
+        String[] fields = line.split(",");
 
-Teraz możesz rozpocząć wczytywanie danych z pliku. W tym przykładzie, użyjemy pętli for-each do przeglądania kolejnych wierszy i kolumn w pliku CSV.
-
-```Java
-String[] line;
-
-while ((line = reader.readNext()) != null) {
-    for (String column : line) {
-        System.out.println(column);
+        // Wyświetlamy wartości pól
+        System.out.println(fields[0]); // Pierwsze pole
+        System.out.println(fields[1]); // Drugie pole
+        // ...
     }
+
+    // Zamykamy czytnik pliku
+    reader.close();
+
+} catch (IOException e) {
+    e.printStackTrace();
 }
 ```
 
-Przykładowy plik CSV "dane.csv" mógłby wyglądać tak:
+### Zapisywanie do pliku CSV:
 
-```
-Imię,Nazwisko,Wiek
-Jan,Kowalski,35
-Anna,Nowak,28
-Piotr,Kowalczyk,42
-```
+```java
+// Importujemy niezbędne klasy
+import java.io.FileWriter;
+import java.io.IOException;
 
-W rezultacie, wyświetlona zostałaby kolejno wartości z kolumn "Imię", "Nazwisko" oraz "Wiek" dla każdego wiersza.
+try {
+    // Tworzymy obiekt zapisujący do pliku CSV
+    FileWriter writer = new FileWriter("nazwa_pliku.csv");
 
-```
-Jan
-Kowalski
-35
-Anna
-Nowak
-28
-Piotr
-Kowalczyk
-42
-```
+    // Przykładowe dane do zapisania
+    String[] data = {"1,Jan,Kowalski", "2,Katarzyna,Nowak"};
 
-## Deep Dive
+    // Zapisujemy każdą linijkę do pliku
+    for (String line : data) {
+        writer.write(line + "\n");
+    }
 
-Powyższe przykłady pokazują najprostsze metody wykorzystania CSVReader. Jednak, istnieje wiele innych funkcji i opcji, które mogą ułatwić pracę z plikami CSV w języku Java.
+    // Zamykamy zapisywanie do pliku
+    writer.close();
 
-Na przykład, możesz użyć metody readAll, aby wczytać wszystkie dane z pliku do Listy, dzięki czemu łatwiej będzie Ci operować na całym zestawie danych.
-
-```Java
-List<String[]> lines = reader.readAll();
+} catch (IOException e) {
+    e.printStackTrace();
+}
 ```
 
-Możesz także zastosować różne ustawienia odnośnie separatora kolumn, znaku końca linii czy nawet kodowania znaków.
+## Głębsze zagłębienie:
 
-```Java
-CSVReader reader = new CSVReaderBuilder(new FileReader("dane.csv"))
-                        .withSeparator(';')
-                        .withSkipLines(1)
-                        .withEncoding("UTF-8")
-                        .build();
-```
+### Kontekst historyczny:
 
-Jeśli chcesz wprowadzić zmiany w pliku CSV, możesz użyć klasy CSVWriter z tego samego pakietu opencsv.
+Format CSV został wprowadzony przez firmę Microsoft w 1983 roku jako sposób przechowywania danych w programie arkusza kalkulacyjnego Excel. Obecnie jest powszechnie stosowany także w innych programach i systemach.
 
-```Java
-CSVWriter writer = new CSVWriter(new FileWriter("nowe_dane.csv"), ',');
-```
+### Alternatywy:
 
-Następnie, możesz wykorzystać metodę writeNext, aby dodać nowy wiersz do pliku.
+Alternatywami dla formatu CSV są na przykład format JSON lub XML, które są bardziej strukturalne i elastyczne, ale także bardziej skomplikowane do przetwarzania dla programisty.
 
-```Java
-String[] newRow = {"Katarzyna", "Wiśniewska", "24"};
-writer.writeNext(newRow);
-```
+### Szczegóły implementacji:
 
-Dodatkowo, opencsv umożliwia także odczyt danych z pliku CSV do obiektów zdefiniowanych przez użytkownika w sposób automatyczny, dzięki wykorzystaniu adnotacji.
+W przykładach użyto klas z pakietu java.io, jednak istnieją także inne biblioteki oferujące wygodniejsze sposoby wczytywania i zapisywania danych w formacie CSV, takie jak Apache Commons CSV czy OpenCSV.
 
-## Zobacz również
+## Zobacz także:
 
-Jeśli chcesz dowiedzieć się więcej o pracy z plikami CSV w języku Java, polecam przeczytać dokumentację pakietu opencsv oraz poniższe artykuły:
-
-- [Jak pracować z plikami CSV w języku Java](https://www.baeldung.com/java-csv)
-- [Pliki CSV w języku Java – sposoby odczytu danych](https://www.sam
+- Dokumentacja klasy BufferedReader: https://docs.oracle.com/javase/7/docs/api/java/io/BufferedReader.html
+- Dokumentacja klasy FileWriter: https://docs.oracle.com/javase/7/docs/api/java/io/FileWriter.html
+- Biblioteka Apache Commons CSV: https://commons.apache.org/proper/commons-csv/
+- Biblioteka OpenCSV: http://opencsv.sourceforge.net/

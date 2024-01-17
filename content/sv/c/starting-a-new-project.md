@@ -1,7 +1,7 @@
 ---
-title:                "Att påbörja ett nytt projekt"
-html_title:           "C: Att påbörja ett nytt projekt"
-simple_title:         "Att påbörja ett nytt projekt"
+title:                "Att börja ett nytt projekt"
+html_title:           "C: Att börja ett nytt projekt"
+simple_title:         "Att börja ett nytt projekt"
 programming_language: "C"
 category:             "C"
 tag:                  "Getting Started"
@@ -10,30 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Varför 
-Du har kanske bestämt dig för att starta ett nytt programmeringsprojekt men undrar varför det är värt det. Det finns många goda anledningar till varför du bör engagera dig i ett nytt projekt, och i denna artikel kommer vi att utforska dem.
+## Vad & Varför?
+Att starta ett nytt projekt innebär att du börjar skriva en ny programkod från grunden. Det kan vara något enkelt som ett kalkylblad eller en komplex applikation. Programerare startar ofta nya projekt för att lösa specifika problem eller för att bygga något nytt och användbart.
 
-# Hur man gör det 
-Innan vi dyker in i detaljerad information, låt oss först titta på hur du faktiskt går tillväga för att starta ett nytt projekt i C. Här är ett enkelt kodexempel för att börja:
+## Så här:
+Ett enkelt sätt att starta ett nytt projekt är att använda kommandot ```C gcc nyttprojekt.c -o nyttprojekt ``` för att kompilera din kod och skapa ett körbart program. Här är ett exempel på en enkel "Hello World"-applikation:
 
 ```C
 #include <stdio.h>
 
-int main()
-{
-    printf("Hej världen!");
+int main() {
+    // Printar ut "Hello, world!" på konsolen
+    printf("Hello, world!");
+
     return 0;
 }
 ```
 
-Om allt går som planerat, bör du se "Hej världen!" skrivas ut när du kör programmet. Detta är en enkel men viktig första steg när du startar ett C-projekt.
+Output:
+```
+Hello, world!
+```
 
-# Djupdykning 
-Att starta ett nytt projekt kan tyckas överväldigande vid första anblicken, men det kan faktiskt vara ganska enkelt om du vet vad du ska göra. Det första steget är att välja ett projekt som du är passionerad om och sedan bestämma vilka verktyg och resurser du behöver. Du måste också bestämma hur du ska organisera din kod och planera din utvecklingsprocess.
+## Djupare dykning:
+I det förflutna var det vanligt att programmerare började med en tom fil och skrev kod manuellt. Nu finns det dock många verktyg som kan hjälpa till att starta nya projekt på ett enklare sätt, som till exempel integrerade utvecklingsmiljöer (IDE:er) och projektgeneratorer. Alternativt kan du också använda dig av ett programmeringsspråk som är mer anpassat för din specifika applikation, som till exempel Python för skriptning eller Java för stora projekt med många utvecklare. När det kommer till själva implementationen av ditt projekt finns det många olika metoder och designmönster som kan användas.
 
-# Se även 
-- [The C Programming Language](https://en.wikipedia.org/wiki/The_C_Programming_Language)
-- [C Coding Standards](https://en.wikipedia.org/wiki/Coding_standard)
-- [How to Get Started with C Programming](https://www.geeksforgeeks.org/how-to-get-started-with-c/)
-
-Tack för att du läste denna artikel om att starta ett nytt C-projekt. Med lite tid och ansträngning kan du snart bli en skicklig C-programmerare och skapa fantastiska projekt. Ha det så kul!
+## Se även:
+- [Olika verktyg för att starta nya projekt](https://dev.to/dave/start-your-next-project-with-these-time-saving-tools-3142)
+- [Introduktion till designmönster](https://www.tutorialspoint.com/design_pattern/design_pattern_overview.htm)

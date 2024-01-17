@@ -1,7 +1,7 @@
 ---
-title:                "发送一个 http 请求"
-html_title:           "Go: 发送一个 http 请求"
-simple_title:         "发送一个 http 请求"
+title:                "发送一个http请求。"
+html_title:           "Go: 发送一个http请求。"
+simple_title:         "发送一个http请求。"
 programming_language: "Go"
 category:             "Go"
 tag:                  "HTML and the Web"
@@ -10,42 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
+## 什么是HTTP请求
+发送HTTP请求指的是使用Hypertext Transfer Protocol (HTTP)协议向服务器发送请求，以获取特定的数据或资源。程序员通常使用HTTP请求来连接不同的应用程序，使它们能够共享数据并实现更多的功能。
 
-想象一下，你在使用网上购物网站，点击购买按钮后发现订单提交出现了问题。这时，网站可能会提示你发送一个HTTP请求来解决这个问题。
+## 如何发送HTTP请求
+在Go语言中，我们可以使用内置的net/http包来发送HTTP请求。以下是一个简单的示例，使用GET请求从谷歌API获取搜索结果：
+```
+package main
 
-## 如何进行HTTP请求
+import (
+	"fmt"
+	"net/http"
+)
 
-发送HTTP请求的最简单方式是使用Go标准库中的`net/http`包。我们首先需要使用`net/http`包中的`Get`函数来建立一个新的HTTP请求，然后指定请求的URL。接着，我们可以通过调用`Response`结构体的`Body`字段来获取响应的主体内容。最后，我们使用`io.Copy`函数将响应的主体内容写入标准输出。
-
-```Go
-resp, err := http.Get("https://example.com")
-if err != nil {
-  // 处理错误
-}
-defer resp.Body.Close()
-
-_, err = io.Copy(os.Stdout, resp.Body)
-if err != nil {
-  // 处理错误
+func main() {
+	request, err := http.NewRequest("GET", "https://www.googleapis.com/customsearch/v1?key=123456&cx=017576662512468239146:omuauf_lfve&q=golang", nil)
+	if err != nil {
+		fmt.Println("请求错误: ", err)
+	}
+	response, err := http.DefaultClient.Do(request)
+	if err != nil {
+		fmt.Println("请求错误: ", err)
+	}
+	fmt.Println(response.Status)
 }
 ```
-
-通过运行上述代码，你将能够发送一个HTTP请求并获取响应的内容。如果你想要发送不同类型的HTTP请求，例如POST或PUT请求，可以使用`http.NewRequest`函数来创建一个新的请求并指定请求方法，如下所示：
-
-```Go
-req, err := http.NewRequest("POST", "https://example.com", body)
-// 其中，body是一个io.Reader类型的数据，可以是字符串、字节数组等
+输出结果为:
 ```
+200 OK
+```
+请注意，您需要替换Google API密钥和自定义搜索ID以使示例代码生效。
 
-## 深入探讨HTTP请求
+## 深入了解
+- 历史背景：HTTP协议最初由Tim Berners-Lee在1989年提出，用于在客户端和服务器之间传输超文本数据。
+- 其他选项：除了Go语言的net/http包，还有其他流行的HTTP客户端库，如Postman和cURL。
+- 实现细节：HTTP请求的实现包括构建并发送请求、等待服务器响应、处理响应数据等步骤。
 
-HTTP请求是客户端通过网络与服务器进行通信的一种方式。请求中包含了请求的方法、URL、HTTP版本以及可选的请求头和请求体。在Go中，可以通过`http.Request`结构体来表示一个HTTP请求，该结构体包含了上述所有信息。
-
-另外，HTTP请求也可以通过访问地址和查询参数来包含更多的信息。例如，在请求`https://example.com?name=John&age=25`时，可以通过访问`req.URL.Query().Get("name")`来获取`John`作为查询参数的值。
-
-## 参考链接
-
-- [Go标准库`net/http`文档](https://golang.org/pkg/net/http/)
-- [Go标准库`io`文档](https://golang.org/pkg/io/)
-- [HTTP请求详解](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Overview)
+## 查看更多信息
+- [Go语言官方文档](https://golang.org/pkg/net/http/)
+- [HTTP协议的历史](https://www.w3.org/Protocols/)
+- [cURL文档](https://curl.haxx.se/docs/)

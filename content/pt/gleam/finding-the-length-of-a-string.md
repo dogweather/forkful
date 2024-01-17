@@ -10,46 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que 
+## O que e por que?
 
-Existem muitas situações em que precisamos saber o tamanho de uma string em nosso código. Isso pode ser útil para verificação de entrada do usuário, manipulação de dados de texto ou até mesmo para fins de formatação.
+Encontrar o comprimento de uma string é o ato de determinar quantos caracteres estão presentes em uma determinada string. Isso é útil para os programadores porque muitas vezes precisamos saber o tamanho de uma string para fins de validação, manipulação ou exibição.
 
-## Como fazer
+## Como fazer:
 
-Para encontrar o tamanho de uma string em Gleam, podemos usar a função `String.length/1` que retorna o número de caracteres em uma string. Vamos ver um exemplo abaixo:
+Para encontrar o comprimento de uma string em Gleam, usamos a função `size` seguida do nome da string entre parênteses. Veja o exemplo abaixo:
 
-```Gleam
-let string = "Olá!"
-let tamanho = String.length(string)
-io.println(tamanho)
 ```
+Gleam
 
-Isso irá imprimir `4` na tela, já que existem quatro caracteres na string "Olá!".
-
-Também podemos encontrar o tamanho de uma string de maneira mais dinâmica, permitindo que o usuário insira sua própria string e receba o tamanho como resultado:
-
-```Gleam
-io.print("Insira uma string: ")
-let string = io.readLine()
-let tamanho = String.length(string)
-io.println("O tamanho da string é:", tamanho)
-```
-
-## Profundando
-
-Ao trabalhar com strings, é importante lembrar que o tamanho retornado pela função `String.length/1` significa o número de caracteres, e não o número de palavras ou espaços. Por exemplo:
-
-```Gleam
 let string = "Olá, mundo!"
-let tamanho = String.length(string)
-io.println(tamanho) // retorna 12, contanto com o espaço e a vírgula
+let length = size(string)
+
 ```
 
-Outra coisa a se ter em mente é que a função `String.length/1` também considera caracteres especiais ou acentuados, portanto, se sua string contém letras com acentos, o tamanho será maior do que o número de caracteres visíveis.
+Assim, a variável `length` será igual a 12, pois a string possui 12 caracteres (incluindo o espaço em branco). Você também pode encontrar o comprimento de uma string diretamente, sem precisar armazenar em uma variável, como no exemplo abaixo:
 
-Além disso, é possível manipular o tamanho de uma string usando outras funções, como `String.slice/3` ou `String.concat/2`. Experimente brincar com essas funções para ver o que você pode fazer!
+```
+Gleam
 
-## Veja também
+assert size("Oi!") == 3
 
-- [Funções de strings em Gleam](https://gleam.run/modules/stdlib/String.html)
-- [Documentação Gleam](https://gleam.run/documentation/)
+```
+
+Este exemplo usa a função `assert` para verificar se o comprimento da string "Oi!" é igual a 3. Se sim, o código continua executando normalmente. Caso contrário, um erro é retornado.
+
+## Profundidade:
+
+Encontrar o comprimento de uma string é uma tarefa bastante comum em programação. Na verdade, é uma das funções básicas disponíveis em muitas linguagens de programação. Além disso, existem outras formas de encontrar o comprimento de uma string, como usar um loop para contar cada caracter ou usar a função `len` em outras linguagens.
+
+Em termos de implementação, a função `size` em Gleam é definida da seguinte forma:
+
+```
+Gleam
+
+fn size(string: String) -> Int {
+  Bytes.size(string.bytes)
+}
+
+```
+
+Isso significa que a função `size` vai primeiro converter a string em uma sequência de bytes e então determinar o tamanho dessa sequência. Isso pode ser útil se a string não for composta apenas de caracteres ASCII.
+
+## Veja também:
+
+- [A documentação oficial do Gleam sobre strings](https://gleam.run/book/callables.html#strings)
+- [Um artigo sobre a função `len` em Python](https://www.freecodecamp.org/news/python-len-function-tutorial/)
+- [Uma discussão sobre a diferença entre `size` e `len` em programação em geral](https://stackoverflow.com/questions/2822688/difference-between-len-and-size-in-python)

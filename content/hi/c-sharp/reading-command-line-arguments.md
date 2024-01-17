@@ -1,7 +1,7 @@
 ---
-title:                "कम्प्यूटर प्रोग्रामिंग पर एक लेख का शीर्षक: कमांड लाइन आर्ग्यूमेंट्स को पढ़ना"
-html_title:           "C#: कम्प्यूटर प्रोग्रामिंग पर एक लेख का शीर्षक: कमांड लाइन आर्ग्यूमेंट्स को पढ़ना"
-simple_title:         "कम्प्यूटर प्रोग्रामिंग पर एक लेख का शीर्षक: कमांड लाइन आर्ग्यूमेंट्स को पढ़ना"
+title:                "कमांड लाइन आर्ग्यूमेंट्स को पढ़ना"
+html_title:           "C#: कमांड लाइन आर्ग्यूमेंट्स को पढ़ना"
+simple_title:         "कमांड लाइन आर्ग्यूमेंट्स को पढ़ना"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Files and I/O"
@@ -10,43 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Kyu:
+"## क्या और क्यों?"
 
-Kya aapko command line arguments ke baare mein jaankari hai? Yeh computer programming mein ek important concept hai aur iska use kiya jaata hai user input ko program mein dene ke liye. Agar aap C# mein kaam kar rahe hai, toh yeh article aapke liye hai. Iss article mein hum command line arguments ke baare mein baat karenge, kyuki yeh ek useful technique hai jise har programmer ko jaan lena chahiye.
+कमांड लाइन आर्ग्यूमेंट पढ़ना क्या है? सादा समझने के लिए, यह आपको अपनी कंप्यूटर पर विभिन्न प्रोग्रामों को रन करने के लिए आपके द्वारा दिए गए जानकारी को उपयोग करने की अनुमति देता है। इसे प्रोग्रामर्स उन इंपुट पैरामीटर्स को प्रोग्राम के साथ संवाद में अपनाने के लिए करते हैं जो स्टैंडअलोन या अन्य कंप्यूटर प्रोग्राम के साथ संवाद की उपलब्धता सुविधा की आवश्यकता होती है। 
 
-## Kaise Kare:
-
-Command line arguments ko C# mein read karna bahut hi aasan hai. Hamara program ek simple console application hoga jo user se argument input lega aur usse print kar dega. Chaliye dekhte hai kaise aap ise code mein implement kar sakte hai:
+"## कैसे:"
 
 ```C#
 using System;
 
-// Main function
-public static int Main(string[] args)
+namespace CommandLineArgs
 {
-    // Loop through command line arguments
-    for (int i = 0; i < args.Length; i++) 
-    { 
-        Console.WriteLine("Argument {0}: {1}", i+1, args[i]);  
-    } 
-    return 0;
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // स्थापित कार्यों के बाद किसी भी कमांड लाइन आर्ग्यूमेंट को प्रिंट करें
+            foreach(string arg in args)
+            {
+                Console.WriteLine(arg);
+            }
+
+            // कॉंसोल में सभी आर्ग्यूमेंट को join करें
+            Console.WriteLine(String.Join(" ", args));
+        }
+    }
 }
 ```
 
-Jaise aap is code ko run karenge, aapke screen par command line arguments ki list print hogi. Samajhne ke liye, hum ek example dekhte hai. Agar aap command line mein `Hello World` type karke run karte hai, toh program print karega: Argument 1: Hello and Argument 2: World. Aap dekh sakte hai ki humare program ne har word ko alag-alag argument ka form diya hai.
+उपरोक्त कोड समझने के लिए, आपको इसे एक फ़ाइल में सहेजना होगा और कंपाइल करने के लिए कंपाइलर का उपयोग करें। अब, कमांड लाइन में पहुँचकर, प्रोग्राम की फ़ाइल नाम के साथ उचित आर्ग्यूमेंट को दूसरे आर्ग्यूमेंट के रूप में पास करें और आपको उन्हें आपके कंप्यूटर पर प्रिंट करने के लिए देखने को मिलेगा। अगर आपके पास कोई उपरोक्त स्क्रिप्ट को सही रूप से शुरू करने का उपाय नहीं है, तो आपको माइक्रोसॉफ्ट अक्षमदक्षता साथ कर सकते हैं।
 
-## Deep Dive:
+इस प्रोग्राम का उपयोग करके, आप भी एक ही ऐप्प के साथ स्थापित काम कर सकते हैं। आपको मुंबाई बाद Java काम करने के लिए एंकरेज काम जारी कर रहे हैं। उपकरणों में जिसके उपाय प्रदान करने के लिए, आप किसी भी अन्य कोड जनित कर सकते होंगे जो यूजर्स को अपने की गए कंप्यूटर के माध्यम से प्रस्तूत करना हो।
 
-Command line arguments ko read karne ke liye, hum string array ka use karte hai. Is array mein saare command line arguments store ho jate hai aur hum unhe access kar sakte hai. Agar aapko sirf specific arguments ki value chahiye, toh aap unhe index se access kar sakte hai. Jaise: `args[0]` aapke program ka first argument hoga.
+"## गहराई में डूबो"
 
-Iske alawa, hum `args.Length` ka use karke array ki length bhi check kar sakte hai. Isse hume pata chalta hai ki kitne arguments user ne diye hai. Iss information ka use hum apne program mein kar sakte hai aur use accordingly modify kar sakte hai.
+पैसे का दौर भी, कमांड लाइन आर्ग्यूमेंट पढ़ने में सुविधा की नई शुरूआत है। नय ....
+"## देखें भी"
 
-Is tarah se command line arguments ek bahut hi useful tool hai jise aap apne C# programs mein use kar sakte hai. Agar aap is concept ke bare mein aur jaankari chahte hai, toh aap online tutorials aur documentation se bhi help le sakte hai.
-
-## Dekhe Bhiye:
-
-Agar aapko C# mein aur bhi programming concepts aur tutorials chahiye, toh yeh links aapke kaam aayenge:
-
-- [C# Tutorials](https://docs.microsoft.com/en-us/dotnet/csharp/tour-of-csharp/)
-- [C# Documentation](https://docs.microsoft.com/en-us/dotnet/csharp/)
-- [Introduction to Command Line Arguments in C#](https://www.c-sharpcorner.com/article/introduction-to-command-line-arguments-in-C-Sharp/)
+अभी, आप अपने आदेश लाइन को आमंत्रित किए सकते हैं। उसके अंतर्गत तरह आप अपनी आदेश लाइन को संभावित कोड दिया जा सकता है। हमले। आप अपनी दैनिक हर्जक के युग से अपनी आमंत्रित दूर कर सकते है

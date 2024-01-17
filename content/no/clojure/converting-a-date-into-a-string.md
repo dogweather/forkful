@@ -1,7 +1,7 @@
 ---
-title:                "Konvertering av dato til streng"
-html_title:           "Clojure: Konvertering av dato til streng"
-simple_title:         "Konvertering av dato til streng"
+title:                "Konvertere en dato til en streng"
+html_title:           "Clojure: Konvertere en dato til en streng"
+simple_title:         "Konvertere en dato til en streng"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Dates and Times"
@@ -10,34 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hva & Hvorfor?
+Konvertering av datoer til strenger betyr å ta en dato og konvertere den til en tekststrekning, som for eksempel "20. mars 2020". Dette kan være nyttig for mange programmeringsspråk, da det gjør det enklere å håndtere og vise datoer i ulike formater.
 
-Det kan være mange grunner til å ønske å konvertere en dato til en streng i Clojure. Noen ganger må man formatere datoen i en spesifikk måte for å kunne vise den i et brukergrensesnitt eller lagre den i en database. Andre ganger ønsker man å sammenligne datoer eller gjøre beregninger basert på datoen. Uansett hva årsaken er, er det nyttig å vite hvordan man kan konvertere en dato til en streng i Clojure.
+Hvorfor gjør programmerere dette? Det kan være mange grunner, alt fra å vise datoer i brukergrensesnitt til å lagre dem i en database. Uansett hva målet er, er å kunne konvertere en dato til en streng en nyttig ferdighet for alle som jobber med datoer i sin kode.
 
-## Slik gjør du det
-
-Konvertering av en dato til en streng i Clojure er enkelt med hjelp av funksjonen `format` i biblioteket `clojure.core`. Denne funksjonen tar inn en streng som beskriver ønsket format for datoen, og en dato som skal formateres. Her er et eksempel på hvordan man kan konvertere dagens dato til en streng med formatet "dd/MM/yyyy".
+## Hvordan:
+Datoer kan konverteres til strenger på ulike måter i Clojure. Her er to eksempler:
 
 ```Clojure
-(format "dd/MM/yyyy" (java.util.Date.))
+(->> (Instant/now)
+  (.toString))
+;; "2020-03-20T10:20:45.523Z"
+
+(->> (LocalDate/now)
+  (.format DateTimeFormatter/ISO_LOCAL_DATE))
+;; "2020-03-20"
 ```
-Dette vil returnere en streng som ser slik ut: "14/06/2021".
 
-Man kan også spesifisere andre format, som for eksempel "yyyy-MM-dd", som vil returnere datoen i formatet "2021-06-14". Her er en liste med noen av de vanligste formatene:
+I det første eksemplet bruker vi `Instant` - en klasse som representerer en tidspunkt på tidslinjen i UTC. Ved å kalle `.toString` på `Instant/now` , får vi en streng som viser den nåværende datoen og tiden i UTC-format.
 
-- dd/MM/yyyy: Dato i formatet dag/måned/år
-- MM/dd/yyyy: Dato i formatet måned/dag/år
-- dd-MM-yyyy: Dato i formatet dag-måned-år
-- yyyy-MM-dd: Dato i formatet år-måned-dag
+I det andre eksemplet bruker vi `LocalDate` - en klasse som representerer en dato uten tidskomponent. Vi formaterer datoen ved å kalle `.format` på dagens dato med `DateTimeFormatter/ISO_LOCAL_DATE` som definerer hvordan datoen skal vises (i dette tilfellet ISO standard).
 
-Det er også mulig å formatere datoen basert på formatet til landet man befinner seg i. For eksempel vil formatet "dd-MMM-yyyy" returnere datoen i formatet "14-Jun-2021" hvis man befinner seg i Storbritannia.
+## Dypdykk:
+Historisk sett var manipulering av datoer utfordrende for mange programmeringsspråk. Dette skyldes hovedsakelig at datoer har vært representert på ulike måter, som for eksempel dager siden fra en bestemt dato eller som antall millisekunder siden en spesifikk dato og tid.
 
-## Dypdykk
+I dag har de fleste språk implementert ulike klasser og metoder for å håndtere datoer på en mer intuitiv måte. I Clojure finnes det flere nyttige klasser og funksjoner for å håndtere datoer, inkludert de som ble nevnt i eksemplene ovenfor.
 
-I tillegg til de grunnleggende formatene som er nevnt over, kan man også formatere datoen med spesifikke tilleggsparametere. For eksempel, hvis man ønsker å legge til timer og minutter i datoen, kan man bruke formatet "dd/MM/yyyy HH:mm". Dette vil returnere noe slikt som "14/06/2021 13:30". Mer informasjon om alle disse formatene kan finnes i Clojure-dokumentasjonen for `format`.
+Alternativene til å konvertere datoer til strenger i Clojure inkluderer å bruke biblioteker som `clj-time` eller `java-time`, som gir mer avanserte funksjoner for å håndtere datoer og tider.
 
-Å gjøre seg kjent med hvordan man formaterer datoer i Clojure kan være svært nyttig når man arbeider med forskjellige typer data, spesielt når man jobber med oppgaver som krever behandling og manipulering av datoer.
-
-## Se også
-
-- [Offisiell Clojure Dokumentasjon for Datoformat](https://clojuredocs.org/clojure.core/format)
+## Se også:
+- [Offisiell Clojure dokumentasjon for datoer og tider](https://clojure.github.io/java.time.javadoc/java/time/Instant.html)
+- [Clj-time biblioteket](https://github.com/clj-time/clj-time)
+- [Java-time biblioteket](https://github.com/dm3/clojure.java-time)

@@ -10,30 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
-Das Konvertieren eines Strings in Kleinbuchstaben ist eine häufig verwendete Funktion in der Programmierung. Es kann hilfreich sein, um Strings zu vergleichen oder um sicherzustellen, dass Eingaben in einer bestimmten Form vorliegen.
+# Was ist es und warum?
 
-## Wie geht das
-Um einen String in Kleinbuchstaben zu konvertieren, gibt es in Java die Methode `toLowerCase()`, die auf einem String-Objekt aufgerufen werden kann. Hier ist ein Beispielcode und die entsprechende Ausgabe:
+Die Konvertierung eines Strings in Kleinbuchstaben ist ein häufiger Schritt in der Java-Programmierung, bei dem alle Buchstaben eines Strings in Kleinbuchstaben umgewandelt werden. Dies ist nützlich, um Vergleiche oder Suche nach Zeichenketten einfacher und konsistenter zu gestalten.
+
+# Wie geht es?
 
 ```Java
-String name = "Max Mustermann";
-String nameLower = name.toLowerCase();
-System.out.println(nameLower);
+String str = "HALLO WELT";
+String lowerCaseStr = str.toLowerCase();
 
-// Ausgabe: max mustermann
+System.out.println(lowerCaseStr); // gibt "hallo welt" aus
 ```
 
-In diesem Beispiel wird die `toLowerCase()`-Methode auf dem String `name` aufgerufen und das Ergebnis in der Variable `nameLower` gespeichert. Das Ergebnis des Aufrufs ist der String in Kleinbuchstaben.
+# Tiefere Einblicke
 
-## Tiefgehende Einblicke
-Bei der Konvertierung eines Strings in Kleinbuchstaben gibt es einige Dinge zu beachten. Zum einen ist es wichtig zu wissen, dass die `toLowerCase()`-Methode nur Buchstaben in Großbuchstaben in Kleinbuchstaben umwandelt. Alle anderen Zeichen bleiben unverändert. Zum Beispiel würde aus dem String `"Hallo Welt!"` nach der Konvertierung `"hallo welt!"` werden.
+Historisch gesehen wurde die Methode zur Konvertierung von Strings in Kleinbuchstaben in Java ursprünglich von der Klasse `java.util.Locale` bereitgestellt. Seit Java 1.2 ist die Methode jedoch in die Klasse `java.lang.String` verschoben worden.
 
-Ein weiterer wichtiger Punkt ist, dass die `toLowerCase()`-Methode nur die Standard-Kleinbuchstaben des entsprechenden Zeichensatzes verwendet. Das bedeutet, dass je nach Sprache und Zeichensatz die konvertierten Kleinbuchstaben variieren können. Deshalb sollte man bei der Verwendung dieser Methode darauf achten, dass sie für die jeweilige Anwendung geeignet ist.
+Alternativ können Programmierer die Methode `Character.toLowerCase()` verwenden, um einzelne Buchstaben in Kleinbuchstaben zu konvertieren. Um eine Zeichenkette in Kleinbuchstaben zu konvertieren, müssten Programmierer jedoch jeden Buchstaben in einer Schleife durchlaufen und einzeln konvertieren.
 
-Eine Alternative zur `toLowerCase()`-Methode ist die Verwendung der `String`-Klasse und ihrer `toLowerCase()`-Methode. Diese Methode verwendet den Standard-Locale des Systems, um die Kleinbuchstaben zu bestimmen, was zu genaueren Ergebnissen führt.
+Bei der Implementierung der Methode `toLowerCase()` wird jeder Buchstabe anhand der Unicode-Tabelle in seinen entsprechenden Kleinbuchstaben konvertiert. Es werden keine Sonderzeichen oder Zahlen in Kleinbuchstaben konvertiert, daher bleibt die Reihenfolge dieser Zeichen im ursprünglichen String erhalten.
 
-## Siehe auch
-- [Java String Class](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
-- [String.toLowerCase() Method](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#toLowerCase--)
-- [Java Locale Class](https://docs.oracle.com/javase/8/docs/api/java/util/Locale.html)
+# Siehe auch
+
+Weitere Informationen zur Verwendung von Strings in Java finden Sie in der offiziellen Oracle-Dokumentation unter der [Kategorie String](https://docs.oracle.com/javase/tutorial/java/data/strings.html).

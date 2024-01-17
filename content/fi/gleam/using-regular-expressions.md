@@ -10,33 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi käyttää säännöllisiä lausekkeita?
+# Mitä & Miksi?
+Regular expressionien käyttö on tapa etsiä ja muokata tekstejä käyttämällä erityisiä merkkijonoja ja sääntöjä, joita kutsutaan lausekkeiksi. Tämä on hyödyllistä ohjelmoijille, jotka haluavat hakea ja muokata tiettyjä tietoja tekstidatasta nopeasti ja tarkasti.
 
-Säännölliset lausekkeet ovat tehokas tapa käsitellä merkkijonoja ja suorittaa tarkkoja hakuja ja muutoksia. Ne ovat erityisen hyödyllisiä, kun tietoa sisältävät merkkijonot ovat monimutkaisia tai vaihtelevia.
+# Miten?
+Gleam sisältää vakio-kirjaston regular expressionien käyttöön. Alla olevassa esimerkissä näytämme, kuinka voit käyttää regular expressioneja Gleamin kanssa.
 
-## Kuinka käyttää säännöllisiä lausekkeita Gleam-ohjelmoinnin kanssa?
-
-```Gleam
-import gleam/regexp
-
-let content = "Tämä on esimerkki kaavasta 123-456-789"
-
-let pattern = regexp.compile("[0-9]{3}-[0-9]{3}-[0-9]{3}")
-let matches = regexp.matches(pattern, content)
-
-// Tulostaa: [ 123-456-789 ]
+```
+Gleam.String.split("Tämä on esimerkki!", ~pattern="\\s")
+|> Debug.todo
 ```
 
-"```regexp.compile()```" ottaa säännöllisen lausekkeen merkkijonona ja palauttaa käännöksen, jota voi sitten käyttää hakuun ja muokkaukseen.
+Tässä esimerkissä käytämme `split`-funktiota jakamaan tekstin, joka perustuu sääntöön "\s", eli kaikki sanat erotettuna välilyönneillä. Tämän jälkeen käytämme `Debug.todo`-funktiota tulostamaan jakautuneet sanat.
 
-## Syvällisempää tietoa säännöllisten lausekkeiden käytöstä
+```
+Tämä |> on |> esimerkki!
+```
 
-Säännöllisissä lausekkeissa voi käyttää erilaisia erikoismerkkejä ja symboleja, jotka tekevät hausta ja muokkauksesta joustavampaa. Esimerkiksi ```[0-9]``` etsii kaikki numerot 0:n ja 9:n väliltä ja ```{3}``` samassa lausekkeessa tarkoittaa, että haku kohdistuu kolmeen peräkkäiseen numeroon.
+Tulostettu tulos olisi:
 
-Säännöllisiä lausekkeita voi myös yhdistellä muihin Gleam-ohjelmointikielen ominaisuuksiin, kuten ```if```-lauseisiin ja ```let```-muuttujiin, jotta hakujen tulokset voidaan tallentaa ja käsitellä vaivattomasti.
+```
+["Tämä", "on", "esimerkki!"]
+```
 
-## Katso myös
+# Syventymistä
+Regular expressionit ovat olleet osa ohjelmointia jo vuosikymmeniä ja niitä käytetään edelleen paljon eri kielissä. Vaikka Gleamin valmiiksi määritetty regular expression-kirjasto on hyvä, on olemassa myös muita vaihtoehtoja, kuten PCRE ja POSIX. Myös eri käyttöjärjestelmät voivat tarjota omia versioitaan regular expressioneista, joilla voi olla pieniä eroja syntaxissa.
 
-- Gleam-ohjelmointikielen viralliset dokumentit säännöllisistä lausekkeista: [https://gleam.run/book/regexes.html](https://gleam.run/book/regexes.html)
-- RegExr, sivusto, jossa voi testata ja harjoitella säännöllisiä lausekkeita: [https://regexr.com/](https://regexr.com/)
-- Gleam-ohjelmointikielen blogi, jossa on vinkkejä ja ideoita säännöllisten lausekkeiden käyttöön: [https://gleam.run/blog/](https://gleam.run/blog/)
+# Katso myös
+- [Regular expressions - Wikipedia](https://fi.wikipedia.org/wiki/Regular_expression)
+- [Gleam.string - Gleam Docs](https://gleam.run/documentation/stdlib/string/#string-module)
+- [PCRE - Regular expression library](https://www.pcre.org/)
+- [POSIX - Portable Operating System Interface](https://en.wikipedia.org/wiki/POSIX)

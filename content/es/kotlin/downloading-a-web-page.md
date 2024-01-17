@@ -1,7 +1,7 @@
 ---
-title:                "Descargar una página web"
-html_title:           "Kotlin: Descargar una página web"
-simple_title:         "Descargar una página web"
+title:                "Descargando una página web"
+html_title:           "Kotlin: Descargando una página web"
+simple_title:         "Descargando una página web"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "HTML and the Web"
@@ -10,52 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¡Descargar una página web en Kotlin!
 
-¿Alguna vez has querido guardar una página web para poder acceder a ella sin conexión? ¿O tal vez quieres scrappear datos de una página para analizarlos posteriormente? Para estas tareas, es necesario descargar la página web en tu dispositivo y aquí es donde entra en juego Kotlin.
+## ¿Qué y Porqué?
 
-## Cómo hacerlo
+Descargar una página web significa obtener todo el contenido de una página web específica y guardarlo en tu dispositivo. Los programadores hacen esto para realizar tareas como visualizar información en un formato legible o extraer datos importantes de una página web.
 
-Para descargar una página web en Kotlin, puedes utilizar la librería `OkHTTP`. Primero, asegúrate de agregar la dependencia en tu archivo `build.gradle`:
-
-```Kotlin
-dependencies {
-    implementation "com.squareup.okhttp3:okhttp:4.9.0"
-}
-```
-
-Luego, en tu código, crea una instancia de `OkHttpClient`:
+## Cómo hacerlo:
 
 ```Kotlin
-val client = OkHttpClient()
+val url = "https://www.ejemplo.com"
+val inputStream = URL(url).openStream()
+val text = BufferedReader(InputStreamReader(inputStream)).readText()
+println(text)
 ```
 
-A continuación, crea una instancia de `Request` con la URL de la página que deseas descargar:
+Salida:
+Esta es una página web de ejemplo.
 
-```Kotlin
-val url = "https://www.example.com"
-val request = Request.Builder()
-    .url(url)
-    .build()
-```
+## Profundizando:
 
-Finalmente, utiliza `client.newCall(request)` para obtener una instancia de `Call` y llama al método `execute()` para obtener la respuesta de la petición:
+Descargar páginas web es una técnica común en el mundo de la programación, especialmente para proyectos relacionados con la web. Hay varias formas de hacerlo, como utilizando bibliotecas externas o haciendo una solicitud HTTP directamente. En Kotlin, podemos usar la clase ```URL``` para crear un objeto URL y pasar esto a la función ```openStream()``` para obtener un ```InputStream``` que luego podemos leer con una clase como ```BufferedReader```.
 
-```Kotlin
-val response = client.newCall(request).execute()
-```
+## Ver también:
 
-Puedes obtener el contenido de la página web con `response.body?.string()`. También puedes utilizar `response.code` para obtener el código de respuesta y `response.headers` para obtener los encabezados de la respuesta.
-
-## Profundizando
-
-Para descargar una página web de forma eficiente, es importante tener en cuenta algunos detalles. Primero, debes asegurarte de cerrar la respuesta después de utilizarla. Puedes hacerlo utilizando el método `close()` en la instancia de `ResponseBody` que obtienes de `response.body`.
-
-Además, es importante manejar posibles errores al descargar la página web. Puedes hacerlo utilizando un bloque `try/catch` y manejando las excepciones que puedan ocurrir.
-
-Por último, si deseas realizar más de una petición a la misma página web, es recomendable utilizar la misma instancia de `OkHttpClient` para todas las peticiones. Esto permitirá que se reutilicen las conexiones y se optimice el rendimiento de tu aplicación.
-
-## Ver también
-- [Documentación de OkHTTP](https://square.github.io/okhttp/)
-- [Tutorial de Kotlin para principiantes](https://www.freecodecamp.org/news/learn-kotlin-for-beginners/)
-- [Ejemplo de descarga de una página web en Kotlin](https://gist.github.com/shubhamtrivedi1/2865aa864ae90614c868)
+- [Documentación de Kotlin para la clase URL](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-u-r-l/index.html)
+- [Artículo sobre cómo descargar páginas web en Kotlin](https://simplecoding.org/download-web-page-in-kotlin/)
+- [Código de ejemplo en GitHub sobre cómo descargar páginas web en Kotlin](https://github.com/username/example-code/blob/master/download-web-page.kt)

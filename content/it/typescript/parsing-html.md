@@ -1,7 +1,7 @@
 ---
-title:                "Analisi dell'HTML"
-html_title:           "TypeScript: Analisi dell'HTML"
-simple_title:         "Analisi dell'HTML"
+title:                "Analisi dell'html"
+html_title:           "TypeScript: Analisi dell'html"
+simple_title:         "Analisi dell'html"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "HTML and the Web"
@@ -10,34 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
-Ci sono molte ragioni per cui ci si potrebbe impegnare nel parsing di HTML utilizzando TypeScript. Ad esempio, questa tecnica può essere utile per estrarre dati da pagine web e utilizzarli per scopi quali il web scraping o la creazione di applicazioni di raccolta informazioni.
+# Cosa & Perché?
 
-## Come Fare
-Per parsare HTML con TypeScript è necessario utilizzare una libreria esterna chiamata `html-parser` disponibile su npm. Di seguito è riportato un semplice esempio di come utilizzarla per estrarre il testo di una pagina web:
+Il parsing HTML è il processo di analizzare un documento HTML per identificarne e accedere ai diversi elementi e attributi. I programmatori lo fanno per automatizzare il processo di raccolta e gestione dei dati presenti nelle pagine web. In pratica, il parsing HTML permette di estrarre le informazioni necessarie da una pagina web in modo efficiente e accurato.
+
+## Come fare:
+
+Per fare il parsing di un documento HTML in TypeScript, possiamo utilizzare la libreria cheerio. Questa ci offre una serie di metodi per navigare e selezionare gli elementi del DOM. Di seguito un esempio di codice:
 
 ```TypeScript
-const parser = require('html-parser');
-const html = '<html><body>Hello, world</body></html>';
+import * as cheerio from 'cheerio';
 
-// Ottieni il nodo radice del documento HTML
-const root = parser.parse(html);
+// URL della pagina da analizzare
+const url = 'https://www.example.com';
 
-// Accedi al testo contenuto nel nodo body
-const text = root.querySelector('body').innerText;
-
-console.log(text); // Output: "Hello, world"
+// Fa il parsing della pagina utilizzando cheerio
+cheerio.load(url)
+  // Seleziona tutti i tag <a> che hanno l'attributo rel="nofollow"
+  .find('a[rel="nofollow"]')
+  // Itera su ogni elemento trovato
+  .each((index, element) => {
+    // Stampa il valore dell'attributo href per ogni elemento
+    console.log(element.attribs.href);
+});
 ```
+Questo codice ci permette di estrarre tutti i link con attributo `rel="nofollow"` dalla pagina specificata e stamparli in console.
 
-## Approfondiamo
-Ci sono diverse tecniche per parsare HTML, ma in genere si seguono questi passi:
+## Approfondimento:
 
-1. Ottenere il documento HTML: per fare ciò, è possibile utilizzare una libreria HTTP come `axios` per recuperare il codice sorgente di una pagina web.
-2. Utilizzare una libreria di parsing HTML: come accennato in precedenza, `html-parser` è una buona opzione per TypeScript.
-3. Navigare attraverso il documento HTML: puoi utilizzare metodi come `getElementById` o `querySelector` per selezionare specifici elementi del documento e accedere ai loro attributi o al loro testo.
-4. Utilizzare i dati estratti per scopi specifici: una volta che hai ottenuto i dati desiderati dal documento HTML, puoi utilizzarli per qualsiasi scopo tu desideri, come ad esempio analizzare le tendenze di un determinato sito web o automatizzare alcune attività di raccolta dati.
+Il processo di parsing dell'HTML è nato come una soluzione per gestire e analizzare grandi quantità di dati presenti sul web. In passato, era spesso necessario eseguire il parsing dei dati manualmente, mentre oggi è possibile automatizzarlo utilizzando librerie come cheerio.
 
-## Vedi Anche
-- [Documentazione ufficiale di TypeScript](https://www.typescriptlang.org/docs)
-- [Libreria html-parser su npm](https://www.npmjs.com/package/html-parser)
-- [Libreria axios su npm](https://www.npmjs.com/package/axios)
+Un'alternativa al parsing HTML è l'utilizzo di API fornite direttamente dal sito web, se disponibili. Tuttavia, questa soluzione è limitata solo ai siti che offrono queste API e richiede una maggiore conoscenza tecnica per integrarle nel proprio codice.
+
+Per quanto riguarda l'implementazione del parsing HTML, è importante tenere conto delle performance e della compatibilità con i diversi browser. Cheerio, ad esempio, si basa su jQuery ma è ottimizzato per l'utilizzo lato server. È quindi importante scegliere la giusta libreria in base alle proprie esigenze.
+
+## Vedi anche:
+
+- [Documentazione di cheerio](https://cheerio.js.org/)
+- [Parsing HTML con JavaScript](https://developer.mozilla.org/it/docs/Web/Guide/HTML/HTML5_parsing)
+- [Parsing HTML e XML con TypeScript](https://medium.com/nerd-for-tech/basic-html-parser-with-typescript-c7ba12c1ae01)

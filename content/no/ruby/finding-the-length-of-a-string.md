@@ -1,7 +1,7 @@
 ---
-title:                "Å finne lengden av en streng"
-html_title:           "Ruby: Å finne lengden av en streng"
-simple_title:         "Å finne lengden av en streng"
+title:                "Å finne lengden på en streng"
+html_title:           "Ruby: Å finne lengden på en streng"
+simple_title:         "Å finne lengden på en streng"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Strings"
@@ -10,42 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hva & Hvorfor?
+Å finne lengden til en streng er en vanlig oppgave for programmerere, og det refererer til å bestemme antall tegn inkludert mellomrom i en tekststreng. Dette er nyttig for å manipulere og analysere tekstdata.
 
-Det å finne lengden på en streng (string) er en grunnleggende ferdighet i Ruby og er nyttig for å manipulere tekst og data. Det kan også være nyttig når du jobber med looper og vil kontrollere antall iterasjoner.
-
-## Hvordan gjøre det
-
-For å finne lengden på en streng i Ruby, kan du bruke metoden `.length` eller `.size`. Her er et eksempel på hvordan du kan bruke disse metodene:
+# Hvordan:
+```Ruby
+string = "Hei alle sammen!"
+puts string.length
+```
+Output: 16
 
 ```Ruby
-str = "Hei, verden!"
-
-puts str.length
-# Output: 12
-
-puts str.size
-# Output: 12
+string = "Jeg elsker programmering"
+puts string.length
 ```
+Output: 23
 
-Som du kan se, returnerer begge metodene samme lengde for strengen vår. Det er fordi de i utgangspunktet gjør det samme. Du kan velge den du foretrekker å bruke.
+# Dypdykk:
+- Historisk kontekst: Å finne lengden av en streng ble først introdusert i programmeringsspråk som BASIC og COBOL på 1960-tallet.
+- Alternativer: En annen måte å finne lengden av en streng på er å bruke ```string.count``` metoden, som teller antall ganger et spesifikt tegn eller en sekvens av tegn vises i en streng.
+- Implementeringsdetaljer: De fleste programmeringsspråk har en innebygd metode for å finne lengden av en streng, som vanligvis returnerer en numerisk verdi som tilsvarer antall tegn i strengen.
 
-Du kan også bruke `.count` metoden for å finne ut antall karakterer i en streng. Denne metoden tar et argument, for eksempel en bokstav, og returnerer antall forekomster av dette i strengen. La oss se på et eksempel:
-
-```Ruby
-str = "Welcome to Ruby!"
-
-puts str.count("o")
-# Output: 2
-```
-
-Her returnerer `.count` metoden antall "o"-er i strengen vår.
-
-## Dypdykk
-
-Hvis du vil utforske enda mer funksjonalitet rundt å finne lengden på en streng i Ruby, kan du sjekke ut dokumentasjonen for `String` klassen. Der finner du flere metoder som kan være nyttige for dette formålet, som for eksempel `.bytesize` som returnerer lengden på strengen i bytes, og `.empty?` som sjekker om strengen er tom.
-
-Se også
-
-- [String dokumentasjon](https://ruby-doc.org/core-2.7.1/String.html)
-- [Ruby for nybegynnere](https://www.ruby-lang.org/no/documentation/quickstart/)
+# Se også:
+- [Ruby dokumentasjon for strenger] (https://www.ruby-lang.org/en/documentation/standard_library/string/)
+- [W3Schools for strenger i Ruby] (https://www.w3schools.com/ruby/ruby_strings.asp)
+- [En "strings" artikkel fra The Codecademy] (https://www.codecademy.com/articles/ruby-string-methods)

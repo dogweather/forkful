@@ -10,88 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i dlaczego?
 
-W dzisiejszym artykule omówimy temat łączenia (ang. concatenation) ciągów tekstowych w języku programowania C++. Dowiecie się, dlaczego jest to ważne oraz jak tego dokonać.
+Konkatenacja ciągów znaków to po prostu łączenie kilku ciągów w jeden większy. Programiści często używają tej techniki, aby tworzyć bardziej złożone wyrażenia lub podstawiać zmienne do istniejących ciągów.
 
-## Jak To Zrobić
+## Jak to zrobić?
 
-Łączenie ciągów tekstowych to operacja, która pozwala na połączenie dwóch lub więcej ciągów w jeden duży ciąg. W C++ możemy tego dokonać na kilka sposobów, wykorzystując różne funkcje i znaki.
-
-### Wykorzystanie operatora +
-
-Jednym ze sposobów na łączenie ciągów w C++ jest wykorzystanie operatora +. Przykładowy kod wyglądałby następująco:
+Kodowanie w C++ jest bardzo proste. Wystarczy użyć operatora "+" do połączenia dwóch ciągów lub ciągu zmiennych. Na przykład:
 
 ```C++
-#include <iostream>
-
-using namespace std;
-
-int main() {
-    string firstName = "John";
-    string lastName = "Doe";
-    string fullName = firstName + lastName;
-
-    cout << "Witaj " << fullName << "!" << endl;
-    return 0;
-}
+string imie = "Ania";
+string cmnt = " jest super programistką!";
+string wynik = imie + cmnt;
+cout << wynik;
 ```
 
-W tym przypadku, wynikiem działania programu będzie wyświetlenie na ekranie tekstu "Witaj John Doe!".
+**Wyjście:** Ania jest super programistką!
 
-### Użycie metody append()
-
-Innym sposobem na łączenie ciągów tekstowych jest wykorzystanie metody append(), która dodaje określony ciąg na końcu innego. Przykładowy kod prezentuje się następująco:
+Można również skorzystać z funkcji `append()`, aby dodać ciąg do istniejącej zmiennej ciągu. Na przykład:
 
 ```C++
-#include <iostream>
-
-using namespace std;
-
-int main() {
-    string hello = "Cześć ";
-    string name = "Ania";
-    hello.append(name);
-
-    cout << hello << endl;
-    return 0;
-}
+string imie = "Marek";
+string cmnt = " to mistrz C++!";
+imie.append(cmnt);
+cout << imie;
 ```
 
-Wynikiem działania programu będzie wyświetlenie tekstu "Cześć Ania" na ekranie.
+**Wyjście:** Marek to mistrz C++!
 
-### Wykorzystanie funkcji strcat()
+## Pogłębiona analiza
 
-Kolejną możliwością jest użycie funkcji strcat(), która dokonuje konkatenacji ciągów i zapisuje je w pierwszym podanym argumencie. Przykładowy kod wyglądałby tak:
+Konkatenacja ciągów znaków jest powszechnie stosowana w programowaniu, ale ma również swoje korzenie w matematyce i teorii języków formalnych. Istnieją również inne sposoby łączenia ciągów, takie jak wykorzystanie funkcji `sprintf()` lub `stringstream`, jednak operator "+" jest najprostszym i najbardziej czytelnym sposobem.
 
-```C++
-#include <iostream>
-#include <cstring>
-
-using namespace std;
-
-int main() {
-    char sentence[50] = "Ciąg dalszy ciągu ";
-    char addition[10] = "tekstowego!";
-    strcat(sentence, addition);
-
-    cout << sentence << endl;
-    return 0;
-}
-```
-
-W wyniku działania programu na ekranie zostanie wyświetlony tekst "Ciąg dalszy ciągu tekstowego!".
-
-## Deep Dive
-
-Podczas dokonywania łączenia ciągów tekstowych w C++, istnieje kilka rzeczy, których należy być świadomym:
-
-- Typ zwracany przez operację + to obiekt typu string, a nie ciąg znaków (ang. character array).
-- Operator += jest skróconą wersją operatora +, co oznacza, że wyrażenie "a += b" jest równoważne "a = a + b".
-- W funkcji strcat() pierwszym argumentem musi być wskaźnik na ciąg znaków (lub tablicę znaków), natomiast drugim argumentem może być zarówno wskaźnik jak i tablica.
+W C++ nie ma specjalnych funkcji do konkatenacji ciągów, ponieważ operatory "+" oraz `append()` są wystarczające do wykonywania tej operacji. Jednak wydajniejszym sposobem jest wykorzystanie jednego z operatorów przypisania, takich jak "+=", aby zmodyfikować istniejącą zmienną ciągu w miejscu, zamiast tworzyć nowy obiekt.
 
 ## Zobacz też
 
-- [C++ Podstawy: Ciągi znaków](https://www.edureka.co/blog/strings-in-cpp/)
-- [Operacje na ciągach tekstowych](https://www.programiz.com/cpp-programming/string)
-- [Dokumentacja C++: Funkcja strcat()](https://www.cplusplus.com/reference/cstring/strcat/)
+Jeśli chcesz dowiedzieć się więcej o konkatenacji ciągów w C++, polecamy zapoznać się z oficjalną dokumentacją języka oraz przetestować różne sposoby łączenia ciągów w praktyce. Możesz także rozważyć inne sposoby manipulacji ciągami, takie jak rozdzielanie lub wycinanie podciągów, aby urozmaicić swoje umiejętności programistyczne.

@@ -1,7 +1,7 @@
 ---
-title:                "Arbeiten mit CSV"
-html_title:           "Haskell: Arbeiten mit CSV"
-simple_title:         "Arbeiten mit CSV"
+title:                "Arbeiten mit csv"
+html_title:           "Haskell: Arbeiten mit csv"
+simple_title:         "Arbeiten mit csv"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Data Formats and Serialization"
@@ -10,43 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was & Warum?
 
-Wenn du jemals mit Daten gearbeitet hast, hast du wahrscheinlich schon einmal von CSV-Dateien gehört. CSV steht für "Comma Separated Values" und ist ein beliebtes Format für den Austausch und die Speicherung von Tabellendaten. In der Welt der Programmierung ist es daher wichtig, auch mit CSV-Dateien umgehen zu können. Hier kommt Haskell ins Spiel - eine funktionale Programmiersprache, die sich perfekt für die Arbeit mit CSV eignet. In diesem Artikel werde ich dir zeigen, warum es sich lohnt, sich mit CSV in Haskell auseinanderzusetzen und wie du das am besten tun kannst.
+CSV (Comma Separated Values) ist ein gebräuchliches Dateiformat zum Speichern von tabellarischen Daten. Es wird häufig von Programmierern verwendet, um Daten von einer Anwendung zur anderen zu übertragen oder um Daten in einem strukturierten Format zu speichern. CSV ist einfach zu lesen und zu schreiben, was es zu einer beliebten Wahl für die Verwendung in der Programmierung macht.
 
-## Wie funktioniert es?
+## Wie geht's?
 
-Um mit CSV-Dateien in Haskell zu arbeiten, benötigen wir das Paket "csv" aus dem Haskell-Bibliothekssystem "Hackage". Wir können es ganz einfach mit dem Befehl `cabal install csv` installieren. Anschließend können wir das Modul "Data.CSV" in unserem Code importieren und mit der Funktion `parseCSVFromFile` unsere CSV-Datei einlesen. Hier ist ein Beispielcode:
+Das Lesen und Schreiben von CSV-Dateien in Haskell ist sehr einfach. Hier sind ein paar Beispiele, wie man das mit der beliebten Bibliothek `cassava` machen kann:
 
 ```Haskell
-import Text.CSV
+import qualified Data.ByteString.Lazy as BL
+import Data.Csv
+import Control.Applicative ((<*>), (<$>))
 
 main = do
-    let filename = "data.csv"
-    csvData <- parseCSVFromFile filename
-    case csvData of
-        Left _ -> putStrLn "Error: Die Datei konnte nicht gelesen werden."
-        Right csv -> putStrLn "Die Datei wurde erfolgreich gelesen."
+  csvFile <- BL.readFile "beispiel.csv"
+  case decode NoHeader csvFile of
+    Left err -> putStrLn err
+    Right rows -> BL.putStr $ encode rows
 ```
 
-In diesem Beispiel haben wir eine CSV-Datei mit dem Namen "data.csv" eingelesen. Die Funktion `parseCSVFromFile` gibt entweder einen Fehler oder eine Struktur zurück, die unser CSV-Daten darstellt. Mit etwas Mustermatching können wir nun beispielsweise die erste Zeile unserer CSV-Datei ausgeben:
+Dieses Beispiel liest eine CSV-Datei namens "beispiel.csv" und gibt die Inhalte auf der Konsole aus. Es verwendet die Funktion `decode` aus der `cassava`-Bibliothek, um die CSV-Datei in eine Liste von Zeilen umzuwandeln. Diese kann dann mit der `encode`-Funktion wieder in eine CSV-Datei zurückgeschrieben werden.
 
 ```Haskell
-case csvData of
-    Left _ -> putStrLn "Error: Die Datei konnte nicht gelesen werden."
-    Right csv -> putStrLn $ show $ head $ tail csv
+import qualified Data.ByteString.Lazy as BL
+import Data.Csv
+import Data.Vector (toList)
+
+main = do
+  csvFile <- BL.readFile "beispiel.csv"
+  case decode NoHeader csvFile of
+    Left err -> putStrLn err
+    Right rows -> mapM_ (putStrLn . unwords . toList) rows
 ```
 
-Mit der Funktion `show` können wir die Zeile in einer lesbaren Form ausgeben. Das `tail` entfernt die erste Zeile (da diese in der Regel die Überschriften enthält) und `head` gibt die erste Zeile des Rests zurück - also die tatsächlichen Daten.
+Dieses Beispiel liest die CSV-Datei wieder ein, wandelt sie aber diesmal in eine Liste von Listen um. Jede Zeile wird dann mit der `unwords`-Funktion in einen String umgewandelt und auf der Konsole ausgegeben.
 
-## Tiefergehende Informationen
+## Tiefer tauchen
 
-Das Paket "csv" bietet uns noch viele weitere Funktionen, um mit unseren CSV-Daten zu arbeiten. Zum Beispiel können wir die Daten sortieren, filtern oder in ein anderes Format umwandeln. Auch das Schreiben von CSV-Dateien ist möglich. Für eine detailliertere Beschreibung der verfügbaren Funktionen empfehle ich dir, die Dokumentation auf Hackage zu lesen (siehe "Siehe auch"). Eines solltest du jedoch beachten: Wenn deine CSV-Datei Kommazahlen enthält, wird Haskell sie standardmäßig als Bruchzahlen behandeln. Um dies zu vermeiden, solltest du die Funktion `dequote` verwenden, um die Zahlen in Strings umzuwandeln.
+CSV wurde in den 1970er Jahren entwickelt und war ursprünglich ein einfaches Dateiformat, um Daten zwischen verschiedenen Tabellenkalkulationsprogrammen auszutauschen. Heutzutage wird es jedoch nicht nur für den Austausch von Daten verwendet, sondern auch für die Speicherung großer Datenmengen, da es einfach zu lesen und zu schreiben ist.
+
+Als Alternative zu CSV gibt es das ähnliche Format TSV (Tab Separated Values), bei dem statt Kommas Tabs als Trennzeichen verwendet werden. Dies kann nützlich sein, wenn die zu speichernden Daten bereits Kommas enthalten.
+
+In Haskell gibt es verschiedene Bibliotheken für das Lesen und Schreiben von CSV-Dateien, wie z.B. `cassava`, `records-csv` oder `pipes-csv`. Jede Bibliothek hat ihre eigenen Stärken und Schwächen, aber im Allgemeinen sind sie alle benutzerfreundlich und einfach zu verwenden.
 
 ## Siehe auch
 
-Dokumentation des "csv" Pakets auf Hackage: https://hackage.haskell.org/package/csv
-
-Eine Einführung in Haskell (in englischer Sprache): https://wiki.haskell.org/Introduction
-
-Eine interaktive Online-Umgebung, um Haskell-Code auszuprobieren: http://tryhaskell.org/
+- Offizielle Dokumentation von `cassava`: https://hackage.haskell.org/package/cassava/docs/Data-Csv.html
+- `records-csv` Bibliothek: https://github.com/alephnullplex/records-csv
+- `pipes-csv` Bibliothek: https://github.com/michaelt/pipes-csv

@@ -1,7 +1,7 @@
 ---
-title:                "使用基本认证发送http请求"
-html_title:           "Elm: 使用基本认证发送http请求"
-simple_title:         "使用基本认证发送http请求"
+title:                "使用基本身份验证发送http请求"
+html_title:           "Elm: 使用基本身份验证发送http请求"
+simple_title:         "使用基本身份验证发送http请求"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "HTML and the Web"
@@ -10,70 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 为什么
+## 什么&为什么?
 
-在现代的互联网世界中，我们经常需要与不同的服务器进行通信，以获取或发送数据。通过发送 HTTP 请求，我们可以从远程服务器获取数据，并将其集成到我们的应用程序中。使用基本认证，我们还可以确保只有经过身份验证的用户才能访问敏感的服务器数据，保护我们的应用程序和用户信息的安全。
+发送HTTP请求是一种通过网络传输信息的常见方式。程序员经常使用它来与外部服务通信，从而实现更复杂的功能。
 
-# 如何实现
-
-发送带有基本认证的 HTTP 请求非常简单，只需要遵循以下几个步骤：
-
-1. 导入 Elm 的 `Http` 模块
-2. 创建一个带有用户名和密码的 `Authentication` 对象
-3. 使用 `Http.send` 函数发送带有基本认证的请求
-4. 处理服务器返回的响应数据
-
-下面是一个简单的例子，演示如何发送带有基本认证的 HTTP 请求，并打印出服务器返回的响应：
+## 如何:
 
 ```Elm
-import Http
-import Json.Decode exposing (Decoder)
-
-type alias Authentication =
-    { username : String
-    , password : String
-    }
-
-type Msg
-    = RequestSuccessful String
-    | RequestFailed Http.Error
-
-authentication : Authentication
-authentication =
-    { username = "username"
-    , password = "password"
-    }
-
-url : String
-url =
-    "https://example.com/api/data"
-
-decoder : Decoder String
-decoder =
-    Json.Decode.string
-
-sendRequest : Cmd Msg
-sendRequest =
-    Http.send
-        { method = "GET"
-        , headers = []
-        , url = url
-        , body = Http.emptyBody
-        , expect = Http.expectString RequestSuccessful decoder
-        , timeout = Nothing
-        , withCredentials = True
-        , tracker = Nothing
-        , auth = Just authentication
-        }
-
+ExampleCode basicAuthRequest = 
+    Http.send BasicAuthRequest
+        { method = "GET",
+          url = "https://example.com/api/users",
+          headers = [ ("Authorization", "Basic dXNlcjpwYXNzd29yZA==") ],
+          body = Http.emptyBody,
+          expect = Http.expectJson NoOp myDecoder }
 ```
 
-在这个例子中，我们首先创建了一个 `Authentication` 对象，并声明了我们要访问的 URL。然后，我们通过使用 `Http.send` 函数发送请求，并指定我们想要的返回数据类型。最后，我们处理服务器返回的数据，如果请求成功，则打印出响应的内容，否则打印出错误信息。
+发送HTTP请求需要组装一个`BasicAuthRequest`，其中包含方法、URL、头信息、请求体和预期结果的定义。在头信息中，必须包含带有base64编码的用户名和密码的`Authorization`头。完成后，使用`Http.send`函数将请求发送到指定的URL。
 
-# 深入了解
+## 深入讨论:
 
-在实际应用程序中，我们可能需要发送带有参数的 HTTP 请求，或者使用其他认证方式，如 OAuth。在这种情况下，我们可以通过更改 `url` 和 `decoder` 变量来自定义我们的请求。同时，我们也可以使用 `Http.stringBody` 来发送带有参数的请求体，并且可以将 `auth` 设置为 `Nothing`，以发送不带认证的请求。更多关于 Elm 中发送 HTTP 请求的信息，可以查看官方文档。
+基本认证是一种最古老的身份验证机制，它可以追溯到Web的早期发展。现在，它已被先进且更安全的身份验证方法所取代，但仍然被一些服务使用。在发送HTTP请求时，有许多其他选项可供选择，例如OAuth或JWT。
 
-# 查看更多
+关于发送HTTP请求的实现细节，可以深入了解`elm/http`包的操作原理。还可以使用`elm/json`包来解析返回的JSON数据。
 
-- [Elm 官方文档](https://elm-lang.org/docs)
+## 查看更多:
+
+- [Elm`http`包文档](https://package.elm-lang.org/packages/elm/http/latest/)
+- [Elm`json`包文档](https://package.elm-lang.org/packages/elm/json/latest/)
+- [基础认证](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Authentication)

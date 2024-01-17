@@ -1,7 +1,7 @@
 ---
-title:                "Skriver til standardfeil"
-html_title:           "TypeScript: Skriver til standardfeil"
-simple_title:         "Skriver til standardfeil"
+title:                "Å skrive til standardfeil"
+html_title:           "TypeScript: Å skrive til standardfeil"
+simple_title:         "Å skrive til standardfeil"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Files and I/O"
@@ -10,33 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+"## Hva & Hvorfor?"
+Skriving til standard error er en måte for programmerere å kommunisere med brukeren på når noe uventet eller feil skjer i programmet. Dette gjøres ved å sende en feilmelding til standard error-strømmen i stedet for standard output-strømmen. Dette tillater brukeren å se nøyaktig hvor og hvorfor feilen oppsto.
 
-Å kunne skrive til standardfeil (STDERR) i TypeScript er en viktig ferdighet for enhver utvikler. Det gir deg muligheten til å feilsøke og rapportere feil på en mer effektiv måte, noe som kan spare deg for mye tid og frustrasjon under utviklingsprosessen.
-
-## Hvordan
-
-For å skrive til standardfeil i TypeScript, kan du bruke "console.error()" funksjonen. Dette vil skrive en feilmelding til konsollen og markere den som en feil, og dermed gjøre den lettere å skille fra vanlige meldinger. Under har du et eksempel på hvordan du kan bruke denne funksjonen:
+"## Hvordan:"
+```TypeScript
+console.error("Feil oppsto ved linje 12: Ugyldig input"); 
+// Output: Feil oppsto ved linje 12: Ugyldig input 
+```
+Ved å bruke console.error() i TypeScript, kan vi sende en spesifikk feilmelding til standard error-strømmen. Dette vil bli logget og synlig for brukeren, i tillegg til eventuelle andre handlinger som er satt opp for å håndtere feilen.
 
 ```TypeScript
-console.error("Dette er en feilmelding");
+let tall: number = "tre"; 
+// Output: error TS2322: Type '"tre"' is not assignable to type 'number'.
 ```
+I denne koden prøver vi å tildele en streng til en variabel som er definert som et tall. TypeScript vil da automatisk logge en feilmelding til standard error-strømmen og informere oss om hvilken linje og hvilken typefeil som har oppstått.
 
-Dette vil resultere i følgende output i konsollen:
+"## Dypdykk:"
+Skriving til standard error har vært en vanlig praksis i programmering i mange år. Det tillater programvaren å fortsette å kjøre selv om feil oppstår, samtidig som den gir nødvendig informasjon til brukeren for å finne og rette opp feilen. Alternativet til å skrive til standard error er å bruke standard output, som i tillegg til å bli logget også kan bli brent til en fil for senere bruk.
 
-```
-[Dette er en feilmelding]
-```
+Implementeringen av å skrive til standard error kan variere avhengig av programmeringsspråk, men i TypeScript kan dette gjøres ved hjelp av console.error() -funksjonen som nevnt ovenfor.
 
-Her ser vi at meldingen er markert som en feil, noe som kan hjelpe deg med å raskt identifisere og fikse eventuelle problemer i koden din.
-
-## Dypdykk
-
-Når du skriver til standardfeil, er det viktig å merke seg at dette bare vil fungere hvis du kjører koden din fra en terminal eller konsoll. Hvis du prøver å skrive til standardfeil fra en nettleser, vil denne funksjonen ikke ha noen effekt. Dette skyldes at nettlesere ikke har en standardfeil og vil i stedet konvertere feilmeldinger til vanlig konsollutskrift.
-
-En annen ting å merke seg er at du kan bruke "console.trace()" funksjonen for å skrive ut en stakksporing av kodekjøringsbanen. Dette er nyttig for å finne ut hvor i koden feilen oppstod, spesielt hvis du har flere funksjoner og filer som er koblet sammen.
-
-## Se også
-
-- [Offisiell dokumentasjon for console.error()](https://developer.mozilla.org/en-US/docs/Web/API/Console/error)
-- [Kom i gang med TypeScript](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html)
+"## Se også:"
+- ["Introduksjon til JavaScript feilhåndtering"](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Error_handling)
+- ["The difference between console.log and console.error"](https://www.geeksforgeeks.org/difference-between-console-log-and-console-error-in-javascript/)
+- ["Console object documentation in TypeScript"](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-3.html#object-spread-and-rest-for-javascript-types)

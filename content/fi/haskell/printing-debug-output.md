@@ -1,7 +1,7 @@
 ---
-title:                "Virheentarkistuslohkojen tulostaminen"
-html_title:           "Haskell: Virheentarkistuslohkojen tulostaminen"
-simple_title:         "Virheentarkistuslohkojen tulostaminen"
+title:                "Poikkeustulosteiden tulostus"
+html_title:           "Haskell: Poikkeustulosteiden tulostus"
+simple_title:         "Poikkeustulosteiden tulostus"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Testing and Debugging"
@@ -10,71 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä & Miksi?
 
-Debug-tulosteiden tulostaminen on tärkeä osa koodauksen prosessia, jolla voit helposti löytää virheitä ja ongelmia koodissasi. Se säästää aikaa ja vaivaa, ja auttaa sinua kehittämään tehokkaampia ja virheettömiä ohjelmia.
+Painattaminen debug-tulosteilla on yksinkertainen mutta tärkeä tapa tarkistaa ja korjata virheitä ohjelmoinnissa. Kun painatamme koodiamme, näemme tarkalleen missä vaiheessa ohjelma toimii ja mikä mahdollisesti aiheuttaa virheen. Näin voimme nopeasti etsiä ja korjata ongelmat.
 
-## Kuinka
-
-```Haskell
--- Esimerkki debug-tulosteen tulostamisesta
--- Kayttaen "print" funktiota
-main = do
-  print "Tama on debug-tuloste"
-  print [1, 2, 3]
-
--- Vastaava tulos:
--- "Tama on debug-tuloste"
--- [1, 2, 3]
-```
-
-Voit myös käyttää "putStrLn" funktiota tulostamaan merkkijonoja ja "show" funktiota muuntamaan arvoja merkkijonoiksi.
+## Tee näin:
 
 ```Haskell
--- Debug-tulosteen tulostaminen käyttäen "putStrLn" ja "show" funktioita
-main = do
-  putStrLn "Tama on debug-tuloste"
-  putStrLn (show [1, 2, 3])
-
--- Vastaava tulos:
--- "Tama on debug-tuloste"
--- "[1, 2, 3]"
+-- Esimerkki lista-arvojen tulostamisesta
+lista = [1, 2, 3, 4, 5]
+putStrLn "Lista:"
+print lista
 ```
 
-## Syvempi sukellus
-
-Voit myös käyttää "trace" funktiota "Debug.Trace" moduulista tulostamaan debug-viestejä haluamassasi kohdassa koodia.
+Tämä koodi tulostaa "Lista:" ja [1, 2, 3, 4, 5] näytölle. Voit myös käyttää ```show```-funktiota, joka muuntaa arvon merkkijonoksi ja tulostaa sen.
 
 ```Haskell
--- Debug-tulosteen tulostaminen käyttäen "trace" funktiota
-import Debug.Trace
-
-main = do
-  let x = 10
-  trace "X:n arvo:" (print x)
-
--- Vastaava tulos:
--- "X:n arvo:"
--- 10
+-- Esimerkki muuttujan tulostamisesta
+nimi = "Johanna"
+putStrLn "Hei, " ++ nimi ++ "!"
 ```
 
-Voit myös määrittää oman "trace" funktiosi, jossa voit käyttää haluamiasi merkkejä tai symboleja erottamaan viestejä ja arvoja.
+## Syvempi sukellus:
 
-```Haskell
--- Oma "trace" funktio, jossa käytetään "$" merkkiä erottamaan viesti ja arvo
-trace' :: String -> a -> a
-trace' msg val = trace (msg ++ ": $" ++ show val) val
+Debug-tulosteiden käyttö ei ole mikään uusi keksintö. Ohjelmistojen kehittäjät ovat käyttäneet sitä jo vuosia virheiden paikantamiseen ja korjaamiseen. On myös muita tapoja tarkkailla koodia, kuten yksikkötestauksen avulla, mutta debug-tulosteen käyttö on edelleen nopea ja yksinkertainen tapa tarkistaa koodia.
 
-main = do
-  let x = 10
-  trace' "X" x
+Voit myös käyttää erilaisia debug-tulosteiden muotoiluvaihtoehtoja, kuten värillisiä viestejä, jotta ne erottuvat paremmin koodista. Voit lukea lisää näistä vaihtoehdoista [täältä](https://hackage.haskell.org/package/base-4.15.0.0/docs/Debug-Trace.html).
 
--- Vastaava tulos:
--- "X: $10"
-```
+## Katso myös:
 
-## Katso myös
-
-- [Haskell Wikibooks: Debugging](https://en.wikibooks.org/wiki/Haskell/Debugging)
-- [Debugging with Haskell's GHCi](http://brandon.si/code/debugging-with-haskells-ghci/)
-- [Haskell Weekly: Debugging with Haskell](https://haskellweekly.news/issue/4.html)
+- [Yksikkötestaus Haskellissa](https://haskell.org/haskellwiki/Unit_testing)
+- [Juuriuksien käyttö Haskellissa](https://haskell.org/haskellwiki/Using_Channel_Ids)
+- [Haskellin virallinen dokumentaatio debug-tulosteiden käytöstä](https://wiki.haskell.org/Debugging)

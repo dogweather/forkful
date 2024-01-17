@@ -1,7 +1,7 @@
 ---
-title:                "Avviare un nuovo progetto"
-html_title:           "Gleam: Avviare un nuovo progetto"
-simple_title:         "Avviare un nuovo progetto"
+title:                "Iniziare un nuovo progetto"
+html_title:           "Gleam: Iniziare un nuovo progetto"
+simple_title:         "Iniziare un nuovo progetto"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Getting Started"
@@ -10,32 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+## Che cos'è e Perché?
+ Iniziare un nuovo progetto significa creare un'ambiente virtuale dove è possibile scrivere codice e sviluppare una nuova applicazione o libreria. I programmatori lo fanno per organizzare il loro lavoro e mantenere le cose ordinate.
 
-Sei alla ricerca di un nuovo linguaggio di programmazione che ti permetta di sviluppare applicazioni robuste e scalabili? Allora non c'è bisogno di guardare oltre, perché Gleam è qui per aiutarti! Con la sua sintassi leggibile, il supporto per la programmazione funzionale e l'integrazione con la Erlang Virtual Machine (EVM), Gleam è la scelta perfetta per avviare il tuo prossimo progetto di programmazione.
+## Come fare:
 
-## Come Fare
-
-Iniziamo con il setup del tuo ambiente di sviluppo. Dopo aver installato Erlang e la EVM, puoi scaricare Gleam tramite il gestore di pacchetti Hex. Una volta installato, puoi creare un nuovo progetto Gleam utilizzando il comando `gleam new nome_progetto`, dove "nome_progetto" è il nome del tuo progetto. Questo creerà una struttura di base per il tuo progetto, comprensiva di file `gleam.toml` per la configurazione e `src` per i tuoi file di codice.
-
-Ora puoi iniziare a scrivere il tuo codice. Gleam supporta una sintassi dichiarativa e funzionale, che rende la scrittura del codice più espressiva e leggibile. Ad esempio, per dichiarare una funzione che aggiunge due numeri, potresti scrivere:
+Per iniziare un nuovo progetto in Gleam, è necessario creare una cartella vuota e all'interno creare un file `gleam.toml`. Questo file contiene le informazioni di base sul progetto, come ad esempio il nome, la versione, gli autori e le dipendenze. Un esempio di file toml è il seguente:
 
 ```Gleam
-pub fn add(x, y) {
-  x + y
-}
+[package]
+name = "my_project"
+version = "1.0.0"
+authors = ["John Doe", "Jane Smith"]
+
+[dependencies]
+gleam = {version = "0.12.0"}
 ```
 
-Una volta scritto il tuo codice, puoi eseguirlo utilizzando il comando `gleam build` per compilarlo e `gleam run nome_funzione` per eseguire una specifica funzione. Potrai quindi vedere il risultato del tuo codice direttamente nella tua console!
+Una volta creato il file `gleam.toml`, è possibile aggiungere altri file al vostro progetto, come ad esempio il file principale `main.gleam` che conterrà il codice in Gleam. Per compilare il progetto, è necessario eseguire il comando ```gleam build```, che creerà un file `.beam` contenente il tuo codice pronto per essere eseguito.
 
-## Approfondimento
+## Deep Dive:
 
-Oltre alla sua sintassi pulita e al suo supporto per l'integrazione con la EVM, ci sono molte altre ragioni per iniziare un nuovo progetto con Gleam. Ad esempio, la sua forte tipizzazione e il sistema di gestione degli errori consentono di sviluppare applicazioni più affidabili e robuste. Inoltre, Gleam ha una comunità attiva e una documentazione dettagliata che possono aiutarti nella tua avventura di apprendimento.
+In passato, i programmatori dovevano utilizzare ambienti di sviluppo molto complessi per iniziare un nuovo progetto. Con Gleam, invece, è possibile utilizzare un semplice file toml per specificare le dipendenze e iniziare a codificare immediatamente.
 
-## Vedi Anche
+In alternativa, esistono altri linguaggi di programmazione che consentono di iniziare progetti in modo simile, come ad esempio Rust o Elixir. Tuttavia, Gleam offre un sistema di tipi fortemente statico, rendendo più facile scrivere e mantenere il codice nel lungo periodo.
 
-Se desideri saperne di più su Gleam, puoi consultare il suo sito ufficiale e la sua documentazione. Puoi anche partecipare alla community di Gleam su Discord, dove puoi condividere ed imparare da altri sviluppatori che utilizzano questo linguaggio di programmazione.
+## Vedi anche:
 
-- Sito ufficiale di Gleam: https://gleam.run/
-- Documentazione di Gleam: https://gleam.run/getting-started/
-- Community di Gleam su Discord: https://discord.gg/FjctVwC
+- Documentazione ufficiale di Gleam: https://gleam.run/
+- Repository GitHub di Gleam: https://github.com/gleam-lang/gleam

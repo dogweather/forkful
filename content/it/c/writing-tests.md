@@ -10,68 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##Perché
+## Che cos'è e perché lo facciamo?
+Scrivere dei test è il processo di creare delle piccole porzioni di codice che verificano il funzionamento di parti specifiche del nostro programma. È importante farlo perché ci permette di individuare eventuali errori nel nostro codice in modo rapido ed efficiente.
 
-Scrivere test può sembrare una parte noiosa e tediosa del processo di sviluppo software, ma in realtà è uno strumento fondamentale per garantire la qualità del codice e facilitare il processo di debugging. Inoltre, scrivere test può aiutare a risparmiare tempo e risorse in futuro, poiché individua eventuali errori o bug fin dalla fase di sviluppo.
-
-##Come fare
-
-Per scrivere test efficaci in C, è importante comprendere i concetti di base del linguaggio e le librerie standard. Inoltre, ci sono alcune buone pratiche da seguire per assicurarsi che i test siano affidabili e di facile manutenzione. Ecco un esempio di test di una funzione che calcola il massimo tra due numeri:
+## Come si fa:
+Nel seguente esempio, creiamo una semplice funzione che verifica se un numero è pari o dispari:
 
 ```C
 #include <stdio.h>
 
-int max(int a, int b);
-
-int main() {
-    int result = max(5, 10);
-    printf("Il massimo è: %d", result);
+// Funzione che verifica se un numero è pari o dispari
+// Restituisce 1 se è pari, 0 se è dispari
+int even_or_odd(int num) {
+  if (num % 2 == 0) {
+    return 1;
+  } else {
     return 0;
-}
-
-int max(int a, int b) {
-    int max = a > b ? a : b; // operatore ternario per semplificare il codice
-    return max;
-}
-```
-
-In questo esempio, viene definita una funzione `max` che prende in input due interi e restituisce il maggiore dei due. Nella funzione `main`, viene chiamata la funzione `max` con due valori e il risultato viene stampato a video. Per creare il test di questa funzione, è possibile utilizzare una libreria di unit testing come `cmocka` o `minunit`:
-
-```C
-#include <stdio.h>
-#include <stdarg.h>
-#include <stddef.h>
-#include <setjmp.h>
-#include <cmocka.h>
-
-int max(int a, int b);
-
-static void max_test(void **state) {
-    assert_int_equal(max(5, 10), 10);
-    assert_int_equal(max(-5, 0), 0);
+  }
 }
 
 int main() {
-    const struct CMUnitTest tests[] = {
-            cmocka_unit_test(max_test),
-    };
-    return cmocka_run_group_tests(tests, NULL, NULL);
-}
-
-int max(int a, int b) {
-    int max = a > b ? a : b;
-    return max;
+  int num = 5;
+  if (even_or_odd(num)) {
+    printf("%d è un numero pari\n", num);
+  } else {
+    printf("%d è un numero dispari\n", num);
+  }
+  return 0;
 }
 ```
 
-In questo caso, la libreria `cmocka` viene utilizzata per definire un test chiamato `max_test`, che verifica se la funzione `max` restituisce il valore corretto per due input diversi. Per eseguire il test, è necessario compilare il codice con la libreria e avviare il programma, che restituirà un resoconto dettagliato su eventuali errori o fallimenti dei test.
+L'output di questo esempio sarà: ```5 è un numero dispari```
 
-##Approfondimento
+## Deep Dive:
+Scrivere dei test è una pratica molto diffusa nel mondo della programmazione. Infatti, già negli anni '60 si iniziò a parlare di questo argomento quando si cominciarono a utilizzare i cosiddetti "test di unità" per verificare il corretto funzionamento del codice.
 
-Scrivere test accurati e completi può richiedere una certa quantità di tempo ed energia, ma i suoi vantaggi sono molteplici. Inoltre, i test possono essere utilizzati in diversi modi, come per la verifica dell'integrità del codice durante il processo di sviluppo o per la validazione del software prima della distribuzione. Inoltre, un buon set di test ben strutturato può fungere da documentazione aggiuntiva per il codice, fornendo esempi di utilizzo delle funzioni.
+Oggi ci sono diverse alternative per scrivere test, come ad esempio i "test di integrazione", che verificano il corretto funzionamento di intere parti del programma.
 
-##Vedi anche
+Per implementare dei test efficaci è importante seguire alcune buone pratiche, come ad esempio scrivere test semplici ed indipendenti l'uno dall'altro e utilizzare strumenti specifici per questo scopo.
 
-- [Guida alle buone pratiche di testing in C](https://www.seguridad.unam.mx/media/archivo/proyecto3/good-practices-for-unit-testing-in-c-c-j-owner-s-guide-en-us.pdf)
-- [Esempi di test in C con la libreria Unity](https://www.throwtheswitch.org/unity)
-- [Tutorial su come utilizzare la libreria cmocka per fare unit testing in C](https://blog.jgc.org/2019/01/a-tutorial-on-how-to-do-unit-testing-of.html)
+## Vedi anche:
+- [The Art of Unit Testing](https://www.amazon.it/Art-Unit-Testing-Practices-Writing/dp/1617290890/ref=sr_1_1?__mk_it_IT=ÅMÅŽÕÑ&keywords=the+art+of+unit+testing&qid=1571768000&sr=8-1) - libro sulle migliori pratiche per scrivere test di unità efficaci.
+- [JUnit](https://junit.org/junit5/) - uno dei più famosi framework per scrivere test in Java e altre lingue.
+- [PyTest](https://docs.pytest.org/en/latest/) - framework per scrivere test in Python.

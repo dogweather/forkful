@@ -10,46 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co & Dlaczego?
+Łączenie stringów to prosta operacja, która pozwala programistom łączyć zbiory znaków w jedną linię tekstu. Jest to bardzo przydatne przy tworzeniu dynamicznych wiadomości, np. w przypadku tworzenia wiadomości e-mail lub generowania raportów. Programiści korzystają z tej funkcji, aby oszczędzić czas i zapewnić elastyczność w tworzeniu tekstu.
 
-Czy kiedykolwiek znalazłeś się w sytuacji, w której musiałeś połączyć ze sobą dwa lub więcej łańcuchów znaków? Może chciałeś wyświetlić imię użytkownika w powitaniu lub stworzyć dynamiczny link na stronę internetową. W takich przypadkach bardzo przydatną umiejętnością jest umiejętność łączenia (konkatenacji) stringów. Dzięki temu artykułowi, dowiesz się, jak w łatwy sposób połączyć stringi w języku Go.
+## Jak to zrobić:
+Go oferuje prosty sposób, aby połączyć stringi dzięki funkcji `strings.Join()`. Można ją wywołać na obiekcie typu `strings` i przekazać jej slice z stringami, które chcemy połączyć, oraz separator, który ma zostać wstawiony pomiędzy każdym z nich. Przykładowe wywołanie tej metody mogłoby wyglądać tak:
 
-## Jak to zrobić 
+```
+package main
 
-Do konkatenacji stringów w języku Go możemy użyć operatora "+" lub funkcji "fmt.Sprintf()". Przykładowy kod wyglądałby następująco:
+import (
+	"fmt"
+	"strings"
+)
 
-```Go
-firstName := "Jan"
-lastName := "Kowalski"
-fmt.Println("Witaj " + firstName + " " + lastName + "!")
+func main() {
+	mySlice := []string{"witaj", "w", "świecie"}
+	fmt.Println(strings.Join(mySlice, " "))
+}
 ```
 
-lub
+W tym przypadku wyjściem będzie łańcuch `witaj w świecie`.
 
-```Go
-firstName := "Jan"
-lastName := "Kowalski"
-greeting := fmt.Sprintf("Witaj %s %s!", firstName, lastName)
-fmt.Println(greeting)
-```
+## Głębsze zanurzenie:
+Funkcja `Join` ma swoje korzenie w bibliotece C, a jej implementacja jest oparta na algorytmie QuickSort, co sprawia, że jest bardzo wydajna. Alternatywną metodą jest użycie operatora `+`, jednak jest to mniej efektywne, ponieważ tworzy kopię stringa za każdym razem, gdy operator jest używany. Kolejną użyteczną funkcją do łączenia stringów w Go jest metoda `Sprintf`, która umożliwia formatowanie tekstu z wykorzystaniem specyfikatorów formatu.
 
-W obydwu przypadkach otrzymalibyśmy taki sam wynik - "Witaj Jan Kowalski!". Warto zauważyć, że funkcja "Sprintf()" umożliwia nam również formatowanie stringów, co może być przydatne w niektórych przypadkach.
-
-## Deep Dive
-
-W języku Go istnieje funkcja wbudowana "strings.Join()", która pozwala na konkatenację wielu stringów w jednym kroku. Przyjmuje ona jako argumenty słice (slice) stringów i oddzielnik, który będzie wstawiany pomiędzy połączonymi elementami. Przykładowy kod wykorzystujący tę funkcję mógłby wyglądać tak:
-
-```Go
-names := []string{"Jan", "Anna", "Maria"}
-joinedNames := strings.Join(names, ", ")
-fmt.Println("Nasi użytkownicy to: " + joinedNames + ".")
-```
-
-Wynikiem tego kodu byłoby wyświetlenie "Nasi użytkownicy to: Jan, Anna, Maria.". Funkcja ta jest wydajniejszą opcją w przypadku konkatenacji wielu stringów, ponieważ nie tworzy ona dużych odnośników pamięci na każdy nowy string.
-
-## Zobacz też
-
-Jeśli chcesz dowiedzieć się więcej o funkcjach wbudowanych i wykorzystaniu stringów w języku Go, polecamy przeczytać następujące artykuły:
-
-- https://golang.org/pkg/strings/
-- https://tour.golang.org/basics/1
+## Zobacz również:
+https://golang.org/pkg/strings/#Join - dokumentacja funkcji `strings.Join()`
+https://golang.org/doc/effective_go.html - oficjalny poradnik języka Go
+https://gobyexample.com/string-formatting - przykłady formatowania stringów w Go

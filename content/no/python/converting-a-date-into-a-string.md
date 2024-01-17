@@ -1,7 +1,7 @@
 ---
-title:                "Omforming av dato til streng"
-html_title:           "Python: Omforming av dato til streng"
-simple_title:         "Omforming av dato til streng"
+title:                "Konvertere en dato til en streng."
+html_title:           "Python: Konvertere en dato til en streng."
+simple_title:         "Konvertere en dato til en streng."
 programming_language: "Python"
 category:             "Python"
 tag:                  "Dates and Times"
@@ -10,43 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hva & Hvorfor?
+Konvertering av en dato til en streng er en viktig del av programmering, spesielt når man håndterer datoer og tidspunkter i koden. Dette gjør det enklere å lagre, sammenligne og presentere datoer i et forståelig format.
 
-Hvorfor vil du konvertere et datoobjekt til en tekststreng? Det kan være nyttig når du vil vise datoen på en mer leselig måte, for eksempel på en nettside eller i en logger.
-
-## Hvordan
-
-Konvertering av dato til streng i Python er enkelt og kan gjøres på flere måter. Her er et eksempel på bruk av `strftime()`-metoden, som tar inn en dato og formaterer den som en tekststreng:
-
+## Slik gjør du:
 ```Python
-from datetime import datetime
-date = datetime(2021, 11, 3)
-print(date.strftime("%d/%m/%Y")) # output: 03/11/2021
+# Importer datetime modulen
+import datetime
+
+# Konvertere en dato til en streng
+dato = datetime.date(2021, 9, 18)
+dato_til_streng = dato.strftime("%d/%m/%y")
+
+# Skriver ut resultatet
+print(dato_til_streng)
+
+# Output: "18/09/2021"
 ```
 
-Du kan også bruke `str()`-funksjonen for å konvertere et datoobjekt til en streng:
+## En nærmere titt:
+Konvertering av dato til streng er en vanlig praksis i programmering, spesielt når man jobber med tid og dato-funksjoner. Før datetime-modulen ble introdusert i Python 2.3, måtte utviklere selv skrive koden for å håndtere datoer og tidspunkter. Dette var en tidkrevende og feilutsatt prosess. Alternativet til å bruke strftime-metoden er å bruke format-funksjonen, som ble introdusert i Python 3.6.
 
-```Python
-from datetime import date
-today = date.today()
-print(str(today)) # output: 2021-11-03
-```
-
-Det er viktig å merke seg at utgangsformatet for dato kan variere avhengig av operativsystemet og lokaliseringsinnstillingene dine.
-
-## Dypdykk
-
-Når du bruker `strftime()`-metoden for å formatere datoer, må du bruke spesifikke symboler i strengformatet for å få riktig utgang. For eksempel betyr `%d` dag i måneden, `%m` måned i året og `%Y` året med fullt tall.
-
-Det er også mulig å bruke `datetime`-modulen til å konvertere en tekststreng til et datoobjekt. Dette kan være nyttig når du for eksempel leser inn datoer fra en fil eller brukerinput:
-
-```Python
-from datetime import datetime
-date = datetime.strptime("03-11-2021", "%d-%m-%Y")
-print(date) # output: 2021-11-03 00:00:00
-```
-
-## Se også
-
-- [Dokumentasjon for `datetime`-modulen](https://docs.python.org/3/library/datetime.html)
-- [Sololearn Python-kurs: Dato og tid](https://www.sololearn.com/Course/Python/?ref=app)
+## Se også:
+- [Python datetime-modulen](https://docs.python.org/3/library/datetime.html)
+- [Python 3.6 innebygde formateringsalternativer](https://docs.python.org/3/library/datetime.html#strftime-and-strptime-format-codes)

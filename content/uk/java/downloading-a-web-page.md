@@ -10,43 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Для чого
-Завантаження веб-сторінки може бути корисним для отримання важливої інформації або автоматизації задач.
+Що & навіщо?
+Завантаження веб-сторінки означає отримання веб-ресурсу з Інтернету та відображення його на екрані. Програмісти часто використовують цей процес для отримання необхідної інформації, яка потрібна для подальшої обробки або аналізу.
 
-## Як
-Код для завантаження веб-сторінки виглядає наступним чином:
-
-```java
-import java.io.*;  
-import java.net.*;
-
-public class DownloadPage {  
-    public static void main(String[] args)  throws Exception {    
-        String url = "https://example.com"; 
-        URL website = new URL(url); 
-        URLConnection connection = website.openConnection(); 
-        BufferedReader in = new BufferedReader( 
-                                new InputStreamReader( 
-                                    connection.getInputStream())); 
-        String inputLine; 
-        while ((inputLine = in.readLine()) != null)  
-            System.out.println(inputLine); 
-        in.close(); 
-    } 
-} 
+Як це зробити:
+```Java
+URL url = new URL("https://www.example.com");
+URLConnection conn = url.openConnection();
+BufferedReader reader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+String line;
+while ((line = reader.readLine()) != null) {
+    System.out.println(line);
+}
+reader.close();
 ```
-Приклад введення:
+Виходом буде вміст веб-сторінки, який буде виведено на екран.
 
-```
-https://example.com
-```
+Глибше:
+Історичний контекст: Раніше, для завантаження веб-сторінок програмістам потрібно було використовувати досить складні методи, але з'явлення Java дозволило спростити цей процес за допомогою вбудованих бібліотек.
 
-Виведе веб-сторінку в консолі.
+Альтернативи: Крім Java, існують інші програмні мови, які також можуть виконувати завантаження веб-сторінок, такі як Python або C++.
 
-## Поглиблення
-У Java є багато бібліотек для завантаження веб-сторінок, таких як JSoup і Apache HttpClient. Ці бібліотеки дозволяють здійснювати більш складні дії, такі як робота з формами та куки.
+Деталі реалізації: У коді використовується клас URLConnection для створення з'єднання з веб-сторінкою. Для отримання вмісту використовується клас BufferedReader, який читає дані зі з'єднання із веб-сторінкою.
 
-## Дивіться також
-- [Офіційна документація Java](https://docs.oracle.com/javase/10/docs/api/java/net/URLConnection.html)
-- [JSoup](https://jsoup.org/)
-- [Apache HttpClient](https://hc.apache.org/httpcomponents-client-ga/)
+Дивись також:
+Подивіться на документацію Java для більш детальної інформації про класи та методи, що використовуються для завантаження веб-сторінок.

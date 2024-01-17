@@ -1,7 +1,7 @@
 ---
-title:                "Analiza składni HTML"
-html_title:           "Bash: Analiza składni HTML"
-simple_title:         "Analiza składni HTML"
+title:                "Analizowanie html"
+html_title:           "Bash: Analizowanie html"
+simple_title:         "Analizowanie html"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "HTML and the Web"
@@ -10,29 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## O co chodzi?
+ Parsowanie HTML to proces odczytywania i interpretowania kodu HTML, który określa strukturę i zawartość strony internetowej. Programiści wykorzystują to narzędzie, aby dostosować lub wyświetlić wybrane elementy na stronie, w celu lepszego rozmieszczenia i wyglądu.
 
-Parsing HTML jest niezbędnym narzędziem dla wszystkich, którzy chcą analizować i przetwarzać zawartość stron internetowych. Pomaga on w ekstrakcji informacji oraz w automatyzacji różnych zadań związanych z analizą stron internetowych.
+## Jak to zrobić:
+Poniżej znajdziesz dwa przykłady kodu w Bash, które pokażą Ci, jak podstawowe parsowanie HTML jest realizowane w tym języku programowania:
 
-## Jak to zrobić
-
-Aby parsować HTML za pomocą Bash, możemy skorzystać z narzędzi takich jak `grep` i `sed`. Na przykład, jeśli chcemy wydobyć wszystkie linki znajdujące się na stronie, możemy użyć następującego polecenia:
-```Bash
-curl <adres URL> | grep -o '<a [^>]*href=[^>]*>' | sed 's/<a [^>]*href=//g;s/>.*//g'
+- Przykład 1: Pobranie tytułu strony internetowej za pomocą polecenia ```curl``` i ```grep```
 ```
-Powyższe polecenie pobiera zawartość strony internetowej za pomocą polecenia `curl`, a następnie używa `grep` i `sed` do wyodrębnienia wszystkich wystąpień znacznika `a` z atrybutem `href`. Następnie, używając wewnętrznego separatora `sed`, usuwa wszystko poza samym linkiem. Przykładowy wynik może wyglądać następująco:
+$ curl -s example.com | grep "<title>.*</title>" | sed -E 's/<\/?title>//g'
 ```
-http://example.com/
-https://github.com/
-https://www.google.com/
+Wynik:
+```
+Example Domain
+```
+- Przykład 2: Wypisanie wszystkich linków ze strony internetowej za pomocą polecenia ```lynx```
+```
+$ lynx -dump -listonly example.com
+```
+Wynik:
+```
+http://example.com
+https://www.iana.org/domains/example
+http://www.iana.org/domains/example
 ```
 
-## Głębszy przegląd
+## Wprowadzenie w temat:
+Parsowanie HTML jest istotną częścią tworzenia stron internetowych od czasów ich początku. Początkowo wykorzystywano to narzędzie, aby odczytać treść strony i pozyskać informację ze stron internetowych. W dzisiejszych czasach, programiści wykorzystują parsowanie HTML do automatyzacji procesów związanych z analizowaniem struktury i zawartości stron internetowych. Alternatywą dla Bash są języki specjalizujące się w parsowaniu i manipulowaniu tekstu, takie jak Perl, Python czy Ruby. W Bash używa się poleceń takich jak ```grep```, ```sed``` i ```awk``` do parsowania HTML.
 
-Bash, mimo swojej prostoty, posiada wydajne narzędzia do przetwarzania tekstu, co czyni go dobrym wyborem do parsowania HTML. Większość poleceń wymienionych w dziale "Jak to zrobić" ma możliwość wykorzystania wyrażeń regularnych, co daje dużą elastyczność w wydobywaniu żądanych informacji. Należy jednak pamiętać, że Bash nie jest dedykowanym narzędziem do parsowania HTML i może nie być w stanie poprawnie obsłużyć skomplikowanych struktur dokumentów.
-
-## Zobacz także
-
-- [Platzi - Parsing HTML in Bash](https://platzi.com/blog/parsing-html-in-bash/)
-- [IBM Developer - HTML parsing with Bash](https://developer.ibm.com/tutorials/l-html-bash/)
-- [Awesome Shell - Parsing HTML](https://github.com/alebcay/awesome-shell#parsing-html)
+## Zobacz także:
+Jeśli chcesz dowiedzieć się więcej o parsowaniu HTML w Bash, polecamy zapoznać się z poniższymi źródłami:
+- [Oficjalna strona dokumentacji Bash](https://www.gnu.org/software/bash/) - oficjalna strona dokumentacji języka Bash.
+- [Bash Guide for Beginners](http://www.tldp.org/LDP/Bash-Beginners-Guide/html/index.html) - kompletne wprowadzenie do języka Bash dla początkujących.
+- [Three Reasons to Learn Bash Scripting](https://linuxacademy.com/blog/linux/three-reasons-to-learn-bash-scripting/) - artykuł omawiający zalety nauki Bash.
+- [Bash Scripting Tutorial for Beginners](https://linuxconfig.org/bash-scripting-tutorial-for-beginners) - praktyczne instrukcje do nauki Bash.

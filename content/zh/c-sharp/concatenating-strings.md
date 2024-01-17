@@ -1,7 +1,7 @@
 ---
-title:                "连接字符串"
-html_title:           "C#: 连接字符串"
-simple_title:         "连接字符串"
+title:                "串连字符串"
+html_title:           "C#: 串连字符串"
+simple_title:         "串连字符串"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Strings"
@@ -10,65 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-为什么:
+C#: 编程中连接字符串
 
-如果你想要在程序中把多个字符串连接在一起，那么你需要了解如何使用C#中的字符串连接功能。
+在C＃中，连接字符串是将两个或多个字符串合并成一个字符串的过程。这通常用于创建更大的字符串，如日志消息、错误消息等等。程序员通常会使用连接字符串来动态生成字符串，以便满足不同场景的需求。
 
-如何进行字符串连接:
+## 怎么使用
 
-```C#
-// 创建两个字符串
-string str1 = "Hello";
-string str2 = "World";
+要连接字符串，我们可以使用“+”操作符或使用`String.Concat`方法。下面是使用这两种方法的示例代码和输出：
 
-// 使用"+"操作符连接字符串
-string result = str1 + str2;
+```
+string s1 = "Welcome";
+string s2 = "to";
+string s3 = "C#";
 
-// 输出结果为 "HelloWorld"
-Console.WriteLine(result);
+// 使用“+”操作符
+string result1 = s1 + " " + s2 + " " + s3;
+Console.WriteLine(result1); // 输出: Welcome to C#
+
+// 使用String.Concat方法
+string result2 = String.Concat(s1, " ", s2, " ", s3);
+Console.WriteLine(result2); // 输出: Welcome to C#
 ```
 
-除了使用"+"操作符，C#还有另外两种方法可以连接字符串。第一种是使用String类中的Concat()方法，代码如下：
+在以上代码中，我们首先创建了三个字符串变量，分别存储"Welcome"、"to"和"C#"。然后，我们使用两种不同的方法来连接这些字符串，并打印出结果。
 
-```C#
-// 创建两个字符串
-string str1 = "Hello";
-string str2 = "World";
+## 深入了解
 
-// 使用Concat()方法连接字符串
-string result = String.Concat(str1, str2);
+连接字符串的历史可以追溯到1990年，当时它是C语言的一个标准函数。在C＃中，它是由`String.Concat`和`String.Join`等方法实现的。`String.Join`方法允许我们使用一个分隔符来连接多个字符串，并返回一个单一的字符串。
 
-// 输出结果为 "HelloWorld"
-Console.WriteLine(result);
-```
+另外，除了使用"+"操作符和`String.Concat`，我们也可以使用`StringBuilder`类来连接字符串。这个类提供了更高效的方法来处理大量的字符串连接操作。然而，当需要处理少量的字符串连接时，使用"+"操作符和`String.Concat`更简洁易懂。
 
-第二种方法是使用String类中的Join()方法，代码如下：
+## 查看更多
 
-```C#
-// 创建一个字符串数组
-string[] words = {"Hello", "World", "from", "C#"};
-
-// 使用Join()方法连接数组中的所有字符串，以空格作为分隔符
-string result = String.Join(" ", words);
-
-// 输出结果为 "Hello World from C#"
-Console.WriteLine(result);
-```
-
-深入了解:
-
-使用"+"操作符连接字符串的背后，其实是使用了String类中的Concat()方法。而Concat()方法则是通过创建一个新的String对象，将两个字符串拼接在一起，然后返回该对象。这就意味着每次使用"+"操作符连接字符串时，都会创建一个新的String对象，这在一些复杂的程序中可能会降低性能。而使用String类中的Concat()方法则不会创建新的对象，因此在性能方面有一定的优势。
-
-另外，在C#中使用Concat()方法和Join()方法连接字符串时，还可以指定用于分隔字符串的字符或字符串，从而实现更多样化的字符串连接方式。
-
-# 参考资料:
-
-1. [Microsoft Docs - String Concatenation](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/strings/?#concatenation)
-2. [C-SharpCorner - String Concatenation in C#](https://www.c-sharpcorner.com/UploadFile/eb0c69/concatenation-in-C-Sharp/)
-3. [GeeksforGeeks - C# | String Concatenation](https://www.geeksforgeeks.org/c-sharp-string-concatenation/)
-4. [C#教程 - 字符串连接](https://www.runoob.com/dotnet/csharp-string-concat.html)
-
-## 看看这里
-
-- [String Concatenation 操作符](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/addition-operator#string-concatenation-operator-)
-- [String Concatenation 操作符 vs Concat() 方法](https://stackoverflow.com/questions/1516550/string-concatenation-vs-stringbuilder-which-is-lots-slower)
+- [C# 字符串连接](https://www.runoob.com/csharp/csharp-string.html)
+- [C# String.Concat 方法](https://docs.microsoft.com/zh-cn/dotnet/api/system.string.concat)

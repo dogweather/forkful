@@ -10,52 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-Have you ever found yourself needing to know the current date and time in your Rust program? Perhaps you want to display it to the user, or use it in a calculation. Whatever the reason, knowing how to get the current date can be a useful skill to have in your programming toolkit.
+Getting the current date is a common task in programming, as it allows developers to keep track of time-related events and manage data based on dates. With the current date, programmers can calculate time intervals, schedule tasks, and organize data according to current events. 
 
-## How To
+## How to:
 
-To get the current date in Rust, we can use the `chrono` crate. This crate provides date and time handling capabilities, making it easy for us to work with dates in our programs.
-
-To start, we need to add the `chrono` crate to our `Cargo.toml` file:
-
-```Rust
+To get the current date in Rust, you can use the `chrono` crate, which provides a DateTime struct with the current date and time information. First, add the crate to your project's `Cargo.toml` file:
+```
 [dependencies]
 chrono = "0.4.19"
 ```
-
-Next, we can use the `Utc::now()` method to get the current date and time in UTC format. This method returns a `DateTime` object, which we can then format as a string using the `format()` method and a format string:
-
-```Rust
+Then, use the `Utc::now()` function to get the current date and time in the UTC timezone:
+```
 use chrono::{DateTime, Utc};
 
 fn main() {
-    // Get the current date and time in UTC
     let current_date: DateTime<Utc> = Utc::now();
+    println!("{}", current_date);
+}
+```
+This will print the current date and time in the format `YYYY-MM-DD HH:MM:SS UTC`, depending on your local time zone.
 
-    // Format the date as a string
-    let date_string = current_date.format("%Y-%m-%d");
+You can also get the current date and time in a specific time zone by using the `FixedOffset` struct and specifying the desired timezone offset in seconds:
+```
+use chrono::{DateTime, FixedOffset};
 
-    // Print the current date
-    println!("{}", date_string);
+fn main() {
+    let current_date: DateTime<FixedOffset> = FixedOffset::east(3600).from_local_datetime(&Local::now());
+    println!("{}", current_date);
 }
 ```
 
-Running this code will output the current date in the format of `YYYY-MM-DD`.
+## Deep Dive:
 
-``` 
-2021-09-02
-```
+Historically, getting the current date was a complex and unreliable process, as it was dependent on the system's hardware clock. With the introduction of NTP (Network Time Protocol), it became easier to get accurate and synchronized time from remote servers.
 
-## Deep Dive
+Alternative ways of getting the current date in Rust include the `time` crate, which provides a `time::OffsetDateTime` struct, and using system calls directly. However, using the `chrono` crate is currently the preferred method due to its easy-to-use API and cross-platform compatibility.
 
-Behind the scenes, the `DateTime` object returned by the `Utc::now()` method is a combination of a `Date` object and a `Time` object. This allows us to access and manipulate different components of the date, such as the month, day, or year.
+The implementation details of getting the current date in Rust can vary depending on the underlying operating system. On Windows, it uses the `winapi` crate to make direct system calls, while on Unix-based systems, it uses the `libc` crate.
 
-Additionally, the `format()` method can take in a variety of format strings, allowing us to format the date and time in different ways. For example, we could use the format string `%A, %B %d %Y` to get a more detailed representation of the current date, including the day of the week and the full month name.
+## See Also:
 
-## See Also
-
-- `chrono` documentation: https://docs.rs/chrono/0.4.19/chrono/
-- Rust Book: https://doc.rust-lang.org/book/title-page.html
-- Official Rust website: https://www.rust-lang.org/
+- [chrono crate documentation](https://docs.rs/chrono/)
+- [time crate documentation](https://docs.rs/time/)
+- [Official Rust Book - Dates and Times](https://doc.rust-lang.org/book/ch16-03-cargo-and-crates-io.html)

@@ -10,72 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was & Warum?
 
-Wenn du dich in der Webentwicklung oder in der Anwendungsentwicklung befindest, wirst du sicher schonmal von JSON gehört haben. JSON steht für JavaScript Object Notation und ist ein weit verbreitetes Austauschformat für Daten zwischen Anwendungen. Es kann in vielen Programmiersprachen genutzt werden, einschließlich TypeScript, um Daten in einem einfach zu lesenden und schreibbaren Format zu speichern und zu übertragen.
+Das Arbeiten mit JSON ist ein wesentlicher Bestandteil der modernen Programmierung. JSON steht für JavaScript Object Notation, und es ist ein Format zum Speichern und Übertragen von Daten. Programmierer nutzen JSON, um Daten in einer einfachen und lesbareren Weise zu organisieren und zu transportieren.
 
-## Wie geht das
+## Wie geht's?
 
-Um JSON in TypeScript zu verwenden, können wir die `JSON`-Klasse verwenden, die bereits in TypeScript enthalten ist. Schauen wir uns einige Beispiele an, wie wir JSON-Objekte erstellen und manipulieren können:
+Das Arbeiten mit JSON ist in TypeScript einfach und unkompliziert. Um ein JSON-Objekt zu erstellen, verwenden Sie den Befehl ```JSON.parse()``` mit einem gültigen JSON-String als Eingabe. Um ein JSON-Objekt in einen String umzuwandeln, können Sie den Befehl ```JSON.stringify()``` verwenden.
 
 ```TypeScript
-// Ein Objekt erstellen
-let person = {
-    name: "Max Mustermann",
-    alter: 30,
-    beruf: "Entwickler"
-};
-
-// Objekt in JSON-String umwandeln
-let json = JSON.stringify(person);
-
-// Ausgabe: {"name":"Max Mustermann","alter":30,"beruf":"Entwickler"}
-console.log(json);
+// Ein JSON-String erstellen
+let jsonString = '{"name": "Max", "age": 25, "hobby": "programming"}';
 
 // JSON-String in ein Objekt umwandeln
-let personParsed = JSON.parse(json);
+let json = JSON.parse(jsonString);
 
-// Ausgabe: Max Mustermann
-console.log(personParsed.name);
+// Ein Objekt in einen JSON-String umwandeln
+let newJsonString = JSON.stringify(json);
 ```
 
-In diesem Beispiel erstellen wir ein einfaches Objekt mit den Eigenschaften Name, Alter und Beruf. Mit Hilfe der `JSON.stringify`-Funktion können wir das Objekt in einen JSON-String umwandeln, der dann in einer Datei oder über das Internet übertragen werden kann. Wenn wir den JSON-String erhalten, können wir ihn mit der `JSON.parse`-Funktion wieder in ein Objekt umwandeln und die Eigenschaften abrufen.
-
-## Tiefergehende Informationen
-
-In TypeScript können wir nicht nur einfache Objekte in JSON-Strings umwandeln, sondern auch komplexere Strukturen wie Arrays und verschachtelte Objekte. Hier ist ein Beispiel:
+Die Ausgabe sieht wie folgt aus:
 
 ```TypeScript
-let autos = [
-    {
-        marke: "VW",
-        farbe: "blau"
-    },
-    {
-        marke: "Audi",
-        farbe: "rot"
-    },
-    {
-        marke: "BMW",
-        farbe: "grün"
-    }
-];
-
-let json = JSON.stringify(autos);
-
-// Ausgabe: [{"marke":"VW","farbe":"blau"},{"marke":"Audi","farbe":"rot"},{"marke":"BMW","farbe":"grün"}]
-console.log(json);
-
-// Mit forEach über das Array iterieren und Werte ausgeben
-// Ausgabe: VW, rot
-for (let auto of autos) {
-    console.log(auto.marke, auto.farbe);
-}
+jsonString = {"name": "Max", "age": 25, "hobby": "programming"}
+json = {name: "Max", age: 25, hobby: "programming"}
+newJsonString = '{"name": "Max", "age": 25, "hobby": "programming"}'
 ```
 
-Wenn wir ein Array in einen JSON-String umwandeln, bleibt die Reihenfolge der Elemente erhalten. Wir können auch über das Array iterieren, indem wir die Eigenschaften der JSON-Objekte abrufen und ausgeben.
+## Tief eintauchen
+
+JSON wurde erstmals im Jahr 2001 von Douglas Crockford eingeführt und hat sich seitdem zu einem der am häufigsten genutzten Datenformate entwickelt. Alternativen zu JSON sind beispielsweise XML und CSV, aber JSON bleibt aufgrund seiner einfachen Syntax und seiner Kompatibilität mit JavaScript eine beliebte Wahl.
+
+In TypeScript gibt es verschiedene Methoden zum Arbeiten mit JSON, wie zum Beispiel das Validieren von JSON-Daten durch Verwendung von Typen oder das Verwenden von JSON APIs zum Abrufen und Senden von Daten.
 
 ## Siehe auch
 
-- [JSON in TypeScript](https://www.typescriptlang.org/docs/handbook/basic-types.html#json)
-- [JSON-Spezifikation](https://www.json.org/)
+- [JSON vs XML: Which One is Better?](https://www.programiz.com/json-vs-xml)
+- [Working with JSON in TypeScript](https://blog.logrocket.com/working-with-json-data-in-typescript/)
+- [JSON in TypeScript](https://blog.logrocket.com/json-typescript/)

@@ -10,43 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hva & Hvorfor?
+Bruk av regulære uttrykk er en måte for programmerere å matche og manipulere tekststrenger på en fleksibel måte. Dette er spesielt nyttig når man ønsker å finne bestemte mønstre i en tekst, for eksempel å validere en e-postadresse eller finne alle ord som starter med en bestemt bokstav. Regulære uttrykk brukes ofte for å automatisere komplekse oppgaver, og kan spare mye tid og arbeid for programmerere.
 
-Hvis du noen gang har prøvd å finne en bestemt streng av tekst i en større tekstblokk, vet du hvor vanskelig og tidkrevende det kan være. Det er her regulære uttrykk kommer inn. Ved å bruke regulære uttrykk kan du enkelt og effektivt finne, erstatte og manipulere tekst uten å måtte gjøre manuelle søk og erstatninger.
+## Hvordan:
 
-## Hvordan
+For å bruke regulære uttrykk i Clojure, kan du bruke funksjonen `re-find` eller `re-seq`. Her er et eksempel på hvordan du kan bruke regulære uttrykk for å finne alle ord som begynner med bokstaven "a" i en tekststreng:
 
-```Clojure
-# Vi importerer regex biblioteket
-(require '[clojure.string :as str])
-# Vi bruker regex for å finne og erstatte en streng i en tekstblokk
-(str/replace "Hei, mitt navn er John." #"John" "Peter")
 ```
-Output: "Hei, mitt navn er Peter."
+(def tekst "Hei på deg, alle sammen!")
 
-```Clojure
-# Vi kan bruke regulære uttrykk for å finne alle tall i en streng
-(re-seq #"\d+" "Jeg er 27 år gammel.")
+(re-find #"a\w+" tekst)
 ```
-Output: ("27")
 
-```Clojure
-# Regulære uttrykk kan også brukes til å validere input fra brukeren
-(defn validate-age [age]
-  (re-matches #"\d+" age)))
-# Hvis brukeren skriver inn en ugyldig alder vil funksjonen returnere false
-(validate-age "30") 
-```
-Output: true
+Dette vil returnere en liste med alle ord som starter med "a" i teksten, i dette tilfellet "alle" og "alene".
 
-## Dypdykk
+## Dykk dypere:
+Regulære uttrykk har vært en del av programmering siden 1950-tallet og er fortsatt et kraftig verktøy for å manipulere tekst. Alternativene til regulære uttrykk inkluderer string-manipuleringsfunksjoner, men disse kan ofte være mindre effektive og mer komplekse å implementere. Implementasjonen av regulære uttrykk i Clojure er basert på Java's `java.util.regex` bibliotek, og støtter derfor også alle vanlige regulære uttrykk-mønster og -funksjoner.
 
-Regulære uttrykk er basert på en syntaks som lar deg definere et mønster som en tekststreng må matche. Dette inkluderer spesialelementer som .* som representerer en hvilken som helst tekst, \d som representerer et tall og \w som representerer en bokstav eller et tall.
-
-Det er viktig å merke seg at regulære uttrykk kan være krevende å lære, spesielt for nybegynnere i Clojure. Men de kan være svært kraftige verktøy når de brukes riktig. Det er også mange online ressurser tilgjengelig for å hjelpe deg med å lære mer om regulære uttrykk og hvordan du kan implementere dem i dine Clojure-prosjekter.
-
-## Se også
-
-- [Offisiell Clojure dokumentasjon](https://clojure.org/api/cheatsheet)
-- [RegExr - online verktøy for å teste og eksperimentere med regulære uttrykk](https://regexr.com/)
-- [Regulære uttrykk i Clojure](https://www.tutorialspoint.com/clojure/clojure_regular_expressions.htm)
+## Se også:
+- [Clojure.org - Regular Expressions](https://clojure.org/guides/regular_expressions)
+- [Mastering Clojure Regex](https://www.braveclojure.com/regular-expressions/)
+- [Javadoc: java.util.regex](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/regex/package-summary.html)

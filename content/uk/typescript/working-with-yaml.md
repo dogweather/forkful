@@ -1,7 +1,7 @@
 ---
-title:                "Робота з YAML"
-html_title:           "TypeScript: Робота з YAML"
-simple_title:         "Робота з YAML"
+title:                "Робота з yaml"
+html_title:           "TypeScript: Робота з yaml"
+simple_title:         "Робота з yaml"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Data Formats and Serialization"
@@ -10,46 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Чому
+Що і чому?
+Робота з YAML - це процес, що дозволяє програмістам працювати з структурованими даними у форматі YAML (YAML Ain't Markup Language). Цей формат дуже зручний для зберігання та обробки різноманітних даних, таких як налаштування програм, конфігураційні файли та багато чого іншого.
 
-YAML (Yet Another Markup Language) є популярним форматом для зберігання даних, що зручно використовувати для налаштування та проектування. Цей формат є читабельним для людей та підтримується більшістю програмних мов, включаючи TypeScript. Підручно мати знання про роботу з YAML, коли ви працюєте з конфігураційними файлами або структурованими даними у додатках.
-
-## Як
-
-### Встановлення бібліотеки YAML для TypeScript
-Щоб працювати з YAML в TypeScript, вам потрібно встановити бібліотеку, наприклад `js-yaml`. Зробити це можна за допомогою менеджера пакетів npm, виконавши команду `npm install js-yaml` у терміналі вашого проекту.
-
-### Читання та запис YML файлів
-Після встановлення бібліотеки `js-yaml`, ви можете почати читати та записувати файли YML. Нижче наведено приклад коду, який читає YML файл та виводить його зміст у консоль:
-
+Як це зробити:
 ```TypeScript
-const yaml = require('js-yaml');
-const fs = require('fs');
+import * as yaml from 'js-yaml';
 
-try {
-  const fileData = fs.readFileSync('config.yml', 'utf8');
-  console.log(yaml.safeLoad(fileData));
-} catch (error) {
-  console.log(error);
-}
+// Write YAML data
+const data = { name: 'John Doe', age: 30 };
+const yamlData = yaml.safeDump(data);
+
+console.log(yamlData);
+
+// Output:
+// name: John Doe
+// age: 30
+
+// Read YAML data
+const parsedData = yaml.safeLoad(yamlData);
+
+console.log(parsedData.name);
+console.log(parsedData.age);
+
+// Output:
+// John Doe
+// 30
 ```
 
-### Парсинг рядків YAML
-Часто YML дані приходять у вигляді рядків, і необхідно їх перетворити у об'єкти для подальшої роботи з ними. Для цього використовуйте метод `yaml.safeLoad()`, передавши йому рядок крім змінної `fileData`.
+Поглиблене дослідження:
+- Історичний контекст: YAML був створений для того, щоб бути простим та легким у використанні форматом обміну даними. Вперше цей формат був випущений в 2001 році та відтоді став дуже популярним у світі програмування.
+- Альтернативи: існують інші формати для структурованих даних, такі як JSON та XML, проте YAML часто використовується завдяки своїй зручності та читабельності.
+- Деталі реалізації: у TypeScript для роботи з YAML зазвичай використовують бібліотеку `js-yaml`, яка надає зручні функції для обробки та конвертації даних у форматі YAML.
 
-```TypeScript
-const yaml = require('js-yaml');
-const configString = "name: John\nage: 25";
-const configObject = yaml.safeLoad(configString);
-console.log(configObject.name); // виведе "John"
-```
-
-## Глибокий занурення
-
-- Якщо ви працюєте з багатомовними даними, YAML має вбудовану підтримку для виведення даних у різні мови.
-- При використанні бібліотеки `js-yaml`, є можливість обробляти помилки під час парсингу файлу YAML та опрацьовувати винятки.
-- YAML також підтримує об'єктные теги, що дозволяють вставляти JavaScript функції або об'єкти у YML документи.
-
-## Дивись також
-- [Документація по YAML](https://yaml.org/)
-- [Бібліотека js-yaml](https://github.com/nodeca/js-yaml) для роботи з YAML у JavaScript/TypeScript.
+Дивіться також:
+- Офіційна документація по бібліотеці `js-yaml`: https://nodeca.github.io/js-yaml/
+- Детальніше про формат YAML: https://yaml.org/

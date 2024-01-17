@@ -1,7 +1,7 @@
 ---
-title:                "Робота з JSON"
-html_title:           "Java: Робота з JSON"
-simple_title:         "Робота з JSON"
+title:                "Робота з json"
+html_title:           "Java: Робота з json"
+simple_title:         "Робота з json"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Data Formats and Serialization"
@@ -10,48 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Чому
+## Що та чому?
+JSON (або JavaScript Object Notation) - це формат для збереження та передачі даних. Його можна легко читати та розуміти як люди, так і комп'ютери. Програмісти використовують JSON, щоб обмінюватися даними між різними системами.
 
-Чому варто працювати з JSON в Java? JSON (JavaScript Object Notation) - це популярний формат даних, який використовується для обміну інформацією між сервером та клієнтом. Використання JSON дозволяє ефективно передавати та обробляти дані, що робить його незамінним інструментом для розробників.
+## Як це зробити:
+JSON надто простий для програмістів Java, щоб пропустити. Щоб створити JSON, ви можете використовувати об'єкти ```JSONObject``` та ```JSONArray```, або ж скористатися бібліотекою ```org.json```. Нижче наведено приклади коду та відповідні результати:
 
-## Як
+```
+JSONObject student = new JSONObject();
+student.put("name", "John Doe");
+student.put("age", 25);
+student.put("major", "Computer Science");
+student.put("grades", new double[]{4.0, 3.9, 3.8});
 
-Щоб почати роботу з JSON в Java, спочатку потрібно підключити бібліотеку *org.json* до своєї програми. Потім можна створити об'єкт *JSONObject*, передавши йому рядок з даними у форматі JSON, або за допомогою методу *put()* додати дані до об'єкту. Наприклад:
+System.out.println(student.toString());
 
-```Java
-import org.json.*;
-// створення об'єкта з даними
-JSONObject obj = new JSONObject("{\"name\":\"John\",\"age\":30}");
-// отримання значень за ключем
-String name = obj.getString("name"); // поверне "John"
-int age = obj.getInt("age"); // поверне 30
-// додавання нових значень до об'єкту
-obj.put("job", "developer");
+// Виведе: {"name":"John Doe","age":25,"major":"Computer Science","grades":[4.0,3.9,3.8]}
+
+JSONArray countries = new JSONArray();
+countries.put("Ukraine");
+countries.put("France");
+countries.put("Japan");
+countries.put("USA");
+
+System.out.println(countries.toString());
+
+// Виведе: ["Ukraine","France","Japan","USA"]
 ```
 
-В результаті отримаємо об'єкт *JSONObject* з інформацією про людину та її роботу:
+## Основні моменти:
+JSON був створений Дугласом Крокфордом у 2001 році та з тих пір став популярним форматом обміну даними. Існують також інші формати, такі як XML та CSV, але JSON має більш просту структуру та займає менше місця. Це робить його ідеальним для використання в мережевих додатках та між системами.
 
-```Java
-{"name":"John","age":30,"job":"developer"}
-```
-
-Також можливо створити об'єкт *JSONArray*, який міститиме кілька об'єктів *JSONObject*. Для цього слід передати до конструктора масив рядків з даними у форматі JSON. Наприклад:
-
-```Java
-// створення масиву об'єктів
-JSONArray arr = new JSONArray("[{\"name\":\"John\",\"age\":30}, {\"name\":\"Jane\",\"age\":25}]");
-```
-
-Іншою корисною функцією є метод *toString()* для перетворення об'єкту у рядок для подальшого збереження або передачі. Наприклад:
-
-```Java
-String json = obj.toString();
-```
-
-## Глибоке занурення
-
-У реальних проектах, часто потрібно не тільки створювати дані в форматі JSON, але і розбирати та обробляти вхідні дані. Для цього можна використовувати різні методи з об'єктом *JSONObject*, такі як *getJSONObject()* для отримання вкладеного об'єкту, *getJSONArray()* для отримання вкладеного масиву, чи *opt()* для отримання значення за ключем з можливістю повернення значення за замовчуванням у разі відсутності ключа.
-
-Також важливо враховувати, що порядок ключів та значень у форматі JSON не має значення, тому використання методів *getJSONObject()* і *getJSONArray()* для отримання об'єкту чи масиву може викликати помилку у випадку різної послідовності у вхідних даних.
-
-## Дивіть
+## Дивіться також:
+Для отримання додаткової інформації та прикладів використання JSON у Java, перегляньте документацію [Oracle](https://www.oracle.com/technetwork/articles/java/json-1973242.html) та [бібліотеку org.json](https://github.com/stleary/JSON-java).

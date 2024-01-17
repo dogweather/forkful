@@ -1,7 +1,7 @@
 ---
-title:                "Imprimindo saídas de depuração"
-html_title:           "Ruby: Imprimindo saídas de depuração"
-simple_title:         "Imprimindo saídas de depuração"
+title:                "Imprimindo saída de depuração"
+html_title:           "Ruby: Imprimindo saída de depuração"
+simple_title:         "Imprimindo saída de depuração"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Testing and Debugging"
@@ -10,52 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+## O que & Por quê?
+Imprimir a saída de depuração é uma técnica usada pelos programadores para acompanhar seu código e identificar problemas durante o processo de desenvolvimento. Isso pode incluir a visualização de valores de variáveis, mensagens de erro e outras informações úteis para encontrar e solucionar erros no código.
 
-Você já se viu preso em um código que não está funcionando corretamente e não consegue descobrir o problema? Ou talvez você apenas queira entender melhor o fluxo de execução do seu programa? Em ambos os casos, imprimir saída de depuração pode ser uma ferramenta extremamente útil.
-
-## Como fazer
-
-Para imprimir saída de depuração em Ruby, usamos o método `puts`. Veja um exemplo:
-
-```Ruby
-x = 5
-y = 3
-
-puts "O valor de x é #{x}"
-puts "O valor de y é #{y}"
-```
-
-A saída do código acima seria:
+## Como Fazer:
+Para imprimir uma saída de depuração em seu código Ruby, você pode usar o método `p` ou `puts`. Aqui está um exemplo simples:
 
 ```
-O valor de x é 5
-O valor de y é 3
+num = 5
+puts "O número é: #{num}"
 ```
 
-Podemos também combinar o método `puts` com `inspect` para imprimir o valor e o tipo de uma variável:
-
-```Ruby
-x = "Olá mundo"
-
-puts "O valor de x é #{x.inspect}"
-```
-
-A saída seria:
+Isso irá imprimir a seguinte saída:
 
 ```
-O valor de x é "Olá mundo"
+O número é: 5
 ```
 
-## Mergulho profundo
+Se você quiser imprimir uma mensagem de erro, pode fazer o seguinte:
 
-Apesar de simples, imprimir saída de depuração pode ser uma técnica poderosa para entender o funcionamento do seu código. Alguns truques úteis incluem adicionar mensagens de depuração em pontos estratégicos do seu código, como no início e no final de um loop ou função, e usar `inspect` para visualizar objetos complexos.
+```
+puts "Oops, algo deu errado!"
+```
 
-Além disso, também é possível utilizar o método `p`, que é semelhante ao `puts` e `inspect` combinados. Ele imprime diretamente o valor e o tipo da variável sem precisar do método `inspect`.
+E isso irá imprimir a seguinte saída:
 
-Esperamos que esse artigo te ajude a utilizar saída de depuração de forma efetiva em seus projetos!
+```
+Oops, algo deu errado!
+```
 
-## Veja também
+## Mergulho Profundo:
+A técnica de imprimir a saída de depuração é frequentemente usada como uma forma rápida e fácil de rastrear e corrigir erros no código. No entanto, existem outras técnicas que podem ser usadas para depurar, como o uso de ferramentas de rastreamento e o uso de testes automatizados. Além disso, imprimir a saída de depuração pode afetar o desempenho do seu código, pois pode exigir que o programa pare a execução para imprimir os valores. É importante encontrar um equilíbrio entre o uso dessa técnica e outras técnicas de depuração.
 
-- [Documentação oficial do Ruby sobre debug e logging](https://ruby-doc.org/core-3.0.0/doc/debug.html)
-- [Artigo da Ruby Guides sobre saída de depuração](https://www.rubyguides.com/2019/01/debugging-in-ruby/)
+## Veja Também:
+Se você quiser saber mais sobre depuração em Ruby, aqui estão algumas fontes úteis:
+- [Guia de Depuração Oficial do Ruby](https://ruby-doc.org/core-2.7.1/Debugger.html)
+- [Vídeo explicando como depurar em Ruby](https://www.youtube.com/watch?v=Zs_DYl-5jkc)
+- [Ferramenta de rastreamento para Ruby chamada Pry](https://github.com/pry/pry)

@@ -10,26 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
-Hvorfor lese kommandolinjeargumenter? Vel, hvis du noen gang har brukt et program med mange forskjellige funksjoner og innstillinger, er sjansene store for at du har brukt kommandolinjen for å kjøre programmet med de spesifikke innstillingene du ønsker. Å lese kommandolinjeargumenter er også nyttig for utviklere som ønsker å skrive programvare som kan bli brukt gjennom kommandolinjen, som for eksempel scripts eller automatiseringsverktøy.
+## Hva & Hvorfor?
+Lesing av argumenter fra kommandolinjen i TypeScript er en måte for programmerere å få tilgang til informasjon som sendes inn når programmet kjører. Dette kan være nyttig for å kunne tilpasse programmet til forskjellige situasjoner eller brukerpreferanser.
 
-## Slik gjør du det
-Nå skal vi se på hvordan man kan lese kommandolinjeargumenter i TypeScript. Først må du importere "process" modulen fra Node.js. Deretter kan du bruke "process.argv" for å få tilgang til de forskjellige argumentene som er gitt ved kjøring av programmet. La oss ta en titt på et eksempel:
-
+## Hvordan:
 ```TypeScript
-import { process } from 'process';
+// Enkelt eksempel på å lese et enkelt argument fra kommandolinjen
+const argument = process.argv[2];
+console.log(`Argumentet fra kommandolinjen er: ${argument}`);
 
-console.log(process.argv);
+// Eksempel på å lese flere argumenter og lagre de i et array
+const argumenter = process.argv.slice(2);
+console.log(`Alle argumenter fra kommandolinjen er: ${argumenter}`);
 ```
-Når du kjører dette programmet i terminalen med kommandoen "node filename.js arg1 arg2", vil output være følgende:
-```shell
-["node", "filename.js", "arg1", "arg2"]
+
+Eksempel output:
 ```
-Som du kan se, vil "process.argv" returnere en array med alle argumentene gitt ved kjøring av programmet. Det første elementet i arrayen vil alltid være "node", mens det andre elementet vil være navnet på filen som blir kjørt. De resterende elementene vil være de påfølgende argumentene som er gitt.
+$ node readCommandLineArguments.ts --navn Bob --alder 30
+Argumentet fra kommandolinjen er: --navn
+Alle argumenter fra kommandolinjen er: --navn, Bob, --alder, 30
+```
 
-## Dypdykk
-Det er noen ting å være oppmerksom på når man leser kommandolinjeargumenter. Hvis du ønsker å lese argumenter som inkluderer mellomrom, må du bruke anførselstegn ved kjøring av programmet. For eksempel ville argumentet "arg with space" bli gitt som "arg\ with\ space". I tillegg vil argumenter som starter med "-" bli sett på som flagg og ikke bli regnet som separate argumenter. Du kan også bruke "yargs" modulen for å håndtere argumenter med mer funksjonalitet og fleksibilitet.
+## Dypdykk:
+Lesing av argumenter fra kommandolinjen er en vanlig praksis i de fleste programmeringsspråk. Dette ble introdusert for å gi programmerere mulighet til å gi input til et program når det kjøres, i tillegg til å gjøre det mer fleksibelt for å tilpasse programmet til forskjellige situasjoner.
 
-## Se også
-- [Node.js dokumentasjon for process.argv](https://nodejs.org/api/process.html#process_process_argv)
-- [yargs - en npm modul for håndtering av kommandolinjeargumenter](https://www.npmjs.com/package/yargs)
+En alternativ måte å lese argumenter fra kommandolinjen på er å bruke et tredjeparts bibliotek, som for eksempel "yargs". Dette kan gi en mer strukturert og enkel måte å håndtere argumentene på.
+
+Når du leser argumenter fra kommandolinjen i TypeScript, vil argumentene være tilgjengelige i prosessens "argv" array. Det første argumentet i arrayet vil være selve kommandoet som ble brukt for å kjøre programmet, mens de påfølgende argumentene vil være eventuelle input gitt av brukeren.
+
+## Se også:
+- [Dokumentasjon for prosessmodulen i Node.js](https://nodejs.org/api/process.html)
+- [Yargs dokumentasjon](https://github.com/yargs/yargs)

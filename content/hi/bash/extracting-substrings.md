@@ -1,7 +1,7 @@
 ---
-title:                "उपस्थापित सबस्ट्रिंग्स"
-html_title:           "Bash: उपस्थापित सबस्ट्रिंग्स"
-simple_title:         "उपस्थापित सबस्ट्रिंग्स"
+title:                "स्ट्रिंग को निकालना"
+html_title:           "Bash: स्ट्रिंग को निकालना"
+simple_title:         "स्ट्रिंग को निकालना"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Strings"
@@ -10,26 +10,17 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Kyun
-Kya tum kabhi sochte ho ki kisi bade string se chote chote hisse ko extract kaise kiya ja sakta hai? Yeh Bash programming language mein possible hai. Is article mein hum extract substring ki technique ke baare mein jaanenge.
+## क्या और क्यों?
+अगर आप बश प्रोग्रामिंग में नए हैं तो आपने कभी न कभी स्ट्रिंग से उप-स्ट्रिंग्स को निकालने के बारे में सुना होगा। यह काम बेहद आसान हो सकता है लेकिन एक प्रोग्रामर की ज़रूरत होती है क्योंकि उन्हें अक्सर स्ट्रिंग का भाग ही नहीं, बल्कि उस स्ट्रिंग की कुछ अलग-अलग पार्ट्स को ही उपयोग करना होता है।  
 
-## Kaise Karein
+## कैसे करें:
+अगर आपको जानना है कि किस तरह से स्ट्रिंग से उप-स्ट्रिंग्स को निकाला जाता है तो आप बश कोड के अंदर से एक आसान उदाहरण देख सकते हैं। इसके लिए आपको बश कोड ब्लॉक ```Bash ... ``` में दिए गए कोड को देखना होगा।  
+एक सरल उदाहरण है, अगर आपके पास string नाम की एक परिभाषा है जिसमें "Hello World" शब्द शामिल है तो आप उसमे से "Hello" को ही निकालना चाहते हैं। इसके लिए आप बश कोड ब्लॉक में पहले उप-स्ट्रिंग की लंबाई को स्टार्ट और इंडेक्स के माध्यम से डिफ़ाइन करें, और फिर उसे अपनी पसंद के अनुसार प्रिंट करें। यह आसान जैसा कि आप समझ गए होंगे, और ऐसे ही आप किसी भी स्ट्रिंग से उप-स्ट्रिंग्स को निकाल सकते हैं। नीचे दिए गए कोड ब्लॉक में आप इसमें देख सकते हैं:  
 ```Bash
-# Is syntax se hum kisi string ke pehle se dusri position tak ke characters ko extract kar sakte hain.
-${string:position}
-
-# Is syntax se hum string ke ek se zyada positions se characters ko extract kar sakte hain.
-${string:position:count}
+string="Hello World"
+echo ${string:0:5}
 ```
-Is code snippet mein, "string" string ka original string hai, "position" us position ko represent karta hai jahan se extract karna shuru karna hai aur "count" kitne characters extract karna hai. Yeh code snippet sample output ke saath diya gaya hai jis se aap asani se samajh sakte hain ki kaise substring extract kiya jata hai.
+इसका आउटपुट होगा: "Hello" 
 
-## Deep Dive
-Bash mein substring extraction do tarah se kiya ja sakta hai - pehla, kisi position se ek se zyada characters extract karna aur doosra, kisi position se kisi dusri position tak ke characters ko extract karna. Hum in dono methods ko detail mein dekhenge.
-
-Kisi position se ek se zyada characters extract karne ke liye, hum "substring expansion" syntax ka istemal karte hain, jisme `$` ka istemal kiya jaata hai. Saath hi, hum ise `{string:position:count}` mein wrap karte hain. Agar hum position se characters extract karna chahte hain, to position value 0 se shuru ho sakti hai.
-
-Kisi position se kisi dusri position tak ke characters ko extract karne ke liye, hum "substring expansion" syntax mein dono positions ko alag alag dene ke saath "$" aur "{string:position1:position2}" mein wrap karte hain.
-
-## Dekhiye Bhi
-- [Bash Substring Extraction Examples](https://www.tecmint.com/extract-domain-from-url-in-linux/)
-- [Understanding Bash String Manipulation](https://www.linuxjournal.com/content/understanding-bash-string-manipulation)
+## गहराई में जाइए:
+स्ट्रिंग से उसके अलग-अलग उप-स्ट्रिंग्स को निकालने का यह तरीका प्राचीन नहीं है। बश को बनाने के पहले भी, इसमें उप-स्ट्रिंग्स को निकालने की यह सुविधा पहले से ही मौजूद थी। लेकिन सबसे पहले इसका उपयोग केवल पैशन चरित्र (dollar sign) से किया जाता था। कुछ प्रोग्रामर्स ने इस और सुधार करने के लिए बश को बनाया था और अब आप उप-स्ट्रिंग्स को ढूंढने के लिए कई और तरीके भी इस्तेमाल कर सकते हैं। एक उपयोगी तरीका है, कुछ प्रोग्रामिंग भाषाओं की तरह, "grep" कमांड का उपयोग करके उप-स्ट्रिंग्स को ढूंढने का। यदि आप अधिक गहराई में इसके बारे में जानना चाहते हैं तो आप इस बिंदु पर ज

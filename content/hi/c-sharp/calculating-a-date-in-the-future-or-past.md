@@ -1,7 +1,7 @@
 ---
-title:                "भविष्य या भूतकाल में तारीख की गणना"
-html_title:           "C#: भविष्य या भूतकाल में तारीख की गणना"
-simple_title:         "भविष्य या भूतकाल में तारीख की गणना"
+title:                "पीछे या भविष्य में एक तारीख की गणना"
+html_title:           "C#: पीछे या भविष्य में एक तारीख की गणना"
+simple_title:         "पीछे या भविष्य में एक तारीख की गणना"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Dates and Times"
@@ -10,47 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Kyon
+## क्या और क्यों?
 
-Kisi bhi programming language mein, tareekh ko future mein ya past mein calculate karna ek aam kaam hai. Isse hum apne project mein precise date ko use kar sakte hain aur apni application ko advanced aur dynamic bana sakte hain. C# programming language mein bhi tareekh ko calculate karna bahut asaan hai, aur is article mein hum aapko iski jaankari denge.
+किसी भी प्रोग्रामर या डेवलपर के लिए भविष्य में किसी दिन की गणना करना बहुत महत्वपूर्ण हो सकता है। इससे उन्हें अपने कोड की सही गति और समय में काम करने की क्षमता मिलती है। प्रोग्रामर भविष्य में किसी दिन की गणना कर सकते हैं जैसे कि कल, आज से 15 दिन आगे या गतिकी दिनों की गणना भी कर सकते हैं।
 
-## Kaise
-
-Tareekh ko future mein ya past mein calculate karne ke liye, sabse pehle hum DateTime class ka istemaal karenge. Is class mein, hum tareekh ko store aur manipulate kar sakte hain. Sabse pehle, hum DateTime object create karenge, jismein hum current date ko store karenge. Fir hum 'Add' method ka istemaal karke desired value ko add karenge, jaise ki saal, mahina, din ya ghante. Iske baad, humara final date ready ho jayega. Yehi date humein future ya past mein calculate karne ke liye kaam aayega. Neeche diye gaye code snippet mein yeh saari steps ko dikhaya gaya hai:
-
-```C#
-// Create a DateTime object and store the current date
-DateTime today = DateTime.Today;
-
-// Add 1 year to the current date
-DateTime futureDate = today.AddYears(1);
-
-// Print the final date
-Console.WriteLine("Future date: ", futureDate);
-```
-
-**Output:**
+## कैसे करें?
 
 ```
-Future date: 05/04/2022
+ Console.WriteLine(DateTime.Now.AddDays(15));
 ```
 
-Isi tarah, hum kisi bhi desired value ko add karke future ya past date calculate kar sakte hain. Iske alawa, DateTime class mein aur bhi kai useful methods hain, jinhe aap explore kar sakte hain.
+उपरोक्त कोड आपको वर्तमान समय से 15 दिन बाद की तारीख देगा। इसी तरह, आप महीने, साल या अन्य समय अंतराल का भी गणना कर सकते हैं।
 
-## Deep Dive
+```
+Console.WriteLine(DateTime.Now.AddMonths(2));
+```
 
-DateTime class mein, hum tareekh ko manipulate karne ke liye kai useful properties aur methods pa sakte hain. Some of the most commonly used ones are:
+उपरोक्त कोड आपको वर्तमान समय से 2 महीने बाद की तारीख देगा। इसी तरह, आप साल या अन्य समय अंतराल का भी गणना कर सकते हैं।
 
-1. **AddDays()**: Yeh method humein current date mein desired number of days add karne se set karta hai.
-2. **AddMonths()**: Is method ki madad se hum kisi bhi tareekh mein desired number of months add kar sakte hain.
-3. **AddYears()**: Yeh method humein current date mein desired number of years add karne se set karta hai.
-4. **AddHours()**, **AddMinutes()**, **AddSeconds()**: In methods ko use karke hum tareekh mein desired time ko add kar sakte hain.
-5. **DayOfWeek**: Is property ke istemaal se hum kisi bhi tareekh ka din pata kar sakte hain.
+## गहरी जानकारी
 
-Iske alawa, DateTime class mein kai aur methods aur properties hain, jinhe aap internet par search karke aur explore karke apne kaam mein istemaal kar sakte hain.
+पहले से ही प्रोग्रामरों के लिए ये काम बहुत मुश्किल होता था। लेकिन आज बहुत से प्रोग्रामिंग भाषाएं ये अपने लिए बनाई गई फ़ंक्शन से काम आसान बना दी है। 
 
-## See Also
+इस तरह आपको भविष्य में कोड करने के लिए प्रदान किए गए पूरे सॉलूशंस में से एक स्टाइल चुनना हो सकता है। हालांकि, ये आप पर निर्भर करता है कि आप इससे जुड़े किसी भी बाएंडिंग रिक्यूरमेंट को कितना दूरन छोड़ना चाहते हैं।
 
-1. [DateTime Class in C#](https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=net-5.0)
-2. [DateTime Methods in C#](https://www.dotnetperls.com/datetime)
-3. [Calculate Past or Future Date in C#](https://www.c-sharpcorner.com/article/how-to-calculate-past-or-future-dates-in-c-sharp/)
+## इससे जुड़े अन्य स्रोत
+
+इस लेख में, हमने जाना कि किसी भी दिन की गणना करना क्या है और प्रोग्रामर्स इसे क्यों करते हैं। यदि आप इस विषय में और अधिक जानना चाहते हैं तो नीचे दिए गए स्रोतों को जांच सकते हैं। 
+
+- [Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/api/system.datetime.adddays?view=net-5.0)
+- [C# Corner](https://www.c-sharpcorner.com/article/back-to-basics-how-to-format-datetime-in-c-sharp/) 
+- [Stack Overflow](https://stackoverflow.com/questions/378858/a-more-elaborate-way-to-add-day-s-to-a-date)

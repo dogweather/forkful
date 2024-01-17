@@ -1,7 +1,7 @@
 ---
-title:                "Arbeide med yaml"
-html_title:           "Elixir: Arbeide med yaml"
-simple_title:         "Arbeide med yaml"
+title:                "Jobbe med yaml"
+html_title:           "Elixir: Jobbe med yaml"
+simple_title:         "Jobbe med yaml"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Data Formats and Serialization"
@@ -10,65 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hva & Hvorfor?
+ YAML er et format for serialisering av data, som brukes av mange programmerere for å lagre og transportere datastrukturer i en lesbar form. Den er spesielt nyttig for webapplikasjoner og konfigurasjonsfiler.
 
-Å jobbe med YAML kan være nyttig for å lagre og behandle datastrukturer på en enkel og lesbbar måte. Det er også en populær format for konfigurasjonsfiler i mange programmeringsspråk.
-
-## Hvordan
-
-For å arbeide med YAML i Elixir, må du først legge til `:yaml_erl` biblioteket i prosjektet ditt. Deretter kan du bruke funksjonen `YAML.decode/1` for å dekode en YAML-streng til en Elixir-struct.
+## Hvordan:
+Hvis du vil jobbe med YAML i Elixir, kan du bruke biblioteket YamlElixir. Først må du installere biblioteket ved å legge til `{:yaml_elixir, "~> 4.0"}` i `mix.exs` filen din. Deretter kan du konvertere data fra YAML til Elixir ved å bruke `YamlElixir.load/1` funksjonen. For eksempel:
 
 ```Elixir
-require YAML
-yaml = "---\nname: John\nage: 30"
-YAML.decode(yaml) # %{name: "John", age: 30}
+yaml = "- name: Elixir
+  version: 1.12"
+  
+ElixirYaml.load(yaml)
+# => %{name: "Elixir", version: 1.12}
 ```
-
-Å konvertere en Elixir-struct til YAML er like enkelt med `YAML.encode/1`:
+Du kan også konvertere Elixir-data til YAML ved å bruke `YamlElixir.dump/1` funksjonen. For eksempel:
 
 ```Elixir
-user = %{name: "John", age: 30}
-YAML.encode(user) # "---\nname: John\nage: 30"
+data = %{name: "Elixir", version: 1.12}
+
+YamlElixir.dump(data)
+# => "- name: Elixir\n  version: 1.12\n"
 ```
 
-Hvis du trenger å manipulere YAML-data, kan du bruke funksjonene i `YAML.Types`-modulen, for eksempel for å hente en verdi fra en nøkkel:
+## Dypdykk:
+YAML ble utviklet av Ingy döt Net som et alternativ til JSON og XML for å skape et mer leselig format for mennesker. Det er også inspirert av programmeringsspråket Perl. Selv om YAML er populært i mange programmeringsspråk, har det også blitt utsatt for noen sikkerhetsproblemer, så det er viktig å være forsiktig når du bruker det i nettapplikasjoner.
 
-```Elixir
-yaml = "---\nname: John\nage: 30"
-YAML.get(yaml, "name") # "John"
-```
+Alternativt kan du også bruke Elixirs innebygde funksjoner, `:yaml.encode/1` og `:yaml.decode/1`, for å jobbe med YAML-data. Disse funksjonene bruker biblioteket libyaml som standard, som er raskere og mer sikker enn den forrige implementeringen.
 
-## Dypdykk
-
-Et interessant aspekt ved å jobbe med YAML i Elixir er at det gir deg muligheten til å bruke såkalte "custom types". Dette betyr at du kan mappe nestede YAML-strukturer til dine egne Elixir-structs, som kan gjøre det lettere å håndtere komplekse data.
-
-For å opprette et slikt custom type, må du implementere protokollen `YAML.CustomType`. La oss ta et enkelt eksempel med et user-objekt som kan ha flere roller:
-
-```Elixir
-defmodule User do
-  defstruct [:name, :age, roles: []]
-
-  defimpl YAML.CustomType do
-    def decode(%{"name" => name, "age" => age, "roles" => roles}) do
-      %User{name: name, age: age, roles: roles}
-    end
-
-    def encode(%User{name: name, age: age, roles: roles}) do
-      %{"name" => name, "age" => age, "roles" => roles}
-    end
-  end
-end
-```
-
-Nå kan vi bruke `YAML.decode/1` til å konvertere en YAML-streng til en `User`-struct:
-
-```Elixir
-yaml = "---\nname: John\nage: 30\nroles:\n  - admin\n  - editor"
-YAML.decode(yaml) # %User{name: "John", age: 30, roles: ["admin", "editor"]}
-```
-
-## Se også
-
-- [YAML-dokumentasjon](https://yaml.org/)
-- [Elixir-YAML dokumentasjon](https://hexdocs.pm/yaml/readme.html) 
-- [Elixir dokumentasjon](https://hexdocs.pm/elixir/api-reference.html)
+## Se også:
+- YamlElixir dokumentasjon: https://hexdocs.pm/yaml_elixir/4.0.0/readme.html
+- Elixir YAML-API: https://hexdocs.pm/elixir/YAML.html
+- Libyaml dokumentasjon: https://pyyaml.org/wiki/LibYAML

@@ -1,7 +1,7 @@
 ---
-title:                "Sprawdzanie, czy istnieje katalog."
-html_title:           "Haskell: Sprawdzanie, czy istnieje katalog."
-simple_title:         "Sprawdzanie, czy istnieje katalog."
+title:                "Sprawdzanie istnienia folderu"
+html_title:           "Haskell: Sprawdzanie istnienia folderu"
+simple_title:         "Sprawdzanie istnienia folderu"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Files and I/O"
@@ -10,41 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co & Dlaczego?
+Sprawdzanie czy istnieje folder to proces, w którym sprawdzamy czy dana ścieżka na naszym komputerze odpowiada za istnienie folderu. Programiści wykonują tę czynność, aby upewnić się, że ich program działa poprawnie i aby uniknąć błędów związanych z brakiem folderu.
 
-Czy kiedykolwiek zastanawiałeś się, czy dany katalog istnieje w Twoim systemie plików? Jest to ważne pytanie, gdyż może pomóc Ci uniknąć niepotrzebnych błędów w Twoim kodzie. W tym artykule poznamy sposób na sprawdzenie istnienia katalogu w języku Haskell.
-
-## Jak to zrobić
-
-Sprawdzenie istnienia katalogu w języku Haskell jest bardzo proste. Wystarczy użyć funkcji `doesDirectoryExist` z modułu `System.Directory`. Funkcja ta przyjmuje jako argument ścieżkę do katalogu, który chcemy sprawdzić. Poniżej znajduje się przykładowy kod:
-
+## Jak to zrobić:
 ```Haskell
-import System.Directory
+import System.Directory  -- moduł do obsługi operacji na plikach i folderach
 
+main :: IO ()
 main = do
-    exists <- doesDirectoryExist "sciezka/do/katalogu"
-    putStrLn $ "Katalog istnieje: " ++ show exists
+  let path = "ścieżka/do/folderu"  -- zmienna z ścieżką folderu
+  dirExists <- doesDirectoryExist path  -- funkcja sprawdzająca czy folder istnieje
+  if dirExists
+    then putStrLn "Folder istnieje!"
+    else putStrLn "Brak folderu... :("
 ```
 
-Wywołanie funkcji `doesDirectoryExist` zwraca wartość typu `Bool`, więc możemy ją wykorzystać w wyrażeniu `if` do podejmowania odpowiednich działań w zależności od wyniku. Poniżej znajduje się przykładowy kod, który wyświetla komunikat, jeśli katalog istnieje:
+## Głębsze wody:
+1. Kontekst historyczny:
+Sprawdzanie czy istnieje folder było często używaną czynnością w starszych językach programowania, takich jak C i C++, ponieważ nie zawierały one wbudowanych funkcji do obsługi operacji na plikach i folderach.
 
-```Haskell
-import System.Directory
+2. Alternatywy:
+Istnieją inne sposoby na sprawdzenie czy istnieje folder, takie jak użycie biblioteki "System.Directory.Tree". Jednak używanie wbudowanych funkcji jest łatwiejsze i szybsze.
 
-main = do
-    exists <- doesDirectoryExist "sciezka/do/katalogu"
-    if exists
-        then putStrLn "Katalog istnieje"
-        else putStrLn "Katalog nie istnieje"
-```
+3. Szczegóły implementacji:
+Funkcja "doesDirectoryExist" wykorzystuje metodę "stat" systemu operacyjnego, która zwraca informacje o danym pliku lub folderze. Jeśli folder istnieje, metoda zwróci informacje o nim, w przeciwnym razie zwróci błąd.
 
-## Głębsza analiza
-
-Sprawdzenie istnienia katalogu może być również przydatne w przypadku, gdy chcemy upewnić się, że nie usuniemy istniejącego katalogu przy wykonywaniu operacji na plikach. Możemy to osiągnąć wywołując funkcję `doesDirectoryExist` przed wykonaniem operacji.
-
-Warto również wspomnieć, że funkcja `doesDirectoryExist` jest częścią modułu `System.Directory`, który oferuje wiele innych przydatnych funkcji do zarządzania plikami i katalogami w systemie.
-
-## Zobacz także
-
-- [Hackage: System.Directory](https://hackage.haskell.org/package/directory/docs/System-Directory.html)
-- [Stack Overflow: Check if Directory Exists Haskell](https://stackoverflow.com/questions/35522052/check-if-directory-exists-haskell)
+## Zobacz też:
+- [Dokumentacja System.Directory](https://hackage.haskell.org/package/directory/docs/System-Directory.html)
+- [Tutorial o obsłudze folderów w Haskellu](https://www.tutorialspoint.com/haskell/haskell_working_with_files.htm)

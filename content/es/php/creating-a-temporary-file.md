@@ -10,46 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué?
+## ¿Qué y por qué?
 
-Crear un archivo temporal en PHP puede ser útil cuando necesitas almacenar datos temporalmente y no quieres comprometer un archivo permanente en el servidor. Este método también es comúnmente utilizado en pruebas y depuración de código.
+Crear un archivo temporal en PHP es la acción de generar un archivo en el sistema que se utilizará temporalmente para almacenar información. Los programadores pueden necesitar crear estos archivos para realizar operaciones de lectura y escritura de datos de manera más eficiente, ya que los archivos temporales son más sencillos y rápidos de manejar que otros tipos de almacenamiento.
 
 ## ¿Cómo hacerlo?
 
-Para crear un archivo temporal en PHP, puedes utilizar la función `tempnam()` que acepta dos parámetros: el directorio donde quieres que se cree el archivo y un prefijo opcional para el nombre del archivo.
-
 ```PHP
-$archivo_temporal = tempnam('/temp', 'temp_file_');
-echo $archivo_temporal;
+$tempFile = tempnam(sys_get_temp_dir(), 'prefix_'); // Crear un archivo temporal con prefijo
+echo $tempFile; // Imprimir la ubicación del archivo temporal
 ```
 
-El código anterior creará un archivo llamado `temp_file_xxxxxxxxx` en la carpeta `/temp`. El `xxxxxxxxx` corresponderá a un identificador único generado automáticamente por PHP.
-
-Si no especificas un directorio, se utilizará el directorio predeterminado para almacenar archivos temporales del servidor. También puedes utilizar la función `sys_get_temp_dir()` para obtener el directorio predeterminado en tu servidor.
-
-Para escribir datos en el archivo temporal, puedes utilizar la función `fwrite()`:
-
-```PHP
-$archivo_temporal = tempnam(sys_get_temp_dir(), 'temp_file_');
-$archivo = fopen($archivo_temporal, 'w');
-fwrite($archivo, 'Datos de ejemplo');
-fclose($archivo);
-```
-
-Para leer los datos del archivo temporal, puedes utilizar la función `file_get_contents()`:
-
-```PHP
-$datos = file_get_contents($archivo_temporal);
-var_dump($datos);
-```
+La función `tempnam()` de PHP toma dos parámetros: la ruta del directorio temporal del sistema y un prefijo (opcional). Al ejecutarla, se creará un archivo con un nombre aleatorio y se devolverá su ubicación, que se puede almacenar en una variable para su uso posterior. Este archivo se eliminará automáticamente cuando se cierre el script.
 
 ## Profundizando
 
-Es importante tener en cuenta que un archivo temporal creado con `tempnam()` se eliminará automáticamente una vez que el script termine de ejecutarse. Si necesitas que el archivo permanezca para su uso posterior, puedes utilizar la función `tmpfile()` en su lugar.
-
-Además, ten en cuenta que la función `tempnam()` sólo crea el archivo y no lo abre automáticamente. Debes utilizar la función `fopen()` para abrir el archivo y escribir en él.
+Esta práctica se remonta a los primeros días de la informática y aún se utiliza en la programación moderna. Los archivos temporales también son una forma segura de compartir datos entre diferentes aplicaciones y procesos, ya que tienen permisos de acceso restringidos. Además, en lugar de crear un archivo temporal, los programadores también pueden usar funciones como `tempfile()` o `fopen()` para generar un recurso temporal en lugar de un archivo físico.
 
 ## Ver también
 
-- Documentación oficial de PHP sobre la función `tempnam()`: https://www.php.net/manual/es/function.tempnam.php
-- Tutorial sobre cómo crear y trabajar con archivos temporales en PHP: https://www.w3schools.com/php/php_tempnam.asp
+- [Documentación oficial de PHP sobre creación de archivos temporales](https://www.php.net/manual/en/function.tempnam.php)
+- [Uso de archivos temporales en programación](https://www.programmersought.com/article/28058450665/) (en inglés)
+- [Ejemplo de implementación de archivos temporales en una aplicación web](https://medium.com/@colinrubbert/php-tmp-file-security-e5fd4aecc2be/) (en inglés)

@@ -10,42 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Warum
+## Was & Warum?
+Textdateien werden von Programmierern oft genutzt, um strukturierte Daten und Informationen in einfacher Textform zu speichern. Dadurch können sie leichter verarbeitet und verwendet werden. Außerdem sind Textdateien plattformübergreifend kompatibel und können in verschiedensten Programmen geöffnet werden.
 
-Das Schreiben von Textdateien ist eine wichtige Fähigkeit für jeden Swift-Programmierer. Es ermöglicht uns, Daten auf einfache Weise zu speichern und zu verarbeiten, ohne auf spezielle Datentypen oder Komplexität zurückgreifen zu müssen.
+## Wie geht's?
+Das Erstellen einer Textdatei ist in Swift ziemlich einfach. Zunächst müssen wir eine Instanz einer Dateimanager-Klasse erstellen, die für die Verwaltung von Dateien zuständig ist. Dann können wir mit der Funktion `createFile` eine neue Datei erstellen und den Dateipfad sowie den Inhalt angeben. Anschließend müssen wir noch sicherstellen, dass die Datei erfolgreich erstellt wurde.
 
-# Wie geht das?
+ ```Swift
+ let fileManager = FileManager()
+ let filePath = "path/to/file.txt"
+ let content = "Dies ist der Inhalt unserer Textdatei."
+ 
+ fileManager.createFile(atPath: filePath, contents: content.data(using: .utf8), attributes: nil)
+ 
+ // Überprüfen, ob die Datei erfolgreich erstellt wurde
+ if fileManager.fileExists(atPath: filePath) {
+     print("Textdatei erfolgreich erstellt!")
+ } else {
+     print("Fehler beim Erstellen der Datei.")
+ }
+ ```
 
-Um eine Textdatei in Swift zu schreiben, können wir die `String` Klasse verwenden. Mit der `write(to:atomically:encoding:)` Methode können wir einen String direkt in eine Datei schreiben. Hier ist ein Beispielcode:
+Die Funktion `createFile` nimmt als Parameter den Dateipfad, den Inhalt und optionale Attribute entgegen. Mit dem `.data(using: .utf8)` Teil wird der Textinhalt in ein Byte-Array umgewandelt, das vom `createFile`-Parameter erwartet wird.
 
-```Swift
-let text = "Hallo Welt!"
-let fileURL = URL(fileURLWithPath: "output.txt")
-try text.write(to: fileURL, atomically: true, encoding: .utf8)
-```
+## Tief eintauchen
+Das Schreiben von Textdateien ist seit vielen Jahren ein grundlegendes Konzept in der Programmierung. Vor der Verwendung von Datenbanken waren Textdateien die gängigste Methode, um Daten zu speichern. Heutzutage gibt es jedoch Alternativen wie Datenbanken oder andere Dateiformate wie JSON oder XML, die für bestimmte Anwendungsfälle möglicherweise besser geeignet sind.
 
-Mit diesem Code wird der String "Hallo Welt!" in die Datei "output.txt" geschrieben. Der Parameter `atomically` stellt sicher, dass die Datei sicher geschrieben wird und `encoding` gibt an, dass der Text in UTF-8 codiert sein soll.
+Bei der Erstellung von Textdateien in Swift ist es wichtig, den Code sorgfältig zu handhaben, da es keine integrierte Fehlerbehandlung gibt. Es ist also ratsam, den Code in einem `do-catch`-Block auszuführen und Fehler entsprechend zu behandeln.
 
-# Tief einsteigen
-
-Es gibt auch andere Möglichkeiten, eine Textdatei in Swift zu schreiben. Zum Beispiel können wir den `FileManager` verwenden, um eine neue Datei anzulegen und den `OutputStream` verwenden, um den Text in die Datei zu schreiben. Dies bietet mehr Kontrolle über die Schreiboperation und die Dateinamen. Hier ist ein Beispielcode:
-
-```Swift
-let text = "Hallo Welt!"
-let fileURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent("output.txt")
-FileManager.default.createFile(atPath: fileURL.path, contents: nil, attributes: nil)
-if let outputStream = OutputStream(url: fileURL, append: true) {
-    outputStream.open()
-    let bytesWritten = outputStream.write(text, maxLength: text.lengthOfBytes(using: .utf8))
-    print("Bytes geschrieben: \(bytesWritten)")
-    outputStream.close()
-}
-```
-
-Mit diesem Code wird die Textdatei erstellt und der Text wird mithilfe des `OutputStreams` in die Datei geschrieben. Wir können auch die Anzahl der Bytes überwachen, die geschrieben wurden, indem wir die Rückgabe der `write` Methode überprüfen.
-
-# Siehe auch
-
-- [Swift Dokumentation zu Strings](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
-- [Tutorial zu Textverarbeitung in Swift](https://www.raywenderlich.com/147086/text-processing-swift-3)
-- [Kostenloser Swift-Kurs von Apple](https://developer.apple.com/videos/play/wwdc2018/404/)
+## Siehe auch
+- [Apple's Dokumentation zu Textverarbeitung in Swift](https://developer.apple.com/documentation/foundation/filemanager/2293412-createfile)
+- [Ein Tutorial zu Textdateien in Swift mit tiefergehender Erklärung](https://www.hackingwithswift.com/read/14/2/reading-from-and-writing-to-a-file)

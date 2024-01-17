@@ -10,42 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+# What & Why?
+Searching and replacing text is a common task in programming that involves finding a specific pattern within a string of characters and replacing it with another pattern. This is often done to modify code or data to fit a desired format or to fix errors. Programmers do it to automate repetitive tasks, save time, and ensure consistency in their code.
 
-If you've ever had to make a large-scale change in a document or code, you know how tedious it can be to manually search and replace each instance. Luckily, Haskell offers powerful tools for automating this process, making it quick and painless. 
+# How to:
+To search and replace text in Haskell, we can use the `substitute` function from the `Text.Regex.Posix` module. This function takes in a regular expression pattern, the replacement string, and the input string, and returns the modified string.
 
-## How To
+```Haskell
+import Text.Regex.Posix (substitute)
 
-In Haskell, there are two main functions for searching and replacing text: `substitute` and `replace`.
+-- Replace all occurrences of "foo" with "bar" in "foobar123"
+substitute "foo" "bar" "foobar123"  -- Output: "barbar123"
 
-To use `substitute`, first import the `Data.Text` module. Then, use the function by passing in the text you want to replace, the text you want to replace it with, and the target text.
-
-```
-import Data.Text
-substitute "Haskell" "Haskell 2021" "I love Haskell"
-```
-
-The output will be: `"I love Haskell 2021"`, with "Haskell" substituted for "Haskell 2021".
-
-For `replace`, import the `Data.Text.Replace` module and use the function by passing in the text you want to replace, the text you want to replace it with, and the target text. 
-
-```
-import Data.Text.Replace
-replace "dog" "cat" "I have a dog named Max"
+-- Use a regular expression to replace all non-alphabetic characters with "-"
+substitute "[^a-zA-Z]" "-" "abc123def"  -- Output: "abc-def"
 ```
 
-The output will be: `"I have a cat named Max"`, with "dog" replaced with "cat".
+We can also use the `=~` operator to replace text in a more concise way, by specifying the replacement string in the regular expression itself.
 
-## Deep Dive
+```Haskell
+-- Replace all numbers with their respective cubes in "1 2 3"
+"1 2 3" =~ "([0-9]+)" :: String  -- Output: "1 8 27"
+```
 
-Both `substitute` and `replace` are powerful functions, but there are a few key differences between them. 
+# Deep Dive:
+Searching and replacing text has been a fundamental task in programming since the early days of computing, and various methods have been developed over time. In Haskell, the `substitute` function uses POSIX regular expressions, which are powerful tools for string manipulation. However, alternative methods, such as using the `replace` function from the `Data.List.Utils` module or implementing our own custom replace function using recursion, also exist.
 
-Firstly, `substitute` will only replace the first instance of the target text, while `replace` will replace all instances. Additionally, `substitute` is case-sensitive, while `replace` is case-insensitive.
+Internally, the `substitute` function uses the `Text.Regex.Posix.ByteString` module to handle input as bytestrings, which can be more efficient than working with characters directly. Additionally, Haskell's strong type system ensures that our regular expressions are validated at compile time, reducing the chances of runtime errors.
 
-It's also worth noting that both functions operate on `Text` data types, so any input or output will need to be converted to `Text` using the `pack` function. 
-
-## See Also
-
-- [Haskell Documentation on Data.Text](https://hackage.haskell.org/package/text/docs/Data-Text.html)
-- [Haskell Documentation on Data.Text.Replace](https://hackage.haskell.org/package/text-icu-0.7.1/docs/Data-Text-Replace.html)
-- [Tutorial on Pattern Matching in Haskell](https://www.youtube.com/watch?v=AFCJ47ieR00) (relevant for understanding how `replace` works)
+# See Also:
+- [Haskell documentation on searching and replacing text](https://hackage.haskell.org/package/regex-posix-0.96.0.0/docs/Text-Regex-Posix.html#v:substitute)
+- [Tutorial on using regular expressions in Haskell](https://www.schoolofhaskell.com/school/to-infinity-and-beyond/pick-of-the-week/parsing-floats-with-regular-expressions)
+- [Alternative string manipulation methods in Haskell](https://hackage.haskell.org/package/base/docs/Data-String.html)

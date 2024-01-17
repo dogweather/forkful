@@ -10,37 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## למה
+## מה ולמה?
+חיפוש והחלפת טקסט היא פעולה נפוצה בתכנות המשמשת למציאת חלק מסוים של טקסט והחלפתו בחלק אחר. תוכניתיסטים מחפשים ומחליפים טקסט בכדי לתקן שגיאות או לשנות חלקים מסוימים בתוכניות שלהם.
 
-למה לחפש ולהחליף טקסט יכול להיות פעולה חשובה כאשר עובדים עם מסמכים או קוד. החיפוש וההחלפה מסייעים לחפש מחרוזות מסוימות ולהחליף אותן בצורה פשוטה ומהירה.
-
-## איך לעשות זאת
-
-תחילה, חייבים ליצור משתנה מסוג `Regex` כדי לאתר את המחרוזת הרצויה. לדוגמה, אם רוצים למצוא את כל המספרים במחרוזת, ניתן להשתמש בקוד הבא:
+## איך לעשות?
+כדי לחפש ולהחליף טקסט בשפת קוטלין, ניתן להשתמש בפונקציות built-in כגון `replace`, `replaceFirst` ו-`replaceAll` כמו בדוגמאות הבאות:
 
 ```Kotlin
-val regex = Regex("[0-9]+")
-```
+var originalText = "Hello, my name is John"
+var newText = originalText.replace("John", "Jane")
+println(newText)
 
-לאחר מכן, ניתן להשתמש בפעולת החיפוש וההחלפה כדי לחפש ולהחליף מחרוזות בצורה נוחה:
+// Output: Hello, my name is Jane
+```
 
 ```Kotlin
-val result = regex.replace("המספר הוא 1234 והמספר הבא הוא 5678", "מספר חדש")
-println(result) // המספר הוא מספר חדש והמספר הבא הוא מספר חדש
-```
+var originalText = "Hello, my name is John, and I am from England"
+var newText = originalText.replaceFirst("John", "Jane")
+println(newText)
 
-ניתן גם להשתמש בפקודת החיפוש וההחלפה על מחרוזות מרובות באמצעות לולאה:
+// Output: Hello, my name is Jane, and I am from England
+```
 
 ```Kotlin
-val regex = Regex("[0-9]+")
-val input = "המספר הוא 1234 והמספר הבא הוא 5678"
-var result = input
-for (match in regex.findAll(input)) {
-    result = result.replace(match.value, "מספר חדש")
-}
-println(result) // המספר הוא מספר חדש והמספר הבא הוא מספר חדש
+var originalText = "Hello, my name is John, and I am from England"
+var newText = originalText.replaceAll("John", "Jane")
+println(newText)
+
+// Output: Hello, my name is Jane, and I am from England
 ```
 
-## מעמקים
+## חקירה מעמיקה
+חיפוש והחלפת טקסט נמצאים בשימוש רב בתכנות, עם דוגמאות ויצירת קשרים רבים. אחת משימושיותו העיקריות שלו היא למצוא ולתקן שגיאות לתוכניות קיימות, כך שהוא יכול להיות כלי יעיל לפיתוח ותחזוקת תוכניות.
 
-כאשר משתמשים בפעולת החיפוש וההחלפה, כדאי להיות מצולמים בשימוש ביטויים רגולריים כדי לאתר ולהחליף מחרוזות בצורה אפקטיבית יותר. ניתן לקפל ביטוי רגולרי תחת משתנה מסוג `Regex` ולהשתמש בו כל פעם שרוצים לבצע פעולת חיפוש והחלפה. כמו כן, חשוב להיות זהירים כשמבצעים החלפות כפולות כדי לא לשנות את המחרוזת המק
+קיימים גם כמה ביטויי-רגל ודפוסים חוקיים המשמשים לחיפוש והחלפת טקסט. אחד הפתרונות התכנותיים הפופולריים לחיפוש טקסט הוא שימוש בפונקציות מתוך ספריית חיצונית.
+
+במיקור חוץ משימושים נפוצים לחיפוש והחלפת טקסט בתכנות, תוכניתיסטים יכולים להשתמש לעיתים קרובות בשיטת "חיפוש והחלפה לפי כללים" המאפשרת לחלוף על כמה מילים בכל המופיעים בטקסט באופן אוטומטי.
+
+## ראה גם
+- [פונקציות בנויות בשפת קוטלין](https://kotlinlang.org/docs/reference/basic-types.html#strings)
+- [ביטויים רגילים ודפוסים חוקיים](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/replace.html)

@@ -10,35 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+Mitä & Miksi?
 
-Miksi haluaisit ladata verkkosivun? Usein se johtuu siitä, että haluat tallentaa sivun sisällön tulevaa käyttöä varten tai lukea sitä offline-tilassa. Fish Shellilla on helppo tapa tehdä tämä ja tässä artikkelissa näytämme, miten se tehdään.
+Lataaminen web-sivun ohjelmointina tarkoittaa että tiedot sivulta tallennetaan tietokoneelle. Tämä voi olla hyödyllistä esimerkiksi tietojen keräämiseen tai automatisointiin.
 
-## Miten tehdä se Fish Shellilla
+Miten:
 
-Fish Shellilla on sisäänrakennettu komento nimeltä `curl`, joka pystyy lataamaan verkkosivun sisällön ja tallentamaan sen tiedostoon. Seuraava esimerkki näyttää, miten ladataan Githubin etusivu ja tallennetaan se tiedostoon nimeltä "github.html":
-
-```Fish Shell
-curl -o github.html https://github.com
-```
-
-Tämän jälkeen voit avata "github.html" tiedoston selaimessa ja näet Githubin etusivun sisällön. Voit myös määrittää toisen tiedostonimen `curl` komennolle, jos haluat tallentaa sivun eri nimellä.
-
-Voit myös käyttää `curl` komentoa dynaamisesti muuttujien kanssa. Seuraava esimerkki näyttää, miten voit ladata haluamasi sivun ja tallentaa sen tiedostoon, jonka nimi on sama kuin valitun sivun otsikko:
+Fish Shellin avulla voit ladata web-sivun helposti muutamalla rivillä koodia. Käytämme curl-komentoa lähteenä ja tallennamme sivun tiedot muuttujaan "sivu":
 
 ```Fish Shell
-otsikko=(Lataa tämä sivu)
-curl -o "$otsikko.html" https://esimerkkisivu.com
+sivu = curl -s <URL>
 ```
 
-## Syventävää tietoa
+Voimme sitten tulostaa sivun sisällön käyttämällä "echo" komentoa:
 
-`curl` komennolle on saatavilla monia eri argumentteja, joilla voit muokata lataamistasi sivuista. Voit esimerkiksi määrittää, haluatko ladata sivun vain otsikon tai sisällön avulla. Voit lukea lisää näistä mahdollisuuksista `curl` komennon dokumentaatiosta.
+```Fish Shell
+echo $sivu
+```
 
-Voit myös tehdä lisämuokkauksia lataamiisi sivuihin esimerkiksi käyttäen tekstinkäsittelyohjelmia, kuten `sed` tai `awk`. Näin voit poistaa tai muokata sivun sisältöä, ennen kuin tallennat sen tiedostoon.
+Tämä tulostaa kaiken sivun sisällön konsolille. Voit myös tallentaa tiedot tiedostoon käyttämällä "tee" komentoa:
 
-## Katso myös
+```Fish Shell
+tee sivu.html <<< $sivu
+```
 
-- [Fish Shellin dokumentaatio](https://fishshell.com/docs/current/)
-- [`curl` komennon dokumentaatio](https://curl.haxx.se/docs/manpage.html)
-- [Sivun lataaminen ja tallentaminen Bash Shellilla](https://dev.to/akhil/curl-the-best-things-in-life-are-free-42n8) (englanniksi)
+## Syvällistä tietoa:
+
+Lataaminen web-sivun ei ole uusi käsite, mutta se on yleistynyt entisestään nopeiden internetyhteyksien myötä. On myös muita tapoja ladata sivuja, kuten esimerkiksi käyttäen Pythonin "urllib" kirjastoa.
+
+"curl" komento on yleisesti käytössä Unix-järjestelmissä ja tarjoaa useita erilaisia ominaisuuksia, kuten esimerkiksi latausten jatkaminen ja verkkotunnusten tunnistaminen.
+
+## Katso myös:
+
+* [Fish Shell dokumentaatio](https://fishshell.com/docs/current/index.html)
+* [Curl manuaali](https://curl.se/docs/manpage.html)
+* [Urllib dokumentaatio](https://docs.python.org/3/library/urllib.html)

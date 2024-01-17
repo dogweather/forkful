@@ -1,7 +1,7 @@
 ---
-title:                "Obliczanie daty w przyszłości lub w przeszłości"
-html_title:           "Gleam: Obliczanie daty w przyszłości lub w przeszłości"
-simple_title:         "Obliczanie daty w przyszłości lub w przeszłości"
+title:                "Obliczanie daty w przyszłości lub przeszłości"
+html_title:           "Gleam: Obliczanie daty w przyszłości lub przeszłości"
+simple_title:         "Obliczanie daty w przyszłości lub przeszłości"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Dates and Times"
@@ -10,44 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i dlaczego?
 
-Planowanie przyszłości jest ważne dla większości ludzi. Czasami musimy wyznaczyć datę w przyszłości lub w przeszłości dla różnych celów, takich jak rezerwowanie wakacji lub rejestracja na wydarzenia. W tym artykule dowiesz się, jak za pomocą języka programowania Gleam możesz łatwo obliczać daty w przyszłości lub w przeszłości.
+Obliczanie daty w przyszłości lub w przeszłości jest użyteczną umiejętnością, która może być wykorzystana przez programistów w różnych sytuacjach. Pozwala na obliczanie dat, które znajdują się na pewnej odległości od aktualnej daty, co jest przydatne w różnych aplikacjach, takich jak kalendarze lub przypomnienia.
 
-## Jak to zrobić
+## Jak to zrobić:
 
-Aby obliczyć datę w przyszłości lub w przeszłości w języku Gleam, musisz użyć biblioteki `time` dostępnej w standardowej bibliotece. Najpierw musisz zaimportować bibliotekę za pomocą `import time`.
-
-### Obliczanie daty w przyszłości
-
-Aby obliczyć datę w przyszłości, musisz podać datę początkową oraz ilość wybranych jednostek czasu, jakie chcesz dodać do tej daty. Na przykład, jeśli chcesz dodać 10 dni do dzisiejszej daty, możesz użyć następującego kodu:
+Obliczenie daty w przyszłości lub w przeszłości w języku Gleam jest proste i wymaga użycia modułu `Time`. Poniżej przedstawione są dwa przykłady, jeden wyliczający datę w przyszłości, a drugi w przeszłości.
 
 ```Gleam
-let dzisiaj = Time.now()
-let dzien = Time.days(10)
-let przyszla_data = Time.add(dzisiaj, dzien)
+import Gleam.Time
+
+// Obliczenie daty 7 dni od aktualnej
+let future = Time.add_days(7, Time.now())
+
+// Obliczenie daty 3 miesiące przed aktualną
+let past = Time.sub_months(3, Time.now())
+
+// Wypisanie wyników
+IO.println("W przyszłości: " ++ Time.format(future))
+IO.println("W przeszłości: " ++ Time.format(past))
 ```
 
-W powyższym przykładzie używamy funkcji `Time.days()` do określenia liczby dni oraz funkcji `Time.add()` do dodania tych dni do dzisiejszej daty. Wynik zostanie zapisany w zmiennej `przyszla_data`.
+Kod wyżej wykorzystuje funkcję `add_days` i `sub_months` z modułu `Time` do obliczenia daty w przyszłości i przeszłości. Następnie wykorzystywana jest funkcja `format` do sformatowania wyników do czytelniejszej postaci.
 
-### Obliczanie daty w przeszłości
+## Deep Dive:
 
-Podobnie jak w przypadku obliczania daty w przyszłości, musisz podać datę początkową oraz ilość wybranych jednostek czasu, jakie chcesz odjąć od tej daty. Na przykład, jeśli chcesz odjąć 5 tygodni od dzisiejszej daty, możesz użyć następującego kodu:
+Funkcje `add_days` i `sub_months` w języku Gleam wykorzystują bibliotekę standardową Erlanga do obsługi dat. W tym języku, daty są reprezentowane jako liczba milisekund od 1 stycznia 1970 roku. Dzięki temu funkcje te są wydajne i nie muszą wykonywać skomplikowanych obliczeń.
 
-```Gleam
-let dzisiaj = Time.now()
-let tydzien = Time.weeks(5)
-let przeszla_data = Time.sub(dzisiaj, tydzien)
-```
+Alternatywą dla użycia biblioteki standardowej w języku Gleam jest wykorzystanie biblioteki `date-time`, która oferuje więcej funkcji do obsługi dat i jest często wybierana przez programistów, którzy potrzebują zaawansowanych operacji na datach.
 
-W powyższym przykładzie używamy funkcji `Time.weeks()` do określenia liczby tygodni oraz funkcji `Time.sub()` do odjęcia tych tygodni od dzisiejszej daty. Wynik zostanie zapisany w zmiennej `przeszla_data`.
+## Zobacz też:
 
-## Deep Dive
-
-Biblioteka `time` oferuje również inne przydatne funkcje, takie jak obliczanie różnicy między dwoma datami, formatowanie daty w wybranym formacie oraz przekształcanie daty do innej strefy czasowej. Więcej informacji na ten temat znajdziesz w [dokumentacji biblioteki](https://gleam.run/libraries/time).
-
-## See Also
-
-- [Oficjalna strona języka Gleam](https://gleam.run/)
-- [Dokumentacja języka Gleam](https://gleam.run/docs/)
-- [Repozytorium Github biblioteki time](https://github.com/gleam-lang/time)
+- Dokumentacja języka Gleam: http://gleam.run/
+- Dokumentacja biblioteki `date-time`: https://hexdocs.pm/date_time/
+- Strona internetowa projektu Erlang: https://www.erlang.org/

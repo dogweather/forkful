@@ -1,7 +1,7 @@
 ---
-title:                "Att arbeta med csv"
-html_title:           "TypeScript: Att arbeta med csv"
-simple_title:         "Att arbeta med csv"
+title:                "Arbeta med csv"
+html_title:           "TypeScript: Arbeta med csv"
+simple_title:         "Arbeta med csv"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Data Formats and Serialization"
@@ -10,75 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
 
-Det finns många tillfällen då vi behöver hantera stora datamängder i våra mjukvaruprojekt. Att använda Comma Separated Values (CSV) filer ger oss en enkel och effektiv metod för att hantera sådan data. Med hjälp av TypeScript kan vi enkelt läsa, skriva och manipulera CSV filer i våra program.
+Att arbeta med CSV är en vanlig uppgift för programmerare. CSV står för "Comma Separated Values" och är ett filformat som används för att lagra tabellinformation. Det är vanligt att använda CSV för att importera eller exportera data från databaser eller arbetsblad.
 
-## Hur man använder TypeScript för att hantera CSV
+## Så här gör du:
 
-För att kunna arbeta med CSV filer i TypeScript behöver vi installera och importera ett externt bibliotek som heter "csv-parser". Efter installationen kan vi använda följande kod för att läsa in en CSV fil och spara data i en variabel:
+Här är ett enkelt exempel på hur du kan arbeta med CSV i TypeScript:
 
 ```TypeScript
-import * as csv from 'csv-parser'; 
+// Importera paketet för att arbeta med CSV
+import * as csv from 'csv-parser';
+// Här importerar vi även "fs" - modulen för att läsa och skriva filer
+import * as fs from 'fs';
 
+// Skapa en ny tom array för att lagra vår data
 let data = [];
+// Använd "fs" för att läsa in vår CSV-fil
 fs.createReadStream('minfil.csv')
-    .pipe(csv())
-    .on('data', (row) => {
-        data.push(row);
-    })
-    .on('end', () => {
-        console.log('Data från CSV filen: ', data);
-    });
+  .pipe(csv()) // Konvertera filen till ett objekt som vi kan arbeta med
+  .on('data', (row) => { // Loopa igenom varje rad i filen
+    data.push(row); // Lägg till raden i vår array
+  })
+  .on('end', () => { // När läsningen är klar
+    console.log(data); // Skriv ut vår datarray
+  });
 ```
 
-Om vi till exempel har en CSV fil med titlar och författare av böcker, kommer outputen att se ut såhär:
+Exempel på utskrift av vår datarray:
 
 ```
-Data från CSV filen: 
 [
-    { title: 'Mästerdetektiven Blomkvist', author: 'Astrid Lindgren' }, 
-    { title: 'Fangirl', author: 'Rainbow Rowell' }, 
-    { title: 'Harry Potter och den vises sten', author: 'J.K. Rowling' }
+  { namn: 'Anna', ålder: '26', yrke: 'programmerare' },
+  { namn: 'Erik', ålder: '32', yrke: 'designer' },
+  { namn: 'Sara', ålder: '24', yrke: 'marknadsförare' }
 ]
 ```
 
-För att skriva data till en CSV fil använder vi en annan metod från biblioteket "csv-writer". Nedan är ett exempel på hur vi kan spara data från en array till en CSV fil:
-
-```TypeScript
-import * as fs from 'fs';
-import * as csvWriter from 'csv-writer';
-
-let data = [
-    { name: 'Johan', age: 35 }, 
-    { name: 'Anna', age: 29 }, 
-    { name: 'Erik', age: 42 }
-];
-
-const writer = csvWriter.createObjectCsvWriter({
-    path: 'allaPersoner.csv',
-    header: [
-        {id: 'name', title: 'Namn'},
-        {id: 'age', title: 'Ålder'}
-    ]
-});
-
-writer.writeRecords(data)
-    .then(() => {
-        console.log('Data från arrayen sparades i CSV filen');
-    });
-```
-
-Detta kommer att skapa en CSV fil med namn och ålder för varje person i arrayen.
-
 ## Djupdykning
 
-När vi arbetar med CSV filer är det viktigt att förstå hur data lagras och hanteras. CSV filer är baserade på tabeller där varje rad representerar en post och varje kolumn representerar en specifik attribut eller egenskap för denna post. Det är också viktigt att hålla koll på olika separatorer som används i olika CSV filer (kommatecken, punkter, semikolon etc.) och att anpassa vår kod efter detta.
+CSV-formatet utvecklades på 1970-talet som ett sätt att lagra data i tabellform. Det är ett vanligt format för att importera och exportera data från olika program och plattformar. Alternativ till CSV inkluderar JSON och XML, men CSV är fortfarande ett populärt val för enkla datatyper.
 
-Ett annat sätt att hantera CSV filer är att använda en databas där vi kan importera CSV filen och utföra SQL-frågor på datan. Detta kan vara ett effektivt sätt att hantera stora datamängder och genomföra avancerade analyser.
+Implementationen av att arbeta med CSV i TypeScript är enkel tack vare paketet "csv-parser" som gör det möjligt att läsa och konvertera CSV-filer till användbara objekt för programmering.
 
-## Se också
+## Se även
 
-- [csv-parser bibliotek](https://www.npmjs.com/package/csv-parser)
-- [csv-writer bibliotek](https://www.npmjs.com/package/csv-writer)
-- [Official TypeScript hemsida](https://www.typescriptlang.org/)
+- [Csv-parser på npm](https://www.npmjs.com/package/csv-parser)
+- [Wikipedia-artikel om CSV](https://sv.wikipedia.org/wiki/CSV)
+- [Exempelkod för att arbeta med CSV i TypeScript](https://github.com/tylerlong/csv-parser/blob/master/examples/typescript.ts)

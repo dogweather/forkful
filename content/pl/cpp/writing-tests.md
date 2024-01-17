@@ -10,45 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i dlaczego?
 
-Sprawdzanie kodu jest nieodłączną częścią procesu programowania. Pomaga zapewnić, że nasz kod działa prawidłowo i jest odporny na błędy. Pisząc testy, możemy również szybko wykryć i naprawić potencjalne problemy w kodzie.
+Pisanie testów jest często uciążliwym, ale niezbędnym elementem pracy programisty. Testy polegają na tworzeniu specjalnych fragmentów kodu, które sprawdzają, czy inne części kodu działają poprawnie. Robimy to po to, aby upewnić się, że nasz program działa zgodnie z oczekiwaniami i aby uniknąć błędów w przyszłości.
 
-## Jak to zrobić
-
-Aby napisać testy w C++, musimy skorzystać z biblioteki do testowania. Jednym z najpopularniejszych wyborów jest biblioteka Google Test. Zobaczmy przykładowy test sprawdzający poprawność dodawania dwóch liczb całkowitych:
+## Jak to zrobić:
 
 ```C++
-#include <gtest/gtest.h> // dołączanie biblioteki do projektu
+#include <iostream>
 
-// definicja testu
-TEST(AddTest, Positive) {
-  // przygotowanie testowych danych
-  int x = 5;
-  int y = 10;
-
-  // wywołanie funkcji do przetestowania
-  int result = x + y;
-
-  // sprawdzenie poprawności wyniku
-  ASSERT_EQ(result, 15);
+// Przykładowa funkcja, którą będziemy testować
+int dodaj(int a, int b) {
+  return a + b;
 }
 
-// uruchomienie testów
-int main(int argc, char** argv) {
-  ::testing::InitGoogleTest(&argc, argv);
-  return RUN_ALL_TESTS();
+int main() {
+  // Przykładowe testy dla funkcji dodaj
+  std::cout << "Test 1: " << (dodaj(2, 3) == 5 ? "PASSED" : "FAILED") << std::endl;
+  std::cout << "Test 2: " << (dodaj(-1, 5) == 4 ? "PASSED" : "FAILED") << std::endl;
+  std::cout << "Test 3: " << (dodaj(0, 0) == 0 ? "PASSED" : "FAILED") << std::endl;
+  return 0;
 }
 ```
 
-W powyższym przykładzie tworzymy test o nazwie "AddTest", który sprawdza poprawność dodawania dwóch liczb. Korzystając z funkcji "ASSERT_EQ", porównujemy wynik działania naszej funkcji z oczekiwanym rezultatem. Jeśli wyniki się nie zgadzają, test zostanie zakończony niepowodzeniem.
+### Przykładowy wynik (output):
+```
+Test 1: PASSED
+Test 2: PASSED
+Test 3: PASSED
+```
 
-## Deep Dive
+## Głębsze spojrzenie:
 
-Pisanie testów jest częścią podejścia zwinnego do programowania, ponieważ pomaga nam w szybkim wykrywaniu i naprawianiu błędów. Gdy testy są napisane i działają poprawnie, mamy większą pewność, że zmiany wprowadzane w kodzie nie powodują nieoczekiwanych efektów ubocznych. Dzięki temu nasz kod jest bardziej niezawodny i łatwiej go rozwijać.
+Pisanie testów jest stosunkowo nowym podejściem w programowaniu. Do niedawna wyłącznym sposobem sprawdzania poprawności kodu była ręczna weryfikacja przez programistę. Istnieją również inne metody testowania, takie jak testowanie manualne, ale są one mniej efektywne i bardziej podatne na błędy.
 
-## Zobacz także
+Pisanie testów może być zaburzające dla programisty, ponieważ wymaga dodatkowego czasu i wysiłku. Jednak jest to inwestycja, która zwraca się w przyszłości, ponieważ pomaga w unikaniu błędów i ułatwia rozwój i utrzymanie aplikacji.
 
-- [Dokumentacja biblioteki Google Test](https://github.com/google/googletest)
-- [Tutorial o pisaniu testów w C++](https://www.youtube.com/watch?v=zYK6pJJipno)
-- [Książka "Test Driven Development for Embedded C"](https://pragprog.com/book/jgade/test-driven-development-for-embedded-c)
+## Zobacz również:
+
+- [The Importance of Writing Tests in Software Development](https://www.freecodecamp.org/news/what-are-software-tests-and-why-are-they-important/)
+- [Benefits of Test-Driven Development](https://dzone.com/articles/test-driven-development-tdd-the-benefits-of-test)

@@ -10,51 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## O co chodzi i dlaczego?
+W Go (aktualna wersja), sprawdzanie czy dany katalog istnieje jest procesem, w którym programista stwierdza, czy dana ścieżka do katalogu jest dostępna w systemie plików. Jest to ważne w celu zapewnienia poprawnego działania programu, np. przy odczytywaniu lub zapisywaniu plików.
 
-Wielu programistów ceni sobie porządek i kontrolę nad swoimi plikami i folderami. Sprawdzenie, czy dany folder istnieje, może zapobiec nieprzewidzianym błędom i warto mieć tę umiejętność w swoim zestawie narzędzi. 
-
-## Jak to zrobić?
-
-W Go istnieje prosty sposób na sprawdzenie istnienia folderu. Wystarczy użyć funkcji `os.Stat()` i przekazać jej ścieżkę do poszukiwanego folderu. Następnie, możemy sprawdzić, czy zwrócony przez funkcję wynik nie jest równy `nil`. Jeśli nie, to oznacza, że folder istnieje. 
+## Jak to zrobić:
+Sprawdzenie czy katalog istnieje w Go jest bardzo proste. Można to zrobić przy użyciu funkcji `os.Stat()` i sprawdzenia czy występuje błąd przy próbie dostępu do ścieżki. Poniżej przedstawiony jest przykład kodu oraz ewentualne wyjście.
 
 ```Go
-folderPath := "/sciezka/do/folderu"
-_, err := os.Stat(folderPath)
+package main
 
-if err == nil {
-    fmt.Println("Folder istnieje")
-} else {
-    fmt.Println("Folder nie istnieje")
+import (
+	"fmt"
+	"os"
+)
+
+func main() {
+
+	// podaj ścieżkę do sprawdzenia
+	path := "ściezka/do/katalogu"
+
+	// sprawdź czy ścieżka istnieje przy użyciu os.Stat()
+	if _, err := os.Stat(path); err == nil {
+		// katalog istnieje
+		fmt.Println("Katalog istnieje!")
+	} else {
+		// wystąpił błąd lub katalog nie istnieje
+		fmt.Println("Katalog nie istnieje lub wystąpił błąd.")
+	}
 }
 ```
 
-Przykładowy output, jeśli folder istnieje:
-
+### Przykładowe wyjście:
 ```
-Folder istnieje
-```
-
-Jeśli chcemy również sprawdzić, czy folder jest plikiem lub linkiem symbolicznym, możemy użyć funkcji `os.IsDir()`. Przykładowy kod wykorzystujący obie funkcje wyglądałby następująco:
-
-```Go
-folderPath := "/sciezka/do/folderu"
-fileInfo, err := os.Stat(folderPath)
-
-if err == nil && fileInfo.IsDir() {
-    fmt.Println("To jest folder")
-} else {
-    fmt.Println("To nie jest folder")
-}
+Katalog istnieje!
 ```
 
-## Deep Dive
+## Pogłębione zagadnienia:
+Sprawdzanie czy katalog istnieje to stosunkowo prosta operacja, ale warto mieć na uwadze trochę pogłębionych informacji na ten temat. Przede wszystkim, funkcja `os.Stat()` ma także swoje odpowiedniki w innych językach programowania, np. `file_exists()` w PHP czy `exists()` w Pythonie. Ponadto, można także użyć innej funkcji w Go, mianowicie `os.IsNotExist()`, która sprawdzi czy dany błąd jest spowodowany brakiem istnienia pliku lub katalogu. Warto także pamiętać, że nie tylko katalogi można sprawdzać w ten sposób, ale także pliki.
 
-Funkcja `os.Stat()` korzysta z systemowej komendy `stat` i zwraca strukturę `os.FileInfo`, która zawiera informacje o pliku lub folderze, m.in. nazwę, rozmiar, czas ostatniej modyfikacji. 
-Funkcja `os.IsDir()` jest wygodnym sposobem na sprawdzenie, czy dany plik jest folderem, ponieważ w przypadku gdy przekażemy jej jako argument wynik funkcji `os.Stat()`, nie musimy samodzielnie parsować zwróconej struktury.
-
-## Zobacz też
-
-- [Dokumentacja funkcji os.Stat](https://golang.org/pkg/os/#Stat)
-- [Dokumentacja funkcji os.IsDir](https://golang.org/pkg/os/#IsDir)
-- [Poradnik o pracy z plikami i folderami w Go](https://tutorialedge.net/golang/go-working-with-files/)
+## Zobacz także:
+- Dokumentacja funkcji `os.Stat()` w języku Go: https://golang.org/pkg/os/#Stat
+- Inne sposoby na sprawdzanie istnienia katalogów w Go: https://golang.org/pkg/os/#example_File_nameIsDirectory
+- Poradnik na temat operacji na plikach i katalogach w języku Go: https://golang.org/doc/tutorials/io/

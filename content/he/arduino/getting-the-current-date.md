@@ -1,7 +1,7 @@
 ---
-title:                "לקבל את התאריך הנוכחי"
-html_title:           "Arduino: לקבל את התאריך הנוכחי"
-simple_title:         "לקבל את התאריך הנוכחי"
+title:                "קבלת התאריך הנוכחי"
+html_title:           "Arduino: קבלת התאריך הנוכחי"
+simple_title:         "קבלת התאריך הנוכחי"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Dates and Times"
@@ -10,43 +10,63 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## למה
+# מה ולמה? 
+מקבל התאריך הנוכחי היא הפעולה של קבלת התאריך הנוכחי ממחשב או מכשיר אלקטרוני והצגתו. מתכנתים מבצעים אותה על מנת להשתמש בזמן נוכחי עבור יישומים שונים, כגון תזכורות יומניות ושעון חכם.
 
-אנחנו חיים בעולם ממוגָּבֶה בטכנולוגיות חדשות ומתקדמות מדי יום. אחד החדשות הכי מרתקים היא איזה דברים אנחנו יכולים לעשות עם קוד. מכאן מגיע לנו שאלת למה אנחנו רוצים לדעת כיצד להפעיל את הקוד שלנו ולקבל את התוצאות הרצויות. במאמר הזה, אנחנו נדבר על כיצד לכתוב קוד בעזרת הארדווינו הנוכחי לקבלת התאריך הנכון.
+## איך לבצע: 
+באמצעות כרטיס הקעקוע Arduino, ניתן לקבל את התאריך הנוכחי בקלות. ניתן לעשות זאת באמצעות המודול RTC (ריאל טיים מכניסה), שמאפשר לקרוא ולרשום את התאריך הנוכחי וטמפרטורת הסביבה. להלן דוגמה של קוד כיצד לקבל את התאריך הנוכחי:
 
-## איך לעשות זאת
+```arduino
+#include <RTClib.h>
 
-הארדווינו מספק מגוון רחב של ספריות ופונקציות לשימוש. אחת מהן היא הפונקציה "millis()", שמחזירה את הזמן הנוכחי במילישניות (כלומר, אלפיות שנייה). באמצעות פונקציה זו, אנחנו יכולים לחשב את כמות המילישניות שעברו מתאריך מסוים, ומכאן לחשב את התאריך הנוכחי. לדוגמה:
+RTC_DS3231 rtc;
 
+void setup() {
+  Serial.begin(9600);
+  
+  if (! rtc.begin()) {
+    Serial.println("Couldn't find RTC");
+    while (1);
+  }
+  
+  if (rtc.lostPower()) {
+    Serial.println("RTC lost power, let's set the time!");
+    rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
+  }
+}
+
+void loop() {
+  DateTime now = rtc.now();
+  
+  Serial.print(now.year(), DEC);
+  Serial.print('/');
+  Serial.print(now.month(), DEC);
+  Serial.print('/');
+  Serial.print(now.day(), DEC);
+  Serial.print(" (");
+  Serial.print(daysOfTheWeek[now.dayOfTheWeek()]);
+  Serial.print(") ");
+  Serial.print(now.hour(), DEC);
+  Serial.print(':');
+  Serial.print(now.minute(), DEC);
+  Serial.print(':');
+  Serial.print(now.second(), DEC);
+  Serial.println();
+  
+  delay(5000);
+}
 ```
-Arduino millis() קוד: 
 
-unsigned long currentTime = millis();
-unsigned long pastTime = 1613038800000;
+כאשר הקוד יורץ, תוצג הודעה של התאריך הנוכחי בפורמט הבא:
 
-unsigned long secondsDiff = (currentTime - pastTime)/1000;
-unsigned long minutesDiff = secondsDiff/60;
-unsigned long hoursDiff = (minutesDiff/60)%24;
+2021/8/16 (Monday) 14:01:25
 
-// חישוב התאריך הנוכחי מתוך הזמן החלף
-unsigned long currentDay = (hoursDiff/24)%31 + 1; // חשיבה כי יש 31 ימים בחודש
+## חקירה מעמיקה: 
+כבר מאז תחילת תקופת המחשבים, התאריכים והשעות היו נחשבים לחלק חשוב בתוכניות ויישומים. בתחילתם של מחשבים אלקטרוניים, הייתה צורך לקבל תאריך נכון על מנת לבצע תהליכי תאי דגימה. בשנים האחרונות, עם עלייתם של שעונים חכמים וכרטיסי קעקוע כמו Arduino, קבלת התאריך הנוכחי הפכה לנוחה ופשוטה יותר.
 
-// כאן ניתן לחשב גם את החודש ושנת התאריך הנוכחי לפי הצורך
+## ראה גם: 
+ראה את הקישורים הבאים למידע נוסף על כיצד לקבל את התאריך הנוכחי בכלי תכנות Arduino: 
 
-
-// תצוגת התאריך הנוכחי במסך הסיריאל מוניטור
-Serial.print("התאריך הנוכחי הוא: ");
-Serial.print(currentDay);
-Serial.print(" במחזור החודש");
-
-```
-
-פלט צפוי:
-
-```
-התאריך הנוכחי הוא: 10 במחזור החודש
-```
-
-## לכנות לעומק
-
-כעת שאנחנו כבר ראינו איך לחשב את התאריך הנכון בעזרת הפונקציה "millis()", חשוב להבין שבאמצעות טכנולוגיות חדשות כמו ארד
+- [תיעוד של פונקציות DateTime באתר Arduino](https://www.arduino.cc/en/Reference/DateTime)
+- [מדריך למודול RTC באתר Random Nerd Tutorials](https://randomnerdtutorials.com/guide-to-ds3231-real-time-clock-rtc-with-arduino/)
+- [מדריך להשתמש בזמן נוכחי עם כרטיס קעקוע באתר Howduino](https://howduino.tumblr.com/post/13538877476/545-kicking-it-all-off-disscussion-main-title)

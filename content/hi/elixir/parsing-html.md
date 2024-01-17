@@ -1,7 +1,7 @@
 ---
-title:                "HTML को विश्लेषण करना"
-html_title:           "Elixir: HTML को विश्लेषण करना"
-simple_title:         "HTML को विश्लेषण करना"
+title:                "HTML को विभाजन करना"
+html_title:           "Elixir: HTML को विभाजन करना"
+simple_title:         "HTML को विभाजन करना"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "HTML and the Web"
@@ -10,27 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
+## क्या और क्यों?
+HTML पार्सिंग क्या है और क्यों कई प्रोग्रामर इसे करते हैं इसके बारे में जानने के लिए इस आलेख को पढ़ें।
 
- Web से डेटा को एक डेटा हस्तक्षेप के रूप में आपस में जोड़ने की आवश्यकता के लिए आप कभी-कभी HTML को अन्यता मानचित्रण की आवश्यकता होती है।
- 
-## कैसे
+## कैसे करें:
+इलिक्सर में HTML पार्सिंग के कुछ उदाहरण और उसका आउटपुट नीचे दिए गए कोड ब्लॉक में दिए गए है।
 
 ```elixir
-html = "<div><p>Hello, World!</p></div>"
-parsed_html = Floki.parse(html)
-title = Floki.find(parsed_html, "div p")
-IO.puts title
+# input HTML string
+html_string = "<p>Hello World!</p>"
+
+# parsing HTML using Floki library
+html_parsed = Floki.parse(html_string)
+
+# accessing the parsed elements
+Floki.find(html_parsed, "p") |> Floki.text()
 ```
 
-इस उदाहरण के साथ, हमने HTML से टैग `<div><p>Hello, World!</p></div>` को ` parsed_html` में संग्रहीत करके HTML-डोम पर संगठन और औसत भाषा उपनिषद को प्राप्त किया। हमने परिणाम के रूप में "Hello, World!" छपाया।
+आउटपुट:
+"Hello World!"
 
-## गहराई में जाएं
+## गहराई तक:
+ऐतिहासिक परिस्थितियों, विकल्प और HTML पार्सिंग के बारे में कुछ महत्वपूर्ण जानकारियां भी हमारे पास हैं। HTML पार्सिंग या एम्बीडेड कोड को प्रोसेस करने के लिए अन्य विकल्पों के समान, इलिक्सर भी इसके लिए आसान और अनुकूल इलिक्सर प्रोग्रामिंग भाषा है। HTML पार्सिंग का एक पात्र और निराशाजनक उदाहरण हमारे वेब ब्राउजर है, जो हर HTML पेज को पार्स करता है और आपको प्रदर्शित करता है।
 
-HTML भाषा अत्यधिक विस्तृत और उपयोगी हो सकती है, और Elixir में पार्सिंग HTML करने के साथ-साथ आपको अन्य पाठ्यकार निर्माण वस्तुओं, विचारों, और पारिस्थितिकी धारणाओं के बारे में सीख सकते हैं।
+## आगे देखें:
+अगर आपको HTML पार्सिंग समझने में और और जानकारी चाहिए तो आप इन लिंक्स को देख सकते हैं:
 
-## देखिये भी
-
-- [Elixir डोम के रूप में HTML पार्स करने का विस्तृत ट्यूटोरियल](https://hexdocs.pm/floki/api-reference.html)
-- [Elixir भाषा का मूल ज्ञान प्राप्त करें](https://elixir-lang.org/getting-started/introduction.html)
-- [HTML भाषा का संस्करण-सिरोहित शिक्षण प्रणाली](https://www.w3schools.com/html/)
+1. [Elixir के ऑफिशियल डॉक्यूमेंटेशन](https://elixir-lang.org/getting-started/introduction.html)
+2. [Floki लाइब्रेरी की वेबसाइट](https://hexdocs.pm/floki/api-reference.html)
+3. [HTML पार्सिंग के विभिन्न तरीके](https://dzone.com/articles/parsing-html-using-elixir)
+4. [Elixir के बारे में और अधिक जानकारी](https://www.tutorialspoint.com/elixir/index.htm)

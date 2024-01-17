@@ -1,7 +1,7 @@
 ---
-title:                "Надсилання http-запиту"
-html_title:           "C++: Надсилання http-запиту"
-simple_title:         "Надсилання http-запиту"
+title:                "Надсилання http запиту"
+html_title:           "C++: Надсилання http запиту"
+simple_title:         "Надсилання http запиту"
 programming_language: "C++"
 category:             "C++"
 tag:                  "HTML and the Web"
@@ -10,40 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Чому
-Якщо ви займаєтеся розробкою веб-сайтів або додатків, то, ймовірно, ви зіткнулися з необхідністю відправляти HTTP-запити. Це є важливою частиною створення зв'язку між клієнтом та сервером, тому що за допомогою HTTP-запиту можна отримувати та відправляти дані.
+## Що & Чому?
 
-## Як
+Відправлення HTTP-запиту означає відправлення запиту до веб-сервера за допомогою протоколу HTTP. Це один зі способів зв'язку програм зі світом Інтернету. Програмісти виконують це для отримання даних з веб-сервера або для взаємодії з веб-додатками.
+
+## Як:
+
 ```C++
-#include <iostream>
-#include <sstream>
+// Приклад відправлення HTTP GET запиту за допомогою бібліотеки curl
 #include <curl/curl.h>
 
-int main() {
-    CURL *curl;
-    CURLcode res;
-    std::string url = "https://www.example.com"; // замініть на свій URL
-    curl = curl_easy_init();
-    if (curl) {
-        // Налаштування запиту
-        curl_easy_setopt(curl, CURLOPT_URL, url.c_str());
-        // Виконання запиту
-        res = curl_easy_perform(curl);
-        // Перевірка на помилки
-        if (res != CURLE_OK)
-            std::cerr << "Помилка при виконанні запиту: " << curl_easy_strerror(res) << std::endl;
-        // Закриваємо ресурси
-        curl_easy_cleanup(curl);
-    }
-    return 0;
+int main() 
+{
+  CURL *curl;
+  CURLcode res;
+  
+  // Створення нового об'єкту для виконання запитів
+  curl = curl_easy_init();
+  if(curl) 
+  {
+    // Встановлення адреси запиту 
+    curl_easy_setopt(curl, CURLOPT_URL, "https://www.example.com");
+    // Встановлення параметрів запиту
+    curl_easy_setopt(curl, CURLOPT_FOLLOWLOCATION, 1L);
+    
+    // Виконання запиту та отримання результату
+    res = curl_easy_perform(curl);
+  }
+  
+  // Перевірка результату виконання
+  if(res != CURLE_OK)
+    fprintf(stderr, "curl_easy_perform() failed: %s\n", curl_easy_strerror(res));
+  
+  // Закриття об'єкту
+  curl_easy_cleanup(curl);
+  
+  return 0;
 }
 ```
-Щоб відправити HTTP-запит за допомогою C++, потрібно використовувати бібліотеку libcurl. У коді ми створюємо змінну `curl`, щоб ініціалізувати бібліотеку і налаштовуємо запит за допомогою функції `curl_easy_setopt()`. Після цього запит виконується за допомогою функції `curl_easy_perform()`. При виникненні помилок, виводимо їх на екран. Не забудьте додати бібліотеку `curl` до свого проекту.
 
-## Глибокий занурення
-Лібcurl надає багато можливостей для налаштування запиту. Наприклад, ви можете встановити метод запиту (`GET`, `POST`, `PUT` тощо), додати заголовки, параметри та тіло запиту. Також можна встановити час очікування відповіді сервера та обробляти різні коди відповіді. Для докладнішої інформації про можливості libcurl, звертайтеся до документації.
+Вихідний код цього прикладу відправляє GET запит на адресу `https://www.example.com` та виводить на екран отриманий результат.
 
-## Дивіться також
-- [libcurl документація](https://curl.se/libcurl/)
-- [Простий приклад відправки HTTP-запиту у Java](https://www.codejava.net/java-se/networking/java-http-request-example) 
-- [HTTP-запити від Google Developers](https://developers.google.com/web/fundamentals/primers/http)
+## Глибше:
+
+HTTP (Hypertext Transfer Protocol) був розроблений для обміну даними між клієнтами та серверами у мережі Інтернет. На сьогоднішній день існують кілька альтернативних способів взаємодії програм з веб-серверами, таких як REST та WebSocket. Однак, HTTP-запити все ще використовуються для багатьох завдань, таких як отримання інформації з веб-сторінок або взаємодії з API веб-додатків. Для відправлення HTTP-запитів, програмістам зазвичай потрібно встановити спеціальні бібліотеки, такі як curl чи HTTP Client.
+
+## Дивись також:
+
+- [Документація з бібліотеки curl](https://curl.haxx.se/libcurl/)
+- [Офіційна специфікація протоколу HTTP](https://tools.ietf.org/html/rfc7230)
+- [Огляд REST та WebSocket протоколів](https://www.oreilly.com/library/view/developing-restful-web/9781449359737/ch01.html)

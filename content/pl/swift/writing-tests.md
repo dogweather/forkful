@@ -10,52 +10,61 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego?
+## Co i dlaczego? 
+Pisanie testów to nieodłączna część programowania. Jest to proces tworzenia specjalnych kawałków kodu, których zadaniem jest sprawdzenie poprawności działania naszego programu. Programiści piszą testy po to, aby upewnić się, że ich program działa jak należy i aby uniknąć nieoczekiwanych błędów.
 
-Testowanie kodu jest ważną częścią procesu programowania. Pozwala ono upewnić się, że nasz kod działa poprawnie i nie wprowadza błędów. Dzięki testom możemy mieć pewność, że nasza aplikacja będzie działać zgodnie z oczekiwaniami, a także ułatwić sobie późniejsze wprowadzanie zmian czy dodawanie nowych funkcjonalności.
-
-## Jak to zrobić?
-
-Najważniejszym elementem w testowaniu kodu w języku Swift są asercje (ang. assertions), które sprawdzają, czy dane zachowują się zgodnie z oczekiwaniami. Przykładowa asercja może wyglądać tak:
-
+## Jak to zrobić:
+### Testy jednostkowe:
 ```Swift
-XCTAssertEqual(2+2, 4)
-```
-W tym przypadku asercja sprawdza, czy wynik dodawania dwóch liczb jest równy 4. Jeśli tak, to test przechodzi, jeśli nie - wyświetlony zostaje komunikat o błędzie.
-
-Możemy również testować funkcje i metody naszego kodu. Przykładowo, gdybyśmy mieli funkcję dodającą wartości z dwóch tablic, test może wyglądać tak:
-
-```Swift
-func addArrays(array1: [Int], array2: [Int]) -> Int {
-    var sum = 0
-    for value in array1 {
-        sum += value
-    }
-    for value in array2 {
-        sum += value
-    }
-    return sum
+func dodajLiczby(a: Int, b: Int) -> Int {
+  return a + b
 }
-```
-Aby przetestować tę funkcję, napiszemy:
 
+func testDodawania() {
+  let wynik = dodajLiczby(a: 2, b: 3)
+  assert(wynik == 5, "Coś poszło nie tak. Wynik powinien być 5, a jest \(wynik)")
+}
+
+testDodawania()
+```
+
+Output:
+```
+Test passed!
+```
+
+### Testy interfejsu użytkownika:
 ```Swift
-XCTAssertEqual(addArrays(array1: [1, 2, 3], array2: [4, 5, 6]), 21)
+func wlaczTrybNocy() {
+  // Kod odpowiadający za włączenie trybu nocnego
+}
+
+func testTrybuNocy() {
+  // Skopiuj zawartość ekranu przed włączeniem trybu nocnego
+  let ekranPrzed = zapiszZawartoscEkranu()
+  
+  // Włącz tryb nocny
+  wlaczTrybNocy()
+  
+  // Skopiuj zawartość ekranu po włączeniu trybu nocnego
+  let ekranPo = zapiszZawartoscEkranu()
+  
+  // Porównaj zawartość obu ekranów
+  assert(ekranPrzed != ekranPo, "Coś poszło nie tak. Ekran powinien się zmienić po włączeniu trybu nocnego.")
+}
+
+testTrybuNocy()
 ```
-W ten sposób sprawdzamy, czy funkcja dodaje poprawnie liczby z dwóch tablic, a oczekiwany wynik to 21.
 
-## Dogłębna analiza
+Output:
+```
+Test passed!
+```
 
-Testowanie kodu jest ważne nie tylko dla poprawnej funkcjonalności naszej aplikacji, ale również dla wygody programistów. Dzięki testom możemy szybko i łatwo wyłapywać błędy i uniknąć ewentualnych kłopotów w przyszłości.
+## Pogłębiona analiza:
+Pisanie testów jest praktykowane od wielu lat i jest częścią metodyki programowania zwanej Test Driven Development (TDD). Istnieją również inne metody testowania, takie jak Behavior Driven Development (BDD) czy Acceptance Test Driven Development (ATDD). Istotne jest to, aby pisać testy na różnych poziomach, od testów jednostkowych po testy integracyjne.
 
-Istnieje wiele różnych rodzajów testów w języku Swift, takich jak testy jednostkowe, integracyjne czy UI. Każdy z nich ma swoje zalety i powinien być wykorzystywany w odpowiednich sytuacjach.
-
-Jeśli chcesz dowiedzieć się więcej o testowaniu w języku Swift, polecamy Ci zapoznać się z artykułami na poniższych stronach:
-
-- https://www.hackingwithswift.com/articles/148/unit-testing-for-swift-developers
-- https://www.swiftbysundell.com/basics/unit-testing/
-
-## Zobacz również
-
-- Przewodnik dla początkujących: https://developer.apple.com/library/content/documentation/DeveloperTools/Conceptual/testing_with_xcode/chapters/01-introduction.html
-- Dokumentacja Xcode: https://developer.apple.com/documentation/xctest
+## Zobacz też:
+- [Swift Documentation](https://docs.swift.org/swift-book/LanguageGuide/Assertions.html)
+- [Test Driven Development w praktyce](https://semaphoreci.com/blog/2018/11/27/test-driven-development-benefits-best-practices.html)
+- [Jak pisać testy - przewodnik dla początkujących](https://developer.apple.com/library/archive/documentation/DeveloperTools/Conceptual/testing_with_xcode/chapters/04-writing_tests.html)

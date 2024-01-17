@@ -10,39 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ計算するのか
+＃＃何か＆なぜ？
+将来の日付や過去の日付を計算するとは、ある日付から指定された日数だけ前や後の日付を求めることです。 プログラマーがこれを行うのは、例えばイベントの日程を自動で計算するなど、日付に関わる処理を効率的に行うためです。
 
-日付を計算する理由はさまざまです。例えば、特定のイベントまでの日数を計算したり、期限に間に合うかどうかを確認したり、プロジェクトの進捗を把握するためにも便利です。計算することで、より具体的な目標に向かって効率的に仕事を進めることができます。
-
-## 方法
-
+＃＃方法：
 ```Elm
+-- 将来の日付を計算する例
 import Time
-import Date exposing (..)
 
--- 今日の日付を取得
-now = Date.today
+Time.add Time.Day 7 (Time.millisToPosix 1589841600000) -- 2020年5月19日から7日後の日付が計算される 
 
--- 3日後の日付を計算
-futureDate = Date.add (Time.inDays 3) now
+-- 過去の日付を計算する例
+import Time
 
--- 10日前の日付を計算
-pastDate = Date.sub (Time.inDays 10) now
-
--- 計算結果をコンソールに表示
-Future Date: Aug 20, 2021
-Past Date: Aug 7, 2021
-
+Time.sub Time.Week (-2) (Time.millisToPosix 1589841600000) -- 2020年5月19日から2週間前の日付が計算される
 ```
 
-上記のコードでは、`Time`モジュールを使用して日付の差を計算し、`Date`モジュールを使用してその差を現在の日付に適用します。また、日付の表示もより読みやすくするために`Date.today`関数を使用しています。このように、Elmを使用することで、日付の計算と表示を簡単に行うことができます。
+＃＃深堀り：
+日付を計算する方法は、歴史的には太陽暦や暦の仕組みに関わる問題から生まれてきました。しかし、現在はプログラミング言語やライブラリによって効率的に計算することができます。また、便利なツールとしてJavaScriptの「Dateオブジェクト」やPythonの「datetimeモジュール」などがあります。
 
-## ディープダイブ
-
-Elmは静的型付け言語であり、タイプミスやデータ型の不一致を事前に検出することで、バグの発生を防ぐことができます。また、Elmコードは再利用性が高く、コード量も少なくて済むため、日付計算にも最適です。
-
-## 参考リンク
-
-- [Elm Official Website](https://elm-lang.org/)
-- [Elm Time Module Documentation](https://package.elm-lang.org/packages/elm/time/latest/)
-- [Elm Date Module Documentation](https://package.elm-lang.org/packages/elm/date/latest/)
+＃＃関連リンク：
+- [Elm Timeモジュールドキュメント](https://package.elm-lang.org/packages/elm/time/latest/)
+- [JavaScript Dateオブジェクトドキュメント](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [Python datetimeモジュールドキュメント](https://docs.python.org/ja/3/library/datetime.html)

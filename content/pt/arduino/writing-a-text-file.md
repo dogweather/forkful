@@ -10,66 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que escrever um arquivo de texto no Arduino?
-
-Se você está trabalhando em um projeto de Arduino que requer o armazenamento de dados, escrever em um arquivo de texto pode ser uma opção útil. Isso permite que você armazene e atualize informações facilmente, sem a necessidade de editar o código diretamente.
+## O que & Por quê?
+Escrever um arquivo de texto é uma maneira comum para os programadores armazenarem e compartilharem informações importantes em seus projetos Arduino. Isso permite que os dados sejam lidos e salvos facilmente, tornando o processo de programação mais eficiente e organizado.
 
 ## Como fazer:
-
-Para escrever um arquivo de texto no Arduino, você precisará das seguintes bibliotecas:
-
-- SD.h: permite o acesso ao cartão SD.
-- SPI.h: comunicação serial para cartão SD.
-
-Em seguida, declare o objeto SD e, em seguida, inicialize-o na função setup():
-
+Existem várias maneiras de escrever um arquivo de texto usando o Arduino, mas neste artigo, vamos nos concentrar em uma abordagem simples usando a biblioteca SD. Primeiro, você precisará conectar um cartão SD ao seu Arduino, em seguida, siga os passos abaixo:
 ```Arduino
 #include <SD.h>
-#include <SPI.h>
-
-File myFile;
+const int chipSelect = 4;
 
 void setup() {
-  SD.begin(10); // pino CS do cartão SD
+  Serial.begin(9600);
+
+  // inicializa o cartão SD com o pino chipSelect
+  if (!SD.begin(chipSelect)) {
+    Serial.println("Falha ao inicializar o cartão SD.");
+    return;
+  }
+
+  Serial.println("Digite o texto que deseja salvar:");
+
+  // aguarda até receber o texto a ser salvo via Serial
+  while(!Serial.available());
+
+  // abre um arquivo para escrita, use o nome que desejar
+  File arquivo = SD.open("meu_texto.txt", FILE_WRITE);
+
+  // escreve o texto recebido na Serial no arquivo
+  arquivo.println(Serial.readString());
+
+  // fecha o arquivo
+  arquivo.close();
+
+  Serial.println("Texto salvo com sucesso!");
+}
+
+void loop() {
+  // código restante do seu projeto
 }
 ```
 
-Agora, você pode criar o arquivo de texto e escrever nele usando o objeto File e o método print():
+Ao carregar esse código no seu Arduino, você poderá enviar o texto que deseja salvar através da porta Serial. Esse texto será salvo no arquivo "meu_texto.txt" no cartão SD conectado. Você também pode alterar o nome do arquivo para o que desejar.
 
-```Arduino
-myFile = SD.open("meu_arquivo.txt", FILE_WRITE); // abre o arquivo de texto
+## Mergulho Profundo:
+A prática de escrever arquivos de texto em dispositivos de armazenamento externos, como cartões SD, não é uma inovação recente. Na verdade, ela foi usada nos primeiros computadores para salvar informações importantes.
 
-myFile.print("Olá, mundo!"); // escreve o texto
+Existem também outras maneiras de escrever arquivos de texto no Arduino, como usando a biblioteca SPIFFS ou o módulo Wifi. No entanto, a abordagem usando a biblioteca SD é uma maneira simples e eficiente de fazer isso.
 
-myFile.close(); // fecha o arquivo
-```
-
-Certifique-se de fechar o arquivo após escrever nele, para garantir que todos os dados sejam salvos corretamente.
-
-## Aprofundando:
-
-Você também pode usar o método println() para adicionar uma nova linha ao arquivo de texto a cada impressão:
-
-```Arduino
-myFile = SD.open("meu_arquivo.txt", FILE_WRITE);
-
-myFile.println("Este é um texto na primeira linha.");
-myFile.println("Este é um texto na segunda linha.");
-
-myFile.close();
-```
-
-Além disso, é interessante notar que você pode usar variáveis do Arduino para escrever em um arquivo de texto, por exemplo:
-
-```Arduino
-int valor = 5;
-myFile.println("O valor atual é " + String(valor));
-```
-
-Dessa forma, é possível armazenar dados dinamicamente no arquivo de texto.
-
-## Veja também:
-
-- [Tutorial da SparkFun sobre escrever e ler arquivos de texto no Arduino](https://learn.sparkfun.com/tutorials/working-with-sd-cards-all#how-to-write-create-an-sd-card-text-file)
-- [Documentação oficial do Arduino sobre as bibliotecas SD e SPI](https://www.arduino.cc/en/Reference/SD)
-- [Vídeo tutorial do canal SparkFun sobre como usar a biblioteca SD](https://www.youtube.com/watch?v=ZryIKANUdlI)
+## Veja Também:
+- [Documentação da biblioteca SD do Arduino](https://www.arduino.cc/en/reference/SD)
+- [Tutorial de escrita de arquivos de texto no Arduino usando a biblioteca SPIFFS](https://randomnerdtutorials.com/esp32-esp8266-arduino-write-read-file-spiffs/)

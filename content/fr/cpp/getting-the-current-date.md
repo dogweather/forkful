@@ -10,56 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Qu'est-ce que c'est et pourquoi le faire?
 
-Si vous êtes un programmeur, il est fort probable que vous ayez besoin de connaître la date actuelle dans votre code. Cela peut être pour afficher la date dans une application, pour suivre la date de création d'un fichier ou pour effectuer des opérations basées sur la date. Dans cet article, nous allons voir comment obtenir la date actuelle en C++.
+Obtenir la date actuelle est un élément important de la programmation en C ++. Cela permet aux programmeurs de connaître l'heure et la date exactes, ce qui peut être utile pour suivre le temps écoulé depuis le démarrage du programme ou pour afficher la date dans des messages ou des journaux.
 
-## Comment faire
+## Comment faire:
 
-Pour obtenir la date actuelle en C++, vous pouvez utiliser la fonction `std::chrono::system_clock::now()`. Cette fonction renvoie un objet `std::chrono::time_point` qui représente l'instant actuel. Ensuite, pour afficher la date, vous pouvez utiliser la fonction `std::chrono::system_clock::to_time_t()` pour convertir l'objet `time_point` en un objet `std::time_t`. Enfin, vous pouvez utiliser la fonction `std::localtime()` pour convertir l'objet `std::time_t` en une structure `std::tm` contenant toutes les informations sur la date et l'heure actuelles.
-
-Voici un exemple de code qui montre comment obtenir la date actuelle et l'afficher dans un format personnalisé :
+Pour obtenir la date actuelle en C ++, vous pouvez utiliser la fonction "time" de la bibliothèque standard de C ++. Voici un exemple de code:
 
 ```C++
-#include <iostream>
+//include la bibliothèque de temps
 #include <ctime>
-#include <iomanip>
 
-int main()
-{
-    // Obtient l'instant actuel
-    std::chrono::time_point now = std::chrono::system_clock::now();
+//déclare une variable pour stocker la date et l'heure actuelles
+time_t now = time(0);
 
-    // Convertit en std::time_t
-    std::time_t raw_time = std::chrono::system_clock::to_time_t(now);
+//convertit la date et l'heure en une chaîne de caractères lisible par les humains
+char* dt = ctime(&now);
 
-    // Convertit en std::tm 
-    std::tm* date = std::localtime(&raw_time);
-
-    // Affiche la date sous un format personnalisé
-    std::cout << "Date actuelle : "
-              << std::put_time(date, "%A %d %B %Y") << std::endl;
-
-    return 0;
-}
+//affiche la date et l'heure actuelles
+cout << "La date et l'heure actuelles sont: " << dt << endl;
 ```
 
-Lorsque vous exécutez ce code, vous devriez obtenir un résultat similaire à celui-ci :
+Voici un exemple de sortie:
 
 ```
-Date actuelle : mercredi 24 mars 2021
+La date et l'heure actuelles sont: Ven Mai 28 15:46:58 2021
 ```
 
-## Plongée en profondeur
+## Plongée en profondeur:
 
-La fonction `std::chrono::system_clock::now()` utilise une horloge système pour obtenir l'instant actuel. Cette horloge est basée sur un compteur qui s'incrémente à chaque seconde. Cependant, elle n'est pas garantie d'être précise à la seconde près et peut varier en fonction du système d'exploitation.
+Historiquement, la fonction "time" utilise un nombre de secondes écoulées depuis le 1er janvier 1970 pour représenter la date et l'heure. Cependant, elle peut également utiliser d'autres représentations en fonction du système d'exploitation.
 
-De plus, la fonction `std::localtime()` peut également être sensible aux paramètres régionaux du système et peut donc donner des résultats différents selon le système d'exploitation utilisé.
+Il existe également d'autres moyens d'obtenir la date et l'heure actuelles en C ++, tels que la bibliothèque boost et la bibliothèque chrono. Cependant, la fonction "time" reste la méthode la plus courante.
 
-Si vous avez besoin d'une précision plus élevée ou d'une compatibilité avec différents systèmes d'exploitation, vous pouvez utiliser la bibliothèque `<chrono>` du C++11 qui offre des classes pour travailler avec le temps, comme `std::chrono::high_resolution_clock` et `std::chrono::steady_clock`.
+## Voir aussi:
 
-## Voir aussi
-
-- [std::chrono::system_clock](https://en.cppreference.com/w/cpp/chrono/system_clock)
-- [std::chrono::time_point](https://en.cppreference.com/w/cpp/chrono/time_point)
-- [std::localtime](https://en.cppreference.com/w/cpp/chrono/c/localtime)
+- [Documentation de la fonction "time" en C ++](https://www.cplusplus.com/reference/ctime/time/)
+- [Documentation de la bibliothèque boost](https://www.boost.org/doc/libs/1_76_0/doc/html/date_time.html)
+- [Documentation de la bibliothèque chrono en C ++](https://en.cppreference.com/w/cpp/chrono)

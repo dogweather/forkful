@@ -10,54 +10,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i dlaczego?
+Wysyłanie żądania HTTP z podstawową autoryzacją to jedna z podstawowych czynności, które programiści wykonują podczas tworzenia aplikacji internetowych. Jest to sposób na uwierzytelnienie użytkowników poprzez przesyłanie danych w formacie klucz-wartość. Programiści wykorzystują tę metodę, ponieważ jest prosta w implementacji i zapewnia podstawowe zabezpieczenia dostępu do danych.
 
-Sending an HTTP request with basic authentication allows for secure communication between a client and a server. This is especially important when sensitive data, such as personal information, is being transferred.
-
-## Jak to zrobić
-
+## Jak to zrobić:
 ```Swift
-let username = "john_doe"
-let password = "secretpassword"
-
-// Encode the username and password in base64
-let authString = "\(username):\(password)".data(using: .utf8)?.base64EncodedString()
-
-// Create the HTTP request
-guard let requestURL = URL(string: "http://www.example.com/login") else {
-  print("Invalid URL")
-  return
+let username = "myUsername"
+let password = "myPassword"
+let loginString = "\(username):\(password)"
+let loginData = loginString.data(using: .utf8)
+if let base64LoginData = loginData?.base64EncodedString() {
+    // Stwórz wywołanie HTTP, dodając nagłówek `Authorization: Basic base64LoginData` do żądania
 }
-
-var request = URLRequest(url: requestURL)
-
-// Add the basic authentication header
-request.setValue("Basic \(authString)", forHTTPHeaderField: "Authorization")
-
-// Execute the request
-let task = URLSession.shared.dataTask(with: request) { data, response, error in
-  if let error = error {
-    print("Error: \(error)")
-  } else if let data = data {
-    // Handle the response data
-    print("Response: \(data)")
-  }
-}
-
-task.resume()
 ```
 
-Przykładowe wyjście:
+## Głębsze zanurzenie:
+Metoda autoryzacji z podstawowym logowaniem była używana od początku istnienia HTTP, ale obecnie zaleca się unikanie jej na rzecz bezpieczniejszych metod, takich jak autoryzacja tokenów lub OAuth. Jednak nadal jest szeroko stosowana, ponieważ jest łatwa do zaimplementowania i często wystarczająca dla prostych aplikacji. W przypadku bardziej bezpiecznych zastosowań, programiści mogą wykorzystać protokół HTTPS w połączeniu z podstawową autoryzacją, aby zapewnić lepszą ochronę danych.
 
-```Swift
-Response: Optional([60, 104, 116, 109, 108, 62, 10, 32, 32, 60, 104, 101, 97, 100, 62, 10, 32, 32, 32, 32, 60, 116, 105, 116, 108, 101, 62, 82, 101, 113, 117, 101, 115, 116, 32, 83, 117, 99, 99, 101, 115, 115, 60, 47, 116, 105, 116, 108, 101, 62, 10, 32, 32, 60, 47, 104, 101, 97, 100, 62, 10, 32, 32, 60, 98, 111, 100, 121, 62, 10, 32, 32, 32, 32, 60, 104, 49, 62, 76, 111, 103, 105, 110, 32, 115, 117, 99, 99, 101, 115, 115, 102, 117, 108, 108, 121, 32, 108, 111, 103, 103, 101, 100, 32, 105, 110, 32, 115, 117, 99, 99, 101, 115, 115, 108, 51, 54, 122, 112, 121, 74, 60, 47, 104, 49, 62, 10, 32, 32, 32, 32, 60, 104, 50, 62, 87, 101, 108, 99, 111, 109, 101, 32, 111, 110, 32, 98, 111, 97, 114, 100, 44, 32, 74, 111, 104, 110, 33, 60, 47, 104, 50, 62, 10, 32, 32, 60, 47, 98, 111, 100, 121, 62, 10, 60, 47, 104, 116, 109, 108, 62])
-```
-
-## Deep Dive
-
-When sending an HTTP request with basic authentication, the username and password are encoded in base64 and added to the header of the request as a string in the format "username:password". This ensures that the sensitive information is not transmitted in plain text and can only be accessed by the intended recipient.
-
-## See Also
-
-- [Working with HTTP requests in Swift](https://www.hackingwithswift.com/articles/118/working-with-http-requests-in-swift)
-- [Using URLSession to make web requests in Swift](https://www.avanderlee.com/swift/nsurlsession-networking/)
+## Zobacz także:
+- Dokumentacja Apple na temat klasy `URLSession` i możliwości dodawania nagłówka autoryzacji do żądań HTTP: https://developer.apple.com/documentation/foundation/urlsession
+- Artykuł na stronie Swift by Sundell o zabezpieczaniu żądań HTTP z podstawową autoryzacją: https://www.swiftbysundell.com/articles/securizing-network-requests-in-swift/
+- Oficjalna specyfikacja protokołu HTTP wraz z opisem nagłówka autoryzacji: https://tools.ietf.org/html/rfc1945#section-11.3

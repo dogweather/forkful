@@ -1,7 +1,7 @@
 ---
-title:                "在计算机编程中，这是一篇名为“计算未来或过去日期”的文章。"
-html_title:           "PHP: 在计算机编程中，这是一篇名为“计算未来或过去日期”的文章。"
-simple_title:         "在计算机编程中，这是一篇名为“计算未来或过去日期”的文章。"
+title:                "在计算机编程中，计算未来或过去的日期。"
+html_title:           "PHP: 在计算机编程中，计算未来或过去的日期。"
+simple_title:         "在计算机编程中，计算未来或过去的日期。"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Dates and Times"
@@ -10,31 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 为什么要计算未来或过去的日期
+北京时间日期轴？
 
-计算未来或过去的日期在编程中是一项常见的任务。它可以帮助程序员确定特定日期的准确值，如处理计划任务、生成报告或计算过时的文件。此外，它还有助于处理不同时区之间的日期转换。
+最近看到有人在网上提到"计算未来或过去的日期"，想必很多人都会感到好奇。那么，这到底是什么事情呢？为什么程序员们会这样做呢？
 
-## 如何做
+## 什么 & 为什么？
 
-使用PHP函数`strtotime()`和`date()`可以轻松地计算未来或过去的日期。首先，您需要提供一个日期字符串作为第一个参数，然后是要添加或减去的时间间隔以及可选的格式字符串作为第三个参数。
+计算未来或过去的日期，就是通过编程来计算某个特定日期之前或之后的日期。程序员们通常会需要这样的功能来安排任务、记录事件或计算时间差。
 
-例如，这是一个计算未来日期的示例代码：
+## 如何：
 
-```PHP
-$date = "2020-08-15";
-$future_date = strtotime("+1 week", strtotime($date));
-echo date("Y-m-d", $future_date);
+```php
+// 计算明天的日期
+echo date('Y-m-d', strtotime('+1 day'));
+
+// 计算一周后的日期
+echo date('Y-m-d', strtotime('+1 week'));
+
+// 计算一小时后的时间
+echo date('H:i:s', strtotime('+1 hour'));
 ```
 
-运行上述代码的输出将是`2020-08-22`。同样，您也可以计算过去的日期，只需将时间间隔改为负值即可。
+运行上面的代码，你将获得类似于以下的输出：
 
-## 深入了解
+```
+2021-02-28
+2021-03-07
+12:00:00
+```
 
-在PHP中计算未来或过去的日期并不是一件复杂的事情。基本上，您需要掌握两个关键函数：`strtotime()`和`date()`。`strtotime()`函数将日期字符串转换为时间戳，在此基础上，您可以使用`date()`函数根据您的需要格式化日期。
+## 深入探讨：
 
-然而，需要注意的是，`strtotime()`函数有其局限性，它只能处理某些日期格式。如果您的日期字符串没有格式正确，它将返回`false`。因此，在编写代码时要格外注意日期字符串的格式。
+历史上，人们一直在需要计算日期，但是随着计算机的发展，这项工作不再需要手动计算，而是可以由计算机来完成。除了使用PHP提供的日期函数，还可以使用第三方库来实现日期计算的功能，例如Carbon。此外，对于一些特殊需求，程序员们也可以自行编写算法来计算日期。
 
-# 参考链接
+## 查看更多：
 
-- [PHP官方文档：strtotime()](https://www.php.net/manual/zh/function.strtotime.php)
-- [PHP官方文档：date()](https://www.php.net/manual/zh/function.date.php)
+- [PHP官方文档-日期和时间函数](https://www.php.net/manual/en/ref.datetime.php)
+- [使用Carbon库计算日期](https://carbon.nesbot.com/docs/)
+- [用PHP计算日期的另一种方法](https://www.geeksforgeeks.org/calculate-date-dates-php/)
+
+Happy coding!

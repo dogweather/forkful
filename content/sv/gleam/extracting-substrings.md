@@ -10,52 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
+Att extrahera substränger är processen att ta en del av en sträng, vanligtvis baserat på en viss position eller längd, och returnera det som en separat sträng. Programerare gör detta för att hantera väldigt långa strängar eller för att manipulera och utföra vissa operationer på specifika delar av en sträng.
 
-Om du har jobbat med strängar i andra programmeringsspråk, som Javascript eller Java, har du kanske stött på behovet av att extrahera en del av en sträng. Med Gleam kan du göra detta enkelt genom att använda den inbyggda funktionen `String.slice` för att skapa en understräng av en befintlig sträng.
-
-## How To
-
-För att använda `String.slice` och få en delsträng behöver du ange index för början och slutet av den delsträng du vill extrahera. Till exempel, om du har en sträng som heter `namn` och vill extrahera bokstäverna 3 till 6, skulle din kod se ut så här:
+## Så här gör du:
+I Gleam kan du använda funktionen `String.slice()` för att extrahera en del av en sträng. Här är ett exempel på hur man extraherar de första sex tecknen i en sträng:
 
 ```Gleam
-namn = "Gustav"
-delsträng = String.slice(namn, 3, 6)
+let sträng = "Hej världen!"
+let del = String.slice(sträng, 0, 6)
+IO.println(del)
 ```
+Detta kommer att skriva ut "Hej vä" eftersom det första argumentet är den ursprungliga strängen, det andra argumentet är startpositionen och det tredje argumentet är längden på den del som ska extraheras.
 
-Outputen av detta skulle vara `sta`, vilket är bokstäverna 3 till 6 av strängen `namn`. Om du endast anger ett argument, t.ex `String.slice(namn, 2)`, kommer den delsträngen att börja på index 2 och gå till slutet av strängen.
+## Djupdykning:
+Att extrahera substränger är en vanlig operation inom programmering och det finns många sätt att göra det. Alternativen inkluderar att använda inbyggda funktioner i andra programmeringsspråk som `substring` i Java och `substr` i JavaScript. Gleam erbjuder också funktionen `String.take()` och `String.drop()` som kan användas för att extrahera delar av en sträng baserat på antingen antal tecknen eller ett villkor.
 
-Det är också möjligt att använda negativa index för bakåtriktad räkning. Om du vill extrahera de två sista bokstäverna av strängen `namn` skulle koden se ut som följer:
+Implementationen av `String.slice()` i Gleam är baserad på det funktionella programmeringsspråket Erlang, som Gleam bygger på. Detta ger en robust och effektiv implementation av substrängsextraktion i Gleam.
 
-```Gleam
-sista_delsträng = String.slice(namn, -2, -1)
-```
+## Se även:
+Här är några resurser för att lära dig mer om substrängsextraktion och hur det kan användas i Gleam:
 
-Outputen av detta skulle då bli `va`.
-
-## Deep Dive
-
-Utöver att använda `String.slice`, finns det också andra sätt att extrahera substrängar i Gleam. Du kan använda funktionen `String.split` för att dela upp en sträng baserat på ett angivet separator-tecken. Till exempel, om du vill dela upp strängen `färg` vid tecknet `-` skulle koden se ut som följer:
-
-```Gleam
-färger = "röd-blå-grön"
-delar = String.split(färger, "-")
-```
-
-Outputen av detta skulle vara en lista med tre element: `["röd", "blå", "grön"]`.
-
-Det är också möjligt att använda regex i Gleam för att extrahera substrängar. Funktionen `Regex.captures` returnerar en lista med matcher baserat på ett angivet regex uttryck. Till exempel, om du vill hitta alla ord som börjar med bokstaven `s` i strängen `text` skulle koden se ut så här:
-
-```Gleam
-text = "sol, sand, snö, sjö"
-matcher = Regex.captures(text, ~r/s[a-z]*/)
-```
-
-Outputen av detta skulle vara en lista med matcher: `["sol", "sand", "snö", "sjö"]`.
-
-## See Also
-
-För att lära dig mer om Gleam och dess funktioner, kan du besöka följande länkar:
-
-- [Officiell Gleam dokumentation](http://gleam.run)
-- [Gleam - Ett nytt programmeringsspråk för funktionell programmering](https://medium.com/@lpil/introducing-gleam-a-new-programming-language-for-functional-programming-3a8c6a602a21)
+- [Dokumentation för `String.slice()` i Gleam](https://gleam.run/documentation/std-lib-trip/0.1.1/String.html#function.slice)
+- [En djupare titt på Erlang och dess påverkan på Gleams implementation av substrängsextraktion](https://www.researchgate.net/publication/310390220_String_Subtraction_Function_Using_Erlang)
+- [En introduktion till funktionell programmering och dess fördelar i Gleam](https://gleam.run/articles/functional-programming.html)

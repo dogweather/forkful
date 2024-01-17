@@ -1,7 +1,7 @@
 ---
-title:                "Wyciąganie podciągów"
-html_title:           "Java: Wyciąganie podciągów"
-simple_title:         "Wyciąganie podciągów"
+title:                "Wydobywanie podciągów"
+html_title:           "Java: Wydobywanie podciągów"
+simple_title:         "Wydobywanie podciągów"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Strings"
@@ -10,38 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i dlaczego?
 
-W artykule tym omówimy, dlaczego warto poznać technikę wycinania podciągów w języku Java. Będziemy prezentować przykłady kodu oraz przybliżymy informacje na temat tego zagadnienia.
+Wyodrębnianie podciągów jest procesem, w którym z danego ciągu znaków wyciągamy określony fragment. Programiści często wykonują tę operację, aby odfiltrować lub przekształcić dane w celu uzyskania potrzebnych informacji.
 
-## Jak to zrobić
-
-Fragmentowanie stringów jest bardzo przydatną funkcją w języku Java, szczególnie przy pracy z tekstami. Pozwala ona na wyodrębnianie fragmentów tekstu, które są dla nas istotne, co ułatwia dalsze operacje. Poniżej prezentujemy kilka przykładów użycia z wyjaśnieniem.
+## Jak to zrobić:
 
 ```Java
-// Wyciąganie podciągu od danego indeksu do końca tekstu
-String sentence = "Programowanie w języku Java jest bardzo fascynujące.";
-String substring = sentence.substring(30);
-System.out.println(substring);
-// Output: fascynujące.
+// Przykład 1:
+String str = "Hello World";
+String subStr = str.substring(6);
+System.out.println(subStr); // Output: World
 
-// Wyciąganie podciągu od danego indeksu do innego podanego indeksu
-String sentence = "Język Java jest bardzo popularny na całym świecie.";
-String substring = sentence.substring(6, 10);
-System.out.println(substring);
-// Output: Java 
+// Przykład 2:
+String str = "Lorem ipsum dolor sit amet";
+int startIndex = 6;
+int endIndex = 15;
+String subStr = str.substring(startIndex, endIndex);
+System.out.println(subStr); // Output: ipsum dol
+
 ```
 
-Powyższe przykłady pokazują, jak w prosty sposób wycinając odpowiednie fragmenty tekstu, możemy uzyskać dostęp do potrzebnych nam informacji. W przypadku wykorzystania tej funkcji w bardziej zaawansowanych projektach, z pewnością pomoże nam to w efektywnej i dokładnej obróbce danych.
+## Głębsze zagłębienie
 
-## Głębszy zanurzenie
+1. Kontekst historyczny:
+Wyodrębnianie podciągów jest jedną z podstawowych operacji w programowaniu. Już w pierwszych językach programowania, takich jak Assembly czy Fortran, istniały funkcje umożliwiające przetwarzanie ciągów znaków.
 
-Metoda `substring` w języku Java jest często wykorzystywana przy pracy z indeksami. Warto mieć na uwadze, że numeracja indeksów rozpoczyna się od zera, co może być przydatne przy odwoływaniu się do konkretnych liter w tekście. Dodatkowo, istnieje również możliwość zastosowania metody `substring` do obiektów typu `StringBuilder`, co pozwala na edycję i modyfikację tekstu w miejscu.
+2. Alternatywy:
+Istnieje wiele alternatywnych sposobów wyodrębniania podciągów, takich jak używanie pętli lub zastosowanie metody split(). Jednak funkcja substring() jest najprostszym sposobem w Javie.
 
-Warto również zaznaczyć, że metoda ta posiada wiele różnych wariantów, co daje nam możliwość dostosowania jej do indywidualnych potrzeb. Na przykład, możemy podać indeksy w formie wyrażenia zamiast liczb, co zwiększa elastyczność jej użycia.
+3. Szczegóły implementacji:
+W Javie funkcja substring() używa indeksów, aby określić początkowy i końcowy punkt wyodrębnienia podciągu. Jest to ważne, aby pamiętać, że indeksy te są liczane od zera.
 
-## Zobacz również
+## Zobacz także:
 
-- [Dokumentacja Java - Manipulowanie stringami](https://docs.oracle.com/javase/tutorial/java/data/manipstrings.html)
-- [Jednostka zajęć - Wycinanie podciągów w języku Java](https://www.tutorialspoint.com/java/java_string_substring.htm)
-- [Instrukcja Java - Metoda substring](https://www.geeksforgeeks.org/java-string-substring-method-example/)
+- Dokumentacja Java String: https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html#substring(int,int)
+- Przykłady zastosowań substring(): https://www.geeksforgeeks.org/string-substring-method-in-java/

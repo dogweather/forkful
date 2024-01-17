@@ -1,7 +1,7 @@
 ---
-title:                "Skapa slumpmässiga nummer"
-html_title:           "C++: Skapa slumpmässiga nummer"
-simple_title:         "Skapa slumpmässiga nummer"
+title:                "Generering av slumpmässiga nummer"
+html_title:           "C++: Generering av slumpmässiga nummer"
+simple_title:         "Generering av slumpmässiga nummer"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Numbers"
@@ -10,40 +10,70 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
-Randomisering är en viktig del av programmering eftersom den gör det möjligt att skapa variation och slumpmässighet i våra program. Detta kan vara användbart för att testa och optimera kod eller för att skapa spel eller lotteridragningar.
+## Vad & Varför?
+Att generera slumpmässiga tal är en vanlig uppgift för programmerare. Det är en metod som används för att få fram ett slumpvist resultat, vilket kan vara användbart för att testa program, skapa spel eller för att skapa en variation i data.
 
-## Hur man skapar slumpmässiga nummer i C++
-För att skapa slumpmässiga nummer i C++, måste vi använda oss av det inbyggda biblioteket `<cstdlib>` och dess funktion `rand()`. Börja med att inkludera biblioteket och sedan använda funktionen för att generera ett slumpmässigt tal mellan 0 och `RAND_MAX`.
+## Hur man gör:
+Det finns flera sätt att generera slumpmässiga tal i C++, men den vanligaste metoden är att använda funktionen `rand()` från standardbiblioteket `<cstdlib>`.
 
 ```C++
+#include <iostream>
 #include <cstdlib>
 
-// Generera ett slumpmässigt tal mellan 0 och RAND_MAX
-int randomNumber = rand();
+using namespace std;
 
-// För att få ett värde inom ett visst intervall, kan vi använda modulus-operatorn
-// I detta exempel genererar vi ett tal mellan 1 och 10
-int randomNumberInRange = rand() % 10 + 1; 
+int main()
+{
+    // Generera ett slumpmässigt tal mellan 1 och 100
+    int random_num = rand() % 100 + 1;
+    
+    // Skriv ut det slumpmässiga talet
+    cout << "Det slumpmässiga talet är: " << random_num << endl;
+    
+    return 0;
+}
 ```
 
-För att säkerställa att vi får olika nummer varje gång programmet körs, måste vi initialisera slumpgeneratorn med ett seed-värde. Detta kan göras genom att använda funktionen `srand()` tillsammans med ett unikt värde, som t.ex. tiden i sekunder.
+Output:
+```
+Det slumpmässiga talet är: 76
+```
+
+För att generera ett slumpmässigt tal mellan två specifika värden, kan man använda formeln `rand() % (max - min + 1) + min`.
 
 ```C++
-// Initialisera slumpgeneratorn med seed-värde baserat på tiden i sekunder
-srand(time(NULL));
+#include <iostream>
+#include <cstdlib>
 
-// Nu kommer varje gång programmet körs att slumpgeneratorn initieras med ett nytt värde
+using namespace std;
+
+int main()
+{
+    // Generera ett slumpmässigt tal mellan 50 och 100
+    int min = 50;
+    int max = 100;
+    
+    int random_num = rand() % (max - min + 1) + min;
+    
+    // Skriv ut det slumpmässiga talet
+    cout << "Det slumpmässiga talet är: " << random_num << endl;
+    
+    return 0;
+}
 ```
 
-## Djupdykning
-Det finns en hel del saker att tänka på när det kommer till att generera slumpmässiga nummer i C++. Här är några vidarefördjupningar för de som är intresserade:
+Output:
+```
+Det slumpmässiga talet är: 83
+```
 
-- Du kan använda funktionen `srand()` för att återställa slumpgeneratorn och skapa en sekvens av samma slumpmässiga tal varje gång.
-- För att undvika att använda modulus-operatorn kan du använda `RAND_MAX` som en skalningsfaktor för att få ett tal inom ett visst intervall.
-- Funktionen `rand()` säljer inte tillförlitliga slumpmässiga nummer eftersom det är beroende av seed-värdet. Det finns andra, bättre sätt att generera slumpmässiga nummer i C++ som t.ex. `uniform_int_distribution` från `<random>`-biblioteket.
+## Deep Dive:
+Att generera slumpmässiga tal har funnits med i programmering sedan tidigt 1900-tal och startade med enkel matematik för att få fram ett till synes slumpmässigt resultat. Idag finns det flera avancerade algoritmer och metoder för att generera slumpmässiga tal, men grunden är fortfarande densamma.
 
-## Se även
-- Dokumentationen för `<cstdlib>` [https://www.cplusplus.com/reference/cstdlib/](https://www.cplusplus.com/reference/cstdlib/)
-- En tutorial om slumpmässiga tal i C++ [https://www.geeksforgeeks.org/rand-and-srand-in-ccpp/](https://www.geeksforgeeks.org/rand-and-srand-in-ccpp/)
-- The C++ Random Number Library [https://isocpp.org/files/papers/n3557.pdf](https://isocpp.org/files/papers/n3557.pdf)
+Alternativet till att använda `rand()`-funktionen är att använda bibliotek som till exempel Boost, som erbjuder fler avancerade möjligheter för att generera slumpmässiga tal.
+
+För att förbättra slumpmässigheten hos de genererade talen är det viktigt att använda en "seed", som är ett startvärde för algoritmen. Detta startvärde behöver variera för varje nytt program som körs, annars kommer samma sekvens av slumpmässiga tal att genereras varje gång.
+
+## Se även:
+- [C++ rand() reference](https://www.cplusplus.com/reference/cstdlib/rand/)
+- [Boost random library](https://www.boost.org/doc/libs/1_76_0/doc/html/boost_random.html)

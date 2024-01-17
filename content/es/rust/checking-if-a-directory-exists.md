@@ -1,7 +1,7 @@
 ---
-title:                "Comprobando si un directorio existe"
-html_title:           "Rust: Comprobando si un directorio existe"
-simple_title:         "Comprobando si un directorio existe"
+title:                "Comprobando si existe un directorio"
+html_title:           "Rust: Comprobando si existe un directorio"
+simple_title:         "Comprobando si existe un directorio"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Files and I/O"
@@ -10,48 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-¡Hola! ¿Estás interesado en aprender Rust y quieres saber cómo comprobar si un directorio existe en tu código? ¡Estás en el lugar correcto! En este artículo, te mostraré cómo hacerlo de manera sencilla y sin perder tiempo. ¡Vamos allá!
+¡Hola lectores de Rust!
 
-## ¿Por qué?
+Si eres un programador en Rust, seguramente has encontrado la necesidad de comprobar si un directorio existe en tu código. Esto es una práctica común en la programación y es importante tener un entendimiento claro de cómo hacerlo en Rust.
 
-A veces, cuando estamos escribiendo código, necesitamos asegurarnos de que un directorio exista antes de realizar ciertas operaciones. Por ejemplo, podemos querer verificar si un directorio de recursos está disponible antes de intentar abrir un archivo dentro de él. En estos casos, comprobar si un directorio existe puede ahorrarnos problemas y errores en nuestro programa.
+## ¿Qué y por qué? 
 
-## ¿Cómo hacerlo?
+Comprobar si un directorio existe es simplemente verificar si la ruta especificada existe en el sistema de archivos. Esto es importante para los programadores ya que les permite asegurarse de que un directorio específico se encuentra disponible antes de intentar crear archivos en él o acceder a él.
 
-Para comprobar si un directorio existe en Rust, utilizaremos la función `metadata` del módulo `std::fs`. Esta función nos permite obtener información sobre un archivo o directorio, incluyendo si existe o no. Veamos un ejemplo de cómo usarla:
+## Cómo hacerlo
 
-```Rust
-use std::path::Path;
+En Rust, podemos utilizar el método ```std::fs::metadata(path)```, que devuelve un objeto ```std::fs::Metadata``` que contiene información sobre el archivo o directorio especificado.
+
+```rust
 use std::fs;
 
 fn main() {
-    let directory = Path::new("my_directory");
+    let path = "/ruta/a/mi/directorio";
 
-    if directory.exists() {
-        println!("¡El directorio existe!");
-    } else {
-        println!("¡El directorio no existe!");
+    match fs::metadata(path) {
+        Ok(metadata) => {
+            if metadata.is_dir() {
+                println!("¡El directorio existe!");
+            } else {
+                println!("¡El directorio no existe!");
+            }
+        }
+        Err(_) => println!("¡El directorio no existe!"),
     }
 }
 ```
 
-En este ejemplo, primero importamos los módulos `path` y `fs` para poder utilizar sus funciones. Luego, creamos un `Path` que apunte al directorio que queremos comprobar. Después, utilizamos la función `exists()` del `Path` para verificar si el directorio existe o no. Si existe, imprimimos un mensaje indicándolo, de lo contrario, imprimimos un mensaje diferente.
+La función ```is_dir()``` nos permite verificar si el objeto Metadata se refiere a un directorio o no. Además, si queremos asegurarnos de que el directorio existe antes de intentar acceder a él, podemos utilizar el método ```std::fs::metadata(path).is_ok()``` que nos devolverá un booleano indicando si la llamada fue exitosa o no.
 
-### Salida del código de ejemplo
+## Profundizando
 
-```
-¡El directorio existe!
-```
+Si bien el uso del método ```std::fs::metadata``` es la forma estándar de comprobar si un directorio existe en Rust, también podemos utilizar la macro ```std::path::Path::exists()``` para obtener un resultado similar. Sin embargo, esta macro solo comprueba si el archivo o directorio existe, sin proporcionar información adicional.
 
-## Deep Dive
+Además, al utilizar el método ```std::fs::metadata```, el comportamiento de la llamada dependerá del sistema operativo en el que se esté ejecutando el código. Por ejemplo, en sistemas Unix, el método devolverá un error si el usuario no tiene permisos suficientes para acceder a la ubicación especificada.
 
-¿Te preguntas cómo funciona la función `exists()`? En realidad, es muy simple. La función devuelve un `bool` que indica si el `Path` apunta a un archivo o directorio existente. Esta función no comprueba si el `Path` es un archivo o un directorio, solo comprueba si existe o no. Por lo tanto, si el `Path` no existe o si es un archivo, la función devolverá `false`.
+## Ver también
 
-¡Y eso es todo! Ya sabes cómo comprobar si un directorio existe en Rust. ¿Fácil verdad? Ahora puedes utilizar este conocimiento en tus propios proyectos para asegurarte de que todo funcione correctamente.
+Si aún tienes dudas sobre cómo comprobar si un directorio existe en Rust, puedes consultar la documentación oficial de Rust en [std::fs::metadata](https://doc.rust-lang.org/std/fs/fn.metadata.html) y [std::path::Path](https://doc.rust-lang.org/std/path/struct.Path.html).
 
-## Ver También
-
-- [Documentación de la función `metadata()` en Rust](https://doc.rust-lang.org/std/fs/fn.metadata.html)
-- [Otro método para comprobar la existencia de un directorio en Rust](https://doc.rust-lang.org/std/fs/fn.read_dir.html)
-
-¡Gracias por leer! Espero que este artículo te haya sido útil. ¡Hasta la próxima!
+¡Espero que este artículo te haya sido útil y que puedas usar esta información para mejorar tus habilidades en Rust! ¡Hasta la próxima!

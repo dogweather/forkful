@@ -10,31 +10,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué iniciar un nuevo proyecto?
+¿Qué es comenzar un nuevo proyecto y por qué los programadores lo hacen?
 
-Iniciar un nuevo proyecto en Gleam es una excelente opción para aquellos que buscan un lenguaje de programación funcional con un fuerte enfoque en la concurrencia y la seguridad del tipo de datos. Además, Gleam utiliza la plataforma de compilación Erlang, lo que lo hace ideal para aplicaciones escalables y tolerantes a fallos.
+Iniciar un nuevo proyecto es el proceso de comenzar a construir una nueva aplicación o programa de computadora desde cero. Los programadores lo hacen para cumplir con un nuevo requerimiento o resolver un problema específico. También puede ser una oportunidad para explorar nuevas tecnologías y ampliar sus habilidades.
 
-## Cómo hacerlo
+Cómo hacerlo:
 
 ```Gleam
-// Declaración de una función
-fn suma(a, b) {
-  a + b
-}
-
-// Llamada a la función y salida
-println(suma(5, 3))
-// Salida: 8
+proyecto -> Nuevo
 ```
 
-Para iniciar un nuevo proyecto en Gleam, primero debemos instalar el compilador de Gleam y crear una nueva carpeta para nuestro proyecto. Luego, podemos utilizar el comando `gleam new` para crear una plantilla básica del proyecto. Podemos agregar nuestras funciones y estructuras de datos personalizadas al archivo `src/proyecto.gleam` y compilar nuestro código utilizando el comando `gleam build`. Una vez compilado, podemos ejecutar nuestro proyecto utilizando el comando `gleam run`.
+Esta línea de código establece el inicio de un nuevo proyecto en Gleam. A continuación, el programador puede agregar las funcionalidades deseadas utilizando el lenguaje de programación funcional de Gleam.
 
-## Profundizando en cómo iniciar un nuevo proyecto
+Deep Dive:
 
-Al iniciar un nuevo proyecto en Gleam, es importante tener en cuenta los conceptos básicos de la programación funcional y cómo difieren de los enfoques imperativos más comunes. También debemos considerar cómo Gleam utiliza la concurrencia para mejorar la eficiencia del código y cómo podemos aprovecharla en nuestro proyecto. Finalmente, no debemos olvidar explorar las poderosas estructuras de datos y funciones de alto orden que Gleam tiene para ofrecer.
+Históricamente, comenzar un nuevo proyecto a menudo requería un largo proceso de planificación y diseño. Sin embargo, con el auge de las metodologías ágiles, los programadores ahora pueden iniciar proyectos de manera más rápida y flexible, adaptándose a los cambios y mejorando continuamente.
 
-## Ver también
+Alternativas a Gleam para iniciar un nuevo proyecto podrían ser lenguajes de programación como Ruby o Python. Sin embargo, Gleam ofrece una sintaxis concisa y limpia, así como una robusta infraestructura para desarrollar aplicaciones escalables y resistentes.
 
-- [Página oficial de Gleam](https://gleam.run/)
-- [Documentación de Gleam](https://gleam.run/book/introduction.html)
-- [Erlang OTP](https://www.erlang.org/docs)
+See Also:
+
+Si deseas obtener más información sobre cómo iniciar un nuevo proyecto en Gleam, puedes consultar la documentación oficial en su página web: https://gleam.run/starting-a-new-project/. También puedes unirte a la comunidad de Gleam en su foro de discusión: https://forum.gleam.run/ para obtener ayuda y consejos de otros programadores.

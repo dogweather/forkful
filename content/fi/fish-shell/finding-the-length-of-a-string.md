@@ -10,45 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä & Miksi?
+Miksi ohjelmoijat tarvitsevat tietää merkkijonon pituuden? No, miksi ei! Monissa ohjelmointitehtävissä on tarpeen tietää merkkijonon pituus. Se voi auttaa ohjelmoijia tekemään tiettyjä operaatioita, kuten tietojen käsittelyä ja muotoilua, ja se on myös tärkeää virheiden välttämiseksi.
 
-Usein tarvitset tietää merkkijonon pituuden suorittaessasi tiettyjä tehtäviä, kuten tiedostonimen syöttämistä tai vertailua. Fish Shellin avulla tämä tehtävä onnistuu helposti ja nopeasti.
+## Miten:
+Fish Shellilla on sisäänrakennettu komento "string length", jolla voidaan helposti löytää merkkijonon pituus. Katso alla olevia esimerkkejä koodista ja niiden tulosteista.
 
-## Miten
+```Fish Shell
+# Esimerkki 1:
+echo "Tämä on esimerkki merkkijonosta" | string length
+# Tuloste: 31
 
-Fish Shellin `string length` komento palauttaa annetun merkkijonon pituuden.
-
-```
-Fish Shell esimerkki:
-
-string length "Tämä on esimerkkistring"
-```
-```
-Tulostus:
-
-25
+# Esimerkki 2:
+set string "Toinen esimerkki"
+string length $string
+# Tuloste: 18
 ```
 
-Komento toimii myös yhdessä muuttujien kanssa:
+## Syväsukellus:
+Merkkijonon pituuden löytämiseen on useita tapoja, ja kaikki ohjelmointikielet eivät välttämättä tue sisäänrakennettua komentoa tai toimintoa. Esimerkiksi Java-kielellä merkkijonon pituus löytyy käyttämällä "length()" -metodia. Monilla muilla kielillä on myös samankaltaisia toimintoja.
 
-```
-Fish Shell esimerkki:
-
-set merkkijono "Tämä on toinen esimerkkistring"
-string length $merkkijono
-```
-
-```
-Tulostus:
-
-30
-```
-
-## Syvemmälle
-
-Fish Shellin `string length` komento käyttää algoritmia, joka laskee merkkien määrän merkkijonossa. Se huomioi myös mahdolliset välilyönnit ja erikoismerkit, mikä tekee siitä luotettavan tavan selvittää merkkijonon pituuden.
-
-## Katso Myös
-
-- [Fish Shellin dokumentaatio](https://fishshell.com/docs/current/index.html)
-- [String Length - Linuxize](https://linuxize.com/post/fish-string-length/)
+## Lue myös:
+- [Fish Shellin dokumentaatio](https://fishshell.com/docs/current/cmds/string.html#length)
+- [Merkkijonon pituuden löytäminen muiden ohjelmointikielien avulla](https://www.geeksforgeeks.org/string-length-functions-in-other-programming-languages/)

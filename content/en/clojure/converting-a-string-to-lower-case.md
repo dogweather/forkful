@@ -10,51 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-Converting strings to lower case is a common task in programming. Lowercasing strings can be useful for comparing inputs or creating more consistent data for processing. In Clojure, there are several ways to convert strings to lower case, making it a handy skill to have in your toolbox.
+Converting a string to lower case simply means converting all the letters to their lowercase counterparts. This is often done by programmers in order to standardize text for comparison or to avoid case sensitivity issues in their code.
 
-## How To
-
-To convert a string to lower case in Clojure, you can use the `lower-case` function from the `clojure.string` library. Here's an example:
+## How to:
 
 ```Clojure
-(require '[clojure.string :as str])
+(.toLowerCase "Hello World")
+;; => "hello world"
 
-(str/lower-case "HELLO WORLD")
+(lower-case "AbCde")
+;; => "abcde"
 ```
 
-This code will output `"hello world"`. The `lower-case` function takes in a string as an argument and returns a new string with all characters converted to lower case. 
+## Deep Dive:
 
-Another way to convert strings to lower case in Clojure is by using the `#(.toLowerCase %)` function. This is a Java interop function that calls the `toLowerCase()` method on a string. 
+Historically, string manipulation has been a common task for programmers. In fact, the earliest programming languages did not have built-in string manipulation functions, and developers had to come up with creative ways to accomplish this task.
 
-```Clojure
-(#(.toLowerCase %) "HELLO WORLD")
-```
+In Clojure, the `lower-case` function was introduced in version 1.3.0, making it easier for developers to convert strings to lower case.
 
-This code will also output `"hello world"`. 
+While converting a string to lower case is a simple task, it is worth noting that not all characters will be converted in the same way. For example, some languages have special rules for converting certain characters to lower case, such as the German "ß" to "ss" or the Turkish "I" to "ı." In these cases, additional steps may need to be taken to accurately convert strings to lower case.
 
-## Deep Dive
+As an alternative to using the `lower-case` function, some developers may choose to use the `(.toLowerCase)` method from Java, which Clojure is built on top of. However, the `lower-case` function is generally preferred as it is more idiomatic and also handles international characters properly.
 
-While the `lower-case` and `#(.toLowerCase %)` functions are the most straightforward ways to convert strings to lower case in Clojure, there are a few things to keep in mind. 
+## See Also:
 
-First, the `lower-case` function is case-insensitive by default. This means that it will work for all types of strings, including ones that are already in lower case. 
-
-On the other hand, the `#(.toLowerCase %)` function is case-sensitive. This means that it will only convert uppercase characters to lowercase. If you pass in a string that is already in lowercase, it will remain unchanged.
-
-You can also use the `repeatedly` function with the `rand-nth` function if you want to convert a string to a random combination of lowercase and uppercase characters. Here's an example:
-
-```Clojure
-(require '[clojure.string :as str])
-
-(def s "Hello World")
-
-(str/join "" (repeatedly #(rand-nth [(str/lower-case %) (str/upper-case %)]) s))
-```
-
-This code will output a string with random lowercase and uppercase characters, such as `"HElLo WoRLd"`.
- 
-## See Also
-
-- [The clojure.string library documentation](https://clojuredocs.org/clojure.string)
-- [The Clojure Cheat Sheet](https://clojure.org/api/cheatsheet)
+- [ClojureDocs: lower-case](https://clojuredocs.org/clojure.core/lower-case)
+- [JavaDocs: String toLowerCase](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#toLowerCase--)
+- [How to Use String Manipulation Functions in Clojure | Thinkster.io](https://www.thinkster.io/tutorials/clojure-string-manipulation-functions)

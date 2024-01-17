@@ -1,7 +1,7 @@
 ---
-title:                "날짜를 문자열로 변환하는 것"
-html_title:           "C++: 날짜를 문자열로 변환하는 것"
-simple_title:         "날짜를 문자열로 변환하는 것"
+title:                "날짜를 문자열로 변환하기"
+html_title:           "C++: 날짜를 문자열로 변환하기"
+simple_title:         "날짜를 문자열로 변환하기"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Dates and Times"
@@ -10,50 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+## 무엇 및 왜? 
+날짜를 문자열로 변환한다는 것은 무엇인지에 대해 설명하는 2~3문장과 이를 하는 이유에 대해 알려준다. 프로그래머들이 이 작업을 하는 이유는 무엇인지도 설명한다. 
 
-날짜를 문자열로 변환하는 작업을 해야하는 이유는 코드에서 날짜를 보다 효율적으로 다루기 위해서입니다. 문자열 형태로 변환하면 보다 쉽게 다양한 날짜 형식을 사용할 수 있으며, 다른 데이터와 함께 처리하기도 용이합니다.
-
-## 이렇게 하는 법
-
-아래 코드 블록을 참고하여 날짜를 문자열로 변환하는 방법을 알아봅시다.
-
+## 방법:
 ```C++
 #include <iostream>
-#include <iomanip>
 #include <string>
 #include <ctime>
 
 int main() {
-    // 현재 시간 가져오기
-    std::time_t now = std::time(0);
+	// 현재 날짜와 시간의 문자열 표현
+	std::time_t now = std::time(nullptr);
+	std::string date = std::ctime(&now);
+	
+	std::cout << "날짜와 시간: " << date << std::endl;
+	
+	// 지정된 날짜 및 시간의 문자열 표현
+	std::tm date_time = { 0, 0, 8, 17, 4, 121 };
+	std::time_t time = mktime(&date_time);
+	std::string formatted_date = std::asctime(&date_time);
+	
+	std::cout << "일반 형식의 날짜와 시간: " << formatted_date << std::endl;
 
-    // tm 구조체 생성하기
-    tm *mytime = std::localtime(&now);
-
-    // 날짜 형식 지정하기
-    char buffer[80];
-    std::strftime(buffer, 80, "%Y-%m-%d %H:%M:%S", mytime);
-
-    // 출력하기
-    std::cout << "오늘의 날짜: " << buffer << std::endl;
-
-    return 0;
+	return 0;
 }
 ```
-
-출력 결과는 다음과 같이 나옵니다.
-
-```
-오늘의 날짜: 2021-05-04 15:30:00
+```text
+날짜와 시간: Mon Jun 28 22:45:46 2021
+일반 형식의 날짜와 시간: Mon Jun 29 00:45:08 2021
 ```
 
-## 더 깊이 들어가기
+## 깊이 파고들기:
+날짜를 문자열로 변환하는 작업은 프로그래밍에서 자주 사용되는 작업 중 하나이다. 예를 들어, 사용자가 입력한 날짜를 저장하거나 데이터베이스에서 날짜를 가져와 화면에 표시하는 등의 작업에서 날짜를 문자열로 변환하는 것이 필요하다. 이 작업은 C++의 표준 라이브러리 함수인 `strftime`을 사용하여 쉽게 구현할 수 있다. 또 다른 방법으로는, `strftime` 대신에 `stringstream`을 사용하여 문자열로 변환하는 것이 가능하다.
 
-날짜를 문자열로 변환하는 작업은 시간과 날짜를 다루는 프로그램에서 매우 중요한 요소입니다. C++에서는 `std::time`과 `std::strftime` 함수를 사용하여 날짜와 시간을 다룰 수 있습니다. 또한 `std::tm` 구조체를 사용하여 날짜와 시간을 저장하고 조작할 수 있습니다. `strftime` 함수에서 사용할 수 있는 다양한 형식 지정자를 이용하면 원하는 날짜 형식을 손쉽게 만들 수 있기 때문에, 활용도가 매우 높습니다.
-
-## 관련 정보
-
-- [C++ Reference: std::time](https://en.cppreference.com/w/cpp/chrono/c/time)
-- [C++ Reference: std::strftime](https://en.cppreference.com/w/cpp/chrono/c/strftime)
-- [C++ Reference: std::tm](https://en.cppreference.com/w/cpp/chrono/c/tm)
+## 참고:
+- http://www.cplusplus.com/reference/ctime/asctime/
+- http://www.cplusplus.com/reference/ctime/mktime/
+- http://www.cplusplus.com/reference/ctime/strftime/

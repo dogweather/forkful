@@ -10,70 +10,71 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
+## 什么和为什么？
 
-要下载一个网页可以带来许多好处。首先，您可以在离线的情况下阅读网页内容，而不必担心网络连接问题。其次，您可以保存您喜欢的网页，以便以后再次阅读或分享给他人。
+下载网页是指从互联网上将网页内容保存到本地计算机的过程。程序员通常会下载网页来进行数据抓取、分析和处理，以及构建网站和应用程序。
 
-## 如何
-
-下面是使用Python下载网页的简单代码示例和输出。
+## 如何：
 
 ```Python
 # 导入必要的模块
 import requests
 
-# 定义要下载的网址
+# 使用requests发送GET请求，下载网页并保存为HTML文件
 url = "https://www.example.com"
-
-# 发送GET请求，并将响应存储在变量中
 response = requests.get(url)
+with open("example.html", "w") as f:
+    f.write(response.text)
 
-# 打印响应内容
+# 打印出网页的内容
 print(response.text)
+
+# 使用BeautifulSoup库来解析和提取网页中的数据
+from bs4 import BeautifulSoup
+soup = BeautifulSoup(response.text, "html.parser")
+# 找到所有的链接
+links = soup.find_all("a")
+# 遍历链接并打印出链接的文本和URL
+for link in links:
+    print(link.text)
+    print(link.get("href"))
 ```
 
-这将输出网页的HTML内容。您也可以使用Python中的“urllib”模块来下载网页。代码示例如下：
+输出：
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Example Website</title>
+</head>
+<body>
+    <h1>Hello World</h1>
+    <p>This is an example website.</p>
+    <a href="https://www.google.com">Google</a>
+    <a href="https://www.yahoo.com">Yahoo</a>
+    <a href="https://www.bing.com">Bing</a>
+</body>
+</html>
 
-```Python
-# 导入必要的模块
-import urllib.request
-
-# 定义要下载的网址
-url = "https://www.example.com"
-
-# 发送GET请求，并将响应存储在变量中
-response = urllib.request.urlopen(url)
-
-# 读取并打印响应内容
-data = response.read()
-print(data)
+Google
+https://www.google.com
+Yahoo
+https://www.yahoo.com
+Bing
+https://www.bing.com
 ```
 
-## 深入探讨
+## 深入探讨：
 
-使用Python下载网页的另一个重要方面是处理可能出现的错误。例如，如果无法连接到网站，您将收到一个错误。为了解决这个问题，您可以使用“try-except”语句来捕获异常并处理它们。代码示例如下：
+历史背景：在互联网发展的早期，下载网页是非常常见的，因为那时常用的阅览器并不支持离线浏览网页。现在，下载网页的主要目的是为了进行数据分析和构建网站和应用程序。
 
-```Python
-# 导入必要的模块
-import requests
+其他方法：除了使用Python代码来下载网页，也可以使用命令行工具，如wget和curl。这些工具能够更快速和有效地下载网页，并且能够处理一些特殊情况，如连接超时和重定向。
 
-# 定义要下载的网址
-url = "https://www.example.com"
+实现细节：Python中最常用的库之一是requests，它提供了一个简单和直观的接口来发送HTTP请求并处理响应。要解析网页中的数据，可以使用BeautifulSoup库，它能够根据HTML标签来提取数据，并且还能够处理不规则的HTML代码。
 
-# 发送GET请求，并将响应存储在变量中
-try:
-    response = requests.get(url)
-    # 打印响应内容
-    print(response.text)
-except Exception as e:
-    # 处理异常情况
-    print(e)
-```
+## 查看也许感兴趣的：
 
-您可以根据自己的需要使用不同的异常类型来处理不同的错误。
-
-## 参考链接
-
-- [Python requests模块文档](https://requests.readthedocs.io/en/master/)
-- [Python urllib模块文档](https://docs.python.org/3/library/urllib.html)
-- [Python异常处理文档](https://docs.python.org/3/tutorial/errors.html)
+- [Requests 官方文档](https://docs.python-requests.org/en/master/)
+- [BeautifulSoup 官方文档](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
+- [wget 命令行工具](https://www.gnu.org/software/wget/)
+- [curl 命令行工具](https://curl.se/)

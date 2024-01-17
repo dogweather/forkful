@@ -10,36 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-Starting a new project can be an exciting and fulfilling experience for anyone interested in coding or exploring new ideas. It allows you to bring your vision to life and create something from scratch.
+## What & Why?
+Starting a new project in programming refers to creating a new software or application from scratch. Programmers do this in order to meet a specific need or solve a problem. It allows them to have full control over the project and tailor it to their unique requirements.
 
-## How To
-To start a new Java project, follow these simple steps:
-
-1. Open your Java IDE (Integrated Development Environment) of choice.
-2. Create a new project by clicking on the "New" button or selecting "New Project" from the File menu.
-3. Choose "Java Project" as the project type and give your project a name.
-4. Select the proper JDK (Java Development Kit) version and click "Finish."
+## How to:
+Coding in Java to start a new project is a simple process. First, import the necessary packages and create a main method. Then, declare and initialize any variables needed for the project. Finally, use the System.out.println() method to print out the desired output. Here is an example code:
 
 ```Java
+import java.util.Scanner;
+
 public class NewProject {
-    public static void main(String[] args) {
-        System.out.println("Hello, world!");
-    }
+   public static void main(String[] args) {
+      Scanner input = new Scanner(System.in);
+      int num1, num2, sum;
+      
+      System.out.print("Enter first number: ");
+      num1 = input.nextInt();
+      
+      System.out.print("Enter second number: ");
+      num2 = input.nextInt();
+      
+      sum = num1 + num2;
+      System.out.println("Sum = " + sum);
+   }
 }
 ```
 
-After executing this code, you should see "Hello, world!" printed in the console.
+Output:
+Enter first number: 5 <br>
+Enter second number: 3 <br>
+Sum = 8
 
-## Deep Dive
-When starting a new project, it is important to plan and organize your code beforehand. Consider creating a project structure with different packages for different components, such as model, view, and controller. This helps to keep your code organized and makes it easier to maintain in the long run.
+## Deep Dive:
+Creating a new project in Java is a widely-used practice due to its flexibility and scalability. It allows for efficient coding and easy maintenance, making it a preferred language for large projects. Additionally, Java is a cross-platform language, meaning the code can run on any operating system.
 
-Another key aspect of starting a new project is choosing the right design patterns. Design patterns are reusable solutions to common programming problems, and there are various ones to choose from in Java. Research and consider which ones would be most suitable for your project.
+There are alternative languages for starting a new project, such as Python or C++, but Java's object-oriented programming approach makes it easier to understand and modify code. This is especially useful for collaborative projects.
 
-Finally, testing is crucial in the development process of a new project. Unit testing, which involves testing individual units of code, helps ensure that each component of your project works correctly. In addition, integration testing, which checks if different units work well together, can catch bugs that may arise due to the integration of components.
+The implementation of starting a new project in Java involves creating a package to organize the code and then defining classes within that package. From there, objects and methods can be created to perform various tasks. It's important to continuously test and debug the code during the development process.
 
-## See Also
-- [Java Tutorials](https://docs.oracle.com/javase/tutorial/)
-- [Design Patterns in Java](https://www.journaldev.com/1827/java-design-patterns-example-tutorial)
-- [Unit Testing in Java](https://www.baeldung.com/junit-5)
-- [Integration Testing in Java](https://www.baeldung.com/integration-testing-in-spring)
+## See Also:
+To learn more about starting a new project in Java, check out the official Java tutorial on Oracle's website: https://docs.oracle.com/javase/tutorial/getStarted/index.html. You can also explore popular Java development tools such as Eclipse or IntelliJ IDEA for creating and managing projects.

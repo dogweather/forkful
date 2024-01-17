@@ -10,31 +10,20 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ？
+## 説明 & 必要性?
+ディレクトリが存在するかどうかを確認することは、プログラマーにとって重要です。ディレクトリとは、ファイルやサブディレクトリを含む場所のことです。プログラマーは、特定のディレクトリが存在するかどうかを確認し、必要に応じて処理することができます。
 
-ディレクトリには、ファイルやデータを効率的に整理するための重要な役割があります。そのため、プログラマーはしばしばコード内でディレクトリをチェックする必要があります。
-
-## 手順
-
-ディレクトリが存在するかどうかを確認するには、`FileManager`クラスを使用します。以下の例では、`fileExists(atPath:)`メソッドを使用して、ディレクトリが存在するかどうかをチェックしています。
-
+## 方法:
 ```Swift
-let fileManager = FileManager.default
-let directoryPath = "/Users/username/Documents"
-if fileManager.fileExists(atPath: directoryPath) {
-    print("Directory exists!")
-} else {
-    print("Directory does not exist.")
-}
+let fileManager = FileManager.default //デフォルトのファイルマネージャーを作成
+let directoryExists = fileManager.fileExists(atPath: "/Users/username/Documents") //指定したパスのディレクトリが存在するかを確認
+print(directoryExists) //出力: true or false
 ```
 
-上記のコードを実行すると、指定したディレクトリが存在する場合には「Directory exists!」というメッセージが、存在しない場合には「Directory does not exist.」というメッセージが出力されます。
+## 深く掘り下げる:
+ディレクトリが存在するかどうかを確認する方法は、現在のバージョンのSwiftでは非常に簡単ですが、以前のバージョンでは少し異なっていました。以前のバージョンでは、ファイルマネージャーの `fileExistsAtPath` メソッドを使用する必要がありましたが、現在のバージョンでは `fileExists(atPath:)` メソッドが使用可能です。また、ディレクトリが存在しない場合に新しく作成する方法もあります。さらに、ディレクトリが存在しない場合にエラーを投げる方法や、特定の種類のファイルのみを含むディレクトリを確認する方法など、様々なオプションがあります。
 
-## さらに深く
-
-ディレクトリが存在するかどうかをチェックする場合、`fileExists(atPath:)`メソッドは絶対パスを引数として受け取ります。しかし、相対パスを使用したい場合には、`fileExists(atPath:, isDirectory:)`メソッドを使用することもできます。このメソッドでは、第二引数に`isDirectory`を`true`に設定することで、ファイルではなくディレクトリをチェックすることができます。
-
-## See Also
-
-- [Apple Developer Documentation - FileManager](https://developer.apple.com/documentation/foundation/filemanager)
-- [Swift by Sundell - Checking if a file or directory exists in Swift](https://www.swiftbysundell.com/articles/checking-if-a-file-or-directory-exists-in-swift)
+## 参考:
+- [Apple - FileManager Documentation](https://developer.apple.com/documentation/foundation/filemanager)
+- [Hacking with Swift - Checking if a file exists using FileManager](https://www.hackingwithswift.com/example-code/system/how-to-check-whether-a-file-exists-using-filemanager)
+- [Swift by Sundell - Working with directories and files in Swift](https://www.swiftbysundell.com/basics/directories-and-files/)

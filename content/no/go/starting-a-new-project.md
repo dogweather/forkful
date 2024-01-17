@@ -10,13 +10,11 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hva & hvorfor?
+Å starte et nytt prosjekt innebærer å lage et nytt dataprogram, applikasjon eller nettsted. Dette kan gjøres av programmerere for å løse et spesifikt problem, lage en ny tjeneste eller bare for å utforske og lære ny teknologi.
 
-Lurer du på hvorfor du bør begynne på et nytt prosjekt ved hjelp av Go? Vel, det er flere grunner til det! Først og fremst er Go et relativt nytt programmeringsspråk som er utviklet med fokus på effektivitet og produktivitet. Det er også enkelt å lære og har en rask og kraftig kompileringsprosess. Så hvorfor ikke gi det en sjanse og starte et spennende nytt prosjekt?
-
-## Hvordan
-
-For å komme i gang med å programmere i Go, trenger du selvfølgelig å ha det installert på datamaskinen din. Du kan enkelt laste ned og installere den nyeste versjonen fra nettstedet deres. Når det er gjort, kan du begynne å kode ved hjelp av følgende syntaks innenfor " ```Go ... ```" kodelinjene:
+## Hvordan:
+Go er et programmeringsspråk som er enkelt å komme i gang med. Her er et eksempel på hvordan du kan starte et nytt prosjekt ved å lage en enkel "Hello World" applikasjon i Go:
 
 ```Go
 package main
@@ -24,27 +22,18 @@ package main
 import "fmt"
 
 func main() {
-    fmt.Println("Hei, verden!")
+	fmt.Println("Hello, world!")
 }
 ```
 
-Dette eksemplet vil skrive ut "Hei, verden!" i konsollen når du kjører programmet ditt. Du kan også utforske flere funksjoner i Go ved å sjekke ut dokumentasjonen deres og prøve deg frem med ulike kodeeksempler.
+Resultatet av dette vil være utskrift av teksten "Hello, world!" i konsollen når programmet kjøres.
 
-## Dypdykk
+## Dykk dypere:
+Go ble utviklet av Google i 2009 med mål om å være et raskt og enkelt programmeringsspråk. Det er et åpent og gratis språk som brukes av mange store selskaper, som for eksempel Google, Netflix og Dropbox. Alternativer til Go inkluderer språk som C++, Java og Python, men Go skiller seg ut med sin effektivitet, enkelhet og støtte for samtidig programmering.
 
-Ok, nå som du vet hvordan du kan komme i gang med å programmere i Go, la oss dykke litt dypere inn i hvordan du kan starte et nytt prosjekt. Først bør du planlegge og definere hva prosjektet ditt skal gjøre, hvilke funksjoner det skal ha og hvilke standarder du vil følge. Deretter kan du opprette en mappe for prosjektet ditt og initialisere en Go-modul ved hjelp av kommandoen:
+For å starte et nytt prosjekt i Go, trenger du en teksteditor og å installere Go på datamaskinen din. Så kan du følge dokumentasjonen på Go sin offisielle nettside for å lære mer om språket og utvikle dine programmeringsferdigheter.
 
-```
-go mod init github.com/brukernavn/prosjektnavn
-```
-
-Dette vil lage en go.mod-fil som holder oversikt over avhengighetene dine og lar deg enkelt importere dem i koden din. Du kan også bruke "go get" kommandoen for å installere eventuelle eksterne pakker du trenger for prosjektet ditt.
-
-Et annet nyttig tips er å bruke Go sin innebygde testingfunksjonalitet for å sikre at koden din fungerer som forventet. Du kan lage tester ved å opprette en _test.go fil og bruke "go test" kommandoen for å kjøre dem.
-
-## Se også
-
-- Offisiell nedlasting- og installasjonsinstruksjoner fra Go-nettstedet: https://golang.org/doc/install
-- Go sin offisielle dokumentasjon: https://golang.org/doc/
-- En praktisk guide for å lære Go-programmering: https://www.golang-book.com/
-- Offisielle ressurser og eksempler fra Go på GitHub: https://github.com/golang/example
+## Se også:
+- Offisiell nettside for Go: https://golang.org/
+- Go dokumentasjon: https://golang.org/doc/
+- Go kodeeksempler: https://gobyexample.com/

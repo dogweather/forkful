@@ -10,43 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
+# 什么是字符串长度，为什么程序员需要它？
 
-为什么我们要去找出一个字符串的长度？因为在编程中，有时候需要知道一个字符串的长度来做一些操作，比如遍历和截取。
+字符串是由一系列字符组成的数据，它在编程中十分常见。字符串的长度指的是字符的数量，它在很多情况下都是重要的。程序员需要找到字符串的长度可能是因为要做一些处理或比较操作，或者为了满足某些特定的需求。
 
-## 如何做
+# 如何找到字符串的长度？
 
-在Haskell中，我们可以使用内置函数`length`来查找字符串的长度。让我们来看一个例子：
+你可以使用Haskell的预定义函数`length`来找到一个字符串的长度。下面是一个示例代码和输出：
 
-```Haskell
-str = "Hello World"  -- 定义一个字符串
-len = length str    -- 使用length函数来查找长度
-print(len)          -- 输出结果为 11
+```
+Haskell stringLength = "Hello World!"
+-- 使用length函数找到字符串的长度
+length stringLength
 ```
 
-如果我们想要找出一个字符串中某个特定字符的长度，该怎么做呢？我们可以使用`filter`函数来进行筛选，然后再使用`length`函数来计算长度。如下所示：
+输出：11
 
-```Haskell
-str = "Hello World"
-len = length (filter (== 'l') str)  -- 筛选出所有的l，然后计算长度
-print(len)                          -- 输出结果为 3
-```
+# 深入探讨
 
-## 深入探讨
+在历史上，计算字符串长度可能是一项耗时而复杂的任务，因为计算机需要遍历每个字符来计数。但是，现代编程语言像Haskell已经为我们提供了方便的解决方案。除了使用`length`函数之外，程序员也可以使用递归函数或者`count`函数来计算字符串长度。
 
-在Haskell中，字符串实际上是由一个个Unicode字符组成的列表。因此，`length`函数实际上是在计算这个列表的长度，而不仅仅是字符串的字符数。
+另外，如果你想要计算一个字符串中特定字符的数量，可以使用`elemIndices`函数来找到它们的位置，然后用`count`函数来计数。
 
-此外，我们还可以使用`map`函数来将字符串拆分成单个字符的列表，然后使用`length`函数来计算长度。如下所示：
+# 参考资料
 
-```Haskell
-str = "Hello World"
-charList = map (:[]) str    -- 将字符串拆分为单个字符的列表
-len = length charList       -- 计算列表的长度
-print(len)                  -- 输出结果为 11
-```
-
-## 参考链接
-
-- [Haskell 语言官方网站](https://www.haskell.org/)
-- [Haskell Wiki](https://wiki.haskell.org/)
-- [Haskell 函数文档](https://www.haskell.org/onlinereport/standard-prelude.html)
+- [Haskell字符串文档](https://downloads.haskell.org/~ghc/8.8.3/docs/html/libraries/base-4.13.0.0/Data-String.html)
+- [Haskell递归函数教程](https://en.wikibooks.org/wiki/Haskell/Recursion)
+- [Haskell计数函数文档](https://www.yesodweb.com/book/shakespearean-templates)

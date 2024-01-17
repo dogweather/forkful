@@ -10,32 +10,21 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
+Sökning och ersättning av text är en vanlig uppgift för programmerare. Det handlar om att hitta specifika delar av en text och ersätta dem med annan text. Detta kan hjälpa till att snabbt göra ändringar i en stor mängd kod eller göra texten mer enhetlig.
 
-Att kunna söka och ersätta text i en kodbas är en viktig och användbar funktion för Swift-utvecklare. Det kan hjälpa till att snabbt göra ändringar i koden och minska risken för skrivfel.
-
-## Så här gör du
-
-För att söka och ersätta text i Swift, använd funktionen `replacingOccurrences(of:with:)`. Här är ett exempel på hur du kan ersätta alla förekomster av ett ord med ett annat i en sträng:
-
+## Så här gör du:
+För att söka och ersätta text med Swift kan du använda metoden `replacingOccurrences(of:with:)`. Till exempel kan du byta ut alla förekomster av ordet "Swift" med "Kotlin" i en sträng genom att skriva:
 ```Swift
-let str = "Jag älskar att koda i Swift!"
-let nyStr = str.replacingOccurrences(of: "älskar", with: "tycker om")
-
-print(nyStr) // Output: "Jag tycker om att koda i Swift!"
+let text = "Jag älskar Swift!"
+let newText = text.replacingOccurrences(of: "Swift", with: "Kotlin")
+print(newText)
 ```
+Resultatet blir "Jag älskar Kotlin!". Du kan också använda Regex (regular expressions) för att göra mer avancerade sökningar och ersättningar.
 
-Om du vill söka och ersätta text i en hel kodbas kan du använda Xcode's "Find and Replace" -funktion. Du kan söka efter ett specifikt ord och välja att ersätta det i hela projektet eller bara i vissa filer.
+## Djupdykning:
+Sökning och ersättning har funnits i programmering sedan tidiga datorer. Det är också en vanlig funktion i olika textredigeringsprogram. Om du inte använder Swift kan du hitta liknande metoder i andra programmeringsspråk som Java (`replace()`), Python (`replace()`), och C# (`Replace()`). Det finns också integrerade verktyg för sökning och ersättning i utvecklingsmiljöer som Xcode och Visual Studio.
 
-## Djupdykning
-
-När du använder `replacingOccurrences(of:with:)`-funktionen, kommer alla förekomster av det sökta ordet att ersättas. Detta inkluderar även om ordet finns som en del av ett annat ord.
-
-I exemplet ovan kommer "älskar" att ersättas även om det finns som en del av ordet "älskarinnan". För att undvika detta kan du använda `replacingOccurrences(of:with:options:range:)` och specificera vilka delar av strängen som ska sökas i för att undvika oönskade ersättningar.
-
-Det finns också andra funktioner som kan komma till nytta vid sökning och ersättning av text, som `range(of:)` för att hitta en del av en sträng och `replacingCharacters(in:with:)` för att ersätta en del av en sträng med en annan.
-
-## Se också
-
-- [Swift's String Dokumentation](https://developer.apple.com/documentation/swift/string)
-- [How to use Find and Replace in Xcode](https://medium.com/@twannl/xcode-find-and-replace-explained-5c1e8c1ef4b1)
+## Se även:
+- [Apple Swift - Working with Strings](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+- [Regular-Expressions.info - Swift Regex Tutorial](https://www.regular-expressions.info/swift.html)

@@ -1,7 +1,7 @@
 ---
-title:                "Analyse de l'html."
-html_title:           "PHP: Analyse de l'html."
-simple_title:         "Analyse de l'html."
+title:                "Analyse de code html"
+html_title:           "PHP: Analyse de code html"
+simple_title:         "Analyse de code html"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "HTML and the Web"
@@ -10,35 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Pourquoi
-## Pourquoi Parser du HTML
+## Qu'est-ce que c'est et pourquoi le faire? 
+Le parsing HTML est le processus de lecture et d'analyse du code source d'une page Web pour en extraire des informations ou effectuer des manipulations. Les programmeurs utilisent le parsing HTML pour récupérer des données spécifiques sur une page Web ou pour automatiser certaines tâches telles que la mise à jour de contenu. 
 
-Si vous travaillez avec des données en ligne, il y a de fortes chances que vous ayez rencontré le besoin de parser du HTML. Le HTML est le langage de base pour la création de pages web, et en tant que programmeur, il est important d'être en mesure de récupérer et de manipuler efficacement ces données pour les utiliser dans vos projets.
-
-## Comment faire
-```PHP
-// Utiliser la bibliothèque DOMDocument de PHP pour charger le contenu HTML
-$html = new DOMDocument();
-$html->loadHTMLFile('https://example.com');
-
-// Utiliser la méthode getElementById pour récupérer des éléments spécifiques par leur ID
-$element = $html->getElementById('example-id');
-```
-Le code ci-dessus montre comment utiliser la bibliothèque DOMDocument de PHP pour charger du HTML à partir d'une URL et comment récupérer un élément spécifique en utilisant son ID. Vous pouvez également utiliser d'autres méthodes telles que `getElementsByTagName` pour récupérer des éléments par leur nom de balise.
+## Comment faire: 
+Voici un exemple de code PHP pour parser une page Web et extraire les liens hypertexte présents dans le code source : 
 
 ```PHP
-// Utiliser la fonction native de PHP "strip_tags" pour supprimer les balises HTML d'une chaîne de texte
-$text = strip_tags($html->saveHTML());
-echo $text;
+$page = file_get_contents("url_de_la_page"); // récupère le code source de la page
+$matches = []; // initialise un tableau vide pour stocker les liens
+preg_match_all('/<a href=[\"\'](.+)[\"\']>(.+)<\/a>/i', $page, $matches); // recherche et enregistre les liens dans le tableau
+foreach($matches[1] as $link){ // parcourt le tableau de liens
+    echo $link . "<br>"; // affiche chaque lien trouvé
+}
 ```
-Dans cet exemple, la fonction `strip_tags` de PHP est utilisée pour supprimer toutes les balises HTML d'un contenu et ne laisser que le texte brut. Cela peut être utile si vous avez besoin de récupérer seulement le contenu textuel d'une page web.
+Exemple de résultat :
+```
+https://www.example.com
+https://www.example.com/fr/
+https://www.example.com/contact
+```
 
-## Plongée en profondeur
-Parser du HTML peut être un processus complexe en raison de la structure souvent chaotique des pages web. Il est important de comprendre la structure du HTML et comment utiliser les méthodes appropriées pour récupérer les données souhaitées. Vous pouvez également utiliser des outils tels que XPath pour naviguer plus facilement dans le HTML en utilisant des expressions spécifiques.
+## Plongée en profondeur: 
+Le parsing HTML a été développé pour permettre aux navigateurs Web d'afficher des pages Web, mais il a depuis été utilisé dans de nombreux domaines tels que le web scraping, le traitement de données et la génération de rapports. Il existe des alternatives au parsing HTML telles que l'utilisation d'API (interfaces de programmation d'application) ou de bibliothèques spécialisées, mais le parsing reste une méthode populaire et efficace. Dans l'exemple précédent, nous avons utilisé la fonction `preg_match_all()` qui utilise des expressions régulières pour rechercher et extraire les liens hypertexte. Il est important de noter que le parsing HTML peut être complexe et nécessite une connaissance approfondie de la syntaxe HTML.
 
-Il est également important de noter que le HTML peut être sujet à des changements. Il est toujours recommandé de mettre à jour votre code pour s'adapter aux éventuelles modifications de la structure du HTML.
-
-# Voir aussi
-- [Documentation DOMDocument de PHP](https://www.php.net/manual/en/class.domdocument.php)
-- [Documentation XPath de PHP](https://www.php.net/manual/en/class.domxpath.php)
-- [Documentation strip_tags de PHP](https://www.php.net/manual/en/function.strip-tags.php)
+## Voir aussi: 
+- [Documentation officielle de PHP sur le parsing HTML](https://www.php.net/manual/fr/domdocument.loadhtml.php)
+- [Tutoriel sur le parsing HTML avec PHP](https://www.tutorialspoint.com/php/php_parsing_html.htm)
+- [Bibliothèque PHP pour le web scraping](https://github.com/vermilion-tech/scrapercube)

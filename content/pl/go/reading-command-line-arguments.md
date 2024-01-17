@@ -10,62 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i dlaczego?
 
-Czy kiedykolwiek chciałeś uruchomić swój program z różnymi opcjami, ale nie wiedziałeś jak to zrobić? W takim przypadku, znajomość odczytywania argumentów wiersza poleceń może być bardzo przydatna. Dzięki temu możesz z łatwością dostosować zachowanie programu, bez konieczności zmiany jego kodu.
+Czy kiedykolwiek widziałeś w terminalu, że programista wpisuje coś po włączeniu programu? To właśnie jest czytanie argumentów wiersza poleceń! Programiści robią to aby ustawić pewne opcje lub przekazać dane pomiędzy programami.
 
-## Jak to zrobić
+## Jak:
 
-Odczytywanie argumentów wiersza poleceń jest łatwe w języku Go dzięki bibliotece "flag". Wystarczy, że importujesz tę bibliotekę, a następnie użyjesz funkcji "flag.XXX" aby odczytać argumenty. Poniżej przedstawiam przykład kodu, który wypisuje wartość podaną jako argument "hello" oraz sprawdza, czy podano opcję "-uppercase".
-
-```
+```Go
 package main
 
 import (
-    "flag"
-    "fmt"
+	"fmt"
+	"os"
 )
 
 func main() {
-    // Zdefiniuj flagi
-    helloFlag := flag.String("hello", "", "Wiadomość powitalna")
-    upperFlag := flag.Bool("uppercase", false, "Wypisuj tekst wielkimi literami")
-
-    // Wymagane do odczytania flag
-    flag.Parse()
-
-    // Wypisz wartość argumentu "hello"
-    fmt.Println("Witaj:", *helloFlag)
-
-    // Sprawdź, czy podano opcję "-uppercase"
-    if *upperFlag {
-        // Wypisz tekst wielkimi literami
-        fmt.Println("WITAJ:", *helloFlag)
-    }
+	args := os.Args[1:]
+	fmt.Println("Hello " + args[0] + "!")
 }
 ```
 
-### Przykładowe wywołanie z argumentami:
+Wejdź w terminal i wywołaj ten program, podając swoje imię jako argument:
 
 ```
-go run main.go -hello Jan -uppercase
+$ Go run program.go Kasia
+Hello Kasia!
 ```
 
-### Przykładowy wynik:
+## Deep Dive:
 
-```
-Witaj: Jan
-WITAJ: JAN
-```
+Czytanie argumentów wiersza poleceń jest popularną techniką, która pozwala programistom na dostosowywanie swoich programów do różnych zastosowań. Alternatywą dla tego jest ustawianie stałych wartości w samym kodzie programu, co czyni go mniej uniwersalnym. Implementacja czytania argumentów zależy od języka programowania, jednak w Go jest to proste dzięki bibliotece `os`. Wcześniej, w czasach konsolowych interfejsów użytkownika, czytanie argumentów wiersza poleceń było jedynym sposobem na interakcję z programem.
 
-## Deep Dive
+## Zobacz też:
 
-Biblioteka "flag" jest bardzo pomocna, ale nie jest jedynym sposobem na odczytywanie argumentów wiersza poleceń w Go. Możesz również użyć biblioteki "os", która dostarcza funkcję "os.Args". Ta funkcja zwraca listę argumentów przekazanych do programu, w której pierwszym elementem jest nazwa programu.
-
-Ponadto, warto wiedzieć, że funkcja "flag.Parse()" może rzucić błąd w przypadku, gdy podano niepoprawną lub nieobsługiwaną opcję. Aby uniknąć tego, możesz użyć funkcji "flag.Usage()", która pozwala na dostosowanie wyświetlanego komunikatu błędu lub też wyłączenie wypisywania go całkowicie.
-
-## Zobacz też
-
-- Dokumentacja biblioteki "flag" w języku Go: https://golang.org/pkg/flag/
-- Przykładowe wykorzystanie biblioteki "os": https://play.golang.org/p/mMzPQaa22xP
-- Przykładowe wykorzystanie funkcji "flag.Usage()": https://play.golang.org/p/ckzJzLJKK-3
+- Oficjalna dokumentacja Go na temat czytania argumentów wiersza poleceń: https://golang.org/pkg/os/#Args
+- Przydatny artykuł na temat czytania argumentów wiersza poleceń w Go: https://flaviocopes.com/go-program-command-line-arguments/

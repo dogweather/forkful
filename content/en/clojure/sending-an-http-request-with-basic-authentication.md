@@ -10,50 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-Sending an HTTP request with basic authentication is a common and essential task in web development. It allows you to securely access and authenticate with APIs or websites that require login credentials.
+Sending an HTTP request with basic authentication means including a username and password in the request in order to authenticate and gain access to a protected resource. Programmers use this technique to restrict access to sensitive information and ensure that only authorized users can access it.
 
-## How To
+## How to:
 
 ```Clojure
-;; First, import the necessary libraries
 (require '[clj-http.client :as client])
-(require '[clojure.edn :as edn])
 
-;; Define the request URL
-(def url "https://example.com/api")
+(def url "https://example.com/api/v1/users") ; URL of the protected resource
+(def username "user123") ; replace with actual username
+(def password "pass456") ; replace with actual password
 
-;; Set the basic authentication credentials
-(def username "myusername")
-(def password "mypassword")
+; Sending a GET request with basic authentication
+(client/get url :basic-auth [username password]) ; returns the response from the API
 
-;; Specify the authentication type as "basic"
-(def auth {:basic-auth [username password]})
-
-;; Make the HTTP request with basic authentication
-(client/post url
-             {:auth auth})
-
-;; You can also send additional request parameters
-(client/post url
-             {:auth auth
-              :params (edn/read-string "{\"param1\": \"value1\", \"param2\": \"value2\"}")})
-```
-
-Expected output:
-
-```
-{:status 200, :headers {"content-type" "application/json"}, :body "{\"message\": \"Success!\"}"}
+; Sending a POST request with basic authentication
+(client/post url :body {"name" "John Doe"} :basic-auth [username password]) ; returns the response from the API
 ```
 
 ## Deep Dive
 
-Sending an HTTP request with basic authentication involves adding an "Authorization" header to the request. This header contains the word "Basic" followed by a base64-encoded string of the format "username:password". For example, if the username is "myusername" and the password is "mypassword", the base64-encoded string would be "bXl1c2VybmFtZTpteXBhc3N3b3Jk".
+Sending an HTTP request with basic authentication dates back to the early days of the web when security was not a major concern. It involves sending the username and password encoded in base64 format in the 'Authorization' header of the request. This method is considered less secure as the credentials are transmitted in plaintext, making it vulnerable to malicious attacks.
 
-Additionally, some APIs or websites may require the use of HTTPS instead of HTTP for secure communication. In this case, you would simply change the request URL to "https://example.com/api".
+An alternative to basic authentication is using OAuth, which uses a token-based system for authorization. This method is more secure as it does not require exchanging and storing sensitive credentials.
 
-## See Also
+Implementation details for sending an HTTP request with basic authentication differ depending on the programming language and framework. Clojure has a built-in library - clj-http - specifically designed for making HTTP requests. It provides a simple and easy-to-use API for sending requests with basic authentication.
 
-- Clj-http Library: https://github.com/dakrone/clj-http
-- Basic Authentication Wikipedia Page: https://en.wikipedia.org/wiki/Basic_access_authentication
+## See Also:
+
+- [clj-http library docs](https://www.http-kit.org/client.html)
+- [more info on basic authentication](https://www.ietf.org/rfc/rfc2617.txt)
+- [OAuth overview](https://oauth.net/2/)

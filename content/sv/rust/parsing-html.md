@@ -1,7 +1,7 @@
 ---
-title:                "Analysera html"
-html_title:           "Rust: Analysera html"
-simple_title:         "Analysera html"
+title:                "HTML-analys"
+html_title:           "Rust: HTML-analys"
+simple_title:         "HTML-analys"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "HTML and the Web"
@@ -10,66 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
 
-Att analysera HTML-filer är en viktig del av många webbutvecklingsprojekt. Det kan hjälpa till att extrahera information från hemsidor, utveckla webbautomatiseringstester och mycket mer.
+Att parsra HTML är en viktig del av webbutveckling eftersom det är det språk som används för att skapa och strukturera webbsidor. Genom att parsra HTML kan programmerare bearbeta och manipulera innehållet på en webbsida för att göra den mer dynamisk och användarvänlig.
 
-## Hur man gör det
+## Så här gör du:
 
-För att analysera HTML-filer i Rust finns det flera tredjepartsbibliotek tillgängliga, men vi kommer att fokusera på biblioteket "scraper". För att använda detta bibliotek behöver du ha Rust installerat på din dator.
-
-### Installation
-
-Först och främst måste du installera "scraper" biblioteket. Detta görs genom att lägga till det under `[dependencies]` sektionen i din `Cargo.toml` fil.
-
+För att parsra HTML i Rust kan du använda biblioteket `html5ever`. Nedan finns ett enkelt exempel på hur man kan använda detta bibliotek för att hitta och skriva ut länkarna på en webbsida:
 ```Rust
-[dependencies]
-scraper = "0.13.0"
-```
+// Ladda in biblioteket
+extern crate html5ever;
 
-Du kan sedan installera biblioteket genom att köra följande kommando i din terminal:
+// Skapa en variabel med en webblänk
+let url = "https://example.com";
 
-```bash
-cargo build
-```
+// Parsra HTML från länken
+let new_html = html5ever::parse(url);
 
-### Exempelkod
-
-När biblioteket har installerats kan du börja använda det för att analysera HTML-filer. Se nedan för ett exempel på hur du kan extrahera titeln på en hemsida med hjälp av "scraper":
-
-```Rust
-use scraper::{Html, Selector};
-
-fn main() {
-    let html = r#"
-        <html>
-          <head>
-            <title>Min hemsida</title>
-          </head>
-          <body>
-            <h1>Här är min hemsida</h1>
-            <p>Välkommen!</p>
-          </body>
-        </html>
-    "#;
-
-    let document = Html::parse_document(html);
-    let title_selector = Selector::parse("title").unwrap();
-
-    for title in document.select(&title_selector) {
-        println!("{}", title.text().collect::<Vec<_>>().join(""));
-    }
+// Loopa igenom alla länkar på sidan och skriv ut dem
+for link in new_html.find_all(links) {
+    println!("{}", link);
 }
 ```
 
-Detta kommer att skriva ut "Min hemsida" i konsolen. Du kan anpassa exemplet för att extrahera andra element på en hemsida, som länkar eller bilder.
+Exempelutdata:
+```
+https://example.com/about
+https://example.com/contact
+https://example.com/products
+```
 
-## Djupdykning
+## Djupdykning:
 
-För mer avancerade användningsområden, kan du också utforska andra bibliotek för att analysera HTML i Rust. Några populära alternativ är "html5ever" och "kuchiki". Dessa bibliotek har fler funktioner och kan vara mer lämpliga för professionella projekt. Du kanske också vill titta på hur man använder CSS-väljare för att lättare hitta specifika element på en sida.
+En intressant historisk kontext är att HTML utvecklades av Tim Berners-Lee på 1990-talet som en del av hans arbete på CERN. Alternativ till att parsra HTML är att använda andra språk som XHTML eller XML. En viktig del av att parsra HTML är att förstå DOM-trädet, som är den hierarkiska strukturen för hur HTML-dokumentet är uppbyggt.
 
-## Se även
+## Se även:
 
-- [scraper dokumentation](https://docs.rs/scraper/0.13.0/scraper/)
-- [html5ever dokumentation](https://docs.rs/html5ever/0.24.0/html5ever/)
-- [kuchiki dokumentation](https://docs.rs/kuchiki/0.9.0/kuchiki/)
+- [Officiell dokumentation för html5ever](https://docs.rs/html5ever/0.22.0/html5ever/)
+- [Dokumentation för DOM-trädet i HTML](https://www.w3.org/TR/REC-DOM-Level-1/level-one-html.html)

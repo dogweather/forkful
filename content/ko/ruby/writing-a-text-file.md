@@ -10,31 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜?
+## 무엇 & 왜?
 
-누군가 Ruby를 사용하여 텍스트 파일을 작성할 이유는 무엇일까요? 사실 많은 이유가 있을 수 있지만, 가장 큰 이유는 텍스트 파일을 사용하여 자신의 코드나 데이터를 저장하고 관리하는 데 있습니다.
+텍스트 파일을 작성하는 것은 간단히 말하면 컴퓨터에 저장되어 있는 텍스트 정보를 문서로 만드는 것입니다. 프로그래머들은 텍스트 파일을 작성하는 이유는 여러가지가 있지만, 가장 일반적인 이유는 데이터를 저장하고 나중에 불러오기 위해서입니다.
 
-## 하우 투
+## 방법:
 
-아래는 Ruby를 사용하여 텍스트 파일을 작성하는 간단한 예제입니다.
+```ruby
+# 새로운 텍스트 파일 생성
+File.write("새로운파일.txt", "안녕하세요!")
 
-```Ruby
-# 텍스트 파일을 쓰기 모드로 열기
-File.open("my_text_file.txt", "w") do |file|
-    # 파일에 내용 작성
-    file.puts "안녕하세요, 여러분!"
-    file.puts "Ruby로 텍스트 파일을 작성하는 방법을 알아봅시다."
+# 기존의 텍스트 파일에 내용 추가하기
+File.open("기존파일.txt", 'a') do |file|
+  file.write("또 다른 내용을 추가합니다.")
+end
+
+# 텍스트 파일 읽기
+File.open("파일.txt", "r") do |file|
+  puts file.read
 end
 ```
 
-위 코드를 실행하면 "my_text_file.txt"라는 이름의 텍스트 파일이 생성되고, 그 안에는 "안녕하세요, 여러분!"과 "Ruby로 텍스트 파일을 작성하는 방법을 알아봅시다."라는 두 줄의 텍스트가 저장됩니다.
+**출력:**
+```
+안녕하세요!
+또 다른 내용을 추가합니다.
+```
 
-## 딥 다이브
+## 깊이 파고들기:
 
-텍스트 파일을 작성하는 방법은 간단하지만, 실제로는 다양한 옵션이 존재합니다. 예를 들어, `File.open` 메소드의 두 번째 파라미터로 "w"를 사용하였지만, 다른 옵션으로 "a" 또는 "r"을 사용할 수도 있습니다. 또한 파일을 열고 닫을 때 `File.open` 메소드 대신 `File.open` 블록을 사용하면 더욱 안전하게 파일을 다룰 수 있습니다.
+- 텍스트 파일은 컴퓨터의 파일 시스템에 저장되어 있으며, 일반적으로 텍스트 에디터로 열 수 있습니다.
+- 텍스트 파일을 작성하는 다른 방법으로는 터미널을 이용하는 것이 있습니다. 예를 들어, `echo "추가할 내용" > 파일.txt` 명령어를 사용할 수 있습니다.
+- 텍스트 파일의 포멧은 여러가지가 있지만, 가장 일반적인 것은 ASCII와 UTF-8입니다.
 
-## 더 보기
+## 관련 정보 보기:
 
-- [Ruby 문서: 파일 다루기](https://ruby-doc.org/core-3.0.0/File.html)
-- [Ruby Monstas: 파일 다루기](https://rubymonstas.org/ko/topics/files.html)
-- [유용한 Ruby 비디오 강좌: 텍스트 파일 다루기](https://www.youtube.com/watch?v=ZTI5Fsv6_cM)
+- [Ruby 파일 입출력 가이드](https://rubymonk.com/learning/books/4-ruby-primer-ascent/chapters/48-ruby-on-your-system/lessons/122-file-i-o-in-your-system)
+- [텍스트 파일 개념 이해하기](https://www.computerhope.com/jargon/t/textfile.htm)
+- [텍스트 파일 작성에 관련된 더 많은 예제](https://gist.github.com/codertimo/829280)

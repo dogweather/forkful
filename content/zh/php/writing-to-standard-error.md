@@ -1,7 +1,7 @@
 ---
-title:                "写入标准错误"
-html_title:           "PHP: 写入标准错误"
-simple_title:         "写入标准错误"
+title:                "写给标准错误"
+html_title:           "PHP: 写给标准错误"
+simple_title:         "写给标准错误"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Files and I/O"
@@ -10,29 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么？
+## 什么是writing to standard error？为什么程序员要这么做？
 
-程序员经常需要输出错误信息来帮助调试代码。通过将错误信息写入标准错误流，可以方便地在命令行界面或日志文件中查看，从而更快地定位和解决问题。
+Writing to standard error是指在程序中将错误信息打印到控制台。程序员经常这样做是为了快速检测和解决程序中的错误，使得程序更加稳定和可靠。
 
-## 如何做？
+## 如何实现？
 
-在PHP中，可以使用`fwrite()`函数来写入标准错误流。首先需要获取标准错误流的句柄，并指定写入的信息。以下是一个例子：
+在PHP中，可以通过使用`error_log()`函数将错误信息打印到标准错误流。下面是一个简单的例子：
 
 ```PHP
-$stderr = fopen('php://stderr', 'w'); //打开标准错误流句柄
-fwrite($stderr, "This is an error message."); //写入错误信息
-fclose($stderr); //关闭句柄
+$num = 10 / 0;
+if (!$num) {
+  error_log("除数不能为0！");
+}
 ```
 
-运行以上代码，并将错误信息写入标准错误流。在命令行界面中，可以通过`php yourfile.php 2>/dev/null`来运行代码，并将错误信息输出到空设备中。如果需要将错误信息写入日志文件，可以使用PHP内置的`error_log()`函数。
+执行以上代码后，控制台会输出错误信息“除数不能为0！”。除了使用`error_log()`函数，还可以使用`trigger_error()`函数和`die()`函数来输出错误信息。
 
 ## 深入了解
 
-除了在调试代码时输出错误信息，还可以通过将错误信息写入标准错误流来实现实时的日志记录。这对于大型的应用程序非常有用，可以帮助排查生产环境中的错误。同时，写入标准错误流的信息可以被其他命令行工具所读取和处理，为程序员提供更多选择。
+写入标准错误流是一种用于调试和错误处理的常用方法，可以帮助程序员快速定位错误。除了PHP，其他编程语言如Java和Python也都提供了类似的功能。
 
-## 参考链接
+除了将错误信息打印到控制台，还可以将其记录到日志文件中，方便后续分析和修复。此外，也可以使用调试工具来捕获和查看程序中的错误。
 
-- [PHP fwrite()函数文档](https://www.php.net/manual/zh/function.fwrite.php)
-- [PHP fopen()函数文档](https://www.php.net/manual/zh/function.fopen.php)
-- [PHP error_log()函数文档](https://www.php.net/manual/zh/function.error-log.php)
-- [如何在PHP中记录实时日志信息？](https://stackoverflow.com/questions/8313226/how-to-log-real-time-in-php)
+## 参考资料
+
+- PHP中文手册：error_log - http://php.net/manual/zh/function.error-log.php
+- PHP中文手册：trigger_error - http://php.net/manual/zh/function.trigger-error.php
+- PHP中文手册：die - http://php.net/manual/zh/function.die.php

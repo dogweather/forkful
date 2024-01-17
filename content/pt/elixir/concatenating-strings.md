@@ -1,7 +1,7 @@
 ---
-title:                "Concatenando strings"
-html_title:           "Elixir: Concatenando strings"
-simple_title:         "Concatenando strings"
+title:                "Unindo strings"
+html_title:           "Elixir: Unindo strings"
+simple_title:         "Unindo strings"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -10,61 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Porque
+## O que e por que?
 
-Você já se perguntou como os aplicativos e sites conseguem combinar diferentes palavras e frases para criar mensagens personalizadas? A resposta é a concatenação de strings, um recurso fundamental na programação de linguagens como o Elixir.
+Concatenar strings é o ato de juntar duas ou mais strings em uma só. Programadores fazem isso para criar novas strings com informações combinadas, facilitando a manipulação e exibição de dados.
 
-## Como Fazer
+## Como fazer:
 
-Felizmente, o Elixir torna a concatenação de strings extremamente simples e intuitiva. Tudo o que você precisa fazer é usar o operador `<>` para unir diferentes strings juntas.
-
-```
-Elixir
-
+```Elixir
+#exemplo de concatenação de strings
 nome = "João"
 sobrenome = "Silva"
-mensagem = "Olá " <> nome <> " " <> sobrenome <> ", seja bem-vindo!"
 
-IO.puts mensagem
+nome_completo = nome <> sobrenome # utilizamos o operador <> para concatenar as strings
+
+IO.puts nome_completo # saída: JoãoSilva
 ```
 
-Isso resultará na saída:
+## Mergulho Profundo:
 
-```
-Olá João Silva, seja bem-vindo!
-```
+Antes do surgimento de linguagens de programação mais modernas, concatenar strings era uma tarefa tediosa e complexa, muitas vezes envolvendo cálculos complicados para determinar a quantidade de espaço necessário para armazenar a nova string. No entanto, com o avanço da tecnologia, esse processo se tornou muito mais simples e eficiente.
 
-Você também pode usar variáveis e valores para criar suas strings concatenadas:
+Existem outras formas de combinar strings, como utilizando o operador `++` ou a função `String.concat/1`, mas o uso do operador `<>` é considerado o mais eficiente e mais utilizado na comunidade Elixir.
 
-```
-Elixir
+## Veja também:
 
-dia = 10
-mes = "Agosto"
-ano = 2021
-mensagem = "Hoje é dia " <> Integer.to_string(dia) <> " de " <> mes <> " de " <> Integer.to_string(ano)
-
-IO.puts mensagem
-```
-
-A saída será:
-
-```
-Hoje é dia 10 de Agosto de 2021
-```
-
-## Mergulho Profundo
-
-Ao concatenar strings, é importante lembrar de prestar atenção nas aspas e espaços. Se você esquecer de adicionar aspas entre suas strings, elas serão tratadas como variáveis e você receberá um erro. Além disso, os espaços precisam ser adicionados manualmente para criar a formatação desejada nas suas mensagens concatenadas.
-
-Outra coisa a se ter em mente é que a concatenação de strings pode afetar a performance do seu código, especialmente se você estiver usando um grande número de strings. Nesses casos, é recomendado o uso da função `Enum.concat` que permite unir um grande número de strings de forma mais eficiente.
-
-## Veja Também
-
-Aqui estão algumas referências adicionais para ajudá-lo a aprimorar suas habilidades em concatenação de strings em Elixir:
-
-- [Documentação do Elixir](https://hexdocs.pm/elixir/String.html#concatenation/2)
-- [Tutorial da Elixir School sobre strings](https://elixirschool.com/pt/lessons/basics/strings/)
-- [Fórum da Elixir no Reddit](https://www.reddit.com/r/elixir/)
-
-Agora que você dominou a concatenação de strings em Elixir, você pode criar mensagens personalizadas e interativas em seus aplicativos e sites. Divirta-se codando!
+- [Documentação oficial do operador <>](https://hexdocs.pm/elixir/operators.html#<>
+- [Uso do operador <> em Elixir](https://medium.com/@Agesilao/o-operador-in-elixir-oadaf952d23)
+- [Tutorial sobre concatenação de strings em Elixir](https://www.tutorialspoint.com/elixir/elixir_string_concatenation.htm)

@@ -10,56 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
+Calculating a date in the future or past involves using a programming language like Javascript to determine a specific date by adding or subtracting days, months, or years from a given date. Programmers use this to automate tasks such as scheduling appointments, sending reminders, or setting deadlines.
 
-Calculating dates in the future or past may seem like a daunting task, but it can actually be quite useful in many programming scenarios. Being able to determine a future date, for example, can help with scheduling events and tasks, while calculating a past date can assist with data analysis.
+## How to:
+To calculate a date in the future or past in Javascript, use the `getDate()`, `getMonth()`, and `getFullYear()` methods to get the current date values. Then, use the `setDate()`, `setMonth()`, and `setFullYear()` methods to manipulate the date. Finally, use the `toDateString()` method to convert the date object into a readable format.
 
-## How To
-
-To calculate a date in the future or past, we can use the `Date()` object in Javascript. Let's look at some examples below:
-
-First, we create a new `Date` object and assign it to a variable called `today`:
-```Javascript
-let today = new Date();
+Example: 
 ```
-
-We can then use the `setDate()` method to set the date to a specific day by passing in a numerical value:
-```Javascript
-today.setDate(10); //this will set the date to the 10th of the current month
+//Calculating 10 days in the future
+var today = new Date(); //returns current date
+today.setDate(today.getDate() + 10); //sets new date 10 days in the future
+console.log(today.toDateString()); //displays new date as a string
 ```
-
-To calculate a future date, we can use the `setDate()` method and pass in the desired number of days to add:
-```Javascript
-today.setDate(today.getDate() + 7); //this will add 7 days to the current date
+Output: 
 ```
-
-Similarly, to calculate a past date, we can use the `setDate()` method and pass in a negative number of days:
-```Javascript
-today.setDate(today.getDate() - 14); //this will subtract 14 days from the current date
+Sat Jan 16 2021
 ```
+## Deep Dive:
+- Historical context: Before the emergence of programming languages, calculations involving dates were done manually. However, this was prone to human error and time-consuming. With the advancement of technology, programmers were able to automate this process, making it more accurate and efficient.
 
-We can also use the `setFullYear()` method to change the year of the date object:
-```Javascript
-today.setFullYear(2022); //this will set the year to 2022
-```
+- Alternatives: While Javascript is a popular choice for calculating dates, there are other programming languages such as Python, Java, and C++ that also have date manipulation capabilities.
 
-And finally, we can retrieve the updated date information using the `getDate()`, `getMonth()`, and `getFullYear()` methods:
-```Javascript
-let day = today.getDate();
-let month = today.getMonth();
-let year = today.getFullYear();
-console.log(`${month+1}/${day}/${year}`); //outputs "8/24/2022" (assuming today's date is 8/24/2021)
-```
+- Implementation details: Calculating dates in the future or past involves understanding the syntax of the programming language being used and the methods specific to dates. It also requires knowledge of date formatting to ensure the desired output is achieved.
 
-## Deep Dive
-
-Behind the scenes, the `Date()` object in Javascript stores the date and time as the number of milliseconds that have elapsed since January 1, 1970. This is known as the Unix Epoch and is the basis for date and time calculations in many programming languages.
-
-When using the `getDate()` and `setDate()` methods, it is important to note that the day values are zero-based. This means that January is represented as 0, February as 1, and so on. Therefore, when setting a future date, we need to add 1 to the desired month value.
-
-Additionally, the `setFullYear()` method accepts a four-digit year, while the `getFullYear()` method returns a four-digit value. Keep this in mind when working with dates from different date systems.
-
-## See Also
-
-- [Javascript Date object documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [Unix time explanation](https://www.epochconverter.com/)
+## See Also:
+To learn more about calculating dates in the future or past in Javascript, check out these resources:
+- [MDN web docs on Dates in Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [W3Schools tutorial on Javascript Dates](https://www.w3schools.com/js/js_dates.asp)
+- [Date-fns library for Javascript](https://date-fns.org/)

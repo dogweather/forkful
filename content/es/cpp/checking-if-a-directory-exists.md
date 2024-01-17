@@ -1,7 +1,7 @@
 ---
-title:                "Comprobando si existe un directorio."
-html_title:           "C++: Comprobando si existe un directorio."
-simple_title:         "Comprobando si existe un directorio."
+title:                "Comprobando si existe un directorio"
+html_title:           "C++: Comprobando si existe un directorio"
+simple_title:         "Comprobando si existe un directorio"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Files and I/O"
@@ -10,49 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+## Qué y por qué?
+La comprobación de si un directorio existe es una parte esencial de la programación en C++. Es una técnica que se utiliza para verificar si un directorio o carpeta específica existe en un sistema de archivos antes de realizar cualquier operación en ella. Los programadores realizan esta comprobación para evitar errores y manejar de manera adecuada casos en los que el directorio no exista.
 
-Hay varias situaciones en las que puede ser útil verificar si un directorio existe en un programa de C++. Por ejemplo, al crear una aplicación que lee y guarda archivos, es importante asegurarse de que el directorio de destino exista antes de intentar guardar los datos. También puede ser importante asegurarse de que el usuario haya proporcionado un directorio válido al especificar la ubicación de un archivo o algoritmo.
-
-## Cómo hacerlo
-
-Para verificar si un directorio existe en C++, puedes utilizar la función ```std::filesystem::exists()``` de la biblioteca estándar. Esta función toma como argumento una cadena de caracteres que representa la ruta del directorio y devuelve un valor booleano que indica si el directorio existe o no.
-
-A continuación se muestra un ejemplo de código que verifica si un directorio llamado "Archivos" existe en el directorio actual y muestra un mensaje en consecuencia:
-
+## Cómo:
 ```C++
 #include <iostream>
 #include <filesystem>
 
 int main() {
-    std::string directorio = "Archivos";
+    // Ejemplo de una comprobación de existencia de directorio
+    std::filesystem::path directorio("directorio_ejemplo");
+
     if (std::filesystem::exists(directorio)) {
-        std::cout << "El directorio \"" << directorio << "\" existe.";
+        std::cout << "El directorio existe" << std::endl;
     } else {
-        std::cout << "El directorio \"" << directorio << "\" no existe.";
+        std::cout << "El directorio no existe" << std::endl;
     }
+
     return 0;
 }
 ```
-
-Output:
-
+**Salida:**
 ```
-El directorio "Archivos" no existe.
+El directorio existe
 ```
 
-Ten en cuenta que también puedes utilizar la función ```std::filesystem::is_directory()``` para verificar si un determinado archivo es un directorio. Esta función también devuelve un valor booleano, pero en este caso indica si el archivo es un directorio o no.
+## Profundizando:
+La comprobación de si un directorio existe es una técnica que ha sido utilizada por programadores desde los primeros años de la programación. Inicialmente, se utilizaba para verificar la existencia de un directorio antes de descargar o cargar archivos en él. Con el avance de la tecnología, esta técnica también se ha vuelto importante para asegurar la integridad de los sistemas de archivos.
 
-## Una mirada más profunda
+Otra alternativa para comprobar la existencia de un directorio es mediante el uso de funciones como `access()` o `stat()`, que también son populares entre los programadores. Sin embargo, la función `exists()` de la biblioteca `<filesystem>` de C++ ofrece una forma más elegante y legible de realizar esta comprobación.
 
-La función ```std::filesystem::exists()``` utiliza la biblioteca ```<filesystem>``` recientemente agregada en la versión C++17 del lenguaje. Antes de esta versión, había varias formas de verificar si un directorio existe en C++, pero no era una solución estándar y portátil.
+En cuanto a la implementación, la función `exists()` devuelve un valor booleano verdadero si el directorio existe y falso si no es así. También se pueden pasar opciones adicionales para verificar si el directorio es accesible, si es un archivo regular o si es un enlace simbólico.
 
-La biblioteca ```<filesystem>``` proporciona una interfaz más intuitiva y fácil de usar para manipular archivos y directorios en C++. Además de funciones para verificar la existencia de un directorio, también ofrece funciones para enumerar los contenidos de un directorio, crear o eliminar directorios, y mucho más. Si estás interesado en aprender más sobre esta biblioteca y sus funciones, puedes seguir estos enlaces:
-
-- [Referencia de la biblioteca <filesystem> de C++ en cppreference.com](https://en.cppreference.com/w/cpp/filesystem)
-- [Tutorial de la biblioteca de archivos y directorios en C++ en cplusplus.com](http://www.cplusplus.com/doc/tutorial/files/)
-
-## Ver también
-
-- [La biblioteca <filesystem> en la documentación oficial de C++](https://docs.microsoft.com/en-us/cpp/standard-library/filesystem?view=msvc-160)
-- [Pregunta relacionada en el sitio Stack Overflow sobre cómo verificar si un directorio existe en C++](https://stackoverflow.com/questions/26411130/how-can-i-check-if-a-file-is-a-directory-in-c)
+## Vea también:
+- Documentación de la biblioteca `<filesystem>` de C++: https://devdocs.io/cpp/filesystem
+- Cómo comprobar la existencia de un archivo en C++: https://www.programiz.com/cpp-programming/files-input-output
+- Información sobre la función `exists()` de la biblioteca `<filesystem>`: https://www.learncpp.com/cpp-tutorial/186-basic-file-io/

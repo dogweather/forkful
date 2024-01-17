@@ -1,7 +1,7 @@
 ---
-title:                "Zmiana na wielką literę ciągu znaków"
-html_title:           "Elm: Zmiana na wielką literę ciągu znaków"
-simple_title:         "Zmiana na wielką literę ciągu znaków"
+title:                "Konwertowanie ciągu na duże litery"
+html_title:           "Elm: Konwertowanie ciągu na duże litery"
+simple_title:         "Konwertowanie ciągu na duże litery"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -10,41 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i Po co
 
-Czy kiedykolwiek zastanawiałeś się, dlaczego w niektórych sytuacjach potrzebujemy zmieniać wielkość liter w tekście? Może jesteśmy przyzwyczajeni do pisania wyrazów z dużych liter na początku zdania lub chcemy podkreślić ważne słowo? W programowaniu również często wykorzystuje się zmianę wielkości liter, na przykład przy tworzeniu nazw zmiennych lub funkcji. Dlatego warto poznać prosty sposób na wykonanie tej operacji w języku Elm.
+Uwzględnianie wielkich liter w ciągu znaków oznacza przekształcenie wszystkich liter w nim na wielkie litery. Programiści często wykonują tę operację, gdy chcą porównać dwa ciągi znaków, ponieważ wielkość liter może mieć wpływ na wynik porównania.
 
-## Jak to zrobić?
+## Jak to zrobić:
 
-W Elm istnieje funkcja o nazwie `String.toUpper`, która zamienia wszystkie litery w danym stringu na wielkie. Przykładowy kod wygląda następująco:
-
-```
-Elm String.toUpper "witaj świecie"
+```Elm
+String.toUpper "hej!" -- wynik: "HEJ!"
 ```
 
-Wynik działania powyższego kodu to `"WITAJ ŚWIECIE"`. Proste, prawda? Ale co z jednostkami diakrytycznymi, takimi jak polskie znaki, które również powinny być zamieniane na duże litery? W takim przypadku wykorzystamy funkcję `String.toUpperLocale`, która uwzględnia różnice między alfabetami. Oto przykład:
-
-```
-Elm String.toUpperLocale "zażółć gęślą jaźń"
+```Elm
+String.toUpper "ELM" -- wynik: "ELM"
 ```
 
-Ten kod zwróci `"ZAŻÓŁĆ GĘŚLĄ JAŹŃ"`.
-
-Jednak zwykła zmiana wszystkich liter na duże nie zawsze jest wymagana. Może chcesz zamienić tylko pierwszą literę na wielką, jak w przypadku tytułów. Do tego celu użyjemy funkcji `String.capitalize`, przykładowo:
-
-```
-Elm String.capitalize "artykuł o zmianie wielkości liter w Elm"
+```Elm
+String.toUpper "Bardzo1dziwny6ciąg67!@#" -- wynik: "BARDZO1DZIWNY6CIĄG67!@#"
 ```
 
-Ten kod zwróci `"Artykuł o zmianie wielkości liter w Elm"`.
+## Głębszy wgląd
 
-## Głębsza analiza
-
-Funkcje `String.toUpper`, `String.toUpperLocale` i `String.capitalize` są dostępne w module `String` i są częścią standardowej biblioteki języka Elm. Są one bardzo proste w użyciu i mogą znacznie ułatwić pracę przy manipulacji tekstem.
-
-Warto też wspomnieć, że w Elm nie ma możliwości zmiany wielkości liter w istniejącym stringu; zawsze musisz zwrócić nowy string.
+Uwzględnianie wielkich liter w ciągu znaków jest powszechnie stosowane w programowaniu i ma swoje korzenie w systemach operacyjnych, które zwykle traktują wielkość liter jako ważną przy porównywaniu nazw plików i folderów. Istnieją również inne sposoby na wykrywanie różnic w ciągach znaków, takie jak uwzględnienie przypadku lub wykluczenie znaków specjalnych. Jednak uwzględnianie wielkich liter jest szybkie i proste do zastosowania w przypadku prostych porównań.
 
 ## Zobacz także
-- Dokumentacja Elm: [String module](https://package.elm-lang.org/packages/elm/core/latest/String)
-- Inne przykłady użycia funkcji w Module String: [Flipping letters](https://elmprogramming.com/flipping-letters-strings.html)
-- Teoria wielkich literek w języku polskim: [Wikipedia](https://pl.wikipedia.org/wiki/Wielkie_literki_w_języku_polskim)
+
+Uwzględnianie wielkich liter ma zastosowanie w wielu innych językach programowania, takich jak Java, Python i JavaScript. Jeśli chcesz dowiedzieć się więcej na ten temat, możesz przeczytać dokumentację w wybranym języku lub poszukać poradników online.

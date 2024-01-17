@@ -1,7 +1,7 @@
 ---
-title:                "HTML aufspalten."
-html_title:           "C#: HTML aufspalten."
-simple_title:         "HTML aufspalten."
+title:                "HTML-Parser"
+html_title:           "C#: HTML-Parser"
+simple_title:         "HTML-Parser"
 programming_language: "C#"
 category:             "C#"
 tag:                  "HTML and the Web"
@@ -10,40 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Warum
+## Was & Warum?
+HTML-Parsing ist der Prozess, bei dem HTML-Code durch einen Programmierungsprozess gescannt wird, um die darin enthaltenen Informationen zu extrahieren. Es ist ein häufiges Werkzeug in der Web-Entwicklung, da es ermöglicht, das Layout und den Inhalt einer Webseite zu verstehen und zu manipulieren. Programmierer nutzen HTML-Parsing, um Daten von einer Webseite zu extrahieren oder um bestimmte Elemente einer Seite herauszufiltern.
 
-Das Parsen von HTML ist ein unverzichtbarer Prozess für die Webentwicklung. Es ermöglicht uns, Daten aus Webseiten zu extrahieren und für verschiedene Zwecke zu verwenden, wie z.B. für Web Scraping oder Datenanalyse.
-
-# Wie geht es
-
-Um HTML in C# zu parsen, können wir die HtmlAgilityPack-Bibliothek verwenden. Diese Bibliothek bietet zahlreiche Funktionen, um HTML zu durchsuchen und Daten zu extrahieren.
+## Wie geht's?
+Wenn du HTML-Parsing in C# verwenden möchtest, benötigst du eine Bibliothek wie HtmlAgilityPack. Hier ist ein einfaches Beispiel, das den Titel einer Webseite ausgibt:
 
 ```C#
-// Installiere das HtmlAgilityPack über NuGet
-Install-Package HtmlAgilityPack
-
-// Importiere das HtmlAgilityPack Namespace
-using HtmlAgilityPack;
-
-// Erstelle ein HtmlDocument Objekt
-HtmlDocument doc = new HtmlDocument();
-
-// Lade die HTML-Datei
-doc.Load("sample.html");
-
-// Wähle ein bestimmtes Element mit der Methode SelectSingleNode aus (z.B. ein <h1> tag)
-HtmlNode node = doc.DocumentNode.SelectSingleNode("//h1");
-
-// Gebe den Inhalt des Tags aus
-Console.WriteLine(node.InnerHtml); // Output: "Willkommen auf meiner Webseite"
+var web = new HtmlWeb();
+var page = web.Load("https://www.example.com");
+var title = page.DocumentNode.SelectSingleNode("//title");
+Console.WriteLine(title.InnerText);
 ```
-## Deep Dive
 
-Es gibt verschiedene Möglichkeiten, um HTML in C# zu parsen. Eine andere Möglichkeit ist die Verwendung der .NET-eigenen WebClient-Klasse, um den Quellcode einer Webseite herunterzuladen, und dann Regex-Ausdrücke zu verwenden, um die gewünschten Daten zu extrahieren. Diese Methode kann jedoch komplexer und weniger stabil sein.
+Die Ausgabe sollte der Titel der Webseite sein.
 
-Außerdem gibt es beim Parsen von HTML häufig auftretende Probleme wie z.B. fehlende oder falsch formatierte Tags. In solchen Fällen kann das HtmlAgilityPack mit seinem automatischen Tag- und Strukturkorrekturmechanismus helfen.
+## Tiefer tauchen
+HTML-Parsing wurde in den frühen Tagen des Internets entwickelt, um Daten von Webseiten zu extrahieren und zu strukturieren. Es war oft eine mühsame und fehleranfällige Aufgabe, die viel Zeit und Aufwand erforderte. Heutzutage gibt es verschiedene Tools und Bibliotheken, die diesen Prozess vereinfachen, wie z.B. CSS-Selektoren, die uns helfen können, bestimmte Elemente einer Webseite zu finden.
 
-# Siehe auch
+Es gibt auch alternative Ansätze zum HTML-Parsing, wie z.B. das Scraping von Daten durch das Simulieren von Benutzereingaben oder die Verwendung von APIs, wenn sie verfügbar sind. Allerdings ist HTML-Parsing nach wie vor eine wichtige Fähigkeit für Web-Entwickler, da es uns ermöglicht, flexibel auf Änderungen im Layout oder der Struktur einer Webseite zu reagieren.
 
-- [Offizielle HtmlAgilityPack Dokumentation](https://html-agility-pack.net/documentation)
-- [Tutorial: Scraping HTML-Daten mit C# und HtmlAgilityPack](https://www.scrapingbee.com/blog/web-scraping-csharp/)
+## Siehe auch
+Einige nützliche Ressourcen, um mehr über HTML-Parsing in C# zu erfahren:
+
+- [HtmlAgilityPack Dokumentation](https://html-agility-pack.net/documentation)
+- [C# HTML-Parsing Tutorial auf YouTube](https://www.youtube.com/watch?v=0CpKZZ0pLNk)
+- [CSS-Selektoren Referenz](https://www.w3schools.com/cssref/css_selectors.asp)

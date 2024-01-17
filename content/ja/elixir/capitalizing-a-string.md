@@ -1,7 +1,7 @@
 ---
-title:                "文字列の最初を大文字にする"
-html_title:           "Elixir: 文字列の最初を大文字にする"
-simple_title:         "文字列の最初を大文字にする"
+title:                "文字列を大文字化する"
+html_title:           "Elixir: 文字列を大文字化する"
+simple_title:         "文字列を大文字化する"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -10,23 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
-文字列を大文字に変換する行為は、プログラムの中で文字列を一貫性を持って扱いたいときに便利です。
+## 何& なぜ?
 
-## 方法
-```elixir
-string = "hello world"
-String.capitalize(string) # => "Hello world"
+文字列のキャピタライズとは、文字列の最初の文字を大文字に変換することです。プログラマーは、データを見やすく整理したり、データベースの検索を簡単にするために、文字列をキーワードとして使用する場合があります。
+
+## 方法:
+
+```Elixir
+name = "tom"
+capitalized = String.capitalize(name)
+IO.puts(capitalized) 
 ```
 
-文字列を大文字に変換するには、Elixirの`String.capitalize/1`関数を使用します。この関数は、与えられた文字列の先頭の文字を大文字に変換します。上記の例では、文字列 "hello world" が "Hello world" に変換されます。
+出力結果:
+```Elixir
+Tom
+```
 
-## ディープダイブ
-`String.capitalize/1`関数は、単に最初の文字を大文字に変換するだけではありません。例えば、`String.capitalize/1`関数はアクセント記号付きの文字、全角文字、およびアルファベット以外の文字にも対応しています。また、英字以外の言語にも対応しているため、多言語対応のプログラムにも利用することができます。
+## 深堀り:
 
-さらに、`String.capitalize/1`関数の代わりに`String.capitalize/2`関数を使用すると、指定したロケールに基づいて文字列を大文字に変換することができます。これにより、特定の言語や地域に合わせた大文字変換を行うことが可能になります。
+文字列のキャピタライズは、英語の文法的規則に基づいています。文字列の最初の文字を大文字にすることにより、英語の文のように文化に適した書き方ができます。この機能は、Elixir言語だけでなく、多くのプログラミング言語でも利用できます。
 
-## 他に見る
+## 関連サイト:
 
-- [Elixir公式ドキュメント](https://hexdocs.pm/elixir/String.html#capitalize/1)
-- [Elixir School: Strings](https://elixirschool.com/ja/lessons/basics/binary-and-strings/#strings)
+- [Elixir 公式ドキュメント] (https://elixir-lang.org/getting-started/string.html#capitalization)
+- [String.capitalizeの詳細] (https://hexdocs.pm/elixir/String.html#capitalize/1)

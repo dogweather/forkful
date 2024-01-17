@@ -1,7 +1,7 @@
 ---
-title:                "Envoyer une requête http"
-html_title:           "Clojure: Envoyer une requête http"
-simple_title:         "Envoyer une requête http"
+title:                "Envoi d'une demande http"
+html_title:           "Clojure: Envoi d'une demande http"
+simple_title:         "Envoi d'une demande http"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "HTML and the Web"
@@ -10,42 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+# Quoi et Pourquoi?
 
-Si vous êtes un développeur en quête d'une façon efficace d'envoyer des requêtes HTTP dans vos projets, alors Clojure pourrait être la réponse à vos attentes. Grâce à sa syntaxe concise et sa puissante bibliothèque de fonctions, Clojure rend l'envoi de requêtes HTTP rapide et facile.
+L'envoi de requêtes HTTP est une tâche fréquente pour les programmeurs lorsqu'ils interagissent avec des serveurs web. Cela leur permet d'échanger des données avec ces serveurs, tels que des fichiers, du contenu ou des informations.
 
-## Comment Faire
+# Comment faire:
 
-Pour envoyer une requête HTTP en Clojure, tout ce dont vous avez besoin est la bibliothèque standard `clojure.core` et la bibliothèque `clj-http`. Tout d'abord, importez les bibliothèques en utilisant `require` :
-
-```Clojure
-(require '[clojure.core :as core])
-(require '[clj-http.client :as client])
-```
-
-Ensuite, utilisez la fonction `client/get` pour envoyer une requête GET à une URL spécifique. Par exemple, pour obtenir le code de statut d'une requête à Google.com, vous pouvez écrire :
+Voici un exemple simple montrant comment envoyer une requête HTTP en utilisant Clojure:
 
 ```Clojure
-(client/get "https://www.google.com/")
-;; => {:status 200, :headers {...}, :body "HTML content here"}
+(require '[clojure.java.io :as io])
+(io/copy (io/reader "http://www.example.com") (io/writer (io/file "example.html")))
 ```
 
-Vous pouvez également spécifier des paramètres supplémentaires dans la requête, tels que des headers et des paramètres de requête, en utilisant les arguments optionnels de la fonction `get` :
+Cela envoie une requête GET à l'adresse `http://www.example.com` et enregistre le contenu de la réponse dans un fichier nommé `example.html`.
 
-```Clojure
-(client/get "https://www.google.com/"
-            {:headers {"Content-Type" "application/json"}
-             :query-params {:q "clojure"}})
-;; => {:status 200, :headers {...}, :body "HTML content here"}
-```
+# Plongée en profondeur:
 
-## Plongée Profonde
+De nos jours, l'envoi de requêtes HTTP est une tâche courante pour les développeurs web, mais cela n'a pas toujours été le cas. Avant l'avènement d'Internet, les échanges de données entre ordinateurs se faisaient principalement via des protocoles propriétaires. Cependant, dès que le World Wide Web est devenu populaire, le protocole HTTP a été introduit comme un protocole standard pour les transferts de données sur le web.
 
-La bibliothèque `clj-http` offre un large éventail de fonctions pour envoyer des requêtes HTTP, y compris POST, PUT, DELETE et plus encore. Elle vous permet également de spécifier des options avancées telles que l'authentification, les cookies et les requêtes asynchrones.
+Bien que Clojure dispose d'une bibliothèque standard pour l'envoi de requêtes HTTP, il existe également d'autres options telles que `http-kit` et `clj-http`. Ces bibliothèques fournissent des fonctionnalités supplémentaires telles que la gestion des cookies et des en-têtes.
 
-De plus, la fonction `get` renvoie un map contenant des informations détaillées sur la réponse de la requête, notamment le code de statut, les headers et le contenu HTML. Cela vous permet de traiter facilement les réponses de vos requêtes pour en extraire les données nécessaires.
+Le processus complet d'envoi d'une requête HTTP comprend généralement la construction d'une URL valide, la définition des paramètres de la requête et l'extraction des données de la réponse. Les développeurs doivent également être conscients des différentes méthodes HTTP telles que GET, POST, PUT, DELETE et les utiliser en fonction de leur intention.
 
-## Voir Aussi
+# Voir aussi:
 
-- Documentation officielle de `clj-http` : https://github.com/dakrone/clj-http
-- Tutoriel vidéo sur l'utilisation de `clj-http` : https://www.youtube.com/watch?v=Zc1WgJqz55U&t=16s
+Pour plus d'informations sur l'envoi de requêtes HTTP en utilisant Clojure, consultez la documentation officielle de Clojure sur les requêtes HTTP (https://clojure.org/reference/java_interop#http-apis) ainsi que les documentations des différentes bibliothèques comme `http-kit` et `clj-http`.
+
+Merci d'avoir lu cet article et j'espère que cela vous a aidé à comprendre comment envoyer des requêtes HTTP en utilisant Clojure!

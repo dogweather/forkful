@@ -1,7 +1,7 @@
 ---
-title:                "Bruk av regulære uttrykk"
-html_title:           "Swift: Bruk av regulære uttrykk"
-simple_title:         "Bruk av regulære uttrykk"
+title:                "Å bruke regulære uttrykk"
+html_title:           "Swift: Å bruke regulære uttrykk"
+simple_title:         "Å bruke regulære uttrykk"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -10,56 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hva & Hvorfor?
+Regular expressions, eller regex, er et kraftig verktøy som brukes av programmører for å søke, finne og manipulere tekststrenger basert på et mønster eller en regel. Dette gjør det mulig å effektivt håndtere store mengder data, og brukes ofte i tekstbehandling, søkefunksjoner, og validering av brukerinput.
 
-Å bruke regulære uttrykk i Swift kan hjelpe deg med å effektivt søke, filtrere og manipulere tekstbaserte data. Det er en kraftig og fleksibel måte å behandle strenger på, og kan være spesielt nyttig for å analysere og tolke store datamengder.
-
-## Hvordan
-
-Det første trinnet for å bruke regulære uttrykk i Swift er å importere foundation biblioteket:
+## Hvordan:
+Bruk av regulære uttrykk i Swift er enkelt og kan gjøres ved å bruke den innebygde "NSRegularExpression" klasse. Her er et eksempel på hvordan du kan søke etter en e-postadresse i en tekststreng:
 
 ```Swift
-import Foundation
-```
+let tekst = "Min e-postadresse er eksempel@eksempel.com"
+let epostRegex = try! NSRegularExpression(pattern: "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}", options: .caseInsensitive)
 
-For å opprette et regulært uttrykk, bruk følgende syntaks:
-
-```Swift
-do {
-    let regex = try NSRegularExpression(pattern: "regex pattern", options: [])
-} catch {
-    // handle errors
+if let match = epostRegex.firstMatch(in: tekst, options: [], range: NSRange(location: 0, length: tekst.utf16.count)) {
+    let epost = (tekst as NSString).substring(with: match.range)
+    print(epost)    // output: eksempel@eksempel.com
 }
 ```
 
-Her kan du erstatte "regex pattern" med det faktiske mønsteret du vil søke etter. Det er mange spesielle tegn som betyr forskjellige ting i regulære uttrykk, så det kan være lurt å se på en tutorial for å forstå hvordan mønstre fungerer.
+## Dykk dypere:
+Regulære uttrykk har eksistert siden 1950-tallet og har blitt en standardfunksjon i de fleste programmeringsspråk. Ofte blir de brukt som en mer effektiv og nøyaktig måte å filtrere og manipulere tekst på, sammenlignet med vanlige strenger og mønstermatching. Alternativene til regulære uttrykk er vanligvis manuelle løkker og bruk av strengmanipulasjonsfunksjoner. 
 
-Når du har opprettet et regulært uttrykk, kan du bruke den til å søke gjennom en streng og finne matcher. Her er et eksempel som finner alle numre i en streng:
+I Swift brukes regulære uttrykk ved hjelp av POSIX-standarden, noe som kan være forskjellig fra andre programmeringsspråk. Men du kan forvente å finne lignende strukturer og konstruksjoner i de fleste språk som støtter regex. 
 
-```Swift
-let input = "There are 5 apples and 2 oranges."
-do {
-    let regex = try NSRegularExpression(pattern: "[0-9]+", options: .caseInsensitive)
-    let results = regex.matches(in: input, options: [], range: NSRange(location: 0, length: input.count))
-    for result in results {
-        print("Found match: \(input[Range(result.range, in: input)!])")
-    }
-} catch {
-   // handle errors
-}
-
-// Output:
-// Found match: 5
-// Found match: 2
-```
-
-## Dypdykk
-
-Det er mange muligheter når det kommer til å bruke regulære uttrykk i Swift, som inkluderer erstatning og splittelse av strenger. Du kan også bruke såkalte "capture groups" til å hente ut spesifikk informasjon fra en match. For mer avanserte funksjoner, kan du utforske NSTextCheckingResult og NSTextCheckingType.
-
-En av fordelene med å bruke regulære uttrykk i Swift er at du kan teste dem ut raskt og enkelt ved hjelp av online verktøy som [RegExr](https://regexr.com/) og [Regex101](https://regex101.com/). Disse nettstedene tilbyr støtte for Swift-syntaks og kan hjelpe deg med å feilsøke og perfeksjonere dine regulære uttrykk.
-
-## Se Også
-
-- [NSRegularExpression dokumentasjon](https://developer.apple.com/documentation/foundation/nsregularexpression)
-- [Swift RegEx tutorial by Hacking with Swift](https://www.hackingwithswift.com/articles/108/how-to-use-regular-expressions-in-swift)
+## Se også:
+- [NSRegularExpression Class](https://developer.apple.com/documentation/foundation/nsregularexpression)
+- [Regex Tutorial](https://www.regular-expressions.info/tutorial.html)
+- [Swift Standard Library](https://developer.apple.com/documentation/swift/1695203-nsregularexpression)

@@ -1,7 +1,7 @@
 ---
-title:                "현재 날짜 가져오기"
-html_title:           "C: 현재 날짜 가져오기"
-simple_title:         "현재 날짜 가져오기"
+title:                "현재 날짜 얻기"
+html_title:           "C: 현재 날짜 얻기"
+simple_title:         "현재 날짜 얻기"
 programming_language: "C"
 category:             "C"
 tag:                  "Dates and Times"
@@ -10,48 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+## 현재 날짜 얻기:
 
-현재 날짜를 불러오는 작업에 참여하는 이유는 다양합니다. 가장 일반적인 이유는 프로그램의 로그에 날짜와 시간을 기록하는 것입니다. 또한 특정한 기간에만 작동하는 기능을 추가하는 등 다양한 용도로 날짜를 사용할 수 있습니다.
+## 무엇이고 왜 하는가?
+현재 날짜를 얻는 것은 코드에서 현재 시간에 기준하여 작업을 처리하는 일반적인 방법입니다. 프로그래머들은 코드에서 날짜를 사용하여 로그를 기록하거나 시간 기반 작업을 계획하는 등 다양한 목적으로 날짜를 이용합니다.
 
-## 어떻게
-
+## 방법:
 ```C
 #include <stdio.h>
 #include <time.h>
 
-int main() {
-    // 현재 시간 구조체 선언
-    struct tm *st;
-    // 시간 정보를 담을 char 배열 선언
-    char date[20];
-    // time 함수를 사용해 현재 시간 가져오기
-    time_t now = time(0);
-    // localtime 함수를 이용해 현재 시간 정보를 st 구조체에 저장
-    st = localtime(&now);
-    // strftime 함수를 이용해 날짜 형식 지정
-    strftime(date, 20, "%Y-%m-%d", st);
-    // 날짜 출력
-    printf("현재 날짜: %s\n", date);
-    
+int main(){
+    // 현재 날짜 구조체 생성
+    struct tm *date;
+    // 시간 정보 가져오기
+    time_t now;
+    time(&now);
+    // 현재 날짜 구조체에 시간 정보 대입
+    date = localtime(&now);
+    // 날짜 정보 출력
+    printf("%d년 %d월 %d일\n", date->tm_year + 1900, date->tm_mon + 1, date->tm_mday);
+
     return 0;
 }
 ```
 
-위 코드는 time.h 헤더 파일을 사용해 현재 시간을 가져오고, localtime 함수를 이용해 날짜 정보를 구조체에 저장하는 방법을 보여줍니다. 그리고 strftime 함수로 날짜 형식을 지정하고 출력하는 예제입니다.
+## 깊게 들어가보기:
+(1) 현재 날짜를 얻는 코드는 운영체제가 제공하는 시간 함수를 사용하여 구현됩니다. 따라서 해당 운영체제의 문서를 참조하면 추가적인 정보를 얻을 수 있습니다.
+(2) C언어에서는 localtime 함수를 사용하여 현재 시간을 구하는 것이 가장 일반적입니다. 하지만 이 외에도 다른 배열 형태로 정보를 저장할 수 있는 localtime_r 함수를 제공합니다.
+(3) 날짜 정보를 다룰 때는 어떤 형식으로 출력할지 고민해야 할 필요가 있습니다. 이는 strftime 함수를 사용하여 원하는 형식으로 날짜를 출력할 수 있습니다.
 
-출력 결과:
-
-```
-현재 날짜: 2020-07-29
-```
-
-## 깊이 파고들기
-
-날짜를 가져오는 작업은 운영 체제로부터 시스템 시간 정보를 가져오는 것이기 때문에, 프로그래밍 언어마다 조금씩 다른 구현 방식이 있을 수 있습니다. C 언어의 경우 time.h 헤더 파일에서 제공하는 여러 함수를 이용해 현재 시간 정보를 가져오고, strftime 함수를 이용해 날짜 형식을 지정할 수 있습니다.
-
-## 더 알아보기
-
-* [C Programming: Date and Time functions](https://www.tutorialspoint.com/c_standard_library/c_function_strftime.htm)
-* [C 함수 레퍼런스 - time, localtime, strftime](https://modoocode.com/84)
-* [시스템 시간 정보 얻어오기 (Linux)](https://ansohxxn.github.io/unix/linux-get-system-date-time/)
+## 참고하기:
+- localtime 함수 문서: https://www.cplusplus.com/reference/ctime/localtime/
+- strftime 함수 문서: https://www.cplusplus.com/reference/ctime/strftime/

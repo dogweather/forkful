@@ -1,7 +1,7 @@
 ---
-title:                "Herunterladen einer Webseite"
-html_title:           "Elixir: Herunterladen einer Webseite"
-simple_title:         "Herunterladen einer Webseite"
+title:                "Webseite herunterladen"
+html_title:           "Elixir: Webseite herunterladen"
+simple_title:         "Webseite herunterladen"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "HTML and the Web"
@@ -10,45 +10,18 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+# Was & Warum?
+Das Herunterladen einer Webseite beinhaltet das Abrufen von Ressourcen wie Text, Bilder und Videos aus dem Internet. Programmierer tun dies, um Daten zu extrahieren, analysieren oder anzeigen zu können.
 
-Du hast dich wahrscheinlich schon mal gefragt, wie du eine Web-Seite herunterladen und ihre Inhalte auf deinem Computer speichern kannst. Vielleicht möchtest du die Seite offline lesen oder weitere Anpassungen vornehmen. In diesem Artikel werde ich dir zeigen, wie du dieses Problem mit Elixir ganz einfach lösen kannst.
-
-## Wie geht das?
-
-Zuerst müssen wir die HTTPoison Bibliothek in unser Projekt einbinden:
-
-```elixir
-def deps do
-  [
-    {:httpoison, "~> 1.5"}
-  ]
-end
+# Wie geht das?
+Das Herunterladen einer Webseite in Elixir ist sehr einfach. Verwenden Sie einfach den HTTP Client ```Elixir HTTPoison``` und rufen Sie die gewünschte URL auf. Zum Beispiel:
+```Elixir
+response = HTTPoison.get("https://www.example.com")
 ```
+Der Inhalt der Webseite kann dann mit ```response.body``` abgerufen werden und weitere Analyse oder Verarbeitung kann durchgeführt werden.
 
-Als nächstes erstellen wir eine Funktion, die die gewünschte URL als Argument nimmt und die Seite herunterlädt:
+# Tiefere Einblicke
+Das Herunterladen von Webseiten ist eine grundlegende Funktion in der Webentwicklung und wird von vielen anderen Sprachen und Frameworks unterstützt. Alternativen zu ```HTTPoison``` sind beispielsweise ```Elixir HTTPotion``` und ```Elixir Finch```. Die Implementierung von ```HTTPoison``` basiert auf der hochperformanten Erlang Library ```hackney``` und bietet eine einfache API für den Einsatz in Elixir Projekten.
 
-```elixir
-def load_page(url) do
-  {:ok, response} = HTTPoison.get(url)
-  response.body
-end
-```
-
-Und schon haben wir den gesamten HTML-Code der Seite in der Variable `body` gespeichert.
-
-Um die Inhalte der Seite zu extrahieren oder weiter zu bearbeiten, können wir zum Beispiel die Floki Bibliothek verwenden. Diese erlaubt uns, HTML-Dokumente auf einfache Weise zu durchsuchen und Daten abzurufen.
-
-## Tiefergehend
-
-Die `load_page` Funktion, die wir zuvor geschrieben haben, kann noch weiter verbessert werden. Zum Beispiel könnten wir eine Fehlerbehandlung hinzufügen, um sicherzustellen, dass der Server antwortet und die Seite tatsächlich verfügbar ist.
-
-Außerdem können wir auch verschiedene Optionen für unsere HTTP-Anfrage angeben, wie zum Beispiel die Verwendung von Cookies oder die Angabe von Headern.
-
-Elixir bietet uns mit seinen reaktiven und funktionalen Eigenschaften die Möglichkeit, flexibel auf solche Situationen zu reagieren und unsere Funktionen effektiv zu gestalten.
-
-## Siehe auch
-
-- Offizielle Website von Elixir: https://elixir-lang.org/de/
-- HTTPoison Dokumentation: https://hexdocs.pm/httpoison/HTTPoison.html
-- Floki Dokumentation: https://hexdocs.pm/floki/Floki.html
+# Siehe auch
+Für weitere Informationen und Beispiele zur Verwendung von ```HTTPoison```, besuchen Sie die offizielle Dokumentation unter https://hexdocs.pm/httpoison. Weitere Ressourcen zu Webentwicklung in Elixir sind das Elixir Forum unter https://elixirforum.com und der Elixir Podcast unter https://elixiroutlaws.com.

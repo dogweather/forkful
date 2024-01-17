@@ -1,7 +1,7 @@
 ---
-title:                "Praca z csv"
-html_title:           "Rust: Praca z csv"
-simple_title:         "Praca z csv"
+title:                "Praca z plikami csv"
+html_title:           "Rust: Praca z plikami csv"
+simple_title:         "Praca z plikami csv"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Data Formats and Serialization"
@@ -10,75 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i dlaczego?
 
-Dlaczego warto pracować z formatem CSV? To jedno z najpopularniejszych formatów do przechowywania danych w plikach tekstowych. Dzięki swojej prostocie i wszechstronności, jest wykorzystywany w wielu dziedzinach, takich jak finanse, nauka czy handel.
+Praca z plikami CSV w języku Rust jest procesem polegającym na odczytywaniu lub zapisywaniu danych z plików tekstowych, w których dane są oddzielane przecinkami. Programiści wykonują tę czynność, ponieważ pliki CSV są często wykorzystywane do przechowywania danych tabelarycznych, a praca z nimi jest niezbędna w wielu projektach.
 
-## Jak to zrobić
-
-Rust to język programowania, który jest idealny do pracy z CSV. Dzięki swojej wydajności i bezpieczeństwu, jest coraz częściej wybierany przez programistów. Oto przykładowy kod, który wczyta plik CSV o nazwie "dane.csv" i wyświetli jego zawartość w konsoli:
+## Jak to zrobić:
 
 ```Rust
-use std::fs::File;
-use std::io::{BufRead, BufReader};
-use csv::Reader;
+use csv;
 
 fn main() {
-    let file = File::open("dane.csv").unwrap();
-    let reader = BufReader::new(file);
-    let mut csv_reader = Reader::from_reader(reader);
+    // Otwieranie pliku CSV do odczytu
+    let mut reader = csv::Reader::from_path("plik.csv").unwrap();
 
-    for result in csv_reader.records() {
+    // Pętla do odczytywania danych z każdej kolumny
+    for result in reader.records() {
+        // Zwraca wartość typu Result z rekordem lub błędem
         let record = result.unwrap();
-        println!("{:?}", record);
+
+        // Przykładowe użycie danych z kolumny
+        let imie: &str = record.get(0).unwrap();
+        let wiek: usize = record.get(1).unwrap();
+
+        println!("{} lat {}", imie, wiek);
     }
 }
 ```
 
-Output:
-```Rust
-["Imię", "Nazwisko", "Wiek"]
-["Jan", "Kowalski", "30"]
-["Anna", "Nowak", "25"]
+Przykładowy plik CSV "plik.csv":
+
+```
+Imie, Wiek
+Anna, 25
+Jan, 30
 ```
 
-Możemy również manipulować danymi i wykorzystać je w dalszej obróbce w naszym programie:
+Wynik:
 
-```Rust
-use std::fs::File;
-use std::io::{BufRead, BufReader};
-use csv::Reader;
-
-fn main() {
-    let file = File::open("dane.csv").unwrap();
-    let reader = BufReader::new(file);
-    let mut csv_reader = Reader::from_reader(reader);
-    
-    let mut people = Vec::new(); //tworzymy pustą wektor do przechowywania danych
-
-    for result in csv_reader.records() {
-        let record = result.unwrap();
-        let name = record[0].to_string(); //zapisujemy imię do zmiennej
-        let age:u32 = record[2].parse().unwrap(); //konwertujemy wiek na liczbę
-        
-        people.push((name, age)); //dodajemy dane do wektora
-    }
-
-    println!("{:?}", people);
-}
+```
+Anna lat 25
+Jan lat 30
 ```
 
-Output:
-```Rust
-[("Jan", 30), ("Anna", 25)]
-```
+## Głębsze zagadnienia:
 
-## Głębsza analiza
+- CSV (ang. Comma-Separated Values) jest formatem plików tekstowych, w których dane są oddzielane znakiem przecinka.
+- Możliwe jest również zapisanie danych w innych formatach, takich jak JSON czy XML, jednak pliki CSV są często wykorzystywane ze względu na swoją prostotę i czytelność.
+- Implementacja biblioteki csv w języku Rust jest oparta na strukturach danych wykorzystujących metody borrow checker i "zera-kości".
 
-Rust oferuje wiele narzędzi do pracy z plikami CSV, takich jak biblioteki csv, csv-core czy csv-writer. Możemy również wykorzystać makra, aby uprościć nasze zadanie. Warto również pamiętać o przetwarzaniu błędów, aby nasz kod był bezpieczny i nie występowały nieoczekiwane problemy.
+## Zobacz także:
 
-## Zobacz także
-
-- Dokumentacja Rust dla pracy z plikami CSV: https://docs.rs/csv
-- Przykładowe projekty wykorzystujące Rust do pracy z CSV: https://github.com/rust-csv/
-- Poradnik na temat parsowania plików CSV w języku Rust: https://blog.logrocket.com/working-with-csv-in-rust/
+- [Dokumentacja dla biblioteki CSV w języku Rust](https://docs.rs/csv/)
+- [Poradnik dla początkujących: Jak pracować z plikami CSV w języku Rust](https://www.aidansteele.io/blog/rust-beginners-csv/)
+- [Github: Przykład użycia biblioteki csv](https://github.com/BurntSushi/rust-csv/blob/master/examples/wikipedia_titles.rs)

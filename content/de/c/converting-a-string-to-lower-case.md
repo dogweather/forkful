@@ -1,7 +1,7 @@
 ---
-title:                "Ein String in Kleinbuchstaben umwandeln"
-html_title:           "C: Ein String in Kleinbuchstaben umwandeln"
-simple_title:         "Ein String in Kleinbuchstaben umwandeln"
+title:                "Umwandlung eines Strings in Kleinbuchstaben"
+html_title:           "C: Umwandlung eines Strings in Kleinbuchstaben"
+simple_title:         "Umwandlung eines Strings in Kleinbuchstaben"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -10,58 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was & Warum?
+Bei der Konvertierung eines Strings in Kleinbuchstaben geht es darum, alle Buchstaben in einem gegebenen String von Großbuchstaben auf Kleinbuchstaben umzuwandeln. Programme tun dies, um Eingabedaten einheitlich zu machen und die Vergleichbarkeit von Strings zu erleichtern.
 
-Es mag dir vielleicht nicht wichtig erscheinen, aber das Umwandeln von Groß- zu Kleinbuchstaben ist eine häufige Aufgabe in der Programmierung. Zum Beispiel kann es notwendig sein, Benutzereingaben zu formatieren oder Vergleiche in Kontrollstrukturen durchzuführen. Daher ist es wichtig, zu verstehen, wie man das in C bewerkstelligt.
-
-## Wie geht's
-
-Um eine Zeichenkette in Kleinbuchstaben umzuwandeln, gibt es mehrere Möglichkeiten in C. Eine Option ist die Verwendung der Standardbibliotheksfunktion `tolower()`, die in `ctype.h` deklariert ist. Hier ist ein Beispiel:
+## Wie geht's?
+Verwenden Sie die Funktion `tolower()` aus der Standardbibliothek `<ctype.h>`. Sie akzeptiert einen Buchstaben als Eingabe und gibt den entsprechenden Kleinbuchstaben als Ausgabe zurück. Hier ein Beispielcode:
 
 ```C
 #include <stdio.h>
 #include <ctype.h>
 
-int main(void) {
-  char word[] = "Programmieren";
+int main() {
+    char name[] = "Max Mustermann";
+    int i;
 
-  for (int i = 0; word[i] != '\0'; i++) {
-    word[i] = tolower(word[i]);
-  }
+    for (i = 0; name[i] != '\0'; i++) {
+        name[i] = tolower(name[i]);
+    }
 
-  printf("Kleinbuchstaben: %s\n", word);
-  return 0;
+    printf("Name: %s\n", name);
+
+    return 0;
 }
 ```
 
-Dieser Code nutzt eine `for`-Schleife, um jeden Buchstaben in der Zeichenkette `word` in einen Kleinbuchstaben zu konvertieren. Anschließend wird die konvertierte Zeichenkette mit der `printf()`-Funktion ausgegeben.
+Dieses Programm gibt `max mustermann` aus.
 
-Eine andere Möglichkeit ist die Verwendung der Funktion `strlwr()`, die in der Bibliothek `string.h` deklariert ist. Hier ist ein Beispiel für die Verwendung:
+## Tief eintauchen
+Früher mussten Programme auf ASCII-Codes zurückgreifen, um eine Konvertierung in Kleinbuchstaben durchzuführen. In der aktuellen Version von C ist dies jedoch nicht mehr nötig, da die Funktion `tolower()` automatisch die entsprechenden Codes für Buchstaben erkennt. Als Alternativen werden oft auch die Funktionen `toupper()` und `stricmp()` verwendet, um Groß- und Kleinbuchstaben zu vergleichen.
 
-```C
-#include <stdio.h>
-#include <string.h>
-
-int main(void) {
-  char word[] = "Programmieren";
-
-  strlwr(word);
-
-  printf("Kleinbuchstaben: %s\n", word);
-  return 0;
-}
-```
-
-Der Unterschied hier ist, dass die Umwandlung in Kleinbuchstaben mithilfe der Funktion `strlwr()` direkt auf die Zeichenkette `word` angewendet wird.
-
-## Tiefergehende Infos
-
-Es ist wichtig zu beachten, dass die Methode, die in diesem Artikel vorgestellt wird, nicht ohne ihre Einschränkungen ist. Zum Beispiel kann die `tolower()`-Methode nur für einzelne Zeichen angewendet werden und nicht auf ganze Zeichenketten. Außerdem kann sie möglicherweise nicht alle Zeichen korrekt in Kleinbuchstaben umwandeln, da sie für ASCII-Zeichen ausgelegt ist.
-
-Für fortgeschrittenere Ansätze kann selbst eine Funktion geschrieben werden, die eine Zeichenkette in Kleinbuchstaben umwandelt. Dies würde es ermöglichen, Sonderzeichen, Unicode-Zeichen und andere Zeichenformate zu berücksichtigen. Es gibt auch Bibliotheken von Drittanbietern, die diese Aufgabe vereinfachen können.
+Bei der Implementierung von `tolower()` wird der Wert von `c` zunächst an die Funktion `toupper()` weitergegeben, um zu überprüfen, ob es sich um einen Großbuchstaben handelt. Wenn ja, wird die Differenz zwischen dem ASCII-Code für den Großbuchstaben und dem für den Kleinbuchstaben berechnet und auf `c` angewendet, um den Buchstaben in Kleinbuchstaben umzuwandeln.
 
 ## Siehe auch
-
-- [ASCII-Tabelle](https://de.wikipedia.org/wiki/American_Standard_Code_for_Information_Interchange)
-- [C Zeichenketten](https://www.tutorialspoint.com/cprogramming/c_strings.htm)
-- [ctype.h Referenz](https://www.tutorialspoint.com/c_standard_library/ctype_h.htm)
+- [Die offizielle Dokumentation der Funktion `tolower()`](https://en.cppreference.com/w/c/string/byte/tolower)
+- [Weitere Funktionen aus der Standardbibliothek `<ctype.h>`](https://en.cppreference.com/w/c/string/byte)
+- [Ein Beispielprogramm zur Verwendung der Funktionen `tolower()` und `toupper()`](https://www.programiz.com/c-programming/examples/convert-uppercase-lowercase)

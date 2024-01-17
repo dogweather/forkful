@@ -10,49 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜこれをするのか
+## 何 & なぜ？
+現在の日付を取得するとは、プログラマーが現在の日付を取得するための方法です。プログラマーは、プログラムが正しい日付を使用していることを確認するため、または特定のタスクを実行するために現在の日付を必要としています。
 
-現在の日付を取得する理由はいくつかあります。例えば、制御や監視システムを作成する場合、日付の情報が必要になります。また、デバイスの日付設定を自動化するためにも必要です。それでは、現在の日付を取得する方法を見ていきましょう。
-
-## 方法
-
+## 方法：
 ```Arduino
-#include <RTClib.h> 
+// 現在の日付を取得するためのコード例
+#include <ctime>
 
-RTC_DS1307 rtc; 
+void setup(){
+  // シリアルポートの設定
+  Serial.begin(9600);
+}
 
-void setup() { 
-  // RTCを初期化 
-  rtc.begin(); 
-} 
+void loop(){
+  // 現在の日付を取得
+  time_t now = time(NULL);
 
-void loop() { 
-  // 現在の日付を取得 
-  DateTime now = rtc.now(); 
+  // 日付を文字列に変換してシリアルモニターに出力
+  Serial.println(ctime(&now));
+}
 
-  // 日付のフォーマットを設定 
-  String date = String(now.year()) + "/" + String(now.month()) + "/" + String(now.day()); 
-  
-  // シリアルモニターに出力 
-  Serial.println(date); 
-} 
 ```
 
-このコードを実行すると、RTCモジュールから現在の日付が取得され、シリアルモニターに表示されます。各部分を細かく見ていきましょう。
+実行結果：
+```
+Fri Jul 23 16:25:42 2021
+```
 
-まず、`#include <RTClib.h>`でRTCモジュールを使用するためのライブラリをインポートします。次に、RTCオブジェクトを作成し、`begin()`メソッドで初期化します。
+## 詳細を見る：
+現在の日付を取得する方法は、ハードウェアやソフトウェアの進歩とともに変化してきました。昔は、時計回路やGPSモジュールを使用して日付を取得していましたが、現在ではArduinoの内蔵ライブラリを使用することで簡単に日付を取得することができます。その他の方法としては、インターネット上のサービスから日付を取得することもできます。
 
-`loop()`関数では、`now`という名前の変数にRTCから取得した現在の日付を代入します。`RTCnow()`メソッドは現在の日時を表す`DateTime`オブジェクトを返すため、`year()`や`month()`、`day()`メソッドを使って年月日を取得します。
-
-そして、`String`クラスを使用して日付を文字列に変換し、`println()`メソッドでシリアルモニターに出力します。日付のフォーマットは自由に変更できます。
-
-## ディープダイブ
-
-RTCモジュールはリアルタイムクロック（RTC）チップを搭載したデバイスで、年月日や時刻を取得することができます。Arduinoでは、内蔵のRTCモジュールや外付けのモジュールを使用することができます。自分のプロジェクトに合った適切なモジュールを選択しましょう。
-
-また、RTCモジュールを使用するには、追加のライブラリをダウンロードする必要があります。`RTClib`は最も一般的なRTCモジュール用のライブラリですが、使用するモジュールに合わせて適切なライブラリを選択しましょう。
-
-## See Also
-
-- [Arduinoでの日付の取得方法](https://www.arduino.cc/en/tutorial/time)
-- [RTCモジュールの種類と選び方](https://qiita.com/zakzak000/items/5ffe323c2adaec108465)
+## 関連情報：
+- [Arduino Time Library](https://playground.arduino.cc/Code/Time/)
+- [Arduinoの内蔵ライブラリについて](https://www.arduino.cc/reference/en/language/functions/time/date/)
+- [インターネットを使用して日付を取得する方法](https://www.instructables.com/Arduino-Real-Time-Clock-Using-Internet-Time/)

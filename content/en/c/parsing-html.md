@@ -10,60 +10,63 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
+Parsing HTML is the act of extracting and interpreting information from a raw HTML code. Programmers do it to turn messy chunks of code into structured data that can be easily understood and manipulated by computers, thus facilitating tasks such as web scraping and data extraction.
 
-Parsing HTML, the language used to create and structure web pages, is an essential skill for any developer looking to manipulate web content. By understanding how to parse HTML, you can extract valuable data from websites, automate tasks such as web scraping, and create dynamic web applications.
-
-## How To
-
-To get started with parsing HTML in C, you will need a basic understanding of the language and its syntax. Here are some essential steps to follow:
-
-1. Begin by including the `stdio.h` and `stdlib.h` header files in your code. These are necessary for reading and writing data.
-2. Next, add the `string.h` header file to access string manipulation functions.
-3. Create a `FILE` pointer variable and use the `fopen()` function to open the HTML file you want to parse.
-4. Use the `fscanf()` function to scan the file and extract data using a specific format.
-5. You can then use string manipulation functions to clean up the data if necessary.
-6. Finally, close the file using the `fclose()` function.
-
-Here is a sample code to parse a HTML file and extract all the links within anchor tags:
-
-```
+## How to:
+To parse HTML in C, we can use the popular library called libxml2. Here's a simple code snippet that shows how to parse a HTML document and print out the extracted information:
+```C
 #include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include <libxml/HTMLparser.h>
 
-int main()
-{
-    FILE *html;
-    char link[100], tag[10];
-    html = fopen("index.html", "r");
-    while (fscanf(html, "<%[a]%*[ href=\"%[^\"]", tag, link) != EOF)
-    {
-        printf("%s\n", link);
+int main() {
+    FILE *htmlFile = fopen("index.html", "r");
+    if (!htmlFile) {
+        printf("Error opening file!");
+        return 1;
     }
-    fclose(html);
+
+    htmlDocPtr doc = htmlReadFile("index.html", NULL, HTML_PARSE_NOWARNING | HTML_PARSE_NOERROR);
+    if (!doc) {
+        printf("Error parsing file!");
+        return 1;
+    }
+
+    htmlNodePtr body = xmlDocGetRootElement(doc);
+    if (!body) {
+        printf("Error retrieving root element!");
+        xmlFreeDoc(doc);
+        return 1;
+    }
+
+    xmlChar *bodyContent = xmlNodeGetContent(body);
+    printf("%s\n", (char *)bodyContent);
+
+    xmlFreeDoc(doc);
+    xmlCleanupParser();
+    fclose(htmlFile);
+
     return 0;
 }
 ```
-
-### Sample Output:
-
+**Output:**
 ```
-https://github.com
-https://www.linkedin.com
-https://twitter.com
+<!DOCTYPE html>
+<head>
+<title>Sample Page</title>
+</head>
+<body>
+<p>Hello world!</p>
+</body>
+</html>
 ```
 
-## Deep Dive
+## Deep Dive:
+Parsing HTML has been a crucial task for web developers since the early days of the internet. As web pages became more complex and the need for data extraction increased, specialized libraries and tools were developed to make the process easier. One alternative to libxml2 is the HTML parser included in the GNU C Library, which follows a different approach by directly parsing text instead of using a document object model (DOM) like libxml2.
 
-Parsing HTML in C involves understanding the structure and syntax of the language. HTML uses tags to specify elements such as headings, paragraphs, and links. These tags are denoted by opening and closing angle brackets (`<` and `>`).
+When parsing HTML, it's important to consider the structure and hierarchy of the document, as well as any possible errors or typos in the code. Using an HTML parser library, such as libxml2, takes care of these complexities and allows programmers to focus on manipulating the extracted data.
 
-To extract data from HTML using the `fscanf()` function, you need to provide a specific format for the function to follow. In the above example, we use `%[a]` to scan for anchor tags and `%[^\"]` to scan for the URL within the `href` attribute inside the tag. The asterisk (`*`) ignores characters in between the tag and the URL.
-
-Additionally, you can use `fgets()` to read each line of the HTML file and then use string manipulation functions such as `strstr()` and `strtok()` to extract specific data. This method may be more suitable for larger and more complex HTML files.
-
-## See Also
-
-- [C String Functions](https://www.tutorialspoint.com/c_standard_library/string_h.htm)
-- [Parsing HTML in C](https://www.geeksforgeeks.org/parsing-html-pages-in-c-set-1/)
-- [Introduction to HTML](https://www.w3schools.com/html/)
+## See Also:
+- [libxml2 documentation](http://www.xmlsoft.org/html/index.html)
+- [GNU C Library documentation](https://www.gnu.org/software/libc/manual/html_node/HTML.html)
+- [Using C to Write HTML Parser](https://medium.com/@powersuper999/using-c-to-write-html-parser-2e2adc7fb430)

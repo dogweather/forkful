@@ -1,7 +1,7 @@
 ---
-title:                "Att skicka en http-förfrågan med grundläggande autentisering"
-html_title:           "Bash: Att skicka en http-förfrågan med grundläggande autentisering"
-simple_title:         "Att skicka en http-förfrågan med grundläggande autentisering"
+title:                "Sända en http-begäran med grundläggande autentisering"
+html_title:           "Bash: Sända en http-begäran med grundläggande autentisering"
+simple_title:         "Sända en http-begäran med grundläggande autentisering"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "HTML and the Web"
@@ -10,22 +10,19 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
-Chansen är att om du arbetar med webbutveckling eller automatiserad scripting, har du stött på scenarier där du behöver skicka en HTTP-begäran med grundläggande autentisering. Detta är en vanlig metod för att verifiera din identitet och få åtkomst till skyddade resurser på en server.
+## Vad & Varför? 
+Att skicka en HTTP-förfrågan med grundläggande autentisering är en metod som används av programmerare för att säkert utbyta data mellan en klient och en server. Genom att använda autentiseringsuppgifter i förfrågan kan man bekräfta identiteten på den som begär informationen, vilket är särskilt viktigt när det rör sig om känslig data.
 
-## Så här gör du
-För att skicka en HTTP-begäran med grundläggande autentisering, använder du dig av `curl`-kommandot i Bash. Här är ett grundläggande exempel för att hämta en resurs från en server som kräver grundläggande autentisering:
-```Bash
-curl -u användarnamn:lösenord URL
+## Så här gör du:
+För att skicka en HTTP-förfrågan med grundläggande autentisering i Bash, används kommandot `curl` tillsammans med flaggan `--user` för att ange autentiseringsuppgifterna. Exempelvis:
 ```
-Sätt in dina egna användarnamn, lösenord och URL-adress i kommandot för att få åtkomst till resursen. Om autentiseringen är framgångsrik, kommer du att få utdata från resursen som svar.
+curl --user username:password http://www.example.com
+```
 
-För en mer omfattande guide om `curl` och HTTP-autentisering, kan du läsa dokumentationen på [Bash-sidan](https://www.gnu.org/software/bash/manual/html_node/Curl-Downloading-Options.html).
+Output: Du får en respons från servern med det efterfrågade innehållet.
 
-## Byte i detalj
-HTTP-begäran som skickas med grundläggande autentisering innehåller en `Authorization`-rubrik som bär autentiseringsinformationen. Denna rubrik använder sig av bas64-kodning för att kapsla in användarnamnet och lösenordet. Servern kommer att avkoda denna information och verifiera ditt användarnamn och lösenord för att bestämma om du har åtkomst till de begärda resurserna.
+## Djupdykning:
+För att förstå bakgrunden till varför grundläggande autentisering används inom HTTP, kan det vara bra att känna till att en av de tidigaste versionerna av HTTP 1.0 saknade inbyggd säkerhet. Genom att använda autentiseringsuppgifter i förfrågan, blir kommunikationen ändå säker och informationen kan utbytas utan risk för obehörig åtkomst. Det finns även andra metoder för autentisering som används inom HTTP, såsom OAuth, men grundläggande autentisering är fortfarande en vanlig och enkel metod att implementera.
 
-## Se även
-- [Curl dokumentation](https://curl.haxx.se/docs/httpscripting.html)
-- [HTTP autentisering med Bash](https://gordonlesti.com/http-authentication-with-curl/)
-- [Bas64 kodning](https://en.wikipedia.org/wiki/Base64)
+## Se även:
+Om du vill lära dig mer om Bash-kommandot `curl` och dess olika användningsområden kan du besöka [dess officiella dokumentation](https://curl.se/docs/manpage.html). Du kan även läsa mer om HTTP och dess säkerhetsaspekter på [Mozilla Developers](https://developer.mozilla.org/en-US/docs/Web/HTTP) eller [W3C](https://www.w3.org/Protocols/).

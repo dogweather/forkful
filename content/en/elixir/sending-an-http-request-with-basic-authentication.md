@@ -10,49 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-If you're working with web APIs, chances are you'll encounter the need to send an HTTP request with basic authentication. This is a commonly used authentication method that allows you to send sensitive information, such as a username and password, to a server in a secure manner.
+Sending an HTTP request with basic authentication is a way for programmers to securely access web services that require authentication. This method allows the client to include a username and password with each request, providing the necessary credentials to access the protected resource. It is commonly used for accessing APIs and web services that require authentication for security purposes.
 
-## How To
+## How to:
 
-Sending an HTTP request with basic authentication in Elixir is fairly straightforward. First, we need to import the necessary modules: `HTTPoison` for making HTTP requests and `Base64` for encoding our credentials.
-
-```Elixir
-import HTTPoison
-import Base64
-```
-
-Next, we need to construct our request and add the basic authentication header. We can do this using the `request/5` function provided by HTTPoison. In this example, we'll be sending a `GET` request to the GitHub API.
+To send an HTTP request with basic authentication in Elixir, you can use the built-in [HTTPoison](https://github.com/edgurgel/httpoison) library. First, you will need to provide the username and password in the request options using the `auth` option. Here’s an example of sending an HTTP GET request to an API endpoint with basic authentication:
 
 ```Elixir
-response = HTTPoison.request(
-  :get,
-  "https://api.github.com/user",
-  headers: [
-    {"Authorization", "Basic " <> Base64.encode64("username:password")}
-  ]
-)
+url = "https://example.com/api/resource"
+auth_options = [auth: {"username", "password"}]
+response = HTTPoison.get(url, [], auth_options)
 ```
 
-The authorization header requires our credentials to be Base64 encoded, which is why we used the `Base64.encode64/1` function.
+The response object will contain the status code, response headers, and body of the API response. You can also specify a `timeout` option to set the maximum time to wait for a response.
 
-We can then handle the response accordingly, for example by parsing the JSON and retrieving the desired information.
+## Deep Dive:
 
-```Elixir
-{:ok, %{body: body}} = response
-user = Jason.decode!(body)
-IO.inspect user["login"]
-# outputs "johndoe"
-```
+Sending HTTP requests with basic authentication has been a widely used security measure to protect web services and APIs. It was first introduced in 1996 as part of the HTTP/1.0 standard and has remained a popular authentication method. Alternatives to basic authentication include OAuth, bearer tokens, and more advanced methods such as public key authentication.
 
-## Deep Dive
+In Elixir, the `auth` option in the HTTPoison library automates the process of adding the `Authorization` header with the encoded username and password to the HTTP request. This makes it easy for programmers to implement basic authentication in their code without having to manually add headers or encode the credentials.
 
-In basic authentication, the username and password are encoded with Base64 but are still easily decoded by anyone who intercepts the request. This means it should only be used over HTTPS connections to ensure the security of the credentials.
+## See Also:
 
-Another important aspect to keep in mind is that basic authentication is considered a weak form of authentication. It is recommended to use more secure methods such as OAuth or token-based authentication for better protection against potential security threats.
-
-## See Also
-
-- [HTTPoison](https://github.com/edgurgel/httpoison) - Elixir HTTP client library
-- [Base64](https://hexdocs.pm/elixir/Base64.html) - Elixir module for encoding and decoding Base64 data
+- [HTTPoison Documentation](https://hexdocs.pm/httpoison/HTTPoison.html)
+- [Basic Authentication Overview](https://www.jw32.org/2005/http-authentication/)
+- [HTTP/1.0 Specification](https://tools.ietf.org/html/rfc1945)

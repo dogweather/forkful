@@ -1,7 +1,7 @@
 ---
-title:                "Author: Escribiendo en el error estándar."
-html_title:           "Haskell: Author: Escribiendo en el error estándar."
-simple_title:         "Author: Escribiendo en el error estándar."
+title:                "Escribiendo en el error estándar"
+html_title:           "Haskell: Escribiendo en el error estándar"
+simple_title:         "Escribiendo en el error estándar"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Files and I/O"
@@ -10,36 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¿Qué y por qué?
+Escribir en la salida de error estándar es una forma de mostrar mensajes o información de depuración en una aplicación Haskell. Los programadores pueden utilizar esto para identificar y solucionar errores en su código de manera más eficiente.
 
-Si estás escribiendo un programa en Haskell, es posible que necesites imprimir algún mensaje de error en la consola. Sin embargo, imprimir a la salida estándar puede ser confuso porque se mezcla con la salida del programa. En su lugar, puedes escribir directamente a la salida de error para destacar los mensajes de error y hacer que sea más fácil de encontrar.
-
-## Cómo hacerlo
-
-Para escribir a la salida de error en Haskell, puedes usar la función `hPutStrLn` del módulo `System.IO`. Esta función toma dos argumentos: el primero es el manejador de la salida (en este caso, `stderr`), y el segundo es el mensaje que quieres imprimir. Aquí hay un ejemplo de código que imprimirá un mensaje de error a la consola:
+## ¿Cómo hacerlo?
+En Haskell, podemos escribir en la salida de error estándar utilizando la función `hPutStrLn` del módulo `System.IO`. Por ejemplo:
 
 ```Haskell
 import System.IO
 
 main = do
-  hPutStrLn stderr "¡Esto es un mensaje de error!"
+  hPutStrLn stderr "¡Hola mundo!"
 ```
 
-Al ejecutar este programa, verás que el mensaje se imprime en la consola como se esperaba.
+Esto imprimirá "¡Hola mundo!" en la salida de error estándar.
 
-```
-$> ghc nombre_del_archivo.hs
-$> ./nombre_del_archivo
-¡Esto es un mensaje de error!
-```
+## Inmersión profunda
+La práctica de escribir en la salida de error estándar se remonta a los primeros días de la programación en lenguaje C, donde se utilizaba la función `fprintf` para imprimir en la salida de error. Otros lenguajes de programación también tienen formas de escribir en la salida de error estándar, como `Console.Error.WriteLine` en C# y `System.err.println` en Java.
 
-## Profundizando
-
-Si quieres tener un mayor control sobre cómo se manejan los mensajes de error en tu programa, puedes utilizar la función `hSetBuffering` del módulo `System.IO`. Esta función toma tres argumentos: el manejador de salida, el tipo de búfer y el modo de búfer. El tipo de búfer puede ser `NoBuffering`, `LineBuffering` o `BlockBuffering`, y el modo de búfer puede ser `NoBuffering` o `LineBuffering`.
-
-Por ejemplo, si quieres que los mensajes de error se impriman inmediatamente en lugar de esperar a que se llene el búfer, puedes usar `hSetBuffering stderr NoBuffering`. Y si quieres que cada mensaje se imprima en una nueva línea en lugar de esperar a que se complete una línea completa, puedes usar `hSetBuffering stderr LineBuffering`.
+Alternativamente, en Haskell también es posible escribir en la salida de error utilizando la función `trace` del módulo `Debug.Trace`. Sin embargo, esta función solo se recomienda para uso temporal durante el proceso de depuración.
 
 ## Ver también
-
 - [Documentación de `System.IO`](https://hackage.haskell.org/package/base-4.14.1.0/docs/System-IO.html)
-- [Tutorial de Haskell en español](https://www.haskell.es/tutorial)
+- [Documentación de `Debug.Trace`](https://hackage.haskell.org/package/base-4.14.1.0/docs/Debug-Trace.html)

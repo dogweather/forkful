@@ -10,38 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-Programming in Haskell is a unique and enjoyable experience. Its functional and declarative nature allows for concise and elegant code that is also highly maintainable. Starting a new project in Haskell can not only expand your programming skills, but also lead to more efficient and robust code.
+## What & Why?
 
-## How To
-To start a new project in Haskell, you'll first need to make sure you have the Haskell compiler, GHC, installed on your computer. Once you have that set up, you can follow these simple steps to get your project up and running:
+Starting a new project in Haskell means creating a new software project from scratch using the Haskell programming language. Programmers often start a new project to solve a specific problem or create a new software product. 
 
-1. Create a new directory for your project.
-2. Navigate to that directory in your terminal.
-3. Use the `cabal init` command to initialize a new Cabal project.
-4. Fill in the prompted fields, including the project name, version, and description.
-5. Once the project is initialized, you can use the `cabal build` command to build your project.
-6. To run your project, use the `cabal run` command followed by the name of the executable.
-7. After making changes to your code, you can use the `cabal build` command again to update your project and run it again with `cabal run`.
+## How to:
 
-Here's an example of a simple "Hello World" program in Haskell:
+To start a new project in Haskell, you will need to follow these steps:
+
+1. Open a command line interface on your computer.
+2. Navigate to the directory where you want to create your project.
+3. Type `stack new project-name` and hit enter.
+4. This will create a new directory named `project-name` with the necessary files and folder structure for a Haskell project.
+5. Next, cd into the project directory by typing `cd project-name` and hit enter.
+6. Then, run `stack build` to build your project.
+7. Finally, you can run your project by typing `stack exec project-name` and hit enter.
+
+Here is an example of creating and running a project named "my-haskell-project":
 
 ```Haskell
--- hello.hs
-main :: IO ()
-main = putStrLn "Hello, world!"
+$ stack new my-haskell-project
+$ cd my-haskell-project
+$ stack build
+$ stack exec my-haskell-project
 ```
 
-Running this program with `cabal run hello` will output `Hello, world!`.
+This will build and run your project, displaying any output in the command line interface.
 
-## Deep Dive
-When starting a new project in Haskell, it is important to think carefully about your project structure and design. Haskell's strong type system allows for writing robust and bug-free code, but it's important to plan out your types and functions beforehand.
+## Deep Dive:
 
-A good starting point is to identify the different modules and their respective functionality in your project. Then, think about the types and functions needed for each module and how they will interact with each other. It may also be helpful to create a visual diagram to map out the relationships between different parts of your project.
+Haskell is a purely functional programming language that was first introduced in 1990. Unlike other programming languages, Haskell is based on mathematical principles and has a strong type system. This allows for robust and concise code, making it a popular choice for writing reliable and scalable software.
 
-Lastly, don't be afraid to consult Haskell documentation and reach out to the Haskell community for help and guidance. The Haskell community is known for being welcoming and supportive, so take advantage of their expertise and knowledge.
+There are alternative ways to start a new project in Haskell, such as using a package manager like Cabal or creating a new project in an integrated development environment (IDE) like Visual Studio Code. However, using the Haskell-specific tool, Stack, is the recommended method as it handles dependencies and build management efficiently.
 
-## See Also
-- Official Haskell website: https://www.haskell.org/
-- Learn You a Haskell tutorial: http://learnyouahaskell.com/
-- Haskell subreddit: https://www.reddit.com/r/haskell/
+Creating a new project using Stack also gives you access to a wide range of libraries and packages from the Hackage repository, making it easier to add additional functionality to your project.
+
+## See Also:
+
+If you want to learn more about starting a new project in Haskell, or want to explore other aspects of the language, check out the following resources:
+
+- [Haskell Programming Language Official Website](https://www.haskell.org/) - The official website for the Haskell programming language, with documentation, tutorials, and community resources.
+- [Haskell Wiki](https://wiki.haskell.org/) - A community-maintained wiki with extensive information on Haskell and related tools.
+- [Learn You a Haskell for Great Good!](http://learnyouahaskell.com/) - A popular online book for learning Haskell from the basics to advanced concepts.

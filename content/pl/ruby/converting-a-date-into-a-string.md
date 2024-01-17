@@ -1,7 +1,7 @@
 ---
-title:                "Konwersja daty na ciąg znaków."
-html_title:           "Ruby: Konwersja daty na ciąg znaków."
-simple_title:         "Konwersja daty na ciąg znaków."
+title:                "Konwersja daty na ciąg znaków"
+html_title:           "Ruby: Konwersja daty na ciąg znaków"
+simple_title:         "Konwersja daty na ciąg znaków"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Dates and Times"
@@ -10,38 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+### Co i dlaczego?
 
-Konwersja daty na ciąg znaków jest często niezbędnym krokiem w programowaniu. Umożliwia to wyświetlenie daty w czytelnej formie lub jej wykorzystanie w innych operacjach.
+Konwertowanie daty na ciąg znaków to proces, w którym data zostaje przekształcona z formatu, który komputery mogą odczytać, na czytelny dla ludzi ciąg znaków. Programiści często wykonują tę operację, ponieważ wymaga tego np. wyświetlanie dat w aplikacjach lub zapisywanie ich w bazach danych.
 
-## Jak to zrobić
+### Jak to zrobić:
 
-Aby skonwertować datę na ciąg znaków w Ruby, możesz skorzystać z metody `strftime()`. Przyjmuje ona formatowanie daty w postaci łańcucha znaków i zwraca ciąg znaków zawierający datę w wybranej formie. Na przykład:
+```ruby
+require 'date'
 
-```Ruby
-date = Time.new(2021, 12, 1)
-date_str = date.strftime("%d/%m/%Y")
-puts date_str # wyświetli 01/12/2021
+date = Date.today
+puts date.to_s
+
+# Sample Output: "2020-10-08"
 ```
 
-Możesz także wykorzystać gotowe formaty dostępne w języku Ruby, jak na przykład `iso8601` lub `rfc2822`.
+Możemy użyć wbudowanej biblioteki 'date' i metody `to_s` aby przekonwertować datę na ciąg znaków.
 
-```Ruby
-date = Time.new(2021, 12, 1)
-date_str = date.iso8601
-puts date_str # wyświetli 2021-12-01T00:00:00+00:00
-```
+### Głębszy zanurzenie:
 
-## Głębszy wgląd
+Konwersja daty na ciąg znaków jest istotnym elementem programowania od samego początku jego istnienia. Początkowo, w językach takich jak Fortran czy Cobol, operacje na datach były bardzo skomplikowane i czasochłonne. Jednak dzięki rozwojowi technologii i wprowadzeniu nowych bibliotek programistycznych, konwersja dat stała się znacznie łatwiejsza.
 
-W Ruby daty są przechowywane jako obiekty klasy `Time`. W przypadku metody `strftime()` możesz wykorzystać wiele różnych znaków, aby sformatować datę według swoich potrzeb.
+Alternatywnym sposobem konwertowania daty jest użycie zewnętrznych bibliotek, takich jak Moment.js czy Datejs. Dzięki nim można łatwo przekonwertować datę na różne formaty i również manipulować nią w inny sposób.
 
-Na przykład, `%a` zwróci skrócony dzień tygodnia (np. "Mon"), a `%b` skrócony miesiąc (np. "Jan"). Możesz także wykorzystać `%d` do wyświetlenia dnia miesiąca w formacie z zerem wiodącym (np. "01") lub `%Y` do wyświetlenia roku w formacie czterocyfrowym (np. "2021").
+W Ruby, daty są przechowywane w postaci liczby, która reprezentuje liczbę dni, która minęła od 1 stycznia 4713 roku p.n.e. W metodzie `to_s`, liczba ta jest przekonwertowana na czytelny dla ludzi format.
 
-Możesz również wykorzystać `%H` do wyświetlenia godziny w formacie 24-godzinnym lub `%M` do wyświetlenia minuty. Pełną listę możliwych znaków formatujących znajdziesz w dokumentacji języka Ruby.
+### Zobacz również:
 
-## Zobacz także
-
-- Dokumentacja języka Ruby: https://ruby-doc.org/core-3.0.0/Time.html#method-i-strftime
-- Jak sformatować datę i czas w Ruby: https://www.rubyguides.com/2015/09/ruby-time-format/
-- Poradnik dla początkujących: https://rubyguides.com/learn/ruby-string-formatting/
+- Dokumentacja Ruby o konwersji dat: https://ruby-doc.org/core-2.7.1/Date.html#method-i-to_s
+- Biblioteka Moment.js do manipulacji i formatowania dat w języku JavaScript: https://momentjs.com/
+- Dokumentacja Ruby o klasie Date: https://ruby-doc.org/stdlib-2.7.1/libdoc/date/rdoc/Date.html

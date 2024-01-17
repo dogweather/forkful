@@ -1,7 +1,7 @@
 ---
-title:                "使用Yaml编程"
-html_title:           "Gleam: 使用Yaml编程"
-simple_title:         "使用Yaml编程"
+title:                "使用 YAML 进行编程"
+html_title:           "Gleam: 使用 YAML 进行编程"
+simple_title:         "使用 YAML 进行编程"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Data Formats and Serialization"
@@ -10,43 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 为什么？
-假设你有一个复杂的程序，需要从不同的环境中读取不同的配置。这时候，YAML文件就可以帮助你轻松处理这些各不相同的设置。它易于阅读和编写，是许多团队和项目中常用的配置格式。
+# 什么是 YAML？为什么程序员会用它？
 
-## 如何使用 YAML
-```Gleam
-import gleam/yaml
+YAML（YAML Ain't Markup Language）是一种轻量级的数据序列化语言，可用于将数据以易读的形式存储和传输。程序员通常会使用YAML来编写配置文件和存储结构化数据，因为它可以比传统的XML和JSON格式更易读和编写。
 
-// 从 YAML 文件中读取配置数据
-let config = gleam/yaml.from_file("config.yml")
+# 如何使用 YAML：
 
-// 通过键名获取设置值
-let port = gleam/yaml.get(config, "server.port")
-```
-
-使用 `from_file` 函数可以从 YAML 文件中读取配置数据。然后，我们可以通过 `get` 函数来获取特定键的值。如果你想要修改配置文件，可以使用 `set` 函数来更新键值。更多用法可以查看官方文档。
-
-```yaml
-# config.yml
-server:
-  port: 8000
-database:
-  host: "localhost"
-  port: 5432
-```
-
-假设我们有一个以上的 YAML 文件，每个文件都有自己特定的键值对。我们可以使用 `merge` 函数将它们合并成一个配置文件，这样就可以轻松地管理多个环境的配置了。
+使用YAML编写配置文件非常简单。用几行代码来展示如何定义一个简单的YAML文件：
 
 ```Gleam
-// 合并两个 YAML 文件
-let common_config = gleam/yaml.from_file("common.yml")
-let env_config = gleam/yaml.from_file("production.yml")
-let config = gleam/yaml.merge(common_config, env_config)
+title: My Awesome Website
+authors:
+  - John Smith
+  - Jane Doe
 ```
 
-## 深入了解 YAML
-YAML 是一种结构化数据格式，它在存储和表示不同类型的数据时非常方便。它支持整数、浮点数、字符串、布尔值、列表和映射等基本数据类型。有时候，我们可能需要对配置文件进行验证，避免类型错误。这时候，你可以使用 `map_and_validate` 函数。此外，还有许多其他的函数可以在 Gleam 的 YAML 模块中找到。
+这里我们定义了一个标题为"My Awesome Website"的网页，并列出了两位作者的名字。当我们运行这段代码时，我们会得到一个YAML数据结构的输出：
 
-# 参考链接
-- [官方网站](https://gleam.run/lib/yaml)
-- [YAML 文档](https://yaml.org/)
+```Gleam
+%{title: "My Awesome Website", authors: ["John Smith", "Jane Doe"]}
+```
+
+我们可以在这个数据结构上进行操作，比如取出标题或者添加新的作者。
+
+# 深入了解：
+
+YAML最初是由Clark Evans于2001年推出的，并基于JSON的语法。它的目标是提供一个比JSON更易读和编写的数据格式，但同时保持和XML一样的表现力。与大多数编程语言相比，YAML的语法相对简单，读起来也更接近自然语言。
+
+虽然XML和JSON也可以用于存储结构化数据，但YAML的语法更加简洁和易读，并且支持更多的数据类型。此外，YAML也可以与其他编程语言无缝集成，因此在很多项目中都是首选的配置文件格式。
+
+# 参考资料：
+
+了解更多关于YAML的知识，请访问以下链接：
+
+- YAML官方网站：https://yaml.org/
+- YAML语言规范：https://yaml.org/spec/1.2/spec.html
+- YAML在Gleam中的实现：https://github.com/gleam-lang/yaml
+
+祝使用愉快！

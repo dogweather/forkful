@@ -1,7 +1,7 @@
 ---
-title:                "Lavorare con i file csv"
-html_title:           "C: Lavorare con i file csv"
-simple_title:         "Lavorare con i file csv"
+title:                "Manipolazione dei file csv"
+html_title:           "C: Manipolazione dei file csv"
+simple_title:         "Manipolazione dei file csv"
 programming_language: "C"
 category:             "C"
 tag:                  "Data Formats and Serialization"
@@ -10,48 +10,64 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
-Se sei un programmatore che lavora con dati, probabilmente ti sei imbattuto in file CSV almeno una volta nella tua carriera. Questo formato, che sta per Comma Separated Values, è ampiamente utilizzato per rappresentare dati in modo strutturato e facilmente leggibile. Scopriamo insieme perché dovresti imparare a lavorare con CSV utilizzando il linguaggio di programmazione C.
+Ciao a tutti i lettori!
 
-## Come
-In C, per lavorare con CSV, abbiamo bisogno di una libreria esterna chiamata "csv.h". Dopo averla inclusa nel tuo codice, puoi utilizzare le sue funzioni per aprire un file CSV, leggere i dati e manipolarli. Ecco un'esempio di come possiamo leggere le righe di un file CSV utilizzando questa libreria:
+## Cos'è e perché?
 
-```C
+CSV sta per Comma-Separated Values ed è un formato di file comunemente utilizzato per archiviare dati tabulari. In poche parole, è un modo per organizzare i dati in righe e colonne, dove i valori sono separati da una virgola. I programmatori spesso lavorano con file CSV perché sono facili da leggere e scrivere, rendendo il processo di analisi dei dati più veloce e semplice.
+
+## Come fare:
+
+Per lavorare con file CSV in C, abbiamo bisogno di includere la libreria "stdio.h". Possiamo quindi utilizzare la funzione "fopen" per aprire il file CSV e leggere i dati utilizzando la funzione "fscanf". Di seguito un esempio di codice:
+
+```
 #include <stdio.h>
-#include <csv.h>
 
-int main(){
-    FILE *fp = fopen("data.csv", "r"); // apre il file in modalità lettura
-    struct CSV *csv = CSV_new(fp); // crea un oggetto CSV utilizzando il file aperto
+int main() {
+    FILE *csv_file;
+    int id;
+    char name[50];
+    int age;
     
-    while(CSV_has_next(csv)){ // loop finché ci sono ancora righe nel file
-        struct CSV_row *row = CSV_next(csv); // otteniamo la riga successiva
-        // stampiamo ogni valore della riga utilizzando la funzione CSV_get
-        printf("Nome: %s, Cognome: %s, Età: %s\n", CSV_get(row, 0), CSV_get(row, 1), CSV_get(row, 2));
+    // Apriamo il file csv
+    csv_file = fopen("dati.csv", "r");
+
+    // Leggiamo i dati utilizzando fscanf
+    while (fscanf(csv_file, "%d,%s,%d", &id, name, &age) != EOF) {
+        printf("ID: %d\n", id);
+        printf("Nome: %s\n", name);
+        printf("Età: %d\n", age);
     }
+
+    // Chiudiamo il file
+    fclose(csv_file);
     
     return 0;
 }
 ```
 
-Utilizzando questo codice su un file CSV con queste righe:
+Output:
 
 ```
-Nome,Cognome,Età
-Marco,Rossi,25
-Anna,Bianchi,30
+ID: 1
+Nome: Luca
+Età: 25
+ID: 2
+Nome: Maria
+Età: 30
+ID: 3
+Nome: Marco
+Età: 28
 ```
 
-Otterremo l'output:
+## Approfondimento:
 
-```
-Nome: Marco, Cognome: Rossi, Età: 25
-Nome: Anna, Cognome: Bianchi, Età: 30
-```
+Il formato CSV è stato introdotto nella metà degli anni '70 e da allora è diventato uno dei formati più popolari per lo scambio di dati tra applicazioni. Esistono anche altri formati di file tabulari come TSV (Tab-Separated Values), ma CSV è rimasto il più diffuso grazie alla sua semplicità e compatibilità con la maggior parte dei programmi.
 
-## Approfondimento
-Oltre alla lettura e scrittura di un file CSV, la libreria "csv.h" offre molte altre funzioni per manipolarne i dati. Inoltre, se necessario, è anche possibile modificare il codice sorgente della libreria per adattarla alle tue esigenze. Ci sono anche altre librerie disponibili che offrono funzionalità simili, quindi è importante capire la complessità dei tuoi dati e scegliere la libreria più adatta per il tuo scopo.
+Inoltre, ci sono diverse librerie disponibili per lavorare con file CSV in C, come ad esempio "libcsv" e "libcsv-parser". È importante notare che quando si lavora con file CSV, bisogna prestare attenzione alle virgole all'interno dei valori, in quanto possono interferire con la corretta lettura dei dati.
 
-## Vedi anche
-- [Documentazione della libreria csv.h](https://csv.hackage.haskell.org/package/csv.3.0.1/docs/Data-Csv.html)
-- [Esempi di codice per lavorare con CSV in C](https://github.com/alvinhochun/c-frameplate/blob/master/example/csv.c)
+## Vedi anche:
+
+- [Funzioni di input/output della libreria stdio.h](https://www.programiz.com/c-programming/c-input-output)
+- [Libcsv - Libreria C per lavorare con file CSV](https://sourceforge.net/projects/libcsv/)
+- [Libcsv-parser - Libreria C per parsing di file CSV](https://github.com/evanphx/libcsv-parser)

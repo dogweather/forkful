@@ -1,7 +1,7 @@
 ---
-title:                "「csvを使ったプログラミング」"
-html_title:           "Haskell: 「csvを使ったプログラミング」"
-simple_title:         "「csvを使ったプログラミング」"
+title:                "csvを扱う"
+html_title:           "Haskell: csvを扱う"
+simple_title:         "csvを扱う"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Data Formats and Serialization"
@@ -10,49 +10,63 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+## 何 & なぜ?
 
-CSVファイルを扱うことが重要なのかを2つの文で説明します。
+CSVとは、コンマで区切られたデータを表すファイル形式です。プログラマーは、データセットを読み込んだり、処理したりするために、CSVファイルを扱うことがあります。
 
-CSVファイルは一般的なデータ形式であり、 多くのプログラムやアプリケーションで使用されています。Haskellを通してCSVファイルの処理方法を学ぶことで、さまざまなデータ処理作業をより効率的に行うことができるようになります。
+## 方法:
 
-## 方法
+### CSVファイルを読み込む
 
-HaskellでCSVファイルを処理する方法を学ぶために、以下のコード例を参考にしてください。
+まず、`haskell-csv`ライブラリをインストールします。次に、ファイルからデータを読み込みます。
 
-```Haskell
-import Text.CSV -- CSVファイルを扱うためのモジュールをインポート
+```haskell
+import Text.CSV
 
--- CSVファイルの読み込みと表示
-main = do
-  csv <- parseCSVFromFile "sample.csv" -- sample.csvは読み込むファイルの名前
-  print csv
+-- CSVファイルを読み込む関数
+readCSV :: FilePath -> IO CSV
+readCSV path = do
+  csv <- parseCSVFromFile path
+  case csv of
+    Left err -> error $ "エラー: " ++ show err
+    Right res -> return res
+```
+ 
+### CSVファイルを書き込む
 
--- CSVファイルのデータを処理して表示
-main = do
-  csv <- parseCSVFromFile "sample.csv"
-  let processedData = processCSV csv -- csvデータを処理する関数
-  print processedData
+新しいCSVファイルを作成し、データを書き込むこともできます。
+
+```haskell
+-- CSVファイルを書き込む関数
+writeCSV :: FilePath -> CSV -> IO ()
+writeCSV path csv = writeFile path $ printCSV csv
 ```
 
-出力例：
+### CSVデータを処理する
 
+読み込んだCSVデータを処理することもできます。例えば、2列目のデータを合計する関数を作成すると、次のようになります。
+
+```haskell
+-- 2列目のデータを合計する関数
+sumCol2 :: CSV -> Int
+sumCol2 csv = sum $ map (\row -> read (row!!1) :: Int) $ tail csv
 ```
-Right [["Name","Age","City"],["John","25","Tokyo"],["Emily","30","Osaka"],["Tom","28","Kyoto"]]
-```
 
-Haskellの```parseCSVFromFile```関数を使用することで、CSVファイルを直接読み込むことができます。
+## 詳細を調べる
 
-また、データ処理の例では、```processCSV```という自作の関数を使用してCSVデータを処理しています。Haskellでは、カスタム関数を作成することで、より複雑なデータ処理を行うことができます。
+### CSVの歴史的背景
 
-## ディープダイブ
+CSVは、1970年代にプログラマーの間で普及し始めました。当時は、生データを構造化するのに便利なフォーマットとして認識されていました。
 
-CSVファイルを扱う際の注意点やより深い情報を紹介します。
+### 代替手段
 
-- CSVファイルはカンマ(,)やタブ(\t)などの区切り文字を使用してデータを区切るため、データ内にこれらの文字が含まれる場合にはエスケープする必要があります。
-- HaskellのCSV処理モジュールには、データ取得や書き込みなど、さまざまな機能が用意されています。より詳細な情報は[Haskellのドキュメント](https://hackage.haskell.org/package/csv)を参照してください。
+CSV以外にも、データを表現するファイル形式はあります。例えば、TSV（タブ区切り）やJSONなどがあります。各フォーマットにはメリット・デメリットがありますので、プロジェクトの要件に合わせて選択することが重要です。
 
-See Also:
+### 実装の詳細
 
-- [HaskellでCSVファイルを操作する方法](https://qiita.com/suzuki-hoge/items/835d765a8eeca3a64f7a)
-- [Haskellによるファイル操作入門](https://qiita.com/7shi/items/145f12369137d8f0368f)
+`haskell-csv`ライブラリは、HaskellでCSVファイルを扱う際に便利な関数を提供します。詳細なドキュメントは、[Hackage](https://hackage.haskell.org/package/csv)で確認できます。
+
+## 関連情報を見る
+
+- [Haskell入門-はじめてのプログラミング言語-](https://www.amazon.co.jp/dp/B07YF3C1CQ/ref=dp-kindle-redirect?_encoding=UTF8&btkr=1)：Haskellの基本的な概念を学べる本です。
+- [Haskell Wiki](https://wiki.haskell.org/CSV)：HaskellでCSVを扱うための解説やリンクがまとめられています。

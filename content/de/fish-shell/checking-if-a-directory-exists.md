@@ -1,7 +1,7 @@
 ---
-title:                "Überprüfen, ob ein Verzeichnis existiert"
-html_title:           "Fish Shell: Überprüfen, ob ein Verzeichnis existiert"
-simple_title:         "Überprüfen, ob ein Verzeichnis existiert"
+title:                "Überprüfung, ob ein Verzeichnis existiert"
+html_title:           "Fish Shell: Überprüfung, ob ein Verzeichnis existiert"
+simple_title:         "Überprüfung, ob ein Verzeichnis existiert"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Files and I/O"
@@ -10,57 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was & Warum?
 
-Es gibt viele Gründe, warum man prüfen möchte, ob ein Verzeichnis existiert. Möglicherweise müssen Sie sicherstellen, dass ein bestimmtes Verzeichnis vorhanden ist, bevor Sie Dateien in dieses Verzeichnis schreiben oder aus ihm lesen. Oder Sie möchten einen Befehl nur dann ausführen, wenn ein bestimmtes Verzeichnis vorhanden ist. In jedem Fall ist es wichtig zu wissen, wie man in der Fish Shell überprüft, ob ein Verzeichnis existiert.
+Bei der Programmierung kann es sehr nützlich sein, zu überprüfen, ob ein Verzeichnis existiert. Dies kann zum Beispiel verwendet werden, um sicherzustellen, dass bestimmte Dateien in einem bestimmten Verzeichnis vorhanden sind, bevor sie weiterverarbeitet werden. Es ist auch hilfreich, um sicherzustellen, dass das Programm auf die benötigten Ressourcen zugreifen kann.
 
-## Anleitung
+## Wie geht's?
 
-Um zu überprüfen, ob ein Verzeichnis existiert, können Sie den Befehl `test` verwenden. Mit diesem Befehl können Sie verschiedene Bedingungen überprüfen, einschließlich der Existenz eines Verzeichnisses. Hier ist ein Beispiel, wie Sie überprüfen können, ob das Verzeichnis "Dokumente" in Ihrem aktuellen Verzeichnis vorhanden ist:
+Fish Shell bietet eine einfache Möglichkeit, mit der "test" Befehl zu überprüfen, ob ein Verzeichnis existiert. Hier ist ein Beispiel:
 
-```Fish Shell
-if test -d Documents
-    echo "Das Verzeichnis 'Dokumente' existiert."
-else
-    echo "Das Verzeichnis 'Dokumente' existiert nicht."
-end
+```
+test -d <Verzeichnisname>
 ```
 
-Wenn das Verzeichnis vorhanden ist, gibt der Befehl "test" den Wert True zurück und die Ausgabe "Das Verzeichnis 'Dokumente' existiert." wird angezeigt. Andernfalls wird der Wert False zurückgegeben und die Ausgabe "Das Verzeichnis 'Dokumente' existiert nicht." wird angezeigt.
+Dieser Befehl gibt "wahr" zurück, wenn das Verzeichnis existiert und "falsch", wenn nicht. Man kann auch eine Bedingung hinzufügen, um zu überprüfen, ob das Verzeichnis tatsächlich lesbar ist:
 
-## Tief ein tauchen
-
-Das Prüfen der Existenz eines Verzeichnisses kann auch in Kombination mit anderen Bedingungen durchgeführt werden. Zum Beispiel können Sie mit dem Befehl `and` oder `or` mehrere Bedingungen zusammenführen. Hier ist ein Beispiel, wie Sie überprüfen können, ob sowohl das Verzeichnis "Dokumente" als auch das Verzeichnis "Bilder" vorhanden sind:
-
-```Fish Shell
-if test -d Documents and test -d Pictures
-    echo "Sowohl das Verzeichnis 'Dokumente' als auch das Verzeichnis 'Bilder' existieren."
-else
-    echo "Entweder das Verzeichnis 'Dokumente' oder das Verzeichnis 'Bilder' existiert nicht."
-end
+```
+test -d <Verzeichnisname> -a -r
 ```
 
-Sie können auch `not` verwenden, um eine Bedingung zu negieren. Hier ist ein Beispiel, wie Sie überprüfen können, ob das Verzeichnis "Downloads" nicht vorhanden ist:
+Dieser Befehl gibt nur "wahr" zurück, wenn das Verzeichnis existiert und lesbar ist. Andernfalls wird "falsch" zurückgegeben.
 
-```Fish Shell
-if not test -d Downloads
-    echo "Das Verzeichnis 'Downloads' existiert nicht."
-end
-```
+## Tiefes Eintauchen
 
-Es ist auch möglich, die Ausgabe von `test` auf eine Variable zu speichern und später zu verwenden. Hier ist ein Beispiel, wie Sie eine Bedingung überprüfen und basierend auf dem Ergebnis eine Aktion ausführen können:
+Das Überprüfen, ob ein Verzeichnis existiert, ist ein wichtiger Bestandteil der Dateiverwaltung und Sicherstellung der korrekten Programmabläufe. Es ist Teil der POSIX-Standards und wird von den meisten Shell-Kommandos unterstützt.
 
-```Fish Shell
-set directory_exists (test -d Music; and; echo $status)
-if $directory_exists
-    echo "Das Verzeichnis 'Musik' existiert."
-else
-    echo "Das Verzeichnis 'Musik' existiert nicht."
-end
-```
+Eine alternative Möglichkeit, um zu überprüfen, ob ein Verzeichnis existiert, ist die Verwendung des "stats" Befehls. Dieser Befehl liefert detaillierte Informationen über eine Datei oder ein Verzeichnis, einschließlich der Existenz über einen bestimmten Dateipfad.
 
-In diesem Fall wird die Ausgabe von `test` in der Variable `directory_exists` gespeichert. Wenn das Verzeichnis vorhanden ist, wird der Variable der Wert 0 zugewiesen, andernfalls wird ihr der Wert 1 zugewiesen. Sie können dann diesen Wert verwenden, um eine Aktion auszuführen.
+Die Implementierung des "test" Befehls in Fish Shell basiert auf der "test" Funktion des POSIX-Standards. Es gibt auch verschiedene Funktionen, die in Shell-Skripten verwendet werden können, um das Überprüfen, ob ein Verzeichnis existiert, zu erleichtern.
 
-## Siehe Auch
+## Siehe auch
 
-Weitere Informationen zu Bedingungen und dem Befehl `test` finden Sie in der [offiziellen Fish Shell-Dokumentation](https://fishshell.com/docs/current/cmds/test.html). Sie können auch mehr über die [Verwendung von Variablen](https://fishshell.com/docs/current/index.html#variables) und [Bedingungen](https://fishshell.com/docs/current/index.html#conditions-and-loops) in der Fish Shell erfahren.
+Weitere Informationen und Beispiele zur Verwendung des "test" Befehls in Fish Shell finden Sie in der offiziellen Dokumentation unter https://fishshell.com/docs/current/cmds/test.html. Für weitere Informationen zur Verwendung von "stats" können Sie die man-Page unter https://fishshell.com/docs/current/cmds/stat.html aufrufen.

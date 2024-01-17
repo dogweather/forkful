@@ -10,36 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i Dlaczego?
+ Liczenie daty w przyszłości lub przeszłości jest operacją, która pozwala programistom na wykonywanie różnych zadań, takich jak tworzenie alarmów, wyliczanie terminów lub wyświetlanie odpowiednich informacji na stronach internetowych. Jest to ważna część programowania, ponieważ pozwala na automatyzację wielu czynności, co z kolei przyspiesza proces tworzenia oprogramowania.
 
-Niektórzy z nas lubią planować rzeczy z wyprzedzeniem, na przykład spotkania z przyjaciółmi czy ważne wydarzenia. Wtedy przydatne może okazać się obliczenie daty w przyszłości lub w przeszłości. W tym artykule dowiesz się, jak wykorzystać Fish Shell do tego celu.
-
-## Jak to zrobić
-
-Obliczanie daty w przyszłości lub w przeszłości jest możliwe dzięki użyciu polecenia `date` w Fish Shell. Przykładowy kod wyglądałby następująco:
-
-```Fish Shell
-date -v +1d
+## Jak to zrobić:
+```
+Fish Shell jest potężnym narzędziem, które umożliwia łatwe i szybkie obliczanie dat w przyszłości lub przeszłości. Poniżej przedstawiamy przykłady kodu z wykorzystaniem wbudowanej komendy `date` wraz z krótkim opisem co dany kod robi oraz jaki jest wynik.
 ```
 
-W powyższym przykładzie, dodaje się 1 dzień do aktualnej daty, co daje nam datę jutrzejszą. Podobnie, używając `-v -1d`, uzyskamy datę wczorajszą.
+```
+# Obliczanie daty jutro:
+echo "Jutro będzie " (date -v +1d)' 
 
-Jeśli chcemy obliczyć datę w przyszłości lub w przeszłości w oparciu o inną datę niż dzisiejsza, możemy użyć flagi `-j` oraz określić konkretną datę. Przykładowo:
-
-```Fish Shell
-date -j -v +2m +5d 06101300
+# Obliczanie daty za tydzień:
+echo "Za tydzień będzie " (date -v +1w) 
 ```
 
-W powyższym przykładzie, dodajemy 2 miesiące i 5 dni do daty 06/10/1300, uzyskując 16/12/1300.
+```
+# Obliczanie daty z przeszłości:
+echo "3 dni temu było " (date -v -3d) 
+```
 
-## Dogłębna analiza
+Po uruchomieniu powyższych komend w Fish Shell otrzymamy odpowiednie wyniki w wybranej przez nas formie, na przykład: `Jutro będzie 2020-08-23` lub `Za tydzień będzie 2020-08-30`.
 
-Fish Shell wykorzystuje komendę `date` dostępną również w innych powłokach Uniksa, takich jak Bash czy Zsh. Dzięki wykorzystaniu flagi `-v`, możemy dodawać lub odejmować określoną wartość od aktualnej daty, określając jednostki czasu za pomocą liter.
+## Głębsza Analiza:
+ Istnieje wiele różnych metod obliczania dat w Fish Shell, w zależności od naszych potrzeb i zastosowań. Jedną z popularniejszych jest wykorzystanie wbudowanej komendy `date`, która pozwala na obliczanie daty w przyszłości lub przeszłości na podstawie podanej liczby dni lub tygodni. Alternatywną metodą jest wykorzystanie modułu `chrono`, który oferuje bardziej zaawansowane możliwości manipulowania datami, takie jak obliczanie zakresów dat lub uwzględnianie różnych stref czasowych. Jednakże dla większości codziennych zastosowań, wbudowana komenda `date` jest wystarczająca i prostsza w użyciu.
 
-Możemy również użyć flagi `-j`, aby podać konkretną datę zamiast aktualnej, na podstawie której będą dokonywane obliczenia. W ten sposób, możemy planować wydarzenia w odległej przyszłości lub cofać się w czasie.
-
-## Zobacz również
-
-- Oficjalna dokumentacja Fish Shell dla polecenia `date`: https://fishshell.com/docs/current/cmds/date.html
-- Przewodnik po komendzie `date` w Linuxie: https://www.howtogeek.com/217562/how-to-use-the-date-command-on-linux/
-- Artykuł na temat obliczania dat w przeszłości lub przyszłości w Fish Shell: https://www.maketecheasier.com/calculate-date-future-past-fish-shell/
+## Zobacz także:
+ - Oficjalna dokumentacja Fish Shell: [https://fishshell.com/docs/current/index.html]
+ - Poradnik użytkownika Fish Shell: [https://fishshell.com/docs/current/tutorial.html]
+ - Inne komendy dotyczące daty w Fish Shell: [https://fishshell.com/docs/current/commands.html#date]

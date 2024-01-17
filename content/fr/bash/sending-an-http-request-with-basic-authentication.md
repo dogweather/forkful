@@ -1,7 +1,7 @@
 ---
-title:                "Envoi d'une requête http avec authentification de base"
-html_title:           "Bash: Envoi d'une requête http avec authentification de base"
-simple_title:         "Envoi d'une requête http avec authentification de base"
+title:                "Envoyer une demande http avec une authentification de base"
+html_title:           "Bash: Envoyer une demande http avec une authentification de base"
+simple_title:         "Envoyer une demande http avec une authentification de base"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "HTML and the Web"
@@ -10,26 +10,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Quoi & Pourquoi?
+L'envoi d'une requête HTTP avec une authentification de base est une méthode utilisée par les programmeurs pour sécuriser leurs requêtes HTTP. Cela permet d'ajouter un niveau de protection en demandant aux utilisateurs de s'authentifier avant d'accéder à une ressource ou une API spécifique.
 
-Si vous travaillez dans le domaine de la technologie, il est probable que vous ayez besoin d'envoyer des requêtes HTTP avec une authentification de base pour accéder à des ressources protégées par un mot de passe ou un nom d'utilisateur. Savoir comment le faire peut vous aider à automatiser des tâches, à créer des scripts ou à accéder à des API.
+## Comment faire : 
+Voici un exemple d'un envoi de requête HTTP avec une authentification de base en utilisant Bash :
 
-## Comment faire
+```
+curl -u username:password URL
+```
 
-```Bash
-# Utilisez curl pour envoyer une requête GET avec une authentification de base
-curl -u username:password https://example.com
+Le résultat devrait afficher le contenu de la ressource ou l'état de la requête si elle a réussi ou échoué.
 
-# Utilisez wget pour télécharger un fichier protégé par une authentification de base
-wget --user=username --password=password https://example.com/file.zip
-``` 
+## Plongée en profondeur :
+L'authentification de base est une méthode d'authentification HTTP très simple et largement utilisée depuis sa première implémentation en 1996. Bien qu'elle soit facile à mettre en place, elle ne garantit pas une sécurité optimale car les informations d'identification sont envoyées en clair. Des alternatives telles que l'authentification Digest ou l'utilisation de certificats sont souvent préférées pour une meilleure protection des données.
 
-## Plongée en profondeur
+Côté programmation, l'envoi d'une requête avec une authentification de base peut être réalisé à l'aide d'un script Bash ou en utilisant une librairie tierce telle que cURL.
 
-Lorsque vous envoyez une requête HTTP avec une authentification de base, vous devez inclure un en-tête `Authorization` qui contient le mot-clé "Basic" suivi de l'encodage en base64 du nom d'utilisateur et du mot de passe. Cet encodage est utilisé pour sécuriser les informations sensibles au lieu de les envoyer en clair sur le réseau.
-
-## Voir aussi
-
-- [Basic access authentication sur Wikipedia](https://en.wikipedia.org/wiki/Basic_access_authentication)
-- [Tutorial de curl](https://curl.se/docs/httpscripting.html)
-- [Documentation de wget](https://www.gnu.org/software/wget/)
+## Voir aussi :
+- [Documentation cURL](https://curl.se/docs/auth.html)
+- [Article sur l'authentification HTTP](https://developer.mozilla.org/fr/docs/Web/HTTP/Authentication)

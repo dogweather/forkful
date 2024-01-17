@@ -10,51 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Qu'est-ce que c'est et pourquoi le faire?
+Ecrire un fichier texte signifie créer un document sous forme de texte brut au lieu d'utiliser un formatage avancé comme dans les traitements de texte. Les programmateurs le font souvent pour stocker et manipuler des données de manière simple et lisible par les humains et les machines.
 
-Tu te demandes sûrement pourquoi tu devrais t'intéresser à écrire un fichier texte en C++ ? Eh bien, laisse-moi te dire que c'est un outil très utile pour stocker et manipuler des données dans un format facilement lisible et éditable.
-
-## Comment faire
-
-Pour commencer, tu vas avoir besoin d'une variable de type `ofstream` pour écrire dans un fichier texte. Ensuite, tu peux utiliser la méthode `open()` pour ouvrir un fichier existant ou en créer un nouveau. Ensuite, tu peux utiliser l'opérateur de flux `<<` pour écrire tes données dans le fichier. Enfin, n'oublie pas de fermer le fichier en utilisant la méthode `close()` pour t'assurer que toutes les données sont bien enregistrées.
-
-Exemple de code :
+## Comment faire:
+Pour écrire un fichier texte en C++, vous devez suivre ces étapes:
+- Ouvrez un flux de sortie vers un fichier en utilisant l'objet `ofstream` et le nom du fichier en paramètre.
+- Vérifiez si le fichier est ouvert avec la méthode `is_open()` de l'objet `ofstream`.
+- Utilisez l'opérateur de flux `<<` pour écrire le contenu dans le fichier, comme dans l'exemple ci-dessous:
 ```C++
-#include <iostream> // Inclure la bibliothèque pour les entrées/sorties
-#include <fstream> // Inclure la bibliothèque pour gérer les fichiers
+ofstream file("mon_fichier.txt");//ouverture du flux vers le fichier
+file << "Bonjour le monde!" << endl;//écriture du contenu dans le fichier
+file.close();//fermeture du flux
+```
+- Assurez-vous de fermer le flux une fois que vous avez fini d'écrire dans le fichier en utilisant la méthode `close()`.
 
-using namespace std;
-
-int main() {
-    ofstream monFichier; // Déclarer la variable de type ofstream
-    monFichier.open("mon_fichier.txt"); // Ouvrir le fichier en mode écriture
-    
-    monFichier << "Bonjour, ceci est un exemple de texte" << endl; // Écrire dans le fichier
-    
-    monFichier.close(); // Fermer le fichier
-    
-    return 0;
-}
+Le contenu du fichier sera alors:
+```
+Bonjour le monde!
 ```
 
-Résultat du fichier `mon_fichier.txt` :
-```
-Bonjour, ceci est un exemple de texte
-```
+## Plongée en profondeur:
+L'écriture de fichiers texte en C++ a été introduite pour la première fois dans la version 2.0 du langage en 1985, avec l'utilisation des classes `fstream`. Les alternatives à cette méthode incluent l'utilisation de fonctions C telles que `fopen()` et `fprintf()`, ainsi que des bibliothèques tierces comme Qt.
 
-## Plongée en profondeur
+L'implémentation de l'écriture de fichiers textes en C++ est basée sur la surcharge des opérateurs de flux `<<`, qui permettent d'écrire des données dans un flux de sortie. Les méthodes `ofstream::open()` et `ofstream::write()` sont également utilisées pour écrire des données dans un fichier.
 
-Maintenant que tu sais comment écrire un fichier texte en C++, voici quelques informations supplémentaires qui pourront t'aider dans ton développement :
-
-- Tu peux utiliser les méthodes `write()` et `read()` pour écrire et lire des données binaires dans un fichier.
-- N'oublie pas de vérifier que le fichier est bien ouvert avant d'y écrire ou d'y lire des données pour éviter les erreurs.
-- Tu peux également utiliser les opérateurs `<<` et `>>` avec des variables de type `ifstream` pour lire des données depuis un fichier.
-- N'hésite pas à explorer les différentes façons de formater tes données dans un fichier texte, telles que CSV (Comma-Separated Values) ou JSON (JavaScript Object Notation).
-
-## Voir aussi
-
-Si tu veux en savoir plus sur la gestion des fichiers en C++, voici quelques ressources utiles :
-
-- [Tutoriel pour lire et écrire des fichiers en C++](https://www.cplusplus.com/doc/tutorial/files/)
-- [Documentation officielle sur les entrées/sorties en C++](https://en.cppreference.com/w/cpp/io)
-- [Guide complet sur la manipulation de fichiers en C++](https://www.tutorialspoint.com/cplusplus/cpp_files_streams.htm)
+## Voir aussi:
+- Documentation officielle C++ sur l'écriture de fichiers: https://en.cppreference.com/w/cpp/io/basic_ofstream
+- Tutoriel en français sur l'écriture de fichiers en C++: https://www.firmcodes.com/fr/c-2/c-ecriture-de-fichiers-en-c/

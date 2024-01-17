@@ -1,7 +1,7 @@
 ---
-title:                "Versenden einer HTTP-Anfrage mit einfacher Authentifizierung"
-html_title:           "Javascript: Versenden einer HTTP-Anfrage mit einfacher Authentifizierung"
-simple_title:         "Versenden einer HTTP-Anfrage mit einfacher Authentifizierung"
+title:                "Eine http-Anfrage mit grundlegender Authentifizierung senden"
+html_title:           "Javascript: Eine http-Anfrage mit grundlegender Authentifizierung senden"
+simple_title:         "Eine http-Anfrage mit grundlegender Authentifizierung senden"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "HTML and the Web"
@@ -10,34 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Warum
+## Was & Warum?
 
-Das Senden von HTTP-Anfragen mit Basic-Authentifizierung kann für Entwickler*innen von Vorteil sein, um Zugriff auf geschützte Ressourcen auf Webservern zu erhalten. Dies kann beispielsweise bei der Integration von externen APIs oder beim Aufbau von Benutzerauthentifizierungssystemen nützlich sein.
+Wenn du als Programmierer eine HTTP-Anfrage mit grundlegender Authentifizierung sendest, bedeutet das, dass du eine Anfrage an eine Webseite oder eine API schickst und dabei einen Benutzernamen und ein Passwort mitschickst. Das ist nützlich, wenn du auf eine geschützte Seite oder eine API zugreifen möchtest, die vertrauliche Informationen enthält.
 
-# Anleitung
-
-Um eine HTTP-Anfrage mit Basic-Authentifizierung in Javascript zu senden, können wir die `fetch()`-Methode verwenden. Dabei muss der URL-Parameter der angeforderten Ressource sowie die`authentication` Option übergeben werden, die einen Objekt mit`username` und `password` Eigenschaften enthält. Hier ist ein Beispielcode, der eine GET-Anfrage an eine geschützte Ressource sendet und die Antwort in der Konsole ausgibt:
+## Wie geht's?
 
 ```Javascript
-fetch('https://www.meinegeschuetzteapi.com/ressource', {
-  method: 'GET',
-  authentication: {
-    username: 'Benutzername',
-    password: 'Passwort'
-  }
-})
-  .then(response => response.text())
-  .then(data => console.log(data))
-  .catch(error => console.error(error));
+const request = require('request');
+
+// Definiere die Optionen für die Anfrage mit grundlegender
+// Authentifizierung
+var options = {
+    url: 'http://beispiel.com/api',
+    auth: {
+        user: 'Benutzername',
+        password: 'Passwort'
+    }
+};
+
+// Sende die Anfrage
+request(options, (error, response, body) => {
+    if (error) throw new Error(error);
+    // Gib die Antwort aus
+    console.log(body);
+});
 ```
 
-Das oben genannte Beispiel verwendet die moderne `fetch()`-Methode und verwendet Promises für die asynchrone Verarbeitung von Anfragen.
+## Tiefer eintauchen
 
-# Tiefere Einblicke
+Die grundlegende Authentifizierung ist eine der ältesten Authentifizierungsmethoden im World Wide Web. Sie wurde ursprünglich für das HTTP-Protokoll entwickelt, welches später zum Grundgerüst des Internets wurde. Es gibt jedoch auch alternative Methoden, wie zum Beispiel die OAuth-Authentifizierung, die heutzutage häufiger verwendet wird. Die Implementierung der grundlegenden Authentifizierung kann je nach Programmiersprache bzw. Framework variieren, aber im Grunde funktioniert sie immer auf dieselbe Weise: Der Benutzername und das Passwort werden zusammen mit der Anfrage an den Server geschickt, der diese dann überprüft und bei erfolgreicher Authentifizierung den Zugriff gewährt.
 
-Es ist wichtig zu beachten, dass die Verwendung von Basic-Authentifizierung eine grundlegende und nicht besonders sichere Authentifizierungsmethode ist. Das Passwort wird immer im Klartext übertragen, was anfällig für Man-in-the-Middle-Angriffe macht. Aus diesem Grund wird empfohlen, die Verwendung von Basic-Authentifizierung zu vermeiden, wenn möglich, und stattdessen auf sicherere Authentifizierungsmethoden wie OAuth 2.0 zu setzen.
+## Sieh auch
 
-# Siehe auch
-
-- [Javascript Fetch API Dokumentation] (https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
-- [HTTP Basic Authentication in Wikipedia] (https://en.wikipedia.org/wiki/Basic_access_authentication)
+- [Node.js Dokumentation zur grundlegenden Authentifizierung](https://nodejs.org/api/http.html#http_http_authorization)
+- [Eine Einführung in REST und grundlegende Authentifizierung](https://www.robinwieruch.de/rest-basic-authentication-node-js)

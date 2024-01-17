@@ -1,7 +1,7 @@
 ---
-title:                "दो तारीखों की तुलना"
-html_title:           "C: दो तारीखों की तुलना"
-simple_title:         "दो तारीखों की तुलना"
+title:                "दो तारीखों का तुलना"
+html_title:           "C: दो तारीखों का तुलना"
+simple_title:         "दो तारीखों का तुलना"
 programming_language: "C"
 category:             "C"
 tag:                  "Dates and Times"
@@ -10,40 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Kyu
-Kisi bhi developer ke liye do tareekhon ki tulana karna ek aam samasya hai. Is article mein hum dekhenge ki kaise date ke do vyakti alag-alag tarikon se compare kiya ja sakta hai.
+## Kya & Kyon?
 
-## Kaise
-Date comparison karne ke liye, hum `time.h` library mein available `time` structure ka istemaal karenge. Iske liye, hum do `time` structures banayenge, jismein hum date ki details ko store karenge. Fir hum `difftime()` function ka use karke dono dates ke beech mein difference calculate karenge. Yeh difference humare code ka output hoga. 
+Tareekh aur samay ke do tarikhon ko tulna karne ka matlab hai ki programmer do tarikhon ko mukhay roop se compare karte hain. Yeh aksar prashn hai ki kyoon programmers yeh karte hain. Ek simple sa jawab hai ki hume do tarikhon ke beech antar ya similarities dhundhna hota hai. Isse hume aage ki coding mein madad mil sakti hai ya hume kisi specific kaam ke liye tarikhon ka pata lagana ho sakta hai. Isliye, tarikhon ko compare karna programming mein ek important task hai.
+
+## Kaise Karein?
 
 ```C
 #include <stdio.h>
 #include <time.h>
 
-int main(){
-    // Creating two time structures
-    time_t d1, d2;
-    // Storing dates in structures
-    struct tm t1 = { .tm_year = 2020, .tm_mon = 05, .tm_mday = 21 };
-    struct tm t2 = { .tm_year = 2020, .tm_mon = 07, .tm_mday = 18 };
-    // Converting structures to time variables
-    d1 = mktime(&t1);
-    d2 = mktime(&t2);
-    // Calculating difference
-    double result = difftime(d2, d1);
-    // Outputing difference
-    printf("Difference between dates is %.2f days.", result);
+int main()
+{
+  struct tm date1 = {0}; // pehli tarikh
+  struct tm date2 = {0}; // dusri tarikh
+  
+  // tarikhon ko set karein
+  date1.tm_year = 2020 - 1900; // 2020 saal
+  date1.tm_mon = 10 - 1; // October (1 se kam dena hota hai)
+  date1.tm_mday = 20; // 20th tarikh
+  date2.tm_year = 2020 - 1900;
+  date2.tm_mon = 11 - 1;
+  date2.tm_mday = 25;
+  
+  // tarikhon ko compare karein
+  if (mktime(&date1) < mktime(&date2))
+  {
+    printf("Tarikh 1 pehle aati hai.");
+  }
+  else if (mktime(&date1) > mktime(&date2))
+  {
+    printf("Tarikh 2 pehle aati hai.");
+  }
+  else
+  {
+    printf("Dono tarikhon mein koi antar nahi hai.");
+  }
+  return 0;
 }
 ```
 
-```
+```C
 Output:
-Difference between dates is 58.00 days.
+Tarikh 1 pehle aati hai.
 ```
 
-## Deep Dive
-Humne structure banane ke liye `tm` structure ka istemaal kiya kyunki ismein hum date ki details, jaise year, month, day, hour, minutes, seconds, store kar sakte hain. Iss structure ko `time.h` library mein `struct tm` naam se declare kiya gaya hai. `difftime()` function hamare liye dates ke beech mein difference calculate karta hai aur iska output seconds mein deta hai. Isiliye humne use `%f` format specifier ke saath output karvaya aur use double data type mein store kiya.
+## Gehri Khurafat
 
-## Dekhna Bhi
-- [C date and time functions](https://www.programiz.com/c-programming/c-date-time)
-- [Understanding tm structure in C](https://www.geeksforgeeks.org/time-structure-in-c/)
+Do tarikhon ko compare karne ka sawaal pehle bhi utha hai. Yeh ek purani problem hai aur bahut saare methods hain jaise ki join aur merge. Par ab yeh problem bahut hi asaan hai kyonki libraries jaise ki ```time.h``` has milti hai. Aur agar aap advanced level par coding karte hain toh aap khud bhi kuch functions likh sakte hain jo tarikhon ko compare karein.
+
+## Aage Padhein
+
+Agar aapko tarikhon ke functions aur algorithms se compare karna accha lagta hai toh aap inke baarein mein aur padh sakte hain: [Date and Time Functions in C](https://www.tutorialspoint.com/c_standard_library/time_h.htm)

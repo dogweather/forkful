@@ -10,47 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
-
-Om du någonsin har behövt söka efter ett specifikt mönster i en text, kanske du har stött på ordet "reguljära uttryck". Det finns ett uttryck som säger att om man har ett problem, så finns det vanligtvis en lösning med reguljära uttryck. Med andra ord kan reguljära uttryck vara ett kraftfullt verktyg för att hantera och manipulera textdata.
-
-## Så här
-
-För att använda reguljära uttryck i Go behöver du först importera regexp-paketet:
-
+Vad är reguljära uttryck och varför använder programmerare dem?
+Reguljära uttryck, även kända som regex, är en syntax för att beskriva mönster i textsträngar. Programmerare använder regex för att effektivt söka, ersätta och validera data inom textfiler, databaser och mer.
+ 
+Så här använder du reguljära uttryck i Go:
 ```Go
-import "regexp"
+package main
+ 
+import (
+  "fmt"
+  "regexp"
+)
+ 
+func main() {
+  str := "Hej, detta är ett exempel på en textsträng."
+  match, _ := regexp.MatchString("exempel", str)
+  fmt.Println(match) // output: true
+}
 ```
-
-Sedan kan du använda den inbyggda funktionen `MatchString()` för att leta efter ett mönster i en sträng:
-
-```Go
-pattern := "[a-z]+"
-str := "Hej! Välkommen till Go!"
-match, _ := regexp.MatchString(pattern, str)
-fmt.Println(match) // Output: true
-```
-
-Du kan också använda funktionen `FindAllString()` för att hitta alla förekomster av ett mönster i en sträng och returnera dem som en lista:
-
-```Go
-pattern := "Go"
-str := "Hej! Välkommen till Go!"
-matches := regexp.FindAllString(pattern, str)
-fmt.Println(matches) // Output: [Go]
-```
-
-Det finns också andra inbyggda funktioner för att ersätta text eller extrahera delar av en sträng baserat på ett mönster. För mer detaljerade exempel och syntax, se Golangs dokumentation om reguljära uttryck.
-
-## Djupdykning
-
-Reguljära uttryck kan vara en komplicerad koncept för nybörjare, men de blir mycket användbara när du behärskar dem. Några saker att tänka på när du arbetar med reguljära uttryck i Go:
-
-- Go använder sig av "Perl-style" reguljära uttryck.
-- Det finns många inbyggda funktioner för att hantera och manipulera textdata baserat på reguljära uttryck.
-- Du kan även skapa dina egna anpassade reguljära uttryck och använda dem för att matcha specifika mönster.
-
-## Se även
-
-- Golangs dokumentation om reguljära uttryck: https://golang.org/pkg/regexp/
-- RegExr – ett interaktivt verktyg för att testa och utveckla reguljära uttryck: https://regexr.com/
+ 
+För att kunna använda reguljära uttryck i Go, måste du importera paketet "regexp". Därefter kan du använda funktionen "MatchString" för att söka efter ett visst mönster i en given textsträng. I exemplet ovan letar vi efter ordet "exempel" och då den hittas, returnerar funktionen "MatchString" värdet "true".
+ 
+Fördjupad information:
+Reguljära uttryck har funnits sedan 1950-talet och användes ursprungligen för att utföra beräkningar på tidiga datorer. Idag används de flitigt i programmering för att hantera textdata på ett effektivt sätt, istället för att manuellt kontrollera varje enskild teckenkombination.
+ 
+Det finns också andra alternativ för att hantera textdata, till exempel strängmanipulering med hjälp av inbyggda funktioner i programmeringsspråk. Men regex är särskilt användbart när man behöver söka efter mönster som följer ett visst format eller villkor.
+ 
+While reguljära uttryck kan verka krångliga för nybörjare, är det värt att lära sig eftersom de kan spara mycket tid i långa textfiler.
+ 
+Se även:
+- Go-dokumentationen för reguljära uttryck: https://golang.org/pkg/regexp/
+- Regular-Expressions.info för en omfattande guide till regex: https://www.regular-expressions.info/
+- Regex101 för att testa och experimentera med reguljära uttryck: https://regex101.com/

@@ -10,67 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
+Regular expressions, or regex, is a powerful tool used by programmers to search and manipulate text based on a set of patterns. It allows for efficient and precise string matching, making it an essential part of any developer's toolbelt. Using regular expressions saves time and effort when dealing with complicated string manipulations and searches.
 
-Regular expressions, commonly known as "regex", are powerful tools used for pattern matching and text manipulation. They are widely used in programming languages, including TypeScript, to help developers search, replace, and validate strings efficiently. Whether you are a beginner or an experienced developer, understanding regular expressions can greatly enhance your code and make certain tasks much easier.
-
-## How To
-
-To use regular expressions in TypeScript, first, we need to declare them as RegEx objects using the `RegExp` constructor. Here's an example:
-
+## How to:
+To use regular expressions in TypeScript, you can use the built-in `RegExp` object. It takes two parameters - the pattern to match against and an optional flag for case sensitivity. Here's an example of matching a string with a basic pattern and returning a boolean value:
 ```TypeScript
-let regex: RegExp = /apple/; // This will match any string with the word "apple"
+const regex = new RegExp('apple');
+const string = 'I love apples';
+const result = regex.test(string); // true
 ```
-
-To search for a pattern within a string, we can use the `test()` method, which will return a boolean indicating if the pattern is found or not. Here's an example:
-
+To retrieve the actual match, you can use the `exec()` method:
 ```TypeScript
-let string: string = "I love apples!";
-regex.test(string); // Returns true
-string = "I prefer oranges.";
-regex.test(string); // Returns false
+const regex = new RegExp('apple');
+const string = 'I love apples';
+const result = regex.exec(string); // ['apple']
 ```
-
-We can also use regular expressions to extract certain parts of a string. For example, if we want to extract a specific word from a sentence, we can use the `exec()` method. Here's an example:
-
+To replace a matched string with another string, you can use the `replace()` method:
 ```TypeScript
-let string: string = "My favorite fruit is apple.";
-let regex: RegExp = /apple/;
-let result: RegExpExecArray | null = regex.exec(string);
-
-if (result) {
-  console.log(result[0]); // Outputs "apple"
-}
+const regex = new RegExp('apples', 'gi');
+const string = 'I love APPLES';
+const result = string.replace(regex, 'oranges'); // 'I love oranges'
 ```
+Regular expressions can also be used with string methods like `match()`, `test()`, and `replace()`, allowing for more flexibility and control in string manipulations.
 
-Regular expressions also have modifiers and flags that can help us modify our pattern matching behavior. For example, the `i` flag can be used to perform case-insensitive matching. Here's an example:
+## Deep Dive:
+Regular expressions have been around since the 1950s and have evolved into a standard feature in most modern programming languages. They offer a concise way to search and manipulate text, eliminating the need for lengthy and complex string operations. However, they can be challenging to read and understand for beginners, and there are alternative libraries like [XRegExp](https://xregexp.com/) that provide a more user-friendly approach.
 
-```TypeScript
-let regex: RegExp = /apple/i; // This will match "apple", "Apple", "APple", etc.
-```
+In TypeScript, regular expressions are implemented using the [ECMAScript syntax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions) and incorporate all the features and functionalities of the JavaScript regular expressions. These include quantifiers, character classes, capturing groups, lookaheads/lookbehinds, and more. Understanding these concepts is crucial for effectively using regular expressions in your code.
 
-## Deep Dive
-
-Regular expressions can be more complex than simple string matching. They have a set of special characters and metacharacters that can represent a range of characters or patterns. For example, the `.` metacharacter can match any single character, and the `*` can match any number of occurrences of the previous character. Here's an example:
-
-```TypeScript
-let regex: RegExp = /a.c*/; // This will match "ac", "abc", "abcc", "acc", etc.
-```
-
-We can also use quantifiers to specify how many times a specific character or group should appear. For example, `{n}` matches exactly `n` times, and `{m, n}` matches between `m` and `n` times. Here's an example:
-
-```TypeScript
-let regex: RegExp = /\d{4}/; // This will match any four-digit number
-```
-
-Regular expressions also have a set of predefined character classes that can help us match certain types of characters, such as digits, letters, or whitespace. We can also use these classes in combination with modifiers and quantifiers. Here's an example:
-
-```TypeScript
-let regex: RegExp = /\d{3}\w{3}\s/; // This will match three digits, three letters, and a whitespace character
-```
-
-## See Also
-
-- [MDN - Regular Expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
-- [Regexr](https://regexr.com/) - useful tool for testing and learning regular expressions
-- [TypeScript Docs - Regular Expressions](https://www.typescriptlang.org/docs/handbook/regular-expressions.html)
+## See Also:
+- [MDN Web Docs: Regular Expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
+- [Learn Regular Expressions: The Hard Way](https://regexone.com/)

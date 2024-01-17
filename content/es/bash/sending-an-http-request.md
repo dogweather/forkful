@@ -10,39 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué 
+## ¿Qué y por qué?
 
-Enviar solicitudes HTTP es una habilidad importante para la programación de Bash, ya que permite interactuar con diferentes servidores y obtener información o realizar acciones a través de Internet. Además, es una herramienta útil para automatizar tareas en el desarrollo web.
+Enviar una solicitud HTTP es una forma de comunicación que los programadores utilizan para obtener información de un servidor web. Se utiliza para realizar solicitudes y recibir respuestas, lo que permite a los desarrolladores acceder a datos y contenido de sitios web. 
 
-## Cómo 
+## Cómo:
 
-Para enviar una solicitud HTTP en Bash, utilizamos el comando `curl` seguido de la URL del servidor y cualquier parámetro adicional que necesitemos. Por ejemplo: 
+A continuación, se muestran algunos ejemplos de cómo enviar una solicitud HTTP en Bash y ver la salida resultante.
 
 ```Bash
+# Ejemplo 1: Realizar una solicitud GET a una URL determinada
 curl www.ejemplo.com
 ```
 
-Esto enviará una solicitud GET al servidor y mostrará la respuesta en la consola. También podemos incluir parámetros adicionales, como el método de solicitud, el tipo de contenido y los datos que queremos enviar, entre otros.
-
 ```Bash
-curl -X POST -H "Content-Type: application/json" -d '{"nombre": "Juan", "apellido": "Perez"}' www.ejemplo.com/api/usuarios
+# Ejemplo 2: Realizar una solicitud POST con datos adjuntos
+curl -d "nombre=Juan&edad=30" www.ejemplo.com
 ```
 
-Esto enviará una solicitud POST con datos en formato JSON al servidor y recibiremos una respuesta en la que se puede ver si la acción se realizó exitosamente. 
+La salida de ambas solicitudes mostrará la respuesta del servidor, que puede ser en forma de código HTML, texto plano o cualquier otro formato que se haya especificado en la solicitud.
 
-## Profundizando 
+## Profundizando:
 
-Ahora que conocemos la sintaxis básica de la solicitud HTTP en Bash, podemos explorar más opciones y parámetros disponibles. 
+Aunque Bash no es el lenguaje de programación principal para enviar solicitudes HTTP, es una herramienta útil para realizar pruebas rápidas y sencillas. Alternativamente, se pueden utilizar bibliotecas o herramientas más específicas, como cURL o wget, para realizar solicitudes HTTP en otros lenguajes.
 
-Para especificar el método de solicitud, utilizamos la opción `-X` seguido del método deseado, como `GET`, `POST`, `PUT`, `PATCH` o `DELETE`. 
+En cuanto a la implementación, las solicitudes HTTP se envían a través de diferentes métodos, como GET, POST, PUT y DELETE, cada uno con un propósito específico. Además, se pueden agregar encabezados de solicitud para proporcionar más información al servidor.
 
-Podemos especificar los encabezados de la solicitud utilizando la opción `-H` y pasar el nombre y el valor del encabezado que deseamos agregar. Por ejemplo, `-H "Content-Type: application/json"` establecerá el tipo de contenido de la solicitud como JSON. 
+## Véase también:
 
-Otra opción útil es la opción `-i`, que nos mostrará tanto la información de los encabezados de la respuesta como el cuerpo. Esto es especialmente útil para depurar y comprender mejor la respuesta del servidor. 
+Para obtener más información sobre cómo enviar solicitudes HTTP en Bash, puedes consultar estos recursos adicionales:
 
-Finalmente, podemos utilizar la opción `-o` seguida de un nombre de archivo para guardar la respuesta en un archivo en lugar de mostrarla en la consola. Esto puede ser útil cuando se trabaja con grandes cantidades de datos. 
-
-## Ver también 
-
-- [Documentación oficial de `curl`](https://curl.se/docs/manpage.html)
-- [Ejemplos de uso de `curl`](https://www.baeldung.com/curl-rest)
+- Documentación oficial de cURL: https://curl.se/
+- Tutorial de Bash para principiantes: https://linuxconfig.org/bash-scripting-tutorial-for-beginners
+- Cursos en línea gratuitos sobre Bash: https://www.codecademy.com/learn/learn-bash

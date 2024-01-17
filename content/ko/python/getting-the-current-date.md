@@ -1,7 +1,7 @@
 ---
-title:                "현재 날짜 가져오기 (yeonjaye naljja gajyeogi)"
-html_title:           "Python: 현재 날짜 가져오기 (yeonjaye naljja gajyeogi)"
-simple_title:         "현재 날짜 가져오기 (yeonjaye naljja gajyeogi)"
+title:                "현재 날짜 가져오기"
+html_title:           "Python: 현재 날짜 가져오기"
+simple_title:         "현재 날짜 가져오기"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Dates and Times"
@@ -10,49 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+## 무엇 & 왜?
 
-현재 날짜를 얻는 것이 왜 중요한지 궁금해하고 있는 사람들에게 이 문서를 소개합니다. 파이썬에서 현재 날짜를 가져오는 방법을 간략하게 배워보겠습니다.
+최신 날짜를 얻는 것이란 무엇일까요? 프로그래머들이 왜 이 작업을 하는 걸까요?
 
-## 어떻게
+현재 날짜를 얻는 것은 현재 시간을 알기 위해서입니다. 프로그래머들은 이를 사용하여 소프트웨어의 특정 기능과 일정한 기간을 연결할 수 있습니다. 또한 데이터를 정렬하거나 현재 시간의 구조를 이용하여 특정 작업을 수행하는 데에도 사용됩니다.
 
-파이썬에서 현재 날짜를 가져오는 가장 간단한 방법은 `datetime` 모듈을 사용하는 것입니다. 우선 `datetime` 모듈을 임포트해야 합니다.
+## 사용 방법:
 
-```Python
+### 예제 1: 현재 날짜 및 시간 출력하기
+
+```python
 import datetime
+
+current_time = datetime.datetime.now()
+print("현재 날짜 및 시간: ", current_time)
 ```
 
-이제 `datetime` 모듈의 `datetime` 클래스를 사용하여 현재 날짜와 시간을 생성할 수 있습니다.
+출력 결과:
+현재 날짜 및 시간: 2021-05-24 20:30:00.000000
 
-```Python
-now = datetime.datetime.now()
-print(now) # 2021-08-12 14:57:24.393608
+### 예제 2: 현재 날짜만 출력하기
+
+```python
+import datetime
+
+current_date = datetime.date.today()
+print("오늘의 날짜: ", current_date)
 ```
 
-위의 예제에서는 `now()` 메서드를 사용해 현재 날짜와 시간을 출력하는 것을 볼 수 있습니다. 하지만 `now()` 메서드는 개인 컴퓨터의 시스템 시간을 기준으로 날짜와 시간을 가져오므로, 실행할 때마다 값이 달라질 수 있습니다.
+출력 결과:
+오늘의 날짜: 2021-05-24
 
-더 정확한 현재 시간을 얻고 싶다면 `utcnow()` 메서드를 사용하는 것이 좋습니다. `utcnow()` 메서드는 협정 세계시(UTC) 기준으로 날짜와 시간을 가져오기 때문에 값의 변화가 없습니다.
+## 더 들여다보기:
 
-```Python
-now = datetime.datetime.utcnow()
-print(now) # 2021-08-12 05:57:24.393608
-```
+### 역사적 배경:
 
-하지만 위의 예제에서는 시간의 차이를 고려하지 않고 UTC 기준으로만 값을 출력하기 때문에 우리나라 시간대를 맞추고 싶다면 `now()` 메서드와 같이 사용하면 됩니다.
+현재 날짜를 얻는 방법은 프로그래밍 언어와 운영 체제에 따라 다를 수 있지만, 대부분의 언어와 운영 체제에서 기본적인 함수 또는 라이브러리를 통해 현재 날짜를 얻을 수 있습니다. 초기에는 현재 날짜를 얻는 것이 복잡한 작업이었지만, 현재는 대부분의 프로그래밍 언어에서 쉽게 구현할 수 있습니다.
 
-```Python
-now = datetime.datetime.utcnow()
-kor_now = now + datetime.timedelta(hours=9)
-print(kor_now) # 2021-08-12 14:57:24.393608
-```
+### 대안:
 
-위의 예제에서는 `timedelta`를 사용하여 시간의 차이를 9시간으로 설정한 후 `now()` 메서드와 더해주는 방식으로 한국 시간대를 맞춘 것을 볼 수 있습니다.
+현재 날짜를 얻기 위해서는 파이썬의 datetime 라이브러리를 사용하는 것이 가장 일반적인 방법입니다. 다른 대안으로는 time 모듈이 있지만, datetime보다는 낮은 수준의 기능만 제공합니다. 또한 서드파티 라이브러리 중에는 더 다양한 날짜 및 시간 관련 기능을 제공하는 것들도 있습니다.
 
-## 딥 다이브
+## 관련 자료:
 
-파이썬에서 현재 날짜를 가져오는 방법은 `datetime` 모듈 뿐만 아니라 `time` 모듈이나 `calendar` 모듈에도 다양한 메서드를 제공합니다. 또한 날짜와 시간을 조작하고 형식을 바꾸는 방법도 다양하기 때문에 참고해보시기 바랍니다.
-
-## 참고할만한 다른 내용
-
-- 파이썬 공식 문서: https://docs.python.org/ko/3/library/datetime.html
-- 한국어 블로그 "파이썬 날짜와 시간 다루기": https://koreanfoodie2.tistory.com/106
+- [Python datetime 모듈](https://docs.python.org/3/library/datetime.html)
+- [time 모듈](https://docs.python.org/3/library/time.html)
+- [popular third-party date and time libraries for Python](https://realpython.com/python-datetime/#third-party-date-time-libraries)

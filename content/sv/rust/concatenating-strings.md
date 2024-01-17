@@ -1,7 +1,7 @@
 ---
-title:                "Sammanfogning av strängar"
-html_title:           "Rust: Sammanfogning av strängar"
-simple_title:         "Sammanfogning av strängar"
+title:                "Sammanslående av strängar"
+html_title:           "Rust: Sammanslående av strängar"
+simple_title:         "Sammanslående av strängar"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -10,60 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
+Att konkatenera strängar är när man slår ihop flera strängar till en enda. Det är en vanlig uppgift som programmerare stöter på när de arbetar med textmanipulation. Det kan vara användbart för att skapa dynamiska meddelanden eller för att lägga till variabler i en sträng.
 
-Om du någonsin har hanterat data som innehåller textsträngar, så har du antagligen stött på behovet av att sammanslå flera strängar till en enda. Rust har en enkel och effektiv metod för att göra just det. 
+## Hur man gör:
+Det finns flera sätt att konkatenera strängar i Rust. Ett sätt är att använda operatorn ```+```. Se exempel nedan:
 
-## Så här gör man
+```Rust
+let first_name = "Peter";
+let last_name = "Parker";
 
-För att sammanslå två strängar i Rust, kan du använda "+" operatorn.
-
-```rust
-let fornamn = "Lisa";
-let efternamn = "Andersson";
-
-let hela_namnet = fornamn + efternamn;
-println!("{}", hela_namnet);
-```
-Output:
-```
-LisaAndersson
+let full_name = first_name + " " + last_name;
+println!("Hej, mitt namn är {}", full_name);
+// Resultat: Hej, mitt namn är Peter Parker
 ```
 
-Du kan också sammanslå flera strängar på en gång genom att använda "format!" macro:n. Denna metod använder "placeholder" för att hålla reda på vilken ordning strängarna ska sättas ihop i.
+Ett annat sätt är att använda makron ```format!``` eller ```format!("{sträng}", variabler)```. Detta gör det möjligt att sätta in variabler i strängen på specifika platser. Se exempel nedan:
 
-```rust
-let favorit_mat = "Pizza";
-let favorit_dryck = "Coca Cola";
+```Rust
+let first_name = "Peter";
+let last_name = "Parker";
 
-let beskrivning = format!("Jag älskar {} med en kall {} till!", favorit_mat, favorit_dryck);
-println!("{}", beskrivning);
-```
-Output:
-```
-Jag älskar Pizza med en kall Coca Cola till!
+let full_name = format!("Hej, mitt namn är {} {}", first_name, last_name);
+println!("{}", full_name);
+// Resultat: Hej, mitt namn är Peter Parker
 ```
 
-## Deep Dive
+## Djupdykning:
+Att konkatenera strängar har varit en vanlig uppgift för programmerare sedan de första programmeringsspråken utvecklades. I vissa språk, som C, behöver man använda en separat funktion för att konkatenera strängar, vilket kan leda till en längre och mer svårförståelig kod. I Rust, däremot, är det lättare och mer intuitivt att konkatenera strängar med hjälp av operatorer eller makron.
 
-När du använder "+" operatorn för att sammanslå strängar, så kan dessa inte ändras i efterhand. Detta beror på att strängar i Rust är immutabla, vilket innebär att de inte kan ändras efter att de har skapats. Om du försöker ändra en sammanslagen sträng, så kommer du få ett felmeddelande.
-
-För att lösa detta, kan du använda en "String" typ istället för en "str" typ. En "String" är en dynamiskt allokerad sträng som kan ändras efter att den har skapats. För att sammanslå strängar med typen "String", kan du använda "format!"macro:n eller "push_str" funktionen.
-
-```rust
-let mut fornamn = String::from("Lisa");
-let efternamn = "Andersson";
-
-fornamn.push_str(efternamn);
-println!("{}", fornamn);
-```
-Output:
-```
-LisaAndersson
-```
-
-## Se också
-
-- [Rust String Dokumentation](https://doc.rust-lang.org/std/string/struct.String.html)
-- [Tutorial: Strings in Rust](https://www.youtube.com/watch?v=xD5slrrhkpc)
-- [Översikt av Rust's Data typer](https://doc.rust-lang.org/book/ch03-02-data-types.html)
+## Se även:
+- Rust dokumentation om strängar: https://doc.rust-lang.org/std/string/index.html
+- Mer om format makron: https://doc.rust-lang.org/book/ch08-02-strings.html#format-makros

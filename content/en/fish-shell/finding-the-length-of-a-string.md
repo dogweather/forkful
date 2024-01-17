@@ -10,48 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
+Finding the length of a string is the process of determining the number of characters in a given string. Programmers often need to know the length of a string in order to perform manipulations or comparisons on it within their code.
 
-Have you ever needed to know the length of a string in your Fish Shell script? Maybe you need to validate user input or manipulate a string in some way. Whatever the reason, understanding how to find the length of a string is a useful skill to have in your Fish Shell programming arsenal.
+## How to:
+Finding the length of a string is a simple task in the Fish Shell. You can use the built-in `string` command with the `-l` flag to display the length of a given string.
 
-## How To
-
-To find the length of a string in Fish Shell, we can use the `string length` command. Let's take a look at an example:
-
-```
-Fish Shell $ set my_string "Hello world" 
-Fish Shell $ echo (string length $my_string)
-11
+```Fish Shell
+string length "Hello World"
 ```
 
-In this example, we have assigned the string "Hello world" to the variable `my_string` and then used the `string length` command to find its length. 
+This will output `11`, as there are 11 characters in the string "Hello World". You can also use this command within a variable to store the length for later use:
 
-Another way to find the length of a string is by using the `string` command with the `length` option, like this:
-
-```
-Fish Shell $ set my_string "Hello world"
-Fish Shell $ echo (string $my_string length)
-11
+```Fish Shell
+set mystring "This is a test"
+set length (string length $mystring)
+echo $length
 ```
 
-Both of these methods will give you the same output, which is the length of the string.
+This will output `14`, as there are 14 characters in the string "This is a test".
 
-It's also important to note that the `string length` command will also count spaces and special characters. So if we modified our example string to include special characters, like this:
+## Deep Dive:
+The concept of finding the length of a string has been around since the early days of programming. In older programming languages, this was often a complex and time-consuming task. However, with modern languages like Fish Shell, finding the length of a string is a simple and efficient process.
 
-```
-Fish Shell $ set my_string "Hello$!@#world"
-```
+There are also other ways to find the length of a string in Fish Shell, such as using the `len` function or the `count` command. However, the `string` command with the `-l` flag remains the most commonly used method.
 
-The output of the `string length` command would be 16, while the `string length` option would still give us a length of 11.
-
-## Deep Dive
-
-Now, let's take a deeper look at how the `string length` command works. The `length` function in Fish Shell actually uses the `wc` (word count) command, which counts the number of characters, words, and lines in a given input. 
-
-When we use the `string length` command, we are essentially telling Fish Shell to count the number of characters in the string, which is why it can also include spaces and special characters.
-
-## See Also
-
-- [Fish Shell Documentation](https://fishshell.com/docs/current/index.html)
-- [Fish Shell Beginner's Guide](https://www.codementor.io/@arpitbhayani/an-in-depth-guide-to-fish-shell-8sj6b7cgg)
-- [Fish Shell Tutorials](https://www.linux.com/training-tutorials/beginners-guide-fish-shell/)
+## See Also:
+- [Fish Shell string command documentation](https://fishshell.com/docs/current/cmds/string.html)
+- [Fish Shell len function documentation](https://fishshell.com/docs/current/cmds/string.html#len)
+- [Fish Shell count command documentation](https://fishshell.com/docs/current/cmds/count.html)

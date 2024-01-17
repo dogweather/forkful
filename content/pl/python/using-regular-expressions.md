@@ -10,42 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Czym jest i dlaczego?
 
-Jeśli często pracujesz z tekstem w swoim kodzie, używanie wyrażeń regularnych jest niezwykle przydatne. Dzięki nim możesz z łatwością wyszukiwać i manipulować wzorcami w tekście, co pozwala zaoszczędzić dużo czasu i wysiłku.
+Wykorzystywanie wyrażeń regularnych to podstawowa umiejętność, którą powinien posiadać każdy programista w Pythonie. Pozwala ona na efektywne przeszukiwanie i manipulowanie tekstem, co jest bardzo przydatne w wielu sytuacjach. Dzięki wykorzystaniu wyrażeń regularnych, można łatwo znaleźć lub zastąpić określone wzorce w tekście, bez konieczności ręcznego przeszukiwania całego dokumentu.
 
-## Jak to zrobić
+## Jak to zrobić?
 
-Instalacja biblioteki re w Pythonie jest prosta, wystarczy użyć polecenia `pip install re`. Aby rozpocząć używanie wyrażeń regularnych, należy zaimportować bibliotekę `re` do swojego kodu:
+Aby używać wyrażeń regularnych w Pythonie, należy zaimportować moduł `re`. Następnie można użyć funkcji `search()` lub `match()` do znalezienia dopasowań do danego wyrażenia. Na przykład, jeśli chcemy wyszukać w tekście wszystkie liczby całkowite, możemy użyć wyrażenia `r'\d+'`.
 
 ```Python
 import re
+
+text = 'Lorem ipsum 123 dolor sit amet 456'
+
+matches = re.search(r'\d+', text)
+
+print(matches.group())
+# Output: 123
 ```
 
-Następnie można zacząć używać funkcji dostępnych w bibliotece re do operacji na wyrażeniach regularnych. Na przykład, aby znaleźć wszystkie wystąpienia danego wzorca w tekście, możemy użyć funkcji `findall()`:
+## Głębsze zanurzenie
 
-```Python
-text = "JavaScript jest niezwykle popularnym językiem programowania"
-matches = re.findall("JavaScript", text)
-print(matches)
-```
+Wyrażenia regularne zostały pierwotnie opracowane przez naukowców w celu analizy tekstów. Obecnie są one powszechnie wykorzystywane we wszystkich językach programowania, a także w programach do przetwarzania tekstu, takich jak edytory tekstu czyarkusze kalkulacyjne.
 
-Output:
+Alternatywami dla wyrażeń regularnych w Pythonie są między innymi moduły `fnmatch`, `glob` czy `pathlib`, jednak nie oferują one takiej elastyczności i możliwości jak wyrażenia regularne.
 
-```
-['JavaScript']
-```
-
-Możemy również wykorzystać wyrażenia regularne do wykonywania złożonych operacji na tekście, takich jak podmiana wzorców, dzielenie tekstu na fragmenty czy sprawdzanie poprawności formatowania. Wszystko to zależy od naszych potrzeb i możliwości używania wyrażeń regularnych.
-
-## Dogłębna analiza
-
-Wyrażenia regularne są bardzo potężnym narzędziem, ale wymagają pewnej nauki i praktyki, aby nauczyć się je wykorzystywać w optymalny sposób. Jest wiele różnych elementów i funkcji, które można wykorzystać do dopasowania wzorców w tekście, dlatego warto poświęcić trochę czasu na zgłębienie ich wiedzy na ten temat.
-
-Zawsze pamiętaj, że wyrażenia regularne są case-sensitive, co oznacza, że różnica między dużymi i małymi literami będzie wpływać na dopasowanie wzorców. Dlatego dobrą praktyką jest zawsze zmienianie wszystkich liter na małe lub świadome uwzględnienie różnych wariantów w swoich wyrażeniach regularnych.
+Implementacja wyrażeń regularnych w Pythonie jest oparta na wykorzystaniu metaznaków, czyli specjalnych symboli, które pozwalają na definiowanie wzorców do dopasowywania. Należy pamiętać, że wyrażenia regularne są wrażliwe na wielkość liter, więc należy zachować ostrożność przy tworzeniu wzorców.
 
 ## Zobacz także
 
-* [Dokumentacja biblioteki re w Pythonie](https://docs.python.org/3/library/re.html)
-* [Interaktywny kurs wyrażeń regularnych](https://regexone.com/) (język angielski)
-* [Książka "Wyrażenia regularne w Pythonie" (PDF)](https://www.cl.cam.ac.uk/~mgk25/download/teaching/12-13/regexps.pdf)
+Jeśli chcesz dowiedzieć się więcej o wyrażeniach regularnych w Pythonie, możesz skorzystać z poniższych źródeł:
+
+- [Dokumentacja modułu `re` w Pythonie](https://docs.python.org/3/library/re.html)
+- [Tutorial o wyrażeniach regularnych w Pythonie](https://www.w3schools.com/python/python_regex.asp)
+- [Przewodnik po wyrażeniach regularnych w Pythonie z przykładami](https://realpython.com/regex-python/)

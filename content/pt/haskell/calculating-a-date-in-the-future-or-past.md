@@ -10,48 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+## O que & Por quê?
 
-Calcular uma data no futuro ou no passado pode ser uma tarefa útil em diversas situações, como planejar eventos ou automatizar tarefas. Além disso, a linguagem Haskell oferece uma sintaxe simples e poderosa para lidar com cálculos de datas.
+"Cálculo de datas no futuro ou no passado" é um termo usado pelos programadores para se referir à tarefa de determinar uma data específica após uma determinada quantidade de tempo, ou antes de uma data específica. Os programadores frequentemente precisam fazer esse cálculo para criar aplicações que lidam com eventos futuros ou retroativos, como agendamento de compromissos ou cálculo de prazos de entrega.
 
-## Como fazer
+## Como fazer:
 
-Para calcular uma data em Haskell, utilizaremos a função `addDays` da biblioteca `Data.Time.Calendar`. Essa função recebe dois parâmetros: o número de dias que desejamos adicionar ou subtrair da data atual, e a data de referência.
-
-```Haskell
-import Data.Time.Calendar
-
-dataAtual = fromGregorian 2021 02 08 -- 08 de fevereiro de 2021
-dataFutura = addDays 30 dataAtual -- adiciona 30 dias à data atual
-dataPassado = addDays (-15) dataAtual -- subtrai 15 dias da data atual
-
--- Resultado:
--- dataFutura = 2021-03-10
--- dataPassado = 2021-01-24
-```
-
-O exemplo acima utiliza o tipo `Day` para representar datas, mas também é possível utilizar tipos mais específicos, como `LocalDate` e `ZonedTime` da biblioteca `Data.Time.LocalTime`.
-
-## Mergulho profundo
-
-Além de adicionar ou subtrair dias, a biblioteca `Data.Time.Calendar` oferece outras funções úteis para cálculos de datas, como `addMonths`, `addYears` e `diffDays`. Também é possível trabalhar com horários e fusos horários utilizando as bibliotecas `Data.Time.LocalTime` e `Data.Time.Zones`.
-
-Você também pode criar suas próprias funções de cálculos de datas, utilizando a poderosa sintaxe de pattern matching de Haskell. Por exemplo, podemos criar uma função que soma uma semana à data atual:
+Usando a linguagem de programação Haskell, podemos calcular uma data no futuro ou no passado de forma simples e eficiente. Veja um exemplo de código abaixo:
 
 ```Haskell
-import Data.Time.Calendar
+import Data.Time
 
-addWeek :: Day -> Day
-addWeek (fromGregorian ano mes dia) = fromGregorian ano mes (dia + 7)
-
--- Exemplo:
-addWeek (fromGregorian 2021 02 08) -- resultado: 2021-02-15
+calcularData :: Integer -> TimeLocale -> String
+calcularData dias locale = do
+    let dataAtual = getCurrentTime
+    let dataFutura = addDays dias dataAtual
+    formatTime defaultTimeLocale "%d/%m/%Y" dataFutura
 ```
 
-Com isso, é possível realizar cálculos de datas de forma simples e precisa em seus projetos em Haskell.
+O código acima usa a função `addDays` do módulo `Data.Time` para adicionar uma quantidade específica de dias (representada pelo parâmetro `dias`) à data atual. O parâmetro `locale` é usado para definir o formato da data de saída. No exemplo acima, estamos usando o formato "dia/mês/ano". Executando o código acima com os seguintes valores:
 
-## Veja também
+```Haskell
+calcularData 10 pt_br
+```
 
-- Documentação da biblioteca `Data.Time.Calendar`: http://hackage.haskell.org/package/time/docs/Data-Time-Calendar.html
-- Documentação da biblioteca `Data.Time.LocalTime`: http://hackage.haskell.org/package/time/docs/Data-Time-LocalTime.html
-- Documentação da biblioteca `Data.Time.Zones`: https://hackage.haskell.org/package/timezone-series-0.1.11/docs/Data-Time-Zones.html
+O resultado seria "21/01/2022" (considerando que a data atual é 11/01/2022).
+
+## Mergulho Profundo:
+
+Historicamente, o cálculo de datas era uma tarefa bastante complexa, com diversas fórmulas e regras a serem seguidas. Com o avanço da tecnologia e a adoção de linguagens de programação modernas, essa tarefa se tornou mais simples e acessível.
+
+Além do exemplo de código acima, também é possível calcular datas no futuro ou no passado usando outras linguagens de programação, como Java e Python. No entanto, a sintaxe do código e as bibliotecas utilizadas podem variar de uma linguagem para outra.
+
+Ao implementar uma função para calcular datas em Haskell, é importante garantir que a entrada (os parâmetros) esteja correta e que a saída esteja no formato desejado. Além disso, é importante considerar a utilização de funções do módulo `Data.Time` para facilitar a tarefa.
+
+## Veja Também:
+
+- [Documentação do módulo Data.Time em Haskell](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time.html)
+- [Tutorial sobre cálculo de datas em Java](https://www.baeldung.com/java-date-time-operations)
+- [Exemplo de cálculo de datas em Python](https://www.kite.com/python/answers/how-to-add-days-to-a-date-in-python)

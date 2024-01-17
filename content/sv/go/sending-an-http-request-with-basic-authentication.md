@@ -10,60 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
 
-Om du vill skicka en säker HTTP-förfrågan till en webbtjänst, behöver du använda en autentiseringsmetod för att verifiera din identitet. En av de enklaste metoderna är Basic Authentication, som kräver användarnamn och lösenord för att godkänna åtkomst. Genom att lära dig hur man skickar en HTTP-förfrågan med Basic Authentication i Go, kan du bygga säkra och pålitliga webbapplikationer.
+Att skicka en HTTP-förfrågan med grundläggande autentisering innebär att man skickar en begäran till en webbserver med ett användarnamn och lösenord som autentiseringsuppgifter. Programerare gör detta för att säkra sin kommunikation med webbservern och kontrollera åtkomst till skyddade resurser.
 
-## Hur man gör
-
-För att skicka en HTTP-förfrågan med Basic Authentication i Go, behöver du bara följa några enkla steg.
-
-Först behöver du importera paketet "net/http" och "encoding/base64".
+## Så här gör du:
 
 ```Go
+// Importera nödvändiga paket
 import (
-    "net/http"
-    "encoding/base64"
+   "fmt"
+   "net/http"
 )
-```
 
-Sedan måste du skapa en instans av typen "http.Client" och ange autentiseringsuppgifterna i en "http.Header" med hjälp av "SetBasicAuth" funktionen. Dessa autentiseringsuppgifter krypteras sedan med bas64-kodning.
+// Ange autentisieringsuppgifter
+username := "användarnamn"
+password := "lösenord"
 
-```Go
+// Skapa en HTTP-klient
 client := &http.Client{}
-req, _ := http.NewRequest("GET", "https://www.example.com/api", nil)
-req.Header.Set("Authorization", "Basic " + base64.StdEncoding.EncodeToString([]byte("användarnamn:lösenord")))
-```
 
-Slutligen kan du genomföra din HTTP-förfrågan med hjälp av "Do" funktionen på din Client instans och utföra eventuella åtgärder med responsen.
+// Skapa en förfrågan med grundläggande autentisering
+req, err := http.NewRequest("GET", "https://www.example.com", nil)
+req.SetBasicAuth(username, password)
 
-```Go
+// Skicka förfrågan och få svar
 resp, err := client.Do(req)
-if err != nil {
-    // Hantera fel
-}
 defer resp.Body.Close()
 
-// Gör något med responsen, som att skriva ut den till konsolen
-fmt.Println(resp.Status)
+// Hantera svar
+if err != nil {
+   panic(err)
+}
+fmt.Println("Statuskod:", resp.Status)
+
 ```
 
 Output:
-
 ```
-200 OK
+Statuskod: 200 OK
 ```
 
-## Deep Dive
+## Djupdykning:
 
-En HTTP-förfrågan med Basic Authentication består av två delar - användarnamn och lösenord - som krypteras med bas64-kodning och skickas som en "Authorization" header. Detta gör att servern kan verifiera användarens identitet och ge åtkomst till resurser på ett säkert sätt.
+* **Historisk kontext:** Grundläggande autentisering är en av de äldsta metoderna för autentisering på webben. Det infördes redan 1995 som en del av HTTP-protokollet och har sedan dess använts som en grundläggande säkerhetsmekanism för webbtjänster.
 
-När autentiseringsuppgifterna mottas på servern, dekrypteras de med hjälp av bas64-dekoder och jämförs med de som finns sparade på servern. Om de matchar så godkänns åtkomsten, annars returneras ett felmeddelande.
+* **Alternativ:** Utöver grundläggande autentisering finns det flera andra autentiseringsprotokoll som OAuth och JWT (JSON Web Token) som är mer säkra och flexibla.
 
-Det är viktigt att komma ihåg att Basic Authentication inte är den mest säkra autentiseringsmetoden och bör endast användas om det är nödvändigt och resurserna inte är känsliga. Annars är det bättre att använda mer robusta metoder som OAuth eller JWT.
+* **Implementeringsdetaljer:** HTTP-förfrågan med grundläggande autentisering skapar en HTTP-beteckning som har en autentiseringssektion i dess HTTP-autoriseringsrubrik, vilken innehåller användarnamn och lösenord. Dessa uppgifter skickas sedan med i varje begäran till webbservern för autentisering.
 
-## Se även
+## Se även:
 
-- [Go Documentation - Package http](https://golang.org/pkg/net/http/)
-- [Go Documentation - Package encoding/base64](https://golang.org/pkg/encoding/base64/)
-- [Basic Authentication RFC](https://tools.ietf.org/html/rfc7617)
+* [Go GoDocs: "net/http" paketet](https://godoc.org/net/http)
+* [HTTP grundläggande autentisering specification](https://developer.mozilla.org/sv/docs/Web/HTTP/Headers/Authorization)

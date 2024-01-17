@@ -1,7 +1,7 @@
 ---
-title:                "Usando expressões regulares"
-html_title:           "Elm: Usando expressões regulares"
-simple_title:         "Usando expressões regulares"
+title:                "Utilizando expressões regulares"
+html_title:           "Elm: Utilizando expressões regulares"
+simple_title:         "Utilizando expressões regulares"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -10,46 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que usar expressões regulares?
+## O que e Porque?
 
-Expressões regulares são uma ferramenta muito útil para encontrar e manipular padrões de texto em seus programas Elm. Ao aprender a utilizar expressões regulares, você pode economizar tempo e tornar seu código mais eficiente e flexível.
+Expressões regulares são padrões utilizados para identificar texto em uma determinada sequência de caracteres. Elas são utilizadas por programadores para encontrar e manipular informações em grande quantidade de dados. Com elas, é possível realizar validações em campos de formulários, buscar informações específicas em um texto, entre outros usos.
 
-## Como fazer:
+## Como Fazer:
 
-```Elm
-import Regex exposing (..)
-
--- Exemplo de expressão regular para encontrar sequência de números
-regex = Regex.fromString "\\d+"
--- Função para encontrar e imprimir números em uma string
-findNumbers input =
-    case regex of
-        Ok r ->
-            match r input
-                |> List.map .match
-                |> List.filterMap identity
-                |> Debug.log "Números encontrados:"
-        Err err ->
-            Debug.log "Erro:" err
-
--- Saída de exemplo: ["123", "456", "789"]
-findNumbers "Eu tenho 123 maçãs, 456 laranjas e 789 bananas."
+```elm
+string = "O dia está ensolarado!"
+regex = RegExp.fromPattern "dia.*ensolarado" False False
+RegExp.match regex string
 ```
 
-Neste exemplo, importamos o módulo `Regex` e criamos uma expressão regular para encontrar sequências de números. Em seguida, utilizamos uma função `findNumbers` para encontrar e imprimir todos os números que correspondem à nossa expressão regular em uma string. Esta é apenas uma das muitas maneiras de utilizar expressões regulares em seus programas Elm.
+Saída:
 
-## Desvendando as expressões regulares:
+```
+["dia está ensolarado"]
+```
 
-As expressões regulares podem parecer intimidadoras no início, mas são uma ferramenta poderosa que vale a pena aprender. Algumas coisas importantes a saber incluem:
+## Explorando Mais:
 
-- Padrões entre barras duplas (`//`) são expressões regulares.
-- O caractere `\\` é usado como um escape para caracteres especiais nas expressões regulares, como `+`, `*` e `.`.
-- A função `Regex.fromString` transforma uma string em uma expressão regular, retornando um tipo `Result Error Regex`.
-- Existem funções úteis no módulo `Regex` como `match` (para verificar se uma string corresponde à expressão regular) e `find` (para encontrar todas as correspondências em uma string).
+As expressões regulares foram inventadas por Stephen Coleman Kleene na década de 1950 e desde então se tornaram amplamente utilizadas em diferentes linguagens de programação. Existem opções de bibliotecas para lidar com expressões regulares em Elm, como a RegExp, que faz parte da biblioteca "elm/parser". Algumas alternativas às expressões regulares incluem a utilização de funções de manipulação de strings, porém, essas podem ser mais limitadas em termos de funcionalidade. No Elm, expressões regulares são implementadas de forma eficiente com o suporte do motor de busca Thompson NFA.
 
-Se você quiser se aprofundar ainda mais nas expressões regulares, recomendo ler a documentação completa do módulo `Regex` e praticar em exemplos diferentes.
+## Veja Também:
 
-## Veja também:
-
-- [Documentação do módulo Regex](https://package.elm-lang.org/packages/elm/regex/latest/Regex)
-- [Tutorial de expressões regulares do MDN](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Regular_Expressions)
+- Aprenda mais sobre expressões regulares em [regexone.com](https://regexone.com/)
+- Conheça a biblioteca para expressões regulares em Elm em [package.elm-lang.org](https://package.elm-lang.org/packages/elm/parser/latest)

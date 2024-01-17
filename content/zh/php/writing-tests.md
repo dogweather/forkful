@@ -10,63 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-画A PHP(最新版本)编程文章，为普通话读者使用非正式的语气和简洁的风格。文章分别有三个在标题下明确的部分：「##为什么」，「##如何」，「##深入探讨」。
+## PHP中的测试：为什么程序员需要写测试
 
-为什么：写测试的目的，不超过2句话。
+测试是指为了验证程序的正确性和稳定性，而编写的一系列代码片段。通过测试，程序员可以更加准确地了解自己所编写的程序是否达到了预期的效果。编写测试的一个重要原因是为了避免在程序执行过程中出现意外的错误，从而提高程序的质量和可靠性。
 
-如何：在「```PHP ... ```」的代码块中，举出编码范例和输出样本。
+## 如何编写测试
 
-深入探讨：关于编写测试的更深层信息。
+在PHP中，可以使用```PHP ... ```代码块来编写测试。下面是一个示例代码：
 
-这篇文章没有「结论」部分。文章以Markdown标题「参见」结尾，以链接列表形式列出。
+```PHP
+//假设我们要测试的函数名为add，接收两个参数，并返回它们的和
+function add($num1, $num2) {
+  return $num1 + $num2;
+}
 
-#为什么
-
-编写测试是一种重要的开发实践，它可以帮助我们确保代码质量、修复错误和避免未来的问题。通过编写测试，我们可以更快速、更准确地开发代码，并且在添加新功能或进行重构时更有信心。
-
-#如何
-
-##安装PHPUnit
-首先，我们需要安装PHPUnit来运行PHP测试。使用Composer是最简单的方法，只需在命令行中运行以下命令：
-
-```PHP 
-composer require --dev phpunit/phpunit
-```
-
-##编写测试
-创建一个测试类，并添加 `@test` 标签来标识测试方法。在测试方法中，我们将编写一些断言来验证代码的预期行为是否与实际结果一致。例如：
-
-```PHP 
-class GreetingTest extends PHPUnit\Framework\TestCase
-{
-  /** @test */
-  public function it_returns_hello_world()
-  {
-    $greeting = new Greeting();
-    $message = $greeting->sayHello();
-    
-    $this->assertEquals('Hello World!', $message);
+//编写测试
+function testAdd() {
+  $result = add(2, 3); //调用add函数，并传入参数2和3
+  if ($result == 5) {
+    echo "测试通过！";
+  } else {
+    echo "测试失败！";
   }
 }
+
+//运行测试
+testAdd(); //输出：测试通过！
 ```
 
-##运行测试
-要运行测试，只需在命令行中运行 `phpunit` 命令，并指定测试类的路径：
+通过编写测试，我们可以验证函数是否按照我们期望的方式运行，并及时发现潜在的bug。这样可以大大提高代码的质量和稳定性。
 
-```PHP 
-./vendor/bin/phpunit tests/
-```
+## 深入了解测试
 
-##深入探讨
+编写测试的概念并不是PHP独有的，它起源于测试驱动开发（TDD）。TDD是一种开发方法论，通过先编写测试来指导代码的编写。另外，除了编写测试之外，还有一种常用的测试方法是单元测试（Unit Testing）。单元测试是指对代码中的最小单元（通常是函数或方法）进行测试，以确保它们能够正确地运行。
 
-编写测试的目的是为了让我们能够快速、准确和可靠地验证代码是否按照预期工作。通过编写测试，我们可以更好地组织我们的代码，并且可以在添加新功能或者修改现有功能时安全地进行重构。
+除了在PHP代码中直接编写测试，也可以使用像PHPUnit这样的测试框架来帮助编写和运行测试。这些框架提供了更加复杂和全面的功能，可以帮助程序员编写更有效的测试。
 
-另外，编写测试还可以帮助我们发现隐藏的Bug，并且它们也可以作为一种文档形式，帮助其他开发人员理解代码的预期行为。
+## 参考资料
 
-总的来说，编写测试可以提高代码质量和可靠性，从而减少错误和维护成本。
-
-#参见
-
-- [PHPUnit官方文档](https://phpunit.de/documentation.html)
-- [为什么写测试？](https://medium.com/@person/reasons-to-write-tests-f330a0972091)
-- [如何编写更好的测试？](https://medium.com/@person/tips-for-writing-better-tests-5ec9fda351aa)
+- 测试驱动开发简介：https://www.runoob.com/w3cnote/test-driven-development-intro.html
+- 单元测试简介：https://www.jianshu.com/p/c9c94c3b9c6e
+- PHPUnit官方网站：https://phpunit.de/

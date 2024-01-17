@@ -10,34 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Kyun?
+# फिश शैल प्रोग्रामिंग आर्टिकल: रेगुलर एक्सप्रेशन का प्रयोग 
 
-Kya aap code me cheezein search karne ke liye bheed bhaad ka shor-sharaba nahi karna chahte? Kya aapko specific patterns ko find aur manipulate karna hai? Yadi haan, to aapko regular expressions ka istemaal karna chahiye!
+## क्या & क्यों? 
+रेगुलर एक्सप्रेशन का प्रयोग करना क्या है और प्रोग्रामर इसे क्यों करते हैं? यह सवाल हर नए प्रोग्रामर के मन में उठता है। रेगुलर एक्सप्रेशन, या रेजएक्स के नाम से भी जाना जाता है, संख्याओं, वर्णों और दूसरे वस्तुओं के पैटर्न को सरल रूप से ढूंढने और वर्क साधना करने का एक अच्छा तरीका है। प्रोग्रामर इसे अपनी कोडिंग को देख और प्रोजेक्ट में जाने के लिए प्रयोग करते हैं।
 
-## Kaise?
-
-Fish Shell me regular expressions ka use karna bahut hi aasaan hai. Aap simply "grep" ka istemaal karke kisi bhi file ya directory me specific patterns ko search kar sakte hai. Neeche diye gaye code block me ek example hai:
+## कैसे: 
+फिश शैल में रेगुलर एक्सप्रेशन को कैसे इस्तेमाल किया जाता है? निम्न उदाहरण में, हम एक सदस्यता से इमेल पता प्राप्त करने का प्रयास करेंगे।
 
 ```Fish Shell
-grep '[a-z] fish.txt'
+set email "example@email.com" 
+if echo $email | string match -r ".+@.+\..+" 
+    echo "Valid email address!" 
+end 
+```
+उपरोक्त कोड के परिणामों का उत्पादन निम्न रहेगा: 
+```
+Valid email address!
 ```
 
-Is code se, aap sabhi lines ko search kar sakte hai jo "fish.txt" file me lowercase letters se shuru hoti hai. Output me aapko yeh lines dikhayi denge.
+## गहराई में जाएं: 
+रेगुलर एक्सप्रेशन से जुड़े और महत्वपूर्ण जानकारियां हैं: 
+1. इतिहासिक संदर्भ: रेगुलर एक्सप्रेशन के विकास को लेकर करीब 50 वर्षों का समय लगा। आज, यह संख्याओं के पैटर्न को खोजने के लिए प्रोग्रामर्स के लिए एक मुख्य टूल है। 
+2. वैकल्पिक: कई अन्य प्रोग्रामिंग भाषाओं में भी रेगुलर एक्सप्रेशन का प्रयोग किया जाता है, जैसे कि पायथन और जावास्क्रिप्ट। अगर आपको इन भाषाओं को भी अच्छी तरह से सीखना है तो रेगुलर एक्सप्रेशन आपके लिए एक जरूरी कौशल होना चाहिए।
+3. अनुमान जानकारियां: रेगुलर एक्सप्रेशन का प्रयोग करने की अच्छी क्षमता एक प्रोग्रामर को कम समय और प्रोजेक्ट में सही परिणाम प्राप्त करने में मदद कर सकती है।
 
-```
-big fish
-small fish
-```
+## देखें भी: 
+1. [फिश शैल रेगुलर एक्सप्रेशन विकि](https://fishshell.com/docs/current/cmds/string.html#match)
+2. [रेगुलर एक्सप्रेशन जनरेटर](https://regexr.com/)
+3. [फिश शैल की आधिकारिक वेबसाइट](https://fishshell.com/)
 
-## Deep Dive
-
-Regular expressions me kayi tarike ke expressions ka istemaal karke aap apne search ko aur bhi precise bana sakte hai. Jaise ki aap specific characters, words, ya numbers ko search kar sakte hai. Iske alawa, aapko searching ke liye operators bhi available hai, jaise ki "or" ya "not". In operators ka istemaal karke aap apne patterns ko aur bhi specific bana sakte hai.
-
-Fish Shell me, regular expressions ka use upyukt syntax ke saath kiya ja sakta hai, jisse ki aap exact output ko find aur manipulate kar sake. Iske alawa, Fish Shell me kayi useful functions bhi available hai, jaise ki "fish_grep" aur "fish_match", jo ki regular expressions ka use karke output ko filter aur manipulate karte hai.
-
-## Dekhiye bhi
-
-Ab aap regular expressions ke baare me basic jaankari rakhte hai, aap mazeed explore kar sakte hai yhaan dive into regular expressions ke saath regular expressions ke detailed tutorial ke saath.
-
-1. [Regular Expressions tutorial by regexone.com](https://regexone.com)
-2. [Learn to use regular expressions in Fish Shell](https://fishshell.com/docs/current/tutorial.html#tut_regex)
+यहां तक कि बनाने के लिए फिश शैल तरपीदार और आसीन है, यह आपके कोडिंग अनुभव को बेहतर बनाने में आपकी मदद कर सकता है। रेगुलर एक

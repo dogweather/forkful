@@ -10,31 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i dlaczego?
 
-Jeśli szukasz nowego języka programowania, który jest wydajny, bezpieczny i przyjazny dla programistów, to Gleam może być idealnym wyborem dla Ciebie. Gleam jest językiem funkcyjnym opartym na Erlangu, który oferuje zaawansowane mechanizmy typowania, dzięki czemu tworzenie i utrzymywanie projektów jest łatwe i bezpieczne.
+Rozpoczęcie nowego projektu to częsty element pracy programisty, gdyż pozwala na tworzenie nowych rozwiązań oraz rozwijanie swoich umiejętności. Poprzez stworzenie nowego projektu, programista może wykorzystać swoje zdolności i wyobraźnię, aby stworzyć nowe i innowacyjne rozwiązania.
 
-## Jak zacząć
+## Jak to zrobić?
 
-Najlepszym sposobem na rozpoczęcie projektu w Gleam jest zainstalowanie narzędzia gleam i wykorzystanie go do inicjalizacji projektu. Oto przykładowe polecenia, które możesz wykorzystać:
+Tworzenie nowego projektu w Gleam jest proste i łatwe. Wystarczy utworzyć nowy katalog, a następnie uruchomić polecenie `gleam init` w wierszu poleceń. To spowoduje utworzenie plików konfiguracyjnych i przykładowego kodu w języku Gleam.
 
 ```Gleam
-$ mix local.rebar --force
-$ mix gleam.new moj_projekt
-$ cd moj_projekt
-$ mix gleam.build
+gleam init
 ```
 
-Po wykonaniu tych operacji, będziesz już miał skonfigurowany projekt w Gleam. Możesz teraz zacząć pisać kod i korzystać z mechanizmów typowania, które oferuje ten język.
+Po wykonaniu polecenia, będziemy mieli gotowy projekt, który możemy edytować i rozwijać.
 
-## Deep Dive
+## Głębsze zagłębienie 
 
-Kiedy już zaczniesz tworzyć swoje pierwsze projekty w Gleam, zauważysz jak wiele możliwości daje ten język. Możesz wykorzystać system modułów, aby organizować swój kod w logiczne bloki i utrzymać go w czystości. Gleam oferuje również takie funkcjonalności jak generatory, rekursja ogonowa oraz dopasowanie wzorców, które znacznie ułatwiają pisanie skomplikowanych algorytmów.
+Wcześniej, programiści często wykorzystywali języki takie jak Erlang i Elixir, aby tworzyć aplikacje współbieżne i równoległe. Jednak Gleam to język stworzony specjalnie z myślą o programowaniu współbieżnym, zapewniając bezpieczne i wydajne rozwiązania. Alternatywnymi językami dla Gleam są Rust i Haskell, które również cieszą się popularnością wśród programistów.
 
-## Zobacz również
+Implementacja Gleam oparta jest na funkcjonalnym paradygmacie programowania, co oznacza, że programiści mogą wykorzystywać wyrażenia oraz funkcje wyższego rzędu do rozwiązywania problemów. Ponadto, silny system typów pozwala na uniknięcie błędów i poprawienie wydajności kodu.
 
-Jeśli jesteś zainteresowany bardziej szczegółowymi informacjami o Gleam, możesz skorzystać z następujących linków:
+## Zobacz także
 
-- Oficjalna strona Gleam: [https://gleam.run/](https://gleam.run/)
-- Dokumentacja: [https://gleam.run/documentation](https://gleam.run/documentation)
-- Repozytorium na GitHubie: [https://github.com/gleam-lang/gleam](https://github.com/gleam-lang/gleam)
+Jeśli chcesz dowiedzieć się więcej o Gleam, odwiedź oficjalną stronę internetową https://gleam.run/. Możesz także sprawdzić inne źródła, takie jak artykuły i filmy na temat Gleam, aby poszerzyć swoją wiedzę.

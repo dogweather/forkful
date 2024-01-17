@@ -1,7 +1,7 @@
 ---
-title:                "एक http निवेदन भेजना"
-html_title:           "Elm: एक http निवेदन भेजना"
-simple_title:         "एक http निवेदन भेजना"
+title:                "एक http अनुरोध भेजना"
+html_title:           "Elm: एक http अनुरोध भेजना"
+simple_title:         "एक http अनुरोध भेजना"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "HTML and the Web"
@@ -10,54 +10,62 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
+अभी तक, आपने शायद एल्म (Elm) से संबंधित कुछ बेसिक जानकारी ही प्राप्त की होगी। यह एक फ़ार्मल लैंग्वेज है जो वेब डेवलपमेंट के लिए उपयोग किया जाता है। इस लेख में, हम एल्म में HTTP रिक्वेस्ट (HTTP request) भेजने के बारे में बात करेंगे और उसे कैसे किया जाता है।
 
-ताकि वे किसी वेब साइट से डेटा को अपने ऐप्लिकेशन में दिखाने के लिए, उपयोगकर्ता को अपने सर्वर से डेटा को प्राप्त करने के लिए एचटीटीपी अनुरोध भेजे जा सकते हैं।
+## क्या और क्यों? 
+एक HTTP रिक्वेस्ट भेजना एक विशिष्ट प्रकार का डेटा भेजना होता है, जो आपके वेब एप्लिकेशन को सर्वर से डेटा लाने या भेजने की अनुमति देता है। यह डेटा हमेशा कुछ कीमतों या डेटा का एक ढांचा होता है जो आप अपने कोड में उपयोग कर सकते हैं। वेब डेवलपमेंट में, HTTP रिक्वेस्ट भेजना बहुत आम होता है और यह वेब एप्लिकेशन को डायनामिक बनाने में मदद करता है।
 
-## कैसे करें
+## कैसे करें? 
+एल्म में HTTP रिक्वेस्ट भेजने के लिए हम Http.send फ़ंक्शन का उपयोग कर सकते हैं। नीचे दिए गए कोड ब्लॉक देखें:
 
-एल्म में एचटीटीपी अनुरोध कैसे भेजा जाता है, उसे उदाहरण के साथ समझाने के लिए हमें निम्न सेक्शन में दिखाएंगे।
-
-हम पहले एक प्रोजेक्ट शुरू करते हैं। जब आप यह क्रिया पूर्ण कर लेंगे, आपको निम्न तरह की स्ट्रक्चर मिलेगी।
-
-```Elm
+```
 import Http
-import Json.Encode
+import Json.Decode exposing (int, string, Decoder)
 
-type Msg = DataResponse (Result String String) | Error String
+type Msg = Success Int | Failure String
 
-type alias Data = 
-    { name : String
-    , age : Int
-    }
+reqMethod : Http.Method
+reqMethod =
+  Http.get
 
-url : String
-url = "https://randomuser.me/api/"
+reqUrl : String
+reqUrl =
+  "https://www.example.com"
 
-dataRequest : Http.Request Data
-dataRequest =
-    Http.get 
-        { url = url
-        , expect = Http.expectJson DataResponse
-        }
+reqDecoder : Decoder Int
+reqDecoder =
+  int
 
+sendReq : Msg -> Cmd Msg
+sendReq msg =
+  Http.send (\response -> 
+    case response of
+      Http.BadUrl err ->
+        Failure err
+      Http.Timeout ->
+        Failure "Request timed out"
+      Http.NetworkError ->
+        Failure "Network error"
+      Http.BadStatus status ->
+        Failure (String.fromInt status)
+      Http.GoodStatus body ->
+        case Json.Decode.decodeString reqDecoder body of
+          Ok value ->
+            Success value
+          Err err ->
+            Failure err
+    ) (Http.request
+          { method = reqMethod
+          , headers = []
+          , url = reqUrl
+          , body = Http.emptyBody
+          , expect = Http.expectString reqDecoder })
 ```
 
-ऊपर दिए गए कोड ब्लॉक में, हमने `Http` और `Json.Encode` मॉड्यूल को आयात किया है और `Msg` और `Data` नाम के टाइप को डिफाइन किया है। हमने `DataResponse` और `Error` नाम के कस्टम डेटा टाइप भी बनाया है। आगे हम `url` और `dataRequest` कंपोसीशन टाइप भी बनाएंगे।
+यहां, Http.send कोड ब्लॉक में दिए गए टाइप के साथ प्रोटोकॉल के अनुसार काम करता है। हमने Http.request को उसी प्रोटोकॉल के अनुसार सेटअप किया है जिसे विश्वास योग्य जवाब मिलता दिखाई देता है।
 
-अब हम `update` फंक्शन बनाते हैं और एचटीटीपी अनुरोध को भेजते हैं।
+## गहराई में जाएं 
+HTTP रिक्वेस्टें वेब डेवलपमेंट का एक अहम हिस्सा हैं और वे सर्वर से विश्वास योग्य जवाब लाने में मदद करते हैं। ऐतिहासिक पृष्ठ से, HTTP रिक्वेस्टें थर्ड पार्टी क्लाइंट साइड से सर्वर को डेटा भेजने का माध्यम बने हुए हैं। यदि आप Http.send के बजाय Native modules उपयोग करना चाहते हैं, तो Elm दुनिया में कुछ अन्य अल्टरनेटिव्स भी हैं। इसके अलावा, आप मल्टी-प्लेटफार्म एप्स बनाने के लिए Elm Native UI भी उपयोग कर सकते हैं।
 
-```Elm
-update : Msg -> Model -> ( Model, Cmd Msg )
-update msg model =
-    case msg of
-        DataResponse (Ok data) ->
-            ( { model | name = data.name, age = data.age }, Cmd.none )
-        DataResponse (Err error) ->
-            ( { model | name = "Error", age = 0 }, Cmd.none )
-        Error error ->
-            ( { model | name = "Error", age = 0 }, Cmd.none )
-
-```
-
-ऊपर दिए गए कोड ब्लॉक में, हम `DataResponse` और `Error` मैसेज पर कंडिशनल लॉजिक रखते हैं और डेटा को पारसर करते हैं। अगर डेटा सफलतापूर्वक प्राप्त होता है, तो हम डेटा को मॉडल में सेट करते
+## उन्नत जानकारी 
+यदि आप अभी भी HTTP रिक्वेस्ट को और गहर

@@ -1,7 +1,7 @@
 ---
-title:                "Wyciąganie podciągów"
-html_title:           "Go: Wyciąganie podciągów"
-simple_title:         "Wyciąganie podciągów"
+title:                "Wycinanie podciągów"
+html_title:           "Go: Wycinanie podciągów"
+simple_title:         "Wycinanie podciągów"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Strings"
@@ -10,49 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+# Co i dlaczego?
 
-Wyodrębnianie podciągów jest przydatną umiejętnością, którą każdy programista Go powinien posiadać. Dzięki niej możemy w prosty sposób przetwarzać i manipulować łańcuchami znaków w naszych programach.
+Wyciąganie podciągów (tak zwanych substringów) to proces wyodrębniania fragmentów tekstu z większego ciągu znaków. Programiści często wykonują tę czynność, aby przetworzyć lub analizować dane zgodnie z określonymi warunkami lub wymaganiami.
 
-## Jak To Zrobić
+# Jak to zrobić?
 
-```Go
-// Przykładowy łańcuch znaków
-s := "Cześć! Witaj w świecie Go!"
-
-// Wyodrębnienie podciągu od indeksu 7 do końca łańcucha
-podciag := s[7:]
-
-// Wyświetlenie wyniku
-fmt.Println(podciag)
-
-// Output: Witaj w świecie Go!
-```
-
-Oto kilka przykładowych kodów, które pokazują, jak wyodrębniać podłańcuchy za pomocą wbudowanych funkcji Go.
-
-* `s[start:]` - wyodrębnia podłańcuch od podanego indeksu do końca łańcucha
-* `s[:end]` - wyodrębnia podłańcuch od początku do podanego indeksu
-* `s[start:end]` - wyodrębnia podłańcuch od podanego indeksu do innego podanego indeksu
-
-Możemy również wykorzystać funkcję `len` do określenia długości łancucha i wyodrębniać podłańcuchy w oparciu o tę informację.
+Aby wyodrębnić podcięcie w Go, użyjemy funkcji ```strings[x:y]```, gdzie x jest indeksem początkowym, a y jest indeksem końcowym naszego podciągu. Przykładowy kod mógłby wyglądać następująco:
 
 ```Go
-// Wyodrębnienie podciągu od indeksu 6 do 10
-podciag := s[6:len(s)-4]
+package main
 
-// Output: Witaj
+import "fmt"
+import "strings"
+
+func main() {
+    text := "To jest tekst przykładowy"
+    substring := text[8:13] // wyciągniemy podciąg "tekst"
+    fmt.Println(substring) // wypisze "tekst"
+}
 ```
 
-## Deep Dive
+# Głębsze zanurzenie
 
-Wyodrębnianie podciągów jest możliwe dzięki temu, że Go traktuje łańcuchy jak tablice bajtów. To pozwala nam korzystać z indeksów, aby operować na poszczególnych znakach w łańcuchu.
+Historia wyodrębniania podciągów sięga powstania pierwszych języków programowania, takich jak COBOL i FORTRAN. Współcześnie, istnieje kilka alternatywnych metod wyciągania podciągów, takich jak funkcja ```Substring``` w języku C#.
 
-Pamiętaj, że indeksowanie w Go zaczyna się od 0, więc pierwszy znak w łańcuchu ma indeks 0, drugi ma indeks 1, itd.
+W Go, funkcja ```strings[x:y]``` jest zaimplementowana za pomocą typu wbudowanego ```string```, który nie może być zmieniany. Dzięki temu, podciągi są traktowane jak niezmienniki i zapewniają bezpieczne operacje na tekście.
 
-Możesz również wykorzystać operator `range` do iteracji po każdym bajcie w łańcuchu i wyodrębniania podłańcuchów. To przydatne w przypadku, gdy nie znamy dokładnej długości łańcucha.
+# Zobacz także
 
-## Zobacz również
-- [Dokumentacja Go o łańcuchach](https://golang.org/doc/effective_go.html#strings)
-- [Wideo: Go dla każdego: Manipulowanie łańcuchami](https://youtu.be/mZvKpt7-h_o)
-- [Przykłady kodu Go na GitHubie](https://github.com/avelino/awesome-go#strings)
+- [Dokumentacja języka Go](https://golang.org/doc/)
+- [Porównanie funkcji wyciągającej podciągi w językach programowania](https://www.w3resource.com/CSharp/csharp-string-methods/substring.php)

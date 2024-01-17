@@ -1,7 +1,7 @@
 ---
-title:                "Debug Ausgabe drucken"
-html_title:           "Elm: Debug Ausgabe drucken"
-simple_title:         "Debug Ausgabe drucken"
+title:                "Ausgabe von Fehlersuche"
+html_title:           "Elm: Ausgabe von Fehlersuche"
+simple_title:         "Ausgabe von Fehlersuche"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Testing and Debugging"
@@ -10,51 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+Was ist das und warum machen Programmierer es?
 
-Warum sollte man debug Ausgaben in Elm verwenden? Ganz einfach: Es kann dir helfen, Fehler schneller zu finden und zu beheben! Durch das Hinzufügen von Debug Ausgaben kannst du besser verstehen, wie deine Code funktioniert und wo mögliche Probleme auftreten.
+Printing Debug Output ist eine Möglichkeit für Programmierer, Daten und Prozesse in ihren Code zu integrieren, um Probleme oder Fehler zu identifizieren und zu debuggen. Es ist eine effektive Methode, um den Ablauf des Codes zu überwachen und zu verstehen, was genau passiert. Das erleichtert die Fehlerbehebung und spart Zeit und Mühe bei der Entwicklung.
 
-## Wie geht das?
+Wie geht's?
 
-Es gibt verschiedene Möglichkeiten, Debug Ausgaben in deinem Elm Code zu erstellen.
+Debug Printing in Elm ist einfach, da die Sprache selbst Debugging-Tools wie den "Debug.log" -Befehl bietet. Durch Einbeziehung dieser Befehle in den Code können Entwickler verschiedene Daten wie Variablen, Musterabgleiche und Funktionseingaben in der Konsole ausgeben lassen. Hier ist ein Beispiel:
 
-Die einfachste Methode ist die Verwendung der `Debug.log` Funktion. Diese Funktion akzeptiert zwei Argumente: einen Debug-Namen und einen Wert. Zum Beispiel, um die Variable `x` auszugeben, kannst du Folgendes tun:
-
-```Elm
-x = 5
-
-Debug.log "x" x
+```
+Elm.Debug.log "Gesamtkosten" (berechneGesamtkosten rechnung)
 ```
 
-Wenn du diese Funktion in deinem Code verwendest, wird der Wert von `x` in der Konsole ausgegeben, wenn du deine Anwendung ausführst. Diese Methode ist besonders nützlich, um den Wert von Variablen in verschiedenen Teilen deines Codes zu überwachen.
+Dieser Befehl gibt den aktuellen Wert der Funktion "berechneGesamtkosten" in der Konsole aus, was für die Überprüfung der Ergebnisse und die Fehlerbehebung sehr nützlich sein kann.
 
-Eine andere Möglichkeit ist die Verwendung von `Debug.logEvery` Funktion. Diese Funktion funktioniert ähnlich wie `Debug.log`, aber sie wird jedes Mal ausgeführt, wenn sich die aktualisiert wird. Sie akzeptiert auch einen Debug-Namen und einen Wert als Parameter.
+Tiefer Einblick
 
-```Elm
-x = "Hello"
+Zurück zu den Anfängen der Softwareentwicklung mussten Programmierer verschiedene manuelle Methoden verwenden, um Bugs in ihrem Code zu finden und zu beheben. Mit dem Aufkommen von Debugging-Tools wie Print-Statements wurde dieser Prozess automatisiert und vereinfacht. Alternativen wie Debugging-Symbole und Tools zur Code-Analyse sind ebenfalls verfügbar, aber Print-Statements sind immer noch eine beliebte Wahl aufgrund ihrer Einfachheit und Wirksamkeit.
 
-Debug.logEvery "x" x
-```
+In Elm gibt es zwei Arten von Debug-Befehlen: "Debug.log" und "Debug.todo". Der letztere wird verwendet, um bestimmte Abschnitte des Codes zu markieren, die noch nicht implementiert sind, während ersterer zum Ausdrucken von Werten verwendet wird. Ein weiteres nützliches Feature sind die Debugging-Funktionen in der Chrome-Entwicklerkonsole, die speziell für Elm-Code entwickelt wurden.
 
-Schließlich gibt es noch die `Debug.watch` Funktion, die es dir ermöglicht, verschiedene Debug-Namen und Werte in einem Objekt zu sammeln und sie alle gleichzeitig auszugeben.
+Sieh dir auch an
 
-```Elm
-x = 5
-y = "World"
-
-Debug.watch "Test" { x, y }
-```
-
-Die Funktion `Debug.watch` nimmt ein Objekt als Argument entgegen und gibt alle enthaltenen Debug-Namen und Werte aus.
-
-## Tiefentauchen
-
-Neben den grundlegenden Debug-Funktionen gibt es noch weitere Möglichkeiten, Debug Ausgaben in Elm zu nutzen. Zum Beispiel kannst du deine eigenen Debug-Funktionen erstellen, die spezifisch auf deine Bedürfnisse zugeschnitten sind. Dies ermöglicht dir noch mehr Kontrolle über deine Debug Ausgaben und eröffnet neue Möglichkeiten, um Probleme zu identifizieren und zu beheben.
-
-Eine andere nützliche Technik ist die Verwendung von Debug Flags, die es dir ermöglichen, Debug Ausgaben in bestimmten Umgebungen ein- oder auszuschalten. Auf diese Weise kannst du deine Debug Ausgaben entfernen, wenn du deine Anwendung in der Produktion ausführst, aber sie aktiviert lassen, wenn du an deiner Anwendung in der Entwicklungsumgebung arbeitest.
-
-## Siehe auch
-
-- [Offizielle Elm Dokumentation zu Debug Ausgaben](https://guide.elm-lang.org/debugging/debugging.html)
-- [Debug Ausgaben in Elm: Ein umfassender Leitfaden](https://www.codementor.io/@ajaybelhaj/printing-debug-output-in-elm-tutorial-ozc0gly3b) von Ajay Belhaj
-- [Debugging Elm in der Praxis](https://medium.com/front-end-hacking/debugging-elm-in-practice-6bb1f9aead82) von Tomasz Kaczmarzyk
+- Elm-Dokumentation zum Debugging: https://guide.elm-lang.org/debugging/
+- Stack Overflow Diskussion über die Wirksamkeit von Debug-Statements: https://stackoverflow.com/questions/569272/how-can-i-debug-my-javascript-code/569329#569329

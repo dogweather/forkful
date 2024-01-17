@@ -10,56 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
+Checking if a directory exists is the process of verifying if a given directory (folder) exists on a computer's file system. This is commonly done by programmers to ensure that a certain directory is present before performing relevant operations or to handle error cases when a directory is missing.
 
-Have you ever needed to check if a directory exists in your C program? Maybe you want to make sure a certain path exists before creating a file or performing other operations. Whatever the reason may be, knowing how to check for the existence of a directory is a useful skill to have in your programming arsenal.
+## How to:
+To check if a directory exists in C, we can use the ```opendir()``` function from the ```<dirent.h>``` header. This function opens a directory stream and returns a pointer to the ```DIR``` type, which represents a directory stream. If the directory does not exist, the function returns a ```NULL``` pointer.
 
-## How To
-
-To check if a directory exists in C, we can use the `opendir()` function from the `<dirent.h>` header file. This function takes in a path as its argument and returns a pointer to a `DIR` object if the directory exists, or `NULL` if it doesn't. Here's an example of how we can use this function in our code:
-
-```C
+```
 #include <stdio.h>
 #include <dirent.h>
 
 int main() {
-    // Change this path to the one you want to check
-    char* path = "path/to/directory";
-    DIR* dir = opendir(path);
-
-    if (dir) {
-        // Directory exists!
-        printf("Directory at %s exists.\n", path);
-        closedir(dir);
+    char* directory_name = "my_directory";
+    DIR* dir = opendir(directory_name);
+    
+    if (dir == NULL) {
+        printf("Directory \"%s\" does not exist.\n", directory_name);
     } else {
-        // Directory doesn't exist
-        printf("Directory at %s doesn't exist.\n", path);
+        printf("Directory \"%s\" exists.\n", directory_name);
     }
-
+    
+    closedir(dir);
     return 0;
 }
 ```
 
-If the directory at the given path exists, we will see the following output:
-
+Sample Output:
 ```
-Directory at path/to/directory exists.
-```
-
-Otherwise, we will see:
-
-```
-Directory at path/to/directory doesn't exist.
+Directory "my_directory" does not exist.
 ```
 
-## Deep Dive
+## Deep Dive:
+In C, the ```opendir()``` function is part of the POSIX standard and has been available since the first version of the C programming language. It is commonly used on Unix and Unix-like systems such as Linux and macOS. For Windows systems, the ```_findfirst()``` function can be used to achieve similar functionality.
 
-Behind the scenes, the `opendir()` function uses the `stat()` system call to check for the existence of the specified path. This function returns information about a file, such as its size, permissions, and type. By using the `stat()` call, `opendir()` is able to determine if the path points to a valid directory or not.
+In addition to using the ```opendir()``` function, there are other ways to check if a directory exists, such as using the ```stat()``` function or the ```access()``` function. These functions can provide more detailed information about the existence and access permissions of a directory.
 
-It's also worth noting that the `DIR` object returned by `opendir()` is a pointer to a data structure containing information about the directory, such as its file descriptor, current position, and the list of files in the directory. This object is used by other functions like `readdir()` to traverse the contents of the directory.
-
-## See Also
-
-- [opendir(3) - Linux manual page](https://linux.die.net/man/3/opendir)
-- [stat(2) - Linux manual page](https://linux.die.net/man/2/stat)
-- [C Programming - File I/O](https://www.tutorialspoint.com/cprogramming/c_file_io.htm)
+## See Also:
+- [opendir() documentation](https://man7.org/linux/man-pages/man3/opendir.3.html)
+- [stat() documentation](https://man7.org/linux/man-pages/man2/stat.2.html)
+- [access() documentation](https://man7.org/linux/man-pages/man2/access.2.html)
+- [_findfirst() documentation](https://docs.microsoft.com/en-us/cpp/c-runtime-library/reference/findfirst-functions?view=msvc-160)

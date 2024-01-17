@@ -10,50 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+## Che cosa & Perché?
+In breve, inviare una richiesta HTTP significa comunicare con un server web per ottenere una risorsa, come una pagina web o un file. I programmatori fanno questo per accedere a dati o funzionalità dal server in modo che possano essere utilizzati nel proprio codice.
 
-Ci sono molti motivi per cui potresti voler inviare una richiesta HTTP in Clojure. Ad esempio, potresti aver bisogno di comunicare con un server per ottenere dati, inviare informazioni di registrazione o semplicemente esplorare e imparare come funziona la comunicazione tramite richieste HTTP.
-
-## Come
-
-Ecco un semplice esempio di come inviare una richiesta HTTP in Clojure utilizzando la libreria `clj-http`:
-
+## Come fare:
 ```Clojure
-(ns http-example.core
-  (:require [clj-http.client :as client]))
+(ns myapp.core
+  (:require [clojure.http.client :as http]))
 
-(defn send-request []
-  (let [response (client/get "https://jsonplaceholder.typicode.com/todos/1")]
-    (println (:status response)) ; Stampa lo stato della risposta
-    (println (:body response))))) ; Stampa il corpo della risposta
-```
+; Esempio di invio di una richiesta GET al server
+(http/get "https://www.amazon.com")
 
-L'output di questo codice sarà:
+; Esempio di invio di una richiesta POST con dati aggiuntivi
+(http/post "https://www.example.com/login" {:username "user123" :password "pa$$word"})
 
 ```
-200
-{"userId": 1, "id": 1, "title": "delectus aut autem", "completed": false}
-```
 
-Per inviare una richiesta in un formato diverso da `GET`, puoi utilizzare la funzione `post`. Ad esempio:
+## Approfondimenti:
+In passato, per interagire con i server era necessario utilizzare protocolli più complessi come FTP o Telnet. Tuttavia, oggi l'utilizzo di richieste HTTP è diventato lo standard de facto per la comunicazione con i server web. In alternativa, i programmatori possono utilizzare librerie esterne per semplificare le richieste HTTP, come HTTP Client incluso nella libreria standard di Clojure.
 
-```Clojure
-(client/post "https://jsonplaceholder.typicode.com/posts"
-             {:body {:title "Test post" :body "This is a test post"}})
-```
-
-## Deep Dive
-
-Invio di richieste con `clj-http` è molto semplice, tuttavia, se vuoi esplorare più opzioni e comprendere meglio come funziona la comunicazione HTTP, ci sono alcuni concetti importanti da considerare:
-
-- È possibile specificare header personalizzati utilizzando il parametro `:headers` nelle funzioni `get` e `post`.
-- Puoi passare parametri di query utilizzando il parametro `:params`.
-- Puoi specificare diversi tipi di contenuti utilizzando il parametro `:content-type`.
-
-Per ulteriori informazioni, puoi consultare la documentazione ufficiale di `clj-http`.
-
-## Vedi anche
-
-- [Documentazione ufficiale di `clj-http`](https://github.com/dakrone/clj-http)
-- [Tutorial su richieste HTTP in Clojure](https://www.luminusweb.net/docs/http-client.html)
-- [Esempio di gestione di richieste HTTP con `clj-http`](https://www.hackingnote.com/en/clojure-alexandria-clj-http/)
+## Vedi anche:
+- [HTTP Client: Libreria standard di Clojure](https://clojure.github.io/clojure/clojure.http.client-api.html)
+- [How to Use HTTP Requests in Clojure](https://www.stuartsierra.com/2014/01/25/how-to-use-http-requests-in-clojure/)

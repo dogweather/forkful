@@ -1,7 +1,7 @@
 ---
-title:                "Eliminando caracteres que coinciden con un patrón"
-html_title:           "Bash: Eliminando caracteres que coinciden con un patrón"
-simple_title:         "Eliminando caracteres que coinciden con un patrón"
+title:                "Borrando caracteres que coinciden con un patrón"
+html_title:           "Bash: Borrando caracteres que coinciden con un patrón"
+simple_title:         "Borrando caracteres que coinciden con un patrón"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Strings"
@@ -10,42 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¿Qué & Por qué?
+Borrar caracteres que coinciden con un patrón es una técnica utilizada por los programadores para eliminar ciertos elementos de un texto o archivo que siguen un patrón en particular. Por ejemplo, se puede utilizar para eliminar caracteres especiales o espacios en blanco de una cadena de texto. Los programadores realizan esta acción para limpiar y formatear datos con el fin de que puedan ser procesados correctamente por sus programas.
 
-Borrar caracteres que coinciden con un patrón es una tarea común en la programación de Bash. Esto puede ser necesario para limpiar datos o para realizar operaciones específicas en un archivo o cadena.
-
-## Cómo hacerlo
-
-Para borrar caracteres que coinciden con un patrón en Bash, utilizamos el comando `sed` seguido de la expresión regular que queremos encontrar y el archivo o cadena en el que queremos realizar la eliminación.
-
-Por ejemplo, si queremos eliminar todas las letras "a" de un archivo llamado `texto.txt`, usamos el siguiente comando en la terminal:
-
-```
+## ¿Cómo hacerlo?
+Se puede utilizar el comando `sed` en Bash para eliminar caracteres que coinciden con un patrón en un archivo de texto. Por ejemplo, si queremos borrar todas las letras "a" en un archivo llamado `texto.txt`, podemos usar el siguiente comando:
+```Bash
 sed 's/a//g' texto.txt
 ```
+Esto eliminará todas las letras "a" del archivo y mostrará el resultado en la línea de comandos.
 
-Esto eliminará todas las letras "a" del archivo y mostrará el resultado en la terminal. También podemos guardar el resultado en un nuevo archivo agregando el operador de redirección `>` al final del comando.
-
-Si queremos eliminar un patrón específico de un archivo o cadena, podemos usar la opción `-e` seguida de la expresión regular deseada. Por ejemplo, si queremos eliminar todas las palabras que comiencen con la letra "b" de un archivo, usamos el siguiente comando:
-
+También se puede utilizar el comando `tr` para eliminar caracteres específicos de un archivo. Por ejemplo, si queremos eliminar todas las vocales de un archivo llamado `texto.txt`, podemos usar el siguiente comando:
+```Bash
+tr -d 'aeiou' < texto.txt
 ```
-sed -e 's/\bb[a-z]*//g' archivo.txt
-```
+Esto eliminará todas las vocales del archivo y mostrará el resultado en la línea de comandos.
 
-Aquí, `\b` representa un límite de palabra y `[a-z]*` representa cualquier cantidad de letras minúsculas. Esto asegura que solo se eliminarán palabras que comiencen con la letra "b". 
+## Profundizando
+Borrar caracteres que coinciden con un patrón no es una técnica nueva, ya que se ha utilizado desde los primeros días de la programación de computadoras. En los primeros lenguajes de programación, esta acción era realizada mediante el uso de comandos específicos para manipular cadenas de texto. Sin embargo, con el avance de la tecnología, se han creado comandos más eficientes y poderosos, como `sed` y `tr`, que facilitan esta tarea a los programadores.
 
-## Inmersión profunda
+Además de `sed` y `tr`, también se pueden utilizar otros comandos como `grep` y `awk` para eliminar caracteres que coinciden con un patrón en un archivo. Estos comandos tienen diferentes funcionalidades y opciones, por lo que se recomienda explorarlos para encontrar la mejor solución en cada situación.
 
-El comando `sed` se utiliza para realizar operaciones de edición de texto en Bash. Su sintaxis general es `sed 'acción' archivo`, donde "acción" puede ser una expresión regular o un comando de edición específico.
-
-Además de la opción `-e`, también podemos usar otras opciones como `-i` para editar un archivo directamente, `-n` para suprimir la salida predeterminada y mostrar solo las líneas que se han modificado, y `-r` para una mayor compatibilidad con expresiones regulares. 
-
-También podemos utilizar diferentes comandos de edición, como `d` para eliminar líneas, `p` para imprimir líneas y `y` para cambiar caracteres. Estos comandos se agregan después de la expresión regular y se separan con una coma.
-
-En resumen, el comando `sed` es una herramienta útil para realizar operaciones de edición de texto en Bash y puede ser personalizado según nuestras necesidades utilizando diferentes opciones y comandos de edición.
+En cuanto a la implementación, los comandos `sed` y `tr` utilizan diferentes algoritmos para eliminar caracteres. Mientras que `sed` utiliza expresiones regulares para identificar los patrones, `tr` utiliza tablas de traducción internas. Por lo tanto, dependiendo de la complejidad del patrón, uno puede ser más eficiente que el otro.
 
 ## Ver también
-
-- [Documentación de Bash](https://www.gnu.org/software/bash/)
-- [Expresiones regulares en Bash](https://www.regular-expressions.info/posix.html)
-- [Tutorial de sed](https://www.grymoire.com/Unix/Sed.html)
+- Documentación oficial de `sed`: https://www.gnu.org/software/sed/manual/sed.html
+- Documentación oficial de `tr`: https://www.gnu.org/software/coreutils/manual/html_node/tr-invocation.html
+- Documentación oficial de `grep`: https://www.gnu.org/software/grep/manual/grep.html
+- Documentación oficial de `awk`: https://www.gnu.org/software/gawk/manual/gawk.html

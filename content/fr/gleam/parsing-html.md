@@ -1,7 +1,7 @@
 ---
-title:                "Analyse de HTML"
-html_title:           "Gleam: Analyse de HTML"
-simple_title:         "Analyse de HTML"
+title:                "Analyse de code HTML"
+html_title:           "Gleam: Analyse de code HTML"
+simple_title:         "Analyse de code HTML"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "HTML and the Web"
@@ -10,42 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi 
+## Quoi & Pourquoi? 
+Le parsing HTML est un processus de traitement de fichiers HTML pour extraire des informations spécifiques du contenu. Les programmeurs utilisent le parsing HTML pour automatiser la collecte de données, simplifier le traitement de texte, et faciliter l'intégration avec d'autres langages de programmation.
 
-Tu sais comment ça se passe : tu dois extraire des informations à partir d'un site Web et tu te retrouves à passer des heures à les copier-coller manuellement. Mais il y a une manière beaucoup plus facile : utiliser Gleam pour analyser automatiquement le HTML !
-
-## Comment faire 
-
-Voici comment utiliser Gleam pour extraire des données en HTML :
+## Comment faire:
+Voici un exemple de code en Gleam qui montre comment utiliser le parsing HTML pour extraire le titre et le contenu d'un article de blog en ligne:
 
 ```Gleam
-let html = "<div><h1>Titre</h1><p>Paragraphe</p></div>"
-let parsed = Html.parse(html)
+let url = "https://example.com/article"
+let document = Url.get(url)
+|> Text.from_string
+|> Html.parse
 
-Html.tag(parsed) // "div"
-Html.children(parsed) // une liste contenant {"h1", "p"}
+let title = document
+|> Html.find("h1")
+|> Html.text
 
+let content = document
+|> Html.find("#article-content")
+|> Html.children
+|> Html.text
 ```
 
-Et voici le résultat: 
-
+Résultat:
 ```
-Titre
-Paragraphe
+title = "Mon super article"
+content = "Voici le contenu de mon article qui est très intéressant."
 ```
 
-## Plongeon en profondeur 
+## Plongée en profondeur:
+Le parsing HTML a été développé dans les années 1990, lorsque le World Wide Web a commencé à gagner en popularité. Aujourd'hui, il existe plusieurs alternatives au parsing HTML telles que XML, JSON, et CSV. Cependant, le HTML reste un format couramment utilisé en raison de son support multiplateforme et de sa facilité d'utilisation pour les humains et les machines. L'implémentation du parsing HTML peut varier en fonction du langage de programmation utilisé, mais les concepts de base restent les mêmes.
 
-Maintenant que tu sais comment utiliser Gleam pour extraire les données HTML, voici quelques informations supplémentaires pour te permettre de devenir un pro :
-
-- `Html.tag` te renvoie le nom de la balise du HTML.
-- `Html.children` te permet d'accéder aux balises enfants.
-- `Html.attributes` te fournit une liste de tous les attributs présents dans le HTML.
-- Tu peux également utiliser `Html.find` pour trouver une balise spécifique dans le document HTML.
-
-Et voilà, tu es désormais un expert en matière d'analyse HTML avec Gleam ! Tu peux maintenant dire adieu aux heures passées à copier-coller manuellement les données.
-
-## Voir aussi 
-
-- [Documentation officielle de Gleam](https://gleam.run)
-- [Guide complet pour débuter avec Gleam](https://gleam.run/getting-started/Hello-World.html)
+## Voir aussi:
+- [Documentation officielle de Gleam](https://gleam.run/)
+- [Tutoriel sur le parsing HTML avec Gleam](https://blog.gleam.run/parsing-html-with-gleam/)

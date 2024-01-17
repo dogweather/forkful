@@ -1,7 +1,7 @@
 ---
-title:                "Satunnaislukujen luominen"
-html_title:           "Fish Shell: Satunnaislukujen luominen"
-simple_title:         "Satunnaislukujen luominen"
+title:                "Sattumanvaraisten numeroiden luominen"
+html_title:           "Fish Shell: Sattumanvaraisten numeroiden luominen"
+simple_title:         "Sattumanvaraisten numeroiden luominen"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Numbers"
@@ -10,45 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi käyttää satunnaislukujen generointia?
+## Mitä ja miksi?
 
-Satunnaislukuja tarvitaan usein ohjelmoinnissa esimerkiksi testaamiseen tai satunnaisen käyttäjätoiminnan simuloimiseen. Satunnaislukujen generointi on myös hauska tapa lisätä arvaamattomuutta esimerkiksi peliohjelmiin.
+Satunnaisten numeroiden luominen on yksi yleisistä ohjelmointitehtävistä, jota käytetään monissa erilaisissa sovelluksissa. Se on tapa saada tietokone generoimaan satunnaisia lukuja, jotka voidaan sitten käyttää esimerkiksi arpajaisissa, pelien toiminnassa tai salausavaimissa.
 
-## Näin käytät Fish Shellin satunnaislukujen generointia
+## Miten?
+
+Fish Shell tarjoaa helpon tavan generoida satunnaisia lukuja. Käyttämällä `rand` -komentoa, voit luoda haluamasi määrän satunnaisia lukuja halutussa välissä. Esimerkiksi `rand 1 10` generoi yhden satunnaisen luvun välillä 1-10.
 
 ```Fish Shell
-# Generoidaan yksi kokonaisluku väliltä 1-100
-set random_number (random 1 100)
-echo "Satunnainen numero 1-100 väliltä: $random_number"
-
-# Generoidaan 10 desimaalilukua väliltä 0-1
-for i in (seq 1 10)
-  set random_decimal (math random)
-  echo "Satunnainen desimaaliluku 0-1 väliltä: $random_decimal"
-end
+> rand 1 10
+5
 ```
 
-**Lähtö:**
-```
-Satunnainen numero 1-100 väliltä: 47
-Satunnainen desimaaliluku 0-1 väliltä: 0.72341991
-Satunnainen desimaaliluku 0-1 väliltä: 0.22654887
-Satunnainen desimaaliluku 0-1 väliltä: 0.56914746
-Satunnainen desimaaliluku 0-1 väliltä: 0.94776117
-Satunnainen desimaaliluku 0-1 väliltä: 0.34783025
-Satunnainen desimaaliluku 0-1 väliltä: 0.90273647
-Satunnainen desimaaliluku 0-1 väliltä: 0.44382513
-Satunnainen desimaaliluku 0-1 väliltä: 0.65391913
-Satunnainen desimaaliluku 0-1 väliltä: 0.82163593
-Satunnainen desimaaliluku 0-1 väliltä: 0.99463275
+Voit myös antaa `rand` -komennolle parametrina halutun lukumäärän ja se generoi automaattisesti satunnaiset luvut välillä 0-100.
+
+```Fish Shell
+> rand 5
+12 45 76 23 99
 ```
 
-## Syvällistä tietoa satunnaislukujen generoinnista
+## Syvempi sukellus
 
-Fish Shell käyttää satunnaislukujen generoimiseen **rand**-funktiota, joka palauttaa desimaaliluvun väliltä 0-1. Voimme muuttaa tätä lukua kertomalla halutulla tulon välillä, esimerkiksi saatavista lukuja väliltä 100-200 kertomalla rand luvulla 100-200.
+Satunnaisia lukuja on käytetty jo varhaisista tietokoneaikakausista lähtien. Aluksi niitä generoitiin fyysisillä menetelmillä, kuten esimerkiksi arpakuution heittämisellä. Nykyään tietokoneet käyttävät monimutkaisempia algoritmeja luomaan satunnaisia lukuja, jotka ovat mahdollisimman sattumanvaraisia.
 
-## Katso myös
+Toinen tapa generoida satunnaisia lukuja Fish Shellissä on käyttämällä `openssl` -komentoa. Tämä tarjoaa enemmän vaihtoehtoja, kuten mahdollisuuden generoida myös satunnaisia salasanoja.
 
-- [Fish Shellin virallinen dokumentaatio](https://fishshell.com/docs/current/index.html)
-- [Satunnaislukujen generointi Pythonilla](https://realpython.com/python-random/)
-- [Lisää vinkkejä ohjelmointiin](https://www.freecodecamp.org/news/)
+```Fish Shell
+> openssl rand -base64 10
+DQ+jG+4hQq8UlA==
+```
+
+## Tutustu myös
+
+- [Fish Shell dokumentaatio](https://fishshell.com/docs/current/index.html)
+- [Fish Shellin `rand` -komento](https://fishshell.com/docs/current/cmds/rand.html)
+- [Wikipedia-artikkeli satunnaisluvuista](https://en.wikipedia.org/wiki/Random_number_generation)

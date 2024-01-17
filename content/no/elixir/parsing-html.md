@@ -10,46 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+Hva & Hvorfor?
+Parsing av HTML er prosessen med å analyse og tolke HTML-kode for å kunne hente ut relevant informasjon fra en nettside. Dette gjøres ofte av utviklere for å kunne manipulere eller hente ut spesifikke data fra en nettside, for eksempel for å bygge webkrypere eller automatisere visse oppgaver.
 
-Hvorfor ville noen engasjere seg i å lese og analysere HTML? Vel, for å automatisere den kjedelige og tidkrevende oppgaven med å skrape informasjon fra nettsider. Ved å bruke Elixir til å parsere HTML kan du effektivt hente ut relevant data og deretter bruke det til å bygge applikasjoner eller automatiseringsskript.
-
-## Slik gjør du det
-
-For å parsere HTML i Elixir, kan du bruke biblioteket "Floki". Dette biblioteket lar oss analysere og utvinne data fra HTML ved hjelp av CSS-selektorer. La oss se på et eksempel:
+Hvordan:
+Vi kan bruke Elixir til å parse HTML ved å bruke biblioteker som for eksempel Floki eller Tesla. Her er et eksempel på hvordan du kan hente ut alle lenker fra en nettside:
 
 ```Elixir
-# Installer biblioteket
-mix deps.get floki
-
-# Importer biblioteket og last inn HTML fra en nettside
-iex> alias Floki
-iex> html = Floki.parse_html("
-      <div class='article'>
-        <h1>Elixir er fantastisk!</h1>
-        <p>Du kan bygge kraftige applikasjoner på kort tid med Elixir.</p>
-      </div>")
-
-# Bruk CSS-selektoren for å hente ut ønsket data
-iex> Floki.find(html, "h1")
-[{:open, "h1", [], []},
-  "Elixir er fantastisk!",
- {:close, "h1"}]
-
-iex> Floki.find(html, "p")
-[{:open, "p", [], []},
-  "Du kan bygge kraftige applikasjoner på kort tid med Elixir.",
- {:close, "p"}]
+html = Floki.parse(html_string)
+links = Floki.find(html, "a")
+for link <- links do
+  href = Floki.attribute(link, "href")
+  IO.puts(href)
+end
 ```
 
-Som du kan se i eksempelet, returnerer "find" funksjonen dataen som et tuple. Første element er typen, deretter taggen og til slutt teksten som var inne i taggen. Dette gjør det enkelt å ekskludere eller manipulere dataen, avhengig av hva du skal bruke den til.
+Dette vil skrive ut alle lenkene som finnes i HTML-koden. 
 
-## Dypdykk
+Dypdykk:
+Parsing av HTML har eksistert siden weben ble skapt på 90-tallet, og er fortsatt et vanlig verktøy for mange utviklere. Elixir har et stort utvalg av parsing-biblioteker, som gjør det enkelt å manipulere eller hente ut data fra nettsider. Alternativer til Elixir for parsing av HTML kan inkludere språk som Python eller Ruby. 
 
-Floki gjør også det mulig å manipulere HTML ved hjelp av funksjonen "html_to_iodata". Dette konverterer HTML til en praktisk iodata-format, noe som gjør det enklere å jobbe med dataen. I tillegg til "find", har Floki flere andre funksjoner som lar deg hente ut data basert på spesifikke kriterier, som for eksempel "all_children" og "all_siblings".
-
-## Se også
-
-- [Floki dokumentasjon](https://hexdocs.pm/floki/)
-- [Elixir offisiell hjemmeside](https://elixir-lang.org/)
-- [Elixir for nybegynnere](https://elixir-lang.org/getting-started/introduction.html)
+Se også:
+- [ElixirFloki biblioteket](https://github.com/philss/floki)
+- [ElixirTesla biblioteket](https://github.com/teamvest/tesla)

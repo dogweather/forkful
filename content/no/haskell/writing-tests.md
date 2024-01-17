@@ -1,7 +1,7 @@
 ---
-title:                "Skrive tester"
-html_title:           "Haskell: Skrive tester"
-simple_title:         "Skrive tester"
+title:                "Skriver tester"
+html_title:           "Haskell: Skriver tester"
+simple_title:         "Skriver tester"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Testing and Debugging"
@@ -10,47 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hva og hvorfor?
+Å skrive tester er en viktig del av utviklingsprosessen for programmerere. Dette involverer å lage små kodebiter som sjekker om visse deler av koden fungerer som de skal. Tester bidrar til å sikre at koden fungerer riktig og gjør det lettere å finne og rette feil.
 
-Å skrive tester er en viktig del av å være en god utvikler. Det sikrer at koden vår fungerer som den skal, og gjør det enklere å identifisere og fikse feil.
-
-## Hvordan Skrive Tester i Haskell
-
-Det første vi må gjøre er å importere testbiblioteket HUnit ved å skrive følgende linje øverst i koden vår:
+## Hvordan:
+For å skrive tester i Haskell, kan du bruke et rammeverk som Hspec eller QuickCheck. La oss se på et eksempel med Hspec:
 
 ```Haskell
-import Test.HUnit
+import Test.Hspec
+
+main :: IO ()
+main = hspec $ do
+  describe "add" $ do
+    it "adds two numbers" $ do
+      add 2 4 `shouldBe` 6
 ```
 
-Deretter kan vi begynne å skrive vårt første test ved å bruke funksjonen `TestLabel`. Her er et eksempel på en enkel testfunksjon som sjekker om 2+2 er lik 4:
+Dette eksempelet sjekker om funksjonen "add" legger sammen to tall på riktig måte. Output vil være:
 
 ```Haskell
-test1 = TestCase (assertEqual "2+2 er lik 4" 4 (2+2))
+add
+  - adds two numbers
 ```
 
-Vi kan også gruppere flere tester sammen ved å bruke funksjonen `TestList`, som lar oss liste opp flere testfunksjoner. Her er et eksempel på en testliste med to tester:
+Her får vi bekreftet at testen ble kjørt og at resultatet stemmer overens med forventningene våre.
 
-```Haskell
-tests = TestList [test1, test2]
-```
+## Dypdykk:
+Å skrive tester har eksistert siden begynnelsen av programmering som en måte å sikre kvaliteten på kode. I Haskell er det vanlig å bruke rammeverk som Hspec eller QuickCheck for å skrive tester. Det finnes også alternative metoder som Property-based Testing som bruker matematisk logikk for å generere og sjekke tester.
 
-For å kjøre testene våre, bruker vi funksjonen `runTestTT` og gir den testlisten som parameter:
+Når det gjelder implementasjonen av tester, bruker Haskell funksjonell programmering og type-systemet sitt for å gjøre det enklere å skrive og vedlikeholde tester. Dette bidrar til å øke robustheten og kvaliteten på koden.
 
-```Haskell
-main = do
-    runTestTT tests
-```
-
-Output fra dette programmet vil vise oss om testene våre har passert eller feilet. Hvis vi ønsker å sjekke om en funksjon returnerer riktig verdi, kan vi bruke funksjonen `assertEqual` til å sammenligne verdien med forventet resultat.
-
-## Dypdykk
-
-En av de største fordelene med å skrive tester er at det hjelper oss med å identifisere og fikse feil i koden vår. Ved å skrive tester før vi implementerer funksjonalitet, tvinger det oss til å tenke på alle mulige tilfeller og sikre at koden vår håndterer dem på en ønsket måte.
-
-Det finnes også flere testrammeverk i Haskell, som QuickCheck og SmallCheck, som lar oss generere tilfeldige tester for å sjekke om koden vår tåler forskjellige input. Dette kan være spesielt nyttig når vi koder med typer og ønsker å være sikre på at koden vår håndterer alle mulige typer input.
-
-## Se Også
-
-- [Offisiell HUnit Dokumentasjon](https://hackage.haskell.org/package/HUnit)
-- [Gentesting med QuickCheck](https://www.haskell.org/tutorial/generating.html)
-- [Haskell Programmeringsspråk](https://www.haskell.org/)
+## Se også:
+- [Hspec](https://hspec.github.io/)
+- [QuickCheck](https://hackage.haskell.org/package/QuickCheck)
+- [Property-based Testing](https://martinfowler.com/articles/property-based-testing.html)

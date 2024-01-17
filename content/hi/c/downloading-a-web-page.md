@@ -1,7 +1,7 @@
 ---
-title:                "एक वेब पेज डाउनलोड करना"
-html_title:           "C: एक वेब पेज डाउनलोड करना"
-simple_title:         "एक वेब पेज डाउनलोड करना"
+title:                "वेब पृष्ठ डाउनलोड करना"
+html_title:           "C: वेब पृष्ठ डाउनलोड करना"
+simple_title:         "वेब पृष्ठ डाउनलोड करना"
 programming_language: "C"
 category:             "C"
 tag:                  "HTML and the Web"
@@ -10,49 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Kyon
+## क्या & क्यों?
+वेब पृष्ठ को डाउनलोड करना दो चीजों का अर्थ है - प्रथम, आप उस पृष्ठ को अपने कंप्यूटर में डाउनलोड करते हैं जिससे आप उसे ऑफलाइन दौरान पेश कर सकें। और द्वितीय, प्रोग्रामर्स उस पृष्ठ के संबंध में जानकारी एकत्र करने के लिए उसको अपने सॉफ्टवेयर में उपयोग कर सकते हैं।
 
-Jab apne pass ek acchi computer aur internet connection ho, tab aap kai baar apne browser mein kisi web page ko open karte hai. Par kya aapne kabhi socha hai ki ye web page aapke computer par kaise load hota hai? Yeh possible hai kyunki hum C programming language ka use karke web page ko download kar sakte hai. Aaj hum dekhenge ki kaise hum C ke madad se ek web page ko download kar sakte hai.
-
-## Kaise Kare
-
-Sabse pehle, humein ek C compiler ki jarurat hogi jaise ki Turbo C ya GCC. Agar aapke paas ye nahi hai toh aap ise download kar sakte hai. Fir hum ```#include <stdio.h>``` aur ```#include <string.h>``` use karke required libraries ko load karenge. Iske baad hum ek function banayenge jo ek web page ko download karega, jaise ki ```void download_page(char url[])```.
-
-Fir hum ye function call karenge aur usmein ek URL bhi pass karenge jis web page ko hum download karna chahte hai. Iske baad hum ek file ko open karenge jisme hum web page ko save karenge. Ab hum web page ka content download karne ke liye ek loop chalayenge aur use file mein write karenge. Yehi process hota hai jab hum kisi bhi file ko download karte hai, bas fark itna hai ki hum webpage ke URL par request send karte hai. Jab humari loop puri ho jayegi, hum file ko close kar denge aur web page download ho jayega. Niche diye gaye code snippet se aap is process ko acchi tarah se samajh sakte hai.
-
+## कैसे करें:
 ```C
-#include<stdio.h>
-#include<string.h>
+#include <stdio.h>
 
-void download_page(char url[]) {
-   FILE *file = fopen("downloaded_page.html", "w"); // file ko write mode mein kholiye
-   char buffer[255];
-   FILE *pipe = popen(url, "r"); // request send karne ke liye
-   while(fgets(buffer, 255, pipe) != NULL) { // webpage ka content download karne ke liye loop chalaye
-      fprintf(file, "%s", buffer); // file mein content write kare
-   }
+// URL से डेटा डाउनलोड करने की फ़ंक्शन
+void download_page(char* url) {
+    // अलग-अलग ढंग से लेने से संबंधित मोजिलाया डाउनलोडिंग लाइब्रेरी
+    // विभिन्न संस्करणों में उपलब्ध है
+    // इस उदाहरण में हम libcurl का उपयोग करेंगे
+    // URL को पकड़ने के लिए सक्रिय करें
+    CURL *curl;
+    CURLcode res;
+    
+    // प्रथम आवेदन केंद्रित करें
+    curl = curl_easy_init();
+    if(curl) {
+        // प्रविष्ट इनपुट URL
+        curl_easy_setopt(curl, CURLOPT_URL, url);
+        
+        // डाउनलोड का नक्शा लागू करें
+        // वे बैफर वितरित हो जाएगी
+        curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_data);
+        curl_easy_setopt(curl, CURLOPT_WRITEDATA, &chunk);
+        
+        // संकेत दर्शान करें
+        // डाउनलोड करें
+        res = curl_easy_perform(curl);
+        
+        // समाप्त हो गया
+        // अपना स्टेटस जाँचें
+        if(res != CURLE_OK)
+            fprintf(stderr, "curl_easy_perform() failed: %s\n", curl_easy_strerror(res));
 
-   fclose(file); // file ko close kare
-   pclose(pipe); // pipe ko close kare
-}
-
-int main() {
-   char url[255] = "https://example.com"; // yaha URL change kare apne choice ke hisab se
-   download_page(url); // download_page function ko call kare
-   return(0);
+        // कहेंगे, अब CURL विनिर्देश अक्रेसीफीडबैग दुबारा प्रायोग करें
+        curl_easy_cleanup(curl);
+    }
 }
 ```
 
-Output:
+## विस्तृत निरीक्षण:
+पहले, पृष्ठ डाउनलोडिंग का प्रथम उपभोक्ता, World Wide Web, 1989 में जन्मदिन मनाया गया था। एक दशक में, विश्वव्यापी वेब ने लाखों और एक सेवा को अपनाया है जो समस्याएं समाधान करती हैं और लोगों को उपयोगकर्ता अनुभव में सुधार करती हैं। और भारी वेब अधिकारियों के सबसे अधिक महत्वपूर्ण है, उनके बिना इंटरनेट की दुनिया अधूरी होती है।
 
-Ek baar code run hone ke baad, aapko apne current directory mein ek file "downloaded_page.html" ki tarah dikhengi. Aap ise notepad ya kisi bhi HTML editor mein open karke dekh sakte hai.
+उदधरण, जब आप अपने वेब ब्राउज़र में स्थानीय फाइलों तक पहुंचने अखरों का उपयोग करते हैं, यह अमल एक प्रदूषकत निकासी होता है - और यह आपके निजी नेटवर्क सुरक्षा का ध्यान रखता है। इस प्रदर्शन से और अधिक बढ़िया प्रदर्शन से आप अपने वेब साइट को स्थानान्तरित कर सकते है।
 
-## Deep Dive
-
-Jab hum C programming language ka use karke ek web page ko download karte hai, tab hum ek file jisme web page ka content save hota hai, bana lete hai. Hum is file ka use kisi bhi tarah se kar sakte hai. Jaise ki hum is file ka content parse karke, acche se format kar sakte hai aur kisi dusre file mein store kar sakte hai. Is tarah se hum web scraping ya data extraction bhi kar sakte hai.
-
-See Also:
-
-- https://www.geeksforgeeks.org/downloading-a-web-page-using-curl-library/
-
-- https://www.codespeedy.com/download-web-page-source-data-using-c-programming-language/
+## संबंधित स्रोतों:
+1. [libcurl आधिकारिक वेबसाइट](https://curl.haxx.se

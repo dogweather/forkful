@@ -10,42 +10,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-As developers, we want our code to be reliable and error-free. Writing tests is essential in ensuring that our code works as intended and to catch any potential bugs before they make their way into production. By writing tests, we can increase the overall quality of our code and have confidence in its functionality.
+## What & Why?
+Writing tests is a way for programmers to verify that their code works as intended. It involves creating a series of automated tests that simulate different use cases and check for expected outcomes. By writing tests, programmers can catch and fix bugs early on in the development process, ensuring that their code is reliable and functional.
 
-## How To
-To write tests in Ruby, we will be using a popular testing framework called RSpec. Let's take a look at how we can create a simple test for a method that adds two numbers together.
+## How to:
+To write tests in Ruby, you'll need to use a testing framework such as MiniTest or RSpec. These frameworks provide methods and structure for writing tests in a clear and organized way. Here's an example of a simple test using MiniTest:
 
-```
-Ruby require 'rspec'
+```Ruby
+require 'minitest/autorun'
 
-# Define our method for addition
-def add(num1, num2)
-  num1 + num2
+class TestCalculator < MiniTest::Test
+  def setup
+    @calculator = Calculator.new
+  end
+
+  def test_addition
+    result = @calculator.add(2, 3)
+    assert_equal(5, result)
+  end
 end
 
-# Call RSpec's describe method and pass in the method we want to test
-describe '#add' do
-  it 'adds two numbers together' do
-    # Call RSpec's expect method to compare the output of our method
-    expect(add(2, 3)).to eq(5)
+class Calculator
+  def add(num1, num2)
+    num1 + num2
   end
 end
 ```
 
-To run this test, we can save it into a file called `add_spec.rb` and then use the `rspec` command in our terminal. This will give us a clear indication as to whether our test has passed or failed. In this case, our test will succeed, since the expected output of `5` is equal to the actual output of our `add` method.
+The test class is named `TestCalculator` and inherits from `MiniTest::Test`. The `setup` method creates an instance of our `Calculator` class to use in our test. The `test_addition` method defines our test case and uses the `assert_equal` method to check that the result of adding 2 and 3 is equal to 5.
 
-## Deep Dive
-When writing tests, there are a few important concepts to keep in mind. Firstly, your tests should be specific and cover different scenarios of your code. It's also important to have a balance between testing too much and testing too little. Finding the right balance can take some practice, but ultimately your goal is to have thorough tests without being overly redundant.
+Running this test would give us an output similar to this:
 
-You can also use Ruby's `context` and `before` blocks within your tests to organize and set up any variables or methods that may be needed for multiple tests.
+```
+Run options: --seed 10568
 
-Lastly, it's important to have a good understanding of RSpec's syntax, including the various matchers such as `eq` and `be_truthy` that can be used to compare values or check for truthiness.
+# Running:
 
-## See Also
-To learn more about writing tests in Ruby, check out these resources:
-- [RSpec Documentation](https://rspec.info/documentation/)
-- [Ruby Testing for Beginners](https://www.codewithjason.com/ruby-testing-for-beginners/)
-- [The Importance of Writing Tests in Ruby](https://dev.to/karlijnstoffels/the-importance-of-writing-tests-4607)
+.
 
-Now that you have a basic understanding of how to write tests in Ruby, go forth and start implementing them in your own code! Remember, writing tests may seem tedious at first, but it will save you time and headaches in the long run. Happy coding!
+Finished in 0.000999s, 1001.0010 runs/s, 0.0000 assertions/s.
+
+1 runs, 0 assertions, 0 failures, 1 errors, 0 skips
+```
+
+We can see that the test passed (indicated by the `.`) and we had 0 failures and 0 errors.
+
+## Deep Dive:
+The concept of writing tests is not unique to Ruby; it has been around for a long time and is a key aspect of the software development process. There are alternatives to testing frameworks such as using a debugger or manually testing code, but these methods are not as efficient or effective as automated testing.
+
+In Ruby, there are two main types of testing frameworks: unit testing and integration testing. Unit testing focuses on testing individual pieces of code, while integration testing tests how multiple pieces of code work together. Writing tests in Ruby is made even easier with the use of tools like `minitest-rails` which integrates testing with the Rails framework.
+
+## See Also:
+- [MiniTest Docs](https://github.com/seattlerb/minitest)
+- [RSpec](https://rspec.info/)
+- [Rails Testing Guide](https://guides.rubyonrails.org/testing.html)

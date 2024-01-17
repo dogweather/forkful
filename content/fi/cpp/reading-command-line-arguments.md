@@ -10,45 +10,74 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mikä & miksi?
+Lue komentorivin argumentteja tarkoittaa ohjelman lukemista ja hyödyntämistä niitä, jotka on annettu ohjelman käynnistämiseen liittyvässä komennossa. Tämä on hyödyllistä ohjelmoinnissa, jotta voidaan antaa erilaisia tietoja tai asetuksia, joita ohjelma tarvitsee suorittamiseen. Esimerkiksi voit antaa tiedoston nimen tai muita parametreja, jotka vaikuttavat ohjelman toimintaan.
 
-Jos haluat rakentaa monipuolisempia ja interaktiivisempia C++-ohjelmia, lukea komentoriviparametreja on hyödyllinen taito. Se antaa sinulle mahdollisuuden lukea syötteitä suoraan ohjelman suoritustilasta, mikä tekee ohjelmastasi joustavamman ja helpommin käytettävän.
-
-## Kuinka
+## Kuinka:
+### Esimerkki 1:
+Tässä näytetään, kuinka voit lukea komentorivin argumentit ja tulostaa ne näytölle:
 
 ```C++
 #include <iostream>
+#include <string>
 
-int main(int argc, char *argv[]) {
-    // argc kertoo kuinka monta parametria on annettu komentoriviltä
-    // argv sisältää kaikki parametrit merkkijonoina
-    // huomaa, että ensimmäinen parametri on aina itse ohjelman nimi (esim. ./ohjelma)
-    std::cout << "Ohjelmaan annettiin " << argc - 1 << " parametriä." << std::endl;
-
-    // käydään läpi kaikki parametrit ja tulostetaan ne yksi kerrallaan
-    for (int i = 1; i < argc; i++) {
-        std::cout << "Parametri " << i << ": " << argv[i] << std::endl;
+int main(int argc, char* argv[]) {
+    // Tulostaa kaikki annetut argumentit
+    for (int i = 0; i < argc; i++) {
+        std::cout << "Argument #" << i << ": " << argv[i] << std::endl;
     }
-
     return 0;
 }
 ```
 
-Esimerkkituloste, kun suoritetaan ohjelma komentoriviltä seuraavasti: `./ohjelma hello world`
+### Esimerkki 2:
+Voit myös käsitellä erikseen tiettyjä argumentteja, kuten tässä, jossa lukee syötetyn tiedoston nimen ja tulostaa sen sisällön:
+
+```C++
+#include <iostream>
+#include <fstream>
+#include <string>
+
+int main(int argc, char* argv[]) {
+    std::string filename;
+    
+    // Tarkistetaan onko annettu tiedoston nimi
+    if (argc > 1) {
+        // Tiedoston nimi on annettu ensimmäisenä argumenttina
+        filename = argv[1];
+        
+        // Luetaan tiedosto
+        std::ifstream file(filename);
+        
+        // Tulostetaan tiedoston sisältämät rivit
+        std::string line;
+        while (getline(file, line)) {
+            std::cout << line << std::endl;
+        }
+        file.close();
+    }
+    return 0;
+}
+```
+
+Saatat saada tulosteen, kuten tämä:
 
 ```
-Ohjelmaan annettiin 2 parametriä.
-Parametri 1: hello
-Parametri 2: world
+Hello World!
+This is an example file.
 ```
 
-## Syväsukellus
+## Syväsukellus:
+### Historiallinen konteksti:
+Ennen kuin oli graafisia käyttöliittymiä, ohjelmia ajettiin komentoriviltä, ja komentorivin argumentit olivat tärkeä osa niiden käyttöä. Tämä ominaisuus on edelleen käytössä, vaikka graafiset käyttöliittymät ovat yleistyneet.
 
-Kun suoritat C++-ohjelmaa komentoriviltä, voit antaa sille haluamasi parametrit. Usein tätä ominaisuutta käytetään esimerkiksi tietokantayhteyksien määrittämiseen tai muokkaamaan ohjelman asetuksia. Komentoriviparametrien lukeminen tapahtuu `argc` ja `argv` muuttujien avulla. `argc` kertoo, kuinka monta parametria annettiin, ja `argv` sisältää nämä parametrit merkkijonoina.
+### Vaihtoehtoja:
+Jos et halua lukea komentorivin argumentteja, voit myös käyttää ympäristömuuttujia tai lukea tiedot käyttäjältä suoraan ohjelman suorituksen aikana.
 
-Kun käsittelet komentoriviparametreja C++-koodissa, on tärkeää muistaa, että `argv` sisältää vain merkkijonot, eli sinun täytyy muuntaa ne tarvittaessa halutulle datatyyppiälle, kuten kokonaisluvuksi tai liukuluvuksi. Lisäksi kannattaa varmistaa, että käyttäjä antaa oikeat parametrit, esimerkiksi tietokantayhteyksissä tarkastellaan, onko annettu tietokantatiedosto olemassa ennen kuin yritetään muodostaa yhteys.
+### Toteutus:
+Komentorivin argumentit välitetään ohjelman käyttöjärjestelmän käynnistyskohdassa, ja ne tallennetaan pääohjelman argumenttiluetteloon. Tämän avulla ohjelma voi käyttää niitä suorituksen aikana.
 
-## Katso myös
-- [C++ - Komentoriviparametrit](https://www.cplusplus.com/articles/DEN36Up4/)
-- [C++ Tutorial - Command Line Arguments](https://www.studytonight.com/cpp/command-line-arguments-in-cpp.php)
-- [How to read command line arguments in C++](https://stackoverflow.com/questions/3024197/how-to-read-command-line-arguments-in-c)
+## Katso myös:
+- [Standard Linux command line arguments](https://tldp.org/LDP/abs/html/standard-options.html)
+- [Command line arguments in C++](https://www.tutorialspoint.com/command-line-arguments-in-cplusplus)
+- [Environment variables vs command line arguments](https://www.ctl.io/developers/blog/post/linux-commandline-arguments-vs-environment-variables/)

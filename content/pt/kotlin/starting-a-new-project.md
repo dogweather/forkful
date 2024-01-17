@@ -10,46 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+## O que & Por que?
 
-Você está pensando em iniciar um novo projeto em Kotlin? ótimo! Kotlin é uma linguagem de programação moderna, versátil e de alta performance que vem ganhando cada vez mais popularidade entre os desenvolvedores. Com sua sintaxe limpa e concisa, recursos de segurança e interoperabilidade com o Java, ela é a escolha ideal para projetos de diferentes tamanhos e complexidades.
+Iniciar um novo projeto é quando você começa a trabalhar em um novo software, seja para criar algo novo ou aprimorar um projeto existente. Programadores iniciam novos projetos para atender às necessidades de seus clientes ou para explorar novas ideias e tecnologias.
 
-## Como Começar
-
-Se você já está familiarizado com o Java, irá se sentir em casa ao começar a escrever código em Kotlin. Sua sintaxe é semelhante, mas com algumas melhorias que tornam o código mais legível e fácil de manter.
-
-Para começar um novo projeto em Kotlin, basta seguir os passos abaixo:
-
-1. Instale o IntelliJ IDEA, a IDE oficial do Kotlin.
-2. Crie um novo projeto Kotlin selecionando "File" > "New" > "Project..." e escolhendo o tipo de projeto desejado (aplicativo, biblioteca, sistema multiplataforma, etc.).
-3. Escolha a versão mais recente do Kotlin como linguagem principal do projeto.
-4. Aproveite o intellisense inteligente do IntelliJ IDEA ao escrever seu código Kotlin.
-
-Aqui está um exemplo simples de um programa "Hello World" em Kotlin:
+## Como fazer:
 
 ```Kotlin
 fun main() {
-    println("Olá mundo!")
+    println("Bem-vindo ao meu novo projeto em Kotlin!")
+    println("Este é um exemplo simples de código que você pode usar para começar seu próprio projeto.")
 }
 ```
 
-Outra vantagem de usar Kotlin é o suporte a ferramentas modernas de build, como o Gradle e o Maven. Com poucas configurações, você pode facilmente gerenciar dependências, compilar e executar seu projeto.
+Saída:
 
-## Mergulho Profundo
+```
+Bem-vindo ao meu novo projeto em Kotlin!
+Este é um exemplo simples de código que você pode usar para começar seu próprio projeto.
+```
 
-Antes de começar um novo projeto em Kotlin, é importante entender suas características principais e como elas podem ser úteis para o seu projeto.
+## Mergulho Profundo:
 
-1. Segurança: Kotlin foi projetado para eliminar erros comuns de programação, como nullPointerExceptions, através do conceito de tipos de dados nulos. Isso torna o código mais seguro e menos propenso a falhas.
-2. Interoperabilidade com o Java: como mencionado anteriormente, Kotlin é interoperável com o Java, o que significa que você pode facilmente acessar bibliotecas e frameworks Java existentes em seu projeto Kotlin.
-3. Concisão: graças à sua sintaxe concisa, Kotlin permite escrever menos código para realizar as mesmas tarefas que em outras linguagens. Isso resulta em um código mais limpo e legível.
-4. Extensibilidade: uma das características mais poderosas do Kotlin é a possibilidade de adicionar novas funcionalidades às classes existentes sem precisar alterar seu código fonte original. Isso é feito através de extensões, que permitem que você estenda comportamentos de classes sem precisar criar subtipos.
-5. Multiplataforma: com o lançamento do Kotlin 1.2, a linguagem se tornou oficialmente multiplataforma, ou seja, você pode criar aplicativos que rodam em diferentes plataformas, como Android, iOS e Web.
+Quando se trata de iniciar um novo projeto em Kotlin, é importante entender o contexto histórico do Kotlin e por que ele se tornou uma escolha popular entre os programadores. Outras alternativas para iniciar um novo projeto incluem linguagens como Java ou Python, mas o Kotlin oferece uma sintaxe mais concisa e moderna, além de uma forte integração com o ambiente de desenvolvimento Android. Para implementar um novo projeto em Kotlin, basta configurar um novo projeto no seu IDE preferido e começar a escrever seu código.
 
-Agora que você já sabe o básico sobre Kotlin, é hora de iniciar seu novo projeto e explorar suas funcionalidades e recursos ainda mais!
+## Veja também:
 
-## Veja Também
+Confira o site oficial do Kotlin para aprender mais sobre a linguagem e ver exemplos de projetos em Kotlin: https://kotlinlang.org/
 
-- [Documentação Oficial do Kotlin](https://kotlinlang.org/docs.html)
-- [Kotlin Koans](https://play.kotlinlang.org/koans/overview)
-- [Kotlin Bootcamp](https://developer.android.com/courses/kotlin-bootcamp/overview) (curso online gratuito da Google para aprender Kotlin)
-- [Blog do Kotlin](https://blog.jetbrains.com/kotlin/) (atualizações e notícias sobre o Kotlin)
+Para obter inspiração e ideias para seu novo projeto em Kotlin, confira o repositório oficial do Kotlin no GitHub: https://github.com/JetBrains/kotlin

@@ -10,33 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Kyu: 
+## क्या और क्यों?
 
-Shayad aapne kabhi socha ho ki kyu hum string ko lower case mein badalte hain. Lekin ye bahut hi zaroori hai kyunki lower case strings humare code ka consistency aur readability ko improve karta hai.
+क्या आपने कभी सोचा है कि आपके पास एक स्ट्रिंग है जो आपको किसी कर्सकॉम मामले में लोअर केज में परिवर्तित करना है? निश्चित ही हाँ! इसलिए, आपको अपने स्ट्रिंग को लोअर केज में परिवर्तित करने की जरूरत है। यह मुख्य रूप से यह आवश्यक होता है कि कंप्यूटर लॉगिक को समझने में आसानी हो।
 
-Kaise Kare: 
+## हाउ टू:
 
-Toh chaliye ab dekhte hain ki hum kaise kisi bhi string ko lower case mein convert kar sakte hain. Iske liye hum `toLowerCase()` method ka istemal karenge jo String class mein available hai. Code ke madhyam se dekhein:
+जावा में स्ट्रिंग को लोअर केज में परिवर्तित करने के लिए, आपको सिंपल फंक्शन `toLowerCase()` का इस्तेमाल करना होगा। नीचे दिए गए कोड ब्लॉक को देखें:
 
-  ```Java
-  String str = "HELLO WORLD";
-  String lowerCaseStr = str.toLowerCase();
-  System.out.println(lowerCaseStr);
-  ```
-Iska output hoga:
-  ```Java
-  hello world
-  ```
-Jaise ki hum dekh sakte hain, `toLowerCase()` method humare string ko pura lower case mein badal deta hai.
+```Java
+String str = "HELLO WORLD";
+String newStr = str.toLowerCase();
+System.out.println(newStr);
+```
 
-Gehri Jhaank: 
+आउटपुट:
+```
+hello world
+```
 
-Agar hum baat karein string ke character encodings ki toh lower case characters ASCII (American Standard Code for Information Interchange) ke values ke sath aate hain. Ye values 97 se 122 tak hote hain. Isse hum ye samajh sakte hain ki lower case characters ka ASCII value upper case characters se kam hota hai. Isliye `toLowerCase()` method apne string ke har character ke ASCII value ko check karta hai aur agar ye upper case character ke range mein aa jata hai toh use lower case character mein convert karta hai.
+यहाँ, हमने `toLowerCase()` फंक्शन को एक वेरिएबल में स्टोर किया और नई स्ट्रिंग बनाई है। इससे असली स्ट्रिंग को बदला नहीं जाता है।
 
-See Also:
+## डीप डाइव:
 
-Agar aapko Java programming ke aur bhi articles padhne hain toh neeche diye gaye links ki madad se ve padh sakte hain:
+ऐतिहासिक संदर्भ की बात करें, स्ट्रिंग को लोअर केज में परिवर्तित करना पहले से ही कई लैंग्वेजों में मौजूद था। इसका मुख्य उद्देश्य यह होता था कि उपयोगकर्ता को स्पष्ट रूप से पढ़ने के लिए दी गई थी। आज, हमारे समय में भी, इसका उद्देश्य यही है कि हमारे कंप्यूटर प्रोग्राम को समझने में आसानी शायद हम लोगों को पता न हो लेकिन लोअर केज में अन्य विकल्प भी उपलब्ध हैं, जैसे कि `toUpperCase()` और `capitalize()`।
 
-- [Introduction to Java Programming Language](https://www.geeksforgeeks.org/introduction-to-java/)
-- [Java String toLowerCase() method](https://www.geeksforgeeks.org/java-string-tolowercase-method/)
-- [ASCII Table for Characters](https://www.asciitable.com/)
+चरणबद्ध विवरण की बात करें, `toLowerCase()` फंक्शन का उपयोग स्ट्रिंग के सभी अक्षरों को लोअर केज में परिवर्तित करने के लिए किया जाता है। यदि स्ट्रिंग में कोई अंक या विशेष चिह्न हैं, तो वे उनकी पहचान को नहीं बदलते हैं। यह फंक्शन कैसे काम करता है, इसे जानने के लिए हमें स्ट्रिंग की यादृच्छिक ऊर्द्ध्वाशारीरिक स्थिति को बदलने का आवश्यकता होती है।
+
+## सी एल्‍सो:
+
+में `toLowerCase()` अधिक जानकारी पाने के लिए निम्नलिखित स्रोतों को देखें:
+
+- [Java Docs on `toLowerCase()`](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#toLowerCase())
+- [GeeksforGeeks article on String methods in Java](https://www.geeksforgeeks.org/string-methods-in-java-with-examples-set-1/)
+- [Tutorialspoint tutorial on Strings in Java](https://www.tutorialspoint.com/java/java_strings.htm)
+
+अब, आपको अपने स्ट्रिंग को लोअर केज में परिवर्तित करने के लिए पूरा तैयार हो गए हैं!

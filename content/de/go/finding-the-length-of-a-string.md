@@ -10,37 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Warum
+## Was & Warum?
+Die Länge einer Zeichenkette zu finden, bedeutet, die Anzahl der Zeichen in der Zeichenkette zu bestimmen. Programmierer tun dies, um beispielsweise die Größe eines Textfeldes zu bestimmen oder zu überprüfen, ob die Eingabe vom Nutzer die erwartete Länge hat.
 
-Sicherlich hast du dich schon einmal gefragt, wie du die Länge eines Strings in deinem Code abfragen kannst. Vielleicht möchtest du die Eingabe eines Nutzers überprüfen oder einfach nur die Anzahl der Zeichen in einem Wort zählen. In jedem Fall ist es wichtig zu wissen, wie du die Länge eines Strings in Go ermitteln kannst.
+## Wie geht's?
+Das Finden der Länge einer Zeichenkette in Go ist einfach. Verwenden Sie einfach die Funktion `len()`, die die Länge des übergebenen Strings zurückgibt. Hier ist ein Beispiel:
 
-# How To
+```
+package main
 
-Um die Länge eines Strings in Go zu finden, gibt es eine einfache Funktion namens `len()`. Diese Funktion akzeptiert einen String als Argument und gibt die Anzahl der Zeichen zurück.
+import "fmt"
 
-```Go
-länge := len("Hallo Welt")
-fmt.Println(länge)
+func main() {
+    str := "Guten Tag!"
+    
+    fmt.Printf("Die Länge der Zeichenkette '%s' ist %d", str, len(str))
+}
 ```
 
-Die obigen Zeilen deklarieren eine Variable `länge` und weisen ihr den Wert der `len()` Funktion zu, die den String "Hallo Welt" als Argument erhält. Diese Variable wird dann ausgegeben und die Ausgabe wäre `11`, da "Hallo Welt" aus 11 Zeichen besteht.
+Die Ausgabe wäre: `Die Länge der Zeichenkette 'Guten Tag!' ist 10`.
 
-Du kannst auch die Länge eines Strings variabler machen, indem du eine Variable mit einem String als Wert durch `len()` schickst.
+## Tiefere Einblicke
+Das Finden der Länge einer Zeichenkette ist keine neue Funktion. Es ist seit den Anfängen der Programmierung ein wichtiges Werkzeug. Früher wurde dies oft manuell durch das Zählen der Zeichen durchgeführt, aber mit der Entwicklung von Programmiersprachen gibt es nun Standardfunktionen wie `len()`. Alternativ zur `len()`-Funktion gibt es auch andere Methoden, um die Länge einer Zeichenkette zu bestimmen, wie z.B. `utf8.RuneCountInString()`, die die Anzahl der UTF-8 Codierungseinheiten zurückgibt.
 
-```Go
-wort := "programmieren"
-länge := len(wort)
-fmt.Println(länge)
-```
-
-Die Ausgabe wäre dann `12`, da das Wort "programmieren" aus 12 Zeichen besteht (einschließlich des Leerzeichens).
-
-# Deep Dive
-
-Die `len()` Funktion gibt die Anzahl der Zeichen eines Strings zurück, unabhängig davon, ob es sich um Buchstaben, Zahlen, Sonderzeichen oder Leerzeichen handelt. Beachte jedoch, dass in Go jedes Zeichen 8 Bits (oder 1 Byte) belegt. Dies bedeutet, dass die Länge eines Strings nicht immer der Anzahl der Buchstaben entspricht, sondern der Anzahl der Bytes. Dies kann insbesondere dann relevant sein, wenn du mit Nicht-ASCII- oder Unicode-Text arbeitest.
-
-# Siehe auch
-
-- [Strings in der Go-Dokumentation](https://golang.org/ref/spec#String_types)
-- [Weitere String-Manipulationsfunktionen in Go](https://www.golangprograms.com/golang-strings.html)
-- [Ein interaktiver Go-Tutorial, um mehr über die Sprache zu lernen](https://tour.golang.org/welcome/1)
+## Siehe auch
+- [Dokumentation zur Go `len()` Funktion](https://golang.org/pkg/builtin/#len)
+- [Eine kurze Geschichte der Zeichenkettenmanipulation](http://web.psung.name/hstripping/ch01s06.xhtml)
+- [Weitere Details zur UTF-8 Codierung](https://www.w3.org/International/questions/qa-utf8-bom.de)

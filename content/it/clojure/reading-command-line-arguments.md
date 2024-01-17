@@ -1,7 +1,7 @@
 ---
-title:                "Lettura degli argomenti della riga di comando"
-html_title:           "Clojure: Lettura degli argomenti della riga di comando"
-simple_title:         "Lettura degli argomenti della riga di comando"
+title:                "Leggere gli argomenti dalla riga di comando"
+html_title:           "Clojure: Leggere gli argomenti dalla riga di comando"
+simple_title:         "Leggere gli argomenti dalla riga di comando"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Files and I/O"
@@ -10,50 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+## Cosa & Perché?
 
-L'utilizzo degli argomenti della riga di comando è essenziale per rendere i nostri programmi più dinamici e versatili. Ci permettono di passare informazioni e opzioni al nostro codice senza doverlo modificare ogni volta che lo eseguiamo.
+Leggere gli argomenti dalla riga di comando è una pratica comune che i programmatori utilizzano per interagire con un programma durante l'esecuzione. Questi argomenti possono essere forniti dall'utente e influenzare il comportamento del programma.
 
-## Come fare
-
-Per leggere gli argomenti della riga di comando in Clojure, possiamo utilizzare la funzione *command-line-args* che restituisce una lista contenente gli argomenti forniti al momento dell'esecuzione del programma. Possiamo quindi utilizzare la funzione *nth* per accedere agli elementi specifici della lista. Ecco un esempio:
+## Come:
 
 ```Clojure
-(def args (command-line-args))
-(println "Il programma è stato eseguito con gli argomenti:" args)
-(println "Il primo argomento è:" (nth args 0))
-(println "Il secondo argomento è:" (nth args 1))
+(defn -main
+  [& args]
+  (println "Benvenuto! Gli argomenti che hai passato sono:")
+  (println args))
+  
 ```
-Output:
-
-```
-Il programma è stato eseguito con gli argomenti: ["arg1" "arg2"]
-Il primo argomento è: arg1
-Il secondo argomento è: arg2
-```
-
-## Approfondimento
-
-Oltre alla funzione *command-line-args*, possiamo anche utilizzare la libreria *clap*, che ci offre maggiori opzioni per gestire gli argomenti della riga di comando in modo più strutturato. Ad esempio, possiamo definire opzioni con valori obbligatori o facoltativi, impostare delle descrizioni per ogni opzione e gestire gli errori in modo più efficiente. Ecco un esempio di codice utilizzando *clap*:
-
-```Clojure
-(require '[clap.core :refer [arg opt parse]])
-
-(def opts (arg &quot;file&quot; :optional true :description &quot;Il file da elaborare&quot;)
-          (arg &quot;arg1&quot; :required true :description &quot;Primo argomento&quot;)
-          (opt :verbose &quot;-v&quot; :description &quot;Abilita il flag verbose&quot;))
-
-(def arg-map (parse opts))
-(println arg-map)
-```
-
-Output:
+Esclusivo alla funzione ```-main``` di Clojure, la variabile ```args``` conterrà una lista di tutti gli argomenti passati dalla riga di comando. Possiamo quindi stamparli a schermo utilizzando la funzione ```println```. Ad esempio, se eseguiamo il programma con gli argomenti "programma Clojure", otterremo l'output:
 
 ```
-{:file "nome_file" :arg1 "primo_argomento" :verbose true}
+Benvenuto! Gli argomenti che hai passato sono:
+("programma" "Clojure")
 ```
 
-## Vedi anche
+## Approfondimento:
 
-- https://clojure.org/reference/miscellaneous_functions#command-line-args
-- https://github.com/clojure/clap
+L'utilizzo degli argomenti dalla riga di comando è stato introdotto negli anni '70 con la creazione dei primi sistemi operativi a linea di comando. Oggi è ancora una pratica comune, ma ci sono alternative come l'utilizzo di variabili d'ambiente o la lettura da un file di configurazione.
+
+Per implementare la lettura degli argomenti dalla riga di comando, Clojure utilizza la funzione ```& args``` che combina automaticamente tutti gli argomenti passati in una lista.
+
+## Vedi anche:
+
+- [Documentazione ufficiale di Clojure sulla lettura degli argomenti dalla riga di comando](https://clojure.org/reference/evaluation#_command_line_args)

@@ -10,40 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+Co to jest pisanie testów i dlaczego programiści to robią?
 
-Pisanie testów jest nieodłączną częścią procesu tworzenia oprogramowania. Testy pozwalają nam na sprawdzenie działania naszego kodu i zapewniają, że nasza aplikacja działa zgodnie z oczekiwaniami. Dzięki nim możemy uniknąć błędów i zapewnić jakość naszego oprogramowania.
+Pisanie testów to proces, który polega na tworzeniu specjalnych fragmentów kodu, które sprawdzają poprawność działania innych części programu. Jest to niezbędne, ponieważ pozwala upewnić się, że przy zmianach w kodzie nie zostaną wprowadzone błędy, a także ułatwia odnalezienie istniejących problemów.
 
-## Jak zacząć
-
-Pisanie testów w języku Kotlin jest bardzo proste i intuicyjne. Wystarczy użyć wbudowanych w frameworku JUnit adnotacji `@Test` oraz `@Before` i `@After` do przygotowania testów i uruchamiania ich sekcji `setUp()` oraz `tearDown()`. Poniższy przykład pokazuje jak stworzyć test jednostkowy dla metody `calculateSum()`:
+Jak to zrobić:
 
 ```Kotlin
-@Test
-fun testCalculateSum() {
-    // Given
-    val calculator = Calculator()
-    val a = 5
-    val b = 10
+fun addNumbers(a: Int, b: Int): Int {
+    return a + b
+}
 
-    // When
-    val result = calculator.calculateSum(a, b)
+fun testAddNumbers() {
+    val result = addNumbers(2, 3)
+    assert(result == 5) // sprawdzanie poprawności działania funkcji
+    assert(result != 6) // przypadek, gdy funkcja nie działa poprawnie
+}
 
-    // Then
-    assertEquals(15, result)
+fun main() {
+    testAddNumbers() // wywołanie funkcji testowej
 }
 ```
 
-W powyższym przykładzie tworzymy instancję klasy `Calculator` i przekazujemy do niej dwie liczby, a następnie sprawdzamy czy wynik sumy jest zgodny z oczekiwaniami. Dzięki wbudowanym asercjom takim jak `assertEquals()` możemy szybko i łatwo porównać wartości i udokumentować oczekiwane rezultaty.
+Ta prosty przykład pokazuje, jak można pisać testy w języku Kotlin. W tym przypadku stworzyliśmy funkcję `addNumbers`, która dodaje dwie liczby, a następnie napisaliśmy funkcję testową, która sprawdza jej poprawność. Ważne jest, aby testy były częścią projektu od samego początku i aby były aktualizowane przy każdej zmianie w kodzie.
 
-## Deep Dive
+Zagłębienie się w temat:
 
-Kotlin oferuje również wiele innych funkcjonalności, które ułatwiają pisanie testów. Na przykład możemy wykorzystać adnotację `@TestInstance` do zmiany sposobu tworzenia instancji testów, aby uniknąć wielokrotnego uruchamiania metody `setUp()`. Możemy także użyć `assertThrows()` do sprawdzania czy nasz kod wywołuje oczekiwany wyjątek.
+Pisanie testów ma swoje korzenie w metodykach programowania zorientowanych na wydajność, takich jak Agile. Ma to na celu zapewnienie ciągłej integracji i weryfikacji zmian w kodzie. Alternatywą dla pisania testów są przeglądy kodu, ale nie zawsze są one wystarczające, ponieważ mogą być podatne na ludzkie błędy. Istnieją różne narzędzia do pisania testów, m.in. JUnit, TestNG czy Spek. Najważniejszą częścią pisania testów jest ustalenie jasnych warunków, dla których dana funkcja powinna działać poprawnie.
 
-Warto również wspomnieć o integracji z narzędziami do pokrycia kodu, takimi jak JaCoCo, który pozwala nam mierzyć, które części naszego kodu są pokryte przez testy. Dzięki temu możemy łatwo zidentyfikować luki w testowaniu i poprawić jakość naszych testów.
+Zobacz też:
 
-## Zobacz również
-
-- [Dokumentacja JUnit dla Kotlin](https://junit.org/junit5/docs/current/user-guide/#writing-tests)
-- [Why Test Code Should Be Clean](https://medium.com/quality-coding/why-test-code-should-be-clean-e28c2eaead
-) (ang.)
+Jeśli chcesz dowiedzieć się więcej o pisaniu testów w języku Kotlin, zapoznaj się z oficjalną dokumentacją: https://kotlinlang.org/docs/tutorials/coding-challenges.html. Możesz także przetestować swoje umiejętności poprzez rozwiązywanie zadań na stronach takich jak Codewars (https://www.codewars.com/). Pamiętaj, że pisanie testów to ważny element procesu tworzenia oprogramowania i warto poświęcić mu odpowiednią uwagę.

@@ -10,29 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co to jest i po co to robić?
 
-Czy kiedykolwiek zastanawiałeś się, jak obliczyć datę w przyszłości lub przeszłości? Może potrzebujesz określić datę wygaśnięcia umowy lub dowiedzieć się, kiedy odbędzie się ważne wydarzenie? W tym artykule opowiem Ci, jak to zrobić w języku Kotlin.
+Obliczanie daty w przeszłości lub przyszłości jest rutynowym zadaniem, które programiści muszą wykonywać w wielu projektach. Pliki, bazy danych, a nawet interfejsy użytkownika często wymagają określenia daty, która jest wcześniejsza lub późniejsza od bieżącej. Dlatego znajomość tego procesu jest koniecznością dla każdego programisty.
 
-## Jak to zrobić
+## Jak to zrobić?
 
-Aby obliczyć datę w przyszłości lub przeszłości, możemy skorzystać z klasy LocalDate z biblioteki standardowej języka Kotlin. Spójrzmy na poniższy przykład:
+Aby obliczyć datę w przeszłości lub przyszłości w języku Kotlin, wystarczy skorzystać z metody `plus` lub `minus` dostępnej na obiekcie `LocalDate`. Należy również podać liczbę dni, miesięcy lub lat, które chcemy dodać lub odjąć od bieżącej daty.
 
 ```Kotlin
 val currentDate = LocalDate.now()
-val futureDate = currentDate.plusYears(2).plusMonths(3)
-val pastDate = currentDate.minusDays(10)
-println("Dziś jest $currentDate, za 2 lata i 3 miesiące będzie $futureDate, a 10 dni temu było $pastDate.")
+val futureDate = currentDate.plusDays(10)
+val pastDate = currentDate.minusMonths(2)
 ```
 
-W powyższym kodzie najpierw tworzymy obiekt klasy LocalDate o nazwie "currentDate", reprezentujący aktualną datę. Następnie, wykorzystując metodę "plusYears" dodajemy 2 lata do tej daty, a następnie 3 miesiące za pomocą metody "plusMonths". W podobny sposób można odejmować dni, wykorzystując metodę "minusDays". Na koniec drukujemy wynik w czytelnej formie.
+W tym przykładzie utworzyliśmy trzy zmienne: `currentDate` przechowującą bieżącą datę, `futureDate` z datą 10 dni później i `pastDate` z datą 2 miesiące wcześniej. Dzięki prostocie języka Kotlin, obliczanie dat w przeszłości lub przyszłości jest bardzo wygodne i intuicyjne.
 
-## Deep Dive
+## Zagłębienie się
 
-Klasa LocalDate zawiera wiele przydatnych metod, pozwalających na manipulację datami w różnych formatach. W przykładzie powyżej wykorzystaliśmy metody "plusYears", "plusMonths" i "minusDays", ale istnieje także wiele innych takich jak "plusWeeks", "plusHours" czy "minusMinutes". Dodatkowo, klasa ta umożliwia także operacje na dniach tygodnia oraz porównywanie dat.
+Obliczanie dat w przeszłości lub przyszłości jest standardowym procesem w wielu językach programowania. Jednak w języku Kotlin jest to jeszcze prostsze dzięki wykorzystaniu metody `plus` i `minus` na obiekcie `LocalDate`. Istnieją również inne sposoby na wykonanie tego zadania, na przykład korzystając z biblioteki Joda-Time lub wykorzystując obiekt `Calendar` w języku Java. Jednak metoda Kotlin jest bardziej czytelna i wygodniejsza w użyciu.
 
-## Zobacz też
+## Zobacz również
 
-- Dokumentacja klasy LocalDate w języku Kotlin: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-local-date/
-- Poradnik na temat wykorzystania dat w Kotlinie: https://www.baeldung.com/kotlin/dates
-- Przykłady i wskazówki dla programistów: https://kotlinlang.org/docs/datetime.html
+[Dokumentacja Kotlin o dacie i czasie](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.time/java.time.-local-date/)
+
+[Kurs Kotlin na Courserze - Manipulacja datami i czasem](https://www.coursera.org/learn/kotlin-for-java-developers/lecture/GIWUV/dates-and-times-in-kotlin)

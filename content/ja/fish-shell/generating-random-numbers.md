@@ -1,7 +1,7 @@
 ---
-title:                "「ランダムな数字の生成」"
-html_title:           "Fish Shell: 「ランダムな数字の生成」"
-simple_title:         "「ランダムな数字の生成」"
+title:                "ランダムな数を生成する"
+html_title:           "Fish Shell: ランダムな数を生成する"
+simple_title:         "ランダムな数を生成する"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Numbers"
@@ -10,34 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Fish Shellでのランダムな数字の生成方法
+# 何をしていますか？
+プログラマーが乱数を生成するのは、ランダムなデータを作成するためです。これは、様々な用途に使用されます。例えば、ゲームやシミュレーション、セキュリティのテストなどです。
 
-## なぜ 
+# 方法：
+```Fish Shell ... ```コードブロック内にコーディング例とサンプルの出力があります。
 
-ランダムな数字を生成することで、あなたのプログラムをより面白くしたり、ランダムにデータを処理する必要がある場合に役立ちます。
+```bash
+# 乱数の生成
+echo (random)
 
-## 作り方 
+# 範囲を指定して乱数を生成
+echo (random 1 10)
 
-```Fish Shell
-set -l random (rand 1 10)
-echo $random
+# 整数のみを生成
+echo (random -i)
+
+# 複数の乱数を生成
+echo (random 1 100 5)
+
+# 10桁の乱数を生成
+echo (random -c 10)
+
+# 16進数の乱数を生成
+echo (random -x)
 ```
 
-このコードは、1から10までのランダムな整数を生成し、それを変数に格納しています。次に、`echo`コマンドを使用して、生成されたランダムな数字を表示します。
+出力例：
 
-```Fish Shell
-set -l random (math rand 10.0)
-echo $random
+```bash
+0.702657  # デフォルトの0から1までの浮動小数点数を返します。
+8         # 1から10までのランダムな整数を返します。
+88334     # 5つの乱数を生成します。
+2638987235 # 10桁の乱数を生成します。
+abfa      # 16進数の乱数を返します。
 ```
 
-こちらのコードでは、小数点を含むランダムな数字を生成しています。`math rand`コマンドを使用することで、指定した範囲で小数点を含むランダムな数字を生成することができます。
+# 深堀：
+乱数生成は、科学技術計算や統計学において古くから利用されてきました。かつては、物理学者や数学者が手動で乱数表を作成していましたが、現在ではコンピューターを使用して生成することが一般的です。
 
-## 深く掘り下げる 
+代替方法としては、ソフトウェアベースの乱数ジェネレーターの他に、ハードウェアベースのジェネレーターがあります。ハードウェアベースのジェネレーターは、コンピューターの内部状態に依存せず、外部の物理的な現象を使用して乱数を生成することができます。
 
-ランダムな数字を生成する方法には、さまざまなアルゴリズムがあります。Fish Shellでは、`rand`と`math rand`コマンドを使用することで、簡単にランダムな数字を生成することができます。しかし、より高度なランダム性を求める場合は、より複雑なアルゴリズムが必要になる可能性があります。また、生成されたランダムな数字の品質を評価する重要性もあります。
+Fish Shellでは、
 
-## 関連情報 
-
-- [Fish Shell公式ドキュメント](https://fishshell.com/docs/current/index.html)
-- [Mathコマンドの詳細](https://fishshell.com/docs/current/cmds/math.html)
-- [Random Number Generation - Wikipedia](https://en.wikipedia.org/wiki/Random_number_generation)
+# 他の情報
+- [Fish Shellの公式ドキュメント] (https://fishshell.com/docs/current/commands.html#random)
+- [乱数ジェネレーターについての詳細な説明] (https://en.wikipedia.org/wiki/Random_number_generation)

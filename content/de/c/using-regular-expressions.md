@@ -1,7 +1,7 @@
 ---
-title:                "Verwendung von regulären Ausdrücken"
-html_title:           "C: Verwendung von regulären Ausdrücken"
-simple_title:         "Verwendung von regulären Ausdrücken"
+title:                "Verwendung regulärer Ausdrücke"
+html_title:           "C: Verwendung regulärer Ausdrücke"
+simple_title:         "Verwendung regulärer Ausdrücke"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -10,51 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
-Regular Expressions, oder auch Reguläre Ausdrücke genannt, sind ein mächtiges Werkzeug in der Programmierung. Mit ihrer Hilfe können Texte nach bestimmten Mustern durchsucht und verarbeitet werden. Dies kann in vielen Situationen nützlich sein, wie zum Beispiel beim Validieren von Benutzereingaben oder beim Extrahieren von Daten aus großen Textdateien. In diesem Artikel lernen wir, wie man Reguläre Ausdrücke in C nutzen kann, um effektiv mit Texten umzugehen.
+## Was und Warum?
+Regular Expressions (kurz: Regex) sind eine nützliche Technik, die es Programmierern ermöglicht, komplexe Suchmuster in Texten zu definieren und zu extrahieren. Sie werden häufig verwendet, um eine bestimmte Sequenz von Zeichen in einem String zu finden oder um Daten von einem bestimmten Format zu validieren. Regex spart Zeit und macht den Code viel übersichtlicher, was für Programmierer oft genug Grund ist, sie zu benutzen.
 
-## How To
-Um Reguläre Ausdrücke in C zu verwenden, müssen wir das Headerfile "regex.h" einbinden. Dies ermöglicht uns die Verwendung von Funktionen wie "regcomp()" und "regexec()", welche uns dabei helfen, Reguläre Ausdrücke zu erstellen und auf Texte anzuwenden.
-
-Um einen Regulären Ausdruck zu erstellen, müssen wir zunächst die gewünschte Mustersequenz in Form eines Strings angeben, zum Beispiel ```"[0-9]+"```, was bedeutet, dass jedes Zeichen von 0 bis 9 mindestens einmal vorkommen muss. Anschließend verwenden wir die Funktion "regcomp()" um den Ausdruck zu kompilieren und in eine spezielle Struktur zu übertragen.
-
-Um nun diesen Regulären Ausdruck auf einen Text anzuwenden, benutzen wir die Funktion "regexec()" und übergeben ihr den kompilierten Ausdruck sowie den zu durchsuchenden Text. Diese Funktion gibt uns ein Ergebnis zurück, welches angibt, ob der Ausdruck im Text gefunden wurde und welche Stellen im Text dazu passen.
-
-Schauen wir uns ein Beispiel an:
+## Wie:
+In C können wir mit Hilfe der regulären Ausdrücke sehr einfach Daten verarbeiten und validieren. Um eine Regex in C zu verwenden, müssen wir das Header-File "regex.h" einbinden. Im folgenden Beispiel suchen wir in einem String nach einer bestimmten Zeichenkette und geben diese aus.
 
 ```C
-#include <regex.h>
 #include <stdio.h>
+#include <regex.h>
 
-int main(){
-    regex_t exp;
-    char *pattern = "[0-9]+";
-    char *text = "12345 abcde6789";
+int main() {
+    regex_t regex;
+    char *text = "Dies ist ein Beispieltext";
+    char *pattern = "Beispiel";
 
-    if(regcomp(&exp, pattern, 0) == 0){
-        int result = regexec(&exp, text, 0, NULL, 0);
-        if(result == REG_NOMATCH){
-            printf("Keine Übereinstimmung gefunden.");
-        }
-        else{
-            printf("Übereinstimmung gefunden an Position %d.", result);
-        }
+    if (regcomp(&regex, pattern, REG_EXTENDED) != 0) {
+        printf("Konnte den regulären Ausdruck nicht kompilieren.\n");
+        return 1;
     }
 
-    regfree(&exp);
+    // Länge des Match-Strings
+    size_t nmatch = 1;
+    // Array, um die Ergebnisse zu speichern
+    regmatch_t pmatch[nmatch];
+    // Überprüfen, ob der reguläre Ausdruck im String vorhanden ist
+    if (regexec(&regex, text, nmatch, pmatch, 0) == 0) {
+        // Ausgabe des gefundenen Matches
+        printf("Das Pattern '%s' wurde in '%s' gefunden.\n", pattern, text);
+        // Ausgabe des gefundenen Strings
+        printf("Der gefundene String ist: '%.*s'.\n", (pmatch[0].rm_eo - pmatch[0].rm_so), &text[pmatch[0].rm_so]);
+    } else {
+        printf("Kein Match gefunden.\n");
+    }
+
+    regfree(&regex);
     return 0;
 }
 ```
+Die Ausgabe des obigen Codes wäre:
 
-In diesem Beispiel definieren wir einen Regulären Ausdruck, der nach Zahlenblöcken sucht, und überprüfen damit den Text "12345 abcde6789". In diesem Fall wird die Ausgabe "Übereinstimmung gefunden an Position 0." sein, da der Zahlenteil des Textes genau am Anfang steht.
+```
+Das Pattern 'Beispiel' wurde in 'Dies ist ein Beispieltext' gefunden.
+Der gefundene String ist: 'Beispiel'.
+```
 
-## Deep Dive
-Reguläre Ausdrücke können mit verschiedenen Metazeichen noch komplexer gestaltet werden. Zum Beispiel kann das Zeichen "." verwendet werden, um jedes beliebige Zeichen zu matchen, oder das Zeichen "^" um das Muster nur am Anfang des Textes zu suchen. Auch die Verwendung von Gruppierungen mithilfe von runden Klammern ist möglich, um Teilausdrücke zu definieren.
+## Tiefergehende Information:
+Regex gibt es schon seit den 1950er Jahren und wurde in der Sprache SNOBOL von Ken Thompson entwickelt. Heutzutage gibt es auch andere Möglichkeiten, Suchmuster zu definieren und zu extrahieren, wie zum Beispiel mit Hilfe von String-Manipulationsfunktionen oder regulären Ausdrücken in anderen Programmiersprachen, aber Regex ist immer noch eine sehr beliebte Option für viele Programmierer. Die Implementierung von Regex in C ist relativ komplex und erfordert ein Verständnis von regulären Ausdrücken, so dass es manchmal einfacher ist, auf andere Methoden zurückzugreifen.
 
-Eine ausführliche Liste der verfügbaren Metazeichen und deren Funktionsweise findet man in der Dokumentation von "regex.h".
-
-Es ist außerdem wichtig zu wissen, dass Reguläre Ausdrücke in C standardmäßig keine Unicode-Unterstützung bieten. Wenn man also mit Zeichen außerhalb des ASCII-Zeichensatzes arbeiten möchte, muss dies speziell berücksichtigt werden.
-
-## Siehe Auch
-- [Reguläre Ausdrücke in C - Dokumentation](https://www.gnu.org/software/libc/manual/html_node/Regular-Expressions-in-C.html)
-- [Unicode in Regulären Ausdrücken in C](https://www.regular-expressions.info/unicode.html)
+## Siehe auch:
+- [regex.h - C Reference](https://www.gnu.org/software/libc/manual/html_node/POSIX-Regular-Expressions.html)
+- [Einführung in reguläre Ausdrücke (Regex) in C](https://www.geeksforgeeks.org/introduction-regular-expressions-in-c/)

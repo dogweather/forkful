@@ -10,48 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+## 무엇 & 왜?
 
-임시 파일을 생성하는 방법을 알아보기 전에, 먼저 왜 이것이 중요한지 생각해보겠습니다. 임시 파일은 프로그램이 실행 중일 때 사용되는 임시적인 저장공간으로, 더 나은 사용자 경험과 프로그램의 효율성을 위해 사용됩니다.
+임시 파일을 만드는 것은 일시적으로 사용되지만 필요한 파일로서, 개발자들이 자주 사용하는 기술입니다. 이는 주로 다른 파일들의 작업에서 임시적인 단계로 사용되고, 보통 프로그램이 끝나는 시점에 삭제됩니다. 이는 메모리나 디스크 공간을 효율적으로 사용하기 위해서 이해되어야 합니다.
 
-## 만드는 방법
+## 하는 방법:
 
-임시 파일을 만드는 가장 간단한 방법은 ```fs``` 모듈을 사용하는 것입니다. 아래의 코드 예제를 참고하세요.
-
+### 예제 1: 파일 이름 없이 임시 파일 만들기
 ```Javascript
 const fs = require('fs');
+const tmp = require('tmp');
 
-// 임시 파일 생성
-fs.writeFile('temp.txt', 'Hello World', (err) => {
-  if (err) throw err;
-  // 파일이 성공적으로 생성되었을 때 출력되는 메시지
-  console.log('임시 파일이 생성되었습니다.');
-});
-
-// 임시 파일 삭제
-fs.unlink('temp.txt', (err) => {
-  if (err) throw err;
-  // 파일이 성공적으로 삭제되었을 때 출력되는 메시지
-  console.log('임시 파일이 삭제되었습니다.');
-});
+const tmpobj = tmp.fileSync();
+console.log('임시 파일:', tmpobj.name);
 ```
 
-위의 코드는 ```fs.writeFile()``` 함수를 사용하여 ```temp.txt``` 파일을 생성하고, ```fs.unlink()``` 함수를 사용하여 해당 파일을 삭제하는 예제입니다.
+### 예제 2: 지정된 이름으로 임시 파일 만들기
+```Javascript
+const fs = require('fs');
+const tmp = require('tmp');
 
-## 깊이있게 알아보기
+const tmpobj = tmp.fileSync({ prefix: 'mytempfile-' });
+console.log('임시 파일 이름:', tmpobj.name);
+```
 
-임시 파일을 생성할 때 주의해야 할 점이 몇 가지 있습니다. 첫째, 생성된 임시 파일은 프로그램이 종료되는 시점에 반드시 삭제되어야 합니다. 그렇지 않을 경우, 시스템 내에 임시 파일이 쌓이게 되어 용량 부족이나 보안 문제를 일으킬 수 있습니다. 둘째, 임시 파일을 생성할 때는 프로그램이 실행 중일 때만 사용되도록 작성하는 것이 좋습니다. 그렇지 않을 경우, 사용자의 파일이 임시 파일로 덮어쓰여지는 문제가 발생할 수 있습니다.  따라서 임시 파일을 생성하거나 사용을 마치면 적절한 방법으로 파일을 삭제해주는 것이 중요합니다.
+### 예제 1 결과:
+임시 파일: C:\Users\Username\AppData\Local\Temp\tmp-x9m8NJLQ7WqjZ6bC
 
-## 참고 자료
+### 예제 2 결과:
+임시 파일 이름: C:\Users\Username\AppData\Local\Temp\mytempfile-x9m8NJLQ7WqjZ6bC
 
-- [Node.js 공식 문서](https://nodejs.org/api/fs.html#fs_fs_writefile_file_data_options_callback)
-- [w3schools JavaScript Tutorial](https://www.w3schools.com/js/js_output.asp)
-- [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects)
-- [Guru99 JavaScript Tutorial](https://www.guru99.com/js-tutorial.html)
+*위의 예제는 Node.js 환경에서 실행되는 예제이며, 해당 라이브러리를 설치해야 정상적으로 작동합니다.
 
-## 더 알아보기
+## 깊이 파고들기:
 
-- [Node.js에서 임시 파일 생성하기](https://www.npmjs.com/package/tmp)
-- [JavaScript에서 파일 다루기](https://www.tutorialspoint.com/javascript/javascript_files.htm)
-- [파일 시스템과 관련한 Node.js 모듈](https://blog.risingstack.com/node-js-file-handling/)
-- [컴퓨터 파일 시스템 이해하기](https://en.wikipedia.org/wiki/File_system)
+- 역사적 문맥: 임시 파일은 컴퓨터 시스템에서의 파일 관리 방법 중 하나로, 메모리나 디스크 용량의 한계로 인해 임시적인 파일이 필요해졌기 때문에 만들어졌습니다.
+- 대안: 메모리나 디스크 용량이 충분한 시스템에서는 임시 파일을 따로 만들지 않고, 메모리 나 자체 데이터 구조를 사용할 수 있습니다.
+- 구현 세부 사항: 임시 파일을 만드는 방법은 언어나 라이브러리에 따라 다를 수 있지만, 대부분 파일 시스템 명령어를 이용해 파일을 생성하고 삭제하는 방식으로 구현됩니다.
+
+## 연관 자료:
+
+- [Node.js tmp 모듈 문서](https://www.npmjs.com/package/tmp)
+- [OS에서 임시 파일 만들기](https://www.lifewire.com/what-is-a-temporary-file-2619617)
+- [임시 파일 만들기의 역사](https://blog.dominodatalab.com/la-vida-temporal-making-temporary-files-nodes-tmp-module/)

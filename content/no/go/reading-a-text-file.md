@@ -1,7 +1,7 @@
 ---
-title:                "Lesing av en tekstfil"
-html_title:           "Go: Lesing av en tekstfil"
-simple_title:         "Lesing av en tekstfil"
+title:                "Leser en tekstdokument"
+html_title:           "Go: Leser en tekstdokument"
+simple_title:         "Leser en tekstdokument"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Files and I/O"
@@ -10,44 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hva & Hvorfor?
 
-Lurer du på hvordan du kan lese og behandle tekstfiler i din Go-programmering? Da har du kommet til rett sted! Å kunne lese fra og skrive til tekstfiler er en viktig del av mange programmer. I denne artikkelen vil vi vise deg hvordan du kan gjøre dette ved hjelp av Go-programmering. 
+Lesing av tekstfiler er en vanlig oppgave for programmerere, og det er en enkel måte å lese og behandle store mengder tekstbasert data. Dette kan være nyttig for å hente informasjon fra loggfiler, eksportere data til en database eller lage rapporter.
 
-## Hvordan gjøre det
+## Hvordan:
 
-Lese en tekstfil i Go er enkelt og kan gjøres ved hjelp av "```Go
- ioutil.ReadAll()```" funksjonen. Denne funksjonen tar en filbane som argument og returnerer en byte slice som inneholder filens innhold. La oss se på et eksempel på hvordan du kan gjøre dette:
+Go har en innebygd pakke kalt "os" som gjør det enkelt å lese en tekstfil. Vi kan bruke funksjonen "Open" sammen med "Read" og "Close" for å åpne, lese og lukke filen vår. Her er et enkelt eksempel på hvordan du kan lese en tekstfil og skrive ut innholdet:
 
-```
-package main
-
-import (
-	"fmt"
-	"io/ioutil"
-)
-
-func main() {
-	data, err := ioutil.ReadAll("textfil.txt")
-	if err != nil {
-		fmt.Println("Kunne ikke lese filen:", err)
-	}
-	fmt.Println(string(data))
+```Go
+f, err := os.Open("filnavn.txt")
+if err != nil {
+    panic(err)
 }
+defer f.Close()
+
+b := make([]byte, 50)
+n, err := f.Read(b)
+if err != nil {
+    panic(err)
+}
+fmt.Println(string(b))
 ```
 
-I dette eksempelet bruker vi "io/ioutil" pakken for å lese tekstfilen "textfil.txt" og lagre innholdet i en variabel "data". Deretter sjekker vi om det oppstår en feil mens vi leser filen, og hvis det gjør det, skriver vi ut feilmeldingen. Til slutt skriver vi ut innholdet i filen ved å konvertere byte slicen til en streng.
+Output: "Dette er en tekstfil"
 
-## Dykk dypere
+## Dypdykk:
 
-Så langt har vi bare skrapet overflaten av hvordan man kan lese en tekstfil i Go. Men det finnes flere måter å gjøre dette på, som for eksempel å bruke "os.Open()" funksjonen for å åpne en fil og lese den bit for bit. Du kan også bruke forskjellige metoder for å behandle filen, for eksempel å lese og skrive til forskjellige deler av filen eller gjøre søk i filen. Det er også viktig å huske på å lukke filen etter at du er ferdig med å lese den for å unngå minnelekkasje.
+Å lese tekstfiler er en vanlig oppgave, og det finnes flere måter å gjøre det på i Go. Du kan også bruke funksjonen "ioutil.ReadFile" eller bruke en scanner fra pakken "bufio". Det er også viktig å merke seg at du må utføre en feilhåndtering når du leser filen, slik at programmet ikke krasjer hvis filen ikke kan leses.
 
-## Se også
+## Se også:
 
-Her er noen nyttige ressurser som kan hjelpe deg med å lære mer om filbehandling i Go:
+For en mer detaljert forklaring og flere eksempler, sjekk ut denne artikkelen på Go sin nettside: https://golang.org/pkg/os/#File.Read
 
-- [Offisiell dokumentasjon](https://golang.org/pkg/io/ioutil/)
-- [Tutorial på YouTube](https://www.youtube.com/watch?v=e6eYjILcu1g)
-- [Community forum](https://forum.golangbridge.org/t/how-to-read-a-text-file-and-store-each-line-in-an-array/1916)
-
-Lykke til med å lese og behandle tekstfiler i dine fremtidige Go-prosjekter!
+Du kan også lese mer om forskjellige måter å lese tekstfiler på i denne artikkelen: https://golang.org/doc/tutorial/introduction#Files

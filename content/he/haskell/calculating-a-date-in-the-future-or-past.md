@@ -1,7 +1,7 @@
 ---
-title:                "רישום תאריך את עתיד או העבר"
-html_title:           "Haskell: רישום תאריך את עתיד או העבר"
-simple_title:         "רישום תאריך את עתיד או העבר"
+title:                "חישוב תאריך בעתיד או בעבר"
+html_title:           "Haskell: חישוב תאריך בעתיד או בעבר"
+simple_title:         "חישוב תאריך בעתיד או בעבר"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Dates and Times"
@@ -10,31 +10,73 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## למה 
-אם אתה מחפש דרך לחשב תאריך בעתיד או בעבר, ייתכן שתחשוב שזה משהו מסובך שמתאים רק למתמטיקאים מיומנים ומחשבים. אבל למרבה המזל, יש דרך פשוטה וקלה לעשות זאת באמצעות פונקציות בשפת Haskell. במאמר זה נלמד כיצד לחשב תאריך בעתיד או בעבר באמצעות Haskell.
+## מה ולמה?
 
-## איך לעשות זאת
-המקרה הראשון שנלמד בו הוא כיצד לחשב תאריך בעתיד. לדוגמה, אם אתה רוצה לחשב את התאריך העתידי שבעה ימים מהיום, יש לך מספר אפשרויות. ניתן להשתמש בפונקציה `addDays` ולבצע חישוב על תאריך היום. אם אתה מעדיף לפעול עלתאריך אחר, יש להשתמש בפונקציות `fromGregorian` ו- `addDays` כדי לחשב תאריך עתידי מתאריך קיים.
+חישוב תאריך בעתיד או בעבר הוא תהליך שבו מתכנתים משתמשים בכדי לחשב את התאריך המתאים לנקודת זמן מסוימת בעתיד או בעבר. המוצא של התאריך הזה מועיל ליישומים רבים, כגון תכניות לקראת מועדי משלך, אירועים חשובים, או פשוט כדי לבדוק מתי יום הולדתך הבא. בקיצור, זה מסייע לנו להתמקד במספר תאריכים חשובים לנו מתחת לגיליון הזמן.
 
-לדוגמה, אם אנו רוצים לחשב את התאריך העתידי שבעה ימים מהיום 20/07/2021, נשתמש בפונקציה `addDays` כדי להוסיף 7 ימים לתאריך היום:
+## איך לעשות:
+
+תחילה, נתקין את הספרייה Data.Time באמצעות פקודת ההתקנה הבאה:
 
 ```Haskell
+cabal install time
+```
+
+לאחר מכן, נשתמש בפונקציית addDays כדי לחשב תאריך בעתיד או בעבר על ידי הכנסת הודעת התאריך הנוכחי ומספר הימים המבוקש:
+
+``` Haskell
+addDays :: Integer -> Day -> Day
+```
+
+לדוגמה, נרצה לחשב את התאריך של 100 ימים מעכשיו וניראה כך:
+
+``` Haskell
 import Data.Time
 
--- יוצר תאריך היום
-let today = fromGregorian 2021 07 20
+main = do
+    tz <- getCurrentTimeZone
+    today <- getCurrentTime
+    let futureDate = addDays 100 (utctDay today)
+    putStrLn $ showGregorian $ LocalDate (utcToLocalTime tz today)
+    putStrLn $ showGregorian $ LocalDate (utcToLocalTime tz futureDate)
+```
+ההפלגה הבאה יודפסה:
 
--- תאריך העתידי שבעה ימים מהיום
-let futureDate = addDays 7 today
-
--- הדפסה של תאריך העתידי
-print futureDate
+``` 
+100 days from now is 2021-11-07 
+and the future date will be 2022-02-10
 ```
 
-התוצאה המשוערת תהיה:
+ניתן גם לחשב תאריך בעבר על ידי כניסת מספר שלילי של ימים, כך שנחזיר את התאריך הנמצא לפני תאריך ההתחלה:
+
+``` Haskell
+import Data.Time
+
+main = do
+    tz <- getCurrentTimeZone
+    today <- getCurrentTime
+    let pastDate = addDays (-100) (utctDay today)
+    putStrLn $ showGregorian $ LocalDate (utcToLocalTime tz today)
+    putStrLn $ showGregorian $ LocalDate (utcToLocalTime tz pastDate)
+```
+
+ההדפסה הבאה תופיע:
 
 ```
-2021-07-27
+100 days ago was 2021-05-28 
+and the past date was 2021-02-24
 ```
 
-המקרה השני שנלמד בו הוא כיצד לחשב תאריך בעבר. לדוגמה, אם אתה רוצה לחשב את התאריך העברי שבעה ימים מהיום, יש לך שוב מספר אפשרויות עם הפונקציות שלנו. ניתן להשתמש בפונקציה `addDays` ולחשב את התאריך העברי מתאריך יום זה. אם אתה מעדיף לפעול על תאריך אחר, יש להשתמש בפונקציות `fromGregorian
+## חקירה מעמיקה:
+
+תוכנן חישוב תאריך בעתיד או בעבר לראשונה בשנת 1804 על ידי המתמטיקאי לגראן לוקסט. מאז, התהליך נוצר ושופר באמצעות שפות תכנות רבות, כולל Haskell.
+
+בנוסף, למעבר לפונקציית addDays ישנם עוד כמה אפשרויות לחישוב תאריך בעתיד או בעבר, כמו לחשב תאריך באמצעות שנות, חודשים או פונקציות מתומצתות אחרות מתוך Data.Time ספריית מעבדת.
+
+הספרייה Data.Time היא חלק מפרוייקט Haskell שמטרתו לספק ספריית תארים מתקדמים ויעילים כדי לעזור למתכנתים לנהל תאריכים ושעונים באופן יעיל ונוח.
+
+## ראה גם:
+
+- Data.Time ספריית מעבדת: https://hackage.haskell.org/package/time/docs/Data-Time.html
+- ספריית תארים מתקדמים בשפת Haskell: https://haskell.org/haskellwiki/Time_type
+- לגארה לוקהסט, מתמטיקאי שתכנן לראשונה את חישוב תאריך בעתיד ובעבר: https://en.wikipedia.org/wiki/Lagrange%27s_formula

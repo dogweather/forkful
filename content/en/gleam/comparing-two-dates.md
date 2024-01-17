@@ -10,41 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-If you've ever needed to compare two dates in your code, you know it can be a tricky task. Whether you're working on a financial application or just trying to schedule a meeting, properly comparing dates is essential. In this article, we'll explore how Gleam can make this process easier and more efficient.
+## What & Why?
 
-## How To
-To compare two dates in Gleam, we will use the built-in Date module. First, we need to create two date records using the `Date.from_fields` function. This function takes in the year, month, and day as arguments and returns a `Date` record. For example:
+Comparing two dates is a commonly used operation in programming where the dates are compared and the results are evaluated to check which one is earlier or later. This is often done to compare the dates of events, appointments, or deadlines. Programmers use this to efficiently organize tasks and prioritize them based on their date.
 
-```Gleam
-let date1 = Date.from_fields(2020, April, 15)
-let date2 = Date.from_fields(2020, May, 20)
-```
+## How to:
 
-Next, we can use the `Date.compare` function to compare the two dates. This function takes in two `Date` records and returns an `Ordering` record. `Ordering` is an enum with three possible values - `Less`, `Equal`, and `Greater` - indicating whether the first date is less than, equal to, or greater than the second date. For example:
+To compare two dates in Gleam, we can use the `Date.compare/2` function. This function takes two dates as arguments and returns `-1` if the first date is earlier, `1` if the second date is earlier, or `0` if they are equal. Let's see some examples:
 
 ```Gleam
-let ordering = Date.compare(date1, date2)
+let first_date = Date.from_tuple((2021, 9, 1))
+let second_date = Date.from_tuple((2021, 9, 15))
 
-// Output: Greater
+Date.compare(first_date, second_date)
+// Output: -1
 ```
 
-Based on the output, we can determine that `date1` is later than `date2`.
+In the above example, we compared two dates using the `Date.compare/2` function and got the expected output of `-1` indicating that the first date is earlier than the second date. Let's see another example:
+
+```Gleam
+let task1 = {
+    title: "Meeting with team",
+    date: Date.from_tuple((2021, 9, 10))
+}
+
+let task2 = {
+    title: "Submit project proposal",
+    date: Date.from_tuple((2021, 9, 1))
+}
+
+Date.compare(task1.date, task2.date)
+// Output: 1
+```
+
+In this example, we compared the dates of two tasks and got the output `1` indicating that task1 needs to be done before task2 as it has an earlier date.
 
 ## Deep Dive
-While the `Date.compare` function is perfect for simple comparisons, there are times when we may need more detailed information about the two dates. In these cases, we can use the `Date.diff` function. This function takes in two `Date` records and returns a `Date.Diff` record. The `Date.Diff` record contains the difference between the two dates in years, months, and days. For example:
 
-```Gleam
-let date_diff = Date.diff(date1, date2)
+In the past, comparing dates was more complex and required more coding as dates were stored in various formats such as Year-Month-Day and Day-Month-Year. With the standardization of the ISO 8601 date format (YYYY-MM-DD), comparing dates has become easier and more efficient.
 
-// Output: 0 years, 1 month, 5 days
-```
+In addition to the `Date.compare/2` function, there are other alternatives for comparing dates in Gleam such as using the `timer:compare/2` function from the `gleam_timer` package. However, the `Date.compare/2` function is specifically designed for comparing dates and is recommended for this purpose.
 
-This tells us that `date2` is 1 month and 5 days after `date1`.
-
-Another useful function for comparing dates is `Date.is_before`. This function takes in two `Date` records and returns a boolean value indicating whether the first date is before the second date. This can be helpful for filtering data or scheduling tasks based on date criteria.
+The implementation details of the `Date.compare/2` function may vary depending on the platform it is used on. For example, on the BEAM (Erlang Virtual Machine), the function is implemented using the `calendar:compare_days/2` function.
 
 ## See Also
-- Gleam Date module: https://gleam.run/modules/date
-- Gleam standard library: https://gleam.run/documentation/stdlib.html
-- How to compare two dates in JavaScript: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
+
+- Official Gleam documentation: [Date module](https://gleam.run/documentation/std/date#compare) 
+- ISO 8601 date format: [ISO 8601 - Wikipedia](https://en.wikipedia.org/wiki/ISO_8601)
+- Alternative date comparison function: [gleam_timer package](https://gleam.run/packages/gleam_timer/latest/)

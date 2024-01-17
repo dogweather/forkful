@@ -1,7 +1,7 @@
 ---
-title:                "Senden einer http-Anfrage mit grundlegender Authentifizierung"
-html_title:           "TypeScript: Senden einer http-Anfrage mit grundlegender Authentifizierung"
-simple_title:         "Senden einer http-Anfrage mit grundlegender Authentifizierung"
+title:                "Versenden einer http-Anfrage mit grundlegender Authentifizierung"
+html_title:           "TypeScript: Versenden einer http-Anfrage mit grundlegender Authentifizierung"
+simple_title:         "Versenden einer http-Anfrage mit grundlegender Authentifizierung"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "HTML and the Web"
@@ -10,90 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Warum: Warum sollte man sich mit dem Senden von HTTP-Anfragen mit grundlegender Authentifizierung beschäftigen? Es ist eine effektive Möglichkeit, sich bei einer Anwendung oder einem Service zu authentifizieren und sicherzustellen, dass nur autorisierte Benutzer darauf zugreifen können.
+Was ist es und warum?
 
-So geht's: Hier sind zwei einfache Beispiele, wie man eine HTTP-Anfrage mit grundlegender Authentifizierung in TypeScript sendet:
+Das Senden von HTTP-Anfragen mit Basic Authentication ist ein gängiger Prozess in der Webentwicklung, bei dem ein Benutzername und ein Passwort verwendet werden, um auf eine gesicherte Ressource zuzugreifen. Programmierer nutzen diese Methode, um die Sicherheit ihrer Anwendungen zu verbessern und nur autorisierten Benutzern Zugriff zu gewähren.
+
+Wie geht es?
+
+***Hinweis:*** Für die folgenden Beispiele werden die `fetch`-Funktion und die im Browser integrierte FetchAPI verwendet. Diese können in anderen Umgebungen wie Node.js durch ähnliche Methoden ersetzt werden.
+
+**1. Senden einer einfachen GET-Anfrage mit Basic Authentication:**
 
 ```
-// Beispiel 1: Verwendung der XHR-Methode
-function sendRequest(url: string, username: string, password: string) {
-  let authHeader: string = "Basic " + btoa(username+":"+password);
-  let xhr = new XMLHttpRequest();
-  xhr.open("GET", url, false);
-  xhr.setRequestHeader("Authorization", authHeader);
-  xhr.send();
-  console.log(xhr.responseText);
-}
-
-sendRequest("https://example.com/api/users", "benutzername123", "passwort123");
-
-// Beispiel 2: Verwendung von axios
-const axios = require('axios');
-
-let authHeader = {
-  username: "benutzername123",
-  password: "passwort123"
-}
-let config = {
-  headers: authHeader,
-  method: 'get',
-  url: 'https://example.com/api/users',
-};
-
-axios(config)
-  .then(response => {
-    console.log(response.data);
-  })
-  .catch(error => {
-    console.log(error);
-  });
-```
-
-Ausgabe Beispiel 1:
-```
-[
-  {
-    "id": "1234",
-    "name": "Max Mustermann",
-    "email": "max.mustermann@example.com"
-  },
-  {
-    "id": "2345",
-    "name": "Laura Schmidt",
-    "email": "laura.schmidt@example.com"
-  },
-  {
-    "id": "3456",
-    "name": "Tom Wagner",
-    "email": "tom.wagner@example.com"
+fetch("https://meinewebseite.de/api/meineDaten", {
+  headers: {
+    Authorization: "Basic base64EncodedCredentials"
   }
-]
+})
+  .then(response => response.json())
+  .then(data => console.log(data));
 ```
 
-Ausgabe Beispiel 2:
+**2. Senden einer POST-Anfrage mit Basic Authentication und Übergeben von Daten:**
+
 ```
-[
-  {
-    "id": "1234",
-    "name": "Max Mustermann",
-    "email": "max.mustermann@example.com"
+fetch("https://meinewebseite.de/api/benutzer", {
+  method: "POST",
+  headers: {
+    Authorization: "Basic base64EncodedCredentials",
+    "Content-Type": "application/json"
   },
-  {
-    "id": "2345",
-    "name": "Laura Schmidt",
-    "email": "laura.schmidt@example.com"
-  },
-  {
-    "id": "3456",
-    "name": "Tom Wagner",
-    "email": "tom.wagner@example.com"
-  }
-]
+  body: JSON.stringify({ name: "Max Mustermann", email: "max@beispiel.com" })
+})
+  .then(response => response.json())
+  .then(data => console.log(data));
 ```
 
-Tiefgehende Einblicke: Bei der grundlegenden Authentifizierung wird der Username und das Passwort in Base64 kodierter Form als Teil des Authorization-Headers in der HTTP-Anfrage mitgeschickt. Dies bietet zwar eine Grundlage für die Authentifizierung, aber es ist nicht besonders sicher, da Base64 leicht entschlüsselt werden kann. Für eine höhere Sicherheit empfiehlt es sich, auf andere Authentifizierungsmethoden wie z.B. OAuth umzusteigen.
+**Ausgabe:** Die Antwort der Serveranfrage wird in JSON-Format ausgegeben und kann dann in der Konsole ausgegeben oder weiterverarbeitet werden.
 
-Siehe auch:
-- [MDN Web Docs: HTTP Basic Authentication](https://developer.mozilla.org/de/docs/Web/HTTP/Authentication#Basic_Authentication)
-- [Axios: HTTP client for the browser and node.js](https://github.com/axios/axios)
-- [Base64: encode/decode data in base64 format](https://github.com/niklasvh/base64-js)
+Tiefe Einblicke
+
+In der Frühphase des Internets wurde Basic Authentication als eine der einfachsten Methoden zur Authentifizierung von Benutzern entwickelt. Es ist jedoch nicht die sicherste Methode, da Benutzername und Passwort im Klartext übertragen werden. Es gibt auch alternative Methoden wie OAuth, die eine sicherere Form der Authentifizierung ermöglichen.
+
+Die Implementierung von HTTP-Anfragen mit Basic Authentication erfordert die Verwendung von Base64-Verschlüsselung für die Anmeldeinformationen, die dann im Header der Anfrage gesendet werden. Der Server decodiert diese Informationen und authentifiziert den Benutzer auf Basis der übergebenen Daten.
+
+Siehe auch
+
+- [Artikel über Basic Authentication](https://developer.mozilla.org/de/docs/Web/HTTP/Authentication#Basic_authentication_scheme)
+- [Alternative Methoden zur Authentifizierung im Web](https://www.keycdn.com/blog/http-security-headers)
+- [Dokumentation zu FetchAPI](https://developer.mozilla.org/de/docs/Web/API/Fetch_API)

@@ -1,7 +1,7 @@
 ---
-title:                "Analisi di html"
-html_title:           "Clojure: Analisi di html"
-simple_title:         "Analisi di html"
+title:                "Analisi dell'html"
+html_title:           "Clojure: Analisi dell'html"
+simple_title:         "Analisi dell'html"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "HTML and the Web"
@@ -10,43 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+## Che cos'è e perché viene usato?
 
-Se stai lavorando con dati web, probabilmente dovrai affrontare il parsing di HTML. Il parsing di HTML è il processo di analisi del codice HTML per estrarre informazioni utili e strutturare i dati in modo da poterli utilizzare nel tuo programma.  
+Il parsing HTML è il processo di analisi e interpretazione di un documento HTML per estrarre e manipolare le informazioni contenute al suo interno. I programmatori lo utilizzano principalmente per automatizzare l'estrazione di dati da pagine web, ad esempio per creare un database di recensioni di prodotti o per monitorare i prezzi di un determinato articolo sui vari siti di e-commerce.
 
-## Come fare
+## Come fare:
 
-Per iniziare a parsare HTML con Clojure, hai bisogno di due librerie: `clj-http` e `enlive`. La prima ti consente di fare richieste HTTP alle pagine web, mentre la seconda ti aiuta a navigare e manipolare il codice HTML. Ecco un esempio di codice che fa una richiesta HTTP al sito di Wikipedia e estrae il contenuto di una tabella:
+Utilizzando Clojure, è possibile utilizzare la libreria "enlive" per effettuare il parsing di una pagina HTML. Di seguito un esempio di codice che estrae il titolo di una pagina web:
 
-```Clojure
-(require '[clj-http.client :as client])
-(require '[net.cgrand.enlive-html :refer [html1]])
-
-(def response (client/get "https://it.wikipedia.org/wiki/Italia"))
-(def parsed-html (html1 (:body response)))
-
-(def table (-> parsed-html
-                (enlive/select [:table]))
-    
-(def rows (-> table
-              (enlive/select [:tr])
-              (remove #(= (enlive/at % [:.mw-headline]) "Inno")))) ; Rimuove la riga dell'inno nazionale
-
-(def data (->> rows
-             (map #(map enlive/text %)) ; Estrae il testo da ogni cella della tabella
-             (remove #(= (count %) 0)) ; Rimuove le righe vuote
-             (map #(nth % 1)))) ; Seleziona solo la seconda colonna di ogni riga
-
-(println data)
-; Output: ("Roma" "Italiano" "€" "+39" "EUR" "CEST" "WET" "IT" ".it")
 ```
+(ns miei-progetti.html-parser
+  (:require [net.cgrand.enlive-html :as hl]
+            [net.cgrand.enlive-html :refer [html]]))
 
-## Approfondimento
+(def pagina (hl/html "https://www.example.com"))
 
-Esistono diversi modi per parsare HTML in Clojure, ma `enlive` è uno dei più popolari e utilizzati. Oltre alla semplicità di utilizzo, offre anche un buon supporto per la manipolazione di dati HTML. Puoi utilizzare la sintassi di `enlive` per selezionare elementi nel codice HTML e navigare tra di essi utilizzando funzioni come `enlive/select` e `enlive/at`. Inoltre, puoi anche modificare direttamente il codice HTML utilizzando funzioni come `enlive/set-attr` e `enlive/append`. Questi sono solo alcuni esempi delle molteplici funzionalità offerte da `enlive`.
+(hl/select pagina [:title])
+; Output: [{:tag :title, :attrs nil, :content ["Titolo della pagina"]}]
+```
+Il codice utilizza la funzione `html` per creare una rappresentazione del documento HTML da analizzare e la funzione `select` per selezionare il tag `title` e ottenere il suo contenuto.
 
-## Vedi anche
+## Approfondimenti:
 
-- Libreria `clj-http`: https://github.com/dakrone/clj-http
-- Libreria `enlive`: https://github.com/cgrand/enlive
-- Esempi di utilizzo di `enlive`: https://github.com/cgrand/enlive-tutorial
+Il parsing HTML è un'attività molto comune nel web scraping e nell'analisi dei dati. È possibile utilizzare anche altre librerie in Clojure come "clj-tagsoup" o "hiccup" per effettuare il parsing. In alternativa, si possono utilizzare strumenti esterni come Beautiful Soup in Python o Jsoup in Java. 
+
+Per implementare un parser HTML, è necessario conoscere la struttura di un documento HTML e utilizzare espressioni regolari o librerie specializzate per estrarre le informazioni desiderate. Inoltre, è importante gestire correttamente i casi di errore nel caso in cui la struttura dell'HTML sia diversa da quella prevista.
+
+## Vedi anche:
+
+- Documentazione di "enlive": https://github.com/otherwise/enlive
+- Tutorial sul parsing HTML in Clojure: https://clojurebridgelondon.github.io/curriculum/clojure-parsing-html/
+- Libreria "clj-tagsoup": https://github.com/netcdf/clj-tagsoup
+- Libreria "hiccup": https://github.com/weavejester/hiccup
+- Beautiful Soup per Python: https://www.crummy.com/software/BeautifulSoup/
+- Jsoup per Java: https://jsoup.org/

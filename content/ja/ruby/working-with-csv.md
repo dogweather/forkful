@@ -1,7 +1,7 @@
 ---
-title:                "「csvとの作業」"
-html_title:           "Ruby: 「csvとの作業」"
-simple_title:         "「csvとの作業」"
+title:                "「csvを使用する」"
+html_title:           "Ruby: 「csvを使用する」"
+simple_title:         "「csvを使用する」"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Data Formats and Serialization"
@@ -10,37 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-「なぜCSVで作業するのか？」
-CSVファイルを使うことでデータを簡単に取り扱い、処理することができます。また、データをエクセルやGoogleスプレッドシートなど様々なプログラムで編集することができるため、柔軟性が高く非常に便利です。
+## 何それ？
 
-「やり方」
+CSVとは、Comma Separated Valuesの略称で、コンマで区切られたテキストデータを扱うためのファイルフォーマットのことです。プログラマーは、データベースやスプレッドシートなど複数のソースから取得したデータを集約し、処理するためによく使用します。
+
+## 方法：
+
+Rubyでは、CSVファイルを読み込み、書き込むためにCSVライブラリが使用できます。下記のコードは、CSVファイルを読み込んでデータを表示する例です。
+
 ```Ruby
 require 'csv'
 
-# CSVファイルの読み込み
-csv_data = CSV.read('file.csv')
-
-# データの表示
-csv_data.each do |row|
-  puts row.inspect
-end
-
-# データの書き込み
-CSV.open('new_file.csv', 'w') do |csv|
-  csv << ['Column 1', 'Column 2', 'Column 3']
-  csv << ['Data 1', 'Data 2', 'Data 3']
+CSV.foreach('data.csv') do |row|
+  puts row.join(', ')
 end
 ```
 
-実行結果:
-```
-["Column 1", "Column 2", "Column 3"]
-["Data 1", "Data 2", "Data 3"]
+出力：
+
+```Ruby
+Alice, 20
+Bob, 30
 ```
 
-「もっと深く」
-CSVファイルを扱う際、いくつかのポイントに注意する必要があります。まず、データにカンマや改行などの区切り文字が含まれている場合は、そのデータをダブルクォーテーションで囲む必要があります。また、データを追加する際は`<<`を使い、CSVファイルからデータを取得する際は`each`メソッドを使うことが一般的です。
+## 深く掘り下げる
 
-「参考資料」
-- [RubyでCSVファイルを扱う方法](https://qiita.com/onlyshy/items/06c9105a892b6a6d2f3d)
-- [Rubyで読み書きするCSVライブラリの使い方](https://www.techscore.com/blog/2014/07/19/ruby%E3%81%A7%E8%AA%AD%E3%81%BF%E6%9B%B8%E3%81%8D%E3%81%99%E3%82%8Bcsv%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E3%82%92%E4%BD%BF%E3%81%84%E6%96%B9/)
+CSVは、コンマの他にも、タブやセミコロンなどを区切り文字として使用することができます。また、CSVファイルにはヘッダー行を含め、列のタイトルを表示することもできます。
+
+Ruby以外にも、PythonやJavaなどの他のプログラミング言語でもCSVファイルを扱うことができます。また、データベースやスプレッドシートから直接CSV形式でデータをエクスポートすることもできます。
+
+CSVファイルを扱う際には、データの入力が正しく行われているかを確認するため、バリデーションを行うことが重要です。
+
+## 関連リンク
+
+- [CSVライブラリドキュメント](https://ruby-doc.org/stdlib-2.6.3/libdoc/csv/rdoc/CSV.html)
+- [PythonのCSVモジュール](https://docs.python.org/3/library/csv.html)
+- [JavaのOpenCSVライブラリ](http://opencsv.sourceforge.net/)

@@ -1,7 +1,7 @@
 ---
-title:                "Eine Zeichenfolge großschreiben"
-html_title:           "C++: Eine Zeichenfolge großschreiben"
-simple_title:         "Eine Zeichenfolge großschreiben"
+title:                "Bitte keine Kommentare hinzufügen.String großschreiben"
+html_title:           "C++: Bitte keine Kommentare hinzufügen.String großschreiben"
+simple_title:         "Bitte keine Kommentare hinzufügen.String großschreiben"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -10,41 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+# Was ist das und Warum?
 
-Hast du jemals ein Programm geschrieben, das eine Benutzereingabe für einen Namen erhalten hat und diesen Namen dann in Großbuchstaben ausgegeben hat? In einem solchen Fall wäre es wichtig zu wissen, wie man in C++ eine Zeichenkette in Großbuchstaben konvertiert. Dieser Artikel wird dir zeigen, wie man das macht.
+Beim "Capitalizing" wird der erste Buchstabe eines Strings in Großbuchstaben umgewandelt. Programmierer nutzen dies, um Strings besser lesbar zu machen und ein einheitliches Format zu gewährleisten.
 
-## Wie
+# How to:
 
-Es gibt verschiedene Wege, um eine Zeichenkette in Großbuchstaben zu konvertieren, aber hier werden wir uns auf eine einfache Methode konzentrieren. Zuerst brauchen wir eine Zeichenkette, die wir in Großbuchstaben konvertieren möchten. Wir definieren also eine Variable vom Datentyp `string`, zum Beispiel `name` und weisen ihr einen Wert zu.
-
-```C++
-string name = "Max Mustermann";
-```
-
-Jetzt kommen wir zum eigentlichen Konvertieren. Dafür verwenden wir die Funktion `toupper` aus der Standardbibliothek `<cctype>`. Diese Funktion wandelt einen einzelnen Buchstaben in einen Großbuchstaben um. Aber um die gesamte Zeichenkette zu konvertieren, müssen wir sie in einer Schleife durchlaufen und jeden Buchstaben einzeln konvertieren.
+Um einen String zu capitalizen, gibt es mehrere Möglichkeiten in C++. Eine einfache Möglichkeit ist die Verwendung der Funktion `toupper()` aus der Bibliothek `<cctype>`. Der folgende Code block zeigt, wie dies in einem Beispiel funktioniert:
 
 ```C++
-for (int i = 0; i < name.length(); i++) {
-  name[i] = toupper(name[i]);
+#include <iostream>
+#include <string>
+#include <cctype>
+
+int main() {
+    std::string str = "Hallo Welt";
+    str[0] = toupper(str[0]);
+    std::cout << str << std::endl;
+    return 0;
 }
 ```
 
-Das ist so ziemlich alles. Wir haben jetzt die Zeichenkette `name` in Großbuchstaben konvertiert. Wir können das überprüfen, indem wir sie ausgeben:
+Der output dieses Codes wäre "Hallo Welt", da der erste Buchstabe "H" zu "h" geändert wurde.
+
+Eine andere Möglichkeit ist die Verwendung der `transform()` Funktion aus der Bibliothek `<algorithm>` zusammen mit einer Lambda-Funktion. Der folgende Code zeigt ein Beispiel hierfür:
 
 ```C++
-cout << name << endl;
+#include <iostream>
+#include <string>
+#include <algorithm>
+
+int main() {
+    std::string str = "Hallo Welt";
+    std::transform(str.begin(), str.end(), str.begin(), [](unsigned char c){ return std::toupper(c); });
+    std::cout << str << std::endl;
+    return 0;
+}
 ```
 
-Die Ausgabe wird folgendermaßen aussehen: `MAX MUSTERMANN`
+Durch die Verwendung von `transform()` und der Lambda-Funktion wird jeder einzelne Buchstabe des Strings in einen Großbuchstaben umgewandelt.
 
-## Deep Dive
+# Deep Dive
 
-Wie genau funktioniert die `toupper` Funktion? Sie basiert auf dem ASCII-Code (American Standard Code for Information Interchange), der jedem Zeichen einen numerischen Wert zuordnet. Die Großbuchstaben und Kleinbuchstaben haben dabei eine unterschiedliche numerische Reihenfolge. Zum Beispiel hat der Großbuchstabe "A" den Wert 65, während der Kleinbuchstabe "a" den Wert 97 hat.
+Das Konzept des "Capitalizing" stammt aus der Programmiersprache COBOL und wurde in den 1950er Jahren eingeführt. In C++ gibt es mehrere Möglichkeiten, einen String zu verändern. Neben dem "Capitalizing" gibt es auch noch die Funktionen `tolower()` und `isupper()` aus der Bibliothek `<cctype>`.
 
-Die `toupper` Funktion prüft, ob der Wert eines Buchstabens im Bereich der Kleinbuchstaben liegt (97 bis 122). Wenn das der Fall ist, wird durch Subtraktion von 32 der entsprechende Großbuchstabenwert ermittelt (97 - 32 = 65). Andernfalls bleibt der Wert unverändert, sodass Großbuchstaben und Sonderzeichen nicht beeinflusst werden.
+Wenn man einheitliche Formatierungen in einem Programm gewährleisten möchte, ist das "Capitalizing" von Strings hilfreich.
 
-## Siehe Auch
+# See Also
 
-- [TutorialsPoint - C++ - Konvertierung einer Zeichenkette in Großbuchstaben](https://www.tutorialspoint.com/cplusplus-program-to-convert-a-string-to-uppercase)
-- [cpluplus.com - Referenz zu cctype](http://www.cplusplus.com/reference/cctype/toupper/)
+- [`toupper()` reference](https://www.cplusplus.com/reference/cctype/toupper/)
+- [`transform()` reference](https://www.cplusplus.com/reference/algorithm/transform/)
+- [History of string capitalization](https://en.wikipedia.org/wiki/Letter_case#The_history_of_letter_case)

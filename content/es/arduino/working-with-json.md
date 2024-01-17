@@ -10,64 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué trabajar con JSON en Arduino?
+## ¿Qué es JSON y por qué lo usamos?
 
-JSON (JavaScript Object Notation) es un formato de intercambio de datos ligero y fácil de entender, que ha ganado popularidad en los últimos años. Al utilizar JSON en los proyectos de Arduino, puedes integrar tu dispositivo con otros sistemas de forma sencilla y efectiva.
+JSON es un formato de intercambio de datos que permite a los programadores almacenar y transmitir información estructurada. Lo utilizamos para representar datos en un formato fácilmente legible por humanos y también por máquinas. Con JSON, podemos organizar y compartir datos de manera eficiente entre diferentes sistemas y aplicaciones.
 
-## Cómo hacerlo
+## Cómo hacerlo:
 
-Para empezar a trabajar con JSON en Arduino, necesitas tener instalada la librería `ArduinoJson`. Puedes hacerlo descargándola desde el gestor de librerías o a través de la página de Arduino. Una vez instalada, puedes seguir estos pasos para utilizar JSON en tus proyectos:
+Usar JSON en Arduino es muy sencillo gracias a la librería "ArduinoJson". Primero, debemos descargar e instalar esta librería en nuestro IDE de Arduino. Luego, podemos seguir estos pasos:
 
-1. Include la librería `ArduinoJson` en tu sketch.
+1. Incluir la librería en nuestro código con `#include <ArduinoJson.h>`.
 
-```Arduino
-#include <ArduinoJson.h>
-```
+2. Crear un objeto "json" usando el constructor de la librería: `DynamicJsonDocument json(512);` (El 512 es el tamaño máximo en bytes para nuestro JSON. Puede cambiar según sus necesidades).
 
-2. Define un objeto `DynamicJsonDocument` y especifica el tamaño máximo del documento.
+3. Agregar datos al objeto usando el método `json["nombre"] = valor;`. Por ejemplo: `json["nombre"] = "Juan";`.
 
-```Arduino
-DynamicJsonDocument jsonDocument(1024);
-```
+4. Convertir el objeto JSON en un string utilizando el método `serializeJson(json, buffer, size);` donde "buffer" es una variable de tipo "char" donde se almacenará el JSON y "size" es el tamaño máximo en bytes del buffer.
 
-3. Ahora, ya puedes añadir los datos que deseas enviar en formato JSON al objeto. Por ejemplo, vamos a crear un objeto con un array que contenga algunas letras del abecedario.
+5. ¡Listo! Ahora podemos usar el string "buffer" para transmitir nuestros datos en formato JSON.
 
-```Arduino
-char letters[] = {'a', 'b', 'c', 'd', 'e'};
-jsonDocument["abecedario"] = letters;
-```
+## Inmersión profunda:
 
-4. Una vez que tengas todos los datos que deseas enviar, puedes imprimir el objeto en formato JSON con `serializeJson()`.
+JSON fue creado en 2001 por Douglas Crockford como una alternativa al formato de intercambio de datos XML. Aunque XML sigue siendo ampliamente utilizado, JSON es más ligero y rápido debido a su estructura basada en pares de clave-valor. Además, la librería "ArduinoJson" implementa una técnica llamada "parsing incremental" que reduce significativamente el tiempo y memoria necesarios para trabajar con JSON en dispositivos como Arduino.
 
-```Arduino
-serializeJson(jsonDocument, Serial);
-```
+## Vea también:
 
-5. Si deseas recibir datos en formato JSON, puedes hacerlo utilizando `DeserializationFeature`. Vamos a utilizar un ejemplo en el que recibimos un objeto con información meteorológica, que incluye la temperatura y la humedad.
-
-```Arduino
-StaticJsonDocument<200> jsonDocument;
-DeserializationError error = deserializeJson(jsonDocument, Serial);
-if (error) {
-  Serial.println("Error al recibir datos en formato JSON");
-} else {
-  float temperatura = jsonDocument["temperatura"];
-  float humedad = jsonDocument["humedad"];
-  Serial.print("Temperatura: ");
-  Serial.println(temperatura);
-  Serial.print("Humedad: ");
-  Serial.println(humedad);
-}
-```
-
-¡Y eso es todo! Con estos pasos, ya puedes enviar y recibir datos en formato JSON en tus proyectos de Arduino.
-
-## Profundizando en JSON
-
-Si deseas aprender más sobre JSON y cómo utilizarlo en tus proyectos de Arduino, puedes consultar la documentación de la librería `ArduinoJson` o explorar más ejemplos en la página oficial de Arduino.
-
-## Ver también
-
-- [Página oficial de Arduino](https://www.arduino.cc)
-- [Página oficial de ArduinoJson](https://arduinojson.org)
-- [Documentación de ArduinoJson](https://arduinojson.org/v6/api)
+- [Documentación oficial de ArduinoJson](https://arduinojson.org/)
+- [Tutorial de ArduinoJson de Adafruit](https://learn.adafruit.com/arduino-json)
+- [Introducción a JSON de W3Schools](https://www.w3schools.com/js/js_json_intro.asp)

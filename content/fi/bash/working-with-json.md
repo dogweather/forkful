@@ -10,64 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mikä & Miksi?
+JSON (JavaScript Object Notation) on tiedostomuoto, joka mahdollistaa tietojen tallentamisen ja jakamisen jäsennellyssä muodossa. JSONia käytetään usein ohjelmoijien kesken esimerkiksi web-sovelluksien kehityksessä. Se on suosittu, sillä se on helppo lukea ja muokata, sekä helposti yhteensopiva muiden ohjelmistojen kanssa.
 
-Ehkä olet kuullut JSON:ista, mutta et ole varmaan miksi se on tärkeä osa Bash-ohjelmointia. JSON on tietojen siirtomuoto, joka tekee datan käsittelystä yksinkertaista ja tehokasta. Se on erityisen hyödyllinen, kun halutaan vaihtaa tietoa Web-sovellusten välillä.
-
-## Miten
-
-Käyttäen `jq` työkalua ja muutamia Bash-komentoja, voit helposti käsitellä JSON-tiedostoja. Tässä on esimerkki, jossa haetaan tietoja Stack Exchange API:sta ja tallennetaan ne JSON-tiedostoon.
+## Kuinka tehdään:
+JSON-tiedosto koostuu avaimista ja niitä vastaavista arvoista. Avaimet ovat merkkijonoja ja arvot voivat olla esimerkiksi lukuja, merkkijonoja tai taulukoita. Tämän lisäksi JSON-tiedostoon kuuluu alku- ja loppumerkit "{ }". Koodiesimerkki näyttää, kuinka luodaan JSON-tiedosto Bashilla ja tulostetaan sen sisältö komentoriville.
 
 ```Bash
-# Asetetaan muuttujaan API URL
-url="https://api.stackexchange.com/2.2/users?site=stackoverflow&pagesize=3"
+# Luodaan JSON-tiedosto
+echo '{"nimi": "Maija Meikäläinen", "ikä": 30, "harrastukset": ["lukeminen", "lenkkeily"]}' > tiedosto.json
 
-# Käyttäen curl komentoa haetaan API:sta ja tallennetaan vastaus
-response=$(curl -s -H "Accept:application/json" "$url")
+# Tulostetaan JSON-tiedoston sisältö
+cat tiedosto.json
+```
+Tulostus näyttää seuraavalta:
 
-# Käytetään jq työkalua muokkaamaan JSON-tiedoston ulkoasua
-echo "$response" | jq '.'
-
-# Tulostaa:
-# {
-#  "items": [
-#    {
-#      "account_id": 6176949,
-#      "is_employee": false,
-#      "last_modified_date": 1617897245,
-#      "display_name": "Katri",
-#      "profile_image": "https://www.gravatar.com/avatar/7ca399b7bc847fe69e377d5764c92aad?s=128&d=identicon&r=PG&f=1"
-#    },
-#    {
-#      "account_id": 6109350,
-#      "is_employee": false,
-#      "last_modified_date": 1617896697,
-#      "display_name": "Matti",
-#      "profile_image": "https://www.gravatar.com/avatar/3c6cec8609641957445d810202f3a87f?s=128&d=identicon&r=PG&f=1"
-#    },
-#    {
-#      "account_id": 6181036,
-#      "is_employee": false,
-#      "last_modified_date": 1617806196,
-#      "display_name": "Liisa",
-#      "profile_image": "https://www.gravatar.com/avatar/cc9c61be404244b583da0a719ff89954?s=128&d=identicon&r=PG&f=1"
-#    }
-#  ],
-#  "has_more": true,
-#  "quota_max": 300,
-#  "quota_remaining": 297
-#}
-
-# Tallennetaan vastaus tiedostoon
-echo "$response" > users.json
+```Bash
+{"nimi": "Maija Meikäläinen", "ikä": 30, "harrastukset": ["lukeminen", "lenkkeily"]}
 ```
 
-## Syvemmälle
+## Syväluotaus:
+JSON luotiin alunperin Javascript-kielen yhteyteen, mutta siitä on tullut yleisesti käytetty tiedostomuoto myös muiden kielien, kuten Bashin, keskuudessa. Alternatiivisesti voit tallentaa tietoja myös esimerkiksi CSV- tai XML-tiedostoiksi, mutta JSON on usein selkeämpi ja helpompi käsitellä. Bashilla JSON-tietojen käsittelyyn on olemassa myös erilaisia työkaluja ja kirjastoja, jotka tarjoavat lisäominaisuuksia ja helpottavat työtä.
 
-JSON-tiedostojen käsittelyyn on monia muita Bash-komentoja ja työkaluja, kuten `sed`, `awk` ja `jshon`. Voit myös käyttää Bash-skriptejä automatisoimaan JSON-tiedostojen muokkausta ja käsittelyä.
-
-## Katso myös
-
-- [jq dokumentaatio](https://stedolan.github.io/jq/)
-- [Bash-skriptien JSON-käsittely](https://medium.com/@warebot/bash-scripting-and-json-parsing-419beffab82a)
-- [JSON-tiedoston luominen Bash-komennoilla](https://www.geeksforgeeks.org/creating-json-file-using-bash/)
+## Katso myös:
+- [JSON:n virallinen sivusto](https://www.json.org/)
+- [Bashin JSON-kirjasto jq](https://stedolan.github.io/jq/)
+- [Ohjelmointiopas Bashilla työskentelyyn](https://csivola.net/bash/)

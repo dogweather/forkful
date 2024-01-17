@@ -10,45 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i dlaczego?
+Pobieranie stron internetowych jest procesem pozyskiwania zawartości strony z internetu i zapisywania jej na naszym urządzeniu. Programiści wykonują to dla różnych celów, na przykład do analizowania danych lub tworzenia aplikacji internetowych.
 
-Pobieranie strony internetowej może być użyteczne w wielu sytuacjach, na przykład przy tworzeniu skanera sieci, pobieraniu danych z serwisów internetowych lub prostym sprawdzeniu zawartości strony.
+## Jak to zrobić:
+Aby pobrać stronę internetową w Haskell, możesz użyć modułu [```Network.HTTP```](https://hackage.haskell.org/package/HTTP). Poniżej znajduje się przykładowy kod, który pobiera zawartość strony i wyświetla ją w konsoli.
 
-## Jak to zrobić
+```Haskell
+import Network.HTTP
 
-Pobieranie strony internetowej w Haskell jest proste, dzięki zastosowaniu biblioteki "http-conduit". Najpierw musimy zainstalować tę bibliotekę, korzystając z menedżera pakietów Cabal:
-
-```
-cabal install http-conduit
-```
-
-Następnie, importujemy ją w naszym programie:
-
-```
-import Network.HTTP.Conduit
-```
-
-Teraz możemy wykorzystać funkcję "simpleHttp" z biblioteki "http-conduit", aby pobrać zawartość strony internetowej. Poniższy kod pobierze zawartość strony "www.google.com" i wyświetli ją na ekranie:
-
-```
 main = do
-  content <- simpleHttp "http://www.google.com"
-  putStrLn $ "Zawartość strony: " ++ show content
+    response <- simpleHTTP $ getRequest "https://www.example.com"
+    body <- getResponseBody response
+    putStrLn body
 ```
 
-Po uruchomieniu programu, powinniśmy zobaczyć na ekranie zawartość strony "www.google.com". Zamiast wyświetlać zawartość na ekranie, możemy też zapisać ją do pliku, korzystając z funkcji "writeFile":
+Otrzymany wynik będzie wyglądał podobnie do poniższego:
 
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Example Domain</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  <div>
+      <h1>Example Domain</h1>
+      <p>This domain is for use in illustrative examples in documents. You may use this
+    domain in literature without prior coordination or asking for permission.</p>
+  </div>
+</body>
+</html>
 ```
-writeFile "google.html" content
-```
 
-Ta sama funkcja może być wykorzystana do pobierania danych z innych serwisów internetowych lub stron z danymi w formacie JSON. Wówczas musimy wykorzystać funkcję "requestBody" zamiast "simpleHttp", aby pobrać odpowiedź w formacie odpowiednim dla naszego serwisu.
+## Głębsze spojrzenie:
+Pobieranie stron internetowych było częścią programowania od samego początku. W większości języków programowania jest to zadanie dość prosty, ale w Haskell możemy wykorzystać moduł ```Network.HTTP``` do bardziej zaawansowanych zadań, takich jak pobieranie stron z wykorzystaniem protokołu ```https```.
 
-## Wgląd w temat
+Alternatywą dla modułu ```Network.HTTP``` jest [```HTTP Conduit```](https://hackage.haskell.org/package/http-conduit), który zapewnia bardziej elastyczny sposób na pobieranie stron internetowych.
 
-Pobieranie stron internetowych może być trudne w niektórych przypadkach, gdyż niektóre strony wykorzystują zabezpieczenia, takie jak CAPTCHA, które utrudniają automatyczne pobieranie danych. W takich przypadkach, musimy użyć dodatkowych narzędzi lub bibliotek, takich jak "selenium", aby symulować zachowanie przeglądarki internetowej i ominąć zabezpieczenia.
+Szczegóły implementacyjne pobierania stron internetowych są dość złożone i wykraczają poza zakres tego artykułu. Jeśli jesteś zainteresowany, możesz zajrzeć do dokumentacji modułu ```Network.HTTP```.
 
-## Zobacz też
-
-- [Dokumentacja biblioteki "http-conduit"](https://hackage.haskell.org/package/http-conduit)
-- [Przykładowe programy pobierające dane z sieci w Haskellu](https://wiki.haskell.org/Examples/Networking)
+## Zobacz też:
+- [Dokumentacja modułu ```Network.HTTP```](https://hackage.haskell.org/package/HTTP/docs/Network-HTTP.html)
+- [Moduł ```HTTP Conduit```](https://hackage.haskell.org/package/http-conduit)
+- [Poradnik od HaskellWiki na temat pobierania stron](https://wiki.haskell.org/Download_web_page)

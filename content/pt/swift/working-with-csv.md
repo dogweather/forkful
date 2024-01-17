@@ -10,49 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que trabalhar com CSV?
+## O Que e Por Que?
 
-O CSV (Comma-Separated Values) é um formato muito popular para armazenar dados em formato de tabela, com valores separados por vírgulas. Trabalhar com CSV é importante para ler e gravar dados em diferentes formatos de arquivo, como planilhas e bancos de dados, e é um recurso essencial para desenvolvedores que trabalham com dados.
+Trabalhar com CSV pode ser um elemento muito importante na programação. O CSV (Comma Separated Values) é um formato de arquivo comum para armazenar e compartilhar dados de forma estruturada, onde cada valor é separado por uma vírgula. Os programadores usam o CSV porque é um formato simples e fácil de ler e editar, tornando-o útil para armazenar grandes quantidades de dados.
 
-## Como fazer:
+## Como Fazer:
 
-Para trabalhar com CSV em Swift, é necessário importar a biblioteca "Foundation", que já vem incluída na linguagem. Em seguida, basta utilizar a função "String(contentsOfFile:encoding:)" para ler o arquivo CSV e a função "write(toFile:atomically:encoding:)" para escrever no arquivo. Veja um exemplo:
+Para começar a trabalhar com CSV no Swift, primeiro você precisa importar o framework SwiftCSV para o seu projeto. Em seguida, você pode carregar um arquivo CSV existente usando a função `loadCSV()` e acessar os dados usando a propriedade `rows` da classe `CSV`.
 
-```Swift
-import Foundation
+```
+import SwiftCSV
 
-// Lendo arquivo CSV
-if let fileURL = Bundle.main.url(forResource: "dados", withExtension: "csv") {
-  do {
-    let content = try String(contentsOfFile: fileURL.path, encoding: .utf8)
-    print(content) // imprime o conteúdo do arquivo CSV
+// Carregar o arquivo CSV
+let csv = loadCSV(path: "caminho/do/arquivo.csv")
 
-  } catch {
-    print(error)
-  }
-}
-
-// Escrevendo arquivo CSV
-let stringCSV = "Nome, Sobrenome, Idade\nJoão, Silva, 30\nMaria, Souza, 25"
-let fileManager = FileManager.default
-let file = "dados.csv"
-let directory = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first!
-let fileURL = directory.appendingPathComponent(file)
-do {
-    try stringCSV.write(to: fileURL, atomically: true, encoding: .utf8)
-} catch {
-    print(error)
-}
+// Acessar os dados
+let dados = csv.rows
 ```
 
-O resultado do código acima seria a leitura do conteúdo do arquivo CSV e a criação de um novo arquivo CSV com os dados fornecidos.
+Você também pode criar um CSV a partir de um array de arrays de strings e depois salvá-lo em um arquivo usando a função `saveCSV()`.
 
-## Mais sobre CSV:
+```
+import SwiftCSV
 
-Além das funções mencionadas, o Swift oferece outras opções para trabalhar com CSV, como a biblioteca externa "CSVImporter", que facilita a leitura e a escrita de arquivos CSV com diferentes delimitadores e opções de formatação. Também é possível acessar cada valor em um arquivo CSV e manipulá-lo individualmente, além de realizar operações como ordenar, filtrar e agrupar os dados contidos no CSV.
+// Criar CSV a partir de array de arrays de strings
+let dados = [["Nome", "Idade"], ["Maria", "25"], ["João", "30"], ["Ana", "20"]]
+let csv = CSV(dados: dados)
 
-## Veja também:
+// Salvá-lo em um arquivo
+saveCSV(csv: csv, path: "caminho/do/novoArquivo.csv")
+```
 
-- [Documentação oficial do Swift sobre leitura e gravação de arquivos](https://developer.apple.com/documentation/foundation/filemanager)
-- [CSVImporter para manipulação avançada de arquivos CSV em Swift](https://github.com/vincode-io/CSVImporter)
-- [Tutorial sobre como trabalhar com CSV em Swift](https://medium.com/@abhimuralidharan/working-with-csv-files-in-swift-5-ios-8a6572aa80f)
+## Mergulho Profundo:
+
+O formato CSV foi criado em 1972 para facilitar o compartilhamento de dados entre diferentes programas e sistemas. Ele é amplamente utilizado atualmente, especialmente para importação e exportação de dados em aplicativos de planilhas e bancos de dados. Alguns dos formatos alternativos para armazenar dados são JSON, XML e YAML, mas o CSV continua sendo uma opção popular devido à sua simplicidade.
+
+Ao trabalhar com CSV no Swift, é importante ter em mente que os dados não são tipados, o que significa que você precisa converter os valores para o tipo apropriado antes de usá-los em seu código.
+
+## Veja Também:
+
+- [Documentação do SwiftCSV](https://github.com/yas99en/swiftcsv)
+- [Introdução ao CSV](https://www.clker.com/clipart-588.html)
+- [Artigo sobre o histórico do formato CSV](https://en.wikipedia.org/wiki/Comma-separated_values)

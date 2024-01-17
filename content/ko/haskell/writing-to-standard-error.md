@@ -1,7 +1,7 @@
 ---
-title:                "표준 에러에 쓰는 것"
-html_title:           "Haskell: 표준 에러에 쓰는 것"
-simple_title:         "표준 에러에 쓰는 것"
+title:                "표준 오류에 쓰는 방법"
+html_title:           "Haskell: 표준 오류에 쓰는 방법"
+simple_title:         "표준 오류에 쓰는 방법"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Files and I/O"
@@ -10,27 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+## 무엇 & 왜?
+프로그래머들은 프로그램 실행 중 발생하는 오류나 경고 메시지를 처리하기 위해 표준 에러로 쓰기를 사용합니다. 표준 에러는 프로그램 실행 중 발생하는 오류 메시지를 사용자에게 보여줍니다. 이 방법을 사용하는 이유는 사용자에게 오류에 대해 알리고 이를 해결하도록 유도하기 위해서입니다.
 
-표준 오류 스트림에 쓰는 것이 중요한 이유는 프로그래밍 시 에러를 파악하고 수정하기 위해서입니다.
-
-## 어떻게 할까요
-
+## 방법:
 ```Haskell
-import System.IO
-
 main = do
-  hPutStrLn stderr "이것은 스트림에 쓰는 에러 메시지입니다."
+    putStrLn "Hello World!"
+    hPutStrLn stderr "This is an error message!"
 ```
 
-위의 코드를 실행하면 표준 오류 스트림에 메시지가 출력됩니다. 이는 코드를 디버깅할 때 유용하며, 사용자에게 어떤 프로그램 오류가 발생했는지 알려줄 수 있습니다.
+출력:
 
-## 깊이 파고들기
+```
+Hello World!
+This is an error message!
+```
 
-표준 오류 스트림에 쓰는 것은 프로그램 개발 과정에서 유용한 디버깅 도구입니다. 일반적으로 프로그램의 출력은 표준 출력 스트림에 나타나며, 에러 메시지는 표준 오류 스트림에 나타납니다. 따라서 우리는 맞춤형 로그 파일을 만들지 않고도 콘솔에 프로그램의 실행 상태를 즉시 확인할 수 있습니다.
+## 깊이 파고들기:
+이 방식은 예전에는 컴퓨터 화면에 직접 에러 메시지를 출력했지만, 프로그래밍 언어가 발전함에 따라 오류 메시지를 사용자에게 보여주는 방식이 바뀌었습니다. 더 나은 대안으로는 로깅 라이브러리를 사용하는 것이 있으며, 이는 오류 메시지를 파일에 기록하거나 네트워크를 통해 전송할 수 있도록 해줍니다. 표준 에러를 이용해 오류 메시지를 사용자에게 제공하는 방식은 안전하고 간단하기 때문에 여전히 널리 사용되고 있습니다.
 
-## 참고 자료
-
-- [Haskell 공식 문서](https://www.haskell.org/documentation/)
-- [표준 스트림에 대한 자세한 설명](https://en.wikipedia.org/wiki/Standard_streams)
-- [Haskell 표준 라이브러리 문서](https://hackage.haskell.org/package/base-4.15.0.0/docs/System-IO.html)
+## 참고 자료:
+- [Haskell 표준 라이브러리 문서](https://hackage.haskell.org/package/base-4.11.1.0/docs/GHC-IO-Handle.html#v:hPutStrLn)
+- [프로그래밍 언어 기본 개념 설명문서](https://en.wikipedia.org/wiki/Standard_error_(Unix))

@@ -10,39 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+## Cosa e perché?
 
-Hai mai avuto la necessità di inviare una richiesta HTTP nel tuo script Fish Shell? Forse stavi cercando di automatizzare un processo per risparmiare tempo o stavi creando una script per un'applicazione web. In ogni caso, conoscere come inviare richieste HTTP con Fish Shell è un'abilità utile da avere nel tuo arsenal di programmazione.
+Mandare una richiesta HTTP significa inviare una richiesta ad un server web per ottenere delle informazioni o per effettuare un'azione. I programmatori spesso utilizzano questo processo per ottenere dati o interagire con applicazioni online.
 
-## Come Utilizzare
+## Come fare:
+Nel Fish Shell, puoi inviare una richiesta HTTP utilizzando il comando `curl`. Ad esempio, per ottenere il contenuto di una pagina web, puoi utilizzare il seguente comando:
 
-Per inviare una richiesta HTTP con Fish Shell, utilizzeremo il comando `curl`. Questo comando ci permette di inviare richieste HTTP e ottenere risposte dai nostri server. Vediamo un esempio di codice:
-
-```Fish Shell
-curl https://api.github.com/users/username
+```
+curl https://www.example.com
 ```
 
-Nella riga di codice sopra, stiamo utilizzando `curl` per ottenere informazioni sul profilo di un utente specifico su GitHub. Il risultato sarà una risposta formattata in formato JSON, con tutti i dettagli del profilo dell'utente. Possiamo anche specificare il metodo di richiesta e i parametri da inserire nel nostro comando `curl`. Ad esempio:
+Se vuoi salvare l'output in un file, puoi utilizzare la flag `-o` seguita dal nome del file desiderato. Per esempio:
 
-```Fish Shell
-curl -X POST -d "nome=John&cognome=Doe" https://example.com/submit
+```
+curl -o index.html https://www.example.com
 ```
 
-In questo esempio, stiamo inviando una richiesta HTTP POST con i parametri `nome` e `cognome` al server `example.com`. Assicurati di leggere la documentazione della tua applicazione web per sapere quali parametri sono necessari per inviare una richiesta HTTP corretta.
+Puoi anche specificare il tipo di richiesta utilizzando la flag `-X` seguita dal metodo di richiesta desiderato, come ad esempio `GET` o `POST`. Ecco un esempio:
 
-## Approfondimenti
-
-Oltre al comando `curl`, ci sono anche altri strumenti che puoi utilizzare per inviare richieste HTTP con Fish Shell. Ad esempio, puoi installare il pacchetto "httpie" con il seguente comando:
-
-```Fish Shell
-fisher install pypa/httpie
+```
+curl -X POST -d "username=johndoe&password=12345" https://www.example.com/login
 ```
 
-Questo ci fornirà un'alternativa leggermente più user-friendly a `curl`, con una sintassi più intuitiva. Inoltre, è possibile utilizzare la libreria "fisherman cURL Wrapper", che semplifica l'utilizzo di `curl` all'interno di uno script Fish Shell.
+## Approfondimento:
+Il comando `curl` risale ai primi anni di Internet ed è stato originariamente creato per il sistema operativo UNIX. Alcune alternative a `curl` includono `wget` e `httpie`. Inoltre, è possibile integrare l'invio di richieste HTTP nel proprio codice utilizzando librerie specifiche per il linguaggio di programmazione utilizzato.
 
-## Vedi Anche
-
+## Vedi anche:
 - [Documentazione ufficiale di Fish Shell](https://fishshell.com/docs/current/index.html)
-- [Tutorial su come utilizzare curl con Fish Shell](https://www.digitalocean.com/community/tutorials/how-to-use-curl-with-fish-shell)
-- [Pacchetto "httpie" per Fish Shell](https://github.com/pypa/httpie)
-- [Libreria "fisherman cURL Wrapper"](https://github.com/fisherman/curl-wrapper)
+- [Pagina di manuale di curl](https://curl.se/docs/manpage.html)
+- [Tutorial su come utilizzare curl](https://linuxize.com/post/curl-rest-api/)
+- [Articolo su differenze tra curl, wget e httpie](https://www.tecmint.com/curl-wget-posts-http-requests-with-examples/)

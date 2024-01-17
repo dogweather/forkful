@@ -10,46 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-If you are working on a project that involves scraping data from the web, downloading a webpage can be a crucial step. Whether you are a data scientist, web developer, or just a curious individual, downloading a webpage can provide you with valuable information and insights.
+Downloading a web page is the process of retrieving data from a specific URL, usually in the form of HTML, and saving it locally. This allows programmers to access and manipulate website data for various purposes such as data analysis, web scraping, and creating web applications that consume APIs.
 
-## How To
+## How to:
 
-To download a webpage using Ruby, you can utilize the "net/http" library. First, you need to require the library in your code:
+To download a web page in Ruby, we can use the standard library's `OpenURI` module. Here's a simple example:
 
-```Ruby
-require 'net/http'
+```ruby
+require 'open-uri'
+
+url = "https://en.wikipedia.org/wiki/Ruby_(programming_language)"
+html = open(url).read
+
+puts html
 ```
 
-Then, you can use the "Net::HTTP.get" method to download the webpage and store it in a variable:
-
-```Ruby
-page = Net::HTTP.get(URI("https://www.example.com"))
-```
-
-You can also specify the user agent and other headers to mimic a browser request:
-
-```Ruby
-url = URI.parse("https://www.example.com")
-request = Net::HTTP::Get.new(url.to_s, {'User-Agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) Gecko/20100101 Firefox/91.0'})
-response = Net::HTTP.start(url.host, url.port, use_ssl: url.scheme == 'https') do |http|
-  http.request(request)
-end
-
-page = response.body
-```
-
-Once you have downloaded the webpage, you can do further processing, such as parsing HTML, extracting specific data, or saving the page locally.
+This code will retrieve the HTML data from the given URL and save it to a variable named `html`. We can then manipulate this data as needed. For example, we can use regular expressions to extract specific information from the webpage.
 
 ## Deep Dive
 
-When downloading a webpage with Ruby, it is important to consider the different ways it can be accessed. For example, if a website requires authentication, you may need to use a separate library or method to handle it. Additionally, you may encounter errors such as timeouts or invalid SSL certificates, which you need to handle in your code.
+The `OpenURI` module is a standard library in Ruby that provides a simple interface for retrieving and reading data from URLs. It supports various protocols including HTTP, HTTPS, and FTP. Prior to Ruby 1.9, the `open-uri` library had to be explicitly required, but it is now included by default.
 
-Another aspect to consider is the performance of your code. If you are downloading multiple webpages, you may want to consider using parallelization techniques to speed up the process. You can also implement caching to avoid multiple downloads of the same webpage.
+There are also alternative frameworks for downloading web pages in Ruby, such as `HTTParty` and `Faraday`, which offer more advanced features and options. Additionally, there are third-party gems that focus specifically on web scraping, such as `Nokogiri` and `Mechanize`.
 
-See Also
+Behind the scenes, the `OpenURI` module uses the `net/http` module to make HTTP requests and retrieve data from websites. It also handles redirects and other HTTP responses gracefully.
 
-- The official Ruby documentation for "net/http": https://ruby-doc.org/stdlib-3.0.2/libdoc/net/http/rdoc/Net/HTTP.html
-- A tutorial on web scraping with Ruby: https://www.freecodecamp.org/news/web-scraping-with-ruby-tutorial/
-- A blog post on optimizing web scraping with Ruby: https://blog.arkency.com/7-tips-to-enhance-your-web-scraping-scripts-with-ruby/
+## See Also
+
+- [OpenURI documentation](https://ruby-doc.org/stdlib-2.7.0/libdoc/open-uri/rdoc/OpenURI.html)
+- [HTTParty gem](https://github.com/jnunemaker/httparty)
+- [Faraday gem](https://github.com/lostisland/faraday)
+- [Nokogiri gem](https://github.com/sparklemotion/nokogiri)
+- [Mechanize gem](https://github.com/sparklemotion/mechanize)

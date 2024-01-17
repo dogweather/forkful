@@ -1,7 +1,7 @@
 ---
-title:                "भविष्य या भूतकाल में तारीख की गणना करना"
-html_title:           "Kotlin: भविष्य या भूतकाल में तारीख की गणना करना"
-simple_title:         "भविष्य या भूतकाल में तारीख की गणना करना"
+title:                "भविष्य या अतीत में एक तारीख की गणना करना"
+html_title:           "Kotlin: भविष्य या अतीत में एक तारीख की गणना करना"
+simple_title:         "भविष्य या अतीत में एक तारीख की गणना करना"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Dates and Times"
@@ -10,33 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Kyon
-Agar aapko pata karna hai ki aapko kis din kisi event ko celebrate karna hai ya aapko ek certain date tak kaam karna hai, to aapko pichle aur aane waale dates ka calculation karna hoga. Isliye, dates ko calculate karne ki jarurat padti hai.
+## Kya hai aur Kyun?
+Calculating date in the future or past ek aam kaam hai jo programmers apni code mein karne ke liye karte hain. Isse aap ek date ke saath kisi specific interval ko add ya subtract kar sakte hain, jisse aap apni application mein dynamic date values use kar sakte hain.
 
-## Kaise Kare
-Date ko calculate karne ke liye, Kotlin mein "Calendar" class ka istemal kiya ja sakta hai. Is class mein "add()" method ka use karke hum dates mein changes kar sakte hain. Yahan hamne ek example diya hai jo current date se 3 din aage ki date calculate karta hai.
+## Kaise Karein:
+Kotlin mein kisi date ke saath interval add ya subtract karne ke liye, aap ```java
+LocalDate
+``` class ka use kar sakte hain. Is class mein hume various methods milte hain jaise ki ```java minusDays(), plusMonths()``` jisse hum desired interval ke saath date calculate kar sakte hain. Neeche diye gaye code examples aur output aapko sahi samajhne mein madad karenge:
 
+- Future date calculate karna:
 ```Kotlin
-fun main() {
-    var calendar = Calendar.getInstance()
-    calendar.add(Calendar.DATE, 3)
-
-    println("Aane waali date: ${calendar.time}")
-}
+val today = LocalDate.now()
+val futureDate = today.plusDays(10)
+println("Aaj ke baad 10 days ka sahi date hai: $futureDate")
 ```
-
 Output:
 ```
-Aane waali date: Wed Oct 13 12:45:38 IST 2021
+Aaj ke baad 10 days ka sahi date hai: 2021-07-08
+```
+- Past date calculate karna:
+```Kotlin
+val today = LocalDate.now()
+val pastDate = today.minusMonths(2)
+println("Aaj se 2 months pehle ka sahi date hai: $pastDate")
+```
+Output:
+```
+Aaj se 2 months pehle ka sahi date hai: 2021-03-08
 ```
 
-Is code mein humne "add()" method mein "Calendar.DATE" aur "3" ka istemal kiya hai. "Calendar.DATE" current date ko represent karta hai aur "3" number of days bataata hai jinhe hum aane waali date mein add karna chahte hain.
+## Deeper Info:
+Is date calculation ka concept bahut purana hai aur programming languages mein iska istemaal bahut dino se ho raha hai. Pehle log isko manually calculations se karte the, lekin ab isko coding ke through karna bahut hi aasan ho gaya hai. Iske alawa, aap iske alternatives jaise ki Java ke ```Date``` aur ```Calendar``` classes ka bhi use kar sakte hain, lekin Kotlin ki ```LocalDate``` class ismein bahut hi easy aur efficient hai.
 
-## Deep Dive
-Date ko calculate karne ke liye, hum "add()" method mein alag-alag constants use kar sakte hain jaise "Calendar.MONTH" ya "Calendar.YEAR". Yeh date ko calculate karne ke liye ek flexible aur easy way hai.
-
-Ek aur tareeka date ka calculation karne ka hai "Calendar" class mein maujood "set()" method ka istemal karna. Is method se hum date ko set kar sakte hain aur phir use "add()" method ke jariye modify kar sakte hain.
-
-## Dekhna Bhi
-- [Kotlin Date and Time API](https://developer.android.com/reference/kotlin/java/util/Calendar)
-- [Kotlin Reference for Calendar class](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-calendar/index.html)
+## See Also:
+Kotlin date calculation ke bare mein aur jaankari ke liye aap neeche diye gaye sources ko refer kar sakte hain:
+- [Kotlin LocalDate class](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-local-date/)
+- [Java Date and Time API](https://docs.oracle.com/javase/tutorial/datetime/overview/index.html)

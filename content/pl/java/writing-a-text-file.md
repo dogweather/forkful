@@ -1,7 +1,7 @@
 ---
-title:                "Tworzenie pliku tekstowego"
-html_title:           "Java: Tworzenie pliku tekstowego"
-simple_title:         "Tworzenie pliku tekstowego"
+title:                "Tworzenie pliku tekstu"
+html_title:           "Java: Tworzenie pliku tekstu"
+simple_title:         "Tworzenie pliku tekstu"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Files and I/O"
@@ -10,38 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego?
+"## Co i Dlaczego?"
+Pisanie pliku tekstowego to proces, w którym programiści tworzą plik zawierający tekstowe informacje. Jest to powszechna praktyka w programowaniu, ponieważ umożliwia przechowywanie danych w trwałej formie, dzięki czemu można je łatwo odczytać i wykorzystać w przyszłości.
 
-Pisanie plików tekstowych jest często niezbędnym elementem programowania w języku Java. Pozwala ono na zapisywanie i odczytywanie danych z plików, co jest przydatne w wielu aplikacjach. Jest to także ważny krok w nauce programowania.
-
-## Jak to zrobić?
-
-Aby zapisać tekst do pliku, należy użyć klasy `FileWriter` oraz `BufferedWriter`. Najpierw należy utworzyć obiekt klasy `FileWriter` z adresem pliku jako parametrem. Następnie należy utworzyć obiekt klasy `BufferedWriter`, który będzie zawierał metody do zapisu tekstu. Wreszcie, używając metody `write()` należy przekazać tekst, który chcemy zapisać do pliku. Przykładowy kod wygląda następująco:
+"## Jak to zrobić:"
+Poniżej przedstawiono prosty przykład kodu Java, który demonstruje, jak utworzyć nowy plik tekstowy i zapisać w nim dane.
 
 ```Java
-FileWriter writer = new FileWriter("sciezka/do/pliku.txt");
-BufferedWriter bWriter = new BufferedWriter(writer);
-bWriter.write("To jest przykładowy tekst do zapisania.");
-bWriter.close();
+import java.io.FileWriter;
+
+public class WriteTextFile{
+   public static void main(String[] args) {
+      try {
+         // Tworzenie nowego pliku tekstowego 
+         FileWriter myWriter = new FileWriter("test.txt");
+         // Zapisywanie tekstu do pliku
+         myWriter.write("To jest przykładowy tekst, który zostanie zapisany w pliku.");
+         // Zamykanie pliku
+         myWriter.close();
+         System.out.println("Plik został pomyślnie zapisany!");
+      } catch (Exception e) {
+         System.out.println("Wystąpił błąd przy zapisywaniu do pliku.");
+         e.printStackTrace();
+      }
+   }
+}
 ```
 
-Jeśli chcemy odczytać tekst z pliku, należy wykorzystać klasę `FileReader` oraz `BufferedReader`. W tym przypadku, najpierw musimy otworzyć plik przy użyciu obiektu `FileReader`, a następnie przekazać go do obiektu `BufferedReader`. Aby odczytać tekst, możemy użyć metody `readLine()`, która odczytuje jeden wiersz tekstu z pliku. Przykładowy kod może wyglądać tak:
+Powyższy kod utworzy nowy plik tekstowy o nazwie "test.txt" i zapisze w nim podany tekst. Po uruchomieniu programu, w folderze z projektem powinien pojawić się nowy plik tekstowy zawierający wprowadzone dane.
 
-```Java
-FileReader reader = new FileReader("sciezka/do/pliku.txt");
-BufferedReader bReader = new BufferedReader(reader);
-String line = bReader.readLine();
-System.out.println(line); // wypisze: To jest przykładowy tekst do zapisania.
-bReader.close();
-```
+"## Głębszy zanurzenie:"
+Pisanie plików tekstowych jest popularną metodą w programowaniu od lat. Zanim powstały nowoczesne bazy danych, programiści wykorzystywali pliki tekstowe do przechowywania i przetwarzania danych. Dziś istnieją również alternatywne metody zapisywania danych, takie jak bazy danych czy format JSON. Jednak w wielu przypadkach, pisanie plików tekstowych jest wciąż wygodnym i prostym sposobem na przechowywanie danych.
 
-## Przeanalizujmy dokładniej
-
-Podczas pisania plików tekstowych, warto pamiętać o kilku ważnych zagadnieniach. Po pierwsze, należy uważać na używany encoding. Domyślnie, pliki zapisywane są z użyciem encodingu systemowego, ale można to zmienić w konstruktorze klasy `FileWriter` lub `FileReader`.
-Kolejną ważną kwestią jest prawidłowe zamykanie strumieni, w naszych przykładach zastosowaliśmy to przy użyciu metody `close()`. Można także użyć bloku `try-finally`, w celu zapewnienia, że nie pozostaną otwarte strumienie nawet w przypadku wystąpienia błędu.
-
-## Zobacz także
-
-1. [Oficjalna dokumentacja Javy](https://docs.oracle.com/javase/10/)
-2. [Poradnik dla początkujących w programowaniu w Javie](https://javastart.pl/kurs/java-podstawy/)
-3. [Tutorial na temat operacji na plikach w Javie](https://www.baeldung.com/java-write-to-file)
+"## Zobacz także:"
+Jeśli chcesz dowiedzieć się więcej o pisaniu plików tekstowych w Java, polecam przeczytać ten artykuł: [Java FileWriter](https://www.geeksforgeeks.org/filewriter-java-examples/) oraz zapoznać się z dokumentacją klasy [FileWriter](https://docs.oracle.com/javase/7/docs/api/java/io/FileWriter.html).

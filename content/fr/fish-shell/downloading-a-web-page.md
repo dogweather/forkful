@@ -1,7 +1,7 @@
 ---
-title:                "Récupération d'une page web"
-html_title:           "Fish Shell: Récupération d'une page web"
-simple_title:         "Récupération d'une page web"
+title:                "Téléchargement d'une page web"
+html_title:           "Fish Shell: Téléchargement d'une page web"
+simple_title:         "Téléchargement d'une page web"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "HTML and the Web"
@@ -10,37 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Quoi & Pourquoi?
+Télécharger une page web, c'est récupérer le contenu d'un site internet pour pouvoir l'utiliser dans un programme. Les programmeurs font cela pour accéder à des informations spécifiques ou pour automatiser des tâches.
 
-Tu pourrais te demander pourquoi tu devrais t'intéresser à télécharger une page web. Eh bien, c'est très utile si tu as besoin de récupérer des données spécifiques d'un site, en particulier si tu veux les utiliser pour un projet personnel ou professionnel. Cela peut aussi être pratique pour automatiser certaines tâches, comme le téléchargement régulier de rapports ou d'articles.
-
-## Comment Faire
-
-La coquille Fish (Fish Shell en anglais), est un excellent choix pour télécharger des pages web grâce à ses fonctionnalités pratiques telles que l'auto-complétion et les fonctions intégrées. Voyons comment tu peux utiliser Fish pour télécharger une page web en utilisant l'exemple du site web Stack Overflow.
+## Comment faire:
+Les exemples de code ci-dessous utilisent le shell Fish pour télécharger une page web en utilisant la commande `curl`.
 
 ```Fish Shell
-
-# Premièrement, nous devons définir l'URL de la page que nous voulons télécharger
-set url https://stackoverflow.com/questions/10681771/how-to-download-a-web-page
-
-# Ensuite, nous allons utiliser la fonction `curl` intégrée pour télécharger la page
-curl $url > page.html
-
-# Le fichier html sera maintenant enregistré dans le même répertoire que votre terminal
+curl <url de la page>  # télécharge la page et imprime le contenu dans la console
+curl <url de la page> > fichier.html  # télécharge la page et enregistre le contenu dans un fichier HTML
 ```
 
-Et c'est tout ! Tu as maintenant téléchargé avec succès une page web en utilisant Fish. Tu peux modifier l'URL pour télécharger différentes pages ou encore ajouter des options à la commande `curl` pour personnaliser le téléchargement selon tes besoins.
+Exemple de sortie:
 
-## Plongée Profonde
+```Fish Shell
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Titre de la page</title>
+</head>
+<body>
+    <h1>Bienvenue sur mon site</h1>
+    <p>Ce site est dédié à tout ce qui concerne les poissons.</p>
+</body>
+</html>
+```
 
-Si tu veux approfondir tes connaissances sur la façon de télécharger des pages web, voici quelques points importants à retenir :
+Vous pouvez également utiliser la commande `wget` pour télécharger des fichiers en ligne à partir du shell Fish.
 
-- Tu peux également utiliser la commande `wget` intégrée à Fish pour télécharger une page web, mais sa syntaxe peut être un peu plus complexe.
-- Pour les pages qui nécessitent une authentification, tu peux utiliser la commande `curl` avec les options `--user` et `--password` pour fournir tes identifiants.
-- Pour télécharger des pages avec du contenu dynamique, tu peux utiliser des bibliothèques externes telles que `mechanize` ou `BeautifulSoup` en les incluant dans ton script Fish.
+## Plongée en profondeur:
+Avant l'avènement du World Wide Web, les programmeurs utilisaient principalement la fonction `ftp` pour télécharger des fichiers. Avec l'avènement des pages web avec du contenu dynamique, l'utilisation de la commande `curl` est devenue plus courante.
 
-## Voir Aussi
+Il existe d'autres outils et bibliothèques pour télécharger des pages web, tels que `Beautiful Soup` en Python ou `Selenium` pour automatiser des interactions avec des pages web. Cependant, l'utilisation de `curl` ou `wget` dans le shell Fish est une option simple et rapide pour des besoins de téléchargement de base.
 
-- [Documentation officielle de Fish](https://fishshell.com/docs/current/) pour en savoir plus sur les fonctionnalités et commandes intégrées.
-- [Guide de référence des coquilles de commande](https://devhints.io/fish) contenant des astuces et raccourcis clavier utiles pour Fish.
-- [Page GitHub de Fish](https://github.com/fish-shell/fish-shell) pour connaître les mises à jour et contribuer à l'amélioration de cette coquille.
+Lors de l'utilisation de la commande `curl`, il est possible de spécifier des options supplémentaires telles que l'authentification, l'utilisation de proxies et le téléchargement de contenu spécifique. Vous pouvez utiliser la commande `curl --help` pour voir toutes les options disponibles.
+
+## Voir aussi:
+- [La documentation officielle de Fish Shell](https://fishshell.com/docs/current/index.html)
+- [Le site officiel de curl](https://curl.se/)

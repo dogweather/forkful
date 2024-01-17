@@ -1,7 +1,7 @@
 ---
-title:                "yaml로 작업하기"
-html_title:           "Java: yaml로 작업하기"
-simple_title:         "yaml로 작업하기"
+title:                "yaml 작업하기"
+html_title:           "Java: yaml 작업하기"
+simple_title:         "yaml 작업하기"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Data Formats and Serialization"
@@ -10,48 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+## 무엇이고 왜?
 
-YAML을 사용하여 작업하는 이유는 매우 쉽습니다. YAML은 모든 언어에서 사용할 수 있으며, 구조적이고 읽기 쉬운 형식을 가지고 있어 데이터 관리에 유용합니다.
+YAML 작업이란 무엇인가요? 이것은 데이터 직렬화 언어로서, 여러분의 프로그램에서 사용하는 구성 설정, 파일 저장 및 데이터 전송을 위해 사용됩니다. 프로그래머는 YAML을 사용하여 일반적으로 사용되는 텍스트 형식보다 더 간결하게 데이터를 표현할 수 있으며, 가독성이 뛰어나다는 이유로 이를 선호합니다.
 
-## 사용 방법
+## 사용 방법:
 
-```Java
+```Java 
+// YAML 라이브러리 가져오기
 import org.yaml.snakeyaml.Yaml;
 
-public class YAMLExample {
-    public static void main(String[] args) {
-        // YAML 파일에서 데이터 읽어오기
-        Yaml yaml = new Yaml();
-        Map<String, Object> data = yaml.load(YAMLExample.class.getResourceAsStream("data.yaml"));
+// YAML 파일로부터 데이터 읽기
+Yaml yaml = new Yaml();
+Map<String, Object> data = yaml.load(inputStream);
 
-        // 데이터 수정하기
-        data.put("name", "John Doe");
-        data.put("age", 25);
+// 데이터 조작
+data.put("key", "value");
 
-        // 수정된 데이터 YAML 파일로 저장하기
-        try {
-            yaml.dump(data, new FileWriter("new_data.yaml"));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-}
+// 변경 사항을 YAML 파일로 다시 작성하기
+Yaml yaml = new Yaml();
+String output = yaml.dump(data);
+```
+출력:
+```
+key: value
 ```
 
-위 코드는 YAML 파일에서 데이터를 읽어와 수정하고, 수정된 데이터를 새로운 YAML 파일로 저장하는 간단한 예시입니다. 코드를 실행하면 다음과 같이 데이터가 수정되고 새로운 파일이 생성될 것입니다:
+## 깊게 파헤치기:
 
-```yaml
-name: John Doe
-age: 25
-```
+### 역사적 배경:
+YAML은 2001년 더그 커빈(Doug Cutting)이 만든 고급 마크업 언어인 XML에 대한 대안으로 처음 소개되었습니다. 그동안 여러 가지 다른 데이터 표현 언어가 소개되었지만, YAML은 가장 인기 있는 선택지 중 하나로 자리 잡았습니다.
 
-## 깊이있는 살펴보기
+### 대안:
+XML만큼 널리 사용되며 강력한 다른 대안으로는 JSON이 있습니다. 하지만 YAML은 가독성이 좋은 구조와 다른 표현 형식과의 쉬운 호환성 등 여러 가지 장점을 가지고 있어 여전히 많은 프로그램에서 사용됩니다.
 
-YAML을 사용하면 데이터를 구조적으로 관리할 수 있으며, 코드의 가독성을 높일 수 있습니다. 또한, 변수와 인스턴스의 설정 파일로 사용할 수 있어 유용합니다. YAML 파싱 라이브러리를 이용하면, 복잡한 자료 구조도 쉽게 다룰 수 있습니다.
+### 구현 세부사항:
+YAML은 데이터 직렬화 언어이기 때문에, Java에서 다른 직렬화 라이브러리와 비슷한 방식으로 작동합니다. 자세한 내용은 자바 레퍼런스 문서를 참조하시기 바랍니다.
 
-## 관련 링크
+## 관련 자료:
 
-- [YAML 공식 사이트](https://yaml.org/)
-- [SnakeYAML 라이브러리](https://bitbucket.org/asomov/snakeyaml/src/master/)
-- [YAML 소개 및 사용법 블로그 포스트](https://medium.com/data-structures-and-algorithms-in-coding/yaml-%EC%86%8C%EA%B0%9C-%EB%B0%8F-%EC%82%AC%EC%9A%A9%EB%B2%95-cf2b9e456a86)
+- YAML 공식 홈페이지: https://yaml.org
+- YAML 스펙 문서: https://yaml.org/spec/
+- SnakeYAML 라이브러리: https://bitbucket.org/asomov/snakeyaml/src/default/

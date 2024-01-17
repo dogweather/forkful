@@ -10,62 +10,78 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué enviar una solicitud HTTP con autenticación básica?
+### ¿Qué & Por qué? 
+Enviar una solicitud HTTP con autenticación básica es una forma de proteger información confidencial al comunicarse con un servidor. Los programadores pueden utilizar esto para garantizar que solo los usuarios autorizados puedan acceder y enviar datos a su servidor.
 
-Enviar una solicitud HTTP con autenticación básica es una forma segura de acceder a recursos en línea, como bases de datos o servicios web, que requieren una identificación para acceder. Esto es esencial para proteger la información privada y garantizar que solo los usuarios autorizados puedan acceder a ella.
+### Cómo:
+Utilizar la función `sendAuthenticationRequest()` para enviar una solicitud HTTP con autenticación básica en un Arduino. Asegúrese de incluir la biblioteca `WiFiClient.h` y establezca las credenciales del servidor en las variables `username` y `password`. Aquí hay un ejemplo de código y su posible resultado:
 
-## Cómo hacerlo
+```
+#include <WiFiClient.h>
 
-```Arduino
-#include <WiFiClientSecure.h> //Librería para conexiones seguras
-#include <WiFiNINA.h> //Librería para conexión WiFi
-
-char ssid[] = "nombre de red wifi"; //Nombre de la red WiFi a la que te quieres conectar
-char pass[] = "contraseña"; //Contraseña de la red WiFi
-char server[] = "url del servidor"; //URL del servidor al que queremos enviar la solicitud
-int port = 443; //El puerto por defecto para conexiones seguras es el 443
+const char* username = "usuario";
+const char* password = "contraseña";
 
 void setup() {
-  WiFi.begin(ssid, pass); //Conexión a la red WiFi
-  while (WiFi.status() != WL_CONNECTED) { //Esperar hasta que se establezca la conexión
+  //Inicializar conexión WiFi
+  Serial.begin(9600);
+  delay(1000);
+  Serial.println("\nConectando a la red WiFi...");
+  WiFi.begin(ssid, pass);
+
+  //Esperar a que se establezca la conexión
+  while (WiFi.status() != WL_CONNECTED) {
     delay(500);
+    Serial.print(". ");
   }
+  Serial.println("\n¡Conexión establecida!\n");
+}
+
+// Función para enviar la solicitud HTTP con autenticación básica
+void sendAuthenticationRequest() {
+  WiFiClient client;
+  const int httpPort = 80;
+  if (!client.connect(server, httpPort)) {
+    Serial.println("La conexión ha fallado.");
+    return;
+  }
+
+  //Solicitud HTTP
+  client.print(String("GET /data HTTP/1.1\r\n") +
+               "Host: " + server + "\r\n" +
+               "Authorization: Basic " + base64Authorization + "\r\n" +
+               "Connection: close\r\n\r\n");
+
+  //Esperar a la respuesta del servidor
+  while (client.connected()) {
+    String line = client.readStringUntil('\n');
+    if (line == "\r") {
+      break;
+    }
+  }
+  Serial.println("Solicitud enviada con éxito.");
+  client.stop();
 }
 
 void loop() {
-  if (WiFi.status() == WL_CONNECTED) { //Si la conexión está establecida
-    WiFiClientSecure client; //Crear un cliente WiFi seguro
-    if (!client.connect(server, port)) { //Conexión al servidor
-      Serial.println("No se pudo conectar al servidor");
-    } else {
-      Serial.println("Conectado al servidor");
-      String auth = "usuario:contraseña"; //Usuario y contraseña separados por ":" para la autenticación básica
-      String base64 = base64::encode(auth); //Codificar en base64 la cadena usuario:contraseña
-      String header = "Authorization: Basic " + base64 + "\r\n"; //Crear el encabezado de autenticación
-      client.println("GET /ruta/api HTTP/1.0"); //Enviar la solicitud, busca el recurso /ruta/api en el servidor
-      client.println("Host: servidor.com"); //Especificar el servidor
-      client.println(header); //Enviar el encabezado de autenticación
-      client.println(); //Finalizar la solicitud
-      while (client.connected()) { //Esperar hasta que la conexión se complete
-        String line = client.readStringUntil('\n'); //Leer la respuesta del servidor
-        Serial.print(line); //Imprimir en el monitor serial
-      }
-      client.stop(); //Cerrar la conexión
-    }
-  }
-  delay(1000); //Esperar 1 segundo antes de volver a enviar la solicitud
+  sendAuthenticationRequest();
+  delay(5000); //Enviar solicitud cada 5 segundos
 }
 ```
 
-Este ejemplo utiliza la librería WiFiClientSecure para establecer una conexión segura y enviar una solicitud HTTP con autenticación básica a un servidor específico. Primero, se establece una conexión a través de WiFi, luego se crea un cliente seguro y se envía una solicitud GET especificando el recurso que se desea obtener en el servidor. La autenticación se realiza mediante la codificación en base64 del usuario y la contraseña en un encabezado específico.
+Posible resultado en el monitor serial:
+```
+Conectando a la red WiFi...
+¡Conexión establecida!
 
-## Profundizando en el envío de una solicitud HTTP con autenticación básica
+Solicitud enviada con éxito.
+```
 
-La autenticación básica es un método simple pero efectivo para proteger recursos en línea. Sin embargo, no es tan seguro como otros métodos más complejos, por lo que se recomienda utilizarlo junto con otras medidas de seguridad. Además, es importante tener en cuenta que la autenticación básica envía las credenciales de acceso en texto claro, lo que significa que pueden ser interceptadas por terceros. Por lo tanto, se recomienda utilizar una conexión segura (HTTPS) al enviar solicitudes con autenticación básica.
+### Deep Dive:
+Esta forma de autenticación básica se remonta a la década de 1990 y es una forma simple pero efectiva de proteger una conexión entre un cliente y un servidor. Otras formas de autenticación, como la autenticación de clave pública, son más seguras pero también más complejas de implementar en un Arduino.
 
-## Ver también
+Además, asegúrese de que su servidor tenga configurada la autenticación básica y que las credenciales coincidan con las establecidas en su código de Arduino.
 
-- [Librería WiFiClientSecure](https://www.arduino.cc/en/Reference/WiFiClientSecure)
-- [Librería WiFiNINA](https://www.arduino.cc/en/Reference/WiFiNINA)
-- [Tutorial de autenticación básica en HTTP](https://www.tutorialspoint.com/http/http_authentication.htm)
-- [Tutorial de base64 en Arduino](https://techtutorialsx.com/2017/07/24/arduino-esp32-base64-encode/)
+### Ver también:
+- [Tutorial de Adafruit sobre autenticación básica en Arduino](https://learn.adafruit.com/esp8266-temperature-slash-humidity-webserver/basic-http-auth)
+- [Documentación oficial de Arduino sobre la función `WiFiClient`](https://www.arduino.cc/en/Reference/WiFiClient)

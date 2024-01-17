@@ -1,7 +1,7 @@
 ---
-title:                "Uniendo cadenas de texto"
-html_title:           "Javascript: Uniendo cadenas de texto"
-simple_title:         "Uniendo cadenas de texto"
+title:                "Concatenando cadenas"
+html_title:           "Javascript: Concatenando cadenas"
+simple_title:         "Concatenando cadenas"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Strings"
@@ -10,47 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por Qué
+# ¿Qué & Por qué?
 
-Concatenar strings, o unir diferentes cadenas de texto en una sola, es una tarea común y útil en la programación en Javascript. Esta técnica nos permite crear mensajes personalizados, generar reportes y manipular datos de manera eficiente.
+Concatenar strings es combinar o unir múltiples strings en uno solo. Los programadores lo hacen para ahorrar tiempo y evitar tener que escribir cada string por separado. También es una forma de personalizar mensajes o páginas web.
 
-## Cómo Hacerlo
-
-Para concatenar strings en Javascript, podemos usar el operador `+` o el método `.concat()`.
-
-### Usando el operador `+`
+# Cómo hacerlo:
 
 ```Javascript
-let nombre = "Juan";
-let edad = 25;
-let mensaje = "Hola, mi nombre es " + nombre + " y tengo " + edad + " años.";
-console.log(mensaje);
-// Salida: Hola, mi nombre es Juan y tengo 25 años.
+var string1 = "¡Hola ";
+var string2 = "mundo!";
+var string3 = " Bienvenidos!";
+
+// Usando el operador de concatenación "+" para unir los strings
+console.log(string1 + string2 + string3);
+
+// Output: ¡Hola mundo! Bienvenidos!
+
+// También se puede utilizar el método ".concat()" para concatenar strings
+console.log(string1.concat(string2).concat(string3));
+
+// Output: ¡Hola mundo! Bienvenidos!
 ```
 
-En este ejemplo, hemos utilizado el operador `+` para unir las diferentes cadenas de texto y variables en una sola, creando un mensaje personalizado.
+# Detalles más profundos:
 
-### Usando el método `.concat()`
+- En los primeros años de la informática, concatenar strings era una tarea tediosa que requería mucha escritura. Con la introducción del operador "+" en el lenguaje de programación C en 1972, se volvió más fácil y rápido realizar esta tarea.
+
+- Además de utilizar el operador "+" y el método ".concat()", también se puede utilizar el método ".join()", que permite especificar un separador entre los strings. Por ejemplo:
 
 ```Javascript
-let nombre = "Maria";
-let apellido = "García";
-let mensaje = nombre.concat(" ", apellido);
-console.log(mensaje);
-// Salida: Maria García
+var array = ["Esto", "es", "una", "frase"]
+console.log(array.join(" "))
+
+// Output: Esto es una frase
 ```
 
-En este caso, hemos utilizado el método `.concat()` para unir dos strings en una sola, incluyendo un espacio en blanco entre ellas para que el nombre y apellido se vean correctamente separados.
+- Al concatenar strings se pueden tener en cuenta los espacios en blanco entre ellos. Para evitar este problema, se pueden utilizar los métodos ".trim()", ".trimStart()" y ".trimEnd()" para eliminar los espacios.
 
-## Inmersión Profunda
+# Ver también:
 
-Aunque el uso del operador `+` y el método `.concat()` son las formas más comunes de concatenar strings en Javascript, existen otras técnicas y funciones que nos pueden ayudar a realizar esta tarea.
-
-Por ejemplo, el método `.join()` puede ser utilizado para unir elementos de un array en una sola string. También podemos utilizar templates literales, haciendo uso de las comillas invertidas (`) en lugar de las comillas simples o dobles, para incluir variables y expresiones en una sola string de manera más legible.
-
-En general, es importante tener en cuenta que al concatenar strings, siempre debemos asegurarnos de que los tipos de datos sean compatibles para evitar errores en nuestra aplicación.
-
-## Ver También
-
-- [Documentación oficial de Javascript sobre la concatenación de strings](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/String/concat)
-- [Ejemplos prácticos de concatenación de strings en Javascript](https://www.codegrepper.com/code-examples/javascript/how+to+concatenate+strings+in+javascript)
+- [Métodos de string en Javascript](https://www.w3schools.com/jsref/jsref_obj_string.asp)
+- [Operador "+" en Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Addition)
+- [Método ".concat()" en Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/concat)
+- [Método ".join()" en Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join)

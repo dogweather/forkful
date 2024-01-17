@@ -1,7 +1,7 @@
 ---
-title:                "स्ट्रिंग्स को जोड़ना"
-html_title:           "C: स्ट्रिंग्स को जोड़ना"
-simple_title:         "स्ट्रिंग्स को जोड़ना"
+title:                "स्ट्रिंग्स को आपस में जोड़ना"
+html_title:           "C: स्ट्रिंग्स को आपस में जोड़ना"
+simple_title:         "स्ट्रिंग्स को आपस में जोड़ना"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -10,57 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##Kyunki
+## क्या & क्यूँ?
+कंकेटनेटिंग स्ट्रिंग एक ऐसी प्रक्रिया है जिसमें दो या अधिक स्ट्रिंग्स को संयोजित करके एक ही स्ट्रिंग बनाई जाती है। प्रोग्रामर्स इसे अपने कोड को कंप्यूटर को ग्राहकों को सुविधाजनक बनाने के लिए करते हैं।
 
-Jab hum C programming mein string concatenation karte hain, matlab hum alag-alag strings ko milakar ek badi string bana rahe hain. Isse hum apne program mein ek dynamic aur versatile approach implement kar sakte hain.
-
-##Kaise Karein
-
-String concatenation ke liye hum "strcat()" function ka use karte hain. Iske liye hum pehle "string.h" header file ko include kar lete hain.
-
+## कैसे करें:
+स्ट्रिंग को कंकेटनेट करने के लिए, 'strcat' फ़ंक्शन का उपयोग किया जाता है। इसका सिंटैक्स निम्नलिखित है:
+```C
+strcat(destination, source);
 ```
-#include <stdio.h>
-#include <string.h>
-
-int main(void) {
-  char str1[30] = "Hello, ";
-  char str2[] = "World!";
-  
-  strcat(str1, str2);
-  
-  printf("%s", str1);
-  // Output: Hello, World!
-  return 0;
-}
+यदि हमें दो स्ट्रिंग्स "Hello" और "World" को कंकेटनेट करना है, तो निम्नलिखित कोड का उपयोग कर सकते हैं:
+```C
+char destination[12]="Hello";
+char source[6]="World";
+strcat(destination, source);
+printf("Concatenated string: %s", destination);
+```
+आउटपुट:
+```C
+Concatenated string: HelloWorld
 ```
 
-Ismain, humne "str1" string variable mein "Hello, " string assign kiya hai aur "str2" string variable mein "World!" string. Humne "strcat()" function se "str2" string variable ko "str1" mein concatenate kiya hai aur fir output ke liye "printf()" function ka use kiya hai.
+## गहराई में जाएं:
+यह प्रक्रिया पहले से ही है। और इसका मुख्य उपयोग स्ट्रिंग्स को एक साथ मिलाने के लिए होता है। अन्य विकल्पों के रूप में, 'strncat' फ़ंक्शन भी है, जो एक निश्चित संख्या के अक्षरों तक ही स्ट्रिंगों को कंकेटनेट करता है। इसका प्रयोग भाषा फ़ंक्शन्स को लम्बे स्ट्रिंग्स को तोड़ने से बचाने में किया जाता है।
 
-##Gehrai Mein Jaanein
+'Concatenation' शब्द लैटिन शब्द "concatenare" से आया है, जिसका अर्थ है "एक साथ जोड़ना"। कंकेटनेट करने वाले टेक्निक स्ट्रिंग्स हो प्रोग्रामिंग मैं भी उपयोग किया गया है।
 
-String concatenation ke liye do methods hote hain - "strcat()" aur "+=" operator. Dono methods mein hum ek string variable mein dusre string variable ko concatenate karte hain. Lekin "+" operator ka use karne ke liye humein pehle ek empty string create karna padta hai.
-
-```
-#include <stdio.h>
-#include <string.h>
-
-int main(void) {
-  char str1[30] = "Hello, ";
-  char str2[] = "World!";
-  
-  strcat(str1, str2);
-  // OR str1 += str2;
-  
-  printf("%s", str1);
-  // Output: Hello, World!
-  return 0;
-}
-```
-
-"strcat()" ka use karte samay humein pehle "str1" mein concatenate karna hai aur fir "str1" ko hi output ke liye use karna hai. Lekin "+" operator ka use karte samay hum ek empty string bana kar isi mein concatenate karte hain aur fir output ke liye "str1" variable ka use karte hain.
-
-##Dekhein Bhi
-
-Agar aap aur functions aur operators ke bare mein jaanna chahte hain jo string concatenation mein use kiye jaate hain, toh is link par jayein: [String Concatenation in C](https://www.programiz.com/c-programming/library-function/string.h/strcat).
-
-Iske alawa, aap ye bhi jaan sakte hain ki C programming mein strings kaise kaam karte hain: [Strings in C](https://www.programiz.com/c-programming/c-strings).
+## देखें भी:
+अगर आपको 'strcat' और अन्य भाषा फ़ंक्शनों के बारे में और जानकारी चाहिए तो आप निम्नलिखित स्रोतों का उपयोग कर सकते हैं:
+- [C भाषा ट्यूटोरियल](https://www.programiz.com/c-programming/string-handling-functions)
+- [Concatenation के बारे में Wikipedia की जानकारी](https://en.wikipedia.org/wiki/Concatenation)

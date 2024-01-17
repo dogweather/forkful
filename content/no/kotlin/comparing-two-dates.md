@@ -10,47 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hva & Hvorfor?
+Sammenligning av to datoer er en vanlig oppgave for programmerere. Dette innebærer å sammenligne to datoer og bestemme hvilken som er tidligere enn den andre. Dette er nødvendig for å håndtere datoer i programmering og for å gjøre ulike beregninger med dem.
 
-Å sammenligne to datoer i et program er ofte nødvendig for å håndtere tidsrelaterte data. Dette kan være nyttig for å finne ut av når en hendelse fant sted, eller sammenligne ulike tider for å ta beslutninger i koden.
-
-## Slik gjør du det
-
-For å sammenligne to datoer i Kotlin kan du bruke `compareTo()` funksjonen. Her er et eksempel på hvordan du kan sammenligne to datoer:
-
+## Slik gjør du det:
 ```Kotlin
-// Opprett to datoer
-val dato1 = LocalDate.of(2021, 10, 4) 
-val dato2 = LocalDate.of(2021, 10, 6)
+// Lager to datoer
+val dato1 = LocalDate.of(2021, 10, 28)
+val dato2 = LocalDate.of(2021, 11, 2)
 
-// Sammenlign datoene
-val resultat = dato1.compareTo(dato2)
+// Bruker compareTo() funksjonen for å sammenligne datoer
+println(dato1.compareTo(dato2)) // Utskrift: -5 (dato1 er tidligere enn dato2)
 
-// Resultatet vil være en verdi som representerer forholdet mellom datoene
-// Hvis dato1 er før dato2 vil resultatet være negativt
-// Hvis dato1 er etter dato2 vil resultatet være positivt
-// Hvis dato1 og dato2 er like vil resultatet være 0
+// Bruker isBefore() funksjonen for å sjekke om dato1 er tidligere enn dato2
+println(dato1.isBefore(dato2)) // Utskrift: true
 ```
 
-Du kan også bruke `equals()` funksjonen for å sjekke om to datoer er like:
+## Dypdykk:
+Sammenligning av datoer har vært et problem for programmerere i lang tid. Dette skyldes utfordringene knyttet til å håndtere ulike kalendere og tidsformater. Alternativet til å bruke innebygde funksjoner som compareTo() og isBefore() er å konvertere datoene til et numerisk format og sammenligne dem. Dette kan være mer komplekst og kreve mer kode.
 
-```Kotlin
-// Opprett to datoer
-val dato1 = LocalDate.of(2021, 10, 4) 
-val dato2 = LocalDate.of(2021, 10, 4)
-
-// Sjekk om datoene er like
-val erLike = dato1.equals(dato2)
-
-// Resultatet vil være en boolsk verdi som representerer om datoene er like eller ikke
-```
-
-## Graving dypt
-
-Når du sammenligner to datoer i Kotlin, bruker `compareTo()` funksjonen faktisk `Comparable` grensesnittet. Dette grensesnittet lar deg sammenligne objekter av samme type ved å implementere `compareTo()` funksjonen. Dette betyr at du også kan sammenligne dine egne datoklasser ved å gjøre dem `Comparable` og definere hvordan sammenligningen skal utføres.
-
-## Se også
-
-- [Kotlin Offisiell Dokumentasjon](https://kotlinlang.org/docs/home.html)
-- [Sammenligne to datoer i Java](https://www.baeldung.com/java-compare-two-dates) 
-- [Sammenligning av datoer i JavaScript](https://www.w3schools.com/js/js_date_methods.asp)
+## Se også:
+- [Kotlin Dokumentasjon om Datoer](https://kotlinlang.org/docs/datetime.html)
+- [Java 8 Dato og Tid API](https://www.baeldung.com/java-8-date-time-intro)
+- [Wikipedia Side om Datoer i Programmering](https://en.wikipedia.org/wiki/Date_calculations_(programming))

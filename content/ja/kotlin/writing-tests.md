@@ -10,53 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+## 何かとなんでやるの？
+テストコードを書くことは、コードが正しく機能するかどうかを確認するプログラマーの作業です。プログラマーがテストコードを書くのは、自分の書いたコードに自信を持つためです。
 
-テストを書くことの重要性を理解することは、プログラマーとしてのコーディング能力を向上させるために必要不可欠です。テストを書くことで、コードの品質を向上させ、バグを事前に見つけることができます。
-
-## 書き方
-
+## どうやるの？
 ```Kotlin
-// テスト対象の関数
-fun calculateAverage(num1: Int, num2: Int): Int {
-    return (num1 + num2) / 2
+// 例: テストする関数
+fun add(a: Int, b: Int): Int {
+    return a + b
 }
 
-// テストコード
-fun main() {
-    // テストケースを作成
-    val test1 = calculateAverage(10, 20)
-    val test2 = calculateAverage(5, 10)
-    
-    // 期待される結果と比較
-    println("テスト1:")
-    if (test1 == 15) {
-        println("正しい結果が得られました")
-    } else {
-        println("エラー！正しい結果ではありませんでした")
-    }
-    
-    println("テスト2:")
-    if (test2 == 7) {
-        println("正しい結果が得られました")
-    } else {
-        println("エラー！正しい結果ではありませんでした")
-    }
-}
-```
-出力：
-```
-テスト1:
-正しい結果が得られました
-テスト2:
-正しい結果が得られました
+// テストコードの書き方
+val result = add(3, 5)
+val expected = 8
+
+// テストコードの実行
+assert(result == expected) // テストが通れば成功！
 ```
 
-## ディープダイブ
+## 詳しく調べてみると
+テストコードを書くことの歴史は古く、今でも主流の開発手法です。他の方法としては、手動でコードをテストしたり、別の人にテストをしてもらったりすることがあります。テストコードを実行する方法には、ユニットテストや結合テストなどがあります。Kotlinでは、JUnitやMockitoといったライブラリがテストコードの書き方をサポートしています。
 
-テストを書くことで、コードの可読性や保守性を向上させることができます。また、テストを書くことで、コードのロジックをより深く理解し、不具合を見つけるための手がかりとなります。さらに、テスト駆動開発（TDD）を実践することで、より効率的な開発が可能になります。
-
-## 関連記事
-
-[テスト駆動開発入門](https://www.sejuku.net/blog/78088)  
-[Kotlin公式ドキュメント](https://kotlinlang.org/docs/home.html)
+## こちらも参考に
+- [Kotlinの公式ドキュメント](https://kotlinlang.org/docs/home.html)
+- [JUnit公式サイト](https://junit.org/junit5/)
+- [Mockito公式サイト](https://site.mockito.org/)

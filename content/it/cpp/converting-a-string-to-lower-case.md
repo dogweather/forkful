@@ -10,42 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
-Se stai lavorando con strumenti di analisi dei dati o stai sviluppando un'applicazione web, potresti dover convertire una stringa in minuscolo per confrontare i dati in modo sicuro e coerente.
+## Cos'è e perché?
+Convertire una stringa in minuscolo è un'operazione molto comune nella programmazione. Consiste nel trasformare tutte le lettere maiuscole di una stringa in lettere minuscole. I programmatori spesso fanno questo per ragioni di uniformità, per una migliore corrispondenza tra stringhe di input o semplicemente per motivi estetici.
 
-##Come fare
+## Come fare:
 ```C++
 #include <iostream>
 #include <string>
 #include <algorithm>
 
-using namespace std;
-
-// Funzione per convertire una stringa in minuscolo
-void toLowerCase(string& str) {
-  transform(str.begin(), str.end(), str.begin(), ::tolower);
-}
-
-// Esempio di utilizzo
 int main() {
-  // Definiamo una stringa
-  string str = "QUESTA È UNA STRINGA IN MAIUSCOLO";
-
-  toLowerCase(str);
-
-  // Stampa della stringa in minuscolo
-  cout << str << endl;
-
-  return 0;
+    std::string str = "CIAO A TUTTI!";
+    std::transform(str.begin(), str.end(), str.begin(), ::tolower);
+    std::cout << str; //output: ciao a tutti!
+    return 0;
 }
-
-// Output: questa è una stringa in maiuscolo
 ```
 
-## Deep Dive
-Nel linguaggio di programmazione C++, il caso delle lettere è importante nella comparazione delle stringhe. Ciò significa che una stringa in minuscolo e una in maiuscolo non saranno considerate uguali se confrontate. Per evitare errori di questo tipo, è necessario convertire le stringhe in un unico formato di caso prima di confrontarle. Questo può essere fatto utilizzando la funzione `tolower()` della libreria `<algorithm>`.
+## Approfondimenti:
+Ci sono diversasoluzioni per convertire una stringa in minuscolo. Una delle prime è stata l'uso della libreria string.h che contiene la funzione strlwr(). Tuttavia, questa funzione potrebbe avere comportamenti imprevedibili su alcune piattaforme. Altre opzioni includono l'uso delle funzioni di libreria di C++ come std::tolower() o std::transform(). È importante notare che quando si lavora con caratteri speciali, come ad esempio lettere accentate, l'implementazione della conversione in minuscolo potrebbe non essere consistente tra diverse lingue e piattaforme.
 
-## Vedi anche
-- [Funzione `tolower()`](https://www.cplusplus.com/reference/cctype/tolower/)
-- [Guida su come usare la libreria `<algorithm>`](https://www.tutorialspoint.com/cplusplus/cpp_algorithms.htm)
-- [C++ Tutorial - Stringhe](https://www.youtube.com/watch?v=l5fVDflXdFg)
+## Vedi anche:
+- [Funzione strlwr() della libreria string.h](https://www.tutorialspoint.com/c_standard_library/string_h.htm)
+- [Funzione std::tolower() della libreria di C++](https://en.cppreference.com/w/cpp/string/byte/tolower)
+- [Funzione std::transform() della libreria di C++](https://en.cppreference.com/w/cpp/algorithm/transform)

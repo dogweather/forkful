@@ -1,7 +1,7 @@
 ---
-title:                "Lavorare con json"
-html_title:           "Elixir: Lavorare con json"
-simple_title:         "Lavorare con json"
+title:                "Lavorare con JSON"
+html_title:           "Elixir: Lavorare con JSON"
+simple_title:         "Lavorare con JSON"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Data Formats and Serialization"
@@ -10,55 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+## Cosa e Perché?
 
-Se stai leggendo questo articolo, è probabile che tu sia interessato a lavorare con JSON (JavaScript Object Notation) utilizzando il linguaggio di programmazione Elixir. JSON è un formato di dati molto popolare e ampiamente utilizzato per scambiare informazioni tra applicazioni web e mobile. Elixir offre un modo semplice e potente per gestire e manipolare i dati JSON, rendendolo una scelta eccellente per i progetti di sviluppo software. 
+Lavorare con JSON è un'attività comune per i programmatori Elixir. JSON (JavaScript Object Notation) è un formato di dati leggibile sia per gli umani che per le macchine, utilizzato per la memorizzazione e lo scambio di dati. Questo è utile per creare applicazioni web dinamiche e interattive.
 
-## Come fare
+## Come fare:
 
-Per lavorare con JSON in Elixir, avrai bisogno del modulo di libreria di terze parti chiamato "Jason". Puoi installare questa libreria utilizzando il gestore di pacchetti di Elixir, chiamato Mix. Basta eseguire il seguente comando nella tua shell:
-
-```Elixir
-mix deps.get
-```
-
-Una volta installata la libreria, puoi iniziare a utilizzarla per analizzare e generare dati JSON. Ad esempio, supponiamo di avere un oggetto mappa in Elixir contenente alcuni dati:
+Per lavorare con JSON in Elixir, è necessario utilizzare il modulo "Poison". Ecco un esempio di come convertire un oggetto Elixir in formato JSON e viceversa:
 
 ```Elixir
-map = %{"name" => "Giulia", "age" => 25}
+# Converte un oggetto Elixir in formato JSON
+Poison.encode!(%{nome: "Maria", età: 28})
+# Output: "{\"nome\": \"Maria\", \"età\": 28}"
+
+# Converte un oggetto JSON in formato Elixir
+Poison.decode!(~s({"nome": "Luca", "età": 32}))
+# Output: %{"nome" => "Luca", "età" => 32} 
 ```
 
-Adesso vogliamo trasformare questo oggetto in una stringa JSON. Possiamo farlo utilizzando la funzione `encode!/1` della libreria di Jason:
+## Approfondimento:
 
-```Elixir
-Jason.encode!(map)
-```
+JSON è stato introdotto nel 2005 e da allora è diventato il formato dati più popolare per il web. In alternativa, i programmatori possono utilizzare anche altri formati come YAML o XML, ma JSON è preferito per la sua semplicità e leggibilità.
 
-Questo ci darà il seguente output:
+Il modulo "Poison" utilizza il parser JSON di C e lo integra con Elixir. Se si desidera una soluzione puramente Elixir, si può utilizzare il modulo "Jason", che utilizza un parser scritto in Elixir.
 
-```Elixir
-"{\"name\":\"Giulia\",\"age\":25}"
-```
+## Vedi anche:
 
-Per decodificare una stringa JSON in un oggetto Elixir, possiamo utilizzare la funzione `decode!/1` della libreria di Jason. Ad esempio:
-
-```Elixir
-Jason.decode!("{\"name\":\"Giulia\",\"age\":25}")
-```
-
-Questo restituirà il seguente oggetto mappa in Elixir:
-
-```Elixir
-%{"name" => "Giulia", "age" => 25}
-```
-
-Puoi anche utilizzare la libreria Jason per analizzare dati JSON più complessi, come array di oggetti e oggetti nidificati. Consulta la documentazione ufficiale della libreria Jason per ulteriori informazioni e esempi.
-
-## Approfondimento
-
-Oltre alle funzioni di base per codificare e decodificare dati JSON, la libreria Jason offre anche una serie di funzioni di utilità per lavorare con dati JSON. Ad esempio, puoi utilizzare le funzioni `get/2` e `get!/2` per estrarre valori da un oggetto JSON in base al loro nome di chiave. Inoltre, puoi utilizzare la funzione `insert/2` per aggiungere nuovi elementi a un oggetto JSON. Consulta la documentazione ufficiale per ulteriori dettagli su queste funzioni e altre funzionalità disponibili.
-
-## Vedi anche
-
-- Documentazione ufficiale della libreria Jason: https://hexdocs.pm/jason/index.html
-- Elixir School: JSON Tutorial: https://elixirschool.com/it/lessons/specifics/json/
+- [Documentazione ufficiale di Poison](https://hexdocs.pm/poison/readme.html)
+- [Documentazione ufficiale di Jason](https://hexdocs.pm/jason/README.html)
+- [Introduzione a JSON su MDN](https://developer.mozilla.org/it/docs/Web/JavaScript/Reference/Global_Objects/JSON)

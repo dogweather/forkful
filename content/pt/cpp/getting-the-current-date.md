@@ -10,65 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+# O que é e por que fazer a obtenção da data atual?
 
-Há muitos casos em que você precisará saber a data atual em um programa C++. Pode ser para registrar quando um evento ocorreu, para fins de rastreamento ou para gerar relatórios com informações atualizadas.
+A obtenção da data atual é um processo simples em que um programa de computador obtém a data atual do sistema operacional e a utiliza para realizar determinadas tarefas. Programadores geralmente fazem isso para registrar informações em logs ou para exibir a data atual em um programa.
 
-## Como fazer
+# Como fazer:
 
-Para obter a data atual em um programa C++, você pode usar a função `std::time` da biblioteca `chrono`. Aqui está um exemplo de código que imprime a data atual:
-
-```C++
+```
 #include <iostream>
-#include <chrono>
+#include <ctime>
+
+using namespace std;
 
 int main()
 {
-	// Obtendo o tempo atual
-	auto tempo_atual = std::chrono::system_clock::now();
-	// Convertendo para o formato de data
-	auto data_atual = std::chrono::system_clock::to_time_t(tempo_atual);
-	// Imprimindo data atual
-	std::cout << "Data atual: " << std::ctime(&data_atual) << std::endl;
+    // Obtém a data atual do sistema
+    time_t now = time(0);
+
+    // Converte a data para o formato de string
+    char* dt = ctime(&now);
+
+    // Imprime a data atual
+    cout << "A data atual é: " << dt << endl;
+
+    return 0;
 }
 ```
 
-A saída deste código será algo como:
+Saída:
+A data atual é: Ter Dec 14 08:54:08 2021
 
-```
-Data atual: Sat Sep 26 13:57:06 2020
-```
+# Deep Dive
 
-Você também pode formatar a data de acordo com suas necessidades usando a função `std::put_time`. Este exemplo mostra como imprimir a data no formato "DD/MM/AAAA":
+## Contexto histórico:
 
-```C++
-#include <iostream>
-#include <iomanip>
-#include <chrono>
+Antes do padrão C++11, a biblioteca `<ctime>` não possuía funções específicas para obter a data atual. Programadores precisavam recorrer a bibliotecas de terceiros ou utilizar funções do sistema operacional, o que tornava o processo mais complexo.
 
-int main()
-{
-    // Obtendo o tempo atual
-	auto tempo_atual = std::chrono::system_clock::now();
-	// Convertendo para o formato de data
-	auto data_atual = std::chrono::system_clock::to_time_t(tempo_atual);
-	// Formatando data
-	std::cout << "Data atual: " << std::put_time(std::localtime(&data_atual), "%d/%m/%Y") << std::endl;
-}
-```
+## Alternativas:
 
-A saída será:
+Além do exemplo apresentado, existem outras maneiras de obter a data atual em um programa. Uma alternativa seria utilizar a biblioteca `<chrono>` do C++11, que possui funções mais robustas para lidar com datas e horários.
 
-```
-Data atual: 26/09/2020
-```
+Outra opção seria utilizar uma biblioteca externa, como o Boost Date Time, que oferece uma ampla gama de funcionalidades para trabalhar com datas e horários.
 
-## Mergulho Profundo
+# Veja também:
 
-A função `std::time` retorna o tempo atual como um objeto do tipo `std::chrono::time_point`. Este é um objeto que representa uma duração de tempo em relação a um determinado ponto no tempo. Você também pode usar outras funções como `std::gmtime` e `std::localtime` para converter o tempo em outras representações, como datas no formato UTC ou hora local.
-
-## Veja também
-
-- [Documentação da biblioteca Chrono do C++](https://en.cppreference.com/w/cpp/header/chrono)
-- [Tutorial de data e hora em C++](https://www.cplusplus.com/reference/ctime/)
-- [Manipulação de hora e data em C++](https://www.geeksforgeeks.org/time-manipulation-in-c-with-chrono-header/)
+- [Referência da biblioteca ctime do C++](https://www.cplusplus.com/reference/ctime/)
+- [Documentação da biblioteca chrono do C++11](https://en.cppreference.com/w/cpp/chrono)
+- [Boost Date Time Library](https://www.boost.org/doc/libs/1_77_0/doc/html/date_time.html)

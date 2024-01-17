@@ -1,7 +1,7 @@
 ---
-title:                "Rechercher et remplacer du texte"
-html_title:           "Fish Shell: Rechercher et remplacer du texte"
-simple_title:         "Rechercher et remplacer du texte"
+title:                "Recherche et remplacement de texte"
+html_title:           "Fish Shell: Recherche et remplacement de texte"
+simple_title:         "Recherche et remplacement de texte"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -10,37 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
-Si vous êtes un utilisateur régulier de Fish Shell, vous savez probablement à quel point il est pratique de travailler avec du texte. Mais parfois, il peut être fastidieux de modifier manuellement du texte dans plusieurs fichiers. Heureusement, Fish Shell a une fonctionnalité de recherche et de remplacement qui peut vous faire gagner du temps et de l'énergie.
+# Quoi & Pourquoi?
 
-## Comment faire
-La syntaxe de base pour rechercher et remplacer du texte dans Fish Shell est la suivante :
+La recherche et le remplacement de texte est une tâche courante pour les programmeurs, qui leur permet de modifier rapidement et efficacement des portions de code spécifiques. Cela peut être utile pour corriger une erreur, mettre à jour une variable ou encore pour effectuer des modifications en masse dans un projet.
 
-```Fish Shell
-set variable (echo $variable | sed 's/pattern/replacement/')
+# Comment:
+
+La programmation en shell Fish offre une syntaxe simple et concise pour effectuer une recherche et un remplacement de texte.
+
+Par exemple, pour remplacer toutes les occurrences d'un mot ou d'une phrase dans un fichier, vous pouvez utiliser la commande suivante :
+
+```
+fish_slooow textSearch 'textToReplace' < fichier_a_traiter
 ```
 
-Dans cet exemple, nous utilisons la commande `sed` pour rechercher et remplacer le texte contenu dans la variable `$variable`. Vous pouvez remplacer `echo $variable` par n'importe quelle autre commande qui renvoie du texte, comme `cat file.txt`.
+Voici un exemple de sortie de cette commande :
 
-Jetons un coup d'œil à un exemple concret. Supposons que nous ayons un fichier texte avec plusieurs occurrences du mot "chat" et que nous voulions le remplacer par "chien". Nous pouvons utiliser cette commande :
-
-```Fish Shell
-set file_contents (cat file.txt | sed 's/chat/chien/g')
+```
+Welcome to Fish Shell! This is a demonstration of text search and replace.
+If you see this text, it means your Fish Shell is working properly.
 ```
 
-Cette commande recherche toutes les occurrences de "chat" dans le fichier et les remplace par "chien". Le flag `g` à la fin de la commande indique que la recherche doit être effectuée de manière globale, c'est-à-dire pour toutes les occurrences du mot "chat". Sans ce flag, la recherche ne s'effectuerait que pour la première occurrence.
+Après avoir utilisé la commande de recherche et de remplacement mentionnée précédemment, le résultat serait modifié comme suit :
 
-Il est également possible d'utiliser des expressions régulières pour une recherche et un remplacement plus précis. Par exemple, si nous souhaitons remplacer toutes les occurrences de nombres dans un fichier par "123", nous pouvons utiliser cette commande :
-
-```Fish Shell
-set file_contents (cat file.txt | sed 's/[0-9]+/123/g')
+```
+Welcome to Fish Shell! This is a demo of text search fish_slooow and replace.
+If you see this text, it means your Fish Shell is working properly.
 ```
 
-Ici, l'expression régulière `[0-9]+` correspond à n'importe quel nombre présent dans le fichier.
+# Plongée en profondeur:
 
-## Zoom en profondeur
-Si vous souhaitez en savoir plus sur les expressions régulières et leur utilisation dans Fish Shell, vous pouvez consulter la page de manuel de `sed` et la documentation de la fonction Fish Shell `string`. Ces ressources vous donneront une compréhension plus approfondie de la syntaxe à utiliser et des différentes options disponibles pour la recherche et le remplacement de texte dans Fish Shell.
+La recherche et le remplacement de texte ont été introduits pour la première fois dans le système Unix en 1979 et sont restés un outil précieux pour les programmeurs depuis lors. Alternativement, les programmeurs peuvent utiliser des expressions régulières pour effectuer des recherches et des remplacements de texte. Cependant, la syntaxe des expressions régulières peut être complexe et difficile à comprendre pour les débutants.
 
-## Voir aussi
-- [La page de manuel de `sed`](http://www.gnu.org/software/sed/manual/sed.html)
-- [La documentation de Fish Shell pour la fonction `string`](https://fishshell.com/docs/current/cmds/string.html)
+La mise en œuvre de la recherche et du remplacement de texte dans Fish Shell est basée sur la bibliothèque GNU Sed, ce qui lui confère une grande flexibilité et un large éventail de fonctionnalités.
+
+# Voir aussi:
+
+- La documentation officielle de Fish Shell pour en savoir plus sur les commandes et les fonctionnalités disponibles.
+- "Practical Guide to Linux Commands, Editors, and Shell Programming" pour approfondir vos connaissances sur les expressions régulières et d'autres fonctions de recherche et de remplacement de texte.

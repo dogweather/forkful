@@ -10,57 +10,68 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Kyun
+## क्या और क्यों?
 
-CSV ka upyog karna bahut aasan hai aur isse hum apne data ko organize aur manipulate kar sakte hai. Python mein CSV ka upyog bahut common hai aur isse hum data analysis aur data processing mein kaam kar sakte hai.
+CSV काम क्या है और प्रोग्रामर्स इसे क्यों करते हैं।
 
-## Kaise Kare
+CSV एक सामान्य और सरल तरीका है डेटा को संग्रहीत करने का और उसे हस्तांतरित करने का जो प्रोग्रामर उपयोग करते हैं। प्रोग्रामर इसका उपयोग उनकी डेटा को प्रसंस्करण और विश्लेषण के लिए करते हैं, जिससे उनके द्वारा लिखे गए प्रोग्राम्स का भी उपयोग किया जा सके।
 
-Sabse pehle humein CSV file ko read karne ke liye `csv` library ko import karna hoga:
-
-```Python
-import csv
-```
-
-CSV file ko read karne ke liye hum `open()` function ka use karenge. Is function mein humein file ka naam aur mode specify karna hai. Mode mein humein 'r' (read) mode use karna hai:
+## कैसे करें:
 
 ```Python
-with open('file.csv', 'r') as csv_file:
-  # code to read CSV file
+# CSV फ़ाइल खोलें
+with open('data.csv', 'r') as file:
+    # CSV फ़ाइल को पढ़ने के लिए धारा
+    reader = csv.reader(file)
+    # शीर्ष वर्ग से प्रत्येक पंक्ति की सुरक्षा
+    for row in reader:
+        print(row)
+
+# CSV फ़ाइल लिखें
+data = [['शीर्षक', 'प्रकार'], 
+        ['स्पोर्ट', 'खेल'], 
+        ['खेल', 'खेल']]
+# फ़ाइल बंद करें
+file.close()
+
+# CSV फ़ाइल लिखने के लिए धारा
+with open('data.csv', 'w') as file:
+    # आईटम को संग्रहीत करें
+    writer = csv.writer(file)
+    # प्रत्येक पंक्ति लिखें
+    for row in data:
+        writer.writerow(row)
+
+# CSV फ़ाइल के लिए नया पंक्ति जोड़ें
+with open('data.csv', 'a') as file:
+    # आईटम को संग्रहीत करें
+    writer = csv.writer(file)
+    # नई पंक्ति जोड़ें
+    writer.writerow(['योजना', 'प्राथमिकता'])
+
 ```
 
-CSV file mein rows ko access karne ke liye hum `csv.reader()` ka use karenge aur humein `for` loop ka use karna hoga:
+आउटपुट:
 
-```Python
-with open('file.csv', 'r') as csv_file:
-  csv_reader = csv.reader(csv_file)
-  for row in csv_reader:
-    # code to access rows
+```
+['शीर्षक', 'प्रकार']
+['स्पोर्ट', 'खेल']
+['खेल', 'खेल']
+['शीर्षक', 'प्रकार']
+['स्पोर्ट', 'खेल']
+['खेल', 'खेल']
+['योजना', 'प्राथमिकता']
 ```
 
-Agar humein sirf specific columns ki values chahiye toh hum `csv.DictReader()` ka use kar sakte hai:
+## गहराई तक
 
-```Python
-with open('file.csv', 'r') as csv_file:
-  csv_reader = csv.DictReader(csv_file)
-  for row in csv_reader:
-    column_value = row['column_name']
-```
+CSV के एक ऐतिहासिक संदर्भ के बारे में, इसके वैकल्पिक, और जिंदगी में।
 
-CSV file mein new data add karne ke liye hum `csv.writer()` ka use karenge aur usmein humein file ka naam aur mode specify karna hoga:
+CSV का उपयोग प्रारंभिक रूप से स्प्रेडशीट्स में डेटा को रखने के लिए किया गया था। यह फॉर्मेट स्वरलिपी भाषाओं के समर्थन के लिए डिज़ाइन किया गया था जिससे संग्रहीत डेटा को आसानी से दूसरे कंप्यूटरों में हस्तांतरित किया जा सके। अब तक, CSV अपने सरल प्रारूप और वातावरण उत्पन्न करने के लिए पॉपुलर है।
 
-```Python
-with open('file.csv', 'a') as csv_file:
-  csv_writer = csv.writer(csv_file)
-  # code to add new data
-```
+यदि आपको अपने पास ही सुदृढ़ कॉडिंग स्किल होती है, तो आपको अपनी CSV नए रूपांतरण डेटा और पंक्तियों को ताजगी से भी भर देंगे।
 
-## Gehri Jhanki
+## इसके अलावा:
 
-CSV ke format mein data commas ke sath separate hota hai aur ismein text, numbers, aur dates save kiye jaate hai. Ismein data tabular format mein hota hai jismein rows aur columns hote hai. Hum `csv` library ke functions ka use karke CSV file ko read aur modify kar sakte hai.
-
-## Dekhiye Bhi
-
-- [Python CSV documentation](https://docs.python.org/3/library/csv.html)
-- [Working with CSV in Python](https://www.geeksforgeeks.org/working-csv-files-python/)
-- [Manipulating CSV files using pandas](https://www.datacamp.com/community/tutorials/pandas-read-csv)
+- [CSV के बारे में अधिक जानकारी के लिए यह लेख पढ़ें](https://en.wikipedia.org/wiki/Comma-separated_values)
+- [CSV में पिक्सल मुद्रण ठेसिस जॉनाथन स्पेन द्वारा](https://hacknovations.org/commas-vs-tabs-pixels-printing-csv-doctoral-thesis/)

@@ -10,30 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué escribir en la salida de error estándar?
+## ¿Qué es y por qué lo hacemos?
 
-Escribir en la salida de error estándar es una práctica común en la programación de Bash. Es útil para identificar y manejar errores o eventos inesperados durante la ejecución de un script.
+Escribir en el flujo de error estándar es una forma en la que los programadores pueden comunicar información de error mientras se ejecuta un script en Bash. Esto es útil para saber qué partes del código están causando problemas y depurarlos más fácilmente.
 
-## Cómo hacerlo
+## Cómo hacerlo:
 
-Para escribir en la salida de error estándar en Bash, simplemente debemos utilizar el descriptor de archivo `2` seguido de `>` o `&>` para redireccionar la salida a la pantalla de error. Por ejemplo:
+Para escribir en el flujo de error estándar, se utiliza el comando `echo` seguido por el símbolo `>&2` para indicar que se debe escribir en el flujo de error estándar en lugar del flujo de salida estándar. Por ejemplo:
 
 ```Bash
-echo "Esto será impreso en la salida estándar"
-echo "Esto será impreso en la salida de error estándar" >&2
+echo "Este es un mensaje de error" >&2
 ```
 
-La primera línea se imprimirá en la pantalla, mientras que la segunda línea se imprimirá en la pantalla de error.
+Esto imprimirá "Este es un mensaje de error" en la consola de error en lugar de la consola de salida. También se puede utilizar el comando `printf` para escribir en el flujo de error estándar:
 
-## Profundizando
+```Bash
+printf "Este es otro mensaje de error\n" >&2
+```
 
-Además de redireccionar la salida a la pantalla de error, también podemos guardarla en un archivo utilizando el descriptor de archivo `2` seguido de `> nombreArchivo`. Esto nos permite guardar y revisar los errores en un momento posterior.
+El resultado será el mismo que antes, ya que se está utilizando el símbolo `>&2` para redirigir el mensaje al flujo de error estándar.
 
-Otra forma útil de utilizar la salida de error estándar es a través del comando `&>>`, que permite redireccionar tanto la salida estándar como la de error a un mismo archivo.
+## Profundizando:
 
-Es importante tener en cuenta que la salida de error estándar es diferente de la salida estándar, ya que se utiliza específicamente para los mensajes de error. Por lo tanto, es importante utilizar la salida adecuada para cada situación.
+La escritura en el flujo de error estándar se ha utilizado durante mucho tiempo en la programación de Bash para informar sobre errores y depurar scripts. Sin embargo, existen alternativas como el uso de comandos `exit` con códigos de retorno personalizados o el uso de la función `stderr` en Bash.
 
-## Ver también
+En términos de implementación, escribir en el flujo de error estándar se realiza mediante la redirección de salida utilizando el símbolo `>&2` como se mencionó anteriormente. Esto se puede hacer en un solo comando o se puede establecer una redirección global para toda la secuencia de comandos.
 
-- [Guía de Bash para principiantes](https://www.linux.com/training-tutorials/writing-simple-bash-script/)
-- [Redirección de salida y errores en Bash](https://www.digitalocean.com/community/tutorials/how-to-use-bash-s-redirection-operators)
+## Ver también:
+
+- [Documentación oficial de redirección en Bash](https://www.gnu.org/software/bash/manual/html_node/Redirections.html)
+- [Usando el flujo de error estándar en scripts de Bash](https://www.baeldung.com/linux/bash-redirect-stderr-stdout)
+- [Explicación detallada de redirección en Bash](https://www.tldp.org/LDP/abs/html/io-redirection.html)

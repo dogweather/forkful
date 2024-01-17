@@ -1,7 +1,7 @@
 ---
-title:                "文字列を連結する"
-html_title:           "C: 文字列を連結する"
-simple_title:         "文字列を連結する"
+title:                "文字列の連結"
+html_title:           "C: 文字列の連結"
+simple_title:         "文字列の連結"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -10,46 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-なぜ文字列を連結する必要があるのでしょうか？
+## 何となんで?
+文字列を連結するとは何かを説明し、プログラマーがなぜそれを行うかを説明する。
 
-文字列を連結することで、複数の文字列を一つの大きな文字列に統合することができます。これにより、より効率的にデータを扱うことができるだけでなく、プログラムの実装もより簡単になります。
-
-## How To
-文字列を連結するには、C言語の`strcat()`関数を使用します。以下のように使用することができます。
-
+## 方法:
 ```C
 #include <stdio.h>
-#include <string.h>
 
 int main() {
-
-    char first[] = "Hello";
-    char second[] = "World";
-
-    // ファーストとセカンドを連結する
-    strcat(first, second);
-
-    printf("Concatenated string: %s\n", first);
-
-    return 0;
+   char str1[20] = "Hello";
+   char str2[20] = "World";
+   strcat(str1, str2);
+   printf("Concatenated string: %s", str1);
+   return 0;
 }
 ```
 
-上記のコードでは、`strcat()`関数を使用して`first`と`second`の2つの文字列を連結しています。出力結果は以下のようになります。
+出力: Concatenated string: HelloWorld
 
-```
-Concatenated string: HelloWorld
-```
+## 詳しく見る:
+文字列を連結するとは、2つの文字列を1つの文字列に結合することを指します。プログラマーは、複数の文字列を結合して新しい文字列を作成することで、より複雑なプログラムを開発することができます。
 
-## Deep Dive
-`strcat()`関数は、C言語の`string.h`ライブラリに含まれています。この関数は、終端が`null`であるまで引数に渡された2つの文字列を連結します。ただし、最終的な連結結果がオーバーフローを引き起こす場合は、予期しない結果が生じる恐れがあることに注意してください。
+歴史的な文脈では、文字列を連結するために使用されていた最も古い関数は、C言語のstrcat()関数でした。ただし、その後も様々な関数や方法が開発されました。
 
-また、C言語には他にも`strncat()`という関数もあります。これは、`strcat()`と同様に文字列を連結しますが、引数に指定した長さのみを連結することができます。
+文字列を連結するための代替手段として、文字列の作成時に直接連結する方法や、フォーマット指定子を使用して連結する方法などがあります。
 
-## See Also
-より詳細な情報については、以下のリンクを参照してください。
+文字列を連結する方法の実装詳細については、コンピュータサイエンスの概念である「文字列」や「メモリ」などについて学ぶ必要があります。
 
-- [C言語の`string.h`ライブラリ](https://www.tutorialspoint.com/c_standard_library/string_h.htm)
-- [`strcat()`のマニュアルページ](https://www.man7.org/linux/man-pages/man3/strcat.3.html)
-- [`strncat()`のマニュアルページ](https://www.man7.org/linux/man-pages/man3/strncat.3.html)
+## 関連をチェック:
+- [C言語の文字列分割チュートリアル](https://www.learn-c.org/en/String_Splitting)
+- [文字列操作用のC言語ライブラリ関数](https://www.programiz.com/c-programming/library-function/string.h)
+- [C言語文字列のフォーマット](https://www.codingunit.com/c-tutorial-formatting-strings)

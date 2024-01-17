@@ -10,42 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-Substrings are smaller parts of a larger string and extracting them can be useful for various tasks such as data processing, text manipulation, and string parsing. It allows for more efficient and precise handling of string data.
+## What & Why?
 
-## How To
-To extract substrings in Swift, we use the `substring` method. Here's an example of extracting a substring from a given string:
+Substring extraction is the process of isolating a specific portion or a series of characters from a larger string. This is commonly done in programming to manipulate or analyze data within a string. For example, extracting a person's name from a full name string or extracting a specific date from a long string containing various information.
 
-```
-let string = "Hello, World!"
+## How to:
 
-let substring = string.substring(from: 7, to: 12)
+To extract substrings in Swift, we can use the ```substring(from:to:)``` and ```substring(with:)``` methods. 
 
-print(substring) // Outputs "World"
-```
+For example, let's say we have a string containing a person's full name: ```let name = "John Smith"```
 
-In this example, we use the `substring` method and pass in the `from` and `to` parameters, indicating the starting and ending index of the desired substring. Note that the starting index is inclusive, while the ending index is exclusive. 
+To extract the first name, we can use ```substring(to: name.firstIndex(of: " ")!)```. This will return the substring "John".
 
-We can also use the `substring` method with the `Range` type to extract a substring using a specific range of indices:
+To extract the last name, we can use ```substring(from: name.firstIndex(of: " ")!)```. This will return the substring "Smith".
 
-```
-let string = "Swift is awesome!"
+To extract a portion of the string between two specified indices, we can use the ```substring(with:)``` method. For example, to extract the middle name "David" from the full name string, we can use ```substring(with: name.index(after: name.firstIndex(of: " ")!)..<name.lastIndex(of: " ")!)```.
 
-let range = string.startIndex..<string.index(string.startIndex, offsetBy: 5)
+The output for all of these examples would be the extracted substring as a new string.
 
-let substring = string.substring(with: range)
+## Deep Dive:
 
-print(substring) // Outputs "Swift"
-```
+Substring extraction has been a common practice in programming since the early days of string manipulation. It provides a flexible and efficient way of handling and manipulating data within strings. There are other methods of extracting substrings, such as using regular expressions, but the methods provided by Swift are often simpler and more convenient.
 
-In this case, we first define a range of indices using the `startIndex` and `offsetBy` methods. Then, we pass that range to the `substring` method to extract the desired substring.
+It's important to note that the substring extraction methods in Swift use index values, which can get tricky at times. It's always a good idea to handle error cases, such as a substring being out of bounds, to avoid unexpected errors.
 
-## Deep Dive
-There are several other methods and properties that can be used to extract substrings in Swift. For example, the `prefix` and `suffix` methods can be used to extract the first or last n characters of a string. There is also a `range(of:)` property that can be used to find the range of a specific substring within a given string. Additionally, the `Substring` type can be used to manipulate and manipulate substrings without having to convert them into strings.
+## See Also:
 
-It's also worth noting that Swift strings are Unicode-compliant, meaning they can handle a wide range of characters and languages. This makes substring extraction in Swift more versatile and robust.
-
-## See Also
-- [Swift String API reference](https://developer.apple.com/documentation/swift/string)
-- [Swift substring extraction tutorial](https://www.tutorialspoint.com/swift/swift_substrings.htm)
-- [Unicode official website](https://unicode.org/)
+To learn more about substrings and string manipulation in Swift, check out the [official documentation](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#ID280) on the topic. You can also explore different ways of extracting substrings by looking into [regular expressions](https://regex101.com/) and [other string manipulation methods](https://www.hackingwithswift.com/articles/141/string-formatting-tips-using-swift).

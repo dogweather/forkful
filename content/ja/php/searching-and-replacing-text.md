@@ -10,47 +10,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
-テキストを検索して置換する理由は、プログラマーにとって非常に重要です。例えば、複数のファイル内の特定の文字列を一括で変更する必要があったり、特定のパターンに基づいて文字列を置換する必要があったりする場合があります。PHPには、効率的にテキストを検索・置換するための強力な機能が組み込まれています。
+## 何をしていますか？：
+テキストの検索と置換が何かを2〜3文で説明し、プログラマーがその作業を行う理由を説明します。
 
-## 使い方
-テキストの検索と置換をする方法は、非常にシンプルで、以下のようになります。
+## 方法：
+```PHP
+// 文字列の置換
+$str = "こんにちは、世界！";
+echo str_replace("こんにちは", "Hello", $str); // 結果：Hello、世界！
 
-```
-<?php
-$search = "Hello";
-$replace = "こんにちは";
-$text = "Hello world";
-echo str_replace($search, $replace, $text); // こんにちは world
-
-// 複数の文字列を一括で置換する場合は、配列を使用します。
-$search = array("Hello", "world");
-$replace = array("こんにちは", "世界");
-$text = "Hello world";
-echo str_replace($search, $replace, $text); // こんにちは 世界
-?>
+// 正規表現による置換
+$str = "apple123banana456";
+echo preg_replace('/\d+/', '', $str); // 結果：applebanana
 ```
 
-さらに、プログラマーは正規表現を使用してパターンに基づいたテキストの検索・置換も行うことができます。
+## ディープダイブ：
+テキストの検索と置換は、古くからプログラミングの重要な機能の1つです。以前は、文字列の操作には手作業が必要でしたが、テキストの検索と置換を使うことで、より簡単に文字列を操作することができるようになりました。また、正規表現を使うことで、パターンマッチングによる高度な置換が可能になります。代替手段としての```str_replace```関数や、テキストエディターの置換機能などがあります。PHPでは、```preg_replace```、```str_replace```、```substr_replace```などの多くの関数がテキストの検索と置換に使用されます。
 
-```
-<?php
-$search = "/[^0-9]/"; // 数字以外の文字を検索
-$replace = ""; // 空文字に置換
-$text = "H3ll0 w0rld";
-echo preg_replace($search, $replace, $text); // 300
-?>
-```
-
-## ディープダイブ
-PHPでは、テキストの検索・置換を効率的に行うことができる多数の関数が用意されています。`str_replace()`や`preg_replace()`のほかにも、`str_ireplace()`や`preg_match()`などの関数があります。これらの関数を使い分けることで、より柔軟なテキスト操作が可能となります。
-
-また、正規表現を使用することで、より強力なパターンマッチングができるようになります。PHPのドキュメントを参考にしながら、正規表現について学んでみることをお勧めします。
-
-## 参考リンク
-- [PHPのstr_replace関数 - TechAcademyマガジン](https://techacademy.jp/magazine/25927)
-- [PHPの正規表現の使い方 - PHP-CMS.COM](https://php-cms.com/blog/php_regular_expression/)
-- [PHPのドキュメント - テキスト操作関数](https://www.php.net/manual/ja/ref.strings.php)
-
-## もっと詳しく学びたい方へ
-テキストの検索・置換は、プログラミングにおいて非常に重要なテクニックの一つです。PHPだけでなく、他の言語でも同様の機能が用意されています。さらに、正規表現は広く様々な言語で使用されており、その知識があるとより高度なテキスト操作ができるようになります。ぜひ、上記の参考リンクを参考にしながら、独自のテキスト操作の技術を身につけてみてください。
+## 関連リンク：
+- [PHPのstr_replace関数](https://www.php.net/manual/ja/function.str-replace.php)
+- [PHPのpreg_replace関数](https://www.php.net/manual/ja/function.preg-replace.php)
+- [PHPのsubstr_replace関数](https://www.php.net/manual/ja/function.substr-replace.php)

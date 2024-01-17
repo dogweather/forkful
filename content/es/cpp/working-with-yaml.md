@@ -10,58 +10,69 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué trabajar con YAML
+## Qué y Por Qué?
 
-Si eres un programador en busca de una forma sencilla de estructurar datos y configuraciones en tus proyectos, YAML puede ser la solución perfecta para ti. Esta sintaxis ligera y fácil de leer es cada vez más popular en el mundo de la programación gracias a su flexibilidad y soporte en una amplia variedad de lenguajes.
+Trabajar con YAML es una forma de estructurar los datos en el código de programación de forma legible y fácilmente manejable. Se utiliza para crear archivos de configuración y datos en un formato basado en texto plano. Los programadores utilizan YAML para organizar y almacenar información de una manera clara y ordenada, lo que hace que sea más sencillo trabajar con ella en sus programas.
 
-## Cómo trabajar con YAML
+## Cómo:
 
-Para trabajar con YAML en C++, primero necesitamos incluir la librería correspondiente en nuestro código:
+Los ejemplos de código y su correspondiente resultado están incluidos en bloques de código ```C++ ... ```.
 
+#### Ejemplo 1: Crear un archivo YAML
 ```C++
+#include <iostream> 
 #include <yaml-cpp/yaml.h>
+
+int main() {
+    YAML::Emitter out;
+    out << YAML::BeginMap;
+    out << YAML::Key << "nombre";
+    out << YAML::Value << "Juan";
+    out << YAML::Key << "edad";
+    out << YAML::Value << 25;
+    out << YAML::EndMap;
+    
+    std::cout << out.c_str() << "\n";
+    
+    return 0;
+}
+```
+#### Resultado:
+```
+nombre: Juan
+edad: 25 
 ```
 
-A continuación, podemos crear un objeto de tipo `YAML::Node` que contendrá nuestros datos estructurados en formato YAML:
-
+#### Ejemplo 2: Leer un archivo YAML
 ```C++
-YAML::Node datos;
+#include <iostream> 
+#include <yaml-cpp/yaml.h>
+
+int main() {
+    YAML::Node datos = YAML::LoadFile("datos.yaml");
+    std::cout << datos["nombre"].as<std::string>() << "\n";
+    std::cout << datos["edad"].as<int>() << "\n";
+    
+    return 0;
+}
 ```
-
-Podemos agregar datos a nuestro objeto utilizando la sintaxis de YAML, que consiste en pares clave-valor separados por dos puntos y líneas nuevas:
-
-```C++
-datos["nombre"] = "Ana";
-datos["edad"] = 25;
-datos["ciudad"] = "Madrid";
+#### Datos.yaml:
 ```
-
-Para acceder a los datos almacenados en nuestro objeto, podemos utilizar el operador de acceso con corchetes y la clave correspondiente:
-
-```C++
-cout << "La edad de " << datos["nombre"] << " es " << datos["edad"] << " años.";
-```
-
-Ahora, si imprimimos el objeto, veremos el equivalente YAML de nuestros datos:
-
-```C++
-nombre: Ana
+nombre: Juan
 edad: 25
-ciudad: Madrid
+```
+#### Resultado:
+```
+Juan
+25
 ```
 
-¡Así de fácil es trabajar con YAML en C++!
+## Deep Dive:
 
-## Profundizando en YAML
+YAML significa "YAML Ain't Markup Language" y es un formato de serialización de datos que se basa en texto plano. Fue creado en 2001 por Ingy döt Net y es utilizado principalmente para crear archivos de configuración en lenguajes de programación. Algunas alternativas a YAML incluyen JSON y XML, pero YAML es popular debido a su sintaxis limpia y fácil legibilidad para los humanos. La implementación de YAML se realiza utilizando librerías y paquetes como "yaml-cpp".
 
-Además de guardar datos simples como en el ejemplo anterior, YAML también permite estructurar datos más complejos, como listas y objetos, de manera muy intuitiva. Podemos incluso incluir comentarios en nuestro código YAML utilizando el carácter numeral `#`.
+## Ver también:
 
-Otra ventaja de trabajar con YAML en C++ es que la librería `yaml-cpp` nos ofrece una gran variedad de funciones y métodos para manipular y acceder a nuestros datos de forma eficiente.
-
-Si quieres aprender más sobre YAML y sus posibilidades, te recomendamos revisar la documentación oficial de `yaml-cpp` y practicar con diferentes ejemplos.
-
-## Ver también
-
-- [Documentación oficial de de yaml-cpp](https://yaml-cpp.github.io/)
-- [Tutorial de YAML en C++](https://www.learncpp.com/cpp-tutorial/08-yaml/)
-- [Ejemplos de uso de YAML en proyectos reales](https://github.com/jbeder/yaml-cpp/wiki/Tutorial)
+- [Sitio web oficial de YAML](https://yaml.org/)
+- [YAML vs. JSON: ¿cuál usar?](https://www.baeldung.com/yaml-vs-json)
+- [Documentación de yaml-cpp](https://github.com/jbeder/yaml-cpp/wiki)

@@ -1,7 +1,7 @@
 ---
-title:                "计算未来或过去日期"
-html_title:           "Rust: 计算未来或过去日期"
-simple_title:         "计算未来或过去日期"
+title:                "计算将来或过去的日期"
+html_title:           "Rust: 计算将来或过去的日期"
+simple_title:         "计算将来或过去的日期"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Dates and Times"
@@ -10,45 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
+# 什么是日期计算？为什么程序员需要它？
 
-如果你需要编写一个日程管理软件或者需要做日期相关的计算，计算未来或过去的日期就是必不可少的功能。使用Rust编程语言，可以简单而高效地实现这一功能。
+日期计算是指在给定的日期上增加或减少一定的天数，以得到未来或过去的日期。程序员通常需要使用日期计算来处理日期和时间相关的数据，例如在日历应用程序中计算节日的日期或者在订单系统中计算发货日期。
 
-## 怎么做
-
-计算未来或过去的日期，最重要的就是要确定参考日期，也就是今天的日期。通过调用Rust标准库中的`time::Date`类，我们可以轻松获取当前日期，然后进行加减运算。
-
-下面是一个示例代码，假设今天是2020年10月10日，计算50天后的日期。
+# 如何进行日期计算？
 
 ```Rust
-use std::time::{Duration, SystemTime, UNIX_EPOCH};
+use chrono::{NaiveDate, Duration, ParseResult};
 
-let today = SystemTime::now().duration_since(UNIX_EPOCH).expect("Time went backwards!"); // 获取当前日期
-let mut future_date = today.as_secs() as i64 + (50 * 24 * 60 * 60); // 转换为秒，并加上50天的秒数
-let future_date = SystemTime::UNIX_EPOCH + Duration::from_secs(future_date as u64); // 将计算后的秒数转换为日期对象
-println!("50 days from now is {}", future_date); // 输出未来日期
+// 初始日期：2021年6月15日
+let start_date = NaiveDate::parse_from_str("2021-06-15", "%Y-%m-%d");
+
+// 在初始日期上增加20天
+let future_date = start_date + Duration::days(20);
+
+// 在初始日期上减去5天
+let past_date = start_date - Duration::days(5);
+
+// 输出未来日期：2021年7月5日
+println!("{}", future_date.format("%Y年%m月%d日"));
+
+// 输出过去日期：2021年6月10日
+println!("{}", past_date.format("%Y年%m月%d日"));
 ```
 
-运行结果为：`50 days from now is 2020-11-29 16:45:00 UTC`
+# 深入了解日期计算
 
-同样的，如果需要计算过去的日期，则可以使用负数来表示减去的天数即可。
+日期计算已经存在了很长的时间，早在公元前3000年，古巴比伦人就发明了日历来进行日期计算。除了使用编程语言提供的日期计算库，程序员也可以手动编写算法来进行日期计算。日期计算也可以通过使用时间戳进行，时间戳是指一个特定日期和时间与某个参考时间之间的间隔，通常以秒为单位表示。
 
-```Rust
-use std::time::{Duration, SystemTime, UNIX_EPOCH};
+# 参考资料
 
-let today = SystemTime::now().duration_since(UNIX_EPOCH).expect("Time went backwards!"); // 获取当前日期
-let mut past_date = today.as_secs() as i64 - (30 * 24 * 60 * 60); // 转换为秒，并减去30天的秒数
-let past_date = SystemTime::UNIX_EPOCH + Duration::from_secs(past_date as u64); // 将计算后的秒数转换为日期对象
-println!("30 days ago was {}", past_date); // 输出过去日期
-```
-
-运行结果为：`30 days ago was 2020-09-10 16:45:00 UTC`
-
-## 深入探讨
-
-Rust标准库中提供了多种日期时间相关的类和方法，使用起来非常方便。如果需要更复杂的日期计算，可以参考官方文档中的“[时间处理](https://doc.rust-lang.org/book/ch16-01-threads.html#handling-time)”部分。
-
-## 查看更多
-
-- [Rust官方文档](https://doc.rust-lang.org/)
-- [Rust中文社区](https://rust.cc/)
+- [Chrono文档](https://docs.rs/chrono/0.4.19/chrono/)
+- [维基百科：日期计算](https://zh.wikipedia.org/wiki/%E6%97%A5%E6%9C%9F%E8%AE%A1%E7%AE%97)

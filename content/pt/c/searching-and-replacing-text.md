@@ -1,7 +1,7 @@
 ---
-title:                "Buscando e substituindo texto"
-html_title:           "C: Buscando e substituindo texto"
-simple_title:         "Buscando e substituindo texto"
+title:                "Busca e substituição de texto"
+html_title:           "C: Busca e substituição de texto"
+simple_title:         "Busca e substituição de texto"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -10,35 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+## O que e Por que?
 
-Você já se deparou com um grande texto ou código e precisou realizar uma mudança em várias partes dele? Isso pode ser uma tarefa cansativa e demorada se for feita manualmente. Felizmente, no C, existe uma maneira fácil de encontrar e substituir parte do texto, economizando tempo e esforço.
+Substituir e buscar texto e uma tarefa frequente no mundo da programacao. Isso significa, como o nome sugere, encontrar determinado texto e substitui-lo por outro. Programadores fazem isso para corrigir erros, atualizar informacoes ou fazer alteracoes em massa em seus programas.
 
-## Como Fazer
+## Como fazer:
 
-Para encontrar e substituir texto em um programa C, você precisará utilizar a função `strstr()`. Essa função busca a ocorrência de uma string dentro de outra, retornando um ponteiro para a primeira ocorrência. Em seguida, você pode usar a função `strcpy()` para substituir a string encontrada pela nova string desejada.
-
-Por exemplo, se quisermos substituir a palavra "mundo" pela palavra "futuro" em uma string, podemos fazer o seguinte:
+Existem varias maneiras de buscar e substituir texto em C. Uma delas e usando a funcao `str_replace()`, que recebe tres argumentos: a string original, o texto a ser buscado e o texto a ser substituido. Veja um exemplo:
 
 ```
-char texto[100] = "Olá, mundo!";
-char *posicao = strstr(texto, "mundo");
-strcpy(posicao, "futuro");
-printf("%s", texto);
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+   char original[100] = "Ola mundo";
+   char novo[100];
+   str_replace(original, "mundo", "programacao", novo);
+   printf("%s", novo);
+   return 0;
+}
 ```
 
-Isso resultará em um texto com a seguinte saída: "Olá, futuro!".
+Este codigo ira substituir o texto "mundo" por "programacao" e imprimir "Ola programacao" no terminal.
 
-## Mergulho Profundo
+## Mergulho Profundo:
 
-Além da função `strstr()`, existem outras opções para realizar a busca e substituição de texto em C. Uma delas é a função `strtok()`, que divide uma string em tokens, permitindo uma busca mais específica em cada parte do texto.
+Buscar e substituir texto e uma funcao essencial em linguagens de programacao, e ja foi um processo manual no passado. Com o avanco da tecnologia, surgiram ferramentas e recursos que tornaram esse processo mais rapido e eficiente. Em C, a funcao `str_replace()` e uma alternativa mais simples e eficaz em comparacao com outras opcoes disponiveis. A linguagem tambem possui outras funcoes para buscar e substituir texto, como `strchr()` e `strtok()`, mas `str_replace()` e mais abrangente e facil de usar.
 
-Outra opção é o uso de expressões regulares, que permitem uma busca ainda mais complexa e precisa. Para isso, é necessário incluir a biblioteca `regex.h` e utilizar as funções `regcomp()` e `regexec()` para compilar e executar a expressão regular desejada.
+## Veja Tambem:
 
-Lembre-se de sempre tomar cuidado com as alterações feitas no seu código durante o processo de busca e substituição de texto. Certifique-se de ter feito um backup do seu código antes de realizar qualquer mudança.
-
-## Veja Também
-
-- Link 1: https://www.tutorialspoint.com/c_standard_library/c_function_strstr.htm
-- Link 2: https://www.geeksforgeeks.org/c-program-find-replace-word-text-file/
-- Link 3: https://www.gnu.org/software/libc/manual/html_node/String-Matching.html
+- [Documentacao oficial do C](https://www.gnu.org/software/libc/manual/html_node/String-Search-and-Replace.html)
+- [Guia para iniciantes em C](https://guides.github.com/activities/hello-world/)

@@ -10,39 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was & Warum?
 
-In einer Welt, in der Textverarbeitung und Manipulation immer wichtiger werden, ist die Fähigkeit, Teilstrings zu extrahieren, ein entscheidender Faktor für die Effizienz beim Programmieren. Mit Rust können wir dies auf einfache und effektive Weise tun, indem wir die integrierten String-Funktionen nutzen.
+Das Extrahieren von Teilzeichenketten, auch bekannt als Unterzeichenketten, ist eine gängige Praxis unter Programmierern. Dabei werden Teile einer längeren Zeichenkette ausgewählt und separat verwendet. Das kann hilfreich sein, um bestimmte Operationen auf nur einem Teil der Zeichenkette auszuführen oder einfach um den Code übersichtlicher zu gestalten.
 
-## So geht's
+## Wie geht's?
 
-Um Teilstrings in Rust zu extrahieren, verwenden wir die Funktion `slice()` zusammen mit dem `..` Operator, der einen Teilbereich aus einem String auswählt. Wir erstellen einen neuen String, der den extrahierten Teil enthält und geben ihn aus.
-
-```Rust
-let string = String::from("Hallo Welt!");
-let substring = &string[6..]; // Ausgabe: "Welt!"
-```
-
-Weitere nützliche Funktionen zum Extrahieren von Teilstrings sind `find()` und `split()`. Mit `find()` können wir nach bestimmten Zeichen oder Mustern suchen und den Teilstring bis zu diesem Punkt extrahieren. `split()` hingegen teilt den String in Teile auf und gibt diese als Vektoren aus.
+In Rust gibt es eine Vielzahl von Methoden, um Teilzeichenketten zu extrahieren. Ein Beispiel ist die Methode `slice`, die es uns ermöglicht, einen Teil einer Zeichenkette auszuwählen. Hier ein einfaches Beispiel:
 
 ```Rust
-let string = String::from("Rust ist großartig!");
-let index = string.find("ist").unwrap(); // Ausgabe: 5
-let substring = &string[..index]; // Ausgabe: "Rust"
-
-let string = String::from("1,2,3");
-let array: Vec<&str> = string.split(",").collect(); // Ausgabe: ["1", "2", "3"]
+let string = "Hallo Welt";
+let teil = &string[0..5];
 ```
 
-## Tiefer graben
+Die Variable `teil` enthält nun den Wert "Hallo", da wir von Index 0 bis 5 (nicht inklusive) die Zeichenkette ausgewählt haben.
 
-Hinter den Kulissen speichert Rust Strings als Byte-Arrays und die Indexierung ist daher in Byte-Schritten. Dies bedeutet, dass der `slice()` Operator untersucht, wie viele Bytes der Teilstring enthält, anstatt einfach die Anzahl der Zeichen zu zählen. Dies kann zu unerwarteten Ergebnissen führen, wenn der String non-ASCII-Zeichen enthält, da diese mehr als ein Byte belegen.
+## Tiefergehend
 
-Es ist auch wichtig zu beachten, dass `slice()` eine Referenz auf den Teilstring erstellt, anstatt eine neue String-Instanz zu erstellen. Dies reduziert die Anzahl der Speicherzuweisungen und verbessert die Leistung, ist aber auch zu beachten, wenn der ursprüngliche String weiterhin verwendet werden soll.
+Das Extrahieren von Teilzeichenketten ist eine Technik, die programmierübergreifend verwendet wird. Es kann besonders hilfreich sein, wenn man mit lange Zeichenketten arbeitet und nur einen Teil davon benötigt. In anderen Programmiersprachen gibt es auch ähnliche Methoden wie z.B. `substring` in Java oder `substr` in PHP.
 
-## Siehe auch
+In Rust erfolgt das Extrahieren von Teilzeichenketten ähnlich wie in anderen Sprachen. Es gibt jedoch einige feine Unterschiede, wie zum Beispiel die Verwendung von Slices statt Substrings. Es ist wichtig zu beachten, dass Slices in Rust immer eine Referenz auf den ursprünglichen Datentyp zurückgeben. Deshalb muss man bei der Verwendung von Slices darauf achten, dass die ursprüngliche Zeichenkette nicht gelöscht oder geändert wird, sonst ändert sich auch die Teilzeichenkette.
 
-Weitere Informationen über das Arbeiten mit Strings in Rust finden Sie in der offiziellen Dokumentation unter:
+## Weitere Quellen
 
-- https://doc.rust-lang.org/book/ch08-02-strings.html
-- https://doc.rust-lang.org/stable/std/string/struct.String.html
+Für weitere Informationen kannst du die offizielle Rust-Dokumentation zum Thema Slice `https://doc.rust-lang.org/std/primitive.slice.html` oder den Rust-Playground `https://play.rust-lang.org/` nutzen, um selbst mit Teilzeichenketten zu experimentieren. Es gibt auch unzählige Ressourcen von der Community, wie z.B. Foren oder Tutorials, die bei der Anwendung von Teilzeichenketten in Rust helfen können.

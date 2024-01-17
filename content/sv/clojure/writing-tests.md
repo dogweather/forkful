@@ -1,7 +1,7 @@
 ---
-title:                "Skriva tester."
-html_title:           "Clojure: Skriva tester."
-simple_title:         "Skriva tester."
+title:                "Att skriva tester"
+html_title:           "Clojure: Att skriva tester"
+simple_title:         "Att skriva tester"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Testing and Debugging"
@@ -10,63 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Varför
+Vad & Varför?
+Att skriva tester är en viktig del av programmering. Det handlar om att skriva kod som verifierar att programmet fungerar som det ska. Tester hjälper oss att upptäcka buggar och fel i koden, och ger oss mer tillförlitliga program.
 
-Att skriva tester är en viktig del av att skriva högkvalitativ kod. Det hjälper till att upptäcka och förebygga buggar, förbättrar koden och ger ökad tillit till applikationen.
+Hur gör man?
+I Clojure använder vi oss av biblioteket `clojure.test` för att skriva tester. Detta ger oss en mängd funktioner som vi kan använda för att skriva olika typer av tester. Här är ett exempel på hur man skulle kunna skriva ett enkelt test:
 
-# Hur man skriver tester
+```clojure
+(ns example-test
+  (:require [clojure.test :refer :all]))
 
-För att skriva tester i Clojure behöver vi använda en testram som heter `clojure.test`. Detta ger oss funktioner och makron för att definiera testfall och förväntade resultat.
+;; Vi skapar en funktion som vi vill testa
+(defn multiply [x y]
+  (* x y))
 
-Ett enkelt exempel skulle kunna vara att vi vill testa en funktion som lägger till två tal:
+;; Vi skriver ett test för funktionen
+(deftest test-multiply
+  (testing "Multiplicera två positiva tal"
+    (is (= 24 (multiply 8 3)))))
 
-```Clojure
-(ns testing.core-test
-  (:require [clojure.test :refer [is]]))
- 
-(defn add [x y]
-  (+ x y))
-
-(deftest addition-test
-  (is (= 5 (add 2 3))))
+;; Kör alla tester i detta namespace
+(run-tests)
 ```
 
-Vi börjar med att definiera en namnrymd för våra tester och inkluderar `clojure.test` för att använda `is`-funktionen. Sedan definierar vi funktionen vi vill testa, `add`, och skriver ett testfall för att kontrollera att det ger det förväntade resultatet, `5`.
+Resultatet av testet bör bli:
 
-För att köra testerna från en REPL eller terminal, kan vi använda följande kommando:
+```clojure
+Testing example-test
 
-```Clojure
-(clojure.test/run-tests)
+Ran 1 tests containing 1 assertions.
+0 failures, 0 errors.
 ```
 
-Om allt är korrekt, bör vi få ut en grön markering för vårt testfall.
+Djupdykning
+Historiskt sett har testning varit en viktig del av programmering. En vanlig metod var att manuellt testa programmet och se om det fungerade som förväntat. Detta var dock väldigt tidskrävande och ineffektivt. Med introduktionen av automatiserade tester har processen blivit mycket smidigare och tillförlitligare.
 
-# Djupgående
+En alternativ metod för testning i Clojure är användning av biblioteket `clojure.spec`. Detta ger oss möjlighet att specificera vilken sorts data som funktioner tar emot och returnerar, och låter oss sedan köra genomsöknings- och valideringsfunktioner för att säkerställa att funktionerna uppfyller specifikationerna.
 
-När vi skriver tester vill vi täcka så många olika scenarier som möjligt. Detta inkluderar att testa olika indata, hörnfall och felhantering. Vi kan även använda oss av `testing`-makron för att organisera våra tester och ge dem en mer beskrivande rubrik.
-
-```Clojure
-(ns testing.core-test
-  (:require [clojure.test :refer [testing is]]))
- 
-(defn divide [x y]
-  (/ x y))
-
-(deftest division-test
-  (testing "Division av två positiva tal"
-    (is (= 2 (divide 6 3))))
-  (testing "Division av ett positivt och ett negativt tal"
-    (is (= -2 (divide 6 -3))))
-  (testing "Division av noll"
-    (is (thrown? ArithmeticException (divide 6 0)))))
-```
-
-I det här exemplet täcker vi flera olika scenarier för funktionen `divide` - division av två positiva tal, division av ett positivt och ett negativt tal och division av noll. Vi använder `thrown?`-funktionen för att kontrollera att ett undantag kastas vid felaktig indata.
-
-Det finns många fler funktioner och makron som kan användas vid skrivande av tester, till exempel `are`, `are-not` och `deftest+`. Det är också viktigt att komma ihåg att skriva klara och förståeliga testfall, så att andra utvecklare lätt kan förstå vad de testar.
-
-# Se även
-
-- [Clojure Dokumentation för `clojure.test`](https://clojure.github.io/clojure/clojure.test-api.html)
-- [Clojure.test Tutorial](https://clojure.org/guides/testing)
-- [Using clojure.test](https://blog.venanti.us/clojure-tdd)
+Se också
+- https://clojure.org/guides/testing
+- https://clojure-doc.org/articles/tutorials/testing.html

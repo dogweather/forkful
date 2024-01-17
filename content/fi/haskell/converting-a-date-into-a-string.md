@@ -1,7 +1,7 @@
 ---
-title:                "Muuntaa päivämäärä merkkijonoksi"
-html_title:           "Haskell: Muuntaa päivämäärä merkkijonoksi"
-simple_title:         "Muuntaa päivämäärä merkkijonoksi"
+title:                "Päivämäärän muuntaminen merkkijonoksi"
+html_title:           "Haskell: Päivämäärän muuntaminen merkkijonoksi"
+simple_title:         "Päivämäärän muuntaminen merkkijonoksi"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Dates and Times"
@@ -10,36 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä ja miksi?
+Päivämäärän muuttaminen merkkijonoksi on tärkeä osa ohjelmointia, jossa päivämäärät ovat usein käytössä. Ohjelmoijat tekevät tämän muuntamisen helpottaakseen päivämäärän käyttöä koodissa ja tulostaa sitä tarvittaessa.
 
-Haluaisitko oppia, kuinka muuttaa päivämäärä merkkijonoksi Haskell-ohjelmoinnissa? Ehkä haluat tulostaa päivämäärän käyttäjälle ymmärrettävässä muodossa tai tallentaa sen tietokantaan. Tämä artikkeli auttaa sinua ymmärtämään tämän tärkeän tehtävän Haskellissa.
-
-## Kuinka
-
-Haskellissa päivämäärän muuntaminen merkkijonoksi tapahtuu käyttämällä `formatTime` -funktiota `time` -kirjastosta. Voit aloittaa luomalla päivämäärämuuttujan ja määrittämällä haluamasi muodon, esimerkiksi `%d.%m.%Y` näyttää päivämäärän muodossa päivä-kuukausi-vuosi. Sitten voit kutsua `formatTime` ja antaa parametreiksi päivämäärämuuttujan ja haluamasi muodon, kuten seuraavassa esimerkissä näkyy:
+## Kuinka?
+Käytä ```Haskell``` -koodilohkoa muuntaaksesi päivämäärän merkkijonoksi ```show``` funktiolla:
 
 ```Haskell
-import Data.Time.Format (formatTime, defaultTimeLocale)
-import Data.Time.Clock (getCurrentTime)
-
-main :: IO ()
-main = do
-  currentTime <- getCurrentTime
-  let date = "%d.%m.%Y"
-  let formattedDate = formatTime defaultTimeLocale date currentTime
-  putStrLn formattedDate
-
+show (day ++ "." ++ month ++ "." ++ year)
 ```
 
-Tämä tulostaa nykyisen päivämäärän muodossa `01.03.2021` (olettaen, että tänään on 1. maaliskuuta 2021).
+Esimerkki tuotoksesta:
+```
+"10.12.2020"
+```
 
-## Syvä Sukellus
+```Haskell``` tarjoaa myös valmiin moduulin ```Data.Time.Format```, joka mahdollistaa päivämäärän muuttamisen halutun muodon mukaan. Esimerkiksi:
 
-On tärkeää mainita, että `formatTime` -funktio käyttää `locale` -parametria määrittämään kieliasetuksia ja ajan muotoja. Tämä tarkoittaa sitä, että voit mukauttaa päivämäärän muotoa eri kielille ja kulttuureille muuttamalla `locale`-parametria. Voit myös käyttää muita muotoilumerkkejä, kuten `%H` tunnin esittämiseen tai `%M` minuuttien esittämiseen. Voit löytää täyden listan muotoilumerkkeistä `time` -kirjaston dokumentaatiosta.
+```Haskell
+formatTime defaultTimeLocale "%A, %e. %B %Y" date
+```
 
-Voit myös muuntaa päivämäärän merkkijonosta takaisin päivämääräksi käyttämällä `parseTime` -funktiota. Tämä on hyödyllistä, kun haluat lukea päivämäärän tiedostosta tai tietokannasta ja käsitellä sitä Haskellissa.
+Palauttaisi seuraavan stringin:
+
+```
+"Torstai, 10. Joulukuu 2020"
+```
+
+## Syväsukellus
+Päivämäärän muuntamisen merkkijonoksi tarve juontaa juurensa siihen, että päivämäärät ovat usein käyttöliittymissä tai tallennettavissa tietokantoihin erilaisina muodoina (esim. ISO 8601, Unix-aikaleima jne.). Tähän voidaan käyttää myös muita lähestymistapoja, kuten tietokannan ominaisuuksia, mutta merkkijonoksi muuntaminen on usein helpoin vaihtoehto pienen datan käsittelyssä.
 
 ## Katso myös
-
-- [Haskellin `time` -kirjaston dokumentaatio](https://hackage.haskell.org/package/time)
-- [Haskellin opetusohjelmat ja dokumentaatio](https://www.haskell.org/documentation/)
+- [```Data.Time.Format``` dokumentaatio] (https://hackage.haskell.org/package/time/docs/Data-Time-Format.html)
+- [Päivämäärän säätö kirjasto ```timeform```] (http://hackage.haskell.org/package/timeform)

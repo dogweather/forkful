@@ -10,37 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hva & Hvorfor?
+Generering av tilfeldige tall er en viktig del av programmering. Det er en måte for utviklere å lage enkelt og komplekst innhold på en tilfeldig måte, som kan være nyttig for mange forskjellige oppgaver.
 
-Å generere tilfeldige tall kan være nyttig i mange programmeringsscenarier. Det kan for eksempel brukes til å lage unike brukernavn, tilfeldige farger i et spill eller for å sikre at en funksjon blir utført tilfeldig.
-
-## Hvordan
-
-For å generere tilfeldige tall i Javascript kan vi bruke Math.random() -funksjonen. Denne funksjonen returnerer et desimaltall mellom 0 og 1. For å få et heltall kan vi multiplisere dette tallet med et ønsket antall og bruke Math.floor() -funksjonen for å runde det ned til nærmeste heltall.
-
-```Javascript
-// Eksempel på å generere et tilfeldig tall mellom 1 og 10
-let tilfeldigTall = Math.floor(Math.random() * 10) + 1;
-console.log(tilfeldigTall); // Output: et tilfeldig tall mellom 1 og 10
+## Slik gjør du:
+For å generere tilfeldige tall i Javascript, kan du bruke funksjonen ```Math.random()```. Denne funksjonen returnerer et tilfeldig tall mellom 0 og 1. For å få et tilfeldig tall innenfor et spesifikt område, kan du bruke formlene:  
 ```
-
-Vi kan også bruke Math.ceil() -funksjonen for å runde tallet opp, eller Math.round() -funksjonen for å runde det til nærmeste heltall.
-
-For å generere et tilfeldig tall innenfor et bestemt intervall, for eksempel mellom 20 og 50, kan vi bruke følgende kode:
-
-```Javascript
-// Eksempel på å generere et tilfeldig tall mellom 20 og 50
-let tilfeldigTall = Math.floor(Math.random() * (50 - 20 + 1)) + 20;
-console.log(tilfeldigTall); // Output: et tilfeldig tall mellom 20 og 50
+Math.floor(Math.random() * (max - min)) + min;
 ```
+Her er et eksempel på kode som genererer et tilfeldig tall mellom 1 og 10 og skriver det ut i konsollen:  
+```
+let randomNum = Math.floor(Math.random() * (10 - 1)) + 1;
+console.log(randomNum);
+```
+Dette vil for eksempel gi resultatet 7.
 
-## Dykk dypere
+## Dypdykk:
+Generering av tilfeldige tall har vært en nødvendighet i programmering siden de tidlige dagene. I begynnelsen ble tilfeldige tall opprettet ved hjelp av kompliserte algoritmer, men med utviklingen av matematiske funksjoner som ```Math.random()``` er det nå enklere å generere tilfeldige tall.
 
-Ved å bruke Math.random() -funksjonen, vil tallene vi genererer alltid være tilfeldige, men de vil ikke nødvendigvis være helt tilfeldige. Dette skyldes at funksjonen er basert på en algoritme og påvirkes av faktorer som datamaskinens klokke og kjørende prosesser.
+En annen måte å generere tilfeldige tall på er ved hjelp av tredjeparts biblioteker som tilbyr mer avanserte funksjoner som å lage tilfeldige datoer, strenger eller til og med liste over tilfeldige tall.
 
-For å få enda mer tilfeldige tall kan vi bruke et såkalt "seed" eller utgangspunkt. Dette er et tall vi gir til Math.random() -funksjonen og som vil påvirke den genererte sekvensen av tall. For å gjøre dette, kan vi bruke en tredjepartsbibliotek som "random-seed" eller "seed-random", som gir oss muligheten til å bruke et seed i Math.random() -funksjonen.
-
-## Se også
-
-- [MDN Web Docs: Math.random()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
-- [The Modern Javascript Tutorial: Generating random numbers in a given range](https://javascript.info/task/random-int-min-max)
+## Se også:
+- [MDN dokumentasjon for Math.random()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
+- [JS Random Library](https://www.npmjs.com/package/js.random) (en tredjeparts "random" bibliotek for Javascript) 
+- [Random.org](https://www.random.org/) (en online tjeneste for ekte tilfeldige nummergenerering)

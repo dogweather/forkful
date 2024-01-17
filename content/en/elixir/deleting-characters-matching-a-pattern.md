@@ -10,40 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-Deleting characters matching a pattern is a common task in programming, especially when working with strings. This can help clean up data or filter out unwanted characters, making it easier to work with. It can also be useful when dealing with user input, ensuring that it meets certain criteria.
+Deleting characters that match a specific pattern is a common task in programming. It involves removing specific characters from a string or text that meet a certain condition or match a given pattern. Programmers often need to delete characters matching a pattern to clean up or extract specific information from a given text.
 
-## How To
+## How to:
 
-To delete characters matching a pattern in Elixir, we can use the `String.replace/3` function. This function takes in three arguments: the string to be modified, the pattern to match, and the replacement string. Here's an example:
+To delete characters matching a pattern in Elixir, we can use the `String.replace/3` function. This function takes three arguments: the original string, the pattern to be matched, and the replacement string. The function will then replace all instances of the pattern with the replacement string.
 
-```Elixir
-string = "HelloWorld"
-String.replace(string, "l", "") #=> "HeoWord"
+```Elixir 
+# Example 1: Removing vowels from a text
+text = "Hello, how are you?"
+String.replace(text, ~r/[aeiou]/, "")
+
+# Output: "Hll, hw r y?"
+
+# Example 2: Removing numbers from a string
+string = "Elixir123"
+String.replace(string, ~r/[0-9]/, "")
+
+# Output: "Elixir"
 ```
 
-In this example, we replace all instances of "l" in the string with an empty string, effectively deleting them. We can also use regular expressions as the pattern to match. For example, if we want to delete all numbers from a string:
+## Deep Dive:
 
-```Elixir
-string = "1a2b3c4d5e"
-String.replace(string, ~r/[0-9]/, "") #=> "abcde"
-```
+In Elixir, regular expressions can be used to create patterns to match specific characters. Regular expressions, often shortened to "regex", are a powerful tool for pattern matching and are widely used in programming to manipulate strings. Elixir uses the `~r` sigil to represent regular expressions and the `~r/<pattern>/` syntax to define a regex pattern. Alternative ways to delete characters matching a pattern in Elixir include using the `String.delete/2` function or writing a custom function using `String.replace/2` and `Regex.replace/3` to handle more complex patterns.
 
-We can also use the bang `!` version of `String.replace` to delete characters in place, instead of returning a new string.
+## See Also:
 
-## Deep Dive
-
-The `String.replace/3` function takes an additional optional argument for the number of replacements to be made. By default, it replaces all occurrences of the pattern. We can specify a different number if we only want to delete a certain number of characters. For example:
-
-```Elixir
-string = "1a2b3c4d5e"
-String.replace(string, ~r/[0-9]/, "", 2) #=> "ab3c4d5e"
-```
-
-This will only replace the first two numbers in the string. We can also use the `:global` option to replace all occurrences, even if they are in different parts of the string. Lastly, we can also use `String.replace/4` to pass in a function as the replacement, allowing for more complex manipulation.
-
-## See Also
-
-- [String.replace documentation](https://hexdocs.pm/elixir/String.html#replace/3)
-- [Regular expressions in Elixir](https://hexdocs.pm/elixir/Regex.html)
+To learn more about regular expressions in Elixir, check out the [Elixir documentation](https://hexdocs.pm/elixir/Regex.html) on regex. You can also explore the [String](https://hexdocs.pm/elixir/String.html) and [Regex](https://hexdocs.pm/elixir/Regex.html) modules for more information on manipulating strings in Elixir. Other useful resources include online regex testers like [Regex101](https://regex101.com/) and [Rubular](https://rubular.com/) for practicing and testing your regex patterns.

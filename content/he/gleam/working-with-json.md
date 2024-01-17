@@ -10,41 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## למה
+## מה ולמה?
+עבודה עם JSON היא פעולה נפוצה בתכנות, שבה נפעל על נתונים בפורמט טקסטואלי פשוט וקריא. תוכניות וסקריפטים נעיצים לא מתאימים לעבודה עם מידע מסוג זה, ולכן תוכניות המטרה שלהן הינן על נתוני JSON נעיצים לא תואמים שהם נמשכים ממקורות רבים ושונים.
 
-JSON היא שפת תכנות פופולרית לעבודה עם נתונים מבוזרים ומשמשת כיום במגוון יישומים וטכנולוגיות. בכתבה זו נלמד כיצד לעבוד עם JSON בשיטה פשוטה ויעילה בעזרת Gleam.
+## איך לבצע:
+איות וכאלה לפני הסקריפט שלנו תוכנית דמה. הנה כמה דוגמאות עם דגש על הפלט מצוטט כדווח Gleam פקודת:
 
-## איך לעשות זאת
+```Gleam
+import gleam/json
 
-נתחיל עם התקנת החבילה json בעזרת פקודת ההתקנה "brew install json" עבור משתמשי MacOS. למשתמשי Linux, ניתן להתקין בעזרת הפקודה "apt-get install json". כעת ניצור קובץ נתונים JSON פשוט עם השדות "name", "age" ו-"city" ונשמור אותו תחת שם "data.json". נתונים נרשמים כך: {"name": "דניאל", "age": 32, "city": "תל אביב"}
-
-כעת נעשה קודד וקריאת התוכן של קובץ JSON בעזרת Gleam:
-
-```
-Gleam =>
-
-import Gleam.Json
-
-fn main() {
-  // קוראים את תוכן הקובץ ומקבלים את התוצאה כמחרוזת
-  let json_data = std.fs.read_text("data.json")
-
-  // ממירים את המחרוזת למבנה נתונים חדש עם סוגות מוגדרים מראש
-  let json_result = Gleam.Json.to_result(json_data)
-
-  // מסדרים את הסוגים לאופן הרצוי ומודפסים אותם
-  let user_result =(
-    Gleam.Json.get_field(Ok("name"), json_result),
-    Gleam.Json.get_field(Err("age"), json_result),
-    Gleam.Json.get_field(Ok("city"), json_result)
-  )
-
-  // הוצאת תוצאת JSON מאתדראם במשתנה JSON מאת.גמא כעת באסימון המרושש של גורל
-  ("דניאל", 32, "תל אביב")
+let json = """
+{
+    "name": "John",
+    "age": 30,
+    "hobbies": ["hiking", "reading"],
+    "address": {
+        "city": "Tel Aviv",
+        "country": "Israel"
+    }
 }
+"""
+
+let parsed_json = json
+    |> json.parse
+expect(parsed_json) |> to_equal(Ok({
+    "name" => "John",
+    "age" => 30,
+    "hobbies" => ["hiking", "reading"],
+    "address" => {
+        "city" => "Tel Aviv",
+        "country" => "Israel"
+    }
+}))
+
+let encoded_json = parsed_json
+    |> json.encode
+expect(encoded_json) |> to_equal(Ok(json))
 ```
-נריץ את הקוד וניערך את התוצאה לתוך מערכת הגמא, כתובת הנתונים יהיה: {"דניאל", "32", "תל אביב"}
 
-## חפירה עמוקה
+## Deep Dive:
+על CSV ואלטרנטיבות JSON נמשכים מטורים, כמו גם היסטוריה מוצגת יותר מורכבות עסקיות. פתוח JSON בנוחות! מיש הרבה נתונים של נתונים משתמשים לדעת הנתונים. תוכניות ומערכות המספקות כולם CSV בגרושים ושנעת מחולון בנות כפלט בנוחו JSON.
 
-עבודה עם JSON בעזרת Gleam יכולה להיות נגישה ונוחה. פעולות כמו "פילטר", "מיון", "עדכון" ו-"מחיקה" ניתנות להחיל על נתונים JSON בקלות עם השימוש בפונקציות של Gleam.Json.
+## ראו גם:
+למידע נוסף על Gleam ועבודה עם JSON, מומלץ להסתכל על המקורות הבאים:
+
+- מדריך של Gleam לעבודה עם קבצי JSON: https://gleam.run/book/core-modules-json.html
+- תיעוד רשמי של המודול gleam/json: https://hexdocs.pm/gleam_json/

@@ -10,56 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+### Che cos'è e perché è importante?
 
-Se sei un programmatore Swift, probabilmente hai già incontrato situazioni in cui devi manipolare e analizzare stringhe di testo. Ecco perché è importante sapere come e quando utilizzare il metodo di estrazione delle sottostringhe in Swift.
+Estrarre le sottostringhe, o porzioni di testo più piccole, da una stringa più grande è un'operazione comune nella programmazione. I programmatori lo fanno per ottenere solo le informazioni necessarie da una stringa di testo più grande o per manipolare i dati in modo più efficiente.
 
-## Come
+### Come fare:
 
-Il metodo di estrazione delle sottostringhe in Swift si chiama `substring`. Per utilizzarlo, devi fornire una posizione di indice iniziale e finale all'interno della stringa di origine per definire quale parte della stringa vuoi estrarre. Puoi farlo sia utilizzando gli indici numerici che gli indici di caratteri.
-
-```Swift
-let stringa = "Hello World"
-
-// Utilizzando gli indici numerici
-let sottostringa1 = stringa.substring(from: 2, to: 7)
-print(sottostringa1)
-// Output: llo W
-
-// Utilizzando gli indici di caratteri
-let indiceIniziale = stringa.index(stringa.startIndex, offsetBy: 3)
-let indiceFinale = stringa.index(stringa.endIndex, offsetBy: -2)
-let sottostringa2 = stringa.substring(from: indiceIniziale, to: indiceFinale)
-print(sottostringa2)
-// Output: lo Wo
-```
-
-## Deep Dive
-
-Il metodo di estrazione delle sottostringhe in Swift offre molteplici opzioni per personalizzare l'output della tua estrazione. Ad esempio, puoi utilizzare gli indici di caratteri per definire la posizione iniziale e la lunghezza della sottostringa desiderata.
+Estrarre una sottostringa in Swift è semplice usando il metodo `substring()` su una stringa. Di seguito è riportato un esempio di codice che mostra come ottenere il primo nome da una stringa contenente sia il nome che il cognome.
 
 ```Swift
-let stringa = "Hello World"
-
-// Utilizzando gli indici di caratteri
-let indiceIniziale = stringa.index(stringa.startIndex, offsetBy: 3)
-let lunghezza = 5
-let sottostringa = stringa.substring(from: indiceIniziale, length: lunghezza)
-print(sottostringa)
-// Output: lo Wo
+let nomeCompleto = "Mario Rossi"
+let primoNome = nomeCompleto.substring(to: nomeCompleto.index(of: " ")!)
+print(primoNome)
 ```
 
-Inoltre, puoi utilizzare anche il metodo `substring(from:)` per ottenere una sottostringa a partire da una determinata posizione iniziale fino alla fine della stringa di origine.
+Questo codice stamperà "Mario". In questo esempio, `nomeCompleto.index(of: " ")` restituisce l'indice della prima occorrenza dello spazio nella stringa, che viene utilizzato per estrarre la sottostringa fino a quel punto.
 
-```Swift
-let stringa = "Hello World"
+### Approfondimento:
 
-let indiceIniziale = stringa.index(stringa.startIndex, offsetBy: 3)
-let sottostringa = stringa.substring(from: indiceIniziale)
-print(sottostringa)
-// Output: lo World
-```
+L'estrazione delle sottostringhe è stata resa più semplice con l'introduzione di `substring()` in Swift. In passato, i programmatori dovevano usare metodi più complicati come `NSString.substringWithRange()` per ottenere le sottostringhe. Inoltre, esistono altre opzioni per estrarre le sottostringhe come `prefix()` e `suffix()`, che possono essere utili in situazioni diverse.
 
-## See Also
+È importante notare che quando un'altra variabile fa riferimento alla stessa stringa originale, qualsiasi modifica apportata alla sottostringa ottenuta da quella stringa si riflette anche nella stringa originale.
 
-Per ulteriori informazioni sul metodo di estrazione delle sottostringhe in Swift, puoi consultare la documentazione ufficiale di Apple [qui](https://developer.apple.com/documentation/swift/string/1641819-substring). Se vuoi saperne di più sulle stringhe in Swift, dai un'occhiata a questi articoli su [raywenderlich.com](https://www.raywenderlich.com/1914-strings-tutorial-in-swift-4-2-for-strings-that-you-work-with#toc-anchor-012) e [hackingwithswift.com](https://www.hackingwithswift.com/read/0/overview).
+### Vedi anche:
+
+- [Documentazione ufficiale di Apple su `substring()`](https://developer.apple.com/documentation/swift/string/2961145-substring)
+- [Guida alla programmazione di Swift di Apple](https://developer.apple.com/library/archive/documentation/Swift/Conceptual/Swift_Programming_Language/CollectionTypes.html#//apple_ref/doc/uid/TP40014097-CH8-ID105)

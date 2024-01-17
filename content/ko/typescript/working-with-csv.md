@@ -1,7 +1,7 @@
 ---
-title:                "CSV 작업"
-html_title:           "TypeScript: CSV 작업"
-simple_title:         "CSV 작업"
+title:                "csv 파일과 함께 작업하기"
+html_title:           "TypeScript: csv 파일과 함께 작업하기"
+simple_title:         "csv 파일과 함께 작업하기"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Data Formats and Serialization"
@@ -10,103 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
-사람들이 CSV 파일을 다루는 작업에 참여하는 이유는 무엇일까요? 그것은 파일 형식이 널리 사용되고 있는 간단하고 유용한 방법이기 때문입니다. 그것들을 다루는 것은 뛰어난 솔루션을 제공하기에 매우 중요합니다.
+## 무엇 & 왜?
+CSV는 'comma-separated values(쉼표로 구분된 값)'의 약자로, 데이터를 쉽게 표현하기 위해 사용되는 파일 형식입니다. 프로그래머들은 CSV 파일 형식을 사용하여 데이터를 구조화하고 분석하는 등 다양한 작업에 활용할 수 있습니다.
 
-## 이건 어떻게?
+## 방법:
+아래는 TypeScript를 이용하여 CSV 파일을 다루는 예제 코드입니다. 적절한 출력 결과도 함께 포함되어 있습니다.
+
 ```TypeScript
-import fs from 'fs';
-import csv from 'csv-parser';
+// 'data' 변수에는 CSV 형식의 데이터가 저장되어 있습니다.
+const data = "Name,Age,Location
+John,25,New York
+Sally,30,Los Angeles
+Mike,35,Chicago";
 
-// CSV 파일 읽기
-const readCSVFile = (filePath: string): void => {
-  fs.createReadStream(filePath)
-    .pipe(csv())
-    .on('data', (data) => {
-      console.log(data);
-    })
-    .on('end', () => {
-      console.log('CSV 파일 읽기 완료!');
-    });
-};
+// CSV 파싱 함수를 생성합니다.
+function parseCSV(csv: string): string[][] {
+  return csv.split('\n').map(row => row.split(','));
+}
 
-// CSV 파일 쓰기
-const writeCSVFile = (filePath: string, data: any[]): void => {
-  csv.write(
-    data,
-    { headers: true },
-    (err, output) => {
-      if (err) throw err;
-      fs.writeFileSync(filePath, output);
-      console.log('CSV 파일 쓰기 완료!');
-    });
-};
-
-// CSV 파일 수정
-const updateCSVFile = (filePath: string, newData: any[]): void => {
-  const rows: any[] = [];
-  const parser = csv.parse({ headers: true });
-  fs.createReadStream(filePath)
-    .pipe(parser)
-    .on('data', (data) => {
-      // 기존 데이터 행에 새로운 데이터 열 추가
-      newData.forEach((item) => {
-        if (data.name === item.name) {
-          data.job = item.job;
-        }
-      });
-      rows.push(data);
-    })
-    // 새로운 데이터로 CSV 파일 덮어쓰기
-    .on('end', () => {
-      csv.write(
-        rows,
-        { headers: true },
-        (err, output) => {
-          if (err) throw err;
-          fs.writeFileSync(filePath, output);
-          console.log('CSV 파일 수정 완료!');
-        }
-      );
-    });
-};
-
-// 함수 호출
-const filePath: string = './data.csv';
-const data: any[] = [
-  { name: 'James', job: 'Developer' },
-  { name: 'Emily', job: 'Designer' }
-];
-// 새로운 CSV 파일 내용
-// name, job
-// James, Developer
-// Emily, Designer
-
-readCSVFile(filePath);
-// { name: 'James', job: 'Developer' }
-// { name: 'Emily', job: 'Designer' }
-// CSV 파일 읽기 완료!
-
-writeCSVFile(filePath, data);
-// CSV 파일 쓰기 완료!
-// 파일 내용
-// name, job
-// James, Developer
-// Emily, Designer
-
-updateCSVFile(filePath, data);
-// CSV 파일 수정 완료!
-// 파일 내용
-// name, job
-// James, Developer
-// Emily, Designer
-
+// 파싱 결과를 출력합니다.
+const parsedData = parseCSV(data);
+console.log(parsedData);
 ```
 
-## 깊이있는 탐구
-CSV 파일 다루기는 보다 깊게 배울 가치가 있습니다. 예를 들어, 서식을 지정하거나 빈 행 및 열을 처리하는 방법 등 다양한 옵션이 있습니다. 또한 TypeScript의 타입 시스템을 활용하여 CSV 데이터의 타입을 정의하고 유효성 검사를 수행할 수 있습니다.
+아래는 출력 결과입니다.
 
-## 스티븐 아웃월
-- [CSV 라이브러리 문서](https://csv.js.org/)
-- [Node.js에서 CSV 파일 다루기](https://nodejs.org/api/fs.html#fs_fs_createreadstream_path_options)
-- [TypeScript 타입 시스템](https://www.typescriptlang.org/docs/handbook/basic-types.html)
+```
+[
+  [ 'Name', 'Age', 'Location' ],
+  [ 'John', '25', 'New York' ],
+  [ 'Sally', '30', 'Los Angeles' ],
+  [ 'Mike', '35', 'Chicago' ]
+]
+```
+
+## 깊이 파고들기:
+CSV 파일 형식은 1972년에 처음으로 개발되었습니다. 현재는 Excel과 같은 프로그램을 통해 쉽게 다룰 수 있지만, 과거에는 데이터를 다루기 위해 많은 시간과 노력이 필요했습니다. CSV 파일 형식 외에도 JSON, XML 등 다양한 형식으로 데이터를 저장할 수 있지만, 간단한 구조와 쉽게 읽고 쓸 수 있다는 점에서 CSV는 여전히 많은 사용자들에게 유용한 형식입니다. 
+
+사용된 함수인 `split()`과 `map()`에 대한 구체적인 설명은 [문서](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/split)를 확인하시기 바랍니다.
+
+## 관련 링크:
+- [CSV 파일 형식 설명서](https://www.loc.gov/preservation/digital/formats/fdd/fdd000323.shtml)
+- [CSV to JSON 변환 도구](https://www.csvjson.com/csv2json)

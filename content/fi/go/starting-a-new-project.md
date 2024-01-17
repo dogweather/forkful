@@ -1,7 +1,7 @@
 ---
-title:                "Uuden projektin aloittaminen"
-html_title:           "Go: Uuden projektin aloittaminen"
-simple_title:         "Uuden projektin aloittaminen"
+title:                "Aloittamassa uutta projektia"
+html_title:           "Go: Aloittamassa uutta projektia"
+simple_title:         "Aloittamassa uutta projektia"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Getting Started"
@@ -10,43 +10,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+Mitä & Miksi?:
+Aloittavan uuden projektin luominen on prosessi, jossa ohjelmoija luo uuden ohjelmiston tai sovelluksen. Tämä voi olla tarpeen esimerkiksi silloin, kun ohjelmaa tarvitaan uuden ongelman ratkaisemiseen tai vanhan parantamiseen.
 
-## Kuinka aloittaa uusi projekti Go:n avulla
-
-Go on modernein ja tehokkain ohjelmointikieli, joten miksi ei aloittaisi uutta projekti sen avulla? Se on myös erittäin helppo oppia ja käyttää, joten aloittaminen onnistuu vaivatta.
-
-```Go
-package main
-import "fmt"
-func main() {
-    fmt.Println("Tervetuloa uuteen projektiin Go:n avulla!")
-}
-```
-
-Tämä yksinkertainen koodinpätkä esittelee Go:n perusmallin, jossa tuodaan "fmt" paketti, joka mahdollistaa tekstin tulostamisen konsoliin ja käytetään sitten "fmt.Println()" funktiota tekstin tulostamiseen. Voit muokata koodia ja nähdä, miten se vaikuttaa outputiin. 
+Miten:
+Esimerkiksi uuden projektin luomiseen Go-kielellä tarvitaan vain muutamia yksinkertaisia askelia. Ensimmäiseksi tulee määrittää tarvittavat paketit käyttämällä "import" -komentoa. Sitten voidaan luoda uusi tiedosto käyttäen "main" -funktiota. Lopuksi ohjelmaa voidaan suorittaa käyttämällä "go run" -komentoa. Tässä on esimerkki:
 
 ```Go
-package main
 import "fmt"
+
 func main() {
-    fmt.Println("Uusi projekti on matkalla!")
+    fmt.Println("Hei maailma!")
 }
 ```
+Tämä tulostaa "Hei maailma!" konsoliin.
 
-Output:
-```
-Uusi projekti on matkalla!
-```
+Syväsukellus:
+Go-kieli kehitettiin vuonna 2009 Googlella ja se on nopeasti kasvattanut suosiotaan ohjelmointikielenä. Sen tarkoituksena on olla tehokas ja helppokäyttöinen vaihtoehto esimerkiksi C-kielen tilalle. Muita suosittuja vaihtoehtoja uuden projektin aloittamiseen ovat esimerkiksi Python, Java ja C++.
 
-## Syvemmälle
-
-Aloittaessasi uuden projektin Go:lla, on tärkeää pitää mielessä muutamia avainasioita. Ensinnäkin, Go:n virallinen kotisivu tarjoaa erittäin hyödyllisen oppaan aloittelijoille, jossa käydään läpi kielen perusominaisuudet ja esimerkkikoodia. Toiseksi, Go:n yhteisö on valtavan suuri ja tarjoaa paljon tukea ja apua, joten älä epäröi etsiä vastauksia kysymyksiisi foorumeilta tai Slack-yhteisöistä.
-
-Lisäksi, Go:n voimakkaan standardikirjaston ansiosta on suositeltavaa tutustua siihen, jotta pystyt hyödyntämään kaikkia sen tarjoamia mahdollisuuksia projektissasi. Lopuksi, käytä aikaa ja tutustu Go:n parhaisiin käytäntöihin ja suosituksiin, jotta pystyt kirjoittamaan tehokasta ja hyvin dokumentoitua koodia.
-
-## Katso myös
-
-- [Go:n virallinen dokumentaatio](https://golang.org/doc/)
-- [Go:n yhteisöfoorumi](https://github.com/golang/go/wiki/Forums)
-- [Go:n parhaat käytännöt](https://github.com/golang/go/wiki/CodeReviewComments)
+Katso myös:
+Lisätietoja Go-kielestä löytyy viralliselta verkkosivustolta osoitteessa https://golang.org. Sieltä löytyvät myös ohjeet asennukseen ja lisätarvikkeisiin, kuten text editor -ohjelma. Lisäksi suosittelemme tutustumaan Go-yhteisöön Githubissa https://github.com/golang/go, josta löytyy paljon hyödyllistä tietoa ja vinkkejä aloittelijoille.

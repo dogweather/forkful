@@ -1,7 +1,7 @@
 ---
-title:                "Zeichenketten verbinden"
-html_title:           "Kotlin: Zeichenketten verbinden"
-simple_title:         "Zeichenketten verbinden"
+title:                "Zeichenketten verketten"
+html_title:           "Kotlin: Zeichenketten verketten"
+simple_title:         "Zeichenketten verketten"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Strings"
@@ -10,54 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was & Warum?
+Wenn du häufig mit Strings in deinem Kotlin Programm arbeitest, hast du sicher schon von der Funktion "concatenating strings" gehört. Dabei handelt es sich um das Zusammenführen von mehreren Strings zu einem einzigen. Dies kann nützlich sein, um längere Strings zu erzeugen oder um Variablen und Text zu kombinieren.
 
-Warum sollte man überhaupt Strings miteinander verbinden? Nun, das ist ziemlich einfach - String Concatenation ist eine grundlegende Operation der Programmierung, die es ermöglicht, bestehende Strings zu verbinden, um neue Textblöcke zu erstellen. Dies ist besonders nützlich, um dynamische Ausgaben zu erzeugen, die sich je nach Benutzereingabe oder anderen Variablen ändern können.
-
-## Wie geht das?
-
-Die Verkettung von Strings in Kotlin ist relativ einfach. Durch die Verwendung vom "plus" Operator (+) können Strings einfach mit anderen Werten oder Variablen verbunden werden. Hier ist ein einfaches Beispiel:
+## Wie geht's?
+Die Verkettung von Strings in Kotlin ist äußerst einfach. Du kannst entweder den "+" Operator verwenden oder die "plus()" Methode aufrufen. Zum Beispiel:
 
 ```Kotlin
-val name = "Max"
+val text1 = "Hallo "
+val text2 = "Welt!"
+
+// Mit dem "+" Operator:
+val combined = text1 + text2 // Ergebnis: "Hallo Welt!"
+
+// Mit der "plus()" Methode:
+val combined = text1.plus(text2) // Ergebnis: "Hallo Welt!"
+```
+
+## Tief Tauchen
+Die Verkettung von Strings wurde schon in früheren Programmiersprachen wie C++ und Java verwendet. In Kotlin gibt es jedoch noch eine dritte Möglichkeit, die sogenannte "String Interpolation". Dabei werden Variablen direkt in einen String eingefügt, ohne den Umweg über den "+" Operator oder die "plus()" Methode. Zum Beispiel:
+
+```Kotlin
+val name = "Sandra"
 val age = 25
-val message = "Mein Name is $name und ich bin $age Jahre alt."
-println(message)
+val sentence = "Mein Name ist $name und ich bin $age Jahre alt." // Ergebnis: "Mein Name ist Sandra und ich bin 25 Jahre alt."
 ```
 
-**Output:**
-Mein Name ist Max und ich bin 25 Jahre alt.
-
-In diesem Beispiel wird der String "message" durch die Verbindung von "name" und "age" dynamisch generiert. Um Variablen in einen String einzufügen, muss man lediglich ein "$" Zeichen vor den Variablennamen setzen.
-
-## Tiefer Eintauchen
-
-Es gibt noch weitere Möglichkeiten, Strings in Kotlin zu verbinden. Zum Beispiel können mehrere Strings mit dem "plus" Operator in einer Zeile verkettet werden:
-
-```Kotlin
-val firstName = "Anna"
-val lastName = "Müller"
-val fullName = firstName + " " + lastName
-println(fullName)
-```
-
-**Output:**
-Anna Müller
-
-Wenn es darum geht, mehr als zwei Strings zu verbinden, gibt es auch die Funktion "plusAssign" (+=), die verwendet werden kann, um Strings an einen bestehenden String anzuhängen:
-
-```Kotlin
-var text = "Hallo"
-text += " und Willkommen"
-println(text)
-```
-
-**Output:**
-Hallo und Willkommen
-
-Es gibt auch die Funktion "StringBuilder", die für die Verkettung von großen Mengen an Strings effizienter ist. Dies ist besonders nützlich, wenn man beispielsweise eine Schleife verwendet, um mehrere Strings zusammenzufügen.
+Eine Alternative zur Verkettung von Strings ist der Einsatz von StringBuffer oder StringBuilder Objekten. Diese erlauben es, Strings effizient zusammenzuführen, da sie intern jeweils nur eine große String-Variable erstellen und verändern. Dadurch werden unnötige Kopien verhindert und die Performanz verbessert.
 
 ## Siehe auch
-
-- [Kotlin Dokumentation: Type Conversions](https://kotlinlang.org/docs/tutorials/kotlin-for-py/loops.html) 
-- [Kotlin Programmierhandbuch: String Concatenation](https://kotlinlang.org/docs/reference/basic-types.html#string-concatenation)
+Weitere Informationen und Beispiele findest du auf der offiziellen Kotlin Webseite unter [https://kotlinlang.org/docs/reference/basic-types.html#strings] und [https://www.baeldung.com/kotlin/strings].

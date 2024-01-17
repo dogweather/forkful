@@ -1,7 +1,7 @@
 ---
-title:                "Uzyskiwanie aktualnej daty"
-html_title:           "Kotlin: Uzyskiwanie aktualnej daty"
-simple_title:         "Uzyskiwanie aktualnej daty"
+title:                "Pobieranie aktualnej daty"
+html_title:           "Kotlin: Pobieranie aktualnej daty"
+simple_title:         "Pobieranie aktualnej daty"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Dates and Times"
@@ -10,50 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego?
+## Co & Dlaczego?
 
-Dokładne śledzenie czasu jest ważne w wielu projektach programistycznych, a wiele z nich wymaga aktualnej daty. Dzięki temu artykułowi dowiesz się, jak w łatwy sposób uzyskać aktualną datę w języku Kotlin.
+Pobieranie aktualnej daty jest jednym z podstawowych zadań, które często wykonują programiści. Jest to niezbędne dla wielu aplikacji, które muszą wyświetlać aktualną datę lub ją analizować.
 
 ## Jak to zrobić?
 
-```Kotlin
-val currentDate = LocalDate.now()
-println(currentDate)
-```
-
-Ten prosty kod utworzy zmienną zawierającą aktualną datę i wyświetli ją w konsoli. Jest to możliwe dzięki klasie `LocalDate` z pakietu `java.time`.
-
-Możesz również pobrać aktualną datę w innych strefach czasowych, używając metody `now (zone: ZoneId)` zamiast `now ()`. Na przykład:
-
-```Kotlin
-val currentDate = LocalDate.now(ZoneId.of("Europe/Warsaw"))
-println(currentDate)
-```
-
-To spowoduje pobranie aktualnej daty w strefie czasowej Europy/Warszawy.
-
-## Deep Dive
-
-Jeśli chcesz uzyskać więcej informacji na temat czasu, możesz użyć klasy `LocalDateTime`. Ta klasa pozwala na uzyskanie aktualnego czasu wraz z datą. Na przykład:
-
-```Kotlin
-val currentDateTime = LocalDateTime.now()
-println(currentDateTime)
-```
-
-Otrzymujesz wynik w formacie `yyyy-MM-ddTHH:mm:ss.mmm`, gdzie `T` oznacza separator pomiędzy datą a czasem, a `mmm` to milisekundy.
-
-Dodatkowo, jeśli potrzebujesz aktualnego czasu w konkretnym formacie, możesz użyć metody `format(DateTimeFormatter)`. Na przykład, aby wyświetlić datę w formacie dd-MM-yyyy, możesz użyć następującego kodu:
+Możemy łatwo pobrać aktualną datę w języku Kotlin za pomocą wbudowanej funkcji `LocalDate.now()`. Poniższy przykład pokazuje, jak można wyświetlić aktualną datę w formacie "dd/MM/yyyy":
 
 ```Kotlin
 val currentDate = LocalDate.now()
-println(currentDate.format(DateTimeFormatter.ofPattern("dd-MM-yyyy")))
+println(currentDate.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"))) // Output: 15/11/2021
 ```
 
-Ten kod powinien zwrócić aktualną datę w postaci dd-MM-yyyy.
+Możemy również pobrać aktualny miesiąc lub rok z daty za pomocą odpowiednich funkcji `month` oraz `year`.
 
-## Zobacz także
+```Kotlin
+// Pobieranie aktualnego miesiąca
+val currentMonth = currentDate.month
+println(currentMonth) // Output: NOVEMBER
 
-- [Dokumentacja pakietu java.time](https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/time/package-summary.html)
-- [Tutorial Kursu Kotlin - Daty i Czasy](https://kotlinlang.org/docs/datetime.html)
-- [Przewodnik po pakiecie java.time](https://www.baeldung.com/java-8-date-time-intro)
+// Pobieranie aktualnego roku
+val currentYear = currentDate.year
+println(currentYear) // Output: 2021
+```
+
+## Głębszy zanurzenie
+
+Funkcja `LocalDate.now()` została wprowadzona w JDK 8 i jest częścią biblioteki Java Time API. Dzięki temu możemy wygodnie i precyzyjnie manipulować datami i czasem w języku Kotlin.
+
+Alternatywnym sposobem na pobranie aktualnej daty jest użycie klasy `Calendar`. Jednak Java Time API jest zalecanym sposobem, ponieważ jest lepiej zaprojektowane i bardziej intuicyjne.
+
+Implementacja funkcji `LocalDate.now()` korzysta z systemowego zegara, który przechowuje aktualną datę i czas. Dzięki temu można uniknąć błędów związanych z różnicami w strefie czasowej w różnych regionach.
+
+## Zobacz również
+
+- Dokumentacja Java Time API: https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html
+- Przewodnik dla języka Kotlin: https://kotlinlang.org/docs/datetime.html

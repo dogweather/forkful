@@ -1,7 +1,7 @@
 ---
-title:                "Stor bokstavsättning av en sträng"
-html_title:           "C: Stor bokstavsättning av en sträng"
-simple_title:         "Stor bokstavsättning av en sträng"
+title:                "Versaler och gemener i en sträng"
+html_title:           "C: Versaler och gemener i en sträng"
+simple_title:         "Versaler och gemener i en sträng"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -10,42 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
+Att "kapitalisera en sträng" är en vanlig term inom programmeringsvärlden som betyder att man gör den första bokstaven i en sträng till en stor bokstav, samtidigt som resten av bokstäverna förblir oförändrade. Detta görs vanligtvis för att göra det enklare att läsa en sträng eller för att uppfylla vissa syntaktiska krav.
 
-Att göra första bokstaven i en sträng stor bokstav, eller "capitalize" som det heter på engelska, kan vara användbart i många olika situationer. Det kan öka läsbarheten av koden och hjälpa till att skapa en enhetlig stil.
+## Så här:
+För att kapitalisera en sträng i C-programmering, kan man använda sig av inbyggda funktioner som "toupper" eller "toupper_l". I inmatningsfältet anger man den sträng som man vill kapitalisera och funktionen returnerar sedan den kapitaliserade versionen av strängen.
 
-## Så här gör du
-
-För att capslockera en sträng i C-programmering, kan du använda funktionen "toupper" från "ctype.h" biblioteket. Här är ett exempel på hur du kan använda den i din kod:
-
-```C
+```
+// Kapitaliserar strängen "hej alla" 
 #include <stdio.h>
 #include <ctype.h>
-
 int main() {
-  char str[] = "hej alla!";
-  
-  for (int i = 0; i < sizeof(str); i++) {
-    str[i] = toupper(str[i]);
+  char str[] = "hej alla";  
+  int length = strlen(str);
+  int i;
+  for (i = 0; i < length; i++) {
+    printf("%c", toupper(str[i]));
   }
-
-  printf("%s", str);
-  
   return 0;
 }
+// Output: HEJ ALLA
 ```
 
-Output:
+## Djupdykning:
+I början av datorprogrammering, när teckenkodningarna ASCII och EBCDIC introducerades, användes olika nummer för stora och små bokstäver. Detta resulterade i att olika programvaror behandlade bokstäver på olika sätt, vilket ledde till problem när man skulle överföra data mellan olika system. För att lösa detta implementerades funktioner som "toupper" och "tolower" för att konvertera bokstäver till en standardiserad form.
 
-```
-HEJ ALLA!
-```
-
-## Djupdykning
-
-När man använder "toupper" funktionen, är det viktigt att notera att den bara fungerar för engelska alfabetet. För att capslockera strängar med andra tecken, måste du använda en annan metod, som att konvertera tecknen till deras ASCII kod och sedan manipulera dem.
-
-## Se också
-
-- [`toupper` funktionen i C](https://www.tutorialspoint.com/c_standard_library/c_function_toupper.htm)
-- [ASCII tabell](https://www.asciitable.com/)
+## Se även:
+För mer information om strängmanipulation i C-programmering, kolla in dessa länkar:
+- [String library functions in C](https://www.tutorialspoint.com/c_standard_library/string_h.htm)
+- [ASCII and EBCDIC](https://www.ibm.com/support/knowledgecenter/en/SSUKPC_11.1.0/com.ibm.xlf111.bg.doc/language_ref/casciib.html)

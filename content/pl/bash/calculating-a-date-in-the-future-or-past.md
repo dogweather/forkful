@@ -10,44 +10,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i dlaczego?
+Obliczanie daty w przyszłości lub w przeszłości jest procesem, w którym programista wykorzystuje język Bash do obliczenia daty na podstawie podanej daty początkowej i ilości dni. Jest to przydatne narzędzie w różnych sytuacjach, takich jak generowanie raportów, kontrola gotowości projektu lub planowanie zadań.
 
-Czasem w życiu zdarzają się sytuacje, kiedy musisz wyliczyć datę w przyszłości lub przeszłości. Może to być potrzebne przy planowaniu wydarzeń lub przypomnieniach. W tym artykule dowiesz się, jak wykonać tę czynność za pomocą Bash.
+## Jak to zrobić:
+Możesz użyć polecenia ```date``` w Bashu, aby obliczyć datę w przyszłości lub w przeszłości. Aby obliczyć datę w przyszłości, użyj ```date -d "YYYY-MM-DD + 5 days" ``` gdzie "5 days" to ilość dni, którą chcesz dodać do daty początkowej. Aby obliczyć datę w przeszłości, użyj ```date -d "YYYY-MM-DD - 5 days"``` gdzie "5 days" to ilość dni, którą chcesz odjąć od daty początkowej. Poniżej znajdują się przykładowe wyjścia dla tych poleceń:
 
-## Jak to zrobić
+```
+Bash: date -d "2021-01-01 + 5 days"
+Output: Tue Jan 5 00:00:00 PST 2021
 
-Aby obliczyć datę w przyszłości lub przeszłości, wykonaj następujące kroki:
-
-1. Otwórz terminal i uruchom komendę `date`, aby wyświetlić aktualną datę i godzinę.
-2. Następnie użyj flagi `-d` (ang. "date") i podaj żądany czas lub datę w formacie `MM/DD/YYYY`. Na przykład, jeśli chcesz obliczyć datę 7 dni w przyszłości, wpisz: `date -d "7 days"`.
-3. Możesz również użyć flagi `-d` w połączeniu z opcją `+` i podać liczbę dni, miesięcy lub lat, które chcesz dodać lub odjąć. Na przykład, `date -d "+2 months"` spowoduje wyświetlenie daty dwie miesiące w przód.
-
-Oto przykładowy kod, który wyświetli daty w przyszłości i przeszłości:
-
-```Bash
-# Wyświetla datę dzisiejszą
-date
-
-# Oblicza datę 10 dni w przyszłości
-date -d "10 days"
-
-# Oblicza datę 1 miesiąc w przód
-date -d "+1 month"
-
-# Oblicza datę 2 tygodnie w przeszłości
-date -d "-2 weeks"
+Bash: date -d "2021-01-01 - 5 days"
+Output: Sun Dec 27 00:00:00 PST 2020
 ```
 
-Te przykładowe komendy mogą być zmienione w zależności od potrzeb, aby uzyskać żądaną datę.
+## Głębszy zanurzenie:
+Obliczanie daty w przyszłości lub w przeszłości jest możliwe dzięki użyciu programu GNU `date`, który dostarcza wiele opcji, takich jak formatowanie daty czy obliczanie czasu pomiędzy dwoma datami. Alternatywnym narzędziem do obliczania daty w Bashu jest program `cal`, który służy do wyświetlania kalendarza.
 
-## Deep Dive
-
-Funkcja obliczania daty w Bash korzysta z komendy `date`, która jest częścią programu GNU Coreutils. Umożliwia ona manipulację datami i czasami w różnych formatach.
-
-Aby dodać lub odjąć dni, miesięcy lub lat, używamy formatu `%d` dla dni, `%m` dla miesięcy i `%Y` dla lat wraz z opcją `+` lub `-`, jak w przykładzie wcześniej. Możemy również wykorzystać bardziej szczegółowe formatowanie, takie jak `%H` dla godzin, `%M` dla minut i `%S` dla sekund.
-
-Funkcja `date` obsługuje również formatowanie wyjścia. Dzięki temu możemy wyświetlać daty w różnych krajowych formatach, np. polskim czy amerykańskim. Możemy również zmienić wyświetlane informacje, takie jak godzina lub strefa czasowa, używając odpowiednich symboli formatujących.
-
-## See Also
-
-Jeśli chcesz dowiedzieć się więcej o funkcji `date` w Bash lub o formatowaniu wyjścia, zapoznaj się z dokumentacją programu [GNU Coreutils](https://www.gnu.org/software/coreutils/) lub wykonaj komendę `man date` w terminalu.
+## Zobacz także:
+- [Dokumentacja programu `date` w Bashu] (https://ss64.com/bash/date.html)
+- [Podręcznik programisty Bash] (https://www.tldp.org/LDP/abs/html/)
+- [Dokumentacja programu `cal` w Bashu] (https://ss64.com/bash/cal.html)

@@ -10,58 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
+"Att extrahera substrängar" är när du plockar ut en del av en sträng, istället för hela strängen. Det är en vanlig uppgift inom programmering, eftersom det låter dig manipulera data på ett effektivt sätt.
 
-Ibland behöver vi bara använda en del av en sträng istället för hela. Det kan vara för att hämta specifik information, utföra olika manipulationer eller helt enkelt för att göra koden mer läsbar. I PHP kallas denna process för "att extrahera substrängar" och det är en användbar teknik att lära sig.
-
-## Så här gör du
-
-För att extrahera substrängar i PHP använder vi inbyggda funktioner. Den vanligaste metoden är `substr()`, som tar emot tre parametrar: strängen som ska extraheras, startpositionen och optionellt en längd på den önskade substrängen. Låt oss se på ett exempel:
-
+## Så här gör du:
+För att extrahera en substräng i PHP kan du använda funktionen `substr()`. Till exempel, om du har en sträng som heter `ord` och vill plocka ut de tre första tecknen, kan du använda följande kod:
 ```PHP
-$string = "Jag älskar att koda i PHP!";
-$substring = substr($string, 11); // Startar på position 11
-echo $substring; // Resultat: koda i PHP!
+$ord = "hej";
+echo substr($ord, 0, 3);
 ```
+Detta skulle resultera i utmatningen "hej".
 
-Om vi vill ha en specifik längd på vår substräng kan vi lägga till en tredje parameter, till exempel:
-
+Om du vill plocka ut tecken från slutet av en sträng, kan du använda funktionen `substr()` tillsammans med `strlen()`, som ger längden på strängen. Till exempel, om du vill plocka ut de tre sista tecknen från strängen `hej-hopp`, kan du använda följande kod:
 ```PHP
-$string = "Jag är en PHP ninja!";
-$substring = substr($string, 9, 4); // Startar på position 9 och är 4 tecken lång
-echo $substring; // Resultat: PHP
+$hejhop = "hej-hopp";
+echo substr($hejhop, strlen($hejhop)-3, 3);
 ```
+Detta skulle resultera i utmatningen "opp".
 
-Vi kan också använda funktionen `mb_substr()` för att extrahera substrängar medan vi bevarar den teckenkodning vi använder. Till exempel:
+## Djupdykning:
+Extrahering av substrängar är en grundläggande funktion inom programmering, och används ofta för att manipulera data eller filtrera ut relevant information från en större sträng. Innan funktionen `substr()` fanns tillgänglig i PHP, användes funktionen `eregi()` för att göra samma sak, men den är nu depricerad.
 
-```PHP
-$string = "Jag talar flytande svenska!";
-$substring = mb_substr($string, 5, 8); // Startar på position 5 och är 8 tecken lång
-echo $substring; // Resultat: flytande
-```
+Det finns också andra sätt att extrahera substrängar i PHP, såsom att använda regler för reguljära uttryck med funktionen `preg_match()`. Detta är mer avancerat och används ofta när du behöver söka efter ett mönster i en sträng.
 
-Det är viktigt att notera att startpositioner räknas från 0 istället för 1, och en negativ startposition betyder att räkna bakifrån. Så om vi vill extrahera den sista delen av en sträng, kan vi göra det genom att använda `-1` som startposition, till exempel:
+Att använda funktionen `substr()` är enkelt och effektivt, men det är alltid bra att ha kännedom om andra sätt att extrahera substrängar för att kunna använda den lämpligaste metoden för din specifika uppgift.
 
-```PHP
-$string = "Jag är en kodningsrockstjärna!";
-$substring = substr($string, -10); // Startar 10 tecken bakifrån
-echo $substring; // Resultat: kodningsrockstjärna!
-```
-
-## Djupdykning
-
-I bakgrunden använder PHP funktionen `mb_substr()` för att säkerställa att substrängen alltid har rätt teckenkodning, speciellt om vi arbetar med flerspråkiga strängar. Om du vill lära dig mer om hur den här funktionen fungerar kan du kolla på dokumentationen [här](https://www.php.net/manual/en/function.mb-substr.php).
-
-Utöver `substr()` och `mb_substr()` finns det också andra inbyggda funktioner som kan vara användbara för att extrahera specifika delar av en sträng, som till exempel `strpos()`, `strrpos()` och `str_replace()`. Det är alltid en bra idé att läsa på dokumentationen för att utnyttja alla verktyg som PHP har att erbjuda när det gäller att hantera strängar.
-
-## Se även
-
-Här är några användbara länkar som kan hjälpa dig att lära dig mer om substrängar i PHP:
-
-- [PHP Manual: substr()](https://www.php.net/manual/en/function.substr.php)
-- [PHP Manual: mb_substr()](https://www.php.net/manual/en/function.mb-substr.php)
-- [PHP Manual: strpos()](https://www.php.net/manual/en/function.strpos.php)
-- [PHP Manual: strrpos()](https://www.php.net/manual/en/function.strrpos.php)
-- [PHP Manual: str_replace()](https://www.php.net/manual/en/function.str-replace.php)
-
-Nu är det din tur att experimentera med substrängar och upptäcka alla möjligheter de kan ge! Lycka till!
+## Se även:
+- PHP manual för [substr()](https://www.php.net/manual/en/function.substr.php)
+- PHP manual för [preg_match()](https://www.php.net/manual/en/function.preg-match.php)

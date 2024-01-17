@@ -10,49 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä & Miksi?
+Merkkijonon pituuden löytäminen tarkoittaa yksinkertaisesti merkkijonon sisältämien merkkien lukumäärän laskemista. Tämä on tärkeää ohjelmoinnissa esimerkiksi, kun halutaan tarkistaa, että käyttäjän antama syöte ei ylitä ennalta määritettyä rajaa.
 
-## Kuinka
+## Miten:
+Seuraavissa esimerkeissä näytämme, miten voit laskea merkkijonon pituuden käyttämällä Go:n sisäänrakennettua ```len()``` -funktiota. 
 
-Koodin pituus on tärkeä tieto monessa ohjelmoinnin käyttötarkoituksessa. Onneksi Go-kieli tarjoaa helpon tavan löytää merkkijonon pituus. 
-
-```Go 
-package main
-
-import "fmt"
-
-func main() {
-	s := "Tämä on merkkijono"
-	fmt.Println("Merkkijonon pituus on", len(s))
-}
-```
-
-Tuloste: `Merkkijonon pituus on 20`
-
-## Syvempi sukellus
-
-Merkkijonon pituus löytyy käyttämällä Go-kielen `len()` -funktiota, joka palauttaa merkkijonon merkkien lukumäärän. Merkkien lukumäärä sisältää myös välilyönnit ja muut erikoismerkit.
-
-Toinen tapa löytää merkkijonon pituus on käyttämällä `for`-silmukkaa ja laskemalla merkkien lukumäärä itse. Tämä lähestymistapa vaatii enemmän koodia, mutta antaa enemmän kontrollia ja mahdollisuuden tehdä lisätoimenpiteitä merkkijonon kanssa.
-
+Esimerkki 1:
 ```Go
-package main
-
-import "fmt"
-
-func main() {
-	s := "Tämä on merkkijono"
-	count := 0
-	for range s {
-		count++
-	}
-	fmt.Println("Merkkijonon pituus on", count)
-}
+var s = "Tämä on esimerkki merkkijonosta"
+fmt.Println(len(s))
 ```
 
-Tuloste: `Merkkijonon pituus on 20`
+Tuloste:
+```
+35
+```
 
-## Katso myös
+Esimerkki 2:
+```Go
+var s = ""
+len := len(s)
+fmt.Println("Tämän merkkijonon pituus on:", len)
+```
 
-- [Go-opas - Merkkijonot](https://golang.org/doc/effective_go.html#strings)
-- [Go-kirjasto - strings](https://golang.org/pkg/strings/)
+Tuloste:
+```
+Tämän merkkijonon pituus on: 0
+```
+
+## Syvemmälle:
+Merkkijonon pituuden laskeminen on nykyään helppoa kiitos modernien ohjelmointikielten, kuten Go:n, sisäänrakennetun ```len()``` -funktion. Aikaisemmissa kielissä, kuten C:ssä, tämä vaati enemmän ohjelmointia ja muuttujien käsittelyä. Go:n lisäksi myös monilla muilla kielillä on vastaavia sisäänrakennettuja toimintoja merkkijonojen pituuden laskemiseen, esimerkiksi JavaScriptin ```length``` -ominaisuus.
+
+## Katso myös:
+Tässä muutamia hyödyllisiä linkkejä liittyen merkkijonon pituuden laskemiseen ja Go-ohjelmointiin:
+
+- [Go:n virallinen dokumentaatio merkkijonon pituuden laskemisesta](https://golang.org/pkg/strings/#Count)
+- [Kattava artikkeli merkkijonon pituuden laskemisesta Go-kielellä](https://www.calhoun.io/finding-the-length-of-a-string-in-go/)
+- [Esimerkkejä erilaisten syötteiden käsittelystä Go:ssa](https://stackoverflow.com/questions/44420152/how-to-process-input-using-go)

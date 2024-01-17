@@ -1,7 +1,7 @@
 ---
-title:                "Sända en http-begäran med grundläggande autentisering"
-html_title:           "Fish Shell: Sända en http-begäran med grundläggande autentisering"
-simple_title:         "Sända en http-begäran med grundläggande autentisering"
+title:                "Skicka en http-begäran med grundläggande autentisering"
+html_title:           "Fish Shell: Skicka en http-begäran med grundläggande autentisering"
+simple_title:         "Skicka en http-begäran med grundläggande autentisering"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "HTML and the Web"
@@ -10,23 +10,22 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
-Det finns många tillfällen där du behöver skicka en HTTP-begäran med grundlegitimering, till exempel när du kommunicerar med en API-tjänst som kräver autentisering. Genom att lära dig hur man gör det i Fish Shell kan du enkelt automatisera uppgifter som kräver kommunikation med externa servrar.
+## Vad & Varför?
+Att skicka en HTTP-begäran med grundläggande autentisering är en metod som används av programmerare för att säkert kommunicera med webbservern. Det innebär att en användare måste ange ett användarnamn och lösenord för att få tillgång till resurser på webbplatsen.
 
-## Hur man gör
-För att kunna skicka en HTTP-begäran med grundlegitimering i Fish Shell behöver du använda kommandot "curl". Curl är ett verktyg som används för att skicka och ta emot data från en server. Här är ett exempel på hur du kan skicka en GET-begäran med grundlegitimering och spara svaret i en textfil:
+## Hur gör man:
+Fish Shell har en inbyggd funktion för att skicka en HTTP-begäran med grundläggande autentisering. Här är ett exempel på hur det kan se ut:
 
 ```
-fish shell 
-curl -u username:password -o response.txt https://www.example.com/api/endpoint
+fish -c "curl -u användarnamn:lösenord http://www.example.com"
 ```
 
-I det här exemplet ersätter du "username" och "password" med dina faktiska autentiseringsuppgifter och "https://www.example.com/api/endpoint" med den URL du vill skicka begäran till. Detta kommer att skapa en textfil med namnet "response.txt" som innehåller svaret från servern.
+Detta kommer att skicka en GET-begäran med grundläggande autentisering till www.example.com och returnera resultatet i terminalen. Om du vill skicka en POST-begäran, lägg till "-X POST" efter "curl". Du kan även lägga till ytterligare parametrar efter URL:en, till exempel "-d" för att skicka data.
 
-## Djupdykning
-För att förstå hur det här kommandot fungerar behöver vi bryta ner det och förklara varje del. "Curl" är kommandonamnet som startar programvaran som används för att skicka begäran. "-u" är en flagga som indikerar att du ska använda grundläggande autentisering. "Username" och "password" är de autentiseringsuppgifter som krävs. "-o" är en flagga som talar om att du vill spara utdata från servern i en fil, och "response.txt" är namnet på den filen. Slutligen är "https://www.example.com/api/endpoint" den URL du skickar begäran till.
+## Djupdykning:
+Att skicka en HTTP-begäran med grundläggande autentisering har funnits sedan HTTP-protokollet utvecklades för att säkert överföra data över internet. I Fish Shell finns det även andra sätt att skicka HTTP-begäran, som "curl" eller "wget", men Fish Shell-funktionen gör det enkelt att skicka begäran utan att behöva använda ett annat program.
 
-## Se även
+## Se även:
 - [Fish Shell](https://fishshell.com/)
-- [Curl dokumentation](https://curl.se/docs/manual.html)
-- [HTTP-begäran med grundläggande autentisering](https://www.twilio.com/blog/2017/02/an-easy-way-to-read-and-write-to-a-google-spreadsheet-in-python.html)
+- [Grundläggande autentisering på Wikipedia](https://sv.wikipedia.org/wiki/Grundl%C3%A4ggande_autentisering)
+- [Curl dokumentation](https://curl.haxx.se/docs/)

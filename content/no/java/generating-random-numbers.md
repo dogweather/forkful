@@ -10,33 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hva & hvorfor?
+Å generere tilfeldige tall er en vanlig oppgave for programmerere. Dette er en måte å inkludere et tilfeldig element i et program eller spill, for å gjøre det mer variert og spennende for brukeren.
 
-Tilfeldige tall er en viktig del av programmering, spesielt for spill, simuleringer og sikkerhet. Å generere tilfeldige tall kan også være nyttig for å lage randomiserte tester og for å tilføre variasjon i et program.
+# Hvordan:
+Å generere tilfeldige tall i Java er enkelt. Du kan bruke Random-klassen, og deretter kalle på metoden nextInt() som tar inn et heltall som grense og returnerer et tilfeldig tall innenfor dette området. For eksempel, hvis du vil ha et tilfeldig tall mellom 1 og 10, kan du bruke koden:
 
-## Hvordan
-
-For å generere tilfeldige tall i Java, kan vi bruke Math.random() funksjonen. Denne funksjonen returnerer et tilfeldig tall mellom 0.0 og 1.0. Vi kan også bruke Random klassen for å generere tilfeldige tall med mer spesifikke krav.
-
-```java
-// Eksempel på å generere et tilfeldig tall mellom 0 og 100
-double rand = Math.random() * 100; 
-System.out.println(rand); // (f.eks. 72.846392)
-
-// Eksempel på å generere et tilfeldig heltall mellom 1 og 10
+```Java
 Random random = new Random();
-int randInt = random.nextInt(10) + 1; 
-System.out.println(randInt); // (f.eks. 7)
+int randomNumber = random.nextInt(10) + 1;
 ```
 
-## Dypdykk
+Dette vil generere et tall mellom 1 og 10 og lagre det i variabelen randomNumber.
 
-Det er viktig å merke seg at tilfeldige tall som genereres av datamaskiner ikke er helt tilfeldige. De følger en algoritme som baserer seg på en startverdi kalt "seed". Hvis vi bruker samme seed hver gang, vil vi få samme sekvens av tilfeldige tall. For å unngå dette, kan vi bruke System.currentTimeMillis() som seed for å få tilfeldige tall basert på klokkeslettet.
+# Dykk dypere:
+Generering av tilfeldige tall har vært en viktig del av programmering siden de tidlige dagene. I begynnelsen ble det brukt på grunn av behovet for å modellere tilfeldige hendelser i vitenskapelige eksperimenter. I dag brukes det mesteparten av tiden i spill og simuleringer, men det er også mange alternative metoder som kan brukes. For eksempel kan du bruke SecureRandom-klassen for å generere kryptografisk sikre tilfeldige tall, eller du kan bruke tilfeldige tall fra en ekstern kilde som et heltallsgrunnlag.
 
-Vi kan også bruke metoder som shuffle() og Collections.shuffle() for å få tilfeldig rekkefølge på elementer i en liste eller et array.
+# Se også:
+Hvis du er interessert i å lære mer om å generere tilfeldige tall i Java, kan du sjekke ut disse ressursene:
 
-## Se også
-
-- Oracle Java Documentation: https://docs.oracle.com/en/java/
-- Random klassen dokumentasjon: https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Random.html
-- Å generere tilfeldige tall i Java: https://www.javatpoint.com/generating-random-number-in-java
+- [Java Random-klassen dokumentasjon](https://docs.oracle.com/javase/8/docs/api/java/util/Random.html)
+- [SecureRandom-klassen dokumentasjon](https://docs.oracle.com/javase/8/docs/api/java/security/SecureRandom.html)
+- [GeeksforGeeks guide til å generere tilfeldige tall i Java](https://www.geeksforgeeks.org/generating-random-numbers-in-java/)

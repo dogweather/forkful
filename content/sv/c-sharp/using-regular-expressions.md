@@ -10,50 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
+Reguljära uttryck, eller regular expressions, är ett verktyg som används av programmerare för att söka, matcha och manipulera textsträngar enligt ett visst mönster. Detta sparar tid och minskar mängden kod som behövs för att utföra komplexa sök-operationer.
 
-Att använda reguljära uttryck är ett kraftfullt verktyg inom programmering som gör det möjligt att söka och manipulera textsträngar på ett flexibelt sätt. Genom att lära sig hur man använder reguljära uttryck kan man effektivisera sitt skriptande och skriva mer robusta program.
-
-## Så här gör du
-
-För att använda reguljära uttryck i C# behöver du använda klassen `Regex` som finns i .NET Framework. Här är ett exempel på hur man kan använda reguljära uttryck för att hitta och ersätta alla förekomster av ett visst ord i en textsträng:
+## How to:
+För att använda reguljära uttryck i C#, behöver du först importera System.Text.RegularExpressions namespace. Sedan kan du använda klassen Regex för att skapa en instans och sedan använda dess metoder för att söka och hantera textsträngar. Nedan är ett exempel på hur man söker efter ett visst mönster, utnyttjande av RegexOptions för att göra sökningen fall-insensitivt: 
 
 ```
-using System;
 using System.Text.RegularExpressions;
 
-string text = "Det var en gång en katt som hette Nisse";
-string nyText = Regex.Replace(text, "katt", "hund");
+// Skapa en Regex-instans
+Regex regex = new Regex("hej", RegexOptions.IgnoreCase);
 
+// Sök efter matchning i en sträng
+Match match = regex.Match("Hejsan! Vad gör du idag?");
+
+// Hämta matchningar
+Console.WriteLine("Matchning: " + match.Value); 
 ```
 
-I detta exempel använder vi `Regex.Replace()`-metoden för att ersätta alla förekomster av ordet "katt" med ordet "hund". Nu blir `nyText`-variabeln "Det var en gång en hund som hette Nisse". Här ser du ett annat exempel där vi använder reguljära uttryck för att hitta och extrahera ett visst mönster från en textsträng:
+Koden ovan kommer att returnera "Matchning: Hej".
 
-```
-using System;
-using System.Text.RegularExpressions;
+## Deep Dive:
+Reguljära uttryck har funnits sedan tidigt 1960-tal och användes ursprungligen inom språkprocessorer. Idag är de ett oumbärligt verktyg för programmerare inom många olika programmeringsspråk, inklusive C#. Det finns dock alternativa sätt att hantera textsträngar, såsom sträng-metoder och LINQ-förfrågningar, men reguljära uttryck har fördelen av att erbjuda en mer kraftfull och flexibel lösning för komplexa sök-operationer.
 
-string text = "Min e-postadress är example@example.com";
-string mönster = @"[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}";
-var match = Regex.Match(text, mönster, RegexOptions.IgnoreCase);
+För att implementera reguljära uttryck i C# finns det flera olika matchningsmetoder att välja mellan, beroende på vilka behov man har. Det finns också möjlighet att använda reguljära uttryck i LINQ-förfrågningar.
 
-Console.WriteLine(match.Value); // Output: example@example.com
-```
-
-I detta exempel använder vi `Regex.Match()`-metoden för att hitta en e-postadress i texten och extrahera den. Det reguljära uttrycket som vi använder följer ett vanligt mönster för att hitta e-postadresser och `Ignorecase`-flaggan gör att det inte spelar någon roll om bokstäverna är stora eller små.
-
-## Djupdykning
-
-Reguljära uttryck kan verka krångligt när man ser dem för första gången, men det finns många hjälpverktyg som kan underlätta användningen av dem. Till exempel finns det online-verktyg som kan hjälpa dig att bygga upp ditt reguljära uttryck steg för steg och testa det mot olika textsträngar för att se om det fungerar som det ska. Några populära verktyg är Regex101 och RegExr.
-
-Ett annat användbart verktyg är Regex Cheat Sheet som ger dig en översikt över de vanligaste tecknen som används i reguljära uttryck och vad de betyder.
-
-Det kan även vara bra att veta att det finns några vanliga fallgropar när man använder reguljära uttryck. Till exempel om man glömmer att inkludera ett "escape"-tecken innan ett speciellt tecken som exempelvis en punkt, vilket kan leda till att man får oönskade resultat. Det kan också vara svårt att hitta balansen mellan att göra uttrycket tillräckligt flexibelt för att hitta olika mönster, samtidigt som det blir för komplext och tar för lång tid att utvärdera.
-
-## Se även
-
-[Forskning om reguljära uttryck](https://arxiv.org/pdf/1208.1739.pdf)
-
-[.NET Framework dokumentation om Regex-klassen](https://docs.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.regex?view=netframework-4.8)
-
-[Regex Cheat Sheet](https://www.debuggex.com/cheatsheet/regex/pcre)
+## See Also:
+- [MSDN Documentation on Regular Expressions in C#](https://docs.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-language-quick-reference)
+- [W3Schools Tutorial on Regular Expressions in C#](https://www.w3schools.com/code/tryit.asp?filename=FMJWWOZQVQ3J)
+- [Official C# Language Reference on Regular Expressions](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/regular-expression-operators)

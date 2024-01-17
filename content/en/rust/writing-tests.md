@@ -10,47 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-Writing tests for your Rust code may seem like an extra step that takes up time, but it's an important practice that can save you from potential headaches in the future. Tests act as a safety net, ensuring that your code functions as intended and catches any errors before they make it into production.
+## What & Why?
 
-## How To
-Writing tests in Rust is easy and can be done using the built-in testing framework, `cargo test`. Let's take a look at an example of testing a basic function that adds two numbers:
+Writing tests in Rust refers to the practice of creating code that is specifically designed to test the functionality of other code. This is commonly done by programmers to ensure that their code is working as expected and to catch any potential bugs or errors that may arise.
+
+## How to:
+
+In Rust, writing tests is a simple process that involves using the built-in ```#[test]``` attribute to mark a function as a test function. This function can then contain assertions that evaluate the expected output against the actual output of the code being tested.
 
 ```Rust
-// Define our function to be tested
-fn add_numbers(a: i32, b: i32) -> i32 {
-    a + b
-}
-
-// Create our test function using the `#[test]` attribute
 #[test]
-fn test_add_numbers() {
-    // Define our expected output
-    let expected = 5;
-
-    // Call our function and save the result
-    let result = add_numbers(2, 3);
-
-    // Assert that the result equals the expected output
-    assert_eq!(result, expected);
+fn test_addition() {
+    let result = add(2, 2);
+    assert_eq!(result, 4);
 }
 ```
 
-Running `cargo test` in the terminal will run all the tests in our code, including our newly created `test_add_numbers()` function. If all goes well, we should see the following output:
+Running these tests can be done through the ```cargo test``` command, which will execute all the functions marked as tests and display the results in the terminal.
 
 ```
 running 1 test
-test test_add_numbers ... ok
+test test_addition ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out ...
 ```
 
-If there are any errors, the test will fail and provide information on where the error occurred. This is useful for debugging and fixing any issues with our code.
+## Deep Dive:
 
-## Deep Dive
-Writing tests not only ensures that your code is working as intended, but it also promotes good coding practices. When writing tests, you are forced to think about potential edge cases and handle them in your code. This leads to more robust and reliable code.
+The concept of writing tests has been around since the early days of programming, with various methodologies and approaches being developed over time. In Rust, the most popular testing framework is called "cargo test", which utilizes the built-in ```#[test]``` attribute to create test functions.
 
-Additionally, having a suite of tests for your code makes it easier to make changes or add new features without worrying about breaking existing functionality. You can simply run your tests and ensure that everything is working as expected before deploying any changes.
+There are also other methods of testing in Rust, such as property-based testing, which involves generating test data automatically and checking the properties of the code being tested. This can be achieved through the use of external libraries like proptest or quickcheck.
 
-## See Also
-- [Rust Documentation on Testing](https://doc.rust-lang.org/book/ch11-01-writing-tests.html)
-- [The `assert` Macro in Rust](https://doc.rust-lang.org/std/macro.assert.html)
-- [Writing Automated Tests in Rust](https://medium.com/@saschagrunert/unit-testing-rust-bb7acc97a12f)
+When writing tests in Rust, it is important to ensure that the tests are as concise and focused as possible. This helps to avoid cluttering the codebase with unnecessary tests and allows for easier maintenance in the future.
+
+## See Also:
+
+- [Rust Book - Writing automated tests](https://doc.rust-lang.org/book/ch11-01-writing-tests.html)
+- [cargo test Reference](https://doc.rust-lang.org/cargo/commands/cargo-test.html)
+- [Property-based testing in Rust with proptest](https://github.com/AltSysrq/proptest)

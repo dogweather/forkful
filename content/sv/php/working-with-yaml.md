@@ -10,51 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
 
-Om du är en PHP-utvecklare och letar efter ett sätt att strukturera och lagra data på ett enkelt sätt, då är YAML något du bör ta en titt på. YAML är en textbaserad datamarkeringsspråk som är enkelt att läsa och förstå, vilket gör det idealiskt för att skapa konfigurationsfiler eller lagra data som behöver vara organiserad på ett hierarkiskt sätt.
+YAML är ett utvidgbart dataformat som används för att representera data i en läsbar textform. Programmerare använder det ofta för att strukturera, lagra och överföra data mellan olika system och programmeringsspråk på ett enkelt och standardiserat sätt.
 
-## Hur man gör
+## Så här:
 
-För att använda YAML i PHP, behöver du först installera YAML-biblioteket. Detta kan göras med Composer genom att lägga till paketet "symfony/yaml" i ditt projekt. Efter att ha installerat biblioteket, kan du enkelt skapa och läsa in YAML-filer med hjälp av PHP-koden nedan:
+Ett grundläggande exempel på hur man arbetar med YAML i PHP:
 
 ```PHP
-// Skapa en array med data
-$data = ['name' => 'John Doe', 'age' => 30, 'address' => '123 Main Street'];
+<?php
+// Skapa ett YAML-dokument
+$myYaml = "namn: John Smith\nålder: 35\nfavoritfärg: blå";
 
-// Konvertera arrayen till YAML-format
-$yaml = \Symfony\Component\Yaml\Yaml::dump($data);
+// Konvertera till ett PHP-objekt
+$myObj = yaml_parse($myYaml);
 
-// Skriv YAML till filen
-file_put_contents('data.yml', $yaml);
+// Hämta och skriv ut data från objektet
+$namn = $myObj['namn'];
+echo "Mitt namn är $namn. ";
 
-// Läsa in YAML från filen och konvertera till array
-$loadedData = \Symfony\Component\Yaml\Yaml::parseFile('data.yml');
+$ålder = $myObj['ålder'];
+echo "Jag är $ålder år gammal. ";
 
-// Skriv ut arrayen
-print_r($loadedData);
+$färg = $myObj['favoritfärg'];
+echo "Min favoritfärg är $färg.";
+?>
 ```
 
-### Output:
-
+Detta kommer att ge följande utmatning:
 ```
-Array
-(
-    [name] => John Doe
-    [age] => 30
-    [address] => 123 Main Street
-)
+Mitt namn är John Smith. Jag är 35 år gammal. Min favoritfärg är blå.
 ```
 
-## Djupdykning
+## Djupdykning:
 
-En av de fördelar med YAML är dess läsbarhet för människor. Detta beror på dess enkla och intuitiva syntax som liknar ett naturligt språk. Det finns också möjlighet att inkludera kommentarer i YAML-filer för att förklara och dokumentera data på ett tydligt sätt.
+YAML utvecklades först 2001 av Clark Evans och Ingy döt Net, men populariteten har vuxit i takt med ökningen av webbapplikationer och API-erfarenheter. Andra liknande format som används för att representera data är XML och JSON, men YAML har som mål att vara enklare och lättare att läsa och skriva än dessa. I PHP finns det också många alternativ för att arbeta med YAML som till exempel symfony/yaml och pecl /yaml, men den inbyggda funktionen yaml_parse är det enklaste sättet att komma igång.
 
-En annan användbar funktion i YAML är möjligheten att inkludera referenser. Detta gör det möjligt att återanvända data på flera platser i samma YAML-fil utan att behöva duplicera det. Referenser skrivs med ett ampersand-tecken (&) och återanvänds med ett stjärntecken (*).
+## Se även:
 
-## Se även
-
-För mer information om hur man arbetar med YAML i PHP, se följande länkar:
-
-- [Symfony YAML-komponenten](https://symfony.com/doc/current/components/yaml.html)
-- [YAML-introduktion](https://rollbar.com/blog/yaml-introduction/)
+Mer information om YAML och hur man arbetar med det i PHP finns tillgängligt på följande länkar:
+- [Officiell YAML-webbplats] (https://yaml.org)
+- [PHP dokumentation för yaml_parse] (https://www.php.net/manual/en/function.yaml-parse.php)
+- [Symfony Yaml-komponent] (https://symfony.com/doc/current/components/yaml.html)
+- [PECL YAML] (https://pecl.php.net/package/yaml)

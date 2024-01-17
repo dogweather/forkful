@@ -10,40 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
+Writing tests in TypeScript involves creating automated tests to check the functionality of your code. This is done to ensure that your code works as intended and catches any potential bugs before deployment. By writing tests, programmers can save time and prevent potential errors in their code.
 
-Writing tests is an essential aspect of software development that ensures the quality and reliability of your code. It allows you to catch bugs and errors early on, saving you time and effort in the long run. Writing tests also promotes a more systematic approach to coding, resulting in cleaner and more maintainable code.
-
-## How To
-
-To get started with writing tests in TypeScript, you will need to set up a test framework like Jest or Jasmine. Once you have your framework installed, you can write your tests using the `describe` and `it` functions. Here's a basic example:
+## How to:
+To write tests in TypeScript, you can use various testing libraries such as Jest or Mocha. Below is an example using Jest to test a function that adds two numbers:
 
 ```TypeScript
-// import necessary functions or classes 
-import { add } from './mathFunctions';
+import { add } from './utils';
 
-// describe block for the "add" function 
-describe('add function', () => {
-  // it block for testing the addition of two numbers 
-  it('adds 2 + 3 to equal 5', () => {
-    // call the add function with 2 and 3 as arguments 
-    const result = add(2, 3);
-    // use the expect function to check if the result is equal to 5 
-    expect(result).toEqual(5);
-  });
+test('adds 1 + 2 to equal 3', () => {
+  expect(add(1, 2)).toBe(3);
 });
 ```
 
-In the example above, we first imported the `add` function from a separate file called `mathFunctions`. Then, we used the `describe` function to group our tests for the `add` function. Within the `describe` block, we used the `it` function to specify what we expect our `add` function to do. Finally, we used the `expect` function to check if the result of our `add` function is equal to the expected value of 5.
+The above code imports a function called `add` from a utils file and then uses the `test` function from Jest to create a test case. The `expect` function is used to verify that the result of `add(1, 2)` equals to `3`.
 
-## Deep Dive
+## Deep Dive:
+Writing automated tests has become an essential practice in software development, as it increases code reliability and speed. The concept of unit testing, which involves writing small tests for specific functions, dates back to the 1950s. Over the years, various testing frameworks and libraries have been developed to make testing more accessible for developers.
 
-When writing tests, it's important to consider different scenarios and edge cases. For example, what happens if we pass in non-numeric values to our `add` function? We can add another `it` block to test this scenario and make sure our function can handle it. Additionally, you can use tools like code coverage to ensure that all of your code is being tested.
+Besides Jest and Mocha, other popular testing frameworks in TypeScript include Jasmine, Ava, and Tape. These frameworks have different styles and features, so it's essential to research and choose the one that best fits your project.
 
-Another important aspect of writing tests is using descriptive and precise names for your `describe` and `it` blocks. This makes it easier for others to understand the purpose of your tests and for you to identify any failed tests.
+While writing tests can save time and prevent errors, it is crucial to note that it is not a substitute for debugging and manual testing. Developers should use a combination of different testing methods to ensure the functionality and quality of their code.
 
-## See Also
-
-- [Jest - Getting Started](https://jestjs.io/docs/en/getting-started)
-- [Jasmine - Introduction](https://jasmine.github.io/tutorials/your_first_suite)
-- [Code Coverage in TypeScript with Istanbul and Jest](https://medium.com/@jonaskay/code-coverage-in-typescript-with-istanbul-and-jest-e158c3aec6cd)
+## See Also:
+- [Jest](https://jestjs.io/)
+- [Mocha](https://mochajs.org/)
+- [Jasmine](https://jasmine.github.io/)
+- [Ava](https://github.com/avajs/ava)
+- [Tape](https://github.com/substack/tape)

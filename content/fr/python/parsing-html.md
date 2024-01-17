@@ -1,7 +1,7 @@
 ---
-title:                "Analyse de l'html"
-html_title:           "Python: Analyse de l'html"
-simple_title:         "Analyse de l'html"
+title:                "Analyser du html"
+html_title:           "Python: Analyser du html"
+simple_title:         "Analyser du html"
 programming_language: "Python"
 category:             "Python"
 tag:                  "HTML and the Web"
@@ -10,74 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+# Qu'est-ce que c'est et pourquoi est-ce important ?
 
-Si vous êtes un développeur débutant ou expérimenté, il est important de comprendre comment extraire des données à partir de fichiers HTML. Cela peut être utile pour diverses tâches telles que le web scraping, l'analyse de données, etc.
+Analyser du HTML, c'est le processus de traitement et de conversion du code HTML en une structure de données utilisable par un programme. Les programmeurs le font pour extraire des informations spécifiques des pages Web, pour les traiter ou pour les manipuler dans leur code.
 
-## Comment faire
+# Comment faire :
 
-La bibliothèque Python la plus populaire pour analyser HTML est Beautiful Soup. Commencez par installer la bibliothèque en utilisant la commande suivante :
+Voici un exemple de code Python qui utilise le module Beautiful Soup pour extraire tous les liens d'une page Web :
 
 ```Python
-pip install beautifulsoup4
-```
-
-Ensuite, importez Beautiful Soup dans votre code Python :
-
-```python
+# import du module Beautiful Soup
 from bs4 import BeautifulSoup
+# définition de la page à analyser
+page = '<html><body><a href="https://www.example.com">Lien 1</a><a href="https://www.example.com">Lien 2</a></body></html>'
+# création d'un objet BeautifulSoup
+soup = BeautifulSoup(page, 'html.parser')
+# recherche de tous les liens et affichage de leur attribut "href"
+for link in soup.find_all('a'):
+    print(link.get('href'))
 ```
 
-Une fois que vous avez importé Beautiful Soup, vous pouvez utiliser ses méthodes pour extraire des données à partir d'un fichier HTML. Par exemple, si nous avons un fichier HTML contenant une liste de nourriture :
-
-```python
-liste_nourriture = """
-<html>
-<head>
-<title>Ma Liste de Nourriture</title>
-</head>
-<body>
-<h1>Mes Aliments Préférés</h1>
-<ul>
-<li>Pizza</li>
-<li>Cake</li>
-<li>Hamburger</li>
-</ul>
-</body>
-</html>
-"""
-```
-
-Nous pouvons utiliser Beautiful Soup pour extraire la liste des aliments :
-
-```python
-soup = BeautifulSoup(liste_nourriture, 'html.parser')
-aliments = soup.find_all('li') # Renvoie une liste contenant tous les éléments 'li'
-```
-
-Maintenant, nous pouvons itérer à travers la liste et afficher chaque aliment :
-
-```python
-for aliment in aliments:
-    print(aliment.text)
-```
-
-Cela affichera :
+Cela produirait la sortie suivante :
 
 ```
-Pizza
-Cake
-Hamburger
+https://www.example.com
+https://www.example.com
 ```
 
-## Plongée profonde
+# Plongée en profondeur :
 
-Beautiful Soup offre également plusieurs fonctionnalités avancées pour aider à extraire des données plus complexes à partir de fichiers HTML. Vous pouvez consulter la documentation officielle pour en savoir plus sur ces fonctionnalités et comment les utiliser.
+Parser le HTML est un processus courant dans le développement Web, car il permet de récupérer des données précieuses à partir de pages Web. Les alternatives sont généralement basées sur différents langages ou techniques, telles que l'utilisation de CSS pour extraire des données ou le web scraping. La bibliothèque intégrée de Python, "html.parser", est également disponible pour l'analyse de HTML.
 
-Un point important à noter est que Beautiful Soup n'est pas la seule bibliothèque Python disponible pour analyser HTML. Vous pouvez également consulter d'autres bibliothèques telles que lxml et requests-html.
+# Voir aussi :
 
-## Voir aussi
-
-- [Documentation officielle Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
-- [Documentation officielle lxml](https://lxml.de/)
-- [Documentation officielle requests-html](https://requests-html.kennethreitz.org/)
+- [Documentation de Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
+- [Tutoriel sur le web scraping avec Beautiful Soup](https://realpython.com/beautiful-soup-web-scraper-python/)
+- [Documentation officielle Python sur l'analyse de HTML](https://docs.python.org/fr/3/library/html.parser.html)

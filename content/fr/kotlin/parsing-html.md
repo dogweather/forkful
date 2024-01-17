@@ -1,7 +1,7 @@
 ---
-title:                "Analyse de l'HTML"
-html_title:           "Kotlin: Analyse de l'HTML"
-simple_title:         "Analyse de l'HTML"
+title:                "Analyser le html"
+html_title:           "Kotlin: Analyser le html"
+simple_title:         "Analyser le html"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "HTML and the Web"
@@ -10,46 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Pourquoi
+## Qu'est-ce que c'est et pourquoi?
+Parser HTML est le processus de lire et d'analyser le code HTML pour extraire les données ou les informations qu'il contient. Les programmeurs font cela pour pouvoir utiliser ces données dans leurs applications ou pour automatiser des tâches telles que l'extraction de contenu Web.
 
-Il peut être utile de pouvoir extraire et manipuler des données directement à partir du code HTML d'une page web. Cela peut être utile pour automatiser des tâches, collecter des données ou créer des applications liées au web.
-
-# Comment faire
-
-Pour le faire en utilisant Kotlin, il existe des bibliothèques telles que jsoup ou ktparse qui facilitent grandement la tâche. Voici un exemple de code pour extraire le titre et le contenu d'une balise <article> à partir d'un fichier HTML :
+## Comment faire:
+Voici un exemple simple de code en Kotlin pour réaliser un parsing HTML:
 
 ```Kotlin
+val htmlString = "<html><body><h1>Bienvenue</h1></body></html>"
 
-val document = Jsoup.parse(html) // html est une variable contenant le code HTML
-val article = document.select("article") // sélectionne la balise article
-val titre = article.select("h1").text() // sélectionne le titre de l'article
-val contenu = article.select("p").first() // sélectionne le premier paragraphe du contenu
+val document = Jsoup.parse(htmlString)
+val heading = document.select("h1")
 
-print("Titre: $titre \nContenu: $contenu")
-
-// Résultat:
-// Titre: Bienvenue dans le monde de Kotlin
-// Contenu: Kotlin est un langage de programmation moderne et polyvalent conçu pour Java Virtual Machine (JVM).
-
+println(heading.text())
 ```
 
-Il est également possible de parcourir les différentes balises et éléments en utilisant des boucles. Par exemple, pour afficher tous les liens d'une page HTML :
+Output: Bienvenue
 
-```Kotlin
+## Plongée en profondeur:
+Parser HTML n'était pas aussi répandu dans le passé car les pages Web étaient généralement statiques et construites à la main. Cependant, avec l'avènement des applications Web dynamiques, le parsing HTML est devenu plus courant pour extraire des données en temps réel. Il existe également des alternatives telles que l'utilisation de l'API DOM native du navigateur ou des bibliothèques telles que Nokogiri en Ruby.
 
-val links = document.select("a[href]") // sélectionne tous les éléments <a> avec un attribut href
-for (link in links) {
-    println(link.attr("href")) // affiche l'attribut href de chaque élément
-}
+En termes d'implémentation, la bibliothèque Jsoup est largement utilisée en Kotlin pour réaliser un parsing HTML. Elle utilise des sélecteurs CSS pour extraire les données du document HTML.
 
-```
-
-# Approfondir
-
-La bibliothèque jsoup permet également de modifier et d'ajouter des éléments à un document HTML. Il est également possible de combiner l'utilisation de Kotlin avec d'autres technologies telles que XPath pour une sélection plus précise, ou encore Selenium pour automatiser des tâches sur des sites web interactifs.
-
-# Voir aussi
-
-- Documentation officielle de Kotlin : https://kotlinlang.org/docs/reference/
-- Bibliothèque jsoup : https://jsoup.org/
-- Bibliothèque ktparse : https://github.com/collokia/kt-parse
+## Voir aussi:
+- La documentation officielle de Jsoup: https://jsoup.org/
+- Un tutoriel pas à pas pour apprendre le parsing HTML en Kotlin: https://www.tutorialkart.com/kotlin/parse-html-in-kotlin-using-jsoup/

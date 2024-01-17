@@ -10,44 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-In today's fast-paced world, having an accurate and up-to-date display of the current date is crucial for efficient time management and organization. Whether it's for scheduling events, tracking deadlines, or simply staying on top of daily tasks, knowing the current date is a fundamental need for many people.
+Getting the current date means finding out the current date and time on your computer or server. Programmers do this to keep track of when certain operations were performed, to schedule tasks, or to display the current time on a user interface.
 
-## How To
+## How to:
 
-To get the current date in TypeScript, you can use the built-in `Date` object. This object represents a single moment in time and provides methods for retrieving various date and time components.
+To get the current date in TypeScript, you can use the built-in `Date` class. Here's an example of getting the current date and time and storing it in a variable:
 
 ```TypeScript
-// Create a new Date object
 let currentDate = new Date();
-
-// Get the current day, month, year, and time
-let day = currentDate.getDate();
-let month = currentDate.getMonth() + 1; // 'getMonth()' returns a zero-based value
-let year = currentDate.getFullYear();
-let time = currentDate.toLocaleTimeString();
-
-// Print out the current date and time in a user-friendly format
-console.log(`Today is ${month}/${day}/${year} and the time is ${time}.`);
+console.log(currentDate);
 ```
 
-Running the code above will produce an output similar to this:
+This will output the date and time in a format like `Sat Nov 28 2020 14:37:48 GMT-0500 (Eastern Standard Time)`.
 
+If you want to customize the format of the date, you can use the `toLocaleString()` method. Here's an example of getting the current date in a specific format and storing it in a variable:
+
+```TypeScript
+let currentDate = new Date().toLocaleString("en-US", { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+console.log(currentDate);
 ```
-Today is 7/15/2021 and the time is 9:34:00 AM.
-```
 
-There are also options for customizing the format of the date and time, such as including the day of the week or using different time zones. You can explore the full list of `Date` object methods in the [TypeScript documentation](https://www.typescriptlang.org/docs/handbook/utility-types.html#partial).
+This will output the date in a format like `Saturday, November 28, 2020`.
 
-## Deep Dive
+## Deep Dive:
 
-For a deeper understanding of how the `Date` object works, it's important to note that it uses the UTC (Coordinated Universal Time) standard to represent dates and times. This means that the date and time will be based on the international time standard and not the local time zone of the user's device.
+The `Date` class in TypeScript is based on the `Date` object in JavaScript, which has been around since the 90s. This class provides methods for working with dates and times, such as getting the current date, setting a specific date, or calculating the difference between two dates.
 
-To account for this, the `toLocaleString()` method can be used to correctly display the date and time in the user's local time zone. Additionally, the `setDate()` and `setTime()` methods can be used to adjust the date and time values of the `Date` object to a specific date and time.
+An alternative to the `Date` class is the `Moment.js` library, which provides more flexibility and functionality for working with dates and times. However, it requires an additional installation and may be overkill for simple date operations.
 
-## See Also
+To get the current date, the `Date` class uses the system's time zone and clock. This means that if the system time or time zone is incorrect, the current date returned by the `Date` class will also be incorrect.
 
-- [TypeScript Documentation on Date Object](https://www.typescriptlang.org/docs/handbook/utility-types.html#partial)
-- [GeeksforGeeks tutorial on getting current date in TypeScript](https://www.geeksforgeeks.org/how-to-get-the-current-date-and-time-in-typescript/)
-- [MDN Web Docs article on working with dates and times in JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
+## See Also:
+
+- [TypeScript Date Documentation](https://www.typescriptlang.org/docs/handbook/standard-library.html#date)
+- [Moment.js Documentation](https://momentjs.com/docs/)
+- [MDN Web Docs - Date Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)

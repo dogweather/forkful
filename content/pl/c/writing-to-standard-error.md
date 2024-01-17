@@ -10,53 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Czym jest i dlaczego?:
 
-Pisanie do standardowego wyjścia błędu może wydawać się niepotrzebnym krokiem w procesie pisania aplikacji w języku C. Jednakże, jest to bardzo ważne narzędzie, które pomaga w diagnozowaniu błędów i utrzymaniu czystego i czytelnego kodu. W tym artykule dowiesz się dlaczego warto pisać do standardowego wyjścia błędu oraz jak to zrobić w praktyce.
+W programowaniu, "wypisywanie do standardowego błędu" lub po prostu "wypisywanie na stderr" odnosi się do wysyłania komunikatów błędów lub innych informacji o błędach do standardowego strumienia błędów. Programiści wykorzystują to do informowania użytkowników o wystąpieniu błędów w programie i pomagają w ich zlokalizowaniu.
 
-## Jak to zrobić
+## Jak to zrobić:
 
-Przedstawimy teraz przykładowy kod w języku C, który wykorzystuje pisanie do standardowego wyjścia błędu. Załóżmy, że mamy prostą funkcję, która dzieli dwie liczby i zwraca wynik. Chcemy wypisać błąd, jeśli użytkownik poda jako drugą liczbę 0, aby uniknąć dzielenia przez zero.
-
-```
+```c
 #include <stdio.h>
 
-int divide(int x, int y) {
-  if (y == 0) {
-    fprintf(stderr, "Nie można dzielić przez zero!\n");
-    return -1; // zwracamy kod błędu
-  }
-  return x / y;
-}
-
 int main() {
-  int result = divide(10, 0);
-  printf("Wynik: %d\n", result);
-  return 0;
+
+    // Przykładowy kod, który wywołuje błąd
+    int number = 0;
+    int divisor = 0;
+
+    int result = number / divisor;
+
+    return 0;
 }
 ```
 
-W powyższym przykładzie używamy funkcji `fprintf` z parametrem `stderr`, co oznacza, że tekst zostanie wypisany do standardowego wyjścia błędu. Jest to alternatywny sposób na wypisywanie informacji, gdyż pozwala utrzymać czytelność kodu, a także pozwala na przekazanie dodatkowych informacji na temat błędu.
-
-Po uruchomieniu powyższego programu otrzymamy następujący wynik:
+W powyższym przykładzie, wywołanie błędu spowoduje wypisanie informacji o błędzie na stderr:
 
 ```
-Nie można dzielić przez zero!
-Wynik: -1
+Błąd dzielenia przez zero
 ```
 
-Widzimy, że pomyślnie wywołaliśmy wypisywanie błędu do standardowego wyjścia błędu oraz otrzymaliśmy poprawną wartość błędu zwróconą przez funkcję `divide`.
+## Głębokie zanurzenie:
 
-## Deep Dive
+Istnieją różne sposoby wypisywania informacji o błędach w C, ale wypisywanie na stderr jest popularnym i ustandaryzowanym sposobem. Alternatywnie, programiści mogą wypisywać na standardowe wyjście (`printf()`), ale będzie to powodować mieszanie wiadomości o błędach z innymi danymi programu. Implementacja polega na wysłaniu ciągu znaków zawierającego informacje o błędzie do standardowego strumienia błędów.
 
-Standardowe wyjście błędu jest jednym z trzech standardowych strumieni wyjściowych w języku C, obok standardowego wyjścia i standardowego wyjścia błędu. W odróżnieniu od standardowego wyjścia, które służy do wypisywania danych dla użytkownika, standardowe wyjście błędu służy do wypisywania informacji o błędach. Oznacza to, że jest to bardzo ważne narzędzie do debugowania kodu i poprawnego działania aplikacji.
+## Zobacz także:
 
-Jedną z najważniejszych korzyści związanych z pisanie do standardowego wyjścia błędu jest możliwość przekazywania informacji o błędach bez przerywania standardowego wyjścia. Dzięki temu, użytkownik może nadal otrzymywać informacje i wyniki swoich działań, a jednocześnie otrzymać ostrzeżenia o ewentualnych błędach.
-
-Jest też możliwość przekierowania standardowego wyjścia błędu do pliku, co może być przydatne w sytuacji, gdy nie chcemy, aby informacje o błędach wyświetlały się na ekranie użytkownika.
-
-## Zobacz również
-
-- [Pisanie do standardowego wyjścia błędu w języku C](https://www.cplusplus.com/reference/cstdio/stderr/)
-- [Obsługa błędów w języku C](https://www.cprogramming.com/tutorial/c/lesson17.html)
-- [Strumienie wyjściowe w języku C](https://www.tutorialspoint.com/cprogramming/c_input_output.htm)
+- [Dokumentacja funkcji `fprintf()`](https://www.tutorialspoint.com/c_standard_library/c_function_fprintf.htm)
+- [Porównanie standardowych strumieni w C](https://www.geeksforgeeks.org/comparison-standard-input-output-streams-c/)
+- [Artykuł o wypisywaniu na stderr w C++](https://www.techiedelight.com/redirect-both-stdout-stderr-file-cpp/)

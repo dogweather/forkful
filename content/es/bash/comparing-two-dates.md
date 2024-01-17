@@ -10,58 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¿Qué & Por qué?
 
-Comparar dos fechas en Bash es una práctica común en la programación, ya sea para realizar operaciones matemáticas o para determinar la fecha más reciente o más antigua. En este artículo, aprenderás cómo comparar dos fechas en Bash de forma sencilla y efectiva.
+Comparar dos fechas en la programación es una manera de determinar si una fecha es anterior, posterior o igual a otra fecha. Los programadores lo hacen para ordenar datos y realizar acciones basadas en la cronología de las fechas.
 
-## Cómo hacerlo
-
-Para comparar dos fechas en Bash, primero debes asegurarte de tener las fechas en un formato reconocible por el sistema. Utilizaremos el comando `date` para obtener la fecha actual y el comando `read` para capturar la fecha que ingrese el usuario.
-
-```Bash
-# Obtener la fecha actual
-fecha_actual=$(date +%Y-%m-%d)
-
-# Capturar la fecha ingresada por el usuario
-echo "Ingresa una fecha en formato YYYY-MM-DD:"
-read fecha_ingresada
-```
-
-Una vez que tenemos ambas fechas, podemos utilizar el operador de comparación `>` (mayor que) o `<` (menor que) para determinar cuál es la fecha más reciente o más antigua.
+## ¿Cómo hacerlo?:
+Aquí hay un ejemplo de Bash para comparar dos fechas y mostrar el resultado:
 
 ```Bash
-if [[ $fecha_actual > $fecha_ingresada ]]; then
-    echo "La fecha actual es más reciente que la fecha ingresada"
-else 
-    echo "La fecha ingresada es más reciente que la fecha actual"
+date1="2020-10-20"
+date2="2020-10-25"
+
+if [[ "$date1" > "$date2" ]]; then
+  echo "La primera fecha es posterior a la segunda."
+elif [[ "$date1" < "$date2" ]]; then
+  echo "La primera fecha es anterior a la segunda."
+else
+  echo "Ambas fechas son iguales."
 fi
 ```
-
-Si quieres comparar fechas en un formato diferente, puedes utilizar el comando `date` para convertir las fechas a un formato específico antes de compararlas. Por ejemplo, si quieres comparar fechas en formato DD-MM-YYYY, puedes utilizar el siguiente código:
-
-```Bash
-# Convertir la fecha actual a formato DD-MM-YYYY
-fecha_actual_ddmmyyyy=$(date +%d-%m-%Y)
-
-# Convertir la fecha ingresada por el usuario a formato DD-MM-YYYY
-fecha_ingresada_ddmmyyyy=$(date -d "$fecha_ingresada" +%d-%m-%Y)
-
-# Comparar las fechas en formato DD-MM-YYYY
-if [[ $fecha_actual_ddmmyyyy > $fecha_ingresada_ddmmyyyy ]]; then
-    echo "La fecha actual es más reciente que la fecha ingresada"
-else 
-    echo "La fecha ingresada es más reciente que la fecha actual"
-fi
+Output:
+```
+La primera fecha es anterior a la segunda.
 ```
 
-## Profundizando
+También se pueden usar operadores lógicos como `==`, `!=`, `<=` y `>=` para comparar fechas en Bash.
 
-Hay varios factores a tener en cuenta al comparar fechas en Bash. En primer lugar, debes asegurarte de que ambas fechas estén en el mismo formato antes de realizar la comparación. De lo contrario, el resultado puede no ser el esperado.
+## Profundizando:
+En la programación, es común necesitar comparar fechas para realizar tareas como ordenar eventos cronológicos, programar tareas y generar informes basados en la fecha. Además de Bash, también hay otras herramientas y lenguajes que se pueden utilizar para comparar fechas, como Python, Java y SQL.
 
-Además, el operador de comparación `>` y `<` solo funciona con fechas en formato numérico. Si quieres comparar fechas en un formato diferente, como texto, deberás utilizar otros métodos, como la función `diff` o el comando `sort`.
+Bash utiliza la variable de entorno `LC_TIME` para determinar el formato de fecha y hora, lo que puede afectar la comparación de fechas en diferentes sistemas. Para evitar errores, se pueden establecer explícitamente el formato de fecha y hora deseado utilizando el comando `date -d`.
 
-## Ver también
-
-* [Documentación oficial de Bash](https://www.gnu.org/software/bash/)
-* [Guía de referencia de Bash](https://www.shellscript.sh/)
-* [Cheat sheet de Bash](https://devhints.io/bash)
+## Ver también:
+- [Tutorial de Bash - Comparación de fechas](https://www.tutorialspoint.com/unix_commands/unix_comparisons.htm)
+- [Documentación de Bash sobre variables de entorno](https://tldp.org/LDP/abs/html/internalvariables.html#LOCDATE)
+- [Documentación de Bash sobre el comando `date`](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html)

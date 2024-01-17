@@ -10,29 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i dlaczego?
+Wykorzystywanie wyrażeń regularnych to metoda programowania, która pozwala na wyszukiwanie i manipulowanie tekstem w sposób wyrafinowany. Programiści często używają regularnych wyrażeń, ponieważ są potężnym narzędziem do transformacji i analizy danych tekstowych.
 
-Programowanie może wydawać się trudne i czasami wymaga dopasowywania do określonych wzorców. Regularne wyrażenia są przydatnym narzędziem, które pozwala programistom na szybkie i precyzyjne dopasowanie i przetwarzanie tekstu.
+## Jak to zrobić:
+```Fish Shell``` dostarcza nam funkcję `string match`, która umożliwia użycie wyrażeń regularnych w naszych skryptach. Niech poniższe przykłady będą dla Ciebie jasnym wytłumaczeniem działania wyrażeń regularnych.
 
-## Jak zacząć
+#### Wyszukiwanie dopasowań:
+```Fish Shell
+string match 'kota' 'Lubię koty.'
+``` 
+```Kota```
 
-Jeśli używasz Fish Shell, to już masz gotowe narzędzie do pracy z regularnymi wyrażeniami. Aby zacząć, otwórz terminal i wpisz polecenie ```fish```.
-
-Teraz możesz używać różnych polecen, takich jak ```grep``` lub ```sed```, aby przeszukiwać i modyfikować tekst z wykorzystaniem regularnych wyrażeń. Na przykład, jeśli chcesz znaleźć wszystkie linie w pliku, które zawierają słowo "fish", możesz użyć polecenia:
-
+#### Zastępowanie tekstu:
+```Fish Shell
+string match -r -R 'kota' 'Małe kotki.' 'pies'
 ```
-fish
-grep fish nazwapliku.txt
+```Małe pieski.```
+
+#### Podział tekstu:
+```Fish Shell
+string match --split -r '[\.\?\!]' 'Cześć! Jak się masz?'
 ```
+```Cześć```  
+```Jak się masz```  
 
-## Głębsze zagłębianie
+## Głębokie zanurzenie:
+Wyrażenia regularne są powszechnie stosowane w programowaniu tekstowym od lat 50-tych. Istnieje wiele alternatywnych narzędzi, takich jak ```grep``` czy ```sed```, jednak składnia ```Fish Shell``` jest prostsza i bardziej przejrzysta. Wewnętrznie, ```Fish Shell``` wykorzystuje język ```C``` oraz bibliotekę ```PCRE``` (Perl Compatible Regular Expressions).
 
-Regularne wyrażenia umożliwiają zaawansowane dopasowanie tekstu, używając specjalnych symboli i wzorców. Na przykład, znak ```*``` oznacza dowolną ilość powtórzeń danego znaku lub wyrażenia, co pozwala na łatwiejsze znalezienie dokładnego dopasowania.
-
-Również różne flagi mogą być używane z regularnymi wyrażeniami, aby zwiększyć precyzję dopasowania lub osiągnąć bardziej zaawansowane funkcje, takie jak wyszukiwanie z pominięciem wielkości liter. Możesz znaleźć szczegółowe informacje na temat użycia tych flag w dokumentacji Fish Shell lub przeglądając różne przykładowe kody.
-
-## Zobacz także
-
-- [Dokumentacja Fish Shell](https://fishshell.com/docs/current/index.html)
-- [Studnia z regulami wyrażeń](https://regexr.com/)
-- [Poradnik regularnych wyrażeń w Fish Shell](https://youtu.be/EX21v00KKsA)
+## Zobacz też:
+- [Oficjalna dokumentacja wyrażeń regularnych w Fish Shell](https://fishshell.com/docs/current/cmds/string.html#description)
+- [Wyrażenia regularne w praktyce - tutorial](https://www.codedoct.com/mini-poradnik-wyrazenia-regularne/)
+- [Język programowania C](https://www.learn-c.org/)

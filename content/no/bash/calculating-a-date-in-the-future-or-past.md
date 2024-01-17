@@ -1,7 +1,7 @@
 ---
-title:                "Beregning av en dato i fremtiden eller fortiden"
-html_title:           "Bash: Beregning av en dato i fremtiden eller fortiden"
-simple_title:         "Beregning av en dato i fremtiden eller fortiden"
+title:                "Beregning av datoer i fremtiden eller fortiden"
+html_title:           "Bash: Beregning av datoer i fremtiden eller fortiden"
+simple_title:         "Beregning av datoer i fremtiden eller fortiden"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Dates and Times"
@@ -10,33 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
-Det kan være mange grunner til å ville beregne en dato i fremtiden eller fortiden. Kanskje du ønsker å planlegge en begivenhet eller sjekke når en gjeldende dato vil falle på en bestemt ukedag. Uansett årsak, å kunne beregne datoer i Bash kan være en svært nyttig ferdighet å ha.
+# Hva & Hvorfor?
+Å beregne en dato i fremtiden eller fortiden er prosessen med å finne en bestemt dato basert på et gitt antall dager fra en annen dato. For eksempel, å beregne datoen som er 30 dager fra i dag. Programmere må gjøre dette for å håndtere ulike datoer og kalkulere fremtidige eller fortidsdatoer.
 
-## Slik Gjør Du Det
-Det er flere måter å beregne datoer i Bash, men en enkel måte er å bruke `date` kommandoen. For å beregne en dato i fremtiden, bruk følgende syntaks:
+# Hvordan:
+Bash har innebygde funksjoner for å beregne en dato i fremtiden eller fortiden. Du kan bruke disse funksjonene ved å legge til eller trekke fra et spesifisert antall dager fra en gitt dato.
 
-```Bash
-future_date=$(date -d "1 week" +%Y-%m-%d)
-echo $future_date 
+```bash
+# Beregne datoen som er 30 dager fra i dag
+date -d "+30 days"
 ```
 
-Her vil `future_date` variabelen beregne datoen for en uke frem i tid og lagre den i variabelen. Deretter vil `echo` kommandoen skrive ut datoen i formatet YYYY-MM-DD. Du kan endre "1 week" til å være for eksempel "2 days" eller "1 year" for å beregne en annen dato.
+Resultat: Sat Oct 16 00:00:00 CEST 2021
 
-For å beregne en dato i fortiden, bruk denne syntaksen:
-
-```Bash
-past_date=$(date -d "2 weeks ago" +%d/%m/%y)
-echo $past_date
+```bash
+# Beregne datoen som er 10 dager før i dag
+date -d "-10 days"
 ```
 
-Her vil `past_date` variabelen beregne datoen for to uker siden og lagre den i variabelen. Deretter vil `echo` kommandoen skrive ut datoen i formatet DD/MM/YY. Du kan endre "2 weeks ago" til å være for eksempel "3 months ago" eller "-1 year" for å beregne en annen dato.
+Resultat: Sun Sep 26 00:00:00 CEST 2021
 
-## Dykk Dypere
-For de som er interessert i å forstå hvordan denne kommandoen fungerer, bruker den `-d` flagget for å angi en dato og tiden som skal beregnes fra. Dette kan være i form av en bestemt dato, som "December 25", eller en tidsperiode, som "1 week ago". Deretter brukes `%` tegnene til å spesifisere formatet på datoen som ønskes utskrevet.
+# Dypdykk:
+I følge Unix-tidsstempelet, 1. januar 1970 kl. 00:00:00 er referansedatoen for å beregne datoer i fremtiden eller fortiden. Alternativt kan du bruke tredjepartsbiblioteker som moment.js for mer komplekse datooperasjoner. Implementeringsdetaljer varierer avhengig av språk og plattform, men konseptet er det samme.
 
-For en full liste over de ulike formatene som kan brukes med `date` kommandoen, kan du se Bash `man` siden (`man date`) eller sjekk ut denne [artikkelen](https://www.computerhope.com/unix/date.htm).
-
-## Se Også
-- [Bash `date` Kommando](https://www.computerhope.com/unix/date.htm)
-- [`man` side for `date` kommandoen](man date)
+# Se også:
+- [Bash's date command documentation](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html)
+- [Moment.js](https://momentjs.com/) for mer komplekse datooperasjoner

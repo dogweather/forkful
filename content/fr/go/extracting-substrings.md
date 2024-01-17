@@ -10,48 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+Qu'est-ce que l'extraction de sous-chaînes et pourquoi les programmeurs le font-ils?
 
-Si vous travaillez avec du texte dans vos programmes Go, vous pouvez parfois avoir besoin d'extraire des parties spécifiques de ce texte, appelées sous-chaînes ou substrings. Cela peut être utile pour effectuer des opérations spécifiques sur ces parties, comme la recherche ou le remplacement de mots.
+L'extraction de sous-chaînes est le fait de sélectionner une partie d'une chaîne de caractères plus grande. Les programmeurs le font souvent pour traiter et manipuler des données sous forme de chaînes de caractères plus petites.
 
-## Comment faire
+Comment faire:
 
-Pour extraire une sous-chaîne dans Go, vous devez utiliser la fonction `substring` en spécifiant l'index de début et l'index de fin de la sous-chaîne souhaitée, comme ceci:
+Utilisez la méthode `Substring()` pour extraire une partie spécifique d'une chaîne de caractères. Voici un exemple en Go:
 
-```Go
-str := "Bonjour tout le monde"
-fmt.Println(str[8:13]) // Cela affichera "tout"
+```
+chaine := "Bonjour tout le monde !"
+sousChaine := chaine.Substring(8, 4)
 ```
 
-Vous pouvez également utiliser un index négatif pour commencer à compter depuis la fin de la chaîne, comme ceci:
+Dans cet exemple, nous extrayons les caractères de la chaîne d'index 8 (inclus) à l'index 11 (non inclus) pour obtenir la sous-chaîne "tout".
 
-```Go
-str := "Salut les amis"
-fmt.Println(str[5:len(str)]) // Cela affichera "les amis"
+En voici un autre exemple en utilisant une boucle pour extraire plusieurs sous-chaînes:
+
+```
+chaine := "Le futur appartient à ceux qui se lèvent tôt."
+for i := 0; i < len(chaine); i += 5 {
+	sousChaine := chaine.Substring(i, 3)
+	fmt.Println(sousChaine)
+}
 ```
 
-Il est également possible de spécifier seulement l'index de début ou de fin de la sous-chaîne, comme ceci:
+La sortie de ce code sera:
 
-```Go
-str := "Hello everyone"
-fmt.Println(str[:5]) // Cela affichera "Hello"
-fmt.Println(str[6:]) // Cela affichera "everyone"
+```
+Le f
+ fut
+r ap
+par
+rtie
+t à 
+ceux
+ qui
+lèv
+tôt
+.
 ```
 
-## Plongée en profondeur
+Plongée en profondeur:
 
-En plus de la fonction `substring`, il existe également la fonction `slice`, qui permet d'extraire plusieurs sous-chaînes à la fois. Cette fonction prend en paramètre un tableau d'indices, ce qui signifie que vous pouvez extraire plusieurs parties du texte en une seule fois. Voici un exemple:
+L'extraction de sous-chaînes est couramment utilisée pour le traitement de chaînes de caractères, mais elle peut également être utile pour des tâches telles que la validation de données ou la manipulation de chemins de fichiers. Il existe également d'autres méthodes pour extraire des sous-chaînes comme `Split()` et `Trim()`, qui peuvent être utilisées en complément de `Substring()`. La méthode `Substring()` utilise des indices de chaîne 0-based, ce qui signifie que le premier caractère a un index de 0, contrairement à certains autres langages de programmation.
 
-```Go
-str := "Je suis un développeur"
-indexes := []int{3, 7, 11}
-fmt.Println(str[indexes[0]:indexes[1]]) // Cela affichera "suis"
-fmt.Println(str[indexes[1]:indexes[2]]) // Cela affichera "un"
-```
+Voir aussi:
 
-Il est également important de noter que lorsqu'un indice est spécifié en dehors de la longueur de la chaîne, cela provoquera une erreur. Il est donc important de faire attention aux index utilisés lors de l'extraction de sous-chaînes.
-
-## Voir aussi
-
-- [Documentation officielle de la fonction substring](https://golang.org/ref/spec#Slice_expressions)
-- [Guide pour travailler avec des chaînes de caractères en Go](https://yourbasic.org/golang/string-functions-reference-cheat-sheet/)
+- [Documentation officielle sur les chaînes de caractères en Go](https://golang.org/pkg/strings/)
+- [GitHub: exemple d'utilisation de Substring() en Go](https://github.com/danielmiessler/SecLists/blob/master/Passwords/10k_most_common.txt)

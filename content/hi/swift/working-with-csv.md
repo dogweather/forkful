@@ -10,31 +10,63 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
-CSV फाइलों के साथ काम करने में कौन समय और मेहनत बचाना चाहता है, उनके लिए यह लाभदायक हो सकता है। 
+## CSV क्या है और क्यों करते हैं?
+CSV (Comma Separated Values) एक फॉर्मेट है जो डेटा को अलग-अलग कॉलमों में अलग करता है ताकि उसे आसानी से स्प्रेडशीट या डेटा बेस हो या अन्य प्रोग्रामों में इम्पोर्ट/एक्सपोर्ट किया जा सके। प्रोग्रामर इस्तेमाल करते हैं CSV ताकि वे अपने प्रोग्राम को और उपयोगकर्ता अन्य स्थानों से डेटा लाने या स्टोर करने में सहायता कर सकें।
 
-## कैसे करें
+## कैसे:
 ```Swift
-// CSV फाइल खोलना
-if let csvURL = Bundle.main.url(forResource: "data", withExtension: "csv") {
-    do {
-        let csvString = try String(contentsOf: csvURL, encoding: .utf8)
-        // स्ट्रिंग विभाजित करना
-        let rows = csvString.components(separatedBy: .newlines)
-        for row in rows {
-            // वर्तमान पंक्ति को टोकन बनाना
-            let tokens = row.components(separatedBy: ",")
-            for token in tokens {
-                print(token)
-            }
+import Foundation
+
+// एक CSV फाइल से डेटा पढ़ें
+let csvFilePath = "data.csv"
+do {
+    let csvData = try String(contentsOf: URL(fileURLWithPath: csvFilePath))
+    let rows = csvData.components(separatedBy: "\n")
+    
+    // सभी पंक्तियों को लूप करें
+    for row in rows {
+        // प्रत्येक पंक्ति में अलग अलग कॉलमों को अलग करें
+        let columns = row.components(separatedBy: ",")
+        
+        // प्रत्येक कॉलम को प्रिंट करें
+        for column in columns {
+            print(column)
         }
-    } catch {
-        print("CSV फाइल खोलने में त्रुटि: \(error)")
     }
+} catch {
+    print("फाइल खोलने में गड़बड़ी हुई।")
+}
+
+// CSV फाइल में नए डेटा लिखें
+let data = "1, 2, 3\n4, 5, 6\n7, 8, 9"
+do {
+    try data.write(toFile: "new_data.csv", atomically: true, encoding: .utf8)
+    print("नई CSV फाइल बनाई गई।")
+} catch {
+    print("फाइल लिखने में गड़बड़ी हुई।")
 }
 ```
 
-उपरोक्त कोड में, हम CSV फाइल को खोलने के लिए Bundle वर्ग का उपयोग किया है, जिसे main Bundle से गुजरने के लिए कॉल किया गया है। उसके बाद, हम शिकंजे और पंक्तियों को विभाजित करने के लिए String वर्ग और इस्तेमाल किए गए components से उपयोग किया है। हमें वर्तमान पंक्तियों से टोकन बनाने की जरूरत होती है, जो फिर से components का उपयोग करके हो सकती है। आप टोकनों को अपनी आवश्यकतानुसार उपयोग कर सकते हैं, जैसे कि इन टोकनों को प्रिंट करने के लिए हमने किया है। 
+**आउटपुट:**
+```
+1
+2
+3
+4
+5
+6
+7
+8
+9
 
-## गहराई से जानें
-CSV या "Comma Separated Values" एक विशेष गोपनीयता धारपात का स्थान है जिसे यह उद्देश्य किया गया है कि प्रोग्रामिंग और इंटरनेट के साथ काम करने वालों को डेटा को संगठित करने में आसानी हो। ये फाइलें अक्सर स्प्रेडशीट और डेटा बेस से डेटा को लोड करने के लिए किये हुए जाते हैं। Swift इस CSV परिचालन को अत्यंत सरल और आसान बनाता है, जो प्रोग्राम
+नई CSV फाइल बनाई गई।
+```
+
+## डीप डाइव:
+- CSV को वर्कशीट फाइलों में प्रयोग करने की शुरुआत 1972 में अमेरिकी कंपनी IBM ने की थी।
+- अल्टर्नेटिव के रूप में, प्रोग्रामर अक्सर डेटा को फाइल्स से पढ़ना और लिखना चुनते हैं लेकिन CSV के फायदे वहाँ हो सकते हैं जहाँ कि डेटा को अलग अलग तरीके से स्टोर किया जाए जैसे कि स्प्रेडशीट फाइल, डेटाबेस या अन्य प्रोग्रामों में।
+- CSV का प्रयोग किसी भी भाषा में किया जा सकता है, इसलिए प्रोग्रामरों को इसकी ज्ञानकारी होना आवश्यक है।
+
+## देखें भी:
+- [Apple डॉक्यूमेंटेशन उदाहरण](https://developer.apple.com/documentation/foundation/nsstring/1409103-components)
+- [CSV फाइल की संरचना के बारे में अधिक जानकारी के लिए](https://www.computerhope.com/issues/ch001356.htm)

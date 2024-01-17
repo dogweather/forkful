@@ -1,7 +1,7 @@
 ---
-title:                "Virheenkorjaustulosteen tulostaminen"
-html_title:           "Clojure: Virheenkorjaustulosteen tulostaminen"
-simple_title:         "Virheenkorjaustulosteen tulostaminen"
+title:                "Tulostamalla vianetsintätulostetta"
+html_title:           "Clojure: Tulostamalla vianetsintätulostetta"
+simple_title:         "Tulostamalla vianetsintätulostetta"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Testing and Debugging"
@@ -10,47 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+# Mikä on ja miksi? 
+Debug-tulostuksen printtaaminen tarkoittaa ohjelmakoodin suorituksen aikana tietojen tulostamista terminaaliin. Tämä auttaa ohjelmoijaa hahmottamaan ohjelman suoritusta ja löytämään mahdollisia virheitä tai bugeja. 
 
-Debug-tulosteiden tulostaminen voi olla hyödyllistä ohjelmoinnin aikana, sillä se auttaa löytämään mahdollisia virheitä ja ymmärtämään ohjelman toimintaa paremmin.
-
-## Miten
-
+# Miten tehdä: 
 ```Clojure
-;; Yksinkertainen tapa tulostaa debug-tulosteita on käyttää "println" funktiota.
-(println "Debug-tuloste: " (+ 1 2))
-
-;; Voit myös käyttää "println" funktiota yhdistämällä sen merkkijonojen ja muuttujien kanssa.
-(def x 5)
-(println "Muuttujan x arvo on:" x)
-
-;; Voit myös käyttää "prn" funktiota tulostamaan debug-tulosteita muodossa, joka helpompi lukea.
-(prn "Tämä on debug-tuloste.")
-
-;; Voit käyttää "printf" funktiota tulostamaan muotoillun tekstin ja muuttujien arvot.
-(printf "Piin arvo on %f." Math/PI)
+(def x 5) 
+(print x)
 ```
-
-Runkokoodissa voit käyttää myös "comment" makroa tulostamaan debug-tulosteita, jotka näkyvät vain kehitysvaiheessa. Esimerkiksi:
-
+Tässä esimerkissä määritellään muuttuja x arvolla 5 ja tulostetaan se terminaaliin. 
 ```Clojure
-(comment
-  (println "Tämä debug-tuloste näytetään vain kehitysvaiheessa.")
-  (prn "Tämä on toinen debug-tuloste.")
-  (printf "Hei, maailma!"))
+(defn addition [a b]
+  (print "Performing addition...")
+  (println (+ a b)))
 ```
+Tässä esimerkissä määritellään funktio, joka suorittaa yhteenlaskun ja tulostaa välivaiheessa tiedon sen suorittamisesta. 
 
-Tulosteen voit myös ohjata toiseen tiedostoon "spit" funktiolla. Esimerkiksi:
+# Syvällisempi sukellus: 
+Debug-tulostaminen on ollut käytössä ohjelmoinnissa jo pitkään ja se on yksi tapa helpottaa ohjelmien testaamista ja kehittämistä. Vaihtoehtoisesti voit myös käyttää debuggaus-työkaluja, kuten debugger-ohjelmia, jotka antavat tarkempaa tietoa ohjelman suorituksesta. Implementaation osalta, print-funktio käyttää standardia "OutputStream"-oliota, joka on yhteydessä terminaaliin. 
 
-```Clojure
-(spit "debug-tulosteet.txt" (str "Tämä on debug-tuloste numero " 1))
-```
-
-## Syvempi sukellus
-
-Printtaus ja debug-tulosteiden tulostaminen on tärkeä osa ohjelmointia. Se auttaa sinua ymmärtämään ohjelmasi toimintaa paremmin ja löytämään mahdollisia virheitä. Voit yhdistellä erilaisia printtauksen tapoja ja valita itsellesi sopivimman tavan.
-
-## Katso myös
-
-- [Clojure dokumentaatio](https://clojure.org)
-- [Clojure debuggaus vinkkejä](https://purelyfunctional.tv/article/how-to-debug-clojure)
+# Katso myös: 
+- [Clojure Debugging Techniques](https://blog.klipse.tech/clojure/2017/02/01/clojure-debug-techique.html)
+- [Clojure Built-In Functions](https://clojuredocs.org/clojure.core/print)

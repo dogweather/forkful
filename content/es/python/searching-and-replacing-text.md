@@ -10,58 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
-Todos sabemos lo tedioso que puede ser reemplazar repetidamente el mismo texto en un documento o archivo. Afortunadamente, Python ofrece una solución eficiente para automatizar este proceso.
+# ¿Qué y por qué?
+Buscar y reemplazar texto es un proceso común en la programación que consiste en encontrar y cambiar una palabra o conjunto de palabras por otra en un texto determinado. Los programadores lo hacen para ahorrar tiempo y evitar errores al realizar cambios en su código o en grandes cantidades de texto.
 
-## Cómo hacerlo
-Reemplazar texto con Python es bastante sencillo. Primero, importamos la librería *re* para utilizar sus funciones de búsqueda y reemplazo.
+# Cómo hacerlo:
+```
+Python
+# Usando el método replace() para reemplazar una palabra en una cadena de texto
+cadena = "Hola mundo!"
+nueva_cadena = cadena.replace("mundo", "Python")
+print(nueva_cadena)
+# Salida: Hola Python!
+```
 
-```Python
+```
+Python
+# Utilizando expresiones regulares (regex) para realizar búsquedas y reemplazos avanzados
 import re
+
+cadena = "Hola mundo!"
+nueva_cadena = re.sub(r"mundo", "Python", cadena)
+print(nueva_cadena)
+# Salida: Hola Python!
 ```
 
-Luego, definimos nuestra cadena de texto y el patrón que queremos reemplazar. En este ejemplo, reemplazaremos todas las letras "a" con la letra "e".
+# Profundizando:
+Buscar y reemplazar texto se ha vuelto más fácil a lo largo de los años gracias a los avances en tecnología y los lenguajes de programación. Antiguamente, los programas de búsqueda y reemplazo eran limitados y requerían mucho tiempo y esfuerzo para llevar a cabo cambios simples. Sin embargo, con el uso de regex y otros métodos, los programadores ahora pueden realizar búsquedas y reemplazos de manera más eficiente en grandes cantidades de texto. Alternativamente, también pueden utilizar editores de texto con esta funcionalidad incorporada.
 
-```Python
-text = "Quiero aprender a programar en Python"
-pattern = "a"
-```
-
-Finalmente, utilizamos la función *sub()* para realizar el reemplazo y guardamos el resultado en una nueva variable.
-
-```Python
-new_text = re.sub(pattern, "e", text)
-```
-
-¡Y listo! Ahora podemos imprimir nuestra nueva cadena de texto para verificar el resultado.
-
-```Python
-print(new_text)
-```
-
-La salida sería: "Quiero emprender e programer en Python". Podemos ver que todas las letras "a" han sido reemplazadas por la "e".
-
-## Profundizando
-Además de reemplazar un patrón específico, Python también ofrece la posibilidad de utilizar expresiones regulares para una búsqueda y reemplazo más avanzada.
-
-Por ejemplo, si tenemos una lista de nombres con el formato "Apellido, Nombre" y queremos cambiarlo a "Nombre Apellido", podemos utilizar una expresión regular para lograrlo.
-
-```Python
-names = ["García, María", "Pérez, Juan", "Díaz, Ana"]
-pattern = re.compile(r"(\w+), (\w+)")
-```
-
-Utilizando la función *sub()* podemos indicar cómo queremos que se vea la nueva cadena de texto. En este caso, intercambiaremos el orden de las palabras y añadiremos una coma y un espacio para mantener el mismo formato.
-
-```Python
-new_names = [pattern.sub(r"\2 \1,", name) for name in names]
-```
-
-La salida sería: ["María García,", "Juan Pérez,", "Ana Díaz,"].
-
-Como podemos ver, el uso de expresiones regulares nos permite realizar reemplazos más complejos en una sola línea de código.
-
-## Ver también
-- Documentación oficial de Python sobre expresiones regulares: https://docs.python.org/es/3/library/re.html
-- Tutorial de regex en español: https://www.stefanocudini.com/regular-expression-tutorial/
-- Ejemplos prácticos de búsqueda y reemplazo con Python: https://www.geeksforgeeks.org/python-replace-all-occurrences-of-substring-in-string/
+# Ver también:
+- Documentación oficial de Python: https://docs.python.org
+- Expresiones regulares en Python: https://docs.python.org/3/library/re.html
+- Editores de texto recomendados para programar: https://www.fullstackpython.com/blog/best-ide-text-editor-python.html

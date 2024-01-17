@@ -1,7 +1,7 @@
 ---
-title:                "Überprüfen, ob ein Verzeichnis vorhanden ist"
-html_title:           "PHP: Überprüfen, ob ein Verzeichnis vorhanden ist"
-simple_title:         "Überprüfen, ob ein Verzeichnis vorhanden ist"
+title:                "Überprüfen, ob ein Verzeichnis existiert"
+html_title:           "PHP: Überprüfen, ob ein Verzeichnis existiert"
+simple_title:         "Überprüfen, ob ein Verzeichnis existiert"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Files and I/O"
@@ -10,55 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was & Warum?
+Das Überprüfen, ob ein Verzeichnis existiert, ist ein wichtiger Teil der PHP-Programmierung. Es ermöglicht uns zu überprüfen, ob ein bestimmter Ordner vorhanden ist, bevor wir versuchen, auf ihn zuzugreifen. Dies hilft uns, Fehler zu vermeiden und unseren Code robust und fehlerfrei zu halten.
 
-Es gibt viele Gründe, warum Sie vielleicht überprüfen möchten, ob ein Verzeichnis in Ihrem PHP-Code existiert. Zum Beispiel können Sie sicherstellen, dass ein bestimmtes Verzeichnis für das Speichern von Dateien vorhanden ist, bevor Sie versuchen, Daten in dieses Verzeichnis zu schreiben.
-
-## Wie geht das?
-
-Um zu überprüfen, ob ein Verzeichnis in PHP existiert, können Sie die Funktion `is_dir()` verwenden. Diese Funktion gibt `true` zurück, wenn das angegebene Verzeichnis existiert, oder `false`, wenn es nicht existiert.
-
-Hier ist ein Beispiel, das überprüft, ob ein Verzeichnis namens "uploads" existiert und je nach Ergebnis eine entsprechende Meldung ausgibt:
+## Wie geht man vor?
+Es gibt verschiedene Methoden, um zu überprüfen, ob ein Verzeichnis existiert. Eine Möglichkeit ist die Verwendung der `is_dir()`-Funktion, die einen booleschen Wert zurückgibt, der angibt, ob das angegebene Verzeichnis existiert oder nicht. Hier ist ein Beispiel, wie man dies in PHP verwenden könnte:
 
 ```PHP
-if (is_dir("uploads")) {
+<?php
+
+$verzeichnis = "/home/benutzer/meinordner/";
+
+if (is_dir($verzeichnis)) {
     echo "Das Verzeichnis existiert.";
 } else {
     echo "Das Verzeichnis existiert nicht.";
 }
+
+?>
 ```
 
-Diese Funktion kann auch verwendet werden, um zu überprüfen, ob ein Verzeichnis schreibbar ist, indem Sie `is_writable()` verwenden.
+Die Ausgabe dieses Codes hängt davon ab, ob das angegebene Verzeichnis tatsächlich existiert oder nicht. Wenn das Verzeichnis existiert, wird "Das Verzeichnis existiert." ausgegeben, andernfalls wird "Das Verzeichnis existiert nicht." ausgegeben.
 
-```PHP
-if (is_writable("uploads")) {
-    echo "Das Verzeichnis ist schreibbar.";
-} else {
-    echo "Das Verzeichnis ist nicht schreibbar.";
-}
-```
+## Tiefere Einblicke
+Die `is_dir()`-Funktion wurde erstmals in PHP 4.1 eingeführt und ist seitdem Teil der Kernsprache. Alternativ kann auch die `file_exists()`-Funktion verwendet werden, um zu überprüfen, ob ein Verzeichnis existiert oder nicht. Die Verwendung von `is_dir()` ist jedoch in diesem Fall vorzuziehen, da sie speziell für die Überprüfung auf Verzeichnisse entwickelt wurde.
 
-## Tiefergehende Informationen
-
-Wenn Sie genauer untersuchen möchten, warum ein Verzeichnis nicht existiert oder nicht schreibbar ist, können Sie die Funktion `file_exists()` verwenden, um zu überprüfen, ob es sich bei dem angegebenen Pfad um ein Verzeichnis handelt.
-
-```PHP
-$path = "uploads";
-
-if (file_exists($path) && is_dir($path)) {
-    echo "Das Verzeichnis existiert.";
-    if (is_writable($path)) {
-        echo "Das Verzeichnis ist schreibbar.";
-    }
-} else {
-    echo "Das Verzeichnis existiert nicht oder ist kein Verzeichnis.";
-}
-```
-
-Sie können auch den absoluten Pfad angeben, anstatt nur den Namen des Verzeichnisses zu verwenden, um sicherzustellen, dass Sie das richtige Verzeichnis überprüfen, insbesondere wenn Sie mit mehreren Verzeichnissen arbeiten.
+In einigen Fällen kann es auch hilfreich sein, den absoluten Pfad zum Verzeichnis anzugeben, um sicherzustellen, dass das richtige Verzeichnis überprüft wird. Dies kann mit Hilfe der `realpath()`-Funktion erreicht werden, die den absoluten Pfad für eine gegebene Pfadangabe zurückgibt.
 
 ## Siehe auch
-
-- [PHP-Dokumentation zu `is_dir()`](https://www.php.net/manual/de/function.is-dir.php)
-- [PHP-Dokumentation zu `is_writable()`](https://www.php.net/manual/de/function.is-writable.php)
-- [PHP-Dokumentation zu `file_exists()`](https://www.php.net/manual/de/function.file-exists.php)
+- [PHP-Dokumentation: is_dir()](https://www.php.net/manual/de/function.is-dir.php)
+- [PHP-Dokumentation: file_exists()](https://www.php.net/manual/de/function.file-exists.php)
+- [PHP-Dokumentation: realpath()](https://www.php.net/manual/de/function.realpath.php)

@@ -10,59 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i dlaczego?
+Pobieranie strony internetowej to proces pobierania kodu źródłowego witryny z internetu. Programiści mogą to robić z różnych powodów, na przykład do analizy kodu lub pobierania danych z witryny.
 
-Przeglądanie stron internetowych jest powszechnym zajęciem w dzisiejszych czasach. Czasami chcemy zapisać sobie ważne informacje z danej witryny, a innym razem po prostu chcemy mieć dostęp do niej w trybie offline. W tym artykule dowiemy się, jak w prosty sposób pobrać stronę internetową za pomocą języka C.
-
-## Jak to zrobić
-
-Do pobierania stron internetowych w języku C potrzebujemy dwóch bibliotek: `stdio.h` i `curl.h`. Następnie należy utworzyć obiekt typu `FILE` za pomocą funkcji `fopen()`, aby zapisać zawartość strony do pliku. Oto prosty przykład:
+## Jak to zrobić?
+Poniżej przedstawiam kod w języku C, który można użyć do pobrania strony internetowej i wyświetlenia jej kodu źródłowego w konsoli:
 
 ```C
-#include <stdio.h>
-#include <curl/curl.h>
+#include<stdio.h>
+#include<stdlib.h>
 
-int main(void)
-{
-  CURL *curl;
-  FILE *file;
-
-  curl = curl_easy_init();
-  file = fopen("strona.html", "wb");
-
-  if(curl)
-  {
-    curl_easy_setopt(curl, CURLOPT_URL, "https://www.example.com"); // tu podajemy adres strony
-    curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, NULL); // funkcja którą trzeba zdefiniować jeśli chcemy coś wykonać z pobraną zawartością
-    curl_easy_setopt(curl, CURLOPT_WRITEDATA, file); // wskaźnik do pliku do którego będzie zapisywana pobrana zawartość strony
-
-    CURLcode code = curl_easy_perform(curl); // uruchamiamy zapytanie
-
-    if(code == CURLE_OK)
-    {
-      printf("Strona pobrana pomyślnie!\n");
+int main(){
+    // deklaracja i inicjalizacja zmiennej dla adresu URL
+    char url[] = "https://www.example.com";
+    // otwarcie strumienia dla adresu URL
+    FILE *fp = fopen(url, "r");
+    // ustawienie maksymalnego rozmiaru dla odczytywanych danych
+    char buffer[100];
+    // odczytywanie danych ze strumienia i wyświetlenie ich w konsoli
+    while(fgets(buffer, 100, fp) != NULL){
+        printf("%s", buffer);
     }
-    else
-    {
-      printf("Wystąpił błąd: %s\n", curl_easy_strerror(code));
-    }
-
-    curl_easy_cleanup(curl);
-    fclose(file);
-  }
-
-  return 0;
+    // zamknięcie strumienia
+    fclose(fp);
+    return 0;
 }
 ```
+Wynikiem działania tego kodu będzie wyświetlenie kodu źródłowego strony internetowej w konsoli.
 
-Powyższy kod ściąga zawartość strony `https://www.example.com` i zapisuje ją do pliku `strona.html` w tym samym folderze, w którym znajduje się program. Jeśli chcesz wykorzystać pobraną zawartość w inny sposób, możesz zdefiniować własną funkcję w `CURLOPT_WRITEFUNCTION` i przekazać ją jako ostatni argument w `CULROPT_WRITEDATA`.
+## Głębszy zanurzenie
+Pobieranie stron internetowych jest powszechnie używanym zadaniem w programowaniu. W przeszłości, programiści musieli ręcznie pobierać kod źródłowy każdej witryny, co zajmowało im dużo czasu. Dzięki narzędziom, takim jak język C i biblioteka standardowa, można to robić w bardziej zautomatyzowany sposób.
 
-## Deep Dive
+Alternatywą dla pobierania stron internetowych jest wykorzystanie dedykowanych narzędzi do tego zadania, np. narzędzi w językach Python lub Ruby.
 
-Funkcja `curl_easy_setopt()` pozwala nam ustawiać różne opcje dla żądania HTTP. W przykładzie wyżej wykorzystaliśmy opcje `CURLOPT_URL`, `CURLOPT_WRITEFUNCTION` i `CURLOPT_WRITEDATA`, ale istnieje wiele innych, takich jak `CURLOPT_HTTPHEADER`, `CURLOPT_SSL_VERIFYPEER`, `CURLOPT_FOLLOWLOCATION` itp. Więcej informacji na temat wszystkich dostępnych opcji można znaleźć w dokumentacji biblioteki `libcurl`.
+Implementacja pobierania stron internetowych jest zależna od konkretnego języka programowania. W języku C, jak w przykładzie powyżej, wykorzystuje się funkcję `fopen()` do otwarcia strumienia dla adresu URL, a następnie czyta się dane z tego strumienia i wyświetla w konsoli.
 
-## Zobacz też
+## Zobacz także
+- [Dokumentacja biblioteki standardowej języka C](https://en.cppreference.com/w/c)
+- [Narzędzia do automatyzacji pobierania stron internetowych w języku Python](https://realpython.com/python-web-scraping-libraries/)
+- [Narzędzia do automatyzacji pobierania stron internetowych w języku Ruby](https://www.rubyguides.com/2019/10/ruby-web-scraping/)
 
-- [Dokumentacja biblioteki libcurl](https://curl.haxx.se/libcurl/c/)
-- [Oficjalna strona języka C](https://www.iso.org/standard/74528.html)
-- [Przykład użycia biblioteki libcurl do pobierania plików](https://bageac.com/blog/2016/01/05/download-ftp-http-with-libcurl-in-c-using-username-and-password-and-save-files-with.html)
+Dzięki wykorzystaniu języka C, programiści są w stanie szybko i łatwo pobierać strony internetowe i wykorzystywać je do różnych celów. Warto zaznajomić się z tą funkcjonalnością, ponieważ może przydać się w wielu projektach.

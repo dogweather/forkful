@@ -1,7 +1,7 @@
 ---
-title:                "Convertir une date en chaîne de caractères"
-html_title:           "C++: Convertir une date en chaîne de caractères"
-simple_title:         "Convertir une date en chaîne de caractères"
+title:                "Transformer une date en chaîne de caractères"
+html_title:           "C++: Transformer une date en chaîne de caractères"
+simple_title:         "Transformer une date en chaîne de caractères"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Dates and Times"
@@ -10,63 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
-Si vous travaillez avec des dates dans votre projet C++, il est probable que vous ayez besoin de les convertir en chaînes de caractères à un moment donné. Cela peut être utile pour afficher une date dans un format spécifique ou pour la stocker dans une base de données. Dans cet article, nous allons explorer comment effectuer cette conversion en utilisant le langage C++.
+## Qu'est-ce que c'est et pourquoi ?
+Convertir une date en chaîne de caractères consiste à prendre une date, généralement représentée sous forme de nombre, et la transformer en une chaîne de caractères qui peut être lue et interprétée par un humain. Les programmeurs font cela pour pouvoir afficher ou utiliser des dates dans un format plus convivial pour les utilisateurs, ou pour les manipuler dans certaines opérations.
 
-## Comment faire
-Tout d'abord, nous avons besoin d'une variable de type `std::tm` qui représente une date. Dans cet exemple, nous utiliserons la date actuelle en utilisant la fonction `std::time` :
-
-```
+## Comment faire :
+```C++
 #include <iostream>
-#include <iomanip>
 #include <ctime>
 
-int main()
-{
-  std::time_t t = std::time(nullptr);
-  std::tm* now = std::localtime(&t);
+int main() {
+    //Création d'un objet temps 
+    time_t now = time(0);
+
+    //Conversion de la date en chaîne de caractères en utilisant la fonction ctime 
+    char* date = ctime(&now);
+
+    //Afficher la date convertie 
+    std::cout << "La date est : " << date << std::endl; 
+
+    return 0;
 }
 ```
+Output : La date est : Wed Apr 21 16:28:03 2021
 
-Maintenant que nous avons notre date, nous pouvons utiliser la fonction `std::put_time` pour la convertir en une chaîne de caractères. Cette fonction prend un format et une date en paramètres et renvoie une chaîne de caractères correspondant à la date dans le format spécifié. Par exemple, pour obtenir une date au format "dd/mm/yyyy" :
+## Plongée en profondeur :
+1) Contexte historique : Avant l'utilisation de la programmation informatique, les dates étaient souvent écrites en chiffres, ce qui les rendait difficiles à lire pour les personnes qui n'étaient pas habituées à ce format. Les premiers programmeurs ont donc créé des fonctions pour convertir les dates en chaînes de caractères afin de les rendre plus compréhensibles pour les utilisateurs.
+2) Alternatives : Il existe d'autres façons de convertir une date en chaîne de caractères, telles que l'utilisation de bibliothèques externes ou la définition de fonctions personnalisées.
+3) Détails de l'implémentation : La fonction ctime utilise un objet temps pour représenter la date, et la convertit en une chaîne de caractères en utilisant un format standard. La bibliothèque <ctime> doit être incluse pour pouvoir utiliser cette fonction.
 
-```
-#include <iostream>
-#include <iomanip>
-#include <ctime>
-
-int main()
-{
-  std::time_t t = std::time(nullptr);
-  std::tm* now = std::localtime(&t);
-  
-  std::cout << std::put_time(now, "%d/%m/%Y") << std::endl;
-}
-```
-
-Cela affichera la date actuelle dans le format spécifié. Vous pouvez également personnaliser le format en utilisant des spécificateurs de conversion de style `printf` dans le premier paramètre de `std::put_time`. Par exemple, pour afficher la date au format "hh:mm:ss" avec l'heure au format 12 heures :
-
-```
-#include <iostream>
-#include <iomanip>
-#include <ctime>
-
-int main()
-{
-  std::time_t t = std::time(nullptr);
-  std::tm* now = std::localtime(&t);
-  
-  std::cout << std::put_time(now, "%I:%M:%S %p") << std::endl;
-}
-```
-
-Cela affichera l'heure actuelle dans le format spécifié avec "AM" ou "PM" à la fin pour indiquer la période de la journée.
-
-## Plongée en profondeur
-Si vous souhaitez utiliser des formats de date différents de ceux disponibles avec `std::put_time`, vous pouvez utiliser la fonction `std::strftime` qui prend également un format et une date en paramètres, mais qui offre une plus grande flexibilité. Vous pouvez trouver la liste complète des spécificateurs de conversion de style `printf` dans la documentation de `std::strftime`.
-
-De plus, n'oubliez pas que les fonctions `std::put_time` et `std::strftime` ne prennent pas en compte les paramètres régionaux (langue et pays) pour les formats de date. Si vous souhaitez utiliser des noms de jours et de mois dans votre langue maternelle, vous devrez les fournir manuellement en utilisant des tableaux de chaînes.
-
-## Voir aussi
-- [Documentation de std::put_time](https://en.cppreference.com/w/cpp/io/manip/put_time)
-- [Documentation de std::strftime](https://en.cppreference.com/w/cpp/chrono/c/strftime)
+## À voir aussi :
+- La documentation de la fonction ctime : https://www.cplusplus.com/reference/ctime/ctime/
+- Des exemples de conversion de dates en chaînes de caractères en utilisant différentes méthodes : https://www.programiz.com/cpp-programming/library-function/ctime/ctime

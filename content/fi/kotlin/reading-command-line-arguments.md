@@ -10,38 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä & Miksi?
 
-Komentoriviparametrien lukeminen on tärkeä osa ohjelmistokehitystä ja auttaa välttämään vakavia bugeja ohjelman suorituksessa. Se myös mahdollistaa käyttäjille antaa ohjelmalle erilaisia parametreja, mikä tekee siitä monipuolisemman ja käyttäjäystävällisemmän.
+Komentoriviargumenttien lukeminen on tapa, jolla ohjelmoijat voivat lukea syötteitä, joita käyttäjä antaa suoraan ohjelmalle komentorivillä. Tämä voi olla hyödyllistä esimerkiksi ohjelmassa, joka käsittelee tiedostoja, sillä käyttäjä voi antaa tiedoston nimen komentorivillä sen sijaan, että sen täytyisi kirjoittaa se ohjelman käyttöliittymään.
 
-## Miten
-
-Kotlinilla on helppo lukea komentoriviparametreja käyttämällä "args" muuttujaa. Se on taulukko, joka sisältää kaikki komentorivillä annetut parametrit. Seuraava esimerkki näyttää, kuinka tulostaa kaikki annetut parametrit:
+## Kuinka:
 
 ```Kotlin
 fun main(args: Array<String>) {
-    println("Komentoriviparametrit:")
-    for (arg in args) {
-        println(arg)
-    }
+    println("Ensimmäinen argumentti: ${args[0]}")
+    println("Toinen argumentti: ${args[1]}")
 }
 ```
 
-Kun ajetaan ohjelmaa komentoriviltä antaen sille esimerkiksi parametrit "one" ja "two", tuloste näyttää seuraavalta:
-
 ```
-Komentoriviparametrit:
-one
-two
+kotlin run tiedosto.kt argumentti1 argumentti2
 ```
 
-## Syvempi sukellus
+Tässä esimerkissä ohjelma tulostaa ensimmäisen ja toisen komentoriviargumentin arvon. Vaikka tässä esimerkissä käytetään vain kahta argumenttia, samaa logiikkaa voi soveltaa mihin tahansa määrään argumentteja.
 
-Vaikka yllä oleva esimerkki osoittaa, kuinka helppoa komentoriviparametrien lukeminen Kotlinilla on, on tärkeää muistaa, että taulukon indeksointi alkaa aina nollasta. Tämä tarkoittaa, että ensimmäinen parametri on "args[0]", toinen "args[1]" ja niin edelleen.
+## Syvällinen kaivelu:
 
-Lisäksi, jos haluat käsitellä tietyntyyppisiä parametreja (esim. kokonaislukuja tai desimaalilukuja), sinun on muunnettava ne oikeaan muotoon käyttämällä Kotlinin sisäänrakennettuja metodeja (esim. toInt() tai toDouble()).
+Komentoriviargumenttien lukeminen on ollut käytössä jo vuosikymmenten ajan, ja se on edelleen yksi yleisimmistä tavoista käsitellä käyttäjän syötteitä ohjelmissa. On myös muita tapoja lukea syötteitä, kuten esimerkiksi graafinen käyttöliittymä, mutta komentoriviargumentit ovat edelleen kätevä tapa hoitaa yksinkertaisia tehtäviä.
 
-## Katso myös
+Kotlinissa komentoriviargumentit ovat saatavilla `args` muuttujan kautta `main` funktion parametreina. Tämä muuttuja on taulukko, joka sisältää kaikki komentoriviargumentit, joita ohjelmaan on annettu.
 
- - [Kotlinin virallinen dokumentaatio komentoriviparametrien lukemisesta](https://kotlinlang.org/docs/reference/command-line.html)
- - [Kotlinin sisäänrakennetut metodiit numeroiden muuntamiseen](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/index.html#parsing-numbers)
+## Katso myös:
+
+- [Kotlin Doc - Command Line Arguments](https://kotlinlang.org/docs/tutorials/command-line.html)
+- [Baeldung - Command Line Arguments in Kotlin](https://www.baeldung.com/kotlin/command-line-arguments)

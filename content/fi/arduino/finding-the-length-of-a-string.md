@@ -1,7 +1,7 @@
 ---
-title:                "Merkkijonon pituuden löytäminen."
-html_title:           "Arduino: Merkkijonon pituuden löytäminen."
-simple_title:         "Merkkijonon pituuden löytäminen."
+title:                "Merkkijonon pituuden löytäminen"
+html_title:           "Arduino: Merkkijonon pituuden löytäminen"
+simple_title:         "Merkkijonon pituuden löytäminen"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Strings"
@@ -10,23 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
-Hakemalla merkkijonon pituuden voidaan helposti tarkistaa merkkijonon sisältämien merkkien määrä. Tämä voi olla hyödyllistä esimerkiksi merkkijonojen käsittelyssä tai vertailussa.
+## Mitä & Miksi?
 
-## Miten
+"Havainnollisesti selitettynä, merkkijonon pituuden löytäminen tarkoittaa merkkijonon sisältämien merkkien määrän laskemista. Tätä tarvitaan usein esimerkiksi ohjelmoinnissa, jotta voidaan varmistaa, että merkkijono mahtuu koodiin määriteltyyn muuttujan kokoon ilman että tietoa katoaa."
+
+## Miten:
+
+Kokeile seuraavaa koodia:
 ```Arduino
-String s = "Hei maailma!"; // Alustetaan merkkijono
-int length = s.length(); // Käytetään length()-funktiota saadaksemme merkkijonon pituuden
-Serial.println(length); // Tulostetaan pituus sarjaporttiin
+char string[] = "Tämä on merkkijono!";
+int len = strlen(string);
+Serial.println(len);
 ```
+Tulosteessa pitäisi näkyä luku 21, mikä vastaa merkkijonon "Tämä on merkkijono!" pituutta.
 
-Tuloste: 12
+## Purenta Pohjalle
 
-## Syventyminen
-Merkkijonojen pituuden hakeminen tapahtuu käyttämällä String-oliota ja sen sisäänrakennettua length()-funktiota. Funktio palauttaa kokonaisluvun, joka kertoo merkkijonon sisältämien merkkien määrän.
+Tutuksi tulleen termin "string length" takana piilee C-kielen funktio "strlen()", jota käytetään myös monissa muissa ohjelmointikielissä. Tämä funktio etsii ja laskee merkkijonon lopun ilmaistuna null-muuttujalla, ja palauttaa sitten merkkijonon pituuden nollahetkellä.
 
-Huomioitavaa on, että merkkijonon pituus ei sisällä lopetusmerkkiä (esim. \0), jos sitä käytetään osana merkkijonoa. Lisäksi merkkijonon pituus voi vaihdella eri ohjelmointikielillä riippuen siitä, mitä merkkijonon muodostavat merkit ovat.
+"String length" on yksi tärkeä osa merkkijonon käsittelyä, mutta on olemassa myös muita funktioita ja tapoja, joilla voidaan manipuloida ja löytää merkkijonojen pituus. Jokaisella kielellä on omat erityispiirteensä ja hyödylliset työkalunsa, joten kannattaa tutustua erilaisiin vaihtoehtoihin ja löytää itselleen sopiva tapa käsitellä merkkijonoja.
 
-## Katso myös
-- Reference manual for Arduino String: https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/
-- String length() function: https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/length/
+## Katso myös:
+
+[Lisätietoa Arduino string_length -toiminnosta](https://www.arduino.cc/reference/en/language/functions/string/stringlength/) 
+Jos olet kiinnostunut opettelemaan lisää merkkijonojen käsittelystä C-kielessä, suosittelemme tutustumaan [tähän opetusmateriaaliin](https://www.programiz.com/c-programming#string-handling).

@@ -10,31 +10,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que escrever testes é importante?
+## O que é e por que fazer?
 
-Escrever testes é uma prática muito valiosa na programação. Quando você escreve testes, está garantindo que o seu código funciona corretamente e pode ser alterado com confiança no futuro. Além disso, testes ajudam a comunicar a funcionalidade do seu código para outros desenvolvedores de forma clara e concisa.
+Escrever testes é um processo em que os programadores criam pequenos programas para testar o código que eles escreveram. Isso garante que o código funcione corretamente e evita bugs em seu software. É uma prática comum em programação e é altamente recomendado para garantir a qualidade do código.
 
-## Como escrever testes em Go
+## Como fazer:
 
-Para escrever testes eficientes em Go, é necessário utilizar a biblioteca de testes integrada, a "testing". Primeiro, importe a biblioteca utilizando o comando `import "testing"`. Depois, crie funções iniciando com a palavra chave `Test` e o nome do método a ser testado. Dentro da função, utilize os métodos `t.Error()` ou `t.Fail()` para indicar falhas nos testes. A seguir, um exemplo de teste para uma função que soma dois números inteiros:
+Para escrever testes em Go, é necessário usar o pacote `testing`. Dentro desse pacote, podemos usar a função `Test` para criar nossos testes. Aqui está um exemplo simples de como escrevê-los:
 
 ```
-func TestSoma(t *testing.T) {
-  resultado := soma(2, 3)
-  if resultado != 5 {
-    t.Fail()
-  }
+package main
+
+import "testing"
+
+func TestSum(t *testing.T) {
+	result := Sum(2, 3)
+	if result != 5 {
+		t.Errorf("Expected 5, got %d", result)
+	}
 }
 ```
 
-Você pode rodar os testes utilizando o comando `go test` no seu terminal. Caso todos os testes passem, você receberá a mensagem `ok`, caso contrário, receberá os erros específicos que devem ser corrigidos.
+Esse teste espera que a função `Sum` some corretamente os dois números e retorne 5. Se o resultado for diferente de 5, o teste falhará e mostrará uma mensagem de erro. É importante lembrar que o nome da função de teste deve começar com a palavra "Test" e receber um parâmetro do tipo `*testing.T`.
 
-## Mergulho profundo
+Podemos também usar a função `Run` para agrupar vários testes em um único lugar. Isso é útil para organizar melhor os testes e facilitar a execução de todos eles de uma vez. Aqui está um exemplo:
 
-Ao escrever testes em Go, é importante seguir algumas boas práticas. Nomeie suas funções de testes de forma descritiva e clara para facilitar a leitura e entendimento dos outros desenvolvedores. Além disso, é possível utilizar a função `t.Skip()` para ignorar certos testes em determinadas situações. Por fim, teste cada função individualmente e evite testar várias funcionalidades em um único teste.
+```
+func TestAll(t *testing.T) {
+	t.Run("Testing Sum", TestSum)
+	t.Run("Testing Subtraction", TestSub)
+	t.Run("Testing Multiplication", TestMult)
+	t.Run("Testing Division", TestDiv)
+}
+```
 
-## Veja também
+Essa seria a função `main` completa para rodar todos os testes que escrevemos:
 
-- [Documentação oficial do pacote de testes em Go](https://golang.org/pkg/testing/)
-- [Tutorial de como escrever testes em Go](https://golang.org/doc/tutorial/add-a-test)
-- [Boas práticas para escrever testes em Go](https://medium.com/@betuik/9-go-best-practices-that-you-should-always-follow-7f5d4333c4b6)
+```
+func main() {
+    t.Run("Tests", TestAll)
+}
+```
+
+## Mais detalhes:
+
+O teste de código é uma prática antiga que remonta aos primeiros dias da programação. No passado, os testes eram realizados manualmente, mas com a evolução da tecnologia, surgiram ferramentas e frameworks para automatizar esse processo. Em Go, o pacote `testing` é uma dessas ferramentas.
+
+Existem também outras formas de escrever testes em Go, como usando o pacote `testify`, que oferece uma sintaxe mais legível e fácil de usar. No entanto, o pacote `testing` já é uma ferramenta poderosa o suficiente para a maioria dos casos.
+
+Se você quiser se aprofundar mais em como escrever testes em Go, recomendo explorar a documentação oficial e experimentar diferentes técnicas e ferramentas.
+
+## Veja também:
+
+- Documentação oficial do pacote `testing` em Go: https://golang.org/pkg/testing/
+- Pacote `testify` para escrever testes em Go: https://github.com/stretchr/testify

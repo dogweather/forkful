@@ -10,40 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
-如果你需要在字符串中找出特定的一部分内容，可能会遇到需要提取子字符串的情况。比如，在一个长的网址中，你可能只需要获取其中的域名部分。提取子字符串就是解决这类问题的最佳方法。
+## 什么是子字符串？为什么程序员要这么做？
+子字符串就是从一个字符串中提取出一部分字符组成的新字符串。程序员经常这么做是为了对文本数据进行处理，例如搜索、替换或者格式化。
 
-## 如何提取子字符串
-提取子字符串可以通过使用`substring`方法来实现。以下是一个简单的示例，假设我们有一个字符串`let myString = "Hello, world!"`，现在我们想要提取其中的“world”部分。
+## 如何实现？
+使用Swift的```substring```方法可以轻松地从一个字符串中提取子字符串。例如，我们有一个字符串 ```let phrase = "我爱编程"```，若要提取出其中的 ```"编程"``` 这个词，只需要使用 ```let substring = phrase.substring(from: 2)``` 。
 
-```
-Swift let myString = "Hello, world!"
-let subString = myString.substring(from: 7)
-print(subString) // 输出：world
-```
+这会把字符串中索引为2（即第三个字符）及之后的部分提取出来。输出为 ```"编程"``` 。
 
-在上面的代码中，我们首先定义了一个字符串`myString`，然后使用`substring`方法并传入参数7来提取从第7个字符开始的子字符串，即“world”部分。最后，通过`print`语句打印出提取的子字符串。
+另一个有用的方法是使用下标语法 ```[ ]``` 将字符串与指定的索引位置结合起来。例如，若要提取字符串中索引为2到4的这一部分字符，在```let substring = phrase[2...4]```中，使用省略号表示范围。这会把字符串中索引为2至4的字符提取出来，输出为 ```"编程"```。
 
-## 深入了解提取子字符串
-除了上面提到的使用`substring`方法提取子字符串外，还有其他方法可以实现相同的功能。例如，我们可以使用下标来获取字符串中的特定字符，然后将它们拼接起来：
+## 深入了解
+子字符串的概念可以追溯到C语言中的```substring```函数，它的操作与Swift中的substring方法类似。除了使用substring方法外，也可以使用NSString的substring方法来从Swift字符串中提取子字符串。
 
-```
-Swift let myString = "Hello, world!"
-var subString = ""
+此外，还有一些替代方法，例如使用NSRegularExpression来提取符合特定模式的子字符串。
 
-for i in 7..<12 {
-  subString += String(myString[i])
-}
-print(subString) // 输出：world
-```
+实现子字符串的原理是利用字符串的索引和范围来获取指定位置的字符或字符序列，并将它们组合成新的字符串。由于Swift中的字符串类型是值类型，因此在提取子字符串时，会产生一个新的字符串实例。
 
-在上面的代码中，我们使用一个循环来遍历从第7个字符到第11个字符，然后将每个字符转换为字符串并拼接起来。最终得到的结果仍然是“world”。
+## 参考资料
+[Swift指南: 字符串和字符](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
 
-## 参考链接
-- [Swift字符串文档](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
-- [使用Swift提取子字符串](https://www.hackingwithswift.com/quick-start/understanding-swift/how-to-extract-a-substring-from-a-string)
-- [在Swift中提取子字符串的不同方法](https://medium.com/@gabemanford/how-to-extract-a-substring-in-swift-987d1a684f2a)
+[Swift官方文档: Substrings](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#ID319)
 
-## 参见
-- [Swift字符串操作指南](https://www.biaodianfu.com/swift-string-handling-guide.html)
-- [如何在Swift中使用字符串](https://www.appcoda.com/swift-string/)
+[String类文档: substring](https://developer.apple.com/documentation/swift/string/1688451-substring)
+
+[String类文档: substring(from:)](https://developer.apple.com/documentation/swift/string/1540984-substring)

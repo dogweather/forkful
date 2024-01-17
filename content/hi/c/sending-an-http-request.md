@@ -1,7 +1,7 @@
 ---
-title:                "एक HTTP अनुरोध भेजना"
-html_title:           "C: एक HTTP अनुरोध भेजना"
-simple_title:         "एक HTTP अनुरोध भेजना"
+title:                "HTTP अनुरोध भेजना"
+html_title:           "C: HTTP अनुरोध भेजना"
+simple_title:         "HTTP अनुरोध भेजना"
 programming_language: "C"
 category:             "C"
 tag:                  "HTML and the Web"
@@ -10,15 +10,13 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
+## क्या और क्यों?
+HTTP अनुरोध भेजना एक प्रोग्राम द्वारा किया जाने वाला काम है। इसका सबसे बड़ा कारण है कि प्रोग्रामर विभिन्न वेबसाइटों और सर्वरों से डेटा को प्राप्त करना और उसे अपने प्रोग्राम में शामिल करना चाहते हैं। 
 
-आपने निश्चित रूप से इंटरनेट पर सर्वसाधारण चीजों को ब्राउज़ किया है। आपने यह सोचा होगा कि सभी वेबसाइट पर जो सुविधाएं हैं, उसे कैसे प्राप्त किया जाता है। 
-
-## कैसे करें
-
+## कैसे करें?
+यहां हम एक GET अनुरोध भेजकर GitHub वेबसाइट से डेटा प्राप्त करते हैं: 
 ```C
 #include <stdio.h>
-#include <stdlib.h>
 #include <curl/curl.h>
 
 int main(void)
@@ -28,24 +26,30 @@ int main(void)
 
   curl = curl_easy_init();
   if(curl) {
-    curl_easy_setopt(curl, CURLOPT_URL, "https://www.example.com/");
+    curl_easy_setopt(curl, CURLOPT_URL, "https://www.github.com");
     res = curl_easy_perform(curl);
-    if(res != CURLE_OK)
-      fprintf(stderr, "curl_easy_perform() failed: %s\n",
-              curl_easy_strerror(res));
+
+    /* always cleanup */
     curl_easy_cleanup(curl);
   }
   return 0;
 }
 ```
+उपरोक्त कोड का परिणाम यह होगा:
+```C
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8">
+  </head>
+  <body>
+  ...
+```
 
-यहां हम CURL का उपयोग करके HTTP अनुरोध भेजने का एक उदाहरण देख सकते हैं। इसमें हम पूरी जानकारी को फफोहराते नहीं हैं, लेकिन फिर भी सीखोगे। 
+## गहराई में जाएँ
+1. HTTP का इतिहास: HTTP एक प्रसिद्ध इंटरनेट प्रोटोकॉल है जिसका उपयोग वेबसाइटों के बीच डेटा को शेयर करने के लिए होता है। यह कंप्यूटर नेटवर्क्स की तकनीकी मानक है जो अपने उपयोगकर्ताओं को इंटरनेट से डेटा अनुरोध करने की अनुमति देता है। 
+2. अल्टरनेटिव: कुछ अन्य चीजें HTTP अनुरोधों के लिए उपयोगी हो सकती हैं, जैसे Libcurl या cURL सहित विभिन्न लाइब्रेरी या टूल्स। 
+3. अनुमानित समय: HTTP अनुरोध भेजने के लिए इस्तेमाल की जाने वाली डाटा के आकार और अन्य तकनीकी विवरणों की गहराई।
 
-## गहराई में
-
-एचटीटीपी अनुरोध भेजना असाधारण ढंग से महत्वपूर्ण है। यह सबकुछ शुरू होता है जब आप एक वेबसाइट या सेवा के लिए फ़ैक्चर या डेटा काम कराते हैं। प्राथमिक ढंग से, आप वेबसाइट पते को एक सामान्य ब्राउज़र के माध्यम से दर्ज करते हैं। इससे आपका अनुरोध नैतिक रूप से वेबसाइट के सर्वर तक पहुँचता है और उससे योग्य उत्तर भेजा जाता है। इस प्रक्रिया को एचटीटीपी अनुरोध भेजने कहते हैं। 
-
-## देखें भी
-
-- [हर चीज़ जो आपने कभी एचटीटीपी के बारे में पूछा है](https://www.tutorialspoint.com/http/http_quick_guide.htm)
-- [एचटीटीपी से जुड़ी शब्दावली](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview)
+## और भी देखें
+- https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview

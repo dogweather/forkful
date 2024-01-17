@@ -10,48 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+# Calculer des dates dans le passé ou dans le futur avec Kotlin
 
-Il peut être utile de calculer une date dans le futur ou dans le passé lors de la programmation en Kotlin, par exemple pour planifier des tâches ou des événements. Heureusement, Kotlin offre des fonctionnalités simples et efficaces pour effectuer ces calculs.
+## Quoi & Pourquoi?
+Calculer une date dans le passé ou dans le futur consiste simplement à trouver une date qui se trouve avant ou après une date donnée. Les programmeurs le font souvent pour des tâches telles que la planification d'événements ou le suivi du temps écoulé entre deux dates.
 
-## Comment faire
+## Comment faire:
+Voici quelques exemples de code en Kotlin pour calculer des dates dans le passé ou dans le futur:
 
-La première étape pour calculer une date dans le futur ou dans le passé consiste à utiliser la classe `LocalDate` de Kotlin, qui représente une date sans prendre en compte les heures et les minutes. Nous pouvons créer cette classe en utilisant la méthode `now()` qui prend en paramètre le fuseau horaire souhaité. Par exemple :
+```Kotlin
+// Calculer une date dans le futur
+val dateActuelle = LocalDate.now()
+val dateDansUnAn = dateActuelle.plusYears(1)
+println("La date dans un an sera $dateDansUnAn")
+
+// Calculer une date dans le passé
+val dateActuelle = LocalDate.now()
+val dateIlYaUneSemaine = dateActuelle.minusWeeks(1)
+println("Il y a une semaine, c'était $dateIlYaUneSemaine")
+```
+Résultat:
 
 ```
-Kotlin
-val today = LocalDate.now(ZoneId.systemDefault())
+La date dans un an sera 2021-04-16
+Il y a une semaine, c'était 2021-04-09
 ```
 
-Une fois que nous avons notre date de référence, nous pouvons ajouter ou soustraire des jours, des mois ou des années en utilisant les méthodes `plus()` ou `minus()` en spécifiant le nombre d'unités souhaitées. Voici un exemple qui calcule la date dans une semaine à partir de la date de référence :
+## Plongée en profondeur:
+Historiquement, les calculs de dates ont été un défi pour les programmeurs en raison de la complexité du temps et des différentes façons dont les dates sont calculées dans les différents calendriers. Heureusement, les langages de programmation modernes comme Kotlin offrent des bibliothèques intégrées pour gérer facilement ces calculs.
 
-```
-Kotlin
-val futureDate = today.plus(1, ChronoUnit.WEEKS)
-```
+Il existe également des alternatives à la manipulation de dates en utilisant la classe d'origine de Kotlin, telle que l'utilisation d'une bibliothèque externe comme Joda-Time ou en utilisant des outils de gestion de dates dans les bases de données.
 
-Nous pouvons également spécifier une date précise en utilisant la méthode `of()` qui prend en paramètres l'année, le mois et le jour souhaités. Par exemple :
+Pour implémenter le calcul de dates dans le passé ou dans le futur, Kotlin utilise le concept de "fluent API" qui permet d'enchainer plusieurs méthodes sur un même objet.
 
-```
-Kotlin
-val date = LocalDate.of(2022, 5, 9)
-```
-
-Pour plus de flexibilité, Kotlin nous permet également d'utiliser la classe `LocalDateTime` qui prend en compte les heures et les minutes. Ainsi, nous pouvons spécifier une heure précise en utilisant la méthode `atTime()`. Par exemple :
-
-```
-Kotlin
-val dateTime = date.atTime(9, 30)
-```
-
-Nous pouvons également utiliser d'autres classes telles que `ZonedDateTime` ou `OffsetDateTime` pour gérer les fuseaux horaires et les décalages horaires.
-
-## Plongée en profondeur
-
-En utilisant les classes telles que `LocalDate` ou `LocalDateTime`, Kotlin nous permet de manipuler facilement les dates dans le futur ou dans le passé en éliminant la complexité liée aux fuseaux horaires et aux décalages horaires. De plus, en utilisant des méthodes telles que `plus()` ou `minus()`, nous avons la possibilité de spécifier des unités de temps variées, ce qui rend le calcul de dates encore plus flexible.
-
-## Voir aussi
-
-- Documentation officielle de Kotlin sur `LocalDate` : https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.time/-local-date/
-- Tutoriel sur les dates et heures en Kotlin : https://www.tutorialspoint.com/kotlin/kotlin_date_time.htm
-- Documentation sur les classes de temps en Kotlin : https://www.programiz.com/kotlin-programming/datetime
+## Voir aussi:
+- [Documentation officielle de Kotlin sur la manipulation de dates](https://kotlinlang.org/docs/datetime.html)
+- [Article Medium sur le calcul de dates avec Kotlin](https://medium.com/@mohitsharma_80641/date-and-calendar-apis-in-kotlin-d31ee1614032)
+- [Documentation officielle de Joda-Time](https://www.joda.org/joda-time/)

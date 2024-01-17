@@ -10,36 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么要使用随机数
+什么&为什么？
 
-在编程中，随机数是一个非常有用的概念。它可以帮助我们创建随机化的数据，并模拟真实世界的情况。比如在游戏开发中，随机数可以用来生成随机的敌人出现位置，使得游戏更具挑战性和多样性。因此，使用随机数可以为我们的程序增加一些乐趣和惊喜因素。
+随机数生成是指在程序中产生随机数字的过程。程序员之所以这样做是因为随机数在计算机科学和数据分析中起着重要作用。
 
-## 如何使用Fish Shell生成随机数
+如何：
 
-在Fish Shell中，生成随机数非常简单。我们可以使用内置的`math`命令来调用系统的随机数生成器，然后指定一个范围来生成随机数。举个例子，我们想要生成1到100之间的随机整数，可以这样写：
- 
-```Fish Shell
-set random_number (math random --max 100 + 1)
-echo $random_number
+Fish Shell可以通过使用rand命令来生成随机数。下面是一个简单的例子：
+
+```
+生成整数类型的随机数：
+fish -c "echo (rand)"
+0.146929
 ```
 
-运行结果可能是`69`，每次运行都会得到一个不同的随机数。同样的，我们也可以生成随机小数，比如生成一个0到1之间的随机数，可以这样写：
-
-```Fish Shell
-set random_number (math "random(0,1)")
-echo $random_number
+```
+生成指定范围内的随机数：
+fish -c "echo (rand 1 10)"
+6.68743
 ```
 
-输出可能是`0.7587`，每次运行得到的随机小数也不相同。使用Fish Shell生成随机数非常方便快捷，让我们的程序更具变化性和趣味性。
+Deep Dive：
 
-## 深入了解随机数生成
+随机数在计算机科学和数据分析中有着广泛的应用。早期的计算机并不具备随机数生成功能，而是通过一些简单的算法来产生伪随机数。随着技术发展，现代计算机可以通过硬件设备产生真随机数，例如利用噪声信号或者放射性衰变事件来获取随机性。
 
-在计算机中，随机数并不是真正的随机数，而是伪随机数。它们是通过算法来生成的，但也具有一定的随机性。在Fish Shell中，我们使用的是`L'Ecuyer-CMRG`算法来生成随机数，它是一种多维平衡迭代器。我们也可以通过设置种子数来控制随机数的生成，保证每次运行得到的随机数序列相同。
+除了使用Fish Shell的rand命令，程序员还可以通过其他语言和算法来生成随机数，例如Python的random模块和Java的Random类。对于安全性要求较高的应用，可以使用专门的加密随机数生成器来保证随机性。
 
-另外，除了`math`命令外，我们也可以使用`seq`命令来生成一系列随机数，更加灵活地控制范围和步长。总的来说，随机数在编程中可以用来模拟真实情况、增加趣味性和难度，也可以用来做密码学等安全性相关的工作。通过使用Fish Shell，我们可以简单地生成随机数，提高程序的效率和有趣性。
+See Also：
 
-## 参考链接
-
-* [Fish Shell官方文档](https://fishshell.com/docs/current/index.html)
-* [L'Ecuyer-CMRG算法的介绍](http://www.iro.umontreal.ca/~lecuyer/myftp/papers/rngjava-scix-1.3.pdf)
-* [随机数的应用场景](https://www.cnblogs.com/yangxiaolan/p/5779810.html)
+- [Fish Shell官方文档](https://fishshell.com/docs/current/index.html)
+- [随机数生成算法的比较](https://www.random.org/randomness)
+- [真随机数和伪随机数的区别](https://www.techopedia.com/definition/29537/pseudorandom-number-generator-prng)

@@ -10,46 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Qu'est-ce que c'est et pourquoi nous le faisons?
 
-Si vous êtes nouveau dans le monde de la programmation, vous vous demandez peut-être pourquoi quelqu'un voudrait lire des arguments de ligne de commande. Eh bien, il s'avère que cette compétence peut être très utile pour créer des programmes plus interagissants avec les utilisateurs.
+Lecture des arguments de ligne de commande, c'est le fait de récupérer les informations fournies par l'utilisateur lorsque le programme est appelé à partir de la ligne de commande. Les programmeurs le font pour rendre leurs programmes plus flexibles et personnalisables, en leur permettant d'être contrôlés par les utilisateurs via la ligne de commande.
 
-## Comment faire
+## Comment faire:
 
-Lorsque vous utilisez le langage de programmation Rust, lire des arguments de ligne de commande est assez simple. Tout d'abord, importez le module "std" et le module "env" pour accéder aux fonctions associées aux arguments de ligne de commande. Ensuite, utilisez la fonction "args" du module "env" pour récupérer une collection d'arguments. Vous pouvez ensuite itérer à travers cette collection pour utiliser les arguments dans votre programme.
-
-Voici un exemple de code pour lire et afficher les arguments de ligne de commande en Rust :
-
-```rust
+Voici un exemple de code en Rust pour lire les arguments de ligne de commande:
+```Rust
 use std::env;
- 
+
 fn main() {
+    // Récupérer les arguments
     let args: Vec<String> = env::args().collect();
- 
-    for arg in args {
-        println!("{}", arg);
-    }
+    
+    // Afficher le premier argument (le nom du programme)
+    println!("Nom du programme: {}", args[0]);
+    
+    // Afficher le deuxième argument (premier argument fourni par l'utilisateur)
+    println!("Premier argument: {}", args[1]);
+    
+    // Afficher tous les arguments (à l'exception du premier qui est le nom du programme)
+    println!("Tous les arguments: {:?}", &args[1..]);
 }
 ```
 
-Si vous exécutez ce code avec la commande ```./my_program hello world```, vous obtiendrez la sortie suivante :
-
+En exécutant ce code avec la commande `rustc main.rs` puis `./main hello world`, nous obtenons la sortie suivante:
 ```
-./my_program
-hello
-world
+Nom du programme: ./main
+Premier argument: hello
+Tous les arguments: ["hello", "world"]
 ```
 
-Notez que le premier argument est le nom du programme lui-même.
+## Plongée en profondeur:
 
-## Plongée en profondeur
+La lecture des arguments de ligne de commande est une pratique courante dans la programmation, et est souvent utilisée pour contrôler le comportement du programme ou pour fournir des paramètres. D'autres langages de programmation comme C et Python ont également des moyens pour lire les arguments de ligne de commande.
 
-Maintenant que vous savez comment lire des arguments de ligne de commande en Rust, vous pouvez utiliser cette compétence pour une variété de tâches. Par exemple, vous pouvez créer des programmes basés sur des paramètres spécifiques entrés par l'utilisateur, tels que la création d'un nouveau fichier avec un nom spécifié.
+Une alternative à la lecture des arguments de ligne de commande en Rust est d'utiliser une librairie externe, comme `clap` ou `structopt`, qui offrent plus de fonctionnalités et une meilleure gestion des erreurs.
 
-En utilisant des bibliothèques telles que "Clap" ou "Docopt", vous pouvez même créer des programmes avec une interface utilisateur plus avancée pour la gestion des arguments de ligne de commande.
+Au niveau de l'implémentation, la fonction `env::args()` renvoie un itérateur sur les arguments, qui peut être facilement converti en une `Vec` ou un autre type de collection. La documentation officielle de Rust offre plus de détails sur cette fonction.
 
-## Voir aussi
+## Voir aussi:
 
-- [Documentation officielle de Rust sur les arguments de ligne de commande](https://doc.rust-lang.org/std/env/index.html#args)
-- [Bibliothèque Clap pour créer des programmes avec des arguments de ligne de commande](https://docs.rs/clap/2.33.3/clap/)  
-- [Bibliothèque Docopt pour créer des programmes avec des arguments de ligne de commande](https://docs.rs/docopt/1.1.0/docopt/)
+Vous pouvez consulter la documentation officielle de Rust sur `env::args()` pour en apprendre davantage sur la lecture des arguments de ligne de commande en Rust. Vous pouvez également jeter un coup d'œil à la librairie `clap` ou `structopt` pour des alternatives plus avancées.

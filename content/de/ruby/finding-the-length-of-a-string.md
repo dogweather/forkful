@@ -1,7 +1,7 @@
 ---
-title:                "Die Länge eines Strings finden"
-html_title:           "Ruby: Die Länge eines Strings finden"
-simple_title:         "Die Länge eines Strings finden"
+title:                "Die Länge einer Zeichenkette bestimmen"
+html_title:           "Ruby: Die Länge einer Zeichenkette bestimmen"
+simple_title:         "Die Länge einer Zeichenkette bestimmen"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Strings"
@@ -10,38 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was & Warum?
 
-Wenn Sie Ruby lernen oder bereits verwenden, ist es wichtig zu wissen, wie Sie die Länge einer Zeichenkette finden können. Dies kann hilfreich sein, um Texte zu analysieren, Verarbeitung in einer Schleife durchzuführen oder einfach nur, um zu wissen, wie lang ein bestimmter Satz oder ein Wort ist.
+Die Länge einer Zeichenkette zu finden bedeutet, die Anzahl der Zeichen in einem Text oder einer Folge von Buchstaben zu ermitteln. Dies ist nützlich, um die Genauigkeit von Eingaben zu überprüfen oder um die Position bestimmter Zeichen innerhalb einer Zeichenkette zu bestimmen. Programmierer nutzen diese Funktion, um die korrekte Verarbeitung von Benutzereingaben sicherzustellen und um effizient auf spezifische Zeichen zuzugreifen.
 
-## Wie geht es?
+## Wie geht's:
 
-Um die Länge einer Zeichenkette in Ruby zu finden, können Sie die `.length` Methode verwenden. Diese Methode gibt die Anzahl der Zeichen in der Zeichenkette zurück.
-
-```Ruby
-puts "Hallo Welt".length
 ```
-Dieser Code gibt die Ausgabe `10` zurück, da die Zeichenkette "Hallo Welt" aus 10 Zeichen besteht (einschließlich Leerzeichen). Sie können auch Variablen verwenden, um die Länge von Benutzereingaben oder anderen Zeichenketten zu finden.
+# Beispiel 1
+puts "Hallo, Welt!".length
+# Output: 12
 
-```Ruby
-eingabe = gets.chomp
-puts "Die eingegebene Zeichenkette hat #{eingabe.length} Zeichen."
-```
-
-Wenn der Benutzer zum Beispiel "Hallo" eingibt, wird die Ausgabe `Die eingegebene Zeichenkette hat 5 Zeichen.` ausgegeben. Sie können auch die `.size` Methode verwenden, die das gleiche Ergebnis liefert wie die `.length` Methode. Es ist jedoch zu beachten, dass die Verwendung von `.length` für Zeichenketten und `.size` für Arrays und Hashes allgemein üblich ist.
-
-## Tiefer Einblick
-
-Die `.length` Methode zählt nicht nur die tatsächlichen Buchstaben in einer Zeichenkette, sondern auch Leerzeichen, Satzzeichen und Sonderzeichen. Wenn Sie also eine Zeichenkette mit Leerzeichen oder Satzzeichen haben, wird die Anzahl der Zeichen in der Ausgabe größer sein als die Anzahl der tatsächlichen Buchstaben. Wenn Sie nur die Anzahl der Buchstaben zählen möchten, können Sie die `.count()` Methode verwenden und bestimmte Zeichen angeben, die gezählt werden sollen.
-
-```Ruby
-puts "Hallo welt".count("Ll") # zählt nur L und l
+# Beispiel 2
+name = "Maria"
+puts name.length
+# Output: 5
 ```
 
-Die Ausgabe für diesen Code wäre `3`, da es in der Zeichenkette "Hallo welt" insgesamt drei Buchstaben "L" und "l" gibt.
+## Tiefergehende Information:
 
-## Siehe auch
+(1) Die Funktion `length` existiert nicht nur in der aktuellen Version von Ruby, sondern wird auch in älteren Versionen und anderen Programmiersprachen wie Java oder JavaScript verwendet. (2) Eine alternative Methode, um die Länge einer Zeichenkette zu ermitteln, ist die Verwendung von Regular Expressions oder die manuelle Zählung der Zeichen. (3) In Ruby wird die Länge einer Zeichenkette durch eine interne Zählschleife ermittelt, was eine schnelle und effiziente Methode darstellt.
 
-- [Ruby Dokumentation für .length und .size](https://ruby-doc.org/core-3.0.0/String.html#method-i-length)
-- [Ruby Dokumentation für .count](https://ruby-doc.org/core-3.0.0/String.html#method-i-count)
-- [Codecademy Tutorial für Strings in Ruby](https://www.codecademy.com/learn/learn-ruby/modules/learn-ruby-introduction-to-strings)
+## Siehe auch:
+
+- [Ruby-Dokumentation zur Funktion `length`](https://ruby-doc.org/core-3.0.2/String.html#method-i-length)
+- [Beispiele zur Nutzung von `length` in Ruby](https://www.rubyguides.com/2018/10/ruby-string-length/)
+- [Alternative Methoden zur Ermittlung der Länge einer Zeichenkette in Ruby](https://www.rubyguides.com/2018/06/ruby-string-methods/#length)

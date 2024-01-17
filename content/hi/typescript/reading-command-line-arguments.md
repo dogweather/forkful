@@ -1,7 +1,7 @@
 ---
-title:                "कम्प्यूटर प्रोग्रामिंग पर एक लेख: कमांड लाइन आर्गुमेंट्स पढ़ना।"
-html_title:           "TypeScript: कम्प्यूटर प्रोग्रामिंग पर एक लेख: कमांड लाइन आर्गुमेंट्स पढ़ना।"
-simple_title:         "कम्प्यूटर प्रोग्रामिंग पर एक लेख: कमांड लाइन आर्गुमेंट्स पढ़ना।"
+title:                "कम्प्यूटर प्रोग्रामिंग पर लेख: कमांड लाइन आर्ग्यूमेंट्स पढ़ना"
+html_title:           "TypeScript: कम्प्यूटर प्रोग्रामिंग पर लेख: कमांड लाइन आर्ग्यूमेंट्स पढ़ना"
+simple_title:         "कम्प्यूटर प्रोग्रामिंग पर लेख: कमांड लाइन आर्ग्यूमेंट्स पढ़ना"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Files and I/O"
@@ -10,45 +10,21 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Kyun
+"## क्या और क्यों?"
+कॉमांड लाइन आर्ग्यूमेंट पढ़ना क्या है, और प्रोग्रामर्स यह क्यों करते हैं? कॉमांड लाइन आर्ग्यूमेंट पढ़ना एक अहम टैस्क है जो किसी भी टाइपस्क्रिप्ट प्रोग्राम को चलाने से पहले किया जाता है। यह उन आर्ग्यूमेंट्स को रूपांतरित करता है जो यूजर कमांड लाइन से देता है और उन्हें प्रोग्राम में उपयोग किया जाता है। 
 
-Agar aap TypeScript ka estemaal karte hai, to aapko jaanna zaroori hai ki command line arguments kya hai aur inka istemaal kaise karte hai. Is article mein hum aapko batayenge ki TypeScript mein command line arguments ka istemaal kaise kiya jaata hai.
-
-## Kaise Karein
-
-Command line arguments ko TypeScript mein read karne ke liye, hum `process.argv` ka istemaal karte hai. Iska format hai `process.argv[index]` jahan index 0 se shuru hota hai aur pehla argument ko index 2 par store kiya jaata hai. Is tarah se hum saare arguments ko access kar sakte hai. Neeche ek coding example diya gaya hai jis mein hum ek file ko run karne ke liye require kiye gaye arguments ko print karenge:
-
-```TypeScript
-// File Name: arguments.ts
-
-console.log("Chal raha hai!");
-
-console.log("Command line arguments:");
-
-for (let i = 2; i < process.argv.length; i++) {
-  console.log(`Index ${i}: ${process.argv[i]}`);
-}
+"## कैसे करें:"
+```TypeScript 
+const args: string[] = process.argv;
+console.log(`यूजर द्वारा दिए गए आर्ग्यूमेंट्स: ${args}`);
 ```
 
-Output:
+यह कोड `process.argv` को युक्ति क्षेत्र में आर्ग्यूमेंट्स के जांच के लिए इस्तेमाल करता है और अपने आर्ग्यूमेंट्स को एक एरे में संग्रहीत करता है। हम उसे अपनी कन्सोल में प्रिंट करते हैं।
 
-```
-Chal raha hai!
-Command line arguments:
-Index 2: abc
-Index 3: def
-Index 4: ghi
-```
+## डीप डाइव:
+कॉमांड लाइन आर्ग्यूमेंट पढ़ने का इतिहास बहुत पुराना है। यह कंप्यूटर प्रोग्रामिंग के शुरुआती दौर से ही मौजूद है। क्योंकि यूजर को संचित डेटा को प्रोग्राम में भेजने के लिए इस्तेमाल किया जाता है। अगर आपको किसी अन्य भाषा में आर्ग्यूमेंट पढ़ना नहीं आता है, तो आप टाइपस्क्रिप्ट में `process.argv` के साथ संबंधित लाइब्रेरी या पैकेज का उपयोग कर सकते हैं। इसके अलावा, यदि आपको बात समझने में कोई दिक्कत हो रही है, तो आप निम्नलिखित स्रोतों को देख सकते हैं:
 
-## Deep Dive
-
-Command line arguments ko read karne se pehle, humein `string[]` type ka interface define karna hoga. Yeh interface humein `process.argv` ki help se provide kiya jaata hai. TypeScript ke saare standard libraries mein `process.argv` defined hai. 
-
-Agar aap multiple values ko alag alag arguments ke roop mein pass karna chahte hai, to aap backticks (`) ka istemaal kar sakte hai. Is tarah se aap ek string ko multiple arguments ke roop mein pass kar sakte hai.
-
-Interfaces ko define karne ke liye, aap `*.d.ts` files ka estemaal kar sakte hai. Yeh files TypeScript ke type checking ka kaam karte hai aur humare local `typings` folder mein store kiye jaate hai.
-
-## Dekhiye Bhi
-
-- [Official TypeScript Documentation on Command Line Arguments](https://www.typescriptlang.org/docs/handbook/modules.html)
-- [TypeScript Tutorials for Beginners](https://www.tutorialspoint.com/typescript/)
+"## देखें:"
+- [डेनो कमांड लाइन आर्ग्यूमेंट पढ़ने के बारे में अधिक जानकारी](https://dinacconet.com/blog/reading-command-line-arguments-using-deno/)
+- [जावास्क्रिप्ट कमांड लाइन आर्ग्यूमेंट पढ़ने के बारे में विस्तृत गाइड](https://www.dashingd3js.com/command-line-arguments)
+- [नोड जेएस कमांड लाइन आर्ग्यूमेंट पढ़ने का विस्तारित ट्यूटोरियल](https://stackabuse.com/command-line-arguments-in-node-js/)

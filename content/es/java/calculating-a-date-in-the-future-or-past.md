@@ -10,41 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¿Qué es y por qué se calcula una fecha en el futuro o pasado?
+Calcular una fecha en el futuro o pasado es una función común en la programación en Java. Consiste en manipular fechas y horas para obtener una fecha específica, ya sea en el futuro o en el pasado. Los programadores suelen hacer esto para realizar tareas como programar eventos, recordatorios o realizar cálculos basados en ciertas fechas.
 
-Calcular una fecha en el futuro o en el pasado puede ser útil para realizar tareas como planificar eventos, realizar seguimiento de plazos o calcular la edad de una persona en una fecha determinada.
+## Cómo hacerlo:
+Para calcular una fecha en el futuro o pasado en Java, se pueden seguir los siguientes pasos:
 
-## Cómo hacerlo
-
-Para calcular una fecha en Java, primero se debe utilizar la clase `LocalDate` del paquete `java.time`. A continuación, se pueden utilizar diferentes métodos para manipular la fecha, como `plusDays()` para sumar días, `plusMonths()` para sumar meses o `plusYears()` para sumar años.
-
-```Java
-// Importar la clase LocalDate
+- Importar la clase `java.time.LocalDate`: ```Java
 import java.time.LocalDate;
-
-// Crear una fecha de ejemplo
-LocalDate fecha = LocalDate.of(2020, 10, 15);
-
-// Sumar 5 días a la fecha
-LocalDate fechaFutura = fecha.plusDays(5); // Resultado: 2020-10-20
-
-// Restar 2 meses a la fecha
-LocalDate fechaPasada = fecha.minusMonths(2); // Resultado: 2020-08-15
-
-// Calcular la edad en una fecha determinada
-LocalDate fechaNacimiento = LocalDate.of(1990, 5, 25);
-LocalDate fechaActual = LocalDate.now();
-int edad = fechaNacimiento.until(fechaActual).getYears(); // Resultado: 30
+```
+- Crear un objeto de tipo `LocalDate` con la fecha actual:
+```Java
+LocalDate today = LocalDate.now();
+```
+- Utilizar el método `plus()` para sumar días, meses o años a la fecha actual: ```Java
+LocalDate result = today.plus(10, ChronoUnit.DAYS);
+```
+- Utilizar el método `minus()` para restar días, meses o años a la fecha actual: ```Java
+LocalDate result = today.minus(10, ChronoUnit.YEARS);
+```
+- Imprimir el resultado: ```Java
+System.out.println("Resultado: " + result);
 ```
 
-## Profundizando
+El resultado final sería una fecha en el futuro o pasado, dependiendo de los parámetros que se hayan utilizado.
 
-Java ofrece varias clases y métodos para trabajar con fechas y realizar cálculos. Algunas de las clases más importantes son `LocalDate`, `LocalDateTime` y `ZonedDateTime`. Además, se pueden utilizar métodos como `until()` para obtener la diferencia entre dos fechas, `isBefore()` y `isAfter()` para comparar fechas, y `get()` para obtener valores específicos como el día o el mes.
+## En detalle:
+La manipulación de fechas y horas en Java se ha vuelto más fácil desde la introducción de la clase `java.time` en la versión 8. Antes de eso, se utilizaban las clases `Date` y `Calendar` que no eran tan eficientes ni fáciles de usar. La clase `LocalDate` ofrece muchos métodos útiles para manipular fechas, como `plus()`, `minus()`, `isBefore()` y `isAfter()`, entre otros.
 
-Es importante tener en cuenta que las fechas en Java son inmutables, lo que significa que no se pueden modificar directamente. En su lugar, se deben crear nuevas instancias con los valores deseados.
+Otra forma de calcular una fecha en el futuro o pasado es utilizando la clase `java.util.Calendar` y su método `add()`. Sin embargo, esta forma es más verbosa y menos eficiente en comparación con el uso de la clase `LocalDate`.
 
-## Ver también
+Es importante mencionar que al trabajar con fechas y horas, siempre se deben tener en cuenta posibles errores de formato o de zona horaria. Por lo tanto, es recomendable utilizar clases como `DateTimeFormatter` o `ZoneId` para garantizar la precisión y evitar problemas en el futuro.
 
-- Documentación oficial de Java sobre el paquete `java.time`: https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html
-- Tutorial de Baeldung sobre cómo trabajar con fechas en Java: https://www.baeldung.com/java-date-time
-- Ejemplos de código para calcular fechas en Java: https://www.baeldung.com/java-math-dates
+## Ver también:
+- [API de Java 8 - Clase LocalDate](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
+- [Tutorial de manipulación de fechas en Java](https://www.baeldung.com/java-date-time-manipulation)

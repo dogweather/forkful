@@ -10,52 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+## O que e por que?
+Ler argumentos da linha de comando é uma forma de obter informações do usuário diretamente na linha de comando, sem a necessidade de um formulário ou interface gráfica. Isso pode ser útil para passar informações importantes ao executar um programa ou script. Programadores usam a leitura de argumentos da linha de comando para tornar seus programas mais flexíveis e fáceis de usar.
 
-Ao escrever um código em Javascript, é importante considerar que ele pode ser executado não apenas em um navegador, mas também no ambiente de linha de comando. Por isso, entender como ler os argumentos passados pela linha de comando pode ser muito útil para tornar seu código mais versátil e útil para diferentes propósitos.
-
-## Como Fazer
-
-Para ler os argumentos de linha de comando em Javascript, podemos usar o objeto `process` incorporado no Node.js. Ele contém uma propriedade `argv` que armazena um array com todos os argumentos passados pela linha de comando.
-
-Veja um exemplo abaixo:
-
+## Como fazer:
 ```Javascript
-// arquivo: arguments.js
-console.log(process.argv);
+// Exemplo de um programa que lê argumentos da linha de comando
+
+// Criando uma variável para armazenar os argumentos
+let args = process.argv;
+
+// Verificando se foram passados argumentos suficientes
+if (args.length < 3) {
+  console.log("É necessário passar pelo menos um argumento.");
+} else {
+  // Iterando sobre os argumentos e imprimindo-os na tela
+  for (let i = 2; i < args.length; i++) {
+    console.log(`Argumento ${i - 1}: ${args[i]}`);
+  }
+}
+
+// Exemplo de saída no console
+$ node script.js argumento1 argumento2 argumento3
+Argumento 1: argumento1
+Argumento 2: argumento2
+Argumento 3: argumento3
 ```
 
-Se executarmos este código no terminal utilizando o comando `node arguments.js arg1 arg2`, teremos a seguinte saída:
+## Mergulho profundo:
+A leitura de argumentos da linha de comando não é uma prática nova e está presente em diversas linguagens de programação. No entanto, com o avanço das interfaces gráficas, essa habilidade foi perdendo sua relevância. Mesmo assim, é possível encontrar situações em que a leitura de argumentos da linha de comando é necessária, especialmente em scripts e programas que são executados em servidores sem interface gráfica. Alternativas à leitura de argumentos da linha de comando incluem a definição de variáveis de ambiente e a utilização de arquivos de configuração. Na implementação, a leitura de argumentos da linha de comando é realizada através do objeto global do Node.js, ```process```, e o método ```argv``` que retorna um array contendo os argumentos passados.
 
-```Javascript
-["node", "arguments.js", "arg1", "arg2"]
-```
-
-Neste caso, o primeiro elemento do array é o caminho para o executável do Node.js, seguido pelo nome do arquivo que estamos executando e, por fim, os argumentos `arg1` e `arg2`.
-
-Podemos também ler os argumentos individualmente, utilizando o índice do array. Por exemplo:
-
-```Javascript
-// arquivo: arguments.js
-console.log(process.argv[2]);
-console.log(process.argv[3]);
-```
-
-Com isso, se executarmos novamente o código com `node arguments.js arg1 arg2`, teremos na saída:
-
-```Javascript
-"arg1"
-"arg2"
-```
-
-## Mergulho Profundo
-
-O objeto `process` também contém outras propriedades úteis relacionadas aos argumentos de linha de comando, como `argv0` (que armazena o mesmo valor do índice 0 do array `argv`), `execArgv` (que armazena os argumentos de execução do Node.js) e `execPath` (que armazena o caminho para o executável do Node.js). Além disso, é possível utilizar módulos externos, como o `yargs`, para facilitar o processamento e validação de argumentos.
-
-Vale lembrar também que no ambiente de linha de comando, podemos utilizar o JavaScript ES6 com o auxílio do Babel, possibilitando o uso de funcionalidades como rest parameters e destructuring assignment.
-
-## Veja Também
-
-- [Documentação do objeto `process` no Node.js (em inglês)](https://nodejs.org/docs/latest/api/process.html)
-- [Módulo `yargs` para processamento de argumentos de linha de comando (em inglês)](https://www.npmjs.com/package/yargs)
-- [Página oficial do Babel (em inglês)](https://babeljs.io/)
+## Veja também:
+- [Documentação oficial do Node.js sobre a leitura de argumentos da linha de comando](https://nodejs.org/docs/latest/api/process.html#process_process_argv)

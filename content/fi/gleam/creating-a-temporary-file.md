@@ -1,7 +1,7 @@
 ---
-title:                "Väliaikaistiedoston luominen"
-html_title:           "Gleam: Väliaikaistiedoston luominen"
-simple_title:         "Väliaikaistiedoston luominen"
+title:                "Tilapäisen tiedostopohjan luominen"
+html_title:           "Gleam: Tilapäisen tiedostopohjan luominen"
+simple_title:         "Tilapäisen tiedostopohjan luominen"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Files and I/O"
@@ -10,33 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi luoda väliaikainen tiedosto ja mitä sillä tehdä?
+## Mikä & Miksi?
+Luodaan väliaikaisia tiedostoja ohjelmointiprosessissa. Tällä tavoin voidaan hallita muistinkäyttöä ja välttää tietoturvariskejä. Ohjelmoinnin aikana väliaikaisia tiedostoja käytetään myös tilapäisten tietojen tallentamiseen tai muokkaamiseen.
 
-Joskus ohjelmointitehtävä vaatii väliaikaisen tiedoston luomista, joka poistuu käytön jälkeen. Tämä voi olla esimerkiksi datan tallentamiseen tarvittava tiedosto lyhyellä aikavälillä tai prosessien välisen tiedonsiirron väline. Gleamin avulla voit luoda ja hallinnoida väliaikaisia tiedostoja helposti ja tehokkaasti.
-
-## Kuinka luoda väliaikainen tiedosto Gleamilla?
-
-Luodaksesi väliaikaisen tiedoston Gleamilla, käytä "temp_file" -funktiota, joka palauttaa tiedostollisen iteraattorin.
+## Näin teet sen:
+Tässä on yksinkertainen esimerkki väliaikaisen tiedoston luomisesta Gleamissa:
 
 ```Gleam
-let temp_file = io.temp_file("temp_data.txt")
+// Lataa tarvittavat moduulit
+import gleam/io
+import gleam/file
+
+// Luo väliaikainen tiedosto nimeltä "tempfile"
+tempfile = file.temp("tempfile")
+
+// Avaa tiedosto kirjoittamista varten
+file.write(tempfile, "Tämä on väliaikainen tiedosto.")
+
+// Lue tiedoston sisältö ja tulosta se
+gleam/io.println(file.read(tempfile))
+
+// Sulje tiedosto ja poista se
+file.close(tempfile)
+file.delete(tempfile)
+
+//Tulostaa:
+//Tämä on väliaikainen tiedosto.
 ```
 
-Voit myös määrittää parametrina tiedoston nimen tai annattaa Gleamin luoda satunnaisen nimen automaattisesti. Tiedostoa voi käyttää normaalisti tiedoston käsittelyyn ja lopuksi se poistetaan automaattisesti käytön jälkeen.
+## Syvyyteen:
+Väliaikaisten tiedostojen käyttö on yleinen käytäntö ohjelmoinnissa. Tiedostoja käytetään usein väliaikaisesti tietojen tallentamiseen tai väliaikaisena vaiheena tiedosto-toimintojen suorittamisessa. Alternatiivina Gleamin file.moduulille on myös mahdollista luoda ja käsitellä väliaikaisia tiedostoja manuaalisesti. Tämä voidaan tehdä käyttämällä POSIX-kirjaston ja C-koodia.
 
-```Gleam
-let temp_file = io.temp_file() // Luodaan satunnainen nimi
-let result = io.write(temp_file, "Tässä on väliaikaisen tiedoston sisältö!")
-let data = io.read(temp_file)
-io.close(temp_file) // Tiedosto suljetaan ja poistetaan automaattisesti
-```
-
-## Syvällinen sukellus: Väliaikaisten tiedostojen luominen Gleamilla
-
-Kun käytät "temp_file" -funktiota, Gleam luo tiedoston käyttäjän käyttöjärjestelmän väliaikaisten tiedostojen hakemistoon. Tämän lisäksi Gleam käyttää automaattisesti "defer" -lauseketta, joka poistaa tiedoston käytön jälkeen, vaikka prosessi päättyisi virheeseen.
-
-Yleensä väliaikaisia tiedostoja käytetään vain lyhyellä aikavälillä, joten Gleam tarjoaa helpon ja turvallisen vaihtoehdon niiden luomiseen ja hallinnoimiseen. Muista kuitenkin, että väliaikaiset tiedostot voivat myös olla haavoittuvia ja turvallisuusriski, jos niitä ei käsitellä oikein. Ole siis tarkkaavainen ja varmista, että poistat tiedoston aina käytön jälkeen.
-
-## Katso myös
-
-[Tiedostojen käsittely Gleamilla](https://gleam.run/articles/files/)
+## Katso myös:
+- Gleamin file.moduulin dokumentaatio: https://gleam.run/modules/gleam/file/latest/
+- Gleam-kirjaston dokumentaatio POSIX: https://gleam.run/modules/gleam/posix/latest/
+- Mahdollisuuden hallita tiedostoja suoraan C-koodissa: https://en.cppreference.com/w/c/io/tmpfile

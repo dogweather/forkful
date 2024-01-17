@@ -1,7 +1,7 @@
 ---
-title:                "भविष्य या भूतकाल में एक तिथि को गणना करना"
-html_title:           "C++: भविष्य या भूतकाल में एक तिथि को गणना करना"
-simple_title:         "भविष्य या भूतकाल में एक तिथि को गणना करना"
+title:                "भविष्य या भूतकाल में एक तारीख की गणना"
+html_title:           "C++: भविष्य या भूतकाल में एक तारीख की गणना"
+simple_title:         "भविष्य या भूतकाल में एक तारीख की गणना"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Dates and Times"
@@ -10,75 +10,64 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Kyun
-Kya aapne kabhi socha hai ki aapne kisi event ya appointment ko kitne din baad ya pehle se schedule kiya hai? Apne future plans ko organize karte waqt, hume ek particular date tak pahunchne ki zarurat hoti hai, isliye future aur past mein taareekh calculate karna important ho jata hai.
+# हालांकि इस आलेख के बारे में कुछ विस्तार नहीं होगा, फिर भी यह साहस और अन्वेषणात्मक कदम लेने के लिए काफी हो सकता है। अब आपको कोई ज़्यादा चिंता करने की ज़रूरत नहीं है कि यदि आपने इसे नहीं किया है तो ये आर्टिकल को त्याग दें, क्योंकि ये आपकी निजी तर्कों से उच्च उन्नति कर सकता है।
 
-## Kaise Karein
+## वो क्या है और क्यों?
+जब हम प्रोग्रामिंग द्वारा तिथि की गणना करते हैं, तो हम आने वाले कुछ दिनों को या गुज़रे हुए कुछ दिनों को जानने की कोशिश करते हैं। प्रोग्रामर्स इसे ध्यान देने के लिए करते हैं कि वे यह तिथि समूहों में समन्वय कर सकें।
+
+## कैसे हो?
+    इसे प्रोग्रामिंग में कैसे करे आप देख सकते हैं । चलिए स्क्रीन के सामने कूद जाएँ और कंयूटर टेबल ले लो।
+
 ```C++
-#include<iostream>
-using namespace std;
-int main()
-{
-  int current_day = 8; // Current day of the month
-  int current_month = 6; // Current month
-  int current_year = 2021; // Current year
+#include <iostream>
+// अपक्षेल लाइब्रर्रिज़
+#include <chrono>
+#include <ctime>
 
-  // To calculate a date in the future
-  int future_day = current_day + 10; // Add 10 days to the current day
-  int future_month = current_month; // Future month will be same as current month
-  int future_year = current_year; // Future year will be same as current year
+int main() {
+    // विवेक स्फुर्ता
+    auto अब = std::chrono::system_clock::now();
+    // सर्व्या मित्र काल(कालांतरी से अब सेकेंड्स में)
+    std::time_t सर्व्या मित्र = std::chrono::system_clock::to_time_t(अब);
 
-  // Check if the future day exceeds number of days in the month
-  if(future_day > 31) 
-  {
-    // Add remaining days to the next month
-    future_day = future_day - 31;
-    future_month += 1;
-  }
+    std::cout << "अब की समय: " << std::ctime(&सर्व्या मित्र);
 
-  // Check if the future month exceeds 12
-  if(future_month > 12)
-  {
-    // Reset month to 1 and increment year
-    future_month = 1;
-    future_year += 1;
-  }
-
-  // Output the future date
-  cout<<"Future date: "<<future_day<<"/"<<future_month<<"/"<<future_year<<endl;
-
-  // To calculate a date in the past
-  int past_day = current_day - 5; // Subtract 5 days from the current day
-  int past_month = current_month; // Past month will be same as current month
-  int past_year = current_year; // Past year will be same as current year
-
-  // Check if past day is less than 1
-  if(past_day < 1) 
-  {
-    // Calculate remaining days to be subtracted from previous month
-    past_day = 31 - (5 - current_day);
-    past_month -= 1;
-  }
-
-  // Check if past month is less than 1
-  if(past_month < 1)
-  {
-    // Reset month to 12 and decrement year
-    past_month = 12;
-    past_year -= 1;
-  }
-
-  // Output the past date
-  cout<<"Past date: "<<past_day<<"/"<<past_month<<"/"<<past_year<<endl;
-
-  return 0; 
+    return 0;
 }
 ```
 
-## Deep Dive
-Is code mein, hum current taareekh ko lekar future aur past dates ko calculate karne ke liye simple logic ka upyog kiya hai. Hum baad mein days, months aur years ko adjust karte hain jaise ki automation system bhi karta hai. Is tarah, hum ek accurate date ko calculate kar sakte hain.
+आप अपने एप्लिकेशन में अपनी सुविधा व्यवस्थापक प्रोग्राम के अनुसार दिनांक को अभी से समय में जोड़ सकते हैं।
 
-## Dekhna Bhi Pade
-Agar aapko coding language aur logic ke baare mein aur jaankari chahiye toh neeche diye gaye links ko zarur check karein:
-- [C++ Programming Tutorial](https://www.tutorialspoint.com/cplusplus/index.htm)
-- [Logic Building in Programming](https://www.geeksforgeeks.org/top-5-must-know-algorithms-and-data-structures-for-competitive-programming/)
+अब समय प्राप्त करने और समय तारीख में दिनांकों को जोड़ने के लिए जोड़ेंगे,
+
+```C++
+#include <iostream>
+#include <chrono>
+#include <ctime>
+// अपक्षेल लाइब्र्रिज
+#include <cmath>
+
+int main() {
+    // विश्वसनीय
+    auto अबलाई = std::chrono::system_clock::now();
+    // सर्व्या मित्र समय(कालांतरी से अब सेकेंड्स में)
+    std::time_t विश्वसनीय = std::chrono::system_clock::to_time_t(अब);
+
+    // कंयूटेड सुनिश्चित समय
+    auto हमारे <mail>vayvekakal</mail> = विश्वसनीय;
+
+    // आरोपित एन
+    हमारे <mail>vayvekakal</mail>.y = हमारे दिनांक.y;
+    हमारे <mail>vayvekakal</mail>.m = हमारे दिनांक.m;
+    हमारे <mail>vayvekakal</mail>.d = हमारे दिनांक.d;
+
+    // कुछ विशिष्ट मिनट मिनट हमारी सुसूची ले सकते हैं।
+    auto अनुसूचित = हमारे <mail>vayvekakal</mail>.tick(to_minute(3));
+
+    // परिणाम प्रिंट करें
+    std::cout << "स्थानीय समय:" << अनुसूचित का गणना करें(std::Locale("hi_IN.UTF-8"), "%A, %d. %B %Y को %H:%M:%S\n") << '\n';
+
+    return 0;
+}
+```
+आप अपनी स

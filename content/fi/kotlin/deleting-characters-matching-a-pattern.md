@@ -1,7 +1,7 @@
 ---
-title:                "Mallin mukaisesti vastaavien merkkien poistaminen"
-html_title:           "Kotlin: Mallin mukaisesti vastaavien merkkien poistaminen"
-simple_title:         "Mallin mukaisesti vastaavien merkkien poistaminen"
+title:                "Mallia vastaavien merkkien poistaminen"
+html_title:           "Kotlin: Mallia vastaavien merkkien poistaminen"
+simple_title:         "Mallia vastaavien merkkien poistaminen"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Strings"
@@ -10,26 +10,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä ja miksi?
+Mallia vastaavien merkkien poistaminen on prosessi, jossa poistetaan merkkejä, jotka vastaavat tiettyä kaavaa. Ohjelmoijat tekevät tätä yleensä muuttaakseen tai puhdistaakseen merkkijonoja tietyn muodon tai sisällön saavuttamiseksi.
 
-## Miksi haluat poistaa merkkejä vastaavan mallin
-Kun työskentelemme ohjelmointitehtävissä, saatamme törmätä tilanteisiin, joissa haluamme poistaa tietynlaisia merkkejä tietystä merkkijonosta. Tämä voi olla osa tiedonkäsittelyn prosessia tai haluamme ehkä yksinkertaisesti siistiä dataamme. Joko niin, Kotlinilla on helppo tapa poistaa merkkejä, jotka vastaavat tiettyä kaavaa.
-
-## Kuinka tehdä
-Tässä on esimerkki siitä, kuinka poistaa kaikki numerot merkkijonosta käyttäen Kotlinin `replace()` -funktiota:
-
-```Kotlin
-val merkkijono = "6 hevosta kulkee yli kadun"
-val uusiMerkkijono = merkkijono.replace("\\d+".toRegex(), "")
-println(uusiMerkkijono)
-
-// Output: "hevosta kulkee yli kadun"
+## Miten:
+```
+Kotlin val string = "Tämä on esimerkki lauseesta, jossa on paljon toistuvia merkkejä. Esimerkki esimerkki lauseesta, jossa on paljon toistuvia merkkejä."
+val modifiedString = string.replace("esimerkki", "")
+```
+Tulostus:
+```
+"Tämä on lauseesta, jossa on paljon toistuvia merkkejä. Lauseesta, jossa on paljon toistuvia merkkejä."
 ```
 
-## Syvempi sukellus
-Kotlin tarjoaa monia hyödyllisiä funktioita merkkijonojen käsittelyyn, kuten `replace()` ja `replaceFirst()`. Näitä funktioita voi käyttää myös poistamaan merkkejä, jotka vastaavat tiettyä kaavaa, kuten olemme esimerkissä tehneet. Voit myös käyttää `removeRange()` -funktiota poistamaan merkkejä tietystä alueesta merkkijonossa. Esimerkiksi `merkkijono.removeRange(2..5)` poistaisi merkit indekseissä 2-5 merkkijonostamme.
+## Syventävä tieto:
+Mallia vastaavien merkkien poistaminen ei ole uusi asia ohjelmoinnissa. Ennen uudempia ohjelmointikieliä, kuten Kotlin, tämä oli usein tehtävä manuaalisesti käyttämällä muun muassa Regex-kaavoja. Nykyään Kotlinin mukana tulee kuitenkin monia käteviä toimintoja, kuten "replace()" -metodi, joka tekee prosessin paljon helpommaksi ja vähentää virheiden riskiä.
 
-## Katso myös
-- [Kotlinin virallinen dokumentaatio merkkijonojen manipuloinnista](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/)
-- [Kotlinin regular expression -opas](https://kotlinlang.org/docs/regular-expressions.html)
-- [How to Remove Specific Characters from a String in Kotlin (Stack Overflow)](https://stackoverflow.com/questions/39983578/how-to-remove-specific-characters-from-a-string-in-kotlin)
+Vaihtoehtoisesti, jos haluat poistaa vain tietyn määrän toistuvia merkkejä, voit käyttää "replace()" -metodia yhdessä "replaceFirst()" -metodin kanssa, joka korvaa vain ensimmäisen esiintymän.
+
+## Katso myös:
+- [Regex](https://www.geeksforgeeks.org/kotlin-regular-expression/)
+- [Kotlinin replace() -metodi](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-string/replace.html)

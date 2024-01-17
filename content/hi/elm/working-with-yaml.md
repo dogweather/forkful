@@ -1,7 +1,7 @@
 ---
-title:                "यामल के साथ काम करना"
-html_title:           "Elm: यामल के साथ काम करना"
-simple_title:         "यामल के साथ काम करना"
+title:                "Yaml के साथ काम करना"
+html_title:           "Elm: Yaml के साथ काम करना"
+simple_title:         "Yaml के साथ काम करना"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Data Formats and Serialization"
@@ -10,44 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Kyun
+## क्या है और क्यों करें? 
+YAML काम करना होता है तथा उसका उपयोग क्यों किया जाता है।
 
-YAML ke saath kaam karne ka karan ek simple aur lightweight programming language ka use karne se hai. Elm, jo ki functional programming paradigm par based hai, YAML files ko manipulate aur interact karne ke liye ek powerful tool hai.
+YAML को दस्तावेज़ या डेटा को संरचित और सामान्य ढंग से प्रकट करने के लिए उपयोग किया जाता है। कारण इससे डेटा को प्रवर्तन करने में आसानी होती है।
 
-## Kaise
+## कैसे करें: 
+एल्म में YAML के साथ काम करने के लिए, आप निम्न प्रकार से कोड कर सकते हैं:
 
 ```Elm
-import YAML exposing (..)
+import Yaml exposing (..)
 
-ymlString = """
-name: John Doe
-age: 25
-hobbies:
-- reading
-- coding
-- hiking
-"""
+-- पाठ को YAML में संगठित करें
+sampleData =
+  "name: जॉन डो र"
+  "उम्र: २५"
+  "शहर: न्यूयॉर्क"
 
-yml = parse ymlString
+-- YAML से पाठ को पढ़ें
+parsedData = Yaml.decode sampleData
 
-yml.name -- "John Doe"
+-- प्रदर्शित करें
+case parsedData of
+  Ok data ->
+    Debug.log "पाठ" data
 
-yml.hobbies -- ["reading", "coding", "hiking"]
-
-yml.age -- 25
-
-ymlString' = toYaml yml
+  Err err ->
+    Debug.log "त्रुटि" err
 ```
 
-Iss code example mein humne Elm ke YAML library ko import kiya aur ek sample YAML string ko parse karke usse interact kiya. Yahaan par hum dekh sakte hai ki hum kis tarah se YAML properties aur unke values ko access aur manipulate kar sakte hai. Iske alawa, humne `toYaml` function ka use kiya hai jo YAML data ko string mein convert karta hai.
+आपको निम्न अंकों की सूची मिल सकती है:
 
-## Deep Dive
+- पाठ से YAML को प्रस्तुत किया जा सकता है
+- YAML से प्रविष्ट पाठ को पढ़ा जा सकता है
+- Yaml.decode फ़ंक्शन का उपयोग करने से संरचित पाठ को ट्री में विन्यस्त किया जा सकता है
 
-YAML ke saath kam karne mein aur bhi kai interesting aur advanced techniques hai, jaise ki YAML anchors, aliases, aur flow style notation. Elm ke YAML library mein bhi in features ka support hai jiski madad se hum YAML files ko even more efficient tarike se handle kar sakte hai. Iske alawa, Elm ke type system ki flexibility aur powerful error handling features hume YAML data ko validate aur transform karne mein bhi madad karte hai.
 
-## Dekhiye Bhi
+## गहराई से:
+YAML का निर्माण काम करना सहमतियों को विकसित XML को स्थानांतरित करने के लिए चित्रित किया गया था। इससे स्पष्ट है कि यह प्रतिस्थापन के लिए संघर्ष दुष्प्रभावों को बढ़ा सकता है, परंतु यह कुछ उचित गुण वैसे न हो तो किसी के कम होंगे।
 
-- [Elm Documentation](https://elm-lang.org/docs)
-- [YAML Website](https://yaml.org/)
-- [YAML Tutorials](https://www.tutorialspoint.com/yaml/)
-- [Elm-YAML Github repository](https://github.com/shibukawa/elm-yaml)
+अधिक जानकारी के लिए निम्नलिखित स्त्रोत की जाँच करें:
+
+- [YAML के मूल विधि नाम --- डेटासहिता](https://yaml.org/spec/history/2001-12-10.html)
+- [YAML के प्राथमिक अपडेट इसके ईतिहास का विवरण](https://history.yml.xyz/)
+
+## देखें भी:
+- [YAML के लिए छोटे सी आत्म श्वष... या शक्ति?](https://accessible-data-tooling.yml.json.cool/)
+- [पाठ को संरचित करने के लिए एल्म_यैमाल।](https://package.elm-lang.org/packages/EvanCzaplicki/elm-yesql/latest/)

@@ -1,7 +1,7 @@
 ---
-title:                "Satunnaislukujen luominen"
-html_title:           "Rust: Satunnaislukujen luominen"
-simple_title:         "Satunnaislukujen luominen"
+title:                "Sattumanvaraisten numeroiden generointi"
+html_title:           "Rust: Sattumanvaraisten numeroiden generointi"
+simple_title:         "Sattumanvaraisten numeroiden generointi"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Numbers"
@@ -10,48 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä ja miksi?
+Satunnaisten numeroiden luominen on tärkeä osa ohjelmointia, ja sitä tekevät kaikki ohjelmoijat. Se tulee joko tarpeesta luoda jokin satunnainen elementti tiettyyn tarkoitukseen tai vain lisätä mielenkiintoa peliin tai sovellukseen. Ohjelmoijat käyttävät satunnaisia numeroita esimerkiksi arpajaisissa, satunnaisten tapahtumien arvioinnissa ja kaikenlaisten pelien ja simulaatioiden luomisessa.
 
-Jos olet kiinnostunut ohjelmoinnista ja haluat oppia uuden kielen, Rust on ehdottomasti kokeilemisen arvoinen vaihtoehto. Se tarjoaa tehokkaan ja käyttäjäystävällisen ratkaisun moniin ohjelmointiongelmiin. Esimerkiksi, koodissa tarvitaan usein satunnaislukuja, kuten arpajaisohjelmassa tai pelissä petokseen. Tässä artikkelissa opit, miten voit generoida satunnaisia lukuja Rustissa.
+## Miten:
+Rust tarjoaa valtavan määrän tapoja luoda satunnaisia numeroita, ja tässä on muutama esimerkki:
 
-## Kuinka
+```Rust 
+// Luodaan yksi satunnainen numero 1 ja 100 välille
+let random_num = rand::random::<u32>() % 100 + 1;
 
-Rust tarjoaa vaivattoman tavan generoida satunnaisia lukuja käyttäen `rand` kirjastoa. Ensiksi tarvitset tämän kirjaston asentamista projektiisi. Voit tehdä tämän lisäämällä `rand = "0.8.3"` kirjaston riippuvuuksiin `Cargo.toml` tiedostossasi. 
+// Luodaan satunnainen luku viiden ja kymmenen välille
+let rand_num = rand::thread_rng().gen_range(5,11);
 
-Seuraavaksi, lisää seuraava koodi `main.rs` tiedostoon:
+// Luodaan satunnainen boolean-arvo
+let random_bool = rand::random::<bool>();
 
-``` Rust
-use rand::Rng;
-
-fn main() {
-    let mut rng = rand::thread_rng();
-    // Generoi satunnainen numero väliltä 1-10
-    let random_num: u8 = rng.gen_range(1, 11);
-    println!("Satunnainen numero: {}", random_num);
-}
+// Luodaan satunnainen kirjain merkkijonosta
+let random_char = b"abcdefghijklmnopqrstuvwxyz"[rand::thread_rng().gen_range(0, 26)] as char;
 ```
 
-Kääntämällä ja suorittamalla koodin, saat tällaisen tulosteen:
+Nämä ovat vain muutamia esimerkkejä, mutta Rustilla on runsaasti muita vaihtoehtoja satunnaisten numeroiden luomiseen.
 
-```
-Satunnainen numero: 7
-```
+## Syvä sukellus:
+Historiallisesti satunnaisia numeroita on luotu muun muassa laskemalla konenäytöiden kohinaa ja käyttämällä satunnaisia fyysisiä tapahtumia, kuten kolikon heittämistä. Nykyään tällaisia menetelmiä käytetään harvemmin, koska ne ovat haavoittuvaisia ja teknologian kehitys on tarjonnut parempia ratkaisuja.
 
-Koodissa käytetään `Rng` traitia ja `thread_rng` metodia luomaan satunnaislukugeneraattori. Sitten `gen_range` metodia käytetään luomaan satunnainen luku halutulta väliltä, tässä tapauksessa 1-10.
+Rust tarjoaa monia kirjastoja satunnaislukujen generoimiseen, kuten "rand" ja "rand_core". Näiden kirjastojen avulla ohjelmoijat voivat luoda satunnaisia numeroita eri muodoissa ja tarpeisiin.
 
-## Syvempi sukellus
-
-Rustissa on myös muita tapoja generoida satunnaisia lukuja, kuten `rng.gen()` joka generoi satunnaisen luvun koko tarjottujen tyypin alueelta. Tämä mahdollistaa esimerkiksi satunnaisen numeron generoinnin myös merkkijonotyypille.
-
-``` Rust
-// Generoi satunnainen merkki ASCII aakkosten joukosta
-let random_char: char = rng.gen();
-println!("Satunnainen kirjain: {}", random_char);
-```
-
-Lisäksi, voit myös asettaa alkuperäisen siemenarvon satunnaisen luvun generoinnille käyttämällä `rng.seed()` metodia. Tämä takaa, että jokainen kerta kun ohjelma suoritetaan, satunnaiset luvut ovat erilaisia.
-
-## Katso myös
-
-- [Rustin virallinen dokumentaatio](https://doc.rust-lang.org/std/rand/)
-- [Rustin `rand` kirjaston Github-sivut](https://github.com/rust-random/rand)
+## Katso myös:
+- [Rustin virallinen dokumentaatio kirjastoista](https://doc.rust-lang.org/stable/rust-by-example/std_misc/rand.html)
+- [Rustin rand-dokumentaatio](https://rust-random.github.io/book/)
+- [Rustin turvallisuus ja satunnaislukujen generointi](https://www.reddit.com/r/rust/comments/bxrwgy/are_your_random_numbers_truly_random_and_how_to/)

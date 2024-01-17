@@ -10,37 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
-有时候在编写代码时，我们需要检查一个目录是否存在。这个过程是为了避免出现错误，确保我们的程序正常运行。
+# 什么&为什么？
 
-## 如何
-在Ruby中，我们可以使用`Dir.exist?()`方法来检查一个目录是否存在。它会返回一个布尔值，如果目录存在则为`true`，如果不存在则为`false`。
+在编程中，我们经常需要检查一个目录是否存在。这有助于我们避免在代码中引用不存在的目录，从而防止程序出错。检查目录是否存在的另一个常见原因是为了确保我们需要的文件和资源都存在，并且程序可以顺利运行。
 
-```Ruby
-# 检查目录是否存在
-puts Dir.exist?("documents") # true
-puts Dir.exist?("pictures") # false
-```
-
-我们也可以使用`Dir.empty?()`方法来检查一个目录是否为空。它会返回一个布尔值，如果目录为空则为`true`，如果不为空则为`false`。
+# 如何：
 
 ```Ruby
-# 检查目录是否为空
-puts Dir.empty?("documents") # false
-puts Dir.empty?("pictures") # true
+# 使用File类的‘exists?’方法来检查目录是否存在，若存在则返回true，反之则返回false。
+File.exists?("my_directory")  # => true/false
 ```
 
-## 深入了解
-如果我们想要进一步了解如何检查目录是否存在，我们可以了解更多关于`Dir`类的方法。除了`exist?()`和`empty?()`方法，还有其他有用的方法可以帮助我们处理目录。
+# 深入探究：
 
-一个例子是`Dir.chdir()`方法，它允许我们改变当前的工作目录。我们可以使用它来进入一个指定的目录并执行操作。
+## 历史背景：
 
-```Ruby
-# 改变当前工作目录
-Dir.chdir("documents")
-puts Dir.exist?("documents") # true
-```
+在过去，程序员可能会使用操作系统或系统调用来检查目录是否存在。但是，Ruby的File类提供了更简便的方法，让我们可以直接在代码中使用。此外，现在的操作系统也提供了更好的目录管理功能，使得检查目录是否存在更容易。
 
-## 参考链接
-- [Ruby文档](https://ruby-doc.org/core-2.7.3/Dir.html) 
-- [Dir类方法](https://www.rubyguides.com/2015/08/ruby-dir/)
+## 替代方法：
+
+除了File类的‘exists?’方法，我们也可以使用‘directory?’和‘readable?’方法来检查目录是否存在。‘directory?’方法可以确保目录的类型是一个目录，而‘readable?’方法则可以检查目录是否具有读取权限。
+
+## 实现细节：
+
+Ruby的‘Dir’和‘File’类都是通过调用操作系统提供的系统调用来实现检查目录是否存在的功能。这些类还提供了更多的方法来操作文件和目录，如创建、删除、移动和重命名等。
+
+# 看看这些：
+
+- [File类文档](https://ruby-doc.org/core-3.0.2/File.html)
+- [Dir类文档](https://ruby-doc.org/core-3.0.2/Dir.html)

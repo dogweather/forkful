@@ -1,7 +1,7 @@
 ---
-title:                "Kirjoittaminen standardivirheelle"
-html_title:           "Elixir: Kirjoittaminen standardivirheelle"
-simple_title:         "Kirjoittaminen standardivirheelle"
+title:                "Kirjoittaminen standardi virheille"
+html_title:           "Elixir: Kirjoittaminen standardi virheille"
+simple_title:         "Kirjoittaminen standardi virheille"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Files and I/O"
@@ -10,27 +10,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä ja miksi?
+Kirjoittaminen virheilmoitukset standarditulostusvirheeseen on tapa, jolla ohjelmoijat voivat ilmoittaa tärkeitä virheitä tai poikkeuksia suorituksessaan. Tämä mahdollistaa näiden virheiden erottamisen tavallisista tulostuksista ja helpottaa niiden jäljittämistä ja korjaamista.
 
-Miksi kirjoittaisit standardivirheeseen? Koska on tärkeää huomata mahdolliset virheet ja varoittaa käyttäjiä sovelluksen suorituksen aikana.
+## Miten:
+Voit kirjoittaa standarditulostusvirheeseen Elixirillä käyttämällä `:error_logger` -moduulia ja `Logger` -pakettia. Alla on yksinkertainen koodiesimerkki:
 
-## Miten
-
-```Elixir
- IO.puts("Kirjoita tähän") 
+Elixir
+```elixir
+:ok = Logger.error("Tämä on virheellinen viesti")
 ```
 
-Nyt kun tiedämme miksi haluamme kirjoittaa standardivirheeseen, voimme oppia miten tehdä se käyttämällä Elixirin `IO.puts` -funktiota. `IO.puts` tulostaa halutun viestin standardivirheeseen, eli käyttäjä näkee sen suorituksen aikana. Tässä esimerkissä tulostamme yksinkertaisen tekstin, mutta `IO.puts` hyväksyy myös muita parametreja, kuten numeroita ja taulukoita.
+Tämä komento kirjoittaa virheviestin standarditulostusvirheeseen ja palauttaa `:ok` -arvon, jos kaikki menee hyvin. Tästä voit siirtyä etsimään ja korjaamaan virheen.
 
-```
-Tulostaa "Kirjoita tähän" standardivirheeseen.
-```
+## Syvempää tietoa:
+Kirjoittaminen standarditulostusvirheeseen on yleisesti hyväksytty tapa ilmoittaa virheitä ohjelman suorituksessa. Tämä käytäntö on myös osa Elixirin käyttämää Erlang-viestien käsittelytapaa. Vaikka tämä tapa on yleisesti hyväksytty, on myös muita tapoja käsitellä poikkeuksia, kuten `<ex> raise` ja `Process.link`-toiminnot.
 
-## Syvällinen tarkastelu
-
-Kun teemme virheitä koodissa, on tärkeää huomata ne ja saada tietoa siitä, mitä meni pieleen. Tämä on erityisen tärkeää silloin, kun meillä on käyttäjiä, jotka käyttävät sovellustamme. Kirjoittamalla standardivirheeseen voimme varoittaa käyttäjiä mahdollisista ongelmista, joita he voivat kohdata. Tämä auttaa meitä korjaamaan virheitä ja parantamaan sovellustamme.
-
-## Katso myös
-
-- Elixirin virallinen dokumentaatio: https://elixir-lang.org/
-- Artikkeli "Debugging Elixir with IO.puts" (englanniksi): https://brainspec.com/blog/2011/09/30/debugging-elixir-with-io-puts/
+## Katso myös:
+- [Elixirin virallinen dokumentaatio virheiden käsittelystä](https://hexdocs.pm/elixir/1.12/Logger.html#error-logging)
+- [Erlangin virallinen dokumentaatio virheiden käsittelystä](https://erlang.org/doc/man/error_logger.html)
+- [Elixirin virallinen dokumentaatio poikkeusten käsittelystä](https://hexdocs.pm/elixir/1.12/Exceptions.html)

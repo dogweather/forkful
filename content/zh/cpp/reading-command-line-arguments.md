@@ -10,52 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 为什么
+# 概要
+在编程中，读取命令行参数是一项常见的任务。它允许程序获取用户在命令行中输入的信息，从而为程序提供更多的灵活性和交互性。
 
-阅读命令行参数是一个重要的技能，因为它允许您通过命令行直接与您的程序交互，而不需要通过图形用户界面或其他方式。这使得调试和测试程序变得更加方便和高效。
+## 什么是读取命令行参数及为什么要这么做
+读取命令行参数就是在程序运行时获取用户在命令行中输入的信息。它可以让程序在运行时根据用户的输入做出不同的处理，从而增加程序的灵活性和交互性。例如，在一个文本编辑程序中，用户可以在命令行中指定要打开的文件名，从而让程序直接打开用户想要编辑的文件。
 
-# 如何进行
-
-首先，您需要在程序的主函数中声明两个参数：一个整数用于计算命令行参数的数量，一个字符串数组用于存储这些参数。例如：
+## 如何做
+下面是一个使用C++语言读取命令行参数的示例:
 
 ```C++
-int main(int argc, char *argv[]) {
-    // code here
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main(int argc, char* argv[]) {
+
+    // 打印命令行参数的数量
+    cout << "命令行参数数量:" << argc << endl;
+
+    // 打印每个命令行参数
+    for (int i = 0; i < argc; i++) {
+        cout << "参数 " << i << ": " << argv[i] << endl;
+    }
+
+    return 0;
 }
 ```
 
-接下来，您可以使用循环来遍历命令行参数并输出它们的值：
+运行上面的代码，输入命令行参数，例如 `./program hello world`，程序将会输出:
 
-```C++
-for (int i = 0; i < argc; i++) {
-    std::cout << "参数" << i << ": " << argv[i] << std::endl;
-}
+```
+命令行参数数量: 3
+参数 0: ./program
+参数 1: hello
+参数 2: world
 ```
 
-假设输入命令行参数为 "my_program.exe hello world"，输出将会是：
+这里的 `argc` 表示命令行参数的数量，`argv[]` 代表一个字符串数组，其中每个元素都是一个命令行参数。
 
-> 参数0: my_program.exe
->
-> 参数1: hello
->
-> 参数2: world
+## 深入挖掘
+读取命令行参数的功能可以追溯到命令行界面的早期操作系统。在早期，用户需要手动输入所有的命令和参数，没有图形界面提供点击和拖拽的便捷方式。如今，读取命令行参数的功能可以被其他工具和库所取代，例如读取配置文件等。但是，直接从命令行中获取参数仍然是一种简单而有效的方法。
 
-您还可以利用命令行参数来自定义程序的行为。例如，您可以检查第一个参数是否为 "-h"，如果是就输出帮助信息：
-
-```C++
-if (std::string(argv[1]) == "-h") {
-    std::cout << "这是一个帮助信息" << std::endl;
-}
-```
-
-# 深入探讨
-
-除了命令行参数数量和参数值之外，您还可以通过在参数前加上特定的标志来指定参数的类型。例如，在参数 "my_program.exe -n 10" 中，"-n" 是一个标志，后面的 "10" 则是参数值。
-
-此外，您也可以使用第三方库来简化读取命令行参数的过程，如"Boost.Program_options"或"CxxOpt"。这些库提供了更多的选项和特性，帮助您更方便地处理命令行参数。
-
-# 查看相关文章
-
-- [了解C++命令行参数的基础知识](https://www.tutorialspoint.com/cplusplus/cpp_command_line_arguments.htm)
-- [使用Boost.Program_options读取命令行参数](https://www.boost.org/doc/libs/1_76_0/doc/html/program_options.html)
-- [使用CxxOpt简化读取命令行参数的过程](https://github.com/jarro2783/cxxopts)
+## 另请参阅
+- [命令行参数 - 维基百科](https://zh.wikipedia.org/wiki/%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%8F%82%E6%95%B0)
+- [C++命令行参数教程- Cprogramming.com](https://www.cprogrammin

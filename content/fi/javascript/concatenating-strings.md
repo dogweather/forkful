@@ -10,26 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
-Miksi haluaisit yhdistellä merkkijonoja? Yksinkertaisesti sanottuna, se on yksi tapa luoda joustavia ja muokattavissa olevia viestejä, tekstejä ja laskelmia Javascript-ohjelmoinnissa.
+## Mitä ja miksi?
 
-## Miten
-Concatenating eli merkkijonojen yhdistely Javascriptissä on helppoa! Käytä vain plus-merkkiä (+) yhdistääksesi haluamasi merkkijonot. Katso alla oleva koodiesimerkki ja sen tuottama tulos.
+Mikä on merkkijonojen yhdistäminen ja minkä takia ohjelmoijat tekevät sitä? Merkkijonojen yhdistäminen tarkoittaa kahden tai useamman merkkijonon yhdistämistä yhdeksi isommaksi merkkijonoksi. Ohjelmoijat käyttävät tätä tekniikkaa esimerkiksi luodessaan tulostusta tai tallentamalla tietoa eri muodoissa.
+
+## Miten tehdä:
+
+Seuraavassa on esimerkkejä koodista ja syötteestä, jotka näyttävät, kuinka merkkijonoja yhdistetään käyttäen Javascriptia.
 
 ```Javascript
-var firstName = "Anna";
-var lastName = "Korhonen";
-
-// Yhdistetään merkkijonot
-var fullName = firstName + " " + lastName;
-console.log(fullName);
-
-// Tulostaa "Anna Korhonen"
+let ensimmäinenLause = "Tämä on";
+let toinenLause = "esimerkki";
+let kokonaislause = ensimmäinenLause + " " + toinenLause;
+console.log(kokonaislause);
 ```
 
-## Deep Dive
-Merkkijonojen yhdistelyä käytetään usein luodessa dynaamisia viestejä, jotka sisältävät muuttujia tai käyttäjän antamia tietoja. Merkkijonojen yhdistelemisen sijaan voit myös käyttää `template literal` -syntaksia (` `) paljon monimutkaisempien ja tehokkaampien merkkijonojen luomiseen. Voit lukea lisää tästä aiheesta [täältä](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals).
+Tuloste: `Tämä on esimerkki`
 
-## Katso myös
-- [MDN: Merkkijonon yhdisteleminen](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Addition_assignment)
-- [W3Schools: Merkkijonon yhdisteleminen](https://www.w3schools.com/js/js_string_concat.asp)
+Toisessa esimerkissä yhdistämme kaksi numeroa ja merkkijonoa:
+
+```Javascript
+let numero = 10;
+let merkkijono = "on paljon";
+let kokonaislause = "Lisää " + numero + " vuotta ja " + merkkijono
+console.log(kokonaislause);
+```
+
+Tuloste: `Lisää 10 vuotta ja on paljon`
+
+## Syventävä sukellus:
+
+Merkkijonojen yhdistäminen on ollut käytössä lähes alusta asti Javascriptissa. Aikaisemmin tätä tehtiin käyttämällä konkatenointioperaattoria `+`, mutta nykyään on olemassa myös uusi `template literals` -tapoja tehdä sama asia.
+
+Toinen tapa yhdistää merkkijonoja on käyttämällä Javascriptin `join()`-funktiota, joka yhdistää useita merkkijonoja tiettyyn erottimeen. Esimerkiksi:
+
+```Javascript
+let lista = ["omena", "banaani", "appelsiini"];
+let uusiMerkkijono = lista.join(", ");
+console.log(uusiMerkkijono);
+```
+
+Tuloste: `omena, banaani, appelsiini`
+
+## Katso myös:
+
+Lisätietoja merkkijonojen yhdistämisestä ja Javascriptin join()-funktiosta löytyy seuraavista lähteistä:
+
+- [MDN Web Docs: String concatenation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/concat)
+- [MDN Web Docs: Template literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals)
+- [MDN Web Docs: Array.prototype.join()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join)

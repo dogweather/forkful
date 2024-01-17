@@ -10,35 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Qu'est-ce que c'est et pourquoi les programmeurs le font?
 
-Si vous êtes un développeur utilisant le langage Fish Shell, vous avez probablement croisé le terme "standard error" lors de votre travail sur des projets. Bien que cela puisse sembler intimidant, savoir comment écrire vers cette sortie est un outil précieux à ajouter à votre boîte à outils de développement. Dans cet article, nous allons plonger dans les raisons pour lesquelles vous devriez écrire vers le standard error et comment le faire dans Fish Shell.
+Ecrire sur la sortie d'erreur standard (standard error) est une pratique courante dans la programmation. Il s'agit d'écrire des messages d'erreur ou de débogage directement dans la console plutôt que dans la sortie standard (standard output). Les programmeurs le font pour rendre leur code plus clair, notamment lorsqu'ils essaient de localiser et de résoudre des erreurs.
 
-## Comment faire
-
-Pour écrire vers le standard error en utilisant Fish Shell, vous pouvez utiliser la commande `echo` suivie de `&2` pour indiquer que vous souhaitez écrire vers cette sortie. Par exemple :
+## Comment faire:
 
 ```
-Fish Shell : echo "Erreur !" &2
+Fish Shell propose la commande "echo" pour écrire sur la sortie d'erreur standard. Voici un exemple de l'utiliser pour afficher un message d'erreur:
+
+```Fish Shell
+echo "Erreur : nom de fichier invalide"
+
+``` 
+Le résultat dans la console serait :
+
+```
+Erreur : nom de fichier invalide
 ```
 
-Ceci affichera "Erreur !" dans le standard error.
+## Plongée en profondeur:
 
-Bien sûr, il est également possible de rediriger les erreurs sorties par une commande directement vers le standard error en ajoutant `2&>` avant le nom du fichier. Par exemple :
+Ecrire sur la sortie d'erreur standard a été rendu populaire par la pratique de la programmation en shell, qui utilise souvent la console comme principale interface utilisateur. Cependant, d'autres langages de programmation offrent également cette fonctionnalité, comme le C et le Java. 
 
-```
-Fish Shell : les commandes > fichier.txt 2&> fichier-erreurs.txt
-```
+Une alternative à l'écriture sur la sortie d'erreur standard est l'utilisation de journaux de débogage, qui stockent les messages dans un fichier pour une consultation ultérieure. Cependant, cela peut être moins pratique pour un débogage en temps réel.
 
-Cela enverra toutes les erreurs sorties par les commandes vers le fichier "fichier-erreurs.txt".
+Techniquement, écrire sur la sortie d'erreur standard est réalisé en dirigeant les messages vers le descripteur de fichier approprié (standard error est généralement le descripteur 2). Cette pratique est souvent combinée avec la redirection de la sortie standard vers un fichier à l'aide de l'opérateur ">>".
 
-## Deep Dive
+## Voir aussi:
 
-Il peut sembler étrange de vouloir écrire vers une sortie dédiée aux erreurs, mais cela peut en fait s'avérer très utile. Lorsqu'une application ou un script génère des erreurs, celles-ci sont généralement envoyées vers la sortie standard, ce qui signifie que les utilisateurs peuvent les manquer ou même les ignorer. En écrivant vers le standard error, vous vous assurez que les erreurs sont bien visibles par l'utilisateur, ce qui peut l'aider à déboguer plus facilement.
-
-De plus, écrire vers le standard error peut également être utile lors de l'utilisation de pipes ou de redirections dans vos scripts. En écrivant vers le standard error, vous pouvez vous assurer que les erreurs ne seront pas redirigées vers le fichier final, mais seront plutôt affichées à l'écran, ce qui peut aider à trouver et résoudre les problèmes plus rapidement.
-
-## Voir aussi
 - [Documentation officielle Fish Shell](https://fishshell.com/docs/current/index.html)
-- [Guide de démarrage rapide Fish Shell](https://fishshell.com/docs/current/tutorial.html)
-- [Tutorial : Les redirections et les pipes avec Fish Shell](https://cmdchallenge.com/fish_shell_tutorial.html#pipe)
+- [Tutoriel sur l'utilisation des erreurs standard en C](https://www.tutorialspoint.com/cprogramming/c_error_handling.htm)
+- [Article sur la différence entre la sortie standard et la sortie d'erreur standard](https://www.geeksforgeeks.org/difference-stdout-stderr/)

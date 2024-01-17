@@ -1,7 +1,7 @@
 ---
-title:                "Lähetetään http-pyyntö"
-html_title:           "Rust: Lähetetään http-pyyntö"
-simple_title:         "Lähetetään http-pyyntö"
+title:                "Lähettäminen http-pyyntö"
+html_title:           "Rust: Lähettäminen http-pyyntö"
+simple_title:         "Lähettäminen http-pyyntö"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "HTML and the Web"
@@ -10,32 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä ja Miksi?
+Lähettäessäsi HTTP-pyynnön, pyydät verkkopalvelimelta tietoa tai palvelua. Tämä tapahtuu esimerkiksi, kun käytät hakukonetta, lataat kuvia tai viestittelet sosiaalisessa mediassa. Koodareiden tehtävä on kirjoittaa ohjelmia, jotka ovat yhteydessä verkkopalvelimiin ja käsittelevät näitä tietopyyntöjä - tämä on yksi tärkeimmistä syistä lähettää HTTP-pyyntöjä.
 
-Miksi haluat lähettää HTTP-pyynnön? Koska sinun täytyy kommunikoida internetin kanssa! HTTP-pyynnöt ovat tapa lähettää ja vastaanottaa tietoa verkon yli, ja niitä käytetään esimerkiksi verkkosivustojen selaamiseen ja tietojen hakemiseen.
-
-## Miten
-
-Onneksi Rustilla on erittäin helppo lähettää HTTP-pyyntöjä. Sinun tarvitsee vain käyttää "reqwest" -kirjastoa ja sen avulla luoda "Client" -objekti. Sitten voit käyttää "get" -funktiota ja antaa sille URL-osoitteen, jonka haluat hakea. Lopuksi voit kutsua "send" -funktiota ja saada vastauksen takaisin "Response" -objektina, jossa voit käyttää erilaisia metodeja kuten "text" tai "json" saadaksesi haluamasi tiedot.
+## Miten:
+Esimerkiksi, jos haluat lähettää GET-pyynnön, joka hakee dataa Google-hakukoneelta, voit käyttää seuraavaa esimerkkiä käyttäen Rust-ohjelmointikieltä:
 
 ```Rust
-use reqwest::Client;
-
-let client = Client::new();
-let response = client.get("https://www.example.com").send().unwrap();
-
-println!("{}", response.text().unwrap());
+use reqwest;
+let response = reqwest::get("https://www.google.com").await?;
 ```
 
-Tämä koodi lähettää GET-pyynnön "www.example.com" -osoitteeseen ja tallentaa vastauksen "response" -muuttujaan. Sen jälkeen voimme käyttää "text" -metodia saadaksemme vastauksen tekstimuodossa ja tulostaa sen konsoliin.
+Tämä luo GET-pyynnön, joka hakee Google-hakukonetta ja odottaa vastausta. Sitten voit käsitellä saamasi vastauksen, joka sisältää HTML-sisällön, kuten kuvia, tekstejä ja linkkejä.
 
-## Syventävä tieto
+## Syväsyvennys:
+HTTP (Hypertext Transfer Protocol) on standardoitu protokolla tietoliikenteelle Webin välityksellä. Se on ollut käytössä vuodesta 1991 lähtien ja sillä on tärkeä rooli tietokonejärjestelmissä, jotka ovat yhteydessä Internetiin. Rust tarjoaa kirjastoja, kuten reqwest, joka tekee HTTP-pyyntöjen lähettämisestä helpompaa ja tehokkaampaa.
 
-Lisätietoja HTTP-pyyntöjen lähettämisestä Rustilla löytyy "reqwest" -kirjaston dokumentaatiosta ja Rustin standardikirjaston "std::io::Read" -dokumentaatiosta. Voit myös tutustua REST-arkkitehtuuriin ja HTTP-metodien käyttöön tarkemmin saadaksesi paremman käsityksen siitä, miten HTTP-pyyntöjä käytetään ja miksi.
+Muita vaihtoehtoja HTTP-pyyntöjen lähettämiseen Rustilla ovat esimerkiksi hyper ja curl-kirjastot. Hyper on suosittu HTTP-kirjasto Rustille ja se tarjoaa paljon ominaisuuksia, mutta se on myös hieman monimutkaisempi käyttää. Curl-kirjasto tarjoaa enemmän ominaisuuksia kuin hyödyllistä suorituskyvyn kannalta, mutta se saattaa olla vaikeampi asentaa verrattuna muihin vaihtoehtoihin.
 
-## Katso myös
+HTTP-pyyntöjen lähettämisen taustalla olevat tärkeimmät palikat ovat TCP- ja IP-protokollat, jotka mahdollistavat tietojen siirtämisen Internetin kautta. HTTP-pyyntö koostuu erilaisista metodista, kuten GET, POST ja PUT, sekä osoitteesta ja mahdollisista kyselyparametreistä.
 
-- "reqwest" -kirjaston dokumentaatio: https://docs.rs/reqwest/*/reqwest/
-- Rustin "std::io::Read" -dokumentaatio: https://doc.rust-lang.org/std/io/trait.Read.html
-- REST-arkkitehtuurin perusteet: https://restfulapi.net/
-- HTTP-metodien selitykset ja käyttö: https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods
+## Katso myös:
+- [Rustin Kotisivut](https://www.rust-lang.org/) 
+- [Rustin Reqwest-kirjasto](https://docs.rs/reqwest/latest/reqwest/)

@@ -1,7 +1,7 @@
 ---
-title:                "Å jobbe med json"
-html_title:           "C++: Å jobbe med json"
-simple_title:         "Å jobbe med json"
+title:                "Arbeid med json"
+html_title:           "C++: Arbeid med json"
+simple_title:         "Arbeid med json"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Data Formats and Serialization"
@@ -10,56 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor 
-Fordi JSON er en av de mest populære formater for å overføre data mellom datamaskiner, og fordi det er enklere å håndtere enn andre formater som XML.
+Hva & Hvorfor?
 
-## Hvordan
-For å bruke JSON med C++, må du ha en JSON-bibliotek installert. Det finnes mange alternativer, men en av de mest populære er nlohmann::json. Her er et eksempel på hvordan du kan lese og skrive JSON-data ved hjelp av dette biblioteket:
+JSON står for JavaScript Object Notation, og er et lettvekts format for å lagre og utveksle datastrukturer. Det er spesielt populært blant webutviklere på grunn av dets enkle syntaks og støtte på tvers av ulike programmeringsspråk.
+
+Hvordan:
+
+Å jobbe med JSON i C++ er enkelt og effektivt. Først må vi inkludere "json.hpp" biblioteket i vår kode. Deretter kan vi bruke funksjoner som "parse()" og "serialize()" for å lese og skrive JSON-data fra en fil eller et nettverk. Et eksempel på hvordan dette kan se ut er:
 
 ```C++
-#include <nlohmann/json.hpp>
-using json = nlohmann::json;
+#include <iostream>
+#include "json.hpp"
 
-// Opprett et tomt JSON-objekt
-json data;
+using json = nlohmann::json; // Definerer et alias for "json.hpp" biblioteket.
 
-// Legg til data
-data["name"] = "Ola Nordmann";
-data["age"] = 30;
-data["married"] = true;
+int main() {
+    // Oppretter et JSON-objekt og legger til noen verdier.
+    json myObj = {
+        {"navn", "Per"},
+        {"alder", 25},
+        {"favoritt_farger", {"blå", "grønn", "gul"}}
+    };
 
-// Skriv ut som en string
-std::cout << data.dump() << std::endl;
+    // Skriver ut JSON-dataen på konsollen.
+    std::cout << myObj.dump() << std::endl;
 
-// Les fra en string
-json parsedData = json::parse(data.dump());
+    // Leser JSON-data fra en fil og skriver ut verdien til et bestemt element.
+    json myFile = json::parse(std::ifstream("minfil.json"));
+    std::cout << "Alderen til Per er: " << myFile["alder"] << std::endl;
 
-// Hent ut verdier fra JSON-objektet
-std::string name = parsedData["name"];
-int age = parsedData["age"];
-bool married = parsedData["married"];
-
-// Skriv ut dataene
-std::cout << "Navn: " << name << std::endl;
-std::cout << "Alder: " << age << std::endl;
-std::cout << "Gift: " << (married ? "Ja" : "Nei") << std::endl;
+    return 0;
+}
 ```
 
-Dette vil gi følgende utskrift:
+Utfordringen med JSON i C++ er at det ikke finnes noen standardbiblioteker eller innebygde funksjoner for å jobbe med det. Men heldigvis finnes det flere populære tredjepartsbiblioteker som "json.hpp" og "rapidjson" som gjør det enklere å håndtere JSON-data.
 
-``` json
-{"name": "Ola Nordmann", "age": 30, "married": true}
-Navn: Ola Nordmann
-Alder: 30
-Gift: Ja
-```
+Dypdykk:
 
-## Deep Dive
-JSON står for "JavaScript Object Notation" og ble opprinnelig brukt til å strukturere data i JavaScript-applikasjoner. Det er et enkelt og lett format, som gjør det populært for å overføre data over nettverk. JSON består av to strukturer: en samling av nøkler og verdier, og en liste med verdier.
+JSON ble først utviklet av Douglas Crockford på 1990-tallet som en del av JavaScript-programmeringsspråket. I dag er det et utbredt format som brukes over hele verden, spesielt i webutvikling. Alternativer til JSON inkluderer XML og YAML, men disse har ofte mer komplekse syntakser og er derfor ikke like populære.
 
-Det finnes ulike måter å lese og skrive JSON-data på i C++, men nlohmann::json gjør det enkelt ved å tillate tilgang til dataene som om det var et C++-objekt. Du kan også bruke std::map eller std::unordered_map for å lagre og håndtere JSON-data.
+For å implementere JSON i C++, må man enten lage en parser og serializer for JSON-dataen selv, eller bruke et tredjepartsbibliotek. Som nevnt tidligere finnes det flere populære alternativer, og valget avhenger ofte av personlige preferanser og prosjektets behov.
 
-## Se også 
-- [nlohmann::json](https://github.com/nlohmann/json)
-- [JSON på w3schools](https://www.w3schools.com/js/js_json_intro.asp)
-- [C++ på Codecademy](https://www.codecademy.com/learn/learn-c-plus-plus)
+Se også:
+
+- "json.hpp" biblioteket: https://github.com/nlohmann/json
+- "rapidjson" biblioteket: https://rapidjson.org/

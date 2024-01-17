@@ -1,7 +1,7 @@
 ---
-title:                "Läsning av en textfil"
-html_title:           "Clojure: Läsning av en textfil"
-simple_title:         "Läsning av en textfil"
+title:                "Läsa en textfil"
+html_title:           "Clojure: Läsa en textfil"
+simple_title:         "Läsa en textfil"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Files and I/O"
@@ -10,56 +10,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
+Att läsa en textfil är helt enkelt att ta in innehållet i en textfil och göra det tillgängligt för din dator att läsa och behandla. Det kan vara användbart för programmörer att läsa textfiler för att kunna bearbeta och använda dess innehåll i sina program.
 
-Att kunna läsa och bearbeta textfiler är en viktig färdighet inom programmering, särskilt när det gäller att hantera stora datamängder eller samverka med andra program. I detta artikel kommer du lära dig hur du på ett enkelt sätt kan läsa en textfil i Clojure och sedan använda den data som finns i filen för att lösa olika förhandsproblem.
+Att kunna läsa och behandla textfiler ger programmörer en större flexibilitet i sina program, då de kan använda sig av befintliga filer med information istället för att behöva skriva in all information manuellt. Det gör också möjligt att integrera data från externa källor och därmed utöka funktionaliteten i programmen.
 
-## Hur man gör
-
-Att läsa en textfil i Clojure är en relativt enkel process. Först behöver vi definiera en filväg där vår textfil finns lagrad. Detta kan göras med hjälp av funktionen "file" som tar filvägen som ett argument.
-
-```Clojure
-(def filväg (file "minkod.txt"))
-```
-
-Vi kan nu använda funktionen "with-open" för att öppna filen och läsa dess innehåll. Detta garanterar att filen stängs automatiskt efter att vi har använt den. Sedan använder vi funktionen "read-line" för att läsa en rad i taget och "println" för att skriva ut resultatet till terminalen.
+## Så här gör du:
+För att läsa en textfil i Clojure används funktionen ```slurp```, som tar in filnamnet som argument och returnerar texten i filen som en sträng. Se exempel nedan:
 
 ```Clojure
-(with-open [fil (reader filväg)]
-  (doseq [rad (line-seq fil)]
-    (println rad)))
+(def text-innehåll (slurp "filnamn.txt"))
+(println text-innehåll)
 ```
 
-Sample Output:
+```filnamn.txt``` innehåller följande text:
+
 ```
-Hej!
-Det här är en textfil.
-Den innehåller några rader text.
+Hej på dig!
+Jag är en textfil.
 ```
 
-För att lagra datan från filen i en variabel kan vi använda funktionen "slurp" som läser hela filen som en sträng.
+Output:
+
+```
+Hej på dig!
+Jag är en textfil.
+```
+
+Du kan också läsa in textfilen rad för rad med hjälp av funktionen ```line-seq```:
 
 ```Clojure
-(def innehåll (slurp filväg))
+(def rader (line-seq (clojure.java.io/reader "filnamn.txt")))
+(doseq [rad rader]
+  (println rad))
 ```
 
-Sample Output:
+Output:
+
 ```
-"Hej!\nDet här är en textfil.\nDen innehåller några rader text."
-```
-
-## Djupdykning
-
-När du läser en textfil i Clojure är det viktigt att vara medveten om att funktionerna "read-line" och "slurp" tolkar filinnehållet som en sekvens av tecken snarare än rader. Detta betyder att om filen innehåller text med flera rader, kommer funktionerna att läsa in hela texten som en enda rad. För att undvika detta kan du använda funktionen "line-seq" som delar upp strängen vid varje radbrytning och returnerar en sekvens av rader. Det är också viktigt att filen är kodad enligt rätt teckenuppsättning för att undvika problem med specialtecken och icke-standardtecken.
-
-Om du vill läsa en textfil som finns på en annan plats än din lokala dator kan du använda funktionen "slurp-url" som tar URL-adressen som argument.
-
-```Clojure
-(def remote-innehåll (slurp-url "https://dinadress.com/textfil.txt"))
+Hej på dig!
+Jag är en textfil.
 ```
 
-## Se även
+## Gräv Djupare:
+Det finns olika sätt att läsa en textfil i Clojure, men ```slurp``` är den enklaste och mest använda. En annan funktion som kan användas är ```read-string```, som läser in en sträng och returnerar en datastruktur. Det finns också tredjepartsbibliotek som erbjuder avancerade funktioner för att läsa och bearbeta textfiler.
 
-- [Officiell Clojure dokumentation](https://clojuredocs.org/)
-- [Official Clojure YouTube channel](https://www.youtube.com/user/clojuretv/videos)
-- [Clojure Subreddit](https://www.reddit.com/r/Clojure/)
+Att läsa textfiler var mycket vanligare förr i tiden, då det var den främsta metoden för att lagra och dela information. Nu för tiden används ofta andra format, som JSON och XML, men textfiler är fortfarande användbara för vissa ändamål, som att lagra loggar och enkla konfigurationsfiler.
+
+## Se även:
+Officiell Clojure dokumentation för ```slurp``` och ```read-string```:
+https://clojure.org/api/cheatsheet
+
+Third party bibliotek för att hantera textfiler:
+https://github.com/clojure/data.json
+https://github.com/noisesmith/edn-format

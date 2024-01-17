@@ -1,7 +1,7 @@
 ---
-title:                "Att få aktuellt datum"
-html_title:           "Ruby: Att få aktuellt datum"
-simple_title:         "Att få aktuellt datum"
+title:                "Hämta aktuellt datum"
+html_title:           "Ruby: Hämta aktuellt datum"
+simple_title:         "Hämta aktuellt datum"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Dates and Times"
@@ -10,42 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
-Du kanske undrar varför det är viktigt att få den nuvarande datumet i Ruby? Det finns flera anledningar till detta. Först och främst behöver många program och applikationer det aktuella datumet för att fungera korrekt och för att kunna hålla reda på tiden. Dessutom kan det vara användbart för att skapa rapporter, scheman eller andra typer av dokument som kräver aktuell tidsinformation.
+## Vad & Varför?
+Att hämta aktuellt datum är en vanlig uppgift inom programmering, eftersom det är användbart för att spåra tid och datum för olika händelser eller för att utföra beräkningar som är beroende av tiden. Det är också användbart för att skapa dynamiskt innehåll på webbplatser eller appar baserat på det aktuella datumet.
 
-## Hur man gör det
-För att få det aktuella datumet i Ruby behöver du använda dig av en inbyggd metod som heter `Time.now`. Här är ett exempel på hur du kan använda denna metod för att få datumet:
-
-```Ruby
-nuvarande_dag = Time.now  # lägger till den nuvarande tiden i variabeln nuvarande_dag
-puts nuvarande_dag        # skriver ut den nuvarande tiden
-```
-
-Detta kommer att skriva ut datumet och tiden i formatet `YYYY-MM-DD HH:MM:SS +/-TTTT` där YYYY är året, MM är månaden, DD är dagen, HH är timmen, MM är minuterna, SS är sekunderna och TTTT är tidszonen.
-
-Om du bara är intresserad av att få en specifik del av datumet, till exempel bara månad eller år, kan du använda dig av olika metoder som `month` eller `year`. Här är ett exempel på hur du kan göra det:
+## Hur:
+För att hämta det aktuella datumet i Ruby kan du använda den inbyggda metoden `Date.today`. Detta returnerar ett datumobjekt med dagens datum.
 
 ```Ruby
-nuvarande_dag = Time.now        # lägger till den nuvarande tiden i variabeln nuvarande_dag
-månad = nuvarande_dag.month     # hämtar månaden från tidens objekt
-år = nuvarande_dag.year         # hämtar året från tidens objekt
-puts "Det är just nu #{månad}-#{år}"
+require 'date'
+
+puts Date.today
+#Output: 2021-09-01
 ```
 
-Detta kommer att skriva ut en sträng som säger något i stil med "Det är just nu 9-2021" beroende på vilken månad och år det är när du kör koden.
-
-## Djupdykning
-Om du vill ha mer kontroll över hur datumet visas kan du använda dig av den inbyggda metoden `strftime`. Denna metod låter dig formatera datumet enligt dina egna preferenser. Här är ett exempel på hur du kan använda den:
+Du kan också använda `Time`-klassen för att få mer detaljerad information om det aktuella datumet och tiden.
 
 ```Ruby
-nuvarande_dag = Time.now         # lägger till den nuvarande tiden i variabeln nuvarande_dag
-formaterat_datum = nuvarande_dag.strftime("%d/%m/%Y")    # formaterar datumet till DD/MM/YYYY
-puts "Dagens datum är #{formaterat_datum}."
+puts Time.now
+#Output: 2021-09-01 15:30:00 +0200
 ```
 
-Detta kommer att skriva ut en sträng som säger något i stil med "Dagens datum är 21/09/2021." Om du vill ha mer information om alla olika formatalternativ som `strftime` erbjuder kan du läsa om det i Ruby's dokumentation.
+## Djupdykning:
+Att kunna hämta det aktuella datumet är en viktig del av dataprogrammering, särskilt inom områden som finans, logistik och planering. Det finns också andra tillvägagångssätt för att hantera datum, som att använda externa bibliotek eller att manipulera datumobjekt med hjälp av metoder som `strftime` för att formatera datumet på ett specifikt sätt.
 
-## Se även
-- [Ruby's dokumentation för Time-klassen](https://ruby-doc.org/core-3.0.2/Time.html)
-- [En artikel om hur man hanterar tid i Ruby](https://www.rubyguides.com/2015/10/ruby-datetime/)
-- [En stack overflow fråga om användande av `strftime`](https://stackoverflow.com/questions/9012270/ruby-strftime-commas-and-am-pm)
+## Se även:
+- [Ruby Date-klassen dokumentation](https://ruby-doc.org/stdlib-2.7.2/libdoc/date/rdoc/Date.html)
+- [Ruby Time-klassen dokumentation](https://ruby-doc.org/core-2.7.2/Time.html)
+- [DateTime biblioteket](https://ruby-doc.org/stdlib-2.7.2/libdoc/datetime/rdoc/DateTime.html)

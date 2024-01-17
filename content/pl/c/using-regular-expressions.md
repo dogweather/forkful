@@ -1,7 +1,7 @@
 ---
-title:                "Wykorzystywanie wyrażeń regularnych"
-html_title:           "C: Wykorzystywanie wyrażeń regularnych"
-simple_title:         "Wykorzystywanie wyrażeń regularnych"
+title:                "Używanie wyrażeń regularnych"
+html_title:           "C: Używanie wyrażeń regularnych"
+simple_title:         "Używanie wyrażeń regularnych"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -10,86 +10,72 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego: Dlaczego warto używać wyrażeń regularnych w C
+## Co & Po co?:
 
-Wyrażenia regularne są niezwykle pomocne przy przetwarzaniu tekstów i danych w programowaniu w C. Pozwalają nam na szybkie i precyzyjne wyszukiwanie oraz manipulację łańcuchami znaków.
+Regular expressions są to wyrażenia wykorzystywane w języku programowania C do wyszukiwania i manipulowania tekstem. Umożliwiają one szybsze i bardziej precyzyjne odnajdowanie wzorców w tekście, co jest szczególnie przydatne w przypadku przetwarzania dużych ilości danych.
 
-## Jak to zrobić: Przykłady kodu
+Programiści często korzystają z wyrażeń regularnych w celu weryfikacji poprawności wprowadzonego tekstu lub wyciągania określonych informacji z tekstu wejściowego. Jest to także popularne narzędzie w automatyzacji procesów, np. w parsowaniu logów czy zamianie formatów danych.
 
-Oto kilka przykładów kodu, które pokazują jak używać wyrażeń regularnych w języku C.
+## Jak to zrobić:
 
-```C
+Fragmenty kodu poniżej ilustrują podstawowe przykłady użycia wyrażeń regularnych w języku C.
+
+```
 #include <stdio.h>
 #include <string.h>
 #include <regex.h>
 
-int main() {
-  char *string = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
-  char *pattern = "ipsum.*amet";
+int main()
+{
+    // Przykład 1: Wyszukiwanie słowa "regular" w tekście
+    char *text = "Regular expressions are awesome!";
+    char *regex = "regular";
 
-  regex_t regex;
-  regcomp(&regex, pattern, REG_EXTENDED);
+    // Kompilacja wyrażenia regularnego
+    regex_t regex_compiled; 
+    regcomp(&regex_compiled, regex, 0);
 
-  int match = regexec(&regex, string, 0, NULL, 0);
-  if (match == 0) {
-    printf("Pasuje!\n");
-  } else if (match == REG_NOMATCH) {
-    printf("Nie pasuje...\n");
-  } else {
-    char error_message[100];
-    regerror(match, &regex, error_message, sizeof(error_message));
-    printf("Błąd: %s\n", error_message);
-  }
+    // Wyszukiwanie wzorca w tekście
+    if (regexec(&regex_compiled, text, 0, NULL, 0) == 0)
+    {
+        printf("Znaleziono dopasowanie!");
+    }
+    else
+    {
+        printf("Dopasowanie nie znalezione.");
+    }
 
-  regfree(&regex);
-  return 0;
+    // Zwolnienie pamięci
+    regfree(&regex_compiled);
+
+    // Przykład 2: Zamiana tekstu
+    char *quote = "You are confined only by the walls you build yourself.";
+    regex = "walls";
+    char *replacement = "limitations";
+
+    // Kompilacja wyrażenia regularnego z flagą REG_EXTENDED
+    // Pozwala na użycie wyrażeń regularnych w drugim argumencie funkcji regexec
+    regcomp(&regex_compiled, regex, REG_EXTENDED);
+
+    // Zamiana wzorca na podaną wartość
+    char *formatted = regreplace(text, &regex_compiled, replacement);
+
+    // Wyświetlenie wyniku
+    printf("%s", formatted);
+
+    // Zwolnienie pamięci
+    regfree(&regex_compiled);
+
+    return 0;
 }
-```
 
-Ten kod wyszukuje w łańcuchu znaków "string" fragment pasujący do wyrażenia regularnego "pattern", w tym przypadku słowo "ipsum" z dowolną ilością dowolnych znaków po nim, a następnie słowo "amet". Jeśli jest dopasowanie, program wypisze "Pasuje!", w przeciwnym wypadku "Nie pasuje...". Można również użyć wyrażeń regularnych do zastępowania tekstu lub wyodrębniania konkretnych fragmentów.
+## Głębszy zanurzenie:
 
-```C
-#include <stdio.h>
-#include <string.h>
-#include <regex.h>
+Wyrażenia regularne powstały w latach 50. wraz z pojawieniem się pierwszych języków do przetwarzania tekstu. Współcześnie istnieje wiele alternatywnych metod przetwarzania i manipulacji tekstu, np. funkcje string z biblioteki standardowej C. Jednak wyrażenia regularne pozostają popularnym wyborem ze względu na swoją potężną funkcjonalność i wszechstronność.
 
-int main() {
-  char *string = "John Smith, 39 years old, j.smith@example.com";
-  char *pattern = "([A-Z][a-z]+) ([A-Z][a-z]+), ([0-9]+) .* (.*)";
+Pod maską, wyrażenia regularne są kompilowane do automatów skończonych i wykorzystują algorytm Thompsona w celu wyszukiwania wzorców w tekście. Jest to szybka i wydajna metoda, pozwalająca na przetwarzanie dużych ilości danych w krótkim czasie.
 
-  regex_t regex;
-  regcomp(&regex, pattern, REG_EXTENDED);
+## Zobacz także:
 
-  regmatch_t groups[5];
-  regexec(&regex, string, 5, groups, 0);
-
-  char name[50];
-  strncpy(name, string + groups[1].rm_so, groups[1].rm_eo - groups[1].rm_so);
-  name[groups[1].rm_eo - groups[1].rm_so] = '\0';
-  printf("Imię: %s\n", name);
-
-  char surname[50];
-  strncpy(surname, string + groups[2].rm_so, groups[2].rm_eo - groups[2].rm_so);
-  surname[groups[2].rm_eo - groups[2].rm_so] = '\0';
-  printf("Nazwisko: %s\n", surname);
-
-  char age[50];
-  strncpy(age, string + groups[3].rm_so, groups[3].rm_eo - groups[3].rm_so);
-  age[groups[3].rm_eo - groups[3].rm_so] = '\0';
-  printf("Wiek: %s\n", age);
-
-  char email[50];
-  strncpy(email, string + groups[4].rm_so, groups[4].rm_eo - groups[4].rm_so);
-  email[groups[4].rm_eo - groups[4].rm_so] = '\0';
-  printf("Email: %s\n", email);
-
-  regfree(&regex);
-  return 0;
-}
-```
-
-Ten przykład pokazuje bardziej zaawansowane użycie wyrażeń regularnych w celu wyodrębnienia różnego rodzaju informacji z tekstu, korzystając z grup w wyrażeniu regularnym i funkcji "strncpy".
-
-## Głębszy zanurzenie: Zastosowania i użycie zaawansowane
-
-Wyrażenia regularne nie są tylko przydatne do wyszukiwania i manipulacji tekstu. W języku C można również wykorzystać je do sprawdzania poprawności danych, np. w formularzach lub plikach konfiguracyjnych.
+- [Dokumentacja biblioteki regex.h w języku C](https://www.gnu.org/software/libc/manual/html_node/Regular-Expressions.html)
+- [Przydatny kalkulator wyrażeń regularnych online](https://regex101.com/)

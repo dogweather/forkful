@@ -1,7 +1,7 @@
 ---
-title:                "パターンに一致する文字を削除する"
-html_title:           "Elixir: パターンに一致する文字を削除する"
-simple_title:         "パターンに一致する文字を削除する"
+title:                "パターンに一致する文字を削除"
+html_title:           "Elixir: パターンに一致する文字を削除"
+simple_title:         "パターンに一致する文字を削除"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -10,28 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+# 何となぜ？
 
-削除する文字列に一致する文字を削除することの利点は何でしょうか？それは、文字の一致がより正確に削除されることを意味します。
+パターンに一致する文字を削除するとは、文字列から特定のパターンを持つ文字を削除することを指します。プログラマーは、データの整形やトークンの作成など、文字列操作をする際にしばしばこの操作を行います。
 
-## How To
+# 方法：
 
-  ```
-  Elixir.replace("Hello World", ~r/W/, "")
-  #=> "Hello orld"
-  Elixir.replace("Nice to meet you", ~r/.e/, "")
-  #=> "Nicto ot u"
-  Elixir.replace("Welcome to Elixir", ~r/e+i/, "")
-  #=> "Wlcomtoxir"
-  ```
+```Elixir
+String.replace("Hello World!", ~r/[aeiou]/, "")
+```
+```
+Hll Wrld!
+```
+上記のコード例では、文字列 "Hello World!" から母音を削除しています。文字列操作は、`String` モジュールの `replace` 関数を使用することで簡単に行うことができます。`~r` の後にパターンを指定し、その後ろに変換後の文字列を指定します。
 
-上記のコードは、`replace`関数を使用して、指定された文字列内で一致するすべての文字を削除する方法を示しています。`~r/`と`/`の間に削除したい文字列の正規表現パターンを記述します。最後の引数に空白の文字列を渡すことで、一致する文字が削除されるように指示します。`~r/`と`/`を使用することで、正規表現を表すことができます。
+# 深堀り：
 
-## Deep Dive
+(1) 削除操作のルーツは、正規表現という技術にあります。正規表現は、文字列パターンを記述するための仕組みであり、プログラミング言語やテキストエディタなどで広く使用されています。(2) 一致する文字を置換する代わりに、文字列から一致する文字を抽出することもできます。これには `String.split/3` 関数を使用することができます。(3) 実際には、文字の削除ではなく、新しい文字列を生成することで削除を行っています。
 
-正規表現を使用することで、より高度な文字列の操作を行うことができます。例えば、正規表現で削除したい文字列のパターンを指定することで、より柔軟に削除することができます。さらに、正規表現を学ぶことで、他のパターンマッチングの機能や文字列操作関数を利用することができるようになります。
+# 参考資料：
 
-## See Also
+この記事では、パターンに一致する文字の削除について紹介しましたが、他にも様々な文字列操作をする方法があります。詳細については、Elixir 公式ドキュメントやコミュニティのフォーラムなどを参照してみてください。
 
-- Elixir's String module: [https://hexdocs.pm/elixir/String.html](https://hexdocs.pm/elixir/String.html)
-- Regular Expressions in Elixir: [https://elixirschool.com/en/lessons/basics/strings/](https://elixirschool.com/en/lessons/basics/strings/)
+- [Elixir 公式ドキュメント](https://elixir-lang.org/docs.html)
+- [Elixir Forum](https://elixirforum.com/)
+- [Elixir School](https://elixirschool.com/ja/lessons/basics/basics/)
+- [Elixir JapanのSlackチャンネル](https://elixir-jp.connpass.com/event/215747/)

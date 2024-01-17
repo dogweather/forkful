@@ -1,7 +1,7 @@
 ---
-title:                "将字符串转换为小写"
-html_title:           "Elixir: 将字符串转换为小写"
-simple_title:         "将字符串转换为小写"
+title:                "把字符串转换为小写"
+html_title:           "Elixir: 把字符串转换为小写"
+simple_title:         "把字符串转换为小写"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -10,64 +10,21 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
+## 什么是转换字符串为小写，为什么程序员要这么做？
+转换字符串为小写是指将字符串中的所有字母转换为小写形式。程序员经常这么做是因为在处理字符串时，有时候需要忽略大小写的差异，以使得比较和搜索更加容易和准确。
 
-将字符串转换为小写是在Elixir编程中常见的操作，它可以很容易地转换包含大写和小写字母的字符串，从而使其在比较和匹配时更容易。它还可以帮助保持代码的统一性和可读性。
+## 如何进行转换：
+```Elixir
+# 使用String.downcase函数将字符串转换为小写
+String.downcase("HELLO WORLD") #=> "hello world"
 
-## 如何操作
+# 不区分大小写的比较
+"hello" == "Hello" #=> true
+``` 
 
-```
-Elixir
-# 普通字符串
-string = "Hello World"
+## 深入挖掘：
+转换字符串为小写的操作在计算机编程中已经存在了很长一段时间。在早期的计算机系统中，由于存储和处理大写字母所需要的资源更多，所以小写字母更受欢迎。在今天的编程语言中，转换字符串为小写的操作也被广泛应用于处理用户输入和字符串比较的场景。除了使用String.downcase函数之外，也可以通过使用正则表达式或者编写自定义的实现来实现字符串转换为小写的功能。
 
-# 使用String.downcase函数转换为小写
-lowercase_string = String.downcase(string)
-
-# 输出: "hello world"
-IO.puts(lowercase_string)
-```
-
-```
-Elixir
-# 含有大写字母的字符串
-string = "Hello World"
-
-# 使用String.downcase函数转换为小写
-lowercase_string = String.downcase(string)
-
-# 输出: "hello world"
-IO.puts(lowercase_string)
-
-```
-
-## 深入探究
-
-使用String.downcase函数时，Elixir会在后台使用Unicode实现，这意味着它可以正确处理包含多字节字符的字符串。它还会处理非英文字符，例如德语的Umlauts或希腊语字母。
-
-另外，如果你想要将字符串中的某些特定字母转换为小写，你可以使用String.replace函数来替换这些字母。
-
-```
-Elixir
-# 含有特定字母的字符串
-string = "HeLlO wOrLd"
-
-# 将所有大写字母'o'转换为小写
-lowercase_string = String.replace(string, "o", "O")
-
-# 输出："HeLLo wOrLd"
-IO.puts(lowercase_string)
-```
-
-## 参考
-
-- [Elixir String Module](https://hexdocs.pm/elixir/String.html)
-- [Elixir Unicode](https://hexdocs.pm/elixir/Unicode.Html)
-- [Elixir String.downcase function](https://hexdocs.pm/elixir/String.html#downcase/1)
-- [Elixir String.replace function](https://hexdocs.pm/elixir/String.html#replace/4)
-
-## 参考
-- [ Elixir String模块](https://hexdocs.pm/elixir/String.html)
-- [ Elixir Unicode](https://hexdocs.pm/elixir/Unicode.Html)
-- [ Elixir String.downcase函数](https://hexdocs.pm/elixir/String.html#downcase/1)
-- [ Elixir String.replace函数](https://hexdocs.pm/elixir/String.html#replace/4)
+## 延伸阅读：
+- Elixir的String模块文档：https://hexdocs.pm/elixir/String.html
+- 关于正则表达式的介绍：https://www.regular-expressions.info/

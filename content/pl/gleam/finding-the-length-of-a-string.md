@@ -10,42 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i Dlaczego?
 
-Któż nie był kiedyś zaintrygowany tym, jak dokładnie dane są przechowywane w naszych programach? W tym artykule dowiesz się, jak wykorzystać język programowania Gleam, aby obliczyć długość ciągu znaków.
+Znalezienie długości łańcucha znakowego to podstawowa umiejętność programistów. Polega ona na określeniu ilości znaków w danym ciągu. Jest to często potrzebne do przetwarzania danych lub tworzenia warunków logicznych w programach.
 
-## Jak to zrobić
+## Jak to zrobić:
 
-Gleam jest językiem zaprojektowanym z myślą o wydajności, wyraźnym kodzie i łatwej integracji z innymi językami. Jeśli jesteś już zaznajomiony z podstawową składnią Gleam, możesz przejść do głównego tematu - jak obliczyć długość ciągu znaków.
+### Gleam:
 
-```Gleam
-let string = "Witaj, świecie!"
-let length = string |> String.length
-
-#[Output]
-length: Int
+```gleam
+let string = "Hello, world!"
+ 
+let length = String.length(string)
+ 
+// length = 13
 ```
 
-W tym przykładzie tworzymy zmienną `string` i przypisujemy jej wartość "Witaj, świecie!". Następnie wykorzystujemy funkcję `String.length` w celu obliczenia długości ciągu. Wynik zostaje przypisany do zmiennej `length`, która jest typu `Int`.
+## Głębsze Wprowadzenie
 
-Teraz moglibyśmy wypisać wartość zmiennej `length` w konsoli, aby sprawdzić czy działa poprawnie. Jednak w rzeczywistych projektach często zachodzi potrzeba wykorzystania długości ciągu w inny sposób, na przykład w warunkowych instrukcjach lub pętlach. Dzięki znajomości tego sposobu obliczania długości ciągu, możesz wykorzystać ją w swoich projektach Gleam.
+### Kontekst historyczny:
 
-## Deep Dive
+Pierwszym językiem programowania, który wprowadził funkcję dla znajdowania długości znaków, był ALGOL 60. Następnie stało się to standardem w językach programowania.
 
-Dla tych, którzy chcą lepiej zrozumieć, jak dokładnie działa funkcja `String.length`, przyjrzyjmy się jej implementacji. Wewnątrz języka Gleam funkcja ta jest zdefiniowana jako:
+### Alternatywy:
 
-```Gleam
-fn length(string) {
-  length = string -> Char.count()
-  0..string |> Enum.each(_) { length += 1 }
-  length
-}
-```
+Innym sposobem na znalezienie długości łańcucha znakowego jest użycie pętli i inkrementowania licznika przy każdym przejściu przez kolejny znak. Jednak w języku Gleam funkcja String.length jest szybsza i bardziej wydajna.
 
-W tej implementacji najpierw definiujemy zmienną `length`, która jest przypisana do wywołania funkcji `Char.count()` na danych wejściowych `string`. Następnie wykorzystujemy pętlę `each` do iteracji po każdym elemencie ciągu i dodania do zmiennej `length` wartości 1. W ten sposób otrzymujemy prawidłową długość ciągu znaków.
+### Szczegóły implementacji:
 
-## Zobacz również
+Funkcja String.length zwraca liczbę całkowitą, która reprezentuje długość łańcucha znakowego. Jest ona zaimplementowana w języku Erlang, na którym opiera się Gleam.
 
-- [Dokumentacja języka Gleam](https://gleam.run)
-- [Przykłady wykorzystania języka Gleam](https://github.com/gleam-lang/gleam/tree/master/examples)
-- [Kurs programowania w języku Gleam](https://rogertorres.gitlab.io/gleam-book/)
+## Zobacz też:
+
+- [Dokumentacja Gleam o funkcji String.length](https://gleam.run/documentation/)

@@ -10,69 +10,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+## What & Why?
 
-테스트를 작성하는 이유는 개발한 코드가 정확하고 예상된 대로 작동하는지 검증하기 위해서입니다. 테스트를 꼼꼼하게 작성하면 코드의 오류를 발견하고 수정할 수 있어서 더욱 신뢰성 높은 프로그램을 만들 수 있습니다.
+테스트를 작성하는 것은 프로그래머가 프로그램을 개발하기 전에 코드를 검증하고 디버깅하는 과정입니다. 테스트를 작성하는 이유는 안정적이고 오류없는 코드를 만들기 위해서입니다.
 
-## 어떻게 작성할까요?
+## How to:
 
-```python
-# 예시: 단위 테스트 작성 방법
+```Python
+# 예제 1: 단위 테스트 작성하기
+# 모듈 불러오기
+import unittest
 
-# 간단한 함수
-def add(a, b):
-    return a + b
+# 간단한 함수 정의
+def add_one(x):
+    return x + 1
 
-# add 함수에 대한 단위 테스트
-assert add(2, 3) == 5
-assert add(5, 10) == 15
-assert add(-1, 6) == 5
+# 테스트 케이스 클래스 정의
+class TestAddOne(unittest.TestCase):
+    
+    # 테스트 메소드 작성
+    def test_positive_input(self):
+        self.assertEqual(add_one(5), 6) # add_one 함수의 결과가 6인지 확인
+    
+    def test_negative_input(self):
+        self.assertEqual(add_one(-3), -2)
+    
+    def test_zero_input(self):
+        self.assertEqual(add_one(0), 1)
+        
+# 새로운 테스트 케이스 인스턴스 생성
+test = TestAddOne()
+
+# 테스트 실행
+unittest.main()
 ```
 
-```python
-# 예시: 통합 테스트 작성 방법
+```
+# 예제 1의 출력:
+----------------------------------------------------------------------
+Ran 3 tests in 0.000s
 
-# 간단한 기능을 가진 웹 어플리케이션
-from flask import Flask 
-
-app = Flask(__name__)
-
-@app.route('/')
-def hello():
-    return 'Hello World!'
-
-# '/' 경로에 대한 통합 테스트
-from flask_testing import LiveServerTestCase 
-from selenium import webdriver
-
-class TestWebApp(LiveServerTestCase):
-    # 웹 브라우저 설정
-    def create_app(self):
-        app.config['TESTING'] = True
-        app.config['LIVESERVER_PORT'] = 0 # 임의의 포트 지정
-        return app
-
-    # 테스트 전에 웹 브라우저 실행
-    def setUp(self):
-        self.driver = webdriver.Chrome()
-        self.driver.get(self.get_server_url())
-
-    # 테스트 후 웹 브라우저 종료
-    def tearDown(self):
-        self.driver.quit()
-
-    # 페이지 내용 테스트
-    def test_hello(self):
-        self.driver.find_element_by_tag_name('button').click()
-        assert 'Hello World!' in self.driver.page_source
+OK
 ```
 
-## 딥 다이브 
+참고: ```Python unittest``` 모듈을 사용하여 테스트를 작성하였습니다.
 
-테스트의 종류에는 단위 테스트, 통합 테스트, 기능 테스트 등이 있으며, 각각의 장단점이 있습니다. 또한 테스트를 자동화하는 방법으로는 unittest 라이브러리, pytest 라이브러리 등이 있습니다. 정확한 테스트 작성을 위해선 테스트 코드를 작성하기 전에 예상되는 출력 값을 먼저 정의하는 것이 중요합니다.
+## Deep Dive:
 
-## 참고
+테스트는 소프트웨어 개발의 일부로서 처음에는 개발자가 직접 진행했지만, 현재는 자동화된 테스트 도구를 사용하여 작성합니다. 자동화된 테스트 도구는 코드의 안정성과 품질을 보장하는 데 큰 역할을 합니다. 또한, 테스트 주도 개발(TDD)이라는 개발 방법론에서는 테스트를 먼저 작성하고 코드를 개발하는 방식을 채택하여 더욱 효과적인 개발을 할 수 있게 합니다.
 
-- [테스트 주도 개발: 우리는 왜 테스트를 할까](https://medium.com/@tyson_swartz/tdd-why-we-test-d04bbc089ebf)
-- [파이썬 단위 테스트: 왜하고 어떻게 하나요?](https://www.slideshare.net/ByoungYoulYu/sds-ug-38026141)
-- [파이썬으로 쉽게 배우는 TDD](https://wikidocs.net/15650)
+다른 테스트 방법으로는 통합 테스트와 함수적 테스트가 있습니다. 통합 테스트는 여러 모듈이 함께 작동하는지를 확인하고, 함수적 테스트는 개별 함수의 기능을 확인합니다.
+
+## See Also:
+
+- [Python unittest 모듈 공식 문서](https://docs.python.org/3/library/unittest.html)
+- [Test-Driven Development: By Example](https://www.amazon.com/Test-Driven-Development-Kent-Beck/dp/0321146530) (테스트 주도 개발과 관련된 켄트 벡의 책)

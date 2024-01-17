@@ -1,7 +1,7 @@
 ---
-title:                "Söka och ersätta text"
-html_title:           "Gleam: Söka och ersätta text"
-simple_title:         "Söka och ersätta text"
+title:                "Sökning och ersättning av text"
+html_title:           "Gleam: Sökning och ersättning av text"
+simple_title:         "Sökning och ersättning av text"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -10,44 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför 
-Letar du efter ett enkelt och effektivt sätt att söka och byta ut text i ditt program? Då kan Gleam vara svaret på dina böner! Med Gleam kan du enkelt söka och ersätta text i dina filer, vilket sparar tid och minskar risken för mänskliga fel.
+# Vad & Varför?
+Att söka och ersätta text är en vanlig uppgift för programmerare. Det innebär att man letar efter specifika ord eller fraser i en text och ersätter dem med något annat. Detta är användbart för att snabbt och enkelt göra stora ändringar i koden eller texten.
 
-## Hur man gör 
-För att söka och ersätta text i Gleam, använd följande kodblock:
-
-```Gleam
-Text.replace(pattern, replacement, text)
-```
-
-Här är ett exempel på hur du kan använda denna funktion:
+# Hur man gör:
+För att söka och ersätta text i Gleam, använd dig av funktionen `replace` eller `replace_all` beroende på dina behov. Här är ett exempel på hur man skulle kunna söka efter "hello" och ersätta det med "hey" i en sträng:
 
 ```Gleam
-Text.replace("Hejsan", "Hallå", "Hejsan världen!")
+let str = "hello world"
+let new_str = replace_all("hello", "hey", str)
 ```
 
-Detta skulle ge följande utmatning:
+Detta kommer resultera i ett nytt värde i `new_str` - "hey world". Om du bara vill ersätta det första förekommandet av "hello", använd funktionen `replace` istället.
 
-```Gleam
-"Hallå världen!"
-```
+# Djupdykning:
+Att söka och ersätta text är en viktig del av textmanipulering inom programmering och har funnits med i många språk sedan tidigt 1900-tal. Andra sätt att utföra denna uppgift inkluderar att använda reguljära uttryck eller att använda en specialiserad sök- och ersättningfunktion i ditt textredigeringsprogram.
 
-En annan användbar funktion är ```Text.replace_all```, som tillåter dig att byta ut alla förekomster av ett mönster i en sträng. Här är ett exempel på hur man skulle göra detta:
+I Gleam är det möjligt att använda reguljära uttryck genom att importera biblioteket `regex` och använda funktionen `regex_replace`. Detta ger dig ännu mer flexibilitet när du söker och ersätter text.
 
-```Gleam
-Text.replace_all("l", "ll", "hello")
-```
-
-Detta skulle ge följande utmatning:
-
-```Gleam
-"hellllo"
-```
-
-## Djupdykning 
-Gleam erbjuder även andra funktioner för sökning och ersättning, till exempel möjligheten att söka och byta ut text baserat på ett reguljärt uttryck. För mer information om dessa funktioner och hur man använder dem, se Gleams officiella dokumentation.
-
-## Se även 
-- Officiell dokumentation för Gleam: https://gleam.run/
-- Reguljära uttryck: https://regexr.com/
-- Mer om textbehandling i Gleam: https://gleam.run/docs/std-lib-text/
+# Se även:
+- [Gleam dokumentation för replace](https://gleam.run/core-lib/string.List.html#function:replace)
+- [Gleam dokumentation för replace_all](https://gleam.run/core-lib/string.List.html#function:replace_all)
+- [Dokumentation för reguljära uttryck](https://www.regular-expressions.info/)

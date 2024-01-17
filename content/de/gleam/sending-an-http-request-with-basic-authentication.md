@@ -10,36 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+Was ist es & Warum?
 
-Warum sollte man eine HTTP-Anfrage mit Grundauthentifizierung senden? In der heutigen Welt der Webentwicklung ist es unerlässlich, dass Anwendungen auf sichere Weise miteinander kommunizieren können. Die Verwendung von Grundauthentifizierung ermöglicht den Schutz sensibler Daten bei der Übertragung über das Internet.
+Das Senden einer HTTP-Anforderung mit Basic-Authentifizierung ist ein wichtiger Teil der Entwicklung von Webanwendungen. Es ermöglicht es Programmen, sich bei einem Server zu authentifizieren und Daten sicher zu übermitteln. Programmierer verwenden dies, um sicherzustellen, dass nur autorisierte Benutzer oder Programme auf bestimmte Inhalte oder Funktionen zugreifen können.
 
-## Wie man es macht
+Wie geht man vor?
+Gleam hat eine integrierte HTTP-Bibliothek, die das Senden von HTTP-Anforderungen mit Basic-Authentifizierung sehr einfach macht. Hier ist ein Beispiel, wie man eine HTTP-Anforderung sendet und den Inhalt der Antwort druckt:
 
-Um eine HTTP-Anfrage mit Grundauthentifizierung in Gleam zu senden, müssen Sie zunächst ein HTTP-Client-Modul importieren. Verwenden Sie dann die Funktion `BasicAuth` und übergeben Sie Ihre Benutzername und Passwort als Argumente.
+```Gleam
+// Importiere die HTTP-Bibliothek
+const http = import gleam/http
 
-```gleam
-import http
+// Definiere die Authentifizierungsdaten
+let username = "Benutzername"
+let password = "Passwort"
 
-// Ein Beispiel für eine HTTP-Anfrage mit Grundauthentifizierung
-let request = http
-  .get("https://meineanwendung.com/api/user", BasicAuth("benutzer123", "meinpasswort"))
-  .send()
+// Sende eine GET-Anfrage mit Basic-Authentifizierung
+let response = http.get("https://beispiel.com/meineDaten", |authorisation=Some(http.auth(username, password)))
+
+// Drucke den Inhalt der Antwort auf der Konsole
+pub fn main() {
+  debug.response.body
+}
 ```
 
-Das `BasicAuth`-Argument wird automatisch in das Anfrage-Header eingefügt, um die Authentifizierung zu ermöglichen. Sie können auch die `getAuthHeader`-Funktion verwenden, um das erstellte Header zu überprüfen oder zu ändern.
+Tiefer Einblick:
 
-```gleam
-let authHeader = BasicAuth(benutzername, passwort) |> http.getAuthHeader()
-```
+Die Basic-Authentifizierung ist eine Methode zur HTTP-Authentifizierung, die bereits seit den frühen Tagen des Internets verwendet wird. Es basiert auf dem Versenden von Benutzername und Passwort im Klartext, was jedoch aufgrund von Sicherheitslücken immer mehr durch andere Methoden ersetzt wird. Alternativen zur Basic-Authentifizierung sind z.B. die Digest-Authentifizierung oder OAuth.
 
-Die oben genannten Funktionen sind nur Beispiele, es gibt jedoch verschiedene andere Methoden, um HTTP-Anfragen mit Grundauthentifizierung in Gleam zu senden. Bitte schau dir die offizielle Dokumentation an, um weitere Details zu erfahren.
+In Gleam wird die Authentifizierung mit Basic-Authentifizierung durch die Funktion `http.auth` unterstützt, die einen String im HTTP-Basic-Auth-Format zurückgibt. Diese kann dann zusammen mit der HTTP-Anforderung an den Server gesendet werden. Es ist wichtig zu beachten, dass die Basic-Authentifizierung nicht als sichere Methode zur Datenübertragung betrachtet wird, da die Zugangsdaten im Klartext versendet werden.
 
-## Tiefer eintauchen
+Weitere Informationen:
 
-Bei der Verwendung von HTTP-Anfragen mit Grundauthentifizierung gibt es einige wichtige Dinge zu beachten. Zum Beispiel ist es wichtig, sicherzustellen, dass Ihre Anwendung über eine SSL-Verbindung verfügt, um die Sicherheit Ihrer Daten zu gewährleisten. Darüber hinaus sollten Sie bei der Verwendung von Grundauthentifizierung sicherstellen, dass Benutzername und Passwort sicher gespeichert und übertragen werden, um die Risiken von unbefugtem Zugriff zu minimieren.
-
-## Siehe auch
-
-- [Official Gleam Documentation](https://gleam.run/core/http.html#basic-auth)
-- [HTTP Basic Authentication Explained](https://www.techopedia.com/definition/23974/basic-authentication)
+- [Gleam HTTP-Bibliothek Dokumentation](https://gleam.run/modules/gleam_http/latest)
+- [HTTP Basic Authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#Basic_authentication_scheme)
+- [Alternative Methoden zur HTTP-Authentifizierung](https://www.baeldung.com/spring-security-choose-authentication-protocol)

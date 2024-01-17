@@ -10,87 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+Was sind Tests und warum sind sie wichtig?
 
-Warum jemand Tests schreiben sollte? Ganz einfach: um sicherzustellen, dass der Code, den wir schreiben, fehlerfrei funktioniert und den Anforderungen entspricht. Tests sind ein unverzichtbarer Bestandteil von sauberem und zuverlässigem Code.
+Tests sind ein wichtiger Bestandteil in der Softwareentwicklung. Sie sind speziell geschriebene Code-Segmente, die die korrekte Funktionalität von anderen Code-Segmente, oder auch ganze Programme, überprüfen. Programmierer verwenden Tests, um sicherzustellen, dass ihr Code korrekt, robust und zuverlässig ist.
 
-## Wie geht's
+Wie führt man Tests in Haskell durch?
 
-Coding-Beispiele und Ausgabebeispiele werden in "```Haskell ...```" Codeblöcken gezeigt.
-
-Das Schreiben von Tests in Haskell ist relativ einfach. Wir können die `HUnit` Bibliothek verwenden, um unsere Tests zu schreiben. Hier ist ein Beispiel für einen einfachen Additions-Test:
+Tests in Haskell können mit dem Framework "Hspec" durchgeführt werden. Dabei werden für jede zu testende Funktion, Daten oder Code-Segment eine oder mehrere Testfälle erstellt, die überprüfen, ob die erwarteten Ergebnisse erzielt werden. Hier ist ein Beispielcode, der die Funktionsweise von "Hspec" demonstriert:
 
 ```Haskell
-import Test.HUnit
+main :: IO ()
+main = hspec $ do
+  describe "addition" $ do
+    it "adds two numbers correctly" $ do
+      add 2 2 `shouldBe` 4
 
--- Unsere Testfunktion
-testAddition = TestCase (assertEqual "1 + 1 sollte 2 ergeben" (1+1) 2)
-
--- Die eigentliche Testsuite
-tests = TestList [testAddition]
-
--- Ausführung der Tests
-runTests = runTestTT tests
+-- Beispiel-Funktion für die Addition von zwei Zahlen
+add :: Int -> Int -> Int
+add x y = x + y
 ```
 
-Die Ausgabe sollte folgendermaßen aussehen:
+Die Ausgabe sieht dann so aus:
 
 ```
-Cases: 1  Tried: 1  Errors: 0  Failures: 0
-Cases: x  Tried: 1  Errors: 0  Failures: 0
+addition
+  adds two numbers correctly
+
+Finished in 0.0010 seconds
+1 example, 0 failures
 ```
 
-Wir können auch spezifische Fehlerausgaben für unsere Tests definieren, um die Probleme leichter zu erkennen:
+Tiefere Einblicke in Tests in Haskell
 
-```Haskell
-testDivision = TestCase (assertEqual "5 / 0 sollte einen Fehler ausgeben" (5/0) (error "Division durch Null"))
+Das Konzept von automatisierten Tests wird bereits seit den 1950er Jahren in der Softwareentwicklung verwendet, um die Qualität von Programmen zu verbessern. Es gibt auch andere Frameworks wie "QuickCheck", welches auf zufallsgenerierten Eingaben basiert, um die Funktionalität von Code zu testen.
 
-tests = TestList [testDivision]
-```
+In Haskell kann auch das Modul "Test.HUnit" verwendet werden, welches auf Unit-Tests spezialisiert ist. Es bietet ähnliche Funktionen wie "Hspec" aber mit einer etwas anderen Syntax.
 
-Die Ausgabe für diesen Test wäre:
+Weiterführende Links
 
-```
-Cases: 1  Tried: 1  Errors: 0  Failures: 1
-Cases: x  Tried: 1  Errors: 0  Failures: 1
-### Failure in: 0: testDivision
-does not match expected value of:
-<exception thrown>
-+ expected:
-<exception thrown>
-+ but got:
-5.0e10^100
-```
-
-Es ist auch möglich, mehrere Tests zu gruppieren, um sie einfacher zu verwalten und auszuführen. Hier ist ein Beispiel für eine Testsuite mit mehreren Tests:
-
-```Haskell
-import Test.HUnit
-
-testAddition = TestCase (assertEqual "1 + 1 should return 2" (1+1) 2)
-testMultiplication = TestCase (assertEqual "2 x 3 should return 6" (2*3) 6)
-testSubtraction = TestCase (assertEqual "5 - 7 should return -2" (5-7) (-2))
-
-tests = TestList [testAddition, testMultiplication, testSubtraction]
-
-runTests = runTestTT tests
-```
-
-Und hier ist die entsprechende Ausgabe:
-
-```
-Cases: 3  Tried: 3  Errors: 0  Failures: 0
-Cases: x  Tried: 3  Errors: 0  Failures: 0
-```
-
-Es gibt noch viele weitere Möglichkeiten, Tests in Haskell zu schreiben und auszuführen. Wir können auch `QuickCheck` verwenden, um automatische Eigenschaftstests zu erstellen oder `Test.Tasty` für eine noch komplexere Teststruktur. Weitere Ressourcen finden Sie in der "Siehe auch" Sektion.
-
-## Tiefergehende Details
-
-Das Schreiben von Tests ist ein wichtiger Bestandteil von gutem Code und sollte von Anfang an in den Entwicklungsprozess einbezogen werden. Es ermöglicht uns, die Funktionalität unseres Codes zu überprüfen und sicherzustellen, dass er korrekt funktioniert und robust ist. Mit den richtigen Tools und ein wenig Übung können wir saubere und zuverlässige Tests erstellen, die uns helfen, besseren Code zu schreiben.
-
-## Siehe auch
-
-- [HUnit Dokumentation](https://hackage.haskell.org/package/HUnit)
-- [QuickCheck Dokumentation](https://hackage.haskell.org/package/QuickCheck)
-- [Test.Tasty Dokumentation](https://hackage.haskell.org/package/tasty)
+- Offizielle Dokumentation von "Hspec": https://hspec.github.io/
+- "QuickCheck" Framework: https://hackage.haskell.org/package/QuickCheck
+- "Test.HUnit" Modul: https://hackage.haskell.org/package/HUnit

@@ -10,48 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i dlaczego?
 
-W dzisiejszych czasach wiele aplikacji internetowych wymaga komunikacji z zewnętrznymi serwerami. W celu uzyskania danych lub wykonania jakiejś akcji, potrzebne jest wysłanie żądania HTTP. W takim przypadku, znajomość sposobów wysyłania żądań HTTP jest niezbędna dla każdego programisty Elm, który chce tworzyć aplikacje internetowe.
+Wysyłanie zapytań HTTP to podstawowa umiejętność każdego programisty. Dzięki temu możemy pobierać dane z internetu, komunikować się z różnymi serwerami i tworzyć interaktywne aplikacje. Jest to niezbędne do tworzenia aplikacji internetowych oraz wdrożenia nowoczesnych rozwiązań.
 
-## Jak to zrobić
-
-W Elm do wykonania żądania HTTP służy funkcja `Http.send`. Przyjmuje ona dwa argumenty - rodzaj żądania oraz adres URL, na który ma zostać wysłane żądanie.
+## Jak to zrobić:
 
 ```Elm
--- Przykładowe żądanie GET
-Http.send Get "https://example.com/api/data"
+import Http
+import Json.Decode exposing (..)
+
+type alias User =
+  { id : Int
+  , name : String
+  }
+
+getUser : String -> Cmd Msg
+getUser userId =
+  Http.get
+    { url = "https://api.example.com/user/" ++ userId
+    , expect = Http.expectJson UserDecoder
+    }
+
+type Msg = GetUserSuccess User | GetUserFailure
 ```
 
-W odpowiedzi na żądanie, zostanie wykonany efekt uboczny, który można obsłużyć wewnątrz funkcji `update`. Przykładowo, w przypadku poprawnego żądania GET, otrzymamy odpowiedź zawierającą dane w formacie JSON.
+## Głębsza analiza
 
-```Elm
--- Przykładowe obsługiwanie odpowiedzi
-type Msg
-    = DataReceived (Result Http.Error Data)
+Wysyłanie żądań HTTP jest powszechnie stosowane w aplikacjach internetowych od lat. Alternatywne podejście jest wykorzystanie JavaScriptu, ale jest to bardziej skomplikowane i narażone na błędy. W Elm istnieje wiele wbudowanych funkcji, które ułatwiają tworzenie i obsługę zapytań HTTP.
 
-update : Msg -> Model -> (Model, Cmd Msg)
-update msg model =
-    case msg of
-        DataReceived result ->
-            case result of
-                Ok data ->
-                    -- Obsługa danych
-                Err error ->
-                    -- Obsługa błędu
-```
+## Zobacz również:
 
-Aby móc używać funkcji `Http.send`, należy zaimportować moduł `Http`. Wpraktyce, warto również użyć paczki `elm-tasks-http` do wygodniejszego zarządzania zadaniami HTTP.
-
-## Głębsze zagłębienie
-
-Funkcje `Http.send` korzystają z mechanizmu efektów ubocznych w Elm. Oznacza to, że funkcja może wykonać jakieś zadanie i zwrócić efekt uboczny, który będzie obsłużony w funkcji `update`. Dzięki temu, aplikacja nie zatrzymuje swojego działania na czas wykonywania żądania HTTP.
-
-Ponadto, istnieje możliwość dostosowania żądania poprzez ustawienie nagłówków oraz ciała żądania. Możliwe jest również przetwarzanie odpowiedzi w innym formacie, np. binarnym zamiast JSON.
-
-Więcej informacji na temat wysyłania żądań HTTP w Elm można znaleźć w dokumentacji [książki Elm](https://guide.elm-lang.org/effects/http.html) oraz w repozytorium paczki `elm-tasks-http`.
-
-## Zobacz również
-
-- [Paczka elm-tasks-http](https://github.com/elm-tasks/http)
-- [Dokumentacja Elm - Wysyłanie żądań HTTP](https://guide.elm-lang.org/effects/http.html)
+Więcej informacji na temat wysyłania żądań HTTP w Elm można znaleźć w oficjalnej dokumentacji [Elm Language Guide](https://guide.elm-lang.org/effects/http.html). Aby lepiej zrozumieć, jak wykorzystać zapytania HTTP w praktyce, zachęcam do przejrzenia przykładowych projektów na stronie [Elm Packages](https://package.elm-lang.org/packages/elm/http/latest/).

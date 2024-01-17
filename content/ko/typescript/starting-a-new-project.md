@@ -1,7 +1,7 @@
 ---
-title:                "새로운 프로젝트 시작하기"
-html_title:           "TypeScript: 새로운 프로젝트 시작하기"
-simple_title:         "새로운 프로젝트 시작하기"
+title:                "새 프로젝트 시작"
+html_title:           "TypeScript: 새 프로젝트 시작"
+simple_title:         "새 프로젝트 시작"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Getting Started"
@@ -10,62 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
-새 프로젝트를 시작하는 이유는 여러 가지가 있을 수 있습니다. 예를 들어, 새로운 기술을 배우고 익히기 위해서, 또는 새로운 기능을 구현하여 더 나은 제품을 출시하기 위해서 등이 있을 수 있습니다. 이 글에서는 TypeScript를 이용하여 새로운 프로젝트를 시작하는 방법을 알아보겠습니다.
+## 무엇이고 왜?
 
-## 어떻게
-TypeScript를 이용하여 새로운 프로젝트를 시작하기 위해서는 먼저 TypeScript를 설치해야 합니다. 일반적으로는 Node.js를 이용하여 NPM을 통해 TypeScript를 설치할 수 있습니다.
+새로운 프로젝트를 시작하는 것은 프로그래머들이 새로운 소프트웨어를 만들기 위해 새로운 시작을 하는 것입니다. 이것은 새로운 기능을 추가하거나 기존의 코드를 개선하기 위해 필요합니다.
 
-```TypeScript
-npm install typescript --save-dev
+## 방법:
+
+TypeScript를 사용하여 새로운 프로젝트를 시작하는 방법은 매우 간단합니다. 먼저, 다음과 같이 TypeScript를 설치해야 합니다:
 ```
-
-설치가 완료되면, 프로젝트 폴더 안에서 `tsc --init` 명령어를 실행하여 프로젝트의 tsconfig 파일을 생성할 수 있습니다.
-
-```TypeScript
+npm install -g typescript
+```
+그런 다음, 프로젝트를 시작할 디렉토리에 들어가서 다음 명령어를 실행하면 됩니다:
+```
 tsc --init
 ```
-
-tsconfig 파일을 올바르게 설정하면, TypeScript 코드를 컴파일하여 JavaScript로 변환할 수 있습니다.
-
-```TypeScript
-// app.ts 
-console.log("Hello World!");
-
-// Compile
-tsc app.ts
-
-// Output: app.js
-console.log("Hello World!");
+이 명령어는 tsconfig.json 파일을 생성하여 프로젝트 설정을 포함하게 됩니다. 그런 다음, TypeScript를 사용하여 코드를 작성할 수 있습니다. 예를 들어, 다음과 같이 함수를 작성할 수 있습니다:
 ```
-
-TypeScript는 정적 타입 언어이기 때문에 변수의 타입을 선언해주어야 합니다. 타입을 지정하면 코드의 가독성을 높일 수 있고, 버그를 사전에 방지할 수 있습니다.
-
-```TypeScript
-// app.ts
-const age: number = 25;
-const name: string = "John";
-
-console.log(`Hi, my name is ${name} and I am ${age} years old.`);
-
-// Compile
-tsc app.ts
-
-// Output: app.js
-var age = 25;
-var name = "John";
-console.log("Hi, my name is " + name + " and I am " + age + " years old.");
+function addNumbers(a: number, b: number): number {
+    return a + b;
+}
 ```
+이제 TypeScript를 사용하여 작성한 코드를 JavaScript 코드로 컴파일할 수 있습니다. ``tsc`` 명령어를 실행하면 됩니다. 컴파일된 JavaScript 파일은 ``outDir`` 옵션에서 지정한 디렉토리에 생성됩니다.
 
-## 딥 다이브
-새로운 프로젝트를 시작할 때 딥 다이브할 가치가 있는 몇 가지 추가 정보들이 있습니다. 첫째, TypeScript는 자바스크립트와 호환성이 높기 때문에 이미 익숙한 자바스크립트 문법을 그대로 사용할 수 있습니다. 둘째, 타입 스크립트를 사용하면 코드의 가독성을 높일 수 있고, 점진적으로 타입을 추가하여 안정성을 확보할 수 있습니다. 셋째, TypeScript는 강력한 타입 추론 기능을 지원하기 때문에 타입을 별도로 명시하지 않아도 됩니다. 넷째, 다양한 IDE나 코드 에디터에서 TypeScript를 지원하기 때문에 개발 툴에 대한 선택의 폭이 넓습니다.
+## 깊이 파고들기:
 
-## 관련 링크
-- [TypeScript 공식 홈페이지](https://www.typescriptlang.org/)
-- [TypeScript 시작하기 - 한국어 번역](https://typescript-kr.github.io/pages/tutorials/TypeScript%20%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0.html)
-- [타입스크립트 핸드북 - 한국어 번역](https://typescript-kr.github.io/)
+TypeScript는 Microsoft에서 개발한 오픈 소스 언어로, JavaScript의 슈퍼셋입니다. 따라서 JavaScript를 향상시키는 기능을 추가하면서도 JavaScript의 모든 기능을 그대로 사용할 수 있습니다. TypeScript는 정적 타입을 지원하여 개발자가 코드를 작성하는 동안 발생할 수 있는 오류를 미리 방지할 수 있습니다. 또한 타입스크립트는 ECMAScript 표준을 준수하고 있으므로 대부분의 브라우저에서 지원됩니다. 다른 JavaScript 슈퍼셋으로는 CoffeeScript, Dart 등이 있습니다.
 
-## 참고 링크
-- [TypeScript for Beginners: Getting Started](https://dev.to/bitovi/typescript-for-beginners-getting-started-3klb)
-- [Starting a new project with TypeScript](https://levelup.gitconnected.com/starting-a-new-project-with-typescript-52088d0d4add)
-- [Why You Should Consider Adopting TypeScript](https://codeburst.io/why-you-should-consider-adopting-typescript-d7dd39281292)
+## 관련 자료:
+
+- [TypeScript 공식 사이트](https://www.typescriptlang.org/)
+- [TypeScript 핸드북](https://www.typescriptlang.org/docs/handbook/intro.html)
+- [TypeScript 소스 코드](https://github.com/Microsoft/TypeScript)

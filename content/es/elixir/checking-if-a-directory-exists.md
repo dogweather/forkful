@@ -1,7 +1,7 @@
 ---
-title:                "Comprobando si existe un directorio"
-html_title:           "Elixir: Comprobando si existe un directorio"
-simple_title:         "Comprobando si existe un directorio"
+title:                "Verificando si existe un directorio."
+html_title:           "Elixir: Verificando si existe un directorio."
+simple_title:         "Verificando si existe un directorio."
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Files and I/O"
@@ -10,42 +10,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
-La comprobación de la existencia de un directorio es una tarea común en la programación, especialmente cuando se trabaja con archivos y manipulación de datos. Al asegurarse de que un directorio existe antes de utilizarlo, podemos evitar errores y asegurarnos de que nuestro código funcione de manera fluida.
+## ¿Qué y por qué?
+Comprobar si un directorio existe es una acción común en la programación. Permite a los programadores verificar si un directorio determinado está presente en una ubicación específica en el sistema de archivos. Esto es importante para asegurar que un programa pueda acceder y utilizar los archivos adecuados.
 
-## Cómo hacerlo
-En Elixir, podemos utilizar la función `File.dir?/1` para comprobar si un directorio existe en una ruta específica. Esta función devolverá un valor booleano, `true` si el directorio existe y `false` si no lo hace.
-
-```Elixir
-iex> File.dir?("/Users/usuario/Documentos/Proyecto")
-true
-
-iex> File.dir?("/Users/usuario/Documentos/NoExiste")
-false
+## ¿Cómo hacerlo?
+En Elixir, se puede verificar si un directorio existe utilizando la función ```File.dir?/2``` y pasando como parámetro la ruta al directorio. Aquí hay un ejemplo de cómo verificar si el directorio "documents" existe en la carpeta actual:
 ```
-
-Además, podemos utilizar la función `File.cwd/0` para obtener el directorio actual en el que estamos trabajando y luego utilizarla junto con `File.join/2` para construir una ruta relativa al directorio actual.
-
-```Elixir
-iex> File.dir?(File.join(File.cwd, "ejemplo"))
+Elixir
+iex> File.dir?("documents")
 true
 ```
-
-Si necesitamos comprobar si un directorio específico existe dentro de un directorio, podemos utilizar la función `Path.expand/2` para construir la ruta completa y luego pasarla a `File.dir?/1`.
-
-```Elixir
-iex> File.dir?(Path.expand("/ejemplo/otro_directorio"))
-true
-```
+Si el directorio no existe, la función devolverá ```false```.
 
 ## Profundizando
-La función `File.dir?/1` en realidad llama a la función `:file.cwd?/1` de la librería Erlang, la cual permite interactuar con el sistema de archivos del sistema operativo.
+Antes de Elixir 1.7, se utilizaba la función ```File.exists?/1``` para verificar la existencia de un directorio. Sin embargo, esta función ha sido eliminada en versiones más recientes en favor de ```File.dir?/2```.
 
-Además, cuando utilizamos `File.dir?/1` en una ruta relativa, se utilizará el directorio actual del proceso Elixir en lugar del directorio actual del sistema operativo. Esto significa que si cambiamos el directorio actual utilizando `File.cd/1`, la ruta relativa también cambiará y puede afectar la comprobación de la existencia del directorio.
+En caso de que se quiera comprobar si un archivo específico existe en lugar de un directorio, se puede utilizar la función ```File.exist?/1``` en su lugar.
 
-## Vea también
-- Documentación oficial de Elixir para `File.dir?/1`: https://hexdocs.pm/elixir/File.html#dir?/1
-- Documentación oficial de Erlang para `:file.cwd?/1`: http://erlang.org/doc/man/file.html
-- Documentación oficial de Elixir para `File.cwd/0`: https://hexdocs.pm/elixir/File.html#cwd/0
-- Documentación oficial de Elixir para `File.join/2`: https://hexdocs.pm/elixir/File.html#join/2
-- Documentación oficial de Elixir para `Path.expand/2`: https://hexdocs.pm/elixir/Path.html#expand/2
+## Ver también
+- Documentación oficial de Elixir sobre la función ```File.dir?/2``` (https://hexdocs.pm/elixir/File.html#dir?/2)
+- Artículo sobre cómo trabajar con archivos y directorios en Elixir (https://elixir-lang.org/getting-started/file-operations.html)
+- Otra forma de verificar la existencia de un directorio en Elixir utilizando la biblioteca standard ```Path.join/2``` (https://elixirforum.com/t/directory-exists-test-around-path-join/13363)

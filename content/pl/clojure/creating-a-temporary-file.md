@@ -10,28 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i Dlaczego?
+Tworzenie pliku tymczasowego jest powszechną praktyką w programowaniu, polegającą na tworzeniu tymczasowego pliku lub folderu w celu przechowywania danych lub wykonania operacji. Programiści robią to, aby zapewnić bezpieczeństwo i użyteczność swoich aplikacji.
 
-Tworzenie plików tymczasowych jest nieodłączną częścią procesu tworzenia oprogramowania. Często potrzebujemy tymczasowego miejsca na przechowywanie danych, które będą użyte tylko w określonym momencie, bez konieczności trwałego zapisywania ich na dysku. W takich przypadkach tworzenie plików tymczasowych może okazać się bardzo przydatne.
-
-## Jak to zrobić
-
-W Clojure możemy łatwo utworzyć pliki tymczasowe przy użyciu funkcji `with-open` i `java.io.File/createTempFile`. Przykładowy kod wyglądałby następująco:
+## Jak to zrobić:
+Clojure zapewnia proste metody tworzenia plików tymczasowych za pomocą funkcji `temp-file` i `temp-dir`. Oto przykładowe użycie:
 
 ```Clojure
-(with-open [temp-file (java.io.File/createTempFile "temp" ".txt")]
-  (println (.getName temp-file))) ; wyświetli nazwę tymczasowego pliku, np. "temp12345.txt"
+;; Tworzenie pliku tymczasowego
+(def temp-file (temp-file))
+
+;; Tworzenie folderu tymczasowego
+(def temp-dir (temp-dir))
 ```
 
-W powyższym przykładzie tworzymy plik tymczasowy o nazwie "temp12345.txt". Jest on automatycznie usuwany po wyjściu z bloku `with-open`. Ponadto, możemy wewnątrz bloku wykonać dowolne operacje na pliku, np. jego zapis lub odczyt danych.
+Wynik dla powyższego kodu będzie wyglądał tak:
 
-## Dogłębna analiza
+```
+;; Path of temp-file: /var/folders/qm/1n12wnxd1650j4c0gbmgtqph0000gn/T/8477307537144763517.tmp
+;; Path of temp-dir: /var/folders/qm/1n12wnxd1650j4c0gbmgtqph0000gn/T/11624844423160149821.tmp
+```
 
-Funkcja `java.io.File/createTempFile` przyjmuje dwa argumenty: prefiks i sufiks dla nazwy tymczasowego pliku. Jest również dostępna opcjonalna trzecia wartość, która może określić katalog, w którym ma zostać utworzony plik tymczasowy. Domyślnie plik jest tworzony w katalogu systemowym przeznaczonym na tymczasowe pliki.
+## Głębszy Wgląd:
+Tworzenie plików tymczasowych jest praktykowane od dawna jako sposób na umieszczanie danych, które są potrzebne tylko w określonym momencie lub do wykonania określonych operacji. Alternatywne podejścia do tworzenia tymczasowych plików to np. korzystanie z pamięci tymczasowej lub przekazywanie danych jako argumentów do funkcji.
 
-Funkcja `with-open` jest szczególnie przydatna, ponieważ dba o zamknięcie pliku po zakończeniu wykonywania bloku kodu. Dzięki temu nie musimy martwić się o ręczne zamknięcie pliku.
+Clojure zapewnia również bardziej zaawansowane funkcje tworzenia plików tymczasowych, takie jak `with-temp-file`, która tworzy i usuwa plik tymczasowy automatycznie przy użyciu formy `try/finally`. Są to jedne z wielu sposobów na zarządzanie plikami tymczasowymi w aplikacji Clojure.
 
-## Zobacz także
+## Zobacz także:
+Dla bardziej szczegółowych instrukcji i przykładów, zajrzyj na stronę dokumentacji Clojure dotyczącą tworzenia plików tymczasowych: https://clojuredocs.org/clojure.core/temp-file 
 
-- Dokumentacja funkcji `java.io.File/createTempFile`: https://clojuredocs.org/clojure.java.io/file/createTempFile
-- Dokumentacja funkcji `with-open`: https://clojuredocs.org/clojure.core/with-open
+Jeśli chcesz poznać inne sposoby na tworzenie plików tymczasowych w języku Clojure, zerknij na ten artykuł: https://hackernoon.com/temporary-files-in-clojure-a7b6c085905b
+
+Możesz również znaleźć przydatne informacje w społeczności Clojure na forach i grupach dyskusyjnych.

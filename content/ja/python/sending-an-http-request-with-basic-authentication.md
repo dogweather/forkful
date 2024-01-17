@@ -1,7 +1,7 @@
 ---
-title:                "基本認証を使用したhttpリクエストの送信"
-html_title:           "Python: 基本認証を使用したhttpリクエストの送信"
-simple_title:         "基本認証を使用したhttpリクエストの送信"
+title:                "基本認証でhttpリクエストを送信する"
+html_title:           "Python: 基本認証でhttpリクエストを送信する"
+simple_title:         "基本認証でhttpリクエストを送信する"
 programming_language: "Python"
 category:             "Python"
 tag:                  "HTML and the Web"
@@ -10,32 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+# こんにちは！ Python プログラマーさんたち！
 
-HTTP requests with basic authentication allow for secure communication between a client (such as a web browser) and a server. This is especially important when sensitive information, such as login credentials, needs to be transmitted.
+この記事では、Python で HTTP リクエストをプログラムする際に、基本認証を使ってリクエストを送信する方法について説明します。基本認証は古くから使われてきた認証方式ですが、今でも多くのプログラマーが利用しています。プログラマーたちは、基本認証を使ってセキュアで使いやすいアプリケーションを作ることができるからです。
 
-## How To
+## 何をする？ なぜする？
 
-To send an HTTP request with basic authentication in Python, we first need to import the `requests` library. Then, we can use the `requests.get` method with the `auth` parameter set to a tuple containing the username and password.
+基本認証は、ユーザー名とパスワードを使ってWebサイトにログインしたり、プライベートな情報にアクセスするための一般的な方法です。プログラマーたちは基本認証を使って、ユーザーがアプリケーションにアクセスする際に、安全でプライベートな情報を送ることができるようにしています。
+
+## 使い方：
+
+Python で HTTP リクエストを送信するには、 `requests` モジュールを使用します。基本認証を使用するには、`auth` パラメータを使ってユーザー名とパスワードを指定します。
 
 ```Python
 import requests
 
-url = "https://www.example.com"
-username = "user123"
-password = "secret"
+URL = "https://example.com"
+USERNAME = "user123"
+PASSWORD = "password123"
 
-response = requests.get(url, auth=(username, password))
-print(response)
+response = requests.get(URL, auth=(USERNAME, PASSWORD))
+
+print(response.status_code)  # 200: 成功
 ```
 
-This will return a `Response` object, which contains information about the request and response, including the status code and any headers.
+## 深く掘り下げる：
 
-## Deep Dive
+基本認証は、HTTP プロトコルの仕様の一部として定義されています。サーバー側は、ユーザーが提供したユーザー名とパスワードを検証し、認証に成功すればリソースにアクセスすることを許可します。しかし、基本認証はセキュアではないため、多くの現代的な認証方式が開発されました。
 
-When using basic authentication, the username and password are encoded in the request header. This encoding is called "Basic authentication" and is not considered secure, as the credentials can be easily decoded. Therefore, it is recommended to use more advanced authentication methods, such as OAuth, for sensitive information.
+もし基本認証が使えない場合には、代わりに API キーを使用したり、OAuth 認証を使用することができます。しかし、基本認証は使いやすく汎用性が高いため、まだ多くのアプリケーションで使われています。
 
-## See Also
-- [Requests library documentation](https://requests.readthedocs.io/en/master/)
-- [HTTP Basic authentication explanation](https://www.httpwatch.com/httpgallery/authentication/#basicauth)
-- [OAuth authentication in Python](https://requests-oauthlib.readthedocs.io/en/latest/oauth1_workflow.html)
+また、基本認証の詳細については、RFC7617ドキュメントを確認することができます。
+
+## さらに読んでみる：
+
+- [Requests: HTTP Library for Python](https://requests.readthedocs.io/en/master/)
+- [HTTP Basic Authentication](https://www.geeksforgeeks.org/http-basic-authentication-python/) - Python で基本認証を実装する方法についてのチュートリアル。
+- [Python: Making HTTP Requests](https://realpython.com/python-requests/) - Python で HTTP リクエストを作るためのチュートリアル。

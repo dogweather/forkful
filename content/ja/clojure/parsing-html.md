@@ -10,43 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# なぜ
+## 何か？なぜ？
+HTMLのパースとは何か、そしてプログラマーがそれをする理由を説明します。
 
-HTMLをパースするのに役立つClojureプログラミングの記事をお読みいただきありがとうございます！Clojureはファンクショナルプログラミング言語であり、HTMLをパースするために非常に強力で直感的なツールを提供しています。HTMLをパースすることで、Webスクレイピングやデータ抽出を行うことができ、ネット上の情報を効率的に活用することができます。
-
-# 手順
-
-Clojureを使用してHTMLをパースする方法を見ていきましょう！まず、````Clojure
+## 方法：
+```Clojure
 (ns html-parser.core
-  (:require [net.cgrand.enlive-html :as html]))
-````
-のように、``net.cgrand.enlive-html``ネームスペースをプログラムにインポートします。
+  (:require [org.jsoup :as jsoup]))
 
-次に、パースするHTMLを``html``という変数に格納します。````Clojure
-(def html
-  "<div class='title'>Clojure Programming</div>")````
+(defn parse-html [url]
+  (jsoup/select (jsoup/connect url) "body"))
 
-このように定義したHTML変数を````Clojure
-(html/html-snippet html [:div.title])````
-というコードでパースすることができます。その結果、``<div class="title">Clojure Programming</div>``という出力が得られます。
+(parse-html "https://www.example.com")
+```
+この例では、 Clojureの`jsoup`ライブラリを使用して、指定されたURLからHTMLを取得し、そのHTMLの`<body>`要素をパースします。出力結果は、指定されたURLのウェブサイトの`<body>`要素に含まれるすべてのコンテンツのリストとなります。
 
-さらに、パースしたHTMLからテキストや属性を抽出することもできます。例えば、````Clojure
-(html/html-content html [:div.title])````を実行すると、``Clojure Programming``というテキストを抽出することができます。
+## 深く掘り下げる
+HTMLパースは、HTMLドキュメントをコンピューターが理解できる形式に変換するプロセスです。これにより、プログラマーはウェブサイトから必要な情報を収集し、処理することができます。代替え手段としては、他のプログラミング言語でHTMLパースを行うことや、手動でHTMLを分析することもあります。また、`jsoup`以外にも、`Enlive`や`html-kit`などのHTMLパース用のライブラリがあります。`jsoup`の実装では、HTMLドキュメントをDOMツリーとしてロードし、それをクエリ言語を使用して操作することができます。
 
-これらのように、Clojureを使えば簡単にHTMLをパースして必要な情報を取得することができます。
-
-# 深堀り
-
-Clojureを使ったHTMLのパースには、さらに便利なツールがあります。``css-selector``や``match``を使用して、パースする要素をより詳細に指定することができます。また、``do->``や``with-decoder``を使用して、さまざまな処理を組み合わせることでより複雑なHTMLのパースも可能です。
-
-さらに、``html/http-resource``を使用することで、Webサイトから直接HTMLを取得してパースすることもできます。また、``html/parse``を使用することで、HTMLファイルから直接パースすることも可能です。
-
-些細なことかもしれませんが、``html``を省略することもできます。例えば、``(html/html-content html [:.title])``というコードは、``(.title html)``というコードと同じ意味を持ちます。
-
-Clojureのドキュメントを読むことで、さらに多様なHTMLパースの方法を学ぶことができます。是非、自分で試してみてください！
-
-# 参考文献
-
-- Clojureドキュメント: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/html
-- クトゥラーさんによるブログ記事: http://ku-to.hateblo.jp/entry/20120528/1338200958
-- 「Clojure Programming」: https://www.manning.com/books/clojure-programming
+## 関連リンク：
+- [Clojure.org](https://clojure.org/)
+- [jsoup](https://jsoup.org/)
+- [Enlive](https://github.com/cgrand/enlive)
+- [html-kit](https://github.com/nakkaya/html-kit)

@@ -10,67 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego 
+## O czym & Dlaczego?
+Praca z plikami CSV (Comma Separated Value) polega na odczytywaniu i zapisywaniu danych w formacie tabelarycznym, gdzie każda komórka jest oddzielona znakiem przecinka. Programiści często pracują z CSV, ponieważ jest to szybki i prosty sposób na przechowywanie i przesyłanie danych, szczególnie w przypadku dużych ilości danych.
 
-CSV (ang. Comma Separated Values) to popularny format pliku używany do przechowywania i przetwarzania danych. W tym artykule dowiesz się, dlaczego warto nauczyć się pracować z CSV i jak można to zrobić w języku C#.
-
-## Jak To Zrobić
-
-Tworzenie plików CSV w języku C# jest bardzo proste i wymaga niewielkiego wysiłku. Wystarczy użyć dwóch prostych kroków:
-
-1. Zainstaluj bibliotekę CsvHelper za pomocą menedżera pakietów NuGet:
+## Jak to zrobić?
+Najpierw musisz dodać przestrzeń nazw "System.IO" do swojego kodu C#. Następnie użyj klasy "StreamReader" do odczytania danych z pliku CSV za pomocą metody "ReadLine()". Ponadto, klasa "StreamWriter" może być wykorzystana do zapisania danych do pliku CSV za pomocą metody "WriteLine()". W przykładzie poniżej pokazano jak odczytać dane z pliku CSV i wyświetlić je w konsoli:
 
 ```C#
-Install-Package CsvHelper
-```
+using System.IO;
 
-2. Napisz kod do odczytu lub zapisu pliku CSV:
+string line;
+StreamReader csvFile = new StreamReader("nazwa_pliku.csv");
 
-```C#
-using (var reader = new StreamReader("dane.csv"))
-using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
+while ((line = csvFile.ReadLine()) != null)
 {
-    var records = csv.GetRecords<Dane>(); // Dane to klasa, która będzie reprezentować strukturę danych w pliku CSV
+    Console.WriteLine(line);
 }
+
+csvFile.Close();
+
+// Output:
+// Kolumna1, Kolumna2, Kolumna3
+// Wartość1, Wartość2, Wartość3
+// Wartość4, Wartość5, Wartość6
 ```
 
-To wszystko! Teraz możesz łatwo odczytywać i zapisywać dane w plikach CSV.
+## Głębszy zanurzenie
+Pliki CSV zostały wprowadzone w latach 70. i są powszechnie używane do przechowywania danych w formacie tabelarycznym. Alternatywą dla CSV są bazy danych, ale pliki CSV są szybsze i łatwiejsze do przetwarzania. Możesz również odczytywać i zapisywać dane w formacie CSV za pomocą biblioteki "CSVHelper", która oferuje dodatkowe funkcje, takie jak automatyczne mapowanie danych do modeli obiektów.
 
-Przykładowy output dla pliku CSV o strukturze: `"Imię","Nazwisko","Wiek"`:
-
-```C#
-using (var writer = new StreamWriter("dane.csv"))
-using (var csv = new CsvWriter(writer, CultureInfo.InvariantCulture))
-{
-    csv.WriteRecords(new List<Dane>
-    {
-        new Dane { Imię = "Jan", Nazwisko = "Kowalski", Wiek = 35 },
-        new Dane { Imię = "Anna", Nazwisko = "Nowak", Wiek = 28 },
-        new Dane { Imię = "Piotr", Nazwisko = "Lis", Wiek = 41 },
-    });
-}
-```
-
-Spójrz, co zostało zapisane w pliku CSV:
-
-```
-Jan,Kowalski,35
-Anna,Nowak,28
-Piotr,Lis,41
-```
-
-## Deep Dive
-
-W języku C# istnieje wiele bibliotek i narzędzi, które mogą ułatwić pracę z plikami CSV. Jedną z popularniejszych jest już wcześniej wspomniana CsvHelper, która oferuje wiele funkcji, takich jak automatyczne mapowanie pól z klasy do kolumn w pliku CSV czy obsługa różnych typów danych.
-
-Ponadto, niektóre z funkcji wbudowanych w język C#, takie jak LINQ, mogą być również użyteczne w manipulacji danych z plików CSV. Nie zapomnij także o wcześniejszej walidacji danych za pomocą mechanizmów takich jak atrybuty w klasie.
-
-Warto również zwrócić uwagę na wydajność operacji na plikach CSV - przy pracy z dużymi plikami, zaleca się używanie funkcji streamingu i wykorzystanie pakietów, które pozwalają na przetwarzanie danych partiami (tzw. batch processing).
-
-## Zobacz Również
-
-- [Oficjalna dokumentacja CsvHelper](https://joshclose.github.io/CsvHelper/)
-- [Przykładowe aplikacje w języku C# z użyciem CsvHelper](https://github.com/topicusonderwijs/csvhelper-examples)
-- [Jak walidować dane w plikach CSV w języku C#](https://exceptionnotfound.net/validating-csv-files-against-different-classes-using-csvhelper/)
-
-Dziękujemy za przeczytanie tego artykułu. Mamy nadzieję, że teraz już wiesz, jak łatwo i przyjemnie można pracować z plikami CSV w języku C#!
+## Zobacz również
+- Dokumentacja Microsoft C# o klasie StreamReader: https://docs.microsoft.com/pl-pl/dotnet/api/system.io.streamreader?view=net-5.0
+- Dokumentacja Microsoft C# o klasie StreamWriter: https://docs.microsoft.com/pl-pl/dotnet/api/system.io.streamwriter?view=net-5.0
+- Biblioteka CSVHelper: https://joshclose.github.io/CsvHelper/

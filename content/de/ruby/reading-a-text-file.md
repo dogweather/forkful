@@ -1,7 +1,7 @@
 ---
-title:                "Eine Textdatei lesen"
-html_title:           "Ruby: Eine Textdatei lesen"
-simple_title:         "Eine Textdatei lesen"
+title:                "Lesen einer Textdatei"
+html_title:           "Ruby: Lesen einer Textdatei"
+simple_title:         "Lesen einer Textdatei"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Files and I/O"
@@ -10,28 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
-Textdateien sind eine häufig genutzte Methode, um Daten und Informationen zu speichern. Als Programmierer ist es daher wichtig zu wissen, wie man Textdateien lesen und verarbeiten kann. Diese Fähigkeit ermöglicht es uns, effizienter zu arbeiten und komplexe Aufgaben zu lösen.
+# Was & Warum?
 
-## Wie man Textdateien in Ruby liest
-In Ruby gibt es mehrere Möglichkeiten, eine Textdatei zu lesen. Eine davon ist die Verwendung der `File`-Klasse. Hier ist ein Beispiel, wie man eine Textdatei mit dem Namen "data.txt" öffnen und lesen kann:
+Das Lesen einer Textdatei ist eine gängige Aufgabe für Programmierer, die häufig zum Bearbeiten und Verwalten von großen Mengen von Daten benötigt wird. Programme können eine Textdatei einlesen und die darin enthaltenen Informationen nutzen, um bestimmte Aktionen auszuführen.
+
+## Wie geht das?
+
+Das Einlesen einer Textdatei ist in Ruby sehr einfach. Zunächst muss die Datei mit dem gewünschten Textinhalt im Programm geöffnet werden. Anschließend kann der Code die Datei Zeile für Zeile durchlaufen und die Informationen auslesen.
 
 ```Ruby
-File.open("data.txt", "r") do |file|
-  while line = file.gets
+file = File.open("dateiname.txt", "r")
+file.each_line do |line|
+    # Hier können Aktionen mit der jeweiligen Zeile durchgeführt werden
     puts line
-  end
 end
+
+file.close
 ```
 
-In diesem Beispiel verwenden wir die Methode `open` der `File`-Klasse, um die Datei zu öffnen. Der erste Parameter gibt den Dateinamen an, der zweite Parameter zeigt an, dass wir die Datei nur lesen ("r" für "read") möchten. Innerhalb des `do`-Blocks verwenden wir die Methode `gets`, um eine Zeile aus der Datei zu lesen. Diese Zeile wird dann einfach mit `puts` ausgegeben. Der `do`-Block sorgt dafür, dass die Datei nach dem Lesen automatisch geschlossen wird.
+Die ```each_line``` Methode ermöglicht es, jede Zeile in der Datei zu verarbeiten. In diesem Beispiel wird die jeweilige Zeile ausgegeben, aber es können auch andere Aktionen wie das Speichern der Zeilen in einer Variablen ausgeführt werden.
 
-## Tiefer Einblick
-Die `File`-Klasse hat noch weitere nützliche Methoden, um mit Textdateien zu arbeiten. Zum Beispiel gibt es die Methode `readlines`, die alle Zeilen aus einer Datei als Array zurückgibt. Oder die Methode `read`, die den gesamten Inhalt einer Datei als String zurückgibt. Auch das Schreiben in eine Textdatei ist mit der `File`-Klasse möglich, indem man den zweiten Parameter beim Öffnen auf "w" für "write" setzt.
+## Tiefere Einblicke
 
-Es ist auch möglich, Textdateien mit der `CSV`-Klasse zu lesen und zu schreiben, wenn sie im CSV-Format vorliegen. Dies ermöglicht eine einfache Verarbeitung von Tabellen und Datenbanken.
+Das Einlesen von Textdateien ist in vielen Programmiersprachen möglich, aber Ruby hat einige nützliche Funktionen, die es einfacher machen. Zum Beispiel können Dateien auch im "Write-Only" oder "Append" Modus geöffnet werden, um Daten in eine Textdatei zu schreiben. Außerdem können mit der ```gets``` Methode auch Benutzereingaben über die Kommandozeile gelesen werden.
 
-## Siehe auch
-- [Dokumentation der File-Klasse](https://ruby-doc.org/core-2.7.2/File.html)
-- [Dokumentation der CSV-Klasse](https://ruby-doc.org/stdlib-2.7.2/libdoc/csv/rdoc/CSV.html)
-- [Ruby für Einsteiger: Dateien](https://www.ruby-einsteiger.de/programmieren-dateien.html)
+Alternativ kann auch die "CSV" Bibliothek verwendet werden, um strukturierte Daten aus einer Textdatei auszulesen. Diese Methode eignet sich besonders gut, wenn die Datei spezielle Datenformate wie Komma getrennte Werte enthält.
+
+Beim Lesen einer Textdatei ist es wichtig, dass das Programm alle Eingaben richtig verarbeitet und auf Fehler überprüft. Deshalb sollte der Code gut strukturiert und getestet werden, um unerwünschte Ergebnisse zu vermeiden.
+
+## Weitere Informationen
+
+Für weitere Informationen über das Einlesen von Textdateien in Ruby empfehle ich die offizielle Ruby Dokumentation [link](https://ruby-doc.org/core-2.7.0/File.html) oder das Buch "The Ruby Way" von Hal Fulton. Hier findest du auch weitere Tipps und Tricks zum Umgang mit Dateien in der Ruby-Programmierung.

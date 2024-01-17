@@ -1,7 +1,7 @@
 ---
-title:                "Concaténer des chaînes de caractères"
-html_title:           "Bash: Concaténer des chaînes de caractères"
-simple_title:         "Concaténer des chaînes de caractères"
+title:                "Concaténation de chaînes"
+html_title:           "Bash: Concaténation de chaînes"
+simple_title:         "Concaténation de chaînes"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Strings"
@@ -10,55 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Quoi & Pourquoi?
+La concaténation de chaînes ("string concatenation" en anglais) est une opération couramment utilisée en programmation. Elle consiste à fusionner plusieurs chaînes de caractères en une seule. Les programmeurs font cela pour rendre le code plus lisible et pour créer de nouvelles chaînes à partir d'éléments existants.
 
-Concaténer des chaînes de caractères peut être très utile en programmation pour combiner du texte de différentes sources et former une nouvelle chaîne de caractères à utiliser dans votre code.
+## Comment faire:
+Pour concaténer des chaînes en Bash, vous pouvez utiliser l'opérateur `+` ou simplement les placer côte à côte. Voici un exemple:
 
-## Comment faire
-
-Voici un exemple de code Bash pour concaténer deux variables de chaîne de caractères :
-
+Bash
 ```Bash
-# Définition des variables
-nom="Jean"
-prenom="Dupont"
-
-# Concaténation des variables pour former une nouvelle chaîne
-nom_complet="${nom} ${prenom}"
-
-# Affichage du résultat
-echo "Bonjour ${nom_complet}, bienvenue !"
+nom="Marie"
+prenom="Jean"
+echo "Bonjour, je m'appelle $prenom $nom."
+```
+Output
+```
+Bonjour, je m'appelle Jean Marie.
 ```
 
-Sortie :
+Vous pouvez également utiliser la commande `printf` pour concaténer des chaînes avec un contrôle plus précis sur le formatage. Voici un exemple:
 
-```
-Bonjour Jean Dupont, bienvenue !
-```
-
-Vous pouvez également concaténer des chaînes de caractères directement dans une commande, par exemple :
-
+Bash
 ```Bash
-# Définition de variables
-fruit="pomme"
-adjectif="rouge"
-
-# Utilisation de la concaténation dans une commande
-echo "J'adore les ${adjectif}s ${fruit}s."
+nom="Dupont"
+prenom="Paul"
+printf "Mon nom est %s et mon prénom est %s." $nom $prenom
+```
+Output
+```
+Mon nom est Dupont et mon prénom est Paul.
 ```
 
-Sortie :
+## Plongée en profondeur:
+La concaténation de chaînes a été historiquement utilisée en informatique dès les premiers langages de programmation. Elle est également présente dans de nombreux autres langages, tels que Python ou JavaScript. En Bash, vous pouvez également utiliser la commande `echo -n` pour concaténer des chaînes sans saut de ligne à la fin. Enfin, il est important de noter que les chaînes de caractères peuvent être manipulées à l'aide de plusieurs autres opérations telles que la substitution, la recherche et le remplacement, etc.
 
-```
-J'adore les rouges pommes.
-```
-
-## Plongée en profondeur
-
-En Bash, il est possible de concaténer des chaînes de caractères de différentes manières. En plus de l'utilisation de variables, vous pouvez également utiliser des commandes comme `cat` ou `printf` pour combiner du texte. De plus, il est possible de concaténer des chaînes de caractères avec des valeurs numériques en utilisant l'opérateur `+`.
-
-## Voir aussi
-
-- [Documentation officielle de Bash](https://www.gnu.org/software/bash/manual/bash.html)
-- [Les opérateurs de chaîne dans Bash](https://www.tldp.org/LDP/abs/html/string-manipulation.html)
-- [Concaténer des variables en Bash](https://www.techonthenet.com/bash/variables/concat.php)
+## Voir aussi:
+- [Bash String Manipulation](https://www.shell-tips.com/bash/string-manipulation/)
+- [The Art of Bash String Manipulation](https://www.baeldung.com/linux/bash-string-manipulation)
+- [Bourne Shell String Manipulation](https://likegeeks.com/linux-shell-scripting-course/string-manipulation/)

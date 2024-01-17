@@ -1,7 +1,7 @@
 ---
-title:                "「二つの日付の比較」"
-html_title:           "Javascript: 「二つの日付の比較」"
-simple_title:         "「二つの日付の比較」"
+title:                "日付の比較方法"
+html_title:           "Javascript: 日付の比較方法"
+simple_title:         "日付の比較方法"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Dates and Times"
@@ -10,39 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+## 何となんで？
 
-JavaScriptでは、日付を比較することで、特定の日付と比較して、何かの結果を得ることができます。これは、期限や期間を管理する際に非常に便利です。
+日付を比較するとは何か？プログラマーがそれをする理由は何か？
 
-## 方法
+日付を比較するとは、二つの日付の間の関係を判断することです。プログラマーは、日付を比較することで、特定の日付が他の日付よりも前後するのかを知ることができます。
 
-まず第一に、二つの日付を取得します。これらは、Dateオブジェクトを使用して取得することができます。次に、比較演算子（<, >, <=, >=）を使用して、二つの日付を比較します。例えば、以下のコードは二つの日付を比較し、結果をコンソールに出力します。
+## 方法：
 
 ```Javascript
-let date1 = new Date("2021/01/01");
-let date2 = new Date("2021/01/15");
+// 二つの日付を定義する
+let date1 = new Date("2020-01-01");
+let date2 = new Date("2019-12-31");
 
-if (date1 < date2) {
-  console.log("date1はdate2よりも前です。");
+// 日付を比較し、結果を出力する
+if (date1 > date2) {
+  console.log("date1はdate2よりも後の日付です");
+} else if (date1 < date2) {
+  console.log("date1はdate2よりも前の日付です");
+} else {
+  console.log("date1とdate2は同じ日付です");
 }
 ```
 
-実行結果は以下のようになります。
-
+出力：
+```Javascript
+date1はdate2よりも後の日付です
 ```
-date1はdate2よりも前です。
-```
 
-## 深堀り
+## 深堀り：
 
-日付を比較する際には、注意しなければならない点がいくつかあります。まず、Dateオブジェクトを作成する際に、注意しなければならないのは、月を表すときに0が1月を表し、11が12月を表すという点です。また、日付が異なっていても、年や月・日が同じであれば、それでも等しいとみなされます。これらのポイントを抑えておくことで、正しく日付を比較することができます。
+歴史的文脈、代替手段、比較する日付の実装の詳細などを含む情報。
 
-## はまわなくても
+日付を比較することは、古いバージョンのJavascriptでは難しい作業でしたが、ECMAScript 5からは```Date```オブジェクトのメソッドを使用して簡単に比較することができるようになりました。代替手段として、日付を整数に変換してから比較する方法もあります。また、日付のタイムスタンプを比較することもできます。
 
-もし日付を比較する際に、他の言語でよく使われているような「日付を数値型に変換してから比較する」という手法を使いたい場合は、DateオブジェクトのgetTime()メソッドを使用することができます。このメソッドは、1970年1月1日からのミリ秒数を返すので、それを利用して日付を数値型に変換することができます。
+## 関連情報：
 
-## 参考リンク
-
-- [MDN: Date](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [Dateオブジェクトの基礎](https://qiita.com/chihiro/items/7ce21bbe991ee87720f8)
-- [Dateを比較するのが辛い人の為に。](https://qiita.com/yarron/items/60a15bba8bbaf5e27dd2#_%E6%AF%94%E8%BC%83%E3%83%AD%E3%82%B8%E3%83%83%E3%82%AF)
+- [MDNの「Date」オブジェクトのドキュメント](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [日付比較を行う際のベストプラクティス](https://stackoverflow.com/questions/492994/compare-two-dates-with-javascript)

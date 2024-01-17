@@ -1,7 +1,7 @@
 ---
-title:                "Calculando uma data no futuro ou no passado"
-html_title:           "Fish Shell: Calculando uma data no futuro ou no passado"
-simple_title:         "Calculando uma data no futuro ou no passado"
+title:                "Calculando uma data no futuro ou no passado."
+html_title:           "Fish Shell: Calculando uma data no futuro ou no passado."
+simple_title:         "Calculando uma data no futuro ou no passado."
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Dates and Times"
@@ -10,61 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+O que & Porquê?
 
-Às vezes, precisamos calcular uma data futura ou passada em nossa programação, por exemplo, para agendar tarefas ou gerar relatórios com base em uma data específica. O Fish Shell possui funções integradas que facilitam esse cálculo, tornando o processo mais eficiente e preciso.
+Calcular uma data no futuro ou passado é uma tarefa comum na programação. Isso envolve usar uma linguagem de programação para determinar ou prever uma data específica, com base em informações fornecidas pelo usuário. Os programadores muitas vezes precisam calcular datas para agendar tarefas, definir prazos ou realizar tarefas de datação em aplicativos.
 
-## Como fazer
+Como fazer:
 
-Para calcular uma data futura ou passada com o Fish Shell, precisamos usar a função `date`. Vamos ver alguns exemplos:
-
-```
-Fish Shell: date -d '1 month ago'
-Saída: Seg Mar 22 17:16:31 -03 2021
-```
-
-Neste exemplo, usamos a opção `-d` para especificar uma data base, ou seja, a partir de qual data queremos calcular. No caso acima, usamos `'1 month ago'` para calcular a data um mês atrás.
-
-Podemos usar outras opções, como `-y` para informar o ano, `-m` para o mês e `-d` para o dia. Veja:
+Fish Shell possui a função math para calcular datas no futuro ou passado. Basta usar o comando `math <expr>` e especificar a expressão para a data desejada. Por exemplo, para obter a data 5 dias no futuro a partir de hoje, podemos usar o seguinte código:
 
 ```
-Fish Shell: date -d 'yesterday'
-Saída: Seg Mar 22 17:16:31 -03 2021
+Fish Shell 
+math now + 5 days
 ```
 
-Ou:
+O resultado seria a data equivalente a 5 dias a partir de hoje. Outra funcionalidade útil é usar o `--date` flag para especificar uma data específica a partir da qual a operação será realizada. Por exemplo:
 
 ```
-Fish Shell: date -d '2021-04-27 10:30'
-Saída: Ter Mar 27 10:30:00 -03 2021
+Fish Shell 
+math --date "1 Jan 2021" + 2 weeks
 ```
 
-Também é possível usar expressões matemáticas, como neste exemplo:
+Isso nos daria a data equivalente a duas semanas após a data especificada. Além disso, a função `duration` pode ser usada para definir um intervalo de tempo específico entre duas datas, permitindo que o usuário especifique uma data final ou um período de tempo a ser adicionado ou subtraído.
 
-```
-Fish Shell: date -d '+3 weeks +2 days'
-Saída: Ter Abr 13 17:16:31 -03 2021
-```
+Deep Dive:
 
-Assim como podemos calcular uma data no passado, usando valores negativos:
+A capacidade de calcular datas no futuro ou passado é uma característica importante e amplamente utilizada em várias linguagens de programação. Ela permite que os programadores criem aplicativos mais dinâmicos e funcionais, ao mesmo tempo em que facilita o processo de agendamento de tarefas e definição de prazos. Alternativas para calcular datas incluem o uso de bibliotecas externas ou funções integradas em outras linguagens de programação. A implementação da função em Fish Shell é baseada em cálculos matemáticos e tratamento de datas em tempo unix.
 
-```
-Fish Shell: date -d '-5 days'
-Saída: Sáb Mar 20 17:16:31 -03 2021
-```
+Veja também:
 
-## Mergulho profundo
-
-A função `date` no Fish Shell usa o formato de data `yyyyMMddHHmmss`, que é o mesmo formato usado pelo comando `date` nas distribuições Linux. Se quisermos personalizar o formato de saída, podemos usar a opção `-f` seguida de uma string com as instruções de formatação desejadas. Por exemplo:
-
-```
-Fish Shell: date -d 'last year' -f '%Y-%m-%d'
-Saída: 2020-03-24
-```
-
-Com essa opção, podemos formatar a saída como desejarmos, incluindo o dia da semana, horas, minutos, entre outros.
-
-## Veja também
-- [Fish Shell: Um guia prático para iniciantes](https://www.datasciencecentral.com/profiles/blogs/fish-shell-um-guia-pratico-para-iniciantes)
-- [Documentação oficial do Fish Shell](https://fishshell.com/docs/current/index.html)
-- [Guia de referência rápida para comandos do Fish Shell](https://devhints.io/fish-shell)
+- Documentação oficial do Fish Shell sobre o comando `math`: (https://fishshell.com/docs/current/cmds/math.html)
+- Tutorial sobre como usar o comando `math` em Fish Shell: (https://dev.to/mfakhrusy/how-to-calculate-dates-with-fish-shell-2bbm)
+- Exemplos e truques adicionais de como calcular datas usando Fish Shell: (https://medium.com/@juliengabryelewicz/bringing-concurrence-to-fish-shell-d0339b0d2def)

@@ -1,7 +1,7 @@
 ---
-title:                "Skriver til standardfeil"
-html_title:           "Haskell: Skriver til standardfeil"
-simple_title:         "Skriver til standardfeil"
+title:                "Skriver til standard feil"
+html_title:           "Haskell: Skriver til standard feil"
+simple_title:         "Skriver til standard feil"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Files and I/O"
@@ -10,30 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hva & Hvorfor?
 
-Å skrive til standard error kan være nyttig for å få mer informasjon om feil i programmering. Det lar deg få informasjon om hva som gikk galt og hvor i koden det skjedde, noe som kan være nyttig for å finne og rette feil.
+Skriving til standard error er en måte å sende feilmeldinger og annen informasjon til programmerere under kjøring av et program. Dette er nyttig når du vil finne og fikse feil i koden din. Programmere bruker dette for å få mer informasjon om hva som skjer når et program kjører, slik at de kan forbedre det.
 
-## Slik gjør du det
+# Hvordan gjøre det:
 
-For å skrive til standard error i Haskell, kan du bruke funksjonen `hPutStrLn` fra `System.IO`-modulen. Denne funksjonen tar inn en handle, som i dette tilfellet er `stderr`, og en streng som skal skrives ut. Her er et eksempel på hvordan du kan bruke den:
+Kodingseksempler nedenfor viser hvordan du skriver til standard error i Haskell:
 
-```Haskell
-import System.IO (hPutStrLn, stderr)
-
+```Haskell 
 main = do
+  putStrLn "Dette er en vanlig utskrift"
   hPutStrLn stderr "Dette er en feilmelding"
 ```
 
-Dette vil skrive ut teksten "Dette er en feilmelding" til standard error. Merk at du må importere modulen `System.IO` for å bruke `hPutStrLn`-funksjonen.
+Eksempelet ovenfor vil skrive ut "Dette er en vanlig utskrift" til standard output, men "Dette er en feilmelding" vil bli skrevet til standard error. Denne metoden kan også brukes til å printe ut variabler eller feilmeldinger.
 
-## Dykk dypere
+# Dykk dypere:
 
-Det finnes også andre funksjoner i `System.IO`-modulen som kan være nyttige for å skrive til standard error. For eksempel kan du bruke `hPrintf` for å skrive ut formatert tekst til handle. Du kan også bruke `hPutStr` eller `hPutChar` for å skrive ut uten ny linje, eller `hFlush` for å tømme buffere og få teksten til å vises umiddelbart.
+I tidligere versjoner av Haskell, måtte man bruke en annen funksjon kalt "hGetErrorStream" for å skrive til standard error. Dette ble forbedret i nyere versjoner, som nå tillater bruk av "hPutStrLn". Det finnes også andre måter å sende feilmeldinger til programmerere, som for eksempel å skrive dem til en fil eller sende dem som e-post.
 
-Det kan også være nyttig å vite at du kan definere din egen handle til standard error ved hjelp av `stderr :: Handle`. Dette kan være nyttig hvis du vil ha en egen handle spesifikt for å skrive til standard error.
+I tillegg, hvis du vil skrive til både standard output og standard error samtidig, kan du bruke "hPutStr" istedenfor "hPutStrLn", slik at det ikke blir en linjeskift mellom utskriftene.
 
-## Se også
+# Se også:
 
-- [Offisiell dokumentasjon for `System.IO`-modulen](https://hackage.haskell.org/package/base-4.15.0.0/docs/System-IO.html)
-- [Haskell Programmering fra Scratch av Timothy Renner](https://www.simplesnippets.tech/haskell-for-beginners/)
+For mer informasjon og eksempler, se følgende ressurser:
+
+- [Haskell dokumentasjon om I/O](https://www.haskell.org/documentation/)
+
+- [Wikipedia artikkel om standard error](https://en.wikipedia.org/wiki/Standard_error_(computing))

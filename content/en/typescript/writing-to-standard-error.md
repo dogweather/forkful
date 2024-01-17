@@ -10,39 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why ##
+## What & Why?
 
-Writing to standard error is an important aspect of programming in TypeScript as it allows developers to log errors and debug their code efficiently. It provides valuable information that can help identify and fix bugs, leading to more robust and reliable code.
+Writing to standard error is a way for developers to display error messages or debug information in their code. This is useful for troubleshooting and identifying problems in a program.
 
-## How To ##
-
-To write to standard error in TypeScript, you can use the `console.error()` method. This method takes in a message as an argument and outputs it to the standard error stream. Let's look at an example:
+## How to:
+To write to standard error in TypeScript, you can use the built-in `console.error()` method. This method takes in an error message or any other string as its argument.
 
 ```TypeScript
-console.error('Something went wrong!');
+console.error("This is an error message"); // Output: This is an error message
 ```
 
-The above code will output the message "Something went wrong!" to the standard error stream. This message will be displayed in the console, along with the line number and file name where the error occurred.
-
-You can also pass in variables or objects as arguments to the `console.error()` method. This is helpful when you need to log the current state of your code. Let's see how it works:
+You can also use string interpolation to include variables or other dynamic information in your error message.
 
 ```TypeScript
 let num = 5;
-console.error('The value of num is ', num);
+console.error(`The value of num is ${num}`); // Output: The value of num is 5
 ```
 
-The output of the above code will be "The value of num is 5". This can be particularly useful when troubleshooting errors in complex code.
+## Deep Dive:
+Writing to standard error has been a common practice in programming for many years. Before the introduction of standardized error handling methods, developers would often write error messages to a specific output stream, such as standard error, to differentiate them from regular program output.
 
-## Deep Dive ##
+In addition to `console.error()`, TypeScript also offers other console methods for writing to standard output. These include `console.log()` for general logging, `console.warn()` for warning messages, and `console.debug()` for debugging messages.
 
-In TypeScript, there are three streams for displaying output: standard output, standard error, and standard input. Standard output is the default stream used by `console.log()` method and can be redirected to a file or external system. Standard error, on the other hand, is the stream specifically used for displaying error messages.
+Another alternative to using `console.error()` is throwing an error using the `throw` keyword. This allows for more specific and customized error messages. However, this should only be used for critical errors that require the program to stop.
 
-By writing to standard error, developers can separate the error messages from the standard output, making it easier to identify and debug issues. This is especially useful for larger projects where there may be multiple developers working on different parts of the code.
-
-It is important to note that the `console.error()` method does not actually throw an error, it simply outputs a message to the standard error stream. So, this method should be used for logging errors and not for handling exceptions.
-
-## See Also ##
-
-- [TypeScript Official Documentation](https://www.typescriptlang.org/docs/)
-- [Console Methods in TypeScript](https://www.typescripttutorial.net/typescript-tutorial/console-methods/)
-- [Debugging in TypeScript](https://code.visualstudio.com/docs/typescript/typescript-debugging)
+## See Also:
+- [Official TypeScript Documentation on console methods](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-4.html#prioritized-overloads)
+- [Article on the difference between console.error() and throw](https://spin.atomicobject.com/2011/05/24/the-difference-between-console-log-and-console-error/)
+- [Blog post on debugging with console methods in TypeScript](https://blog.logrocket.com/debugging-typescript-with-the-console-api/)

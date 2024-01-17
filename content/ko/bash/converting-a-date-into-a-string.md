@@ -10,33 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+## 무엇 & 왜?
+날짜를 문자열로 변환하는 것은 프로그래머들이 날짜 데이터를 다루는데 더 편리하게 하기 위함입니다. 간단한 형식의 문자열로 변환된 날짜를 사용하면, 예를 들어서 파일 이름을 지정하거나 데이터베이스에서 검색할 때 유용하게 사용할 수 있습니다.
 
-날짜를 문자열로 변환하는 작업을 하려면 왜할까요? 날짜 정보를 다양한 형식으로 표현하고 다루기 위해 문자열로 변환하는 것은 유용합니다.
-
-## 하는 법
-
+## 방법:
 ```Bash
-#!/bin/bash
-# 현재 날짜를 문자열로 변환하는 예제
+# 현재 날짜를 문자열로 변환
+date=$(date +'%Y-%m-%d')
+echo $date
 
-# 오늘의 날짜 정보를 yyyy-mm-dd 형식으로 저장
-date=$(date '+%Y-%m-%d')
-
-# 출력
-echo "오늘은 $date 입니다."
+# 특정 날짜를 지정한 형식으로 변환
+date=$(date -d '20210101' +'%d/%m/%Y')
+echo $date
 ```
 
-위의 코드를 실행하면 다음과 같은 결과가 출력됩니다: 
+출력:
 ```
-오늘은 2020-11-18 입니다.
+2021-08-16
+01/01/2021
 ```
 
-## 깊게 파헤치기
+## 깊이 파고들기:
+날짜를 문자열로 변환하는 개념은 실제로 1970년대 UNIX 시스템에서 처음으로 도입되었습니다. 이렇게 하는 것은 날짜를 표현하는 다양한 방법 중에서 가장 효율적인 방식입니다. 또 다른 대안으로는 ISO 8601 형식을 사용하는 것인데, 이것은 숫자로 표현된 날짜를 의미합니다. 날짜를 문자열로 변환하는 방법은 ```date``` 명령어를 사용해서 구현할 수 있습니다. 보다 복잡한 형식의 날짜를 변환하기 위해서는 더 많은 옵션을 사용할 수 있습니다.
 
-날짜를 문자열로 변환하는 데는 다양한 방법이 있습니다. 일반적으로 `date` 명령어를 사용하여 현재 날짜 정보를 얻은 후, `date` 포맷 옵션을 사용하여 원하는 형식을 지정할 수 있습니다. 이 외에도 `printf` 함수를 사용하여 날짜 정보를 특정한 형식으로 출력할 수도 있습니다.
-
-## 참고자료
-
-- [Linux Command - date](https://www.geeksforgeeks.org/date-command-linux-examples/)
-- [Bash Shell - printf](https://linuxhint.com/printf_in_bash_shell_script/)
+## 참고 자료:
+- [GNU Coreutils - date](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html#date-invocation)

@@ -1,7 +1,7 @@
 ---
-title:                "获取当前日期"
-html_title:           "C++: 获取当前日期"
-simple_title:         "获取当前日期"
+title:                "获取当天日期"
+html_title:           "C++: 获取当天日期"
+simple_title:         "获取当天日期"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Dates and Times"
@@ -10,49 +10,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
+# Getting Current Date in C++
 
-在编程过程中，获取当前日期是很常见的需求。无论是记录日志、生成唯一的文件名，还是进行时间的计算，获取当前日期都是必不可少的步骤。
+## What & Why?
 
-## 如何做
+获取当前日期是指在程序中获取当前日期信息的一种操作。程序员经常使用这个功能来跟踪时间，记录事件或者在输出中添加时间戳。这对于调试和日志记录非常有用。
 
-使用C++可以方便地获取当前日期。我们可以通过调用`time`函数来获取当前的时间戳，并使用`localtime`函数将其转换为本地日期和时间。下面是一个简单的示例代码，可以获取当前日期并打印出来。
+## How to:
+
+示例代码：
 
 ```C++
 #include <iostream>
 #include <ctime>
 
-int main() {
-    // 获取当前时间戳
-    time_t now = time(0);
+int main()
+{
+  // 获取当前时间信息并保存到time信息结构体中
+  time_t now = time(0);
 
-    // 转换为本地日期和时间
-    tm *ltm = localtime(&now);
+  // 将当前时间转换为字符串形式
+  char* current_date = ctime(&now);
 
-    // 打印出当前日期
-    std::cout << "当前日期：" << ltm->tm_year + 1900 << "/" 
-              << ltm->tm_mon + 1 << "/" << ltm->tm_mday << std::endl;
-    return 0;
+  // 输出当前日期
+  std::cout << "当前日期为：" << current_date;
+  
+  return 0;
 }
 ```
 
-运行以上代码，输出结果类似于：
+输出：
+
 ```
-当前日期：2021/4/11
+当前日期为：Sun Aug 15 12:56:23 2021
 ```
 
-## 深入了解
+## Deep Dive
 
-在C++中，`time_t`类型表示系统时间的秒数，从1970年1月1日0时0分0秒开始计算。而`tm`结构体则保存了本地日期和时间的一些信息。在调用`localtime`函数时，会将时间戳转换为本地时区的日期和时间，并保存在`tm`结构体中。在上面的代码中，我们通过`ltm->tm_year`、`ltm->tm_mon`和`ltm->tm_mday`来访问年、月和日的数值，需要注意的是，`tm`结构体中的月份和日期的数值都是从0开始的，所以需要分别加上1900和1才能得到正确的日期。
+### Historical Context:
 
-如果需要获取更详细的时间信息，例如小时、分钟和秒等，我们还可以通过访问`ltm`结构体中的其他成员来实现。具体的细节可以查阅C++官方文档。
+在早期，计算机系统并没有内置获取当前日期的功能。程序员通常会使用系统的时钟来计算时间，或者手动输入日期信息。随着操作系统的发展，获取当前日期的功能也被相应地集成进去。
 
-## 参考链接
+### Alternatives:
 
-- [C++ time函数](https://www.cplusplus.com/reference/ctime/time/)
-- [C++ localtime函数](https://www.cplusplus.com/reference/ctime/localtime/)
+除了使用ctime函数外，C++标准库还提供了其他获取日期信息的函数，比如strftime和localtime。此外，也可以使用第三方库来实现获取当前日期的功能。
 
-## 参见
+### Implementation Details:
 
-- [C++中的日期和时间处理](https://www.runoob.com/cplusplus/cpp-date-time.html)
-- [C++官方文档](https://devdocs.io/cpp/)
+ctime函数返回的是一个指向静态内部字符串的指针。因此，在多次调用ctime函数时，返回的日期信息会是相同的。为了解决这个问题，可以使用localtime函数将time信息转换为本地时间，再进一步处理。
+
+## See Also
+
+- [ctime函数](https://www.cplusplus.com/reference/ctime/ctime/)
+- [strftime函数](https://www.cplusplus.com/reference/ctime/strftime/)
+- [localtime函数](https://www.cplusplus.com/reference/ctime/localtime/)

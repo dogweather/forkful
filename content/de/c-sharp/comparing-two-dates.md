@@ -1,7 +1,7 @@
 ---
-title:                "Vergleich von zwei Daten"
-html_title:           "C#: Vergleich von zwei Daten"
-simple_title:         "Vergleich von zwei Daten"
+title:                "Vergleich von zwei Datumsangaben"
+html_title:           "C#: Vergleich von zwei Datumsangaben"
+simple_title:         "Vergleich von zwei Datumsangaben"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Dates and Times"
@@ -10,86 +10,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
-Vergleichen von zwei Daten kann nützlich sein, um festzustellen, ob sie gleich oder unterschiedlich sind. Dies kann besonders wichtig sein, wenn man mit Datumsangaben in Programmen arbeitet, wie z.B. bei der Verarbeitung von Nutzeranfragen oder beim Filtern von Daten.
+## Was & Warum?
+Beim Programmieren muss man oft zwei verschiedene Termine oder Daten miteinander vergleichen, um beispielsweise zu überprüfen, welches Datum früher oder später ist. Dies ist eine wichtige Funktion, die Programmierer nutzen, um logische Entscheidungen zu treffen oder Datensätze zu sortieren.
 
-## How To
-Um zwei Daten in C# zu vergleichen, verwenden wir die eingebaute `DateTime` Klasse. Hier ist ein einfaches Beispiel, bei dem wir zwei Daten erstellen und dann überprüfen, ob sie gleich sind:
-
+## Wie geht's?
+Der Vergleich von zwei Daten in C# ist relativ einfach. Wir können die integrierte Methode `Compare()` nutzen, um zwei `DateTime`-Objekte zu vergleichen.
 ```C#
-DateTime datum1 = new DateTime(2021, 6, 15);
-DateTime datum2 = new DateTime(2021, 6, 15);
-
-if(datum1 == datum2)
-{
-  Console.WriteLine("Die Daten sind gleich!");
-}
-else
-{
-  Console.WriteLine("Die Daten sind unterschiedlich.");
-}
+DateTime date1 = new DateTime(2021, 01, 01);
+DateTime date2 = new DateTime(2021, 01, 15);
+int result = DateTime.Compare(date1, date2);
+Console.WriteLine(result); // Output: -1 (date1 is earlier than date2)
 ```
 
-Die Ausgabe dieses Codes ist "Die Daten sind gleich!", da beide `DateTime` Objekte das gleiche Datum enthalten.
-
-Wir können auch verschiedene Methoden der `DateTime` Klasse verwenden, um spezifische Eigenschaften der Daten zu vergleichen. Zum Beispiel können wir die `Compare` Methode verwenden, um zu prüfen, ob ein Datum vor oder nach einem anderen Datum liegt:
-
-```C#
-if(DateTime.Compare(datum1, datum2) > 0)
-{
-  Console.WriteLine("datum1 liegt nach datum2.");
-}
-else if(DateTime.Compare(datum1, datum2) < 0)
-{
-  Console.WriteLine("datum1 liegt vor datum2.");
-}
-else
-{
-  Console.WriteLine("Die Daten sind gleich.");
-}
-```
-
-In diesem Beispiel wird das Programm überprüfen, ob `datum1` nach `datum2` liegt und gibt dies entsprechend aus. Wenn die Daten gleich sind, wird die letzte Bedingung ausgeführt.
-
-## Deep Dive
-Die `DateTime` Klasse in C# bietet verschiedene Methoden und Eigenschaften, mit denen wir detailliertere Vergleiche zwischen zwei Daten durchführen können. Zum Beispiel können wir die `Ticks` Eigenschaft verwenden, um die Anzahl der Ticks (100-nanosekundige Intervalle) zu vergleichen, die seit dem 1. Januar 0001 vergangen sind.
-
-```C#
-if(datum1.Ticks > datum2.Ticks)
-{
-  Console.WriteLine("datum1 liegt nach datum2.");
-}
-else if(datum1.Ticks < datum2.Ticks)
-{
-  Console.WriteLine("datum1 liegt vor datum2.");
-}
-else
-{
-  Console.WriteLine("Die Daten sind gleich.");
-}
-```
-
-Es ist auch möglich, die `DateTimeOffset` Klasse zu verwenden, um zwei Daten mit expliziten Zeitzonenangaben zu vergleichen. Dies kann wichtig sein, wenn wir mit Daten aus verschiedenen Zeitzonen arbeiten.
-
-```C#
-DateTimeOffset dateOffset1 = new DateTimeOffset(2021, 6, 15, 10, 30, 0, new TimeSpan(+2, 0, 0));
-DateTimeOffset dateOffset2 = new DateTimeOffset(2021, 6, 15, 8, 30, 0, new TimeSpan(-5, 0, 0));
-
-if(dateOffset1 > dateOffset2)
-{
-  Console.WriteLine("dateOffset1 liegt nach dateOffset2.");
-}
-else if(dateOffset1 < dateOffset2)
-{
-  Console.WriteLine("dateOffset1 liegt vor dateOffset2.");
-}
-else
-{
-  Console.WriteLine("Die Daten sind gleich.");
-}
-```
+## Tiefere Einblicke
+Die `Compare()` Methode vergleicht die angegebenen Daten auf Basis von Zeit und Datum. Alternativ können wir auch die `Day`, `Month` und `Year` Eigenschaften nutzen, um nur einen Teil des Datums zu vergleichen.
+Eine weitere Möglichkeit ist die Verwendung der `CompareTo()` Methode, die auch negative, 0 oder positive Werte zurückgibt, abhängig davon, ob das erste Datum vor, gleich oder nach dem zweiten Datum liegt. 
 
 ## Siehe auch
-- Microsoft Docs: [DateTime Struktur (C#)](https://docs.microsoft.com/de-de/dotnet/api/system.datetime)
-- Microsoft Docs: [DateTime.Compare Methode (C#)](https://docs.microsoft.com/de-de/dotnet/api/system.datetime.compare)
-- Microsoft Docs: [DateTimeOffset Struktur (C#)](https://docs.microsoft.com/de-de/dotnet/api/system.datetimeoffset)
+Weitere Informationen zur `Compare()` und `CompareTo()` Methode sowie zur Verwendung von Datumsvergleichen in C# finden Sie hier:
+- [Microsoft Dokumentation](https://docs.microsoft.com/de-de/dotnet/api/system.datetime.compare?view=net-5.0)
+- [Tutorial zum Vergleichen von Datumsangaben in C#](https://www.c-sharpcorner.com/article/how-to-compare-two-dates-in-c-sharp/)

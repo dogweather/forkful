@@ -1,7 +1,7 @@
 ---
-title:                "Die aktuelle Datum erhalten"
-html_title:           "Gleam: Die aktuelle Datum erhalten"
-simple_title:         "Die aktuelle Datum erhalten"
+title:                "Das aktuelle Datum abrufen."
+html_title:           "Gleam: Das aktuelle Datum abrufen."
+simple_title:         "Das aktuelle Datum abrufen."
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Dates and Times"
@@ -10,51 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was & Warum?
 
-Das Abrufen des aktuellen Datums ist oft ein wichtiger Teil der Programmierung. Es ermöglicht es uns, zeitabhängige Aktionen auszuführen, Daten in einer bestimmten Reihenfolge zu organisieren und vieles mehr. In diesem Artikel werden wir uns ansehen, wie man das aktuelle Datum in Gleam bekommt.
+Das Abrufen des aktuellen Datums ist ein grundlegender und wichtiger Teil der Programmierung. Es ermöglicht es uns, Datum und Uhrzeit in unseren Anwendungen auf einfache und effiziente Weise zu verarbeiten. Programmierer verwenden diese Funktion oft für die Reihenfolge von Ereignissen, das Verwalten von Planungen oder das Berechnen von Ausführungszeiten.
 
-## Wie man das aktuelle Datum in Gleam bekommt
+## So geht's:
 
-Die einfachste Möglichkeit, das aktuelle Datum in Gleam zu bekommen, ist die `Time.now()` Funktion zu verwenden. Dies gibt uns ein `Date` Objekt zurück, das das aktuelle Datum und die Uhrzeit enthält.
-
-```Gleam
-let current_date = Time.now()
-```
-
-Wenn wir nur das Datum ohne Zeit benötigen, können wir die `Time.date()` Funktion verwenden.
+### Gleam-Syntax:
 
 ```Gleam
-let today = Time.date()
+import DateTime
+
+let current_date = DateTime.now()
+
+IO.print("Das aktuelle Datum ist: {}", [DateTime.format(current_date, "%Y-%m-%d")])
 ```
 
-Um das Datum in einem bestimmten Format zu erhalten, können wir die `Time.format()` Funktion verwenden und dem Format eine Schnur übergeben.
+### Ausgabe:
 
-```Gleam
-let today_str = Time.format(today, "{YYYY}/{MM}/{D}")
-```
+Das aktuelle Datum ist: 2021-09-09
 
-Dies würde ein Datum im Format "YYYY/MM/D" zurückgeben, z.B. "2020/07/12". Für eine vollständige Liste der unterstützten Formate, schau dir die Dokumentation an.
+## Tief einsteigen:
 
-## Tiefere Einblicke
+### Historischer Kontext:
 
-Das `Date` Objekt, das von `Time.now()` zurückgegeben wird, besteht aus verschiedenen Komponenten wie Jahr, Monat, Tag, Stunde, Minute und Sekunde. Wir können auf diese Komponenten zugreifen, indem wir die entsprechenden Funktionen aufrufen, z.B. `Time.year()`, `Time.month()`, `Time.day()`, usw.
+Das Abrufen des aktuellen Datums ist ein wesentlicher Bestandteil der Programmierung seit den Anfängen der Computer. In frühen Programmiersprachen wie BASIC und FORTRAN war es jedoch aufgrund fehlender Bibliotheken und Funktionen deutlich komplexer.
 
-```Gleam
-let year = Time.year(Time.now())
-let month = Time.month(Time.now())
-let day = Time.day(Time.now())
-```
+### Alternativen:
 
-Außerdem können wir mithilfe der `Time.adjust()` Funktion ein bestimmtes Datum anpassen, indem wir die entsprechenden Parameter wie "year", "month" und "day" angeben.
+Es gibt verschiedene Möglichkeiten, das aktuelle Datum in einer Programmiersprache zu erhalten. Einige Programmiersprachen haben eine integrierte Funktion, andere benötigen spezielle Bibliotheken oder Module, wie es bei Gleam der Fall ist.
 
-```Gleam
-let tomorrow = Time.adjust(Time.date(), [year => 2020, month => 7, day => 13])
-```
+### Implementation:
 
-Dies würde das Datum auf den 13. Juli 2020 festlegen. Für weitere Informationen zu den verfügbaren Funktionen und deren Verwendung, lies dir die offizielle Dokumentation durch.
+In Gleam wird das aktuelle Datum mithilfe der DateTime-Bibliothek abgerufen. Diese Bibliothek bietet verschiedene Funktionen für die Verarbeitung von Datum und Uhrzeit. Die `now()` Funktion gibt das aktuelle Datum im Format `datetime` zurück, welches dann mithilfe der `format()` Funktion in das gewünschte Format umgewandelt werden kann.
 
-## Siehe auch
+## Siehe auch:
 
-- [Offizielle Dokumentation zu Gleam](https://gleam.run/documentation)
-- [Beispielcode für die Verwendung von `Time`](https://github.com/gleam-lang/gleam/blob/master/examples/time.gleam)
+- [Gleam DateTime Dokumentation](https://gleam.run/libraries/date-time/)
+- [Erläuterungen zum aktuellen Datum in anderen Programmiersprachen](https://www.guru99.com/dates-date-times-in-programming.html)
+- [Verwendung von Datum und Uhrzeit in Gleam-Anwendungen](https://medium.com/gleam-lang-blog/working-with-dates-and-times-in-gleam-2bb543b14c1f)

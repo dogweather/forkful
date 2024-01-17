@@ -1,7 +1,7 @@
 ---
-title:                "Tulostaminen virheenkorjaustulosteista"
-html_title:           "Kotlin: Tulostaminen virheenkorjaustulosteista"
-simple_title:         "Tulostaminen virheenkorjaustulosteista"
+title:                "Tulostaminen virheenjäljitystä varten"
+html_title:           "Kotlin: Tulostaminen virheenjäljitystä varten"
+simple_title:         "Tulostaminen virheenjäljitystä varten"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Testing and Debugging"
@@ -10,70 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mikä ja miksi?
+Debug-tulostamisella tarkoitetaan ohjelmakoodin suorituksen aikaisen tiedon tai virheiden näyttämistä. Ohjelmoijat käyttävät tätä työkaluna löytääkseen ja korjatakseen ohjelmiensa virheitä.
 
-Joskus kehittäjän on tärkeää nähdä ohjelmansa sisäisiä tapahtumia ja muuttujien arvoja, jotta voi havaita ja ratkaista mahdolliset ongelmat. Tulostamalla debug-tietoa ohjelman suorituksen aikana, voidaan helpommin havaita virheitä ja parantaa koodin suorituskykyä.
-
-## Miten tehdä niin
-
-Debug-tietojen tulostaminen Kotlinissa on helppoa ja nopeaa. Voit käyttää standardia println-funktiota, kuten: 
-
+## Kuinka:
 ```Kotlin
-fun main() {
-    val name = "Maija"
-    val age = 25
-    println("Tervetuloa, $name!")
-    println("Olet $age-vuotias.")
+// Esimerkki luokasta, jossa käytetään debug-tulostamista
+class Henkilö(var nimi: String, var ikä: Int) {
+    init {
+        println("Uusi henkilö lisätty: $nimi, $ikä vuotta")
+    }
+    
+    // Debug-tulostaminen funktiossa
+    fun tervehdi() {
+        println("Hei, olen $nimi ja olen $ikä vuotta vanha.")
+    }
 }
-```
 
-Tämä tulostaa seuraavanlaisen viestin:
-
-```
-Tervetuloa, Maija!
-Olet 25-vuotias.
-```
-
-Voit myös tulostaa monimutkaisempia tietoja käyttämällä String-litereleitä ja muuttujien nimiä. Esimerkiksi:
-
-```Kotlin
-fun main() {
-    val num1 = 10
-    val num2 = 5
-    println("Ensimmäinen luku on $num1 ja toinen luku on ${num2 * 2}.")
+fun main(args: Array<String>) {
+    val henkilö = Henkilö("Matti", 29)
+    henkilö.tervehdi()
 }
+
+// Tulostaa:
+// Uusi henkilö lisätty: Matti, 29 vuotta
+// Hei, olen Matti ja olen 29 vuotta vanha.
 ```
 
-Tämä tulostaa seuraavanlaisen viestin:
+## Syvällinen sukellus:
+Debug-tulostamisen käsite on ollut käytössä jo pitkään ohjelmoinnin historiassa. Nykyään sen rinnalle on tullut muitakin työkaluja, kuten erilaiset debuggerit, jotka auttavat paikantamaan ja korjaamaan virheitä. Debug-tulostamisen toteutus vaihtelee eri kielten välillä, mutta yleisesti sitä käytetään lisäämällä ohjelman suoritusvaiheessa ```println()``` tai vastaava funktio haluttuihin kohtiin.
 
-```
-Ensimmäinen luku on 10 ja toinen luku on 10.
-```
-
-## Syvällisempi tarkastelu
-
-Voi olla hyödyllistä tietää, että voit myös tulostaa debug-tietoja suoraan debug-luokan avulla. Tämä luokka tarjoaa erilaisia metodeja tietojen tarkasteluun ja formaattaukseen. Esimerkiksi voit käyttää "debug" -funktiota, kuten:
-
-```Kotlin
-fun main() {
-    val name = "Markku"
-    val age = 30
-    val height = 175.5
-    val weight = 80.6
-    debug("Nimi: $name, Ikä: $age, Pituus: $height cm, Paino: $weight kg")
-}
-```
-
-Tulostus näyttäisi tältä:
-
-```
-Debug: Nimi: Markku, Ikä: 30, Pituus: 175.5 cm, Paino: 80.6 kg
-```
-
-Voit myös käyttää muita debug-luokan metodeja, kuten "debugToString", "debugColors" ja "debugIndent". Lisätietoja löydät [Kotlinin virallisesta dokumentaatiosta](https://kotlinlang.org/docs/reference/using-gradle.html).
-
-## Katso myös
-
-- [Kotlinin viralliset verkkosivut](https://kotlinlang.org/)
-- [Kotlinin dokumentaatio](https://kotlinlang.org/docs/home.html)
-- [Ohjelmoinnin perusteet Kotlinilla](https://developer-tech.com/learn-kotlin-beginners/)
+## Katso myös:
+- [Debug-tulostaminen – Wikipedia](https://fi.wikipedia.org/wiki/Debug-tulostaminen)
+- [Kotlin Debugging – Tutorialspoint](https://www.tutorialspoint.com/kotlin/kotlin_debugging.htm)
+- [Debugging in Kotlin – Medium](https://medium.com/@duncan_irving/debugging-in-kotlin-c17e6cf6d314)

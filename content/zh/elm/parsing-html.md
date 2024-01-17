@@ -10,89 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么要学习解析HTML?
+## 什么和为什么？
+解析HTML是将网页文档转换成可读取的数据结构的过程。程序员通常会这样做，以便能够从网页文档中提取所需的信息，并对其进行处理。
 
-解析HTML是一项重要的技能，它可以帮助你更好地理解网页的结构和内容。同时，它也能提高你的代码维护能力，让你更容易处理大量的HTML数据。
-
-## 如何开始？
-
+## 如何：
 ```Elm
-import Html exposing (..)
-import Html.Attributes exposing (..)
-import Html.Events exposing (..)
+import Html.Parser exposing (..)
 
--- Example HTML to be parsed
-sampleHtml = "
+-- 提供HTML文档
+htmlDoc = "
+<!DOCTYPE html>
 <html>
-    <head>
-        <title>Elm Programming Article</title>
-    </head>
-    <body>
-        <header class="header">
-            <h1>Welcome to Elm!</h1>
-        </header>
-        <main class="content">
-            <p>In this article, we will learn how to parse HTML using Elm.</p>
-            <ul>
-                <li>First, we will cover the basics of parsing a single element.</li>
-                <li>Then, we will dive into parsing multiple elements and handling attributes.</li>
-            </ul>
-        </main>
-    </body>
+<head>
+  <title>Elm Article</title>
+</head>
+<body>
+  <h1>Hello, world!</h1>
+</body>
 </html>
 "
 
--- Function to parse a single element
-singleElementParser = 
-    Html.filter (\node -> 
-        case node of
-            H1 _ attributes children -> 
-                (className attributes) == "header" && children == "Welcome to Elm!"
-            _ -> False
-    )
+-- 解析HTML
+parsedDoc = parse htmlDoc
 
--- Function to parse multiple elements and handle attributes
-multipleElementsParser = 
-    Html.filter (\node -> 
-        case node of
-            DIV _ attributes children -> 
-                (className attributes) == "content"
-                    && contains (Html.text "how to parse") children
-            LI _ _ children -> 
-                contains "basics" children
-            LI _ _ children -> 
-                contains "dive into" children
-            _ -> False
-    )
-
--- Parse the sampleHtml using the parsers and print the results
-main = 
-    let
-        parsedHeader = singleElementParser (parse sampleHtml)
-        parsedContent = multipleElementsParser (parse sampleHtml)
-    in
-        [h2 [] [text "Parsed Header:"]
-        ,pre [] [text <| toString <| parsedHeader]
-        ,h2 [] [text "Parsed Content:"]
-        ,pre [] [text <| toString <| parsedContent]
-        ]
+-- 输出结果
+parsedDoc
+-- <title>Elm Article</title><h1>Hello, world!</h1>
 
 ```
 
-Sample Output:
+## 深入探讨：
+解析HTML的历史可以追溯到早期的网络浏览器，它们需要解析HTML文档来显示网页内容。除了Elm，还有其他语言也能解析HTML，例如JavaScript中的DOM操作。而在Elm中，可以使用Html.Parser来解析HTML文档，它提供了许多有用的函数来帮助我们处理HTML文档中的元素和属性。
 
-Parsed Header:
-[H1 [header][{class="header",events:[],styles:[],attrs:[],factories:[]}][Welcome to Elm!]]
-
-Parsed Content:
-[DIV [content][{class="content",events:[],styles:[],attrs:[],factories:[]}][P [] [text "In this article, we will learn how to parse HTML using Elm."],UL [] [LI [] [{class="active",events:[],styles:[],attrs:[],factories:[]},text "First, we will cover the basics of parsing a single element."],LI [] [{class="active",events:[],styles:[],attrs:[],factories:[]}][text "Then, we will dive into parsing multiple elements and handling attributes."]]]]]
-
-## 深入了解解析HTML
-
-通过了解HTML的结构和属性，以及使用不同的过滤方法来处理不同的元素，我们可以更精确地解析HTML并提取所需的信息。同时，借助其他的HTML解析库，如Deli和Selectry，我们也可以更加灵活地处理网页数据。
-
-## 参考链接
-
-- [Elm官方文档](https://guide.elm-lang.org/)
-- [Deli Library](https://package.elm-lang.org/packages/arykarpov/Deli/latest/)
-- [Selectry Library](https://package.elm-lang.org/packages/romstad/elm-selectry/latest/)
+## 参考资料：
+- [Elm Html模块文档](https://package.elm-lang.org/packages/elm/html/latest/)
+- [HTML解析器的历史](https://en.wikipedia.org/wiki/HTML#History)
+- [使用JavaScript解析HTML](https://www.w3schools.com/js/js_htmldom.asp)

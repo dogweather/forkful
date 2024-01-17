@@ -10,55 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+## O Que & Por Quê?
 
-Se você é um programador em Haskell, provavelmente já precisou comparar duas datas em algum momento de seu desenvolvimento. Comparar duas datas é útil para diversas aplicações, como por exemplo, verificar se uma data está antes ou depois de outra, calcular a diferença entre duas datas ou verificar se uma data é igual a outra.
+Comparar duas datas é o processo de verificar se uma data é maior, menor ou igual a outra. Isso pode ser útil em programação quando precisamos classificar eventos por ordem cronológica ou realizar cálculos de tempo entre duas datas.
 
-## Como Fazer
-
-Comparar duas datas em Haskell é bastante simples e podemos utilizar algumas funções básicas da linguagem para isso. Vamos ver alguns exemplos:
+## Como Fazer:
 
 ```
--- Verificar se uma data está antes de outra
-compareDates :: (Int, Int, Int) -> (Int, Int, Int) -> Bool
-compareDates (d1, m1, y1) (d2, m2, y2) = 
-  if y1 == y2
-    then if m1 == m2
-      then if d1 < d2
-        then True
-        else False
-      else if m1 < m2
-        then True
-        else False
-    else if y1 < y2
-      then True
-      else False
-
--- Verificar se uma data é igual a outra
-checkIfEqual :: (Int, Int, Int) -> (Int, Int, Int) -> Bool
-checkIfEqual date1 date2 = date1 == date2
-
--- Calcular a diferença em dias entre duas datas
-diffDates :: (Int, Int, Int) -> (Int, Int, Int) -> Int
-diffDates (d1, m1, y1) (d2, m2, y2) = abs (dateToDays (d1, m1, y1) - dateToDays (d2, m2, y2)) where
-  dateToDays :: (Int, Int, Int) -> Int
-  dateToDays (date, month, year) = year * 365 + month * 30 + date
+compararDatas :: Data -> Data -> Ordering
+compararDatas data1 data2
+    | data1 > data2 = GT
+    | data1 < data2 = LT
+    | otherwise = EQ
 ```
 
-Aqui utilizamos a função `compareDates` para verificar se uma data está antes de outra, a função `checkIfEqual` para verificar se duas datas são iguais e a função `diffDates` para calcular a diferença em dias entre duas datas. Podemos utilizar essas funções em nosso código para realizar comparações de datas de forma rápida e eficiente.
+Para comparar duas datas em Haskell, podemos usar a função pré-definida `Ord`. Essa função recebe duas datas e retorna um tipo de dados `Ordering` que representa se a primeira data é maior (`GT`), menor (`LT`) ou igual (`EQ`) à segunda data.
 
-## Deep Dive
+Exemplo de input:
+```
+compararDatas (Data 10 03 2020) (Data 05 03 2020)
+```
+Output esperado: `GT`
 
-Comparar duas datas em Haskell pode parecer simples, mas existem algumas coisas que devemos ter em mente. Primeiramente, é importante ressaltar que datas são apenas tuplas de três números inteiros, e Haskell permite que utilizemos pattern matching para extrair esses valores facilmente.
+## Deep Dive:
+Comparar datas é uma tarefa comum em programação, especialmente quando lidamos com agendamentos, tarefas ou cálculos envolvendo tempo. Em Haskell, podemos utilizar a biblioteca `Data.Time` para trabalhar com datas de forma mais complexa, incluindo cálculos entre datas, manipulação de fusos horários, entre outros recursos.
 
-Além disso, é importante trabalharmos com as datas de forma consistente, ou seja, sempre utilizar o formato (d, m, y) para representá-las, onde d é o dia, m é o mês e y é o ano. Isso nos ajuda a evitar erros de comparação e cálculos incorretos.
+Uma alternativa para comparar datas em Haskell é utilizando a biblioteca `Chiphunk`, que oferece funções específicas para lidar com datas no formato ISO 8601.
 
-Outro ponto importante é a utilização da função `abs` para calcular a diferença em dias entre duas datas. Isso é necessário porque, caso a primeira data seja maior do que a segunda, o resultado será um valor negativo, o que pode gerar erro em nossos códigos caso não tratemos esse valor corretamente.
+A implementação da função `Ord` em Haskell utiliza o conceito de "typeclass", que permite que diferentes tipos de dados possam ser ordenados de forma flexível. Isso significa que podemos aplicar a função `Ord` em diferentes tipos de dados, desde que esses tipos tenham uma instância da classe `Ord` implementada.
 
-Com essas dicas em mente, você estará pronto para utilizar a comparação de datas em seu código Haskell de forma eficiente e sem complicações.
-
-## Veja também
-
-- [Documentação oficial do Haskell](https://www.haskell.org/documentation/)
-- [Tutorial de Haskell para iniciantes](https://learnxinyminutes.com/docs/pt-br/haskell-pt/)
-- [Exemplos práticos de comparação de datas em Haskell](https://wiki.haskell.org/Comparing_dates_and_times)
+## Veja também:
+- [Haskell: Aprenda a programar](https://www.casadocodigo.com.br/products/livro-aprenda-haskell) - Livro de introdução à linguagem Haskell.
+- [Documentação oficial do Haskell](https://downloads.haskell.org/~ghc/latest/docs/html/libraries/) - Referência completa sobre a linguagem.
+- [Chiphunk](https://hackage.haskell.org/package/chiphunk) - Biblioteca para manipulação de datas em Haskell no formato ISO 8601.

@@ -1,7 +1,7 @@
 ---
-title:                "Розбір html"
-html_title:           "C#: Розбір html"
-simple_title:         "Розбір html"
+title:                "Аналіз HTML"
+html_title:           "C#: Аналіз HTML"
+simple_title:         "Аналіз HTML"
 programming_language: "C#"
 category:             "C#"
 tag:                  "HTML and the Web"
@@ -10,46 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Чому
+## Що & Чому?
+Парсинг HTML - це процес витягування даних з HTML-коду веб-сторінки. Програмісти часто використовують його для отримання необхідної інформації зі сторінок, які немають готового API для доступу до даних. 
 
-Розбір HTML є важливою задачею в програмуванні, оскільки дозволяє отримувати та обробляти дані з веб-сторінок. Це дозволяє створювати потужні додатки, які працюють з інформацією з Інтернету.
-
-## Як це зробити
-
+## Як зробити:
 ```C#
-using System;
-using System.Net;
-using System.IO;
-using HtmlAgilityPack;
-
-// Завантаження HTML з веб-сторінки
-string url = "https://www.example.com";
-HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
-HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-
-// Читання відповіді із потоку
-StreamReader reader = new StreamReader(response.GetResponseStream());
-string html = reader.ReadToEnd();
-
-// Створення HTML-синтаксичного дерева
-HtmlDocument doc = new HtmlDocument();
-doc.LoadHtml(html);
-
-// Знаходження тега <h1> та виведення його вмісту
-var heading = doc.DocumentNode.SelectSingleNode("//h1");
-Console.WriteLine(heading.InnerText); // Виведе "Українська версія"
-```
-Приклад виводу:
-
-```
-Українська версія
+// Приклад коду для парсингу HTML-коду використовуючи бібліотеку HtmlAgilityPack
+HtmlDocument document = new HtmlDocument();
+document.Load("index.html");
+HtmlNodeCollection paragraphs = document.DocumentElement.SelectNodes("//p");
+foreach (HtmlNode paragraph in paragraphs)
+{
+    Console.WriteLine(paragraph.InnerText);
+}
 ```
 
-## Розглиблення
+Вихід: Вітаємо на нашій сторінці! Будь ласка, ознайомтеся з нашими послугами.
 
-Розбір HTML - це процес аналізування вихідного коду веб-сторінки за допомогою програмного забезпечення. Після завантаження сторінки, весь HTML-код розбивається на окремі частини, які можна легко зчитувати та обробляти. Це дозволяє отримувати потрібні дані з Інтернету та використовувати їх у своїх програмах. Найпоширенішою бібліотекою для роботи з розбором HTML в C# є `HtmlAgilityPack`, яка дозволяє маніпулювати HTML-синтаксичним деревом зручним способом.
+## Глибше в деталі:
+Спочатку парсинг HTML використовувався для розбору текстових документів, але з появою інтернету став популярним інструментом для витягування даних з веб-сторінок. Є інші способи доступу до даних, такі як розробка API або використання скрапінгу веб-сторінок, але парсинг дає можливість отримати необхідні дані без потреби висилати запити до сервера. У C# існує кілька бібліотек для парсингу HTML, таких як HtmlAgilityPack, AngleSharp та CsQuery.
 
-## Дивись також
-
-- [HtmlAgilityPack документація](https://html-agility-pack.net/documentation)
-- [Розділ бібліотеки HTMLAgilityPack на GitHub](https://github.com/zzzprojects/html-agility-pack)
+## Дивись також:
+- [HtmlAgilityPack офіційний сайт](https://html-agility-pack.net/)
+- [Документація з HtmlAgilityPack в Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/api/htmlagilitypack?view=htmlagilitypack-1.11.37)

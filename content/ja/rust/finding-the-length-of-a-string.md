@@ -1,7 +1,7 @@
 ---
-title:                "文字列の長さを見つける"
-html_title:           "Rust: 文字列の長さを見つける"
-simple_title:         "文字列の長さを見つける"
+title:                "文字列の長さを求める"
+html_title:           "Rust: 文字列の長さを求める"
+simple_title:         "文字列の長さを求める"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -10,43 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+## 何？何のため？
+文字列の長さを調べることは、プログラマーがよく行う処理です。これは、文字列に含まれる文字の数を確認するためです。
 
-文字列の長さを取得することは、プログラミングにおいて非常に一般的なタスクです。Rustを使えば、これを簡単かつ効率的に行うことができます。そのため、Rustを学ぶ上で重要なスキルの一つとなります。
-
-## 方法
-
-Rustで文字列の長さを取得するには、組み込みのメソッドである`len()`を使用します。以下のコードを参考にしてください。
+## 方法：
+以下のコードブロックに、Rustで文字列の長さを求める方法の例と出力を示します。
 
 ```Rust
-let my_string = String::from("こんにちは");
-let length = my_string.len();
-println!("文字列の長さは{}文字です。", length);
+let string = String::from("Hello, world!");
+let length = string.len();
+
+println!("The length of the string is {}", length);
 ```
 
-または、インデックスアクセスやループを使用しても同じ結果を得ることができます。
-
-```Rust
-let my_string = String::from("こんにちは");
-let mut length = 0;
-for _c in my_string.chars() {
-    length += 1;
-}
-println!("文字列の長さは{}文字です。", length);
+出力：
+```
+The length of the string is 13
 ```
 
-## 詳細について
+## 深く掘り下げる：
+文字列の長さを求めるという処理は、プログラミングにおいて重要な役割を果たしてきました。これは、文字列を扱う上で必要不可欠な機能であり、古くから使用されてきました。他にも、文字列の長さを求める方法として、ループを利用する方法や組み込みの関数を使用する方法などがあります。Rustでは、文字列の中に含まれるバイト数を計算し、その数を返すことで文字列の長さを求めます。
 
-`len()`メソッドは、文字列型に対して直接呼び出すことができる組み込みのメソッドです。これにより、メモリや文字コードの扱いについてRustが自動的に最適な方法を選択してくれます。これにより、プログラムのパフォーマンスにも影響を与えます。また、`len()`メソッドを介して取得される値は`usize`型であるため、文字列の長さがより大きな数でも適切に扱うことができます。
-
-## 参考
-
-- [Rust公式ドキュメント - Strings](https://doc.rust-lang.org/std/string/)
-- [Rust by Example - Strings](https://doc.rust-lang.org/rust-by-example/std/str.html)
-- [Rust入門 - 文字列の扱い方](https://rustguide.readthedocs.io/ja/latest/strings.html)
-
-## 関連リンク
-
-- [Rust入門 - レイトレーシング](https://rustguide.readthedocs.io/ja/latest/raytracing.html)
-- [Rustのライフタイム - 入門](https://qiita.com/mopp/items/3eb8a4e44ab13079d2d6)
-- [Rustのデータ型 - 種類と使い方](https://qiita.com/Kaiser2981/items/f3d5d4f88f743b661d85)
+## 参考：
+- [Rust公式ドキュメント](https://doc.rust-lang.org/std/string/struct.String.html#method.len)
+- [文字列の長さを求める方法についての記事 (英語)](https://www.thoughtco.com/string-length-function-958340)

@@ -10,44 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
+# 什麼是新項目？為什麼程序員要開始一個新項目？
 
-每个程序员都喜欢开始一个新项目，这不仅可以提升技能，还能实现新的想法。使用Swift编程语言可以让你在短时间内构建出现代化的iOS、macOS和watchOS应用。
+開始一個新項目是指開始一個全新的程式碼專案。程序員經常這麼做是因為他們需要解決一個新的問題，或者改進現有的解決方案。開始一個新項目也能讓程序員保持新鮮感，學習新技術並挑戰自己。
 
-## 如何做
-
-### 创建新的项目
-
-要开始一个新的项目，你需要打开Xcode应用程序，并选择"Create a new Xcode project"。然后选择"Single View App"模板，填写项目名称和组织标识符。
+## 如何：
 
 ```
-Swift let projectName = "MyApp"
-Swift let organizationIdentifier = "com.yourcompany"
+Swift 
 ```
 
-### 添加视图控制器
+程式碼塊中的程式碼是用於示範如何開始一個新項目的。首先，您需要使用```Swift```關鍵字來定義一個新的Swift程式碼專案。然後，您可以使用```print()```函式來顯示一些文字。最後，編譯並運行您的程式碼，您將在控制台中看到您的文字輸出。
 
-每个iOS应用都需要至少一个视图控制器来管理用户界面，我们可以通过点击"Add"按钮并选择"View Controller"来添加一个新的视图控制器。然后，我们可以通过拖拽和连接来设计和控制界面元素。
+## 深入探討：
 
-```
-Swift class ViewController: UIViewController {
-  override func viewDidLoad() {
-    super.viewDidLoad()
+開始一個新項目可以讓程序員收穫許多好處。首先，它能幫助程序員學習新的技術並提高他們的技能。其次，它能讓程序員擁有更多的自由度，因為他們可以自由決定如何設計和實現他們的項目。另外，開始一個新項目還可以讓程序員保持對程式碼的熱情和興趣，並保持學習和成長的動力。
 
-    // Add code to customize UI elements
-  }
-}
-```
+如果您想了解更多關於Swift程式碼專案的歷史背景，請參考以下相關資源。
 
-### 运行项目
+## 參考資源：
 
-完成UI设计后，可以通过点击Xcode左上角的运行按钮来调试和运行我们的应用程序。这将启动一个模拟器，并展示我们的应用界面。
-
-## 深入了解
-
-在开始一个新项目时，最重要的是要有一个清晰的目标和计划。你可以先设计用户界面，然后逐步添加功能和逻辑，最后进行测试和优化。
-
-## 参考链接
-- [Swift官方文档](https://swift.org)
-- [Xcode官方文档](https://developer.apple.com/xcode/)
-- [Ray Wenderlich Swift教程](https://www.raywenderlich.com/category/swift)
+- [Swift 官方網站](https://swift.org/)
+- [Swift 程式語言介紹](https://www.appcoda.com.tw/swift-introduction/)
+- [Swift 程式語言歷史](https://developer.apple.com/library/archive/documentation/Swift/Conceptual/Swift_Programming_Language/AboutTheSwiftLanguage/AboutTheSwiftLanguage.html)

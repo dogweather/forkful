@@ -10,89 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Тому, чому
+Що це і чому: Зчитування аргументів командного рядка - це процес отримання інформації, переданої програмі під час виклику з командного рядка. Це корисно для програмістів, оскільки дозволяє динамічно змінювати параметри виконання програми.
 
-Все, що ми робимо на комп'ютері, починається зі зміни командного рядка. Чи то запускати програму, чи зчитувати вхідні дані, чи використовувати аргументи командного рядка, ми повинні знати, як користуватися цими можливостями для ефективної роботи. Тому, якщо ви хочете вдосконалити свої навички Elm, ця стаття про зчитування аргументів командного рядка буде корисна для вас.
-
-## Як
+Як це зробити: Elm має вбудовану функцію для зчитування аргументів командного рядка - `Elm.Platform.Cmd.getParam`. Нижче наведено приклад коду, який демонструє використання цієї функції з певними аргументами та виводить їх значення.
 
 ```Elm
-import Platform.Cmd
-import Json.Decode exposing (Decoder, decodeValue, field, int, string, succeed)
-import Console exposing (log)
+import Elm.Platform.Cmd exposing (getParam)
 
--- Отримуємо аргументи з командного рядка
-main : Program () Model Msg
-main = Platform.program
-       { init = init
-       , update = update
-       , view = view
-       , subscriptions = \_ -> Sub.none
-       }
-
-init : () -> ( Model, Cmd Msg )
-init _ =
-    let
-        arguments = Platform.Cmd.getArgs
-    in
-        ( Model arguments, Cmd.none )
-
--- Модель аргументів командного рядка
-type alias Model =
-    { arguments : List String
-    }
-
--- Наш приклад Decoder, який буде використовуватися для парсингу JSON
-type alias Person =
-    { name : String
-    , age : Int
-    }
-
-personDecoder : Decoder Person
-personDecoder =
-    succeed Person
-        |> field "name" string
-        |> field "age" int
-
--- Парсимо JSON аргументи з командного рядка
-update : Msg -> Model -> ( Model, Cmd Msg )
-update msg model =
-    case model.arguments of
-        argument :: _ ->
-            case decodeValue personDecoder argument of
-                Ok person ->
-                    ( { model | arguments = List.tail model.arguments }, log person )
-
-                Err error ->
-                    ( model, log error )
-
-        _ ->
-            ( model, Cmd.none )
-
--- Виводимо результат в консолі
-view : Model -> Html msg
-view model =
-    div []
-        [ text "Зчитані аргументи командного рядка:"
-        , ul [] (List.map (\argument -> li [] [ text argument ]) model.arguments)
-        ]
-
+main =
+  let
+    -- Параметри аргументів командного рядка
+    args = [ "name", "age", "country" ]
+    -- Виклик функції `getParam` з потрібними параметрами
+    (name, age, country) = getParam args
+  in
+    -- Виведення значень аргументів у консоль
+    Debug.log "Name:" name
+    Debug.log "Age:" age
+    Debug.log "Country:" country
 ```
 
-Можливий вихід у консолі:
+Результат виконання цього коду буде виглядати так:
 
+```SHELL
+Name: John
+Age: 30
+Country: USA
 ```
-Зчитані аргументи командного рядка:
-  -h
-  {"name":"John", "age": 25}
-```
 
-## Глибоке занурення
+Глибше погляньмо: Читання аргументів командного рядка є важливою частиною розробки програм, особливо коли потрібно змінювати їх поведінку в залежності від введених параметрів. Іншими способами зчитування аргументів командного рядка є використання функції `Platform.worker` або бібліотеки для роботи з командним рядком. У веб-розробці, зчитування аргументів командного рядка може бути корисне для передачі параметрів між сторонами клієнт-сервер.
 
-Ви можете використовувати не тільки `getArgs` для отримання аргументів командного рядка, але і `getEnv` для отримання змінних середовища. Крім того, ви можете використовувати `Decoder` не тільки для парсингу JSON, але і для інших форматів даних, таких як CSV або XML. Також, ви можете використовувати команди `Cmd` для запуску команд у терміналі з вихідними даними зчитаних аргументів.
-
-## Дивіться також
-
-- [Документація Elm по роботі з командним рядком](https://package.elm-lang.org/packages/elm/core/latest/Platform-Cmd)
-- [Стаття про парсинг JSON в Elm](https://elmprogramming.com/decoding-json-in-elm.html)
-- [Стаття про використання команд в Elm](https://elmprogramming.com/using-commands-in-elm.html)
+Дивіться також: Документація Elm про зчитування аргументів командного рядка - https://package.elm-lang.org/packages/elm/platform/latest/Platform-Cmd#getParam.

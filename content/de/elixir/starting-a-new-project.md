@@ -10,36 +10,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+Was & Warum?
 
-Elixir ist eine bahnbrechende Programmiersprache, die die Leistung von funktionaler Programmierung mit der Flexibilität von Konkurrenzprogrammierung kombiniert. Mit seinem leistungsstarken Toolset, seiner hohen Skalierbarkeit und seinem benutzerfreundlichen Syntax ist Elixir die perfekte Wahl für alle, die ein neues Projekt starten möchten.
+Der Beginn eines neuen Projekts ist der Prozess, bei dem ein Programmierer sich auf die Entwicklung einer neuen Software oder Anwendung konzentriert. Oftmals geschieht dies, um eine spezifische Aufgabe oder Herausforderung zu lösen oder um eine bereits vorhandene Version zu aktualisieren. Neue Projekte ermöglichen es Programmierern auch, neue Technologien und Programmierkonzepte auszuprobieren.
 
-## Wie man anfängt
+Wie?
 
-Um ein neues Projekt in Elixir zu starten, müssen Sie zunächst die Elixir-Sprachumgebung auf Ihrem Computer installieren. Sobald Sie dies getan haben, können Sie ein neues Projekt erstellen, indem Sie den Befehl `mix new <project_name>` ausführen. Dies erstellt automatisch eine grundlegende Projektstruktur, die alle notwendigen Dateien und Ordner enthält.
-
-Lassen Sie uns als nächstes einen einfachen "Hello World"-Code erstellen, um sicherzustellen, dass alles ordnungsgemäß funktioniert.
-
-```elixir
-defmodule HelloWorld do
-  def main do
-    IO.puts "Hallo Welt!"
-  end
+```Elixir
+def new_project do
+  IO.puts("Projekt gestartet!")
 end
-
-HelloWorld.main
 ```
 
-Wenn Sie diesen Code ausführen, sollten Sie die Nachricht "Hallo Welt!" in Ihrem Terminal sehen.
+Dieser Codeblock zeigt, wie einfach es ist, in Elixir ein neues Projekt zu starten. Mit der Funktion `new_project` kann der Programmierer eine Nachricht ausgeben, die bestätigt, dass das Projekt erfolgreich gestartet wurde. 
 
-## Tiefer Einblick
+Tiefer Einblick
 
-Natürlich gibt es noch viel mehr, was Sie über das Starten eines neuen Projekts in Elixir wissen müssen. Eine wichtige Sache zu beachten ist, dass Elixir auf der virtuellen Maschine Erlang läuft. Das bedeutet, dass Sie Zugriff auf alle leistungsstarken Funktionen von Erlang haben, während Sie gleichzeitig die benutzerfreundliche Syntax von Elixir nutzen können.
+Elixir wurde 2011 von José Valim entwickelt und basiert auf der Programmiersprache Erlang. Durch die Kombination von funktionaler Programmierung und Skalierbarkeit ermöglicht Elixir schnelle und effiziente Entwicklung von Anwendungen. Alternativen zu Elixir sind Programmiersprachen wie Ruby oder JavaScript, jedoch bietet Elixir durch seine Concurrent-Berechnungsfunktionen und Fähigkeit, auf der Erlang Virtual Machine zu laufen, besondere Vorteile.
 
-Darüber hinaus gibt es eine Reihe von Frameworks und Tools, die Ihnen helfen können, Ihre Elixir-Projekte zu verwalten und zu skalieren. Einige beliebte Optionen sind Phoenix für die Webentwicklung und Ecto für die Datenbankintegration.
+Siehe auch
 
-## Siehe auch
-
-- Offizielle Elixir-Website: https://elixir-lang.org/
-- Elixir School: https://elixirschool.com/de/
-- Elixir Forum: https://elixirforum.com/
+Für weitere Informationen über Elixir und die Erstellung von Projekten in dieser Sprache, besuchen Sie bitte die offizielle Website unter [Elixir-lang.org](https://elixir-lang.org/) oder lesen Sie die Dokumentation auf [Hexdocs.pm](https://hexdocs.pm/elixir/new_project.html).

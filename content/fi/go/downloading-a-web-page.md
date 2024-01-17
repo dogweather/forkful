@@ -10,30 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä & Miksi?
 
-Web-sivujen lataaminen on tärkeä osa verkkokehitystä ja se on usein tarpeen, kun haluamme hakea tietoja sivuilta tai luoda omia sovelluksia, jotka käyttävät verkkosisältöä.
+Tämä artikkeli käsittelee verkkosivujen lataamista Go-kielellä. Verkkosivujen lataaminen tarkoittaa niiden tietojen hakemista ja tallentamista omaan järjestelmään. Monet ohjelmoijat tekevät tätä esimerkiksi netissä olevien tietokantojen ja tiedostojen hyödyntämiseksi.
 
-## Miten
+## Miten:
 
-Lataaessa verkkosivua Go-kielellä, voit käyttää `http.Get()` -funktiota, joka palauttaa vastauksen ja virheen. Esimerkiksi:
+Voit käyttää `http.Get`-funktiota ladataksesi verkkosivun Go:ssa. Tämä funktio ottaa parametriksi URL-osoitteen ja palauttaa vastauksen ja mahdollisen virheilmoituksen. Esimerkiksi:
 
-```Go
-res, err := http.Get("https://www.esimerkkisivusto.com")
 ```
-Tämän jälkeen voit käyttää `res` -muuttujaa saadaksesi tiedon latauksen tilasta ja sisällöstä. Esimerkiksi voit tulostaa vastauksena saadun tekstin konsolille:
-
-```Go
-body, err := ioutil.ReadAll(res.Body)
-fmt.Println(string(body))
+resp, err := http.Get("https://example.com")
+// Tarkista mahdollinen virheilmoitus
+if err == nil {
+    // Tulosta vastauksen statuskoodi
+    fmt.Println("Vastauksen statuskoodi:", resp.StatusCode)
+    // Tulosta vastauksen sisältö
+    body, _ := ioutil.ReadAll(resp.Body)
+    fmt.Println("Sivun sisältö:", string(body))
+}
 ```
-Tässä olemme käyttäneet myös `ioutil` -pakettia tiedon lukemiseksi `res.Body` -muuttujasta.
 
-## Syväsukellus
+Tulostettu sisältö riippuu ladattavan verkkosivun palvelimelta saadusta vastauksesta.
 
-Web-sivujen lataamisen taustalla on protokolla nimeltä HTTP (Hypertext Transfer Protocol). HTTP-metodit, kuten `GET` käytetään pyytämään tietoa palvelimelta. Kun käytämme `http.Get()` -funktiota, luomme pyynnön annetulle URL-osoitteelle ja odotamme vastausta palvelimelta. Vastausta käsitellään sitten vastaavasti, kuten esiteltiin edellisessä osiossa.
+## Syvemmälle:
 
-## Katso myös
+Go:ssa on useita eri tapoja ladata verkkosivuja, kuten myös muita kirjastoja, kuten `net/http`-kirjastossa käytetty `http.Get`. Voit myös käyttää esimerkiksi kirjastoa nimeltä `net/url` auttamaan URL-osoitteiden muotoilussa ja käsittelyssä. Lisäksi Go:ssa on myös käytettävissä monia muita työkaluja ja kirjastoja verkkosivujen lataamiseen.
 
-- [Go-nettipalvelujen opas](https://golang.org/pkg/net/http/)
-- [HTTP-protokollan selitys](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview)
+## Katso myös:
+
+- [Go:n virallinen verkkosivu](https://golang.org/)
+- [net/http-kirjaston dokumentaatio](https://golang.org/pkg/net/http/)
+- [net/url-kirjaston dokumentaatio](https://golang.org/pkg/net/url/)

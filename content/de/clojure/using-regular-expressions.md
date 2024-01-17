@@ -10,37 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
-Hast du jemals mit Texten gearbeitet und dich gefragt, wie du bestimmte Muster oder Wörter daraus extrahieren kannst? Mit regulären Ausdrücken (auch bekannt als Regex) kannst du genau das tun! Sie sind ein leistungsstarkes Werkzeug für die Mustererkennung in Texten und können in nahezu jeder Programmiersprache verwendet werden. Lass uns sehen, wie man sie in Clojure anwendet.
+Was sind reguläre Ausdrücke und warum sind sie für Programmierer wichtig?
 
-## Wie geht's
+Reguläre Ausdrücke sind spezielle Zeichenfolgen, die verwendet werden, um bestimmte Muster in Texten zu suchen und zu manipulieren. Programmierer nutzen reguläre Ausdrücke, um komplexe Suchanfragen zu vereinfachen und effizienter zu gestalten. Sie sind besonders nützlich bei der Arbeit mit Textdaten, z.B. beim Validieren von Formulardaten oder Extrahieren von Informationen aus großen Textmengen.
+
+So nutzt du reguläre Ausdrücke in Clojure:
+
 ```Clojure
-;; Erstelle ein reguläres Ausdrucksmuster, das alle Wörter mit 3 Buchstaben oder weniger in einem String findet.
-(def pattern #"\b\w{1,3}\b")
+; Zuerst importiere das "regex" Modul
+(ns regex-example
+  (:require [clojure.string :as str]))
 
-;; Wende das Muster auf einen String an
-(re-find pattern "Der Hund bellt.") 
-;=> "Der"
+; Suche nach einer bestimmten Zeichenfolge in einem Text
+(str/find #"Hallo" "Hallo Welt") ; Ergebnis: #{"Hallo"}
 
-;; Verwende das "find-all" Flag, um alle Übereinstimmungen in einem String zu finden
-(re-seq pattern "Hund Katze Maus") 
-;=> ("Hund" "Katze")
+; Suche nach mehreren möglichen Zeichenfolgen
+(str/find #"H(e|a)y" "Hey there") ; Ergebnis: #{"Hey"}
 
-;; Verwende Capture Groups, um bestimmte Teile des Musters zu extrahieren
-(def pattern #"(Hund|Katze|Pferd)")
-(re-find pattern "Das Pferd galoppiert.") 
-;=> "Pferd"
+; Ersetze eine Zeichenfolge mit einer anderen
+(str/replace "abc123" #"123" "xyz") ; Ergebnis: "abcxyz"
 
-;; Verwende geänderte Symbole, um spezifische Zeichen zu suchen
-(def pattern #"https://www\.beispiel\.de")
-(re-find pattern "Die URL ist https://www.beispiel.de/index.html") 
-;=> "https://www.beispiel.de"
+; Nutze Gruppen, um Teile des gefundenen Musters zu extrahieren
+(str/re-matches #"(\d+)-(\w+)" "123-abc") ; Ergebnis: ["123-abc" "123" "abc"]
 ```
 
-## Tiefer Einblick
-Reguläre Ausdrücke können auch verwendet werden, um Texte zu filtern, zu ersetzen oder zu validieren. Sie bieten auch die Möglichkeit, Variablen und Funktionen in Muster zu integrieren, was ihre Funktionalität noch weiter erhöht. Es gibt vielfältige Anwendungsmöglichkeiten für reguläre Ausdrücke und sie können in nahezu allen Bereichen der Softwareentwicklung nützlich sein.
+Grundlagen geschafft? Gut, dann lies weiter für einen tieferen Einblick in reguläre Ausdrücke.
 
-## Siehe auch
-- [Reguläre Ausdrücke in Clojure](https://clojure.org/guides/regular_expression)
-- [Einführung in reguläre Ausdrücke in Clojure](https://www.braveclojure.com/regular-expressions/)
-- [Reguläre Ausdrücke Tutorial in Clojure](http://tutorials.jenkov.com/clojure/regular-expressions.html)
+Ein kurzer Ausflug in die Geschichte
+
+Reguläre Ausdrücke wurden in den 1950er Jahren von dem Mathematiker Stephen Kleene entwickelt. Sie fanden zunächst Anwendung in der formalen Sprachtheorie und wurden später auch in Programmiersprachen implementiert. Heute sind sie aus der Welt der Textverarbeitung nicht mehr wegzudenken.
+
+Alternativen zu regulären Ausdrücken
+
+In Clojure gibt es verschiedene andere Funktionen, die ähnliche Aufgaben erfüllen können, wie z.B. die Funktion `string/contains?` zum Überprüfen, ob eine Zeichenfolge eine andere enthält. Allerdings sind diese Funktionen nicht so flexibel und leistungsstark wie reguläre Ausdrücke.
+
+Möchtest du tiefer in die Materie einsteigen?
+
+- Clojure Regex-Dokumentation: https://clojuredocs.org/clojure.core/re-pattern
+- RegExr: Eine interaktive Plattform zum Testen von regulären Ausdrücken: https://regexr.com/
+
+Pro-Tipp: `re-seq` statt `find`
+
+Wenn du mehrere Übereinstimmungen im selben Text finden möchtest, nutze die Funktion `re-seq` statt `find`. Dies liefert dir eine Sequenz aller gefundenen Übereinstimmungen statt einer einzigen.
+
+Damit hast du alles, was du über reguläre Ausdrücke in Clojure wissen musst! Viel Spaß beim Manipulieren von Texten 🙂

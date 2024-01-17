@@ -10,50 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-If you're a programmer, chances are you've encountered JSON (JavaScript Object Notation) at some point in your career. JSON has become a popular format for storing and exchanging data due to its simplicity and compatibility with various programming languages. Knowing how to work with JSON can open up many opportunities for data manipulation and integration in your projects.
+Working with JSON in Python involves manipulating data in a format that is widely used for transmitting and storing data. Programmers often use it because it is lightweight, human-readable, and easy to use. It allows them to efficiently organize and transfer data between different systems.
 
-## How To
+## How to:
 
-First, let's import the `json` library in our Python code:
+To work with JSON in Python, you first need to import the built-in ‘json’ module using the 'import' statement. Then you can use the loads() method to load JSON data and the dumps() method to convert Python objects into JSON strings. See the code below for an example:
+
 ```Python
 import json
+
+# Example JSON data
+data = '{"name": "John", "age": 30, "city": "New York"}'
+
+# Load JSON data into a Python dictionary
+json_data = json.loads(data)
+
+# Loop through the data
+for key, value in json_data.items():
+    print(key, ":", value)
 ```
 
-To read a JSON file, we can use the `json.load()` function and pass in the file object:
-```Python
-with open("data.json") as f:
-    data = json.load(f)
+Output:
 ```
-Now we can access the data from the JSON file using the familiar dictionary syntax:
-```Python
-print(data["name"]) # expects "John"
-print(data["age"]) # expects 28
+name : John
+age : 30
+city : New York
 ```
-
-To write data in a JSON format, we can use the `json.dump()` function and pass in the data and file object:
-```Python
-data = {
-    "name": "Emily",
-    "age": 25
-}
-
-with open("new_data.json", "w") as f:
-    json.dump(data, f)
-```
-The above code will create a new JSON file with the given data.
 
 ## Deep Dive
 
-JSON consists of key-value pairs, making it easy to work with in Python as it maps directly to dictionaries. However, if you need more control over the data, you can use the `json.loads()` function to deserialize a JSON string into a Python object. Similarly, you can use the `json.dumps()` function to serialize a Python object into a JSON string.
+JSON (JavaScript Object Notation) was introduced in 1999 as a lightweight alternative to XML. It is based on JavaScript syntax and has become a popular data format due to its simplicity and flexibility. It is often used for transmitting data between web applications and APIs.
 
-JSON also supports arrays, which can be represented in Python as lists. To access data from nested objects or arrays in JSON, we can use dot notation or square brackets respectively.
+An alternative to working with JSON in Python is using the 'simplejson' library, which provides additional functionality and better performance. 'simplejson' is a third-party library that can be easily installed through pip.
 
-It's important to note that JSON only supports certain data types, such as strings, numbers, booleans, and null values. Custom objects or functions cannot be serialized into a JSON format.
+JSON is used to represent data in a key-value format that is similar to a Python dictionary. It is built on two structures: a collection of key/value pairs and an ordered list of values. Nested objects and arrays can also be represented in JSON, providing a hierarchical structure for data organization.
 
 ## See Also
 
-Check out the official Python documentation for more on working with JSON: 
-- [JSON in Python](https://docs.python.org/3/library/json.html) 
-- [Official JSON website](https://www.json.org/json-en.html)
+- [Official Python JSON Documentation](https://docs.python.org/3/library/json.html)
+- [simplejson library](https://simplejson.readthedocs.io/en/latest/)
+- [JSON vs XML: The Battle Of The Lightweight Data Interchange Formats](https://www.hugoware.net/articles/json-vs-xml-%281%29)
+- [Introduction to JSON](https://www.json.org/json-en.html)

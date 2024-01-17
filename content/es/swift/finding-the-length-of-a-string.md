@@ -1,7 +1,7 @@
 ---
-title:                "Encontrando la longitud de una cadena"
-html_title:           "Swift: Encontrando la longitud de una cadena"
-simple_title:         "Encontrando la longitud de una cadena"
+title:                "Encontrando la longitud de una cadena."
+html_title:           "Swift: Encontrando la longitud de una cadena."
+simple_title:         "Encontrando la longitud de una cadena."
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -10,37 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¿Qué y por qué?
+En programación, conocer el largo de una cadena de caracteres es una habilidad importante ya que nos permite manipular y modificar la información de manera adecuada. Al conocer la longitud de una cadena, podemos asegurarnos de que los datos se almacenen de manera correcta y evitar errores en nuestro código.
 
-En la programación, a menudo necesitamos trabajar con cadenas de texto y una de las tareas más comunes es encontrar la longitud de una cadena. Saber cómo hacerlo nos permite manipular y analizar de manera efectiva los datos en nuestras aplicaciones.
-
-## Cómo hacerlo
-
-En Swift, podemos encontrar la longitud de una cadena utilizando la propiedad `count` de la clase `String`. Veamos un ejemplo:
+## Cómo hacerlo:
+Para encontrar la longitud de una cadena en Swift, podemos utilizar la propiedad `count` o el método `count` de la estructura `String`. Veamos un ejemplo práctico:
 
 ```Swift
-let frase = "Hola mundo!"
-print(frase.count) // Output: 12
+let nombre = "Juan"
+print(nombre.count) // resultado: 4
+print(nombre.count + 2) // resultado: 6
 ```
 
-Como se puede ver en el ejemplo, simplemente llamamos a la propiedad `count` en la variable que contiene la cadena y nos devuelve el número de caracteres en ella.
+## Profundizando:
+El contar la longitud de una cadena es una técnica común en cualquier lenguaje de programación. En Swift, podemos usar la propiedad `count` para obtener el número de caracteres en una cadena. También podemos utilizar el método `count` si queremos realizar alguna operación con ese valor.
 
-También podemos utilizar el método `count` en una cadena que contenga valores Unicode, como por ejemplo emojis:
+Otra alternativa para contar la longitud de una cadena es utilizando el método `countElements()`, pero se recomienda utilizar `count` ya que `countElements()` está siendo deprecado en versiones antiguas de Swift.
 
-```Swift
-let emoji = "🚀🌎"
-print(emoji.count) // Output: 2
-```
+Es importante mencionar que en Swift, los caracteres `"á", "é", "í", "ó", "ú"` entre otros, son considerados como un solo elemento y no como dos, a diferencia de otros lenguajes de programación.
 
-Es importante tener en cuenta que la propiedad `count` devuelve el número de caracteres en la cadena, no el número de bytes. Por lo tanto, si tenemos una cadena que contiene caracteres Unicode más complejos, el resultado puede ser diferente al esperado.
-
-## Profundizando
-
-Si queremos entender cómo funciona la propiedad `count` en la clase `String`, podemos explorar su implementación en el código fuente de Swift. Allí veremos que utiliza un algoritmo eficiente para contar los caracteres de una cadena, teniendo en cuenta también los caracteres Unicode.
-
-Además, es importante tener en cuenta que la longitud de una cadena puede variar según el idioma utilizado. Por ejemplo, en idiomas como el chino o el japonés, un solo carácter puede representar una palabra completa, mientras que en otros idiomas puede requerir varios caracteres para formar una sola palabra.
-
-## Ver también
-
-- [Documentación oficial de Swift sobre la clase String](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
-- [Uso de Unicode en Swift](https://developer.apple.com/library/archive/documentation/StringsTextFonts/Conceptual/TextAndWebiPhoneOS/WorkingWithText/WorkingWithText.html#//apple_ref/doc/uid/TP40009542-CH4-SW36)
+## Ver también:
+- Documentación oficial de Swift sobre la estructura `String`: https://developer.apple.com/documentation/swift/string
+- Otros métodos y propiedades de la estructura `String`: https://www.hackingwithswift.com/example-code/strings/how-to-loop-over-strings
+- Uso del método `count` para validar la longitud de una cadena en la base de datos de Firebase: https://firebase.google.com/docs/firestore/query-data/get-data#example_get_all_documents_in_a_collection

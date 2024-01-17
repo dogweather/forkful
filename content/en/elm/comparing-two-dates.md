@@ -10,52 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-Have you ever needed to compare two dates in your Elm program? Maybe you want to check if one date is before or after another, or determine the time difference between them. Whatever the reason may be, knowing how to compare dates in Elm can come in handy in various scenarios.
+When programming in Elm, it's common to encounter situations where we need to compare two dates. This simply means determining if one date is earlier, later, or equal to another one. Programmers do this to sort and organize chronologically ordered data, perform date-based calculations, or validate date inputs from users.
 
-## How To
+## How to:
 
-To compare two dates in Elm, we can use the `Time` module's `since` function. This function takes in two `Posix` values, representing the number of milliseconds since January 1, 1970. We can use the `Date.fromTime` function to convert our `Date` values into `Posix` values. Let's see an example:
+To compare two dates in Elm, we can use the `Date.compare` function. It takes two dates as arguments and returns an `Ordering` value, which can be either `LT` (less than), `GT` (greater than), or `EQ` (equal).
 
-```Elm
-import Time exposing (Posix, since)
-import Date exposing (fromTime)
+```
+import Date exposing (Date, compare)
 
--- creating two Date values to compare
 date1 : Date
-date1 = Date.fromTime 1622336400000
+date1 = Date.fromString "2021-05-10"
 
 date2 : Date
-date2 = Date.fromTime 1622422800000
+date2 = Date.fromString "2021-05-15"
 
--- comparing dates using since function
-compare : Ordering
-compare = since date1 date2
+result : Ordering
+result = Date.compare date1 date2  -- result is GT since date2 is later than date1
 ```
 
-In this example, we create two `Date` values and use the `since` function to compare them. The `since` function returns an `Ordering` value, which can be `LT` (less than), `GT` (greater than), or `EQ` (equal). 
+We can also use the `Date.daySinceEpoch` function to get the number of days since January 1st, 1970, and then compare this value instead of directly comparing two dates.
 
-We can also use the `diffInDays` function from the `Date` module to find the number of days between two dates:
+```
+import Date exposing (Date, daySinceEpoch)
 
-```Elm
-import Date exposing (diffInDays)
+date1 : Date
+date1 = Date.fromString "2021-05-10"
 
--- finding the number of days between two dates
-days : Int
-days = diffInDays date1 date2
+date2 : Date
+date2 = Date.fromString "2021-05-15"
+
+result : Ordering
+result = compare (daySinceEpoch date1) (daySinceEpoch date2)  -- result is GT
 ```
 
-The `diffInDays` function returns an `Int` value representing the number of days between the two dates.
+## Deep Dive:
 
-## Deep Dive
+Compared to other programming languages, Elm has a limited number of date functions available. This is due to the language's focus on immutability and pure functions. Other alternatives to compare dates include using the `Date.toTime` function to convert dates to `Time` values and then comparing them with the `Time.compare` function.
 
-Behind the scenes, the `Date.fromTime` function uses the `Time.utcToPosix` function, which converts a `Time` value into a `Posix` value. This conversion takes into account time zones, so it's important to make sure your dates are in the same time zone before comparing them.
+The `Date.compare` function in Elm uses the Unix timestamp system to represent dates as a number of milliseconds since January 1st, 1970. This means that dates before this date will be represented by negative numbers, and dates after it will be represented by positive numbers.
 
-It's also worth noting that the `Time` module has other useful functions for working with dates and times, such as `sinceNow` and `inHours`. These functions can be handy when dealing with time-sensitive tasks in your Elm programs.
+## See Also:
 
-## See Also
-
-- [The Date module in Elm's documentation](https://package.elm-lang.org/packages/elm/time/latest/Date)
-- [The Time module in Elm's documentation](https://package.elm-lang.org/packages/elm/time/latest/Time)
-- [A tutorial on Time in Elm by DailyDrip](https://www.dailydrip.com/blog/elm-time-primer-building-a-stopwatch)
+- Elm Date Documentation: https://package.elm-lang.org/packages/elm/core/latest/Date
+- Elm Time Documentation: https://package.elm-lang.org/packages/elm/time/latest/Time
+- QuickChart's Date Comparison Tool: https://quickchart.io/date-comparison/

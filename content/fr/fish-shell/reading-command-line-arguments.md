@@ -1,7 +1,7 @@
 ---
-title:                "Lecture des arguments de la ligne de commande"
-html_title:           "Fish Shell: Lecture des arguments de la ligne de commande"
-simple_title:         "Lecture des arguments de la ligne de commande"
+title:                "Lecture des arguments de ligne de commande"
+html_title:           "Fish Shell: Lecture des arguments de ligne de commande"
+simple_title:         "Lecture des arguments de ligne de commande"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Files and I/O"
@@ -10,45 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Pourquoi
-Salut les moules ! Vous vous demandez peut-être pourquoi il est important de savoir lire les arguments en ligne de commande dans Fish Shell ? Eh bien, cela peut sembler un peu technique, mais en réalité, c'est une compétence très utile pour tout programmeur ou administrateur système. Cela vous permettra de manipuler les commandes de manière plus efficace, de gagner du temps et de personnaliser votre expérience avec Fish Shell.
+## Qu'est-ce que c'est et pourquoi?
+"Reading command line arguments" signifie simplement que notre programme peut prendre des informations (telles que des mots ou des nombres) directement à partir de la ligne de commande, plutôt que de les avoir écrites dans le code lui-même. Cela peut être utile pour personnaliser l'exécution de notre programme en fonction des entrées de l'utilisateur ou pour traiter de grandes quantités de données sans avoir à les saisir manuellement.
 
-# Comment faire
-Coder dans un shell peut sembler intimidant, mais ne vous inquiétez pas, nous avons des astuces pour vous faciliter la tâche ! La syntaxe pour lire les arguments en ligne de commande dans Fish Shell est la suivante :
+## Comment faire:
+Voici un exemple simple avec un programme en Python:
+```Fish Shell 
 
-```Fish Shell
-switch (argument)
-case "valeur1"
-    # exécutez une action si l'argument est égal à "valeur1"
-case "valeur2"
-    # exécutez une action si l'argument est égal à "valeur2"
-case '*'
-    # exécutez une action par défaut
-end
+#!/usr/bin/env python
+import sys
+
+# Notre programme va prendre l'argument après le nom du fichier
+# et le stocker dans une variable appelée "nom"
+nom = sys.argv[1]
+
+print("Bonjour, " + nom + " ! Comment vas-tu ?")
+
+// Si l'utilisateur exécute ce programme de la manière suivante:
+// python bonjour.py Marie
+// Le résultat sera:
+// Bonjour, Marie ! Comment vas-tu ?
 ```
 
-Voyons un exemple concret. Imaginons que vous ayez un script Fish Shell nommé "mon_script.fish" et que vous l'exécutiez en utilisant la commande :
+Nous pouvons également utiliser l'argument "-a" pour ajouter un autre argument optionnel et stocker une liste de valeurs dans une variable:
+```Fish Shell 
 
-```Fish Shell
-./mon_script.fish -n Marine
+#!/usr/bin/env python
+import sys
+
+# Notre programme va prendre deux arguments après le nom du fichier
+# et les stocker dans une variable appelée "liste"
+liste = sys.argv[2:]
+
+print("La liste des éléments est:",liste)
+
+// Si l'utilisateur exécute ce programme de la manière suivante:
+// python liste.py -a pomme banane orange
+// Le résultat sera:
+// La liste des éléments est: ['pomme', 'banane', 'orange']
 ```
-Dans ce cas, l'argument "-n" sera stocké dans la variable "argument" et le nom "Marine" sera stocké dans la variable "valeur1". Ainsi, si nous utilisons le code suivant :
 
-```Fish Shell
-switch (argument)
-case "-n"
-    echo "Bonjour $valeur1 !"
-case "*"
-    echo "Utilisez l'option -n pour spécifier votre nom."
-end
-```
+## Plongée en profondeur:
+La lecture des arguments en ligne de commande est une pratique courante en programmation et est utilisée dans de nombreux langages différents, tels que C, Java, et bien sûr Fish Shell. Cette fonctionnalité permet aux développeurs de créer des programmes plus flexibles et interactifs.
 
-Le résultat sera "Bonjour Marine !". Mais si nous n'avions pas utilisé l'option "-n", le résultat aurait été "Utilisez l'option -n pour spécifier votre nom.".
+Si nous voulons lire des arguments avec des noms spécifiques, nous pouvons utiliser des bibliothèques externes comme "argparse" en Python ou "getopt" en C. Nous pouvons également utiliser des expressions régulières pour filtrer et valider les entrées des utilisateurs avant de les utiliser dans notre programme.
 
-# Profonde plongée
-Maintenant que vous savez comment lire les arguments en ligne de commande dans Fish Shell, vous pouvez aller plus loin en explorant les options avancées telles que l'utilisation de regex dans les cas ou la manipulation des tableaux pour gérer plusieurs arguments à la fois. Vous pouvez également consulter la documentation officielle de Fish Shell pour plus d'informations et de conseils sur la manipulation des arguments en ligne de commande.
+Au niveau de l'implémentation, la lecture des arguments en ligne de commande se fait en accédant à la zone mémoire où ils sont stockés et en utilisant les indices pour récupérer les valeurs souhaitées. La syntaxe peut varier d'un langage à l'autre, mais le concept est le même.
 
-# Voir aussi
-- [Documentation officielle de Fish Shell](https://fishshell.com/docs/current/index.html)
-- [Tutoriel vidéo sur la manipulation des arguments en ligne de commande dans Fish Shell](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
-- [Exemples de scripts Fish Shell sur GitHub](https://github.com/fish-shell/fish-shell/wiki/Scripting-examples)
+## Voir aussi:
+Pour plus d'informations sur la lecture des arguments en ligne de commande, voici quelques sources utiles:
+- Documentation Fish Shell: https://fishshell.com/docs/current/cmds/read.html
+- Documentation argparse pour Python: https://docs.python.org/3/library/argparse.html
+- Tutoriel de traitement des arguments avec getopt en C: https://www.gnu.org/software/libc/manual/html_node/Using-Getopt.html

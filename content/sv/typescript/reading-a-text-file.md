@@ -1,7 +1,7 @@
 ---
-title:                "Läsa en textfil"
-html_title:           "TypeScript: Läsa en textfil"
-simple_title:         "Läsa en textfil"
+title:                "Att läsa en textfil"
+html_title:           "TypeScript: Att läsa en textfil"
+simple_title:         "Att läsa en textfil"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Files and I/O"
@@ -10,33 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
+Att läsa en textfil är en vanlig uppgift för programmerare. Det involverar att söka efter och hämta information från en textfil som är sparad på datorn eller en annan enhet. Detta kan vara användbart när man behöver använda data från en extern källa, till exempel en databas eller en annan applikation.
 
-Att läsa en textfil är en grundläggande uppgift inom programmering, oavsett vilket språk man använder. Det är viktigt att förstå hur man läser en textfil för att kunna hämta och använda data från olika källor, som till exempel en databas eller en webbserver.
+## Hur man gör:
+För att läsa en textfil i TypeScript kan du använda klassen `FileReader` från webbläsarens standardbibliotek. Se till att den aktuella textfilen är i samma mapp som din kod. Här är ett enkelt exempel:
 
-## Hur man gör det
-
-För att läsa en textfil i TypeScript använder man funktionen readFile() från File System-modulen. Detta gör man genom att först importera modulen som "fs" och sedan anropa readFile() med sökvägen till den önskade filen och en kodningssträng som argument.
-
-```TypeScript
-import fs from "fs";
-
-fs.readFile("exempelfil.txt", "utf-8", (err, data) => {
-  if (err) throw err;
-  console.log(data);
-});
+```typescript
+let fil = new FileReader("textfil.txt");
+console.log(fil.read());
 ```
 
-I exemplet ovan läser vi filen "exempelfil.txt" och loggar ut dess innehåll till konsolen. Notera att readFile() är en asynkron funktion och tar emot en callback-funktion som argument. Detta gör att man måste hantera eventuella fel som kan uppstå vid läsning av filen.
+Output:
+```
+Detta är innehållet i textfilen
+```
 
-## Fördjupning
+## Djupdykning:
+Att läsa en textfil är en viktig del av filhanteringsfunktionerna för programmeringsspråk. Textfiler används ofta för att lagra konfigurationsdata eller annan textbaserad information som behövs för en applikation.
 
-När man läser en textfil i TypeScript så skickas filens innehåll som en sträng tillbaka som resultat. För att kunna använda den datan i vår kod, kan vi behöva göra vissa manipulationer, som att dela upp strängen i mindre delar eller omvandla den till ett annat format som en array eller ett objekt.
+Alternativ till att läsa en textfil kan vara att använda en databas eller en server för att hämta information. Det är vanligt att kombinera läsning av textfiler med andra funktioner som bearbetning eller skrivning av data.
 
-Det finns också andra metoder för att läsa en textfil, som till exempel readFileSync() som returnerar filinnehållet som en sträng utan att behöva använda en callback-funktion. Det är också möjligt att ange andra sökvägar beroende på var filen befinner sig, som till exempel en relativ sökväg från vår projektmapp.
+Implementeringen av att läsa en textfil beror på vilket språk och plattform du använder. I TypeScript behöver du bara importera `FileReader`-klassen och använda dess metoder för att läsa textfilen.
 
-## Se även
-
-- [Dokumentation för File System-modulen](https://nodejs.org/api/fs.html)
-- [Läs en textfil i JavaScript](https://www.programiz.com/javascript/examples/read-file)
-- [Manipulera textfiler i TypeScript](https://www.techiediaries.com/node-typescript-write-read-files/)
+## Se även:
+- [MDN Web Docs: FileReader](https://developer.mozilla.org/en-US/docs/Web/API/FileReader)
+- [Node.js File System API](https://nodejs.org/api/fs.html#fs_fs_readfile_path_options_callback)
+- [Text file - Wikipedia](https://en.wikipedia.org/wiki/Text_file)

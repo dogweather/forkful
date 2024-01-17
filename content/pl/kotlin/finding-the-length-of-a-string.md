@@ -10,38 +10,22 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Czym jest i dlaczego?
+Znalezienie długości ciągu znaków jest jedną z podstawowych operacji, które programiści muszą wykonywać podczas pisania kodu. Polega ona na określeniu ilości znaków w danym ciągu, czyli na policzeniu jego długości. W większości języków programowania istnieje wbudowana funkcja do wykonywania tej czynności.
 
-Dlaczego i dlaczego powinniśmy się zająć znajdowaniem długości ciągu w Kotlinie? Odpowiedź jest prosta - jest to jedna z podstawowych operacji, które są wykonywane w wielu aplikacjach. Znajdowanie długości ciągu jest niezbędne do wyświetlania danych tekstowych na ekranie oraz do przetwarzania danych w programowaniu.
-
-## Jak to zrobić
-
-Aby uzyskać długość ciągu w Kotlinie, możemy wykorzystać funkcję `length` obiektu `String`. Przykładowy kod wyglądałby następująco:
-
+## Jak to zrobić:
+W języku Kotlin mamy do wyboru dwa sposoby na znalezienie długości ciągu:
 ```Kotlin
-val name = "Adam"
-println(name.length) // 4
+val str = "Hello World"
+println(str.length) // Output: 11
+// lub
+println("Hello World".length) // Output: 11
 ```
+W pierwszym przykładzie tworzymy zmienną zawierającą nasz ciąg znaków, a następnie wywołujemy na niej funkcję `length`. W drugim przykładzie korzystamy z wbudowanej funkcji `length` bezpośrednio na ciągu znaków.
 
-Powyższy kod stworzy zmienną `name` zawierającą ciąg "Adam" i następnie wyświetli jego długość na ekranie. Zamknięcie ciągu wewnątrz nawiasów pozwala na wykorzystanie funkcji `length` do zwrócenia długości tej zmiennej.
+## Wgląd w zagadnienie:
+Funkcja `length` jest dostępna w większości języków programowania, nie tylko w Kotlinie. Jej implementacja może się różnić w zależności od języka, ale zazwyczaj polega na iterowaniu przez poszczególne znaki w ciągu i zliczaniu ich liczby. Alternatywnym sposobem na znalezienie długości ciągu może być użycie wbudowanej funkcji `size`, którą również można znaleźć w Kotlinie.
 
-Aby uzyskać długość ciągu bezpośrednio z wprowadzonego przez użytkownika tekstu, możemy wykorzystać funkcję `readLine`, która pozwala na odczytanie danych wprowadzonych przez użytkownika. Przykładowy kod wyglądałby następująco:
-
-```Kotlin
-println("Podaj dowolne zdanie:")
-val input = readLine()
-println("Długość podanego zdania to ${input.length}")
-```
-
-Powyższy kod najpierw wyświetli użytkownikowi informację o wprowadzeniu zdania, a następnie wykorzysta funkcję `readLine` do odczytania wprowadzonych danych do zmiennej `input`. Następnie wyświetli długość podanego zdania, wykorzystując funkcję `length`.
-
-## Wnikliwa analiza
-
-Podczas pobierania długości ciągu, Kotlin używa funkcji `length` do zwrócenia ilości znaków w ciągu. Jednak w przypadku niestandardowych znaków, czy wartości puste, wynik może być inny niż oczekiwany. Dlatego ważne jest, aby w kodzie uwzględnić te możliwe scenariusze i odpowiednio z nimi sobie radzić.
-
-Inną ciekawą funkcją jest `isEmpty`, która pozwala na sprawdzenie, czy ciąg jest pusty czy nie. Może to być przydatne, gdy potrzebujemy wykonać jakieś działania tylko w przypadku, gdy użytkownik faktycznie wprowadził dane.
-
-## Zobacz też
-
-- [Dokumentacja Kotlin o typie String](https://kotlinlang.org/docs/reference/basic-types.html#strings)
-- [Funkcje standardowe Kotlin dla typu String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-string/index.html)
+## Zobacz też:
+- [Dokumentacja języka Kotlin](https://kotlinlang.org/docs/reference/functions.html#length)
+- [Porównanie funkcji `length` i `size`](https://kotlinlang.org/docs/reference/whatsnew10.html#string-length-size-etc)

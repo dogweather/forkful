@@ -1,7 +1,7 @@
 ---
-title:                "下载网页"
-html_title:           "Gleam: 下载网页"
-simple_title:         "下载网页"
+title:                "下載網頁"
+html_title:           "Gleam: 下載網頁"
+simple_title:         "下載網頁"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "HTML and the Web"
@@ -10,28 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么要下载网页？
+## 什么是网页下载？为什么程序员要这样做？
 
-下载网页是一种方便获取网络信息的方式，比如你可以下载一个博客页面以供稍后阅读。此外，下载网页也有助于节省网络流量。
+网页下载是指将网页从互联网下载到本地设备的过程。程序员们经常这样做是为了获取网页的内容，以便于在其它应用程序中进行处理和分析。
 
 ## 如何进行网页下载？
 
 ```
-Gleam.download("https://www.example.com", "example.html")
+Gleam.download("https://www.example.com", { output = "index.html" })
 ```
-上面的代码可以将`https://www.example.com`的网页保存为名为`example.html`的文件。你也可以选择指定保存位置，比如`/home/username/example.html`。
 
-```
-Gleam.download_to_string("https://www.example.com")
-```
-这段代码会将网页的内容作为字符串输出，可以用来处理网页的数据，如提取特定的内容或分析网页结构。
+这段代码将会从`https://www.example.com`下载网页，并将其保存为名为`index.html`的文件。
 
-## 深入了解网页下载
+## 深入了解
 
-下载网页的过程其实细分为两步：首先，通过网络请求获取网页的内容，然后将内容保存为文件或输出为字符串。在Gleam中，可以使用HTTP模块来发起网络请求，下载网络内容。此外，Gleam还提供了更多功能丰富的网络库，如Base64编码、加密算法等，帮助你更方便地处理下载的网页数据。
+1. 历史背景：在互联网诞生之初，网页下载是非常常见的。随着互联网的发展，网页下载的用途也变得更为广泛。
+2. 其他方法：除了使用Gleam的`download`函数外，还可以使用第三方库或命令行工具来进行网页下载，如`wget`和`axios`等。
+3. 实现细节：在Gleam内部，网页下载是通过HTTP请求来实现的，因此需要了解HTTP协议相关的知识。
 
-## 参考链接
+## 相关资源
 
-- [Gleam官方文档](https://gleam.run/documentation)
-- [HTTP模块文档](https://docs.gleam.run/gleam_stdlib_http/latest/)
-- [Gleam网络库文档](https://docs.gleam.run/gleam_http/latest/)
+- Gleam官方文档：https://gleam.run/
+- HTTP协议：https://developer.mozilla.org/zh-CN/docs/Web/HTTP
+- 第三方库：https://hex.pm/packages?q=g:gleam

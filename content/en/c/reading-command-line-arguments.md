@@ -10,73 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-Curious about how to make your C programs more flexible? One way is to utilize command line arguments, which allows users to give inputs when running the program. It can greatly enhance your program's capabilities and make it more user-friendly.
+Reading command line arguments in C is the process of gathering information provided by the user through the command line when executing a program. This can include things like file names, options, or other necessary parameters. It allows programmers to make their programs more dynamic and customizable, as well as enabling them to create more efficient and user-friendly interfaces.
 
-## How To
+## How to:
 
-To start, we need to declare the main function with two parameters, `argc` and `argv`. These represent the number of arguments and the actual arguments given by the user, respectively. 
+Reading command line arguments in C is a fairly straightforward process. It involves taking in the arguments from the command line when calling the program and storing them in variables to be used in the program.
 
-```C
-int main(int argc, char *argv[]) {
-  // code goes here
-}
-```
-
-Now, let's take a look at how we can access and use these command line arguments. The first argument, `argv[0]`, is always the name of the program itself. The rest of the arguments can be accessed using their corresponding indices. For example, if the user runs the program with `./myprogram arg1 arg2`, then `argv[1]` will contain `arg1` and `argv[2]` will contain `arg2`.
+Here's a simple example of a program that takes in two string arguments and prints them out:
 
 ```C
-// program to print out all the command line arguments
 #include <stdio.h>
 
 int main(int argc, char *argv[]) {
-  for (int i = 1; i < argc; i++) {
-    printf("Argument %d: %s\n", i, argv[i]);
-  }
-  return 0;
+    //argc contains the number of arguments passed in (including the program name itself)
+    //argv is an array of strings, with each element containing an argument
+    if (argc != 3) { //check if the correct number of arguments were provided
+        printf("Incorrect number of arguments provided. Please provide two strings.\n");
+        return 1; //exit the program with an error
+    }
+    //print out the two arguments provided
+    printf("First argument: %s\n", argv[1]);
+    printf("Second argument: %s\n", argv[2]);
+
+    return 0;
 }
 ```
 
-**Sample Output:**
+Sample output:
 
 ```
-Argument 1: arg1
-Argument 2: arg2
+$ ./program hello world
+First argument: hello
+Second argument: world
 ```
-
-It's important to note that the arguments are always read as strings, so you may need to convert them to the appropriate data type if needed.
 
 ## Deep Dive
 
-Now, let's dive a bit deeper into reading command line arguments. You may be wondering what the `argc` parameter is for. It is simply counting the number of arguments passed in, including the program name itself. So in the above example, `argc` would have a value of 3.
+Command line arguments have been a part of C since its early days and have become a staple in many popular C programs. They allow for a level of flexibility and control that is beneficial for both programmers and end users.
 
-Another useful function to know is `atoi()`, which converts a string to an integer. This can be helpful if you want to perform mathematical operations on the command line arguments.
+Alternative methods for gathering user input include using input prompts within the program or reading from external files. However, command line arguments are often preferred due to their convenience and ease of use.
 
-```C
-// program to find the sum of two command line arguments
-#include <stdio.h>
-#include <stdlib.h>
-
-int main(int argc, char *argv[]) {
-  int num1 = atoi(argv[1]);
-  int num2 = atoi(argv[2]);
-  int sum = num1 + num2;
-  printf("Sum of %d and %d is %d\n", num1, num2, sum);
-  return 0;
-}
-```
-
-**Sample Output:**
-
-```
-Sum of 10 and 20 is 30
-```
-
-You can also use nested loops or conditional statements to perform different actions based on the arguments given by the user.
+In terms of implementation, command line arguments are passed to the program through the operating system when it is called. In the example above, `argc` gives the number of arguments, while `argv` is an array of strings containing the actual arguments.
 
 ## See Also
 
-- [C Command Line Arguments](https://www.geeksforgeeks.org/command-line-arguments-in-c-cpp/)
-- [Taking Command Line Arguments in C](https://www.tutorialspoint.com/taking-command-line-arguments-in-c-cplusplus)
-- [How to Use Command Line Arguments in C Programs](https://www.dummies.com/programming/c/how-to-use-command-line-arguments-in-c-programs/)
+To learn more about working with command line arguments in C, check out the following resources:
+
+- [C Programming - Command Line Arguments](https://www.tutorialspoint.com/cprogramming/c_command_line_arguments.htm)
+- [Command Line Arguments in C](https://www.geeksforgeeks.org/command-line-arguments-in-c-cpp/)
+- [glibc - Command-Line Arguments (GNU C Library)](https://www.gnu.org/software/libc/manual/html_node/Program-Arguments.html)

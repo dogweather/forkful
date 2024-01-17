@@ -10,49 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## What & Why?
 
-Si vous travaillez avec des données structurées, telles que des configurations de programme, des données de test ou des données de configuration, alors vous avez probablement déjà entendu parler de YAML (YAML Ain't Markup Language). YAML est un format de sérialisation de données facile à lire et à écrire pour les humains, qui peut être utilisé avec de nombreux langages de programmation. Dans cet article, nous allons expliquer pourquoi YAML est un excellent choix pour travailler avec des données structurées et comment l'utiliser efficacement en utilisant Elixir.
+Travailler avec YAML, c'est écrire du code pour créer et gérer des données structurées dans un fichier texte lisible par les humains. Cela peut sembler fastidieux, mais les programmeurs le font pour faciliter la configuration et le stockage de données dans leurs applications.
 
-## Comment Faire
+## How to:
 
-Pour commencer à travailler avec YAML en utilisant Elixir, vous devez d'abord installer le package `YamlElixir` en utilisant Mix:
-
-```Elixir
-mix deps.get YamlElixir
-```
-
-Une fois le package installé, vous pouvez l'utiliser dans votre code en l'important en tant que module:
+Pour travailler avec YAML dans Elixir, vous pouvez utiliser le module `Yaml` de la librairie standard Elixir. Voici un exemple de code pour lire un fichier YAML :
 
 ```Elixir
-import YamlElixir
+file = File.read!("config.yml")
+data = Yaml.decode(file)
 ```
 
-Ensuite, vous pouvez utiliser la fonction `YamlElixir.load/1` pour charger des données YAML à partir d'une chaîne ou d'un fichier:
+Cela va lire le fichier `config.yml` et convertir son contenu en un format de données utilisable en Elixir. Vous pouvez également utiliser `Yaml.encode` pour écrire des données Elixir dans un fichier YAML.
 
-```Elixir
-yaml_string = "---\ntitle: 'Nouvel article'\nauthor: 'Jeanne'\ncontent: 'Contenu de l'article'\n"
-data = YamlElixir.load(yaml_string)
+## Deep Dive:
 
-# output: %{author: "Jeanne", content: "Contenu de l'article", title: "Nouvel article"}
-```
+YAML a été créé en 2001 pour résoudre les problèmes de formatage et de lisibilité du format XML. Il est souvent utilisé dans des frameworks web tels que Ruby on Rails pour gérer la configuration des applications et des bases de données.
 
-Vous pouvez également utiliser la fonction `YamlElixir.dump/1` pour sérialiser des données en YAML:
+Les alternatives à YAML incluent JSON et XML, cependant YAML offre une syntaxe plus lisible pour les humains et est mieux adapté pour les fichiers de configuration.
 
-```Elixir
-data = %{title: "Nouvel article", author: "Jeanne", content: "Contenu de l'article"}
-yaml_string = YamlElixir.dump(data)
+L'implémentation du module `Yaml` en Elixir est basée sur la librairie C `libyaml`, qui est connue pour être rapide et fiable. En outre, le module Elixir inclut des fonctions pour la validation et la manipulation de données YAML.
 
-# output: "---\ntitle: 'Nouvel article'\nauthor: 'Jeanne'\ncontent: 'Contenu de l'article'\n"
-```
+## See Also:
 
-## Plongée Profonde
+Pour en savoir plus sur le module `Yaml` en Elixir, vous pouvez consulter la documentation officielle : https://hexdocs.pm/elixir/Yaml.html
 
-YAML prend en charge plusieurs types de données tels que les chaînes, les tableaux et les objets, ainsi que des fonctionnalités telles que les balises personnalisées et les ancres pour référencer des données. Pour en savoir plus sur ces fonctionnalités, vous pouvez consulter la documentation officielle de YAML [ici](https://yaml.org/spec/1.2/spec.html).
-
-De plus, le package YamlElixir offre des options pour personnaliser le traitement des données YAML, telles que la prise en charge de données binaires et la conversion de nombres en entiers. Vous pouvez en savoir plus sur ces options dans la documentation du package [ici](https://hexdocs.pm/yaml_elixir/YamlElixir.html#module-default-options).
-
-## Voir Aussi
-
-- [Documentation officielle de YAML](https://yaml.org/spec/1.2/spec.html)
-- [Documentation de YamlElixir](https://hexdocs.pm/yaml_elixir/YamlElixir.html)
+Pour explorer d'autres formats de données pris en charge par Elixir, jetez un coup d'oeil à la librairie `Poison` pour JSON et `SweetXML` pour XML.

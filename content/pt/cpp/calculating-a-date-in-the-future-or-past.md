@@ -1,7 +1,7 @@
 ---
-title:                "Calculando uma data no futuro ou no passado"
-html_title:           "C++: Calculando uma data no futuro ou no passado"
-simple_title:         "Calculando uma data no futuro ou no passado"
+title:                "Calculando uma data no futuro ou passado"
+html_title:           "C++: Calculando uma data no futuro ou passado"
+simple_title:         "Calculando uma data no futuro ou passado"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Dates and Times"
@@ -10,59 +10,62 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+## O que & Por quê?
+Calcular uma data no futuro ou no passado é uma tarefa comum em programação, que envolve determinar uma data baseada em uma data inicial e um certo número de dias ou meses adicionais. Os programadores utilizam essa função para diferentes propósitos, como agendar tarefas, gerar relatórios ou desenvolver algoritmos complexos.
 
-Às vezes, precisamos calcular uma data no futuro ou no passado em nossos programas. Isso pode ser útil para agendamento, previsões ou até mesmo para exibir informações sobre eventos específicos.
+## Como fazer:
+Para calcular uma data no futuro ou no passado em C++, podemos utilizar a biblioteca padrão <ctime> e suas funções date e time. Abaixo, dois exemplos de código mostrando como isso pode ser feito:
 
-## Como Fazer
-
-Para calcular uma data no futuro ou no passado em C++, podemos usar a biblioteca de data e hora padrão, chamada `chrono`. Usando essa biblioteca, podemos definir uma data específica como ponto de partida e adicionar ou subtrair um determinado número de dias para obter a data desejada.
-
-Primeiro, vamos incluir a biblioteca `chrono` em nosso código:
-
-```C++
-#include <chrono>
 ```
+#include <iostream>
+#include <ctime>
 
-Agora, vamos definir a data inicial usando a classe `std::chrono::system_clock`. Esta classe representa o relógio do sistema e fornece informações sobre a hora atual do sistema.
+int main() {
 
-```C++
-std::chrono::system_clock::time_point data_inicial = std::chrono::system_clock::now();
+  // Calculando 30 dias a partir de hoje
+  time_t currentTime;
+  time(&currentTime);
+
+  struct tm* futureDate = localtime(&currentTime);
+  futureDate->tm_mday += 30;
+  mktime(futureDate);
+
+  std::cout << "Daqui a 30 dias será " << futureDate->tm_year+1900;
+  std::cout << "-" << futureDate->tm_mon+1;
+  std::cout << "-" << futureDate->tm_mday << std::endl;
+
+  // Calculando 6 meses a partir de uma data específica
+  struct tm myDate = {0};
+  myDate.tm_year = 120;
+  myDate.tm_mon = 7;
+  myDate.tm_mday = 5;
+
+  mktime(&myDate);
+
+  struct tm* futureMonth = localtime(&myDate);
+  futureMonth->tm_mon += 6;
+  mktime(futureMonth);
+
+  std::cout << "Daqui a 6 meses será " << futureMonth->tm_year+1900;
+  std::cout << "-" << futureMonth->tm_mon+1;
+  std::cout << "-" << futureMonth->tm_mday << std::endl;
+
+  return 0;
+}
+
 ```
+A saída para o primeiro exemplo será: "Daqui a 30 dias será [ano atual]-[mês atual]-[dia atual + 30]".
 
-Em seguida, podemos adicionar ou subtrair um determinado número de dias usando a função `std::chrono::duration` e definindo o período em `days`.
+A saída para o segundo exemplo será: "Daqui a 6 meses será [ano+1]-[mês+1]-05", considerando que a data inicial foi definida como 5 de agosto de 2020.
 
-```C++
-std::chrono::duration<int, std::ratio<86400>> dias(5); //adiciona 5 dias à data atual
-```
+## Mergulho profundo:
+A função para calcular uma data no futuro ou no passado já existe há muito tempo e evoluiu ao longo dos anos. Antigamente, os programadores tinham que lidar com cálculos julianos para determinar datas, mas hoje em dia as linguagens de programação já oferecem funções especificas para esses cálculos, facilitando o trabalho do programador.
 
-Agora, podemos usar a função `std::chrono::operator+` para adicionar esse período à nossa data inicial e obter a data no futuro.
+Além disso, também existem bibliotecas externas especializadas em manipulação de datas que oferecem diferentes funcionalidades e opções de formatação. É importante que o programador escolha a melhor opção de acordo com as necessidades do seu projeto.
 
-```C++
-std::chrono::system_clock::time_point data_final = data_inicial + dias; // data final com 5 dias a mais
-```
+Por fim, a implementação detalhada dessa função depende de como os sistemas operacionais lidam com armazenamento e manipulação de datas. Em alguns casos, pode haver diferenças, por exemplo, no tratamento de anos bissextos ou fusos horários.
 
-Para exibir a data em um formato legível, podemos convertê-la para um tipo de dados `std::tm` usando a função `std::chrono::system_clock::..
-to_time_t` e, em seguida, usar a função `std::localtime` para formatá-la.
-
-```C++
-std::tm data_formatada = *std::localtime(&std::chrono::system_clock::to_time_t(data_final));
-```
-
-Agora, podemos exibir a data no formato desejado usando a função `std::strftime`.
-
-```C++
-std::cout << "Data futura: " << std::put_time(&data_formatada, "%d/%m/%Y") << '\n';
-```
-
-Para calcular uma data no passado, basta subtrair o período desejado em vez de adicioná-lo.
-
-## Mergulho Profundo
-
-A função `std::chrono::system_clock::time_point` representa um ponto específico no tempo, enquanto a função `std::chrono::duration` representa um período de tempo. Esses tipos de dados podem ser personalizados para se adequar às necessidades do programador. Além disso, a biblioteca `chrono` também inclui funções para lidar com diferentes fusos horários e formatos de data.
-
-## Veja Também
-
-- [Documentação da biblioteca chrono do C++](https://en.cppreference.com/w/cpp/chrono)
-- [Tutorial sobre a biblioteca chrono do C++](https://www.geeksforgeeks.org/chrono-in-c/)
-- [Exemplo de cálculo de data no futuro em C++](https://www.techbeamers.com/calculate-date-and-time-in-cpp/)
+## Veja também:
+- [Documentação oficial da biblioteca <ctime>](https://en.cppreference.com/w/cpp/chrono/c)
+- [Biblioteca Boost.Date_Time para manipulação de datas em C++](https://www.boost.org/doc/libs/1_74_0/doc/html/date_time.html)
+- [Artigo sobre o cálculo de datas em diferentes linguagens de programação](https://www.bbvalabs.com/en/technology/software-development/calculate-date-future-past/)

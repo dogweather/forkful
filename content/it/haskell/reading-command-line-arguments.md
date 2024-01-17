@@ -1,7 +1,7 @@
 ---
-title:                "Lettura degli argomenti della linea di comando"
-html_title:           "Haskell: Lettura degli argomenti della linea di comando"
-simple_title:         "Lettura degli argomenti della linea di comando"
+title:                "Lettura degli argomenti sulla riga di comando"
+html_title:           "Haskell: Lettura degli argomenti sulla riga di comando"
+simple_title:         "Lettura degli argomenti sulla riga di comando"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Files and I/O"
@@ -10,38 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+## Cosa e Perché?
+ Leggere gli argomenti della riga di comando è una pratica comune tra i programmatori per ottenere informazioni dall'utente tramite il terminale. È utile quando si vuole rendere il programma più interattivo o personalizzabile per l'utente.
 
-Oggi impareremo come leggere gli argomenti della riga di comando utilizzando Haskell. Questa abilità ti permetterà di creare programmi più dinamici e interattivi in ​​linea di comando.
-
-## Come fare
-
-Leggere gli argomenti della riga di comando in Haskell è semplicemente una questione di utilizzare una funzione fornita dalla libreria standard, chiamata `getArgs`. Ecco un esempio di come utilizzarla:
-
+## Come fare:
 ```Haskell
-import System.Environment
+-- Utilizzando il modulo System.Environment
+import System.Environment (getArgs)
 
+-- Funzione per stampare gli argomenti ricevuti
+printArgs :: [String] -> IO ()
+printArgs args = putStrLn ("Hai fornito gli argomenti: " ++ unwords args)
+
+-- Ottenere e stampare gli argomenti
+main :: IO ()
 main = do
-    args <- getArgs
-    putStrLn ("Hai inserito " ++ show (length args) ++ " argomenti: " ++ show args)
+  args <- getArgs
+  printArgs args
+```
+Questo codice importa il modulo `System.Environment` che ci permette di utilizzare la funzione `getArgs` per ottenere una lista di `String`, ovvero gli argomenti della riga di comando passati al programma. La funzione `printArgs` prende questa lista come parametro e la stampa a video concatenando gli elementi con uno spazio. Nella funzione `main`, utilizzando il costrutto `do`, otteniamo gli argomenti dalla riga di comando tramite `getArgs` e li passiamo alla funzione `printArgs`.
+
+Esempio di output:
+
+```
+$ runhaskell args.hs arg1 arg2 arg3
+Hai fornito gli argomenti: arg1 arg2 arg3
 ```
 
-In questo esempio, abbiamo importato il modulo `System.Environment`, che ci fornisce la funzione `getArgs`. Nella nostra funzione `main`, chiamiamo `getArgs` e salviamo il risultato nella variabile `args`. Quindi, utilizziamo la funzione `putStrLn` per stampare a schermo il numero di argomenti inseriti e una rappresentazione degli argomenti stessi. Ecco un esempio di output:
+## Approfondimento:
+La lettura degli argomenti della riga di comando è una funzionalità disponibile in molti linguaggi di programmazione, ma in Haskell è particolarmente semplice grazie alla sua forte tipizzazione e alla gestione delle funzioni come dati. Un'alternativa a `getArgs` è `getProgName` che restituisce il nome del programma invece degli argomenti. Ci sono anche librerie esterne come `System.Console.ArgParser` che forniscono una sintassi più flessibile per la gestione degli argomenti.
 
-```
-$ runhaskell args.hs uno due tre
-Hai inserito 3 argomenti: ["uno","due","tre"]
-```
-
-Come puoi vedere, `getArgs` restituisce una lista di stringhe corrispondenti agli argomenti che abbiamo inserito al momento dell'esecuzione del programma.
-
-## Approfondimento
-
-È importante notare che la funzione `getArgs` non solo legge gli argomenti dalla riga di comando, ma anche dalla variabile di ambiente `args`. Ciò significa che puoi passare gli argomenti al tuo programma anche tramite la variabile di ambiente, in modo da poter testare il tuo programma senza doverlo eseguire manualmente dalla riga di comando ogni volta.
-
-Puoi anche utilizzare la funzione `System.Environment.withArgs` per eseguire una parte del codice con una lista personalizzata di argomenti, invece che utilizzare quelli passati dalla riga di comando. Questo può essere utile per i test.
-
-## Vedi anche
-
-- Documentazione ufficiale di `getArgs`: https://hackage.haskell.org/package/base-4.12.0.0/docs/System-Environment.html#v:getArgs
-- Tutorial su come utilizzare le variabili di ambiente in Haskell: https://www.tweag.io/blog/2019-01-10-env-vars/
+## Vedi anche:
+- [Documentazione ufficiale di Haskell](https://www.haskell.org/documentation/)
+- [Tutorial interattivo su Haskell](https://www.haskell.org/try/)
+- [Modulo System.Environment di Haskell](https://hackage.haskell.org/package/base/docs/System-Environment.html)

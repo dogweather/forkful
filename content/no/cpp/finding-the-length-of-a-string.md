@@ -1,7 +1,7 @@
 ---
-title:                "Å finne lengden til en streng"
-html_title:           "C++: Å finne lengden til en streng"
-simple_title:         "Å finne lengden til en streng"
+title:                "Å finne lengden på en streng"
+html_title:           "C++: Å finne lengden på en streng"
+simple_title:         "Å finne lengden på en streng"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -10,60 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hva & Hvorfor?
+Å finne lengden på en streng er en vanlig oppgave for programmerere. Dette betyr ganske enkelt å telle antall tegn i en streng, inkludert mellomrom og spesialtegn. Dette er nyttig for å håndtere tekstbaserte data og for å sikre at strenger ikke er for lange til å bli behandlet riktig.
 
-Å finne lengden til en streng er en viktig grunnleggende ferdighet i programmering. Det lar oss manipulere og behandle tekster på en effektiv måte, noe som er essensielt i mange programmer.
-
-## Slik gjør du det
-
-For å finne lengden til en streng, kan du bruke funksjonen `length()` i C++. Denne funksjonen tar inn en streng som parameter og returnerer lengden av strengen som et heltall. La oss se på et eksempel:
-
+## Hvordan:
 ```C++
+// Eksempel på å finne lengden på en streng i C++
 #include <iostream>
+#include <string>
 using namespace std;
 
 int main() {
-    string navn = "Per";
-    cout << "Lengden til strengen er: " << navn.length() << endl;
-
-    return 0;
+  string navn = "Eirik";
+  int lengde = navn.length(); // bruker .length() metoden på strengen
+  cout << "Lengden på navnet mitt er " << lengde << " tegn.";
+  return 0;
 }
+
+// Eksempel på output:
+// Lengden på navnet mitt er 5 tegn.
 ```
 
-Etter å ha kjørt koden, vil du få følgende utskrift:
+## Dykk dypere:
+Å finne lengden på en streng er en viktig del av tekstbehandling i programmering. Dette begrepet har sitt opphav fra ASCII kodingen, som brukte spesielle tegn for å markere starten og slutten på en streng. I tillegg til å bruke .length() metoden, kan du også bruke funksjonen strlen() for å finne lengden på en streng i C. Det finnes også alternative måter å telle antall tegn på, som for eksempel å bruke løkker og telle hver bokstav individuelt.
 
-```
-Lengden til strengen er: 3
-```
-
-Du kan også bruke en `for`-løkke til å gå gjennom hver karakter i strengen og telle dem manuelt. Her er en annen måte å finne lengden til en streng på:
-
-```C++
-#include <iostream>
-using namespace std;
-
-int main() {
-    string navn = "Per";
-    int lengde = 0;
-    for (int i = 0; navn[i] != '\0'; i++) {
-        lengde++;
-    }
-
-    cout << "Lengden til strengen er: " << lengde << endl;
-
-    return 0;
-}
-```
-
-I begge eksemplene ovenfor blir lengden av strengen "Per" ble regnet som 3.
-
-## Dypdykk
-
-I C++, blir lengden til en streng lagret som et heltall av typen `int`, siden det er det mest effektive formatet for å arbeide med tekst. Det viktigste å være oppmerksom på er at lengden på en streng inkluderer alle tegn, også mellomrom og spesialtegn.
-
-En annen viktig ting å merke seg er at indeksene til en streng starter fra 0, så den første karakteren vil alltid ha en indeks på 0. Dette betyr at hvis en streng har en lengde på 3, vil indeksene være 0, 1, og 2.
-
-## Se også
-
-- [C++ Strings Tutorial](https://www.geeksforgeeks.org/cpp-strings/) (engelsk)
-- [Grunnleggende om strenger i C++](https://www.w3schools.com/cpp/cpp_strings.asp) (engelsk)
+## Se også:
+- [C++ Strings](https://www.programiz.com/cpp-programming/string) (engelsk)
+- [Historien om ASCII-koden](https://www.livescience.com/33179-origin-computer-keyboard-design.html) (engelsk)
+- [strlen() funksjonen i C](https://www.tutorialspoint.com/c_standard_library/c_function_strlen.htm) (engelsk)

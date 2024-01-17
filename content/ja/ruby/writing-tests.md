@@ -1,7 +1,7 @@
 ---
-title:                "「テストを書く」"
-html_title:           "Ruby: 「テストを書く」"
-simple_title:         "「テストを書く」"
+title:                "テストの書き方"
+html_title:           "Ruby: テストの書き方"
+simple_title:         "テストの書き方"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Testing and Debugging"
@@ -10,54 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+当エンジニアは、プログラムを書く際に、テストを書くことが必要になります。テストは、プログラムの動作を確認し、バグを見つけるための重要な手段です。プログラムを開発する際には、テストをしっかりと書くことで安心してコードを改善することができます。
 
-テストを書くことの最大のメリットは、ソフトウェアの品質を向上させることです。テストを書くことで、バグを早期に発見し、保守性を高めることができます。
+## What & Why?
 
-## 使い方
+テストを書くことは、プログラム開発において重要なステップです。テストを書くことで、プログラムの動作を確認し、バグを見つけることができます。また、テストをしっかりと書くことで、プログラムの品質を高めることができます。
 
-テストを書くには、Rubyで標準的に使用されるMinitestやRSpecなどのテスティングフレームワークを使用することができます。以下の例では、Minitestを使用してテストを書く方法を説明します。
+## How to:
 
-```
-# テストを実行するために必要なライブラリを読み込む
-require 'minitest/autorun' 
+例を使って、どのようにテストを書くかを見てみましょう。
 
-# テスト対象のクラスを読み込む
-require './calculator'
-
-# テストクラスを定義する
-class TestCalculator < Minitest::Test 
-  # テストメソッドを定義する
-  def test_addition
-    # テストケースを作成する
-    result = Calculator.new.add(3, 5)
-
-    # 比較を行う
-    assert_equal 8, result 
-  end
+```Ruby
+# テストコードの例
+def add(x, y)
+  x + y
 end
 ```
 
-テストを実行すると、以下のような出力が得られます。
+上記のようなテストコードを書くことで、プログラムが正しく動作しているかを確認することができます。実際にプログラムを実行する前に、テストコードを書くことで、不具合を事前に発見することができます。
 
-```
-Run options: --seed 59516                                                                                                                                                 
-                                                                                                                                                                         
-# Running:                                                                                                                                                               
-                                                                                                                                                                         
-.                                                                                                                                                                        
-                                                                                                                                                                         
-Finished in 0.001208s, 826.4463 runs/s, 826.4463 assertions/s.                                                                                                                                                                                                     
-1 runs, 1 assertions, 0 failures, 0 errors, 0 skips                                                                                                                                                                                                                                                                                                                        
+## Deep Dive
 
-```
+テストを書くことの歴史は古く、コンピューターが登場する以前から行われていました。古くからテストを重要視していたプログラマーたちの知恵が、現代のテストの方法論を形成しています。
 
-## 詳細
+テストを書く方法にはさまざまなアプローチがありますが、最も一般的なのは「ユニットテスト」と呼ばれるものです。これは、プログラムを小さな単位に分割し、各々を独立したテストコードとして書くというものです。このようにすることで、プログラミングのミスを早期に発見することができます。
 
-テストを書くことは、開発者がコードを追加または修正する際に自信を持って変更を行えるようにするために重要です。テストを書くことで、コードが期待通りに動作することを保証することができます。また、テストを書くことは、コードを見直しやすくし、リファクタリングを行いやすくすることもできます。さらに、テストを書くことで、チーム全体でコードの品質を維持することもできます。
+テストを書くことは、最初は少し手間がかかりますが、最終的にはより品質の高いプログラムを作ることができるため、時間をかけてでもしっかりとテストを書くことが重要です。
 
-## もっと詳しく知りたい方へ
+## See Also
 
-- [Minitestのドキュメント](https://github.com/seattlerb/minitest#cets-hope)
-- [RSpec公式サイト](https://rspec.info/)
-- [テスト駆動開発実践ガイド](https://www.amazon.co.jp/dp/B002IF65GO)
+- [Ruby on Rails Guide: Testing](http://guides.rubyonrails.org/testing.html)
+- [RSpec Documentation](https://rspec.info/documentation/)
+- [Test-Driven Development in Ruby](https://thoughtbot.com/blog/test-driven-development-in-ruby)

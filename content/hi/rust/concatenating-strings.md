@@ -1,7 +1,7 @@
 ---
-title:                "स्ट्रिंग्स को जोड़ना"
-html_title:           "Rust: स्ट्रिंग्स को जोड़ना"
-simple_title:         "स्ट्रिंग्स को जोड़ना"
+title:                "स्ट्रिंग जोड़ना"
+html_title:           "Rust: स्ट्रिंग जोड़ना"
+simple_title:         "स्ट्रिंग जोड़ना"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -10,40 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Kyun
+## What & Why?
+Concatenating strings in Rust means joining two or more strings together to create a new string. Programmers do this to combine different pieces of text or data into one string, making it easier to manipulate or print out.
 
-Agar aap ek programmer hai, toh aapne strings ko apne code mein kai baar use kiya hoga. Kabhi kabhi humein do alag alag strings ko ek saath jodna hota hai, jaise ki "Hello" aur "World" ko jodkar "Hello World" banana. Isko hum string concatenation kehte hain. Is technique ka use karke hum apne code mein strings ko dynamic tarike se use kar sakte hain aur apne program ko aur bhi powerful bana sakte hain. Is article mein hum dekhenge ki Rust mein string concatenation kaise kiya jaata hai aur iske kya benefits hai.
+## How to:
+To concatenate strings in Rust, we use the `+` operator. This operator is used in between two strings to add them together. Here's an example:
 
-## Kaise
-
-```
-fn main() {
-    let str1 = "Hello";
-    let str2 = "World";
-    let combined_string = str1.to_string() + " " + str2;
-    println!("{}", combined_string);
-}
+```Rust
+let greeting = "Hello";
+let name = "Jane";
+let message = greeting + " " + name;
 ```
 
-Is code mein humne `str1` aur `str2` variables mein "Hello" aur "World" strings ko store kiya hai. Fir humne `combined_string` variable mein do strings ko `+` operator ka use karke concatenate kiya hai. Agar hum is code ko run karenge toh humein output mein "Hello World" milega. Rust mein `.to_string()` method se hum string ko `String` type mein convert kar sakte hain jisse hum ise concatenate kar sakein.
+In this code, we first define two strings, `greeting` and `name`. Then, we use the `+` operator to add them together and assign the result to a new string called `message`. The final value of `message` after concatenation would be `"Hello Jane"`. 
 
-## Deep Dive
+To add multiple strings, simply add more `+` operators between them. Here's another example:
 
-Rust mein humein `String` type mein aur `&str` type mein strings ko use karna hota hai. `String` type mutable hai aur usmein hum koi bhi changes kar sakte hain, jabki `&str` type immutable hai aur usmein hum changes nahi kar sakte. Isliye hum concatenate karte waqt `to_string()` method ka use karte hain taaki hum strings ko modify kar sakein.
-
-Iske alawa, Rust mein hum `format!` macro ka bhi use kar sakte hain. Is macro mein hum multiple strings ko ek saath combine kar sakte hain. Below code mein humne `"Hello"` aur `"World"` ko `format!` macro se combine kiya hai aur output mein humein "Hello World" milega.
-
-```
-fn main() {
-    let combined_string = format!("{} {}", "Hello", "World");
-    println!("{}", combined_string);
-}
+```Rust
+let num1 = "1";
+let num2 = "2";
+let num3 = "3";
+let numbers = num1 + num2 + num3;
 ```
 
-## Dekho Bhi
+In this code, we are concatenating three strings containing numbers. The final value of `numbers` would be `"123"`. 
 
-- [Rust Strings Documentation](https://doc.rust-lang.org/std/string/index.html)
-- [Learn Rust in Y Minutes - Strings](https://learnxinyminutes.com/docs/rust/#strings)
-- [Rust Book - Strings](https://doc.rust-lang.org/book/ch08-02-strings.html)
+## Deep Dive:
+Concatenating strings is a commonly used operation in programming, especially when dealing with text-based data. Before the `+` operator was introduced in Rust, programmers had to use the `format!()` function or the `to_string()` method to concatenate strings.
 
-"Chalti Bhais" Image Credit: https://pixabay.com/illustrations/rust-digital-art-stracture-science-426761/
+The `format!()` function uses placeholders to insert variables into a string, while the `to_string()` method converts a variable to a string, allowing it to be concatenated with other strings.
+
+Another alternative to string concatenation is by using the `String::from()` function. This function takes in a string slice as an argument and creates a new `String` object, which can then be concatenated with other strings. 
+
+In terms of implementation, the `+` operator is implemented through the `std::ops::Add` trait. This trait allows the `+` operator to perform addition on any type that implements it, including strings.
+
+## See Also:
+- [Rust Documentation on String Concatenation](https://doc.rust-lang.org/std/string/trait.ToString.html#method.to_string)
+- [GeeksforGeeks article on string concatenation in Rust](https://www.geeksforgeeks.org/concatenate-two-strings-in-rust/)

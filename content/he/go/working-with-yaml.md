@@ -1,7 +1,7 @@
 ---
-title:                "עובדים עם yaml"
-html_title:           "Go: עובדים עם yaml"
-simple_title:         "עובדים עם yaml"
+title:                "עבודה עם YAML"
+html_title:           "Go: עבודה עם YAML"
+simple_title:         "עבודה עם YAML"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Data Formats and Serialization"
@@ -10,73 +10,21 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-מתי אנו רוכשים דגש על YAML
-כשפותחים את מערכות המידע שלנו כדי לקבל נתונים מגוונים מסוגים שונים, כמו מבני נתונים או ספריות הפכויות. את YAML נדרשת היכולת לקרוא ולכתוב נתונים מגוונים, כך שזה מקל עלינו לעבוד עם מגוון של נתונים שונים בקוד שלנו.
+## מה ולמה?
+עבודה עם YAML היא תהליך שמשתמשים בו במימוש שפת תכנות. הוא מאפשר לכתוב ולקרוא נתונים בפורמט קל לקריאה על ידי אנשי מחשב והיישומים שלהם. כל מה שאתה צריך לעשות זה ליצור קוד עם מבנה תקייה של מפתח: ערך יחיד YAMLהעול עבור
 
-## How To
-הנה דוגמה של קוד גו לקרוא ולכתוב YAML נתונים:
+## איך לעשות:
+קודים דוגמא ופלט לדוגמה של YAML נמצאים מתחת לבלוקי קוד ```Go ... ```.
 
-```Go
-package main
+## הכנסמ
+  1. מיקוד ביותר: בעזרת YAML, אתה יכול להימנע ממפתחים ארוכים ומסורבלים וליצור קוד פשוט יותר.
+  2. אלטרנטיבות: בנוסף לYAML, ישנן גם פורמטי נתונים נוספים שמתאימים לשימוש על ידי מפתחים, כמו סימפלקס וJSON.
+  3. פרטי טיפול: בפועל, YAML מקל על כתיבת קוד תכנות ואינו דורש הכנסת תפריטים וקלט משתמשים. זה מאפשר למפתחים להתמקד בכתיבת קודים שמתאימים להם ולא על מבני הקובץ.
 
-import (
-	"fmt"
-	"io/ioutil"
+## ראה גם
+למידע נוסף על YAML ושימוש בו, אנו ממליצים לבדוק את המדריכים הבאים:
+1. [מסמכי YAML הרשמי](https://yaml.org/)
+2. [ספריית Go-YAML](https://github.com/go-yaml/yaml)
+3. [יכולות הפריסה המתקדמות של YAML](https://yaml.io/)
 
-	"gopkg.in/yaml.v3"
-)
-
-type Person struct {
-	Name  string `yaml:"name"`
-	Age   int    `yaml:"age"`
-	Hobby string `yaml:"hobby"`
-}
-
-func main() {
-	// קריאת קובץ YAML
-	yamlFile, err := ioutil.ReadFile("person.yaml")
-	if err != nil {
-		fmt.Println("Error reading YAML file:", err)
-		return
-	}
-
-	var person Person
-
-	// ממיין את הנתונים ב-YAML לפי struct שלנו
-	err = yaml.Unmarshal(yamlFile, &person)
-	if err != nil {
-		fmt.Println("Error unmarshaling YAML:", err)
-		return
-	}
-
-	// הדפסת נתונים מה-YAML
-	fmt.Printf("Name: %s\nAge: %d\nHobby: %s\n", person.Name, person.Age, person.Hobby)
-
-	// כתיבת נתונים חדשים לקובץ YAML
-	newPerson := Person{
-		Name:  "John",
-		Age:   30,
-		Hobby: "coding",
-	}
-
-	yamlData, err := yaml.Marshal(newPerson)
-	if err != nil {
-		fmt.Println("Error marshaling YAML:", err)
-		return
-	}
-
-	// כתיבת הנתונים לקובץ חדש
-	err = ioutil.WriteFile("new_person.yaml", yamlData, 0644)
-	if err != nil {
-		fmt.Println("Error writing YAML file:", err)
-		return
-	}
-
-}
-```
-
-כאן, אנו משתמשים בספרייה חיצונית של YAML לפירוש ולכתיבת נתונים בפורמט המתאים. את YAML files מנפתחים עם פתיחה של struct שמגדירה את הנתונים שאנו מעוניינים לקרוא/לכתוב.
-
-## Deep Dive
-ביתר פירוט, YAML הוא אקרונים של "YAML Ain't Markup Language", והוא מתאר פורמט נתונים קריא עבור אנשי בינוני-תקשורת. הוא פותח כחלופה ל-XML ול-JSON ומשתמש במרכיבי מציון ממוקד לאסוף את כל הנתונים בפורמט קל לקריאה ולעבודה עליהם. כמו כ
+כעת אתם מכירים את היתרונות של עבודה עם YAML ואת הדרכים להשתמש בו בשימושים שונים. בהצלחה בכתיבת קוד מהיר ויעיל.

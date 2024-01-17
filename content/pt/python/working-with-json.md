@@ -10,91 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que trabalhar com JSON?
+## O que & Porquê?
 
-JSON (JavaScript Object Notation) é um formato de dados amplamente utilizado para armazenar e transmitir informações em uma estrutura de texto simples. Ele é comumente usado em aplicações web e móveis, pois é leve, fácil de ler e manipular por máquinas e humanos. Trabalhar com JSON pode melhorar a eficiência e facilidade de comunicação em projetos de programação.
+Trabalhar com JSON é uma forma de processar e armazenar dados em um formato leve e fácil de ler e escrever. Programadores frequentemente utilizam JSON para compartilhar informações entre diferentes sistemas ou linguagens de programação.
 
-## Como fazer?
-
-### Criando um objeto JSON
-
-Para começar a trabalhar com JSON em Python, é necessário primeiro importar o módulo `json`.
-
- ```Python
- import json
- ```
-
-Então, podemos criar um objeto JSON básico usando a função `dumps()` para converter um dicionário Python em uma string JSON:
-
-```Python
-carro = {
-  "marca": "Tesla",
-  "modelo": "Model 3",
-  "ano": 2020,
-  "cor": "branco"
-}
-
-json_carro = json.dumps(carro)
-print(json_carro)
-```
-
-Isso produzirá a seguinte saída:
+## Como fazer:
 
 ```
-{"marca": "Tesla", "modelo": "Model 3", "ano": 2020, "cor": "branco"}
+# Importar a biblioteca json
+import json
+
+# Criar um objeto JSON
+object = {'nome': 'Maria', 'idade': 25}
+
+# Converter para string JSON
+json_string = json.dumps(object)
+
+# Imprimir a string JSON
+print(json_string)
+
+# Output: {"nome": "Maria", "idade": 25}
 ```
 
-### Codificando e decodificando JSON
+## Profundando:
 
-Além de criar objetos JSON, também podemos codificar e decodificar strings JSON em Python usando as funções `dumps()` e `loads()` respectivamente.
+JSON, sigla para JavaScript Object Notation, foi criado em 2001 por Douglas Crockford como um formato de intercâmbio de dados para ser utilizado em aplicações web. Ele é uma alternativa mais simples e leve ao formato XML e é suportado por diversas linguagens de programação. Em Python, a biblioteca padrão json oferece várias funções para trabalhar com JSON, como a conversão de objetos Python para JSON e vice-versa.
 
-```Python
-# Codificando
-mensagem = "Olá, mundo!"
-json_mensagem = json.dumps(mensagem)
-print(json_mensagem)
+## Veja também:
 
-# Decodificando
-json_mensagem = '{"mensagem": "Olá, mundo!"}'
-mensagem = json.loads(json_mensagem)
-print(mensagem["mensagem"])
-```
-
-Isso produzirá a seguinte saída:
-
-```
-"Olá, mundo!"
-Olá, mundo!
-```
-
-### Salvando e carregando arquivos JSON
-
-Podemos salvar um objeto JSON em um arquivo usando a função `dump()` e carregá-lo usando a função `load()`.
-
-```Python
-# Salvando
-json_carro = json.dumps(carro)
-with open('carro.json', 'w') as file:
-  json.dump(carro, file)
-
-# Carregando
-with open('carro.json') as file:
-  carro = json.load(file)
-print(carro["marca"])
-```
-
-Isso produzirá a seguinte saída:
-
-```
-Tesla
-```
-
-## Aprofundando
-
-Além das funções básicas para trabalhar com JSON, existem muitas outras ferramentas úteis e bibliotecas em Python que facilitam a leitura, escrita e manipulação de dados JSON, como `jsonschema` e `jsonpickle`. Além disso, é importante conhecer a estrutura básica de um objeto JSON e como ele pode ser representado em diferentes tipos de dados em Python, como listas e dicionários.
-
-## Veja também
-
-- [Documentação oficial do módulo JSON em Python](https://docs.python.org/3/library/json.html)
-- [Tutorial de JSON em Python no Real Python](https://realpython.com/python-json/) 
-- [Guia de referência rápida para trabalhar com JSON em Python](https://www.freecodecamp.org/news/python-parse-json/)
+- [Documentação Python sobre JSON](https://docs.python.org/3/library/json.html)
+- [JSON Formatter & Validator](https://jsonformatter.curiousconcept.com/)
+- [JSON vs XML: qual escolher?](https://www.geeksforgeeks.org/json-vs-xml/)

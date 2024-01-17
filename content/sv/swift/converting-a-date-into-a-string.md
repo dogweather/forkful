@@ -1,7 +1,7 @@
 ---
-title:                "Omvandla ett datum till en sträng"
-html_title:           "Swift: Omvandla ett datum till en sträng"
-simple_title:         "Omvandla ett datum till en sträng"
+title:                "Att konvertera ett datum till en sträng."
+html_title:           "Swift: Att konvertera ett datum till en sträng."
+simple_title:         "Att konvertera ett datum till en sträng."
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Dates and Times"
@@ -10,33 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
-Att kunna konvertera ett datum till en sträng är en grundläggande och ofta användbar färdighet för utvecklare. Det gör det möjligt för oss att presentera datumet på ett mer läsbart sätt för användare eller för att lagra det i en databas.
+## Vad & Varför?
+Om du har varit inblandad i programmering förut, har du förmodligen stött på termen "konvertera datum till sträng". Det är en process där programmerare omvandlar ett datum till en läsbar textsträng. Detta är viktigt eftersom det gör det möjligt för användare att enklare förstå den specificerade tidsangivelsen. Till exempel kan ett datum som är sparat i en databas vara ett objekt, men genom att konvertera det till en sträng kan det visas i en mer användbar form för användare.
 
-## Så här gör du
-Konvertering av ett datum till en sträng kan göras med Swifts inbyggda funktion `toString()`. Här är ett exempel på hur man konverterar ett aktuellt datum till en sträng:
-
+## Hur gör man:
 ```Swift
-let currentDate = Date()
-let dateFormatter = DateFormatter()
-dateFormatter.dateFormat = "dd-MM-yyyy" // bestämmer strängens format
-let dateString = dateFormatter.string(from: currentDate)
-print(dateString) // utmatning: 30-05-2020
+let date = Date() // skapar ett datum objekt
+let formatter = DateFormatter() // skapar ett formatteringsobjekt
+formatter.dateFormat = "dd MMMM yyyy" // anger formatet som datumet ska konverteras till
+let dateString = formatter.string(from: date) // konverterar datumet till en sträng
 ```
+Output: 10 januari 2022
 
-I exemplet skapar vi först ett `Date` objekt för det aktuella datumet. Sedan skapar vi en `DateFormatter` och anger det önskade formatet för vår sträng. Slutligen använder vi `string(from:)` för att konvertera datumet till en sträng enligt det angivna formatet.
+Detta är en enkel kod som visar processen för att konvertera ett datum till en sträng. Först skapar vi ett datum objekt med hjälp av Date() funktionen. Sedan skapar vi ett formatteringsobjekt med DateFormatter(). Vi anger sedan det önskade formatet som datumet ska konverteras till och slutligen använder vi string() funktionen för att faktiskt konvertera datumet till en sträng. Detta är ett vanligt förfarande för att konvertera datum till strängar.
 
-## Djupdykning
-Det finns många olika format som kan användas för att konvertera datum till strängar. Här är några vanliga format som kan användas med `dateFormat`:
+## Djupdykning:
+Historiskt sett var konvertering av datum till sträng nödvändigt eftersom olika länder och regioner använde olika datumformat. Genom att konvertera alla datum till en standardiserad tekststräng, kunde man undvika missförstånd och förbättra kommunikationen. Idag är det också en viktig del av programmering eftersom det ger användare en mer lättläst och bekant form av tidsangivelse.
 
-- `dd-MM-yyyy`: dag-månad-år (ex: 30-05-2020)
-- `MM/dd/yyyy`: månad/dag/år (ex: 05/30/2020)
-- `EEEE, MMM d, yyyy`: veckodag, tre bokstäver för månad, dag och år (ex: Saturday, May 30, 2020)
-- `h:mm a`: timme:minut AM/PM (ex: 9:30 AM)
+Alternativet till att konvertera datum till sträng är att använda olika Notation systems som ISO 8601 eller Unix Timestamp. ISO 8601 är ett internationellt datumformat som används av många länder, medan Unix Timestamp är en sekventiell tidsstämpel som används inom Unix-system. Båda dessa alternativ kan vara mer exakta och mindre förvirrande, men de kan också vara svåra att förstå för den genomsnittliga användaren.
 
-Det är viktigt att välja rätt format för det syfte där strängen kommer att användas, såsom visning i ett gränssnitt eller lagring av data i en databas. Det finns också olika inställningar för `locale` som kan påverka hur datum och tider visas beroende på var användaren befinner sig i världen.
+Implementationen av konvertering av datum till sträng kan variera beroende på programmeringsspråk och plattform. I Swift finns det flera olika typer av datumformat och formatteringsalternativ som kan anpassas efter behov. Det finns också andra funktioner som kan hjälpa till med hanteringen av datumobjekt, såsom att jämföra eller beräkna tidsintervall.
 
-## Se även
-- [Apple Developer Documentation - Date](https://developer.apple.com/documentation/foundation/date)
-- [Apple Developer Documentation - DateFormatter](https://developer.apple.com/documentation/foundation/dateformatter)
-- [Stack Overflow: Convert Date to String in Swift](https://stackoverflow.com/questions/35700281/convert-date-to-string-in-swift)
+## Se även:
+- [Apple Developer Documentation om konvertering av datum till sträng](https://developer.apple.com/documentation/foundation/dateformatter)
+- [ISO 8601 standard för datum och tid](https://www.iso.org/iso-8601-date-and-time-format.html)
+- [Unix Timestamp information](https://www.unixtimestamp.com/)

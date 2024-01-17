@@ -10,40 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
+Checking if a directory exists is a common task in programming that involves verifying if a specific directory exists in the file system. This is often done by programmers to ensure the proper functioning of their program, as well as to handle any errors that may occur if the directory is missing.
 
-Checking if a directory exists is an important task in programming, especially when dealing with file manipulation or user input. Knowing how to accurately check a directory's existence can help prevent errors and improve the overall functionality of your code.
+## How to:
+To check if a directory exists in Rust, we can use the ```PathBuf``` and ```Path``` structs from the standard library. First, we need to import the ```Path``` trait using ```use std::path::Path```. Then, we can use the ```PathBuf``` to create a new path and pass it into the ```Path::new()``` method. Finally, we can use the ```Path::exists()``` method to check if the directory exists. Here's an example code snippet and its output:
 
-## How To
+```Rust
+use std::path::Path;
 
-To check if a directory exists in Rust, we can use the `std::fs::metadata` function which returns a `Result` containing information about the directory. Here's an example code block:
-
-```rust
-use std::fs;
-
-let dir_path = "my_directory";
-
-if let Ok(metadata) = fs::metadata(dir_path) {
-    if metadata.is_dir() {
-        println!("{} exists!", dir_path);
-    } else {
-        println!("{} is not a directory.", dir_path);
-    }
+let path = Path::new("path/to/directory");
+if path.exists() {
+    println!("The directory exists!");
 } else {
-    println!("{} does not exist.", dir_path);
+    println!("The directory does not exist.");
 }
 ```
 
-In this code, we first declare the directory path we want to check. Then using the `fs::metadata` function, we retrieve the metadata for that directory. If the directory exists, we can use the `is_dir()` method to check if it is indeed a directory. If it is, we print a message indicating that it exists. Otherwise, we print a message stating that it is not a directory. If the `fs::metadata` function returns an error, we can assume that the directory does not exist.
+```
+The directory exists!
+```
 
-## Deep Dive
+## Deep Dive:
+In the past, checking if a directory exists was done using potentially dangerous methods, such as creating a temporary file in the directory and then deleting it. This could potentially cause issues with permissions or space on the disk. However, with the introduction of the ```exists()``` method in the ```Path``` struct, this process has become much simpler and safer.
 
-Behind the scenes, the `fs::metadata` function makes use of the underlying operating system's file system APIs to retrieve information about the directory. This means that the behavior of checking for a directory's existence may differ depending on the operating system being used. For example, in Windows, the function may consider reparse points in the path and follow them to determine if the directory exists.
+There are also alternatives to using ```Path::exists()```, such as the ```fs::metadata()``` function which returns a ```Result``` enum indicating if the directory exists or not. Additionally, some crates, such as ```std::fs``` and ```walkdir```, provide more advanced options for traversing and checking directories.
 
-Additionally, it is important to note that simply checking for a directory's existence does not guarantee that it will not be modified or deleted by another process in the time between the check and the actual use of the directory.
+Internally, the ```exists()``` method uses the ```stat()``` system call to check the directory's metadata, which includes information about its existence. This process is cross-platform, meaning it will work on any operating system supported by Rust.
 
-## See Also
-
-- [std::fs::metadata documentation](https://doc.rust-lang.org/std/fs/fn.metadata.html)
-- [std::fs::File documentation](https://doc.rust-lang.org/std/fs/struct.File.html)
-- [Checking existence of a file or directory in Rust](https://www.mattgathu.com/ruby-tricks/checking-file-existence-rust/)
+## See Also:
+- [std::path::Path](https://doc.rust-lang.org/std/path/struct.Path.html) documentation
+- [std::fs::metadata()](https://doc.rust-lang.org/std/fs/fn.metadata.html) documentation
+- [walkdir](https://docs.rs/walkdir/2.3.1/walkdir/) crate documentation

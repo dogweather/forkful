@@ -1,7 +1,7 @@
 ---
-title:                "Konwersja ciągu znaków na małe litery"
-html_title:           "Gleam: Konwersja ciągu znaków na małe litery"
-simple_title:         "Konwersja ciągu znaków na małe litery"
+title:                "Konwertowanie ciągu znaków na małe litery"
+html_title:           "Gleam: Konwertowanie ciągu znaków na małe litery"
+simple_title:         "Konwertowanie ciągu znaków na małe litery"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -10,39 +10,21 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co & Dlaczego?
+Konwersja tekstu na małe litery to proces zmiany dużych liter w tekście na odpowiadające im małe litery. Programiści stosują tę technikę w celu ujednolicenia danych i ułatwienia porównywania lub wyszukiwania tekstu.
 
-Większość aplikacji internetowych i narzędzi, które korzystają z tekstowych danych, muszą operować na znakach w jednolitym formacie. Używanie małych liter jest często wymagane do poprawnego działania programów, dlatego w tym artykule pokazujemy, jak wykonać proste przekształcenie - zmianę wszystkich liter na małe.
-
-## Jak to zrobić
-
-Przekształcenie stringu na małe litery jest bardzo proste w języku Gleam. Wystarczy wywołać funkcję `String.to_lower` i przekazać jako argument żądany tekst. Poniżej przedstawiamy przykład:
+## Jak to zrobić:
 ```Gleam
-let tekst = "Witaj Świecie!"
-let wynik = String.to_lower(tekst)
-
-assert wynik == "witaj światem!"
+let str = "Cześć, Świat!"
+let lower_str = String.to_lower(str) 
 ```
 
-Pamiętaj, że zmiana litery na małą odbywa się według standardu Unicode, więc nie musisz martwić się o różnice między literami polskimi a angielskimi.
+Przykładowy wynik: "cześć, świat!"
 
-## Głębsza analiza
+## Głębszy Wgląd:
+Konwersja na małe litery jest powszechną techniką w programowaniu, a jej korzenie sięgają czasów maszynowych, kiedy to nie istniały jeszcze duże litery. Programiści mogą także użyć metody ```.map()``` aby dokonać konwersji jednocześnie na wiele elementów tekstu.
 
-W języku Gleam, stringi są traktowane jako kolekcja znaków, dlatego wykorzystujemy funkcję `String.map` do zmiany każdego znaku na małą literę. W praktyce może to wyglądać tak:
-```Gleam
-fn map_lower(char: String.Char) {
-  String.to_lower(char)
-}
-
-let tekst = "Witaj Świecie!"
-let wynik = String.map(map_lower, tekst)
-
-assert wynik == "witaj światem!"
-```
-
-Podczas korzystania z biblioteki standardowej języka Gleam, warto zwracać uwagę na dostępne funkcje, które mogą ułatwić nam pracę i zwiększyć czytelność naszego kodu.
-
-## Zobacz także
-
-- Dokumentacja języka Gleam: https://gleam.run/
-- Zaimplementowane funkcje dla stringów w bibliotece standardowej: https://github.com/lpil/gleam_stdlib/tree/master/String
+## Zobacz także:
+- Dokumentacja Gleam: https://gleam.run/
+- Wprowadzenie do podstaw programowania: https://kobietydokodu.pl/
+- Materiały dla początkujących programistów: https://naukacode.pl/

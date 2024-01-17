@@ -10,52 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que comparar duas datas
+## O que & Por quê?
 
-Comparar duas datas pode ser útil em diferentes situações, como em aplicações de planejamento, gerenciamento de eventos, ou até mesmo em jogos que envolvem tempo. Ao comparar duas datas, você pode determinar qual é a mais recente, se são iguais, ou calcular a diferença entre elas.
+Comparar duas datas é uma tarefa comum na programação, que envolve verificar se uma data é igual, anterior ou posterior a outra. Isso é importante para garantir a precisão dos dados e facilitar a tomada de decisões baseadas em datas.
 
-## Como fazer em Kotlin
+## Como fazer:
 
-Para comparar duas datas em Kotlin, você pode utilizar a classe `LocalDate` do pacote `java.time`. Primeiro, importe o pacote:
-
-```Kotlin
-import java.time.LocalDate
-```
-
-Em seguida, crie duas variáveis do tipo `LocalDate` para armazenar suas datas:
+Para comparar duas datas em Kotlin, podemos usar a função `compareTo()` da classe `LocalDate`. Por exemplo:
 
 ```Kotlin
-val data1 = LocalDate.of(2021, 5, 15)
-val data2 = LocalDate.of(2021, 7, 10)
+val data1 = LocalDate.of(2021, 10, 15)
+val data2 = LocalDate.of(2021, 10, 20)
+val resultado = data1.compareTo(data2)
+
+println(resultado) // Saída: -5 (data1 é anterior a data2)
 ```
 
-Agora, para comparar as duas datas, podemos usar os operadores de comparação `<`, `>`, `<=` e `>=`:
+## Profundidade:
 
-```Kotlin
-println(data1 < data2) //output: true
-println(data1 > data2) //output: false
-println(data1 <= data2) //output: true
-println(data1 >= data2) //output: false
-```
+Comparar datas é uma tarefa antiga que se tornou ainda mais importante com o avanço da tecnologia e a necessidade de trabalhar com grandes conjuntos de dados. Existem diferentes formas de comparar datas, como o uso de operadores lógicos ou funções específicas da linguagem de programação utilizada.
 
-Você também pode usar o método `isEqual()` para verificar se as datas são iguais:
+Em Kotlin, a função `compareTo()` compara as datas com base em sua ordem cronológica. Se a data passada como argumento for anterior à data alvo, o resultado será um número negativo. Se for posterior, o resultado será um número positivo. Se as datas forem iguais, o resultado será 0.
 
-```Kotlin
-println(data1.isEqual(data2)) //output: false
-```
+## Veja também:
 
-Além disso, é possível calcular a diferença entre as datas usando o método `until()` e especificando a unidade de tempo:
-
-```Kotlin
-println(data1.until(data2).days) //output: 56
-println(data1.until(data2).months) //output: 1
-```
-
-## Mergulho profundo
-
-Ao comparar duas datas, é importante levar em consideração alguns fatores como o fuso horário e a necessidade de converter as datas para um formato válido antes da comparação. Também é possível comparar datas com horários, utilizando a classe `LocalDateTime` do pacote `java.time`.
-
-## Veja também
-
-- [Documentação oficial do Kotlin sobre a classe LocalDate](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-local-date/) 
-- [Java Time API Overview and Examples](https://www.baeldung.com/java-time)
+- Documentação oficial do Kotlin sobre `LocalDate`: https://kotlinlang.org/docs/datetime.html#comparing-two-localdate-instances
+- Artigo sobre a importância de comparar datas na programação: https://www.geeksforgeeks.org/comparing-two-dates-in-java/

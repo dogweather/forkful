@@ -1,7 +1,7 @@
 ---
-title:                "写入标准错误"
-html_title:           "Fish Shell: 写入标准错误"
-simple_title:         "写入标准错误"
+title:                "“写入标准错误”"
+html_title:           "Fish Shell: “写入标准错误”"
+simple_title:         "“写入标准错误”"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Files and I/O"
@@ -10,33 +10,22 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
+## 什么 & 为什么？
 
-大多数编程语言都有一种将输出打印到标准输出（stdout）和标准错误（stderr）的机制。标准输出是程序正常运行时输出的信息，而标准错误则是出现错误时会输出的信息。通过将错误信息打印到标准错误，可以帮助开发人员更轻松地调试程序。
+写入标准错误是指在编程过程中，将错误信息或警告信息输出到终端的标准错误流中。程序员进行这样的操作是为了及时发现和解决问题，避免代码出错而导致程序崩溃。
 
-## 如何
-
-Fish Shell的写入标准错误机制与其他语言类似，使用的命令是`echo`。下面是一个例子：
-
-```Fish Shell
-echo "这是一条错误信息" 1>&2
+## 如何：
+下面是通过Fish Shell将错误信息输出到标准错误流的示例代码和输出结果：
 ```
-
-在上面的例子中，`1>&2`表示将输出重定向到标准错误。通过这样的方式，我们可以将错误信息打印到标准错误中。
-
-## 深入探讨
-
-除了使用`echo`命令，Fish Shell还提供了许多其他的输出到标准错误的方法。比如，可以使用`printf`命令来输出格式化的信息。示例如下：
-
-```Fish Shell
-printf "错误码：%d\n" 404 >>[2=]
+Fish Shell ...
+- 命令：ls bad_file
+- 错误信息输出：ls: cannot access 'bad_file': No such file or directory
 ```
+该代码中，通过使用Fish Shell的错误输出函数，我们可以直接将错误信息输出到终端，从而快速发现问题所在。
 
-上面的示例中，我们使用了重定向符号来将输出重定向到标准错误。`[2=]`表示将输出重定向到标准错误，`404`是我们要输出的错误码。
+## 深入了解：
+在早期的编程语言中，并没有将错误信息输出到标准错误流的概念，所有的信息都被输出到标准输出流中。但是随着程序复杂性的提高，及时发现和解决问题变得越来越重要，因此就出现了将错误信息输出到标准错误流的操作。除了使用Fish Shell的错误输出函数外，也可以利用一些其他的技巧来实现将错误信息输出到标准错误流，如重定向操作符“2>”。
 
-除了`echo`和`printf`命令，Fish Shell还提供了许多其他的命令来输出到标准错误。在实际开发中，开发人员可以根据需要选择使用哪种命令来实现将错误信息打印到标准错误的功能。
-
-## 另请参阅
-
-- [Fish Shell官方文档](https://fishshell.com/docs/)
-- [如何输出到标准错误](https://fishshell.com/docs/current/cmds/echo.html#output-to-standard-error)
+## 参考链接：
+- Fish Shell文档：https://fishshell.com/docs/current/tutorial.html#tut_errors
+- Standard Error和Standard Output的区别：https://www.marksanborn.net/unix-tutorial-for-beginners/basic-unix-commands/the-difference-between-stdout-and-stderr/

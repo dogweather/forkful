@@ -10,42 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
+Att skriva tester är en vanlig praxis inom programmering för att säkerställa att koden fungerar som den ska. Tester är små bitar av kod som kontrollerar att olika delar av programmet uppfyller förväntade krav och ger ökad kvalitet och säkerhet i koden.
 
-Att skriva tester är en viktig del av att skriva högkvalitativ kod. Det hjälper dig att säkerställa att din kod fungerar korrekt och förhindrar potentiella buggar och fel från att nå produktionsmiljön.
+## Hur man:
+Det är enkelt att skriva tester i Rust med hjälp av det inbyggda ramverket för enhetstester. Man börjar med att importera ```std::test``` biblioteket och sedan definiera en testfunktion som använder makrot ```assert``` för att kontrollera att uttryck eller funktioner ger förväntat resultat. Nedan finns ett exempel på en testfunktion för en enkel funktion som summerar två tal:
 
-## Så här
+```Rust
+use std::test;
 
-För att börja skriva tester i Rust behöver du först inkludera biblioteket "test" i din kod. Sedan kan du skapa en funktion som innehåller testkod och använder makron för att jämföra resultatet med det förväntade värdet. Här är ett exempel som testar en enkel funktion som adderar två tal:
-
-```rust
-use test::Bencher;
-
-fn add(x: u32, y: u32) -> u32 {
-    x + y
+fn summera(tal1: i32, tal2: i32) -> i32 {
+  return tal1 + tal2;
 }
 
 #[test]
-fn test_add_two_numbers() {
-    assert_eq!(add(2, 3), 5);
-}
-
-fn main() {
-    println!("{}", add(2, 3));
+fn test_summera() {
+  assert_eq!(summera(2, 3), 5);
 }
 ```
 
-När du kör denna kod med hjälp av "cargo test" kommer testet att köras och du kommer få en rapport om det lyckades eller misslyckades. Om allting fungerar som det ska, kommer funktionen "test_add_two_numbers" att lyckas och du kommer att se "test successful" i din terminal. Om något går fel, kommer du att få en detaljerad rapport om vad som gick fel.
+När man kör testerna med kommandot ```cargo test``` kommer programmet att gå igenom alla testfunktioner och rapportera om några av dem misslyckats.
 
-## Deep Dive
+## Djupdykning:
+Att skriva tester har blivit allt mer populärt inom programmering de senaste åren och anses vara ett viktigt steg i att skapa pålitlig och robust kod. Innan enhetstester blev populära, användes manuella tester där en person skulle köra igenom programmet och kontrollera att allt fungerade som det skulle. Detta var en tidskrävande och ineffektiv process jämfört med automatiserade tester. Alternativet till enhetstester är integrationstester som kontrollerar att flera delar av programmet fungerar bra tillsammans men är mer komplexa och tar längre tid att skriva.
 
-När du skriver tester i Rust är det viktigt att förstå hur makron som "assert_eq!" fungerar. Dessa makron jämför de två värdena (förväntat värdet och det faktiska värdet) och ger dig en rapport om de är lika. Om de inte är det, kommer det att rapportera vilket av dem som avvek från det förväntade värdet. Detta hjälper dig att snabbt identifiera och åtgärda eventuella problem i din kod.
+Det är också möjligt att testa privata funktioner och metoder genom att använda makrot ```#[test]``` tillsammans med ```#[allow(private)]``` för att tillåta åtkomst till dessa privata delar av koden. Detta gör det möjligt att testa mer komplexa och interna delar av programmet utan att behöva skriva om koden för att göra dem tillgängliga för externa tester.
 
-En annan viktig aspekt av att skriva tester är att täcka så många fall som möjligt. Det är viktigt att inte bara testa positiva fall där koden fungerar som den ska, utan också testa negativa fall där koden förväntas krascha eller ge felaktiga resultat. Detta hjälper till att upptäcka och åtgärda buggar som annars skulle kunna bli stora problem i produktionen.
-
-## Se också
-
-- [Official Rust documentation on testing](https://doc.rust-lang.org/book/ch11-00-testing.html)
-- [The Rust Book](https://doc.rust-lang.org/book/) - en omfattande guide för Rust-programmering
-- [Rust by Example](https://doc.rust-lang.org/rust-by-example/) - en interaktiv guide för att lära sig Rust genom kodexempel
-- [Awesome Rust](https://github.com/rust-unofficial/awesome-rust) - en samling av olika verktyg, bibliotek och resurser för Rust-programmering
+## Se även:
+För mer information om hur man skriver tester i Rust, se följande länkar:
+- [Rust Book - Writing Automated Tests](https://doc.rust-lang.org/book/ch11-00-testing.html)
+- [Official Rust Documentation - Testing](https://doc.rust-lang.org/std/test/index.html)

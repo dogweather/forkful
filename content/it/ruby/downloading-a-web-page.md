@@ -1,7 +1,7 @@
 ---
-title:                "Scaricare una pagina web"
-html_title:           "Ruby: Scaricare una pagina web"
-simple_title:         "Scaricare una pagina web"
+title:                "Scaricare una pagina web."
+html_title:           "Ruby: Scaricare una pagina web."
+simple_title:         "Scaricare una pagina web."
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "HTML and the Web"
@@ -10,42 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Perché
+## Che cos'è e perché?
 
-Scaricare una pagina web può essere utile per numerosi motivi, ad esempio per elaborare i dati contenuti nella pagina, analizzarne il contenuto o visualizzarla offline.
+Scaricare una pagina web significa ottenere il suo contenuto e salvarlo sul proprio computer. I programmatori spesso lo fanno perché hanno bisogno di analizzare il codice HTML di una pagina o di utilizzare i suoi dati per scopi specifici.
 
-# Come
-
-Per scaricare una pagina web in Ruby, possiamo utilizzare la gemma "net/http". Ecco un esempio di codice che scarica una pagina web e ne stampa il contenuto:
+## Come fare:
 
 ```Ruby
-require 'net/http'
+require 'open-uri'
 
-response = Net::HTTP.get(URI('https://www.example.com/'))
-puts response
+page = open("https://www.google.com") # sostituisci l'URL con quello desiderato
+puts page.read # stampa il contenuto della pagina
 ```
 
-Questo codice utilizza il metodo `get` della classe `Net::HTTP` per effettuare una richiesta GET all'URL specificato. Successivamente, il contenuto della risposta viene stampato a schermo.
-
-# Approfondimento
-
-La gemma "net/http" utilizza il protocollo HTTP per comunicare con i server web e scaricare il contenuto di una pagina. Per personalizzare la richiesta, possiamo utilizzare il metodo `request` invece di `get` e specificare il tipo di metodo HTTP (ad esempio GET, POST, PUT) e i parametri della richiesta.
-
-Ecco un esempio di codice che effettua una richiesta POST e passa dei parametri alla pagina web:
-
-```Ruby
-require 'net/http'
-
-url = URI('https://www.example.com/login')
-params = { username: 'user', password: 'password' }
-
-response = Net::HTTP.post_form(url, params)
-puts response
+```
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Google</title>
+    ...
+  </head>
+  ...
+</html>
 ```
 
-In questo caso, la pagina web viene eseguita come una richiesta POST e nel parametro `params` vengono passati il nome utente e la password come dati.
+## Approfondimenti:
 
-# Vedi anche
+Scaricare una pagina web è diventato sempre più importante con lo sviluppo del web. In passato, i programmatori utilizzavano principalmente linguaggi come Perl e Python per effettuare questa operazione. Ora, grazie a Ruby e alle sue librerie, è possibile farlo più facilmente e in meno righe di codice.
 
-- Documentazione ufficiale di Ruby sulla gemma "net/http": https://ruby-doc.org/stdlib/libdoc/net/http/rdoc/index.html
-- Approfondimenti sul protocollo HTTP: https://developer.mozilla.org/it/docs/Web/HTTP
+## Vedi anche:
+
+- Il file di libreria OpenURI nella documentazione di Ruby: https://ruby-doc.org/stdlib-2.7.1/libdoc/open-uri/rdoc/OpenURI.html
+- Un tutorial su come scaricare pagine web con Ruby: https://www.tutorialspoint.com/ruby/ruby_web_page_download.htm

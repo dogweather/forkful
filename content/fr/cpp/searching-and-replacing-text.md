@@ -1,7 +1,7 @@
 ---
-title:                "Recherche et remplacement de texte"
-html_title:           "C++: Recherche et remplacement de texte"
-simple_title:         "Recherche et remplacement de texte"
+title:                "Recherche et remplacement de textes"
+html_title:           "C++: Recherche et remplacement de textes"
+simple_title:         "Recherche et remplacement de textes"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -10,58 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Pourquoi
+## Qu'est-ce que c'est et pourquoi?
 
-La recherche et le remplacement de textes sont des opérations courantes en programmation. Cela peut être utile pour modifier rapidement de grands ensembles de données ou pour automatiser la mise à jour de certaines chaînes de caractères.
+"Rechercher et remplacer du texte" est une tâche courante pour les programmeurs, qui consiste à modifier du texte dans un programme en remplaçant certaines occurrences par d'autres. Nous le faisons pour corriger des erreurs, mettre à jour du code obsolète ou pour faire des modifications en vrac.
 
-# Comment faire
+## Comment faire:
 
-Pour effectuer des recherches et des remplacements de textes en C++, nous pouvons utiliser la fonction `std::regex_replace` de la bibliothèque standard. Cette fonction prend en paramètre une expression régulière (regex) et remplace toutes les occurrences du texte correspondant dans une chaîne de caractères par un autre texte.
+Voici quelques exemples de code en ```C++``` pour montrer deux façons différentes de rechercher et remplacer du texte dans une chaîne de caractères:
 
-Voici un exemple illustrant l'utilisation de `std::regex_replace` pour remplacer toutes les occurrences du mot "vieux" par le mot "nouveau" dans une chaîne de caractères :
+1. Utilisation de la fonction "find" pour localiser la position d'une occurrence spécifique, puis utilisation de la fonction "replace" pour la remplacer:
 ```C++
-#include <iostream>
-#include <regex>
-
-int main()
-{
-    std::string texte = "Le vieux chien dort sous le vieux chêne.";
-    std::regex regex("vieux");
-    std::string resultat = std::regex_replace(texte, regex, "nouveau");
-    std::cout << resultat << std::endl;
-    // Sortie : "Le nouveau chien dort sous le nouveau chêne."
-    return 0;
-}
+string str = "Bonjour le monde!";
+int pos = str.find("monde");
+str.replace(pos, 5, "univers");
 ```
+Output: "Bonjour l'univers!"
 
-Nous pouvons également utiliser des expressions régulières plus complexes pour effectuer des recherches et des remplacements. Par exemple, si nous souhaitons remplacer tous les nombres dans une chaîne de caractères par leur carré, nous pouvons le faire avec l'expression régulière `"[0-9]+"` et une fonction de remplacement personnalisée :
-
+2. Utilisation de la librairie `<algorithm>` pour utiliser la fonction "replace" sur l'ensemble de la chaîne de caractères:
 ```C++
-#include <iostream>
-#include <regex>
-#include <cmath>
-
-int main()
-{
-    std::string texte = "2 3 10 5 7";
-    std::regex regex("[0-9]+");
-    std::string resultat = std::regex_replace(texte, regex, [](const std::smatch& match) {
-        int nombre = stoi(match.str());
-        return std::to_string(nombre*nombre);
-    });
-    std::cout << resultat << std::endl;
-    // Sortie : "4 9 100 25 49"
-    return 0;
-}
+string str = "Bonjour le monde!";
+replace(str.begin(), str.end(), 'o', 'a');
 ```
+Output: "Banjaur le mande!"
 
-# Plongée en profondeur
+## Plongée en profondeur:
 
-La bibliothèque standard de C++ fournit une grande variété de fonctions et classes pour travailler avec les expressions régulières. En plus de `std::regex_replace`, nous avons également les fonctions `std::regex_match` et `std::regex_search` qui permettent respectivement de vérifier si une chaîne de caractères correspond à un motif donné et de chercher la première occurrence d'un motif dans une chaîne.
+Historiquement, la recherche et le remplacement de texte étaient des opérations manuelles et fastidieuses pour les programmeurs. Avec l'avènement des éditeurs de texte et des logiciels de développement, cette tâche est devenue beaucoup plus rapide et plus efficace. Les alternatives à la recherche et au remplacement de texte incluent l'utilisation de macros et d'expressions régulières pour des modifications plus complexes. L'implémentation dépendra du langage de programmation utilisé.
 
-De plus, la bibliothèque fournit également la classe `std::regex` qui représente une expression régulière et fournit des outils pour la manipuler et la combiner avec d'autres expressions.
+## Voir aussi:
 
-# Voir aussi
-
-- [Documentation officielle de la bibliothèque standard de C++ pour les expressions régulières](https://en.cppreference.com/w/cpp/header/regex)
-- [Guide complet sur les expressions régulières en C++](https://www.regular-expressions.info/cpp.html)
+- [Documentation officielle de la librairie `<algorithm>` en C++](https://en.cppreference.com/w/cpp/algorithm)
+- [Exemples de remplacement de texte en C++ sur GeeksforGeeks](https://www.geeksforgeeks.org/replace-a-string-in-cplusplus/)

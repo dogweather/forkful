@@ -10,53 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-Comparing dates is a common task in programming, especially when dealing with time-sensitive data. With the help of Kotlin, you can easily compare two dates and perform operations on them. This can be useful for tasks like sorting dates, detecting overlaps, or calculating time differences. 
+Comparing two dates is the process of determining if one date is before, after, or equal to another date. Programmers often compare dates when dealing with tasks such as sorting, filtering, or scheduling. By comparing dates, programmers can make decisions based on the chronological order of events or tasks.
 
-## How To
+## How to:
 
-To compare two dates in Kotlin, we can use the `compareTo()` method provided by the `Date` class. Let's take a look at an example:
-
-```Kotlin
-val date1 = Date(2021, 9, 1)
-val date2 = Date(2021, 9, 15)
-
-if (date1.compareTo(date2) == 0) {
-   println("Both dates are equal")
-} else if (date1.compareTo(date2) < 0) {
-   println("Date 1 comes before Date 2")
-} else {
-   println("Date 2 comes before Date 1")
-}
-```
-
-Here, we create two `Date` objects with different values and use the `compareTo()` method to compare them. This method returns an integer value based on the comparison, with 0 indicating equality, a negative value indicating that the first date comes before the second, and a positive value indicating the opposite. 
-
-We can also use other methods like `after()` and `before()` to compare dates based on their temporal relationship. Here's an example:
+To compare two dates in Kotlin, we can use the built-in functions of the Date class. We will use two dates, date1 and date2, and compare them using the compareTo function. The function returns an integer value based on the comparison, with a value of 0 indicating that the two dates are equal.
 
 ```Kotlin
-val date1 = Date(2021, 9, 1)
-val date2 = Date(2021, 9, 15)
+val date1 = Date(2021, 8, 1)
+val date2 = Date(2021, 8, 15)
 
-if (date1.after(date2)) {
-   println("Date 1 is after Date 2")
-} else if (date1.before(date2)) {
-   println("Date 1 is before Date 2")
-} else {
-   println("Both dates are equal")
-}
+val comparison = date1.compareTo(date2)
+
+println("Date1 is $comparison compared to Date2.")
 ```
 
-The `after()` method returns `true` if the first date comes after the second, while `before()` returns `true` if the first date comes before the second. 
+The output for this code would be:
+```
+Date1 is -1 compared to Date2.
+```
+This means that date1 is before date2.
 
-## Deep Dive
+## Deep Dive:
 
-Internally, dates in Kotlin are represented as `Long` values denoting the number of milliseconds since January 1, 1970, 00:00:00 UTC. This means that comparing dates in Kotlin is essentially comparing two numerical values. 
+When comparing dates, it is important to consider the time zone and daylight saving time. In Kotlin, the Date class is based on the Java Date class, which uses the UTC time zone by default. However, if the dates are based on different time zones, it can affect the comparison result. To avoid this issue, we can use the Calendar class to set the time zone before comparing dates.
 
-When comparing dates, the time zone also plays a crucial role. The `Date` class uses the default time zone of the system, but you can set a specific time zone using the `TimeZone` class. Additionally, Kotlin provides the `Calendar` class for more advanced date and time operations. 
+Alternatively, we can use the Joda-Time library to compare dates in a specific time zone. This library allows for more customizable and accurate date comparisons.
 
-## See Also
+## See Also:
 
-- [Kotlin Date and Time API](https://kotlinlang.org/docs/datetime.html)
-- [Kotlin Date Documentation](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-date/index.html)
+- Kotlin Date class documentation: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-date/
+- Java Date class documentation: https://docs.oracle.com/javase/8/docs/api/java/util/Date.html
+- Joda-Time library: https://www.joda.org/joda-time/

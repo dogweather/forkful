@@ -1,7 +1,7 @@
 ---
-title:                "Bruke regulære uttrykk."
-html_title:           "Haskell: Bruke regulære uttrykk."
-simple_title:         "Bruke regulære uttrykk."
+title:                "Å bruke regulære uttrykk"
+html_title:           "Haskell: Å bruke regulære uttrykk"
+simple_title:         "Å bruke regulære uttrykk"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -10,32 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
-Du har kanskje hørt om regular expressions før, men lurt på hvorfor du burde lære deg det? Vel, her er to gode grunner: det er et kraftig verktøy for å håndtere tekstbehandling og det er en essensiell ferdighet for å forstå og bruke mange programmeringsspråk, inkludert Haskell.
+# Hva er regulære uttrykk og hvorfor bruker programmerere det?
 
-## Slik gjør du det
-Hvis du vil lære deg regular expressions i Haskell, er det enkelt! Du trenger bare å bruke funksjonene `=~` og `=~~` for å søke gjennom og matche tekst. La oss se et eksempel på hvordan det fungerer:
+Regulære uttrykk er et verktøy som hjelper programmere å søke og manipulere tekststrenger basert på visse mønstre. Dette gjøres ved å definere et mønster som matcher deler av tekststrengen. Programmere bruker regulære uttrykk for å effektivt gjøre operasjoner som filtrering, erstattning og ekstraksjon av informasjon fra store mengder tekst.
+
+# Hvordan gjør du dette?
 
 ```Haskell
 import Text.Regex.Posix
 
--- Matcher alle tall i en streng og returnerer en liste av matcher
-matchTall :: String -> [String]
-matchTall s = getAllTextMatches (s =~ "[0-9]+") 
+main :: IO ()
+main = do
+  let string = "Hello, world!"
+  let pattern = "Hello, (.*)!" -- Dette er vårt mønster, og "world" er en "submatch"
+  let result = string =~ pattern :: [[String]] -- =~ matcher mønsteret mot tekststrengen og returnerer en liste med treff
+  print result -- [["Hello, world!","world"]]
+```
 
--- Returnerer True hvis en streng inneholder et primtall, ellers False
-erPrimtall :: String -> Bool
-erPrimtall s = s =~~ "[1-9]+"
-``` 
+# Dykk ned i detaljene
 
-**Eksempel input:** "Det er 27 primtall i mengden av de 100 første naturlige tallene."\
-**Forventet output:** `["27", "100"]` og `False` 
+(1) Regulære uttrykk har vært en del av programmering siden 1950-tallet, da det ble utviklet som en del av matematisk teori. (2) Alternativer som ligner på regulære uttrykk inkluderer "glob patterns" og "wildcards". (3) I Haskell er et regulært uttrykk representert ved hjelp av typen `Regex` fra `Text.Regex.Posix` modulen.
 
-Som du kan se, kan du bruke regular expressions til å finne og manipulere tekst på en enkel måte.
+# Se også
 
-## Dypdykk
-Hvis du vil lære mer om regular expressions, er det mange ressurser der ute som kan hjelpe deg. En god start er å se på dokumentasjonen til Text.Regex.Posix modulen i Haskell. Det finnes også mange nettsider som tilbyr interaktive regex-trenere, hvor du kan prøve ut forskjellige uttrykk og se hvordan de fungerer.
-
-## Se også
-- [Haskell Tutorial: Strings and Characters](https://www.haskell.org/tutorial/strings.html)
-- [Regular-Expressions.info: A website for learning, testing, and reference](https://regular-expressions.info/)
+- https://en.wikipedia.org/wiki/Regular_expression
+- https://hackage.haskell.org/package/regex-posix-0.95.2/docs/Text-Regex-Posix.html

@@ -1,7 +1,7 @@
 ---
-title:                "Capitalizar una cadena"
-html_title:           "C++: Capitalizar una cadena"
-simple_title:         "Capitalizar una cadena"
+title:                "Convertir una cadena en mayúsculas"
+html_title:           "C++: Convertir una cadena en mayúsculas"
+simple_title:         "Convertir una cadena en mayúsculas"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -10,37 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué?
+## ¿Qué es y por qué se hace?
 
-Capitalizar una cadena de texto puede ser útil en muchas situaciones. Por ejemplo, si queremos mostrar un nombre completo en mayúsculas en una aplicación, o si queremos estandarizar el formato de entrada de datos en un programa.
+Capitalizar una cadena significa convertir su primera letra en mayúscula y el resto en minúsculas. Los programadores suelen hacer esto para mejorar la legibilidad y claridad del código.
 
-## ¿Cómo hacerlo?
-
-Para capitalizar una cadena de texto en C++, podemos usar la función `toupper()` en un bucle para recorrer cada carácter de la cadena y convertirlo a mayúscula. A continuación, se puede imprimir la cadena resultante. Aquí hay un ejemplo de código:
-
+## Cómo hacerlo:
 ```C++
-string cadena = "hola mundo";
-for (int i = 0; i < cadena.length(); i++) {
-    cadena[i] = toupper(cadena[i]);
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    // Definir una cadena
+    string cadena = "esta es una cadena";
+
+    // Mostrar la cadena original
+    cout << "Original: " << cadena << endl;
+
+    // Convertir la cadena a mayúscula
+    for(int i=0; i<cadena.length(); i++) {
+        cadena[i] = toupper(cadena[i]);
+    }
+
+    // Mostrar la cadena capitalizada
+    cout << "Capitalizada: " << cadena << endl;
+
+    return 0;
 }
-cout << cadena << endl;
+```
+Resultado:
+```
+Original: esta es una cadena
+Capitalizada: ESTA ES UNA CADENA
 ```
 
-La salida de este código sería `HOLA MUNDO`. También podemos utilizar la función `transform()` de la biblioteca `algorithm` para capitalizar una cadena. Aquí hay un ejemplo:
+## Profundizando:
+En el pasado, cuando los programadores usaban sistemas operativos con una interfaz de línea de comandos, el uso de mayúsculas y minúsculas era importante ya que los comandos y nombres de archivo distinguen entre mayúsculas y minúsculas. Sin embargo, en la actualidad, en la mayoría de los sistemas operativos modernos esto ya no es un problema.
+Existen varias formas de capitalizar una cadena, como usar una función especial o escribiendo un algoritmo propio.
+La implementación de la función capitalize() puede variar dependiendo del lenguaje de programación utilizado, pero su lógica básica siempre será la misma.
 
-```C++
-string cadena = "hola mundo";
-transform(cadena.begin(), cadena.end(), cadena.begin(), ::toupper);
-cout << cadena << endl;
-```
-
-La salida sería la misma, `HOLA MUNDO`.
-
-## Profundizando más
-
-En C++, cada carácter tiene un valor numérico asignado, conocido como su código ASCII. El código ASCII para las letras minúsculas va del 97 al 122, mientras que el código ASCII para las mayúsculas va del 65 al 90. La función `toupper()` simplemente toma el valor numérico del carácter y resta 32 para convertirlo a su equivalente en mayúscula. También podemos usar la función `tolower()` para convertir un carácter a minúscula.
-
-## Ver también
-
-- [toupper() en cplusplus.com](http://www.cplusplus.com/reference/cctype/toupper/)
-- [transform() en cplusplus.com](http://www.cplusplus.com/reference/algorithm/transform/)
+## Véase también:
+- [Función toupper en C++](https://www.cplusplus.com/reference/cctype/toupper/)
+- [String Case in C++](https://www.educative.io/edpresso/string-case-in-cpp)

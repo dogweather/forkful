@@ -1,7 +1,7 @@
 ---
-title:                "Uttrekking av delstrenger"
-html_title:           "Elixir: Uttrekking av delstrenger"
-simple_title:         "Uttrekking av delstrenger"
+title:                "Utvinning av delstrenger"
+html_title:           "Elixir: Utvinning av delstrenger"
+simple_title:         "Utvinning av delstrenger"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -10,25 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
-Hvis du jobber med tekstbehandling eller bearbeiding av data, er det sannsynlig at du på et eller annet tidspunkt vil trenge å trekke ut deler av en tekststreng. Å kunne ekstrahere substrings kan hjelpe deg med å manipulere data mer effektivt og gjøre komplekse oppgaver enklere å håndtere.
+# Hva & Hvorfor?
 
-## Hvordan gjøre det
-Å ekstrahere substrings i Elixir er enkelt og intuitivt. Du kan bruke funksjonen `String.slice/2` og øke substringsens posisjon og lengde. Enkelt sagt, du gir `String.slice/2` to argumenter -- en tekststreng og et utvalgspunkt, og funksjonen vil returnere en ny streng som inneholder en del av den opprinnelige strengen basert på utvalgsparameterene du ga. La oss se et eksempel:
+Extracting substrings, eller å trekke ut delstrenger, er en måte å få tak i deler av en tekststreng på. Dette kan være nyttig når man ønsker å manipulere eller analysere bare en del av teksten. Programmere benytter seg av dette for å behandle data mer effektivt og få tilpasset informasjon for ulike formål.
 
-```Elixir
-original_streng = "Hei, verden!"
-substring = String.slice(original_streng, 3, 5)
-IO.puts(substing)
+# Hvordan:
+
+Du kan bruke funksjonen `String.split` for å trekke ut delstrenger basert på en gitt separator, for eksempel mellomrom eller komma. Her er et eksempel på hvordan du kan bruke denne funksjonen:
+
+Elixir
 ```
+str = "Dette er en setning."
+parts = String.split(str, " ")
+IO.inspect(parts)
+```
+Output: `["Dette", "er", "en", "setning."]`
 
-Dette vil returnere "i, ve", som er substringsen som starter på posisjon 3 og har en lengde på 5 tegn.
+Du kan også eksplisitt spesifisere et antall deler du ønsker å få fra delstrengen. For eksempel, hvis du ønsker å få de to første ordene fra setningen ovenfor kan du bruke `String.split(str, " ", 2)` som vil gi følgende output:
 
-Du kan også bruke utfall fra andre funksjoner som inndata for `String.slice/2`. For eksempel, hvis du bruker `String.split/2` for å dele en streng opp i en liste av substrings, kan du bruke en av disse substringsene som inndata for `String.slice/2` for å få en del av den opprinnelige strengen.
+Output: `["Dette", "er en setning."]`
 
-## Dypere dykk
-Elixir har også andre funksjoner for å ekstrahere substrings som `String.substring/2` og `String.slice/3`. Disse lar deg sette en startposisjon og sluttposisjon for substringsen du vil ekstrahere. Du kan også bruke regulære uttrykk sammen med `Regex.run/3` og `Regex.scan/3` for å filtrere og ekstrahere spesifikke substrings fra en tekststreng.
+# Dypdykk:
 
-## Se også
-- [Elixir dokumentasjon for String-modulen](https://hexdocs.pm/elixir/String.html)
-- [Nettstedet for Elixir programmeringsspråket](https://elixir-lang.org/)
+Å ekstrahere delstrenger er ikke et nytt konsept, det har vært brukt i ulike programmeringsspråk i lang tid. Dette er en grunnleggende funksjon som kan hjelpe programmerere å manipulere og prosessere tekst på en mer effektiv måte. Alternativer til `String.split` i Elixir inkluderer funksjoner som `String.slice` og `String.substr`.
+
+I Elixir er tekststrenger representert som lister av tegn, noe som betyr at man kan manipulere dem ved å bruke vanlige listefunksjoner. Dette betyr at du også kan bruke `Enum`-modulen og dens funksjoner som `Enum.map` for å trekke ut delstrenger basert på bestemte kriterier.
+
+# Se også:
+
+- Elixir dokumentasjon for `String`- og `Enum`-modulene: https://hexdocs.pm/elixir/String.html og https://hexdocs.pm/elixir/Enum.html
+- En tutorial om å arbeide med tekststrenger i Elixir: https://www.zohaib.me/working-with-strings-in-elixir/
+- Diskusjon om forskjeller mellom `String.split` og `String.slice`: https://stackoverflow.com/a/32198895

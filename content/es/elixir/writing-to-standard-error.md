@@ -1,7 +1,7 @@
 ---
-title:                "Escribir en la salida estándar de error"
-html_title:           "Elixir: Escribir en la salida estándar de error"
-simple_title:         "Escribir en la salida estándar de error"
+title:                "Escribiendo en el estándar de error."
+html_title:           "Elixir: Escribiendo en el estándar de error."
+simple_title:         "Escribiendo en el estándar de error."
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Files and I/O"
@@ -10,37 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué escribir a la salida de error
+## ¿Qué & Por qué?
 
-Escribir a la salida de error, también conocido como stderr, es una forma útil de comunicarse con los desarrolladores y usuarios durante la ejecución de un programa. Puede proporcionar información sobre posibles errores o excepciones que hayan ocurrido, facilitando la depuración y el seguimiento del estado del programa mientras se ejecuta.
+Escribir a la salida de error estándar es una forma en la que los programadores pueden imprimir mensajes de error mientras ejecutan su código. Esto les permite obtener información más detallada sobre los errores que ocurren durante la ejecución del programa.
 
-## Cómo escribir a la salida de error
+Los programadores utilizan esto para depurar su código y encontrar y solucionar errores de forma más eficiente.
 
-La forma más sencilla de escribir a la salida de error en Elixir es utilizando la función `IO.puts/2` junto con el macro `IO.inspect/2`. Estos métodos aceptan un mensaje y lo escriben en la salida de error, con la diferencia de que `IO.inspect/2` también imprime información adicional sobre la estructura de datos pasada como argumento. Por ejemplo:
+## Cómo:
 
 ```Elixir
-IO.puts("Este es un mensaje de error")
-```
-```Elixir
-IO.inspect({:error, "Ocurrió un error"})
+IO.puts("Mensaje a la salida estándar")
 ```
 
 Salida:
 
-```sh
-Este es un mensaje de error
-{:error, "Ocurrió un error"}
+```Elixir
+Mensaje a la salida estándar
 ```
 
-También se puede utilizar la función `IO.write/2` para escribir datos binarios en la salida de error.
+## Profundizando:
 
-## Detalles sobre escribir a la salida de error
+Escribir a la salida de error estándar no es algo nuevo. Se remonta a las primeras etapas de la programación informática. En el pasado, los programadores escribían a una salida de error estándar para depurar sus programas y obtener información sobre posibles errores.
 
-Además de escribir mensajes de error simples, también se puede utilizar la función `IO.format/2` para formatear y escribir mensajes en la salida de error. Esta función acepta una cadena de formato similar a la función `printf` en otros lenguajes, lo que permite personalizar los mensajes de error con información específica del programa.
+Hoy en día, escribir a la salida de error estándar sigue siendo una forma útil de depurar código y obtener información sobre posibles problemas en el mismo. Sin embargo, también existen otras alternativas, como los sistemas de registro, que permiten a los programadores almacenar y ver información de error de manera más organizada.
 
-Otro aspecto importante a tener en cuenta es que la salida de error es un flujo de salida como cualquier otro en Elixir, lo que significa que se pueden aplicar operaciones de Elixir como filtrado, mapeo o reducción en él. Esto brinda la flexibilidad de manipular la salida de error de acuerdo a las necesidades específicas del programa.
+En Elixir, escribir a la salida de error estándar se realiza utilizando la función `IO.puts/2`. Puedes imprimir cualquier tipo de dato a la salida de error estándar utilizando esta función.
 
-## Ver también
+## Ver también:
 
-- [Documentación oficial de Elixir sobre la salida de error](https://hexdocs.pm/elixir/IO.html#puts/2)
-- [Ejemplo de uso de la salida de error en Elixir](https://hexdocs.pm/elixir/A.html#error_1)
+- [Documentación oficial de Elixir sobre `IO.puts/2`](https://hexdocs.pm/elixir/IO.html#puts/2)
+- [Ejemplos de cómo utilizar `IO.puts/2`](https://elixir-lang.org/getting-started/io-and-the-file-system.html#io-and-the-file-system)
+- [Más sobre la salida de error estándar y otras opciones de depuración en Elixir](https://elixirschool.com/es/lessons/basics/io-n-enumerables/)

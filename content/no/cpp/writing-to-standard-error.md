@@ -10,45 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+Hva & Hvorfor?:
+Når vi programmerer i C++, er det ofte viktig å skrive ut informasjon til konsollen, for eksempel inputs og outputs. Noen ganger ønsker vi imidlertid å skrive ut viktig informasjon, som feilmeldinger, til en annen strøm enn standard output. Dette er når vi bruker standard error. Ved å skrive til standard error, sikrer vi at viktig informasjon blir tydelig synlig og ikke blandet opp med vanlige utskrifter.
 
-Så du har akkurat begynt å lære programmering, og du har hørt om standard error, men du lurer på hvorfor du skulle bry deg om å skrive til det? Vel, her er to grunner: 
-
-1. Feilsøking: Skriv til standard error for å feilsøke og finne ut hva som går galt i koden din. Dette gir deg mer spesifikk informasjon om feilene dine, som kan hjelpe deg med å fikse dem raskere.
-2. Enkelhet: Det er enklere å skrive til standard error enn å skrive til standard utgang. Å skrive til standard utgang krever flere trinn for å få ut riktig format, mens skriving til standard error beholder koden din i sin opprinnelige form.
-
-## Hvordan gjøre det
-
-For å skrive til standard error i C++, bruker vi objektet ```cerr``` og << operatøren. La oss se på et eksempel:
-
-```
+Hvordan:
+For å skrive til standard error i C++, bruker vi uttrykket "std::cerr". La oss se et eksempel:
+```C++
 #include <iostream>
-
-using namespace std;
-
-int main() {
-    int num = 5;
-    cerr << "Det høres ut som at du har problemer med num = " << num << endl;
-    
+ 
+int main()
+{
+    int age = 35;
+    std::cerr << "Alder: " << age << std::endl;
     return 0;
 }
 ```
-Output:
+Dette vil skrive ut alderen til standard error, og resultatet vil se slik ut:
 ```
-Det høres ut som at du har problemer med num = 5
+Alder: 35
 ```
+Som du kan se, bruker vi uttrykket "std::endl" for å legge til linjeskift etter utskriften. Dette er for å få en ryddigere utskrift.
 
-Her har vi brukt 
-objektet ```cerr``` og << operatøren til å skrive en feilmelding. Merk at vi også inkluderer ```<iostream>``` og bruker ```using namespace std;``` for å skrive ut feilmeldingen.
+Deep Dive:
+Bruken av standard error går tilbake til den tidlige utviklingen av datamaskiner, der standard output ofte ble reservert for dataprosesseringsutskrifter. Men etter hvert som utviklingen av operativsystemer og programmeringspråk har skjedd, har standard error blitt en viktig del av feilhåndtering og debugging. Alternativet til å skrive til standard error er å sende feilmeldinger til standard output, men dette kan føre til at viktig informasjon blir oversett i en stor mengde utskrifter. Implementeringen av standard error er forskjellig fra operativsystem til operativsystem, men i C++ er det vanligvis en del av standard biblioteker.
 
-## Dypdykk
-
-Når vi skriver til standard error, bruker vi ofte begrepet "stderr stream". Dette er bare navnet på strømmen som brukes til standard error, akkurat som cin og cout er navnene på strømmene som brukes til henholdsvis standard input og standard utgang.
-
-Det er også viktig å merke seg at stderr stream er uavhengig av standard output stream (cout). Dette betyr at du kan skrive til stderr og cout i samme program uten å måtte bekymre deg for å blande dem sammen.
-
-## Se også
-
-- [C++ Dokumentasjon - Standard Error](https://www.cplusplus.com/reference/cstdio/fprintf/?kw=stderr)
-- [Wikipedia - Standard streams](https://en.wikipedia.org/wiki/Standard_streams)
-- [Guide til feilhåndtering i C++](https://www.programiz.com/cpp-programming/error-handling)
+Se også:
+- [C++ Error Handling](https://www.geeksforgeeks.org/error-handling-c/)
+- [Standard Error C++ Reference](https://en.cppreference.com/w/cpp/io/cerr)
+- [What's the difference between std::err and std::cout?](https://stackoverflow.com/questions/55903853/what-is-the-difference-between-stdcout-and-stdcerr)

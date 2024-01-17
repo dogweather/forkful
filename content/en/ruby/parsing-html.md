@@ -10,44 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-Have you ever wanted to extract specific information from a website? Whether it's for data analysis, web scraping, or automation, parsing HTML can help you easily retrieve the data you need. With Ruby, parsing HTML is simple and efficient.
+Parsing HTML means extracting specific data or information from an HTML document. This is commonly done by programmers to automate data extraction from websites, such as scraping product information for an e-commerce website or retrieving data for analytics purposes.
 
-## How To
+## How to:
+
+To parse HTML in Ruby, we can use the Nokogiri gem. First, we need to install the gem by running `gem install nokogiri` in the terminal. Then, we can use the gem in our code by requiring it at the top: `require 'nokogiri'`. Here's an example of how to parse an HTML document and get the title:
 
 ```Ruby
-# First, install the 'nokogiri' gem for parsing HTML
-gem install nokogiri
-
-# Next, require the gem in your Ruby file
+# require nokogiri
 require 'nokogiri'
 
-# Create a new Nokogiri document by parsing the HTML webpage
-doc = Nokogiri::HTML(open("https://www.example.com"))
+# create Nokogiri object from html document
+doc = Nokogiri::HTML(html_document)
 
-# Now you can use CSS or XPath selectors to locate elements in the HTML document
-# For example, to retrieve the title of the webpage:
-title = doc.at_css("title").text
-# Output: "Example Domain"
+# get title tag from document
+title = doc.css("title").text
 
-# You can also retrieve multiple elements using CSS selectors:
-links = doc.css("a")
-# Output: Returns an array of all anchor tags on the webpage
-
-# To extract specific information, you can use regular expressions
-email = doc.at("a[href*='mailto:']").text
-# Output: Returns the email address listed on the webpage
-
-# Finally, you can store the data you extract in variables or manipulate it as needed
+# print title
+puts title
 ```
+
+Output: "My Website"
 
 ## Deep Dive
 
-Parsing HTML essentially involves extracting data from a structured markup language. With Nokogiri, you can use CSS or XPath selectors to access specific elements in the HTML document. Regular expressions can also be used to retrieve text that matches a certain pattern. It's worth noting that HTML parsing can be affected by the structure and organization of the webpage, so it's important to understand the DOM (Document Object Model) before diving into parsing.
+Parsing HTML has been a common practice among programmers since the early days of web scraping. Before the introduction of gems like Nokogiri, developers had to manually write complex code to extract data from HTML documents. With Nokogiri, the process has become much simpler and more efficient.
+
+An alternative to Nokogiri is using regular expressions to parse HTML, but this can be more complex and prone to errors. Nokogiri, on the other hand, uses a powerful and user-friendly API to navigate and extract data from HTML documents.
+
+Nokogiri internally uses the libxml2 and libxslt libraries, which are written in C, to perform the parsing and data extraction process. This makes Nokogiri faster and more efficient compared to other methods.
 
 ## See Also
 
-- [Nokogiri documentation](https://nokogiri.org/)
-- [CSS selectors](https://www.w3schools.com/cssref/css_selectors.asp)
-- [XPath tutorial](https://www.w3schools.com/xml/xpath_intro.asp)
+- [Nokogiri gem](https://github.com/sparklemotion/nokogiri)
+- [Libxml2](http://xmlsoft.org/libxml2/) and [libxslt](http://xmlsoft.org/libxslt/) libraries used by Nokogiri

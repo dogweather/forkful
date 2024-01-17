@@ -1,7 +1,7 @@
 ---
-title:                "Affichage des erreurs de débogage"
-html_title:           "Swift: Affichage des erreurs de débogage"
-simple_title:         "Affichage des erreurs de débogage"
+title:                "Imprimer la sortie de débogage"
+html_title:           "Swift: Imprimer la sortie de débogage"
+simple_title:         "Imprimer la sortie de débogage"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Testing and Debugging"
@@ -10,33 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Qu'est-ce que c'est et pourquoi le faire?
+L'impression de sortie de débogage est une façon pour les programmeurs d'afficher des informations utiles lorsqu'ils travaillent sur leur code. Cela peut inclure des messages d'erreur, des valeurs de variables ou d'autres informations de débogage qui peuvent aider à comprendre et à corriger les problèmes dans le code.
 
-Vous vous demandez peut-être pourquoi il serait nécessaire d'imprimer des informations de débogage dans votre code Swift. Eh bien, cela peut être utile lorsque vous rencontrez des erreurs et que vous avez besoin de mieux comprendre ce qui se passe dans votre programme.
-
-## Comment
-
-Pour imprimer des informations de débogage dans votre code Swift, utilisez la fonction `print()`. Voici un exemple de code avec un message d'erreur et une sortie de débogage :
+## Comment faire:
+Voici un exemple simple de code en Swift pour imprimer une message de débogage:
 
 ```Swift
-// Déclaration d'une variable avec une valeur incorrecte
-var age = -10
-
-// Affichage d'un message d'erreur
-print("L'âge ne peut pas être un nombre négatif")
-
-// Impression de l'âge pour le débogage
-print("L'âge est de \(age)")
+let number = 42
+print("La réponse ultime est: \(number)")
 ```
 
-Cette sortie de débogage peut vous aider à comprendre pourquoi votre programme a rencontré une erreur, en vous montrant la valeur de la variable `age`.
+La sortie de ce code serait `La réponse ultime est: 42`.
 
-## Plongée en profondeur
+## Plongée en profondeur:
+L'impression de sortie de débogage n'est pas une nouvelle pratique, elle existe depuis longtemps dans le monde de la programmation. Cependant, les programmeurs ont souvent d'autres options pour déboguer leur code, telles que l'utilisation d'un débogueur ou d'outils de profilage.
 
-Il est important de noter que l'impression de débogage peut ralentir l'exécution de votre code, donc il est recommandé de l'utiliser uniquement pendant le processus de débogage et de le supprimer une fois que votre code fonctionne correctement. De plus, vous pouvez également utiliser des `print` statements pour afficher des messages d'état ou des valeurs de variables à différentes étapes de votre programme, pour vous aider à suivre son exécution.
+Dans Swift, il existe également une fonction de débogage appelée `debugPrint()` qui peut être utile dans certaines situations. Cette fonction inclut des informations supplémentaires telles que le nom de la variable et son type. Cela peut être particulièrement utile lors du débogage de code plus complexe.
 
-## Voir aussi
+## Voir aussi:
+Si vous souhaitez en savoir plus sur l'impression de sortie de débogage en Swift, voici quelques sources utiles:
 
-- [Documentation officielle de Swift sur l'impression de débogage](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#ID280)
-- [Guide de débogage en utilisant l'impression dans Xcode](https://medium.com/@darylashton/print-debugging-swift-using-xcode-ea85174adb5c)
-- [Vidéo expliquant l'utilisation de l'impression pour le débogage en Swift](https://www.youtube.com/watch?v=eLnJG3ruL5I)
+- [Documentation officielle sur la fonction `print()`](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#ID284)
+- [Article sur l'utilité de la débogage par impression de sortie](https://medium.com/@rinkeshchauhan/imprimaide-for-swift-b3afde8f709e)
+- [Différentes méthodes de débogage dans Swift](https://medium.com/@xabir19/ways-of-debugging-in-swift-8a61d5fac402)

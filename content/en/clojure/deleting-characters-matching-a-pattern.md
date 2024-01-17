@@ -10,64 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-At some point in your coding journey, you might encounter a situation where you need to delete characters that match a certain pattern. This could be due to data cleaning or manipulation purposes, or to make your code more efficient. In Clojure, there are a few ways to achieve this task and in this article, we will explore some of them.
+Deleting characters matching a pattern is a common task in programming that involves removing specific characters from a given string or sequence. This can be useful for tasks such as cleaning up input or formatting data for output. Programmers often do this to ensure consistent and error-free data processing.
 
-## How To
-
-To begin with, let's create a string that contains some random characters:
+## How to:
 
 ```Clojure
-(def my-string "Th1s 1s a Str1ng!")
+;; Delete all occurrences of a character
+(defn delete-char
+  [ch coll]
+  (filter #(not= ch %) coll))
+
+(delete-char \a "abcabc")   ;=> "bcbc"
+(delete-char \1 [1 2 3 1 2]) ;=> [2 3 2]
+
+;; Delete all occurrences of a regex pattern
+(defn delete-pattern
+  [pattern coll]
+  (filter #(not (re-find pattern %)) coll))
+
+(delete-pattern #"ab" ["abc" "def" "ghi"]) ;=> ["def" "ghi"]
+(delete-pattern #"[aeiou]" "hello world")  ;=> "hll wrld"
 ```
 
-Our goal is to delete all the digits in this string and return the remaining characters. Here are three ways to achieve this:
+## Deep Dive:
 
-### Method 1: `filter` function
+There are several approaches to deleting characters matching a pattern in Clojure. The first method shown above uses the filter function to remove elements from a collection based on a given predicate. This is a simple and efficient way to delete characters, but it does not support regex patterns.
 
-Clojure has a built-in `filter` function that takes a predicate and a collection as arguments. It returns a lazy sequence of the elements in the collection for which the predicate returns true. In our case, we can use the `filter` function to check if a character is a digit or not, and return only the non-digit characters.
+For more complex pattern matching, the second method uses the re-find function from the clojure.string namespace. This allows for more advanced string manipulations, including regular expressions. However, it may be less performant than the first method, so it is important to choose the appropriate method based on the specific requirements of the task.
 
-```Clojure
-(filter (complement digit?) my-string)
-```
+## See Also:
 
-This will return a lazy sequence with characters `'T'`, `'h'`, `'s'`, `'i'`, `'s'`, and `'a'`.
-
-### Method 2: `replace` function
-
-Another way to achieve our goal is by using the `replace` function. This function takes a regular expression (regex) and two string arguments: the first is the string to be searched, and the second is the replacement string. In our case, we can use a regex that matches all digits and replace them with an empty string.
-
-```Clojure
-(replace #"\d" "" my-string)
-```
-
-The output of this would be the string `"Ths s a Strng!"`.
-
-### Method 3: `loop` and `recur`
-
-The `loop` and `recur` special forms in Clojure allow for the implementation of recursion without using the stack. We can use these forms to loop through the characters of a string and check if they are digits or not. If they are not digits, we add them to a new string using the `str` function.
-
-```Clojure
-(loop [remaining-str my-string
-       new-str ""]
-  (if (empty? remaining-str)
-    new-str
-    (let [char (first remaining-str)]
-      (recur (rest remaining-str)
-             (if (not (digit? char))
-               (str new-str char)
-               new-str)))))
-```
-
-The output of this would be the string `"This is a String!"`.
-
-## Deep Dive
-
-Apart from the methods mentioned above, there are many other ways to delete characters matching a pattern in Clojure. Some other options include using the `remove` function, using `mapcat` and `str` functions together, or even creating your own function that uses recursion or regular expressions. No matter which method you choose, it's important to understand how the underlying functions and special forms work to truly grasp the concept.
-
-## See Also
-
-- <https://clojure.org/>
-- <https://purelyfunctional.tv/guide/reduce-filter-map/> 
-- <https://hackr.io/blog/clojure-code-examples>
+- [Clojure Docs - filter](https://clojuredocs.org/clojure.core/filter)
+- [Clojure Docs - re-find](https://clojuredocs.org/clojure.string/re-find)
+- [Learn Clojure - Built-In Functions](https://www.learnclojure.com/essentials/30-built-in-functions/)

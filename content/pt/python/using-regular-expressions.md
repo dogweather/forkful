@@ -10,35 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que utilizar Expressões Regulares?
+## O que e por que?
+Regular expressions, também conhecidas como regex, são uma poderosa ferramenta usada em programação para encontrar e manipular padrões de texto. Isso significa que, com elas, podemos procurar por certos padrões em strings de texto e fazer alterações se necessário. Programadores usam regular expressions para automatizar tarefas de manipulação de texto que seriam tediosas e demoradas para serem feitas manualmente.
 
-As Expressões Regulares são uma forma eficiente de manipular e processar padrões em textos. Elas permitem uma busca e substituição de strings com maior complexidade e flexibilidade do que métodos de manipulação de strings convencionais. Além disso, são amplamente utilizadas para validação de formatos de dados, como e-mails e números de telefone.
-
-## Como Utilizar Expressões Regulares em Python
-
-```python
+## Como usar:
+```Python
 import re
 
-# Exemplo de busca de padrão
-texto = "Meu e-mail é exemplo@email.com"
-padrao = r"e-mail"
-resultado = re.search(padrao, texto)
-print(resultado) # Saída: <re.Match object; span=(7, 13), match='e-mail'>
+texto = "Olá, eu sou um texto de exemplo!"
+padrao = "texto"
 
-# Exemplo de substituição de caracteres
-padrao2 = r"Muito"
-resultado2 = re.sub(padrao2, "Mega", texto)
-print(resultado2) # Saída: Mega e-mail é exemplo@email.com
+match = re.search(padrao, texto) #procura pelo padrão no texto
+
+print(match.group()) #imprime o resultado
 ```
+  Output: "texto"
 
-Com o módulo "re" do Python, podemos utilizar diversas funções para processar nossas Expressões Regulares. Algumas das principais funções incluem "search" para buscar um padrão em uma string, "sub" para substituir um padrão por outro e "match" para verificar se uma string corresponde a um padrão específico. Além disso, podemos utilizar metacaracteres, como o "." para representar qualquer caractere, e classes de caracteres, como "[0-9]" para representar dígitos numéricos.
+## Aprofundando:
+As expressões regulares foram inventadas pelo matemático americano Stephen Kleene na década de 1950. Desde então, elas se tornaram uma ferramenta fundamental em programação. Em Python, podemos usar regular expressions através do módulo "re". No entanto, existem outras opções, como a biblioteca "regex" ou até mesmo funções nativas da linguagem, como o "split" e "replace". A principal diferença entre essas alternativas é a sintaxe utilizada.
 
-## Aprofundando nas Expressões Regulares
-
-As Expressões Regulares podem ser um pouco intimidadoras no início, com sua sintaxe e metacaracteres aparentemente complexos. No entanto, com prática e conhecimento dos padrões mais comuns, elas podem se tornar uma ferramenta poderosa em nossos projetos de programação. Além disso, existem diversas ferramentas online e bibliotecas em Python específicas para facilitar a criação e teste de Expressões Regulares.
-
-## Veja Também
-
-- [Documentação Oficial do módulo "re" do Python](https://docs.python.org/3/library/re.html)
-- [Tutorial de Expressões Regulares em Python](https://docs.python.org/3/howto/regex.html)
-- [Online Regex Tester](https://regex101.com/)
+## Veja também:
+- Documentação oficial do módulo "re": https://docs.python.org/3/library/re.html
+- Tutorial de Regular Expressions em Python: https://www.w3schools.com/python/python_regex.asp
+- Outras bibliotecas úteis para manipulação de texto em Python: https://realpython.com/python-string-manipulation/#python-text-manipulation-tools

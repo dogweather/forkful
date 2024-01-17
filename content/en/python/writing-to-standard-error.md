@@ -10,33 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why Writing to Standard Error Is Useful
+## What & Why?
 
-Standard error is a secondary output stream in Python that is commonly used for debugging and error handling. Writing to standard error allows developers to differentiate between normal program output and potential errors or warnings, making it an essential tool for troubleshooting and improving the overall functionality of their code.
+Writing to standard error in Python is a way for programmers to communicate specific information or errors to the user within their code. It allows for separate output from regular print statements and can be useful for debugging and troubleshooting.
 
-## How To Write to Standard Error in Python
-
-Writing to standard error in Python is a simple process that involves using the "stderr" object from the "sys" module. Here is an example of how to print an error message to standard error:
+## How to:
 
 ```Python
 import sys
-sys.stderr.write("Oops, something went wrong!")
+sys.stderr.write("This message will be printed to standard error")
 ```
 
-The output of this code would be: "Oops, something went wrong!" printed in the terminal, indicating that an error has occurred. This is particularly useful when using functions or modules that may cause errors or warnings, allowing developers to have a clearer understanding of where the issue may be coming from.
+Running this code will produce the output:
 
-## Deep Dive into Standard Error in Python
+```
+This message will be printed to standard error
+```
 
-In Python, standard error is a secondary output stream that is used to print error messages, warnings, and other related information. It is distinct from standard output (which is normally accessed using "print") and is commonly referred to as "stderr." The purpose of this secondary output stream is to separate error messages from normal program output, making it easier for developers to identify and troubleshoot issues within their code.
+## Deep Dive:
 
-In addition to writing to standard error using the "stderr" object, developers can also customize the error messages by using the "write()" function directly. This gives them more control over the content and format of the messages. Furthermore, standard error is automatically flushed after every call, ensuring that any error messages are printed immediately without buffering.
+Writing to standard error originated from the UNIX operating system in the 1970s. It was standardized as a way for programs to communicate error messages to the user, separate from regular output. This is helpful for troubleshooting and debugging, as error messages can be easily identified and separated.
 
-## See Also
+An alternative to writing to standard error is using the ```logging``` module in Python. This allows for more advanced logging capabilities, such as different levels of severity for messages.
 
-Here are some helpful resources for further reading on writing to standard error in Python:
+In order to write to standard error, the ```sys``` module must be imported and the ```sys.stderr.write()``` function must be used. The ```stderr``` attribute of the ```sys``` module refers to the standard error stream.
 
-- [Python Documentation on "sys.stderr"](https://docs.python.org/3/library/sys.html#sys.stderr)
-- [An Overview of Standard Input, Output, and Error in Python](https://www.freecodecamp.org/news/python-standards-input-output-and-error/)
-- [Python Best Practices for Handling Errors](https://realpython.com/python-error-handling/)
+## See Also:
 
-By utilizing standard error in Python, developers can improve their code's functionality and streamline the debugging process. So the next time you encounter an error in your Python script, remember to take advantage of this useful tool!
+The [official Python documentation](https://docs.python.org/3/library/sys.html#sys.stderr) for the ```sys.stderr``` attribute.
+
+The [Python logging tutorial](https://docs.python.org/3/howto/logging.html) for more information on advanced logging techniques.
+
+The [wikipedia entry](https://en.wikipedia.org/wiki/Standard_streams) on standard streams, which includes information on standard error and its history.

@@ -1,7 +1,7 @@
 ---
-title:                "Skrivande till standardfel"
-html_title:           "C: Skrivande till standardfel"
-simple_title:         "Skrivande till standardfel"
+title:                "Skriva till standardfel"
+html_title:           "C: Skriva till standardfel"
+simple_title:         "Skriva till standardfel"
 programming_language: "C"
 category:             "C"
 tag:                  "Files and I/O"
@@ -10,39 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
+Writing to standard error är en viktig del av C programmering som låter oss skicka felmeddelanden och andra viktiga meddelanden till en särskild utgångskälla. Detta hjälper till att separera viktig information från den vanliga utmatningen från programmet och ger oss möjlighet att enklare felsöka vår kod.
 
-I C-programmering, är det vanligt att man skriver till standard error som en form av felsökning eller för att visa viktig information. Om du till exempel vill se felmeddelanden eller spåra hur ditt program körs, kan du använda standard error för att skriva ut detta data till terminalen.
-
-## Hur man gör det
-
-För att skriva till standard error i C, behöver du inkludera "stdio.h" biblioteket i ditt program. Du kan sedan använda "fprintf" funktionen för att skriva till standard error, istället för att använda "printf" som normalt skriver till standard output.
-
-Här är ett enkelt exempel där vi skriver ett felmeddelande till standard error:
+## Så här gör du:
+När du vill skriva till standard error i C, använder du funktionen `fprintf`. Ett vanligt sätt att göra det är genom att skicka ett meddelande tillsammans med standard error som destination, till exempel: 
 
 ```C
-#include <stdio.h>
-
-int main() {
-  fprintf(stderr, "Detta är ett felmeddelande.");
-  return 0;
-}
+fprintf(stderr, "Det här är ett felmeddelande\n");
 ```
 
-Kom ihåg att använda "stderr" i stället för "stdout" när du använder "fprintf".
+Detta skulle skriva ut "Det här är ett felmeddelande" till standard error utgången istället för den vanliga utgången. Om du vill inkludera variabler i ditt meddelande, kan du använda format specifierare, till exempel: 
 
-När du kör detta program, kommer du att se att felmeddelandet skrivs ut i rött till terminalen. Detta kan vara användbart när du behöver markera fel eller annan viktig information för att tydligare se skillnaden mellan standard output och standard error.
+```C
+int num = 5;
+fprintf(stderr, "Värdet på variabeln är %d", num);
+```
 
-## Djupdykning
+Detta skulle skriva ut: "Värdet på variabeln är 5" till standard error utgången.
 
-Det finns många andra sätt att använda standard error i C-programmering. Du kan till exempel använda "perror" funktionen för att skriva ut det aktuella systemfelmeddelandet baserat på ett felkod som returnerats av ett systemanrop.
+## Djupdykning:
+Att skriva till standard error är viktigt för att hantera fel och viktig information vid felsökning av våra program. Innan standard error introducerades, användes ofta standard utgången för att skicka både vanliga utmatningar och felmeddelanden. Detta gjorde det svårt att hålla isär vad som var viktig information och vad som var den vanliga utmatningen.
 
-En annan användbar funktion är "strerror" som kan användas för att konvertera ett felkod till en sträng som beskriver felet.
+En alternativ metod för att skicka felmeddelanden är att använda `perror` funktionen. Detta låter oss skicka ett fördefinierat felmeddelande till standard error, tillsammans med den aktuella felkoden, vilket kan vara mer användbart vid felsökning.
 
-Dessutom finns det en rad andra funktioner som kan användas för att formatera och skriva ut data till standard error, som "fprintf", "printf" och "sprintf".
+När vi använder `fprintf` för att skriva till standard error, använder vi en formatsträng och variabler som argument. Formatsträngen bestämmer hur utmatningen kommer att se ut och variablerna ger de faktiska värdena som ska skrivas ut.
 
-## Se även
-
-- [The fprint function in C on TutorialsPoint](https://www.tutorialspoint.com/c_standard_library/c_function_fprintf.htm)
-- [Error-Handling in C on GeeksforGeeks](https://www.geeksforgeeks.org/error-handling-c-programs/)
-- [Unix Signals and Standard Error on StackOverflow](https://stackoverflow.com/questions/23474776/unix-signals-and-standard-error-stream)
+## Se även:
+Läs mer om `fprintf` funktionen och standard error i C här: https://www.tutorialspoint.com/c_standard_library/c_function_fprintf.htm

@@ -10,42 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué iniciar un nuevo proyecto?
+## ¿Qué y por qué?
 
-¿Eres un apasionado de la programación? ¿Te encanta el desafío de crear algo desde cero? ¿O simplemente estás buscando mejorar tus habilidades en Swift? Independientemente de la razón, iniciar un nuevo proyecto puede ser una experiencia emocionante y gratificante.
+Comenzar un nuevo proyecto en programación es simplemente iniciar un nuevo trabajo o idea en código. Los programadores lo hacen para crear soluciones innovadoras y eficientes a problemas específicos, o para mejorar y actualizar sistemas existentes.
 
-## Cómo hacerlo
+## ¡Cómo hacerlo!
 
-Comenzar un nuevo proyecto en Swift es fácil, ¡sigue estos pasos!
+### Crear un nuevo proyecto en Xcode:
 
 ```Swift
-// Paso 1: Cree una carpeta para su proyecto
-mkdir MiProyecto
+1. Abre Xcode y selecciona “Crear nuevo proyecto”
+2. Elige el tipo de proyecto que quieres crear y dale un nombre
+3. Selecciona la ubicación donde quieres guardar tu proyecto y haz clic en “Crear”
+4. Verás que Xcode ha creado algunos archivos y carpetas esenciales para tu nuevo proyecto
+5. ¡Ahora puedes empezar a escribir tu código en los archivos indicados y llevar a cabo tu proyecto!
+```
 
-// Paso 2: Inicie un nuevo proyecto de Swift
-swift package init
+### Ejemplo de salida:
 
-// Paso 3: Agregue su código Swift al archivo Sources
-// Por ejemplo, cree un archivo main.swift y escriba:
-print("¡Hola mundo!")
-
-// Paso 4: Compile su código
-swift build
-
-// Paso 5: Ejecute su código
-./.build/debug/NombreProyecto
-
-// Resultado esperado: ¡Hola mundo!
+```Swift
+Hola mundo!
 ```
 
 ## Profundizando
 
-Al iniciar un nuevo proyecto en Swift, es importante tener una idea clara de lo que quieres lograr. Piensa en la funcionalidad que quieres que tenga tu aplicación, los módulos que necesitarás y cómo organizar tu código de manera eficiente.
+### Contexto histórico:
 
-También puedes investigar y experimentar con diferentes frameworks y herramientas que te ayudarán a agilizar tu proceso de desarrollo. No tengas miedo de probar cosas nuevas y seguir aprendiendo mientras avanzas en tu proyecto.
+El concepto de comenzar un nuevo proyecto en programación ha existido desde los primeros días de la informática, aunque la forma en que se hace ha evolucionado enormemente con el tiempo. Antes, los desarrolladores tenían que escribir completamente el código de su proyecto desde cero, mientras que ahora contamos con herramientas y lenguajes de programación más avanzados que pueden ahorrar mucho tiempo y esfuerzo.
 
-## Ver también
+### Alternativas:
 
-- [Documentación oficial de Swift](https://developer.apple.com/documentation/swift)
-- [Ejemplos de código de Swift](https://github.com/apple/swift/tree/main/test)
-- [Tutorial de Swift en 15 minutos](https://www.youtube.com/watch?v=jjBJMeW1Pwc)
+Además de Xcode, hay otras herramientas populares para comenzar nuevos proyectos en Swift, como Visual Studio Code y AppCode. También hay alternativas a Swift como lenguaje de programación, como Objective-C o Java.
+
+### Detalles de implementación:
+
+Comenzar un nuevo proyecto en Swift involucra crear un nuevo proyecto en Xcode y luego escribir el código en los archivos indicados. También es importante comprender los fundamentos del lenguaje de programación Swift y tener una buena comprensión del desarrollo de aplicaciones para poder llevar a cabo el proyecto con éxito.
+
+## Véase también
+
+- Documentación de Apple sobre cómo comenzar un nuevo proyecto en Xcode: <https://developer.apple.com/library/archive/referencelibrary/GettingStarted/DevelopiOSAppsSwift/index.html>
+- Tutorial de Hacking with Swift sobre cómo comenzar un proyecto en Swift y Xcode: <https://www.hackingwithswift.com/read/0/0/why-learn-swift>
+- Comunidad de desarrolladores de Swift en línea: <https://dev.to/t/swift>

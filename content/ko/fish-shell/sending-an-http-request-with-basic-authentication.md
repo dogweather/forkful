@@ -1,7 +1,7 @@
 ---
-title:                "기본 인증을 사용하여 http 요청 보내기"
-html_title:           "Fish Shell: 기본 인증을 사용하여 http 요청 보내기"
-simple_title:         "기본 인증을 사용하여 http 요청 보내기"
+title:                "기본 인증으로 http 요청 보내기"
+html_title:           "Fish Shell: 기본 인증으로 http 요청 보내기"
+simple_title:         "기본 인증으로 http 요청 보내기"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "HTML and the Web"
@@ -10,34 +10,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
-HTTP 요청을 기본 인증과 함께 보내는 것에 대해 의문이 생길 수 있습니다. 그러나 많은 웹 서버가 기본 인증을 사용하여 사용자의 신원을 확인하고 보안을 유지하기 때문에 이는 중요한 기술입니다.
+# 무엇이고 왜?
 
-## 방법
-Fish 쉘을 사용하여 HTTP 요청에 기본 인증을 포함하는 방법을 살펴보겠습니다. 먼저, HTTP 요청을 보내기 위해 필요한 라이브러리를 로드합니다.
+HTTP 요청을 기본 인증을 사용하여 보내는 것은 인터넷에서 정보를 주고받을 때 중요한 역할을 합니다. 프로그래머는 이 작업을 자동화하고 보안성을 높이기 위해 기본 인증을 사용합니다.
 
-```
-Fish Shell HTTP 요청을 보내는 데 필요한 라이브러리를 로드합니다. 
-```
+## 어떻게:
 
-이제 기본 인증 정보를 포함하여 HTTP 요청을 보내는 예제 코드를 확인해보겠습니다. 
+Fish Shell 안에서 기본 인증을 사용하여 HTTP 요청을 보내는 방법은 다음과 같습니다:
 
 ```
-Fish Shell에서 HTTP 요청을 기본 인증과 함께 보내는 예제 코드입니다. 
+curl -u [username]:[password] [url]
 ```
 
-예제 코드를 실행하면 기본 인증 정보를 포함한 HTTP 요청이 성공적으로 보내진 것을 확인할 수 있습니다. 
+코드 블록 내의 [username]과 [password]를 사용자의 정보로, [url]을 요청을 보낼 사이트의 주소로 바꿔서 입력합니다.
 
-```
-HTTP 요청에 대한 응답을 확인하고 싶다면 다음과 같은 코드를 추가할 수 있습니다. 
-```
+## 심층 분석:
 
-## 심층 분석
-이제 HTTP 요청에 기본 인증을 포함하는 방법에 대해 조금 더 자세히 살펴보겠습니다. 기본 인증은 사용자의 신원을 확인하는 가장 기본적인 인증 방식이며, 사용자 이름과 비밀번호를 전송하여 서버 측에서 인증을 수행합니다. 이러한 인증 방식은 보안성이 낮고 요청이 암호화되지 않으므로 중요한 정보를 전송하지 않는 것이 좋습니다. 또한, 기본 인증 정보가 요청 헤더에 그대로 노출되기 때문에 중요한 정보를 전송할 때는 다른 인증 방식을 사용하는 것이 좋습니다.
+기본 인증은 인터넷 상에서 가장 오래된 인증 방식 중 하나입니다. 기본 인증은 암호화되지 않기 때문에 보안 측면에서 취약합니다. 따라서 더 강력한 인증 방식을 사용하는 것이 좋습니다. Fish Shell에서는 기본 인증을 제공하기 때문에 다른 쉘 프로그램보다 더 쉽게 HTTP 요청을 보낼 수 있습니다.
 
-## 관련 링크
-- [Fish Shell Github 페이지](https://github.com/fish-shell/fish-shell)
-- [HTTP 요청 예제 코드](https://www.codementor.io/@diddy/my-first-http-request-with-fish-shell-io0cny5f3)
-- [HTTP 기본 인증 정보](https://developer.mozilla.org/ko/docs/Web/HTTP/Authentication)
-- [새로운 HTTP 요청 라이브러리 소개](https://stackoverflow.com/questions/63430238/what-is-the-best-simplest-http-request-lib-for-fish-shell)
-- [HTTP 요청 보내는 방법](https://stackoverflow.com/questions/11219401/using-the-curl-command-with-basic-authentication)
+## 더 보기:
+
+더 많은 정보를 원하신다면 이 링크를 참고해보세요: [Basic Authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#Basic_authentication_scheme).

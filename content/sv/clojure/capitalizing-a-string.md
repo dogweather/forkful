@@ -1,7 +1,7 @@
 ---
-title:                "Att sätta stor bokstav på en sträng"
-html_title:           "Clojure: Att sätta stor bokstav på en sträng"
-simple_title:         "Att sätta stor bokstav på en sträng"
+title:                "Taletiserande en sträng"
+html_title:           "Clojure: Taletiserande en sträng"
+simple_title:         "Taletiserande en sträng"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -10,37 +10,22 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
-Varför skulle någon vilja ändra storlek på en sträng i Clojure? I många situationer är det viktigt att ha en korrekt formaterad och typsatt sträng, särskilt när man arbetar med data som ska skrivas ut eller jämföras.
+## Varför & Hur?
+Att ”sätta stora bokstäver” på en sträng innebär helt enkelt att göra alla bokstäver i strängen till stora (versaler) istället för små (gemener). Program  gör detta för att till exempel skapa en mer enhetlig och estetiskt tilltalande presentation av data, eller för att underlätta jämförelse av strängar.
 
-## Så här gör man
-För att ändra storlek på en sträng i Clojure, använd funktionen `clojure.string/capitalize`. Detta tar en sträng som argument och returnerar strängen med den första bokstaven i varje ord i versal (stor bokstav).
-
-```Clojure
-(clojure.string/capitalize "hej där!") ; "Hej Där!"
-(clojure.string/capitalize "JAG ÄR EN RUBRIK") ; "Jag Är En Rubrik"
+## Så här gör du:
+```Clojure 
+(def string "hello world")
+(str/upper-case string)
 ```
+Output: "HELLO WORLD"
 
-Om du vill bara ändra storlek på första bokstaven i en sträng, använd `clojure.string/capitalize-first`.
+## Djupdykning:
+Att sätta stora bokstäver på en sträng har länge varit ett vanligt koncept inom programmering och är inte unikt för Clojure. Många programmeringsspråk har dedikerade funktioner för detta ändamål, som till exempel "toUpper()" i Java. Det finns också alternativa sätt att åstadkomma samma resultat, som att använda strängmanipuleringsfunktioner eller reguljära uttryck.
 
-```Clojure
-(clojure.string/capitalize-first "jag är en rubrik.") ; "Jag är en rubrik."
-(clojure.string/capitalize-first "hur MÅR du?") ; "Hur Mår Du?"
-```
+I Clojure finns en inbyggd funktion, "upper-case", i standardbiblioteket för att omvandla en sträng till versaler. Denna funktion är inte bara begränsad till engelska alfabetet, utan fungerar för alla unicode-tecken.
 
-## Djupdykning
-Förutom att bara ändra storlek på en hel sträng eller första bokstaven, finns det flera andra funktioner i Clojure för att manipulera en strängs storlek. 
-`clojure.string/lower-case` och `clojure.string/upper-case` ändrar alla bokstäver i en sträng till små eller stora bokstäver, medan `clojure.string/capitalize-words` ändrar storleken på alla ord i en sträng till versaler.
-
-```Clojure
-(clojure.string/lower-case "HÄLSA PÅ Johan") ; "hälsa på johan"
-(clojure.string/upper-case "önska mig LYCKA TILL") ; "ÖNSKA MIG LYCKA TILL"
-(clojure.string/capitalize-words "hej där!") ; "Hej Där!"
-```
-
-Det finns också funktioner för att ändra storlek på strängen baserat på dess Unicode-kategori, som `clojure.string/capitalize-lower-case` som endast ändrar storlek på ord och siffror och lämnar specialtecken oförändrade.
-
-## Se även
-- [Clojure dokumentation för strängmanipulering](https://clojure.org/guides/learn/strings)
-- [En handledning för att lära sig Clojure](https://www.braveclojure.com/clojure-for-the-brave-and-true/)
-- [Hjälp med Clojure på svenska](https://javacoders.se/group/clojure)
+## Se även:
+- [Clojure Core Library](https://clojure.github.io/clojure/clojure.string-api.html#clojure.string/upper-case)
+- [Java String API](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#toUpperCase--)
+- [Regular Expressions](https://regexr.com/)

@@ -1,7 +1,7 @@
 ---
-title:                "Suchen und Ersetzen von Text."
-html_title:           "Haskell: Suchen und Ersetzen von Text."
-simple_title:         "Suchen und Ersetzen von Text."
+title:                "Textsuche und -ersetzung"
+html_title:           "Haskell: Textsuche und -ersetzung"
+simple_title:         "Textsuche und -ersetzung"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -10,36 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Warum
+Was & Warum?
 
-Wenn du viel mit Texten arbeitest, weißt du wahrscheinlich, wie mühsam es sein kann, Text manuell zu suchen und zu ersetzen. Zum Glück gibt es in der aktuellen Version von Haskell viele effiziente Funktionen, die das Suchen und Ersetzen von Text erleichtern.
+Suchen und Ersetzen von Text ist eine häufige Aufgabe beim Programmieren, bei der spezifische Textsequenzen in einem größeren Text gesucht und durch andere ersetzt werden. Programmierer nutzen diese Funktion häufig, um schnell und effizient wiederkehrende Textelemente zu ändern oder zu aktualisieren.
 
-# Wie es geht
+So geht's:
 
-Um Text in Haskell zu suchen und zu ersetzen, gibt es einige nützliche Funktionen, die du verwenden kannst. Hier sind ein paar Beispiele:
+Eine einfache Möglichkeit, Text in Haskell zu suchen und zu ersetzen, ist die Verwendung der ```substitute``` Funktion aus dem Paket ```Data.String.Utils```. Diese Funktion akzeptiert drei Argumente: den Text, in dem die Ersetzungen durchgeführt werden sollen, den zu suchenden Text und den Ersatztext. Hier ist ein Beispiel:
 
-```
-import Data.Text
-
--- Suchen und ersetzen von Text
-replace "Hallo" "Hi" "Hallo, wie geht es dir?" 
--- Output: "Hi, wie geht es dir?"
-
--- Großbuchstaben in Kleinbuchstaben umwandeln
-toLower "Hallo WELT" 
--- Output: "hallo welt"
-
--- Extrahieren von Teilstrings
-take 5 "Hallo Welt" 
--- Output: "Hallo"
+```Haskell
+import Data.String.Utils
+let text = "Hallo, ich bin ein Text."
+let newText = substitute text "Hallo" "Guten Tag"
 ```
 
-# Tiefer Einblick
+Das Ergebnis ist der Text ```"Guten Tag, ich bin ein Text."```, da alle Vorkommen des Textes "Hallo" durch "Guten Tag" ersetzt wurden.
 
-Haskell bietet viele Funktionen zum Suchen und Ersetzen von Text, einschließlich der Verwendung von regulären Ausdrücken mit der Bibliothek `regex`. Du kannst auch eigene Funktionen schreiben, die auf individuelle Anforderungen zugeschnitten sind, indem du die vielen integrierten Datentypen und Operatoren von Haskell kombinierst.
+Eine andere Möglichkeit ist die Verwendung der Funktion ```replace``` aus dem Paket ```Text.Regex``` in Kombination mit regulären Ausdrücken. Diese Methode ist etwas komplexer, bietet jedoch mehr Flexibilität für komplexere Such- und Ersetzungsmuster. Hier ist ein Beispiel:
 
-# Siehe auch
+```Haskell
+import Text.Regex
+let text = "Die Sonne scheint im Sommer."
+let pattern = mkRegex "Sommer"
+let newText = subRegex pattern text "Herbst"
+```
 
-- Offizielle Haskell-Dokumentation
-- Einführung in Haskell auf Deutsch
-- Reguläre Ausdrücke in Haskell
+Das Ergebnis ist der Text ```"Die Sonne scheint im Herbst."```, da der Text "Sommer" durch "Herbst" ersetzt wurde.
+
+Tiefgehende Einblicke:
+
+Das Suchen und Ersetzen von Text hat eine lange Geschichte in der Informatik, wobei bereits frühe Texteditoren in den 1970er Jahren solche Funktionen boten. Heutzutage ist es eine grundlegende Funktion in den meisten Programmiersprachen und wird von Programmierern auf der ganzen Welt genutzt. Neben den oben genannten Methoden gibt es noch viele weitere Möglichkeiten, Text in Haskell zu durchsuchen und zu ersetzen, wie beispielsweise die Verwendung von regulären Ausdrücken mit dem Paket ```Text.Regex.Posix``` oder die Implementierung eigener Algorithmen.
+
+Siehe auch:
+
+- https://hackage.haskell.org/package/base/docs/Data-String-Utils.html
+- https://hackage.haskell.org/package/regex-compat/docs/Text-Regex.html
+- https://www.haskell.org/haskellwiki/Regex_Tutorial

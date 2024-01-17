@@ -10,35 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-Finding the length of a string may seem like a simple task, but it can prove to be quite useful in programming. One reason someone may want to find the length of a string is to validate input data and ensure it meets a specific length requirement.
+## What & Why?
 
-## How To
-To find the length of a string in Elm, we can use the `String.length` function. Here's an example:
+Finding the length of a string is a common task in programming, especially when dealing with user input or manipulating text data. It simply means calculating the number of characters in a string. This is important because it allows programmers to perform operations like slicing and indexing on strings.
 
-```Elm
-stringLength : String -> Int
-stringLength str =
-    String.length str
-```
+## How to:
 
-In the above code, we define a function called `stringLength` that takes in a string as an argument and returns an integer representing the length of that string. The `String.length` function is then used to find the length of the given string.
-
-Let's try it out with a sample string:
+To find the length of a string in Elm, we can use the `String.length` function. This function takes in a string as its argument and returns the number of characters in the string. Here's an example of using the function:
 
 ```Elm
-stringLength "Hello World" --> 11
+myString = "Hello World"
+stringLength = String.length myString
 ```
 
-As we can see, the string "Hello World" has a length of 11 characters, including the space between "Hello" and "World".
+The variable `stringLength` will now hold the value `11`, which is the length of the string "Hello World".
 
-## Deep Dive
-Under the hood, the `String.length` function simply iterates through the characters in the string and counts them. However, there are a few things to keep in mind when finding the length of a string in Elm.
+## Deep Dive:
 
-Firstly, it's important to remember that in Elm, strings are represented as a list of characters (i.e. `List Char`). This means that finding the length of a string in Elm is essentially the same as finding the length of a list.
+The concept of finding the length of a string may seem trivial, but it has a rich history in computer science. The most commonly used algorithm for string length calculation is the `strlen` function in the C programming language, which traverses the entire string and counts the number of characters until it reaches a null terminator. In Elm, this is achieved through the use of Unicode codepoints to handle multi-byte characters.
 
-Secondly, the `String.length` function is Unicode-aware, meaning it takes into account multi-byte characters when counting the length of a string. This is important to keep in mind for internationalization and handling special characters.
+There are also other ways to find the length of a string, such as using regular expressions or calculating the length based on the number of bytes. However, these methods may not always be accurate or efficient.
 
-## See Also
-- [Elm String Library](https://package.elm-lang.org/packages/elm/core/latest/String)
-- [Elm Basics](https://elmprogramming.com/elmbasics/introduction.html)
+## See Also:
+
+To learn more about strings in Elm, you can check out the official Elm Guide on strings: https://guide.elm-lang.org/strings/.
+
+You may also be interested in exploring other string manipulation functions in Elm, such as `String.slice` and `String.index`, which allow you to extract specific parts of a string.
+
+That's it for finding the length of a string in Elm. Happy coding!

@@ -10,46 +10,68 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## למה
+## מה ולמה?
+להוריד דף אינטרנט היא פעולה שמתבצעת על ידי מתכנתים כדי לקבל את התוכן של דף אינטרנט ולשתף אותו באפליקציות שונות. זה מאפשר למתכנתים ליצור אפליקציות חכמות שיכולות לשלב תוכן מרשת האינטרנט ולספק ערכה מוסיפה למשתמש.
 
-כשאנו גולשים באינטרנט, אנחנו מבקשים לקבל מידע על מה שאנחנו מחפשים. הורדת דף אינטרנט עוזרת לנו לקבל את המידע הזה בצורה מהירה ומאורגנת יותר. 
-
-## איך לעשות זאת
-
-ראשית, נצטרך ליצור אובייקט מסוג `URL` עם הכתובת של הדף שאנחנו רוצים להוריד. לדוגמה: 
-
-```Java
-URL url = new URL("https://www.example.com");
+## איך לעשות זאת?
+להלן דוגמאות לקוד ולפלט של הורדת דף אינטרנט בJava:
 ```
+// ייבוא הספריות הנדרשות
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.URL;
 
-לאחר מכן, נצטרך ליצור חיבור עם השרת של האתר באמצעות האובייקט `URLConnection` ולקבל קוד תגובה מהשרת: 
+public class DownloadWebPage {
 
-```Java
-URLConnection connection = url.openConnection();
-int responseCode = connection.getResponseCode();
-```
+    public static void main(String[] args) throws IOException {
 
-אם הקוד תגובה הוא 200, כלומר הצלחנו להתחבר לאתר, נצטרך לקרוא את מכפלת הקלט מהאתר באמצעות `BufferedReader` ולהדפיס את הנתונים על המסך: 
+        // הגדרת הכתובת ה-URL של הדף שנרצה להוריד
+        URL url = new URL("https://www.example.com");
 
-```Java
-if (responseCode == 200) {
-    BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-    String inputLine;
-    while ((inputLine = in.readLine()) != null) {
-        System.out.println(inputLine);
+        // פתיחת חיבור לאתר
+        BufferedReader reader = new BufferedReader(new InputStreamReader(url.openStream()));
+
+        // קריאה והדפסת כל שורה בדף
+        String line;
+        while ((line = reader.readLine()) != null) {
+            System.out.println(line);
+        }
+
+        // סגירת החיבור
+        reader.close();
     }
-    in.close();
 }
 ```
+#### פלט:
+```
+<!doctype html>
+<html>
+<head>
+    <title>Example Domain</title>
+    
+    <!-- קובץ סגנון חיצוני -->
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+</head>
 
-כאן אנו משתמשים בלולאת `while` כדי לקרוא כל שורה ממכפלת הקלט ולהדפיס אותה על המסך. 
+<body>
+    <div>
+        <h1>Example Domain</h1>
+    </div>
+    
+    <p>This domain is for use in illustrative examples in documents. 
+    You may use this domain in literature without prior coordination or asking for permission.</p>
+    
+    </form>
+</body>
+</html>
+```
 
-## חפירה עמוקה
-
-הפעולה של הורדת דף אינטרנט היא לא פשוטה כמו נראה. כל מכשול אינטרנטי יכול לפגוע בתהליך - מהירות אינטרנט איטייה, שגיאות בשרת, אתרים מאובטחים ועוד. ניתן לפתור מכשולים אלה על ידי שימוש בטכניקות כמו טיומאאוט, בדיקת תקינות ויישום מנגנוני בטיחות מתקדמים. 
+## מעמקים
+- היסטורית התפתחות של דרכים להוריד דפי אינטרנט.
+- אפשרויות אחרות לקבלת תוכן מרשת האינטרנט, כגון ספריות של צד שלישי.
+- פרטים טכניים נוספים כמו כתובת ה-URL, כמה מידע ניתן לקבל וכיצד לעקוב אחר תשובות שגויות.
 
 ## ראה גם
-
-- מדריך ללימוד Java באתר W3Schools: https://www.w3schools.com/java/
-- התיעוד המפורט של Java למתכנתים: https://docs.oracle.com/javase/tutorial/
-- פורום Java באתר Stack Overflow: https://stackoverflow.com/questions/tagged/java
+- [מדריך להורדת דף אינטרנט בשפת פייתון](https://realpython.com/python-web-scraping-practical-introduction/)
+- [ספריה מוכנה לגירסת Java להורדת דף אינטרנט](https://jsoup.org/)

@@ -10,35 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+## Cosa & Perché?
+Estrarre delle sottostringhe è un'operazione comune nella programmazione Bash, che consiste nel prelevare una parte di una stringa più grande. I programmatori spesso fanno uso di questa tecnica per ottenere informazioni specifiche da una stringa più ampia o per manipolare i dati in un formato particolare.
 
-Se stai imparando a programmare in Bash, una delle cose che vorrai imparare è come estrarre sottostringhe da una stringa più grande. Questa abilità può essere utile in molte situazioni, come nella manipolazione dei dati o nella ricerca di informazioni specifiche.
+## Come:
+Estrarre delle sottostringhe in Bash è possibile grazie al comando `substring`. Di seguito sono riportati alcuni esempi di codice e relativi output per mostrare come utilizzare questo comando:
 
-## Come
+```
+# Estrarre i primi 5 caratteri di una stringa
+STRINGA="Ciao Mondo!"
+substr="${STRINGA:0:5}"
+echo $substr
 
-Per estrarre una sottostringa da una stringa in Bash, puoi utilizzare il comando `cut`. Ad esempio, se vogliamo estrarre i primi 5 caratteri da una stringa, possiamo utilizzare il seguente codice:
+# Output: Ciao
 
-```Bash
-stringa="Questo è un esempio"
-echo "${stringa:0:5}"
+# Estrarre l'estensione di un file
+FILE="documenti/report.pdf"
+substr="${FILE##*.}"
+echo $substr
+
+# Output: pdf
 ```
 
-L'output sarà "Quest".
+## Approfondimento:
+L'operazione di estrarre delle sottostringhe non è un concetto nuovo, infatti risale all'epoca dei primi linguaggi di programmazione. Tuttavia, ci sono alternative al comando `substring` in Bash, come ad esempio l'utilizzo delle espressioni regolari. 
 
-Puoi anche specificare l'indice di inizio e il numero di caratteri da estrarre:
+L'implementazione del comando `substring` in Bash è semplice e diretta, ma può causare confusione se non si è a conoscenza della sintassi corretta. È importante ricordare che la posizione dei caratteri all'interno di una stringa inizia da 0.
 
-```Bash
-echo "${stringa:4:6}"
-```
-
-L'output sarà "o è un".
-
-## Deep Dive
-
-Esistono diverse opzioni e formati per estrarre sottostringhe in Bash, come specificare l'indice di inizio e fine, utilizzare espressioni regolari e altro ancora. Puoi trovare maggiori informazioni e approfondimenti sulla documentazione ufficiale di Bash o su siti web di tutorial.
-
-## Vedi anche
-
-- [Documentazione ufficiale di Bash](https://www.gnu.org/software/bash/)
-- [Tutorial su estrazione di sottostringhe in Bash](https://linuxize.com/post/bash-extract-substring/)
-- [Ulteriori esempi di estrazione di sottostringhe](https://www.tecmint.com/extract-portion-of-string-in-bash/)
+## Guarda Anche:
+Per ulteriori informazioni sull'estrazione di sottostringhe in Bash, si consiglia di leggere la documentazione ufficiale [qui](https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html#Shell-Parameter-Expansion). Inoltre, è possibile trovare utili esempi di codice su siti come Stack Overflow o GitHub.

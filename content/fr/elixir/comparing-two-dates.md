@@ -10,43 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi 
+## Quoi & Pourquoi?
 
-Si vous travaillez avec des dates dans vos projets Elixir, il est probable que vous ayez à comparer deux dates à un moment donné. Comprendre comment le faire correctement peut vous faire gagner du temps et éviter de potentielles erreurs dans votre code. Dans cet article, nous allons explorer comment comparer deux dates en utilisant Elixir.
+Comparer deux dates est un processus couramment utilisé par les programmeurs pour déterminer la différence entre deux moments dans le temps. Cela peut être utile pour des tâches telles que la planification, la gestion de données et la résolution de bugs. En utilisant Elixir, nous pouvons facilement comparer deux dates pour obtenir des résultats précis.
 
-## Comment faire 
-
-Pour comparer deux dates en Elixir, nous allons utiliser la fonction `DateTime.diff/2`, qui calcule la différence en secondes entre deux dates. Pour commencer, nous allons créer deux variables contenant des dates différentes :
+## Comment faire:
 
 ```Elixir
-date1 = DateTime.new(2020, 5, 12)
-date2 = DateTime.new(2020, 5, 15)
+date1 = ~D[2021-08-01]
+date2 = ~D[2021-08-07]
+diff = Date.diff(date1, date2)
+IO.puts diff
 ```
 
-Ensuite, nous appelons la fonction `DateTime.diff/2` en passant nos deux variables en tant que paramètres :
+La sortie de ce code sera "6", car il y a 6 jours d'écart entre le 1er août 2021 et le 7 août 2021.
+
+Vous pouvez également comparer les heures en utilisant le même principe avec les fonctions de date et d'heure.
 
 ```Elixir
-DateTime.diff(date1, date2)
+dateTime1 = ~U[2021-08-01 12:00:00.00]
+dateTime2 = ~U[2021-08-02 10:00:00.00]
+diff = DateTime.diff(dateTime1, dateTime2)
+IO.puts diff
 ```
 
-Nous obtenons alors en sortie la différence en secondes entre les deux dates, dans cet exemple, il s'agit de 259200 (3 jours).
+La sortie de ce code sera "22 heures et 0 minutes", car il y a 22 heures d'écart entre le 1er août 2021 à 12h00 et le 2 août 2021 à 10h00.
 
-Pour comparer des dates selon une unité de temps particulière, par exemple les jours, nous pouvons utiliser la fonction `DateTime.diff/3` en lui passant en troisième paramètre `:days`. Dans cet exemple, nous obtenons la différence en jours entre les deux dates :
+## Plongée en profondeur:
 
-```Elixir
-DateTime.diff(date1, date2, :days)
-```
+La comparaison de dates remonte à l'utilisation du calendrier julien et du calendrier grégorien pour suivre le temps. Ces calendriers prennent en compte les changements dans la rotation de la Terre autour du soleil, permettant un calcul précis des années bissextiles. Alternativement, certains programmeurs peuvent utiliser des bibliothèques tierces telles que Timex pour comparer les dates en Elixir.
 
-L'avantage de cette approche est qu'elle nous permet de comparer des dates à différentes unités de temps (jours, minutes, heures, etc.) selon nos besoins.
+Au-delà de la simple comparaison de dates, Elixir offre également des fonctions pour comparer les moments et les durées. Cela peut être utile lors de la planification d'événements, de l'analyse de données temporelles et d'autres tâches liées au temps.
 
-## Plongée en profondeur 
+## Voir aussi:
 
-La fonction `DateTime.diff/2` utilise la notation de temps UTC (Temps Universel Coordonné) pour calculer la différence entre deux dates. Cela signifie qu'elle ne prend pas en compte les différences de fuseau horaire. Si vous avez besoin de prendre en compte les fuseaux horaires, il est recommandé d'utiliser la bibliothèque `tzdata` qui fournit des fonctions pour manipuler les dates et les heures locales.
-
-Il est également important de garder à l'esprit que la fonction `DateTime.diff/2` prend en compte les dates et les heures, pas les dates seules. Si vous n'avez besoin de comparer que des dates sans tenir compte des heures, vous pouvez utiliser la fonction `Date.diff/2`.
-
-## Voir aussi 
-
-- Documentation officielle Elixir sur la fonction `DateTime.diff/2`
-- Documentation officielle Elixir sur la bibliothèque `tzdata`
-- Article "Les dates en Elixir" sur le blog de devonestesur.com (en français)
+- Documentation officielle pour la comparaison de dates en Elixir: https://hexdocs.pm/elixir/Date.html#diff/2
+- Bibliothèque Timex pour la manipulation du temps en Elixir: https://hexdocs.pm/timex/readme.html
+- Article de blog "Working with Dates and Time in Elixir": https://www.poeticoding.com/working-with-dates-and-time-in-elixir/

@@ -10,44 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+# Fish Shell: プログラマーのための今日の日付を取得する方法
 
-現在の日付を取得する理由はたくさんあります。例えば、ファイルの作成日や更新日を確認する場合や、タスクの期限を設定する時に必要になるかもしれません。
+## What & Why?
+今日の日付を取得することは、プログラミングにおいて非常によく使われる機能です。プログラマーが今日の日付を取得する理由は、例えばログやファイルの作成日時を保存するためや、特定の作業を行った日時を記録するためです。
 
-## 方法
-
-まず、Fish Shellを起動し、ターミナルに以下のコードを入力します。
+## How to:
+Fish Shellを使用して今日の日付を取得するには、以下のようなコードを使います。
 
 ```Fish Shell
 date
 ```
 
-すると、現在の日付と時刻が表示されます。
+これで現在の日付が表示されます。
 
-```
-Mon Aug 09 14:12:54 CDT 2021
-```
-
-また、特定の日付のフォーマットで表示したい場合は、以下のようにコードを入力します。
+もしくは、一部のプログラマーは日付を特定の形式で取得したい場合があります。その場合は、下記のコマンドを使用することで特定の形式で日付を取得することができます。
 
 ```Fish Shell
-date "+%Y/%m/%d"
+date +%Y%m%d
 ```
 
-この場合は、実行時の年月日が表示されます。
+上記のコマンドを実行すると、例えば2022年3月14日のように日付を「年月日」の形式で取得することができます。
 
-```
-2021/08/09
-```
+## Deep Dive:
+今日の日付を取得する機能は、ユーザーが特定の作業を行った日時を記録することや、ファイルやログの作成日時を保存することで、後で参照するために非常に便利です。また、代替手段としてはシステムの時計を手動で調整する方法がありますが、手間がかかる上、誤差が生じる可能性もあります。
 
-## ディープダイブ
+Fish Shellでは、内部的にCプログラムであるstrftime関数が使用されており、その実行にはシステムの時計を参照しています。
 
-Fish Shellでは、`date`コマンドを使用して現在の日付を取得することができます。デフォルトでは、曜日・月・日・時・分・秒・タイムゾーンの情報が表示されます。また、さまざまなオプションを使用することで、表示される情報をカスタマイズすることも可能です。詳しくは[公式ドキュメント](https://fishshell.com/docs/current/cmds/date.html)を参照してください。
+## See Also:
+詳細なコマンドの使い方や、strftime関数については下記のソースを参考にしてください。
 
-また、日付だけでなく、現在の時刻のみを取得したい場合は、`date +%T`のようにコマンドを変更することもできます。
+https://fishshell.com/docs/current/commands.html#date
 
-## 関連リンク
+もしくは、strftime関数の詳細については下記のリンクをご覧ください。
 
-- [Fish Shell Documentation](https://fishshell.com/docs/current/index.html)
-- [Official GitHub Repository for Fish Shell](https://github.com/fish-shell/fish-shell)
-- [Fish Shell Tutorial for Beginners](https://dev.to/muhajirdev/learn-fish-shell-the-tutorial-for-beginners-2c1m) (英語)
+https://pubs.opengroup.org/onlinepubs/9699919799/functions/strftime.html

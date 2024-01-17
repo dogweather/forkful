@@ -10,48 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-Capitalizing a string is a common task in programming, whether you're working on a web application, data analysis, or simple text manipulation. By capitalizing a string, you can easily transform text to follow specific formatting rules or match certain criteria. Plus, it's just good practice to have consistent capitalization in your code.
+Capitalizing a string means converting the first character of the string to uppercase and leaving the rest of the characters unchanged. Programmers often do this to make strings more visually appealing or to follow certain formatting rules and conventions.
 
-## How To
+## How to:
 
-The process of capitalizing a string in Ruby is straightforward and can be achieved in multiple ways. Here are three commonly used methods:
-
-1. Using the `capitalize` method: This method capitalizes the first character of a given string, leaving the rest of the string unchanged.
+To capitalize a string in Ruby, we can use the `capitalize` method. It takes the first character of the string and converts it to uppercase, leaving the rest unchanged. Let's see an example:
 
 ```Ruby
-string = "hello world"
-puts string.capitalize
-# Output: Hello world
+str = "hello world"
+puts str.capitalize
 ```
+Output: "Hello world"
 
-2. Using the `upcase` method: This method capitalizes all characters in a string, essentially transforming the string into all uppercase letters.
+We can also use the `capitalize!` method, which modifies the original string instead of creating a new one. This can be useful if we want to capitalize a string in-place without using additional memory. Let's try it out:
 
 ```Ruby
-string = "hello world"
-puts string.upcase
-# Output: HELLO WORLD
+str = "hello world"
+str.capitalize!
+puts str
 ```
-
-3. Using string interpolation and calling `capitalize` on a specific part of the string: This method allows you to capitalize specific letters or words within a string by using string interpolation. Here's an example of capitalizing the first letter of a string using this method:
-
-```Ruby
-string = "hello world"
-puts "The first letter in your string is: #{string[0].capitalize}"
-# Output: The first letter in your string is: H
-```
+Output: "Hello world"
 
 ## Deep Dive
 
-The `capitalize` and `upcase` methods may seem similar, but they have an important difference. The `capitalize` method only capitalizes the first character of a string, while the `upcase` method capitalizes all letters in a string.
+The `capitalize` method has been a part of Ruby since its first release in 1995. It was created by Yukihiro Matsumoto, also known as "Matz," who is the designer and lead developer of Ruby. This method is a simple and efficient way to capitalize strings in Ruby.
 
-Additionally, the string interpolation method allows for more flexibility in capitalization since you can choose which parts of the string to capitalize.
+An alternative to the `capitalize` method is using the `upcase` method, which converts all characters in a string to uppercase. However, this method does not follow certain formatting rules, such as capitalizing the first character only. Additionally, the `capitalize` method is more specific and precise, making it a better choice in most cases.
 
-It's also important to note that both `capitalize` and `upcase` do not modify the original string, but instead return a copy of the string with the desired capitalization. If you want the original string to be modified, you can add a `!` to the end of the method, like `capitalize!` or `upcase!`.
+Implementation-wise, the `capitalize` method uses the `unicode_normalize` method to handle special characters and variations of capitalization in different languages. This ensures that the method works correctly for all types of strings.
 
 ## See Also
 
-- [Ruby String Documentation](https://ruby-doc.org/core-3.0.1/String.html)
-- [Ruby String Methods](https://www.rubyguides.com/ruby-string-methods/)
-- [String Interpolation in Ruby](https://thoughtbot.com/blog/just-f-un-with-ruby-string-to_proc)
+To learn more about string manipulation in Ruby, refer to the official documentation: https://ruby-doc.org/core-3.0.0/String.html
+
+You can also check out some useful string methods, such as `split` and `gsub`, to enhance your string manipulation skills.
+
+For a more in-depth understanding of the history of Ruby and its creator "Matz," you can read the book "The Book of Ruby" by Huw Collingbourne.

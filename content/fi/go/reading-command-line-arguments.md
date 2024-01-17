@@ -1,7 +1,7 @@
 ---
-title:                "Komentoriviparametrien lukeminen"
-html_title:           "Go: Komentoriviparametrien lukeminen"
-simple_title:         "Komentoriviparametrien lukeminen"
+title:                "Puuttuvien parametrien lukeminen"
+html_title:           "Go: Puuttuvien parametrien lukeminen"
+simple_title:         "Puuttuvien parametrien lukeminen"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Files and I/O"
@@ -10,51 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä & Miksi?
 
-On monia tilanteita, joissa tarvitset käyttäjän syötettä tai parametreja suorittaaksesi ohjelman tietyllä tavalla. Esimerkiksi komentorivillä suorittaessa on kätevää antaa ohjelmalle tietoa ennen sen suorittamista. Siksi on hyödyllistä tietää, miten komentoriviparametreja voidaan lukea ja käsitellä Go-kielellä. 
+Lue komentoriviparametrien luominen tarkoittaa rivien sisältöjen lukemista, kun ohjelma käynnistetään terminaalissa. Ohjelmoijat tekevät sitä, jotta he voivat välittää tietoja ohjelmalle jo ennen sen suorittamista.
 
-## Miten tämä tehdään
-
-Komentoriviparametrit on helppo lukea Go-kielellä, sillä siihen sisältyy valmiita toimintoja niiden käsittelyyn. Voit lukea parametreja käyttämällä `os.Args` -muuttujaa, joka palauttaa kaikki parametrit taulukkona. Voit käyttää myös `flag` -pakettia, joka tarjoaa mahdollisuuden määritellä ja lukea tiettyjä parametreja.
+## Kuinka:
 
 ```Go
-package main
+package main 
 
-import (
-    "flag"
-    "fmt"
-    "os"
-)
+import "fmt" 
+import "os" 
 
-func main() {
-    // Lukee komentoriviparametrit ja tallentaa ne taulukkoon
-    args := os.Args
-    
-    // Lukee parametrit f-lippuun
-    var fileName string
-    flag.StringVar(&fileName, "f", "", "Tiedoston nimi")
-    flag.Parse()
-    
-    fmt.Println("Kaikki parametrit:", args)
-    fmt.Println("Tiedoston nimi:", fileName)
+func main() { 
+    argsWithProg := os.Args 
+    argsWithoutProg := os.Args[1:] 
+ 
+    arg := os.Args[3] 
+    fmt.Println(argsWithProg) 
+    fmt.Println(argsWithoutProg) 
+    fmt.Println(arg) 
 }
 ```
-
-### Tulostus
+Esimerkkituloste:
 
 ```
-$ go run main.go -f testi.txt
-
-Kaikki parametrit: [main.go -f testi.txt]
-Tiedoston nimi: testi.txt
+$ go run command_line_arguments.go a b c d 
+[/path/to/command_line_arguments a b c d] 
+[a b c d] 
+c
 ```
 
-## Syvällistä
+## Syvällinen syvennys:
 
-Parametrit luetaan ohjelman argumenteista, jotka annetaan sen suorituksen yhteydessä. Ne voivat sisältää tietoa mm. halutusta tiedostosta, suoritusasetuksista tai muista tarpeellisista tiedoista. Komentoriviparametrit ovat käyttäjälle helposti muokattavissa ja ohjaavat ohjelman suoritusta halutulla tavalla. 
+Komentoriviparametrien lukeminen on yleinen käytäntö ohjelmoinnissa ja se juontaa juurensa Unix-käyttöjärjestelmästä. Siinä missä Go-kielellä pystyy lukemaan komentoriviltä syötettyjä parametreja, toiset kielet kuten Python vaativat erillisen moduulin käyttämistä.
 
-## Katso myös
+## Katso myös:
 
-- [Go-kielen virallinen dokumentaatio komentoriviparametrien lukemisesta](https://golang.org/pkg/os/)
-- [Esimerkkejä käytöstä ja selityksiä Go-kielen `flag`-paketista](https://gobyexample.com/command-line-flags)
+- [Go-kielen dokumentaatio](https://golang.org/doc/)
+- [Linux-komentoriviparametrit](https://www.tutorialspoint.com/unix_commands/getopt.htm)

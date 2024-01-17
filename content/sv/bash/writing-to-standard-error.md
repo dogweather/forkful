@@ -1,7 +1,7 @@
 ---
-title:                "Skriva till standardfel"
-html_title:           "Bash: Skriva till standardfel"
-simple_title:         "Skriva till standardfel"
+title:                "Skriva till standard error"
+html_title:           "Bash: Skriva till standard error"
+simple_title:         "Skriva till standard error"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Files and I/O"
@@ -10,37 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
 
-Att skriva till standard error är en viktig del av Bash-programmering eftersom det ger en bra sätt att hantera fel och avvikelser i dina skript. Det är ett kraftfullt verktyg för att felsöka och förbättra dina skript.
+När vi programmerar i Bash, kan vi ibland stöta på fel eller varningar som vi vill kommunicera till användaren. För att göra detta, använder vi "standard error", också kallad "stderr". Detta är en ström där vi kan skicka meddelanden till användaren som är separat från "standard output", eller "stdout". Detta är användbart när vi vill skilja mellan olika typer av utdata i vårt program.
 
-## Så här gör du
+## Hur du gör:
 
-För att skriva till standard error i Bash, används kommandot `>&2` tillsammans med `echo`. Här är ett exempel:
+För att skriva till standard error i Bash, kan vi använda kommandot "echo" tillsammans med ">&2". Detta leder all utdata från echo till stderr istället för stdout. Vi kan också använda "&>" för att skriva både till stdout och stderr samtidigt.
 
-```Bash
-echo "Det här är ett felmeddelande" >&2
-```
-
-Detta kommer att skriva ut "Det här är ett felmeddelande" till standard error istället för standard output. Det är viktigt att använda `>&2` efter `echo` för att se till att meddelandet faktiskt skrivs ut till standard error och inte standard output. Annars kommer det inte att fungera som förväntat.
-
-Om du vill spara ditt felmeddelande till en fil istället för att visa det på skärmen, kan du använda `>>` för att lägga till innehållet till en befintlig fil eller `>` för att skriva över innehållet i en befintlig fil. Här är några exempel:
+Exempel:
 
 ```Bash
-echo "Fel: Försöker ansluta till en ogiltig host" >&2 >> error.log
-echo "Fel: Filen finns inte" >&2 > error.log
+echo "Felmeddelande" >&2
+```
+Output:
+```
+Felmeddelande
 ```
 
-Dessa kommandon kommer att skriva felmeddelandena till filen `error.log` istället för att visa dem på skärmen.
+Vi kan också använda ">>" för att lägga till text istället för att skriva över det som redan finns. Till exempel:
 
-## Djupdykning
+```Bash
+echo "Varning!" >>&2
+```
+Output:
+```
+Varning!
+```
 
-Att skriva till standard error är särskilt användbart när du skapar skript som ska köras automatiskt eller som en del av ett annat program. Genom att skriva till standard error kan du enkelt se om ditt skript har stött på några problem eller fel. På så sätt kan du snabbt hitta och åtgärda eventuella problem utan att behöva gå igenom hela skriptet för att leta efter fel.
+## Djupdykning:
 
-En annan fördel med att skriva till standard error är att det är enkelt att separera felmeddelanden från annan output. Om du till exempel använder `grep` för att filtrera ut specifikt innehåll, kan du undvika att felmeddelanden också filtreras ut genom att skriva dem till standard error istället för standard output.
+Att skriva till standard error är en vanlig teknik som används av många programmerare. Det är speciellt användbart när vi vill hålla isär utdata från fel och utdata från vårt program. Innan standard error introducerades, var det vanligt att skriva alla meddelanden till stdout och separera dem med specialtecken. Men detta gjorde det svårt att skilja mellan utdata och felmeddelanden.
 
-## Se även
+Som alternativ till att skriva till standard error, kan vi också använda loggfiler för att spåra felmeddelanden. Men detta kan kräva mer ansträngning att implementera och skulle inte fungera för ett interaktivt program. Det är också viktigt att tänka på att skriva till stderr kan påverka prestandan för vårt program, så det är viktigt att inte överanvända det.
 
-- [Bash Guide](https://linuxconfig.org/bash-scripting-tutorial-for-beginners) av LinuxConfig.org
-- [Bash Tutorial](https://ryanstutorials.net/bash-scripting-tutorial/) av Ryan's Tutorials
-- [Official Bash Reference Manual](https://www.gnu.org/software/bash/manual/bash.html) av GNU Project
+## Se även:
+
+Om du vill lära dig mer om att skriva till standard error, kan du titta på följande länkar för mer information:
+
+- [Bash dokumentation om stderr](https://www.gnu.org/software/bash/manual/html_node/Redirections.html)
+- [En översikt av Bash stderr och stdout](https://www.howtoforge.com/tutorial/working-with-standard-output-and-error-output/)
+- [En diskussion om skillnaderna mellan stdout och stderr](https://unix.stackexchange.com/questions/157133/what-is-the-difference-between-stdout-and-stderr)

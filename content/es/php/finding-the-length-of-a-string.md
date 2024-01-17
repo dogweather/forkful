@@ -1,7 +1,7 @@
 ---
-title:                "Encontrar la longitud de una cadena"
-html_title:           "PHP: Encontrar la longitud de una cadena"
-simple_title:         "Encontrar la longitud de una cadena"
+title:                "Encontrando la longitud de una cadena"
+html_title:           "PHP: Encontrando la longitud de una cadena"
+simple_title:         "Encontrando la longitud de una cadena"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Strings"
@@ -10,37 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
-La longitud de una cadena es una información esencial en la programación que nos permite realizar diversas operaciones, como validar entradas de usuario o truncar textos demasiado largos. Saber cómo encontrar la longitud de una cadena en PHP te ayudará a ser un programador más versátil y eficiente.
+¿Qué & Por qué?
 
-## Cómo hacerlo
-Para encontrar la longitud de una cadena en PHP, podemos utilizar la función `strlen()`. Esta función toma como argumento la cadena de texto y devuelve un número entero que representa la cantidad de caracteres en esa cadena.
+La longitud de una cadena es la cantidad de caracteres que componen esa cadena. Los programadores suelen encontrar la longitud de una cadena para realizar una variedad de tareas, como validar datos de entrada, formatear texto o realizar operaciones matemáticas.
 
-```PHP
-$cadena = "¡Hola mundo!";
-echo strlen($cadena); // output: 12
-```
+Cómo:
 
-Si queremos encontrar la longitud de una cadena con caracteres multibyte (como los acentos en español), podemos utilizar la función `mb_strlen()`. Esta función también toma como argumento la cadena de texto, pero nos devuelve la cantidad de caracteres contando los bytes en lugar de los símbolos.
+Determinar la longitud de una cadena en PHP es sencillo. Simplemente utilizamos la función `strlen()` seguida de la cadena entre paréntesis. Por ejemplo:
 
 ```PHP
 $cadena = "¡Hola mundo!";
-echo mb_strlen($cadena); // output: 11
+echo strlen($cadena);
 ```
 
-También podemos utilizar la función `mb_strlen()` para contar la cantidad de palabras en una cadena, pasando como segundo argumento el encoding utilizado en la cadena. Por ejemplo, si utilizamos la función `mb_strlen($cadena, "UTF-8")` en una cadena con caracteres especiales en español, obtendremos un resultado más preciso.
+Esto imprimirá "12", ya que la cadena contiene 12 caracteres. Podemos utilizar esta función en cualquier tipo de cadena, ya sea una variable, una cadena de texto directa o incluso una cadena que contenga caracteres especiales.
 
-```PHP
-$cadena = "Esto es una prueba.";
-echo mb_strlen($cadena, "UTF-8"); // output: 17
-```
+Estado de Animo
 
-## Deep Dive
-La función `strlen()` cuenta los bytes que forman una cadena, mientras que `mb_strlen()` cuenta los símbolos. Esto puede generar diferencias en los resultados si utilizamos diferentes encodings. Por ejemplo, si utilizamos la función `strlen()` en una cadena con caracteres multibyte, obtendremos una longitud mayor a la real debido a que cuenta cada byte como un símbolo.
+La función `strlen()` existe en PHP desde sus primeras versiones y se utiliza ampliamente en la programación web. Sin embargo, también existen otras formas de obtener la longitud de una cadena en PHP, como la función `mb_strlen()` que tiene en cuenta la codificación de caracteres y puede ser útil en proyectos multilingües.
 
-Otra cosa importante a tener en cuenta es que la función `mb_strlen()` solo está disponible si se tiene instalada la extensión mbstring en PHP. Si no se encuentra instalada, podemos utilizar la función `iconv_strlen()` para lograr un resultado similar.
+Además, es importante tener en cuenta que la longitud de una cadena puede variar dependiendo del tipo de codificación utilizado. Por ejemplo, una cadena en UTF-8 puede tener una longitud diferente a una cadena en ASCII, ya que los caracteres en UTF-8 ocupan más espacio.
 
-## See Also
-- [Documentación oficial de PHP para la función strlen()](https://www.php.net/manual/es/function.strlen.php)
-- [Documentación oficial de PHP para la función mb_strlen()](https://www.php.net/manual/es/function.mb-strlen.php)
-- [Documentación oficial de PHP para la función iconv_strlen()](https://www.php.net/manual/es/function.iconv-strlen.php)
+Ver También:
+
+- Documentación oficial de PHP sobre la función `strlen()`: https://www.php.net/manual/es/function.strlen.php
+- Documentación oficial de PHP sobre la función `mb_strlen()`: https://www.php.net/manual/es/function.mb-strlen.php

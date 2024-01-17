@@ -1,7 +1,7 @@
 ---
-title:                "Praca z yaml"
-html_title:           "Fish Shell: Praca z yaml"
-simple_title:         "Praca z yaml"
+title:                "Praca z formatem YAML"
+html_title:           "Fish Shell: Praca z formatem YAML"
+simple_title:         "Praca z formatem YAML"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Data Formats and Serialization"
@@ -10,66 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co to jest i po co się to robi?
 
-Jeśli jesteś programistą lub administrator systemu, prawdopodobnie już spotkałeś się z formatem plików YAML. Ta strukturalna składnia jest szeroko używana w aplikacjach internetowych i narzędziach konfiguracyjnych. W artykule poznasz, jak wykorzystać Fish Shell do pracy z plikami YAML.
+Working with YAML (Yet Another Markup Language) in programming is a way to organize and store data in a human-readable format. It is often used for configuring applications, creating data structures, and transferring data between systems. Programmers use YAML because it is easy to read and write, supports data types and structures, and integrates well with other programming languages and tools.
 
-## Jak to zrobić
+## Jak to zrobić:
 
-Fish Shell oferuje wiele przydatnych funkcji, które ułatwiają pracę z plikami YAML. Przede wszystkim musisz pobrać i zainstalować rozszerzenie `yaml`, które dodaje obsługę YAML do Fish Shell. Możesz to zrobić za pomocą menedżera pakietów, np. Homebrew, jak również za pomocą narzędzia `fisher`. Po zainstalowaniu rozszerzenia, możesz zacząć pracować z plikami YAML.
+### Przykład 1: Tworzenie pliku YAML
 
+```Fish Shell
+echo 'name: John
+age: 30
+hobbies:
+  - hiking
+  - cooking
+' > person.yml
 ```
-Fish Shell> fisher install jorgebucaran/yaml
+W wyniku powyższego kodu zostanie utworzony plik `person.yml` z danymi osobowymi osoby o imieniu John, wieku 30 lat i dwóch zainteresowaniach.
+
+### Przykład 2: Odczytywanie pliku YAML
+
+```Fish Shell
+set -q person.name <(yq e '.name' person.yml)
+echo $person_name
 ```
+W wyniku powyższego kodu zostanie wczytana wartość `name` z pliku `person.yml` i przypisana do zmiennej `person_name`.
 
-Aby otworzyć plik YAML w Fish Shell, wystarczy użyć polecenia `open` i podać nazwę pliku:
+## Głębsza analiza:
 
-```
-Fish Shell> open config.yml
-```
+### Kontekst historyczny
 
-Po otwarciu pliku możesz przeglądać go i edytować w Fish Shell za pomocą polecenia `yaml`:
+YAML został stworzony w 2001 roku przez Clarka Evansa i Ingy'ego dot Net jako alternatywna składnia dla XML. Jego głównym celem było dostarczenie prostego i czytelnego sposobu na przechowywanie i przetwarzanie danych strukturalnych.
 
-```
-Fish Shell> yaml
-```
+### Alternatywy
 
-Możesz również wykorzystać polecenie `cat` do przeglądania zawartości pliku YAML w konsoli:
+YAML jest jednym z wielu formatów do przechowywania danych i konfiguracji. Alternatywami dla YAML są między innymi JSON i XML. Każdy z tych formatów ma swoje zalety i w zależności od potrzeb projektu, programiści mogą wybierać między nimi.
 
-```
-Fish Shell> cat config.yml
-```
+### Szczegóły implementacji
 
-Jeśli chcesz zmienić wartość klucza w pliku YAML, możesz to zrobić za pomocą polecenia `set`:
+Fish Shell posiada wbudowane polecenia do obsługi plików YAML, takie jak `yq` czy `jq`. Można również zainstalować dodatkowe pluginy, które ułatwią pracę z tym formatem. Dzięki temu programiści mogą szybko i wygodnie zarządzać danymi YAML bez potrzeby korzystania z zewnętrznych narzędzi.
 
-```
-Fish Shell> set config.port 8080
-```
+## Zobacz też:
 
-Pamiętaj, aby zachować strukturę pliku YAML, dodaj spację równoważną dla każdego poziomu zagnieżdżenia.
-
-## Czas na głębsze zanurzenie
-
-Fish Shell oferuje wiele funkcji do pracy z plikami YAML, w tym również możliwość przekształcania formatu YAML na inne formaty, np. JSON. Możesz to zrobić za pomocą polecenia `yaml2json` lub `json2yaml`:
-
-```
-Fish Shell> yaml2json config.yml
-```
-
-Fish Shell również obsługuje składnię YAML zwanej "anchors", która pozwala na ponowne wykorzystanie części pliku YAML w różnych miejscach. Możesz oznaczyć część pliku za pomocą znaku `&` i odwołać się do niej w innej części pliku za pomocą znaku `*`:
-
-```yaml
-server: &server
-  host: localhost
-  port: 3000
-
-db:
-  << : *server
-  name: database
-```
-
-## Zobacz także
-
-- [Dokumentacja Fish Shell - YAML](https://fishshell.com/docs/current/cmds/yaml.html)
-- [Rozszerzenie yaml dla Fish Shell](https://github.com/jorgebucaran/yaml)
-- [Poradnik pracy z YAML w Fish Shell](https://medium.com/@jorgebucaran/working-with-yaml-in-fish-shell-3de1c5b3e36c)
+- [Dokumentacja Fish Shell dotycząca YAML](https://fishshell.com/docs/current/tutorial.html#yaml-support)
+- [Strona domowa YAML](https://yaml.org/)
+- [Porównanie YAML z innymi formatami](https://yaml.org/comparison.html)

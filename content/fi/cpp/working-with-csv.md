@@ -10,55 +10,69 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä & Miksi?
 
-CSV-tiedostot (Comma-Separated Values) ovat yksi yleisimmistä tiedostomuodoista, joita käytetään tietojen tallentamisessa ja jakamisessa. CSV-tiedostot ovat helppolukuisia ja helppokäyttöisiä, mikä tekee niistä ihanteellisia monien erilaisten ohjelmointitehtävien kannalta.
+CSV (Comma-Separated Values) on tiedostomuoto, jota usein käytetään tallentamaan ja jakamaan taulukkomuotoista dataa. Se koostuu riveistä ja sarakkeista, joiden välillä on pilkkuja. Ohjelmoijat käyttävät CSV-tiedostoja, koska se on yksinkertainen tapa jakaa tietoa ja sen lukeminen ja kirjoittaminen on helppoa.
 
-## Kuinka
+## Miten:
 
-CSV-tiedoston lukeminen ja kirjoittaminen C++:ssa on hyvin yksinkertaista. Aloita luomalla olio, joka edustaa CSV-tiedostoa ja määrittele sen sarakkeiden erotin merkiksi pilkku. Voit sitten käyttää `getline()` -funktiota lukeaksesi rivin tiedostosta ja `stringstream` -luokkaa jakamaan sen erillisiin sarakkeisiin. Tämän jälkeen voit tallentaa sarakkeiden arvot haluamaasi muuttujaan ja käsitellä niitä edelleen. Katso alla oleva esimerkki:
+Seuraavassa on esimerkki kuinka lukea CSV-tiedosto ja tulostaa sen sisältö näytölle:
 
 ```C++
 #include <iostream>
 #include <fstream>
+#include <string>
+#include <vector>
 #include <sstream>
 
+using namespace std;
+
 int main() {
-  // Luo olio CSV-tiedostoa varten
-  std::ifstream csvfile("tiedosto.csv");
-  // Aseta reunamerkki pilkkua vastaavaksi
-  csvfile.separator(',');
-  std::string rivi;
+    ifstream file("tiedosto.csv");
+    string rivi;
 
-  // Lue rivi ja tallenna se muuttujaan 
-  while (getline(csvfile, rivi)) {
-    // Käytä stringstream-luokkaa jakamaan rivi erillisiin sarakkeisiin
-    std::stringstream ss(rivi);
-    // Tallenna sarakkeiden arvot muuttujiin
-    std::string sarakkeet[3]; // Oletetaan, että tiedostossa on 3 saraketta
-    for (int i = 0; i < 3; i++) {
-      getline(ss, sarakkeet[i], ',');
+    while (getline(file, rivi)) {
+        vector<string> sarakkeet;
+        stringstream ss(rivi);
+        string s;
+
+        while (getline(ss, s, ',')) {
+            sarakkeet.push_back(s);
+        }
+
+        for (int i = 0; i < sarakkeet.size(); i++) {
+            cout << sarakkeet[i] << " ";
+        }
+
+        cout << endl;
     }
-    // Käsittele sarakkeiden arvot tarpeen mukaan
-    // Esim. tulosta ne konsoliin
-    std::cout << sarakkeet[0] << " " << sarakkeet[1] << " " << sarakkeet[2] << std::endl;
-  }
 
-  // Sulje tiedosto
-  csvfile.close();
-  return 0;
+    file.close();
+    return 0;
 }
 ```
 
-Tämä esimerkki lukee rivi kerrallaan CSV-tiedostoa ja tallentaa sarakkeiden arvot muuttujiin. Sen jälkeen voit käsitellä sarakkeiden arvoja tarpeen mukaan. 
+Esimerkkitiedoston sisältö:
 
-## Syventävä sukellus
+```
+nimi, ikä, kaupunki
+Matti, 25, Helsinki
+Emma, 30, Tampere
+```
 
-CSV-tiedostoissa on monia erilaisia formaatteja ja käytäntöjä, joten on tärkeää olla tietoinen erilaisista tilanteista, jotka voivat vaikuttaa tiedostojen käsittelyyn. Esimerkiksi, jos sarakkeissa on tekstiä, joka sisältää pilkkua, se voi aiheuttaa ongelmia `getline()` -funktion kanssa, sillä se käyttää pilkkua erottimena. Tässä tapauksessa kannattaa harkita käyttämään jotain muuta merkkiä, kuten puolipistettä, sarakkeiden erotinmerkkinä. 
+Ohjelman tulostama tulos:
 
-On myös tärkeää huomata, että CSV-tiedostojen kanssa työskentelyssä voi ilmetä virheitä ja muotoiluongelmia, varsinkin jos tiedosto sisältää paljon tietoa. Siksi on tärkeää testata koodia huolellisesti ja käsitellä mahdolliset virheet asianmukaisesti.
+```
+nimi ikä kaupunki
+Matti 25 Helsinki
+Emma 30 Tampere
+```
 
-## Katso myös
+## Syvällinen Dykkaus:
 
-- [C++ -tiedoston lukeminen ja kirjoittaminen](https://www.tutorialspoint.com/cplusplus/cpp_files_streams.htm)
-- [CppCSV - ohjelmakirjasto CSV-tiedostojen lukuun ja kirjoitukseen C++:ssa](https://github.com/vincentlaucsb/CppCSV)
+CSV-tiedoston alkujuuret juontavat 70-luvun lopulle, jolloin tilastotieteilijät alkoivat käyttää sitä tallentaakseen dataa. Nykyään on olemassa muita vaihtoehtoisia tiedostomuotoja, kuten JSON ja XML, mutta CSV on edelleen suosittu sen yksinkertaisuuden vuoksi. CSV-tiedostoja voi lukea ja kirjoittaa monilla ohjelmointikielillä, eikä erillisiä kirjastoja tarvita.
+
+## Katso myös:
+
+- [Wikipedia-artikkeli CSV-tiedostoista](https://fi.wikipedia.org/wiki/Separoitu_tekstitiedosto)
+- [C++-opas tiedostojen käsittelyyn](https://www.cs.fsu.edu/~myers/c++/notes/files.html)

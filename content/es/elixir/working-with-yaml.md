@@ -10,78 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¿Qué y por qué?
+Trabajar con YAML es una forma común para que los programadores manejen y guarden datos estructurados. Se utiliza para archivos de configuración, intercambio de datos y más debido a su sintaxis simple y legible.
 
-¿Te sientes abrumado por la cantidad de configuraciones que tienes que hacer para tu proyecto? ¿Deseas tener una forma más sencilla y legible de manejar datos estructurados? ¡Entonces YAML es la solución que estabas buscando! YAML es un lenguaje de serialización de datos que proporciona una sintaxis fácil de leer y escribir, lo que lo hace perfecto para manejar configuraciones y datos estructurados en tus proyectos de Elixir.
+## ¿Cómo hacerlo?
+El lenguaje Elixir proporciona una librería llamada YAML que nos permite interactuar con archivos y datos YAML fácilmente. A continuación, se muestran algunos ejemplos de cómo usarla:
 
-## Cómo hacerlo
-
-La primera cosa que debes hacer es agregar la dependencia de YAML a tu proyecto de Elixir. Puedes hacer esto agregando `{:yaml_elixir, "~> 2.0"}` a tu archivo `mix.exs` en la sección de dependencias y luego ejecutando `mix deps.get` en tu terminal para instalar la dependencia.
-
-Una vez que tengas la dependencia instalada, puedes usar el módulo `YAML` para convertir datos estructurados en un formato YAML, y viceversa. Aquí hay un ejemplo para convertir un mapa a un formato YAML:
-
-```Elixir
-data = %{name: "María", age: 25, hobbies: ["leer", "pasear en bicicleta"]}
-
-yaml = YAML.dump(data)
+### Cargar un archivo YAML
+```
+Elixir
+yaml = YAML.load_file("config.yml")
 ```
 
-Este código producirá la siguiente salida:
-
-```YAML
-name: María
-age: 25
-hobbies:
-  - leer
-  - pasear en bicicleta
+### Obtener un valor específico
+```
+Elixir
+yaml["config"]["url"]
+# => "https://www.example.com"
 ```
 
-También puedes convertir una cadena de YAML en un mapa utilizando la función `YAML.load/1`. Por ejemplo:
-
-```Elixir
-yaml = """
-name: Juan
-age: 30
-hobbies:
-  - jugar videojuegos
-  - escuchar música
-"""
-
-data = YAML.load(yaml)
+### Guardar datos en un archivo YAML
+```
+Elixir
+data = %{username: "johndoe", password: "12345"}
+YAML.store("data.yml", data)
 ```
 
-Este código producirá el siguiente mapa:
-
-```Elixir
-%{age: 30, hobbies: ["jugar videojuegos", "escuchar música"], name: "Juan"}
+### Convertir un mapa a formato YAML
+```
+Elixir
+data = %{name: "Elixir", version: "1.10.3"}
+YAML.dump(data)
+# => "---\n:name: \"Elixir\"\n:version: \"1.10.3\""
 ```
 
-## Profundizando
-
-Además de simplemente convertir datos a y desde formato YAML, el módulo `YAML` también te permite trabajar con archivos YAML. Por ejemplo, puedes cargar un archivo YAML directamente en un mapa utilizando la función `YAML.load_file/1`. Aquí hay un ejemplo:
-
-```Elixir
-data = YAML.load_file("./ejemplo.yaml")
-```
-
-También puedes utilizar la función `YAML.dump_file/2` para escribir un mapa en un archivo YAML. Aquí hay un ejemplo:
-
-```Elixir
-data = %{nombre: "Ana", edad: 28, profesión: "programadora"}
-
-YAML.dump_file(data, "./info.yaml")
-```
-
-Este código escribirá el mapa en un archivo `info.yaml` con el siguiente contenido:
-
-```YAML
-nombre: Ana
-edad: 28
-profesión: programadora
-```
+## Inmersión profunda
+YAML, que significa "YAML Ain't Markup Language", es un formato de serialización de datos que fue creado en el año 2001. Además de la librería YAML de Elixir, hay otras opciones como YamlElixir o Yamlix que también pueden ser utilizadas en proyectos.
 
 ## Ver también
-
-- [Documentación oficial de YAML Elixir](https://hexdocs.pm/yaml/Elixir.html)
-- [Código fuente de YAML Elixir](https://github.com/KamilLelonek/yaml-elixir)
-- [Tutorial de YAML para Elixir (en inglés)](https://www.jungledisk.com/blog/2018/02/01/getting-started-yaml-elixir-tutorial/)
+- Sitio oficial de la librería YAML para Elixir: https://hexdocs.pm/yaml/
+- Otros paquetes de Elixir relacionados con YAML: YamlElixir (https://github.com/jeremyong/yaxpeax-elixir) y Yamlix (https://github.com/angelikatyborska/yaml-eex)

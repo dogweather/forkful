@@ -1,7 +1,7 @@
 ---
-title:                "Skicka en http-begäran med grundläggande autentisering"
-html_title:           "Kotlin: Skicka en http-begäran med grundläggande autentisering"
-simple_title:         "Skicka en http-begäran med grundläggande autentisering"
+title:                "Att skicka en http-begäran med grundläggande autentisering."
+html_title:           "Kotlin: Att skicka en http-begäran med grundläggande autentisering."
+simple_title:         "Att skicka en http-begäran med grundläggande autentisering."
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "HTML and the Web"
@@ -10,86 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
-Om du behöver skicka en HTTP-begäran med grundläggande autentisering, såsom en API-begäran till en webbtjänst, kan du använda Kotlin för att enkelt hantera autentiseringsprocessen.
+## Vad och Varför?
+Att skicka en HTTP-förfrågan med grundläggande autentisering innebär att man skickar ett meddelande till en server för att få tillgång till skyddad information eller funktionalitet. Programmerare gör det eftersom det är ett sätt att verifiera användarens identitet för att säkerställa att bara auktoriserade personer har tillgång till resurserna.
 
-## Hur man gör
-För att skicka en HTTP-begäran med grundläggande autentisering i Kotlin, behöver du först importera nödvändiga bibliotek. Använd följande kod för att importera biblioteket "okhttp" som används för HTTP-klienter:
+## Så här gör du:
+För att skicka en HTTP-förfrågan med grundläggande autentisering i Kotlin, måste du först importera klassen för URL-förfrågan och klassen för Base64-encoderare. Sedan kan du skapa en URL och en anslutning för att utföra förfrågan med hjälp av en autentiseringssträng. När du har fått svar från servern kan du läsa och använda svaret enligt dina behov.
 
-```Kotlin
-import okhttp3.*
+```
+val url = URL("https://example.com/api/resource")
+val connection: HttpURLConnection = url.openConnection() as HttpURLConnection
+val username = "username"
+val password = "password"
+val authStr = "$username:$password"
+val authEncoded = Base64.getEncoder().encodeToString(authStr.toByteArray())
+connection.setRequestProperty("Authorization", "Basic $authEncoded")
+val response = BufferedReader(InputStreamReader(connection.inputStream)).readText()
+println(response)
+```
+Output:
+```
+{ "message": "Successfully authenticated!" }
 ```
 
-Därefter kan du initiera en HTTP-klient genom att skapa en instans av OkHttpClient-klassen:
+## Djupdykning:
+Historiskt sett användes HTTP-förfrågan med grundläggande autentisering som ett sätt att hantera autentisering på internet innan säkrare metoder som OAuth och API-nycklar blev vanliga. På grund av dess enkla och enkrypterade natur används det fortfarande i vissa applikationer. Alternativ till grundläggande autentisering inkluderar digest-autentisering, OAuth och API-nycklar.
 
-```Kotlin
-val client = OkHttpClient()
-```
+När en HTTP-förfrågan med grundläggande autentisering görs, läggs en "Authorization" -header till i förfrågningsmeddelandet, som innehåller användarnamn och lösenordsinformationen som är krypterad i Base64-format. Servern å sin sida dekrypterar informationen och jämför den med sina autentiseringsuppgifter för att avgöra om åtkomst till resurserna ska ges.
 
-För att skicka en begäran med grundläggande autentisering, behöver du lägga till autentiseringshuvudet i din begäran. Du kan göra detta genom att skapa en instans av klassen "Headers" och lägga till autentiseringsuppgifter i en "Authorization" -koppling.
-
-```Kotlin
-val credentials = Credentials.basic("användarnamn", "lösenord")
-val authenticationHeader = Headers.Builder().add("Authorization", credentials).build()
-```
-
-Slutligen kan du skapa en begäran med hjälp av den tidigare skapade HttpClient-instansen och lägga till autentiseringshuvudet:
-
-```Kotlin
-val begäran = Request.Builder()
-    .url("https://mottagare.ns/api/endpoint")
-    .header("Authorization", authenticationHeader)
-    .build()
-```
-
-För att utföra begäran och få tillbaka svar, kan du använda en klientförfrågan med den skapade begäran:
-
-```Kotlin
-val svar = client.newCall(begäran).execute()
-```
-
-Om din begäran lyckades får du tillbaka ett svar med statuskod 200 (OK). Du kan sedan få tillbaka data från svaret enligt följande:
-
-```Kotlin
-val data = svar.body()?.string()
-```
-
-Hela det färdiga exemplet ser ut så här:
-
-```Kotlin
-import okhttp3.*
-
-fun main() {
-    val client = OkHttpClient()
-    val credentials = Credentials.basic("användarnamn", "lösenord")
-    val authenticationHeader = Headers.Builder().add("Authorization", credentials).build()
-    
-    val begäran = Request.Builder()
-        .url("https://mottagare.ns/api/endpoint")
-        .header("Authorization", authenticationHeader)
-        .build()
-    
-    val svar = client.newCall(begäran).execute()
-    
-    if (svar.isSuccessful) {
-        val data = svar.body()?.string()
-        println("Svar:\n$data")
-    } else {
-        println("Fel: " + svar.code() + "-" + svar.message())
-    }
-}
-```
-
-Sample output: 
-Svar:
-{"id": 1234, "namn": "John Doe"}
-
-## Djupdykning
-Att skicka en HTTP-begäran med grundläggande autentisering innebär att inkludera autentiseringsinformation i HTTP-headers. Detta gör det möjligt för tjänsten att verifiera identiteten hos den som skickar begäran utan att behöva dela känslig data som användaruppgifter.
-
-Det är viktigt att notera att grundläggande autentisering inte är den mest säkra formen av autentisering eftersom användaruppgifterna skickas i klartext. Det är därför viktigt att bara använda den för att hämta data som inte är känslig.
-
-## Se även
-- Officiell Kotlin Dokumentation: https://kotlinlang.org/
-- Guide för att skicka HTTP-begäran i Kotlin: https://www.programiz.com/kotlin-programming/http-client
-- OkHttp bibliotek: https://square.github.io/okhttp/
+## Se även:
+- [Official Kotlin documentation for HttpURLConnection](https://kotlinlang.org/api/latest/jvm/stdlib/java.net.-
+  u-r-l-connection/index.html)
+- [Kotlin Base64 encoder and decoder class](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.base64/index.html)
+- [Tutorial on HTTP Basic authentication in Android with Kotlin](https://www.techotopia.com/index.php/Kotlin_-_Creating_HTTP_basic_authentication_clients_in_Android)

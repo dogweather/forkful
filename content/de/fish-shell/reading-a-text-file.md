@@ -1,7 +1,7 @@
 ---
-title:                "Das Lesen einer Textdatei"
-html_title:           "Fish Shell: Das Lesen einer Textdatei"
-simple_title:         "Das Lesen einer Textdatei"
+title:                "Eine Textdatei lesen"
+html_title:           "Fish Shell: Eine Textdatei lesen"
+simple_title:         "Eine Textdatei lesen"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Files and I/O"
@@ -10,40 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum Lesen einer Textdatei?
+## Was & Warum?
+Das Lesen von Textdateien ist ein wesentlicher Bestandteil der Programmierung. Es ermöglicht Programmierern, Daten aus externen Quellen zu lesen und in ihren Code zu integrieren. Dadurch können sie dynamische Anwendungen erstellen, die Benutzereingaben verarbeiten oder Informationen von anderen Programmen abrufen.
 
-Du hast vielleicht schon einmal davon gehört, dass eine Textdatei in einem Texteditor geöffnet werden kann. Aber wusstest du, dass du auch eine Textdatei direkt in der Fish Shell lesen und bearbeiten kannst? In diesem Artikel zeige ich dir, wie das geht und warum es nützlich sein kann.
+## Anleitung:
+Das Lesen einer Textdatei in der Fish Shell ist einfach und unkompliziert. Hier ein Beispiel:
 
-## Wie geht das?
-
-Um eine Textdatei in der Fish Shell zu lesen, verwende einfach den Befehl `cat` gefolgt von dem Dateinamen. Zum Beispiel:
-
-```
-Fish Shell: cat textdatei.txt
-```
-
-Dieser Befehl gibt den gesamten Inhalt der Textdatei direkt in der Shell aus. Wenn du nur einen Teil der Datei anzeigen lassen möchtest, kannst du den Befehl `head` oder `tail` verwenden. Zum Beispiel:
-
-```
-Fish Shell: head -n 10 textdatei.txt
+```fish
+set file (cat test.txt)
+echo $file
 ```
 
-Dieser Befehl zeigt die ersten 10 Zeilen der Textdatei an. Oder du kannst auch nach bestimmten Zeilen oder Wörtern suchen mit dem Befehl `grep`. Zum Beispiel:
+Die erste Zeile liest die Datei "test.txt" und speichert sie in der Variablen "file". In der zweiten Zeile wird der Inhalt dieser Variable ausgegeben. Hier ist das erwartete Ergebnis:
 
 ```
-Fish Shell: grep "Hallo" textdatei.txt
+Dies ist ein Beispieltext.
+Er enthält verschiedene Zeilen und Zeichen.
 ```
 
-Dieser Befehl zeigt alle Zeilen an, die das Wort "Hallo" enthalten.
+## Tiefsee:
+Die Möglichkeit, Textdateien zu lesen, gibt es schon seit den Anfängen der Programmierung. Das Lesen von Textdateien ist auch in anderen Shells wie Bash oder Zsh möglich, aber die Syntax unterscheidet sich leicht.
 
-## Tiefer eintauchen
+Es gibt auch andere Möglichkeiten, Daten aus externen Quellen zu lesen, wie z.B. das Ausführen von Befehlen mit der "exec" Funktion oder das Einlesen von Daten aus dem Internet mit dem Curl-Befehl.
 
-Es gibt natürlich noch viele weitere Möglichkeiten, um Textdateien in der Fish Shell zu lesen und zu bearbeiten. Zum Beispiel kannst du mit dem Befehl `sed` bestimmte Zeilen ändern oder mit `awk` bestimmte Spalten ausgeben lassen. Auch das Kombinieren mehrerer Befehle mit dem Pipe-Operator `|` ist möglich.
+Das Lesen von Textdateien in Fish Shell basiert auf der "cat" Funktion, die die Datei Zeile für Zeile durchläuft und deren Inhalt ausgibt.
 
-Es kann auch hilfreich sein zu wissen, dass du in der Fish Shell mit dem Befehl `nano` eine einfache Textbearbeitung direkt in der Shell durchführen kannst. Oder du kannst mit dem Befehl `less` größere Textdateien besser durchsuchen.
-
-## Siehe auch
-
-- [Fish Shell Startseite](https://fishshell.com/)
-- [Fish Shell Dokumentation](https://fishshell.com/docs/current/)
-- [Fish Shell Wiki](https://github.com/fish-shell/fish-shell/wiki)
+## Siehe auch:
+- `cat` Funktion in der Fish Shell [https://fishshell.com/docs/current/cmds/cat.html]
+- Vergleich der verschiedenen Shells [https://blog.teamtreehouse.com/the-versatility-of-shells]

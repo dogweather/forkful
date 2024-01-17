@@ -1,7 +1,7 @@
 ---
-title:                "Bruk av regulære uttrykk"
-html_title:           "C#: Bruk av regulære uttrykk"
-simple_title:         "Bruk av regulære uttrykk"
+title:                "Å bruke regulære uttrykk"
+html_title:           "C#: Å bruke regulære uttrykk"
+simple_title:         "Å bruke regulære uttrykk"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Strings"
@@ -10,55 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hva og hvorfor?
+Vanligvis innebærer programmering å jobbe med tekst. Men når vi har store datamengder, kan det være vanskelig å finne eller manipulere nøyaktig det vi trenger. Her kommer regulære uttrykk (regular expressions) inn i bildet. Dette er en måte å søke, manipulere og erstattet tekst basert på et gitt mønster. Programmere bruker dette for å effektivt håndtere store datamengder og automatisere repetitive oppgaver.
 
-Hvorfor skulle noen engasjere seg i å bruke regulære uttrykk? Vel, regulære uttrykk er et utrolig kraftig verktøy som kan hjelpe deg med å finne og manipulere tekst i enkle og komplekse måter. Dette er spesielt nyttig for utviklere som jobber med tekstbehandling, dataanalyse eller testing.
-
-## Slik gjør du det
-
-La oss si at du ønsker å finne alle e-postadresser i en tekstfil. Dette kan være en utfordrende oppgave hvis du må lete gjennom hundrevis av linjer med tekst. Men med regulære uttrykk kan du enkelt finne alle forekomster av e-postadresser ved hjelp av et mønster.
-
-La oss se på et eksempel i C#:
+## Hvordan:
+Bruk av regulære uttrykk er enkelt og kan spare deg for mye tid og frustrasjon i det lange løp. Her er et eksempel på hvordan du kan finne alle e-postadresser i en tekst ved hjelp av regulære uttrykk i C#:
 
 ```C#
-string text = "Dette er en tekst med flere e-postadresser som [email protected] og [email protected]";
-string pattern = @"\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*";
-Regex regex = new Regex(pattern);
-MatchCollection matches = regex.Matches(text);
-
+string text = "Hei! Min e-post er eksempel@eksempel.com. Vennligst kontakt meg hvis du har spørsmål.";
+Regex regex = new Regex(@"\w+@\w+\.\w+"); // Regex objekt, her brukes \w som matcher alle bokstaver og tall
+MatchCollection matches = regex.Matches(text); // Alle forekomster av e-postadresser i teksten lagres i en MatchCollection
 foreach (Match match in matches)
 {
-    Console.WriteLine(match.Value);
+    Console.WriteLine(match.Value); // Printer ut hver match - her vil den skrive ut "eksempel@eksempel.
 }
+
+// Output:
+// eksempel@eksempel.
 ```
 
-Dette vil gi følgende output:
+## Dypdykk:
+Regulære uttrykk ble introdusert på 1950-tallet av matematikerne Stephen Kleene og Ken Thompson. De benyttes i en rekke programmeringsspråk, og gir en robust og effektiv måte å håndtere tekstbehandling på. Alternativer til bruk av regulære uttrykk inkluderer manuell tekstbehandling og bruk av string-metoder i C#. Implementasjonen av regulære uttrykk i C# er basert på syntaksen brukt av Perl.
 
-```
-[email protected]
-[email protected]
-```
-
-La oss bryte ned koden litt:
-
-- Først oppretter vi en tekststreng som inneholder e-postadressene vi vil finne.
-
-- Deretter definerer vi et mønster som beskriver en vanlig e-postadresse. Dette mønsteret bruker såkalte regex-koder, som representerer forskjellige tegn og mønstre.
-
-- Vi oppretter et Regex-objekt med mønsteret vårt.
-
-- Deretter bruker vi Matches-metoden til å finne alle forekomster av mønsteret i teksten vår.
-
-- Til slutt går vi gjennom alle kampene og skriver dem ut.
-
-## Dykk dypere
-
-Dette var bare et enkelt eksempel på hvordan du kan bruke regulære uttrykk i C#. Det er mange forskjellige regex-koder og teknikker du kan lære for å gjøre søkene og manipuleringen av tekst enda mer nøyaktig og effektiv.
-
-Et annet nyttig aspekt ved regulære uttrykk er at de kan brukes i flere programmeringsspråk og tekstredigeringsverktøy. Så ved å lære regex i C#, vil du også kunne bruke det i f.eks. Javascript, Java eller Python.
-
-## Se også
-
-- [Fullstendig veiledning til regulære uttrykk i C#](https://docs.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-language-quick-reference)
-- [En online regex-tester](https://regex101.com/)
-- [Regex Crash Course video](https://www.youtube.com/watch?v=rhzKDrUiJVk)
+## Se også:
+- [Microsoft sin guide til regulære uttrykk i C#](https://docs.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-language-quick-reference)
+- [Regulære uttrykk på Wikipedia](https://en.wikipedia.org/wiki/Regular_expression)
+- [RegexTester - et nyttig verktøy for å teste regulære uttrykk](https://regexr.com/)

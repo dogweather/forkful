@@ -1,7 +1,7 @@
 ---
-title:                "עבודה עם קובץ csv"
-html_title:           "TypeScript: עבודה עם קובץ csv"
-simple_title:         "עבודה עם קובץ csv"
+title:                "עובדים עם csv"
+html_title:           "TypeScript: עובדים עם csv"
+simple_title:         "עובדים עם csv"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Data Formats and Serialization"
@@ -10,47 +10,82 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## למה
+## מה ולמה?
 
-עבודה עם קבצי CSV היא תהליך חשוב בהתפתחות תוכניות ממוחשבות ואפליקציות. בעזרת TypeScript, התכנות בשפת סקריפטים יכול להיות קל ומהיר להתאים את הנתונים מקובץ CSV לתבניות ומבני נתונים נדרשים.
+עבודה עם קבצי CSV היא חלק חשוב של פיתוח תוכנה. קובצי CSV הם קבצים שמכילים נתונים מסודרים בתווים מפרידים, כגון פסיקים או טאבים. תוכניות פיתוח נהוגות לגשת לנתונים בקבצי CSV כדי ליצור תוכניות איכותיות ויעילות.
 
-## איך לעשות זאת
+## איך לעשות:
 
-לפניכם דוגמאות לקוד ב-TypeScript המפעילות כמה חישובים על קובץ CSV ומייצרות פלט מתאים. הקוד מוצג בתוך קטעי קוד אשר מוקפים בסימון "```".
+#### קריאה של קובץ CSV:
 
-```typescript
-// קבלת הנתונים מקובץ CSV
-const csvData = `
-  Name, Age, Country
-  John, 28, USA
-  Maria, 32, Brazil
-  David, 24, Canada
-`;
+```TypeScript
+import fs from 'fs';
+import csv from 'csv-parser';
 
-// סידור הנתונים לתבנית של מערך בתוך מערך
-const formattedData: any[][] = csvData
-  .trim()
-  .split("\n")
-  .map(row => row.split(","));
-
-// חישוב ממוצע גילו של האנשים בנתונים
-const avgAge = formattedData
-  .slice(1)
-  .reduce((acc, curr) => acc + parseInt(curr[1]), 0) / (formattedData.length - 1);
-
-// פלט: ממוצע גילים = 28
-console.log(`ממוצע גילים = ${avgAge}`);
+fs.createReadStream('file.csv')
+    .pipe(csv())
+    .on('data', (row) => {
+        console.log(row)
+    })
+    .on('end', () => {
+        console.log('CSV file successfully processed.');
+    });
 ```
 
-## מעמקים
+#### כתיבת קובץ CSV:
 
-עבודה עם קבצי CSV באמצעות TypeScript משתלבת בצורה טבעית עם פעולות יסודיות להפעלת קבצים ותיעוד ניתן למציאות כדי להסביר העדפה נוספת בהשתמש בכלי זה עבור הפעלת קבצי CSV.
+```TypeScript
+import fs from 'fs';
+import csvWriter from 'csv-writer';
 
-כמו כן, הקוד שנכתב ב-TypeScript יכול לבדוק את הנתונים המעובדים, כך שתוכלו להיות בטוחים בהגשת פלט מדויק ומסודר.
+const data = [
+    { name: 'John', age: '30' },
+    { name: 'Jane', age: '25' },
+];
 
-## ראו גם
+const writer = csvWriter.createObjectCsvWriter({
+    path: 'file.csv',
+    header: [
+        { id: 'name', title: 'Name' },
+        { id: 'age', title: 'Age' }
+    ]
+});
 
-עבודה עם קבצי CSV בשפת TypeScript היא רק אחד מיישומי השפה המגוונים ומועילים. אם תרצו להתחיל ללמוד על תכנות ב-TypeScript יש לכם כמה מקורות נהדרים להתחיל עם:
+writer.writeRecords(data)
+    .then(() => {
+        console.log('CSV file successfully created.');
+    });
+```
 
-- [מסמכי המדריכים של TypeScript](https://www.typescriptlang.org/docs/home.html)
-- [ספר
+### מילוי נתונים בקובץ CSV:
+
+```TypeScript
+import fs from 'fs';
+import csvWriter from 'csv-writer';
+
+fs.createReadStream('file.csv')
+    .pipe(csv())
+    .on('data', (row) => {
+        const newData = {...row, job: 'Developer'};
+        writer.writeRecords([newData])
+            .then(() => {
+                console.log('New data successfully added to CSV file.');
+            });
+    })
+    .on('end', () => {
+        console.log('CSV file successfully processed.');
+    });
+```
+
+## טיול עמוק:
+
+קבצי CSV נוצרו כדי לאפשר למחשבים לתקשר עם גישות מאחורי הקלעים. בעבר כאשר נתונים נמצאים בגישת מאחורי הקלעים, התוכנה צריכה להיתקל בבעיות קשורות לעברית וגבים בגלל שגישת מאחורי הקלעים לא נותן את השפה בנפרד. כיום, קבצי CSV משמשים ככלי עבור פיתוחתעויהי ואנשי עסקים מכיוון שהם מספקים יעילות ויישומיות.
+
+אלטרנטיבה נפוצה לקבצי CSV הוא שימוש במסדי נתונים, אך לפעמים קבצי CSV יכולים להיות יעילים יותר עבור פרויקטים קטנים שאינם מחייבים מסד נתונים מסובך.
+
+לעתים קרובות, קבצי CSV מתיימרים להיות מסובכים עבור תוכנות פיתוח מורכבות מאשר יישומים פשוטים. במקרה כזה, במקום לטפל בנתונים ישירות בקוד, יש לשקול את שימוש בספריות וכלים נוספים כדי לעבד קבצי CSV בצורה מתאימה יותר. 
+
+## ראה גם:
+
+- [ספריית פיתוח CSV עבור TypeScript](https://www.npmjs.com/package/csv)
+- [כלי כתיבת CSV עבור TypeScript](https://www.npmjs.com/package/csv-writer)

@@ -10,36 +10,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+# Cosa & Perché?
+Convertire una data in una stringa è un'operazione comune nella programmazione, in cui una data viene trasformata in una rappresentazione testuale leggibile per gli utenti. I programmatori fanno questo per facilitare la comunicazione delle informazioni riguardo al tempo e alle date ai loro utenti.
 
-La conversione di una data in una stringa può essere utile quando si lavora con date in un formato specifico o quando si vuole visualizzare una data in un formato più leggibile per gli utenti.
-
-## Come fare
-
-Per convertire una data in una stringa in Ruby puoi utilizzare il metodo `strftime()` della classe `Time` o `Date`. Questi metodi accettano un argomento che rappresenta il formato della stringa di output. Ad esempio:
-
+## Come fare:
 ```Ruby
-today = Time.now
-puts today.strftime("%d/%m/%Y")
+time = Time.now
+puts time.to_s # output: 2021-02-25 17:30:00 +0900
 ```
 
-Questo codice stampa la data corrente in formato giorno/mese/anno.
+```Ruby
+date = Date.today
+puts date.to_s # output: 2021-02-25
+```
 
-## Approfondimento
+## Approfondimento:
+La conversione di una data in una stringa ha origini storiche, poiché le prime lingue di programmazione non avevano un tipo di dato specifico per le date. Oggi, ci sono diverse alternative per questo tipo di operazione, come l'utilizzo di librerie esterne specializzate o l'utilizzo di formati specifici come ISO 8601. L'implementazione di questa conversione dipende dal linguaggio di programmazione utilizzato e dalle esigenze specifiche del progetto.
 
-La classe `Time` rappresenta un orario specifico, mentre `Date` rappresenta una data senza un orario specifico. Il formato della stringa utilizzato nel metodo `strftime()` è basato sulle direttive presenti nella libreria C standard `strftime()`. Queste direttive indicano come la stringa di output dovrà essere formattata in base ai componenti della data, come il giorno, il mese e l'anno. Ad esempio:
-
-| Direttiva | Descrizione      | Esempio          | Output      |
-| :-------- | :--------------- | :--------------- | :---------- |
-| %d        | Giorno del mese  | %d/%m/%Y        | 30/06/2021  |
-| %m        | Mese             | %B %Y           | June 2021   |
-| %Y        | Anno con 4 cifre | %d/%m/%Y        | 30/06/2021  |
-| %b        | Nome del mese    | %d %b %Y        | 30 Jun 2021 |
-
-Puoi combinare diverse direttive per ottenere un formato personalizzato per la tua stringa di output.
-
-## Vedi anche
-
-- [Documentazione di Ruby su Time](https://ruby-doc.org/core-3.0.0/Time.html)
-- [Documentazione di Ruby su Date](https://ruby-doc.org/stdlib-3.0.0/libdoc/date/rdoc/Date.html)
-- [Tabella delle direttive di `strftime()`](http://man7.org/linux/man-pages/man3/strftime.3.html)
+## Vedi anche:
+- https://ruby-doc.org/core-3.0.0/Time.html#method-i-to_s
+- https://ruby-doc.org/stdlib-3.0.0/libdoc/date/rdoc/Date.html#method-i-to_s

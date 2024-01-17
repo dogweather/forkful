@@ -10,75 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-Writing to standard error, also known as stderr, is an essential skill for any programmer. It allows you to display error messages and troubleshoot code, making the debugging process easier and more efficient.
+Writing to standard error in Javascript means sending error messages to the developer's console instead of the regular output destination. Programmers do this to provide a separate and distinct channel for error messages, making it easier to identify and troubleshoot issues in their code.
 
-## How To
+## How to:
 
-To write to standard error in Javascript, we use the `console.error()` method. This method takes in one or more arguments and logs them to the stderr stream. Let's take a look at a simple example:
-
-```Javascript
-console.error("Oops, something went wrong!");
-```
-
-This will result in the following output in the console:
+To write to standard error in Javascript, use the "console.error()" function. This function takes in a string or object as an argument and prints it to the console in red, distinguishing it from regular console logs.
 
 ```
-Oops, something went wrong!
+// Example code
+console.error("Something went wrong!"); // Outputs "Something went wrong!" in red
 ```
 
-We can also pass in multiple arguments to `console.error()` by separating them with commas:
-
-```Javascript
-let num1 = 5;
-let num2 = 0;
-
-console.error("Cannot divide", num1, "by", num2);
-```
-
-The output will be:
+In the following example, an object is passed as an argument and the console prints out the object's properties:
 
 ```
-Cannot divide 5 by 0
+// Example code
+let errorObj = {
+  errorCode: 404,
+  errorMessage: "Page not found"
+};
+console.error(errorObj); // Outputs "{ errorCode: 404, errorMessage: "Page not found" }" in red
 ```
 
-Note that unlike `console.log()`, which writes to standard output or stdout, `console.error()` writes to stderr. This means that the error messages will be displayed with a different color in the console, making them stand out more.
+## Deep Dive:
 
-## Deep Dive
+### Historical Context:
 
-The `console.error()` method can take in any type of data as arguments, including strings, numbers, objects, and arrays. It can also take in template literals, making it a versatile tool for displaying error messages.
+Writing to standard error is a common practice in programming, especially in languages like C and Java. It allows developers to separate error messages from normal output, making debugging and error handling more efficient. In Javascript, this feature was introduced in ES5.
 
-One common use case for writing to stderr is error handling. For example, we can use `console.error()` in a try-catch block to catch and log any errors that occur in our code:
+### Alternatives:
 
-```Javascript
-try {
-  // Some code that may throw an error
-} catch(err) {
-  console.error("An error occurred:", err);
-}
-```
+An alternative to using console.error() is to throw an error using the "throw" keyword. Throwing an error will stop the execution of the code and display the error message in the console. However, this method is usually used for critical errors that require the program to stop running.
 
-This allows us to see the details of the error in the console and helps us troubleshoot the issue.
+### Implementation Details:
 
-Another useful feature of `console.error()` is that it supports string formatting. We can use format specifiers to display the values of variables within our error message:
+Under the hood, console.error() sends the error message to the standard error stream, which is usually associated with the developer's console. However, the exact implementation may differ depending on the browser or environment where the code is run.
 
-```Javascript
-let errorMsg = "%s is not a valid age for %s";
+## See Also:
 
-console.error(errorMsg, 15, "voting");
-```
-
-The output will be:
-
-```
-15 is not a valid age for voting
-```
-
-For a list of all the available format specifiers, you can refer to the [official documentation](https://nodejs.org/api/console.html#console_console_error_data_args).
-
-## See Also
-
-- [Node.js Console documentation](https://nodejs.org/api/console.html)
-- [Debugging with Node.js](https://nodejs.org/en/docs/guides/debugging-getting-started/)
-- [Understanding stderr, stdout, and stdio](https://www.beyondlinux.com/3-ways-to-redirect-error-messages-to-a-file-in-linux/)
+- [console.error() - MDN web docs](https://developer.mozilla.org/en-US/docs/Web/API/Console/error)
+- [Throw statement - MDN web docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/throw)

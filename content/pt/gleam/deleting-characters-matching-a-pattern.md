@@ -1,7 +1,7 @@
 ---
-title:                "Excluindo caracteres que correspondem a um padrão"
-html_title:           "Gleam: Excluindo caracteres que correspondem a um padrão"
-simple_title:         "Excluindo caracteres que correspondem a um padrão"
+title:                "Excluindo caracteres que correspondem a um padrão."
+html_title:           "Gleam: Excluindo caracteres que correspondem a um padrão."
+simple_title:         "Excluindo caracteres que correspondem a um padrão."
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -10,42 +10,22 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Por que Deletar Caracteres Correspondentes a um Padrão no Gleam?
+## O que é e por quê?
+Quando estamos programando, muitas vezes precisamos deletar caracteres específicos de uma string ou de uma lista. Podemos fazer isso manualmente, mas quando lidamos com grandes quantidades de dados, isso pode ser demorado e propenso a erros. É por isso que existe um recurso chamado "deletar caracteres que correspondem a um padrão", que nos permite automatizar esse processo e economizar tempo e esforço.
 
-Você pode encontrar a necessidade de deletar caracteres correspondentes a um padrão em situações em que deseja limpar uma string de caracteres específicos, como espaços em branco ou símbolos indesejados.
+## Como fazer:
+Para deletar caracteres que correspondem a um padrão em Gleam, usamos a função `String.replace` ou `List.filter_map`. Vamos dar uma olhada em um exemplo simples usando a função `String.replace`:
 
-## Como Fazer:
-
-Usando o poderoso recurso de "Pattern Matching" (correspondência de padrão) do Gleam, é fácil e eficiente deletar caracteres correspondentes a um padrão. Veja um exemplo simples abaixo:
-
+```Gleam
+let original = "Gleam é a melhor linguagem de programação!"
+String.replace(original, "melhor", "incrível")
 ```
-let string_com_espacos = "Este é um exemplo com espaços em branco"
+Saída: `Gleam é a incrível linguagem de programação!`
 
-let string_sem_espacos = "Este é um exemplo com espaços em branco"
-|> String.replace(~pattern=" ", "", ~replacement="")
-```
+Podemos ver que a função substituiu a palavra "melhor" por "incrível" na string original.
 
-O código acima usou o `String.replace` para substituir todos os espaços em branco na string com uma string vazia, resultando em "Esteéumexemplocomespaçosembranco" na nova string `string_sem_espacos`.
+## Mergulho profundo:
+Este recurso é amplamente utilizado em expressões regulares, que são sequências de caracteres usadas para buscar e manipular padrões em strings. Além disso, existem outras formas de deletar caracteres que correspondem a um padrão, como usando a função `String.trim` para remover espaços em branco no início e no final de uma string. Na implementação de Gleam, essa função é baseada na biblioteca de expressões regulares do Rust.
 
-Você também pode usar a sintaxe de correspondência de padrão diretamente no `let` para evitar a necessidade de criar uma nova variável:
-
-```
-let nova_string = let "Este é um exemplo com espaços em branco"
-|> String.replace(~pattern=" ", "", ~replacement="")
-
-// "Esteéumexemplocomespaçosembranco"
-```
-
-O mesmo conceito pode ser aplicado a outros padrões, como símbolos ou caracteres especiais. Basta alterar o padrão e o texto de substituição de acordo com a sua necessidade.
-
-## Mergulho Profundo:
-
-A correspondência de padrão é uma técnica poderosa do Gleam que permite a manipulação eficiente de strings. Além de substituir, você também pode usar `String.replace` para remover caracteres correspondentes a um padrão, adicionando mais uma barra vertical `|` após o padrão. Por exemplo, `String.replace(~pattern="a|e|i|o|u", "", ~replacement="")` irá remover todas as vogais de uma string.
-
-Outros recursos úteis do Gleam para manipulação de strings incluem `String.split` e `String.join` para dividir e unir strings usando um separador, e `String.slice` para cortar uma string em uma posição inicial e final específica.
-
-# Veja Também:
-
-- [Documentação Oficial do Gleam](https://gleam.run/)
-- [Tutorial do Gleam para Iniciantes](https://medium.com/@gleamlang/introduction-to-gleam-74f1f08e50fa?source=---------5------------------)
-- [Exemplos de Códigos do Gleam](https://github.com/gleam-lang/gleam/tree/master/examples)
+## Veja também:
+Para saber mais sobre a função `String.replace`, você pode conferir a documentação oficial do Gleam: https://gleam.run/documentation/standard-library#string-functions. Além disso, se você quiser se aprofundar em expressões regulares, pode conferir a documentação do Rust: https://doc.rust-lang.org/std/primitive.str.html#method.trim.

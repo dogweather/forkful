@@ -1,7 +1,7 @@
 ---
-title:                "Å arbeide med json"
-html_title:           "Rust: Å arbeide med json"
-simple_title:         "Å arbeide med json"
+title:                "Å jobbe med json"
+html_title:           "Rust: Å jobbe med json"
+simple_title:         "Å jobbe med json"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Data Formats and Serialization"
@@ -10,68 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+#Hva og Hvorfor?
+Når vi jobber med programmering, er det vanlig å komme over data i JSON-format. JSON står for JavaScript Object Notation og er en måte å strukturere og lagre data på. Det er et populært format for å overføre og lagre data, og derfor er det viktig for utviklere å kunne jobbe med det for å kunne håndtere og manipulere data effektivt.
 
-Hvis du driver med datahåndtering eller webutvikling, er sannsynligheten stor for at du har vært i kontakt med JSON-formatet (JavaScript Object Notation). Det er et populært format for å utveksle data mellom ulike programmer og systemer. Derfor kan det være nyttig å kunne håndtere dette formatet i Rust-programmeringsspråket.
+# Hvordan:
+Når du jobber med Rust, kan du enkelt håndtere JSON-data ved å bruke biblioteket serde_json. Først trenger du å legge til serde_json i prosjektet ditt ved å legge til følgende kode i din Cargo.toml-fil:
 
-## Hvordan
+```
+[dependencies]
+serde_json = "1.0"
+```
 
-Det finnes flere måter å jobbe med JSON i Rust. Den enkleste måten er å bruke et bibliotek som allerede eksisterer, som for eksempel serde_json. Dette biblioteket gjør det enkelt å konvertere mellom JSON og Rust sine egne datastrukturer, ved hjelp av annoteringer i koden.
+Deretter kan du begynne å jobbe med JSON-data ved å bruke serde_json::Value-structen. For å legge til data i et nytt JSON-objekt, kan du bruke serde_json::json!-makroen. For eksempel:
 
-```Rust
-extern crate serde;
-extern crate serde_json;
+```
+let data = serde_json::json!({
+    "navn": "Ole",
+    "alder": 28,
+    "hobbyer": ["fotball", "gaming", "musikk"]
+});
+```
 
-use serde::{Serialize, Deserialize};
+Dette vil generere følgende JSON-objekt:
 
-#[derive(Serialize, Deserialize)]
-struct Person {
-    name: String,
-    age: u8,
-    city: String,
-}
-
-fn main() {
-    // Oppretter et person-objekt
-    let person = Person {
-        name: String::from("Ola"),
-        age: 25,
-        city: String::from("Oslo"),
-    };
-
-    // Konverterer person-objektet til JSON
-    let json = serde_json::to_string(&person).unwrap();
-
-    // Skriver ut JSON-en til konsollen
-    println!("{}", json);
-
-    // Konverterer JSON tilbake til person-objektet
-    let deserialized_person: Person = serde_json::from_str(&json).unwrap();
-
-    // Skriver ut informasjon om personen
-    println!("Navn: {}", deserialized_person.name);
-    println!("Alder: {}", deserialized_person.age);
-    println!("By: {}", deserialized_person.city);
+```
+{
+    "navn": "Ole",
+    "alder": 28,
+    "hobbyer": ["fotball", "gaming", "musikk"]
 }
 ```
 
-Eksempel på utskrift:
+For å hente data fra et JSON-objekt, kan du bruke serde_json::from_str-funksjonen. For eksempel:
 
 ```
-{"name":"Ola","age":25,"city":"Oslo"}
-Navn: Ola
-Alder: 25
-By: Oslo
+let data = r#"{"navn": "Ole", "alder": 28, "hobbyer": ["fotball", "gaming", "musikk"]}"#;
+let verdi: serde_json::Value = serde_json::from_str(data).unwrap();
+println!("Navn: {}", verdi["navn"]); // Printer navnet "Ole" til konsollen
 ```
 
-## Dypdykk
+#Dypdykk:
+JSON-formatet ble først utviklet i 2001, og har siden blitt populært på grunn av sin enkle syntaks og støtte av de fleste programmeringsspråk. Alternativene til å jobbe med JSON-data i Rust inkluderer serde_cbor som støtter det kompakte CBOR-formatet, og rust-json som gir en mer "rust-style" tilnærming til å jobbe med JSON.
 
-Å arbeide med JSON kan være mer komplisert enn bare å konvertere til og fra datastrukturer i Rust. En vanlig problemstilling er å jobbe med store mengder data, for eksempel når man utveksler data mellom ulike API-er. I slike tilfeller kan det være nyttig å bruke en streaming parser, som jsonstream eller rust-jsonstream. Dette gjør det mulig å lese JSON-data bit for bit, uten å måtte lagre hele strukturen i minnet på en gang.
+Etter å ha definert et rotnivå for et JSON-dokument, kan serde_json::Value-structen lagde i nestede kloner etter behov uten å definere nye structs. Dette gjør det enkelt å jobbe med komplekse JSON-data uten å måtte skrive mye kodes.
 
-Et annet aspekt å vurdere når man arbeider med JSON er feilhåndtering. Noen ganger kan det være nyttig å kunne gi mer beskrivende feilmeldinger når noe går galt under konvertering eller parsing av JSON-data. Dette kan oppnås ved å bruke serde_jsons "pretty" funksjonalitet, som gir en mer forståelig utskrift av eventuelle feil.
+#Se også:
+For mer informasjon om å jobbe med JSON-data i Rust, kan du besøke offisiell dokumentasjon for serde_json-biblioteket: https://docs.rs/serde_json/1.0.60/serde_json/
 
-## Se også
-
-- [serde-json](https://github.com/serde-rs/json) - det mest brukte biblioteket for å håndtere JSON i Rust.
-- [jsonstream](https://github.com/cdumay/jsonstream) - en streaming parser for JSON i Rust.
-- [rust-jsonstream](https://github.com/dastrobu/rust-jsonstream) - en annen streaming parser for JSON i Rust.
+Hvis du er interessert i mer informasjon om JSON-formatet generelt, kan du sjekke ut denne artikkelen på Mozilla Developer Network: https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON

@@ -10,36 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ？
+## 何 ＆ なぜ？
 
-テキストファイルを読み取ることは、プログラムの開発やデータ処理の一部を担当する人々にとって重要なスキルです。テキストファイルを読むことで、プログラムに必要なデータや情報を簡単に取得することができます。
+テキストファイルを読み込むとは、プログラマーがファイル内の情報をコンピューターに取り込むことです。プログラマーはこの技術を使用して、例えばデータ処理やプログラムの構成など、多様な目的のためにファイルから必要な情報を取得することができます。
 
-## 方法
+## 方法：
 
-まずはElixirの `File` モジュールを使って、テキストファイルを開きます。
+```Elixir
+File.read("example.txt")
 
-```
-File.read("sample.txt")
-```
-
-テキストファイルの中身をすべて読み込む場合は、 `File.read!/1` を使います。
-
-```
-File.read!("sample.txt")
+#=> {:ok, "ファイルの内容"}
 ```
 
-テキストファイルを1行ずつ読み込みたい場合は、 `File.stream!/1` を使用することができます。
+```Elixir
+IO.binread("example.txt")
 
+#=> "ファイルの内容"
 ```
-File.stream!("sample.txt") |> Stream.each(&IO.puts/1)
-```
 
-## 深堀り
+## 深堀：
 
-Elixirでは、テキストファイルを読み込むことができるだけでなく、パスやサイズなどのファイルに関するさまざまな情報を取得することもできます。また、文字エンコーディングや改行コードなどのオプションを指定することもできます。
+テキストファイルを読み込む方法は、プログラミング言語によって異なりますが、基本的な理念は同じです。大昔はパンチカードやテープなどの物理メディアを使用して情報を読み取っていましたが、現代ではデータをテキストファイルに保存し、プログラムを使用して処理する方法が一般的です。Elixirでは、```File.read/1```と```IO.binread/1```がファイルを読み込むための主な関数です。これらの関数はファイルを開き、その内容をコンピューター内のデータに変換し、プログラムがその情報を利用できるようにします。
 
-## 関連記事
+## 関連情報：
 
-- [Elixirの公式ドキュメント](https://hexdocs.pm/elixir/File.html#read!/1)
-- [テキストファイルの読み書きについてのElixir Forumのディスカッションスレッド](https://elixirforum.com/t/reading-writing-text-files-in-elixir/926)
-- [「プログラミングElixir」の第3章 - テキストファイル操作](https://www.amazon.co.jp/%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0Elixir-%E7%AC%AC3%E7%AB%A0-%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E6%93%8D%E4%BD%9C-Dave-Thomas/dp/4274219153)
+- [Elixir 公式ドキュメント（英語）](https://elixir-lang.org/getting-started/readme.html#reading-files)
+- [Elixir Schoolでのファイル操作の解説（英語）](https://elixirschool.com/ja/lessons/basics/io/#boy)
+- [Elixirと他のプログラミング言語におけるファイル操作の比較（英語）](https://www.freecodecamp.org/news/file-handling-in-elixir-vs-python-vs-ruby/)

@@ -1,7 +1,7 @@
 ---
-title:                "Tworzenie pliku tekstowego"
-html_title:           "PHP: Tworzenie pliku tekstowego"
-simple_title:         "Tworzenie pliku tekstowego"
+title:                "Pisanie pliku tekstowego"
+html_title:           "PHP: Pisanie pliku tekstowego"
+simple_title:         "Pisanie pliku tekstowego"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Files and I/O"
@@ -10,42 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i dlaczego?
 
-Pisanie plików tekstowych jest nieodłączną częścią programowania w PHP. Dzięki nim możemy zapisywać dane, tworzyć pliki konfiguracyjne lub też generować raporty. Jest to również podstawowa umiejętność potrzebna w wielu projektach, dlatego warto poznać tę technikę.
+Tworzenie pliku tekstowego to proces, w którym umieszczamy dane w formie tekstu w pliku na naszym komputerze. Programiści stosują to jako część swojego kodu, ponieważ pozwala to na przechowywanie danych poza programem i ułatwia późniejsze ich wykorzystanie.
 
-## Jak to zrobić
+## Jak to zrobić?
 
-Pisanie plików tekstowych w PHP jest bardzo proste. Wystarczy wykorzystać funkcję `file_put_contents()` z podanym parametrem w postaci ścieżki do pliku oraz zawartości, którą chcemy zapisać.
-
-```PHP
-file_put_contents("plik.txt", "To jest przykładowy tekst");
-```
-
-Jeśli chcemy dopisywać dane do istniejącego pliku, musimy dodać jeszcze trzeci parametr `FILE_APPEND`.
+Możemy użyć funkcji *file_put_contents()* w PHP, aby utworzyć plik tekstowy i wprowadzić do niego dane. Sprawdźmy poniższy przykład:
 
 ```PHP
-file_put_contents("plik.txt", "Kolejny tekst", FILE_APPEND);
+<?php
+$filename = "tekstowy_plik.txt"; // ustalamy nazwę pliku
+$content = "Przykładowy tekst do zapisania w pliku"; // ustawiamy zawartość, którą chcemy zapisać
+
+if(file_put_contents($filename, $content)) { // sprawdzamy, czy plik został utworzony
+  echo "Plik został utworzony i zapisany z powodzeniem.";
+} else {
+  echo "Wystąpił błąd podczas próby utworzenia pliku.";
+}
+?>
 ```
 
-Możemy również wykorzystać funkcję `fopen()` oraz `fwrite()`.
+Po wykonaniu tego kodu, powinniśmy mieć nowy plik tekstowy o nazwie *tekstowy_plik.txt* z zawartością "Przykładowy tekst do zapisania w pliku".
 
-```PHP
-$plik = fopen("plik.txt", "w"); // otwieramy plik w trybie zapisu
-fwrite($plik, "To jest przykładowy tekst"); // zapisujemy dane
-fclose($plik); // zamykamy plik
-```
+## Głębszy zanurzenie
 
-## Deep Dive
+Tworzenie pliku tekstowego nie jest niczym nowym w świecie programowania. Przez wiele lat programiści używali tej techniki do przechowywania danych bezpośrednio na komputerze bez konieczności korzystania z bazy danych. Inną popularną metodą jest wykorzystanie funkcji *fopen()* do otwierania pliku i dopisywania danych do niego z użyciem funkcji *fwrite()*. Zarówno *file_put_contents()* jak i *fopen()* mogą być używane do tworzenia plików tekstowych, jednak pierwsza jest prostszą i bardziej czytelną opcją.
 
-Podczas zapisu pliku warto zwrócić uwagę na kilka istotnych kwestii. Przede wszystkim należy upewnić się, że podana ścieżka jest prawidłowa oraz że plik, do którego chcemy zapisać dane, istnieje. Jeśli plik nie istnieje, zostanie automatycznie utworzony przez funkcję `file_put_contents()`.
+## Zobacz też
 
-W przypadku wykorzystania funkcji `fopen()` i `fwrite()` musimy pamiętać o zamknięciu pliku. Niezamknięty plik może wpłynąć na wydajność naszego kodu, dlatego warto używać funkcji `fclose()`.
-
-Istotnym elementem pisania plików tekstowych jest również obsługa błędów. W przypadku błędów podczas zapisu, należy wyświetlić odpowiedni komunikat oraz ewentualnie podjąć działanie naprawcze.
-
-## Zobacz również
-
-- [Dokumentacja PHP: file_put_contents()](https://www.php.net/manual/pl/function.file-put-contents.php)
-- [Dokumentacja PHP: fopen()](https://www.php.net/manual/pl/function.fopen.php)
-- [Dokumentacja PHP: fwrite()](https://www.php.net/manual/pl/function.fwrite.php)
+Więcej informacji oraz dokładniejsze wyjaśnienie funkcji *file_put_contents()* znajdziesz na oficjalnej dokumentacji PHP: https://www.php.net/manual/en/function.file-put-contents.php

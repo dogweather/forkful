@@ -1,7 +1,7 @@
 ---
-title:                "Wypisywanie wyjścia debugowania"
-html_title:           "Java: Wypisywanie wyjścia debugowania"
-simple_title:         "Wypisywanie wyjścia debugowania"
+title:                "Drukowanie wyników debugowania"
+html_title:           "Java: Drukowanie wyników debugowania"
+simple_title:         "Drukowanie wyników debugowania"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Testing and Debugging"
@@ -10,46 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+# Czym i dlaczego?
 
-*Dlaczego warto wypisywać informacje debugowania w kodzie Java?* Wypisywanie informacji debugowania jest pomocne podczas wychwytywania błędów i śledzenia przepływu danych w trakcie działania programu. Dzięki temu można łatwiej zlokalizować problemy w kodzie i szybciej je naprawić.
+W druku kodów debugowania chodzi o wyświetlanie informacji o przebiegu działania programu w celu znalezienia i naprawienia błędów. Programiści używają go, aby zrozumieć, co się dzieje w kodzie i gdzie mogą pojawić się problemy.
 
-## Jak to zrobić
+# Jak to zrobić:
 
-W Java istnieje kilka sposobów na wypisywanie informacji debugowania. Jednym z nich jest użycie metody `System.out.println()`, która wypisuje podane argumenty na standardowym wyjściu. Przykład użycia:
+Kodowania przykładów i wyjścia przykładów w blokach kodu ```Java ...``` 
 
+Przykład 1:
 ```Java
-String imie = "Katarzyna";
-System.out.println("Witaj, " + imie + "!");
+System.out.println("Debug message: Program starting.");
 ```
-*Wynik:*
+Wyjście:
 ```
-Witaj, Katarzyna!
+Debug message: Program starting.
 ```
-
-Innym sposobem jest użycie klasy `Logger` z pakietu `java.util.logging`. Przykład użycia:
-
+Przykład 2:
 ```Java
-import java.util.logging.Logger;
-
-public class Main {
-    public static void main(String[] args) {
-        Logger log = Logger.getLogger(Main.class.getName());
-        log.info("To jest informacja debugowania.");
-    }
-}
+int x = 5;
+System.out.println("Debug message: x = " + x);
 ```
-*Wynik w konsoli:*
+Wyjście:
 ```
-INFO: To jest informacja debugowania.
+Debug message: x = 5
 ```
 
-## Deep Dive
+# Głębsze zanurzenie:
 
-Wypisywanie informacji debugowania może być uzupełnione o dodatkowe funkcjonalności, takie jak wypisywanie do plików lub filtrowanie poziomów ważności informacji. Dla bardziej zaawansowanych użytkowników polecam przeczytać dokumentację klasy `Logger` oraz inne narzędzia i biblioteki dedykowane do debugowania w Java.
+Kodowanie debugowania ma swoje korzenie w przeszłości, kiedy programiści musieli przeszukiwać długie listy komend lub arkusze papieru, aby znaleźć błędy. Dzisiaj istnieje wiele alternatywnych metod, takich jak debugger, które pozwalają programistom na łatwiejsze znajdowanie błędów. Implementacja polega na wprowadzeniu funkcji wyświetlania informacji w kodzie i kompilowaniu go.
 
-## Zobacz też
+# Zobacz również:
 
-- Dokumentacja klasy [Logger](https://docs.oracle.com/javase/8/docs/api/java/util/logging/Logger.html)
-- [Jak debugować swoją aplikację Java w IntelliJ](https://www.jetbrains.com/help/idea/debugging-your-first-java-application.html)
-- Narzędzia do debugowania w Java, takie jak [Eclipse Debugger](https://www.eclipse.org/eclipse/news/4.6/jdt.php#debugger)
+Jeśli chcesz dowiedzieć się więcej o debuggingu i innych narzędziach dla programistów, polecamy przeczytać poniższe źródła:
+- [10 przydatnych technik debugowania w Javie](https://pl.twinmeta.com/how-to-debug-java-application/)
+- [Wyjaśnienie debugowania w Java z przykładami](https://przeprogramowani.pl/programowanie-wysokiego-poziomu/debugowanie-w-java/)
+- [Oficjalne dokumentacje Oracle o debugowaniu w Javie](https://docs.oracle.com/javase/8/docs/technotes/tools/windows/jdb.html)

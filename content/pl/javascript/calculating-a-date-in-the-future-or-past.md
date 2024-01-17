@@ -10,46 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i dlaczego?
+Obliczanie daty w przyszłości lub przeszłości jest procesem, w którym dzięki użyciu programowania i odpowiednich funkcji, jesteśmy w stanie wyświetlić lub obliczyć daty z przyszłości lub przeszłości. Programiści często tego używają w celu tworzenia dynamicznych aplikacji, takich jak kalendarze, alarmy lub planery.
 
-Obliczanie daty w przyszłości lub przeszłości może być przydatne podczas tworzenia różnych aplikacji, takich jak kalendarze, planery lub prognozy pogody. Poza tym, jest to również interesujące wyzwanie dla programistów, gdyż wymaga ono użycia różnych funkcji i metod w języku Javascript.
-
-## Jak to zrobić
-
-Aby obliczyć datę w przyszłości lub przeszłości w języku Javascript, możemy użyć wbudowanej metody `setDate()` obiektu `Date`. Poniżej przedstawiamy kod, który pokazuje, jak obliczyć datę 7 dni w przód od obecnej daty:
+## Jak to zrobić:
+Możemy wykorzystać funkcję `getDate()` do pobrania aktualnej daty oraz funkcję `setDate()` do ustawienia nowej daty. Poniżej znajduje się przykładowy kod, który oblicza datę 7 dni w przyszłości i wypisuje ją w konsoli.
 
 ```Javascript
-let currentDate = new Date(); // Tworzy obiekt reprezentujący bieżącą datę
-currentDate.setDate(currentDate.getDate() + 7); // Dodaje 7 dni do bieżącej daty
-console.log(currentDate); // Wypisuje datę 7 dni w przód
-```
-
-Powyższy kod wypisze następującą datę: Sat Aug 07 2021 00:00:00 GMT+0200 (Central European Summer Time). Podobnie, aby obliczyć datę w przeszłości, możemy użyć metody `setDate()` z ujemną wartością. Na przykład, jeśli chcemy obliczyć datę 3 dni wstecz, oto jak będzie wyglądał kod:
-
-```Javascript
-let currentDate = new Date();
-currentDate.setDate(currentDate.getDate() - 3);
+const currentDate = new Date();
+currentDate.setDate(currentDate.getDate() + 7);
 console.log(currentDate);
 ```
 
-Kod ten wypisze: Wed Jul 28 2021 00:00:00 GMT+0200 (Central European Summer Time). Jak widać, mamy wiele możliwości manipulowania datami w Javascript, dzięki czemu możemy dostosować je do naszych potrzeb.
+Output: **Tue Mar 30 2021 10:45:56 GMT+0200 (Central European Summer Time)**
 
-## Głębsze zagłębienie
+Możemy także użyć biblioteki takiej jak Moment.js, która posiada wiele funkcji do manipulowania datami w prostszy sposób. Przykładowy kod wykorzystujący tę bibliotekę wyglądałby następująco:
 
-Język Javascript posiada wiele wbudowanych funkcji i metod, które ułatwiają manipulowanie datami. Oto kilka przydatnych funkcji, które mogą się przydać podczas obliczania dat w przyszłości lub przeszłości:
+```Javascript
+const currentDate = moment();
+const futureDate = currentDate.add(7, 'days').format("DD/MM/YYYY");
+console.log(futureDate);
+```
 
-- `getFullYear()` - zwraca rok dla danej daty
-- `getMonth()` - zwraca numer miesiąca (licząc od 0) dla danej daty
-- `getDate()` - zwraca dzień miesiąca dla danej daty
-- `getDay()` - zwraca dzień tygodnia dla danej daty (licząc od 0)
-- `getHours()` - zwraca godzinę dla danej daty
-- `getMinutes()` - zwraca minuty dla danej daty
-- `getSeconds()` - zwraca sekundy dla danej daty
+Output: **30/03/2021**
 
-Wszystkie te funkcje i wiele innych mogą być użyte w połączeniu z metodą `setDate()` do dokładniejszego obliczania dat.
+## Głębsza analiza:
+Obliczanie daty w przyszłości lub przeszłości jest możliwe dzięki tzw. czasowi UNIX-owemu, który jest używany w systemach operacyjnych i oparty jest na liczbie sekund od 1 stycznia 1970 roku. Istnieje również wiele alternatywnych bibliotek i funkcji, które umożliwiają obliczanie dat, np. date-fns czy Luxon. Ważne jest również uwzględnienie stref czasowych i innych czynników, które mogą wpłynąć na obliczenie dokładnej daty.
 
-## Zobacz również
-
-- [Dokumentacja języka Javascript](https://developer.mozilla.org/pl/docs/Web/JavaScript)
-- [Wprowadzenie do obiektu Date w Javascript](https://www.w3schools.com/js/js_dates.asp)
-- [Praktyczne zastosowania obiektu Date w Javascript](https://javascript.plainenglish.io/practical-uses-of-date-object-in-javascript-ff86d61bd611)
+## Zobacz również:
+- [MDN Web Docs - Object Date](https://developer.mozilla.org/pl/docs/Web/JavaScript/Referencje/Obiekty/Date)
+- [Moment.js - dokumentacja](https://momentjs.com/docs/)
+- [date-fns - dokumentacja](https://date-fns.org/docs/Getting-Started)
+- [Luxon - dokumentacja](https://moment.github.io/luxon/index.html)

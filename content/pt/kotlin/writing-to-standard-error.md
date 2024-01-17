@@ -1,7 +1,7 @@
 ---
-title:                "Escrevendo para o erro padrão"
-html_title:           "Kotlin: Escrevendo para o erro padrão"
-simple_title:         "Escrevendo para o erro padrão"
+title:                "Escrevendo no erro padrão"
+html_title:           "Kotlin: Escrevendo no erro padrão"
+simple_title:         "Escrevendo no erro padrão"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Files and I/O"
@@ -10,28 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
-Provavelmente você já se deparou com um código que precisa mostrar mensagens de erro ou de depuração ao usuário. Ao invés de exibir essas mensagens no console ou em uma interface gráfica, uma boa prática é escrevê-las diretamente no "standard error" (erro padrão). Isso permite que as mensagens sejam facilmente identificadas e tratadas em situações específicas.
+## O que e por que?
 
-## Como Fazer
-Escrever no "standard error" em Kotlin é bastante simples. Basta utilizar a propriedade "err" do objeto System. Por exemplo:
+Escrever para o erro padrão, também conhecido como stderr, é quando os programadores optam por enviar mensagens de erro para uma saída separada em vez da saída padrão. Isso é feito para distinguir mensagens de erro de mensagens de saída, tornando mais fácil para os usuários identificarem e corrigirem problemas em seus códigos.
 
-```Kotlin
-System.err.println("Erro ao carregar o arquivo!")
-```
-
-O código acima irá imprimir a mensagem de erro no "standard error", que pode ser acessado por meio do console ou em outros locais que suportem a exibição de mensagens de erro.
-
-Se você estiver utilizando o framework de teste JUnit, também pode ser útil escrever no "standard error" durante a execução dos testes, para fornecer informações adicionais para debug:
+## Como fazer:
 
 ```Kotlin
-err.println("Teste falhou na linha ${err.stackTrace[0].lineNumber}.")
+fun main() {
+    System.err.println("Este é um exemplo de mensagem de erro")
+}
 ```
 
-## Mergulho Profundo
-Quando utilizamos a função "println()" no Kotlin, ela escreve a mensagem no "standard output" (saída padrão). Porém, se estivermos lidando com erros, é mais adequado utilizar o "standard error" para escrever as mensagens. Isso pode ser feito utilizando a função "err.println()" como mostrado nos exemplos acima.
+Saída:
+```
+Este é um exemplo de mensagem de erro
+```
 
-Outra diferença importante é que o "standard output" é um fluxo de saída padrão e pode ser redirecionado para outros lugares, como um arquivo de log ou mesmo um outro fluxo de entrada. Já o "standard error" é um fluxo dedicado às mensagens de erro e sempre será exibido no console.
+## Profundando um pouco mais:
 
-## Veja Também
-- [Documentação oficial do Kotlin sobre o objeto System](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-output-stream/)
+No passado, mensagens de erro costumavam ser enviadas para a saída padrão, o que tornava mais difícil para os usuários encontrarem e corrigirem problemas em seus códigos. Felizmente, usar a saída padrão do sistema operacional para mensagens de erro foi abandonado em favor do stderr. Além disso, existem alternativas para a escrita para o stderr, como gravar em um arquivo de log.
+
+Além disso, a implementação da escrita para o stderr depende do sistema operacional e da linguagem de programação utilizada. Por exemplo, em Kotlin, podemos usar o objeto System.err para acessar o stderr enquanto em outras linguagens, como C++, podemos usar a função std::cerr.
+
+## Veja também:
+
+- [Documentação do Kotlin para System.err](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-input-stream-writer/system.err.html)
+- [Artigo sobre a importância de distinguir mensagens de erro](https://www.oreilly.com/library/view/linux-system-programming/0596009585/re45.html)
+- [Exemplos de uso do System.err em C++](https://www.geeksforgeeks.org/stderr-stderr-stderr-stderr-stderr-ctypes/)

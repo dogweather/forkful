@@ -10,46 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i dlaczego?
 
-Jeśli potrzebujesz szybkiego sposobu na pobieranie stron internetowych za pomocą wiersza poleceń, to Fish Shell jest dla Ciebie. Jest to potężne narzędzie, które umożliwia łatwe pobieranie zawartości stron internetowych bez konieczności korzystania z przeglądarki.
+Pobieranie stron internetowych to proces, w którym program pobiera zawartość strony internetowej z sieci i zapisuje ją na lokalnym komputerze. Programiści używają tego narzędzia, aby pobierać informacje z różnych stron internetowych i wykorzystywać je do tworzenia aplikacji lub analizowania danych.
 
-## Jak to zrobić
+## Jak to zrobić:
 
-### 1. Instalacja Fish Shell
-
-Pierwszym krokiem jest zainstalowanie Fish Shell na swoim komputerze. Możesz to zrobić poprzez menedżer pakietów lub pobranie pliku binarnego ze strony https://fishshell.com/. Po zainstalowaniu, upewnij się, że Fish Shell jest wybranym domyślnym wierszem poleceń.
-
-### 2. Używanie poleceń w Fish Shell
-
-Fish Shell ma wiele wbudowanych poleceń, które ułatwiają pobieranie stron internetowych. Możesz użyć komendy ```curl```, aby pobrać zawartość strony i zapisać ją w pliku tekstowym, na przykład:
+```Fish Shell``` oferuje wiele narzędzi, które ułatwiają pobieranie stron internetowych. Jednym z najpopularniejszych jest ```curl```, który pozwala na wykonanie żądania HTTP i pobranie zawartości strony internetowej. Można to zrobić w następujący sposób:
 
 ```
-curl https://www.example.com > example.txt
+curl "https://www.example.com"
 ```
+Następnie ```curl``` wyświetli zawartość strony internetowej w konsoli.
 
-Możesz również użyć komendy ```wget```, która oferuje więcej opcji, takich jak pobieranie całych witryn z podłączonymi plikami, na przykład:
+## Dogłębna analiza:
 
-```
-wget --mirror -p --convert-links https://www.example.com
-```
+Pobieranie stron internetowych jest powszechnie używaną techniką w programowaniu. Dawniej programiści często korzystali z parsowania HTML, a dziś używają różnych narzędzi takich jak ```curl```, biblioteki do języków programowania lub API. Dzięki temu możliwe jest automatyczne pobieranie i analizowanie dużych zbiorów danych w celu wykorzystania ich np. w analizie trendów czy tworzeniu aplikacji internetowych.
 
-### 3. Przetwarzanie pobranej zawartości
+## Zobacz też:
 
-Fish Shell pozwala również na łatwe przetwarzanie pobranej zawartości. Możesz użyć komendy ```grep```, aby znaleźć konkretne wyrażenia w pobranej stronie, na przykład:
-
-```
-grep "example" example.txt
-```
-
-Możesz również przetworzyć stronę za pomocą poleceń awk, sed lub perl.
-
-## Głębszy zanurzenie
-
-Fish Shell ma wiele innych przydatnych funkcji związanych z pobieraniem stron internetowych. Możesz na przykład pobierać tylko nagłówki stron przy użyciu komendy ```head```, sprawdzać status strony przy użyciu komendy ```curl```, lub pobierać pliki zabezpieczające (np. certyfikaty SSL) przy użyciu komendy ```openssl```. Możliwości są nieograniczone, a wszystkie te komendy są łatwe w użyciu w Fish Shell.
-
-## Zobacz również
-
-- [Dokumentacja Fish Shell](https://fishshell.com/docs/current/)
-- [Porównanie polesień w Fish Shell](https://fishshell.com/docs/current/tutorial.html#tutorial-cmd-compare)
-- [Podstawowe komendy w Fish Shell](https://fishshell.com/docs/current/tutorial.html#tutorial-cmds)
+- [Dokumentacja curl](https://curl.se/docs/)
+- [Oficjalna strona języka Fish Shell](https://fishshell.com)
+- [Biblioteka requests dla języka python](https://requests.readthedocs.io/en/master/)

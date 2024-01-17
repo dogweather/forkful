@@ -10,52 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hva & Hvorfor?
+Printing debug output er en vanlig praksis blant programmere for å spore og fikse feil under utvikling av et program. Dette innebærer å skrive ut informasjon om variabler, progresjon av koden og eventuelle feilmeldinger.
 
-Det kan være mange fordeler ved å skrive ut debug-utdata i C++. Det kan hjelpe deg med å finne feil i koden din og finjustere ytelsen på programmet. Det kan også gi deg en bedre forståelse av hvordan koden din fungerer og hvordan ulike variabler og metoder samhandler.
+Det å printe debug output hjelper programmere med å finne og løse feil raskere, og sikrer at programmet fungerer som forventet.
 
-## Hvordan gjøre det
-
-For å skrive ut debug-utdata i C++, kan du bruke funksjonen `cout` i `iostream` biblioteket. Her er et eksempel på hvordan du kan skrive ut en variabel `x`:
-
-```C++
-#include <iostream>
-using namespace std;
-
-int main() {
-    int x = 5;
-    cout << "x = " << x << endl;
-    return 0;
-}
-```
-
-Dette vil skrive ut "x = 5" i terminalen når du kjører programmet ditt. Du kan også skrive ut mer kompleks utdata som for eksempel en liste med elementer:
+# Hvordan å:
+For å printe debug output i C++, kan du bruke funksjonen `cout` fra standardbiblioteket `iostream`. Her er et eksempel på hvordan du kan printe verdien av variabelen `x`:
 
 ```C++
-#include <iostream>
-using namespace std;
-
-int main() {
-    int numbers[] = {1, 2, 3, 4, 5};
-    for (int i = 0; i < 5; i++) {
-        cout << numbers[i] << " ";
-    }
-    return 0;
-}
+int x = 5;
+cout << "Verdien av x er: " << x << endl;
 ```
 
-Dette vil skrive ut "1 2 3 4 5" når du kjører programmet ditt.
+Dette vil gi følgende output:
+```
+Verdien av x er: 5
+```
 
-## Dypdykk
+Du kan også bruke syntaksen `printf` fra C, men dette er ikke anbefalt i moderne C++.
 
-Hvis du ønsker å skrive ut debug-utdata for å få en dypere forståelse av koden din, kan du også legge til ekstra informasjon i utdataen din. For eksempel kan du skrive ut verdien av en variabel for hver iterasjon av en løkke for å se hvordan verdien endres. Dette kan være nyttig for å finne feil i koden eller for å forstå hvordan noe fungerer.
+# Dypdykk:
+Det å printe debug output har vært en vanlig praksis siden begynnelsen av programmering. Før i tiden, måtte programmere bruke devices som printere eller monitorer for å se debug output. Nå kan vi enkelt få tilgang til denne informasjonen gjennom konsoll output.
 
-En annen nyttig teknikk er å bruke `assert` funksjonen for å sjekke at en antagelse i koden din er sann. Hvis du antar at en variabel aldri vil være negativ, kan du legge til en `assert` statement for å sjekke at dette er tilfelle. Hvis statementen ikke blir oppfylt, vil programmet ditt avslutte og gi deg en feilmelding som kan hjelpe deg med å finne og løse feilen din.
+Noen alternativer til å printe debug output inkluderer bruk av debugging verktøy som GDB og Valgrind, eller å bruke en logging framework som log4cpp. Disse alternativene kan være mer omfattende og krever mer kunnskap for å bruke effektivt.
 
-## Se også
+Når det kommer til implementasjon, er det viktig å ikke ha for mye debug output i produksjonskoden. Dette kan skade ytelsen til programmet og gjøre debugging vanskeligere.
 
-Her er noen nyttige lenker for å lære mer om å skrive ut debug-utdata i C++:
-
-- [C++ Tutorial - Debug Output](https://www.learncpp.com/cpp-tutorial/todays-lesson-output-debugging/)
-- [The Art of Debugging With GDB, DDD, and Eclipse](https://www.youtube.com/watch?v=X1jWe5rOu3g)
-- [Debugging Your C++ Program Using GDB](https://www.tutorialsteacher.com/cpp/cpp-debugging-with-gdb)
+# Se også:
+- [C++ iostream](https://en.cppreference.com/w/cpp/header/iostream)
+- [GDB - GNU Debugger](https://www.gnu.org/software/gdb/)
+- [Valgrind](http://valgrind.org/)
+- [log4cpp](https://github.com/richelbilderbeek/log4cpp)

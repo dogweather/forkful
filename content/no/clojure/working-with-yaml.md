@@ -1,7 +1,7 @@
 ---
-title:                "Jobbe med YAML"
-html_title:           "Clojure: Jobbe med YAML"
-simple_title:         "Jobbe med YAML"
+title:                "Arbeid med yaml"
+html_title:           "Clojure: Arbeid med yaml"
+simple_title:         "Arbeid med yaml"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Data Formats and Serialization"
@@ -10,42 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hva & Hvorfor?
+Working with YAML is a way to easily store and transfer data in a structured format. Programmers often use YAML for configuration files or data serialization between different systems.
 
-Hvis du jobber med datastrukturer og ønsker å ha en enkel og lesbar måte å lagre og dele data på, så er YAML et flott valg. Med YAML kan du enkelt organisere, strukturere og manipulere data på en intuitiv måte.
-
-## Hvordan Du Gjør Det
+# Hvordan:
+Koding eksempler og eksempeloutput innenfor ```Clojure...``` kodeblokker.
 
 ```Clojure
-(ns yaml-demo.core
-  (:require [clojure-yaml.core :as yaml]))
+;; Definere en map:
+(def test {:navn "Alice"
+           :alder 25
+           :hobbyer ["fotografering" "reise" "matlaging"]})
 
-;; Lesing av YAML-fil
-(def data (yaml/read-yaml "data.yml"))
+;; Skrive til YAML fil:
+(require '[clojure.data.yaml :as yaml])
+(binding [yaml/*dump-tags* false]
+  (yaml/spit "test.yaml" test))
 
-;; Skrive YAML-fil
-(yaml/spit-yaml "resultat.yml" 
-  {"navn" "Eirik", "alder" 25, "hobbyer" ["programmering" "musikk"]})
+;; Les fra YAML fil:
+(yaml/read-str "test.yaml")
 
-;; Konvertere Clojure datastrukturer til YAML
-(yaml/generate-yaml
-  {"navn" "Lise", "bosted" "Oslo", "hobby" "fotografi"})
-
-;; Resultat:
-;; navn: Lise
-;; bosted: Oslo
-;; hobby: fotografi 
-
+;; Output:
+{:navn "Alice"
+ :alder 25
+ :hobbyer ["fotografering" "reise" "matlaging"]}
 ```
 
-## Dypdykk
+# Dypt dykk:
+YAML ble utviklet i 2001 og står for "YAML Ain't Markup Language". Det er et enkelt og leselig dataformat, basert på avfestede datamaskinrepresentasjoner av typet objekter og lister. Alternativer til YAML inkluderer JSON og XML. I Clojure brukes YAML for å representere java objekter og datastrukturer i en leselig format.
 
-YAML står for "YAML Ain't Markup Language" og ble utviklet på begynnelsen av 2000-tallet for å gi et enkelt og øyevennlig alternativ til XML og JSON. YAML har en tydelig og intuitiv syntaks som er inspirert av datamodelleringsspråket JSON.
-
-YAML støtter også forskjellige datastrukturer som lister, maps og sets, og det er mulig å inkludere referanser og innebygde datastrukturer. Med YAML kan du også kommentere koden din, noe som gjør det enkelt å dokumentere datastrukturen din.
-
-## Se Også
-
-- [Offisiell YAML-hjemmeside](https://yaml.org/)
-- [YAML-dokumentasjon i Clojure](https://github.com/clj-commons/clojure-yaml)
-- [En sammenligning mellom YAML, JSON og XML](https://www.tutorialspoint.com/yaml/yaml_comparison.htm)
+# Se også:
+- [Clojure YAML bibliotek](https://github.com/yogthos/yaml)
+- [Offisielt YAML nettsted](https://yaml.org/)
+- [YAML syntax guide](https://learnxinyminutes.com/docs/yaml/)

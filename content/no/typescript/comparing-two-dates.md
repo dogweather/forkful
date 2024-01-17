@@ -10,37 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hva & Hvorfor?
+Sammenligning av to datoer er en vanlig oppgave for programmerere når de arbeider med å håndtere datoer og tidsstempel i sine applikasjoner. Dette er fordi det er viktig å kunne sammenligne datoer for å kunne gjøre beslutninger basert på ulike tidsrammer eller for å sortere og filtrere data basert på dato.
 
-Mange ganger i programmering må vi sammenligne to datoer for å avgjøre om en dato kommer før, etter eller på samme tid som en annen. Dette kan være nyttig når man for eksempel ønsker å filtrere data eller sortere det i kronologisk rekkefølge. Med TypeScript kan vi enkelt sammenligne datoer ved hjelp av innebygde funksjoner og metoder.
-
-## Hvordan
-
-For å sammenligne to datoer i TypeScript, kan vi bruke den innebygde Date-klassen. Vi kan opprette to Date-objekter og deretter bruke metoden `.getTime()` for å få en timestamp som vi kan sammenligne. La oss se på et eksempel:
+## Hvordan:
+TypeScript har innebygde funksjoner for å sammenligne datoer og tidsstempel. Her er et eksempel på hvordan du kan sammenligne to datoer og få ut et resultat basert på sammenligningen:
 
 ```TypeScript
-const birthday = new Date(2000, 5, 10);
-const currentDate = new Date();
+let currentDate = new Date(); //Opprettelse av en variabel for nåværende dato
+let futureDate = new Date('2021-12-31'); //Opprettelse av en variabel for fremtidig dato
 
-if (birthday.getTime() > currentDate.getTime()) {
-  console.log("Birthday has not happened yet");
-} else if (birthday.getTime() < currentDate.getTime()) {
-  console.log("Birthday has already passed");
+if (currentDate < futureDate) { //Sjekker om nåværende dato er før fremtidig dato
+    console.log('Nåværende dato er før fremtidig dato'); //Printer ut en melding hvis betingelsen er oppfylt
 } else {
-  console.log("Today is the birthday!");
+    console.log('Nåværende dato er etter fremtidig dato'); //Printer ut en melding hvis betingelsen ikke er oppfylt
 }
 ```
+Dette vil gi følgende output:
+```
+Nåværende dato er før fremtidig dato
+```
 
-I dette eksempelet oppretter vi et Date-objekt for en fødselsdag i 2000 (10. juni) og et Date-objekt for dagens dato. Vi sammenligner deretter timestampene til disse to datoene ved hjelp av `.getTime()`-metoden. Hvis fødselsdagen ligger etter dagens dato, betyr det at den ikke har skjedd ennå. Hvis fødselsdagen ligger før dagens dato, har den allerede passert. Hvis timestampene er like, betyr det at det er fødselsdagen i dag.
+## Dypdykk:
+Sammenligning av datoer og tidsstempel har vært en viktig del av dataprogrammering siden begynnelsen av datamaskiner. Historisk sett har dette vært en kompleks oppgave på grunn av forskjellige måter å representere dato og tid på. En alternativ måte å sammenligne datoer på er ved bruk av timestamp, som er et nummer som representerer antall millisekunder siden 1. januar 1970. Det er også viktig å være oppmerksom på at når man sammenligner datoer, sammenlignes de ofte på nøyaktig samme tidspunkt, noe som ikke alltid er ønskelig. Derfor kan det være nyttig å bruke funksjoner som ```setHours()``` og ```setMinutes()``` for å justere datoer til ønsket tidspunkt før sammenligning.
 
-## Deep Dive
-
-I tillegg til `.getTime()`-metoden, kan vi også bruke andre innebygde metoder og operatører for å sammenligne datoer i TypeScript. Noen nyttige er `.getFullYear()`, `.getMonth()` og `.getDate()` for å få spesifikke deler av en dato. I tillegg kan vi bruke operatorer som `>`, `<` og `===` for å sammenligne datoene direkte, uten å bruke `.getTime()`-metoden.
-
-Det er også viktig å merke seg at datoer kan være litt feilbarlige på grunn av forskjellige tids soner og formater. Det kan være lurt å utforske forskjellige biblioteker og pakker som kan hjelpe med å normalisere datoer og håndtere ulike tids soner.
-
-## Se også
-
-- [TypeScript dokumentasjon](https://www.typescriptlang.org/docs/)
-- [Date-klassen i TypeScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [Moment.js - library for working with dates in JavaScript](https://momentjs.com/)
+## Se også:
+- [JavaScript Date object](https://www.w3schools.com/jsref/jsref_obj_date.asp)
+- [Comparing dates in TypeScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/compare)

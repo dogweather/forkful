@@ -1,7 +1,7 @@
 ---
-title:                "디버그 출력하기"
-html_title:           "Elixir: 디버그 출력하기"
-simple_title:         "디버그 출력하기"
+title:                "디버그 출력 프린팅"
+html_title:           "Elixir: 디버그 출력 프린팅"
+simple_title:         "디버그 출력 프린팅"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Testing and Debugging"
@@ -10,72 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+## 무엇 & 왜?
+디버그 출력을 프로그래머들이 하는 이유는 코드의 실행 중 어떤 값이 어떻게 변경되고 있는지 확인할 수 있기 때문입니다. 이는 버그를 찾는 데 도움이 되며, 코드를 디버깅하고 수정하는 데 도움이 됩니다.
 
-디버그 출력을 기록하는 것이 왜 중요한지 궁금하신가요? 좋은 질문이에요! 디버깅은 소프트웨어 개발 과정에서 가장 중요한 단계 중 하나입니다. 디버그 출력은 코드가 어떤식으로 실행되는지를 추적하고 버그를 찾는데 도움을 주며, 문제가 발생하는 부분을 이해하는데 큰 도움이 됩니다.
-
-## 어떻게
-
-디버그 출력을 기록하는 방법은 간단합니다. 우선 디버그를 원하는 줄에 `IO.inspect` 함수를 호출합니다. 이 함수는 원하는 값 또는 변수를 인자로 받습니다. 예를 들어, 만약 변수 `number`의 값을 확인하고 싶다면 `IO.inspect(number)`와 같이 작성하면 됩니다.
-
-```Elixir
-number = 42
-IO.inspect(number)
-
-# 출력:
-# 42
+## 방법:
+디버그 출력을 하기 위해선, 코드 내에서 **IO.inspect** 함수를 사용하면 됩니다. 다음은 코드에서 IO.inspect 함수를 이용해 디버그 출력을 하는 간단한 예시입니다:
+```elixir
+# 코드 예시
+x = 42
+IO.inspect(x)
+```
+**IO.inspect** 함수는 전달받은 값을 콘솔에 출력해줍니다. 위의 예시 코드를 실행하면, 다음과 같이 콘솔에 출력됩니다:
+```elixir
+# 출력 예시
+42
 ```
 
-만약 여러 변수의 값을 확인하고 싶다면 `IO.inspect` 함수를 여러번 호출하면 됩니다.
+## 깊게 파고들기:
+디버그 출력의 역사적 배경은 아주 오래전부터 있는 것은 아니지만, 최근에 프로그래밍 언어와 개발 도구에서 더 많이 사용되고 있습니다. 다른 디버깅 방법으로는 디버거를 사용하는 것이 있지만, 이는 코드를 멈추고 변수의 값을 살펴보는 것이 아니기 때문에 디버그 출력은 여전히 유용합니다. 디버그 출력을 할 때 생각해야 할 점은, 실행 중인 코드에서도 이를 사용하면 성능에 영향을 줄 수 있다는 것입니다.
 
-```Elixir
-number = 42
-name = "Elixir"
-IO.inspect(number)
-IO.inspect(name)
-
-# 출력:
-# 42
-# "Elixir"
-```
-
-디버그 출력을 포함하는 코드 블록 안에서도 사용할 수 있습니다.
-
-```Elixir
-IO.inspect("This is debug output")
-
-# 출력:
-# "This is debug output"
-```
-
-## 딥다이브
-
-디버그 출력은 `IO.puts` 함수와 달리 실행 순서를 변경하지 않습니다. 따라서 디버그 출력 코드를 포함하여도 코드의 동작이 변하지 않습니다. 그리고 `IO.inspect` 함수는 체인 형식으로 사용할 수 있습니다. 이는 여러 변수를 한번에 확인할 수 있게 해줍니다.
-
-```Elixir
-number = 42
-IO.inspect(number)
-      |> IO.inspect(:atom)
-      |> IO.inspect("Elixir")
-
-# 출력:
-# 42
-# :atom
-# "Elixir"
-```
-
-또한, `IO.inspect` 함수는 두 개의 매개변수를 받을 수도 있습니다. 첫번째 값은 일반적으로 변수이며, 두번째 값은 디버그 출력에 대한 옵션입니다. 예를 들어, `IO.inspect(number, label: "Number:")`와 같이 사용하면 디버그 출력의 앞에 "Number:"라는 레이블이 추가됩니다. 이 옵션은 변수의 이름이나 의미를 명확하게 표시하고 싶을때 유용합니다.
-
-## 참고
-
-- [Elixir 공식 문서](https://hexdocs.pm/elixir/IO.html#inspect/2)
-- [Learn You Some Erlang for Great Good!](https://learnyousomeerlang.com/errors-and-exceptions#debugging-and-tracing)
-- [Codecademy](https://www.codecademy.com/learn/learn-elixir/modules/learn-elixir-introduction-to-elixir/cheatsheet)
-
-그리고 항상 디버그 출력을 자주 사용해보고 실험해보는 것이 가장 좋은 방법입니다. 디버그 출력은 개발 과정에서 가장 소중한 도구 중 하나이며, 매우 유용하게 사용할 수 있습니다.
-
-## 더 알아보기
-
-- [Elixir 디버깅을 위한 디버그 출력 활용하기](https://elixirschool.com/ko/lessons/basics/debugging-with-dirty-output/)
-- [Elixir 디버깅 팁과 트릭들](https://elixirjapan.org/newsletter/2016/04/15/debugging-elixir-by-jose-valim)
-- [디버그 테크닉: IO.inspect 맞춤형 사용하기](https://andrealeopardi.com/posts/custom_io_inspect_in_elixir/)
+## 관련 자료:
+- Elixir 공식 문서: https://elixir-lang.org/getting-started/debugging.html#inspect
+- Elixir forum의 관련 질문과 답변: https://elixirforum.com/t/help-understanding-ex-output/8553

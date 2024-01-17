@@ -1,7 +1,7 @@
 ---
-title:                "Testien kirjoittaminen"
-html_title:           "C: Testien kirjoittaminen"
-simple_title:         "Testien kirjoittaminen"
+title:                "Ohjelmointitestejä kirjoittaminen"
+html_title:           "C: Ohjelmointitestejä kirjoittaminen"
+simple_title:         "Ohjelmointitestejä kirjoittaminen"
 programming_language: "C"
 category:             "C"
 tag:                  "Testing and Debugging"
@@ -10,38 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä ja miksi?
+Testien kirjoittaminen on kun ohjelmistokehittäjä luo koodia testatakseen ohjelmansa toimintaa. Testien avulla voidaan varmistua siitä, että koodi toimii odotetulla tavalla ja estetään mahdollisten virheiden syntymistä.
 
-Testien kirjoittaminen on tärkeä osa ohjelmointia, koska se auttaa varmistamaan, että koodi toimii odotetulla tavalla ja estää mahdollisten bugien pääsyn tuotantoympäristöön.
-
-## Miten aloittaa
-
-Testien kirjoittaminen C-kielellä on yksinkertaista. Alla on esimerkki yksinkertaisesta funktiosta, joka tarkistaa, onko annettu luku parillinen vai ei:
-
+## Kuinka tehdä:
+Seuraavassa on esimerkki tapa luoda testi C-kielellä:
 ```C
 #include <stdio.h>
 
-int main()
-{
-    int num = 6;
-    if(num % 2 == 0)
-    {
-        printf("Luku %d on parillinen", num);
-    }
-    else
-    {
-        printf("Luku %d on pariton", num);
-    }
+int add(int a, int b) {
+    return a + b;
+}
 
+int main() {
+    int result = add(5, 3);
+    if(result == 8) {
+        printf("Testi läpäisty!");
+    }
+    else {
+        printf("Testi epäonnistui!");
+    }
     return 0;
 }
 ```
-Tämän koodin tuloste olisi "Luku 6 on parillinen". Voit myös muokata tätä esimerkkiä omien funktioidesi testaamiseen.
+Tässä esimerkissä luodaan yksinkertainen testi funktiolle add, joka laskee kahden luvun summan. Testissä tarkistetaan, että add-funktio palauttaa odotetun tuloksen. Näin testi varmistaa, että funktio toimii oikein.
 
-## Syvempi sukellus
-Testien kirjoittamisessa on tärkeää muistaa, että niiden on oltava yksinkertaisia ja selkeitä. Testien tarkoituksena on auttaa sinua vahvistamaan, että koodisi toimii odotetulla tavalla eikä löydä virheitä. Hyödyt testien kirjoittamisesta ovat suurempia kuin mahdolliset haitat, kuten lisätyö ja aika. Muista myös käyttää hyviä testaustekniikoita, kuten yksikkötestausta ja jatkuvaa integrointia, parhaan mahdollisen tuloksen saavuttamiseksi.
+## Syvempi sukellus:
+Testien kirjoittaminen on tärkeä osa ohjelmistokehitystä, sillä se auttaa varmistamaan koodin laadun ja vähentämään virheiden määrää. Nykypäivänä on myös olemassa erilaisia testauksen työkaluja, kuten järjestelmätestaus ja yksikkötestaus, jotka auttavat kehittäjää testaamaan ohjelmansa toimintaa. Testien kirjoittaminen on myös osa hyvää ohjelmointikäytäntöä ja auttaa kehittäjää ymmärtämään paremmin omaa koodiaan.
 
-## Katso myös
-- [C-kielen virallinen dokumentaatio](https://en.cppreference.com/w/c)
-- [Testien kirjoittaminen C-kielellä käyttäen Unity-testikirjastoa](https://medium.com/@rushman/test-driven-development-in-c-with-the-unity-test-framework-832d3cd0e107)
-- [Jatkuvan integroinnin perusteet C-projekteissa](https://medium.com/@alexandrechoisy/getting-started-with-continuous-integration-for-a-c-project-887a1758badc)
+## Katso myös:
+- [Wikipedia-artikkeli testaamisesta](https://fi.wikipedia.org/wiki/Testaaminen)
+- [An introduction to testdriven development in C](https://developer.ibm.com/technologies/systems/articles/au-cintrotesting/)
+- [Testaamisen perusteet ohjelmistokehittäjille](https://www.sqav.fi/fi/testaamisen-perusteet-ohjelmistokehittajille/)

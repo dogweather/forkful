@@ -1,7 +1,7 @@
 ---
-title:                "生成随机数"
-html_title:           "Elixir: 生成随机数"
-simple_title:         "生成随机数"
+title:                "产生随机数"
+html_title:           "Elixir: 产生随机数"
+simple_title:         "产生随机数"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Numbers"
@@ -10,29 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-为什么: 即使我们是程序员，但有时候我们也需要一些随机性。生成随机数字可以用于测试，模拟和随机选择，这让我们的程序更加有趣。
+## 什么是随机数生成？ 为什么程序员要做随机数生成？
 
-## 为什么
+随机数生成是指在程序中产生随机数的过程。程序员经常需要使用随机数来模拟真实世界中的随机事件，例如游戏中的骰子投掷或抽奖活动。它也可以用于密码学中生成安全的随机数，以确保数据的保密性和完整性。
 
-每个程序员都知道，编写可靠的代码是至关重要的。而测试是确保我们的代码按预期工作的一种方法。但是，测试很容易陷入固定模式，可能无法覆盖所有情况。这时候，我们可以使用随机生成的数字来测试我们的程序，以产生更多不同的情况，从而提高代码的质量。
+## 如何做？
 
-## 如何
+以下是使用 Elixir 语言生成随机数的代码示例：
 
-使用 Elixir 中的 `:rand` 模块，我们可以轻松地生成随机数字。例如，让我们生成一个随机的 10 位数:
+```Elixir
+# 生成一个介于0和100之间的随机整数
+rand_num = Enum.random(0..100)
+IO.puts(rand_num)
 
-```elixir
-:rand.uniform(1000000000)
+# 生成一个包含5个随机元素的列表（使用 Kernel模块中定义的 :rand.uniform/0 方法）
+rand_list = List.new(fn -> :rand.uniform() end, 5)
+IO.inspect(rand_list)
 ```
 
-该代码将产生类似于 `524645302` 的输出。如果我们想生成一个介于 1 到 100 之间的随机数，可以使用 `:rand.uniform(1..100)`。Elixir 还提供了其他一些函数来生成不同类型的随机数，例如 `:rand.uniform/2` 可以生成浮点数，`rand.uniform/3` 可以生成多个随机数。具体可参考[官方文档](https://hexdocs.pm/elixir/Random.html)。
+运行以上代码，将会输出类似以下结果：
 
-## 深入探讨
+```Elixir
+47
+[0.18369, 0.82039997, 0.473719, 0.022033, 0.911895]
+```
 
-在 Elixir 中，随机数生成是基于一个种子(seed)。一个种子决定了随机数的序列，所以如果我们使用相同的种子，每次生成的随机数都是一样的。我们可以使用 `:rand.seed/1` 来设置种子，也可以在需要的地方使用 `:rand.seed/0` 来获取当前的种子。
+## 深入了解
 
-另外，有时候我们可能想要生成不完全随机的数字，例如通过加密算法，Elixir 也提供了 `:rand.uniform/1` 和 `:rand.uniform!/1` 来实现这一点。
+随机数生成已经存在很久了，并且有许多不同的实现方法。在计算机科学领域，有一种称为“伪随机数生成器”的算法，它们可以按照一定的规则生成看起来随机的数。然而，这些数并不是真正的随机数，因为它们的生成过程是可预测的。
 
-## 参考阅读
+除了 Elixir 内置的随机数生成方法外，还有一些第三方库可以实现不同种类的随机数生成，例如 [`:rand32`](https://hex.pm/packages/rand32) 和 [`:murmur`](https://hex.pm/packages/murmur)。
 
-- [Elixir 随机数生成文档](https://hexdocs.pm/elixir/Random.html)
-- [关于随机数生成的一篇博客文章](https://elixir-lang.org/getting-started/randomness.html#generating-random-numbers)
+在 Elixir 中，随机数生成依赖于 [`:rand`](https://hexdocs.pm/elixir/Kernel.SpecialForms.html#rand/0) 和 [`:math`](https://hexdocs.pm/elixir/Math.html#functions) 模块，它们提供了各种用于生成随机数的方法，包括生成整数、浮点数、布尔值和字符。
+
+## 参考链接
+
+- [Elixir 官方文档中关于随机数的介绍](https://hexdocs.pm/elixir/Kernel.SpecialForms.html#rand/0)
+- [其他随机数生成库的介绍](https://hexdocs.pm/elixir/random-libraries.html)

@@ -1,7 +1,7 @@
 ---
-title:                "Extrayendo subcadenas"
-html_title:           "Fish Shell: Extrayendo subcadenas"
-simple_title:         "Extrayendo subcadenas"
+title:                "Extracción de subcadenas"
+html_title:           "Fish Shell: Extracción de subcadenas"
+simple_title:         "Extracción de subcadenas"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -10,42 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¿Qué y por qué?
 
-¿Alguna vez te has encontrado con un texto largo y desordenado y solo necesitas extraer una parte específica de él? Bueno, con Fish Shell puedes hacer precisamente eso. En este artículo, te explicaré cómo extraer subcadenas de una manera rápida y sencilla.
+Extraer subcadenas, o pedazos de texto más pequeños dentro de un texto más grande, es una tarea común en la programación. Los programadores lo hacen para obtener información específica de una cadena de texto más grande, como una dirección de correo electrónico o un número de teléfono.
 
-## Cómo
+## ¡Cómo hacerlo!
 
-¡Es hora de poner tus habilidades de programación en acción! Sigue estos pasos para extraer subcadenas en Fish Shell:
+Para extraer una subcadena en la terminal de Fish Shell, utilizamos el comando `string sub` seguido de la cadena original, el índice inicial y el número de caracteres que queremos extraer. Por ejemplo:
 
-1. Primero, necesitas tener una cadena de texto de la cual quieras extraer una parte. Puedes asignar una cadena a una variable utilizando el operador `set`, por ejemplo: 
+```
+Fish Shell $ string sub "Hola mundo" 2 4
+Salida → "ola "
+```
+En este ejemplo, estamos extrayendo una subcadena de la cadena "Hola mundo" comenzando en el segundo índice (que corresponde a la letra "o") y extrayendo 4 caracteres.
 
-```Fish Shell
-set text "Hola mundo"
+También podemos especificar el índice final en lugar de la longitud de la subcadena. Por ejemplo:
+
+```
+Fish Shell $ string sub "123456789" 2 -4
+Salida → "234"
 ```
 
-2. Después de tener tu cadena, debes indicar qué parte quieres extraer utilizando los índices. Los índices en Fish Shell comienzan en `1` y se colocan entre corchetes después de la variable que contiene la cadena de texto. Por ejemplo, si queremos extraer la palabra "mundo" en nuestro ejemplo anterior, utilizaremos `[6-10]` para indicar los índices.
+## Profundizando
 
-```Fish Shell
-echo $text[6-10]
-```
+Extraer subcadenas es una técnica común en la programación moderna, utilizada en muchos lenguajes de programación diferentes. Sin embargo, algunos lenguajes pueden tener métodos específicos para realizar esta tarea, como el método `substring` en JavaScript.
 
-3. También puedes extraer subcadenas utilizando el comando `string sub` y proporcionando la cadena, el índice inicial y la longitud de la subcadena que deseas extraer.
+Si bien `string sub` es la forma más sencilla de extraer subcadenas en la terminal de Fish Shell, también existen otras formas de lograrlo. Por ejemplo, podemos utilizar el comando `awk` para extraer una subcadena específica basada en un patrón de búsqueda.
 
-```Fish Shell
-echo (string sub $text 6 5)
-```
-
-¡Felicidades! Has aprendido a extraer subcadenas en Fish Shell. Ahora puedes utilizar esta técnica para manipular y organizar tus cadenas de texto de manera eficiente.
-
-## Deep Dive
-
-Ahora, profundicemos un poco más en la extracción de subcadenas. En Fish Shell, los índices pueden ser expresiones matemáticas que se evalúan dinámicamente. Esto significa que puedes utilizar variables y operaciones matemáticas para definir tus índices.
-
-Además, también puedes utilizar un signo `^` para indicar el comienzo de la cadena en lugar de indicar un índice específico. Por ejemplo, si queremos extraer la palabra "mundo" en nuestro ejemplo anterior, también podríamos utilizar `[^6-]` para indicar que queremos comenzar a extraer a partir del sexto carácter hasta el final de la cadena.
+Con respecto a la implementación, el comando `string sub` utiliza el método `substr` en el núcleo de GNU para extraer la subcadena deseada. Esto garantiza una ejecución eficiente y precisa.
 
 ## Ver también
 
-- [Tutorial de Fish Shell](https://fishshell.com/docs/2.7/)
-
-- [Documentación oficial de Fish Shell](https://fishshell.com/docs/2.7/index.html)
+- Documentación oficial de Fish Shell sobre el comando `string sub`: https://fishshell.com/docs/current/cmds/string.html#sub
+- Artículo sobre el método `substring` en JavaScript: https://www.w3schools.com/jsref/jsref_substring.asp
+- Documentación oficial de GNU sobre el método `substr`: https://www.gnu.org/software/gawk/manual/html_node/String-Functions.html

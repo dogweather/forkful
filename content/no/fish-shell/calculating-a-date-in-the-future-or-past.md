@@ -10,36 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hva & Hvorfor?
 
-Å beregne en dato i fremtiden eller fortiden kan være nyttig i forskjellige situasjoner, for eksempel når du planlegger en ferie eller jobber med tidsfølsomme oppgaver. Ved hjelp av Fish Shell kan du enkelt utføre slike beregninger uten å måtte bytte til en annen app eller nettsted.
+Å beregne en dato i fremtiden eller fortiden er en viktig funksjon for programmerere. Den lar oss å utføre komplekse matematiske beregninger for å finne ut tidspunktet for hendelser eller til å planlegge fremtidige handlinger. Programmører bruker dette ofte til å lage tidssensitive applikasjoner eller lage algoritmer for å forutsi fremtidige hendelser.
 
-## Slik gjør du det
+## Hvordan gjør man det?
 
-For å beregne en dato i fremtiden eller fortiden i Fish Shell, kan du bruke «cal» kommandoen. Den bruker følgende syntaks:
+For å beregne en dato i Fish Shell må man bruke kommandoen `date`. Denne kommandoen tar to argumenter: datoen man ønsker å beregne fra og et offset i form av dager, uker eller måneder. Her er et eksempel på hvordan man kan beregne datoen 30 dager fra i dag:
 
-```fish
-cal [NUM] [UNIT] [+-] [NUM] [UNIT]
+```
+Fish Shell: date -d "today + 30 days"
+Resultat: Ma, 23 Jul 2018 13:36:19 CEST
 ```
 
-Her er en liste med noen eksempler på hvordan du kan bruke denne kommandoen:
+Man kan også beregne datoen for en spesifikk hendelse, som for eksempel 5 dager før julaften:
 
-```fish
-cal 5 days ahead
-cal 2 weeks ago
-cal 10 years ahead
 ```
-
-Output vil være i form av en kalender, som viser datoen beregnet basert på ditt nåværende systemtid.
+Fish Shell: date -d "2018-12-24 - 5 days"
+Resultat: Tors, 20 Des 2018 00:00:00 CET
+```
 
 ## Dypdykk
 
-For å forstå hvordan «cal» kommandoen fungerer, kan du se nærmere på de ulike delene av syntaksen. «NUM» står for antall og kan være en hvilken som helst numerisk verdi. «UNIT» refererer til en tidsenhet, for eksempel days, weeks eller years. Dette bestemmer hvor stor forskjell det skal være mellom din nåværende dato og den beregnede datoen.
-
-«+-» angir om du vil beregne en dato i fremtiden (+) eller fortiden (-). Ved å kombinere ulike verdier av NUM og UNIT, kan du enkelt tilpasse beregningene etter dine behov.
+Funksjonen for å beregne en dato i Fish Shell er basert på GNU versjonen av `date` kommandoen. Dette betyr at den har flere funksjoner og muligheter som ikke er tilgjengelig i den standardversjonen som følger med Mac eller andre operativsystemer. Det finnes også alternative måter å beregne datoer på, som for eksempel å bruke Python programmeringsspråkets innebygde moduler. Det er viktig å merke seg at `date` kommandoen i Fish Shell kan variere i syntax og funksjonalitet fra andre skall som Bash eller Zsh.
 
 ## Se også
 
-- [Fish Shell dokumentasjon](https://fishshell.com/docs/current/)
-- [Tutorial for å komme i gang med Fish Shell](https://www.freecodecamp.org/news/a-beginners-guide-to-fish-the-friendliest-shell/)
-- [Slik kan du enkelt tilpasse Fish Shell](https://www.maketecheasier.com/customize-fish-shell/)
+- [Fish Shell dokumentasjon](https://fishshell.com/docs/current/cmds/date.html)
+- [GNU `date` kommandodokumentasjon](https://www.gnu.org/software/coreutils/manual/html_node/Examples-of-date.html)
+- [Python `datetime` modul dokumentasjon](https://docs.python.org/3/library/datetime.html)

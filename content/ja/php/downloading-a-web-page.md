@@ -1,7 +1,7 @@
 ---
-title:                "ウェブページのダウンロード"
-html_title:           "PHP: ウェブページのダウンロード"
-simple_title:         "ウェブページのダウンロード"
+title:                "ウェブページをダウンロードする"
+html_title:           "PHP: ウェブページをダウンロードする"
+simple_title:         "ウェブページをダウンロードする"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "HTML and the Web"
@@ -10,35 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+## 何をしているの？
+ウェブページのダウンロードとは、ウェブ上のコンテンツを自分のコンピューターに取り込むことです。プログラマーがこれをする理由は、ウェブサイトから必要なデータを取得しアプリケーションに組み込むためです。
 
-Webページのダウンロードへの参加には、ウェブサイト上の情報を取得し、処理して利用する必要があるため、ダウンロードすることが重要です。
-
-## 方法
-
+## 方法：
 ```PHP
 <?php
-
-$url = "https://example.com"; // ダウンロードするWebページのURLを指定
-
-// cURLを使用してWebページをダウンロード
-$ch = curl_init();
-curl_setopt($ch, CURLOPT_URL, $url);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-$page = curl_exec($ch);
-curl_close($ch);
-
-// ダウンロードしたページの内容を表示
+// ウェブページのダウンロード
+$page = file_get_contents('https://example.com');
+// 画像ファイルのダウンロード
+$image = file_get_contents('https://example.com/images/sampleimage.jpg');
+// ダウンロードしたウェブページを表示
 echo $page;
+// ダウンロードした画像ファイルを保存
+file_put_contents('sampleimage.jpg', $image);
+?>
 ```
 
-ダウンロードしたWebページの内容を取得し、PHPの変数に保存して表示することができます。
+## 詳しく見る：
+ウェブページのダウンロードは、ウェブの普及とともに生まれた機能の一つです。ウェブページを手軽に保存するために、ブラウザーには「保存」ボタンがありますが、プログラマーはこの機能を利用して、自分のコンピューターにデータを取得することができます。また、ファイル取得には```file_get_contents()```関数だけでなく、cURLやGuzzleなどのツールも利用できます。
 
-## 詳細を深く調べる
-
-Webページをダウンロードする方法はいくつかありますが、PHPのcURLライブラリを使用することが一般的です。cURLは、Webサーバーとの通信を行うための多目的なライブラリであり、ダウンロードしたページの内容を自由に処理することができます。また、オプションを設定することで、認証やリダイレクトの処理なども行うことができます。
-
-## 参考リンク
-
-* [PHP: cURLライブラリ](https://www.php.net/manual/ja/book.curl.php)
-* [cURLを使ってWebページをダウンロードする方法](https://www.php.net/manual/ja/function.curl-init.php)
+## もっと詳しく：
+- [PHP マニュアル - file_get_contents関数](https://www.php.net/manual/ja/function.file-get-contents.php)
+- [cURL - 公式ドキュメント](https://curl.haxx.se/docs/)
+- [Guzzle - 公式ドキュメント](http://docs.guzzlephp.org/en/stable/)

@@ -1,7 +1,7 @@
 ---
-title:                "yaml로 작업하기"
-html_title:           "C: yaml로 작업하기"
-simple_title:         "yaml로 작업하기"
+title:                "yaml 작업하기"
+html_title:           "C: yaml 작업하기"
+simple_title:         "yaml 작업하기"
 programming_language: "C"
 category:             "C"
 tag:                  "Data Formats and Serialization"
@@ -10,38 +10,107 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+## 무엇 & 왜?
 
-YAML을 사용하는 일에 참여하려는 이유는 무엇일까요? 이것에 대한 단 두 문장으로 설명하겠습니다. YAML은 사람이 쉽게 읽고 작성할 수 있는 형식의 데이터 교환 언어이기 때문에 프로그래머에게 매우 유용합니다.
+YAML 작업은 구조화된 데이터를 저장하고 전달하는 데 사용되는 경량 마크업 언어입니다. 프로그래머들은 YAML을 사용하여 복잡한 데이터를 쉽게 다룰 수 있고, 코드를 더 효율적이고 읽기 쉽게 만들 수 있기 때문에 사용합니다.
 
-## 하는 법
-
-YAML 파일을 작성하고 읽는 방법을 알아보겠습니다. 먼저 YAML 파일을 열기 위해 `fopen()` 함수를 사용합니다. 그런 다음, YAML 파일 내용을 읽기 위해 `fread()` 함수를 사용합니다. 아래 예제 코드를 참고해주세요.
+## 어떻게:
 
 ```C
-FILE* file = fopen("example.yaml", "r");
-char buffer[255];
+#include <yaml/yaml.h>
 
-while (fread(buffer, sizeof(buffer), 1, file) != 0) {
-    printf("%s", buffer);
+int main() {
+  // YAML 데이터 작성하기
+  yaml_emitter_t emitter;
+  yaml_event_t event;
+  
+  yaml_emitter_init(&emitter);
+  //파일 스트림으로 출력
+  yaml_emitter_set_output_file(&emitter, fp);
+
+  // YAML 스트림 시작
+  yaml_stream_start_event_initialize(&event, YAML_UTF8_ENCODING);
+  yaml_emitter_emit(&emitter, &event);
+  yaml_event_delete(&event);
+
+  // YAML 문서 시작
+  yaml_document_start_event_initialize(&event, NULL, NULL, NULL, 0);
+  yaml_emitter_emit(&emitter, &event);
+  yaml_event_delete(&event);
+
+  // 스칼라 데이터 추가
+  yaml_scalar_event_initialize(
+      &event, NULL, NULL,
+      (yaml_char_t *)"key", 3, // "key" ->키로 변환
+      1, 1, YAML_PLAIN_SCALAR_STYLE);
+  yaml_emitter_emit(&emitter, &event);
+  yaml_event_delete(&event);
+
+  // 맵 시작
+  yaml_mapping_start_event_initialize(
+      &event, NULL, NULL, 1, YAML_BLOCK_MAPPING_STYLE);
+  yaml_emitter_emit(&emitter, &event);
+  yaml_event_delete(&event);
+
+  // 키-값 쌍 추가
+  yaml_scalar_event_initialize(
+      &event, NULL, NULL,
+      (yaml_char_t *)"value", 5, // "value" ->값으로 변환
+      1, 1, YAML_PLAIN_SCALAR_STYLE);
+  yaml_emitter_emit(&emitter, &event);
+  yaml_event_delete(&event);
+
+  yaml_scalar_event_initialize(
+      &event, NULL, NULL,
+      (yaml_char_t *)"another_key", 11, // "another_key" -> 다른 키로 변환
+      1, 1, YAML_PLAIN_SCALAR_STYLE);
+  yaml_emitter_emit(&emitter, &event);
+  yaml_event_delete(&event);
+
+  yaml_scalar_event_initialize(
+      &event, NULL, NULL,
+      (yaml_char_t *)"another_value", 13, // "another_value" -> 다른 값으로 변환
+      1, 1, YAML_PLAIN_SCALAR_STYLE);
+  yaml_emitter_emit(&emitter, &event);
+  yaml_event_delete(&event);
+
+  // 맵 끝
+  yaml_mapping_end_event_initialize(&event);
+  yaml_emitter_emit(&emitter, &event);
+  yaml_event_delete(&event);
+
+  // 문서 끝
+  yaml_document_end_event_initialize(&event, 0);
+  yaml_emitter_emit(&emitter, &event);
+  yaml_event_delete(&event);
+
+  // YAML 스트림 끝
+  yaml_stream_end_event_initialize(&event);
+  yaml_emitter_emit(&emitter, &event);
+  yaml_event_delete(&event);
+
+  // YAML 작업 완료
+  yaml_emitter_delete(&emitter);
+
+  return 0;
 }
-
-fclose(file);
 ```
 
-위의 예제 코드를 실행하면 아래와 같은 출력이 나타납니다.
+출력:
 
-```C
-name: John Smith
-age: 29
-occupation: Software Engineer
+```yaml
+--- # key-value 쌍의 맵으로 구성된 YAML 문서
+key: value
+another_key: another_value
 ```
 
-## 깊이 들어가보기
+## 깊은 연구:
 
-YAML 파일을 작성하고 읽는 것 외에도, YAML은 배열, 객체, 불리언 값 등 다양한 데이터 유형을 지원합니다. 또한 YAML은 주석을 사용할 수 있어서 설명이나 메모를 추가하는 데 유용합니다. YAML의 자세한 사용 방법은 YAML 공식 문서를 참고해주세요.
+- YAML은 2001년에 처음 발표된 마크업 언어로, XML과 비교하여 더 간단하고 읽기 쉬운 구조를 가지고 있습니다.
+- JSON은 YAML의 경량 버전으로, 더 단순한 데이터 구조를 가지고 있습니다.
+- YAML 작업은 객체 지향 프로그래밍과 데이터 직렬화를 위해 널리 사용됩니다.
 
-## 더 참고하기
+## 참고:
 
-- [YAML 공식 문서](https://yaml.org/)
-- [C에서 YAML 사용하기](https://www.yolinux.com/TUTORIALS/LIBRARY/Yaml.html)
+- https://yaml.org/
+- https://www.json.org/

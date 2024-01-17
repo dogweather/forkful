@@ -10,41 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-Text files are an essential part of programming and are used for storage, data transfer, and communication between programs. In Elm, writing a text file can be a useful skill for tasks such as saving user input or exporting data in a human-readable format.
+## What & Why?
 
-## How To
-To write a text file in Elm, we first need to import the `File` module. We can then use the `write` function to create a file and write contents to it. Here's an example:
+Writing a text file means creating or modifying a file with textual information. Programmers often write text files as a convenient way to store and organize data in a human-readable format. This allows for easier maintenance and sharing of data across different programming languages and systems.
 
-```Elm
-import File
+## How To:
 
-writeTextFile : List String -> Task x ()
-writeTextFile lines =
-    File.write "myFile.txt" (String.unlines lines)
-```
-
-In this code, we first import the `File` module which gives us access to the `write` function. We then define a function called `writeTextFile` which takes in a list of strings and returns a task (similar to a promise in JavaScript) with no specific type of error (`x`) and no return value (`()`). Inside the function, we use the `write` function to create a file named `myFile.txt` and write the contents of the list of strings to it using the `String.unlines` function to add line breaks between each element.
-
-To actually execute this function and create the file, we can use the `run` function from the `Task` module. We can then pass in our `writeTextFile` function and a callback function to handle any potential errors:
+To write a text file in Elm, we can use the `Text` library. The `Text` library provides functions to create and modify text files.
 
 ```Elm
-import Task
+import Text exposing (writeFile, concat)
 
-main : Program Never
-main =
-    Task.attempt (\_ -> Debug.log "File created") (File.run (writeTextFile ["Hello", "World"]))
+writeFile "newfile.txt" (concat ["Hello,", " world!"])
 ```
 
-In this example, we use the `Task` module to run our `writeTextFile` function and handle any errors by logging a message to the console. And that's it! Our file should now be created with the specified contents.
+Running this code will create a new file called `newfile.txt` in the same directory as our Elm file, with the text "Hello, world!" written in it.
 
-## Deep Dive
-There are a few important things to note when writing a text file in Elm. First, the `write` function takes in two parameters: the file name (as a string) and the file contents (as another string). If the file already exists, it will be overwritten with the new contents.
+We can also append text to an existing file using the `appendFile` function.
 
-Secondly, the task returned by the `write` function is asynchronous, which means we need to use the `Task` module to handle the callback function and potential errors. This is different from other synchronous functions in Elm like `Debug.log` or `String.length`, where we can simply call the function and get a result without using the `Task` module.
+```Elm
+import Text exposing (appendFile)
 
-Lastly, it's important to handle potential errors when writing a text file, as the task will fail if there are any issues with creating or writing to the file. This can be done using the `Task.attempt` function, as shown in the example above.
+appendFile "existingfile.txt" "This is an example sentence."
+```
 
-See Also:
-- Official Elm Language Guide on writing files: https://elm-lang.org/docs/interop/file
-- Official Elm Package for working with files: https://package.elm-lang.org/packages/elm/file/latest/
+## Deep Dive:
+
+Text files have been around for a long time, and they are one of the simplest and most common ways to store data. They are also versatile, as they can be opened and modified with different programs and programming languages.
+
+There are other ways to store data, such as using databases or binary files, but text files remain a popular choice due to their simplicity and compatibility.
+
+When writing a text file in Elm, we can also provide options such as encoding and file permissions as needed. For more advanced text file operations, we can use the `File` module in Elm.
+
+## See Also:
+
+- Elm's official documentation for the `Text` and `File` modules: https://package.elm-lang.org/packages/elm/core/latest/
+- A tutorial on working with text files in Elm: https://www.elm-tutorial.org/en/05-foundations/03-strings.html

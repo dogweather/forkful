@@ -10,56 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Warum
+# Was & Warum?
+Arbeiten mit YAML ist eine Möglichkeit, Daten in einer strukturierten und lesbaren Weise zu speichern. Programmierer nutzen es, um Konfigurationsdateien, benutzerdefinierte Datenformate und sogar Übersetzungen im Code zu verwalten.
 
-Warum sollte man sich mit YAML auseinandersetzen? Nun, YAML ist eine einfache, menschenlesbare Struktursprache, die hauptsächlich zur Konfiguration von Anwendungen, zum Speichern von Daten oder zum Austausch von Informationen zwischen verschiedenen Systemen verwendet wird.
-
-## Wie
-
-Um mit YAML in Clojure zu arbeiten, müssen wir zunächst die Bibliothek "clj-yaml" einbinden. Dies kann ganz einfach durch das Hinzufügen von `[org.clojure/data.yaml "1.0.0"]` als Abhängigkeit in unser Projekt.clj-Datei erreicht werden.
-
-Im Folgenden sind ein paar Beispiele, wie wir YAML mit Clojure verwenden können:
-
+# Wie geht's?
+In **Clojure** gibt es das Paket `yaml-clojure` für das Arbeiten mit YAML. Zuerst musst du es importieren: 
 ```Clojure
-(require '[clojure.data.yaml :as yaml])
-
-;; Laden einer YAML-Datei als Clojure-Datenstruktur
-(def config (yaml/read-string "foo: bar"))
-
-;; Konvertieren einer Clojure-Datenstruktur in YAML
-(yaml/generate-string {:name "Max" :age 30})
-
-;; Erstellen einer YAML-Datei
-(with-open [out-file (clojure.java.io/writer "config.yml")]
-  (yaml/spit out-file {:language "Clojure" :version "1.10.1"}))
-
-;; Einlesen von YAML-Dateien mit Fehlerbehandlung
-(try
-  (yaml/read-string "{ 123: abc")
-  (catch Exception e
-    (println "Fehler beim Einlesen von YAML: " (.getMessage e))))
+(require '[yaml-clojure.core :as yaml])
 ```
-
-Die Ausgabe für das letzte Beispiel sieht folgendermaßen aus:
-
+Um Daten von einer YAML-Datei zu lesen, verwende die Funktion `load` und gebe den Dateipfad als Argument an:
+```Clojure
+(yaml/load "~/pfad/zur/datei.yml")
 ```
-Fehler beim Einlesen von YAML:  java.lang.NumberFormatException: For input string: "abc"
+Um eine Karte in eine YAML-Datei zu schreiben, verwende `dump` und gebe die Karte und den Dateipfad als Argumente an:
+```Clojure
+(yaml/dump {:name "Max" :age 25} "~/pfad/zur/datei.yml")
 ```
+Die Ausgabe wird in der Datei als YAML-formatierter Text vorhanden sein.
 
-## Tiefergehende Einblicke
+# Tiefer tauchen
+YAML wurde ursprünglich entwickelt, um eine einfachere und benutzerfreundlichere Alternative zu XML zu sein. Es ist ein offenes Format und es gibt mehrere Implementierungen für verschiedene Programmiersprachen. Alternativen zu YAML sind JSON und TOML.
 
-Clojure bietet uns viele Funktionen, um mit YAML-Daten umzugehen. Hier sind einige nützliche Funktionen, die wir verwenden können:
+Die `yaml-clojure`-Bibliothek verwendet das Java-Bibliothek SnakeYAML, um mit YAML-Daten zu arbeiten. Eine gut formatierte und detaillierte Dokumentation dazu findest du im [Github-Repository](https://github.com/yaml/yaml-clojure).
 
-- `yaml/read` - Liest eine YAML-Datei und gibt eine Clojure-Datenstruktur zurück.
-- `yaml/parse-stream` - Liest einen YAML-Stream und gibt eine Clojure-Datenstruktur zurück.
-- `yaml/emit` - Gibt eine YAML-Zeichenkette aus einer Clojure-Datenstruktur zurück.
-- `yaml/generate-stream` - Schreibt einen YAML-Stream aus einer Clojure-Datenstruktur.
-
-Zusätzlich gibt es auch einige Optionen, die wir beim Lesen und Schreiben von YAML angeben können, z.B. die Unterstützung von interaktiven Datentypen wie `sets` und `maps`.
-
-Insgesamt ist YAML eine einfache und effektive Möglichkeit, strukturierte Daten in unserer Clojure-Anwendung zu verwenden. Es ist jedoch wichtig, sorgfältig zu prüfen, ob YAML für unser spezifisches Anwendungsfall geeignet ist, da es nicht so stark typisiert ist wie andere Formate wie z.B. JSON.
-
-## Siehe auch
-
-- [Offizielle YAML-Website](https://yaml.org/)
-- [Dokumentation zu clj-yaml](https://github.com/clj-commons/clj-yaml)
+# Siehe auch
+Weitere Informationen zum Arbeiten mit YAML in Clojure findest du in der [offiziellen Dokumentation](https://yaml-clojure.readthedocs.io/en/latest/). Für eine allgemeine Einführung in YAML kannst du die [offizielle Website](https://yaml.org/) besuchen.

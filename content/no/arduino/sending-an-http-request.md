@@ -10,57 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
-Så du har lyst til å lære hvordan du kan sende en HTTP forespørsel med din Arduino? Vel, det er mange grunner til å gjøre det, men her er noen eksempler: du kan bruke HTTP for å hente data fra en ekstern nettside, sende data til en fjern server eller til og med styre enheter eller applikasjoner via internett.
+## Hva & Hvorfor?
 
-## Hvordan gjøre det
-For å sende en HTTP forespørsel med din Arduino, trenger du først å inkludere WiFi biblioteket. Deretter må du koble din Arduino til et WiFi nettverk ved hjelp av ```WiFi.begin()``` funksjonen. Når du er tilkoblet, kan du nå lage din HTTP forespørsel ved å bruke ```HTTPClient``` biblioteket.
+Å sende en HTTP-forespørsel betyr rett og slett å be om informasjon fra en nettside eller webserver. Dette er en viktig del av de fleste programmeringsprosjekter, da det tillater å integrere data fra ulike kilder og få tilgang til informasjon på en enkel måte.
 
-Først må du opprette en HTTP klient med en instans av ```HTTPClient```. Deretter kan du sette URLen du vil sende en forespørsel til ved hjelp av ```HTTPClient.begin()``` funksjonen. Du kan også legge til eventuelle parametere eller data i forespørselen med ```addHeader()``` og ```addParam()``` funksjonene.
+## Hvordan:
 
-Når du er fornøyd med din forespørsel, kan du sende den med ```HTTPClient.GET``` eller ```HTTPClient.POST``` funksjonene, avhengig av hvilken type forespørsel du vil sende. Etter å ha mottatt et svar fra serveren, kan du bruke ```getString()``` funksjonen for å få tilgang til svaret som en ```String```.
+For å sende en HTTP-forespørsel med Arduino, kan du bruke biblioteket "HTTPClient.h". Her er et eksempel på hvordan du kan be om informasjon fra en nettside:
 
 ```Arduino
 #include <WiFi.h>
 #include <HTTPClient.h>
 
-WiFiClient wifi;
-HTTPClient http;
-
 void setup() {
-  // Koble til WiFi nettverk
-  WiFi.begin("WiFi-Nettverk", "passord");
-
-  // Opprett HTTP klient og definer URLen
-  http.begin(wifi, "http://eksempel.com");
-
-  // Legg til eventuelle parametere og data i forespørselen
-  http.addHeader("Content-Type", "application/json");
-  http.addParam("temperatur", 25);
-
-  // Send forespørsel og få svar
-  int status = http.GET();
-  if (status > 0) {
-    // Hent ut svaret som en String
-    String svar = http.getString();
-    Serial.println(svar);
+  Serial.begin(9600);
+  WiFi.begin("navn-på-wifi-nettverk", "passord");
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
   }
+  Serial.println("Koblet til internett!");
+  
+  HTTPClient http;
+
+  http.begin("www.example.com"); // Erstatt med nettstedet du ønsker å få informasjon fra
+  int httpCode = http.GET();    // Sender GET-forespørselen
+
+  if (httpCode > 0) { // Sjekker om forbindelsen var vellykket
+    String payload = http.getString(); // Leser dataene som ble returnert fra nettstedet
+    Serial.println(payload); // Skriver ut dataene i seriell monitor
+  }
+  http.end(); // Avslutter forbindelsen
 }
 
 void loop() {
-  // Gjenta forespørsel hvert minutt
-  http.end();
-  delay(60000);
+  // Ingenting å gjøre her, kode som trenger å kjøre i loop plasseres i setup-funksjonen
 }
-
 ```
 
-## Dykk ned i det
-Som nevnt tidligere, kan du bruke HTTP til å koble din Arduino til internett på flere måter. Det kan være å hente data fra en nettside eller til og med styre eksterne enheter. Du kan også legge til sikkerhetsfunksjoner, som å autentisere deg selv hos serveren før du sender en forespørsel.
+## Deep Dive:
 
-En ting å huske på når du jobber med å sende HTTP forespørsler er at det krever at din Arduino har tilgang til internett. Det kan være via et WiFi nettverk eller ved å bruke en Ethernet Shield. Det er også viktig å ha en pålitelig og stabil internettforbindelse for å sikre at dine forespørsler blir sendt og mottatt korrekt.
+HTTP (Hypertext Transfer Protocol) er et protokoll for å kommunisere mellom klienter og servere på internett. Først og fremst brukt til å be om og sende HTML-sider, men nå brukt til å overføre en rekke forskjellige dataformater.
 
-## Se også
-- [WiFi biblioteket for Arduino](https://www.arduino.cc/en/Reference/WiFi)
-- [HTTPClient biblioteket for Arduino](https://github.com/zenmanenergy/ESP8266-Arduino-Examples/tree/master/httpRequest)
-- [Offisiell Arduino nettside (på norsk)](https://www.arduino.cc/)
+HTTP-forespørsler kan gjøres gjennom ulike metoder som GET, POST, PUT, DELETE, osv. Avhengig av hva slags handling som ønskes utført. Det finnes også ulike metoder for autentisering for å sikre at dataene blir overført sikkert.
+
+Alternativer til å bruke "HTTPClient.h" biblioteket inkluderer å implementere en TCP/IP-forbindelse for å sende en GET-forespørsel og behandle dataene manuelt. Dette gir større kontroll, men krever også mer avansert programmering.
+
+## Se også:
+
+- [HTTPClient.h biblioteket dokumentasjon](https://arduinojson.org/)
+- [HTTP-forespørsler med Arduino og NodeMCU](https://www.hackster.io/electropeak/http-request-with-arduino-nodemcu-using-httpclient-library-08b367)
+- [Mer om HTTP-protokollen og dens ulike metoder](https://developer.mozilla.org/en-US/docs/Web/HTTP)

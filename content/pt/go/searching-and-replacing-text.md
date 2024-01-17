@@ -1,7 +1,7 @@
 ---
-title:                "Busca e substituição de texto"
-html_title:           "Go: Busca e substituição de texto"
-simple_title:         "Busca e substituição de texto"
+title:                "Buscando e substituindo texto"
+html_title:           "Go: Buscando e substituindo texto"
+simple_title:         "Buscando e substituindo texto"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Strings"
@@ -10,42 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
-Muitas vezes, quando estamos trabalhando com código, precisamos fazer mudanças em partes específicas do texto. Isso pode ser um processo tedioso e demorado se for feito manualmente. Felizmente, com o Go, podemos usar a função de busca e substituição para fazer essas alterações de forma rápida e eficiente.
+## O que é e por que os programadores fazem
+Substituir e buscar texto é uma tarefa comum para os programadores, em que eles procuram e substituem um determinado texto por outro em um documento ou em um código. Isso é frequentemente usado quando os desenvolvedores precisam alterar uma parte específica de um código ou documento sem ter que fazer alterações manuais extensas. 
 
-## Como Fazer
-Para realizar uma busca e substituição com Go, usamos a função `ReplaceAllString()` da biblioteca `regexp`. Primeiro, precisamos importar a biblioteca em nosso código:
+## Como fazer
+Usando o Go, substituir e buscar texto é bastante simples. Primeiro, importe o pacote "strings", que contém as funções necessárias para manipular texto. Em seguida, você pode usar a função "ReplaceAll" para substituir todo o texto no documento ou use a função "Replace" para substituir apenas uma instância específica. Aqui está um exemplo de código que substitui todas as letras "a" por "b" em uma string:
 
-    ```Go
-    import "regexp"
-    ```
-    
-Em seguida, podemos definir nosso padrão de busca e o texto a ser substituído:
+```
+Go import "strings"
+ 
+s := "banana"
+new := strings.ReplaceAll(s, "a", "b")
+fmt.Println(new)
 
-    ```Go
-    pattern := "hello"
-    replace := "ola"
-    ```
+// Saída: bbnbnb
+```
 
-Agora, podemos aplicar a função `ReplaceAllString()` em uma string de texto:
+Note que o texto original não é alterado, e sim uma nova string é criada com as substituições.
 
-    ```Go
-    newText := regexp.ReplaceAllString("hello world", pattern, replace)
-    fmt.Println(newText) // output: ola world
-    ```
+## Mais informações
+Substituir e buscar texto tem sido uma tarefa importante para os programadores desde os primeiros dias da programação. Antes dos computadores e das linguagens de programação modernas, os programadores precisavam fazer alterações manuíais em grandes pilhas de papéis contendo código. Felizmente, hoje temos tecnologias e ferramentas que tornam essa tarefa mais eficiente.
 
-Podemos também usar expressões regulares em nosso padrão de busca para tornar a busca mais flexível:
+Uma alternativa à função "ReplaceAll" é a função "ReplaceAllString" que pode ser usada para procurar e substituir texto usando expressões regulares. Além disso, o pacote "strings" também possui outras funções úteis para manipular texto, como "Split" e "Join".
 
-    ```Go
-    pattern := "[a-z]+" // busca qualquer palavra contendo letras minúsculas
-    replace := "text"
-    newText := regexp.ReplaceAllString("Hello World", pattern, replace)
-    fmt.Println(newText) // output: text text
-    ```
-
-## Aprofundando
-Além da função `ReplaceAllString()`, a biblioteca `regexp` também possui outras funções úteis para busca e substituição de texto, como `ReplaceAll()`, `ReplaceAllLiteral()`, `ReplaceAllStringFunc()`, entre outras. Além disso, podemos usar expressões regulares mais avançadas para realizar buscas mais complexas e precisas. É importante ter conhecimento sobre expressões regulares para aproveitar ao máximo essa funcionalidade do Go.
-
-## Veja Também
-- [Documentação da biblioteca regexp](https://golang.org/pkg/regexp/)
-- [Tutorial de expressões regulares no Go](https://www.golang-book.com/books/intro/12)
+## Veja também
+Para saber mais sobre a sintaxe e os recursos do pacote "strings", confira a documentação oficial do Go [aqui](https://golang.org/pkg/strings/). Além disso, existem muitos recursos disponíveis online para a aprendizagem de expressões regulares e outras técnicas de manipulação de texto. Faça uma pesquisa e continue aprimorando suas habilidades de programação em Go!

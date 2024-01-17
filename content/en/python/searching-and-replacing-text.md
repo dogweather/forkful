@@ -10,51 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-Searching and replacing text is a common task in many programming projects. It allows you to efficiently make changes in your code or data without having to manually go through each instance. In Python, the built-in `replace()` method makes it easy to perform this task.
+## What & Why?
+Searching and replacing text is a common task in programming where a specific string of text is targeted and replaced with another. It is done to make changes to a large amount of text quickly, saving time and reducing manual errors. Programmers often use this technique to efficiently modify code, update data, or make corrections in text files.
 
-## How To
-To use the `replace()` method, you first need to have a string that you want to make changes to. Let's say we have the following string:
-```Python
-sentence = "I love pizza, but I also enjoy sushi."
+## How to:
 ```
-Now, if we want to replace "pizza" with "tacos" in this sentence, we can use the `replace()` method:
-```Python
-new_sentence = sentence.replace("pizza", "tacos")
-print(new_sentence)
-```
-The output will be:
-```
-I love tacos, but I also enjoy sushi.
-```
-As you can see, the `replace()` method replaced all occurrences of "pizza" in the original string with "tacos". It is also case-sensitive, so it will not replace "Pizza" or "PIZZA".
+# Using replace() function to replace a string
+my_string = "Hello world!"
+print(my_string.replace("Hello", "Hi"))
 
-You can also specify the number of replacements you want to make by using the optional `count` parameter. For example, if we only want to replace the first instance of "pizza" in our sentence, we can do so by setting `count=1`:
-```Python
-new_sentence = sentence.replace("pizza", "tacos", 1)
-print(new_sentence)
-```
-The output will be:
-```
-I love tacos, but I also enjoy sushi.
+# Output: Hi world!
+
+# Using regular expressions to replace multiple instances of a string
+import re
+my_string = "I love Python, do you?"
+new_string = re.sub("Python", "coding", my_string)
+print(new_string)
+
+# Output: I love coding, do you?
 ```
 
-## Deep Dive
-The `replace()` method is part of the string class in Python, which means it can only be used on strings. It takes two required parameters: `old` and `new`, which represent the text you want to replace and the text you want to replace it with.
+## Deep Dive:
+There have been several methods used for searching and replacing text throughout the history of programming. Traditional find and replace features were limited to specific applications or text editors, but now with the use of regular expressions, programmers have more flexibility in searching and replacing text. An alternative to using the replace() function is the translate() function which can be used to replace single characters. The implementation of searching and replacing text largely depends on the programming language used, but the basic concept remains the same.
 
-Another important thing to note is that the `replace()` method does not change the original string, but instead returns a new string with the changes. This is why we had to assign the result to a variable in our examples.
-
-It is also worth mentioning that the `replace()` method is not limited to just single characters or words. You can also use it to replace longer strings:
-```Python
-sentence = "I love coding, but I also enjoy hiking."
-new_sentence = sentence.replace("coding", "programming")
-print(new_sentence)
-```
-The output will be:
-```
-I love programming, but I also enjoy hiking.
-```
-
-## See Also
-- [Python String Methods](https://www.w3schools.com/python/python_ref_string.asp)
-- [Python String replace() Method](https://www.w3schools.com/python/ref_string_replace.asp)
+## See Also:
+- [Python documentation on replace() function](https://docs.python.org/3/library/stdtypes.html#str.replace)
+- [Regular expressions in Python](https://www.programiz.com/python-programming/regex)
+- [translate() function in Python](https://www.tutorialspoint.com/python/string_translate.htm)

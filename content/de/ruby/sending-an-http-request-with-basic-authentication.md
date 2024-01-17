@@ -1,7 +1,7 @@
 ---
-title:                "Senden einer HTTP-Anfrage mit grundlegenden Authentifizierung"
-html_title:           "Ruby: Senden einer HTTP-Anfrage mit grundlegenden Authentifizierung"
-simple_title:         "Senden einer HTTP-Anfrage mit grundlegenden Authentifizierung"
+title:                "Ein http-Anfrage mit grundlegenden Authentifizierung senden"
+html_title:           "Ruby: Ein http-Anfrage mit grundlegenden Authentifizierung senden"
+simple_title:         "Ein http-Anfrage mit grundlegenden Authentifizierung senden"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "HTML and the Web"
@@ -10,38 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was & Warum?
+HTTP-Anfragen mit Grundauthentifizierung können verwendet werden, um geschützte Ressourcen auf einem Server abzurufen. Programmierer nutzen dies, um eine sichere Verbindung zu einem externen Server aufzubauen und Daten auszutauschen.
 
-HTTP-Anfragen mit Basisauthentifizierung werden oft verwendet, um eine sichere Verbindung zwischen einer Anwendung und einem Server herzustellen. Dies ist besonders nützlich, wenn vertrauliche Daten übertragen werden müssen.
+## Wie geht's:
 
-## Wie geht das?
+Bevor man eine HTTP-Anfrage mit Grundauthentifizierung senden kann, muss man sich zuerst mit dem Server verbinden und die Authentifizierungsdaten angeben. Dies kann mit der Net::HTTP Bibliothek in Ruby geschehen. Hier ist ein Beispiel:
 
-Um eine HTTP-Anfrage mit Basisauthentifizierung in Ruby zu senden, können wir die Net::HTTP-Bibliothek verwenden. Zuerst müssen wir ein URI-Objekt erstellen, das die URL enthält, zu der wir eine Anfrage senden möchten. Dann können wir ein Net::HTTP-Objekt erstellen und die Methode #basic_auth verwenden, um Benutzername und Passwort anzugeben. Schließlich rufen wir die Methode #request auf und übergeben die gewünschte Aktion (GET, POST, PUT, etc.) sowie das URI-Objekt. Hier ist ein Beispielcode:
+    require 'net/http'
+    require 'uri'
+    
+    # Ziel-URL
+    url = URI("http://www.example.com")
+    
+    # Verbindung herstellen
+    http = Net::HTTP.new(url.host, url.port)
+    
+    # Authentifizierungsdaten angeben
+    request = Net::HTTP::Get.new(url)
+    request.basic_auth("username", "password")
+    
+    # Anfrage senden und Antwort erhalten
+    response = http.request(request)
+    puts response.body
 
-```Ruby
-require 'net/http'
+Die `basic_auth` Methode wird verwendet, um die Authentifizierungsdaten in der Anfrage zu setzen. Wenn die Anfrage erfolgreich ist, wird die Antwort in der `response` Variable gespeichert und kann dann weiterverarbeitet werden.
 
-uri = URI('https://www.example.com')
-http = Net::HTTP.new(uri.host, uri.port)
-http.use_ssl = true
-
-request = Net::HTTP::Get.new(uri)
-request.basic_auth("username", "password")
-
-response = http.request(request)
-
-puts response.code
-puts response.body
-```
-
-Das obige Beispiel stellt eine sichere Verbindung zu www.example.com her, führt eine GET-Anfrage mit Basisauthentifizierung aus und gibt den Statuscode sowie die Antwortdaten aus. Die Methode #basic_auth kann auch auf andere HTTP-Anfragemethoden wie POST und PUT angewendet werden.
-
-## Tiefer Einblick
-
-HTTP-Anfragen mit Basisauthentifizierung verwenden den Authentifizierungstyp "Basic", bei dem der Benutzername und das Passwort in Base64-Format kodiert und als Teil des Authorization-Headers in der Anfrage gesendet werden. Der Server überprüft dann die Gültigkeit der Anmeldedaten und gibt eine entsprechende Antwort zurück. Es ist wichtig zu beachten, dass dieser Vorgang nicht als sicherer Authentifizierungsmechanismus gilt und zusätzliche Sicherheitsmaßnahmen wie SSL/TLS empfohlen werden.
-
-## Siehe auch
-
-- [Net::HTTP Dokumentation](https://ruby-doc.org/stdlib-2.6.3/libdoc/net/http/rdoc/Net/HTTP.html)
-- [Base64-Bibliothek in Ruby](https://ruby-doc.org/stdlib-2.6.3/libdoc/base64/rdoc/Base64.html)
-- [HTTP-Basisauthentifizierung auf Wikipedia](https://de.wikipedia.org/wiki/HTTP#Authentifizierung)
+## Tiefere Einblicke:
+Grundauthentifizierung ist eine der ältesten Methoden zur Sicherung von HTTP-Anfragen. Es funktioniert, indem der Benutzername und das Passwort im Header der Anfrage im Base64 Format codiert werden. Dies kann jedoch leicht entschlüsselt werden und bietet daher keine ausreichende Sicherheit. Alternativen wie Digest-Authentifizierung oder die Verwendung von SSL sollten bevorzugt werden, wenn eine höhere Sicherheit erforderli

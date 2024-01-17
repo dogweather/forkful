@@ -10,41 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
 
-Att jämföra två datum kan vara användbart när man vill få information om hur länge något har pågått, till exempel hur länge ett projekt har varit igång eller hur lång tid det har tagit att slutföra en uppgift. Det kan också vara användbart när man vill sortera eller filtrera data baserat på datum.
+Att jämföra två datum är en vanlig uppgift för programmerare. Det handlar helt enkelt om att bestämma vilket av två datum som ligger före eller efter det andra. Detta kan vara användbart för att sortera data eller för att kontrollera om ett datum ligger inom en viss tidsram.
 
-## Hur man gör det
+## Hur man gör:
 
-Först och främst behöver vi importera Elm-paketet "Time" för att kunna arbeta med datum. Sedan kan vi använda funktionen "compare" för att jämföra två datum, vilket ger oss en "Order" som kan vara "LT" (mindre än), "EQ" (lika med) eller "GT" (större än).
+För att jämföra två datum i Elm, använder man `Date` modulen. Första steget är att konvertera de två datum till `Date` objekt med hjälp av funktionen `Date.fromString`. Sedan kan man använda `Date.compare` för att jämföra de två objekten. Funktionen returnerar en `Order` typ som antingen är `LT` (mindre än), `EQ` (lika med) eller `GT` (större än).
 
-```elm
-import Time exposing (..)
+```Elm
+import Date exposing (..)
 
-date1 = fromCalendarDate 2020 7 21
-date2 = fromCalendarDate 2019 3 10
+date1 = Date.fromString "2021-01-01"
+date2 = Date.fromString "2021-02-01"
 
-order = compare date1 date2
--- Returnerar "GT"
+result = Date.compare date1 date2 -- LT
 ```
 
-Vi kan också använda funktionerna "isBefore" och "isAfter" för att enkelt se om ett datum är före eller efter ett annat.
+## Djupdykning:
 
-```elm
-isBefore date1 date2
--- Returnerar "False"
+Att jämföra datum är ett vanligt problem inom programmering och det finns många sätt att lösa det på. En alternativ metod är att jämföra datum som `Int` värden, där varje dag räknas som ett numeriskt värde. Men detta kan bli komplicerat med tanke på skottår och månadslängd.
 
-isAfter date1 date2
--- Returnerar "True"
-```
+Elm's `Date` modul använder sig av den gregorianska kalendern och stöder datum upp till år 10 000. Implementeringen är skriven i ren Elm-kod och är därför beroende av andra Elm-moduler som `String` och `List`.
 
-## Djupdykning
+## Se även:
 
-När vi jämför två datum, tar Elm hänsyn till både datum och tid. Det betyder att om vi till exempel har datumet 2020-07-21 klockan 15:00 och jämför med datumet 2020-07-21 klockan 12:00, så kommer det att anses som "GT" då det är ett senare klockslag.
-
-Det är också viktigt att notera att funktionerna "compare", "isBefore" och "isAfter" är baserade på ISO8601-standard, vilket innebär att de fungerar bäst med fullständiga datum och tider. Om vi bara använder funktionen "fromCalendarDate" som i exempel 1, kommer tiden att sättas till midnatt, vilket kan påverka jämförelserna.
-
-## Se även
-
-* [Elm Time-paketet](https://package.elm-lang.org/packages/elm/time/latest/)
-* [ISO8601-standard](https://en.wikipedia.org/wiki/ISO_8601)
+- [Official Elm Date documentation](https://package.elm-lang.org/packages/elm/core/latest/Date)
+- [Wikipedia article on Gregorian calendar](https://en.wikipedia.org/wiki/Gregorian_calendar)
+- [Elm's source code for Date module](https://github.com/elm/core/blob/master/src/Date.elm)

@@ -1,7 +1,7 @@
 ---
-title:                "Att arbeta med YAML"
-html_title:           "Python: Att arbeta med YAML"
-simple_title:         "Att arbeta med YAML"
+title:                "Att arbeta med yaml"
+html_title:           "Python: Att arbeta med yaml"
+simple_title:         "Att arbeta med yaml"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Data Formats and Serialization"
@@ -10,57 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
+Att arbeta med YAML är ett sätt för programmerare att strukturera och organisera sina data på ett mer läsbart sätt. YAML står för "YAML Ain't Markup Language" och är ett textbaserat filformat som är enkelt att läsa och skriva för människor.
 
-YAML (YAML Ain't Markup Language) är ett vanligt filformat som används för att strukturera och lagra data på ett läsbart och lättförståeligt sätt. Genom att läsa och skriva YAML-filer kan programmerare effektivt hantera och bearbeta data i sina program.
-
-## Så här gör du
-
-För att använda YAML i dina Python-program behöver du först importera "yaml" biblioteket. Detta kan göras genom att skriva följande kod:
+## Så här gör du:
+Här är ett exempel på hur man skriver en YAML-fil med Python:
 
 ```Python
 import yaml
+data = {
+  "färg": "röd",
+  "antal": 5,
+  "frukter": ["äpple", "banan", "apelsin"]
+}
+with open("frukter.yaml", "w") as f:
+  yaml.dump(data, f)
 ```
 
-För att läsa en YAML-fil och lagra datan i en variabel kan du använda följande kod:
+Detta kommer att skapa en YAML-fil med namnet "frukter.yaml" som innehåller följande data:
+
+```yaml
+färg: röd
+antal: 5
+frukter:
+- äpple
+- banan
+- apelsin
+```
+
+För att läsa in data från en YAML-fil, kan man använda följande kod:
 
 ```Python
-with open("data.yml") as fil:
-    data = yaml.safe_load(fil)
+import yaml
+with open("frukter.yaml") as f:
+  data = yaml.safe_load(f)
+print(data)
 ```
 
-Du kan nu komma åt datan i din YAML-fil genom att använda variabeln "data". Till exempel, om din YAML-fil innehåller en lista av användarnamn och lösenord, kan du komma åt den som följande:
+Detta kommer att skriva ut följande:
 
-```Python
-users = data["användarlista"]
-for user in users:
-    print("Användarnamn: " + user["användarnamn"])
-    print("Lösenord: " + user["lösenord"])
+```yaml
+{'färg': 'röd', 'antal': 5, 'frukter': ['äpple', 'banan', 'apelsin']}
 ```
 
-Du kan också skriva till en YAML-fil genom att använda "yaml.dump()" funktionen. Till exempel, om du vill spara en lista av användare i en YAML-fil, kan du göra det genom att skriva följande kod:
+## Djupdykning:
+YAML utvecklades först 2001 av Ingy döt Net och är inspirerat av andra språk som Python, Perl och C. Det är ett populärt alternativ till XML och JSON för att strukturera data i en läsbar och lättanvänd format.
 
-```Python
-users = [
-    {"användarnamn": "John", "lösenord": "asdf123"},
-    {"användarnamn": "Jane", "lösenord": "qwerty456"}
-]
-with open("data.yml", "w") as fil:
-    yaml.dump(users, fil)
-```
+Förutom att använda YAML-filer för att spara data, kan man också använda YAML-syntax för att skriva konfigurationsfiler för program eller webbapplikationer.
 
-## Djupdykning
+Implementeringen av YAML i Python görs genom paketet "pyyaml" som kan installeras genom pip.
 
-Det finns många sätt att strukturera data i en YAML-fil. Nedan följer några viktiga aspekter att tänka på när du arbetar med YAML:
-
-- Indentering används för att indikera inbäddade objekt och listor.
-- Hash-tecken (#) används för att kommentera koden och påverkar inte koden i YAML-filen.
-- Enkelcitat eller dubbelcitat kan användas för att omge en sträng, men det finns ingen skillnad i hur de tolkas av YAML.
-
-Det är också värt att nämna att YAML är ett utvidgningsbart format, vilket betyder att du kan skapa dina egna datatyper och använda dem i YAML-filer. Detta kan vara särskilt användbart om du vill strukturera data på ett specifikt sätt för ditt program.
-
-## Se även
-
-- [YAML-språkspecifikation](https://yaml.org/spec/1.2/spec.html)
-- [YAML på Python.org](https://pyyaml.org/)
-- [YAML-tutorial från W3C](https://www.w3schools.com/python/python_yaml.asp)
+## Se även:
+- Officiell YAML-webbplats: https://yaml.org/
+- Dokumentation för pyyaml-paketet: https://pyyaml.org/wiki/PyYAMLDocumentation

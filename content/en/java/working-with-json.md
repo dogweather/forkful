@@ -10,88 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-JSON has become a widely used format for data exchange due to its simplicity and flexibility. With its human-readable format and compatibility with most programming languages, JSON allows efficient communication between different systems and devices.
+Working with JSON (JavaScript Object Notation) is a common task for Java programmers. JSON is a lightweight data interchange format that is used to transmit data between a server and a web application. Programmers use JSON because it is easy to read and write, and it is supported by a wide range of programming languages and platforms.
 
-## How To
+## How to:
 
-Working with JSON in Java is simple and straightforward. Here are some examples to get you started:
+To work with JSON in Java, you will need to import the JSON library. Here's an example of how to import the library and read a JSON file:
 
-### Creating a JSON Object
 ```Java
-JSONObject object = new JSONObject();
-object.put("name", "John");
-object.put("age", 28);
-object.put("city", "New York");
+import org.json.*;
+import java.io.*;
 
-System.out.println(object.toString());
-```
-Output:
-```
-{"name":"John","age":28,"city":"New York"}
-```
+// read JSON file
+FileReader file = new FileReader("data.json");
 
-### Parsing JSON Data
-```Java
-String jsonStr = "{\"name\":\"Amy\",\"age\":32}";
+// create JSON object
+JSONObject obj = new JSONObject(file);
 
-JSONObject jsonObject = new JSONObject(jsonStr);
-
-String name = jsonObject.getString("name");
-int age = jsonObject.getInt("age");
-
-System.out.println(name + " is " + age + " years old.");
-```
-Output:
-```
-Amy is 32 years old.
+// get value of a key
+String name = obj.getString("name");
 ```
 
-### Writing JSON to File
-```Java
-JSONObject object = new JSONObject();
-object.put("title", "My Book");
-object.put("author", "Jane Smith");
-object.put("year", 2020);
-
-try (FileWriter file = new FileWriter("book.json")) {
-    file.write(object.toString());
-} catch (IOException e) {
-    e.printStackTrace();
-}
-```
-
-### Reading JSON from File
-```Java
-File file = new File("book.json");
-try (FileReader reader = new FileReader(file)) {
-    JSONObject object = (JSONObject) new JSONParser().parse(reader);
-
-    String title = (String) object.get("title");
-    String author = (String) object.get("author");
-    int year = Integer.parseInt(object.get("year").toString());
-
-    System.out.println("Title: " + title);
-    System.out.println("Author: " + author);
-    System.out.println("Year: " + year);
-} catch (IOException | ParseException e) {
-    e.printStackTrace();
-}
-```
+The output of this code block will be the value of the "name" key in the JSON file.
 
 ## Deep Dive
 
-JSON (JavaScript Object Notation) is a lightweight and platform-independent format for data exchange. It is based on a subset of JavaScript object literal syntax, making it easy to understand and use. By using key-value pairs, JSON allows for the representation of complex data structures that can be easily transmitted and decoded by different systems.
+JSON was first introduced in 2001 by Douglas Crockford as a more lightweight alternative to XML. It quickly gained popularity due to its simplicity and flexibility. Today, it is widely used in web development, mobile apps, and APIs.
 
-In Java, the "org.json" package provides easy-to-use classes for working with JSON data. The JSONObject class represents a JSON object, while the JSONArray class represents a JSON array. Both classes allow for the manipulation and retrieval of data using key-value pairs.
+There are several alternatives to JSON, such as XML, YAML, and CSV. However, JSON has become the go-to choice for many developers due to its human-readable format and ease of use. 
 
-When parsing JSON data, it is important to handle exceptions and ensure that the JSON data is in the expected format. The "org.json.simple.parser" package provides a JSONParser class for this purpose. It allows for the conversion of JSON text into objects and vice versa.
-
-Overall, working with JSON in Java is simple yet powerful, making it a widely used format for data exchange in various applications.
+Working with JSON in Java involves using the JSON library, which provides a set of classes and methods for parsing, manipulating, and creating JSON objects. The library is constantly updated and maintained, making JSON a reliable and efficient choice for data interchange.
 
 ## See Also
 
-- [JSON Tutorial by W3Schools](https://www.w3schools.com/js/js_json_intro.asp)
-- [Oracle's Java JSON Tutorial](https://www.oracle.com/technical-resources/articles/java/jsont.html)
-- [Introduction to JSON in Java with Examples by Baeldung](https://www.baeldung.com/java-json)
+- [Official JSON website](https://www.json.org/)
+- [Java JSON library documentation](https://www.json.org/java/)
+- [Comparison between JSON and XML](https://medium.com/@cstegel/comparing-json-and-xml-understanding-the-physical-differences-9ed3d1c222bc)

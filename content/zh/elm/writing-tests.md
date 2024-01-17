@@ -10,62 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 为什么要写测试？
+## 什么 & 为什么？
 
-写测试的主要原因是为了提高代码的质量和可靠性。通过编写测试，可以确保代码的功能正常，可以及早发现潜在的问题，并且可以帮助开发人员更快地排除错误。
+写测试是指编写代码来测试你的程序功能是否正常。程序员会这么做是因为编写测试可以帮助他们更快地发现和解决代码中的错误，从而提高代码质量。
 
-## 如何编写测试？
-
-为了编写有效的测试，首先需要在项目中安装 [Elm-Test](https://github.com/elm-explorations/test)。安装完成后，可以使用以下命令创建测试文件：
+## 如何：
 
 ```Elm
-elm-test init
+-- 假设我们要测试一个函数，计算一个数字的平方
+square : Int -> Int
+square x =
+  x * x
+
+
+-- 现在我们可以使用 elm-test 库来编写测试用例
+import Expect
+import Test exposing (..)
+
+tests =
+  describe "Square function test" [
+    test "should return 4 when input is 2" <|
+      \_ -> Expect.equal (square 2) 4,
+    test "should return 25 when input is 5" <|
+      \_ -> Expect.equal (square 5) 25
+  ]
 ```
 
-测试文件将被放置在 `tests/` 目录下，并且以 `Tests.elm` 作为文件名。在测试文件中，可以使用 `Test` 模块中的函数来编写测试用例。例如，下面是一个简单的测试用例，测试 `String` 模块中的 `contains` 函数：
+运行测试：
 
-```Elm
-import Test exposing (Test, describe, test)
-import String exposing (contains)
-
-
-containsTest : Test
-containsTest =
-    describe "String.contains function"
-        [ test "should return True when the substring is contained in the string" <|
-            \_ ->
-                contains "Elm" "Elm is awesome"
-
-        , test "should return False when the substring is not contained in the string" <|
-            \_ ->
-                not (contains "Hello" "Hi there")
-        ]
+```
+> tests
+Passed    Square function test should return 4 when input is 2
+Passed    Square function test should return 25 when input is 5
 ```
 
-在测试文件中，使用 `test` 函数来定义测试用例，并使用匿名函数来定义测试逻辑。在上面的示例中，第一个测试用例断言 `contains "Elm" "Elm is awesome"` 应该返回 `True`，而第二个测试用例断言 `contains "Hello" "Hi there"` 应该返回 `False`。通过这种方式，可以针对函数的不同输入进行测试，并验证其预期的输出。
+## 深入探讨：
 
-要运行测试，可以使用以下命令：
+编写测试是一种测试驱动开发（Test-Driven Development）的实践，它在很大程度上可以减少代码中的bug，并且可以帮助程序员更早地发现问题。除了编写单元测试，还有一些其他的测试方法，比如集成测试和端到端测试。与写测试相比，人工测试往往更容易出错，因此编写测试是一种有效的测试程序的方法。
 
-```Elm
-elm-test
-```
+## 参考资料：
 
-测试结果将显示在命令行中，如果测试通过，会显示 `PASS`，如果测试失败，会显示 `FAIL` 并给出失败的具体信息。可以使用 `-f` 标志来指定测试文件，以便只运行特定的测试。
-
-## 深入了解测试
-
-编写有效的测试需要一定的技巧和经验。以下是一些有用的技巧：
-
-- 使用 `expect` 函数来比较实际结果和预期结果，可以使用 `==` 或 `=/=` 来比较两个值。
-- 使用 `Expecations` 模块中的函数来检查结果是否符合特定的要求，例如 `Expect.equal`、`Expect.lessThan` 等。
-- 使用 `Test.label` 函数来为测试用例添加标签，这样可以更容易地识别失败的测试用例。
-- 使用 `Test.fuzz` 函数来生成随机输入来测试函数的边界情况。
-
-更多关于编写测试的技巧和指导，请参阅 [Elm-Test 文档](https://package.elm-lang.org/packages/elm-explorations/test/latest/)。
-
-# 参考
-
-- [Writing Tests with Elm-Test](https://elmprogramming.com/writing-tests-with-elm-test.html)
-- [Elm-Test 官方文档](https://package.elm-lang.org/packages/elm-explorations/test/latest/)
-- [Elm-Test 仓库](https://github.com/elm-explorations/test)
-- [Elm 官方文档](https://guide.elm-lang.org/)
+- [Elm官方文档 - 测试](https://guide.elm-lang.org/testing/)
+- [测试驱动开发（TDD）介绍 - 阮一峰的网络日志](https://www.ruanyifeng.com/blog/2013/01/what_is_tdd.html)
+- [关于测试的各种方法的比较 - Medium](https://medium.com/@kentbeck_7670/technical-debt-terminology-f6267088c11#.orge3mzcp)

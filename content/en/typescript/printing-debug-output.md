@@ -10,61 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-Printing debug output is a common practice in software development for troubleshooting and testing purposes. It allows developers to see the values of variables and the flow of their code, helping them to identify and fix any errors or bugs in their program.
+Printing debug output is the act of displaying informational messages in the console during the execution of a program. Programmers use this technique to track and analyze the behavior of their code, helping them identify and fix errors or unexpected results.
 
-## How To
+## How to:
 
-To print debug output in TypeScript, you can simply use the `console.log()` method. This method takes in any number of arguments, which can be strings, variables, or even objects.
-
-```TypeScript
-// Printing a string
-console.log("Hello world!");
-
-// Printing a variable
-let num = 5;
-console.log(num);
-
-// Printing an object
-let person = {
-    name: "John",
-    age: 35
-}
-console.log(person);
-```
-
-The above code will print the following output in the console:
-
-```
-Hello world!
-5
-{ name: "John", age: 35 }
-```
-
-You can also format your debug output using string literals and template literals, which allows you to insert variables and expressions into a string.
+To print debug output in TypeScript, you can use the `console.log()` method to display messages in the console. You can pass any data type, such as strings, numbers, or objects, as arguments to the method.
 
 ```TypeScript
-let name = "Lisa";
-let age = 25;
-console.log(`My name is ${name} and I am ${age} years old.`);
+let name = "John";
+console.log(`Hello ${name}!`);
 ```
+Output: `Hello John!`
 
-This will print the following output:
+You can also use multiple parameters in the `console.log()` method to display different messages or variables on the same line.
 
+```TypeScript
+let num1 = 10;
+let num2 = 20;
+console.log("First number:", num1, "Second number:", num2);
 ```
-My name is Lisa and I am 25 years old.
-```
+Output: `First number: 10 Second number: 20`
 
-## Deep Dive
+## Deep Dive:
 
-In addition to `console.log()`, TypeScript also has other methods for printing debug output, such as `console.debug()` and `console.info()`. These methods are useful for differentiating between different types of debug messages.
+In the early days of programming, developers used physical printers to produce debug output. This was a time-consuming and tedious process, so the introduction of console-based debug output greatly improved the efficiency of debugging.
 
-You can also use the `console.trace()` method to print a stack trace, which displays the current call stack of your code. This is helpful for identifying which functions or methods are being called and in what order.
+An alternative to printing debug output in the console is using a debugger tool. Debuggers allow you to set breakpoints in your code, pause the execution, and inspect the values of variables at that specific point. This can be more useful when dealing with complex code.
 
-Lastly, you can use conditional statements with your debug output to only print certain messages if a certain condition is met. This can be done using the `console.assert()` method, which will only print the message if the condition evaluates to false.
+In TypeScript, the `console.log()` method is implemented using the `console` global object, which is provided by the web browser or Node.js environment. This means that it may have some minor differences in implementation depending on the environment.
 
-## See Also
+## See Also:
 
-- [Console API in TypeScript](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-3.html#console)
-- [Debugging Techniques in TypeScript](https://www.youtube.com/watch?v=_fRQd98MtSA)
+- [TypeScript Documentation on console debugging](https://www.typescriptlang.org/docs/handbook/integrating-with-build-tools.html#debugging-typescript)
+- [Debugging in TypeScript Using Visual Studio Code](https://code.visualstudio.com/docs/typescript/typescript-debugging)

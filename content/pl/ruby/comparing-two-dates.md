@@ -10,59 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i dlaczego?
+Porównywanie dwóch dat w prostych słowach oznacza sprawdzenie, która z dat jest wcześniejsza lub późniejsza. Programiści często dokonują takiego porównania, aby określić kolejność wydarzeń lub zaplanować działania w oparciu o daty.
 
-Jeśli pracujesz z Ruby, z pewnością często spotykasz się z datami. Czasami konieczne jest porównywanie dwóch dat, na przykład do sprawdzenia, czy jakaś operacja została wykonana w określonym przedziale czasowym. W tym artykule dowiesz się, jak porównać dwie daty w Ruby.
-
-## Jak to zrobić
-
-Codziennie dziesiątki tysięcy programistów korzystają z Ruby do tworzenia aplikacji internetowych i mobilnych. Aby porównać dwie daty w Ruby, możesz skorzystać z kilku metod. Pierwszą z nich jest wykorzystanie operatora `>` lub `<`. Przykładowy kod wyglądałby tak:
+## Jak to zrobić:
+W Ruby porównanie dat można wykonać za pomocą metody `Date#<=>`. Poniższy kod pokazuje przykład porównania dwóch dat i wypisanie wyniku. 
 
 ```Ruby
-date_1 = Date.new(2021, 6, 1)
-date_2 = Date.new(2021, 7, 1)
-if date_1 < date_2
-  puts "Date 1 is before date 2."
-else
-  puts "Date 1 is after date 2."
-end
+date1 = Date.new(2020, 4, 1)
+date2 = Date.new(2020, 5, 1)
+
+puts date1 <=> date2
+
+# Output: -1
 ```
 
-W powyższym przykładzie, jeśli data 1 jest wcześniejsza niż data 2, program wyświetli napis "Date 1 is before date 2". W przeciwnym razie wyświetli napis "Date 1 is after date 2".
-
-Kolejną metodą jest użycie metody `compare` z modułu `Comparable`, który jest dostępny w Ruby. Przykładowy kod wyglądałby tak:
+Wynik `-1` oznacza, że `date1` jest wcześniejsza niż `date2`. Jeśli chcemy sprawdzić, czy daty są sobie równe, możemy użyć metody `Date#==`.
 
 ```Ruby
-date_1 = Date.new(2021, 6, 1)
-date_2 = Date.new(2021, 7, 1)
-if date_1.compare(date_2) == -1
-  puts "Date 1 is before date 2."
-elsif date_1.compare(date_2) == 1
-  puts "Date 1 is after date 2."
-else
-  puts "Date 1 is equal to date 2."
-end
+date1 = Date.new(2020, 6, 1)
+date2 = Date.new(2020, 6, 1)
+
+puts date1 == date2
+
+# Output: true
 ```
 
-W powyższym przykładzie, metoda `compare` porównuje dwie daty i zwraca wartość `-1` jeśli pierwsza data jest wcześniejsza, `1` jeśli pierwsza data jest późniejsza lub `0` jeśli obie daty są równe.
+## Wyszukiwanie w głąb:
+Porównywanie dat może być przydatne w wielu sytuacjach, na przykład do sortowania danych lub wyznaczenia różnicy czasu między dwoma wydarzeniami. W przeszłości, przed pojawieniem się specjalnych bibliotek do operacji na datach, programiści musieli wykonywać skomplikowane obliczenia, aby dokonać porównania dat. W Ruby możemy wygodnie użyć prostych metod, dzięki czemu kod jest czytelniejszy i łatwiejszy do zrozumienia.
 
-## Dłuboka Nurkowanie
+Alternatywnym sposobem na porównanie dat jest użycie obiektów `Time`. W przypadku bardziej skomplikowanych operacji na datach, warto sięgnąć po biblioteki takie jak `Date`, `Time` lub `DateTime`, które oferują bardziej zaawansowane funkcje.
 
-Jeśli chcesz jeszcze bardziej dokładnie analizować daty, możesz skorzystać z metody `jd` z klasy `Date`. Metoda ta zwraca liczbę Julian Days, czyli liczbowe przedstawienie daty. Przykładowy kod wyglądałby tak:
+Przy implementacji porównania dat warto zwrócić uwagę na różnice czasowe w różnych strefach czasowych. W przypadku pracy z datami i godzinami ważne jest również odpowiednie obsłużenie formatów i stref czasowych.
 
-```Ruby
-date_1 = Date.jd(2459373) # 1 lipca 2021
-date_2 = Date.jd(2459503) # 31 lipca 2021
-if date_1 > date_2
-  puts "Date 1 is after date 2."
-else
-  puts "Date 1 is before date 2."
-end
-```
-
-W powyższym przykładzie, daty są przekazywane jako liczby Julian Days, a następnie porównywane przez operator `>`, który jest dostępny dla liczb.
-
-## Zobacz też
-
-- Dokumentacja Ruby: https://www.ruby-lang.org/pl/documentation/
-- Porównywanie dat w Ruby: https://apidock.com/ruby/v2_5_5/Date/%3C=%3E
+## Zobacz też:
+- [Dokumentacja Ruby: Porównywanie dat](https://ruby-doc.org/stdlib-2.6.1/libdoc/date/rdoc/Date.html#method-i-3C-3D-3E)
+- [Porównywanie dat w Ruby w praktyce](https://www.sitepoint.com/comparing-dates-ruby/)
+- [Różnice między obiektami Date, Time i DateTime](https://stackoverflow.com/questions/6932749/differences-between-date-time-and-date-in-ruby)

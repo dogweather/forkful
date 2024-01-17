@@ -1,7 +1,7 @@
 ---
-title:                "文字列の長さを見つける"
-html_title:           "Kotlin: 文字列の長さを見つける"
-simple_title:         "文字列の長さを見つける"
+title:                "「文字列の長さを求める」"
+html_title:           "Kotlin: 「文字列の長さを求める」"
+simple_title:         "「文字列の長さを求める」"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Strings"
@@ -10,32 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+！！！文字数を見つけるのはなに？そして、プログラマーがそれをする理由は？
 
-Kotlinのプログラムを使用して、文字列の長さを確認する理由は、テキスト処理において基本的な操作であり、文字列を操作する際には必須の知識であるからです。
+## What & Why?
+文字数を見つけることは、文字列内に含まれる文字の数を数えることです。プログラマーがこれをする理由は、文字列データを処理する際に必要な情報を得るためです。
 
-## 方法
+## How to:
+これをKotlinでやる方法を見てみましょう。
 
-文字列の長さを確認するには、Kotlinの「.length」メソッドを使用します。「.length」メソッドは、文字列の長さを整数値で返します。以下のコードを参考にしてください。
-
-```Kotlin
-// 文字列の長さを確認する例
-val str = "こんにちは、世界！"
-println(str.length) // 出力：11
+###### Example 1:
+```
+// 文字列の長さを出力する
+val str = "Hello World"
+println(str.length) // Output: 11
 ```
 
-## 深堀り
+###### Example 2:
+```
+// 入力された文字列の長さを出力する
+println("文字列を入力してください：")
+val input = readLine()
+println("文字列の長さは${input?.length}です。")
+```
 
-Kotlinでは、文字列を表すデータ型として「String」クラスを使用します。そして、「String」クラスには「.length」メソッドの他にも多くの便利なメソッドが用意されています。例えば、文字列を反転させる「.reversed()」メソッドや、特定の文字列が含まれているかを確認する「.contains()」メソッドなどがあります。
+## Deep Dive:
+文字列の長さを求めることで、文字列データを処理する際に必要な情報を得ることができます。以前はプログラミング言語によっては、文字列の長さを取得するために特定の関数を使用する必要がありましたが、Kotlinでは`.length`プロパティを使用することで簡単に文字列の長さを取得することができます。
 
-## 参考リンク
-
-- [Kotlin: 文字列操作](https://kotlinlang.org/docs/reference/basic-types.html#strings)
-- [Kotlin: Stringクラス](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/)
-- [Kotlin: Stringメソッド一覧](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/length.html)
-
-## 関連リンク
-
-- [Kotlin for Android: 公式ドキュメント](https://developer.android.com/kotlin/)
-- [Kotlinの基礎: 文字列操作](https://qiita.com/opengl-8080/items/34402cf9fbf665138171)
-- [Kotlin: Stringメソッドの使い方まとめ](https://qiita.com/lando/items/3a9cfc67d3a88ae095d1)
+## See Also:
+- [Kotlin Strings](https://kotlinlang.org/docs/reference/basic-types.html#strings)
+- [How to Get Length of String in Kotlin](https://www.baeldung.com/kotlin/string-length)

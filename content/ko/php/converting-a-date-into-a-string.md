@@ -10,38 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜 디레이트를 문자열로 변환하는가?
+## 무엇 & 왜?
 
-날짜를 문자열로 변환하는 이유는 때때로 우리가 보고 있는 정보를 표시하거나 포맷팅 할 때 필요할 수 있기 때문입니다.
+날짜를 문자열로 변환하는 것은 실제 문자열이 아니지만 날짜 데이터를 문자열 형태로 표현하는 것을 말합니다. 프로그래머들은 이를 하는 이유는 데이터를 다루기 쉽고 이해하기 쉽게끔 변환하기 위해서 입니다.
 
-## 어떻게 하나요?
+## 방법:
 
-날짜를 문자열로 변환하는 가장 간단한 방법은 PHP의 `date()` 함수를 사용하는 것입니다. 이 함수는 날짜와 시간 포맷을 지정할 수 있으며, 문자열로 변환된 결과를 반환합니다. 예를 들어:
-
-```PHP
-$currentDate = date('F j, Y');
+```PHP 
+echo date('Ymd'); // 오늘 날짜를 문자열로 변환하여 출력 
+// Output: 20211225
 ```
 
-위의 예제에서 `F`는 월 이름, `j`는 일 숫자, `Y`는 4자리 연도를 나타낸 것입니다. 이와 같은 방식으로 원하는 날짜 형식을 지정할 수 있습니다. 다양한 포맷 옵션에 대해 더 알아보려면 PHP 공식 문서를 참조하시기 바랍니다.
-
-문자열로 변환된 날짜를 확인하려면 `echo`를 사용하여 출력하면 됩니다.
-
 ```PHP
-echo $currentDate; // 출력 결과: April 28, 2021
+$date = '15/04/2021'; // 지정된 날짜 데이터 
+echo date('Y-m-d', strtotime($date)); // 날짜 데이터를 원하는 형식의 문자열로 변환하여 출력 
+// Output: 2021-04-15
 ```
 
-## 깊이 파보기
+## 깊은 곳:
 
-PHP에서는 날짜를 문자열로 변환하는 데 사용할 수 있는 다양한 함수들이 있습니다. `date()` 함수 외에도 `DateTime` 클래스를 사용할 수 있고, `strftime()` 함수를 사용하여 로케일을 고려한 문자열 포맷팅을 할 수도 있습니다.
+- 날짜를 문자열로 변환하기 전에는 날짜를 Unix timestamp 형태로 다루었습니다.
+- PHP에서는 ``` date() ``` 함수를 사용하여 날짜 형식을 지정할 수 있습니다.
+- 날짜를 문자열로 변환하는 또 다른 방법으로는 ``` DateTime ``` 클래스를 사용하는 것이 있습니다.
 
-또한 `time()` 함수를 사용하여 현재 시간을 나타내는 타임스탬프를 받을 수 있으며, 이를 `date()` 함수에 입력하여 원하는 포맷으로 변환할 수 있습니다.
+## 관련 자료:
 
-더 자세한 정보와 예제 코드는 PHP 공식 문서를 확인해보시기 바랍니다.
-
-## 관련 링크
-
-- [PHP `date()` 함수 문서](https://www.php.net/manual/en/function.date.php)
-- [PHP `DateTime` 클래스 문서](https://www.php.net/manual/en/class.datetime.php)
-- [PHP `strftime()` 함수 문서](https://www.php.net/manual/en/function.strftime.php)
-- [PHP `time()` 함수 문서](https://www.php.net/manual/en/function.time.php)
-- [PHP 날짜/시간 관련 함수 및 클래스 전체 목록](https://www.php.net/manual/en/ref.datetime.php)
+- [PHP 공식 문서: date() 함수](https://www.php.net/manual/en/function.date.php)
+- [PHP 공식 문서: DateTime 클래스](https://www.php.net/manual/en/class.datetime.php)
+- [W3Schools: PHP Date and Time Functions](https://www.w3schools.com/php/php_date.asp)

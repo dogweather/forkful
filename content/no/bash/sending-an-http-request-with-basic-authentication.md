@@ -1,7 +1,7 @@
 ---
-title:                "Sending en Http-forespørsel med grunnleggende autentisering"
-html_title:           "Bash: Sending en Http-forespørsel med grunnleggende autentisering"
-simple_title:         "Sending en Http-forespørsel med grunnleggende autentisering"
+title:                "Send en http-forespørsel med grunnleggende autentisering"
+html_title:           "Bash: Send en http-forespørsel med grunnleggende autentisering"
+simple_title:         "Send en http-forespørsel med grunnleggende autentisering"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "HTML and the Web"
@@ -10,35 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hva & Hvorfor?
+Sending av HTTP-forespørsler med grunnleggende autentisering er en måte for programmere å kommunisere med en ekstern server eller API ved å sende innloggingsinformasjon med forespørselen. Programmerere gjør dette for å få tilgang til beskyttede ressurser på en sikker måte og utføre ulike oppgaver som krever autentisering.
 
-Hvis du noen gang har lurt på hvordan du kanskje kan få tilgang til et passordbeskyttet nettsted ved hjelp av et enkelt kommandolinjeverktøy, eller automatisere en prosess med å sende informasjon til et nettsted via HTTP, så er dette artikkelen for deg. Basic authentication er en enkel måte å sende HTTP-forespørsler med godkjenning, og ved å bruke Bash kan du enkelt implementere dette i dine egne prosjekter.
-
-## Hvordan
-
-For å sende en HTTP-forespørsel med basic authentication i Bash, må du først sette opp variabler for din brukernavn og passord:
+## Hvordan:
+For å sende en HTTP-forespørsel med grunnleggende autentisering, bruker du følgende kode i en Bash-fil:
 
 ```Bash
-username="brukernavn"
-password="passord"
+# Sett variabler for brukernavn og passord
+brukernavn="brukernavn"
+passord="passord"
+
+# Kall på netcat for å sende forespørselen og inkluder autentiseringsinformasjon
+echo "GET /beskyttetressurs HTTP/1.1\r\nAuthorization: Basic $(echo -n "$brukernavn:$passord" | base64)\r\nHost: eksternserver.com\r\n\r\n" | nc eksternserver.com 80
 ```
 
-Deretter kan du bruke curl-kommandoen til å sende en GET-forespørsel til et nettsted med basic authentication:
+Dette vil lage en HTTP-forespørsel med GET-metoden for å få tilgang til en beskyttet ressurs på en ekstern server. Autentiseringsinformasjonen blir sendt som en del av forespørselen, og du vil motta svar fra serveren i form av HTTP-header og kropp.
 
-```Bash
-curl --user "$username:$password" www.eksempelnettsted.com
-```
+## Dypdykk:
+Sending av HTTP-forespørsler med grunnleggende autentisering har blitt brukt i mange år, men er fortsatt en vanlig metode for autentisering i dag. Alternativer til grunnleggende autentisering inkluderer mer sikre autentiseringsprotokoller som HMAC (hash-based message authentication code) og OAuth (åpen standard for klientautentisering). Implementeringen av grunnleggende autentisering i Bash kan også være sårbar for sikkerhetshull, så det anbefales å bruke mer avanserte metoder for autentisering når det er mulig.
 
-Dette vil returnere en respons fra nettstedet som du kan viderebehandle eller lagre i en variabel for senere bruk.
-
-## Deep Dive
-
-Basic authentication er en metode for godkjenning i HTTP-protokollen ved å sende brukernavn og passord i klartekst via HTTP-headerene. Dette er en enkel og vanlig måte å beskytte nettstedsressurser på, men er ikke en like sikker løsning som HTTPS. Derfor bør du kun bruke basic authentication hvis du er trygg på at informasjonen som sendes via HTTP er ikke-kritisk.
-
-Det er også viktig å merke seg at basic authentication ikke gir noen form for kryptering eller beskyttelse mot man-in-the-middle-angrep. Det er derfor viktig å vurdere bruken av HTTPS i tillegg hvis du trenger ekstra sikkerhet for dine HTTP-forespørsler.
-
-## Se også 
-
-- [Curl Documentation](https://curl.haxx.se/docs/) 
-- [HTTP Basic Authentication Explained](https://medium.com/@nishant6167/http-basic-authentication-explained-c4c06206777e) 
-- [Bash scripting cheatsheet](https://devhints.io/bash)
+## Se også:
+- [How Basic Authentication Works](https://www.plainenglish.io/basic-authentication-explained-e48465abe5d8)
+- [Secure Your API with Basic Authentication](https://blog.jscrambler.com/secure-your-api-with-basic-authentication/)

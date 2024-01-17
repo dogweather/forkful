@@ -1,7 +1,7 @@
 ---
-title:                "Escrevendo para o erro padrão"
-html_title:           "Bash: Escrevendo para o erro padrão"
-simple_title:         "Escrevendo para o erro padrão"
+title:                "Escrevendo em erro padrão."
+html_title:           "Bash: Escrevendo em erro padrão."
+simple_title:         "Escrevendo em erro padrão."
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Files and I/O"
@@ -10,42 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+## O que & Porquê?
 
-Você pode estar se perguntando por que escrever para o erro padrão em seu script Bash? Bem, a resposta é simples - para lidar melhor com erros e depuração. Ao escrever mensagens de erro para o erro padrão, você pode facilmente encontrar e corrigir problemas em seu código.
+A escrita para o erro padrão, também conhecida como stderr, é uma forma de direcionar mensagens de erro ou saída de um programa para o usuário. Isso é especialmente útil quando se trabalha com scripts de Bash, pois permite uma melhor depuração de erros e torna o processo de desenvolvimento mais eficiente.
 
-## Como Fazer
+## Como fazer:
 
-Para escrever para o erro padrão em Bash, você pode usar o comando `echo` com a opção `-e` para habilitar escapes de caractere. Aqui está um exemplo de código para imprimir uma mensagem de erro:
+Para escrever para o stderr em Bash, basta usar o número 2 antes do sinal de maior (>). Por exemplo:
 
-```Bash
-echo -e "Erro: Não foi possível encontrar o arquivo."
+```
+echo "Mensagem de erro" >&2
 ```
 
-Isso irá imprimir a mensagem na tela do erro padrão. Você também pode redirecionar o erro padrão para um arquivo usando o operador `>` após o comando `echo`. Por exemplo:
+Isso enviará a mensagem de erro para o stderr em vez do stdout (saída padrão). Como resultado, a mensagem será exibida na tela, permitindo que você veja e lide com o erro de forma adequada.
 
-```Bash
-echo "Erro: Não foi possível encontrar o arquivo." > erro.log
-```
+## Profundidade
 
-Isso irá redirecionar a mensagem de erro para um arquivo chamado "erro.log".
+A prática de escrever para o stderr remonta aos primórdios da programação de computadores, quando os desenvolvedores precisavam encontrar uma maneira de lidar com erros e avisos em seus programas. Alguns programadores optam por escrever para o stderr em vez de imprimir mensagens de erro formatadas, pois isso pode fornecer informações mais precisas e detalhadas sobre o erro.
 
-## Aprofundando
+No entanto, existem alternativas para escrever para o stderr, como usar o comando "exit" com um código de erro específico ou tratamento de erros em linguagens de programação mais avançadas, como Python ou Java.
 
-Para uma opção mais avançada, você pode usar o comando `>&2` após o comando `echo` para redirecionar explicitamente a saída para o erro padrão. Isso é útil quando você precisa escrever mensagens de erro dentro de uma função em seu script Bash. Aqui está um exemplo de código:
+Em termos de implementação, a escrita para o stderr em Bash é relativamente simples e pode ser facilmente implementada em scripts e programas. É importante lembrar que, ao usar essa técnica, é necessário gerenciar corretamente as mensagens de erro para fornecer informações úteis ao usuário e melhorar a experiência do usuário.
 
-```Bash
-funcao_erro() {
-    >&2 echo "Erro: Nome de usuário inválido."
-}
+## Veja também:
 
-funcao_erro
-```
-
-Este código irá enviar a mensagem de erro para o erro padrão, mesmo que a função esteja sendo chamada dentro do script.
-
-## Veja Também
-
-- [Documentação oficial do Bash](https://www.gnu.org/software/bash/)
-- [Artigo sobre redirecionamento de entrada/saída em Bash](https://www.digitalocean.com/community/tutorials/an-introduction-to-linux-i-o-redirection)
-- [Lista de comandos Bash úteis](https://cheatography.com/davechild/cheat-sheets/linux-command-line/)
+Para obter mais informações sobre como escrever para o stderr em Bash, confira a documentação oficial do Bash ou outros guias online sobre a prática. Além disso, você também pode explorar as diferentes alternativas e técnicas para lidar com erros em programas.

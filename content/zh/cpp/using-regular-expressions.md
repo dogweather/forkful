@@ -10,50 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么要使用正则表达式
+什么是正则表达式？
 
-很多时候，我们需要对大量的文本进行处理，例如从网页抓取特定的信息，或者从文件中提取数据。使用正则表达式可以帮助我们快速高效地找到和处理这些数据，节省了大量的时间和精力。
+正则表达式是一种强大的工具，用于在文本中查找，匹配和替换特定的模式。它是由一系列符号和字符组成的搜索模板，可以用来在文本中查找具有特定格式的内容。程序员使用正则表达式来进行文本处理和字符串匹配，从而使编程更加高效和灵活。
 
-## 如何使用正则表达式
+如何使用正则表达式？
+
+在C++中，我们可以使用std::regex库来实现正则表达式。首先，我们需要包含多个有用的头文件：
 
 ```C++
 #include <iostream>
 #include <regex>
+#include <string>
+```
 
-using namespace std;
+然后，我们可以使用std::regex_match功能来检查一个字符串是否匹配给定的正则表达式。例如，我们想要检查一个字符串是否是一个有效的邮箱地址，可以这样做：
 
-int main() {
-
-  // 根据模式创建正则表达式对象
-  regex pattern("Hello (\\w+)");
-
-  // 匹配字符串
-  string text = "Hello Jane";
-  smatch match;
-
-  // 使用正则表达式查找匹配项
-  regex_search(text, match, pattern);
-
-  // 输出匹配的结果
-  cout << "匹配到的结果为：" << match[0] << endl; // 完整匹配项
-  cout << "子表达式的结果为：" << match[1] << endl; // 子表达式的匹配项
-
-  return 0;
+```C++
+std::string email = "example@email.com";
+std::regex pattern("^([\\w-\\.]+)@([\\w]+\\.){1,3}([\\w]{2,4})$");
+if (std::regex_match(email, pattern)) {
+  std::cout << "This is a valid email address." << std::endl;
+} else {
+  std::cout << "This is not a valid email address." << std::endl;
 }
 ```
 
-输出结果：
+如果输入的邮箱地址符合正则表达式的模式，那么程序将输出“This is a valid email address.”。否则，将输出“This is not a valid email address.”。
 
-```
-匹配到的结果为：Hello Jane
-子表达式的结果为：Jane
-```
+深入探讨正则表达式
 
-## 深入探讨正则表达式
+正则表达式是由美国计算机科学家Ken Thompson和Alfred Aho于1966年首次引入的。它最初用于Unix操作系统中的文本编辑器，现在已经被广泛应用于各种编程语言中。
 
-使用正则表达式可以进行更加复杂的匹配，例如使用通配符、限定符和字符集合等。同时，也可以进行替换操作，将匹配的文本替换为其他内容。在 C++ 中，正则表达式的相关函数和类都定义在 `<regex>` 头文件中。在使用正则表达式时，建议先编写好模式，再进行匹配操作，以提高效率和准确性。
+除了std::regex外，C++中还有其他一些选择来实现正则表达式，如Boost.Regex和PCRE。不同的实现可能会有些差异，选择使用哪种取决于你所做的具体任务。
 
-## 查看更多
+此外，正则表达式中有许多特殊字符和语法，如元字符和模式修饰符，可以更加精确地匹配文本。如果你想要了解更多关于正则表达式的知识，可以通过参考下面的链接来进一步学习。
+
+相关资源链接
 
 - [C++正则表达式教程](https://www.runoob.com/cplusplus/cpp-regular-expressions.html)
-- [C++正则表达式文档](https://en.cppreference.com/w/cpp/regex)
+- [正则表达式测试工具](https://regexr.com/)
+- [正则表达式速查表](https://medium.com/factory-mind/regex-tutorial-a-simple-cheatsheet-by-examples-649dc1c3f285)

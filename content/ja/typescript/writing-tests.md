@@ -1,7 +1,7 @@
 ---
-title:                "「 テストの作成 」"
-html_title:           "TypeScript: 「 テストの作成 」"
-simple_title:         "「 テストの作成 」"
+title:                "「テストの書き方」"
+html_title:           "TypeScript: 「テストの書き方」"
+simple_title:         "「テストの書き方」"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Testing and Debugging"
@@ -10,34 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜテストを書くのか
+# 何を & 何故？
+テストを書くことは、プログラマーがコードを書いた後にそのコードが正しく動作するかどうかを確認するためのプロセスです。プログラムのバグを早期に発見し、品質を向上させるためにプログラマーはテストを実行します。
 
-あなたは何か新しいソフトウェアを開発する時、そのソフトウェアが期待通りに動作することを確認したくなるでしょう。しかし、プログラムを実際に実行する前に、テストを書くことで手順を確認し、バグを修正することができます。これにより、より効率的にソフトウェアを開発することができるようになります。
-
-## 使い方
+# 方法：
+テストを書くのは簡単です。まず、各テストケースで期待される出力を定義します。次に、その出力を実際の出力と比較し、どちらも一致するかどうかを判断します。以下の例を参考にしてください。
 
 ```TypeScript
-// 数字を足し合わせる関数を定義
-function addNumbers(a: number, b: number) {
-  return a + b;
+// マイナス記号を除去する関数
+function removeMinus(num: number) {
+  if (num < 0) {
+    return num * -1;
+  }
+  else {
+    return num;
+  }
 }
 
-// テストコードを記述
-describe('addNumbers', () => {
-  it('adds two numbers correctly', () => {
-    expect(addNumbers(2, 3)).toBe(5);
-  });
-});
+console.log(removeMinus(5));
+// Output: 5
+
+console.log(removeMinus(-10));
+// Output: 10
 ```
 
-上記の例では、`addNumbers`関数のテストを書いています。`expect`メソッドを使うことで、期待する値と実際の値を比較し、テストの結果を確認することができます。これを活用することで、自分が書いたコードが想定通りに動作するかを確認することができます。
+# 詳細：
+テストを書く慣習は、コンピュータサイエンスが発展してきた過程で生まれました。テストを書くことで、プログラムの品質を向上させ、バグを早期に発見することができます。テストを書く方法にはさまざまなアプローチがありますが、最も一般的なのはユニットテストと統合テストです。
 
-## 詳細を掘り下げる
+他にも、人間が手動でコードを実行してテストする方法もありますが、これは効率的ではありません。そのため、プログラマーは自動化されたテストを書くことを推奨します。
 
-テストを書くことの重要性は、ソフトウェア開発において欠かせないものです。テストを書くことで、バグを見つけやすくし、修正するのも早くなります。また、コードを保守するのにも役立ちます。テストを書く際は、可能な限り網羅的で明確なテストを書くことが大切です。さらに、テストを書くことでユーザーにとっても安心できるソフトウェアを提供できます。
+実際にテストを書くプロセスは、テストフレームワークを使用して行われます。TypeScriptでは、JasmineやMochaなどの人気のあるフレームワークがあります。
 
-## おすすめリンク
-
-- [TypeScript 公式ドキュメント](https://www.typescriptlang.org/docs/)
-- [Jest 公式ドキュメント (テストフレームワーク)](https://jestjs.io/ja/)
-- [Test-driven Development with TypeScript (TypeScriptを使ったテスト駆動開発の方法)](https://khalilstemmler.com/articles/tutorials/getting-started-with-tdd-in-typescript/)
+# 関連リンク：
+- テストフレームワークのドキュメント：[Jasmine](https://jasmine.github.io/)、[Mocha](https://mochajs.org/)
+- TypeScriptの公式ドキュメント：[TypeScript](https://www.typescriptlang.org/)
+- テスト駆動開発（TDD）についての記事：[テスト駆動開発について理解する](https://qiita.com/WWW-Brad/items/eb157fe6b06e8df14a08)

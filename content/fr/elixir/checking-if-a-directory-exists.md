@@ -1,7 +1,7 @@
 ---
-title:                "Vérification de l'existence d'un répertoire"
-html_title:           "Elixir: Vérification de l'existence d'un répertoire"
-simple_title:         "Vérification de l'existence d'un répertoire"
+title:                "Vérifier si un répertoire existe"
+html_title:           "Elixir: Vérifier si un répertoire existe"
+simple_title:         "Vérifier si un répertoire existe"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Files and I/O"
@@ -10,38 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+**Qu'est-ce que c'est et pourquoi?**
 
-Si vous êtes un développeur Elixir, il est probable que vous ayez besoin de vérifier si un répertoire existe avant d'exécuter une opération dessus. Cela peut être utile pour éviter les erreurs, gérer les chemins d'accès et assurer la robustesse de votre code.
+Vérifier si un répertoire existe est simplement le fait de voir si un dossier spécifique se trouve dans un emplacement donné sur votre ordinateur. Les programmeurs le font pour s'assurer que certaines ressources nécessaires à leur code sont disponibles avant de les utiliser. Cela permet d'éviter les erreurs et d'optimiser les performances.
 
-## Comment Faire
+**Comment faire :**
 
-Pour vérifier si un répertoire existe en utilisant Elixir, vous pouvez utiliser la fonction `File.dir?/1` de la bibliothèque standard. Elle prend en paramètre le chemin absolu ou relatif du répertoire à vérifier et renvoie `true` si le répertoire existe et `false` sinon.
+Pour vérifier si un répertoire existe en utilisant Elixir, vous pouvez utiliser la fonction `File.exists?/1` en lui passant le chemin du répertoire en tant que paramètre. Si le répertoire existe, la fonction renverra `true`, sinon elle renverra `false`. Voici un exemple de code :
 
-```Elixir
-iex> File.dir?("/chemin/vers/mon/repertoire")
-true
+```
+Elixir
 
-iex> File.dir?("inexistant")
-false
+if File.exists?("chemin/vers/le/répertoire")
+  IO.puts("Le répertoire existe !")
+else
+  IO.puts("Le répertoire n'existe pas.")
+end
+
 ```
 
-Vous pouvez également utiliser `Path.join/2` pour construire le chemin d'accès avant de le passer à `File.dir?/1`. Voici un exemple:
+**Un peu plus en détails :**
 
-```Elixir
-iex> repertoire = "mon" |> Path.join("chemin") |> Path.join("vers") |> Path.join("repertoire")
-iex> File.dir?(repertoire)
-true
-```
+Auparavant, la vérification de l'existence d'un répertoire nécessitait plusieurs étapes telles que la recherche manuelle du répertoire ou l'utilisation de commandes système externes. Grâce à Elixir, cette tâche est désormais plus simple et intégrée dans le langage lui-même.
 
-## Plongée Profonde
+Bien sûr, il existe d'autres moyens de vérifier l'existence d'un répertoire tels que l'utilisation de bibliothèques externes comme [ex_file](https://hex.pm/packages/ex_file) ou [fsex](https://hex.pm/packages/fsex). Mais la fonction `File.exists?/1` est la méthode la plus simple et la plus efficace si vous utilisez déjà Elixir.
 
-La fonction `File.dir?/1` utilise la fonction sous-jacente `:file.dir?` de la bibliothèque C Erlang pour vérifier si un répertoire existe. En cas d'échec, la fonction renverra l'erreur `:enoent`. Vous pouvez également utiliser `File.dir?/1` sur un chemin d'accès vers un fichier, auquel cas la fonction renverra `false` même si le fichier existe.
+Il est également intéressant de noter que `File.exists?/1` peut également être utilisée pour vérifier l'existence de fichiers ou d'autres types de ressources.
 
-Il est important de noter que la fonction `File.dir?/1` ne vérifie pas si le répertoire peut être accédé ou modifié. Elle se contente de vérifier si le répertoire existe. De plus, cette fonction ne fonctionnera pas correctement si elle est utilisée sur un répertoire distant (par exemple, sur un serveur FTP).
+**A voir aussi :**
 
-## Voir Aussi
-
-- [La documentation de la bibliothèque standard Elixir pour `File.dir?/1`](https://hexdocs.pm/elixir/File.html#dir?/1)
-- [La documentation de la bibliothèque standard Elixir pour `Path.join/2`](https://hexdocs.pm/elixir/Path.html#join/2)
-- [La documentation Erlang pour `:file.dir?`](http://erlang.org/doc/man/file.html#dir?-1)
+- Documentation officielle d'Elixir pour [File.exists?/1](https://hexdocs.pm/elixir/File.html#exists?/1)
+- Package [ex_file](https://hex.pm/packages/ex_file)
+- Package [fsex](https://hex.pm/packages/fsex)

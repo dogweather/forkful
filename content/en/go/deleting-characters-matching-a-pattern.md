@@ -10,58 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
+Deleting characters that match a certain pattern is a common task in programming. It involves identifying specific characters within a string and removing them based on a defined pattern. Programmers often do this to clean up data or manipulate strings in a more efficient way.
 
-Deleting characters matching a pattern is a common task in programming, especially when dealing with user input or data parsing. By learning how to efficiently delete characters, you can streamline your code and make your applications more user-friendly.
+## How to:
+To delete characters matching a pattern in Go, we can use the strings.ReplaceAll() function. This function takes in three parameters: the original string, the pattern to be deleted, and the replacement value. Here is an example:
 
-## How To
+```
+// Defining and initializing our original string
+originalString := "Hello, Go!"
 
-Let's take a look at some examples of how to delete characters matching a pattern using Go.
+// Deleting the letter "o" from our string
+newString := strings.ReplaceAll(originalString, "o", "")
 
-First, we'll need to import the `regexp` package to work with regular expressions. Regular expressions are sets of characters that define a search pattern and can be used to match and manipulate text.
+// Printing the new string
+fmt.Println(newString)
 
-```Go
-import "regexp"
+// Output: Hell, G!
 ```
 
-To delete characters matching a pattern, we can use the `ReplaceAllString()` function from the `regexp` package. This function takes in three parameters: the original string, the regular expression pattern, and the replacement string. The replacement string will be empty in our case, as we want to delete the characters rather than replacing them.
+We can also use regular expressions to delete multiple patterns from a string. The regexp package in Go provides useful functions for pattern matching and deletion. Here is an example:
 
-```Go
-s := "Hello, world! How are you?"
-pattern := "o"
-replacement := ""
+```
+// Defining and initializing our original string
+originalString := "Go is awesome!"
 
-result := regexp.ReplaceAllString(s, pattern, replacement)
-fmt.Println(result)
-// Output: Hll, wrld! Hw are yu?
+// Creating a regular expression to match vowels
+pattern := regexp.MustCompile("[aeiou]")
+
+// Replacing vowels with empty strings
+newString := pattern.ReplaceAllString(originalString, "")
+
+// Printing the new string
+fmt.Println(newString)
+
+// Output: G s wsm!
 ```
 
-In this example, we used the `ReplaceAllString()` function to delete all instances of the letter "o" in our original string. As you can see, the result string no longer contains the letter "o".
+## Deep Dive:
+The concept of deleting characters matching a pattern has been around since the early days of programming languages. In Go, the strings.ReplaceAll() function was added in version 1.12. The regexp package, which allows for more complex pattern matching, has been a part of Go since its initial release.
 
-We can also use regular expressions to delete more complex patterns, such as removing all special characters from a string. Let's see how we can achieve that using the `[^a-zA-Z0-9]+` regular expression pattern. This pattern will match any non-alphanumeric characters.
+There are also alternative methods for deleting characters in Go, such as using the strings.Replace() function which allows for specifying the number of replacements to be made. Another approach is to use the strings.Builder type, which provides more efficient handling of string modifications.
 
-```Go
-s := "Hello, world! How are you?"
-pattern := "[^a-zA-Z0-9]+"
-replacement := ""
+In terms of implementation, the strings.ReplaceAll() function uses a simple string search and replace algorithm, while the regexp package utilizes regular expressions for more advanced matching and replacement.
 
-result := regexp.ReplaceAllString(s, pattern, replacement)
-fmt.Println(result)
-// Output: HelloworldHowareyou
-```
-
-As you can see, all the special characters in the original string have been deleted, leaving only the alphanumeric characters.
-
-## Deep Dive
-
-Regular expressions can be very powerful and can help us delete characters in a variety of ways. Here are some advanced techniques you can use when working with regular expressions in Go:
-
-- You can use the `FindStringSubmatch()` function to find matches for a given regular expression in a string. This function returns a slice of strings that contain the first match and any captured submatches.
-- The `ReplaceAll()` function can also be used to delete characters based on a given pattern. This function takes in a string and a function as parameters, allowing you to perform custom replacements.
-- The `ReplaceAllLiteral()` function can be used to replace strings without interpreting any special characters. This can be useful when working with strings that contain special characters such as `$` or `*`.
-- Go's `regexp` package also provides the `MustCompile()` function, which compiles a regular expression pattern and returns a `*regexp.Regexp` object. This object can then be used in functions like `ReplaceAllString()` or `FindStringSubmatch()` for increased performance.
-
-## See Also
-- [Go Regular Expressions Package Documentation](https://golang.org/pkg/regexp/)
-- [Mastering Regular Expressions by Jeffrey E. F. Friedl](https://www.amazon.com/Mastering-Regular-Expressions-Jeffrey-Friedl/dp/0596514271)
-- [RegExr - Online Regular Expression Tester](https://regexr.com/)
+## See Also:
+- [Go documentation on strings package](https://golang.org/pkg/strings/)
+- [Go documentation on regexp package](https://golang.org/pkg/regexp/)
+- [Tutorial on manipulating strings in Go](https://www.calhoun.io/inserting-and-removing-characters-from-a-string-in-go/)

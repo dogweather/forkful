@@ -1,7 +1,7 @@
 ---
-title:                "コンピュータプログラミングにおける「コマンドライン引数の読み込み」"
-html_title:           "C++: コンピュータプログラミングにおける「コマンドライン引数の読み込み」"
-simple_title:         "コンピュータプログラミングにおける「コマンドライン引数の読み込み」"
+title:                "コンピュータープログラミングの記事のタイトル：コマンドライン引数の読み込み"
+html_title:           "C++: コンピュータープログラミングの記事のタイトル：コマンドライン引数の読み込み"
+simple_title:         "コンピュータープログラミングの記事のタイトル：コマンドライン引数の読み込み"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Files and I/O"
@@ -10,53 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
-コマンドライン引数を読み取ることの重要性について最大2文で説明します。
+## 何か&なぜ?
 
-## 方法
-コマンドライン引数を読み取るには、`argc`と`argv`という2つのパラメータを使用します。`argc`はコマンドラインに入力された引数の数を保持し、`argv`は引数が格納された配列です。以下の例をご覧ください。
+コマンドライン引数を読み取るとは、プログラマーがプログラムに与えられたコマンドラインから情報を受け取ることです。コマンドライン引数は、プログラムの動作を変更したり、外部から入力を受け取ったりするために使用されます。
+
+## 方法:
 
 ```C++
 #include <iostream>
 
-int main(int argc, char *argv[]) {
-  // プログラム名を出力
-  std::cout << "プログラム名: " << argv[0] << std::endl;
+using namespace std;
 
-  // 引数を出力
-  for (int i = 1; i < argc; i++) {
-    std::cout << "引数" << i << ": " << argv[i] << std::endl;
-  }
-  
-  return 0;
+int main(int argc, char** argv) {
+    // コマンドライン引数の数を出力
+    cout << "引数の数: " << argc << endl;
+    // 引数の値を出力
+    for(int i = 0; i < argc; i++){
+        cout << "引数 " << i << ": " << argv[i] << endl;
+    }
+    return 0;
 }
 ```
-
-### 例1:
-コマンドラインに入力された引数がない場合、出力は以下のようになります。
+### 出力例:
 
 ```
-プログラム名: テストプログラム
+引数の数: 4
+引数 0: プログラム名
+引数 1: 引数1
+引数 2: 引数2
+引数 3: 引数3
 ```
 
-### 例2:
-コマンドラインに`hello world`という引数が入力された場合、出力は以下のようになります。
+## 深堀り:
 
-```
-プログラム名: テストプログラム
-引数1: hello
-引数2: world
-```
+コマンドライン引数は、プログラムが実行される前に指定される必要があります。この機能はメインフレームでよく使われていた時代から存在しており、今でも多くのプログラムで使用されています。コマンドライン引数を受け取る方法としては、引数として与えられた文字列を直接取得する方法以外にも、標準ライブラリ関数を使用する方法や、環境変数を使用する方法などがあります。
 
-## 詳細
-コマンドライン引数を読み取ることで、プログラムを柔軟に設計することができます。例えば、ユーザーにプログラムの動作を制御する引数を与えることができます。また、コマンドライン引数は複数のプログラムを実行する際にも便利です。
+## 関連情報:
 
-## その他
-* [コマンドライン引数 - C言語リファレンス](https://www.javadrive.jp/cstart/argv/index1.html)
-* [コマンドライン引数を使ってみる - C++入門](http://cpp-lang.sevendays-study.com/language/51.html)
-
----
-
-## 参考
-* [Markdown記法 - Qiita Help](https://help.qiita.com/ja/articles/markdown-guide)
-* [Markdown記法 サンプル集 - Qiita](http://qiita.com/Qiita/items/c686397e4a0f4f11683d)
+- [C++ Reference - コマンドライン引数を受け取る](https://cpprefjp.github.io/reference/dynamic/standard-input-output.html) 
+- [C++コマンドライン引数チュートリアル](https://www.geeksforgeeks.org/command-line-arguments-in-c-cpp/)

@@ -10,47 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä & miksi?
+Stringin pituuden löytäminen tarkoittaa yksinkertaisesti merkkien määrän laskemista annetusta merkkijonosta. Tätä taitoa tarvitaan useissa ohjelmointitehtävissä, kuten tietyn merkkijonon etsimisessä tai käsittelyssä.
 
-On monia tilanteita, joissa tarvitsemme tietää merkkijonon pituuden, kuten käsitellessämme käyttäjän syöttämää tietoa tai tarkistaessamme tiedostonimen oikeellisuuden. Elixirin avulla merkkijonon pituuden löytäminen on nopeaa ja helppoa.
+## Kuinka:
+Elixirissä stringin pituuden löytämiseen on useita tapoja. Voit käyttää sisäänrakennettua `String.length` funktiota tai `Enum.count` funktiota yhdessä split-toiminnon kanssa. Esimerkiksi:
 
-## Miten
+```Elixir
+stringi = "Tervetuloa Elixirin maailmaan!"
+String.length(stringi)
+# => 28
 
-```elixir
-string = "Tervetuloa Elixirin maailmaan!"
-
-# Käytä String.length-funktiota selvittääksesi merkkijonon pituuden
-String.length(string) # palauttaa 27
+toinen_stringi = "Elixir on hauskaa opetella"
+Enum.count(String.split(toinen_stringi, " "))
+# => 4
 ```
 
-Kun käytät `String.length`-funktiota, Elixir luo uuden merkkijonon ja laskee sen merkkien määrän. Voit myös käyttää `len`-funktiota, joka löytyy `String.Chars`-moduulista.
+## Syväsukellus:
+Stringin pituuden laskeminen on ollut tärkeä osa ohjelmointia jo pitkään. Aikaisemmin se saattoi olla haastavaa, mutta nykyään kieliemme sisäänrakennetut ominaisuudet tekevät siitä helppoa. Joissakin muissa ohjelmointikielissä, kuten C:ssä, täytyy toteuttaa oma funktio stringin pituuden laskemiseen.
 
-```elixir
-import String.Chars
-
-string = "Hei maailma!"
-
-len(string) # palauttaa 11
-```
-
-## Syvällisempi sukellus
-
-Elixirin merkkijonofunktioissa on hyödyllisiä toimintoja merkkijonojen manipulointiin. Voit esimerkiksi käyttää `String.slice`-funktiota palauttaaksesi halutun merkkijonon osan käyttämällä indeksinumerointia.
-
-```elixir
-string = "Elixir on mahtava ohjelmointikieli!"
-
-String.slice(string, 7..13) # palauttaa "on maht"
-```
-
-Voit myös käyttää `String.replace`-funktiota vaihtaaksesi tietyn merkkijonon toiseen.
-
-```elixir
-string = "Elixir on hieno ohjelmointikieli!"
-String.replace(string, "hieno", "mahtava") # palauttaa "Elixir on mahtava ohjelmointikieli!"
-```
-
-## Katso myös
-
-- [Elixirin virallinen dokumentaatio merkkijonofunktioista](https://hexdocs.pm/elixir/String.html)
-- [Elixirin merkkijonot: yleisimpiä kysymyksiä ja vastauksia](https://elixir-lang.org/getting-started/string-patterns.html)
+## Katso myös:
+- [Elixirin virallinen dokumentaatio](https://hexdocs.pm/elixir/String.html#length/1)
+- [Elixir School - oppimisresurssi Elixirista](https://elixirschool.com/fi/lessons/basics/string-length/)

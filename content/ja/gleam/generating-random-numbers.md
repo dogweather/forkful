@@ -1,7 +1,7 @@
 ---
-title:                "ランダムな数字を生成する"
-html_title:           "Gleam: ランダムな数字を生成する"
-simple_title:         "ランダムな数字を生成する"
+title:                "ランダムな数を生成する"
+html_title:           "Gleam: ランダムな数を生成する"
+simple_title:         "ランダムな数を生成する"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Numbers"
@@ -10,51 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##なぜ
-ランダムな数字を生成することに興味があるのは、データの偏りを避け、選択肢をランダムにすることでより公平な意思決定を行うためです。
+## ランダムな数字を生成するのは何か？
 
-##作り方
-ランダムな数字を生成するためには、Gleamの`rand`モジュールを使用します。まずは`Main`モジュールに以下のように記述します。
+ランダムな数字を生成するとは、プログラマーがコンピューターにランダムな数字を生成させることを指します。これは、ゲームや暗号化など、さまざまなアプリケーションで使用される重要な機能です。
 
-```Gleam
-import rand
+なぜプログラマーがランダムな数字を生成するのかというと、これはプログラムの予測可能性を減らし、セキュリティを向上させるための手段だからです。また、ランダムな数字を生成することで、バランスのとれたランダムな選択をすることができます。
 
-fn main() {
-  // コードをここに書く
-}
-```
+## 方法：
 
-###一桁のランダムな整数を生成する
-Gleamでは、`rand.int`関数を使用して指定された範囲内の一桁のランダム整数を生成することができます。
+Gleamでは、ランダムな数字を生成するために```random.int(min, max)```関数を使用します。これは、最小値と最大値の範囲内でランダムな整数を生成するものです。
+
+例えば、次のコードを実行すると、1から10の間のランダムな整数が生成されます。
 
 ```Gleam
-let number = rand.int(0, 9) // 範囲は0から9まで
+let random_num = random.int(1, 10)
 ```
 
-###複数のランダムな整数を生成する
-もし複数のランダムな整数を生成したい場合は、以下のように`for`ループを使用することができます。
+出力例：
 
 ```Gleam
-let numbers = for _ in 1..5 {
-  rand.int(10, 20) // 10から20までの整数を5つ生成
-}
-
-// numbers = [12, 16, 17, 10, 20]
+7
 ```
 
-###ランダムな文字列を生成する
-文字列をランダムに生成するには、`rand.string`関数を使用します。
+## 詳細：
 
-```Gleam
-let letters = "abcdefghijklmnopqrstuvwxyz"
-let string = rand.string(letters, 10) // 10文字のランダムな文字列を生成
+ランダムな数字を生成するためには、偏りのない乱数生成アルゴリズムが使用されます。これは、複数の要因を混ぜ合わせることで実現されます。
 
-// string = "jgixskdelt"
-```
+Gleam以外のアルゴリズムとしては、線形合同法やメルセンヌ・ツイスター法などがあります。これらは、簡単に実装できる反面、偏りが生じる可能性があります。
 
-##深く掘り下げる
-Gleamの`rand`モジュールは内部で、Mersenne Twisterと呼ばれるアルゴリズムを使用してランダムな数字を生成します。このアルゴリズムは周期が2^19937-1であり、非常に高速かつランダムな数字を生成することができます。
+ランダムな数字を生成するのには、パソコンが使用する物理的なプロセスも利用されます。これは、ハードウェアに搭載されているノイズジェネレーターを使用する方法や、マウスの移動やキーの操作などのユーザーの入力を使用する方法などがあります。
 
-##参考情報
-- [Gleamのrandモジュール](https://gleam.run/modules/rand)
-- [Mersenne Twisterアルゴリズムの詳細](https://en.wikipedia.org/wiki/Mersenne_Twister)
+## 関連リンク：
+
+- Gleam公式ドキュメント： https://gleam.run/
+- ランダムな数字生成の歴史： https://en.wikipedia.org/wiki/Random_number_generation
+- 線形合同法：https://en.wikipedia.org/wiki/Linear_congruential_generator
+- メルセンヌ・ツイスター法：https://en.wikipedia.org/wiki/Mersenne_Twister

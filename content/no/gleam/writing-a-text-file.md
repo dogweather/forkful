@@ -10,28 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hva & Hvorfor?
+Skriving av tekstfiler er en vanlig oppgave for programvareutviklere. Dette innebærer å opprette et dokument som inneholder ren tekst, som kan leses og endres av både mennesker og datamaskiner. Å skrive tekstfiler er en viktig del av utviklingsprosessen, ettersom det tillater utviklere å lagre og organisere data som trengs for å kjøre et program.
 
-Hvorfor skulle noen engasjere seg i å skrive en tekstfil? Vel, det er faktisk et nyttig og grunnleggende konsept innen programmering. Å kunne skrive og lese data fra en fil er viktig for å behandle store mengder informasjon og lagre den for senere bruk.
-
-## Hvordan
-
-Du trenger ikke å være en erfaren programmør for å kunne skrive en tekstfil i Gleam. Det er en ganske enkel prosess som kan gjøres med få linjer med kode. Først må du importere biblioteket "gleam/io". Deretter kan du bruke funksjonen "write_file" for å opprette en tekstfil og skrive innhold i den.
+# Hvordan:
+Å skrive en tekstfil i Gleam er enkelt og intuitivt. Først må du deklarere en variabel som vil holde informasjonen du ønsker å skrive til filen. Deretter bruker du funksjonen `io.write_file` og angir variabelen som argument. Til slutt, for å sikre at endringene lagres, bør du bruke funksjonen `io.sync` for å synkronisere filsystemet.
 
 ```
-import gleam/io
+let message = "Hei verden!"
 
-let file = io.write_file("min_tekstfil.txt", "Dette er noen tekster jeg skriver til filen!")
+Gleam.Console.log("Skriver til fil...")
+io.write_file("minfil.txt", message)
+io.sync()
+
+Gleam.Console.log("Ferdig!")
 ```
 
-## Dykk dypere
+Når du kjører denne koden, vil programmet lage en fil med navnet "minfil.txt" og legge teksten "Hei verden!" i den.
 
-Den enkle koden over vil lage en fil ved navn "min_tekstfil.txt" og skrive teksten "Dette er noen tekster jeg skriver til filen!" inn i den. Men det finnes også flere muligheter for å tilpasse og manipulere dataen som skrives til filen.
+# Dypdykk:
+Skriving av tekstfiler har vært en standardoppgave i programmering siden de tidlige dagene av datamaskiner. Før i tiden ble programmer skrevet for å kjøre i kommandolinjen, og å skrive til en tekstfil var den eneste måten å lagre og organisere data på. I dag finnes det flere alternativer, som å bruke en database, men tekstfiler er fortsatt nyttige for enkle oppgaver.
 
-Du kan for eksempel bruke en "append"-funksjon for å legge til mer tekst i en allerede eksisterende fil, i stedet for å overskrive hele innholdet. Du kan også bruke for-løkker for å gå gjennom et datasett og skrive hver enkelt verdi til en linje i filen. Mulighetene er mange, og det avhenger av hva slags informasjon du ønsker å lagre og hvordan du vil organisere den.
+Når du skriver til en tekstfil, kan du bruke forskjellige formateringsmetoder, som å legge til linjeskift eller bruke forskjellige skrifttyper og størrelser. Dette gjøres vanligvis ved hjelp av spesifikke formateringsfunksjoner eller spesielle koder som følger en bestemt standard. Men det grunnleggende konseptet med å bare legge til ren tekst forblir det samme.
 
-## Se også
+# Se også:
+For mer informasjon om å skrive tekstfiler i Gleam, sjekk ut dokumentasjonen: https://gleam.run/documentation/standard_library/index.htmlio#write_file
 
-- Offisiell dokumentasjon for Gleam: https://gleam.run/
-- "Begynn å programmere med Gleam" (på norsk): https://medium.com/@pieterdm/hello-world-i-gleam-d55495bb351b
-- "Lær deg å bruke filer i Gleam" (på engelsk): https://dev.to/smizoguchi/lets-learn-how-to-use-files-in-gleam-461i
+Du kan også lære mer om filsystemet i Gleam her: https://gleam.run/documentation/standard_library/index.htmlio#filesystem

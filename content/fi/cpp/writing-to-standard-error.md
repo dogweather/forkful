@@ -1,7 +1,7 @@
 ---
-title:                "Kirjoittaminen standardivirheelle"
-html_title:           "C++: Kirjoittaminen standardivirheelle"
-simple_title:         "Kirjoittaminen standardivirheelle"
+title:                "Standard errorin kirjoittaminen"
+html_title:           "C++: Standard errorin kirjoittaminen"
+simple_title:         "Standard errorin kirjoittaminen"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Files and I/O"
@@ -10,44 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mikä & Miksi?
+Kirjoittaminen ns. standardivirhe-kanavaan (engl. standard error) on tapa ilmoittaa ohjelman suorituksessa tapahtuvista virheistä. Ohjelmoijat hyödyntävät tätä tekniikkaa jotta virhetilanteet voidaan havaita ja korjata nopeammin.
 
-Tervetuloa takaisin koodauksen pariin! Tänään puhumme siitä, miksi ja miten kirjoittaa standardivirheeseen C++:ssa. Tietenkin voit kirjoittaa tietoja myös standarditulosvirtaan, mutta miksi kirjoittaisit standardivirheeseen?
-
-Standardivirhe on suunniteltu erityisesti virheilmoituksien ja vianmäärityksen tarpeisiin. Se tulostaa kaiken tiedon, joka on lähetetty virheellisesti, mikä auttaa sinua selvittämään ohjelmasi ongelmat.
-
-## Mitä Sinun Tulee Tehdä
-
-Standardivirheeseen kirjoittaminen C++:ssa ei ole vaikeaa. Sinun tarvitsee vain käyttää `std::cerr`-virtaa ja käyttää siihen `<<`-operaattoria, kuten seuraavassa esimerkissä:
-
+## Kuinka:
 ```C++
 #include <iostream>
 
-int main()
-{
-    std::cerr << "Tämä on virheilmoitus standardivirheeseen." << std::endl;
-    return 0;
+int main() {
+  std::cerr << "Tämä on esimerkki virheilmoituksesta.\n";
+  return 0;
 }
 ```
-
-Esimerkissä luodaan yksinkertainen C++-ohjelma, joka tulostaa virheilmoituksen standardivirheeseen käyttämällä `std::cerr`-virtaa. Huomaa, että `std::endl` käytetään rivinvaihtoon.
-
-Jos suoritat tämän ohjelman, saat seuraavan tulosteen:
-
+Esimerkki tulosteesta:
 ```
-Tämä on virheilmoitus standardivirheeseen.
+Tämä on esimerkki virheilmoituksesta.
 ```
 
-Sieltä löydät kaiken tiedon, joka on kirjoitettu `std::cerr`-virtaan.
+## Syvempi sukellus:
+Kirjoittaminen standardivirhe-kanavaan perustuu Unix-käyttöjärjestelmässä kehitettyyn tekniikkaan, jossa tulostuksessa käytetään kolmea eri kanavaa: tavallinen tulostus (stdout), virheilmoitukset (stderr) ja käyttöohjeet (stdvin). Tämä tekniikka on myöhemmin implementoitu myös moniin muihin käyttöjärjestelmiin, kuten Windowsiin.
 
-## Syvempi Sukellus
+Yksi vaihtoehto kirjoittamiselle standardivirhe-kanavaan on käyttää virheilmoituksia käsitteleviä funktioita, kuten `perror` tai `strerror`. Näitä voidaan hyödyntää esimerkiksi tulostamaan lisätietoja virhetilanteista.
 
-Standardivirhe suorittaa muutamia toimintoja taustalla, joihin sinun kannattaa tutustua. Ensinnäkin, se on C++:n `std::ostream`-luokan alaluokka, joka mahdollistaa tiedon kirjoittamisen virtaan `<<`-operaattorin avulla. Toiseksi, se on C++:n tukemien virtaobjektien joukossa, mikä tarkoittaa sitä, että voit käyttää `std::cerr`-virtaa samaan tapaan kuin muita virtaobjekteja, kuten `std::cout`.
+Näin voidaan kirjoittaa virheilmoitus käyttäen `perror`-funktiota:
+```C++
+#include <stdio.h>
+#include <errno.h>
 
-On myös tärkeää huomata, että `std::cerr` on yleensä virheiden käsittelemiseen tarkoitettu virta, mutta voit käyttää sitä myös tulostamaan muita tietoja ohjelmasi suorituksen aikana. Voit myös ohjata `std::cerr`-tulosteen toiseen paikkaan, kuten tiedostoon, `std::clog`-virtaan tai jopa `std::cout`-virtaan. Tämä antaa sinulle joustavuutta käyttää sitä monipuolisesti ohjelmasi tarpeiden mukaan.
+int main () {
+  FILE *fp;
+  fp = fopen("tiedosto.txt", "r");
+  if (fp == NULL) {
+    perror("Virhe avattaessa tiedostoa: ");
+    return 1;
+  }
+  return 0;
+}
+```
+Tämä tulostaa virheilmoituksen, johon liitetään automaattisesti selitys virheen syystä ja sijainnista.
 
-## Katso Myös
-
-- [C++ Standardikirjasto: ostream-luokka](https://www.cplusplus.com/reference/ostream/ostream/)
-- [C++ Standardikirjasto: virtaobjektien joukko](https://www.cplusplus.com/reference/ios/ios/)
-- [C++ Standardikirjasto: näkyvyysvirtaobjektien tyyppi](https://www.cplusplus.com/reference/ios/basicios/)
+## Katso myös:
+- [Unix-kanavien perusteet](https://en.wikipedia.org/wiki/Standard_streams)
+- [C++ virheiden käsittely](https://www.tutorialspoint.com/cplusplus/cpp_exceptions_handling.htm)

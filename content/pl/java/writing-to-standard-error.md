@@ -10,27 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego?
+# Co & Dlaczego?
+Zapisywanie do standardowego wyjścia błędów to sposób na wyświetlanie komunikatów o błędach lub ostrzeżeń dla użytkownika podczas działania programu. Programiści używają go, aby pomóc w debugowaniu i poprawie działania aplikacji.
 
-Pisanie do standardowego błędu to nie tylko podstawowa umiejętność programistów, ale także ważny aspekt programowania. Jest to przydatne, gdy chcemy śledzić błędy i wyjątki w naszych aplikacjach, co ułatwia debugowanie i poprawianie naszego kodu.
+# Jak to zrobić:
+Java dostarcza nam mechanizm ```System.err.println()```, który pozwala na wypisywanie tekstu do standardowego wyjścia błędów. Przykład użycia:
 
-## Jak to zrobić?
-
-Bardzo łatwo jest napisać do standardowego błędu w języku Java. Wystarczy użyć metody `System.err.println()` i przekazać do niej odpowiednią wiadomość jako parametr. Poniżej przedstawiamy przykładowy kod w języku Java:
+```Java
+System.err.println("Błąd: Nie można odnaleźć pliku!");
 ```
-System.err.println("To jest przykładowy komunikat błędu.");
+
+To spowoduje wyświetlenie komunikatu "Błąd: Nie można odnaleźć pliku!" na konsoli programu. Możemy również przekazać do tej metody wyjątek, który zostanie wyświetlony wraz z odpowiednim komunikatem:
+
+```Java
+catch (FileNotFoundException e) {
+    System.err.println("Błąd: Nie można odnaleźć pliku!");
+    e.printStackTrace();
+}
 ```
 
-Po uruchomieniu tego kodu, wiadomość zostanie wyświetlona w terminalu w kolorze czerwonym, w celu wyróżnienia od zwykłych komunikatów wyświetlanych przez metodę `System.out.println()`.
+# Głęboka Zanurzona:
+Standardowe wyjście błędów zostało zaprojektowane w celu ułatwienia programistom w znajdowaniu i rozwiązywaniu błędów w aplikacji. Dzięki temu mechanizmowi możliwe jest wyświetlanie i przekazywanie informacji o błędach do użytkownika, co ułatwia w ich zrozumieniu i naprawieniu. Alternatywą dla tego mechanizmu jest standardowe wyjście, które jest wykorzystywane do wyświetlania informacji do użytkownika, ale nie zawiera informacji o błędach.
 
-## Deep Dive
+W Javie standardowe wyjście błędów jest domyślnie przekierowywane na konsolę, ale istnieje możliwość zmiany tej konfiguracji. Można to zrobić za pomocą klasy ```System.setErr()```, która pozwala na ustawienie innego strumienia wyjścia niż konsola. 
 
-Dlaczego korzystamy z metody `System.err.println()` zamiast zwykłej metody `System.out.println()`? Metoda `System.out.println()` jest używana do wyświetlania komunikatów wyjścia, natomiast metoda `System.err.println()` jest używana do wyświetlania komunikatów błędów i wyjątków. W ten sposób możemy łatwo rozróżnić między zwykłymi komunikatami a błędami w naszych aplikacjach.
-
-Warto także zauważyć, że metoda `System.err.println()` działa tak samo jak metoda `System.out.println()` i możemy używać jej do wyświetlania wszystkich typów danych, nie tylko wiadomości tekstowych.
-
-## Zobacz także
-
-- [Oficjalna dokumentacja języka Java](https://docs.oracle.com/en/java/javase/)
-- [Poradnik dla początkujących w języku Java](https://www.codecademy.com/learn/learn-java)
-- [Przewodnik po obsłudze błędów w języku Java](https://www.baeldung.com/java-exceptions)
+# Zobacz również:
+- Dokumentacja Java: https://docs.oracle.com/javase/8/docs/api/java/lang/System.html#err
+- Wideo tutorial: https://www.youtube.com/watch?v=6777R1L6x9s
+- Inne artykuły o programowaniu w Javie: https://sutherland-hdc.github.io/articles.html

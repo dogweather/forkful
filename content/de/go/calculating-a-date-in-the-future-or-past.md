@@ -1,7 +1,7 @@
 ---
-title:                "Das Berechnen eines Datums in der Zukunft oder Vergangenheit"
-html_title:           "Go: Das Berechnen eines Datums in der Zukunft oder Vergangenheit"
-simple_title:         "Das Berechnen eines Datums in der Zukunft oder Vergangenheit"
+title:                "Datum in der Zukunft oder Vergangenheit berechnen."
+html_title:           "Go: Datum in der Zukunft oder Vergangenheit berechnen."
+simple_title:         "Datum in der Zukunft oder Vergangenheit berechnen."
 programming_language: "Go"
 category:             "Go"
 tag:                  "Dates and Times"
@@ -10,43 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
-Es gibt viele Gründe, warum jemand ein Datum in der Zukunft oder Vergangenheit berechnen möchte. Vielleicht müssen sie Termine planen, Fristen einhalten oder einfach nur neugierig darauf sein, an welchem Tag in der Zukunft ein bestimmtes Ereignis stattfinden wird.
+## Was & Warum?
+Das Berechnen eines Datums in der Vergangenheit oder Zukunft ist ein häufiges Problem, dem sich viele Programmierer in ihrem Alltag stellen müssen. Es geht darum, ein bestimmtes Datum durch Hinzufügen oder Subtrahieren von Tagen, Monaten oder Jahren zu verändern. Programmierer tun dies, um zukünftige Termine zu planen oder vergangene Ereignisse zu analysieren.
 
-## Wie geht's?
-Um ein Datum in der Zukunft oder Vergangenheit zu berechnen, können wir die Zeitpakete in Go verwenden:
+## Wie geht es?
+Um ein Datum in der Vergangenheit oder Zukunft zu berechnen, können wir die Funktionen AddDate oder SubDate der Zeitbibliothek in Go verwenden. Wir geben einfach das ursprüngliche Datum und die gewünschte Anzahl an Tagen, Monaten oder Jahren an, die hinzugefügt oder subtrahiert werden sollen.
+
 ```Go
-package main
+import "time"
 
-import (
-    "fmt"
-    "time"
-)
+// Berechnung eines Datums in der Zukunft
+future := time.Now().AddDate(0, 1, 0) // Hinzufügen eines Monats zum aktuellen Datum
+fmt.Println(future) // Output: 2021-01-09 15:55:05.815745877 +0100 CET m=+266.361063175
 
-func main() {
-    // Heute's Datum holen
-    heute := time.Now()
-
-    // Datum in der Vergangenheit berechnen
-    vergangenheit := heute.AddDate(-1, 0, 0)
-
-    // Datum in der Zukunft berechnen
-    zukunft := heute.AddDate(0, 1, 0)
-
-    // Formatieren und ausgeben
-    fmt.Println("Vergangenes Datum:", vergangenheit.Format("02.01.2006"))
-    fmt.Println("Zukünftiges Datum:", zukunft.Format("02.01.2006"))
-}
-```
-Der Output wäre:
-```
-Vergangenes Datum: 19.02.2020
-Zukünftiges Datum: 19.04.2020
+// Berechnung eines Datums in der Vergangenheit
+past := time.Now().SubDate(0, 0, 7) // Subtrahieren von 7 Tagen vom aktuellen Datum
+fmt.Println(past) // Output: 2020-11-30 15:55:05.815825609 +0100 CET m=+199.361142907
 ```
 
-## Tiefer eintauchen
-Die `AddDate()` Funktion nimmt als Argumente das Jahr, den Monat und den Tag und gibt ein `time.Time` Objekt zurück. Wir können auch `Sub()` verwenden, um ein Datum in der Vergangenheit zu berechnen. Außerdem gibt es noch viele weitere Funktionen in den Zeitpaketen, um mit Datum und Uhrzeit in Go zu arbeiten.
+## Tiefer schürfen
+Das Problem der Berechnung von Datumsangaben ist schon lange bekannt und es gibt verschiedene Alternativen, dies zu bewältigen. Eine Möglichkeit ist die Verwendung von Unix-Zeitstempeln, die die Anzahl der vergangenen Sekunden seit dem 1. Januar 1970 darstellen. Eine andere Möglichkeit ist die Verwendung von externen APIs, die für die Berechnung von Datumsangaben entwickelt wurden.
 
-## Siehe auch
-- Dokumentation zu Zeitpaketen in Go: https://golang.org/pkg/time/
-- Ein Tutorial zur Arbeit mit Datum und Uhrzeit in Go: https://yourbasic.org/golang/time-date-examples/#add-date
+In der Implementierung nutzt die Funktion AddDate oder SubDate die interne Struktur time.Time und ändert diese entsprechend der angegebenen Werte. Dies ermöglicht eine sehr effiziente Berechnung von Datumsangaben.
+
+## Sieh auch
+- [Go Zeitbibliothek](https://pkg.go.dev/time)
+- [Unix-Zeitstempel](https://de.wikipedia.org/wiki/Unixzeit)

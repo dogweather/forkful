@@ -10,46 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-例因为PHP中的正则表达式是强大且灵活的工具，它能够帮助程序员处理字符串的复杂匹配和替换，提高程序的效率和可靠性。
+什么是正则表达式，为什么程序员要用它？
 
-## 为什么
+正则表达式是一种强大的文本匹配工具，它可以帮助程序员快速有效地搜索和处理文本数据。程序员使用正则表达式来执行各种任务，比如验证输入数据、提取信息和替换文本。
 
-正则表达式是PHP中非常强大和实用的工具，它可以帮助程序员轻松处理复杂的字符串匹配和替换任务。使用正则表达式，可以有效地提高程序的效率和可靠性，让程序员能够更加专注于其他重要的任务。
+如何使用：
 
-## 如何使用
+使用PHP内置的preg_match（）函数可以进行正则表达式匹配。在括号中，第一个参数是需要匹配的正则表达式模式，第二个参数是要搜索的文本，第三个参数是一个变量，用于存储匹配的结果。
 
-在PHP中，使用正则表达式的基本模式是通过使用preg_match()函数。下面是一个简单的例子：
-
-```PHP
-<?php
+```
 $pattern = '/hello/';
-$string = 'Hello World';
-preg_match($pattern, $string, $matches);
-echo $matches[0]; // 输出：Hello
+$text = 'Hello world';
+preg_match($pattern, $text, $matches);
+
+print_r($matches);
+// output: Array ( [0] => Hello )
 ```
 
-此外，还可以使用preg_match_all()函数来匹配字符串中的所有出现。
+深入了解：
 
-```PHP
-<?php
-$pattern = '/[0-9]+/';
-$string = 'There are 5 apples in the basket and 4 oranges on the table.';
-preg_match_all($pattern, $string, $matches);
-print_r($matches[0]); // 输出：Array ( [0] => 5 [1] => 4 )
-```
+正则表达式最早是由贝尔实验室的计算机科学家Ken Thompson和Rob Pike发明的。它们被用于早期的UNIX操作系统中，用来搜索和替换文本。
 
-使用正则表达式可以在字符串中匹配特定模式的文本，并且可以使用特殊字符来表示不同类型的字符，如\d代表数字，\w代表任何字母、数字或下划线，\s代表空白字符。
+除了PHP，其他编程语言也支持正则表达式，如Perl、Python和Java。每种语言都有不同的语法和特性，但原理都是相同的。
 
-## 深入了解
+在实现正则表达式时，通常会使用有限状态自动机（Finite-state Machine）来处理原始文本和正则表达式。这样可以实现高效的匹配算法，因此正则表达式可以处理大量的文本数据。
 
-正则表达式有很多强大的功能，如使用捕获组来提取特定部分的匹配文本，以及使用反向引用来使用这些匹配结果。还可以使用修饰符来对正则表达式进行更精确的匹配，如i表示大小写不敏感，g表示全局匹配，m表示多行匹配。
+相关资源：
 
-此外，还可以通过使用正则表达式来验证用户输入的数据是否符合特定的格式要求，如验证电子邮件地址、电话号码等。
-
-总的来说，正则表达式是一个强大的工具，可以帮助程序员快速而有效地处理字符串，提高程序的运行效率和可靠性。
-
-## 参考链接
-
-- [正则表达式入门教程](https://www.w3schools.com/php/php_regex.asp)
-- [PHP手册：正则表达式函数](https://www.php.net/manual/en/ref.pcre.php)
-- [PHP正则表达式示例](https://www.php.net/manual/en/ref.pcre.php#example-4614)
+- PHP官方文档：https://www.php.net/manual/en/function.preg-match.php
+- Perl官方文档：https://perldoc.perl.org/perlre.html
+- Python官方文档：https://docs.python.org/3/library/re.html
+- Java官方文档：https://docs.oracle.com/javase/tutorial/essential/regex/

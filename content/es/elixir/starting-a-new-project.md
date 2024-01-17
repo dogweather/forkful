@@ -1,7 +1,7 @@
 ---
-title:                "Iniciando un nuevo proyecto"
-html_title:           "Elixir: Iniciando un nuevo proyecto"
-simple_title:         "Iniciando un nuevo proyecto"
+title:                "Comenzando un nuevo proyecto"
+html_title:           "Elixir: Comenzando un nuevo proyecto"
+simple_title:         "Comenzando un nuevo proyecto"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Getting Started"
@@ -10,46 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¿Qué es y por qué?
 
-Si estás buscando comenzar un nuevo proyecto de programación, Elixir es una excelente opción. Es un lenguaje de programación funcional que se ejecuta en la máquina virtual de Erlang y está diseñado para construir aplicaciones escalables y concurrentes. Además, Elixir es fácil de aprender y ofrece una amplia gama de herramientas y librerías para ayudarte a construir tu proyecto de manera eficiente.
+Iniciar un nuevo proyecto en Elixir significa crear una base para desarrollar una aplicación o software utilizando este lenguaje de programación. Los programadores lo hacen para aprovechar las características únicas de Elixir, como el manejo de concurrencia y la escalabilidad, para crear aplicaciones eficientes y confiables.
 
-## Cómo comenzar
-
-Antes de comenzar a codificar, debes instalar Elixir en tu sistema. Puedes encontrar instrucciones detalladas en el [sitio web oficial de Elixir](https://elixir-lang.org/install.html). Una vez que tengas Elixir instalado, puedes utilizar el comando `mix new` para crear una nueva aplicación.
+## Cómo hacerlo:
 
 ```
-Elixir mix new my_app
+Elixir.new
 ```
 
-Esto creará una estructura básica de aplicación en el directorio `my_app` con archivos como `mix.exs` y `lib/my_app.ex`. Además, Elixir utiliza el [patrón de diseño de supervisor](https://elixir-lang.org/getting-started/mix-otp/supervisor-and-application.html) para manejar errores y supervisar la ejecución de tus aplicaciones.
+Este comando crea una nueva aplicación en Elixir con una estructura básica de carpetas y archivos. También instala todas las dependencias necesarias para ejecutar la aplicación.
 
-## Profundizando
-
-Al comenzar un nuevo proyecto en Elixir, es importante tener en cuenta cómo se estructuran las aplicaciones. Puedes crear módulos y funciones utilizando el operador `def` y separarlos en diferentes módulos si es necesario. Por ejemplo:
-
-```Elixir
-defmodule Calculator do
-  def add(a, b) do
-    a + b
-  end
-end
+```
+mix new my_app
 ```
 
-Esto creará un módulo llamado `Calculator` con una función de `add` que suma dos números. Para llamar a esta función, puedes utilizar el operador `.` y pasar los argumentos necesarios:
+Si deseas especificar un nombre para tu aplicación, reemplaza "my_app" con el nombre deseado en el comando anterior.
 
-```Elixir
-Calculator.add(2, 4)
+```
+cd my_app
 ```
 
-Además, Elixir tiene un sistema de tipos dinámico y utiliza el concepto de "patrones" para hacer coincidir y manejar datos. Puedes profundizar en estos conceptos y más en la [documentación oficial de Elixir](https://elixir-lang.org/getting-started/basic-types.html).
+Este comando te lleva al directorio de tu nueva aplicación, donde puedes comenzar a escribir tu código en Elixir.
 
-## Ver también
+## En profundidad:
 
-Si estás interesado en aprender más sobre Elixir y cómo comenzar un nuevo proyecto, aquí tienes algunos recursos adicionales:
+Elixir se basa en el lenguaje de programación Erlang, el cual fue desarrollado para crear sistemas distribuidos y tolerantes a fallos. Al aprovechar la infraestructura de Erlang, Elixir hereda estas capacidades y ofrece una sintaxis más amigable y un conjunto de herramientas más modernas. Alternativas a Elixir incluyen otros lenguajes de programación como Rust o Go, pero cada uno tiene sus propias fortalezas y debilidades.
 
-- [Getting started with Elixir](https://elixir-lang.org/getting-started/introduction.html)
-- [Elixir School - A community-driven learning platform](https://elixirschool.com/)
-- [Awesome Elixir - A curated list of awesome Elixir libraries](https://github.com/h4cc/awesome-elixir)
+Al iniciar un nuevo proyecto en Elixir, también tendrás la opción de utilizar un framework web como Phoenix. Este framework proporciona una estructura adicional para crear aplicaciones web en un entorno Elixir, lo que simplifica la creación de servidores web y aplicaciones de tiempo real.
 
-¡Ahora estás listo para comenzar tu propio proyecto en Elixir! ¡Diviértete explorando este increíble lenguaje de programación funcional!
+## Ver también:
+
+- Documentación de Elixir: https://elixir-lang.org/getting-started/introduction.html
+- Tutorial de Phoenix: https://hexdocs.pm/phoenix/up_and_running.html#content
+- Comparación entre Elixir y otros lenguajes: https://stackshare.io/stackups/elixir-vs-go-vs-rust

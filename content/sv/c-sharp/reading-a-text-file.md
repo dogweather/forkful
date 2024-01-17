@@ -10,35 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
-Att läsa och behandla textfiler är en vanlig uppgift inom programmering, särskilt inom C#. Genom att kunna läsa en textfil kan du använda dess data för att utföra olika åtgärder, t.ex. skapa rapporter eller uppdatera databaser.
+## Vad & Varför?
+Att läsa en textfil är en vanlig uppgift för programmerare. Det innebär att man läser in data från en textbaserad fil och använder den i sitt program. Det kan vara användbart för att lagra och använda stora mängder information eller för att importera data från andra program.
 
-## Hur man gör det
-För att läsa en textfil i C# behöver du först skapa en instans av klassen `StreamReader`. Sen använder du `File.OpenText()`-metoden för att öppna och läsa filen. Här är ett enkelt exempel:
+## Hur man gör det:
+Det finns flera sätt att läsa en textfil i C#, men ett enkelt sätt är att använda klassen `StreamReader`. Här är ett exempel på hur man läser in en textfil med detta sätt:
 
 ```C#
-StreamReader läsare = File.OpenText(@"C:\MinaFiler\exempeltextfil.txt");
-while (!läsare.EndOfStream)
+using var reader = new StreamReader("filnamn.txt");
+
+// Läser in varje rad i filen och skriver ut den
+string line;
+while ((line = reader.ReadLine()) != null)
 {
-    string rad = läsare.ReadLine();
-    Console.WriteLine(rad);
+    Console.WriteLine(line);
 }
 ```
 
-Det här kodblocket skapar en instans av `StreamReader` som heter `läsare` och använder sedan `while`-loopen för att läsa varje rad i textfilen tills den når slutet av filen. Varje rad sparas i variabeln `rad` och skrivs sedan ut i konsolfönstret.
+Om filen innehåller följande text:
 
-För att läsa och behandla specifika delar av textfilen, som t.ex. endast vissa rader eller delar av en rad, kan du använda andra metoder som `Read()` och `ReadLine()`. Genom att använda dessa metoder i kombination med olika strängmanipulationsfunktioner, som `Substring()` och `Split()`, kan du extrahera precis den information du behöver från textfilen.
+```
+Detta är en textfil.
+Här skriver vi lite information.
+```
 
-## Djupdykning
-När du läser en textfil i C# behöver du hålla vissa saker i åtanke. Till exempel är det viktigt att stänga `StreamReader`-instansen när du är klar med den för att undvika att lämna filen öppen och orsaka problem med andra program som försöker få åtkomst till filen.
+Så kommer koden ovan att skriva ut följande i konsolen:
 
-En annan utmaning kan vara att hantera teckenkodning när du läser en textfil. Om filen innehåller tecken från ett annat språk eller har ett särskilt teckenkodningsschema måste du ange rätt kodning när du skapar `StreamReader`-instansen. Annars kan du få in felaktig data från filen.
+```
+Detta är en textfil.
+Här skriver vi lite information.
+```
+ 
+## Djupdykning:
+Att läsa en textfil är en viktig del av filhantering i programmering. Historiskt sett har filer använts för att lagra data på datorer, och att kunna läsa och bearbeta dessa filer är en viktig funktion för programmerare. Det finns olika alternativ för att läsa en textfil i C#, bland annat `File.ReadAllLines()` och `File.ReadAllText()`. Det är viktigt att komma ihåg att stänga en `Stream` efter att man har läst klart från den för att undvika minnesläckor.
 
-Det finns också vissa säkerhetsrisker med att läsa textfiler eftersom användare kan manipulera filen och injicera skadlig kod. Därför är det alltid viktigt att validera och bearbeta indata innan du använder den.
-
-## Se även
-Om du vill lära dig mer om att läsa och skriva till filer i C#, kan du titta på följande resurser:
-
-- [Microsoft Dokumentation: How to read text from a file](https://docs.microsoft.com/en-us/dotnet/standard/io/how-to-read-text-from-a-file)
-- [C# Corner: Reading and Writing Files in C#](https://www.c-sharpcorner.com/UploadFile/mahesh/reads-a-text-file-and-display-in-a-listbox-in-C-Sharp/)
-- [Youtube: C# Tutorial for Beginners: Read Write Files (Text and CSV) in C#](https://www.youtube.com/watch?v=o4--Pq8gk8w)
+## Se även:
+Här är några länkar till relaterade källor som kan vara användbara för att lära sig mer om att läsa textfiler i C#:
+- [Microsoft docs om StreamReader](https://docs.microsoft.com/sv-se/dotnet/api/system.io.streamreader?view=net-5.0)
+- [En tutorial om C# filhantering](https://www.tutorialspoint.com/csharp/csharp_file_io.htm)
+- [En guide för att läsa och skriva till filer i C#](https://www.c-sharpcorner.com/article/file-handling-in-c-sharp/)

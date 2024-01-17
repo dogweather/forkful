@@ -1,7 +1,7 @@
 ---
-title:                "Tworzenie pliku tekstowego"
-html_title:           "Elm: Tworzenie pliku tekstowego"
-simple_title:         "Tworzenie pliku tekstowego"
+title:                "Pisanie pliku tekstu"
+html_title:           "Elm: Pisanie pliku tekstu"
+simple_title:         "Pisanie pliku tekstu"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Files and I/O"
@@ -10,25 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i dlaczego?
 
-Pisanie plików tekstowych może być konieczne w wielu przypadkach, na przykład jeśli chcemy zapisać wyniki działania naszego programu na dysku twardym lub udostępnić je innym użytkownikom w postaci czytelnego tekstu.
+Pisanie pliku tekstowego to jedna z podstawowych czynności programistycznych. Pozwala na przechowywanie i organizowanie danych w prosty i czytelny sposób. Programiści często używają plików tekstowych do przechowywania konfiguracji, komentarzy i innych informacji.
 
-## Jak to zrobić
-
-Aby zapisać plik tekstowy w Elm, możemy użyć funkcji `File.write` z biblioteki `File`:
+## Jak to zrobić:
 
 ```Elm
-File.write "wyniki.txt" "To jest przykładowy tekst do zapisania w pliku"
+import File
+import Task
+
+main : Program Never Model
+main =
+  File.write "plik.txt" "Cześć Polsko!"
+    |> Task.perform (\result ->
+      case result of
+        Err error -> 
+          -- obsłuż błąd
+        Ok (File path) ->
+          -- sukces!
+    )
 ```
 
-W powyższym przykładzie, po podaniu nazwy pliku oraz tekstu, funkcja `File.write` automatycznie utworzy plik i zapisze w nim podany tekst.
+W powyższym przykładzie używamy funkcji `write` z modułu `File`. Przekazujemy jej dwa argumenty: ścieżkę do pliku, który chcemy stworzyć lub nadpisać, oraz dane, które chcemy zapisać w tym pliku. Następnie używamy funkcji `perform` z modułu `Task` do obsługi wyników operacji. W przypadku sukcesu funkcja `write` zwraca obiekt `File`, który możemy wykorzystać do dalszych działań.
 
-## Deep Dive
+## Wnikliwsza analiza:
 
-W przypadku bardziej skomplikowanych operacji na plikach, warto zapoznać się z modułem `File.System` w bibliotece `elm/filesystem`, który oferuje więcej możliwości, takich jak zapisywanie plików w wybranym folderze czy odczytywanie zawartości istniejącego pliku.
+Pisanie pliku tekstowego ma długą historię, sięgającą początków informatyki. Wcześniej programiści używali plików tekstowych do przechowywania kodu źródłowego swoich programów. Obecnie istnieją wiele różnych sposobów na zapisywanie danych w programowaniu, takich jak bazy danych czy pliki binarne. Jednak pisanie pliku tekstowego jest wciąż często stosowaną i prostą metodą przechowywania danych.
 
-See Also
-* https://package.elm-lang.org/packages/elm/filesystem/latest/
-* https://guide.elm-lang.org/interop/file_system.html
-* https://medium.com/@jkup/do-it-yourself-diy-elm-external-file-io-part-1-file-io-fd80c286a549
+## Zobacz także:
+
+- Oficjalna dokumentacja Elm: https://guide.elm-lang.org/
+- Wprowadzenie do programowania w Elm po polsku: https://ubublog.github.io/uma/tag/Elm/
+- Kurs tworzenia aplikacji webowych w Elm: https://egghead.io/lessons/elm-4-more-elm-intro-create-a-task-to-write-a-file

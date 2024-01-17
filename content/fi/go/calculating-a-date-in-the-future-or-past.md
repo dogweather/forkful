@@ -1,7 +1,7 @@
 ---
-title:                "Päivämäärän laskeminen tulevaisuudessa tai menneisyydessä."
-html_title:           "Go: Päivämäärän laskeminen tulevaisuudessa tai menneisyydessä."
-simple_title:         "Päivämäärän laskeminen tulevaisuudessa tai menneisyydessä."
+title:                "Päivämäärän laskeminen tulevaisuudessa tai menneisyydessä"
+html_title:           "Go: Päivämäärän laskeminen tulevaisuudessa tai menneisyydessä"
+simple_title:         "Päivämäärän laskeminen tulevaisuudessa tai menneisyydessä"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Dates and Times"
@@ -10,42 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Miksi laskentapäivämäärät voivat olla hyödyllisiä Go-ohjelmoijalle?
+## Mitä ja miksi?
 
-Laskentapäivämäärät ovat tärkeitä työkaluja, kun työskentelet aikaperusteisten toimintojen kanssa, kuten ajanvarausten tai tapahtumien järjestämisen kanssa. Ne voivat myös auttaa havaitsemaan tiettyjä päivämääriä, kuten tulevia vuosipäiviä tai takarajoja tärkeille tehtäville.
+Päivämäärän laskeminen tulevaisuuteen tai menneisyyteen tarkoittaa päivämäärien ja ajanmäärien laskemista tietyllä ajanjaksolla. Tämä on tärkeä osa ohjelmointia, sillä monet ohjelmat tarvitsevat tietoa ajasta ja päivämäärästä. Joten ohjelmoijat käyttävät päivämäärien laskemista varmistaakseen, että heidän ohjelmansa toimivat oikein ajasta riippumatta.
 
-## Kuinka laskentapäivämäärät ohjelmoidaan Go-kielellä?
-
-Laskentapäivämäärät voidaan ohjelmoida helposti käyttämällä aikapakettia (time package) ja sen Date-menetelmiä. Alla on yksinkertainen esimerkki siitä, miten voidaan laskea päivämäärä 30 päivää tulevaisuuteen ja tulostaa se konsoliin:
+## Kuinka se tehdään:
 
 ```Go
 package main
 
 import (
-    "fmt"
-    "time"
+	"fmt"
+	"time"
 )
 
 func main() {
-    // Lasketaan 30 päivää tulevaisuuden päivämäärä
-    futureDate := time.Now().AddDate(0, 0, 30)
-
-    // Tulostetaan päivämäärä konsoliin
-    fmt.Println("Tuleva päivämäärä:", futureDate.Format("02.01.2006"))
+	now := time.Now()
+	dayPlus := now.AddDate(0, 0, 1)
+	dayMinus := now.AddDate(0, 0, -1)
+	fmt.Println("Huominen: ", dayPlus)
+	fmt.Println("Eilinen: ", dayMinus)
 }
-
-//Tulostus:
-// Tuleva päivämäärä: 14.05.2021
 ```
 
-## Syvällisempi sukellus laskentapäivämääröihin
+Tämä koodi laskee huomisen ja eilisen päivämäärän perustuen nykyiseen päivämäärään.
 
-Go tarjoaa monia hyödyllisiä menetelmiä ja työkaluja päivämääröiden laskemiseen ja käsittelemiseen. Esimerkiksi voit valita, millä tarkkuudella päivämäärä näytetään, kuten vain päivän tai myös kellonajan. Voit myös vertailla päivämääriä ja määritellä tiettyjä muotoiluja niiden tulostamiseen.
+```
+Output:
+Huominen: 2021-12-13 09:00:00
+Eilinen: 2021-12-11 09:00:00
+```
 
-Go:n aikapaketti tarjoaa myös monia muita hyödyllisiä menetelmiä päivämäärien laskemiseen, kuten lisäämisen, vähentämisen ja pyöristämisen. Voit myös käyttää aikapakettia ajastimena tai säätää sen kellottimen asetuksia.
+## Syvemmälle:
 
-# Katso myös
+Päivämäärän laskemisella on pitkät juuret, ja sitä on käytetty jo antiikin ajoista lähtien. Nykyaikaisessa ohjelmoinnissa on useita vaihtoehtoja päivämäärän laskemiselle, kuten käyttämällä Unix-timestampia tai erilaisia ​​kirjastoja. Go:lla on myös muita tehokkaita päivämäärä- ja aikatoimintoja, joita kannattaa tutkia.
 
-- [Go:n aikapaketin dokumentaatio](https://golang.org/pkg/time/)
-- [Go:n päivämäärä- ja kellonaikamuotoilun opas](https://yourbasic.org/golang/format-parse-string-time-date-example/)
-- [Go:n päivämäärä- ja kellonaikaopas](https://www.golangprograms.com/go-language/date-time.html)
+## Katso myös:
+
+- [Go:n virallinen dokumentaatio](https://golang.org/pkg/time/#Time.AddDate)
+- [Päivämäärien laskemisen historia](https://www.sciencemag.org/careers/2002/08/calendars-and-past)
+- [Unix-timestampin käyttäminen ajan laskemisessa](https://www.guru99.com/how-to-convert-unix-timestamp-to-date.html)

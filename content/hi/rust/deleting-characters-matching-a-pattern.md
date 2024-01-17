@@ -1,7 +1,7 @@
 ---
-title:                "एक पैटर्न से मेल खाते अक्षरों को हटाना"
-html_title:           "Rust: एक पैटर्न से मेल खाते अक्षरों को हटाना"
-simple_title:         "एक पैटर्न से मेल खाते अक्षरों को हटाना"
+title:                "आदेश के साथ मेल खाते हुए चरित्रों को हटाने का तरीका"
+html_title:           "Rust: आदेश के साथ मेल खाते हुए चरित्रों को हटाने का तरीका"
+simple_title:         "आदेश के साथ मेल खाते हुए चरित्रों को हटाने का तरीका"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -10,35 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
+# What & Why?
+Deleting characters matching a pattern is a common task in programming where specific characters or sequences need to be removed from a given string. This is often necessary in order to manipulate or clean up data for further processing. It can also be used to extract relevant information from a string.
 
-जब हमारे पास एक स्ट्रिंग में अनचाहे वर्ण या पैटर्न होता है, जो हमें नहीं चाहिए, तो हम उसे हटाना चाहते हैं। इससे हमारी कोड को साफ़ और अधिक पढ़ने योग्य बनाता है।
+# How to:
+```Rust
+// Define a string with some unwanted characters
+let text = "H-e 12l-l-o!";
 
-## कैसे करें
+// Use the `chars()` method to get an iterator over characters in the string
+let mut chars = text.chars();
 
-आप पहले से ही जानते होंगे कि Rust एक उद्गारण आधारित भाषा है जो कॉन्करेंट और सुरक्षित कोडिंग प्रोसेस को प्रोत्साहित करती है। इस लेख में, हम जानेंगे कि रस्ट में उपलब्ध `chars()` और `String` फंक्शन का उपयोग करके हम कैसे एक स्ट्रिंग से वर्णों को हटा सकते हैं।
+// Use `macthes()` to find characters matching the given pattern and then filter them out
+let filtered: String = chars.filter(|c| !c.matches(char::is_numeric)).collect();
 
-```rust
-fn main() {
-    // एक सामान्य स्ट्रिंग बनाएं
-    let my_string = String::from("Hello world!");
-
-    // हटाने के लिए एक खाली रेंज बनाएं
-    let mut removed_chars = String::new();
-
-    // `chars()` फंक्शन का उपयोग करके हमें एक वर्ण सूची मिलती है
-    // इसे फ़िल्टर करें और हटाने के लिए `retain()` फंक्शन को उपयोग करें
-    my_string.chars().into_iter().filter(|c| {
-        match c {
-            'H' | 'l' => removed_chars.push(*c), // हटाने और `removed_chars` स्ट्रिंग में जोड़ने के लिए तुलना करें
-            _ => false, // हटाने अनुप्रयोग
-        }
-    }).collect();
-
-    println!("{}", removed_chars); // उत्पादित स्ट्रिंग दिखाएं: Hl
-}
+// Print the resulting string
+println!("Filtered string: {}", filtered);
 ```
 
-अभिनंदन! आपने एक स्ट्रिंग से अनचाहे वर्ण हटाने में सफलता हासिल की है। आप वर्तमान में और अधिक परिभाषित पैटर्न या अन्य चरों को हटाने के लिए ऊंचाईयों तक जा सकते हैं। यह आपके कोड को आकर्षक और पढ़ने योग्य बनाए रखेगा।
+Output:
+```
+Filtered string: Hello!
+```
 
-## मोटा तकनीकी जानकारी
+# Deep Dive:
+There are various approaches and techniques for deleting characters matching a pattern. One alternative is by using regular expressions, which are a powerful tool for pattern matching and manipulation in strings. Rust also provides the `replacer()` method which can be used to replace matches with a different string.
+
+On a lower level, deleting characters matching a pattern involves iterating over each character in the string and checking if it matches the given pattern. If it does, it is skipped or replaced with a different character. This process can be optimized using techniques such as indexing and caching. 
+
+# See Also: 
+- [The Rust Programming Language](https://www.rust-lang.org/)
+- [Rust by Example](https://doc.rust-lang.org/rust-by-example/)

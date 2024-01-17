@@ -10,33 +10,18 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+# Mitä ja miksi?
 
-Joskus haluat ehkä tallentaa tai ladata verkkosivun tietokoneellesi, jotta voit tarkastella sitä myöhemmin ilman verkkoyhteyttä tai käyttää sitä materiaalina johonkin projektiin. Tässä artikkelissa opit kuinka tehdä tämä Bashilla!
+Kun lataat verkkosivun, otat sen sisällön talteen ja tallennat sen tietokoneellesi. Tämä voi olla hyödyllistä esimerkiksi silloin, kun haluat varmuuskopioida sivuston tai käyttää sen sisältöä omassa ohjelmassasi. Ohjelmoijat käyttävät tätä prosessia sivuston tietojen hyödyntämiseen ja integroimiseen muihin projekteihin.
 
-## Kuinka
+# Miten?
 
-Bashilla on erittäin helppo tapa ladata verkkosivu. Sinun tarvitsee vain käyttää `curl` -komentoa ja antaa sille haluamasi URL-osoite. Tässä on yksinkertainen esimerkki:
+Lataaminen tapahtuu käyttämällä komentoa ```wget```. Esimerkiksi, halutessasi ladata Google-sivun, kirjoita terminaaliin seuraava komento: ```wget http://www.google.com```. Tämä luo tiedoston nimeltä "index.html" samassa kansiossa, jossa komento suoritettiin. Tämän tiedoston avulla voit tarkastella sivun sisältöä selaimessa tai käyttää sitä muissa projekteissasi.
 
-```Bash
-curl https://www.example.com > sivu.html
-```
+# Syvällinen sukellus
 
-Tässä komennossa `curl` lataa verkkosivun ja tallentaa sen `sivu.html` -nimiseen tiedostoon. Voit käyttää mitä tahansa tiedostonimeä halutessasi. Huomaa, että jos haluat ladata vain verkkosivun tekstisisältöä, voit lisätä `-o` -lipun ja antaa sen jälkeen tiedostonimen sijasta vain `-` -merkin. Esimerkiksi:
+Lataamisen kehitti GNU Projectissa ja sitä käytetään edelleen Linux-järjestelmissä. Samalla tavalla voit ladata myös muita tiedostoja, kuten kuvia tai videoita, käyttämällä ```wget```-komentoa. On myös muita tapoja ladata verkkosivuja, kuten ```curl```-komennolla, mutta ```wget``` on yleisesti käytössä ja hyvin dokumentoitu.
 
-```Bash
-curl -o - https://www.example.com
-```
+# Katso myös
 
-Tämä tulostaa verkkosivun tekstisisällön suoraan komentoriville.
-
-## Syväsyöksy
-
-Bashin `curl` komennolla on paljon enemmän mahdollisuuksia kuin pelkkä verkkosivujen lataaminen. Voit esimerkiksi käyttää erilaisia parametreja, kuten `--user` ja `--header`, autentikoitumiseen ja HTTP-otsikkoihin liittyviin tarkistuksiin. Voit myös käyttää `curl` -komennon yhdessä muiden komentojen kanssa, kuten `grep` ja `sed`, jotta voit suodattaa ja muokata lataamasi verkkosivun sisältöä.
-
-Jos haluat oppia lisää `curl` -komenton toiminnoista, voit tarkastella sen manuaalisivua komennolla `man curl` tai tutustua verkossa löytyviin opetusohjelmiin.
-
-## Katso myös
-
-- [CURL Manpage](https://curl.haxx.se/docs/manpage.html)
-- [Bashin opetusohjelmat](https://linuxconfig.org/bash-scripting-tutorial-for-beginners)
+Tässä artikkelissa käytiin läpi vain yksi tapa ladata verkkosivuja, mutta on olemassa myös muita vaihtoehtoja, kuten käyttää ohjelmointikieliä kuten Python tai Ruby. Lisätietoa lataamisesta ja sen käytöstä löytyy esimerkiksi GNU-sivustolta tai Linuxin käyttöoppaista.

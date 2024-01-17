@@ -1,7 +1,7 @@
 ---
-title:                "Merkkijonon muuttaminen pieniksi kirjaimiksi"
-html_title:           "Elixir: Merkkijonon muuttaminen pieniksi kirjaimiksi"
-simple_title:         "Merkkijonon muuttaminen pieniksi kirjaimiksi"
+title:                "Muuttaminen merkkijonon pieniksi kirjaimiksi"
+html_title:           "Elixir: Muuttaminen merkkijonon pieniksi kirjaimiksi"
+simple_title:         "Muuttaminen merkkijonon pieniksi kirjaimiksi"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -10,36 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Miksi ja mitä?
 
-Miksi kukaan haluaisi muuttaa merkkijonon pieniksi kirjaimiksi? Yksinkertaisesti sanottuna, se on usein tarpeen kun käsittelemme tekstiä tai vertailemme sanoja keskenään.
+String-tyypin muuntaminen pieniksi kirjaimiksi on yksi yleisimmistä tehtävistä Elixir-ohjelmoijille. Tämä prosessi antaa mahdollisuuden vertailla merkkijonoja, etsiä tiettyjä merkkijonoja ja yleensäkin käsitellä merkkijonoja yhdenmukaisella tavalla.
 
-## Miten tehdä
+## Näin teet sen:
 
-Muista ensin ottaa käyttöön Elixirin `String` -moduuli koodissasi:
-
-```Elixir
-import String
+```elixir
+"STRING".downcase() #=> "string"
+"Yliopisto".downcase() #=> "yliopisto"
 ```
+Tässä yksinkertaisessa esimerkissä käytetään `.downcase()`-funktiota, joka muuttaa merkkijonon pieniksi kirjaimiksi. Voit myös käyttää `.upcase()`-funktiota, joka tekee päinvastaisen toimenpiteen, eli muuntaa merkkijonon isoiksi kirjaimiksi. 
 
-Sitten voit käyttää `downcase/1` -funktiota muuttaaksesi merkkijonon pieniksi kirjaimiksi:
+## Syvempää pohdintaa:
 
-```Elixir
-string = "MOI MAAILMA!"
-downcase(string) #=> "moi maailma!"
-```
+Historiallinen tausta: Merkkijonojen käsittely on ollut olennainen osa ohjelmointia kaikilla ohjelmointikielillä jo vuosikymmenten ajan. Perinteisesti merkkijonoja käsiteltiin vain isoilla kirjaimilla, joten tällainen muunnos pieniksi kirjaimiksi oli tarpeen, jotta ohjelmoijat voisivat vertailla merkkijonoja oikein.
 
-Voit myös käsitellä merkkijonoja suoraan merkkijonoilla:
+Vaihtoehtoja: On olemassa myös muita tapoja muuttaa merkkijonojen iso- tai pienikirjainmuotoa, kuten käyttämällä `.capitalize()`-funktiota, joka muuttaa vain merkkijonon ensimmäisen kirjaimen isoksi tai pikkukirjaimeksi. On tärkeää valita oikea muunnosvaihtoehto riippuen siitä, mitä haluat tehdä merkkijonoilla.
 
-```Elixir
-"Moi maailma!" |> downcase #=> "moi maailma!"
-```
+Toteutus: Elixirissä merkkijonot ovat olioita, joten näitä muunnosfunktioita voidaan kutsua suoraan merkkijono-olioista.
 
-## Syvemmät tiedot
+## Katso myös:
 
-Merkkijonon muuttaminen pieniksi kirjaimiksi sisältää useita vaiheita, kuten merkkien käsittely ASCII-arvojen avulla ja eri kirjoitusjärjestelmien huomioon otto. Onneksi Elixirin `downcase/1` -funktio huolehtii näistä puolestasi, joten voit keskittyä vain tekstin käsittelyyn.
-
-## Katso myös
-
-- [Elixirin virallinen dokumentaatio merkkijonojen käsittelystä](https://hexdocs.pm/elixir/String.html)
-- [Elixirin String-moduulin lähdekoodi GitHubissa](https://github.com/elixir-lang/elixir/blob/master/lib/elixir/lib/string.ex)
+- Elixirin dokumentaatio: https://hexdocs.pm/elixir/String.html
+- Englanninkielinen artikkeli merkkijonojen käsittelystä Elixirissä: https://medium.com/@Saunawest/the-beauty-of-working-with-strings-in-elixir-1e4a3752bfbf

@@ -10,44 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que Gerar Números Aleatórios?
+## O que é e por que fazer?
 
-Gerar números aleatórios é uma prática comum em programação que pode ser útil em diversas situações. Eles podem ser usados para testar algoritmos, simular processos estocásticos, criar senhas seguras ou até mesmo gerar elementos em jogos.
+Gerar números aleatórios é um processo utilizado por programadores para obter valores variados e imprevisíveis em seus códigos. Isso pode ser útil em diferentes aplicações, como jogos, simulações e criptografia.
 
-## Como Gerar Números Aleatórios em Python
+## Como fazer:
 
-Para gerar números aleatórios em Python, utilizamos o módulo `random`. Primeiramente, importamos o módulo no início do nosso código:
+O Python possui uma biblioteca integrada chamada ```random``` para gerar números aleatórios. Podemos utilizar a função ```random.random()``` para obter um número decimal entre 0 e 1, ou a função ```random.randint(a, b)``` para gerar um número inteiro entre os valores de ```a``` e ```b```. Aqui estão alguns exemplos:
 
 ```Python
 import random
+
+# Gerar um número decimal aleatório
+num_decimal = random.random()
+print(num_decimal)
+
+# Gerar um número inteiro aleatório entre 1 e 10
+num_inteiro = random.randint(1, 10)
+print(num_inteiro)
 ```
 
-Em seguida, podemos utilizar a função `random()` para gerar um número decimal aleatório entre 0 e 1:
+Saída:
 
-```Python
-print(random.random())
+```
+0.5673921834
+7
 ```
 
-Se quisermos um número inteiro aleatório entre dois valores específicos, podemos utilizar a função `randint()`, passando os valores mínimo e máximo como argumentos:
+## Profundando mais:
 
-```Python
-print(random.randint(1, 10))
-```
+A geração de números aleatórios é uma técnica antiga e importante na computação. Na década de 1940, durante a Segunda Guerra Mundial, os cientistas precisavam de ferramentas para criptografar suas mensagens e para simular eventos em seus estudos. Foi então que nasceu o conceito de gerar números aleatórios em computadores.
 
-Podemos também gerar uma lista com vários números aleatórios utilizando a função `sample()`, passando a lista e o número de elementos desejados como argumentos:
+Além da função ```random``` do Python, existem outras formas de gerar números aleatórios, como por meio de algoritmos ou com a utilização de hardware específico. No entanto, é importante destacar que nenhum método é totalmente aleatório, já que estamos lidando com sistemas determinísticos.
 
-```Python
-numeros = [1, 2, 3, 4, 5]
-print(random.sample(numeros, 3))
-```
+## Veja também:
 
-## Aprofundando na Geração de Números Aleatórios
-
-Os números gerados pela função `random()` são chamados de "pseudoaleatórios". Isso significa que, na verdade, eles são determinados por um algoritmo que tenta imitar o comportamento dos números aleatórios verdadeiros. Por essa razão, se utilizarmos a mesma semente (seed) para gerar números aleatórios, sempre obteremos a mesma sequência. Para contornar isso, podemos usar a função `seed()` para definir uma semente diferente a cada vez que o programa é executado.
-
-Além disso, é importante ressaltar que os números gerados pelo computador não são totalmente aleatórios, já que suas ações são determinísticas. Ou seja, elas são baseadas em instruções lógicas e nem sempre podem ser consideradas completamente aleatórias. Por isso, é importante ter consciência das limitações dos números aleatórios gerados em programas.
-
-## Veja também
-
-- Documentação oficial do módulo `random`: https://docs.python.org/3/library/random.html
-- Tutorial sobre geração de números aleatórios em Python: https://www.programiz.com/python-programming/random-numbers
+- Documentação oficial do Python: https://docs.python.org/3/library/random.html
+- Tutorial de geração de números aleatórios em Python: https://realpython.com/python-random/
+- Artigo sobre a importância dos números aleatórios na segurança digital: https://www.thoughtco.com/why-randomization-is-important-816533

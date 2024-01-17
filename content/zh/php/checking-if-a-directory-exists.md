@@ -10,54 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 为什么要检查目录是否存在？
+# PHP 中检查目录是否存在
 
-在编写PHP程序时，经常需要处理文件和目录。而在访问目录之前，我们需要先确认该目录是否存在。这样可以避免因为目录不存在而导致程序崩溃或出现意外情况。
+## 什么是检查目录是否存在以及为什么程序员要这么做？
 
-## 如何检查目录是否存在？
+检查目录是否存在是一种编程技巧，它可以让程序员判断某个目录是否存在于特定的文件系统中。程序员通常会使用这个技巧来确保程序在读取或操作一个目录之前，先确认它是否存在，从而避免可能发生的错误。
 
-使用PHP的内置函数`is_dir()`可以判断一个路径是否为目录。下面是一个简单的例子：
+## 怎么做？
 
 ```PHP
-<?php
-$directory = "/var/www/html"; // 被检查的目录
-if (is_dir($directory)) { // 使用 is_dir() 函数进行判断
-    echo "目录存在！"; // 如果返回 true，则说明目录存在
-} else {
-    echo "目录不存在！"; // 如果返回 false，则说明目录不存在
+// 检查一个目录是否存在
+if (is_dir('/path/to/directory')) {
+    echo '目录存在。';
 }
-?>
+
+// 创建一个新目录
+mkdir('/path/to/new/directory');
+
+// 不在提示错误
+// 这在多次尝试创建同一个目录时会有用
+mkdir('/path/to/new/directory', 0777, true);
+
+// 列出一个目录中的所有文件和子目录的名称
+$directory = '/path/to/directory';
+if ($handle = opendir($directory)) {
+    while (false !== ($entry = readdir($handle))) {
+        if ($entry != '.' && $entry != '..') {
+            echo $entry;
+        }
+    }
+    closedir($handle);
+}
 ```
 
-输出结果将会是 `目录存在！`，因为我们检查的目录确实存在。
+输出：
+```bash
+目录存在。
+somefile.txt
+somedir
+```
 
 ## 深入了解
 
-除了使用`is_dir()`函数，我们还可以使用`file_exists()`和`is_file()`函数来检查文件和目录的存在性。不同的是，`file_exists()`可以用于检查文件或目录，而`is_file()`仅用于检查文件。下面是一个使用`file_exists()`函数的例子：
+1. 历史背景：检查目录是否存在这个技巧最早出现在UNIX系统中，目的是为了确保程序在执行系统调用时不会出错。
+2. 其他方法：除了使用PHP自带的is_dir()函数来检查目录是否存在，程序员也可以使用file_exists()函数来检查文件或目录是否存在。
+3. 实现细节：is_dir()函数在检查目录是否存在时，实际上是通过调用系统的stat()函数来获取目录的文件信息，再根据返回的信息来判断目录是否存在。
 
-```PHP
-<?php
-$directory = "/var/www/html"; // 被检查的目录
-if (file_exists($directory)) { // 使用 file_exists() 函数进行判断
-    echo "目录存在！"; // 如果返回 true，则说明目录存在
-} else {
-    echo "目录不存在！"; // 如果返回 false，则说明目录不存在
-}
-?>
-```
+## 了解更多
 
-输出结果同样是 `目录存在！`。
-
-# 查看其他信息
-
-- [PHP手册：`is_dir()`函数](https://www.php.net/manual/zh/function.is-dir.php)
-- [PHP手册：`file_exists()`函数](https://www.php.net/manual/zh/function.file-exists.php)
-- [PHP手册：`is_file()`函数](https://www.php.net/manual/zh/function.is-file.php)
-
-# See Also 
-
-# 参考链接 
-
-- [PHP Manual: `is_dir()` function](https://www.php.net/manual/en/function.is-dir.php)
-- [PHP Manual: `file_exists()` function](https://www.php.net/manual/en/function.file-exists.php)
-- [PHP Manual: `is_file()` function](https://www.php.net/manual/en/function.is-file.php)
+- [PHP手册：is_dir()](https://www.php.net/manual/zh/function.is-dir.php)
+- [PHP手册：file_exists()](https://www.php.net/manual/zh/function.file-exists.php)
+- [Linux stat()函数文档](https://linux.die.net/man/2/stat)

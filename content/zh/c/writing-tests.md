@@ -10,46 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 为什么要写测试？
+## 什么 & 为什么？
 
-编写测试在编程中非常重要，它可以帮助我们发现和修复潜在的错误，从而提高代码的质量和可靠性。如果我们不写测试，可能会很难发现并修复代码中的问题，最终导致出现严重的bug。
+编写测试是指在编写程序代码时，我们额外编写一些代码来验证我们的程序是否如预期般正常运行。程序员们这样做的原因是为了确保他们编写的代码能够稳定地运行，并且能够尽可能减少程序中的错误。
 
-# 怎样写测试？
-
-在C语言中，我们可以使用```assert()```语句来编写测试。这个语句需要两个参数，第一个是一个表达式，第二个是一个错误消息。如果表达式为false，测试就会失败并打印出错误消息。
-
-下面是一个简单的例子：
+## 如何：
 
 ```C
-#include <assert.h>
+#include <stdio.h>
 
-// 定义一个函数，返回两个数字的和
-int sum(int a, int b){
-    return a + b;
-}
-
-int main(){
-    // 测试函数sum()是否返回正确的结果
-    assert(sum(2, 3) == 5); // 如果表达式为false，测试就会失败并打印出错误消息
-    return 0;
+int main() {
+  int num1 = 5;
+  int num2 = 10;
+  int result = num1 + num2;
+  printf("The sum of %d and %d is %d\n", num1, num2, result);
+  return 0;
 }
 ```
 
-运行上面的代码，如果测试通过，我们将看到屏幕上没有任何输出；如果测试失败，将会打印出一条错误消息。这样，我们就可以及时发现代码中的问题，并进行修复。
+输出：
 
-# 深入了解写测试
+`The sum of 5 and 10 is 15`
 
-除了使用```assert()```语句外，我们还可以使用其他的测试框架，如[CUnit](http://cunit.sourceforge.net/)或[Unity](https://github.com/ThrowTheSwitch/Unity)。这些框架可以为我们提供更多的功能和灵活性，使得编写测试更加方便和高效。
+## 深入了解：
 
-另外，编写测试时应该遵循一些原则，如单一职责原则，每个测试应该只测试一个功能点；可读性原则，测试代码应该易于读懂和理解等。
+编写测试在软件开发中扮演着重要的角色。它可以帮助程序员及早发现潜在的错误，并且可以提供一个可靠的方式来验证程序是否按照预期运行。除了编写测试，还有其他一些方法来验证程序的正确性，例如手动测试和静态代码分析。然而，编写测试仍然是一种值得推荐的做法，因为它可以帮助程序员节省时间和精力，并且可以提高程序的质量。
 
-# 参考链接
+## 参考资料：
 
-- [C语言中写测试的重要性](https://www.tutorialspoint.com/codingground.htm)
-- [如何在C语言中编写简单的测试](https://linux.die.net/man/3/assert)
-
-# 参见
-
-- [assert()函数的官方文档](https://www.ibm.com/docs/en/zos-basic-skills?topic=functions-assert-explained)
-- [CUnit框架的官方网站](http://cunit.sourceforge.net/)
-- [Unity框架的GitHub页面](https://github.com/ThrowTheSwitch/Unity)
+- [C test suite - Learn C programming language](https://beginnersbook.com/2014/01/c-test-suite/)
+- [Introduction to software testing - Wikipedia](https://en.wikipedia.org/wiki/Software_testing)

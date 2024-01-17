@@ -10,25 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜 
-누군가가 임시 파일을 만들게 되는 이유는 주로 데이터를 일시적으로 저장하거나 임시 작업을 수행하기 위해서입니다.
+## What & Why?
+임시 파일을 만드는 것은 파이썬 프로그래머들이 자주 사용하는 중요한 방법 중 하나입니다. 임시 파일은 프로그램이 실행되는 동안 일시적으로 사용되며, 필요하지 않게 되면 자동으로 삭제됩니다. 이를 통해 프로그래머들은 메모리를 절약하고 시스템 리소스를 최적화할 수 있습니다.
 
-## 사용 방법
-일시적인 파일을 만드는 데는 `tempfile` 모듈을 사용합니다. 먼저 `import tempfile`을 해준 후, `tempfile.NamedTemporaryFile()` 함수를 호출하면 임시 파일 객체를 반환해줍니다. 예를 들어서 다음과 같은 식으로 사용할 수 있습니다.
+## How to:
+파이썬에서 최신 버전인 3.8을 사용한다고 가정하겠습니다. 임시 파일을 만드는 가장 간단한 방법은 `tempfile` 모듈을 이용하는 것입니다. 아래의 코드는 임시 파일을 만들고 쓰기 위한 예제입니다.
 
-```Python
+```python
 import tempfile
 
-with tempfile.NamedTemporaryFile() as temp_file:
-    temp_file.write('Hello, world!')  # 임시 파일에 문자열을 쓰는 예시입니다.
-    temp_file.seek(0)  # 파일 포인터를 맨 처음으로 이동해줍니다.
-    print(temp_file.read())  # 임시 파일을 읽어옵니다. 출력: b'Hello, world!'
+# 임시 파일 생성
+temp = tempfile.TemporaryFile()
+
+# 파일에 데이터 쓰기
+temp.write(b"Hello, world!")
+
+# 파일에서 데이터 읽기
+temp.seek(0)
+print(temp.read())
+
+# 파일 자동 삭제
+temp.close()
 ```
 
-## 깊게 들어가기
-임시 파일을 만들 때, 운영 체제마다 다르게 작동할 수 있습니다. 일반적으로 파일을 열 때 `mode` 파라미터를 지정해주는데, 이 모드에 따라 파일이 어떻게 사용 가능한지가 달라집니다. 예를 들어 `tempfile.NamedTemporaryFile()`의 기본 모드는 `'w+b'`로, 바이너리 쓰기 모드입니다. 또한, `delete` 파라미터를 `False`로 설정하면 임시 파일이 자동으로 삭제되지 않도록 설정할 수 있습니다. 더 자세한 내용은 [공식 문서](https://docs.python.org/3/library/tempfile.html)를 참고하시기 바랍니다.
+위 코드를 실행하면 `"Hello, world!"`가 콘솔에 출력되는 것을 볼 수 있습니다.
 
-## 관련 링크 참고
-- [공식 문서](https://docs.python.org/3/library/tempfile.html)
-- [Real Python 튜토리얼](https://realpython.com/python-tempfile/)
-- [GeeksforGeeks 블로그 포스트](https://www.geeksforgeeks.org/temporary-files-python/)
+## Deep Dive:
+임시 파일이 처음 등장한 것은 계산 필터링과 관련된 운영체제에서였습니다. 이전에는 프로그램이 메모리를 관리하는 것이 너무 어려워서 프로그램이 종료될 때까지 메모리를 차지해야 했습니다. 하지만 임시 파일을 사용하면 프로그램 종료 시 파일이 자동으로 제거되므로 메모리 관리가 더 쉬워졌습니다.
+
+현재 파이썬에서 임시 파일을 생성하는 다른 방법으로는 `tempfile.mkstemp()`와 `tempfile.NamedTemporaryFile()`를 사용하는 것이 있습니다. 각각 파일 디스크립터와 임시 파일 이름을 반환합니다.
+
+임시 파일을 생성하는 방법 뿐만 아니라, `tempfile` 모듈은 임시 디렉토리를 생성해주는 함수들도 제공합니다.
+
+## See Also:
+- [파이썬 공식 문서 - tempfile 모듈](https://docs.python.org/ko/3/library/tempfile.html)
+- [RealPython - Working With Temporary Files in Python](https://realpython.com/python-tempfile/)
+- [Tutorialspoint - Python - Temporary Files](https://www.tutorialspoint.com/python/python_temporary_files.htm)

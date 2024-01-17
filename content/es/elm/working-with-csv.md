@@ -10,66 +10,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué trabajar con CSV?
+¡Hola lectores de Elm!
 
-Trabajar con archivos CSV puede ser muy útil en programas que necesitan manejar grandes cantidades de datos. Al utilizar Elm para trabajar con CSV, se pueden realizar tareas como importar y exportar datos de manera eficiente.
+¿Te has encontrado alguna vez con la necesidad de trabajar con archivos CSV en tus proyectos de programación? Si es así, ¡este artículo es para ti! En esta ocasión, te mostraré cómo puedes trabajar con archivos CSV en Elm de manera sencilla y eficiente. Entonces, ¿qué es trabajar con CSV y por qué es importante para los programadores? Sigue leyendo para descubrirlo.
 
-## Cómo hacerlo
+## ¿Qué y por qué?
 
-Elm tiene una librería llamada `elm-csv` que facilita el manejo de archivos CSV. Para utilizarla, primero debemos instalarla mediante el comando `elm install elm/csv` en la terminal.
+CSV o "Comma Separated Values" (Valores Separados por Comas) es un formato de archivo que se utiliza para almacenar datos tabulares. Se compone de filas y columnas, donde cada columna tiene un nombre y cada fila representa un conjunto de datos relacionados.
 
-Una vez instalada, podemos utilizar la función `Decode.csv` para decodificar un archivo CSV en una estructura de datos en formato `List`.
+Los programadores trabajan con archivos CSV porque es una forma muy común de almacenar y manejar datos en aplicaciones. También es fácil de leer y escribir, lo que lo hace un formato muy conveniente para compartir y transferir datos entre diferentes sistemas.
 
-```elm
-import Csv.Decode as Decode
+## ¿Cómo hacerlo?
 
-csvDecoder : Decode.Decoder (List (List Data))
-csvDecoder =
-    Decode.csv Decode.int
+Para trabajar con archivos CSV en Elm, necesitas importar el módulo `Csv.Decode` en tu archivo. Luego, puedes usar la función `Csv.Decode.decodeString` para decodificar una cadena de texto CSV en una lista de registros. Aquí tienes un ejemplo de cómo se vería esto en código:
 
-DecodedData : Result Errors (List (List Int))
-DecodedData =
-    Decode.decodeString csvDecoder "1,2,3\n4,5,6"
+```Elm
+import Csv.Decode as Csv
 
--- El resultado será: Ok [[1,2,3], [4,5,6]]
+type alias User = 
+  { firstName : String
+  , lastName : String
+  , age : Int
+  }
+
+fileContent = 
+  """firstName,lastName,age
+  John,Doe,25
+  Jane,Smith,30
+  Jack,Williams,40
+  """
+
+users : List User
+users =
+  Csv.decodeString 
+    (Csv.row <| User
+      |> Csv.field "firstName" Csv.string
+      |> Csv.field "lastName" Csv.string
+      |> Csv.field "age" Csv.int
+    )
+    fileContent
 ```
 
-Un ejemplo más completo puede ser la decodificación de un archivo CSV con encabezados para crear una estructura de datos más compleja, como un registro de estudiantes con sus nombres, edades y carreras.
+En este ejemplo, se define un nuevo tipo de dato `User` y se utiliza el operador pipe (`|>`) para construir una función `Csv.row` que se aplicará a cada fila del archivo. Luego, se utilizan las funciones `Csv.field` para especificar el nombre de la columna y el tipo de dato que se espera. Finalmente, la función `Csv.decodeString` se encarga de realizar la decodificación de la cadena de texto y devolver una lista de usuarios.
 
-```elm
-import Csv.Decode as Decode
+## En profundidad
 
-type alias Student =
-    { name : String
-    , age : Int
-    , major : String
-    }
+El formato CSV fue creado en los años 1970 como una forma de transferir datos entre diferentes sistemas. Aunque es un formato ampliamente utilizado, también presenta algunas limitaciones, como la falta de estandarización en cuanto a comillas y separadores. Esto puede causar problemas al decodificar archivos CSV en diferentes sistemas. 
 
-csvDecoder : Decode.Decoder (List Student)
-csvDecoder =
-    Decode.list <| Decode.indexedMap Student
-        [ ( 0, Decode.Header "name" Decode.string )
-        , ( 1, Decode.Header "age" Decode.int )
-        , ( 2, Decode.Header "major" Decode.string )
-        ]
+Una alternativa al formato CSV es el formato JSON, que es más moderno y flexible. Sin embargo, trabajar con CSV puede ser más eficiente y menos costoso en términos de recursos de computación.
 
-studentData : Result Errors (List Student)
-studentData =
-    Decode.decodeString csvDecoder "name,age,major\nJohn,22,Computer Science\nSara,20,Mathematics"
-
--- El resultado será: Ok [{ name = "John", age = 22, major = "Computer Science" },
---                       { name = "Sara", age = 20, major = "Mathematics" }]
-```
-
-## Inmersión profunda
-
-La librería `elm-csv` también nos permite trabajar con archivos CSV de manera bidireccional, es decir, tanto importar como exportar datos. Además, tiene funciones para manejar delimitadores, saltos de línea y manejo de errores.
-
-También podemos utilizar la función `Decode.list` para decodificar un archivo CSV con múltiples filas y columnas en una lista de listas de datos, lo que nos da mayor flexibilidad en el manejo de los datos.
-
-En resumen, trabajar con CSV en Elm no solo es fácil y eficiente, sino que también nos permite manipular grandes volúmenes de datos de manera sencilla. ¡Así que no dudes en utilizar esta librería en tus futuros proyectos!
+En cuanto a la implementación en Elm, el módulo `Csv.Decode` utiliza una técnica llamada "parsing" para tomar una cadena de texto y convertirla en una estructura de datos en Elm. Esta técnica también se utiliza en otros lenguajes de programación.
 
 ## Ver también
 
-- Documentación oficial de la librería `elm-csv`: https://package.elm-lang.org/packages/elm/csv/latest/
-- Ejemplos de uso de `elm-csv` en proyectos reales: https://github.com/elm-csv/examples
+Si quieres aprender más sobre cómo trabajar con CSV en Elm, aquí te dejo algunos enlaces útiles:
+
+- La documentación oficial de Elm sobre el módulo `Csv.Decode`: https://package.elm-lang.org/packages/elm-community/csv-decode/latest/
+- Un tutorial en video sobre cómo trabajar con CSV en Elm: https://www.youtube.com/watch?v=GyCPsBhIscA

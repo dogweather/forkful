@@ -10,67 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Czym jest wyszukiwanie i zamienianie tekstu oraz dlaczego programiści to robią?
 
-W dzisiejszych czasach edycja tekstu jest nieodłącznym elementem procesu tworzenia oprogramowania. Często musimy zmienić jedno lub więcej wyrażeń w naszym kodzie, aby poprawić błędy lub dostosować go do nowego wymagania. Dlatego też umiejętność wyszukiwania i wymiany tekstu jest niezbędna dla każdego programisty, aby efektywnie zarządzać swoim kodem.
+Wyszukiwanie i zamienianie tekstu to proces polegający na znajdowaniu określonego wzorca w tekście i zastępowaniu go innym tekstem. Jest to bardzo przydatna funkcja w programowaniu, ponieważ pozwala na automatyczne i szybkie modyfikowanie dużej ilości tekstu. Programiści korzystają z tego narzędzia, aby zmieniać nazwy zmiennych, korektować błędy i ułatwiać sobie pracę.
 
-## Jak to zrobić
+## Jak to zrobić:
 
-Język Kotlin oferuje wiele przydatnych metod i funkcji, które ułatwiają wyszukiwanie i wymianę tekstu. Poniżej przedstawiam trzy sposoby, które możesz wykorzystać w swoim kodzie.
+Kotlin oferuje kilka funkcji, które umożliwiają wykonywanie wyszukiwania i zamiany tekstu w prosty sposób. Najczęściej wykorzystywanymi funkcjami są ```replace``` i ```replaceFirst```. Przykładowy kod wyglądałby następująco:
 
-### Metoda replace()
-
-Metoda replace() pozwala na prostą zamianę tekstu w danym ciągu znaków. W podanej składni, wystarczy podać dwa argumenty: wyrażenie lub ciąg znaków, które chcemy zastąpić oraz wyrażenie lub ciąg znaków którym chcemy je zastąpić.
-
-```Kotlin
-val text = "Witaj świecie"
-val newText = text.replace("świecie", "kodzie")
-
-println(newText)
-
-// Output: Witaj kodzie
 ```
-
-### Wyrażenie regularne
-
-Jeśli chcemy przeprowadzić bardziej zaawansowaną zmianę tekstu, możemy skorzystać z wyrażenia regularnego. W Kotlinie mamy do dyspozycji funkcję replaceFirst(), która pozwala na wykonanie jednorazowej zamiany pierwszego pasującego do wzorca wyrażenia.
-
-```Kotlin
-val text = "1234 5678 9012"
-val newText = text.replaceFirst(Regex("\\d{4}\\s"), "")
-
+val text = "Witaj, świecie!"
+val newText = text.replace("świecie", "świecie Kotlin")
 println(newText)
-
-// Output: 5678 9012
 ```
+W wyniku powyższego kodu otrzymalibyśmy następującą wiadomość: "Witaj, świecie Kotlin!"
 
-### Funkcja replaceAll()
+## Głębsze zagadnienia:
 
-Aby dokonać wielokrotnej zamiany tekstu w jednym ciągu znaków, możemy skorzystać z funkcji replaceAll(). Ten sposób często jest konieczny podczas pracy z danymi tekstowymi.
+Wyszukiwanie i zamienianie tekstu jest popularną funkcją w wielu językach programowania, w tym również w Kotlinie. Pozwala na szybkie i efektywne przetwarzanie dużej ilości tekstu, co jest szczególnie przydatne w przypadku tworzenia aplikacji webowych lub analizowania danych. Alternatywami do wbudowanych funkcji w Kotlinie są biblioteki zewnętrzne, takie jak Apache Commons Text lub Regex, które oferują jeszcze większą elastyczność w wyszukiwaniu i zamianie tekstu.
 
-```Kotlin
-val text = "Kotlin, Java, Python, JavaScript"
-val newText = text.replaceAll(Regex("[,\\s]"), "|")
+## Zobacz także:
 
-println(newText)
+Jeśli chcesz dowiedzieć się więcej o wyszukiwaniu i zamianie tekstu w Kotlinie, możesz zajrzeć na poniższe źródła:
 
-// Output: Kotlin|Java|Python|JavaScript
-```
-
-## Głębsza analiza
-
-Podczas pracy z tekstem, niektóre wyrażenia mogą być nieoczekiwane lub trudne do wykrycia. W takich przypadkach możliwe jest zastosowanie wyrażeń regularnych ze zmiennymi. Wyrażenia te zawierają symbol '$' przed numerem grupy, dzięki czemu możemy odwoływać się do już wykorzystanych fragmentów tekstu.
-
-```Kotlin
-val text = "XY-1234, ZA-5678, BC-9012"
-val newText = text.replaceAll(Regex("([A-Z]{2})-(\\d{4})"), "$2-$1")
-
-println(newText)
-
-// Output: 1234-XY, 5678-ZA, 9012-BC
-```
-
-## Zobacz też
-
-- [Dokumentacja języka Kotlin](https://kotlinlang.org/docs/reference/basic-types.html)
-- [Oficjalna strona języka Kotlin](https://kotlinlang.org/)
+- Dokumentacja Kotlina: https://kotlinlang.org/docs/reference/basic-types.html#strings
+- Wideo tutorial na temat wyszukiwania i zamiany tekstu w Kotlinie: https://www.youtube.com/watch?v=7EILQVxs_WQ
+- Poradnik programisty na forum: https://stackoverflow.com/questions/53062394/how-to-search-and-replace-in-kotlin-string

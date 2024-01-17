@@ -10,33 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué comparar dos fechas en Elixir?
+## ¿Qué y por qué?
+Comparar dos fechas es una tarea común en la programación, especialmente cuando se trabaja con datos relacionados al tiempo. Los programadores lo hacen para determinar la diferencia entre dos acontecimientos, como por ejemplo, calcular la edad de una persona o verificar si un plazo ha expirado.
 
-Comparar dos fechas puede ser útil en numerosas situaciones, como ordenar eventos en una aplicación o filtrar datos en una base de datos. Además, al ser Elixir un lenguaje funcional, su manera de manejar y comparar fechas es diferente a otros lenguajes, lo que puede ser interesante para aprender y explorar.
-
-## ¿Cómo hacerlo en Elixir?
-
-En Elixir, hay dos maneras de comparar fechas: utilizando operadores de comparación o utilizando funciones específicas para comparar. Veamos un ejemplo de cada una utilizando las fechas 1 de enero de 2020 y 1 de febrero de 2020:
-
+## ¿Cómo hacerlo?
+En Elixir, se puede comparar dos fechas utilizando el operador ">", lo que devuelve un valor booleano indicando si la primera fecha es posterior a la segunda. Por ejemplo: 
 ```
-iex> {2020, 1, 1} > {2020, 2, 1}
+Elixir iex> {2021, 6, 1} > {2021, 5, 30}
 true
 ```
 
+También se puede utilizar la función `Date.compare/2` para comparar dos fechas y obtener un valor numérico que indique si la primera fecha es anterior, igual o posterior a la segunda. Por ejemplo:
 ```
-iex> Date.compare({2020, 1, 1}, {2020, 2, 1})
-:lt
+Elixir iex> Date.compare({2021, 5, 1}, {2020, 5, 1})
+1
 ```
+En este caso, 1 indica que la primera fecha es posterior a la segunda.
 
-En el primer ejemplo, utilizamos el operador `>` para comparar las fechas. En el segundo ejemplo, utilizamos la función `compare` de la librería `Date` para hacer la comparación. Ambas formas son válidas y pueden ser utilizadas según la preferencia del programador.
-
-## Profundizando en la comparación de fechas en Elixir
-
-Elixir maneja internamente las fechas como una tupla con tres elementos: año, mes y día. Esto significa que la comparación de fechas se basa en el orden de sus elementos, es decir, primero se compara el año, después el mes y finalmente el día. Además, Elixir también proporciona funciones especiales para comparar fechas que tengan en cuenta el tiempo, como por ejemplo `DateTime.compare`.
-
-En el caso de tener fechas con diferente formato, es posible convertirlas a formato `Date` utilizando la función `Date.from_iso8601`. También es importante tener en cuenta que la comparación de fechas en Elixir no es "inteligente", es decir, no se pueden comparar fechas con texto o con otros formatos que no sean el `DateTime` de Elixir.
+## Un poco más profundo
+La comparación de fechas ha sido un desafío para los programadores durante mucho tiempo, especialmente cuando se trata de variedades de formatos y calendarios. En lugar de comparar directamente las fechas, se pueden utilizar otras técnicas, como convertir las fechas a un formato conocido o utilizar librerías que manejen diferentes calendarios.
 
 ## Ver también
-
-- Documentación oficial de Elixir sobre fechas: https://hexdocs.pm/elixir/Date.html
-- Tutorial sobre cómo trabajar con fechas en Elixir: https://www.pluralsight.com/guides/handling-dates-elixir
+Para obtener más información sobre cómo trabajar con fechas, puedes verificar la documentación oficial de Elixir o consultar otras fuentes como [este artículo](https://blog.plataformatec.com.br/2014/03/working-with-dates-in-elixir/) que proporciona ejemplos prácticos de comparación de fechas en Elixir.

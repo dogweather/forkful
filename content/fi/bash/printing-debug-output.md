@@ -1,7 +1,7 @@
 ---
-title:                "Vianmääritystulostus"
-html_title:           "Bash: Vianmääritystulostus"
-simple_title:         "Vianmääritystulostus"
+title:                "Tulostaminen virheenkorjauslähtöön"
+html_title:           "Bash: Tulostaminen virheenkorjauslähtöön"
+simple_title:         "Tulostaminen virheenkorjauslähtöön"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Testing and Debugging"
@@ -10,37 +10,14 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä & Miksi?
+Debug-tulosteiden tulostaminen on prosessi, jolla ohjelmoijat voivat tarkastella koodin suorituksen aikana tapahtuvia tapahtumia ja mahdollisia virheitä. Tämä auttaa heitä korjaamaan koodin ongelmia ja varmistamaan, että ohjelma toimii halutulla tavalla.
 
-Tiedätkö sen tunteen, kun koodia on kirjoitettu tuntikausia ja se ei toimi? Se voi olla todella turhauttavaa. Tästä syystä on tärkeää lisätä debug-tulostusta koodiisi. Tämä auttaa sinua ymmärtämään, mitä koodisi todella tekee ja miksi se ei toimi odotetulla tavalla. Se on kuin katsoa koodisi lasin läpi ja selvittää, mikä sen toimintaa hidastaa.
+## Miten tehdä:
+Koodiessa debug-tulosteita Bashissa, käytä komentoa `echo` ja haluamaasi muuttujaa, esimerkiksi `echo $muuttuja`. Tämä tulostaa muuttujan arvon tai viestin näytölle. Voit myös muotoilla tulosteen haluamallasi tavalla lisäämällä liitteitä, kuten `echo "Muuttuja: $muuttuja"`. Debug-tulosteet voivat auttaa sinua tunnistamaan ongelmallisia kohtia koodissa ja seuraamaan ohjelman suoritusta.
 
-## Kuinka
+## Syväsukellus:
+Debug-tulosteet eivät ole ainoa tapa tarkastella koodin suoritusta, ja jotkut ohjelmoijat saattavat mieluummin käyttää vaihtoehtoja, kuten käyttäjän syötteiden tulostamista tai erilaisten työkalujen käyttöä. Debug-tulosteet voivat myös hidastaa ohjelman suoritusta, joten on tärkeää poistaa ne lopullisesta koodista. Voit tehdä tämän käyttämällä ehdollista lausetta, kuten `if [ $debug = true ]`, jotta debug-tulosteet näkyvät vain silloin, kun niitä tarvitaan.
 
-Aloitetaanpa perusteilla. Bashilla on sisäänrakennettu komento "echo", joka tulostaa halutun tekstin tai arvon. Voit käyttää tätä komentoa debug-tulostukseen lisäämällä sen haluamaasi kohtaan koodissasi.
-
-```Bash 
-echo "Sisäänkirjautuminen suoritettu onnistuneesti"
-```
-
-Tämä tulostaisi tekstin "Sisäänkirjautuminen suoritettu onnistuneesti" terminaaliisi. Tämä auttaa sinua selvittämään, mikä osa koodiasi on juuri suoritettu.
-
-Voit myös tulostaa muuttujien arvoja käyttämällä muuttujien nimiä yhdessä "echo" -komennon kanssa. Tämä on erittäin hyödyllistä, jos epäilet, että jokin muuttuja ei ole oikein määritetty.
-
-```Bash
-Nimi="Matti"
-echo "Käyttäjän nimi on: $Nimi"
-```
-
-Tämä tulostaisi "Käyttäjän nimi on: Matti". Näin voit varmistaa, että muuttuja on oikein asetettu ja voit jäljittää ongelmia helpommin.
-
-## Syväsukellus
-
-On myös muita tapoja lisätä debug-tulostusta bash-koodiin. Voit esimerkiksi käyttää "set -x" -komennon avulla aktivoidaksesi koko scriptin debug-tulostuksen. Tämä tulostaa kaikki komentoriviltä suoritetut komentosi, joten voit seurata koodin suorittamista vaihe vaiheelta.
-
-Voit myös tallentaa debug-tulostuksen tiedostoon lisäämällä "> debug.log" -tarjaimen komentosi perään. Tämä tallentaa kaikki tulostetut asiat tiedostoon, jotta voit tarkastella niitä myöhemmin.
-
-## Katso myös
-
-- [Bashin virallinen dokumentaatio](https://www.gnu.org/software/bash/manual/bash.html)
-- [Debug-tulostuksen lisääminen Shell-skripteihin](https://www.linuxjournal.com/content/add-debugging-your-shell-scripts-bash-x-trace-and-shell-debugger)
-- [Debugging in Bash](https://www.baeldung.com/linux/bash-debugging)
+## Katso myös:
+Jos olet uusi Bashin käyttäjä tai haluat oppia lisää sen käytöstä, voit tutustua Bashin viralliseen dokumentaatioon osoitteessa https://www.gnu.org/software/bash/. Voit myös lukea lisää debug-tulosteiden käytöstä Bashissa täältä: https://linuxconfig.org/how-to-use-echo-for-debugging-shell-scripts-in-linux.

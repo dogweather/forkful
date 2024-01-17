@@ -1,7 +1,7 @@
 ---
-title:                "Verbinden von Zeichenketten"
-html_title:           "C++: Verbinden von Zeichenketten"
-simple_title:         "Verbinden von Zeichenketten"
+title:                "Verknüpfung von Zeichenfolgen"
+html_title:           "C++: Verknüpfung von Zeichenfolgen"
+simple_title:         "Verknüpfung von Zeichenfolgen"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -10,82 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was & Warum?
 
-Wenn du in deiner C++ Programmierung mit Texten arbeitest, wirst du früher oder später auf die Notwendigkeit stoßen, Strings (Zeichenketten) zu verbinden. Das können zum Beispiel Wörter oder Sätze sein, die du zusammensetzen möchtest. In diesem Artikel zeige ich dir, wie du das auf einfache Art und Weise in C++ machen kannst.
+Concatenating Strings bedeutet, zwei oder mehr Strings aneinander anzuhängen, um einen neuen, längeren String zu erstellen. Programmierer machen dies oft, um längere Texte zu erstellen oder um Texte mit Variablen oder Nutzereingaben zu kombinieren.
 
-## Wie
-
-Die einfachste Methode, Strings in C++ zu verbinden, ist die Verwendung des "+" Operators. Hier ein Beispiel:
+## Wie:
 
 ```C++
 #include <iostream>
 #include <string>
-
 using namespace std;
 
 int main() {
-    string first_name = "Anna";
-    string last_name = "Müller";
-
-    string full_name = first_name + " " + last_name;
-    cout << full_name; // Ausgabe: Anna Müller
-
-    return 0;
+  // Beispiel 1:
+  string str1 = "Hallo";
+  string str2 = "Welt";
+  string str3 = str1 + str2;
+  cout << str3 << endl;
+  // Ausgabe: HalloWelt
+  
+  // Beispiel 2:
+  string name;
+  cout << "Wie ist dein Name? ";
+  cin >> name;
+  string message = "Hallo " + name + ", schön dich zu treffen!";
+  cout << message << endl;
+  // Eingabe: Max
+  // Ausgabe: Hallo Max, schön dich zu treffen!
+  
+  return 0;
 }
 ```
 
-Wie du sehen kannst, müssen die Strings, die du verbinden möchtest, mit dem "+" Operator und dem entsprechenden Leerzeichen dazwischen geschrieben werden. Du kannst beliebig viele Strings auf diese Weise miteinander verbinden.
+## Tiefergehender Einblick:
 
-Es ist auch möglich, Strings mit Zahlen oder anderen Variablen zu verbinden. Hier ein weiteres Beispiel:
+Die Verkettung von Strings ist seit den Anfangstagen der Programmierung ein wichtiges Konzept. In den frühen Programmiersprachen wie FORTRAN und COBOL war die Verwendung von automatisch dimensionierten Zeichenfeldern die einzige Möglichkeit, Strings zu manipulieren. Heutzutage gibt es Alternativen zur Verkettung von Strings, wie z.B. die Verwendung von Stringstreams oder das Erstellen von Vektoren von Zeichenfolgen.
 
-```C++
-#include <iostream>
-#include <string>
+## Siehe auch:
 
-using namespace std;
-
-int main() {
-    string fruit = "Apfel";
-    int number = 5;
-
-    string sentence = "Ich habe " + to_string(number) + " " + fruit + "en gegessen!";
-    cout << sentence; // Ausgabe: Ich habe 5 Äpfel gegessen!
-
-    return 0;
-}
-```
-
-In diesem Beispiel wird die Funktion "to_string()" verwendet, um die Zahl in einen String umzuwandeln.
-
-## Deep Dive
-
-In C++ gibt es auch die Möglichkeit, Strings mit der Funktion "concat()" aus der Bibliothek <cstring> zu verbinden. Es ist jedoch wichtig zu wissen, dass der "concat()" Befehl den ursprünglichen String verändert. Falls du den ursprünglichen String behalten möchtest, musst du ihn zuerst in einen neuen String kopieren. Hier ein Beispiel:
-
-```C++
-#include <iostream>
-#include <string>
-#include <cstring>
-
-using namespace std;
-
-int main() {
-    char string1[20] = "Hallo ";
-    char string2[] = "Welt";
-    char string3[20];
-
-    strcpy(string3, string1);
-    strcat(string3, string2);
-    cout << string3; // Ausgabe: Hallo Welt
-
-    return 0;
-}
-```
-
-In diesem Beispiel wird der ursprüngliche String "string1" zuerst in einen neuen leeren String "string3" kopiert und dann mit "string2" verbunden. Die Funktion "strcpy()" kopiert den Inhalt von "string1" in "string3" und "strcat()" fügt den Inhalt von "string2" an "string3" an.
-
-## Siehe auch
-
-- [C++ Strings](https://www.programiz.com/cpp-programming/string)
-- [C++ Strings verbinden und trennen](https://www.geeksforgeeks.org/c-format-specifiers/)
-- [String Library in C++](https://www.cplusplus.com/reference/string/)
+- [String-Operationen in C++](https://www.cplusplus.com/reference/string/string/)
+- [Stringstreams](https://www.cplusplus.com/reference/sstream/stringstream/)
+- [Vektoren in C++](https://www.cplusplus.com/reference/vector/vector/)

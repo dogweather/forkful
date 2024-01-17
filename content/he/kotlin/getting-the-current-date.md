@@ -1,7 +1,7 @@
 ---
-title:                "לקבלת התאריך הנוכחי"
-html_title:           "Kotlin: לקבלת התאריך הנוכחי"
-simple_title:         "לקבלת התאריך הנוכחי"
+title:                "קבלת התאריך הנוכחי"
+html_title:           "Kotlin: קבלת התאריך הנוכחי"
+simple_title:         "קבלת התאריך הנוכחי"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Dates and Times"
@@ -10,30 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# מדוע
+## מה ולמה?
 
-בעולם התכנות, קיימות מספר פעולות קבועות שכמעט כל תוכנית תצטרך לבצע. אחת מהן היא לקבל את התאריך הנוכחי. זה יכול לשמש במגוון של מטרות, כגון תחילת סדר הלוגיקה, צביעה של חלקי תוכנית, וכו'. מאחר שזה פעולה כל כך נפוצה, חשוב לדעת איך לבצע את זה בצורה המתאימה ביותר בשפת קוטלין.
+קבלת תאריך נוכחי הוא פשוט תהליך שבו מפעילים קוד שמחזיר תאריך ושעה נוכחיים. פרקטיקה זו חיונית לפיתוח תוכניות ואפליקציות הדורשות נתונים עדכניים ותיאום עם הזמן הנוכחי.
 
-## איך לעשות
+## איך לעשות?
 
-כדי לקבל את התאריך הנוכחי בקוד, ניתן להשתמש בפעולה getCurrentDate() של הספרייה המובנית של קוטלין. הנה דוגמה של כיצד להשתמש בפעולה זו ותוצאת הפלט:
+כדי לקבל את התאריך והשעה הנוכחיים בקוד Kotlin, ישנם מספר אפשרויות מתאימות עבור כל מטרה:
+
+### - שימוש במשתנה ```currentDateTime```:
 
 ```Kotlin
-val currentDate = getCurrentDate()
-println("התאריך הנוכחי הוא: $currentDate")
+val currentDateTime = LocalDateTime.now()
+println(currentDateTime)
+```
+### - שימוש בפונקציה ```now()```:
+
+```Kotlin
+val currentDate = LocalDate.now()
+val currentTime = LocalTime.now()
+println(currentDate)
+println(currentTime)
 ```
 
-פלט:
+פלט המשתנים ```currentDate``` ו-```currentTime``` יהיו תאריך ושעה נוכחיים בהתאמה.
 
-```
-התאריך הנוכחי הוא: דצמבר 1, 2021
-```
+## העומק שבתוך
 
-## חקירה עמוקה
+### - היסטוריית המימוש:
 
-כפי שראינו, פעולת getCurrentDate() מחזירה תאריך מלא כולל חודש, יום ושנה. אבל אם תרצו לקבל רק אחד מהאיברים של התאריך, כגון השנה בלבד, תוכלו לשנות את טיפוס המשתנה של התוצאה. ניתן גם להשתמש בפונקציות נוספות כדי לעצב את התאריך בצורה ייחודית יותר.
+קבלת התאריך נוכחי בתכנות נוצרה בשנת 1970 עם תקן Unix, על ידי שימוש במערכת היחסים של הטבלה הזמנית שהיא מילי שנייה אחת מהתאריך והשעה 1970.
 
-## ראו גם
+### - אלטרנטיבות:
 
-- פונקציות ומתודות מובנות של קוטלין: https://kotlinlang.org/docs/functions.html
-- פעולת getCurrentDate() במדריך של קוטלין: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-time/get-current-date.html
+ישנם גם תוכניות נוספות שקיימות בתחום שמאפשרות להשתמש בשירותי API כמו Google Time Zone API ומאפשרים לקבל תאריך נוכחי באיזורים שונים.
+
+### - פרטים טכניים ביצועיים:
+
+הפקודות המדויקות שמשולבות כדי לקבל תאריך נוכחי בתוך לסירת הזמן השמיים משפיעות על ביצועי הקוד הכוללים כמו נכס גישה, טעינה ושימוש משוחזרים.
+
+## ראה גם
+
+https://www.baeldung.com/kotlin/get-current-date-time 
+https://developer.android.com/reference/java/time/LocalDateTime 
+https://www.programiz.com/kotlin-programming/examples/current-datetime

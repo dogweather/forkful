@@ -1,7 +1,7 @@
 ---
-title:                "Wyświetlanie informacji debugujących"
-html_title:           "Elixir: Wyświetlanie informacji debugujących"
-simple_title:         "Wyświetlanie informacji debugujących"
+title:                "Wydrukowanie informacji debugowania"
+html_title:           "Elixir: Wydrukowanie informacji debugowania"
+simple_title:         "Wydrukowanie informacji debugowania"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Testing and Debugging"
@@ -10,37 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co & Dlaczego?
 
-Czasami podczas pisania kodu Elixir, może się zdarzyć, że napotkasz problem lub błąd, który może być trudny do zidentyfikowania. Wtedy przydatne może być debugowanie poprzez wyświetlanie danych na ekranie. Ten artykuł daje wskazówki, jak można to zrobić w prosty sposób.
+Wypisywanie wyjścia debugowania jest procesem, w którym programista wysyła informacje o swoim kodzie do terminala w celu zrozumienia, co się dzieje podczas jego wykonywania. Jest to szczególnie przydatne w przypadku naprawiania błędów i śledzenia jakichkolwiek problemów z wykonywanym programem.
 
-## Jak to zrobić
+## Jak to zrobić:
 
-Aby wyświetlić dane debugowania w Twoim kodzie Elixir, możesz używać kilku przydatnych funkcji i makr. Poniżej znajdują się przykładowe wykorzystania, wraz z wyjaśnieniem, kiedy i dlaczego powinieneś używać danej metody.
-
-```elixir
-# Użycie funkcji IO.inspect
-IO.inspect("Hello world")
-# Output: "Hello world"
-
-# Użycie makra IO.puts
-IO.puts("Hello world")
-# Output: Hello world
-
-# Używanie debugowania warunkowego z wykorzystaniem if
-if debug?, do: IO.inspect("Debug output")
-# Output (tylko jeśli debug? jest prawdziwe): Debug output
+```Elixir
+IO.inspect("Hello, world!")
 ```
 
-## Głębsze zanurzenie
+Output:
 
-Po zapoznaniu się z podstawowymi funkcjami i makrami do wyświetlania danych debugowania, warto dowiedzieć się więcej o tym, jak można dostosować wyświetlane informacje. Oto kilka wskazówek:
+```Elixir
+"Hello, world!"
+```
 
-- Używaj funkcji IO.inspect tylko w celach debugowania. Nie powinna ona być wykorzystywana w kodzie produkcyjnym.
-- Wykorzystuj argument `label: "Nazwa"` w funkcji IO.inspect, aby określić jasną etykietę dla wyświetlanych danych.
-- Zastanów się nad wykorzystaniem funkcji IO.inspect z argumentem `pretty: true`, aby otrzymać bardziej czytelną prezentację złożonych danych.
+Więcej przykładów możesz znaleźć na stronach dokumentacji Elixir.
 
-## Zobacz także
+## Głębsze wyjaśnienia:
 
-- [Oficjalna dokumentacja Elixir o debugowaniu](https://elixir-lang.org/getting-started/debugging.html)
-- [Artykuł "Top 10 Tips on How to Debug Elixir Code Effectively"](https://www.zenrows.com/blog/top-10-tips-debug-elixir-code/)
+Wypisywanie wyjścia debugowania stało się standardem w programowaniu, aby pomóc programistom w zrozumieniu swojego kodu i naprawieniu błędów. Alternatywnymi metodami są na przykład użycie narzędzi do debugowania, takich jak debugger, lub stosowanie wbudowanych funkcji takich jak `IO.inspect`. Elixir zapewnia wiele wbudowanych funkcji, które mogą pomóc w wypisywaniu debug output, takich jak `IO.inspect`, `IO.puts` i `IO.warn`.
+
+## Zobacz także:
+
+- Dokumentacja Elixir: https://hexdocs.pm/elixir/Kernel.html#inspect/2
+- Narzędzia do debugowania Elixir: https://hexdocs.pm/iex/IEx.html#debugger/3

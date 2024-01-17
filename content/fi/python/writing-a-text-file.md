@@ -10,49 +10,21 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä & Miksi?
+Tekstitiedoston kirjoittaminen on yksinkertainen tapa tallentaa tietoa tietokoneella. Ohjelmoijat käyttävät sitä usein tiedon tallentamiseen tai käsittelemiseen Python-ohjelmassa.
 
-On monia syitä, miksi tekstitiedoston kirjoittaminen voisi olla hyödyllistä. Esimerkiksi voit tallentaa tietoja pysyvästi tai hallita suuria tietomääriä helposti.
-
-## Miten
-
-Annamme esimerkkejä siitä, miten voit kirjoittaa Pythonilla tekstitiedoston, ja tulostaa sen sisällön:
+## Miten tehdään:
+Pythonilla tekstitiedoston kirjoittaminen on helppoa. Aloita avaamalla tiedosto käyttäen avainsanaa ```with```. Sitten kirjoitetaan tiedot käyttäen ```write```-funktiota. Lopuksi suljetaan tiedosto ```close```-funktiolla. Alla on esimerkki koodista ja sen tulosteesta.
 
 ```Python
-# Avaa tiedosto nimeltä "esimerkki.txt" ja kirjoita siihen tekstiä
-file = open("esimerkki.txt", "w")
-file.write("Tämä on Pythonin esimerkkitiedosto")
-file.close() # Sulje tiedosto
-
-# Avaa tiedosto uudelleen ja lue sen sisältö
-file = open("esimerkki.txt", "r")
-print(file.read()) # Tulosta tiedoston sisältö
-file.close() # Sulje tiedosto
-
-# Output:
-# Tämä on Pythonin esimerkkitiedosto
+with open("tekstitiedosto.txt", "w") as tiedosto:
+    tiedosto.write("Tämä on esimerkki tekstitiedoston kirjoittamisesta.")
 ```
+Tuloste: 
+- Ei näytetä mitään, mutta tiedosto "tekstitiedosto.txt" luodaan ja sen sisältöksi tulee "Tämä on esimerkki tekstitiedoston kirjoittamisesta."
 
-## Syventyminen
+## Syventyminen:
+Tekstitiedoston kirjoittaminen on ollut tärkeä osa ohjelmointia jo pitkään. Nykypäivänä on myös muita tapoja tallentaa ja käsitellä tietoa, kuten tietokantoja tai JSON-tiedostoja. Pythonilla on myös muita tapoja kirjoittaa tekstitiedostoja, kuten käyttämällä ```with open(...) as tiedosto```-rakennetta.
 
-Voit myös lisätä uusia rivejä ja muokata tiedoston sisältöä. Tässä esimerkissä lisätään tiedostoon uusi rivi ja korvataan ensimmäinen rivi uudella tekstillä:
-
-```Python
-file = open("esimerkki.txt", "a") # Avaa tiedosto lisäystilassa
-file.write("\nTämä on uusi rivi") # Lisää uusi rivi loppuun
-file.close() # Sulje tiedosto
-
-# Avaa tiedosto ja lue sen sisältö uudelleen
-file = open("esimerkki.txt", "r")
-print(file.read()) # Tulosta tiedoston sisältö
-file.close() # Sulje tiedosto
-
-# Output:
-# Tämä on Pythonin esimerkkitiedosto
-# Tämä on uusi rivi
-```
-
-## Katso myös
-
-- [Pythonin virallinen dokumentaatio tekstitiedoston kirjoittamisesta](https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files)
-- [Lyhyt opetusvideo tekstitiedoston kirjoittamisesta Pythonilla](https://www.youtube.com/watch?v=hDSVInZ2ARE)
+## Katso myös:
+- [Pythonin dokumentaatio tiedostojen käsittelystä](https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files)

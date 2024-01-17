@@ -1,7 +1,7 @@
 ---
-title:                "Telecharger une page web"
-html_title:           "Clojure: Telecharger une page web"
-simple_title:         "Telecharger une page web"
+title:                "Le téléchargement d'une page web"
+html_title:           "Clojure: Le téléchargement d'une page web"
+simple_title:         "Le téléchargement d'une page web"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "HTML and the Web"
@@ -10,38 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi 
+# Qu'est-ce que le téléchargement d'une page web & pourquoi le faire?
 
-Si vous êtes intéressé par l'informatique, vous avez sûrement entendu parler du langage de programmation Clojure. Ce langage fonctionnel et dynamique offre de nombreuses possibilités pour développer des applications web. Dans cet article, nous allons vous montrer comment utiliser Clojure pour télécharger une page web et en extraire des données. 
+Télécharger une page web signifie récupérer son contenu à partir d'Internet. Les programmeurs le font souvent pour extraire des données précises ou pour automatiser des tâches récurrentes.
 
-## Comment faire 
+# Comment faire:
 
-Tout d'abord, vous aurez besoin d'installer Clojure sur votre ordinateur. Vous pouvez suivre ce [guide](https://clojure.org/guides/getting_started) pour l'installation. Une fois que vous avez terminé l'installation, vous pouvez ouvrir un terminal et lancer la console Clojure en tapant `clojure` et en appuyant sur Entrée. Maintenant, vous êtes prêt à commencer ! 
+Voici un exemple de code en Clojure pour télécharger le contenu d'une page web et l'afficher:
 
-Nous allons utiliser la bibliothèque "clj-http" pour télécharger une page web. Vous pouvez l'ajouter à votre projet en utilisant Leiningen ou en téléchargeant directement le JAR depuis [ici](https://github.com/dakrone/clj-http). Une fois que vous avez ajouté la bibliothèque à votre projet, vous pouvez l'importer dans votre code en ajoutant `(require '[clj-http.client :as client])` en haut de votre fichier. 
+```Clojure
+;; Importer la bibliothèque "clj-http" pour effectuer les requêtes en HTTP
+(require '[clj-http.client :as client])
 
-Maintenant, pour télécharger une page web, vous pouvez utiliser la fonction `client/get`, en lui passant l'URL de la page en tant que premier argument. Par exemple, si vous voulez télécharger la page d'accueil de Google, vous pouvez faire : 
+;; Définir l'URL de la page à télécharger
+(def url "https://example.com")
 
-```clojure
-(def page (client/get "https://www.google.com"))
+;; Utiliser la fonction "get" de "clj-http" pour télécharger la page
+(def response (client/get url))
+
+;; Afficher le contenu de la page téléchargée
+(println (:body response))
 ```
 
-Ensuite, pour extraire des données de cette page, nous allons utiliser la bibliothèque "enlive". Vous pouvez l'ajouter à votre projet en utilisant Leiningen ou en téléchargeant directement le JAR depuis [ici](https://github.com/cgrand/enlive). Ensuite, vous pouvez l'importer dans votre code en ajoutant `(require '[net.cgrand.enlive-html :as enlive])`. 
+La sortie de ce code sera le contenu de la page web sous forme de chaîne de caractères.
 
-Maintenant, nous allons utiliser la fonction `enlive/parse` pour convertir le contenu de la page HTML en une structure de données Clojure. Vous pouvez ensuite utiliser des sélecteurs CSS pour extraire les éléments que vous souhaitez. Par exemple, pour extraire tous les liens de la page Google, vous pouvez faire : 
+# Plongée en profondeur:
 
-```clojure
-(def links (enlive/select (enlive/parse page) [:a]))
-```
+Le téléchargement de pages web est une pratique courante en programmation pour diverses raisons telles que l'analyse de données, le scraping ou l'automatisation de tâches. Cette méthode utilise le protocole HTTP pour récupérer le contenu de la page. Alternativement, il est possible d'utiliser des outils tels que "curl" ou "wget" en ligne de commande pour télécharger une page web.
 
-Vous pouvez également utiliser des sélecteurs plus précis pour extraire des données spécifiques. Une fois que vous avez sélectionné les données souhaitées, vous pouvez les manipuler et les utiliser à votre guise. 
+La bibliothèque "clj-http" utilisée dans l'exemple ci-dessus est basée sur la bibliothèque Java Apache HTTP qui offre une grande flexibilité en termes de paramètres de requête et de gestion des erreurs.
 
-## Plongée en profondeur 
+# Voir aussi:
 
-En utilisant Clojure pour télécharger et manipuler une page web, vous avez un contrôle total sur les données que vous récupérez. Vous n'êtes pas limité par les fonctionnalités fournies par les navigateurs web traditionnels, vous pouvez donc créer des outils personnalisés pour extraire des données de n'importe quelle page web. De plus, en utilisant des librairies telles que "clj-http" et "enlive", vous pouvez facilement étendre vos fonctionnalités pour répondre à tous vos besoins. 
-
-## Voir aussi 
-
-- [Guide d'installation Clojure](https://clojure.org/guides/getting_started)
-- [Bibliothèque clj-http](https://github.com/dakrone/clj-http)
-- [Bibliothèque enlive](https://github.com/cgrand/enlive)
+- [Documentation officielle de "clj-http"](https://github.com/dakrone/clj-http)
+- [Bibliothèque Clojure pour le scraping: "enlive"](https://github.com/cgrand/enlive)
+- [Article sur le téléchargement de pages web avec Clojure par "Baeldung"](https://www.baeldung.com/java-download-webpage)

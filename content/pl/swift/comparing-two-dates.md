@@ -10,39 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+# Co i dlaczego?
+Porównywanie dwóch dat to proces polegający na porównaniu dwóch różnych dat w celu ustalenia, która z nich jest wcześniejsza lub późniejsza. Programiści często używają tego mechanizmu w celu wykrywania zmian w danych lub do śledzenia działań użytkowników.
 
-Porównywanie dwóch dat jest częstą czynnością w programowaniu. Pozwala na ustalenie, która z dwóch dat jest wcześniejsza lub późniejsza, co jest przydatne w przypadku tworzenia aplikacji, które wymagają obsługi dat.
-
-## Jak To Zrobić
-
-Aby porównać dwie daty w języku Swift, możesz skorzystać z metody `compare` dostępnej na typie `Date`. Poniżej znajduje się przykład kodu, który porównuje dwie daty i wypisuje wynik w konsoli:
+# Jak to zrobić:
+Sprawdzenie, czy jedna data jest wcześniejsza lub późniejsza od drugiej, można łatwo zrobić za pomocą kilku prostych linijek kodu w języku Swift. W poniższym przykładzie użyjemy funkcji ```compare``` z klasy ```Calendar```, która porównuje dwa obiekty typu ```Date``` i zwraca wartość typu ```ComparisonResult```:
 
 ```Swift
-let date1 = Date()
-let date2 = Date(timeIntervalSinceNow: 3600) // tworzy datę późniejszą o 3600 sekund
-let result = date1.compare(date2)
+let dateFormatter = DateFormatter()
+dateFormatter.dateFormat = "dd/MM/yyyy"
+let firstDate = dateFormatter.date(from: "01/01/2020")
+let secondDate = dateFormatter.date(from: "05/01/2020")
 
-switch result {
-case .orderedAscending:
-    print("Data 1 jest wcześniejsza niż data 2")
-case .orderedDescending:
-    print("Data 2 jest wcześniejsza niż data 1")
-case .orderedSame:
-    print("Obie daty są takie same")
-}
+let result = Calendar.current.compare(firstDate!, to: secondDate!, toGranularity: .day)
+
+print(result)
 ```
 
-W powyższym przykładzie wykorzystano enum `ComparisonResult`, który może przyjmować jedną z trzech wartości: `.orderedAscending`, `.orderedDescending` lub `.orderedSame`. W zależności od wyniku porównania, wypisuje się odpowiedni komunikat w konsoli.
+W wyniku otrzymamy wartość ```ComparisonResult.orderedAscending```, co oznacza, że pierwsza data jest wcześniejsza od drugiej.
 
-## Głębszy Wgląd
+# Głębsze wgląd:
+Porównywanie dat jest szczególnie przydatne w przypadkach, gdy program musi śledzić zmiany lub wyświetlać dane w kolejności chronologicznej. Alternatywą dla użycia funkcji ```compare``` jest użycie operatora ```<``` lub ```>```, który również porównuje dwie daty i zwraca wartość logiczną ```true``` lub ```false```. Proces porównywania dat jest również możliwy dzięki użyciu klas ```DateComponents``` i ```Calendar```, jednak wymaga to bardziej skomplikowanego kodu.
 
-W języku Swift istnieją również inne sposoby porównywania dat, takie jak wykorzystanie operatorów większości lub mniejszości (`<`, `>`), lub skorzystanie z metody `compare(_:toGranularity:)`, która pozwala na porównanie dat z określoną dokładnością. W przypadku wykorzystania operatorów, typ `Date` zostanie automatycznie przekonwertowany na typ `Timeinterval`, co może dać nieoczekiwane wyniki.
-
-Należy także pamiętać o uwzględnieniu strefy czasowej oraz obsłudze dat rozmiarów takich jak rok przestępny, ponieważ może to mieć wpływ na wynik porównania dwóch dat.
-
-## Zobacz także
-
-- [Dokumentacja Swift - Porównywanie dat](https://developer.apple.com/documentation/foundation/date)
-- [Porównywanie dat w języku Swift](https://www.hackingwithswift.com/example-code/system/how-to-compare-dates)
-- [Sposoby porównania dat w Swiftie](https://medium.com/@terence89/how-to-compare-dates-in-swift-4-6427222276f6)
+# Zobacz również:
+Dla większej elastyczności w porównywaniu dat, warto zapoznać się również z biblioteką ```DateToolsSwift```, która oferuje wiele różnych funkcji związanych z operacjami na datach. Więcej informacji na ten temat możesz znaleźć na oficjalnej stronie projektu: https://github.com/MatthewYork/DateTools

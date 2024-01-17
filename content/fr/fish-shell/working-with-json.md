@@ -10,87 +10,81 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Qu'est-ce que c'est et pourquoi?
 
-Si vous travaillez avec des données structurées, telles que des configurations ou des API, il y a de fortes chances que vous rencontriez le format JSON. C'est pourquoi il est important de savoir comment manipuler ce format de données efficacement avec Fish Shell.
+Travailler avec JSON peut sembler intimidant pour certains programmeurs, mais en réalité, c'est simplement un format de données utilisé pour stocker et échanger des informations. Il est utilisé pour structurer des données de manière à les rendre facilement lisibles pour les machines et les humains. Les programmeurs utilisent JSON pour stocker des données dans des applications, créer des API et échanger des informations avec des serveurs.
 
-## Comment faire
+## Comment faire:
 
-### Installation
-
-Pour travailler avec JSON dans Fish Shell, vous devez d'abord installer le paquet `jq`. Vous pouvez le faire avec la commande suivante :
+Il y a quelques commandes utiles en Fish Shell pour travailler avec des données JSON. L'une d'entre elles est `jq`, qui est un outil de ligne de commande qui peut être utilisé pour traiter et filtrer des données JSON. Par exemple, si nous avons un fichier `data.json` avec une liste de noms et d'âges, nous pouvons utiliser la commande suivante pour afficher uniquement les noms:
 
 ```
-brew install jq
+jq '.noms' data.json
 ```
 
-ou
+Nous pouvons également utiliser la commande `curl` pour effectuer des requêtes HTTP et récupérer des données JSON à partir d'une API. Par exemple, pour récupérer des informations météorologiques à partir de l'API OpenWeather, nous pouvons utiliser la commande suivante:
 
 ```
-apt-get install jq
+curl 'http://api.openweathermap.org/data/2.5/weather?q=Paris&appid=your_api_key'
 ```
 
-selon votre système d'exploitation.
-
-### Lire un fichier JSON
-
-Pour lire les données d'un fichier JSON, vous pouvez utiliser la commande `jq` suivie du chemin du fichier :
-
-```
-$ jq '.nom_de_la_clef' chemin/vers/le/fichier.json
-```
-
-Par exemple, si vous avez un fichier `config.json` avec le contenu suivant :
+Voici un exemple de sortie JSON que nous pourrions obtenir en utilisant la commande ci-dessus:
 
 ```
 {
-  "prenom": "Marie",
-  "age": 35,
-  "hobbies": ["lecture", "escalade"]
+  "coord": {
+    "lon": 2.35,
+    "lat": 48.85
+  },
+  "weather": [
+    {
+      "id": 800,
+      "main": "Clear",
+      "description": "clear sky",
+      "icon": "01d"
+    }
+  ],
+  "base": "stations",
+  "main": {
+    "temp": 22.97,
+    "feels_like": 21.11,
+    "temp_min": 21.67,
+    "temp_max": 24.44,
+    "pressure": 1014,
+    "humidity": 47
+  },
+  "visibility": 10000,
+  "wind": {
+    "speed": 3.6,
+    "deg": 340
+  },
+  "clouds": {
+    "all": 0
+  },
+  "dt": 1560739216,
+  "sys": {
+    "type": 1,
+    "id": 6540,
+    "message": 0.0091,
+    "country": "FR",
+    "sunrise": 1560692003,
+    "sunset": 1560749664
+  },
+  "timezone": 7200,
+  "id": 2988507,
+  "name": "Paris",
+  "cod": 200
 }
 ```
 
-Vous pouvez lire la valeur de la clef "age" avec la commande suivante :
+## Profondeur:
 
-```
-$ jq '.age' config.json
-```
+JSON a été créé en 2001 par Douglas Crockford et est devenu un format de données très populaire en raison de sa simplicité et de sa lisibilité. Bien qu'il soit souvent utilisé dans les applications web, il existe d'autres alternatives telles que XML ou YAML pour stocker et échanger des données. Sur Fish Shell, la plupart des commandes qui peuvent traiter des données JSON utilisent le format `dot notation` pour accéder aux données.
 
-Ce qui retournera `35`.
+## Voir aussi:
 
-### Parcourir une liste
+Pour en savoir plus sur comment travailler avec JSON en Fish Shell, vous pouvez consulter la documentation officielle de Fish Shell ainsi que les sources suivantes:
 
-Si vous avez une liste de valeurs dans votre fichier JSON, vous pouvez utiliser la fonction `[]` pour accéder à des éléments spécifiques de cette liste. Par exemple, si vous voulez récupérer le premier hobby de la liste "hobbies", vous pouvez utiliser la commande suivante :
-
-```
-$ jq '.hobbies[0]' config.json
-```
-
-Ce qui retournera `lecture`.
-
-### Filtrer les données
-
-La commande `jq` prend également en charge les filtres pour vous aider à extraire des données spécifiques à partir d'un fichier JSON. Par exemple, si vous ne voulez récupérer que les personnes ayant plus de 30 ans dans votre fichier de config, vous pouvez utiliser cette commande :
-
-```
-$ jq 'select(.age > 30)' config.json
-```
-
-Ce qui retournera :
-
-```
-{
-  "prenom": "Marie",
-  "age": 35,
-  "hobbies": ["lecture", "escalade"]
-}
-```
-
-## Plongée en profondeur
-
-Il y a tellement plus à apprendre sur l'utilisation de Fish Shell avec JSON. Vous pouvez explorer la documentation officielle de `jq` pour découvrir tous les filtres et fonctions disponibles et les intégrer à vos scripts Fish Shell. Vous pouvez également jeter un coup d'œil à d'autres ressources disponibles en ligne pour vous aider à maîtriser l'utilisation de JSON avec Fish Shell.
-
-## Voir aussi
-
-- [Documentation officielle de `jq`](https://stedolan.github.io/jq/manual/)
-- [Tutoriel sur la manipulation de JSON avec Fish Shell](https://medium.com/@joaopsf/simple-guide-to-processing-json-using-fish-shell-42cb821daacc)
+- https://fishshell.com/docs/current/
+- https://www.json.org/
+- https://stedolan.github.io/jq/

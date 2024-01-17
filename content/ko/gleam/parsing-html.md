@@ -10,51 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜?
-HTML을 파싱하는 과제는 웹 개발에서 중요한 부분입니다. HTML 문서를 이해하고 웹페이지의 내용을 추출하여 웹 애플리케이션에 동적으로 표시하는 것은 필수적입니다. Gleam을 사용하면 HTML 파싱을 쉽고 효율적으로 수행할 수 있습니다.
+# 지금 Gleam으로 HTML 파싱하기
 
-## 어떻게?
-Gleam은 HTML 파싱에 유용한 라이브러리를 제공합니다. 다양한 함수를 사용하여 HTML 태그를 추출하고 내용을 가져오는 것이 가능합니다. 아래는 예시 코드와 그 결과입니다.
+## 무엇이며, 그래서 왜?
+HTML 파싱은 웹 서버에서 받은 HTML 코드를 읽고 데이터를 추출하는 것을 말합니다. 프로그래머들은 파싱을 통해 웹 사이트의 정보를 가져와서 더 나은 사용자 경험을 제공하거나 데이터를 분석하는 등 다양한 목적을 달성할 수 있습니다.
 
+## 어떻게:
 ```Gleam
-import gleam/html
+// HTML 코드를 문자열로 저장한다.
+let html = "<div class='title'>Gleam 파싱</div>"
 
-let html = "<div>Hello Gleam!</div>"
+// Gleam의 HTML 파싱 라이브러리를 불러온다.
+import gleam/html/parser
 
-// <div> 태그를 가져오기
-let div = html |> html.Elements.get_first_by_tag("div")
-// div 태그의 내용 가져오기
-let content = div |> html.Elements.get_text
+// HTML 코드를 파싱하여 원하는 태그의 내용을 추출한다.
+let title = html
+            |> parser.parse()
+            |> parser.find_one([ "div", class("title") ])
+            |> parser.inner_text()
 
-// 결과 출력
-gleam/core/format!("{content}") // "Hello Gleam!"
-```
-아래는 좀 더 복잡한 예제 코드와 그 결과입니다.
+// 결과를 출력한다.
+IO.println(title) // Gleam 파싱
 
-```Gleam
-import gleam/http
-import gleam/html
-
-let url = "https://gleam.run"
-// HTTP 요청 보내기
-let response = url
-|> http.get
-// HTTP 응답 바디 가져오기
-let body = response.body
-// Gleam Document로 변환하기
-let document = body |> html.parse
-// Document에서 <a> 태그 추출하기
-let anchors = document |> html.find_all_by_tag("a")
-// 모든 <a> 태그의 속성 가져오기
-let attrs = anchors
-|> List.map(\link -> link |> html.Element.get_attributes)
-// 결과 출력
-attrs // 예: [{| href => "/docs/why-gleam", |}, {| href => "/downloads", |}, ...]
 ```
 
-## 깊게 들어가기
-Gleam의 `html` 라이브러리는 HTML 태그를 레코드로 바로 가져올 수 있어서 매우 편리합니다. 또한 Gleam의 스트림을 사용하여 HTML 문서를 파싱할 수도 있습니다. 더 자세한 내용은 공식 문서를 참조해주세요.
+## 더 자세히:
+HTML 파싱은 웹 개발에서 필수적인 기술이며, 다양한 라이브러리와 도구들이 이용되고 있습니다. 예를 들어, 파이썬의 BeautifulSoup나 자바스크립트의 Cheerio는 HTML 파싱을 위해 널리 알려진 라이브러리입니다. Gleam 또한 간편한 문법과 강력한 타입 시스템을 통해 HTML 파싱을 손쉽게 할 수 있도록 도와줍니다.
 
-## 더 읽어보기
-- [Gleam 공식 문서](https://gleam.run)
-- [Gleam 코드 저장소](https://github.com/gleam-lang/gleam)
+## 참고:
+- [Gleam 공식 홈페이지](https://gleam.run/)
+- [Gleam의 HTML 파싱 라이브러리: gleam/html-parser](https://github.com/gleam-lang/html-parser)
+- [파이썬 BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/)
+- [자바스크립트 Cheerio](https://cheerio.js.org/)

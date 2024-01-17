@@ -1,7 +1,7 @@
 ---
-title:                "디렉토리의 존재 여부 확인하기"
-html_title:           "C#: 디렉토리의 존재 여부 확인하기"
-simple_title:         "디렉토리의 존재 여부 확인하기"
+title:                "디렉터리가 존재하는지 확인하기"
+html_title:           "C#: 디렉터리가 존재하는지 확인하기"
+simple_title:         "디렉터리가 존재하는지 확인하기"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Files and I/O"
@@ -10,30 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+# 무엇과 왜?
 
-폴더가 존재하는지 확인하는 것은 파일을 처리하거나 경로를 설정할 때 유용합니다.
+디렉토리가 존재하는지를 확인하는 것은 프로그래머들이 자주 하는 작업입니다. 이는 프로그램 로직에서 필수적인 부분이며, 파일들을 찾거나 생성하기 전에 확인해야 합니다.
 
-## 사용 방법
+# 방법:
 
 ```C#
 if (Directory.Exists(path))
 {
-    Console.WriteLine("폴더가 존재합니다.");
+    Console.WriteLine("디렉토리가 존재합니다.");
 }
 else
 {
-    Console.WriteLine("폴더가 존재하지 않습니다.");
+    Console.WriteLine("디렉토리가 존재하지 않습니다.");
 }
 ```
 
-위의 코드는 주어진 경로에 폴더가 있는지 없는지를 확인하고 그에 맞는 메시지를 출력하는 간단한 예제입니다. 만약 폴더가 존재한다면 "폴더가 존재합니다."라는 메시지가 출력되고, 폴더가 존재하지 않는다면 "폴더가 존재하지 않습니다."라는 메시지가 출력됩니다. 이렇게 확인하는 것으로 인해 프로그램이 존재하지 않는 폴더를 참조하지 않아 오류를 방지할 수 있습니다.
+이 코드 예제는 ```path``` 변수에 지정된 경로에 디렉토리가 있는지 여부를 확인합니다. ```Directory.Exists()``` 메서드는 불리언 값으로 결과를 반환하며, 디렉토리가 존재하면 ```true```를 반환하고 그렇지 않으면 ```false```를 반환합니다.
 
-## 깊이 들어가기
+# 깊이 들어가기:
 
-지정된 경로나 경로 문자열을 사용하여 폴더가 존재하는지 확인하는 가장 간단한 방법은 ```Directory.Exists()``` 메서드를 사용하는 것입니다. 이 메서드는 논리 값인 ```true``` 또는 ```false```를 반환합니다. 만약 작업 중에 파일 시스템이 변경되어서 정보가 유효하지 않은 경우에는 예외가 발생할 수도 있으므로 주의해야 합니다.
+디렉토리의 존재 여부를 확인하는 것은 프로그래밍에서 매우 중요한 부분입니다. 이는 예외처리와 관련이 있으며, 없는 디렉토리를 쿼리하면 오류가 발생할 수 있습니다. 이를 방지하기 위해 디렉토리가 존재하는지 먼저 확인해야 합니다.
 
-## 관련 문서
+```Directory.Exists()``` 메서드는 존재 여부 뿐만 아니라 디렉토리의 속성도 확인할 수 있습니다. 이를 사용하여 디렉토리가 읽기 전용인지, 숨김 파일이 있는지 등을 확인할 수 있습니다.
 
-[Directory.Exists 메서드 문서](https://docs.microsoft.com/ko-kr/dotnet/api/system.io.directory.exists) \
-[Directory 클래스 문서](https://docs.microsoft.com/ko-kr/dotnet/api/system.io.directory)
+대안으로는 ```DirectoryInfo``` 클래스를 사용할 수 있습니다. 이 클래스는 디렉토리의 존재 여부를 확인할 수 있는 다양한 메서드와 속성을 제공합니다.
+
+# 참고 자료:
+
+- C# 가이드: 디렉토리 쿼리 - https://docs.microsoft.com/ko-kr/dotnet/csharp/programming-guide/file-system/how-to-query-directories
+- C# 가이드: 디렉토리 정보 - https://docs.microsoft.com/ko-kr/dotnet/csharp/programming-guide/file-system/how-to-get-information-about-a-file-path

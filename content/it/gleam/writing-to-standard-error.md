@@ -1,7 +1,7 @@
 ---
-title:                "Scrivere su errore standard"
-html_title:           "Gleam: Scrivere su errore standard"
-simple_title:         "Scrivere su errore standard"
+title:                "Scrivere sull'errore standard"
+html_title:           "Gleam: Scrivere sull'errore standard"
+simple_title:         "Scrivere sull'errore standard"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Files and I/O"
@@ -10,34 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché Scrivere a Standard Error in Gleam?
+## Cosa e perchè?
 
-Scopriamo insieme perché scrivere a standard error in Gleam può semplificare la vita del programmatore e migliorare la qualità del codice.
+Scrivere su standard error è un'attività comune tra i programmatori. Si tratta di inviare messaggi di errore e di debug al terminale invece di stamparli nel normale flusso di output. Questo permette ai programmatori di identificare e risolvere gli errori più facilmente.
 
-## Come Farlo
+## Come fare:
 
-Per scrivere a standard error in Gleam, si utilizza la funzione `gleam/io#stderr` seguita dal metodo `write` e tra parentesi tonde il messaggio che si desidera scrivere.
+Per scrivere su standard error in Gleam, utilizza la funzione ```error!``` seguita dal messaggio di errore o di debug desiderato all'interno di un blocco di codice ```Gleam```. Ad esempio:
 
-```
-Gleam.mod
-fn main() {
-  gleam/io.stderr
-  |> write("Ciao, questo è un messaggio di errore!")
-}
+```Gleam
+let error_message = "Errore: valore non valido"
+error!(error_message)
 ```
 
-Questo codice scriverà a standard error il messaggio "Ciao, questo è un messaggio di errore!" ogni volta che il programma viene eseguito.
-
-```
-$ gleam run main.gleam
-> Ciao, questo è un messaggio di errore!
-```
+Questo esempio scriverà il messaggio di errore "Errore: valore non valido" su standard error. 
 
 ## Approfondimento
 
-Scrivere a standard error può essere utile nel gestire gli errori nei nostri programmi. Invece di scrivere messaggi di errore lungo il codice, possiamo utilizzare questa funzione per centralizzare le informazioni e renderle più facili da gestire. Inoltre, scrivere a standard error ci permette di distinguere i messaggi di errore dai messaggi di output, migliorando la leggibilità del codice.
+Scrivere su standard error è una pratica comune che si è sviluppata negli anni per consentire ai programmatori di identificare facilmente gli errori nel codice. Alcune alternative a questa pratica includono la stampa degli errori sul normale flusso di output o l'utilizzo di un debugger. Tuttavia, scrivere su standard error rimane uno strumento utile e semplice per la gestione degli errori.
 
-## Vedi Anche
+In Gleam, la funzione ```error!``` è implementata attraverso il modulo ```std/io``` che, a sua volta, utilizza librerie di basso livello per gestire la comunicazione con standard error.
 
-- [Documentazione Gleam sull'utilizzo di standard error](https://gleam.run/book/tutorials-and-examples/standard-error.html)
-- [Esempi di codice su GitHub utilizzando standard error in Gleam](https://github.com/search?q=gleam+stderr)
+## Vedi anche
+
+Per ulteriori informazioni su ```error!``` e sulle funzioni di gestione degli errori in Gleam, consulta la documentazione ufficiale del linguaggio: [https://gleam.run/documentation/](https://gleam.run/documentation/).

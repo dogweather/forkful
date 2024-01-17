@@ -1,7 +1,7 @@
 ---
-title:                "Обчислення дати в майбутньому або минулому"
-html_title:           "Swift: Обчислення дати в майбутньому або минулому"
-simple_title:         "Обчислення дати в майбутньому або минулому"
+title:                "Обчислення дати у майбутньому або минулому"
+html_title:           "Swift: Обчислення дати у майбутньому або минулому"
+simple_title:         "Обчислення дати у майбутньому або минулому"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Dates and Times"
@@ -10,40 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Чому
+# Що і чому?
+Обчислення дати в майбутньому або минулому - це процес визначення точної дати на основі вихідної дати та заданого періоду. Програмісти часто використовують цю функцію для автоматичного розрахунку дат подій у програмах або для візуалізації часових проміжків у додатках.
 
-Пересування у часі починається з можливості обрахувати дати у майбутньому або минулому. Це може бути корисно для планування подій або отримання інформації з минулих подій.
+# Як це зробити:
+Наприклад, якщо потрібно обчислити дату, яка буде через два тижні від сьогоднішньої, можна використовувати наступний код у Swift:
 
-## Як
-
-Існує кілька способів обрахувати дату у майбутньому або минулому в Swift. Один із способів це використовувати клас `Date` та його метод `addingTimeInterval`, який дозволяє додавати або віднімати часовий інтервал до поточної дати. 
-
-```Swift
-let currentDate = Date() // поточна дата
-let futureDate = currentDate.addingTimeInterval(86400) // добавляємо один день (в секундах) до поточної дати
-let pastDate = currentDate.addingTimeInterval(-604800) // віднімаємо один тиждень (в секундах) від поточної дати
-print(futureDate) // Виводить: 2021-10-07 07:02:25 +0000
-print(pastDate) // Виводить: 2021-09-29 07:02:25 +0000
 ```
-
-Ще один спосіб - використовувати `Calendar` та його метод `date(byAdding:to:wrappingComponents:)`. Цей метод дозволяє додавати або віднімати часові компоненти, такі як дні, тижні, місяці або роки, до поточної дати.
-
-```Swift
-let currentDate = Date()
-let calendar = Calendar.current
-let futureDate = calendar.date(byAdding: .day, value: 7, to: currentDate)
-let pastDate = calendar.date(byAdding: .weekOfMonth, value: -1, to: currentDate)
-print(futureDate) // Виводить: 2021-10-07 07:02:25 +0000
-print(pastDate) // Виводить: 2021-09-29 07:02:25 +0000
+let today = Date()
+var futureDate = Calendar.current.date(byAdding: .day, value: 14, to: today)
+print(futureDate)
 ```
+В результаті ви отримаєте дату, яка буде через два тижні від сьогоднішньої. 
 
-Обидва цих методи дозволяють обчитати дати у різних часових зонах, якщо передати до них відповідні параметри.
+# Глибоке занурення:
+Історичний контекст: функція обчислення дати в майбутньому або минулому була поширена в програмуванні вже давно. Раніше це робили з допомогою складних формул та алгоритмів, але з появою спеціальних бібліотек цей процес значно спростився.
 
-## Глибокий занурення
-Всі дати в Swift вимірюються від початку світу 1 січня 2001 року, існує багато інших деталей і особливостей, пов'язаних з роботою з датами. Для детальнішого розуміння рекомендуємо ознайомитися з [офіційною документацією Swift Date](https://developer.apple.com/documentation/foundation/date).
+Альтернативи: одним з альтернативних підходів до обчислення дати може бути використання типу даних TimeInterval, який представляє кількість секунд з заданої точки в часі.
 
-## Також
+Деталі реалізації: у Swift для обчислення дати в майбутньому або минулому використовується клас Calendar, який надає можливість взаємодіяти з календарними датами та часами.
 
-- [Working with Dates and Times in Swift](https://www.hackingwithswift.com/read/11/overview)
-- [Formatting Dates and Times in Swift](https://www.appcoda.com/swift-format-dates/)
-- [Common Pitfalls when Working with Dates in Swift](https://medium.com/@jigar2805/common-pitfalls-when-working-with-dates-and-time-in-swift-85bb2c503d1)
+# Дивіться також:
+- [Документація Apple про клас Calendar](https://developer.apple.com/documentation/foundation/calendar)
+- [Розділ про роботу з датами та часом в Swift](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)

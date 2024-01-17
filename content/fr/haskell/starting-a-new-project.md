@@ -1,7 +1,7 @@
 ---
-title:                "Commencer un nouveau projet"
-html_title:           "Haskell: Commencer un nouveau projet"
-simple_title:         "Commencer un nouveau projet"
+title:                "Lancer un nouveau projet"
+html_title:           "Haskell: Lancer un nouveau projet"
+simple_title:         "Lancer un nouveau projet"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Getting Started"
@@ -10,45 +10,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Quoi & Pourquoi?
 
-Vous voulez vous lancer dans un nouveau projet de programmation, et cela peut sembler intimidant. Mais ne vous inquiétez pas, Haskell est un langage de programmation élégant et puissant qui peut rendre votre expérience de développement agréable et efficace!
+Lancer un nouveau projet en Haskell, c'est commencer à écrire du code et à concevoir un programme à partir de zéro. Les programmeurs le font pour résoudre un problème spécifique ou pour créer une nouvelle application.
 
-## Comment faire
+## Comment faire:
 
-Pour commencer un nouveau projet en Haskell, vous aurez besoin d'un environnement de développement fonctionnel et un éditeur de code. Vous pouvez utiliser le compilateur de Haskell GHC et un éditeur de texte comme VSCode pour un ensemble de base. 
+```Haskell
+-- Création d'un nouveau projet
 
-Voici un exemple de code Haskell simple, qui imprime "Bonjour, monde!" dans votre terminal:
+stack new mon_projet
 
+-- Compilation et exécution du code
+
+cd mon_projet
+stack build
+stack exec mon_projet
+
+-- Ajouter des dépendances
+
+-- Exemple avec le package "Data.List"
+-- Dans le fichier "stack.yaml" ajouter:
+
+Extra-Dep-Templates:
+- package: containers
+  extra-dep: false
+  buildable: false
+
+-- Dans le fichier ".cabal" ajouter les lignes suivantes:
+
+build-depends:
+    base,
+    containers,
+    -- autres dépendances
+
+-- Importer le package dans le fichier source
+
+import Data.List
 ```
-module Main where
 
-main :: IO ()
-main = putStrLn "Bonjour, monde!"
-```
+## Plongée en profondeur:
 
-Lorsque vous exécutez ce programme, vous devriez voir la sortie suivante: 
+### Contexte historique:
+Le langage Haskell a été créé dans les années 1980 par des chercheurs en informatique pour combler un manque de langages fonctionnels. Il est devenu populaire dans les années 1990 grâce à son système de types fort et son support pour la programmation fonctionnelle pure.
 
-```
-$ ghc -o hello hello.hs
-$ ./hello
-Bonjour, monde!
-```
+### Alternatives:
+Il existe d'autres langages de programmation pour démarrer un nouveau projet, tels que Java, Python ou C++. Chacun a ses propres avantages et inconvénients.
 
-Vous pouvez également utiliser des outils de gestion de paquets tels que Cabal ou Stack pour gérer les dépendances de votre projet et construire des projets plus complexes.
+### Détails de mise en œuvre:
+Pour démarrer un nouveau projet en Haskell, il est recommandé d'utiliser un outil de gestion de paquets tel que Stack ou Cabal. Ces outils facilitent l'installation et la mise à jour des dépendances, ainsi que la compilation et l'exécution du code.
 
-## Plongée en profondeur
+## Voir aussi:
 
-Maintenant que vous avez votre environnement de développement prêt, vous pouvez commencer à travailler sur votre projet. Il est important de bien réfléchir à votre conception avant de commencer à écrire du code en Haskell. Vous devrez également vous familiariser avec les structures de données et les types de données fonctionnels fournis en standard par Haskell. L'utilisation de modules et de foncteurs peut également vous aider à organiser votre code en le rendant plus modulaire et réutilisable.
-
-En outre, il est utile de lire la documentation officielle de Haskell et de consulter des ressources en ligne telles que des tutoriels, des blogs et des communautés de développeurs pour obtenir de l'aide et des conseils.
-
-## Voir aussi
-
-Voici quelques liens utiles pour vous aider à démarrer votre projet en Haskell:
-
-- [Le site officiel de Haskell] (https://www.haskell.org/)
-- [Tutoriel Haskell pour débutants] (https://wiki.haskell.org/Introduction)
-- [Documentation GHC] (https://downloads.haskell.org/~ghc/latest/docs/html/users_guide/)
-- [Guide de mise en route de Stack] (https://docs.haskellstack.org/en/stable/GUIDE/)
-- [Communauté Haskell sur Reddit] (https://www.reddit.com/r/haskell/)
+- Site officiel de Haskell: https://www.haskell.org/
+- Tutoriels de Haskell: https://wiki.haskell.org/Tutorials
+- Outils de gestion de paquets: https://www.haskell.org/downloads#stack, https://www.haskell.org/cabal/

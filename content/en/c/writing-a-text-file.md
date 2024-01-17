@@ -10,51 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-Writing a text file in C allows you to store data permanently and access it for future use. This can be useful in various scenarios, such as saving user preferences or keeping track of a program's progress.
+Writing a text file means creating a file that contains readable text. Programmers often do this as a way to store data or code that can be easily accessed and manipulated.
 
-## How To
+## How to:
 
-To write a text file, you will need to follow these steps:
+To write a text file in C, you can use the `fprintf()` function. This function takes in a file pointer, a format string, and any necessary arguments. Here's an example:
 
 ```C
-// include necessary libraries
-#include <stdio.h>
+// Opening the file with write mode
+FILE *file = fopen("sample.txt", "w");
 
-int main() {
-  // declare a file pointer
-  FILE *fp;
-  
-  // open the file in write mode
-  fp = fopen("test.txt", "w");
-  
-  // write data to the file using fprintf()
-  fprintf(fp, "This is a sample text file.");
-  
-  // close the file
-  fclose(fp);
-  
-  return 0;
-}
+// Writing `Hello, world!` to the file
+fprintf(file, "Hello, world!");
+
+// Closing the file
+fclose(file);
 ```
 
-This code will create a file named "test.txt" in the same directory as your program and write the given text to it. To write more data, you can use the same `fprintf()` function with multiple lines of text or use a loop to write data from a variable.
+This will create a file named `sample.txt` with the text `Hello, world!` written in it.
 
-To make sure the data is written successfully, you can check the return value of `fprintf()` - it will return the number of characters written to the file.
+## Deep Dive:
 
-## Deep Dive
+Writing text files has been a common practice in programming for many years. Before the rise of databases and other data storage methods, text files were one of the main ways to store and access data. They also have the advantage of being human-readable, making them useful for storing code or configurations.
 
-When writing a text file in C, there are a few important things to keep in mind:
+There are several alternatives to writing text files, such as using databases, JSON files, or CSV files. Each method has its own advantages and use cases, but writing text files remains a simple and efficient way to store and retrieve data.
 
-- Make sure to open the file in the correct mode - `w` for write mode, `r` for read mode, `a` for append mode, and `w+` for read/write mode.
-- Use appropriate formatting in `fprintf()` to control the structure and readability of your text file.
-- Remember to close the file after writing to it - this will ensure that the data is written successfully and any changes are saved.
+When writing a text file, it's important to pay attention to the file format and encoding. Different operating systems and programs may use different standards, so it's crucial to ensure compatibility when sharing or accessing the file.
 
-Additionally, there are various other functions you can use to manipulate text files, such as `fscanf()` for reading data from a file and `rename()` for renaming a file.
+## See Also:
 
-## See Also
-
-- A Beginner's Guide to File Input and Output in C - [https://www.programiz.com/c-programming/c-file-input-output](https://www.programiz.com/c-programming/c-file-input-output)
-- C Tutorial - File I/O - [https://www.tutorialspoint.com/cprogramming/c_file_io.htm](https://www.tutorialspoint.com/cprogramming/c_file_io.htm)
-- C File Handling - [https://www.geeksforgeeks.org/file-handling-c-classes/](https://www.geeksforgeeks.org/file-handling-c-classes/)
+- [fopen() function reference](https://www.tutorialspoint.com/c_standard_library/c_function_fopen.htm)
+- [Working with files in C](https://www.programiz.com/c-programming/c-file-input-output)

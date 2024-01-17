@@ -1,7 +1,7 @@
 ---
-title:                "Zmiana wielkości litery w ciągu znaków"
-html_title:           "Fish Shell: Zmiana wielkości litery w ciągu znaków"
-simple_title:         "Zmiana wielkości litery w ciągu znaków"
+title:                "Zapisywanie w wielkich literach ciągu znaków"
+html_title:           "Fish Shell: Zapisywanie w wielkich literach ciągu znaków"
+simple_title:         "Zapisywanie w wielkich literach ciągu znaków"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -10,38 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
-Jedną z podstawowych operacji, które musimy wykonywać w programowaniu, jest manipulacja napisami. Jedną z często używanych jest zmiana wielkości liter – zwłaszcza w celu uzyskania poprawnego formatowania. W tym artykule dowiesz się, jak używając Fish Shell, możesz prostym sposobem zamienić napis na jego zdatną do wykorzystania formę.
+[
+## Co i dlaczego?
+Zdaje sobie sprawę, że działanie skryptów i kodów może nie być zbyt przyjemne dla oka, szczególnie jeśli nie są poprawnie zformatowane. Jedną z technik, aby ułatwić sobie czytanie kodu jest stosowanie kapitalizacji. Polega to na zmianie pierwszej litery tekstu na dużą, dzięki czemu od razu jest ona rozpoznawalna jako nazwa zmiennej lub klasa. Programiści stosują tę technikę, aby ich kod stał się bardziej czytelny i łatwiejszy w analizie.
 
-## Jak to zrobić?
-Fish Shell oferuje wbudowaną funkcję `string toupper` do zmiany wszystkich liter w napisie na duże oraz `string tolower` do zmiany na małe. Możesz również użyć funkcji `string capitalize`, aby zamienić pierwszą literę w napisie na dużą, pozostawiając pozostałe bez zmian.
+## Jak to zrobić:
+Fish Shell oferuje kilka metod na kapitalizację tekstu. Możesz użyć funkcji ```string capitalize```, która zmienia pierwszą literę wybranego ciągu znaków na dużą. Przykładowy kod wygląda następująco:
 
-```Fish Shell
-echo "witaj świecie" | string toupper
 ```
-Output: WITAJ ŚWIECIE
-
-```Fish Shell
-echo "TUtrzy słOwa" | string tolower
+string txt = "hello world"
+echo (string capitalize $txt)
 ```
-Output: tutrzy słowa
+Wynikiem będzie ```Hello world```.
 
-```Fish Shell
-echo "mój naPiS" | string capitalize
+Można również skorzystać z flagi ```-k```, aby kapitalizować nie tylko pierwszą, ale wszystkie litery w wybranym tekście. Na przykład:
+
 ```
-Output: Mój naPiS
-
-## Głębsze zagadnienia
-W przypadku, kiedy chcesz zmienić jedynie kilka wybranych liter w napisie, możesz użyć funkcji `string replace`. Jest ona przydatna, gdy np. chcesz zamienić wszystkie spacje na znaki podkreślenia w celu utworzenia poprawnej nazwy pliku.
-
-```Fish Shell
-echo "To jest przykładowy napis" | string replace " " "_"
+echo (lscolor -k --owner $HOME)
 ```
-Output: To_jest_przykładowy_napis
+Powyższy kod wyświetli listę plików w katalogu domowym, ale z nazwami wszystkich plików zapisanymi dużymi literami.
 
-Ponadto, jeśli chcesz bardziej zaawansowanej funkcjonalności, Fish Shell umożliwia również dostęp do wbudowanych narzędzi systemu operacyjnego. Można to wykorzystać do wywołania programów zewnętrznych, takich jak `tr` do zmiany wielkości liter.
+## Deep Dive:
+Kapitalizacja jest powszechnie stosowaną techniką w programowaniu, która pomaga w czytaniu i analizie kodu. Jest też często wymagana w przypadku, gdy nazwa zmiennej lub funkcji jest złożona z wielu słów. Alternatywnymi sposobami kapitalizacji w Fish Shell są funkcje ```string upper``` i ```string title```. Pierwsza zmienia wszystkie litery w tekście na duże, a druga zmienia pierwszą literę każdego słowa w tekście na dużą. Implementacja tych funkcji jest oparta na standardowych programach Unixowych, co zapewnia efektywność i wydajność. 
 
-## Zobacz również
-- [Dokumentacja Funkcji String w Fish Shell](https://fishshell.com/docs/current/cmds/string.html)
-- [Inne wbudowane narzędzia w Fish Shell](https://fishshell.com/docs/current/commands.html)
-- [Przykłady wykorzystania funkcji string w Fish Shell](https://www.freecodecamp.org/news/string-manipulation-in-fish-shell-c34c33774e94/) (w języku angielskim)
+## Zobacz też:
+Jeśli interesujesz się programowaniem w Fish Shell, warto zapoznać się z funkcjami ```string lower```, ```string join``` oraz ```string match```. Możesz również przeczytać dokumentację na oficjalnej stronie Fish Shell, gdzie znajdziesz więcej przykładowych kodów i informacji na temat kapitalizacji i innych przydatnych funkcji.

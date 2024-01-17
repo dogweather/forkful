@@ -1,7 +1,7 @@
 ---
-title:                "Att omvandla en sträng till versaler"
-html_title:           "PHP: Att omvandla en sträng till versaler"
-simple_title:         "Att omvandla en sträng till versaler"
+title:                "Att Göra en Sträng Med Stora Bokstäver"
+html_title:           "PHP: Att Göra en Sträng Med Stora Bokstäver"
+simple_title:         "Att Göra en Sträng Med Stora Bokstäver"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Strings"
@@ -10,61 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad och varför?
+Att "capitalizera" en sträng i programmering innebär att konvertera alla bokstäver i en sträng till stora bokstäver. Detta görs oftast för att standardisera text och öka läsbarheten. Det är också vanligt att göra detta för att matcha sökningar då de allra flesta programmeringspråk är "case-sensitive", vilket innebär att stora och små bokstäver skiljer sig åt.
 
-Att kunna kapitalisera en sträng kan vara användbart vid formatering av text, till exempel för att skapa rubriker eller betona vissa ord. Det är också ett grundläggande koncept inom programmering och kan hjälpa till att förbättra kodens läsbarhet.
+## Hur man gör:
+För att capitalizera en sträng i PHP kan du använda funktionen `strtoupper()` som står för "string to upper case". Detta fungerar på både enskilda tecken och hela strängar. Här är ett exempel:
 
-## Hur man gör det
-
-För att kapitalisera en sträng i PHP kan du använda funktionen `strtoupper()`. Här är en kod som visar hur man använder den:
-
-```
+```php
 <?php
-$str = "hej på dig";
-echo strtoupper($str);
+  $text = "denna text kommer capitalizeras";
+  echo strtoupper($text);
 ?>
+
+// Output:
+DENNA TEXT KOMMER CAPITALIZERAS
 ```
 
-Detta skulle producera outputen "HEJ PÅ DIG". Det är viktigt att notera att `strtoupper()` endast fungerar på bokstäver och att symboler och siffror inte påverkas av funktionen.
+Du kan också använda `ucwords()` funktionen för att capitalizera varje ord i en sträng. Detta är användbart om du vill ha första bokstaven i varje ord stor. Här är ett exempel:
 
-Du kan också använda funktionen `ucwords()` om du vill kapitalisera varje ord i en sträng istället för bara den första bokstaven. Här är ett exempel:
-
-```
+```php
 <?php
-$str = "denna sträng kommer att kapitaliseras";
-echo ucwords($str);
+  $text = "detta är en mening som kommer capitalizeras";
+  echo ucwords($text);
 ?>
+
+// Output:
+Detta Är En Mening Som Kommer Capitalizeras
 ```
 
-Outputen skulle vara "Denna Sträng Kommer Att Kapitaliseras".
+## Mer djupgående:
+Capitalizering av strängar har funnits med sedan de tidiga dagarna av programmering då text redan var case-sensitive. Olika programmeringspråk har olika metoder för att capitalizera strängar, såsom `capitalize()` i Ruby och `String.ToUpper()` i C#. Det är viktigt att använda rätt metod för det språk du arbetar i.
 
-## Djupdykning
+Det finns också alternativ till `strtoupper()` och `ucwords()`, såsom att manuellt loopa igenom varje tecken i en sträng och konvertera det till stora bokstäver. Detta kan dock bli tidskrävande och är därför inte det mest effektiva sättet att capitalizera en sträng.
 
-En annan funktion som kan vara användbar för att kapitalisera strängar är `ucfirst()`. Denna funktion kapitaliserar endast den första bokstaven i en sträng. Det kan vara användbart om du bara vill betona en del av en sträng istället för att kapitalisera hela den. Här är ett exempel på hur man kan använda `ucfirst()`:
+I PHP kan `strtoupper()` och `ucwords()` även användas för att capitalizera UTF-8-tecken, vilket är användbart för flerspråkiga applikationer.
 
-```
-<?php
-$str = "bara den här första bokstaven ska kapitaliseras.";
-echo ucfirst($str);
-?>
-```
-
-Outputen skulle vara "Bara den här första bokstaven ska kapitaliseras."
-
-Det finns också möjlighet att använda `strtolower()` för att göra en sträng helt omvänd, det vill säga alla bokstäver blir små. Detta kan vara användbart om du vill göra en sträng helt enkel att bearbeta. Till exempel, om du vill matcha en sökfras men vill undvika skillnader i stora och små bokstäver. Här är ett exempel på hur man kan använda `strtolower()`:
-
-```
-<?php
-$str = "DEN HÄR STRÄNGEN BLIR SMÅ BOKSTÄVER.";
-echo strtolower($str);
-?>
-```
-
-Outputen skulle vara "den här strängen blir små bokstäver."
-
-## Se även
-
-- PHP-dokumentation för `strtoupper()`: https://www.php.net/manual/en/function.strtoupper.php
-- PHP-dokumentation för `ucwords()`: https://www.php.net/manual/en/function.ucwords.php
-- PHP-dokumentation för `ucfirst()`: https://www.php.net/manual/en/function.ucfirst.php
-- PHP-dokumentation för `strtolower()`: https://www.php.net/manual/en/function.strtolower.php
+## Se även:
+- PHP:s inbyggda funktioner för strängmanipulering: https://www.php.net/manual/en/ref.strings.php
+- En grundläggande introduktion till PHP: https://www.w3schools.com/php/
+- Inlägg om capitalizering av strängar på Stack Overflow: https://stackoverflow.com/questions/1784012/how-to-capitalize-the-first-letter-of-each-word-in-a-string

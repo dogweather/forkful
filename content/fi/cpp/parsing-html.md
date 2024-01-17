@@ -1,7 +1,7 @@
 ---
-title:                "HTML:n jäsentäminen"
-html_title:           "C++: HTML:n jäsentäminen"
-simple_title:         "HTML:n jäsentäminen"
+title:                "HTML: n jäsentäminen"
+html_title:           "C++: HTML: n jäsentäminen"
+simple_title:         "HTML: n jäsentäminen"
 programming_language: "C++"
 category:             "C++"
 tag:                  "HTML and the Web"
@@ -10,54 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Miksi & Mitä?
+HTML:n parsiminen tarkoittaa verkkosivun koodin lukemista ja sen tietojen erottamista käyttökelpoisiksi tietorakenteiksi. Ohjelmoijat käyttävät parsimista tehdäkseen verkkosivujen sisällöstä helposti käsiteltävää ja analysoitavaa dataa.
 
-HTML:n jäsentäminen eli eri osien, kuten linkkien ja otsikoiden, tunnistaminen ja erottaminen on tärkeä taito, jos haluat luoda verkkosivuja tai suorittaa web-kaavioitusta. Käyttäjäystävällinen HTML-jäsennin auttaa sinua tarkistamaan ja muokkaamaan HTML-dokumentteja helpommin.
-
-## Kuinka Tehdä
-
+## Miten:
 ```C++
 #include <iostream>
 #include <string>
 
 using namespace std;
 
-// Luodaan funktio, joka jäsentää annetun HTML-koodin ja tulostaa linkkien määrän
-void laske_linkit(string html) {
-    int linkit = 0;
-
-    // Käydään läpi jokainen kirjain annetusta HTML-koodista
-    for (int i = 0; i < html.length(); i++) {
-        // Tarkistetaan, löytyykö kirjaimesta merkkejä "<a", eli alussa sana "a"
-        if (html[i] == '<' && html[i+1] == 'a') {
-            linkit++; // Kasvatetaan linkkien määrää yhdellä
-        }
-    }
-
-    cout << "Linkkeja loytyi: " << linkit << endl; // Tulostetaan linkkien määrä
-}
-
 int main() {
-    // Alustetaan muuttuja, joka sisältää HTML-koodia
-    string html = "<div><a href=\"https://www.example.com\">Linkki 1</a><a href=\"https://www.example.com\">Linkki 2</a></div>";
+    // Luodaan merkkijono esimerkiksi HTML-koodille
+    string html = "<html><head><title>Esimerkki sivu</title></head><body><h1>Tämä on otsikko</h1><p>Tämä on tekstiä</p></body></html>";
 
-    laske_linkit(html); // Kutsutaan funktiota, annetaan parametriksi HTML-koodi
+    // Tulostetaan otsikko
+    size_t start = html.find("<h1>") + 4; // Etsitään otsikon alku
+    size_t end = html.find("</h1>"); // Etsitään otsikon loppu
+    cout << "Otsikko: " << html.substr(start, end-start) << endl;
+
+    // Tulostetaan tekstit
+    start = html.find("<p>") + 3; // Etsitään tekstin alku
+    end = html.find("</p>"); // Etsitään tekstin loppu
+    cout << "Teksti: " << html.substr(start, end-start) << endl;
 
     return 0;
 }
 ```
 
-Tulostus:
-
+Lähtö:
 ```
-Linkkeja loytyi: 2
+Otsikko: Tämä on otsikko
+Teksti: Tämä on tekstiä
 ```
 
-## Syvempi sukellus
+## Syvempi sukellus:
+HTML:n parsiminen kehitettiin 1990-luvulla, kun Internet-käyttö yleistyi. Tähän mennessä on kehitetty useita eri tapoja parsia HTML:ää, joista yksi on regulääri ilmeisyyksien avulla. Tämä kuitenkin ei ole paras vaihtoehto, sillä HTML:n rakenteet voivat olla hyvin monimutkaisia ja sen parsiminen on vaativaa. Sen sijaan käytetään usein parseereita, jotka ovat erityisesti HTML:n parsimiseen suunniteltuja ohjelmia.
 
-HTML:n jäsentäminen on tärkeä osa verkkokehitystä ja automaatiota. Se mahdollistaa suuren datan käsittelyn ja analysoinnin helposti ja tehokkaasti. Jokaisella HTML-elementillä on myös omat attribuutit, joten jäsennin voi auttaa myös näiden tietojen keräämisessä ja käsittelyssä.
-
-## Katso Myös
-
-- [HTML-jäsennyskirjastot C++:lle](https://github.com/topics/html-parser?l=c%2B%2B)
-- [Ohjelmoijan työkalupakki: vinkkejä ja työkaluja verkkokehitykseen](https://github.com/nikitavoloboev/my-mac-os#web-development)
+## Katso myös:
+- [Mozilla Developer Network: Introduction to HTML](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML)

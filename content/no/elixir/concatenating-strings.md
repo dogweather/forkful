@@ -1,7 +1,7 @@
 ---
-title:                "Sammenstilling av strenger"
-html_title:           "Elixir: Sammenstilling av strenger"
-simple_title:         "Sammenstilling av strenger"
+title:                "Sammenføying av strenger"
+html_title:           "Elixir: Sammenføying av strenger"
+simple_title:         "Sammenføying av strenger"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -10,40 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hva & Hvorfor?
+Concatenation, eller å sette sammen strenger, er en vanlig operasjon i programmering. Det betyr å kombinere to eller flere strenger til en enkelt streng. Programmører gjør dette for å bygge dynamiske strenger som kan brukes til å generere tekst på flyet, for eksempel å sette sammen en setning med variabel data.
 
-Å kombinere strenger, også kjent som konkatenasjon, er en grunnleggende og nødvendig ferdighet i Elixir-programmering. Ved å kunne sette sammen flere strenger kan du lage mer dynamiske og tilpassede meldinger, påmeldingsskjemaer og annen tekst i programmene dine.
+## Hvordan gjøre det:
+Det er flere måter å sette sammen strenger i Elixir, men den vanligste er å bruke ```<>``` operatøren. La oss se på et eksempel:
 
-## Hvordan
+```
+first_name = "John"
+last_name = "Doe"
 
-```Elixir
-# Eksempel 1: Enkel konkatenasjon
-"Velkommen til Elixir-programmering " <> "Artikkel!"
+full_name = first_name <> " " <> last_name
 
-# Output: "Velkommen til Elixir-programmering Artikkel!"
+IO.puts(full_name)
 
-# Eksempel 2: Konkatenasjon med variabler
-fornavn = "Jens"
-etternavn = "Hansen"
-"Velkommen, " <> fornavn <> " " <> etternavn <> "!"
-
-# Output: "Velkommen, Jens Hansen!"
-
-# Eksempel 3: Konkatenasjon med interpolering
-navn = "Petter"
-"Velkommen, #{navn}!"
-
-# Output: "Velkommen, Petter!"
+# Output:
+# John Doe
 ```
 
-## Deep Dive
+I dette eksempelet har vi først definert to strenger, ```first_name``` og ```last_name```. Deretter brukte vi ```<>``` operatøren til å sette sammen de to strengene til en fullstendig navnestreng. Vi skrev deretter ut det endelige resultatet ved hjelp av ```IO.puts``` funksjonen.
 
-I Elixir er konkatenasjon utført ved hjelp av operatøren `<>`, som brukes til å kombinere to strenger. Dette kan også brukes til å kjede sammen flere strenger i én operasjon. En viktig egenskap ved konkatenasjon i Elixir er at den er en ikke-destruktiv operasjon, noe som betyr at originale strenger ikke endres, men heller en ny streng blir opprettet.
+## Dypdykk:
+Concatenation er ikke en ny konsept innen programmering. Det har blitt brukt i mange år i forskjellige språk som Java og C++. Men i Elixir, kan du også bruke funksjonen ```String.concat``` til å sette sammen strenger. Dette er spesielt nyttig hvis du har en liste av strenger som du vil sette sammen til en enkelt streng.
 
-Det er også viktig å merke seg at konkatenasjon i Elixir er veldig effektiv, siden det er en del av Elixir-datastrukturen, kalt binærer. Dette betyr at konkatenasjon er mye raskere enn i andre språk som behandler strenger som en liste av tegn.
+Det er også viktig å nevne at Elixir er et funksjonelt programmeringsspråk, så de fleste av de vanlige måtene for å sette sammen strenger i andre språk, for eksempel med en ```+``` operatør, vil ikke fungere i Elixir. Derfor er det viktig å bruke ```<>``` operatøren eller ```String.concat``` funksjonen i stedet.
 
-## Se også
+## Se også:
+Hvis du vil lære mer om strenger og funksjonell programmering i Elixir, sjekk ut disse ressursene:
 
-- [Offisiell dokumentasjon for konkatenasjon i Elixir](https://hexdocs.pm/elixir/1.11.2/String.html#concatenation/)
-- [En artikkel om effektiv strengkonkatenasjon i Elixir](https://tech.europace.de/efficient-string-concatenation-in-elixir/)
-- [En diskusjon om strengkonkatenasjon i Elixir-forumet](https://elixirforum.com/t/concatenate-strings-or-binaries/1697/)
+- [Elixir-docs: Strings](https://hexdocs.pm/elixir/String.html)
+- [Learn X in Y Minutes: Elixir](https://learnxinyminutes.com/docs/elixir/)
+- [The Elixir Programming Language Website](https://elixir-lang.org/)

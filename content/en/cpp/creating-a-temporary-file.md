@@ -10,56 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-Temporary files are useful for storing data temporarily in a program, without cluttering up the main file or database. They can be easily created and deleted as needed, providing a temporary storage solution for various tasks.
+## What & Why?
 
-## How To
-Creating a temporary file in C++ is a simple process that involves using the ```tmpnam()``` function from the standard library. Here's an example code to illustrate the process:
+Creating a temporary file in programming refers to the process of generating a file that is used only temporarily to store data. Programmers often create temporary files to store intermediate data during their program execution, or to handle large amounts of data that cannot be easily stored in memory.
+
+## How to:
+
+Creating a temporary file in C++ is a simple process that involves using the standard library function ```tmpfile()```. This function creates a temporary file and returns a pointer to the file stream. The file is automatically deleted when the program terminates. See the example below:
 
 ```C++
-#include <iostream>
-#include <cstdio> //for tmpnam()
-
-using namespace std;
-
+#include <stdio.h>
 int main() {
-    char *filename; //variable to store temporary file name
-    filename = tmpnam(NULL); //passing NULL as argument generates temporary file name
-    cout << "Temporary file created: " << filename << endl;
-
-    //open the temporary file for writing
-    FILE *file = fopen(filename, "w");
-    if (file != NULL) {
-        fprintf(file, "This is a temporary file.");
-        fclose(file);
-        cout << "Data successfully written to temporary file." << endl;
-    } else {
-        cout << "Error opening file." << endl;
+    FILE *fp = NULL;
+    fp = tmpfile();
+    if (fp == NULL) {
+        printf("Failed to create temporary file.");
     }
-
-    //now delete the temporary file
-    if (remove(filename) == 0) {
-        cout << "Temporary file deleted." << endl;
-    } else {
-        cout << "Error deleting file." << endl;
+    else {
+        printf("Temporary file created successfully.");
     }
-    
     return 0;
 }
 ```
-
-This code will create a temporary file, write some data to it, and then delete the file once it is no longer needed. Here's a sample output:
-
+Output:
 ```
-Temporary file created: C:\Users\John\AppData\Local\Temp\tmp.1MnN0D
-Data successfully written to temporary file.
-Temporary file deleted.
+Temporary file created successfully.
 ```
 
-## Deep Dive
-The ```tmpnam()``` function generates a unique file name each time it is called, ensuring that the temporary file created will not overwrite any existing files. However, this does not guarantee that the file won't be overwritten by another program. Additionally, the temporary file may not always be created in the designated temporary directory. It is important to check for failure when creating or deleting temporary files.
+## Deep Dive:
 
-## See Also
-- [C++ Standard Library tmpnam()](https://www.cplusplus.com/reference/cstdio/tmpnam/)
-- [Creating and Deleting Temporary Files in C++](http://www.math.uaa.alaska.edu/~afkjm/csce211/handouts/TemporaryFiles.pdf)
-- [Understanding C and C++ File IO](https://www3.ntu.edu.sg/home/ehchua/programming/cpp/c1_FileIO.html)
+Creating temporary files dates back to the early days of computing when disk storage was limited and expensive. Temporary files were commonly used to store intermediate results of a program to increase efficiency. Now, with larger storage capacity, temporary files may not always be necessary, but are still used for a variety of reasons such as handling large data, sharing data between processes, and creating backups.
+
+Alternatives to creating a temporary file in C++ include using in-memory data structures, such as arrays or linked lists, to store temporary data. However, this approach can be limiting for handling large amounts of data. Another alternative is using pipes or sockets to share data between processes, but this requires additional coding and may not be as efficient as using temporary files.
+
+The implementation of creating a temporary file in C++ varies depending on the operating system. On Unix-based systems, the temporary file is created in the ```/tmp``` directory, while on Windows, it is created in the current directory. Additionally, the operation of the temporary file might differ between operating systems, such as the automatic deletion of the file or the maximum size of the file.
+
+## See Also:
+
+- [C++ tmpfile() function](https://www.cplusplus.com/reference/cstdio/tmpfile/)
+- [Alternatives to temporary files in C++](https://mixelblog.ru/en/blog/development/c-tutorials/temporary-files-cols-in-memory/)
+- [Creating temporary files in different operating systems](https://beej.us/guide/bgipc/output/html/multipage/pipeamp.html#glibc_notemp)

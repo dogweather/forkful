@@ -1,7 +1,7 @@
 ---
-title:                "Juntando cadeias de caracteres"
-html_title:           "Gleam: Juntando cadeias de caracteres"
-simple_title:         "Juntando cadeias de caracteres"
+title:                "Unindo strings"
+html_title:           "Gleam: Unindo strings"
+simple_title:         "Unindo strings"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -10,35 +10,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Porque
-Você já teve a necessidade de combinar diferentes strings em uma só? Talvez para criar uma URL dinâmica ou para exibir uma mensagem personalizada? O Gleam oferece uma maneira simples e eficiente de realizar essa tarefa através da concatenação de strings.
+## O Que & Porquê? 
+Concatenar strings é quando você combina duas ou mais strings para criar uma nova string. Os programadores geralmente fazem isso quando precisam criar frases ou mensagens dinâmicas em seus programas. 
 
-## Como Fazer
-A função `<>` é utilizada para concatenar strings no Gleam. Veja um exemplo abaixo:
+## Como: 
 ```
 Gleam
-let mensagem = "Olá" <> " mundo"
+"Olá, " ++ "mundo!" // Saída: "Olá, mundo!"
 ```
-Neste caso, a variável `mensagem` seria igual a "Olá mundo". Podemos também concatenar mais de duas strings:
 ```
-Gleam
-let nome = "Maria"
-let sobrenome = "Silva"
-let nome_completo = nome <> " " <> sobrenome
+let nome_da_pessoa = "Maria"
+let mensagem = "Bem-vindo, " ++ nome_da_pessoa 
+```
+```
+"O código acima criará a string 'Bem-vindo, Maria' que pode ser usada para saudar usuários individualmente."
 ```
 
-Neste exemplo, a variável `nome_completo` seria igual a "Maria Silva". Além disso, podemos também adicionar valores de outras variáveis em nossa concatenação:
-```
-Gleam
-let idade = 25
-let mensagem = "Maria tem " <> idade <> " anos"
-```
-Aqui, a variável `mensagem` seria igual a "Maria tem 25 anos". Lembre-se que a função `<>` só funciona com strings, então é necessário converter outros tipos de dados para string antes de concatená-los.
+## Deep Dive: 
+A concatenação de strings é uma técnica comum em programação e é amplamente utilizada em uma variedade de linguagens de programação. Além do operador "++" usado no Gleam, outras linguagens possuem suas próprias maneiras de concatenar strings, como o "+" no JavaScript e o "&" no Visual Basic. A concatenação também pode ser feita com funções específicas, como "concat" no Python. Em termos de implementação, a concatenação de strings geralmente envolve a alocação de espaço suficiente na memória para a nova string resultante e, em seguida, copiar as strings originais para esse espaço alocado. 
 
-## Deep Dive
-Além da função `<>`, o Gleam também possui outras funções para manipular strings, como `slice`, `replace`, `trim`, entre outras. Além disso, é possível utilizar expressões regulares para realizar concatenações mais complexas. Para conhecer todas essas opções, confira a documentação oficial do Gleam sobre strings.
-
-## Veja Também
-- [Documentação oficial do Gleam sobre strings](https://gleam.run/documentation/std_lib/string/)
-- [Tutorial sobre manipulação de strings no Gleam](https://dev.to/charlotterbee/guide-to-string-manipulation-in-gleam-2kli)
-- [Exemplos práticos de concatenação de strings no Gleam](https://github.com/jordymoos/gleam-by-example/blob/master/strings.md)
+## See Also: 
+Para mais informações sobre concatenar strings em Gleam, consulte a documentação oficial em [https://gleam.run/learn/docs/the-gleam-book#strings](https://gleam.run/learn/docs/the-gleam-book#strings). Para aprender mais sobre as diferentes formas de concatenar strings em outras linguagens, confira [https://www.tutorialspoint.com/concatenating-strings-in-different-languages](https://www.tutorialspoint.com/concatenating-strings-in-different-languages).

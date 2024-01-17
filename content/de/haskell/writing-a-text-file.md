@@ -1,7 +1,7 @@
 ---
-title:                "Eine Textdatei schreiben."
-html_title:           "Haskell: Eine Textdatei schreiben."
-simple_title:         "Eine Textdatei schreiben."
+title:                "Eine Textdatei schreiben"
+html_title:           "Haskell: Eine Textdatei schreiben"
+simple_title:         "Eine Textdatei schreiben"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Files and I/O"
@@ -10,28 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+# Was & Warum?
 
-Textdateien sind ein grundlegendes Werkzeug in der Programmierung und werden häufig verwendet, um Informationen zu speichern und auszutauschen. Durch das Schreiben einer Textdatei in Haskell lernen wir nicht nur, wie man grundlegende Daten manipuliert, sondern auch, wie man mit Dateien interagiert, was in der modernen Softwareentwicklung unerlässlich ist.
+Das Schreiben einer Textdatei bedeutet, dass du Daten in einer einfachen Formatierung in einem Textformat speicherst. Programmierer nutzen dieses Verfahren, um Informationen langfristig zu speichern oder um sie mit anderen Programmen zu teilen.
 
-## Wie es geht
+# Wie geht's?
 
-Um eine Textdatei in Haskell zu schreiben, müssen wir zuerst die Funktion `writeFile` aus der `System.IO` Bibliothek importieren. Diese Funktion akzeptiert zwei Parameter: den Dateipfad und den Inhalt, den wir in die Datei schreiben möchten. In unserem Beispiel möchten wir den String "Hallo Welt!" in die Datei "beispiel.txt" schreiben. Dazu schreiben wir folgenden Code:
+Hier ist ein Beispiel in Haskell, wie du einen Text in eine Datei schreibst:
 
 ```Haskell
-import System.IO
-
 main = do
-  writeFile "beispiel.txt" "Hallo Welt!"
+  writeFile "textdatei.txt" "Das ist ein Beispieltext."
 ```
 
-Nach dem Ausführen dieses Programms wird die Datei "beispiel.txt" erstellt und der String "Hallo Welt!" wird in die Datei geschrieben.
+Und so sollte die Ausgabe aussehen:
 
-## Tiefer Einblick
+```
+textdatei.txt: Das ist ein Beispieltext.
+```
 
-Um einen tieferen Einblick in das Schreiben von Textdateien in Haskell zu bekommen, können wir uns die Quellcodeimplementierung von `writeFile` ansehen. Diese befindet sich in der Datei "Text\IO.hs" in der `System.IO` Bibliothek. Dort sehen wir, dass `writeFile` intern die Funktion `withFile` verwendet, die es uns ermöglicht, eine Datei zu öffnen, darauf zuzugreifen und sie dann automatisch zu schließen. Dies ist ein gutes Beispiel für das funktionale Programmierparadigma, bei dem Funktionen als Parameter an andere Funktionen übergeben werden.
+# Tiefenschärfe
 
-## Siehe auch
+Das Schreiben von Textdateien ist eine gängige Methode, um Daten zu speichern, die nicht veränderbar oder nicht strukturiert sein müssen. Eine Alternative wäre das Schreiben von Binärdateien, aber diese sind für Menschen nicht lesbar und müssen erst dekodiert werden.
 
-- [Haskell Dokumentation zu Dateioperationen](https://www.haskell.org/onlinereport/io.html)
-- [Haskell Bibliothek "System.IO"](https://hackage.haskell.org/package/base-4.14.0.0/docs/System-IO.html)
+Bei der Implementierung von Textdateien gibt es verschiedene Wege, wie z.B. Lazy Writing oder Buffered Writing. Letztendlich hängt die Wahl davon ab, was für dich und dein Programm am effektivsten ist.
+
+# Siehe auch
+
+- [Tutorial zu Textdateien in Haskell](https://haskell.fpcomplete.com/library/files-and-serialization/text-files)
+- [Weitere Optionen zum Speichern von Daten in Haskell](https://lexi-lambda.github.io/blog/2017/02/12/in-memoriam-monads/)
+- [Einführung zu Haskell](https://haskell.org/)

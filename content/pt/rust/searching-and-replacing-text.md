@@ -1,7 +1,7 @@
 ---
-title:                "Busca e substituição de texto"
-html_title:           "Rust: Busca e substituição de texto"
-simple_title:         "Busca e substituição de texto"
+title:                "Localizando e substituindo texto"
+html_title:           "Rust: Localizando e substituindo texto"
+simple_title:         "Localizando e substituindo texto"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -10,43 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+## O que e por que?
 
-Substituir texto pode ser uma tarefa tediosa e demorada quando feita manualmente. Com a ajuda de uma linguagem de programação como Rust, podemos automatizar esse processo e economizar tempo e esforço.
+Substituir texto é uma tarefa comum para programadores. Basicamente, isso significa encontrar uma sequência de caracteres específica em um texto e substituí-la por outra. Os programadores fazem isso para corrigir erros, adicionar funcionalidades ou simplificar seu código.
 
-## Como fazer
+## Como fazer:
 
-Para realizar a substituição de texto em Rust, podemos usar o método `replace` da estrutura `String`. Vejamos um exemplo abaixo:
-
-```Rust
-let mut my_string = String::from("Sou um texto que precisa ser substituído");
-let new_string = my_string.replace("Sou", "Era");
-```
-
-Neste exemplo, usamos o método `replace` para substituir a palavra "Sou" por "Era" na nossa string `my_string`. Agora, a variável `new_string` contém o texto "Era um texto que precisa ser substituído". Podemos também usar o método `replace` em um texto que esteja armazenado em um arquivo, como mostrado abaixo:
+Para substituir texto em Rust, podemos usar o método `replace()` da classe `String`.
 
 ```Rust
-use std::fs;
+let texto = "Olá, mundo!";
+let novo_texto = texto.replace("mundo", "tudo");
 
-let my_file = fs::read_to_string("exemplo.txt").expect("Não foi possível ler o arquivo.");
-let new_file = my_file.replace("texto", "arquivo");
+println!("{}", novo_texto);
 ```
 
-Neste exemplo, o conteúdo do arquivo "exemplo.txt" é lido e armazenado na variável `my_file`. Em seguida, usamos o método `replace` para substituir a palavra "texto" por "arquivo" nesse conteúdo. O resultado é armazenado na variável `new_file`.
+Este código irá substituir a palavra "mundo" por "tudo" e imprimir "Olá, tudo!".
 
-## Mergulho profundo
+## Mergulho profundo:
 
-Além do método `replace`, Rust também nos oferece outras opções de substituição de texto. Por exemplo, o método `replacen` pode ser usado para substituir apenas uma determinada quantidade de ocorrências de uma palavra em uma string. Podemos especificar essa quantidade como um argumento na função, como mostrado abaixo:
+A tarefa de substituir textos é muito antiga e já foi resolvida de várias maneiras. Uma abordagem comum é o algoritmo de busca e substituição Boyer-Moore, que foi desenvolvido em 1977.
 
-```Rust
-let mut my_string = String::from("Este é um exemplo de frase que contém a palavra exemplo três vezes.");
-let new_string = my_string.replacen("exemplo", "exemplar", 2);
-```
+Alternativamente, os programadores também podem usar expressões regulares para substituir padrões de texto específicos em uma string.
 
-Neste exemplo, apenas as duas primeiras ocorrências da palavra "exemplo" serão substituídas por "exemplar", resultando no texto "Este é um exemplar de frase que contém a palavra exemplo uma vez.". 
+No Rust, o método `replace()` é implementado como parte do tipo `String`, que é uma estrutura de dados altamente otimizada para manipulação de texto.
 
-## Veja também
+## Veja também:
 
-- [Documentação oficial de Rust](https://www.rust-lang.org/pt-BR/)
-- [Curso gratuito de Rust para iniciantes](https://www.udemy.com/course/aprenda-a-linguagem-rust/)
-- [Tutorial de substituição de texto em Rust](https://www.tutorialspoint.com/replace-text-in-a-string-using-rust)
+- Documentação oficial do Rust para o método `replace()`: https://doc.rust-lang.org/std/string/struct.String.html#method.replace
+- Site oficial do algoritmo Boyer-Moore: http://www-igm.univ-mlv.fr/~lecroq/string/node14.html
+- Site para testar expressões regulares: https://regexr.com/

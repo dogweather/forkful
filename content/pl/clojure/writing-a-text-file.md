@@ -10,42 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co & Dlaczego?
 
-Pisanie pliku tekstowego może być przydatne w wielu sytuacjach podczas pisania kodu w Clojure. Może to być przydatne do zapisania danych do późniejszego wykorzystania lub do generowania róznych raportów i dokumentów.
+Pisanie pliku tekstowego w Clojure oznacza utworzenie pliku zawierającego tekst, który może być odczytany przez użytkownika. Programiści często piszą pliki tekstowe, gdy potrzebują przechowywać dane lub wyniki swojego programu w formacie, który łatwo jest przetworzyć i odczytać.
 
-## Jak To Zrobić
+## Jak to zrobić:
 
-Aby zapisać plik tekstowy w Clojure, użyjemy funkcji "spit". Ta funkcja przyjmuje dwa argumenty: ścieżkę do pliku i dane, które chcemy zapisać. Przykładowy kod wyglądałby tak:
-
-```Clojure
-(spit "sciezka/do/pliku.txt" "To jest przykladowy tekst do zapisania")
-```
-
-Jeśli chcemy, aby tekst został dopisany do już istniejącego pliku, możemy użyć funkcji "spit-append":
+Poniżej znajdują się przykładowe kody w języku Clojure, które pokażą Ci, jak napisać plik tekstowy i odczytać jego zawartość.
 
 ```Clojure
-(spit-append "sciezka/do/pliku.txt" "Ten tekst zostanie dopisany")
+(with-open [file (clojure.java.io/writer "plik.txt")]
+  (.write file "To jest tekst, który zostanie zapisany w pliku tekstowym!"))
+
+(with-open [file (clojure.java.io/reader "plik.txt")]
+  (doseq [line (line-seq file)]
+    (println line)))
+
 ```
 
-Możemy również wykorzystać funkcje "slurp" do odczytania danych z pliku tekstowego:
+Pierwszy przykład tworzy plik tekstowy o nazwie "plik.txt" i zapisuje w nim zawartość. Drugi przykład odczytuje zawartość pliku i wypisuje ją na ekranie.
 
-```Clojure
-(slurp "sciezka/do/pliku.txt")
-```
+## Głębszy zanurzenie:
 
-## Deep Dive
+Pisanie plików tekstowych jest istotną częścią wielu programów. Wcześniej, używano do tego celu różnych języków programowania takich jak Basic czy Pascal. Obecnie, większość języków programowania, w tym Clojure, oferują wbudowane funkcje do obsługi plików tekstowych.
+Innymi alternatywami dla zapisywania plików tekstowych są m.in. bazy danych czy formaty danych takie jak CSV czy JSON.
 
-Funkcja "spit" domyślnie używa kodowania "UTF-8", ale można to zmienić, przekazując trzeci argument w postaci mapy:
+## Zobacz także:
 
-```Clojure
-(spit "sciezka/do/pliku.txt" "To będzie zapisane w UTF-16" {:encoding "UTF-16"})
-```
-
-Możemy również przekazywać funkcji "spit" sekwencje, a nie tylko pojedyncze wartości. W takim przypadku, każda wartość w sekwencji będzie zapisana w nowej linii w pliku.
-
-## Zobacz również
-
-- [Dokumentacja Clojure - funkcja spit](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/spit)
-- [Dokumentacja Clojure - funkcja slurp](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/slurp)
-- [Przewodnik po Clojure](https://clojure.org/guides)
+- Dokumentacja języka Clojure: https://clojure.org/guides/io
+- Przykładowy kod na GitHubie: https://github.com/clojure-cookbook/clojure-cookbook/blob/master/08_files_and_directories/8-6_write-a-text-file.asciidoc

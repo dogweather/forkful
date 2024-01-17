@@ -10,47 +10,21 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hva & Hvorfor?
+Konvertering av en streng til små bokstaver betyr å endre alle bokstavene i en streng til deres tilsvarende små bokstaver. Dette gjøres for å sikre en enhetlig formatering og for å gjøre det enklere å sammenligne strenger i koden.
 
-Om du noen gang har jobbet med tekstbehandling eller databasebehandling, så har du sikkert støtt på situasjoner hvor det er nødvendig å konvertere en streng til små bokstaver. Dette kan være for å matche data i en database eller for å sammenligne tekststrenger. Uansett årsak, det er en viktig og nyttig funksjon i PHP som kan gjøre livet ditt enklere.
-
-## Hvordan
-
-Konvertering av en streng til små bokstaver i PHP er en enkel og rask prosess. Det kan gjøres ved hjelp av den innebygde funksjonen `strtolower()`.
+# Hvordan:
+Enkelt sagt, for å omgjøre en streng til små bokstaver i PHP, bruker vi funksjonen `strtolower()`. Dette gir oss en ny streng med alle bokstavene i små bokstaver. Her er et eksempel på hvordan dette fungerer:
 
 ```PHP
-$string = "Dette ER en TEKSTStreng";
-echo strtolower($string);
+$string = "HeLlO";
+echo strtolower($string); // Output: hello
 ```
 
-Output:
-```
-dette er en tekststreng
-```
+# Dypdykk:
+Konvertering av en streng til små bokstaver har eksistert siden de tidlige dagene av programmering. I gamle dager måtte man manuelt endre bokstavene en etter en for å få riktig formatering. I dag har de fleste programmeringsspråk en innebygd funksjon for å gjøre dette, inkludert PHP. Alternativet til `strtolower()` er `strtoupper()`, som gjør det samme, men med store bokstaver istedenfor.
 
-Det er viktig å merke seg at den innebygde funksjonen `strtolower()` tar hensyn til språkinnstillinger i PHP-konfigurasjonen din. Dette betyr at den vil korrekt konvertere tegn som er spesifikke for forskjellige språk, som for eksempel æ, ø, å i norsk språk.
+Implementeringen av `strtolower()` funksjonen bruker Unicode-bokstaver for å sikre at alle språk støttes. Dette gjør at funksjonen er pålitelig og nøyaktig uavhengig av hvilket språkmiljø koden din kjører på.
 
-Om du ønsker å konvertere en streng til små bokstaver uten å endre originalstrengen, kan du bruke funksjonen `mb_strtolower()`.
-
-```PHP
-$string = "Dette ER en TEKSTStreng";
-echo mb_strtolower($string);
-```
-
-Output:
-```
-dette er en tekststreng
-```
-
-## Deep Dive
-
-Det er viktig å være klar over at konvertering av en streng til små bokstaver i PHP kan føre til uventede resultater om du ikke er forsiktig. Dette er fordi det finnes visse tegn i forskjellige språk som kan endre seg ved konvertering til små bokstaver.
-
-For eksempel vil "SS" i tysk skrift fremdeles være "SS" etter å ha blitt konvertert til små bokstaver, mens i norsk skrift vil "SS" bli "ß". Det er derfor viktig å ha god forståelse for språket du jobber med og å være forsiktig når du konverterer tekststrenger.
-
-En annen ting å merke seg er at konvertering av tekststrenger til små bokstaver er en prosess som bruker serverens ressurser. Om du jobber med store mengder data, kan dette føre til redusert ytelse og belastning på serveren din. Det er derfor alltid lurt å optimalisere koden din og unngå å gjøre unødvendige konverteringer.
-
-## Se også
-
-- [PHP: strtolower()](https://www.php.net/manual/en/function.strtolower.php)
-- [PHP: mb_strtolower()](https://www.php.net/manual/en/function.mb-strtolower.php)
+# Se også:
+Hvis du ønsker å lære mer om andre nyttige strengfunksjoner i PHP, kan du sjekke ut dokumentasjonen her: [PHP String Functions](https://www.php.net/manual/en/ref.strings.php). Du kan også lære mer om Unicode og hvorfor det er viktig for programmerere her: [What is Unicode?](https://www.w3.org/International/questions/qa-what-is-unicode).

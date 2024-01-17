@@ -1,7 +1,7 @@
 ---
-title:                "Etsiminen ja tekstin korvaaminen"
-html_title:           "Elixir: Etsiminen ja tekstin korvaaminen"
-simple_title:         "Etsiminen ja tekstin korvaaminen"
+title:                "Tekstin etsiminen ja korvaaminen"
+html_title:           "Elixir: Tekstin etsiminen ja korvaaminen"
+simple_title:         "Tekstin etsiminen ja korvaaminen"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -10,37 +10,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+Mikä & Miksi?
+Tekstin hakeminen ja korvaaminen on prosessi, jossa etsitään ja muutetaan tiettyjä osia tekstistä. Ohjelmoijat käyttävät tätä työkalua esimerkiksi korjatessaan kirjoitusvirheitä tai vaihtaessaan tiettyjä sanoja tai lauseita.
 
-Miksi kukaan haluaisi etsiä ja korvata tekstiä? Yksi syy voi olla tarve muuttaa samankaltaisia merkkijonoja toisiksi tai päivittää vanhaa koodia uudempaan syntaksiin.
+Miten tehdä:
+Elixirin avulla tekstien hakeminen ja korvaaminen on yksinkertaista. Käytämme tässä esimerkkinä yksinkertaista tekstin korvaamista. Voit käyttää funktiota `String.replace/3` ja antaa sille kaksi merkkijonoa ja korvaavan arvon. Alla on esimerkki:
 
-## Miten
-
-Elixirin `String.replace/3`-funktio mahdollistaa tekstin etsimisen ja korvaamisen yhdellä rivillä. Alla on esimerkkejä tämän funktion käytöstä.
-
-```elixir
-# Etsi ja korvaa yksi sana toisella
-String.replace("Tervetuloa Elixiriin!", "Tervetuloa", "Hei")
-# output => "Hei Elixiriin!"
-
-# Etsi ja korvaa useita sanoja samalla kertaa
-String.replace("Elixir on hieno kieli!", ~r/on hieno/, "on mahtava")
-# output => "Elixir on mahtava kieli!"
-
-# Vaihda vain ensimmäinen esiintymä
-String.replace("1,2,3,4,1,2,3,4", "1", "one", global: false)
-# output => "one,2,3,4,1,2,3,4"
-
-# Vaihda kaikki esiintymät
-String.replace("Kaikki eivät ole täydellisiä.", "e", "i", global: true)
-# output => "Kaikki ivät ole täydellisiä."
+```Elixir
+iex> String.replace("Tervetuloa maailma", "maailma", "Elixir")
+"Tervetuloa Elixir"
 ```
 
-## Syvempi sukellus
+Syötteeksi annettu merkkijono ei muutu, vaan funktio luo uuden merkkijonon halutuin muutoksin.
 
-Elixirin `String.replace/3` hyödyntää taustalla `Regex.replace/4`-funktiota, joka sallii säännöllisten lausekkeiden käytön haun kohteena. Tämä antaa käyttäjälle enemmän vaihtoehtoja ja tarkkuutta etsintään. Lisäksi, `Regex`-moduuli tarjoaa muitakin hyödyllisiä funktioita tekstien käsittelyyn, kuten `Regex.match?/2` ja `Regex.split/2`.
+Syväsukellus:
+Tekstin hakeminen ja korvaaminen on ollut pitkään tärkeä osa ohjelmointia. Ennen Elixirin kaltaisia kieliä, tekstien hakeminen ja korvaaminen vaativat monimutkaisempia toimenpiteitä. Nykyään monet ohjelmointikielet tarjoavat erilaisia ​​funktioita tekstin käsittelyyn, mutta Elixirin tapa on yksi helpoimmista ja tehokkaimmista.
 
-See Also
+Katso myös:
+Lisätietoa tekstien hakemisesta ja korvaamisesta Elixirilla löytyy kielen virallisilta verkkosivuilta osoitteesta https://elixir-lang.org/getting-started/io-and-the-file-system.html#hakeminen-ja-korvaaminen.
 
-- Elixirin virallinen dokumentaatio: https://elixir-lang.org/docs.html
-- Etsi ja korvaa teksti Elixirillä: https://elixirschool.com/fi/lessons/basics/binary-pattern-matching/#search-and-replace
+Jos haluat oppia lisää Elixirin tekstin käsittelystä, voit lukea virallisen dokumentaation Elixirin `String`-moduulista https://hexdocs.pm/elixir/String.html.

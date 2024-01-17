@@ -10,37 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-Dates are a vital part of our day-to-day lives, and being able to manipulate them in a program is essential. By converting a date into a string, we can easily display it in a format that is both readable and visually pleasing.
+# What & Why?
 
-## How To
-To convert a date into a string using the Fish Shell, we can use the `date` command with the `+%s` flag to output it in a UNIX timestamp format.
+Converting a date into a string is the process of changing the format of a date to fit a specific string pattern, making it easier for programmers to manipulate and display dates in their code. This can be useful for various tasks such as sorting, filtering, and displaying dates in a user-friendly format.
 
-```
-Fish Shell  date +%s
-1633966146
-```
+# How to:
 
-This timestamp can then be formatted using the `date` command again, with the desired output format specified by the `+FORMAT` flag.
+In Fish Shell, you can use the `date` command to convert a date into a string. Let's take a look at some examples:
 
 ```
-Fish Shell  date -r 1633966146 +"%B %d, %Y"
-October 11, 2021
+Fish Shell > date "+%Y-%m-%d"
+2021-04-30
 ```
 
-## Deep Dive
-Converting a date into a string involves breaking it down into its individual components and then formatting it accordingly. The `date` command in the Fish Shell allows for various options to manipulate dates, such as adding or subtracting days, months, or years, and specifying time zones.
+In this example, we are using the `date` command with the `+%Y-%m-%d` option to convert the current date to the format of year-month-day. The output will vary depending on the date when you run this command.
 
-To convert a date into a string in a specific format, we can use the `+FORMAT` flag with the `date` command. Some common formatting options include `%Y` for the year, `%m` for the month, `%d` for the day, `%H` for the hour, `%M` for the minute, and `%S` for the second.
+You can also specify a specific date to convert, instead of using the current date. For example:
 
 ```
-Fish Shell  date -r 1633966146 +"%I:%M %p"
-12:29 PM
+Fish Shell > date -d "yesterday" "+%A, %B %d, %Y"
+Thursday, April 29, 2021
 ```
 
-Additionally, Fish Shell also allows for relative time formatting, such as displaying the date as “x days ago” or “x hours ago.” This can be achieved by adding the `--relative` flag to the `date` command.
+This command uses the `-d` option to specify a date (in this case, "yesterday") and the `+%A, %B %d, %Y` option to convert it to the format of day, month, date, and year.
 
-## See Also
-- [Fish Shell documentation on the date command](https://fishshell.com/docs/current/cmds/date.html)
-- [Unix timestamp](https://www.unixtimestamp.com/)
-- [List of time formatting options](https://strftime.org/)
+# Deep Dive
+
+Converting a date into a string is a common task in programming, especially when dealing with data that includes dates. In the past, it was a more complicated process, requiring manual conversions and calculations. However, with the `date` command in Fish Shell, it has become much simpler and more efficient.
+
+There are alternative ways to convert a date into a string, such as using built-in functions in other languages like Python or JavaScript. However, Fish Shell's `date` command is a handy tool for quick conversions without the need for additional dependencies.
+
+For those interested in the technical details, the `date` command in Fish Shell uses the `strftime` function, which is a C library function that converts a date into a specified string format.
+
+# See Also
+
+- [Fish Shell documentation for the `date` command](https://fishshell.com/docs/current/cmds/date.html)
+- [strftime function documentation](https://www.gnu.org/software/libc/manual/html_node/Formatting-Calendar-Time.html#Formatting-Calendar-Time)

@@ -1,7 +1,7 @@
 ---
-title:                "Maiúsculas em uma string"
-html_title:           "Java: Maiúsculas em uma string"
-simple_title:         "Maiúsculas em uma string"
+title:                "Colocando em Maiúsculo uma String"
+html_title:           "Java: Colocando em Maiúsculo uma String"
+simple_title:         "Colocando em Maiúsculo uma String"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Strings"
@@ -10,46 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+## O que e por que?
 
-Você pode querer capitalizar uma string para facilitar a leitura e torná-la mais legível. Além disso, em certos casos, como em um sistema de login, é importante garantir que a string inserida pelo usuário corresponda exatamente à string esperada, independentemente de como ela seja inserida (com letras maiúsculas ou minúsculas).
+Capitalizar uma string em Java é o processo de converter a primeira letra de cada palavra em maiúscula. Programadores fazem isso para melhorar a legibilidade e organização do código. 
 
-## Como fazer
-
-Para capitalizar uma string em Java, você pode usar o método `toUpperCase()` da classe `String`. Basta passar a string desejada como parâmetro e a função irá retornar a mesma string com todas as letras maiúsculas. Veja um exemplo abaixo:
+## Como fazer:
 
 ```Java
-String minhaString = "Exemplo de string";
-System.out.println(minhaString.toUpperCase());
+public static String capitalize(String str) {
+    if (str == null || str.isEmpty()) {
+        return str;
+    } else {
+        String[] words = str.split("\\s+");
+        StringBuilder sb = new StringBuilder();
+        for (String word : words) {
+            sb.append(Character.toUpperCase(word.charAt(0)))
+              .append(word.substring(1).toLowerCase())
+              .append(" ");
+        }
+        return sb.toString().trim();
+    }
+}
+
+public static void main(String[] args) {
+    System.out.println(capitalize("este é um exemplo de string capitalizada"));
+}
 ```
 
-Output:
-```
-EXEMPLO DE STRING
-```
+Output: Este é um exemplo de string capitalizada.
 
-## Mergulho Profundo
+## Aprofundamento:
 
-Em Java, a classe `String` é imutável, o que significa que ela não pode ser alterada após a sua criação. Portanto, o método `toUpperCase()` não alterará a string original, mas sim retornará uma nova string com as letras maiúsculas.
+Capitalizar strings é uma prática comum em muitas linguagens de programação, com o objetivo de tornar o texto mais legível e organizado. Em português, é conhecida como "título" ou "sentença capitalizada", e é frequentemente usada em títulos, cabeçalhos e outros textos que precisam ser destacados. Existem também outras formas de capitalização, como todas as letras maiúsculas (UPPER CASE) ou todas as letras minúsculas (lower case).
 
-Caso você queira capitalizar apenas a primeira letra de uma string, pode usar o método `capitalize()` da classe `String`. Outra opção é utilizar a classe `StringBuilder`, que permite a modificação de uma string. Veja um exemplo abaixo:
+## Veja também:
 
-```Java
-String minhaString = "exemplo de string";
-System.out.println(minhaString.toUpperCase());
-System.out.println(minhaString.capitalize());
-```
-
-Output:
-```
-EXEMPLO DE STRING
-Exemplo de string
-```
-
-Ambos os métodos `toUpperCase()` e `capitalize()` levam em conta a linguagem padrão do sistema em que o código está sendo executado, ou seja, a capitalização das letras pode variar de acordo com a língua. Além disso, esses métodos também podem funcionar em caracteres especiais e emojis.
-
-## Veja também
-
-- Documentação oficial sobre `String` em Java: https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html
-- Diferenças entre `String` e `StringBuilder`: https://www.baeldung.com/java-string-vs-stringbuilder-vs-stringbuffer
-- Guia completo sobre manipulação de strings em Java: https://www.geeksforgeeks.org/string-vs-stringbuilder-vs-stringbuffer-in-java/
+- [String Class in Java](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html)
+- [Capitalize Method in Java](https://docs.oracle.com/javase/7/docs/api/java/lang/Character.html#toUpperCase(int))

@@ -1,7 +1,7 @@
 ---
-title:                "Beregning av datoer i fremtiden eller fortiden"
-html_title:           "Java: Beregning av datoer i fremtiden eller fortiden"
-simple_title:         "Beregning av datoer i fremtiden eller fortiden"
+title:                "Beregning av en dato i fremtiden eller fortiden"
+html_title:           "Java: Beregning av en dato i fremtiden eller fortiden"
+simple_title:         "Beregning av en dato i fremtiden eller fortiden"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Dates and Times"
@@ -10,61 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hva & Hvorfor?
+Å beregne en dato i fremtiden eller fortiden innebærer å bruke programmering til å finne ut når en spesifikk dato vil være basert på et gitt antall dager i fremtiden eller fortiden. Dette kan være nyttig for å lage tidssensitive applikasjoner eller automatisere oppgaver som krever kunnskap om fremtidige eller tidligere datoer.
 
-Å kunne beregne en dato i fremtiden eller fortiden kan være nyttig for å planlegge hendelser eller for å kontrollere at dataen i et program er nøyaktig. Det kan også være en nyttig ferdighet å ha i en jobb som involverer tidssensitive oppgaver.
+## Slik gjør du:
+For å beregne en dato i fremtiden eller fortiden i Java, kan du bruke klassen "java.util.Calendar". Følgende eksempel vil vise hvordan du kan finne ut hvilken dato det vil være om 100 dager fra nå:
 
-## Hvordan
+```java
+import java.util.Calendar;
 
-For å beregne en dato i Java, kan du bruke klassen `Calendar`. Her er et eksempel på hvordan du kan beregne en dato 5 dager frem i tid fra i dag:
-
-```Java
-// Oppretter en Calendar-instans med dagens dato
-Calendar cal = Calendar.getInstance();
-
-// Legger til 5 dager til dagens dato
-cal.add(Calendar.DAY_OF_MONTH, 5);
-
-// Henter ut datoen og skriver den ut
-Date futureDate = cal.getTime();
-System.out.println("Fremtidig dato: " + futureDate);
+public class DateCalculator {
+  public static void main(String[] args) {
+  
+    // Opprett et Calendar-objekt og sett til dagens dato
+    Calendar cal = Calendar.getInstance();
+    cal.setTime(new Date());
+    
+    // Legg til 100 dager på Calendar-objektet
+    cal.add(Calendar.DATE, 100);
+    
+    // Hent ut datoen som et Date-objekt
+    Date futureDate = cal.getTime();
+    
+    // Skriv ut datoen på ønsket format
+    SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+    System.out.println(format.format(futureDate));
+  }
+}
 ```
 
-Eksempel på output: `Fremtidig dato: Wed Jul 14 16:25:49 CEST 2021`
-
-Hvis du heller vil beregne en dato i fortiden, kan du bruke `Calendar`'s `set`-metode og angi et negativt tall som parameter:
-
-```Java
-// Setter kalenderen til å være -2 uker fra dagens dato
-cal.set(Calendar.WEEK_OF_MONTH, -2);
+Output:
+``` 
+08/10/2021
 ```
+Du kan også beregne en dato i fortiden ved å bruke "cal.add(Calendar.DATE, -100);" i stedet for å legge til dager.
 
-Eksempel på output: `Fortidig dato: Sun Jun 27 16:25:49 CEST 2021`
+## Dykk dypere:
+Historisk sett var det vanlig å beregne datoer ved hjelp av kalendere og matematiske beregninger. I dag har programmering gjort det mye enklere ved å tilby innebygde funksjoner som kan håndtere datoer og tidsberegninger.
 
-Det er også mulig å beregne en dato ved å bruke `Date`-klassen og konvertere den til en `Calendar`-instans:
+En alternativ metode for å beregne datoer er å bruke "java.time.LocalDate"-klassen i Java 8. Denne klassen er mer moderne og mer nøyaktig enn "Calendar"-klassen.
 
-```Java
-// Oppretter en Date instans med datoen 2. august 2021
-Date date = new Date(121, 7, 2);
+Det er også verdt å merke seg at datoberegning kan være mer kompleks hvis du tar hensyn til skuddår, tidsforskjeller og forskjellige tidszoner. Det er viktig å forstå disse aspektene når du utvikler applikasjoner som er avhengige av nøyaktige datoer.
 
-// Konverterer til Calendar-instans
-cal.setTime(date);
-
-// Henter ut datoen og skriver den ut
-Date futureDate = cal.getTime();
-System.out.println("Fremtidig dato: " + futureDate);
-```
-
-Eksempel på output: `Fremtidig dato: Mon Aug 02 16:25:49 CEST 2021`
-
-## Dypdykk
-
-Når du bruker `Calendar` til å beregne datoer, er det viktig å merke seg at måneder begynner på indeks 0, mens dager i uken begynner på indeks 1. Dette kan føre til uforventede resultater hvis du ikke er klar over det.
-
-Det er også viktig å merke seg at `Calendar` tar hensyn til forskjellige tidssoner, så det kan være lurt å spesifisere hvilken tidssone du vil bruke når du oppretter en instans.
-
-## Se også
-
-- [Java Calendar Documentation](https://docs.oracle.com/javase/8/docs/api/java/util/Calendar.html)
-- [Java Date Documentation](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html)
-- [Java SimpleDateFormat Documentation](https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html)
+## Se også:
+- [Java.util.Calendar Dokumentasjon](https://docs.oracle.com/javase/8/docs/api/java/util/Calendar.html)
+- [java.time.LocalDate Dokumentasjon](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
+- [Using Calendar and Date classes in Java](https://www.baeldung.com/java-calendar-date)

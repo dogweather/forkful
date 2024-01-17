@@ -10,31 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+## 何がそうさこんに準備ですか？
 
-テキストファイルを書く理由はたくさんありますが、主な理由は以下の2つです。まず、コンピューターが理解できるように情報を整理することができます。そして、長いコードを書くよりも、テキストファイルはより簡単で迅速な方法で情報を共有することができます。
+テキストファイルを作成することは、プログラマーがコンピューターにデータを保存するための方法です。通常、プログラマーは、ファイルにデータを書き込んだり読み取ったりする必要があるため、この作業を行います。
 
-## 使い方
-
-まず、 `Gleam.FileSystem` モジュールをインポートします。次に、 `write` 関数を使用してファイルを作成し、 `write_line` 関数を使用してテキストを書き込みます。最後に、ファイルを閉じて変更を保存します。
+## 作り方：
 
 ```Gleam
-import Gleam.FileSystem
+import gleam/file
 
-let file = FileSystem.write("filename.txt")
-FileSystem.write_line(file, "Hello, world!")
-FileSystem.close(file)
+// ファイルを作成する
+let file = file.create("my_file.txt");
+
+// ファイルにテキストを書き込む
+file.write("Hello, world!");
+
+// ファイルが正しく書き込まれたことを確認する
+file.write("Hello, world!")
+|> assert.equal("Hello, world!\n");
+
+// ファイルを閉じる
+file.close();
 ```
 
-出力される `filename.txt` ファイルには、"Hello, world!"というテキストが含まれています。
+## 詳細を調べる
 
-## 詳細
+テキストファイルを作成することは、プログラマーにとって重要な作業です。これにより、データを永続的に保存し、将来的に利用することができます。他のアプローチとしては、データベースを使用することもできますが、テキストファイルを作成することでより柔軟にデータを操作することができます。
 
-テキストファイルを書くには、いくつかの注意すべき点があります。まず、ファイルを開いたら必ず閉じるようにしましょう。また、テキストファイルはプレーンテキスト形式なので、フォーマットが崩れないように注意して文章を書く必要があります。
+ファイルを作成する際には、ファイル名、ファイルパス、ファイルの種類など、様々な情報を指定する必要があります。また、ファイルに書き込むデータは、文字列やバイト列の形式で指定することができます。
 
-## はてな
+## 関連情報を見る
 
-テキストファイルの書き方については、ほかにもたくさんのリソースがあります。ぜひ以下のリンクも参考にしてみてください。
-
-- [Gleam公式ドキュメント - ファイルの作成と読み書き](https://gleam.run/articles/files)
-- [デジタルハリウッドの「はじめてのプログラミング」コース](https://www.dhw.co.jp/program/android.html)
+- [Gleam ドキュメント: ファイル操作](https://gleam.run/books/standard-library.html#file)
+- [Gleam の入門ガイド](https://gleam.run/docs/learn-stdlib#file)

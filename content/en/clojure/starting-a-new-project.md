@@ -10,56 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
+When a programmer begins a new project, it means they are creating a new program or application from scratch. This could involve writing code, designing user interfaces, and implementing various features. Programmers start new projects in order to solve a specific problem, build a new tool, or create something innovative.
 
-Are you looking to start a new project in Clojure? Maybe you're a seasoned developer looking for a new challenge, or maybe you're new to the language and curious to learn more. Either way, starting a new project in Clojure can open up opportunities for efficient and elegant solutions to complex problems.
-
-## How To
-
-First, make sure you have the latest version of Clojure installed. Then, create a new project by running the following command in your terminal:
-
+## How to:
 ```Clojure
-lein new <project-name>
+(def project-name "My New Project") ; Creating a new project with a name
+
+(def project-info {:languages ["Clojure" "HTML" "CSS"] ; Defining the project's info
+                   :libraries ["ring" "hiccup"]
+                   :description "A web application for managing tasks."})
+
+(defn add-task [task-name] ; Creating a function to add a new task to the project
+  (let [tasks (:tasks project-info)] ; Retrieving current task list
+    (assoc project-info :tasks (conj tasks task-name)))) ; Adding new task to list and updating project info
+
+(defn display-tasks [] ; Creating a function to display all tasks in project
+  (doseq [task (:tasks project-info)] ; Looping through task list
+    (println task))) ; Printing each task
+
+(add-task "Create user authentication") ; Calling function to add new task
+(add-task "Implement task sorting")
+
+(display-tasks)
+; Output:
+; Create user authentication
+; Implement task sorting
 ```
 
-This will generate a basic project structure for you. Next, navigate to the newly created project directory and open the `project.clj` file. This is where you can specify any dependencies your project may need.
+## Deep Dive:
+Starting a new project is an essential part of the software development process. It gives developers the opportunity to build something new and solve problems in innovative ways. While the above coding examples use Clojure, other programming languages such as Java, Python, and Ruby can also be used to start a new project. Alternatives to starting a project from scratch include using existing templates, frameworks, or libraries to streamline the development process. In Clojure, the ```lein new``` command can be used to generate a project template with predefined configurations. Once a project is created, developers can use various Clojure libraries like ring and hiccup for web development, or tools like Leiningen for dependency management.
 
-To add dependencies, you can use the `:dependencies` key in the `project.clj` file like this:
-
-```Clojure
-:dependencies [[org.clojure/clojure "1.10.0"]
-               [org.clojure/tools.logging "0.4.1"]]
-```
-
-Next, create a new Clojure source file in the `src` directory. This is where you can write your code and define functions. For example:
-
-```Clojure
-(ns <project-name>.core
-  (:require [clojure.tools.logging :as log]))
-
-(defn greet [name]
-  (log/info (str "Hello, " name "!")))
-```
-
-Finally, to run your program, navigate back to the project directory in your terminal and run the following command:
-
-```Clojure
-lein run -m <project-name>.core
-```
-
-This will execute your `greet` function and output "Hello, [name]!" in the terminal, where `[name]` is the argument you pass in.
-
-Congratulations, you now have a basic Clojure project up and running!
-
-## Deep Dive
-
-Starting a new project in Clojure also means getting familiar with its unique features, such as its powerful and expressive syntax, functional programming capabilities, and seamless integration with Java libraries. It's also worth exploring the various tools and libraries available within the Clojure ecosystem, such as Leiningen, a build and dependency management tool, and ClojureScript, which allows you to write Clojure code that compiles to JavaScript.
-
-Additionally, it's important to familiarize yourself with the standard Clojure library and core functions, which provide a wide range of useful and efficient functions for data manipulation, concurrency, and more.
-
-See Also
-
-- Official Clojure website: https://clojure.org/
-- ClojureDocs: https://clojuredocs.org/
-- Leiningen: https://leiningen.org/
-- ClojureScript: https://clojurescript.org/
+## See Also:
+- [Clojure Official Website](https://clojure.org/)
+- [Clojure on GitHub](https://github.com/clojure/clojure)
+- [Leiningen](https://leiningen.org/)
+- [Ring Web Framework](https://github.com/ring-clojure/ring)
+- [Hiccup Templating Library](https://github.com/weavejester/hiccup)

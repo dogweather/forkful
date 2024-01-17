@@ -1,7 +1,7 @@
 ---
-title:                "Começando um novo projeto"
-html_title:           "Haskell: Começando um novo projeto"
-simple_title:         "Começando um novo projeto"
+title:                "Iniciando um novo projeto"
+html_title:           "Haskell: Iniciando um novo projeto"
+simple_title:         "Iniciando um novo projeto"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Getting Started"
@@ -10,48 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+O Que e Por Que?
 
-Já pensou em aprender uma nova linguagem de programação, mas ainda não sabe qual? Talvez o Haskell seja a resposta para suas necessidades! Além de ser uma linguagem funcional elegante e expressiva, ela também é conhecida por ser extremamente poderosa e segura. Então, se você está procurando iniciar um novo projeto, o Haskell pode ser uma ótima escolha.
+Começar um novo projeto é uma das tarefas mais emocionantes e desafiadoras para um programador. Isso significa que você vai criar algo novo, colocar em prática suas habilidades e conhecimentos, e quem sabe até resolver um problema real. Os programadores iniciam novos projetos para explorar ideias, desenvolver soluções e transformar a sua criatividade em realidade.
 
-## Como Fazer
+Como Fazer:
 
-Começar um novo projeto em Haskell pode parecer intimidador à primeira vista, mas não se preocupe! A seguir, vamos guiar você pelo processo de configuração do ambiente de desenvolvimento e criação do seu primeiro projeto.
-
-### Configurando o Ambiente
-
-Antes de começar a programar em Haskell, é necessário ter o ambiente de desenvolvimento configurado em sua máquina. Existem várias opções disponíveis, mas a mais popular é o GHC (Glasgow Haskell Compiler). Para instalá-lo, você pode seguir as instruções específicas do seu sistema operacional no [site oficial do GHC](https://www.haskell.org/ghc/).
-
-### Criando um Projeto
-
-Agora que o GHC está instalado, é hora de criar um novo projeto Haskell. Existem muitas ferramentas disponíveis para ajudá-lo nesse processo, mas uma das mais comuns é o Cabal. Para criar um novo projeto com ele, basta seguir os passos abaixo:
-
-1. Abra o terminal ou prompt de comando e navegue até a pasta onde deseja criar seu projeto.
-2. Execute o comando `cabal init` e preencha as informações solicitadas, como nome do projeto, autor, etc. 
-3. Uma vez que o processo de inicialização do Cabal estiver concluído, você terá uma estrutura básica do seu projeto pronta para uso.
-
-Parabéns, você acaba de criar seu primeiro projeto Haskell!
-
-### Hello World em Haskell
-
-Agora que temos o projeto criado, vamos escrever nosso primeiro programa Haskell, o famoso "Hello World". Abra o arquivo `Main.hs` gerado pelo Cabal e adicione o seguinte código:
+Para começar um novo projeto em Haskell, você precisa ter o compilador GHC instalado no seu computador. Em seguida, crie um novo diretório para o seu projeto e crie um arquivo com a extensão ".hs" dentro dele. Abra esse arquivo com um editor de texto e comece a escrever seu código. Por exemplo:
 
 ```Haskell
-main = putStrLn "Hello World!"
+-- Meu primeiro programa em Haskell
+
+main = putStrLn "Ola, mundo!"
 ```
 
-Esse código simplesmente imprime a mensagem "Hello World!" na tela. Para testá-lo, basta salvar o arquivo e executar o comando `cabal run` no terminal. Você deverá ver a mensagem sendo exibida na tela.
+Este é um programa simples que irá imprimir "Ola, mundo!" na tela quando for executado. Para executar o código, abra o terminal, navegue até o diretório onde você salvou o arquivo e digite "ghc <nome-do-arquivo>". Isso irá compilar o seu código e gerar um executável. Para executá-lo, digite "./<nome-do-executavel>".
 
-## Deep Dive
+Se você quiser criar um projeto mais complexo, com vários arquivos, é possível fazer isso utilizando o comando "ghc --make" seguido dos nomes dos arquivos que você quer compilar.
 
-Além das ferramentas mencionadas acima, também é importante mencionar o Stack, uma ferramenta de automação de construção e gerenciamento de dependências para projetos Haskell. Ele é amplamente utilizado e altamente recomendado para gerenciar projetos maiores e mais complexos.
+Para ficar mais à vontade com a linguagem, é recomendado que você faça o tutorial "Learn You a Haskell for Great Good! (http://learnyouahaskell.com/)", que irá te ensinar os fundamentos da linguagem.
 
-Outro ponto importante quando se inicia um projeto Haskell é conhecer e adotar as melhores práticas de codificação, como o uso de tipos fortemente definidos e funções puras. Isso garantirá que seu código seja seguro e fácil de manter.
+Mergulho Profundo:
 
-Haskell também possui uma comunidade ativa e prestativa, com vários fóruns, listas de discussão e canais de chat disponíveis para ajudá-lo em sua jornada de aprendizagem.
+Haskell é uma linguagem funcional pura criada em 1990 pelo cientista da computação Haskell Curry. Ela se diferencia de outras linguagens por utilizar a avaliação preguiçosa e por ser uma linguagem fortemente tipada. Outra característica importante é o Sistema de Tipos de Haskell, que permite ao compilador inferir o tipo de dado utilizado em cada parte do código.
 
-## Veja Também
+Alternativas para começar um novo projeto em Haskell incluem utilizar ferramentas como Stack e Cabal, que facilitam a criação e gerenciamento de projetos em Haskell. Além disso, você também pode utilizar o ambiente de desenvolvimento integrado (IDE) do seu gosto para escrever código em Haskell.
 
-- [Site oficial do GHC](https://www.haskell.org/ghc/)
-- [Documentação oficial do Cabal](https://cabal.readthedocs.io/en/latest/)
-- [Site oficial do Stack](https://docs.haskellstack.org/en/stable/README/)
+Veja Também:
+
+- Site oficial de Haskell: https://www.haskell.org/
+- Documentação do GHC: https://downloads.haskell.org/~ghc/latest/docs/html/users_guide/
+- Stack: https://docs.haskellstack.org/en/stable/
+- Cabal: https://www.haskell.org/cabal/

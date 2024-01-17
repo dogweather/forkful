@@ -1,7 +1,7 @@
 ---
-title:                "Wyszukiwanie i zastępowanie tekstu"
-html_title:           "C++: Wyszukiwanie i zastępowanie tekstu"
-simple_title:         "Wyszukiwanie i zastępowanie tekstu"
+title:                "Wyszukiwanie i zamiana tekstu."
+html_title:           "C++: Wyszukiwanie i zamiana tekstu."
+simple_title:         "Wyszukiwanie i zamiana tekstu."
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -10,44 +10,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+Co to jest wyszukiwanie tekstu i jak zastępować go w programowaniu?
 
-Dlaczego ktoś miałby chcieć przeszukiwać lub zmieniać tekst w swoim kodzie? Cóż, istnieje wiele powodów, dla których taka czynność może być potrzebna. Może to być konieczne do naprawienia błędów w kodzie, dostosowania do nowych wymagań lub uproszczenia procesu pisania kodu.
+Wyszukiwanie i zastępowanie tekstu to podstawowa umiejętność każdego programisty. Pozwala ona na szybkie i efektywne modyfikowanie tekstu w kodzie, co jest niezbędne podczas pisania oprogramowania.
 
-## Jak to zrobić
+Jak tego dokonać w C++:
 
-Szukanie i zmienianie tekstu w kodzie jest możliwe dzięki zastosowaniu funkcji find() i replace() w języku C++. Oto przykładowy kod, który pokazuje, jak wykorzystać te funkcje w swoim programie:
-
+Przykład #1:
 ```C++
-// Ustawienie stringa, który chcemy przeszukać
-string szukanyString = "Hello world!";
+// Wyszukiwanie tekstu i zastępowanie go stałym wyrażeniem
+#include <iostream>
+#include <string>
 
-// Użyj find() do znalezienia pozycji, od której zacznie się zmiana
-size_t pozycja = szukanyString.find("Hello");
+int main() {
+  std::string tekst = "Programowanie jest super!";
+  tekst.replace(0, 12, "Tworzenie");
+  std::cout << tekst;
+  return 0;
+}
 
-// Użyj replace() do zamiany tekstu od określonej pozycji
-szukanyString.replace(pozycja, 5, "Hi");
-
-// Wyświetl zmieniony string
-cout << szukanyString << endl;
+// Output: Tworzenie jest super!
 ```
 
-Output: "Hi world!"
+Przykład #2:
+```C++
+// Wyszukiwanie tekstu i zastępowanie go innym tekstem
+#include <iostream>
+#include <string>
 
-Mówiąc po ludzku, funkcja find() szuka określonego tekstu w podanym stringu i zwraca pozycję, od której ten tekst się zaczyna. Następnie, funkcja replace() zamienia wybrany tekst zaczynając od określonej pozycji na podany nowy tekst.
+int main() {
+  std::string tekst = "To jest bardzo długi tekst, który potrzebuje skrócenia.";
+  std::string tekst_szukany = "bardzo długi";
+  std::string tekst_zastepczy = "krótki";
+  
+  size_t pozycja = tekst.find(tekst_szukany);
+  if (pozycja != std::string::npos) {
+    tekst.replace(pozycja, tekst_szukany.length(), tekst_zastepczy);
+  }
+  std::cout << tekst;
+  return 0;
+}
 
-## Głębszy zanurkaj
+// Output: To jest krótki tekst, który potrzebuje skrócenia.
+```
 
-W przypadku szukania i zmieniania tekstu w kodzie, istnieje kilka ważnych rzeczy, o które należy pamiętać. Po pierwsze, funkcja find() zwraca wartość typu size_t, który jest liczbą całkowitą bez znaku, więc jeśli nasza szukana fraza nie jest znaleziona, zwróci ona wartość max_size(), czyli największą możliwą wartość tego typu.
+Głębszy rozkład:
 
-Po drugie, funkcja replace() może przyjąć jako drugi argument również wartość typu size_t, co pozwala nam na zamienianie konkretnych liczb znaków w wybranym tekście.
+Wyszukiwanie i zastępowanie tekstu jest bardzo popularną i przydatną operacją w programowaniu. W poprzednich latach, kiedy programowanie było bardziej zorientowane na tekst, często musieliśmy dokonywać tego ręcznie, używając edytora tekstu lub skryptów. Teraz, dzięki zaawansowanym funkcjom języków programowania, takim jak C++, możemy dokładnie określić, co chcemy znaleźć i do czego chcemy to zastąpić.
 
-## Zobacz również
+Alternatywy do przeszukiwania tekstu i jego zastępowania obejmują ręczne edycje i użycie bardziej złożonych narzędzi i skryptów. Jednak takie podejście może zajmować więcej czasu i być mniej precyzyjne.
 
-Jeśli chcesz dowiedzieć się więcej o funkcjach find() i replace() w języku C++, sprawdź poniższe linki:
+W C++, używamy metody "replace" z klasy "string" do zastępowania tekstu. Funkcja ta przyjmuje dwa lub trzy argumenty: pierwszy argument to pozycja, od której chcemy rozpocząć zastępowanie, drugi argument to długość tekstu, który chcemy zastąpić, a trzeci argument (opcjonalny) to tekst, którym chcemy zastąpić wybrany fragment. Aby dokładnie określić, co chcemy znaleźć, używamy funkcji "find", która zwraca pozycję znajdującego się w tekście wyrażenia. Jeśli chcemy zastąpić jedynie pierwsze wystąpienie danego wyrażenia, możemy odwołać się do funkcji "find_first_of", a jeśli wymagamy zastąpienia wszystkich wystąpień, używamy funkcji "find_all_of".
 
-1. Dokumentacja C++ dla funkcji find(): [https://pl.cppreference.com/w/cpp/string/basic_string/find](https://pl.cppreference.com/w/cpp/string/basic_string/find)
-2. Dokumentacja C++ dla funkcji replace() : [https://pl.cppreference.com/w/cpp/string/basic_string/replace](https://pl.cppreference.com/w/cpp/string/basic_string/replace)
-3. Przykładowy tutorial na temat szukania i zamiany tekstu w C++: [https://www.programiz.com/cpp-programming/string-replace](https://www.programiz.com/cpp-programming/string-replace)
-
-Teraz, gdy już wiesz, jak działa szukanie i zmienianie tekstu w C++, możesz śmiało zacząć wykorzystywać te funkcje w swoim kodzie. Powodzenia!
+Zobacz też: 
+- [Dokumentacja języka C++ na temat funkcji replace](https://en.cppreference.com/w/cpp/string/basic_string/replace)
+- [Inne przydatne funkcje do operacji na tekstach w C++](https://www.geeksforgeeks.org/c-string-class-and-its-applications/)

@@ -1,7 +1,7 @@
 ---
-title:                "编写标准错误"
-html_title:           "C++: 编写标准错误"
-simple_title:         "编写标准错误"
+title:                "标准错误写入"
+html_title:           "C++: 标准错误写入"
+simple_title:         "标准错误写入"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Files and I/O"
@@ -10,30 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 为什么要写入标准错误？
-Writing to standard error is a common practice in C++ programming. It allows developers to display error messages or log information while their program is running, making it easier to debug and troubleshoot any issues that may arise. 
+## 什么是标准错误，为什么程序员要用它？
+标准错误是指C++中的一个输出流（ostream），专门用来显示程序运行过程中的错误信息。由于在程序中可能会发生各种问题，程序员需要通过标准错误来定位和解决错误，使得程序更加稳定可靠。
 
-# 如何写入标准错误
+## 如何使用标准错误：
+使用标准错误非常简单，只需要调用标准库中的std::cerr，然后将需要输出的错误信息传递给它即可。以下是一个示例代码和输出结果：
+
 ```C++
 #include <iostream>
-#include <cstdlib>
 
 int main() {
-    std::cerr << "This is an error message." << std::endl;
-    return EXIT_FAILURE;
+    std::cerr << "错误信息：无法打开文件！" << std::endl;
+    return 1;
 }
 ```
 
-运行上面的程序，你会得到类似如下输出：
+输出结果：
 
 ```
-This is an error message.
+错误信息：无法打开文件！
 ```
 
-## 深入探讨
-标准错误流（standard error stream）是在C++标准输出流（standard output stream）之外的另一种输出通道。它可以用来显示错误信息或者记录程序运行过程中的一些重要信息。如果在C++程序中没有显式地指定输出到哪个流中，那么错误信息通常会被发送到标准错误流中。在调试和排查问题时，写入标准错误是一个非常有用的工具。
+## 深入了解：
+标准错误作为C++中的一个标准流，与标准输出（std::cout）和标准输入（std::cin）一样，都是由C++标准库提供的。在早期的C语言中，程序员通常使用printf函数来输出错误信息，但它并不提供任何错误检查功能。而标准错误能够提供更多的帮助，如定位错误发生的位置。除了标准错误，程序员还可以使用其他一些外部库来处理错误信息，如Boost中的Boost.Exception库。
 
-# 参考链接
-- 关于C++标准错误流的更多信息，请参考[Cplusplus.com](https://www.cplusplus.com/reference/ios/cerr/)
-- 在C++中输出错误信息的另一种方法是使用`cerr`和`clog`流，详见[Tutorialspoint](https://www.tutorialspoint.com/cplusplus/cpp_error_handling.htm)
-- 查看本文中使用的代码样例的完整版本，请访问[Github](https://github.com/example)
+## 参考资料：
+- [C++标准库参考手册](https://cppreference.com/)
+- [Boost.Exception](https://www.boost.org/doc/libs/1_75_0/libs/exception/doc/index.html)

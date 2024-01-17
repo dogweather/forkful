@@ -10,69 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+# Qu'est-ce que c'est et pourquoi?
+Obtenir la date actuelle est une tâche importante pour les programmeurs qui travaillent avec des données basées sur le temps. Cela leur permet de suivre les activités de l'utilisateur ou de planifier des tâches à exécuter à un moment précis.
 
-Si vous êtes un programmeur Go, vous savez que les méthodes et fonctions offertes par ce langage sont conçues pour rendre le développement plus facile et plus efficace. Ainsi, obtenir la date actuelle est une tâche courante dans de nombreux programmes, et cela peut être réalisé en quelques lignes de code. Dans cet article, nous allons découvrir comment obtenir la date actuelle en Go et pourquoi cela peut être utile pour vos projets.
+# Comment faire:
+Voici un exemple simple de code en Go pour obtenir la date actuelle:
 
-## Comment faire
-
-Pour obtenir la date actuelle en Go, nous allons utiliser la fonction `Now()` de la bibliothèque `time`. Voici un exemple de code qui peut être utilisé pour obtenir la date actuelle et l'afficher dans la console:
-
-```Go
-package main
-
-import (
-    "fmt"
-    "time"
-)
+```
+import "fmt"
+import "time"
 
 func main() {
-    date := time.Now()
-    fmt.Println("La date actuelle est:", date.Format("02/01/2006"))
+    fmt.Println("La date actuelle est:", time.Now())
 }
 ```
 
-Le code ci-dessus utilise la méthode `Format` pour afficher la date dans un format spécifique. Le format "02/01/2006" est une convention dans Go pour représenter la date sous la forme JJ/MM/AAAA. Vous pouvez changer ce format selon vos préférences en utilisant d'autres symboles de formatage. La sortie de ce code sera la date actuelle au format "JJ/MM/AAAA":
+Résultat:
 
 ```
-La date actuelle est: 10/10/2021
+La date actuelle est: 2020-09-04 10:08:15.880419 +0200 CEST m=+0.000114609
 ```
 
-Vous pouvez également obtenir uniquement le jour, le mois ou l'année en utilisant les méthodes `Day()`, `Month()` et `Year()` respectivement. Voici un exemple qui affiche uniquement le mois en cours:
-
-```Go
-package main
-
-import (
-    "fmt"
-    "time"
-)
-
-func main() {
-    date := time.Now()
-    month := date.Month()
-    fmt.Println("Nous sommes en:", month)
-}
-```
-
-La sortie de ce code sera le mois actuel au format numérique:
+Vous pouvez également formater la date selon vos besoins en utilisant la méthode `Format` de la structure `time`:
 
 ```
-Nous sommes en: 10
+date := time.Now()
+
+fmt.Println(date.Format("02/01/2006"))
+fmt.Println(date.Format("Jan 02, 2006"))
 ```
 
-## Plongée en profondeur
+Résultat:
 
-Maintenant que vous savez comment obtenir la date actuelle en Go, il est important de comprendre comment cela fonctionne en interne. Lorsque vous utilisez la fonction `Now()`, Go utilise le fuseau horaire local de votre ordinateur pour déterminer l'heure et la date. Si vous souhaitez obtenir la date dans un fuseau horaire différent, vous pouvez utiliser la fonction `LoadLocation()` de la bibliothèque `time`.
+```
+04/09/2020
+Sep 04, 2020
+```
 
-Il est également intéressant de noter que la fonction `Now()` renvoie une valeur de type `time.Time`, qui contient les informations sur la date et l'heure. La méthode `Format()` permet ensuite de formater ces informations selon nos besoins.
+# Plongée en profondeur:
+Obtenir la date actuelle n'a pas toujours été aussi simple. Autrefois, les programmeurs devaient utiliser des fonctions complexes pour obtenir la date à partir du système d'exploitation. Avec l'utilisation répandue du langage Go, cette tâche est maintenant beaucoup plus facile.
 
-## Voir aussi
+Il existe également des alternatives pour obtenir la date actuelle en utilisant des packages tiers tels que le package `timeutil` ou `chrono`.
 
-Maintenant que vous savez comment obtenir la date actuelle en Go, vous pouvez aller plus loin en explorant les autres méthodes et fonctions offertes par la bibliothèque `time`. Voici quelques ressources utiles pour vous aider à approfondir vos connaissances:
+Dans le code, la date actuelle est représentée par une structure `time` qui contient des informations sur l'année, le mois, le jour, l'heure, les minutes et les secondes.
 
-- [Documentation officielle de la bibliothèque `time`](https://golang.org/pkg/time/)
-- [Tutoriel vidéo sur la manipulation des dates en Go](https://www.youtube.com/watch?v=0Q4cPVG3fmw)
-- [Article sur le formatage des dates en Go](https://www.digitalocean.com/community/tutorials/how-to-work-with-date-and-time-in-go-fr)
-
-Maintenant que vous savez comment obtenir la date actuelle en Go, vous pouvez l'utiliser dans vos projets pour afficher des informations temporelles ou pour exécuter des tâches à des moments spécifiques. Gardez ces connaissances à l'esprit et continuez à explorer les différentes fonctionnalités offertes par Go pour rendre votre code encore plus efficace. Bon codage !
+# Voir aussi:
+- [Documentation officielle de la structure time en Go](https://golang.org/pkg/time/)
+- [Package timeutil pour manipuler les dates en Go](https://github.com/leekchan/timeutil)
+- [Package chrono pour gérer les temps en Go](https://github.com/xtuc/chrono)

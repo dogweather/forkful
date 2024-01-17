@@ -10,60 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co & Dlaczego?
 
-Konwersja daty na ciąg znaków jest powszechnym zadaniem, które może być niezbędne w wielu projektach. W tym artykule dowiesz się, jak w prosty sposób przekształcić datę do formatu, który najlepiej odpowiada Twoim potrzebom.
+Przetwarzanie daty na ciąg znaków to proces, w którym zamieniamy datę zapisaną w formacie liczbowym na czytelną dla ludzi postać. Programiści często wykonują to w celu wyświetlenia daty użytkownikom lub zapisu jej w pliku lub bazie danych. 
 
-## Jak to zrobić
+## Jak to zrobić:
 
-Najpierw musimy skonwertować datę na obiekt typu `java.util.Date`. Możemy to zrobić za pomocą funkcji `date` lub `now` z biblioteki `java-time`. Następnie używamy funkcji `format` z tej samej biblioteki, podając jako argumenty format daty i obiekt `Date`. Oto przykładowy kod:
-
+Przykłady kodu i wyników znajdziesz poniżej:
 ```Clojure
-(require '[java-time :as jt])
+;; Przykład 1:
+(time (format "%1$td-%1$tm-%1$tY" (local-time)))
+"24-08-2021"
 
-(def date (jt/date 2020 6 15))
-(jt/format "dd.MM.yyyy" date)
-;; wynik: "15.06.2020"
+;; Przykład 2:
+(time (format "%1$tA, %1$tB %1$td, %1$tY" (timezone-adjust (date)))
+"wtorek, sierpnia 24, 2021"
 ```
 
-Możemy również użyć składni `#inst` do utworzenia obiektu `Date`. W poniższym przykładzie użyjemy formatu `yyyy-MM-dd`, który jest często wykorzystywany w bazach danych:
+## Głębsza analiza:
 
-```Clojure
-(def date #inst "2020-06-15")
-(jt/format "dd/MM/yyyy" date)
-;; wynik: "15/06/2020"
-```
+URL: https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html 
+URL: https://clojuredocs.org/clojure.instant/set-zone
 
-Jeśli chcemy, aby nasz ciąg znaków zawierał również informację o godzinie, możemy użyć formatu `yyyy-MM-dd HH:mm:ss`:
+Aby przekonwertować datę do ciągu znaków, możemy skorzystać z funkcji ```format```. Ta funkcja korzysta z formatowania danych, podobnego do składni znanej z języka Java, która jest wykorzystywana w większości języków programowania. W Clojure można także użyć funkcji ```local-time``` lub ```date```, aby uzyskać aktualną datę w postaci liczbowej. Konwersja daty do ciągu znaków może być również wykonywana w inny sposób, na przykład za pomocą funkcji z biblioteki java-time, jednak formatowanie danych wymaga znajomości odpowiedniej składni.
 
-```Clojure
-(def date #inst "2020-06-15T14:30:00")
-(jt/format "dd/MM/yyyy HH:mm:ss" date)
-;; wynik: "15/06/2020 14:30:00"
-```
+## Zobacz także:
 
-Oczywiście istnieje wiele innych formatów, których możemy użyć do konwersji daty na ciąg znaków. Dokładny opis dostępnych opcji znajduje się w dokumentacji biblioteki `java-time`.
-
-## Deep Dive
-
-Podczas korzystania z funkcji `format`, możemy natknąć się na kilka nieoczekiwanych błędów lub niezrozumiałych wyników. Sprawdźmy kilka z nich i ich możliwe przyczyny.
-
-Błędy związane z formatowaniem daty mogą wynikać z niepoprawnego użycia formatu. W przypadku formatów ze znakami specjalnymi, takimi jak `:` lub `/`, musimy użyć cudzysłowów lub znaku ucieczki `\`. Na przykład, jeśli chcemy ustawić format jako `HH:mm:ss`, musimy użyć cudzysłowów lub `\\`:
-
-```Clojure
-(jt/format "HH\\:mm\\:ss" date)
-```
-
-Kolejnym możliwym problemem może być złe ustawienie strefy czasowej. Domyślnie funkcja `format` korzysta z aktualnej strefy czasowej, ale możemy ją zmienić za pomocą funkcji `with-time-zone`. Na przykład, jeśli chcemy uzyskać datę w czasie UTC, musimy dodać `jt/with-time-zone UTC` przed funkcją `format`:
-
-```Clojure
-(jt/with-time-zone jt/UTC
-  (jt/format "dd/MM/yyyy HH:mm:ss" date))
-;; wynik: "15/06/2020 12:30:00"
-```
-
-## Zobacz także
-
-- [Dokumentacja biblioteki `java-time`](https://github.com/dm3/clojure.java-time)
-- [Artykuł o formatowaniu dat w Clojure](https://medium.com/technical-credit/clojure-conversations-dates-and-times-7070c2a6428f)
-- [Dokumentacja `java.text.SimpleDateFormat` zawierająca listę dostępnych formatów](https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html)
+URL: https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html 
+URL: https://clojuredocs.org/clojure.time/format 
+URL: https://clojuredocs.org/clojure.instant/ZonedDateTime

@@ -10,41 +10,22 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## למה
+## מה זה ולמה?
+שליחת בקשת HTTP היא פעולה נפוצה מאוד בתחום התכנות. היא מתאימה לשליחת מידע מהשרת ללקוח, כגון קבצים, תמונות או מידע דינמי. תכנתנים משתמשים בבקשות HTTP כדי ליצור יישומים רבי שימוש לצד הלקוח.
 
-למה הייתם מעוניינים לשלוח בקשת HTTP? בכדי ליצור תקשורת בין שני מחשבים ברשת, לדוגמה כאשר אתם רוצים לבקש מידע מאתר אינטרנט או לשלוח נתונים לשרת.
-
-## איך לעשות זאת
-
-כדי לשלוח בקשת HTTP בשפת Clojure ניתן להשתמש בספריית `clj-http` שמאפשרת לכם ליצור בקשות GET, POST, PUT ו-DELETE. נציין לדוגמה איך לשלוח בקשת GET לאתר אינטרנט:
+## איך לעשות?
+בקשת HTTP נשלחת באמצעות פונקציית "clj-http.client/post". למשל:
 
 ```Clojure
-(ns http-example
-  (:require [clj-http.client :as http]))
-
-(defn http-get []
-  (let [response (http/get "https://example.com"
-                 :query-params {:name "John" :age "30"})]
-    (println (:status response)) ; תחזיר 200 אם הבקשה הצליחה
-    (println (:body response))))
-
-(http-get)
+(require '[clj-http.client :as client])
+(client/post "http://example.com" {:form-params {:username "user" :password "pass"}})
 ```
 
-תוצאת התכנית תהיה:
+תוצאת הפעולה תחזיר מידע מהשרת, כגון קבצים או מידע דינמי של האתר המבוקש.
 
-```Clojure
-200
-<html>
- ...
-</html>
-```
+## עומק ממעמקים
+בקשות HTTP הן חלק בלתי נפרד מהעולם התעשייתי והתכנות. פונקציות נוספות כמו "GET" ו-"PUT" מאפשרות לקבל ולעדכן מידע מהשרת. פתאום כל העולם נמצא בכפתורים של המחשב שלנו.
 
-## השקעה עמוקה
-
-בקשת HTTP הפכה לחלק לא נפרד מהאינטרנט ומתקשורת ברחבי העולם. היכולת לשלוח בקשות HTTP בשפת Clojure מאפשרת למתכנתים ליצור תכניות שמשתמשות בנתונים חיצוניים, מתאם לממשקים שונים וליצור יישומים מרתקים.
-
-## ראו גם
-
-- [מדריך Clojure המציג כיצד להשתמש בספריית clj-http](https://yogthos.net/posts/2015-10-22-HTTP-Request-with-Clojure.html)
-- [ספריית clj-http המסייעת בשליחת בקשות HTTP בשפת Clojure](https://github.com/dakrone/clj-http)
+## ראה גם
+למידת Clojure: https://clojure.org/
+מדריך לשליחת בקשות HTTP ב-Clojure: https://github.com/dakrone/cheshire/wiki/Sending-HTTP-Requests-with-Clojure

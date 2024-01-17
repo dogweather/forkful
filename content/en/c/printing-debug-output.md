@@ -10,53 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-Debugging is an essential part of software development, and one of the most common tools used in debugging is printing debug output. This allows developers to track the flow of their code, understand what is happening at each step, and identify any potential errors or bugs.
+Printing debug output is a common technique used by programmers during the development and testing phase of their code. It involves printing out specific information about the state of the program or its variables to help identify and fix any errors or issues.
 
-## How To
+Debug output is helpful because it allows programmers to see what is happening behind the scenes of their code and to track the flow of execution. This can be especially useful for finding and fixing hard-to-detect bugs.
 
-Printing debug output in C is a simple and effective way to aid in the debugging process. To do so, we can use the `printf()` function, which allows us to print formatted output to the standard output stream (usually the terminal).
+## How to:
 
-Let's take a look at a simple example:
+To print debug output in C, we use the ```printf()``` function. Let's look at a simple example:
 
-```C
+```
 #include <stdio.h>
 
-int main() {
-    int num1 = 10;
-    int num2 = 5;
-
-    // Print the values of num1 and num2
-    printf("num1 = %d, num2 = %d\n", num1, num2);
-
-    // Print the sum of num1 and num2
-    printf("%d + %d = %d\n", num1, num2, num1 + num2);
+int main()
+{
+    int num = 5;
+    printf("The value of num is: %d\n", num);
 
     return 0;
 }
 ```
 
-Output:
+In this code, the ```printf()``` function is used to print the value of the variable ```num``` to the console. The format specifier ```%d``` is used to specify that we want to print an integer value.
+
+The output of this code would be:
+
 ```
-num1 = 10, num2 = 5
-10 + 5 = 15
+The value of num is: 5
 ```
 
-In this example, we first declare two variables `num1` and `num2` and assign them the values 10 and 5 respectively. Then, using `printf()`, we print the values of these variables as well as their sum.
+## Deep Dive:
 
-It's important to note that `printf()` uses format specifiers to print the values of variables. In the above example, `%d` is used to print integers, but there are many other format specifiers for different data types.
+Debug output has been used since the early days of programming and has become an essential tool for debugging code. It allows programmers to track the values and changes in variables during program execution, as well as identify potential issues with logic or algorithms.
 
-## Deep Dive
+An alternative to using ```printf()``` for debug output is the use of a debugger tool, such as GDB. However, debug output can be more convenient for quickly checking specific values without having to go through a full debugging process.
 
-Printing debug output can also be useful for tracking the execution of a program. By strategically placing `printf()` statements in different parts of the code, we can get a better understanding of how our program is running and where any potential errors may be occurring.
+In terms of implementation, debug output can be inserted directly into the code at specific points, or it can be triggered by certain conditions using conditional statements. Additionally, advanced techniques such as logging can also be used for more detailed and persistent debug output.
 
-Another technique for debugging with `printf()` is using conditional statements. For example, we can print a message only if a certain condition is met, which can help us pinpoint the exact location of a bug.
+## See Also:
 
-It's important to remember to remove all debug `printf()` statements before releasing the final version of our code, as it can impact the performance of our program.
-
-## See Also
-
-- [Debugging in C: Tips and Tricks](https://www.codeproject.com/Articles/15971/Debugging-in-C-Tips-and-Tricks)
-- [Logging in C and C++ using the Standard Library](https://www.guru99.com/c-logging-programming.html)
-- [How to Debug C Programs on Linux Using gdb](https://www.tecmint.com/debug-c-programs-in-linux-using-gdb/)
+- [C Debugging: Tips, Types and Tools](https://stackify.com/c-debugging-tips/)
+- [GDB - The GNU Project Debugger](https://www.gnu.org/software/gdb/)
+- [The Power of Printing in Debugging](https://blog.acolyer.org/2015/03/24/the-power-of-printing-in-debugging/)

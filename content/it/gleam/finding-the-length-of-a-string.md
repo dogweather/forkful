@@ -1,7 +1,7 @@
 ---
-title:                "Trovare la lunghezza di una stringa"
-html_title:           "Gleam: Trovare la lunghezza di una stringa"
-simple_title:         "Trovare la lunghezza di una stringa"
+title:                "Trova la lunghezza di una stringa"
+html_title:           "Gleam: Trova la lunghezza di una stringa"
+simple_title:         "Trova la lunghezza di una stringa"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -10,51 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+## Cosa è & Perché?
 
-Capire la lunghezza di una stringa è un'abilità fondamentale nella programmazione. Conoscere il numero di caratteri in una stringa può aiutare a manipolarla e lavorare con essa in modo più efficiente. Inoltre, molte funzioni e librerie richiedono di conoscere la lunghezza di una stringa come argomento, quindi è un'abilità indispensabile per scrivere codici funzionanti.
+Calcolare la lunghezza di una stringa significa determinare quanti caratteri sono contenuti all'interno di essa. È un'operazione utile per i programmatori in quanto spesso è necessario conoscere le dimensioni di una stringa per poterla elaborare correttamente.
 
-## Come fare
-
-Per trovare la lunghezza di una stringa in Gleam, possiamo utilizzare la funzione `String.length`, che restituisce il numero di caratteri in una stringa. Vediamo un esempio:
+## Come fare:
 
 ```Gleam
-let stringa = "Programmare è divertente!"
-let lunghezza = String.length(stringa)
-
-IO.print("La lunghezza della stringa è ", lunghezza)
+let stringa = "Ciao, mondo!"
+let lunghezza = std.string.length(stringa)
 ```
-
 Output:
-
-```
-La lunghezza della stringa è 24
-```
-
-Come possiamo vedere, la funzione `String.length` ha restituito un valore intero corrispondente alla lunghezza della stringa.
-
-Possiamo anche utilizzare la libreria `Str` per trovare la lunghezza di una stringa usando il metodo `Str.length`:
-
 ```Gleam
-let stringa = "Buongiorno"
-let lunghezza = Str.length(stringa)
-
-IO.print("La lunghezza della stringa è ", lunghezza)
+12
 ```
 
-Output:
+## Approfondimento:
 
-```
-La lunghezza della stringa è 10
-```
+**Contesto storico:** Il concetto di trovare la lunghezza di una stringa risale ai primi anni della programmazione, quando i computer erano in grado di gestire solo una limitata quantità di caratteri. Oggi, grazie alla potenza di elaborazione dei moderni computer, questi limiti sono stati superati. Tuttavia, trovare la lunghezza di una stringa rimane ancora un'operazione comune e importante nella programmazione.
 
-## Approfondimento
+**Alternative:** In alcune programmazioni, l'operazione di trovare la lunghezza di una stringa può essere sostituita da altre funzioni, come ad esempio counting o indexing. Tuttavia, calcolare esplicitamente la lunghezza rimane una pratica comune e raccomandata per mantenere il codice leggibile e facile da comprendere.
 
-Per trovare la lunghezza di una stringa, Gleam itera su ogni carattere della stringa e conta il numero totale di caratteri. Ciò significa che la funzione `String.length` ha una complessità lineare di O(n), dove n è il numero di caratteri nella stringa.
+**Dettagli di implementazione:** In Gleam, la funzione `std.string.length` è parte della libreria standard e utilizza un'ottimizzazione per determinare la lunghezza della stringa in modo efficiente. Ciò è possibile grazie alla rappresentazione efficiente delle stringhe in Gleam.
 
-Una considerazione importante da tenere a mente è che la lunghezza di una stringa può essere influenzata dalla codifica utilizzata. Ad esempio, caratteri speciali come accenti o emoji possono essere considerati come un singolo carattere o come una combinazione di più caratteri. Pertanto, è importante avere una buona comprensione della codifica utilizzata per ottenere risultati accurati quando si cerca la lunghezza di una stringa.
+## Vedi anche:
 
-## Vedi anche
-
-- Documentazione di Gleam sulle stringhe: https://gleam.run/modules/gleam/str
-- Documentazione di Gleam sui caratteri: https://gleam.run/modules/gleam/char
+- Documentazione ufficiale di Gleam su `std.string.length`: https://gleam.run/modules/std.string.html#length
+- Articolo su stringhe e loro manipolazione: https://stackoverflow.com/a/1045225/15417679
+- Tutorial su come usare stringhe in Gleam: https://medium.com/@gleamlang/string-manipulation-in-gleam-952d61d2d4d2

@@ -10,49 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför 
+## Vad & Varför?
 
-Att hitta längden på en sträng är en grundläggande och nödvändig uppgift inom programmering. Genom att förstå hur man kan få längden på en sträng i Clojure, kan du göra det enklare att hantera data och skapa mer effektiva och eleganta program.
+Att hitta längden på en sträng handlar om att räkna antalet tecken i en viss text. Programerare gör detta för att det är ett vanligt steg i att bearbeta och manipulera textdata.
 
-## Hur 
+## Hur man gör det:
 
-För att få längden på en sträng i Clojure kan du använda funktionen `count`. Den tar en sträng som argument och returnerar längden som ett heltal.
-
-```Clojure 
-(count "Hej världen") 
-; Output: 11 
+```Clojure
+(def minSträng "Hej, världen!")
+(count minSträng)
+```
+```
+Output: 13
 ```
 
-Detta användbara verktyg kan också användas på andra datatyper, som vektorer och listor.
-
-```Clojure 
-(count [1 2 3 4 5]) 
-; Output: 5 
+```Clojure
+(def annanSträng "Detta är ett längre exempel på en sträng")
+(count annanSträng)
+```
+```
+Output: 39
 ```
 
-En annan metod är att använda `(str "sträng")`. Detta konverterar en sträng till en sekvens som du sedan kan räkna med funktionen `count`.
+## Djupdykning:
 
-```Clojure 
-(count (str "Hej världen")) 
-; Output: 11 
-```
+Att hitta längden på en sträng är en grundläggande strängmanipulation i Clojure och är en del av standardbiblioteket. Det finns dock alternativ som kan vara mer relevanta beroende på vilken typ av data som bearbetas. Det är viktigt att notera att längden av en sträng kan skilja sig åt beroende på vilken teckenkodning som används.
 
-Du kan också använda `seq` för att förvandla en sträng till en sekvens av tecken, som sedan kan räknas på samma sätt.
+## Se även:
 
-```Clojure 
-(count (seq "Hej världen")) 
-; Output: 11 
-``` 
-
-## Djupdykning 
-
-När du använder `count`-funktionen, måste du vara medveten om att den returnerar antalet tecken och inte antalet bytes eller symboler. Det betyder att om din sträng innehåller multibyte-tecken, som till exempel ä, så kommer `count` att räkna utfärders byte storlek. Det här beteendet kan förändras genom att använda funktionen `counted?`, vilket returnerar sant om längden på sekvensen har räknats. Du kan också använda `nippy/count` som hanterar både bokstäver och bytes på ett bättre sätt, om det är ett problem för ditt program.
-
-## Se även 
-
-- [Clojure.org - Strings](https://clojure.org/guides/strings)
-- [ClojureDocs - count](https://clojuredocs.org/clojure.core/count) 
-- [ClojureDocs - counted?](https://clojuredocs.org/clojure.core/counted_q)
-- [ClojureDocs - str](https://clojuredocs.org/clojure.core/str)
-- [ClojureDocs - seq](https://clojuredocs.org/clojure.core/seq)
-- [ClojureDocs - nippy/count](https://clojuredocs.org/nippy/count)
+Officiell dokumentation för strängmanipulation i Clojure: https://clojure.org/reference/strings
+Alternativa metoder för att hitta längden på en sträng i Clojure: https://www.programcreek.com/2012/12/find-the-length-of-a-string-in-clojure/

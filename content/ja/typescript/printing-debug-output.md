@@ -1,7 +1,7 @@
 ---
-title:                "デバッグ出力の印刷"
-html_title:           "TypeScript: デバッグ出力の印刷"
-simple_title:         "デバッグ出力の印刷"
+title:                "デバッグ出力を表示する"
+html_title:           "TypeScript: デバッグ出力を表示する"
+simple_title:         "デバッグ出力を表示する"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Testing and Debugging"
@@ -10,41 +10,19 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## なに & なぜ？
+プログラマーがデバッグ出力を行う理由は、コードを実行した際の詳細な情報を得るためです。デバッグ出力は、コードの実行中に発生したエラーを追跡するために非常に役立ちます。
 
-デバッグ出力をプリントする理由は、コードのデバッグやトラブルシューティングを効率的に行うためです。エラーが発生した場合、デバッグ出力をプリントすることでどこで問題が発生しているかを追跡しやすくなります。
-
-## How To
-
-デバッグ出力をプリントする方法は簡単です。まず、次のように`console.log`を使用してメッセージを出力します。
-
+## 方法：
+TypeScriptでデバッグ出力を行うためのコード例と出力のサンプルを以下のコードブロックに示します。
 ```TypeScript
-console.log("デバッグ出力をプリントする！");
+console.log("デバッグ出力例");
+// 出力結果：デバッグ出力例
 ```
 
-このコードを実行すると、コンソールに「デバッグ出力をプリントする！」というメッセージが表示されます。
+## 詳細を調べる：
+デバッグ出力は、古くからプログラミングで使用されてきたツールの1つです。現代の開発者にとっては、デバッグ出力の代わりにデバッガーを使用することができますが、デバッグ出力は依然として有用なツールです。デバッグ出力は、単純なトラブルシューティングから、より複雑な問題の追跡まで幅広く使用されます。実装の詳細を調べるために、デバッグ出力を行う際には、コードの実行中に特定の値を出力することができます。
 
-もし変数の値を確認したい場合は、次のように変数をそのまま出力することもできます。
-
-```TypeScript
-let num = 10;
-console.log(num); // 10が出力される
-```
-
-また、オブジェクトや配列の中身を確認したい場合は、`console.table`を使用します。
-
-```TypeScript
-let arr = ["りんご", "バナナ", "オレンジ"];
-console.table(arr); // 配列の中身がテーブル形式で出力される
-```
-
-## Deep Dive
-
-`console.log`を使用する際に、文字列以外のデータ型を出力する場合は、`String()`関数を使用して文字列に変換することができます。また、`console`オブジェクトには`error`や`warn`といった他のメソッドもあり、それぞれエラーメッセージや警告メッセージを出力することができます。
-
-デバッグ出力をプリントする際は、重要な情報のみを出力することが重要です。コードが複雑になると、余計なメッセージが出力されて見づらくなってしまいます。そのため、必要な時だけデバッグ出力をプリントするようにすることが大切です。
-
-## See Also
-
-- [TypeScript 公式ドキュメント](https://www.typescriptlang.org/docs/)
-- [TypeScript 入門](https://typescript-jp.gitbook.io/deep-dive/)
+## 関連情報を見る：
+- [TypeScriptのデバッグ出力 - TypeScriptの公式ドキュメント](https://typescript-jp.gitbook.io/deep-dive/controlling-the-compiler/debugging)
+- [デバッグ出力を使用したデバッグ方法 - MDN web docs](https://developer.mozilla.org/ja/docs/Web/JavaScript/Guide/Using_Debugger_Statements)

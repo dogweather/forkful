@@ -1,7 +1,7 @@
 ---
-title:                "Téléchargement d'une page web"
-html_title:           "TypeScript: Téléchargement d'une page web"
-simple_title:         "Téléchargement d'une page web"
+title:                "Télécharger une page web"
+html_title:           "TypeScript: Télécharger une page web"
+simple_title:         "Télécharger une page web"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "HTML and the Web"
@@ -10,47 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Qu'est-ce que c'est & Pourquoi?
+Télécharger une page web signifie récupérer le contenu d'une page web à partir d'un serveur distant. Les programmeurs le font pour pouvoir accéder et manipuler ces données pour l'utiliser dans leurs projets.
 
-Télécharger une page web peut sembler une tâche simple, mais c'est en fait un processus complexe qui implique de nombreuses étapes. En comprenant comment cela fonctionne, vous pourriez être en mesure de résoudre des problèmes de téléchargement et d'améliorer votre expérience en ligne.
-
-## Comment faire
-
+## Comment faire:
 ```TypeScript
-import * as request from 'request';
+import axios from 'axios'; //Importer la bibliothèque axios qui facilite les requêtes HTTP
 
-// URL de la page à télécharger
-const url = "https://www.example.com";
-
-// Utilisation de la bibliothèque request pour effectuer une requête GET
-request(url, function(error, response, body) {
-  // Vérification d'erreurs
-  if (error) {
-    console.log(error);
-  }
-  // Vérification du code de réponse HTTP
-  if (response.statusCode === 200) {
-    // Enregistrement du contenu de la page dans un fichier
-    fs.writeFile("page.html", body, function(err) {
-      if (err) {
-        console.log(err);
-      }
-      console.log("Page téléchargée avec succès !");
-    });
-  } else {
-    console.log("La page n'a pas été téléchargée. Code de réponse : " + response.statusCode);
-  }
-});
+axios.get('https://example.com/') //Envoyer une requête GET à l'URL souhaitée
+  .then(function (response) { //Traiter la réponse avec une fonction de rappel
+    console.log(response.data); //Afficher le contenu de la page téléchargée
+  })
+  .catch(function (error) { //Gérer les erreurs avec une fonction de rappel
+    console.log(error); 
+  });
+```
+**Exemple de sortie :**
+```
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Example Domain</title>
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <h1>Example Domain</h1>
+    <p>This domain is for use in illustrative examples in documents. You may use this domain in literature without prior coordination or asking for permission.</p>
+    <p><a href="https://www.iana.org/domains/example">More information...</a></p>
+  </body>
+</html>
 ```
 
-Le code ci-dessus utilise la bibliothèque externe "request" pour effectuer une requête GET vers l'URL spécifiée et enregistrer le contenu de la page dans un fichier HTML.
+## Plongée en profondeur:
+Télécharger une page web est un processus couramment utilisé en programmation, en particulier pour les applications web et les outils de scraping (récupération automatique de données). Il existe plusieurs alternatives pour télécharger une page web, telles que l'utilisation de bibliothèques telles que Request ou Puppeteer, ou la mise en place d'un serveur proxy pour récupérer les données. L'implémentation peut varier en fonction de la bibliothèque utilisée et des paramètres de la requête.
 
-## Plongée en profondeur
-
-Bien qu'il existe plusieurs bibliothèques et outils pour télécharger une page web en TypeScript, la plupart d'entre eux suivent un processus similaire : effectuer une requête HTTP vers l'URL, extraire le contenu de la réponse et le traiter selon les besoins. Il est important de comprendre que la structure d'une page web peut varier considérablement et nécessiter des manipulations de données spécifiques pour être correctement téléchargée.
-
-## Voir aussi
-
-- [Utilisation de la bibliothèque Request](https://www.npmjs.com/package/request)
-- [Guide de débogage des problèmes de téléchargement](https://www.webpagefx.com/web-design/debugging-download-problems.html)
-- [Référence de TypeScript pour les requêtes HTTP](https://www.typescriptlang.org/docs/handbook/integrating-with-build-tools.html#making-requests)
+## Voir aussi:
+- [Documentation de la bibliothèque Axios](https://github.com/axios/axios)
+- [Utiliser Axios dans un projet Node.js](https://blog.abelotech.com/posts/axios-cancel-request/)
+- [Alternatives pour télécharger une page web en TypeScript](https://stackoverflow.com/questions/42084910/download-html-source-code-with-typescript-node-js/42092276)

@@ -10,41 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+# Ruby-ohjelmoinnin testien kirjoittaminen
 
-On tärkeää kirjoittaa testejä ohjelmointikoodin yhteydessä, jotta ohjelmistojen laatu voidaan varmistaa ja mahdolliset virheet voidaan havaita ja korjata varhaisessa vaiheessa. Testit myös helpottavat koodin ymmärtämistä ja muokkaamista tulevaisuudessa.
+## Mitä ja miksi?
 
-## Miten
+Testien kirjoittaminen on prosessi, jossa ohjelmoija varmistaa koodin toimivuuden ja virheettömyyden. Testauksen avulla voidaan simuloida erilaisia skenaarioita ja tarkistaa, että ohjelma toimii halutulla tavalla. Testien kirjoittaminen on tärkeä osa ohjelmistokehitystä, sillä se auttaa varmistamaan koodin laadun ja vähentämään virheiden määrää.
 
-Testien kirjoittaminen Rubyllä on helppoa ja siinä käytetään usein kirjastoa nimeltä RSpec. Alla on esimerkkejä yksikkötestien ja integraatiotestien kirjoittamisesta:
+## Kuinka tehdä?
+
+Testien kirjoittamiseen on useita eri menetelmiä, mutta yksi suosituimmista tavoista on käyttää RSpec-kirjastoa. RSpec on testauskirjasto, joka on suunniteltu erityisesti Ruby-ohjelmointikielelle. Se tarjoaa helpon ja selkeän tavan kirjoittaa testejä koodille.
+
+Esimerkiksi, jos haluamme testata yksinkertaisen laskufunktion, voimme käyttää seuraavaa koodia RSpec-testissä:
 
 ```Ruby
-require 'rspec'
-require_relative 'calculator'
-
-describe Calculator do
-  # Testataan yhteenlaskun toimivuus
-  it 'laskee kaksi lukua yhteen' do
-    expect(Calculator.add(3, 5)).to eql(8)
-  end
+def sum(num1, num2)
+  return num1 + num2
 end
 
-describe IntegrationTest do
-  # Testataan, että laskenta oikeasti käyttää laskuria
-  it 'käyttää oikeaa laskuria' do
-    expect(IntegrationTest.new.run).to eql(true)
-  end
+RSpec.describe "sum" do
+ it "returns the sum of two numbers" do
+  expect(sum(3,4)).to eq(7)
+ end
 end
 ```
 
-Tämän koodin avulla voimme varmistaa, että oma laskurimme toimii halutulla tavalla. Huomaathan, että kutsumme add-metodia suoraan Calculator-luokasta ja kutsutaan myös run-metodia IntegrationTest-luokasta.
+Tämän testin avulla varmistamme, että `sum`-funktio palauttaa oikean tuloksen, kun sille annetaan kaksi lukua.
 
-## Syväsukellus
+## Tarkempi tarkastelu
 
-Testien kirjoittaminen tulee tehdä huolellisesti ja kattavasti. Testien tulisi kattaa kaikki mahdolliset tapaukset ja skenaariot, jotta voidaan varmistua koodin oikeellisuudesta. On myös tärkeää tehdä testauksesta osa ohjelmointiprosessia heti alusta alkaen, jotta vältetään mahdolliset virheet ja ongelmakohdat.
+Testien kirjoittamisen taustalla on ajatus testausvetoisesta kehityksestä (test-driven development), jossa testit kirjoitetaan ennen varsinaisen koodin luontia. Tällä tavalla ohjelmoija voi varmistaa, että koodi tekee halutun asian ja että mahdolliset muutokset eivät aiheuta ei-toivottuja sivuvaikutuksia.
+
+Varsinaisen koodin testaamisen lisäksi on myös olemassa muita testauksen vaihtoehtoja, kuten manuaalinen tai automaattinen testaus. Manuaalinen testaus tarkoittaa, että joku testaa koodin käsin ja tarkistaa sen toimivuuden. Automaattisessa testauksessa taas käytetään ohjelmia tai skriptejä, joiden avulla testit suoritetaan automaattisesti.
 
 ## Katso myös
 
-- [RSpecin dokumentaatio](https://rspec.info/documentation/)
-- [Unit-testauksen perusteet Rubylla](https://www.rubyguides.com/2018/07/rspec-tutorial/)
-- [Testauksen tärkeys ohjelmoinnissa](https://medium.com/microtica/why-unit-testing-is-important-in-software-development-a457355d5225)
+Jos haluat oppia lisää testien kirjoittamisesta Rubyssa, voit tutustua seuraaviin lähteisiin:
+
+- [RSpec - Ruby-ohjelmistojen testauskirjasto](https://rspec.info/)
+- [Testivetoiset kehitysmenetelmät](https://fi.wikipedia.org/wiki/Testivetoiset_kehitysmenetelm%C3%A4t)
+- [Testausvetoisen kehityksen (TDD) perusteet Rubyssa](https://www.rubyguides.com/2016/07/rspec-tdd-in-ruby/)

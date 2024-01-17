@@ -10,33 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-Calculating dates in the future or past can be incredibly useful in applications that involve scheduling or time-sensitive tasks. For example, a calendar app may need to calculate the date of a future event or a reminder app may need to calculate the date of a past event.
+## What & Why?
 
-## How To
-To calculate a date in the future or past in Swift, we first need to use the `Date` and `Calendar` classes. The `Date` class represents a specific point in time, while the `Calendar` class allows us to manipulate dates and time components.
+Calculating dates in the future or past is a common task for programmers, as it allows them to manipulate and work with dates in their code. This can include things like setting due dates for tasks, scheduling reminders, or creating event calendars. By being able to calculate dates in the future or past, programmers can create more dynamic and functional applications.
 
-To calculate a future date, we can use the `date(byAdding:)` method on the `Calendar` class. This method takes in a `DateComponents` object, which specifies how many years, months, days, etc. we want to add to the current date. For example, if we want to calculate the date 5 weeks from today, we can use the following code:
+## How to:
 
-```Swift
-let calendar = Calendar.current
-let futureDate = calendar.date(byAdding: .weekOfMonth, value: 5, to: Date())
-```
+To calculate a date in the future or past, we can use the `date(byAdding:to:value:wrappingComponents:)` method within the `Calendar` class in Swift. This method takes in three parameters: a `DateComponents` object, an `Int` value, and a `Date` object. The `DateComponents` object specifies the unit of time we want to add or subtract (e.g. days or hours), the `Int` value represents the number of units we want to add or subtract, and the `Date` object is the starting date from which we want to calculate.
 
-To calculate a past date, we can use the `date(byAdding:)` method again, but with a negative value. For example, if we want to calculate the date 3 months ago, we can use the following code:
+To get the date 7 days from today, we would use the following code:
 
 ```Swift
+let today = Date()
 let calendar = Calendar.current
-let pastDate = calendar.date(byAdding: .month, value: -3, to: Date())
+let futureDate = calendar.date(byAdding: .day, value: 7, to: today)
 ```
 
-The output for both of these calculations will be a `Date` object representing the calculated date.
+We can also calculate a date in the past by simply using a negative value in the `value` parameter. For example, to get the date 2 months ago, we would use `value: -2`. The `date(byAdding:to:value:wrappingComponents:)` method also takes into consideration different calendar systems and leap years, so we can be confident that our calculations will be accurate.
 
-## Deep Dive
-The `Calendar` class also has other methods that allow for more specific date calculations, such as `date(bySetting: value:of:)` and `date(bySettingHour: minute: second: of:)`. These methods take in a specific date component (such as month, day, hour, etc.) and allow you to set a specific value for that component. You can also use the `dateComponents(_:from:to:)` method to calculate the difference between two dates.
+## Deep Dive:
 
-It's important to note that date calculations can be affected by time zone and daylight saving time. To ensure accurate date calculations, make sure to set the `timeZone` property on your `Calendar` instance.
+Historically, calculating dates in the future or past has been a complex task due to the different calendar systems and leap years used around the world. However, with advancements in programming languages, this task has become much easier. Some alternative methods for calculating dates in the future or past include using the `date(byAdding:to:value:wrappingComponents:)` method from the `NSDate` class in Objective-C or using a third-party date library like `Moment.js` for JavaScript.
 
-## See Also
-- [Apple's documentation on the Date and Calendar classes](https://developer.apple.com/documentation/foundation/date)
-- [A guide on date and time calculations in Swift](https://medium.com/@tanmaytuteja/calculating-future-or-past-dates-in-swift-5cc329c9d48f)
+Under the hood, the `date(byAdding:to:value:wrappingComponents:)` method uses the `DateComponents` class to handle the addition or subtraction of units of time. This class provides a high level of customization and allows us to specify multiple units of time to be added or subtracted at once.
+
+## See Also:
+
+To learn more about calculating dates in the future or past in Swift, check out the official documentation for the `Calendar` class and the `DateComponents` class. You can also explore third-party libraries like `Moment.swift` for additional functionality.

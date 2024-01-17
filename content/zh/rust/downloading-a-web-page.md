@@ -10,43 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
+# 为什么要下网页
 
-在当今的数字时代，网页是我们获取信息、娱乐和沟通的主要途径。下载网页可以让我们在离线状态下访问网页内容，提高我们的生产力和使用体验。
+下载网页是指从互联网上获取并存储网页内容的过程。程序员们通常会这样做是因为在开发网络应用或抓取数据时，需要使用网页上的信息。
 
-## 如何
+## 如何操作
 
-首先，我们需要安装Rust编程语言。然后，在我们的代码中，我们需要引入一个叫做"reqwest"的库来进行网页下载。接下来，在代码中，我们可以使用以下结构来定义一个简单的下载功能：
+以下是使用 Rust 语言下载网页的代码示例：
 
 ```Rust
+// 使用标准库中的 `reqwest` 模块
 use reqwest::blocking::get;
 
-// 下载网页，并返回响应对象
-let response = get("http://www.example.com").unwrap();
-
-// 将响应对象的内容转换为字符串
-let text = response.text().unwrap();
-
-// 打印下载的网页内容
-println!("{}", text);
+fn main() {
+  // 使用 `get` 函数并指定要下载的网页链接
+  let response = get("https://example.com").unwrap();
+  
+  // 检查是否下载成功，如果失败则报错
+  if response.status().is_success() {
+    // 将网页内容存储到变量 `html` 中
+    let html = response.text().unwrap();
+    println!("{}", html); // 输出网页内容
+  } else {
+    panic!("Failed to download webpage.");
+  }
+}
 ```
 
-通过上面的代码，我们可以成功下载网页，并将其内容打印出来。这是一个非常简单的例子，但是它演示了如何使用Rust语言来下载网页。
+上面的代码使用了 Rust 的标准库中的 `reqwest` 模块来实现下载功能。通过 `get` 函数指定要下载的网页链接，并通过 `is_success()` 方法检查下载是否成功。如果成功，使用 `text()` 方法获取网页内容，并存储到变量 `html` 中，最后通过 `println!` 函数将网页内容打印出来。
 
-## 深入探索
+## 深入探讨
 
-除了简单地下载网页之外，Rust语言还提供了许多其他功能来帮助我们更好地管理和处理网页内容。比如，我们可以使用"hyper"库来构建高性能的网络请求客户端；使用"scraper"库来解析HTML文档的内容；或者使用"reqwest"库的异步特性来提高网页下载的效率等等。另外，Rust语言是一门处于不断发展中的编程语言，它的社区中也有许多优秀的开源工具和库可以帮助我们更好地处理网页下载的需求。
+网页下载是网络编程中常用的操作，通过使用像 `reqwest` 这样的库，可以方便地实现下载功能。除了 Rust 外，还有其他编程语言也提供了类似的库来帮助程序员们下载网页，如 Python 中的 `requests` 模块。在实现下载功能时，还可以使用正则表达式等技术来解析网页内容，从而更灵活地处理数据。
 
-## 参考资料
+## 相关链接
 
-- Rust官方网站：https://www.rust-lang.org/
-- "reqwest"库的官方文档：https://docs.rs/reqwest/
-- "hyper"库的官方文档：https://docs.rs/hyper/
-- "scraper"库的官方文档：https://docs.rs/scraper/
-
-## 参看
-
-- [用 Rust 编写网络爬虫](https://zhuanlan.zhihu.com/p/38723737)
-- [Rust语言介绍与web爬虫设计](https://www.jianshu.com/p/1a6743db0a11)
-- [Building a Simple Web Scraper with Rust](https://scotte.net/posts/2020/creating-a-web-scraper-in-rust/)
-- [Rust语言圈子里怎么看大规模应用场景？](https://www.zhihu.com/question/386695909/answer/1152717859)
+- [reqwest 官方文档](https://docs.rs/reqwest/)
+- [Python requests 官方文档](https://docs.python-requests.org/en/master/)

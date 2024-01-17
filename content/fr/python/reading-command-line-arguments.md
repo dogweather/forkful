@@ -1,7 +1,7 @@
 ---
-title:                "Comprendre les arguments en ligne de commande"
-html_title:           "Python: Comprendre les arguments en ligne de commande"
-simple_title:         "Comprendre les arguments en ligne de commande"
+title:                "La lecture des arguments de ligne de commande"
+html_title:           "Python: La lecture des arguments de ligne de commande"
+simple_title:         "La lecture des arguments de ligne de commande"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Files and I/O"
@@ -10,65 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Qu'est-ce que c'est et pourquoi le faire?
 
-Le passage d'arguments en ligne de commande peut sembler intimidant pour les débutants en programmation, mais c'est en fait une compétence très utile à maîtriser. Cela vous permet de créer des programmes plus flexibles et faciles à utiliser en donnant à vos utilisateurs la possibilité de personnaliser l'exécution de votre code.
+Lire les arguments de ligne de commande est une technique utilisée par les programmeurs pour obtenir des informations de l'utilisateur lors de l'exécution d'un programme. Cela permet aux utilisateurs de personnaliser l'exécution du programme en fournissant différentes valeurs en fonction de leurs besoins.
 
-## Comment faire
+## Comment faire:
 
-Pour lire les arguments en ligne de commande en Python, vous pouvez utiliser le module `sys` et la liste `argv`. Voici un exemple de code:
+Voici un exemple simple qui utilise la méthode `sys.argv` pour lire les arguments de ligne de commande dans un programme Python:
 
-```Python
+```python
 import sys
 
-# stocke les arguments dans une liste
-arguments = sys.argv 
+# la première valeur de sys.argv est toujours le nom du fichier python lui-même
+# les arguments suivants sont ensuite stockés dans un tableau
+arguments = sys.argv[1:]
+nombre_arguments = len(arguments)
 
-# le premier élément de la liste est le nom du fichier
-# les arguments personnalisés commencent à l'index 1
-# vous pouvez accéder à chaque argument en utilisant son index
-print("Mon premier argument est:", arguments[1])
-
-# vous pouvez également vérifier le nombre d'arguments passés
-print("J'ai reçu", len(arguments)-1, "arguments en tout.")
+print("Il y a " + str(nombre_arguments) + " arguments de ligne de commande:")
+for argument in arguments:
+    print(argument)
 ```
 
-Essayez de l'exécuter avec différents arguments et voyez comment cela affecte la sortie.
+Si vous exécutez ce programme avec la commande `python arguments.py hello world`, vous obtiendrez le résultat suivant:
 
 ```
-$ python arguments.py arg1 arg2
-Mon premier argument est: arg1
-J'ai reçu 2 arguments en tout.
+Il y a 2 arguments de ligne de commande:
+hello
+world
 ```
 
-## Plongée en profondeur
+## Plongée en profondeur:
 
-En plus de lire les arguments passés en ligne de commande, vous pouvez également utiliser des options pour rendre votre code encore plus souple. Le module `argparse` vous permet de définir des options avec des arguments personnalisés et de les utiliser dans votre programme. Voici un exemple:
+La technique de lecture d'arguments de ligne de commande est couramment utilisée dans les langages de programmation, notamment en C, C++, Java et bien sûr en Python. Avant l'apparition de cette méthode, les programmeurs devaient utiliser des bibliothèques spécifiques à leur système d'exploitation pour lire les arguments de ligne de commande.
 
-```Python
-import argparse
+Une alternative à la méthode `sys.argv` est l'utilisation du module `argparse`, qui offre une plus grande flexibilité et une meilleure gestion des erreurs lors de la lecture des arguments de ligne de commande.
 
-# crée un objet ArgumentParser pour gérer les options
-parser = argparse.ArgumentParser(description='Un programme qui double un nombre.')
+En termes d'implémentation, la méthode `sys.argv` utilise deux variables spéciales: `sys.argv` pour stocker tous les arguments et `sys.argc` pour compter le nombre total d'arguments.
 
-# ajoute une option "-n" qui prend un argument de type entier
-parser.add_argument('-n', type=int, help='Le nombre à doubler')
+## Voir aussi:
 
-# parse les arguments passés en ligne de commande
-args = parser.parse_args()
+Vous pouvez en savoir plus sur la méthode `sys.argv` et découvrir d'autres techniques pour lire les arguments de ligne de commande en consultant les ressources suivantes:
 
-# multiplie l'argument avec lui-même et affiche le résultat
-print("Le double de", args.n, "est", args.n * 2)
-```
-
-Essayez de l'exécuter avec l'option `-n` et un nombre de votre choix.
-
-```
-$ python options.py -n 5
-Le double de 5 est 10
-```
-
-## Voir aussi
-
-- [La documentation officielle de Python sur les arguments de ligne de commande](https://docs.python.org/fr/3.8/library/sys.html#sys.argv)
-- [La documentation officielle de Python sur le module argparse](https://docs.python.org/fr/3.8/library/argparse.html)
+- [Documentation de Python sur sys.argv](https://docs.python.org/fr/3.9/library/sys.html#sys.argv)
+- [Documentation de Python sur argparse](https://docs.python.org/fr/3.9/howto/argparse.html)

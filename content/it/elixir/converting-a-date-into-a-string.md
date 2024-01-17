@@ -10,35 +10,22 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
-La conversione di una data in una stringa può essere utile per visualizzare le informazioni della data in un formato specifico o per l'elaborazione dei dati in vari sistemi. Inoltre, in Elixir, la conversione in una stringa può semplificare l'interazione con altri moduli e librerie.
+## Cosa & Perché?
+La conversione di una data in una stringa è una delle operazioni fondamentali per ogni programmatore che lavora con date. Questo processo consiste nel trasformare un valore numerico rappresentante una data in una stringa leggibile dall'utente. I programmatori lo fanno principalmente per esporre le date in un formato comprensibile a chi utilizza il loro software.
 
-## Come fare
-Per convertire una data in una stringa in Elixir, è possibile utilizzare la funzione `DateTime.to_iso8601/2`, passando la data come primo argomento e il formato desiderato come secondo argomento. Ad esempio:
+## Come fare:
+Nell'Elixir, puoi convertire una data in una stringa utilizzando la funzione `NaiveDateTime.to_string/2`. Di seguito un esempio di codice che prende una data e la converte in una stringa nel formato "aaaa-mm-gg":
 
-```Elixir
-DateTime.to_iso8601(~N[2021-04-15T10:22:00], extended: true)
-
-# Output: "2021-04-15T10:22:00"
+```elixir
+date = ~N[2022-12-31]
+# => #NaiveDateTime<2022-12-31 00:00:00>
+date_string = NaiveDateTime.to_string(date, "~Y-~m-~d")
+# => "2022-12-31"
 ```
 
-In questo caso, il secondo argomento `extended: true` specifica che il formato della stringa deve includere anche i secondi e i fusi orari. È possibile anche utilizzare il formato `:compact` per ottenere una stringa con meno caratteri, ma meno dettagliata.
+## Approfondimento:
+La conversione di una data in una stringa è uno dei processi più comuni e utili nella programmazione. Oltre all'Elixir, esistono anche altri linguaggi che offrono funzioni per effettuare questa operazione, come ad esempio Python con il metodo `strftime()` o JavaScript utilizzando la libreria Moment.js. Per quanto riguarda l'implementazione, la conversione di una data in una stringa viene solitamente gestita attraverso una libreria standard di un linguaggio di programmazione, che offre funzioni utili per la formattazione delle date.
 
-Se si desidera invece convertire la data in un formato personalizzato, è possibile utilizzare la funzione `DateTime.to_string/3`, specificando la data, il formato e la località. Ad esempio:
-
-```Elixir
-DateTime.to_string(~N[2021-04-15T10:22:00], "{0,0}-{1}/{2}/{3} {4}:{5}", "it")
-
-# Output: "15-04-2021 10:22"
-```
-
-In questo caso, il formato specificato viene interpretato come "giorno-mese-anno ora:minuti" e la località impostata come "it" garantisce che i nomi dei mesi e dei giorni della settimana vengano visualizzati in italiano. È possibile consultare la documentazione di Elixir per ulteriori opzioni di formattazione.
-
-## Approfondimento
-Di base, una data in Elixir viene rappresentata come una tupla di sette elementi, contenente l'anno, il mese, il giorno, l'ora, i minuti, i secondi e i fusi orari. Quando viene convertita in una stringa, la data viene formattata seguendo lo standard ISO 8601, che garantisce l'uniformità e la leggibilità tra diversi sistemi.
-
-È importante notare che, in Elixir, le date sono immutabili: ogni operazione di modifica su una data restituisce sempre una nuova data. Questo garantisce la consistenza e l'affidabilità delle informazioni e previene eventuali errori di modifica accidentale.
-
-## Vedi anche
-- [Documentazione ufficiale di Elixir sulla conversione di date](https://hexdocs.pm/elixir/DateTime.html#to_string/3)
-- [Tutorial su come lavorare con le date in Elixir](https://www.tutorialspoint.com/elixir/elixir_working_with_dates.htm)
+## Vedi anche:
+- La documentazione ufficiale di Elixir sulla funzione `NaiveDateTime.to_string/2`: https://hexdocs.pm/elixir/NaiveDateTime.html#to_string/2
+- Una guida su come formattare le date in diversi linguaggi di programmazione: https://www.howtogeek.com/50278/4-ways-to-convert-unix-timestamp-to-readable-date-in-linux/

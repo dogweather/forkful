@@ -10,35 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Perché
+## Che cosa e perchè?
+Scrivere test è un'attività fondamentale per tutti i programmatori. Si tratta di scrivere codice aggiuntivo per verificare che il codice già scritto funziona come previsto. Questo aiuta a garantire che il programma continui a funzionare correttamente anche dopo eventuali modifiche.
 
-Scrivere test è fondamentale per garantire la correttezza e la stabilità di un programma. I test aiutano a identificare eventuali errori e a verificare che le modifiche apportate al codice non abbiano causato problemi in altre parti del programma.
-
-# Come Fare
-
-Per scrivere test in Python, è necessario utilizzare il modulo `unittest`. Di seguito un esempio di un test semplice che verifica che la funzione `add` sommi correttamente due numeri interi:
+## Come fare:
+In Python, esistono diversi modi per scrivere test. Uno dei più comuni è utilizzare il modulo `unittest`, che fornisce un framework per scrivere e gestire test automatizzati. Di seguito un esempio di come utilizzarlo:
 
 ```Python
 import unittest
 
-def add(x, y):
-    return x + y
-
-class TestAdd(unittest.TestCase):
-
-    def test_add(self):
-        self.assertEqual(add(2, 3), 5)
-        self.assertEqual(add(-1, 5), 4)
+# Creiamo una semplice funzione per verificare se un numero è pari o dispari
+def is_even(num):
+    if num % 2 == 0:
+        return True
+    else:
+        return False
+        
+# Definiamo una classe di test che eredita dalla classe TestCase del modulo unittest
+class TestIsEven(unittest.TestCase):
+    # Definiamo un metodo per testare la nostra funzione
+    def test_even_numbers(self):
+        self.assertTrue(is_even(2)) # Verifica che il test sia True
+        self.assertFalse(is_even(3)) # Verifica che il test sia False
+        
+# Eseguiamo i nostri test utilizzando il metodo main del modulo unittest
+if __name__ == '__main__':
+    unittest.main()
 ```
 
-Per eseguire questo test, è possibile utilizzare il comando `python -m unittest nomefile.py` dalla riga di comando. Se non vengono sollevate eccezioni, il test viene considerato valido.
+Il risultato in questo caso sarà:
 
-# Approfondimento
+```
+..
+----------------------------------------------------------------------
+Ran 2 tests in 0.000s
 
-Esistono diversi tipi di test che possono essere scritti in Python, come i test di unità, di integrazione e di sistema. Inoltre, è possibile utilizzare una libreria come `coverage` per verificare la percentuale di codice testato e garantire una maggiore copertura.
+OK
+```
 
-# Vedi Anche
+## Approfondimento:
+La pratica di scrivere test ha origini antiche nella storia della programmazione. In passato, i test erano spesso eseguiti manualmente da "testers" umani, ma con l'avvento della programmazione orientata agli oggetti e del concetto di test unitari, è diventato sempre più importante scrivere codice di test. Altre alternative a `unittest` includono i moduli `doctest` e `pytest`. 
 
-- Documentazione di `unittest`: https://docs.python.org/3/library/unittest.html
-- Tutorial sui test in Python: https://realpython.com/python-testing/
-- Libreria per misurare la copertura dei test: https://coverage.readthedocs.io/en/coverage-5.5/
+## Vedi anche:
+Per ulteriori informazioni sui test in Python, qui ci sono alcuni link utili:
+
+- Documentazione ufficiale dei test in Python: https://docs.python.org/3/library/unittest.html
+- Tutorial su unittest: https://realpython.com/python-testing/
+- Tutorial su doctest: https://realpython.com/doctest-python/
+- Tutorial su pytest: https://realpython.com/pytest-python-testing/

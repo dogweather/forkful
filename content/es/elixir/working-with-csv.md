@@ -1,7 +1,7 @@
 ---
-title:                "Trabajando con archivos csv"
-html_title:           "Elixir: Trabajando con archivos csv"
-simple_title:         "Trabajando con archivos csv"
+title:                "Trabajando con csv"
+html_title:           "Elixir: Trabajando con csv"
+simple_title:         "Trabajando con csv"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Data Formats and Serialization"
@@ -10,56 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+¡Hola a todos! ¿Están listos para aprender sobre cómo trabajar con CSV en Elixir? En este artículo, vamos a explorar qué es CSV y por qué los programadores lo utilizan. También veremos cómo podemos trabajar con CSV en Elixir con algunos ejemplos de código y finalmente, profundizar en algunos detalles más sobre esta técnica. ¡Así que empecemos!
 
-Si eres un desarrollador de Elixir buscando una forma sencilla de trabajar con datos en formato CSV, entonces estás en el lugar correcto. En este artículo, te explicaremos cómo puedes hacerlo utilizando las herramientas y funciones disponibles en la versión actual de Elixir.
+## ¿Qué y Por Qué?
 
-## Cómo hacerlo
+CSV significa "Comma Separated Values" (Valores Separados por Comas) en español. Es un formato de archivo comúnmente utilizado para almacenar datos en forma de una tabla simple con columnas y filas. Los programadores a menudo trabajan con CSV para procesar grandes cantidades de datos que pueden ser leídos fácilmente por programas.
 
-La función clave que utilizaremos para trabajar con CSV en Elixir es `File.stream!`. Esta función toma una ruta de archivo y devuelve un flujo que puede ser recorrido mediante operadores como `Enum.map` o `Stream.filter`. Veamos un ejemplo de cómo podemos utilizar `File.stream!` para leer un archivo CSV con datos de películas:
+## ¿Cómo?
 
-```Elixir
-File.stream!("datos_peliculas.csv")
-|> CSV.decode
-|> Stream.map(fn [titulo, año, género, director] -> "#{titulo}, dirigida por #{director} en #{año}" end)
-|> Enum.to_list
-```
+Para trabajar con CSV en Elixir, utilizamos el módulo "CSV" que viene incluido en la biblioteca estándar de Elixir. Primero, tenemos que importar el módulo en nuestro archivo de código usando la directiva de importación ```import CSV```. Ahora, podemos utilizar la función ```CSV.parse``` para analizar un archivo CSV y obtener una lista de listas que representa los datos en el archivo.
 
-Y aquí está el resultado de la ejecución de este código:
+Por ejemplo, si tenemos un archivo CSV llamado "datos.csv" con el siguiente contenido:
 
 ```
-["Titanic, dirigida por James Cameron en 1997",
- "The Shawshank Redemption, dirigida por Frank Darabont en 1994",
- "The Dark Knight, dirigida por Christopher Nolan en 2008",
- "Inception, dirigida por Christopher Nolan en 2010"]
+nombre,edad,país
+Pablo,34,Argentina
+Maria,28,España
 ```
 
-Además de leer archivos CSV, también podemos utilizar `File.stream!` para escribir datos en un archivo CSV. Un ejemplo de cómo podemos hacer eso es:
+Podemos cargar y analizar el archivo con el siguiente código:
 
-```Elixir
-datos = [["Avatar", 2009, "Ciencia ficción", "James Cameron"],
-         ["Jaws", 1975, "Terror", "Steven Spielberg"],
-         ["Casablanca", 1942, "Romance", "Michael Curtiz"]]
+```
+import CSV
 
-File.stream!("datos_peliculas.csv", [:write, :utf8])
-|> CSV.encode
-|> Enum.into(datos, & &1)
-|> :ok
+datos = CSV.parse(File.read!("datos.csv"), headers: true)
 ```
 
-En este ejemplo, creamos una lista con datos de películas y luego utilizamos `Enum.into` para escribir esos datos en un archivo CSV. 
+Después de esta operación, la variable datos contendrá una lista de listas donde cada elemento representa una fila del archivo CSV y cada valor separado por una coma se convierte en un elemento de la lista. También hemos utilizado el parámetro "headers: true" para indicar que la primera fila del archivo contiene los nombres de las columnas.
 
-## Inmersión profunda
+También podemos modificar y escribir un archivo CSV usando las funciones ```CSV.encode``` y ```File.write!```.
 
-Además de las funciones mencionadas anteriormente, Elixir también ofrece una biblioteca llamada `Crawl` que incluye funciones adicionales para trabajar con CSV. Estas funciones incluyen la capacidad de leer y escribir archivos CSV con delimitadores personalizados, trabajar con archivos grandes de manera eficiente y trabajar con datos codificados en diferentes formatos, como ISO-8859-1.
+## Profundizando
 
-Otra opción para trabajar con CSV en Elixir es utilizar la biblioteca `NimbleCSV`. Esta biblioteca ofrece una interfaz más elegante para trabajar con archivos CSV y también incluye funciones como la conversión de datos a tipos de Elixir o la manipulación de encabezados de archivos.
+El formato CSV fue inventado en los años 70 y originalmente fue utilizado en hojas de cálculo. Sin embargo, con el auge de la informática, se volvió ampliamente utilizado en la transferencia de datos entre diferentes programas. Aunque es un formato muy simple, es ampliamente compatible y fácil de manejar en casi cualquier lenguaje de programación.
 
-Ambas opciones pueden ser utilizadas junto con `File.stream!` para proporcionar una solución completa para trabajar con CSV en Elixir.
+Una alternativa popular al formato CSV es JSON, que es más estructurado y puede almacenar datos de forma más compleja. Sin embargo, CSV sigue siendo popular debido a su sencillez y facilidad de uso.
 
-## Véase también
+Para trabajar con CSV en Elixir, el módulo CSV utiliza una combinación de los módulos File y Stream para leer y escribir en archivos CSV. También ofrece muchas opciones para manejar diferentes formatos de entrada y salida, como tener una fila de encabezado o delimitadores de campo personalizados.
 
-- Documentación oficial de Elixir sobre `File.stream!`: https://hexdocs.pm/elixir/File.html#stream!/3
-- Documentación oficial de Elixir sobre `CSV`: https://hexdocs.pm/csv/CSV.html
-- Biblioteca NimbleCSV: https://hex.pm/packages/nimble_csv
-- Biblioteca Crawl: https://hex.pm/packages/crawl
+## Ver También
+
+Si quieres profundizar más en el tema, te recomiendo revisar la documentación oficial de Elixir sobre el módulo CSV: [https://hexdocs.pm/elixir/CSV.html](https://hexdocs.pm/elixir/CSV.html).
+
+¡Eso es todo por ahora! Espero que este artículo haya sido útil para entender cómo trabajar con CSV en Elixir. ¡Hasta la próxima!

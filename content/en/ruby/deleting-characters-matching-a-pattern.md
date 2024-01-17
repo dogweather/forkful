@@ -10,42 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
+Deleting characters matching a pattern is the process of removing specific characters from a string or text based on a given pattern. Programmers use this to clean up data or manipulate text in a more efficient manner. It helps to streamline code and make it more readable.
 
-There are many reasons why someone may need to delete characters that match a certain pattern in their code. It could be to remove special characters or unwanted symbols, to update and organize data, or to simply improve the readability or functionality of their code.
-
-## How To
+## How to:
+To delete characters matching a pattern in Ruby, we can use the `gsub` method. This method takes two arguments - the pattern and the replacement string. Here's an example of how we can use it:
 
 ```Ruby
-# To delete characters matching a specific pattern, we can use the gsub method.
-# In this example, we will remove all vowels from a string and return the modified string.
+string = "Hello, World!"
+new_string = string.gsub("l", "")
+puts new_string
+```
+Output:
+```Ruby
+Heo, Word!
+```
+In the above code, we used the letter "l" as the pattern and an empty string as the replacement. This replaces all occurrences of "l" in the string with an empty string, effectively deleting them.
 
-original_string = "Hello World!"
+We can also use regular expressions as patterns to delete characters matching a certain pattern. For instance, if we want to remove all digits from a string, we can use the regex `\d` as the pattern. Here's an example:
 
-modified_string = original_string.gsub(/[aeiou]/, "")
-
-puts modified_string
-
-# Output: "Hll Wrld!"
-
-# We can also use the gsub! method to modify the original string without creating a new one.
-# This is useful if we want to make permanent changes to our code.
-
-original_string.gsub!(/[aeiou]/, "")
-
-puts original_string
-
-# Output: "Hll Wrld!"
+```Ruby
+string = "Hello123World456"
+new_string = string.gsub(/\d/, "")
+puts new_string
+```
+Output:
+```Ruby
+HelloWorld
 ```
 
-## Deep Dive
+## Deep Dive:
+The `gsub` method is part of the `String` class in Ruby and is also available in other programming languages such as JavaScript and PHP. It stands for "global substitution" and is similar to the `replace` method, but with the ability to use regular expressions.
 
-The gsub method in Ruby uses regular expressions (regex) to search and replace characters in a string. The pattern we specify inside the square brackets ([]) indicates which characters to delete. In the above example, /[aeiou]/ means any vowels. We can also specify specific characters or ranges, such as /[a-z]/ which would delete all lowercase letters.
+An alternative to using `gsub` for deleting characters matching a pattern is to use the `delete` method. This method takes a string or a character as an argument and removes all occurrences of it from the original string. However, it does not support the use of regular expressions.
 
-It's important to note that the gsub method is case sensitive, so /[aeiou]/ would only match lowercase vowels. To match both uppercase and lowercase vowels, we can use the i modifier like this: /[aeiou]/i.
+When using `gsub` with regular expressions, keep in mind that the pattern is case-sensitive. So if you want to delete both uppercase and lowercase letters, you can use the `i` flag to make the regex case-insensitive.
 
-## See Also
-
-- [How to Use Regular Expressions in Ruby](https://www.rubyguides.com/2015/06/ruby-regex/)
-- [Ruby String#gsub Method Documentation](https://ruby-doc.org/core-2.7.1/String.html#method-i-gsub)
-- [Regular Expressions Cheat Sheet](https://www.rexegg.com/regex-quickstart.html)
+## See Also:
+- [Ruby docs on `gsub` method](https://ruby-doc.org/core-2.7.0/String.html#method-i-gsub)
+- [Regular expression tutorial](https://www.regular-expressions.info/tutorial.html)
+- [Online regex tester](https://regex101.com/)

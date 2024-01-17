@@ -10,80 +10,81 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜?
+## 무엇 & 왜?
+날짜를 문자열로 변환하는 것이 무엇인지와 프로그래머들이 왜 이것을 하는지를 설명하는 두 문장입니다.
 
-일일 생활에서 날짜 정보를 문자열로 변환하는 일은 매우 흔합니다. 이러한 일은 주로 시간을 기록하거나 다른 형식으로 표현할 때 필요합니다. 아두이노 프로그래밍에서 날짜를 문자열로 변환하는 방법을 배우면 일상적인 작업을 더 쉽게 처리할 수 있습니다.
+날짜를 문자열로 변환하는 것은 날짜 데이터를 더 쉽게 읽고 처리할 수 있도록 하는 것입니다. 예를 들어, 날짜를 문자열로 변환하면 출력할 때 형식을 정할 수 있으며, 날짜가 위 숫자로만 이루어져 있다면 의미를 해석하기 어려울 수 있기 때문입니다.
 
-## 어떻게?
+## 어떻게:
+```Arduino ... ``` 코드 블록 안에 코딩 예제와 샘플 출력입니다.
 
-```Arduino
-#include <RTClib.h> //RTC 라이브러리 import
+```C++
+#include <RTClib.h>
 
-RTC_DS1307 rtc; //RTC 객체 생성
+RTC_DS1307 rtc;
 
-void setup() {
-  Serial.begin(9600); //시리얼 통신 시작
+void setup () {
+  Serial.begin(57600);
+
   while (!Serial) {
-    //시리얼 연결 대기
+    delay(1);
   }
 
   if (! rtc.begin()) {
-    //RTC 시작 실패 시 에러 메시지 출력
-    Serial.println("RTC not found!");
-    while (1);
+    Serial.println("Couldn't find RTC");
+    Serial.flush();
+    abort();
   }
 
-  if (rtc.lostPower()) {
-    //RTC 전원이 끊어 졌을 때 기재된 시간 출력
-    Serial.println("RTC lost power, let's set the time!");
-    //다음 줄 부터 진행한 예제 참고
-    rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
+  if (! rtc.isrunning()) {
+    Serial.println("RTC is NOT running!");
   }
-}
 
-void loop() {
-  DateTime now = rtc.now(); //RTC에서 현재 시간 가져오기
+  DateTime now = rtc.now();
 
-  Serial.print(now.year(), DEC); //현재 연도 출력
-  Serial.print('/'); //별을 연결
-
-  Serial.print(now.month(), DEC); //현재 월 출력
+  // 날짜를 MM/DD/YYYY 포맷의 문자열로 변환
+  Serial.print(now.month(), DEC);
   Serial.print('/');
+  Serial.print(now.day(), DEC);
+  Serial.print('/');
+  Serial.println(now.year(), DEC);
 
-  Serial.print(now.day(), DEC); //현재 일 출력
+  // 날짜를 DD-MM-YYYY HH:MM:SS 포맷의 문자열로 변환
+  Serial.print(now.day(), DEC);
+  Serial.print('-');
+  Serial.print(now.month(), DEC);
+  Serial.print('-');
+  Serial.print(now.year(), DEC);
   Serial.print(' ');
-
-  Serial.print(now.hour(), DEC); //현재 시간 출력
+  Serial.print(now.hour(), DEC);
   Serial.print(':');
- 
-  Serial.print(now.minute(), DEC); //현재 분 출력
+  if (now.minute() < 10) {
+    Serial.print('0');
+  }
+  Serial.print(now.minute(), DEC);
   Serial.print(':');
+  if (now.second() < 10) {
+    Serial.print('0');
+  }
+  Serial.println(now.second(), DEC);
+}
 
-  Serial.print(now.second(), DEC); //현재 초 출력
-  Serial.println();
-
-  delay(1000); //1초 대기
+void loop () {
+  // 아무것도 하지 않음
 }
 ```
 
-출력 예시:
-
+### 샘플 출력:
 ```
-2021/08/17 20:54:10
+2/4/2022
+4-2-2022 12:35:38
 ```
 
-## 깊게 들어가기
+이 코드는 RTC (Real Time Clock) 모듈을 사용하여 현재 날짜와 시간을 얻어온 다음, ```DateTime``` 객체를 활용해 문자열로 변환하는 방법을 보여줍니다. 처음의 변환 결과는 MM/DD/YYYY, 두 번째의 변환 결과는 DD-MM-YYYY HH:MM:SS 포맷으로 출력됩니다.
 
-일상적인 작업을 처리하는 동안 날짜 정보가 필요한 경우가 많습니다. 아두이노의 경우 날짜를 특정 형식으로 표현하거나 저장해야 할 때가 있습니다. 이때 날짜를 문자열로 변환하여 사용하는 것이 가장 간단하고 효율적인 방법입니다. 예제 코드에서 보듯이 RTC 모듈을 사용하여 현재 시간 정보를 가져와서 연도, 월, 일, 시간, 분, 초를 각각 출력하도록 설정합니다. 이를 통해 날짜 정보를 원하는 형식으로 쉽게 표현할 수 있습니다.
+## 심화 분석:
+날짜를 문자열로 변환하는 방법은 많이 있지만, 대부분의 프로그래머들은 위 예제처럼 ```DateTime``` 객체를 사용해 변환하는 방식을 선호합니다. 이는 날짜와 시간을 처리해주는 라이브러리가 꽤 활발한 편이기 때문입니다. 또한, 마이크로컨트롤러 위에서 돌아가는 시스템에서는 여러 외부 라이브러리를 사용하는 것보다 내장 함수와 코드를 사용하는 것이 성능상 더 좋을 수 있습니다.
 
-## 참고 자료
-
-- [RTC 라이브러리](https://www.arduino.cc/reference/en/libraries/rtclib/)
-- [TinkerCAD에서 아두이노와 RTC 모듈 사용하기](https://www.tinkercad.com/things/8mRgPmi0JVX-curious-wolt/editel?sharecode=cf4H4JYV0MEwFnMMy8-nMMi0RWZ8Ooo4CbdUZAmzqm8=)
-- [Real-Time Clock (RTC) 모듈 소개 및 사용 방법](https://www.ardumotive.com/how-to-use-rtcrps-module-en.html)
-
-## 더보기
-
-- [아두이노 튜토리얼](https://www.arduino.cc/en/Tutorial/HomePage)
-- [아두이노 공식 홈페이지](https://www.arduino.cc/)
-- [아두이노 커뮤니티](https://forum.arduino.cc/)
+## 관련 링크:
+- [DateTime 라이브러리 문서](https://www.arduino.cc/reference/en/libraries/rtc/)
+- [마이크로컨트롤러 시간 관리 방법 비교 글](http://www.gammon.com.au/forum/?id=12160)

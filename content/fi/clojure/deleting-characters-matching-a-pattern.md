@@ -1,7 +1,7 @@
 ---
-title:                "Mallin mukaisia merkkejä poistaminen"
-html_title:           "Clojure: Mallin mukaisia merkkejä poistaminen"
-simple_title:         "Mallin mukaisia merkkejä poistaminen"
+title:                "Mallien määritelmän täsmäävien merkkien poistaminen."
+html_title:           "Clojure: Mallien määritelmän täsmäävien merkkien poistaminen."
+simple_title:         "Mallien määritelmän täsmäävien merkkien poistaminen."
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -10,36 +10,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä ja miksi?
+Poistaminen merkkijonosta voi äkkiseltään kuulostaa hämmentävältä, mutta kyseessä on yksinkertaisesti tietyllä kaavalla mätsäävien merkkien poistaminen merkkijonosta. Tämä on hyödyllistä esimerkiksi siivoamisessa tai tiettyjen merkkien välttämisessä.
 
-Joskus ohjelmoijana joudut käsittelemään tekstimuotoista dataa, ja saattaa olla tarpeellista poistaa tietyt merkit tai merkkijonot tietystä tekstistä. Clojure tarjoaa helpon ja tehokkaan tavan poistaa merkkijonoja ja merkkejä, mikä voi säästää paljon aikaa ja vaivaa.
+## Miten tehdä?
+```Clojure
+; Poistetaan kaikki numerot merkkijonon alusta
+(str/replace "123abc" #"^\d+" "")
+; Tulostaa "abc"
 
-## Näin teet sen
-
-```Clojure 
-;; Määritellään apufunktio "poista-merkki", joka poistaa yhden merkin merkkijonosta (str)
-(defn poista-merkki [str merkki]
-  (apply str (remove #(= % merkki) str)))
-
-;; Käyttökelpoinen silloin, kun halutaan poistaa vain tietty merkki merkkijonosta
-(poista-merkki "Tervetuloa!" \!)
-;; Output: "Tervetuloa"
-
-;; Jos halutaan poistaa useita merkkejä, voidaan käyttää "reduce"-funktiota
-(reduce poista-merkki "Tervetuloa!" [\! \? \.])
-;; Output: "Tervetuloa"
-
-;; Samalla logiikalla voidaan poistaa myös merkkijonoja
-(reduce poista-merkki "Tervetuloa kaikille!" [" kaikille" "Tervetuloa "])
-;; Output: "!"
+; Poistetaan kaikki merkit, jotka eivät ole numeroita tai kirjaimia
+(str/replace "12#%3@$" #"[^a-zA-Z\d]" "")
+; Tulostaa "123"
 
 ```
 
-## Syvempi sukellus
-
-Clojuren "remove"-funktio ottaa kaksi argumenttia: predikaatin ja listan. Se palauttaa uuden listan, jossa ovat kaikki alkuperäisen listan arvot poislukien ne, jotka vastaavat predikaattia. "remove" ei muuta alkuperäistä listaa, vaan palauttaa aina uuden listan. Tämä on tärkeää muistaa, sillä esimerkiksi yllä olevassa koodissa käytetty "apply" -funktio hyväksyy vain yhden argementin, joten "remove"-funktiota tulee käyttää poistamaan vain yksi merkki kerrallaan.
+## Syventävä sukellus
+Ennen vanhaan merkkien poistaminen sujui usein käsipelityöllä, mutta nykypäivänä automatisoidut ratkaisut ovat huomattavasti tehokkaampia. Lisäksi on hyvä pitää mielessä, että merkkijonoon ei aina kannata tehdä muutoksia suoraan, vaan joskus parempi ratkaisu voi olla esimerkiksi uuden merkkijonon luominen.
 
 ## Katso myös
-
-- [Clojure dokumentaatio "remove"-funktiosta](https://clojuredocs.org/clojure.core/remove)
-- [Opas Clojuren käyttöön tekstimuotoisen datan käsittelyssä](https://clojure.org/guides/data_manipulation#general_string_manipulation)
+[Lähdekoodi](https://github.com/clojure/clojure-contrib/blob/master/src/main/clojure/clojure/contrib/string.clj) | [Dokumentaatio](https://clojure.github.io/clojure-contrib/string-api.html) | [Regex-ilmaisukirjasto](https://clojure.org/reference/java_interop#_javautilregex)

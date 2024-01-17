@@ -10,58 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+# ¿Qué y por qué?
 
-Convertir una cadena de texto a minúsculas es una operación común en la programación que nos permite normalizar y manipular datos de manera eficiente. Este proceso es especialmente útil cuando estamos trabajando con entradas del usuario que pueden tener diferentes formatos de mayúsculas y minúsculas.
+Convertir una cadena de texto a minúsculas es una función que permite a los programadores cambiar todas las letras mayúsculas en una cadena de texto a letras minúsculas. Esto puede ser útil para realizar comparaciones de cadenas de texto, ya que las letras mayúsculas y minúsculas son tratadas de manera diferente por la mayoría de los lenguajes de programación.
 
-## Cómo hacerlo
-
-Usar el método `toLowerCase()` es la forma más sencilla de convertir una cadena de texto a minúsculas en JavaScript. Veamos un ejemplo:
+# Cómo hacerlo:
 
 ```Javascript
-let texto = "Hola Mundo";
-let textoEnMinusculas = texto.toLowerCase();
+// Ejemplo 1:
+const cadena = "ESTE ES UN EJEMPLO";
+console.log(cadena.toLowerCase()); // resultado: "este es un ejemplo"
 
-console.log(textoEnMinusculas);
-// Output: hola mundo
+// Ejemplo 2:
+const entrada = prompt("Ingresa una palabra en mayúsculas:");
+console.log(entrada.toLowerCase()); // resultado: la entrada del usuario en minúsculas
 ```
 
-En este caso, hemos creado una variable `texto` con la cadena de texto "Hola Mundo". Luego, usando el método `toLowerCase()`, hemos creado una nueva variable `textoEnMinusculas` que contiene la misma cadena, pero en minúsculas. Finalmente, imprimimos el resultado en la consola y obtenemos "hola mundo".
+# Profundizando:
 
-El método `toLowerCase()` también nos permite manipular cadenas con caracteres acentuados. Por ejemplo:
+- Contexto histórico: La función lowerCase fue introducida en el estándar ES5 de Javascript en 2009.
+- Alternativas: Además de la función lowerCase, también existe la función toLowerCase() en Javascript que hace lo mismo.
+- Detalles de implementación: La función lowerCase utiliza el conjunto de caracteres Unicode para identificar y cambiar las letras mayúsculas por minúsculas. Esto significa que funciona con cualquier idioma y alfabeto.
 
-```Javascript
-let texto = "Árbol Frutal";
-let textoEnMinusculas = texto.toLowerCase();
+# Ver también:
 
-console.log(textoEnMinusculas);
-// Output: árbol frutal
-```
-
-En este caso, podemos ver que incluso el carácter acentuado `Á` ha sido convertido a su equivalente en minúsculas `á`.
-
-## Profundizando
-
-JavaScript es un lenguaje de programación "dinámico", lo que significa que el tipo de datos de una variable puede cambiar durante la ejecución del programa. Esto es importante tenerlo en cuenta a la hora de convertir una cadena de texto a minúsculas. Veamos un ejemplo:
-
-```Javascript
-let numero = 123;
-console.log(typeof(numero));
-// Output: number
-
-let texto = "Ejemplo";
-texto = texto.toLowerCase();
-console.log(typeof(texto));
-// Output: string
-```
-
-En este caso, creamos una variable `numero` con un valor numérico y vemos que su tipo de datos es `number`. Luego, asignamos a esa misma variable el método `toLowerCase()` que convierte a su tipo de datos en `string`.
-
-Otra característica importante a tener en cuenta es que el método `toLowerCase()` no modifica la cadena original, sino que crea una nueva cadena con los cambios aplicados. Por lo tanto, si queremos guardar la cadena en minúsculas, debemos asignarla a una nueva variable.
-
-En resumen, convertir una cadena de texto a minúsculas en JavaScript es una operación sencilla pero útil que nos permite normalizar y manipular datos de manera eficiente. Aprovechemos este método para mejorar nuestras habilidades de programación.
-
-## Ver también
-
-- Documentación del método `toLowerCase()` en MDN: https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase
-- Uso del método `toLowerCase()` en ejemplos reales: https://www.w3schools.com/jsref/jsref_tolowercase.asp
+- [Función lowerCase en MDN Web Docs](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/String/toLowerCase)
+- [Función toLowerCase en w3schools](https://www.w3schools.com/jsref/jsref_tolowercase.asp)

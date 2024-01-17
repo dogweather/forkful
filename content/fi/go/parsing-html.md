@@ -10,77 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+# Mitä & Miksi?
 
-HTML-analysointi on tärkeä osa verkkokehitystä ja tiedonhaun prosessia. Se mahdollistaa tietojen keräämisen ja järjestämisen verkkosivuilta, mikä on erityisen hyödyllistä esimerkiksi web-skrapingissa ja tiedon kaivamisessa.
+HTML-analysointi on prosessi, jossa HTML-muotoista koodia luetaan ja puretaan tietorakenteiksi. Tämä on tärkeä osa web-kehitystä, sillä se mahdollistaa tietojen keräämisen ja manipuloinnin verkkosivuilta. Ohjelmoijat käyttävät tätä työkalua esimerkiksi verkkosivujen datan keräämiseen tai skriptien suorittamiseen automaattisesti.
 
-## Miten
-
-HTML-analysointi on helppoa ja tehokasta Go-kielellä. Se voidaan tehdä käyttämällä monia erilaisia ​​kirjastoja, kuten "net/html" ja "goquery". Seuraavassa on yksinkertainen esimerkki, joka näyttää, miten Go-koodi voi hakea ja tulostaa linkit annetusta HTML-sivusta:
+# Kuinka?
 
 ```Go
+// Tässä esimerkissä käytetään Go:n sisäänrakennettua HTML-pakettia
 package main
 
 import (
     "fmt"
-    "log"
-    "net/http"
-
-    "golang.org/x/net/html"
+    "strings"
+    "code.google.com/p/go.net/html"
 )
 
 func main() {
-    // Haetaan haluttu verkkosivu
-    resp, err := http.Get("https://www.example.com")
-
+    // Luetaan HTML-koodi merkkijonona
+    htmlString := "<html><head><title>Otsikko</title></head><body><h1>Tervetuloa</h1><p>Tämä on esimerkki sivu.</p></body></html>"
+    
+    // Muutetaan merkkijonosta lukija
+    reader := strings.NewReader(htmlString)
+    
+    // Käydään läpi HTML-koodi ja tulostetaan otsikko ja p-lauseke
+    doc, err := html.Parse(reader)
     if err != nil {
-        log.Fatal(err)
+        panic(err)
     }
-
-    defer resp.Body.Close()
-
-    // Analysoi sivun HTML
-    doc, err := html.Parse(resp.Body)
-
-    if err != nil {
-        log.Fatal(err)
-    }
-
-    // Tulostaa kaikki sivun linkit
-    var links []string
-    var findLinks func(* html.Node)
-    findLinks = func(n *html.Node) {
-        if n.Type == html.ElementNode && n.Data == "a" {
-            for _, a := range n.Attr {
-                if a.Key == "href" {
-                    links = append(links, a.Val)
-                }
-            }
-        }
-        for c := n.FirstChild; c != nil; c = c.NextSibling {
-            findLinks(c)
-        }
-    }
-    findLinks(doc)
-
-    fmt.Println(links)
+    fmt.Println(doc.FirstChild.FirstChild.LastChild.FirstChild.FirstChild.Data) // Tulostaa: Otsikko
+    fmt.Println(doc.LastChild.FirstChild.LastChild.FirstChild.FirstChild.Data) // Tulostaa: Tämä on esimerkki sivu.
 }
 ```
 
-Koodin suoritus tuottaa seuraavan tuloksen:
+# Deep Dive
 
-```
-["https://www.example.com", "https://www.example.com/about", "https://www.example.com/contact"]
-```
+HTML-analysoinnilla on pitkät juuret, alkaen ensimmäisten web-sivujen luomisesta 90-luvulla. Tänä päivänä on olemassa muitakin tapoja analysoida HTML-sisältöä, kuten CSS-selektorit ja XPath-kyselyt. Go:n sisäänrakennettu HTML-paketti tarjoaa kuitenkin helpon ja tehokkaan tavan käsitellä HTML-koodia.
 
-## Syvällinen sukellus
+# Katso myös
 
-HTML-analysointi Go-kielellä on mahdollista monilla eri tavoilla riippuen tarpeista ja olosuhteista. "goquery" -kirjasto esimerkiksi tarjoaa helppokäyttöisen rajapinnan, joka mahdollistaa kyselyjen tekemisen HTML-dokumentteihin samanlaisella syntaksilla kuin jQueryssä.
-
-Vaikka HTML-analysointi voi tuntua yksinkertaiselta, se voi olla haastavaa, jos sivusto on monimutkainen tai sitä on muuten vaikea käsitellä. On tärkeää tutustua eri kirjastoihin ja löytää sopivin ratkaisu tarpeisiin.
-
-## Katso myös
-
-- [Go - virallinen sivusto](https://golang.org/)
-- [net/html - virallinen kirjasto](https://golang.org/pkg/net/html/)
-- [goquery - virallinen kirjasto](https://github.com/PuerkitoBio/goquery)
+- https://golang.org/pkg/html/ - Go:n HTML-paketti
+- https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/HTML_basics - Perusteet HTML:stä
+- https://www.edureka.co/blog/web-scraping-with-golang/ - Web-scraping Go:lla

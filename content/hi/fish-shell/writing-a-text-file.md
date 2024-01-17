@@ -1,7 +1,7 @@
 ---
-title:                "टेक्स्ट फाइल लिखना"
-html_title:           "Fish Shell: टेक्स्ट फाइल लिखना"
-simple_title:         "टेक्स्ट फाइल लिखना"
+title:                "एक टेक्स्ट फाइल लिखना"
+html_title:           "Fish Shell: एक टेक्स्ट फाइल लिखना"
+simple_title:         "एक टेक्स्ट फाइल लिखना"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Files and I/O"
@@ -10,31 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Kyun
-Kya tumne kabhi fish shell mein ek text file likha hai? Agar nahi, toh yeh article tumhare liye hai! Text file likhna fish shell mein bahut asaan hai aur yeh tumhe apne programming skills mein izafa karne mein madad karega. Toh chaliye shuru karte hai!
+## क्या और क्यों?
+किसी भी प्रोग्राम को दिखाने या संचालित करने के लिए, एक टेक्स्ट फाइल में लिखा जाता है। प्रोग्रामर्स इस फाइल में अपने कोड लिखते हैं जो कंप्यूटर को बताता है कि प्रोग्राम कैसे काम करना है और क्या करना है।
 
-## Kaise Kare
-Sabse pehle, fish shell ko apne system mein install kare. Phir, ek text file create kare ya kisi existing file mein changes kare. Text file do tariko se likha ja sakta hai - `echo` command aur `printf` command.
+## कैसे करें?
+एक टेक्स्ट फाइल लिखने के लिए, आपको अपने फिश शेल में निम्नलिखित रूप में कोड लिखना होगा:
 
-Example:
-```Fish Shell
-echo "Meri pehli text file" > file.txt
 ```
-Iss command mein humne `echo` command ka use kiya hai jo "Meri pehli text file" ka output `>` operator ke through `file.txt` naam ke file mein likhega.
-
-```Fish Shell
-printf "Mera doosra text file" >> file.txt
+Fish Shell में टेक्स्ट फाइल लिखना:
+echo "यह हमारी टेक्स्ट फाइल है" > myfile.txt
 ```
-Iss command mein humne `printf` command ka use kiya hai jo "Mera doosra text file" ka output `>>` operator ke through `file.txt` file mein append karega.
 
-## Hiwa
-Text file likhne ke alawa, fish shell mein hum apne text files ko edit bhi kar sakte hai. Iske liye `nano` ya `vim` jaise text editors ka use kiya ja sakta hai. Yeh humare programming projects ke liye bahut zaroori ho sakte hai.
+कंप्यूटर अपने वर्तमान स्थान पर "myfile.txt" नाम की एक फाइल बनाएगा जिसमें आपका टेक्स्ट होगा। अपनी फाइल को किसी भी टेक्स्ट संपादक में खोलें और आप अपने टेक्स्ट को देख सकते हैं।
 
-## Jyada Gehri Jankari
-Fish shell mein text file likhne ke liye aur commands aur operators ka use karne ke liye, hum `man` command ka use kar sakte hai. Yeh hume fish shell ke commands aur unke options ke bare mein jankari deta hai.
+## गहराई में जाएं
+इतिहास के प्रकटीकरण से प्रारंभ करते हुए, टेक्स्ट फाइलों का उपयोग प्रोग्रामिंग के शुरूआती दिनों से होता आया है। हालांकि, आज भी कई अन्य विकल्प उपलब्ध हैं जैसे XML, YAML और JSON जो बेहतर स्ट्रक्चरिंग और डेटा फाइलों को समर्थन करते हैं।
 
-## Dekho Bhi
-Agar tum fish shell ko sikhna chahte ho toh yeh links tumhare liye faydemand ho sakte hai:
-- [Official fish shell website](https://fishshell.com/)
-- [Fish shell tutorials](https://fishshell.com/docs/current/tutorial.html)
-- [Learn X in Y minutes: Fish Shell](https://learnxinyminutes.com/docs/fish/)
+इसके अलावा, आप अपने टेक्स्ट फाइलों में थोड़ी समीक्षा कर सकते हैं और अपने कोड को सुधारें जो आपको प्रोग्राम को अधिक सुविधा और शक्ति प्रदान कर सकता है।
+
+## और भी देखें
+अगर आपको आपके फिश शेल में टेक्स्ट फाइल लिखने में समस्या आती है या आप अपने कोड को सुधारने के लिए और समीक्षा की आवश्यकता महसूस करते हैं, तो आप निम्न लिंकों का उपयोग कर सकते हैं:
+
+- [फिश शेल की रिकमेंडेशन](https://fishshell.com/docs/current/index.html)
+- [आम प्रश्न](https://stackoverflow.com/questions/tagged/fish)
+- [विभिन्न उपयोगी फिश शेल स्क्रिप्ट](https://github.com/fish-shell/fish-shell/wiki/External-resources)

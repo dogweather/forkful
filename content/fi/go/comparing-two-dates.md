@@ -10,65 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
-Miksi haluaisit vertailla kahta päivämäärää? Ei hätää, tämä artikkeli auttaa sinua ymmärtämään, miten voit tehdä sen Go-ohjelmointikielellä!
+## Mikä ja miksi?
+Päivämäärien vertailu on ohjelmoinnissa tapa verrata kahta erilaista ajanjaksoa toisiinsa ja määrittää niiden välinen suhde. Tämä on tärkeää monissa sovelluksissa, kuten esimerkiksi tietokannoissa, aikatauluissa ja laskureissa. Ohjelmoijat tekevät vertailuja varmistaakseen tietokoneen toiminnan ja oikeiden tulosten saamisen.
 
-## Kuinka
-Vertailemisen perusperiaatteet ovat samat useimmissa ohjelmointikielissä, mutta tässä artikkelissa keskitymme siihen, kuinka voit tehdä sen Go-kielellä.
-
+## Miten:
 ```Go
-package main
+aika1 := time.Date(2020, time.August, 20, 12, 0, 0, 0, time.UTC)
+aika2 := time.Date(2021, time.August, 20, 12, 0, 0, 0, time.UTC)
 
-import (
-    "fmt"
-    "time"
-)
+if aika1.Before(aika2) {
+    fmt.Println("Ensimmäinen aika on ennen toista aikaa.")
+}
 
-func main() {
-    // Luo kaksi aikaa, joita haluat vertailla
-    aika1 := time.Date(2020, time.January, 1, 0, 0, 0, 0, time.UTC)
-    aika2 := time.Date(2021, time.February, 15, 0, 0, 0, 0, time.UTC)
-
-    // Vertaile aikoja käyttäen "Before", "After" ja "Equal" -funktioita
-    fmt.Println(aika1.Before(aika2)) // true
-    fmt.Println(aika1.After(aika2))  // false
-    fmt.Println(aika1.Equal(aika2))  // false
+if aika1.Equal(aika2) {
+    fmt.Println("Ajat ovat samat.")
 }
 ```
 
-Output:
-```
-true
-false
-false
-```
-
-## Syvällisempi tutkimus
-Go-kielellä on myös muita hyödyllisiä funktioita, joilla voit vertailla kahta päivämäärää, kuten "Compare" ja "Day".
+Lopputulos:
 
 ```Go
-package main
-
-import (
-    "fmt"
-    "time"
-)
-
-func main() {
-    // Luo kaksi aikaa, joita haluat vertailla
-    aika1 := time.Date(2020, time.January, 1, 0, 0, 0, 0, time.UTC)
-    aika2 := time.Date(2021, time.January, 1, 0, 0, 0, 0, time.UTC)
-
-    // Vertaile päivämäärän tasolla käyttäen "Day" -funktiota
-    fmt.Println(aika1.Day() == aika2.Day()) // true
-
-    // Vertaile tarkemmin käyttäen "Compare" -funktiota
-    fmt.Println(aika1.Compare(aika2)) // -1, mikä tarkoittaa, että aika1 on ennen aika2:ta
-
-    // Voit myös käyttää "Year" ja "Month" -funktioita tarkempien vertailujen tekemiseen
-}
+Ensimmäinen aika on ennen toista aikaa.
 ```
 
-## Katso myös
-- [time-paketti Go:n dokumentaatiossa](https://golang.org/pkg/time/)
-- [Vertailla kahta päivämäärää muiden ohjelmointikielten avulla](https://www.guru99.com/compare-two-dates-go.html)
+## Syvällinen sukellus:
+Päivämäärien vertailu on tärkeää myös historiallisessa kontekstissa, sillä eri ohjelmointikielissä voi olla erilaiset tavat käsitellä aikaa ja päivämääriä. Vaihtoehtoisia tapoja vertailuun ovat esimerkiksi Unix-timet, jotka mittaavat aikaa sekunneissa 1. tammikuuta 1970 jälkeen. Go-kielessä taas käytetään aikapisteitä, jotka kattavat laajemman aikajakson.
+
+Päivämäärien vertailuun voi myös vaikuttaa erilaisten aikavyöhykkeiden huomioiminen tai päivämäärämuotojen käyttö.
+
+## Katso myös:
+- [Official Go Documentation](https://golang.org/doc/)
+- [Timestamp vs Epoch time](https://stackoverflow.com/questions/2422746/epoch-time-vs-timestamp) (englanniksi)
+- [Working with Time in Go](https://blog.golang.org/go-time-talk) (englanniksi)
+- [Aikapisteet tietokannoissa](https://www.2ndquadrant.com/en/blog/timestamp-vs-timestamptz-vs-timestamp-with-time-zone/) (englanniksi)

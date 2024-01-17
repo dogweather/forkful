@@ -1,7 +1,7 @@
 ---
-title:                "Sammenslåing av strenger"
-html_title:           "Gleam: Sammenslåing av strenger"
-simple_title:         "Sammenslåing av strenger"
+title:                "Sammenslåing av tekststrenger"
+html_title:           "Gleam: Sammenslåing av tekststrenger"
+simple_title:         "Sammenslåing av tekststrenger"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -10,55 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hvorfor
-Å konkatenering av strenger (string concatenation) er en vanlig og viktig teknikk i programmering. Det lar oss kombinere flere strenger til en enkelt streng, som er nyttig for å lage dynamiske tekster og å formatere data på en lesbar måte.
+## Hva & Hvorfor?
 
-# Hvordan gjør du det
-Å konkatenering av strenger i Gleam er enkelt med bruk av operatorer og funksjoner. La oss se på noen eksempler:
+Å konkatenering av strenger er en vanlig metode som brukes av programmører for å kombinere to eller flere strenger sammen til en enkelt streng.
 
-```Gleam
-let navn = "Per"
+Programmører gjør dette for å lage dynamiske uttrykk eller setninger, for eksempel å generere en personlig melding eller for å formatere tekst på en bestemt måte.
 
-let velkomst = "Hei " ++ navn
-
-io.println(velkomst)
-```
-
-Output: Hei Per
-
-Vi kan også legge til konstanter eller tall i strenger:
+## Hvordan:
 
 ```Gleam
-let alder = 25
+let navn = "Maria"
+let alder = "27"
 
-let info = "Jeg er " ++ alder ++ " år gammel"
+let beskjed = "Hei, mitt navn er " ++ navn ++ " og jeg er " ++ alder ++ " år gammel."
 
-io.println(info)
+gleam_io.print(beskjed)
+
+// Output:
+// Hei, mitt navn er Maria og jeg er 27 år gammel.
 ```
 
-Output: Jeg er 25 år gammel
+I dette eksempelet ser vi hvordan vi kan konkatenerer to variabler, `navn` og `alder`, til en streng ved hjelp av `++`-operatøren.
 
-Dette fungerer også med flere variabler eller konstanter på en gang:
+## Dykk dypere
 
-```Gleam
-let fornavn = "Ola"
-let etternavn = "Nordmann"
+Konkatantering av strenger har vært en grunnleggende metode i programmering i lang tid. Før i tiden var det vanlig å bruke en `concat`-funksjon for å kombinere strenger, men med introduksjonen av `++`-operatøren er dette nå den foretrukne metoden.
 
-let navn = fornavn ++ " " ++ etternavn
+Alternativt, i stedet for å konkatenerer strenger, kan du bruke placeholders eller variabler i en strengmal for å sette inn dynamiske verdier.
 
-io.println(navn)
-```
+I Gleam brukes en binærtrær-implementasjon av den `++`-operatøren som sikrer rask og effektiv konkatenering av strenger.
 
-Output: Ola Nordmann
+## Se også
 
-# Deep Dive
-Gleam har også en innebygd funksjon for å konkatenering av strenger, kalt `String.concat`. Denne funksjonen tar inn en liste av strenger og konkatenerer dem sammen til en enkelt streng. Dette kan være nyttig hvis du trenger å konkatenerer et større antall strenger.
+For mer informasjon om strenger og andre datatyper i Gleam, sjekk ut offisiell dokumentasjon her: https://gleam.run/documentation/
 
-Du kan også bruke `String.append` for å legge til en streng på slutten av en annen streng.
-
-Vi må også være oppmerksomme på at konkatenering av strenger kan ha en effekt på ytelsen til programmet vårt. Det er derfor viktig å vurdere om det er den beste løsningen for å kombinere tekster i ditt spesifikke tilfelle.
-
-# Se også
-- [Offisiell Gleam dokumentasjon](https://gleam.run/)
-- [Gleam 101: En innføring i Gleam programmeringsspråk](https://medium.com/gleam-lang/gleam-101-a21f7c983bc5)
-- [10 måter å bli bedre i Gleam på](https://medium.com/gleam-lang/10-ways-to-become-better-at-gleam-e29baf74150d)
+For en grundigere forklaring på implementasjonen av binærtrær og `++`-operatøren, kan denne artikkelen være nyttig: https://en.wikipedia.org/wiki/Balanced_binary_tree

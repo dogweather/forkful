@@ -1,7 +1,7 @@
 ---
-title:                "未来または過去の日付を計算する"
-html_title:           "Arduino: 未来または過去の日付を計算する"
-simple_title:         "未来または過去の日付を計算する"
+title:                "「未来または過去の日付を計算する」"
+html_title:           "Arduino: 「未来または過去の日付を計算する」"
+simple_title:         "「未来または過去の日付を計算する」"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Dates and Times"
@@ -10,69 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Y udo: なぜArduinoプログラムを使って日付を計算するか
+## 何をするのか & なぜ?: 
+日付を未来や過去に計算することは、指定した日数分日付を変更することです。プログラマーはこの機能を使用して、特定の日付を基準にして日付を調整する必要がある場合に使用します。
 
-Arduinoプログラムを使って日付を計算することで、未来または過去の特定の日付を簡単に特定することができます。これは、特定の日付に基づいて特定のアクションを実行する必要がある場合や、カレンダーイベントを自動的に更新する必要がある場合に役立ちます。
+## 方法:
+日付を未来に計算する最も簡単な方法は、```Arduino ... ```コードブロック内で日付を指定し、指定した日数分だけ加算することです。
 
-## H w T: Arduinoプログラムで日付を計算する方法
-
-```Arduino
-#include <Time.h> // Timeライブラリをインポート
-
-//現在の日付と未来の日付の計算をする関数
-void future_date_calculation() {
-  int current_day = day(); // 現在の日付を取得
-  int current_month = month(); // 現在の月を取得
-  int current_year = year(); // 現在の年を取得
-
-  // 1ヶ月後の日付を計算
-  int future_month = current_month + 1;
-  int future_year = current_year;
-  if (future_month > 12) { // 12ヶ月を超えてしまった場合、翌年になるので年を1つ増やす
-    future_month = 1;
-    future_year++;
-  }
-
-  // 日付を出力
-  Serial.print("今日の日付は: ");
-  Serial.print(current_day);
-  Serial.print("/");
-  Serial.print(current_month);
-  Serial.print("/");
-  Serial.print(current_year);
-  Serial.print("です。");
-  Serial.print("一ヶ月後の日付は: ");
-  Serial.print(current_day);
-  Serial.print("/");
-  Serial.print(future_month);
-  Serial.print("/");
-  Serial.print(future_year);
-  Serial.print("です。");
-}
-
-void setup() {
-  Serial.begin(9600); // シリアルモニターを開始
-  setTime(12, 00, 00, 01, 01, 2020); // 現在の時刻を設定（必要に応じて変更してください）
-}
-
-void loop() {
-  future_date_calculation(); // 関数を呼び出して日付を計算
-  delay(1000); // 1秒待つ
-}
+```
+Arduino DateTime futureDate(2020, 8, 15); //将来の日付を指定
+futureDate = futureDate + 365; // 365日後の日付を計算
+Serial.println(futureDate); // "2021/8/15" という出力が得られる
 ```
 
-上記のコードを実行すると、シリアルモニターに以下のように出力されます。
+日付を過去に計算するには、同じように日付を指定し、指定した日数分だけ減算することができます。
 
-> 今日の日付は: 1/1/2020です。一ヶ月後の日付は: 1/2/2020です。
+```
+Arduino DateTime pastDate(2020, 8, 15); //過去の日付を指定
+pastDate = pastDate - 365; // 365日前の日付を計算
+Serial.println(pastDate); // "2019/8/15" という出力が得られる
+```
 
-## D p D: Arduinoプログラムでの日付の計算の詳細
+## さらに詳しく:
+日付を計算する方法は複数ありますが、ArduinoのDateTimeライブラリは、日付および時刻の処理に便利です。また、現在のバージョンのArduinoでは、Timeライブラリを使用することもできます。
 
-この記事では、Timeライブラリを使用してArduinoプログラムで日付を計算する方法を紹介しました。Timeライブラリには、日付や時刻を取得、計算、表示するための便利な機能が含まれています。コード内で ```setTime()``` 関数を使用することで、現在の時刻を設定できます。また、```day()```、```month()```、```year()```などの関数を使うことで、現在の日付や月、年を取得することができます。
+また、日付を計算する代替手段として、プログラミング言語に組み込まれた日付関数や、カレンダーライブラリを使用する方法があります。
 
-日付を計算する際は、現在の日付を取得し、必要に応じて月や年を調整してから出力するようにしましょう。また、過去の日付の計算も同様の方法で行うことができます。
+具体的な実装方法については、Arduinoの公式ドキュメントやフォーラムで情報を収集することができます。
 
-## See Also: 同じような記事やリソースを参考にしてみてください
-
-- [Arduino Time Libraryのドキュメンテーション](https://www.arduino.cc/reference/en/libraries/time/)
-- [未来の特定の日付を計算する方法 (英語)](https://www.arduino.cc/en/Tutorial/BuiltInExamples/Scheduler)
-- [過
+## 関連リンク:
+- [Arduino DateTimeライブラリ](https://www.arduino.cc/en/Reference/DateTimeConstructor)
+- [Arduino Timeライブラリ](https://www.arduino.cc/en/Reference/Time)
+- [プログラミングにおける日付処理の基本](https://dev.classmethod.jp/articles/date-processing-in-programming/)
+- [日付関数の使い方](https://www.sejuku.net/blog/100113)
+- [カレンダーライブラリの使い方](https://circuitdigest.com/microcontroller-projects/arduino-calendar-real-time-clock-with-ds1307-and-arduino)

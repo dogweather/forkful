@@ -1,7 +1,7 @@
 ---
-title:                "Söka och ersätta text"
-html_title:           "Elm: Söka och ersätta text"
-simple_title:         "Söka och ersätta text"
+title:                "Sökning och ersättning av text"
+html_title:           "Elm: Sökning och ersättning av text"
+simple_title:         "Sökning och ersättning av text"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -10,57 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
 
-Att söka och ersätta text är en vanlig uppgift inom programmering för att göra stora ändringar i en fil snabbt. Det kan också vara användbart för att hitta och byta ut vissa delar av en text eller för att konvertera filer till ett annat format.
+Sökning och ersättning av text är en vanlig uppgift inom programmering. Det innebär att hitta en specifik del av texten och sedan ersätta den med en annan. Det kan göras för att fixa buggar, ändra texten i en applikation eller för att skapa en ny version av koden.
 
-## Hur man gör det
-
-För att söka och ersätta text i Elm, kan du använda funktionerna `String.contains` och `String.replace`. `String.contains` returnerar sant om en viss del av en text finns i en annan text. Till exempel kan vi använda det för att kontrollera om en rad innehåller ett visst ord:
+## Så här gör du:
 
 ```Elm
-String.contains "Hello" "Hello World"
---> True
+-- söker efter alla förekomster av "hej" och ersätter dem med "tja"
+text = "Hej världen! Hej Elm!"
+newText = String.replace "hej" "tja" text
+-- newText blir nu "Tja världen! Tja Elm!"
 ```
 
-För att ersätta en del av en text med en annan, kan vi använda `String.replace`:
+## Djupdykning:
 
-```Elm
-String.replace "Hello" "Hi" "Hello World"
---> "Hi World"
-```
+Sökning och ersättning av text har funnits sedan programmeringens tidiga dagar och är en viktig del av utvecklingsprocessen. Det finns olika metoder för att utföra detta, som Regular Expressions eller olika inbyggda funktioner i programmeringsspråk. Elm har inbyggda funktioner för att söka och ersätta text med hjälp av String-modulen.
 
-Om du vill söka och ersätta text i en hel fil, kan du öppna filen med `File.open` och använda `String.contains` och `String.replace` på den inlästa texten. Ta en titt på exempelkoden nedan som byter ut alla förekomster av ordet "hund" med ordet "katt" i en fil med namnet "djur.txt":
+## Se även:
 
-```Elm
-import File
-import String
+Om du vill lära dig mer om sökning och ersättning av text i Elm, rekommenderar vi att du tittar på följande länkar:
 
-main : Html msg
-main =
-    -- Öppna filen och läsa in texten
-    let
-        file = File.open "djur.txt"
-        contents = File.contents file
-    in
-    -- Byta ut hund mot katt i texten
-    case contents of
-        Ok text ->
-            let
-                modifiedText = String.replace "hund" "katt" text
-            in
-                -- Skriva tillbaka den modifierade texten till filen
-                File.write "djur.txt" modifiedText
-        Err err ->
-            Html.text "Kunde inte läsa filen."
-```
-
-## Djupdykning
-
-Det finns många sätt att söka och ersätta text i Elm, och det beror oftast på vilken typ av data du arbetar med. Om du har en mer komplex datastruktur, som en lista av strängar, kan du använda funktionen `List.map` tillsammans med `String.replace` för att söka och ersätta text i varje sträng i listan. Eller om du vill utesluta vissa delar av texten från att ersättas kan du använda en kombination av `String.contains` och `String.replace`. Det finns också olika sätt att hantera särskilda tecken i texten, såsom å, ä, ö eller versaler och gemener. Det är viktigt att göra rätt kontroller för att undvika felaktiga ändringar i din text.
-
-## Se också
-
-- [Elm dokumentation för `String` modulen](https://package.elm-lang.org/packages/elm/core/latest/String)
-- [Elm dokumentation för `File` modulen](https://package.elm-lang.org/packages/elm/file/latest/File)
-- [En guide för sökning och ersättning i Elm](https://thoughtbot.com/blog/search-and-replace-in-elm)
+- [Officiell Elm dokumentation för sökning och ersättning](https://package.elm-lang.org/packages/elm-lang/core/1.0.0/String#replace)
+- [En guide om att använda Regular Expressions i Elm](https://medium.com/front-end-weekly/how-to-use-regular-expressions-regex-in-elm-65917318881)
+- [En jämförelse av olika sök- och ersättningsmetoder i olika programmeringsspråk](https://dev.to/awwsmm/finding-and-replacing-all-occurrences-in-multiple-files-using-vim-grep-sed-perl-and-hole-maybe-other-tools-too-4j4a)

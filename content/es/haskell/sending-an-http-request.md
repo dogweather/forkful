@@ -10,38 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¿Qué y por qué?
 
-Enviar una solicitud HTTP es una de las tareas más comunes en la programación web. Puede permitir a los desarrolladores establecer comunicación entre su aplicación y servidores externos, lo que le da a su aplicación más funcionalidad y flexibilidad.
+Enviar una solicitud HTTP es una forma en que los programadores pueden comunicarse con servidores y obtener datos o realizar acciones en la web. Los programadores a menudo lo hacen para crear aplicaciones web y aplicaciones que usan servicios web.
 
-## Cómo hacerlo
+## Cómo:
 
-Para enviar una solicitud HTTP en Haskell, necesitamos utilizar la biblioteca `http-client` y `http-conduit`. Aquí hay un ejemplo de cómo hacer una solicitud GET utilizando `http-conduit`:
+El envío de solicitudes HTTP es una tarea común en la programación y es posible de hacer en Haskell de forma sencilla con el paquete *http-conduit*. Primero importamos el módulo correspondiente:
 
 ```Haskell
-import Network.HTTP.Conduit -- importamos la biblioteca
-
--- Creamos un Manager que maneje nuestra conexión HTTP
-manager <- newManager tlsManagerSettings
-
--- Creamos un objeto Request con la URL deseada
-request <- parseRequest "http://www.ejemplo.com"
-
--- Utilizamos `httpLbs` para realizar la solicitud GET
-response <- httpLbs request manager
-
--- Imprimimos el cuerpo de la respuesta
-putStrLn $ "El cuerpo es: " ++ responseBody response 
+import Network.HTTP.Simple
 ```
 
-La salida del ejemplo anterior sería el contenido de la página web solicitada.
+Luego, podemos hacer una solicitud GET utilizando la función `httpLBS` y proporcionando la URL que queremos consultar:
 
-## Profundizando
+```Haskell
+response <- httpLBS "https://www.example.com"
+```
 
-Existen diferentes tipos de solicitudes HTTP, como GET, POST, PUT, DELETE, etc. Además, también podemos enviar datos en nuestra solicitud, como parámetros de consulta o JSON en el cuerpo de la solicitud. Para eso, necesitaremos utilizar funciones adicionales de la biblioteca `http-conduit` como `responseBody`, `responseHeaders` y `httpRequest`.
+Podemos obtener el cuerpo de la respuesta utilizando la función `getResponseBody` y el código de estado utilizando `getResponseStatusCode`:
 
-## Vea también
+```Haskell
+let body = getResponseBody response
+let status = getResponseStatusCode response
+```
 
-- Documentación de `http-client`: https://hackage.haskell.org/package/http-client
-- Documentación de `http-conduit`: https://hackage.haskell.org/package/http-conduit
-- Ejemplos de solicitudes HTTP en Haskell: https://www.parsonsmatt.org/2015/05/08/yesod_kitchensink.html
+Finalmente, podemos imprimir los resultados en la consola:
+
+```Haskell
+putStrLn ("Cuerpo de la respuesta: " ++ show body)
+putStrLn ("Código de estado: " ++ show status)
+```
+
+La salida para esta solicitud sería:
+
+```
+Cuerpo de la respuesta: "Hola mundo!"
+Código de estado: 200
+```
+
+## Profundizando:
+
+Las solicitudes HTTP son una parte fundamental de la comunicación en la web y han sido utilizadas desde los primeros días de internet. Aunque existen alternativas como sockets y RPC, las solicitudes HTTP son más fáciles de implementar y son ampliamente utilizadas en la programación.
+
+El paquete *http-conduit* proporciona una implementación robusta y eficiente de solicitudes HTTP en Haskell y es ampliamente utilizado por la comunidad. Además de hacer solicitudes GET, también es posible utilizar otros métodos HTTP como POST, PUT, DELETE, etc.
+
+## Ver también:
+
+- [Documentación del paquete *http-conduit*](https://hackage.haskell.org/package/http-conduit)
+- [Tutorial de solicitudes HTTP en Haskell](https://dev.to/jhmarcus/tutorial-making-http-requests-in-haskell-5a32)

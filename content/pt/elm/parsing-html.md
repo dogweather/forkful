@@ -1,7 +1,7 @@
 ---
-title:                "Analisando html."
-html_title:           "Elm: Analisando html."
-simple_title:         "Analisando html."
+title:                "Análise de HTML"
+html_title:           "Elm: Análise de HTML"
+simple_title:         "Análise de HTML"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "HTML and the Web"
@@ -10,41 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+## O que e por que?
 
-Se você já trabalhou com desenvolvimento web, provavelmente já teve que lidar com HTML em algum momento. Sabemos como pode ser doloroso e trabalhoso analisar esse tipo de código manualmente. É aí que entra o Elm e suas habilidades de análise de HTML, tornando esse processo muito mais fácil e eficiente.
+Se você já se perguntou como os navegadores traduzem o código de uma página da web em algo visível e interativo, então você está falando sobre o processo de parsing HTML. Simplificando, o parser HTML é responsável por ler o código fonte de uma página web e transformá-lo em elementos compreensíveis para o navegador. É uma técnica crucial para o desenvolvimento web, pois permite que os programadores criem páginas dinâmicas que são visualmente atraentes e interativas para os usuários.
 
-## Como Fazer
+## Como fazer:
 
 ```Elm
 import Html.Parser exposing (..)
+import Html exposing (text, node)
 
-html = """
-<html>
-  <head>
-    <title>Meu Site</title>
-  </head>
-  <body>
-    <h1>Olá, mundo!</h1>
-  </body>
-</html>
-"""
+-- Cria um parser HTML:
+myParser : Parser (List (Node a))
 
-parsedHtml = parse html
+-- Lê uma string HTML
+doc : String
+doc = "<p>Olá mundo!</p>"
 
-main =
-  case parsedHtml of
-    Ok value -> "Análise bem sucedida! O título é " ++ (getInnerHtml value "title")
-    Err message -> "Erro: " ++ message
+-- Faz o parser da string usando a função parse:
+html : Result (List (Node a)) Error
+html = parse myParser doc
+
+-- Exemplo de saída:
+Ok [node "p" [] [text "Olá mundo!"]]
+
 ```
 
-Este pequeno exemplo mostra como podemos usar a função `parse` da biblioteca Html.Parser para analisar uma string contendo código HTML. A variável `parsedHtml` contém o resultado da análise, que pode ser acessado usando as funções fornecidas pela biblioteca, como `getInnerHtml` que retorna o conteúdo dentro das tags especificadas. Dessa forma, podemos extrair facilmente informações de um documento HTML sem ter que lidar com todas as tags e formatação manualmente.
+## Profundidade
 
-## Mergulho Profundo
+O processo de parsing HTML é algo que vem sendo desenvolvido desde os primeiros dias da internet. No início, os navegadores tinham diferentes interpretações da especificação HTML, o que causava problemas de compatibilidade. Atualmente, há várias alternativas ao parsing HTML, como o uso de linguagens de marcação mais robustas, como XML. No entanto, o parsing HTML continua sendo uma técnica amplamente utilizada devido à sua simplicidade e ampla compatibilidade.
 
-O Elm é uma linguagem altamente eficiente e segura que oferece diversas ferramentas para manipulação de dados. A biblioteca Html.Parser é um ótimo exemplo disso, permitindo que os desenvolvedores extraiam informações de documentos HTML de forma clara e eficiente. Além disso, o Elm é capaz de identificar erros de análise em tempo de compilação, evitando possíveis bugs e falhas em tempo de execução.
+## Veja também:
 
-## Veja Também
-
-- Documentação da biblioteca Html.Parser: https://package.elm-lang.org/packages/elm/html/latest/Html-Parser
-- Tutorial de HTML parsing em Elm: https://elmprogramming.com/html-parsing-elm-tutorial.html
+- [Documentação do pacote HTML.Parser](https://package.elm-lang.org/packages/elm/core/latest/Html-Parser)
+- [Especificação HTML do W3C](https://www.w3.org/TR/html/)
+- [Outras alternativas ao parsing HTML](https://www.technolush.com/xla/practices/html-compare.html)

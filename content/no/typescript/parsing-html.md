@@ -10,55 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hva og hvorfor?
+Parsing av HTML er en prosess der programvare blir brukt til å analysere og tolke koden til et HTML-dokument. Dette gjøres vanligvis for å få tilgang til og manipulere innholdet i et dokument på en strukturert måte. Programmører bruker parsing for å automatisere behandlingen av store mengder data eller for å utvikle verktøy som forenkler nettutvikling.
 
-HTML er hjertet i enhver nettside, og å kunne tolke det riktig er en viktig ferdighet for alle webutviklere. Ved å lære å parse HTML, kan du enkelt hente ut data og manipulere innholdet på en dynamisk måte, som gjør det enklere å lage responsive og interaktive nettsteder.
-
-## Hvordan
-
-Det første du trenger å gjøre for å parse HTML er å importere et nøkkelbibliotek, `html-parser`, ved å bruke Node Package Manager (npm).
-
+## Slik gjør du det:
 ```TypeScript
-npm install html-parser
+// Eksempel på kode for å parse HTML ved hjelp av et tredjepartsbibliotek som kalles "cheerio"
+
+import * as cheerio from 'cheerio';
+
+// Hente og lagre HTML-koden fra et nettsted
+const html = await fetch('https://www.nettside.com');
+
+// Bruke cheerio til å laste HTML-koden og gjøre den tilgjengelig for å kunne jobbe med
+const $ = cheerio.load(html);
+
+// Eksempel på en parsing-forespørsel for å hente tittelen på en nettside
+const title = $('h1').text();
+console.log(title);
+// Resultat: Utskrift av tittel fra nettsiden vår "Min nettside"
 ```
 
-Deretter kan du bruke `html-parser` for å tolke HTML-filen din. Her er en kodeeksempel som viser hvordan du kan få tak i innholdet i en `<div>`-tag med klassen "main".
+## Dykk dypere:
+Parsing av HTML har blitt brukt siden de tidlige dagene av Internett og er fortsatt en vanlig metode for å behandle webinnhold. I tillegg til cheerio, finnes det også andre tredjepartsbiblioteker og innebygde funksjoner i TypeScript som kan brukes til parsing, som for eksempel "DOMParser" - et innebygd API for å analysere XML og HTML-dokumenter.
 
-```TypeScript
-import * as HTMLParser from "html-parser";
-
-const html = "<html><body><div class='main'>Dette er hovedinnholdet</div></body></html>";
-const root = HTMLParser.parse(html);
-
-const mainDiv = root.firstChild.firstChild.lastChild;
-const mainContent = mainDiv.innerText; // output: Dette er hovedinnholdet
-```
-
-## Deep Dive
-
-Nå som du har en grunnleggende forståelse av hvordan du kan parse HTML med TypeScript, la oss se på noen dypere konsepter.
-
-En av de viktigste teknikkene i å parse HTML er å bruke selektorer. Ved å bruke dette, kan du enkelt finne og hente ut spesifikke elementer fra HTML-filen din. For å bruke selektorer, kan du importere biblioteket `css-select` ved hjelp av npm og bruke følgende eksempel:
-
-```
-npm install css-select
-```
-
-```TypeScript
-import * as CSSSelect from "css-select";
-const selector = CSSSelect.selectOne(".main"); 
-const mainContent = selector.firstChild.innerText; // output: Dette er hovedinnholdet
-```
-
-En annen viktig del av å parse HTML er å håndtere feil og ugyldige HTML. Dette kan gjøres ved å bruke `html-parser` bibliotekets valideringsfunksjoner.
-
-```
-const isValid = HTMLParser.validate(html); // output: true
-```
-
-Med denne funksjonen kan du enkelt sjekke om HTML-en din er gyldig før du fortsetter med parsingen.
-
-## Se også
-
-- https://www.npmjs.com/package/html-parser
-- https://www.npmjs.com/package/css-select
+## Se også:
+https://cheerio.js.org/ - Offisiell nettside for cheerio biblioteket
+https://developer.mozilla.org/en-US/docs/Web/API/DOMParser - Mer informasjon om DOMParser APIet i JavaScript

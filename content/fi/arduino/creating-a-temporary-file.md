@@ -10,32 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi luoda väliaikainen tiedosto?
+# What & Why?
+Luota minuun, kyllä sinä tarvitset tilapäistiedostoja, vaikka et vielä tiedäkään sitä. Tilapäistiedosto on lyhytaikainen tiedosto, jota ohjelma luo ja käyttää jonkin tietyn tehtävän suorittamiseen. Tämä voi olla esimerkiksi tallennetun tiedon lataaminen, jota ei enää tarvita lopputulokseen.
 
-On olemassa monia syitä, miksi voit luoda väliaikaisen tiedoston Arduino-projektillesi. Yksi syy voi olla tallentaa väliaikaisia ​​tietoja, kuten käyttäjän syötteitä, jotka eivät ole välttämättömiä ohjelman lopullisessa versiossa. Tiedoston luominen voi myös auttaa ohjelman sisäisessä järjestelyssä ja suorituskyvyssä.
+# How to:
+#### Luomme tilapäistiedoston nimen "example.txt" ja kirjoitamme siihen "Tämä on tilapäistiedosto".
 
-## Näin teet sen
+Arduino (".txt", "w");  
+Arduino.println ("Tämä on tilapäistiedosto");
 
-```Arduino
+#### Tulostus näyttää seuraavalta:
 
-// Luodaan väliaikainen tiedosto nimeltä "data.txt"
-File data = SD.open("data.txt", FILE_WRITE);
+Tämä on tilapäistiedosto
 
-// Kirjoitetaan tiedostoon merkkijono "Hei maailma!"
-data.println("Hei maailma!");
+# Deep Dive:
+Tilapäistiedostojen käyttö on ollut välttämätöntä ohjelmoinnissa jo pitkään. Kyseisillä tiedostoilla voidaan säilyttää tietoa hetkellisesti ohjelman suorituksen aikana. Tämä auttaa välttämään liiallista muistin käyttöä pysyvien tiedostojen käsittelyssä.
 
-// Suljetaan tiedosto
-data.close();
+On myös olemassa vaihtoehtoja tilapäistiedostoille, kuten dynaamisen muistin käyttö. Kuitenkin tilapäistiedostot ovat yleisesti käytettyjä ja helppokäyttöisiä ratkaisuja.
 
-```
+Tilapäistiedostot luodaan usein ohjelman "tmp" hakemistoon, joka on varattu tällaisten tiedostojen käyttöön. On tärkeää muistaa poistaa tilapäistiedostot käytön jälkeen, jotta ne eivät jätä jälkeä muistiin tai täytä levytilaa.
 
-Koodiesimerkissä luodaan väliaikainen tiedosto nimeltä "data.txt" ja kirjoitetaan siihen merkkijono "Hei maailma!". Tiedosto suljetaan lopuksi.
-
-## Syvemmälle asiassa
-
-On tärkeää huomata, että väliaikaisen tiedoston luominen vie tilaa Arduino-piirin muistista. Sen sijaan, että tallentaisit tiedoston lopullisen version ohjelmassa, voit myös käyttää esimerkiksi muuttujia ja taulukoita tallentamaan väliaikaisia ​​tietoja. Näin säästät tilaa muistissa ja saat saman lopputuloksen.
-
-## Katso myös
-
-- Opas Arduino-piirin muistin optimointiin: [https://arduino.cc/memoryoptimization](https://arduino.cc/memoryoptimization)
-- SD-kirjaston dokumentaatio: [https://www.arduino.cc/en/Reference/SD](https://www.arduino.cc/en/Reference/SD)
+# See Also:
+-https://www.arduino.cc/reference/en/language/functions/filesystem/tmpfile/  
+-https://www.tutorialspoint.com/c_standard_library/c_function_tmpfile.htm

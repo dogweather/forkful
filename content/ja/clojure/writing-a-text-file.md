@@ -1,7 +1,7 @@
 ---
-title:                "テキストファイルの作成"
-html_title:           "Clojure: テキストファイルの作成"
-simple_title:         "テキストファイルの作成"
+title:                "テキストファイルの書き方"
+html_title:           "Clojure: テキストファイルの書き方"
+simple_title:         "テキストファイルの書き方"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Files and I/O"
@@ -10,34 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## 何をしているの？
+テキストファイルを書くとは、プログラマーがコードやデータなどをテキスト形式で保存することを指します。このようにすることで、ファイルを読みやすく、修正しやすくすることができます。
 
-テキストファイルを書くことの価値は、プログラムやデータを保存するために使うことができることです。また、これらのファイルを共有したり、後で参照することができるため、開発やデータ分析にとって重要な要素となります。
+また、テキストファイルを使用することで、他のプログラマーやシステムとのやり取りを簡単に行うことができます。これにより、コードやデータを共有することができ、コラボレーションを効率的に行うことができます。
 
-## How To
-
-テキストファイルを書くためには、まず ```with-open``` 関数を使ってファイルを開きます。その後、```with-open``` 内でベクターやマップなどのデータを定義し、最後にデータをファイルに書き込みます。
-
+## どのようにするの？
 ```Clojure
-(with-open [file (clojure.java.io/writer "sample.txt")]
-  (let [data [1 2 3]
-        map {:a 1 :b 2}]
-    (spit file data)
-    (spit file map)))
+(def file (java.io.FileWriter. "example.txt"))
+(.write file "Hello world!")
+(.close file)
 ```
 
-これにより、```sample.txt``` という名前のファイルが作成され、データが次のように出力されます。
+上記のように、```java.io.FileWriter```を使用して、テキストファイルを作成します。ファイルの内容を```.write```で指定し、```.close```を呼び出すことで、ファイルを正しくクローズすることができます。
 
-```Clojure
-1 2 3
-{:a 1 :b 2}
-```
+## 深く掘り下げる
+テキストファイルを書く前に、ファイルがすでに存在しているかどうかを確認する必要があります。また、ファイルを作成する際には、ファイルパスを指定することも重要です。
 
-## Deep Dive
+他の方法としては、```.append```を使用してファイルを追記したり、```.flush```を使用してファイルに書き込んだ内容を即時に保存したりすることもできます。
 
-テキストファイルは、プログラム内で簡単に扱える形式で保存することができます。また、Clojureでは、```clojure.core``` ライブラリに含まれる多数の関数を使用して、ファイルの内容を読み込んだり、編集したりすることができます。これにより、データ分析や文書生成などのさまざまな用途に使用することができます。
-
-## See Also
-
-- [Clojure core library](https://clojure.github.io/clojure/clojure.core-api.html)
-- [Clojure data structures](https://clojure.org/reference/data_structures)
+## 関連情報
+- [「Clojure入門 - ファイル操作の基礎」](https://qiita.com/ykiops/items/5ce53f825fc38b1ea3a0) 
+- [「Javaのファイルファイルを書き込む方法【初心者向け】」](https://techacademy.jp/magazine/18533)

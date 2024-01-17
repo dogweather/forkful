@@ -1,7 +1,7 @@
 ---
-title:                "미래 또는 과거의 날짜 계산"
-html_title:           "C#: 미래 또는 과거의 날짜 계산"
-simple_title:         "미래 또는 과거의 날짜 계산"
+title:                "미래 또는 과거 날짜 계산하기"
+html_title:           "C#: 미래 또는 과거 날짜 계산하기"
+simple_title:         "미래 또는 과거 날짜 계산하기"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Dates and Times"
@@ -10,46 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+[y] 안녕하세요! 프로그래밍 세상에 오신걸 환영합니다! 
+오늘 우리는 한가지 흥미로운 주제에 대해 이야기해볼 것인데요, 바로 "특정 날짜를 미래 또는 과거로 계산하는 방법"입니다.
 
-일일이 날짜를 계산하는 것은 번거로운 일일 수 있습니다. 하지만 현재 날짜에서 일정한 기간을 더하거나 빼는 등의 계산을 하려면 이 방법이 가장 간단하고 효율적인 방법입니다.
+## What & Why?
+이 기능은 프로그래밍에서 자주 사용되는 기능 중 하나입니다. 우리가 현재 날짜를 기준으로 다음주, 다음달 또는 과거의 날짜를 계산해야 할 때, 이 기능이 사용됩니다. 이를 통해 날짜와 시간을 다루는 프로그래밍이 더욱 쉬워집니다.
 
-## 시작하기
-
-먼저, 다음과 같이 `DateTime` 형식의 변수를 선언해줍니다.
-
-```C#
-DateTime today = DateTime.Today;
-```
-
-그리고 `AddDays()` 메소드를 사용하여 미래나 과거의 날짜를 계산할 수 있습니다.
-
-```C#
-// 3일 후의 날짜 계산
-DateTime futureDate = today.AddDays(3);
-
-// 1주 전의 날짜 계산
-DateTime pastDate = today.AddDays(-7);
-```
-
-계산한 날짜를 `Console.WriteLine()` 메소드를 사용해 출력해보면 다음과 같이 나타납니다.
+## How to:
+이제 코드를 통해 어떻게 날짜를 계산하는지 알아보겠습니다. 아래의 코드를 참고해주세요.
 
 ```
-2021-09-26
+// 현재 날짜를 가져오기
+DateTime currentDate = DateTime.Today;
+
+// 10일 후의 날짜 계산하기
+DateTime futureDate = currentDate.AddDays(10); 
+
+// 2달 전의 날짜 계산하기
+DateTime pastDate = currentDate.AddMonths(-2); 
+
+// 결과 출력하기
+Console.WriteLine("현재 날짜: " + currentDate);
+Console.WriteLine("10일 후의 날짜: " + futureDate);
+Console.WriteLine("2달 전의 날짜: " + pastDate);
+```
+코드를 실행하면 다음과 같은 결과가 나옵니다.
+
+```
+현재 날짜: 2021-10-16
+10일 후의 날짜: 2021-10-26
+2달 전의 날짜: 2021-08-16
 ```
 
-위와 같이 `DateTime` 변수에 저장된 날짜는 연, 월, 일 순서대로 출력됩니다.
+위의 코드에서 `AddDays()` 메소드는 현재 날짜에 일수를 더해주는 기능을 합니다. 마찬가지로 `AddMonths()` 메소드는 현재 날짜에 월 수를 더하거나 빼는 기능을 합니다.
 
-## 깊게 파보기
+## Deep Dive:
+특정 날짜를 계산하는 기능은 프로그래밍이 발전하면서 필요성을 느끼게 되었습니다. 옛날에는 날짜와 시간을 다루는 것이 매우 어려웠기 때문입니다. 하지만 지금은 .NET 프레임워크의 도움을 받아 쉽게 다룰 수 있습니다. 다른 언어에서도 비슷한 기능을 사용할 수 있으니 참고하시면 좋을 것 같습니다.
 
-`DateTime` 변수의 기본 값을 설정하지 않고 선언하면 현재 시간을 자동으로 가져옵니다. 만약 원하는 시간을 함께 계산하고 싶다면 `DateTime` 객체를 생성할 때 시, 분, 초 값을 함께 설정할 수 있습니다.
+지금까지 우리는 날짜를 계산하는 방법에 대해 알아보았는데요, 만약 날짜를 비교하고 계산하는 것을 좀 더 자세하게 알고 싶다면 아래의 링크를 참고해주세요.
 
-```C#
-DateTime now = new DateTime(2021, 9, 26, 17, 30, 0);
-```
-
-위와 같이 세 번째 파라미터에 원하는 날짜의 시간 값을 넣어주면 해당 시간을 기준으로 계산할 수 있습니다.
-
-## 참고 문서
-
-- [C# DateTime 구조 (Microsoft Docs)](https://docs.microsoft.com/ko-kr/dotnet/api/system.datetime?view=net-5.0)
+## See Also:
+- [Microsoft Docs - DateTime 구조체](https://docs.microsoft.com/ko-kr/dotnet/api/system.datetime?view=net-5.0)
+- [C# .NET 날짜와 시간 다루기](https://www.c-sharpcorner.com/article/c-sharp-datetime-manipulation/)

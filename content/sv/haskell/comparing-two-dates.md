@@ -1,7 +1,7 @@
 ---
-title:                "Jämföring av två datum"
-html_title:           "Haskell: Jämföring av två datum"
-simple_title:         "Jämföring av två datum"
+title:                "Jämföra två datum"
+html_title:           "Haskell: Jämföra två datum"
+simple_title:         "Jämföra två datum"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Dates and Times"
@@ -10,42 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför 
+## Vad & Varför:
+Att jämföra två datum är en vanlig uppgift för programmerare. Det innebär att man kontrollerar vilket av de två datumen som är senare eller tidigare.
 
-Att jämföra två datum kan vara en viktig del av många program, från att kontrollera användares ålder till att sortera data efter datum. Genom att använda Haskell, kan man enkelt utföra denna jämförelse och hantera olika datumformat.
+Varför gör vi det? I många fall behöver vi veta vilket datum som är senare för att kunna sortera datum i rätt ordning eller för att beräkna antalet dagar mellan två datum.
 
-## Hur man gör
+## Hur man gör:
+```Haskell
+import Data.Time.Calendar (toGregorian, Day)
+import Data.Time.Calendar.OrdinalDate (fromOrdinalDate)
 
-Först behöver vi importera `Data.Time` modulen för att hantera datum och tid i Haskell. Sedan definierar vi två datum i önskat format:
+-- Comparing two dates
+compareDates :: Day -> Day -> Ordering
+compareDates d1 d2 =
+    let (y1, m1, _) = toGregorian d1
+        (y2, m2, _) = toGregorian d2
+    in compare (y1, m1) (y2, m2)
 
-```Haskell 
-import Data.Time
-
-start <- parseTimeM True defaultTimeLocale "%Y-%m-%d" "2021-01-01"
-end <- parseTimeM True defaultTimeLocale "%Y-%m-%d" "2021-02-01"
+-- Getting the number of days between two dates
+diffDays :: Day -> Day -> Integer
+diffDays d1 d2 =
+    let (y1, _, _) = toGregorian d1
+        (y2, _, _) = toGregorian d2
+        (d1', _) = fromOrdinalDate y1
+        (d2', _) = fromOrdinalDate y2
+    in abs (d1' - d2')
 ```
 
-Sedan kan vi använda de inbyggda funktionerna `compare` och `diffDays` för att jämföra och beräkna antalet dagar mellan de två datumen:
+Koderna ovan visar hur man kan jämföra två datum och beräkna antalet dagar mellan dem. Vi använder funktionerna `toGregorian` och `fromOrdinalDate` från modulerna `Data.Time.Calendar` och `Data.Time.Calendar.OrdinalDate` för att få ut datumets komponenter (år, månad, dag) och för att konvertera om ett datum till ordinalform.
 
-```Haskell 
-compare start end
--- LT (mindre än)
+## Djupdykning:
+Att jämföra datum är en vanlig uppgift, speciellt inom områden som finans och logistik där exakta datumen är avgörande. Innan de moderna dataprogrammen, var det vanligt att jämföra datum på papper eller med hjälp av en linjal.
 
-diffDays end start
--- 31 (antalet dagar mellan datumet)
-```
+Det finns också alternativa sätt att jämföra datum i Haskell, såsom att använda olika datumtyper eller använda funktioner från andra moduler som `Data.Time.Clock` för att hantera tidszon och tid.
 
-Vi kan också använda `diffUTCTime` för att jämföra tider, och `addDays` för att lägga till ett visst antal dagar till ett datum.
-
-## Djupdykning
-
-Haskell har en stark typ-system som kan vara till hjälp när man arbetar med datum och tider. Genom att använda `Data.Time.Calendar.Days` modulen, kan man definiera datatyperna `Day` och `DiffDays` för att representera datum och antal dagar.
-
-En annan användbar funktion är `formatTime` som kan användas för att konvertera ett datum till olika format. Det finns också flera andra moduler för att hantera tidszon, som `Data.Time.LocalTime` och `Data.Time.TimeZone`.
-
-Att förstå och använda dessa moduler kan hjälpa till att undvika vanliga problem som att hantera sommar- och vintertid och tidszoners skillnader.
-
-## Se även
-
-- [Haskell dokumentation för Data.Time](https://hackage.haskell.org/package/time/docs/Data-Time.html)
-- [Handbok för datum och tider i Haskell](https://www.cs.yale.edu/homes/hudak/Papers/HSoC/HSoC.html)
+## Se även:
+- [Haskell documentation for Data.Time.Calendar](https://hackage.haskell.org/package/time/docs/Data-Time-Calendar.html)
+- [Haskell documentation for Data.Time.Calendar.OrdinalDate](https://hackage.haskell.org/package/time/docs/Data-Time-Calendar-OrdinalDate.html)
+- [Haskell documentation for Data.Time.Clock](https://hackage.haskell.org/package/time/docs/Data-Time-Clock.html)

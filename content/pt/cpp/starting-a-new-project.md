@@ -1,7 +1,7 @@
 ---
-title:                "Iniciando um novo projeto"
-html_title:           "C++: Iniciando um novo projeto"
-simple_title:         "Iniciando um novo projeto"
+title:                "Começando um novo projeto"
+html_title:           "C++: Começando um novo projeto"
+simple_title:         "Começando um novo projeto"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Getting Started"
@@ -10,36 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que 
+## O que é e Porquê?
 
-Começar um novo projeto pode ser uma tarefa intimidante, mas é também uma ótima oportunidade para aprender e desenvolver novas habilidades em programação. Além disso, iniciar um projeto permite criar algo do zero e deixar sua marca no mundo da programação.
+Começar um novo projeto é iniciar um novo projeto de programação, onde os programadores começam a escrever o código para criar um novo software ou aplicativo. Os programadores fazem isso para criar novos produtos ou atualizar os existentes para melhorar sua funcionalidade ou corrigir problemas.
 
-## Como Começar
+## Como fazer:
 
-Começar um novo projeto em C++ pode ser simples. Basta seguir os seguintes passos:
+Para começar um novo projeto em C++, siga estes passos:
+```
+C++
+#include <iostream>
 
-1. Comece com uma ideia: pense em algo que gostaria de criar e que possa ser implementado em C++. Isso pode ser um jogo, um aplicativo ou até mesmo uma ferramenta útil.
+using namespace std;
 
-2. Planeje seu projeto: antes de começar a escrever código, é importante ter uma ideia clara do que você deseja alcançar com o seu projeto. Defina os recursos que você deseja incluir, organize as tarefas e defina prazos realistas.
+int main() {
+	cout << "Olá Mundo!" << endl;
+	return 0;
+}
+```
 
-3. Configurar o ambiente de desenvolvimento: para começar a programar em C++, você precisará de um compilador, um editor de código e um terminal. Certifique-se de que tudo está instalado corretamente para que você possa começar a escrever seu código.
+Output:
+```
+Olá Mundo!
+```
 
-4. Escreva seu código: use os conhecimentos básicos de C++ para escrever seu programa. Não se preocupe em escrever um código perfeito, pois você sempre pode revisá-lo e aprimorá-lo mais tarde.
+## Mergulho Profundo:
 
-5. Depure e teste seu código: é importante ter certeza de que seu código está funcionando corretamente. Use ferramentas de depuração para encontrar e corrigir erros e execute testes para garantir que seu programa esteja cumprindo seus objetivos.
+Começar um novo projeto em C++ é uma prática comum entre programadores, pois permite que eles criem novos softwares e atualizem os existentes de maneira eficiente. C++ é uma linguagem de programação de alto nível e de código aberto, criada por Bjarne Stroustrup, e é amplamente utilizada para desenvolver aplicativos de alto desempenho e sistemas operacionais. Outras alternativas para começar um novo projeto incluem C, Java e Python.
 
-6. Documente seu código: para facilitar a manutenção e colaboração com outros programadores, é importante documentar seu código. Adicione comentários explicativos e crie uma documentação para seu projeto.
+## Veja também:
 
-## Aprofundando
-
-Antes de começar um novo projeto em C++, é importante ter um bom conhecimento da linguagem e suas estruturas de dados. Escrever um código eficiente e fácil de ler é fundamental para que seu projeto seja um sucesso.
-
-Além disso, é importante ter habilidades de resolução de problemas e persistência. Durante o processo de desenvolvimento, você provavelmente enfrentará diversos desafios e bugs, mas é importante perseverar e continuar aprendendo para superá-los.
-
-Não tenha medo de pesquisar e buscar ajuda de outras fontes, como documentações e fóruns online, para resolver seus problemas e melhorar seu código.
-
-## Veja Também
-
-- [Tutorial de C++ para iniciantes](https://www.cplusplus.com/doc/tutorial/)
-- [Compilador de C++ online](https://www.onlinegdb.com/online_c++_compiler)
-- [Fórum de discussão de C++](https://www.cplusplus.com/forum/)
+Para saber mais sobre como começar um novo projeto em C++ e as melhores práticas de programação, confira os seguintes links:
+- Link 1: https://www.cplusplus.com/
+- Link 2: https://docs.microsoft.com/pt-br/cpp/?view=vs-2019
+- Link 3: https://www.tutorialspoint.com/cplusplus/cpp_file_io.htm

@@ -10,38 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i dlaczego?
 
-Regularne wyrażenia, znane również jako wyrażenia regularne lub regex, są narzędziem, które pomaga w manipulowaniu i przetwarzaniu tekstów. Dzięki nim można szybko i precyzyjnie znajdować lub zamieniać konkretne fragmenty tekstu. Jest to bardzo przydatne narzędzie dla programistów, którzy potrzebują skutecznego sposobu na analizowanie i edytowanie danych tekstowych.
+Używanie wyrażeń regularnych, czyli krótkich i zwięzłych wzorców znaków, jest niezbędnym narzędziem dla programistów Ruby. Dzięki nim możemy szybko i precyzyjnie znajdować i manipulować tekstem w programach. Innymi słowy, jest to potężne narzędzie, które pomaga nam przetwarzać dane w wysoce efektywny sposób.
 
-## Jak używać wyrażeń regularnych w Ruby
-
-Aby używać wyrażeń regularnych w Ruby, musimy użyć dedykowanego operatora `=~` lub metody `match()` dla obiektu napisów. Przykładowe użycie wygląda następująco:
+## Jak to zrobić?
 
 ```Ruby
-text = "Witaj w świecie Ruby!"
-puts "Znaleziono dopasowanie!" if text =~ /Ruby/ 
-# output: "Znaleziono dopasowanie!"
+# Szukanie wystąpienia słowa "programowanie" w tekście
+tekst = "Uwielbiam programowanie w Ruby!"
+if (tekst =~ /programowanie/)
+  puts "Znalazłem!"
+end
 ```
-
-W powyższym przykładzie, dla zmiennej `text` zostaje wywołany operator `=~` wraz z wyrażeniem regularnym `/Ruby/`, które sprawdza, czy w tekście jest słowo "Ruby". Jeśli tak, zostaje wyświetlony komunikat.
-
-Możemy również wykorzystać metody `scan()` lub `split()` do dalszego przetwarzania tekstu przy użyciu wyrażeń regularnych. Przykładowo:
 
 ```Ruby
-text = "Mój ulubiony język programowania jest Ruby!"
-matches = text.scan(/([A-Z]\w+)/)
-# output: [["Mój"], ["Ruby"]] 
+# Zamiana wszystkich liter na wielkie
+tekst = "to jest super fajny program"
+zamieniony_tekst = tekst.upcase
+puts zamieniony_tekst
+# Output: TO JEST SUPER FAJNY PROGRAM
 ```
 
-W tym przypadku, metoda `scan()` wyszukuje wszystkie pasujące fragmenty tekstu i zwraca je w postaci tablicy napisów. Wykorzystano również grupowanie w wyrażeniu regularnym, aby zwrócić tylko wyrazy zaczynające się od dużej litery.
+## W głąb informacji
 
-## Głębszy wgląd w użycie wyrażeń regularnych
+Wyrażenia regularne mają swoje korzenie w matematyce, a zostały wprowadzone do programowania w latach 50. XX wieku. W Ruby, możemy również używać metody `match` zamiast operatora `=~`, ale często jest to kwestia preferencji. Alternatywnym rozwiązaniem dla wyrażeń regularnych są parser-y tekstowe, ale często są one bardziej skomplikowane w użyciu.
 
-Ruby oferuje szeroki zakres możliwości przy użyciu wyrażeń regularnych. Możemy między innymi wykorzystać specjalne sekwencje znaków, które ułatwiają dopasowywanie konkretnych wzorców w tekście, wyrażenia regularne wielolinijkowe, które pozwalają na dopasowanie tekstu rozciągniętego na wiele linii oraz zmienne zastępcze, które ułatwiają zamianę fragmentów tekstu w wyniku dopasowania. Istnieją również sposoby na bardziej zaawansowane operacje, takie jak usuwanie duplikatów czy zmiana kolejności słów w tekście przy użyciu wyrażeń regularnych.
+## Zobacz też
 
-## Zobacz także
-
-- [Dokumentacja Ruby o wyrażeniach regularnych](https://ruby-doc.org/core-2.7.1/Regexp.html)
-- [Przewodnik po wyrażeniach regularnych w Ruby](https://link.medium.com/qHHlw4MHR8)
-- [Kurs "Ruby w 20 minut" z sekcją o wyrażeniach regularnych](https://www.ruby-lang.org/pl/documentation/quickstart/)
+- [Dokumentacja Ruby o wyrażeniach regularnych](https://ruby-doc.org/core-3.0.0/Regexp.html)
+- [Artykuł na temat wyrażeń regularnych w Ruby](https://www.freecodecamp.org/news/learn-regular-expressions-in-about-55-minutes/)
+- [Podstawy wyrażeń regularnych w Ruby](https://www.rubyguides.com/ruby-tutorial/regex/)

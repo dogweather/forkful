@@ -1,7 +1,7 @@
 ---
-title:                "Impresión de salida de depuración"
-html_title:           "Clojure: Impresión de salida de depuración"
-simple_title:         "Impresión de salida de depuración"
+title:                "Imprimiendo la salida de depuración"
+html_title:           "Clojure: Imprimiendo la salida de depuración"
+simple_title:         "Imprimiendo la salida de depuración"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Testing and Debugging"
@@ -10,42 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¿Qué y por qué?
 
-Si eres un desarrollador, es probable que en algún momento hayas tenido que lidiar con errores en tu código. Aquí es donde imprimir la salida de depuración puede ser una herramienta valiosa para ayudarte a identificar y resolver estos errores más rápido. ¡Sigue leyendo para descubrir cómo aprovechar al máximo esta función en Clojure!
+La impresión de mensajes de depuración es un proceso en el que los programadores incluyen mensajes en su código para ayudar a identificar errores o problemas durante la ejecución. Esto les permite seguir el flujo de su programa y detectar posibles problemas antes de que se conviertan en errores críticos.
 
-## Cómo
+## Cómo hacerlo:
 
-Imprimir la salida de depuración en Clojure es muy sencillo. Puedes utilizar la función `prn` para imprimir cualquier valor en la consola. Por ejemplo:
-
-```Clojure
-(prn "Hola Mundo")
-```
-
-Esto imprimirá `Hola Mundo` en la consola. También puedes imprimir variables y estructuras de datos más complejas, como listas o mapas:
+Para imprimir mensajes de depuración en Clojure, simplemente utilizamos la función *prn* seguida de los valores que deseamos imprimir. Por ejemplo:
 
 ```Clojure
-(def temperaturas [32 45 60 72 85])
-
-(prn temperaturas)
+(prn "Hola Mundo!")
+(prn (+ 2 3))
 ```
 
-Esto imprimirá la lista de temperaturas en la consola, lo que puede ser útil si estás depurando un algoritmo que trabaja con esta lista.
-
-## Deep Dive
-
-La función `prn` es útil, pero tiene algunas limitaciones. Por ejemplo, solo puede imprimir en la consola y no permite personalizar la forma en que se imprime el valor. Si quieres más control sobre la salida de depuración, puedes utilizar la función `println` en su lugar.
-
-`println` te permite imprimir en cualquier flujo de salida, como archivos o sockets. También te permite formatear la salida como desees. Por ejemplo, si quieres imprimir una variable junto con su nombre, puedes hacer lo siguiente:
+Esto producirá la siguiente salida en la consola:
 
 ```Clojure
-(println "La temperatura actual es:" temperatura-actual)
+"Hola Mundo!"
+5
 ```
 
-Esto imprimirá en la consola `La temperatura actual es: 72`, suponiendo que `temperatura-actual` tiene un valor de 72.
+## Profundizando:
 
-## Ver también
+La impresión de mensajes de depuración ha sido una práctica común en la programación desde los primeros días de la informática. En lugar de interrumpir la ejecución con un punto de interrupción, los programadores pueden utilizar la impresión de mensajes de depuración para seguir el flujo del programa y ver los valores de las variables en diferentes puntos del código.
 
-- [Documentación oficial de Clojure sobre impresión de valores en la consola] (https://clojure.org/reference/other_functions#Printing%20values%20to%20the%20console)
-- [Artículo sobre cómo depurar en Clojure] (https://medium.com/@AdamsChar/clojure-debugging-fundamentals-c82afc17644f)
-- [Curso de depuración en Clojure] (https://purelyfunctional.tv/courses/debugging-in-clojure/)
+Existen varias alternativas a la impresión de mensajes de depuración, como el uso de un depurador interactivo o una herramienta de visualización de datos. Sin embargo, la impresión de mensajes sigue siendo una técnica valiosa y sencilla que puede ser utilizada en cualquier momento.
+
+En términos de implementación, la función *prn* es en realidad una forma abreviada de la función *println*, que es una función interna que imprime su argumento en la salida estándar. Además, la función *prn* también imprime una nueva línea después de cada argumento.
+
+## Ver también:
+
+- [Página de documentación de Clojure](https://clojure.org/)
+- [Otra forma de imprimir mensajes en Clojure](https://clojuredocs.org/clojure.core/pr)
+- [Uso de depuradores interactivos en Clojure](https://clojuredocs.org/stateful.html#important-note-on-the-use-of-a-debugger)

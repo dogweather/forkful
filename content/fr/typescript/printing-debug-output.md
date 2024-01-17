@@ -1,7 +1,7 @@
 ---
-title:                "Imprimer la sortie de débogage"
-html_title:           "TypeScript: Imprimer la sortie de débogage"
-simple_title:         "Imprimer la sortie de débogage"
+title:                "Impression des sorties de débogage"
+html_title:           "TypeScript: Impression des sorties de débogage"
+simple_title:         "Impression des sorties de débogage"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Testing and Debugging"
@@ -10,48 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Qu'est-ce que c'est et pourquoi le programmer?
+L'impression du débogage est une pratique courante chez les programmeurs pour afficher des informations utiles sur l'exécution d'un programme pendant le processus de développement. Cela peut aider à identifier les erreurs, à suivre le flux d'exécution et à comprendre le comportement du code.
 
-L'affichage du débogage est une pratique courante dans la programmation car elle peut grandement aider les développeurs à identifier et à résoudre les problèmes dans leur code. Avec TypeScript, il existe plusieurs façons d'afficher du débogage pour améliorer le processus de développement.
-
-## Comment faire
-
-Il existe deux principales méthodes pour afficher du débogage en TypeScript : utiliser la fonction console.log() ou utiliser le débogueur intégré dans votre environnement de développement.
-
+## Comment faire:
+Voici un exemple en TypeScript pour afficher "Hello World" en utilisant la fonction *console.log* :
 ```TypeScript
-// Utilisation de console.log()
-let name = "Pierre";
-let age = 25;
-console.log(`Mon nom est ${name} et j'ai ${age} ans.`);
-
-// Résultat : Mon nom est Pierre et j'ai 25 ans.
-
-//Utilisation du débogueur dans VS Code
-function addition(a, b) {
-  return a + b;
-}
-
-let result = addition(5, 7);
-console.log(result);
-
-// Placer un "point d'arrêt" sur la ligne du console.log()
-// Exécutez le programme en mode de débogage
-// Le débogueur s'arrêtera sur la ligne du point d'arrêt et vous pourrez inspecter les valeurs des variables
-// Vous pouvez également parcourir votre code pas à pas pour comprendre son exécution et détecter les erreurs
+console.log("Hello World");
 ```
 
-Il est également possible d'utiliser des outils de débogage tiers spécialement conçus pour TypeScript, tels que le TypeScript Debugger for Chrome, qui permet de déboguer des applications TypeScript directement dans le navigateur Chrome.
+La sortie de ce code sera: `Hello World`.
 
-## Plongée en profondeur
+Si vous voulez afficher des variables ou des valeurs, vous pouvez utiliser des expressions de modèle de chaîne de caractères comme ceci:
+```TypeScript
+let name = "John";
+console.log(`Bonjour ${name}, comment vas-tu?`);
+```
 
-En plus de simplement afficher des valeurs de variables, le débogage en TypeScript peut également être utilisé pour suivre l'exécution de votre code et détecter des erreurs. Par exemple, en utilisant le débogueur intégré de VS Code, vous pouvez surveiller la valeur de vos variables pour détecter des changements suspects ou des boucles infinies.
+La sortie sera: `Bonjour John, comment vas-tu?`.
 
-De plus, le débogage peut être utile pour comprendre comment les différentes parties de votre code interagissent entre elles, en particulier dans les projets multi-fichiers. En utilisant des points d'arrêt stratégiquement placés, vous pouvez suivre l'exécution du code dans les différentes parties de votre application et ainsi mieux comprendre son fonctionnement.
+## Plongée en profondeur:
+L'impression du débogage existe depuis les débuts de la programmation. Avant l'existence de l'interface graphique, c'était le seul moyen pour un programmeur de suivre l'exécution de son code. Avec l'avènement des outils de débogage modernes, l'impression du débogage est devenue moins courante, mais reste utile dans certaines situations.
 
-## Voir aussi
+Il existe également d'autres méthodes pour le débogage telles que l'utilisation de breakpoints ou d'outils de profilage, mais l'impression du débogage continue d'être un moyen rapide et facile pour afficher des informations sur l'exécution du code.
 
-Pour en savoir plus sur le débogage en TypeScript, vous pouvez consulter les ressources suivantes :
+L'implémentation de l'impression du débogage peut varier selon les langages de programmation. En TypeScript, l'utilisation de la fonction *console.log* fournie par JavaScript est le moyen le plus courant de le faire.
 
-- [Documentation officielle de TypeScript pour le débogage](https://www.typescriptlang.org/docs/handbook/debugging.html)
-- [Article de blog sur le débogage en TypeScript dans VS Code](https://code.visualstudio.com/docs/nodejs/nodejs-debugging)
-- [TypeScript Debugger for Chrome](https://github.com/Microsoft/vscode-chrome-debug) - Une extension pour VS Code qui permet de déboguer du code TypeScript dans Chrome.
+## Voir aussi:
+- [Documentation officielle de TypeScript sur l'impression du débogage](https://www.typescriptlang.org/docs/handbook/basic-types.html#basic-types)
+- [Article sur les différentes méthodes de débogage en informatique](https://en.wikipedia.org/wiki/Debugging#Debugging_methods)

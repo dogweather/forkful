@@ -10,50 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-Have you ever needed to extract a specific section of text from a longer string in your Javascript code? Maybe you only need the first few characters, or maybe you need everything after a certain word. That's where extracting substrings comes in handy. It allows you to manipulate and retrieve specific sections of text, saving you time and effort when working with strings.
+Extracting substrings in Javascript refers to the process of retrieving a specific part of a string. This can be useful in various scenarios, such as manipulating user input or parsing API responses. By extracting substrings, programmers can effectively work with smaller chunks of text instead of having to manipulate the entire string.
 
-## How To
+## How to:
 
-To extract a substring in Javascript, you can use the `substring()` method. This method takes in two parameters: the starting index and the ending index of the substring you want to extract. Let's take a look at an example:
-
-```Javascript
-let str = "Hello World!";
-let sub = str.substring(0, 5);
-console.log(sub); // Output: Hello
-```
-In this example, we are declaring the string "Hello World!" and using the `substring()` method to extract the first 5 characters. The starting index is 0, which is the first character of the original string, and the ending index is 5, which is the character right before the 5th index (remember, counting starts at 0). The result is the substring "Hello".
-
-You can also use negative numbers as the parameters, which will count from the end of the string. For example:
+To extract a substring in Javascript, we can use the `substr()` method. This method takes two arguments, the starting index and the length of the substring we want to extract. For example, let's say we have the string "Hello World" and we want to extract the word "World" from it. We can use the following code:
 
 ```Javascript
-let str = "Hello World!";
-let sub = str.substring(6, -1);
-console.log(sub); // Output: World
+let str = "Hello World";
+let substr = str.substr(6, 5);
+console.log(substr);
+
+// Output: World
 ```
 
-In this case, the starting index is 6, which is the character right after the space, and the ending index is -1, which is the last character of the original string.
-
-But what if you only want to extract a portion of the end of a string without knowing the exact length? That's where the `slice()` method comes in. This method takes in one parameter, the starting index, and extracts everything from that index to the end of the string. Let's see an example:
+We can also use negative numbers as the starting index, which will count from the end of the string. For instance, to extract the last 3 characters of the string "Hello World", we can use the following code:
 
 ```Javascript
-let str = "Hello World!";
-let sub = str.slice(6);
-console.log(sub); // Output: World!
+let str = "Hello World";
+let substr = str.substr(-3);
+console.log(substr);
+
+// Output: rld
 ```
 
-In this example, we are extracting everything from the 6th index (the "W") to the end of the string.
+## Deep Dive:
 
-## Deep Dive
+The `substr()` method was first introduced in JavaScript 1.0, and it is still widely used today. However, there are alternatives that have been added in newer versions of JavaScript, such as the `substring()` and `slice()` methods. These methods also extract substrings, but they take different arguments and allow for more flexibility.
 
-The `substring()` and `slice()` methods may seem similar at first, but they actually have some important differences. The biggest difference is that the `slice()` method can also take in a negative number as the starting index, just like we showed in the second coding example. This is because `slice()` uses the end of the string as the default value for the ending index if none is provided.
+When using the `substr()` method, it's important to keep in mind that the second argument specifies the length of the substring, not the ending index. This can cause confusion and unexpected results, especially when dealing with negative numbers. It's also worth noting that the `substr()` method is not supported in Internet Explorer 8 or earlier versions.
 
-On the other hand, the `substring()` method will automatically swap the values of the parameters if the starting index is greater than the ending index. So if we were to use `str.substring(6, 0)`, it would interpret it as `str.substring(0, 6)`.
+## See Also:
 
-It's also important to note that both methods don't change the original string, but instead return a new string with the extracted substring. So if you want to save the result, you need to assign it to a variable like we did in our examples.
-
-## See Also
-
-- [MDN Web Docs: String.prototype.substring()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
-- [MDN Web Docs: String.prototype.slice()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice)
+- [MDN Web Docs - substr()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substr)
+- [W3Schools - JavaScript String substr() Method](https://www.w3schools.com/jsref/jsref_substr.asp)
+- [GeeksforGeeks - JavaScript | substr() function](https://www.geeksforgeeks.org/javascript-substr-function/)

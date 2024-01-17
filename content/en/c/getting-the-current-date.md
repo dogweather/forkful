@@ -10,44 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-Many programs require accessing the current date and time for various purposes such as timestamping events, scheduling tasks, or displaying the current date in a user-friendly format.
+## What & Why?
 
-## How To
-To get the current date and time in C, we will use the `time.h` library. First, we need to declare a variable of type `time_t` which stores the number of seconds since January 1, 1970. Then, we can use the `time()` function to retrieve the current time and store it in our declared variable. Finally, we can use `ctime()` to convert the time value into a string and print it out.
+Getting the current date in C is a way for programmers to obtain the current date and time on a computer. This information is important for various reasons, such as tracking when a program was executed or organizing data in a chronological manner.
 
-```C
+## How to:
+
+To get the current date in C, we can use the standard library function, `time()`. This function returns the number of seconds that have passed since January 1, 1970. Here's an example of using `time()` to print the current date and time:
+
+```
 #include <stdio.h>
 #include <time.h>
 
 int main() {
-    // declare a variable of type time_t
-    time_t currentTime; 
-    
-    // use the time() function to retrieve the current time
-    time(&currentTime); 
-    
-    // use ctime() to convert the time value into a string
-    char* date = ctime(&currentTime); 
-    
-    // print out the current date and time
-    printf("The current date and time is %s", date); 
-    
-    return 0;
+  time_t currentTime;
+  struct tm *localTime;
+
+  // Getting current time
+  currentTime = time(NULL);
+
+  // Converting to local time
+  localTime = localtime(&currentTime);
+
+  // Printing the current date and time
+  printf("Current date and time: %s", asctime(localTime));
+
+  return 0;
 }
 ```
 
-### Sample Output
+The output of this code snippet will be something like this:
+
 ```
-The current date and time is Tue Aug 17 09:27:41 2021
+Current date and time: Sun Oct 17 21:30:02 2021
 ```
 
-## Deep Dive
-The `time()` function returns the number of seconds since January 1, 1970 which is called "Epoch time". This is the standard way of representing time in modern computing systems. However, some operating systems may have a different Epoch time or may not support it at all. In those cases, the `time()` function may return -1 and the current time will be unavailable.
+## Deep Dive:
 
-Furthermore, the `ctime()` function converts the time value into a string using the local time zone and adds a newline character at the end. This means that the displayed time may vary depending on the local time zone settings. To avoid this, we can use the `gmtime()` function instead which converts the time into a UTC time.
+The use of `time()` function for getting the current date can be traced back to the Unix operating system, where it was first implemented. It has since become a standard function in various programming languages and is widely used for time tracking and other related tasks.
 
-## See Also
-- [C time() function documentation](https://www.tutorialspoint.com/c_standard_library/c_function_time.htm)
-- [C ctime() function documentation](https://www.tutorialspoint.com/c_standard_library/c_function_ctime.htm)
-- [C gmtime() function documentation](https://www.tutorialspoint.com/c_standard_library/c_function_gmtime.htm)
+Alternative ways to get the date and time include using third-party libraries or APIs that provide more features and customization options. However, the `time()` function is a reliable and straightforward solution for most basic use cases.
+
+Behind the scenes, `time()` makes use of the computer's internal clock or Real Time Clock (RTC). The clock is a hardware component that keeps track of the current time and date. The `time()` function retrieves this information and converts it into seconds since the Unix epoch (January 1, 1970).
+
+## See Also:
+
+- [C time functions](https://www.tutorialspoint.com/c_standard_library/time_h.htm): A comprehensive list of time-related functions in the standard C library.
+- [Using a third-party library for getting current date and time](https://www.gnu.org/software/libc/manual/html_node/Calendar-Time.html#Calendar-Time): An alternative approach using the GNU C Library.

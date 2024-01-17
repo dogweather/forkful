@@ -10,62 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
+Debugging is an essential part of programming, and one of the most common ways to identify and fix errors is by printing out debug output. This is the process of displaying specific information about the program's execution at various stages. Programmers use this technique to understand how their code is running, detect any unexpected behavior, and ultimately, troubleshoot and resolve issues.
 
-Debugging is an essential part of the software development process. By printing debug output, developers can track the flow of their code and identify any errors or unexpected behaviors. This allows for more efficient troubleshooting and ultimately leads to better quality code.
-
-## How To
-
-Printing debug output in C# is a simple and effective way to improve your debugging process. Here's an example of how to print a message to the console:
+## How to:
+In C#, you can print debug output to the console window using the `Console.WriteLine()` method. This method takes in a string or variable and displays it in the console. Let's see an example:
 
 ```C#
-Console.WriteLine("Debug output: This is a message.");
+int num1 = 10;
+int num2 = 5;
+
+int sum = num1 + num2;
+
+Console.WriteLine("The sum of {0} and {1} is {2}.", num1, num2, sum);
 ```
 
-This will print the message "Debug output: This is a message." to the console. You can also include dynamic information in your debug output by using string interpolation:
+Output:
+```
+The sum of 10 and 5 is 15.
+```
+In this example, we have declared two integer variables, `num1` and `num2`, and assigned them values. Then, we have calculated the sum and used `Console.WriteLine()` to display it, along with the value of the two variables.
 
+You can also use string interpolation to print out debug output. String interpolation allows you to embed expressions directly into the string, making your code more readable and concise. Here's an example using the same scenario as above:
 ```C#
-int num = 5;
-Console.WriteLine($"Debug output: The value of num is {num}.");
+int num1 = 10;
+int num2 = 5;
+
+int sum = num1 + num2;
+
+Console.WriteLine($"The sum of {num1} and {num2} is {sum}.");
 ```
 
-This will print "Debug output: The value of num is 5." to the console.
-
-Debug output can also be useful in more complex scenarios. For example, if you have a method that is being called multiple times, you can print the method name along with any relevant parameters to see how it is being used:
-
-```C#
-public void CalculateSum(int num1, int num2)
-{
-    Console.WriteLine($"Debug output: Calling CalculateSum method with parameters {num1} and {num2}.");
-    int sum = num1 + num2;
-    Console.WriteLine($"Debug output: The sum is {sum}.");
-}
+Output:
+```
+The sum of 10 and 5 is 15.
 ```
 
-Each time this method is called, the debug output will provide valuable information about its execution.
+## Deep Dive:
+Printing debug output is not a new concept, and it has been an essential tool for programmers throughout the years. Before modern programming languages, developers used to write their debug output on a piece of paper or use a dedicated debugging tool to display the information. But as we progressed towards more advanced programming languages, printing debug output using `Console.WriteLine()` became the norm.
 
-## Deep Dive
+There are other ways to print out debug information, such as using a debugger or logging library. These tools allow developers to monitor their code's execution step-by-step to identify and resolve any bugs. However, printing debug output to the console remains the go-to solution for quick troubleshooting.
 
-In addition to printing to the console, C# offers other ways to output debug information. For example, you can use the `Debug` class to send output to the Integrated Development Environment (IDE) output window:
-
-```C#
-Debug.WriteLine("Debug output: This is a message.");
-```
-
-This can be useful when you are working with a larger codebase and need to keep track of multiple console windows.
-
-You can also use `Debug` to write to a log file instead of the console. This is especially helpful when you need to log large amounts of data during debugging. Here's an example:
-
-```C#
-using (StreamWriter writer = new StreamWriter("debug.log", true))
-{
-    writer.WriteLine($"Debug output: The value of num is {num}.");
-}
-```
-
-This will write the debug output to a file called "debug.log" instead of the console.
-
-## See Also
-
-- [Debugging in C#](https://docs.microsoft.com/en-us/visualstudio/debugger/overview-of-debugging?view=vs-2019)
-- [Debug Class (System.Diagnostics)](https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.debug?view=net-5.0)
+## See Also:
+- [Debugging in C#](https://docs.microsoft.com/en-us/visualstudio/debugger/debugging-csharp?view=vs-2019)
+- [C# String Interpolation](https://docs.microsoft.com/en-us/dotnet/csharp/tutorials/string-interpolation)
+- [C# Logging Frameworks](https://stackify.com/best-csharp-logging-frameworks/)

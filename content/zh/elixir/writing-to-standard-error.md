@@ -1,7 +1,7 @@
 ---
-title:                "标准错误的写作"
-html_title:           "Elixir: 标准错误的写作"
-simple_title:         "标准错误的写作"
+title:                "写入标准错误"
+html_title:           "Elixir: 写入标准错误"
+simple_title:         "写入标准错误"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Files and I/O"
@@ -10,34 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
+请注意：无需多余的词句，该篇文章将使用非正式的语气和简洁的写作风格，旨在向 Mandarin 读者介绍使用 Elixir 编程语言时如何向标准错误输出写入内容。
 
-作为一名程序员，我们经常需要与错误信息打交道。在日常工作中，写入标准错误流（standard error）可以方便我们调试和诊断错误。同时，它也可以帮助我们更好地定位问题，提高代码的健壮性和可靠性。
+## 什么是标准错误输出与为何要使用它？
+标准错误输出是指将程序中的错误信息输出到控制台的过程。程序员使用标准错误输出来追踪和调试错误，这有助于提高程序的稳定性和可靠性。
 
-## 如何进行
-
-如果我们想要在Elixir中写入标准错误流，我们可以使用`IO.puts/1`函数。它接受一个字符串作为参数，并将其写入标准错误流。下面是一个简单的例子：
-
-```Elixir
-IO.puts("This is an error message.") 
-```
-运行以上代码，我们将看到错误信息被输出到控制台，而不是标准输出流。下面是输出结果的截图：
-
-![Error message output](/images/elixir-article-error-output.png)
-
-当然，在实际开发中，我们通常会根据具体的场景来写入标准错误流。例如，在一个函数中，当参数不符合预期时，我们可以使用`IO.puts/1`来打印错误信息并结束函数的执行。
-
-## 深入了解
-
-在Elixir中，`IO.puts/1`实际上是调用`IO.puts/2`函数的简写形式。`IO.puts/2`函数的第二个参数是一个可选的IO设备，我们可以指定为`:stderr`来将输出发送到标准错误流。同时，我们也可以使用`IO.puts/2`函数来打印更复杂的数据结构，如列表、元组、Map等。下面是一个使用`IO.puts/2`函数的例子：
+## 如何实现：
+在 Elixir 编程中，我们可以使用 `IO.write(:stderr, "错误信息")` 来向标准错误输出写入内容。下面是一个简单的例子，可以看到程序的输出结果中包含了我们写入的错误信息。
 
 ```Elixir
-IO.puts(:stderr, ["This", "is", "an", "error", "message."])
+IO.write(:stderr, "这是一个错误信息")
 ```
 
-除了`IO.puts/2`函数外，Elixir还提供了很多其他的IO函数来帮助我们写入不同的IO流，如`IO.write/2`、`IO.puts/3`等。有兴趣的读者可以查看官方文档来了解更多。
+输出结果：
+这是一个错误信息
 
-## 参考链接
+## 深入了解：
+历史背景：标准错误输出最初是在 Unix 操作系统中使用的，后来被许多其他编程语言和平台所采用。
 
-- Elixir官方文档：https://hexdocs.pm/elixir/IO.html
-- Elixir School中文版：https://elixirschool.com/zh-cn/
+替代方案：除了使用 Elixir 内置的 `IO.write(:stderr, "错误信息")` 方法，程序员也可以使用其他第三方库来实现向标准错误输出写入内容。
+
+实现细节：在 Elixir 中，标准错误输出是通过 `:stderr` 原子值来表示的，程序会将该值传递给 `IO.write` 函数来进行输出。
+
+## 相关资源：
+更多关于 Elixir 标准错误输出的信息，请参阅官方文档：https://hexdocs.pm/elixir/IO.html#write/3
+
+另外，如果您想了解 Elixir 提供的其他代码输出选项，请查看官方文档中的“标准 IO”部分：https://hexdocs.pm/elixir/IO.html#module-stdio

@@ -1,7 +1,7 @@
 ---
-title:                "Store bokstaver i en streng"
-html_title:           "Go: Store bokstaver i en streng"
-simple_title:         "Store bokstaver i en streng"
+title:                "Å gjøre en streng stor bokstav"
+html_title:           "Go: Å gjøre en streng stor bokstav"
+simple_title:         "Å gjøre en streng stor bokstav"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Strings"
@@ -10,41 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor?
+## Hva & Hvorfor?
+Å kapitalisere en streng er å endre alle bokstaver i en streng til store bokstaver. Dette gjøres for å av og til gjøre teksten mer lesbar eller for å følge en bestemt konvensjon i programmeringsspråket.
 
-Å kunne kapitalisere en streng (string) er en viktig funksjon i ethvert programmeringsspråk. Det lar deg formatere tekst på en mer lesbar og strukturert måte.
-
-## Hvordan kapitalisere en streng i Go?
-
-```Go
+## Hvordan:
+```
+Go 'strings' pakken har en innebygd funksjon kalt 'ToUpper' som kan brukes til å kapitalisere en streng.
+Eksempel:
+Go
 package main
 
 import (
-    "fmt"
-    "strings"
+	"fmt"
+	"strings"
 )
 
 func main() {
-    // Opprett en streng (string) som skal kapitaliseres
-    tekst := "dette er en tekst som skal kapitaliseres"
-
-    // Bruk strings.Title() funksjonen for å kapitalisere strengen
-    kapitalisertTekst := strings.Title(tekst)
-
-    // Skriv ut resultatet
-    fmt.Println(kapitalisertTekst)
-
-    // Output: Dette Er En Tekst Som Skal Kapitaliseres
+	str := "hallo verden"
+	kapitalisert := strings.ToUpper(str)
+	fmt.Println(kapitalisert)
 }
+
+// Output: HALLO VERDEN
 ```
 
-## Dypdykk i kapitalisering av strenger i Go
+## Dypdykk:
+Det å kapitalisere en streng er ikke et nytt konsept, og det er ofte brukt i mange programmeringsspråk. I eldre programmeringsspråk som C ble dette gjort manuelt ved å bruke ASCII-tabellen. I dag finnes det mange andre måter å konvertere strenger til store bokstaver, som for eksempel å bruke regex eller Unicode.
 
-I tillegg til `strings.Title()` funksjonen, kan du også bruke `strings.ToUpper()` for å kapitalisere en streng. Forskjellen mellom disse to er at `strings.Title()` også endrer store bokstaver midt i en streng til små bokstaver.
-
-Det finnes også andre måter å kapitalisere strenger på, som å bruke en `for`-løkke eller `map` funksjonen. Det er også viktig å være klar over at strings i Go er immutabel, så når du gjør en endring på en streng må du lagre resultatet i en ny variabel.
-
-## Se også
-
-- [Golang.org](https://golang.org/) - Offisiell hjemmeside for Go
-- [Go by Example: Strings](https://gobyexample.com/) - Gode eksempler på hvordan håndtere strenger i Go
+## Se Også:
+- https://golang.org/pkg/strings/#ToUpper
+- https://en.wikipedia.org/wiki/Capitalization#Computing

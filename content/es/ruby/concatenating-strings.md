@@ -10,51 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¿Qué y por qué?
+Concatenar cadenas (strings) en programación se refiere a combinar o unir dos o más cadenas de texto en una sola. Los programadores lo hacen para crear mensajes o completar tareas que requieren diferentes partes de texto.
 
-Si estás aprendiendo a programar en Ruby, una de las cosas que seguramente necesitarás hacer es concatenar strings. Esto significa unir dos o más strings para formar uno solo. Puede ser útil en diferentes situaciones, por ejemplo, imprimir un mensaje personalizado o combinar información de diferentes variables.
-
-## Cómo hacerlo
-
-Para concatenar strings en Ruby, puedes utilizar el operador de suma (+) o el método `.concat()`. Veamos algunos ejemplos:
+## Cómo hacerlo:
+Puedes concatenar strings en Ruby usando el operador `+`, como en el siguiente ejemplo:
 
 ```Ruby
-# Utilizando el operador de suma
-nombre = "María"
-apellido = "García"
-edad = 25
-
-mensaje = nombre + " " + apellido + " tiene " + edad.to_s + " años."
-puts mensaje # output: María García tiene 25 años.
-
-# Utilizando el método .concat()
-nombre = "Juan"
-apellido = "Martínez"
-edad = 30
-
-mensaje = nombre.concat(" ").concat(apellido).concat(" tiene ").concat(edad.to_s).concat(" años.")
-puts mensaje # output: Juan Martínez tiene 30 años.
+"¡Hola" + " mundo!"
 ```
 
-Podemos notar que en ambos casos tuvimos que convertir la variable `edad` a string utilizando el método `.to_s`, ya que no podemos sumar una string con un integer.
+Esto producirá el resultado: `¡Hola mundo!`
 
-## Profundizando
-
-Además de los métodos mencionados anteriormente, existen otras formas de concatenar strings en Ruby. Por ejemplo, el método `.prepend()` que agrega un string al inicio de otro, o el método `.<<()` que permite agregar un string al final de otro. También podemos utilizar el método `.concat()` con múltiples parámetros para unir más de dos strings.
-
-Otra forma de concatenar strings es mediante la interpolación, donde utilizamos el símbolo `#{}` dentro de una string para llamar a una variable o una expresión. Por ejemplo:
+También puedes usar el método `concat`, como en el siguiente ejemplo:
 
 ```Ruby
-nombre = "Laura"
-edad = 35
-
-mensaje = "#{nombre} tiene #{edad} años."
-puts mensaje # output: Laura tiene 35 años.
+"¡Hola".concat(" mundo!")
 ```
 
-Finalmente, es importante tener en cuenta que podemos concatenar diferentes tipos de datos, no solo strings. Podemos unir strings con integers, floats, arrays e incluso otros objetos que se puedan convertir a string.
+La salida será la misma: `¡Hola mundo!`
 
-## Ver también
+## Deep Dive:
+En el pasado, los lenguajes de programación utilizaban métodos más complicados para concatenar cadenas, como asignar una cadena al final de otra. Sin embargo, con las constantes mejoras en los lenguajes de programación, como Ruby, ahora es más sencillo y eficiente utilizar operadores o métodos específicos para concatenar.
 
-- [Ruby Guide (en español)](https://ruby-doc.org/core-2.7.1/doc/guides/)
-- [Documentación oficial de Ruby (en inglés)](https://ruby-lang.org/en/documentation/)
+Otra alternativa para concatenar strings en Ruby es utilizando el método `<<`, como en el siguiente ejemplo:
+
+```Ruby
+"¡Hola" << " mundo!"
+```
+
+Y la salida sería: `¡Hola mundo!`
+
+Este método es especialmente útil si quieres añadir texto a una variable existente en lugar de crear una nueva cadena.
+
+## Ver también:
+Más información sobre Ruby y concatenación de cadenas: [Ruby Strings](https://ruby-doc.org/core-2.7.0/String.html)

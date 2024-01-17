@@ -10,58 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-Converting a date into a string may seem like a simple task, but it is an essential skill for any programmer. It allows you to manipulate and display dates in a format that is easily readable for users, making your code more user-friendly.
+Converting a date into a string is the process of converting a date data type into a string data type that can be easily read and manipulated by a computer. This is a common task for programmers, as it allows them to display and work with dates in a more user-friendly format.
 
-## How To
+## How to:
 
-Converting a date into a string in Rust is a straightforward process. First, we need to import the `chrono` crate, which is a popular third-party library for handling dates and times. In your `Cargo.toml` file, add the following line under `dependencies`:
-
-```Rust
-chrono = "0.4.19"
-```
-
-Next, we need to use the `chrono` crate in our code by adding the following line at the top of our `main.rs` file:
+Here's a simple example of how to convert a date into a string in Rust:
 
 ```Rust
-use chrono::{DateTime, Utc};
+use std::time::{SystemTime, UNIX_EPOCH};
+
+// Get the current time
+let now = SystemTime::now();
+
+// Convert it to a UNIX timestamp
+let seconds = now.duration_since(UNIX_EPOCH).unwrap().as_secs();
+
+// Convert the timestamp to a string
+let date_string = seconds.to_string();
+
+println!("Current date and time: {}", date_string);
 ```
 
-Now, we can create a `DateTime` object and format it into a string using the `format()` method. Let's say we want to get the current date and time, and display it in the format "dd/mm/yyyy, hh:mm:ss". Our code would look like this:
-
-```Rust
-fn main() {
-    let current_datetime = Utc::now();
-    let formatted_datetime = current_datetime.format("%d/%m/%Y, %H:%M:%S");
-
-    println!("{}", formatted_datetime);
-}
-```
-
-The output of this code would be something like this: "07/06/2021, 15:45:22".
-
-But what if we want to convert a specific date into a string? We can do that by creating a `DateTime` object with the desired date, instead of using `Utc::now()`. Here's an example:
-
-```Rust
-fn main() {
-    let my_datetime = DateTime::parse_from_str("2021-06-01 14:00:00", "%Y-%m-%d %H:%M:%S").unwrap();
-    let formatted_datetime = my_datetime.format("%d/%m/%Y, %H:%M:%S");
-
-    println!("{}", formatted_datetime);
-}
-```
-
-This code will display "01/06/2021, 14:00:00" as the output.
+This will output the current date and time in seconds since January 1, 1970. Keep in mind that this is just one example and there are many different ways to convert a date into a string in Rust.
 
 ## Deep Dive
 
-While the `format()` method is the most commonly used way to convert a date into a string, there are other methods and options available in the `chrono` crate. For example, you can use the `to_rfc2822()` method to get a string representation of the date in the RFC 2822 format, or the `to_rfc3339()` method for the RFC 3339 format.
+The need to convert a date into a string is not a new concept in programming. In the past, this was often done by manually converting each date component (year, month, day, etc.) into a corresponding string representation. However, with modern programming languages like Rust, there are more efficient and standardized ways to accomplish this task.
 
-Additionally, you can also specify your own custom format by using the `strftime()` method. This allows for more flexibility in displaying the date in a specific way. For a full list of available formatting options, check out the `chrono` documentation.
+In addition to using the `to_string()` method shown in the example above, another approach to converting a date into a string in Rust is by using the `format!()` macro. This allows for more control over the formatting of the date and can be useful when dealing with dates in different locales or timezones.
 
 ## See Also
 
-- [The `chrono` crate documentation](https://docs.rs/chrono/0.4.19/chrono/)
-- [Converting Time between time zones in Rust] (https://blog.logrocket.com/converting-time-between-time-zones-in-rust/)
-- [Working with Dates and Times in Rust] (https://www.youtube.com/watch?v=BHh_pwoJ2zE)
+To learn more about working with dates and times in Rust, check out the official documentation: [https://doc.rust-lang.org/std/time/](https://doc.rust-lang.org/std/time/)
+
+For an alternative method of converting a date into a string, take a look at the `chrono` crate: [https://crates.io/crates/chrono](https://crates.io/crates/chrono)
+
+Happy coding!

@@ -10,44 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-If you're new to programming, you may be wondering what command line arguments are and why they are important. Command line arguments allow you to pass information to your program before it runs, making it more dynamic and versatile.
+In simple terms, reading command line arguments means accepting user input from the command line when running a Python program, instead of hard-coding values directly into the code. Programmers do this to make their program more flexible and adaptable, allowing users to provide different input values without having to change the code every time.
 
-## How To
+## How to:
 
-To read command line arguments in Python, you can use the `sys` module. First, you need to import it into your script using the statement `import sys`. Then, you can access the arguments using `sys.argv`, which returns a list of strings.
-
-Let's look at an example:
+To read command line arguments in Python, we use the `sys` module and its `argv` variable. First, we import the module using `import sys`. Then, we can access the argument values using `sys.argv`, which returns a list of strings. The first element of the list (index 0) will always be the name of the Python file being executed. The subsequent elements are the values entered by the user.
 
 ```Python
 import sys
-print("Total arguments:", len(sys.argv))
 
-print("Argument List:", str(sys.argv))
+# Sample code to read two command line arguments and print them out
+# python sample.py argument1 argument2
+
+print("Argument 1:", sys.argv[1])  # Output: Argument 1: argument1
+print("Argument 2:", sys.argv[2])  # Output: Argument 2: argument2
 ```
 
-Running the above code with the arguments `python example.py arg1 arg2` would produce the following output:
+## Deep Dive:
 
-```
-Total arguments: 3
-Argument List: ['example.py', 'arg1', 'arg2']
-```
+Reading command line arguments has been a common practice in programming since the early days of computers when programs were executed through a command line interface. It allows for a more interactive experience and also makes programs more customizable for different users.
 
-You can also access individual arguments using their index in the list. For example, `sys.argv[1]` would return the first argument, which in this case is `'arg1'`.
+An alternative to using the `sys` module is to use the `argparse` module, which provides more robust functionalities for parsing and validating command line arguments. It also makes the code more readable and organized, with the ability to add descriptions and help texts for each argument.
 
-## Deep Dive
+The implementation of `sys.argv` works by taking the values entered by the user and storing them in a list of strings. This list is then accessible to the program to use as needed. The values can also be converted to different data types using type casting.
 
-In addition to basic usage, there are a few things to keep in mind when working with command line arguments in Python. Firstly, the script's name is included in the argument list, so `sys.argv[0]` will always return the script's name.
+## See Also:
 
-Additionally, arguments are always passed as strings, so if you need to use them as different data types, you will need to convert them using functions like `int()` or `float()`.
-
-Lastly, it's important to handle errors when reading command line arguments, as unexpected inputs can cause your program to crash. Using `try` and `except` statements can help you handle these errors gracefully.
-
-## See Also
-
-For more information on command line arguments and the `sys` module, check out the following resources:
-
-- [Official Python documentation for `sys` module](https://docs.python.org/3/library/sys.html)
-- [Real Python's tutorial on command line arguments](https://realpython.com/python-command-line-arguments/)
-- [Python Crash Course's chapter on command line arguments](https://ehmatthes.github.io/pcc_2e/regular_index/command_line_arguments.html)
+- Official Python documentation on command line arguments: https://docs.python.org/3/library/sys.html#sys.argv
+- More information on the `argparse` module: https://docs.python.org/3/library/argparse.html
+- A detailed tutorial on using command line arguments in Python: https://realpython.com/command-line-interfaces-python-argparse/

@@ -1,7 +1,7 @@
 ---
-title:                "स्ट्रिंग की लंबाई का पता लगाना"
-html_title:           "Elm: स्ट्रिंग की लंबाई का पता लगाना"
-simple_title:         "स्ट्रिंग की लंबाई का पता लगाना"
+title:                "स्ट्रिंग की लंबाई का पता लगाने का तरीका"
+html_title:           "Elm: स्ट्रिंग की लंबाई का पता लगाने का तरीका"
+simple_title:         "स्ट्रिंग की लंबाई का पता लगाने का तरीका"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -10,37 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Kyon
+## क्या और क्यों?
 
-Kya kabhi aapne socha hai ki string ke length ko find karna kyu zaruri hai? Ye bahut hi common si problem hai jo har programmer ke samne aati hai. Kisi bhi programming language mein string ko manipulate karne ke liye, uski length ko find karna zaruri hai. Isse hume pata chalta hai ki string mein kitne characters hai aur hum usse sahi tarike se handle kar sakte hain. Isliye, string ke length ko find karna ek bahut zaruri skill hai har programmer ke liye.
+स्ट्रिंग की लंबाई निकालना क्या है और क्यों प्रोग्रामर्स यह करते हैं। स्ट्रिंग एक प्रोग्रामिंग डेटा प्रकार है जो एक से अधिक अक्षरों की सिरीज होती है। इसके माध्यम से हम एक स्ट्रिंग में हाइफन, स्पेस, नंबर्स, और अन्य विशेष अक्षरों की संख्या जान सकते हैं। प्रोग्रामर्स अक्सर स्ट्रिंग की लंबाई को जानने का उपयोग करते हैं क्योंकि यह लंबाई उनके प्रोग्राम के सही चालू में रखने में मदद कर सकती है।
 
-## Kaise
+## कैसे करें?
 
-Agar aapne kabhi Elm programming language se kaam kiya hai, to aapko pata hoga ki isme strings ko represent karne ke liye "String" data type hota hai. Aur is data type ka ek function hai "length" jo string ki length ko find karne mein help karta hai.
-
-To chaliye dekhte hain kaise hum is function ka use karke string ki length ko find kar sakte hain. Neeche diye gaye code block mein humne ek sample string "Namaste" declare kiya hai aur uski length ko find karne ke liye "length" function ka use kiya hai. Iske baad, humne "Console.log" function ka use karke output ko console pe print kiya hai.
-
-```Elm
-str = "Namaste"
-length(str)
+```elm
+-- स्ट्रिंग की लंबाई का पता लगाएं
+Elm.String.length "Elm लिखना मजेदार है।"
+-- Output: 21
 ```
 
-Output:
+```elm
+-- स्ट्रिंग एक रिक्त स्ट्रिंग है
+Elm.String.length ""
+-- Output: 0
 ```
-7
+
+```elm
+-- स्ट्रिंग में स्पेस और अन्य विशेष अक्षर होंगे
+Elm.String.length "Hi there!"
+-- Output: 9
 ```
 
-Jaise aap dekh sakte hain, "length" function ne hume string "Namaste" ki length, yani 7 return kiya hai. Isi tarah aap kisi bhi string ki length ko find kar sakte hain is simple se function ka use karke.
+## गहरा पतन
 
-## Deep Dive
+स्ट्रिंग की लंबाई को जानने की तकनीक प्यारे से प्राचीन है। पहले, हस्तलिखित प्रोग्रामिंग भाषाओं में, कुछ लिखने के बाद हमें बुल्बुल करना होता था ताकि हम एक स्ट्रिंग के लिए स्पेस या कार्य विशेषताओं की बंदी टिप्पणी दे सकें। आजकल, स्ट्रिंग की लंबाई को परिसंचारी और सुविधाजनक बनाने के लिए भाषाओं में स्ट्रिंग के साथ एक अच्छा काम किया जाता है। अन्य विकल्पों में, प्रोग्रामर्स लंबाई निकालने के लिए स्पेशल फ़ंक्शन और लाइब्रेरी का उपयोग कर सकते हैं। स्ट्रिंग की लंबाई का कोडीगैज के माध्यम से निकालना एक अत्यंत सुविधाजनक समाधान है, जो प्रोग्रामर्स को स्ट्रिंग की संख्या द्वारा संदर्भित किसी भी आश्चर्यजनक स्पेस होने के लिए इन्हें अलग करने में मदद करता है।
 
-Agar hum iss problem ko deep dive karein to hume pata chalta hai ki strings ko manipulate karne ke liye hume unki length ko find karna kitna zaruri hai. Isse hume pata chalta hai ki string mein kitne characters hai aur hum usse sahi tarike se access aur handle kar sakte hain.
+## देखिए भी
 
-Elm programming language mein, strings immutable (unchangeable) hote hain. Yani, ek baar string create ho jane ke baad, hum usme koi changes nahi kar sakte hain. Isliye, agar hume string ko modify karna hai, hume uski length ko find karke, usme se kuch characters remove ya add karne honge aur fir uss naye string ko create karna hoga.
-
-Isi liye, string ki length ko find karna ek bahut hi zaruri task hai jo har programmer ko perfect tarike se karna chahiye. Kyunki iske bina hum string ko manipulate nahi kar sakte hain aur apne desired output ko achieve nahi kar sakte.
-
-## Dekhiye Bhi
-
-- [Official documentation for Elm string functions](https://package.elm-lang.org/packages/elm/core/latest/String)
-- [Tutorial on working with strings in Elm](https://elmprogramming.com/strings.html)
+- [Elm String के डॉक्यूमेंटेशन](https://package.elm-lang.org/packages/elm/string/latest/String)
+- [अन्य भाषाओं में स्ट्रिंग की लंबाई के तरीके](https://www.w3schools.in/language/strings/length/)

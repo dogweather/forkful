@@ -10,49 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+## O que é e porquê?
 
-Enviar uma solicitação HTTP é uma forma essencial de comunicação entre dispositivos e servidores da web. Ao enviar uma solicitação HTTP, o dispositivo pode obter informações, atualizações ou interagir com um servidor da web.
+Enviar uma HTTP request é simplesmente uma forma de enviar uma solicitação para um servidor através da internet. Programadores fazem isso o tempo todo para obter dados de um servidor ou para enviar informações para um servidor, como em uma aplicação móvel conectada à internet.
 
-## Como Fazer
+## Como fazer:
 
 ```Swift
-import UIKit
+import Foundation
 
-func sendHTTPRequest(url: String) {
-    let request = URLRequest(url: URL(string: url)!)
-    let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-        guard let response = response as? HTTPURLResponse, let data = data else {
-            print("Erro ao enviar solicitação HTTP")
-            return
-        }
+// Configurando a URL a ser solicitada
+let url = URL(string: "https://www.example.com/api")!
 
-        if response.statusCode == 200 {
-            // sucesso
-            print(data)
-        } else {
-            // erro
-            print("Erro ao obter dados. Código de erro: \(response.statusCode)")
-        }
+// Criando uma HTTP request com o verbo GET
+var request = URLRequest(url: url)
+request.httpMethod = "GET"
+
+// Realizando a solicitação
+let task = URLSession.shared.dataTask(with: request) { data, response, error in
+    // Tratando os dados recebidos
+    if let data = data {
+        print(String(data: data, encoding: .utf8)!)
     }
-    task.resume()
 }
-
-// exemplo de solicitação HTTP
-let url = "https://www.example.com/api/getData"
-sendHTTPRequest(url: url)
+task.resume()
 ```
 
-O código acima mostra uma função simples para enviar uma solicitação HTTP usando a classe `URLSession` da API `Foundation`. Primeiro, criamos uma `URLRequest` com o URL desejado. Em seguida, usamos essa `URLRequest` para criar uma `URLSessionDataTask` que executa a solicitação e retorna uma resposta HTTP, que podemos verificar para determinar o sucesso ou erro da solicitação. Se a resposta tiver um código de status 200 (OK), podemos acessar os dados retornados na resposta.
+## Mergulho a fundo:
 
-## Mergulho Profundo
+Enviar HTTP requests já é uma prática antiga na programação, utilizado principalmente em aplicações web. Hoje em dia, com o avanço das tecnologias móveis e a popularidade de APIs, a comunicação através de solicitações HTTP também é fundamental em aplicações móveis.
 
-Uma solicitação HTTP é composta por um número de elementos, como o URL do servidor, o método usado (GET, POST, etc.), cabeçalhos e corpo da solicitação. Além disso, podemos especificar parâmetros ou dados para serem enviados junto com a solicitação. Existem também diferentes tipos de solicitações HTTP, como `GET`, `POST`, `PUT` e `DELETE`, que são usadas para diferentes propósitos.
+Existem algumas alternativas para enviar HTTP requests, como o uso de bibliotecas externas ou o uso de frameworks de rede, mas a forma nativa em Swift é bastante eficiente. É importante se atentar às boas práticas de segurança e sempre tratar os dados recebidos de forma correta.
 
-Ao enviar uma solicitação HTTP, também é importante considerar a segurança, pois informações confidenciais podem ser enviadas pelo corpo da solicitação. Portanto, é altamente recomendável usar protocolos de criptografia, como HTTPS, ao enviar solicitações HTTP.
+## Veja também:
 
-## Veja Também
-
-- [Apple Developer Documentation - URLSession](https://developer.apple.com/documentation/foundation/urlsession)
-- [Retrieving Data From the Web - Hacking with Swift](https://www.hackingwithswift.com/example-code/networking/how-to-download-json-from-a-url-coding-challenge)
-- [HTTP Requests in Swift - Medium](https://medium.com/@tomgielen/http-requests-in-swift-c6e78b82a89d)
+- [Documentação oficial da Apple sobre enviar HTTP requests em Swift](https://developer.apple.com/documentation/foundation/url_loading_system)
+- [Artigo da IBM sobre comunicação entre aplicativos iOS e servidores através de solicitações HTTP](https://www.ibm.com/developerworks/library/ios-apps-iosweb/)
+- [Tutorial em vídeo sobre como enviar HTTP requests em Swift](https://www.youtube.com/watch?v=uprQbrYefkI)

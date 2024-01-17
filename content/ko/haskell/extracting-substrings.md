@@ -10,40 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
-문자열에서 부분 문자열을 추출하는 것이 중요한 이유는 데이터 처리 및 텍스트 분석과 같은 작업에서 유용하기 때문입니다. 예를 들어, 사용자가 입력한 검색어를 처리하거나, 웹 페이지에서 특정 내용을 추출하는 데 필요한 경우 등에 사용될 수 있습니다.
+## 무엇 & 왜?
+문자열에서 일부분을 추출하는 것을 컴퓨터 프로그래머들이 하는 이유는 무엇일까요? 그것은 우리가 문자열을 조작하고 원하는 정보를 얻기 위해서입니다. 예를 들어, 만약 내 이름이 "홍길동"이라면, "홍"과 "동"이라는 문자열을 추출해 다른 용도로 사용할 수 있습니다.
 
-## 어떻게
-부분 문자열을 추출하는 방법은 `Data.List` 라이브러리의 `isPrefixOf`와 `isSuffixOf` 함수를 활용하면 간단하게 구현할 수 있습니다. 또한 `take`와 `drop` 함수를 사용하여 원하는 범위의 부분 문자열을 추출할 수도 있습니다.
+## 어떻게:
+Haskell에서 substring을 추출하는 방법은 매우 쉽습니다. ```take``` 함수를 사용하여 문자열의 원하는 부분을 추출할 수 있습니다. 예를 들어:
 
-```Haskell
--- isPrefixOf 함수를 사용한 부분 문자열 추출 예시
-import Data.List (isPrefixOf, isSuffixOf)
+```
+-- "John Doe" 문자열에서 "John"만 추출
+take 4 "John Doe"
 
-main = do
-  let email = "example@gmail.com"
-  if "example" `isPrefixOf` email
-    then putStrLn ("이메일 주소는 example로 시작합니다.")
-    else putStrLn ("이메일 주소는 example로 시작하지 않습니다.")
-  if ".com" `isSuffixOf` email
-    then putStrLn ("이메일 주소는 .com으로 끝납니다.")
-    else putStrLn ("이메일 주소는 .com으로 끝나지 않습니다.")
-
--- take와 drop 함수를 사용한 부분 문자열 추출 예시
-import Data.List (isPrefixOf, isSuffixOf)
-
-main = do
-  let sentence = "우울한 날에는 산책을 하거나 친구와 얘기하는 것이 좋아요."
-  putStrLn (take 11 sentence) -- "우울한 날에는"
-  putStrLn (drop 12 sentence) -- "산책을 하거나 친구와 얘기하는 것이 좋아요."
+-- 결과: "John"
 ```
 
-## 딥 다이브
-부분 문자열을 추출하기 위해 사용되는 `isPrefixOf`, `isSuffixOf`, `take`, `drop` 함수들은 속도가 빠르며 효율적인 알고리즘을 가지고 있어 대부분의 경우에 적합합니다. 또한, `Data.Text` 라이브러리를 이용하여 문자열을 처리하면 더욱 효율적인 부분 문자열 추출이 가능합니다.
+아래는 더 복잡한 예시입니다. 문자열 "Hello World"에서 "World"만 추출하는 방법을 보여줍니다.
 
-## 관련 자료
-- [Haskell 공식 웹사이트](https://www.haskell.org/)
-- [Haskell 시작하기: 모나드에서 모나드로](https://tech.kakao.com/2019/08/01/monoid-monad/)
-- [Haskell로 프로그래밍하기 - 우주를 구하라!](https://academy.realm.io/kr/posts/tech/functional-programming-in-haskell/)
-- [Data.List 문서](http://hackage.haskell.org/package/base-4.12.0.0/docs/Data-List.html)
-- [Data.Text 문서](https://hackage.haskell.org/package/text-1.2.3.1/docs/Data-Text.html)
+```
+-- 문자열을 공백 문자 기준으로 나누어, 두 번째 요소만 추출
+last (tail (words "Hello World"))
+
+-- 결과: "World"
+```
+
+## 깊은 탐구:
+substring 추출의 역사적 배경은 그리 오래되지는 않았지만, 많은 언어들이 이 기능을 내장하고 있습니다. 따라서 다른 프로그래밍 언어에서도 쉽게 구현할 수 있지만, Haskell에서의 구현은 더욱 간결하고 효율적입니다.
+
+추출한 부분을 다른 용도로 사용할 때, 문자열의 길이나 인덱스를 조작하는데 유의해야 합니다. 이러한 정보를 잘못 다룰 경우, 프로그램이 예상치 못한 결과를 보일 수 있습니다.
+
+## 참고 자료:
+- [Haskell 공식 문서](https://www.haskell.org/documentation/#books)
+- [Haskell 활용법](https://www.ohaskell.guide/)
+- [Haskell Cookbook](http://haskell.tailcalled.com/)

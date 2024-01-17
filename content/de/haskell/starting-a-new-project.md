@@ -10,31 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
----
+## Was & Warum?
 
-## Warum
+Wenn du ein neues Programmierprojekt startest, beginnst du damit, eine neue Softwareanwendung oder Bibliothek zu erstellen. Programmierer machen das, um neue Ideen zu verwirklichen, Probleme zu lösen oder einfach um etwas Neues zu lernen.
 
-Warum sollte man sich überhaupt die Mühe machen, ein neues Projekt zu starten? Ganz einfach: Weil es Spaß macht! Außerdem ermöglicht es dir, neue Fähigkeiten zu erlernen und dein Wissen zu erweitern.
-
-## So geht's
-
-Um ein neues Haskell-Projekt zu starten, gibt es einige Schritte zu beachten. Zunächst musst du sicherstellen, dass du Haskell auf deinem Computer installiert hast. Anschließend kannst du mit dem Befehl `stack new mein_projekt` in der Kommandozeile dein neues Projekt erstellen. In der generierten Datei `mein_projekt.cabal` kannst du die Projekteinstellungen wie Name, Version und Autor anpassen. Dann kannst du mit dem Befehl `stack build` dein Projekt bauen und mit `stack exec mein_projekt` ausführen. 
+## Wie geht's:
 
 ```Haskell
-main :: IO ()
-main = putStrLn "Hallo Welt!"
+main = putStrLn "Hello World!"
+
+main2 = do
+  putStrLn "What's your name?"
+  name <- getLine
+  putStrLn ("Nice to meet you, " ++ name ++ "!")
 ```
 
+Output:
+
 ```
-Ausgabe: Hallo Welt!
+Hello World!
+What's your name?
+John
+Nice to meet you, John!
 ```
 
-## Tiefergehende Einblicke
+## Tief tauchen:
 
-Bevor du mit der Entwicklung deines Projekts loslegst, solltest du dir Gedanken über die Struktur machen und welche Funktionen du implementieren möchtest. Eine gute Möglichkeit ist es, sich an vorhandenen Haskell-Projekten zu orientieren und ihre Struktur zu studieren. Auch das Schreiben von Tests und das Verwenden von Bibliotheken können dir dabei helfen, effizienter zu programmieren. Vergiss außerdem nicht, regelmäßig zu reflektieren und deinen Code zu verbessern.
+Das Konzept, ein neues Projekt zu starten, ist eng mit der Entwicklung von Software und Technologie verbunden. In der Geschichte der Programmierung haben sich verschiedene Methoden und Werkzeuge für das Starten von Projekten entwickelt, darunter agile Methoden und DevOps-Praktiken. Alternativen zum Starten von Projekten können auch die Nutzung von vorhandenen Open-Source-Bibliotheken oder das Einbinden von APIs in deine Anwendung umfassen. Bei der Implementierung eines neuen Projekts ist es wichtig, ein gutes Verständnis der gewählten Programmiersprache und der zugrunde liegenden Konzepte zu haben.
 
-## Siehe auch
+## Siehe auch:
 
-- [Offizielle Haskell-Website](https://www.haskell.org/)
-- [Stack-Dokumentation](https://docs.haskellstack.org/en/stable/README/)
-- [Haskell für Anfänger: Eine Einführung in die funktionale Programmierung](https://www.youtube.com/watch?v=CNrCvfaaL-o)
+- [Haskell.org](https://www.haskell.org/)
+- [Haskell Wikibook](https://en.wikibooks.org/wiki/Haskell)
+- [Haskell Reddit](https://www.reddit.com/r/haskell/)

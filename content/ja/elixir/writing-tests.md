@@ -1,7 +1,7 @@
 ---
-title:                "「テストの書き方」"
-html_title:           "Elixir: 「テストの書き方」"
-simple_title:         "「テストの書き方」"
+title:                "テストを書く"
+html_title:           "Elixir: テストを書く"
+simple_title:         "テストを書く"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Testing and Debugging"
@@ -10,41 +10,21 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+## 何が & なんで？
+テストの書き方とは、プログラマーがソフトウェアの動作を確認するための手法です。我々がテストをする理由は、ソフトウェアが想定通りに動作するかどうかを確認するためです。また、コードのバグやエラーを早期に発見し、修正することができるようにするためでもあります。
 
-テストを書くことの重要性を説明する前に、テストについての一般的な見解についてお話ししましょう。テストは、コードが期待どおりに動作するかどうかを確認するために行われる手段です。テストを書くことにより、コードの信頼性や品質を向上することができます。
-
-## 動作させる
-
-テストを書く方法を学ぶには、Elixirのコーディング例を見るのが最も手軽です。以下のコードブロックをご覧ください。
-
+## やり方：
 ```Elixir
-# テストケースを定義する
-test "2つの数値を足し合わせる" do
-  assert Calculator.add(2, 3) == 5
-end
+# このようにして、単純なテストを行うことができます
+assert 1 + 1 == 2
+# もちろん、より複雑なテストを書くこともできます
+assert 5 / 2 == 2.5
 ```
-このコードでは、2つの数値を足し合わせ、計算結果が正しいかどうかをテストしています。`assert`関数を使用することで、コードの出力結果が期待どおりであるかを確認することができます。
 
-さらに、テストコードを実行する方法もあります。`mix test`コマンドを使用することで、プロジェクト内のすべてのテストを実行することができます。
+## 深堀り：
+テストを書くという概念は、プログラミングの世界においては非常に古くから存在しています。その起源の一つには、ドナルド・クヌースによる「ライティング・コンピュータ・ソフトウェア」という本が挙げられます。テストを行う代替手段としては、デバッガーを使用する方法や、静的コード解析ツールを使用する方法があります。Elixirにおいては、テストを書くためのモジュールとしてExUnitが提供されています。
 
-## 深堀りする
-
-テストを書くことは、信頼性や品質を向上させるだけでなく、コードをより柔軟に変更することも可能にします。また、テスト駆動開発（TDD）と呼ばれる開発手法では、テストを書くことを前提としてコードを書くことが推奨されています。
-
-さらに、Elixirでは`doctest`と呼ばれる機能を使用することで、関数の説明や使用例を書きながらテストを実行することができます。この機能を使用することで、ドキュメントとテストを同時に管理することができます。
-
-## その他
-
-テストについての詳細を学ぶには以下のリソースを参考にしてください。
-
-- [Elixir公式ドキュメント](https://elixir-lang.org/getting-started/introduction.html)
-- [Elixir School](https://elixirschool.com/jp/)
-- [プロジェクトのタスクごとにテストを書く方法](https://medium.com/@esuntag/making-a-todo-list-with-test-an-name-name-hero-elixir-a13ae81d3725)
-
-See Also
-
-関連リソース：
-
-- [Elixirの基本文法についての記事](https://www.codingdojo.com/blog/elixir-basics-syntax/)
-- [プログラミングにおけるテストの重要性についての解説動画](https://www.youtube.com/watch?v=Fr2I4DvxRIo)
+## 関連情報：
+- [Elixir: ExUnit](https://hexdocs.pm/ex_unit/ExUnit.html)
+- [radicle: テスト駆動開発とは？](https://radicle.jp/post/7/)
+- [YangTech: テストを書くことの重要性](https://yangtech.tokyo/topics/why-do-we-test/)

@@ -1,7 +1,7 @@
 ---
-title:                "Praca z json"
-html_title:           "Gleam: Praca z json"
-simple_title:         "Praca z json"
+title:                "Praca z formatem json"
+html_title:           "Gleam: Praca z formatem json"
+simple_title:         "Praca z formatem json"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Data Formats and Serialization"
@@ -10,45 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i Dlaczego?
 
-Jeśli masz do czynienia z danymi w formacie JSON (JavaScript Object Notation), warto wiedzieć, że Gleam jest idealnym narzędziem do ich przetwarzania. Dzięki wbudowanemu parserowi JSON i silnie typowanym funkcjom, programowanie w Gleam nie tylko ułatwi pracę z danymi, ale także poprawi bezpieczeństwo Twojego kodu.
+JSON jest to popularny format do przechowywania i przesyłania danych w postaci tekstu. Programiści często używają go do przechowywania danych w swoich aplikacjach, ponieważ jest prosty w użyciu i wszechstronny.
 
-## Jak to zrobić
+## Jak?
 
-Aby rozpocząć pracę z danymi JSON w Gleam, wystarczy wykorzystać wbudowany moduł ```json```. Możesz użyć funkcji ```parse``` do przekonwertowania ciągu znaków w formacie JSON na strukturę danych w Gleam. Na przykład:
-
-```Gleam
-let json_string = "{\"id\": 1, \"name\": \"John\"}"
-let data = json.parse(json_string)
-```
-
-W przypisanym obiekcie ```data``` mamy teraz dostęp do pól ```id``` i ```name``` oraz odpowiednich wartości.
-
-Jeśli chcesz stworzyć obiekt JSON z danymi w Gleam, możesz użyć funkcji ```encode```:
+Aby przetwarzać dane JSON w Gleam, musimy najpierw zaimportować bibliotekę standardową [gleam/json](https://github.com/gleam-lang/gleam/blob/master/lib/json/src/json.gleam). Następnie możemy użyć jednej z funkcji tej biblioteki, takich jak `decode` lub `encode`, aby odpowiednio zamieniać dane z formatu JSON na format Gleam lub z formatu Gleam na format JSON.
 
 ```Gleam
-let data = (%{id: 2, name: "Jane"})
-let json_string = json.encode(data)
+import json
+
+pub struct Person(name: String, age: Int)
+
+let json_data = """
+  {
+    "name": "John",
+    "age": 28
+  }
+"""
+
+let person = json.decode(json_data, Person)
+// person = Person("John", 28)
+
+let person_json = json.encode(person)
+// person_json = "{\"name\":\"John\",\"age\":28}"
 ```
 
-W tym przypadku, zmienna ```json_string``` zawiera ciąg znaków w formacie JSON odpowiadający strukturze danych w Gleam. 
+## Wiecej
 
-## Gleboka przygoda
-
-W celu bardziej zaawansowanej obróbki danych JSON w Gleam, możemy wykorzystać funkcje z modułu ```Json.Decode``` i ```Json.Encode```. Na przykład, jeśli chcielibyśmy wyciągnąć pewne wartości z obiektu JSON i przekonwertować je na inny format, możemy skorzystać z funkcji ```map```:
-
-```Gleam
-let json_string = "{\"id\": 1, \"name\": \"John\"}"
-let data = json.parse(json_string)
-let name = Json.Decode.map(data, (\obj -> obj.name))
-let upper_case_name = String.to_uppercase(name)
-let json_name = Json.Encode.encode_string(upper_case_name)
-```
-
-W powyższym przykładzie, dla danych o strukturze ```{%{id: 1, name: "John"}}```, zmienna ```json_name``` przechowuje przekonwertowane dane w formacie JSON: ```"JOHN"```.
+JSON pojawił się po raz pierwszy w 2001 roku i od tego czasu jest jednym z najpopularniejszych formatów do przetwarzania danych. Alternatywami są na przykład formaty XML i YAML, ale JSON jest uważany za bardziej przejrzysty i czytelny. Implementacja biblioteki [gleam/json](https://github.com/gleam-lang/gleam/blob/master/lib/json/src/json.gleam) jest oparta o specyfikację [RFC 7159](https://tools.ietf.org/html/rfc7159).
 
 ## Zobacz także
 
-- Moduł ```json``` w dokumentacji Gleam: https://gleam.run/modules/json.html
-- Przykładowe projekty i zastosowania JSON w Gleam: https://github.com/search?q=topic%3Ajson+org%3Agleam-lang&type=Repositories
+* [Oficjalna dokumentacja Gleam](https://gleam.run/)
+* [Proste wyjaśnienie czym jest JSON](https://www.json.org/json-pl.html)
+* [Porównanie JSON z innymi formatami](https://www.quora.com/What-are-the-main-differences-between-XML-and-JSON)

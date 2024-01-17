@@ -10,40 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i dlaczego?
 
-Porównywanie dat jest niezwykle przydatną umiejętnością w programowaniu, ponieważ pozwala nam na łatwe sprawdzanie, czy dwa wydarzenia miały miejsce w przeszłości, teraz lub w przyszłości. Jest to również często wykorzystywane przy filtrowaniu i sortowaniu danych w bazach danych.
+Porównanie dwóch dat jest procesem porównywania dwóch punktów w czasie. Programiści często używają tego w swoim kodzie, aby upewnić się, że dwa wydarzenia mają miejsce w odpowiedniej kolejności lub aby określić, czy jedna data jest wcześniejsza, późniejsza lub równa drugiej.
 
-## Jak to zrobić
+## Jak to zrobić:
 
-```PHP
-// Utwórz dwa obiekty daty
-$date1 = new DateTime('2020-01-01');
-$date2 = new DateTime('2021-01-01');
+```php
+// Przykładowa data do porównania
+$date1 = "2021-05-03"; 
+$date2 = "2021-04-01"; 
 
-// Sprawdź, czy $date1 jest przed $date2
-if ($date1 < $date2) {
-    echo "Data 1 jest wcześniejsza niż data 2.";
+// Porównaj czy $date1 jest wcześniejsze niż $date2
+if($date1 < $date2){
+  echo "$date1 jest wcześniejsze niż $date2";
+} else{
+  echo "$date1 jest późniejsze lub równe $date2";
 }
 
-// Sprawdź, czy $date2 jest po $date1
-if ($date2 > $date1) {
-    echo "Data 2 jest późniejsza niż data 1.";
-}
+// Wynik: 2021-05-03 jest późniejsze lub równe 2021-04-01
 ```
 
-Przykładowy wynik:
-```
-Data 1 jest wcześniejsza niż data 2.
-Data 2 jest późniejsza niż data 1.
-```
+## Głębsza analiza:
 
-## Głębsze zagadnienia
+Porównywanie dat ma długą historię w programowaniu. Już w latach 60. zostały opracowane różne systemy i algorytmy do porównywania dat. W PHP można użyć również funkcji `strtotime()` lub `DateTime::diff()` do porównywania dat. Istnieją również alternatywne metody porównywania dat, takie jak używanie znaczników czasu (timestamp) lub formatów daty, które mogą dać bardziej dokładne wyniki. 
 
-Podczas porównywania dat istnieje kilka ważnych rzeczy do rozważenia. Po pierwsze, należy pamiętać o strefie czasowej. Jeśli np. porównujemy daty pochodzące z różnych krajów, powinniśmy najpierw skonwertować je do wspólnej strefy czasowej, aby uzyskać dokładne wyniki. Kolejną ważną kwestią jest uwzględnienie lat przestępnych. Aby uniknąć błędów, należy upewnić się, że obie daty znajdują się w poprawnym formacie, a także dokładnie określić, czy chodzi o porównywanie dat, a nie daty i czasu.
+## Zobacz także:
 
-## Zobacz również
-
-- [Dokumentacja PHP - klasa DateTime](https://www.php.net/manual/en/class.datetime.php)
-- [Porównywanie dat w PHP](https://www.php.net/manual/en/datetime.diff.php)
-- [Porównywanie i sortowanie dat w bazie danych MySQL](https://www.w3schools.com/sql/sql_dates.asp)
+- [Porównywanie dat w PHP](https://www.php.net/manual/en/datetime.diff.php) na oficjalnej stronie dokumentacji PHP
+- [Porówywanie dat w innych językach programowania](https://www.geeksforgeeks.org/comparing-dates-c-c-java-python/) na stronie GeeksforGeeks

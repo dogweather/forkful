@@ -1,7 +1,7 @@
 ---
-title:                "야믈 사용하기"
-html_title:           "Fish Shell: 야믈 사용하기"
-simple_title:         "야믈 사용하기"
+title:                "yaml로 작업하기"
+html_title:           "Fish Shell: yaml로 작업하기"
+simple_title:         "yaml로 작업하기"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Data Formats and Serialization"
@@ -10,63 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
-YAML 파일은 데이터를 효과적으로 저장하고 공유하기 위해 인기 있는 포맷입니다. 여러분이 Fish Shell을 사용한다면, YAML 파일을 다룰 수 있는 방법을 배우는 것이 유용할 것입니다.
+## 뭔데 왜 필요해?  
 
-## 어떻게
-```Fish Shell```에서 YAML 파일을 읽고 쓰는 방법을 간단한 예제와 함께 살펴보겠습니다.
-### 읽기
-먼저, ```YQ``` 패키지를 설치해야 합니다. 이 패키지는 YAML 파일을 읽고 파싱하는데 도움이 됩니다. 설치는 간단합니다.
-```
-$ fish
-$ fisher install jorgebucaran/yq
-```
+YAML 작업이 뭐고 프로그래머들이 왜 그렇게 하는지 알아보자.  
 
-파일을 읽기 위해서는 ```yq read``` 명령어를 사용합니다. 예를 들어, 다음과 같은 YAML 파일이 있다고 가정해봅시다.
+YAML은 "YAML Ain't Markup Language"의 약자로, 인간이 읽고 쓰기 쉬운 데이터 직렬화 언어다. 프로그래밍에서 많이 사용되는 데이터 저장 방식 중 하나로, 설정 파일이나 API 요청 파라미터를 정의할 때 자주 사용된다. YAML의 주요 장점은 가독성이 좋고, 다른 언어나 플랫폼 간 호환성이 높다는 것이다.
+
+## 어떻게 할까?
+
+```Fish Shell (최신 버전)```을 사용하면 YAML 형식의 데이터를 빠르고 효율적으로 작업할 수 있다. 아래는 YAML 파일을 읽어오는 예시 코드이다.
+
 ```
-# fruits.yml
-- name: apple
-  price: $2.50
-- name: banana
-  price: $1.25
+# YAML 파일 읽어오기
+set yaml_file (cat sample.yaml)
+
+# YAML 데이터 출력하기
+echo $yaml_file
 ```
 
-이제 다음 명령어로 이 파일을 읽을 수 있습니다.
+출력 결과:
+
 ```
-$ yq read fruits.yml
+pets:
+  - dog
+  - cat
+  - fish
 ```
 
-출력은 다음과 같을 것입니다.
-```
-- name: apple
-  price: $2.50
-- name: banana
-  price: $1.25
-```
+## 깊게 파헤치기
 
-### 쓰기
-YAML 파일에 새로운 데이터를 추가하고 싶다면 어떻게 해야 할까요? ```yq write``` 명령어를 사용하면 됩니다. 예를 들어 ```fruits.yml```에 새로운 과일 정보를 추가해봅시다.
-```
-$ yq write fruits.yml - a name: cherry price: $3.00
-```
+### 역사적 배경
 
-이제 ```fruits.yml```을 다시 읽어보면 새로운 데이터가 추가된 것을 확인할 수 있습니다.
-```
-- name: apple
-  price: $2.50
-- name: banana
-  price: $1.25
-- name: cherry
-  price: $3.00
-```
+YAML은 2001년에 처음 발표된 인기 있는 데이터 직렬화 언어다. JSON과 비슷한 형식을 가지고 있지만, 인간이 읽고 쓰기에 더 쉬운 형태로 디자인되었다.
 
-## 깊이 파헤치기
-YAML 파일에 대해 더 자세히 알아보고 싶다면 다음 자료들을 참고해보세요:
-- [Fish Shell 공식 문서](https://fishshell.com/docs/current/)
-- [Svetlana Isakova의 "Introduction to YAML"](https://www.infoq.com/articles/yaml-introduction/)
-- [YAML 공식 사이트](https://yaml.org/)
+### 대안들
 
-## 더 보기
-- [YAML 파일 파싱하기](https://github.com/Wind4/vscode-yaml)
-- [VS Code에서 Fish Shell 사용하기](https://marketplace.visualstudio.com/items?itemName=couvre.fish-shell-syntax)
-- [Fish Shell 공식 레포지토리](https://github.com/fish-shell/fish-shell)
+YAML은 주로 데이터 직렬화 작업을 위해 많이 사용되지만, 다른 언어나 플랫폼에서는 다른 대안들을 사용하기도 한다. 예를 들어, JavaScript에서는 JSON을, Java에서는 XML을 주로 사용한다.
+
+### 구현 세부사항
+
+Fish Shell에서 YAML을 처리하기 위해서는 ```yq``` 라이브러리를 설치해야 한다. 이 라이브러리는 YAML 파일을 파싱하고 필요한 정보를 추출할 수 있는 도구다.
+
+## 참고 자료
+
+* [YAML 공식 문서](https://yaml.org/)
+* [Fish Shell 공식 문서](https://fishshell.com/docs/current/)
+* [yq 라이브러리 GitHub 페이지](https://github.com/kislyuk/yq)

@@ -1,7 +1,7 @@
 ---
-title:                "「HTTPリクエストを送信する」"
-html_title:           "C: 「HTTPリクエストを送信する」"
-simple_title:         "「HTTPリクエストを送信する」"
+title:                "「HTTPリクエストの送信」"
+html_title:           "C: 「HTTPリクエストの送信」"
+simple_title:         "「HTTPリクエストの送信」"
 programming_language: "C"
 category:             "C"
 tag:                  "HTML and the Web"
@@ -10,47 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜHTTPリクエストを送信するのか
+## 何をして、何のために？
 
-HTTPリクエストを送信する理由はいくつかありますが、最も一般的なのはWebページやアプリケーションのデータを取得するためです。サーバーにリクエストを送信することで、必要な情報を受け取ることができます。
+HTTPリクエストを送ることは、Webサーバーやクライアント間でデータをやり取りする方法です。プログラマーは、この方法を使うことで、Webサービスを作成し、データを取得したり送信したりすることができます。
 
-## 使い方
+## 方法：
 
-まず、C言語でのHTTPリクエストの送信方法を説明します。以下のように、必要なヘッダーをインクルードし、リクエストを送信するためのソケットを作成します。
+以下の例を参考に、```C ... ```コードブロック内にコーディング例とサンプルの出力を記述します。
 
-```C
+```
 #include <stdio.h>
-#include <sys/socket.h>
-#include <netinet/in.h>
+#include <curl/curl.h>
 
-int main(){
-    int clientSocket = socket(AF_INET, SOCK_STREAM, 0);
+int main(void)
+{
+  CURL *curl;
+  CURLcode res;
+
+  curl = curl_easy_init();
+  if(curl) {
+    curl_easy_setopt(curl, CURLOPT_URL, "https://example.com");
+    res = curl_easy_perform(curl);
+
+    if(res != CURLE_OK)
+      fprintf(stderr, "curl_easy_perform() failed: %s\n",
+              curl_easy_strerror(res));
+
+    curl_easy_cleanup(curl);
+  }
+
+  return 0;
 }
 ```
 
-次に、リクエストを送信するためのデータを作成します。これにはHTTPメソッドやリクエストの宛先、ヘッダーなどが含まれます。以下のように、文字列として作成し、send関数を使ってソケットにデータを送信します。
+### 出力：
 
-```C
-char request[1024] = "GET /index.html HTTP/1.1\r\nHost: www.example.com\r\n\r\n";
-send(clientSocket, request, strlen(request), 0);
+```
+curl_easy_perform() failed: Couldn't connect to server
 ```
 
-最後に、サーバーからのレスポンスを受け取り、表示します。以下のように、recv関数を使ってソケットからデータを受信し、printf関数で表示します。
+## 深堀り：
 
-```C
-char response[1024];
-recv(clientSocket, response, 1024, 0);
-printf("%s", response);
-```
+- **歴史的背景：** HTTPリクエストは、1996年に最初のバージョンが公開されました。その後、HTTP/1.1と呼ばれるバージョンが定着しましたが、最近ではHTTP/2が普及してきています。
+- **代替方法：** HTTPリクエストを送る方法には、他のプログラミング言語やツールもあります。例えば、PythonのRequestsライブラリやPostmanというツールなどがあります。
+- **実装の詳細：** HTTPリクエストには、GETやPOSTのようなさまざまなメソッドがあります。また、リクエストヘッダーやボディーなどのパラメーターを指定することで、より詳細なリクエストを行うことができます。
 
-上記のコードでは、"www.example.com"のindex.htmlページをリクエストし、サーバーからのレスポンスを表示することができます。
+## 関連情報：
 
-## 詳細を深堀りする
-
-実際のHTTPリクエストでは、ヘッダーにさまざまな情報を含めることができます。また、HTTPSを使用する場合はさらにセキュリティー上の処理が必要になります。さらに詳しい情報を知りたい場合は、C言語でのHTTPリクエストの実装について調べてみてください。
-
-## 関連情報
-
-- [C言語入門](https://www.tohoho-web.com/ex/html/c.html)
-- [HTTP リクエストとレスポンス](https://developer.mozilla.org/ja/docs/Web/HTTP/Overview)
-- [C言語でのソケット通信の基本](https://sis.sraoss.co.jp/tips/network_basic/conn_basic_c/basic_c01.html)
+- [curl - man page](https://curl.haxx.se/docs/manpage.html)
+- [HTTP/2の仕様書](https://tools.ietf.org/html/rfc7540)
+- [Python Requestsライブラリの公式ドキュメント](https://2.python-requests.org/en/master/)
+- [Postman公式サイト](https://www.postman.com/)

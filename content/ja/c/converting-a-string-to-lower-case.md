@@ -10,58 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+＃＃ 何となぜ？
 
-文字列を小文字に変換することに興味がある理由は、文字列の大文字や小文字を区別しない検索や比較を行う際に役立つからです。また、データベースやAPIなどで取得した文字列を統一的な形式で扱うためにも必要です。
+文字列を大文字から小文字に変換することは、プログラマーがテキストを操作するときに非常に便利です。大文字と小文字を区別することで、文字列を比較したり、特定の形式に整形したりすることができます。プログラマーは通常、使用する言語に応じて、文字列を大文字から小文字に変換する方法を学びます。
 
-## 方法
+＃＃ 方法：
 
-よく使われる方法は文字列の各文字をループで取り出し、ASCIIコードを利用して大文字を小文字に変換する方法です。以下のように実装できます。
+以下のコードブロックを使用して、文字列を大文字から小文字に変換する方法を説明します。
 
 ```C
-// 大文字から小文字への変換関数
-char toLower(char c){
-    if(c >= 'A' && c <= 'Z'){
-        return c + 'a' - 'A';
-    }
-    else{
-        return c;
-    }
-}
+#include <stdio.h>
+#include <ctype.h>
 
-// 文字列を小文字に変換する関数
-void toLowerCase(char *str){
-    for(int i=0; str[i]!='\0'; i++){
-        str[i] = toLower(str[i]);
-    }
-}
-
-// メイン関数で利用例
 int main()
 {
-    char str[] = "HeLlO World";
-    
-    printf("変換前の文字列：%s\n", str);
-    
-    toLowerCase(str);
-    
-    printf("変換後の文字列：%s\n", str);
-    
+    char str[] = "HELLO WORLD!";
+    int i = 0;
+
+    // 文字列を大文字から小文字に変換するループ
+    while (str[i])
+    {
+        putchar(tolower(str[i]));
+        i++;
+    }
+
     return 0;
 }
-
-/*
-出力結果：
-変換前の文字列：HeLlO World
-変換後の文字列：hello world
-*/
 ```
 
-## 深堀り
+出力：hello world!
 
-文字列を小文字に変換する際、注意すべき点がいくつかあります。例えば、日本語や多言語の文字はASCIIコードを利用して変換できないため、別の方法を用いる必要があります。また、大文字の文字列を小文字に変換するときに英語以外の言語で使用すると、アルファベット以外の文字がエラーを引き起こす場合があります。さらに、多言語対応のプログラムを作る場合にはロケール（言語と国の設定）を適切に設定することも重要です。
+＃＃ 深堀り：
 
-## 参考文献
+文字列を大文字から小文字に変換する方法は、古いコンピューターのプログラマーにとって重要な基本的なスキルでした。その当時、コンピューターは大文字と小文字を区別せず、すべてのコマンドは大文字で入力する必要がありました。しかし、現代では、大文字と小文字を区別することでテキストをより柔軟に操作できるようになりました。
 
-- [C言語で文字列を小文字に変換する方法](https://www.techscore.com/blog/2017/11/09/c%E8%A8%80%E8%AA%9E%E3%81%A7%E6%96%87%E5%AD%97%E5%88%97%E3%82%92%E5%B0%8F%E6%96%87%E5%AD%97%E3%81%AB%E5%A4%89%E6%8F%9B%E3%81%99%E3%82%8B%E6%96%B9%E6%B3%95/)
-- [C言語 小文字大文字の変換 ASCIIコード](https://qiita.com/ichironagai/items/7915a804f44106471f8b)
+文字列を大文字から小文字に変換する方法は、プログラミング言語ごとに異なります。C言語では、```tolower```関数を使用して、文字列を小文字に変換します。ただし、他の言語では、異なるメソッドや関数を使用する必要があるかもしれません。
+
+＃＃ 関連情報：
+
+- https://www.programiz.com/c-programming/library-function/ctype.h/tolower
+- https://www.geeksforgeeks.org/c-program-find-lowercase-string/
+- https://www.tutorialspoint.com/c_standard_library/ctype_h.htm

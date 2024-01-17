@@ -10,67 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-If you've ever wanted to extract specific information from a website or automate web scraping, parsing HTML can be a valuable skill to have in your programming tool belt. With Rust, you can easily create efficient and reliable HTML parsers to make your life easier.
+Parsing HTML is the process of analyzing the structure of an HTML document and extracting the meaningful information from it. It is an essential task for web developers as HTML is the standard markup language used to create web pages. By parsing HTML, programmers can easily access and manipulate the content of a web page, making it an important skill for creating dynamic and interactive websites.
 
-## How To
+## How to:
 
-Parsing HTML involves extracting information from a string of structured text, which can be broken down into smaller, more manageable pieces. In Rust, we can use the `html5ever` library to access the HTML parser and `reqwest` for making HTTP requests. Let's first set up our dependencies in the `Cargo.toml` file:
+To parse HTML in Rust, we can use a library called "scraper". First, let's add it as a dependency in our `Cargo.toml` file:
 
-```
+```Rust
 [dependencies]
-html5ever = "0.25"
-reqwest = "0.11"
+scraper = "0.12.0"
 ```
 
-Next, we can create a `main.rs` file and import our dependencies:
+Next, we need to import the library in our code:
 
-```
-use html5ever::parse_document;
-use html5ever::rcdom::RcDom;
-use reqwest::blocking::get;
+```Rust
+use scraper::{Html, Selector};
 ```
 
-Then, we can make a request to a website and retrieve the HTML content:
+Now we can use the `Html` struct to load our HTML document and the `Selector` struct to specify which elements we want to extract from the document. We can then use the `.select()` function to get a list of all elements that match our selector:
 
-```
-let response = get("https://www.example.com").expect("Unable to make request");
-let body = response.text().expect("Unable to read response body");
-```
-
-Using the `parse_document` function, we can create a DOM representation of the HTML document:
-
-```
-let dom = parse_document(RcDom::default(), Default::default())
-    .from_utf8()
-    .read_from(&mut body.as_bytes());
+```Rust
+let document = Html::parse_document(html_string); // html_string is a string containing our HTML document
+let selector = Selector::parse("h1").unwrap(); // select all h1 elements
+let h1_elements = document.select(&selector);
 ```
 
-Now, we can use methods and iterators to navigate the DOM and extract the information we need. For example, to get all the links from the webpage, we can use the `descendants` method to get all elements in the DOM and filter for links only:
+We can then iterate through the list and extract the desired information from each element:
 
-```
-let links: Vec<String> = dom.document.children[0].descendants()
-    .filter_map(|node| {
-        if let Some(element) = node.as_element() {
-            if element.name.local == "a" {
-                return element.get_attribute("href").map(|link| link.to_string());
-            }
-        }
-        return None;
-    }).collect();
+```Rust
+for h1 in h1_elements {
+    let text = h1.text().collect::<Vec<_>>().join("");
+    println!("{}", text); // print out the text content of each h1 element
+}
 ```
 
-This will give us a vector of strings, each containing a link from the webpage. We can then process this data further or save it to a file for later use.
+This is a basic example, but you can use similar techniques to extract different types of data from an HTML document. For more information and a detailed tutorial, check out the "scraper" documentation.
 
-## Deep Dive
+## Deep Dive:
 
-The `html5ever` library follows the HTML5 parsing algorithm and provides a simple and efficient way to parse HTML using a DOM (Document Object Model) representation. You can also use the `html5ever` crate to handle more complex HTML parsing scenarios, such as handling errors and creating custom attributes.
+Parsing HTML has been a crucial aspect of web development since the beginning. In the early days, developers had to manually parse HTML using string manipulation techniques, which was error-prone and time-consuming. With the rise of programming languages and libraries like Rust and "scraper", this task has become much easier and more efficient.
 
-One of the key features of `html5ever` is the ability to handle invalid HTML and output a valid DOM, making it suitable for real-world situations where website code may not always be perfect. It also provides the ability to sanitize and clean up HTML, making it even more versatile for various parsing needs.
+Aside from "scraper", there are other alternatives for parsing HTML in Rust such as "html5ever" and "kuchiki". Each of these libraries has its own strengths and may be better suited for certain tasks. It's worth exploring and experimenting with different options to find the best fit for your needs.
 
-## See Also
+Under the hood, "scraper" uses the "cssparser" library, which implements the CSS selector syntax. This allows developers to use familiar CSS selectors to specify which elements they want to extract from the HTML document.
 
-- [Rust Docs for html5ever](https://docs.rs/html5ever/0.25.0/html5ever/)
-- [Rust Docs for reqwest](https://docs.rs/reqwest/0.11.0/reqwest/)
-- [Official Rust Website](https://www.rust-lang.org/)
+## See Also:
+
+- [scraper documentation](https://docs.rs/scraper/0.12.0/scraper/)
+- [html5ever library](https://crates.io/crates/html5ever)
+- [kuchiki library](https://crates.io/crates/kuchiki)
+- [cssparser library](https://crates.io/crates/cssparser)

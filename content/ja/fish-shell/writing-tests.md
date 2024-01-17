@@ -1,7 +1,7 @@
 ---
-title:                "テストの書き方"
-html_title:           "Fish Shell: テストの書き方"
-simple_title:         "テストの書き方"
+title:                "記述確認"
+html_title:           "Fish Shell: 記述確認"
+simple_title:         "記述確認"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Testing and Debugging"
@@ -10,38 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜテストを書くのか
+「## 何ですか？・どうしてですか？」
+テストを書くことは、コードを確実に動作させるために、プログラマーが行う作業です。テストを書くことによって、コードのバグを発見しやすくしたり、コードの品質を向上させることができます。
 
-テストを書くことは、コードの品質を保証するうえで非常に重要です。テストを書くことで、コードが正しく動作し、想定通りの結果が得られることを確認することができます。また、後々の変更やリファクタリングにも安心して取り組むことができます。
+「## 作り方：」
+あなたのFish Shellプログラムにテストを書く方法を学びましょう。以下のコードブロックを見て、実際にコードを書いてみましょう。
 
-## テストの書き方
+```Fish Shell ...
 
-```Fish Shell
-function add_two_numbers
-  echo "2 + 2 = (math 2 + 2)"
+# test_example.fishというファイルを作成して、以下のコマンドを入力して保存します。
+function add
+    math "$argv[1] + $argv[2]"
 end
 
-describe "add_two_numbers"
-  it "should return the correct sum"
-    add_two_numbers | grep "4"
-  end
+# テストを書くための関数を作成します。
+function test_add
+    if [ (add 2 3) -eq 5 ]
+        echo "Add function works correctly"
+    else
+        echo "Add function is not working properly"
+    end
 end
+
+# テストを実行して結果を確認します。
+test_add
+
 ```
 
-上記の例では、`add_two_numbers`という関数を定義し、その結果が正しいかどうかをテストしています。`describe`と`it`で囲まれた部分は、それぞれテストケースとテストの期待結果を記述することができます。最後に、`add_two_numbers`を実行し、結果が`4`という文字列を含むかどうかを`grep`コマンドで確認しています。
+以下のような出力が得られれば、テストは成功しています。
 
-## 詳細を理解する
+```Fish Shell ...
+Add function works correctly
+```
 
-テストにはさまざまな種類やフレームワークがありますが、Fish Shellでは`describe`と`it`というコマンドを使うことで、簡単にテストを書くことができます。また、テストケースの実行結果を自動的に判断してくれるので、手動で結果を確認する手間も省けます。さらに、コードを変更した際に、テストを実行して問題がないことを確認することで、意図しないバグやエラーを防ぐことができます。
+「## 深堀り：」
+テストを書くことの歴史的な背景や、代替方法、実装の詳細について詳しく知りたい方は、以下のリンクを参考にしてください。
 
-## もっと詳しく知りたい方へ
+「## 関連情報：」
+テストの具体的な書き方や、テストを書くことの重要性についてより詳しく知りたい方は、以下のリンクを参考にしてください。
 
-もしもっと詳しいテストの書き方やアサーションの使い方などを学びたい方は、以下のリンクを参考にしてみてください。
-
-- [Fish Shellのテストドキュメント](https://fishshell.com/docs/current/tutorial.html#passing-tests)
-- [Fish Shellテストの基本](https://fishshell.com/docs/current/tutorial.html#basic-tests)
-
-## 他に参考になるリンク
-
-- [Fish Shellの公式ドキュメント](https://fishshell.com/docs/current/)
-- [Fish Shellのチュートリアル](https://fishshell.com/docs/current/tutorial.html)
+- [Fish Shell公式ドキュメント](https://fishshell.com/docs/current/index.html)
+- [テスト駆動開発（TDD）についての詳細](https://bit.ly/2Uv4X7D)
+- [テスティングに関するベストプラクティス](https://bit.ly/2HDDN5x)

@@ -10,44 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-So, you've decided to start a new project in Rust - good choice! Rust is a powerful and modern programming language that has been gaining popularity for its speed, safety, and concurrency features. But before you dive into coding, let's take a look at why starting a project in Rust is a great idea.
+Starting a new project in Rust means creating a new codebase that you can work on and develop into a functional program. Programmers often start new projects to solve a problem or create a tool that can be used for a specific purpose.
 
-Rust's strong type system and ownership model help prevent common errors and bugs, making it a reliable choice for building high-performance and secure applications. Its crate ecosystem also offers a vast range of libraries and toolkits, making it easier to integrate with other languages and frameworks.
+## How to:
 
-## How To
+### Creating a new project
 
-To start a new project in Rust, you'll first need to install the Rust toolchain. You can do this by following the installation instructions on the official Rust website. Once installed, you can use the `cargo` command to create a new project with the following command:
+To create a new project in Rust, you can use the `cargo new` command followed by the name of your project. This will create a new directory with the given name and initialize it as a Rust project. 
 
-```
-Rust new my_project
-```
-
-This will create a new directory named *my_project* with the basic files and folders needed for a Rust project. Now, let's take a look at an example of a simple "Hello, World!" program in Rust:
-
-```
-fn main() {
-    println!("Hello, World!");
-}
+```Rust
+cargo new my_project
 ```
 
-Save this code in a file named *main.rs* inside the *src* folder of your project. Then, go to the root folder of your project and run the following command:
+### Compiling and running your project
 
-```
+Once your project is created, you can use the `cargo build` command to compile it. This will create an executable in the `target/debug` directory within your project. To run your program, you can use the `cargo run` command.
+
+```Rust
+cargo build
 cargo run
 ```
 
-You should see the output "Hello, World!" in your terminal. Congratulations! You've just written and executed your first Rust program.
+### Adding dependencies
+
+Rust has a package manager called Cargo that allows you to easily add dependencies to your project. You can use the `cargo add` command followed by the name of the package you want to add.
+
+```Rust
+cargo add rand
+```
 
 ## Deep Dive
 
-Now that you have a basic understanding of how to start a project in Rust and write a simple program, let's dive deeper into the details. Rust follows a strict compile-time checking system and provides comprehensive error messages, making it easy to debug your code. It also has a robust package manager called Cargo, which handles dependency management, building, and running your project.
+### Historical Context
 
-Rust's syntax is similar to other curly-bracket languages like C and Java, but it has some unique features, such as pattern matching and iterators, which make it more expressive and efficient. Additionally, Rust has a strong community that is always willing to help and support new developers, making it a welcoming environment for beginners.
+Rust was created by Mozilla in 2010 and has gained popularity in recent years due to its focus on memory safety and performance. It was designed to be a systems programming language, meaning it is used for low-level tasks such as operating systems or device drivers.
+
+### Alternatives
+
+There are various alternatives to Rust for starting new projects, such as Python, JavaScript, or Java. However, Rust's unique features, such as its strong type system and memory safety, make it a popular choice for certain types of projects.
+
+### Implementation Details
+
+Rust has a syntax that is similar to C++, but with additional features such as memory safety and functional programming concepts. It uses a concept called "ownership" to manage memory, making it less prone to common bugs such as dangling pointers or data races.
 
 ## See Also
 
-- [Official Rust Website](https://www.rust-lang.org)
-- [The Rust Programming Language Book](https://doc.rust-lang.org/book)
-- [The Rust Community Forum](https://users.rust-lang.org)
+- [The Rust Programming Language](https://www.rust-lang.org/)
+- [Cargo: Rust's Package Manager](https://doc.rust-lang.org/cargo/)
+- [Rust Cookbook: Common Programming Recipes](https://rust-lang-nursery.github.io/rust-cookbook/)

@@ -10,48 +10,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Quoi et Pourquoi?
+L'affichage de sortie de débogage est une technique utilisée par les programmeurs pour afficher des messages ou des informations de débogage sur l'état d'un programme pendant qu'il s'exécute. Il est généralement utilisé pour trouver et résoudre les erreurs dans le code et pour comprendre le flux d'exécution d'un programme.
 
-Vous vous êtes probablement déjà retrouvé dans une situation où votre programme ne fonctionne pas comme prévu et vous ne savez pas pourquoi. C'est là qu'imprimer des messages de débogage peut être très utile. En ajoutant des sorties de débogage à votre code, vous pouvez obtenir des informations précieuses sur l'état de vos variables et de votre programme.
-
-## Comment faire
+## Comment faire:
+Voici un exemple de code C++ pour afficher une valeur de débogage :
 
 ```C++
-#include <iostream>
-
-using namespace std;
-
-int main() {
-    int number = 5;
-    
-    // Afficher la valeur de la variable "number"
-    cout << "Valeur de number : " << number << endl;
-    
-    // Afficher un message pour déboguer
-    cout << "Le programme a atteint ce point." << endl;
-    
-    return 0;
-}
+int x = 5;
+cout << "La valeur de x est : " << x << endl; 
 ```
 
-```
-/* Output :
-Valeur de number : 5
-Le programme a atteint ce point.
-*/
-```
+Cela affichera "La valeur de x est : 5" dans la console. Vous pouvez également utiliser des macros telles que `#define DEBUG` pour activer ou désactiver l'affichage de débogage en fonction des besoins.
 
-Pour imprimer des messages de débogage dans votre code, vous pouvez utiliser la fonction `cout` de la bibliothèque standard de C++. Il suffit d'ajouter une instruction `cout` avec le message que vous souhaitez afficher, et vous pouvez également y inclure des variables pour afficher leur valeur.
+## Plongée en profondeur:
+L'affichage de sortie de débogage a été introduit au début de la programmation en C, où les programmeurs utilisaient la fonction `printf` pour afficher des messages dans la console. Aujourd'hui, il existe également des outils plus avancés tels que les débogueurs intégrés dans les environnements de développement intégrés (IDE) tels que Visual Studio ou Xcode. De plus, certains programmeurs préfèrent utiliser des techniques de journalisation, qui enregistrent les messages de débogage dans un fichier plutôt que de les afficher dans la console.
 
-## Plongée en profondeur
-
-Il peut être tentant d'imprimer des messages de débogage pour chaque ligne de code, mais cela peut rapidement rendre votre code illisible et alourdir votre programme. Il est important de limiter l'utilisation de ces sorties à des moments clés, souvent autour de boucles ou de conditions, afin de mieux comprendre comment votre programme se déroule.
-
-En C++, il existe également une fonction de débogage appelée `assert()`, qui vous permet de vérifier si une condition est remplie et de stopper l'exécution du programme si ce n'est pas le cas. Cela peut être utile lors du développement, mais il est recommandé de supprimer les assertions avant la mise en production de votre code.
-
-## Voir aussi
-
-Pour en savoir plus sur l'impression de messages de débogage en C++, vous pouvez consulter ces ressources supplémentaires :
-
-- [Documentation sur `cout` et `endl`](https://www.cplusplus.com/reference/iostream/cout/)
-- [Documentation sur `assert()`](https://www.cplusplus.com/reference/cassert/assert/)
+## Voir aussi:
+- [Débogage en C++](https://fr.wikipedia.org/wiki/D%C3%A9bogage#En_C++) sur Wikipedia
+- [Utiliser les fonctions de débogage](https://docs.microsoft.com/fr-fr/visualstudio/debugger/using-the-debugging-functions?view=vs-2019) dans Visual Studio
+- [Journalisation et débogage](https://www.freecodecamp.org/news/understanding-logging-and-logging-levels/) sur FreeCodeCamp

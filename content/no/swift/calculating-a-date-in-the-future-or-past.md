@@ -1,7 +1,7 @@
 ---
-title:                "Kalkulering av en dato i fremtiden eller fortiden"
-html_title:           "Swift: Kalkulering av en dato i fremtiden eller fortiden"
-simple_title:         "Kalkulering av en dato i fremtiden eller fortiden"
+title:                "Beregning av en dato i fremtiden eller fortiden"
+html_title:           "Swift: Beregning av en dato i fremtiden eller fortiden"
+simple_title:         "Beregning av en dato i fremtiden eller fortiden"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Dates and Times"
@@ -10,38 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hva & Hvorfor?
 
-Det kan være mange grunner til å ønske å beregne en dato i fremtiden eller fortiden. Det kan være for å planlegge en hendelse, følge opp tidsfrister eller bare for å tilpasse en kalender eller app. Uansett årsak, kan det være nyttig å vite hvordan man utfører denne beregningen ved hjelp av Swift-programmeringsspråket.
+Beregning av en dato i fremtiden eller fortiden er en prosess der en programmerer bruker kodespråket Swift for å beregne en spesifikk dato basert på et gitt antall dager, uker, måneder eller år frem eller tilbake i tid. Dette er en viktig teknikk for å håndtere datoer og tidsberegningsrelaterte problemer i programmering.
 
-## Hvordan
+## Slik gjør du det:
+
+For å beregne en dato i fremtiden eller fortiden i Swift, bruker du metoden `addingTimeInterval()` på et `Date`-objekt. Denne metoden tar inn et flytende desimaltall som representerer antall sekunder å legge til eller trekke fra fra den nåværende datoen. Her er et eksempel på hvordan du kan beregne datoen tre måneder frem i tid:
 
 ```Swift
-let today = Date() // Oppretter en variabel for dagens dato
-var dateComponent = DateComponents() // Oppretter en variabel for å endre dato på
-dateComponent.day = 7 // Angir antall dager som skal legges til eller trekkes fra
-// ved å endre tallet på "day" kan man endre dato på ulike måter, for eksempel "month" for å endre måned eller "year" for å endre år
+let currentDate = Date()
+let threeMonths = TimeInterval(60*60*24*30*3) // antall sekunder i 3 måneder
+let futureDate = currentDate.addingTimeInterval(threeMonths)
 
-let futureDate = Calendar.current.date(byAdding: dateComponent, to: today) // Beregner datoen i fremtiden
-let pastDate = Calendar.current.date(byAdding: -dateComponent, to: today) // Beregner datoen i fortiden
+print(futureDate)
 
-print("Datoen i fremtiden: \(futureDate!)") // Printer ut datoen i fremtiden
-print("Datoen i fortiden: \(pastDate!)") // Printer ut datoen i fortiden
+// Output:
+// 2021-06-13 17:18:54 +0000
 ```
 
-Output:
+## Dypdykk:
 
-```
-Datoen i fremtiden: 2021-06-16 10:00:00 +0000 // Avhengig av når koden blir utført
-Datoen i fortiden: 2021-06-02 10:00:00 +0000 // Avhengig av når koden blir utført
-```
+Historisk sett har beregning av datoer vært en kompleks oppgave for programmerere, spesielt på grunn av ulike kalendersystemer og måter å representere datoer på. I dag er det flere programmeringsbiblioteker tilgjengelig som gjør denne prosessen enklere og mer nøyaktig. Noen alternative metoder for å beregne datoer inkluderer `date(byAdding:to:wrappingAround:)`-metoden i Foundation frameworket og `date(byAdding:withValue:to:wrappingComponents:)`-metoden i Calendar-classen. Implementeringsdetaljene for disse metodene kan variere, men konseptet og bruken av dem er ganske lik metoden vi brukte i eksempelet over.
 
-## Dyp dykk
+## Se også:
 
-Swift har en innebygd klasse kalt "DateComponents" som lar deg manipulere datoer ved å legge til eller trekke fra dager, måneder, år osv. Dette, sammen med "Calendar.current.date", lar deg beregne datoer i fremtiden eller fortiden på en enkel måte. Det finnes også mange andre funksjoner og metoder i Swift for å håndtere datoer, som kan være nyttige å utforske for mer avanserte beregninger.
-
-## Se også
-
-- [Swift: How to add and subtract days from a date](https://www.hackingwithswift.com/example-code/language/how-to-add-and-subtract-dates)
-- [Working with Dates and Time in Swift](https://developer.apple.com/documentation/foundation/date)
-- [Using Date Components to Easily Work with Dates in Swift](https://medium.com/better-programming/using-date-components-to-easily-work-with-dates-in-swift-a31f172b088a)
+For mer informasjon om hvordan du arbeider med datoer i Swift, kan du se Apples offisielle dokumentasjon og ulike online ressurser, som for eksempel Ray Wenderlichs tutorial om håndtering av datoer i Swift. Husk å alltid være nøye med data og datoer når du arbeider med programmering, da unøyaktigheter i dette området kan føre til alvorlige feil i koden din.

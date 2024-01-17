@@ -1,7 +1,7 @@
 ---
-title:                "Escrevendo para o erro padrão"
-html_title:           "Javascript: Escrevendo para o erro padrão"
-simple_title:         "Escrevendo para o erro padrão"
+title:                "Escrevendo para erro padrão"
+html_title:           "Javascript: Escrevendo para erro padrão"
+simple_title:         "Escrevendo para erro padrão"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Files and I/O"
@@ -10,34 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+O que & Porquê?
+Escrever para o erro padrão (standard error) é um conceito importante na programação. É uma forma de direcionar informações de erro e depuração para um canal diferente do que é usado para a saída usual do programa. Os programadores utilizam essa técnica para facilitar a identificação e correção de erros em seus códigos.
 
-Escrever para o erro padrão (standard error) pode ser muito útil ao desenvolver aplicações em Javascript. Esta técnica permite que você identifique erros rapidamente e melhore a depuração de seu código.
-
-## Como
-
-Para escrever para o erro padrão em Javascript, você pode usar a função "console.error()", que leva uma mensagem como argumento. Por exemplo:
+Como Fazer:
+Existem duas maneiras principais de escrever para o erro padrão em Javascript: usando o método console.error() e utilizando o objeto process.stderr. Ambos retornam uma mensagem de erro no formato de texto e podem ser usados em conjunto com outros métodos de depuração para melhorar o processo de identificação de erros.
 
 ```Javascript
-console.error("Opa, algo deu errado!");
+//exemplo usando console.error()
+console.error("Houve um erro!");
+//saída: Houve um erro!
+
+//exemplo usando process.stderr
+process.stderr.write("Houve um erro!");
+//saída: Houve um erro!
 ```
 
-Isso irá imprimir a mensagem no console e você poderá ver a informação de erro ao testar seu código. O output seria algo como:
+Mergulho Profundo:
+A prática de escrever para o erro padrão tem sido usada por programadores há décadas. Antigamente, o procedimento era conhecido como "despejo de núcleo" e envolvia o salvamento de informações do programa em um arquivo para ser analisado posteriormente. Hoje em dia, com o avanço da tecnologia, existem outras alternativas para depurar erros, como a utilização de ferramentas de depuração integradas nos editores de código.
 
-```
-Opa, algo deu errado!
-```
-
-## Deep Dive
-
-Escrever para o erro padrão também pode ser útil ao lidar com exceções e erros no seu código. Por exemplo, se você estiver trabalhando com APIs, pode usar o "console.error()" para imprimir mensagens de erro personalizadas quando receber uma resposta inválida.
-
-Além disso, é possível customizar a formatação da mensagem de erro, adicionando variáveis e outras informações relevantes para facilitar a identificação e correção do problema.
-
-## Veja também
-
-Aqui estão alguns recursos adicionais que podem ajudá-lo a se aprofundar no assunto:
-
-- [Documentação oficial sobre console.error()](https://developer.mozilla.org/pt-BR/docs/Web/API/Console/error)
-- [Artigo sobre depuração de código em Javascript](https://blog.bitsrc.io/mastering-the-art-of-debugging-javascript-with-console-api-36e3b1676f5f)
-- [Vídeo explicando como usar console.error() para depuração em tempo real](https://www.youtube.com/watch?v=gnkrDse9QKc)
+Veja Também:
+- Documentação oficial da função console.error: https://developer.mozilla.org/en-US/docs/Web/API/Console/error
+- Tutorial sobre a utilização do objeto process.stderr: https://nodejs.org/api/process.html#process_process_stderr
+- Artigo sobre a evolução do processo de depuração na programação: https://queue.acm.org/detail.cfm?id=1864069

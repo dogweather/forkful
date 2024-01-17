@@ -10,48 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+# Mitä ja miksi?
 
-Tekstitiedoston kirjoittaminen on yksi tärkeimmistä ohjelmointitaidoista, joka voi auttaa sinua luomaan monimutkaisia ​​sovelluksia ja järjestelmiä. Se on myös hyödyllistä, kun haluat tallentaa tietoja pysyvästi ja jakaa niitä muiden kanssa.
+Tekstitiedoston kirjoittaminen on yksinkertaista - vain avaat tekstitiedostosi selaimesta ja kirjoitat siihen haluamasi tekstiä. Ohjelmoijat tekevät tätä siksi, että tekstitiedostoja voidaan käyttää tallentamaan tietoa ja muokkaamaan sitä myöhemmin.
 
-## Miten
+# Miten:
 
-```Elm
-
-module Main exposing (main)
-
-
+Elmilla tekstitiedoston kirjoittaminen on helppoa:
+```
 import File
-import Task
+import Html exposing (text)
 
-
-type Msg
-    = GetFileContentReceived (Result File.Error String)
-
-
-getFileContent : String -> Task.Task Never String
-getFileContent fileName =
-    File.readString fileName
-        |> Task.map2 GetFileContentReceived
-
-
-main : Program Never Model Msg
-main =
-    Task.attempt identity (getFileContent "tekstitiedosto.txt")
-
-
+writeToFile : String -> Cmd msg
+writeToFile content =
+    File.write "tekstitiedosto.txt" content
+        |> Task.perform (err -> text "Error writing to file")
+        (\_ -> text "Text file successfully written!")
 ```
 
-Tämä koodi ottaa käyttöön `File` -moduulin ja käyttää `Task.Task`-tyyppiä saadakseen tiedoston sisällön. `Elm`-tiedoston kirjoittamisen aloittamiseksi sinun on otettava käyttöön `File`-moduuli projektissasi ja käytettävä `Task`-tyyppiä.
+Suorittaessasi tätä koodia tekstitiedosto "tekstitiedosto.txt" luodaan samaan kansioon kuin koodisi, ja siihen tallennetaan haluamasi sisältö.
 
-## Syventävä sukellus
+# Syväsukellus:
 
-`File`-moduulissa on monia muita tärkeitä toimintoja, kuten tiedoston kirjoittaminen, poistaminen ja hakeminen. Voit myös käyttää `Json`-moduulia tallentamaan ja lukemaan tietoja JSON-muodossa.
+Tekstitiedoston kirjoittaminen on tärkeä osa ohjelmointia, sillä tiedostot voivat tallentaa pysyvästi tietoa, jota voidaan käyttää myöhemmin. Jotkut ohjelmoijat käyttävät myös erilaisia ​​tietokantoja tallentaakseen tietoa, mutta tekstitiedosto on edelleen yleinen ja helppo tapa tallentaa ja käsitellä tietoa.
 
-`Elm`-tiedostojen kirjoittaminen on erittäin tärkeää, jos haluat luoda monimutkaisia ​​sovelluksia ja järjestelmiä. Se antaa sinulle mahdollisuuden tallentaa ja jakaa tietoja pysyvästi, mikä on olennaista monille sovelluksille. Jatkossa voit myös tutustua muihin `Elm`-kirjastoihin ja moduuleihin, joiden avulla voit tehdä enemmän tiedostoja ja tietoja käsitteleviä toimintoja.
+# Katso myös:
 
-## Katso myös
+Lisätietoa tekstitiedoston kirjoittamisesta Elmilla löydät viralliselta sivulta: 
+https://package.elm-lang.org/packages/elm/file/latest/
 
-- [Virallinen `Elm`-verkkosivusto](http://elm-lang.org/)
-- [Virallinen `Elm`-dokumentaatio](https://package.elm-lang.org/)
-- [`Elm`-esimerkit GitHubista](https://github.com/elm/projects)
+Tutustu myös muihin tapoihin tallentaa tietoa Elmilla: 
+https://guide.elm-lang.org/effects/file.html

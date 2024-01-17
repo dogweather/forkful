@@ -10,31 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mikä ja miksi?
 
-Uuden projektin aloittaminen on innostavaa ja palkitsevaa monella tapaa. Se tarjoaa mahdollisuuden kehittää uusia taitoja, ratkaista haasteita ja luoda jotain ainutlaatuista omilla ideoilla ja näkemyksillä.
+Projektin aloittaminen on prosessi, jossa ohjelmoija luo uuden ohjelmiston tai sovelluksen tyhjästä. Ohjelmoijat aloittavat uuden projektin yleensä, kun he haluavat luoda jotain täysin uutta tai parantaa jo olemassa olevaa ohjelmistoa.
 
-## Kuinka tehdä se
-
-Aloittaaksesi uuden projektin Javascriptillä, tarvitset vain perustaidot ohjelmoinnista ja pienen annoksen luovuutta. Tässä on esimerkki yksinkertaisesta ohjelmasta, joka tulostaa konsoliin tervehdyksen käyttäjän nimellä:
+## Kuinka tehdä:
 
 ```Javascript
-let nimi = prompt("Syötä nimesi:");
-console.log("Hei " + nimi + "!");
+// Luo uusi tyhjä projekti
+
+mkdir uusi_projekti
+
+// Siirry uuteen projektiin
+
+cd uusi_projekti
+
+// Luo uusi tiedosto projektille
+
+touch index.js
+
+// Avaa tiedosto ja aloita koodaaminen
+
+code index.js
 ```
 
-Tässä koodissa ensin pyydetään käyttäjältä nimi ja tallennetaan se muuttujaan nimeltä "nimi". Sitten käytetään console.log()-funktiota tulostamaan tervehdys konsoliin. Lopputuloksena mikä tahansa nimi, jonka käyttäjä syöttää, tulostetaan konsoliin tervehdyksellä "Hei [nimi]!".
+## Syvällinen sukellus:
 
-## Syvemmälle aiheeseen
+Historiallinen tausta: Projektin aloittamisen merkitys on kasvanut viime vuosina, kun ohjelmistokehitys on kasvanut valtavasti. Ohjelmoijat ovat jatkuvasti kehittämässä uusia projekteja vastaamaan muuttuvia tarpeita ja haasteita.
 
-Ennen kuin aloitat uuden projektin, on tärkeää tehdä suunnitelma ja miettiä tavoitteita. Mieti, mitä haluat projektillasi saavuttaa ja kuka sen kohdeyleisö on. Tämä auttaa sinua valitsemaan sopivan työkalun ja tekniikan.
+Vaihtoehdot: On olemassa erilaisia tapoja aloittaa uusi projekti, kuten käyttämällä valmiita pohjia tai kirjoittamalla koodin tyhjästä.
 
-Javascriptin avulla voit luoda monipuolisia projekteja, kuten verkkosivuja, verkkosovelluksia ja mobiilisovelluksia. Voit myös käyttää erilaisia kirjastoja ja kehyksiä, kuten React ja Angular, helpottaaksesi projektisi kehittämistä.
+Toteutus: Kun aloitat uuden projektin, on tärkeää suunnitella hyvin ja käyttää toimivia käytäntöjä. Tämä auttaa välttämään ongelmia ja tekee projektin kehittämisestä helpompaa ja tehokkaampaa.
 
-Muista myös dokumentoida koodisi ja pitää se siistinä ja selkeänä. Tämä auttaa sinua ja muita kehittäjiä palaamaan projektin pariin myöhemmin ja ymmärtämään koodin toimintaa.
+## Katso myös:
 
-## Katso myös
+[Javascriptin aloittelijan opas](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/JavaScript_basics)
 
-- [Javascript-pikaopas](https://developer.mozilla.org/fi/docs/Web/JavaScript/Guide)
-- [React-kirjaston viralliset dokumentaatiot](https://reactjs.org/)
-- [Angular-kehyksen viralliset dokumentaatiot](https://angular.io/docs)
+[Valmiiden pohjien hyödyntäminen uusissa projekteissa](https://www.freecodecamp.org/news/learn-react-in-7-minutes-92a1d2a2ea27/)

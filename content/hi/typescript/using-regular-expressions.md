@@ -10,31 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
+## क्या और क्यों?
+Regular Expressions (सामान्य अभिव्यक्तियों)दो प्रकार से समझा जा सकता है। पहले, ये स्ट्रिंग पैटर्न को खोजने और मैचिंग करने की तकनीक है। और दूसरे, ये डाटा को फॉर्मैट, वैधता या डेटा रीप्लेसमेंट करने के लिए इस्तेमाल होते हैं। कंप्यूटर प्रोग्रामिंग में, ये डेटा मैनिपुलेशन का एक आधार है जो कि अलग अलग मामलों में मिश्रित डेटा की ढूंढ़ने और फॉर्मैटिंग करने में मदद करता है।
 
-आप गणितीय संकेतकों और पाठकों को खोजने के लिए रेगुलर एक्सप्रेशन से परिचित हो सकते हैं। यह अक्सर विशिष्ट बनाने के लिए टेक्स्ट या संख्याओं को खोजने में मदद करता है।
+## कैसे करें?
+यहां हमें TypeScript में सामान्य अभिव्यक्तियों का लाभ उठाना सीखने के लिए कुछ उदाहरण दिए गए हैं।
 
-## कैसे करें
-
+### Match करना
 ```TypeScript
-// उदाहरण 1: एक सभी अंग्रेजी शब्दों की संख्या को संगठित करें
-let regex = /[A-z]+/g;
-let text = "This article is about regular expressions.";
-let result = text.match(regex);
-console.log(result); // output: ["This", "article", "is", "about", "regular", "expressions"]
-
-// उदाहरण 2: एक फूल प्रकार को खोजने के लिए रेगुलर एक्सप्रेशन का उपयोग करें
-let regex = /rose|jasmine|lily/g;
-let bouquet = "I love jasmine and lilies.";
-let result = bouquet.search(regex);
-console.log(result); // output: 11 (index of "jasmine")
+// यदि आपके पास कोई टेक्स्ट स्ट्रिंग हो, तो आप उस स्ट्रिंग की मैच ढूंढ सकते हैं।
+let string = "यह हमारी डेटा अभिव्यक्ति है।";
+let pattern = /डेटा/;
+let result = string.match(pattern);
+console.log(result); // डेटा
 ```
 
-## गहराई से समझना
+### Replace करना
+```TypeScript
+// आप शीर्ष  के स्थान पर उसी के विकल्प के साथ एक स्ट्रिंग वापस कर सकते हैं।
+let string = "यह हमारी डेटा अभिव्यक्ति है।";
+let pattern = /क्रमबद्ध/;
+let result = string.replace(pattern, "सामान्य");
+console.log(result); // यह हमारी सामान्य डेटा अभिव्यक्ति है।
+```
 
-रेगुलर एक्सप्रेशन टेक्स्ट क्षेत्रों में दिए गए पैटर्न की खोज को परिभाषित करने में मदद करता है। आप उनमें मानक एक्सप्रेशन जैसे शब्दों, वर्णों और संख्याओं को भी जोड़ सकते हैं। यह सुनिश्चित करता है कि आप विशेष प्रकार के गैर-अंकितों को नहीं छोड़ने पाते हैं।
+## गहराई चारण
+सामान्य अभिव्यक्ति का विकास 20वीं शताब्दी की शुरुआत में चुनौतीपूर्ण और साधन से भरा निकला। ये मूख्यत डेटा स्ट्रिंग पैटर्न के साथ मैचिंग के लिए शुरु हुआ था। आज, ये वैधता और डेटा फॉर्मैटिंग के लिए इस्तेमाल किया जाता है। सामान्य अभिव्यक्ति की कुछ आल्टरेनेटिव्स हैं जैसे कि एकमेल और ट्रैन्सडुक्टरी स्क्रिप्टिंग सीस्टम। निर्माण की बात करें, ये बहुत से भाषाओं में उपलब्ध हैं जैसे कि जावास्क्रिप्ट, पायथन और जावा।
 
-## देखें भी
-
-- [टाइपस्क्रिप्ट मैथ ऑब्जेक्ट्स के लिए Regular Expressions](https://www.typescriptlang.org/docs/handbook/declaration-files/do-s-and-don-ts.html#regular-expressions)
-- [Javascript में रेगुलर एक्सप्रेशन (MDN)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
+## और भी देखें
+- [TypeScript आधिकारिक साइट](https://www.typescriptlang.org/)
+- [सामान्य अभिव्यक्ति ट्यूटोरियल TopTal द्वारा](https://www.toptal.com/javascript/regex-tutorial-a-simple-cheatsheet-by-examples)
+- [RegExr - ऑनलाइन सामान्य अभिव्यक्ति चेकर और प्रैक्टिस टूल](https://regexr.com/)

@@ -1,7 +1,7 @@
 ---
-title:                "परीक्षाएं लिखना"
-html_title:           "C: परीक्षाएं लिखना"
-simple_title:         "परीक्षाएं लिखना"
+title:                "टेस्ट लिखना"
+html_title:           "C: टेस्ट लिखना"
+simple_title:         "टेस्ट लिखना"
 programming_language: "C"
 category:             "C"
 tag:                  "Testing and Debugging"
@@ -10,39 +10,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+# यह क्या है और क्यों?
+लेखक सबसे निकाटतम शब्दों में, कोड को टेस्ट करना यानी उसमें अलग-अलग केस और शर्तों को परखना है। इसका मुख्य उद्देश्य हिन्दी रीडर के लिए एक साफ़ मार्गदर्शक होना है कि हर एक स्टेप को कैसे पूरा करें।
 
-Tests are an essential part of any programming project, including C. They help ensure that our code works as intended, identify bugs early on, and make it easier to maintain and troubleshoot our code in the long run. In other words, writing tests can save us a lot of time and headaches in the future.
+# कैसे करें:
+```C ...
+#include <stdio.h>
 
-## How To
-
-```C
-#include<stdio.h>
-
-// A function that adds two numbers
-int add(int num1, int num2) {
-    return num1 + num2;
-}
-
-int main() {
-    // Testing the add function
-    int result = add(3, 7);
-    if (result == 10) {
-        printf("Test Passed!");
-    } else {
-        printf("Test Failed.");
-    }
+int main()
+{
+  // यहाँ आप कोड डालिए
+  return 0;
 }
 ```
+आप C लैंग्वेज में आसानी से टेस्ट कर सकते हैं। ऊपर दिए गए संकलन कोड में, आपको अपने कोड को डालना होगा और उसे एक बिना त्रुटि संकलन देखेंगे। आप मौजूदा कोड चलाकर और उससे जोड़कर अस्थायी परिणाम पाने के उपयुक्त उद्देश्यों के लिए अपने कोड को टेस्ट कर सकते हैं।
 
-When writing tests, we want to cover different scenarios and edge cases to ensure our code is robust. This is done by setting up input values and comparing the output with our expected result. If they match, our test passes, and if not, our test fails. With this approach, we can catch bugs early on and have confidence in our code.
+# गहराई में:
+एक विकल्प के रूप में, सुपरविज़र से कोड स्वीकृतियाँ पाने का विकल्प है। साथ ही उससे भी आप कोडपठना और समस्याएं सुलझाने में मदद मिलती हैं। कोड को टेस्ट करने से आपके कोड पर विश्वास होगा और आप मजबूत कोड लिख सकते हैं।
 
-## Deep Dive
-
-While writing tests may seem like extra work, it can actually save us time in the long run. They serve as living documentation, providing us with examples of how our code should be used. This is useful for future maintenance or when collaborating with others on the project. Additionally, some tools like Valgrind can help us catch memory leaks and other errors that may not be immediately noticeable.
-
-## See Also
-
-- [TDD in C: Getting Started](https://prakhar.me/articles/tdd-in-c/#)
-- [Unit Testing in C](https://www.thecrazyprogrammer.com/2018/03/unit-testing-c-programming-language.html)
-- [Using Valgrind for C Debugging](https://medium.com/@christinasc/using-valgrind-for-c-debugging-b01e9832da4a)
+# देखें भी:
+मार्कडाउन (Markdown) की अगली पोस्टिंग के लिए यह लिंक चेक करें: https://www.markdownguide.org/

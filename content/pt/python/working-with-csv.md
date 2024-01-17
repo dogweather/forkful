@@ -10,27 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
-Antes de mergulharmos na linguagem de programação Python e como ela pode ser usada para trabalhar com arquivos CSV, é importante entendermos o motivo pelo qual isso pode ser benéfico para você. CSV (Comma Separated Values) é um formato de arquivo amplamente utilizado para armazenar e manipular dados tabulares, tornando-o um padrão de fato para muitas tarefas de análise de dados. Trabalhar com CSVs pode facilitar muito a organização e manipulação de dados em diferentes projetos, além de permitir que você compartilhe facilmente esses dados com outras pessoas ou sistemas.
+## O que e por que?
 
-## Como Fazer
-Para começar a trabalhar com CSVs em Python, é necessário primeiro importar o módulo `csv` para poder acessar suas funções úteis. Em seguida, você pode abrir o arquivo CSV desejado usando a função `open()` e especificando o modo de leitura. Por exemplo, se quisermos ler o arquivo "dados.csv", podemos usar o seguinte código:
+CSV (Comma-Separated Values) eh um tipo de arquivo que armazena dados em texto, onde os valores sao separados por virgulas. Programadores frequentemente trabalham com arquivos CSV porque eles sao faceis de ler e manipular.
+
+## Como fazer:
+
+Para ler um arquivo CSV em Python, precisamos importar o modulo `csv`. Em seguida, utilizamos a funcao `reader` para ler o arquivo e iterar sobre ele usando um loop for. Aqui esta um exemplo simples:
 
 ```Python
 import csv
 
-with open("dados.csv", "r") as arquivo:
-    leitor = csv.reader(arquivo)
-    for linha in leitor:
-        print(linha)
+with open('arquivo.csv') as csv_file:
+    csv_reader = csv.reader(csv_file, delimiter=',')
+    for row in csv_reader:
+        print(row)
 ```
 
-Este código criará um objeto de leitor que podemos iterar para obter cada linha do arquivo CSV. Podemos manipular e usar esses dados de acordo com nossas necessidades.
+Isso ira imprimir cada linha do arquivo CSV como uma lista com os valores separados por virgula. 
 
-## Profundando
-Embora o exemplo acima seja um bom ponto de partida para trabalhar com arquivos CSV em Python, existem muitas outras funções e opções disponíveis no módulo `csv`. Podemos usar diferentes delimitadores, como tabulações ou vírgulas, através do parâmetro `delimiter` e também especificar o caractere de escapamento através do parâmetro `escapechar`. Além disso, podemos até mesmo escrever em arquivos CSV usando a função `writer()`. Ter um bom entendimento de como essas funções funcionam e como manipular os dados dentro de um arquivo CSV pode ser muito útil ao trabalhar com conjuntos de dados grandes e complexos.
+Para escrever em um arquivo CSV, usamos a funcao `writer` do modulo `csv`. Aqui esta um exemplo:
 
-## Veja Também
-- [Documentação oficial do módulo csv do Python](https://docs.python.org/3/library/csv.html)
-- [Tutorial da W3Schools sobre como trabalhar com arquivos CSV em Python](https://www.w3schools.com/python/python_csv.asp)
-- [Tutorial do Real Python sobre como ler e escrever em arquivos CSV em Python](https://realpython.com/python-csv/)
+```Python
+import csv
+
+with open('novo_arquivo.csv', 'w') as csv_file:
+    csv_writer = csv.writer(csv_file, delimiter=',')
+    csv_writer.writerow(['valor1', 'valor2', 'valor3'])
+```
+
+Isso ira criar um arquivo CSV com uma linha contendo os valores fornecidos, separados por virgulas.
+
+## Profundando:
+
+Arquivos CSV sao frequentemente usados em aplicacoes que requerem grandes quantidades de dados, como bancos de dados e planilhas. Eles se tornaram populares no final da decada de 1980, como um formato padrao para compartilhamento de dados entre aplicacoes diferentes.
+
+Uma alternativa aos arquivos CSV sao os arquivos JSON, que sao mais versateis e podem armazenar valores em um formato hierarquico. No entanto, arquivos CSV ainda sao amplamente usados devido a sua simplicidade e legibilidade.
+
+Ao trabalhar com arquivos CSV, e importante ter em mente que ele e apenas um formato de armazenamento de dados, e nao oferece qualquer nivel de seguranca. Portanto, arquivos CSV nao devem ser usados para armazenar informacoes sensiveis.
+
+## Veja tambem:
+
+- [Documentacao oficial do modulo CSV do Python](https://docs.python.org/3/library/csv.html)
+- [Introducao ao analise de dados com arquivos CSV em Python](https://realpython.com/python-csv/)
+- [Tutorial sobre manipulacao de arquivos CSV em Python](https://www.dataquest.io/blog/python-read-write-csv/)

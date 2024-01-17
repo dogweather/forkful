@@ -1,7 +1,7 @@
 ---
-title:                "使用json进行编程"
-html_title:           "Fish Shell: 使用json进行编程"
-simple_title:         "使用json进行编程"
+title:                "使用JSON编程"
+html_title:           "Fish Shell: 使用JSON编程"
+simple_title:         "使用JSON编程"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Data Formats and Serialization"
@@ -10,43 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 为什么要用 JSON
+## 什么 & 为什么？
 
-JSON是一种使用广泛的数据格式，可以在不同的编程语言中进行数据交换和存储。许多应用程序和网络服务都使用JSON来传输数据，因此学习如何在Fish Shell中处理JSON是非常有用的。
+JSON是一种常见的数据格式，它是一种轻量级的、易读写的数据交换格式。程序员们经常使用JSON来存储和传输数据，因为它可以方便地在不同的系统和语言之间进行交流。
 
-# 如何操作JSON
+## 如何：
 
-Fish Shell内置了一个强大的JSON解析器，可以轻松地处理JSON数据。下面是几个简单的示例，展示了如何使用Fish Shell来读取和写入JSON数据。
-
-```
-# 读取JSON文件
-set data (json -f file.json)
-echo $data
-
-# 从字符串解析JSON
-set json_str '{"name": "John", "age": 25}'
-set person (json -d "$json_str")
-echo $person[name] # 输出John
-
-# 写入JSON文件
-set person_json (json -e '{"name": "Jane", "age": 30}')
-json -f new_file.json $person_json
-```
-
-输出示例：
+在Fish Shell中，可以使用内置的json工具来方便地处理JSON数据。例如，我们可以使用json parse命令来解析JSON数据，并使用.操作符来获取数据中的特定值。下面是一个使用json parse命令的例子：
 
 ```
-{"name": "John", "age": 25}
-John
+set json_data (curl -s "https://api.github.com/users/fish-shell")
+echo $json_data | json parse .login
 ```
 
-# 深入学习JSON
+上面的命令将从GitHub的API接口获取Fish Shell用户的信息，并输出用户名"fish-shell"。
 
-JSON是一种轻量级的数据交换格式，由于其简洁性和易读性，成为了许多应用程序和网络服务的首选。Fish Shell提供了许多有用的内置函数来处理JSON数据，可以深入学习如何使用这些函数来更有效地处理JSON数据。
+## 深入探讨：
 
-另外，了解JSON的语法，包括对象、数组、字符串等的表示方法，也是很重要的。可以通过参考官方文档来进一步学习有关JSON的知识。
+JSON最早是由Douglas Crockford在2001年提出的，它是一种基于JavaScript的数据表示方式。由于其简洁易懂的特点，JSON很快就受到了广泛的欢迎，并被广泛应用于Web编程和API接口的数据交换中。
 
-# 参考资料
+除了使用内置的json工具来处理JSON数据外，也可以使用第三方库，如jq来处理复杂的JSON数据结构。另外，Fish Shell也提供了一个json_array函数，可以方便地将数组转换为JSON格式。
 
-- [Fish Shell官方文档](https://fishshell.com/docs/current/index.html)
-- [JSON官方文档](https://www.json.org/json-en.html)
+## 参考资料：
+
+- [JSON官方网站](https://www.json.org/)
+- [Fish Shell文档中关于JSON的介绍](https://fishshell.com/docs/current/tutorial.html#working-with-json-data)
+- [jq官方文档](https://stedolan.github.io/jq/)

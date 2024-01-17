@@ -10,39 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co to jest i dlaczego to robimy?
 
-Kalkulowanie daty w przyszłości lub przeszłości jest częstym wyzwaniem dla programistów. Może to być wymagane przez różne aplikacje, takie jak aplikacje do planowania spotkań lub aplikacje do przypominania o ważnych datach. W dzisiejszym artykule dowiesz się, jak użyć Elixir, aby prostym i skutecznym sposobem przeliczać daty w przyszłości lub przeszłości.
+Obliczanie daty w przyszłości lub przeszłości jest działaniem, które polega na wykorzystaniu języka programowania do wyliczenia daty, która znajduje się w przyszłości lub przeszłości od aktualnej daty. Programiści często wykonują to, aby automatyzować procesy lub prowadzić obliczenia na danych zawierających informacje o dacie.
 
-## Jak to zrobić
+## Jak to zrobić?
 
-Aby przeliczyć datę w przyszłości lub przeszłości w Elixirze, musimy skorzystać z biblioteki "Calendar". Ta biblioteka zawiera wiele użytecznych funkcji związanych z datami, w tym funkcję "add" służącą do dodawania lub odejmowania określonej liczby dni od aktualnej daty. Przykładowy kod wyglądałby następująco:
+```Elixir
+# Obliczanie dzisiejszej daty
+Date.utc_today()
 
-```elixir
-require Calendar
+# Dodanie 3 dni do dzisiejszej daty
+Date.utc_today() |> Date.add(3)
 
-future_date = Calendar.DateTime.add(Calendar.local_time(), 10, :days)
-past_date = Calendar.DateTime.add(Calendar.local_time(), -5, :days)
+# Odejmowanie 5 dni od dzisiejszej daty
+Date.utc_today() |> Date.add(-5)
 
-IO.puts("Data w przyszłości: #{Calendar.DateTime.to_iso8601(future_date)}")
-IO.puts("Data w przeszłości: #{Calendar.DateTime.to_iso8601(past_date)}")
+# Wyświetlenie daty w innym formacie
+Date.utc_today() |> Date.to_string("{YYYY}-{0M}-{0D}")
 ```
 
-Wywołajmy funkcję "add" i przekażmy jej trzy argumenty: bieżącą datę, liczbę dni do dodania lub odjęcia, oraz jednostkę czasu, w której wyrażona jest liczba dni. W powyższym przykładzie, wywołanie funkcji "Calendar.local_time()" zwraca bieżącą datę, a "to_iso8601" służy do sformatowania daty w postaci czytelnej dla człowieka. Wynikiem powyższego kodu będzie:
-
+Przykładowy wynik:
 ```
-Data w przyszłości: 2021-09-07T18:00:00Z
-Data w przeszłości: 2021-08-23T18:00:00Z
+2022-01-01
 ```
 
-Mamy więc prosty sposób na obliczenie daty w przyszłości lub przeszłości z użyciem Elixira.
+## Pogłębione informacje
 
-## Dogłębne zagłębianie się
+1. W przeszłości, obliczanie daty w przyszłości lub przeszłości było bardzo czasochłonnym procesem, ponieważ wymagało manualnego liczenia dni. Dzięki rozwojowi języków programowania, takich jak Elixir, ten proces stał się prostszy i szybszy.
+2. Alternatywą dla Elixir może być użycie języków programowania takich jak Java czy Python, które również posiadają funkcje do obliczania daty.
+3. Obliczanie daty w przyszłości lub przeszłości wymaga dokładnego zrozumienia kalendarza gregoriańskiego oraz sposobu jego liczenia dni.
 
-W bibliotece "Calendar" istnieje wiele innych funkcji związanych z datami, takich jak "add!" do bezpośredniego modyfikowania daty lub "diff" do obliczania różnicy między dwiema datami. Możesz także użyć funkcji z biblioteki "Timex", która dostarcza jeszcze więcej opcji manipulacji datami w Elixirze.
+## Zobacz również
 
-## Zobacz także
-
-- Dokumentacja Elixir do funkcji "Calendar.add": [https://hexdocs.pm/elixir/Calendar.html#add/3](https://hexdocs.pm/elixir/Calendar.html#add/3)
-- Poradnik Elixira dotyczący manipulacji datami: [https://elixirschool.com/pl/lessons/specifics/ecto/](https://elixirschool.com/pl/lessons/specifics/ecto/)
-- Strona projektu "Timex": [https://github.com/bitwalker/timex](https://github.com/bitwalker/timex)
+Linki do źródeł związanych z obliczaniem daty w przyszłości lub przeszłości:
+- Dokumentacja Elixir: https://hexdocs.pm/elixir/master/Date.html
+- Przykładowy kod w języku Python: https://www.programiz.com/python-programming/datetime/strptime
+- Funkcja w języku Java: https://docs.oracle.com/javase/8/docs/api/java/util/Calendar.html

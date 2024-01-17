@@ -10,41 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-Starting a new project can be a daunting task, but with the rising popularity of TypeScript, it has become an enticing option for many developers. With its strong type system and powerful features, TypeScript offers a more structured approach to JavaScript, making it a worthy choice for any new project.
+Starting a new project in programming refers to the process of creating a new software or application from scratch. Programmers do this in order to develop new and innovative solutions to real-world problems, improve upon existing software, or simply for the challenge and fun of creating something new.
 
-## How To
-
-To start a new TypeScript project, first make sure you have TypeScript installed globally on your machine. You can do this by running `npm install -g typescript` in your terminal.
-
-Next, create a new folder for your project and initialize it as a Node.js project with `npm init -y`. This will create a `package.json` file in your project folder.
-
-Now, create a new file called `index.ts` and let's write our first TypeScript code:
+## How to:
 
 ```TypeScript
-// index.ts
-const message: string = "Hello, TypeScript!";
-console.log(message);
+// Example 1: Creating a basic console application
+
+console.log("Hello, world!"); // Outputs "Hello, world!" in the console
+
+// Example 2: Setting up a new React project using create-react-app
+// Note: Node.js and npm must be installed beforehand
+
+npx create-react-app my-app // Creates a new React project named "my-app"
+cd my-app // Changes directory to the project folder
+npm start // Runs the project in development mode
+
 ```
 
-Here, we declare a variable `message` with a type annotation of `string`, and then log it to the console. To compile this code into JavaScript, run command `tsc index.ts` in your terminal. This will create a `index.js` file in the same folder.
+## Deep Dive:
 
-To run our code, we need to use `node index.js` in the terminal. You should see the message "Hello, TypeScript!" printed in the console.
+Starting a new project has become much easier with the development of modern programming frameworks and tools. In the past, programmers had to write all the code from scratch, but now there are many options available that can speed up the process, such as using templates, boilerplates, or code generators. Other alternatives include forking an existing project or collaborating with others on open-source projects. Implementation details vary depending on the programming language and tools being used, but the basic steps usually involve creating a project structure, setting up dependencies, and writing code.
 
-## Deep Dive
+## See Also:
 
-Now, let's dive deeper into starting a new TypeScript project. One of the first steps is to set up our `tsconfig.json` file, which is a configuration file for TypeScript projects. This file tells the TypeScript compiler how to compile our TypeScript code into JavaScript.
-
-To generate a basic `tsconfig.json` file, run command `tsc --init` in your terminal. This will create a file with default settings, but you can customize it according to your project's needs. Some common configurations include specifying the version of TypeScript, target environment, and output directory.
-
-Another important aspect of a TypeScript project is using type definitions. These are files that describe the types and structures of external JavaScript libraries or modules, allowing TypeScript to understand and use them in your code.
-
-You can install type definitions for a specific library using `npm install @types/library-name`. For example, if you're using Express in your project, you can install its type definitions using `npm install @types/express`. These type definitions will be automatically included in your `tsconfig.json` file under the `types` section.
-
-## See Also
-
-- Official TypeScript documentation: https://www.typescriptlang.org/docs/home.html
-- TypeScript Handbook: https://www.typescriptlang.org/docs/handbook/intro.html
-- Learn TypeScript in 5 minutes: https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html
-- Setting up a TypeScript project: https://www.typescriptlang.org/docs/handbook/setting-up-your-project.html
+- [Why Starting a New Project Can Be Daunting (But Is Totally Worth It!)](https://dev.to/t/team-productivity/why-starting-a-new-project-can-be-daunting-but-is-totally-worth-it-2la0)
+- [The Top 10 Alternatives to Starting a New Project from Scratch](https://codecondo.com/top-10-alternatives-to-starting-a-new-project-from-scratch/)
+- [The Comprehensive Guide to Starting a New React Project](https://www.robinwieruch.de/react-folder-structure)

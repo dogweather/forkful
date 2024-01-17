@@ -1,7 +1,7 @@
 ---
-title:                "Satunnaisten lukujen generointi"
-html_title:           "Clojure: Satunnaisten lukujen generointi"
-simple_title:         "Satunnaisten lukujen generointi"
+title:                "Sattumanvaraisten lukujen luominen"
+html_title:           "Clojure: Sattumanvaraisten lukujen luominen"
+simple_title:         "Sattumanvaraisten lukujen luominen"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Numbers"
@@ -10,44 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+Mikä & Miksi?
 
-Satunnaisten numeroiden generoiminen voi olla hyödyllistä monissa tilanteissa, kuten simulaatioissa, peliohjelmoinnissa tai testauksessa. Se voi myös olla hauskaa ja opettavaista kehittäjille, jotka haluavat tutkia satunnaisuuden käsitettä ja sen sovelluksia ohjelmoinnissa.
+Satunnaislukujen generoiminen on prosessi, jossa tietokone tuottaa sattumanvaraisia numeroita. Tämä on tärkeä työkalu monille ohjelmoijille, sillä se auttaa heitä muun muassa simuloimaan sattumanvaraisia tapahtumia ja testaamaan algoritmejaan.
 
-## Miten
+Kuinka tehdä?
 
-```Clojure
-(import java.util.Random)
-
-(def rand (new Random))
-
-(defn generate-random-number [min max]
-  (+ min (.nextInt rand (- max min))))
-
-(print (generate-random-number 1 10)) ; Tulostaa satunnaisen numeron väliltä 1-10
-```
-
-Meidän tulee ensin tuoda Java-luokka `Random`, joka auttaa meitä generoimaan satunnaisia lukuja. Sitten luomme muuttujan `rand` ja määrittelemme funktion `generate-random-number`, joka ottaa argumenteiksi minimi- ja maksimiluvut, joiden väliltä haluamme generoida satunnaisen luvun. Lopuksi tulostamme generoidun luvun käyttämällä `print`-funktiota.
-
-### Huomioitavaa: 
-
-Useiden satunnaisten lukujen generoimiseen, voi olla hyödyllistä määritellä `rand`-muuttuja funktioksi ja kutsua sitä tarvittaessa.
+###### Clojure Satunnaislukujen generoiminen
 
 ```Clojure
-(defn rand []
-  (new Random))
+;; Tuottaa yhden satunnaisen numeron väliltä 1-10
+(rand-int 10)
 
-(print (-> (rand) (.nextInt) (+ 1))) ; Tulostaa satunnaisen numeron väliltä 1-10
+;; Tuottaa yhden satunnaisen liukuluvun väliltä 0-1
+(rand)
+
+;; Tuottaa yhden satunnaisen merkin ASCII-taulukosta
+(rand-nth "abcdefg")
+
+;; Tuottaa satunnaisen elementin koko listasta
+(rand-nth [1 2 3 4 5])
+
+;; Tuottaa satunnaisen numeron jokaiselle listan elementille
+(map (fn [x] (* x (rand-int 10))) [1 2 3 4])
+
 ```
 
-## Syväsukellus
+Esimerkkituloste:
 
-Satunnaislukujen generointi perustuu pseudosatunnaislukugeneraattoreihin, jotka käyttävät algoritmeja tuottamaan lukuja, jotka näyttävät satunnaisilta, mutta ovat itse asiassa ennustettavia. Clojuren `Random`-luokka käyttää `java.lang.Random`-luokan toteutusta, joka käyttää lineaarista kongruenssimenetelmää pseudosatunnaislukujen luomiseen.
+```
+6
+0.729503470161935
+c
+3
+(5 8 6 12)
+```
 
-On tärkeää huomata, että pseudosatunnaislukujen generointi ei ole todellista satunnaisuutta ja ne voivat alkaa toistaa itseään pitkälti suurempien lukujen generoinnin jälkeen. Tämän vuoksi on suositeltavaa käyttää ylälaita "limit"-arvoa laskiessa satunnaisia lukuja rajattujen joukkojen keskuudessa.
+Syväsukellus
 
-## Katso myös
+Satunnaislukujen generointi on ollut tärkeä osa tietokoneiden toiminnassa jo varhaisista vuosista lähtien. Algoritmit ovat kehittyneet vuosien saatossa, ja nykyään voidaan tuottaa todella lähellä oikeita sattumanvaraisia lukuja.
 
-https://clojure.org/reference/java_interop - Lisätietoa Clojuren Java-vuorovaikutuksesta.
+On kuitenkin hyvä huomata, että satunnaisuus tietokoneissa perustuu aina matemaattisiin algoritmeihin, ja siksi generoidut numerot eivät ole täysin sattumanvaraisia. On myös olemassa muita tapoja generoida satunnaisia lukuja, kuten esimerkiksi käyttämällä fyysisiä tapahtumia, kuten hiiren liikkeitä.
 
-https://docs.oracle.com/javase/8/docs/api/java/util/Random.html - Java-luokan `Random` dokumentaatio.
+Katso myös
+
+Clojure:n virallinen dokumentaatio satunnaislukujen generoinnista: https://clojuredocs.org/clojure.core/rand
+
+Tietoa satunnaislukujen generoinnista ja sen käytöstä simuloinnissa: https://en.wikipedia.org/wiki/Random_number_generation

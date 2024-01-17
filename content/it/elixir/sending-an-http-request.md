@@ -10,47 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+## Che cos'è e perché?
+In poche parole, l'invio di una richiesta HTTP è il modo in cui i programmatori comunicano con un server tramite il protocollo di trasferimento ipertestuale (HTTP). Questo è fondamentale per l'esecuzione di molte operazioni online, come invio di dati a un server o ottenere informazioni da esso.
 
-Se stai sviluppando un'applicazione web o un'API, probabilmente dovrai inviare richieste HTTP ad altre risorse. Usare Elixir per inviare queste richieste è una scelta ottimale grazie a librerie come HTTPoison e Tesla che semplificano il processo.
-
-## Come Fare
-
-Per inviare una richiesta HTTP con Elixir, è necessario prima importare la libreria HTTPoison nel tuo file. Puoi farlo con il seguente codice:
+## Come fare:
+Utilizzando il linguaggio di programmazione Elixir, è possibile inviare richieste HTTP tramite il modulo `HTTPoison`. Ecco un esempio di codice che invia una richiesta GET e stampa il suo output:
 
 ```Elixir
-defp deps do
-  [
-    {:httpoison, "~> 1.6"}
-  ]
-end
+response = HTTPoison.get("https://example.com")
+IO.puts response.body
 ```
 
-Una volta importata la libreria, puoi creare la tua richiesta HTTP utilizzando la funzione `HTTPoison.get/2` e passando l'URL della risorsa come primo argomento. Se ad esempio vogliamo ottenere i dati di un utente dal seguente endpoint:
+Questo codice invia una richiesta GET al sito web "example.com" e stampa il suo contenuto del corpo nella console.
 
-```
-https://api.example.com/users/1
-```
+## Approfondimento:
+L'invio di richieste HTTP è stato introdotto per la prima volta nei primi anni '90 come parte del protocollo HTTP/1.0. Prima di allora, le comunicazioni tra i client e i server erano limitate a semplici scambi di testo. Oggi, ci sono altre alternative per comunicare con un server, come l'uso di WebSocket o gRPC. Tuttavia, l'invio di richieste HTTP rimane uno dei metodi più comuni e affidabili per comunicare con un server.
 
-Possiamo utilizzare il seguente codice:
+Per implementare il modulo `HTTPoison`, è stato utilizzato il client HTTP Erlang `ibrowse`. Questo consente ad Elixir di supportare facilmente il protocollo HTTP. Tuttavia, ci sono anche altri moduli Elixir disponibili per l'invio di richieste HTTP, come `Tesla` e `Finch`.
 
-```Elixir
-res = HTTPoison.get("https://api.example.com/users/1")
-```
-
-Questa funzione restituirà un'istanza della struct `HTTPoison.Response` contenente il codice di stato, l'header e il corpo della risposta ricevuta. Puoi accedere a questi valori utilizzando i seguenti metodi:
-
-* `HTTPoison.Response.code`: restituisce il codice di stato della risposta.
-* `HTTPoison.Response.headers`: restituisce un elenco di tuple contenente gli header della risposta.
-* `HTTPoison.Response.body`: restituisce il corpo della risposta come una stringa.
-
-Puoi anche passare un secondo argomento opzionale alla funzione `HTTPoison.get/2` per specificare alcuni parametri come header aggiuntivi, body della richiesta, timeout, etc.
-
-## Approfondimenti
-
-Per inviare una richiesta HTTP, Elixir utilizza la libreria hackney che, a sua volta, utilizza la libreria Erlang ibrowse. Queste librerie sono ampiamente utilizzate per la loro stabilità e prestazioni. Inoltre, è possibile gestire le richieste HTTP in modo asincrono utilizzando la libreria Tesla, che utilizza un pool di connessioni per migliorare le prestazioni. 
-
-## Vedi Anche
-
-* [Documentazione HTTPoison](https://hexdocs.pm/httpoison/api-reference.html)
-* [Tutorial Tesla](https://sites.google.com/site/sergeyberezhnoy/h2-mobile-site/tesla-web)
+## Vedi anche:
+- Documentazione ufficiale del modulo HTTPoison: https://hexdocs.pm/httpoison/HTTPoison.html
+- Documentazione ufficiale del linguaggio Elixir: https://elixir-lang.org/
+- Alternativa ad Elixir, come Node.js, per l'invio di richieste HTTP: https://nodejs.org/en/

@@ -1,7 +1,7 @@
 ---
-title:                "डीबग आउटपुट छापना"
-html_title:           "Ruby: डीबग आउटपुट छापना"
-simple_title:         "डीबग आउटपुट छापना"
+title:                "डिबग आउटपुट प्रिंट करना"
+html_title:           "Ruby: डिबग आउटपुट प्रिंट करना"
+simple_title:         "डिबग आउटपुट प्रिंट करना"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Testing and Debugging"
@@ -10,33 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Kyun
-Kisi ko debugging output pritnt karne mein kyun interest hai?
+# क्या और क्यों?
 
-## Kaise Kare
+डीबग आउटपुट प्रिंट करना क्या है और क्यों प्रोग्रामर्स इसे करते हैं, यह दो बातों को स्पष्ट करता है। डीबग आउटपुट प्रिंट करना, असल में प्रोग्राम को गलतियों को ढूंढने और ठीक करने के लिए उपयोगी होता है। यह डेवलपमेंट की शुरुआत से चली आ रही है और आज भी प्रोग्रामर्स के लिये काफी उपयोगी है।
+
+## कैसे करें:
+
 ```Ruby
-# Example code to print debug output in Ruby
-def square(x)
-  puts "Calculating square of #{x}"
-  result = x ** 2
-  puts "Result: #{result}"
-  return result
-end
-
-square(5)
-```
-Output:
-```
-Calculating square of 5
-Result: 25
+# एक सामान्य अपवर्जन
+puts "यह डेबग आउटपुट है।"
 ```
 
-## Deep Dive
-Debugging output ek useful tool hai jo humein code ke sahi chalne ki monitoring aur potential errors ko identify karne mein madad karta hai. Isse hum apne code ko better understand aur improve kar sakte hain. Iske alawa, kisi bhi user ka program ke functioning ko samajhne mein help milti hai.
+```Ruby
+# वेरिएबल्स का मूल्य प्रिंट करना
+name = "अमित"
+age = 30
+puts "नाम: #{name}, उम्र: #{age}"
+```
 
-Is tool ko use karne ke liye, hum `puts` ya `p` command ka use kar sakte hain jo humein apne code ki certain variables, functions ya errors ko detect karne mein help karta hai.
+`STDOUT` फंक्शन का उपयोग भी किया जा सकता है।
 
-## See Also
-* [Debugging in Ruby](https://www.honeybadger.io/blog/debugging-ruby/)
-* [5 Tips for Effective Debugging in Ruby](https://medium.com/@annalauraschott/5-tips-for-effective-debugging-in-ruby-b8e47710a1a5)
-* [How to Print Debug Output in Ruby](https://www.oreilly.com/library/view/ruby-cookbook-2nd/0596523696/ch05s03.html)
+```Ruby
+# मल्टीलाइन मैसेज प्रिंट करना
+STDOUT.puts "पहला पंक्ति"
+STDOUT.puts "दूसरी पंक्ति"
+```
+
+## गहराई में जाएं:
+
+### इतिहासिक परिस्थिति:
+
+डीबग आउटपुट प्रिंट करना साल 1970 में प्रोग्रामिंग की शुरुआत से होता आ रहा है। यह समय जब भी कोड में गलतियां थी तब रसीद पर लिख कर ठीक करना पड़ता था। यह फ्रूक प्रोग्रामिंग भाषाओं के साथ भी काम करता है।
+
+### विकल्प:
+
+डीबग आउटपुट प्रिंट करने के अलावा, कुछ अन्य विकल्प भी हैं। आप एक डीबगर या डीबगर के माध्यम से कोड को दौड़ा सकते हैं ताकि आप गलतियों को भी आसानी से ढूंढ सकें। एक अन्य विकल्प है विभिन्न लोगों को कोड में गलतियां ढूंढने के लिए साथ काम करना।
+
+### अमल विवरण:
+
+डीबग आउटपुट प्रिंट करने के लिए, हम `puts` फंक्शन का उपयोग करते हैं जिसे कि यह डेटा को स्क्रीन पर प्रिंट करता है। उपलब्ध इनपुट को स्ट्रिंग में वर्गीक्रित करने के लिए हम `#{}` का उपयोग करते हैं।
+
+## इससे सम्बंधित भी देखें:
+
+- [प्रोग्रामिंग में डीबग करना](http://link-to-debugging-article)
+- [डीबगगर की उपयोगिता](http://link-to-debugger-utility)

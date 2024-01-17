@@ -1,7 +1,7 @@
 ---
-title:                "Arbeide med csv"
-html_title:           "PHP: Arbeide med csv"
-simple_title:         "Arbeide med csv"
+title:                "Å jobbe med csv"
+html_title:           "PHP: Å jobbe med csv"
+simple_title:         "Å jobbe med csv"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Data Formats and Serialization"
@@ -10,40 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hvorfor
+# Hva & Hvorfor?
+CSV står for Comma Separated Values (kommaseparerte verdier) og er et enkelt og vanlig filformat for å lagre og utveksle data. Mange programmerere bruker CSV-filer for å lagre og manipulere store mengder data på en effektiv måte.
 
-CSV (Comma Separated Values) er en vanlig filformat som brukes for å lagre og utveksle data. Det er en enkel og effektiv måte å organisere og lagre store mengder data på. Derfor er det viktig å forstå hvordan man kan håndtere og jobbe med CSV-filer i PHP.
-
-# Hvordan
-
-For å begynne å jobbe med CSV-filer i PHP, må du først åpne filen ved hjelp av `fopen()` funksjonen. Deretter må du bruke `fgetcsv()` funksjonen for å lese innholdet i filen og konvertere det til et array. Dette lar deg enkelt få tilgang til hver enkelt linje og data i CSV-filen.
+# Hvordan:
+Bruk PHPs innebygde funksjoner for å håndtere CSV-filer. Først må du åpne en CSV-fil ved å bruke fopen() funksjonen. Deretter kan du bruke fgetcsv() funksjonen til å lese data fra fila linje for linje. Du kan også bruke fputcsv() funksjonen for å skrive data til en CSV-fil.
 
 ```PHP
-$file = fopen("file.csv", "r"); // Åpner CSV-fil for lesing
-while (($line = fgetcsv($file)) !== false) { // Leser hver linje i filen
-    print_r($line); // Skriver ut linjen som et array
+// Åpne en CSV-fil for lesing
+$fil = fopen('data.csv', 'r');
+
+// Les data linje for linje
+while(($data = fgetcsv($fil)) !== FALSE){
+    print_r($data);
 }
+
+// Åpne en CSV-fil for skriving
+$fil = fopen('data.csv', 'w');
+
+// Skriv data til fila
+$data = array('Navn', 'Alder', 'E-post');
+fputcsv($fil, $data);
+
+// Lukk filen
+fclose($fil);
 ```
 
-Du kan også spesifisere et spesifikt skilletegn for å lese filen, for eksempel hvis det ikke bruker komma som standard. Dette gjøres ved å legge til et ekstra argument i `fgetcsv()` funksjonen.
+Eksempel:
+Lar oss si at du har en CSV-fil med informasjon om ansatte på et selskap. Du kan bruke fgetcsv() funksjonen til å lese data fra fila og deretter bruke denne informasjonen til å opprette en nettleservennlig tabell med alle ansattes navn, alder og e-postadresser.
 
-For å legge til data i en CSV-fil, bruker du `fputcsv()` funksjonen. Dette konverterer et array til CSV-format og legger det til i filen.
+# Dypdykk:
+CSV-filer har eksistert siden 1970-tallet og har vært et populært format for utveksling av data mellom forskjellige programmer. Det finnes alternativer til CSV som XML og JSON, men CSV er fortsatt mye brukt på grunn av sin enkelhet og effektivitet.
 
-```PHP
-$data = array("Name", "Age", "Country"); // Oppretter et array med data
-$file = fopen("file.csv", "a"); // Åpner CSV-fil for appending (legg til på slutten av filen)
-fputcsv($file, $data); // Legger til arrayet som en linje i filen
-```
+Når du jobber med CSV-filer, er det viktig å være oppmerksom på tegnsettet som brukes i fila. Noen ganger kan dette føre til problemer når du skal lese eller skrive data. Det er også viktig å sørge for at fila er formatert riktig, med komma som skilletegn mellom verdiene.
 
-# Deep Dive
+En annen nyttig funksjon i PHP når man jobber med CSV-filer er str_getcsv() som lar deg konvertere en CSV-streng til et array.
 
-Det er viktig å merke seg at CSV-filer kan være så enkle eller komplekse som du ønsker. Det er ingen begrensninger på antall kolonner eller rader som kan inkluderes i en CSV-fil. Det er heller ingen standard for datatype, så du må være forsiktig når du håndterer data for å unngå problemer.
-
-En vanlig feil når man arbeider med CSV-filer er å glemme å ta hensyn til sitattegn og kvalifisering av data. Hvis dataene inneholder komma eller spesialtegn, må de plasseres innenfor sitatfelter for å unngå at de blir tolket feil. Dette kan enkelt gjøres ved å bruke `fputcsv()` funksjonen som vi nevnt tidligere.
-
-Det er også viktig å sørge for at du lukker CSV-filen etter at du har ferdig med å jobbe med den. Du kan bruke `fclose()` funksjonen for å gjøre dette. Dette frigjør ressursene som brukes av filen og sikrer at den er klar til å åpnes igjen hvis nødvendig.
-
-# Se også
-
-- [PHP-funksjoner for håndtering av CSV-filer](https://www.php.net/manual/en/ref.filesystem.php)
-- [CSV filformat](https://en.wikipedia.org/wiki/Comma-separated_values)
+# Se også:
+- [PHP.net - CSV](https://www.php.net/manual/en/function.fgetcsv.php)
+- [Wikipedia - Comma-separated values](https://en.wikipedia.org/wiki/Comma-separated_values)

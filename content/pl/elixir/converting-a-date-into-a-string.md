@@ -10,34 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co & Dlaczego?
+Konwersja daty do ciągu znaków jest jedną z podstawowych operacji w programowaniu. Jest to proces przekształcania daty w formę czytelną dla komputera, czyli w ciąg znaków. Programiści często wykonują tę operację, aby wyświetlić datę w przyjaznym dla użytkownika formacie lub aby przetwarzać dane w aplikacji.
 
-Chciałbyś wiedzieć, jak przekonwertować datę na ciąg znaków? Jest to ważna umiejętność, której potrzebujesz, aby w łatwy sposób wyświetlać daty w swoim programie napisanym w języku Elixir.
+## Jak to zrobić:
 
-## Jak to zrobić
+Aby przekonwertować datę do ciągu znaków w Elixir, użyjemy funkcji `DateTime.to_string/1`. Przykładowy kod wygląda tak:
 
-```Elixir
-date = ~D[2021-01-01]
-date |> to_string |> IO.puts
-# Wynik: "2021-01-01"
+```elixir
+date = DateTime.utc_now()
+DateTime.to_string(date)
 ```
 
-Czasami możesz chcieć dostosować format daty. W takim przypadku możesz użyć funkcji `format/2` i podać własny format jako argument.
+Wynik będzie wyglądał mniej więcej tak: `"2021-04-23 14:25:45.151176Z"`. Możemy także określić własny format daty, korzystając z opcjonalnego parametru funkcji `to_string/2`:
 
-```Elixir
-date = ~D[2021-01-01]
-date |> format("{0}/{1}/{2}", "-", "-") |> IO.puts
-# Wynik: "2021-01-01"
+```elixir
+date = DateTime.utc_now()
+DateTime.to_string(date, "{YYYY}-{M}-{D}")
 ```
 
-Możesz także manipulować datami przy użyciu funkcji takich jak `add/2`, `subtract/2` i `day_of_week/1`.
+W tym przypadku wynik będzie prezentowany w formacie `"2021-4-23"`.
 
-## Głębsza analiza
+## Deep Dive:
+W przeszłości istniało wiele różnych formatów zapisu daty, ale obecnie najczęściej stosowany jest standard ISO 8601, który ma formę `YYYY-MM-DDTHH:MM:SS.mmmmmmZ`. Dzięki temu standardowi, maszyny są w stanie bezbłędnie przetwarzać daty i nie dochodzi do nieporozumień, które mogłyby mieć miejsce przy użyciu innych formatów.
 
-Przekonwertowanie daty na ciąg znaków może być proste, ale jednocześnie bardzo istotne. W języku Elixir można wykorzystać wiele funkcji z biblioteki standardowej, takich jak `Calendar`, `DateTime` i `Date`, aby przeprowadzić różne operacje na datach. Aby uzyskać więcej informacji na temat tych funkcji, polecam przeczytać dokumentację języka Elixir.
+Alternatywne sposoby konwersji daty do ciągu znaków w Elixir to użycie funkcji `~D`, która konwertuje datę do formatu `"YYYY-MM-DD"` lub `~T`, która konwertuje czas do formatu `"HH:MM:SS.mmmmmm"`. Możemy też użyć biblioteki `Timex`, która oferuje bardziej zaawansowane możliwości formatowania daty.
 
-## Zobacz również
-
-- [Dokumentacja języka Elixir] (https://hexdocs.pm/elixir/Calendar.html)
-- [Kalendarz] (https://elixir-lang.org/getting-started/basic-types.html#calendar)
-- [Biblioteka daty i czasu] (https://elixir-lang.org/getting-started/basic-types.html#date-time)
+## Zobacz również:
+Dokumentacja Elixir na temat konwersji daty: 
+https://hexdocs.pm/elixir/DateTime.html#to_string/1
+Dokumentacja Elixir na temat standardów ISO 8601: 
+https://en.wikipedia.org/wiki/ISO_8601
+Biblioteka Timex do zarządzania datami i czasem w Elixir: 
+https://github.com/bitwalker/timex

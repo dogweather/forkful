@@ -10,32 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+## Cosa & Perché?
 
-Converting a string to lower case è un'operazione comune durante lo sviluppo di applicazioni in Ruby. Questo permette di uniformare i dati inseriti dall'utente e semplificare il confronto tra stringhe.
+Convertire una stringa in minuscolo è un'operazione comune nella programmazione che consiste nel rendere tutti i caratteri di una stringa in minuscolo. I programmatori spesso lo fanno per rendere più facile la comparazione di stringhe o per uniformare l'input dell'utente.
 
-## Come fare
+## Come fare:
 
 ```Ruby
-# Esempio 1: Utilizzo di .downcase su una stringa 
-stringa = "Ciao, come stai?"
-puts stringa.downcase
-# output: ciao, come stai?
+stringa = "Ciao a Tutti"
 
-# Esempio 2: Utilizzo di .downcase! su una stringa 
-stringa = "HELLO WORLD"
-stringa.downcase!
+puts stringa.downcase
+# output: ciao a tutti
+
 puts stringa
-# output: hello world
+# output: Ciao a Tutti
 ```
 
-## Approfondimento
+## Approfondimento:
 
-Per convertire una stringa in lower case, Ruby utilizza il metodo `.downcase` o `.downcase!` a seconda se si desidera una nuova stringa convertita o modificare la stringa originale. Entrambi i metodi funzionano nello stesso modo, ma `.downcase!` ha l'effetto collaterale di modificare la stringa originale.
-Durante la conversione, il metodo considera anche le lettere accentate e i caratteri speciali come la "ß" tedesca. Inoltre, in Ruby, è possibile utilizzare metodi alternativi come `.casecmp` per confrontare stringhe in modo case insensitive.
+Convertire le stringhe in minuscolo è una pratica comune nella programmazione moderna, ma ha le sue origini negli albori dei computer. Prima dell'avvento dei moderni linguaggi di programmazione, le stringhe venivano memorizzate in maiuscolo nei computer, in quanto era più efficiente in termini di spazio di memoria. Oggi esistono anche altre opzioni per manipolare le stringhe, come ad esempio utilizzare metodi che consentono di confrontare le stringhe senza doverle prima convertire in minuscolo.
 
-## Vedi anche
+## Vedi anche:
 
-- [Metodi di stringa in Ruby](https://www.rubyguides.com/ruby-string-methods/)
-- [Confronto di stringhe case insensitive in Ruby](https://www.rubydoc.info/docs/ruby/LangFile:upcase=3F)
-- [Operazioni comuni con le stringhe](https://victoria.dev/blog/common-string-references-in-ruby/)
+Per ulteriori informazioni su metodi di manipolazione delle stringhe in Ruby, puoi consultare la documentazione ufficiale: https://ruby-doc.org/core-2.7.2/String.html

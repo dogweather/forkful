@@ -1,7 +1,7 @@
 ---
-title:                "Sletting av tegn som matcher et mønster."
-html_title:           "C++: Sletting av tegn som matcher et mønster."
-simple_title:         "Sletting av tegn som matcher et mønster."
+title:                "Sletting av tegn som matcher et mønster"
+html_title:           "C++: Sletting av tegn som matcher et mønster"
+simple_title:         "Sletting av tegn som matcher et mønster"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -10,47 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hva og Hvorfor?
+Å slette tegn som matcher et visst mønster er en vanlig oppgave for programmører. Dette kan hjelpe med å rydde opp i data og gjøre søk og filtrering mer effektivt.
 
-Sletting av tegn som matcher et mønster er nyttig når du vil fjerne uønskede tegn fra en streng. Dette kan være nyttig når du jobber med tekstbehandling og ønsker å rense opp i dataene dine.
-
-## Slik gjør du det
+# Slik gjør du det:
+Et eksempel på å slette tegn ved hjelp av et mønster i C++ kan være som følger:
 
 ```C++
 #include <iostream>
-#include <string>
-
+#include <regex>
 using namespace std;
 
 int main()
 {
-    // Opprett en streng med uønskede tegn
-    string streng = "H-e-$l-l-o";
-    
-    // Opprett et mønster ved hjelp av et regex-uttrykk
-    regex mønster("[^a-zA-Z]"); 
-
-    // Erstatt alle tegn som matcher mønsteret med et blankt tegn
-    string rensetStreng = regex_replace(streng, mønster, "");
-    
-    // Skriv ut den rensete strengen
-    cout << rensetStreng << endl;
-    
+    string s = "Hei, dette er en test!";
+    regex pattern("[,!]"); // mønsteret vi ønsker å matche
+    cout << regex_replace(s, pattern, "") << endl; // bruker regex_replace funksjonen for å erstatte matchende tegn med ingenting
     return 0;
 }
 ```
 
-**Output:**
+Dette vil outputte "Hei dette er en test" uten tegnene "," og "!".
 
-`Hello`
+# Dypdykk:
+God kjennskap til regulære uttrykk (regex) er viktig for å kunne slette tegn ved hjelp av mønstre i C++. Regex tillater å finne og manipulere tekst basert på spesifikke tegnstrenger eller mønstre. Alternativt kan man bruke for eksempel strengmanipulasjonsfunksjoner som find og erase i stedet for regex.
 
-## Dykk dypere
-
-Regex, eller regelmessige uttrykk, er en måte å søke etter og manipulere tekst på. I eksempelet over har vi brukt `[a-zA-Z]` for å matche alle bokstaver i det engelske alfabetet. Dette kan endres etter behov, for eksempel ved å legge til tall eller spesialtegn.
-
-Det finnes også flere metoder for å slette tegn fra en streng, som for eksempel `erase()` og `remove()`. Men å bruke regex er ofte en mer fleksibel og effektiv måte å fjerne uønskede tegn på.
-
-## Se også
-
-- [C++ regex](https://www.cplusplus.com/reference/regex/)
-- [C++ string manipulasjon](https://www.cplusplus.com/reference/string/)
+# Se også:
+- https://www.cplusplus.com/reference/regex/
+- https://www.geeksforgeeks.org/regex-in-c-set-1/
+- https://www.regular-expressions.info/

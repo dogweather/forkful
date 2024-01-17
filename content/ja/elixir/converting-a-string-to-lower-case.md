@@ -10,30 +10,22 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## 何でやるの? 
 
-ここでは、文字列を小文字に変換する理由について説明します。文字列を小文字に変換することは、検索や比較を行う際に、文字の大文字・小文字を区別しないようにするためです。
+文字列を小文字に変換するとは、文字列のすべての大文字を小文字に変換することです。プログラマーがこれを行うのは、文字列を比較や検索する際に大文字と小文字を区別しないようにするためです。
 
-## How To
-
-文字列を小文字に変換するには、Elixirの`String.downcase/1`関数を使用します。以下は、例となるコードとその出力です。
+## 方法:
 
 ```Elixir
-string = "Hello World"
-lowercase_string = String.downcase(string)
-IO.puts lowercase_string
+"STRING" |> String.downcase() #=> "string"
+"Hello World" |> String.downcase() #=> "hello world"
 ```
 
-出力結果：
-```
-hello world
-```
+## 深く掘り下げる:
 
-## Deep Dive
+文字列を小文字に変換するアイデアは、コンピューターの言語によって異なります。例えば、Pythonでは `lower()` メソッドを使用していますが、Elixirでは `downcase()` 関数を使用します。また、文字列を小文字にすることにより、大文字と小文字を区別しない検索や比較が簡単になり、より柔軟なプログラミングが可能になります。
 
-Elixirでは、文字列はimmutable（変更不可）なので、元の文字列を変更するのではなく、新しい文字列を返します。また、`String.downcase/1`関数はUnicodeに対応しており、国際化された文字にも適用することができます。
+## 関連情報を見る:
 
-## See Also
-
-- [Elixir公式ドキュメント - String.downcase/1](https://hexdocs.pm/elixir/String.html#downcase/2)
-- [Unicodeと文字列操作についての詳細な説明 (英語)](https://www.stubbornella.org/content/2010/06/25/the-incredible-shrinking-string/)
+- [Elixir Documentation - String module](https://hexdocs.pm/elixir/String.html#downcase/1)
+- [Python Documentation - lower() method](https://docs.python.org/3/library/stdtypes.html#str.lower)

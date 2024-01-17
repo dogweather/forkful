@@ -1,7 +1,7 @@
 ---
-title:                "Ein neues Projekt beginnen"
-html_title:           "Bash: Ein neues Projekt beginnen"
-simple_title:         "Ein neues Projekt beginnen"
+title:                "Eine neue Projekt beginnen"
+html_title:           "Bash: Eine neue Projekt beginnen"
+simple_title:         "Eine neue Projekt beginnen"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Getting Started"
@@ -10,49 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was & Warum?
 
-Möchtest du ein neues Projekt beginnen? Vielleicht hast du eine großartige Idee oder möchtest deine Fähigkeiten in Bash verbessern. Mit diesen einfachen Schritten kannst du schnell und effektiv ein neues Projekt starten.
+Ein neues Projekt zu starten bedeutet, dass wir als Programmierer eine volle und neue Aufgabe angehen und beginnen, daran zu arbeiten. Wir tun dies, um unsere Fähigkeiten zu verbessern und die Anforderungen unserer Kunden oder Arbeitgeber zu erfüllen.
 
-## Wie es gemacht wird
+## Wie geht's:
 
-Das erste, was du tun musst, ist ein neues Verzeichnis für dein Projekt zu erstellen. Nenne es, was auch immer du möchtest, aber denke daran, dass es später leicht zu finden sein sollte. Verwende diesen Befehl im Terminal, um ein neues Verzeichnis namens "meinprojekt" zu erstellen:
-
-```Bash
-mkdir meinprojekt
-```
-
-Als nächstes wechselst du in dieses Verzeichnis, indem du den Befehl `cd` verwendest:
+Eine neue Bash-Datei erstellen:
 
 ```Bash
-cd meinprojekt
+touch neues_projekt.sh 
 ```
 
-Jetzt kannst du mit der eigentlichen Programmierung beginnen. Erstelle eine neue Datei namens "main.sh" mit dem Texteditor deiner Wahl. Hier ist ein einfaches Beispiel einer Bash-Datei:
+Den Code unserer Datei überprüfen:
 
 ```Bash
-#!/bin/bash
-echo "Hallo Welt!"
+cat neues_projekt.sh 
 ```
 
-Speichere die Datei und führe sie aus, indem du diesen Befehl verwendest:
+Eine neue Funktion zu unserer Datei hinzufügen:
 
 ```Bash
-./main.sh
+echo "Willkommen zu meinem neuen Projekt!" >> neues_projekt.sh 
 ```
 
-Du solltest jetzt das Wort "Hallo Welt!" in der Ausgabe sehen. Voila, du hast gerade dein erstes Bash-Skript erstellt!
+Die Ausgabe unserer Datei anzeigen:
 
-## Tiefen Einblick
+```Bash
+cat neues_projekt.sh 
+```
 
-Jetzt, da du dein neues Projekt erstellt und dein erstes Skript geschrieben hast, kannst du tiefer in die Welt von Bash eintauchen. Hier sind einige nützliche Ressourcen, die dir dabei helfen können:
+## Tiefer tauchen:
 
-- [Offizielle Bash-Dokumentation](https://www.gnu.org/software/bash/manual/bash.html)
-- [Bash bei Stack Overflow](https://stackoverflow.com/questions/tagged/bash)
-- [Bash-Tutorial bei Codecademy](https://www.codecademy.com/learn/learn-the-command-line/modules/bash-scripting)
+Der Prozess des Startens eines neuen Projekts hat sich im Laufe der Zeit weiterentwickelt, da neue Tools und Technologien unterschiedlicher Programmiersprachen entwickelt wurden. Alternativen zu Bash für die Projektverwaltung können sein: Python, Java oder C++. Die Implementierung eines neuen Projekts kann je nach Anforderungen und Framework variieren, aber der Kern bleibt derselbe: schreiben, testen, anpassen, veröffentlichen.
 
-Sieh auch
+## Siehe auch:
 
-- [Einführung in die Shell-Programmierung](https://www.linode.com/docs/development/shell-scripting-beginners-guide/)
-- [Liste von Bash-Befehlen](https://github.com/learnbyexample/Command-line-text-processing/blob/master/gnu_grep_sed_awk.md#bash-builtin-commands) (englisch)
-- [Bilder in der Konsole](https://stackoverflow.com/questions/10795745/image-in-a-terminal) (englisch)
+- [Offizielle Bash-Dokumentation](https://www.gnu.org/software/bash/)
+- [Alternative Programmiersprachen für Projekte](https://towardsdatascience.com/learn-these-programming-languages-if-you-want-a-career-in-data-science-93bdcf3c1995)
+- [Einführung in die Projektverwaltung](https://www.atlassian.com/software/jira/guides/agile-project-management/how-to-start-a-project)

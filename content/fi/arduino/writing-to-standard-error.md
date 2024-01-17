@@ -1,7 +1,7 @@
 ---
-title:                "Kirjoittaminen standardivirheelle"
-html_title:           "Arduino: Kirjoittaminen standardivirheelle"
-simple_title:         "Kirjoittaminen standardivirheelle"
+title:                "Kirjoittaminen standardivirheille"
+html_title:           "Arduino: Kirjoittaminen standardivirheille"
+simple_title:         "Kirjoittaminen standardivirheille"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Files and I/O"
@@ -10,30 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mikä ja miksi?
+Kun ohjelmoijat puhuvat standardivirheestä, he viittaavat tulostamaan virhesanomia ohjelmoinnin aikana. Tämä auttaa ohjelmoijaa tunnistamaan ja korjaamaan mahdollisia virheitä ohjelman suorituksen aikana.
 
-Arduino ohjelmoinnissa voi joskus tulla vastaan virheitä ja ongelmia, joita tarvitaan korjaamaan. Tämä voi johtaa tarpeeseen kirjoittaa viestiä "standard error" -tulostukseen, jolla voidaan lisätä ohjelman virheen selvitystä ja helpottaa sen korjaamista.
-
-## Kuinka Kirjoittaa Standard Error Viestejä Arduinossa
-
-Kun haluat kirjoittaa viestin standard error -tulostukseen Arduinossa, käytä seuraavaa koodia:
-```Arduino
-Serial.println("Tämä on standard error viesti.");
+## Miten:
+Esimerkki koodi:
 ```
-Tämä koodi tulostaa tekstin "Tämä on standard error viesti." Arduinon sarjaporttiin, jota voit seurata ohjelman suorituksen aikana.
+void setup() {
+  Serial.begin(9600);
+  Serial.println("Tämä on standardivirhe");
+  Serial.print("Koodin rivi: ");
+  Serial.println(__LINE__);
+}
 
-Voit myös lisätä muuttujia viestiin käyttämällä seuraavaa koodia:
-```Arduino
-int luku = 5;
-Serial.println("Luku on " + String(luku));
+void loop() {
+  //Kirjoita koodi tänne
+}
 ```
-Tässä esimerkissä "luku" -muuttuja lisätään viestiin ja sen arvo tulostetaan.
 
-## Syvemmälle
+Esimerkki tuloste:
+```
+Tämä on standardivirhe
+Koodin rivi: 4
+```
 
-Standard error -tulostuksen käyttäminen voi auttaa pääsemään nopeasti jäljille ohjelman virheille ja helpottaa niiden korjaamista. Voit myös käyttää "Serial.print()" -toimintoa, joka ei lisää automaattisesti rivinvaihtoa viestiin. Tämä on hyödyllistä esimerkiksi silloin, kun haluat lisätä useita muuttujia samaan viestiin.
+## Syväsukellus:
+Standardivirheen kirjoittaminen juontaa juurensa C-kieleen, jossa se oli tapa ilmoittaa virheistä ohjelman suorituksen aikana. Tänä päivänä on myös muita vaihtoehtoja, kuten käyttää debuggaukseen soveltuvia kirjastoja tai jättää virheet kokonaan huomiotta.
 
-## Katso Myös
-
-- [Arduino Reference - Serial.println()](https://www.arduino.cc/reference/en/language/functions/communication/serial/println/)
-- [Instructables - Debugging Arduino Code with Serial Prints](https://www.instructables.com/Debugging-Arduino-Code-With-Serial-Prints/)
+## Katso myös:
+- [Arduino Serial Communication](https://www.arduino.cc/reference/en/language/functions/communication/serial/)
+- [Using Standard Error in C](https://www.geeksforgeeks.org/using-standard-error-c/)

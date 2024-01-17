@@ -1,7 +1,7 @@
 ---
-title:                "Cerca e sostituisci testo"
-html_title:           "Clojure: Cerca e sostituisci testo"
-simple_title:         "Cerca e sostituisci testo"
+title:                "Ricerca e sostituzione di testo"
+html_title:           "Clojure: Ricerca e sostituzione di testo"
+simple_title:         "Ricerca e sostituzione di testo"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -10,44 +10,22 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+## Che cos'è e perché?
+La ricerca e la sostituzione di testo è un'operazione comune nella programmazione. Consiste nel trovare un determinato testo all'interno di una stringa e sostituirlo con un altro. I programmatori lo fanno per semplificare il processo di modifica del codice e per automatizzare alcune operazioni ripetitive.
 
-Se stai lavorando con il tuo codice Clojure e ti ritrovi a dover sostituire un pezzo di testo con un altro, allora questo articolo è per te. Con il giusto approccio, puoi risparmiare tempo e rendere il tuo lavoro più efficiente.
+## Come:
+Un modo per cercare e sostituire il testo in Clojure è utilizzare la funzione `replace`. Qui di seguito un esempio di codice che cerca tutte le occorrenze della parola "ciao" in una stringa e le sostituisce con "hello":
 
-## Come Fare
-
-Per sostituire un pezzo di testo con un altro in Clojure, puoi utilizzare la funzione `replace` della libreria `clojure.string`. Ad esempio:
-
-```
-Clojure (clojure.string/replace "Ciao, mondo!" "Ciao" "Hello")
-```
-
-Output: "Hello, mondo!"
-
-In questo esempio, "Ciao" viene sostituito con "Hello". Puoi anche utilizzare la funzione `replace-first` per sostituire solo la prima occorrenza di un testo, invece di tutte.
-
-```
-Clojure (clojure.string/replace-first "Ciao, mondo! Ciao" "Ciao" "Hello")
+```Clojure
+(def s "ciao mondo ciao")
+(replace s "ciao" "hello")
 ```
 
-Output: "Hello, mondo! Ciao"
+Questo produrrà l'output: "hello mondo hello". Si può anche utilizzare la funzione `replace-first` se si vuole sostituire solo la prima occorrenza.
 
-Puoi anche utilizzare delle espressioni regolari nella funzione `replace` per cercare testi più complessi da sostituire:
+## Approfondimento:
+La ricerca e la sostituzione di testo è stata introdotta con il linguaggio di programmazione awk negli anni '70, ma è da allora diventata una funzione comune in molti linguaggi di programmazione. In Clojure, ci sono anche altre funzioni utili per questo scopo, come `replace-re` per utilizzare espressioni regolari nella ricerca e sostituzione di testo. Inoltre, ci sono anche librerie di terze parti, come clojure.string, che offrono funzionalità più avanzate per la manipolazione di stringhe.
 
-```
-Clojure (clojure.string/replace "Il mio numero di telefono è 123-456-789" #"\d+-\d+-\d+" "XXX-XXX-XXXX")
-```
-
-Output: "Il mio numero di telefono è XXX-XXX-XXXX"
-
-## Approfondimento
-
-Se vuoi approfondire le tue conoscenze sulle espressioni regolari e su come utilizzarle per sostituire testi in modo più avanzato, puoi consultare questi link:
-
-- Documentazione ufficiale sulla funzione `replace`: https://clojuredocs.org/clojure.string/replace
-- Tutorial sulle espressioni regolari in Clojure: https://clojure.org/guides/learn/regular_expressions
-
-## Vedi Anche
-
-- Documentazione ufficiale sulla libreria `clojure.string`: https://clojuredocs.org/clojure.string
-- Tutorial Clojure sul sito ufficiale: https://clojure.org/guides/getting_started
+## Vedi anche:
+- La documentazione ufficiale di Clojure su `replace`: https://clojuredocs.org/clojure.core/replace
+- Libreria clojure.string: https://clojure.github.io/clojure/clojure.string-api.html

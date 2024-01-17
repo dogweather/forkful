@@ -10,41 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-So, you've decided to start a new project using PHP. Maybe you're a seasoned developer looking for a new challenge, or maybe you're completely new to programming and want to learn a popular language. Either way, PHP is a great choice for your next project.
+Starting a new project in PHP is the process of creating and building a new software or web application using the PHP programming language. Programmers often start new projects to fulfill a specific need or to solve a problem, as PHP is a versatile language that allows for the development of a wide range of applications.
 
-## How To
+## How to:
 
-To get started with your project, you'll first need to install PHP on your computer. This will allow you to write and run PHP code on your local machine. You can download PHP from the official website or use a tool like XAMPP which includes PHP, Apache, and MySQL.
+To start a new project in PHP, follow these simple steps:
 
-Once PHP is installed, you can create a new file with a .php extension and start writing your code. Let's take a look at a simple example:
+1. Create a new folder for your project and name it accordingly.
+2. Open a code editor or IDE that supports PHP, such as Visual Studio Code or PhpStorm.
+3. Create a new PHP file and save it in your project folder with the .php file extension.
+4. Begin writing your code using the PHP syntax, such as variables, if statements, and loops.
+5. To run your code, you can either install a local server on your computer or use an online tool such as PHP Sandbox.
+6. Once your code is working as desired, you can continue building and expanding your project.
 
-```PHP
+Sample PHP Code:
+
+```
 <?php
-// This is a basic "Hello World" program in PHP
-echo "Hello World!";
+// Assigning a string value to a variable
+$message = "Hello World!";
+// Printing out the variable
+echo $message;
 ?>
 ```
 
-Save this code in a file called "hello.php" and run it in your browser by navigating to "localhost/hello.php". You should see the text "Hello World!" displayed on your screen.
+Sample Output:
+```
+Hello World!
+```
 
-Now that you have a basic understanding of how PHP works, let's dive into some more complex examples. PHP offers a wide range of features and functionality, including database integration, object-oriented programming, and user input validation. There are countless online resources and tutorials available to help you learn more about these features and how to implement them in your project.
+## Deep Dive:
 
-## Deep Dive
+PHP was created by Rasmus Lerdorf in 1994 and has since evolved into a popular server-side scripting language used by millions of websites and applications. It has a wide range of use cases, including web development, server-side scripting, and command-line scripting.
 
-Starting a new project in PHP can seem overwhelming at first, but don't let that discourage you. It's important to plan your project carefully and break it down into smaller, manageable tasks. This will prevent you from feeling overwhelmed and will make it easier to debug any issues along the way.
+Alternatives to using PHP for starting a new project include other server-side languages such as Python, Ruby, and Java. However, PHP remains a popular choice due to its ease of use and vast community support.
 
-One of the great things about PHP is its vast community of developers. There are many online forums and communities where you can get support and advice from experienced PHP developers. Don't be afraid to ask for help or collaborate with others on your project.
+When starting a new project in PHP, it is essential to understand the implementation details such as PHP's data types, control structures, and built-in functions. Familiarizing yourself with these concepts will make the development process smoother and more efficient.
 
-## See Also
+## See Also:
 
-Here are some useful links to help you get started with your PHP project:
-
-- [Official PHP website](https://www.php.net/)
-- [XAMPP](https://www.apachefriends.org/index.html)
-- [PHP Tutorial for Beginners](https://www.w3schools.com/php/)
-- [PHP: The Right Way guide](https://phptherightway.com/)
-- [PHP forums on Reddit](https://www.reddit.com/r/PHP/)
-
-Now that you have the basics of starting a new project in PHP, it's time to get coding! Good luck and have fun with your new project.
+- [PHP Manual](https://www.php.net/manual/en/) - Official documentation for PHP.
+- [PHP: The Right Way](https://phptherightway.com/) - A comprehensive guide to PHP best practices.
+- [PHP Best Practices](https://github.com/php-pds/skeleton) - A set of PHP coding standards and best practices.

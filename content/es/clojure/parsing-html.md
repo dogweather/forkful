@@ -1,7 +1,7 @@
 ---
-title:                "Analizando HTML."
-html_title:           "Clojure: Analizando HTML."
-simple_title:         "Analizando HTML."
+title:                "Analizando html"
+html_title:           "Clojure: Analizando html"
+simple_title:         "Analizando html"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "HTML and the Web"
@@ -10,44 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+## Qué & Por qué?
 
-Puede que te encuentres en una situación en la que necesitas extraer información específica de una página web en formato HTML. Tal vez estás construyendo una herramienta de scrapping o una aplicación para recopilar datos, y necesitas una forma eficiente de parsear el HTML para obtener solo los datos que necesitas. Esta es exactamente la razón por la que deberías conocer cómo parsear HTML en Clojure.
+El análisis de HTML es el proceso de analizar y extrapolar información de código HTML. Los programadores lo hacen para extraer datos de documentos en línea de manera eficiente y automatizada. Esto es especialmente útil para proyectos que requieren la extracción regular de información de páginas web.
 
-## Cómo hacerlo
+## Cómo:
 
-Afortunadamente, Clojure tiene una librería incorporada llamada `clojure.data.xml`, que te permite parsear fácilmente HTML. Primero, necesitas importar la librería en tu código:
+```Clojure
+(ns parsing-html.core
+  (:require [clojure.string :as str]
+            [net.cgrand.enlive-html :as html]))
 
+;; Seleccionar un elemento específico
+(def document (html/html-snippet "<h1>Título</h1>"))
+(html/select document [:h1])
+
+;; Extraer texto de un elemento
+(html/attr (-> document
+                  (html//[:h1])
+                  (html/first))
+           :content)
+
+;; Extraer atributos de un elemento
+(html/attr (-> document
+                  (html//[:a])
+                  (html/first))
+           :href)
 ```
-(ns my-html-parser.core
-  (:require [clojure.data.xml :as xml]))
-```
 
-Luego, puedes usar la función `clojure.data.xml/parse` para obtener un árbol de datos del HTML:
+El código de ejemplo muestra cómo seleccionar elementos específicos de un documento HTML y extraer su contenido o atributos. Utilizando la librería `enlive-html`, podemos manipular fácilmente el código y extraer la información deseada.
 
-```
-(def html-tree (xml/parse "<p>¡Hola mundo!</p>"))
-```
+## Deep Dive:
 
-Ahora, podemos usar funciones de navegación de datos para extraer información específica del árbol de datos. Por ejemplo, si queremos obtener el contenido de la etiqueta `p` en el HTML, podemos hacer lo siguiente:
+El análisis de HTML ha sido una herramienta importante para los desarrolladores web desde los primeros días de la web 2.0. Antes de las librerías como `enlive-html`, los programadores tenían que escribir su propio código personalizado para extraer información de código HTML. Esta tarea era tediosa y consumía mucho tiempo. Ahora, con herramientas como `enlive-html`, el análisis de HTML se ha vuelto mucho más fácil y eficiente.
 
-```
-(xml/text (some-> html-tree
-                    :content
-                    first))
-;; Salida: ¡Hola mundo!
-```
+Existen algunas alternativas para realizar el análisis de HTML en Clojure, como `clj-webdriver` y `hiccup`. Mientras que `clj-webdriver` se enfoca en la simulación de acciones en el navegador, `hiccup` se enfoca en la generación de código HTML. Sin embargo, `enlive-html` sigue siendo una de las opciones más populares y fáciles de usar para el análisis de HTML en Clojure.
 
-Puedes ver que la función `xml/text` toma una estructura de datos (en este caso, la primera etiqueta `p`) y devuelve su contenido como una cadena de texto.
+## See Also:
 
-## Profundizando
-
-Ahora que ya sabes cómo parsear HTML en Clojure, puede que te preguntes cómo funciona realmente la librería `clojure.data.xml`. Básicamente, esta librería transforma el HTML en un árbol de datos basado en el estándar XML. Esto significa que puedes usar funciones de navegación de datos como `first`, `nth` y `get` para acceder a elementos específicos dentro del árbol de datos.
-
-También es importante señalar que `clojure.data.xml` soporta tanto HTML como XML, por lo que puedes usarla para parsear ambos tipos de documentos.
-
-## Véase también
-
-- Documentación oficial de Clojure sobre la librería `clojure.data.xml`: https://clojure.org/guides/learn/parsing_xml
-- Tutorial práctico sobre cómo parsear HTML en Clojure: https://purelyfunctional.tv/guide/how-to-parse-html-in-clojure/
-- Guía de aprendizaje sobre Clojure: https://clojure.org/about/functional_programming
+- Documentación oficial de `enlive-html`: https://github.com/cgrand/enlive
+- Tutorial de `enlive-html`: https://github.com/waylay-io/clojure-scraping-tutorial#enlive-html-library
+- Otros recursos para el análisis de HTML en Clojure: https://github.com/razum2um/awesome-clojure#html-parsing

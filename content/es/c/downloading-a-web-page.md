@@ -1,7 +1,7 @@
 ---
-title:                "Descargar una página web"
-html_title:           "C: Descargar una página web"
-simple_title:         "Descargar una página web"
+title:                "Descargando una página web"
+html_title:           "C: Descargando una página web"
+simple_title:         "Descargando una página web"
 programming_language: "C"
 category:             "C"
 tag:                  "HTML and the Web"
@@ -10,67 +10,73 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-<br>
+## ¿Qué y por qué?
 
-## ¿Por qué descargar una página web?
+Descargar una página web es un proceso en el que el código de una página (HTML, CSS, Javascript, etc.) se recibe y se guarda en el ordenador para poder ser visualizado por el usuario. Los programadores lo hacen para poder analizar el código, realizar cambios o utilizarlo en sus propios programas.
 
-Descargar una página web puede ser útil por diversas razones, como guardar una copia de seguridad, acceder a contenido sin conexión a internet o analizar su estructura para propósitos educativos o profesionales.
+## Cómo:
 
-<br>
+Para descargar una página web en C, se puede utilizar la librería `curl`. Aquí hay un ejemplo básico de cómo descargar una página y guardarla en un archivo:
 
-## Cómo hacerlo
-
-Para descargar una página web utilizando C, podemos utilizar la librería `libcurl`. Primero, debemos incluir la librería en nuestro código:
-
-```C
+```
 #include <stdio.h>
 #include <curl/curl.h>
-```
 
-Luego, necesitamos definir una función de callback que se encargará de guardar los datos recibidos en un archivo:
+// Función para guardar el contenido de la página en un archivo.
+// Se llama cada vez que se recibe un dato.
+static size_t write_data(void *ptr, size_t size, size_t nmemb, void *stream)
+{
+  size_t written = fwrite(ptr, size, nmemb, (FILE *)stream);
+  return written;
+}
 
-```C
-size_t write_callback(char *ptr, size_t size, size_t nmemb, void *userdata) {
-   FILE *fp = (FILE *)userdata;
-   return fwrite(ptr, size, nmemb, fp);
+int main()
+{
+  // Inicializar el objeto curl.
+  CURL *curl = curl_easy_init();
+
+  if(curl) {
+    // Establecer la URL a descargar.
+    curl_easy_setopt(curl, CURLOPT_URL, "https://www.example.com");
+
+    // Establecer la función para guardar los datos.
+    curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_data);
+
+    // Indicar el archivo en el que se guardarán los datos.
+    FILE *file = fopen("pagina.html", "w+");
+    if(file) {
+      curl_easy_setopt(curl, CURLOPT_WRITEDATA, file);
+
+      // Realizar la descarga.
+      CURLcode result = curl_easy_perform(curl);
+
+      // Comprobar si hubo algún error.
+      if(result != CURLE_OK)
+      {
+        printf("Error al descargar la página: %s\n",
+               curl_easy_strerror(result));
+      }
+
+      // Cerrar el archivo.
+      fclose(file);
+    }
+
+    // Limpiar el objeto curl.
+    curl_easy_cleanup(curl);
+  }
+
+  return 0;
 }
 ```
 
-A continuación, utilizamos la función `curl_easy_init()` para inicializar una sesión de `libcurl` y la función `curl_easy_setopt()` para establecer las opciones de nuestra solicitud, como la URL y la función de callback:
+Si se ejecuta este programa, se descargará la página `https://www.example.com` y se guardará en un archivo llamado `pagina.html`.
 
-```C
-CURL *curl;
-CURLcode result;
-curl = curl_easy_init();
+## Profundizando:
 
-if(curl) {
-  FILE *fp = fopen("pagina.html", "wb");
-  curl_easy_setopt(curl, CURLOPT_URL, "https://ejemplo.com/");
-  curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_callback);
-  curl_easy_setopt(curl, CURLOPT_WRITEDATA, fp);
-```
+La librería `curl` se encuentra ampliamente disponible en diferentes sistemas operativos y es una buena opción para descargar páginas web en C. Sin embargo, también existen otras alternativas como `libmicrohttpd` o `libcurlpp` que ofrecen una interfaz más fácil de utilizar con C++. Además, es importante tener en cuenta que descargar páginas web puede ser un proceso algo complejo debido a cuestiones como autenticación o manejo de cookies.
 
-Por último, ejecutamos la solicitud utilizando la función `curl_easy_perform()` y cerramos la sesión con `curl_easy_cleanup()`:
+## Ver también:
 
-```C
-  result = curl_easy_perform(curl);
-  curl_easy_cleanup(curl);
-  fclose(fp);
-}
-```
-
-Al ejecutar nuestro código, se descargará la página web en el archivo `pagina.html` en nuestro directorio actual.
-
-<br>
-
-## Detalles técnicos
-
-`libcurl` es una librería de código abierto que nos permite realizar solicitudes HTTP en múltiples plataformas. Utilizando la función `curl_easy_setopt()`, podemos establecer diferentes opciones para personalizar nuestras solicitudes, como el tipo de petición, encabezados y autenticación. Para más información, podemos consultar la documentación oficial de `libcurl` o revisar el código fuente de la librería.
-
-<br>
-
-## Ver también
-
-- [Documentación de libcurl](https://curl.se/libcurl/)
-- [Código fuente de libcurl](https://github.com/curl/curl)
-- [Ejemplo de descarga de una página web en C](https://www.geeksforgeeks.org/c-program-download-webpages-program/)
+- Documentación oficial de `libcurl`: https://curl.haxx.se/libcurl/
+- Tutorial de descarga de páginas web con C: https://www.mkssoftware.com/docs/man3/curl_easy_setopt.3.asp
+- Otras alternativas para descargar páginas web en C: https://www.slant.co/topics/3387/~libraries-for-downloading-any-online-content-with-c

@@ -10,53 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-Dates and times are a crucial part of many applications, whether it's for displaying the current date, scheduling events, or tracking data. However, dates in their original form are not always user-friendly. That's why converting a date into a string is important as it allows for easier manipulation and display of dates in a readable format.
+Converting a date into a string in TypeScript means taking a date object and transforming it into a string representation. Programmers often do this to display dates in a specific format or to easily manipulate and compare dates.
 
-## How To
-
-To convert a date into a string in TypeScript, we can use the `toString()` method. This method converts the date object into a string in a default format, which is the local date and time.
+## How to:
 
 ```TypeScript
-let currentDate = new Date();
-console.log(currentDate.toString());
-// Output: Fri Nov 20 2020 22:09:49 GMT-0800 (Pacific Standard Time)
+const date = new Date();
+
+// Convert a date into a string using toDateString() method
+const dateString = date.toDateString();
+console.log(dateString); // "Thu Sep 09 2021"
+
+// Convert a date into a custom string format using toLocaleDateString() method
+const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }; // specify format options
+const customString = date.toLocaleDateString('en-US', options); // get string in specified format
+console.log(customString); // "Thursday, September 9, 2021"
 ```
 
-If we want to specify a different format for the string, we can use the `toLocaleString()` method. This method allows us to pass in parameters for the date, time, and timezone to customize the string output.
+## Deep Dive:
 
-```TypeScript
-let currentDate = new Date();
-console.log(currentDate.toLocaleString('en-US', { dateStyle: 'full', timeStyle: 'long', timeZone: 'America/Los_Angeles' }));
-// Output: Friday, November 20th, 2020 at 10:13:14 PM Pacific Standard Time
-```
+Converting a date into a string has been a common task for programmers since the early days of computing. In the past, this was often done by using a combination of different functions to manipulate and display the different components of a date (day, month, year, etc.). The introduction of specific methods like `toDateString()` and `toLocaleDateString()` in languages like TypeScript has made this process much simpler and more efficient.
 
-We can also use the `toDateString()` and `toTimeString()` methods to get just the date or time portion of the string, respectively.
+There are also alternatives to converting a date into a string, such as using third-party libraries like Moment.js or using JavaScript's built-in `toLocaleString()` method. However, the built-in methods in TypeScript offer more flexibility and customization options.
 
-```TypeScript
-let currentDate = new Date();
-console.log(currentDate.toDateString());
-// Output: Fri Nov 20 2020
-console.log(currentDate.toTimeString());
-// Output: 22:15:20 GMT-0800 (Pacific Standard Time)
-```
+When converting a date into a string, it's important to consider the format and locale. Different regions and languages have varying conventions for displaying dates. The `toLocaleDateString()` method allows you to specify the desired format and locale, making it easier to display dates in a way that is familiar and easily understandable to your audience.
 
-## Deep Dive
+## See Also:
 
-The `toString()` and `toLocaleString()` methods are both locale-sensitive, meaning they will output the date and time in the format specific to the user's timezone and language. This allows for a more user-friendly experience, as the date and time will be displayed in a familiar format.
-
-In addition to the methods mentioned above, there are also options for custom date and time formatting using the `toLocaleDateString()` and `toLocaleTimeString()` methods. These methods allow us to pass in a format string to specify exactly how we want the date and time to be displayed.
-
-```TypeScript
-let currentDate = new Date();
-console.log(currentDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }));
-// Output: November 20, 2020
-console.log(currentDate.toLocaleTimeString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true }));
-// Output: 10:30 PM
-```
-
-## See Also
-
-- [MDN Web Docs - Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [TypeScript Documentation - Date](https://www.typescriptlang.org/docs/handbook/date-and-time.html)
+- [MDN web docs on Date object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [Moment.js](https://momentjs.com/)
+- [JavaScript toLocaleString() method](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleString)

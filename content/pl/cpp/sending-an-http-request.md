@@ -1,7 +1,7 @@
 ---
-title:                "Wysyłanie żądania HTTP"
-html_title:           "C++: Wysyłanie żądania HTTP"
-simple_title:         "Wysyłanie żądania HTTP"
+title:                "Wysyłanie żądania http"
+html_title:           "C++: Wysyłanie żądania http"
+simple_title:         "Wysyłanie żądania http"
 programming_language: "C++"
 category:             "C++"
 tag:                  "HTML and the Web"
@@ -10,59 +10,120 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co to jest i dlaczego to robimy?
+Wysyłanie żądania HTTP to sposób na komunikację z serwerem internetowym w celu pobrania informacji. Programiści wykorzystują je, aby pobierać dane, takie jak tekst, obrazy czy pliki, z innych stron internetowych lub aplikacji.
 
-Jeśli chcesz zintegrować swoje oprogramowanie z innymi aplikacjami lub serwisami internetowymi, wysyłanie żądań HTTP może być niezbędnym krokiem. Dzięki temu narzędziu możesz w prosty sposób komunikować się z innymi systemami, pobierać i przesyłać dane oraz wykonywać różne operacje.
-
-## Jak to zrobić
-
-Aby wysłać żądanie HTTP w języku C++, musisz najpierw zaimportować bibliotekę "HTTPRequest.h". Następnie musisz utworzyć obiekt żądania i określić jego metodę (GET, POST, itp.), adres URL oraz nagłówki. W przykładzie poniżej wyślemy GET request do strony "example.com", pobierzemy zawartość odpowiedzi i wyświetlimy ją na ekranie:
+## Jak to zrobić:
+Przykładowym sposobem na wysłanie żądania HTTP w C++ jest użycie biblioteki "libcurl". Poniższy kod pokaże, jak pobrać zawartość strony internetowej i wyświetli ją w konsoli.
 
 ```C++
-#include "HTTPRequest.h"
+#include <iostream>
+#include <curl/curl.h>
 
-int main()
-{
-    // Utwórz obiekt żądania HTTP
-    http::URLRequest request("http://example.com", http::Method::GET);
+int main() {
+  CURL *curl;
+  CURLcode res;
+  curl = curl_easy_init();
+  
+  if(curl) {
+    // ustawia URL, z którego chcemy pobrać dane
+    curl_easy_setopt(curl, CURLOPT_URL, "https://www.example.com");
+    
+    // ustawia funkcję do zapisywania danych z serwera
+    curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, &writeCallback);
+    
+    // wykonuje żądanie
+    res = curl_easy_perform(curl);
+    
+    // sprawdza kod odpowiedzi z serwera
+    long response_code;
+    curl_easy_getinfo(curl, CURLINFO_RESPONSE_CODE, &response_code);
+    
+    // jeśli kod jest 200, to żądanie powiodło się
+    if(response_code == 200) {
+      std::cout << "Pomyślnie pobrano zawartość strony!" << std::endl;
+    }
+    
+    // zamyka połączenie z serwerem i czyszczenie pamięci
+    curl_easy_cleanup(curl);
+  }
+  
+  return 0;
+}
 
-    // Dodaj nagłówki (opcjonalnie)
-    request.addHeader("Content-Type", "application/json");
-
-    // Wyślij żądanie i pobierz odpowiedź
-    http::Response response = request.send();
-
-    // Wyświetl zawartość odpowiedzi
-    std::cout << response.getBody() << std::endl;
-
-    return 0;
+// funkcja do zapisywania danych z serwera
+size_t writeCallback(char *buf, size_t size, size_t nmemb, void *userdata) {
+  for(int i = 0; i < size*nmemb; i++) {
+    std::cout << buf[i];
+  }
+  
+  return size*nmemb;
 }
 ```
 
-Przykładowy output:
+Wynik działania programu w konsoli powinien wyglądać mniej więcej tak:
 
 ```
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Welcome to Example.com</title>
+  <title>Example Domain</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style type="text/css">
+    body {
+      background-color: #f0f0f2;
+      margin: 0;
+      padding: 0;
+      font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      
+    }
+    #content {
+      display: table;
+      width: 100%;
+      height: 100%;
+    }
+    .center {
+      text-align: center;
+    }
+    #content .center {
+      display: table-cell;
+      vertical-align: middle;
+    }
+    .text {
+      text-align: center;
+      display: inline-block;
+      max-width: 80%;
+      border-radius: 10px;
+      padding: 10px;
+      background-color: #fff;
+      font-size: 24px;
+    }
+  </style>  
 </head>
+
 <body>
-    <h1>Hello world!</h1>
+  <div id="content">
+    <div class="center">
+      <div>
+        <img src="https://www.example.com/images/logo.png" alt="Logo">
+      </div>
+      <p class="text">Hello World!</p>
+    </div>
+  </div>
 </body>
 </html>
 ```
 
-Tak jak w tym przykładzie, możesz wykorzystać różne metody HTTP, takie jak GET, POST, PUT, DELETE, aby przesyłać różne rodzaje danych i wykonywać różne operacje.
+## Głębsza analiza:
+Wysyłanie żądań HTTP jest nieodłączną częścią internetu i jest wykorzystywane przez różne aplikacje, od przeglądarek internetowych po programy komunikacyjne. Istnieje wiele bibliotek dostępnych w języku C++, dzięki którym można łatwo wysyłać żądania HTTP, takie jak "libcurl" czy "cpp-netlib".
 
-## Deep Dive
+Alternatywą dla wysyłania żądań HTTP może być korzystanie z protokołu FTP, jednak jest on mniej popularny i wykorzystywany głównie do przesyłania plików.
 
-Istnieje wiele bibliotek i narzędzi do wysyłania żądań HTTP w języku C++, takich jak cURL, CPPRESTSDK czy Poco. Każde z nich ma swoje własne metody i interfejsy, więc warto przetestować kilka z nich i wybrać ten, który najlepiej odpowiada Twoim potrzebom.
+Podczas implementacji wysyłania żądań HTTP ważne jest uważne sprawdzanie kodów odpowiedzi z serwera, aby upewnić się, że żądanie zostało wykonane pomyślnie. Ważne jest również ustawienie odpowiednich nagłówków, aby poprawnie szczegółowo określić żądanie.
 
-Podczas wysyłania żądania warto również zwrócić uwagę na obsługę błędów i wyjątków. Zawsze należy zapewnić, że połączenie zostało nawiązane i odpowiedź została poprawnie odebrana przed przetwarzaniem danych.
-
-## Zobacz także
-
-- [Dokumentacja biblioteki "HTTPRequest"](https://github.com/elnormous/HTTPRequest)
-- [Porównanie popularnych bibliotek HTTP w C++](https://blog.knatten.org/2019/09/26/a-comparison-of-cpp-http-libraries/)
-- [Krótki tutorial o wysyłaniu żądań HTTP w C++](https://www.shahmoradi.org/ECE1552/newLabs/computerNetworks/howToSendHTTPrequest/tutorialOfHttp.htm)
+## Zobacz też:
+- [libcurl](https://curl.se/libcurl/)
+- [cpp-netlib](http://cpp-netlib.org/)
+- [HTTP na Wikipedii](https://pl.wikipedia.org/wiki/Hypertext_Transfer_Protocol)

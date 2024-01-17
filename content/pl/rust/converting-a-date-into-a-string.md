@@ -10,63 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co & Dlaczego?
 
-Wielu programistów wykorzystuje bezpieczny język Rust do tworzenia wydajnych aplikacji. Jednym z często spotykanych zadań podczas pracy z danymi jest konwersja daty na tekstowy format. W tym artykule dowiesz się, dlaczego konwersja daty na string jest ważna i jak możesz to zrobić w języku Rust.
+Konwertowanie daty na ciąg znaków jest zwykłym zadaniem, które polega na zamianie informacji o dacie w formacie przechowywanym przez komputer na czytelną dla ludzi postać. Programiści często wykonują tę czynność, aby umożliwić użytkownikom wygodne korzystanie z aplikacji, bądź aby wyświetlać datę w różnych formatach.
 
-## Jak to zrobić
-
-Rust oferuje wbudowane funkcje, które ułatwiają konwersję daty na string. Przyjrzyjmy się dwóm sposobom na wykonanie tego zadania: używając biblioteki standardowej i wykorzystując zewnętrzną bibliotekę.
-
-### Używając biblioteki standardowej
-
-Najprostszym sposobem na konwersję daty na string jest wykorzystanie biblioteki standardowej języka Rust. Skorzystajmy z funkcji `to_string()` dostępnej dla typu `DateTime`, aby przekonwertować datę na string.
+## Jak to zrobić:
 
 ```Rust
-use std::time::{SystemTime, Duration};
+use chrono::prelude::*;
 
 fn main() {
-    // Tworzymy obiekt typu SystemTime zawierający aktualną datę i godzinę
-    let now = SystemTime::now();
-    // Konwertujemy datę na string i przypisujemy do zmiennej
-    let date_string = now.to_string();
-
-    println!("Aktualna data i godzina: {}", date_string);
+    let date = Utc::now();
+    let date_string = date.format("%Y-%m-%d").to_string();
+    println!("{}", date_string);
 }
 ```
 
-Wyjście:
-```
-Aktualna data i godzina: Sun Jun 06 02:00:13 UTC 2021
-```
+W powyższym przykładzie użyto biblioteki `chrono`, która jest popularnym narzędziem w Rust do operacji na datach i czasie. Funkcja `format` pozwala nam ustalić pożądany format dla daty, a następnie używamy metody `to_string` do zamiany daty na ciąg znaków. Ostatecznie wyświetlamy wynik za pomocą funkcji `println!`.
 
-### Wykorzystując zewnętrzną bibliotekę
+## Dogłębnie:
 
-Jeśli potrzebujemy bardziej zaawansowanej obsługi daty, możemy skorzystać z zewnętrznej biblioteki. Jedną z popularnych opcji jest biblioteka `chrono`, która dostarcza bardziej precyzyjne metody konwersji daty.
+### Kontekst historyczny:
 
-```Rust
-use chrono::{Utc, DateTime};
+Zadanie konwertowania daty na ciąg znaków jest powszechne w programowaniu i stało się jeszcze bardziej popularne dzięki rozwojowi aplikacji internetowych i mobilnych. W przeszłości, aby wyświetlić datę w różnych formatach, programiści musieli ręcznie manipulować danymi, co było czasochłonne i podatne na błędy.
 
-fn main() {
-    // Pobieramy aktualną datę i godzinę w strefie czasowej UTC
-    let utc: DateTime<Utc> = Utc::now();
-    // Konwertujemy datę na string i przypisujemy do zmiennej
-    let date_string = utc.to_rfc2822();
+### Alternatywy:
 
-    println!("Aktualna data i godzina: {}", date_string);
-}
-```
+Niektóre języki programowania posiadają wbudowane narzędzia do konwertowania daty na ciąg znaków, na przykład funkcję `strftime` w języku C. W Rust jednak, korzystanie z biblioteki takiej jak `chrono` jest powszechne i wygodne.
 
-Wyjście:
-```
-Aktualna data i godzina: Sun, 06 Jun 2021 02:10:22 +0000
-```
+### Szczegóły implementacji:
 
-## Deep Dive
+Konwersja daty na ciąg znaków w Rust jest wykonywana przez bibliotekę lub samodzielnie przez użytkownika przy użyciu funkcji `format`. Powstały ciąg znaków jest następnie zwracany lub wyświetlany na ekranie. Kluczowe jest tu użycie odpowiedniego formatu, aby otrzymać pożądany rezultat.
 
-Jeśli chcesz lepiej zrozumieć proces konwertowania daty na string, warto zapoznać się z dokumentacją języka Rust oraz bibliotek, które zostały wykorzystane w przykładach. W przypadku użycia biblioteki `chrono`, możesz zajrzeć do jej dokumentacji na stronie [chrono.rs](https://docs.rs/chrono/latest/chrono/) lub skorzystać z `rustdoc`, narzędzia do generowania dokumentacji w języku Rust.
+## Zobacz również:
 
-## Zobacz również
-
-- [Dokumentacja języka Rust](https://doc.rust-lang.org/std/time/index.html)
-- [Dokumentacja biblioteki chrono](https://docs.rs/chrono/latest/chrono/)
+- Dokumentacja biblioteki `chrono` dla Rust: https://docs.rs/chrono/
+- Przewodnik po konwersji daty i formatowaniu w Rust: https://stevedonovan.github.io/rust-gentle-intro/6-dates.html

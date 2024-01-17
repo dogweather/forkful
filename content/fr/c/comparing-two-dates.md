@@ -1,7 +1,7 @@
 ---
-title:                "La comparaison de deux dates"
-html_title:           "C: La comparaison de deux dates"
-simple_title:         "La comparaison de deux dates"
+title:                "Comparaison de deux dates"
+html_title:           "C: Comparaison de deux dates"
+simple_title:         "Comparaison de deux dates"
 programming_language: "C"
 category:             "C"
 tag:                  "Dates and Times"
@@ -10,70 +10,92 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
-Si vous travaillez avec des dates dans vos programmes en C, vous aurez probablement besoin de les comparer à un moment ou un autre. Cela peut sembler simple, mais il y a quelques choses à savoir pour s'assurer que la comparaison se fait correctement. Dans cet article, nous allons explorer comment comparer deux dates en utilisant le langage C.
+## Qu'est-ce que c'est et pourquoi le faire?
 
-## Comment faire
-Pour comparer deux dates en C, nous devrons utiliser la structure de données `tm` fournie par la bibliothèque standard de C. Tout d'abord, nous devons déclarer deux variables de type `tm` pour représenter nos dates :
+Comparer deux dates en programmation est simplement le fait de vérifier si une date est chronologiquement antérieure ou postérieure à une autre. Les programmeurs le font souvent pour trier des événements chronologiquement ou pour vérifier la validité de données.
+
+## Comment faire:
+
+Voici deux façons simples de comparer deux dates en C:
 
 ```C
+// Exemple 1: Comparaison à l'aide de la fonction strcmp()
 #include <stdio.h>
-#include <time.h>
+#include <string.h>
 
 int main()
 {
-    struct tm date1, date2;
-    // Code pour initialiser les dates ici
-}
-```
+    char date1[] = "12-05-2021";
+    char date2[] = "06-05-2021";
 
-Ensuite, nous pouvons utiliser la fonction `mktime` pour convertir chaque date en une valeur numérique correspondant au nombre de secondes écoulées depuis le 1er Janvier 1970. Cette valeur sera plus facile à comparer que deux structures `tm` :
+    // Utilisation de la fonction strcmp() pour comparer les chaînes de caractères
+    int result = strcmp(date1, date2);
 
-```C
-// Code pour initialiser les dates ici
-time_t seconds1 = mktime(&date1);
-time_t seconds2 = mktime(&date2);
-```
-
-Maintenant, nous pouvons simplement utiliser les opérateurs de comparaison tels que `>, <, ==` pour comparer les deux valeurs numériques et déterminer quelle date est plus récente. Voici un exemple complet :
-
-```C
-#include <stdio.h>
-#include <time.h>
-
-int main()
-{
-    struct tm date1 = { .tm_year = 2021, .tm_mon = 7, .tm_mday = 1 };
-    struct tm date2 = { .tm_year = 2021, .tm_mon = 10, .tm_mday = 15 };
-
-    time_t seconds1 = mktime(&date1);
-    time_t seconds2 = mktime(&date2);
-
-    if (seconds1 > seconds2)
+    if(result > 0)
     {
-        printf("La date 1 est plus récente que la date 2.");
+        printf("%s est après %s\n", date1, date2);
+    }
+    else if(result < 0)
+    {
+        printf("%s est avant %s\n", date1, date2);
     }
     else
     {
-        printf("La date 2 est plus récente que la date 1.");
+        printf("Les dates sont les mêmes\n");
+    }
+    
+    return 0;
+}
+
+// Exemple 2: Comparaison à l'aide de variables de type struct tm
+
+#include <stdio.h>
+#include <time.h>
+
+int main()
+{
+    struct tm date1 = {0};
+    date1.tm_mday = 12;
+    date1.tm_mon = 4;
+    date1.tm_year = 121;
+
+    struct tm date2 = {0};
+    date2.tm_mday = 6;
+    date2.tm_mon = 4;
+    date2.tm_year = 121;
+
+    // Utilisation de la fonction difftime() pour calculer la différence entre les deux dates
+    double difference = difftime(mktime(&date1), mktime(&date2));
+
+    if(difference > 0)
+    {
+        printf("%d-%d-%d est après %d-%d-%d\n", date1.tm_mday, date1.tm_mon, date1.tm_year, date2.tm_mday, date2.tm_mon, date2.tm_year);
+    }
+    else if(difference < 0)
+    {
+        printf("%d-%d-%d est avant %d-%d-%d\n", date1.tm_mday, date1.tm_mon, date1.tm_year, date2.tm_mday, date2.tm_mon, date2.tm_year);
+    }
+    else
+    {
+        printf("Les dates sont les mêmes\n");
     }
 
     return 0;
 }
 ```
 
-Et voici la sortie de cet exemple :
-
+La sortie pour les deux exemples sera:
 ```
-La date 2 est plus récente que la date 1.
+12-05-2021 est après 06-05-2021
 ```
 
-## Plongée en profondeur
-Il est important de noter que la fonction `mktime` utilise un fuseau horaire local pour convertir la structure `tm` en une valeur de temps. Cela peut entraîner des problèmes de précision si vous devez comparer des dates dans des fuseaux horaires différents.
+## Plongée en profondeur:
 
-De plus, si vous devez comparer des dates avec une précision supérieure à la journée, vous devrez utiliser d'autres fonctions comme `difftime` qui permet d'obtenir un résultat en secondes avec une précision d'une seconde.
+En plus des méthodes présentées ci-dessus, il existe également d'autres moyens de comparer deux dates en C. Avant que la fonction `difftime()` soit introduite, les programmeurs utilisaient souvent la fonction `mktime()` pour convertir les dates en un format plus facilement comparable. Il est également important de noter que la comparaison de deux dates peut être différente en fonction de la précision requise. Par exemple, pour comparer des dates dans une application financière, il peut être nécessaire de prendre en compte les heures et les minutes, tandis que pour comparer des dates dans une application de planification, seule la date peut être importante.
 
-## Voir aussi
-- [Documentation de la bibliothèque standard C sur la structure `tm`](https://en.cppreference.com/w/c/chrono/tm)
-- [Documentation de la fonction `mktime`](https://en.cppreference.com/w/c/chrono/mktime)
-- [Documentation de la fonction `difftime`](https://en.cppreference.com/w/c/chrono/difftime)
+## Voir aussi:
+
+Vous pouvez en apprendre plus sur la comparaison de dates en C en consultant les sources suivantes:
+
+- [La référence C](https://www.cplusplus.com/reference/ctime/)
+- [Le tutoriel sur les structures et les dates en C](https://www.tutorialspoint.com/cprogramming/c_date_time.htm)

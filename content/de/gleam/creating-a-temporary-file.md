@@ -1,7 +1,7 @@
 ---
-title:                "Eine temporäre Datei erstellen"
-html_title:           "Gleam: Eine temporäre Datei erstellen"
-simple_title:         "Eine temporäre Datei erstellen"
+title:                "Erstellen einer temporären Datei"
+html_title:           "Gleam: Erstellen einer temporären Datei"
+simple_title:         "Erstellen einer temporären Datei"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Files and I/O"
@@ -10,35 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was ist das und warum?
 
-Warum sollte man sich überhaupt mit dem Erstellen von temporären Dateien beschäftigen? In der Programmierung kann es manchmal nützlich sein, temporäre Dateien zu erstellen, um Daten zwischen verschiedenen Prozessen oder Programmen auszutauschen. Durch das Erstellen einer temporären Datei können Daten effizient und sicher übertragen werden, ohne die bestehende Dateistruktur zu verändern.
+Temporäre Dateien sind Dateien, die von Programmierern erstellt werden, um vorübergehend Daten zu speichern. Das ist besonders nützlich, wenn Daten nur für einen kurzen Zeitraum benötigt werden und keine dauerhafte Speicherung erfordern.
 
-## Wie
+## Wie funktioniert es?
 
-Um in Gleam eine temporäre Datei zu erstellen, können wir die Funktion `File.write_to_temp()` verwenden. Hier ist ein Beispielcode, der eine einfache Textdatei erstellt und diese dann in der temporären Datei speichert.
+Gleam bietet eine eingebaute Funktion ```File.temp``` an, die es uns ermöglicht, temporäre Dateien zu erstellen. So könnte unser Code aussehen:
 
-```Gleam
-let content = "Dies ist ein Beispielinhalt."
-let file_name = "beispiel.txt"
+```
+Gleam.import File
+Gleam.import File.Temporary
 
-// Datei erstellen
-File.write_to_file(file_name, content)
-
-// Temporäre Datei erstellen
-let temp_file = File.write_to_temp(file_name)
-
-// Inhalt der temporären Datei ausgeben
-File.read(temp_file.path)
+let outcome =
+  File.temp()
 ```
 
-Die Ausgabe dieses Codes sollte der Inhalt der erstellten Datei sein, also "Dies ist ein Beispielinhalt." Die temporäre Datei wird automatisch gelöscht, sobald das Programm beendet wird.
+Die Variable "outcome" erhält dann ein Ergebnis von einem der Gleam-Standardbibliothekenmodul-Dateitypen, welche Informationen über die neu erstellte temporäre Datei enthält. Zum Beispiel können wir dann den Pfad der Datei abrufen und damit arbeiten. Das könnte so aussehen:
 
-## Deep Dive
+```
+let outcome =
+  File.temp()
 
-Die Funktion `File.write_to_temp()` erstellt nicht nur eine temporäre Datei, sondern gibt auch eine `TempFile`-Struktur zurück, die Informationen über die erstellte Datei enthält. Diese Struktur beinhaltet den Namen und den Pfad der temporären Datei sowie Funktionen zum Lesen, Schreiben und Löschen der Datei. Dadurch haben wir mehr Kontrolle über die temporäre Datei und können sie gezielt verwenden.
+let path =
+  File.Temporary.path(outcome)
 
-## Siehe auch
+let content =
+  File.read(path)
+```
 
-- [Gleam Dokumentation über das Modul File](https://gleam.run/modules/file.html)
-- [Beispielprojekt für die Verwendung von temporären Dateien in Gleam](https://github.com/gleam-lang/gleam_by_example/tree/master/tempfile)
+### In die Tiefe
+
+Das Konzept der temporären Dateien gibt es schon seit den Anfängen der Programmierung. Früher wurden sie hauptsächlich verwendet, um Dateien auf die Festplatte zu schreiben, da damals der Arbeitsspeicher begrenzter war. Heutzutage werden temporäre Dateien oft verwendet, wenn Programmierer sicherstellen möchten, dass ihre Programme auf verschiedenen Plattformen funktionieren, da der Speicherort der temporären Dateien standardisiert ist.
+
+Es gibt auch alternative Methoden, temporäre Dateien zu erstellen, wie zum Beispiel die Verwendung von Shell-Befehlen oder das Erstellen von Dateien direkt im Arbeitsspeicher. Allerdings bietet Gleam eine einfache und zuverlässige Möglichkeit, temporäre Dateien zu erzeugen, die in den meisten Fällen ausreichend ist.
+
+### Weitere Informationen
+
+Weitere Informationen über die ```File.temp``` Funktion und andere Datei-Operationen können in der Gleam-Dokumentation gefunden werden [hier](https://gleam.run/documentation/).
+
+Für einen tieferen Einblick in die Konzepte hinter temporären Dateien und ihre Verwendung in verschiedenen Programmiersprachen, empfehle ich diesen Artikel auf [GeeksforGeeks](https://www.geeksforgeeks.org/temporary-files-in-operating-systems/).
+
+Insgesamt bietet die Verwendung von temporären Dateien in der Programmierung eine effiziente Methode, um temporäre Daten zu speichern und zu verwalten, ohne dauerhafte Änderungen an unserem System vorzunehmen.

@@ -1,7 +1,7 @@
 ---
-title:                "Sammenligner to datoer"
-html_title:           "C: Sammenligner to datoer"
-simple_title:         "Sammenligner to datoer"
+title:                "Sammenligning av to datoer"
+html_title:           "C: Sammenligning av to datoer"
+simple_title:         "Sammenligning av to datoer"
 programming_language: "C"
 category:             "C"
 tag:                  "Dates and Times"
@@ -10,48 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor 
-Å sammenligne to datoer kan være nyttig når man for eksempel jobber med å sortere eller filtrere data, eller når man ønsker å finne ut hvilken dato som kommer først eller sist. Å kunne sammenligne datoer er en viktig ferdighet å ha som programmerer, og det kan bidra til å gjøre koden din mer robust og effektiv. 
+## Hva og Hvorfor?
+Så, du lurer kanskje på hvorfor programmerere er alltid snakker om å sammenligne to datoer? Det er ganske enkelt - sammenligning av datoer er en vanlig oppgave i programmering, spesielt når det kommer til å sortere eller filtrere data basert på datoer. Det er viktig å kunne identifisere om en dato er før eller etter en annen, eller om de er like, for å sikre riktig og nøyaktig behandling av data.
 
-## Hvordan 
-For å sammenligne to datoer i C, må man først konvertere dem til en datatype som kan sammenlignes, som for eksempel `time_t`. Dette kan gjøres ved hjelp av funksjoner som `mktime()` eller `strptime()`. Deretter kan man bruke operatorer som `<` eller `>` for å sammenligne datoene. Her er et enkelt eksempel:
-
+## Hvordan:
+Det er flere måter å sammenligne to datoer på i C-språket. Her er et eksempel på å sammenligne to datoer ved hjelp av funksjonen `difftime()`:
 ```C
 #include <stdio.h>
 #include <time.h>
-
 int main() {
-  // Opprett to datoer
-  struct tm dato1 = {31, 7, 2020};
-  struct tm dato2 = {14, 2, 2021};
+    time_t t1, t2;
+    struct tm date1, date2;
 
-  // Konverter til time_t
-  time_t tid1 = mktime(&dato1);
-  time_t tid2 = mktime(&dato2);
+    // Fyller struct med to datoer
+    date1.tm_year = 2020;
+    date1.tm_mon = 6;
+    date1.tm_mday = 1;
+    date2.tm_year = 2019;
+    date2.tm_mon = 6;
+    date2.tm_mday = 1;
 
-  // Sammenlign datoene og skriv ut resultatet
-  if (tid1 < tid2) {
-    printf("Dato 1 kommer før Dato 2");
-  } else {
-    printf("Dato 2 kommer før Dato 1");
-  }
-  return 0;
+    // Konverterer struct til time_t
+    t1 = mktime(&date1);
+    t2 = mktime(&date2);
+
+    // Sammenligner datoene og skriver ut resultatet
+    double result = difftime(t1, t2);
+    if (result > 0) {
+        printf("Dato 1 er senere enn dato 2.");
+    } else if (result < 0) {
+        printf("Dato 2 er senere enn dato 1.");
+    } else {
+        printf("Dato 1 og dato 2 er like.");
+    }
+
+    return 0;
 }
 ```
 
-Output:
-```
-Dato 1 kommer før Dato 2
-```
+Dette eksemplet viser hvordan man kan bruke `difftime()` til å sammenligne to datoer ved å konvertere dem til `time_t` og deretter beregne differansen mellom dem i antall sekunder.
 
-Det er også mulig å sammenligne datoer ved å konvertere dem til en datostring og deretter bruke `strcmp()`-funksjonen til å sammenligne dem. 
+## Dypdykk:
+Historisk sett har sammenligning av datoer vært et problem for mange programmeringsspråk, men i C-språket finnes det flere innebygde funksjoner som hjelper til med å håndtere dette. I tillegg til `difftime()` finnes det også `mktime()` og `difftime()` som kan brukes til å konvertere og sammenligne datoer. Alternativt kan man også bruke `time.h` biblioteket til å utføre mer avanserte beregninger med datoer.
 
-## Dypdykk 
-Når man sammenligner to datoer, må man være oppmerksom på at det kan oppstå feil på grunn av formatering eller ulikhet mellom tidssoner. Det er viktig å sørge for at datoene er konsistente og korrekt formatert før man sammenligner dem. Det kan også være lurt å bruke funksjoner som `difftime()` for å få differansen mellom to datoer i sekunder. 
-
-En annen ting å være oppmerksom på er at å sammenligne datoer kan være ulikt på forskjellige plattformer eller operativsystemer. Det kan derfor være lurt å ta hensyn til dette når man utvikler kode som skal være plattformuavhengig. 
-
-## Se Også 
-- [How to Compare Dates in C](https://www.tutorialspoint.com/how-to-compare-dates-in-c-programming) 
-- [Standard Library date and time utilities in C](https://en.cppreference.com/w/c/chrono) 
-- [C Language reference](https://www.cplusplus.com/reference/clibrary/ctime/)
+## Se også:
+For mer informasjon om hvordan man sammenligner datoer i C, kan du sjekke ut disse ressursene:
+- [Dato- og tidsfunksjoner i C](https://www.tutorialspoint.com/c_standard_library/time_h.htm) fra Tutorialspoint.
+- [Sammenligning av datoer i C](https://www.geeksforgeeks.org/compare-two-dates-in-c/) fra GeeksforGeeks.

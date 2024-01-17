@@ -1,7 +1,7 @@
 ---
-title:                "Concatenación de cadenas"
-html_title:           "Haskell: Concatenación de cadenas"
-simple_title:         "Concatenación de cadenas"
+title:                "Uniendo cadenas"
+html_title:           "Haskell: Uniendo cadenas"
+simple_title:         "Uniendo cadenas"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -10,47 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué?
+## ¿Qué y por qué?:
+La concatenación de cadenas se refiere a la acción de unir dos o más cadenas de texto juntas en una sola cadena. Los programadores suelen hacer esto para combinar información y crear nuevas cadenas que puedan ser utilizadas en su código.
 
-¿Alguna vez has querido unir varias palabras o frases en un solo texto? La concatenación de cadenas es una herramienta útil en programación para combinar piezas de texto de manera eficiente, ya sea para mostrar información al usuario o para construir cadenas más complejas.
-
-
-## Cómo hacerlo
-
-Para unir cadenas en Haskell, utilizamos el operador `++`. Por ejemplo, si tenemos dos cadenas, "Hola" y "mundo", podemos unirlas de la siguiente manera:
+## Cómo hacerlo:
+El lenguaje de programación Haskell proporciona varias formas de concatenar cadenas. Una forma es utilizando el operador de concatenación `++`, que une dos cadenas juntas. Por ejemplo: 
 
 ```Haskell
-"Hola" ++ "mundo" -- resultado: "Hola mundo"
+"¡Hola! " ++ "¿Cómo estás?"  
 ```
+Este código producirá la salida: `¡Hola! ¿Cómo estás?` 
 
-También podemos usar el operador varias veces para unir más de dos cadenas:
+Otra forma de concatenar cadenas es utilizando la función `concat`, que puede combinar múltiples cadenas en una sola. Por ejemplo:
 
 ```Haskell
-"Mi" ++ " " ++ "nombre" ++ " " ++ "es" ++ " " ++ "Juan" -- resultado: "Mi nombre es Juan"
+concat ["¡Hola", " ", "mundo", "!"]
 ```
 
-Incluso podemos unir cadenas y caracteres:
+Este código producirá la salida: `¡Hola mundo!`
 
-```Haskell
-"¡Hola," ++ ' ' ++ "bienvenido!" -- resultado: "¡Hola, bienvenido!"
-```
+## Deep Dive:
+La concatenación de cadenas ha sido utilizada en la programación desde los primeros días de los lenguajes de programación. En Haskell, el operador `++` fue agregado por primera vez en la versión 1.2 en 1991. 
 
-Otra forma de concatenar cadenas es utilizando la función `concat` en lugar del operador `++`:
+Además de utilizar el operador `++` y la función `concat`, también existen otras formas de concatenar cadenas en Haskell, como por ejemplo utilizando la función `foldl` o utilizando listas de carácteres.
 
-```Haskell
-concat ["Me", "gusta", "Haskell"] -- resultado: "Me gusta Haskell"
-```
-
-## Profundizando
-
-En Haskell, las cadenas son simplemente listas de caracteres. Por lo tanto, el operador `++` funciona de manera similar a la función `++` para unir listas.
-
-Además, existen otras funciones útiles para la manipulación de cadenas en Haskell, como `length` para obtener la longitud de una cadena, `take` y `drop` para obtener subcadenas, y `reverse` para invertir una cadena.
-
-En resumen, la concatenación de cadenas es una herramienta importante en Haskell que nos permite construir cadenas de manera eficiente y flexible. ¡Experimenta con diferentes formas de unir cadenas y descubre todas las posibilidades que ofrece esta función!
-
-## Ver también
-
-- [Documentación oficial de Haskell sobre cadenas](https://www.haskell.org/tutorial/strings.html)
-- [Tutorial de Haskell en español](https://github.com/Next-Lvl-Girls/pendientes-haskell-praga)
-- [Ejemplos de concatenación de cadenas en vivo en Haskell](https://repl.it/@NextLvlGirls/Concatenar-cadenas-en-Haskell)
+## Ver también:
+- [Documentación oficial de Haskell](https://www.haskell.org/)
+- [Tutorial de Haskell en español](https://wiki.haskell.org/Espa%C3%B1ol/Tutorial_de_Haskell)

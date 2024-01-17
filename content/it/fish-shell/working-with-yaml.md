@@ -10,46 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+## Cos'è e perché?
 
-Se stai cercando un modo semplice e veloce per gestire dati strutturati nel tuo terminale, allora la programmazione con YAML in Fish Shell potrebbe essere la soluzione perfetta per te. Con questa guida, imparerai come utilizzare YAML in modo efficiente e intuitivo, senza dover ricorrere a strumenti esterni.
+Lavorare con YAML è una pratica comune tra i programmatori, poiché è un formato di dati strutturato che permette di memorizzare informazioni in modo facilmente leggibile dalle macchine e dagli esseri umani. È comunemente utilizzato per la configurazione dei programmi e per lo scambio di dati tra sistemi.
 
-## Come fare
+## Come si fa:
 
-Per iniziare a utilizzare YAML in Fish Shell, è necessario prima installare il plugin "fish-yaml". Puoi farlo comodamente utilizzando il gestore dei pacchetti "fisher". Una volta installato, basta importare il modulo in Fish Shell con il comando:
-
-```
-fisher install jorgebucaran/fish-yaml
-```
-
-Una volta importato il modulo, puoi iniziare a gestire dati YAML nel tuo terminale. Ad esempio, creando un file YAML come questo:
+Il modo più semplice per lavorare con YAML nel Fish Shell è utilizzando il comando `yaml`. Ad esempio, per leggere un file YAML e stamparne il contenuto, si può utilizzare il seguente comando:
 
 ```
-nome: Mario
-cognome: Rossi
-età: 38
+fish-shell> yaml cat file.yaml
 ```
 
-Puoi poi utilizzare il comando `yaml_print` per visualizzare i dati nel file come output:
+Per creare un nuovo file YAML, si può utilizzare il comando `edit` combinato con il comando `yaml`. Ad esempio:
 
 ```
-$ yaml_print nome
-Mario
-$ yaml_print cognome
-Rossi
-$ yaml_print età
-38
+fish-shell> yaml edit nuovo_file.yaml
 ```
 
-In questo modo puoi facilmente accedere ai dati strutturati senza doverli estrarre manualmente dal file.
+Per aggiungere nuove informazioni al file YAML, si può utilizzare il comando `yaml set`. Ad esempio:
 
-## Deep Dive
+```
+fish-shell> yaml set nuovo_file.yaml nome "Mario"
+```
 
-Oltre alla semplice gestione dei dati, YAML in Fish Shell offre anche funzioni avanzate per il parsing e la manipolazione dei dati. Ad esempio, puoi utilizzare il comando `yaml_parse` per convertire un file YAML in un array associativo, che ti consente di accedere ai dati in modo ancora più efficiente.
+## Approfondimento
 
-Puoi anche utilizzare funzioni come `yaml_set` e `yaml_delete` per modificare i dati all'interno di un file YAML direttamente dal tuo terminale. Inoltre, il linguaggio espressivo di YAML ti permette di creare strutture dati complesse, rendendo questo strumento utile per una vasta gamma di progetti.
+YAML è stato introdotto nel 2001 come una alternativa più facile da leggere e scrivere rispetto a formati simili come XML. È stato adottato in molti progetti open source e ha guadagnato popolarità grazie alla sua struttura intuitiva basata su liste e mappature.
+
+Se non si utilizza Fish Shell, è comunque possibile lavorare con YAML utilizzando strumenti come Python o Ruby. In alternativa, è possibile utilizzare l'editor di testo preferito per modificare manualmente il file YAML.
+
+Per quanto riguarda l'implementazione di YAML nel Fish Shell, il comando `yaml` fa uso della libreria di parsing PyYAML. Alcune alternative per lavorare con YAML in Fish Shell includono lo script `yed` e il plugin `fancy_yaml`.
 
 ## Vedi anche
-- [Documentazione ufficiale di Fish Shell](https://fishshell.com/docs/current/index.html)
-- [fish-yaml repository su GitHub](https://github.com/jorgebucaran/fish-yaml)
-- [Tutorial sulle basi di YAML](https://www.tutorialsteacher.com/yaml)
+
+Documentazione ufficiale di Fish Shell: https://fishshell.com/docs/current/index.html
+
+Pagina di informazioni su YAML: https://yaml.org/

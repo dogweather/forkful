@@ -10,28 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i Dlaczego?
+Usuwanie znaków pasujących do wzorca jest jedną z funkcji, które programiści mogą wykonać w języku Bash. Polega to na wybraniu i usunięciu wszystkich wystąpień danego wzorca z tekstu. Jest to przydatne w wielu przypadkach, na przykład w filtracji danych lub przetwarzaniu tekstu.
 
-Usunięcie znaków pasujących do wzorca jest częstym zadaniem w programowaniu w Bashu, które często jest wykonywane jako część skryptów lub w celu automatyzacji pewnych zadań. Pozwala to na szybkie i skuteczne przetwarzanie tekstu, co jest niezbędne w wielu scenariuszach.
-
-## Jak to zrobić
-
-Przy użyciu polecenia `sed` i wykorzystując wyrażenia regularne, możemy łatwo usunąć znaki pasujące do określonego wzorca z tekstu. Oto prosty przykład:
-
-```Bash
-sed 's/[a-zA-Z]//g' plik.txt
+## Jak to zrobić:
+Bash jest językiem skryptowym, więc wbudowane polecenie sed może być wykorzystane do usuwania znaków pasujących do wzorca. Przykład może wyglądać następująco:
+```
+Teskst = "To jest przykładowy tekst."
+echo $Tekst | sed 's/e//g'
+```
+Wyjście powinno wyglądać tak:
+```
+To jst przykładowy txt.
+```
+Można także wykorzystać wbudowane polecenie awk do osiągnięcia tego samego efektu. Przykład:
+```
+Tekst="To jest przykładowy tekst."
+echo $Tekst | awk '{gsub("e","")}1'
+```
+Wyjście:
+```
+To jst przykładowy txt.
 ```
 
-Powyższa komenda usunie wszystkie litery z podanego pliku tekstowego. W tym przypadku wykorzystujemy wyrażenie regularne `[a-zA-Z]`, które oznacza wszystkie litery zarówno małe, jak i duże. Możemy również użyć innych wyrażeń regularnych w celu dopasowania odpowiednich znaków do usunięcia.
+## Wgląd w głąb:
+Usuwanie znaków pasujących do wzorca jest możliwe dzięki regularnym wyrażeniom, które są częścią składni języka Bash. Polecenie sed jest popularne w tym kontekście, ale istnieją także inne narzędzia, takie jak grep czy tr, które mogą być wykorzystane do tego celu. Implementacja jest oparta na algorytmie skanowania tekstu i usuwaniu znalezionych pasujących znaków.
 
-## Deep Dive
-
-Usunięcie znaków pasujących do wzorca jest możliwe dzięki wykorzystaniu polecenia `sed`, które jest potężnym narzędziem do przetwarzania tekstu w Bashu. Dzięki wyrażeniom regularnym możemy precyzyjnie określić, które znaki mają być usunięte. Możemy również używać innych opcji, takich jak `g` (global) w powyższym przykładzie, aby usunąć wszystkie pasujące znaki z całego tekstu, a nie tylko pierwsze wystąpienie.
-
-Inną możliwością jest wykorzystanie polecenia `tr`, które również służy do translacji lub usunięcia znaków. W tym przypadku możemy użyć opcji `-d` (delete), aby usunąć wszystkie pasujące znaki z tekstu z pominięciem wyrażeń regularnych.
-
-## Zobacz także
-
-- [Dokumentacja Bash na stronie oficjalnej](https://www.gnu.org/software/bash/)
-- [Poradnik od Basha do AWK](https://www.gnu.org/software/bash/)
-- [Podstawy wyrażeń regularnych w Bashu](https://www.gnu.org/software/bash/)
+## Zobacz też:
+- [Bash Guide for Beginners](http://tldp.org/Ldp/Bash-Beginners-Guide/html/sect_04_02.html)
+- [Regular Expression Tutorial](https://www.regular-expressions.info/tutorial.html)
+- [UNIX Power Tools - Chapter 26: Manipulating Text Files](http://docstore.mik.ua/orelly/unix/upt/ch26_16.htm)

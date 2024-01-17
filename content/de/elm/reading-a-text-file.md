@@ -1,7 +1,7 @@
 ---
-title:                "Einlesen einer Textdatei"
-html_title:           "Elm: Einlesen einer Textdatei"
-simple_title:         "Einlesen einer Textdatei"
+title:                "Einen Textdatei lesen"
+html_title:           "Elm: Einen Textdatei lesen"
+simple_title:         "Einen Textdatei lesen"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Files and I/O"
@@ -10,57 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was & Warum?
 
-Am Anfang jeder Programmiererlaufbahn steht die Aufgabe, Daten aus einer Textdatei zu lesen. Egal, ob du deine erste Hello-World-Anwendung schreibst oder an einem komplexen Softwareprojekt arbeitest, die Fähigkeit, eine Textdatei einzulesen, ist unerlässlich.
+Das Lesen einer Textdatei ist die Methode, um den Inhalt einer Datei in einem Computerprogramm zu lesen. Programmierer tun dies, um den Inhalt einer Datei zu verarbeiten und zu manipulieren, um bestimmte Aufgaben auszuführen oder Informationen zu extrahieren. 
 
-## How To
+## Wie geht das?
 
-Um eine Textdatei in Elm zu lesen, benötigst du das Paket "elm/file". Füge zunächst die Abhängigkeit in deine elm.json Datei hinzu:
+Elm bietet eine einfache Möglichkeit, eine Textdatei zu lesen. Verwenden Sie einfach die `readFile` Funktion und übergeben Sie den Pfad der Textdatei, die Sie lesen möchten. Hier ist ein Beispiel:
+
+```Elm
+import File
+
+main =
+  File.readFile "/path/to/file.txt"
+    |> File.map (\contents -> contents)
+```
+Und hier ist das Ergebnis, was wir bekommen, wenn wir die Datei `file.txt` mit dem Inhalt "Hallo Welt!" lesen:
 
 ```
-"dependencies": {
-    "elm/file": "1.0.2"
-}
+"Hello World!"
 ```
 
-Importiere dann das Modul in deinem Code:
+## Tieferer Einblick
 
-```
-import File exposing (readFile)
-```
-
-Nun kannst du die Funktion `readFile` verwenden, um eine Textdatei einzulesen. Sie gibt ein `Task` Objekt zurück, das eine Liste mit Zeilen aus der Datei enthält. Mit Hilfe von `andThen` kannst du darauf zugreifen und die Daten weiterverarbeiten:
-
-```
-readFile "meine_datei.txt"
-    |> Task.andThen (\task ->
-        case task of
-            Err error ->
-                -- Fehlerbehandlung
-                
-            Ok lines ->
-                -- Datenverarbeitung
-    )
-```
-
-## Deep Dive
-
-Die Funktion `readFile` akzeptiert zwei Argumente: einen Dateipfad als `String` und eine Konfigurationsliste als `List`. Die Konfigurationsoptionen umfassen unter anderem die Codierung der Datei und ob die Daten als `String` oder `Bytes` zurückgegeben werden sollen.
-
-Wenn du eine Datei mit speziellen Zeichensätzen wie UTF-8 öffnen möchtest, kannst du dies in der Konfigurationsliste angeben:
-
-```
-[String "UTF-8"] |> readFile "meine_datei.txt"
-```
-
-Du kannst auch die Daten als `Bytes` statt als `String` zurückgeben lassen. Dies kann besonders hilfreich sein, wenn du binäre Dateien liest:
-
-```
-bytesCfg = [ String "UTF-8", FormatBytes ] |> readFile "meine_datei.bin"
-```
+Das Lesen von Textdateien ist eine gängige Aufgabe in der Programmierung, die seit langem verwendet wird. Alternative Ansätze können die Verwendung von Bibliotheken oder Frameworks zur Verarbeitung von Dateien sein. Die `readFile` Funktion in Elm verwendet die nativen Dateioperationen des Betriebssystems, um die Textdateien zu lesen.
 
 ## Siehe auch
 
-- Offizielle Dokumentation zu [elm/file](https://package.elm-lang.org/packages/elm/file/latest/)
-- Beispielprojekt zum Einlesen von Textdateien in [Elm in Action](https://livebook.manning.com/book/elm-in-action/chapter-7/)
+Weitere Informationen zu anderen Dateioperationen in Elm finden Sie in der offiziellen Elm-Dokumentation.

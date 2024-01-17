@@ -1,7 +1,7 @@
 ---
-title:                "Nedlasting av nettside"
-html_title:           "Ruby: Nedlasting av nettside"
-simple_title:         "Nedlasting av nettside"
+title:                "Å laste ned en nettside"
+html_title:           "Ruby: Å laste ned en nettside"
+simple_title:         "Å laste ned en nettside"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "HTML and the Web"
@@ -10,41 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hva & Hvorfor?
+Når vi snakker om å laste ned en nettside i programmering, betyr det rett og slett å hente nettstedets innhold til vår egen datamaskin. Dette kan være nyttig for å analysere og behandle data eller for å automatisere handlinger som å lagre informasjon eller skrape informasjon fra nettsider. Programmere laster ned nettsider for å effektivt arbeide og manipulere data.
 
-Hvorfor ville noen ønske å laste ned en nettside? Jo, kanskje du ønsker å lagre en kopi av en nettside for senere lesing uten å være koblet til internett, eller kanskje du ønsker å analysere koden eller innholdet på nettsiden.
-
-## Hvordan gjøre det
-
-For å laste ned en nettside i Ruby, kan du bruke biblioteket "open-uri" og metoden "open" for å åpne en URL. Deretter kan du bruke "read" metoden for å lese innholdet på nettsiden. Her er et eksempel som vil lagre innholdet på nettsiden "https://www.vg.no" i en variabel kalt "vg":
-
-```Ruby
-require 'open-uri'
-vg = open("https://www.vg.no").read
+# Slik gjør du:
+```ruby
+require 'net/http'
+url = "www.example.com"
+page = Net::HTTP.get(URI.parse(url))
+puts page
 ```
 
-Etter dette kan du gjøre hva du måtte ønske med innholdet på nettsiden, for eksempel analysere koden eller skrive den ut til konsollen. Ved å bruke metoden "puts" vil innholdet på nettsiden bli skrevet ut:
+Denne koden bruker Ruby sitt innebygde bibliotek for å laste ned nettsiden ved hjelp av netthåndteringsmodulen. Den angitte URL-en blir åpnet og nettstedets innhold blir hentet og lagt inn i variabelen "side". Deretter blir innholdet av nettstedet skrevet ut på skjermen.
 
-```Ruby
-puts vg
-```
+# Dykk dypere:
+I eldre versjoner av Ruby, måtte man bruke et eksternt bibliotek for å laste ned nettsider. Dette var ofte komplisert og krevde mye kode. Nå er det mye enklere med det innebygde biblioteket net/http. Alternativt kan man også bruke biblioteket open-uri, men dette kan være mindre effektivt.
 
-Dette vil skrive ut alt innholdet på nettsiden til konsollen, slik at du kan lese det der. Du kan også lagre innholdet på nettsiden til en fil ved å bruke "open" og "write" metodene:
+Det kan være lurt å inkludere feilhåndtering i koden for å håndtere situasjoner der nettsiden ikke kan lastes ned eller når det oppstår andre problemer. Det er også viktig å være oppmerksom på opphavsrett og ikke laste ned store mengder data uten tillatelse.
 
-```Ruby
-File.open("vg.html", 'w') do |file|
-  file.write(vg)
-end
-```
-
-Dette vil lagre innholdet på nettsiden i en fil kalt "vg.html". Du kan endre filnavnet og lagre innholdet på nettsiden til en fil med et passende navn.
-
-## Dypdykk
-
-Når du bruker "open-uri" biblioteket, kan du også legge til ekstra parametere som å spesifisere HTTP-headers, håndtere omadressering og autentisering. Dette kan være nyttig i mer komplekse situasjoner hvor du trenger å laste ned en nettside med spesifikke innstillinger. Du kan også velge å lagre innholdet på nettsiden i forskjellige formater, som for eksempel JSON eller CSV, ved å bruke passende metoder og libs.
-
-## Se også
-
-- Ruby's open-uri og File biblioteker: [https://ruby-doc.org/stdlib-2.6.3/libdoc/open-uri/rdoc/index.html](https://ruby-doc.org/stdlib-2.6.3/libdoc/open-uri/rdoc/index.html)
-  [https://ruby-doc.org/core-2.6.3/File.html](https://ruby-doc.org/core-2.6.3/File.html)
-- En artikkel om å parse og manipulere nettsider i Ruby: [https://www.rubyguides.com/ruby-tutorial/scraping-websites/](https://www.rubyguides.com/ruby-tutorial/scraping-websites/)
+# Se også:
+- https://github.com/ruby/net-http
+- https://ruby-doc.org/stdlib-2.7.2/libdoc/net/http/rdoc/Net/HTTP.html
+- https://www.rubyguides.com/2018/01/ruby-http-request/

@@ -1,7 +1,7 @@
 ---
-title:                "सामान्य अभिव्यक्ति का उपयोग करें"
-html_title:           "C++: सामान्य अभिव्यक्ति का उपयोग करें"
-simple_title:         "सामान्य अभिव्यक्ति का उपयोग करें"
+title:                "रेगुलर एक्सप्रेशन का प्रयोग करना"
+html_title:           "C++: रेगुलर एक्सप्रेशन का प्रयोग करना"
+simple_title:         "रेगुलर एक्सप्रेशन का प्रयोग करना"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -10,78 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##Regular Expressions ka upyog kyon karna chahiye?
+"## क्या और क्यों?"
 
-Agar aap C++ programmer hai, to aapko regular expressions ka upyog karke apne code ko powerful aur efficient bana sakte hai. Ye bahut hi versatile aur flexible hai, jiske madhyam se aap patterns ko search, match aur replace kar sakte hai apne string mein, sath hi sath input validation aur data processing bhi kar sakte hai.
+रेगुलर एक्सप्रेशन का उपयोग क्या है और क्यों प्रोग्रामर इसका उपयोग करते हैं? रेगुलर एक्सप्रेशन एक टेक्स्ट प्रोसेसिंग टूल है जो टेक्स्ट के साथ काम करता है और विभिन्न विधियों का निर्देशन करता है, जैसे कि रिप्लेसमेंट और मैचिंग। प्रोग्रामर रेगुलर एक्सप्रेशन का उपयोग करते हैं क्योंकि यह सिस्टमस को काफी तेजी से और सहजता से विभिन्न प्रकार के डाटा के साथ आगे बढ़ने में मदद करता है।
 
-##Regular Expressions kaise upyog karein?
+"## कैसे करें:"
 
 ```C++
-// Simple Pattern Matching
 #include <iostream>
 #include <regex>
 
-int main()
-{
-    // Input string
-    std::string str = "Hello World!";
+using namespace std;
 
-    // Pattern to search
-    std::regex pattern("World");
+int main() {
+  // गाड़ी नंबरों को ढूंढें
+  string text = "कैमरा: 8453, ट्रक: 4537, कार: 2375";
+  regex pattern("[:][ ]\\d{4}"); // ढूंढा जाने वाला पैटर्न
 
-    // Matching string using regex_search function
-    if (std::regex_search(str, pattern))
-    {
-        // Output
-        std::cout << "Pattern found!" << std::endl;
-    }
-    else
-    {
-        // Output
-        std::cout << "Pattern not found!" << std::endl;
-    }
+  // पैटर्न को मिलाने के लिए iterator इस्तेमाल करें
+  sregex_iterator currentMatch(text.begin(), text.end(), pattern);
+  sregex_iterator lastMatch;
 
-    return 0;
-}
+  // सभी मिलाने हुए पैटर्न को प्रिंट करें
+  while (currentMatch != lastMatch) {
+    smatch match = *currentMatch;
+    cout << match.str() << endl;
+    currentMatch++;
+  }
 
-```
-
-```C++
-// Using Regular Expressions for Input Validation
-#include <iostream>
-#include <regex>
-
-int main()
-{
-    // Input validation for age
-    int age;
-    std::cout << "Enter your age: ";
-    std::cin >> age;
-
-    // Regex pattern for valid age
-    std::regex pattern("[0-9]{1,3}");
-
-    // Matching input with pattern
-    if (std::regex_match(std::to_string(age), pattern))
-    {
-        // Output
-        std::cout << "Valid age entered!" << std::endl;
-    }
-    else
-    {
-        // Output
-        std::cout << "Invalid age entered!" << std::endl;
-    }
-
-    return 0;
+  return 0;
 }
 ```
+```
+उत्पादन:
+: 8453
+: 4537
+: 2375 
+```
 
-##Regular Expressions ka adhyan karna
+"## गहराई में जाइए:"
 
-Regular Expressions ko adhyan karne se pehle, aapko inke basic syntax aur functions ka pata hona chahiye. Inke alawa, aapko inka upyog karte hue apne code ko efficient banane ke techniques bhi sikhna hoga, jaise ki capturing groups, backreferences aur lookaheads/lookbehinds. Iske liye aap online tutorials aur documentation refer kar sakte hai.
+रेगुलर एक्सप्रेशन की खोज अल्गवादियों द्वारा 1956 में शुरू की गई थी, जो विभिन्न प्रकार के डाटा के साथ काम करने के लिए परिचित समान रूप से स्वीकार किए गए हैं। ये आजकल के प्रोग्रामिंग में आवश्यक हैं क्योंकि वे सहजता से बड़े डाटासेट के साथ काम करने की अनुमति देते हैं। आप इनका उपयोग अन्य डाटा प्रोसेसिंग टूलों जैसे विभिन्न लाइब्रेरी अथवा स्ट्रिंग मैनिपुलेशन फंक्शन्स के साथ कर सकते हैं। रेगुलर एक्सप्रेशन दो आवेदन अनुप्रयोगों में हैं: रिप्लेसमेंट और मैचिंग। ये दोनों ही सिस्टमस को तेजी से विभिन्न प्रकार के डाटा को स्थापित और रीन्कॉर्ड करने में मदद करते हैं। 
 
-##Dekhiye Bhi
+"## अन्य स्रोत देखें:"
 
-- [C++ Regex Tutorial in Hindi](https://www.youtube.com/watch?v=oZgx7f_LIhk)
-- [C++ Regex Documentation](https://en.cppreference.com/w/cpp/regex)
+- रेगुलर एक्सप्रेशन को और समझने के लिए [यह ट्यूटोरियल](https://regexone.com/) देखें।
+- [पैटर्न खोजने के लिए और जानने के लिए यह टूल](https://regex101.com/) इस्तेमाल करें।
+- [रेगुलर एक्सप्रेशन की विस्तृत जानकारी](https://www.regular-expressions.info/) के लिए इस वेबसाइट को देखें।

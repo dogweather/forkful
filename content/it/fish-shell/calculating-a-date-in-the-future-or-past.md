@@ -10,34 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+## Cosa & Perché?
+Calcolare una data nel futuro o nel passato è un'operazione comune per i programmatori. Questo permette loro di effettuare calcoli temporali per creare funzionalità come notifiche di scadenze o promemoria di eventi.
 
-La ragione più comune per cui si vuole calcolare una data in futuro o in passato è la gestione delle scadenze. Potresti dover programmare un promemoria per un evento che si terrà in futuro o dover retrodatare un'azione che è stata completata.
+## Come fare:
+```Fish Shell``` offre diverse funzioni e strumenti per calcolare date nel futuro o nel passato. Uno dei modi più semplici per farlo è utilizzare il comando ```date``` seguito dalla data desiderata nel formato ```+days```, dove "days" rappresenta il numero di giorni dopo o prima la data corrente.
 
-## Come fare
+Ad esempio, se vogliamo sapere quale data sarà tra 10 giorni, possiamo eseguire il seguente comando:
 
-Per calcolare una data in futuro o in passato nel Fish Shell, è possibile utilizzare la funzione `date` seguita dal numero di giorni, settimane, mesi o anni che si desidera aggiungere o sottrarre.
-
-Esempio:
-
-```Fish Shell
-date "3 weeks ago"
+```
+date +10 days
 ```
 
-Questo restituirà la data di tre settimane fa. È inoltre possibile combinare più unità di tempo in una sola espressione, ad esempio `3 days 2 hours ago`.
+Il risultato dovrebbe essere qualcosa del genere:
 
-## Approfondimento
-
-Oltre all'utilizzo della funzione `date`, è possibile anche utilizzare la data corrente come punto di partenza per calcolare una data in futuro o in passato. Ad esempio, se si è interessati alla data di 3 mesi fa a partire dalla data odierna, si può utilizzare questo comando:
-
-```Fish Shell
-date -s "3 months ago"
+```
+gio 11 ott 2021 10:30:45 CEST
 ```
 
-È inoltre possibile specificare una data di partenza diversa dalla data corrente utilizzando la funzione `date` seguita da un formato di data specifico. Ad esempio, `date 1992-03-08` restituirebbe la data 8 marzo 1992.
+Inoltre, è possibile combinare questa funzione con altre come ad esempio ```+weeks```, ```+months``` o ```+years``` per effettuare calcoli ancora più precisi.
 
-## Vedi anche
+## Approfondimento:
+In passato, per calcolare date nel futuro o nel passato era necessario utilizzare linguaggi come Ruby o Python. Tuttavia, grazie alla potenza e alla flessibilità di ```Fish Shell```, ora è possibile utilizzarlo anche per questo scopo.
 
-- [Documentazione ufficiale del Fish Shell](https://fishshell.com/docs/current/index.html)
-- [Tutorial sul Fish Shell di DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-use-the-fish-shell-in-linux)
-- [Calendario delle date e orari Unix](http://oreil.ly/unix-time-calendar)
+Inoltre, oltre al comando ```date```, esistono anche altri strumenti utili come il plugin [Oh My Fish](https://github.com/oh-my-fish/oh-my-fish) che offre funzioni di calcolo avanzate per le date.
+
+## Vedi anche:
+- [Documentazione ufficiale di Fish Shell](https://fishshell.com/docs/current/index.html)
+- [Plugin Oh My Fish](https://github.com/oh-my-fish/oh-my-fish)
+- [Articolo su come calcolare date in Fish Shell](https://www.tecmint.com/set-date-and-time-in-fish/)

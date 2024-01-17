@@ -10,84 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
-Si vous êtes nouveau dans le monde de la programmation, il est probable que vous ayez entendu parler de l'importance de savoir comment obtenir la date actuelle en Python. Mais pourquoi est-ce si important ? Eh bien, la réponse est simple : la plupart des applications et des programmes informatiques nécessitent l'utilisation de dates et d'heures pour gérer des données, suivre les événements et bien plus encore. Comme Python est l'un des langages de programmation les plus populaires et polyvalents, il est utile de comprendre comment obtenir la date actuelle en utilisant ce langage.
+## Qu'est-ce que c'est et pourquoi?
+Obtenir la date actuelle est un moyen courant pour les programmeurs de garder une trace du temps dans leurs programmes. Cela peut être utile pour enregistrer quand une tâche a été effectuée ou pour personnaliser les résultats en fonction de la date actuelle.
 
-## Comment faire
-Il existe plusieurs façons d'obtenir la date actuelle en Python, mais nous allons en aborder deux : en utilisant le module "datetime" et en utilisant la bibliothèque "time".
+## Comment faire:
+Voici deux façons simples d'obtenir la date actuelle en utilisant Python:
 
-### Utiliser le module "datetime"
-Pour utiliser le module "datetime", vous devez d'abord l'importer dans votre code en utilisant la commande suivante :
-```Python
-import datetime
 ```
-Ensuite, vous pouvez utiliser la méthode "now()" pour obtenir la date et l'heure actuelles, comme illustré dans l'exemple ci-dessous :
-```Python
-import datetime
+# Importer le module datetime 
+import datetime 
 
-now = datetime.now()
+# Utiliser la fonction maintenant () pour obtenir la date et l'heure actuelles 
+maintenant = datetime.now() 
 
-print(now)
-```
-Cela produira un résultat similaire à ceci : 
-```Python
-2021-10-19 15:08:38.454442
+# Afficher la date actuelle dans le format "Mois / Jour / Année, Heure: Minutes: Secondes" 
+print(maintenant.strftime("%m/%d/%Y, %H:%M:%S")) 
+
+# Output: 04/14/2021, 10:23:09 
 ```
 
-Vous pouvez également formater la sortie pour n'afficher que la date ou l'heure, en utilisant les attributs "date()" et "time()" respectivement. Par exemple :
-```Python
-import datetime
-
-now = datetime.now()
-
-print(now.date())
-print(now.time())
 ```
-Ce code produira une sortie similaire à ceci :
-```Python
-2021-10-19
-15:09:46.472323
-```
+# Importer le module time 
+import time 
 
-### Utiliser la bibliothèque "time"
-La bibliothèque "time" offre également des fonctions pour obtenir la date et l'heure actuelles en Python. Vous pouvez l'importer dans votre code en utilisant la commande suivante :
-```Python
-import time
-```
-Ensuite, vous pouvez utiliser la fonction "time()" pour obtenir le temps écoulé depuis le 1er janvier 1970 à minuit, comme illustré dans l'exemple ci-dessous :
-```Python
-import time
+# Utiliser la fonction time () pour obtenir le nombre de secondes écoulées depuis le 01/01/1970 
+seconde = time.time() 
 
-current_time = time.time()
+# Utiliser la fonction localtime () pour convertir le nombre de secondes en une structure de temps locale 
+struct_time = time.localtime(seconde) 
 
-print(current_time)
-```
-Ce code produira un résultat similaire à ceci :
-```Python
-1634668697.3228226
+# Afficher la date actuelle dans le format "Mois / Jour / Année, Heure: Minutes: Secondes" 
+print(time.strftime("%m/%d/%Y, %H:%M:%S", struct_time)) 
+
+# Output: 04/14/2021, 10:23:09 
 ```
 
-Si vous souhaitez obtenir une sortie plus lisible, vous pouvez utiliser la fonction "localtime()" pour la formater en une structure de temps plus compréhensible, comme ceci :
-```Python
-import time
+## Plongée en profondeur:
+Obtenir la date actuelle peut sembler simple, mais c'était en fait un défi pour les programmeurs dans les premiers jours de la programmation informatique. Les programmes doivent souvent être en mesure de gérer différentes fuseaux horaires, les changements d'heure et les années bissextiles. Heureusement, les modules datetime et time de Python s'occupent désormais de tous ces problèmes.
 
-current_time = time.time()
+Il existe également d'autres alternatives pour obtenir la date actuelle, telles que les modules third party tels que arrow et pendulum. Ces modules offrent des fonctionnalités supplémentaires comme la conversion entre différents fuseaux horaires et la manipulation des dates avec plus de précision.
 
-local_time = time.localtime(current_time)
+Si vous souhaitez en savoir plus sur l'implémentation de la date actuelle dans Python, vous pouvez consulter la documentation officielle de la ligne de commande strftime ou le livre "Dive Into Python" de Mark Pilgrim.
 
-print(local_time)
-```
-Et voici un exemple de la sortie produite :
-```Python
-time.struct_time(tm_year=2021, tm_mon=10, tm_mday=19, tm_hour=15, tm_min=13, tm_sec=48, tm_wday=1, tm_yday=292, tm_isdst=0)
-```
-
-## Deep Dive
-Maintenant que nous avons vu comment obtenir la date actuelle en utilisant Python, il est important de comprendre que la date et l'heure sont stockées dans un format spécifique à Python. Pour être exact, elles sont stockées sous forme d'objet "datetime" ou "time", respectivement avec le module "datetime" et la bibliothèque "time".
-
-Un élément important à noter est que ces objets "datetime" et "time" sont considérés comme des objets immuables, ce qui signifie qu'ils ne peuvent pas être modifiés après leur création. Cela peut sembler frustrant, mais cela garantit que vous ne modifiez pas accidentellement les données de date et d'heure dans vos programmes.
-
-De plus, il est important de comprendre que la date et l'heure utilisent différentes unités : la date utilise des unités telles que l'année, le mois et le jour, tandis que l'heure utilise des unités telles que l'heure, la minute et la seconde. En gardant cela à l'esprit, vous pourrez utiliser les méthodes appropriées pour récupérer l'information dont vous avez besoin.
-
-## Voir aussi
-Maintenant que vous avez appris comment obtenir la date actuelle en Python, vous pouvez essayer d'autres manipulations de date et d'heure en utilisant
+## Voir aussi:
+- [Documentation officielle strftime] (https://docs.python.org/3/library/datetime.html#strftime-and-strptime-format-codes)
+- [Dive Into Python] (https://diveintopython3.net/datetime.html)

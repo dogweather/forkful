@@ -10,41 +10,19 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
-Calcolare una data futura o passata può risultare utile per molte applicazioni, come la gestione delle scadenze o la programmazione di eventi futuri.
+## Cosa & perché?
+Calcolare una data nel futuro o nel passato si riferisce all'abilità di un programmatore di determinare una data che sia un certo numero di giorni, settimane o mesi avanti o indietro rispetto a una data di riferimento fornita. I programmatori spesso fanno questo per svolgere operazioni di data, come creare un calendario o calcolare la scadenza di un progetto.
 
-## Come fare
-Per calcolare una data in Swift, è necessario utilizzare il framework `Foundation` e la classe `Calendar` per gestire le date e il fuso orario. Ecco un esempio di come ottenere la data odierna utilizzando il calendario gregoriano:
-
-```Swift
-let calendar = Calendar(identifier: .gregorian)
-let currentDate = Date()
-let currentComponents = calendar.dateComponents([.day, .month, .year], from: currentDate)
+## Come:
+```
+Swift let currentDate = Date() let dateInFuture = Calendar.current.date(byAdding: .day, value: 7, to: currentDate) print(dateInFuture) // Output: 2021-11-05 13:45:23 +0000
 ```
 
-Per calcolare una data futura o passata, è possibile utilizzare il metodo `date(byAdding:to:wrappingComponents:)` della classe `Calendar`. Questo metodo accetta come parametri gli elementi da aggiungere o sottrarre alla data di partenza e restituisce la data risultato. Ad esempio, per ottenere la data a 30 giorni dall'oggi:
+Nell'esempio sopra, utilizziamo la funzione `date(byAdding:to:)` per calcolare una data nel futuro aggiungendo 7 giorni alla data corrente. È possibile utilizzare anche altri componenti di tempo, come le settimane o i mesi, e specificare una data di riferimento diversa dalla data corrente.
 
-```Swift
-let futureDate = calendar.date(byAdding: .day, value: 30, to: currentDate)
-```
+## Approfondimento:
+Calcolare le date nel futuro o nel passato è utile quando si lavora con programmi che dipendono dal tempo, come calendari o promemoria. In passato, questa operazione era molto più complicata e richiedeva la conoscenza di algoritmi complessi. Oggi, con l'aiuto delle funzioni integrate di Swift e del framework `Foundation`, siamo in grado di calcolare facilmente le date in modo più efficiente.
 
-Per calcolare una data con un determinato fuso orario, è necessario utilizzare la classe `TimeZone` e specificarla nell'istanza del calendario:
-
-```Swift
-let losAngelesTimeZone = TimeZone(identifier: "America/Los_Angeles")
-calendar.timeZone = losAngelesTimeZone
-```
-
-### Esempio di output
-
-```
-currentDate = 2021-10-25 08:00:00 +0000
-futureDate = 2021-11-24 08:00:00 +0000
-```
-
-## Approfondimento
-Il framework `Foundation` offre una vasta gamma di opzioni per calcolare date in base a diversi calendari e fusi orari. È anche possibile utilizzare la classe `DateInterval` per ottenere un intervallo di date, il metodo `isDate(_:equalTo:toGranularity:)` per confrontare due date e il metodo `dateComponents(_:from:to:)` per ottenere il numero di elementi (come giorni, mesi o anni) tra due date.
-
-## Vedi anche
-- [Documentazione ufficiale di Apple su Calendar](https://developer.apple.com/documentation/foundation/calendar)
-- [Guida di Hacking with Swift su come gestire le date in Swift](https://www.hackingwithswift.com/articles/153/how-to-handle-date-and-time-in-swift)
+## Vedi anche:
+- [Funzione `date(byAdding:to:)` di Apple](https://developer.apple.com/documentation/foundation/calendar/2294041-date)
+- [Calendario gregoriano](https://it.wikipedia.org/wiki/Calendario_gregoriano)

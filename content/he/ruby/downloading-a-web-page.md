@@ -10,29 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## למה
+## מה ולמה?
+להוריד את הדף האינטרנטי הינו פעולה שבה מתקבל מידע מאתר אינטרנט ונשמר במחשב המשתמש. תהליך זה נעשה בכדי לשלוט על המידע ולאפשר למתכנתים לעבוד איתו ולהשתמש בו בקלות.
 
-מחשבים יכולים לראות רק מידע שנשלח להם, אז כאשר אנו גולשים באינטרנט אנו צריכים להוריד את הדף הרלוונטי כדי לגלות את התוכן שבו.
+## איך לעשות:
+להלן דוגמאות לקוד ופלט בתוך בלוקי קוד עם הסמל `Ruby ... `.
 
-## איך לעשות זאת
-
-כדי להוריד דף אינטרנט בשפת רובי, נוכל להשתמש בתוכנית קטנה עם מספר שורות קוד.
-
-```Ruby
-require 'net/http'
-
-url = URI("https://www.example.com") #הכנסת כתובת האתר שברצונך להוריד
-response = Net::HTTP.get(url) #השמת מידע במשתנה response
-puts response #הדפסת מידע
+### דוגמה 1:
+``` Ruby
+require 'open-uri'
+url = "https://www.example.com"
+html_file = open(url).read
+puts html_file
 ```
 
-כאן, אנו משתמשים בספריה של נט ה-HTTP בשביל ליצור חיבור לכתובת האתר. אחרי זה, אנו משיגים את התוכן של הדף ומדפיסים אותו. והנה, אנו יכולים לראות את התוכן של הדף המכיל את כל התכנים, תמונות וקישורים.
+### פלט:
+```
+<!doctype html>
+<html>
+<head>
+  <title>Example Domain</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style type="text/css">
+  body {
+    background-color: #f0f0f2;
+    margin: 0;
+    padding: 0;
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    
+## נחישות לעומק:
+כדי להוריד דף אינטרנט, מתכנתים יכולים להשתמש בספריית open-uri הכלולה בסטנדרט הקל להבנה והשימוש. יחד עם זאת, קיימות ספריות נוספות כגון HTTParty ו- httpclient שמאפשרות יצירת בקשות HTTP לכתובת אתר ולהחזיר את התוכן שלו. בנוסף, אפשר להשתמש בפקד Nokogiri כדי לשפר את תהליך החלוקה והניתוח של תוכן האינטרנט.
 
-## חפירה עמוקה
-
-ניתן לעשות את הפעולה של הורדת דף אינטרנט בצורה יעילה יותר עם גמישות דרך השתמשות בכלי של "Nokogiri". כלי זה מאפשר לנו לעבד ולחשוב על תגי HTML במילות פשוטות כדי לקבל רשימת תוכן ולהנות ממודל התיעוד. ניתן למצוא דוגמאות מפורטות לשימוש בכלי זה [כאן] (https://nokogiri.org/).
-
-## ראה גם
-
-- [Short Ruby Guide - Introduction to Web Scraping with Ruby] (https://www.rubyguides.com/2018/07/ruby-web-scraping/)
-- [Nokogiri Documentation] (https://nokogiri.org/)
+## ראו גם:
+- [ספריית open-uri ברמת קלטת רובי](https://ruby-doc.org/stdlib-2.6.3/libdoc/open-uri/rdoc/OpenURI.html)
+- [ספריית HTTParty](https://github.com/jnunemaker/httparty)
+- [פקד Nokogiri](https://nokogiri.org/)

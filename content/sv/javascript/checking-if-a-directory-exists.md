@@ -1,7 +1,7 @@
 ---
-title:                "Kontrollera om en mapp finns"
-html_title:           "Javascript: Kontrollera om en mapp finns"
-simple_title:         "Kontrollera om en mapp finns"
+title:                "Kontroll av existensen för en katalog"
+html_title:           "Javascript: Kontroll av existensen för en katalog"
+simple_title:         "Kontroll av existensen för en katalog"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Files and I/O"
@@ -10,37 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
+Koll på om en mapp finns är en process där en utvecklare avgör om en viss mapp existerar inom ett givet system. Detta kan vara användbart för att undvika felmeddelanden eller hantera filer på ett effektivt sätt.
 
-Att kontrollera om en mapp existerar är en viktig del av att skriva kod i Javascript. Det kan hjälpa till att undvika fel och säkerställa att all nödvändig data finns tillgänglig innan man fortsätter med resten av koden.
-
-## Hur man gör det
-
-För att kontrollera om en mapp existerar i Javascript kan du använda `fs.existsSync()`-funktionen från Node.js-filhanteringspaketet. Det här är enklast att förstå genom ett exempel:
+## Hur man gör:
+För att kontrollera om en mapp finns kan du använda dig av funktionen `existsSync` från paketet `fs` i Javascript. Nedan finns ett exempel på hur du kan implementera detta:
 
 ```Javascript
 const fs = require('fs');
 
-// Definiera namnet på den mapp du vill kontrollera
-const mappNamn = "minMapp";
-
-// Använd fs.existsSync() för att kontrollera om mappen finns
-if (fs.existsSync(mappNamn)) {
-  console.log("Mappen finns!");
+if (fs.existsSync('/path/to/directory')) {
+  console.log('Mappen finns!');
 } else {
-  console.log("Mappen existerar inte.");
+  console.log('Mappen existerar inte.');
 }
 ```
 
-I det här exemplet kontrollerar vi om mappen "minMapp" existerar i den nuvarande sökvägen. Om den existerar skrivs "Mappen finns!" ut i konsolen, annars skrivs "Mappen existerar inte." ut.
+## Djupdykning:
+I äldre versioner av Javascript användes funktionen `fs.exists` för att kontrollera om en mapp finns. Detta anses numera som föråldrat och rekommenderas inte för användning. Istället bör du använda `fs.existsSync` som returnerar ett booleskt värde. Andra alternativ för att kolla om en mapp finns är användning av `stat` eller `access` funktionerna från `fs` paketet.
 
-## Djupdykning
-
-`fs.existsSync()`-funktionen returnerar en boolean (true eller false) beroende på om mappen existerar eller inte. Om du vill hantera existerande och icke-existerande mappar på olika sätt kan du använda `fs.existsSync()` tillsammans med en if-sats för att utföra olika åtgärder baserat på resultatet.
-
-En annan viktig aspekt att tänka på är den filväg som används för att kontrollera mappen. Om du inte väljer en specifik filväg kommer `fs.existsSync()` att söka efter mappen i den nuvarande arbetsmappen. Du kan ange en absolut eller relativ filväg för att kontrollera en specifik mapp.
-
-## Se också
-
-- [Node.js dokumentation om fs.existsSync()](https://nodejs.org/api/fs.html#fs_fs_existssync_path)
-- [Enkel guide: Javascript filhantering med Node.js](https://www.digitalocean.com/community/tutorials/how-to-handle-the-file-system-in-node-js)
+## Se även:
+- [fs.existsSync()](https://nodejs.org/api/fs.html#fs_fs_existssync_path)
+- [fs.stat()](https://nodejs.org/api/fs.html#fs_fs_stat_path_options_callback)
+- [fs.access()](https://nodejs.org/api/fs.html#fs_fs_access_path_mode_callback)

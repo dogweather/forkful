@@ -10,71 +10,74 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+# O que é & Por quê?
 
-Muitas vezes, ao desenvolver um aplicativo ou site, é necessário que o usuário se autentique para acessar determinadas informações ou funcionalidades. O envio de uma solicitação HTTP com autenticação básica é uma forma eficaz de garantir a autenticidade do usuário e proteger os dados sensíveis.
+Enviar uma requisição HTTP com autenticação básica é uma maneira de garantir a segurança em aplicações web. Ao adicionar credenciais de usuário (como um nome de usuário e senha) à requisição, os programadores podem garantir que apenas usuários autorizados terão acesso aos dados solicitados.
 
-## Como Fazer
+# Como fazer:
 
-Para enviar uma solicitação HTTP com autenticação básica em Java, é necessário seguir alguns passos simples:
-
-1. Importe a classe `java.net.HttpURLConnection`, que fornece os métodos necessários para realizar a solicitação HTTP.
-2. Crie uma instância da classe `HttpURLConnection` usando o método `openConnection()` e passe a URL da API ou do serviço que deseja acessar como parâmetro.
-3. Defina o tipo de solicitação, método e cabeçalho de autenticação usando os métodos `setRequestMethod()` e `setRequestProperty()`.
-4. Codifique o nome de usuário e a senha em Base64 usando a classe `java.util.Base64`.
-5. Adicione o cabeçalho de autenticação à solicitação usando o método `setRequestProperty()` novamente, desta vez passando o cabeçalho `Authorization` e a string codificada em Base64.
-6. Execute a solicitação usando o método `connect()` e obtenha a resposta usando o método `getResponseCode()`.
-7. Se a resposta for bem-sucedida (código 200), os dados solicitados estarão disponíveis e podem ser lidos usando os métodos `getInputStream()` e `getOutputStream()`.
-
-Um exemplo de código completo pode ser visto abaixo:
-
-```Java
+### Exemplo 1:
+```java
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
 import java.util.Base64;
 
-public class HTTPRequestExample {
+public class BasicAuthenticationExample {
 
-   public static void main(String[] args) {
+    public static void main(String[] args) {
 
-      try {
-         // Cria uma URL com o endereço da API ou serviço desejado
-         URL url = new URL("https://api.meuservico.com/dados");
+        // Definir URL da requisição
+        String url = "https://www.example.com/api/data";
 
-         // Abre uma conexão HTTP usando a URL
-         HttpURLConnection con = (HttpURLConnection) url.openConnection();
+        // Definir credenciais de usuário
+        String username = "usuario";
+        String password = "senha";
 
-         // Define o método de requisição e cabeçalho de autenticação
-         con.setRequestMethod("GET");
-         con.setRequestProperty("Authorization", "Basic " + Base64.getEncoder().encodeToString("usuario:senha".getBytes()));
+        // Codificar as credenciais em Base64
+        String encodedCredentials = Base64.getEncoder()
+                .encodeToString((username + ":" + password).getBytes(StandardCharsets.UTF_8));
 
-         // Executa a conexão e obtém a resposta
-         con.connect();
-         int responseCode = con.getResponseCode();
+        try {
+            // Criar conexão HTTP
+            URL obj = new URL(url);
+            HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 
-         // Verifica se a resposta foi bem-sucedida
-         if (responseCode == 200) {
-            // Lê os dados da resposta e faz o tratamento necessário
-            // ...
+            // Definir método da requisição
+            con.setRequestMethod("GET");
 
-            // Fecha a conexão
-            con.disconnect();
-         }
-      } catch (IOException e) {
-         // Trata possíveis erros de conexão
-         e.printStackTrace();
-      }
-   }
+            // Adicionar a chave "Authorization" com as credenciais codificadas no header da requisição
+            con.setRequestProperty("Authorization", "Basic " + encodedCredentials);
+
+            // Obter resposta da requisição
+            int responseCode = con.getResponseCode();
+            System.out.println("Código de resposta: " + responseCode);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
 }
 ```
 
-## Deep Dive
+### Saída esperada:
+```
+Código de resposta: 200
+```
 
-A autenticação básica utiliza o cabeçalho `Authorization` para enviar as credenciais codificadas em Base64 para o servidor. Quando a solicitação é recebida, o servidor decodifica as informações e verifica se o usuário e a senha são válidos.
+# Mais Detalhes:
 
-Embora a autenticação básica seja uma forma simples de proteger serviços HTTP, ela não é muito segura, pois as credenciais são enviadas em texto simples e podem ser facilmente interceptadas por um atacante. Por isso, é recomendável utilizar outros métodos de autenticação mais robustos quando possível.
+### Contexto Histórico:
+A autenticação básica foi definida em 1999 no RFC 2617 e é uma forma simples de autenticar usuários em aplicações web. Embora seja menos segura do que outras formas de autenticação (como OAuth), ainda é amplamente utilizada em sistemas legados.
 
-## Veja Também
-- Documentação oficial do Java para classe `java.net.HttpURLConnection`: https://docs.oracle.com/javase/8/docs/api/java/net/HttpURLConnection.html
-- Tutorial de autenticação HTTP básica com Java: https://www.baeldung.com/java-http-request#basic-authentication
-- Vídeo explicando como funciona a autenticação básica em HTTP: https://www.youtube.com/watch?v=OZmBGn90ny8
+### Alternativas:
+Uma alternativa mais segura para a autenticação básica é o uso de tokens de acesso, como no protocolo OAuth. Nesse caso, as credenciais do usuário não são enviadas a cada requisição, o que reduz o risco de exposição em caso de ataque ou interceptação da comunicação.
+
+### Detalhes de Implementação:
+No exemplo acima, as credenciais do usuário são codificadas em Base64 e adicionadas ao header da requisição usando a chave "Authorization". O servidor recebe as credenciais e realiza a autenticação, retornando uma resposta de sucesso ou erro.
+
+# Veja também:
+
+- RFC 2617: https://tools.ietf.org/html/rfc2617
+- OAuth: https://oauth.net/2/

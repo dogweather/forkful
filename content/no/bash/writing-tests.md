@@ -1,7 +1,7 @@
 ---
-title:                "Å skrive tester"
-html_title:           "Bash: Å skrive tester"
-simple_title:         "Å skrive tester"
+title:                "Skriving av tester"
+html_title:           "Bash: Skriving av tester"
+simple_title:         "Skriving av tester"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Testing and Debugging"
@@ -10,30 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
-Å skrive tester er en viktig del av Bash-programmering for å sikre at koden din fungerer som den skal. Det bidrar til å identifisere og fikse feil tidligere i utviklingsprosessen og sikrer at koden din er pålitelig og robust når den blir implementert.
+## Hva og Hvorfor?
+Å skrive tester i Bash er en måte for programutviklere å sikre at koden deres fungerer som den skal. Tester er små programmer som kjører og sjekker om forventet atferd skjer i koden. Dette kan inkludere å teste ulike inndata og forventede resultater, samt finne og rapportere feil.
 
-## Slik gjør du det
-For å skrive tester i Bash, bruker du kommandoen ```test``` eller dobbel parenteser (( )). La oss si at vi vil teste om en variabel er lik 10. Vi kan gjøre det ved å skrive følgende:
-
+## Slik gjør du det:
+Du kan skrive tester ved hjelp av Bash-skripting ved å bruke kommandoen `assert`. Dette lar deg spesifisere forventet resultat og sjekke om det stemmer overens med faktisk resultat. For eksempel:
+```Bash
+assert "1+1" "2" "Legger sammen to tall, forventet resultat er 2"
 ```
-test $variabel -eq 10
+Du kan også bruke testingrammeverk som `Bats` eller `shunit2` for å organisere og kjøre flere tester samtidig.
 
-(( $variabel == 10 ))
-```
+Outputet av en test vil være enten "Success" hvis resultatet stemmer overens med forventningen, eller "Failure" hvis det ikke gjør det.
 
-Hvis variabelen er lik 10, vil testen returnere "true" og sette exit-verdien til 0. Hvis variabelen er forskjellig fra 10, vil testen returnere "false" og sette exit-verdien til 1.
+## Et dypdykk:
+Å skrive tester har blitt en populær praksis i moderne programmering, spesielt innenfor metoder som TDD (Test Driven Development). Dette innebærer å skrive tester før koden, og sikrer dermed at koden har full testdekning før den implementeres.
 
-Du kan også bruke tester til å sjekke om en fil eksisterer, om en streng er tom eller om to strenger er like. Se Bash-dokumentasjonen for en fullstendig liste over tester og deres syntaks.
+Det finnes også andre alternativer for testing, som for eksempel å bruke testingspråk som `JUnit` eller testingrammeverk som `Selenium` for å automatisere tester for nettapplikasjoner.
 
-## Dypdykk
-Når du skriver tester, er det viktig å være nøyaktig med syntaksen. En enkelt feil kan føre til uforutsette resultater, så sørg for å dobbeltsjekke testene dine.
+Når det gjelder implementasjon, er det viktig å sørge for at testene dine er enkle og leselige, slik at de kan forstås og vedlikeholdes av andre utviklere.
 
-Det er også viktig å organisere testene dine på en måte som gjør det enkelt å feilsøke. Du kan opprette en egen test-funksjon og kalle den i din hovedfunksjon, for eksempel.
-
-Videre kan du også bruke assert-kommandoer for å sjekke om testene dine gir forventede resultater. Dette gjør det enklere å finne feil hvis en test ikke går som forventet.
-
-## Se også
-- [Bash-dokumentasjonen for tests](https://linux.die.net/man/1/test)
-- [Bash Guide for nybegynnere](https://tldp.org/LDP/Bash-Beginners-Guide/html/index.html)
-- [Enkel guide til Bash-testing fra CodingAlpha](https://www.codingalpha.com/bash-shell-scripting-test/)
+## Se også:
+- [Bash scripting tutorial](https://ryanstutorials.net/bash-scripting-tutorial/)
+- [Bats testing framework](https://github.com/bats-core/bats-core)
+- [shunit2 testing framework](https://github.com/kward/shunit2)

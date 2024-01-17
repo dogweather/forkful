@@ -10,47 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+#Mitä & Miksi?
+Merkkijonon pituuden löytäminen on yksinkertainen tehtävä, joka löytyy useimmista ohjelmistokehityksessä käytetyistä ohjelmointikielistä. Tämä tarkoittaa, että ohjelmoijat voivat helposti selvittää, kuinka monta merkkiä tekstissä on. Tätä tietoa tarvitaan usein, esimerkiksi tarkistettaessa, onko annettu syöte liian pitkä tai lyhyt.
 
-Kannattaako vaivan nähdä selvittää merkkijonon pituus? Lyhyesti: jos haluat ohjelmasi käsittelevän syötteitä joustavasti ja tehokkaasti, on tärkeää tietää, kuinka monta merkkiä siinä on.
+#Näin teet sen:
+```Java
+String merkkijono = "Tämä on esimerkki!";
+int pituus = merkkijono.length();
+System.out.println("Merkkijonon " + merkkijono + " pituus on " + pituus);
+```
+**Tuloste**: Merkkijonon Tämä on esimerkki! pituus on 19.
 
-## Kuinka
-
-Kun haluat selvittää merkkijonon pituuden Java-ohjelmassa, voit käyttää String-luokan length-metodia. Tämä palauttaa merkkijonon pituuden kokonaislukuna. Seuraavassa esimerkissä käytämme length-metodia ja tulostamme sen palauttaman arvon:
+Toinen tapa löytää merkki-jonon pituus on käyttää ```str.toCharArray()``` -metodia ja laskea taulukon sisältämien merkkien määrä.
 
 ```Java
-String s = "Hei maailma!";
-System.out.println(s.length());
-
-// Output: 12
+String merkkijono = "Tämä on esimerkki!";
+char[] merkit = merkkijono.toCharArray();
+int pituus = merkit.length;
+System.out.println("Merkkijonon " + merkkijono + " pituus on " + pituus);
 ```
+**Tuloste**: Merkkijonon Tämä on esimerkki! pituus on 19.
 
-Merkkijonon pituudesta on myös saatavilla muita hyödyllisiä tietoja. Esimerkiksi voit tarkistaa, onko merkkijono tyhjä käyttämällä isEmpty-metodia, joka palauttaa boolean-arvon. Seuraavassa esimerkissä tarkistamme, onko merkkijono tyhjä:
+#Syvällisemmin:
+Merkkijonon pituuden laskemisella on pitkä historia ohjelmoinnissa johtuen sen hyödyllisyydestä eri tilanteissa. Sen lisäksi, että se auttaa tarkistamaan syötteen oikeellisuuden, sitä käytetään myös tekstin käsittelyssä ja järjestämisessä.
 
-```Java
-String s = "";
-System.out.println(s.isEmpty());
+Muita vaihtoehtoja merkki-jonon pituuden laskemiseen ovat esimerkiksi ```str.codePointCount(int, int)``` ja ```str.length(int)```, jotka mahdollistavat tarkemman kontrollin merkkien lukumäärästä.
 
-// Output: true
-```
+Java käyttää String-luokassa pituuden määrittämiseen kaksi muuttujaa: ```count``` ja ```value```. Count pitää kirjaa merkkijonon pituudesta, ja siinä ei oteta huomioon mahdollisia erikoismerkkejä, kuten ääkkösiä. Value puolestaan sisältää itse merkkijonon, josta pituus voidaan laskea.
 
-Voit myös käyttää trim-metodia poistamaan merkkijonosta ylimääräiset välilyönnit ennen pituuden laskemista. Seuraava esimerkki näyttää, kuinka trim-metodia käytetään:
-
-```Java
-String s = "     Tämä on merkkijono, joka sisältää ylimääräisiä välilyöntejä.       ";
-System.out.println(s.trim().length());
-
-// Output: 55
-```
-
-## Syventävä tarkastelu
-
-Merkkijonon pituuden selvittäminen on tärkeä konsepti Java-ohjelmoinnissa, sillä merkkijonoja käytetään usein syötteinä ja tulosteina. Kun tiedät merkkijonon pituuden, voit esimerkiksi tarkistaa, kuinka monta merkkiä käyttäjän syötteessä on ja tehdä sen perusteella erilaisia toimenpiteitä. Lisäksi monimutkaisissa ohjelmissa voi olla tarpeen käsitellä erilaisia merkkijonoja, ja niiden pituuden selvittäminen auttaa tehokkaassa koodin kirjoituksessa.
-
-## Katso myös
-
-- [Java String Class](https://www.w3schools.com/java/java_ref_string.asp)
-- [Java String Methods](https://www.javatpoint.com/java-string-methods)
-- [Oracle Java Docs - String Class](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
-
-Lopetetaan artikkeli tähän, lyhyenä ja ytimekkäänä. Toivottavasti tämä auttoi sinua ymmärtämään merkkijonon pituuden laskemisen tärkeyden Java-ohjelmoinnissa. Hyvää ohjelmointia!
+#Katso myös:
+- [Java-merkkijonon dokumentaatio](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#length())
+- [Tietoja syötteiden käsittelystä ja validoinnista Java-sovelluksissa](https://www.baeldung.com/java-validate-input)

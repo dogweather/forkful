@@ -10,59 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué 
+## ¿Qué y por qué?
+La conversión de una fecha a un string en programación se refiere al proceso de convertir una fecha en un formato legible para los humanos, como "1 de enero de 2020". Los programadores hacen esto para presentar una fecha de una forma más fácil de entender para los usuarios finales de su aplicación.
 
-La conversión de una fecha en una cadena de texto es una habilidad esencial en el desarrollo de aplicaciones Swift. Al convertir una fecha, podemos mostrarla en un formato legible para el usuario o almacenarla en una base de datos en formato de texto.
-
-## Cómo hacerlo
-
-Para convertir una fecha en una cadena de texto en Swift, utilizaremos el tipo de dato `Date` y la clase `DateFormatter`. Primero, crearemos una instancia de `DateFormatter` y especificaremos el estilo de formato que queremos para nuestra fecha. Luego, usaremos el método `string(from: Date)` de `DateFormatter` para convertir nuestra fecha en una cadena de texto.
+## Cómo:
+Aquí hay un ejemplo de cómo convertir una fecha a un string en Swift:
 
 ```Swift
-// Crear una fecha
-let fecha = Date()
+// Crear un objeto fecha con el 1 de enero de 2020
+let fecha = DateComponents(year: 2020, month: 1, day: 1).date!
 
-// Crear una instancia de DateFormatter
-let dateFormatter = DateFormatter()
+// Crear un objeto DateFormatter para establecer el formato deseado
+let formatter = DateFormatter()
+formatter.dateFormat = "d 'de' MMMM 'de' yyyy"
 
-// Especificar el estilo de formato deseado
-dateFormatter.dateStyle = .long
+// Convertir la fecha a un string utilizando el objeto DateFormatter
+let fechaString = formatter.string(from: fecha)
 
-// Convertir la fecha en una cadena de texto
-let fechaCadena = dateFormatter.string(from: fecha)
-
-print(fechaCadena) // "20 de abril de 2021"
+// Resultado: "1 de enero de 2020"
 ```
 
-Podemos personalizar aún más el formato de nuestra fecha cambiando el estilo de formato o especificando una plantilla de formato personalizada. Por ejemplo, podemos mostrar la fecha en un formato de 24 horas utilizando la plantilla "HH:mm" en lugar del estilo de formato "long".
+## Profundizando:
+En el pasado, la conversión de una fecha en un string solía ser una tarea complicada y propensa a errores. Sin embargo, con la introducción de librerías y funciones de formateo de fechas incorporadas en muchos lenguajes de programación, como Swift, ahora es muy fácil de realizar.
 
-```Swift
-// Especificar una plantilla de formato personalizada
-dateFormatter.dateFormat = "HH:mm"
+Es importante tener en cuenta que existen diferentes formatos de fechas en diferentes países y culturas, por lo que es necesario tener en cuenta esto al presentar fechas en una aplicación. Además, también hay alternativas para la conversión de fechas, como el uso de objetos DateComponents o formatear la fecha directamente en la interfaz de usuario en lugar de en el código.
 
-let horaCadena = dateFormatter.string(from: fecha)
-
-print(horaCadena) // "16:30"
-```
-
-## Profundizando
-
-Además de mostrar fechas en diferentes formatos, también podemos convertir fechas a cadenas de texto en diferentes idiomas. Para ello, utilizaremos el método `setLocalizedDateFormatFromTemplate(_: String)` de `DateFormatter` y especificaremos el idioma deseado.
-
-```Swift
-// Especificar idioma deseado
-dateFormatter.setLocalizedDateFormatFromTemplate("MMMddYYYY")
-dateFormatter.locale = Locale(identifier: "es")
-
-let fechaCadena = dateFormatter.string(from: fecha)
-
-print(fechaCadena) // "may. 10, 2021"
-```
-
-También podemos agregar símbolos especiales a nuestras cadenas de formato para mostrar información como la hora, los minutos, etc. Mira la documentación de Apple para obtener una lista completa de estos símbolos y cómo utilizarlos en una plantilla de formato personalizada.
-
-## Ver también 
-
-- [La clase DateFormatter en la documentación de Apple](https://developer.apple.com/documentation/foundation/dateformatter)
-- [Cómo trabajar con fechas en Swift en Medium](https://medium.com/swlh/working-with-dates-in-swift-53fa7307a067)
-- [Manejo de fechas en Swift: locales y formatos de fecha en Ray Wenderlich](https://www.raywenderlich.com/8176546-dates-and-times-in-swift-getting-started)
+## Ver también:
+- Documentación oficial de Apple sobre DateFormatter: https://developer.apple.com/documentation/foundation/dateformatter
+- Tutorial de Ray Wenderlich sobre cómo usar DateFormatter en Swift: https://www.raywenderlich.com/1576070-date-formatting-and-parsing-in-swift
+- Librería DateExtensions para facilitar la conversión de fechas en Swift: https://github.com/Swifteroid/DateExtensions

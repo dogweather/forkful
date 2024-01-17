@@ -1,7 +1,7 @@
 ---
-title:                "Die Verwendung regulärer Ausdrücke"
-html_title:           "Bash: Die Verwendung regulärer Ausdrücke"
-simple_title:         "Die Verwendung regulärer Ausdrücke"
+title:                "Verwendung regulärer Ausdrücke"
+html_title:           "Bash: Verwendung regulärer Ausdrücke"
+simple_title:         "Verwendung regulärer Ausdrücke"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Strings"
@@ -10,56 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+Was sind reguläre Ausdrücke und warum brauchen Programmierer sie?
 
-Sich mit regulären Ausdrücken zu beschäftigen, kann eine mächtige Fähigkeit für die Bash-Programmierung sein. Mit regulären Ausdrücken können Sie komplexe Such- und Ersatzmuster definieren, um Texte zu manipulieren und zu verarbeiten.
+Reguläre Ausdrücke sind eine Möglichkeit, Textzeichenfolgen zu definieren und zu suchen. Programmierer benutzen sie, um Muster in Texten zu identifizieren und bestimmte Aufgaben automatisch auszuführen.
 
-## So geht's
+Wie geht das?
 
-Die Verwendung von regulären Ausdrücken in der Bash-Programmierung erfordert die Verwendung des `grep` Befehls. Hier ist ein Beispiel, um alle Zeilen zu finden, die das Wort "Haus" enthalten:
-
-```Bash
-grep "Haus" textdatei.txt
-```
-
-Output:
-
-```
-Dies ist eine Zeile mit dem Wort Haus.
-Ein anderes Haus, eine andere Zeile.
-```
-
-Die `grep`-Option `-E` ermöglicht die Verwendung von erweiterten regulären Ausdrücken, um komplexere Muster zu definieren. Zum Beispiel, um alle Zeilen zu finden, die entweder "Haus" oder "Wohnung" enthalten:
+In Bash können reguläre Ausdrücke mit dem Befehl `grep` verwendet werden. Ein Beispiel für die Verwendung von `grep` mit regulären Ausdrücken ist die Suche nach allen Zeilen in einer Textdatei, die das Wort "Hallo" enthalten.
 
 ```Bash
-grep -E "Haus|Wohnung" textdatei.txt
+grep "Hallo" textdatei.txt
 ```
 
-Output:
+Das Ergebnis dieser Suche wird alle Zeilen in der Textdatei zeigen, die das Wort "Hallo" enthalten.
 
-```
-Dies ist eine Zeile mit dem Wort Haus.
-Ein anderes Haus, eine andere Zeile.
-Und auch eine Zeile mit dem Wort Wohnung.
-```
+Eine vertiefende Betrachtung
 
-Weitere nützliche `grep`-Optionen sind `-i` für die Suche ohne Beachtung der Groß-/Kleinschreibung und `-o` für die Ausgabe nur der übereinstimmenden Teile der Zeilen.
+Reguläre Ausdrücke wurden in den 1950er Jahren von den Mathematikern Stephen Cole Kleene und Peter John Landin entwickelt. Sie wurden später von dem Informatiker Ken Thompson in der Programmiersprache `ed` implementiert und sind seitdem in vielen Programmiersprachen verfügbar.
 
-## Tief eintauchen
+Alternativen zu regulären Ausdrücken in Bash sind die Befehle `sed` und `awk`, die ebenfalls Textverarbeitungsfunktionen bieten.
 
-Die Verwendung von regulären Ausdrücken erfordert ein gewisses Verständnis einiger Zeichen und Funktionen. Zum Beispiel:
+Nützliche Links
 
-- `^` entspricht dem Anfang einer Zeile, während `$` dem Ende einer Zeile entspricht.
-- `.` entspricht genau einem beliebigen Zeichen.
-- `[]` ermöglicht die Definition eines Zeichensatzes, z.B. `[abc]` entspricht entweder "a", "b" oder "c".
-- `*` entspricht null oder mehr Vorkommen des vorherigen Zeichens.
-- `+` entspricht einem oder mehr Vorkommen des vorherigen Zeichens.
-- `()` ermöglicht die Gruppierung von Mustern.
+Eine ausführlichere Einführung in reguläre Ausdrücke in Bash findest du auf der offiziellen Bash-Website: https://www.gnu.org/software/bash/manual/html_node/Pattern-Matching.html
 
-Es gibt auch einige hilfreiche Online-Tools, wie z.B. [Regex101] (https://regex101.com/), die Ihnen helfen können, reguläre Ausdrücke zu testen und zu verstehen.
+Weitere Informationen zu `grep`, `sed` und `awk` findest du hier:
 
-## Siehe auch
-
-* [Bash Regular Expressions](https://www.gnu.org/software/sed/manual/html_node/Bash-regular-expressions.html)
-* [The Art of Command Line: Regular Expressions](https://github.com/jlevy/the-art-of-command-line/blob/master/README-de.md#regular-expressions)
-* [Einführung in reguläre Ausdrücke in der Bash](https://wiki.ubuntuusers.de/Bash/Regul%C3%A4re_Ausdrucke/)
+- https://www.gnu.org/software/grep/
+- https://www.gnu.org/software/sed/
+- https://www.gnu.org/software/gawk/

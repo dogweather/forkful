@@ -1,7 +1,7 @@
 ---
-title:                "csv 파일 다루기"
-html_title:           "C++: csv 파일 다루기"
-simple_title:         "csv 파일 다루기"
+title:                "csv로 작업하기"
+html_title:           "C++: csv로 작업하기"
+simple_title:         "csv로 작업하기"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Data Formats and Serialization"
@@ -10,46 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+## 무엇 & 왜?
+CSV 파일을 다루는 것은 간단하게 말해 데이터를 스프레드시트 형태로 저장하는 방법입니다. 프로그래머들은 일반적으로 CSV 파일을 사용하여 데이터를 효율적으로 저장하고 처리할 수 있기 때문에 이를 사용합니다.
 
-CSV 파일을 다루는데 관심을 가지는 이유는 여러분이 프로그래밍을 배우는데 있어서 매우 중요한 스킬이기 때문입니다. CSV 파일은 데이터를 쉽게 저장하고 조작할 수 있는 형식이기 때문에 데이터 분석, 웹 개발 등 다양한 분야에서 사용되고 있습니다.
-
-## 방법
-
-먼저, CSV 파일을 다루는 라이브러리인 `csv.h`를 다운로드해야 합니다. 그 후, 불러올 CSV 파일의 경로를 지정해 `csv::CSVReader` 객체를 생성하고 `read_row()` 메소드를 사용하여 데이터를 읽어올 수 있습니다.
+## 하는 방법:
+아래 코드 블록 내에 있는 코딩 예시와 샘플 출력을 참고하여 CSV 파일을 처리하는 방법을 배워보세요.
 
 ```C++
+// CSV 파일 읽기
 #include <iostream>
-#include "csv.h"
+#include <fstream>
+#include <sstream>
+#include <vector>
+#include <string>
+
+using namespace std;
 
 int main() {
-    // CSV 파일 경로 지정
-    csv::CSVReader reader("data.csv");
+  // 파일 열기
+  ifstream file("data.csv");
+  
+  // 파일에서 한 줄씩 읽어오기
+  string line;
+  while (getline(file, line)) {
+    // 한 줄을 쉼표로 분리하여 저장하기
+    stringstream ss(line);
+    string data;
+    vector<string> row;
 
-    // 첫 번째 행 데이터 읽어오기
-    csv::CSVRow row = reader.read_row();
-    
-    // 첫 번째 행 출력
-    std::cout << "첫 번째 행 데이터: " << row[0] << " " << row[1] << " " << row[2] << std::endl;
+    while (getline(ss, data, ',')) {
+      row.push_back(data);
+    }
 
-    return 0;
+    // 출력하기
+    for (string value : row) {
+      cout << value << " ";
+    }
+    cout << endl;
+  }
 }
+
+// 출력:
+// apple banana orange
+// 123 456 789 
 ```
 
-**출력:**
+## 깊이있는 정보:
+CSV 파일은 1970년대 부터 사용되어온 데이터 저장 및 처리 방식으로, 현재도 많은 프로그래머들이 사용하고 있습니다. CSV 파일 대신에 JSON 파일을 사용할 수도 있지만, CSV 파일은 간단하고 다루기 쉽기 때문에 많은 경우에 더 유용합니다. CSV 파일은 쉽게 읽고 쓸 수 있으며, 데이터 처리 방식도 다양하기 때문에 많은 프로그래머들이 선호하는 파일 형식이 됐습니다. C++에서 CSV 파일을 처리하기 위해 사용되는 주요 라이브러리에는 Boost와 CsvParser 등이 있습니다.
 
-```
-첫 번째 행 데이터: John Smith 35
-```
-
-더 많은 정보를 얻고 싶다면 `iterator`를 사용하여 모든 데이터를 순회하며 읽어올 수 있습니다. 또한 `CSVWriter` 클래스를 사용하여 새로운 CSV 파일을 생성하고 데이터를 입력할 수도 있습니다.
-
-## 심층 탐구
-
-CSV 파일은 쉽게 읽고 쓸 수 있지만, 데이터 유형이 복잡하고 포맷이 다양할 경우 문제가 발생할 수 있습니다. 이 때 `csv.h`는 간편하지만 다양한 설정 옵션을 제공하므로 이러한 문제를 해결할 수 있습니다. 또한 CSV 파일을 파싱하거나 다른 데이터 유형으로 변환하는 기능도 제공합니다.
-
-## 참고
-
-- [csv.h documentation](https://github.com/vincentlaucsb/csv-parser)
-- [Using CSV files in C++](https://www.geeksforgeeks.org/using-csv-files-c-cpp/)
-- [Learn C++ by making a data table](https://www.youtube.com/watch?v=iZ5HBb4LKdQ)
+## 참고 자료:
+- [C++ Boost 라이브러리](https://www.boost.org/)
+- [CsvParser 라이브러리](https://github.com/evandrix/CsvParser)

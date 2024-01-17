@@ -10,45 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför 
+## Vad & Varför?
+CSV står för "comma-separated values" och är en vanlig form av filformat som används för att lagra och manipulera data. Programerare använder CSV för att enkelt strukturera, bearbeta och utbyta data mellan olika system och verktyg.
 
-Att arbeta med CSV-filer kan vara en användbar färdighet för många olika yrken och projekt. Med Elm som språk är det enkelt och effektivt att hantera stora mängder data och utföra olika operationer på det.
-
-## Hur man gör
-
-För att arbeta med CSV-filer i Elm behöver du först importera modulen `Csv.Decode` och öppna en CSV-fil i ett `Csv.Document`-objekt. Sedan kan du använda funktionen `Decode.csv` för att tolka filen och göra om den till en Elm-lista. 
-
+## Hur gör man:
+Det finns många sätt att arbeta med CSV i Elm, men ett vanligt tillvägagångssätt är att använda biblioteket csv-decode. För att komma igång behöver du först installera biblioteket genom att köra följande kommando i terminalen:
 ```Elm
-import Csv.Decode exposing (document, csv)
-import Html exposing (..)
-
-view : Model -> Html Msg
-view model =
-  let
-    file = "data.csv"
-    csvDoc = Csv.Decode.document file
-
-    rows = case csvDoc of
-      Ok doc ->
-        Parse.csv doc |> Expect.equal [ ["1","John","Doe"]
-                                       ["2","Jane","Smith"]
-                                       ["3","Bob","Johnson"]
-                                     ]
-
-      Err err ->
-        Debug.crash err
-  in
-  div []
-    [ h1 [] [ text "CSV Hantering" ]
-    , rows -- Ersätt med din egen kod för att rendera datan
-    ]
-
+elm install rtfeldman/csv-decode
 ```
-## Djupdykning
+Sedan kan du importera biblioteket i din Elm-kod och använda dess funktioner för att dekodera och bearbeta CSV-data.
+```Elm
+import Csv.Decode as Decode
 
-Att arbeta med CSV-filer i Elm kan även inkludera att välja specifika kolumner, filtrera rader baserat på villkor och skapa nya filer baserat på det bearbetade resultatet. Det finns även en rad andra moduler som kan vara användbara när man hanterar CSV-filer i Elm, som `Csv.Encode` för att spara data till en CSV-fil och `Csv.Decode.Mappers` för att anpassa sin dekoder efter ens specifika databehov. 
+myCsv = "Name,Age,Email
+Jane,25,jane@email.com
+John,30,john@email.com"
 
-## Se även
+type alias Person =
+  { name : String
+  , age : Int
+  , email : String
+  }
 
-- [Elm Dokumentation](https://guide.elm-lang.org/)
-- [CSV Hantering i Elm Guide](https://elmprogramming.com/csv-file-processing-in-elm.html)
+csvDecoder : Decode.Decoder (List Person)
+csvDecoder =
+  Decode.decodeString (Decode.list personDecoder)
+
+personDecoder : Decode.Decoder Person
+personDecoder =
+  Decode.map3 Person
+    (Decode.field "Name" Decode.string)
+    (Decode.field "Age" Decode.int)
+    (Decode.field "Email" Decode.string)
+```
+För att dekodera CSV-datasträngen "myCsv" till en lista av personer, behöver du bara köra följande kod:
+```Elm
+Decode.decodeString csvDecoder myCsv
+```
+Detta kommer att returnera en lista med dekodade personobjekt, som kan användas för att bearbeta och manipulera datan.
+
+## Djupdykning:
+CSV-formatet skapades på 1970-talet som en enkel och universell lösning för datautbyte mellan olika system och program. Sedan dess har det blivit ett populärt verktyg för att strukturera och manipulera stora mängder data i olika programeringsspråk.
+
+Det finns också andra alternativ för att arbeta med CSV i Elm, såsom manuell strängmanipulation eller andra tredjepartsbibliotek. Du kan välja att använda det som passar dig bäst beroende på dina specifika behov och preferenser.
+
+Det är också värt att notera att biblioteket csv-decode i dagsläget endast stödjer dekodning av CSV-data, vilket innebär att du behöver skriva egen kod för att kodera eller manipulera datasträngar.
+
+## Se även:
+- [Github-repo för biblioteket csv-decode] (https://github.com/rtfeldman/csv-decode)
+- [Elm-society - användbar information om Elm] (https://elm-society.gitbook.io/elm-society/)

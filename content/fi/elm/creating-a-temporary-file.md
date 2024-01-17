@@ -10,49 +10,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä ja miksi?
+Luotettaessa ohjelmistoihin, on tärkeää varmistaa, että kaikki toimii oikein. Yksi tapa tehdä tämä on käyttämällä väliaikaistiedostoja. Väliaikaistiedostot ovat lyhyen aikaa olemassa olevia tiedostoja, jotka ohjelmisto voi luoda ja käyttää tarpeen mukaan. Tämä auttaa välttämään ongelmia, kuten tiedostojen ylikirjoittamista tai vahingossa pysyvästi poistamista.
 
-Temporary filejen luominen voi olla hyödyllistä, kun haluat tallentaa väliaikaisia tietoja, kuten käyttäjän syötteitä tai muuttujia, jotka eivät ole oleellisia pysyvässä tallennuksessa.
-
-## Miten
+## Kuinka tehdä?
+Elm-ohjelmointikielellä väliaikaistiedoston luominen on helppoa. Se voidaan tehdä käyttämällä `File.tempFile` -funktiota ja antamalla sille tiedostopolkunimi. Tämä luo väliaikaistiedoston tietokoneen väliaikaistiedostokansioon ja palauttaa tuloksena väliaikaistiedoston nimen. Esimerkiksi:
 
 ```Elm
-import File
-import String
-
--- Luo temporary file ja tallenna siihen dataa
-createTemporaryFile : Task x String
-createTemporaryFile =
-  File.temporarily "elm-temp" "temp.txt" |> Task.andThen
-    (\path ->
-      let
-        data = "Tämä on väliaikainen data."
-      in
-        File.write path data
-    )
-
--- Tulostetaan createdTemporaryFile tehtävän tulos
-main : Program x String
-main = 
-  Task.attempt Debug.log
-    createTemporaryFile
+Elmista import File
+-- luodaan väliaikainen tiedosto nimeltä "testi.txt"
+File.tempFile "testi.txt"
 ```
+Tämän jälkeen voit käyttää tätä tiedostoa tarpeidesi mukaan.
 
-Tulostus:
-
-```
-Ok "temp.txt"
-```
-
-Huomaa, että temporary file on luotu ja siihen on tallennettu meidän määrittelemä data.
-
-## Syvempi sukellus
-
-Temporary filejen luomisessa on hyvä ottaa huomioon muutamia asioita. Ensinnäkin, temporary filejen tulee olla nimeltään uniikkeja, jotta ne eivät sekoitu muihin tiedostoihin. Elm tarjoaa tähän File.temporarily-funktion, joka generoi automaattisesti uniikin tiedostonimen.
-
-Toisekseen, on tärkeää huomioida turvallisuus. Temporary filejä ei tulisi käyttää pysyvässä tallennuksessa, sillä ne voivat olla alttiita tietoturvauhille. Sen sijaan, niitä tulisi käyttää vain väliaikaiseen tallennukseen ja tuhota käytön jälkeen.
+## Syväsukellus
+Väliaikaistiedostoja on käytetty ohjelmistokehityksessä jo pitkään. Ne voivat olla hyödyllisiä esimerkiksi testauksessa tai väliaikaisena tallennuspaikkana datalle. On myös olemassa muita tapoja luoda väliaikaistiedostoja, kuten käyttämällä `OS.File` -moduulia tai suoraan käyttöjärjestelmän komentoja.
 
 ## Katso myös
-
-- Elm:n viralliset dokumentaatiot: https://elm-lang.org/docs
-- Temporary filejen käyttöohjeet: https://www.codota.com/code/javascript/functions/fs/createTempFile
+- [Elm-ohjelmointikielen virallinen verkkosivusto](https://elm-lang.org/)
+- [Elm-ohjelmointikielen dokumentaatio](https://guide.elm-lang.org/)
+- [Bonfire - Väliaikaisiin tiedostoihin perustuva kehitysympäristö](https://elm.burntfen.com/)

@@ -1,7 +1,7 @@
 ---
-title:                "Odczytywanie argumentów linii poleceń"
-html_title:           "Elm: Odczytywanie argumentów linii poleceń"
-simple_title:         "Odczytywanie argumentów linii poleceń"
+title:                "Odczytywanie argumentów wiersza poleceń"
+html_title:           "Elm: Odczytywanie argumentów wiersza poleceń"
+simple_title:         "Odczytywanie argumentów wiersza poleceń"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Files and I/O"
@@ -10,33 +10,70 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i dlaczego?
+Odczytywanie argumentów wiersza poleceń to proces w programowaniu, który polega na tym, że program przyjmuje informacje przekazane wraz z jego uruchomieniem za pomocą wiersza poleceń. Programiści używają tej techniki, ponieważ pozwala ona na przekazywanie wartości lub opcji do programu, aby modyfikować jego działanie w zależności od potrzeb.
 
-Jeśli jesteś programistą szukającym efektywnych narzędzi do tworzenia interaktywnych aplikacji, to Elm z pewnością jest jednym z wyborów, który warto rozważyć. Poznajmy zatem, dlaczego warto poznać możliwości odczytywania argumentów wiersza poleceń przy użyciu tego języka.
+## Jak to zrobić:
+Korzystając z języka programowania Elm, odczytywanie argumentów wiersza poleceń jest proste. Można to zrobić wykorzystując funkcję `Platform.worker` oraz moduł `Platform.Cmd`.
 
-## Jak to zrobić?
+```Elm
+import Platform
+import Platform.Cmd exposing (..)
 
-Odczytywanie argumentów wiersza poleceń w języku Elm jest bardzo proste. Wystarczy użyć funkcji `Elm.Platform.Args.flag`, która umożliwia dostęp do przekazanych argumentów jako listy wartości tekstowych.
+main =
+    Platform.worker
+        { init = init
+        , update = update
+        , view = view
+        , subscriptions = \model ->
+            Sub.batch
+                [ onUrlChange UrlChange
+                , onBeginEnter Cmd.onBeginEnter
+                ]
+        }
 
-Przykładowo, w przypadku podania argumentów ` --name John --age 30`, możemy odczytać je przy użyciu poniższego kodu:
+init =
+    let
+        config =
+            Platform.ArgParser.init Config
+    in
+    ( config, Cmd.none )
+
+type Msg
+    = UrlChange Url String
+    | EnterBegin
+
+type alias Config =
+    { url : String
+    , shouldBegin : Bool
+    }
+
+update msg model =
+    case msg of
+        UrlChange url ->
+            { model | url = url }, Cmd.none
+
+        EnterBegin ->
+            { model | shouldBegin = True }, Cmd.none
+
+view model =
+    Html.text "Odczytanie url i opcji uruchomienia"
 
 ```
-Elm.Platform.Args.flag
-    (Elm.List.fromList [ "name", "age" ])
-    ( \name age -> Html.text ( "Witaj " ++ name ++ "! Masz " ++ age ++ " lat." ) )
+
+Przykładowe wyjście po odczytaniu argumentów wiersza poleceń może wyglądać następująco:
+
+```Elm
+Config
+    { url = "www.example.com"
+    , shouldBegin = True
+    }
 ```
 
-Wynik powyższego przykładu będzie wyglądał następująco:
+## Głębsze przyjrzenie się:
+Odczytywanie argumentów wiersza poleceń jest wykorzystywane przez programistów od dawna, od czasów konsolowych programów w stylu DOS-a. Alternatywą dla tej metody jest korzystanie z plików konfiguracyjnych lub interaktywnego dialogu z użytkownikiem. W przypadku języka Elm, odczytywanie argumentów wiersza poleceń jest możliwe dzięki modułowi `Platform.Cmd`, który dostarcza funkcje do obsługi poleceń.
 
-> Witaj John! Masz 30 lat.
-
-## Głębszy zanurzenie
-
-Możliwość odczytu argumentów wiersza poleceń może być szczególnie przydatna w przypadku tworzenia aplikacji internetowych z wykorzystaniem języka Elm. Możliwość przekazywania wartości, takich jak język użytkownika czy tryb pracy, pozwala na dostosowanie części aplikacji do ich preferencji.
-
-Warto również wiedzieć, że `Elm.Platform.Args` udostępnia również funkcję `Elm.Platform.Args.map`, która pozwala na bardziej elastyczne mapowanie argumentów na inne typy wartości.
-
-## Zobacz również
-
-- [Dokumentacja Elm.Platform.Args](https://package.elm-lang.org/packages/elm-lang/core/latest/Platform-Args)
-- [Przykłady użycia argumentów wiersza poleceń w Elm](https://github.com/tizianoelemento/elm-flags)
+## Zobacz również:
+* Oficjalna dokumentacja języka Elm: [https://guide.elm-lang.org/](https://guide.elm-lang.org/)
+* Kurs programowania w języku Elm: [https://egghead.io/learn/elm](https://egghead.io/learn/elm)
+* Forum społeczności programistów Elm: [https://elmlang.slack.com/](https://elmlang.slack.com/)

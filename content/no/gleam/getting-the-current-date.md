@@ -1,7 +1,7 @@
 ---
-title:                "Å få gjeldende dato"
-html_title:           "Gleam: Å få gjeldende dato"
-simple_title:         "Å få gjeldende dato"
+title:                "Få dagens dato"
+html_title:           "Gleam: Få dagens dato"
+simple_title:         "Få dagens dato"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Dates and Times"
@@ -10,36 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## Hva er det å få nåværende dato, og hvorfor gjør programmerere det?
 
-Hvorfor bry seg om å få dagens dato?
+ Å få nåværende dato i et program betyr å hente og vise den nåværende datoen på datamaskinen eller enheten som kjører programmet. Dette kan være nyttig for å vise når et program ble kjørt, laget eller når en hendelse skjedde. Det er også en viktig del av å lage dynamiske og presise applikasjoner.
 
-Det kan være mange grunner til å ville vite dagens dato, enten man skal lage en kalender-app, følge med på tidsberegninger, eller bare ønsker å holde styr på tiden. Uansett årsak, kan Gleam gjøre dette enkelt for deg med sin innebygde funksjon for å hente dagens dato.
+## Hvordan gjør man det:
 
-## How To
-
-Det er enkelt å få tak i dagens dato i Gleam. Du trenger bare å bruke funksjonen `Calendar.Date.today()` for å hente dagens dato som en `Calendar.Date`-rekord. Her er et eksempel på hvordan du kan bruke denne funksjonen i et program:
-
-```
-Gleam import time
-import gleam/calendar.{ Date }
-
-pub fn main() {
-  let today = Calendar.Date.today()
-  time.log_debug("Dagens dato er: {today.day}.{today.month}.{today.year}")
-}
+ ```Gleam
+import time
+ 
+let nåværende_dato = time.now()
+ 
+io.println(some_date)
+ 
+// Eksempel på utskrift: 2021-09-22T12:34:56Z
 ```
 
-Når programmet kjører, vil du få output som f.eks. `Dagens dato er: 5.9.2021`. Legg merke til at vi bruker `time.log_debug` for å logge datoen til terminalen. Du kan også bruke andre funksjoner for å formatere og manipulere datoen etter dine behov.
+Denne koden importerer "time" biblioteket og bruker så "now" funksjonen for å få den nåværende datoen. Deretter printer den datoen ved hjelp av "io.println" funksjonen. Output vil være i ISO-8601 datoformat som er standard for datorepresentasjon.
 
-## Deep Dive
+Mer kompliserte formateringsalternativer er også tilgjengelige med "strftime" funksjonen:
 
-For de som ønsker å gå dypere inn i hvordan Gleam håndterer datoer, kan det være nyttig å vite at `Calendar.Date`-rekorden inneholder flere felt som kan komme til nytte. Disse inkluderer `day`, `month` og `year` som vi allerede har nevnt, samt `day_of_week` og `day_of_year`.
+```Gleam
+import time
+ 
+let nåværende_dato = time.now()
+ 
+io.println(time.strftime("%A, %e %B %Y", nåværende_dato))
+ 
+// Eksempel på utskrift: Wednesday, 22 September 2021
+```
 
-Gleam bruker koordinert universaltid (UTC) for å beregne datoer og tidspunkt, og håndterer også skuddår. Dette gjør at du kan være sikker på at datoen du får tilbake alltid vil være korrekt.
+## Dykke dypere:
 
-## See Also
+Funksjonen for å få nåværende dato er ikke bare begrenset til Gleam, men er en del av språket og globale standarder. I tillegg til ISO-8601 formatet, brukes alternativer som Unix timestamp (antall sekunder siden 1. januar 1970) og klokkeslett formatene AM/PM og 24-timers format.
 
-- Offisiell Gleam-dokumentasjon for `Calendar.Date`: https://gleam.run/documentation/std_lib/calendar
-- Gleam sin offisielle nettside: https://gleam.run/
-- Gleam på GitHub: https://github.com/gleam-lang/gleam
+Alternativt kan man bruke eksterne biblioteker for å håndtere datoer og klokkeslett, for eksempel "chronos" biblioteket for Gleam.
+
+## Se også:
+
+- [Gleam dokumentasjon om "time" biblioteket](https://gleam.run/documentation#time)
+- [ISO-8601 datoformat](https://en.wikipedia.org/wiki/ISO_8601)
+- [Chronos biblioteket for Gleam](https://github.com/gleam-lang/chronos)

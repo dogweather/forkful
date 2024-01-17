@@ -1,7 +1,7 @@
 ---
-title:                "Calcolare una data nel futuro o nel passato"
-html_title:           "Ruby: Calcolare una data nel futuro o nel passato"
-simple_title:         "Calcolare una data nel futuro o nel passato"
+title:                "Calcolare una data nel futuro o nel passato."
+html_title:           "Ruby: Calcolare una data nel futuro o nel passato."
+simple_title:         "Calcolare una data nel futuro o nel passato."
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Dates and Times"
@@ -10,55 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+## Cosa & Perché?
+Calcolare una data nel futuro o nel passato è semplicemente una funzione che ti permette di ottenere una data dall'oggi avanti o indietro nel tempo. I programmatori lo fanno spesso per eseguire operazioni come aggiornare un'emissione, calcolare le date di scadenza o impostare trigger temporali.
 
-Calcolare una data nel futuro o nel passato può essere utile in diversi casi, come ad esempio per pianificare eventi, gestire scadenze o analizzare dati storici.
-
-## Come fare
-
-Per calcolare una data in Ruby, è possibile utilizzare il metodo `Date#advance` o `Date#prev_day` che accettano come argomenti i relativi valori dell'anno, del mese e del giorno.
-
-Ecco un esempio di codice per calcolare una data nel futuro o nel passato:
-
-```Ruby
-# Calcola la data di domani
-d = Date.today.advance(days: 1)
-puts d #=> 2021-07-09
-
-# Calcola la data tra due mesi
-d = Date.today.advance(months: 2)
-puts d #=> 2021-09-08
-
-# Calcola la data di ieri
-d = Date.today.prev_day
-puts d #=> 2021-07-07
+## Come fare:
 ```
-
-Inoltre, è possibile specificare anche il numero di settimane o di anni da aggiungere o sottrarre dalla data corrente.
-
-```Ruby
-# Calcola la data tra due settimane
-d = Date.today.advance(weeks: 2)
-puts d #=> 2021-07-22
-
-# Calcola la data tra tre anni
-d = Date.today.advance(years: 3)
-puts d #=> 2024-07-08
+Ruby Date Library:
+require 'date'
+Date.today + 7 # output: 2020-07-30
 ```
+Puoi usare la libreria predefinita di Ruby per eseguire calcoli di date. In questo esempio, stiamo aggiungendo 7 giorni alla data odierna, ottenendo come risultato la data del 30 luglio 2020. Puoi anche passare un parametro negativo per ottenere una data nel passato.
 
-## Approfondimento
-
-Il metodo `advance` utilizza il calendario gregoriano per calcolare le date nel futuro o nel passato. Ciò significa che tiene conto degli anni bisestili e adatta automaticamente il numero di giorni nei mesi corretti.
-
-Inoltre, è possibile combinare più argomenti per ottenere una data molto precisa. Ad esempio, si può calcolare la data di due anni e tre mesi fa:
-
-```Ruby
-# Calcola la data di due anni e tre mesi fa
-d = Date.today.advance(years: -2, months: -3)
-puts d #=> 2019-04-08
 ```
+Date calculation using Time:
+time = Time.now 
+time + (60 * 60 * 24 * 7) # output: 1596510224
+```
+Puoi anche utilizzare l'oggetto `Time` per eseguire calcoli di date. In questo esempio, stiamo aggiungendo 7 giorni al tempo corrente, ottenendo come risultato un valore numerico che rappresenta i secondi trascorsi dalla mezzanotte del 1 gennaio 1970 (epoca unix).
 
-## Vedi anche
+## Approfondimento:
+La necessità di calcolare date è sempre stata presente nella programmazione, soprattutto per la gestione di scadenze e trigger temporali. In passato, i linguaggi di programmazione come C e Java richiedevano l'uso di funzioni complesse per effettuare questi calcoli, ma grazie a linguaggi moderni come Ruby, è diventato molto più semplice e intuitivo.
 
-- [Documentazione di Ruby sul metodo `advance`](https://ruby-doc.org/stdlib-2.7.2/libdoc/date/rdoc/Date.html#method-i-advance)
-- [Documentazione di Ruby sul metodo `prev_day`](https://ruby-doc.org/stdlib-2.7.2/libdoc/date/rdoc/Date.html#method-i-prev_day)
+Esistono anche altre opzioni per eseguire calcoli di date, come l'utilizzo di librerie esterne come [Chronic](https://github.com/mojombo/chronic) o [Natty](https://github.com/withelmo/Natty). Inoltre, puoi anche utilizzare metodi matematici per eseguire calcoli di date manualmente, ma ciò richiederebbe più codice e sarebbe meno efficiente rispetto all'utilizzo delle librerie native di Ruby.
+
+Per quanto riguarda l'implementazione, la libreria Date di Ruby utilizza l'algoritmo di Gauss per gestire le eccezioni nei calcoli delle date, come gli anni bisestili. Inoltre, è in grado di supportare un'ampia gamma di formati di date e orari.
+
+## Vedi anche:
+- [Documentazione della libreria Date di Ruby](https://ruby-doc.org/stdlib-2.7.1/libdoc/date/rdoc/Date.html)
+- [Guida su come utilizzare la libreria Date di Ruby](https://www.rubyguides.com/2015/08/ruby-date/) 
+- [Esempi pratici di utilizzo della libreria Date di Ruby](https://www.theodinproject.com/paths/full-stack-ruby-on-rails/courses/ruby-programming/lessons/ruby-programming#section-calculating-dates-with-the-default-library)

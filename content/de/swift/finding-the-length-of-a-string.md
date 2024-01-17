@@ -1,7 +1,7 @@
 ---
-title:                "Die Länge eines Strings finden"
-html_title:           "Swift: Die Länge eines Strings finden"
-simple_title:         "Die Länge eines Strings finden"
+title:                "Die Länge eines Strings finden."
+html_title:           "Swift: Die Länge eines Strings finden."
+simple_title:         "Die Länge eines Strings finden."
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -10,46 +10,22 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was & Warum?
+Das Finden der Länge einer Zeichenkette ist ein grundlegender Schritt beim Programmieren. Es ermöglicht dir, die Anzahl der Zeichen in einer Zeichenkette zu bestimmen, was in vielen Szenarien wichtig ist. Zum Beispiel, um sicherzustellen, dass eine Eingabe innerhalb der erwarteten Länge liegt oder um bestimmte Formatierungen vorzunehmen.
 
-Wenn du programmierst, wirst du mit Sicherheit häufig auf die Aufgabe stoßen, die Länge eines Strings zu bestimmen. Dies kann aus verschiedenen Gründen erforderlich sein, wie zum Beispiel die Validierung von Benutzereingaben oder das Formatieren von Text.
-
-## Wie man die Länge eines Strings in Swift bestimmt
-
-Um die Länge eines Strings in Swift zu bestimmen, gibt es verschiedene Methoden. Im Folgenden werden wir uns die gängigsten Möglichkeiten anschauen.
-
-### Verwendung der `count` Methode
-
-Eine der einfachsten Methoden, um die Länge eines Strings zu erhalten, ist die Verwendung der `count` Methode. Diese Methode gibt die Anzahl der Zeichen im String zurück, einschließlich Leerzeichen und Sonderzeichen.
+## Wie geht's:
+Um die Länge einer Zeichenkette zu finden, kannst du die Methode `count` verwenden, die in Swift integriert ist. Sie gibt die Anzahl der Zeichen in einer Zeichenkette zurück. Hier ist ein Beispiel:
 
 ```Swift
-let string = "Hallo Welt!"
-print(string.count) // Output: 11
+let string = "Hallo!"
+print(string.count) // gibt 6 aus
 ```
 
-### Verwendung der `unicodeScalars` Eigenschaft
+## Tiefere Einblicke:
+Das Konzept, die Länge einer Zeichenkette zu finden, ist nicht spezifisch für Swift, sondern wird in vielen Programmiersprachen verwendet. In älteren Sprachen wie C oder Java musste man eine Schleife verwenden und jedes Zeichen einzeln zählen, um die Länge einer Zeichenkette zu bestimmen. In Swift wird dies jedoch durch die `count` Methode vereinfacht.
 
-Eine weitere Möglichkeit ist die Verwendung der `unicodeScalars` Eigenschaft, die eine Sequenz von Unicode-Code-Einheiten zurückgibt. Um die Länge des Strings zu erhalten, können wir einfach die `count` Methode auf die `unicodeScalars` Eigenschaft anwenden.
+Alternativ dazu gibt es auch die Möglichkeit, die Länge einer Zeichenkette mit der Eigenschaft `countElements` zu finden. Diese Methode zählt nicht die Anzahl der Zeichen, sondern die Anzahl der Unicode-Scalars in einer Zeichenkette. Dies kann in manchen Fällen zu unterschiedlichen Ergebnissen führen, daher ist es wichtig zu wissen, welche Methode für dein Szenario geeignet ist.
 
-```Swift
-let string = "Hallo Welt!"
-print(string.unicodeScalars.count) // Output: 11
-```
-
-### Verwendung der `utf16` Eigenschaft
-
-Ähnlich wie die `unicodeScalars` Eigenschaft gibt auch die `utf16` Eigenschaft eine Sequenz von Unicode-Code-Einheiten zurück. Die Verwendung der `utf16` Eigenschaft kann jedoch zu unterschiedlichen Ergebnissen führen, da sie einige Zeichen anders darstellt. Auch hier können wir die `count` Methode anwenden, um die Länge des Strings zu erhalten.
-
-```Swift
-let string = "Hallo Welt!"
-print(string.utf16.count) // Output: 11
-```
-
-## Tiefgehende Analyse
-
-Wenn es um die Verarbeitung von Strings in Swift geht, gibt es einige wichtige Konzepte zu verstehen. Eines davon ist die Unicode-Kodierung, die es ermöglicht, Zeichen aus verschiedenen Sprachen und Schriftsystemen darzustellen. Ein weiterer wichtiger Aspekt ist der Unterschied zwischen Zeichen und Bytes. Während Zeichen aus mehreren Bytes bestehen können, kann ein Byte nur ein Zeichen darstellen. Das ist der Grund, warum die verschiedenen Methoden, die wir oben betrachtet haben, zu unterschiedlichen Ergebnissen führen können. 
-
-## Siehe auch
-
-- [Swift Dokumentation zu Strings](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
-- [Stack Overflow: Swift - Wie erhalte ich die Länge eines Strings?](https://stackoverflow.com/questions/24086161/swift-how-do-i-count-the-number-of-characters-in-a-string)
+## Siehe auch:
+- Offizielle Dokumentation zu `count` in Swift: https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html
+- Stack Overflow: Unterschied zwischen `count` und `countElements` in Swift: https://stackoverflow.com/questions/26360057/count-vs-countelements-in-swift

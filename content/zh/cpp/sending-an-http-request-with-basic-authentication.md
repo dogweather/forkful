@@ -1,7 +1,7 @@
 ---
-title:                "-使用基本认证发送HTTP请求"
-html_title:           "C++: -使用基本认证发送HTTP请求"
-simple_title:         "-使用基本认证发送HTTP请求"
+title:                "通过基本身份验证发送一个 http 请求"
+html_title:           "C++: 通过基本身份验证发送一个 http 请求"
+simple_title:         "通过基本身份验证发送一个 http 请求"
 programming_language: "C++"
 category:             "C++"
 tag:                  "HTML and the Web"
@@ -10,65 +10,67 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
+# 啥是HTTP请求与基本认证？为什么程序员会用它？
 
-在建立网络连接时，服务器通常会要求用户提供身份验证信息，以确保安全性。HTTP请求中的基本身份验证允许用户通过提供用户名和密码来验证其身份，从而向服务器发送请求。
+HTTP请求是一个在客户端设备（如电脑）和服务器之间进行通信的方法，它允许程序员发送和接收数据，以便进行网络通信。基本认证是一种简单的身份验证方法，通过要求用户提供用户名和密码来确认用户的身份。程序员通常会使用这种认证方式来访问受保护的网络资源或API，以确保数据的安全性。
 
-## 如何发送带基本身份验证的HTTP请求
+# 怎样做？
+
+以下示例展示了如何发送带有基本认证的HTTP请求，你需要使用C++编程语言：
 
 ```C++
-//导入必要的头文件
-#include <iostream>
-#include <curl/curl.h>
+#include <iostream>  
+#include <curl/curl.h> //需要先安装cURL库
 
-//main函数
-int main ()
+using namespace std;
+
+int main()
 {
-  //url包含基本身份验证信息
-  char* url = "https://example.com/";
+  //设置用户名和密码，这些信息将在HTTP请求的标头中使用
+  const char* username = "用户名";
+  const char* password = "密码";
 
-  CURL *curl;
-  CURLcode res;
-
-  //初始化curl
-  curl = curl_easy_init();
-  if(curl) {
-    //设置用于验证的用户名和密码
-    curl_easy_setopt(curl, CURLOPT_USERPWD, "username:password");
-    //设置url
-    curl_easy_setopt(curl, CURLOPT_URL, url);
+  //初始化cURL句柄
+  CURL *curl = curl_easy_init();
+  if (curl) {
+    //设置请求的URL地址
+    curl_easy_setopt(curl, CURLOPT_URL, "http://www.example.com");
+    //设置认证方式为基本认证
+    curl_easy_setopt(curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
+    //设置用户名和密码
+    curl_easy_setopt(curl, CURLOPT_USERNAME, username);
+    curl_easy_setopt(curl, CURLOPT_PASSWORD, password);
     //发送请求
-    res = curl_easy_perform(curl);
+    CURLcode res = curl_easy_perform(curl);
     //检查请求是否成功
-    if(res != CURLE_OK)
-        fprintf(stderr, "curl_easy_perform() failed: %s\n",
-              curl_easy_strerror(res));
-    //清除curl相关信息
+    if (res == CURLE_OK) {
+      cout << "请求已发送成功" << endl;
+    } else {
+      cout << "请求失败: " << curl_easy_strerror(res) << endl;
+    }
+    //清除cURL句柄
     curl_easy_cleanup(curl);
   }
   return 0;
 }
 ```
 
-输出结果应为：
+输出：
 
-```C++
-<html>
-<head>
-    <title>Example Domain</title>
-</head>
-<body>
-    <h1>HTTP Basic Authentication Successful</h1>
-</body>
-</html>
+```bash
+请求已发送成功
 ```
 
-## 深入了解
+# 深入了解
 
-在HTTP请求中，基本身份验证是最简单和最常用的身份验证方法。它是一种无状态的认证机制，即每次请求都需要提供用户名和密码，服务器不会保存这些信息。用户名和密码在所有请求中都以明文的方式传输，因此建议在使用HTTPS协议时使用基本身份验证。
+基本认证是最古老的身份验证机制之一，它最初是为了使Internet上的各种网络资源受到保护而设计的。它是一种简单有效的方法，但也有一些缺点，比如无法加密发送的信息。因此，现在许多人更倾向于使用更安全的认证方式，比如OAuth。
 
-## 看看此外
+除了基本认证，还有其他一些认证方式，比如摘要认证、OAuth、API密钥等。每种方式都有自己的优缺点，程序员应根据具体情况来选择最合适的认证方式。
 
-- [CURL官方文档](https://curl.haxx.se/libcurl/c/CURLOPT_USERPWD.html)
-- [HTTP基本身份验证](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Authentication)
-- [C++编程指南](https://www.cplusplus.com/doc/)
+HTTP请求中的基本认证步骤其实还有更多细节，比如设置响应状态码和处理错误信息。如果想要进一步了解更多细节，可以查阅cURL库的文档或者搜索相关信息。
+
+# 参考链接
+
+- cURL库文档：https://curl.haxx.se/libcurl/c/
+- cURL Github仓库：https://github.com/curl/curl
+- 各种HTTP认证方式的比较：https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Authentication#Comparison_table_of_different_techniques

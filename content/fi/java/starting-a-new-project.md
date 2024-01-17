@@ -1,7 +1,7 @@
 ---
-title:                "Aloittaminen uusi projekti"
-html_title:           "Java: Aloittaminen uusi projekti"
-simple_title:         "Aloittaminen uusi projekti"
+title:                "Uuden projektin aloittaminen"
+html_title:           "Java: Uuden projektin aloittaminen"
+simple_title:         "Uuden projektin aloittaminen"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Getting Started"
@@ -10,51 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+# Intro
 
-Uuden projektin aloittaminen voi tarjota jännittävän ja luovan haasteen, jossa voit soveltaa ja kehittää ohjelmointitaitojasi ja luoda jotain uutta ja hyödyllistä.
+Tervehdys Java-ohjelmoijat! Uuden projektin aloittaminen voi tuntua pelottavalta ja monimutkaiselta, mutta älä huoli - tässä artikkelissa näytämme kuinka se tehdään yksinkertaisesti ja tehokkaasti Java-kielellä. Jatka lukemista, niin opit lisää uuden projektin aloittamisesta ja sen tärkeydestä ohjelmoijan työssä.
 
-## Kuinka aloittaa uusi projekti
+## Mitä & miksi?
 
-Aloittaaksesi uuden Java-projektin, seuraa näitä yksinkertaisia vaiheita:
+Uuden projektin aloittaminen tarkoittaa uuden ohjelmiston tai sovelluksen luomista alusta asti. Ohjelmoijat tekevät tätä monista syistä, kuten uusien ideoiden toteuttamiseksi, vanhan koodin korvaamiseksi tai uuden taidon oppimiseksi. Uusi projekti tarjoaa myös mahdollisuuden alkaa puhtaalta pöydältä ja suunnitella koodia mahdollisimman tehokkaasti.
 
-1. Avaa suosikki Java-koodieditori tai IDE (Integrated Development Environment).
+## Kuinka:
 
-2. Luo uusi projekti valitsemalla *File* ja sitten *New Project*.
+Java-koodiesimerkeissämme näet kuinka helppoa uuden projektin aloittaminen voi olla. Ensimmäinen askel on luoda uusi projekti Java Integrated Development Environment (IDE) -ohjelmassa, kuten Eclipse tai IntelliJ. Tämän jälkeen voit alkaa kirjoittaa koodia ja luoda omaa sovellusta, käyttäen Java-koodin perusrakenteita ja -syntaksia.
 
-3. Anna projektillesi nimi ja valitse projektille sopiva sijainti.
-
-4. Valitse projektin tyyppi, joka voi olla esimerkiksi tyhjä projekti, valmis mallipohja tai GitHub-projekti.
-
-5. Viimeistele projektin luominen klikkaamalla *Finish*.
-
-Uuden projektin luomisen jälkeen voit alkaa kirjoittaa koodia ja rakentaa oman ohjelmistosi.
-
-```Java
-public class UusiProjekti {
-    public static void main(String[] args) {
-        System.out.println("Tervetuloa uuden projektin maailmaan!");
-    }
+```java
+public class Main {
+  public static void main(String[] args) {
+    System.out.println("Hei maailma!");
+  }
 }
 ```
 
-Tämä yksinkertainen esimerkki tulostaa näytölle "Tervetuloa uuden projektin maailmaan!" ja antaa sinulle mahdollisuuden aloittaa projektisi ensimmäisen tulosteen asettamisen.
+Tämä yksinkertainen koodiesimerkki tulostaa näytölle "Hei maailma!" ja osoittaa kuinka helposti voit aloittaa uuden projektin Java-kielellä. Muista että uuden projektin luominen ei tarkoita vain koodin kirjoittamista, vaan myös hyvän suunnittelun ja dokumentoinnin tekemistä.
 
-## Syventyminen
+## Deep Dive:
 
-Uuden projektin aloittaminen Java-kielellä voi olla haastavaa, mutta samalla myös palkitsevaa. Ennen kuin ryhdyt luomaan projektia, on tärkeää suunnitella se huolellisesti ja harkita seuraavia asioita:
+Uuden projektin aloittamisella on pitkä historia ohjelmoinnissa. Alussa ohjelmoijat loivat kaiken koodin alusta alkaen, mutta nykyään hyödynnetään usein valmiita kirjastoja ja kehystyksiä, jotka auttavat säästämään aikaa ja vaivaa. Jotkut vaihtoehdot uuden projektin aloittamiseen ovat esimerkiksi Java Enterprise Edition (EE) -kehykset, kuten Spring ja Hibernate, jotka ovat erityisen hyödyllisiä web-sovellusten kehittämisessä.
 
-- Mikä on projektisi tarkoitus ja mitä se pyrkii ratkaisemaan?
-- Mitä ominaisuuksia projektisi tulee sisältämään?
-- Mitkä ovat projektin vaatimukset ja rajoitukset?
-- Millainen arkkitehtuuri sopii parhaiten projektisi tarpeisiin?
+Uuden projektin aloittamisessa on myös tärkeää ottaa huomioon hyvät käytännöt ja suunnittelumallit, kuten Agile-menetelmä ja suunnittelumallit kuten Model-View-Controller (MVC). Näiden avulla voit parantaa projektisi laatua ja tehokkuutta.
 
-On myös hyvä harkita erilaisia suunnittelumalleja, kuten Agile-menetelmää, joka voi auttaa projektin hallinnassa ja joustavassa kehittämisessä.
+## Katso myös:
 
-Lisäksi on tärkeää tutustua Java-luokkiin ja niiden käyttöön, sekä opetella käyttämään oikeita sovellusliittymiä (API) projektissasi. Hyvin suunniteltu ja toteutettu projekti voi helpottaa ja nopeuttaa sovelluksen kehitystä ja ylläpitoa.
+Jos haluat oppia lisää uuden projektin aloittamisesta Java-kielellä, tässä muutama hyödyllinen lähde:
 
-## Katso myös
+[Java-keskustelupalsta](https://www.java.com/fi/), jossa voit kysyä neuvoa muilta Java-ohjelmoijilta ja jakaa omia kokemuksiasi.
 
-- [Java-opetusohjelma aloittelijoille](https://github.com/carmen-tang/java-tutorial-for-beginners)
-- [Java-oppimateriaaleja ja -resursseja](https://www.javatpoint.com/)
-- [Java-ohjelmointikielen virallinen sivusto](https://www.oracle.com/java/)
+[Oracle Java-dokumentaatio](https://docs.oracle.com/javase/8/docs/api/), joka sisältää kattavan oppaan Java-kielen perusrakenteisiin ja API-kirjastoihin.
+
+[Eclipse- ja IntelliJ-verkkosivut](https://www.eclipse.org/ ja https://www.jetbrains.com/idea/), joissa voit ladata ilmaiset Java IDE-ohjelmat ja oppia niiden käytöstä.
+
+Hyvää uuden projektin aloittamista ja onnea ohjelmoinnissa! Muista pitää suunnittelun ja dokumentoinnin tärkeys mielessäsi ja hyödynnä valmiita kehyksiä ja kirjastoja säästääksesi aikaa ja vaivaa.

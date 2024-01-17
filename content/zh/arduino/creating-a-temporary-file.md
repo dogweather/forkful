@@ -1,7 +1,7 @@
 ---
-title:                "创建一个临时文件"
-html_title:           "Arduino: 创建一个临时文件"
-simple_title:         "创建一个临时文件"
+title:                "建立临时文件"
+html_title:           "Arduino: 建立临时文件"
+simple_title:         "建立临时文件"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Files and I/O"
@@ -10,54 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
+# 创建临时文件
 
-创建临时文件是一个常见的编程需求，它允许你在程序运行时动态地创建和使用文件。这可以帮助你管理数据、缓存等，同时也能提高程序的灵活性和可扩展性。
+## 什么是临时文件：
+创建临时文件是指在程序运行期间，临时生成一个文件来存储数据或者执行某项任务。程序员通常会在需要存储临时数据或者执行一些临时操作时使用临时文件。
 
-## 如何创建临时文件
+## 如何创建临时文件：
+创建临时文件可以通过Arduino的File库中的“tmpFile”函数来实现。以下是一个例子：
 
-下面是一个使用Arduino语言创建临时文件的简单示例：
-
-```Arduino
-#include <SD.h>
-
-void setup() {
-  // 初始化SD卡
-  Serial.begin(9600);
-  SD.begin(10);
-  
-/** 在SD卡中创建一个临时文件，命名为"temp.txt" */
-  File tempFile = SD.open("temp.txt", FILE_WRITE);
-  if (tempFile) {
-    // 文件创建成功，写入内容
-    tempFile.println("这是一个临时文件");
-    tempFile.println("用于存储数据");
-    // 关闭文件
-    tempFile.close();
-  }
-}
-
-void loop() {
-  // 读取临时文件内容并打印
-  File tempFile = SD.open("temp.txt");
-  if (tempFile) {
-    while (tempFile.available()) {
-      Serial.write(tempFile.read());
-    }
-    // 关闭文件
-    tempFile.close();
-  }
-  delay(1000);
-}
+```
+Arduino_File tmpFile;
+tmpFile = File.createTempFile("example", ".txt");
 ```
 
-该示例中，我们使用SD库来操作SD卡，在 `setup()` 函数中创建了一个名为 "temp.txt" 的临时文件，并在 `loop()` 函数中读取并打印文件内容。这样就能够实现临时存储数据的功能。
+这段代码将会在Arduino控制台上创建一个名为“example.txt”的临时文件。
 
-## 深入了解
+## 深入了解：
+创建临时文件的历史可以追溯到早期的操作系统，当时程序无法在内存中保存大量的临时数据，因此需要将数据存储在临时文件中。如今，创建临时文件可以是为了避免程序中断时临时数据的丢失，或者是为了执行一些需要保存数据的临时任务。
 
-创建临时文件的过程通常包括创建文件、写入数据、使用完后删除文件等步骤。在Arduino中，我们可以使用 `SD` 库来轻松地操作SD卡来实现这些操作。同时，我们还可以使用文件操作函数来读取、写入、关闭和删除文件等。
+除了使用Arduino的“tmpFile”函数，程序员还可以使用其他编程语言中的临时文件创建方法来实现相同的效果。例如，在Python中可以使用“tempfile”模块来创建临时文件。
 
-## 参考资料
-
-- Arduino SD库文档：https://www.arduino.cc/en/Reference/SD
-- 文件操作函数参考：https://www.arduino.cc/reference/en/language/functions/files-and-directories/
+## 相关资源：
+- [Arduino官方文档](https://www.arduino.cc/reference/en/libraries/file/)
+- [Python官方文档](https://docs.python.org/3/library/tempfile.html)

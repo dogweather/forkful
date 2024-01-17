@@ -1,7 +1,7 @@
 ---
-title:                "HTML:n jäsentäminen"
-html_title:           "Kotlin: HTML:n jäsentäminen"
-simple_title:         "HTML:n jäsentäminen"
+title:                "HTML-analysointi"
+html_title:           "Kotlin: HTML-analysointi"
+simple_title:         "HTML-analysointi"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "HTML and the Web"
@@ -10,54 +10,22 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä ja miksi?
+HTML-analyysi on prosessi, jossa ohjelmoijat muuttavat verkkosivun koodin helposti luettavaan muotoon. Tämä on tärkeää, koska se mahdollistaa tiedon keräämisen ja manipuloinnin verkkosivuilta. Tämä helpottaa monia verkkoon liittyviä tehtäviä, kuten tietojen tallentamista tai hakemista.
 
-Monet moderneista nettisivuista ovat tehty käyttämään HTML-kieltä, joka on tietokonerajapinta sivujen muotoiluun ja sisällön esittämiseen. Siksi on tärkeää, että ohjelmoijina osaamme parsia HTML:ää ymmärtääksemme sivustojen rakennetta ja kerätäksemme sieltä tarvitsemamme tiedot.
-
-## Kuinka tehdä
-
-HTML:n parsiminen voidaan tehdä monella eri tavalla käyttäen erilaisia työkaluja ja kirjastoja. Yksi suosituimmista vaihtoehdoista on käyttää Kotlinia, joka on nykyaikainen ja suosittu ohjelmointikieli. Se yhdistää puhtaasti funktionaalisen ja olio-orientoituneen ohjelmoinnin parhaita puolia.
-
-Yksi tapa parsia HTML:ää Kotlinilla on käyttämällä JSoup-kirjastoa, joka on Java-kirjasto, mutta sitä voidaan myös käyttää Kotlin-projekteissa. Alla on esimerkki, miten voit ladata ja parsia nettisivun HTML:ää käyttäen Kotlinia:
-
-```Kotlin
-// Lisätään JSoup-kirjasto
-import org.jsoup.Jsoup
-import org.jsoup.nodes.Document
-
-// Luodaan funktio nimeltä `parseHTML`, joka saa argumenttina URL-osoitteen
-fun parseHTML(url: String) {
-    // Ladataan HTML dokumentti annetusta URL-osoitteesta
-    val document: Document = Jsoup.connect(url).get()
-
-    // Käytetään CSS-selektoreita löytääksemme haluamamme elementit sivulta
-    val title: String = document.select("h1").text()
-    val paragraphs: List<String> = document.select("p").eachText()
-
-    // Tulostetaan parsitut elementit
-    println("Sivun otsikko: $title")
-    println("Kappaleet: $paragraphs")
-}
-
-// Kutsutaan funktiota antamalla sille URL-osoite
-parseHTML("https://example.com")
+## Miten:
+```Kotlin 
+val html = "<html><body><h1>Hello, world!</h1></body></html>"
+val parsedHtml = Jsoup.parse(html)
+val title = parsedHtml.select("h1").text()
+println(title)
 ```
 
-Tulostuksena saat HTML-sivun otsikon ja listaun kappaleista:
+Tämä esimerkki tulostaa "Hello, world!" selkeästi ilman HTML-tageja. Käytämme tässä Jsoup-kirjastoa, joka on suosittu HTML-analyysiin tarkoitettu kirjasto.
 
-```
-Sivun otsikko: Esimerkki Sivu
-Kappaleet: [Tämä on ensimmäinen kappale, Tämä on toinen kappale, Ja tämä on kolmas kappale]
-```
+## Syväsukellus:
+HTML-analyysi on ollut tärkeä osa verkkokehitystä jo vuosikymmenten ajan. Alun perin sitä käytettiin pääasiassa verkkosivustojen suunnittelussa ja testaamisessa, mutta nykyään sillä on paljon muita käyttötarkoituksia. On myös muita kirjastoja, kuten järjestelmään sisltyvä org.xml.sax, jotka voivat auttaa HTML-analyysissä.
 
-## Syvällisempi tarkastelu
-
-HTML:n parsiminen ei rajoitu pelkästään netissä olevien sivujen muotoilun analysointiin, vaan sitä voidaan myös käyttää tiedonkeruuseen ja datan tallentamiseen tietokantaan. Esimerkiksi voit parsia uutissivuston HTML:ää ja tallentaa sieltä löydetyt uutisotsikot ja linkit omaan tietokantaasi, josta voit myöhemmin hakea haluamiasi uutisia.
-
-Parsittaessa HTML:ää on tärkeää ymmärtää sivuston rakennetta ja miten eri elementtejä voidaan valita käyttäen CSS-selektoreita. Myös tiedon käsittely kannattaa tehdä tehokkaasti, jotta parsiminen ei hidasta ohjelman suorituskykyä.
-
-## Katso myös
-
-- [JSoup kirjaston kotisivu](https://jsoup.org/)
-- [Kotlin viralliset dokumentaatiot](https://kotlinlang.org/docs/home.html)
-- [HTML ja CSS opetusmateriaali](https://www.w3schools.com/htmL)
+## Katso myös:
+- Jsoup-kirjaston viralliset dokumentaatiot: https://jsoup.org/
+- Orkxml.sax: https://docs.oracle.com/javase/7/docs/api/org/xml/sax/package-summary.html

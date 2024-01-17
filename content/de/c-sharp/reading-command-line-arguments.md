@@ -1,7 +1,7 @@
 ---
-title:                "Das Lesen von Befehlszeilen-Argumenten"
-html_title:           "C#: Das Lesen von Befehlszeilen-Argumenten"
-simple_title:         "Das Lesen von Befehlszeilen-Argumenten"
+title:                "Lesen von Befehlszeilen-Argumenten"
+html_title:           "C#: Lesen von Befehlszeilen-Argumenten"
+simple_title:         "Lesen von Befehlszeilen-Argumenten"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Files and I/O"
@@ -10,58 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
-Es gibt verschiedene Gründe, warum man sich mit der Verwendung von Befehlszeilenargumenten in C# auseinandersetzen sollte. Vielleicht möchtest du eine Anwendung erstellen, die von der Kommandozeile aus gesteuert werden kann, oder du möchtest die Flexibilität haben, deine Anwendung durch das Übergeben von Argumenten anzupassen. Egal aus welchem Grund, die Kenntnis darüber, wie man Befehlszeilenargumente liest, ist eine nützliche Fähigkeit für jeden C#-Programmierer.
+## Was ist das und warum?
 
-## Wie geht's
+Das Lesen von Befehlszeilenargumenten ist ein häufiger Bestandteil der Programmierung in C#. Es ermöglicht einem Programm, Eingabedaten direkt aus der Befehlszeile zu erhalten. Das ist hilfreich, wenn man zum Beispiel ein Programm ausführen möchte, das verschiedene Parameter erfordert.
 
-Um Befehlszeilenargumente in C# zu lesen, gibt es einige Schritte zu beachten. Zunächst musst du die `Main`-Methode in deinem Programm anpassen, damit diese Argumente akzeptiert. Hier ist ein Beispiel, wie das aussehen könnte:
+## Wie geht das?
+
+Es gibt verschiedene Möglichkeiten, Befehlszeilenargumente in C# auszulesen. Eine Möglichkeit ist die Verwendung der Klasse `Environment`, die eine Methode namens `GetCommandLineArgs` bereitstellt. Hier ist ein Beispiel:
 
 ```C#
-static void Main(string[] args)
+string[] arguments = Environment.GetCommandLineArgs();
+
+foreach(string argument in arguments)
 {
-    // Hier ist der Code, der ausgeführt wird, wenn keine Argumente übergeben werden. 
-    
-    if(args.Length > 0)
-    {
-        // Hier kannst du die übergebenen Argumente nutzen.
-    }
+  Console.WriteLine(argument);
 }
 ```
 
-Die `Main`-Methode erwartet ein Array von Strings als Parameter, in diesem Fall `args`, in dem alle übergebenen Argumente gespeichert werden. Durch die Bedingung `args.Length > 0` prüfen wir, ob überhaupt Argumente übergeben wurden. Wenn dies der Fall ist, können wir sie im nächsten Schritt nutzen.
+Die Ausgabe wird alle Befehlszeilenargumente anzeigen, die beim Start des Programms übergeben wurden. Zum Beispiel, wenn das Programm mit den Argumenten `argument1 argument2 argument3` aufgerufen wird, wird die Ausgabe entsprechend sein:
 
-Hier ist ein Beispiel, wie man die übergebenen Argumente ausgibt:
+`argument1 argument2 argument3`
 
-```C#
-// Annahme: Der erste übergebene Argument ist ein Name.
-Console.WriteLine("Hallo " + args[0] + "!");
-```
+## Tiefer in die Materie eintauchen
 
-In diesem Beispiel greifen wir auf das erste Element in `args` zu, indem wir den Index `[0]` angeben. Beachte, dass dieses Array nullbasiert ist, das heißt, das erste Argument hat immer den Index 0.
+Das Lesen von Befehlszeilenargumenten existiert schon seit den frühen Tagen der Programmierung. Es ist eine praktische Möglichkeit, Benutzern die Möglichkeit zu geben, direkt mit einem Programm zu interagieren, ohne eine grafische Benutzeroberfläche verwenden zu müssen.
 
-Nun, was ist, wenn wir mehrere Argumente übergeben wollen? Kein Problem, wir können einfach eine Schleife verwenden:
+Es gibt auch andere Möglichkeiten, Befehlszeilenargumente in C# zu lesen, wie z.B. die Verwendung von Attributen oder das Parsen von benutzerdefinierten Argumenten.
 
-```C#
-// Annahme: Die übergebenen Argumente sind alle Namen.
-for(int i = 0; i < args.Length; i++)
-{
-    Console.WriteLine("Hallo " + args[i] + "!");
-}
-```
+Die Implementierung der `GetCommandLineArgs`-Methode basiert auf der `Win32 GetCommandLine`-Funktion, die die Befehlszeile einer Anwendung ausgibt.
 
-In diesem Beispiel verwenden wir eine for-Schleife, um jedes Element in `args` zu durchlaufen und die Namen auszugeben. Beachte auch, dass wir `.Length` verwenden, um die Anzahl der Argumente im Array zu erhalten.
+## Weitere Informationen
 
-## Deep Dive
+Für weitere Informationen über das Lesen von Befehlszeilenargumenten in C# können folgende Links hilfreich sein:
 
-Jetzt, da du weißt, wie man Befehlszeilenargumente liest, gibt es noch ein paar Dinge, die du wissen solltest. Zum einen kannst du in C# auch Optionen an deine Argumente anhängen, zum Beispiel `-h` für Hilfe oder `-v` für Verbose-Modus. Diese Optionen werden normalerweise mit einem vorangestellten Bindestrich angegeben und du kannst sie durch die Verwendung von `args[i].StartsWith("-")` in deinem Code erkennen.
-
-Außerdem gibt es noch die Möglichkeit, Argumente mit Werten zu versehen. Ein gutes Beispiel dafür sind Konfigurationsdateien. Hier kannst du über die Option `-c` den Pfad zur Konfigurationsdatei angeben und diesen dann in deiner Anwendung auslesen und nutzen.
-
-Eine wichtige Sache, die du beachten solltest, ist, dass Befehlszeilenargumente immer als Strings übergeben werden. Daher musst du sie, je nach Bedarf, in andere Datentypen umwandeln. Zum Beispiel, wenn du eine Anzahl übergeben bekommen möchtest, musst du das entsprechende Argument in einen Integer umwandeln, bevor du es verwenden kannst.
-
-## Siehe auch
-
-[Microsoft Dokumentation für Command Line Arguments in C#](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/main-and-command-args/command-line-arguments)
-
-[Artikel über das Verarbeiten von Befehlszeilenargumenten in C#](https://www.tutorialspoint.com/command-line-arguments-in-c-sharp)
+- [Die offizielle Dokumentation zur Environment-Klasse in C#](https://docs.microsoft.com/de-de/dotnet/api/system.environment)
+- [Ein Tutorial zum Lesen von Befehlszeilenargumenten in C# von The Code Project](https://www.codeproject.com/Articles/3111/C-Command-Line-Argument-Parsing-Redux)

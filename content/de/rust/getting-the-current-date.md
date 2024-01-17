@@ -10,50 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was & Warum?
+Die aktuelle Datumserfassung ist ein Standardverfahren in der Programmierung, bei dem das aktuelle Datum und die Uhrzeit aufgenommen werden. Dies dient dazu, wichtige Informationen über den Zeitpunkt der Ausführung von Programmen zu erhalten und sie gegebenenfalls zu überprüfen oder zu organisieren.
 
-Das Holen des aktuellen Datums ist eine häufige Aufgabe in vielen Programmen. Zum Beispiel könnte es für ein Tagebuch- oder Kalenderprogramm wichtig sein, das aktuelle Datum für Einträge oder Termine zu erfassen. In diesem Artikel werden wir uns ansehen, wie man dies in der Programmiersprache Rust umsetzen kann.
-
-## Wie es geht
-
-Um das aktuelle Datum in Rust abzurufen, müssen wir zunächst die Standardbibliothek `std` importieren, die wichtige Funktionen und Datentypen zur Verfügung stellt.
-
+## Wie geht's:
 ```Rust
-use std::time::SystemTime;
+// Beispiele für die Ermittlung des aktuellen Datums
+use chrono::{Local, DateTime};
+
+// Aktuelles Datum und Uhrzeit abrufen
+let now: DateTime<Local> = Local::now();
+println!("Das aktuelle Datum ist: {}", now);
+
+// Nur das aktuelle Datum abrufen
+let date: Local = Local::today();
+println!("Das aktuelle Datum ist: {}", date);
 ```
+### Ausgabe:
+Das aktuelle Datum ist: 2021-08-17 09:00:00+00:00
+Das aktuelle Datum ist: 2021-08-17
 
-Als nächstes können wir die Methode `now()` der Struktur `SystemTime` aufrufen, um die aktuelle Zeit zu erhalten.
+## Tiefsee-Tauchgang:
+Die Notwendigkeit, das aktuelle Datum in der Programmierung zu erfassen, geht zurück auf die Anfänge der Computer und die Entwicklung von Betriebssystemen. In früheren Systemen war es üblich, dass Programmierer manuell das Datum und die Uhrzeit überprüfen und eingeben mussten. Mit der Zeit wurden jedoch standardisierte Methoden zur automatischen Erfassung entwickelt, wie z.B. die heute weit verbreitete Chrono-Bibliothek in der Programmiersprache Rust.
 
-```Rust
-let now = SystemTime::now();
-```
+Eine alternative Möglichkeit, das aktuelle Datum zu erfassen, ist die Nutzung von externen APIs oder Diensten, die speziell dafür entwickelt wurden, die aktuelle Zeit bereitzustellen. Dies kann je nach Anwendungsfall nützlich sein, da diese Dienste oft über Funktionen verfügen, die es ermöglichen, die Zeitzone oder das Format des Datums anzupassen.
 
-Um das Datum aus dem `SystemTime`-Objekt zu extrahieren, können wir die Methode `duration_since()` mit dem Unix-Epoch (1. Januar 1970) als Argument aufrufen und das resultierende `Duration`-Objekt verwenden.
+In der Implementierung nutzt die Chrono-Bibliothek das Konzept der "system clock", das die vom Betriebssystem bereitgestellte Zeit nutzt. Je nach Betriebssystem kann dies unterschiedlich implementiert sein, aber im Allgemeinen ist es eine zuverlässige und genaue Methode, um die aktuelle Datum und Uhrzeit zu erfassen.
 
-```Rust
-use std::time::{Duration, UNIX_EPOCH};
-let now = SystemTime::now();
-let unix_epoch = UNIX_EPOCH;
-let duration = now.duration_since(unix_epoch).expect("The current time is before the Unix Epoch!");
-```
-
-Abschließend können wir die `Duration` in das gewünschte `DateTime`-Format konvertieren und es ausgeben.
-
-```Rust
-use std::time::SystemTime;
-use chrono::prelude::*;
-let now = SystemTime::now();
-let unix_epoch = UNIX_EPOCH;
-let duration = now.duration_since(unix_epoch).expect("The current time is before the Unix Epoch!");
-let current_datetime = NaiveDateTime::from_timestamp(duration.as_secs() as i64, 0);
-println!("{}", current_datetime); // Beispielausgabe: 2021-01-13 11:30:45
-```
-
-## Deep Dive
-
-Das `std::time`-Modul bietet auch andere nützliche Funktionen für die Arbeit mit Zeiten und Datum, wie zum Beispiel `Local` oder `Instant`. Außerdem gibt es das externe Paket `chrono`, das eine Vielzahl an Datentypen und Methoden speziell für das Arbeiten mit Datum und Zeit in Rust zur Verfügung stellt.
-
-## Siehe auch
-
-- [Rust Standardbibliothek](https://doc.rust-lang.org/std/)
-- [Chrono-Dokumentation](https://docs.rs/chrono/)
+## Siehe auch:
+- [The Rust Programming Language](https://www.rust-lang.org) - Offizielle Website der Programmiersprache Rust
+- [Chrono Crate Documentation](https://docs.rs/chrono) - Offizielle Dokumentation der Chrono-Bibliothek in Rust
+- [The History of Date & Time](https://blog.codinghorror.com/the-history-of-date-and-time) - Artikel über die Geschichte und Entwicklung der Datums- und Zeitfunktionen in der Programmierung

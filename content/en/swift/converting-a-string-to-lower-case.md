@@ -10,53 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-Converting a string to lower case is a common task in programming that allows for easier manipulation and comparison of strings. It can be useful for tasks such as data validation, sorting, and searching within a string.
+Converting a string to lower case simply means changing all the letters in a string to their lower case equivalents. This is commonly done by programmers to ensure consistency in data and avoid any errors that can occur due to case-sensitivity.
 
-## How To
+## How to:
 
-To convert a string to lower case in Swift, you can use the built-in `lowercased()` method. Here is an example:
+To convert a string to lower case in Swift, there are a few different methods you can use depending on your specific needs. Here are two examples:
 
-```
-let string = "Hello World"
-let lowercasedString = string.lowercased()
-print(lowercasedString)
+````Swift
+let sentence = "Hello, World!"
+let lowerCaseSentence = sentence.lowercased()
+print(lowerCaseSentence)
+//Output: hello, world!
+````
 
-// Output: "hello world"
-```
+You can also use the `String` method `localizedLowercase` to handle special Unicode characters:
 
-We simply call the `lowercased()` method on our string and assign the result to a new variable. Note that this method returns a new string, so we cannot modify the original string in place.
+````Swift
+let heart = "\u{1F496}" // Unicode character for heart
+let string = "I ❤️ Swift"
+let lowerCaseString = string.localizedLowercase
+print(lowerCaseString)
+//Output: i ❤️ swift
+````
 
-Another option is to use the `uppercased()` method and then convert it to lower case using the `lowercased()` method. Here is an example:
+## Deep Dive:
 
-```
-let string = "Hello World"
-let lowercasedString = string.uppercased().lowercased()
-print(lowercasedString)
+Converting a string to lower case is a common practice in programming languages, with roots going back to the early days of ASCII character encoding. Before coding standards and protocols were established, case-sensitivity could often lead to inconsistent data and errors. Today, lower casing is still commonly used in programming for data standardization and to avoid errors.
 
-// Output: "hello world"
-```
+There are alternative methods to convert a string to lower case, such as using string manipulation functions or regular expressions. However, these may require more code and can be less efficient than using the built-in methods in Swift.
 
-This approach may be useful if you need to change the case of a string multiple times in your code.
+Internally, Swift uses the Unicode standard for character encoding, which supports both upper and lower case letters for most languages. This allows for easy conversion between cases, making it a practical and efficient method.
 
-## Deep Dive
+## See Also:
 
-Internally, Swift uses the Unicode standard for case conversions. This means that the `lowercased()` method will also handle special characters and symbols, not just the traditional English alphabet. For example:
-
-```
-let string = "Séléna Gómez"
-let lowercasedString = string.lowercased()
-print(lowercasedString)
-
-// Output: "séléna gómez"
-```
-
-Additionally, Swift has another method called `localizedLowercase` which takes into account language and regional conventions for case mapping. This can be useful if your app supports multiple languages.
-
-Overall, converting a string to lower case may seem like a simple task, but it is important to understand how it works internally and the potential impact on different languages and character sets.
-
-## See Also
-
-- Swift String documentation: https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html
-- Unicode case mapping: https://unicode.org/reports/tr12/
+- [Apple's Documentation on String](https://developer.apple.com/documentation/swift/string)
+- [Swift.org's Tutorial on Strings and Characters](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+- [Unicode Official Website](https://home.unicode.org/)

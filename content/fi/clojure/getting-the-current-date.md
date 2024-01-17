@@ -1,7 +1,7 @@
 ---
-title:                "Nykyisen päivämäärän hankkiminen"
-html_title:           "Clojure: Nykyisen päivämäärän hankkiminen"
-simple_title:         "Nykyisen päivämäärän hankkiminen"
+title:                "Päivämäärän hankkiminen"
+html_title:           "Clojure: Päivämäärän hankkiminen"
+simple_title:         "Päivämäärän hankkiminen"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Dates and Times"
@@ -10,46 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
-Haluatko tietää mikä päivä tänään on? Haluatko lisätä päivämääräominaisuuden omassa ohjelmassasi? Clojuren avulla voit helposti saada nykyisen päivämäärän näkyviin.
+## Mitä & Miksi?
+Saada nykyinen päivämäärä tarkoittaa, että ohjelma hakee ja näyttää tietokoneen tai käyttäjän aikavyöhykkeen mukaisen päivän ja kellonajan. Tämä on tärkeää, sillä päivämäärän käyttö mahdollistaa aikapohjaisen laskennan, kuten maksujen suorittamisen tai kalenteritoimintojen toimimisen. Ohjelmoijat tarvitsevat tätä toimintoa erilaisissa sovelluksissa ja ohjelmoinnissa.
 
-## Miten
-Käytä Clojuren *clj-time* -kirjastoa saadaksesi nykyisen päivämäärän käyttöön. Ensimmäiseksi, lisää *clj-time* riippuvuus projektiisi ja importtaa se koodiisi.
-
+## How to:
 ```Clojure
-(require '[clj-time.core :as time])
+(import java.time.LocalDate)
+
+; hae nykyinen päivämäärä ja tulosta se
+(let [nykyinen-päivä (LocalDate/now)]
+  (println nykyinen-päivä))
+
+; lisää päiviä nykyiseen päivään
+(let [tuleva-päivä (LocalDate/now)]
+  (println (.plusDays tuleva-päivä 10)))
+
+; muokkaa nykyistä päivämäärää
+(let [päivä (LocalDate/now)]
+  (println (.withDayOfMonth päivä 15)))
 ```
 
-Sitten voit käyttää *now* -funktiota saadaksesi nykyisen päivämäärän ja *today* -funktiota saadaksesi nykyisen päivän ilman kellonaikaa. Voit myös käyttää *date* funktiota muuttamaan päivämäärän haluamaasi muotoon.
+Esimerkkitulos:
 
-```Clojure
-(time/now) ; => #<DateTime 2020-10-16T00:00:00.000Z>
-(time/today) ; => #<LocalDate 2020-10-16>
-(time/date (time/today)) ; => #<DateTime 2020-10-16T00:00:00.000Z>
-```
+2021-05-05
+2021-05-15
+2021-04-15
 
-Voit myös saada nykyisen ajan käyttämällä *now* funktiota ilman parametreja.
+## Deep Dive:
+Saadaksemme nykyisen päivämäärän Clojurella, voimme käyttää Java.time-pakettia, jota Clojure tukee. Tämä paketti sisältää monia hyödyllisiä luokkia ja metodeja, kuten LocalDate-luokan, joka mahdollistaa päivämäärän käsittelyn. Myös Joda-time-kirjasto on usein käytetty vaihtoehto, joka tarjoaa samanlaisia toimintoja kuin Java.time.
 
-```Clojure
-(time/now) ; => #<DateTime 2020-10-16T00:00:00.000Z>
-```
+Saadaksemme tarkempia tietoja nykyisen päivämäärän hankinnasta, voi olla hyödyllistä tutustua Java.time-luokkaan ja sen saatavilla oleviin metodeihin. On myös tärkeää huomata, että päivämäärän hankintaan liittyy myös aikavyöhykkeiden käsittelemistä, mikä vaikuttaa tulokseen eri käyttöympäristöissä.
 
-## Syventyminen
-Voit lisätä päivämäärän avulla myös muita ominaisuuksia, kuten päivien ja kuukausien lisääminen tai vähentäminen. Voit käyttää *plus* ja *minus* funktioita muuttamaan päivämäärää haluamallasi tavalla.
-
-```Clojure
-(time/plus (time/now) (time/days 7)) ; lisää 7 päivää nykyiseen päivämäärään
-(time/minus (time/now) (time/months 1)) ; vähentää 1 kuukauden nykyisestä päivämäärästä
-```
-
-Voit myös lisätä tietty määrä aikaa nykyiseen päivämäärään käyttämällä *plus* ja *minus* funktioita sekä *milliseconds*, *seconds*, *minutes*, *hours*, *days*, *weeks* ja *months* funktioita.
-
-```Clojure
-(time/plus (time/now) (time/seconds 30)) ; lisää 30 sekuntia nykyiseen päivämäärään
-(time/minus (time/now) (time/weeks 2)) ; vähentää 2 viikkoa nykyisestä päivämäärästä
-```
-
-## Katso myös
-- [clj-time - ClojureKirjasto](https://github.com/clj-time/clj-time)
-- [Joda - Aikakirjasto Java-kielelle, johon clj-time perustuu](https://www.joda.org/joda-time/)
-- [Java 8 Datetime API - Java-kirjasto päivämäärien käsittelyyn](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
+## See Also:
+- [Java.time-paketti Clojure-dokumentaatiossa](https://clojure.org/reference/java_interop#_date_and_time)
+- [Joda-time-kirjasto](https://www.joda.org/joda-time/)

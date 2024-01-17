@@ -10,51 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 왜
+## 무엇이며 왜?: 
+텍스트 파일을 읽는 것은 프로그래머에게 있어서 매우 중요한 작업입니다. 텍스트 파일은 데이터를 저장하고 전송하기에 매우 유용한 방식입니다. 따라서 텍스트 파일을 읽고 처리하는 프로그래밍 기술을 배우는 것은 필수적입니다.
 
-이 문서를 읽는 이유는 텍스트 파일을 읽는 방법을 배우고 싶어서 일 것입니다. Java 프로그래밍 언어를 이용해 텍스트 파일을 읽는 방법을 설명해 드리겠습니다.
+## 하는 법:
+```java
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 
-## 어떻게
+public class ReadTextFile {
 
-텍스트 파일을 읽기 위해서는 ````Java``` 코드 블록 안에 다음 코드를 작성해야 합니다.
-
-````Java
-import java.io.*;
-
-public class ReadFile {
-    public static void main(String[] args){
-        // 파일 경로 설정
-        File file = new File("Example.txt");
-        
-        try{
-            // 파일 읽기
-            BufferedReader br = new BufferedReader(new FileReader(file));
-            String line;
-            
-            // 한 줄씩 읽어서 출력
-            while((line = br.readLine()) != null){
-                System.out.println(line);
-            }
-            
-            // 파일 닫기
-            br.close();
-        } catch (IOException e) {
-            System.out.println("파일을 읽는 중 오류 발생: " + e.getMessage());
-        }
-    }
+	public static void main(String[] args) throws IOException {
+		String fileName = "textfile.txt"; // 읽을 파일의 경로와 이름
+		FileReader fileReader = new FileReader(fileName); // FileReader 객체 생성
+		BufferedReader bufferedReader = new BufferedReader(fileReader); // BufferedReader 객체 생성
+		String line = null; // 한 줄씩 읽어올 변수
+		while ((line = bufferedReader.readLine()) != null) { // 파일의 끝까지 한 줄씩 읽음
+			System.out.println(line); // 한 줄씩 출력
+		}
+		bufferedReader.close(); // BufferedReader 닫기
+	}
 }
-````
+```
 
-위 코드는 ``Example.txt`` 파일을 한 줄씩 읽어서 콘솔에 출력하는 예제입니다. 만약 파일을 읽는 도중 오류가 발생하면 해당 오류 메시지가 출력됩니다.
+위의 코드는 주어진 파일을 한 줄씩 읽어서 화면에 출력하는 간단한 예제입니다. 이 코드를 실행하면 파일의 내용이 출력됩니다.
 
-## 딥 다이브
+## 깊이 파헤치기:
+텍스트 파일을 읽는 기술은 예전부터 사용되고 있습니다. 초기에는 바이너리 파일로 데이터를 저장하고 전송하는 방식이 많이 사용되었지만, 텍스트 파일의 단순함과 유용성으로 인해 현재 많이 사용됩니다. 다른 방법으로는 스트림을 사용하여 텍스트 파일을 읽을 수 있습니다. 하지만 BufferedReader와 FileReader를 사용하는 방법이 가장 일반적입니다. 
 
-텍스트 파일을 읽기 위해서는 올바른 파일 경로를 설정해야 합니다. 또한 파일을 열고 사용한 뒤에는 반드시 파일을 닫아야 합니다. 그렇지 않으면 파일이 사용 중인 상태로 남아 있게 되어 다른 프로그램에서 파일을 사용할 수 없게 됩니다. 더 많은 정보를 원한다면 Java 공식 문서를 참고해보세요.
-
-# 참고
-
-[Java 공식 문서](https://docs.oracle.com/javase/8/docs/api/java/io/BufferedReader.html)
-
-# 관련 글
-
-[Java로 텍스트 파일 쓰기](https://github.com/ShinAhYoung21/Java-File-Writing-Article/blob/main/article_ko.md)
+## 더 보기:
+- [Java 파일 읽기 예제](https://www.codejava.net/java-se/file-io/read-text-file-in-java)
+- [Java 스트림 사용하기](https://docs.oracle.com/javase/tutorial/essential/io/streams.html)

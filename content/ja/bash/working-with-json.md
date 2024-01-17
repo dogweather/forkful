@@ -1,7 +1,7 @@
 ---
-title:                "「JSONを使ったプログラミング」"
-html_title:           "Bash: 「JSONを使ったプログラミング」"
-simple_title:         "「JSONを使ったプログラミング」"
+title:                "「JSONを扱う」"
+html_title:           "Bash: 「JSONを扱う」"
+simple_title:         "「JSONを扱う」"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Data Formats and Serialization"
@@ -10,47 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+# JSONを使う理由と方法
 
-JSONは、現代のウェブアプリケーションやAPIで非常に一般的に使用されるデータフォーマットです。JSONを扱うことで、より柔軟で効率的なデータ処理が可能になります。
+## What & Why?
+JSONとは、データの構造化フォーマットの一種です。プログラマーたちがJSONを使用する理由は、データを簡単かつ柔軟に扱うことができるからです。
 
-## 使い方
-
-JSONをBashで扱う方法は非常に簡単です。以下の例を参考にしてください。
-
-### JSONオブジェクトの作成
+## How to:
+JSONを使用するためには、Bashのコマンドラインで"jq"パッケージをインストールする必要があります。次のコマンドを実行すると、インストールが始まります。
 
 ```
-$ json='{ "name": "John", "age": 25, "city": "Tokyo" }'
+sudo apt install jq
 ```
 
-### 属性の取得
+JSONデータを解析するには、Bashのシェルスクリプトで"jq"コマンドを使用します。以下は、シンプルな例です。
 
 ```
-$ name=$(echo $json | jq -r '.name') # "John"
-$ age=$(echo $json | jq -r '.age') # 25
-$ city=$(echo $json | jq -r '.city') # "Tokyo"
+echo '{"name": "John", "age": 30}' | jq '.'
 ```
 
-### 属性の追加
-
+出力：
 ```
-$ new_json=$(echo $json | jq '.+.{"country": "Japan"}') # { "name": "John", "age": 25, "city": "Tokyo", "country": "Japan" }
-```
-
-### ネストされたオブジェクトの取得
-
-```
-$ location=$(echo $json | jq -r '.location | "\(.city), \(.country)"') # "Tokyo, Japan"
+{
+     "name": "John",
+     "age": 30
+}
 ```
 
-## ディープダイブ
+## Deep Dive
+JSONは1999年にダグラス・クロックフォードにより開発されました。JSONは、XMLよりも簡単な文法を持ち、WebアプリケーションやAPI、データベースとのインターフェースで広く使用されています。
 
-Bashには、JSONを処理するための組み込みコマンドやツールがありません。そのため、jqという外部のツールを使用することでJSONを扱うことができます。jqは、コマンドラインからJSONを操作するための強力なツールであり、Bashスクリプトでの使用に適しています。
+JSONの代替としては、XMLやYAMLなどがありますが、JSONが最も一般的に使用されています。
 
-また、JSONの配列や複雑なネスト構造を扱う場合は、より複雑なjqのコマンドを使用する必要があります。また、jqのドキュメントを参考にすることで、より高度なJSONの操作も可能です。
+JSONを使用する際、Bashのシェルスクリプトでは"jq"以外にもパッケージやライブラリを使用することができます。例えば、"gron"というパッケージを使用することで、JSONをプレーンテキストに変換することができます。
 
-## その他参考リンク
-
-- [BashでJSONを処理する方法](https://dev.classmethod.jp/articles/bash-json/)
-- [jqドキュメント](https://stedolan.github.io/jq/manual/)
+## See Also
+- Official "jq" Documentation: https://stedolan.github.io/jq/manual/
+- "gron" GitHub Repository: https://github.com/tomnomnom/gron

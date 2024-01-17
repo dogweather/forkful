@@ -10,43 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que trabalhar com YAML?
+## O que é isso e por que os programadores o usam?
 
-Se você é um programador em busca de uma linguagem de configuração flexível e amigável, o YAML pode ser a solução perfeita para você. Com sua sintaxe simples e facilidade de leitura, você pode criar e personalizar facilmente seus arquivos de configuração, tornando o processo de desenvolvimento muito mais eficiente.
+YAML é uma linguagem de marcação leve que é usada para formatar dados humanamente legíveis. Os programadores muitas vezes usam YAML para estruturar e organizar seus dados de forma simples e fácil de entender. É especialmente útil para armazenar configurações e informações de injeção de dependência em aplicativos.
 
-## Como fazer isso?
+## Como fazer:
 
-Para começar a trabalhar com YAML em seu código Gleam, basta importar a biblioteca "yaml" e criar um arquivo YAML usando o módulo "Yaml.encode". Você pode então acessar os dados do arquivo YAML usando o módulo "Yaml.decode". Veja um exemplo abaixo:
-
+```Gleam 
+let dados = """
+nome: João
+idade: 30
+profissão: Desenvolvedor
+"""
+``` 
+```Gleam 
+let usuario = dados |> YAML.decode
+``` 
+```Gleam 
+IO.println(usuario["nome"])
 ```
-Gleam import yaml
+ 
+Saída: "João"
 
-yaml_data = yaml.encode({"nome": "Ana", "idade": 25, "hobby": "cozinhar"})
+## Profundidade de mergulho:
 
-decoded_data = yaml.decode(yaml_data)
+O YAML foi criado em 2001 com o objetivo de ser uma sintaxe simples e fácil de usar para representar dados. Ele é frequentemente usado em conjunto com linguagens de programação para fornecer uma maneira mais intuitiva e legível de estruturar dados. Alternativas para YAML incluem JSON e XML, mas o YAML geralmente é preferido por sua sintaxe mais simples e clara. No Gleam, o módulo ```YAML``` fornece funções para decodificar e codificar dados YAML.
 
-the_name = decoded_data["nome"]
-the_hobby = decoded_data["hobby"]
+## Veja também:
 
-IO.println("Meu nome é $(the_name) e meu hobby é $(the_hobby).")
-```
+Saiba mais sobre YAML aqui: https://yaml.org/
 
-A saída seria:
+Leia a documentação do módulo YAML no Gleam: https://gleam.run/modules/yaml/
 
-```
-Meu nome é Ana e meu hobby é cozinhar.
-```
-
-## Aprofundando-se em YAML
-
-Além de sua sintaxe simples e legível, YAML também possui recursos poderosos que facilitam o trabalho com configurações complexas. Você pode criar variáveis e referenciar valores em diferentes partes do arquivo YAML, tornando-o facilmente personalizável.
-
-Além disso, você também pode incluir comentários em seu arquivo YAML para facilitar a compreensão e organização do código. Basta adicionar o símbolo "#" antes da linha do comentário.
-
-Outra vantagem do YAML é sua compatibilidade com outras linguagens de programação, o que permite que você compartilhe e utilize seus arquivos de configuração em diferentes projetos.
-
-## Veja também
-
-- [Documentação do YAML](https://yaml.org/spec/1.2/spec.html)
-- [Guia de referência YAML para iniciantes](https://codebeautify.org/yaml-editor)
-- [Exemplos de uso do YAML em Gleam](https://github.com/gleam-lang/gleam/blob/master/tests/yaml_test.gleam)
+Confira este artigo sobre como usar YAML em aplicativos web: https://www.geeksforgeeks.org/yaml-yet-another-markup-language/

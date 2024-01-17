@@ -10,46 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Qu'est-ce que c'est & pourquoi ?
 
-Écrire un fichier texte peut sembler une tâche simple et banale, mais c'est en réalité une compétence fondamentale pour tout programmeur en C#. Les fichiers texte sont essentiels pour stocker et manipuler des données, et ils offrent une solution pratique pour communiquer avec d'autres programmes et utilisateurs.
+Écrire un fichier texte signifie simplement écrire du texte sur un fichier, plutôt que de l'écrire dans un environnement de développement. Les programmeurs font cela pour stocker des données, des configurations ou des informations spécifiques sur leur programme, de manière à les utiliser ultérieurement.
 
-## Comment faire
-
-Pour écrire un fichier texte en C#, il existe plusieurs étapes à suivre :
-
-1. Définir un chemin d'accès et un nom de fichier pour votre fichier texte. Cela peut être un chemin absolu (comme "C:\monFichier.txt") ou relatif (comme "monDossier\monFichier.txt").
-2. Créer un objet de type StreamWriter en utilisant le chemin d'accès et le nom de fichier que vous avez définis.
-3. Utiliser la méthode StreamWriter.Write ou StreamWriter.WriteLine pour écrire le contenu de votre fichier texte dans l'objet StreamWriter.
-4. N'oubliez pas de toujours fermer votre objet StreamWriter en utilisant la méthode Close pour enregistrer les modifications apportées à votre fichier texte.
-
-Un exemple de code pour écrire un fichier texte en utilisant ces étapes serait le suivant :
+## Comment faire :
 
 ```C#
-// Définition du chemin d'accès et du nom du fichier
-string chemin = "C:\monFichier.txt";
+// Créer un nouveau fichier texte
+File.Create("nom-du-fichier.txt");
 
-// Création de l'objet StreamWriter
-StreamWriter writer = new StreamWriter(chemin);
+// Écrire du texte sur un fichier existant
+File.WriteAllText("nom-du-fichier.txt", "Bonjour le monde!");
 
-// Utilisation des méthodes Write et WriteLine pour écrire du contenu dans l'objet StreamWriter
-writer.WriteLine("Ceci est une première ligne dans mon fichier texte.");
-writer.Write("Et voici une deuxième ligne.");
+// Ajouter du texte à un fichier existant
+File.AppendAllText("nom-du-fichier.txt", "Ceci est un exemple de texte ajouté.");
 
-// Fermeture de l'objet StreamWriter
-writer.Close();
+// Lire le contenu d'un fichier texte
+string contenu = File.ReadAllText("nom-du-fichier.txt");
 ```
 
-Lorsque vous exécutez ce code, un fichier texte nommé "monFichier.txt" sera créé dans le chemin d'accès spécifié, et contiendra les deux lignes que vous avez écrites.
+## Plongée en profondeur :
 
-## Plongée en profondeur
+L'écriture d'un fichier texte peut sembler une tâche banale pour les programmeurs d'aujourd'hui, mais cela a été un énorme sujet de discussion dans les premiers jours de la programmation informatique. Les alternatives telles que l'utilisation d'une base de données pour stocker des données ou l'écriture d'un fichier binaire nécessitant un traitement spécial n'ont pas toujours été disponibles.
 
-En utilisant le concept de flux (stream) de données, l'objet StreamWriter vous permet d'écrire des données dans un fichier de manière séquentielle. Cela signifie que vous pouvez ajouter du contenu à votre fichier en utilisant plusieurs appels aux méthodes Write ou WriteLine, plutôt que d'avoir à tout écrire en une seule fois.
+Les programmeurs peuvent également trouver utile d'utiliser des flots de données (streams) pour écrire sur un fichier plutôt que d'utiliser la classe File présentée ci-dessus.
 
-En plus de cela, l'objet StreamWriter offre également des options pour spécifier l'encodage du fichier (UTF-8, ASCII, etc.), gérer les exceptions et vérifier l'état d'avancement de l'écriture dans le fichier.
+## Voir aussi :
 
-## Voir aussi
-
-- [Guide de référence Microsoft pour StreamWriter](https://docs.microsoft.com/en-us/dotnet/api/system.io.streamwriter?view=net-5.0)
-- [Exemple de code pour écrire un fichier texte en C#](https://www.c-sharpcorner.com/code/3904/export-csv-excel-in-c-sharp-using-ado-net-data-reader) (article en anglais)
-- [Utilisation des fichiers texte en C#](https://www.ict.social/c-sharp/files-and-streams-in-csharp) (article en anglais)
+- [Microsoft Docs sur l'écriture et la lecture d'un fichier texte en C#](https://docs.microsoft.com/fr-fr/dotnet/csharp/programming-guide/file-system/how-to-write-to-a-text-file)
+- [Code Envato Tuts sur l'écriture de fichiers en C#](https://code.tutsplus.com/articles/file-io-in-c-101--cms-32815)
+- [Tutoriel sur les flots de données en C#](https://csharp-station.com/Tutorial/CSharp/Lesson23)

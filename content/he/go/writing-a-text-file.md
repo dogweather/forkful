@@ -1,7 +1,7 @@
 ---
-title:                "כתיבת קובץ טקסט"
-html_title:           "Go: כתיבת קובץ טקסט"
-simple_title:         "כתיבת קובץ טקסט"
+title:                "כתיבת קובץ טקסט."
+html_title:           "Go: כתיבת קובץ טקסט."
+simple_title:         "כתיבת קובץ טקסט."
 programming_language: "Go"
 category:             "Go"
 tag:                  "Files and I/O"
@@ -10,49 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why 
+## מה ולמה?
+כתיבת קובץ טקסט היא פעולה נפוצה בתחום התכנות, שמאפשרת למשתמש ליצור קובץ טקסט פשוט וקריא בפורמט טקסט פשוט מבלי להשתמש בתוכנות נוספות. תוכניות מתכנתים כותבות קבצים טקסט על מנת לאחסן מידע וליצור קשר עם משתמשים.
 
-So you want to learn how to write a text file in Go? Well, the process is quite simple and can come in handy when you need to store data in a simple and readable format. Plus, learning how to write a text file is a great skill to have as a Go programmer.
+## איך לעשות:
+הכי פשוט ומהיר ליצור קובץ טקסט בשפת Go היא להשתמש בפונקציה `WriteString` עם אובייקט הקובץ הנמצא בתיקיית `os`. ניתן לראות בקוד המתואר מטה דוגמאות לכתיבת קובץ טקסט ולקריאתו בשפת Go.
 
-## How To 
+```Go
+package main
 
-To write a text file in Go, we will be using the built-in `os` and `io/ioutil` packages. Let's start by creating a new file called `myFile.txt` using the `os.OpenFile()` function. We will also pass in the `os.O_CREATE` and `os.O_WRONLY` flags as arguments to specify that we want to create a new file and write to it respectively. 
+import (
+	"fmt"
+	"io/ioutil"
+	"os"
+)
 
-```Go 
-file, err := os.OpenFile("myFile.txt", os.O_CREATE|os.O_WRONLY, 0644) 
-if err != nil { 
-    log.Fatal(err) 
-} 
+func main() {
+	// יצירת קובץ טקסט חדש
+	file, err := os.Create("new_file.txt")
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	defer file.Close()
+	
+	// כתיבת טקסט לקובץ
+	text := "זהו טקסט חדש שנכתב בשפת Go"
+	_, err = file.WriteString(text)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	
+	// קריאת קובץ טקסט 
+	byteArray, err := ioutil.ReadFile("new_file.txt")
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	// המרת המערך של בתי המחרוזת למחרוזת
+	fmt.Println(string(byteArray))
+}
 ```
 
-Next, we will use the `WriteString()` function from the `io/ioutil` package to write our desired text to the file. 
+פונקציות נוספות כמו `Write`, `WriteString`, ו-`WriteByte` זמינות על מנת להתאים את כתיבת הטקסט לצרכים המיוחדים שלך.
 
-```Go 
-text := "Hello, world!" 
-err = ioutil.WriteString(file, text) 
-if err != nil { 
-    log.Fatal(err) 
-} 
-```
+## חפירה עמוקה:
+שיטת יצירת קובץ טקסט בשפת Go שימושית ויעילה כיום, אך לפני כן אופן הייצור השגוי היה להשתמש בספרייה `io` לצרכי יצירת וכתיבת קבצי טקסט. רק בגרסת Go המעבר לגרסת 1.12 ספריית ה-`io/ioutil` כלולה בשפת Go. ספרייה זו מאפשרת יצירת קבצים טקסט וכתיבתם עם מתודות קצרות ופשוטות יותר.
 
-And voila, we have written our text file! Don't forget to close the file using the `Close()` function to ensure all changes are saved. 
+אם אתה מעוניין לכתוב קבצי טקסט בשפת Go, ישנן אפשרויות אחרות לשימוש כמו `os.OpenFile` ו-`File.WriteString` או `ioutil.WriteFile`.
 
-```Go 
-err = file.Close() 
-if err != nil { 
-    log.Fatal(err) 
-} 
-``` 
-
-You can also use the `bufio.NewWriter()` function for more efficient writing of large text files. Just remember to call the `Flush()` function to ensure all data is written to the file. 
-
-## Deep Dive 
-
-You may have noticed that we specified the permissions for our file using `0644`. This is a Unix file mode that specifies read and write permissions for the owner, and only read permissions for group and other users. The `O_CREATE` and `O_WRONLY` flags can also be combined with other flags such as `O_TRUNC` to truncate the file if it already exists.
-
-Additionally, you can use the `os.OpenFile()` function to open an existing file for writing by passing in the `os.O_APPEND` flag. This will append any new text to the end of the file instead of overwriting it.
-
-## See Also 
-
-- Official Go Documentation on writing files: https://golang.org/pkg/os/#OpenFile
-- Detailed tutorial on writing text files in Go: https://tutorialedge.net/golang/reading-writing-files-in-go/
+## ראה גם:
+כדי ללמוד עוד פרטים על כתיבת קובץ טקסט בשפת Go ניתן לבדוק את המפרטים המלאים במדריכים כמו https://gobyexample.com/writing-files ו- https://www.dotnetperls.com/create-file-go.

@@ -1,7 +1,7 @@
 ---
-title:                "לעבוד עם קבצי CSV"
-html_title:           "Go: לעבוד עם קבצי CSV"
-simple_title:         "לעבוד עם קבצי CSV"
+title:                "עבודה עם קבצי CSV"
+html_title:           "Go: עבודה עם קבצי CSV"
+simple_title:         "עבודה עם קבצי CSV"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Data Formats and Serialization"
@@ -10,45 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-למה מישהו היה רוצה לעסוק בעבודה עם קובץ CSV?
+## מה זה ולמה?
+עבודה עם CSV היא תהליך שבו מחברים עם קבצי נתונים הנתמכים על ידי רבים ומוכרים. זהו דרך נוחה ויעילה לנתח ולהתאים נתונים ממקורות שונים. תהליך זה הופך חייב הדיונים לפשוט יותר ושולי את טעויות בטיפול בנתונים.
 
-עם עולם המחשבים המתקדם של היום, קבצי CSV הפכו להיות חלק בלתי נפרד מאודי העבודה עם מידע ונתונים. CSV מייצגים קובץ טקסט פשוט שניתן לקריאה על ידי בני אדם וגם על ידי מחשבים, מה שהופך אותם לפופולריים ופשוטים לעבודה איתם.
-
-## How To
-הפעלה של הקוד הבא בתוך בלוק "```Go ... ```" יציג את הנתונים של קובץ CSV במסך:
-
+## כיצד לעשות:
+לדוגמה, נוכל להשתמש ב-Package "encoding/csv" של Go כדי לבצע מניפולציה עם קבצי CSV. להלן דוגמה של קוד ופלט:
 ```Go
-// הגדרת פונקציה
+package main
+
+import (
+    "encoding/csv"
+    "fmt"
+    "log"
+    "os"
+)
+
 func main() {
-	// קביעת שם הקובץ CSV
-	csvFile := "my_data.csv"
-	
-	// קריאת הקובץ ושמירת הנתונים במשתנה
-	records, err := csv.NewReader(csvFile).ReadAll()
-	
-	if err != nil {
-		// במקרה של טעות, הדפסת הודעת שגיאה
-		fmt.Println("שגיאה בקריאת קובץ CSV")
-	}
-	
-	// לולאה כדי להדפיס את כל הנתונים
-	for _, record := range records {
-		fmt.Println(record)
-	}
+    // פתיחת קובץ קיים לקריאה
+    f, err := os.Open("file.csv")
+    if err != nil {
+        log.Fatal(err)
+    }
+    defer f.Close()
+
+    // קריאת נתונים מהקובץ בעזרת הפונקציה ReadAll של ה-Package "csv"
+    records, err := csv.NewReader(f).ReadAll()
+    if err != nil {
+        log.Fatal(err)
+    }
+
+    // הדפסת כל רשומה הכוללת שורה של ערכים מופרדת בפסיק
+    for _, record := range records {
+        fmt.Println(record)
+    }
 }
 ```
 
-כאשר תפעילו את הקוד ותריצו אותו, תקבלו כפלט את כל הנתונים שנמצאים בקובץ CSV.
+הפלט יהיה משהו דומה לכך:
+```Go
+["אופציונלי" "תוכן" "שורת" "ערכים"]
+["פרפרת" "גל" "תוכן" "פרפר" "אדומה"]
+["כלב" "פודל" "תוכן" "4"]
+["חתול" "סיאמי" "תוכן" "מותג" "העכבר"]
+```
 
-## Deep Dive
-עבור מי שרוצה להעמיק בעבודה עם קבצי CSV, ישנם עוד הרבה דברים שאפשר לעשות עם Go. למשל, אפשר לכתוב נתונים לקובץ CSV על ידי שימוש בפונקציות כמו `Write`, `WriteAll` ו-`Flush` בחבילת "encoding/csv".
+## כניסה מעמיקה:
+CSV נוצר בשנת 1972 על ידי החברה Informatics General בכדי למיין נתונים באמצעות טבלאות. עם השנים, הוא הפך לפורמט נרחב לניהול נתונים ומצא יישומים רבים בכלל המחשבה. בנוסף, ישנן אלטרנהטיבות דומות לעבודה עם CSV כגון JSON ו-XML, אך הנהיגה עם CSV דרך פאקטור מוכר יותר. הPHPPackage מספק תמיכה מעולה בטיפול בנתוני CSV, על אף שהוא הקטנת הטריות האלגנטיות שניתן למצוא בגו.
 
-כמו כן, Go יכול לעבד קבצי CSV בצורה יעילה ומהירה בעזרת פונקציות כמו `Read` ו-`ReadAll` בחבילת "io".
-
-למי שמעוניין ללמוד עוד על העבודה עם קובץ CSV ב-Go, מומלץ לחפש מדריכים ומאמרים במקומות כמו גיטהאב ובלוגים טכנולוגיים.
-
-## See Also
-ראו גם:
-
-- [מדריך לעבודה ע
+## ראה גם:
+למידע נוסף על פקטור "encoding/csv" של Go ועל יישומים שלו, אני ממליץ לך לבקר בקישור הבא:
+- [פקטור "encoding/csv" של Go](https://pkg.go.dev/encoding/csv)
+- [CSV: רכיב משמעותי בשיווי שכר מחברת Informatics General](https://medium.com/towards-artificial-intelligence/csv-a-significant-component-of-the-payment-structure-of-the-informatics-general-company-3bd36bb00a61)

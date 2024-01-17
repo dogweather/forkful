@@ -1,7 +1,7 @@
 ---
-title:                "JSON 작업하기"
-html_title:           "Haskell: JSON 작업하기"
-simple_title:         "JSON 작업하기"
+title:                "json 사용하기"
+html_title:           "Haskell: json 사용하기"
+simple_title:         "json 사용하기"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Data Formats and Serialization"
@@ -10,56 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+## 무엇이며 왜?
 
-JSON은 현재 웹 프로그래밍에서 매우 중요한 데이터 형식입니다. 따라서 Haskell 프로그래머로서는 JSON을 다루는 능력이 필수적이며, 그것을 통해 웹 애플리케이션 개발에 더욱 강력한 영향을 미칠 수 있습니다.
+JSON(JavaScript Object Notation) 작업은 데이터를 저장, 전송, 분석하기 위해 사용하는 프로그래밍 작업입니다. 프로그래머들은 JSON을 사용하여 데이터를 구조화하고, 간단하게 표현하고, 다른 시스템으로 전송하기 쉽게 만듭니다.
 
-## 어떻게
+## 방법:
 
-JSON은 Haskell에서 Data.Aeson 라이브러리를 이용하여 다룰 수 있습니다. 다음은 Data.Aeson 라이브러리를 이용하여 JSON 데이터를 읽고 쓰는 예시 코드입니다.
+아래 예시를 통해 JSON을 Haskell로 작업하는 방법을 알아보겠습니다. 
 
 ```Haskell
 import Data.Aeson
-import qualified Data.ByteString.Lazy as BSL
 
--- JSON 데이터를 읽어오는 함수
--- 바이트 스트링으로부터 JSON 데이터를 파싱하여 해당하는 자료형으로 반환
-readJSON :: FromJSON a => BSL.ByteString -> Maybe a
-readJSON = decode
+-- 예제 데이터
+data Person = Person { name :: String, age :: Int } deriving (Show)
 
--- 자료형을 JSON 데이터로 변환하는 함수
--- 주어진 자료형을 JSON 형식으로 인코딩하여 바이트 스트링으로 반환
-writeJSON :: ToJSON a => a -> BSL.ByteString
-writeJSON = encode
+-- Person 데이터를 JSON으로 옮기기
+instance ToJSON Person where 
+    toJSON (Person name age) = object ["name" .= name, "age" .= age]
 
--- 예시 JSON 데이터
-jsonString :: BSL.ByteString
-jsonString = "{\"name\":\"John\", \"age\":30, \"language\":\"Haskell\"}"
+-- JSON을 Person 데이터로 바꾸기
+instance FromJSON Person where 
+    parseJSON (Object v) = Person <$> v .: "name" <*> v .: "age"
 
--- 인코딩된 JSON 데이터를 자료형으로 파싱
-main = case readJSON jsonString of
-    Nothing -> putStrLn "JSON 파싱에 실패하였습니다."
-    Just person -> putStrLn $ "안녕하세요, " ++ name person ++ "님! Haskell을 사용하는 것을 환영합니다!"
-
--- 자료형 정의
-data Person = Person
-    { name :: String
-    , age :: Int
-    , language :: String
-    } deriving (Show, Generic) -- Generic을 사용하면 자동으로 인스턴스 생성 가능
-
--- JSON 파싱 규칙 정의
-instance FromJSON Person
-instance ToJSON Person
+-- 메인 함수
+main = do
+    let person = Person "Sunny" 26 -- 예제 Person 데이터
+    let json = encode person -- Person 데이터를 JSON으로 변환
+    putStrLn $ show json -- JSON 출력
+```
+결과:
+```Haskell
+"{\"name\":\"Sunny\",\"age\":26}"
 ```
 
-위 코드에서는 Data.Aeson 라이브러리의 decode와 encode 함수를 이용하여 간단하게 JSON 데이터를 파싱하고 인코딩하는 방법을 보여주었습니다.
+## 딥 다이브:
 
-## 더 깊이 들어가기
+JSON은 자바스크립트에서 사용하기 위해 개발되었지만, 현재는 다른 언어에서도 많이 사용됩니다. 일반적으로 XML보다 간단하고 가볍기 때문입니다. Haskell에서는 Data.Aeson 라이브러리를 사용하여 JSON을 작업할 수 있습니다. 또한, 다른 대안으로는 YAML이 있지만, YAML은 JSON보다 많은 기능을 제공하므로 더 복잡할 수 있습니다.
 
-Data.Aeson 라이브러리에는 기본적인 JSON 데이터 형식 외에도 더 많은 기능들이 포함되어 있습니다. 예를 들어, JSON 항목의 값을 각각 다른 자료형으로 변환하는 기능이나 커스텀 타입을 JSON 데이터로 인코딩/디코딩하는 기능 등을 제공합니다. 또한, Haskell의 렌즈 라이브러리와 함께 사용하면 더욱 쉽게 JSON 데이터를 다룰 수 있습니다. 이러한 여러 기능들을 사용하여 좀 더 복잡한 JSON 데이터를 다룰 수 있으며, 개인적으로는 Haskell에서 JSON을 다루는 것이 다른 언어보다 더 우아하고 직관적이라고 생각합니다.
+## 관련 자료:
 
-## 더 알아보기
-* [Data.Aeson 라이브러리 문서](https://hackage.haskell.org/package/aeson)
-* [Haskell 렌즈 라이브러리 문서](https://hackage.haskell.org/package/lens)
-* [JSON 소개 및 기본 개념](https://www.json.org/json-ko.html)
+- JSON 공식 웹사이트: https://www.json.org/
+- Haskell Data.Aeson 라이브러리 문서: https://hackage.haskell.org/package/aeson
+- YAML 공식 웹사이트: https://yaml.org/

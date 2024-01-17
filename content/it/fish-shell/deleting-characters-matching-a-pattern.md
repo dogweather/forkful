@@ -1,7 +1,7 @@
 ---
-title:                "Cancellazione di caratteri corrispondenti ad un pattern"
-html_title:           "Fish Shell: Cancellazione di caratteri corrispondenti ad un pattern"
-simple_title:         "Cancellazione di caratteri corrispondenti ad un pattern"
+title:                "Eliminazione di caratteri che corrispondono a un modello"
+html_title:           "Fish Shell: Eliminazione di caratteri che corrispondono a un modello"
+simple_title:         "Eliminazione di caratteri che corrispondono a un modello"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -10,32 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+# Che cos'è e perché?
 
-Vuoi eliminare i caratteri che corrispondono ad un determinato modello? Magari vuoi fare un po' di pulizia nel tuo codice o semplicemente automatizzare un'operazione che fai spesso. In ogni caso, imparare come farlo nel Fish Shell può essere estremamente utile.
+Cancellare caratteri che corrispondono a uno schema è una pratica comune tra i programmatori per rimuovere parti indesiderate da un testo o un file. È utile per manipolare dati e fare modifiche precise in modo rapido ed efficiente.
 
-## Come fare
+# Come fare:
 
-Innanzitutto, dobbiamo stabilire quale pattern vogliamo eliminare. Per esempio, vogliamo eliminare tutti i caratteri che corrispondono a una lettera maiuscola. Utilizzando il comando `string`, possiamo specificare il pattern e sostituirlo con una stringa vuota per eliminarlo:
-```Fish Shell
-string replace --all --erase 'A-Z' ''
+Ecco un esempio di come cancellare un carattere da una stringa utilizzando il Fish Shell:
+
 ```
-L'opzione `--all` assicura che tutti i caratteri corrispondenti al pattern vengano eliminati, mentre `--erase` indica che vogliamo sostituirli con una stringa vuota.
-
-In alternativa, possiamo utilizzare il comando `tr`, che ci permette di trasformare i caratteri in base alla loro codifica ASCII. Ad esempio, per eliminare tutte le lettere maiuscole possiamo digitare:
-```Fish Shell
-tr -d 'A-Z'
+set my_string "Hello World!"
+echo $my_string
+set my_string (string replace $my_string "!" "")
+echo $my_string
 ```
-In questo caso, il comando `tr` sostituirà ogni carattere corrispondente a un codice ASCII nello spazio vuoto.
+Output: 
+```
+Hello World!
+Hello World
 
-## Approfondimento
+# Deep Dive:
 
-Quindi, quali pattern possiamo utilizzare con questi comandi? In realtà, le possibilità sono infinite. Ad esempio, possiamo eliminare tutte le vocali da una stringa utilizzando il pattern `aeiou`, oppure possiamo eliminare numeri e caratteri speciali utilizzando `0-9!@#$%^&*()_+`.
+La cancellazione di caratteri è stata utilizzata fin dall'inizio della programmazione. In precedenza, questa operazione veniva effettuata principalmente con i comandi “sed” e “tr”. Tuttavia, grazie alla sintassi intuitiva e alla robustezza di Fish Shell, molti programmatori preferiscono utilizzare il Fish Shell per questa operazione.
 
-Una nota importante da tenere a mente è che il Fish Shell utilizza le espressioni regolari di default, quindi se si vuole utilizzare una sintassi diversa, è necessario specificarlo nella variabile di ambiente `FISH_REGEX`.
+Esistono anche altre alternative, come l'utilizzo di espressioni regolari e l'utilizzo delle funzioni “find” e “replace”. Tuttavia, nel complesso, utilizzare il Fish Shell per la cancellazione di caratteri corrispondenti a uno schema è un modo semplice e veloce per ottenere i risultati desiderati.
 
-## Vedi anche
+Inoltre, è possibile personalizzare la cancellazione di caratteri utilizzando le opzioni disponibili nella funzione “string replace”. Ad esempio, è possibile specificare un numero massimo di sostituzioni desiderate o specificare se si desidera cancellare in modo insensibile alle maiuscole o alle minuscole.
 
-- [Guida all'utilizzo del Fish Shell](https://fishshell.com/docs/current/index.html)
-- [Documentazione completa del comando `string`](https://fishshell.com/docs/current/cmds/string.html)
-- [Documentazione completa del comando `tr`](https://fishshell.com/docs/current/cmds/tr.html)
+# Vedi anche:
+
+- [Documentazione ufficiale di Fish Shell](https://fishshell.com/docs/current/cmds/replace.html)
+- [French Fry's Guide to Fish Shell](https://read.thenvpl.com/fish-guide#replacing-substrings)
+- [Esempi di utilizzo di string replace](https://gist.github.com/JorgeBucaran/fa0eea9ab69c13e9de177a8a74a0a941)

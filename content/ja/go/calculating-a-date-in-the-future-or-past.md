@@ -1,7 +1,7 @@
 ---
-title:                "将来または過去の日付を計算する"
-html_title:           "Go: 将来または過去の日付を計算する"
-simple_title:         "将来または過去の日付を計算する"
+title:                "未来や過去の日付を計算する"
+html_title:           "Go: 未来や過去の日付を計算する"
+simple_title:         "未来や過去の日付を計算する"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Dates and Times"
@@ -10,36 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+## 何となぜ？
 
-日付を未来や過去の日付に計算することの重要性は、日常生活において多くの場面で使用されるからです。例えば、マイレージの有効期限や課題の締め切り日などの計算に便利です。
+計算するとは、未来や過去の日付を求めることです。プログラマーがこれをするのは、アプリケーションで日付に関する様々な操作を行う必要があるからです。
 
-## 方法
-
-計算を行うには、Go言語に組み込まれた "time" パッケージを使用します。以下がサンプルコードと出力例です。
+## 方法：
 
 ```Go
-// 今日の日付を取得
-today := time.Now()
-
-// 未来の日付を計算する例、30日後の日付を取得
-futureDate := today.AddDate(0, 0, 30)
-
-// 過去の日付を計算する例、1年前の日付を取得
-pastDate := today.AddDate(-1, 0, 0)
-
-// 出力
-fmt.Println(futureDate.Format("2006年01月02日"))  // 30日後の日付（例：2021年05月24日）
-fmt.Println(pastDate.Format("2006年01月02日"))    // 1年前の日付（例：2020年04月24日）
+Today := time.Now()
+FutureDate := Today.AddDate(0, 1, 0)
+fmt.Println(FutureDate)
 ```
+`AddDate()`関数を使用することで、今日の日付を基準にして未来の日付を計算することができます。第一引数は年、第二引数は月、第三引数は日の増減値を指定します。このように、Goでは簡単に未来の日付を計算することができます。
 
-## ディープダイブ
+## ディープダイブ：
 
-日付の計算に使用される "AddDate()" 関数は、内部的には "Date()" 関数を使用しています。この関数は、与えられた年、月、日の数値を加算（未来の日付を計算する場合）または減算（過去の日付を計算する場合）し、新しい日付を作成します。
+計算することは、日付の操作が必要だった歴史的背景に根ざしたものです。また、他のプログラミング言語でも同様の機能を持つものがありますが、Goのように簡単に使えるものはありません。Goでは、`time`パッケージを使用することで、日付や時間を扱うことができます。
 
-現在、 "time" パッケージには他にも日付や時刻を取得や変更するための関数が多数存在します。詳細な情報は公式ドキュメントを参照してください。
+## 関連リンク：
 
-## 他に見る
-
-- [Go言語公式ドキュメント - timeパッケージ](https://golang.org/pkg/time/)
-- [A Tour of Go - timeパッケージ](https://go-tour-jp.appspot.com/basics/15)
+- [Goプログラミング言語ドキュメント](https://golang.org/doc/)
+- [AddDate()関数のドキュメント](https://golang.org/pkg/time/#Time.AddDate)
+- [Goで日付を計算する方法](https://www.callicoder.com/golang-date-time-tutorial/)

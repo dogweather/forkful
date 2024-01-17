@@ -1,7 +1,7 @@
 ---
-title:                "文字列の結合"
-html_title:           "Elixir: 文字列の結合"
-simple_title:         "文字列の結合"
+title:                "文字列を連結する"
+html_title:           "Elixir: 文字列を連結する"
+simple_title:         "文字列を連結する"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -10,43 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+# 何 & なぜ？
+文字列を連結することは、複数の文字列を一つの文字列に結合することを意味します。プログラマーは、より複雑な文字列を作成するために、この方法を使用します。
 
-文字列の連結をすることの利点について知りたいと思っている方もいるかもしれません。私たちは、Elixir における文字列の連結の重要性を説明するためにこの記事を書きました。
-
-## 連結する方法
-
-Elixir では、文字列を簡単に連結することができます。以下のコード例を見てください。
-
+## 方法：
+```Elixir 
+"Hello " <> "world!"
+```
 ```Elixir
-string1 = "Hello"
-string2 = "world"
-
-final_string = string1 <> " " <> string2
-
-IO.puts(final_string)
+  "Hello " <> "world!" <> " How are you?"
+```
+出力：
+```
+Hello world!
+Hello world! How are you?
 ```
 
-このコードを実行すると、"Hello world"という文字列が出力されます。ここでは、`<>` 演算子を使用して、`string1` と `string2` を連結し、間にスペースを追加しています。
+## 深堀り：
+1. "Hello " <> "world!" のように、Elixirでは"<> "演算子を使用して文字列を連結することができます。
+2. 文字列が多い場合は、ElixirのStringモジュールのjoin関数を使用して、効率的に文字列を連結することができます。
+3. 文字列連結の代替手段として、ElixirではIOモジュールのprint関数を使用することもできます。
 
-また、複数の文字列を連結する際には、`Enum.join/2` 関数を使用することもできます。以下のコードを見てください。
+## 関連情報：
+- [Elixir公式ドキュメント](https://elixir-lang.org/getting-started/basic-types.html#strings)
+- [Elixirスタイルガイド](https://github.com/christopheradams/elixir_style_guide#concatenation)
 
-```Elixir
-strings = ["Hello", " ", "world"]
-final_string = Enum.join(strings)
-
-IO.puts(final_string)
-```
-
-このコードも同じ結果が得られますが、`Enum.join/2` 関数を使用することでより柔軟に文字列を連結することができます。
-
-## 深く掘り下げる
-
-Elixir では、文字列を連結する際にメモリのアロケーションが起こらないように最適化されています。そのため、大量の文字列を連結してもパフォーマンスに影響が出にくいのです。
-
-また、`<>` 演算子は、リストを連結する際にも使用することができます。しかし、ここでは文字列の連結に焦点を当てて説明しています。
-
-## See Also
-
-- [Elixir ドキュメント：文字列連結](https://hexdocs.pm/elixir/String.html#concatenation-and-interpolation)
-- [Elixir School：文字列操作](https://elixirschool.com/jp/lessons/basics/string-concatenation/)
+## 以上：
+以上は、Elixirの文字列連結の方法についての簡単な説明でした。より詳細な情報が必要な場合は、関連情報を参照することをお勧めします。

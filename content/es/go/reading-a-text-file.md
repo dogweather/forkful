@@ -1,7 +1,7 @@
 ---
-title:                "Leyendo un archivo de texto."
-html_title:           "Go: Leyendo un archivo de texto."
-simple_title:         "Leyendo un archivo de texto."
+title:                "Leyendo un archivo de texto"
+html_title:           "Go: Leyendo un archivo de texto"
+simple_title:         "Leyendo un archivo de texto"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Files and I/O"
@@ -10,45 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¿Qué y por qué?
 
-¿Alguna vez has necesitado leer un archivo de texto en tus programas Go? Si es así, ¡has venido al lugar correcto! En este artículo, aprenderás cómo leer un archivo de texto de manera fácil y eficiente utilizando el lenguaje de programación Go.
+Leer un archivo de texto es simplemente abrir un archivo que contiene texto y mostrar su contenido. Los programadores a menudo hacen esto para acceder a datos almacenados en archivos de texto, como configuraciones o información de usuarios.
 
-## Cómo
+## ¿Cómo hacerlo?
 
-Para leer un archivo de texto en Go, primero necesitas abrir el archivo utilizando la función `os.Open()` y luego leer su contenido utilizando la función `bufio.NewScanner()`.
+```Go
+archivo, err := os.Open("miarchivo.txt")
 
-```
-file, err := os.Open("archivo.txt") // abre el archivo
 if err != nil {
-    log.Fatal(err)
+  fmt.Println("Error al abrir el archivo:", err)
 }
 
-scanner := bufio.NewScanner(file) // crea un escáner para leer el archivo
+scanner := bufio.NewScanner(archivo)
 
-for scanner.Scan() { // itera sobre cada línea del archivo
-    fmt.Println(scanner.Text()) // imprime la línea actual del archivo
-}
-
-if err := scanner.Err(); err != nil {
-    log.Fatal(err)
+for scanner.Scan() {
+  fmt.Println(scanner.Text())
 }
 ```
 
-El código anterior abre el archivo "archivo.txt" y lo lee línea por línea hasta que llega al final del archivo. Cada línea se imprime en la consola utilizando la función `fmt.Println()`.
+### Salida de ejemplo
+
+Si tenemos un archivo de texto con el siguiente contenido:
+
+```
+Hola
+Mundo
+```
+
+La salida de nuestro programa sería:
+
+```
+Hola
+Mundo
+```
 
 ## Profundizando
 
-Ahora que sabes cómo leer un archivo de texto en Go, es importante entender cómo funciona este proceso en detalle. Cuando utilizamos la función `os.Open()` para abrir un archivo, el sistema operativo crea un *puntero* al archivo, lo que nos permite acceder a su contenido.
+Antes de que existieran las computadoras, los datos se almacenaban en archivos de texto legibles para los humanos. Hoy en día, este sigue siendo un método popular para almacenar datos simples y legibles para los programadores.
 
-Luego, al utilizar la función `bufio.NewScanner()`, creamos un *escáner* que nos permite leer el contenido del archivo línea por línea. El escáner también se encarga de manejar cualquier tipo de error que pueda surgir durante la lectura del archivo.
+Si bien el código anterior se enfoca en leer un archivo línea por línea, también es posible leer un archivo de texto en su totalidad usando la función `ReadAll` de la biblioteca `ioutil`.
 
-Una vez que hayamos terminado de leer el archivo, es importante cerrarlo utilizando la función `file.Close()`. Esto liberará cualquier recurso utilizado durante la lectura del archivo y evitará posibles errores en nuestro programa.
+### Alternativas
+
+Además de leer un archivo de texto, los programadores también pueden escribir en archivos de texto utilizando la función `WriteFile` de la biblioteca `ioutil`.
 
 ## Ver también
 
-Si quieres saber más sobre cómo trabajar con archivos en Go, aquí tienes algunos recursos adicionales:
-
-- [Documentación oficial de Go sobre archivos](https://golang.org/pkg/os/#File)
-- [Tutorial sobre cómo leer y escribir archivos en Go](https://www.digitalocean.com/community/tutorials/how-to-read-and-write-files-in-go-es)
-- [Ejemplos prácticos de cómo trabajar con archivos en Go](https://www.calhoun.io/working-with-files-in-go/)
+- [Go Documentation on File Handling](https://golang.org/pkg/os/)
+- [File I/O in Go](https://medium.com/rungo/working-with-files-in-go-94a1cbe73c24)

@@ -1,7 +1,7 @@
 ---
-title:                "Att påbörja ett nytt projekt"
-html_title:           "Elixir: Att påbörja ett nytt projekt"
-simple_title:         "Att påbörja ett nytt projekt"
+title:                "Att börja ett nytt projekt"
+html_title:           "Elixir: Att börja ett nytt projekt"
+simple_title:         "Att börja ett nytt projekt"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Getting Started"
@@ -10,31 +10,22 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
-Elixir är ett spännande och dynamiskt programmeringsspråk som erbjuder många fördelar för utvecklare. Genom att lära dig Elixir, kan du skapa effektiva och skalbara applikationer som håller hög kvalitet. Om du vill ta din programmeringskarriär till nästa nivå, är det definitivt värt att överväga att börja använda Elixir för dina projekt.
+## Vad & Varför? 
+Att påbörja ett nytt projekt innebär att skapa en ny kodbas för att lösa ett specifikt problem eller bygga en ny applikation. Programmerare gör detta för att utveckla nya och innovativa idéer, förbättra befintliga lösningar och för att möta kraven och behoven i dagens marknad. 
 
-## Hur man gör
+## Så här: 
+Starta ett nytt Elixir-projekt är enkelt. Börja med att skapa en ny mapp för ditt projekt och navigera till den med terminalen. Sedan, använd kommandot `mix new <project_name>` för att skapa ditt projekt. Detta kommer att skapa en grundläggande projektstruktur och installera alla nödvändiga beroenden. Du kan nu öppna din projektmapp i en textredigerare och börja koda! 
+
 ```Elixir
-defmodule Hello do
-  def hello(name) do
-    IO.puts "Hej #{name}!"
-  end
-end
+# Skapa nytt projekt
+mix new my_project
 
-Hello.hello("världen")
+# Byt till projektets mapp
+cd my_project
+``` 
 
-# Output: Hej världen!
-```
-Att starta ett nytt Elixir-projekt är enkelt och kräver inte mycket förarbete. Först måste du installera Elixir på din dator. Sedan kan du använda kommandot "mix new" för att skapa ett nytt projekt:
-```Elixir
-mix new mitt_projekt
-```
-Detta kommer att generera en mapp med ditt projekt, som innehåller alla nödvändiga filer och strukturer för att komma igång. Sedan kan du öppna projektet i din favorit textredigerare och börja koda!
+## Djupdykning: 
+Elixir utvecklades 2011 av Jose Valim med målet att kombinera funktionalitet och skalbarhet från Erlang-plattformen med en modern språksyntax. Det finns också alternativ som till exempel Ruby on Rails, men Elixir erbjuder bättre skalförmåga och robusthet. När du bygger ett nytt projekt med Elixir, används en "mix" -fil för att hantera alla beroenden och bygga projektet. Detta skapar en smidig utvecklingsprocess och ger dig möjlighet att använda funktioner som automatisk testning och releasehantering.
 
-## Djupdykning
-När du väl har startat ditt Elixir-projekt, finns det många resurser tillgängliga för att hjälpa dig att fortsätta utveckla och lära dig mer om språket. Elixir har en aktiv community som delar kunskap och erfarenheter genom bloggar, podcaster och konferenser. Det finns också många bibliotek och ramverk tillgängliga för att underlätta utvecklingen av Elixir-applikationer.
-
-## Se även
-- [Elixir's officiella hemsida](https://elixir-lang.org/)
-- [Elixir Forum](https://elixirforum.com/)
-- [Elixir School](https://elixirschool.com/sv/)
+## Se även: 
+Läs mer om Elixir på deras officiella hemsida: https://elixir-lang.org/ eller på forumet Elixir Forum: https://elixirforum.com/. Du kan också utforska Elixirs gemenskap på Reddit: https://www.reddit.com/r/elixir/.

@@ -10,29 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+# Czym jest generowanie liczb losowych i dlaczego programiści to robią?
 
-Generowanie losowych liczb jest ważną częścią wielu programów komputerowych i algorytmów. Pozwala nam na symulowanie losowych zdarzeń i tworzenie testowych danych do analizy naszego kodu.
+Generowanie liczb losowych to proces, w którym komputer tworzy wartości liczbowe w sposób przypadkowy. Programiści często wykorzystują to w swoim kodzie, aby wprowadzić element przypadkowości lub symulować sytuacje, w których występują losowe wartości.
 
-## Jak to zrobić
+# Jak to zrobić?
 
-```Python
+Python zapewnia wiele wbudowanych funkcji do generowania liczb losowych. Aby ich użyć, musisz najpierw zaimportować moduł "random". Poniżej znajduje się przykładowy kod generujący losową liczbę całkowitą w zakresie od 1 do 10:
+
+```python
 import random
 
-print(random.random()) #wyświetli losową liczbę z zakresu 0.0-1.0
-print(random.randint(1, 10)) #wyświetli losową liczbę całkowitą z zakresu od 1 do 10
-print(random.choice(["jabłko", "banan", "pomarańcza"])) #wyświetli losowy element z listy
-
+print(random.randint(1, 10))
 ```
 
-Przede wszystkim musimy zaimportować moduł random, który jest wbudowany w język Python. Następnie możemy wykorzystać funkcje tego modułu, takie jak `random()`, `randint()` lub `choice()`, aby generować odpowiednie losowe liczby lub elementy z listy. Możemy również ustalić zakres, w którym mają być generowane liczby lub przekazać listę, z której ma być wybrany losowy element.
+Powyższy kod wywoła wyjście takie jak to:
 
-## Deep Dive
+```
+7
+```
 
-Moduł random wykorzystuje algorytmy do generowania pseudolosowych liczb, które nie są całkowicie losowe. Jednak dla większości zastosowań, takich jak testowanie kodu lub symulowanie losowych zdarzeń, ta metoda jest wystarczająco dokładna. W przypadku potrzeby bardziej zaawansowanych generacji losowych danych, istnieją również inne moduły takie jak `secrets` lub `numpy`, które oferują bardziej skomplikowane algorytmy losowania liczb.
+Możesz również wygenerować losowe liczby zmiennoprzecinkowe przy użyciu funkcji "random()" oraz zdefiniować własny zakres. Przykładowy kod może wyglądać tak:
 
-## Zobacz także
+```python
+import random
 
-- [Dokumentacja modułu random w języku Python](https://docs.python.org/3/library/random.html)
-- [Poradnik wideo o generowaniu losowych liczb w języku Python](https://www.youtube.com/watch?v=KzqSDvzOFNA)
-- [Artykuł na blogu o wykorzystaniu modułu random w grach komputerowych](https://blog.eduonix.com/software-development/how-to-use-random-module-in-python/)
+print(random.random() * 10) # wygeneruje losową liczbę zmiennoprzecinkową w zakresie od 0 do 10
+```
+
+# Głębsze zagadnienia
+
+Pierwsza metoda generowania liczb losowych została opracowana przez amerykańskiego matematyka George'a Marsagliego w 1964 roku. Obecnie dostępne są również inne metody, takie jak metoda mieszana L'Ecuyera czy algorytm Mersenna Twister. Istnieją również biblioteki do wykonywania bardziej skomplikowanych operacji na liczbach losowych, takich jak ciągi Fibonacciego czy symulacje Monte Carlo.
+
+# Zobacz również
+
+Możesz zgłębić temat generowania liczb losowych poprzez te źródła:
+
+- Dokumentacja Pythona na temat modułu "random": https://docs.python.org/3/library/random.html
+- Strona Wikipedia na temat generatorów liczb losowych: https://pl.wikipedia.org/wiki/Generator_liczb_losowych
+- Poradnik "Jak wygenerować losowe liczby w Pythonie": https://www.w3schools.com/python/ref_random.asp

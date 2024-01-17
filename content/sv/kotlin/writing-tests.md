@@ -1,7 +1,7 @@
 ---
-title:                "Skriva tester"
-html_title:           "Kotlin: Skriva tester"
-simple_title:         "Skriva tester"
+title:                "Att skriva tester"
+html_title:           "Kotlin: Att skriva tester"
+simple_title:         "Att skriva tester"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Testing and Debugging"
@@ -10,43 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-### Varför skriva tester?
-Att skriva tester är en viktig del av utvecklingsprocessen och hjälper till att säkerställa att vår kod fungerar som den ska. Genom att skriva tester kan vi i förväg upptäcka eventuella buggar och problem, vilket sparar tid och resurser i det långa loppet.
+## Vad & Varför?
+Att skriva tester är en viktig del av programmering. Genom att skriva tester kan vi kolla så att koden fungerar som vi tänkt och undvika buggar och fel som kan uppstå när vi ändrar eller lägger till ny kod.
 
-### Så här skriver du tester i Kotlin
-För att skriva tester i Kotlin behöver du ett testramverk som JUnit eller Spek. När du har importerat ramverket kan du skapa en testklass och implementera dina tester med hjälp av olika metoder som `assume()`, `assertEquals()`, och `assertTrue()`. Nedan följer ett exempel på hur en testklass kan se ut i Kotlin.
+## Hur gör man:
+Vi kan skriva tester i Kotlin genom att använda testramverket JUnit. Nedan följer ett enkelt kodexempel som visar hur vi kan skriva ett test som kontrollerar att en funktion returnerar rätt värde.
 
 ```Kotlin
 import org.junit.Test
-import org.junit.runner.RunWith
-import org.junit.runners.JUnit4
-import kotlin.test.assertEquals
+import org.junit.Assert
 
-@RunWith(JUnit4::class)
-class CalculatorTest {
+class TestClass {
 
-  @Test
-  fun `test add()`() {
-    val calculator = Calculator()
-    val sum = calculator.add(2, 2)
-    assertEquals(4, sum)
-  }
-
-  @Test
-  fun `test divide()`() {
-    val calculator = Calculator()
-    val quotient = calculator.divide(10, 2)
-    assertEquals(5, quotient)
-  }
+    @Test
+    fun testFunction() {
+        // Anropa funktionen som ska testas
+        val result = functionName()
+        
+        // Jämför resultatet med det förväntade värdet
+        Assert.assertEquals(expectedValue, result)
+    }
 }
 ```
 
-För att köra testerna, högerklicka på testklassen och välj "Run 'CalculatorTest'". Om alla tester passerar, så visas gröna markeringar bredvid varje testmetod. Om ett test misslyckas, kommer det att visas en röd markering tillsammans med information om vad som gick fel.
+Output:
+```
+Test: TestClass.testFunction passed in 0.005s
+```
 
-### Utforska tester djupare
-Skrivandet av tester är en grundläggande del av testdriven utveckling (TDD), där man först skriver testerna för att sedan implementera funktionerna. Det ger en mer strukturerad och pålitlig kod, samtidigt som det hjälper till att hitta eventuella buggar tidigt i utvecklingsprocessen. För mer information om hur man använder olika testramverk och implementerar tester i Kotlin, rekommenderar jag att läsa mer på Kotlin's dokumentationssidor.
+## Djupdykning:
+Historiskt sett har det funnits många olika sätt att skriva tester på, men idag är JUnit det mest använda testramverket för Java- och Kotlinbaserade system. Det finns också alternativ som TestNG, Selenium och Mockito som erbjuder lite olika funktionalitet och är mer anpassade för specifika testtyper.
 
-### Se även
-- [Kotlin Test](https://kotlinlang.org/docs/tutorials/tdd-setup.html#kotlin-test)
-- [JUnit API](https://junit.org/junit5/docs/current/api/)
-- [Spek](https://spekframework.org/)
+När vi skriver tester är det viktigt att tänka på att det inte bara handlar om att bevisa att koden fungerar, utan också om att kontrollera att koden är läsbar och underhållbar. En väl skriven testkod kan också fungera som dokumentation för koden och gör det lättare för andra utvecklare att förstå hur den fungerar.
+
+## Läs mer:
+- [JUnit](https://junit.org/junit5/) - officiell hemsida
+- [TestNG](https://testng.org/doc/) - alternativt testramverk
+- [Selenium](https://www.selenium.dev/documentation/en/) - för test av webbapplikationer
+- [Mockito](https://site.mockito.org/) - för att skapa "mock" objekt i tester

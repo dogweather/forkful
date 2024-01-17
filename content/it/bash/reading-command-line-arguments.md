@@ -10,38 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+## Cosa & perché?
+Leggere gli argomenti della riga di comando è il processo di leggere le informazioni inserite dall'utente nel terminale quando viene eseguito un programma nella shell Bash. I programmatori usano questa funzionalità per ottenere input dagli utenti e personalizzare l'esecuzione del programma.
 
-Se sei un programmatore principiante o esperto, capire come funzionano gli argomenti della riga di comando può sembrare intimidatorio. Tuttavia, una volta che avrai imparato le basi, sarai in grado di scrivere script più potenti e automatizzare il tuo lavoro sul terminale. In questo articolo, imparerai come leggere gli argomenti della riga di comando utilizzando il linguaggio di scripting Bash, in modo semplice e conciso.
-
-## Come fare
-
-Per leggere gli argomenti della riga di comando in Bash, devi prima accedere a una variabile interna chiamata "$@", che contiene tutti gli argomenti passati al tuo script. Utilizzando un ciclo "for", puoi iterare su ogni argomento e manipolarlo come desideri.
+## Come fare:
+Di seguito sono riportati alcuni esempi di codice e l'output corrispondente per illustrare come leggere gli argomenti della riga di comando in Bash.
 
 ```Bash
-for arg in "$@"
-do
-  # codice per manipolare gli argomenti qui
-done
+# Esempio 1: Leggere un singolo argomento
+# Input: bash sample.sh hello
+#!/bin/bash
+echo "Il primo argomento è: $1"
+
+# Output: Il primo argomento è: hello
+
+# Esempio 2: Leggere più argomenti
+# Input: bash sample.sh hello world
+#!/bin/bash
+echo "Ciao a tutti i miei amici: $1 e $2"
+
+# Output: Ciao a tutti i miei amici: hello e world
 ```
 
-Ad esempio, se vuoi stampare tutti gli argomenti passati dall'utente, puoi utilizzare il comando "echo" all'interno del ciclo "for", come mostrato di seguito:
+## Approfondimento:
+### Contesto storico:
+Il concetto di leggere gli argomenti della riga di comando è stato introdotto negli anni '70 con l'arrivo delle prime shell e si è evoluto nel tempo, diventando una pratica comune tra i programmatori.
 
-```Bash
-for arg in "$@"
-do
-  echo $arg
-done
-```
+### Alternative:
+Oltre a Bash, ci sono altri linguaggi di scripting che supportano la lettura degli argomenti della riga di comando, come Python e Perl.
 
-Questo codice stamperà ogni argomento su una riga separata quando lo esegui sul terminale. Se vuoi manipolare gli argomenti in modo più specifico, puoi utilizzare l'indice "[$@]" per accedere a un argomento specifico. Ad esempio, se vuoi manipolare solo il primo argomento, puoi utilizzare "$1", il secondo con "$2" e così via.
+### Dettagli implementativi:
+Per accedere agli argomenti della riga di comando in Bash, si utilizza il simbolo "$" seguito dal numero dell'argomento desiderato (iniziando da 1). Inoltre, è possibile utilizzare l'array "@", che contiene tutti gli argomenti inseriti.
 
-## Approfondimento
-
-Oltre al simbolo "@", ci sono altre variabili interne che possono aiutarti a leggere e manipolare gli argomenti della riga di comando. Ad esempio, "$#" contiene il numero totale di argomenti passati, "$0" rappresenta il nome del tuo script e "$*" contiene tutti gli argomenti come una singola stringa invece di un elenco separato. Inoltre, puoi utilizzare il comando "getopts" per leggere gli argomenti con opzioni in modo più strutturato.
-
-## Vedi anche
-
-- [Documentazione ufficiale di Bash](https://www.gnu.org/software/bash/)
-- [Tutorial di programmazione Bash su YouTube](https://www.youtube.com/watch?v=oxuRxtrO2Ag)
-- [Esempi di script Bash su GitHub](https://github.com/learnbyexample/Command-line-text-processing/blob/master/basics/bash_example_scripts.sh)
+## Vedi anche:
+- [Documentazione ufficiale Bash](https://www.gnu.org/software/bash/)
+- [Esempi di letture degli argomenti della riga di comando](https://www.tutorialspoint.com/unix_commands/bash.htm)
+- [Articolo su esempi di argomenti della riga di comando in Bash](https://www.linuxnix.com/reading-command-line-arguments-bash-script/)

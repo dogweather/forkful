@@ -10,51 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué capitalizar una cadena de texto?
+## ¿Qué y por qué?
 
-En Bash, a veces es necesario convertir una cadena de texto en mayúsculas, ya sea por estética o por cuestiones técnicas. Al capitalizar una cadena, se asegura que todos los caracteres sean mostrados en su forma en mayúscula, proporcionando uniformidad y claridad en la visualización.
+Capitalizar una cadena de texto simplemente significa convertir la primera letra de cada palabra a mayúscula. Los programadores a menudo lo hacen para mejorar la legibilidad de su código y para seguir convenciones de codificación establecidas.
 
-## ¿Cómo hacerlo?
-
-Para capitalizar una cadena en Bash, podemos utilizar el comando `tr`, que se encarga de reemplazar o eliminar caracteres en un texto. Podemos especificar que los caracteres a ser reemplazados sean convertidos a mayúsculas utilizando la opción `-u`. A continuación, un ejemplo de código y su respectiva salida:
+## Cómo:
 
 ```Bash
-# Definimos una cadena de texto
-texto="hola mundo!"
+# Ejemplo 1: Usando el comando tr para capitalizar una cadena
+echo "hola mundo" | tr '[:lower:]' '[:upper:]'
+# Salida: HOLA MUNDO
 
-# Utilizamos el comando tr para convertir la cadena en mayúsculas
-echo "$texto" | tr '[:lower:]' '[:upper:]'
+# Ejemplo 2: Usando la función "capitalize" de Bash
+texto="esto es una cadena"
+texto="${texto^}"
+echo $texto
+# Salida: Esto es una cadena
 ```
 
-Salida:
-```Bash
-HOLA MUNDO!
-```
+## Profundizando:
 
-También podemos utilizar la función `declare` para capitalizar una sola palabra en una variable:
+### Contexto histórico:
+Capitalizar una cadena de texto puede ser una práctica común en muchos lenguajes de programación, pero en realidad proviene de la imprenta y la tipografía. En la época de los tipos móviles, los mayúsculas eran más grandes y se encontraban en una posición más alta que las minúsculas, por lo que se utilizaban al principio de las oraciones y para destacar ciertas palabras.
 
-```Bash
-# Definimos una variable con una palabra en minúscula
-palabra="programación"
+### Alternativas:
+Además de las opciones mencionadas en la sección "Cómo", también existen otras formas de capitalizar una cadena de texto en Bash. Algunas de ellas incluyen utilizar expresiones regulares con el comando sed y utilizar la función "tr" con variables de entorno.
 
-# Usamos la función declare para convertir la primera letra en mayúscula
-declare -u primera_letra="$palabra"
+### Detalles de implementación:
+En lenguajes de programación más complejos, como JavaScript o Python, hay funciones específicas para capitalizar cadenas de texto. Pero en Bash, no hay una función dedicada para esto. En su lugar, se pueden utilizar comandos como "tr" o "awk", o aprovechar las secuencias de escape de Bash para realizar la capitalización.
 
-# Imprimimos la variable resultante
-echo "$primera_letra"
-```
+## Ver también:
 
-Salida:
-```Bash
-PROGRAMACIÓN
-```
-
-## Un poco más sobre capitalizar una cadena
-
-En el ejemplo anterior, utilizamos la opción `-u` del comando `tr` para convertir una cadena completa en mayúsculas. Sin embargo, existe la opción `-c` que nos permite capitalizar solo la primera letra de cada palabra en una cadena. También se puede combinar el uso de `tr` con otros comandos, como `sed` y `awk`, para obtener resultados más específicos.
-
-## Vea también
-
-- [Documentación oficial de Bash](https://www.gnu.org/software/bash/manual/bash.html)
-- [Tutorial de Bash en español](https://www.tutorialspoint.com/es/advanced_bash_scripting.htm)
-- [Guía rápida de Bash](https://github.com/skyweb-site/awesome-command-line-tools#a0-bash-cli-tool)
+- Documentación de Bash sobre el uso de expresiones regulares con "sed": https://www.gnu.org/software/sed/manual/html_node/Regular-Expressions.html
+- Stack Overflow: ¿Cómo capitalizar una cadena en Bash?: https://stackoverflow.com/questions/2264428/how-do-i-capitalize-the-first-letter-of-a-string-in-bash
+- Historia de la tipografía: https://www.lifewire.com/typography-origin-and-history-1078277

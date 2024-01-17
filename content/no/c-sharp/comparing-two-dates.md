@@ -10,42 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
-I noen programmeringsspråk kan vi sammenligne to datoer ved å bruke vanlige logiske operatører som "> (større enn)" eller "< (mindre enn)". Men i C# må vi bruke en annen tilnærming på grunn av dets DateTime struktur. I denne artikkelen vil jeg vise deg hvordan du effektivt kan sammenligne to datoer i C#.
+## Hva og hvorfor?
 
-## Hvordan
-For å sammenligne to datoer i C#, må vi først konvertere begge datoene til DateTime objekter. Deretter kan vi bruke DateTime sin Compare metode for å få en numerisk verdi tilbake, som kan tolkes på følgende måte:
+Sammenligning av to datoer er en vanlig oppgave for programvareutviklere. Dette gjøres for å sammenligne tidsdata og identifisere forskjeller eller likheter mellom dem. Dette kan være nyttig for å håndtere dato- og klokkeslettbaserte funksjoner i applikasjoner, som for eksempel å beregne hvor lenge det har gått siden en hendelse eller å sortere data etter dato.
 
-- Hvis resultatet er mindre enn 0, betyr det at den første datoen er tidligere enn den andre datoen.
-- Hvis resultatet er 0, betyr det at begge datoene er like.
-- Hvis resultatet er større enn 0, betyr det at den første datoen er senere enn den andre datoen.
+## Slik gjør du det:
 
-La oss ta en titt på et eksempel:
+For å sammenligne to datoer i C# kan du bruke metoden `Compare` i klassen `DateTime`. Denne metoden sammenligner to datoer og returnerer en hel verdi som indikerer om den første datoen er tidligere, senere eller lik den andre datoen. Her er et eksempel på hvordan du kan bruke denne metoden:
 
 ```C#
-DateTime date1 = new DateTime(2020, 1, 1);
-DateTime date2 = new DateTime(2020, 2, 1);
-int result = DateTime.Compare(date1, date2);
-Console.WriteLine(result); // resultatet vil bli -1
+DateTime dato1 = new DateTime(2021, 3, 15);
+DateTime dato2 = new DateTime(2021, 3, 20);
+
+int resultat = DateTime.Compare(dato1, dato2);
+
+// Resultatet vil være et negativt tall, et positivt tall eller 0 avhengig av datoene
 ```
 
-Som du kan se, blir resultatet -1 siden januar kommer før februar. Vi kan også bruke logiske operatører som ">=" og "<=" til å sammenligne datoer ved hjelp av denne numeriske verdien. Her er et annet eksempel:
+Du kan også bruke `CompareTo`-metoden i stedet for `Compare`. Denne metoden fungerer på samme måte, men returnerer en boolean-verdi (`true` eller `false`) i stedet for en hel verdi.
 
-```C#
-DateTime date1 = new DateTime(2020, 1, 1);
-DateTime date2 = new DateTime(2020, 2, 1);
-if (DateTime.Compare(date1, date2) <= 0)
-{
-    Console.WriteLine("date1 er lik eller kommer før date2");
-}
-```
+## Dypdykk:
 
-Dette vil skrive ut "date1 er lik eller kommer før date2" siden resultatet er mindre enn eller lik 0.
+I eldre versjoner av C# måtte utviklere sammenligne datoer ved å kalle `ToUniversalTime()`-metoden på hver dato før de kunne sammenlignes. Dette skyldtes noen forskjeller i hvordan datoer ble lagret og behandlet internt i .NET Platform. Men i nyere versjoner, som C# 8.0, er dette problemet løst, og de nye metoden `Compare` og `CompareTo` tar hensyn til dette selv.
 
-## Deep Dive
-DateTime objektet i C# representerer en bestemt dato og klokkeslett. I tillegg til å sammenligne datoer, kan vi også bruke DateTime til å utføre en rekke operasjoner på datoer, som å legge til eller trekke fra et bestemt antall dager, måneder eller år. Det finnes også flere nyttige metoder, for eksempel AddDays(), AddMonths() og AddYears(), som lar deg justere en dato etter behov. Ønsker du å lese mer om DateTime, kan du sjekke ut dokumentasjonen her: [https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=netcore-3.1](https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=netcore-3.1)
+En alternativ måte å sammenligne datoer på er ved å bruke `Equals()`-metoden i stedet for `Compare`. Denne metoden sjekker kun om to datoer er like, og returnerer en boolean-verdi. Dette kan være nyttig hvis du ikke trenger å vite om en dato er tidligere eller senere enn en annen, kun om de er like.
 
-## Se også
-- [Slik bruker du DateTime i C#](https://www.w3schools.com/cs/cs_datetime.asp)
-- [Sammenligne to datoer i C#](https://www.tutorialspoint.com/csharp/csharp_date_time.htm)
-- [DateTime klasse i C#](https://www.geeksforgeeks.org/datetime-in-c-sharp/)
+## Se også:
+
+For mer informasjon og eksempler på hvordan du kan sammenligne datoer i C#, kan du se Microsofts dokumentasjon [her](https://docs.microsoft.com/en-us/dotnet/api/system.datetime.compare?view=net-5.0) og [her](https://docs.microsoft.com/en-us/dotnet/api/system.datetime.compareto?view=net-5.0).

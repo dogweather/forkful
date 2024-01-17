@@ -10,23 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+# Fish Shell로 텍스트 파일 읽기
 
-텍스트 파일을 읽는 방법을 배우면서, 프로그래밍 지식을 늘리고 Fish Shell을 더 효율적으로 사용할 수 있습니다. 이를 통해 더 많은 일을 더 짧은 시간에 해낼 수 있게 됩니다.
+## 무엇 & 왜?
 
-## 어떻게
+텍스트 파일을 읽는 것은, 파일에 저장되어 있는 문자열을 읽어오는 것을 말합니다. 프로그래머들은 이를 통해 파일에 저장된 내용을 프로그램에서 활용할 수 있습니다.
 
-```Fish Shell
-cat example.txt
+## 방법:
+
+```Fish Shell```을 사용하여 텍스트 파일을 읽는 예제 코드와 결과를 아래에 보여드리겠습니다:
+
+```fish
+# 예제 파일 생성
+echo "안녕하세요! Fish Shell에서 텍스트 파일을 읽어봅시다" > file.txt 
+
+# 파일 읽기
+set content (cat file.txt)
+
+# 결과 출력
+echo $content
 ```
-위와 같이 입력하면 현재 디렉토리에 있는 "example.txt" 파일의 내용을 터미널에 출력할 수 있습니다. 파일을 실행하려면 "```sh"으로 시작하여 "```"로 끝나는 스크립트를 작성한 다음 "chmod +x script.sh"을 입력하여 실행 권한을 부여한 다음 "./script.sh"를 입력하면 됩니다.
 
-## 딥 다이브
+**코드 출력:**
+```
+안녕하세요! Fish Shell에서 텍스트 파일을 읽어봅시다
+```
 
-파일을 읽는 것은 단순한 작업처럼 보일 수 있지만, 실제로는 매우 중요한 기능입니다. 텍스트 파일을 읽어서 내용을 분석하거나 수정할 수 있기 때문에 프로그래밍에서 빠질 수 없는 부분입니다.
+## 더 들어가보기:
 
-## 더 알아보기
+### 역사적 배경:
+텍스트 파일을 읽는 기능은 운영 체제의 일부로 제공되는 기본 기능입니다. 하지만 오래된 운영 체제에서는 이를 포함하지 않아서 프로그래머들이 자체적으로 구현해야 했던 시절도 있었습니다.
 
-[Fish Shell 공식 사이트](https://fishshell.com/)  
-[Fish Shell 스크립트 작성 방법](https://fishshell.com/docs/current/tutorial.html)  
-[Fish Shell 편집기 사용 방법](https://fishshell.com/docs/current/cmds/fish.html)
+### 다른 방법:
+Fish Shell 외에도 다른 쉘 프로그램이나 다양한 프로그래밍 언어를 사용해서도 텍스트 파일을 읽을 수 있습니다. 하지만 많은 개발자들이 Fish Shell을 선호하는 이유는 간결하고 직관적인 문법 때문입니다.
+
+### 구현 내용:
+Fish Shell에서 텍스트 파일을 읽는 명령어인 `cat`은 실제로 `/usr/bin` 디렉터리에 위치한 `cat`이라는 실행 파일의 별칭입니다. 이와 같이 Fish Shell은 기본적으로 다른 명령어를 쉽게 활용할 수 있도록 여러 기능을 제공합니다.
+
+## 관련 자료:
+
+- Fish Shell 공식 문서: https://fishshell.com/docs/current/index.html
+- 유용한 Fish Shell 명령어 모음: https://github.com/jorgebucaran/awesome-fish

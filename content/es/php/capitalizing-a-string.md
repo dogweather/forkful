@@ -1,7 +1,7 @@
 ---
-title:                "Capitalizando una cadena"
-html_title:           "PHP: Capitalizando una cadena"
-simple_title:         "Capitalizando una cadena"
+title:                "Mayúscula de una cadena"
+html_title:           "PHP: Mayúscula de una cadena"
+simple_title:         "Mayúscula de una cadena"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Strings"
@@ -10,53 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¿Qué y por qué?
+Capitalizar una cadena de texto significa poner la primera letra en mayúscula y el resto en minúscula. Los programadores hacen esto para mejorar la legibilidad de sus códigos y seguir las convenciones de escritura establecidas.
 
-¿Alguna vez has tenido una cadena de texto que necesitaba ser escrita en mayúsculas? Dependiendo de lo que estés haciendo en tu código, puede ser necesario capitalizar una cadena para que se muestre correctamente en pantalla. Afortunadamente, con PHP, esto es muy fácil de lograr.
-
-## Cómo hacerlo
-
-Para capitalizar una cadena en PHP, puedes usar la función `strtoupper()`. Por ejemplo:
-
+## ¿Cómo hacerlo?
+Puedes capitalizar una cadena de texto usando la función integrada de PHP `ucwords()`. Simplemente ingresa la cadena como un parámetro y la función devolverá una nueva cadena con la primera letra de cada palabra en mayúscula. Por ejemplo:
 ```PHP
-$cadena = "hola mundo";
-echo strtoupper($cadena);
+$string = "hola mundo";
+echo ucwords($string); //Salida: Hola Mundo
 ```
 
-La salida sería:
-
+Otra opción es usar la función `strtoupper()` que convierte todas las letras de la cadena en mayúsculas. En este caso, también necesitarías usar la función `strtolower()` para convertir la primera letra en minúscula. Por ejemplo:
 ```PHP
-HOLA MUNDO
+$string = "hola mundo";
+echo strtoupper(substr($string, 0, 1)) . strtolower(substr($string, 1)); //Salida: Hola mundo
 ```
 
-También puedes usar la función `mb_strtoupper()` si necesitas manejar caracteres multibyte, como los acentos en español. Por ejemplo:
+## Exploración en profundidad
+Capitalizar una cadena de texto no es solo una cuestión de estética. En realidad, tiene sus raíces en la tradición de la escritura. En la antigüedad, cuando los textos se escribían a mano, se utilizaba la primera letra en mayúscula para enfatizar el comienzo de una oración. Con el tiempo, esta convención se extendió a los nombres propios y finalmente a todas las palabras en una oración.
 
-```PHP
-$cadena = "hola mundo";
-echo mb_strtoupper($cadena, 'UTF-8');
-```
-
-La salida sería la misma que antes: `HOLA MUNDO`.
-
-## Profundizando
-
-Ahora que sabes cómo capitalizar una cadena en PHP, es importante entender que esta función no solo afecta a las letras minúsculas. También cambia los números y otros caracteres, como los símbolos de puntuación, a su versión en mayúsculas. Por ejemplo, si tienes una cadena que dice "hoy es 25 de diciembre", al capitalizarla con `strtoupper()` el resultado sería "HOY ES 25 DE DICIEMBRE".
-
-También es importante tener en cuenta que la función `strtoupper()` solo convierte las letras a su versión en mayúsculas, pero no elimina los acentos. Si necesitas que los acentos sean removidos durante la conversión, puedes usar la función `iconv()` en conjunto con `strtoupper()`. Por ejemplo:
-
-```PHP
-$cadena = "hola mundo éste es un texto";
-echo strtoupper(iconv('UTF-8', 'ASCII//TRANSLIT', $cadena));
-```
-
-La salida sería:
-
-```PHP
-HOLA MUNDO ESTE ES UN TEXTO
-```
+Además de las funciones mencionadas anteriormente, también puedes utilizar expresiones regulares para capitalizar una cadena de texto. Sin embargo, ten en cuenta que esta solución puede ser más compleja y puede afectar el rendimiento de tu código.
 
 ## Ver también
-
-- Documentación oficial sobre la función `strtoupper()`: https://www.php.net/manual/es/function.strtoupper.php
-- Documentación oficial sobre la función `mb_strtoupper()`: https://www.php.net/manual/es/function.mb-strtoupper.php
-- Documentación oficial sobre la función `iconv()`: https://www.php.net/manual/es/function.iconv.php
+- [Documentación oficial de PHP para `ucwords()`](https://www.php.net/manual/en/function.ucwords.php)
+- [Documentación oficial de PHP para `strtoupper()`](https://www.php.net/manual/en/function.strtoupper.php)
+- [Expresiones Regulares en PHP](https://www.php.net/manual/en/book.pcre.php)

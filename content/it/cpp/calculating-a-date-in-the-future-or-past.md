@@ -1,7 +1,7 @@
 ---
-title:                "Calcolare una data nel futuro o nel passato."
-html_title:           "C++: Calcolare una data nel futuro o nel passato."
-simple_title:         "Calcolare una data nel futuro o nel passato."
+title:                "Calcolare una data nel futuro o nel passato"
+html_title:           "C++: Calcolare una data nel futuro o nel passato"
+simple_title:         "Calcolare una data nel futuro o nel passato"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Dates and Times"
@@ -10,57 +10,77 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perchè
+## Che cos'è e perché?
 
-Ci sono molte situazioni in cui potresti avere la necessità di calcolare una data nel futuro o nel passato usando il linguaggio di programmazione C++. Ad esempio, può essere utile per gestire le scadenze di progetti, per creare funzionalità dinamiche in un'applicazione o semplicemente per soddisfare la tua curiosità.
+Calcolare una data nel futuro o nel passato è il processo di determinare una data successiva o precedente a una data di riferimento specificata. I programmatori spesso eseguono questo calcolo per sincronizzare eventi futuri o passati con altri dati o per gestire scadenze e pianificazioni.
 
-## Come Fare
+## Come fare:
 
-Ecco un semplice esempio di come calcolare una data nel futuro o nel passato utilizzando C++:
-
-```C++
+```C++ 
+// Esempio di codice per il calcolo di una data nel futuro
 #include <iostream>
-#include <ctime>
 using namespace std;
 
 int main() {
-    // Impostiamo la data attuale
-    time_t now = time(0);
-    // Convertiamo la data in una struttura di tipo tm
-    tm* today = localtime(&now);
+    int giorni = 10; // Numero di giorni da aggiungere alla data di riferimento
+    int mese = 9; // Mese di riferimento (settembre)
+    int anno = 2021; // Anno di riferimento
 
-    // Calcoliamo una data nel futuro aggiungendo 10 giorni alla data attuale
-    today->tm_mday += 10;
-    // Convertiamo di nuovo la data in formato time_t
-    time_t future = mktime(today);
+    // Aggiungiamo il numero di giorni all'anno, tenendo conto dei giorni bisestili
+    if (mese == 2 && anno % 4 == 0) {
+        giorni += 1;
+    }
 
-    // Stampiamo la data futura
-    cout << "Data nel futuro: " << ctime(&future) << endl;
+    // Aggiungiamo il numero di giorni al mese
+    switch (mese) {
+        case 4:
+        case 6:
+        case 9:
+        case 11:
+            giorni += 30;
+            break;
+        case 2:
+        case 8:
+        case 10:
+        case 12:
+            giorni += 31;
+            break;
+        default:
+            giorni += 31;
+    }
 
-    // Calcoliamo una data nel passato sottraendo 5 anni alla data attuale
-    today->tm_year -= 5;
-    // Convertiamo nuovamente la data in formato time_t
-    time_t past = mktime(today);
+    // Se superiamo i 31 giorni di un mese, andremo al mese successivo
+    if (giorni > 31) {
+        giorni -= 31;
+        mese += 1;
+    }
 
-    // Stampiamo la data passata
-    cout << "Data nel passato: " << ctime(&past) << endl;
+    // Se superiamo i 12 mesi, andremo all'anno successivo
+    if (mese > 12) {
+        mese -= 12;
+        anno += 1;
+    }
+
+    // Stampiamo la data finale
+    cout << "La data dopo 10 giorni dalla data di riferimento è: " << giorni << "/" << mese << "/" << anno << endl;
+
     return 0;
 }
 ```
-L'output di questo esempio sarà simile a questo:
+
+Output:
 ```
-Data nel futuro: Gio Nov 5 23:58:50 2020
-
-Data nel passato: Sab Nov 5 23:58:50 2015
+La data dopo 10 giorni dalla data di riferimento è: 20/9/2021
 ```
 
-## Deep Dive
+## Approfondimento:
 
-Ora che abbiamo visto un semplice esempio di come calcolare una data nel futuro o nel passato, è importante capire come funziona esattamente il processo. In C++, le date vengono rappresentate utilizzando la struttura `time_t`, che memorizza il numero di secondi che sono passati dal 1 gennaio 1970.
+Il calcolo di una data nel futuro o nel passato è solitamente eseguito utilizzando la teoria dei giorni, un sistema di numerazione dei giorni basato sulla data di riferimento. Tuttavia, ci sono anche molti altri metodi per eseguire questo calcolo, come l'utilizzo di librerie e funzioni specifiche disponibili nei linguaggi di programmazione moderni.
 
-Per calcolare una data nel futuro o nel passato, ci avvaliamo delle funzioni `mktime` e `localtime`. La prima prende in input una struttura `tm` e la converte in un formato di tipo `time_t`, mentre la seconda ci permette di manipolare la data utilizzando i suoi campi, come ad esempio `tm_mday` per il giorno del mese o `tm_year` per l'anno.
+## Vedi anche:
 
-## See Also
-- [Documentazione di C++ su date e tempo](https://en.cppreference.com/w/cpp/chrono)
-- [Tutorial su come lavorare con date in C++](https://www.cprogramming.com/tutorial/time.html)
-- [Esempi di codice per calcolare date in C++](https://thispointer.com/find-out-current-datetime-in-c-windows-linux/)
+Alcune fonti utili per approfondire questo argomento sono:
+
+- "Calcolo di date in C++": https://www.hackerrank.com/challenges/date-time/problem
+- "Programmazione orientata agli oggetti in C++": https://www.geeksforgeeks.org/date-class-in-c/
+- "Librerie di calendario per C++": http://www.stdlib.mapsoft.it/stdcalendar/

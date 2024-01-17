@@ -1,7 +1,7 @@
 ---
-title:                "Analisi dei linguaggi html"
-html_title:           "PHP: Analisi dei linguaggi html"
-simple_title:         "Analisi dei linguaggi html"
+title:                "Parsing html"
+html_title:           "PHP: Parsing html"
+simple_title:         "Parsing html"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "HTML and the Web"
@@ -10,29 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
-Internet è diventata una fonte inesauribile di informazioni e molte volte è necessario estrarre dati specifici da pagine web. Il parsing HTML è uno strumento essenziale per ottenere informazioni strutturate e utili da queste pagine.
+## Cosa & Perché?
+Il parsing HTML è il processo di analisi del codice HTML per estrarre informazioni specifiche come tag, attributi e contenuti. I programmatori lo fanno per manipolare e utilizzare i dati raccolti per scopi come il web scraping e l'estrazione di dati.
 
-## Come fare
-Lo strumento principale per il parsing HTML in PHP è la libreria DOM. Per iniziare, bisogna creare un documento DOM con la funzione `domdocument()` e caricarci il codice HTML da analizzare. Ad esempio:
+## Come fare:
+Ecco un esempio di codice PHP per effettuare il parsing di una pagina HTML e stampare il contenuto di un tag specifico utilizzando la libreria DOMDocument:
 
-```PHP
-$dom = new domdocument();
-$dom->loadHTML($html);
 ```
-Dove `$html` è una stringa contenente il codice HTML da analizzare. Per ottenere le informazioni desiderate, è possibile usare metodi come `getElementsByTagName()` e `getAttribute()`. Ad esempio:
-
-```PHP
-$titoli = $dom->getElementsByTagName('h1'); //ottiene gli elementi <h1>
-foreach ($titoli as $titolo) {
-    echo $titolo->getAttribute('id'); //stampa l'attributo "id" dei titoli
-}
+// Creazione di un'istanza DOMDocument
+$dom = new DOMDocument();
+// Caricamento della pagina HTML da analizzare
+$dom->loadHTMLFile("pagina.html");
+// Ricerca del tag desiderato
+$tag = $dom->getElementsByTagName("p")->item(0);
+// Stampa del contenuto del primo paragrafo
+echo $tag->textContent;
 ```
-L'output di questo codice sarà una lista di id dei titoli presenti nella pagina HTML.
 
-## Deep Dive
-Il parsing HTML è un argomento vasto e complesso che richiede una buona conoscenza del linguaggio e delle tecniche di manipolazione dei dati. È importante scegliere metodi efficienti e ottimizzare il codice per evitare errori e prestazioni lente. Inoltre, è consigliato utilizzare librerie esterne per semplificare il processo di parsing e sfruttare al massimo le potenzialità del PHP.
+Questo codice utilizzerà la libreria DOMDocument per caricare la pagina specificata e ricercare il primo tag "p", quindi stampare il suo contenuto utilizzando la proprietà "textContent".
 
-## Vedi anche
-- [DomDocument PHP Manual](https://www.php.net/manual/en/class.domdocument.php)
-- [Simple HTML DOM Parser](https://simplehtmldom.sourceforge.io/)
+## Approfondimenti:
+Il parsing HTML è stato introdotto per la prima volta nel 1993 con la specifica HTML 2.0. Ci sono diversi modi per analizzare il codice HTML, tra cui l'utilizzo di librerie come Simple HTML DOM e la creazione di espressioni regolari personalizzate.
+
+## Vedi anche:
+- [Libreria DOMDocument di PHP] (https://www.php.net/manual/en/class.domdocument.php)
+- [Simple HTML DOM] (https://simplehtmldom.sourceforge.io/)
+- [Tutorial di parsing HTML con PHP] (https://www.w3schools.com/php/php_ajax_html_xml.asp)

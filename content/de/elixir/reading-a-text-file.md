@@ -1,7 +1,7 @@
 ---
-title:                "Ein Textdokument lesen"
-html_title:           "Elixir: Ein Textdokument lesen"
-simple_title:         "Ein Textdokument lesen"
+title:                "Eine Textdatei lesen"
+html_title:           "Elixir: Eine Textdatei lesen"
+simple_title:         "Eine Textdatei lesen"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Files and I/O"
@@ -10,63 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Warum
+## Was & Warum?
 
-Das Lesen von Textdateien ist eine häufige Aufgabe bei der Programmierung in Elixir. Ob Sie CSV-Daten analysieren oder Protokolldateien durchsuchen, das Lesen von Textdateien ist eine wichtige Fähigkeit, die Ihnen dabei helfen kann, komplexe Aufgaben zu lösen.
+Textdateien lesen ist eine gängige Aufgabe für Programmierer. Dabei geht es darum, den Inhalt einer Textdatei in das Programm einzulesen und damit zu arbeiten. Dies kann nützlich sein, wenn man große Datenmengen übersichtlich verarbeiten möchte oder bestimmte Informationen aus einer Textdatei extrahieren muss.
 
-# Wie man es macht
+## Wie geht's?
 
-Um eine Textdatei in Elixir zu lesen, können Sie die Funktion `File.read!/1` verwenden. Dieser Befehl liest die gesamte Datei als Binärdaten ein und gibt sie als String zurück.
+Um eine Textdatei in Elixir zu lesen, verwenden wir die Funktion ```File.read/1```. Diese Funktion erwartet als Argument den Dateinamen der Textdatei und gibt den Inhalt als Zeichenkette zurück. Hier ein Beispiel:
 
-```
-Elixir
-file = File.read!("beispiel.txt")
-IO.puts(file)
-```
-Output:
-
-```
-Elixir
-Dies ist eine Beispieldatei
-Sie können beliebige Texte hier schreiben
-Und sie werden alle in der Ausgabe angezeigt
+```elixir
+content = File.read("beispiel.txt")
+IO.puts content
 ```
 
-Wenn Sie eine große Datei lesen möchten, können Sie die Funktion `File.stream!/1` verwenden, die die Datei als Strom von Zeilen liest und sie nacheinander zurückgibt.
+In diesem Beispiel wird die Datei "beispiel.txt" eingelesen und der Inhalt in der Variablen "content" gespeichert. Mit der Funktion ```IO.puts/1``` wird der Inhalt dann auf der Konsole ausgegeben.
 
-```
-Elixir
-File.stream!("beispiel.txt")
-|> Enum.each(&IO.puts/1)
-```
-Output:
+## Tiefentauchen
 
-```
-Elixir
-Dies ist eine Beispieldatei
-Sie können beliebige Texte hier schreiben
-Und sie werden alle in der Ausgabe angezeigt
-```
+Das Lesen von Textdateien ist eine grundlegende Funktion, die in Elixir mit der integrierten Modulbibliothek "File" gelöst wird. Dabei können verschiedene Konvertierungsmöglichkeiten, wie z.B. UTF-8, eingestellt werden. Eine Alternative zur Funktion ```File.read/1``` ist die Funktion ```File.stream!/2```, welche den Inhalt zeilenweise in einem Strom von Daten zurückgibt. Im Hintergrund wird dabei die Funktion ```IO.stream/1``` verwendet. Die Implementierung des Lesens von Textdateien in Elixir basiert auf dem "IO Device"-Protokoll, welches auch für die Ein- und Ausgabe in Dateien verwendet wird. Weitere Informationen zu diesem Protokoll finden sich in der offiziellen Dokumentation von Elixir.
 
-# Tiefere Einblicke
+## Siehe auch
 
-Wenn Sie eine Textdatei mit speziellen Zeichensätzen lesen müssen, können Sie beim Lesen die Option `:encoding` verwenden. Zum Beispiel, wenn Ihre Datei im UTF-8 Format ist:
-
-```
-Elixir
-file = File.read!("beispiel.txt", [:encoding, :utf8])
-```
-
-Sie können auch die Funktion `File.open!/2` verwenden, um eine Datei zu öffnen und sie Zugriff darauf für mehrere Operationen zu haben. Vergessen Sie nicht, die Datei am Ende zu schließen:
-
-```
-Elixir
-file = File.open!("beispiel.txt", [:read])
-IO.write(file, "Dies ist ein Beispieltext")
-File.close(file)
-```
-
-# Siehe auch
-
-- https://elixir-lang.org/getting-started/io-and-the-file-system.html
-- https://hexdocs.pm/elixir/File.html
+- Offizielle Dokumentation von Elixir zu Textdateien: https://hexdocs.pm/elixir/File.html
+- ElixirForum Diskussion über das Lesen von Textdateien: https://elixirforum.com/t/reading-lines-from-text-file/10489

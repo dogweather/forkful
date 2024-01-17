@@ -10,51 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Quoi et pourquoi?
 
-Il est souvent nécessaire de comparer deux dates dans la programmation, que ce soit pour vérifier les horaires de rendez-vous, calculer des délais ou trier des événements chronologiquement. Dans cet article, nous allons explorer comment comparer deux dates en utilisant Clojure, un langage de programmation fonctionnel dynamique.
+Comparer deux dates est un processus courant en programmation pour déterminer si une date est antérieure, postérieure ou égale à une autre date. Ce type de comparaison est utile pour trier et filtrer des données, ainsi que pour créer des conditions logiques dans un programme.
 
-## Comment faire
+## Comment faire:
 
-Pour comparer deux dates en Clojure, nous pouvons utiliser la fonction `compare`, qui renvoie un entier représentant la relation entre les deux dates. Voici un exemple de code comparant deux dates :
-
-```Clojure
-(def date1 (java.util.Date. "01/07/2021")) ; crée une date au format mm/jj/aaaa
-(def date2 (java.util.Date. "01/01/2021"))
-
-(println (compare date1 date2)) ; renvoie 1, car date1 est après date2
-```
-
-Nous pouvons également utiliser les comparateurs `>` (plus grand), `<` (plus petit) et `=` (égal) pour comparer deux dates. Ces comparateurs fonctionnent avec des objets `java.util.Date` et `java.sql.Date`. Voici un exemple utilisant ces comparateurs pour trier une liste de dates :
+Voici un exemple de code en Clojure pour comparer deux dates. Dans cet exemple, nous utilisons la fonction ```clojure >``` pour déterminer si la date 1 est postérieure à la date 2:
 
 ```Clojure
-(def dates [(java.util.Date. "01/07/2021")
-            (java.util.Date. "01/01/2021")
-            (java.util.Date. "01/03/2021")])
+(def date1 (java.util.Date. 1990 1 1))
+(def date2 (java.util.Date. 1995 1 1))
 
-(sort < dates) ; renvoie une liste triée avec la date la plus ancienne en premier
+(> date1 date2)
+
+; Output: false
 ```
 
-La sortie pour ces deux exemples sera :
+Nous pouvons également utiliser la fonction ```clojure <``` pour déterminer si la date 1 est antérieure à la date 2:
 
+```Clojure
+(< date1 date2)
+
+; Output: true
 ```
-1
-(01/01/2021, 01/03/2021, 01/07/2021)
+
+Pour vérifier si les deux dates sont égales, nous pouvons utiliser la fonction ```clojure =```
+
+```Clojure
+(= date1 date2)
+
+; Output: false
 ```
 
-## Plongée en profondeur
+## Plongeon profond:
 
-Lorsque nous comparons deux dates en utilisant la fonction `compare`, les résultats suivants peuvent être renvoyés :
+La comparaison de dates est un concept commun en programmation et est utilisée dans de nombreux langages de programmation. Les langages orientés objets, tels que Java, utilisent souvent des méthodes spéciales pour comparer des objets de type date. Dans Clojure, nous utilisons les fonctions ```clojure >```, ```clojure <``` et ```clojure =``` pour effectuer des comparaisons de dates.
 
-- `-1` si la première date est avant la deuxième
-- `0` si les deux dates sont égales
-- `1` si la première date est après la deuxième.
+Une alternative à la comparaison de dates est d'utiliser des timestamps, qui représentent le temps en nombre de secondes écoulées depuis une date de référence. Les timestamps sont plus précis pour des comparaisons de dates précises.
 
-Il est important de noter que les comparaisons de dates ne prennent pas en compte l'heure. Si nous voulons aussi comparer l'heure, nous devons utiliser un objet `java.sql.Timestamp` qui stocke également les heures et les minutes.
+## Voir aussi:
 
-De plus, lorsque nous utilisons des comparateurs comme `>` ou `<`, il est important de noter que tous les objets `Date` sont convertis en millisecondes depuis le 1er janvier 1970 avant d'être comparés. Cela signifie que si nous comparons des objets avec des millisecondes différentes, les résultats peuvent être surprenants.
-
-## Voir aussi
-
-- [Documentation de Clojure sur les comparateurs](https://clojuredocs.org/clojure.core/<)
-- [Tutoriel sur les comparaisons de dates en Clojure](https://purelyfunctional.org/compare-dates-in-clojure-without-time-timezones/)
+- Documentation officielle sur les fonctions de comparaison de Clojure: https://clojure.org/reference/data_structures#Comparison
+- Un tutoriel sur la manipulation de dates en Clojure: https://www.tutorialspoint.com/clojure/clojure_date_time.htm
+- Une discussion sur les avantages et les inconvénients d'utiliser des timestamps pour comparer des dates: https://stackoverflow.com/questions/5420385/timestamp-vs-date-as-primary-key-in-rdbms

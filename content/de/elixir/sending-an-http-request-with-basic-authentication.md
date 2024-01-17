@@ -1,7 +1,7 @@
 ---
-title:                "Senden einer http-Anforderung mit grundlegender Authentifizierung"
-html_title:           "Elixir: Senden einer http-Anforderung mit grundlegender Authentifizierung"
-simple_title:         "Senden einer http-Anforderung mit grundlegender Authentifizierung"
+title:                "Versenden einer HTTP-Anfrage mit Basic Authentication"
+html_title:           "Elixir: Versenden einer HTTP-Anfrage mit Basic Authentication"
+simple_title:         "Versenden einer HTTP-Anfrage mit Basic Authentication"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "HTML and the Web"
@@ -10,31 +10,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+Was & Warum?
+Das Senden einer HTTP-Anfrage mit Basisauthentifizierung ist eine gängige Methode für Programmierer, um eine Verbindung mit einem Webserver herzustellen und geschützte Endpunkte abzurufen. Um die Zugriffsebene zu kontrollieren, wird ein Benutzername und Passwort in der Anfrage verwendet, um die Identität des Absenders zu überprüfen.
 
-Menschen senden HTTP-Anfragen mit grundlegender Authentifizierung, um sich bei einem Webdienst anzumelden oder eine Aktion auszuführen, die eine identifizierte Identität erfordert. Dies ist in vielen Fällen erforderlich, um auf geschützte Ressourcen zuzugreifen oder vertrauliche Daten zu übertragen.
-
-## Wie geht das
-
-Um eine HTTP-Anfrage mit grundlegender Authentifizierung in Elixir zu senden, müssen Sie das HTTPoison-Paket installieren und verwenden. Im folgenden Codeblock sehen Sie ein Beispiel für eine GET-Anfrage mit grundlegender Authentifizierung:
-
+Wie geht's?
 ```Elixir
-{:ok, response} = HTTPoison.get(
-  "https://www.example.com",
-  headers: [
-    {"Authorization", "Basic dXNlcm5hbWU6cGFzc3dvcmQ="}       
-  ]
-)
+  url = "https://example.com/api/users"
+  username = "John"
+  password = "123456"
+
+  # Beginnen Sie Ihre Anfrage mit `HTTPBasicAuth`
+  HTTPBasicAuth.request(:get, url, username, password)
 ```
 
-Der erste Parameter ist die URL, zu der die Anfrage gesendet wird. Im zweiten Parameter fügen Sie die erforderlichen Header hinzu, wobei der Authorization-Header die Benutzername und das Passwort in Base64-codiertem Format enthält (in diesem Beispiel ist der Benutzername "username" und das Passwort "password"). Der `response` enthält die Antwort des Servers, die Sie dann weiterverarbeiten können.
+In der obenstehenden Beispielanfrage wird die URL sowie der Benutzername und das Passwort in Variablen gespeichert. Mit dem Verwendung von `HTTPBasicAuth` wird eine Anfrage an den angegebenen Endpunkt gesendet, wobei die Basisauthentifizierung verwendet wird. Für eine POST-Anfrage können zusätzliche Optionen wie der Body oder die Header hinzugefügt werden.
 
-## Tief tauchen
+Tiefentauchen
+Die Basisauthentifizierung wurde erstmals im Jahr 1999 in der RFC 2617 spezifiziert und ist nach wie vor eine der beliebtesten Methoden, um sich an einem Webserver zu authentifizieren. Es gibt jedoch auch alternative Methoden wie OAuth oder JWT (JSON Web Tokens). Der Elixir-Standardbibliothek `HTTPoison` bietet eine einfache und benutzerfreundliche Möglichkeit, HTTP-Anfragen mit Basisauthentifizierung zu senden.
 
-Bei der grundlegenden Authentifizierung werden die Benutzeranmeldeinformationen in einem Base64-codierten String an den Server gesendet. Der Server entschlüsselt diesen String und authentifiziert den Benutzer auf Basis der bereitgestellten Informationen. Es ist wichtig zu beachten, dass diese Methode NICHT sicher ist, da der Base64-codierte String relativ einfach zu entschlüsseln ist. Für eine sicherere Authentifizierung sollten Sie eine andere Methode, wie z.B. OAuth, verwenden.
-
-## Siehe auch
-
-- [HTTPoison Dokumentation](https://hexdocs.pm/httpoison/HTTPoison.html)
-- [HTTP Grundlagen](https://www.tutorialspoint.com/http/http_overview.htm)
-- [Elixir Programmiersprache](https://elixir-lang.org/)
+Siehe auch
+- [RFC 2617](https://tools.ietf.org/html/rfc2617)
+- [HTTPoison Dokumentation](https://hexdocs.pm/httpoison/HTTPoison.html#module-http-basic-auth)

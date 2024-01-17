@@ -1,7 +1,7 @@
 ---
-title:                "Store bokstaver i en tekst"
-html_title:           "Rust: Store bokstaver i en tekst"
-simple_title:         "Store bokstaver i en tekst"
+title:                "Stor bokstav i en streng"
+html_title:           "Rust: Stor bokstav i en streng"
+simple_title:         "Stor bokstav i en streng"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -10,41 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hva & Hvorfor?
 
-Hvis du noen gang har jobbet med tekstbehandling i Rust, har du kanskje lurt på hvordan du kan få en streng til å starte med stor bokstav. Enten det er for å skape et profesjonelt utseende på en nettside eller for å følge konvensjoner i koding, så er det viktig å kunne gjøre dette enkelt. I denne artikkelen vil vi se på hvordan du kan kapitalisere en streng i Rust.
+Når vi snakker om å "capitalize" en streng, betyr det at vi gjør den første bokstaven i strengen stor, mens resten av bokstavene forblir små. Dette er en vanlig praksis blant programmører for å gjøre kode mer lesbar og for å følge standard konvensjoner.
 
-## Hvordan gjør du det
-
-Det finnes flere måter å kapitalisere en streng i Rust på, men den enkleste og mest effektive måten er å bruke metoden `to_uppercase()`. Dette er en innebygd metode som blir brukt på en `String`-type for å transformere alle små bokstaver til store bokstaver.
-
-For eksempel, hvis vi har følgende kode:
+# Slik gjør du:
 
 ```Rust
-fn main() {
-    let tekst = "hei på deg";
-    let kapitalisert_tekst = tekst.to_uppercase();
-    println!("{}", kapitalisert_tekst);
+let streng = "hallo";
+let capitalized = streng.to_uppercase();
+println!("{}", capitalized);
+```
+
+Dette vil resultere i utskriften "HALLO". Vi bruker metoden `to_uppercase()` på strengen `hallo` for å konvertere den til en ny streng med stor forbokstav.
+Dette er et enkelt eksempel, men du kan også bruke en løkke for å gjøre den første bokstaven i en setning stor.
+
+```Rust
+let setning = "dette er en setning";
+let splittet: Vec<&str> = setning.split(" ").collect();
+for ord in splittet {
+    print!("{} ", ord.to_uppercase());
 }
 ```
 
-Så vil utskriften bli `HEI PÅ DEG`. Som du kan se, så blir alle små bokstaver omgjort til store bokstaver med denne metoden.
+Denne koden deler setningen opp i en `Vec` og bruker en løkke for å gjøre hver første bokstav i hvert ord stor. Dette vil resultere i utskriften "Dette Er En Setning".
 
-## Deep Dive
+# Dypdykk:
 
-Hvis du ønsker å gå dypere inn i hvordan denne metoden fungerer, så kan vi se på dens signatur:
+Capitalize-metoden stammer fra metoden `capitalize()` i programmeringsspråket Perl. Det finnes også andre måter å gjøre en streng til en stor forbokstav på, som for eksempel`ucfirst()` og `mb_convert_case()`.
 
-```Rust
-fn to_uppercase(&self) -> Cow<str>
-```
+I tillegg til å konvertere en streng til å ha en stor forbokstav, kan du også konvertere en streng til å ha alle små bokstaver ved å bruke `to_lowercase()`.
 
-`Cow` står for "copy on write", og er en datastruktur som brukes for å effektivt håndtere strenger i Rust. Metoden tar i mot en referanse til en streng og returnerer en `Cow`-type. Siden `Cow` er en "smart" datastruktur, vil den effektivt håndtere kopiering av strengen hvis den er nødvendig. Dette gjør at metoden `to_uppercase()` er rask og effektiv.
+# Se også:
 
-I tillegg til å bruke `to_uppercase()`-metoden, kan du også bruke andre metoder som `to_ascii_uppercase()` og `to_lowercase()` for å endre bokstavstørrelsen på strenger i Rust.
-
-## Se også
-
-- [Rust sin dokumentasjon for `String`](https://doc.rust-lang.org/std/string/struct.String.html)
-- [Offisiell Rust-nettside](https://www.rust-lang.org/)
-
-Nå vet du hvordan du kan enkelt kapitalisere en streng i Rust. Ved å bruke `to_uppercase()`-metoden, kan du spare tid og energi på å manuelt endre bokstavstørrelsen på strenger. Lykke til med din tekstbehandling i Rust!
+- Offisiell Rust dokumentasjon for `to_uppercase()` [Rust Docs](https://doc.rust-lang.org/std/string/struct.String.html#method.to_uppercase)
+- Kodeeksempel for å gjøre den første bokstaven i et ord stor [Stack Overflow](https://stackoverflow.com/questions/44831930/how-can-i-capitalize-the-initials-of-each-word-in-a-sentence-in-rust)

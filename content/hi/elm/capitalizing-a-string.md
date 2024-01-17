@@ -1,7 +1,7 @@
 ---
-title:                "स्ट्रिंग को कैपिटलाइज़ करना"
-html_title:           "Elm: स्ट्रिंग को कैपिटलाइज़ करना"
-simple_title:         "स्ट्रिंग को कैपिटलाइज़ करना"
+title:                "स्ट्रिंग को कैपिटलाइज़ करना"
+html_title:           "Elm: स्ट्रिंग को कैपिटलाइज़ करना"
+simple_title:         "स्ट्रिंग को कैपिटलाइज़ करना"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -10,32 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Kyun
-Kisi bhi string ko capitalization karne ka karan ho sakta hai ki aap usko padhne ya dikhne me asani chahte hai, ya fir use ek specific format me store karna chahte hai. Elm me string ko capitalization karne ka sahi aur saral tarika hai, jise hum is article me samjhenge.
+# अगला क्या अहै?
 
-## Kaise Kare
-```Elm
-import String
+Capitalizing a string एक आम प्रोग्रामिंग टेक्निक है जिसमें एक स्ट्रिंग के पहले अक्षर को बड़ा किया जाता है। यह क्रिया अक्सर स्ट्रिंग को प्रिंट करने से पहले किया जाता है ताकि उसकी प्रतिष्ठा बढ़े और उसे पढ़ने में आसानी हो। प्रोग्रामर्स ऐसा करने के लिए चुनौतियों का सामना करते हैं और इससे उनके कोड को अधिक प्रोफेशनल दिखाने में मदद मिलती है। 
 
-capitalizedString = String.toUpper "yeh ek string hai"
--- "YEH EK STRING HAI"
-```
-
-Is code snippet me humne `String` module ko import kiya aur `String.toUpper` function ka use kiya hai jo hume di gayi string ko capital letters me convert karega. Is code me `capitalizedString` variable me ab converted string ka value store hoga. Aapka converted string variable ka naam aur string aapke requirement ke according alag ho sakta hai. 
-
-Agar aap string ko sirf pehle character ko capital karna chahte hai, to uske liye aap `String.toTitle` function ka use kar sakte hai.
+# कैसे करें?
 
 ```Elm
-import String
+import String exposing (toUpper)
 
-capitalizedString = String.toTitle "yeh ek string hai"
--- "Yeh ek string hai"
+string = "hello"
+capitalized = toUpper string
 ```
 
-## Deeper Dive
-Elm me string ko capitalization karne ke liye `String` module ke alawa aur bhi modules aur functions available hai. Aap `String.toLower`, `String.toUpperFirst` aur `String.toTitleWords` functions ka bhi use kar sakte hai. In functions ko use karne ke liye aapko `import` statement ki madad se `String` module ko import karna hoga.
+इस कोड में, हमने `String` लाइब्रेरी से `toUpper` फ़ंक्शन को इम्पोर्ट किया है जो कि एक स्ट्रिंग को बड़ा करने के लिए उपयोग किया जाता है। फिर हमने अपनी स्ट्रिंग को `string` नामक एक वेरिएबल में स्टोर किया और `toUpper` फ़ंक्शन का उपयोग करके उसे `capitalized` नामक एक और वेरिएबल में स्टोर किया। जब हम अपनी स्ट्रिंग को प्रिंट करते हैं, तो इस तरह का आउटपुट मिलता है: `"HELLO"` 
 
-## Dekhenge
-Agar aap aur Elm programming ke bare me jaanna chahte hai, to aap in links ko dekh sakte hai:
-- [Elm Documentation](https://guide.elm-lang.org/)
-- [Elm in Hindi](https://dev.to/wijngaat/exploring-elm-5ia6)
+# गहराई से जानिए
+
+1. इस टेक्निक का प्रयोग पहले एस्सम्ब्ली और असेंबलर के डेवलपर्स द्वारा किया जाता था जहां वे रेजिस्टर्स को अपडेट करने के लिए उपयोग करते थे।
+
+2. इसके अलावा, आप `toUpper` के बजाय `toLower` फ़ंक्शन का भी उपयोग कर सकते हैं जो एक स्ट्रिंग के पहले अक्षर को छोटा करता है।
+
+3. इस टेक्निक के माध्यम से आप अपने स्ट्रिंग के केस भी बदल सकते हैं। आप `toTitle` फ़ंक्शन का भी उपयोग कर सकते हैं जो एक स्ट्रिंग के प्रथम अक्षर को अपने शब्दों के शीर्षक के रूप में बदलता है।
+
+# और भी देखें
+
+- [Official Elm Documentation for Strings](https://package.elm-lang.org/packages/elm/core/latest/String)
+- [Blog post on String manipulation in Elm](https://ohanhi.github.io/base/string-manipulation-in-elm/)
+- [Elm REPL to try out string functions](https://ellie-app.com/new)

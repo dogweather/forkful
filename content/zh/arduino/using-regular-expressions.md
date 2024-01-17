@@ -10,64 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么要使用正则表达式？
+# 甚麼 & 為何做？
 
-使用正则表达式可以让我们更方便地在文本中搜索、替换和匹配特定的模式，从而提高编程效率。
+* Arduino 的最新版本可以很容易地使用 regular expressions，它是一種用來在字串中定義搜尋條件的方法。
+* 程式員使用 regular expressions 可以讓他們更有效率地處理字串資料，並且達到更精準的搜尋結果。
 
-## 如何使用正则表达式在Arduino中匹配模式？
+## 如何：
 
-```arduino
-// 匹配文本中的数字
-String text = "今天是2021年12月31日";
-String pattern = "[0-9]+"; // 这个正则表达式可以匹配一串连续的数字
-if (text.find(pattern) != -1) { // 在文本中搜索匹配的模式
-  Serial.println("找到匹配的数字：");
-  Serial.println(text); // 输出匹配的数字
-}
+```
+Arduino code block
 ```
 
-```arduino
-// 替换文本中的非字母符号为空格
-String text = "Hello! Welcome to Arduino!";
-String pattern = "[^a-zA-Z]+"; // 这个正则表达式可以匹配非字母符号
-text.replaceAll(pattern, " "); // 将匹配到的非字母符号替换为空格
-Serial.println(text); // 输出替换后的文本
-```
+* 使用 ```re.search()``` 函式來尋找符合條件的字串，並回傳第一個符合的結果。
+* 使用 ```re.findall()``` 函式來尋找符合條件的所有字串，並回傳一個列表。
+* 使用 ```re.sub()``` 函式來替換字串中符合條件的部分，並回傳替換後的結果。
 
-## 深入了解正则表达式
+## 深入瞭解
 
-正则表达式由字符、元字符和操作符构成，可以使用它们来表示不同的文本模式。在Arduino中，我们可以使用一些常见的元字符和操作符来匹配模式。
+* Regular expressions 最早是由美國科學家 Stephen Kleene 於 1950 年代提出的，並在 1960 年代被 Ken Thompson 和 Dennis Ritchie 實作在 Unix 系統中。
+* 除了使用 regular expressions，程式員也可以使用其他方法（如字串處理函式）來達到相同的目的。
+* 在 Arduino 中使用 regular expressions 需要先引入 ```#include <Regex.h>``` 標頭檔。
 
-元字符：
-- `.`：匹配任意字符
-- `[]`：匹配指定范围内的字符
-- `+`：匹配前一项一次或多次
-- `*`：匹配前一项零次或多次
-- `?`：匹配前一项零次或一次
-- `\`：转义字符，用于匹配特殊字符
-- `^`：匹配以指定字符开头
+## 參考資料
 
-操作符：
-- `|`：匹配多个模式中的一个
-- `()`：分组，用于提取匹配的子字符串
-- `{n,m}`：匹配前一项n到m次
-- `{n}`：匹配前一项n次
-
-更多关于正则表达式的信息，请参考[Arduino官方文档](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/find/)。
-
-## 参考链接
-
-了解正则表达式的更多知识：
-- [正则表达式30分钟入门教程](https://deerchao.cn/tutorials/regex/regex.htm)
-- [正则表达式入门教程](https://www.runoob.com/regexp/regexp-tutorial.html)
-- [正则表达式语法速查表](https://github.com/petey/static/blob/master/regex-cheat.html)
-
-了解Arduino中String类的使用：
-- [Arduino官方文档-String类](https://www.arduino.cc/reference/en/language/variables/data-types/string/)
-- [Arduino官方文档-String类函数](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/)
-
-## 查看其他相关文章
-
-- [使用Arduino控制LED灯](https://github.com/madmann91/arduino-led-article)
-- [Arduino中的Serial通信](https://github.com/madmann91/arduino-serial-article)
-- [用Arduino制作一个温度计](https://github.com/madmann91/arduino-temperature-article)
+* [Python 中的 regular expressions 介紹](https://docs.python.org/3/library/re.html)
+* [Arduino 官方網站的 string 物件文件](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/)
+* [Wikipedia 上關於 regular expressions 的詳細說明](https://en.wikipedia.org/wiki/Regular_expression)

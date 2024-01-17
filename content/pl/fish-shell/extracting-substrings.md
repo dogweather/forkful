@@ -1,7 +1,7 @@
 ---
-title:                "Wyciąganie podciągów"
-html_title:           "Fish Shell: Wyciąganie podciągów"
-simple_title:         "Wyciąganie podciągów"
+title:                "Wycinanie podciągów"
+html_title:           "Fish Shell: Wycinanie podciągów"
+simple_title:         "Wycinanie podciągów"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -10,50 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i dlaczego?
 
-Jeśli jesteś programistą lub człowiekiem zajmującym się automatyzacją zadań w systemie Linux, prawdopodobnie zetknąłeś się z potrzebą wyodrębnienia części tekstu z większego ciągu znaków. Może to być konieczne, aby przeprowadzić wybrane działania na danym tekście lub po prostu wyciągnąć pewne informacje. W tym artykule dowiecie się, jak szybko i wygodnie wyodrębnić podciągi w powłoce Fish Shell.
+Wycinanie fragmentów napisów to proces, w którym programiści wybierają i izolują fragmenty tekstu, które są potrzebne do dalszej pracy. Oznacza to, że mogą wyodrębnić określony fragment tekstu, na przykład część adresu email lub numeru telefonu, aby łatwiej manipulować tymi danymi w swoim kodzie.
 
-## Jak to zrobić
+## Jak to zrobić:
 
-Wyodrębnianie podciągów w powłoce Fish Shell jest bardzo proste i wygodne. Wystarczy użyć wbudowanej funkcji `string sub`. Przyjmując zmienną `text` zawierającą cały tekst, następująca komenda wyodrębni podciąg od piątego do dziewiątego znaku i zapisze go do zmiennej `substring`:
+```Fish Shell``` oferuje kilka prostych i szybkich metod wycinania fragmentów tekstu. Można tego dokonać przy użyciu komendy ```substr```, która pozwala na wybranie konkretnego przedziału znaków w tekście. Na przykład, jeśli chcemy wydobyć tylko pierwszą literę słowa, możemy użyć komendy ```substr 0 1``` i podać nazwę zmiennej, w której znajduje się słowo.
 
-```Fish Shell
-set substring (string sub $text 5 9)
-```
+Możliwe jest także wycinanie określonej liczby znaków z tekstu przy użyciu komendy ```substr -r```. Proces ten również może być zastosowany do danych znajdujących się w tablicach lub listach.
 
-Możesz również wykorzystać tę funkcję wewnątrz pętli, aby wyodrębnić podciągi z wielu zmiennych. Na przykład, poniższy kod wyodrębni każdy podciąg z listy zmiennych `list` i wyświetli je w konsoli:
+## Deep Dive:
 
-```Fish Shell
-for var in $list
-  echo (string sub $var 2 5)
-end
-```
+Wycinanie fragmentów tekstu jest jedną z wielu przydatnych operacji, które można wykonać w programowaniu. Historia tego procesu sięga lat 70., kiedy to przy pomocy komend systemowych było możliwe wybieranie konkretnych znaków z plików. W dzisiejszych czasach wycinanie fragmentów tekstu jest także możliwe w innych językach programowania, takich jak Python czy Ruby.
 
-Wyjście powyższego kodu będzie wyglądać mniej więcej tak:
+Alternatywnym rozwiązaniem dla ```Fish Shell``` może być użycie regexów (wyrażeń regularnych), które pozwalają na bardziej zaawansowane operacje wycinania fragmentów tekstu. Jednakże, w przypadku prostych zadań, ```Fish Shell``` jest szybszym i łatwiejszym w użyciu rozwiązaniem.
 
-```
-odci
-drie
-jmic
-```
+Implementacja wycinania fragmentów tekstu w ```Fish Shell``` jest bardzo prosta i bezproblemowa. Dzięki temu, programiści mogą szybko i wygodnie manipulować tekstami, co znacznie ułatwia pracę z danymi.
 
-Jednym z przydatnych parametrów funkcji `string sub` jest również możliwość wyodrębniania podciągów od końca. W przypadku, gdy chcemy wyodrębnić ostatnie 10 znaków z jakiegoś tekstu, możemy to zrobić przy użyciu ujemnych wartości indeksów. Na przykład:
+## Zobacz także:
 
-```Fish Shell
-set last_chars (string sub $text -10 -1)
-```
-
-Wyjście powyższego kodu będzie stanowić ostatnie 10 znaków zmiennej `text`.
-
-## Deep Dive
-
-Funkcja `string sub` w powłoce Fish Shell przyjmuje trzy argumenty: zmienną zawierającą tekst, indeks początkowy i indeks końcowy wyodrębnianego podciągu. Indeks pierwszego znaku tekstu to 0. Dodatkowo, jeśli podamy ujemną wartość indeksu końcowego, zostanie wyodrębniony podciąg od tej pozycji do końca tekstu.
-
-Funkcja ta jest również bardzo przydatna, gdy chcemy wyciągnąć informacje z tekstu zawierającego wiele linii. W przypadku gdy każda linia zawiera inny format danych, możemy wyodrębnić odpowiednie wartości, np. z wcześniej wspomnianego wyjścia pętli.
-
-## Zobacz także
-
-- [Dokumentacja Fish Shell](https://fishshell.com/docs/current/index.html)
-- [Wprowadzenie do programowania w Fish Shell](https://fishshell.com/docs/current/tutorial.html)
-- [Podstawy przetwarzania tekstu w powłoce Fish Shell](https://fishshell.com/docs/current/tutorial.html#tut_text_processing)
+- Dokumentacja ```Fish Shell```: https://fishshell.com/docs/current/index.html
+- Przykłady wykorzystania wycinania fragmentów tekstu w ```Fish Shell```: https://github.com/fish-shell/fish-shell/blob/3.0.2/share/functions/substr
+- Poradnik dotyczący manipulacji tekstem w ```Fish Shell```: https://dev.to/larsfischerdev/manipulating-strings-in-fish-shell-i7n

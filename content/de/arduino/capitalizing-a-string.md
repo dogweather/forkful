@@ -1,7 +1,7 @@
 ---
-title:                "Ein String großschreiben"
-html_title:           "Arduino: Ein String großschreiben"
-simple_title:         "Ein String großschreiben"
+title:                "Großschreibung eines Strings"
+html_title:           "Arduino: Großschreibung eines Strings"
+simple_title:         "Großschreibung eines Strings"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Strings"
@@ -10,36 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Warum
+## Was & Warum?
+ 
+Capitalizing a string is the act of changing the first letter of each word in a sentence or phrase to its uppercase form. Programmers often do this to make their code more readable and organized. It also helps to identify important words or variable names within the code. 
 
-Das Kapitalisieren von Strings ist ein häufiger Schritt beim Programmieren, besonders wenn es um die Formatierung von Text oder die Interaktion mit externen Geräten geht. Durch das Verständnis dieses einfachen Konzepts können Sie in der Lage sein, Ihre Arduino-Programme effizienter und effektiver zu gestalten.
+## Wie man es macht:
 
-## Wie es geht
+For this task, we will use the built-in ```toUpperCase()``` function in Arduino. This function takes in a string as an argument and returns the same string with all letters in uppercase. Let's see an example:
 
-Grundsätzlich bedeutet Kapitalisieren, den ersten Buchstaben eines Wortes in einen Großbuchstaben zu verwandeln. In Arduino gibt es verschiedene Möglichkeiten, dies zu erreichen. Im Folgenden zeigen wir Ihnen zwei Methoden, um einen String zu kapitalisieren:
+```
+// Define a string variable
+String name = "arduino programming";
 
-### Methode 1
-```Arduino
-String input = "arduino";
-input.toUpperCase(); // konvertiert den String in "ARDUINO"
+// Capitalize the string
+name = name.toUpperCase();
+
+// Print the result
+Serial.println(name);
+
+// Output: ARDUINO PROGRAMMING
 ```
 
-### Methode 2
-```Arduino
-String output = "";
-String input = "hello world";
-for (int i = 0; i < input.length(); i++) { // durchläuft jeden Buchstaben im String
-  output += toupper(input[i]); // konvertiert den aktuellen Buchstaben in einen Großbuchstaben und fügt ihn zum Ausgabe-String hinzu
-}
-// Ausgabe: "HELLO WORLD"
-```
+## Tief tauchen:
 
-## Tief eintauchen
+This method of capitalizing strings has been used for a long time in programming languages. However, there are also alternative methods such as creating a custom function to capitalize strings. Additionally, it is important to note that this method only capitalizes letters based on their ASCII value, and may not work for all languages. For a more in-depth look, you can refer to the [Arduino documentation](https://www.arduino.cc/en/Reference/StringToUpper). 
 
-Es gibt viele weitere Möglichkeiten, einen String in Arduino zu manipulieren, einschließlich der Anwendung von Funktionen wie `toLowerCase()` und `replace()`. Sie können auch ein Array von Charakteren verwenden, um individuell auf jeden Buchstaben im String zuzugreifen und ihn zu verändern. Das Wichtigste ist jedoch, dass Sie die grundlegende Idee des Kapitalisierens verstehen und anwenden können.
+## Siehe auch:
 
-## Siehe auch
-
-- [Arduino String Referenz](https://www.arduino.cc/reference/en/language/variables/data-types/string/)
-- [Stringfunktionen in Arduino](https://www.tutorialspoint.com/arduino/arduino_string_functions.htm)
-- [String Manipulation mit Arduino](https://www.youtube.com/watch?v=82EIoEDKcfs)
+- [String data type in Arduino](https://www.arduino.cc/reference/en/language/variables/data-types/string/)
+- [ASCII table for character values](https://www.ascii-code.com/)

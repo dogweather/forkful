@@ -10,24 +10,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Miksi ja mitä?
+Aloittaa uusi projekti on kun aloitat työstää uutta ohjelmaa tyhjästä. Ohjelmoijat tekevät näin, jotta he voivat luoda uusia ja innovatiivisia ohjelmia, jotka vastaavat tarpeita ja ratkaisevat ongelmia.
 
-Olet ehkä kuullut puhuttavan Haskell-ohjelmointikielestä ja mietit, miksi kannattaisi aloittaa uusi projekti juuri tämän kielen avulla. Haskell tarjoaa tehokkaan ja laajalti käytetyn ohjelmointiympäristön, joka mahdollistaa vakaan ja turvallisen koodauksen. Lisäksi Haskellin vahvat toiminnalliset ominaisuudet tekevät siitä erittäin joustavan ja helpon ymmärtää.
-
-## Kuinka aloittaa
+## Miten toimii:
+Haskell tarjoaa monia tehokkaita työkaluja ja ominaisuuksia, jotka helpottavat uuden projektin aloittamista. Aloitusprosessi on melko yksinkertainen: sinun tulee ensin luoda uusi projektikansio ja sitten lisätä siihen tarvittavat tiedostot. Tässä esimerkki, miten luodaan uusi projekti "Hei maailma" Haskellilla:
 
 ```Haskell
-main :: IO()
-main = putStrLn "Tervetuloa Haskellin maailmaan!"
+mkdir HelloWorld 
+cd HelloWorld
+touch hello.hs 
 ```
-Tämä yksinkertainen koodiesimerkki tulostaa tervehdyksen Haskellilla. Ennen kuin aloitat uuden projektin, sinun tulee asentaa Haskell-paketti paketinhallintajärjestelmän avulla. Voit sitten käyttää komentoa `new-project` luodaksesi uuden projektin.
 
-## Syvemmälle
+Nyt voit aloittaa koodaamisen `hello.hs` tiedostossa ja suorittaa sen komennolla `runghc hello.hs`. Tämä tulostaa "Hei maailma" konsoliin.
 
-Haskellin aloittaminen uuden projektin parissa voi tuntua ylivoimaiselta, mutta älä huoli - on olemassa monia hyödyllisiä resursseja, jotka auttavat sinua matkallasi. Voit löytää laajan valikoiman harjoituksia ja oppaita verkosta, jotka auttavat sinua ymmärtämään Haskellin toiminnallisuudet ja rakenteen paremmin. Lisäksi yhteisöllä on laaja tuki, joten älä epäröi jakaa kysymyksiäsi ja ideoitasi muiden kanssa.
+## Syvempi sukellus:
+Haskell on funktionaalinen ohjelmointikieli, joka perustuu matemaattiseen logiikkaan ja lambda-laskennan käsitteisiin. Se on suunniteltu olemaan eksplisiittinen, tyyppiturvallinen ja puhtaasti funktionaalinen kieli, mikä tekee siitä erittäin tehokkaan ja helposti ylläpidettävän. Alternatiivina Haskellille on muita ohjelmointikieliä, kuten Java, Python ja C++, mutta Haskellin puhtaasti funktionaalinen lähestymistapa tekee siitä erottuvan ja sopivan monipuoliseen käyttöön erilaisten ohjelmistojen kehittämisessä.
 
-## Katso myös
-
-- [Haskell Wiki](https://wiki.haskell.org/Haskell) - Löydät täältä ohjeita ja ohjelmointikäytäntöjä.
-- [Haskell-toverit](https://www.haskell.org/) - Käy foorumilla ja keskustele muiden Haskellin käyttäjien kanssa.
-- [Learn You a Haskell for Great Good!](http://learnyouahaskell.com/) - Ilmainen online-opas, joka opettaa sinulle Haskellin perusteet.
+## Katso myös:
+- [Haskellin viralliset dokumentaatiot](https://www.haskell.org/documentation/)
+- [Haskell-kirjallisuus ja resurssit](https://www.haskell.org/haskell-resources/)
+- [Ohjelmoijien yhteisö Haskellilla](https://www.haskell.org/community/)

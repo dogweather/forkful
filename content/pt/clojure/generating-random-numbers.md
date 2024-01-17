@@ -10,49 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que?
+## O que e por que?
 
-Gerar números aleatórios é uma tarefa importante em muitos campos da computação, como jogos, simulações e criptografia. A linguagem Clojure possui bibliotecas integradas que permitem gerar esses números de forma eficiente e confiável.
+Gerar números aleatórios é um conceito importante na programação, onde é necessário obter um valor imprevisível para uso em diferentes aplicativos. Isso pode ser útil para jogos, sorteios, criptografia e outras aplicações que exigem um elemento de aleatoriedade.
 
-## Como fazer?
+## Como fazer:
 
-Para gerar um único número aleatório entre 0 e 10, podemos utilizar a função `rand-int` da biblioteca `clojure.core` da seguinte forma:
-
-```Clojure
-(clojure.core/rand-int 10) ; => 7
-```
-
-Podemos utilizar a função `rand` para gerar números decimais aleatórios entre 0 e 1:
+Para gerar um número aleatório no Clojure, podemos usar a função ```rand```. Veja um exemplo abaixo:
 
 ```Clojure
-(clojure.core/rand) ; => 0.7521487200786202
+(rand) 
+;; Output: 0.809462448128918
+
+(rand 10) 
+;; Output: 6.379078216751147
 ```
 
-Também é possível gerar números aleatórios a partir de uma distribuição normal utilizando a função `rand-norm` da biblioteca `incanter.stats`:
+A função ```rand``` pode ser usada com ou sem um limite, onde sem um limite, ela retornará um número entre 0 e 1, e com um limite, ela retornará um número entre 0 e o limite especificado.
 
-```Clojure
-(require '[incanter.stats :as stats])
+## Deep Dive:
 
-(stats/rand-norm) ; => 0.7278992985620795
-```
+Gerar números aleatórios tem sido uma necessidade na programação desde os primeiros dias da computação. Houve muitas abordagens diferentes para resolver esse problema, como a utilização de algoritmos matemáticos complexos ou geradores de números pseudoaleatórios.
 
-## Detalhes avançados
+O Clojure utiliza o gerador ```java.util.Random``` para gerar números aleatórios, o que garante que os números gerados sejam de alta qualidade e imprevisíveis. Isso também significa que é possível definir uma semente para o gerador para obter um resultado consistente em diferentes execuções.
 
-Para gerar uma sequência de números aleatórios, podemos utilizar a função `rand-seq` da biblioteca `clojure.core`:
+Além da função ```rand```, o Clojure também possui outras funções relacionadas, como ```rand-int```, que retorna um número inteiro aleatório, e ```rand-nth```, que retorna um elemento aleatório de uma coleção.
 
-```Clojure
-(take 5 (rand-seq 10)) ; => (1 9 7 5 4)
-```
+## Veja também:
 
-Também é possível definir uma semente para a geração dos números aleatórios, garantindo a mesma sequência de números a cada execução do código:
-
-```Clojure
-(clojure.core/set! *rand-nth-state* (clojure.core/make-rand-nth-state 1234))
-(repeatedly 5 #(rand-int 10)) ; =>(3 0 6 8 5)
-```
-
-## Veja também
-
-- [Documentação oficial do Clojure sobre geração de números aleatórios](https://clojure.org/reference/java_interop#_random_number_generators)
-- [Tutorial de Clojure sobre geração de números aleatórios](https://clojure.org/guides/random_numbers)
-- [Biblioteca "Clojure Stdlib" com funções para manipulação de números aleatórios](https://github.com/clojure-stdlib/clojure-stdlib)
+Para saber mais sobre como gerar números aleatórios no Clojure, confira a documentação oficial em [ClojureDocs](https://clojuredocs.org/clojure.core/rand) e o tutorial "Gerando números aleatórios em Clojure" no [Medium](https://medium.com/@rogeriobattimajr/gerando-numeros-aleat%C3%B3rios-em-clojure-e0a5d9010ff3).

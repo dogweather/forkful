@@ -10,44 +10,18 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Czego dotyczy i dlaczego?
 
-Generowanie losowych liczb w Bashu może być przydatne w wielu różnych scenariuszach, od testowania aplikacji po gry i symulacje. Może to również być wygodne wtedy, gdy potrzebujemy szybko wylosować jakieś dane bez konieczności tworzenia specjalnego skryptu.
+Generowanie losowych liczb jest popularnym narzędziem w programowaniu. Pozwala na losowe wybieranie wartości zdefiniowanych przez programistę i jest niezwykle przydatne w wielu scenariuszach, na przykład w symulacjach, grach czy testowaniu aplikacji.
 
-## Jak to zrobić
+## Jak to zrobić?
 
-### Metoda 1: Korzystając z wbudowanego polecenia `shuf`
+Możemy wygenerować losową liczbę w Bashu za pomocą funkcji $RANDOM. Przykładowo, kod ```Bash echo $RANDOM ``` zwróci losową liczbę w przedziale od 0 do 32767. Możemy także określić własny zakres, np. ```Bash echo $((RANDOM%10+1)) ``` wylosuje liczbę od 1 do 10.
 
-Polecenie `shuf` jest częścią standardowych narzędzi Bash i pozwala na losowanie liczb z podanego zakresu. Musimy podać tylko minimalną i maksymalną wartość oraz liczbę liczb do wylosowania. Oto przykład:
+## Wnikliwszy rozkład
 
-```Bash
-shuf -i 1-100 -n 5
-```
+Istnieje wiele sposobów na generowanie losowych liczb w Bashu, takich jak uzycie polecenia ```Bash shuf ``` lub funkcji ```Bash random [options] ```. Dodatkowo, możliwe jest dokładniejsze kontrolowanie rozkładu wygenerowanych liczb za pomocą algorytmów takich jak Mersenne Twister. Warto także pamiętać, że wygenerowane liczby nie są w pełni losowe, tylko pseudo-losowe, co oznacza, że stanowią ciąg liczb, który można przewidzieć.
 
-Wygeneruje pięć losowych liczb z zakresu od 1 do 100.
+## Zobacz także
 
-### Metoda 2: Używając wbudowanej zmiennej `$RANDOM`
-
-Bash zawiera wbudowaną zmienną `$RANDOM`, która przechowuje losową liczbę całkowitą z zakresu od 0 do 32767. Możemy wykorzystać tę zmienną do wygenerowania losowych liczb w naszym skrypcie. Oto przykład:
-
-```Bash
-echo $((RANDOM%100))
-```
-
-Powtarzając to polecenie, będziemy otrzymywać różne losowe liczby z zakresu od 0 do 99.
-
-## Deep Dive
-
-Aby uzyskać większą elastyczność w generowaniu losowych liczb, możemy skorzystać z zewnętrznych bibliotek lub narzędzi, takich jak `awk` lub `sed`. Możemy również wykorzystać wyjście z innych poleceń do generowania liczb, na przykład:
-
-```Bash
-echo $(openssl rand -hex 4)
-```
-
-Spowoduje to wygenerowanie losowego kodu szesnastkowego o długości 4 znaków.
-
-## Zobacz też
-
-- Dokumentacja polecenia `shuf`: https://linux.die.net/man/1/shuf
-- Dokumentacja wbudowanej zmiennej `$RANDOM`: https://linux.die.net/man/1/bash
-- Poradnik o generowaniu losowych liczb w Bashu: https://www.shell-tips.com/bash/random-numbers/
+Dla większej ilości informacji na temat generowania losowych liczb w Bashu, polecamy zapoznać się z dokumentacją Bashową oraz artykułami na temat używania funkcji $RANDOM. Możesz także poszukać innych sposobów generowania liczb, takich jak wykorzystanie zewnętrznych narzędzi lub bibliotek.

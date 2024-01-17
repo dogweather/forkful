@@ -1,7 +1,7 @@
 ---
-title:                "「未来や過去の日付の計算」"
-html_title:           "Haskell: 「未来や過去の日付の計算」"
-simple_title:         "「未来や過去の日付の計算」"
+title:                "「未来または過去の日付の計算」"
+html_title:           "Haskell: 「未来または過去の日付の計算」"
+simple_title:         "「未来または過去の日付の計算」"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Dates and Times"
@@ -10,43 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+## 何 & なぜ?
 
-あなたは日付を未来や過去に計算する必要がありますか？例えば、誕生日や締め切りの日付を知りたい場合や、プログラムのロジックで日付を操作する必要がある場合など、日常生活や開発プロジェクトで様々なシーンで利用されます。この記事では、Haskellを使用して未来や過去の日付を計算する方法を紹介します。
+「未来や過去の日付を計算すること」とは、指定された日付から一定期間後や前の日付を求めることです。プログラマーがこれを行う理由は、アプリケーションにおいて特定の日付を操作する必要があるためです。
 
-## 方法
+## 方法：
+
+以下のコードブロックに、Haskellを使って未来や過去の日付を計算する方法を示します。
 
 ```Haskell
--- 今日の日付を取得
-today :: Day
-today = utctDay <$> getCurrentTime
-
--- 未来の日付を計算する関数
-futureDate :: Integer -> Day
-futureDate days = addDays days <$> today
-
--- 過去の日付を計算する関数
-pastDate :: Integer -> Day
-pastDate days = addDays (days * (-1)) <$> today
-
--- 未来の日付を計算し、結果を出力
-main = do
-  let birthday = futureDate 365 -- 未来の誕生日を1年後に計算
-  print $ "Your birthday next year will be on " ++ show birthday
-
-  let projectDeadline = futureDate 7 -- 未来のプロジェクト締め切り日を1週間後に計算
-  print $ "The project deadline is " ++ show projectDeadline ++ "! Get ready!"
-
-  let tenDaysAgo = pastDate 10 -- 過去の日付を10日前に計算
-  print $ "10 days ago was " ++ show tenDaysAgo ++ ". Time flies!"
+-- 未来の日付を計算する
+let future = addDays 30 today
+-- 過去の日付を計算する
+let past = addDays (-30) today
 ```
 
-## ディープダイブ
+上記のコードを実行すると、現在の日付から30日後の日付が`future`に、30日前の日付が`past`に格納されます。
 
-日付を扱う際には、Haskellのdateパッケージを使用することが推奨されます。dateパッケージには、日付や時刻を操作するための便利な関数が多数用意されています。また、単位やタイムゾーンの変換を行う機能もあり、国際的な開発にも役立ちます。
+## 探究
 
-## See Also
+### 歴史的背景
 
-- [Hackage - dateパッケージ](https://hackage.haskell.org/package/date)
-- [Haskell Wiki - 日付や時刻の操作](https://wiki.haskell.org/Date_and_time)
-- [Qiita - Haskellで日付や時刻を扱う方法](https://qiita.com/yudai-nkt/items/1ade98f82ea50fdf3582)
+過去において、日付の計算は非常に困難な作業と考えられていました。しかし、近年のプログラミング言語の発展により、日付の計算はより簡単に行えるようになりました。
+
+### 代替手段
+
+未来や過去の日付を計算するための代替手段としては、他のプログラミング言語でも同様の機能が備わっている場合があります。例えば、JavaやPythonなどでも同様の手法で日付の計算が可能です。
+
+### 実装の詳細
+
+Haskellにおいて、日付の計算は標準ライブラリの`Data.Time`モジュールを使用して行います。`addDays`関数を使用することで、指定した日付から任意の日数を加算または減算することができます。
+
+## 関連情報
+
+- [Haskell Data.Time モジュールのドキュメント](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time.html)
+- [Java での日付の計算方法の例](https://www.geeksforgeeks.org/java-util-date-class-java/)

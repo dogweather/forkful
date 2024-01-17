@@ -1,7 +1,7 @@
 ---
-title:                "Merkkijonon muuntaminen pieniksi kirjaimiksi"
-html_title:           "Kotlin: Merkkijonon muuntaminen pieniksi kirjaimiksi"
-simple_title:         "Merkkijonon muuntaminen pieniksi kirjaimiksi"
+title:                "Merkkijonon muuttaminen pienaakkosiksi"
+html_title:           "Kotlin: Merkkijonon muuttaminen pienaakkosiksi"
+simple_title:         "Merkkijonon muuttaminen pienaakkosiksi"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Strings"
@@ -10,41 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mikä & Miksi?
 
-On monia käyttötarkoituksia, miksi haluat muuttaa merkkijonon pieniksi kirjaimiksi. Ehkä haluat vertailla merkkijonoja ilman, että välitetään kirjainten koosta tai ehkä haluat yhdenmukaistaa merkkijonojen muotoilun.
+Miksi me koodarit muuttelemme merkkijonoja? Sehän kuulostaa melkein kuin jokapäiväiseen läträämiseen sillä. No, totta puhuen me kuitenkin teemme sitä usein. Ja miksi? Koska usein meidän täytyy verrata kahta merkkijonoa keskenään tai vertaamme käyttäjän syöttämää merkkijonoa ja odotettua vastausta. Ja yhteinen työkalu, jolla voimme helposti vertailla merkkijonoja on niiden muuttaminen pieniksi kirjaimiksi.
 
-## Miten
+## Kuinka:
 
-### Esimerkki 1: Yksinkertainen muunnos
+Kuinka siis muutamme merkkijonon pieniksi kirjaimiksi ```Kotlin .toLowerCase()``` metodilla? Katso esimerkki:
 
-Käyttäen Kotlinin String-luokan toLowerCase()-metodia voit helposti muuttaa merkkijonon pieniksi kirjaimiksi.
-
-```Kotlin
-val s = "TÄMÄ ON ESIMERKKI"
+```
+val s = "Hei, Minä Olen String!"
 println(s.toLowerCase())
 ```
 
-Tuloste: tämä on esimerkki
+Tämä koodi tulostaa ```hei, minä olen string!```. Huomaa, että alkuperäistä merkkijonoa ei muuteta, vaan uusi merkkijono luodaan.
 
-### Esimerkki 2: Muunnos jossain tiettynä paikassa
+## Syvempi sukellus:
 
-Voit myös valita haluamasi kohdan merkkijonosta ja muuttaa vain sen pieniksi kirjaimiksi.
+Miksi Python ja muut kielet käyttävät ```Python .lower()``` ja Java käyttää ```Java .toLowerCase()``` metodeja? Onko niillä eroa? Kyllä, niillä on pieniä eroja. Kotlinin ```to LowerCase()``` metodi käyttää Unicode-standardia, jossa kirjain "I" muuttuu "i":ksi, mutta Pythonin metodi ei tee tätä muutosta. Tämä voi aiheuttaa ongelmia, jos esimerkiksi vertailet tietokantojen merkkijonoja, jotka on tallennettu eri kielissä.
 
-```Kotlin
-val s = "Muista Muuttaa Merkkin Tänne"
-println(s.toLowerCase(7..11))
-```
+Halutessasi voit myös käyttää ```Kotlin .toLowerCase(Locale)``` metodia, jotta voit määrittää, millä alueella olet, jolloin se käyttää kyseisen alueen kirjainmuutoksia.
 
-Tuloste: Muista muuttaa merkkiä tänne
+## Lue myös:
 
-## Syvempi sukellus
+Lisätietoa merkkijonojen käsittelystä Kotlinissa: https://kotlinlang.org/docs/reference/strings.html
 
-Kotlinin String-luokka on muokattavissa oleva, joten se ei tarjoa sisäänrakennettua konversiota isojen ja pienten kirjainten välillä. Sen sijaan, se käyttää Unicode-standardia, joka määrää, mikä merkki tulee ensin ja mikä viimeiseksi.
-
-Unicode-standardin mukaan suuret kirjaimet tulevat aakkoston alkuun ja pienet kirjaimet aakkoston loppuun. Tämä on syy sille, miksi konversio on "teknisesti" mahdollista.
-
-## Katso myös
-
-- [Kotlinin String-luokka](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/)
-- [Unicode-standardi](https://unicode.org/)
+Kotlinin Unicode-standardista: https://kotlinlang.org/docs/reference/strings.html#unicode-support

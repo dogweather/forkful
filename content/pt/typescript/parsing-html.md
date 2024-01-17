@@ -1,7 +1,7 @@
 ---
-title:                "Analisando html"
-html_title:           "TypeScript: Analisando html"
-simple_title:         "Analisando html"
+title:                "Análise de HTML"
+html_title:           "TypeScript: Análise de HTML"
+simple_title:         "Análise de HTML"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "HTML and the Web"
@@ -10,46 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+## O que é e por que fazer o parsing de HTML?
 
-Você provavelmente já se deparou com a tarefa de extrair informações específicas de um documento HTML. Talvez seja para criar um web scraping script ou para processar dados de uma página da web. Para isso, é necessário realizar a análise sintática do HTML, ou seja, transformá-lo em uma estrutura de dados que possa ser facilmente manipulada por um programa. A partir daí, é possível obter os dados desejados de forma mais eficiente.
+O parsing de HTML é o processo de analisar um documento HTML e extrair informações específicas dele. Os programadores fazem isso para obter dados estruturados de uma página da web ou para validar se o HTML está seguindo padrões corretos.
 
-## Como fazer
-
-Realizar a análise sintática de um documento HTML pode parecer uma tarefa complexa, mas com o TypeScript essa tarefa se torna muito mais simples. Com a biblioteca `html-parser`, podemos facilmente converter um documento HTML em um objeto do tipo `HTMLElement` e acessar suas propriedades e filhos.
+## Como fazer:
 
 ```TypeScript
-import { parse } from 'html-parser';
+// Exemplo de parsing de HTML usando a biblioteca Cheerio.
+import * as cheerio from 'cheerio';
 
-const html = '<div><h1>Título</h1><p>Parágrafo</p></div>';
-const parsed = parse(html);
-
-console.log(parsed.tagName); // div
-console.log(parsed.children[0].tagName); // h1
-console.log(parsed.children[1].tagName); // p
+// Carregando o HTML de uma página com o módulo "request".
+const request = require('request');
+request('https://www.google.com.br', (error, response, html) => {
+  if (!error && response.statusCode == 200) {
+    
+    // Carregar o HTML usando Cheerio
+    const $ = cheerio.load(html);
+    
+    // Obter o título da página
+    const title = $('title').text();
+    
+    // Imprimir o resultado
+    console.log(title); // "Google"
+  }
+});
 ```
 
-Ao executar o código acima, podemos ver que o HTML foi convertido em um objeto que contém o nome da tag e seus filhos, facilitando assim o acesso e manipulação dos dados.
+## Mergulho profundo:
 
-## Mergulho profundo
+O parsing de HTML é uma técnica antiga, que tem sido usada há décadas para extrair dados de páginas da web. Existem muitas bibliotecas disponíveis para facilitar esse processo, como o Cheerio, mostrado no exemplo acima. Outra alternativa é utilizar uma API de web scraping, que pode oferecer recursos mais avançados, mas geralmente requerem um pagamento.
 
-Além de converter o HTML em um objeto, a biblioteca `html-parser` também nos permite realizar consultas específicas em busca de elementos específicos. Isso é feito utilizando a função `querySelector`, que nos permite passar um seletor CSS como parâmetro.
+## Veja também:
 
-```TypeScript
-import { parse } from 'html-parser';
-
-const html = '<ul><li>Item 1</li><li>Item 2</li></ul>';
-const parsed = parse(html);
-
-const items = parsed.querySelector('li');
-console.log(items[0].innerText); // Item 1
-console.log(items[1].innerText); // Item 2
-```
-
-Com essa funcionalidade, podemos facilmente extrair dados de qualquer tag ou classe que desejamos, tornando o processo de parsing ainda mais eficiente.
-
-## Veja também
-
-- Documentação oficial do `html-parser`: https://github.com/nullpunkt666/html-parser
-- Tutorial de como usar o `html-parser` com TypeScript: https://www.valentinog.com/blog/html-parser-javascript/
-- Exemplos práticos de parsing com o `html-parser`: https://medium.com/@rajaraodv/parsing-html-in-typescript-with-htmlparser2-8049413a260f
+- [Documentação oficial da biblioteca Cheerio] (https://cheerio.js.org/)
+- [API de web scraping do ParseHub] (https://www.parsehub.com/api/)
+- [Guia passo a passo para fazer o parsing de HTML com TypeScript] (https://blog.bitsrc.io/extracting-data-from-html-using-ts-neo4j-f28ae1f6afcf)

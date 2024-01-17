@@ -10,44 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+「## 何か？」
+文字列を結合するとは、単純に文字列同士をつなげることを意味します。プログラマーは、プログラム内で動的なテキストを作成するために、このような文字列を結合する必要があります。
 
-文字列を結合するのに文を最大2文で説明する。
-
-文字列の結合は、プログラムで異なる文字列を組み合わせる必要がある時に非常に便利です。例えば、フルネームを作るためには、名前と姓を結合することができます。また、メッセージを作成する際には、固定のテキストと動的に変わる変数を一緒に表示することができます。これにより、コードを簡潔に保ち、読みやすくすることができます。
-
-## 作法
-
-```TypeScript
-// 単純な文字列の結合
-let firstName: string = "太郎";
-let lastName: string = "山田";
-let fullName: string = firstName + lastName;
-
-console.log(fullName); // 出力: 太郎山田
-
-// 文字列と数字の結合
-let age: number = 25;
-let message: string = "私は" + age + "歳です。";
-
-console.log(message); // 出力: 私は25歳です。
-
-// テンプレート文字列を使用した結合
-let fruit: string = "りんご";
-let quantity: number = 3;
-
-let order: string = `私は${fruit}を${quantity}個注文したいです。`;
-
-console.log(order); // 出力: 私はりんごを3個注文したいです。
+「## 方法：」
+TypeScriptで文字列を結合する方法はいくつかあります。最も基本的な方法は、"+"記号を使用することです。例えば、"Hello"という文字列と"World"という文字列を結合したい場合は、次のように書きます。
 ```
+TypeScript
+let greeting: string = "Hello";
+let name: string = "World";
+console.log(greeting + " " + name);
+```
+出力結果は「Hello World」となります。
 
-## 深掘り
+別の方法として、テンプレート文字列を使用することもできます。テンプレート文字列を使用すると、文字列内に変数を直接埋め込むことができます。上記の例をテンプレート文字列で書くと、次のようになります。
+```
+TypeScript
+let greeting: string = "Hello";
+let name: string = "World";
+console.log(`${greeting} ${name}`);
+```
+出力結果は同じく「Hello World」となります。
 
-文字列の結合には、2つの主要な方法があります。最初は、`+`演算子を使用する方法です。この方法では、異なる型の値を自動的に文字列に変換して結合します。もう一つは、テンプレート文字列を使用する方法です。これは、文字列をより簡単に結合し、可読性を高める方法です。また、テンプレート文字列を使用すると、文字列内にJavaScriptの式を挿入することもできます。
+「## 詳細を掘り下げる」
+文字列の結合はプログラミングの歴史の中で重要な役割を果たしてきました。早い時期から、文字列を結合するためのさまざまな方法が考案され、改良されてきました。例えば、JavaのStringクラスでは、文字列結合のための「+」演算子が導入されました。
 
-さらに、TypeScriptでは、文字列を結合する際に型安全性を考慮することができます。例えば、`+`演算子を使用すると、異なる型の値を結合してもエラーが発生しません。しかし、文字列と数値を結合する際には、意図しない結果になる可能性があり、バグの原因になることがあります。そのため、文字列と数値を結合する際には、テンプレート文字列を使用するか、明示的に文字列に変換するようにすることが推奨されます。
+また、文字列の結合には他にもいくつかの代替手段があります。例えば、文字列を結合するときには文字列結合関数を使用することもできます。これは、ある文字列と別の文字列を受け取り、両方を結合した新しい文字列を返す関数です。
 
-## 参考
+文字列の結合は、とても基本的でありながら、プログラミングで重要な役割を果たす概念です。そのため、慣れておくことが大切です。
 
-- [TypeScript Handbook - String Concatenation](https://www.typescriptlang.org/docs/handbook/basic-types.html#string-concatenation)
-- [MDN web Docs - Template literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals)
+「## 関連情報を参照」
+- [JavaScriptの文字列結合方法（W3Schools）](https://www.w3schools.com/js/js_string_concat.asp)
+- [JavaのStringクラスのドキュメント（Oracle）](https://docs.oracle.com/javase/9/docs/api/java/lang/String.html)
+- [C#での文字列結合方法（Microsoft）](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/addition-operator)

@@ -1,7 +1,7 @@
 ---
-title:                "Scrivere su standard error"
-html_title:           "Elm: Scrivere su standard error"
-simple_title:         "Scrivere su standard error"
+title:                "Scrivere su standard di errore"
+html_title:           "Elm: Scrivere su standard di errore"
+simple_title:         "Scrivere su standard di errore"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Files and I/O"
@@ -10,39 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+## Che cos'è e perché?:
 
-Scrivere su standard error può sembrare un'azione banale ma è uno strumento utile per gestire errori e debug in Elm. È un'abilità importante da avere per migliorare la qualità del tuo codice e risolvere eventuali problemi che possono sorgere durante lo sviluppo.
+Scrivere su standard error è un modo per stampare messaggi di errore o di debug nel tuo programma Elm. Questo ti permette di visualizzare informazioni importanti durante l'esecuzione del codice, senza dover interrompere il processo. I programmatori usano spesso questa tecnica per identificare e risolvere eventuali errori nel loro codice.
 
-## Come Fare
+## Come fare:
 
-Per scrivere su standard error in Elm, puoi utilizzare la funzione `Debug.log`. Questa funzione accetta due argomenti: una stringa che rappresenta un messaggio di debug e un qualsiasi valore che si desidera visualizzare. Ad esempio:
-
-```Elm
-import Debug exposing (log)
-
-favoriteLanguage = "Elm"
-
-log "Il mio linguaggio preferito è" favoriteLanguage
-```
-
-L'output sarebbe: `Il mio linguaggio preferito è Elm`. Questo può aiutare a monitorare lo stato delle variabili all'interno del tuo codice e a identificare eventuali problemi.
-
-## Approfondimento
-
-È importante notare che `Debug.log` viene compilato solo quando si utilizzano le opzioni di debugging e non verrà incluso nella versione finale del tuo codice. Inoltre, questa funzione utilizza un buffer, quindi gli output possono non essere immediatamente visibili. Per visualizzare immediatamente gli output su standard error, puoi utilizzare la funzione `Platform.debug` aggiungendo `<|`, ad esempio:
+Puoi utilizzare la funzione `Debug.log` per scrivere su standard error. Ad esempio:
 
 ```Elm
-import Platform
-
-favoriteLanguage = "Elm"
-
-Platform.debug <| "Il mio linguaggio preferito è" ++ favoriteLanguage
+Debug.log "Messaggio" "Questo è un messaggio di errore"
 ```
 
-Puoi anche passare più di un valore alla funzione, basta utilizzare una virgola per separarli.
+Questo mostrerà il messaggio `Questo è un messaggio di errore` sulla console degli sviluppatori di Elm.
 
-## Vedi Anche
+## Approfondimento:
 
-- [Documentazione di `Debug` (Inglese)](https://package.elm-lang.org/packages/elm/core/latest/Debug)
-- [Risorse su debugging in Elm (Inglese)](https://elmprogramming.com/debugging-elm-applications.html)
+La scrittura su standard error è stata introdotta per la prima volta nei linguaggi di programmazione C e Unix negli anni '70. È diventato uno strumento fondamentale per i programmatori per identificare e risolvere i bug nel loro codice.
+
+Un'alternativa alla scrittura su standard error è utilizzare la funzione `Debug.todo`, che ti permette di indicare una funzione da implementare in futuro.
+
+## Vedi anche:
+
+Per ulteriori informazioni su come utilizzare la funzione `Debug.log`, puoi consultare la documentazione ufficiale di Elm [qui](https://elm-lang.org/docs/debug). Ti consigliamo anche di leggere la documentazione su come gestire gli errori in Elm [qui](https://elm-lang.org/docs/error-handling).

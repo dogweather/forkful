@@ -10,50 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
-이 글을 읽고 YAML과 함께 작업하는 것에 참여하는 이유는 무엇일까요? YAML은 구조화된 데이터를 저장하고 전송하는 데 유용한 포맷이며, Elm에서도 매우 쉽게 다룰 수 있습니다.
+## 어떤 것이고 왜 그래? 
 
-## 어떻게
-아래는 YAML을 Elm에서 다루는 간단한 예제 코드와 실행 결과입니다.
+YAML은 데이터를 저장하는 데 사용되는 일종의 파일 형식입니다. 프로그래머들은 YAML을 사용하여 구조화된 데이터를 더 쉽게 관리하고 사용할 수 있습니다.
+
+## 이렇게 하는 법:
 
 ```Elm
-import YAML exposing (..)
+-- YAML 라이브러리를 가져옵니다.
+import JonnyBurger/elm-graphql/Yaml exposing (..)
 
--- YAML 데이터를 Elm 타입으로 디코딩
-type alias Person = 
-    { name : String
-    , age : Int
-    , occupation : String
-    }
+-- YAML 파일을 읽어옵니다.
+data : Result String Yaml.Value
+data =
+  Yaml.fromString """
+    first_name: John
+    last_name: Doe
+  -- 이 공백 줄은 필요하지 않지만, 라이브러리에서 데이터를 파싱하기 위해 사용됩니다.
+  """
 
-yamlData : String
-yamlData = 
-    """
-        name: John
-        age: 25
-        occupation: Software Engineer
-    """
-
-decodedPerson : Result YAMLError Person
-decodedPerson = decode yamlData
-
--- 디코딩 결과 확인
-case decodedPerson of
-    Ok person -> 
-        "이름: " ++ person.name ++ ", 나이: " ++ (toString person.age) ++ ", 직업: " ++ person.occupation
-
-    Err error -> 
-        "디코딩 실패: " ++ (toString error)
+-- 결과를 확인합니다!
+case data of
+  Ok yamlValue -> toString yamlValue -- "John Doe"를 반환합니다.
+  Err errorMessage -> "오류가 발생했습니다: " ++ errorMessage
 ```
 
-```
-결과: 이름: John, 나이: 25, 직업: Software Engineer
-```
+## 깊이 파고들기:
 
-## 깊게 들어가기
-YAML은 정적 타입 시스템을 가진 Elm에서 빠르고 안전하게 다룰 수 있는 형식입니다. Elm의 종속 타입으로 YAML 데이터를 디코딩하면, 다양한 형태로 변환할 수 있습니다. 또한, Elm에서 YAML을 사용해 데이터를 저장하고 가공할 수 있습니다.
+YAML은 "YAML Ain't Markup Language"의 약자입니다. 마크업 언어가 아니라는 이름에서 알 수 있듯이, 이 파일 형식은 구조화된 데이터를 저장하는 데 사용됩니다. 다른 대안으로는 XML 또는 JSON이 있지만, YAML은 더 직관적이고 읽기 쉽습니다. 또한 Elm에서 YAML을 읽어오기 위해서는 자바스크립트 라이브러리를 사용해야 합니다.
 
-## 더 알아보기
-[YAML 공식 문서](https://yaml.org/)\
-[Elm-YAML 패키지 페이지](https://package.elm-lang.org/packages/jreut/elm-yaml/latest/YAML)\
-[Elm 공식 문서](https://elm-lang.org/docs)
+## 더 알아보기:
+
+[YAML 공식 웹사이트](https://yaml.org/)
+
+[Elm에서 자바스크립트 코드 사용하기](https://guide.elm-lang.org/interop/javascript.html)
+
+[XML vs JSON vs YAML: 어떤 것을 사용할까요?](https://atlantbh.com/2018/10/05/xml-vs-json-vs-yaml/)

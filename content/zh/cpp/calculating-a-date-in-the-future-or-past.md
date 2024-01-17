@@ -1,7 +1,7 @@
 ---
-title:                "计算未来或过去的日期."
-html_title:           "C++: 计算未来或过去的日期."
-simple_title:         "计算未来或过去的日期."
+title:                "未来或过去日期的计算"
+html_title:           "C++: 未来或过去日期的计算"
+simple_title:         "未来或过去日期的计算"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Dates and Times"
@@ -10,114 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
+## 什么是计算未来或过去日期？为什么程序员会这么做？
 
-在日常生活中，我们经常需要计算未来或过去的日期，例如计算下个月的生日是星期几，或者确认某个事件是几天前发生。编程可以帮助我们更快速和准确地进行这些计算，从而帮助我们更好地安排日常生活。
+计算未来或过去日期是通过编程来确定一个指定日期之前或之后的日期。程序员通常会这么做是因为处理日期和时间数据在许多应用程序中都是很重要的。例如，在预订航班票时，需要计算未来的日期来确认最佳的出发时间。 
 
-## 如何
+## 如何进行计算？
 
-计算日期涉及到大量的数学计算，但是使用C++编程语言可以让这个过程更简单和高效。首先，我们需要定义一个结构体来存储日期的信息，包括年、月和日。然后，我们可以使用if语句和循环来判断输入的日期是否合法，并计算出未来或过去的日期。
+下面是一个示例代码，用于计算七天之后的日期，并打印输出结果： 
 
 ```C++
-// 定义结构体存储日期信息
-struct Date {
-    int year;
-    int month;
-    int day;
-};
+#include <iostream>
+#include <ctime>
 
-// 判断是否是闰年
-bool isLeapYear(int year) {
-    if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {
-        return true;
-    } else {
-        return false;
-    }
+using namespace std;
+
+int main()
+{
+    tm currentDate = {};
+    // 获取当前日期
+    time_t now = time(0);
+    tm* ptr = localtime(&now);
+    // 设置日期为当前日期，如果想要计算过去日期，可以将数字加上负号
+    currentDate.tm_mday = ptr->tm_mday;
+    currentDate.tm_mon = ptr->tm_mon;
+    currentDate.tm_year = ptr->tm_year + 1900;
+    // 添加七天
+    currentDate.tm_mday += 7;
+    // 进行日期转换
+    mktime(&currentDate);
+    // 打印输出结果
+    cout << "Seven days from now will be: " << asctime(&currentDate);
+    return 0;
 }
+```
 
-// 计算未来一天的日期
-void calculateFutureDate(Date currentDate) {
-    // 判断是否是2月
-    if (currentDate.month == 2) {
-        // 判断是否是闰年
-        if (isLeapYear(currentDate.year)) {
-            // 如果是闰年且日期为29号，则转跳到3月
-            if (currentDate.day == 29) {
-                currentDate.month++;
-                currentDate.day = 1;
-            } else {
-                // 否则日期加一
-                currentDate.day++;
-            }
-        } else {
-            // 不是闰年且日期为28号，则转跳到3月
-            if (currentDate.day == 28) {
-                currentDate.month++;
-                currentDate.day = 1;
-            } else {
-                // 否则日期加一
-                currentDate.day++;
-            }
-        }
-    } else {
-        // 判断是否是31天的大月份
-        if ((currentDate.month == 1 || currentDate.month == 3 || currentDate.month == 5 || currentDate.month == 7 || currentDate.month == 8 || currentDate.month == 10 || currentDate.month == 12) && currentDate.day == 31) {
-            // 转跳到下一个月
-            if (currentDate.month == 12) {
-                currentDate.year++;
-                currentDate.month = 1;
-            } else {
-                currentDate.month++;
-            }
-            currentDate.day = 1;
-        } else if (currentDate.day == 30) {
-            // 转跳到下一个月（4、6、9、11月）
-            currentDate.month++;
-            currentDate.day = 1;
-        } else {
-            // 日期加一
-            currentDate.day++;
-        }
-    }
-}
+## 深入探讨
 
-// 计算过去一天的日期
-void calculatePastDate(Date currentDate) {
-    if (currentDate.day == 1) {
-        if (currentDate.month == 1) {
-            // 转跳到上一年
-            currentDate.year--;
-            currentDate.month = 12;
-            currentDate.day = 31;
-        } else {
-            // 转跳到上一个月
-            currentDate.month--;
-            // 判断是否是31天的大月份
-            if (currentDate.month == 1 || currentDate.month == 3 || currentDate.month == 5 || currentDate.month == 7 || currentDate.month == 8 || currentDate.month == 10 || currentDate.month == 12) {
-                currentDate.day = 31;
-            } else if (currentDate.month == 2) {
-                // 判断是否是闰年
-                if (isLeapYear(currentDate.year)) {
-                    currentDate.day = 29;
-                } else {
-                    currentDate.day = 28;
-                }
-            } else {
-                // 30天的小月份
-                currentDate.day = 30;
-            }
-        }
-    } else {
-        // 日期减一
-        currentDate.day--;
-    }
-}
+- 历史背景：计算日期的想法可以追溯到公历制定之前，人们就已经开始使用天文学来测算时间。现在，我们使用的计算机系统是基于西方历法，因此在编程中，也采用了相同的方法来计算日期。
+- 其他方法：除了使用```mktime```函数来计算日期，还可以使用其他库和算法来实现，例如C++标准库中的```chrono```库。
+- 实现细节：上面示例代码中使用了```tm```结构体来存储日期和时间，需要注意结构体的成员变量的命名规则和范围限制。
 
-// 示例输入日期为1月1日
-Date currentDate = {2019, 1, 1};
+## 参考资料
 
-// 计算未来一天的日期
-calculateFutureDate(currentDate);
-cout << "未来一天的日期为：" << currentDate.year << "-" << currentDate.month << "-" << currentDate.day << endl;
-
-// 计算
+- [C++ chrono库](https://www.cplusplus.com/reference/chrono/)
+- [时间和日期计算的历史](https://www.wikiwand.com/en/Astronomy_and_calendars_in_ancient_and_medieval_China)

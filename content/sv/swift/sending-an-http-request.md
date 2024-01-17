@@ -1,7 +1,7 @@
 ---
-title:                "Skicka en http-förfrågan"
-html_title:           "Swift: Skicka en http-förfrågan"
-simple_title:         "Skicka en http-förfrågan"
+title:                "Sända en http-förfrågan"
+html_title:           "Swift: Sända en http-förfrågan"
+simple_title:         "Sända en http-förfrågan"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "HTML and the Web"
@@ -10,44 +10,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
+Att skicka en HTTP-förfrågan är när en programmerare ber om data från en server. Det kan vara för att hämta information från en API eller för att köra en webbsida. Detta är en viktig del av webbprogrammering och används för att få tillgång till olika resurser online.
 
-Att kunna skicka HTTP-förfrågningar är en viktig del av att bygga moderna webbanvändargränssnitt. Genom att förstå hur man skickar förfrågningar kan du skapa interaktioner mellan ditt Swift-program och webbtjänster.
-
-## Hur man gör
-
+## Så här gör du:
 ```Swift
-let url = URL(string: "https://example.com")
-let request = URLRequest(url: url!)
+// Skapa en URL
+let url = URL(string: "https://api.com/users")
 
-let task = URLSession.shared.dataTask(with: request) { data, response, error in
+// Skapa en förfrågan
+var request = URLRequest(url: url!)
+
+// Ange metod, t.ex. GET eller POST
+request.httpMethod = "GET"
+
+// Skapa en URL session
+let session = URLSession(configuration: .default)
+
+// Utför förfrågan
+let task = session.dataTask(with: request) { data, response, error in
+  // Kontrollera eventuella fel
   if let error = error {
     print("Error: \(error)")
     return
   }
-  guard let data = data, let response = response as? HTTPURLResponse else {
-    print("Invalid response")
+  
+  // Kontrollera svarsstatus
+  guard let httpResponse = response as? HTTPURLResponse,
+        (200...299).contains(httpResponse.statusCode) else {
+    print("Fel svar från servern.")
     return
   }
-  print("Response status code: \(response.statusCode)")
-  print("Response body: \(String(data: data, encoding: .utf8)!)")
+  
+  // Konvertera svar till Swift-typ
+  if let data = data {
+    let decodedData = String(data: data, encoding: .utf8)
+    print("Svar från servern: \(decodedData)")
+  }
 }
 
+// Starta förfrågan
 task.resume()
 ```
 
-Kodexemplet ovan visar hur du kan skicka en enkel HTTP GET-förfrågan med Swift. Genom att använda URLSession-klassen kan du skapa en anslutning till en URL och sedan hämta data från den. I detta exempel skriver vi också ut svaret från vår förfrågan, inklusive statuskoden och svarets innehåll.
+Detta är en grundläggande kod för att skicka en HTTP-förfrågan. Det finns många andra detaljer som kan läggas till beroende på dina behov och vilken typ av data du vill hämta.
 
-## Djupdykning
+## Djupdykning:
+Det är viktigt att förstå historiska kontexter och alternativ när det gäller att skicka HTTP-förfrågningar. HTTP-protokollet har funnits sedan början av internetets uppkomst och har utvecklats över tid. Det finns också andra sätt att skicka förfrågningar, som till exempel via Sockets. Det är viktigt att förstå dessa detaljer för att välja den bästa metoden för ditt projekt.
 
-Vid skickande av HTTP-förfrågningar finns det flera saker att tänka på, såsom vilken metod som ska användas (GET, POST, PUT, etc.), om några parametrar eller en payload behöver skickas med förfrågan, och hur din app ska hantera eventuella felmeddelanden från servern. Det är också viktigt att hantera eventuella säkerhetsmekanismer som autentisering eller tokenbaserad åtkomst.
+## Se även:
+Här är några länkar som kan hjälpa dig att lära dig mer om att skicka HTTP-förfrågningar:
 
-En annan viktig aspekt att tänka på är att rikta in dig på asynkron kommunikation när du skickar HTTP-förfrågningar i Swift. Detta gör du genom att använda sig av URLSession och dess dataTask-metod, som vi använder i vårt kodexempel ovan. Detta är viktigt för att undvika att blockera huvudtråden för din app och förbättra prestandan.
-
-## Se även
-
-Här är några relaterade länkar för att hjälpa dig att utforska ämnet vidare:
-
-- [Apple Developer Documentation for URLSession](https://developer.apple.com/documentation/foundation/urlsession)
-- [A Beginner's Guide to URLSession in Swift](https://www.raywenderlich.com/960-urlsession-tutorial-getting-started)
-- [HTTP Made Really Easy](https://www.jmarshall.com/easy/http/)
+- [Apple Developer Documentation - URL Loading System](https://developer.apple.com/documentation/foundation/url_loading_system)
+- [W3 Schools - HTTP Requests](https://www.w3schools.com/js/js_http_requests.asp)
+- [NSHipster - NSURLSession](https://nshipster.com/nsurlsession/)

@@ -10,44 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## O co & dlaczego?
+Generowanie losowych liczb jest jednym z podstawowych zadań programistycznych. W skrócie, polega ono na tworzeniu sekwencji liczb w sposób losowy. Programiści często wykorzystują ten proces do symulacji przypadkowych zdarzeń lub do zabezpieczenia aplikacji, np. przez generowanie losowych haseł.
 
-Losowość jest nieodłączną częścią wielu aplikacji i systemów informatycznych. W przypadku tworzenia gier komputerowych lub symulacji, generowanie liczb losowych jest niezbędne do tworzenia różnych scenariuszy i zachowań. W programowaniu, losowe liczby mogą być również wykorzystywane do testowania funkcjonalności i wydajności programów.
-
-## Jak
-
-Generowanie liczb losowych w języku C# jest bardzo proste. Wystarczy skorzystać z klasy `Random`, która jest dostępna w przestrzeni nazw System. Najpierw należy utworzyć nowy obiekt tej klasy, a następnie użyć jednej z dostępnych metod do pobrania losowej liczby. Przykładowy kod wyglądałby następująco:
-
+## Jak to zrobić:
 ```C#
-Random rnd = new Random(); //utworzenie obiektu Random
-int randomNumber = rnd.Next(1, 10); //pobranie liczby losowej z zakresu od 1 do 10
-Console.WriteLine("Wylosowana liczba to: " + randomNumber); //wyświetlenie wylosowanej liczby
-```
-
-Powyższy kod wygeneruje losową liczbę całkowitą z zakresu od 1 do 10 i wyświetli ją na ekranie.
-
-Jeśli chcemy wygenerować liczbę zmiennoprzecinkową, możemy użyć metody `NextDouble()`:
-
-```C#
+// Przykładowy kod generujący losową liczbę całkowitą z przedziału 1-10
 Random rnd = new Random();
-double randomDouble = rnd.NextDouble(); //pobranie losowej liczby zmiennoprzecinkowej
-Console.WriteLine("Wylosowana liczba zmiennoprzecinkowa to: " + randomDouble);
+int randomNumber = rnd.Next(1, 11);
+Console.WriteLine(randomNumber);
+
+// Przykładowy kod generujący losowy łańcuch znaków o długości 8
+Random rnd = new Random();
+const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+string randomString = new string(Enumerable.Repeat(chars, 8).Select(s => s[rnd.Next(s.Length)]).ToArray());
+Console.WriteLine(randomString);
 ```
+Przykłady te wykorzystują klasę `Random` z przestrzeni nazw `System`, która pozwala na generowanie liczb losowych w programie. Metoda `Next()` pozwala na ustalenie przedziału, z którego ma zostać wylosowana liczba, a metoda `ToArray()` pozwala na przekonwertowanie wygenerowanych znaków na ciąg znaków.
 
-Warto również wspomnieć, że klasa `Random` posiada wiele innych przydatnych metod, takich jak `NextBytes()` do generowania losowych ciągów bajtów czy `NextBytes(min, max)`, dzięki której możemy wygenerować losową liczbę z określonego zakresu.
+## W głąb:
+Generowanie losowych liczb jest ważną częścią programowania od początków tej dziedziny. Jedną z pierwszych metod generowania liczb w sposób losowy była metoda tzw. *randomizer gears*, która wykorzystywała zegary mechaniczne. Obecnie istnieją również inne metody generowania liczb pseudolosowych, które są szybsze i bardziej skuteczne, np. algorytm Mersenne Twister.
 
-## Deep Dive
+Aby zapewnić większe bezpieczeństwo w aplikacjach, programiści wykorzystują również specjalne funkcje skrótu, takie jak SHA-1 lub SHA-2, do generowania losowych liczb. Szyfrowanie tych liczb jest utrudnieniem dla hakera i przeciwdziała złamaniu danych.
 
-Podczas tworzenia aplikacji, gdzie losowość jest kluczowa, warto zwrócić uwagę na kilka ważnych aspektów dotyczących generowania liczb losowych w C#.
-
-Po pierwsze, ważne jest, aby utworzyć tylko jeden obiekt klasy `Random` i korzystać z niego do generowania wszystkich liczb w naszym programie. W przeciwnym razie, jeśli będziemy tworzyć nowe obiekty przy każdym wywołaniu, możemy otrzymać nieoczekiwane wyniki lub nawet pętlę nieskończoną.
-
-Kolejną ważną kwestią jest ustawienie ziarna (seed) dla generatora liczb losowych. Domyślnie, ziarno jest ustawione na podstawie bieżącego czasu, co oznacza, że jeśli uruchomimy nasz program w tym samym momencie, otrzymamy te same wyniki. Aby temu zapobiec, możemy ustawić własne ziarno, na przykład używając wartości zegara systemowego lub losowej liczby.
-
-Ponadto, klasa `Random` nie jest w pełni losowa, a jedynie wykorzystuje funkcję matematyczną do generowania ciągu liczb pseudolosowych. Dlatego, jeśli wymagamy wysokiej jakości losowości, warto rozważyć użycie innych bibliotek lub algorytmów do generowania liczb losowych.
-
-## Zobacz także
-
-- Dokumentacja klasy `Random` w języku C# (https://docs.microsoft.com/en-us/dotnet/api/system.random)
-- Porównanie wydajności różnych metod generowania liczb losowych w C# (https://timetler.com/en/which-c-number-random-generation-is-the-most-efficient/)
-- Przykładowe zastosowanie generowania liczb losowych w grach wideo (https://www.gamasutra.com/blogs/SethStahl/20150429/241849/
+## Zobacz również:
+- Dokumentacja Microsoft dla klasy `Random`: https://docs.microsoft.com/pl-pl/dotnet/api/system.random?view=net-5.0
+- Informacje o algorytmie Mersenne Twister: https://pl.wikipedia.org/wiki/Mersenne_Twister

@@ -10,42 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i dlaczego?
+Tworzenie tymczasowych plików w Elixirze to szybki i wygodny sposób na przechowywanie danych tylko na potrzeby bieżącego wykonania programu. Programiści używają go często do zapisywania tymczasowych danych lub do testowania kodu.
 
- Jeśli jesteś programistą Elixira, na pewno wiesz, że czasami potrzebujesz stworzyć tymczasowy plik w swoim kodzie. Może to mieć różne zastosowania, na przykład do tymczasowego przechowywania danych czy też do tworzenia kopii zapasowych. W tym artykule dowiecie się jak stworzyć tymczasowy plik w Elixirze i jakie są możliwe zastosowania.
+## Jak to zrobić:
+Aby utworzyć tymczasowy plik w Elixirze, musisz wykorzystać moduł `Tempfile`. W poniższym przykładzie stworzymy plik o nazwie `temp.txt` w bieżącym katalogu, a następnie zapiszemy w nim dowolny tekst. 
 
-## Jak to zrobić
-
-Aby stworzyć tymczasowy plik w Elixirze, musisz wykorzystać jedną z bibliotek dostępnych w tym języku. Jedną z najpopularniejszych jest biblioteka ExFile, która oferuje wiele funkcji związanych z plikami.
-
-Pierwszym krokiem jest zainstalowanie biblioteki w swoim projekcie. Można to zrobić poprzez dodanie jej do pliku "mix.exs" w sekcji "deps":
+```Elixir
+file = Tempfile.open("temp.txt")
+IO.write(file.path, "To jest przykładowy tekst.")
 ```
-def deps do
-  [{:ex_file, "~> 0.1.2"}]
-end
+
+Aby potwierdzić, że plik został utworzony i zawiera nasz tekst, można wyświetlić jego zawartość za pomocą następującego polecenia:
+
+```Elixir
+IO.gets(file.path)
 ```
-Następnie należy wywołać funkcję "Temporary.file" z parametrem określającym nazwę pliku oraz ścieżkę, w której ma zostać utworzony. Przykładowo:
-```
-{:ok, file} = ExFile.Temporary.file("example", "/tmp")
-```
-Kod ten utworzy tymczasowy plik "example" w folderze "/tmp". W przypadku sukcesu, funkcja zwróci krotkę zawierającą atom ":ok" oraz stworzony plik. Można również podać dodatkowe opcje, takie jak rozszerzenie pliku czy też prefiks nazwy.
 
-Możliwości w bibliotece ExFile są bardzo szerokie i warto zapoznać się z dokumentacją, aby poznać wszystkie dostępne funkcje. 
+Wynikiem powinien być nasz zapisany tekst.
 
-## Deep Dive
+## Dogłębna analiza:
+Tworzenie tymczasowych plików jest powszechnie stosowane przez programistów już od dawna. W starszych językach programowania, takich jak C czy Java, wymagało to bardziej skomplikowanych operacji i bardzo łatwo było popełnić błąd. Dzięki modułowi `Tempfile` w Elixirze, proces ten jest prostszy i nie wymaga od nas pamiętania o zamknięciu pliku po użyciu.
 
-Stworzenie tymczasowego pliku może być bardzo przydatne w różnych sytuacjach. Niektóre z możliwych zastosowań to:
+Alternatywą dla tworzenia tymczasowych plików w Elixirze jest używanie struktur danych, takich jak mapy czy listy. Jednak w niektórych przypadkach, na przykład w testowaniu kodu, potrzebujemy pliku o rzeczywistym formacie, a nie tylko danych w pamięci.
 
-- tymczasowe przechowywanie danych w trakcie wykonywania programu
-- zapisywanie stanu w razie awarii systemu
-- tworzenie kopii zapasowych danych przed ich modyfikacją
-
-Warto również pamiętać, że wiele kolejnych operacji na plikach, takich jak odczyt czy zapis, można wykonać wykorzystując właśnie tymczasowy plik.
-
-## Zobacz też
-
-Jeśli chcesz dowiedzieć się więcej o tworzeniu plików w Elixirze, polecamy zapoznanie się z poniższymi źródłami:
-
-- [Dokumentacja biblioteki ExFile](https://hexdocs.pm/ex_file/ExFile.Temporary.html)
-- [Wprowadzenie do tworzenia plików w Elixirze](https://medium.com/@ajaypai/draft-creating-files-in-a-functional-way-with-elixir-9f53be3ec8de)
-- [Przykładowy projekt wykorzystujący tworzenie plików w Elixirze](https://github.com/ryo33/Elixir-Fake-CSV)
+## Zobacz również:
+- [Dokumentacja modułu Tempfile](https://hexdocs.pm/elixir/1.10.1/Tempfile.html)
+- [Poradnik do programowania w Elixirze](https://elixir-lang.org/getting-started/introduction.html)
+- [Tutorial: Tworzenie tymczasowych plików w Elixirze](https://hexdocs.pm/elixir/tempfile.html)

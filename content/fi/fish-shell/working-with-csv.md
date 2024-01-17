@@ -1,7 +1,7 @@
 ---
-title:                "csv-tiedostojen käsittely"
-html_title:           "Fish Shell: csv-tiedostojen käsittely"
-simple_title:         "csv-tiedostojen käsittely"
+title:                "Csv:n kanssa työskentely"
+html_title:           "Fish Shell: Csv:n kanssa työskentely"
+simple_title:         "Csv:n kanssa työskentely"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Data Formats and Serialization"
@@ -10,42 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi käyttää CSV-tiedostoja
+## Mitä & Miksi?
 
-CSV-tiedostot ovat yleinen tapa tallentaa ja jakaa taulukkomuotoista tietoa. Ne ovat erityisen käteviä, kun haluat työskennellä datan kanssa, joka on järjestetty riveihin ja sarakkeisiin. Fish Shell tarjoaa tehokkaita työkaluja CSV-tiedostojen käsittelyyn ja manipulointiin.
+CSV-tiedostot ovat yleisiä formaatteja, joita käytetään tietojen tallentamiseen ja jakamiseen. Trippeli pilkulla erotetut arvot (Comma-Separated Values) tekevät tiedostojen käsittelystä helppoa ja tehokasta. Tämän vuoksi monilla ohjelmoijilla on tarve työskennellä CSV-tiedostojen kanssa.
 
-## Miten käyttää CSV-tiedostoja Fish Shellillä
+## Miten:
 
-CSV-tiedostojen lukuun ja kirjoitukseen on olemassa valmiita Fish Shell -komentoja, jotka helpottavat työskentelyä. Esimerkiksi voit lukea CSV-tiedoston ja tallentaa sen muuttujaan käyttämällä komentoa "``csvread``":
+Fish Shell mahdollistaa CSV-tiedostojen käsittelemisen vähäisellä vaivalla. Alla on pari esimerkkiä:
 
-```Fish Shell
-set data (csvread example.csv)
+```
+# Lukee CSV-tiedoston rivi kerrallaan ja tulostaa sen
+set csv_data (csvread -d ';' "example.csv")
+for row in $csv_data
+    echo $row
+end
+
+# Muokkaa CSV-tiedoston sisältöä ja tallentaa muutokset
+set csv_data (csvread -d ';' "example.csv")
+set new_row "John;Doe;john@doe.com"
+set new_data (string join "\n" $csv_data $new_row)
+echo $new_data > "example.csv"
 ```
 
-Tämän jälkeen voit käsitellä muuttujassa olevaa dataa kuten tavallista taulukkoa. Voit esimerkiksi tulostaa taulukon ensimmäisen rivin käyttämällä "``echo``" -komentoa:
+## Syväsukellus:
 
-```Fish Shell
-echo $data[1]
-```
+CSV-tiedostot ovat olleet käytössä jo vuodesta 1972 lähtien ja ne ovat edelleen suosittuja tietojen tallentamiseen. Vaikka Fish Shell tarjoaa kätevän tavan käsitellä CSV-tiedostoja, on olemassa myös muita vaihtoehtoja, kuten awk ja sed. Fish Shellin sisäinen csvread-toiminto hyödyntää csvkit-kirjastoa, joka taas perustuu Pythonin csv-mooduliin.
 
-Tämä tulostaa ensimmäisen rivin muodossa "``arvo1, arvo2, arvo3``".
+## Katso myös:
 
-CSV-tiedostoon kirjoittaminen on yhtä helppoa. Voit käyttää "``csvwrite``" -komentoa ja määritellä sarakkeiden erotinmerkin sekä haluamasi tiedostonimen:
-
-```Fish Shell
-set data (table arvo1 arvo2 arvo3)
-csvwrite -d "," example_new.csv $data
-```
-
-Tämä luo uuden CSV-tiedoston nimeltä "``example_new.csv``", jossa on kolme saraketta ja yksi rivi.
-
-## Syvä sukellus CSV-tiedostojen käsittelyyn
-
-CSV-tiedostojen käsittely Fish Shellillä menee paljon syvemmälle kuin vain lukemiseen ja kirjoittamiseen. Voit käyttää monipuolisia ominaisuuksia, kuten sarakkeiden ja rivien suodattamista, muokkaamista ja yhdistämistä. Voit myös muuntaa CSV-tiedoston muiden tiedostomuotojen välillä.
-
-Fish Shellin virallinen verkkosivusto tarjoaa kattavan dokumentaation CSV-tiedostojen käsittelystä. Kannattaa tutustua näihin ohjeisiin saadaksesi lisää tietoa ja hyödyntää Fish Shellin mahdollisuuksia CSV-tiedostojen työskentelyssä.
-
-## Katso myös
-
-- [Fish Shell - Virallinen verkkosivusto](https://fishshell.com/)
-- [Fish Shellin dokumentaatio CSV-tiedostojen käsittelystä](https://fishshell.com/docs/current/cmds/csv.html)
+Lisää tietoa Fish Shellin käyttämisestä CSV-tiedostojen kanssa löydät täältä: https://fishshell.com/docs/current/cmds/csvread.html

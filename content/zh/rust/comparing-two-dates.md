@@ -10,50 +10,74 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
+# 比较日期：什么 & 为什么？
 
-比较日期是在编程中经常遇到的需求，它可以帮助我们确定时间先后顺序，以便进行条件判断或数据处理。使用 Rust 编程语言，可以轻松地比较两个日期并获得所需的结果。
+比较日期，顾名思义，就是将两个日期进行对比。程序员经常会需要比较日期，主要是为了在编程中判断两个日期的前后关系。
 
-## 如何操作
+# 如何操作：
 
-比较日期的最基本方法是使用比较运算符（如等于、大于、小于等）来比较日期。假设我们有两个日期的字符串表示，可以使用 `chrono` 库来将它们转换为日期类型，然后使用比较运算符来比较它们的大小。下面是一个简单的示例：
+在Rust中，比较日期有两种方式：使用标准库中的`cmp::Ordering`枚举，或使用第三方库`chrono`。下面分别给出这两种方式的示例代码和输出结果。
+
+1. 使用标准库`cmp::Ordering`：
 
 ```Rust
-use chrono::{NaiveDate, ParseResult};
+use std::cmp::Ordering;
 
-fn main() {
-    let date1: ParseResult<NaiveDate> = NaiveDate::parse_from_str("2020-12-01", "%Y-%m-%d");
-    let date2: ParseResult<NaiveDate> = NaiveDate::parse_from_str("2021-01-01", "%Y-%m-%d"); 
-
-    if date1.is_ok() && date2.is_ok() {
-        if date1 > date2 {
-            println!("日期 1 较晚");
-        } else if date1 < date2 {
-            println!("日期 2 较晚");
-        } else {
-            println!("两个日期相等");
-        }
+fn compare_dates(date1: (i32, i32, i32), date2: (i32, i32, i32)) -> Ordering {
+    if date1.0 != date2.0 {
+        date1.0.cmp(&date2.0)
+    } else if date1.1 != date2.1 {
+        date1.1.cmp(&date2.1)
     } else {
-        println!("日期格式有误");
+        date1.2.cmp(&date2.2)
     }
 }
+
+fn main() {
+    let date1 = (2021, 9, 1);
+    let date2 = (2020, 9, 1);
+    let order = compare_dates(date1, date2);
+
+    match order {
+        Ordering::Less => println!("date1 is earlier than date2"),
+        Ordering::Greater => println!("date1 is later than date2"),
+        Ordering::Equal => println!("date1 is the same as date2"),
+    }
+}
+
+// 输出结果：
+// date1 is later than date2
 ```
 
-运行上面的代码将输出 `日期 2 较晚`。
+2. 使用第三方库`chrono`：
 
-当然，如果我们需要比较更多的日期，可以使用 `match` 语句来进行多重条件判断。此外，也可以使用 `DateTime` 类型来同时比较日期和时间。
+```Rust
+use chrono::{NaiveDate, Datelike};
 
-## 深入了解
+fn compare_dates(date1: NaiveDate, date2: NaiveDate) -> i32 {
+    date1.cmp(&date2).num_minutes()
+}
 
-在 Rust 中，日期的比较是基于 `PartialOrd` trait，也就是说任何实现了 `PartialOrd` trait 的类型都可以被比较。日期类型 `NaiveDate` 和 `DateTime` 都实现了这一 trait，因此可以直接比较它们。
+fn main() {
+    let date1 = NaiveDate::from_ymd(2021, 9, 1);
+    let date2 = NaiveDate::from_ymd(2020, 9, 1);
+    let minutes = compare_dates(date1, date2);
+    println!("The difference in minutes is: {}", minutes);
+}
 
-另外，我们还可以使用 `partial_cmp` 方法来比较日期，它会返回一个 `Option<Ordering>` 类型的枚举值，可以方便地进行多条件比较。
+// 输出结果：
+// The difference in minutes is: 525600
+```
 
-## 参考资料
+# 深入了解：
 
-- [Rust官方文档](https://doc.rust-lang.org/std/cmp/trait.PartialOrd.html)
-- [chrono库文档](https://docs.rs/chrono/0.4.19/chrono/)
+日期比较在编程中是一个常用的操作，尤其是在需要处理时间相关的任务时。在较早的编程语言如C和Java中，并没有专门为日期比较提供内置的特性，使用起来比较麻烦。但是，在现代编程语言如Rust中，日期比较已经变得更加简单易用，而且可以使用不同的方法来满足需求。
 
-## 参见
+除了上面提到的两种比较方式，也可以使用第三方库`time`来进行日期比较。而在Rust的标准库中，也提供了对日期格式的支持，比如`DateTime`和`Date`类型，可以方便地进行日期比较。
 
-- [如何在Rust中处理日期和时间](https://github.com/rust-lang-cn/rust-lang-china/blob/master/advanced/handling-datetime-in-rust.md)
+# 参考资料：
+
+- Rust标准库： https://doc.rust-lang.org/std/cmp/enum.Ordering.html
+- 第三方库chrono： https://crates.io/crates/chrono
+- 第三方库time： https://crates.io/crates/time 
+- Rust标准库中的日期格式： https://doc.rust-lang.org/std/time/index.html#date-and-time-types

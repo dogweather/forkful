@@ -1,7 +1,7 @@
 ---
-title:                "Lancer un nouveau projet"
-html_title:           "Ruby: Lancer un nouveau projet"
-simple_title:         "Lancer un nouveau projet"
+title:                "Commencer un nouveau projet"
+html_title:           "Ruby: Commencer un nouveau projet"
+simple_title:         "Commencer un nouveau projet"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Getting Started"
@@ -10,39 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Quoi et pourquoi?
 
-Si vous êtes prêts à plonger dans le monde de la programmation, Ruby est un excellent langage à apprendre. Avec une syntaxe simple et élégante, il est facile à lire et à comprendre, ce qui en fait l'un des langages de choix pour les débutants en programmation. En apprenant Ruby, vous pourrez créer des applications web, des jeux et bien plus encore.
+Démarrer un nouveau projet en Ruby, c'est créer une application ou un programme informatique à partir de zéro. Les programmeurs le font pour relever de nouveaux défis, résoudre des problèmes ou mettre en œuvre de nouvelles idées.
 
-## Comment faire
+## Comment faire:
 
-Pour commencer un nouveau projet en Ruby, vous devez d'abord installer Ruby sur votre ordinateur. Vous pouvez télécharger et installer la dernière version stable sur le site officiel de Ruby. Une fois Ruby installé, vous pouvez ouvrir votre éditeur de code préféré et commencer à écrire du code en utilisant la syntaxe simple et intuitive de Ruby.
-
-Voici un exemple de code Ruby qui affiche "Bonjour le monde!" dans la console :
+Pour commencer un nouveau projet en Ruby, voici quelques étapes à suivre:
 
 ```Ruby
+# 1. Installer Ruby sur votre ordinateur
+# 2. Créer un dossier pour votre projet
+# 3. Ouvrir un éditeur de code comme Visual Studio Code ou Atom
+# 4. Écrire votre code Ruby dans un fichier avec l'extension .rb
+# 5. Exécuter votre code en utilisant la commande ruby nom_du_fichier.rb
+```
+Voici un exemple de code:
+
+```Ruby
+# Hello World en Ruby
 puts "Bonjour le monde!"
 ```
+Et voici le résultat attendu:
 
-En exécutant ce code, vous devriez voir "Bonjour le monde!" s'afficher dans la console. Félicitations, vous avez écrit votre premier programme en Ruby ! Maintenant, vous pouvez continuer à apprendre les bases de la programmation en explorant les concepts tels que les variables, les conditions et les boucles.
+```
+Bonjour le monde!
+```
 
-## Plongée plus profonde
+## Plongée en profondeur:
 
-L'un des avantages de Ruby est sa communauté active et son écosystème riche en bibliothèques et en frameworks. En utilisant ces outils, vous pouvez accélérer considérablement le processus de développement de votre projet. Voici quelques-uns des outils populaires en Ruby :
+L'une des raisons pour lesquelles les programmeurs choisissent Ruby pour leurs projets est sa syntaxe simple et lisible, qui en fait un langage idéal pour les débutants. Ruby a été créé en 1995 par Yukihiro Matsumoto, et il est largement utilisé pour construire des applications web, des jeux et des outils de développement. Il existe également des alternatives telles que Python et JavaScript pour créer des projets, mais Ruby a une communauté de développeurs active et un grand nombre de bibliothèques open-source disponibles.
 
-- Ruby on Rails : un framework web puissant et populaire pour construire des applications web.
-- Sinatra : un framework minimaliste pour créer des applications web simples et légères.
-- RSpec : une bibliothèque de tests qui vous aide à écrire des tests automatisés pour votre code.
-- Pry : un débogueur interactif qui vous permet d'explorer votre code et de comprendre son fonctionnement.
+Pour démarrer un projet en Ruby, il est utile de connaître quelques éléments de base tels que les variables, les boucles et les conditions. Vous pouvez également utiliser des frameworks comme Ruby on Rails pour construire des applications web plus rapidement et plus efficacement.
 
-En utilisant ces outils et en explorant la communauté en ligne, vous pouvez trouver des solutions efficaces pour vos projets en Ruby.
+## À voir aussi:
 
-## Voir aussi
-
-- [Site officiel de Ruby](https://www.ruby-lang.org/fr/)
-- [Ruby on Rails](https://rubyonrails.org/)
-- [Sinatra](http://sinatrarb.com/)
-- [RSpec](http://rspec.info/)
-- [Pry](https://github.com/pry/pry)
-
-Maintenant que vous avez une compréhension de base de Ruby, n'hésitez pas à explorer davantage et à construire des projets passionnants en utilisant ce langage polyvalent. Bonne programmation!
+- [Ruby Installation Guide](https://www.ruby-lang.org/en/documentation/installation/)
+- [Ruby pour débutants](https://ruby-doc.com/docs/ProgrammingRuby/)
+- [Ruby on Rails Documentation](https://guides.rubyonrails.org/)

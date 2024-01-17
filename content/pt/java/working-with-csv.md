@@ -10,69 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+## O que é CSV e por que os programadores o utilizam?
+Trabalhar com CSV (Valores Separados por Vírgulas) é uma maneira de manipular dados em formato de tabela utilizando texto simples. Isso permite que os programadores possam facilmente importar e exportar dados de planilhas e bancos de dados. Além disso, o formato CSV é amplamente suportado por diferentes linguagens de programação e aplicações, tornando-o uma escolha popular entre os programadores.
 
-CSV (Comma-Separated Values) é um formato de arquivo utilizado para armazenar e transferir dados tabulares de forma simples e compatível com uma ampla gama de softwares. Trabalhar com CSV no Java pode ser útil para importar e exportar dados de um banco de dados, gerar relatórios ou realizar integrações com outras aplicações. 
+## Como fazer:
+Uma das maneiras mais simples de trabalhar com CSV em Java é utilizando a biblioteca OpenCSV. Aqui está um exemplo básico de como ler e imprimir dados de um arquivo CSV:
 
-## Como fazer
-
-Para trabalhar com CSV no Java, existem diversas bibliotecas disponíveis. Uma das mais populares é a Apache Commons CSV, que oferece uma API simples e fácil de usar. O primeiro passo é adicionar a dependência da biblioteca em seu projeto. No Maven, basta adicionar a seguinte linha no arquivo pom.xml:
-```Java
-<dependency>
-    <groupId>org.apache.commons</groupId>
-    <artifactId>commons-csv</artifactId>
-    <version>1.8</version>
-</dependency>
 ```
+import com.opencsv.CSVReader;
 
-Com a biblioteca adicionada, podemos começar a ler e escrever em arquivos CSV. Veja um exemplo de como ler um arquivo CSV com a biblioteca Apache Commons CSV e imprimir seus dados:
-```Java
-import java.io.FileReader;
-import java.io.IOException;
-
-import org.apache.commons.csv.CSVFormat;
-import org.apache.commons.csv.CSVParser;
-import org.apache.commons.csv.CSVRecord;
-
-public static void main(String[] args) throws IOException {
-    // Criando um parser para o arquivo utilizando o formato padrão de CSV
-    CSVParser parser = CSVParser.parse(new FileReader("caminho/do/arquivo.csv"), CSVFormat.DEFAULT);
-    // Iterando sobre as linhas do arquivo
-    for (CSVRecord record : parser) {
-        // Imprimindo os dados da linha atual
-        System.out.print(record.get(0)); // imprime a primeira coluna
-        System.out.print(record.get("coluna")); // imprime a coluna com o nome "coluna"
+public class LeitorCSV {
+    public static void main(String[] args) {
+        try {
+            CSVReader reader = new CSVReader(new FileReader("dados.csv"));
+            String[] linha;
+            while ((linha = reader.readNext()) != null) {
+                for (String coluna : linha) {
+                    System.out.print(coluna + " ");
+                }
+                System.out.print("\n");
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
 ```
-
-Além de ler, também podemos escrever em arquivos CSV com a biblioteca Apache Commons CSV. Veja um exemplo de como criar um arquivo CSV e adicionar dados a ele:
-```Java
-import java.io.FileWriter;
-import java.io.IOException;
-
-import org.apache.commons.csv.CSVFormat;
-import org.apache.commons.csv.CSVPrinter;
-
-public static void main(String[] args) throws IOException {
-    // Criando um writer para o arquivo utilizando o formato padrão de CSV
-    CSVPrinter printer = new CSVPrinter(new FileWriter("caminho/do/arquivo.csv"), CSVFormat.DEFAULT);
-    // Adicionando dados ao arquivo
-    printer.printRecord("dado1", "dado2", "dado3"); // adiciona uma linha com os dados na ordem especificada
-    printer.printRecord("dado4", "dado5", "dado6");
-    // Fechando o writer
-    printer.close();
-}
+Saída:
+```
+Nome Sobrenome Idade
+João Silva 25
+Maria Santos 30
+Carlos Silva 20
 ```
 
-## Aprofundando-se
+## Profundidade:
+O formato CSV foi criado na década de 1970 como uma maneira simples de armazenar dados em planilhas eletrônicas. Atualmente, existem outras alternativas de formato de arquivo para armazenamento de dados estruturados, como JSON e XML. No entanto, o CSV ainda é amplamente utilizado por sua simplicidade e facilidade de uso. Além disso, existem outras bibliotecas Java disponíveis, além do OpenCSV, que permitem trabalhar com CSV.
 
-Trabalhar com CSV pode ser ainda mais interessante quando precisamos lidar com situações mais complexas, como arquivos com diferentes tipos de dados, delimitadores especiais ou até mesmo dados faltantes. A biblioteca Apache Commons CSV oferece diversos métodos e configurações para lidar com esses casos, por isso é importante ter conhecimento sobre suas funcionalidades. 
-
-Além disso, é possível utilizar outras bibliotecas no Java para trabalhar com CSV, como por exemplo a opencsv e a Super CSV. Vale a pena explorar essas opções para escolher qual melhor se adequa às suas necessidades.
-
-## Consulte também
-
-- [Documentação da biblioteca Apache Commons CSV](https://commons.apache.org/proper/commons-csv)
-- [Exemplos de código com CSV no Java](https://www.baeldung.com/apache-commons-csv)
-- [Comparação entre diferentes bibliotecas de CSV em Java](https://www.baeldung.com/java-csv-libraries)
+## Veja também:
+- [OpenCSV docs] (http://opencsv.sourceforge.net/)
+- [Tutorial: Lendo e escrevendo arquivos CSV em Java] (https://www.baeldung.com/java-csv)
+- [Diferentes opções de bibliotecas para trabalhar com CSV em Java] (https://stackoverflow.com/questions/101100/csv-api-for-java)

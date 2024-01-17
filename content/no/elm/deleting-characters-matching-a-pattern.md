@@ -1,7 +1,7 @@
 ---
-title:                "Slette tegn som matcher et mønster"
-html_title:           "Elm: Slette tegn som matcher et mønster"
-simple_title:         "Slette tegn som matcher et mønster"
+title:                "Sletting av tegn som samsvarer med et mønster"
+html_title:           "Elm: Sletting av tegn som samsvarer med et mønster"
+simple_title:         "Sletting av tegn som samsvarer med et mønster"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -10,36 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hva & Hvorfor?
+Å slette tegn som matcher et mønster er en vanlig oppgave for programmere. Dette innebærer å fjerne spesifikke tegn eller tegnkombinasjoner fra en streng, basert på et forhåndsdefinert mønster. Dette kan være nyttig for å rydde opp i data, filtrere ut uønskede tegn eller formatere tekster på en mer konsistent måte.
 
-Å slette tegn som matcher et mønster er en nødvendig funksjon i mange programmeringsspråk, inkludert Elm. Dette kan hjelpe deg med å rydde opp i tekststrenger og fjerne uønskede tegn eller ord.
+## Hvordan:
+```Elm
+import String
 
-## Slik gjør du det
+-- Sletter alle tegn i en streng som matcher mønsteret [A-Z]
 
-For å slette tegn som matcher et mønster i Elm, kan du bruke den innebygde funksjonen "String.filter". Denne funksjonen tar inn et mønster og en tekststreng, og returnerer en ny tekststreng hvor alle tegn som matcher mønsteret er slettet. Her er et enkelt eksempel på hvordan du kan bruke denne funksjonen:
+deleteCharacters: String -> String
+deleteCharacters str =
+  String.filter (\c -> c `List.member` ['A'..'Z']) str
 
-```elm
--- Sletting av alle tall i en tekststreng
-String.filter (\char -> not (Char.isDigit char)) "abc123def"
--- Output: "abcdef"
+-- Input: "Here Are Some Numbers: ABC123"
+-- Output: "re re me  umers: 123"
 ```
 
-Du kan også bruke regex (regular expressions) for å identifisere og slette spesifikke mønstre i tekststrengen. Elm har en innebygd regex-modul som gjør dette enkelt. Her er et eksempel på hvordan du kan bruke regex for å slette alle punktum i en tekststreng:
+Det er flere måter å implementere denne funksjonen på, avhengig av utfordringen du står overfor og språket du bruker. Ved hjelp av Elm sin innebygde String modul kan du filtrere ut uønskede tegn med `String.filter` og `List.member` funksjonene.
 
-```elm
-import Regex exposing (..)
+## Dypdykk:
+Å slette tegn som matcher et mønster er ikke en ny oppgave i programmering og har blitt løst på ulike måter gjennom årene. I tillegg til å bruke filter funksjoner, kan du også bruke regex (regular expressions) for mer avanserte og komplekse mønstre. Det finnes også andre funksjoner i Elm sin String modul som kan være nyttig, som for eksempel `String.replace` for å erstatte tegn som matcher et mønster.
 
--- Sletting av alle punktum i en tekststreng
-Regex.replace (Regex.regex "\\.") (\_ -> "") "abc.def.ghi"
--- Output: "abcdefghi"
-```
-
-## Dypdykk
-
-Når du bruker "String.filter" til å slette tegn som matcher et mønster, må du være klar over at funksjonen også fjerner mellomrom og linjeskift. Dette kan være uønsket i visse situasjoner, for eksempel hvis du ønsker å fjerne enkelte ord eller uttrykk fra en tekststreng. I slike tilfeller kan det være bedre å bruke regex, som gir deg mer fleksibilitet. Du kan også kombinere regex-funksjoner som "replace" og "replacePattern" for å få mer avanserte slettemuligheter.
-
-## Se også
-
-- [Elm dokumentasjon for String.filter](https://package.elm-lang.org/packages/elm/core/latest/String#filter)
-- [Elm dokumentasjon for Regex](https://package.elm-lang.org/packages/elm/regex/latest/)
-- [En guide til regex i Elm](https://wilsonzhang2004.github.io/elm/2019/03/05/learn-regex-with-elm.html)
+## Se også:
+- [Elm String modul dokumentasjon](https://package.elm-lang.org/packages/elm/core/latest/String)
+- [Regex i Elm](https://guide.elm-lang.org/interop/regex.html)
+- [Andre løsninger på å slette tegn i programmeringsspråk som Java og Python](https://www.geeksforgeeks.org/remove-all-occurrences-of-a-character-from-a-string-in-python/)

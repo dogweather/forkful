@@ -10,13 +10,11 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co & Dlaczego?
 
-Jeśli kiedykolwiek zastanawiałeś się, jak policzyć datę w przyszłości lub przeszłości, ten artykuł jest dla Ciebie! Może mieć to zastosowanie w wielu różnych sytuacjach, na przykład planowaniu wydarzeń lub obliczaniu wynagrodzenia w określonym dniu.
+Obliczanie daty w przeszłości lub przyszłości jest częstym zadaniem programistów, która polega na wyznaczaniu daty, która jest określoną ilość dni w przyszłości lub przeszłości od danej daty. Programiści często wykonują to zadanie w swoich projektach, ponieważ pozwala to na śledzenie i prognozowanie przyszłych wydarzeń.
 
-## Jak to zrobić
-
-Obliczanie daty w przyszłości lub przeszłości jest całkiem proste w języku C++. Wystarczy użyć funkcji `time()` i `localtime()`, a następnie wykorzystać odpowiednie tryby obliczeń.
+## Jak?
 
 ```C++
 #include <iostream>
@@ -24,43 +22,47 @@ Obliczanie daty w przyszłości lub przeszłości jest całkiem proste w języku
 
 using namespace std;
 
-int main() {
-    // Ustawienie daty i godziny aktualnego czasu
-    time_t now = time(0);
-    
-    // Zamiana aktualnego czasu na strukturę tm
-    tm *current = localtime(&now);
-    
-    // Obliczanie daty w przyszłości
-    current->tm_mday += 10; // Dodajemy 10 dni do aktualnego dnia
-    mktime(current); // Zamiana na poprawną datę
-    
-    // Wyświetlenie daty w przyszłości
-    cout << "Data za 10 dni: " << current->tm_mday << "/" << current->tm_mon + 1 << "/" << current->tm_year + 1900 << endl;
-    
-    // Obliczanie daty w przeszłości
-    current->tm_mday -= 17; // Odejmujemy 17 dni od aktualnego dnia
-    mktime(current); // Zamiana na poprawną datę
-    
-    // Wyświetlenie daty w przeszłości
-    cout << "Data sprzed 17 dni: " << current->tm_mday << "/" << current->tm_mon + 1 << "/" << current->tm_year + 1900 << endl;
-    
+int main()
+{
+    // obecna data
+    time_t t = time(NULL);
+    tm* now = localtime(&t);
+
+    // obliczenie daty w przeszłości - 30 dni temu
+    now->tm_mday -= 30;
+    mktime(now);
+
+    // wyświetlenie daty
+    cout << now->tm_mday << "." << now->tm_mon + 1 << "." << now->tm_year + 1900 << endl;
+
+    // obliczenie daty w przyszłości - 30 dni od obecnej daty
+    now->tm_mday += 30;
+    mktime(now);
+
+    // wyświetlenie daty
+    cout << now->tm_mday << "." << now->tm_mon + 1 << "." << now->tm_year + 1900 << endl;
+
     return 0;
 }
 ```
 
-Output: 
+Output:
 ```
-Data za 10 dni: 22/8/2021
-Data sprzed 17 dni: 19/8/2021
+29.10.2020
+29.12.2020
 ```
 
-## Głębszy wgląd
+## Głębsza analiza
 
-W języku C++ istnieje wiele sposobów na obliczanie daty w przyszłości lub przeszłości, na przykład używając biblioteki `chrono` lub funkcji `strftime()`. Dodatkowo, można również uwzględnić rok przestępny i uwzględnić różnice w czasie pomiędzy strefami czasowymi.
+1. Kontekst historyczny: Obliczanie daty w przeszłości lub przyszłości było niegdyś zadaniem wymagającym dużego nakładu pracy i obliczeń. Jednak dzięki rozwojowi technologicznemu i narzędziom, takim jak biblioteka <ctime>, programiści mogą wykonać to zadanie szybko i łatwo.
 
-## Zobacz także
+2. Alternatywy: Istnieje wiele alternatywnych sposobów na obliczanie daty w przeszłości lub przyszłości, takich jak użycie biblioteki Boost.Date_Time lub funkcji języka SQL. Wybór metody zależy od potrzeb i preferencji programisty.
 
-- [Dokumentacja funkcji time()](https://www.cplusplus.com/reference/ctime/time/)
-- [Przykłady użycia strftime()](https://www.tutorialspoint.com/cplusplus/cpp_date_time.htm)
-- [Biblioteka chrono w C++](https://www.geeksforgeeks.org/chrono-in-c/)
+3. Szczegóły implementacyjne: W przykładowym kodzie użyto funkcji mktime() do przeliczenia daty na ilość sekund oraz struktury tm do przechowywania informacji o dacie. Należy również zwrócić uwagę na fakt, że miesiące są numerowane od 0, a nie od 1, dlatego przy wyświetlaniu daty należy dodać 1 do wartości tm_mon.
+
+## Zobacz też
+
+- <time.h> - biblioteka C zawierająca funkcje do manipulacji czasem
+- <ctime> - biblioteka C++ zawierająca funkcje do manipulacji czasem
+- Boost.Date_Time - biblioteka C++ do obliczania i manipulacji datami
+- Funkcje daty i czasu w języku SQL - alternatywny sposób na obliczanie daty w bazach danych

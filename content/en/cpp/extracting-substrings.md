@@ -10,51 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##Why
-So, you're writing a C++ program and you need to extract a substring from a larger string. Maybe you need to separate a date into its individual components or get a specific word from a sentence. Whatever your reason may be, extracting substrings is a common and useful task in programming.
+## What & Why?
 
-##How To
-To start off, let's define what a substring is. A substring is a sequence of characters within a larger string. In C++, substrings are represented as a new string object that contains the specified characters from the original string.
+Extracting substrings is a common task in programming where a certain portion of a larger string is separated out and stored in a separate variable. This can be useful in various situations such as parsing data, manipulating text, or searching for specific patterns within a string. By breaking down a larger string into smaller substrings, programmers can manipulate and organize data in a more efficient manner.
 
-To extract a substring in C++, we use the `substr()` function from the `<string>` library. The function takes in two parameters: the starting index and the length of the substring. For example:
+## How to:
 
-```C++
-#include <iostream>
-#include <string>
-
-using namespace std;
-
-int main() {
-    string s = "Hello World";
-    string sub = s.substr(6, 5); //starting index = 6, length = 5
-    cout << sub << endl; //Outputs "World"
-}
-```
-
-You can also use the `substr()` function with strings stored in variables:
+Extracting substrings can be easily done in C++ using the `substr()` function which takes in two arguments - the starting index and the length of the desired substring. Here's an example of extracting a substring from a string:
 
 ```C++
-string s1 = "Welcome to";
-string s2 = "C++ programming";
-string sub = s1.substr(2, 6) + s2.substr(0, 4); //Outputs "lcomC++"
+string name = "John Doe";
+string firstName = name.substr(0,4); // extracts substring starting at index 0 with length 4
+cout << firstName << endl; // output: John
 ```
 
-It's important to note that the starting index of a string in C++ is 0, not 1. So, the first character of a string has an index of 0.
+You can also extract substrings from user input using the `cin` function and then manipulate them as needed. For example:
 
-##Deep Dive
-Here are some other things to keep in mind when extracting substrings in C++:
+```C++
+string sentence;
+cout << "Enter a sentence: ";
+cin >> sentence;
 
-- The `substr()` function can also take in a single parameter, the starting index, which will return a substring starting from the specified index until the end of the string.
-- Negative values for the length parameter will not work, and an empty string will be returned.
-- If the starting index is greater than or equal to the length of the string, an empty string will be returned.
+// extracting a specific word from the sentence
+string word = sentence.substr(9,5); // extracts substring starting at index 9 with length 5
+cout << word << endl; // assuming input sentence was "Hello World", output: World
+```
 
-And that's all there is to it! Now you can confidently extract substrings in your C++ programs.
+## Deep Dive:
 
-##See Also
-To learn more about the `substr()` function and other string operations in C++, check out these resources:
+The `substr()` function was introduced in C++11 and is part of the `<string>` header library. Before this, programmers had to use the `substr()` function from the C library `string.h` which had a different syntax and was not as efficient. Another alternative to `substr()` is using pointers to manipulate string data, but this can be more complex and error-prone.
 
-- [C++ string documentation](https://www.cplusplus.com/reference/string/string/)
-- [Tutorialspoint - C++ String Operations](https://www.tutorialspoint.com/cplusplus/cpp_strings.htm)
-- [GeeksforGeeks - C++ Strings](https://www.geeksforgeeks.org/cpp-strings/)
+When extracting a substring, it's important to keep in mind that the index starts at 0 and the length includes the starting character. For example, in the string "Hello World", the index for the letter "W" would be 6 and the length for extracting the word "World" would be 5.
+
+## See Also:
+
+To learn more about manipulating strings in C++, check out the official documentation on `substr()` function: [cplusplus.com/reference/string/string/substr/](https://www.cplusplus.com/reference/string/string/substr/)
+
+You can also explore other string manipulation methods such as `find()`, `replace()`, and `insert()`.
 
 Happy coding!

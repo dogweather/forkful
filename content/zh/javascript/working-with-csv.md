@@ -10,45 +10,64 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
+## 什么 & 为什么？
 
-CSV是一种常用的数据格式，而Javascript是一种强大的编程语言。因此，当两者结合起来使用时，我们可以轻松地处理大量的数据文件。这就是为什么学习如何使用Javascript来处理CSV文件是值得的原因。
+CSV（逗号分隔值）是一种用来存储表格数据的文件格式，通常由逗号或者分号来分隔不同的数据项。程序员们经常要处理CSV文件，是因为它们提供了一种简单，易于读取和写入的格式来存储数据，并且可以轻松地与其他编程语言进行交互。
 
-## 如何做
-
-首先，我们需要了解如何读取和写入CSV文件。为了读取CSV文件，我们可以使用“fs”模块，并使用“readFileSync”和“writeFileSync”方法来读取和写入文件。然后，我们可以使用“csv-parser”模块来解析CSV文件并将其转换为对象数组。以下是一个简单的例子：
-
-```Javascript
-const fs = require('fs');
+## 如何：
+```
+// 1. 读取CSV文件
 const csv = require('csv-parser');
+const fs = require('fs');
 
-// 读取CSV文件
-const csvData = fs.readFileSync('data.csv', 'utf-8');
-const output = [];
-
-// 解析CSV文件
-csvData.pipe(csv())
+fs.createReadStream('file.csv')
+  .pipe(csv())
   .on('data', (row) => {
-    // 将每一行数据存储为对象
-    output.push(row);
+  // 处理每一行数据
+    console.log(row);
   })
   .on('end', () => {
-    console.log(output); // 输出对象数组
+  // 结束时打印完成
+    console.log('读取完成');
   });
+
+// 2. 写入CSV文件
+const createCsvWriter = require('csv-writer').createObjectCsvWriter;
+
+const csvWriter = createCsvWriter({
+  path: 'file.csv',
+  header: [
+    {id: 'name', title: '姓名'},
+    {id: 'age', title: '年龄'}
+  ]
+});
+
+const records = [
+  {name: '张三', age: 25},
+  {name: '李四', age: 30},
+  {name: '王五', age: 35}
+];
+
+csvWriter
+  .writeRecords(records)
+  .then(() => {
+    console.log('CSV文件写入完成');
+  })
+
 ```
 
-接下来，我们还可以使用“fast-csv”模块来处理大型CSV文件，以提高速度和性能。
+输出:
+```
+{ name: '张三', age: '25' }
+{ name: '李四', age: '30' }
+{ name: '王五', age: '35' }
+CSV文件写入完成
+```
 
-## 深入探讨
+## 深入了解：
+CSV文件最早是由美国的微软和IBM公司共同开发出来，它的主要用途是在电子表格软件中导入和导出数据。但是随着互联网和网络技术的发展，CSV文件也被越来越多的程序员用来存储和传输数据。除了逗号和分号之外，CSV文件还可以用其他符号来分隔数据，比如制表符、空格等。此外，除了使用库来读取和写入CSV文件外，我们也可以手动编写代码来处理CSV文件，这需要一些额外的步骤和技巧。
 
-除了读取和写入CSV文件，我们还可以使用Javascript来执行其他操作，如排序、过滤和分组数据。我们可以通过编写自定义函数来完成这些操作，或者使用相关的第三方库。例如，可以使用“lodash”库来操作和处理大量数据。
-
-此外，在CSV文件中处理日期和时间格式也是一个常见的问题。为了解决这个问题，我们可以使用“moment”库来帮助我们转换日期和时间格式。
-
-## 参考链接
-
-- [Node.js fs模块文档](https://nodejs.org/api/fs.html)
-- [csv-parser文档](https://github.com/mafintosh/csv-parser)
-- [fast-csv文档](https://github.com/C2FO/fast-csv)
-- [lodash文档](https://lodash.com/)
-- [moment文档](https://momentjs.com/)
+## 参考链接：
+- [CSV文件格式简介](https://baike.baidu.com/item/CSV/10709?fr=aladdin)
+- [csv-parser库官方文档](https://www.npmjs.com/package/csv-parser)
+- [csv-writer库官方文档](https://www.npmjs.com/package/csv-writer)

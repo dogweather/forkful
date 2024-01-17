@@ -1,7 +1,7 @@
 ---
-title:                "Versenden einer HTTP-Anfrage mit einfacher Authentifizierung"
-html_title:           "Swift: Versenden einer HTTP-Anfrage mit einfacher Authentifizierung"
-simple_title:         "Versenden einer HTTP-Anfrage mit einfacher Authentifizierung"
+title:                "Senden einer http-Anfrage mit grundlegender Authentifizierung"
+html_title:           "Swift: Senden einer http-Anfrage mit grundlegender Authentifizierung"
+simple_title:         "Senden einer http-Anfrage mit grundlegender Authentifizierung"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "HTML and the Web"
@@ -10,52 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Warum
+## Was & Warum?
 
-Das Versenden von HTTP-Anfragen mit grundlegender Authentifizierung ist eine gängige Methode, um sicherzustellen, dass nur autorisierte Benutzer auf bestimmte Ressourcen zugreifen können. Dies ist besonders nützlich für Web- oder Mobilanwendungen, die eine sichere Kommunikation mit einem Server erfordern.
+Das Senden einer HTTP-Anfrage mit Basisauthentifizierung ist ein Prozess, bei dem ein Programmierer einen Benutzernamen und ein Passwort verwendet, um auf eine geschützte Ressource im Internet zuzugreifen. Dies wird häufig verwendet, um sicherzustellen, dass nur autorisierte Benutzer auf bestimmte Inhalte oder Funktionalitäten zugreifen können.
 
-# Wie es geht
+## So geht's:
 
-Um eine HTTP-Anfrage mit grundlegender Authentifizierung in Swift zu senden, müssen Sie zuerst eine URL-Session erstellen und eine URL für den Server angeben, an den Sie die Anfrage senden möchten. Anschließend können Sie einer URLRequest das Authentifizierungsheader-Feld hinzufügen, das die Basis64-Codierung von Benutzername und Passwort enthält. Hier ist ein Beispielcode, der eine Anfrage an die GitHub-API mit grundlegender Authentifizierung sendet:
+Um eine HTTP-Anfrage mit Basisauthentifizierung in Swift zu senden, können Sie die folgenden Schritte befolgen:
 
-```Swift
-let url = URL(string: "https://api.github.com/users/octocat/repos")!
+```
+let username = "benutzername"
+let password = "passwort"
 
-let session = URLSession.shared
+// Erstellen Sie eine URL-Komponente mit der Basis-URL der Ressource
+let url = URL(string: "https://beispiel.com/geschützte-ressource")!
 
-// Erstelle eine URLRequest mit der URL und der Anfrageart angeben
+// Erstellen Sie eine Anfrage mit dem URLRequest-Objekt und fügen Sie die Basisauthentifizierung hinzu
 var request = URLRequest(url: url)
-request.httpMethod = "GET"
-
-// Hinzufügen des Authentifizierungsheaders mit Basis64-Codierung
-let username = "username"
-let password = "password"
-let loginData = String(format: "%@:%@", username, password).data(using: String.Encoding.utf8)!
-let base64LoginString = loginData.base64EncodedString()
+let loginString = "\(benutzername):\(passwort)"
+let loginData = loginString.data(using: .utf8)
+let base64LoginString = loginData?.base64EncodedString()
 request.setValue("Basic \(base64LoginString)", forHTTPHeaderField: "Authorization")
 
-// Senden der Anfrage
-let task = session.dataTask(with: request) { (data, response, error) in
-    // Verarbeiten der Antwort
+// Senden Sie die Anfrage mit URLSession
+let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+    // Verarbeiten Sie die Antwort und gegebenenfalls den Fehler
     if let error = error {
-        print("Fehler: \(error)")
-    } else if let data = data {
-        print("Daten empfangen: \(data)")
+        print("Fehler beim Senden der Anfrage: \(error)")
+        return
     }
+    guard let data = data else {
+        print("Keine Daten erhalten.")
+        return
+    }
+    // Verarbeiten Sie die erhaltenen Daten
+    print(String(data: data, encoding: .utf8)!)
 }
 task.resume()
 ```
 
-Die obige Anfrage sendet eine HTTP-GET-Anfrage an die GitHub-API, um eine Liste der Repositories für den Benutzer "octocat" abzurufen. Beachten Sie, dass der Username und das Passwort durch Ihre eigenen Anmeldedaten ersetzt werden müssen.
+Dies ist ein einfaches Beispiel, aber es zeigt, wie Sie die Basisauthentifizierung zu Ihrer Anfrage hinzufügen können.
 
-# Tiefer Einblick
+## Tiefere Einblicke:
 
-Die grundlegende Authentifizierung ist eine einfache Methode zur Authentifizierung von Benutzern, die jedoch nicht die sicherste Option ist, da die Benutzeranmeldedaten als Teil der Anfrage übertragen werden. Es ist daher wichtig, dass die Verbindung zum Server über HTTPS erfolgt, um die Kommunikation zu verschlüsseln.
+Basisauthentifizierung wurde in den späten 90er Jahren entwickelt und ist eine der ältesten Methoden zur Authentifizierung bei HTTP-Anfragen. Obwohl es weit verbreitet ist, hat es auch einige Nachteile, wie z.B. die Möglichkeit, dass Benutzername und Passwort im Klartext übertragen werden, was ein Sicherheitsrisiko darstellen kann. Alternativen zur Basisauthentifizierung sind z.B. OAuth oder API-Schlüssel.
 
-Eine Möglichkeit, die Sicherheit der grundlegenden Authentifizierung zu verbessern, ist die Verwendung von OAuth oder anderen Token-basierten Authentifizierungsmethoden, bei denen ein temporärer Token anstelle von Anmeldedaten verwendet wird. Dies macht es schwieriger für Angreifer, Zugriff auf die Konten von Benutzern zu erlangen.
+Wenn Sie genauer verstehen möchten, wie die Basisauthentifizierung funktioniert, können Sie sich das HTTP-Header-Feld "Authorization" genauer ansehen. Hier werden Benutzername und Passwort im Base64-Format codiert und mit dem Präfix "Basic" versehen, um anzuzeigen, dass es sich um Basisauthentifizierung handelt.
 
-# Siehe auch
+## Siehe auch:
 
-- [Apple Dokumentation zu URL-Session](https://developer.apple.com/documentation/foundation/urlsession)
-- [GitHub API-Dokumentation für die Authentifizierung](https://developer.github.com/v3/auth/)
-- [OAuth-Authentifizierung erklärt](https://oauth.net/2/)
+Für weitere Informationen und Beispiele zum Senden von HTTP-Anfragen in Swift können Sie unsere Artikel zu "HTTP-Anfragen in Swift" und "Verwendung von URLSession in Swift" lesen.

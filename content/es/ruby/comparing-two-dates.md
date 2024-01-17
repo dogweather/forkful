@@ -10,48 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué comparar dos fechas en Ruby?
+## ¿Qué y Por qué?
+Comparar dos fechas es una tarea común en la programación, que implica comparar dos objetos de tipo fecha para determinar cuál es la anterior o si son iguales. Esto es importante en muchas aplicaciones, como calendarios, programas de reservas o sistemas de seguimiento de tiempo. ¡Los programadores lo hacen todo el tiempo!
 
-Comparar dos fechas en Ruby es una tarea común en la programación, especialmente cuando se trabaja con datos temporales. Al comparar dos fechas, puedes determinar si una fecha es anterior, posterior o igual a otra, lo que te permite realizar diferentes acciones en tu código según la comparación.
+## Cómo hacerlo: 
 
-## Cómo comparar dos fechas en Ruby
+Utilizar Ruby para comparar dos fechas es muy sencillo. Simplemente utiliza el operador `>` (mayor que) o `<` (menor que) entre dos objetos de tipo fecha. Por ejemplo:
 
 ```Ruby
-# Crear dos objetos de fecha
-date_1 = Date.new(2021, 5, 20)
-date_2 = Date.new(2021, 6, 15)
-
-# Comparar si date_1 es anterior a date_2
-if date_1 < date_2
-  puts "date_1 es anterior a date_2"
-end
-
-# Comparar si date_1 es posterior a date_2
-if date_1 > date_2
-  puts "date_1 es posterior a date_2"
-end
-
-# Comparar si date_1 es igual a date_2
-if date_1 == date_2
-  puts "date_1 es igual a date_2"
-end
+time1 = Time.new(2021, 05, 21)
+time2 = Time.new(2021, 04, 15)
+puts time1 > time2
+# Output: true
 ```
 
-**Output:**
-```
-date_1 es anterior a date_2
-```
+## Profundizando
 
-En el código de ejemplo, hemos creado dos objetos de fecha utilizando el método `Date.new` y luego los comparamos utilizando los operadores de comparación `<` (menor que), `>` (mayor que) y `==` (igual a). Puedes utilizar estos operadores para comparar fechas tanto en formato de texto como en objetos de fecha.
+La comparación de fechas ha sido una tarea importante en la informática ya desde los primeros días de la programación. Diferentes lenguajes de programación tienen diferentes métodos de comparación de fechas, pero en Ruby, podemos simplemente utilizar los operadores `>` y `<`.
 
-## Profundizando en la comparación de dos fechas
+Sin embargo, si necesitas una comparación más precisa, puedes usar la biblioteca `Date` de Ruby, que ofrece métodos específicos para comparar fechas con mayor precisión. Otro enfoque es convertir las fechas a un número de días y luego compararlos. 
 
-Al comparar dos fechas en Ruby, es importante tener en cuenta algunos detalles. Primero, el método `Date#==` solo compara la fecha en sí, no la hora. Si necesitas comparar también la hora, puedes utilizar el método `Time#==` en su lugar. Además, también hay métodos predefinidos en Ruby para comparar si una fecha es anterior o posterior a otra basándose en diferentes unidades de tiempo, como días, meses o años. Por ejemplo, el método `Date#next_day` devuelve una nueva fecha que es el siguiente día del objeto de fecha.
+## Ver también:
 
-Para obtener más información sobre cómo comparar fechas en Ruby, puedes consultar la documentación oficial [Date](https://ruby-doc.org/stdlib-2.7.1/libdoc/date/rdoc/Date.html) y [Time](https://ruby-doc.org/stdlib-2.7.1/libdoc/time/rdoc/Time.html).
-
-## Ver también
-
-- [Cómo trabajar con fechas y tiempos en Ruby](https://www.rubyguides.com/2015/05/working-with-dates-ruby/)
-- [Documentación oficial de Date](https://ruby-doc.org/stdlib-2.7.1/libdoc/date/rdoc/Date.html)
-- [Documentación oficial de Time](https://ruby-doc.org/stdlib-2.7.1/libdoc/time/rdoc/Time.html)
+ - [La documentación oficial de Ruby sobre comparación de fechas](https://ruby-doc.org/core-3.0.1/Date.html)
+ - [Artículo de Medium sobre comparación de fechas en Ruby](https://medium.com/@thegimanator/how-to-compare-dates-in-ruby-ad9d07089a01)
+ - [Tutorial de Ruby sobre uso de la clase `Date`](https://www.rubyguides.com/2015/10/ruby-date-time/)

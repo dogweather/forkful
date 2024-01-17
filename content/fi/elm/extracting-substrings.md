@@ -1,7 +1,7 @@
 ---
-title:                "Alimerkintöjen eristäminen"
-html_title:           "Elm: Alimerkintöjen eristäminen"
-simple_title:         "Alimerkintöjen eristäminen"
+title:                "Otekirjojen erottaminen"
+html_title:           "Elm: Otekirjojen erottaminen"
+simple_title:         "Otekirjojen erottaminen"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -10,33 +10,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä ja miksi?
+Substringien erottaminen tarkoittaa osan merkkijonosta erottamista ja käyttämistä erillisenä. Tämä on tärkeää esimerkiksi silloin, kun halutaan käsitellä tiettyä osaa merkkijonosta erikseen. Ohjelmoijat käyttävät substringien erottamista monissa tilanteissa, kuten tietojen käsittelyssä tai käyttöliittymän muokkaamisessa.
 
-Miksi haluaisit erottaa osa merkkijonosta? Yksinkertaisesti sanottuna, koska joskus sinun täytyy työskennellä vain osan siitä. Ehkä haluat tulostaa vain päivämäärän tai vain osaa sähköpostiosoitteesta. Tämä on, missä substrings (osa merkkijonoista) tulevat peliin.
-
-## Miten
-
+## Miten:
 ```Elm
-myString = "Tämä on esimerkki!"
-substr = String.slice 4 15 myString
+import String
+
+myString = "Hei kaikille!"
+substring = String.slice 4 8 myString
+
+-- Outputs: "kaik"
 ```
+Ohjeessa käytetään `String` moduulia ja sen `slice` funktiota leikkaamaan merkkijonoa. Kolmella parametrilla määritetään leikatun osan alku- ja loppuindeksit. Tulostus näyttää osan merkkijonosta `"Hei kaikille!"` välillä 4-8.
 
-Tässä esimerkissä käytimme `String.slice` -funktiota erottamaan myString-muuttujasta osa merkkijonoa. Ensimmäinen parametri on aloitusindeksi ja toinen on lopetusindeksi. Tuloksena on uusi merkkijono, joka alkaa "on" ja päättyy "imerkki". Joten tulos on "on esimerkki".
+## Syvällinen sukellus:
+Substringien käyttö juontaa juurensa 1960-luvun Fortran-ohjelmointikieleen. Elm ei tarjoa valmiita funktioita substringien erottamiseen, mutta `slice` toimii hyvin yksinkertaisissa tapauksissa. Jos tarvitaan monimutkaisempia substringien erottamisia, kannattaa tutkia muita tapoja, kuten `Pattern` tai `Regular Expressions`.
 
-```Elm
-myString = "0912345678"
-substr = String.left 3 myString
-```
-
-Toisessa esimerkissä käytimme `String.left` -funktiota erottamaan myString-muuttujasta vain kolme ensimmäistä numeroa. Joten tulos on "091".
-
-Voit myös käyttää `String.drop` -funktiota poistamaan tietyn määrän merkkejä merkkijonon alusta. Esimerkiksi `String.drop 2 myString` poistaisi ensimmäiset kaksi merkkiä, joten tuloksena olisi "mä on esimerkki!".
-
-## Syvällinen sukellus
-
-Erikoistapauksissa voit tarvita enemmän kuin vain `String.slice`, `String.left` ja `String.drop`. Tällöin kannattaa tutkia `String.at`, `String.substring` ja `String.split` -funktioita. `String.at` antaa sinulle yhden merkin tietystä indeksistä, `String.substring` ei pelkästään leikkaa merkkijonoa tietystä kohdasta, mutta myös sallii negatiiviset indeksit ja `String.split` antaa sinulle listan merkkijonon osista tietyn erotinmerkin perusteella.
-
-## Katso myös
-
-- [Elm String -dokumentaatio](https://package.elm-lang.org/packages/elm-community/string-extra/latest/)
-- [Elm String -esimerkkejä](https://elm-lang.org/examples)
+## Katso myös:
+- [Elm dokumentaatio](https://elm-lang.org/docs)
+- [substring funktio Backus-Naur-notationilla](https://legacy.cs.indiana.edu/libLocal/docs/parsing/means.txt)
+- [W3Schools: String slice metodi](https://www.w3schools.com/jsref/jsref_slice_string.asp)

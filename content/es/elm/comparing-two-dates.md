@@ -10,36 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por Qué?
+## ¿Qué y por qué?
+Comparar dos fechas es un proceso común en la programación. Consiste en evaluar si una fecha es igual, anterior o posterior a otra fecha. Los programadores hacen esto para ordenar eventos, filtrar datos o verificar si una tarea está atrasada o no.
 
-Comparar dos fechas puede parecer una tarea simple, pero en realidad puede ser bastante complicado. A menudo, tenemos que realizar cálculos o comprobar si una fecha es mayor o menor que otra. En este artículo te enseñaremos cómo hacerlo de manera eficiente en Elm.
-
-## Cómo Hacerlo
-
-La forma más sencilla de comparar dos fechas en Elm es utilizando la función `Date.compare`. Esta función toma dos fechas como argumentos y devuelve un `Order` que representa si la primera fecha es menor, igual o mayor que la segunda fecha. Veamos un ejemplo:
+## ¡Cómo hacerlo!
+Usando la función `compare` de Elm, podemos comparar dos fechas y obtener un resultado de `LT` (menor),`GT` (mayor) o `EQ` (igual). Por ejemplo:
 
 ```Elm
-Date.compare (Date.fromCalendarDate 2020 01 01) (Date.fromCalendarDate 2020 01 31)
+compare May 15 2021 May 20 2021
 ```
 
-Este código devuelve una orden `LT`, que significa que la primera fecha es menor que la segunda. Veamos otro ejemplo:
+El resultado sería `LT`, ya que la fecha del primero de Mayo es anterior a la fecha del 20 de Mayo.
+
+Para comparar fechas con mayor precisión, podemos utilizar funciones como `toTime` para convertir una fecha a un valor numérico y luego compararlos. Por ejemplo:
 
 ```Elm
-Date.compare (Date.fromCalendarDate 1995 12 24) (Date.fromCalendarDate 2021 04 15)
+compare (toTime May 15 2021) (toTime May 20 2021)
 ```
 
-En este caso, la función devuelve una orden `GT`, ya que la primera fecha es mayor que la segunda. Si las dos fechas son iguales, la función devolverá una orden `EQ`.
+El resultado seguirá siendo `LT`, pero ahora se consideran las horas, minutos y segundos de las fechas.
 
-## Profundizando
+## Profundizando más
+La necesidad de comparar fechas surge de la importancia de tener un orden en las tareas y eventos. La función `compare` se basa en el estándar ISO 8601, que define el formato de fecha y hora internacionalmente aceptado.
 
-Además de la función `Date.compare`, Elm también nos ofrece otras herramientas útiles para trabajar con fechas. Por ejemplo, podemos utilizar la función `Date.add` para sumar o restar días, meses o años a una fecha determinada. También podemos utilizar la función `Date.isBefore` para comprobar si una fecha es anterior a otra.
+Otras alternativas para comparar fechas incluyen el uso de bibliotecas externas como `date-extra` o funciones personalizadas creadas por los propios programadores.
 
-Otra herramienta interesante es la biblioteca `elm-time`. Esta biblioteca nos permite realizar cálculos más complejos con fechas, como por ejemplo obtener la diferencia entre dos fechas o convertir una fecha a otro huso horario.
+La implementación de la función `compare` en Elm se basa en una comparación iterativa de los componentes de la fecha, comenzando por el año y continuando con el mes, día, hora, minutos y segundos.
 
-## Ver También
-
-A continuación, te dejamos algunos enlaces relacionados con el tema que pueden ser de tu interés:
-
-- [Documentación de la biblioteca `elm-time`](https://package.elm-lang.org/packages/elm/time/latest/)
-- [Tutorial de Elm sobre fechas y tiempo](https://dev.to/madnbay/tutorial-elm-dates-and-time-1dn)
-- [Libro Electronico "Programming Elm" - capítulo sobre fechas y tiempo](https://elmprogramming.com/dates-and-times.html)
+## Véase también
+- Documentación oficial de Elm: [Comparing two values](https://elm-lang.org/docs/syntax#comparing-values)
+- Especificación ISO 8601: [Data elements and interchange formats](https://www.iso.org/standard/70907.html)

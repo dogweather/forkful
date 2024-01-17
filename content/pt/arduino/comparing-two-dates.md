@@ -10,51 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+## O que & Por quê?
 
-Comparar datas é uma tarefa comum na programação e pode ser útil para verificar a ocorrência de eventos ou para realizar cálculos baseados na diferença entre duas datas. Neste artigo, vamos aprender como comparar duas datas usando o Arduino.
+A comparação de duas datas é um processo no qual os programadores comparam duas datas para determinar qual é a mais recente ou se ambas as datas são iguais. Isso é importante para garantir que os dados sejam organizados corretamente e para garantir que os cálculos e decisões tomadas pelo programa sejam precisos.
 
-## Como fazer
+## Como fazer:
 
-Para comparar duas datas no Arduino, primeiro precisamos converter as datas em um formato adequado. Podemos usar a biblioteca RTClib para trabalhar com datas e horários no Arduino.
-
-Comece criando duas variáveis do tipo DateTime e atribua a elas as datas que deseja comparar. Por exemplo:
+Para comparar duas datas no Arduino, podemos usar a função `millis ()`, que retorna o número de milissegundos desde que a placa foi ligada. Podemos usar essa função para calcular a diferença entre duas datas e determinar qual é a mais recente. Aqui está um exemplo de código que compara duas datas e imprime a mais recente:
 
 ```Arduino
-#include <RTClib.h>
-
-RTC_DS1307 rtc; // cria um objeto rtc
-DateTime data1(2019, 07, 15, 12, 30, 0); // primeira data a ser comparada
-DateTime data2(2019, 07, 20, 9, 00, 0); // segunda data a ser comparada
-```
-
-Em seguida, podemos usar os métodos de comparação da biblioteca RTClib para verificar se as datas são iguais, maior ou menor que a outra. Por exemplo:
-
-```Arduino
-if(data1 == data2){ // verifica se as datas são iguais
-  Serial.println("As datas são iguais!");
-} else if(data1 > data2){ // verifica se a primeira data é maior que a segunda
-  Serial.println("A data 1 é maior que a data 2!");
-} else { // caso contrário, a primeira data é menor que a segunda
-  Serial.println("A data 1 é menor que a data 2!");
+unsigned long data1 = millis (); // primeira data
+delay (1000); // esperar 1 segundo
+unsigned long data2 = millis (); // segunda data
+if (data1 > data2) {
+    Serial.println ("Data 1 é mais recente!");
+} else if (data2 > data1) {
+    Serial.println ("Data 2 é mais recente!");
+} else {
+    Serial.println ("As datas são iguais!");
 }
 ```
-
-Além disso, também podemos usar o método `deltaDays()` para calcular a diferença em dias entre as datas:
-
-```Arduino
-int diferenca = data2.deltaDays(data1); // calcula a diferença em dias entre data2 e data1
-Serial.print("A diferença em dias entre as datas é: ");
-Serial.println(diferenca); // imprime a diferença em dias no monitor serial
+Saída:
+```
+Data 2 é mais recente!
 ```
 
-## Aprofundando
+## Mergulho profundo:
 
-Para comparar datas com mais precisão, é importante entender o formato da variável DateTime no Arduino. O formato usado é `DateTime(ano, mês, dia, hora, minuto, segundo)`, onde todos os valores são inteiros.
-Além disso, é importante ter em mente que a biblioteca RTClib considera datas no formato UTC (Tempo Universal Coordenado). Portanto, se você precisa comparar datas em um fuso horário específico, é necessário fazer ajustes nos valores de hora da data antes da comparação.
+A comparação de duas datas é um conceito fundamental na programação e é usado em várias linguagens de programação, não apenas no Arduino. Outra forma de comparar datas é usando a estrutura `tm` da biblioteca `time.h`. Também é importante estar atento aos diferentes formatos de datas em diferentes regiões do mundo, como o formato MM/DD/YYYY nos Estados Unidos e o formato DD/MM/YYYY na Europa.
 
-## Veja também
+## Veja também:
 
-- [Documentação da biblioteca RTClib](https://github.com/adafruit/RTClib)
-- [Guia completo para trabalhar com datas e horários no Arduino](https://www.tutorialspoint.com/arduino/arduino_date_time.htm)
-- [Tutorial sobre como criar um relógio com data e hora no Arduino](https://www.instructables.com/id/Arduino-Real-Time-Clock-Using-DS1307/)
+- [Documentação do Arduino sobre a função `millis()`](https://www.arduino.cc/reference/en/language/functions/time/millis/)
+- [Tutorial sobre como comparar datas em C](https://www.includehelp.com/c-programs/compare-two-dates.aspx)

@@ -1,7 +1,7 @@
 ---
-title:                "Eliminazione di caratteri corrispondenti a un pattern"
-html_title:           "Clojure: Eliminazione di caratteri corrispondenti a un pattern"
-simple_title:         "Eliminazione di caratteri corrispondenti a un pattern"
+title:                "Eliminare i caratteri corrispondenti a un modello"
+html_title:           "Clojure: Eliminare i caratteri corrispondenti a un modello"
+simple_title:         "Eliminare i caratteri corrispondenti a un modello"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -10,34 +10,21 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+## Cosa & Perché?
+Cancellare i caratteri che corrispondono ad un certo modello è un'operazione comune tra i programmatori. Si utilizza per rimuovere parti indesiderate da una stringa, come ad esempio caratteri di punteggiatura o spazi vuoti. Ciò può rendere più efficiente il codice e migliorare le prestazioni del programma.
 
-Se si lavora con testi e stringhe in Clojure, potrebbe essere necessario eliminare alcuni caratteri che corrispondono a un certo schema o modello. Ciò potrebbe essere utile per la pulizia dei dati o per ottenere una stringa formattata in un modo specifico.
+## Come fare:
+Una delle opzioni più semplici per eliminare i caratteri corrispondenti ad un modello in Clojure è utilizzare la funzione ```clojure.string/replace``` e specificare il modello e la stringa da sostituire con una stringa vuota. Ad esempio, per eliminare tutti i caratteri di punteggiatura da una stringa si può utilizzare il seguente codice:
 
-## Come Fare
-
-Per eliminare i caratteri che corrispondono a un determinato schema, è possibile utilizzare la funzione `clojure.string/replace` fornita dalla libreria standard di Clojure. Questa funzione accetta tre argomenti: una stringa di input, un pattern regex e una stringa di sostituzione. Ecco un esempio di come possiamo eliminare tutte le vocali da una stringa:
-
-```Clojure
-(clojure.string/replace "ciao come stai?" #"a|e|i|o|u" "")
+```
+(clojure.string/replace "Ciao, come stai?" #"\p")
 ```
 
-Questo restituirà `"c cm st?"` come output. Possiamo anche fornire una funzione come stringa di sostituzione per eseguire un'operazione più complessa su ogni corrispondenza. Ad esempio, se vogliamo raddoppiare ogni consonante, possiamo fare qualcosa di simile a ciò:
+Questo restituirà la stringa "Ciao comestai". Nota che il modello ```\p``` corrisponde a tutti i caratteri di punteggiatura.
 
-```Clojure
-(clojure.string/replace "hello world" #"[a-z]" (fn [m] (str m m)))
-```
+## Approfondimento:
+Esistono anche altre opzioni per eliminare i caratteri corrispondenti ad un modello in Clojure. Una di queste è utilizzare la funzione ```clojure.string/replace-first```, che elimina solo la prima occorrenza del modello nella stringa. Inoltre, è possibile utilizzare la funzione ```clojure.string/replace-regex``` per sostituire il modello con una stringa diversa invece di una stringa vuota.
 
-Questo restituirà `"hheelllloo  wwoorrlldd"` come output.
-
-## Ricerca Profonda
-
-Clojure offre molte funzioni di manipolazione delle stringhe tra cui scegliere e la maggior parte di esse consente di utilizzare espressioni regolari. Il pattern regex passato come secondo argomento della funzione `replace` può essere più complesso di una semplice stringa di corrispondenza, consentendoci di affinare la nostra ricerca e sostituzione in modo più preciso.
-
-Inoltre, possiamo utilizzare la funzione `clojure.string/replace-first` per eliminare solo il primo match di una corrispondenza, anziché tutti. In alternativa, possiamo utilizzare la funzione `clojure.string/replace-regex` per sostituire i match solo quando corrispondono a un certo schema. Esplorare queste funzioni e scoprire come possono essere utili nelle operazioni di manipolazione delle stringhe in Clojure.
-
-## Guarda Anche
-
-- [Documentazione ufficiale di Clojure per la funzione `replace`](https://clojuredocs.org/clojure.string/replace)
-- [Documentazione ufficiale di Clojure per le espressioni regolari](https://clojuredocs.org/clojure.core/re-pattern)
-- [Esempi pratici di come utilizzare espressioni regolari in Clojure](https://www.masteringclojure.com/)
+## Vedi anche:
+- Documentazione ufficiale sulla funzione ```clojure.string/replace```: https://clojuredocs.org/clojure.string/replace
+- Altro esempio di utilizzo della funzione ```clojure.string/replace```: https://clojure.org/guides/data_processing

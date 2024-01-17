@@ -1,7 +1,7 @@
 ---
-title:                "Extraindo subtrings"
-html_title:           "Haskell: Extraindo subtrings"
-simple_title:         "Extraindo subtrings"
+title:                "Extraindo substrings"
+html_title:           "Haskell: Extraindo substrings"
+simple_title:         "Extraindo substrings"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -10,53 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+## O que & Por quê?
 
-Se você é um programador e está familiarizado com Haskell, provavelmente já ouviu falar sobre a função `substring` e como ela pode ser útil para extrair partes específicas de uma string. Mas por que alguém se interessaria em fazer isso? Bem, há várias razões pelas quais você pode querer extrair substrings, como manipular dados, formatar saídas de texto ou até mesmo realizar análises de dados.
+Extrair substrings significa pegar uma parte de uma string maior, geralmente com base em um padrão específico. Programadores fazem isso para manipular dados de forma mais eficiente, facilitando tarefas como busca e substituição em textos.
 
-## Como Fazer
+## Como fazer:
 
-Extrair substrings em Haskell é bastante simples. Primeiro, precisamos importar o módulo `Data.List` para ter acesso à função `substring`. Então, podemos usar a seguinte sintaxe:
-
-```Haskell
-substring startIndex length string
-```
-O parâmetro `startIndex` indica onde a substring deve começar, `length` indica o comprimento da substring e `string` é a string original da qual queremos extrair a substring. Vamos ver um exemplo prático:
+Extrair uma substring em Haskell é simples e pode ser feito de várias formas. Veja um exemplo usando a função ```take```, que pega os primeiros n elementos de uma lista:
 
 ```Haskell
-import Data.List
-
-substring 3 5 "Olá mundo" -- retorna "a mun"
+take 3 "Exemplo de substring" 
 ```
-
-Também podemos usar números negativos para `startIndex` e `length` para extrair substrings a partir do fim da string. Por exemplo:
+A saída seria "Exe". No entanto, isso só funciona para extrair uma quantidade fixa de caracteres. Para extrair com base em um padrão, podemos usar a função ```dropWhile```, que remove elementos enquanto o predicado fornecido for verdadeiro:
 
 ```Haskell
-substring (-3) 2 "Olá mundo" -- retorna "nd"
+dropWhile (/='a') "Exemplo de substring"
 ```
+A saída seria "a substring".
 
-E se quisermos extrair todo o resto da string a partir de um determinado ponto, podemos usar `undefined` para `length`, indicando que não há um limite de comprimento. Veja:
+## Mergulho profundo:
 
-```Haskell
-substring 3 undefined "Olá mundo" -- retorna "a mundo"
-```
+Extrair substrings é uma técnica antiga e amplamente utilizada em programação de computadores, com muitas funções e métodos dedicados a essa tarefa em diferentes linguagens. Em Haskell, existem outras funções além de ```take``` e ```dropWhile``` para extrair substrings, como ```substring``` e ```slice```. Além disso, é importante lembrar que strings em Haskell são tratadas como listas de caracteres, permitindo o uso de funções genéricas como ```filter``` e ```map``` para extrair substrings com base em uma condição.
 
-## Profundidade
+## Veja também:
 
-Agora que você entende como usar a função `substring` em Haskell, vamos dar uma olhada mais profunda em como ela funciona. Internamente, essa função podemos ver um cabeçalho como este:
-
-```Haskell
-substring :: Int -> Int -> [a] -> [a]
-```
-
-Onde `a` é um tipo de dados qualquer. Isso significa que podemos usar `substring` não apenas com strings, mas com qualquer lista de tipos de dados. Além disso, a definição real da função usa a função `drop` do módulo `Data.List` para remover os elementos antes do `startIndex` e a função `take` para obter o número de elementos especificado por `length`.
-
-Outro detalhe interessante é que, se o `startIndex` informado for maior do que o tamanho da string, a função retornará uma lista vazia. E se o `length` for maior do que o número de elementos restantes após `startIndex`, a função retornará uma substring com todos esses elementos restantes.
-
-## Veja Também
-
-Aqui estão alguns links úteis para saber mais sobre a função `substring` em Haskell:
-
-- [Documentação oficial do `Data.List`](https://hackage.haskell.org/package/base-4.15.0.0/docs/Data-List.html#v:take)
-- [Tutorial sobre strings em Haskell](https://learnxinyminutes.com/docs/pt-br/haskell-pt/)
-- [Outras funções úteis para trabalhar com strings em Haskell](https://wiki.haskell.org/String)
+- [Funções de manipulação de strings em Haskell](https://www.haskell.org/hoogle/?hoogle=string)
+- [Documentação oficial da linguagem Haskell](https://www.haskell.org/documentation/)
+- [Tutorial prático sobre manipulação de strings em Haskell](https://wiki.haskell.org/Strings)

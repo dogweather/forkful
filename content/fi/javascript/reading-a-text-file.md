@@ -1,7 +1,7 @@
 ---
-title:                "Tekstitiedoston lukeminen"
-html_title:           "Javascript: Tekstitiedoston lukeminen"
-simple_title:         "Tekstitiedoston lukeminen"
+title:                "Tiedostosta lukeminen"
+html_title:           "Javascript: Tiedostosta lukeminen"
+simple_title:         "Tiedostosta lukeminen"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Files and I/O"
@@ -10,50 +10,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mikä & miksi?
+Lukeminen tekstiasiakirjasta on prosessi, jossa tietokone järjestelmä lukee ja käsittelee tekstiä tallennettuna tiedostona. Tämä on tärkeä osa ohjelmoinnin maailmaa, sillä se mahdollistaa tiedon saannin ja käsittelyn ohjelmien käytössä.
 
-Miksi haluaisin lukea tekstitiedostoa? Saatat miettiä. No hyvä kysymys!
+## Miten:
+Alla on kaksi esimerkkiä siitä, kuinka lukea yksinkertainen tekstiasiakirja käyttäen Javascriptia. Seuraa koodiesimerkkejä niiden koodeja asentaaksesi tai suorittaaksesi sitä omalla koneellasi.
 
-Noh, voimme ensinnäkin käyttää tekstitiedostoja lukemiseen monessa eri tilanteessa. Haluatko lukea ja tarkistaa tiedot käyttäjän syötteestä? Siellä voit käyttää tekstitiedostoa. Tai ehkä haluat tallentaa pienen tekstimuotoisen tietokannan? Tekstitiedosto on loistava vaihtoehto. Yksinkertaisesti sanottuna, kyky lukea tekstitiedostoja on tärkeä taito jokaiselle Javascript-ohjelmoijalle.
+Esimerkki 1: Lukeminen ja tulostaminen yksinkertaisesta tekstiasiakirjasta:
 
-## Miten
-
-Ei ole yhtä tapaa lukea ja käsitellä tekstitiedostoja Javascriptillä, mutta tässä on yksi esimerkki, joka toimii hyvin useimmissa tilanteissa.
-
-```Javascript
-// Ensinnäkin, lataa tarvittava moduuli filesystem.
-let fs = require('fs');
-
-// Sitten luodaan muuttuja, joka säilyttää tiedoston polun.
-let tiedostopolku = './tiedostot/tekstitiedosto.txt';
-
-// Käytämme fs.readFile()-funktiota lukeaksemme tiedoston asynkronisesti.
-fs.readFile(tiedostopolku, 'utf-8', (err, data) => {
-  // Jos virhe, heitä virheilmoitus.
-  if (err) throw err;
-  
-  // Muulloin tulostetaan luettu teksti konsoliin.
-  console.log(data);
+```
+const fs = require('fs');
+ 
+fs.readFile('tekstiasiakirja.txt', 'utf8', function(error, data) {
+    let lines = data.split("\n");
+    lines.forEach(line => {
+        console.log(line);
+    });
 });
 ```
 
-Tämä koodi lataa tiedoston path-muuttujan avulla ja käyttää sitten fs.readFile()-funktiota lukeakseen sisällön. Tulostamisen sijaan voit käsitellä dataa haluamallasi tavalla.
+Esimerkki 2: Tallentaminen tekstiasiakirjaan käyttäen käyttäjän syötettä:
 
-Esimerkkikoodin tulostus:
+```
+const fs = require('fs');
+const readline = require('readline').createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
 
-```Javascript
-"Tämä on esimerkki tekstiä."
+readline.question('Kirjoita jotain: ', (userInput) => {
+  fs.appendFile('tekstiasiakirja.txt', userInput, (err) => {
+    if (err) throw err;
+    console.log('Tallennettu!');
+  });
+  readline.close();
+});
 ```
 
-## Syvemmälle
+### Syöte:
+```
+Tämä on esimerkki tekstiä.
+Tämä on toinen rivi.
+```
 
-Javascriptissa on useita tapoja lukea ja käsitellä tekstitiedostoja. Yllä olevassa esimerkissä käytimme fs-moduulia, mutta voit myös käyttää muita moduuleja, kuten readline tai stream. Voit myös käyttää muita funktioita, kuten fs.readFileSync(), joka lukee tiedoston synkronisesti ilman callbackia.
+### Tulos:
+```
+Tämä on esimerkki tekstiä.
+Tämä on toinen rivi.
+```
 
-Tärkeintä on ymmärtää, miten tiedostojen polkuja käsitellään ja mitä parametreja ja metodeja on käytettävissä halutun toiminnan suorittamiseen. Kannattaa myös tutustua asynkronisten ja synkronisten funktioiden eroihin ja valita sopiva vaihtoehto sovelluksesi tarpeiden perusteella.
+## Syväsukellus:
+Tekstiasiakirjojen lukeminen ja kirjoittaminen on ollut osa ohjelmointia jo vuosikymmeniä. Aikaisemmin se tapahtui lähinnä käyttöjärjestelmän kautta, mutta nykyään ohjelmoijat voivat käyttää monia erilaisia kirjastoja ja työkaluja tähän tarkoitukseen. Joitakin vaihtoehtoja Javascriptillä lukemiseen ja kirjoittamiseen ovat muun muassa Node.js, fs-moduuli ja readline-kirjasto. Tekstiasiakirjat ovat myös osa monia tiedostonhallintajärjestelmiä ja verkkokäyttöliittymiä, joten niiden lukeminen ja kirjoittaminen on tärkeä taito jokaiselle ohjelmoijalle.
 
-## Katso myös
-
-- [fs moduuli Node.js dokumentaatiossa](https://nodejs.org/api/fs.html)
-- [Readline käyttöohjeet](https://nodejs.org/api/readline.html)
-- [Stream käyttöohjeet](https://nodejs.org/api/stream.html)
-- [Asynkronisten ja synkronisten toimintojen vertailu](https://www.digitalocean.com/community/tutorials/understanding-the-node-js-event-loop-and-its-10x-faster-than-java-s)
+## Katso myös:
+- Node.js: https://nodejs.org/en/
+- fs-moduuli: https://nodejs.org/api/fs.html
+- readline-kirjasto: https://nodejs.org/api/readline.html

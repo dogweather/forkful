@@ -10,55 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-JSON (JavaScript Object Notation) is a widely used data format for exchanging information between web services. Clojure, being a functional programming language, provides a powerful and concise way to work with JSON data. It allows developers to easily process and manipulate JSON objects, making it an essential skill for any Clojure programmer.
+Working with JSON in Clojure is the process of manipulating data in the JSON format using the Clojure programming language. JSON stands for JavaScript Object Notation and it is commonly used for transmitting data between a server and a web application. Programmers use JSON in Clojure to easily parse and extract data from API responses or to create JSON data to be sent to a server.
 
-## How To
+## How to:
 
-To work with JSON in Clojure, you first need to import the `clojure.data.json` library. This library provides functions for parsing and creating JSON data. Let's take a look at an example of parsing a JSON string into a Clojure data structure:
+To work with JSON in Clojure, we first need to require the `clojure.data.json` library. Then, we can use the `parse` function to convert a JSON string into a Clojure data structure:
 
 ```Clojure
 (require '[clojure.data.json :as json])
 
-(def data "{\"name\": \"John\", \"age\": 25, \"interests\": [\"programming\", \"hiking\"]}")
+(def json-string "{\"name\": \"John\", \"age\": 30}")
 
-(def parsed-data (json/read-str data))
+(json/parse-string json-string)
+;; => {:name "John", :age 30}
 ```
 
-In the above code, we use the `read-str` function from the `clojure.data.json` library to parse the JSON string into a Clojure map. We can then access the data using normal Clojure functions such as `get`:
+We can also use the `slurp` function to read a JSON file and parse it directly into a Clojure data structure:
 
 ```Clojure
-(get parsed-data "name")   ;; Output: "John"
-(get parsed-data "age")    ;; Output: 25
-(get parsed-data "interests")  ;; Output: ["programming" "hiking"]
+(def json-file (slurp "data.json"))
+
+(json/parse-string json-file)
+;; => {:name "John", :age 30}
 ```
 
-Similarly, we can create a JSON string from a Clojure data structure using the `write-str` function:
+To convert a Clojure data structure into a JSON string, we can use the `generate-string` function:
 
 ```Clojure
-(json/write-str parsed-data)   ;; Output: "{\"name\":\"John\",\"age\":25,\"interests\":[\"programming\",\"hiking\"]}"
+(require '[clojure.data.json :as json])
+
+(def person {:name "John", :age 30})
+
+(json/generate-string person)
+;; => "{\"name\":\"John\",\"age\":30}"
 ```
 
 ## Deep Dive
 
-Clojure provides a powerful way to transform and process data using its core functions such as `map`, `filter`, and `reduce`. These functions can be used to easily manipulate JSON objects and extract specific data.
+JSON was first introduced in 2001 as a lightweight alternative to XML for transmitting data over the internet. It is a popular format for web applications due to its human-readable syntax and widespread support among programming languages.
 
-For example, let's say we want to extract the names of the people from a list of JSON objects. We can use the `map` function to achieve this:
+In addition to the `clojure.data.json` library, there are other libraries available for working with JSON in Clojure, such as `cheshire` and `jsonista`. These libraries may offer additional features or performance optimizations.
 
-```Clojure
-(def people [{:name "John", :age 25} {:name "Jane", :age 30} {:name "Bob", :age 40}])
-
-(map :name people)  ;; Output: ("John" "Jane" "Bob")
-```
-
-We can also use the `filter` function to find specific data from a JSON object based on a condition. For instance, if we want to find all the people above the age of 30, we can do so using the `filter` function:
-
-```Clojure
-(filter #(> (:age %) 30) people)   ;; Output: ({:name "Jane", :age 30} {:name "Bob", :age 40})
-```
+When working with large JSON files, it is recommended to use streaming parsers instead of loading the entire file into memory. The `cheshire` library provides this capability with the `parse-stream` function.
 
 ## See Also
 
-- [clojure.data.json library documentation](https://github.com/clojure/data.json)
-- [Clojure for Beginners: Working with JSON](https://www.braveclojure.com/clojure-for-the-brave-and-true/working-with-json/)
+- [Clojure data.json documentation](https://github.com/clojure/data.json)
+- [Cheshire library for JSON in Clojure](https://github.com/dakrone/cheshire)
+- [Jsonista library for JSON in Clojure](https://github.com/metosin/jsonista)

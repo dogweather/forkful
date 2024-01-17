@@ -10,28 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+# 무엇 & 왜?
 
-문자열의 길이를 찾는 것이 왜 중요한지 궁금해 한다면, TypeScript로 이를 구현하는 방법을 익히는 것은 매우 유용한 기술입니다. 실제로 문자열의 길이를 찾는 것은 프로그래밍에서 매우 일반적인 수행 작업이기 때문입니다.
+먼저, 문자열의 길이를 구하는 것은 문자열의 길이를 알아내는 것입니다. 프로그래머는 이를 하는 이유는 다양합니다. 예를 들어, 문자열의 길이를 알아내면 입력한 데이터가 적절한지, 표시해야 할 문자의 수를 조정해야 할지 등을 판단할 수 있습니다.
 
-## 어떻게
+## 방법:
 
+**TypeScript**를 사용하여 문자열의 길이를 구하는 방법은 아주 간단합니다. ```string``` 데이터 타입을 사용하고, ```.length``` 프로퍼티를 이용하여 문자열의 길이를 구할 수 있습니다. 아래 코드를 참고해 보세요.
+
+```typescript
+let name: string = "Jane";
+
+console.log(name.length); // 결과: 4
 ```
-TypeScript
-let str: string = "안녕하세요";
-console.log(str.length); // Output: 5 
+
+## 깊이 탐구:
+
+1. **역사적 배경:** 문자열의 길이를 구하는 방법은 오래 전부터 존재했습니다. 그럼에도 불구하고, 이는 프로그래머들에게 매우 중요한 작업이며, 오늘날 알고리즘과 프로그래밍 언어가 발전함에 따라 더욱 쉽고 효율적으로 구현할 수 있게 되었습니다.
+
+2. **대안:** 문자열의 길이를 구하는 다른 방법으로는 ```string``` 데이터 타입을 배열로 변환한 뒤, 배열의 길이를 구하는 방법이 있습니다.
+
+3. **구현 세부 사항:** 문자열의 길이를 알아내는 알고리즘은 문자 하나씩 반복하며 카운트하는 방법을 사용합니다. 이를 코드로 나타내면 아래와 같습니다.
+
+```typescript
+function getStringLength(str: string): number {
+  let count: number = 0;
+
+  for (let i = 0; i < str.length; i++) {
+    count++;
+  }
+
+  return count;
+}
 ```
 
-문자열을 변수에 할당하고 .length 속성을 사용하여 문자열의 길이를 찾을 수 있습니다. 이렇게하면 출력값으로 문자열의 실제 길이가 표시됩니다. 이를 통해 우리는 문자열을 구성하는 문자의 개수를 알 수 있습니다.
+## 관련자료:
 
-이것은 TypeScript에서 기본적으로 제공하는 기능이지만, 우리가 유용하게 활용할 수 있도록 다른 방식으로도 문자열의 길이를 찾는 방법이 있습니다. 예를 들어, for 반복문을 사용하여 문자열의 각 문자를 순회하는 방법도 있습니다. 이를 통해 우리는 문자열의 길이를 측정할 수 있습니다.
-
-## 깊이 파고들기
-
-우리는 일반 문자열 뿐만 아니라 여러 언어와 문자 집합을 다루는 경우에도 TypeScript에서 문자열의 길이를 쉽게 찾을 수 있습니다. 이는 TypeScript가 문자열을 유니코드로 다루기 때문입니다. 따라서 우리는 TypeScript를 사용하여 한글, 영어, 중국어 등 다양한 언어로 이루어진 문자열의 길이를 정확하게 확인할 수 있습니다.
-
-See Also
-
-- [TypeScript 문자열 관련 문서](https://www.typescriptlang.org/docs/handbook/basic-types.html#string)
-- [유니코드 문자열 길이 계산](https://stackoverflow.com/questions/55172034/typescript-length-of-unicode-string)
-- [알파벳, 숫자, 특수문자로 이루어진 문자열 길이 계산 예제](https://dev.to/selbekk/how-to-get-the-length-of-a-string-in-typescript-409j)
+1. [TypeScript 공식 사이트](https://www.typescriptlang.org/)
+2. [JavaScript로 문자열의 길이 구하기](https://www.w3schools.com/jsref/prop_str_length.asp)
+3. [Codecademy - TypeScript 배우기](https://www.codecademy.com/learn/learn-typescript)

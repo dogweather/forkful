@@ -1,7 +1,7 @@
 ---
-title:                "Senden einer HTTP-Anfrage mit grundlegender Authentifizierung"
-html_title:           "Fish Shell: Senden einer HTTP-Anfrage mit grundlegender Authentifizierung"
-simple_title:         "Senden einer HTTP-Anfrage mit grundlegender Authentifizierung"
+title:                "Versenden einer http-Anforderung mit grundlegender Authentifizierung"
+html_title:           "Fish Shell: Versenden einer http-Anforderung mit grundlegender Authentifizierung"
+simple_title:         "Versenden einer http-Anforderung mit grundlegender Authentifizierung"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "HTML and the Web"
@@ -10,31 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was & Warum?
 
-Möglicherweise müssen Sie eine Anfrage an eine Website senden, die eine Basisauthentifizierung erfordert, um auf geschützte Inhalte zuzugreifen. Oder Sie möchten Ihre eigene Website vor unbefugtem Zugriff schützen, indem Sie Benutzernamen und Passwörter verwenden. In beiden Fällen ist es wichtig zu wissen, wie man in Fish Shell eine HTTP-Anfrage mit Basisauthentifizierung sendet.
+Das Senden von HTTP-Anfragen mit einer einfachen Authentifizierung ist ein gängiges Verfahren in der Programmierung, um Zugriff auf geschützte Ressourcen zu erhalten. Es wird häufig verwendet, um APIs, Webdienste oder andere Online-Plattformen anzusteuern, die einen Benutzernamen und ein Passwort zur Authentifizierung erfordern.
 
-## Wie geht es
+## Wie?
 
-```Fish Shell
-set -l username <BENUTZERNAME>
-set -l password <PASSWORT>
+Die Verwendung von Fish Shell vereinfacht das Senden von HTTP-Anfragen mit einfacher Authentifizierung erheblich. Mit dem Befehl "curl" können wir eine Anfrage senden und dabei die Option "-u" verwenden, um die Anmeldeinformationen anzugeben. Hier ist ein Beispiel:
 
-curl -u $username:$password <URL>
+```
+Fish Shell: curl -u Benutzername:Passwort https://example.com/api/
 ```
 
-Dieser Codeblock zeigt, wie Sie die Variablen "username" und "password" deklarieren und dann curl mit dem "-u" Flag verwenden, um eine HTTP-Anfrage mit Basisauthentifizierung zu senden. Ersetzen Sie <BENUTZERNAME>, <PASSWORT> und <URL> durch die entsprechenden Werte.
+Das gibt uns den vollen Inhalt der angeforderten Ressource als Ausgabe zurück. Wenn Sie nur eine bestimmte Eigenschaft oder einen Wert aus der Antwort benötigen, können Sie die Option "-s" verwenden, um sie zu filtern, zum Beispiel:
 
-Weitere Optionen von "curl" für HTTP-Anfragen mit Basisauthentifizierung können mit dem Befehl "curl --help" abgerufen werden.
+```
+Fish Shell: curl -su Benutzername:Passwort https://example.com/api/ | grep "E-Mail"
+```
 
-## Tiefentauchen
+Dies wird nur die Zeile mit der E-Mail-Adresse des Benutzers aus der Antwort ausgeben.
 
-Basisauthentifizierung ist eine der ältesten Methoden der HTTP-Authentifizierung. Sie erfordert die Angabe eines Benutzernamens und Passworts in Klartext als Teil der HTTP-Anfrage. Das macht es sehr unsicher, da es leicht von Dritten abgefangen werden kann.
+## Tiefer Einblick
 
-Eine sicherere Alternative wäre die Verwendung von HTTPS oder die Verwendung von anderen Arten der Authentifizierung wie z.B. Digest oder OAuth.
+Die Verwendung von HTTP-Anfragen mit einfacher Authentifizierung hat eine lange Geschichte und ist immer noch eines der grundlegendsten Verfahren zur Authentifizierung in der Programmierung. Es gibt jedoch auch andere Methoden, wie beispielsweise OAuth 2.0 oder Token-basierte Authentifizierung, die je nach Anwendungsfall möglicherweise geeigneter sind.
+
+Wenn Sie mehr über das Senden von HTTP-Anfragen mit Fish Shell erfahren möchten, können Sie die Manpage für "curl" oder die offizielle Dokumentation für Fish Shell konsultieren. Es gibt auch verschiedene Plug-ins und Erweiterungen, die das Senden von HTTP-Anfragen noch einfacher machen und Funktionen wie das Caching von Anmeldeinformationen oder das Automatisieren von Anfragen ermöglichen.
 
 ## Siehe auch
 
-- [Curl: Verwendung von Benutzername und Passwort für Authentifizierung](https://curl.haxx.se/docs/manpage.html)
-- [Fish Shell Documentation](https://fishshell.com/docs/current/index.html)
-- [HTTP-Anforderungen und Authentifizierung](https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.2)
+- Fish Shell Dokumentation: https://fishshell.com/docs/current/
+- Offizielle Manpage für "curl": https://curl.haxx.se/docs/manpage.html
+- Erweiterungen für Fish Shell: https://github.com/fisherman/fisherman/wiki/Plugins

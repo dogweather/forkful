@@ -10,88 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-Have you ever wanted to access a web page's content without opening a web browser? Or perhaps you need to automate the gathering of data from multiple websites for a project. In both cases, downloading a web page using Java can save you time and effort.
+Downloading a web page involves retrieving the code and content of a webpage from the internet. This is typically done through a connection request using a URL. Programmers often download web pages to extract specific information or to analyze the code for testing or debugging purposes.
 
-## How To
+## How to:
 
-To download a web page in Java, we first need to import the necessary libraries. We will be using the `URL` and `HttpURLConnection` classes from the `java.net` package.
+To download a web page in Java, we can use the `URL` and `URLConnection` classes from the `java.net` package. Here's an example of how we can retrieve the HTML code of a page:
 
 ```Java
+// Import necessary classes
 import java.net.URL;
-import java.net.HttpURLConnection;
-```
+import java.net.URLConnection;
 
-Next, we need to specify the URL of the web page we want to download and create a `URL` object with that URL.
+// Create a URL object for the page we want to download
+URL url = new URL("https://www.example.com");
 
-```Java
-String url = "https://www.example.com";
-URL webpage = new URL(url);
-```
+// Open a connection to the URL
+URLConnection connection = url.openConnection();
 
-Now, we use the `openConnection()` method to establish a connection to the web page and cast it to a `HttpURLConnection` object.
+// Retrieve the HTML code from the page
+InputStream in = connection.getInputStream();
 
-```Java
-HttpURLConnection connection = (HttpURLConnection) webpage.openConnection();
-```
+// Create a BufferedReader to read the input stream
+BufferedReader reader = new BufferedReader(new InputStreamReader(in));
 
-We can then set the request method and any other necessary properties, such as timeout and user-agent, before connecting to the web page.
-
-```Java
-connection.setRequestMethod("GET");
-connection.setConnectTimeout(5000);
-connection.addRequestProperty("User-Agent", "Mozilla/5.0");
-connection.connect();
-```
-
-Finally, we can read the content of the web page by using the `getInputStream()` method and converting it to a `String` using a `BufferedReader`.
-
-```Java
-InputStream input = connection.getInputStream();
-BufferedReader reader = new BufferedReader(new InputStreamReader(input));
-String line;
-StringBuilder content = new StringBuilder();
-while ((line = reader.readLine()) != null) {
-   content.append(line);
+// Read the HTML code line by line and print it to the console
+String inputLine;
+while ((inputLine = reader.readLine()) != null) {
+    System.out.println(inputLine);
 }
+
+// Close the connection and reader resources
+reader.close();
+in.close();
 ```
 
-We can then print the content to the console or use it for further processing.
+The output of the above code will be the HTML code of the webpage, which we can then manipulate as needed for our purposes.
 
-```Java
-System.out.println(content);
-```
+## Deep Dive:
 
-Output:
-```html
-<!doctype html>
-<html>
-<head>
-   <title>Example Domain</title>
-   <meta charset="utf-8"/>
-   <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
-   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-</head>
-<body>
-<div>
-   <h1>Example Domain</h1>
-   <p>This domain is for use in illustrative examples in documents. You may use this
-      domain in literature without prior coordination or asking for permission.
-   </p>
-   <p><a href="https://www.iana.org/domains/example">More information...</a></p>
-</div>
-</body>
-</html>
-```
+Downloading web pages has been a common practice in web development since the early days of the internet. It allows developers to access the code and content of a webpage for various purposes such as data scraping, testing, and debugging.
 
-## Deep Dive
+Apart from using the `java.net` package, there are other alternatives for downloading web pages in Java. One popular option is to use the Apache HttpComponents library, specifically the `HttpClient` class, which provides a more comprehensive API for making HTTP requests.
 
-When downloading a web page, there are various protocols and security measures that may need to be taken into consideration. For example, some websites may require authentication or use HTTPS instead of HTTP. In these cases, additional steps would need to be taken in your code to handle these scenarios.
+In the example above, we used the `URLConnection` class to establish a connection to the URL and retrieve the webpage's code. Under the hood, Java uses the HTTP protocol to make the connection. This also means that we can use the same code to retrieve data from other types of URLs, such as API endpoints or FTP servers, by simply changing the URL object.
 
-It is also important to note that downloading a web page using Java may not always be the most efficient method. Libraries such as `jsoup` and `HttpClient` provide more advanced functionalities and handle some of the complexities involved with web page downloading.
+## See Also:
 
-## See Also
-- [Oracle: HttpURLConnection](https://docs.oracle.com/javase/10/docs/api/java/net/HttpURLConnection.html)
-- [Baeldung: Guide to Java HttpURLConnection](https://www.baeldung.com/java-http-request)
-- [jsoup: Java HTML Parser](https://jsoup.org/)
+- [Oracle's official documentation on the `java.net` package](https://docs.oracle.com/javase/10/docs/api/java/net/package-summary.html)
+- [How to use the Apache HttpClient library for downloading web pages in Java](https://www.baeldung.com/java-http-client)

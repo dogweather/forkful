@@ -1,7 +1,7 @@
 ---
-title:                "Utiliser les expressions régulières"
-html_title:           "Elixir: Utiliser les expressions régulières"
-simple_title:         "Utiliser les expressions régulières"
+title:                "Utiliser des expressions régulières"
+html_title:           "Elixir: Utiliser des expressions régulières"
+simple_title:         "Utiliser des expressions régulières"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -10,34 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Qu'est-ce que c'est et pourquoi les programmeurs l'utilisent-ils?
 
-Si vous êtes développeur ou programmeur, vous avez probablement entendu parler des expressions régulières (Regex pour les intimes). Mais pourquoi voudriez-vous utiliser ces expressions complexes et souvent intimidantes ? Et bien, les expressions régulières sont un outil puissant pour trouver, filtrer et manipuler des chaînes de caractères, ce qui en fait un must-have pour tout arsenal de développement.
+Les expressions régulières (ou regex) sont une méthode puissante pour rechercher et manipuler des chaînes de caractères en utilisant des motifs spécifiques. Les programmeurs utilisent les regex pour effectuer des tâches telles que la validation des données utilisateur, la recherche de motifs dans un texte ou la manipulation de chaînes de caractères complexes.
 
-## Comment faire
-
-La syntaxe de base des expressions régulières en Elixir est similaire à celle des autres langages de programmation, mais a quelques particularités uniques. Jetons un coup d'oeil à quelques exemples pratiques pour mieux comprendre.
+## Comment faire:
 
 ```Elixir
-#Trouver un numéro de téléphone américain
-Regex.scan(~r/\d{3}-\d{3}-\d{4}/, "Mon numéro de téléphone est 123-456-7890")
-#Résultat: [["123-456-7890"]]
+Regex.match?(~r/\A[a-z]+[0-9]+\z/, "abc123") 
+# => true
 
-#Remplacer les voyelles par des tirets
-Regex.replace(~r/[aeiou]/, "Elixir", "-")
-#Résultat: "-l-x-r"
+Regex.replace("Hello, World!", ~r/hello/i, "Bonjour") 
+# => "Bonjour, World!"
+
+Regex.split("apple, banana, orange", ~r/, /) 
+# => ["apple", "banana", "orange"]
 ```
 
-Comme vous pouvez le constater, les expressions régulières utilisent des symboles spéciaux pour représenter des jeux de caractères ou des motifs. Vous pouvez également utiliser des quantificateurs pour spécifier le nombre de fois qu'un caractère ou un ensemble de caractères doit apparaître. Vous pouvez en apprendre davantage sur la syntaxe en consultant les documents officiels d'Elixir.
+## Plongée en profondeur:
 
-## Deep Dive
+Les expressions régulières ont été inventées dans les années 1950 par le mathématicien et informaticien américain Stephen Kleene. En dehors de leur utilisation en programmation, elles sont également largement utilisées dans les éditeurs de texte, les moteurs de recherche et les programmes de traitement de texte.
 
-Les expressions régulières peuvent sembler un peu compliquées au début, mais une fois que vous avez compris les bases, vous verrez à quel point elles sont utiles pour gérer les chaînes de caractères complexes. En plus des exemples ci-dessus, vous pouvez également utiliser des expressions régulières en Elixir pour extraire des données d'HTML, valider des adresses email et même pour créer un analyseur lexical.
+Il existe plusieurs alternatives aux expressions régulières, telles que les expressions rationnelles et les grammaires régulières. Cependant, les regex sont devenues un outil populaire pour les programmeurs en raison de leur flexibilité et de leur simplicité d'utilisation.
 
-Pour aller plus loin, vous pouvez également vous familiariser avec des concepts avancés tels que les groupes capturants, les assertions et les expressions régulières récurrentes. Il existe également des sites web et des outils en ligne tels que Regex101 qui vous permettent de tester et de perfectionner vos expressions régulières.
+En Elixir, les expressions régulières sont mises en œuvre à l'aide du module Regex et peuvent être utilisées avec les fonctions de correspondance, de remplacement et de division de chaînes de caractères.
 
-## Voir aussi
+## Voir aussi:
 
-- [Documentation officielle d'Elixir pour les expressions régulières](https://hexdocs.pm/elixir/Regex.html)
-- [Regex101 - Outil en ligne pour tester vos expressions régulières](https://regex101.com/)
-- [Vidéo d'introduction aux expressions régulières en Elixir](https://www.youtube.com/watch?v=9_8CrdAw8-Q)
+- [La documentation officielle sur les expressions régulières en Elixir](https://hexdocs.pm/elixir/Regex.html)
+- [Un guide pratique sur l'utilisation des regex en Elixir](https://elixir-lang.org/getting-started/pattern-matching.html#regular-expressions)

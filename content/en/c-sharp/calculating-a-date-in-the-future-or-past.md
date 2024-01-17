@@ -10,49 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-It's common for developers to need to calculate a date in the future or past for various reasons, such as scheduling events, setting reminders, or determining deadlines. In this article, we will explore how to easily accomplish this task using C#.
+## What & Why?
+Calculating a date in the future or past is a common task in programming that involves manipulating dates and time according to specific criteria. This can include adding or subtracting a certain number of days, months, or years from a given date, or determining the date a certain number of days from now. Programmers do this in order to perform tasks such as scheduling events, estimating project timelines, or managing data that is time sensitive.
 
-## How To
+## How to:
+Calculating a date in the future or past can be easily achieved using built-in functions in C#. The ```DateTime``` struct provides various methods and properties for working with dates and times. Here are some examples of how to calculate dates in the future or past:
 
-Calculating a future or past date in C# is a simple task that can be done using the built-in "DateTime" object and its methods. Let's take a look at some code examples to see how it works:
-
-```
-// Calculating a future date by adding days to today's date
-DateTime futureDate = DateTime.Today.AddDays(10);
-Console.WriteLine("The future date is: " + futureDate);
-
-// Calculating a past date by subtracting days from today's date
-DateTime pastDate = DateTime.Today.AddDays(-10);
-Console.WriteLine("The past date is: " + pastDate);
-
-// Specifying a specific date and adding months to it
-DateTime specificDate = new DateTime(2021, 1, 1);
-DateTime futureSpecific = specificDate.AddMonths(3);
-Console.WriteLine("The future specific date is: " + futureSpecific);
+### Calculate a future date:
+```C#
+DateTime now = DateTime.Now;
+DateTime futureDate = now.AddDays(10); 
+// Add 10 days to the current date
+Console.WriteLine(futureDate); // Output: 8/5/2021 2:27:12 PM
 ```
 
-The output of the above code will be:
-
+### Calculate a past date:
+```C#
+DateTime now = DateTime.Now;
+DateTime pastDate = now.AddMonths(-2); 
+// Subtract 2 months from the current date
+Console.WriteLine(pastDate); // Output: 5/5/2021 2:27:12 PM
 ```
-The future date is: {Current Date} + 10 days
-The past date is: {Current Date} - 10 days
-The future specific date is: 2021-04-01 00:00:00
-```
 
-As you can see, by using the appropriate "DateTime" methods, we can easily calculate future or past dates according to our needs.
+Of course, these examples are just basic implementations and there are many more built-in methods and properties that you can use to customize your date calculations according to your specific needs.
 
-## Deep Dive
+## Deep Dive:
+Calculating dates in the future or past dates has been an important task in programming since the early days of computing. In the past, this was mostly done manually using complex algorithms and calculations. Thanks to advancements in programming languages, such as C#, calculating dates has become much simpler and more efficient.
 
-Behind the scenes, C# stores dates as the number of ticks (100 nanoseconds) that have passed since January 1, 0001 at 12:00:00 AM. This means that any calculations we do with dates will be based on this starting point.
+In addition to the built-in functions provided by C#, there are also third-party libraries, such as Noda Time, that offer even more advanced options for working with dates and times. These libraries can handle more complex date calculations, including accounting for different time zones and handling leap years.
 
-When adding or subtracting values to a date, the "DateTime" methods use this starting point and perform the necessary calculations. This is why we can easily add or subtract days, months, years, or even time spans to dates, and get accurate results.
+It's worth noting that when working with dates and times, it's important to consider potential issues such as daylight savings time and time zones. These factors can affect the accuracy of date calculations and therefore, it is crucial to have a solid understanding of the concepts and proper implementation techniques.
 
-It's important to note that while the "DateTime" object is capable of handling dates from the years 0001 to 9999, it does have some limitations when using dates before the introduction of the Gregorian calendar in October 1582. In such cases, the "DateTime" object will use the Julian calendar, which may result in slightly different calculations for certain dates.
+## See Also:
+If you want to learn more about calculating dates in the future or past using C#, here are some helpful resources to check out:
 
-To avoid any potential issues, it's always recommended to check for any specific calendar requirements when working with dates that fall before the Gregorian calendar transition.
-
-## See Also
-- [DateTime Struct documentation](https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=net-5.0)
-- [Date and Time Manipulation in C#](https://www.c-sharpcorner.com/blogs/date-and-time-manipulation-in-c-sharp1)
-- [Working with dates and times in C#](https://www.dotnetperls.com/datetime)
+- [Official Microsoft documentation on working with dates and times in C#](https://docs.microsoft.com/en-us/dotnet/standard/datetime/)
+- [Noda Time library for C#](https://nodatime.org/)
+- [Blog post on handling date and time inaccuracies in programming](https://justinchronicles.com/2019/03/19/dealing-with-data-and-time-inaccuracies-in-programming/)

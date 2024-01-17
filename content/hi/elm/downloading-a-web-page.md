@@ -10,28 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यूँ
-वेब पेज को डाउनलोड करना किसी भी प्रोग्रामर के लिए एक अहम होता है। यह हमें अपने कोड में अन्य पेज के साथ संवाद करने की अनुमति देता है और विभिन्न अनुरोधों का जवाब देता है।
+## क्या और क्यों?:
 
-## कैसे करें
-वेब पेज को डाउनलोड करने के लिए आप ईल्‍म का उपयोग कर सकते हैं। आप `Http` मोड्यूल का उपयोग करके वेब पेज को GET या POST अनुरोधों के माध्यम से डाउनलोड कर सकते हैं। यहाँ एक उदाहरण है:
+वेब पृष्ठ डाउनलोड क्या है और इसे क्यों प्रोग्रामर्स करते हैं? वेब पृष्ठ डाउनलोड से तात्पर्य है कि हम एक वेब पृष्ठ को अपने स्थानीय मशीन पर संग्रहीत करते हैं। यह प्रोग्रामर्स को विभिन्न उदाहरणों और अवसरों में उनके कूद को प्रदर्शित करने में मदद करता है।
+
+## कैसे करें:
 
 ```Elm
+import Html
 import Http
-import Json.Decode exposing (..)
 
-type Msg
-    = WebPageLoaded (Result Http.Error String)
+type Msg = Fetched (Result Http.Error String)
 
 getWebPage : Cmd Msg
 getWebPage =
-    Http.get
-        { url = "https://example.com"
-        , expect = Http.expectString WebPageLoaded
-        }
+  let
+    request =
+      Http.getString "https://www.example.com"
+  in
+    Http.send Fetched request
+
+view : Model -> Html Msg
+view model =
+  Html.button
+    [ onClick model.getWebPage ]
+    [ Html.text "Get the Web Page!" ]
+
+subscriptions : Model -> Sub Msg
+subscriptions model =
+  Sub.none
+
+main : Program Never
+main =
+  Html.beginnerProgram
+    { model = initialModel
+    , view = view
+    , update = update
+    , subscriptions = subscriptions
+    }
 ```
 
-उपरोक्त उदाहरण में, हमने `Http` मोड्यूल को आयात किया है और एक `Msg` डेटा टाइप बनाया है जो WebPageLoaded नामक एक भेजने वाले संदेश को संदर्भित करता है। फिर, हम `Http.get` फ़ंक्शन का उपयोग करके एक GET अनुरोध भेजते हैं और उससे प्राप्त हुए डेटा को `expectString` फ़ंक्शन के माध्यम से String के रूप में पार्स करते हैं।
+निष्कर्ष:
+"Get the Web Page!" बटन पर क्लिक करें, इससे एक HTTP GET अनुरोध भेजा जाएगा और वेब पृष्ठ का सामग्री मॉडल में संग्रहीत होगी।
 
-## गहराई में धावन
-वेब पेज को डाउनलोड करने के लिए ईल्‍म में और अधिक विकसित तरीकों का भी उपलब्ध है। आप `Task` मोड्यूल का उपयोग करके पैरालल प्रसंस्करण कर सकते हैं, किसी अन्य पेज पर पॉलिंग कर सकते हैं या कोई और निर्धारित तरीके से डाउनलोड कर सकते हैं। और, आप अपने प्रोग्राम को और बेहतर तरीके से प्रबंधित करने के लिए प्रियंकाए और कन्फ़िगरेशन का उपयोग
+## गहराई तक:
+
+वेब पृष्ठ डाउनलोड को समझने के लिए इतिहास, वैकल्पिक विकल्प और प्रगति की विवरण शामिल होते हैं। चरणों को कई भाषाओं में संसाधित किया गया है और हम डाउनलोड के साथ ही अन्य वेब घटकों को भी प्राप्त कर सकते हैं। Elm, प्रोग्रामिंग भाषा है जो फ़ंक्शनल और लक्षित समझ का उपयोग करती है और जो भारतवर्ष के भाषाओं को पूर्णतः समर्थित करती है।
+
+## जरूर देखें:
+
+- Elm वेबसाइट: https://elm-lang.org/
+- Elm वेबसाइट के कोड: https://github.com/elm/elm-website
+- Elm वेब पृष्ठ डाउनलोड के लिए Http आईओ आइडेंटिटी: https://github.com/elm/http/blob/master/src/Http.elm

@@ -10,26 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-If you're working in the world of web development, chances are you've come across JSON (JavaScript Object Notation) in your work. JSON has become the standard way of exchanging data between web browsers and servers, making it a crucial skill to have. Elixir makes working with JSON a breeze, making it a language of choice for web developers looking to improve their productivity.
+Working with JSON in Elixir refers to the process of encoding and decoding data in the JSON format. JSON, which stands for JavaScript Object Notation, is a widely used data interchange format for sending and receiving data over the web. Programmers use JSON in Elixir to easily handle and manipulate data in web applications.
 
-## How To
+## How to:
 
-```elixir
-# Importing the Jason library
-iex> {:ok, json} = HTTPoison.get("https://jsonplaceholder.typicode.com/todos/1")
-iex> response = JSON.decode!(json.body)
+To encode data in JSON format, use the `Jason.encode!/1` function, passing in the data as an argument.
+
+```Elixir
+data = %{name: "John", age: 30}
+Jason.encode!(data)
+# outputs: "{\"name\":\"John\",\"age\":30}"
 ```
 
-This code block demonstrates how easy it is to import the Jason library and use it to retrieve and decode JSON data from a URL. The response variable will now contain a decoded representation of the JSON data, ready for further manipulation or use. You can also use the `Jason.encode()` function to convert Elixir data structures into JSON.
+To decode JSON data into a native Elixir data structure, use the `Jason.decode/1` function.
+
+```Elixir
+json_string = "{\"name\":\"Jane\",\"age\":25}"
+Jason.decode(json_string)
+# outputs: %{"name" => "Jane", "age" => 25}
+```
+
+You can also use the `Jason.encode/1` function for a more flexible encoding process that handles invalid data gracefully.
+
+```Elixir
+data = %{name: "Sam", age: nil}
+Jason.encode(data)
+# outputs: "{\"name\":\"Sam\",\"age\":null}"
+```
 
 ## Deep Dive
 
-Elixir's Jason library uses Erlang's jiffy library under the hood, which is known for its fast and efficient JSON parsing and encoding capabilities. Jason supports most of the commonly used options for customizing the encoding and decoding process, such as specifying keys to include or exclude, customizing number formats, and more. Furthermore, Elixir's built-in pattern matching allows for easy extraction of specific data from the JSON response.
+JSON was first introduced in 2001 as an alternative to the XML format for data interchange. It is a lightweight and easy to read format that is commonly used in web development due to its compatibility with JavaScript. Other alternatives to JSON include XML, CSV, and YAML, but JSON has become the de facto standard for data exchange on the web.
+
+Under the hood, Elixir uses the Jason library, which is written in C, for encoding and decoding JSON. This provides a fast and efficient way of handling JSON data in Elixir applications.
 
 ## See Also
 
-- [Jason Documentation](https://hexdocs.pm/jason/)
-- [Elixir's Built-In Pattern Matching Guide](https://elixir-lang.org/getting-started/pattern-matching.html)
-- [Elixir School - Working with JSON](https://elixirschool.com/en/lessons/specifics/json/)
+To learn more about working with JSON in Elixir, check out the official Jason library documentation: [https://hexdocs.pm/jason/](https://hexdocs.pm/jason/).
+
+You can also explore alternatives to JSON, such as XML, CSV, and YAML, and determine which format best suits your project's needs.
+
+For a hands-on experience with JSON and Elixir, try building a web application that utilizes JSON for data interchange.

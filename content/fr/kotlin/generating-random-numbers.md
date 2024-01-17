@@ -10,36 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+# Génération de nombres aléatoires en Kotlin
 
-Vous vous demandez peut-être pourquoi générer des nombres aléatoires est utile dans la programmation. Eh bien, c'est une tâche courante dans la création de jeux, d'applications de loterie ou de tests de logiciel.
+## Qu'est-ce que c'est et pourquoi est-ce important?
+La génération de nombres aléatoires est une technique utilisée par les programmeurs pour générer des valeurs aléatoires dans un programme. Cela peut être utile pour créer des jeux, des simulations ou pour ajouter une certaine imprévisibilité dans un programme.
 
-## Comment faire
-
-Générer des nombres aléatoires en utilisant Kotlin est très simple. Il suffit d'utiliser la fonction `random()` de la bibliothèque standard de Kotlin. Voici un exemple de code qui génère un nombre aléatoire entre 1 et 10 et l'affiche :
-
+## Comment faire:
+Voici un exemple de code en Kotlin pour générer un nombre aléatoire entre 1 et 10 et l'afficher dans la console:
 ```Kotlin
-val randomNum = (1..10).random()
-println(randomNum)
+val random = (1..10).random()
+println(random)
 ```
+La sortie sera un nombre aléatoire compris entre 1 et 10, tel que 4 ou 8.
 
-Pour générer un nombre aléatoire avec une limite supérieure spécifique, vous pouvez utiliser la fonction `nextInt()` et lui donner la limite en paramètre. Par exemple, pour générer un nombre aléatoire entre 1 et 100 :
+## Plongée en profondeur:
+La génération de nombres aléatoires a une longue histoire en informatique. Au début, les programmes utilisaient des algorithmes déterministes pour générer des nombres pseudo-aléatoires, mais cela a été remplacé par des générateurs de nombres réellement aléatoires, tels que les générateurs basés sur le bruit thermique.
 
-```Kotlin
-val randomNum = Random.nextInt(100) + 1
-println(randomNum)
-```
+Bien qu'en Kotlin, nous puissions utiliser la méthode `random()` pour générer des nombres aléatoires, il existe également d'autres alternatives telles que la bibliothèque `java.util.Random`. De plus, il est important de comprendre que les nombres générés par les ordinateurs ne sont pas vraiment aléatoires, mais qu'ils sont calculés en utilisant des algorithmes.
 
-Vous pouvez également utiliser la fonction `nextDouble()` pour générer un nombre aléatoire entre 0 et 1 avec des décimales.
-
-## Plongée en profondeur
-
-En utilisant la fonction `random()` pour générer des nombres aléatoires, il est important de noter qu'elle utilise la classe `Random` de Java sous-jacente. Cela signifie que les nombres générés ne sont pas vraiment aléatoires, mais plutôt pseudo-aléatoires. Cela signifie que si les mêmes paramètres sont utilisés pour générer des nombres aléatoires à partir de la même graine, les résultats seront toujours les mêmes. Pour éviter cela, vous pouvez spécifier une graine différente à l'aide de la fonction `setSeed()` avant de générer des nombres aléatoires.
-
-## Voir aussi
-
-Pour en savoir plus sur la génération de nombres aléatoires en Kotlin, vous pouvez consulter les liens suivants :
-
-- Documentation officielle de Kotlin sur la bibliothèque standard : https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.random/
-- Tutoriel de Baeldung sur la génération de nombres aléatoires en Kotlin : https://www.baeldung.com/kotlin-random
-- Article de Baeldung sur la génération de nombres aléatoires sans répétition en Kotlin : https://www.baeldung.com/kotlin-random-no-repeats
+## Voir aussi:
+Pour en savoir plus sur la génération de nombres aléatoires en Kotlin, voici quelques sources utiles:
+- La documentation officielle de Kotlin sur les nombres aléatoires: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.random/-random/
+- Un tutoriel sur la génération de nombres aléatoires en Kotlin: https://www.baeldung.com/kotlin/random-numbers
+- Une explication plus détaillée sur la différence entre nombres pseudo-aléatoires et réellement aléatoires: https://www.geeksforgeeks.org/pseudo-random-vs-true-random-number-generators/

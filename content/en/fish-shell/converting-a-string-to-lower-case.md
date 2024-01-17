@@ -10,40 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-Have you ever encountered a situation where you need to convert a string to lower case in your Fish Shell script? This is a common task for many developers who want to manipulate and compare strings without worrying about case sensitivity. In this article, we will explore how to easily convert a string to lower case in Fish Shell.
+Converting a string to lower case simply means changing all the letters in a string to their lower case equivalent. Programmers often do this to ensure consistency in their code and make it easier to compare and manipulate strings.
 
-## How To
+## How to:
 
-To convert a string to lower case in Fish Shell, we can use the `string tolower` command. This command takes in a string as an argument and returns the same string with all characters converted to lower case. Let's take a look at an example:
+Fish Shell makes it easy to convert a string to lower case using the "string tolower" command. Here's an example:
 
-```Fish Shell
-set my_string "HELLO World"
+```
+set my_string "Hello World"
 string tolower $my_string
 ```
 
-The output of this code would be `hello world`, as all the characters in the original string have been converted to lower case. You can also use the `tolower` shorthand, which achieves the same result:
+This will output "hello world" in the terminal.
 
-```Fish Shell
-set my_string "HELLO World"
-tolower $my_string
+If you want to convert a specific part of the string, you can use the "|string tolower" command. For example:
+
+```
+set my_string "Hello World"
+echo $my_string | string tolower
 ```
 
-In both cases, the variable `my_string` remains unchanged, and the converted string is displayed as output. This allows you to both manipulate the string and access the converted version whenever needed.
+This will output "hello world" in the terminal as well.
 
-## Deep Dive
+## Deep Dive:
 
-The `string tolower` command in Fish Shell utilizes the `tolower` function, which is a part of the standard library. This function converts a single character or an entire string to lower case, depending on the input. It uses the current locale and encoding to determine the appropriate lower case mapping for each character.
+Converting strings to lower case dates back to early computer systems, where data was stored in all uppercase letters for technical reasons. As computers evolved, lowercase letters became more common in programming languages but the convention of storing data in uppercase remained. This led to the need for converting strings to lowercase in order to easily compare and manipulate data.
 
-It is worth noting that the `tolower` function does not just convert ASCII characters, but also handles Unicode characters and special cases such as ligatures. This makes it a reliable and robust method for converting strings to lower case in any language.
+While Fish Shell makes it easy to convert strings to lower case, there are other methods such as using built-in functions in other programming languages like Python and JavaScript. However, these methods may require more code and may not be as efficient as using the dedicated "string tolower" command in Fish Shell.
 
-Furthermore, if you need to convert a string to upper case, you can use the `string toupper` command, which uses the `toupper` function in a similar manner.
+## See Also:
 
-## See Also
-
-For more information about string manipulation in Fish Shell, check out the official documentation and these helpful resources:
-
-- [Fish Shell official website](https://fishshell.com)
-- [Fish Shell on GitHub](https://github.com/fish-shell/fish-shell)
-- [Fish Shell string manipulation tutorial](https://medium.com/@alex_barnsley/fish-shell-string-manipulation-d8d9b5c60a03)
+- [Fish Shell documentation](https://fishshell.com/docs/current/cmds/string.html)
+- [Python lower() function](https://www.w3schools.com/python/ref_string_lower.asp)
+- [JavaScript toLowerCase() method](https://www.w3schools.com/jsref/jsref_tolowercase.asp)

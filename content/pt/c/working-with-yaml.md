@@ -10,46 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que trabalhar com YAML?
+## O que e por que?
 
-Trabalhar com YAML pode ser benéfico para programadores, pois é uma formatação leve e fácil de ler para arquivos de configuração e estruturas de dados. Além disso, é amplamente suportada por diferentes linguagens de programação, incluindo o C.
+YAML é uma linguagem de serialização de dados, o que significa que ele permite que você salve dados em um formato legível para humanos e também para máquinas. Programadores frequentemente trabalham com YAML porque ele é fácil de escrever, ler e compartilhar, além de ser uma opção popular para armazenar dados estruturados.
 
-## Como trabalhar com YAML em C
+## Como fazer:
 
-Para trabalhar com YAML em C, é necessário primeiro incluir a biblioteca "libyaml" em seu código. Em seguida, é preciso criar um objeto "yaml_parser_t" para analisar o arquivo YAML e um "yaml_emitter_t" para gerar o arquivo YAML.
-
-Dentro do código, utilize as funções da biblioteca "libyaml" para analisar e gerar o arquivo YAML. Por exemplo:
+Para começar a trabalhar com YAML em C, você precisa incluir o cabeçalho `yaml.h` no seu código:
 
 ```C
-yaml_parser_t parser;
-yaml_parser_initialize(&parser);
-
-FILE *arquivo = fopen("dados.yaml", "rb");
-yaml_parser_set_input_file(&parser, arquivo);
-
-yaml_event_t evento;
-
-// Obtendo o próximo evento do arquivo YAML
-if (!yaml_parser_parse(&parser, &evento)) {
-    // Tratar possíveis erros de parsing
-}
-
-// Gerando o arquivo YAML
-yaml_emitter_emitted_t emitido = yaml_emitter_emit(&emitter, &evento);
-
-// Fechando o arquivo e liberando memória
-fclose(arquivo);
-yaml_parser_delete(&parser);
+#include <yaml.h>
 ```
 
-## Detalhes sobre o trabalho com YAML em C
+Em seguida, você pode começar a usar as funções disponíveis para manipular dados YAML. Por exemplo, aqui está um código simples para criar um novo documento YAML e escrever alguns dados nele:
 
-Ao trabalhar com YAML em C, é importante ter em mente que existem diferentes tipos de dados suportados, como strings, números e booleanos. Além disso, a biblioteca "libyaml" possui funções para manipulação de erros e gerenciamento de memória.
+```C
+// Criar o documento
+yaml_document_t documento;
+yaml_document_initialize(&documento, NULL, NULL, NULL, 0, 0);
 
-Uma vantagem de usar YAML em C é que é possível trabalhar com estruturas de dados complexas, como listas e mapas, de maneira simples e legível.
+// Adicionar dados ao documento
+yaml_node_t* n1 = yaml_document_add_scalar(&documento, NULL, "nome: João");
+yaml_node_t* n2 = yaml_document_add_scalar(&documento, NULL, "idade: 30");
 
-## Veja também
+// Serializar o documento e imprimir na tela
+int tamanho = yaml_document_to_str(&documento, buffer, sizeof(buffer));
+printf("%s", buffer);
 
-- [Documentação da biblioteca libyaml](https://yaml.org/spec/1.2/spec.html)
-- [Tutorial de YAML em C](https://www.tutorialspoint.com/yaml/yaml_tutorial.pdf)
-- [Exemplos de código em C usando libyaml](https://github.com/yaml/libyaml)
+// Limpar memória
+yaml_document_delete(&documento);
+```
+
+Isso resultará na seguinte saída:
+
+```
+nome: João
+idade: 30
+```
+
+## Profundando:
+
+YAML foi originalmente criado por Clark Evans em 2001 e desde então tem sido amplamente adotado pelos programadores. Existem também alternativas para trabalhar com dados estruturados, como JSON e XML, mas YAML é frequentemente escolhido por sua simplicidade e facilidade de uso.
+
+Para implementar YAML em seu código C, você também pode usar a biblioteca libYAML, que fornece a funcionalidade para ler e escrever documentos YAML. Além disso, existem muitos recursos online disponíveis para ajudá-lo a aprender e aprofundar seu conhecimento sobre YAML.
+
+## Veja também:
+
+Para mais informações sobre YAML e como usá-lo em sua programação, confira os seguintes links:
+
+- [Página oficial do YAML](https://yaml.org/)
+- [Documentação da biblioteca libYAML](https://pyyaml.org/wiki/LibYAML)
+- [Tutorial de YAML para desenvolvedores C](https://www.ibm.com/developerworks/library/l-yaml/)
+- [Comparação entre JSON, XML e YAML](https://www.educba.com/json-vs-xml-vs-yaml/)

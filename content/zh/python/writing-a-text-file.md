@@ -10,75 +10,20 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
+## 什么 & 为什么？
+写入文本文件是一种编程技术，用于将数据或文本保存到计算机的硬盘或其他存储设备中。程序员通常这样做是为了保存或备份重要的信息，以便在以后的使用中方便访问。
 
-Python是一种流行的编程语言，它可以用于许多不同的任务，包括数据分析、网络开发和自动化。写入文本文件是一种常见的编程任务，它可以帮助您保存和组织数据，并使您的程序更加灵活和可扩展。
-
-## 如何
-
-写入文本文件的基本步骤是打开文件、写入内容并关闭文件。以下是一个简单的例子：
-
+## 如何：
 ```Python
-# 打开文件
-file = open("example.txt", "w")
-
-# 写入内容
-file.write("这是一个例子文本文件。")
-
-# 关闭文件
-file.close()
+with open("myfile.txt", "w") as f:
+    f.write("Hello Mandarin readers!")
 ```
+运行上述代码后，您将在相同的目录中找到名为 "myfile.txt" 的文本文件。它将包含一条简单的消息，即 "Hello Mandarin readers!"。您也可以使用不同的模式（如 "a" ）来打开文件以进行追加或读取操作。
 
-您还可以使用`with`语句来自动关闭文件，例如：
+## 深入了解：
+文本文件写入是一项常见的编程任务，旨在创建永久性文档来存储和检索数据。它通常与读取文本文件的技术相结合，以便完整地操作文件的内容。另外，程序员也可以使用更高级的数据结构，如数据库来存储和管理数据，但文本文件写入仍然是一种经济且可靠的解决方案。在编程中，文本文件的编码类型也很重要，因为它决定了如何显示和处理文本内的特殊字符。
 
-```Python
-with open("example.txt", "w") as file:
-    file.write("这是一个例子文本文件。")
-```
-
-这样可以确保文件在使用完毕后被正确关闭，而无需手动编写`close()`语句。
-
-## 深入探讨
-
-要向文本文件写入多行内容，您可以使用`\n`来表示换行符，例如：
-
-```Python
-lines = "这是第一行。\n这是第二行。\n这是第三行。"
-with open("example.txt", "w") as file:
-    file.write(lines)
-```
-
-如果您想要写入其他数据类型，例如数字或列表，您需要先将它们转换为字符串。可以使用`str()`函数进行转换，如下所示：
-
-```Python
-num = 123
-with open("example.txt", "w") as file:
-    file.write(str(num))
-```
-
-您还可以使用`format()`方法来格式化字符串输出，例如：
-
-```Python
-name = "小明"
-age = 20
-with open("example.txt", "w") as file:
-    file.write("我的名字是{}，我今年{}岁。".format(name, age))
-```
-
-有时候，您可能需要在已有的文本文件中添加新的内容，而不是完全覆盖它。这可以通过传递`"a"`参数而不是`"w"`来实现。例如：
-
-```Python
-with open("example.txt", "a") as file:
-    file.write("这是新添加的内容。")
-```
-
-使用`"a"`参数可以在文件末尾继续写入内容，而不会覆盖原来的文本。
-
-## 参考链接
-
-- [Python官方文档](https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files)
-- [Python教程](https://www.w3schools.com/python/python_file_write.asp)
-- [Python文件操作详解](https://www.runoob.com/python/python-files-io.html)
-- [用Python写入文件方法总结](https://www.jianshu.com/p/3faf868b55d1)
-
-## 参见
+## 参考：
+- [Python文档：文本文件的读取和写入](https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files)
+- [维基百科：文本文件](https://zh.wikipedia.org/wiki/%E6%96%87%E6%9C%AC%E6%96%87%E4%BB%B6)
+- [CSDN：Python文本文件写入介绍](https://blog.csdn.net/eric61016191/article/details/82746878)

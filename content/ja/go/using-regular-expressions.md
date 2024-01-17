@@ -1,7 +1,7 @@
 ---
-title:                "「正規表現の使用」"
-html_title:           "Go: 「正規表現の使用」"
-simple_title:         "「正規表現の使用」"
+title:                "正規表現の利用"
+html_title:           "Go: 正規表現の利用"
+simple_title:         "正規表現の利用"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Strings"
@@ -10,53 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+## 何となぜ？
 
-正規表現を使用する理由は、文字列データから特定のパターンを抽出したり、文字列の置換や検索を行ったりするためです。これらの機能は、Goプログラミングで文字列操作を簡単にするために不可欠です。
+正規表現を使うとは、コンピュータ言語におけるパターンマッチングの手法です。プログラマーはこれを使うことで、文字列やテキストデータから特定のパターンを抽出したり、置換したりすることができます。
 
-## ハウトゥー
+## 方法：
 
-正規表現を使用するためには、まずregexpパッケージをインポートします。次に、パターンを定義したり、マッチさせたい文字列を準備したりします。
+Go言語では、正規表現パターンを表す ```regexp``` パッケージを使います。下記の例では、指定した文字列に「こんにちは」という単語が含まれているかどうかをチェックして、結果を返します。
 
 ```Go
-import "regexp"
+#include <regexp>
 
 func main() {
-	pattern := regexp.MustCompile("apple|orange") //リンゴまたはオレンジのパターンを定義
-	stringsToCheck := []string{"apple", "banana", "orange"} //チェックする文字列のスライスを作成
+  input := "こんにちは、世界！"
+  re := regexp.MustCompile("こんにちは")
+  match := re.MatchString(input)
 
-	//ループを使用してマッチする文字列を出力
-	for _, str := range stringsToCheck {
-		if pattern.MatchString(str) {
-			fmt.Println(str + " is a fruit.")
-		}
-	}
+  if match {
+    fmt.Println("指定した文字列に「こんにちは」という単語が含まれています")
+  } else {
+    fmt.Println("指定した文字列に「こんにちは」という単語が含まれていません")
+  }
+
 }
 ```
 
-上記のコードを実行すると、"apple is a fruit."と"orange is a fruit."という出力が得られます。
+出力は以下のようになります。
 
-## ディープダイブ
-
-Goの正規表現では、バッキングパターンと置換パターンを指定することで、文字列を簡単に置換できます。また、マッチした結果をキャプチャすることもできます。
-
-バッキングパターンは、マッチさせたい文字列内のパターンを指定します。文字列全体がマッチする必要はありません。
-
-置換パターンは、バッキングパターンにマッチした文字列の部分を置換するためのパターンを指定します。
-
-例えば、"Hello, my name is John."という文字列から"name"の部分を抽出し、"Your name is John."という文字列に置換するには、以下のようなコードを使用できます。
-
-```Go
-pattern := regexp.MustCompile("name")
-str := "Hello, my name is John."
-replacement := pattern.ReplaceAllString(str, "Your name")
-fmt.Println(replacement)
+```
+指定した文字列に「こんにちは」という単語が含まれています
 ```
 
-出力は、"Hello, my Your name is John."となります。
+## 深く掘り下げる
 
-## 関連リンク
+正規表現は、1960年代にケン・トンプソンが開発したもので、今でも広く使われています。Go言語以外にも、PerlやPythonなどの言語でもサポートされています。
 
-- [Goの正規表現パッケージのドキュメント](https://golang.org/pkg/regexp/)
-- [正規表現チュートリアル](https://www.regular-expressions.info/tutorial.html)
-- [Go正規表現サイト](https://regex-golang.appspot.com/)
+正規表現では、パイプ記号(|)やワイルドカード(*)など、特殊文字を使ってパターンを指定します。また、より細かい検索や変換をするために、文字列やグループをキャプチャすることもできます。
+
+## 関連情報を参照する
+
+Go言語で正規表現を使う方法については、公式ドキュメントを参照することができます。また、レギュラーテーブルを生成するツールとして、「RegExr」や「RegexBuddy」などがあります。

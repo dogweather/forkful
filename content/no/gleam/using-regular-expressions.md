@@ -10,33 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hva & Hvorfor?
+Regular Expressions, eller bare regex, er en måte å definere og søke etter mønstre i tekst på. Dette er spesielt nyttig for programmerere som ønsker å finne og manipulere data på en effektiv måte.
 
-Vi bruker tekstbehandling hver dag for å kommunisere og uttrykke oss. Men noen ganger trenger vi mer kontroll over tekstbehandlingen, som å finne eller erstatte bestemte mønstre. Det er her regulære uttrykk kommer inn - et kraftig verktøy for å søke, filtrere og manipulere tekstbasert data.
-
-## Hvordan
-
-Gleam er et funksjonelt programmeringsspråk utviklet for å være enkelt å bruke og leselig. For å bruke regulære uttrykk i Gleam, bruker vi "regex" biblioteket. La oss se på noen eksempler for å forstå hvordan det fungerer:
-
+## Hvordan:
+For å bruke regex i Gleam, må vi importere modulen `gleam/re/regex` og bruke funksjonen `match` sammen med et mønster og en tekststreng. La oss si at vi vil finne alle tall i en tekststreng og sjekke om de alle er partall. Da kan vi skrive følgende:
 ```Gleam
-let regex = regex.new("gleam")
-let string = "Gleam er et fantastisk programmeringsspråk"
-regex.match(string) // Output: found
+text =
+"Even numbers: 2, 4, 6, 8"
+pattern = "\\d"
+match(text, pattern)
 ```
-Her oppretter vi et nytt regulært uttrykk som leter etter strengen "gleam". Deretter sjekker vi om den finnes i en annen streng, og får som output "found".
+Dette vil gi oss en liste med matchende tall (2,4,6,8), som vi så kan filtrere gjennom og sjekke om de er partall eller ikke.
 
-```Gleam
-let regex = regex.new("[0-9]+")
-let string = "2021 er et fantastisk år"
-regex.replace(string, "42") // Output: 42 er et fantastisk år
-```
-I dette eksempelet erstatter vi alle tall i en streng med "42". Resultatet blir "42 er et fantastisk år".
+## Dypp ned:
+Regex har eksistert siden 1950-tallet og er en standard i mange programmeringsspråk. Gleam bruker biblioteket Oniguruma for å implementere regex, som støtter et bredt utvalg av mønstre og har lang historie med å være et pålitelig verktøy for å manipulere tekst.
 
-## Dykk dypere
+En alternativ metode for å finne og manipulere tekst på en lignende måte er å bruke string-metoder som `index_of` og `replace`, men disse metodene vil kunne bli langtekkelige og mer kompliserte for komplekse mønstre.
 
-Regulære uttrykk er et kraftig verktøy som gir oss muligheten til å finne og manipulere tekstbaserte data på en effektiv måte. Men det er et omfattende emne med mange forskjellige aspekter å utforske. Når du blir mer fortrolig med Gleam og regex, kan du se på avanserte funksjoner som valgfrie deler, tilbakeføringer og uttrykk med variabler.
+For å mestre regex er det viktig å bli kjent med de ulike symbolene og syntaxen som brukes for å uttrykke mønstre. Det finnes også mange ressurser på nettet, inkludert dokumentasjon og verktøy som kan hjelpe deg å teste og debugge dine regex uttrykk.
 
-## Se også
-
-- [Gleam Hjemmeside](https://gleam.run)
-- [regex bibliotek dokumentasjon](https://gleam.run/lib/regex.scm.html)
+## Se også:
+For mer informasjon om regex i Gleam, kan du sjekke dokumentasjonen på nettstedet: https://gleam.run/lib/regex. Det finnes også mange ressurser på nettet som tilbyr interaktive øvelser og tutorials for å hjelpe deg å bli mer komfortabel med å bruke regex. Sjekk ut "RegexOne" og "Regexr" for å komme i gang. Lykke til med å manipulere tekst på en rask og effektiv måte med regex i Gleam!

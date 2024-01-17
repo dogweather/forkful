@@ -1,7 +1,7 @@
 ---
-title:                "Analysere HTML."
-html_title:           "PHP: Analysere HTML."
-simple_title:         "Analysere HTML."
+title:                "Analysering av html"
+html_title:           "PHP: Analysering av html"
+simple_title:         "Analysering av html"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "HTML and the Web"
@@ -10,42 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hva & Hvorfor?
 
-Hvis du jobber med å utvikle nettsider eller applikasjoner, vil du sannsynligvis på et tidspunkt måtte hente eller manipulere data fra andre nettsteder. Ved å parse HTML, kan du enkelt trekke ut spesifikke deler av koden og bruke dem til å lage dynamiske og tilpassede løsninger for dine prosjekter.
+Parsing av HTML er prosessen med å lese og analysere HTML-koden i en nettside. Dette er et viktig verktøy for webutviklere for å hente ut spesifikke data eller informasjon fra en nettside. Det kan også brukes til å omforme HTML-koden for å tilpasse den til ulike formater eller til å lagre den for senere bruk.
 
-## Hvordan gjøre det
+# Hvordan:
 
-Det finnes flere måter å parse HTML i PHP på, men det enkleste og mest effektive er å bruke et tredjeparts bibliotek som "simple_html_dom". For å bruke dette, må du først laste ned biblioteket fra nettet og lagre det i en mappe på serveren din.
-
-Deretter kan du importere biblioteket og begynne å bruke det til å hente data fra en nettside. Her er et eksempel på hvordan du kan hente overskriftene fra en nettside og skrive dem ut:
+For å utføre enkel HTML parsing i PHP kan du bruke funksjonene `file_get_contents()` og `strpos()`. Her er et eksempel på hvordan du kan hente ut tittel og beskrivelse fra en nettside:
 
 ```PHP
-// Importer biblioteket
-include "simple_html_dom.php";
+$url = "https://www.example.com";
+$html = file_get_contents($url);
 
-// Hent nettsiden du vil parse
-$html = file_get_html('https://www.example.com');
+$title_start = strpos($html, '<title>') + 7;
+$title_end = strpos($html, '</title>');
+$title = substr($html, $title_start, $title_end - $title_start);
 
-// Finn alle overskrifter på siden
-foreach($html->find('h1, h2, h3') as $heading) {
-  // Skriv ut overskriften
-  echo $heading->innertext;
-}
+$desc_start = strpos($html, '<meta name="description" content="') + 34;
+$desc_end = strpos($html, '"', $desc_start);
+$desc = substr($html, $desc_start, $desc_end - $desc_start);
+
+echo "Tittel: $title <br>";
+echo "Beskrivelse: $desc";
 ```
 
-Dette eksempelet vil skrive ut alle overskriftene på nettsiden "www.example.com". Du kan også bruke forskjellige selektorer for å hente andre elementer, som linker, bilder og tabeller.
+Dette eksempelet viser hvordan du kan hente ut tittel og beskrivelse fra en nettside ved å finne start- og sluttpunktene for elementene i HTML-koden. Resultatet vil være:
 
-## Dypdykk
+```
+Tittel: Nettside Tittel
+Beskrivelse: Dette er en beskrivelse av nettsiden.
+```
 
-Når du parser HTML i PHP, er det viktig å forstå hvordan koden fungerer. Simple_html_dom-biblioteket bruker en prinsipp kalt "DOM", som står for Document Object Model. Dette vil si at HTML-koden blir representert som et hierarki av objekter, hvor hvert objekt tilsvarer et HTML-element.
+# Dypdykk:
 
-Du kan også bruke CSS-selektorer i stedet for de vanlige HTML-taggene for å få mer presise resultater når du parser HTML. For eksempel kan du bruke ".class" for å hente alle elementer med den gitte klassen i stedet for å bruke "div" for alle div-elementer.
+HTML parsing har vært en viktig del av webutvikling siden begynnelsen av internettets levetid. Det finnes også alternativer til å bruke PHP for parsing, som for eksempel JavaScript eller tredjeparts biblioteker som Simple HTML DOM.
 
-## Se også
+Det er viktig å være klar over at parsing av HTML kan være en kompleks oppgave, spesielt med tanke på at nettsider kan variere i oppbygning og struktur. Det er derfor viktig å ha god kjennskap til HTML og ulike parser-teknikker for å få best mulig resultat. 
 
-Her er noen nyttige ressurser for å lære mer om parsing av HTML i PHP:
+# Se også:
 
-- [PHP Simple HTML DOM](https://simplehtmldom.sourceforge.io/) - offisiell dokumentasjon for biblioteket brukt i dette eksempelet.
-- [W3Schools - PHP HTML DOM](https://www.w3schools.com/php/php_ref_simplexml.asp) - en god ressurs for å lære mer om DOM og hvordan det brukes i PHP.
-- [PHP.net - DOMDocument](https://www.php.net/manual/en/class.domdocument.php) - dokumentasjon for PHPs innebygde DOM Document-klasser.
+- [PHP - file_get_contents()](https://www.php.net/manual/en/function.file-get-contents.php)
+- [PHP - strpos()](https://www.php.net/manual/en/function.strpos.php)
+- [Simple HTML DOM](https://simplehtmldom.sourceforge.io/)

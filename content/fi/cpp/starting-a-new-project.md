@@ -1,7 +1,7 @@
 ---
-title:                "Uuden projektin aloittaminen"
-html_title:           "C++: Uuden projektin aloittaminen"
-simple_title:         "Uuden projektin aloittaminen"
+title:                "Aloittamassa uutta projektia"
+html_title:           "C++: Aloittamassa uutta projektia"
+simple_title:         "Aloittamassa uutta projektia"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Getting Started"
@@ -10,40 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi aloittaa uusi projekti?
-Uuden projektin aloittaminen voi olla hyvä tapa oppia uusia ohjelmointitaitoja, kehittää omaa osaamistaan ja luoda jotain mielenkiintoista ja hyödyllistä. Se voi myös tarjota mahdollisuuden työskennellä yhdessä muiden kehittäjien kanssa ja saada kokemusta projektinhallinnasta.
+## Mitä & Miksi?
 
-## Kuinka aloittaa uusi projekti?
-Aloittaaksesi uuden projekti, sinun tulee ensin luoda uusi C++ -tiedosto ja määritellä tarvittavat kirjastot. Esimerkiksi:
+Uuden projektin aloittaminen on se, kun ohjelmoija luo uuden tietokoneohjelmiston. Tämä on usein tehtävä, kun halutaan luoda uusi sovellus tai ratkaista jokin ongelma. Ohjelmoijat aloittavat uusia projekteja, jotta he voivat luoda jotain uutta ja käyttää hyödyksi uusia teknologioita. 
 
-```C++
+## Kuinka:
+
+Ohessa on esimerkki siitä, miten uusi projekti voidaan aloittaa käyttäen C++ ohjelmointikieltä:
+
+```
+// Suorakulmion pinta-ala laskuri
 #include <iostream>
-#include <string>
 
 using namespace std;
 
-int main(){
-    // koodin kirjoittaminen tähän
-    return 0;
+int main() {
+  // Määritellään suorakulmion mitat
+  double pituus, leveys;
+  cout << "Syötä suorakulmion pituus: ";
+  cin >> pituus;
+  cout << "Syötä suorakulmion leveys: ";
+  cin >> leveys;
+
+  // Lasketaan ja tulostetaan pinta-ala
+  double pinta_ala = pituus * leveys;
+  cout << "Suorakulmion pinta-ala on: " << pinta_ala << endl;
+
+  return 0;
 }
 ```
-
-Tässä esimerkissä olemme ottaneet käyttöön "iostream" ja "string" -kirjastot, jotka mahdollistavat käyttäjän syötteiden lukemisen ja merkkijonojen käsittelyn. Voit käyttää muita tarvittavia kirjastoja projektisi tarpeiden mukaan. Seuraavaksi voit kirjoittaa koodin, joka suorittaa haluttuja toimintoja ja näyttää tulosteen. Esimerkiksi:
-
-```C++
-string nimi;
-cout << "Hei! Mikä on nimesi?";
-getline(cin, nimi);
-
-cout << "Mukava tavata, " << nimi << "!" << endl;
+Tulostus:
+```
+Syötä suorakulmion pituus: 5
+Syötä suorakulmion leveys: 3
+Suorakulmion pinta-ala on: 15
 ```
 
-Tässä koodissa käytämme "string" -muuttujaa tallentamaan käyttäjän antamaa nimeä ja tulostamme sitten tervehdyksen käyttäen tätä muuttujaa. Voit kokeilla erilaisia koodinpätkiä ja tutkia eri mahdollisuuksia C++:n avulla.
+## Syvällisempi sukellus:
 
-## Syvällisempää tietoa uuden projektin aloittamisesta
-Yksi tärkeimmistä asioista C++ -projektin aloittamisessa on hyvän suunnitelman tekeminen. Helpointa on aloittaa pienellä ja yksinkertaisella projektilla, jonka avulla voit oppia perusteet ja laajentaa sitten taitojasi. Muista myös ottaa huomioon projektisi tarkoitus ja lopputavoitteet. On myös tärkeää pitää huolta koodisi luettavuudesta ja kommentoida sitä tarvittaessa.
+Uusien projektien aloittamisella on pitkät perinteet ohjelmoinnin historiassa. Ohjelmoijat aloittivat uusia projekteja jo alusta lähtien, kun tietokoneet tulivat käyttöön. Tämä johtuu siitä, että ohjelmistot ja niiden teknologiat kehittyvät jatkuvasti ja uusia ratkaisuja tarvitaan. On myös olemassa monia muita vaihtoehtoja C++:lle, kuten Java, Python ja C#, joita voidaan käyttää uusien projektien aloittamiseen. Jokaisella kielellä on omat ominaisuutensa ja vahvuutensa, joten ohjelmoijien pitäisi valita käytettävä kieli sen perusteella, mikä sopii parhaiten heidän tarpeisiinsa ja projekteihinsa.
 
-## Katso myös
-- [C++:n opetusohjelmat ja resurssit (Suomi)](https://www.cplusplus.com/doc/tutorial/)
-- [Kuinka aloittaa uusi projekti C++:ssa (englanniksi)](https://www.digitalocean.com/community/tutorials/how-to-start-a-new-project-in-cplusplus)
-- [Esimerkkejä C++ -projekteista (englanniksi)](https://www.codementor.io/projects/language/cpp)
+## Katso myös:
+
+- [C++ ohjelmointikielen virallinen sivusto](https://isocpp.org/)
+- [Ohjeet uuden projektin aloittamiseen C++:lla](https://www.edureka.co/blog/how-to-start-a-new-project-in-cpp/)
+- [Vinkkejä ohjelmistoarkkitehdille uusien projektien suunnitteluun](https://www.archdaily.com/769198/how-to-start-a-new-project-architectural-project-planning-checklist)

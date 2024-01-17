@@ -1,7 +1,7 @@
 ---
-title:                "Omvandla en sträng till gemener"
-html_title:           "Clojure: Omvandla en sträng till gemener"
-simple_title:         "Omvandla en sträng till gemener"
+title:                "Omvandla en sträng till små bokstäver"
+html_title:           "Clojure: Omvandla en sträng till små bokstäver"
+simple_title:         "Omvandla en sträng till små bokstäver"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -10,25 +10,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
+När vi pratar om att konvertera en sträng till små bokstäver, så menar vi att göra alla bokstäver i strängen till gemena. Detta är ett vanligt arbetssätt för programmerare när de behöver hantera strängar på ett mer enhetligt sätt.
 
-Att konvertera en sträng till gemener är en vanlig uppgift i programmering, eftersom det hjälper till att standardisera data och göra det enklare att jämföra strängar.
-
-## Så här gör du
-
+## Så här gör du:
 ```Clojure
-(.toLowerCase "STRING") ; "string"
-(.toLowerCase "ÄPPLE") ; "äpple"
-(.toLowerCase "HeLlO WoRlD") ; "hello world"
+;; Definiera en sträng
+(def string "Hej alla ProgProffs!")
+
+;; Använd funktionen lower-case för att konvertera strängen till små bokstäver
+(lower-case string)
+
+;; Resultat:
+;; "hej alla progproffs!"
 ```
 
-Som du ser används metoden `.toLowerCase` för att konvertera en sträng till gemener. Metoden kan appliceras på alla typer av strängar, oavsett om de innehåller bokstäver, siffror, specialtecken eller en blandning av allt.
+## Djupdykning:
+Att konvertera strängar till små bokstäver har funnits sedan tidigt 1900-tal, då många skrivmaskiner bara hade gemena bokstäver. Alternativ till att använda lower-case funktionen är att iterera över strängen och konvertera varje bokstav separat eller att använda inbyggda Java-metoder. I Clojure implementeras lower-case med hjälp av Java's Character-klass, som har en metod för just detta ändamål.
 
-## Djupdykning
-
-Konvertering till gemener är en viktig del av Unicode-standardens normalization, vilket innebär att alla tecken representeras på ett standardiserat sätt. Detta underlättar för jämförelse av text på olika språk och teckenkodningar.
-
-## Se även
-
-- [Official Clojure Documentation: Characters and Strings](https://clojure.org/reference/characters)
-- [Clojure Cheat Sheet: Strings](https://clojure.org/api/cheatsheet#Strings)
+## Se även:
+- Clojure's dokumentation för lower-case funktionen: https://clojuredocs.org/clojure.core/lower-case
+- Java's Character-klass: https://docs.oracle.com/javase/8/docs/api/java/lang/Character.html

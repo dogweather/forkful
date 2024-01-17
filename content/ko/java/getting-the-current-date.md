@@ -10,40 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜?
+## 무엇과 왜?
 
-현재 날짜를 가져오는 것이 왜 중요한지 궁금하신가요? 그렇다면 지금부터 Java에서 현재 날짜를 가져오는 방법에 대해 알려드리겠습니다.
+현재 날짜를 가져오는 것은 프로그래머에게 중요한 작업입니다. 현재 날짜를 가져오는 이유는 프로그램이 실행되는 날짜와 시간을 기록하거나 프로그램의 동작을 제어하기 위해 필요할 수 있기 때문입니다.
 
-## 어떻게 가져올까?
+## 하는 방법:
 
-우선, `java.time` 패키지에서 제공하는 `LocalDate` 클래스를 import 해주세요. 그리고 `now()` 메소드를 사용해서 현재 날짜를 가져올 수 있습니다.
+자바에서 현재 날짜를 가져오는 가장 간단한 방법은 java.util 패키지에 있는 Date 클래스를 사용하는 것입니다. 아래의 코드를 참조해보세요.
 
-```Java
-import java.time.LocalDate;
+```java
+import java.util.Date;
 
-LocalDate currentDate = LocalDate.now();
-System.out.println(currentDate);
+public class CurrentDate{
+    public static void main(String[] args) {
+        // 현재 날짜를 가져오는 Date 객체 생성
+        Date currentDate = new Date();
+
+        // 현재 날짜 출력
+        System.out.println("현재 날짜: " + currentDate);
+    }
+}
 ```
 
-위 코드를 실행하면 현재 날짜가 나타납니다.
+위의 코드를 실행하면 아래와 같은 결과가 출력될 것입니다.
 
-`now()` 메소드는 기본적으로 현재 시스템 시간을 기준으로 날짜를 가져옵니다. 만약 다른 시간대를 사용하고 싶다면 `ZoneId` 클래스를 이용해 원하는 시간대를 설정할 수 있습니다.
-
-```Java
-import java.time.LocalDate;
-import java.time.ZoneId;
-
-LocalDate currentDate = LocalDate.now(ZoneId.of("Asia/Seoul"));
-System.out.println(currentDate);
+```
+현재 날짜: Sat Aug 21 14:38:45 KST 2021
 ```
 
-## 더 깊게 알아보기
+## 깊이 있는 정보:
 
-`LocalDate` 클래스는 월, 일, 연도와 같은 날짜 정보를 담고 있습니다. 만약 시간 정보까지 함께 가져오고 싶다면 `LocalDateTime` 클래스를 사용할 수 있습니다. 또한 `LocalDate`나 `LocalDateTime` 클래스를 이용해 날짜 계산을 할 수도 있습니다.
+현재 날짜를 가져오는 작업은 Java 1.1 이후로 추가된 Date 클래스의 메소드를 이용해 수행됩니다. 또 다른 방법으로는 java.time 패키지에 있는 LocalDate 클래스를 사용하는 것도 가능합니다. 하지만 Date 클래스는 날짜와 시간 모두를 제공하고, LocalDate 클래스는 오직 날짜만을 처리하기 때문에 용도에 맞게 선택하여 사용하시면 됩니다. 또한, JAVA 언어 이외에도 다른 프로그래밍 언어에서도 현재 날짜를 가져오는 메소드를 지원하고 있으니 필요에 따라 다른 방법도 채택해보세요.
 
-더 자세한 내용은 [Oracle 공식 문서](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)에서 확인할 수 있습니다.
+## 더 알아보기:
 
-## 더 찾아보기
+현재 날짜를 가져오는 작업과 관련된 더 많은 정보를 알고 싶다면 아래의 링크를 참조해보세요.
 
-[Java Programmers를 위한 8 가지 유용한 팁](https://dzone.com/articles/7-tips-for-java-programmers)  
-[Java의 Date와 Time API 소개](https://docs.oracle.com/javase/tutorial/datetime/overview/index.html)
+- Java Date 클래스: https://docs.oracle.com/javase/7/docs/api/java/util/Date.html
+- Java LocalDate 클래스: https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html
+- 다른 프로그래밍 언어에서 현재 날짜를 가져오는 방법: https://www.tutorialspoint.com/how-to-get-current-date-and-time-in-different-programming-languages

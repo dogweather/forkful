@@ -1,7 +1,7 @@
 ---
-title:                "Écrire sur l'erreur standard"
-html_title:           "PHP: Écrire sur l'erreur standard"
-simple_title:         "Écrire sur l'erreur standard"
+title:                "Écrire vers l'erreur standard"
+html_title:           "PHP: Écrire vers l'erreur standard"
+simple_title:         "Écrire vers l'erreur standard"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Files and I/O"
@@ -10,43 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Pourquoi
+## Quoi & Pourquoi?
 
-Ecrire sur le flux d'erreur (standard error) est un moyen simple et efficace d'enregistrer des informations à des fins de débogage ou de suivi des erreurs lors du développement d'applications en PHP.
+L'écriture sur la sortie d'erreur standard est une méthode utilisée par les programmeurs pour afficher des messages d'erreur ou de débogage lors de l'exécution de leur code. Elle est principalement utilisée pour diagnostiquer et résoudre les erreurs dans le code, afin de faciliter le processus de développement.
 
-# Comment Faire
+Les programmeurs utilisent l'écriture sur la sortie d'erreur standard pour être en mesure d'identifier rapidement les erreurs et les bugs dans leur code sans avoir à passer par des processus de débogage plus complexes. Cela leur permet de gagner du temps et d'améliorer l'efficacité de leur travail.
 
-L'écriture sur le flux d'erreur en PHP est très simple. Tout d'abord, il est important de comprendre que le flux d'erreur est un flux de sortie par lequel les erreurs et les avertissements sont généralement affichés. Pour y écrire, il suffit d'utiliser la fonction "fwrite()" en spécifiant le flux dans lequel écrire, suivi du message à enregistrer.
+## Comment:
 
-Par exemple :
-
-```PHP
-fwrite(STDERR, "Erreur : Impossible de se connecter à la base de données !");
-```
-
-Ce code écrira le message "Erreur : Impossible de se connecter à la base de données !" sur le flux d'erreur.
-
-Si vous voulez enregistrer une erreur spécifique à une variable, vous pouvez utiliser la fonction "error_log()" pour écrire directement sur le flux d'erreur. Par exemple :
+Voici un exemple simple de code PHP utilisant l'écriture sur la sortie d'erreur standard:
 
 ```PHP
-$erreur = "Erreur : Impossible de se connecter à la base de données !";
-error_log($erreur, 3, "/chemin/vers/le/fichier/erreur.log");
+<?php
+// code qui génère une erreur
+echo "Bonjour";
+// écriture sur la sortie d'erreur standard
+stderr("Une erreur s'est produite");
+?>
 ```
 
-Ce code écrira le message dans le fichier "erreur.log" situé dans le chemin spécifié.
+Voici le résultat de l'exécution de ce code:
 
-# Plongée Profonde
-
-Ecrire sur le flux d'erreur peut également être très utile lors du débogage d'une application. En utilisant la fonction "error_reporting()", vous pouvez définir le niveau des erreurs à afficher sur le flux d'erreur, ce qui vous permet de ne voir que les erreurs pertinentes pour votre débogage. Par exemple :
-
-```PHP
-error_reporting(E_ERROR | E_WARNING | E_PARSE);
+```
+Bonjour
+Une erreur s'est produite
 ```
 
-Ce code définira le niveau d'erreur à afficher sur le flux d'erreur pour inclure uniquement les erreurs fatales, les avertissements et les erreurs de syntaxe.
+## Plongée en profondeur:
 
-Il est également possible d'activer l'écriture sur le flux d'erreur dans le fichier de configuration php.ini en définissant l'option "log_errors" sur "On". Cela enregistrera toutes les erreurs sur le flux d'erreur.
+L'écriture sur la sortie d'erreur standard a été initialement développée pour les systèmes UNIX, où les messages d'erreur étaient envoyés à stderr au lieu de stdout (la sortie standard). Cela permettait d'identifier plus facilement les erreurs dans les processus en cours d'exécution.
 
-# Voir Aussi
-- [Documentation officielle de PHP sur les flux de sortie](https://www.php.net/manual/fr/features.commandline.io-streams.php)
-- [Guide complet sur la gestion des erreurs en PHP](https://www.php.net/manual/fr/book.errorfunc.php)
+Il existe d'autres méthodes pour afficher des messages d'erreur, telles que la journalisation ou l'utilisation de la fonction PHP `error_log()`. Cependant, l'écriture sur la sortie d'erreur standard reste une méthode populaire pour les programmeurs en raison de sa simplicité et de sa rapidité.
+
+Pour implémenter l'écriture sur la sortie d'erreur standard en PHP, il suffit d'utiliser la fonction `stderr()` et de lui passer le message d'erreur en tant que paramètre.
+
+## Voir aussi:
+
+- [Article sur l'écriture sur la sortie d'erreur standard en PHP](https://www.php.net/manual/fr/wrappers.php)
+- [Documentation officielle sur la fonction `error_log()` en PHP](https://www.php.net/manual/fr/function.error-log.php)
+- [Article sur le débogage en PHP](https://www.phptherightway.com/#debugging)

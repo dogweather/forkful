@@ -1,7 +1,7 @@
 ---
-title:                "Päällekkäisen kuvion poisto merkeistä"
-html_title:           "Java: Päällekkäisen kuvion poisto merkeistä"
-simple_title:         "Päällekkäisen kuvion poisto merkeistä"
+title:                "Kuvion mukaisesti sopivien merkkien poistaminen"
+html_title:           "Java: Kuvion mukaisesti sopivien merkkien poistaminen"
+simple_title:         "Kuvion mukaisesti sopivien merkkien poistaminen"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Strings"
@@ -10,43 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä & Miksi?
+Merkkijonon yhteensovittaminen poistaa kaikki merkit, jotka vastaavat tiettyä kaavaa. Tämä on hyödyllinen työkalu ohjelmoijille, jotka haluavat nopeasti ja tehokkaasti muokata merkkijonoja.
 
-Jokaisessa ohjelmoinnin kielestä löytyy tilanteita, joissa halutaan poistaa merkkejä, jotka vastaavat tiettyä kaavaa tai kuvioa. Tämä artikkeli käsittelee, miten tämä voidaan tehdä Javan avulla ja miksi se voi olla hyödyllistä.
-
-## Miten
-
-Oletetaan, että meillä on merkkijono "Hello, world!". Haluamme poistaa kaikki välilyönnit tästä merkkijonosta. Käytämme ```Java
-replace()``` metodia ja annamme sille kaksi parametria: välilyönti (" ") ja tyhjä merkkijono (""). Tämä korvaa kaikki välilyönnit tyhjillä merkkijonoilla.
+## Miten:
+Seuraavat Java-esimerkit näyttävät, kuinka voit poistaa merkkejä, jotka vastaavat haluttua kaavaa:
 
 ```
-String teksti = "Hello, world!";
-String uusiTeksti = teksti.replace(" ", "");
-System.out.println(uusiTeksti);
+// Poistaa kaikki numeromerkit
+String s = "Hei 123 maailma!";
+String s2 = s.replaceAll("[0-9]", "");
+System.out.println(s2); // Hei maailma!
 ```
-Tulos olisi: "Hello,world!". Välilyönnit on nyt poistettu!
-
-Toinen esimerkki voisi olla poistaa kaikki numerot merkkijonosta. Käytämme tällöin säännöllisiä lausekkeita (regular expressions) ja ```Java
-replaceAll()``` metodia:
-
 ```
-String teksti = "Hell0, w0rld!";
-String uusiTeksti = teksti.replaceAll("[0-9]", "");
-System.out.println(uusiTeksti);
+// Poistaa kaikki välimerkit
+String s = "Tervetuloa, maailma!";
+String s2 = s.replaceAll("[,.!?]", "");
+System.out.println(s2); // Tervetuloa maailma
 ```
 
-Tulos olisi: "Hell, wrld!". Kaikki numerot on nyt poistettu merkkijonosta.
+## Syvällinen sukellus:
+Merkkijonon yhteensovittamisen käsite tulee sanoista "regular expression" ja se on käytännössä jäsentelykieli, joka määrittää merkkijonojen rakenteen ja säännöt. Tämä tekniikka on ollut käytössä jo vuosikymmeniä ja on vakiinnuttanut paikkansa ohjelmoinnin työkalupakissa. On myös muita tapoja poistaa merkkejä kuten substring-metodi, mutta merkkijonon yhteensovittaminen on yleisesti pidetty tehokkaampana ja monipuolisempana vaihtoehtona.
 
-## Syvällisemmin
-
-Javan String-luokka tarjoaa monia hyödyllisiä metodeja merkkijonojen käsittelyyn. Yksi näistä on ```Java
-replace()```, joka korvaa tietyn merkkijonon toisella merkkijonolla. Toinen hyödyllinen metodi on ```Java
-replaceAll()```, joka käyttää säännöllisiä lausekkeita merkkijonon korvaamiseen.
-
-Säännölliset lausekkeet ovat merkkijonoja, jotka kuvaavat tiettyä kaavaa tai kuvioa. Niitä voi käyttää laajasti merkkijonojen käsittelyssä, esimerkiksi poistamalla tiettyjä merkkejä tai löytämällä tiettyjä merkkijonoja. Java tarjoaa säännöllisiä lausekkeita varten luokan ```Java
-Pattern``` ja sen avulla voi luoda haluttuja kaavoja.
-
-## Katso myös
-
-- [Virallinen Java-dokumentaatio](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#replace(java.lang.CharSequence,java.lang.CharSequence))
-- [W3Schools esimerkkejä merkkijonojen manipuloinnista Javalla](https://www.w3schools.com/java/java_string.asp)
+## Katso myös:
+- [Java Regex Tutorial](https://www.baeldung.com/java-regex)
+- [Java String Class](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)

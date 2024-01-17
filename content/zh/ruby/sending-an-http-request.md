@@ -1,7 +1,7 @@
 ---
-title:                "发送一个http请求。"
-html_title:           "Ruby: 发送一个http请求。"
-simple_title:         "发送一个http请求。"
+title:                "发送一个http请求"
+html_title:           "Ruby: 发送一个http请求"
+simple_title:         "发送一个http请求"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "HTML and the Web"
@@ -10,98 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 为什么要发送HTTP请求？
+# 什麼 & 為什麼？
+送出 HTTP 請求是指程式設計師利用程式碼向其他電腦或網站發送一個信息，以便取得特定的資料或執行某些操作。它是網頁開發和網路溝通中不可或缺的一部分，讓程式設計師能夠輕鬆地與不同的服務器或網站溝通。
 
-在Web开发中，发送HTTP请求是非常常见的操作。它可以让你的程序与其他服务器进行通信，从而获取需要的数据或者执行特定的操作。
-
-## 如何发送HTTP请求？
-
-### 使用`Net::HTTP`库
-
-Ruby提供了内置的`Net::HTTP`库来处理HTTP请求。你可以使用它来发送GET、POST、PUT等不同类型的请求。下面是一个简单的示例：
-
-```Ruby
-require 'net/http'
-
-# 构建一个URI对象
-uri = URI('https://www.example.com/users')
-
-# 利用Net::HTTP发送GET请求并获取响应
-response = Net::HTTP.get(uri)
-
-# 打印响应的内容
-puts response
+# 如何：
 ```
-
-这里我们利用`Net::HTTP`库构建一个URI对象，然后调用`get`方法发送GET请求，并将响应保存到`response`变量中。最后打印出响应的内容。
-
-### 使用`RestClient`库
-
-除了内置的`Net::HTTP`库，还有一个非常流行的HTTP客户端库是`RestClient`。它提供了更简洁的语法来发送HTTP请求。下面是一个使用`RestClient`库发送GET请求的示例：
-
-```Ruby
-require 'rest-client'
-
-# 发送GET请求并获取响应
-response = RestClient.get('https://www.example.com/users')
-
-# 打印响应的内容
+Ruby
+require 'net/http'
+url = URI('https://www.example.com/')
+response = Net::HTTP.get(url)
+puts response.code
 puts response.body
 ```
 
-## 深入探讨HTTP请求
-
-在发送HTTP请求时，我们通常需要设置一些请求头和请求体，以及处理响应的状态码和响应体。在使用`Net::HTTP`和`RestClient`库时，你可以通过相应的方法来设置或处理这些信息。
-
-例如，对于`Net::HTTP`库，可以使用`set_form_data`方法来设置表单数据，使用`add_field`方法来添加请求头：
-
-```Ruby
-require 'net/http'
-
-uri = URI('https://www.example.com/users')
-
-# 设置表单数据
-form_data = { name: 'John', email: 'john@example.com' }
-
-# 构建一个POST请求
-request = Net::HTTP::Post.new(uri)
-request.set_form_data(form_data)
-request.add_field('Authorization', 'Bearer 12345') # 添加请求头
-
-# 发送请求并获取响应
-response = Net::HTTP.start(uri.hostname, uri.port) do |http|
-  http.request(request)
-end
-
-# 处理响应的状态码和响应体
-if response.code == '200'
-  puts "Successfully created user #{form_data[:name]}."
-  puts response.body
-else
-  puts 'Oops! Something went wrong.'
-end
+輸出：
+```
+200
+<!DOCTYPE html>
+<html>
+<head>
+<title>Example Domain</title>
+...
+</html>
 ```
 
-而对于`RestClient`库，可以使用`get`、`post`等方法来发送不同类型的请求，并通过`response`对象来获取响应的信息：
+# 深入探討：
+(1) 在過去的幾十年中，隨著網際網路的普及，HTTP 請求已經成為網路通信的標準方式。它是基於客戶端和服務器之間的要求和回應機制，讓電腦能夠溝通和交換資訊。(2)除了 Ruby 提供的 Net::HTTP 庫外，還有許多其他語言和工具可用於發送 HTTP 請求，例如 Python 的 Requests 库。使用不同的語言和工具需要額外學習和適應，因此選擇適合自己的工具非常重要。(3)發送 HTTP 請求的實現細節包括建立套接字、建立和編碼 HTTP 請求、處理服務器回應等，必須仔細處理以確保正確性和安全性。
 
-```Ruby
-require 'rest-client'
-
-# 发送POST请求并获取响应
-response = RestClient.post('https://www.example.com/users', { name: 'John', email: 'john@example.com' })
-
-# 处理响应的状态码和响应体
-if response.code == 201
-  puts "Successfully created user #{body[:name]}."
-  puts response.body
-else
-  puts 'Oops! Something went wrong.'
-end
-```
-
-## 参考链接
-
-- [Ruby 官方文档：Net::HTTP](https://ruby-doc.org/stdlib-2.7.1/libdoc/net/http/rdoc/Net/HTTP.html)
-- [RubyGems：RestClient](https://rubygems.org/gems/rest-client/versions/1.9.0)
-- [HTTP协议介绍](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Overview)
-- [HTTP状态码](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Status)
+# 查看相關資源：
+- Ruby 官方文件：https://ruby-doc.org/stdlib-2.7.1/libdoc/net/http/rdoc/Net/HTTP.html
+- Requests 库官方文件：https://docs.python-requests.org/en/master/
+- HTTP 協議介紹：https://developer.mozilla.org/zh-TW/docs/Web/HTTP/Overview

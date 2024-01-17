@@ -1,7 +1,7 @@
 ---
-title:                "Nykyisen päivämäärän hakeminen"
-html_title:           "Bash: Nykyisen päivämäärän hakeminen"
-simple_title:         "Nykyisen päivämäärän hakeminen"
+title:                "Päivämäärän hankkiminen"
+html_title:           "Bash: Päivämäärän hankkiminen"
+simple_title:         "Päivämäärän hankkiminen"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Dates and Times"
@@ -10,37 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mikä & Miksi?
 
-Miksi joku haluaisi hakea nykyisen päivämäärän? Yksinkertaisesti siksi, että päivämäärä on usein tarpeellinen tieto erilaisissa skripteissä ja ohjelmissa. Esimerkiksi jos haluat luoda tiedostoihin päivämäärän perusteella nimet, tarvitset tähän tiedon.
+Päivämäärän hakeminen tarkoittaa nykyisen päivämäärän ja kellonajan tarkistamista. Ohjelmoijat tekevät tämän yleensä siksi, että he haluavat tallentaa tietyn tapahtuman aikaleiman tai suorittaa erilaisia ajanhallintatoimintoja ohjelmassaan.
 
-## Näin teet sen
+## Miten:
 
 ```Bash
+# Näytä nykyinen päivämäärä ja kellonaika
 date
+
+# Tallenna nykyinen päivämäärä ja kellonaika muuttujaan
+current_date=$(date)
+
+# Näytä nykyinen päivämäärä ja kellonaika määritellyssä muodossa
+date +"%d/%m/%Y %H:%M:%S"
 ```
 
-Yllä oleva komento tulostaa nykyisen päivämäärän ja kellonajan seuraavassa muodossa: "ma touko 17 11:14:54 EEST 2021".
+Esimerkkitulosteet:
 
-Voit myös lisätä parametreja komentoon saadaksesi päivämäärästä haluamasi tiedot. Esimerkiksi:
-
-```Bash
-date +"%d.%m.%Y"
+```
+ke toukokuu 19 14:32:24 EEST 2021
+19/05/2021 14:32:24
 ```
 
-Tämä tulostaa päivämäärän muodossa "17.05.2021". Voit löytää lisää mahdollisia parametreja Bashin manuaalisivuilta kirjoittamalla terminaaliin "man date".
+## Syvemmälle:
 
-## Päivämäärän saaminen syvempään tarkasteluun
+Hakemisen päivämäärä on ollut tärkeä osa ohjelmointia jo pitkään ja se on yleensänistetty käyttöjärjestelmän tehtäväksi. Bashilla on kuitenkin oma sisäänrakennettu date-komento, joka helpottaa päivämäärän hakemista ohjelmassa.
 
-Päivämäärän hankkiminen Bashilla käyttäen komentoa "date" perustuu pääosin järjestelmän kellonaikaan. Voit myös käyttää command substitutionia eli komennon palauttaman arvon käyttöä osana muuta komentoa, kuten esimerkiksi:
+Toinen tapa saada nykyinen päivämäärä on käyttää komentoa ```echo $(date)```, joka käyttää Shell Expansion -ominaisuutta palauttaakseen päivämäärän. Tämä voi olla hyödyllistä ohjelmoinnissa, kun päivämäärää käytetään merkkijonona.
 
-```Bash
-echo "Tänään on $(date +"%A")"
-```
+## Katso myös:
 
-Tämä tulostaisi jotakin seuraavan kaltaista: "Tänään on maanantai". Voit myös muuttaa järjestelmän kellonaikaa ja päivämäärää käyttäen komentoja "date --set" ja "date --date".
-
-## Katso myös
-
-- Bashin manuaalisivut
-- Command substitution Bashissa (englanniksi) https://www.gnu.org/software/bash/manual/html_node/Command-Substitution.html#Command-Substitution
+- [Bash Manual: date](https://www.gnu.org/software/bash/manual/html_node/Bash-Builtins.html#index-date)
+- [How to get current date and time in Bash](https://www.cyberciti.biz/faq/linux-unix-formatting-dates-for-display/)

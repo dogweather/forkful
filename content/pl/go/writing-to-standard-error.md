@@ -10,13 +10,13 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i dlaczego?
 
-W dzisiejszych czasach mamy do czynienia z coraz bardziej złożonymi projektami i aplikacjami. Niektóre z nich wymagają od nas uwagi na najdrobniejsze detalami. Jednym z najważniejszych narzędzi w takich przypadkach jest pisanie do standardowego błędu. Pozwala nam to monitorować i debugować nasz kod w czasie rzeczywistym, co przekłada się na szybszy i sprawniejszy proces tworzenia aplikacji.
+Pisanie do standardowego wyjścia błędów to sposób na wyświetlanie błędnych informacji lub ostrzeżeń podczas pracy programu. Programiści często wykorzystują to do debugowania i poprawiania swoich kodów.
 
-## Jak To Zrobić
+## Jak to zrobić:
 
-Aby pisać do standardowego błędu w języku Go, musimy skorzystać z pakietu "os". Jest on odpowiedzialny za dostarczanie informacji o zmiennej środowiskowej, w tym standardowym błędzie. Aby wypisać wiadomość na standardowym błędzie, musimy użyć funkcji "os.Stderr.WriteString()". Poniżej znajduje się przykładowy kod, który wypisze wiadomość "Hello World" na standardowym błędzie:
+Aby wypisać informacje do standardowego wyjścia błędów w języku Go, wystarczy użyć funkcji `fmt.Fprintln(os.Stderr, message)`, gdzie `message` jest tekstem lub zmienną zawierającą informację do wyświetlenia. Przykład:
 
 ```Go
 package main
@@ -27,17 +27,21 @@ import (
 )
 
 func main() {
-    fmt.Println("Hello World")
-    os.Stderr.WriteString("Hello World")
+    message := "Nieznany błąd: nie udało się otworzyć pliku."
+    fmt.Fprintln(os.Stderr, message)
 }
 ```
-Przy uruchomieniu tej aplikacji, zobaczymy na ekranie output "Hello World", a na standardowym błędzie wypisze się "Hello World" bez powiadomienia. Dzięki temu, możemy śledzić błędy naszej aplikacji w czasie jej działania.
 
-## Wnikliwe Podejście
+Output:
+```
+Nieznany błąd: nie udało się otworzyć pliku.
+```
 
-Pisanie do standardowego błędu jest przydatne nie tylko podczas debugowania aplikacji, ale również w przypadku jej publikacji. Dzięki temu możemy wyświetlić użytkownikom informacje o napotkanych błędach, a także zachęcić ich do zgłaszania problemów. Aby jeszcze bardziej ułatwić sobie pracę z standardowym błędem, warto skorzystać z innych funkcji dostępnych w pakiecie "os", takich jak "os.Exit()", która pozwala na zakończenie działania aplikacji z konkretnym kodem błędu.
+## W głębszej analizie:
 
-## Zobacz Również
+Pisanie do standardowego wyjścia błędów jest często wykorzystywane do debugowania i raportowania błędów podczas działania programu. Alternatywnym sposobem może być zapisywanie błędów do pliku lub zwracanie ich jako wyjątków. W języku Go istnieje także funkcja `panic()`, która przerywa działanie programu i wyświetla błędy. Jednak pisanie do standardowego wyjścia błędów jest prostsze i bardziej czytelne.
 
-- Dokumentacja pakietu "os" w języku Go: https://golang.org/pkg/os/
-- Przykładowy kod w języku Go: https://play.golang.org/p/ujnPPvQ1lNj
+## Zobacz także:
+
+- [Dokumentacja języka Go](https://golang.org/doc/)
+- [Wprowadzenie do standardowego wyjścia błędów w języku Go](https://tutorialedge.net/golang/io-writer-interface-tutorial/)

@@ -10,75 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
+Läsning av en textfil är ett sätt för programmet att ta in information från en fil och sedan använda den i programkoden. Många gånger behöver programmerare använda information från en textfil för att hantera data eller konfigurationsinställningar i deras program.
 
-Att läsa och förstå innehållet i en textfil är en viktig del av programmering. Genom att kunna läsa en textfil kan man få tillgång till data som kan användas i ens program och skapa en interaktiv upplevelse för användaren. Därför är det viktigt för alla programmerare att ha kunskap om hur man läser en textfil i Go.
-
-## Hur man gör
-
-För att läsa en textfil i Go behöver man först öppna filen med hjälp av funktionen `Open()` från paketet `os`. Sedan kan man läsa filen byte för byte eller rad för rad med hjälp av läsare som till exempel `Read()`. Till exempel, om vi vill läsa en fil som heter "textfil.txt" så skulle koden se ut såhär:
-
-```Go
-package main
-
-import (
-    "os"
-    "fmt"
-)
-
-func main() {
-    // Öppna filen "textfil.txt"
-    fil, err := os.Open("textfil.txt")
-    if err != nil {
-        fmt.Println("Kunde inte öppna filen:", err)
-    }
-    // Läs filen rad för rad
-    buff := make([]byte, 1024) // Buffert för att det ska gå snabbare
-    for {
-        antalRead, err := fil.Read(buff)
-        if err != nil {
-            // Om läsningen är klar så avsluta
-            if antalRead == 0 {
-                break
-            }
-            // Om det var ett annat fel än "EOF" så skriv ut felet
-            fmt.Println("Kunde inte läsa filen:", err)
-        }
-        // Skriv ut innehållet i bufferten
-        fmt.Println(string(buff[:antalRead]))
-    }
-    // Stäng filen när vi är klara med den
-    fil.Close()
+## Hur man:
+Go har ett enkelt sätt att läsa en textfil. Använd funktionen "os.Open ()" för att öppna textfilen och sedan läsa in den med "bufio.NewScanner ()". Detta skapar en scanner som går igenom filen rad för rad och du kan använda en for-loop för att läsa varje rad. Sedan kan du använda den insamlade informationen på det sätt som behövs i ditt program.
+```
+Go
+file, err := os.Open("textfil.txt")
+if err != nil {
+  log.Fatal(err)
+}
+scanner := bufio.NewScanner(file)
+for scanner.Scan() {
+  fmt.Println(scanner.Text())
 }
 ```
+Detta kodexempel öppnar textfilen "textfil.txt" och skriver ut varje rad med hjälp av fmt.Println (). Du kan också använda en "scanner.Bytes ()" funktion för att samla in informationen som en byte-slice istället för en sträng.
 
-Om vi till exempel skulle ha en textfil som heter "textfil.txt" med följande innehåll:
+## Djupdykning:
+Läsning av textfiler i datorspråk går långt tillbaka i historien och är fortfarande en viktig del av programmering idag. Det finns olika metoder och paket i andra programmeringsspråk som utför samma uppgift, men Go's inbyggda metoder för läsning av filer gör det enkelt och effektivt att utföra denna uppgift.
 
-```
-Hello World!
-This is a text file.
-```
-
-Så skulle koden ovan ge följande utskrift:
-
-```
-Hello World!
-This is a text file.
-```
-
-## Djupdykning
-
-När vi läser en textfil med hjälp av `Read()` så får vi tillbaka en array av bytes. För att kunna läsa och tolka texten behöver vi omvandla dessa bytes till en sträng. Det vanligaste sättet att göra detta är genom att använda funktionen `string()`.
-
-Ungefär såhär fungerar det:
-
-1. Vi får en array med bytes från `Read()` som ser ut såhär: `[72 101 108 108 111 32 87 111 114 108 100 33]`
-2. Varje nummer representerar en bokstav enligt ASCII-tabellen. Så nummer 72 blir H, 101 blir e, osv.
-3. Genom att använda funktionen `string()` på arrayen så omvandlas den till en sträng och vi får "Hello World!" som vi kan skriva ut.
-
-Genom att förstå hur Go behandlar bytes och kunna omvandla dem till strängar har man en grundläggande kunskap för att läsa och tolka data från en fil.
-
-## Se även
-
-- [Go's dokumenation om filhantering](https://golang.org/pkg/os/)
-- [En tutorial om hur man öppnar, läser och skriver till en textfil i Go](https://www.digitalocean.com/community/tutorials/how-to-read-and-create-files-in-go)
+## Se även:
+För mer information om läsning av textfiler i Go, se dokumentationen om "os" och "bufio" paketen. Du kan också utforska andra sätt att hantera filer med "io" paketet.

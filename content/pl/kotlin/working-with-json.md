@@ -1,7 +1,7 @@
 ---
-title:                "Praca z JSON"
-html_title:           "Kotlin: Praca z JSON"
-simple_title:         "Praca z JSON"
+title:                "Praca z formatem json"
+html_title:           "Kotlin: Praca z formatem json"
+simple_title:         "Praca z formatem json"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Data Formats and Serialization"
@@ -10,33 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co & dlaczego?
 
-Jeśli masz do czynienia z danymi w formacie JSON lub chcesz użyć go w swoim kodzie, nauka języka Kotlin może być bardzo przydatna. Dzięki swojej wygodnej składni i bogatym funkcjom, Kotlin może ułatwić pracę z formatem JSON i przyspieszyć tworzenie aplikacji.
+Programowanie z użyciem JSON (Javascript Object Notation) polega na tworzeniu i manipulowaniu danymi w formacie tekstowym, wykorzystując składnię języka JavaScript. Programiści często korzystają z JSON, ponieważ jest to prosty i popularny sposób na wymianę danych między aplikacjami na różnych platformach.
 
-## Jak to zrobić
+## Jak to zrobić:
 
-Kotlin posiada wbudowane funkcje do obsługi JSON. Możesz wykorzystać je do serializacji i deserializacji obiektów, co pozwala nam zamieniać dane z formatu JSON na obiekty w języku Kotlin i odwrotnie.
+Utworzenie obiektu JSON:
 
 ```Kotlin
-// Tworzenie obiektu JSON w Kotlin
-val json = Json { prettyPrint = true }
-val jsonString = json.encodeToString(Person("Anna", "Nowak"))
-
-// Deserializacja obiektu JSON na obiekt w Kotlin
-val jsonResult = json.decodeFromString<Person>(jsonString)
+var json = "{"name": "Anna", "age": 25}"
 ```
 
-W powyższym przykładzie, wykorzystaliśmy bibliotekę standardową Kotlin, `kotlinx-serialization-json`, aby utworzyć obiekt `json` i wykorzystaliśmy go do zakodowania i odkodowania obiektu `Person` na format JSON.
+Dodanie nowego klucza i wartości do obiektu:
 
-Możesz także wykorzystać biblioteki zewnętrzne, takie jak `GSON` lub `Jackson`, aby pracować z JSON w Kotlin. Są one również popularnymi opcjami ze względu na swoją efektywność i wszechstronność.
+```Kotlin
+json.put("hobby", "painting")
+```
 
-## Głębsze zagłębianie
+Konwersja obiektu JSON na string:
 
-Kotlin oferuje wiele zaawansowanych funkcji, które ułatwiają pracę z JSON. Aby zoptymalizować wydajność i uniknąć błędów przy obsłudze danych w formacie JSON, warto poznać ugruntowane techniki takie jak operatory układu, inne rodzaje serializacji lub wykorzystanie klasy `JsonElement`.
+```Kotlin
+var jsonAsString = json.toString()
+```
 
-## Zobacz także
+## Głębsza analiza:
 
-- Więcej informacji na temat pracy z JSON w Kotlin można znaleźć w oficjalnym dokumencie: https://kotlinlang.org/docs/serialization.html
-- Przykłady wykorzystania bibliotek `GSON` i `Jackson` do obsługi JSON w Kotlin: https://www.baeldung.com/kotlin-json 
-- Aby poznać inne podejścia do pracy z formatem JSON w różnych językach programowania, zapoznaj się z tym artykułem: https://rapidapi.com/blog/how-to-parse-json-in-different-languages/
+JSON został stworzony w 2001 roku przez Douglasa Crockforda jako lżejsza alternatywa dla formatu XML. JSON jest często wykorzystywany do przesyłania danych w aplikacjach internetowych, mobilnych oraz IoT (Internet of Things). Można go również wykorzystać do zapisywania danych lokalnie w plikach.
+
+Alternatywnymi sposobami przechowywania danych są na przykład format CSV lub XML. Więcej informacji na ten temat można znaleźć na stronie: https://www.json.org/json-pl.html.
+
+## Zobacz także:
+
+- Oficjalna dokumentacja języka Kotlin dotycząca pracy z JSON: https://kotlinlang.org/docs/reference/using-gradle.html
+- Narzędzia do pracy z JSON w środowisku programistycznym IntelliJ IDEA: https://plugins.jetbrains.com/plugin/7294-kotlin-json
+- Przykładowe projekty z wykorzystaniem JSON na platformie GitHub: https://github.com/search?q=kotlin+json

@@ -1,7 +1,7 @@
 ---
-title:                "デバッグ出力のプリント"
-html_title:           "Kotlin: デバッグ出力のプリント"
-simple_title:         "デバッグ出力のプリント"
+title:                "デバッグ出力の印刷"
+html_title:           "Kotlin: デバッグ出力の印刷"
+simple_title:         "デバッグ出力の印刷"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Testing and Debugging"
@@ -10,51 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ？
+## 何（ナニ） & どうして（ナゼ）？
+デバッグ出力を表示することは、プログラマーがコードをテストするために行うことです。デバッグ出力を使用することで、コードの動作を理解し、問題を特定することができます。
 
-デバッグ出力を学ぶ理由は、プログラマーとしてのスキルとして必要不可欠です。デバッグ出力は、コードの実行中に得られる情報をチェックすることで、バグを特定し解決するのに役立ちます。
+## 方法：
+以下に、Kotlinでデバッグ出力を表示する方法を示します。
 
-## どのように？
-
-デバッグ出力を行う最も簡単な方法は、```println()```関数を使用することです。例えば、以下のコードを使用することで、変数xの値を出力することができます。
-
+1. メッセージを直接表示する方法：
 ```Kotlin
-var x = 5
-println("xの値は $x です。")
+println("Hello World!")
 ```
 
-この場合、実行結果は以下のようになります。
-
-```
-xの値は 5 です。
-```
-
-また、オブジェクトの内容を出力することもできます。例えば、以下のように```toString()```関数を使用することで、オブジェクトの内容を出力することができます。
-
+2. 変数の値を出力する方法：
 ```Kotlin
-data class Person(val name: String, val age: Int)
-
-val person = Person("Taro", 25)
-
-println(person.toString())
+val name = "John"
+println("Name: $name")
 ```
 
-実行結果は以下のようになります。
-
+3. 条件付きでメッセージを表示する方法：
+```Kotlin
+val num = 5
+if (num < 10) {
+	println("Number is less than 10!")
+}
 ```
-Person(name=Taro, age=25)
-```
 
-## ディープダイブ
+## 深く(DEEP DIVE)：
+デバッグ出力は、1980年代にデバッガーの機能が限られていたために生まれました。デバッガーがデバッグ作業をサポートするようになったため、デバッグ出力はあまり使用されなくなっています。しかし、ビジュアルな方法ではなく、単純なテキスト形式でコードを理解することで、複雑な問題に取り組みやすい場合もあります。
 
-デバッグ出力を行う際には、```println()```関数だけではなく、```print()```関数や```readLine()```関数を併用することで、より柔軟な出力が可能です。また、ログのレベルやフォーマットを設定することで、より効率的なデバッグが可能になります。さらに、デバッグ出力のチューニングやデバッガーを使用することで、より細かい部分までデバッグを行うことができます。
+代替方法としては、ロギングやデバッガーの使用があります。デバッグ出力は、単純な問題を解決するのに便利ですが、より複雑な問題ではロギングやデバッガーの方がより効果的です。
 
-## 参考リンク
+デバッグ出力を実現するために、Kotlinでは```println()```という組み込みの関数が使用されます。この関数は、コンソールにメッセージを出力することができます。
 
-- [Kotlin入門: コンソールに出力する方法](https://qiita.com/kngsym2018/items/a38251026fbace4211ee)
-- [Kotlin Documentation: Debugging with Kotlin](https://kotlinlang.org/docs/tutorials/command-line.html#debugging-with-kotlin)
-- [Medium: Debugging Kotlin in Intellij IDEA](https://medium.com/swlh/debugging-kotlin-in-intellij-idea-626a10b4937b)
-
-## 関連記事
-
-- [Kotlinの基本文法: デバッグ出力のテクニック](https://example.com/article/123)
+## 関連情報（SEE ALSO）：
+- [Kotlin公式ドキュメント](https://kotlinlang.org/docs/tutorials/command-line.html#using-the-command-line-to-run-kotlin-programs)
+- [デバッグ入門ガイド](https://www.codecademy.com/articles/intro-to-debugging)

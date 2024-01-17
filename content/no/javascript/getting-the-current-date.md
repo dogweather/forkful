@@ -1,7 +1,7 @@
 ---
-title:                "Å få dagens dato"
-html_title:           "Javascript: Å få dagens dato"
-simple_title:         "Å få dagens dato"
+title:                "Henting av nåværende dato"
+html_title:           "Javascript: Henting av nåværende dato"
+simple_title:         "Henting av nåværende dato"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Dates and Times"
@@ -10,49 +10,18 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hva & Hvorfor?
+Å få den nåværende datoen er en vanlig oppgave i Javascript-programmering. Dette hjelper utviklere med å få informasjon om kjøretiden av kode og for å sikre at riktig dato og tid brukes i applikasjoner. Det er også nyttig for å opprette tidsstempler i logger og databaser.
 
-Det å kunne hente den nåværende datoen er essensielt for å kunne lage dynamiske og interaktive nettsider og applikasjoner. Datoer brukes ofte til å vise informasjon som er relevant for brukeren, som for eksempel oppdateringer eller frister.
-
-## Hvordan få den nåværende datoen
-
-For å få den nåværende datoen i Javascript, kan du bruke funksjonen `new Date()`. Her er et eksempel på hvordan du kan bruke den til å vise dagens dato:
-
-```javascript
-let now = new Date();
-console.log(now);
+## Hvordan gjør man det:
+```Javascript
+let nå = new Date(); // Oppretter et nytt Date-objekt med den nåværende datoen og tiden
+console.log(nå); // Logger den nåværende datoen og tiden til konsollen
 ```
+Eksempel på output: `Thu Oct 14 2021 10:23:46 GMT+0200 (Central European Summer Time)`
 
-Output:
-
-```
-Thu Jan 09 2020 20:30:39 GMT+0100 (Central European Standard Time)
-```
-
-Du kan også formatere datoen på ulike måter ved å bruke forskjellige funksjoner og metoder. Her er et eksempel på hvordan du kan få datoen i en mer leselig form:
-
-```javascript
-let now = new Date();
-let day = now.getDate();
-let month = now.getMonth() + 1; // getMonth() gir måneden som et tall mellom 0-11, derfor legger vi til +1 for å få riktig måned
-let year = now.getFullYear();
-console.log(`${day}.${month}.${year}`);
-```
-
-Output:
-
-```
-9.1.2020
-```
-
-Det finnes også mange ferdige metoder og biblioteker som kan hjelpe deg med å formatere og håndtere datoer på en mer avansert måte.
-
-## Dypdykk
-
-I Javascript er datoen representert av antall millisekunder som har gått siden 1. januar 1970 klokken 00:00:00 UTC. Dette tilsvarer i utgangspunktet Unix-tidsstempelet. Hvis du ønsker å få tilgang til bestemte deler av datoen, som for eksempel bare tidsdelen eller måneden, finnes det også funksjoner og metoder for dette. Du kan lese mer om disse på [MDN dokumentasjonen](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date).
+## Utforsking
+Det `Date`-objektet som brukes for å få den nåværende datoen ble lagt til i Javascript ved EUMAprilBasel95-konferansen i 1995. Alternativt kan man også bruke biblioteker som moment.js for å få mer fleksibilitet i å håndtere datoer og tider. Implementeringen av dette avhenger også av den lokale tids- og tidsonen som er satt på enheten som koden kjører på.
 
 ## Se også
-
-- [MDN dokumentasjon om Date objektet](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [Moment.js - et populært bibliotek for å håndtere datoer](https://momentjs.com/)
-- [How to work with dates and times in JavaScript](https://www.hongkiat.com/blog/working-with-dates/)
+[MDN Web Docs - Date and time handling in Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)

@@ -1,7 +1,7 @@
 ---
-title:                "Verbinden von Zeichenfolgen"
-html_title:           "Gleam: Verbinden von Zeichenfolgen"
-simple_title:         "Verbinden von Zeichenfolgen"
+title:                "Zusammenführen von Zeichenketten"
+html_title:           "Gleam: Zusammenführen von Zeichenketten"
+simple_title:         "Zusammenführen von Zeichenketten"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -10,52 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was & Warum?
+Die Verkettung von Zeichenfolgen ist eine häufig verwendete Technik in der Programmierung. Sie ermöglicht es, mehrere Textelemente miteinander zu verbinden, um eine längere Folge von Zeichen zu erstellen. Programmierer nutzen dies, um zum Beispiel Text für Benutzer auszugeben oder Strings für spezielle Berechnungen zu erstellen.
 
-Die Verkettung von Strings ist eine häufige Aufgabe bei der Entwicklung von Software und kann dabei helfen, Texte dynamisch zu erstellen und zu formatieren. Es ist eine grundlegende Fähigkeit, die jeder Programmierer beherrschen sollte.
-
-## Wie es funktioniert
-
-Die Verkettung von Strings bezieht sich auf die Zusammenführung von mehreren Textelementen zu einem einzigen String. In Gleam wird dies mit dem "+" Operator erreicht, der zwei Strings miteinander verbindet.
+## Wie geht's?
+Die Verkettung von Zeichenfolgen in Gleam ist einfach und unkompliziert. Ein Beispielcode könnte wie folgt aussehen:
 
 ```Gleam
-let name = "Max"
-let greeting = "Hallo " + name
-```
+fn double_greet(name1: String, name2: String) {
+  // Verketten von Zeichenfolgen mit dem `++` Operator
+  let greeting = "Hallo " ++ name1 ++ " und " ++ name2 ++ "!";
+  // Ausgabe des Ergebnisses
+  GreetingPrinter.print(greeting);
+}
 
-Dieses Beispiel würde "Hallo Max" als Ergebnis ausgeben. Es ist auch möglich, mehrere Strings nacheinander zu verketten, um längere Texte zu erstellen.
-
-```Gleam
-let sentence = "Mein Name ist " + name + " und ich bin " + age + " Jahre alt."
-```
-
-Dies würde "Mein Name ist Max und ich bin 30 Jahre alt." als Ergebnis liefern, wenn die Variable "age" den Wert "30" hat.
-
-## Tiefes Eintauchen
-
-Bei der Verkettung von Strings ist es wichtig, auf die Reihenfolge der einzelnen Elemente zu achten. Wenn zum Beispiel eine Zahl mit einem String verknüpft wird, muss sie zuerst in einen String umgewandelt werden, da Gleam keine implizite Konvertierung durchführt.
-
-```Gleam
-let count = 5
-let message = "Die Anzahl der Elemente beträgt: " + String.from_int(count)
-// Ergebnis: "Die Anzahl der Elemente beträgt: 5"
-```
-
-Es ist auch möglich, Variablen oder Funktionen innerhalb der Verkettung zu verwenden.
-
-```Gleam
-let number = 10
-let formatted = "Das doppelte von " + String.from_int(number) + " ist " + String.from_int(double(number))
-
-// Verwendung der 'double' Funktion
-fn double(n: Int) {
-    n * 2
+pub fn start() {
+  double_greet("Anna", "Ben");
 }
 ```
 
-Ein weiterer wichtiger Aspekt ist die Verwendung von Leerzeichen. Beim Verketten von Strings werden die einzelnen Elemente direkt aneinander gereiht, daher ist es wichtig, Leerzeichen innerhalb der Textelemente oder manuell einzufügen, um die gewünschte Formatierung zu erhalten.
+Die Ausgabe dieses Codes würde "Hallo Anna und Ben!" sein.
 
-## Siehe auch
+## Tiefere Einblicke
+Die Idee der Zeichenfolgenverkettung wurde bereits in den 1960er Jahren mit dem Aufstieg der Programmiersprache COBOL populär. Heutzutage gibt es viele verschiedene Möglichkeiten, String-Verkettung in verschiedenen Programmiersprachen zu implementieren. Gleam verwendet den Operator `++`, um Strings zu verketten, aber es gibt auch andere Optionen wie zum Beispiel die `concat()` Funktion in Java. In der Gleam-Dokumentation werden weitere Details zur Implementierung der String-Verkettung erklärt.
 
-- Dokumentation zu Strings in Gleam: https://gleam.run/book/tour/strings.html
-- Gutes Beispielprojekt, das Strings verwendet: https://github.com/gleam-lang/example-projects/tree/master/echo
+## Sieh dir auch an
+Wenn du mehr über Zeichenfolgenverkettung lernen möchtest, empfehlen wir dir die offizielle Gleam-Dokumentation unter https://gleam.run/. Dort findest du auch weitere spannende Informationen zu allen Aspekten der Programmierung mit Gleam.

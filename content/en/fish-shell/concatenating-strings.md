@@ -10,63 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why 
-So, you're wondering why you would want to concatenate strings in a Fish Shell program? Well, let me tell you, it's a powerful tool for combining different pieces of text and creating more dynamic and flexible scripts. Plus, it can make your code more concise and easier to read.
+## What & Why?
+Concatenating strings is the act of combining two or more strings together to create a new string. This is a common operation in programming as it allows for the creation of more complex and dynamic text outputs.
 
-## How To
-Coding in Fish Shell is all about simplicity and efficiency, and concatenating strings is no different. To start, you'll need to use the `string join` command, which takes in multiple strings as arguments and joins them together with a specified delimiter. Here's an example:
-```
-Fish Shell
-```
-```
-set cat = "cat"
-set dog = "dog"
-set animal = "These two amazing animals are: " (string join ", " $cat $dog)
-echo $animal
-```
-```
-These two amazing animals are: cat, dog
-```
-You can also use the `string concat` command, which works similarly to `string join` but doesn't require a delimiter. Here's an example:
-```
-Fish Shell
-```
-```
-set name = "John"
-string concat "Hello " $name ", welcome!"
-```
-```
-Hello John, welcome!
-```
-And if you're dealing with more complex text, you can use the `string format` command to insert variables or values into a string. Here's an example:
-```
-Fish Shell
-```
-```
-set fruit = "apple"
-string format "My favorite fruit is %s." $fruit
-```
-```
-My favorite fruit is apple.
+## How to:
+Coding examples in Fish Shell:
+
+```Fish Shell 
+echo "Hello" "World" # Output: HelloWorld 
+
+set first_name "John"
+set last_name "Doe"
+
+echo $first_name" "$last_name # Output: John Doe 
 ```
 
-## Deep Dive
-Now, let's get into some deeper info about concatenating strings in Fish Shell. The `string join` and `string concat` commands both return the result as a new string, so you'll need to store it in a variable or use it in another command. Additionally, you can use the `string split` command to separate a string into different parts based on a delimiter. Here's an example:
-```
-Fish Shell
-```
-```
-set fruits = "apple, banana, orange"
-set fruits_arr = (string split ", " $fruits)
-echo "I love " $fruits_arr[1] " and " $fruits_arr[3] "."
-```
-```
-I love apple and orange.
-```
-Remember to use parentheses when defining variables for `string join` and `string concat`, as they are evaluated as commands and not regular assignments.
+## Deep Dive:
+Concatenating strings has been a fundamental operation in programming since the early days of computing. It enables programmers to manipulate and create dynamic text outputs, which is essential in many applications.
 
-## See Also
-- Official Fish Shell documentation for "string join": https://fishshell.com/docs/current/cmds/string-join.html
-- Official Fish Shell documentation for "string concat": https://fishshell.com/docs/current/cmds/string-concat.html
-- Official Fish Shell documentation for "string format": https://fishshell.com/docs/current/cmds/string-format.html
-- Official Fish Shell documentation for "string split": https://fishshell.com/docs/current/cmds/string-split.html
+An alternative to concatenating strings is using string interpolation, which is a method of embedding variables directly into a string. However, this can become complex and challenging to read in longer strings.
+
+In Fish Shell, concatenating strings is implemented using the `set` command, which allows for the creation and manipulation of variables. Variables can then be accessed by using the `$` symbol followed by the variable name.
+
+## See Also:
+- [Fish Shell Documentation on Variables](https://fishshell.com/docs/current/tutorial.html#variables)
+- [Difference Between Concatenation and Interpolation in Programming](https://www.baeldung.com/cs/concatenation-vs-interpolation-programming)

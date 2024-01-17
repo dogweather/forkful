@@ -10,43 +10,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi JSON:lla kannattaa työskennellä?
+## Mitä ja miksi?
+JSON (JavaScript Object Notation) on yleinen tapa tallentaa ja vaihtaa tietoja ohjelmoinnissa. Se on yksinkertainen formaatti, joka käyttää avain-arvo -pareja tallentaakseen tietoja ja on erityisen hyödyllinen verkkosovelluksissa, kun tietoja tarvitsee lähettää ja vastaanottaa nopeasti. Tämän takia moni ohjelmoija käyttää JSONia osana päivittäistä työtään.
 
-JSON (JavaScript Object Notation) on yksi yleisimmin käytetty formaatti tiedon vaihtamiseen eri sovellusten välillä. Se on helppo lukea ja parantaa tiedon rakenteellista muotoa. JSON:ia käytetään usein etenkin REST API-palveluiden kommunikoinnissa.
-
-## Kuinka käyttää JSON:ia Swiftin kanssa?
-
-Käytä `JSONSerialization`-luokkaa muuntaaksesi `Data`-objektin JSON-muotoon ja `JSONDecoder`-luokkaa deserialisoimaan `Data`-objektin JSON-muodosta takaisin Swiftin objekteiksi. Tämän jälkeen voit käyttää `Dictionary`- ja `Array`-tyyppejä saadaksesi tiedot JSON-muodosta.
-
-Esimerkiksi:
+## Miten?
+Jos haluat luoda validin JSON -muotoisen tiedoston Swiftillä, sinun tarvitsee vain muokata datanavakkaa (struct) niin, että se sisältää tarvittavat avain-arvo -parit. Jälkeenpäin voit käyttää JSONSerialization -luokkaa muuntamaan datanavakan JSONiksi ja JSON -sta datanavakaksi. Katso allaolevia esimerkkejä.
 
 ```Swift
-let json = """
-{
-    "person": {
-        "name": "Matti Meikäläinen",
-        "age": 27
+// Luodaan datanavakka party
+
+struct Party {
+    let guests: [String]
+    let theme: String
+}
+
+// ALustetaan datanavakka
+
+let party = Party(guests: ["Maija", "Matti", "Hanna"], theme: "Retro")
+
+// Muunnetaan datanavakka JSONiksi
+
+var jsonData: Data
+do {
+    jsonData = try JSONSerialization.data(withJSONObject: party, options: .prettyPrinted)
+} catch {
+    print(error)
+}
+
+// Muunnetaan JSON datanavakaksi 
+
+var convertedParty: Party
+do {
+    let json = try JSONSerialization.jsonObject(with: jsonData, options: [])
+    if let jsonParty = json as? [String: Any] {
+        convertedParty = Party(guests: jsonParty["guests"][0] as! String, theme: jsonParty["theme"] as! String)
     }
-}
-""".data(using: .utf8)!
-
-if let jsonDictionary = try JSONSerialization.jsonObject(with: json, options: []) as? [String: Any],
-   let person = jsonDictionary["person"] as? [String: Any],
-   let name = person["name"] as? String,
-   let age = person["age"] as? Int {
-   print("\(name) on \(age) vuotta vanha.")
-} else {
-   print("Virhe: Ei voitu lukea JSON-muotoa.")
+} catch {
+    print(error)
 }
 
-// Tulostaa: "Matti Meikäläinen on 27 vuotta vanha."
+print(convertedParty.guests) // tulostaa ["Maija", "Matti", "Hanna"]
+print(convertedParty.theme) // tulostaa "Retro"
 ```
 
-## JSON:n syväluotausta
+## Syvempi sukellus
+JSON luotiin alunperin selain- ja JavaScript -yhteensopivaksi tiedonsiirtoformaadiksi. Sitä kutsuttiin aluksi "Jaavscript -ohjelmien maitojauheeksi" ja sen käyttöönotto 90-luvun lopulla auttoi selaimia lähettämään ja vastaanottamaan tietoja nopeammin ja tehokkaammin. Nykyään JSONia käytetään paljon yleisemmin monenlaisissa ohjelmointikielissä ja sen suosio kasvaa jatkuvasti.
 
- JSON:n avulla voit tallentaa monimutkaisia tietorakenteita, kuten `Dictionary`s ja `Array`s, ja käyttää niitä helposti eri sovellusten välillä. JSON:in käyttö on myös turvallista, sillä se ei suorita koodia, mikä estää mahdolliset tietoturvariskit.
+On myös muita vaihtoehtoja JSONille, kuten XML ja YAML, mutta JSON on yleensä nopeampi ja helpompi käyttää. Swiftin lisäksi myös muut ohjelmointikielet, kuten JavaScript, Python ja Ruby, tukevat JSONia.
 
-## Katso myös
-- [Apple:n JSON-ohjeet Swiftillä](https://developer.apple.com/documentation/foundation/jsonserialization)
-- [Swiftin JSONDecoder-dokumentaatio](https://developer.apple.com/documentation/foundation/jsondecoder)
-- [JSON:n opiskelu: koodin-esimerkkejä Swiftillä](https://www.raywenderlich.com/1525015-swift-json-tutorial-getting-started)
+Jos haluat käyttää JSONia Swiftissä, tarvitset lisäksi JSONSerialization -luokan lisäksi myös Foundation -kirjaston. Voit lukea lisää JSONSerializationista ja sen eri metodeista Swiftin dokumentaatiosta.
+
+## Lisätietoa
+- [Swiftin dokumentaatio JSONSerializationista](https://developer.apple.com/documentation/foundation/jsonserialization)
+- [JSON-formatin virallinen verkkosivu](https://www.json.org/)
+- [Lyhyt opas JSONiin](https://www.digitalocean.com/community/tutorials/how-to-work-with-json-in-swift)

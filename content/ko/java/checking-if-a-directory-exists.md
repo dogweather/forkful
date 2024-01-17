@@ -10,31 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+## 무엇 & 왜?
 
-디렉토리가 존재하는지 확인하는 것이 왜 중요할까요? 여러분에게는 필요가 없지만 프로그램에게는 중요합니다. 만약 디렉토리가 존재하지 않으면 프로그램은 오류를 발생시키고 중지될 수 있습니다. 그래서 디렉토리가 존재하는지 미리 확인하는 것은 프로그램의 안정성을 높이는 중요한 일입니다.
+디렉터리가 존재하는지 확인하는 것은 프로그래머들이 프로그램을 작성할 때 중요한 작업입니다. 프로그램이 파일이나 폴더를 읽거나 쓸 때, 디렉터리가 존재하는지 여부를 미리 확인하는 것으로, 프로그램의 안정성을 높일 수 있습니다. 
 
-## 방법
+## 방법:
 
-디렉토리가 존재하는지 확인하는 방법은 간단합니다. `File` 클래스의 `exists()` 메소드를 사용하면 됩니다. 다음은 `myDirectory`라는 이름의 디렉토리가 존재하는지 확인하는 예제 코드입니다.
+```Java 
+File file = new File("C:/Users/username/Desktop/myDirectory"); 
 
-```java
-File myDirectory = new File("myDirectory");
-if (myDirectory.exists()){
-  System.out.println("myDirectory exists!");
-} else {
-  System.out.println("myDirectory does not exist.");
+if(file.exists() && file.isDirectory()) { 
+  System.out.println("myDirectory exists."); 
+} else { 
+  System.out.println("myDirectory does not exist."); 
 }
 ```
 
-출력 결과는 아마 `myDirectory exists!`가 나올 것입니다. 만약 디렉토리가 존재하지 않는다면 `myDirectory does not exist.`가 출력될 것입니다. 
+위의 예제에서는 "C:/Users/username/Desktop/myDirectory" 경로의 디렉터리가 존재하는지를 확인합니다. 만약 디렉터리가 존재하지 않으면, "myDirectory does not exist." 메시지가 출력됩니다. 
 
-## 깊게 파보기
+## 깊이 들어가보기:
 
-디렉토리를 확인할 때, 더 깊이 가보면 `isDirectory()` 메소드 또한 사용할 수 있습니다. 이 메소드는 디렉토리인지 아닌지 확인하여 boolean 값을 반환합니다. 만약 `myDirectory`이라는 파일 객체가 디렉토리라면, `myDirectory.isDirectory()`는 `true`를 반환할 것입니다. 
+(1) 디렉터리가 존재하는지 확인하는 것은 오래 전부터 프로그래밍에서 자주 사용되는 기술입니다. (2) 다른 방법으로는 예외처리를 사용하여 디렉터리를 확인하는 것이 있지만, 이는 코드를 더 복잡하게 만듭니다. (3) Java에서는 File 클래스의 exists()와 isDirectory() 메소드를 사용하여 디렉터리가 존재하는지를 확인할 수 있습니다. 
 
-## 더 읽어보기
+## 관련 자료:
 
-- [Java File Class Documentation](https://docs.oracle.com/javase/8/docs/api/java/io/File.html)
-- [GeeksforGeeks Article on Checking if a File Exists in Java](https://www.geeksforgeeks.org/check-file-exists-java/)
-- [Baeldung Article on Checking if a Directory Exists in Java](https://www.baeldung.com/java-check-directory-exists)
+[Java File Class Documentation](https://docs.oracle.com/javase/8/docs/api/java/io/File.html)

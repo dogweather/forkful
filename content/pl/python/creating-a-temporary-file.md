@@ -10,40 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co to jest i dlaczego?
 
-Tworzenie pliku tymczasowego jest nieodzownym elementem w wielu projektach programistycznych. Dzięki temu możemy tymczasowo przechować dane, a następnie usunąć je po zakończeniu potrzebnych operacji.
+Tworzenie tymczasowych plików jest częstą czynnością w programowaniu, ponieważ pozwala na tymczasowe zapisanie danych, które są potrzebne podczas pracy programu. Często są one używane do przechowywania informacji, które będą później usunięte lub zmodyfikowane, bez wpływu na resztę programu.
 
-## Jak to zrobić
-
-Tworzenie plików tymczasowych w języku Python jest bardzo proste. Możemy wykorzystać do tego moduł `tempfile`, który oferuje wiele funkcji ułatwiających pracę z plikami tymczasowymi.
+## Jak to zrobić:
 
 ```Python
 import tempfile
 
-# Tworzenie pliku tymczasowego
-temp_file = tempfile.TemporaryFile()
+# Tworzenie tymczasowego pliku i zapisanie danych
+with tempfile.TemporaryFile() as tmp:
+  tmp.write(b"Hello, world!")
+  # Jeśli nie podamy trybu, domyślnie zostanie użyty tryb binarny
+  tmp.seek(0) # Przejście na początek pliku
+  print(tmp.read())
 
-# Zapisywanie danych do pliku
-temp_file.write(b"Hello World!")
-
-# Odczyt danych z pliku
-temp_file.seek(0)
-print(temp_file.read())
-
-# Usuwanie pliku
-temp_file.close()
+# Tworzenie tymczasowego folderu i zapisanie pliku wewnątrz
+with tempfile.TemporaryDirectory() as tmp_dir:
+  tmp_path = tempfile.mkstemp(dir=tmp_dir, prefix="temp_", suffix=".txt")[1]
+  # mkstemp zwraca tuplę, z której interesuje nas drugi element - ścieżka do pliku
+  with open(tmp_path, 'w') as tmp_file:
+    tmp_file.write("Hello, world!")
+    print(tmp_file.read())
 ```
 
-W powyższym przykładzie `TemporaryFile()` tworzy plik tymczasowy, który jest usuwany po wywołaniu metody `close()`. Istnieją także inne funkcje, takie jak `NamedTemporaryFile()` czy `SpooledTemporaryFile()`, które oferują dodatkowe możliwości pracy z plikami tymczasowymi.
+## Wnikliwe spojrzenie:
 
-## Głębszy zanurzenie
+Tworzenie tymczasowych plików jest popularne od dawna, ponieważ umożliwia programistom sprawnie i bezpiecznie manipulować danymi w trakcie działania programu. Alternatywami mogą być na przykład przechowywanie danych w pamięci lub w bazie danych, jednak nie zawsze są one odpowiednie lub wygodne. Implementacja jest wysoce zależna od środowiska, w którym pracujemy - na przykład stworzenie pliku tymczasowego na systemie operacyjnym Unix będzie wyglądać inaczej niż na Windowsie.
 
-Pliki tymczasowe są tworzone w systemie operacyjnym na zasadzie "od razu, na miejscu". Oznacza to, że plik zostanie utworzony w dedykowanym folderze systemowym (np. /tmp w systemach Unix) i będzie dostępny pod wygenerowaną nazwą. W przypadku wykorzystania funkcji `NamedTemporaryFile()` możemy również sami nadać nazwę plikowi.
+## Zobacz też:
 
-Istnieje także możliwość wskazania folderu, w którym zostanie utworzony plik tymczasowy, poprzez argument `dir` w funkcji `TemporaryFile()` lub `NamedTemporaryFile()`. W przypadku chęci zapisania większej ilości danych do pliku tymczasowego, warto rozważyć wykorzystanie funkcji `SpooledTemporaryFile()`, która najpierw zapisuje dane w pamięci podręcznej, a następnie zapisuje je do pliku tymczasowego po wywołaniu metody `flush()`, co pozwala uniknąć operacji zapisu na dysku.
-
-## Zobacz też
-
-- [Dokumentacja oficjalna modułu tempfile w Python](https://docs.python.org/3/library/tempfile.html)
-- [Przykładowe wykorzystanie plików tymczasowych w Python](https://www.geeksforgeeks.org/temporary-files-python/)
+Dokumentacja modułu `tempfile` w bibliotece standardowej Pythona: https://docs.python.org/3/library/tempfile.html
+Wprowadzenie do manipulacji plikami w Pythonie: http://realpython.com/read-write-files-python/
+Porównanie różnych sposobów tworzenia tymczasowych plików: http://zen-engine.appspot.com/readwrite-files.htm

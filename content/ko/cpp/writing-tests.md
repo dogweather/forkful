@@ -1,7 +1,7 @@
 ---
-title:                "테스트 작성하기"
-html_title:           "C++: 테스트 작성하기"
-simple_title:         "테스트 작성하기"
+title:                "테스트 작성"
+html_title:           "C++: 테스트 작성"
+simple_title:         "테스트 작성"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Testing and Debugging"
@@ -10,65 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+## 무엇 & 왜?
 
-프로그래밍을 하다보면 반복적인 코드를 어떻게든 줄이려고 노력하게 됩니다. 이럴 땐 테스트를 적절히 작성하여 일일이 코드를 디버깅하고 수정하는 시간과 노력을 절약할 수 있습니다.
+테스트를 작성하는 것은 프로그래머가 자신이 작성한 코드의 정확성을 확인하기 위한 과정입니다. 목적은 프로그래밍에서 발생할 수 있는 버그를 사전에 발견하여 소프트웨어의 품질을 향상시키는 것입니다.
 
-## 작성 방법
+## 하는 방법:
 
-아래는 간단한 C++ 코드 예시와 그에 따른 결과물입니다. 여러분도 이런 식으로 테스트를 작성하고 실행해보세요!
-
-```C++
+다음은 ```C++``` 코드 블록 내부에 예제와 결과를 포함하여 테스트를 작성하는 방법을 간략하게 설명합니다.
+```
+// 테스트를 위한 C++ 코드 예제
 #include <iostream>
-#include <string>
-
 using namespace std;
 
-// 테스트를 작성할 함수 정의
-int addNumbers(int a, int b) {
-    return a + b;
+// 덧셈 함수 정의
+int add(int num1, int num2) {
+  return num1 + num2;
 }
 
-// 각각의 테스트는 함수 앞에 CHECK 함수를 사용하여 테스트 이름과 기대 결과값을 명시합니다.
-CHECK("더하기 테스트") {
-    // 테스트 할 코드
-    int result = addNumbers(3, 5);
-
-    // 기대 결과값과 실제 결과값 비교
-    CHECK_EQUALS(result, 8);
-}
-
-CHECK("길이 비교 테스트") {
-    string str = "Hello";
-    
-    // 테스트 할 코드
-    int length = str.length();
-    
-    CHECK_EQUALS(length, 5);
-}
-
-// 모든 테스트를 한번에 실행하기
-bool result = runTests();
-
-// 실행 결과에 따른 메시지 출력
-if (result) {
-    cout << "모든 테스트가 성공하였습니다!" << endl;
-} else {
-    cout << "테스트 중 실패한 항목이 있습니다." << endl;
+// 덧셈 함수를 테스트하는 코드
+int main() {
+  // 결과가 예상한대로 나오는지 확인
+  if (add(2, 3) == 5) {
+    cout << "덧셈 함수가 정상적으로 동작합니다.";
+  } else {
+    cout << "덧셈 함수가 정상적으로 동작하지 않습니다.";
+  }
+  return 0;
 }
 ```
+```
+// 결과:
+덧셈 함수가 정상적으로 동작합니다.
+```
 
-## 깊게 파보기
+## 더 깊게:
 
-위의 예시는 함수의 반환값과 비교하는 간단한 테스트였지만, 테스트할 대상이 객체일 경우에는 MEMBER_CHECK 함수를 사용하여 객체의 멤버 변수를 비교할 수도 있습니다. 또한, 테스트를 작성할 때 함수와 변수의 이름을 명확하게 짓는 것이 중요합니다. 이러한 작은 노력으로 나중에 코드를 읽거나 수정할 때 효율적으로 테스트를 활용할 수 있습니다.
+테스트를 작성하는 아이디어는 소프트웨어 공학의 하위 분야인 테스트 주도 개발(Test-driven development)에서 나왔습니다. 다른 방법으로는 수동 테스트, 디버깅, 사후 테스트 등이 있습니다. 자동화된 테스트는 코드를 더 효율적으로 관리하고 문제를 더 빠르게 해결할 수 있도록 도와줍니다. 일반적으로 단위 테스트, 통합 테스트, 기능 테스트 등 다양한 종류의 테스트를 작성합니다.
 
-## 참고 자료
+## 관련 자료:
 
-- [C++의 단위 테스트 작성하기](https://docs.microsoft.com/ko-kr/visualstudio/test/writing-unit-tests-for-c-cpp?view=vs-2019)
-- [Google Test: C++ 테스트 프레임워크](https://github.com/google/googletest)
-
-## 더 읽어보기
-
-- [테스트 주도 개발(Test-driven development)](https://ko.wikipedia.org/wiki/%ED%85%8C%EC%8A%A4%ED%8A%B8_%EC%A3%BC%EB%8F%84_%EA%B0%9C%EB%B0%9C)
-- [반복적 탐색 조건문을 대체할 테스트 작성하기](https://docs.microsoft.com/ko-kr/dotnet/csharp/tutorials/guessing-game/test-branch-with-tests?view=netframework-4.8)
-- [테스트 커버리지(Test coverage)](https://ko.wikipedia.org/wiki/%ED%85%8C%EC%8A%A4%ED%8A%B8_%EC%BB%A4%EB%B2%84%EB%A6%AC%EC%A7%80)
+- [테스트 주도 개발(Test-driven development) 관련 정보](https://ko.wikipedia.org/wiki/테스트_주도_개발)
+- [유닛 테스트(Unit test) 관련 정보](https://en.wikipedia.org/wiki/Unit_testing)
+- [Goole Test, CppUnit 등의 프레임워크](https://en.wikipedia.org/wiki/List_of_unit_testing_frameworks#C++)

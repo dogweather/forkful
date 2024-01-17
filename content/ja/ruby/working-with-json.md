@@ -1,7 +1,7 @@
 ---
-title:                "JSONを使ったプログラミング"
-html_title:           "Ruby: JSONを使ったプログラミング"
-simple_title:         "JSONを使ったプログラミング"
+title:                "「Jsonを使う」"
+html_title:           "Ruby: 「Jsonを使う」"
+simple_title:         "「Jsonを使う」"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Data Formats and Serialization"
@@ -10,45 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##なぜ
+## 何 & なぜ？
 
-JSONを使って作業することのメリットは、データをやりとりする際に必要となるフォーマットが一貫していることです。データの整理や解析を簡単にするために、JSONはとても便利なツールとなります。
+JSONとは、データのやり取りに使われるフォーマットの一つです。プログラマーがJSONを使う理由は、データをより簡単かつ効率的に処理できるからです。
 
-##使い方
+## 方法：
 
-```Ruby
-#JSONをパースする
+```ruby
 require 'json'
 
-json_data = '{"name": "John", "age": 25, "profession": "developer"}'
+# JSONデータをパースする
+data = JSON.parse('{"name": "John", "age": 30}')
 
-user_info = JSON.parse(json_data) #JSONデータをHashに変換
+# ハッシュとしてデータを取得する
+puts data["name"]
+# => "John"
 
-puts user_info["name"] #結果 - John
-puts user_info["age"] #結果 - 25
-puts user_info["profession"] #結果 - developer
+# ハッシュからJSONデータを生成する
+json_data = data.to_json
+puts json_data
+# => '{"name": "John", "age": 30}'
 ```
 
-```Ruby
-#JSONを作成する
-require 'json'
+## 深堀り：
 
-user_info = {
-  "name": "Jane",
-  "age": 30,
-  "profession": "designer"
-}
+1. JSONはJavaScript Object Notationの略称であり、JavaScriptでデータを扱うために作られました。
+2. JSONにはXMLやCSVなどの他のフォーマットと比べて、よりシンプルで扱いやすい特徴があります。
+3. JSONを使う際は、正しいフォーマットに従うことが重要です。
 
-json_data = JSON.generate(user_info) #HashをJSONに変換
+## 関連情報：
 
-puts json_data #結果 - {"name": "Jane", "age": 30, "profession": "designer"}
-```
-
-##深堀り
-
-JSONは、Webサイトやアプリケーションでよく使用されるデータ形式です。Hashと似ていますが、より軽量でデータのやりとりに適したフォーマットです。Rubyでは、標準ライブラリとしてJSONモジュールが提供されており、手軽にJSONを扱うことができます。
-
-##参考文献
-
-- [Ruby公式ドキュメント - JSON](https://docs.ruby-lang.org/ja/latest/class/JSON.html)
-- [JSONとは？メリットや使い方を解説！](https://tech-boost.jp/common/column/71/)
+- [RubyのJSONライブラリ公式ドキュメント](https://docs.ruby-lang.org/en/master/JSON.html)
+- [RubyGemsで利用可能なJSONパースライブラリ一覧](https://rubygems.org/search?utf8=%E2%9C%93&query=json)
+- [JSONフォーマットの詳細について](https://www.json.org/json-ja.html)

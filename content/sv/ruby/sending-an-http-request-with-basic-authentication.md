@@ -1,7 +1,7 @@
 ---
-title:                "Sända en http-begäran med grundläggande autentisering"
-html_title:           "Ruby: Sända en http-begäran med grundläggande autentisering"
-simple_title:         "Sända en http-begäran med grundläggande autentisering"
+title:                "Skicka en http-begäran med grundläggande autentisering"
+html_title:           "Ruby: Skicka en http-begäran med grundläggande autentisering"
+simple_title:         "Skicka en http-begäran med grundläggande autentisering"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "HTML and the Web"
@@ -10,32 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
-Att skicka en HTTP-förfrågan med grundläggande autentisering är vanligt när man vill säkra en webbplats eller API med ett enkelt användarnamn och lösenord.
+## Vad & Varför?
+Att skicka en HTTP-begäran med grundläggande autentisering innebär att man skickar en begäran till en webbserver och tillhandahåller autentiseringsuppgifter för att verifiera sin identitet. Programmers gör detta för att kunna få åtkomst till skyddade resurser på en server.
 
-## Hur man gör det
-Först behöver vi installera den nödvändiga Ruby-modulen Net::HTTP som ger oss möjlighet att skicka HTTP-förfrågningar. Vi användar sedan följande kod för att skapa en autentiseringssträng med användarnamn och lösenord:
+## Hur man gör:
+Här är ett exempel på hur man skickar en HTTP-begäran med grundläggande autentisering i Ruby:
+
 ```ruby
-require 'net/http'
 require 'uri'
-uri = URI.parse("https://example.com")
-auth = Net::HTTP::BasicAuth.new("username", "password")
-```
-Vi kan sedan skapa och skicka en GET-förfrågan med hjälp av vår autentiseringssträng:
-```ruby
-Net::HTTP.start(uri.host, uri.port, use_ssl: true) do |http|
-  request = Net::HTTP::Get.new(uri)
-  request.basic_auth(uri.user, uri.password)
-  response = http.request(request)
-  puts response.body
-end
-```
-Detta kommer att ge oss en utmatning med innehållet på den autentiserade webbplatsen eller API:en.
+require 'net/http'
 
-## Djupdykning
-När vi skickar en HTTP-förfrågan med grundläggande autentisering skickas användarnamn och lösenord i klartext, vilket innebär att det inte är den säkraste autentiseringsmetoden. Det rekommenderas att använda HTTPS istället för HTTP för att kryptera förfrågan och göra den svårare att avlyssna. Det är också viktigt att använda starka lösenord och inte dela dem med andra för att säkerställa att vår autentisering är effektiv.
+# Skapa en URI för begäran
+url = URI('https://example.com/api')
 
-## Se även
-- [Ruby Net::HTTP dokumentation](https://ruby-doc.org/stdlib-3.0.2/libdoc/net/http/rdoc/Net/HTTP.html)
-- [Net::HTTP::BasicAuth dokumentation](https://ruby-doc.org/stdlib-3.0.2/libdoc/net/http/rdoc/BasicAuth.html)
-- [HTTP-kryptering för webbutvecklare](https://developer.mozilla.org/sv/docs/Web/Security/Sensitive_information_in_URLs#http_f%C3%B6r_idag_och_igen)
+# Skapa en Net::HTTP-anslutning till URL:en
+http = Net::HTTP.new(url.host, url.port)
+
+# Skapa en begäran med önskad metod och tillagd autentisering
+request = Net::HTTP::Get.new(url)
+request.basic_auth('användarnamn', 'lösenord')
+
+# Skicka begäran och spara svaret
+response = http.request(request)
+
+# Skriv ut statuskoden och svaret
+puts "Statuskod: #{response.code}"
+puts "Svar: #{response.body}"
+```
+
+Detta kommer att skicka en GET-begäran till `https://example.com/api` med autentiseringsuppgifterna "användarnamn" och "lösenord". Svaret, inklusive statuskoden, kommer att skrivas ut i terminalen.
+
+## Djupdykning:
+Att skicka en HTTP-begäran med grundläggande autentisering är en mycket vanlig metod för att skydda resurser på en server. Den finns också andra autentiseringsmetoder som OAuth och tokenbaserad autentisering, men grundläggande autentisering är enkelt att implementera och fungerar bra för många scenarion.
+
+En grundläggande autentiseringsbegäran består av en användarnamn och ett lösenord, som kodas i Base64-format och bifogas begäran som en HTTP-header. Detta ger en grundläggande nivå av skydd, men det är fortfarande viktigt att använda HTTPS för att kryptera all kommunikation mellan klienten och servern.
+
+## Se även:
+Här är några bra källor för att lära dig mer om att skicka HTTP-begäran med grundläggande autentisering:
+
+- [Officiell dokumentation för Net::HTTP i Ruby] (https://ruby-doc.org/stdlib-2.7.1/libdoc/net/http/rdoc/Net/HTTP.html)
+- [En guide för att lägga till grundläggande autentisering i en Ruby-applikation] (https://www.twilio.com/blog/2017/03/http-basic-authentication-in-ruby.html)
+- [En djupare förklaring av grundläggande autentisering] (https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#Basic_authentication_scheme)

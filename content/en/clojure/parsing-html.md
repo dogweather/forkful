@@ -10,50 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
+HTML parsing is the process of extracting data from HTML documents, which are the foundation of web pages. Programmers do this to retrieve specific information from websites, such as prices of products or titles of articles. This data can then be used for various purposes, such as building web crawlers or creating data visualizations.
 
-Parsing HTML is a common task in web development. It involves extracting data from HTML documents and using it for various purposes such as web scraping, data analysis, and content extraction. Clojure provides powerful tools for parsing HTML, making it a great language choice for this task.
-
-## How To
-
-To get started with parsing HTML in Clojure, we will use the `cljs-beautifulsoup` library. It provides a convenient interface for parsing and navigating HTML documents.
-
-First, we need to import the library into our project using the `ns` macro:
+## How to:
+Parsing HTML in Clojure is made easy with the help of the library "Enlive". First, we need to add the library as a dependency in our project.clj file:
 
 ```Clojure
-(ns my-project.core
-  (:require [cljs-beautifulsoup.core :as soup]))
+:dependencies [[net.cgrand/enlive "1.1.6"]]
 ```
 
-Next, we can use the `parse` function to load an HTML document from a URL or a file:
+Next, we can use Enlive's "html-resource" function to retrieve the HTML document from a URL or a local file. For example, if we want to parse the HTML from the webpage "https://example.com":
 
 ```Clojure
-(def doc (soup/parse "http://www.example.com"))
+(require '[net.cgrand.enlive-html :as html])
+
+(html/html-resource "https://example.com")
 ```
 
-We can then use various functions such as `select` and `find` to navigate the document and extract data from it:
+This will return a data structure that we can navigate using Enlive's selectors. For example, if we want to extract the title of the webpage, we can use the "html/select" function and provide a CSS selector for the title element:
 
 ```Clojure
-(soup/text (soup/select doc "h1")) ;; returns the text within the first h1 tag
-(soup/attr (soup/find doc :a {:class "button"}) :href) ;; returns the value of the "href" attribute of the first link with class "button"
+(html/select (html/html-resource "https://example.com") 
+             [:head :title])
+
+;; Output: ["Example Domain"]
 ```
 
-We can also use CSS selectors to easily target specific elements in the document:
+## Deep Dive:
+Using Enlive for HTML parsing in Clojure has become the preferred method due to its simplicity and powerful features. Before Enlive, the main alternative was using Java DOM parsers, which required more code and knowledge of Java. Enlive also provides a selector syntax that is similar to CSS, making it easier for web developers to understand and use.
 
-```Clojure
-(soup/html (soup/select doc "#content p")) ;; returns the HTML code within all <p> tags inside the element with id "content"
-```
+Under the hood, Enlive works by transforming the HTML document into a data structure called "selectors", which can then be used to navigate and extract data from the document. This approach is known as "structure-based" parsing and is different from the traditional "text-based" parsing.
 
-For more examples and details on the functions provided by `cljs-beautifulsoup`, check out its documentation.
-
-## Deep Dive
-
-Behind the scenes, `cljs-beautifulsoup` uses the popular `jsoup` library which is built on top of Java's `jsoup` library. This means that it has access to all the features and optimizations of the Java library, while providing a more idiomatic and functional interface in Clojure.
-
-The library also supports advanced features such as manipulating HTML elements and attributes, handling invalid HTML, and handling character encoding, making it a robust choice for parsing HTML documents.
-
-## See Also
-
-- [cljs-beautifulsoup documentation](https://github.com/Jarzka/cljs-beautifulsoup)
-- [jsoup documentation](https://jsoup.org/cookbook/)
-- [Official Clojure website](https://clojure.org/)
+## See Also:
+- Enlive documentation: https://github.com/cgrand/enlive/blob/master/README.md
+- HTML parsing alternatives for Clojure: https://github.com/functional-koans/clojure-koan-answers/wiki/Alternate-HTML-libraries-for-Clojure

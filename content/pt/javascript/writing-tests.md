@@ -10,30 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que escrever testes em Javascript?
+## O que & Por quê?
 
-Escrever testes em Javascript é uma prática fundamental para garantir a qualidade e a estabilidade do código. Ao testar seu código, você pode identificar e corrigir erros antes deles se tornarem problemas maiores e mais difíceis de resolver. Além disso, testes bem escritos também ajudam a documentar e a manter seu código, tornando-o mais fácil de entender e fazer alterações no futuro.
+Escrever testes é uma prática comum entre os programadores para garantir a qualidade e funcionamento correto de seu código. Isso envolve a criação de pequenos trechos de código que testam diferentes partes da aplicação e verificam se os resultados esperados são obtidos. Os testes são importantes para detectar falhas e bugs em um estágio inicial e garantir que a aplicação funcionará corretamente quando utilizada pelo usuário final.
 
-## Como escrever testes em Javascript?
+## Como fazer:
 
-Para começar a escrever testes em Javascript, é importante escolher uma ferramenta de teste, como o Mocha ou o Jest. Você pode instalar essas ferramentas usando um gerenciador de dependências, como o NPM ou o Yarn. Depois de configurar sua ferramenta de teste, você pode escrever seus testes usando as funções `describe` e `it`, que permitem descrever e nomear seus testes de forma clara. Em seguida, você pode usar asserções, como `expect` e `assert`, para verificar se o resultado do seu código é o esperado. Aqui está um exemplo básico de como escrever um teste usando o Jest:
+```Javascript
+// Exemplo de teste simples
+const square = (x) => {
+  return x * x;
+}
 
-```javascript
-describe('Exemplo de teste com Jest', () => {
-  it('deve retornar 4 quando somar 2 + 2', () => {
-    expect(2 + 2).toBe(4);
-  });
+// Teste usando o framework Jest
+test('Deve retornar 25 quando o número 5 for inserido', () => {
+    expect(square(5)).toBe(25);
 });
 ```
 
-Você pode executar seus testes usando o comando `npm test` ou `yarn test` e verificar se todos os testes passaram com sucesso.
+Neste exemplo, um teste simples é feito para uma função que calcula o quadrado de um número. Primeiro, definimos a função `square` que recebe um parâmetro `x` e retorna o quadrado desse número. Em seguida, usamos o framework de testes Jest para criar um teste que verifica se ao passar o número 5 como argumento para a função, o resultado é 25. Ao executar este teste, se o resultado for diferente de 25, ele irá falhar.
 
-## Deep Dive: Por que escrever testes é importante?
+## Aprofundando:
 
-Além de garantir a qualidade do código, escrever testes também ajuda a identificar possíveis erros e falhas no seu código. Ao escrever testes, você precisa pensar em diferentes cenários e entradas possíveis, o que pode ajudá-lo a identificar possíveis bugs e a fazer melhorias no seu código. Além disso, testes bem escritos também ajudam a manter a consistência e a qualidade do código, mesmo com mudanças e atualizações futuras.
+Escrever testes não é uma prática nova, mas com o aumento da popularidade do desenvolvimento ágil e do TDD (Test Driven Development), sua importância tem sido amplamente reconhecida pela comunidade de programação. Existem também outras formas de testar o código, como o BDD (Behavior Driven Development) e o ATDD (Acceptance Test Driven Development). Cada abordagem tem suas próprias vantagens e desvantagens, mas todas têm o mesmo objetivo de garantir a qualidade do código.
 
-## Veja também
+## Veja também:
 
-- [Mocha](https://mochajs.org/)
-- [Jest](https://jestjs.io/)
-- [Por que testar seu código é importante](https://www.freecodecamp.org/news/why-you-should-be-automatically-testing-your-code/)
+- [Por que escrever testes é tão importante?](https://www.publicaaweb.com.br/importancia-testes-software/)
+- [Guia para iniciantes em automação de testes](https://blog.cedrosolucoes.com.br/testes-automatizados-primeiros-passos-para-iniciantes/)
+- [Documentação do framework Jest](https://jestjs.io/docs/getting-started)

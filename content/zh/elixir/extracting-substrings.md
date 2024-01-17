@@ -1,7 +1,7 @@
 ---
-title:                "截取子字符串"
-html_title:           "Elixir: 截取子字符串"
-simple_title:         "截取子字符串"
+title:                "提取子字符串"
+html_title:           "Elixir: 提取子字符串"
+simple_title:         "提取子字符串"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -10,57 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么要提取子字符串
+## 什么是字符串提取？
 
-提取子字符串是一种常见的文本处理操作，它可以帮助我们从一段文本中快速获取所需的信息。作为Elixir语言中的字符串处理功能之一，它可以让我们更便捷地处理各种任务，例如文本匹配、数据清洗等。
+字符串提取是指从一个字符串中提取出一部分内容。程序员通常会这样做，因为它可以帮助他们对文本进行处理和分析。
 
-## 如何实现提取子字符串
+## 怎么做？
 
-在Elixir中，我们可以使用`String.slice`函数来提取子字符串。该函数接受三个参数：待提取字符串、起始位置和结束位置。其中起始位置和结束位置都是从0开始计数，表示从哪个字符开始提取和提取到哪个字符为止。让我们来看一个例子：
-
-```Elixir
-text = "Hello, world!"
-String.slice(text, 7, 11)
-```
-
-运行以上代码会得到如下输出：
+在Elixir中，我们可以使用`String.slice/3`函数来提取字符串的子串。例如，我们有一个字符串`"Hello World"`，我们想要提取出`"Hello"`这个子串，我们可以像这样写代码：
 
 ```
-"world"
+Elixir String.slice("Hello World", 0, 5)
 ```
 
-我们也可以使用负数作为结束位置来表示从字符串末尾开始提取，例如：
+这会返回一个新的字符串`"Hello"`作为结果。这个函数接收三个参数：原始字符串、要提取的子串起始位置和子串的长度。这意味着我们可以从任意位置提取子串，并指定子串的长度。
 
-```Elixir
-text = "Hello, world!"
-String.slice(text, 7, -1)
-```
+## 深入讨论
 
-这会提取出从第7个字符到字符串末尾的部分，输出为：
+字符串提取的历史可以追溯到早期的编程语言，如C和Java。它们也提供了相似的函数来提取子串。然而，Elixir中的`String.slice/3`函数更加灵活，因为它允许我们指定子串的长度，而不是只能指定子串的结束位置。此外，我们还可以使用Elixir的模式匹配功能来提取子串，这也是一种常用的方法。
 
-```
-"world!"
-```
+除了`String.slice/3`函数，我们还可以使用其他字符串函数来实现字符串提取功能。例如，`String.split/2`函数可以将字符串根据指定的分隔符拆分为子串，然后我们可以从拆分后的列表中选择我们想要的子串。此外，我们还可以使用正则表达式来提取特定模式的子串。
 
-## 深入了解提取子字符串
+## 参考资料
 
-除了通过起始位置和结束位置来提取子字符串，我们还可以利用正则表达式来进行提取。Elixir提供了`Regex.run`函数来执行正则表达式匹配，然后再通过`String.slice`来提取所需的部分。例如：
-
-```Elixir
-text = "I have 3 apples and 5 bananas"
-Regex.run(~r/([0-9]+) bananas/, text)
-|> hd
-|> elem(1)
-|> String.to_integer()
-```
-
-以上代码会先匹配字符串中的`5 bananas`部分，然后通过`hd`函数取出匹配结果的第一个元素（即完整匹配的部分），再通过`elem(1)`来取出第二个捕获组（即只匹配数字部分），最后通过`String.to_integer()`将字符串转换成整数。
-
-除了提取，Elixir还提供了`String.split`函数来拆分字符串，以及`String.replace`函数来替换字符串中的内容。这些功能都可以与提取子字符串一起配合使用，达到更复杂的文本处理目的。
-
-## 参考链接
-
-- [Elixir官方文档-String](https://hexdocs.pm/elixir/String.html)
-- [Elixir官方文档-Regex](https://hexdocs.pm/elixir/Regex.html)
-- [Elixir School-Strings](https://elixirschool.com/zh-cn/lessons/basics/built-in-types-strings/)
-- [Elixir中文文档-字符串模式匹配](https://github.com/liuminous/docs-cn/blob/master/docs/core/string-pattern-matching.md)
+- [Elixir官方文档：字符串模块](https://hexdocs.pm/elixir/String.html)
+- [字符串提取函数的历史背景（英文）](https://en.wikipedia.org/wiki/Substring#History)
+- [使用模式匹配来提取子串（英文）](https://blog.red-badger.com/blog/2017/02/06/elixir-pattern-matching-and-strings)

@@ -1,7 +1,7 @@
 ---
-title:                "Sending av en http-forespørsel med grunnleggende autentisering"
-html_title:           "Fish Shell: Sending av en http-forespørsel med grunnleggende autentisering"
-simple_title:         "Sending av en http-forespørsel med grunnleggende autentisering"
+title:                "Sending av http-forespørsel med grunnleggende autentisering"
+html_title:           "Fish Shell: Sending av http-forespørsel med grunnleggende autentisering"
+simple_title:         "Sending av http-forespørsel med grunnleggende autentisering"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "HTML and the Web"
@@ -10,33 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hva & Hvorfor?
+Å sende en HTTP-forespørsel med basic authentication betyr at du kan autentisere deg selv til en server ved å bruke brukernavnet og passordet ditt. Dette er nyttig for å få tilgang til beskyttede ressurser og for å sikre kommunikasjon mellom klient og server.
 
-Er du klar til å interagere med internettet på neste nivå? Da bør du lære å sende HTTP-forespørsler med grunnleggende autentisering ved hjelp av Fish Shell. Dette vil hjelpe deg å kommunisere med eksterne servere og hente data fra dem.
-
-## Hvordan
-
-Det første du må gjøre er å installere curl kommandoen hvis du ikke allerede har den på datamaskinen din. Dette kan gjøres ved å åpne terminalen og skrive:
+## Hvordan:
+Fish Shell gjør det enkelt å sende en HTTP-forespørsel med basic authentication. Du kan bruke kommandoen ```curl``` og følge syntaksen nedenfor for å sende en forespørsel med en header for basic authentication:
 
 ```
-Fish Shell installasjon curl
+curl -u <brukernavn>:<passord> <URL>
 ```
 
-Når curl er installert, kan du begynne å sende HTTP-forespørsler med grunnleggende autentisering. Her er et eksempel på hvordan du kan gjøre det:
+For eksempel, hvis du ønsker å hente data fra et API som krever basic authentication kan du bruke følgende kommando:
 
 ```
-Fish Shell curl -u brukernavn:passord <url>
+curl -u john:password123 https://api.example.com/data
 ```
 
-Dette vil sende en GET-forespørsel til den angitte URL-en med brukernavnet og passordet ditt som er kodet i base64-format. Resultatet vil bli vist i terminalen som standard, men du kan også spesifisere en fil å lagre resultatet i med `-o` flagget.
+Dette vil sende en GET-forespørsel med autentiseringen til API-et og hente ut dataene.
 
-## Dypdykk
+## Dykke dypere:
+HTTP-forespørsler med basic authentication har vært en vanlig metode for å autentisere brukere siden starten av HTTP-protokollen. Alternativer til dette inkluderer OAuth, som gir bedre sikkerhet og brukeropplevelse, men er mer komplisert å implementere.
 
-Nå som du har lært å sende en grunnleggende autentisert HTTP-forespørsel, kan du utforske flere muligheter. For eksempel kan du bruke forskjellige HTTP-metoder som POST, PUT og DELETE ved å spesifisere dem med `-X` flagget. Du kan også legge til ytterligere parametere og headerinformasjon med `-d` og `-H` flaggene.
+Når det gjelder implementering, er det viktig å sørge for å bruke HTTPS i stedet for HTTP for å sikre at brukernavn og passord ikke blir sendt som klartekst. I tillegg bør man vurdere å bruke tofaktorautentisering for å styrke sikkerheten.
 
-Det kan også være nyttig å automatisk hente brukernavn og passord fra omgivelsene ved å bruke `$USER` og `$PASS` variablene. Dette vil bidra til å holde sensitiv informasjon privat og ikke inkludere den i kommandolinjen.
-
-## Se Også
-
-- [Fish Shell officielle dokumentasjon] (https://fishshell.com/docs/current/) 
-- [Curl kommandoen dokumentasjon] (https://curl.se/docs/manual.html)
+## Se også:
+- [Fish Shell documentation](https://fishshell.com/docs/current/index.html)
+- [HTTP Authentication: Basic and Digest Access Authentication](https://en.wikipedia.org/wiki/Basic_access_authentication)

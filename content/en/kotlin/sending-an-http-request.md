@@ -10,94 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
+Sending an HTTP request is the process of making a request to a web server in order to retrieve information or perform an action. Programmers often use HTTP requests in their code to retrieve data from APIs, communicate with web services, or send data to a remote server for processing.
 
-Sending HTTP requests is a key feature of web development and allows developers to communicate with servers, retrieve data, and perform various actions. Knowing how to send HTTP requests enables developers to create dynamic and interactive web applications, making it an essential skill for any web developer.
-
-## How To
-
-Sending an HTTP request can be done using the built-in `URL` and `HttpURLConnection` classes in Kotlin. First, create a `URL` object with the desired URL as its parameter:
+## How to:
+Sending an HTTP request in Kotlin is a simple and straightforward process, thanks to the built-in library called "kotlinx.coroutines". Here's how you can send a GET request using this library:
 
 ```Kotlin
-val url = URL("https://www.example.com/api/users")
-```
+// Import the necessary libraries
+import kotlinx.coroutines.*
+import java.net.HttpURLConnection
+import java.net.URL
 
-Next, open a connection to that URL using the `HttpURLConnection` class:
-
-```Kotlin
-val connection = url.openConnection() as HttpURLConnection
-```
-
-Specify the type of request and any necessary headers using the `RequestMethod` and `RequestProperty`:
-
-```Kotlin
-connection.requestMethod = "GET"
-connection.setRequestProperty("Content-Type", "application/json")
-```
-
-If there is a request body, it can be added using the connection's `OutputStream`:
-
-```Kotlin
-val requestBody = "username=test&password=1234"
-val outputStream = connection.outputStream
-outputStream.write(requestBody.toByteArray())
-```
-
-To receive the response, use the connection's `inputStream`:
-
-```Kotlin
-val inputStream = connection.inputStream
-```
-
-Finally, read and parse the response data:
-
-```Kotlin
-val bufferedReader = BufferedReader(InputStreamReader(inputStream))
-var response = ""
-var inputLine: String?
-while ((inputLine = bufferedReader.readLine()) != null) {
-    response += inputLine
-}
-```
-
-The `response` string will contain the data returned from the HTTP request. Here is a complete example of sending a GET request and parsing the response as JSON using the `Gson` library:
-
-```Kotlin
-val url = URL("https://www.example.com/api/users")
-val connection = url.openConnection() as HttpURLConnection
-connection.requestMethod = "GET"
-connection.setRequestProperty("Content-Type", "application/json")
-val bufferedReader = BufferedReader(InputStreamReader(connection.inputStream))
-var response = ""
-var inputLine: String?
-while ((inputLine = bufferedReader.readLine()) != null) {
-    response += inputLine
-}
-val gson = Gson()
-val userList: List<User> = gson.fromJson(response, object : TypeToken<List<User>>() {}.type)
-for (user in userList) {
-    println("Username: ${user.username}, Email: ${user.email}")
+// Set up a coroutine
+val scope = CoroutineScope(Dispatchers.IO)
+// Specify the URL for the request
+val url = URL("https://jsonplaceholder.typicode.com/todos/1")
+// Set up a connection to the URL
+val connection: HttpURLConnection = url.openConnection() as HttpURLConnection
+// Use a coroutine to send the request asynchronously
+scope.launch {
+    // Make sure the request was successful
+    if (connection.responseCode == HttpURLConnection.HTTP_OK) {
+        // Create an input stream to read the response data
+        val inputStream = connection.inputStream
+        // Read the data and print it to the console
+        println(inputStream.bufferedReader().use { it.readText() })
+    } else {
+        // Request was not successful, handle the error
+        println("Error: ${connection.responseCode}")
+    }
 }
 ```
 
 Sample output:
 
-```
-Username: john123, Email: john123@example.com
-Username: sarah456, Email: sarah@example.com
-```
+`{
+  "userId": 1,
+  "id": 1,
+  "title": "delectus aut autem",
+  "completed": false
+}`
 
-## Deep Dive
+## Deep Dive:
+Historically, sending HTTP requests was a more complicated process, often requiring the use of external libraries or custom code. However, with the introduction of "kotlinx.coroutines" in Kotlin 1.3, sending HTTP requests has become much simpler and more efficient.
 
-While the above example provides a basic understanding of sending HTTP requests, there are various other options and libraries that can be used for more complex requests. For example, the `OkHttp` library provides a more user-friendly API for making HTTP requests, and the `Retrofit` library allows for creating interfaces to define the API endpoints and automatically handle the creation of requests and parsing of responses.
+Other languages such as Java have their own libraries for sending HTTP requests, such as Apache HttpClient and OkHttp. However, these libraries often require a lot of boilerplate code and can be more difficult to use compared to the built-in support in Kotlin.
 
-Additionally, HTTP requests can be asynchronous to prevent blocking the main thread and improve performance. This can be done using coroutines or callbacks.
+When sending an HTTP request in Kotlin, the "kotlinx.coroutines" library handles most of the low-level details, such as establishing and maintaining a connection, making it easier for the programmer to focus on the logic of their request.
 
-It is also important to handle errors and exceptions when sending HTTP requests, as there is always a possibility of the request failing. Be sure to handle any potential errors and implement proper error handling and retry mechanisms.
-
-## See Also
-
-- Official Kotlin Documentation for sending HTTP requests: https://kotlinlang.org/docs/reference/http-client.html
-- Official OkHttp Documentation: https://square.github.io/okhttp/
-- Official Retrofit Documentation: https://square.github.io/retrofit/
-- Tutorial on using coroutines for asynchronous HTTP requests in Kotlin: https://www.raywenderlich.com/772-async-http-clients-in-android-with-kotlin-coroutines-and-retrofit
+## See Also:
+- [Kotlinx Coroutines documentation](https://kotlinlang.org/docs/reference/coroutines-overview.html) for more information on using coroutines in Kotlin.
+- [HTTP Requests in Java](https://www.baeldung.com/java-http-request) for an in-depth tutorial on sending HTTP requests in Java.
+- [OkHttp documentation](https://square.github.io/okhttp/) for an alternative library for sending HTTP requests in Java.

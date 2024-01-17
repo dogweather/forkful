@@ -10,48 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i dlaczego?
+Wysyłanie żądań HTTP jest niezbędnym elementem procesu tworzenia stron internetowych. Służy ono do pobierania danych z serwera i wyświetlania ich na stronie lub do przekazywania danych z formularzy do serwera. Programiści często korzystają z tego narzędzia, aby zadbać o płynne i bezproblemowe działanie stron internetowych.
 
-Bez względu na to, czy jesteś programistą czy początkującym w dziedzinie tworzenia stron internetowych, przychodzi moment, w którym musisz wysłać żądanie HTTP. Może to być część Twojej pracy lub po prostu sposób na sprawdzenie stanu swojej strony lub aplikacji. W każdym przypadku, wysyłanie żądania HTTP jest nieodłączną częścią pracy z aplikacjami webowymi.
-
-## Jak to zrobić
-
-Aby wysłać żądanie HTTP w PHP, wystarczy użyć funkcji `file_get_contents()` lub `curl_exec()`. Oto przykładowy kod:
-
+## Jak:
+Oto przykładowy kod PHP, który wysyła żądanie HTTP i wyświetla otrzymaną odpowiedź:
 ```PHP
-// Przykład użycia funkcji file_get_contents()
-$response = file_get_contents('https://example.com/api');
-echo $response; // Wyświetli zawartość zwróconą przez API
-
-// Przykład użycia funkcji curl_exec()
 $ch = curl_init();
-curl_setopt($ch, CURLOPT_URL, 'https://example.com/api');
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-$response = curl_exec($ch);
-echo $response; // Wyświetli zawartość zwróconą przez API
+curl_setopt($ch, CURLOPT_URL, "https://example.com");
+curl_exec($ch);
 curl_close($ch);
+
+// Output:
+Welcome to Example.com!
 ```
+W powyższym przykładzie użyto funkcji `curl_init()` do utworzenia obsługi żądania HTTP. Następnie, przy użyciu `curl_setopt()`, ustawiono adres URL, do którego ma zostać wysłane żądanie. W kolejnym wierszu użyto funkcji `curl_exec()`, która wysyła żądanie i zwraca odpowiedź. Na koniec, przy użyciu `curl_close()`, zamknięto zasoby połączenia. 
 
-Pierwszy przykład używa funkcji `file_get_contents()` do pobrania zawartości z podanego adresu URL. Drugi przykład wykorzystuje funkcje `curl_init()`, `curl_setopt()` i `curl_exec()` do wysłania bardziej zaawansowanego żądania HTTP, z możliwością ustawienia dodatkowych opcji takich jak nagłówki czy autoryzacja.
+Warto pamiętać, że funkcja `curl_setopt()` pozwala też na ustawianie innych opcji, takich jak metoda żądania, dane do wysłania czy nagłówki żądania. Możliwości jest wiele, więc warto zapoznać się z dokumentacją funkcji `curl_setopt()` lub zajrzeć do sekcji "Zobacz też".
 
-## Deep Dive
+## Deep Dive:
+Wysyłanie żądań HTTP jest jednym z wielu sposobów komunikacji między klientem a serwerem. Alternatywami do funkcji `curl_exec()` są np. funkcje `file_get_contents()`, `fopen()` czy `fsockopen()`. Każda z tych funkcji ma swoje zalety i wady, ale `curl_exec()` jest najczęściej wybierane ze względu na swoją elastyczność i dużą liczbę dostępnych opcji. 
 
-Aby lepiej zrozumieć proces wysyłania żądań HTTP w PHP i dostosować go do swoich potrzeb, warto poznać kilka dodatkowych informacji.
+Funkcja `curl_exec()` korzysta z biblioteki cURL, która powstała w 1997 roku i jest ciągle rozwijana. Jest ona wysoce wydajna i obsługuje wiele protokołów, takich jak HTTP, HTTPS, FTP czy FTPS. Dzięki niej możemy nie tylko wysyłać żądania, ale także pobierać zawartość stron internetowych, przesyłać pliki czy ustawiać nagłówki. 
 
-### Typy żądań HTTP
-
-Wysyłane żądania mogą być jednym z trzech typów: GET, POST lub HEAD. GET jest domyślnym typem żądania i służy do pobierania danych z serwera. POST jest wykorzystywany do przesyłania i przetwarzania danych, na przykład formularzy na stronie. HEAD jest podobny do GET, ale zwraca tylko nagłówki bez ciała odpowiedzi.
-
-### Nagłówki HTTP
-
-Nagłówki to dane, które są przesyłane wraz z żądaniem i pomagają w jego obsłudze. Istnieje wiele różnych nagłówków, ale te najczęściej używane przy wysyłaniu żądań HTTP w PHP to "Content-Type", "Content-Length" i "Authorization". Możesz je ustawić za pomocą funkcji `curl_setopt()` lub jako parametr w funkcji `file_get_contents()`.
-
-### Obsługa odpowiedzi HTTP
-
-Po wysłaniu żądania, serwer zwraca odpowiedź, która zawiera informacje o stanie żądania oraz ewentualne dane. Kod stanu żądania jest zwykle widoczny jako pierwsze trzy cyfry w nagłówku odpowiedzi. Przykładowo, kod 200 oznacza sukces, a 404 oznacza że strona nie została znaleziona. W zależności od kodu stanu, możesz odpowiednio przetworzyć odpowiedź w swoim kodzie.
-
-## Zobacz także
-
-- [Dokumentacja PHP: Wprowadzenie do funkcji HTTP](https://www.php.net/manual/en/intro.http.php)
-- [Dokumentacja PHP: Function file_get_contents()](https://www.php.net/manual/en/function.file-get-contents.php)
-- [Dokumentacja PHP: CURL - Obsługa transferu URL](https://www.php.net/manual/en/book.curl.php)
+## Zobacz też:
+- [Dokumentacja funkcji `curl_setopt()` w języku polskim](https://www.php.net/manual/pl/function.curl-setopt.php)
+- [Oficjalna dokumentacja biblioteki cURL](https://curl.haxx.se/libcurl/)
+- [Porównanie funkcji do wysyłania żądań HTTP w PHP](https://www.php.net/manual/en/function.file-get-contents.php)

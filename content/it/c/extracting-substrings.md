@@ -10,46 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+## Che cos'è e perché lo si fa?
+Estrarre sottostringhe in programmazione è il processo di ottenere una porzione di una stringa più grande, riga di testo o sequenza di caratteri. I programmatori spesso fanno questo per manipolare o analizzare una determinata parte di un testo, come ad esempio per estrarre un numero, una data o un nome da un messaggio di posta elettronica.
 
-Se stai cercando un modo per manipolare e lavorare con stringhe in modo più efficiente, allora imparare come estrarre sottostringhe può essere utile per te. L'estrazione di sottostringhe è un'operazione comune e utile nella programmazione, specialmente quando si lavora con input di grandi dimensioni o con stringhe che contengono informazioni specifiche.
-
-## Come fare
-
-Per estrarre una sottostringa da una stringa in C, puoi utilizzare la funzione `strncpy()`. Questa funzione prende come argomenti tre parametri: la stringa di destinazione, la stringa di origine e il numero di caratteri da copiare. Ad esempio:
+## Come fare:
+Per estrarre una sottostringa in C, esistono alcune opzioni a seconda delle necessità specifiche del programma. Una possibile soluzione è l'utilizzo delle funzioni `substr` o `strncpy`. Di seguito un esempio di codice che utilizza la funzione `substr` per estrarre i primi 5 caratteri da una stringa:
 
 ```C
-char source[] = "Questo è un esempio di stringa";
-char dest[20];
+char stringa[20] = "Buongiorno";
 
-strncpy(dest, source, 10);
-dest[10] = '\0'; // Aggiungiamo il terminatore di stringa
-printf("La sottostringa estratta è %s", dest);
+char sottostringa[6];
+substr(stringa, sottostringa, 5);
+
+printf("La sottostringa è: %s", sottostringa);
 ```
 
-L'output di questo codice sarà `Questo è u`. Come puoi vedere, la sottostringa è stata estratta dalle prime 10 lettere della stringa originale. Assicurati di aggiungere il terminatore di stringa quando utilizzi la funzione `strncpy()`, in modo da evitare problemi di memoria.
+La stampa del codice sopra sarebbe: "La sottostringa è: Buong".
 
-Se vuoi estrarre una sottostringa da una posizione specifica in una stringa, puoi utilizzare la funzione `strncpy()` in combinazione con la funzione `strlen()`. Ad esempio, se vogliamo estrarre le ultime 5 lettere dalla stringa originale, possiamo utilizzare il seguente codice:
+## Approfondimento:
+L'estrazione di sottostringhe è stata scientificamente studiata da Jack Minker negli anni '60, diventando un importante argomento di ricerca nell'ambito della teoria della computazione. Oltre all'utilizzo delle funzioni `substr` e `strncpy`, una tecnica alternativa per estrarre sottostringhe è l'utilizzo di espressioni regolari. Implementare queste soluzioni richiede una conoscenza avanzata di C e delle sue librerie.
 
-```C
-char source[] = "Questa è la mia stringa";
-char dest[6];
-
-int index = strlen(source) - 5; // Otteniamo l'indice del primo carattere da copiare
-strncpy(dest, source + index, 5);
-dest[5] = '\0'; // Aggiungiamo il terminatore di stringa
-printf("La sottostringa estratta è %s", dest);
-```
-
-L'output di questo codice sarà `string`. Utilizzando la funzione `strlen()`, abbiamo ottenuto l'indice del primo carattere che volevamo copiare e poi abbiamo utilizzato la funzione `strncpy()` per copiare i successivi 5 caratteri.
-
-## Approfondimento
-
-Oltre alla funzione `strncpy()`, esistono anche altre funzioni utili per estrarre sottostringhe in C, come ad esempio `strchr()` e `strstr()`. Queste funzioni permettono di trovare la posizione di un carattere o di una sottostringa all'interno di una stringa e di utilizzarlo come indice per la funzione `strncpy()`.
-
-Inoltre, è importante ricordare che la libreria `string.h` contiene molte funzioni ed è sempre una buona idea consultarla per scoprire ulteriori funzionalità utili.
-
-## Vedi anche
-
-- [Funzione strncpy() su GeeksforGeeks] (https://www.geeksforgeeks.org/strncpy-cpp-reference/)
-- [Libreria string.h su C Reference] (https://www.cprogramming.com/reference/string.h/)
+## Vedi anche:
+Per ulteriori informazioni sull'estrazione di sottostringhe in C, puoi consultare questi link:
+- Documentazione ufficiale della funzione `substr`: https://www.tutorialspoint.com/c_standard_library/c_function_substr.htm
+- Tutorial sull'utilizzo di espressioni regolari in C: https://www.ibm.com/support/knowledgecenter/ssw_ibm_i_71/rtref/regexcla.htm

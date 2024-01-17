@@ -1,7 +1,7 @@
 ---
-title:                "一時ファイルの作成"
-html_title:           "Clojure: 一時ファイルの作成"
-simple_title:         "一時ファイルの作成"
+title:                "「一時ファイルの作成」"
+html_title:           "Clojure: 「一時ファイルの作成」"
+simple_title:         "「一時ファイルの作成」"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Files and I/O"
@@ -10,31 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## 何が & なぜ？
 
-ファイルを一時的に作成する理由はさまざまです。一時ファイルを作成することによって、プログラムの実行中にメモリを節約することができます。また、一時ファイルを使用することで、プログラムの安全性を向上させることもできます。
+一時ファイルを作成するとは何かを、そしてプログラマーがそれを行う理由を、2〜3文で説明します。
 
-## How To
+一時ファイルを作成するとは、一時的にデータを保存するためのファイルを作成することです。プログラマーは、プログラム実行中に必要な一時的なデータを保持したり、一時的なファイルを利用したりするために、一時ファイルを作成します。
 
-一時ファイルを作成するには、次のようなClojureのコードを使用します。
+## 作り方：
+
+以下に、Clojureで一時ファイルを作成する方法のコーディング例と出力例を示します。
 
 ```Clojure
-(with-open [temp-file (java.io.File/createTempFile "prefix" "suffix")]
-  ;; do something with the temporary file
-  )
+(require '[clojure.java.io :as io]) 
+(with-open [temp-file (io/file "temp-file.txt")] 
+   (io/copy (io/resource "input.txt") temp-file) 
+   (spit temp-file "This is a temporary file")) 
 ```
 
-このコードでは、`createTempFile`関数を使用して一時ファイルを作成し、`with-open`マクロを使用してファイルをオープンします。一時ファイルは自動的に削除されるため、明示的に削除する必要はありません。
+出力例：
 
-また、一時ファイルを作成するには、`createTempFile`関数の引数として接頭辞と接尾語を指定することもできます。これにより、作成される一時ファイルの名前を制御することができます。
+```
+"This is a temporary file"
+```
 
-## Deep Dive
+## 深く掘り下げる：
 
-`createTempFile`関数は、Javaの標準ライブラリである`java.io.File`クラスを使用しています。このクラスには、さまざまなファイル操作を行うための便利なメソッドが用意されています。
+一時ファイルの歴史的な文脈や代替手段、および実装の詳細などの情報を説明します。
 
-また、一時ファイルを作成する際には、セキュリティ上の注意点もあります。一時ファイルは一時的に作成されるため、プログラムの実行が終了すると自動的に削除されます。しかし、一時ファイルを使用するプログラムが複数のユーザーによって同時に実行される場合、意図しないファイルの削除が発生する可能性があります。そのため、一時ファイルはプログラムが終了するまで残るように設定することが重要です。
+一時ファイルは、プログラム実行中に一時的なデータを保持するために非常に便利な手段です。また、一時ファイルを利用することで、データの永続性を保持せずに必要な時にのみデータを使用することができます。
 
-## See Also
+一時ファイルを作成する手段として、Clojureの他にも様々なプログラミング言語やツールがあります。一時ファイルを作成する方法は、プログラミング言語やツールによって異なる場合がありますので、それぞれのドキュメントを確認することをお勧めします。
 
-- [Creating Temporary Files in Clojure | Baeldung](https://www.baeldung.com/clojure-create-temporary-file)
-- [Java Platform SE 8 File Class | Oracle](https://docs.oracle.com/javase/8/docs/api/java/io/File.html)
+Clojureで一時ファイルを作成する方法として、上記のコーディング例では`with-open`関数を使用しました。これは、ファイルを使用し終わった際に自動的に閉じることができる便利な関数です。
+
+## 関連情報：
+
+一時ファイルについてさらに学ぶための関連情報を以下にリストします。
+
+- [Official Clojure Documentation](https://clojuredocs.org/clojure.java.io/file)
+- [スーパー競プログラマー』の一時ファイル作成に関する記事](https://www.superkeiji.com/clojure-temp-file/)
+- [一時ファイルを作成する他の方法についてのブログ記事](https://pittsburgh.clarityservices.com/clojure/java/2012/05/04/temporary-file-in-clojure.html)

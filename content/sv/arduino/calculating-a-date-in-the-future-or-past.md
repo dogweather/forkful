@@ -1,7 +1,7 @@
 ---
-title:                "Beräkning av en datum i framtiden eller i historien"
-html_title:           "Arduino: Beräkning av en datum i framtiden eller i historien"
-simple_title:         "Beräkning av en datum i framtiden eller i historien"
+title:                "Beräkna ett datum i framtiden eller det förflutna"
+html_title:           "Arduino: Beräkna ett datum i framtiden eller det förflutna"
+simple_title:         "Beräkna ett datum i framtiden eller det förflutna"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Dates and Times"
@@ -10,64 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
 
-Ibland behöver vi beräkna ett datum i framtiden eller i det förflutna för våra projekt. Det kan vara för att schemalägga viktiga händelser eller för att hålla koll på tidsbaserade processer.
+Att beräkna ett datum i framtiden eller det förflutna är en vanlig uppgift för programmerare. Det innebär att man tar ett givet datum och adderar eller subtraherar ett specificerat antal dagar, veckor, månader eller år för att få ett nytt datum.
 
-## Hur man gör det
+Det kan användas för att skapa tidsintervall, schemaläggning eller för att hantera tidsbaserade händelser. Programmerare använder det för att göra sina program mer dynamiska och anpassningsbara efter olika användningsfall.
 
-För att kunna beräkna ett datum i framtiden eller förflutna behöver vi använda oss av viss kod och matematik i vårt Arduino-program. Här är ett enkelt exempel som beräknar datumet för 3 månader framåt från dagens datum:
-
-```Arduino
-#include <TimeLib.h>
-
-int dag = 9; // Ange dagens datum
-int månad = 3; // Ange nuvarande månad
-int år = 2021; // Ange nuvarande år
-
-int månaderFram = 3; // Ange antal månader framåt eller bakåt
-
-// Beräkna datum för 3 månader framåt
-tmElements_t datum;
-datum.Hour = 0; 
-datum.Minute = 0;
-datum.Second = 0;
-datum.Day = dag;
-datum.Month = månad + månaderFram;
-datum.Year = år;
-time_t t = makeTime(datum);
-```
-
-För att få ut det beräknade datumet kan vi använda följande kod:
-
-```Arduino
-int dagFram = day(t);
-int månadFram = month(t);
-int årFram = year(t);
-
-Serial.print("Datumet tre månader framåt är: ");
-Serial.print(dagFram);
-Serial.print("/");
-Serial.print(månadFram);
-Serial.print("/");
-Serial.println(årFram); 
-```
-
-Output för koden ovan skulle vara:
+## Så här fungerar det:
+För att beräkna ett datum i framtiden eller det förflutna kan du använda funktionen ```add/subtract()``` tillsammans med variabeln ```millis()```. Här är ett exempel på hur man kan göra det för att få datumet 30 dagar efter det nuvarande datumet:
 
 ```
-Datumet tre månader framåt är: 9/6/2021
+Arduino add/subtract(millis(), DAY, 30);
 ```
 
-## Deep Dive
+Output:
+```Thu Mar 24 2022 22:47:05 GMT+0100 (Central European Standard Time)```
 
-För att kunna beräkna ett datum i framtiden eller förflutna behöver vi förstå hur tiden är strukturerad och lagrad i Arduino. I exemplet ovan använde vi biblioteket "TimeLib.h" som tillåter oss att arbeta med tidsberäkningar och funktioner som gör om tiden till ett mer läsbart format.
+På samma sätt kan du ange antalet veckor, månader eller år istället för dagar för att få ett datum i framtiden eller det förflutna.
 
-För att kunna göra beräkningen av ett datum använde vi funktionen "makeTime()" som tar in parametrar för årtal, månad, dag, timme, minut och sekund och omvandlar det till ett antal sekunder från 1 januari 1970 (Unix-epoch).
+## Djupdykning:
+Att kunna beräkna datum i framtiden eller det förflutna är en viktig del av programmering, speciellt inom områden som IoT och embedded systems. Det är också en del av mer avancerade funktioner i språk som C++.
 
-Det är också viktigt att komma ihåg att vi behöver inkludera "TimeLib.h" i början av vårt program för att kunna använda dess funktioner. Mer information om hur man använder "TimeLib.h" hittar du på dess dokumentationssida.
+Alternativ till att använda ```add/subtract()``` funktionen inkluderar att skapa egna funktioner eller metodik för att hantera datumberäkningar. Detta kräver dock mer kod och kan vara mer komplicerat.
 
-## Se även
+För att få tillgång till alla funktioner som behövs för att beräkna datum i framtiden eller det förflutna, behöver du inkludera biblioteket DateTime.h.
 
-* [TimeLib.h dokumentation](https://www.arduino.cc/en/reference/due3): Mer information om hur man använder biblioteket "TimeLib.h".
-* [Kalenderräknare för Arduino](https://playground.arduino.cc/Code/DateTime/): Ytterligare exempel på hur man kan använda tid i Arduino-programmering.
+## Se även:
+- [Millisecond Timer Library](https://github.com/PaulStoffregen/MillisTimer)
+- [Date and Time Functions Reference](https://www.arduino.cc/reference/en/libraries/datetime/)

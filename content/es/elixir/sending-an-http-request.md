@@ -1,7 +1,7 @@
 ---
-title:                "Enviando una solicitud http"
-html_title:           "Elixir: Enviando una solicitud http"
-simple_title:         "Enviando una solicitud http"
+title:                "Enviando una petición http"
+html_title:           "Elixir: Enviando una petición http"
+simple_title:         "Enviando una petición http"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "HTML and the Web"
@@ -10,39 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+# ¡Envío de solicitudes HTTP con Elixir!
 
-¿Alguna vez te has preguntado cómo funciona la comunicación entre tu navegador y un servidor web? Bueno, eso es posible gracias a las solicitudes HTTP. En este artículo, aprenderemos cómo enviar una solicitud HTTP utilizando Elixir.
+## ¿Qué y por qué?
 
-## Cómo hacerlo
+Enviar solicitudes HTTP en Elixir significa establecer una conexión entre la aplicación que estamos construyendo y un servidor web externo. Esta es una forma fundamental para que los programadores soliciten y reciban información en línea, como datos de una API o contenido de una página web.
 
-```Elixir
-# Primero, importa el módulo HTTPoison en tu archivo
-# Esto nos permitirá hacer solicitudes HTTP
-import HTTPoison
+## Cómo hacerlo:
 
-# Luego, utiliza la función get/2 para enviar una solicitud GET
-# Le pasamos la URL como primer argumento y un mapa de opciones como segundo argumento
-# En este caso, estamos solicitando la página principal de "Google"
-response = HTTPoison.get("https://www.google.com/", [])
+Elixir proporciona una biblioteca estándar llamada `:httpc` que se puede utilizar para enviar solicitudes HTTP. Para comenzar, debemos importar la biblioteca en nuestro archivo de código:
 
-# Por último, podemos acceder al código de estado y al cuerpo de la respuesta utilizando la función split/1
-# El código de estado nos indicará si la solicitud fue exitosa o no
-# El cuerpo de la respuesta es el contenido de la página solicitada
-status_code = response |> HTTPoison.split() |> List.first()
-body = response |> HTTPoison.split() |> List.last()
+```elixir
+import :httpc
 ```
 
-Una vez que hayamos obtenido la respuesta, podemos trabajar con ella como queramos. Podemos mostrar el código de estado, extraer información del cuerpo de la respuesta o incluso guardar la página en un archivo para acceder a ella más tarde.
+Luego, podemos utilizar la función `request/4` para enviar una solicitud. Por ejemplo, si queremos obtener el contenido de la página de inicio de Google, podemos hacer lo siguiente:
 
-## Inmersión profunda
+```elixir
+{:ok, {{_, 200, _}, _, body}} = request(:get, {"https://www.google.com", []}, [], [])
+IO.puts body
+```
 
-El módulo HTTPoison proporciona una gran cantidad de opciones para personalizar nuestras solicitudes HTTP. Podemos especificar diferentes métodos (GET, POST, PUT, etc.), encabezados personalizados, autenticación y más. También podemos manejar errores y redireccionamientos de manera eficiente utilizando las funciones disponibles en este módulo. 
+Este código primero realizará una solicitud HTTP GET a la URL especificada y luego utilizará `IO.puts` para imprimir el contenido de la página en la consola.
 
-Además, Elixir también ofrece otros módulos para trabajar con HTTP, como Hackney y Tesla. Cada uno tiene sus propias características y ventajas, por lo que vale la pena explorarlos y elegir el más adecuado para nuestras necesidades.
+## Profundizando:
 
-## Ver también
+La capacidad de enviar solicitudes HTTP es esencial en el mundo de la programación moderna. Antes de que existiera Elixir, se utilizaba principalmente el lenguaje de programación Erlang para manejar solicitudes HTTP en aplicaciones web. Sin embargo, Elixir ha simplificado enormemente este proceso con su sintaxis y características amigables para el desarrollador.
 
-- [Documentación de HTTPoison](https://hexdocs.pm/httpoison/HTTPoison.html)
-- [Guía de HTTP en Elixir](https://elixirschool.com/es/lessons/specifics/http/)
-- [Página oficial de Elixir](https://elixir-lang.org/)
+Si bien `:httpc` es la forma más común de enviar solicitudes HTTP en Elixir, también existen otras alternativas populares como `HTTPoison` y `Tesla`. Cada una ofrece su propio conjunto de características y ventajas, así que asegúrate de elegir la que mejor se adapte a tus necesidades.
+
+En cuanto a los detalles de implementación, Elixir utiliza el módulo `:httpc` de Erlang para enviar solicitudes HTTP. Este módulo ha demostrado ser confiable y robusto a lo largo de los años, lo que garantiza que nuestras solicitudes se realicen de manera eficiente y segura.
+
+## Ver también:
+
+Para obtener más información sobre cómo enviar solicitudes HTTP en Elixir, puedes consultar la documentación oficial de la biblioteca `:httpc` en https://hexdocs.pm/elixir/HTTPc.html. También puedes explorar otros recursos en línea, como tutoriales y ejemplos de código, para obtener una comprensión más profunda de este tema. ¡Feliz codificación!

@@ -1,7 +1,7 @@
 ---
-title:                "Das Versenden einer http-Anfrage"
-html_title:           "Javascript: Das Versenden einer http-Anfrage"
-simple_title:         "Das Versenden einer http-Anfrage"
+title:                "Eine HTTP-Anfrage senden"
+html_title:           "Javascript: Eine HTTP-Anfrage senden"
+simple_title:         "Eine HTTP-Anfrage senden"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "HTML and the Web"
@@ -10,30 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was & Warum?
 
-Warum sollte man sich mit dem Senden von HTTP-Anfragen in der aktuellen Version von JavaScript beschäftigen? Ganz einfach: die Kommunikation mit einem Server ist für moderne Webanwendungen unerlässlich. Ob Daten abrufen, Informationen senden oder Ressourcen laden - alles läuft über HTTP-Anfragen.
+Das Senden einer HTTP-Anfrage ist einfach gesagt die Art und Weise, wie ein Programm mit einem externen Server kommuniziert, um Informationen auszutauschen. Programmierer tun das, um zum Beispiel Daten von einer Datenbank abzurufen oder um mit einer API zu integrieren.
 
-## Wie
+## Wie geht's?
 
-Um eine HTTP-Anfrage in JavaScript zu senden, muss man zuerst eine Instanz des XMLHttpRequest-Objekts erstellen. Dieses Objekt ermöglicht die asynchrone Kommunikation mit dem Server. Dann muss man die Datenform der Anfrage angeben, z.B. JSON oder XML, und die URL des Ziels angeben. Hier ist ein Beispielcode:
+Um eine HTTP-Anfrage in Javascript zu senden, können wir die ```fetch``` Funktion verwenden. Hier ist ein Beispiel für eine GET-Anfrage:
 
 ```Javascript
-let request = new XMLHttpRequest();
-request.open('GET', 'https://www.example.com/data');
-request.send();
+fetch("https://api.example.com/users")
+  .then(response => response.json())
+  .then(data => {
+    console.log(data);
+  })
+  .catch(error => {
+    console.error(error);
+  });
 ```
 
-Wenn die Anfrage erfolgreich ist, erhält man eine Antwort mit dem gewünschten Inhalt. Dieser kann dann weiterverarbeitet werden, z.B. durch das Manipulieren von DOM-Elementen. Man kann auch mehrere Parameter angeben, um die Anfrage zu personalisieren. 
+In diesem Beispiel wird eine GET-Anfrage an die URL "https://api.example.com/users" gesendet und die Antwort als JSON-Objekt ausgegeben. Wir können auch Daten in unsere Anfrage einschließen, indem wir ein Objekt als zweiten Parameter an die ```fetch``` Funktion übergeben. Hier ist ein Beispiel für eine POST-Anfrage:
 
-## Deep Dive
+```Javascript
+const request = {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({ username: 'John', password: 'pass123' })
+}
 
-Das XMLHttpRequest-Objekt hat verschiedene Eigenschaften, die man ändern kann, um die Kommunikation anzupassen. Mit der `onreadystatechange` Eigenschaft kann man z.B. eine Funktion festlegen, die bei Änderungen des Anfrage-Status aufgerufen wird. Dies kann nützlich sein, um Feedback während der Anfrage zu erhalten. Außerdem kann man mit `setRequestHeader()` zusätzliche Header-Informationen zur Anfrage hinzufügen.
+fetch("https://api.example.com/login", request)
+  .then(response => response.json())
+  .then(data => {
+    console.log(data);
+  })
+  .catch(error => {
+    console.error(error);
+  });
+```
 
-Es gibt auch alternative Methoden für HTTP-Anfragen in JavaScript, wie z.B. die `fetch()` API. Diese ermöglicht eine noch einfachere und flexiblere Art, Anfragen zu senden. Es ist daher empfehlenswert, sich über die verschiedenen Möglichkeiten zu informieren und die für den individuellen Anwendungsfall am besten geeignete Methode auszuwählen.
+Dieses Mal wird ein Objekt mit den Anfrage-Parametern erstellt und als zweiter Parameter an die ```fetch``` Funktion übergeben. Dadurch wird eine JSON-kodierte Anfrage an die URL "https://api.example.com/login" gesendet.
+
+## Tiefer tauchen
+
+Früher war es üblich, XMLHttpRequest (XHR) zu verwenden, um HTTP-Anfragen in Javascript zu senden. Diese Methode ist jedoch veraltet und wurde durch die ```fetch``` Funktion ersetzt. Eine andere Alternative ist die Verwendung von Bibliotheken wie jQuery oder axios, die das Senden von HTTP-Anfragen vereinfachen. 
+
+Es ist auch wichtig zu beachten, dass die ```fetch``` Funktion standardmäßig keine Cookies oder Authentifizierungsheader überträgt. Um dies zu ermöglichen, müssen wir die Optionen ```credentials``` und ```headers``` in unserer Anfrage angeben.
 
 ## Siehe auch
 
-- [XMLHttpRequest Objekt](https://developer.mozilla.org/de/docs/Web/API/XMLHttpRequest)
-- [fetch() API](https://developer.mozilla.org/de/docs/Web/API/Fetch_API)
-- [Einführung in AJAX](https://www.w3schools.com/js/js_ajax_intro.asp)
+- [MDN Dokumentation zur fetch Funktion](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)
+- [W3Schools Anleitung zur HTTP-Anfrage in Javascript](https://www.w3schools.com/js/js_ajax_http.asp)

@@ -1,7 +1,7 @@
 ---
-title:                "コンピュータプログラミングの記事のタイトルは「テストを書く」です。"
-html_title:           "Gleam: コンピュータプログラミングの記事のタイトルは「テストを書く」です。"
-simple_title:         "コンピュータプログラミングの記事のタイトルは「テストを書く」です。"
+title:                "テストを書く"
+html_title:           "Gleam: テストを書く"
+simple_title:         "テストを書く"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Testing and Debugging"
@@ -10,34 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜテストを書く必要があるのか 
+## 何 & なぜ？
 
-テストを書くことは、コードが正しく動作し、新しい機能を追加したり、リファクタリングしたりする際に自信を持って続けることができるようにするためです。
+テストを書くことは、プログラマーが自分のコードが期待どおりに動作するかどうかを確認するための重要なプロセスです。プログラマーはコードを書き、それをテストすることで、エラーやバグを早期に発見して修正することができます。
 
-## 方法 
+## 方法:
 
-テストを書くには、まずテストするコードの関数やモジュールを作成します。その後、作成した関数やモジュールを呼び出して、正しい出力が得られるかどうかをテストします。具体的なコーディング例を見てみましょう。
-
-``` Gleam
-import string
-test suite "String Library Tests" {
-  test "split" {
-    assert.equal(string.split("Hello World", ""), ["Hello", "World"])
-  }
-  test "trim" {
-    assert.equal(string.trim("   Hello World   "), "Hello World")
-  }
-}
+```Gleam ...
+# テストの例
+ここにコードを書く
+...
 ```
 
-ここでは、`import` ローカルで `test suite` が作成され、2 つの単体テストが実行されています。 `string.split` が正しい出力を返し、 `string.trim` が余分なスペースを削除していることを確認しています。
+```Gleam ...
+# 出力の例
+テストが成功しました！
+...
+```
 
-## 深堀り 
+## 詳細:
 
-テストを書く際には、さまざまな機能を使用して、コードの異なる部分をテストすることができます。例えば、 `assert.equal` を使用して値が等しいかどうかをテストしたり、 `assert.is_error` を使用してエラーが発生するかどうかをテストしたりすることができます。また、 `setup` 関数を使用して、テストの前に実行する前処理を定義することもできます。
+テストを書くことは、プログラマーにとって非常に重要なスキルです。古くから、プログラマーたちは自分のコードをテストするための様々な手法を使用してきました。しかし、近年では、新しいプログラミング言語としてGleamが登場し、テストをより簡単かつ効率的に書くことができるようになりました。
 
-## See Also 
+Gleamには、テストを書くための便利な機能がたくさんあります。例えば、```expect```や```assert```を使用して、テストケースをシンプルかつ読みやすく書くことができます。また、Gleamはタイプセーフな言語であるため、テストが失敗する原因を特定するのがより簡単になります。
 
-- 公式のGleamドキュメント：https://gleam.run/
-- テストの例：https://github.com/gleam-lang/gleam/blob/main/stdlib/string/gleam
-- テスト自体のコード：https://github.com/gleam-lang/gleam/blob/main/test/string.gleam
+もしGleamを使用しているのであれば、ぜひテストを書くことをお勧めします。これにより、コードの信頼性を確保することができ、開発プロセスをよりスムーズに進めることができます。
+
+## 関連情報:
+
+- [Gleam公式ウェブサイト](https://gleam.run/)
+- [Gleamのテストについてのガイド](https://gleam.run/book/testing.html)
+- [Gleamのチュートリアル](https://gleam.run/book/getting-started.html)

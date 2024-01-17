@@ -1,7 +1,7 @@
 ---
-title:                "एक नए परियोजना की शुरुआत करना"
-html_title:           "Fish Shell: एक नए परियोजना की शुरुआत करना"
-simple_title:         "एक नए परियोजना की शुरुआत करना"
+title:                "एक नया प्रोजेक्ट शुरू करना"
+html_title:           "Fish Shell: एक नया प्रोजेक्ट शुरू करना"
+simple_title:         "एक नया प्रोजेक्ट शुरू करना"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Getting Started"
@@ -10,34 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-Agar aap ek programming project shuru karna chahte hain to Fish Shell ek acha option ho sakta hai. Ye aapko efficient aur streamlined coding experience provide karta hai, jisse aapka project jaldi se develop ho sakta hai aur aapko kam samay mein zyada kaam karne ki permission deta hai.
+हम सब जानते हैं कि किसी भी प्रोग्रामिंग परियोजना को शुरू करना क्या है। यह एक नए सॉफ्टवेयर या अपडेट के लिए कोड लिखने का प्रक्रिया है। प्रोग्रामर इस प्रक्रिया को कई तरीकों से कर सकते हैं, लेकिन हम आज फिश शेल के बारे में बात करेंगे। फिश शेल एक गतिशील और दोस्ताना प्रोग्रामिंग भाषा है जो बहुत से डेवलपर्स द्वारा पसंद किया जाता है।
 
-## How To
-Fish Shell mein ek naya project shuru karne ke liye, aapko kuch simple steps follow karne honge:
+## कैसे करें:
+आप अपनी नई परियोजना को शुरू करने के लिए फिश शेल का उपयोग कर सकते हैं। प्रथम चरण में, आपको कमांड लाइन में `cd` लिखकर अपने परियोजना की डायरेक्ट्री में पहुंचना होगा। उसके बाद, आपको `fish` लिखना होगा जो फिश शेल को शुरू करेगा। आप इसके बाद कोड को लिख सकते हैं और `exit` लिखकर फिश शेल से बाहर निकल सकते हैं। नीचे दिए गए कोड ब्लॉक में आप एक उदाहरण देख सकते हैं।
 
-```
-Fish Shell mein naya project shuru karne ke liye, aapko pehle `mkdir` command ka use karke ek naya directory create karna hoga.
-Uske baad, `cd` command se uss directory mein enter karein.
-Ab `touch` command ka use karke ek naya file banayein, jisme aap apna code likhenge.
-Finally, apne code ko run karne ke liye `./filename` command use karein.
-```
-
-Sample output:
-
-```
-mkdir my_project
-cd my_project
-touch main.py
-./main.py
+```Fish Shell
+cd my_project_directory
+fish
+echo "Hello World"
+exit
 ```
 
-## Deep Dive
-Fish Shell mein naya project shuru karte waqt, aapko kuch important considerations rakhne honge. Jaise ki aapko apne project ke liye sahi se syntax highlighting aur code completion setup karna hoga. Iske liye aap Fish Shell ke built-in options ka use kar sakte hain ya fir third-party plugins install kar sakte hain.
+जब आप इस कोड को चलाएंगे, तो आपको `Hello World` का मैसेज दिखेगा।
 
-Ek aur important aspect hai virtual environment setup. Fish Shell mein, `virtualenv` command ka use karke aap aasani se ek virtual environment create kar sakte hain, jisse aapke project dependencies alag rehte hain aur aapke system dependencies ko affect nahi karte hain.
+## गहराई में जा:
+फिश शेल गुगल को द्वारा डेवलप की गई है और यह गतिशील और इंटरैक्टिव है। इसे अन्य लाइन शेल भाषाओं की तुलना में काफी आसान समझा जा सकता है और एक खुला स्रोत समुदाय द्वारा समर्थित है। अगर आपको फिश शेल अच्छा नहीं लगता है, तो आप हमेशा अन्य लाइन शेल जैसे बैश या जीएनयू आदि का उपयोग कर सकते हैं।
 
-## See Also
-- [Official Fish Shell Website](https://fishshell.com/)
-- [Fish Shell Documentation](https://fishshell.com/docs/current/index.html)
-- [Fish Shell Github Repository](https://github.com/fish-shell/fish-shell)
+## अधिक जानकारी के लिए:
+अगर आपको फिश शेल से जुड़ी और जानकारी चाहिए, तो आप इन लिंक्स पर जा सकते हैं:
+
+- [ऑफिशियल वेबसाइट](https://fishshell.com/): यहां आपको फिश शेल के बारे में और अधिक जानकारी मिलेगी।
+- [फिश शेल का गिटहब पेज](https://github.com/fish-shell/fish-shell): यहां आप फिश शेल को डाउनलोड और अपडेट कर सकते हैं।
+- [फिश शेल का दस्तावेजीकरण](https://fishshell.com/docs/current/): यहां आपको फिश शेल का डॉक्यूमेंटेशन मिलेगा।
+
+आप इन स्रोतों से अपनी प्रोग्रामिंग कौशल को बढ़ा सकते हैं और फिश शेल परियोजनाओं को अधिक आसान बनाने में मदद कर सकते

@@ -10,51 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué?
+## ¿Qué y por qué?
 
-Una de las tareas más comunes en la programación es la lectura y escritura de archivos de texto. Estos archivos son utilizados para guardar información que necesita ser accesada y modificada por el programa. Saber cómo escribir un archivo de texto es una habilidad esencial para cualquier programador.
+Escribir un archivo de texto es simplemente guardar información en un archivo legible por el programa. Es una forma práctica de almacenar datos para que puedan ser utilizados por programas de computadora. Los programadores utilizan textos para crear bases de datos, generar informes y automatizar tareas.
 
 ## ¿Cómo hacerlo?
 
-Escribir un archivo de texto en Python es un proceso sencillo que requiere solo unos pocos pasos.
+Para escribir un archivo de texto en Python, primero necesitamos abrir el archivo utilizando la función open() y especificar la ubicación y el nombre del archivo. Luego, utilizamos el método write() para agregar contenido al archivo. Finalmente, cerramos el archivo con la función close() para asegurarnos de que todos los cambios se guarden correctamente.
 
-1. Primero, necesitamos crear y abrir el archivo en el que queremos escribir. Esto se puede hacer utilizando la función `open()` y especificando el modo de escritura (`w`).
-
-```
-archivo = open("mi_archivo.txt", "w")
-```
-
-2. Ahora podemos escribir en el archivo utilizando el método `write()`. Este método toma una cadena como argumento y la escribe en el archivo.
-
-```
-archivo.write("¡Hola! Este es un archivo de texto escrito en Python.")
+```Python
+archivo = open("mi_archivo.txt", "w") # Abrir un archivo en modo escritura
+archivo.write("¡Hola, mundo!") # Agregar contenido al archivo
+archivo.close() # Cerrar el archivo
 ```
 
-3. No olvidemos cerrar el archivo después de terminar de escribir. Esto se hace utilizando el método `close()`.
-
-```
-archivo.close()
-```
-
-También podemos escribir varias líneas en el archivo utilizando un bucle `for` y una lista de cadenas.
-
-```
-lineas = ["Esta es la primera línea.", "Esta es la segunda línea.", "Esta es la tercera línea."]
-
-for linea in lineas:
-    archivo.write(linea + "\n")
-```
-
-¡Y eso es todo! Ahora tendremos un archivo de texto con las líneas que especificamos.
+Si deseamos escribir en un archivo existente sin sobrescribir su contenido, podemos abrirlo en modo de agregado ("a") en lugar de modo escritura ("w").
 
 ## Profundizando
 
-Hay algunos detalles importantes a tener en cuenta cuando se escribe un archivo de texto en Python. Por ejemplo, si el archivo que estamos abriendo ya existe, el modo `w` lo sobreescribirá completamente. Si queremos agregar texto al final del archivo, podemos utilizar el modo `a` (append).
+Escribir archivos de texto ha sido una tarea común en la programación de computadoras desde los inicios de la informática. Antes, los lenguajes de programación requerían que se escribieran códigos específicos para manejar archivos de texto, pero con el tiempo, se han desarrollado librerías y módulos que facilitan esta tarea. Algunas alternativas para escribir archivos de texto en Python son los módulos csv y shutil, que ofrecen funciones específicas para la manipulación de archivos de texto.
 
-También es importante asegurarse de cerrar el archivo después de usarlo para evitar problemas de memoria.
+También es importante mencionar que existen diferentes modos de apertura de archivos, como leer ("r"), añadir ("a") y binario ("b"). Es importante seleccionar el modo adecuado para la tarea que estamos realizando.
 
-## Ver también
+## Véase también
 
-- [Documentación oficial de Python sobre escritura de archivos](https://docs.python.org/es/3/tutorial/inputoutput.html#reading-and-writing-files)
-- [Tutorial de Real Python sobre escritura de archivos](https://realpython.com/read-write-files-python/)
-- [Video tutorial de Programiz sobre escritura de archivos en Python](https://www.programiz.com/python-programming/file-operation#write)
+Documentación oficial de Python sobre escritura de archivos: https://docs.python.org/es/3/tutorial/inputoutput.html#reading-and-writing-files
+
+Tutorial en español sobre escritura de archivos en Python: https://recursospython.com/guias-y-manuales/escribir-archivos-con-python/

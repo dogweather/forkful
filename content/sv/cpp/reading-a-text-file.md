@@ -1,7 +1,7 @@
 ---
-title:                "Läsa en textfil"
-html_title:           "C++: Läsa en textfil"
-simple_title:         "Läsa en textfil"
+title:                "Läsning av en textfil"
+html_title:           "C++: Läsning av en textfil"
+simple_title:         "Läsning av en textfil"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Files and I/O"
@@ -10,56 +10,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
+Att läsa en textfil betyder att läsa och hämta information från en fil som innehåller text. Programmerare gör detta för att få tillgång till och använda viktig information som är lagrad i filen.
 
-Att kunna läsa textfiler är en viktig färdighet när man programmerar i C++. Det ger dig möjlighet att använda extern data i ditt program, vilket kan vara avgörande för dess funktionalitet.
-
-## Hur man gör det
-
-För att läsa en textfil i C++ behöver du använda ett filobjekt och en instans av "ifstream"-klassen. Sedan kan du använda "open()" funktionen för att öppna filen och "getline()" funktionen för att läsa varje rad i filen.
+## Hur man gör:
+Här är ett exempel på hur man läser in en textfil i C++:
 
 ```C++
 #include <iostream>
 #include <fstream>
+using namespace std;
 
-int main() {
-  std::ifstream fil("textfil.txt"); // Skapar ett filobjekt och öppnar filen "textfil.txt"
-  std::string rad; // Skapar en variabel för varje rad i textfilen
-  
-  // While-loop som läser varje rad i filen tills den når slutet
-  while (std::getline(fil, rad)) {
-    std::cout << rad << std::endl; // Skriver ut varje rad på skärmen
-  }
-  
-  fil.close(); // Stänger filen när läsningen är klar
-  return 0;
+int main()
+{
+    // Öppna filen
+    ifstream fil("exempel.txt");
+    // Skapa en sträng som lagrar texten från filen
+    string text;
+
+    // Om filen kunde öppnas
+    if (fil.is_open()){
+        // Läs in texten från filen till variabeln "text"
+        getline(fil, text);
+        // Skriv ut texten
+        cout << text << endl;
+        // Stäng filen
+        fil.close();
+
+    } else {
+        // Om filen inte kunde öppnas, skriv ut ett felmeddelande
+        cout << "Kunde inte öppna filen." << endl;
+    }
+
+    return 0;
 }
 ```
 
-Om vi antar att vår textfil "textfil.txt" innehåller följande:
-
+### Exempel på innehåll i "exempel.txt":
 ```
-Hej,
-Det här är en textfil.
-```
-
-Så kommer vår kod att skriva ut följande på skärmen:
-
-```
-Hej,
-Det här är en textfil.
+Hej! Det här är en textfil.
+Jag innehåller användbar information.
+Hoppas du kan använda mig i ditt program!
 ```
 
-## Djupdykning
+### Exempel på utmatning:
+```
+Hej! Det här är en textfil.
+```
 
-För att förstå hur filobjekt och "ifstream"-klassen fungerar vid läsning av textfiler, behöver vi förstå begreppet "ström" (stream) i C++. Strömmar är en abstrakt representation av en sekvens av data, de kan vara inriktade (input eller output) och peka på en specifik enhet eller handling (tex en fil). I exemplet ovan är vårt filobjekt "fil" en inriktad input-ström som pekar på vår textfil "textfil.txt".
+## Djupdykning:
+Att läsa in textfiler är en viktig del av programmering och har funnits sedan de första språken skapades. Andra sätt att läsa in filer inkluderar binära filer, där informationen är lagrad i binär kod istället för text, och databasfiler som används för att lagra och hantera stora mängder data. I C++ finns olika funktioner och metoder för att läsa in olika filer, så det är viktigt att välja rätt metod för det specifika syftet.
 
-När vi använder "getline()" funktionen så läser den en hel rad av text från strömmen och sparar det i vår variabel "rad". Sedan flyttar den läsaren till nästa rad i filen och fortsätter tills den når slutet. När filen är klar så stängs strömmen automatiskt när "fil" objektet går ut ur synpunkten.
+## Se även:
+Här är några artiklar som kan vara relevanta för att läsa textfiler i C++:
 
-För att få en djupare förståelse för hur filer och strömmar fungerar i C++, rekommenderas att läsa mer om dem i C++ dokumentationen eller andra resurser på nätet.
-
-## Se även
-
-- [C++ Filsystem](https://www.cplusplus.com/reference/filesystem/)
-- [C++ Strömmar](https://www.cplusplus.com/reference/ios/ios/)
-- [Textfiler i C++](https://www.geeksforgeeks.org/reading-writing-text-files-c/)
+- [Filhantering i C++](https://www.programiz.com/cpp-programming/files-io)
+- [Huvudprogrammeringsspråk: En kort historik](https://www.britannica.com/technology/computer-programming-language/Generations-of-languages)

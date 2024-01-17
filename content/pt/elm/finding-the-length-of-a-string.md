@@ -10,36 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que 
+O que & Porquê?
 
-Se você é um programador em Elm, provavelmente já se deparou com a necessidade de encontrar o comprimento de uma string em algum momento. Entender como fazer isso é essencial para trabalhar com dados de texto e criar lógica eficiente em seus programas.
+Encontrar o comprimento de uma string é um processo comum na programação que envolve determinar o número de caracteres em uma string. Isso pode ser útil para diversas tarefas, como validação de input do usuário, manipulação de textos e formatação de dados.
 
-## Como Fazer
+Como fazer:
 
-Encontrar o comprimento de uma string é algo relativamente simples em Elm. Tudo o que você precisa fazer é chamar a função `String.length` e passar a string como argumento. Veja um exemplo de código abaixo:
-
-```Elm
-idade = "20 anos"
-String.length idade
-```
-
-A saída desse código será `9`, pois a string possui um total de nove caracteres. Você também pode usar essa função em conjunto com outras funções de manipulação de strings para criar lógica mais avançada.
-
-## Deep Dive
-
-A função `String.length` é uma função de ordem superior em Elm, o que significa que ela recebe outra função como argumento. Isso permite que você personalize ainda mais a lógica de encontrar o comprimento de uma string.
-
-Uma outra abordagem para encontrar o comprimento de uma string é usar a função `List.length`. Como as strings são listas de caracteres em Elm, você pode usar essa função e passar a string como argumento. Veja um exemplo de código abaixo:
+Para encontrar o comprimento de uma string em Elm, podemos usar a função `String.length` que retorna o número de caracteres na string fornecida. Por exemplo:
 
 ```Elm
-idade = "20 anos"
-List.length (String.toList idade)
+String.length "Olá mundo!" -- retorna 10
+```
+Podemos também usar essa função com variáveis e inputs de usuário:
+
+```Elm
+nome <- "Maria"
+String.length nome -- retorna 5
 ```
 
-A saída desse código será novamente `9`, pois a string foi convertida em uma lista de caracteres para que a função `List.length` possa ser aplicada. Isso pode ser útil quando você precisar realizar manipulações mais específicas em cada caractere da string.
+Deep Dive:
 
-## Veja Também
+A necessidade de encontrar o comprimento de uma string vem desde os primeiros dias da programação, quando a manipulação de textos era uma tarefa essencial. Além disso, essa função também pode ser implementada de maneira recursiva, percorrendo a string e contando cada caractere até alcançar o final.
 
-- Documentação oficial do Elm: https://elm-lang.org/docs
-- Tutorial de Elm para iniciantes: https://guide.elm-lang.org/
-- Funções de manipulação de strings em Elm: https://package.elm-lang.org/packages/elm/core/latest/String
+Alternativamente, também é possível usar a função `List.length` em combinação com `String.toList` para obter o tamanho de uma string em forma de lista de caracteres.
+
+Ver também:
+
+- Documentação oficial do Elm sobre a função `String.length`: https://package.elm-lang.org/packages/elm/core/latest/String#length
+- Outras funções úteis de string em Elm: https://guide.elm-lang.org/strings/
+- Exemplos práticos de uso da função `length`: https://dev.to/larsenwork/elm-recipes-string-length-3goe

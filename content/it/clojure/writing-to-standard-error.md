@@ -1,7 +1,7 @@
 ---
-title:                "Scrittura su errore standard"
-html_title:           "Clojure: Scrittura su errore standard"
-simple_title:         "Scrittura su errore standard"
+title:                "Scrivere su standard error"
+html_title:           "Clojure: Scrivere su standard error"
+simple_title:         "Scrivere su standard error"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Files and I/O"
@@ -10,27 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+## Cosa & Perché?
 
-Scrivere su standard error è un'operazione comune in Clojure per gestire errori e debugging. Ciò consente agli sviluppatori di identificare rapidamente eventuali problemi nel codice e di fornire informazioni dettagliate sulle cause degli errori.
+Scrivere su standard error significa inviare un messaggio di errore o avviso che non fa parte dell'output normale del programma. I programmatori lo fanno per aiutare a identificare problemi e migliorare la gestione degli errori nel loro codice.
 
-## Come fare
-
-Per scrivere su standard error in Clojure, usiamo la funzione `clojure.pprint/write-err` e passiamo ad essa il messaggio da stampare. Il suo output verrà quindi visualizzato sulla console di errore. Di seguito un esempio di codice:
+## Come fare:
 
 ```Clojure
-(require '[clojure.pprint :refer [write-err]])
-(write-err "Errore: valore non valido")
+(defn scrivi-su-std-err [testo]
+  (println (with-out-str
+             (with-out-str
+               (let [*err* *out*]
+                 (println testo))))))
+
+(scrivi-su-std-err "Questo è un messaggio di errore!") ; output: Questo è un messaggio di errore!
 ```
 
-Il risultato dell'esempio sarà:
+## Approfondimento:
 
-`Errore: valore non valido`
+Scrivere su standard error è stato introdotto inizialmente nei sistemi Unix come una parte del sistema di gestione degli errori. In alcuni casi, utilizzare questo approccio può essere preferibile rispetto a scrivere un messaggio su standard output, poiché si separa chiaramente il contenuto normale del programma dai messaggi di errore. Altre opzioni includono l'utilizzo di log file o librerie apposite per la gestione degli errori.
 
-## Approfondimento
+## Vedi anche:
 
-Scrivere su standard error è molto utile per la gestione degli errori, ma è anche importante conoscere le differenze tra standard out e standard error. In Clojure, standard out è utilizzato per la stampa di output di natura generale, mentre standard error è riservato per la gestione degli errori. Inoltre, standard error ha una priorità maggiore e verrà sempre stampato prima di standard out.
-
-## Vedi anche
-- Documentazione ufficiale di Clojure su `clojure.pprint/write-err`[https://clojuredocs.org/clojure.pprint/write-err]
-- Tutorial su error handling in Clojure[https://www.braveclojure.com/functional-error-handling/]
+- ["Gestione degli errori in Clojure"](https://clojure.org/guides/error_handling) su clojure.org
+- ["Clojure: writing to standard error"](https://dzone.com/articles/clojure-writing-to-standard-error) su dzone.com

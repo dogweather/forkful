@@ -1,7 +1,7 @@
 ---
-title:                "Das aktuelle Datum erhalten"
-html_title:           "C++: Das aktuelle Datum erhalten"
-simple_title:         "Das aktuelle Datum erhalten"
+title:                "Das Abrufen des aktuellen Datums"
+html_title:           "C++: Das Abrufen des aktuellen Datums"
+simple_title:         "Das Abrufen des aktuellen Datums"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Dates and Times"
@@ -10,14 +10,13 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
-Wer C++ programmiert, wird häufig auf die Notwendigkeit stoßen, das aktuelle Datum in sein Programm einzufügen. Dies kann aus verschiedenen Gründen erforderlich sein, zum Beispiel zur Datumsberechnung oder zur Protokollierung von Aktionen.
+# Was & Warum?
 
-## Wie man das aktuelle Datum abruft
-Es gibt verschiedene Möglichkeiten, das aktuelle Datum in C++ abzurufen. Hier werden zwei gängige Methoden mit Beispielen vorgestellt.
+Das Abrufen des aktuellen Datums ist eine häufige Aufgabe für Programmierer. Es ermöglicht ihnen, das Datum zu einem bestimmten Zeitpunkt in ihrem Programm zu kennen und entsprechend darauf zu reagieren. Oft wird das aktuelle Datum verwendet, um Logfiles zu datieren, den Benutzer über wichtige Ereignisse zu informieren oder um eine zeitbasierte Funktionalität zu implementieren, wie z.B. das Anzeigen des aktuellen Datums auf einer Webseite.
 
-### Methode 1: Die `time()` Funktion
-Die `time()` Funktion ist eine Standard-Header-Funktion, die die Anzahl der Sekunden seit dem 01.01.1970 zurückgibt. Um das aktuelle Datum zu erhalten, muss diese Sekundenanzahl in ein `time_t` Objekt umgewandelt werden und anschließend in eine `struct tm` Struktur zerlegt werden. Im folgenden Beispiel wird das aktuelle Datum in dem Format Jahr-Monat-Tag ausgegeben:
+# Wie geht das?
+
+Um das aktuelle Datum in C++ abzurufen, gibt es mehrere Möglichkeiten. Eine davon ist die Verwendung der `ctime` Bibliothek. Hier ist ein Beispielcode, der das Datum in einem bestimmten Format ausgibt:
 
 ```C++
 #include <iostream>
@@ -25,23 +24,28 @@ Die `time()` Funktion ist eine Standard-Header-Funktion, die die Anzahl der Seku
 
 int main()
 {
-    // Deklaration von Variablen
-    time_t now;         // Sekunden seit 01.01.1970
-    time(&now);         // Aktuelle Anzahl an Sekunden wird in "now" gespeichert
-    tm *date = localtime(&now);  // Umwandlung in eine "struct tm" Struktur
-    
-    // Ausgabe des aktuellen Datums in dem Format Jahr-Monat-Tag
-    std::cout << "Das aktuelle Datum lautet: " << (date->tm_year + 1900) << "-" << (date->tm_mon + 1) << "-" << date->tm_mday << std::endl;
-    
+    // Struktur für das aktuelle Datum und die Zeit
+    time_t now = time(0);
+
+    // Konvertiert das aktuelle Datum und die Zeit in ein lesbare Form
+    char* dt = ctime(&now);
+
+    // Gibt das Datum und die Zeit aus
+    std::cout << "Das aktuelle Datum und die Zeit ist: " << dt << std::endl;
+
     return 0;
 }
 ```
 
-#### Ausgabe:
-Das aktuelle Datum lautet: 2021-03-15
+Die Ausgabe dieses Codes könnte wie folgt aussehen: 
 
-### Methode 2: Die `chrono` Bibliothek
-Die `chrono` Bibliothek bietet eine etwas modernere Möglichkeit, auf das aktuelle Datum zuzugreifen. Dabei wird die `system_clock` verwendet, um die aktuelle Zeit zu ermitteln. Im folgenden Beispiel wird das Datum in dem Format Tag-Monat-Jahr, sowie die aktuelle Uhrzeit in dem Format Stunden:Minuten ausgegeben:
+```bash
+Das aktuelle Datum und die Zeit ist: Wed Jun 23 12:07:54 2021
+```
+
+Es ist wichtig zu beachten, dass das aktuelle Datum und die Zeit von dem Zeitpunkt abhängig sind, an dem der Code ausgeführt wird.
+
+Eine andere Möglichkeit, das aktuelle Datum abzurufen, ist die Verwendung der `chrono` Bibliothek. Diese ermöglicht es, das Datum in einem bestimmten Format zu speichern und zu manipulieren. Hier ist ein Beispielcode, der das aktuelle Datum in einem benutzerdefinierten Format ausgibt:
 
 ```C++
 #include <iostream>
@@ -50,28 +54,38 @@ Die `chrono` Bibliothek bietet eine etwas modernere Möglichkeit, auf das aktuel
 
 int main()
 {
-    // Deklaration von Variablen
-    auto now = std::chrono::system_clock::now();  // Aktuelle Zeit
-    std::time_t time = std::chrono::system_clock::to_time_t(now);
-    std::tm *date = std::localtime(&time);    // Umwandlung in eine "tm" Struktur
-    
-    // Ausgabe des aktuellen Datums in dem Format Tag-Monat-Jahr
-    std::cout << "Das aktuelle Datum lautet: " << date->tm_mday << "-" << (date->tm_mon + 1) << "-" << (date->tm_year + 1900) << std::endl;
-    
-    // Ausgabe der aktuellen Uhrzeit in dem Format Stunden:Minuten
-    std::cout << "Die aktuelle Uhrzeit lautet: " << date->tm_hour << ":" << date->tm_min << std::endl;
-    
+    // Zeitpunkt für das aktuelle Datum
+    std::chrono::system_clock::time_point now = std::chrono::system_clock::now();
+
+    // Wandelt den Zeitpunkt in ein Datum und Uhrzeit-Objekt um
+    std::time_t now_c = std::chrono::system_clock::to_time_t(now);
+
+    // Benutzerdefiniertes Format für das Datum und die Uhrzeit
+    std::cout << "Das aktuelle Datum und die Zeit ist: " << std::put_time(std::localtime(&now_c), "%Y-%m-%d %H:%M:%S") << std::endl;
+
     return 0;
 }
 ```
 
-#### Ausgabe:
-Das aktuelle Datum lautet: 15-03-2021
-Die aktuelle Uhrzeit lautet: 12:00
+Die Ausgabe des Codes würde wie folgt aussehen:
 
-## Tiefergehende Informationen
-Beide Methoden liefern das aktuelle Datum in dem Format Datum-Monat-Jahr. Dabei ist zu beachten, dass die `time()` Funktion das Jahr als eine Anzahl von Jahren seit 1900 zurückgibt, während die `chrono` Bibliothek das Jahr als das tatsächliche Jahr ausgibt. Zusätzlich gibt die `localtime()` Funktion das Datum in einer `tm` Struktur zurück, welche verschiedene Elemente wie Jahr, Monat, Tag, Stunde, Minute, Sekunde, Wochentag usw. enthält.
+```bash
+Das aktuelle Datum und die Zeit ist: 2021-06-23 12:07:54
+```
 
-## Siehe auch
-- [C++ time() Dokumentation](https://www.cplusplus.com/reference/ctime/time/)
-- [C++ chrono Bibliothek Dokumentation](https://www.cplusplus.com/reference/chrono/)
+# Tief tauchen
+
+Das Abrufen des aktuellen Datums hat eine lange Geschichte in der Programmierung. Früher wurde es oft verwendet, um Dateien mit dem aktuellen Datum zu benennen, da die meisten Dateisysteme nur acht Zeichen für den Dateinamen zuließen. Heutzutage wird es hauptsächlich zur Verwendung in der Zeitzonenberechnung oder zur Implementierung von zeitabhängigen Funktionen verwendet.
+
+Eine Alternative zur Verwendung der `ctime` und `chrono` Bibliotheken ist die Verwendung von externen Bibliotheken, wie z.B. Boost.Date_Time oder ICU (International Components for Unicode), die umfangreiche Funktionen zur Manipulation von Datum und Uhrzeit bieten.
+
+Die Implementierung des Abrufs des aktuellen Datums kann je nach Betriebssystem variieren. Die meisten Betriebssysteme bieten jedoch Systemfunktionen oder APIs zur Verfügung, um das aktuelle Datum abzurufen.
+
+# Siehe auch
+
+Hier sind einige hilfreiche Links zum Thema "Aktuelles Datum abrufen":
+
+- [cplusplus.com - ctime library](http://www.cplusplus.com/reference/ctime/)
+- [cplusplus.com - chrono library](http://www.cplusplus.com/reference/chrono/)
+- [Boost.Date_Time](https://www.boost.org/doc/libs/1_76_0/doc/html/date_time.html)
+- [ICU - Date and Time](https://unicode-org.github.io/icu/userguide/datetime/)

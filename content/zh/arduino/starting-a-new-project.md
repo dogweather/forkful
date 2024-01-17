@@ -1,7 +1,7 @@
 ---
-title:                "开始一个新项目"
-html_title:           "Arduino: 开始一个新项目"
-simple_title:         "开始一个新项目"
+title:                "开始新项目"
+html_title:           "Arduino: 开始新项目"
+simple_title:         "开始新项目"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Getting Started"
@@ -10,55 +10,61 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 為什麼
+# 新項目如何？
 
-每個人在生活中都會遇到各種各樣的需要，可能是家居自動化、溫度監測系統，或者是智能玩具。Arduino就是一個非常靈活和方便的平台，可以讓您輕鬆快速地開始自己的專案。
+## 什麼是新項目？
+開始一個新的項目是指在Arduino上創建或開發新的程式或應用程序。程式設計師做這樣的事情是為了滿足新的需求，解決問題，或創造新的產品或服務。
 
-## 如何開始
+## 為什麼程式設計師會做這件事？
+程式設計師通常會開始新的項目，因為現有的程式或應用程序已不再滿足新的需求或要求。另外，開始新的項目也可以讓程式設計師學習新的技能，挑戰自己的能力，並提升自己的知識水平。
 
-首先，您需要一塊Arduino板和相關的電子零件，這些通常可以在電子零件商店或在線上購買。接下來，您需要下載Arduino開發軟件並安裝在您的電腦上。
+## 如何：
+在Arduino環境中，創建新的項目非常容易。只需按照以下步驟進行操作：
 
-接下來，讓我們來編寫一個簡單的程式，點亮一個LED燈。首先，在剛剛建立的空白程式碼中，先定義一個變數來儲存LED的引腳編號：
+1. 打開Arduino IDE（集成開發環境）。
+2. 點擊「檔案」>「新建」，以創建新的項目。
+3. 在程式碼編輯區域，輸入你的程式碼。
+4. 按下「上傳」按鈕，將程式碼上傳到Arduino板子。
+5. 觀察板子的反應，確保程式成功運行。
 
-```arduino
-int ledPin = 7;  //將LED接在板子的引腳7上
-```
+以下是一個簡單的程式碼範例，讓LED燈在Arduino板子上閃爍：
 
-然後，在`setup()`函式中，將LED引腳設定為輸出模式：
+```Arduino
+// 設定LED引腳
+int ledPin = 13;
 
-```arduino
-void setup(){
-  pinMode(ledPin, OUTPUT);  //將LED引腳設定為輸出模式
+// 設定程式起始
+void setup() {
+  // 將LED引腳設定為輸出
+  pinMode(ledPin, OUTPUT);  
+}
+
+// 主程式
+void loop() {
+  // 開啟LED燈
+  digitalWrite(ledPin, HIGH);   
+  // 稍等1秒
+  delay(1000);                  
+  // 關閉LED燈
+  digitalWrite(ledPin, LOW);    
+  // 稍等1秒
+  delay(1000); 
 }
 ```
 
-最後，在`loop()`函式中，使用`digitalWrite()`函式將LED引腳設定為高電平，即可點亮LED燈：
+該程式會讓板子上的13號引腳（即內建LED燈）以每秒一次的頻率閃爍。
 
-```arduino
-void loop(){
-  digitalWrite(ledPin, HIGH);  //將LED引腳設定為高電平，LED燈會點亮
-}
-```
+## 深入探討：
+### 歷史背景：
+Arduino起源於2005年，由義大利的費德里科·穆西奧（Federico Musto）和大衛·卡魯希（David Cuartielles）共同開發。它的目標是提供一個易於學習和使用的平台，讓使用者可以輕鬆地創建電子設備和應用程序。如今，Arduino已成為最受歡迎的開源硬體平台之一。
 
-現在，您可以上傳程式到Arduino板上，看到LED燈亮起來了！
+### 替代方案：
+除了Arduino，還有其他的開源硬體平台可以用來開發電子設備和應用程序，如Raspberry Pi、BeagleBone等。不同的平台有不同的優點和用途，使用者可以根據自己的需求選擇最適合的平台。
 
-## 深入了解
+### 實現細節：
+Arduino程式可以使用C/C++語言編寫，但是因為Arduino提供了許多易於使用的函數庫，程式設計師可以使用更簡單的語法和函數來控制硬體設備。此外，Arduino提供了豐富的社群支持和教學資源，讓初學者也能輕鬆上手。
 
-開始一個新的專案時，最重要的是要明確目標和需求。請先思考您想要做什麼，需要什麼功能，再來選擇適合的Arduino板和電子零件。您也可以參考官方網站、專案庫和社群討論區，學習和探索其他人的專案，並從中獲得靈感和幫助。
-
-在編寫程式時，建議先簡單測試每一個小功能，確保它們的正確運作，再進行整合。同時，也要充分利用Arduino的各種函式庫和示例程式，能夠節省時間和解決一些常見的問題。
-
-最後，當完成專案後，記得將程式分享出來，讓更多人可以參考和使用。也歡迎您加入Arduino社群，和其他專案者一起交流和學習。
-
-## 參考資料
-
+## 相關資源：
 - [Arduino官方網站](https://www.arduino.cc/)
-- [Arduino專案庫](https://create.arduino.cc/projecthub)
-- [Arduino中文官方社群](http://www.arduino.cn/)
-- [Arduino中文網討論區](https://www.arduino.cn/forum.php)
-
-## 相關文章
-
-- [從零開始學習Arduino入門指南](https://example.com/arduino-intro)
-- [如何選擇適合的Arduino板與零件](https://example.com/arduino-selection)
-- [Arduino常見問題解答](https://example.com/arduino-faq)
+- [Arduino中文社群](https://www.arduino.cc/en/Main/ChineseCommunity)
+- [Arduino程式設計入門教學](https://maker.gettingsharp.com/entry-level/soft-hardware/arduino/arduino-basic/)

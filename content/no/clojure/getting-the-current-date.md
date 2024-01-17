@@ -1,7 +1,7 @@
 ---
-title:                "Få nåværende dato"
-html_title:           "Clojure: Få nåværende dato"
-simple_title:         "Få nåværende dato"
+title:                "Få gjeldende dato"
+html_title:           "Clojure: Få gjeldende dato"
+simple_title:         "Få gjeldende dato"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Dates and Times"
@@ -10,34 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
-Det er ofte nyttig å vite den nåværende datoen for å kunne utføre ulike oppgaver, som for eksempel å lagre økonomiske transaksjoner eller planlegge framtidige hendelser. I Clojure kan du enkelt få tak i den nåværende datoen ved å bruke innebygde funksjoner.
+## Hva og hvorfor?
+Få den nåværende datoen er en vanlig oppgave for programmører, da det er nødvendig for å spore og behandle tid i et program. Dette gjøres vanligvis ved å hente systemets nåværende dato og tid, og omformere den til et format som er lett å lese og bruke.
 
-## Slik gjør du det
+## Hvordan:
 ```Clojure
-(def today (java.util.Date.))
-```
-I dette eksempelet bruker vi funksjonen `java.util.Date` for å lage et Java Date-objekt og lagrer det i variabelen `today`. Dette vil tilsvare den nåværende datoen og tiden på datamaskinen din. Vi kan også bruke funksjonen `instant` fra `java.time` biblioteket for å få nøyaktig samme resultat.
-
-```Clojure
-(require '[java.time :as time])
-
-(def today (time/instant))
+(def now (java.util.Date.))
+(def sdf (java.text.SimpleDateFormat. "dd/MM/yyyy"))
+(.format sdf now)
 ```
 
-Det er også mulig å få tak i den nåværende datoen i et spesifikt tidsformat ved hjelp av funksjonen `formatter` fra `java.time.format` biblioteket.
-
+Output:
 ```Clojure
-(require '[java.time.format :as fmt])
-
-(def today (java.time.LocalDateTime/now))
-(def formatted-date (fmt/formatter "dd-MM-yyyy").format(today))
+"12/12/2021"
 ```
 
-## Dypdykk
-Hvis vi dykker dypere ned i koden, kan vi se at begge eksemplene ovenfor bruker Java-klassen `Date` for å få tak i den nåværende datoen. Denne klassen er en del av Java API og gir oss tilgang til funksjoner for å håndtere dato- og tidsrelaterte operasjoner. Ved å bruke Clojure sine automatisk konverteringer mellom Java- og Clojure-datastrukturer, kan vi enkelt få tilgang til disse funksjonene.
+## Dypdykk:
+Før i tiden var det vanlig å bruke Java-koden ```System.currentTimeMillis()``` for å få den nåværende datoen. Men med introduksjonen av Java 8 i 2014, kom en ny og forbedret måte å håndtere tid på: Java 8 "time library". Dette biblioteket gir enklere og mer nøyaktig håndtering av datoer og klokkeslett.
 
-## Se også
-- [Clojure dokumentasjon](https://clojure.org/about/documentation)
-- [Java API dokumentasjon for Date-klassen](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html)
-- [Java.time API dokumentasjon](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
+Det finnes også alternative biblioteker som kan brukes i Clojure for å få den nåværende datoen, som for eksempel "clj-time" og "joda-time". Disse bibliotekene gir mer fleksibilitet og funksjonalitet, men innebærer også ekstra avhengigheter for prosjektet ditt.
+
+Implementasjonsdetaljer:
+I den viste koden bruker vi Java Date og SimpleDateFormat-klassene for å få og formatere den nåværende datoen. I Java 8 og nyere kan du også bruke de nye klassene fra "time library", som LocalDate og LocalDateTime, for å håndtere datoer og klokkeslett.
+
+## Se også:
+- Clojure dokumentasjon for "java.util.Date": https://clojuredocs.org/clojure.java-time/local-date
+- Java 8 "time library" dokumentasjon: https://docs.oracle.com/javase/tutorial/datetime/iso/datetime.html

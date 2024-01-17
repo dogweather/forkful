@@ -1,7 +1,7 @@
 ---
-title:                "JSON과 함께 작업하기"
-html_title:           "C: JSON과 함께 작업하기"
-simple_title:         "JSON과 함께 작업하기"
+title:                "Json 처리하기"
+html_title:           "C: Json 처리하기"
+simple_title:         "Json 처리하기"
 programming_language: "C"
 category:             "C"
 tag:                  "Data Formats and Serialization"
@@ -10,133 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 왜: 왜 누군가가 JSON 작업에 참여할까요?
+## What & Why?
 
-JSON은 현대 프로그래밍에서 매우 중요한 데이터 형식입니다. 다양한 운영 체제, 프로그래밍 언어 및 데이터 형식 간에 데이터 교환을 쉽게하고 일관성 있게 유지하는 데 사용됩니다. 따라서 어떤 프로그래머라도 JSON을 잘 다루는 것은 중요합니다.
+JSON (JavaScript Object Notation)은 데이터를 구조화하고 전송하기 위해 주로 사용되는 텍스트 형식입니다. 프로그래머들은 JSON을 사용하면 데이터를 간결하고 구조적으로 표현할 수 있으며, 다른 시스템 간의 데이터 교환을 더 쉽게 할 수 있습니다.
 
+## How to:
 
-## 사용 방법
-
-JSON을 C 프로그래밍 언어에서 사용하는 방법을 살펴보겠습니다. 
-
-#### JSON 라이브러리 포함
-먼저 JSON 데이터를 다루기 위해서는 해당 데이터 형식을 다루는 라이브러리를 불러와야 합니다. C 프로그래밍 언어에서는 [json-c](https://github.com/json-c/json-c) 라이브러리를 사용하면 됩니다. 
-
-#### JSON 데이터 생성
 ```C
-#include <stdio.h>
-#include <stdlib.h>
-#include <json-c/json.h>
+struct person {
+    char name[50];
+    int age;
+    char occupation[50];
+};
 
-int main(void)
-{
-    // 새로운 JSON 객체 생성
-    json_object *new_obj = json_object_new_object();
+// JSON 생성 예제
+struct person p1 = {"John", 25, "Programmer"};
+char json[100];
+sprintf(json, "{ \"name\": \"%s\", \"age\": %d, \"occupation\": \"%s\" }", p1.name, p1.age, p1.occupation);
+printf("%s\n", json);
 
-    // 키와 값을 추가함
-    json_object_object_add(new_obj, "name", json_object_new_string("John"));
-    json_object_object_add(new_obj, "age", json_object_new_int(25));
-
-    // 새로운 배열 생성
-    json_object *new_arr = json_object_new_array();
-
-    // 배열에 값 추가
-    json_object_array_add(new_arr, json_object_new_int(1));
-    json_object_array_add(new_arr, json_object_new_int(2));
-    json_object_array_add(new_arr, json_object_new_int(3));
-
-    // JSON 객체에 배열 추가
-    json_object_object_add(new_obj, "numbers", new_arr);
-
-    // 생성된 JSON 객체 출력
-    printf("New JSON object: %s\n", json_object_to_json_string(new_obj));
-
-    // 메모리 반환
-    json_object_put(new_obj);
-    json_object_put(new_arr);
-
-    return 0;
-}
+// JSON 파싱 예제
+char jsonData[] = "{ \"name\": \"Sarah\", \"age\": 30, \"occupation\": \"Designer\" }";
+struct person p2;
+sscanf(jsonData, "{ \"name\": \"%[^\"]\", \"age\": %d, \"occupation\": \"%[^\"]\" }", p2.name, &p2.age, p2.occupation);
+printf("Name: %s\nAge: %d\nOccupation: %s\n", p2.name, p2.age, p2.occupation);
 ```
 
-#### JSON 데이터 읽기
-```C
-#include <stdio.h>
-#include <json-c/json.h>
+## Deep Dive:
 
-int main(void)
-{
-    // JSON 파일 열기
-    FILE *fp = fopen("data.json", "r");
-    if(!fp) {
-        printf("Error opening JSON file.");
-        return 1;
-    }
+JSON은 프로그래밍 언어가 아니라 데이터 표현 형식으로, 원래는 JavaScript에서 사용하던 것이었습니다. 하지만 다양한 프로그래밍 언어에서 쉽게 사용할 수 있도록 널리 채택되고 있으며, 서버와 클라이언트 간의 통신에서 많이 사용됩니다.
 
-    char buffer[1024];
+JSON의 대안으로는 XML이 있습니다. XML에 비해 더 간결하고 가독성이 좋으며, 파싱 시간도 더 빠릅니다. 하지만 XML의 장점인 유효성 검사, 스키마 정의 등을 제공하지는 않습니다.
 
-    // JSON 데이터를 읽어서 버퍼에 저장
-    fread(buffer, 1024, 1, fp);
+JSON은 키-값 쌍으로 이루어진 객체 형태의 데이터를 사용하여 자료구조를 표현합니다. C에서는 문자열과 정수, 실수 등의 기본 자료형을 사용하여 이를 구현할 수 있습니다. 또한 JSON을 사용하기 위해 여러 라이브러리가 제공되며, 이를 사용하면 더 쉽고 효율적으로 JSON을 다룰 수 있습니다.
 
-    // 버퍼에서 JSON 객체 생성
-    json_object *obj = json_tokener_parse(buffer);
+## See Also:
 
-    // 객체에서 값을 읽어서 출력
-    printf("Name: %s\n", json_object_get_string(json_object_object_get(obj, "name")));
-    printf("Age: %d\n", json_object_get_int(json_object_object_get(obj, "age")));
-
-    // 메모리 반환
-    json_object_put(obj);
-    fclose(fp);
-
-    return 0;
-}
-```
-
-#### JSON 데이터 수정
-```C
-#include <stdio.h>
-#include <json-c/json.h>
-
-int main(void)
-{
-    // JSON 파일 열기
-    FILE *fp = fopen("data.json", "r+");
-    if(!fp) {
-        printf("Error opening JSON file.");
-        return 1;
-    }
-
-    char buffer[1024];
-
-    // JSON 데이터를 읽어서 버퍼에 저장
-    fread(buffer, 1024, 1, fp);
-
-    // 버퍼에서 JSON 객체 생성
-    json_object *obj = json_tokener_parse(buffer);
-
-    // 객체에서 값을 수정함
-    json_object_object_add(obj, "name", json_object_new_string("Jane"));
-
-    // 수정된 JSON 객체 파일에 씀
-    fseek(fp, 0, SEEK_SET);  // 파일 위치를 맨 처음으로 이동
-    fprintf(fp, "%s", json_object_to_json_string(obj));
-
-    // 메모리 반환
-    json_object_put(obj);
-    fclose(fp);
-
-    return 0;
-}
-```
-
-#### JSON 데이터 삭제
-```C
-#include <stdio.h>
-#include <json-c/json.h>
-
-int main(void)
-{
-    // JSON 파일 열기
-    FILE *fp = fopen("data.json", "r+");
-    if
+- [JSON 공식 사이트](https://www.json.org/json-en.html)
+- [C로 JSON 다루기](https://github.com/DaveGamble/cJSON)
+- [JSON vs XML: 두 데이터 형식 비교](https://www.educba.com/json-vs-xml/)

@@ -1,7 +1,7 @@
 ---
-title:                "Uzyskiwanie aktualnej daty"
-html_title:           "Fish Shell: Uzyskiwanie aktualnej daty"
-simple_title:         "Uzyskiwanie aktualnej daty"
+title:                "Pobieranie aktualnej daty"
+html_title:           "Fish Shell: Pobieranie aktualnej daty"
+simple_title:         "Pobieranie aktualnej daty"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Dates and Times"
@@ -10,26 +10,17 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego?
+## Co & Dlaczego?
+Pobranie aktualnej daty to podstawowa czynność w programowaniu, umożliwiająca śledzenie czasu wykonania operacji i tworzenie datowych formatów wyjściowych. Dzięki temu programiści mogą precyzyjnie kontrolować czas oraz dostosować go do swoich potrzeb.
 
-Dlaczego ktoś chciałby otrzymać aktualną datę? Jest to przydatne do wielu różnych zastosowań, takich jak tworzenie plików lub katalogów z datą jako ich nazwą, automatyczne tworzenie dziennych wpisów lub raportów, lub nawet prosty sposób na upewnienie się, że pliki są odpowiednio zaktualizowane.
+## Jak to zrobić:
+Korzystając z powłoki Fish możemy wyświetlić aktualną datę za pomocą jednej z wbudowanych funkcji. Wystarczy wpisać polecenie ```date```, aby uzyskać datę i godzinę w formacie domyślnym. Jeśli chcielibyśmy dostosować wyjście do określonych wymagań, możemy skorzystać z opcji. Na przykład, aby wyświetlić tylko dzień tygodnia i miesiąca, możemy użyć polecenia ```date '+%a %b'```, a wynik będzie miał postać ```Thu Mar```.
 
-## Jak To Zrobić
+## Pogłębiony zanurzenie:
+Pobranie aktualnej daty jest wykonywane przez wiele systemów operacyjnych, dlatego też istnieje wiele różnych sposobów na jego wykonanie. Jedną z popularniejszych opcji jest wykorzystanie wbudowanej funkcji ```date```, jednak istnieją także inne narzędzia i biblioteki takie jak Moment.js czy strftime, które oferują bardziej rozbudowane możliwości formatowania daty i godziny.
 
-```Fish Shell``` posiadają wbudowane polecenie ```date```, które zwraca aktualną datę w formacie ```MM/DD/RRRR```. Możesz wpisać jedynie polecenie ```date``` i naciśnij Enter, aby wyświetlić bieżącą datę, lub możesz użyć opcji, aby dostosować wyjście.
-
-```Fish Shell
-date +%d/%m/%Y
-```
-
-Powyższe polecenie zwróci datę w formacie ```DD/MM/RRRR```. Możesz zmienić format wyjścia, korzystając z różnych opcji, takich jak ```%H``` dla godziny, ```%M``` dla minuty lub ```%S``` dla sekundy. Aby uzyskać pełną listę opcji, wpisz ```man date``` w terminalu.
-
-## Głębsza Analiza
-
-Polecenie ```date``` korzysta z ustawień lokalnych w celu określenia formatu wyjścia. Jeśli chcesz zmienić domyślny format daty, możesz zmienić ustawienia regionalne swojego systemu. W systemach Unix/Linux możesz to zrobić za pomocą polecenia ```locale```. W systemie MacOS możesz użyć narzędzia ```defaults```. Więcej informacji na temat zmiany ustawień regionalnych możesz znaleźć w dokumentacji systemu operacyjnego.
-
-## Zobacz też
-
-- [Dokumentacja Polecenia Date](https://fishshell.com/docs/current/commands.html#date)
-- [Poradnik z użyciem polecenia "date" w bash](https://linuxize.com/post/bash-date-command/)
-- [Zmiana ustawień regionalnych w systemie MacOS](https://developer.apple.com/library/archive/documentation/MacOSX/Conceptual/BPInternational/LanguageandLocaleIDs/LanguageandLocaleIDs.html)
+## Zobacz także:
+Jeśli chcesz dowiedzieć się więcej o tym, jak działa pobranie aktualnej daty w Fish Shell lub zobaczyć przykładowe kody, możesz skorzystać z poniższych źródeł:
+- Dokumentacja Fish Shell: https://fishshell.com/docs/current/cmds/date.html
+- Oficjalna strona Moment.js: https://momentjs.com/
+- Biblioteka strftime: https://strftime.org/

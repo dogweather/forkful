@@ -1,7 +1,7 @@
 ---
-title:                "Debug-Ausgabe drucken"
-html_title:           "Rust: Debug-Ausgabe drucken"
-simple_title:         "Debug-Ausgabe drucken"
+title:                "Ausgabe von Debug-Meldungen"
+html_title:           "Rust: Ausgabe von Debug-Meldungen"
+simple_title:         "Ausgabe von Debug-Meldungen"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Testing and Debugging"
@@ -10,62 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+# Was & Warum?
 
-Debugging ist ein wichtiger Teil des Programmierens und das Drucken von Debug-Ausgaben ist oft eine nützliche Methode, um Probleme in unserem Code zu identifizieren. Mit Rust können wir dies auf verschiedene Arten tun, je nach unseren spezifischen Bedürfnissen.
+Debugging oder Fehlerbehebung ist ein wichtiger Teil des Programmierprozesses. Beim Debugging wollen Programmierer*innen herausfinden, wo ihr Code Fehler aufweist und wie sie diese beheben können. Ein nützliches Werkzeug beim Debugging ist das Drucken von Debug-Ausgaben. Dabei wird gezielt Code eingefügt, der dem Programmierer oder der Programmiererin hilft, den Ablauf des Codes nachzuvollziehen und Fehler zu finden.
 
-## So geht's
+# Wie?
 
-Das Drucken von Debug-Ausgaben in Rust ist einfach und unkompliziert. Wir können `println!` oder `eprintln!` verwenden, um Ausgaben auf der Standardausgabe oder der standardmäßigen Fehlerausgabe zu drucken. Hier ist ein Beispiel:
-
-```Rust
-let num = 42;
-println!("Die Nummer ist: {}", num);
-```
-
-Dieses Beispiel verwendet `println!` um den Wert von `num` auf der Standardausgabe auszudrucken. Wir können auch Formatierungsoptionen wie `{:?}` verwenden, um den vollständigen Inhalt eines Wertes zu drucken. Hier ist ein Beispiel:
+In Rust gibt es die Makro-Funktion ```println!()```, die speziell für das Ausgeben von Debug-Ausgaben gedacht ist. Diese Akro nimmt Format-Strings und Argumente entgegen, ähnlich wie die bekannte ```printf()``` Funktion in C. Hier ist ein Beispielcode:
 
 ```Rust
-let name = "Peter";
-println!("Der Name ist: {:?}", name);
-```
-
-Dies druckt den Wert von `name` auf der Standardausgabe in einem Debug-Format (z.B. "Peter" wird als `"Peter"` gedruckt). Alternativ können wir auch `dbg!` verwenden, um eine Debug-Ausgabe zu drucken und den Wert zurückzugeben. Hier ist ein Beispiel:
-
-```Rust
-let result = 4 + 2;
-let sum = dbg!(result);
-```
-
-Dieses Beispiel nutzt `dbg!` um den Wert von `result` auf der Standardausgabe zu drucken und gleichzeitig den Wert an `sum` zuweisen.
-
-## Tiefergehende Einblicke
-
-In der Regel möchten wir Debug-Ausgaben nur in Entwicklungsumgebungen verwenden und nicht in der finalen Anwendung. Um dies zu erreichen, können wir das `debug`-Feature von Rust nutzen. Hier ist ein Beispiel:
-
-```Rust
-let num = 42;
-#[cfg(debug_assertions)]
-println!("DEBUG: Die Nummer ist: {}", num);
-```
-
-Dieses Beispiel nutzt die `#[cfg(debug_assertions)]`-Anweisung, um sicherzustellen, dass die entsprechende Debug-Ausgabe nur in Entwicklungsmodus kompiliert wird.
-
-Ebenfalls wichtig ist, dass wir unsere Debug-Ausgaben richtig handhaben. Wenn wir `println!` oder `eprintln!` in einer Schleife verwenden, kann dies zu Leistungsproblemen führen, da sie für jede Ausgabe die Standardausgabe öffnen und schließen. In solchen Fällen sollten wir `io::stdout()` oder `io::stderr()` direkt verwenden und entsprechend mit einem `io::BufWriter` umwickeln. Hier ist ein Beispiel:
-
-```Rust
-use std::io::{self, Write};
-let stdout = io::stdout();
-let mut stdout_lock = BufWriter::new(stdout.lock());
-
-for i in 1..=10 {
-    write!(stdout_lock, "Iteration {}: {}\n", i, i * 2).unwrap();
+fn main() {
+    let name = "Max";
+    let age = 25;
+    println!("Name: {} | Age: {}", name, age);
 }
 ```
+Dieser Code gibt die Debug-Ausgabe `Name: Max | Age: 25` in der Konsole aus.
 
-Dieses Beispiel nutzt `io::BufWriter` um die Standardausgabe effizienter zu nutzen. Wir sollten auch immer bedenken, Debug-Ausgaben in unserem finalen Code zu entfernen, um unnötigen Overhead zu vermeiden.
+# Tief ins Detail
 
-## Siehe auch
+Das Drucken von Debug-Ausgaben ist in der Programmierung schon lange üblich. Vor der Einführung von Funktionen wie ```println!()``` wurde oft die Funktion ```printf()``` in C verwendet. Die Entscheidung, Debug-Ausgaben mit Makros wie ```println!()``` zu implementieren, wurde in Rust getroffen, um die Lesbarkeit und Effizienz des Codes zu verbessern.
 
-- [Die offizielle Rust Dokumentation über Debug-Ausgaben](https://doc.rust-lang.org/std/macro.dbg.html)
-- [Eine ausführliche Erklärung von Debug-Ausgaben in Rust](https://danielkeep.github.io/tlborm/book/blk-debug-assertions.html)
+Eine Alternative zu ```println!()``` ist die Funktion ```eprintln!()```, die Debug-Ausgaben auf den Standardfehlerstrom ausgibt. Dies kann hilfreich sein, wenn die Ausgaben nicht zusammen mit dem normalen Programmablauf ausgegeben werden sollen.
+
+Die Implementierung von ```println!()``` ist ziemlich einfach, da das Programm einfach den gegebenen Format-String und die Argumente kombiniert und auf dem Standardausgabestrom ausgibt. Allerdings kann es bei der Fehlerbehandlung Probleme geben, da der Programmablauf unterbrochen werden kann, wenn die Ausgabe aufgrund von Fehlern fehlschlägt.
+
+# Siehe auch
+
+- Offizielle Dokumentation zu ```println!()```: [https://doc.rust-lang.org/std/macro.println.html](https://doc.rust-lang.org/std/macro.println.html)
+- Eine Einführung in das Debugging in Rust: [https://www.youtube.com/watch?v=QQvpe5OPbH4](https://www.youtube.com/watch?v=QQvpe5OPbH4)
+- Vergleich von Makros und Funktionen in Rust: [https://doc.rust-lang.org/book/ch19-06-macros.html#functions-vs-macros](https://doc.rust-lang.org/book/ch19-06-macros.html#functions-vs-macros)

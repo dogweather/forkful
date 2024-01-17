@@ -1,7 +1,7 @@
 ---
-title:                "Päivämäärän muuttaminen merkkijonoksi."
-html_title:           "Kotlin: Päivämäärän muuttaminen merkkijonoksi."
-simple_title:         "Päivämäärän muuttaminen merkkijonoksi."
+title:                "Päivämäärän muuntaminen merkkijonoksi"
+html_title:           "Kotlin: Päivämäärän muuntaminen merkkijonoksi"
+simple_title:         "Päivämäärän muuntaminen merkkijonoksi"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Dates and Times"
@@ -10,54 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä ja miksi?
+Päivämäärän muuntaminen merkkijonoksi tarkoittaa päivämäärätiedon muuttamista helpommin ymmärrettävään muotoon. Ohjelmoijat tekevät tämän yleisesti tietojen tallentamisen tai näyttämisen helpottamiseksi.
 
-Miksi haluaisit muuttaa päivämäärän merkkijonoksi? Se voi olla hyödyllistä esimerkiksi kun haluat tallentaa päivämäärän tietokantaan tai näyttää sen käyttäjälle selkeässä muodossa.
+## Miten: 
+Esimerkkejä koodinpätkistä ja tulostus näytetään ```Kotlin ... ``` koodilohkoissa.
 
-## Miten
+Esimerkki 1: Muuntaa päivämäärä ja aikaleima merkkijonoksi. 
 
-Kotlinin avulla voit helposti muuttaa päivämäärän merkkijonoksi. Se käyttää Java Date and Time API:ta, joten voit käyttää samoja metodeja kuin Javassa.
-
-Esimerkiksi jos haluat muuttaa päivämäärän nykyisestä ajankohdasta merkkijonoksi, voit käyttää seuraavaa koodia:
-
-```Kotlin
-import java.time.LocalDate
-import java.time.format.DateTimeFormatter
-
-val currentDate = LocalDate.now()
-val formattedDate = currentDate.format(DateTimeFormatter.ofPattern("dd.MM.yyyy"))
-
-println("Päivämäärä merkkijonona: $formattedDate")
+```
+val date = "21.09.2021"
+val time = "12:00"
+val stringDate = "$date klo $time"
+println(stringDate)
 ```
 
-Tämä tulostaisi esimerkiksi "20.09.2020" riippuen nykyisestä päivämäärästä.
-
-Voit myös muuttaa merkkijonon takaisin päivämääräksi käyttämällä `LocalDate.parse()` -metodia. Esimerkiksi:
-
-```Kotlin
-val dateAsString = "20.09.2020"
-val parsedDate = LocalDate.parse(dateAsString, DateTimeFormatter.ofPattern("dd.MM.yyyy"))
-
-println("Merkkijono muutettuna päivämääräksi: $parsedDate")
+Tuloste: 
+```
+21.09.2021 klo 12:00
 ```
 
-Tämä tulostaisi "2020-09-20".
+Esimerkki 2: Käyttäen SimpleDateFormat-luokkaa muuntaaksesi päivämäärän ja aikaleiman haluamassasi muodossa. 
 
-## Syvempi sukellus
+```
+val date = Date()
+val dateFormat = SimpleDateFormat("dd.MM.yyyy HH:mm")
+val stringDate = dateFormat.format(date)
+println(stringDate)
+```
 
-Kotlinin Java Date and Time API tarjoaa paljon erilaisia mahdollisuuksia muuttaa päivämäärä merkkijonoksi ja päinvastoin. Voit käyttää erilaisia formaatteja pukeaksesi päivämäärän haluamaasi muotoon. Esimerkiksi:
+Tuloste: 
+```
+21.09.2021 12:10
+```
 
-- "d" - päivämäärä ilman nollia (esim. "5")
-- "dd" - päivämäärä kaksinumeroisena (esim. "05")
-- "MMM" - kuukauden lyhennetty nimi (esim. "Sep")
-- "MMMM" - kuukauden koko nimi (esim. "Syyskuu")
-- "y" - vuosi ilman vuosisadan lukua (esim. "20")
-- "yy" - vuosi kaksinumeroisena (esim. "20")
-- "yyyy" - vuosi nelinumeroisena (esim. "2020")
+## Syvään sukeltaminen:
+Päivämäärän ja aikaleiman muuntamista merkkijonoksi on tehty jo kauan ennen nykyaikaisia ohjelmointikieliä. Yksi vaihtoehto muunnokseen on käyttää Seconds Tiedoston » access stamp, joka tallentaa datan sekunteina. Java SDK tarjoaa myös vaihtoehdon kutsuttuna SimpleDateFormat luokka, jonka avulla voit muuntaa päivämäärän ja aikaleiman haluamassasi muodossa. Kotlin tarjoaa myös samoja luokkia ja metodeja kuin Java.
 
-Voit löytää lisää erilaisia formaatteja [Kotlinin dokumentaatiosta](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-date-time/index.html#constants).
-
-## Katso myös
-
-- [Java 8 Date and Time API](https://www.baeldung.com/java-8-date-time-intro)
-- [Kotlinin virallinen dokumentaatio](https://kotlinlang.org/docs/reference/datetime.html)
+## Katso myös:
+- [Date and Time API in Kotlin](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.time/)
+- [SimpleDateFormat Class in Java](https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html)

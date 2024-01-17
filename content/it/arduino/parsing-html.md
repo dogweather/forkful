@@ -1,7 +1,7 @@
 ---
-title:                "Analisi di HTML"
-html_title:           "Arduino: Analisi di HTML"
-simple_title:         "Analisi di HTML"
+title:                "Analisi dell'html"
+html_title:           "Arduino: Analisi dell'html"
+simple_title:         "Analisi dell'html"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "HTML and the Web"
@@ -10,49 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+## Cos'è e perché?
 
-Se sei un'appassionato di Arduino e ti piace sperimentare con nuovi progetti, il parsing HTML potrebbe essere un'abilità utile da apprendere. Con il parsing HTML, puoi estrarre dati da pagine web e utilizzarli nel tuo codice Arduino per creare progetti ancora più interessanti.
+Il parsing di HTML è il processo attraverso il quale un programmatore estrae informazioni strutturate da una pagina web. Questo può essere utile per ottenere dati specifici dai siti web, come ad esempio l'ultimo punteggio di una partita o il prezzo di un prodotto. 
 
-## Come fare
+## Come fare:
 
-Per iniziare, assicurati di avere un'Arduino aggiornata e il software IDE installato sul tuo computer. Quindi, segui questi passaggi:
+```
+ArduinoHttpClient client;
 
-1. Importa la libreria esp32-hmtl-parser nel tuo progetto.
-2. Crea un oggetto della classe HtmlParser e assegna un'e-mail del sito web che desideri analizzare come parametro.
-3. Utilizza il metodo `parse()` per ottenere il contenuto HTML della pagina web.
-4. Sfrutta i metodi della classe HtmlParser per estrarre le informazioni che ti interessano dalla pagina, come titoli, paragrafi o immagini.
-5. Utilizza i dati che hai estratto nella tua logica di programmazione e crea progetti sorprendenti.
-
-Ecco un esempio di codice che estrae il titolo di una pagina web utilizzando la libreria esp32-html-parser:
-
-```Arduino
-#include <HtmlParser.h>
-
-HtmlParser parser("https://www.esempio.com");
-
-void setup() {
-    Serial.begin(9600);
-    parser.parse();
-    String title = parser.title();
-    Serial.println(title); // stampa il titolo della pagina web nella console
+if (client.get("http://www.example.com")) {
+    while (client.available()) {
+        char c = client.read();
+        Serial.write(c);
+    }
 }
-
-void loop() {}
 ```
 
-L'output di questo codice sarà il titolo della pagina web, come "Esempio di pagina web". Ovviamente, puoi utilizzare anche gli altri metodi della classe HtmlParser per estrarre altre informazioni.
+Una volta impostato l'oggetto ```ArduinoHttpClient```, è possibile utilizzare il metodo ```get()``` per effettuare una richiesta HTTP e recuperare il contenuto della pagina web. Il metodo restituirà un valore booleano, ```true``` se la richiesta è andata a buon fine, ```false``` altrimenti. Nel primo caso, si può utilizzare un ciclo ```while``` per leggere il contenuto carattere per carattere e stamparlo sulla porta seriale con il metodo ```Serial.write()```.
 
-## Profondità di analisi
+## Approfondimento:
 
-Il parsing HTML è spesso usato nei progetti di Arduino che richiedono l'accesso a dati da pagine web esterne. Tuttavia, è importante notare che le pagine web non sono sempre strutturate nello stesso modo e possono cambiare nel tempo. Ciò significa che il tuo codice deve essere robusto e in grado di gestire diversi scenari in modo adeguato.
+Il parsing di HTML è una tecnica molto comune nel web scraping, ovvero l'estrazione di dati da un sito web. Ci sono diverse alternative per effettuare questa operazione, tra cui l'utilizzo di librerie specializzate come ```ArduinoJSON``` o la creazione di espressioni regolari per individuare i dati desiderati.
 
-Inoltre, ci sono alcune situazioni in cui il parsing HTML potrebbe non essere la scelta migliore per ottenere i dati desiderati. Ad esempio, se il sito web utilizza la tecnica di render dinamico, i dati potrebbero essere inaccessibili tramite parsing HTML.
+Il metodo mostrato in questo articolo è adatto soprattutto per pagine web statiche, mentre per quelle dinamiche potrebbe essere necessario utilizzare un approccio diverso, come ad esempio l'automazione di un browser attraverso lo strumento Selenium.
 
-Inoltre, se il sito web utilizza elementi visivi come le immagini per fornire i dati, sarà necessario utilizzare tecniche più avanzate per estrarli in modo efficace.
+## Vedi anche:
 
-## Vedi anche
-
-- Libreria esp32-html-parser: https://github.com/lastlink/esp32-html-parser
-- Guida di installazione Arduino: https://www.arduino.cc/en/Guide/HomePage
-- Documentazione ufficiale di Arduino: https://www.arduino.cc/reference/en/
+- [Documentazione ufficiale di ArduinoHttpClient](https://www.arduino.cc/en/Reference/ArduinoHttpClient)
+- [Web scraping con Arduino e Python](https://randomnerdtutorials.com/arduino-automatic-web-scraping/)
+- [Esempio di parsing di HTML con ESP8266 e libreria WiFiClient](https://gist.github.com/sean-h/6ab8fe2c6cute2f4f674)

@@ -10,36 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
-CSV (ang. Comma Separated Values) to popularny format pliku używany do przechowywania danych w formie tabeli. Jest to idealny format dla programistów, którzy chcą łatwo przechowywać i przetwarzać dane w swoich aplikacjach. W tym artykule dowiesz się, jak używać Ruby do pracy z plikami CSV i jak możesz uniknąć zagwozdki związanych z przetwarzaniem danych w formacie tabeli.
+## Czym jest i dlaczego to robimy?
+Praca z plikami CSV jest powszechnym zadaniem dla programistów, szczególnie w kontekście importowania i eksportowania danych. Pozwala to na łatwe przenoszenie informacji pomiędzy różnymi aplikacjami i systemami. 
 
-## Jak to zrobić
-```Ruby
+## Jak to zrobić?
+Pierwszym krokiem jest wymagane zainstalowanie biblioteki CSV dla Ruby. Następnie możemy użyć metody ```CSV.foreach``` aby wczytać zawartość pliku CSV w naszym skrypcie. Wykorzystując opcję ```headers: true```, możemy również skorzystać z pierwszego wiersza jako nagłówka, co ułatwi nam późniejszą pracę z danymi. Przykładowy kod może wyglądać w ten sposób:
+
+```ruby
 require 'csv'
-
-# Tworzenie nowego pliku CSV
-CSV.open("plik.csv", "w") do |csv|
-  csv << ["ID", "Imię", "Nazwisko"]
-  csv << ["1", "John", "Kowalski"]
-  csv << ["2", "Anna", "Nowak"]
+CSV.foreach("nazwa_pliku.csv", headers: true) do |row|
+ puts row["nazwa_kolumny"]
 end
+```
+W ten sam sposób możemy również zapisać dane do pliku CSV przy użyciu metody ```CSV.open```. Przykład:
 
-# Odczytywanie danych z pliku CSV
-CSV.foreach("plik.csv") do |row|
-  puts row
-end
-
-# Modyfikowanie danych w pliku CSV
-CSV.open("plik.csv", "a+") do |csv|
-  csv << ["3", "Mark", "Smith"]
+```ruby
+require 'csv'
+CSV.open("nowy_plik.csv", "w") do |csv|
+  csv << ["kolumna1", "kolumna2", "kolumna3"]
 end
 ```
 
-W powyższym przykładzie korzystamy z wbudowanej biblioteki CSV i jej metod `open` oraz `foreach` aby utworzyć nowy plik CSV, odczytać dane z istniejącego pliku i dodać nowe dane. Wykorzystujemy też operator `<<` aby dodać kolejne wiersze do pliku.
-
 ## Głębszy zanurzenie
-Przy pracy z plikami CSV należy pamiętać o kilku ważnych rzeczach. Po pierwsze, należy uważać na to, żeby dane w pliku nie zawierały przecinków lub cudzysłowów, ponieważ mogą one powodować błędy podczas odczytywania pliku. Dodatkowo, warto używać odpowiednich opcji przy odczytywaniu danych (np. `headers: true` aby odczytać dane z pierwszego wiersza jako nagłówki kolumn). Możliwości manipulacji i przetwarzania danych w formacie CSV jest wiele i warto zapoznać się z dokumentacją biblioteki CSV oraz eksperymentować z różnymi metodami i opcjami.
+Format CSV (Comma-Separated Values) został wprowadzony w latach 70-tych i od tego czasu stał się powszechnie używanym sposobem przechowywania prostych danych w postaci tabelarycznej. Alternatywą dla CSV mogą być na przykład pliki JSON czy XML, jednak CSV jest uważane za łatwiejsze w obsłudze i bardziej czytelne dla człowieka formatowanie. 
 
-## Zobacz też
-- Dokumentacja biblioteki CSV: https://ruby-doc.org/stdlib-2.7.1/libdoc/csv/rdoc/CSV.html
-- Poradnik: Jak pracować z CSV w Ruby: https://www.codecademy.com/articles/ruby-setup-csv
+Biblioteka CSV zawiera również inne przydatne metody, takie jak ```CSV.read``` czy ```CSV.parse```, które pozwalają na bardziej precyzyjne zarządzanie danymi w pliku CSV. Szczegółowa dokumentacja i przykładowe użycie można znaleźć na oficjalnej stronie biblioteki: https://ruby-doc.org/stdlib-2.7.1/libdoc/csv/rdoc/CSV.html
+
+## Zobacz również
+- Oficjalna dokumentacja biblioteki CSV dla Ruby: https://ruby-doc.org/stdlib-2.7.1/libdoc/csv/rdoc/CSV.html
+- Przykłady zastosowań plików CSV w Ruby: https://www.regular-expressions.info/csv.html

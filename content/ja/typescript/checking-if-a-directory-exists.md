@@ -1,7 +1,7 @@
 ---
-title:                "ディレクトリが存在するか確認する"
-html_title:           "TypeScript: ディレクトリが存在するか確認する"
-simple_title:         "ディレクトリが存在するか確認する"
+title:                "ディレクトリが存在するかどうかをチェックする"
+html_title:           "TypeScript: ディレクトリが存在するかどうかをチェックする"
+simple_title:         "ディレクトリが存在するかどうかをチェックする"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Files and I/O"
@@ -10,47 +10,62 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Why
-Why would someone want to check if a directory exists in their TypeScript code? Directory checking is important for ensuring that the code is properly accessing and manipulating files within a project. It also helps prevent any errors or unexpected behavior that may occur if a directory is missing.
+## 何となぜ？
 
-# How To
+ディレクトリが存在するかどうかを確認することは、プログラマーにとって重要です。これにより、ファイルを探したり、特定の操作を行う前にフォルダーを作成したりすることができます。
+
+## 方法：
+
+### TypeScriptを使用する場合
+
 ```TypeScript
-import * as fs from 'fs';
-
-// Method 1: using fs.existsSync()
-if (fs.existsSync('directory/path')) {
-    // Code to handle if directory exists
-    console.log("Directory exists!");
+if (fs.existsSync(path)) {
+    console.log("ディレクトリが存在します");
 } else {
-    // Code to handle if directory does not exist
-    console.log("Directory does not exist!");
-}
-
-// Method 2: using fs.statSync()
-try {
-    // Check if statSync throws error
-    fs.statSync('directory/path');
-    // Code to handle if directory exists
-    console.log("Directory exists!");
-} catch (err) {
-    // Code to handle if directory does not exist
-    console.log("Directory does not exist!");
+    console.log("ディレクトリが存在しません");
 }
 ```
 
-Sample Output:
+#### 出力：
+
 ```
-Directory exists! // When directory exists at given path
-Directory does not exist! // When directory does not exist at given path
+ディレクトリが存在します
 ```
 
-# Deep Dive
-In the first method, `fs.existsSync()` returns a boolean value, `true` if the directory exists and `false` if it does not. It does not throw an error if the path given is a regular file instead of a directory. However, this method is deprecated and exists for legacy purposes.
+### Node.jsを使用する場合
 
-In the second method, `fs.statSync()` checks the status of the file at the given path and returns an instance of `fs.Stats`. A file is considered a directory if its `Stats` object has the `isDirectory()` method. This method throws an error if the path given is not valid, including if the directory does not exist.
+```TypeScript
+fs.access(path, (err) => {
+    if (err) {
+        console.log("ディレクトリは存在しません");
+    } else {
+        console.log("ディレクトリが存在します");
+    }
+});
+```
 
-# See Also
-- Node.js `fs` Module Documentation: https://nodejs.org/api/fs.html
-- TypeScript `import` Statement Documentation: https://www.typescriptlang.org/docs/handbook/modules.html#importing-a-module-using-a-mnemonic
-- `fs.statSync()` Documentation: https://nodejs.org/api/fs.html#fs_fs_statsync_path_options
-- `fs.existsSync()` Documentation: https://nodejs.org/api/fs.html#fs_fs_existssync_path
+#### 出力：
+
+```
+ディレクトリが存在します
+```
+
+## ディープダイブ：
+
+### 歴史的な背景
+
+ディレクトリの存在をチェックする方法は様々ありますが、古くから存在する方法としては、ファイルまたはディレクトリのパスを指定して`access()`関数を使う方法があります。
+
+### 代替手段
+
+ディレクトリが存在するかどうかを確認するもう一つの方法としては、ディレクトリを開こうとしてエラーが発生した場合にそのディレクトリが存在しないということを示すことができます。
+
+### 実装の詳細
+
+Node.jsでは、`fs`モジュールを使用してディレクトリの存在を確認することができます。`fs`モジュールは、ファイルシステムにアクセスするためのさまざまなメソッドを提供しています。`exists()`関数は、指定されたファイルまたはディレクトリが存在するかどうかを確認します。
+
+## 関連リンク：
+
+- [Node.jsのfsモジュール](https://nodejs.org/api/fs.html)
+- [fs.existsSync()のドキュメント](https://nodejs.org/api/fs.html#fs_fs_existssync_path)
+- [Node.jsのコアライブラリを使用したディレクトリの存在確認方法](https://nodejs.org/api/fs.html#fs_fs_exists_path_callback)

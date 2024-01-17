@@ -10,50 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i dlaczego?
 
-Praca z plikami CSV (Comma-Separated Values) jest powszechnym zadaniem dla programistów PHP, ponieważ pozwala na łatwe przetwarzanie i manipulowanie dużymi zbiorami danych. Jest to szczególnie przydatne w kontekście analizy danych, eksportowania i importowania informacji oraz tworzenia raportów. W tym artykule dowiesz się, dlaczego warto poznać podstawy tej techniki i jak zacząć pracę z plikami CSV w PHP.
+Obsługa plików CSV to niezbędne narzędzie dla programistów PHP. CSV, czyli Comma Separated Values, jest formatem zapisu tabeli, w którym dane są rozdzielone przecinkami. Programiści używają go do przechowywania dużych ilości informacji w prosty i czytelny sposób.
 
-## Jak to zrobić
+## Jak to zrobić:
 
-Zacznijmy od wyjaśnienia, czym jest plik CSV. Jest to plik tekstowy, w którym dane są przechowywane w postaci tablicy, z wartościami oddzielonymi przecinkami lub innymi specjalnie zdefiniowanymi znakami, takimi jak średnik czy tabulator. Aby zacząć pracę z plikiem CSV w PHP, musisz najpierw użyć funkcji `fopen()` aby go otworzyć:
+Aby pracować z plikami CSV w PHP, musimy użyć funkcji ```fgetcsv()```, która czyta kolejne linie z pliku CSV i zwraca je w formie tablicy. Przykład:
 
-```PHP
-$plik = fopen('dane.csv', 'r');
-```
-
-W powyższym przykładzie używamy `fopen()` z dwoma argumentami - nazwę pliku (w tym przypadku `dane.csv`) oraz tryb, w jakim chcemy otworzyć plik (`r` oznacza tryb tylko do odczytu). Teraz, gdy mamy otwarty plik, możemy użyć funkcji `fgetcsv()` do wczytania danych:
-
-```PHP
-$wiersz = fgetcsv($plik);
-```
-
-Funkcja ta wczyta kolejny wiersz z pliku i zwróci go jako tablicę wartości. Możemy następnie użyć pętli `while` aby wczytywać kolejne wiersze, dopóki nie osiągniemy końca pliku:
-
-```PHP
-while (!feof($plik)) {
-    $wiersz = fgetcsv($plik);
-    // mamy dostęp do danych w $wiersz i możemy je dalej przetworzyć
+```php
+$file = fopen("test.csv", "r"); // otwarcie pliku w trybie do odczytu
+if ($file !== false) { // sprawdzenie, czy plik został otwarty poprawnie
+  while (($data = fgetcsv($file, 1000, ",")) !== false) { // czytanie linii z pliku
+    print_r($data); // wyświetlenie zawartości linii w postaci tablicy
+  }
+  fclose($file); // zamknięcie pliku
 }
 ```
 
-W celu przetworzenia danych możemy użyć funkcji takich jak `explode()` aby podzielić wartości w wierszu na oddzielne elementy, lub `implode()` aby połączyć wartości w jedną ciągłą wartość. Następnie możemy wykorzystać te przetworzone dane do wyświetlenia w formie tabeli lub do zapisania w nowym pliku CSV.
+Powyższy kod będzie czytał kolejne linie z pliku ```test.csv``` i wyświetlał je na ekranie w formie tablicy. Ważne jest, aby przy użyciu funkcji ```fgetcsv()``` podać trzy argumenty: uchwyt do pliku, maksymalną długość linii oraz znak, którym są oddzielone wartości w pliku (w tym przypadku przecinek).
 
-## Wnikliwa analiza
+Aby zapisać dane do pliku CSV, możemy użyć funkcji ```fputcsv()```, która zapisuje podaną tablicę z danymi do pliku. Przykład:
 
-Praca z plikami CSV w PHP może być dość prosta i intuicyjna, jednak istnieje kilka rzeczy, które warto wiedzieć, aby ułatwić sobie to zadanie. Przede wszystkim, aby uniknąć błędów w odczytywaniu danych, należy uważać na rodzaj separatora w pliku CSV. Jeśli może być on różny od standardowego przecinka, należy użyć opcji `delimiter` w funkcji `fgetcsv()` aby to ustalić.
-
-Kolejną przydatną funkcją jest `fputcsv()`, która pozwala na zapisywanie danych do pliku CSV w łatwy sposób. Przykład użycia mógłby wyglądać następująco:
-
-```PHP
-$wiersz = array('John', 'Smith', 30);
-fputcsv($plik, $wiersz);
+```php
+$file = fopen("test.csv", "w"); // otwarcie pliku w trybie do zapisu
+$data = array("John", "Doe", "35"); // przykładowe dane do zapisania
+fputcsv($file, $data); // zapisanie danych do pliku
+fclose($file); // zamknięcie pliku
 ```
 
-Powyższy kod zapisze w pliku (który otworzyliśmy wcześniej) nowy wiersz z wartościami `John`, `Smith` i `30`, oddzielając je przecinkami.
+Powyższy kod utworzy nowy plik ```test.csv``` i zapisze do niego dane w postaci oddzielonych przecinkami wartości.
 
-Innym istotnym aspektem jest obsługa znaków specjalnych w pliku CSV. Jeśli dane zawierają znaki specjalne, takie jak cudzysłowy czy znaki nowej linii, należy odpowiednio poprzedzić je znakiem `\` aby uniknąć błędów przy odczytywaniu.
+## Zanurzanie się w temat:
 
-## Zobacz także
+Plik CSV został stworzony w latach 70. XX wieku jako prosty format zapisu danych tabelarycznych. Obecnie jest on jednym z najbardziej popularnych formatów plików, wykorzystywanym przez wiele programów do importu i eksportu danych.
 
-Jeśli chcesz pogłębić swoją wiedzę na
+Alternatywą dla plików CSV są bazy danych, które oferują bardziej rozbudowane możliwości przechowywania i manipulowania danymi. Jednak w przypadku małych i prostych projektów, pliki CSV są wystarczające i łatwiejsze w obsłudze.
+
+W PHP istnieje również funkcja ```str_getcsv()```, która pozwala na bezpośrednie przetworzenie ciągu znaków z danymi w formacie CSV, bez potrzeby otwierania pliku.
+
+## Zobacz także:
+
+- Dokumentacja PHP dotycząca funkcji ```fgetcsv()``` i ```fputcsv()```: https://www.php.net/manual/en/function.fgetcsv.php, https://www.php.net/manual/en/function.fputcsv.php
+- Opis formatu CSV: https://tools.ietf.org/html/rfc4180
+- Poradnik o pracy z plikami CSV w PHP: https://www.phpzag.com/how-to-read-and-write-csv-file-using-php/

@@ -10,33 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
-Skal du lage et spill med tilfeldig genererte hendelser og utfall? Eller kanskje du vil sikre at krypteringen din er så tilfeldig som mulig? Uansett hva du trenger tilfeldige tall til, er generering av slike tall en viktig del av programmeringsverdenen. I denne artikkelen vil vi se nærmere på hvordan man kan generere tilfeldige tall i C++.
+## Hva er det og hvorfor gjør vi det?
+Å generere tilfeldige tall er en vanlig oppgave for programmerere. Det betyr rett og slett å lage tall som er tilfeldig valgt innenfor et bestemt område eller et sett av regler. Dette kan være nyttig for å simulere situasjoner, lage spill, eller for sikkerhetsformål.
 
-## Hvordan
-Generering av tilfeldige tall i C++ innebærer bruk av biblioteket <random>. Ved å inkludere dette biblioteket i koden din, vil du ha tilgang til ulike funksjoner og metoder for å generere tilfeldige tall. Her er et eksempel på hvordan du kan generere et tilfeldig tall mellom 1 og 10:
+## Hvordan gjør vi det:
+I C++ kan vi generere tilfeldige tall ved hjelp av funksjonen `rand()`. Denne funksjonen genererer en tilfeldig tallverdi mellom 0 og `RAND_MAX` (en konstant definert i `<cstdlib>`). For å begrense området til et bestemt intervall, kan vi bruke `%` operatøren. Her er et eksempel som genererer et tilfeldig tall mellom 1 og 10:
 
 ```C++
-#include <iostream>
-#include <random>
+#include <cstdlib>
+#include <ctime>
 
 int main() {
-    std::random_device rd; // Oppretter et random device for å generere tilfeldige tall
-    std::mt19937 gen(rd()); // Oppretter en Mersenne Twister-algoritme
-    std::uniform_int_distribution<> dis(1, 10); // Oppretter en fordeling mellom 1 og 10
-    int random_num = dis(gen); // Genererer et tilfeldig tall basert på fordelingen
-    std::cout << "Tilfeldig tall mellom 1 og 10: " << random_num << std::endl; // Printer ut tilfeldig tall
-    return 0;
+    // Sett en seed for generering av tilfeldige tall basert på nåværende tid
+    srand(time(0));
+
+    // Generer et tilfeldig tall mellom 1 og 10
+    int tilfeldigTall = rand() % 10 + 1;
+    
+    // Skriv ut resultatet
+    std::cout << "Det tilfeldige tallet er: " << tilfeldigTall;
 }
 ```
 
-Dette er bare et enkelt eksempel på hvordan man kan generere tilfeldige tall i C++. Det finnes også andre metoder som gir forskjellige fordelinger, som for eksempel normalfordeling eller eksponentialfordeling. Du kan også bruke seed-verdier for å få samme resultat hver gang du kjører koden.
+Dette eksempelet bruker også funksjonen `srand()` for å sette en "seed" for genereringen av tilfeldige tall. Dette er viktig for å sikre at tallene blir mer tilfeldige hver gang programmet kjøres.
 
-## Dypdykk
-Når man genererer tilfeldige tall i programmering, er det viktig å forstå at tallene egentlig ikke er helt tilfeldige. De er basert på en algoritme som bruker en startverdi, eller seed-verdi, for å generere tallene. Derfor kan man aldri garantere at tallene er helt tilfeldige, men man kan sikre at de er så nære tilfeldige som mulig ved å bruke avanserte algoritmer som Mersenne Twister.
+## Dypdykk:
+Historisk sett har generering av tilfeldige tall vært en vanskelig oppgave for programmerere. Tidligere ble det brukt komplekse matematiske formler eller til og med fysiske prosesser, som for eksempel å kaste terninger, for å få tilfeldige tall. Med fremveksten av datamaskiner har det blitt enklere å generere tilfeldige tall ved hjelp av algoritmer.
 
-Man kan også bruke tilfeldige tall til å generere tilsynelatende tilfeldige hendelser, men dette kan være vanskelig og krever mye ekstra kode. For eksempel, hvis man ønsker å generere et terningkast, kan man bruke funksjonen srand() for å sette en seed-verdi basert på klokkeslettet. Dette vil gi tilsynelatende tilfeldige terningkast hver gang koden kjøres.
+I tillegg til `rand()` funksjonen, finnes det også andre metoder for å generere tilfeldige tall i C++. Et alternativ er å bruke biblioteket `<random>` som tilbyr mer avanserte metoder for å generere tilfeldige tall, som for eksempel fordelingsfunksjoner og tilpassede fordelinger.
 
-## Se også
-- [C++ Random Numbers](https://www.learncpp.com/cpp-tutorial/59-random-number-generation/)
-- [Generating Random Numbers in C++](https://www.geeksforgeeks.org/rand-and-srand-in-ccpp/)
+Det er også viktig å huske at selv om funksjonen `rand()` genererer tall som kan virke tilfeldige, er de egentlig deterministiske. Det vil si at hvis vi bruker samme seed, vil vi få de samme tallene hver gang programmet kjøres. Derfor er det viktig å bruke en god seed, som for eksempel nåværende tid, for å få mer tilfeldige tall.
+
+## Se også:
+- [C++ rand() funksjon referanse](https://www.cplusplus.com/reference/cstdlib/rand/)
+- [C++ biblioteket <random> referanse](https://www.cplusplus.com/reference/random/)

@@ -10,77 +10,71 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why 
+## What & Why?
 
-If you're a web developer, you know the importance of being able to access and analyze web page data. Downloading a web page allows you to gather information, analyze its structure, and perform various tests to improve its performance and user experience. 
+Downloading a web page is the act of retrieving the code and content of a webpage from the internet. Programmers do this in order to access and utilize the information found on the webpage, whether it be for data analysis or web scraping.
 
-## How To
-
-To download a web page in C++, we first need to include the appropriate headers: 
-
-```C++
-#include <iostream>
-#include <curl/curl.h>
-```
-
-Next, we'll create a `main` function and initialize a CURL object. 
+## How to:
+Before we can download a web page, we must first include the necessary libraries and headers. In our case, we will be using the "WinInet.h" header from the WinInet library to make HTTP requests. Here's an example of a simple function that downloads the HTML content of a webpage:
 
 ```C++
-int main() {
+#include <Windows.h> 
+#include <WinInet.h> 
 
-    CURL *curl;
-    curl = curl_easy_init();
-```
+void downloadWebpage(const char* url) { 
 
-Within the `main` function, we can specify the URL of the web page we want to download. 
+// HINTERNET is a handle representing an internet session 
+HINTERNET hInternet = InternetOpenA("Mozilla/5.0 (compatible; MSIE10.0; Windows NT 6.2)", INTERNET_OPEN_TYPE_DIRECT, NULL, NULL, 0); 
 
-```C++
-    // Set the URL of the web page to be downloaded
-    curl_easy_setopt(curl, CURLOPT_URL, "https://www.example.com");
+// HINTERNET is also used as a handle for an opened URL 
+HINTERNET hUrl = InternetOpenUrlA(hInternet, url, NULL, 0, INTERNET_FLAG_PRAGMA_NOCACHE | INTERNET_FLAG_KEEP_CONNECTION, 0); 
 
-```
+char data[2048]; 
 
-Then, we can specify the file path and name where the downloaded web page will be saved. 
+// Read the content of the webpage into the data array 
+InternetReadFile(hUrl, data, 2048, 0); 
 
-```C++
-    // Set the file path and name for the downloaded web page
-    FILE *fp;
-    fp = fopen("downloaded_page.html", "wb");
-```
+// Display the downloaded content 
+std::cout << data << std::endl; 
 
-Now, we can start the download process by using the `curl_easy_perform` function. 
+// Close the handle and free the memory 
+InternetCloseHandle(hUrl); 
+InternetCloseHandle(hInternet); 
+} 
 
-```C++
-    // Perform the download and save the output to the specified file
-    curl_easy_perform(curl);
-    curl_easy_cleanup(curl);
-
-    // Close the file 
-    fclose(fp);
-
-    return 0;
+int main() { 
+downloadWebpage("https://example.com"); 
+return 0; 
 }
 ```
 
-Once the program is executed, the web page will be downloaded and saved to the specified file path. We can then use the downloaded page for further analysis and testing. 
+**Output:**
+```
+<!doctype html>
+<html>
+<head>
+<title>Example Domain</title>
 
-### Sample Output
+<meta charset="utf-8" />
+<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<style type="text/css">
+body {
+background-color: #f0f0f2;
+margin: 0;
+padding: 0;
+font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 
-The downloaded web page will be saved as an HTML file, which can be opened and viewed in any web browser. 
+...
+```
 
-## Deep Dive
+## Deep Dive:
+In the past, downloading a webpage was done using the "Winsock.h" header and functions like "socket()" and "connect()". However, this was a tedious and error-prone process, which is why the "WinInet.h" header was introduced. It provides simpler and more efficient functions for making HTTP requests.
 
-There are a few important things to note when downloading a web page in C++ using CURL. 
+Apart from using WinInet, you can also use the libCurl library to download web pages. It offers more advanced features and supports multiple protocols. However, due to its complexity, it may not be suitable for simple web page downloads.
 
-First, the `curl_easy_init` function is used to initialize a CURL object and the `curl_easy_cleanup` function is used to cleanup the object once the download is complete. 
+When downloading a webpage, there are various HTTP status codes that can be returned, indicating the success or failure of the request. These codes can be accessed using the "HttpQueryInfoA()" function.
 
-Secondly, the `curl_easy_setopt` function is used to specify different options for the download, such as the URL and file path. You can also specify options for authentication, proxy, and other parameters. 
-
-Lastly, the `curl_easy_perform` function is used to actually perform the download. It returns a `CURLE_OK` status if the download was successful. 
-
-## See Also
-
-To learn more about downloading web pages in C++, check out the following resources: 
-
-- [CURL Documentation](https://curl.haxx.se/libcurl/c/) 
-- [C++ Tutorials on Web Development](https://www.learncpp.com/category/web-development/)
+## See Also:
+- [Microsoft Docs: WinInet](https://docs.microsoft.com/en-us/windows/win32/wininet/wininet)
+- [libCurl Official Website](https://curl.haxx.se/libcurl/)

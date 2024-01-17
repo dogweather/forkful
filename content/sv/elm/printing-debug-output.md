@@ -1,7 +1,7 @@
 ---
-title:                "Utskrift av felrapportering"
-html_title:           "Elm: Utskrift av felrapportering"
-simple_title:         "Utskrift av felrapportering"
+title:                "Utskrift av felsökningsutdata"
+html_title:           "Elm: Utskrift av felsökningsutdata"
+simple_title:         "Utskrift av felsökningsutdata"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Testing and Debugging"
@@ -10,48 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
+När vi programmerar är det inte alltid lätt att förstå vad som händer i koden. Det är här printfelsökning kommer in i bilden. Det är en metod för att skriva ut olika delar av koden i konsolen för att få en bättre förståelse för vad som händer när koden körs. Detta kan vara särskilt användbart när du försöker lösa buggar eller förstå en komplex algoritm.
 
-För många utvecklare är debuggning en viktig del av programmeringsprocessen. Det är ett sätt att förstå hur ens kod fungerar och hitta eventuella fel eller buggar som behöver åtgärdas. Genom att använda debug-utskrifter kan du enkelt få en bättre förståelse för dina program och dess olika delar.
-
-## Hur man gör
-
-För att skriva ut debug-information i Elm, kan du använda funktionen `Debug.log` som ingår i standardbiblioteket. Den låter dig skriva ut värden på ett enkelt och effektivt sätt. Här är ett exempel på hur du kan använda den:
+## Hur man:
+Elm har en inbyggd funktion för printfelsökning som heter `Debug.log`. Här är ett exempel på hur du kan använda den:
 
 ```Elm
-elm repl
-> import Debug
-> x = 5
-> Debug.log "Värdet på x är" x
-Värdet på x är 5 : number
+-- Kodexempel
+import Debug exposing (log)
+
+-- Funktion som tar emot två heltal och returnerar deras summa
+sum : Int -> Int -> Int
+sum x y = 
+  let
+    result = x + y
+  in
+    Debug.log "Resultatet av summorna är:" result
 ```
 
-Som du kan se ovanför behöver vi importera `Debug`-paketet för att använda funktionen. Sedan kan vi definiera en variabel och sedan använda `Debug.log` för att skriva ut värdet av variabeln tillsammans med en beskrivning. I detta fall skriver vi ut "Värdet på x är" och sedan variabelns värde.
-
-Om du kör detta i en vanlig fil, används `elm reactor` istället. Resultatet kommer att visas i din webbläsare och du kan öppna webbkonsolen för att se utskriften.
-
-Debuggning via utskrifter kan också användas i mer komplexa situationer, till exempel när du behöver undersöka en lista av värden. Här är ett annat exempel på hur du kan använda `Debug.log`:
+Outputen i konsolen kommer att se ut som följande:
 
 ```Elm
-elm repl
-> import Debug
-> lista = [1, 2, 3]
-> listaSquared = List.map (\x -> x * x) lista
-> Debug.log "Den ursprungliga listan är" lista ++ Debug.log "Den kvadrerade listan är" listaSquared
-Den ursprungliga listan är [1,2,3] : List number
-Den kvadrerade listan är [1,4,9] : List number
+Resultatet av summorna är: 15
 ```
 
-Som du kan se, kan du använda `Debug.log` flera gånger i samma uttryck. Detta gör det enkelt att jämföra värden och förstå vad som händer vid varje steg.
+Som du kan se har värdet av `result` skrivits ut i terminalen. Detta kan hjälpa dig att förstå vad som händer i koden. Du kan också använda `Debug.log` för att skriva ut andra värden, som till exempel listor eller strängar.
 
-## Djupdykning
+## Djupdykning:
+Printfelsökning har funnits i många programmeringsspråk sedan lång tid tillbaka, och är ett enkelt men effektivt felsökningsverktyg. Men det finns också andra sätt att felsöka koden, till exempel genom att använda en debugger eller genom att skriva ut felmeddelanden vid exception. Vad som fungerar bäst för dig beror på dina personliga preferenser och projektets behov.
 
-Det är viktigt att komma ihåg att debug-utskrifter inte ska användas som en permanent lösning för att lösa fel eller buggar i din kod. Det är bara en tillfällig hjälp för att förstå vad som händer i ditt program. Därför är det bra att ta bort dem när du är klar med din debuggning för att inte påverka prestandan på dina slutliga program.
+När det kommer till implementation så fungerar `Debug.log` genom att lägga till en extra parameter i funktionen som returnerar värdet. Detta gör att värdet kan skrivas ut i konsolen, men har ingen påverkan på själva funktionen i sig.
 
-Ett annat bra tips är att använda modulnamn eller beskrivningar i dina debug-utskrifter för att enkelt kunna identifiera dem senare. Detta är särskilt användbart när du har flera debug-utskrifter utspridda i din kod.
-
-## Se också
-
-* [Elm Debug Docs](https://package.elm-lang.org/packages/elm/core/latest/Debug#log)
-* [Debugging in Elm](https://medium.com/@thejameskyle/debugging-in-elm-a83b6d12aeb2)
-* [Debugging Elm in the Browser with Breakpoints](https://javascript-tecnology-sajitha.blogspot.com/2018/06/debugging-elm-in-browser-with.html)
+## Se även:
+- [Officiell dokumentation för Debug-modulen i Elm](https://package.elm-lang.org/packages/elm/core/latest/Debug)
+- [En guide för felsökning i Elm](https://medium.com/elm-shorts/debugging-elm-2768fbd6e939) 
+- [En jämförelse mellan printfelsökning och debugger i Elm](https://qfpl.io/posts/practical-debugging-in-elm/)

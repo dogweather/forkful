@@ -10,67 +10,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
+Comparing two dates is a common operation in programming that involves checking if one date is before, after, or equal to another date. Programmers often need to compare dates in their applications for various reasons, such as sorting data, finding date range overlaps, or checking for specific events or deadlines.
 
-Have you ever encountered the task of comparing two dates in your Rust program? Maybe you need to check if a date is before or after another or calculate the number of days between them. Whatever the reason may be, knowing how to compare dates in Rust can be a useful skill for any developer.
+## How to:
+To compare two dates in Rust, you can use the `cmp` method provided by the `PartialOrd` trait. Let's see some examples:
+```
+use std::cmp::Ordering;
 
-## How To
+// Compare two dates using the `cmp` method
+let date1 = "2021-08-21".parse::<NaiveDate>().unwrap();
+let date2 = "2021-09-01".parse::<NaiveDate>().unwrap();
+let result = date1.cmp(&date2);
 
-It's actually quite simple to compare dates in Rust using the standard library's `DateTime` and `Duration` structs. Let's take a look at some coding examples to see how it's done.
-
-First, we will need to import the `chrono` crate in our `Cargo.toml` file:
-
-```Rust
-[dependencies]
-chrono = "0.4.19"
+// Check the result
+match result {
+    Ordering::Less => println!("Date 1 is before Date 2"),
+    Ordering::Equal => println!("Date 1 is equal to Date 2"),
+    Ordering::Greater => println!("Date 1 is after Date 2"),
+}
+```
+Output:
+```
+Date 1 is before Date 2
 ```
 
-Next, we can use the `DateTime` struct to represent a specific date and time:
-
-```Rust
-use chrono::{DateTime, Utc};
-
-let date_1: DateTime<Utc> = Utc::now();
-let date_2: DateTime<Utc> = Utc::now();
+You can also use the `<`, `<=`, `==`, `>=`, and `>` operators to compare two dates. These operators call the `cmp` method internally and return a `bool` value representing the result. For example:
 ```
+use std::cmp::Ordering;
 
-Now, we can easily compare these dates using the following functions:
+// Compare two dates using the `<` operator
+let date1 = "2021-08-21".parse::<NaiveDate>().unwrap();
+let date2 = "2021-09-01".parse::<NaiveDate>().unwrap();
+let result = date1 < date2;
 
-- `is_before`: returns `true` if `date_1` is before `date_2`
-- `is_after`: returns `true` if `date_1` is after `date_2`
-- `is_same`: returns `true` if `date_1` is the same as `date_2`
-
-```
-if date_1.is_before(date_2) {
+// Check the result
+if result {
     println!("Date 1 is before Date 2");
-}
-if date_1.is_after(date_2) {
-    println!("Date 1 is after Date 2");
-}
-if date_1.is_same(date_2) {
-    println!("Date 1 is the same as Date 2");
+} else {
+    println!("Date 1 is equal to or after Date 2");
 }
 ```
-
-We can also use the `Duration` struct to calculate the difference between two dates in various units:
-
+Output:
 ```
-let duration = date_2 - date_1;
-println!("The difference between the dates is {} days", duration.num_days());
+Date 1 is before Date 2
 ```
 
-## Deep Dive
+## Deep Dive:
+Comparing dates has been a challenge for programmers since the early days of computing. In the past, dates were often stored as three separate integers representing day, month, and year. This made it difficult to compare dates accurately, especially when accounting for leap years and different calendar systems. Modern programming languages, like Rust, have built-in date/time types and methods to make date comparison easier and more accurate.
 
-Dates and times can be a complex topic, and there are a few things to keep in mind when comparing them in Rust. 
+In addition to the `cmp` method, Rust also provides the `max` and `min` methods to compare two dates and return the latest or earliest date, respectively. These methods are useful when working with date ranges and need to find the beginning or end date.
 
-Firstly, it's important to note that we are using UTC (Coordinated Universal Time) in this example. This is a standard time zone used for global timekeeping and eliminates the need for time zones and daylight saving adjustments when comparing dates.
+If you're looking for alternatives to the built-in date/time types in Rust, you can check out external crates like `chrono` or `time`. These crates offer more advanced date/time functionalities and might better suit your use case.
 
-Secondly, when comparing dates with the `is_same` function, it is important to consider the precision of the `DateTime` struct. By default, it only has a precision of seconds, so dates with a difference of less than one second will be considered the same. You can increase the precision by using the `with_nanoseconds` function.
-
-Lastly, when calculating the difference between dates with the `Duration` struct, it will automatically adjust for leap years and daylight saving time changes.
-
-## See Also
-
-- [Chrono Documentation](https://docs.rs/chrono/0.4.19/chrono/)
-- [Rust Standard Library Documentation on DateTime](https://doc.rust-lang.org/std/chrono/struct.DateTime.html)
-- [Rust Standard Library Documentation on Duration](https://doc.rust-lang.org/std/time/struct.Duration.html)
+## See Also:
+- [Standard Library: chrono - Date and time handling in Rust](https://doc.rust-lang.org/chrono/index.html)
+- [RustDose - Comparing dates in Rust](https://www.rustdose.com/post/rust-comparing-dates/)

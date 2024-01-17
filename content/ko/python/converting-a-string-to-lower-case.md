@@ -1,7 +1,7 @@
 ---
-title:                "문자열 소문자로 변환하기"
-html_title:           "Python: 문자열 소문자로 변환하기"
-simple_title:         "문자열 소문자로 변환하기"
+title:                "문자열을 소문자로 변환하기"
+html_title:           "Python: 문자열을 소문자로 변환하기"
+simple_title:         "문자열을 소문자로 변환하기"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Strings"
@@ -10,31 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜 
+# 무엇이며 왜?
 
-본문에서 소문자로 변환하는 것이 중요한 이유는 프로그래밍에서 텍스트를 처리할 때 대소문자를 구분하기 때문입니다.
+문자열을 소문자로 변환하는 것은 아주 간단한 작업입니다. 프로그래머들은 이를 수행하는 이유는 글자들을 통일된 형식으로 표현하기 위해서입니다. 대소문자를 구분하지 않는 경우, 대소문자가 다른 문자열을 비교하는 것은 매우 복잡하고 오류가 발생할 수 있기 때문입니다.
 
-## 어떻게 
+## 어떻게?
+
+Python에서 문자열을 소문자로 변환하는 방법은 상당히 간단합니다. 문자열을 사용한 다음 `lower()` 메소드를 호출하면 됩니다. 아래에는 예제 코드와 출력 결과가 나와 있습니다.
 
 ```Python
-text = "Hello, World!"
-lowercase_text = text.lower()
-print(lowercase_text)
+text = "Hello World"
+print(text.lower())
+# 출력 결과: hello world
 ```
 
-**결과:**
-hello, world!
+## 깊이 들어가보기
 
-문자열의 `lower()` 함수를 사용하여 간단하게 문자열을 소문자로 변환할 수 있습니다.
+소문자 변환은 예전부터 프로그래밍 언어에서 사용되어 왔습니다. 예를 들어, C언어에서는 `tolower()` 함수를 사용하고, Java에서는 `toLowerCase()` 메소드를 사용합니다. 또한, 정규 표현식을 사용하여 문자열을 소문자로 변환할 수도 있습니다.
 
-## 깊게 들어가보기
+## 관련 자료
 
-파이썬에서 문자열은 변경할 수 없는(immutable) 자료형입니다. 따라서 문자열을 직접 수정하는 것은 불가능합니다. 하지만 `lower()` 함수는 원래의 문자열을 변경하는 것이 아니라 새로운 소문자로 된 문자열을 반환합니다. 따라서 변수에 할당하여 사용하는 것이 중요합니다.
-
-또한 `lower()` 함수는 유니코드 문자열에 대해서도 작동합니다. 이는 파이썬의 유니코드 지원이 우수하기 때문에 다양한 언어의 문자열도 쉽게 소문자로 변환할 수 있다는 것을 의미합니다.
-
-## 관련 정보
-
-[파이썬 문자열 메서드](https://docs.python.org/3/library/stdtypes.html#string-methods)
-
-[파이썬 유니코드 문자열 처리](https://docs.python.org/3/howto/unicode.html)
+- [Python 메소드: 문자열과 리스트](https://docs.python.org/3/tutorial/introduction.html#strings-and-lists)
+- [Python 공식 문서: 문자열 메소드](https://docs.python.org/3/library/stdtypes.html#string-methods)
+- [정규 표현식을 사용한 문자열 변환](https://www.techbeamers.com/python-regex/)

@@ -1,7 +1,7 @@
 ---
-title:                "Drukowanie wyjścia debugowania"
-html_title:           "C#: Drukowanie wyjścia debugowania"
-simple_title:         "Drukowanie wyjścia debugowania"
+title:                "Wydrukuj wyjście debugowania"
+html_title:           "C#: Wydrukuj wyjście debugowania"
+simple_title:         "Wydrukuj wyjście debugowania"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Testing and Debugging"
@@ -10,41 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+Przykłady drukowania debugujących wyjść w C#
 
-Drukowanie wyjścia debugowania jest nieodłączną częścią programowania w języku C#, ponieważ pozwala na łatwiejsze znalezienie błędów i rozwiązywanie problemów w kodzie. Jest to niezbędne dla każdego programisty, niezależnie od poziomu doświadczenia.
+## Czym jest i dlaczego?
 
-## Jak to zrobić
+Drukowanie debugujących wyjść jest to proces polegający na wyświetlaniu informacji o działaniu programu podczas jego wykonywania w celu pomocy w debugowaniu i znajdowaniu błędów. Programiści robią to, aby lepiej zrozumieć jak ich kod działa i szybciej znaleźć potencjalne problemy.
 
-W celu drukowania wyjścia debugowania w języku C#, możemy użyć funkcji ```Console.WriteLine()``` lub ```Debug.WriteLine()```. Oba metody działają podobnie, ale ```Debug.WriteLine()``` jest zalecane, ponieważ jest szybsze i ma większe możliwości formatowania wyjścia.
+## Jak to zrobić?
 
-Przykładowy kod drukujący wyjście debugowania:
+Dzięki poniższym przykładom w języku C# możesz zobaczyć jak łatwo jest dodać drukowanie debugujących wyjść do swojego kodu.
 
 ```C#
-int number = 10;
-string name = "Poland";
+// Przykładowa funkcja, która drukuje debugujące wyjście
+void PrintDebugOutput(string message)
+{
+    Console.WriteLine("DEBUG: " + message);
+}
 
-Console.WriteLine("Liczba: " + number);
-Debug.WriteLine("Kraj: " + name);
+// Wywołanie funkcji w kodzie
+int result = 5 + 10;
+PrintDebugOutput("Wynik wynosi: " + result);
 ```
 
-*Wynik:*
-
-```bash
-Liczba: 10
-Kraj: Poland
+Wynik:
+```
+DEBUG: Wynik wynosi: 15
 ```
 
-Dodatkowo, możemy także ustawić poziom wyjścia debugowania, korzystając z ```Debug.Listeners``` i ```Debug.Listeners.Clear()```. Jest to przydatne w przypadku, gdy chcemy kontrolować wyjścia debugowania w zależności od poziomu naszego programu.
+## Głębsza analiza
 
-## Głębszy wgląd
+Drukowanie debugujących wyjść jest popularną techniką używaną przez programistów od lat. Pierwotnie wykorzystywano do tego celu pisanie na konsoli, jednak z czasem powstały narzędzia i biblioteki, które ułatwiają i rozwijają możliwości drukowania debugujących wyjść. Alternatywami dla drukowania debugujących wyjść mogą być również debuggery i profiling tools. W C# istnieje również wiele wbudowanych funkcji i metod do generowania debugujących wyjść, takich jak Debug.WriteLine() czy Trace.WriteLine().
 
-Drukowanie wyjścia debugowania może również być używane do monitorowania działania aplikacji i wychwytywania wyjątków. Korzystając z wyrażeń warunkowych, możemy ustawić warunek, który będzie drukował wyjście debugowania tylko wtedy, gdy warunek zostanie spełniony.
+W celu zwiększenia czytelności i wydajności kodu, zaleca się używanie warunków sprawdzających czy tryb debugowania jest włączony przed wywołaniem funkcji do drukowania debugujących wyjść. Można to zrobić za pomocą preprocesora #if DEBUG.
 
-Możemy także korzystać z różnych poziomów wyjścia debugowania, takich jak ```Trace```, ```Info```, ```Warning``` i ```Error```, które pomagają nam w wyświetlaniu różnych rodzajów informacji w zależności od potrzeb.
+## Zobacz również
 
-## Zobacz także
-
-- [Dokumentacja Microsoft na temat drukowania wyjścia debugowania w języku C#](https://docs.microsoft.com/pl-pl/dotnet/api/system.diagnostics.debug?view=net-5.0)
-- [Przewodnik dla początkujących w języku C#](https://www.tutorialspoint.com/csharp/index.htm)
-- [Przydatne narzędzia do debugowania w języku C#](https://www.c-sharpcorner.com/article/the-top-10-debugging-tools-in-c-sharp/)
+- Dokumentacja C# o drukowaniu debugujących wyjść: https://docs.microsoft.com/en-us/dotnet/core/diagnostics/logging
+- Przewodnik po debugowaniu w C#: https://docs.microsoft.com/en-us/visualstudio/debugger/debugger-feature-tour
+- Wprowadzenie do profilowania aplikacji w C#: https://docs.microsoft.com/en-us/visualstudio/profiling/beginners-guide-to-performance-profiling

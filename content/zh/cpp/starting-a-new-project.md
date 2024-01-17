@@ -1,7 +1,7 @@
 ---
-title:                "开始一个新项目。"
-html_title:           "C++: 开始一个新项目。"
-simple_title:         "开始一个新项目。"
+title:                "开始一个新项目"
+html_title:           "C++: 开始一个新项目"
+simple_title:         "开始一个新项目"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Getting Started"
@@ -10,42 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
+## 什么 & 为什么？
+开始一个新项目是程序员给自己提出的挑战。这意味着构思和创造一种新的解决方案，通过编写代码来实现它。程序员通常会这样做，因为他们想要解决一个特定的问题或者创造一个新的产品。
 
-当你学习编程时，你可能会发现自己想要尝试一些新的项目，这不仅可以让你提高技能，还能为你的简历增添新的亮点。
-
-## 如何开始一个新项目
-
-首先，你需要决定你想要做什么样的项目，比如一个游戏、一个网页应用或者一个工具。一旦你决定了项目的类型，你就可以开始编写代码了。以下是一个简单的Hello World程序的示例：
-
+## 怎么做：
+首先，你需要选择一种编程语言。在这篇文章中，我们将会使用C++作为例子。接着，你需要在你的电脑上安装一个C++编译器，比如[Visual Studio](https://visualstudio.microsoft.com/downloads/)。然后，你就可以开始编写你的代码了。下面是一个简单的例子：
 ```C++
 #include <iostream>
-using namespace std;
 
 int main() {
-  cout << "Hello World!" << endl;
-  return 0;
+    std::cout << "Hello World!" << std::endl;
+    return 0;
 }
 ```
+运行这段代码，你会得到输出：
+```
+Hello World!
+```
+现在你已经成功地开始了你的第一个C++项目！
 
-运行这段代码，你应该能够在控制台看到输出结果为“Hello World!”。这只是一个简单的例子，但它展示了C++的基本语法。你可以通过学习更多的代码语法来拓展你的项目。
+## 深入了解：
+在20世纪80年代，C++成为了一种流行的编程语言，它拥有丰富的功能和广泛的用途。但是现在，它已经有了很多的竞争者，比如Java和Python。因此，选择一种编程语言来开始一个新项目并不是一件容易的事情，你需要考虑它的特点以及它是否适合你的需求。除了C++，还有很多其他的编程语言，每一种都有自己的优点和缺点。所以，你可以先了解各种语言的特点，然后再根据你的需求做出选择。
 
-另外，你可能需要选择一个集成开发环境（IDE）来编写和管理你的代码。常用的IDE包括Visual Studio、CodeBlocks和Eclipse等。选择一个适合你的IDE可以提升你的编程效率。
-
-## 深入了解如何开始一个新项目
-
-在开始一个新项目之前，你应该明确你的目标和需求。这样可以帮助你更好地组织代码，提高项目的质量。你也可以参考一些已有的项目来学习最佳实践。此外，学习版本控制软件如Git可以帮助你更有效地管理你的代码。
-
-## 参考资料
-
-- [C++教程-菜鸟教程](https://www.runoob.com/cplusplus/cpp-tutorial.html)
-- [C++教程-慕课网](https://www.imooc.com/learn/695)
-- [Visual Studio官方网站](https://visualstudio.microsoft.com/zh-hans/)
-- [Git官方网站](https://git-scm.com/)
-- [CodeBlocks官方网站](https://www.codeblocks.org/)
-- [Eclipse官方网站](https://www.eclipse.org/) 
-
-## 参见
-
-- [如何学习C++](https://github.com/Wuzhangping/cpp-learning)
-- [C++ FAQ - Stack Overflow](https://stackoverflow.com/questions/388242/the-definitive-c-book-guide-and-list)
+## 相关资料：
+- [Visual Studio下载](https://visualstudio.microsoft.com/downloads/)
+- [C++基础教程](https://www.runoob.com/cplusplus/cpp-tutorial.html)

@@ -10,39 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hva og hvorfor?
+Sjekking av om en mappe eksisterer er en vanlig oppgave for programmører, spesielt når de jobber med filbehandling. Dette er en viktig sjekk for å sikre at programmene våre fungerer som forventet og at vi unngår feilkoder når vi forsøker å få tilgang til en mappe som ikke eksisterer.
 
-Å sjekke om en mappe eksisterer i TypeScript kan være nyttig hvis du ønsker å utføre ulike handlinger basert på om mappen allerede finnes eller ikke. Dette kan være spesielt nyttig når du jobber med filbehandling eller ønsker å organisere filer på en effektiv måte.
-
-## Slik gjør du det
-
+## Hvordan:
 ```TypeScript
-if (fs.existsSync('./mappe')) {
-  console.log("Mappen eksisterer!");
+if(fileSystem.existsSync(path.dirname)){
+  console.log("Mapper eksisterer!");
 } else {
-  console.log("Mappen eksisterer ikke.");
+  console.log("Mappe finnes ikke!");
 }
 ```
-
-Det første du trenger å gjøre er å importere "fs" modulen, som står for "file system", ved å bruke "require" funksjonen. Deretter kan du bruke "existsSync" metoden for å sjekke om en mappe eksisterer ved å gi mappenavnet som et argument. Dette returnerer en boolean verdi, som kan brukes til å utføre ulike handlinger i koden.
-
-## Dypdykk
-
-Hvis du ønsker å sjekke om en mappe eksisterer på en annen plassering enn der koden din kjører, kan du bruke "path" modulen for å få den fulle stien til mappen og deretter bruke "existsSync" metoden med denne stien som argument.
-
-```TypeScript
-import path from "path";
-
-const fullSti = path.join(__dirname, "mappe");
-if (fs.existsSync(fullSti)) {
-  console.log("Mappen eksisterer på en annen plassering!");
-}
+Eksempel på utdata:
+```
+Mapper eksisterer!
 ```
 
-En annen ting du bør være oppmerksom på er at "existsSync" metoden returnerer "true" for både filer og mapper. Så hvis du ønsker å være sikker på at det er en mappe du sjekker, kan du bruke "statSync" metoden og sjekke at det er en mappe først.
+## Dypdykk:
+Sjekking av om en mappe eksisterer kan gjøres på ulike måter, avhengig av programmeringsspråk og operativsystem. I eldre versjoner av JavaScript kunne man bruke `fs.existsSync()` metoden, men denne er nå markert som utdatert og bør unngås. I TypeScript bruker vi heller `fileSystem.existsSync()` som en del av Node.js' File System-modul.
 
-## Se også
+Det finnes også alternative måter å sjekke om en mappe eksisterer på, som for eksempel `fs.stat()` eller `fs.access()`. Disse metodene kan også brukes til å få mer informasjon om mappen, som for eksempel når den ble opprettet eller siste gang den ble endret.
 
-- [fs modulen i TypeScript](https://nodejs.org/api/fs.html#fs_fs_existssync_path)
-- [path modulen i TypeScript](https://nodejs.org/api/path.html)
-- [guide for filbehandling i TypeScript](https://www.digitalocean.com/community/tutorials/how-to-handle-file-uploads-in-node-js-with-multer)
+Når vi sjekker om en mappe eksisterer, bør vi også ta hensyn til eventuelle sikkerhetsbegrensninger eller tillatelser som kan hindre tilgang til mappen. Dette gjelder spesielt når vi jobber med sensitive filer eller nettverksmapper.
+
+## Se også:
+- Node.js File System-modul: https://nodejs.org/api/fs.html
+- Sammenligning av ulike metoder for å sjekke om en mappe eksisterer: https://stackoverflow.com/questions/4482686/check-synchronously-if-file-directory-exists-in-node-js

@@ -1,7 +1,7 @@
 ---
-title:                "एक स्ट्रिंग की लंबाई का पता लगाना"
-html_title:           "PHP: एक स्ट्रिंग की लंबाई का पता लगाना"
-simple_title:         "एक स्ट्रिंग की लंबाई का पता लगाना"
+title:                "शब्द की लंबाई पता करना"
+html_title:           "PHP: शब्द की लंबाई पता करना"
+simple_title:         "शब्द की लंबाई पता करना"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Strings"
@@ -10,26 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
-क्या आपको कभी लक्ष्य इकाई के रूप में स्ट्रिंग की लंबाई की आवश्यकता हुई है? शायद आपको उस स्ट्रिंग के साथ कुछ ऑपरेशन की जरूरत है या फिर आपको उसके आधार पर कोई फॉर्मूला के लिए उस स्ट्रिंग की लंबाई जाननी हो। या शायद आपको सुनकर रुचि है कि PHP में स्ट्रिंग की लंबाई कैसे निकाली जाती है। इसलिए, आज हम आपको पीएचपी में स्ट्रिंग की लंबाई निकालने के बारे में बता रहे हैं।
+## What & Why?
+Finding the length of a string means determining the number of characters in that particular string. In simple terms, it means counting the number of letters, numbers, spaces, and symbols present in a text. Programmers need to find the length of a string for various reasons, such as data validation, calculations, and manipulating data in a specific format.
 
-## कैसे करें
-आप स्ट्रिंग की लंबाई को निकालने के लिए PHP के `strlen()` फंक्शन का उपयोग कर सकते हैं। यह फंक्शन स्ट्रिंग के अंतरिक्ष में मौजूद अक्षरों की संख्या को लौटाता है। इसे आप निम्न उदाहरण से समझ सकते हैं:
+## How To:
+To find the length of a string in PHP, you can use the `strlen()` function. This function takes a string as an argument and returns the number of characters in that string. Let's take a look at an example:
 
 ```PHP
 <?php
-$string = "मेरा देश भारत है";
-echo strlen($string); // Output: 16
+    $name = "John Doe";
+    $length = strlen($name); // $length will be 8
+    echo "The length of the string is $length.";
 ?>
 ```
 
-इसके अलावा, आप स्ट्रिंग के माध्यम से `for` लूप का उपयोग करके भी उसकी लंबाई का पता लगा सकते हैं। यह आपको स्ट्रिंग में हर अक्षर को ट्रावर्स करने की अनुमति देता है और उनकी संख्या को `count` वेरिएबल में रखता है। इसके बाद जब लूप खत्म होता है, तो `count` वेरिएबल में हमारे पास स्ट्रिंग की लंबाई हो जाती है। नीचे दिए गए उदाहरण में हमने स्ट्रिंग में वर्णों की संख्या को प्रिंट किया है:
+In this example, we have assigned a string containing the name "John Doe" to a variable called `$name`. Then we use the `strlen()` function to find the length of this string and store the result in a variable called `$length`. Finally, we use the `echo` statement to print the result, which in this case is the length of the string.
+
+You can also use the `mb_strlen()` function to find the length of a string in PHP, especially if your string contains multi-byte characters, such as special symbols in Hindi. This function takes an additional parameter for specifying the character encoding. Here's an example:
 
 ```PHP
 <?php
-$string = "आप भाषा चुनाव कीजिए";
-$count = 0;
-for($i=0; $i<strlen($string); $i++){
-    $count++;
-}
-echo "
+    $text = "यह हिंदी में एक शब्द है";
+    $length = mb_strlen($text, 'utf-8'); // $length will be 15
+    echo "The length of the string is $length.";
+?>
+```
+
+In this example, we have used the `mb_strlen()` function to find the length of a string in Hindi, which is 15 characters long. We have also specified the character encoding as UTF-8, which is the standard for Hindi characters.
+
+## Deep Dive:
+The concept of finding the length of a string is not exclusive to PHP. It is a common task in programming languages, and most languages have built-in functions for this purpose. However, in certain cases, such as in C or Assembly language, the programmer may have to write their own code to calculate the length of a string.
+
+In PHP, the `strlen()` function returns the number of bytes in a string, while the `mb_strlen()` function returns the number of characters. This difference is important to keep in mind, especially when dealing with multi-byte characters in different languages.
+
+Alternatively, you can also use the `count()` function to find the length of a string in PHP. This function counts the number of elements in an array, and since PHP treats strings as arrays of characters, you can use this function to find the length of a string as well.
+
+## See Also:
+To learn more about finding the length of a string in PHP, you can refer to the official PHP documentation on the `strlen()` function: https://www.php.net/manual/en/function.strlen.php
+
+For more information on character encoding and multi-byte support in PHP, you can check out the PHP documentation on mbstring: https://www.php.net/manual/en/book.mbstring.php
+
+If you are interested in learning more about strings and their manipulation in PHP, here's a comprehensive tutorial: https://www.geeksforgeeks.org/php-strings/
+
+Happy coding! 🚀

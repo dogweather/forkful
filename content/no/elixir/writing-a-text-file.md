@@ -1,7 +1,7 @@
 ---
-title:                "Skriver en tekstfil"
-html_title:           "Elixir: Skriver en tekstfil"
-simple_title:         "Skriver en tekstfil"
+title:                "Å skrive en tekstfil"
+html_title:           "Elixir: Å skrive en tekstfil"
+simple_title:         "Å skrive en tekstfil"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Files and I/O"
@@ -10,26 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hva og hvorfor?
+Skriving av tekstfiler er en grunnleggende måte for programmere å lagre og organisere data på. Tekstfiler er en enkel og leselig måte å lagre tekstbaserte data, noe som gjør det enkelt for utviklere å lagre og behandle informasjon.
 
-Det å skrive en tekstfil er en viktig del av programmering i Elixir. Det lar deg lagre data og konfigurasjonsinnstillinger som kan brukes på tvers av forskjellige applikasjoner.
+## Hvordan:
+```
+Elixir:
+# Å skrive til en tekstfil:
+File.write("minFil.txt", "Dette er teksten som blir skrevet til filen.")
 
-## Hvordan
-
-For å skrive en tekstfil i Elixir, først må du åpne en fil ved hjelp av File.open/2 funksjonen. Deretter kan du bruke File.write/2 funksjonen til å skrive tekst til filen. For eksempel:
-
-```Elixir
-file = File.open("min_fil.txt", [:utf8, :write])
-File.write(file, "Dette er en tekstfil skrevet med Elixir!")
+# Sjekke om skrivingen var vellykket:
+{resultat, feil} = File.write("minFil.txt", "Nye data")
+if resultat == :ok do
+  IO.puts "Skrivingen var vellykket!"
+else
+  IO.puts "Det oppstod en feil: #{feil}"
+end
 ```
 
-Dette vil skrive teksten "Dette er en tekstfil skrevet med Elixir!" til filen "min_fil.txt". Husk å lukke filen når du er ferdig ved hjelp av File.close/1 funksjonen.
+## Dykk dypere:
+Tekstfiler har vært brukt i programmering siden tidlig på 60-tallet, og er fortsatt en grunnleggende og nyttig måte å lagre data på. Alternativene til å skrive til tekstfiler inkluderer databasehåndtering og å bruke APIer for å lagre data i skyen. Implementeringsdetaljene avhenger av operativsystemet, men de fleste moderne programmeringsspråk har innebygde funksjoner for å skrive til tekstfiler.
 
-## Dypdykk
-
-Når du skriver en tekstfil i Elixir, er det viktig å huske at du må håndtere eventuelle feil som kan oppstå. Det kan også være nyttig å bruke File.write!/2 funksjonen i stedet for File.write/2 for å sikre at teksten blir skrevet riktig uten feil.
-
-Se også:
-
-- [File modulen i Elixir Dokumentasjon](https://hexdocs.pm/elixir/File.html)
-- [Elixir filbehandling i praksis fra Elixirforumet](https://elixirforum.com/t/file-handling-in-elixir/663)
+## Se også:
+- [Elixir Dokumentasjon for tekstfilhåndtering] (https://hexdocs.pm/elixir/File.html)
+- [Sammenligning av filbehandling i ulike programmeringsspråk] (https://en.wikipedia.org/wiki/Comparison_of_file_systems)

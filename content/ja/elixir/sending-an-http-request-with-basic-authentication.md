@@ -1,7 +1,7 @@
 ---
-title:                "基本認証でHTTPリクエストを送信する"
-html_title:           "Elixir: 基本認証でHTTPリクエストを送信する"
-simple_title:         "基本認証でHTTPリクエストを送信する"
+title:                "基本認証を使用してhttpリクエストを送信する."
+html_title:           "Elixir: 基本認証を使用してhttpリクエストを送信する."
+simple_title:         "基本認証を使用してhttpリクエストを送信する."
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "HTML and the Web"
@@ -10,54 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# なぜ？
+## What & Why?
 
-HTTPリクエストに基本認証を使って送信する理由は、ウェブサービスの認証を行うためです。これはデータを安全に送信するために重要です。
+HTTPリクエストを基本認証付きで送信するとは何かと、プログラマーがそれをする理由について説明します。
 
-# 使い方
+HTTPリクエストを基本認証付きで送信するとは、サーバーに対してユーザー名とパスワードを用いて認証を行い、データを送受信することです。プログラマーは、これを行うことでセキュリティを確保し、プライベートな情報を保護することができます。
 
-```elixir
-alias HTTPoison.Response
-HTTPoison.start
+## How to:
 
-# URLと認証情報を設定
-url = "https://example.com"
-auth = {"username", "password"}
+以下に、Elixirを使用してHTTPリクエストを基本認証付きで送信する方法を示します。
+
+```
+# HTTPライブラリをインポート
+import Http
+
+# リクエストを作成
+request = %Http.Request{
+  method: :get,
+  url: "https://www.example.com",
+  basic_auth: {"username", "password"}
+}
 
 # リクエストを送信
-response = HTTPoison.get(url, [], basic_auth: auth)
+response = Http.request(request)
 
-# レスポンスのステータスコードを確認
-if response.status_code == 200 do
-  IO.puts "リクエストが成功しました。"
-else
-  IO.puts "リクエストが失敗しました。"
-end
-
-# レスポンスのボディを表示
-IO.puts response.body
+# レスポンスを取得
+response.body
 ```
 
-出力例：
-```
-リクエストが成功しました。
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Welcome to Example.com</title>
-</head>
-<body>
-  <h1>Hello World!</h1>
-</body>
-</html>
-```
+このコードを実行すると、 `https://www.example.com` に対して基本認証付きでHTTP GETリクエストが送信されます。レスポンスの本文は、 `response.body` を使用して取得することができます。
 
-# 詳細を深く掘り下げる
+## Deep Dive:
 
-基本認証は、HTTPリクエストのヘッダー内にusernameとpasswordを含めることで、サーバーがリクエストを認証できるようにします。これにより、機密性の高いデータのやりとりなど、セキュリティが必要な環境で使用されます。
+基本認証は、HTTPプロトコルの一部になっています。これは、クライアントがサーバーに対してユーザー名とパスワードを送信し、サーバーがそれを認証することで、通信が安全に行われることを保証する仕組みです。
 
-# 他にも参考になる情報
+基本認証は、古くから存在している認証方式であり、多くのWebアプリケーションでも使用されています。しかし、最近ではより高度な認証方式が開発されており、基本認証の使用は推奨されません。
 
-- [ElixirでのHTTPリクエストを扱う方法](https://hexdocs.pm/httpoison/HTTPoison.html)
-- [基本認証について詳しく学ぶ](https://developer.mozilla.org/ja/docs/Web/HTTP/Authentication)
-- [Elixirの基本文法を学ぶ](https://elixir-lang.org/getting-started/introduction.html)
+Elixirには、基本認証の他にもさまざまな認証方式をサポートするライブラリが存在します。しかし、基本認証はシンプルで使いやすいため、小規模なサーバーやAPIなど、シンプルな認証が必要な場合には有用です。
+
+## See Also:
+
+- ElixirのHTTPクライアントライブラリ: https://hexdocs.pm/httpoison/Httpoison.html
+- HTTP基本認証の詳細: https://www.w3.org/Protocols/HTTP/Authentication.html

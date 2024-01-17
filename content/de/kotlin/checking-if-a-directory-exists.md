@@ -1,7 +1,7 @@
 ---
-title:                "Überprüfen, ob ein Verzeichnis existiert"
-html_title:           "Kotlin: Überprüfen, ob ein Verzeichnis existiert"
-simple_title:         "Überprüfen, ob ein Verzeichnis existiert"
+title:                "Überprüfung, ob ein Verzeichnis existiert"
+html_title:           "Kotlin: Überprüfung, ob ein Verzeichnis existiert"
+simple_title:         "Überprüfung, ob ein Verzeichnis existiert"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Files and I/O"
@@ -10,33 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Warum
+## Was & Warum?
+Das Überprüfen, ob ein Verzeichnis vorhanden ist, ist eine gängige Aufgabe für Programmierer. Durch die Verwendung dieser Funktion können wir sicherstellen, dass unser Code ordnungsgemäß auf die benötigten Dateien und Verzeichnisse zugreifen kann. Es hilft auch dabei, Fehler zu vermeiden und die Stabilität unserer Anwendungen zu gewährleisten.
 
-Manchmal benötigt man in der Programmierung die Möglichkeit zu prüfen, ob ein bestimmtes Verzeichnis auf dem Computer existiert. Dies kann hilfreich sein, um beispielsweise sicherzustellen, dass eine Datei in dem gewünschten Verzeichnis vorhanden ist, bevor man versucht, darauf zuzugreifen.
-
-# Wie geht das?
-
-Die Überprüfung, ob ein Verzeichnis existiert, kann relativ einfach mit Hilfe von Kotlin durchgeführt werden. Zunächst muss ein File-Objekt erstellt werden, das das zu überprüfende Verzeichnis darstellt. Anschließend kann die Funktion `exists()` aufgerufen werden, um zu überprüfen, ob das Verzeichnis tatsächlich existiert. Hier ist ein Beispielcode:
-
+## Wie geht's?
+Kotlin bietet die `File.exists()` Funktion, um zu überprüfen, ob ein Verzeichnis vorhanden ist. Wir können sie wie folgt verwenden:
 ```Kotlin
-val directory = File("/Pfad/zum/Verzeichnis")
-if(directory.exists()){
+val directory = File("Pfad/zu/Verzeichnis")
+if (directory.exists()) {
     println("Das Verzeichnis existiert.")
 } else {
     println("Das Verzeichnis existiert nicht.")
 }
 ```
+Die Ausgabe hängt davon ab, ob das Verzeichnis vorhanden ist oder nicht. Diese Methode ist sehr einfach und leicht zu verstehen.
 
-Die Ausgabe dieses Codes hängt davon ab, ob das Verzeichnis existiert oder nicht. Wenn das Verzeichnis existiert, wird die erste Nachricht ausgegeben, andernfalls die zweite. Es ist auch möglich, zusätzliche Logik hinzuzufügen, um beispielsweise entsprechend zu handeln, falls das Verzeichnis nicht existiert.
+## Tiefergehende Informationen
+Das Überprüfen der Existenz von Verzeichnissen ist eine gängige Aufgabe, die in der Programmierung seit Langem verwendet wird. Früher waren nur wenige Programmiersprachen in der Lage, dies direkt zu tun. Stattdessen mussten Entwickler komplexe Algorithmen schreiben, um zu überprüfen, ob ein Verzeichnis vorhanden ist oder nicht. Mit der Entwicklung moderner Programmiersprachen wie Kotlin ist dies jetzt viel einfacher geworden.
 
-# Tiefer eintauchen
+Alternativ können wir auch `File.isDirectory()` verwenden, um speziell zu überprüfen, ob es sich um ein Verzeichnis handelt. Dies kann nützlich sein, wenn wir sicherstellen wollen, dass es sich bei der angegebenen Datei tatsächlich um ein Verzeichnis handelt.
 
-Wenn man tiefer in das Thema einsteigen möchte, gibt es weitere Möglichkeiten, um zu überprüfen, ob ein Verzeichnis existiert. So kann man beispielsweise auch die Funktion `isDirectory()` verwenden, um zu überprüfen, ob es sich bei dem angegebenen Pfad tatsächlich um ein Verzeichnis handelt. Außerdem gibt es auch spezielle Funktionen, um zu überprüfen, ob ein Verzeichnis schreibgeschützt, ausführbar oder lesbar ist.
+Die `File.exists()` Funktion verwendet intern das Dateisystem, um zu überprüfen, ob ein Verzeichnis vorhanden ist. Sie können auch die `File.isDirectory()` Funktion verwenden, die auf mehreren Plattformen verfügbar ist, einschließlich Android.
 
-In einigen Fällen kann es auch nützlich sein, zu überprüfen, ob ein Verzeichnis leer ist. Hierfür kann die Funktion `listFiles()` verwendet werden, die eine Liste mit allen Dateien und Verzeichnissen in dem angegebenen Pfad zurückgibt. Ist diese Liste leer, kann davon ausgegangen werden, dass das Verzeichnis selbst auch leer ist.
-
-# Siehe auch
-
-- [Offizielle Kotlin Dokumentation zu File](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/)
-- [Artikel zur Überprüfung von Verzeichnissen in Java](https://www.geeksforgeeks.org/check-if-a-file-is-a-directory-or-a-file-in-java/) (auf Englisch)
-- [Beispiele zu File Operationen mit Kotlin](https://www.baeldung.com/java-file-directory-exists) (auf Englisch)
+## Siehe auch
+- [Kotlin Standardbibliothek - File](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/index.html)
+- [So überprüfen Sie, ob ein Verzeichnis in Kotlin existiert](https://www.techiedelight.com/check-directory-exists-kotlin/)

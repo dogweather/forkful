@@ -10,51 +10,120 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-JSON (JavaScript Object Notation) is a widely used data interchange format that is easy for humans to read and write, as well as for machines to parse and generate. It has become a popular choice for data serialization in web applications, making it an essential skill for any modern programmer.
+## What & Why?
+Working with JSON in C++ refers to parsing, creating, and manipulating data in JSON format. JSON, or JavaScript Object Notation, is a lightweight data interchange format that is commonly used in web development. Programmers use JSON to easily exchange data between different systems and languages, as it has a simple and readable syntax.
 
-## How To
-To work with JSON in C++, we first need to include the json library:
-```C++
-#include <json/json.h>
-```
-Next, we can create a JSON object and add key-value pairs to it:
-```C++
-Json::Value myObj;
-myObj["name"] = "John";
-myObj["age"] = 25;
-```
-We can also create nested objects and arrays:
-```C++
-Json::Value myNestedObj;
-myNestedObj["hobbies"].append("reading");
-myNestedObj["hobbies"].append("playing guitar");
-myObj["personal_info"] = myNestedObj;
-```
-To convert the JSON object to a string, we can use the `Json::FastWriter` class:
-```C++
-Json::FastWriter writer;
-std::string jsonString = writer.write(myObj);
-```
-And to parse a JSON string into a JSON object, we can use the `Json::Reader` class:
-```C++
-Json::Reader reader;
-Json::Value parsedObj;
-reader.parse(jsonString, parsedObj);
+## How to:
+### Parsing JSON data
+To parse JSON data in C++, you can use a library like [RapidJSON](https://rapidjson.org/) or [nlohmann/json](https://github.com/nlohmann/json). Here's an example using RapidJSON:
 
-std::string name = parsedObj["name"].asString();   // "John"
-int age = parsedObj["age"].asInt();                 // 25
-std::string hobby1 = parsedObj["personal_info"]["hobbies"][0].asString();     // "reading"
+```C++
+#include <iostream>
+#include "rapidjson/document.h"
+#include "rapidjson/istreamwrapper.h"
+
+using namespace rapidjson;
+
+int main() {
+    
+    // Sample JSON data
+    const char* json = R"(
+    {
+        "name": "John",
+        "age": 25,
+        "hobbies": ["reading", "coding", "gaming"],
+        "address": {
+            "street": "123 Main St.",
+            "city": "New York",
+            "state": "NY"
+        }
+    }
+    )";
+    
+    // Parse JSON data
+    Document document;
+    document.Parse(json);
+    
+    // Get values from JSON data
+    const char* name = document["name"].GetString();
+    int age = document["age"].GetInt();
+    
+    // Output results
+    std::cout << "Name: " << name << std::endl;
+    std::cout << "Age: " << age << std::endl;
+
+    // Get values from nested objects
+    const char* street = document["address"]["street"].GetString();
+    std::cout << "Address: " << street << std::endl;
+    
+    // Loop through array
+    std::cout << "Hobbies: ";
+    for (auto& hobby : document["hobbies"].GetArray()) {
+        std::cout << hobby.GetString() << " ";
+    }
+    std::cout << std::endl;
+    
+    return 0;
+}
+```
+
+Output:
+```
+Name: John
+Age: 25
+Address: 123 Main St.
+Hobbies: reading coding gaming 
+```
+### Creating JSON data
+To create JSON data in C++, you can use the same libraries as mentioned before. Here's an example using nlohmann/json:
+
+```C++
+#include <iostream>
+#include "nlohmann/json.hpp"
+
+using json = nlohmann::json;
+
+int main() {
+    
+    // Create JSON object
+    json data = {
+        {"name", "Jane"},
+        {"age", 30},
+        {"hobbies", {"hiking", "painting", "cooking"}},
+        {"address", {
+            {"street", "456 Park Ave."},
+            {"city", "Los Angeles"},
+            {"state", "CA"}
+        }}
+    };
+    
+    // Output JSON data
+    std::cout << data.dump(4) << std::endl;
+    
+    return 0;
+}
+```
+
+Output:
+```
+{
+    "name": "Jane",
+    "age": 30,
+    "hobbies": ["hiking", "painting", "cooking"],
+    "address": {
+        "street": "456 Park Ave.",
+        "city": "Los Angeles",
+        "state": "CA"
+    }
+}
 ```
 
 ## Deep Dive
-The `Json::Value` class provides different methods for accessing and manipulating data based on its type. For example, `asString()` can only be used for string values, but `asInt()` can only be used for integer values. It is important to check the type of the value before using these methods to avoid unexpected errors.
+JSON was originally created by Douglas Crockford in 2001 and has since gained widespread adoption in web development for its simplicity and compatibility with many languages. Alternatives to JSON include XML and YAML, but JSON is favored for its lightweight syntax and ease of use.
 
-The `Json::Reader` class has an `isStrictMode()` method that allows us to choose whether to strictly validate the syntax of the JSON string. This can be useful when working with data from external sources.
-
-JSON also supports custom data types through the `Json::Value::null`, `Json::Value::boolean`, `Json::Value::array`, and `Json::Value::object` methods, allowing for more flexibility in data storage.
+When working with JSON in C++, it's important to ensure the library you choose has good parsing and validation capabilities to avoid errors and vulnerabilities in your code. It's also helpful to have knowledge of C++ data structures and how to access nested objects and arrays, as demonstrated in the examples above.
 
 ## See Also
-- Official JSON website: https://www.json.org/
-- C++ JSON library: https://github.com/open-source-parsers/jsoncpp
-- Guide to using JSON in C++: https://www.json.org/example.html
+- [RapidJSON](https://rapidjson.org/): A fast and memory-efficient JSON parser for C++
+- [nlohmann/json](https://github.com/nlohmann/json): A single header library for manipulating JSON data in C++
+- [JSON.org](https://www.json.org/): The official JSON website with documentation and resources for different programming languages

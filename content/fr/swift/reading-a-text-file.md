@@ -10,31 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
-Tu écris du code, et parfois tu as besoin de lire un fichier texte. Peut-être pour sauvegarder des données, pour lire une configuration, ou pour récupérer des informations. Dans cet article, tu apprendras comment lire un fichier texte en utilisant Swift.
+# Qu'est-ce que c'est et pourquoi le faire?
+La lecture d'un fichier texte est un moyen pour les programmeurs de récupérer des données textuelles qui sont stockées dans un fichier sur leur ordinateur. Les programmeurs peuvent faire cela pour accéder à des informations statiques ou pour traiter des fichiers à grande échelle.
 
-## Comment faire
-La première chose à faire est de récupérer le chemin du fichier que tu veux lire. Tu peux le faire en utilisant la classe `URL` de Swift et en lui donnant le chemin absolu ou relatif du fichier. Puis, tu peux utiliser la méthode `String(contentsOf:encoding:)` pour lire le contenu du fichier et le stocker dans une variable.
+# Comment faire:
+Voici deux façons de lire un fichier texte en Swift:
 
-````Swift
-let filePath = URL(fileURLWithPath: "path/to/file.txt")
-do {
-    let fileContent = try String(contentsOf: filePath, encoding: .utf8)
-    print(fileContent)
-} catch {
-    print("Error while reading file: \(error)")
+**1. Utilisation de la méthode String(contentsOf:encoding)**
+```swift
+let filePath = Bundle.main.path(forResource: "monFichier", ofType: "txt")
+let fileContent = try! String(contentsOfFile: filePath!, encoding: .utf8)
+print(fileContent)
+```
+Sortie:
+> Contenu de monFichier.txt
+
+**2. Lecture ligne par ligne en utilisant la méthode readLine()**
+```swift
+var path = "chemin/vers/monFichier.txt"
+let lines = try String(contentsOfFile: path, encoding: .utf8).split(separator: "\n")
+for line in lines {
+  print(line)
 }
-````
-Lorsque tu lances ce code, tu devrais voir le contenu du fichier s'afficher dans la console. Assure-toi que le fichier existe et que le chemin que tu as fourni est correct.
+```
+Sortie:
+> Contenu de chaque ligne de monFichier.txt
 
-Ensuite, tu peux utiliser la méthode `components(separatedBy:)` pour séparer le contenu du fichier en différentes parties, en utilisant un caractère ou une chaîne comme séparateur. Par exemple, si ton fichier contient plusieurs noms séparés par des virgules, tu peux utiliser `fileContent.components(separatedBy: ",")` pour obtenir un tableau de noms.
+# Plongeons plus en profondeur:
+**1. Contexte historique:**
+Lecture des fichiers texte est une fonctionnalité de base offerte depuis les premiers langages de programmation. Auparavant, cela nécessitait une implémentation manuelle de code pour lire et traiter les fichiers.
 
-## Deep Dive
-En utilisant `String(contentsOf:encoding:)`, tu obtiendras le contenu du fichier sous forme de chaîne de caractères. Mais si tu veux traiter le contenu du fichier ligne par ligne, tu peux utiliser la méthode `components(separatedBy: CharacterSet.newlines)` qui sépare le contenu en fonction des sauts de lignes.
+**2. Alternatives:**
+Il existe d'autres moyens de récupérer des données à partir de fichiers, tels que l'utilisation de bases de données ou de services de stockage cloud. Cependant, la lecture de fichiers texte est toujours un moyen simple et efficace pour les programmeurs de récupérer des données sur leur ordinateur.
 
-De plus, tu peux spécifier l'encodage du fichier en utilisant le paramètre `encoding`. Par défaut, il est configuré sur `.utf8`, mais tu peux également utiliser d'autres encodages comme `.ascii` ou `.utf16` en fonction des besoins de ton fichier.
+**3. Détails de mise en œuvre:**
+En utilisant la méthode String(contentsOf:encoding), il est important de spécifier le chemin complet du fichier, sinon cela peut entraîner des erreurs. De plus, en lisant de gros fichiers, il est préférable d'utiliser la méthode readLine() pour éviter de charger tout le contenu en mémoire à la fois.
 
-## Voir aussi
-- [La documentation officielle de Swift sur la classe URL](https://developer.apple.com/documentation/foundation/url)
-- [Un tutoriel sur la lecture et l'écriture de fichiers en Swift](https://www.raywenderlich.com/1951-swift-tutorial-part-3-tuples-protocols-delegates-and-table-views#reading-writing-to-a-file)
-- [Un article sur les différentes méthodes pour lire et écrire des fichiers en Swift](https://medium.com/@khunshan/swift-4-0-working-with-text-files-in-swift-c5ab61e778af)
+# Voir aussi:
+- [Documentation Apple pour String(contentsOf:encoding)](https://developer.apple.com/documentation/foundation/string/1412575-contents)
+- [Documentation Apple pour readLine()](https://developer.apple.com/documentation/swift/1641190-readline)

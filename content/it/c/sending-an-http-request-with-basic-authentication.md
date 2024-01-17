@@ -10,87 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perchè
+## Di cosa si tratta e perché?
+Il comando per inviare una richiesta HTTP con autenticazione di base è un modo per fornire un livello di sicurezza aggiuntivo quando si interagisce con un server web. Questo significa che i programmatori possono proteggere le informazioni sensibili che vengono scambiate tra il client e il server. 
 
-La richiesta HTTP con autenticazione di base è importante quando si vuole accedere ad un servizio web protetto da un sistema di login. Questa autenticazione garantisce una maggiore sicurezza nei dati scambiati tra il cliente e il server.
-
-## Come Fare
-
-Per inviare una richiesta HTTP con autenticazione di base in C, è necessario seguire i seguenti passaggi:
-
-1. Includere le librerie necessarie utilizzando l'istruzione ```#include <curl/curl.h>```
-2. Inizializzare la struttura di autenticazione di base tramite la funzione ```curl_easy_setopt()```
-3. Impostare l'autenticazione di base con le credenziali corrette
-4. Eseguire la richiesta HTTP con la funzione ```curl_easy_perform()```
-
-Un esempio di codice completo potrebbe essere:
+## Come fare:
+Per inviare una richiesta HTTP con autenticazione di base in C, è necessario utilizzare la funzione `curl_easy_setopt()` e passare i parametri `CURLOPT_URL` e `CURLOPT_USERPWD` come nell'esempio seguente:
 
 ```
-#include <stdio.h>
-#include <curl/curl.h>
-
-int main(void)
-{
-    CURL *curl;
-    CURLcode res;
-    
-    curl = curl_easy_init();
-    
-    if (curl) {
-        // Inizializza l'autenticazione di base
-        curl_easy_setopt(curl, CURLOPT_HTTPAUTH, (long)CURLAUTH_BASIC);
-        
-        // Imposta le credenziali
-        curl_easy_setopt(curl, CURLOPT_USERPWD, "username:password");
-        
-        // Esegue la richiesta HTTP
-        curl_easy_perform(curl);
-        
-        // Rilascia la risorsa CURL
-        curl_easy_cleanup(curl);
-        
-        // Gestisce eventuali errori
-        if (res != CURLE_OK) {
-            fprintf(stderr, "Errore nella richiesta: %s\n",
-                    curl_easy_strerror(res));
-            return 1;
-        }
-    }
-    
-    return 0;
+CURL *curl = curl_easy_init();
+if(curl) {
+  curl_easy_setopt(curl, CURLOPT_URL, "https://www.example.com");
+  curl_easy_setopt(curl, CURLOPT_USERPWD, "username:password");
+  CURLcode res = curl_easy_perform(curl);
+  if(res != CURLE_OK)
+    fprintf(stderr, "curl_easy_perform() failed: %s\n",
+            curl_easy_strerror(res));
+  curl_easy_cleanup(curl);
 }
 ```
 
-Ecco un esempio di output che potresti ottenere:
+L'output di questa richiesta sarà un oggetto `CURLcode` contenente informazioni sull'esito della richiesta.
 
-```
-HTTP/1.1 200 OK
-Date: Tue, 01 Oct 2019 12:00:00 GMT
-Server: Apache/2.4.38 (Unix)
-Last-Modified: Thu, 27 Jun 2019 10:00:00 GMT
-ETag: "1234"
-Accept-Ranges: bytes
-Content-Length: 123
-Content-Type: text/html
+## Approfondimento:
+L'autenticazione di base è uno dei primi metodi di autenticazione utilizzati su internet. Consiste nell'inviare le credenziali (nome utente e password) in chiaro, quindi non è sicuro come altri metodi di autenticazione come OAuth o OpenID Connect. Tuttavia, può essere utile per applicazioni interne o in situazioni in cui la sicurezza non è una priorità assoluta.
 
-<html>
-    <head>
-        <title>Ciao Mondo!</title>
-    </head>
-    <body>
-        <h1>Ciao Mondo!</h1>
-    </body>
-</html>
-```
+Come alternativa all'utilizzo di `curl_easy_setopt()`, è possibile utilizzare una libreria di terze parti o una funzione personalizzata per gestire l'autenticazione di base.
 
-## Approfondimenti
+Per implementare l'autenticazione di base, il server web deve avere un meccanismo per verificare le credenziali fornite dal client. Ciò può essere fatto tramite una lista di utenti e password memorizzati nel server o attraverso l'utilizzo di un servizio di autenticazione centralizzato.
 
-L'autenticazione di base è soltanto uno dei tanti metodi di autenticazione supportati dalle specifiche HTTP. Altri metodi includono l'autenticazione con token, l'autenticazione digest e l'autenticazione OAuth. Inoltre, è possibile anche implementare un proprio sistema di autenticazione personalizzato.
-
-L'uso dell'autenticazione di base è ancora molto comune nei servizi web, ma non è considerato un metodo sicuro perché i dati di login viaggiano in chiaro. Si consiglia di utilizzare metodi di autenticazione più sicuri nei casi in cui sia necessaria una maggiore protezione dei dati.
-
-## Vedi Anche
-
-- [Specifiche HTTP](https://tools.ietf.org/html/rfc2616)
-- [Documentazione CURL](https://curl.haxx.se/libcurl/c)
-- [Autenticazione di base su Wikipedia](https://en.wikipedia.org/wiki/Basic_access_authentication)
+## Vedi anche:
+- [Documentazione ufficiale di CURL](https://curl.haxx.se/libcurl/c/Using-cURL-in-C-code.html)
+- [Tutorial su autenticazione di base con CURL in C](https://gist.github.com/subfuzion/08c5d85437d5d4f00e58)
+- [Libreria CURL wrapper per C++](https://github.com/jpbarrette/curlpp)

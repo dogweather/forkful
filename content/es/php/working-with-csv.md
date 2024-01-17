@@ -10,68 +10,63 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué trabajar con CSV?
+## ¿Qué y por qué?
 
-Trabajar con archivos CSV (Comma Separated Values) es una tarea común en el desarrollo web. Es una forma eficiente y sencilla de almacenar datos en forma de tabla y compartirlos entre diferentes aplicaciones. Con PHP, podemos manipular y procesar estos archivos de manera efectiva, lo que facilita la gestión y uso de grandes cantidades de datos.
+Trabajar con CSV en PHP es una forma de manejar datos tabulares de forma eficiente y sencilla. Programadores utilizan la extensión "csv" en PHP para leer, escribir y manipular archivos CSV, lo que permite el procesamiento de datos en formato tabla de manera más efectiva.
 
-## Cómo hacerlo
+## Cómo hacerlo:
 
-Una de las formas más sencillas de trabajar con CSV en PHP es mediante el uso de las funciones `fopen()`, `fputcsv()` y `fclose()`. Estas funciones nos permiten abrir un archivo CSV, escribir datos en él y cerrarlo una vez que hayamos terminado.
-
-Primero, abrimos un archivo CSV existente o creamos uno nuevo utilizando `fopen()`, proporcionando el nombre del archivo y el modo de apertura. Por ejemplo:
-
-```PHP
-$archivo = fopen("datos.csv", "w");
-```
-
-El modo "w" indica que el archivo se abrirá en modo de escritura, lo que significa que podemos escribir datos en él. Ahora podemos utilizar `fputcsv()` para escribir una fila de datos en el archivo. Por ejemplo:
-
-```PHP
-fputcsv($archivo, ["Nombre", "Apellido", "Edad"]);
-```
-
-Esto escribirá una fila en el archivo CSV con los valores "Nombre", "Apellido" y "Edad" separados por comas.
-
-Para escribir múltiples filas de datos, podemos utilizar un bucle y pasar un array con los valores de cada fila a `fputcsv()`. Luego, cerramos el archivo utilizando `fclose()`. Por ejemplo:
-
-```PHP
-$personas = [
-    ["Juan", "Pérez", "25"],
-    ["María", "González", "30"],
-    ["Carlos", "López", "40"]
-];
-
-foreach ($personas as $persona) {
-    fputcsv($archivo, $persona);
-}
-
-fclose($archivo);
-```
-
-Esto escribirá tres filas en el archivo CSV con los datos de las tres personas.
-
-Otra opción para trabajar con CSV en PHP es utilizando la función `str_getcsv()`, que nos permite leer una fila del archivo CSV y convertirla en un array de valores. Por ejemplo:
+Para leer un archivo CSV en PHP, se utiliza la función `fgetcsv()` que toma como argumento el nombre del archivo y devuelve un array. Por ejemplo:
 
 ```PHP
 $archivo = fopen("datos.csv", "r");
-
-while (($fila = fgetcsv($archivo)) !== false) {
-    // Hacer algo con los datos de la fila
+while(! feof($archivo)) {
+  print_r(fgetcsv($archivo));
 }
-
 fclose($archivo);
 ```
 
-Como se puede ver, esta función es particularmente útil para leer grandes cantidades de datos de un archivo CSV y realizar operaciones en ellos.
+Este código abrirá el archivo "datos.csv", lo leerá línea por línea y convertirá cada línea en un array que será impreso en pantalla. Aquí el resultado que podríamos obtener:
+
+```
+Array
+(
+    [0] => Juan
+    [1] => Pérez
+    [2] => 25
+)
+Array
+(
+    [0] => Ana
+    [1] => Gómez
+    [2] => 30
+)
+```
+
+Para escribir un nuevo archivo CSV, se puede utilizar la función `fputcsv()` pasando como argumento el nombre del archivo y un array con los valores que se quieren escribir. Por ejemplo:
+
+```PHP
+$archivo = fopen("nuevos_datos.csv", "w");
+$array = array("Juan", "Pérez", "25");
+fputcsv($archivo, $array);
+fclose($archivo);
+```
+
+Este código creará un archivo "nuevos_datos.csv" con el siguiente contenido:
+
+```
+Juan,Pérez,25
+```
 
 ## Profundizando
 
-Trabajar con CSV también nos brinda la posibilidad de utilizar la función `fgetcsv()` junto con la función `filter_var()` para validar los datos de nuestro archivo. Por ejemplo, podemos validar que un campo contenga un número entero antes de guardarlo en nuestra base de datos. Esto nos ayuda a garantizar la integridad de nuestros datos y evitar posibles errores.
+El formato CSV (Comma Separated Values) fue creado en los años 70 para ser utilizado en hojas de cálculo. Hoy en día, sigue siendo ampliamente utilizado en la industria de la programación para el manejo de bases de datos y datos tabulares.
 
-Otra técnica útil es utilizar el delimitador de campos personalizado en lugar de una coma. Por ejemplo, si nuestro archivo CSV utiliza tabulaciones en lugar de comas para separar los valores, podemos especificar esto utilizando el parámetro `delimitor` en `fgetcsv()`. Esto nos permite procesar diferentes tipos de archivos CSV con facilidad.
+Existen otras opciones para trabajar con datos tabulares en PHP, como por ejemplo utilizar PDO (PHP Data Objects) para conectarse a una base de datos y manejar los datos directamente desde ahí. Sin embargo, utilizar archivos CSV puede ser una opción más sencilla y rápida en ciertos casos.
+
+Para implementar la lectura y escritura de archivos CSV en PHP, también se pueden utilizar funciones como `readfile()`, `fopen()` y `fputcsv()` en conjunto para facilitar el proceso.
 
 ## Ver también
 
-- [Documentación oficial de PHP sobre CSV](https://www.php.net/manual/es/function.fputcsv.php)
-- [Cómo trabajar con archivos CSV en PHP](https://www.w3schools.com/php/php_file_open.asp)
-- [Ejemplo de validación de datos CSV en PHP](https://www.phpzag.com/read-and-parse-csv-file-using-php-example/)
+- Documentación oficial de PHP sobre la extensión "csv": https://www.php.net/manual/es/book.csv.php
+- Tutorial de W3Schools sobre cómo trabajar con archivos CSV en PHP: https://www.w3schools.com/php/func_filesystem_fputcsv.asp

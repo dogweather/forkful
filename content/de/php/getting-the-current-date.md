@@ -10,60 +10,17 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+# Aktuelles Datum in PHP 
+ 
+## Was & Warum?
+Die aktuelle Datum Funktion in PHP ermöglicht es Programmierern, das Datum und die Uhrzeit in einem bestimmten Format auszugeben. Sie ist hilfreich für Anwendungen, die das Datum und die Uhrzeit für verschiedene Zwecke benötigen, wie z.B. für ein Log-in-System oder für die Anzeige von Live-Informationen auf einer Webseite.
 
-Das Abrufen des aktuellen Datums ist eine grundlegende Funktion in der PHP-Programmierung. Es ermöglicht Entwicklern, dynamische Funktionen basierend auf dem aktuellen Datum zu erstellen, wie beispielsweise einen Kalender oder eine Countdown-Funktion.
+## Wie:
+Der Code ```PHP echo date('d.m.Y H:i:s'); ``` gibt das aktuelle Datum und die Uhrzeit in dem Format "Tag.Monat.Jahr Stunde:Minute:Sekunde" aus. Das Ergebnis könnte zum Beispiel wie folgt aussehen: "01.04.2021 12:30:15". Das Format kann nach Belieben angepasst werden, indem man die Parameter in der ``` date() ``` Funktion ändert.
 
-## Wie
+## Tiefere Einblicke:
+Die PHP Funktion zur Ausgabe des aktuellen Datums gibt es seit der Version 3.0 des Programmierens PHP. Vorher mussten Programmierer auf externe Bibliotheken zurückgreifen. Alternativ zur Verwendung der ``` date() ``` Funktion, gibt es auch die Möglichkeit die Bibliothek "DateTime" zu importieren und diese zu verwenden. Dies ermöglicht weitere Funktionen, wie z.B. das Rechnen mit Datum und Uhrzeit.
 
-Die aktuelle Zeit und das Datum können mit der `date()`-Funktion in PHP abgerufen werden. Diese Funktion benötigt zwei Argumente: ein Format und eine Zeitangabe.
-
-Beispielcode:
-
-```PHP
-<?php
-// Aktuelles Datum im Format "Tag/Monat/Jahr"
-echo date("d/m/Y"); 
-
-// Aktuelle Uhrzeit im Format "Stunde:Minute:Sekunde"
-echo date("H:i:s"); 
-?>
-```
-
-Ausgabe:
-
-```
-13/08/2020
-13:45:21
-```
-
-Die Formatierung des Datums kann je nach Bedarf angepasst werden. Eine vollständige Liste der verfügbaren Formatierungszeichen finden Sie in der offiziellen [PHP-Dokumentation] (https://www.php.net/manual/en/function.date.php).
-
-## Deep Dive
-
-Die `date()`-Funktion basiert auf der Systemzeit des Servers, auf dem die PHP-Anwendung läuft. Daher kann das Datum in verschiedenen Zeitzonen variieren. Um die Anwendung von Zeitzonen zu berücksichtigen, kann die `date_default_timezone_set()`-Funktion verwendet werden.
-
-Beispielcode:
-
-```PHP
-<?php
-// Setzen der Zeitzone auf Berlin
-date_default_timezone_set("Europe/Berlin");
-
-// Aktuelles Datum und Uhrzeit im Format "Tag/Monat/Jahr, Stunde:Minute:Sekunde"
-echo date("d/m/Y, H:i:s");
-?>
-```
-
-Ausgabe:
-
-```
-13/08/2020, 14:00:12
-```
-
-Es ist auch möglich, das aktuelle Datum in einem bestimmten Format in einem anderen Land abzurufen, indem die entsprechende Zeitzone festgelegt wird. Eine Liste der verfügbaren Zeitzone können Sie in der [PHP-Dokumentation] (https://www.php.net/manual/en/timezones.php) finden.
-
-## Siehe auch
-
-- [PHP date() Funktion] (https://www.php.net/manual/en/function.date.php)
-- [PHP Zeitzone festlegen] (https://www.php.net/manual/en/function.date-default-timezone-set.php)
+## Siehe auch:
+- [PHP-Manual: Date()](https://www.php.net/manual/en/function.date.php)
+- [PHP-Manual: DateTime](https://www.php.net/manual/en/class.datetime.php)

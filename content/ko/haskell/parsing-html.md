@@ -10,46 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
-혹시 웹 개발을 하고 계시다면, 다양한 웹페이지에서 데이터를 추출하는 기능이 필요하게 될 수도 있습니다. 이때 HTML parsing이라는 기술이 필요합니다. 이를 통해 원하는 정보를 정확하게 추출할 수 있고, 자동화된 작업도 가능해집니다.
+## 무엇 & 왜?
 
-## 방법
-우선, Haskell 프로그래밍 언어를 설치해야 합니다. 그러고 나서 라이브러리 중에서 `tagsoup`을 선택한 뒤, 간단한 예제를 통해 어떻게 HTML을 파싱하는지 알아보겠습니다.
+HTML 구문 분석이란 무엇일까요? 그것은 웹 페이지의 HTML 코드를 읽고 데이터를 추출하는 프로세스를 말합니다. 프로그래머들이 이것을 하는 이유는 웹 사이트에서 필요한 정보를 추출하여 데이터를 분석하고, 가공하고, 사용하기 위해서 입니다.
 
-```Haskell
-import Text.HTML.TagSoup
+## 하는 방법:
 
-main = do
-    let html = "<html><body><h1>Hello, World!</h1></body></html>"
-    let tags = parseTags html
-    let h1 = fromAttrib "h1" $ head tags
-    print h1
-```
-
-이 예제에서는 `Text.HTML.TagSoup` 라이브러리를 불러오고, `parseTags` 함수를 사용하여 HTML 코드를 파싱합니다. 그리고 `fromAttrib` 함수와 `head` 함수를 사용하여 `<h1>` 태그 안에 있는 정보를 추출합니다. 마지막으로 `print` 함수를 사용해 결과를 출력합니다.
-
-위 코드를 실해하면 "Hello, World!"라는 결과가 출력됩니다. 이처럼 쉽게 HTML 코드를 파싱하여 원하는 정보를 추출할 수 있습니다.
-
-## 딥 다이브
-더 깊이 들어가보면, `tagsoup` 라이브러리는 더 다양한 기능을 제공합니다. 예를 들어 HTML 코드에서 특정 태그를 지정하여 그 안에 있는 내용을 추출하는 것도 가능합니다.
+우리는 ```Haskell ... ``` 코드 블록 내에서 예제 코드와 출력을 나타낼 것입니다. 그러나 직접 해 보기 전에, ```HTML-parser``` 라이브러리를 다운로드하고, 명시적으로 가져와야 합니다.
 
 ```Haskell
-import Text.HTML.TagSoup
-
-main = do
-    let html = "<html><body><div><p>Hello, World!</p><p>This is a paragraph.</p></div></body></html>"
-    let tags = parseTags html
-    let pTags = sections (~== TagOpen "p" []) tags
-    let p1 = fromTagText $ head pTags
-    let p2 = fromTagText $ pTags !! 1
-    print p1
-    print p2
+import Text.HTML.Parser
 ```
 
-위 코드에서는 `<p>` 태그를 지정하여 그 안에 있는 내용을 추출하는 방법을 보여줍니다. `sections` 함수를 사용하여 `<p>` 태그를 찾은 뒤, `fromTagText` 함수를 사용하여 텍스트를 추출합니다. 그리고 `!!` 연산자를 통해 원하는 위치의 태그를 추출합니다.
+이제, ```parseTags``` 함수를 사용해 HTML 코드를 파싱할 수 있습니다. 예를 들어, 다음과 같이 간단한 HTML 코드를 사용해 봅시다:
 
-이 외에도 더 많은 기능을 `tagsoup` 라이브러리에서 사용할 수 있습니다. 참고자료의 링크를 통해 더 자세한 정보를 확인할 수 있습니다.
+```Haskell
+let html = "<html><body><h1>Hello World!</h1></body></html>"
 
-## 참고자료
-- [Hackage: tagsoup 라이브러리 문서](https://hackage.haskell.org/package/tagsoup/docs/Text-HTML-TagSoup.html)
-- [Learn You a Haskell for Great Good! - HTML parsing](http://learnyouahaskell.com/input-and-output#reading-a-file)
+let parsed = parseTags html -- [TagOpen "html" [], TagOpen "body" [], TagOpen "h1" [], TagText "Hello World!", TagClose "h1", TagClose "body", TagClose "html"]
+
+```
+
+예제 코드에서 볼 수 있듯이, HTML 코드는 태그를 기준으로 나눠져 있습니다. 이제 우리는 ```parsed``` 리스트에서 필요한 태그와 텍스트를 추출할 수 있습니다.
+
+## 깊게 파고들기:
+
+HTML 구문 분석은 인터넷의 시작과 함께 등장한 고전적인 문제입니다. 예전에는 정규식을 사용해 HTML 코드를 파싱하는 것이 일반적이었습니다. 하지만, 이것은 복잡하고 실수하기 쉬웠기 때문에 ```HTML-parser``` 라이브러리와 같은 도구가 도입되었습니다.
+
+대안으로, 최근에는 ```tagsoup```이라는 라이브러리가 인기를 얻고 있습니다. 이것은 더 유연하게 HTML 코드를 파싱할 수 있고, 어떤 종류의 HTML 코드든 처리할 수 있습니다.
+
+코드를 더 깊이 들여다보면, HTML 코드를 파싱하는데 사용되는 state machine 등의 다양한 논리를 볼 수 있습니다. 하지만, 이러한 세부 사항은 개발자의 관심사가 아니기 때문에 넘길 수 있습니다.
+
+## 더 알아보기:
+
+- [Text.HTML.Parser documentation](https://hackage.haskell.org/package/html-parser/docs/Text-HTML-Parser.html)
+- [HTML-parser Hackage page](https://hackage.haskell.org/package/html-parser)
+- [tagsoup library official website](http://hackage.haskell.org/package/tagsoup)

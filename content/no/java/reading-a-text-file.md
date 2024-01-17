@@ -1,7 +1,7 @@
 ---
-title:                "Å lese en tekstfil."
-html_title:           "Java: Å lese en tekstfil."
-simple_title:         "Å lese en tekstfil."
+title:                "Å lese en tekstfil"
+html_title:           "Java: Å lese en tekstfil"
+simple_title:         "Å lese en tekstfil"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Files and I/O"
@@ -10,61 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hva og hvorfor?
+Når vi snakker om å lese en tekstfil, mener vi å ta informasjon fra en tekstfil og behandle den i vårt Java-program. Dette er en vanlig oppgave for mange programmører, siden tekstfiler er en vanlig måte å lagre og organisere data på. Ved å lese en tekstfil kan vi få tilgang til denne dataen og bruke den til å utføre forskjellige oppgaver i vårt program.
 
-Hvis du jobber med Java-programmering, er det sannsynligvis at du må lese innholdet av en tekstfil på et eller annet tidspunkt. Dette kan være nyttig for å lese data eller konfigurasjonsfiler, hente informasjon fra en bruker eller for å utføre andre operasjoner som krever tekstbehandling. I denne artikkelen vil vi vise deg hvordan du kan lese en tekstfil i Java på en enkel måte.
-
-## Hvordan
-
-Det første du trenger å gjøre er å opprette en tekstfil på datamaskinen din. Dette kan gjøres ved hjelp av et enkelt tekstredigeringsprogram. I vårt eksempel vil vi lese en fil som heter "testfil.txt".
-
-For å lese innholdet av denne filen i Java, kan du bruke FileInputStream og InputStreamReader klasser. Her er et enkelt eksempel:
+## Hvordan:
+Vi kan lese en tekstfil ved å bruke klassebiblioteket FileReader i Java. Først må vi opprette en instans av FileReader og angi navnet på tekstfilen vi vil lese. Deretter kan vi bruke en Scanner til å lese informasjonen fra tekstfilen og behandle den. Her er et eksempel på hvordan dette kan gjøres:
 
 ```Java
-import java.io.*;
+import java.io.FileReader;
+import java.util.Scanner;
 
-public class ReadFile {
+public class LeseTekstfil {
   public static void main(String[] args) {
     try {
-      // Oppretter en ny fil-inputstrøm og leser tekstfilen
-      FileInputStream fis = new FileInputStream("testfil.txt");
-      // Oppretter en ny leser for å behandle inputstrømmen
-      InputStreamReader isr = new InputStreamReader(fis);
-      // Leser en karakter av gangen og skriver ut på konsollen
-      int karakter;
-      while ((karakter = isr.read()) != -1) {
-        System.out.print((char) karakter);
+      // Opprett en instans av FileReader med navnet på tekstfilen
+      FileReader filLeser = new FileReader("minTekstfil.txt");
+      
+      // Bruk en Scanner til å lese informasjon fra tekstfilen
+      Scanner leser = new Scanner(filLeser);
+      
+      // Les linje for linje fra tekstfilen og skriv ut informasjonen
+      while (leser.hasNextLine()) {
+        String linje = leser.nextLine();
+        System.out.println(linje);
       }
-      // Lukker fil-inputstrømmen
-      fis.close();
-    } catch (IOException e) {
-      System.out.println("Feil ved lesing av fil: " + e.getMessage());
+      
+      // Lukk Scanner og FileReader for å frigjøre ressurser
+      leser.close();
+      filLeser.close();
+      
+    } catch (Exception e) {
+      System.out.println("Kunne ikke lese tekstfilen.");
+      e.printStackTrace();
     }
   }
 }
 ```
 
-Eksempel på utskrift:
+Eksempel output:
 
 ```
-Dette er en testfil
-Laget av enkelt bruker
-for å vise hvordan man kan lese en tekstfil i Java
+Dette er en tekstfil.
+Den inneholder litt informasjon.
+Programmet har nå lest denne informasjonen og skrevet den ut.
 ```
 
-Det første trinnet er å importere java.io-pakken for å bruke nødvendige klasser. Deretter oppretter vi et nytt FileInputStream-objekt og leser filen ved hjelp av InputStreamReader. I while-løkken leser vi en karakter av gangen og bruker metoden read() for å konvertere det numeriske unicode-verdien til en bokstav. Til slutt lukker vi fil-inputstrømmen for å frigjøre ressurser.
+## Dykk dypere:
+Å lese en tekstfil har vært en vanlig oppgave for Java-programmerere siden begynnelsen av språket. Tidligere var det vanlig å bruke BufferedReader-klassen i stedet for Scanner-klassen for å lese tekstfiler. Det finnes også andre måter å lese tekstfiler på, for eksempel ved bruk av InputStream og InputStreamReader-klassene. Det er viktig å merke seg at ved å bruke Scanner, vil alle tegn som blir lest bli konvertert til Unicode-format, mens ved bruk av BufferedReader vil tegnene bli lest direkte fra teksten i filen.
 
-## Deep Dive
-
-Det finnes flere måter å lese en tekstfil på i Java, inkludert bruk av Scanner-klassen eller bruk av en BufferedReader. Disse alternativene kan være mer effektive hvis du for eksempel trenger å lese flere linjer av gangen.
-
-Det er også viktig å håndtere eventuelle unntak som kan oppstå under lesing av en tekstfil. I vårt eksempel brukte vi en try-catch blokk for å håndtere IOException, som kan oppstå hvis filen ikke finnes eller det oppstår andre problemer under lesing.
-
-En annen viktig ting å huske på er å lukke fil-inputstrømmen etter at du er ferdig med å lese filen. Dette vil sørge for at eventuelle åpne ressurser blir frigjort og at filen blir lukket på en riktig måte.
-
-## Se også
-
-- [Java FileInputStream dokumentasjon](https://docs.oracle.com/javase/7/docs/api/java/io/FileInputStream.html)
-- [Java InputStreamReader dokumentasjon](https://docs.oracle.com/javase/7/docs/api/java/io/InputStreamReader.html)
-- [Java Scanner dokumentasjon](https://docs.oracle.com/javase/7/docs/api/java/util/Scanner.html)
-- [Java BufferedReader dokumentasjon](https://docs.oracle.com/javase/7/docs/api/java/io/BufferedReader.html)
+## Se også:
+- [Oracle dokumentasjon for FileReader](https://docs.oracle.com/javase/10/docs/api/java/io/FileReader.html)
+- [Tutorialspoint tutorial on reading text files in Java](https://www.tutorialspoint.com/java/io/java_io_filereader.htm)
+- [Java API: Scanner Class](https://www.geeksforgeeks.org/scanner-class-in-java/)

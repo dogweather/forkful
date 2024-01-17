@@ -10,39 +10,22 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+Was & Warum?
+Das Versenden von HTTP-Anfragen ist ein wichtiger Bestandteil der Webentwicklung. Dabei wird eine Anfrage an einen Server geschickt, der dann entsprechend antwortet. Programmierer nutzen dieses Konzept, um Daten von einem Server abzurufen oder zu senden.
 
-Wer sich mit dem Thema Webentwicklung oder Automatisierung beschäftigt, wird oft auf den Begriff "HTTP Request" stoßen. Doch was genau verbirgt sich dahinter und warum ist es wichtig, sich damit auseinanderzusetzen? HTTP (Hypertext Transfer Protocol) ist ein grundlegender Bestandteil des World Wide Web und ermöglicht die Kommunikation zwischen Client und Server. Das Versenden von HTTP Requests ist der Schlüssel, um Daten von einem Server zu erhalten oder an diesen zu senden.
+Wie geht's?
+Im Bash gibt es verschiedene Möglichkeiten, um HTTP-Anfragen zu senden. Eine davon ist die Nutzung des Befehls ```curl```. Mit diesem Befehl kann eine URL angegeben werden, um eine entsprechende Anfrage an den Server zu senden. Zum Beispiel: ```curl www.example.com``` 
 
-## Wie geht's
+Für eine genauere Kontrolle über die Anfrage, können auch Parameter hinzugefügt werden. Zum Beispiel, um eine POST-Anfrage zu senden: ```curl --data "name=John&age=30" www.example.com```
 
-Um eine HTTP Anfrage zu senden, können verschiedene Tools und Programmiersprachen verwendet werden. In diesem Artikel werden wir uns jedoch auf das Senden von HTTP Requests mit Bash, der Shell eines Linux-Systems, konzentrieren.
+Alternativ kann auch der Befehl ```wget``` benutzt werden, um eine Datei von einem Server herunterzuladen. Zum Beispiel: ```wget www.example.com/file.txt```
 
-Um eine HTTP Anfrage mit Bash zu senden, verwenden wir das Tool `curl`. Es ist bereits in den meisten Linux-Distributionen vorinstalliert und ermöglicht das Senden von HTTP Requests über die Kommandozeile.
+Wenn Sie die Antwort des Servers in einer Variable speichern möchten, können Sie den Befehl ```$(curl www.example.com)``` verwenden. Dies ist besonders nützlich, wenn Sie die Antwort weiterverarbeiten möchten.
 
-Ein einfaches Beispiel für den Aufruf einer Website mit `curl` sieht wie folgt aus:
-```Bash
-curl www.example.com
-```
+Tiefer Einblick
+Das Konzept des HTTP-Anforderungs-Antwort-Zyklus wurde bereits 1989 von Tim-Berners Lee vorgeschlagen und ist bis heute das Hauptprotokoll für den Austausch von Daten im Web. Neben den genannten Befehlen gibt es auch andere Tools wie ```wget```, ```httpie``` oder ```lynx```, die für die Durchführung von HTTP-Anfragen verwendet werden können.
 
-Dieser Befehl sendet GET Request an die angegebene URL und gibt die HTML des Webservers in der Konsole aus. Möchtest du die Ausgabe stattdessen in eine Datei schreiben, kannst du folgenden Befehl verwenden:
-```Bash
-curl -o output.html www.example.com
-```
+Wenn Sie noch mehr Kontrolle über die Anfragen haben möchten, können Sie sich auch mit den verschiedenen Optionen des ```curl```-Befehls auseinandersetzen. Hier können Sie zum Beispiel verschiedene Header oder Authentifizierungsarten angeben.
 
-Neben GET Requests kann `curl` auch POST Requests senden, die oft zur Übermittlung von Formulardaten verwendet werden. Dazu muss der Content-Type Header angegeben werden und die Daten in das JSON-Format konvertiert werden. Ein Beispiel sieht wie folgt aus:
-```Bash
-curl -X POST -H "Content-Type: application/json" -d '{"username":"example", "password":"1234"}' www.example.com/login
-```
-
-## Tiefergehende Informationen
-
-`curl` bietet viele weitere Funktionen, um HTTP Requests zu konfigurieren und zu automatisieren. Zum Beispiel kann man mit dem `-H` Parameter beliebige Header hinzufügen, mit `-u` einen Benutzernamen und ein Passwort angeben und mit `-s` die Ausgabe der Anfrage komplett deaktivieren.
-
-Eine detaillierte Beschreibung aller Parameter und Funktionen findest du in der offiziellen Dokumentation von `curl`. Auch die `man`-Seite von Bash enthält weitere Informationen und Beispiele.
-
-## Siehe auch
-
-- [Offizielle Dokumentation von `curl`](https://curl.se/docs/)
-- [`man`-Seite von Bash](https://linux.die.net/man/1/bash)
-- [HTTP Requests mit Python in 60 Sekunden](https://realpython.com/python-requests/)
+Siehe auch
+Weitere Informationen zur Verwendung von HTTP-Anfragen in Bash finden Sie in der offiziellen Dokumentation zu ```curl``` and ```wget```.

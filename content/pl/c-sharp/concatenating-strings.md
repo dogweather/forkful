@@ -10,31 +10,22 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i dlaczego?
+Konkatenacja ciągów znaków w programowaniu oznacza łączenie wielu ciągów znaków w jeden dłuższy ciąg. Programiści często wykorzystują to narzędzie w celu tworzenia czytelniejszych i bardziej złożonych napisów, np. w formularzach czy komunikatach dla użytkownika.
 
-Często zdarza się, że w programowaniu musimy łączyć różne ciągi znaków w jedną całość. Na przykład, gdy chcemy wyświetlić imię i nazwisko użytkownika, musimy połączyć dwa osobne ciągi znaków w jeden. W tym artykule dowiesz się, jak w prosty sposób połączyć ze sobą różne ciągi znaków w języku C#.
-
-## Jak to zrobić
-
-Aby połączyć ze sobą dwa ciągi znaków w języku C#, musimy skorzystać z metody `Concat()` dostępnej w klasie `String`. Przykładowy kod wyglądałby następująco:
-
+## Jak to zrobić?
+W języku C# konkatenacja ciągów znaków jest bardzo prosta dzięki operatorowi „+”. Wystarczy umieścić pomiędzy dwoma ciągami znaków ten operator, a program połączy je w jeden ciąg. Przykładowe użycie wygląda tak:
 ```C#
-string firstName = "Jan";
-string lastName = "Kowalski";
-string fullName = String.Concat(firstName, " ", lastName);
-Console.WriteLine(fullName);
+string imie = "Anna";
+string nazwisko = "Kowalska";
+string pelneNazwisko = imie + " " + nazwisko;
 ```
-Output:
-```
-Jan Kowalski
-```
+W efekcie zmienna "pelneNazwisko" będzie przechowywała wartość "Anna Kowalska". 
 
-## Dogłębne zagłębienie
+## Głębszy zanurzanie się
+Konkatenacja ciągów znaków jest wykorzystywana już od czasów pierwszych języków programowania. W niektórych językach, np. C, wymagała ona użycia specjalnych funkcji lub bibliotek. Jednak w języku C# jest to znacznie ułatwione dzięki wykorzystaniu operatora „+”. Alternatywnym sposobem łączenia ciągów znaków jest wykorzystanie klasy StringBuilder, która jest bardziej efektywna w przypadku łączenia większej liczby ciągów. 
 
-Metoda `Concat()` w języku C# jest jednym z wielu sposobów na łączenie ciągów znaków. Istnieje również wiele innych metod, takich jak `String.Join()` czy `StringBuilder`, które pozwolą nam na bardziej efektywne i elastyczne łączenie ciągów. Ważne jest jednak, aby pamiętać o tym, że częste używanie tych metod może wpłynąć na wydajność naszego programu.
-
-## Zobacz również
-
-- Dokumentacja metody `Concat()` w języku C#: https://docs.microsoft.com/pl-pl/dotnet/api/system.string.concat?view=netcore-3.1
-- Polecenie `String.Join()` w języku C#: https://docs.microsoft.com/pl-pl/dotnet/api/system.string.join?view=netcore-3.1
-- Klasy `StringBuilder` w języku C#: https://docs.microsoft.com/pl-pl/dotnet/api/system.text.stringbuilder?view=netcore-3.1
+## Zobacz także
+- Dokumentacja dotycząca konkatenacji ciągów znaków w języku C#: https://docs.microsoft.com/pl-pl/dotnet/csharp/how-to/concatenate-multiple-strings
+- Porównanie wydajności konkatenacji ciągów znaków z użyciem operatora „+” i klasy StringBuilder: https://stackoverflow.com/questions/24718392/performance-difference-between-stringbuilder-and-string-concatenation
+- Alternatywne sposoby łączenia ciągów znaków w języku C#: https://www.dotnetperls.com/concat

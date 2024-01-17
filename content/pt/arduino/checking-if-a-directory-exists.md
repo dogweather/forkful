@@ -10,48 +10,22 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Porquê
-Algumas vezes, precisamos verificar se um diretório existe ou não antes de executar uma determinada tarefa em nosso código Arduino. Isso é importante, por exemplo, quando precisamos armazenar dados em um diretório específico ou carregar um arquivo de um diretório específico.
+# O que e por quê?
+Verificar se um diretório existe é um processo importante para garantir a funcionalidade correta do seu programa. É uma ação comumente praticada por programadores para garantir que os arquivos necessários para o funcionamento do programa estejam presentes no local correto.
 
-## Como Fazer
-Para verificar se um diretório existe, usamos a função `SD.exists (path)` da biblioteca SD do Arduino. Primeiro, incluímos a biblioteca SD em nosso código:
-
+# Como fazer:
 ```Arduino
-#include <SD.h>
-```
-
-Em seguida, definimos o caminho do diretório que queremos verificar:
-
-```Arduino
-String path = "/diretorio/exemplo/";
-```
-
-E, finalmente, usamos a função `SD.exists()` para verificar se o diretório existe ou não:
-
-```Arduino
-if (SD.exists(path)) {
-    // faça algo se o diretório existir
+if (SD.exists("diretorio")) {
+  Serial.println("O diretório existe!");
 } else {
-    // faça algo se o diretório não existir
+  Serial.println("O diretório não existe!");
 }
 ```
 
-Por exemplo, podemos criar um novo diretório se o mesmo não existir:
+# Explorando mais a fundo:
+Verificar a existência de um diretório pode ser útil em diferentes situações, como por exemplo, checar se um dispositivo de armazenamento está conectado ao Arduino. Existem outras formas de realizar essa verificação, como utilizando a biblioteca `File` ou o comando `listFiles()`.
 
-```Arduino
-String path = "/novo_diretorio/";
-
-if (!SD.exists(path)) {
-    SD.mkdir(path);
-    Serial.println("Diretório criado com sucesso!");
-}
-```
-
-## Mergulho Profundo
-Quando usamos a função `SD.exists()` para verificar se um diretório existe, o caminho especificado deve ser absoluto, ou seja, deve incluir o nome do cartão SD e o diretório raiz. Por exemplo, para verificar se o diretório "exemplo" existe no cartão SD, o caminho deve ser "/SD/exemplo/".
-
-Outro ponto importante é que a função `SD.exists()` só é capaz de verificar a existência de diretórios, não de arquivos.
-
-## Veja Também
-- [Documentação da biblioteca SD do Arduino](https://www.arduino.cc/en/Reference/SD)
-- [Guia completo de uso de cartões SD com Arduino](https://learn.adafruit.com/adafruit-micro-sd-breakout-board-card-tutorial?view=all)
+# Veja também:
+- Documentação oficial do Arduino sobre a função [exists()](https://www.arduino.cc/en/Reference/Exists)
+- Tutorial sobre a biblioteca `File` do Arduino [aqui](https://www.arduino.cc/en/Tutorial/LibraryExamples/Listfiles)
+- Mais informações sobre a função `listFiles()` [aqui](https://arduinogetstarted.com/tutorials/arduino-list-files)

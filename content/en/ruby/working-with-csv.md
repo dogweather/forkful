@@ -10,52 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-CSV (Comma Separated Values) files are a common data format used for storing and exchanging tabular data. Working with CSV files can be useful for tasks such as data analysis, importing/exporting data from databases, and creating reports. In order to work with CSV files, having a good understanding of how to manipulate and parse them using programming languages like Ruby can save time and improve efficiency.
+## What & Why?
 
-## How To
-To begin working with CSV files in Ruby, we first need to require the CSV library. This can easily be done by adding `require 'csv'` at the top of your file. Now, let's take a look at how we can read, write, and manipulate CSV files using Ruby.
+CSV stands for Comma Separated Values, and it is a file format used for storing data in a tabular form. It is commonly used for exchanging data between different programs, as it is a simple and universal format that can be easily read by most programming languages. Programmers use CSV because it allows them to easily store, access and manipulate large amounts of data in a structured manner.
 
-#### Reading CSV Files
-To read a CSV file, we can use the `CSV.foreach` method. This method takes two parameters - the path to the CSV file and an options hash. Here's an example:
+## How to:
 
-```
-CSV.foreach("data.csv", headers: true) do |row|
-  puts row
+To work with CSV in Ruby, we first need to require the "csv" library. This can be done by writing `require 'csv'` at the beginning of your code. 
+
+### Reading from a CSV File
+To read data from a CSV file, we can use the `CSV.foreach` method. This method takes two arguments - the file path and a hash of options. Here's an example:
+```Ruby
+CSV.foreach('data.csv', headers: true) do |row|
+  puts row['Name'] #assuming the first row in the CSV file contains a column called "Name"
 end
 ```
+The `headers: true` option specifies that the first row in the CSV file contains column headers. We can then access the data in each row using the column headers as keys.
 
-This will print each row of the CSV file, with the first row being used as headers for the data. If we want to access specific columns of the data, we can do so by using the headers as keys. For example, `row['Name']` will give us the value in the "Name" column.
-
-#### Writing CSV Files
-To write data to a new CSV file, we can use the `CSV.open` method. This method takes two parameters - the path to the CSV file and an options hash. Here's an example:
-
-```
-data = [['Name', 'Age'], ['John', '25'], ['Jane', '30']]
-CSV.open("new_data.csv", "w") do |csv|
-  data.each do |row|
-    csv << row
-  end
+### Writing to a CSV File
+To write data to a CSV file, we can use the `CSV.open` method. This method takes two arguments - the file path and a hash of options. Here's an example:
+```Ruby
+CSV.open('new_data.csv', 'w', headers: true) do |csv|
+  csv << ['John', 'Doe', 25] #writing data as an array
+  csv << { name: 'Jane', surname: 'Smith', age: 30 } #writing data as a hash
 end
 ```
-
-This will create a new CSV file with the data provided. We can also use the `<<` operator to add new rows to an existing CSV file.
-
-#### Manipulating CSV Data
-The `CSV` library also provides useful methods for manipulating CSV data. For example, we can sort the data by a specific column, add or remove columns, and filter the data based on certain conditions. Here's an example of sorting CSV data by the "Age" column:
-
-```
-sorted_data = CSV.read("data.csv", headers: true).sort_by { |row| row['Age'] }
-```
+The `'w'` mode specifies that the file should be opened for writing. Again, the `headers: true` option is used to specify that the first row should contain column headers. We can then write data to the file by using the `<<` operator.
 
 ## Deep Dive
-The `CSV` library also allows us to customize how we read and write CSV files by using different options in the `foreach` and `open` methods. We can also specify different delimiters and quote characters for our CSV files.
 
-In addition, the `CSV` library automatically handles data formatting, such as converting numbers and dates to their appropriate types. It also has methods for converting CSV data to other data structures, such as hashes or arrays.
+CSV was first introduced in the early 1970s as a way to store data in a structured format. It gained popularity in the 1990s and has since become a widely used file format due to its simplicity and compatibility with different programs. Alternatives to CSV include XML and JSON, which are more versatile but can be more complex and less human-readable.
 
-Lastly, it's important to keep in mind that the `CSV` library may not be the most efficient option for working with large datasets. In such cases, it may be better to use a specialized library or tool for handling big data.
+When working with CSV in Ruby, it is important to understand how different versions of Ruby handle encoding. In older versions, CSV data was assumed to be in the same encoding as the current locale. However, in newer versions, CSV data is assumed to be in UTF-8 encoding unless specified otherwise. This can lead to unexpected results when working with non-English characters.
 
 ## See Also
-- [Ruby CSV documentation](https://ruby-doc.org/stdlib-2.7.1/libdoc/csv/rdoc/CSV.html)
-- [Working with CSV Files in Ruby](https://www.rubyguides.com/2018/10/working-with-csv-files-ruby/)
-- [Manipulating CSV Data in Ruby](https://medium.com/free-code-camp/processing-csv-files-in-ruby-a-really-basic-cheat-sheet-1bbf7ea014f1)
+
+To learn more about working with CSV in Ruby, you can refer to the official Ruby documentation on CSV (https://ruby-doc.org/stdlib-2.6.3/libdoc/csv/rdoc/CSV.html). You can also check out other sources or tutorials on how to use CSV in Ruby. Happy coding!

@@ -10,47 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Чому
+## Що & Чому?
+Робота з JSON - це обробка структурованих даних у вигляді текстових форматів на основі JavaScript. Програмісти використовують цей формат для обміну даними між різними програмами та системами, оскільки він є зручним і легко зрозумілим для людей та комп'ютерів.
 
-Зараз робота з JSON є необхідною для багатьох проектів, оскільки цей формат даних дозволяє зручно взаємодіяти з різноманітними джерелами та ресурсами в мережі. Також, Haskell має потужні інструменти для роботи з JSON, які значно спрощують цей процес.
-
-## Як
-
-Для початку, необхідно імпортувати модуль "Data.Aeson" у свій проект. Далі, щоб отримати дані з JSON файлу, скористаємося функцією "decodeFileStrict" яка приймає шлях до файлу та повертає тип "Maybe Value". За допомогою функції "fromJust" можна отримати значення типу "Value" з "Maybe Value", якщо значення не Nothing.
-
-Пример:
+## Як?
+Нижче наведені приклади коду та виведення даних для демонстрації роботи з JSON в мові Haskell:
 
 ```Haskell
 import Data.Aeson
 
-data Person = Person {
-    name :: String,
-    age :: Int,
-    occupation :: String
-} deriving (Show, Generic)
+-- Десеріалізація JSON даних у тип Person
+data Person = Person
+  { name :: String
+  , age :: Int
+  , occupation :: String
+  } deriving (Show)
 
-instance FromJSON Person
-instance ToJSON Person
+instance FromJSON Person where
+    parseJSON (Object v) = Person <$> v .: "name" <*> v .: "age" <*> v .: "occupation"
+    -- Вибірка значень з об'єкта JSON за допомогою оператора (<$>)
 
-main :: IO()
+-- Приклад JSON даних
+json :: ByteString
+json = "{\"name\":\"John\",\"age\":25,\"occupation\":\"Developer\"}"
+
+-- Десеріалізація та виведення даних
+main :: IO ()
 main = do
-    json <- decodeFileStrict "./person.json" :: Maybe Person
-    let person = fromJust json
-    print person
+    let maybePerson = decode json :: Maybe Person -- Десеріалізація даних у тип Maybe
+    case maybePerson of
+        Just person -> print person -- Виведення даних про персону
+        Nothing -> putStrLn "Invalid JSON data" -- Виведення повідомлення про помилку
 ```
 
-В даному прикладі, із файлу "person.json" було прочитано дані та виведено об'єкт типу Person на екран.
+Виведення:
+
+```
+Person {name = "John", age = 25, occupation = "Developer"}
+```
 
 ## Глибше
-
-Щоб зрозуміти, як працює робота з JSON у Haskell, слід розібратися з базовими структурами даних, які використовуються для збереження та обробки JSON даних. Основними типами є "Value" та "Pair", для представлення об'єктів та поля JSON відповідно.
-
-Також, для зручної роботи зі структурами данних, можна скористатися синтаксичними розширеннями, такими як "DeriveGeneric" та "OverloadedStrings". Вони дозволяють автоматично створювати інстанси типів, а також дозволяють використати строкові літерали для представлення JSON даних.
-
-Для детальнішого вивчення роботи з JSON у Haskell, рекомендуємо ознайомитися з документацією модуля "Data.Aeson" та подивитися додаткові приклади в Інтернеті.
+JSON був створений Дугласом Крокфордом в 2001 році та став широко використовуваним форматом обміну даними. У мові Haskell, для роботи з JSON існують багато бібліотек, таких як "aeson" та "json". Іншими альтернативами є формати XML та CSV. Для оптимальної роботи з JSON у Haskell, варто детально ознайомитися з функціями бібліотек та вивчити особливості десеріалізації та серіалізації даних.
 
 ## Дивіться також
-
-- [Офіційна документація з роботи з JSON у Haskell](https://hackage.haskell.org/package/aeson)
-- [Стаття "Parsing JSON in Haskell with Aeson" на Medium](https://medium.com/@jonathangfischoff/parsing-json-in-haskell-with-aeson-6adea64aeb93)
-- [Стаття "Working with JSON in Haskell" на сайті "School of Haskell"](https://www.schoolofhaskell.com/school/starting-with-haskell/libraries-and-frameworks/text-manipulation/json)
+- [Офіційна документація по бібліотеці "aeson"](https://hackage.haskell.org/package/aeson)
+- [Офіційна документація по бібліотеці "json"](http://hackage.haskell.org/package/json)

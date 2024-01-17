@@ -1,7 +1,7 @@
 ---
-title:                "Das Lesen von Befehlszeilenargumenten"
-html_title:           "Elixir: Das Lesen von Befehlszeilenargumenten"
-simple_title:         "Das Lesen von Befehlszeilenargumenten"
+title:                "Lesen von Befehlszeilenargumenten"
+html_title:           "Elixir: Lesen von Befehlszeilenargumenten"
+simple_title:         "Lesen von Befehlszeilenargumenten"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Files and I/O"
@@ -10,27 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+Was und Warum?
+Das Einlesen von Befehlszeilenargumenten ist eine Technik, die es Programmierern ermöglicht, Benutzereingaben direkt in ihrem Code zu verarbeiten. Es ist eine effiziente Möglichkeit, eine interaktive Anwendung zu erstellen oder das Verhalten einer Anwendung anzupassen, ohne den Quellcode ändern zu müssen.
 
-Command Line Arguments, oder auf Deutsch Befehlszeilenargumente, sind eine wichtige Funktion in der Programmierung. Sie erlauben es uns, beim Starten einer Anwendung spezifische Parameter mitzugeben, die dann von unserem Programm ausgewertet werden können. Das kann sehr nützlich sein, um das Verhalten unseres Codes anzupassen und ihn flexibler zu machen.
+Wie geht's?
+Um Befehlszeilenargumente in Elixir zu lesen, können wir die "System.argv" Funktion verwenden. Diese Funktion gibt eine Liste der Argumente zurück, die bei dem Aufruf des Codes angegeben wurden. Wir können sie dann in unserem Code verwenden, um die gewünschten Aktionen auszuführen.
 
-## How To
-
-Um in Elixir Befehlszeilenargumente zu lesen, können wir auf die `System.argv` Funktion zurückgreifen. Diese gibt uns eine Liste mit den übergebenen Argumenten zurück. Im folgenden Beispiel lesen wir zwei Argumente aus und geben sie anschließend aus:
-
-```Elixir
+```
+Elixir
 args = System.argv
-IO.puts("Erstes Argument: #{Enum.at(args, 0)}")
-IO.puts("Zweites Argument: #{Enum.at(args, 1)}")
+IO.puts("Das erste Argument ist: #{args[0]}")
 ```
 
-Mit `Enum.at` können wir auf bestimmte Indizes der Liste zugreifen und die Argumente so auslesen. Wenn keine Argumente angegeben wurden, wird die Liste einfach leer sein.
+Beispieloutput:
+```
+> elixir argumente.exs argument1 argument2
+Das erste Argument ist: argument1
+```
 
-## Deep Dive
+Tiefgehende Einblicke
+Das Einlesen von Befehlszeilenargumenten ist eine gebräuchliche Technik in vielen Programmiersprachen, einschließlich Elixir. Es ermöglicht es uns, interaktive Anwendungen zu erstellen, ohne dass der Benutzer jedes Mal die gleichen Eingaben tätigen muss. Alternativ können wir auch Umgebungsvariablen verwenden, um Benutzereingaben zu lesen. Einer der Gründe, warum Programmierer Befehlszeilenargumente verwenden, ist die Flexibilität und Anpassbarkeit, die sie bieten.
 
-Wenn wir einen genaueren Blick auf die `System.argv` Funktion werfen, sehen wir, dass sie eine Option `:raw` hat. Diese gibt uns eine Liste mit den übergebenen Argumenten zurück, ohne sie vorher zu interpretieren. Das kann in manchen Fällen nützlich sein, wenn wir die Argumente selbst auswerten möchten. Außerdem können wir mit `System.argv(Enum, :argc)` die Anzahl der übergebenen Argumente auslesen.
-
-See Also
-
-- Offizielle Dokumentation: https://hexdocs.pm/elixir/System.html#argv/1
-- "Command Line Arguments in Elixir" von Philipp Krüger: https://dev.to/philippk/elixir-command-line-arguments-4ma5
+Siehe auch
+- [Official Elixir Documentation for System.argv](https://hexdocs.pm/elixir/System.html#argv/0)
+- [Understanding Command Line Arguments in Elixir](https://medium.com/@vgraziano/understanding-command-line-arguments-in-elixir-2ebfe9160f6d)
+- [Elixir - Reading Command Line Input](https://learngowith.me/elixir-reading-command-line-input)

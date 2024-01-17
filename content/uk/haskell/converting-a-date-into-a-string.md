@@ -1,7 +1,7 @@
 ---
-title:                "Перетворення дати у рядок"
-html_title:           "Haskell: Перетворення дати у рядок"
-simple_title:         "Перетворення дати у рядок"
+title:                "Перетворення дати в рядок"
+html_title:           "Haskell: Перетворення дати в рядок"
+simple_title:         "Перетворення дати в рядок"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Dates and Times"
@@ -10,38 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Чому
+# Що і навіщо?
+Конвертування дати у рядок - це процес перетворення дати у зрозумілий для комп'ютера формат, щоб його можна було обробити та використовувати в програмі. Це корисний підхід для програмістів, які працюють з обробкою дати в своїх програмах.
 
-Велика частина роботи програміста полягає у роботі з датами. Конвертування дати в рядок може бути корисним для звітування, збереження дати у базі даних або для відображення у користувацькому інтерфейсі. Ця стаття допоможе вам зрозуміти, як перетворити дату в рядок, використовуючи мову програмування Haskell.
-
-## Як
-
-У Haskell існує багато способів конвертування дати в рядок. Найпростішим способом є використання функції `show` для перетворення дати у рядок. Припустимо, ми маємо дату 15 червня 2021 року. Нижче наведений приклад коду та його виведення:
-
+# Як це зробити?
 ```Haskell
-show (2021, 06, 15)
--- Приклад виведення: "(2021, 06, 15)"
+import Data.Time.Format (formatTime, defaultTimeLocale)
+import Data.Time.Clock (getCurrentTime)
+import System.Locale (defaultTimeLocale)
+
+main :: IO()
+main = do
+  currentTime <- getCurrentTime
+  let dateString = formatTime defaultTimeLocale "%Y-%m-%d" currentTime
+  putStrLn $ "Сьогоднішня дата: " ++ dateString
 ```
 
-Іншим способом є використання модуля `Data.Time.Format` для визначення бажаного формату рядка. Наприклад, якщо ми хочемо отримати дату у форматі `MM/DD/YYYY` (місяць/день/рік), ми можемо використати функцію `formatTime` з наступними параметрами: формат рядка, дата, і вихідний рядок для форматування. Ось приклад коду та його виведення:
+В результаті ми отримуємо рядок, що відображає сьогоднішню дату у форматі "YYYY-MM-DD", наприклад "2020-05-05". Ми використали функції з модулів Data.Time.Format та Data.Time.Clock, а також змінну defaultTimeLocale, щоб встановити стандартний формат дати.
 
-```Haskell
-import Data.Time.Format
-import Data.Time.Calendar
-import Data.Time.Clock
+# Глибше процесу
+Конвертування дати у рядок є важливою частиною програмування, особливо у веб-додатках та базах даних. Наприклад, при відображенні дати на інтерфейсі користувача також потрібно конвертувати його у зрозумілий формат. Альтернативою є використання бібліотек, таких як TimeSeries чи Time as Data, але вони можуть бути складні у використанні для початківців.
 
-let currentDate = utctDay getCurrentTime
-formatTime defaultTimeLocale "%m/%d/%Y" currentDate
--- Приклад виведення: "06/15/2021"
-```
+Імплементаційні деталі включають в себе різні формати дати та часу, підтриманих мовою Haskell, що можуть відрізнятися від інших мов програмування. Також важливо врахувати часові зони та локалі при конвертуванні дати.
 
-## Поглиблене дослідження
-
-Якщо ви хочете детальніше ознайомитися з роботою з датами у Haskell, вам може бути цікаво дослідити інші методи конвертації дати в рядок, такі як використання пакету `time`, або звернення до стандартів ISO 8601 та RFC 3339 для форматування дати у міжнародному форматі.
-
-## Дивіться також
-
-- [Haskell Date and Time Cookbook](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time-Format.html)
-- [Haskell `formatTime` function](https://www.haskell.org/hoogle/?hoogle=formatTime)
-- [ISO 8601 standard](https://www.iso.org/iso-8601-date-and-time-format.html)
-- [RFC 3339 standard](https://tools.ietf.org/html/rfc3339)
+# Дивись також
+- [Офіційна документація з модуля Data.Time.Format](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time-Format.html)
+- [Вступ до роботи з датами та часом у Haskell](https://www.schoolofhaskell.com/school/starting-with-haskell/basics-of-haskell/10-dates-and-times-in-haskell)
+- [Бібліотека TimeSeries](https://hackage.haskell.org/package/timeseries)

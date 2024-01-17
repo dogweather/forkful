@@ -1,7 +1,7 @@
 ---
-title:                "Капіталізація рядка"
-html_title:           "TypeScript: Капіталізація рядка"
-simple_title:         "Капіталізація рядка"
+title:                "Велика перша літера у рядку"
+html_title:           "TypeScript: Велика перша літера у рядку"
+simple_title:         "Велика перша літера у рядку"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -10,47 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Чому 
-Інколи нам потрібно змінити першу літеру рядка на велику букву. Це корисно для коректного виводу на екран або для виконання певних операцій над текстом.
+Що і чому? 
 
-## Як
-```TypeScript
-function capitalizeString(str: string): string {
-  return str.charAt(0).toUpperCase() + str.slice(1);
-}
+З несподіваного істочника, випливає необхідність написання коду, який може бути непередбачуваним для користувача. Це може викликати плутанину, особливо коли кожне слово по-своєму називається. І саме тут на допомогу приходить capitalizing у string. Це означає, що перше слово в рядку буде написано великими літерами, а всі інші - малими. Таким чином, рядок буде більш читабельним і легше розпізнаватися для програміста.
 
-const input = "typescript";
-console.log(capitalizeString(input));
-// Output: Typescript
-```
-Цей приклад показує як змінити першу літеру рядка на велику за допомогою вбудованої функції `toUpperCase()` та методу `slice()` для отримання підрядка після першої літери.
+Як це зробити: 
 
-### Використання регулярних виразів
-```TypeScript
-function capitalizeString(str: string): string {
-  return str.replace(/\b\w/, (c) => c.toUpperCase());
-}
+```TypeScript 
+const str = "цей рядок потрібно зробити capitalizing"; 
+console.log(str.toUpperCase()); 
+``` 
+Вивід: 
+Це рядок потрібно зробити capitalizing 
 
-// Or with ES6 syntax
-const capitalizeString = (str: string): string => {
-  return str.replace(/\b\w/, (c) => c.toUpperCase());
-};
+Глибовка дослідження: 
 
-const input = "javascript";
-console.log(capitalizeString(input));
-// Output: Javascript
-```
-У цьому прикладі ми використовуємо метод `replace()` та регулярний вираз `\b\w`, який означає першу літеру кожного слова у рядку. Функція `toUpperCase()` виконує зміну першої літери на велику.
+Capitalizing не є новим поняттям і використовувалося у багатьох стародавніх персідських і навіть римських текстах. У сучасному програмуванні існує кілька альтернативних способів capitalizing, таких як capitalize першої букви кожного слова, або capitalize кожної букви. У TypeScript, є вбудована функція, яка дозволяє застосувати capitalize до будь-якого рядка, дозволяючи програмістам зробити відсутність чіткого розділення між словами більш правильним.
 
-## Deep Dive
-У TypeScript є декілька вбудованих методів для роботи зі строками, які можна використовувати для капіталізації рядків.
-- `toUpperCase()` - змінює всі букви рядка на великі.
-- `toLowerCase()` - змінює всі букви рядка на малі.
-- `charAt()` - повертає символ за заданим індексом у рядку.
-- `slice()` - повертає підрядок рядка, починаючи з вказаного індексу.
+Приклади: 
 
-У TypeScript також є можливість використовувати функціональне програмування для капіталізації рядків. Це дозволяє використовувати зворотній виклик (callback) для зміни кожної букви у рядку.
+```TypeScript 
+const str = "цей рядок потрібно зробити capitalize"; 
+console.log(str.toLocaleLowerCase()); //трохи змінений рядок 
+``` 
+Вивід: 
+цей рядок потрібно зробити capitalize 
 
-## See Also
-- [TypeScript документація по рядках](https://www.typescriptlang.org/docs/handbook/basic-types.html#string)
-- [Регулярні вирази у TypeScript](https://www.typescriptlang.org/docs/handbook/declaration-files/do-s-and-don-ts.html#regular-expressions)
+##Дивіться також: 
+
+- Документація TypeScript capitalize функції [https://www.typescriptlang.org/docs/handbook/utility-types.html#capitalizet](https://www.typescriptlang.org/docs/handbook/utility-types.html#capitalize)
+- Історія розвитку capitalize в програмуванні [https://en.wikipedia.org/wiki/Capitalization](https://en.wikipedia.org/wiki/Capitalization)

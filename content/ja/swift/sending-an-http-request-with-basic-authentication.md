@@ -1,7 +1,7 @@
 ---
-title:                "基本認証を使用してhttpリクエストを送信する方法"
-html_title:           "Swift: 基本認証を使用してhttpリクエストを送信する方法"
-simple_title:         "基本認証を使用してhttpリクエストを送信する方法"
+title:                "基本認証を使用して http リクエストを送信する方法"
+html_title:           "Swift: 基本認証を使用して http リクエストを送信する方法"
+simple_title:         "基本認証を使用して http リクエストを送信する方法"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "HTML and the Web"
@@ -10,60 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
-HTTPリクエストを基本認証で送信する理由は、アクセス制限が必要なWebアプリケーションやAPIへのアクセスを許可するためです。
+## 何＆なぜ？
+HTTPリクエストを基本認証付きで送信することは、プログラマーがウェブサイトやアプリケーションにアクセスするために使用する一般的な方法です。基本認証は、ユーザー名とパスワードを送信することによってサイトまたはアプリケーションに認証を行うセキュリティ機能です。
 
-## 方法
-基本認証を使用してHTTPリクエストを送信するには、Swiftの`URLSession`クラスを使用します。以下のコード例を参考にしてください。
+## 方法：
+Swiftで基本認証付きのHTTPリクエストを送信するには、まず```URLRequest```オブジェクトを作成し、認証情報を設定する必要があります。次に、```URLSession```を使用してリクエストを送信します。以下は、基本認証を使用して公式のTwitterアカウントのツイートを取得する例です。
 
 ```Swift
-let urlString = "https://example.com/api"
-let url = URL(string: urlString)
+// URLRequestを作成する
+let request = URLRequest(url: URL(string: "https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=swiftlang")!)
 
-// リクエストを作成
-var request = URLRequest(url: url!)
+// 認証情報を設定する
+let authString = "username:password".data(using: .utf8)?.base64EncodedString()
+request.setValue("Basic \(authString)", forHTTPHeaderField: "Authorization")
 
-// HTTPメソッドを設定
-request.httpMethod = "GET"
-
-// 認証情報を設定
-let user = "username"
-let password = "password"
-let loginString = String(format: "%@:%@", user, password)
-let loginData = loginString.data(using: .utf8)
-let base64LoginString = loginData?.base64EncodedString()
-request.setValue("Basic \(base64LoginString)", forHTTPHeaderField: "Authorization")
-
-// セッションを作成
-let session = URLSession(configuration: .default)
-
-// リクエストを送信
-let task = session.dataTask(with: request) { (data, response, error) in
-    if let error = error {
-        print("Error: \(error.localizedDescription)")
-    }
-    if let response = response as? HTTPURLResponse {
-        // レスポンスステータスコードをチェック
-        if response.statusCode == 200 {
-            if let data = data {
-                // レスポンスデータを処理
-                print("Response data: \(data)")
-            }
-        } else {
-            print("Server error: \(response.statusCode)")
-        }
-    }
-}
-
-// リクエストを開始
-task.resume()
+// URLSessionでリクエストを送信し、レスポンスを処理する
+let session = URLSession.shared
+session.dataTask(with: request) { (data, response, error) in
+    guard let data = data else { return }
+    // レスポンスを処理する
+}.resume()
 ```
-上記のコードでは、`URLSession`クラスの`dataTask(with:completionHandler:)`メソッドを使用してリクエストを送信し、レスポンスを受け取っています。認証情報を含めるために、`URLRequest`クラスの`setValue(_:forHTTPHeaderField:)`メソッドを使用してヘッダーに`Authorization`を追加しています。
 
-## 深堀り
-基本認証は、ユーザー名とパスワードをBase64でエンコードしてリクエストのヘッダーに含める認証方式です。この認証方式は安全性が低いため、SSLやHTTPSなどの別のセキュリティプロトコルを併用することが推奨されています。
+## 詳細を深く掘り下げる：
+基本認証は、ウェブの認証方法としては古くから使われてきましたが、セキュリティ上の問題や新しい認証方式の登場により、最近では推奨されていません。代わりに、OAuthなどのより安全な認証方式が推奨されています。また、基本認証はパスワードを平文で送信するため、中間者攻撃による情報漏洩のリスクがあります。そのため、SSLを使用して通信を暗号化することが重要です。
 
-## 参考リンク
-- [URLSession - Apple Developer Documentation](https://developer.apple.com/documentation/foundation/urlsession)
-- [HTTP Basic Access Authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#Basic_access_authentication)
-- [Base64 - Apple Developer Documentation](https://developer.apple.com/documentation/foundation/base64encoding)
+## 関連リンク：
+- [Apple Developer Documentation: URLRequest](https://developer.apple.com/documentation/foundation/urlrequest)
+- [Apple Developer Documentation: URLSession](https://developer.apple.com/documentation/foundation/urlsession)
+- [OWASP: Basic Authentication](https://owasp.org/www-community/Basic_authentication)
+- [OWASP: The Need for HTTPS](https://owasp.org/www-project-secure-communication/)

@@ -10,45 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que usar expressões regulares?
+## O que e Por Que?
 
-As expressões regulares são padrões utilizados para realizar buscas e substituições de strings em um texto. Elas são extremamente úteis para tarefas que envolvem manipulação de dados, validação de inputs e extração de informações específicas de um texto.
+Usar Expressões Regulares (ou Regex) é uma forma eficiente de trabalhar com expressões de texto específicas em um programa. Isso permite que programadores possam buscar e manipular dados de maneira precisa e rápida. 
 
-## Como utilizar expressões regulares em Ruby?
+## Como fazer:
 
-Para utilizar expressões regulares em Ruby, é necessário usar a classe `Regexp` do módulo `StdLib`. Veja abaixo dois exemplos simples de como utilizar expressões regulares para encontrar padrões em uma string e substituir trechos de texto.
+Vamos ver alguns exemplos simples de como usar Expressões Regulares em Ruby!
 
-```Ruby
-# Encontrando padrões
-texto = "Hoje é um belo dia para programar em Ruby!"
-puts texto =~ /Ruby/ # o símbolo =~ verifica se o padrão está presente na string, retornando a posição do primeiro caractere encontrado
-
-# Substituindo trechos de texto
-texto = "Oi, meu nome é Maria!"
-puts texto.sub(/Maria/, "Joana") # a função sub troca o primeiro padrão encontrado pelo segundo argumento
+```
+texto = "Uma string complexa com muitos números: 123-456-789"
+```
+```
+/123-456-789/.match(texto)
+ # => #<MatchData "123-456-789">
 ```
 
-Output:
+Neste exemplo, estamos usando o método `match` para buscar dentro da string um padrão que inclua os números 123-456-789. Quando encontramos uma correspondência, é retornado uma instância de `MatchData`, que contém as informações sobre a correspondência encontrada.
+
 ```
-32
-Oi, meu nome é Joana!
+/frutas/i.match("Adoro bananas e maçãs")
+ # => #<MatchData "bananas">
 ```
 
-## Mergulho Profundo em Expressões Regulares
+Neste outro exemplo, a flag `i` é usada para tornar a expressão case-insensitive. Isto significa que podemos buscar palavras como "Maçãs" ou "maçãs" e ambas irão ser correspondidas.
 
-Existem diversos métodos na classe `Regexp` que podem ser utilizados para realizar operações mais complexas com expressões regulares. Alguns deles são:
+## Mergulho Profundo:
 
-- `match`: encontra o primeiro padrão na string e retorna um objeto `MatchData` com informações sobre o padrão encontrado.
-- `scan`: encontra todos os padrões na string e retorna um array.
-- `split`: divide a string em um array, utilizando o padrão como separador.
-- `gsub`: substitui todos os padrões encontrados na string pelo segundo argumento.
-- `options`: permite adicionar opções à expressão regular, como ignorar letras maiúsculas ou usar multiplas linhas.
+Expressões Regulares têm uma longa história na computação e são suportadas em diversas linguagens de programação, incluindo Ruby. Enquanto alternativas como `String#split` e `String#slice` podem ser usadas para manipulação de strings, Expressões Regulares oferecem uma forma mais poderosa e versátil de buscar e manipular dados.
 
-Para saber mais sobre a sintaxe de expressões regulares em Ruby, confira a documentação oficial: [https://ruby-doc.org/core-2.7.1/Regexp.html](https://ruby-doc.org/core-2.7.1/Regexp.html)
+Por baixo dos panos, Ruby usa a biblioteca `Oniguruma` para implementar Expressões Regulares. Esta biblioteca é escrita em C e é altamente otimizada para lidar com padrões complexos de texto.
 
-## Veja também
+## Veja também:
 
-Aprenda a usar expressões regulares com esses tutoriais e exercícios interativos:
-
-- [https://www.rubyguides.com/2015/06/ruby-regex/](https://www.rubyguides.com/2015/06/ruby-regex/)
-- [https://rubular.com/](https://rubular.com/)
+- [Documentação Oficial do Ruby sobre Expressões Regulares](https://ruby-doc.org/core-2.7.2/Regexp.html)
+- [Artigo sobre Expressões Regulares no Medium](https://medium.com/factory-mind/regex-tutorial-a-simple-cheatsheet-by-examples-649dc1c3f285)
+- [Livro "Mastering Regular Expressions" por Jeffrey E.F. Friedl](https://www.oreilly.com/library/view/mastering-regular-expressions/0596528124/)

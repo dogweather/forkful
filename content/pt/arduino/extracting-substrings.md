@@ -1,7 +1,7 @@
 ---
-title:                "Extraindo subcadeias"
-html_title:           "Arduino: Extraindo subcadeias"
-simple_title:         "Extraindo subcadeias"
+title:                "Extraindo subtrings"
+html_title:           "Arduino: Extraindo subtrings"
+simple_title:         "Extraindo subtrings"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Strings"
@@ -10,45 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+## O que & Porquê?
 
-O Arduino é um microcontrolador amplamente utilizado em projetos makers e DIY (faça você mesmo). E, em alguns desses projetos, pode ser necessário manipular strings, ou seja, sequências de caracteres. Entre essas manipulações, pode ser necessário extrair pedaços específicos de uma string, o que torna a extração de substrings uma habilidade útil a ser dominada por programadores de Arduino.
+Extrair substrings é a ação de separar uma parte específica de uma string maior. Isso é comumente feito por programadores para acessar informações específicas em uma string, como um código de identificação ou uma data. É uma forma eficiente de manipular e trabalhar com dados em um programa.
 
-## Como fazer
+## Como fazer:
 
-Para extrair substrings em Arduino, você pode usar a função "substring()". Essa função recebe dois argumentos: o índice do primeiro caractere da substring e o número de caracteres a serem extraídos. Por exemplo, se você tiver a string "Arduino é incrível", pode usar o seguinte código para extrair a substring "incrível":
+```Arduino
+String myString = "Ola, mundo!"; // definir uma string
+String substring = myString.substring(0, 3); // extrair a substring "Ola"
 
+Serial.println(substring); // saída: "Ola"
 ```
-String str = "Arduino é incrível";
-String substr = str.substring(10, 8);
-// substr agora contém "incrível"
+
+Outro exemplo:
+
+```Arduino
+String sentence = "O numero pi é 3.14";
+String pi = sentence.substring(12, 16);
+
+Serial.println(pi); // saída: "3.14"
 ```
 
-Você também pode usar a função "substring()" com variáveis e até mesmo combinar com outras funções de string, como "indexOf()" e "length()". Algumas dicas para se lembrar ao trabalhar com extração de substrings:
+## Mergulho Profundo:
 
-- O primeiro caractere de uma string tem índice "0";
-- O número de caracteres inclui o primeiro caractere, mas não inclui o último;
-- Se você omitir o segundo argumento, a substring abrange até o final da string original.
+Extrair substrings tem suas raízes em linguagens de programação mais antigas, como C e BASIC. Em vez de usar a função substring, essas linguagens usavam operadores como ```substr``` em C e ```MID``` em BASIC. Hoje em dia, a função substring é amplamente usada em muitas linguagens de programação, incluindo Arduino.
 
-E aqui está uma lista com alguns exemplos de saída usando "substring()":
+Existem algumas alternativas para a função substring, como a função ```split```, que divide uma string em um array de substrings com base em um caractere específico. No entanto, a função substring ainda é preferida por muitos programadores por sua simplicidade e eficiência.
 
-| String original         | Índice  | Número de caracteres | Substring resultante |
-|-------------------------|---------|----------------------|----------------------|
-| "Arduino é incrível"    | 7       | 9                    | "é incrível"         |
-| "Lorem ipsum dolor sit" | 0       | 5                    | "Lorem"              |
-| "Maçã, laranja, banana" | 9       | 10                   | "laranja, b"         |
-| "1234567890"            | 2       | 4                    | "3456"               |
+A implementação da função substring em Arduino é baseada na biblioteca String padrão, que oferece uma variedade de funções para trabalhar com strings. A função substring é definida como ```String.substring(index, length)```, onde index é a posição inicial da substring e length é o comprimento da substring.
 
-## Mergulho profundo
+## Veja também:
 
-A função "substring()" é útil para casos simples de extração de substrings. No entanto, quando as strings são mais complexas ou há várias substrings que precisam ser extraídas, pode ser necessário recorrer a outras técnicas. Por exemplo, você pode usar a função "StringTokenizer" para dividir uma string em vários pedaços, usando um caractere de separação como referência.
-
-Além disso, se você tiver uma string em formato de data, pode usar a biblioteca "TimeLib.h" para extrair o dia, mês, ano ou até mesmo informações sobre o fuso horário. Há também a função "strstr()", que permite encontrar uma substring dentro de outra string.
-
-A extração de substrings pode ser útil em várias situações de programação em Arduino, como trabalhar com sensores e exibir informações em displays. Portanto, é importante entender as diferentes técnicas e funções disponíveis para manipular strings.
-
-## Veja também
-
-- [Referência da função "substring()"](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/substring/)
-- [Exemplo de uso da função "substring()"](https://create.arduino.cc/projecthub/Arduino_Genuino/string-functions-substring-1fc2c2?ref=search&ref_id=substring&offset=2)
-- [Tutorial sobre a função "StringTokenizer"](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/stringtokenizer/)
+- [Documentação oficial da função substring em Arduino](https://www.arduino.cc/reference/pt/language/variables/data-types/string/functions/substring/)
+- [Tutorial sobre como usar a função substring em Arduino](https://www.arduino.cc/en/Tutorial/StringSubstring)
+- [Fonte de informações sobre strings em Arduino](https://maker.pro/arduino/tutorial/arduino-string-functions-split-find-indexof-concatenate)

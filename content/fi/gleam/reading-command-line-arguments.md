@@ -1,7 +1,7 @@
 ---
-title:                "Lukemassa komentoriviargumentit"
-html_title:           "Gleam: Lukemassa komentoriviargumentit"
-simple_title:         "Lukemassa komentoriviargumentit"
+title:                "Lukemalla komentorivin argumentit"
+html_title:           "Gleam: Lukemalla komentorivin argumentit"
+simple_title:         "Lukemalla komentorivin argumentit"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Files and I/O"
@@ -10,38 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+Mikä & Miksi?
+Komentoriviparametrien lukeminen tarkoittaa sitä, että ohjelma pystyy ottamaan käyttäjän tarjoamat parametrit ja käyttämään niitä ohjelman suorittamiseen. Ohjelmoijat tekevät tätä jotta heidän ohjelmansa olisi joustavampi ja käyttäjäystävällisempi, sillä käyttäjät voivat säätää ohjelman toimintaa käyttämällä erilaisia parametreja.
 
-On monia syitä, miksi sinun kannattaisi oppia lukemaan komentorivin argumentteja Gleam-kielellä. Yksi tärkeimmistä syistä on, että se tekee ohjelmoinnista helpompaa ja tehokkaampaa, koska voit lukea ja käsitellä käyttäjän antamia tietoja suoraan komentoriviltä ilman että joudut käyttämään erillisiä käyttöliittymäkomponentteja.
-
-## Kuinka tehdä se
-
-Komentorivin argumenttien lukeminen Gleam-kielellä on helppoa ja nopeaa. Seuraa näitä yksinkertaisia askeleita saadaksesi komentojasi suoritetuksi oikein ja saadaksesi halutut tulokset.
+Miten?
+Gleamilla on mahdollista lukea komentoriviparametreja käyttämällä moduulia "os". Käyttämällä funktiota "arguments" ohjelmoijat voivat tallentaa parametrit muuttujaan ja käyttää niitä tarvittaessa. Alla on esimerkkejä koodista ja siihen liittyvistä tulosteista:
 
 ```Gleam
-pub fn main(argv) {
-    // Luo vakituinen muuttuja, johon komentorivin argumentit tallennetaan
-    let arguments = argv[1]
+import os
 
-    // Tulosta argumentit konsoliin
-    debug!("#{arguments}")
+fn main() {
+    let arguments = os.arguments()
+    // Käyttäjä antoi parametrina "true"
+    // arguments arvo olisi siis: ["true"]
+    // Voit käyttää parametria esim. tarkistamalla sen arvoa if-lauseella.
+
+    if arguments == ["true"] {
+        // Tee jotain
+    }
 }
-```
-
-Tässä koodiesimerkissä luodaan vakituinen muuttuja nimeltä "argumentit", johon tallennetaan komentorivin annetut argumentit. Tämän jälkeen tulostetaan muuttujan arvo konsoliin käyttäen debug! -funktiota.
 
 ```
-$> gleam run read_arguments.gleam arg1 arg2
-arg1 arg2
-```
 
-Syötteestä riippuen, voit luoda tietueita tai suorittaa muita toimintoja argumenttien perusteella. Muista aina tarkistaa ja validoida käyttäjän antamat tiedot ennen kuin käytät niitä ohjelmassasi.
-
-## Syvällisempi sukellus
-
-Lukemalla komentorivin argumentteja, voit myös määrittää niitä erilaisten tyyppien avulla, kuten merkkijonoja tai desimaalilukuja. Voit myös tehdä erilaisia toimintoja argumenttien kanssa, kuten yhdistää niitä, vähentää niitä tai jopa luoda tietueita, joita käytetään ohjelman suorittamisessa.
+## Syvemmälle
+Komennoriviparametrien lukeminen on ollut osa ohjelmointia jo pitkään ja se on yleinen käytäntö monissa ohjelmointikielissä. Jotkut vaihtoehtoiset menetelmät ovat esimerkiksi ympäristömuuttujien käyttäminen tai konfiguraatiotiedostojen lukeminen. Gleamissa komentoriviparametrien lukeminen on helppoa ja kätevää käyttämällä moduulia "os".
 
 ## Katso myös
+Voit tutustua tarkemmin parametrien lukemiseen Gleamissa ja moduuliin "os" Gleamin virallisessa dokumentaatiossa. Näin pysyt ajan tasalla uusista ominaisuuksista ja parhaista käytännöistä. https://gleam.run/documentation/
 
-- [Gleamin dokumentaatio komentorivin argumenttien lukemisesta](https://gleam.run/articles/command-line-arguments)
-- [Tietoa Gleamista ja sen ominaisuuksista](https://gleam.run/)
+Lopputulos
+Nyt tiedät, mitä komentoriviparametrien lukeminen tarkoittaa ja miksi ohjelmoijat tekevät sitä. Tutustuit myös Gleamin tarjoamaan helpoon ja kätevään tapaan lukea parametreja. Jatkossa voit hyödyntää tätä ominaisuutta omassa ohjelmoinnissasi ja tehdä ohjelmistasi vieläkin monipuolisempia ja käyttäjäystävällisempiä.

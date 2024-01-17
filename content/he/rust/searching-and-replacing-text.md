@@ -1,7 +1,7 @@
 ---
-title:                "חיפוש והחלפת טקסטים"
-html_title:           "Rust: חיפוש והחלפת טקסטים"
-simple_title:         "חיפוש והחלפת טקסטים"
+title:                "חיפוש והחלפת טקסט"
+html_title:           "Rust: חיפוש והחלפת טקסט"
+simple_title:         "חיפוש והחלפת טקסט"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -10,49 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## למה
+תכנות ראסט למתחילים: לחיפוש והחלפת טקסט
 
-כשמתכנתים, יש לנו לפעמים צורך להחליף טקסט בקוד. זה יכול להיות בעקבות שגיאות כתיב או עבודה עם קבצי טקסט להמצאת ותיקון שגיאות קוד. בחיפוש והחלפה של טקסט יכול להיות הכלי המושלם לעזור לנו לתקן ולשפר את קודנו בצורה יעילה.
+## מה ולמה?
+חיפוש והחלפת טקסט היא פעולה נפוצה בעולם התכנות ומשמשת לשינוי טקסט מסוים בתוך קוד המחשב. זהו כלי אידיאלי לסידור וניהול של קוד, והופך את התהליך של עדכון ותיקון קוד לפשוט ומהיר יותר.
 
-## איך לעשות זאת
-
-תחילה ניצור משתנה מסוג `String` שמכיל את הטקסט שנרצה לחלוף בו. לדוגמה:
-
-```Rust
-let text = "שלום ליום העולם";
-```
-
-כעת, נשתמש בפונקציות `replace()` כדי לחלף חלק מהטקסט עם תווים אחרים. נניח שרוצים להחליף את המילה "עולם" במילה "כולם". נרשום כך:
-
-```Rust
-let new_text = text.replace("עולם", "כולם");
-```
-
-התוצאה של `new_text` יהיה "שלום ליום הכולם".
-
-לאחר מכן, נוכל להדפיס את `new_text` באמצעות פונקציית `println!()`. נרשום כך:
-
-```Rust
+## איך לעשות זאת?
+```Rust 
+let mut text = String::from("Hello, world!");
+let new_text = text.replace("Hello", "Hi");
 println!("{}", new_text);
 ```
+כאן אנחנו משתמשים בפונקציית `replace` כדי להחליף את המילה "Hello" ב-"Hi" בתוך המחרוזת "Hello, world!".
+כל הפעולה מתבצעת במקום ונשמרת במשתנה החדש `new_text`, כך שאנחנו יכולים להדפיס אותו ולקבל את הטקסט המעודכן.
 
-פלט:
+## מעמקים
+עולם התכנות עובר בשינויים רבים ומתפתחים חדשים כל הזמן. פעם הייתה אפשרות רק לשנות טקסט בקוד שנכתב על ידי אחד כמו תכנות כדור גלובוס. אך עם התפתחות שפות תכנות חדשות כמו ראסט, יש יותר כלים ופיצ'רים כדי לסייע למתכנתים לחיפוש והחלפת טקסט בקודים.
 
-> שלום ליום הכולם
+## ראה גם
+- [דוגמאות נוספות לשימוש בפונקציה `replace` בראסט](https://doc.rust-lang.org/std/string/struct.String.html#method.replace)
+- [המסמך הרשמי של ראסט](https://www.rust-lang.org/he)
+- [הפרויקט הפתוח של ראסט בגיטהאב](https://github.com/rust-lang/rust)
 
-אם יש לנו רצף של מילים זהה שרוצים להחליף בכמה תווים מסוימים, אפשר להשתמש בפונקציית `replace_all()` במקום `replace()`. הפונקציה תחליף את כל המופעים של המחרוזת הנתונה עם התווים שנבחרו. לדוגמה:
-
-```Rust
-let text = "hello hello hello";
-let new_text = text.replace_all("hello", "hi");
-
-println!("{}", new_text);
-```
-
-פלט:
-
-> hi hi hi
-
-## צלילה עמוקה
-
-בנוסף לפונקציות החלפה, קיימות גם פונקציות לחיפוש וטיפול בטקסט כולו. לדוגמה, `split()` יפצל את הטקסט לפי תווים מסוימים וישמור אותו כרשימה, ו-`to_lowercase()` יעביר את כל התווים לא
+אני מקווה שהמאמר הזה עזר לך להתחיל עם ראסט ולקבל ידע חדש על החיפוש והחלפת טקסט בתוך קודי המחשב. תהנה מתכנות והנע בכיוון הנכון! 😉

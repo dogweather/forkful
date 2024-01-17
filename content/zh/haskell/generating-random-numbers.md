@@ -10,57 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##为什么
+## 什么是随机数？为什么程序员要用它？
 
-生成随机数在编程中是一个常见的需要，它可以用来模拟不确定性或者给程序增加一些随机性。这在开发游戏、进行数据分析和测试算法等方面都有很大的用处。
+随机数是在编程中使用的一种特殊类型的数字，它在每次运行程序时都会生成不同的值。程序员使用随机数来生成随机的数据或者模拟真实世界的不确定性。例如，在游戏开发中，随机数可以用来生成随机的游戏关卡布局或者敌人的位置。
 
-##如何进行
+## 如何使用
 
-首先，我们需要导入一个名为Random的Haskell模块。这个模块提供了生成随机数的函数。
-
-```Haskell
-import System.Random
-```
-
-接下来，我们可以使用`random`函数生成一个随机整数。第一个参数是一个范围，第二个参数是一个随机数生成器。
+Haskell中有一个内置的模块`System.Random`，它包含了生成随机数的函数。下面是一个随机产生20到50之间整数的例子：
 
 ```Haskell
-random (1, 10) (mkStdGen 42) -- 输出随机数为7
+import System.Random (randomRIO)
+
+main :: IO ()
+main = do
+  num <- randomRIO (20, 50)
+  print num
 ```
 
-我们也可以使用`randomR`函数生成指定范围内的随机数。
-
-```Haskell
-randomR (0.0, 1.0) (mkStdGen 42) -- 输出随机数为0.639182078298092
+输出示例：
+```
+32
 ```
 
-如果我们需要生成多个随机数，可以使用`randoms`函数。它会返回一个无限列表，所以我们需要限制它的数量。
+要产生不同类型的随机数，可以根据需要调整`randomRIO`函数中的参数范围，例如`(20.0, 50.0)`可以生成20到50之间的浮点数。
 
-```Haskell
-take 5 (randoms (mkStdGen 42)) -- 输出[642,7781000,-263351296,1244105165,-765208830]
-```
+## 深入了解
 
-##深入探讨
+在计算机科学中，随机数生成算法有着悠久的历史。最早的随机数算法是基于物理现象（如掷骰子、抽卡等）产生的，随后发展出利用数学公式生成的伪随机数算法。在Haskell中使用的随机数算法是基于Mersenne Twister算法，它具有很高的性能和均匀的分布特性。
 
-在Haskell中，随机数生成器的种子是一个重要的概念。种子决定了随机数的序列，所以使用相同的种子生成的随机数序列也是相同的。
+除了Haskell内置的`System.Random`模块，也可以使用第三方库`random`来生成随机数。此外，还可以借助外部硬件设备（如热噪声发生器）来产生真随机数。
 
-我们可以使用`getStdGen`函数获取一个系统提供的随机数生成器。但是，这个随机数生成器每次生成的随机数都是相同的。为了让随机数更随机，我们需要使用不同的种子，比如当前系统时间。
+## 参考资料
 
-```Haskell
-getStdGen -- 生成的随机数序列将在每次运行程序时都相同
-```
-
-```Haskell
-newStdGen -- 生成的随机数序列将使用当前系统时间作为种子，所以每次运行都不同
-```
-
-##参考链接
-
-- [Haskell Random Module](https://hackage.haskell.org/package/random-1.1/docs/System-Random.html)
-- [Haskell School of Expression: Randomness](https://www.cs.bham.ac.uk/~drg/learning/randomness.pdf)
-- [Haskell Random Numbers: Pseudo or Real?](https://stackoverflow.com/questions/3078093/haskell-random-numbers-pseudo-or-real)
-
-##参见
-
-- [Haskell官方文档](https://www.haskell.org/documentation)
-- [Haskell实用指南](https://github.com/bitemyapp/learnhaskell)
+- [Haskell中的随机数生成](https://wiki.haskell.org/Random_number_generation)
+- [Mersenne Twister算法](https://en.wikipedia.org/wiki/Mersenne_Twister)
+- [random库文档](https://hackage.haskell.org/package/random)

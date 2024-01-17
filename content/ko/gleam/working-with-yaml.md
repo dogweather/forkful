@@ -1,7 +1,7 @@
 ---
-title:                "yaml를 다루는 방법"
-html_title:           "Gleam: yaml를 다루는 방법"
-simple_title:         "yaml를 다루는 방법"
+title:                "yaml로 작업하기"
+html_title:           "Gleam: yaml로 작업하기"
+simple_title:         "yaml로 작업하기"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Data Formats and Serialization"
@@ -10,43 +10,22 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜 YAML을 사용해야 할까요?
+## 무엇 & 왜?:
+YAML 작업을 하는 것이 무엇인지 알려드리고, 프로그래머들이 이 작업을 왜 하는지에 대해 설명해드리겠습니다. 쉽게 말하면, YAML은 데이터를 저장하고 전송하기 위해 사용되는 형식입니다. 프로그래머들은 이를 사용하여 데이터를 구조화하고, 간결하며, 읽기 쉽게 만듭니다.
 
-YAML은 인간과 컴퓨터 모두가 쉽게 읽고 작성할 수 있는 형식의 데이터 직렬화 방식입니다. 따라서 YAML을 사용하면 더 간단하고 효율적인 데이터 관리가 가능해집니다.
-
-## 사용 방법
-
-```Gleam
-fn main() {
-  let data = gleam_yml::from_string("
-    username: John
-    age: 27
-    hobbies:
-        - hiking
-        - reading
-        - coding
-  ")
-  let username = data.username
-  let age = data.age
-  let hobbies = data.hobbies
-  IO.println("Username: " ++ username)
-  IO.println("Age: " ++ age)
-  IO.println("Hobbies: " ++ hobbies)
-}
+## 하는 법:
+Gleam 코드 블록 안에 있는 코딩 예제와 출력 예제를 통해 어떻게 YAML을 사용하는지 알려드리겠습니다.
 ```
+Gleam.config
+    |> YAML.from_string("name: Gleam")
+    |> YAML.to_string()
+```
+이 코드는 YAML 형식으로 name이 'Gleam'인 데이터를 만들고, YAML 형식으로 다시 변환하여 출력합니다.
 
-위의 코드에서는 Gleam 패키지 중 하나인 gleam_yml을 사용하여 YAML 형식의 데이터를 읽고 출력하는 방법을 보여줍니다. 데이터를 읽을 때에는 간단한 키-값 쌍을 사용하고, 리스트 형태로 값을 전달할 수도 있습니다. 이를 이용하면 보다 복잡한 데이터도 쉽게 다룰 수 있습니다.
+## 깊이 파고들기:
+YAML은 2001년에 처음 등장한 형식으로, 사람이 읽고 쓰기 쉽도록 디자인되었습니다. 리누스 토르발즈 등 프로그래밍의 거물들이 이 형식을 좋아하며 지속적으로 사용합니다. YAML 외에도 JSON과 XML과 같은 다른 데이터 형식이 있지만, YAML은 더 간결하면서도 읽기 쉽고 유연합니다. 이를 위해 거의 모든 프로그래밍 언어에서 지원하고 있기도 합니다.
 
-YAML 라이브러리에는 gleam_yml 이외에도 다양한 패키지가 있습니다. 필요에 따라 다른 라이브러리를 사용해보는 것도 좋은 방법일 수 있습니다.
-
-## 깊이 들어가기
-
-YAML은 공백과 들여쓰기를 사용하여 데이터 구조를 표현합니다. 따라서 간단한 키-값 쌍의 경우에는 YAML 문법에 대한 이해가 필요하지 않지만, 보다 복잡한 데이터 구조를 다루기 위해서는 YAML 문법을 익히는 것이 중요합니다.
-
-또한, YAML은 표준 형식이 아닌 형식으로 기술되어 있기 때문에, 다른 언어나 툴과의 호환성에 대해서도 주의해야 합니다. 예를 들어, YAML 내에서 사용되는 타임스탬프와 함께 문자열을 사용할 경우, 다른 언어에서 이를 올바르게 해석하지 못할 수 있습니다.
-
-## 관련 링크
-
-- [Gleam 공식 사이트](https://gleam.run/)
-- [Gleam 관련 패키지 목록](https://github.com/gleam-lang/awesome-gleam)
-- [YAML 문서](https://yaml.org/)
+## 더 보기:
+YAML을 사용하는 다른 프로젝트를 살펴보려면 아래 링크를 확인해보세요!
+- YAML 공식 문서: https://yaml.org/
+- Gleam 문서의 YAML 섹션: https://gleam.run/documentation/standard_library.html#yaml

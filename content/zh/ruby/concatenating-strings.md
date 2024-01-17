@@ -10,62 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-为什么：当您需要将多个字符串拼接在一起时，学习如何使用Ruby中的字符串拼接功能可以帮助您更有效地处理多个数据。
+# #什么是字符串拼接？为什么程序员要这样做？
 
-如何使用：使用`+`运算符可以将两个字符串连接在一起，并且可以使用`<<`运算符来实现原地修改第一个字符串。例如：
+字符串拼接指的是将多个字符串连接在一起，形成一个新的更长的字符串。程序员经常这样做是因为在处理文本和数据的时候，经常需要将多个文本片段合并成一条完整的信息。
 
-```Ruby
-puts "Hello" + " World"
+## #如何操作：
 
+`` `Ruby
+puts "Hello" + " " + "World"
+`` `
+
+输出： "Hello World"
+
+`` `Ruby
+greeting = "Hello"
 name = "Ruby"
-name << " Programming"
-puts name
-```
+puts greeting + " " + name
+`` `
 
-输出：
+输出： "Hello Ruby"
 
-`Hello World`
+## #深入探讨：
 
-`Ruby Programming`
+1. 历史背景：字符串拼接是编程世界中常见的操作，早期的编程语言如C和Java都有相应的拼接函数。Ruby中使用+操作符来实现字符串拼接，使得代码更加简洁易读。
+2. 其他方法：除了+操作符，Ruby还提供了几种其他方法来实现字符串拼接，如<<操作符和concat()函数。
+3. 实现细节：在Ruby中，字符串是不可变的，意味着一旦被创建，就无法被修改。因此，当我们对字符串进行拼接操作时，实际上是创建了一个新的字符串，而原来的字符串仍然存在于内存中。
 
-深入探讨：可以使用`concat`方法来拼接多个字符串，也可以通过使用`join`方法和数组来将多个字符串拼接在一起。另外，可以使用字符串插值来方便地拼接变量和字符串。例如：
+## #相关链接：
 
-```Ruby
-str_1 = "This is"
-str_2 = "a sentence"
-puts str_1.concat(" ", str_2)
-
-array = ["Ruby", "is", "fun"]
-puts array.join(" ")
-```
-
-输出：
-
-`This is a sentence`
-
-`Ruby is fun`
-
-另外，字符串拼接也可以帮助我们将不同类型的数据转换为字符串并进行拼接。例如：
-
-```Ruby
-num = 1
-puts "The number is " + num.to_s
-```
-
-输出：
-
-`The number is 1`
-
-可以通过这种方式来简单地将数字等其他类型的数据与字符串拼接在一起。
-
-## 参考链接
-
-- [Ruby官方文档：String](https://ruby-doc.org/core-2.7.2/String.html)
-- [Ruby字符串拼接方法详解](https://www.jianshu.com/p/647643bd5ae4)
-- [Ruby字符串简单理解](https://www.cnblogs.com/hyl8218/p/9696111.html)
-
-## 参见
-
-- [Ruby字符串常用方法简介](https://zhuanlan.zhihu.com/p/63630405)
-- [Ruby中最常用的字符串操作方法](https://blog.csdn.net/u011400125/article/details/82253127)
-- [Ruby字符串插值](https://ruby-china.org/topics/27443)
+- Ruby官方文档：https://www.ruby-lang.org/zh_cn/documentation/
+- 关于字符串拼接的更多信息：https://zh.wikipedia.org/wiki/%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%8E%A5%E8%BD%AC

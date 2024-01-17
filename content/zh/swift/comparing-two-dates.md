@@ -10,41 +10,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 为什么比较两个日期
+## 什么是日期比较？为什么程序员需要它？
+日期比较是指将两个日期进行对比，以确定它们的先后顺序或相距多长时间。程序员需要进行日期比较是因为在开发中经常需要处理日期，比如在项目管理、日程安排和数据分析等方面。
 
-比较日期在编程中是一项非常常见的任务，它可以帮助我们判断出在程序中的两个事件发生的时间先后顺序，从而影响程序的逻辑。对于Swift语言来说，比较日期也是一个必备技能，让我们来看看如何做到这一点吧。
-
-## 如何实现
-
-比较两个日期可以通过Swift中的`Date`类型和`compare(_:)`方法来完成。我们先定义两个日期变量，然后使用`compare(_:)`方法来比较它们，该方法将返回一个`ComparisonResult`枚举值，我们可以根据这个值来判断两个日期的先后顺序。
-
-```Swift
-//定义两个日期变量
+## 如何进行日期比较：
+在Swift中，可以使用```Calendar```和```DateComponents```来比较两个日期。下面是一个示例代码，比较两个日期是否相等：
+```
+let calendar = Calendar.current
 let date1 = Date()
-let date2 = Date(timeIntervalSinceNow: 3600) //设置一个相差1小时的日期
-
-//比较两个日期并得到结果
-let result = date1.compare(date2)
-
-//通过switch语句判断
-switch result {
-  case .orderedAscending:
-    print("date1 早于 date2")
-  case .orderedDescending:
-    print("date1 晚于 date2")
-  case .orderedSame:
-    print("两个日期相同")
-}
+let date2 = Date(timeIntervalSinceNow: 3600) // 生成一个距当前时间一小时的日期
+let isEqual = calendar.isDate(date1, equalTo: date2, toGranularity: .hour)
+print(isEqual) // 输出结果为false
 ```
 
-这段代码的输出结果将会是`date1 早于 date2`，因为我们事先设置了`date2`比`date1`晚1小时。
+## 深入探讨：
+日期比较在计算机编程中已经有很长的历史，早在1957年就有人提出了比较两个日期的方法，在不同的编程语言中也有不同的实现方式。除了使用```Calendar```和```DateComponents```，在Swift中也可以使用```Date```类的`compare`方法来比较两个日期的先后顺序。在实现日期比较时，还需要考虑时区、夏令时等因素。
 
-## 深入了解
-
-Swift中的`Date`类型实际上是一个`TimeInterval`（时间间隔）的别名，指的是从1970年1月1日到指定日期的时间间隔。所以在比较两个日期时，实际上是在比较两个时间间隔的大小。`compare(_:)`方法的返回值是一个`ComparisonResult`枚举类型，它有三个值：`.orderedAscending`、`.orderedDescending`和`.orderedSame`，分别代表前面日期早于、晚于和相同于后面日期。
-
-# 查看也许感兴趣的
-
-- [Apple官方文档 - Comparing Dates](https://developer.apple.com/documentation/foundation/date)
-- [Swift中的Date类型详解](https://www.hangge.com/blog/cache/detail_1594.html)
-- [如何使用Swift实现日期比较](https://www.jianshu.com/p/5557e91ff687)
+## 查看更多：
+如果想要进一步了解日期比较的相关知识，可以参考以下链接：
+- [Swift官方文档](https://developer.apple.com/documentation/swift)
+- [NSDate和NSDateComponents的使用](https://www.hackingwithswift.com/example-code/system/how-to-compare-dates)
+- [日期处理相关知识](https://www.raywenderlich.com/160-minutes/lessons-for-swift-beginners-part-3-date-and-night-mode)

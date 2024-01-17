@@ -1,7 +1,7 @@
 ---
-title:                "Sammanslagning av strängar."
-html_title:           "Gleam: Sammanslagning av strängar."
-simple_title:         "Sammanslagning av strängar."
+title:                "Sammanslagning av strängar"
+html_title:           "Gleam: Sammanslagning av strängar"
+simple_title:         "Sammanslagning av strängar"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -10,41 +10,22 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
+Konkatenering av strängar är en vanlig uppgift inom programmering som innebär att man kombinerar flera strängar till en enda sträng. Detta kan vara användbart för att skapa dynamiska meddelanden eller att formatera data på ett önskat sätt.
 
-Det finns många gånger när du vill kombinera flera strängar tillsammans för att skapa en längre sträng. Det kan vara för att skapa ett meddelande, en sökväg eller en URL. Att använda tekniken att "konkatenera" strängar är ett effektivt sätt att skapa dynamiska och anpassade textsträngar.
-
-## Så här gör du
-
-För att konkatenera strängar i Gleam, använder du operatören `++` mellan två strängar. Låt oss titta på ett enkelt exempel:
-
+## Hur man gör:
+Det finns flera sätt att konkatenera strängar i Gleam, men det vanligaste sättet är att använda funktionen `String.concat`. Här är ett exempel på hur man kan använda den:
 ```Gleam
-let sträng1 = "Du ";
-let sträng2 = "är ";
-let sträng3 = "fantastisk!";
-let resultat = sträng1 ++ sträng2 ++ sträng3;
-```
+let name = "Jenny"
+let message = String.concat(["Hej ", name])
 
-I det här exemplet skapar vi tre olika strängar `sträng1`, `sträng2` och `sträng3`. Sedan använder vi `++` operatören för att sammanslå dem till en enda sträng som innehåller "Du är fantastisk!". Det är viktigt att notera att när du konkatenerar strängar måste du se till att de är av samma datatyp, annars kan det leda till fel.
+``` 
+Detta kommer att skapa en ny sträng som innehåller "Hej Jenny". Man kan även konkatenera mer än två strängar samtidigt genom att lägga till dem i en lista som parameter till `String.concat`.
 
-Du kan också använda `++=` operatören för att konkatenera och tilldela strängar som detta:
+## Djupdykning:
+Konkatenering av strängar är en vanligt förekommande uppgift inom programmering och har funnits med sedan tidiga språk som C och Pascal. Det finns även andra sätt att konkatenera strängar i Gleam, som till exempel att använda operatorn `++` eller funktionen `lists.flat_map`, men det är upp till dig att bestämma vilket som passar bäst för ditt projekt.
 
-```Gleam
-let sträng1 = "Välkommen ";
-sträng1 ++= "till min hemsida";
-```
+För att göra processen med konkatenering av strängar mer effektiv använder sig Gleam av en datatyp som heter `String.Buffer`, som kan användas för att bygga upp en stor sträng bit för bit utan att behöva skapa en ny sträng varje gång.
 
-I det här fallet kommer variabeln `sträng1` att innehålla "Välkommen till min hemsida".
-
-Du kan också konkatenera strängar med andra datatyper som `int` eller `float` genom att använda funktionen `to_string()` för att konvertera datatypen till en sträng först.
-
-## Deep Dive
-
-När du konkatenerar strängar i Gleam, skapas en helt ny sträng varje gång. Detta påverkar prestandan när det gäller minnesanvändning och hastighet. Därför är det viktigt att tänka på hur ofta och i vilken utsträckning du behöver använda strängkonkatering i din kod.
-
-Du kan också använda funktionen `concat()` i standardbiblioteket `gleam/strings` för mer avancerade konkateneringsbehov. Den kan ta emot en lista av strängar och sammanslå dem till en enda sträng. Det är också mer effektivt än att använda `++` operatören när du behöver konkatenera ett stort antal strängar.
-
-## Se även
-
-- [Gleam dokumentation om strängar](https://gleam.run/libraries/strings)
-- [Gleam standardbibliotek](https://gleam.run/libraries)
+## Se även:
+- [Gleams officiella dokumentation för String modulen](https://gleam.run/docs/stdlib/string/)

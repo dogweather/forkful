@@ -10,53 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä ja miksi?
 
-Miksi joku haluaisi oppia parsimaan HTML:ää? Yksinkertaisesti sanottuna, kyseessä on tärkeä taito web-kehittäjille. HTML on yksi tärkeimmistä kielistä, jota käytetään verkkosivujen luomisessa ja sen ymmärtäminen auttaa parantamaan ohjelmointitaitoja.
+HTML:ää puretaan eli parsitaan monista syistä. Ensisijaisesti parsimisella tarkoitetaan tekstin muuttamista tietokoneen ymmärtämään muotoon. HTML tietokoodi on suunniteltu lukijalle helposti luettavaksi, mutta tietokoneelle se on vain kasa merkkejä ilman merkitystä. Parsimisen avulla saamme HTML koodista jäsennellyn rakenteen, joka auttaa meitä esimerkiksi tekstin etsimisessä ja käsittelyssä.
 
-## Miten
+## Miten:
 
-Parsiminen tarkoittaa tekstin pilkkomista osiin ja niiden analysointia. Haskellilla pystytään suorittamaan tätä hyvin helposti käyttäen pakettia "html-conduit". Tässä yksinkertainen esimerkki, joka hakee otsikon ja linkin kaikista `<h2>` elementeistä:
+Käytännössä HTML:n parsiminen tapahtuu siten, että koodi luetaan yksi merkki kerrallaan ja jäsennellään pienen ohjelman avulla. Ohjelma tutkii merkkejä ja niiden järjestystä ja luo niistä puumaisen rakenteen, jossa jokainen elementti on linkitetty vanhempaansa ja lapsiinsa. Esimerkiksi seuraavassa koodissa näkyy div-elementti, joka on näytetty puun muotoisena:
 
-```haskell
-import Text.HTML.Conduit
-import Data.Conduit
-import qualified Data.Conduit.List as CL
-
-main :: IO ()
-main = do
-  sourceFile "example.html" $$ element "h2" =$ CL.mapM_ print
+```Haskell
+<div>
+    <p>Tämä on esimerkki</p>
+</div>
 ```
+Puussa div-elementti on pääelementti, ja sen lapsina on p-elementti. Parsimisen jälkeen voimme käyttää tätä rakennetta haluamallamme tavalla, esimerkiksi löytämällä ja tulostamalla sisällä olevan tekstin.
 
-Tulostus:
+## Syvällisempi katsaus:
 
-```haskell
-"<h2>Ensimmäinen otsikko</h2>"
-"<h2>Toinen otsikko</h2>"
-"<h2>Kolmas otsikko</h2>"
-```
+HTML:n parsiminen kehitettiin alun perin helpottamaan web-sivujen luomista ja ylläpitoa. Manuaalinen koodaaminen voi olla aikaa vievää, mutta parsimisen avulla voimme automatisoida tietynlaisten sivujen luomisen. Tällä hetkellä on olemassa monia erilaisia tapoja parsia HTML:tä, kuten regular expressions tai CSS-selektorit. Haskellin puolelta löytyy myös erilaisia kirjastoja, kuten HaXmL ja TagSoup, jotka helpottavat parsimista.
 
-## Syväsukellus
+## Katso myös:
 
-HTML:n parsiminen voi mennä syvemmälle kuin pelkkien elementtien hakuun. Voit myös suorittaa monimutkaisempia toimintoja, kuten tiettyjen attribuuttien hakuja tai tietojen poimimista taulukoista. Tässä esimerkki, jossa haetaan kaikki otsikot ja niiden attribuutit:
-
-```haskell
-sourceFileLBS "example.html" $$ fromDocument =$= element "h2" =$=
-  CL.map attr =$= CL.mapM_ print
-
-attr (EventBeginElement name attrs) = nameLocalName name ++ " : " ++ show attrs
-attr _ = ""
-```
-
-Tulostus:
-
-```haskell
-"Ensimmäinen otsikko : [Attr {attrKey = "class", attrVal = "title"},Attr {attrKey = "id", attrVal = "first"}]"
-"Toinen otsikko : []"
-"Kolmas otsikko : [Attr {attrKey = "id", attrVal = "third"}]"
-```
-
-## Katso myös
-
-- [hackage.haskell.org/package/html-conduit](https://hackage.haskell.org/package/html-conduit)
-- [learnyouahaskell.com/chapters](http://learnyouahaskell.com/chapters)
+- ["Liian kiehtova koodi - HTML:n parsiminen" (englanniksi)](https://www.youtube.com/watch?v=TsvjsFx0S6U)
+- [HaXmL kirjaston dokumentaatio](https://hackage.haskell.org/package/haxml)
+- [TagSoup kirjaston dokumentaatio](https://hackage.haskell.org/package/tagsoup)

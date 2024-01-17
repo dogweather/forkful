@@ -10,37 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## 何 & なぜ？
+最新のPHPでは、ディレクトリが存在するかどうかをチェックすることができます。プログラマーがこのチェックを行う理由は、ファイルやディレクトリが存在しない場合に処理を適切に行うためです。
 
-ディレクトリが存在しているかどうかは、ファイルの読み書きやアクセス制御など、多くのプログラミングタスクで重要な役割を果たします。そのため、PHPではディレクトリの存在をチェックする方法が用意されています。
-
-ファイルシステム内で特定のディレクトリが存在するかどうかを確認することで、ユーザーに適切なアクセスを提供することができ、セキュリティを強化することができます。
-
-## How To
-
-PHPでは、`file_exists()`関数を使用してディレクトリの存在を確認することができます。以下のコードを使用することで、指定したディレクトリの存在を確認することができます。
-
+## 方法：
 ```PHP
 <?php
-$directory = '/path/to/directory';
-
-if (file_exists($directory)) {
-  echo "The directory exists!";
+// ディレクトリが存在するかをチェック
+if (is_dir('directory_name')) {
+    echo '存在します';
 } else {
-  echo "The directory does not exist.";
+    echo '存在しません';
 }
 ?>
 ```
+`directory_name` の部分にチェックしたいディレクトリの名前を入れます。ディレクトリが存在する場合は「存在します」と表示され、存在しない場合は「存在しません」と表示されます。
 
-上記の例では、指定したディレクトリが存在する場合には「The directory exists!」、存在しない場合には「The directory does not exist.」というメッセージが表示されます。
+## 深堀り：
+この機能は、PHP 4.0.3以降で利用可能です。ディレクトリが存在するかどうかをチェックするもう一つの方法は、`file_exist()`関数を使用することです。しかし、`is_dir()`関数の方がより効率的であり、ライブラリファイルの読み込みといった追加の処理が必要ありません。また、`is_dir()` 関数は、ディレクトリ以外のファイルを渡されても正しくチェックすることができます。
 
-## Deep Dive
-
-`file_exists()`関数は、指定されたパスがファイルでもディレクトリでも存在する場合には`true`を返し、存在しない場合には`false`を返します。そのため、ディレクトリの存在をチェックする際には、ファイルの存在も同時にチェックすることになります。
-
-また、PHPでは`is_dir()`関数を使用してもディレクトリの存在を確認することができます。`is_dir()`関数は、指定されたパスがディレクトリである場合には`true`を返し、そうでない場合には`false`を返します。そのため、ファイルの存在をチェックする必要がない場合には、`is_dir()`関数を使用する方法もあります。
-
-## See Also
-
-- PHP公式ドキュメント: [file_exists()](https://www.php.net/manual/en/function.file-exists.php)
-- PHP公式ドキュメント: [is_dir()](https://www.php.net/manual/en/function.is-dir.php)
+## 関連リンク：
+- [PHP is_dir() 関数のドキュメント（英語）](https://www.php.net/manual/en/function.is-dir.php)
+- [PHP file_exist() 関数のドキュメント（英語）](https://www.php.net/manual/en/function.file-exists.php)
+- [PHPのis_dir()関数の使い方（日本語）](https://uxmilk.jp/17587)

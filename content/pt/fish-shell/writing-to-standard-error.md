@@ -10,28 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+O que é e por que utilizamos a escrita no erro padrão em programação? 
 
-Se você está programando em Fish Shell, é possível que precise escrever para saída de erro padrão (standard error, em inglês) em algumas situações. Isso pode ser útil para lidar com erros no seu código, melhorar a depuração e fazer logs mais precisos.
+A escrita no erro padrão é uma técnica em programação que permite ao programador enviar mensagens de erro ou de status para o terminal. Isso é útil para depuração de código e para informar o usuário sobre o andamento do programa. 
 
-## Como Fazer
+Como fazer: 
 
-Escrever para saída de erro padrão em Fish Shell é bastante simples. Você pode usar o comando `echo` seguido do sinal de maior (`>`) e o número 2 para especificar a saída de erro padrão. Veja o exemplo abaixo:
+```Fish Shell 
 
-```
-Fish Shell
-echo "Erro! Algo deu errado" >[2]
-```
+# Para escrever no erro padrão, utilizamos o comando "echo" seguido do que se deseja imprimir. Por exemplo: 
 
-Isso irá escrever a mensagem "Erro! Algo deu errado" na saída de erro padrão. Você também pode redirecionar a saída de erro padrão para um arquivo usando o mesmo comando, com o sinal de maior seguido do nome do arquivo em que você deseja salvar a mensagem de erro.
+echo "Opa, deu erro aqui!" 
 
-## Mergulho Profundo (Deep Dive)
+# Isso irá imprimir no terminal a mensagem "Opa, deu erro aqui!" 
 
-Ao escrever para saída de erro padrão, é importante entender como o Fish Shell lida com isso para evitar erros e obter o resultado desejado. Ao usar o `echo` com o sinal de maior, você está direcionando a mensagem para a saída de erro padrão, que é tratada separadamente da saída padrão. Isso garante que os erros sejam exibidos corretamente e não se misturem com a saída padrão do seu script.
+# Também é possível redirecionar a saída para o erro padrão utilizando o operador "2>" : 
 
-Outro ponto importante é entender a diferença entre os números de saída (`1` e `2`). O número `1` representa a saída padrão, enquanto o número `2` representa a saída de erro padrão. Certifique-se de usar o número correto para direcionar a mensagem de erro para a saída correta.
+echo "Isso é um erro" 2> erro.txt 
 
-## Veja também
+# Isso irá enviar a mensagem "Isso é um erro" para o arquivo "erro.txt" em vez de imprimi-la no terminal. 
 
-- [Documentação do Fish Shell](https://fishshell.com/docs/current/) - Leia mais sobre a sintaxe e recursos do Fish Shell.
-- [Writing to Standard Error in Bash](https://www.linuxjournal.com/content/writing-standard-error) - Artigo sobre como escrever para saída de erro padrão em Bash.
+# No entanto, a escrita no erro padrão ocorre automaticamente quando há um erro no código. Por exemplo: 
+
+ls arquivo_que_nao_existe.txt 
+
+# Isso irá imprimir a mensagem de erro "ls: arquivo_que_nao_existe.txt: Arquivo ou diretório não encontrado" no erro padrão. 
+
+``` 
+
+Mergulho Profundo: 
+
+A escrita no erro padrão é uma prática comum e muito útil em programação, principalmente em linguagens de script. É uma maneira de informar o usuário sobre o andamento do programa e de ajudar na depuração de possíveis erros. Alguns programadores também utilizam a escrita no erro padrão como uma forma de documentação, adicionando mensagens explicativas durante a execução do código. Existem outras formas de lidar com erros, como a escrita no stderr (erro padrão), mas a escrita no erro padrão é a mais simples e amplamente utilizada pelos programadores. 
+
+Veja também: 
+
+- Guia de Referência do Fish Shell (https://fishshell.com/docs/current/index.html) fornecendo informações detalhadas sobre a escrita no erro padrão e outros comandos úteis no Fish Shell. 
+- Perguntas frequentes sobre a escrita no erro padrão (https://www.tldp.org/LDP/abs/html/io-redirection.html#STDERROUT) que podem ajudar a esclarecer dúvidas adicionais.

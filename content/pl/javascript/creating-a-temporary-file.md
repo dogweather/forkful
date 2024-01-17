@@ -1,7 +1,7 @@
 ---
-title:                "Tworzenie pliku tymczasowego"
-html_title:           "Javascript: Tworzenie pliku tymczasowego"
-simple_title:         "Tworzenie pliku tymczasowego"
+title:                "Tworzenie tymczasowego pliku"
+html_title:           "Javascript: Tworzenie tymczasowego pliku"
+simple_title:         "Tworzenie tymczasowego pliku"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Files and I/O"
@@ -10,40 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i Dlaczego?
 
-Tworzenie plików tymczasowych może być niezbędne w niektórych sytuacjach podczas programowania w JavaScript. Pliki te są używane do przechowywania danych tymczasowych lub do przeprowadzenia testów w kodzie.
+Tworzenie tymczasowych plików jest popularną praktyką wśród programistów, ponieważ pozwala na przechowywanie danych tymczasowych lub tworzenie plików konfiguracyjnych w trakcie wykonywania programu. Jest to szczególnie przydatne w przypadku, gdy dane nie są potrzebne po zakończeniu działania programu i nie chcemy utrudniać pracy naszemu systemowi poprzez pozostawienie niepotrzebnych plików.
 
-## Jak to zrobić
+## Jak to zrobić?
 
-Aby utworzyć tymczasowy plik w JavaScript, możesz skorzystać z wbudowanej funkcji o nazwie `fs.mkdtemp()`. Przykładowy kod poniżej demonstruje użycie tej funkcji:
- 
 ```Javascript
 const fs = require('fs');
+const path = require('path');
 
-fs.mkdtemp('temp-', (err, folder) => {
-  if (err) {
-    throw err;
-  }
-  console.log(`Utworzono folder tymczasowy: ${folder}.`);
-});
+// Tworzenie pliku tymczasowego w folderze projektowym
+const tempFile = path.join(__dirname, 'temp.txt');
+// Zapis do pliku
+fs.writeFileSync(tempFile, "To jest tymczasowy plik!");
+// Odczyt z pliku
+let tempData = fs.readFileSync(tempFile, 'utf-8');
+console.log(tempData); //Output: To jest tymczasowy plik!
+
+// Usuwanie pliku tymczasowego
+fs.unlinkSync(tempFile);
 ```
 
-Po uruchomieniu powyższego kodu, powinieneś otrzymać wyjście w konsoli podobne do tego:
+## Głębsze zanurzenie
 
-```
-Utworzono folder tymczasowy: temp-467d4745c6f5f59a.
-```
+Tworzenie tymczasowych plików jest praktykowane od lat i jest wykorzystywane w różnych językach programowania. W JavaScript możemy użyć wbudowanej biblioteki fs do operacji na plikach, takich jak odczytywanie i zapisywanie danych. Jedną z alternatywnych metod jest wykorzystanie biblioteki os-tmpdir do generowania ścieżki do folderu tymczasowego.
 
-W powyższym przykładzie, nazwa pliku tymczasowego będzie zaczynać się od `temp-`, a następnie zostanie dodana unikalna kombinacja znaków wygenerowanych przez `fs.mkdtemp()`. Możesz również ustawić własny prefiks lub koniec nazwy pliku poprzez zmianę pierwszego argumentu funkcji `mkdtemp()`.
+## Zobacz również
 
-## Deep Dive
-
-Funkcja `fs.mkdtemp()` pochodzi z wbudowanego modułu `fs` w Node.js, dzięki czemu możesz ją używać w dowolnym środowisku uruchomieniowym Node.js. Funkcja ta jest wykorzystywana do tworzenia folderów tymczasowych, a nie plików w ścisłym tego słowa znaczeniu. W przypadku potrzeby tworzenia plików tymczasowych, musisz wykorzystać inną funkcję o nazwie `fs.mkstemp()`, która również jest dostępna w module `fs`.
-
-Należy pamiętać, że plik tymczasowy zostanie usunięty automatycznie po zakończeniu działania programu lub po wywołaniu `fs.rmdir()` lub `fs.unlink()`.
-
-## Zobacz także
-
-- [Oficjalna dokumentacja Node.js na temat tworzenia plików tymczasowych](https://nodejs.org/dist/latest/docs/api/fs.html#fs_fs_mkdtemp_prefix_options_callback)
-- [Wprowadzenie do programowania w Node.js dla początkujących (po polsku)](https://codeburst.io/node-js-dla-pocz%C4%85tkuj%C4%85cych-wprowadzenie-650064d8b5c#.0s2cl4gmi)
+- Dokumentacja Node.js dotycząca wbudowanej biblioteki fs: https://nodejs.org/api/fs.html
+- Moduł npm os-tmpdir: https://www.npmjs.com/package/os-tmpdir

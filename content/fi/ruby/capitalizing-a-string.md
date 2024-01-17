@@ -1,7 +1,7 @@
 ---
-title:                "Stringin ensimmäisen kirjaimen suurennus"
-html_title:           "Ruby: Stringin ensimmäisen kirjaimen suurennus"
-simple_title:         "Stringin ensimmäisen kirjaimen suurennus"
+title:                "Merkkijonon isompi kirjoitusasu"
+html_title:           "Ruby: Merkkijonon isompi kirjoitusasu"
+simple_title:         "Merkkijonon isompi kirjoitusasu"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Strings"
@@ -10,48 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä ja miksi?
 
-Miksi kirjoittaa Ruby-ohjelma, jossa muutetaan merkkijonon ensimmäinen kirjain isoksi? Ensinnäkin, se on usein tarpeen tietojenkäsittelyssä ja data-analyysissä. Toiseksi, se on yksi perusohjelmointitekniikoista, joita jokaisen Ruby-ohjelmoijan tulisi hallita.
+Miksi käyttäjät käyttävät rubyä ja mitä tapahtuu, kun merkkijono kirjoitetaan isoilla kirjaimilla.
 
-## Miten
+## Kuinka tehdä?
 
-Muuttaaksesi merkkijonon ensimmäisen kirjaimen isoksi, tarvitset vain yhden Ruby-metodin: `capitalize`. Tämä metodi muuttaa merkkijonon ensimmäisen kirjaimen isoksi ja muut seuraavat kirjaimet pieniksi.
+Tässä on pieni koodiesimerkki, joka näyttää kuinka kirjoittaa merkkijono isoilla kirjaimilla rubyssä:
 
-```Ruby
-merkkijono = "tämä on esimerkki"
-puts merkkijono.capitalize
-
-# Output:
-# Tämä on esimerkki
+```ruby
+puts "moikka".upcase
 ```
 
-## Syvemmälle
+Tämä koodi tulostaa "MOIKKA" terminaaliin.
 
-Vaihtoehtoinen tapa muuttaa merkkijonon ensimmäinen kirjain isoksi on käyttää `[]` merkintää. Tämä antaa sinulle enemmän kontrollia siitä, miten merkkijono muuttuu.
+## Syvällinen sukellus
 
-```Ruby
-merkkijono = "esimerkki"
-puts merkkijono[0].upcase + merkkijono[1..-1]
+Pääkirjaston kirjailija James A. Duncan kertoo, että aikaisemmissa ohjelmistoversioissa käyttäjien piti käyttää itse kirjastoa merkkijonojen muotoiluun, mikä oli melko hankalaa. Siksi pääkirjaston päivitys sisältää nyt kätevän metodin `.upcase`, joka helpottaa merkkijonojen muotoilua.
 
-# Output:
-# Esimerkki
-```
-
-Sinänsä kapitalisointi on melko yksinkertainen ja suoraviivainen toimenpide. Kuitenkin, joskus voit haluta olla tarkempi siitä, mitkä kirjaimet muutetaan isoksi ja pieneksi. Tässä tapauksessa voit käyttää `capitalize!` metodia, joka muuttaa merkkijonon suoraan alkuperäisessä muuttujassa.
-
-```Ruby
-merkkijono = "Esimerkki TEKSTIÄ"
-merkkijono.capitalize!
-
-puts merkkijono
-
-# Output:
-# Esimerkki tekstiä
-```
+On myös olemassa vaihtoehtoisia tapoja kirjoittaa merkkijono isoilla kirjaimilla, kuten `.capitalize`-metodi, joka muuttaa vain merkkijonon ensimmäisen kirjaimen isoksi.
 
 ## Katso myös
 
-- [Ruby String Documentation](https://ruby-doc.org/core-3.0.1/String.html)
-- [Programming in Ruby](https://learnrubythehardway.org/book/)
-- [Capitalization in Ruby](https://www.rubyguides.com/2016/06/ruby-string-capitalize/)
+Voit lukea lisää merkkijonojen muotoilusta Rubyssa [Ruby-dokumentaatiosta](https://ruby-doc.org/core-3.0.0/String.html#method-i-upcase).

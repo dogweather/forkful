@@ -1,7 +1,7 @@
 ---
-title:                "Alimerkkijonojen erottelu"
-html_title:           "C#: Alimerkkijonojen erottelu"
-simple_title:         "Alimerkkijonojen erottelu"
+title:                "Alirivien erottaminen"
+html_title:           "C#: Alirivien erottaminen"
+simple_title:         "Alirivien erottaminen"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Strings"
@@ -10,59 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä ja miksi?
+Mikä on substringien erottelu ja miksi ohjelmoijat tekevät sitä? Substringien erottelu tarkoittaa merkkijonojen tietyn osan erottelua merkkijonoista. Tämä tehdään yleensä tietyn datan etsimiseksi ja käsittelemiseksi. Esimerkiksi voit erottaa sähköpostiosoitteen tietyn osan, kuten käyttäjänimen, ja käyttää sitä tietokannassa tai lähettää viestiä.
 
-Substringien erottaminen on tärkeä taito ohjelmoinnissa, joka auttaa helpottamaan monimutkaisten merkkijonojen käsittelyä. Yleinen syy tähän on tiettyjen tietojen etsiminen tai manipulointi halutusta merkkijonosta, esimerkiksi tietyn sanan tai numeron etsiminen.
-
-## Näin teet sen
-
-Voit käyttää C# -ohjelmointikieltä helposti ja tehokkaasti erottamaan substringeja käytännöllisillä esimerkeillä ja kooditulosteilla.
+## Kuinka tehdä?
+Tässä on yksinkertainen esimerkki substringien erottelusta C# -ohjelmointikielellä:
 
 ```C#
-// Luo merkkijono
-string teksti = "Tämä on esimerkkiteksti.";
-
-// Tulostaa tekstisi pituuden
-Console.WriteLine($"Tekstiä on yhteensä {teksti.Length} merkkiä.");
-
-// Tulostaa ensimmäiset 10 merkkiä
-string partial = teksti.Substring(0, 10);
-Console.WriteLine($"Substring: {partial}");
-
-// Tulostaa viimeisen 10 merkkiä
-partial = teksti.Substring(teksti.Length - 10);
-Console.WriteLine($"Viimeiset 10 merkkiä: {partial}");
-
-// Tulostaa merkkien lukumäärän sanat:
-int sanat = teksti.Split(' ').Length;
-Console.WriteLine($"Tekstissä on yhteensä {sanat} sanaa.");
-
-// Etsii ja tulostaa tietyn sanan sijainnin tekstissä
-int sijainti = teksti.IndexOf("esimerkki");
-Console.WriteLine($"Ensimmäinen esiintyminen sijaitsee indeksissä {sijainti}.");
-
-// Korvaa sanan ja tulostaa muokatun tekstin
-teksti = teksti.Replace("esimerkki", "harjoitusesimerkki");
-Console.WriteLine($"Muokattu teksti: {teksti}");
+string s = "Tämä on esimerkki merkkijonosta";
+string sub = s.Substring(5, 8); //5 on aloituskohdan indeksi ja 8 on substringin pituus
+Console.WriteLine(sub); //tulostaa "on esime"
 ```
 
-Output:
+Saatu tuloste riippuu päätettiin aloituskohdan ja substringin pituuden arvoista. Voit myös käyttää muita substringien erottelufunktioita, kuten `Split` tai `Regex.Match`, riippuen tarpeistasi.
 
-```
-Tekstiä on yhteensä 23 merkkiä.
-Substring: Tämä on e
-Viimeiset 10 merkkiä: erkkiteksti.
-Tekstissä on yhteensä 4 sanaa.
-Ensimmäinen esiintyminen sijaitsee indeksissä 8.
-Muokattu teksti: Tämä on harjoitusesimerkkiteksti.
-```
+## Syvemmälle
+Substringien erottelu ei ole jotain uutta, vaan se on ollut käytössä jo pitkään. Alun perin se tehtiin manuaalisesti, mutta nykyään on olemassa monia kirjastoja ja valmiita toimintoja, jotka helpottavat substringien erottelua. Voit myös käyttää muita tekniikoita, kuten regular expression, erottamaan tietynlaisia substringejä.
 
-## Syvempi sukellus
-
-C# tarjoaa monia käteviä metodeja substringien erottelemiseen, kuten `Substring()`, `Split()` ja `IndexOf()`. Näiden avulla voit helposti etsiä ja manipuloida haluamiasi tekstin paloja. On myös tärkeää huomioida, että merkkijonot ovat C# -kielellä muuttumattomia, joten `Substring()` ja `Replace()` -metodit luovat aina uuden merkkijonon sen sijaan, että muokkaisivat alkuperäistä.
+Joskus substringien erottelu voi aiheuttaa haasteita, etenkin jos merkkijonossa on monimutkaisia merkkejä tai koodaustapoja. Tässä tapauksessa kannattaa tarkistaa eri kirjastojen ja toimintojen dokumentaatio, jotta löydät parhaan ratkaisun tarpeisiisi.
 
 ## Katso myös
-
-- [Microsoftin dokumentaatio substringien erottelusta C# -kielellä](https://docs.microsoft.com/en-us/dotnet/csharp/how-to/substring)
-- [Kaikki C# -kielen string-metodit](https://docs.microsoft.com/en-us/dotnet/api/system.string?view=netcore-3.1)
-- [C# String-tietotyyppi](https://www.tutlane.com/tutorial/csharp/csharp-string-data-type)
+- [Substringien erottelu C# -dokumentaatiossa] (https://docs.microsoft.com/en-us/dotnet/api/system.string.substring?view=net-5.0)
+- [Regex.Match-funktio C# -dokumentaatiossa] (https://docs.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.regex.match?view=net-5.0)
+- [Regular expressions 101 -sivusto] (https://regex101.com/), joka tarjoaa interaktiivisen tavan harjoitella regular expressionien käyttöä

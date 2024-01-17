@@ -10,49 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-Downloading web pages is a common task for web developers, data analysts, and anyone looking to extract information from a website. Using Rust, a fast and reliable programming language, can make this process even smoother.
+## What & Why?
 
-## How To
-To download a web page in Rust, we can make use of the `reqwest` crate, which provides a simple and user-friendly interface for making HTTP requests. First, we need to add the `reqwest` crate as a dependency in our `Cargo.toml` file:
+Downloading a web page refers to the process of retrieving the contents of a webpage from the internet and storing it on a local device. Programmers often do this to access and extract specific information from the webpage, such as text, images, or data. This allows them to use the acquired information in their own applications or projects.
 
-```Rust
-[dependencies]
-reqwest = { version = "0.11.3", features = ["blocking"] }
+## How to:
+
+To download a web page in Rust, we can use the standard library's "reqwest" crate, which provides the necessary functions and methods for making HTTP requests and receiving responses.
+
+```
+Rust
+use reqwest;
+use std::fs::File;
+use std::io::prelude::*;
+
+fn main() -> Result<(), Box<dyn std::error::Error>> {
+        // make a GET request to the specified URL
+        let response = reqwest::blocking::get("https://www.example.com")?;
+        // save the response body to a file
+        let mut file = File::create("example.html")?;
+        response.copy_to(&mut file)?;
+        Ok(())
+}
 ```
 
-Next, we can use the `reqwest::get()` function to make a `GET` request to the desired URL. This function returns a `Response` object, which we can then use to access the response body:
-
-```Rust
-use reqwest::blocking::get;
-
-let response = get("https://www.example.com").unwrap();
-let body = response.text().unwrap();
-
-println!("{}", body); // prints the downloaded web page
-```
-
-We can also specify additional request options, such as headers or query parameters, by creating a `Client` object and using it to make the request:
-
-```Rust
-use reqwest::blocking::{get, Client};
-
-let client = Client::new(); // create a Client object
-let response = client.get("https://www.example.com")
-    .header("User-Agent", "My Rust Application")
-    .query(&[("search", "rust")])
-    .send()
-    .unwrap();
-
-let body = response.text().unwrap();
-
-println!("{}", body); // prints the downloaded web page
-```
+Running this code will create a file named "example.html" in the local directory and save the contents of the webpage to it.
 
 ## Deep Dive
-Under the hood, the `reqwest` crate makes use of the `hyper` crate, which provides a low-level HTTP implementation in Rust. By default, `reqwest` uses a blocking client, meaning the current thread will be blocked until the request is completed. However, the `reqwest` crate also provides an asynchronous client for more efficient handling of multiple requests. Additionally, the `reqwest` crate supports cookie management, redirection, and other useful features for web scraping tasks.
+
+Before the "reqwest" crate, the most commonly used library for HTTP requests in Rust was "hyper", which is still a widely used alternative. However, "hyper" requires more manual configuration and handling, whereas "reqwest" aims to provide a simpler interface for making requests.
+
+When making a GET request with "reqwest", the response is automatically decompressed if it is gzip or deflate encoded. It also handles redirects and follows them automatically.
+
+To improve performance, "reqwest" also supports async/await functionality, making it easier to asynchronously make multiple requests at once.
 
 ## See Also
-- [reqwest crate documentation](https://docs.rs/reqwest/)
-- [hyper crate documentation](https://docs.rs/hyper/)
-- [Official Rust website](https://www.rust-lang.org/)
+
+- [reqwest GitHub page](https://github.com/seanmonstar/reqwest)
+- [hyper GitHub page](https://github.com/hyperium/hyper)
+- [Rust standard library documentation](https://doc.rust-lang.org/std/)

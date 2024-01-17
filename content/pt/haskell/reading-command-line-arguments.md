@@ -1,7 +1,7 @@
 ---
-title:                "Lendo argumentos de linha de comando."
-html_title:           "Haskell: Lendo argumentos de linha de comando."
-simple_title:         "Lendo argumentos de linha de comando."
+title:                "Lendo argumentos da linha de comando"
+html_title:           "Haskell: Lendo argumentos da linha de comando"
+simple_title:         "Lendo argumentos da linha de comando"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Files and I/O"
@@ -10,42 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que ler argumentos da linha de comando?
+## O que & Por quê?
 
-Ler argumentos da linha de comando é uma habilidade importante para programadores em Haskell, especialmente quando se trata de criar programas com interfaces de usuário ou scripts que precisam de entrada dinâmica. Saber como ler corretamente os argumentos da linha de comando pode tornar suas aplicações mais interativas e fáceis de usar.
+Ler argumentos da linha de comando é uma prática comum em programação, onde o programa recebe informações diretamente do usuário através da linha de comando. Isso permite que os programas sejam mais dinâmicos e interativos, podendo ser executados com diferentes opções e parâmetros.
 
-## Como fazer?
+## Como fazer:
 
-Ler argumentos da linha de comando em Haskell é uma tarefa simples e direta. Basta seguir alguns passos:
+Para ler argumentos da linha de comando em Haskell, podemos utilizar a função `getArgs` do módulo `System.Environment`. Esta função retorna uma lista de strings contendo os argumentos passados na linha de comando.
 
-1. Importe o módulo `System.Environment` para ter acesso às funções que lidam com argumentos da linha de comando.
-2. Use a função `getArgs` para retornar uma lista de todos os argumentos passados na linha de comando.
-3. Converta a lista de `String` para o tipo desejado, caso necessário.
-
-Aqui está um exemplo de código mostrando como ler e imprimir os argumentos da linha de comando:
+Exemplo de código:
 
 ```Haskell
+module Main where
+
 import System.Environment
 
 main = do
-    args <- getArgs
-    putStrLn ("Os argumentos são: " ++ show args)
+  args <- getArgs
+  putStrLn ("Argumentos recebidos: " ++ show args)
 ```
 
-Ao executar este programa com os argumentos `hello world`, a saída será:
+Exemplo de saída:
 
 ```
-Os argumentos são: ["hello", "world"]
+> programa arg1 arg2
+Argumentos recebidos: ["arg1","arg2"]
 ```
 
-## Aprofundando
+## Aprofundando:
 
-Existem outras formas de ler argumentos da linha de comando em Haskell, como usar a função `getProgName` para obter o nome do programa em si, ou a função `lookupEnv` para verificar se determinada variável de ambiente foi definida. Além disso, é possível lidar com argumentos de linha de comando opcionais usando a biblioteca `optparse-applicative`.
+A leitura de argumentos da linha de comando é um recurso presente em diversas linguagens de programação, incluindo C, Python e Ruby. Em Haskell, a função `getArgs` é implementada de forma eficiente utilizando chamadas do sistema operacional.
 
-## Veja também
+Uma alternativa à leitura de argumentos da linha de comando é a utilização de flags, que são opções definidas pelo programador e passadas na linha de comando. Alguns módulos em Haskell, como o `System.Console.GetOpt`, facilitam a utilização de flags em programas.
 
-Aqui estão alguns links úteis para aprender mais sobre como ler argumentos da linha de comando em Haskell:
+## Veja também:
 
-- [Documentação oficial do módulo System.Environment](https://hackage.haskell.org/package/base-4.14.1.0/docs/System-Environment.html)
-- [Tutorial sobre argumentos de linha de comando em Haskell](https://www.corylogan.com/programming/2012/07/15/getting-command-line-arguments-in-haskell/)
-- [Tutorial sobre a biblioteca optparse-applicative](https://github.com/pcapriotti/optparse-applicative#optparse-applicative)
+- [Documentação Haskell sobre a função getArgs](https://hackage.haskell.org/package/base-4.14.0.0/docs/System-Environment.html#g:7)
+- [Exemplo de utilização de flags em Haskell](https://wiki.haskell.org/Flags)
+- [Documentação Haskell sobre o módulo GetOpt](https://hackage.haskell.org/package/base-4.14.0.0/docs/System-Console-GetOpt.html)

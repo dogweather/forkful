@@ -10,33 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+Vad & Varför?
+Att hitta längden på en sträng innebär helt enkelt att räkna antalet tecken i en given sträng. Detta är en vanlig uppgift för programmerare eftersom det hjälper till att hantera och manipulera text på ett effektivt sätt.
 
-Att veta längden på en sträng är en vanlig uppgift i Java-programmering. Det kan hjälpa till att bestämma hur mycket minne som behövs för att lagra strängen och göra det möjligt att manipulera den på rätt sätt.
-
-## Hur man gör det
-
-För att hitta längden på en sträng i Java, använd metoden `length ()` från `String` -klassen. Här är ett enkelt exempel:
+Hur du gör:
+Här är en kodexempel i Java för att hitta längden på en sträng:
 
 ```Java
-String myString = "Hej, jag heter Johan";
-int length = myString.length();
-System.out.println(length);
+String str = "Hejsan!";
+int length = str.length();
+System.out.println("Strängen är " + length + " tecken lång.");
 ```
 
 Output:
+
+```Java
+Strängen är 7 tecken lång.
 ```
-19
-```
 
-## Djupdykning
+En annan metod som också kan användas är `str.toCharArray().length`, som konverterar strängen till en teckenlista och räknar sedan antalet tecken.
 
-Metoden `length ()` returnerar antalet tecken i en sträng. Detta innebär att alla tecken räknas, även mellanslag och specialtecken. Om du vill hitta längden på en sträng utan mellanslag, kan du använda metoden `replace ()` för att ta bort dem först.
+För att hitta längden på en sträng med användarinput, kan `Scanner`-klassen användas för att läsa in en sträng från användaren och sedan tillämpa `length()`-metoden för att räkna antalet tecken.
 
-Det finns också andra sätt att hitta längden på en sträng, som att använda en loop för att räkna antalet tecken eller använda `StringTokenizer` -klassen. Men att använda `length ()` -metoden är den enklaste och mest effektiva metoden.
+Djupdykning:
+Att hitta längden på en sträng är en viktig del av textbehandling i programmering. Det är en vanlig uppgift som behövs för att beräkna eller manipulera strängar, som att kontrollera om en sträng är tom eller hitta en viss del av en sträng. Det är också en grundläggande kunskap som behövs för att förstå mer avancerade koncept inom textbehandling.
 
-## Se även
+I Java finns det flera alternativ för att hitta längden på en sträng. Utöver `length()`-metoden, som användes i exempelkoden ovan, kan `str.toCharArray().length` användas, liksom `str.getBytes().length`. Båda dessa metoder räknar också antalet tecken i en sträng.
 
-- [Java String Class](https://docs.oracle.com/javase/10/docs/api/java/lang/String.html)
-- [String length() method](https://www.geeksforgeeks.org/java-string-length-method-example/)
-- [Efficiency of String length() method](https://www.journaldev.com/18048/string-length-java)
+Implementationen av `length()`-metoden inkluderar en variabel vid namn `count` som håller koll på antalet loopar som behövs för att hitta längden på strängen. Sedan returneras denna `count`-variabel, som är antalet tecken i strängen. 
+
+Se även:
+- Officiell Java-dokumentation för `String.length()`-metoden: https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#length-- 
+- Javavideodemonstration om hur man hittar längden på en sträng: https://youtu.be/06iTMcDl5cA

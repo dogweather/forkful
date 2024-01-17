@@ -1,7 +1,7 @@
 ---
-title:                "Schreiben auf Standardfehler"
-html_title:           "Swift: Schreiben auf Standardfehler"
-simple_title:         "Schreiben auf Standardfehler"
+title:                "Schreiben auf den Standardfehler"
+html_title:           "Swift: Schreiben auf den Standardfehler"
+simple_title:         "Schreiben auf den Standardfehler"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Files and I/O"
@@ -10,31 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Warum?
+# Was & Warum?
+Beim Programmieren gibt es oft die Notwendigkeit, Fehlermeldungen oder wichtige Informationen auszugeben, jedoch ohne den normalen Ausgabe-Stream zu stören. Das ist genau der Zweck des Schreibens auf den Standardfehler. Es ist eine Möglichkeit, Nachrichten direkt an die Konsole zu senden, um dem Entwickler wichtige Informationen mitzuteilen, ohne die eigentliche Ausgabe des Programms zu beeinflussen.
 
-In der Welt der Programmierung gibt es immer wieder Situationen, in denen Fehler auftreten können. Diese Fehler werden oft von dem Programmierer behandelt und auf eine bestimmte Weise ausgegeben. Eine Möglichkeit, dies zu tun, ist das Schreiben auf den Standardfehler (Standard Error). In diesem Artikel werden wir besprechen, warum und wie man auf den Standardfehler schreibt und einige tiefergehende Informationen über diesen Prozess geben.
+# Wie geht's?
+Um etwas auf den Standarderror zu schreiben, verwendet man die Funktion `write(_:)` und übergibt ihr eine String-Nachricht. Hier ist ein Beispielcode:
 
-## Wie man auf den Standardfehler schreibt
-
-Das Schreiben auf den Standardfehler ist eine nützliche Technik, um Fehler in einem Programm zu behandeln. Um auf den Standardfehler zu schreiben, muss man lediglich die Funktion `print(_:to:)` verwenden und den zu schreibenden Text und den Standardfehler als Argumente übergeben. Hier ist ein Beispiel in Swift:
-
-```
-let errorMessage = "Dies ist eine Fehlermeldung"
-print(errorMessage, to: &standardError)
+```Swift
+write("Dies ist eine wichtige Fehlermeldung.", to: &standardError)
 ```
 
-Wenn dieses Codebeispiel ausgeführt wird, wird die Fehlermeldung auf dem Terminal ausgegeben, zusammen mit anderen Ausgaben des Programms. Das Schreiben auf den Standardfehler ist besonders nützlich, wenn man ein Skript schreibt oder wenn das Programm keine grafische Benutzeroberfläche hat.
+Das Ergebnis wird dann in der Konsole, unabhängig von der normalen Ausgabe des Programms, angezeigt:
 
-## Tiefergehender Einblick
+```Swift
+Dies ist eine wichtige Fehlermeldung.
+```
 
-In der Vergangenheit war es üblich, auf den Standardausgang (Standard Output) zu schreiben, um Fehlermeldungen zu behandeln. Allerdings kann die Verwendung des Standardausgangs missverstanden werden, da er oft für normale Ausgaben des Programms verwendet wird. Das Schreiben auf den Standardfehler bietet eine klare Trennung zwischen den normalen Ausgaben und den Fehlermeldungen.
+Man kann auch den Standardfehlerstream direkt mit dem `standardError` Konstante referenzieren und somit die `write(_:)` Funktion weglassen:
 
-Eine weitere wichtige Sache, die man beachten sollte, ist, dass das Schreiben auf den Standardfehler asynchron erfolgt. Das bedeutet, dass der Code, der nach dem Schreiben auf den Standardfehler geschrieben wird, möglicherweise vor dem Schreiben auf den Standardfehler ausgeführt wird. Um sicherzustellen, dass das Schreiben auf den Standardfehler beendet ist, sollte man die Funktion `flush()` aufrufen.
+```Swift
+standardError.write("Noch eine wichtige Nachricht.")
+```
 
-## Siehe auch
+# Tiefergehender Einblick
+Das Schreiben auf den Standarderror wird hauptsächlich für die Fehlerbehandlung und Debugging-Zwecke verwendet. Anstatt die Nachricht auf dem normalen Ausgabestream zu drucken, bleibt sie auf dem Standardfehler und kann somit besser von anderen Programmausgaben unterschieden werden.
 
-Hier sind einige nützliche Links, um mehr über das Schreiben auf den Standardfehler in Swift zu erfahren:
+Eine Alternative zum Schreiben auf den Standarderror ist das Verwenden von benutzerdefinierten Log-Dateien oder dem Debugging-Tool des jeweiligen IDEs. Jedoch ist das Schreiben auf den Standarderror eine schnelle und unkomplizierte Möglichkeit, wichtige Informationen direkt an die Konsole zu senden.
 
-- [Apple Documentation on Standard Error](https://developer.apple.com/documentation/foundation/standarderror)
-- [Stack Overflow Thread on Writing to Standard Error in Swift](https://stackoverflow.com/questions/31927311/write-string-to-stderr)
-- [Swift Programming Language Guide](https://docs.swift.org/swift-book/LanguageGuide/TheBasics.html)
+Zur Umsetzung des Schreibens auf den Standarderror verwendet Swift eine Konstante namens `standardError`, welche einen Pointer auf den Standardfehlerstream darstellt. Durch die Verwendung von Referenzen, ist es möglich, direkt auf diesen Stream zu schreiben, ohne die normale Ausgabe des Programms zu beeinflussen.
+
+# Sieh dir auch an
+- [Apple Dokumentation über das Schreiben auf den Standarderror](https://developer.apple.com/documentation/swift/1541261-write)
+- [Stack Overflow Diskussion über das Schreiben auf den Standarderror in Swift](https://stackoverflow.com/questions/24008958/writing-to-standard-error-in-swift)

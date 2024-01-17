@@ -10,54 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+### Was & Warum?
+Das Lesen von Befehlszeilenargumenten ist eine Möglichkeit für Programmierer, benutzerdefinierte Eingaben von Benutzern zu akzeptieren und diese Eingaben in ihr Programm einzubinden. Es ist hilfreich, wenn ein Programm verschiedene Einstellungen oder Optionen bietet, die der Benutzer je nach Bedarf anpassen kann.
 
-Warum sollte man sich mit dem Lesen von Befehlszeilenargumenten beschäftigen? Nun, es ist eine wichtige Fähigkeit, um die Eingabe von Benutzern in einem Ruby-Programm zu verarbeiten und es flexibel und interaktiv zu gestalten.
+### Wie geht's?
+Die Verwendung von Befehlszeilenargumenten in Ruby ist einfach und kann in wenigen Zeilen Code implementiert werden.
 
-## Wie funktioniert es?
+Beispielcode:
+```
+# Lese das erste Argument aus der Befehlszeile
+arg1 = ARGV[0]
 
-Das Lesen von Befehlszeilenargumenten in Ruby ist relativ einfach und kann mit der "ARGV" Variable durchgeführt werden. Diese Variable enthält alle Argumente, die bei der Ausführung des Programms angegeben wurden.
-
-```Ruby
-# Beispielprogramm, das die ersten beiden Argumente ausgibt
-
-puts ARGV[0]
-puts ARGV[1]
+# Ausgabe des Arguments
+puts "Das eingegebene Argument war: #{arg1}"
 ```
 
-Wenn wir dieses Programm mit den Argumenten "Hallo" und "Welt" ausführen würden, wäre die Ausgabe:
-
+Beispieloutput:
 ```
-Hallo
-Welt
-```
-
-Zusätzlich können wir auch eine Schleife verwenden, um alle Argumente auszugeben:
-
-```Ruby
-# Beispielprogramm, das alle Argumente ausgibt
-
-ARGV.each do |arg|
-  puts arg
-end
+$ ruby beispiel.rb Hallo
+Das eingegebene Argument war: Hallo
 ```
 
-Bei der Ausführung mit den Argumenten "Ruby", "ist" und "super!" wäre die Ausgabe:
+### Tiefes Eintauchen
+Das Lesen von Befehlszeilenargumenten ist eine weit verbreitete Praxis in der Programmierung und wird in verschiedenen Sprachen wie Ruby, Python und Java unterstützt. Eine alternative Möglichkeit, benutzerdefinierte Eingaben zu akzeptieren, ist die Verwendung von Umgebungsvariablen. Die Implementierung des Lesens von Befehlszeilenargumenten in Ruby basiert auf der globalen Variable `ARGV`, die eine Sammlung der Argumente, die beim Aufruf des Programms übergeben wurden, enthält.
 
-```
-Ruby
-ist
-super!
-```
-
-## Tiefer Einblick
-
-Während einfaches Lesen von Befehlszeilenargumenten in den meisten Fällen ausreicht, gibt es Situationen, in denen mehr Kontrolle erforderlich ist. In solchen Fällen können Option-Parsing-Libraries wie "optparse" oder "docopt" verwendet werden, die es ermöglichen, Argumente mit bestimmten Formatierungen oder Optionen zu verarbeiten.
-
-Ein weiterer wichtiger Aspekt ist die Validierung der Eingabe der Benutzer. Dies kann durch Überprüfen von Argumenten auf bestimmte Bedingungen oder durch Verwendung von Standard-Argumenten erreicht werden, falls keine Argumente angegeben werden.
-
-## Sieh auch
-
-- Offizielle Ruby-Dokumentation zu Befehlszeilenargumenten: https://ruby-doc.org/core-3.0.0/ARGF.html
-- Eine Einführung in Option-Parsing in Ruby: https://www.rubyguides.com/2018/08/ruby-optionparser/
-- Eine Übersicht über "docopt": https://github.com/docopt/docopt.rb
+### Sieh dir auch an
+- [Ruby-Dokumentation zu Befehlszeilenargumenten](https://ruby-doc.org/core-2.7.0/ARGF.html)
+- [Wie man Argumente aus der Befehlszeile in Python liest](https://docs.python.org/3/library/sys.html#sys.argv)
+- [Reading Command-Line Arguments in Java](https://www.baeldung.com/java-command-line-arguments)

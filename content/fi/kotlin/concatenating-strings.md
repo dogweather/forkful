@@ -1,7 +1,7 @@
 ---
-title:                "Stringien yhdistäminen"
-html_title:           "Kotlin: Stringien yhdistäminen"
-simple_title:         "Stringien yhdistäminen"
+title:                "Merkkijonojen yhdistäminen"
+html_title:           "Kotlin: Merkkijonojen yhdistäminen"
+simple_title:         "Merkkijonojen yhdistäminen"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Strings"
@@ -10,68 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä & Miksi?
 
-Stringien ketjuttaminen on yleinen ohjelmointitekniikka, joka mahdollistaa useiden merkkijonojen yhdistämisen yhdeksi merkkijonoksi. Tämä on erityisen hyödyllistä, kun haluat luoda dynaamisia tekstilausekkeita tai luoda otsikkotekstejä.
+Konkatenaatio eli merkkijonojen yhdistäminen on ohjelmoinnissa yleinen tapa yhdistää kaksi tai useampaa merkkijonoa yhdeksi kokonaisuudeksi. Tätä tarvitaan esimerkiksi tekstin luomisessa, jolloin halutaan lisätä muuttujiin tallennettuja arvoja halutussa järjestyksessä.
 
-## Kuinka
+## Kuinka:
 
-Stringien ketjuttamiseen voit käyttää Kotlinin sisäänrakennettua `plus()`-funktiota tai käyttää `+=`-operaattoria.
+Kotlinissa merkkijonojen konkatenaatio tapahtuu käyttämällä plus-merkkiä (+) kahden tai useamman merkkijonon välissä. Katso esimerkki alla:
 
-```Kotlin
-// Example 1
-val nimi = "Matti"
-val tervehdys = "Hei, $nimi!"
+```kotlin
+val etunimi = "Matti"
+val sukunimi = "Mäkinen"
+println(etunimi + " " + sukunimi)
 
-println(tervehdys)
-
-// Output:
-// Hei, Matti!
-
-// Example 2
-val aloitus = "Tervetuloa"
-val paikka = "Kotisivuillemme"
-val otsikko = "$aloitus $paikka!"
-
-println(otsikko)
-
-// Output:
-// Tervetuloa Kotisivuillemme!
+// Output: Matti Mäkinen
 ```
 
-On myös mahdollista ketjuttaa useampia merkkijonoja samassa lausekkeessa.
+Merkkijonon lisäksi plus-merkkiä voidaan käyttää myös muuttujan ja tekstin yhdistämiseen. Katso esimerkki alla:
 
-```Kotlin
-// Example
-val opiskelija = "Maija"
-val kurssi = "ohjelmointi"
-val opintojakso = "kieli"
-val lause = "$opiskelija opiskelee $kurssi $opintojaksoa."
+```kotlin
+val sivujenMaara = 315
+println("Kirjassa on " + sivujenMaara + " sivua.")
 
-println(lause)
-
-// Output:
-// Maija opiskelee ohjelmointi kieltä.
+// Output: Kirjassa on 315 sivua.
 ```
 
-## Syvempää tietoa
+## Syväluotaus:
 
-Kotlinissa on myös mahdollista käyttää `StringBuilder`-luokkaa merkkijonojen ketjuttamiseen. Tämä on tehokkaampi vaihtoehto, kun haluat ketjuttaa suuremman määrän merkkijonoja.
+Merkkijonojen konkatenaatio ei ole uusi keksintö, vaan sitä on käytetty ohjelmoinnissa jo pitkään. Aikaisemmin se tehtiin yleensä käyttämällä esimerkiksi C-kielen strcat-funktiota tai Java-kielen StringBuilder-luokkaa.
 
-```Kotlin
-// Example
-val text = StringBuilder("Kissa")
-text.append("nimi").append(" on Mimi.")
+Kotlinissa konkatenaatio on toteutettu tehokkaasti sisäisen StringBuilder-luokan avulla. Tämä mahdollistaa suorituskyvyn optimoinnin ja tekee koodista helpommin luettavaa.
 
-println(text)
+## Katso myös:
 
-// Output:
-// Kissanimi on Mimi.
-```
-
-On myös tärkeää huomata, että ketjutetut merkkijonot ovat muuttumattomia, eli niitä ei voi muokata jälkikäteen. Jokaisen ketjutuksen jälkeen muodostetaan uusi merkkijono, ja alkuperäiset merkkijonot säilyvät muuttumattomina.
-
-## Katso myös
-
-- [Kotlinin dokumentaatio](https://kotlinlang.org/docs/reference/basic-types.html#strings)
-- [10 things to love about Kotlin](https://www.infoworld.com/article/3274053/10-things-to-love-about-kotlin.html)
+- [Kotlinin dokumentaatio merkkijonojen konkatenaatiosta](https://kotlinlang.org/docs/reference/basic-types.html#strings)
+- [Java StringBuilder-luokan dokumentaatio](https://docs.oracle.com/javase/7/docs/api/java/lang/StringBuilder.html)
+- [C strcat-funktion dokumentaatio](https://www.tutorialspoint.com/c_standard_library/c_function_strcat.htm)

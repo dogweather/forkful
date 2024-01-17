@@ -10,73 +10,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
-산업에서 유동적인 환경의 웹 페이지를 파싱하기 위한 최근 기술인 HTML 파싱에 대해 알아보고 싶다면 이 글을 참고하세요! 이 기술은 스크래핑, 웹 크롤링 등 다양한 분야에서 사용될 수 있습니다.
+# HTML Parsing in Go: What and Why?
 
-## 어떻게
-우리는 Go 언어를 사용하여 HTML을 파싱하는 방법을 살펴볼 것입니다. 먼저, 필요한 라이브러리를 임포트합니다.
+HTML parsing is the process of interpreting and analyzing HTML code to extract meaningful information from a web page. Programmers use this technique to scrape data, analyze web content, and build web applications.
+
+# How to:
+
 ```Go
+package main
+
 import (
-	"fmt"
-	"strings"
+    "fmt"
+    "net/http"
 
-	"golang.org/x/net/html"
+    "github.com/PuerkitoBio/goquery"
 )
-```
-그리고 우리는 다음과 같은 코드를 사용하여 HTML을 파싱합니다.
-```Go
-// HTML 문자열
-const htmlString = "<html><body><h1>Hello, World!</h1></body></html>"
 
-// HTML 파싱
-doc, err := html.Parse(strings.NewReader(htmlString))
+func main() {
+    // Get the HTML body of a webpage
+    res, err := http.Get("https://www.example.com")
+    if err != nil {
+        fmt.Println("Error:", err)
+    }
+    defer res.Body.Close()
 
-if err != nil {
-	fmt.Println("파싱 에러:", err)
-}
+    // Load the HTML document into goquery
+    doc, err := goquery.NewDocumentFromReader(res.Body)
+    if err != nil {
+        fmt.Println("Error:", err)
+    }
 
-// 첫 번째 h1 태그를 찾습니다.
-h1 := findElement(doc, "h1")
-
-// h1 태그 안의 텍스트를 출력합니다.
-fmt.Println("결과:", h1.FirstChild.Data)
-// 결과: Hello, World!
-```
-
-## 깊게 들어가기
-HTML 파싱에 대해 더 자세히 알아보겠습니다. HTML은 트리 구조로 이루어져 있기 때문에 우리는 트리에서 원하는 요소를 찾을 수 있습니다. 위의 예제에서 우리는 `findElement` 함수를 사용하여 첫 번째 h1 태그를 찾았는데, 이 함수는 다음과 같이 정의될 수 있습니다.
-```Go
-// 원하는 요소를 찾는 함수
-func findElement(n *html.Node, name string) *html.Node {
-	if n.Type == html.ElementNode && n.Data == name {
-		return n
-	}
-	for c := n.FirstChild; c != nil; c = c.NextSibling {
-		if result := findElement(c, name); result != nil {
-			return result
-		}
-	}
-	return nil
-}
-```
-또 다른 예제로, 우리가 파싱하고자 하는 HTML에 여러 개의 태그가 있다고 가정해봅시다. 이 경우, `findElement` 함수를 다음과 같이 수정하여 모든 해당 태그를 찾을 수 있습니다.
-```Go
-// 모든 해당 태그를 찾는 함수
-func findAllElements(n *html.Node, name string) []*html.Node {
-	var result []*html.Node
-	if n.Type == html.ElementNode && n.Data == name {
-		result = append(result, n)
-	}
-	for c := n.FirstChild; c != nil; c = c.NextSibling {
-		result = append(result, findAllElements(c, name)...)
-	}
-	return result
+    // Find all <a> tags and print the href attribute
+    doc.Find("a").Each(func(i int, s *goquery.Selection) {
+        fmt.Println(s.Attr("href"))
+    })
 }
 ```
 
-이 방법 외에도 Go 언어에는 다양한 라이브러리와 패키지가 있어서 HTML 파싱을 더 간편하게 할 수 있습니다. 또한, CSS 선택자와 같은 기능을 제공하는 라이브러리도 있어서 더욱 높은 유연성을 가질 수 있습니다.
+Output:
 
-## See Also
-- [Golang.org - HTML Package](https://golang.org/pkg/net/html/)
-- [Scraping HTML with Go](https://www.devdungeon.com/content/scraping-html-go)
-- [Parsing HTML with Go](https://blog.golang.org/pipelines)
+```
+https://www.example.com
+```
+
+# Deep Dive
+
+HTML parsing has been an essential tool for web developers since the early days of the internet. Before the advent of modern web development frameworks, parsing HTML was the only way to extract data from web pages.
+
+Although there are alternative methods for scraping data, such as using APIs, HTML parsing is still relevant due to its versatility and the sheer amount of data that can be extracted from a single web page.
+
+Go provides various packages and libraries such as goquery, which make parsing HTML in Go a straightforward task. These libraries handle the complexity of parsing HTML and allow developers to focus on building their applications.
+
+# See Also
+
+- [goquery documentation](https://godoc.org/github.com/PuerkitoBio/goquery)
+- [A Beginner's Guide to Web Scraping in Go](https://dev.to/jakubkrawczyk/building-a-simple-web-scraper-in-go-5el8)
+- [scrape - HTML parsing library for Go](https://github.com/yhat/scrape)

@@ -10,55 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was ist und warum?
+Das Schreiben einer Textdatei bedeutet, in einfacher Sprache gesagt, dass man in einer Datei schreibt, statt in einem Dokument. Programmierer nutzen das, um Daten oder Ergebnisse von Programmen zu speichern, die später wieder verwendet werden können oder mit anderen Programmen geteilt werden sollen.
 
-Warum sollte man überhaupt in Erwägung ziehen, ein Textdokument mit C# zu schreiben? Nun, manche Programmanwendungen erfordern, dass Text in eine Datei geschrieben wird, um ihn später wieder zu lesen oder zu bearbeiten. Zum Beispiel können Benutzereinstellungen oder Dateilisten auf diese Weise gespeichert werden.
-
-## Wie geht man vor
-
-Um ein Textdokument mit C# zu schreiben, können wir die `StreamWriter`-Klasse verwenden. Hier ist ein Beispielcode, der einen einfachen Text in eine Datei mit dem Namen "beispiel.txt" schreibt:
+## Wie funktioniert es?
+Um eine Textdatei mit C# zu schreiben, muss man zuerst eine Datei erstellen und sie mit einem Text-Encoder öffnen. Dann kann man den Inhalt in die Datei schreiben und sie am Ende wieder schließen. Hier ist ein einfaches Beispiel, das Hallo Welt! in eine Textdatei schreibt:
 
 ```C#
-using (StreamWriter writer = new StreamWriter("beispiel.txt"))
+using System.IO;
+
+string path = @"C:\Users\User\Desktop\text.txt";
+
+//die Datei mit UTF8-Encoder öffnen
+using (StreamWriter sw = new StreamWriter(path, false, Encoding.UTF8))
 {
-    writer.WriteLine("Dies ist ein Beispieltext.");
+    //Inhalt schreiben
+    sw.WriteLine("Hallo Welt!");
+    //Datei schließen
+    sw.Close();
+}
+
+//Überprüfen, ob der Inhalt geschrieben wurde
+using (StreamReader sr = new StreamReader(path))
+{
+    string text = sr.ReadToEnd();
+    Console.WriteLine(text); //Ausgabe: Hallo Welt!
 }
 ```
 
-Hier wird der `StreamWriter` in einer `using`-Anweisung verwendet, um sicherzustellen, dass die Ressourcen frei gegeben werden, wenn wir fertig sind. Innerhalb der Anweisung schreiben wir eine Zeile Text mit der `WriteLine`-Methode. Wenn die Datei bereits existiert, wird sie überschrieben. Wenn nicht, wird sie automatisch erstellt.
+## Tiefere Einblicke
+Das Schreiben von Textdateien ist ein wichtiger Bestandteil der Programmierung, da es eine einfache und effiziente Möglichkeit bietet, Daten zu speichern und zu teilen. Früher war es üblich, Binary-Dateien zu verwenden, aber Textdateien sind in der Regel plattformunabhängig und leichter zu lesen und zu bearbeiten.
 
-Wie man sieht, ist es recht einfach, mit C# eine Textdatei zu schreiben. Man kann natürlich auch komplexere Dateien wie HTML, XML oder CSV schreiben, indem man statt einfacher Textzeilen diese Dateiformate formatiert.
+Alternativ kann man auch eine CSV-Datei verwenden, um strukturierte Daten zu speichern. Diese kann mit Excel oder anderen Programmen geöffnet werden und ist daher auch leichter lesbar für Nicht-Programmierer.
 
-## Eintauchen ins Detail
+Bei der Implementierung von Textdateien sollte man auch auf die Codierung achten, da unterschiedliche Länder oder Systeme möglicherweise unterschiedliche Zeichen verwenden. UTF-8 ist eine häufig genutzte Codierung, die Unicode-Zeichen unterstützt.
 
-Jetzt wollen wir einen Blick auf einige der features werfen, die wir bei der Verwendung des `StreamWriter` entdecken können.
+## Weitere Informationen
+Um mehr über das Schreiben von Textdateien in C# zu erfahren, kann man die offizielle Dokumentation von Microsoft lesen. Hier sind einige hilfreiche Ressourcen:
 
-### Kodierung
+- [Microsoft Dokumentation über Textdateien in C#](https://docs.microsoft.com/en-us/dotnet/api/system.io.streamwriter)
+- [Tutorial zum Schreiben von Textdateien in C#](https://www.c-sharpcorner.com/article/writing-a-text-file-in-c-sharp/)
+- [Gebräuchliche Codierungen in C#](https://www.c-sharpcorner.com/article/c-sharp-multilingual-support-using-system-text-encoding/)
 
-Der `StreamWriter` hat eine überladene Konstruktor-Methode, die wir verwenden können, um eine bestimmte Kodierung für unsere Datei anzugeben. Standardmäßig verwendet er UTF-8-Format, aber wir können dies ändern, indem wir einen Kodierungsparameter angeben. Zum Beispiel:
-
-```C#
-using (StreamWriter writer = new StreamWriter("beispiel.txt", Encoding.Unicode))
-{
-    // Text hier schreiben
-}
-```
-
-### Textkonvertierung
-
-Manchmal wollen wir, dass der `StreamWriter` Zeichen oder Strings in unseren Text konvertiert, bevor er ihn in die Datei schreibt. Dafür gibt es verschiedene Methoden wie `Write`, `WriteLine` und `WriteAsync`, die entweder einen `Char`, eine `String`, eine `Bool`, eine `Double` usw. als Parameter akzeptieren. Wenn wir beispielsweise eine Zeichenkette in eine Zeile schreiben wollen, können wir dies tun:
-
-```C#
-string name = "Max Mustermann";
-writer.WriteLine($"Mein Name ist {name}.");
-```
-
-### Verwendung mit anderen .NET-Klassen
-
-Der `StreamWriter` kann auch mit anderen .NET-Klassen kombiniert werden, um Text auf verschiedene Arten zu lesen und zu schreiben. Zum Beispiel können wir einen `StreamReader` verwenden, um Text aus einer Datei zu lesen und diesen dann in einen `StreamWriter` zu schreiben, um ihn in eine andere Datei zu kopieren.
-
-## Siehe auch
-
-- [MSDN-Dokumentation zum StreamWriter](https://docs.microsoft.com/de-de/dotnet/api/system.io.streamwriter?view=net-5.0)
-- [Tutorial: Lesen und Schreiben von Dateien (C#-Programmierhandbuch)](https://docs.microsoft.com/de-de/dotnet/csharp/programming-guide/file-system/how-to-read-from-a-text-file)
-- [Dateien lesen und schreiben in C# (Codeburst)](https://codeburst.io/working-with-files-in-c-b017ef5c3f18)
+Viel Spaß beim Schreiben von Textdateien mit C#!

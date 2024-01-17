@@ -10,39 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+### Co i dlaczego?
 
-Wysyłanie żądania HTTP jest jedną z podstawowych umiejętności, które powinien posiadać każdy programista w języku Go. Dzięki temu możemy komunikować się z innymi serwerami i aplikacjami, pobierać i wysyłać dane, co jest niezbędne w wielu zastosowaniach internetowych.
+Wysyłanie żądania HTTP jest często używaną metodą programistyczną, polegającą na przesyłaniu żądania do serwera w celu pobrania lub przetworzenia danych. Programiści często korzystają z tej metody w swoich projektach, ponieważ pozwala ona na interakcję z serwerem i przesyłanie danych.
 
-## Jak to zrobić
-
-Aby wysłać żądanie HTTP w języku Go, używamy funkcji `http.Get()` z pakietu `net/http`. Przykładowy kod wygląda następująco:
+### Jak to zrobić:
 
 ```Go
-res, err := http.Get("https://www.example.com")
-if err != nil {
-  // obsługa błędu
-}
-defer res.Body.Close() // zamykamy ciało odpowiedzi po zakończeniu funkcji
+package main
 
-// wyciągamy potrzebne informacje z odpowiedzi
-body, err := ioutil.ReadAll(res.Body)
-if err != nil {
-  // obsługa błędu
+import (
+	"fmt"
+	"io/ioutil"
+	"net/http"
+)
+
+func main() {
+	url := "https://example.com"
+	req, _ := http.NewRequest("GET", url, nil)
+
+	res, _ := http.DefaultClient.Do(req)
+
+	defer res.Body.Close()
+	body, _ := ioutil.ReadAll(res.Body)
+
+	fmt.Println(string(body))
 }
-fmt.Println(string(body))
 ```
 
-W powyższym przykładzie odwołujemy się do adresu URL `https://www.example.com` i pobieramy z niego ciało odpowiedzi. Następnie wypisujemy je na konsolę. Ważne jest, aby zawsze pamiętać o zamknięciu ciała odpowiedzi za pomocą funkcji `res.Body.Close()`.
+W powyższym przykładzie wykorzystujemy paczkę `net/http` oraz funkcję `NewRequest` do utworzenia żądania HTTP typu GET do strony internetowej "example.com". Następnie używamy klienta `http.DefaultClient`, aby wysłać żądanie i otrzymać odpowiedź. Za pomocą `ioutil` przetwarzamy odpowiedź i wyświetlamy ją na ekranie.
 
-## Głębsze zanurzenie
+### Wnikliwe spojrzenie:
 
-Istnieje wiele innych opcji i ustawień, które możemy wykorzystać przy wysyłaniu żądań HTTP w języku Go. Przykładowo, możemy zmienić nagłówki żądania, określić limit czasu oczekiwania na odpowiedź czy obsługiwać przekierowania.
+Wysyłanie żądania HTTP jest często stosowane w programowaniu, zwłaszcza do komunikacji między klientem a serwerem. Alternatywą dla biblioteki standardowej `net/http` jest popularna paczka `curl`, która oferuje więcej funkcjonalności i opcji konfiguracji, ale wymaga instalacji zewnętrznego oprogramowania. Wszystkie szczegóły dotyczące wysyłania żądań HTTP są dokładnie opisane w dokumentacji paczki `net/http`, więc warto zapoznać się z nią w celu lepszego zrozumienia tego procesu.
 
-Aby dowiedzieć się więcej na temat wysyłania żądań HTTP w języku Go, polecamy zapoznać się z dokumentacją pakietu `net/http` oraz przetestować różne opcje i funkcjonalności samodzielnie.
+### Zobacz również:
 
-## Zobacz także
-
-- Dokumentacja pakietu `net/http`: https://golang.org/pkg/net/http/
-- Przykładowe programy w języku Go: https://gobyexample.com/
-- Kurs języka Go w Codecademy: https://www.codecademy.com/learn/learn-go
+- [Dokumentacja paczki net/http w języku polskim](http://golang.org/pkg/net/http/)
+- [Oficjalny poradnik Go](https://tour.golang.org/welcome/1) dla początkujących programistów
+- [Porównanie bibliotek net/http i curl w języku angielskim](https://medium.com/@nate510/don-t-use-go-s-default-http-client-4804cb19f779)

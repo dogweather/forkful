@@ -1,7 +1,7 @@
 ---
-title:                "http リクエストの送信"
-html_title:           "Rust: http リクエストの送信"
-simple_title:         "http リクエストの送信"
+title:                "「HTTPリクエストを送信する」"
+html_title:           "Rust: 「HTTPリクエストを送信する」"
+simple_title:         "「HTTPリクエストを送信する」"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "HTML and the Web"
@@ -10,34 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+今回は、Rustプログラミング言語でのHTTPリクエスト送信について紹介します。HTTPリクエストとは、Webサーバーから情報を取得するために利用されるもので、プログラマーにとっては非常に重要な機能です。
 
-ネットワーク通信をするとき、多くのアプリやサイトはHTTPリクエストを使います。これにより、サーバーから情報を取得したり、データを送信したりすることができます。
+## なぜHTTPリクエストを送信するのか？
+プログラムでHTTPリクエストを送信する理由はいくつかあります。一つは、Webサーバーからデータを取得するためです。例えば、あるWebサイトのデータをプログラムで取得して処理することができます。また、Webサービスを作成する際にもHTTPリクエストを送信することで、クライアントからのリクエストに対応することができます。
 
-## 使い方
-
+## 送信方法
 ```Rust
-use reqwest::blocking::Client;
+// インポート
+use std::io::{self, Write};
+use std::net::TcpStream;
 
 fn main() {
-    let client = Client::new();
-    let res = client.get("https://example.com")
-        .send()
-        .expect("Failed to send request");
-        
-    println!("Response status: {}", res.status());
-    println!("Response body: {}", res.text().unwrap());
+    // サーバーアドレスとポートを指定
+    let address = "google.com";
+    let port = "80";
+
+    // ソケットを作成
+    let mut stream = TcpStream::connect(format!("{}:{}", address, port)).expect("Could not connect to server");
+
+    // HTTPリクエストを送信
+    stream.write(b"GET / HTTP/1.0\r\n\r\n").unwrap();
+
+    // サーバーからのレスポンスを表示
+    let mut response = String::new();
+    stream.read_to_string(&mut response).expect("Failed to read response");
+    println!("{}", response);
 }
 ```
 
-上のコードでは、 `reqwest` ライブラリを使用してHTTPリクエストを送信しています。まず、`Client` を作成し、`get()` メソッドを使用してリクエスト先のURLを指定します。そして、`send()` メソッドを呼び出して実際にリクエストを送信します。レスポンス情報を取得するには、`status()` メソッドや`text()` メソッドを使用します。 
+実行すると、GoogleのホームページのHTMLコードが表示されます。
 
-## 深堀り
+## 詳細情報
+HTTPリクエストについての歴史的な背景は、1991年にティム・バーナーズ＝リーによって考案されたHTTPプロトコルにさかのぼります。また、CやPythonなどの他のプログラミング言語でもHTTPリクエストを送信することができますが、Rustのようなコンパイル型言語では、高速かつ安全にHTTPリクエストを処理することができます。
 
-HTTPリクエストを送信するとき、リクエストメソッドとしてGETやPOSTなどを指定することができます。また、ヘッダー情報を追加したり、リクエストボディを設定したりすることも可能です。詳細な使い方やパラメーターの設定方法については、[公式ドキュメント](https://docs.rs/reqwest/0.11.4/reqwest/)を参照してください。
+HTTPリクエストは、TCPやTLSなどのプロトコルを使用して送信され、URLやメソッド、ヘッダー情報などで構成されています。Rustでは、上記のコードのようにTcpStreamを使用して、サーバーに接続し、リクエストを送信することができます。
 
-## 関連リンク
-
-- [RustでHTTPリクエストを送信する方法](https://qiita.com/hnakamur/items/bc6e4685854bee2ba040)
-- [reqwestライブラリの使い方](https://qiita.com/haltafin/items/042237fe6e318ea3190e)
-- [Rustを使ってREST APIを叩いてみる](https://qiita.com/laqiiz/items/96f96b91d0f8175355d6)
+## 関連情報
+- [Rust公式ドキュメント](https://doc.rust-lang.org/std/net/struct.TcpStream.html)
+- [HTTPプロトコルの歴史](https://developer.mozilla.org/ja/docs/Web/HTTP/Background_-_A_brief_history_of_HTTP)

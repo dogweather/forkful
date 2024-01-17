@@ -10,41 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
+Skapande av en tillfällig fil är en vanlig teknik som används av programmerare för att tillfälligt lagra data eller utföra operationer på en fil utan att påverka den permanenta versionen. Det är särskilt användbart för att hantera stora mängder data eller när man behöver skapa temporära filer för ett specifikt syfte.
 
-Att skapa en temporär fil är en vanlig praxis inom programmering. Det kan vara användbart för att hantera data som inte behöver sparas permanent eller för att utföra tillfälliga operationer.
-
-## Så här gör du
-
-För att skapa en temporär fil i PHP finns det en inbyggd funktion som heter "tempnam()". Den använder ett systemgenererat namn och returnerar sökvägen till den nya filen. Exempel:
+## Hur gör man:
+Skapandet av en temporär fil i PHP är enkelt. Det finns två huvudsakliga funktioner som kan användas för detta ändamål: `tempnam()` och `tmpfile()`. Den första funktionen skapar en tillfällig fil och returnerar filens sökväg, medan den andra returnerar en temporär filressurs. Här är en enkel kodexempel för att skapa en tillfällig fil med `tempnam()`:
 
 ```PHP
-$temp_file = tempnam(sys_get_temp_dir(), 'prefix_'); // Skapar en ny temporär fil
-echo "Sökväg till temporär fil: " . $temp_file; // Exempeloutput: Sökväg till temporär fil: /tmp/prefix_ztjKjC 
+$tempFileName = tempnam('/tmp', 'prefix_');
+echo $tempFileName; // /tmp/prefix_a1b2c3
 ```
 
-En annan alternativ funktion är "tmpfile()", som skapar en temporär fil och returnerar en öppen filressurs som används för att skriva till filen. Exempel:
+I det här exemplet skapas en tillfällig fil i mappen `/tmp` med prefixet "prefix_". Funktionen `tempnam()` genererar en unik sökväg för filen baserat på den angivna mappen och prefixet. Om du istället vill använda `tmpfile()` funktionen, kan du göra så här:
 
 ```PHP
-$temp_file = tmpfile(); // Skapar en ny temporär fil
-fwrite($temp_file, "Detta är en temporär fil."); // Skriver till filen
-rewind($temp_file); // Återgår till början av filen
-echo "Innehåll i temporär fil: " . fread($temp_file, filesize($temp_file)); // Exempeloutput: Innehåll i temporär fil: Detta är en temporär fil.
+$tempFile = tmpfile();
+echo get_resource_type($tempFile); // file
 ```
 
-## Djupdykning
+I det här fallet behöver du inte ange en sökväg eller ett prefix, eftersom funktionen `tmpfile()` skapar en tillfällig fil i systemets temporära mapp och returnerar en filressurs.
 
-När man skapar en temporär fil är det viktigt att tänka på säkerheten. Eftersom filen inte kommer att användas permanent kan den bli kvar på servern och bli en säkerhetsrisk om den inte hanteras på rätt sätt. För att undvika detta kan man använda sig av en "cleanup" funktion, som tar bort den temporära filen när den inte längre behövs. Exempel:
+## Djupdykning:
+Skapandet av tillfälliga filer har funnits sedan begynnelsen av datorprogrammering. Det användes främst för att hantera stora datamängder innan hantering av databaser blev mer utbredd. Idag används det fortfarande för att hantera data som inte passar i en traditionell databas eller för att utföra snabba filoperationer.
 
-```PHP
-$temp_file = tempnam(sys_get_temp_dir(), 'prefix_');
-// Gör något med filen...
-unlink($temp_file); // Rensar upp filen när den inte längre behövs
-```
+Alternativ till att skapa temporära filer inkluderar att använda en minnesbuffert eller en temporär databas. Detta kan vara mer effektivt beroende på syftet med den temporära filen och dess storlek.
 
-En annan viktig aspekt att tänka på är att temporära filer kan ta upp en stor mängd serverutrymme om de inte rensas upp regelbundet. Det är därför viktigt att ha en mekanism för att ta bort temporära filer som inte längre används.
+När en fil skapas med `tempnam()` behöver du se till att ta bort filen när du är klar med att använda den. Detta görs vanligtvis med funktionen `unlink()`. Om du använder `tmpfile()` funktionen kommer filen att tas bort automatiskt när skriptet avslutas.
 
-## Se även
-
-- [PHP: tempnam()](https://www.php.net/manual/en/function.tempnam.php)
-- [PHP: tmpfile()](https://www.php.net/manual/en/function.tmpfile.php)
+## Se även:
+- [PHP Manual - tempnam](https://www.php.net/manual/en/function.tempnam.php)
+- [PHP Manual - tmpfile](https://www.php.net/manual/en/function.tmpfile.php)
+- [PHP Manual - unlink](https://www.php.net/manual/en/function.unlink.php)

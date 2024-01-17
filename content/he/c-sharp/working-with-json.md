@@ -1,7 +1,7 @@
 ---
-title:                "עבודה עם JSON"
-html_title:           "C#: עבודה עם JSON"
-simple_title:         "עבודה עם JSON"
+title:                "עובדים עם json"
+html_title:           "C#: עובדים עם json"
+simple_title:         "עובדים עם json"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Data Formats and Serialization"
@@ -10,39 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# מדוע
-העבודה עם JSON היא חשובה לכל מפתחי C#, לא משנה אם אתם עובדים עם אפליקציות מובנות או ווב פנקציונלית. JSON הוא פורמט שימושי לביצוע שליחה/קבלה של מידע בין שרת ולקוח ותוכנות עם מסדי נתונים או קבצי מטמון.
+## מה ולמה?
 
-# איך לעשות זאת
-הנה דוגמאות של קוד עם פלט בתוך בלוקי קוד "```C# ... ```". תיעוד מלא ולמדעם מתווספים כאן בכדי לעזור לך להתחיל ולהתקדם עם עבודת JSON בקוד C#.
+JSON הוא פורמט אחסון ושיתוף נתונים פופולרי בקוד, המשמש כדי להעביר מידע בין יישומים שונים. יישומים שונים יכולים לייצג נתונים במבחר פורמטים שונים, כגון CSV או XML, אך JSON כיוון שהוא מבוסס על תפקידים ייחודיים כגון שורשרים, מספק דרך קלה יותר ויעילה יותר של תיאור מידע בין יישומים.
 
-בקודם כל נקבל פלט עבור מופע JSON מסוים, שנוצר באמצעות Newtonsoft.Json NuGet חבילה.
+תכניות כתיבה ועריכה קוד צריכות לעבוד עם JSON בכדי לייעל את יכולת המידע להתאים. זה יכול לכלול יצירת, קריאת, כתיבת ועריכת העתקי JSON כדי לתמוך במענה בנתוני מבנה פורמטיים ובהתאם לעיבוד נתונים במחשב ועיבוד מסוג API.
+
+## איך ל:
 
 ```C#
+// פתיחת מערך JSON חדש
 string json = @"{
-    'name':'John Smith',
-    'age':25,
-    'address': {
-        'city':'New York',
-        'country':'USA'
-    }
+    'name': 'ספר',
+    'url': 'https://www.example.com',
+    'tags': [
+        'פרטי',
+        'מידע',
+        'תכונות'
+    ]
 }";
-
-// קריאה לפונקציית "DeserializeObject" כדי להמיר את ה- JSON לאובייקט ב- C#
-var person = JsonConvert.DeserializeObject<Person>(json);
-
-Console.WriteLine($"Name: {person.Name}\nAge: {person.Age}\nCity: {person.Address.City}\nCountry: {person.Address.Country}");
-
-// תצוגת פלט:
-// Name: John Smith
-// Age: 25
-// City: New York
-// Country: USA
+// קריאת פרטי מידע מן הסדרתיים כדי לשנות ערך
+JObject jObject = JObject.Parse(json);
+jObject["name"] = "ספר בUR";
+Console.WriteLine("כותרת: " + jObject["name"]);
+// הדפסת מיקום GRATIS יתרון
+Console.WriteLine("כתובת אתר: " + jObject["url"]);
 ```
 
-כאן בקוד למעלה, אנחנו משתמשים בפונקציית "DeserializeObject" מה- Newtonsoft.Json חבילה כדי להמיר מחרוזת ה- JSON לאובייקט בשם "Person". האובייקט מוגדר נכון כדי להתאים למבנה של JSON מסוים ולהכיל את כל התכונות שלו.
+Output:
+כותרת: ספר בUR
+כתובת אתר: https://www.example.com
 
-# עומק טופס
-עם ידע נכון ותיעוד טוב, אתם יכולים להשתמש ב- JSON למטרות רבות בקוד שלכם. ניתן ליצור ולנתח פלט נתונים מכמה מקורות שונים על ידי שימוש בתכונות ופונקציות של JSON.
+## Dive Deep:
 
-בנוסף, ניתן להשתמש בתכונה נוספת בשם "JsonConvert" מה- Newtonsoft.Json חבילה כדי לשנות את ערך של מאפייני JSON מסוימים או לסכם את התכונות שלה
+פורמט JSON נוצר על ידי דייויד סיי, האדם שפיתח את השפה המוכמנת HTML, בגרסה מתקדמת ביותר. זה היה נתון מקורי לעיבוד UT להעביר מידע מתנתק ליצירת יישומים סדורים ביננבחורים, וכן פורמט קל ללמוד וליישום.
+
+תוכניות C# יכולים לעבוד עם אוסף של כלים וספריות המיאפשרות כתיבה, קריאה ועריכה של קבצי JSON. נמצאים גם את זה כדי להכניס לסדרתית אני מספרים במצב טקסט היחידות והכלים כדי לייצא המידע כתוצאה מידע עובד.
+
+## ראה גם:
+
+הנה מספר קישורים שיכולים לסייע לך להעמיק עוד בשימוש עם JSON בתוכניות C#:
+
+- [ממד טכנולוגיות Microsoft לעבוד עם JSON פורמט](https://docs.microsoft.com/he-il/dotnet/standard/serialization/system-text-json-how-to)
+- [יישומונט DotNet: עולים ויורדים שונים של ביצועים (הנושאי מזל סביבה) שעובדים על פני מדריכים ופרקים שונים](https://devblogs.microsoft.com/dotnet/performance-improvements-in-net-core-3-0/)
+- [סימן שאתה-במכונת התנועהשמוע בעולם מזל דיאגרמות נושא low המוניטי](https://docs.microsoft.com/he-il/dotnet/api/system.text.json.serialization.jsonserializableattribute<STRING>TUNNEL>TheInheritsader-dited-withif 2115)
+- [התמרה קברמה לביתדיאמונלי (H2RM) - יותר כאלמטהע ממאבת רכינ

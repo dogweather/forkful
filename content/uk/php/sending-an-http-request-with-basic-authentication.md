@@ -1,7 +1,7 @@
 ---
-title:                "Надіслання запиту http з базовою автентифікацією"
-html_title:           "PHP: Надіслання запиту http з базовою автентифікацією"
-simple_title:         "Надіслання запиту http з базовою автентифікацією"
+title:                "Відправлення http-запиту з базовою аутентифікацією"
+html_title:           "PHP: Відправлення http-запиту з базовою аутентифікацією"
+simple_title:         "Відправлення http-запиту з базовою аутентифікацією"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "HTML and the Web"
@@ -10,29 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Чому
+## Що і навіщо?
 
-Надсилання HTTP-запиту зі звичайною аутентифікацією є зручним і безпечним шляхом з'єднання з веб-сайтами та іншими серверами, які вимагають підтвердження для доступу до своїх ресурсів.
+Відправлення HTTP-запиту з основною автентифікацією - це процес, при якому програміст використовує HTTP-протокол для взаємодії з веб-сервером та передачі інформації. Цей метод часто використовується для звернення до захищеного ресурсу, де потрібно підтвердження ідентифікації користувача.
 
-## Як
+## Як це зробити:
 
-```PHP
-<?php
-$ch = curl_init("https://www.example.com");
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
-curl_setopt($ch, CURLOPT_USERPWD, "{username}:{password}");
+```php
+// Встановлюємо заголовки для базової автентифікації
+$username = 'username';
+$password = 'password';
+$headers = ['Authorization: Basic ' . base64_encode("$username:$password")];
+
+// Відправляємо HTTP-запит до веб-сервера
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL, 'http://example.com');
+curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 $output = curl_exec($ch);
 curl_close($ch);
+
+// Виводимо отриманий результат
+echo $output;
 ```
 
-При відправленні HTTP-запиту з використанням PHP, можна вказати тип аутентифікації через опцію `CURLOPT_HTTPAUTH` і вказати користувача та пароль через опцію `CURLOPT_USERPWD`. Результатом буде вивід вмісту сторінки "www.example.com".
+## Глибоке занурення:
 
-## Заглибившися
+- Історичний контекст: HTTP побудований на протоколі створенному в 1995 році, що вимагало визначення механізмів багатократної автентифікації, таких як базова автентифікація.
+- Альтернативи: Окрім базової автентифікації, існують інші методи автентифікації, такі як OAuth та JWT.
+- Деталі реалізації: Для надійного захисту даних, важливо користуватися HTTPS транспортним рівнем для зашифрування інформації передаваної через HTTP-запит.
 
-Виглядає просто, але є кілька нюансів, про які потрібно пам'ятати при використанні HTTP-запитів зі звичайною аутентифікацією. При використанні `CURLAUTH_BASIC`, дані автентифікації будуть передані у форматі base64, що може бути вразливим до атак на перехоплення. Тому рекомендується використовувати HTTPS замість звичного HTTP для забезпечення безпеки.
+## Дивіться також:
 
-## Дивись також
-
-- [cURL Documentation](https://www.php.net/manual/en/curl.examples-basic.php)
-- [RFC 7617 - The 'Basic' HTTP Authentication Scheme](https://tools.ietf.org/html/rfc7617)
+- [MDN - Basic Authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#Basic_authentication_scheme)
+- [PHP Manual - curl_setopt](https://www.php.net/manual/en/function.curl-setopt.php)
+- [OAuth 2.0 vs. JWT: Корисне відео](https://www.youtube.com/watch?v=bswxshgGMQo)

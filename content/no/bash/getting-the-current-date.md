@@ -1,7 +1,7 @@
 ---
-title:                "Å få nåværende dato"
-html_title:           "Bash: Å få nåværende dato"
-simple_title:         "Å få nåværende dato"
+title:                "Å få dagens dato"
+html_title:           "Bash: Å få dagens dato"
+simple_title:         "Å få dagens dato"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Dates and Times"
@@ -10,55 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
-Hvorfor skulle man ønske å få gjeldende dato? Vel, det kan være flere grunner til det. Kanskje du vil lagre datoen som en del av en filnavn eller for å automatisk generere rapporter med datoangivelser.
+## Hva & Hvorfor?
+Å få den nåværende datoen er en vanlig oppgave for Bash-programmering. Dette er viktig for å kunne spore når en bestemt hendelse eller operasjon ble utført, og for å automatisk generere filnavn basert på datoen.
 
-## Slik gjør du det
-For å få gjeldende dato i Bash, kan du bruke kommandoen `date`. La oss se på noen eksempler på hvordan du kan bruke denne kommandoen:
-
-```Bash
-# Få gjeldende dato og tid i standardformat
-$ date
-Fri 25 Jun 2021 12:34:56 UTC
-
-# Få kun gjeldende dato i formatet mm/dd/åååå
-$ date +%m/%d/%Y
-06/25/2021
-
-# Få kun gjeldende år
-$ date +%Y
-2021
-```
-
-Som du kan se, kan du bruke `+%` etterfulgt av et spesifikt format for å få ønsket informasjon fra datoen. Du kan også bruke kommandoen `man date` for å se en liste over alle tilgjengelige formater.
-
-## Dypdykk
-I tillegg til standardformater, kan du også bruke `date`-kommandoen til å få dato og tid i en hvilken som helst tidszone, samt å justere dato og tid. Du kan også konvertere datoen til et annet format ved hjelp av variabler og funksjoner.
-
-For eksempel, for å få dato og tid i Oslo tidszone, kan du bruke `TZ`-variabelen som følger:
+## Hvordan:
+For å få den nåværende datoen, kan du bruke kommandoen `date` i Bash. Dette vil gi deg den nåværende datoen og klokkeslettet i standardformatet. Her er et eksempel på koden og resultatet:
 
 ```Bash
-$ TZ="Europe/Oslo" date
-Fri 25 Jun 2021 14:34:56 CEST
+date
 ```
 
-For å justere datoen med en spesifikk tidsperiode, kan du bruke `date -d`-kommandoen. For eksempel, for å få datoen én uke fra nå, kan du gjøre følgende:
+Output:
+
+`Tir Sep 28 19:29:47 CEST 2021`
+
+Dette vil variere avhengig av tidssone og systeminnstillinger.
+
+Du kan også formatere utgangen ved å legge til en formatstreng som et argument til kommandoen `date`. For eksempel, for å få datoen i ISO-format (YYYY-MM-DD), kan du bruke følgende kode:
 
 ```Bash
-$ date -d "1 week"
-Fri 2 Jul 2021 12:00:00 UTC
+date +%F
 ```
 
-Det er også mulig å konvertere datoen til sekunder siden 1. januar 1970, også kjent som Unix-tiden. Dette kan gjøres ved hjelp av `-u`-flagget.
+Output:
 
-```Bash
-$ date -u +"%s"
-1624612476
-```
+`2021-09-28`
 
-Det finnes mange flere måter å tilpasse og bruke `date`-kommandoen på. Det er verdt å utforske denne kommandoen nærmere for å få mest mulig ut av den.
+For mer informasjon og mulige formateringsvalg kan du se `man date`.
 
-## Se også
-* [Bash dokumentasjon for `date`-kommandoen](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html)
-* [Bash-dato og klokkeslett-manualen](https://tldp.org/LDP/abs/html/timedate.html)
-* [Linuxman-siden for `date`-kommandoen](https://linux.die.net/man/1/date)
+## Dykk dypere:
+Å få den nåværende datoen er enkelt, men det kan være nyttig å vite litt om historisk kontekst. Datoen ble først introdusert i UNIX-systemet på 1970-tallet og har utviklet seg siden da. Alternativt kan du også bruke kommandoen `cal` for å få et kalenderoversikt over en bestemt måned eller år.
+
+Implementering av `date`-kommandoen er avhengig av systemet ditt og kan variere. På noen systemer bruker den faktisk `libcore` biblioteket for å beregne datoen.
+
+## Se også:
+- [`man date`](https://linux.die.net/man/1/date)
+- [UNIX-dato og tid](https://en.wikipedia.org/wiki/Unix_time)

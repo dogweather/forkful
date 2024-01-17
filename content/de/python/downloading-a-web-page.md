@@ -1,7 +1,7 @@
 ---
-title:                "Herunterladen einer Webseite"
-html_title:           "Python: Herunterladen einer Webseite"
-simple_title:         "Herunterladen einer Webseite"
+title:                "Herunterladen einer Website"
+html_title:           "Python: Herunterladen einer Website"
+simple_title:         "Herunterladen einer Website"
 programming_language: "Python"
 category:             "Python"
 tag:                  "HTML and the Web"
@@ -10,34 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+# Was & Warum?
+Das Herunterladen einer Webseite ist der Prozess, bei dem man den HTML-Code und die Inhalte einer Webseite auf seinen Computer lädt. Programmierer nutzen dieses Verfahren, um den Code einer Webseite zu analysieren, Inhalte zu extrahieren oder eine lokale Kopie der Webseite zu speichern.
 
-Das Herunterladen einer Webseite kann aus verschiedenen Gründen sinnvoll sein. Vielleicht möchtest du eine Offline-Version einer Webseite zur Verfügung haben, um sie later zu lesen, oder du möchtest eine bestimmte Funktion auf der Webseite automatisiert ausführen.
-
-## Wie geht's
-
-Um eine Webseite in Python herunterzuladen, können wir die `requests` Bibliothek verwenden. Hier ist ein Beispielcode:
+# Wie geht das?
+Der folgende Python-Code zeigt, wie man mit dem Modul "requests" eine Webseite herunterladen und den HTML-Code ausgeben kann.
 
 ```Python
 import requests
 
-url = "https://www.beispielwebseite.com"
-page = requests.get(url)
-
-# Wir können nun den Inhalt der Seite im Textformat ausgeben
-print(page.text)
-
-# Oder den HTML-Code der Seite extrahieren
-print(page.content)
+url = "https://www.python.org/"
+response = requests.get(url)
+print(response.text)
 ```
 
-Die Ausgabe hängt davon ab, was du genau mit den heruntergeladenen Inhalten machen möchtest. Du kannst z.B. bestimmte Teile des HTML-Codes analysieren oder den Text weiterverarbeiten.
+Der obige Code verwendet die Funktion "get" aus dem "requests" Modul, um eine HTTP-Anfrage an die angegebene URL zu senden. Der HTML-Code wird dann in der Variable "response" gespeichert und mit der Funktion "text" ausgegeben. So einfach ist es!
 
-## Tiefentauchen
+## Deep Dive
+Das Herunterladen von Webseiten hat in den letzten Jahren enorm an Bedeutung gewonnen, da immer mehr Inhalte im Internet verfügbar sind. In der Vergangenheit war es üblich, eine Webseite "manuell" über den Browser herunterzuladen, was jedoch zeitaufwändig und umständlich sein kann. Durch die Verwendung von Programmierwerkzeugen wie Python können Webseiten viel effizienter analysiert und verarbeitet werden.
 
-Der `requests` Bibliothek bietet noch viel mehr Funktionen, um mit Webseiten zu interagieren. Du kannst zum Beispiel auch POST-Anfragen senden, um Daten an eine Webseite zu übermitteln. Außerdem hat die Bibliothek integrierte Authentifizierungsfunktionen und kann auch mit SSL-Zertifikaten umgehen.
+Es gibt auch andere Alternativen für das Herunterladen von Webseiten, wie beispielsweise das "urllib" Modul in Python, das ähnliche Funktionen bietet. Ein weiterer Ansatz ist die Verwendung von sogenannten "Web Scraping" Tools, die speziell für das Extrahieren von Daten aus Webseiten entwickelt wurden.
+
+Die Implementierung des Herunterladens einer Webseite in Python ist relativ einfach und erfordert nur wenige Zeilen Code. Das "requests" Modul bietet auch eine Vielzahl von Funktionen und Optionen für komplexere Anfragen und die Verarbeitung von Daten.
 
 ## Siehe auch
-
-- [Dokumentation der `requests` Bibliothek (auf Englisch)](https://requests.readthedocs.io/en/latest/)
-- [Weitere Infos und Beispiele zur Verwendung von `requests` (auf Deutsch)](https://gehrcke.de/2014/02/a-quick-stroll-down-phishing-lane-using-the-requests-library/)
+Hier sind einige zusätzliche Ressourcen zum Thema "web page downloading":
+- [Offizielle Python Dokumentation zu "requests"](https://docs.python-requests.org/en/latest/)
+- [Ein Tutorial zum Herunterladen von Webseiten mit Python](https://realpython.com/python-requests/)
+- [Weitere Informationen zu "Web Scraping" Tools](https://www.dataquest.io/blog/web-scraping-tutorial-python/)

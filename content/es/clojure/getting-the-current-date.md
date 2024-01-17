@@ -10,41 +10,21 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¿Qué y por qué?
+Obtener la fecha actual es el acto de obtener la fecha y hora actuales en el sistema en el que estamos trabajando. Los programadores lo hacen para registrar y almacenar la fecha y hora en que ocurre un evento en el sistema, lo que puede ser útil para la auditoría y el seguimiento de cambios.
 
-Si alguna vez has necesitado obtener la fecha actual en tus programas, entonces este artículo es para ti. Aprenderás cómo obtener la fecha actual en Clojure y cómo puedes usarla en tus proyectos.
+## Cómo hacerlo:
+```
+(import [java.util Date])
 
-## Cómo hacerlo
+(def fecha (Date.))
 
-```Clojure
-(require '[java.time.LocalDate :as LocalDate])
-
-(def today (LocalDate/now))
-(def current-year (.getYear today))
-(def current-month (.getMonth today))
-(def current-day (.getDayOfMonth today))
-
-(println (str "Hoy es " current-day "/" current-month "/" current-year))
+En la primera línea importamos la clase Date de Java para poder acceder a sus métodos. En la segunda línea, utilizamos la función "def" para asignar el valor actual de la fecha y hora a la variable "fecha".
 ```
 
-Este código importa la librería `java.time.LocalDate` que nos permite trabajar con fechas. Luego, usamos la función `now` para obtener la fecha actual y guardamos sus valores en variables. Finalmente, imprimimos la fecha en formato día/mes/año.
+## Profundizando:
+Obtener la fecha actual puede ser útil en muchas situaciones de programación, desde la gestión de horarios hasta la sincronización de eventos en el sistema. Antes de la popularidad de Java, se utilizaban otros métodos para obtener la fecha actual, como el uso de la función de sistema "time" en UNIX. Sin embargo, con el tiempo, Java se ha convertido en una opción más conveniente y común para los programadores.
 
-## Profundizando
-
-La función `now` en realidad está llamando a la clase `LocalDateTime`, que contiene no solo la fecha, sino también la hora actual. Si solo quieres obtener la fecha, puedes usar la función `LocalDate/now` en su lugar.
-
-También puedes especificar una zona horaria para obtener la fecha para esa zona en particular:
-
-```Clojure
-(def now-zoned (ZonedDateTime/now (ZoneId/of "Europe/Madrid")))
-(def current-date (.toLocalDate now-zoned))
-
-(println current-date)
-```
-
-En este caso, estamos obteniendo la fecha actual para la zona horaria de Madrid. Luego, usamos la función `.toLocalDate` para obtener solo la fecha sin la hora.
-
-## Ver también
-
-- Documentación oficial de `java.time.LocalDate`: https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html
-- Ejemplos de uso del paquete `java.time`: https://www.baeldung.com/java-8-date-time-intro
+## Ver también:
+- Documentación de la clase Date de Java: https://docs.oracle.com/javase/6/docs/api/java/util/Date.html
+- Alternativa para obtener la fecha actual en Clojure: https://clojuredocs.org/clojure.java-time/local-date-now

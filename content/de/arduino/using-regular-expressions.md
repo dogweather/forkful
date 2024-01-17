@@ -1,7 +1,7 @@
 ---
-title:                "Verwendung regulärer Ausdrücke"
-html_title:           "Arduino: Verwendung regulärer Ausdrücke"
-simple_title:         "Verwendung regulärer Ausdrücke"
+title:                "Verwendung von regulären Ausdrücken"
+html_title:           "Arduino: Verwendung von regulären Ausdrücken"
+simple_title:         "Verwendung von regulären Ausdrücken"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Strings"
@@ -10,57 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
-Warum sollte man sich mit regulären Ausdrücken beschäftigen? Ganz einfach: Sie vereinfachen das Suchen und Ersetzen von Text in Programmen und machen die Verarbeitung von Daten flexibler.
+# Was & Warum?
 
-## Wie man reguläre Ausdrücke in Arduino verwendet
-Reguläre Ausdrücke in Arduino werden mithilfe der eingebauten "Regexp" Bibliothek verwendet. Zunächst muss diese Bibliothek im Sketch eingelesen werden:
+Beim Programmieren mit dem Arduino verwenden viele Entwickler sogenannte reguläre Ausdrücke. Diese ermöglichen es, Muster in Texten oder Zeichenfolgen zu identifizieren und zu verarbeiten. Programmierer verwenden reguläre Ausdrücke, um komplexe Such- und Ersetzungsaufgaben zu automatisieren und effizienter zu gestalten.
 
-```Arduino
-#include <Regexp.h> 
-```
+# Wie geht's?
 
-Als nächstes definieren wir einen String, auf den wir den regulären Ausdruck anwenden möchten:
+Die Verwendung von regulären Ausdrücken wird in der Arduino-Programmierung mithilfe des <code>Regex</code>-Objekts ermöglicht. Wir konstruieren ein neues Objekt mit dem gewünschten Muster und können dann verschiedene Methoden verwenden, um die Überprüfung und Verarbeitung von Zeichenfolgen durchzuführen.
 
 ```Arduino
-String text = "Dies ist ein Beispieltext zum Testen von regulären Ausdrücken.";
-```
+#include <regex.h>
 
-Nun können wir mithilfe der `Regexp` Funktionen den Text durchsuchen und bearbeiten. Hier sind einige Beispiele:
+// Konstruktion des Regex-Objekts mit dem Muster "Hallo(.*)"
+Regex re("Hallo(.*)");
 
-### Suchen und Ersetzen
-Um bestimmte Wörter oder Zeichenfolgen in einem Text zu finden und zu ersetzen, verwenden wir die `regreplace()` Funktion. Hier ist ein Beispiel, bei dem wir alle Vorkommen von "Beispiel" durch "Test" ersetzen:
-
-```Arduino
-char pattern[] = "Beispiel";
-char replacement[] = "Test";
-regreplace(text, pattern, replacement);
-```
-
-Die geänderte Version des Textes wird nun in der Variablen `text` gespeichert.
-
-### Extrahieren von Daten
-Reguläre Ausdrücke ermöglichen es auch, Daten aus einem String zu extrahieren. Nehmen wir an, wir haben einen Text mit einer Liste von Namen und Telefonnummern und möchten nur die Telefonnummern extrahieren. Dazu verwenden wir die Funktion `regfind()`:
-
-```Arduino
-char pattern[] = "\\d{10}"; // Telefonnummern bestehen aus 10 Ziffern
-String phoneNumber = regfind(text, pattern); // Extrahiert die erste 10-stellige Ziffernfolge im Text
-```
-
-### Überprüfen von Bedingungen
-Mithilfe von regulären Ausdrücken können auch Bedingungen überprüft werden. Zum Beispiel können wir prüfen, ob eine E-Mail-Adresse gültig ist, indem wir nach einem bestimmten Muster suchen. Hier ist ein Beispiel, das überprüft, ob eine String-Variable `email` eine gültige E-Mail-Adresse enthält:
-
-```Arduino
-char pattern[] = "\\w+@[a-z]+\\.[a-z]+";
-if (regfound(email, pattern)) {
-  // E-Mail ist gültig
+// Überprüfung, ob die Zeichenfolge "Hallo Welt" dem Muster entspricht
+if (re.match("Hallo Welt")) {
+  // Ausgabe des gefangenen Textes in den Klammern mit der group() Methode
+  Serial.println(re.group(1)); // Gibt " Welt" aus
 }
+
+// Ersetzung eines Teils der Zeichenfolge mit der substitute() Methode
+String neueZeichenfolge = re.substitute("Hallo Welt", "Hallo Mars");
+Serial.println(neueZeichenfolge); // Gibt "Hallo Mars" aus
 ```
 
-## Tiefergehende Informationen über reguläre Ausdrücke
-Reguläre Ausdrücke können kompliziert werden, aber es gibt viele Online-Ressourcen und Tutorials, die Ihnen bei der Erstellung und Verwendung helfen können. Ein guter Ausgangspunkt ist die offizielle [Arduino-Referenz](https://www.arduino.cc/reference/en/libraries/regexp/) für die Regexp Bibliothek. Zudem gibt es viele nützliche Tutorials auf Plattformen wie [Instructables](https://www.instructables.com/circuits/arduino/projects/) oder [Arduino Project Hub](https://create.arduino.cc/projecthub/projects/tags/regular%20expressions).
+# Tiefer Einblick
 
-## Siehe auch
-- [Arduino-Referenz für die Regexp Bibliothek](https://www.arduino.cc/reference/en/libraries/regexp/)
-- [Reguläre Ausdrücke bei Instructables](https://www.instructables.com/circuits/arduino/projects/)
-- [Projekte mit regulären Ausdrücken auf Arduino Project Hub](https://create.arduino.cc/projecthub/projects/tags/regular%20expressions)
+Die Verwendung von regulären Ausdrücken stammt ursprünglich aus dem Bereich der Textverarbeitung und hat sich in der Programmierung als sehr nützlich erwiesen. Alternativen zu regulären Ausdrücken sind z.B. die Verwendung von String-Methoden oder regelbasierte Such- und Ersetzungsfunktionen. Die Implementierung von regulären Ausdrücken in der Arduino-Programmierung basiert auf der C++-Bibliothek <code>regex.h</code>.
+
+# Siehe auch
+
+- Offizielle Dokumentation zur <code>Regex</code>-Klasse: https://www.arduino.cc/reference/en/language/functions/regular-expressions/
+- Einführung in reguläre Ausdrücke: https://regexone.com/

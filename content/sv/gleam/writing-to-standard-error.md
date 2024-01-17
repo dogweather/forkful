@@ -10,41 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+# Vad & Varför?
 
-Att skriva till standard error är användbart när vi behöver skriva ut felmeddelanden eller annan viktig information som inte bör visas till användarna. Det är ett enkelt sätt att spåra och felsöka problem i vår kod.
+Skriver du ibland till standard error när du programmerar? Om ja, då är du inte ensam! Att skriva till standard error är ett sätt att skicka ut felmeddelanden och annan information som kan vara användbar under utvecklingsprocessen. Det kan vara särskilt användbart när man vill felsöka och identifiera problem i koden.
 
-## Hur man gör det
+# Hur gör man:
 
-För att skriva till standard error i Gleam, kan vi använda det inbyggda `gleam/errno` biblioteket. Vi importerar det genom att lägga till `import gleam/errno` i början av vår `.gleam` fil.
-
-För att skriva ett felmeddelande till standard error, använder vi funktionen `write`. Vi behöver ge den tre parametrar: ett felmeddelande, en kod för feltyp och en filnamn för att identifiera var felet uppstod.
+Att skriva till standard error i Gleam är enkelt. Du behöver bara använda funktionen `std.error` och skicka med ditt meddelande som en sträng. Här är ett exempel på hur du skulle kunna använda detta i din kod:
 
 ```Gleam
-import gleam/errno
-
-fn write_to_error() {
-  write("Oh no, something went wrong!", 1, "my_file")
-}
+std.error("Ett fel har uppstått!")
 ```
 
-Den första parametern är vårt felmeddelande, den andra är vår felkod `1` (vilket indikerar att det är ett generiskt fel) och den tredje är filnamnet `my_file`.
+Detta kommer att skriva ut meddelandet "Ett fel har uppstått!" i din terminal.
 
-När vi sedan kör vårt program i terminalen, kommer felmeddelandet att skrivas ut till standard error istället för standard output. Vi kan se det genom att använda kommandot `gleam run` följt av vårt filnamn.
+# Djupdykning:
 
-```terminal
-gleam run my_file.gleam
-Oh no, something went wrong!
-```
+Att skicka ut felmeddelanden är ett vanligt förfarande som används i de flesta programmeringsspråk, inklusive Gleam. Det är ett sätt att kommunicera med användaren eller utvecklaren om eventuella fel som uppstår under körningen av programmet. Alternativen till att skriva till standard error inkluderar att logga felmeddelanden i en loggfil eller att skicka dem via e-post.
 
-## Djupdykning
+När det kommer till implementationen av att skriva till standard error i Gleam, använder man sig av standardbiblioteket `std.error`. Detta bibliotek innehåller funktioner som är specifikt utformade för att hantera felmeddelanden och skriva ut dem till standard error.
 
-Att skriva till standard error är enkelt och användbart, men det finns några saker att tänka på. För det första, är det viktigt att välja en lämplig felkod för att tydligt identifiera felet. I vårt exempel använde vi en generisk felkod `1`, men det finns många andra typer att välja mellan beroende på vilken typ av fel vi stöter på.
+# Se även:
 
-En annan sak att tänka på är att vi kan använda `writeln` funktionen istället för `write` för att lägga till en radbrytning efter vårt felmeddelande. Det kan göra det enklare att läsa felmeddelandet i terminalen.
+För mer information om att skriva till standard error och hur man kan använda det i Gleam, se följande resurser:
 
-## Se också
-
-* [Gleam - The Erlang VM language made for type safe systems programming](https://gleam.run/)
-* [Gleam Standard Library - Sneaky throwing an error with gleam_errno](https://github.com/gleam-lang/gleam_stdlib/blob/master/core/gleam_errno.gleam)
-* [Erlang Documentation - Error Handling](http://erlang.org/course/error_handling.html)
+- Officiell Gleam dokumentation: https://gleam.run/learn/stdlib#std-error
+- Gleam on Github: https://github.com/gleam-lang/gleam
+- En guide till Gleam för nybörjare: https://bageleerium.com/2020/05/21/a-gleam-tutorial-for-absolute-beginners/

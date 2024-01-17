@@ -1,7 +1,7 @@
 ---
-title:                "Att hitta längden av en sträng"
-html_title:           "C++: Att hitta längden av en sträng"
-simple_title:         "Att hitta längden av en sträng"
+title:                "Att hitta längden på en sträng"
+html_title:           "C++: Att hitta längden på en sträng"
+simple_title:         "Att hitta längden på en sträng"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -10,48 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Varför
+## Vad & Varför?
+Att hitta längden på en sträng i C++ är ett vanligt problem som uppstår när man arbetar med text och strängar i sina program. Detta innebär att man behöver ta reda på hur många tecken som finns i en sträng för att kunna hantera den på rätt sätt. Detta är särskilt användbart när man behöver utföra operationer som att loopa igenom en sträng eller att jämföra två strängar.
 
-Att hitta längden på en sträng kan vara en användbar färdighet vid programmering av dynamiska applikationer, där användaren kan mata in variabla mängd information. Det gör det möjligt att kontrollera och hantera olika typer av inmatningar.
-
-# Hur man gör
+## Hur man gör:
+För att hitta längden på en sträng i C++, kan man använda funktionen `strlen()` som ingår i standardbiblioteket `cstring`. Här nedan finns ett exempel på hur man kan använda denna funktion:
 
 ```C++
+#include <cstring>
 #include <iostream>
-#include <string>
-
-using namespace std;
 
 int main() {
-    // Definiera en sträng
-    string namn = "Lisa";
-    
-    // Hitta längden på strängen och skriv ut 
-    cout << "Längden på strängen " << namn << " är " << namn.length() << endl;
-    
-    // Ändra strängen
-    namn += " Johansson";
-    
-    // Hitta längden på den nya strängen och skriv ut
-    cout << "Längden på den nya strängen " << namn << " är " << namn.length() << endl;
-
+    char str[] = "Hej, världen!";
+    int length = strlen(str);
+    std::cout << "Längden på strängen är: " << length << std::endl;
     return 0;
 }
 ```
 
-```text
-Längden på strängen Lisa är 4
-Längden på den nya strängen Lisa Johansson är 13
-```
+Detta kommer att skriva ut "Längden på strängen är: 13" då det är just 13 tecken i strängen "Hej, världen!".
 
-# Djupdykning
+## Djupdykning:
+För att förstå hur `strlen()` funktionen fungerar, är det viktigt att känna till lite bakgrundsinformation. I C++ behöver man inte ange längden på en sträng vid deklaration, utan en null-tecken (ASCII värde 0) läggs automatiskt till i slutet av strängen. `strlen()` funktionen räknar alltså helt enkelt antalet tecken i strängen tills den stöter på null-tecknet.
 
-I C++ finns det en inbyggd funktion som heter `length()` som returnerar längden på en given sträng. Denna funktion kontrollerar varje tecken i strängen och räknar sedan antalet tecken. Det finns också en alternativ funktion, `size()`, som returnerar samma värde som `length()` och kan användas på samma sätt.
+Om man inte vill använda sig av `strlen()`, finns det alternativa sätt att hitta längden på en sträng. Man kan till exempel använda sig av en loop som räknar antalet tecken manuellt, men detta kan kräva mer kod och ta längre tid.
 
-Det är viktigt att veta att längden på en sträng börjar med index 0, vilket betyder att den första bokstaven i strängen har index 0 och den sista bokstaven har index Längd-1. Detta är viktigt att komma ihåg när man arbetar med strängar för att undvika felaktiga resultat.
-
-# Se även
-
-- [C++ strängar](https://www.w3schools.com/cpp/cpp_strings.asp)
-- [C++ Standard Library](http://www.cplusplus.com/reference/string/string/length/)
-- [C++ string class](https://www.geeksforgeeks.org/c-string-class-and-its-applications/)
+## Se även:
+- [C++ referens för strlen()](https://www.cplusplus.com/reference/cstring/strlen/) för mer detaljerad information om funktionen.
+- [Null-tecken](https://www.ascii-code.com/) för att lära dig mer om hur det fungerar.

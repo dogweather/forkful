@@ -10,48 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä & Miksi?
 
-Saatat kysyä itseltäsi, miksi haluat ladata verkkosivun ohjelmallisesti Ruby-kielellä. On monia syitä, miksi tämä voisi olla hyödyllistä - voit esimerkiksi haluta kerätä tietoa verkkosivustosta, analysoida sivun sisältöä tai automatisoida tiettyjä tehtäviä, kuten tiedon keräämistä sivuilta.
+Web-sivun lataaminen tarkoittaa yksinkertaisesti sivun tiedon tallentamista tietokoneellesi. Ohjelmoijat tekevät tätä esimerkiksi käyttääkseen sivustolta peräisin olevaa tietoa omiin sovelluksiinsa tai tarkistaakseen sivuston ajantasaisuuden.
 
-## Miten
+## Kuinka:
 
-Lataaminen verkkosivulle Ruby-kielellä on melko yksinkertaista. Tässä käytämme Ruby-kirjastoa nimeltä "open-uri", joka mahdollistaa verkkosivujen lataamisen yhdellä rivillä koodia.
+Rubyssa web-sivun lataaminen on helppoa. Voit käyttää siihen Ruby-mekanismia nimeltä Net::HTTP. Esimerkiksi alla oleva koodi näyttää kuinka ladataan Google.fi -sivu:
 
-```ruby
-require "open-uri"
-
-# Tallenna sivun sisältö muuttujaan
-page = open("https://www.example.com").read
-
-# Tulosta sivun sisältö konsolille
-puts page
+```Ruby
+require 'net/http'
+url = 'https://www.google.fi/'
+response = Net::HTTP.get(URI(url))
+puts response
 ```
 
-Tämä esimerkki lataa sivun https://www.example.com ja tallentaa sen sisällön muuttujaan nimeltä "page". Sitten se tulostaa sivun sisällön konsolille komennolla "puts page".
+Koodi tallentaa sivun sisällön muuttujaan ja tulostaa sen terminaaliin.
 
-## Syvällinen sukellus
+## Syväsukellus:
 
-Lisäksi open-uri-kirjastolla on monia vaihtoehtoja, joiden avulla voit muokata ja hallita ladattavaa sisältöä. Voit muun muassa määrittää käyttämäsi URL-osoitteen parametrina, lisätä käyttäjätunnuksen ja salasanan, käyttää erilaisia HTTP-metodeja ja hallita HTTP-pyyntöjen otsikoita.
+Web-sivujen lataamisen taustalla on HTTP-protokolla, jonka avulla verkkosivujen tiedot liikkuvat internetin yli. Ruby tarjoaa myös muita vaihtoehtoja web-sivujen lataamiseen, kuten RubyGemin avulla asennettava mechanize-kirjasto. Tämä kirjasto automatisoi sivujen lataamisen ja tiedon hakemisen, mikä voi olla hyödyllistä monimutkaisempien sovellusten kehittämisessä.
 
-Tämä esimerkki lataa verkkosivun ja tallentaa sen sisällön tiedostoon nimeltä "page.html":
+## Katso myös:
 
-```ruby
-require "open-uri"
-
-# Lataa sivu määriteltyyn tiedostoon
-open("https://www.example.com", "w") do |f|
-  f.puts open("https://www.example.com").read
-end
-```
-
-Kuten näet, voit myös käyttää "open"-metodia parametrien kanssa, jotta voit määrittää erityisiä asetuksia pyynnölle.
-
-## Katso myös
-
-- [Open-uri dokumentaatio](https://ruby-doc.org/stdlib/libdoc/open-uri/rdoc/index.html)
-- [Ruby-asukassivuston lataaminen ja sisällön käyttö](https://www.rubyguides.com/2018/10/ruby-web-scraping/)
-
-### Disclaimer
-
-Tämä artikkeli on tarkoitettu vain opetus- ja informatiivisiin tarkoituksiin. Muista käyttää verkkosivujen lataamista vastuullisesti ja kunnioittaen verkkosivuston omistajien oikeuksia.
+- [Ruby dokumentaatio Net::HTTP](https://ruby-doc.org/stdlib-2.7.1/libdoc/net/http/rdoc/index.html)
+- [RubyGems mechanize-kirjasto](https://github.com/sparklemotion/mechanize)

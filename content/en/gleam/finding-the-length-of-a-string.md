@@ -10,34 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why?
+# What & Why?
 
-The length of a string is a fundamental concept in programming and is required for a variety of tasks such as input validation, data manipulation, and error handling. Understanding how to find the length of a string is an essential skill for any programmer.
+Finding the length of a string is the process of determining the number of characters in a given string. This is a common task in programming, as it allows us to manipulate and work with strings in more efficient ways. By knowing the length of a string, we can access specific characters and perform various operations on the string.
 
-## How To
-
-Finding the length of a string in Gleam is a simple process that can be achieved using the built-in `String.length` function. Let's take a look at an example:
+# How to:
+To find the length of a string in Gleam, we can use the built-in function ```Gleam.String.length()```. Let's look at an example of how this works:
 
 ```Gleam
-import gleam/string
-
-let name = "John"
-
-let len = String.length(name)
-
-debug!{"The length of the string is {len}"} // Output: The length of the string is 4
+let my_string = "Hello, world!"
+let length = Gleam.String.length(my_string)
 ```
 
-In this example, we first import the `string` module from the Gleam standard library. Then, we create a string variable named `name` and assign it a value of "John". Next, we use the `String.length` function to find the length of the string and store it in a variable called `len`. Finally, we use the `debug!` function to print out the length of the string to the console.
+In this example, we declare a string variable ```my_string``` with the value "Hello, world!" and then call the ```length()``` function on it, assigning the result to a new variable ```length```. The ```length``` variable will now contain the value 13.
 
-## Deep Dive
+# Deep Dive
+## Historical Context
+The concept of strings and string manipulation has been around since the early days of computer programming. In the past, determining the length of a string was a more complex and time-consuming task. However, with the advancement of programming languages and the creation of built-in string functions, finding the length of a string has become a much more straightforward and efficient process.
 
-Behind the scenes, the `String.length` function uses the code unit count to determine the length of a string. A code unit is an element within a string that represents a single character. In languages like Gleam, each code unit is typically represented by one Unicode code point, which is a unique number assigned to each character in the Unicode standard.
+## Alternatives
+In Gleam, we can use a variety of other functions to work with strings, such as ```substring()```, ```concat()```, and ```replace()```. These functions allow us to manipulate and modify strings in different ways, depending on our specific needs.
 
-It's important to note that the length of a string can differ from the number of characters it contains, as some characters may require more than one code unit. For example, the character "é" requires two code units to represent it in Unicode.
+## Implementation Details
+The ```Gleam.String.length()``` function works by using a looping mechanism to iterate through the characters in the string and count them until the end of the string is reached. This is done behind the scenes and allows us to get the length of the string in a single line of code.
 
-## See Also
+# See Also
+To learn more about Gleam and its string manipulation capabilities, check out the official documentation here: https://gleam.run/.
 
-- [Gleam documentation on string manipulation](https://gleam.run/documentation/std-lib/string/)
-- [Unicode code points](https://en.wikipedia.org/wiki/Unicode)
-- [The difference between code units and characters](https://en.wikipedia.org/wiki/Language_localisation#Word_size)
+For a more in-depth understanding of strings and string manipulation in programming, you can refer to this article from W3Schools: https://www.w3schools.com/python/python_strings.asp.

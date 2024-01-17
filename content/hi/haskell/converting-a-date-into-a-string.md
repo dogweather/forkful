@@ -1,7 +1,7 @@
 ---
-title:                "एक दिनांक को एक स्ट्रिंग में रूपांतरित करना"
-html_title:           "Haskell: एक दिनांक को एक स्ट्रिंग में रूपांतरित करना"
-simple_title:         "एक दिनांक को एक स्ट्रिंग में रूपांतरित करना"
+title:                "एक तारीख को स्ट्रिंग में रूपांतरण करना"
+html_title:           "Haskell: एक तारीख को स्ट्रिंग में रूपांतरण करना"
+simple_title:         "एक तारीख को स्ट्रिंग में रूपांतरण करना"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Dates and Times"
@@ -10,27 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
-*किसी को तारीख को स्ट्रिंग में बदलने में रुचि क्यों हो सकती है?*
-हैस्केल में, तारीख को स्ट्रिंग में बदलना उदाहरण के रूप में उपयोगी हो सकता है यदि आपको तारीख के साथ कुछ शब्द भी प्रिंट करने की आवश्यकता हो जैसे कि "दिनांक १० मार्च २०२१"।
+Kya aur Kyon?
 
-## कैसे करे
+Date ko string mein convert karna ek aam tarika hai jo programmers apne code mein use karte hain. Isse hum date ko alag-alag formats mein display kar sakte hain jaise ki 'dd/mm/yyyy' ya 'mm/dd/yyyy'. Isse code ki readability bhi badhti hai aur code maintenance bhi aasan ho jaata hai.
+
+Kaise karein?
+
 ```Haskell
--- तारीख को स्ट्रिंग में बदलने के लिए, आप `formatTime` फ़ंक्शन का इस्तेमाल कर सकते हैं।
--- formatTime तीन आर्ग्यूमेंट्स लेता है: तारीख प्रारूप, इनपुट तारीख और फिल्टर तारीख
-formatTime :: TimeLocale -> String -> Day -> String
+import Data.Time
+import Data.Time.Format
 
--- यहां हम तारीख को "दिनांक १० मार्च २०२१" फॉर्मेट में प्रिंट कर रहे हैं।
--- `%B` मॉन्थ का नाम प्रिंट करेगा, `%e` दिन की संज्ञा प्रिंट करेगा, और `%Y` वर्ष की संज्ञा प्रिंट करेगा।
--- `formatTime` का दूसरा पैरामीटर `time` तारीख को देखता है।
-main = do
-    let time = fromGregorian 2021 3 10
-    let formattedTime = formatTime defaultTimeLocale "%e %B %Y" time
-    putStrLn ("तारीख: " ++ formattedTime)
-
--- निष्कर्ष:
---> तारीख: दिनांक १० मार्च २०२१
+-- Convert current date into string
+dateAsString :: IO String
+dateAsString = do
+  now <- getCurrentTime
+  return $ formatTime defaultTimeLocale "%d/%m/%Y" now
 ```
 
-## गहराई में बदले
-आप `formatTime` फ़ंक्शन को और भी संपूर्ण तारीख प्रारूपों के साथ उपयोग कर सकते हैं। आप मॉन्थ, दिन के पहर, या सप्ताह के दिनों को स्ट्रिंग में प्रिंट कर सकते हैं। इसके अलावा, आप कस्टम तारीख प्रारूप भी बना सकते हैं और उसे प्रिंट कर सकते हैं। आप भी तारीख प्रारूपों के साथ ख
+Sample output: 02/05/2021
+
+```Haskell
+import Data.Time
+import Data.Time.Format
+
+-- Convert a given date into string
+dateAsString :: Day -> String
+dateAsString day = formatTime defaultTimeLocale "%A, %d %B %Y" day
+```
+
+Sample output: Sunday, 02 May 2021
+
+Maze mein dubein!
+
+Is technique ko use karne se pehle, hume Data.Time aur Data.Time.Format modules ko import karna hoga. Iske baad hume `formatTime` function ka use karke desired format mein date ko convert karna hoga.
+
+Iske alawa, hum khud se bhi ek custom format create kar sakte hain jaise ki 'dth month yyyy', jo ki output mein "2nd May 2021" dega. Iske liye, hum `%e` ko `%d` ke jagah use karenge aur `%B` ko `%B` ke jagah `%{th,nd,rd}` add karenge.
+
+See Also:
+
+- Date, DateTime and Timestamp in Haskell: https://www.geeksforgeeks.org/date-datetime-and-timestamp-in-haskell/
+- The official documentation for Data.Time module: https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time.html

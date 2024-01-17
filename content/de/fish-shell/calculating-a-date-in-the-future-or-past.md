@@ -1,7 +1,7 @@
 ---
-title:                "Berechnung eines Datums in der Zukunft oder Vergangenheit"
-html_title:           "Fish Shell: Berechnung eines Datums in der Zukunft oder Vergangenheit"
-simple_title:         "Berechnung eines Datums in der Zukunft oder Vergangenheit"
+title:                "Eine Datum in der Zukunft oder Vergangenheit berechnen"
+html_title:           "Fish Shell: Eine Datum in der Zukunft oder Vergangenheit berechnen"
+simple_title:         "Eine Datum in der Zukunft oder Vergangenheit berechnen"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Dates and Times"
@@ -10,30 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+# Was & Warum?
 
-Du denkst vielleicht, warum sollte ich überhaupt ein Datum in der Zukunft oder Vergangenheit berechnen? Nun, es gibt viele Gründe dafür! Man könnte zum Beispiel eine Erinnerung einrichten, um einen wichtigen Termin nicht zu vergessen, oder einen Countdown bis zum nächsten Urlaub berechnen. Die Möglichkeiten sind endlos!
+Die Berechnung eines Datums in der Zukunft oder Vergangenheit ist eine häufige Aufgabe für Programmierer. Dies kann nützlich sein, um zukünftige Termine zu planen oder vergangene Ereignisse zu überprüfen. Oftmals basieren diese Berechnungen auf vorhandenen Daten, wie zum Beispiel der aktuellen Systemzeit oder einem bestimmten Datum.
 
-## Wie geht das?
+# Wie geht's?
 
-Zum Glück ist es ganz einfach, ein Datum in der Zukunft oder Vergangenheit in der Fish Shell zu berechnen. Alles was du brauchst ist das `date` Kommando und etwas Grundverständnis von Datumsformaten. Hier ist ein Beispiel, um das Datum von heute vor einer Woche zu berechnen:
+Die Fish Shell bietet eine praktische Möglichkeit, Datumsberechnungen direkt in der Kommandozeile durchzuführen. Dazu können verschiedene Shell-Befehle wie `date` oder `strftime` verwendet werden. Sehen wir uns einige Beispiele an:
 
-```Fish Shell
-date -v-1w
+```
+Fish Shell 3.1.2
+Copyright (c) 2011-2019 Per Arneng. Copyright (c) 2010-2019 David Adam.
+fish is fully POSIX compliant.
+- fish_shell_rc
+date -d "next year" +"%A, %B %d, %Y"
+Mon, January 03, 2022
+
+date -d "-5 days" +"%A, %B %d, %Y"
+Tuesday, November 02, 2021
 ```
 
-Die Option `-v` ermöglicht es uns, den Wert zu ändern, und `w` steht für eine Woche. Das Ergebnis wird in der Form "Wochentag Monat Tag Zeit Zone Jahr" ausgegeben, zum Beispiel "Thu Aug 5 13:45:00 PDT 2021".
+Dieser Code gibt das Datum der nächsten Jahresfeier sowie das Datum vor 5 Tagen aus. Mit dem `date` Befehl können auch Stunden, Minuten oder andere Zeitangaben hinzugefügt werden, um präzisere Berechnungen durchzuführen.
 
-## Tief eintauchen
+# Tiefentauchen
 
-Wenn du ein besseres Verständnis davon bekommen möchtest, wie genau die Berechnung eines Datums in der Fish Shell funktioniert, dann kannst du einen Blick in die offizielle Dokumentation von `date` werfen. Dort findest du eine detaillierte Beschreibung der verschiedenen Optionen und Formate, die du verwenden kannst.
+Die Berechnung von Datum und Zeit in der Shell ist eine praktische Alternative zu externen Programmen wie `cal` oder `dateutils`. Mit der `date` Funktion können komplexe Berechnungen durchgeführt werden, wie zum Beispiel das Ermitteln des Wochentags eines bestimmten Datums oder das Hinzufügen von Monaten zu einem vorhandenen Datum.
 
-Eine wichtige Sache zu beachten ist, dass die `date` Syntax zwischen verschiedenen Betriebssystemen variieren kann. Wenn du also auf einem Mac oder Linux-System arbeitest, kannst du möglicherweise mehr Optionen verwenden als auf einem Windows-System.
+# Siehe auch
 
-## Siehe auch
-
-Weitere nützliche Informationen zur Arbeit mit Datumsangaben in der Fish Shell findest du hier:
-
-- [Offizielle `date` Dokumentation](https://fishshell.com/docs/current/cmds/date.html)
-- [Codewand: How to Use the date Command in Linux](https://codewand.net/how-to-use-date-in-linux/) (Englisch)
-- [Devhints: Fish Shell Guide](https://devhints.io/fish-shell) (Englisch)
+Weitere Informationen zur Verwendung von Datumsfunktionen in der Fish Shell finden Sie in der offiziellen Dokumentation unter [https://fishshell.com/docs/current/cmds/date.html](https://fishshell.com/docs/current/cmds/date.html). Für alternative Ansätze gibt es auch das Programm `dateutils` unter [https://www.fresse.org/dateutils/](https://www.fresse.org/dateutils/).

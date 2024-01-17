@@ -10,49 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-Sending HTTP requests is essential for any programmer who wants to communicate with web servers and retrieve data. In today's digital age, it is crucial to understand how to send HTTP requests to create dynamic and interactive web applications.
+## What & Why?
+Sending an HTTP request is the process of your application communicating with a server over the internet, typically to retrieve or send data. Programmers use this method to seamlessly exchange information between a client (your app) and a server.
 
-## How To
-To send an HTTP request in Swift, follow these simple steps:
-
-1. Create a `URL` object using the desired URL.
-2. Create a `URLRequest` object with the `URL` object.
-3. Set the request method and any necessary parameters using the `httpMethod` and `httpBody` properties.
-4. Create an `URLSession` object and call `dataTask` with the `URLRequest` object as a parameter.
-5. Use the `resume` method to start the request.
-6. Handle the response in the `dataTask`'s completion handler using the `data` and `response` parameters.
-
-Here's an example of sending a GET request to retrieve data from a REST API:
+## How to:
+Sending an HTTP request is a straightforward process in Swift. First, import the `Foundation` framework and create a `URL` object with the desired endpoint. Then, use the `URLSession` class to create a data task with the request and handle the response in a completion handler. Here's a simple example of sending a GET request and retrieving the response data in a string format:
 
 ```Swift
-let urlString = "https://example.com/api/users"
-if let url = URL(string: urlString) {
-    var request = URLRequest(url: url)
-    request.httpMethod = "GET"
-    
-    let session = URLSession.shared
-    let task = session.dataTask(with: request) { data, response, error in
-        if let error = error {
-            print("Error: \(error.localizedDescription)")
-        } else if let data = data,
-            let response = response as? HTTPURLResponse,
-            response.statusCode == 200 {
-            // Handle data
-            print(data)
-        }
+import Foundation
+
+let url = URL(string: "https://example.com")!
+let request = URLRequest(url: url)
+
+let task = URLSession.shared.dataTask(with: request) { data, response, error in
+    if let data = data {
+        let responseString = String(data: data, encoding: .utf8)
+        print(responseString)
     }
-    task.resume()
 }
+
+task.resume()
 ```
-Output:
-`Data(bytes: ...)` // Data object containing the retrieved data
+Output: The response data in string format.
 
-## Deep Dive
-Sending an HTTP request involves a series of steps that occur behind the scenes. Once the `resume` method is called, the `URLRequest` is converted into raw bytes and sent to the designated URL. The web server receives the request and processes it, returning a response, which includes a status code, headers, and potentially data.
+## Deep Dive:
+Sending HTTP requests has been a staple of web development since the creation of the internet. Alternatives to this method include accessing a server's data directly through a database or using a third-party API. However, sending HTTP requests remains the most common and user-friendly approach for exchanging data between a client and server. Under the hood, Swift uses the `URLSession` API to handle the details of the request, including sending the request, receiving the response, and handling errors. Additionally, programmers can customize the request and response by setting specific headers or using different methods, such as POST or PUT.
 
-Some common HTTP methods include GET, POST, PUT, and DELETE, which correspond to retrieving, creating, updating, and deleting data, respectively. The `httpBody` property is used for passing data in a POST or PUT request. Additionally, the `URLRequest` class has additional properties and methods for setting headers, handling redirects, and more.
-
-See Also
-- [Apple Developer Documentation - URLRequest](https://developer.apple.com/documentation/foundation/urlrequest)
-- [Mozilla Developer Network - HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP)
+## See Also:
+To learn more about sending HTTP requests in Swift, check out the official documentation for `URLSession` and `URLRequest`. Other helpful resources include tutorials for using the `Alamofire` library for a more streamlined approach to HTTP requests and understanding the principles of the HTTP protocol.

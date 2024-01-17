@@ -10,45 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
-Hvorfor skulle noen ønske å skrive ut debug-utdata? Vel, for å forenkle feilsøkingen! Ved å skrive ut relevante verdier og meldinger kan man raskt finne ut hvor det oppstår problemer i koden og deretter løse dem.
+## Hva & Hvorfor?
+Å printe ut feilsøkingsmeldinger er en viktig del av programmering. Det er en måte for utviklere å se hva som skjer i programmet under kjøring, og å finne og fikse eventuelle feil eller problemer. Det kan også hjelpe til med å forstå hvordan koden fungerer og optimalisere den for bedre ytelse.
 
-## Hvordan gjøre det
-Her er et eksempel på hvordan man kan skrive ut en enkel melding i Java:
+## Slik gjør du:
+For å printe ut debug output i Java, kan du bruke metoden `System.out.println()`. Denne metoden tar inn en parameter og skriver ut verdien til denne parameteren i konsollen. For eksempel:
 
-```Java
-System.out.println("Dette er en debug-melding!");
 ```
-
-Dette vil skrive ut teksten "Dette er en debug-melding!" i konsollen når man kjører programmet. Det er viktig å huske å inkludere `System.out` for å indikere at meldingen skal skrives ut i konsollen.
-
-Man kan også skrive ut verdier av variabler ved å bruke `System.out.println()` kombinert med variabelnavnet. For eksempel:
-
-```Java
+Java
 int num = 5;
-System.out.println("Verdien av num er: " + num);
+System.out.println("Verdien til num er: " + num);
+
+// Output: Verdien til num er: 5
 ```
 
-Dette vil skrive ut "Verdien av num er: 5" i konsollen. Merk at `System.out.println()` tar inn en streng som argument, derfor må man bruke `+` for å kombinere strenger og variabler.
+Du kan også bruke `System.out.print()` for å printe uten å legge til en ny linje. Dette kan være nyttig hvis du vil printe en del av en setning og deretter skrive mer ut på samme linje. For eksempel:
 
-## Dykk dypere
-Å skrive ut debug-utdata er spesielt nyttig når man jobber med større og mer komplekse programmer. Ved å skrive ut verdier i ulike deler av koden, kan man få en bedre forståelse av hvordan data flyter gjennom programmet og identifisere hvor problemer oppstår.
+```
+Java
+int num1 = 10;
+int num2 = 20;
 
-En nyttig teknikk er å bruke `System.out.println()` i kombinasjon med betingede uttrykk, for eksempel:
+System.out.print("Summen av num1 og num2 er: ");
+System.out.println(num1 + num2);
 
-```Java
-if (num < 10) {
-    System.out.println("Num er mindre enn 10!");
-} else {
-    System.out.println("Num er større enn 10!");
-}
+// Output: Summen av num1 og num2 er: 30
 ```
 
-Dette vil skrive ut en melding basert på verdien av `num`. Dersom verdien er mindre enn 10, skrives den første meldingen ut, ellers vil den andre meldingen bli skrevet ut.
+## Dypdykk:
+Å printe ut feilsøkingsmeldinger har vært en del av programmering siden de tidlige dagene. Før i tiden var det vanlig å bruke såkalte "print statements", der man printet ut variabler og strings på ulike steder i koden for å se hva som skjer under kjøring. Dette kunne være en tidkrevende og tungvint prosess.
 
-Et annet tips er å bruke **logging**, som er en mer avansert måte å skrive ut informasjon i koden. Ved å bruke logging kan man også velge hvilke meldinger som skal skrives ut basert på ulike nivåer av kritikalitet.
+Et alternativ til å printe ut feilsøkingsmeldinger er å bruke et debugger-verktøy. Dette er et programmeringsverktøy som lar deg pause koden og visualisere hva som skjer i ulike deler av programmet. Debugger-verktøy kan være mer effektive i å finne og fikse feil, og er ofte mer avanserte og tilpassbare enn å printe ut meldinger.
 
-## Se også
-- [Java dokumentasjon om debugging](https://docs.oracle.com/javase/8/docs/technotes/tools/windows/java.html#setting_debug_options)
-- [Java logging tutorial](https://www.baeldung.com/java-logging-intro)
-- [Best practices for debugging Java code](https://www.udemy.com/blog/java-debugging-tips/)
+Implementasjonen av debugging i Java er enkelt og intuitivt takket være `System.out`-metodene som er inkludert i språket. Det er også mulig å bruke andre metoder for å skrive ut feilsøkingsmeldinger, som f.eks. `Log`-klassen i `java.util.logging`-biblioteket.
+
+## Se også:
+[Java debugging tutorial](https://www.journaldev.com/13163/how-to-debug-java-application-in-eclipse)  
+[Eclipse debugger tutorial](https://www.tutorialspoint.com/eclipse/eclipse_debugging_programs.htm)

@@ -1,7 +1,7 @@
 ---
-title:                "स्टैंडर्ड एरर में लिखना"
-html_title:           "Fish Shell: स्टैंडर्ड एरर में लिखना"
-simple_title:         "स्टैंडर्ड एरर में लिखना"
+title:                "स्टैंडर्ड त्रुटि में लिखना"
+html_title:           "Fish Shell: स्टैंडर्ड त्रुटि में लिखना"
+simple_title:         "स्टैंडर्ड त्रुटि में लिखना"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Files and I/O"
@@ -10,34 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Kyun
+## क्या और क्यों?
 
-Dosto, kya aap Fish Shell ka istemal karte hai? Agar haan, toh aapko pata hoga ki yeh ek bahut hi powerful aur customizable shell hai. Par kya aapko pata hai ki aap Fish Shell mein standard error mein bhi likh sakte hai? Haan, aapne sahi suna! Is article mein hum aapko batayenge ki kaise aap standard error mein likh kar apne code ko aur bhi efficient bana sakte hai. Toh chaliye shuru karte hai!
+व्याबज्जन लेखन क्या होता है, और क्यूं प्रोग्रामर्स इसे करते हैं? इस को एक लम्बी बात में न बढ़ाएंगे, लेकिन सरल शब्दों में समझाएंगे। व्याबज्जन लेखन का मुख्य उद्देश्य होता है त्रुटियों की जांच करना। प्रोग्रामर्स इसे करते हैं क्योंकि यदि वे कार्य दोषी होते हैं, तो उनके प्रोग्राम असामान्य रूप से रवाना हो सकते हैं। 
 
-## Kaise Karein
+## कैसे करें:
 
-Jaise ki hum sab jante hai ki Shell commands ko execute karne ke baad hume ek output milta hai, jo ki humare Terminal par likha hua hota hai. Lekin kabhi kabhi hume kuch errors bhi milte hai, jaise ki "Command not found" ya fir "Invalid argument". In errors ko hum standard error kehte hai. Agar hum chahe toh hum in errors ko apne code se alag kar sakte hai. Iske liye hum standard error mein likh sakte hai.
+```Fish Shell``` को याद रखना होगा कि व्याबज्जन लेखन स्टैंडर्ड एरर से होता है, इसलिए स्टैंडर्ड घोषणा (STDERR) का उपयोग किया जाता है। यदि हम कोड टाइप करते हैं ```echo "Hello World!"``` तो वो स्टैंडर्ड आउटपुट (STDOUT) पर प्रिंट होगा जिसमें "Hello World!" लिखा होगा। लेकिन अगर हम कोड में कोई ग़लती होती है, तो हम स्टैंडर्ड एरर से प्रिंट होने वाले संदेशों का उपयोग कर सकते हैं। इसका उदाहरण नीचे दिया गया है:
+
+```
+Fish Shell में हम एसॉल्ट (assert) फ़ंक्शन का उपयोग कर सकते हैं जो हमें एक संदेश के साथ ग़लती को दिखा सकता है। नीचे दिए गए कोड में, अगर दोनों पैरामीटर्स समान नहीं होंगे, तो हमें स्क्रिप्ट से निकाल दिया जाएगा और हमें पता चलेगा कि कहाँ ग़लती हुई है।
 
 ```Fish Shell
-echo "Hello World!" >&2
+function compare_numbers
+  if test $argv[1] -ne $argv[2]
+    echo "ग़लत पैरामीटर्स!"
+    return 1
+  end
+end
 
-Output: Hello World!
+compare_numbers 5 7
 ```
 
-Is example mein humne `echo` command ko use kiya hai jiske output ko standard error mein likhne ka instruction hai `>&2`. Is tarah se hum apne code mein multiple commands ke beech errors ko identify kar sakte hai.
+उदाहरण के लिए एक अन्य स्क्रिप्ट में, हमें 3 लेख (file) को कॉपी करने के लिए एक फ़ंक्शन बनाने की ज़रूरत पड़ी। हम इस फ़ंक्शन को दो पैरामीटर्सः स्रोत फ़ाइल और टार्गेट फ़ाइल के साथ बुलाते हैं। यदि स्रोत फ़ाइल मौजूद नहीं है, तो हमें स्क्रिप्ट से निकाल दिया जाएगा और हमें पता चलेगा कि कहाँ ग़लती हुई है।
 
-## Gehra Sach
+```Fish Shell
+function copy_file
+  if test -f $argv[1]
+    cp $argv[1] $argv[2]
+    echo "${argv[1]} सफ़लतापूर्वक कॉपी हुआ!"
+  else
+    echo "${argv[1]} मौजूद नहीं है।"
+    return 1
+  end
+end
 
-Standard error mein likhne ki madad se hum apne code ko aur bhi organized aur readable bana sakte hai. Isse hume errors ko identify karne aur fix karne mein aasani hoti hai. Aur saath hi saath, hum apne code ko debug karne mein bhi aasani pa sakte hai.
+copy_file source.txt target.txt
+copy_file missing.txt target.txt
+```
 
-Iske alawa, standard error mein likhne se hume errors ki sankhya aur details ko track karne ka bhi option milta hai. Isse humare code ko optimize karne mein madad milti hai.
+## गहराई में जाइये:
 
-Iske alawa, upyog karne ka ek aur fayda hai ki hum apne code mein koi bhi changes or updates kar sakte hai aur firse apne errors ka track rakh sakte hai. Isse hum apne code ko robust bana sakte hai.
-
-Toh dosto, is article mein humne dekha ki kaise hum standard error mein likh kar apne code ko aur bhi efficient bana sakte hai. Agar aap Fish Shell ka istemal nahi karte hai, toh yeh ek accha mauka hai usse try karne ka! Hum umeeed karte hai ki yeh article aapke liye helpful hoga. Dhanyavaad!
-
-## Dekhein Bhi
-
-- [Official Fish Shell website](https://fishshell.com/)
-- [Fish Shell documentation](https://fishshell.com/docs/current/index.html)
-- [List of Fish Shell functions and commands](https://fishshell.com/docs/current/commands.html)
+व्याबज्जन लेखन एक बहुत ही अहम टूल है जो प्रोग्रामिंग में प्रयोग कार्य और कोड को आसान बनाता है।

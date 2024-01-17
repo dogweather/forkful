@@ -1,7 +1,7 @@
 ---
-title:                "「Jsonを扱う」"
-html_title:           "Clojure: 「Jsonを扱う」"
-simple_title:         "「Jsonを扱う」"
+title:                "JSON を使ったコンピュータプログラミング"
+html_title:           "Clojure: JSON を使ったコンピュータプログラミング"
+simple_title:         "JSON を使ったコンピュータプログラミング"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Data Formats and Serialization"
@@ -10,48 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+## 何をして、なぜやるのか？
 
-JSONは、データを簡潔かつ柔軟に表現できるため、多くのプログラミング言語でよく使われています。ClojureでもJSONを扱うことで、WebアプリケーションやAPIとの連携などに役立ちます。
+JSONとは、Java Script Object Notationの略で、データを保持するためのフォーマットです。プログラマーがJSONを使うのは、データを簡単に読み書きできるためです。
 
-## 方法
+## 方法：
 
-Clojureでは、JSONを扱うためのモジュールとして「Cheshire」があります。Cheshireを使用すると、複雑なデータ構造でも簡単に扱うことができます。例えば、以下のようにしてJSONを読み込み、オブジェクトとして扱うことができます。
-
-```Clojure
-(ns your-namespace
-  (:require [cheshire.core :as json]))
-
-;; JSONを読み込む
-(def json-data (json/parse-string "{\"name\":\"Emily\", \"age\": 25}"))
-
-;; オブジェクトとしてアクセスする
-(println (:name json-data))
-(println (:age json-data))
-
-;; 出力
-;; "Emily"
-;; 25
-```
-
-また、Clojureでは簡単にJSONを生成することもできます。例えば、以下のようにClojureのデータ構造をJSONに変換することができます。
+ClojureでJSONデータを扱う方法を説明します。まず、ClojureのライブラリであるCheshireを使い、JSONデータを読み込みます。
 
 ```Clojure
-(ns your-namespace
-  (:require [cheshire.core :as json]))
-
-;; ClojureのハッシュマップをJSONに変換する
-(json/generate-string {:name "Emily", :age 25})
-
-;; 出力
-;; "{\"name\":\"Emily\",\"age\":25}"
+(def data (cheshire.core/parse-string "{\"name\":\"John\", \"age\":30}"))
 ```
+dataという変数に、JSONデータがマップ形式で格納されます。
 
-## 深堀り
+次に、JSONデータを書き込む方法を説明します。
 
-Clojureのデータ構造とJSONの相互変換については、より詳細に知りたい場合、Cheshireのドキュメントを参照することをおすすめします。また、他のClojureのライブラリやツールと組み合わせることで、より効率的にJSONを扱うことができます。例えば、「Ring」というライブラリを使うことで、ClojureでWebアプリケーションを作成する際にJSONをどのように扱うかを学ぶことができます。
+```Clojure
+(def json-string (cheshire.core/generate-string {:name "John", :age 30}))
+```
+json-stringという変数に、JSONデータが文字列として格納されます。
 
-## 参考リンク
+## 詳細を調べる：
 
-- Cheshire: https://github.com/dakrone/cheshire
-- Ring: https://github.com/ring-clojure/ring
+JSONは、複数のプログラミング言語で使用されているデータフォーマットです。JSONは軽量で読み書きがしやすいため、ネットワーク上でデータをやりとりする際によく使われます。
+
+JSONの代替としては、XMLやYAMLなどがありますが、それらよりもJSONの方が読み書きが簡単です。
+
+Clojureでは、Cheshireの他にもClojure.data.jsonやjava.io.StringWriterなどのライブラリを使用してJSONデータを扱うことができます。
+
+## 参考資料：
+
+- [ClojureのCheshireライブラリ](https://github.com/dakrone/cheshire)
+- [JSONの仕様書](https://www.json.org/json-ja.html)
+- [XMLとの比較](https://www.safaribooksonline.com/library/view/head-first-servlets/9780596516680/ch04.html)

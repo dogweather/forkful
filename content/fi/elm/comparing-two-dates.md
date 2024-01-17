@@ -1,7 +1,7 @@
 ---
-title:                "Vertailemalla kahta päivämäärää"
-html_title:           "Elm: Vertailemalla kahta päivämäärää"
-simple_title:         "Vertailemalla kahta päivämäärää"
+title:                "Kahden päivämäärän vertailu."
+html_title:           "Elm: Kahden päivämäärän vertailu."
+simple_title:         "Kahden päivämäärän vertailu."
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Dates and Times"
@@ -10,41 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mikä ja miksi?
 
-On olemassa monia tilanteita, joissa joudumme vertailemaan kahta päivämäärää. Saatamme esimerkiksi tarvita tätä tietoa ohjelmassamme, joka laskee päivien eroja, tai vaikkapa käyttäessämme verkkokauppaa ja haluamme nähdä, milloin tilauksemme on toimitettu.
+Vertaaminen kahden päivämäärän välillä on tärkeä osa ohjelmoinnissa ja se auttaa meitä käsittelemään aikaa ja päiviä tarkasti. Päivämäärien vertailu mahdollistaa esimerkiksi tapahtumien järjestämisen aikajärjestykseen tai tietyn päivämäärän tarkistamisen.
 
-## Kuinka
+## Miten:
+
+Tässä on esimerkkejä siitä, kuinka voit vertailla kahta päivämäärää Elm-kielellä:
 
 ```Elm
-import Date
+comparison: Date -> Date -> Ordering
+comparison date1 date2 =
+    if Date.isBefore date1 date2 then
+        LT
+    else if Date.isAfter date1 date2 then
+        GT
+    else
+        EQ
+```
 
---Määritellään kaksi päivämäärää
-date1 = Date.fromString "2021-08-02"
-date2 = Date.fromString "2021-08-10"
+Tämä funktio vertaa kahta päivämäärää ja palauttaa joko "LT" (alle), "GT" (yli) tai "EQ" (yhtä suuri) sen perusteella, mikä päivämäärä on aiempi.
 
---Vertaillaan päivämääriä funktiolla Date.compare
---Tulos on Ordering-tyyppiä, joka voi olla LT (päivämäärä1 on ennen päivämäärää2), GT (päivämäärä1 on jälkeen päivämäärää2) tai EQ (päivämäärät ovat samat)
-comparison = Date.compare date1 date2
+```Elm
+birthdayCheck: Date -> Date -> Bool
+birthdayCheck date birthdate =
+    Date.month date == Date.month birthdate
+    && Date.day date == Date.day birthdate
+```
 
---Tulostetaan vertailun tulos
-case comparison of 
-    LT ->
-        "Päivämäärä1 on ennen Päivämäärää2"
-    GT ->
-        "Päivämäärä1 on jälkeen Päivämäärää2"
-    EQ ->
-        "Päivämäärät ovat samat"
-``` 
-Tässä esimerkissä tuodaan ensin käytettäväksi Date-kirjasto ja määritellään kaksi päivämäärää merkkijonoina. Sitten käytetään funktiota Date.compare, joka vertailee annettuja päivämääriä ja palauttaa tuloksen, joka tallennetaan muuttujaan. Lopuksi tulostetaan sopiva viesti vertailun tuloksesta käyttämällä koodin haaraumia.
+Tämä funktio tarkistaa, onko annettuna päivämääränä syntymäpäivä.
 
-## Syvempi sukellus
+## Syväsukellus:
 
-Elmillä on sisäänrakennettu Date-kirjasto, joka tarjoaa erilaisia toimintoja päivämäärien käsittelyyn. Esimerkissä käytettiin funktiota Date.fromString, joka muuttaa merkkijonon päivämääräksi. Lisäksi Date-kirjastosta löytyy myös muita hyödyllisiä funktioita, kuten addDays ja subDays, joilla voi lisätä tai vähentää päiviä annetusta päivämäärästä.
+Historiallisessa kontekstissa päivämäärien vertailuun käytettiin paljon käsin koodattuja algoritmeja ennen valmiiksi kirjoitettuja funktioita, kuten Elm-kielessä. Joissakin kielissä, kuten C, päivämäärät voidaan esittää lukuna, ja niitä voidaan sitten vertailla toisiinsa. Yksi vaihtoehto Elm-kielellä on käyttää DateTime-pikakirjoitusta, joka tarjoaa lisätoiminnallisuuksia päivämäärien vertailuun.
 
-On myös tärkeää huomata, että Date.compare-funktio vertailee päivämääriä aikamuodossa, jossa vuosiluvut kasvavat suuremmiksi. Jos siis haluat vertailla päivämääriä esimerkiksi historiallisessa kontekstissa, kannattaa ensin muuttaa ne aikatempeliksi.
+## Katso myös:
 
-## Katso myös
-
-- [Elmin virallinen dokumentaatio Date-kirjastosta](https://package.elm-lang.org/packages/elm/time/latest/Date)
-- [Learn Elm: Working with Dates](https://www.learningsomethingnew.com/learn-elm-working-with-dates/)
+- [Official Elm Date documentation](https://package.elm-lang.org/packages/elm/time/latest/Date)
+- [Elm DateTime package](https://package.elm-lang.org/packages/justinmimbs/elm-date-extra/latest/DateTime)
+- [Date comparison in other programming languages](https://www.tutorialspoint.com/how-to-compare-two-dates-in-c-cplusplus)

@@ -10,37 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-Searching and replacing text is a common task in programming, especially when dealing with large amounts of data or making changes to code. It can save time and effort by making it easier to make multiple changes at once.
+## What & Why?
 
-## How To
-To perform a search and replace in C#, we can use the `Replace()` method from the `String` class. Here are some examples:
+Searching and replacing text is a common task in programming that involves finding specific words or phrases in a piece of code and replacing them with something else. Programmers do this to make their code more readable, to fix errors, or to make changes to a large amount of code at once.
 
-```C#
-string text = "Hello world!";
-string newText = text.Replace("world", "universe");
+## How to:
 
-Console.WriteLine(newText); // Output: Hello universe!
-```
-
-We can also use the `Regex.Replace()` method to perform a search and replace using regular expressions.
+To search and replace text in C#, you can use the built-in `string.Replace()` method. This method takes in two parameters: the text to search for and the text to replace it with. Here's an example:
 
 ```C#
-string text = "The quick brown fox jumps over the lazy dog.";
-string regex = @"[aeiou]";
-string newText = Regex.Replace(text, regex, "-");
-
-Console.WriteLine(newText); // Output: Th- q--ck br-wn f-x j-mps -v-r th- l-zy d-g.
+string oldString = "Hello World!";
+string newString = oldString.Replace("World", "Universe");
+Console.WriteLine(newString);
 ```
 
-## Deep Dive
-When using the `Replace()` method, we can specify additional parameters such as the starting index and the number of characters to replace. This allows for more control over the replacement process.
+The output of this code would be `Hello Universe!`. We first created a string containing the phrase "Hello World!" and then used the `Replace()` method to replace the word "World" with "Universe". The result was assigned to a new variable called `newString` and then printed to the console.
 
-Another important thing to keep in mind is that `Replace()` is case-sensitive. To perform a case-insensitive search and replace, we can use the `StringComparison` parameter and pass in `IgnoreCase` as an argument.
+You can also perform a case-sensitive search and replace by using the overload of the `Replace()` method that takes in a `StringComparison` parameter. Here's an example:
 
-Regular expressions also offer a wide range of options for searching and replacing text. By using capturing groups and replacement patterns, we can perform complex replacements easily.
+```C#
+string oldString = "Hello World!";
+string newString = oldString.Replace("world", "Universe", StringComparison.CurrentCulture);
+```
 
-## See Also
-- [String.Replace Method (System)](https://docs.microsoft.com/en-us/dotnet/api/system.string.replace?view=net-5.0)
-- [Regex.Replace Method (System.Text.RegularExpressions)](https://docs.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.regex.replace?view=net-5.0)
-- [Regular Expressions in C# (C# Programming Guide)](https://docs.microsoft.com/en-us/dotnet/standard/base-types/regular-expressions-in-csharp)
+In this case, the word "World" would not be replaced because the capitalization does not match with the searched word.
+
+## Deep Dive:
+
+Before the advent of integrated development environments (IDEs), programmers had to manually search through their code to find and replace text. This was a tedious and time-consuming process. With the use of IDEs and the `string.Replace()` method, this task has become much easier and quicker. 
+
+Aside from the `Replace()` method, there are also other ways to search and replace text in C#. One option is to use regular expressions, which allows for more complex pattern matching. Another option is to use third-party libraries or packages that offer advanced search and replace functionality.
+
+Under the hood, the `Replace()` method uses the `StringBuilder` class to perform the replacement. This class provides efficient string manipulation methods, making the `Replace()` method faster than traditional string concatenation.
+
+## See Also:
+
+- [String.Replace Method (Microsoft Docs)](https://docs.microsoft.com/en-us/dotnet/api/system.string.replace?view=net-5.0)
+- [StringBuilder Class (Microsoft Docs)](https://docs.microsoft.com/en-us/dotnet/api/system.text.stringbuilder?view=net-5.0)
+- [Regular Expressions in C# (C# Corner)](https://www.c-sharpcorner.com/UploadFile/972c03/regular-expression-with-C-Sharp-console-application/)

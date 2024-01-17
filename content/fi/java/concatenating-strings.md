@@ -10,62 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mikä & Miksi?
+"Ohjelmoijat käyttävät usein erilaisia tapoja yhdistää merkkijonoja, eli tekstinpätkiä, yhdeksi kokonaisuudeksi. Tätä kutsutaan merkkijonojen yhdistelemiseksi (concatenating strings) ja se on erittäin tärkeä osa ohjelmoinnin perustaitoja. Tämä mahdollistaa esimerkiksi käyttäjän syöttämien tietojen liittämisen valmiiksi ohjelmoituihin viesteihin tai tulostettaessa tiedot yhdessä halutussa muodossa."
 
-Yhdistäminen on tärkeä osa ohjelmointia, joka mahdollistaa merkkijonojen yhdistämisen yhdeksi kokonaisuudeksi. Tämä on hyödyllistä esimerkiksi tekstin muokkaamisessa ja tulostamisessa.
-
-## Kuinka
-
-```Java
-String s1 = "Hello";
-String s2 = "world";
-String s3 = s1 + " " + s2;
-System.out.println(s3);
+## Miten
+"### Esimerkki 1:
+```java
+String etunimi = "Matti";
+String sukunimi = "Meikäläinen";
+String kokoNimi = etunimi + " " + sukunimi;
+System.out.println(kokoNimi);
 ```
+Tulostaa: Matti Meikäläinen
 
-Tämä koodiesimerkki yhdistää kaksi merkkijonoa "Hello" ja "world" yhdeksi merkkijonoksi "Hello world" käyttäen plus-merkkiä (+). Voit myös yhdistää useampia merkkijonoja samalla tavalla.
-
-```Java
-String s1 = "Java is ";
-String s2 = "cool!";
-String s3 = s1 + s2;
-System.out.println(s3);
+### Esimerkki 2: 
+```java
+String toivelause = "Olen " + 27 + " vuotta vanha.";
+System.out.println(toivelause);
 ```
+Tulostaa: Olen 27 vuotta vanha.
 
-Tulostettu tulos on "Java is cool!". Lisäksi voit myös yhdistää muuttujia ja kirjaimia merkkijonoon.
-
-```Java
-String language = "Java";
-String sentence = language + " is the best programming language!";
-System.out.println(sentence);
+### Esimerkki 3: 
+```java
+String tervehdys = "Hei ";
+String nimi = "Maria";
+String huutomerkki = "!";
+System.out.println(tervehdys.concat(nimi).concat(huutomerkki));
 ```
+Tulostaa: Hei Maria!
 
-Tulostettu tulos on "Java is the best programming language!".
-
-## Syventävä tieto
-
-Yhdistäminen ei rajoitu vain merkkijonoihin, vaan voit myös yhdistää muita tietotyyppejä, kuten numerot.
-
-```Java
-int num1 = 5;
-int num2 = 6;
-String result = "The sum of " + num1 + " and " + num2 + " is " + (num1 + num2) + ".";
-System.out.println(result);
+### Esimerkki 4:
+```java
+String muuttuja1 = "Tervetuloa";
+String muuttuja2 = " Java-maailmaan!";
+System.out.println(muuttuja1.concat(muuttuja2));
 ```
+Tulostaa: Tervetuloa Java-maailmaan!"
 
-Tulostettu tulos on "The sum of 5 and 6 is 11.".
-
-On myös tärkeää välittää merkkijonon ja muiden tietotyyppien väliset erot. Voit tehdä tämän käyttämällä String-metodia valueOf().
-
-```Java
-int num = 10;
-String numString = String.valueOf(num);
-System.out.println(numString);
-```
-
-Tulostettu tulos on "10".
+## Syväsukellus
+"Merkkijonojen yhdistelemistä on käytetty ohjelmoinnissa jo pitkään, ja Java-kielen syntaksissa se tehdään yleensä käyttämällä plus-merkkiä (+) tai concat-metodia. Joissain tapauksissa voi olla hyödyllistä käyttää StringBuilder-luokkaa, mikäli tiedetään, että merkkijonojen yhdisteleminen tapahtuu suurella datamäärällä. Tämä johtuu siitä, että StringBuilder-luokka luo uuden merkkijonon tarvittaessa, kun taas String-luokka luo aina uuden merkkijonon joka kerta, kun siihen tehdään muutoksia. Tämä voi aiheuttaa tehokkuusongelmia, jos käytetään paljon merkkijonojen yhdistelemistä."
 
 ## Katso myös
-
-- [String Class - Oracle Help Center](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
-- [Concatenation in Java - GeeksforGeeks](https://www.geeksforgeeks.org/concatenation-in-java/)
+- [Java StringBuilder-luokka](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/StringBuilder.html)
+- [Java String-luokka](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html)
+- [Merkkijonojen muokkaaminen Java:ssa](https://www.w3schools.com/java/java_strings.asp)

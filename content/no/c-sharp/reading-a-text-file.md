@@ -1,7 +1,7 @@
 ---
-title:                "Å lese en tekstfil"
-html_title:           "C#: Å lese en tekstfil"
-simple_title:         "Å lese en tekstfil"
+title:                "Lesing av en tekstdokument"
+html_title:           "C#: Lesing av en tekstdokument"
+simple_title:         "Lesing av en tekstdokument"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Files and I/O"
@@ -10,53 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hva & Hvorfor?
+Å lese en tekstfil i C# betyr å åpne og lese informasjon fra en tekstfil på datamaskinen din. Programmere gjør dette for å kunne bruke data som er lagret i en tekstfil i sine programmer.
 
-Hvorfor lese en tekstfil i C#? Vel, det er et nyttig verktøy for å behandle og behandle data i et strukturert format. Enten du trenger å lese filer som inneholder brukerinformasjon, loggfiler, eller annen type data, vil kunnskap om hvordan du leser en tekstfil være nyttig.
-
-## Hvordan
-
-For å lese en tekstfil i C#, må du først åpne en filstrøm til filen. Dette kan gjøres med `FileStream` -klassen:
+# Hvordan:
+Det er enkelt å lese en tekstfil i C#. Du kan bruke ```File.ReadAllText()``` metoden for å lese innholdet fra en tekstfil som en enkelt streng, eller ```File.ReadAllLines()``` metoden for å lese innholdet i tekstfiler som en matrix av separate linjer. Se eksempler nedenfor.
 
 ```C#
-FileStream filStream = new FileStream("filnavn.txt", FileMode.Open);
+// Eksempel 1: Leser en tekstfil som en enkelt streng
+string tekst = File.ReadAllText("minTekstfil.txt");
+Console.WriteLine(tekst);
+
+// Eksempel 2: Leser en tekstfil som en matrix av linjer
+string[] linjer = File.ReadAllLines("minTekstfil.txt");
+foreach (string linje in linjer)
+{
+    Console.WriteLine(linje);
+}
+
+/* Output
+Eksempeltekst på første linje
+Dette er en annen linje med tekst
+Siste linje med litt mer tekst 
+*/
+
 ```
 
-Deretter kan du bruke `StreamReader` -klassen til å lese data i filen, linje for linje, ved hjelp av `ReadLine()` -metoden:
+# Dypdykk:
+Å lese og skrive til tekstfiler har vært et essensielt aspekt av programmering siden begynnelsen. Tekstfiler brukes ofte for å lagre landealder, konfigurasjoner, tekst og andre typer data i et lett-å-lese format. Noen alternativer til å bruke ```File``` klassen for å lese tekstfiler inkluderer å bruke andre klasser som ```StreamReader``` eller tredjepartsbiblioteker som ```CsvHelper```. Når du leser tekstfiler i C#, er det også viktig å tenke på formatering, tegnkoding, og eventuell feilhåndtering.
 
-```C#
-StreamReader leser = new StreamReader(filStream);
-string linje = leser.ReadLine();
-```
-
-Nå kan du behandle dataen som du ønsker, enten det er å skrive den ut på konsollen, lagre den i en variabel, eller manipulere den på andre måter.
-
-```C#
-Console.WriteLine(linje); // skriver ut den leste linjen på konsollen
-```
-
-For å lukke filstrømmen og frigjøre ressurser, må du bruke `Close()` -metoden til leseren:
-
-```C#
-leser.Close();
-```
-
-Etter at filen er blitt lest, må du lukke filstrømmen ved hjelp av `Close()` -metoden til filstrømmen:
-
-```C#
-filStream.Close();
-```
-
-## Deep Dive
-
-Når du leser en tekstfil, kan du bruke forskjellige metoder og funksjoner til å lese dataen. For eksempel kan du bruke `Read()` -metoden til `StreamReader` -klassen for å lese en bestemt mengde tegn i filen. Eller, hvis du forventer at filen kan inneholde feilaktige data, kan du bruke `Peek()` -metoden for å sjekke om den neste linjen i filen er gyldig før du prøver å lese den.
-
-Det finnes også forskjellige måter å lese filen på, for eksempel å lese den en linje om gangen ved hjelp av `ReadLine()` -metoden, som vist i eksemplene over. Du kan også bruke `ReadToEnd()` -metoden for å lese hele filen på en gang.
-
-Det er også viktig å huske på å håndtere eventuelle unntak som kan oppstå mens du leser en fil, for eksempel hvis filen ikke eksisterer eller ikke kan åpnes. Dette kan gjøres ved å bruke `try-catch` -blokker rundt kode som kan kaste et unntak.
-
-## Se også
-
-- Introduksjon til filstrømmer i C# (https://docs.microsoft.com/nb-no/dotnet/standard/io/file-streams)
-- Dokumentasjon for `StreamReader`-klassen (https://docs.microsoft.com/nb-no/dotnet/api/system.io.streamreader)
-- Fordeler og ulemper med å lese tekstfiler i C# (https://www.c-sharpcorner.com/blogs/reading-text-files-in-c-sharp1)
+# Se også:
+- [Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/api/system.io.file.readalltext?view=net-5.0)
+- [StreamReader klasse](https://docs.microsoft.com/en-us/dotnet/api/system.io.streamreader?view=net-5.0)
+- [CsvHelper bibliotek](https://joshclose.github.io/CsvHelper/)

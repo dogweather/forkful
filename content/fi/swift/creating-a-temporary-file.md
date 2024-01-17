@@ -1,7 +1,7 @@
 ---
-title:                "Tilapäistiedoston luominen"
-html_title:           "Swift: Tilapäistiedoston luominen"
-simple_title:         "Tilapäistiedoston luominen"
+title:                "Väliaikaisen tiedoston luominen"
+html_title:           "Swift: Väliaikaisen tiedoston luominen"
+simple_title:         "Väliaikaisen tiedoston luominen"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Files and I/O"
@@ -10,45 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä & Miksi?
 
-Vuoden 2021 Swiftin versiossa on monia uusia ominaisuuksia, mm. mahdollisuus luoda väliaikaisia tiedostoja. Miksi siis vaivautua luomaan väliaikaista tiedostoa?
+Luodessa ohjelmistoja, saatat törmätä tarpeeseen luoda väliaikaisia tiedostoja, myös kutsuttuna temp-tiedostoiksi. Nämä ovat tiedostoja, jotka ovat olemassa vain lyhyen aikaa ja poistuvat sitten automaattisesti, yleensä kun niitä ei enää tarvita. Tässä on pari esimerkkiä miksi ohjelmoijat saattavat luoda väliaikaisia tiedostoja: tallentaakseen väliaikaisia tietoja ja suorittaakseen tiettyjä toimintoja, kuten tiedostojen siirtoa tai tallentamista.
 
-Väliaikaiset tiedostot tarjoavat kätevän tavan tallentaa väliaikainen tietoohjelman suorituksen aikana. Ne ovat erityisen hyödyllisiä, kun haluat tallentaa väliaikaisesti käyttäjän syöttämän tiedon tai luoda testidataa ohjelman kehityksen aikana.
-
-## Kuinka
-
-Luodaksesi väliaikaisen tiedoston Swiftillä, tarvitset vain muutaman koodirivin:
+## Miten:
 
 ```Swift
-// Luodaan väliaikainen tiedosto
-let temporaryFile = FileManager.default.temporaryDirectory.appendingPathComponent("temp.txt")
+let temporaryFile = try FileManager.default.url(for: .itemReplacementDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+try "This is a temporary file".write(to: temporaryFile, atomically: true, encoding: .utf8)
 
-// Kirjoitetaan tiedostoon tietoja
-try "Tervetuloa väliaikaiseen tiedostoon!".write(to: temporaryFile, atomically: true, encoding: .utf8)
-
-// Luetaan tiedostosta tietoja
-let fileContents = try String(contentsOf: temporaryFile, encoding: .utf8)
-
-// Tulostetaan tiedostosta luetut tiedot
-print(fileContents)
-
-// Lopuksi poistetaan tiedosto
-try FileManager.default.removeItem(at: temporaryFile)
+// Tulostaa: Tämä on väliaikainen tiedosto
+print(try String(contentsOf: temporaryFile))
 ```
 
-Kuten näet, käytämme `FileManager`-luokkaa luodaksemme `temporaryDirectory`-nimisen hakemiston, johon lisäämme halutun tiedostonimen. Tämän jälkeen voimme käyttää `write`-funktiota kirjoittaaksemme haluttuja tietoja tiedostoon ja `String`-luokan `contentsOf`-funktiota tiedostosta lukemiseen. Lopuksi käytämme `FileManager`-luokkaa poistaaksemme tiedoston.
+## Syväsukellus:
 
-## Syvällisempää tietoa
+Luominen väliaikaisia tiedostoja on ollut hyödyllinen tekniikka ohjelmointimaailmassa jo vuosikymmenien ajan. Se on myös yksi näppärä tapa suorittaa tiettyjä toimintoja ilman, että tarvitsee luoda pysyvää tiedostoa, jota et välttämättä tarvitse myöhemmin. Toinen vaihtoehto väliaikaisille tiedostoille on käyttää ns. "nsurlcache" -toiminnallisuutta, joka tallentaa ja hallinnoi väliaikaisia tiedostoja automaattisesti. Tämä on hyödyllistä esimerkiksi jos haluat tallentaa kuvia tai muita verkkosisältöjä väliaikaisesti. 
 
-Swiftin `TemporaryDirectory` tarjoaa turvallisen ja luotettavan tavan luoda väliaikaisia tiedostoja. Tiedostot poistetaan automaattisesti järjestelmän ollessa käynnissä, joten sinun ei tarvitse huolehtia niiden poistamisesta manuaalisesti.
+### Tiedostojen luominen väliaikaiseen hakemistoon:
+Kun luot väliaikaisia tiedostoja, yksi tapa voi olla luoda niitä väliaikaiseen hakemistoon. Tämä hakemisto sijaitsee puhelimen tallentamassa tilassa, ja se on hyvä paikka tallentaa väliaikaisia tiedostoja, sillä niille on varattu erillinen tila, ja ne poistuvat automaattisesti. 
 
-Voit myös käyttää `temporaryDirectory`-hakemistoa tallentaaksesi väliaikaisia kuvia, videoita ja muita tiedostoja. Tämä on erityisen hyödyllistä sovellusten kehityksessä, kun haluat tallentaa testidatan ja varmistaa, että sovellus toimii oikein erilaisilla tiedostotyypeillä.
+### Kirjoittaminen temp-tiedostoon:
+Ohjataksesi sisältöä luomaasi temp-tiedostoon, tulee sinun ensin luoda "Data" -muotoinen esine, ja kirjoittaa haluamasi sisältö siihen "Data"(data.write(blaa, atomically: true)) -funktiolla. 
 
-Lisäksi voit käyttää `FileManager`-luokan muita funktioita hallitaksesi väliaikaisia tiedostoja, kuten käyttäjän käytön seurantaa ja tiedostojen salaus- ja purkuominaisuuksia.
+## Katso myös:
 
-## Katso myös
-
-- [Apple Developer Documentation for FileManager](https://developer.apple.com/documentation/foundation/filemanager)
-- [Swift Standard Library Documentation for String](https://developer.apple.com/documentation/swift/string)
-- [Creating and Managing Temporary Files in Swift](https://www.avanderlee.com/swift/temporary-files/)
+Lisätietoja temp-tiedostoista ja kuinka ne toimivat: https://developer.apple.com/documentation/foundation/filemanager/1407690-url
+Lisätietoja NSURLCachesta: https://developer.apple.com/documentation/foundation/nsurlcache

@@ -10,62 +10,22 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 为什么
+什么是文件目录存在性检测，程序员为什么要这么做？
+文件目录存在性检测是指检查某个目录是否真的存在并可以被程序所访问。程序员经常进行这么操作是为了确保它们的程序按预期工作，并避免出现意外错误。
 
-在编写Javascript程序时，我们经常需要检查某个目录是否存在。这可以帮助我们确定文件是否已经存在，以便我们可以做出相应的处理。所以，检查目录存在性在编写JavaScript程序时非常有用。
-
-## 如何
-
-假设我们有一个目录路径的变量，我们可以使用 node.js 内置的 `fs` 模块来检查它是否存在。下面是一个简单的例子：
-
-```javascript
-const fs = require('fs');
-
-// 假设我们有一个目录路径的变量
-const directoryPath = './myDirectory';
-
-// 使用 `fs.existsSync()` 方法来检查目录是否存在
-if (fs.existsSync(directoryPath)) {
-  console.log('目录已存在');
+如何实现文件目录存在性检测：
+```Javascript 
+if (fs.existsSync('/path/to/directory')) {
+  console.log('目录存在！')
 } else {
-  console.log('目录不存在');
+  console.log('目录不存在。')
 }
 ```
 
-当我们运行这段代码时，如果 `myDirectory` 目录已经存在，那么控制台将输出 `目录已存在`。如果该目录不存在，则会输出 `目录不存在`。
+更深入地了解：
+此功能最早于1983年在Unix操作系统中实现，并随后被其他操作系统如Windows所采用。除了使用Node.js内置的fs模块进行目录检测外，还可以使用第三方模块如fs-extra或fs-jetpack来简化代码。
 
-## 深入探讨
-
-在上面的例子中，我们使用了 `fs.existsSync()` 方法来检查目录的存在性。该方法将会返回一个布尔值，如果目录存在则为 `true`，否则为 `false`。我们也可以使用 `fs.stat()` 方法来检查目录的存在性。下面是一个使用该方法的例子：
-
-```javascript
-const fs = require('fs');
-
-// 假设我们有一个目录路径的变量
-const directoryPath = './myDirectory';
-
-// 使用 `fs.stat()` 方法来检查目录是否存在
-fs.stat(directoryPath, (err, stats) => {
-  if (err) {
-    console.error(err);
-    return;
-  }
-
-  // 如果目录存在，则 `stats` 对象中会有相关的信息
-  console.log(stats.isDirectory()); // true
-  console.log(stats.size); // 0 (目录大小为 0)
-});
-```
-
-`fs.stat()` 方法将会返回一个 `stats` 对象，它包含了该目录的相关信息，比如大小、创建时间等。我们通过调用返回的 `isDirectory()` 方法，可以判断目录是否为一个目录。
-
-# 参考链接
-
-- [Node.js Docs: `fs` 模块](https://nodejs.org/api/fs.html)
-- [Node.js Docs: `fs.existsSync()` 方法](https://nodejs.org/api/fs.html#fs_fs_existssync_pathoptions)
-- [Node.js Docs: `fs.stat()` 方法](https://nodejs.org/api/fs.html#fs_fs_stat_path_options_callback)
-
-# 查看更多
-
-- [如何使用Node.js创建和管理文件](https://www.freecodecamp.org/news/nodejs-create-file-in-readable-writable-mode/)
-- [使用Node.js实现文件系统操作](https://www.tutorialspoint.com/nodejs/nodejs_file_system.htm)
+相关资源：
+- [fs模块文档](https://nodejs.org/api/fs.html)
+- [fs-extra模块文档](https://github.com/jprichardson/node-fs-extra)
+- [fs-jetpack模块文档](https://github.com/szwacz/fs-jetpack)

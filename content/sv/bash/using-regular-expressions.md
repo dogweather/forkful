@@ -1,7 +1,7 @@
 ---
-title:                "Användning av reguljära uttryck"
-html_title:           "Bash: Användning av reguljära uttryck"
-simple_title:         "Användning av reguljära uttryck"
+title:                "Använda reguljära uttryck"
+html_title:           "Bash: Använda reguljära uttryck"
+simple_title:         "Använda reguljära uttryck"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Strings"
@@ -10,38 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
-Regular expressions är ett kraftfullt verktyg för att söka och manipulera textmönster i en textfil eller ett command line interface. Genom att lära sig hur man använder regelbundna uttryck kan du spara tid och effektivisera din kodning.
+# Vad & Varför?
+Regular Expressions, eller Reguljära Uttryck, är en kraftfull teknik för att söka och manipulera text. Programutvecklare använder det för att enkelt hitta, jämföra och ersätta text i en fil eller en textsträng. Det är ett oumbärligt verktyg för att hantera stora mängder textdata på ett snabbt och effektivt sätt.
 
-## Hur man gör
-För att använda regelbundna uttryck i Bash behöver du för det första lära dig syntaxen för dessa uttryck. Gå sedan igenom några praktiska exempel för att få en bättre förståelse för hur de fungerar.
+## How to:
+För att använda reguljära uttryck i Bash, använd kommandot ```grep``` tillsammans med ett mönster som du vill hitta i texten. Till exempel kan du använda ```grep``` för att hitta alla förekomster av ordet "hund" i en textfil:
 
-Först måste vi veta hur man väljer ett sökord eller ett mönster. För att göra det använder vi tecknet ```=` som betyder att vi vill extrahera en sträng. Här är ett exempel på ett regelbundet uttryck för att hitta en sträng som innehåller både bokstäver och siffror i en textfil:
-
-```Bash
-grep '[a-z0-9]' textfil.txt
+```
+grep "hund" textfil.txt 
 ```
 
-Då kommer alla rader i textfilen som innehåller både bokstäver och siffror att visas. Om vi istället vill hitta en sträng som börjar med en siffra kan vi använda tecknet ```^``` före siffran:
+Det är också möjligt att använda speciella tecken för att specificera mer exakta mönster. Till exempel kan du använda ```^``` för att hitta ord som börjar med ett visst tecken eller ```$``` för att hitta ord som slutar på ett visst tecken. Här är ett exempel på hur man kan använda detta i praktiken för att hitta alla e-postadresser som slutar på ".com":
 
-```Bash
-grep '^1' textfil.txt
+```
+grep "@.*\.com" textfil.txt
 ```
 
-Detta kommer att visa alla rader i textfilen som börjar med siffran 1. Det finns också flera andra specialtecken som kan användas för att söka efter mer specifika mönster.
+## Deep Dive:
+Regular Expressions dök först upp på 1950-talet och har sedan dess utvecklats och använts i olika programmeringsspråk och verktyg. Det finns också alternativa sätt att hantera textmanipulation, som till exempel sök- och ersättningsfunktioner i textredigeringsprogram. 
 
-## Djupdykning
-För att bli mer bekant med regelbundna uttryck är det en bra idé att titta på dokumentationen för Bash så att du lär dig alla tillgängliga alternativ och specialtecken. Här är en kort förklaring av några av de vanligaste specialtecknen:
+När man använder reguljära uttryck i Bash är det viktigt att känna till att det finns olika versioner av Grepp-kommandot, som kan ha olika funktionalitet och syntax. Det är därför viktigt att läsa dokumentationen för den specifika versionen av Bash du använder för att se vilka regler som gäller för reguljära uttryck.
 
-- ```*``` betyder att det föregående tecknet kan förekomma 0 eller flera gånger.
-- ```+``` betyder att det föregående tecknet måste förekomma minst en gång.
-- ```?``` betyder att det föregående tecknet är valfritt.
-- ```.``` betyder vilken som helst enskild karaktär.
-- ```[...]``` betyder en serie av annars okända tecken.
-
-Det finns också mycket mer avancerade regelbundna uttryck som du kan utforska för att ta din kodning till nästa nivå. Genom att förstå regelbundna uttryck kan du effektivt hantera stora mängder data och uppnå önskat resultat på ett snabbt och enkelt sätt.
-
-## Se också
-- [Bash-dokumentation](https://www.gnu.org/software/bash/manual/bash.html)
-- [RegEx-tutorial](https://www.regular-expressions.info/tutorial.html)
-- [Praktiska exempel på regelbundna uttryck i Bash](https://www.linuxjournal.com/content/bash-extended-globbing)
+## See Also:
+Om du vill lära dig mer om reguljära uttryck i Bash, kan du hitta mer information i Bash-dokumentationen eller på andra programutvecklingsrelaterade forum och bloggar. Det finns också många online-tutorials och övningsuppgifter som kan hjälpa dig att praktiskt behärska användningen av reguljära uttryck.

@@ -10,61 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 为什么： #
+# 什么 & 为什么？
+解析HTML是指将HTML代码转换为可读的格式，以便程序员能够提取和操作其中的数据。程序员通常会这样做是为了从网页中获取特定的信息，如价格、评分等等。
 
-你有没有想过如何从网页上获取特定信息？这就是解析HTML的作用。通过解析HTML，你可以从网页中提取需要的数据，例如温度、湿度等等。这对于利用网页数据来控制你的Arduino项目非常有用！
-
-# 如何操作： #
-
-``` Arduino
-#include <ESP8266WiFi.h> 
-#include <ESP8266HTTPClient.h>
-
-void setup() {
-
-	Serial.begin(115200);
-	
-	//连接WiFi网络
-	WiFi.begin("WiFi名称","WiFi密码");
-	
-	while (WiFi.status() != WL_CONNECTED) { 
-		delay(1000);
-		Serial.println("连接中...");
-	} 
-	Serial.println("连接成功！")
-
-	//建立HTTP请求
-	HTTPClient http;
-
-	//发起GET请求，将网页源代码存储到response变量中
-	http.begin("https://www.arduino.cc/reference/en/");
-	int httpCode = http.GET();
-	String response = http.getString();
-
-	//解析网页内容
-	int start = response.indexOf("<h1 class=\"bg-dark\">"); //查找<h1 class="bg-dark">标签的起始位置
-	int end = response.indexOf("</h1>", start); //查找</h1>标签的结束位置
-	String title = response.substring(start + 20, end); //截取<title>标签中的内容并存储到title变量中
-	
-	//打印结果
-	Serial.println(title);
-	
-	http.end(); //关闭HTTP连接
+# 怎么做：
+```
+ArduinoHttpClient client; // 声明HTTP客户端
+char server[] = "www.example.com"; // 设置目标网站
+int port = 80; // 设置端口
+if (client.connect(server, port)) { // 建立连接
+    client.println("GET /index.html"); // 发送GET请求
+    client.println("Host: www.example.com"); // 设置主机名
+    client.println("Connection: close"); // 确保关闭连接
+    client.println(); // 发送空行
 }
-
-void loop() {
-      
+while (client.available()) { // 循环读取响应
+    char c = client.read(); // 读取一个字符
+    // 处理响应，如打印到串口监视器
+    Serial.print(c);
 }
-
+client.stop(); // 断开连接
 ```
 
-输出结果：The Arduino Language
+输出的结果可能会是这样的：
+```
+HTTP/1.1 200 OK
+Date: Wed, 06 Oct 2021 00:00:00 GMT
+Server: Apache
+Content-Type: text/html
+Content-Length: 123
 
-# 深入了解： #
+<!DOCTYPE html>
+<html>
+<head>
+<title>Example Website</title>
+</head>
+<body>
+<h1>Welcome to Example Website!</h1>
+<p>Our prices start at $10 and our rating is 4 stars.</p>
+</body>
+</html>
+```
 
-解析HTML的过程实际上并不复杂。它主要是通过搜索和截取特定标签来获取所需数据。这可以通过使用Arduino的字符串处理功能来完成。值得注意的是，每当HTML结构发生改变时，代码可能就无法正常工作了。因此，建议在编写代码时保持HTML结构稳定。
+# 深入了解：
+解析HTML在计算机历史上是一个重要的技术。在Web爆发式增长的时期，解析器是将互联网上的信息转换为可读格式的关键工具。现在，有许多替代技术，如使用API接口来获取数据，但解析HTML仍然是一种重要的技能。
 
-# 另请参阅： #
-
-- [如何解析HTML](https://medium.com/@gwineel/how-to-parse-html-in-arduino-e0f50c1817a6)
-- [Arduino和ESP8266连接WiFi网络](https://randomnerdtutorials.com/how-to-connect-your-arduino-to-wifi/)
+# 参考链接：
+- [Wikipedia - HTML parsing](https://en.wikipedia.org/wiki/HTML_parsing)
+- [Arduino Reference - HttpClient library](https://www.arduino.cc/reference/en/libraries/httpclient/)

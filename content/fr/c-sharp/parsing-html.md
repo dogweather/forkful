@@ -1,7 +1,7 @@
 ---
-title:                "L'analyse de HTML"
-html_title:           "C#: L'analyse de HTML"
-simple_title:         "L'analyse de HTML"
+title:                "Analyser l'html"
+html_title:           "C#: Analyser l'html"
+simple_title:         "Analyser l'html"
 programming_language: "C#"
 category:             "C#"
 tag:                  "HTML and the Web"
@@ -10,60 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Qu'est-ce que c'est et pourquoi le faire ?
+Le parsing HTML est un processus qui consiste à extraire des données structurées à partir de code HTML. Les programmeurs utilisent le parsing HTML pour automatiser la collecte et l'analyse de données sur les pages web. Cela peut être particulièrement utile pour effectuer des tâches telles que le web scraping, la création de bots ou l'analyse de données.
 
-Pourquoi quelqu'un voudrait-il s'engager dans l'analyse d'HTML ? Eh bien, l'analyse d'HTML est utile pour extraire des données spécifiques d'une page web, telles que des titres, des liens ou des images. Cela peut être très utile pour les développeurs qui cherchent à créer des outils de scraping de données ou pour les utilisateurs qui souhaitent extraire des informations d'un site web pour une utilisation ultérieure.
-
-## Comment faire
-
-L'analyse d'HTML peut sembler intimidante pour certains, mais elle peut être réalisée facilement en utilisant le langage de programmation C# et quelques bibliothèques dédiées.
-
-Tout d'abord, nous devons inclure la bibliothèque HtmlAgilityPack dans notre projet. Cette bibliothèque permet une manipulation facile de documents HTML en utilisant XPath pour naviguer à travers les différents éléments.
+## Comment faire :
+Voici un exemple de code en C# pour effectuer un parsing HTML à l'aide de la librairie HtmlAgilityPack. Tout d'abord, il faut référencer la librairie dans le projet. Ensuite, il suffit de créer un objet HtmlDocument et de lui passer en paramètre le contenu de la page web à parser. Enfin, on peut utiliser des méthodes telles que SelectNodes ou SelectSingleNode pour cibler les éléments spécifiques que l'on souhaite extraire.
 
 ```C#
 using HtmlAgilityPack;
-```
 
-Ensuite, nous devons créer une instance de la classe HtmlDocument en utilisant l'URL de la page que nous voulons analyser comme paramètre.
+HtmlDocument doc = new HtmlDocument();
+doc.LoadHtml("contenu de la page à parser");
 
-```C#
-HtmlDocument doc = new HtmlWeb().Load("https://monsite.com/pagehtml");
-```
+// exemple d'extraction des balises <a> contenant un lien
+var links = doc.DocumentNode.SelectNodes("//a[@href]");
 
-Maintenant que nous avons chargé le document, nous pouvons utiliser XPath pour naviguer à travers les différents éléments et extraire les données souhaitées. Par exemple, si nous voulons récupérer tous les titres de la page, nous pouvons utiliser l'expression XPath "//h2" pour sélectionner tous les éléments "h2" et les stocker dans une liste.
-
-```C#
-var listeTitres = doc.DocumentNode.SelectNodes("//h2");
-```
-
-Enfin, nous pouvons parcourir cette liste et afficher les titres dans la console ou les utiliser comme bon nous semble.
-
-```C#
-foreach(var titre in listeTitres)
+foreach (HtmlNode link in links)
 {
-    Console.WriteLine(titre.InnerHtml);
+    var url = link.Attributes["href"].Value;
+    Console.WriteLine(url);
 }
 ```
 
-Voici un exemple de sortie pour une page contenant deux titres "Mon premier titre" et "Mon deuxième titre" :
+L'exemple ci-dessus montre comment extraire tous les liens présents sur une page web. Il est également possible d'utiliser des conditions pour cibler des éléments plus précis ou de manipuler les données extraites selon nos besoins.
 
-```
-Mon premier titre
-Mon deuxième titre
-```
+## Plongée en profondeur :
+Le parsing HTML est largement utilisé dans le domaine du web scraping, qui a vu un essor considérable ces dernières années avec l'augmentation des données disponibles en ligne. Il existe d'autres outils pour réaliser du parsing, tels que Python Beautiful Soup ou JavaScript Cheerio, mais la librairie HtmlAgilityPack reste une référence pour les développeurs C#.
 
-## Plongée en profondeur
+L'implémentation du parsing est souvent complexe en raison de la variété de syntaxes HTML. Il est donc important de bien comprendre la structure des pages que l'on souhaite parser avant de se lancer dans le code. De plus, il est important de prendre en compte les éventuelles mises à jour du code HTML au fil du temps, qui peuvent casser notre parsing si celui-ci est trop rigide.
 
-L'analyse d'HTML peut devenir plus complexe selon les besoins du projet. Heureusement, avec C# et HtmlAgilityPack, il existe de nombreuses options pour traiter et manipuler les données extraites.
-
-Par exemple, nous pouvons utiliser la méthode "RemoveAll" pour supprimer certains éléments de la page avant de la parcourir. Ou encore, nous pouvons utiliser la méthode "GetAttributeValue" pour récupérer un attribut spécifique d'un élément.
-
-Il existe également d'autres bibliothèques en plus de HtmlAgilityPack qui peuvent être utiles pour des besoins spécifiques, telles que AngleSharp qui permet d'émuler un navigateur pour analyser des pages web plus complexes.
-
-Enfin, il est toujours important de connaître les bonnes pratiques en matière d'analyse d'HTML pour éviter les erreurs et optimiser les performances, comme éviter d'utiliser XPath lorsque cela n'est pas nécessaire et vérifier la validité du code HTML ciblé.
-
-## Voir aussi
-
-- Tutoriels pour débutants sur C# : https://csharp.developpez.com/cours/
-- Site officiel de HtmlAgilityPack : http://html-agility-pack.net/
-- Guide en ligne de XPath : https://www.w3schools.com/xml/xpath_intro.asp
+## Voir aussi :
+- [Documentation officielle de HtmlAgilityPack](https://html-agility-pack.net/)
+- [Article sur le web scraping avec C#](https://docs.microsoft.com/fr-fr/dotnet/csharp/tutorials/scraping-html)

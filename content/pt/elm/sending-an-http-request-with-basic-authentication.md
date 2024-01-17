@@ -10,49 +10,96 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
-Enviar solicitações HTTP com autenticação básica é essencial para acessar recursos protegidos em aplicativos e sistemas web. Ao fornecer um nome de usuário e senha, você pode autenticar sua identidade e obter acesso aos dados que precisa.
+## O que & Por que?
 
-## Como Fazer
-Para enviar uma solicitação HTTP com autenticação básica em Elm, você precisará usar a função `Http.send` e fornecer as informações necessárias. Aqui está um exemplo de código que envia uma solicitação GET com autenticação básica e lida com a resposta:
+Enviar uma solicitação HTTP com autenticação básica é um processo comum entre programadores. Isso permite que o cliente se autentique com um servidor, fornecendo um nome de usuário e senha. Isso é feito para obter acesso a informações confidenciais ou realizar ações que requerem autenticação.
 
-```
-elm-package install krisajenkins/remotedata
-```
+## Como fazer:
 
-```
+```Elm
+{- Envio de solicitação HTTP básica com autenticação -}
 import Http
-import RemoteData exposing (..)
+import Json.Decode exposing (..)
 
+{- Definindo as credenciais de autenticação -}
+authCredentials =
+    ( "username", "senha" )
+
+{- Criando a solicitação HTTP -}
+request =
+    Http.request
+        { method = "GET"
+        , headers =
+            [ Http.header "Authorization" (Http.basicAuth authCredentials)
+            ]
+        , url = "https://exemplo.com/api/dados"
+        , body = Http.emptyBody
+        , expect = Http.expectJson decodeResponse
+        , timeout = Nothing
+        , tracker = Nothing
+        }
+
+{- Decodificando a resposta em JSON -}
+type alias ResponseData =
+    { dados : List String }
+
+decodeResponse : Decoder ResponseData
+decodeResponse =
+    map ResponseData
+        (field "dados" (list string))
+
+{- Enviando a solicitação e obtendo a resposta -}
+sendRequest : Cmd Msg
+sendRequest =
+    Http.send request
+
+{- Executando a função sendRequest -}
+init : () -> (Model, Cmd Msg)
+init _ =
+    ({ dados = [] }, sendRequest)
+
+{- Atualizando o estado da aplicação com a resposta -}
 type Msg
-    = GetData
+    = OnResponse (Result Http.Error ResponseData)
 
-type alias Model =
-    { data : RemoteData Http.Error String
-    }
-
-init : ( Model, Cmd Msg )
-init =
-    ( { data = Loading }, Http.send GetData (Http.get "https://exemplo.com/dados" basicAuthConfig) )
-    -- basicAuthConfig é um objeto com as chaves username e password fornecidas pelo usuário
-    -- Se a solicitação for bem-sucedida, data será definido como Success com o corpo da resposta
-    -- Se houver um erro, data será definido como Failure com informações sobre o erro
-
-update : Msg -> Model -> ( Model, Cmd Msg )
+update : Msg -> Model -> (Model, Cmd Msg)
 update msg model =
     case msg of
-        GetData ->
-            ( model, Http.send GetData (Http.get "https://exemplo.com/dados" basicAuthConfig) )
+        OnResponse result ->
+            case result of
+                Ok response ->
+                    ({model | dados = response.dados}, Cmd.none)
+
+                Err _ ->
+                    (model, Cmd.none)
+
+{- Renderizando os dados obtidos da solicitação -}
+view : Model -> Html Msg
+view model =
+    div []
+        [ text (String.join ", " model.dados )
+        ]
+
+{- Alterando o main para incluir a função sendRequest -}
+main : Program () Model Msg
+main =
+    Browser.element
+        { init = init
+        , view = view
+        , update = update
+        , subscriptions = always Sub.none
+        }
+
+{- Executando a aplicação -}
+port app : Signal (Program Never () Msg)
+port app =
+    main
 ```
 
-Saída:
-```
-Success "Dados Protegidos"
-```
+## Mergulho Profundo:
 
-## Mergulho Profundo
-Ao enviar uma solicitação HTTP com autenticação básica em Elm, é importante garantir que sua conexão seja segura e seus dados protegidos. Certifique-se de usar o protocolo HTTPS em vez de HTTP para criptografar sua comunicação e reduzir o risco de ataques de interceptação. Além disso, é recomendável armazenar as credenciais de login em variáveis de ambiente ou em um arquivo de configuração externo, em vez de colocá-las diretamente no código.
+A autenticação básica via requisição HTTP foi introduzida no protocolo HTTP 1.0 para permitir que os clientes se autenticassem com servidores ao acessar conteúdo protegido. Existem outras formas de autenticação em que o cliente pode enviar suas credenciais, mas a autenticação básica é a mais simples e amplamente implementada.
 
-## Veja Também
-- Documentação oficial do Elm sobre o módulo Http: https://package.elm-lang.org/packages/elm/http/latest/
-- Perguntas frequentes sobre autenticação básica HTTP: https://httpbin.org/#/Auth/get_basic_auth__user___passwd_
+## Veja Também:
+
+[Documentação do Elm sobre módulos Http](https://package.elm-lang.org/packages/elm-lang/http/latest/)

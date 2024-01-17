@@ -1,7 +1,7 @@
 ---
-title:                "部分文字列の抽出"
-html_title:           "TypeScript: 部分文字列の抽出"
-simple_title:         "部分文字列の抽出"
+title:                "サブストリングの抽出"
+html_title:           "TypeScript: サブストリングの抽出"
+simple_title:         "サブストリングの抽出"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -10,40 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+## 何かしら？
+文字列から一部を取り出すことを文字列の抽出と呼びます。プログラマーたちがこれをする理由は、特定の部分文字列を必要な情報として取り出すためです。
 
-抽出文字列を行う理由は多々あります。一つの理由は、文字列から特定の部分を取り出して使用したい場合があるためです。例えば、電話番号を入力するフォームで、国番号を自動的に入力するためには、本文から国番号を抽出する必要があります。
-
-## 使い方
-
-抽出文字列を行う方法は簡単です。まずは、文字列を定義します。
+## 方法：
+TypeScriptのコードブロック内にあるコーディング例とサンプル出力です。
 
 ```TypeScript
-const str: string = "これは抽出文字列の例です。";
-```
+const str: string = "Hello World";
+const substring: string = str.substring(6);
+console.log(substring);
 
-次に、`substring()`メソッドを使用して、抽出したい部分を指定します。例えば、2文字目から5文字目までを抽出する場合は、以下のようになります。
+// Output: World
+```
 
 ```TypeScript
-const subStr: string = str.substring(1, 5);
-// 出力: 抽出
+const str: string = "Hello World";
+const startIndex: number = 0;
+const endIndex: number = 5;
+const substring: string = str.substring(startIndex, endIndex);
+console.log(substring);
+
+// Output: Hello
 ```
 
-`substring()`メソッドは2つの引数を受け取ります。最初の引数は開始位置、2つ目の引数は終了位置を指定します。また、終了位置を省略すれば、文字列の最後まで抽出することができます。
+## 詳しく：
+文字列の抽出は、古代のプログラミング言語であるBASICから生まれた概念です。他にも、正規表現や部分文字列の置き換えなどの代替手段があります。抽出方法には、`.substring()`、`.substr()`、`.slice()`のようなメソッドや、インデックス番号を指定することによる手動の抽出方法などがあります。抽出は、文字列操作やデータ処理でよく使用される一般的な機能です。
 
-```TypeScript
-const subStr: string = str.substring(2);
-// 出力: 抽出文字列の例です。
-```
-
-## 詳細を掘り下げる
-
-`substring()`メソッドは、元の文字列を変更せずに抽出を行います。しかし、新しい文字列オブジェクトを返すため、変数に代入する必要があります。また、元の文字列の一部を取り出すため、元の文字列の変数が必要です。
-
-さらに、`substring()`メソッドでは部分文字列の切り出しに加え、反転や結合などの操作も行うことができます。また、正規表現を使用することで、複雑なパターンにも対応することができます。
-
-## 参考リンク
-
-- [MDN web docs - String.prototype.substring()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
-- [TypeScript Handbook - String Operations](https://www.typescriptlang.org/docs/handbook/strings.html#string-operations)
-- [正規表現入門](https://www.javadrive.jp/regexp/)
+## 関連リンク：
+- [JavaScriptの複数の部分文字列を取得する方法](https://www.w3schools.com/code/tryit.asp?filename=GJAEKFUGAO7W)
+- [TypeScriptの文字列操作方法](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-4.html#string-slicing)
+- [BASIC言語の歴史](https://www.edp.hr/en/bj88_basic_history)

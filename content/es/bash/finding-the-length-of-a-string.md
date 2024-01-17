@@ -1,7 +1,7 @@
 ---
-title:                "Calculando la longitud de una cadena"
-html_title:           "Bash: Calculando la longitud de una cadena"
-simple_title:         "Calculando la longitud de una cadena"
+title:                "Encontrando la longitud de una cadena"
+html_title:           "Bash: Encontrando la longitud de una cadena"
+simple_title:         "Encontrando la longitud de una cadena"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Strings"
@@ -10,56 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué encontrar la longitud de una cadena?
+# ¿Qué y por qué?
 
-En algunas ocasiones, es necesario saber cuántos caracteres tiene una cadena de texto, ya sea para validar su longitud o para realizar operaciones específicas en ella. En este artículo, te mostraremos cómo puedes encontrar fácilmente la longitud de una cadena en Bash.
+En el mundo de la programación, a menudo necesitamos saber la longitud de una cadena de texto. Esto puede ser útil para validar la entrada del usuario, manipular cadenas de texto o simplemente para obtener información sobre ellas. En Bash, encontrar la longitud de una cadena es una tarea común entre los programadores.
 
-## Cómo hacerlo
+# Cómo hacerlo:
 
-En Bash, podemos utilizar la función `expr` para encontrar la longitud de una cadena. Esta función toma una expresión como argumento y devuelve el resultado. Para encontrar la longitud de una cadena, podemos utilizar la expresión `length`, seguida de la cadena entre comillas.
+Para encontrar la longitud de una cadena en Bash, podemos usar el comando `echo` seguido de la opción `-n` y la cadena entre comillas. Esto imprimirá la longitud de la cadena en la salida estándar.
 
-```Bash
-cadena="Hola mundo"
-longitud=`expr length "$cadena"`
-echo "La longitud de la cadena es $longitud" # Salida: La longitud de la cadena es 10
+``` Bash
+echo -n "Hola mundo" # Salida: 10
 ```
 
-También podemos utilizar la sintaxis de la expansión de parámetros `${#cadena}` para encontrar la longitud de una cadena. Esta sintaxis devuelve la longitud de la cadena sin necesidad de utilizar la función `expr`.
+También podemos usar la variable de entorno `#` y la cadena dentro de una llave para obtener su longitud.
 
-```Bash
-longitud="${#cadena}"
-echo "La longitud de la cadena es $longitud" # Salida: La longitud de la cadena es 10
+``` Bash
+cadena="¡Hola!"
+echo ${#cadena} # Salida: 6
 ```
 
-Si queremos encontrar la longitud de una cadena ingresada por el usuario, podemos utilizar el comando `read` para capturar la entrada y luego utilizar la sintaxis de la expansión de parámetros como se muestra anteriormente.
+# En profundidad:
 
-```Bash
-echo "Ingresa una cadena:"
-read cadena
-longitud="${#cadena}"
-echo "La longitud de la cadena es $longitud"
-```
+El comando `echo` en Bash es utilizado para imprimir una o más cadenas de texto en la salida estándar. La opción `-n` desactiva el salto de línea al final de la cadena, lo que nos permite imprimir la longitud sin ningún carácter adicional. La variable de entorno `#` se expande a la longitud de la cadena que le sigue, lo que nos permite obtener su longitud directamente en lugar de usar un comando específico.
 
-## Profundizando
+Existen otras formas de encontrar la longitud de una cadena en Bash, como usar el bucle `for` para recorrer cada carácter y mantener un contador, o usar la utilidad `wc -c` que cuenta los caracteres en un archivo. Sin embargo, las opciones mencionadas anteriormente son las más sencillas y comúnmente utilizadas.
 
-En Bash, las cadenas de texto se pueden tratar como arreglos de caracteres. Esto significa que podemos acceder a cada caracter de una cadena utilizando su posición en el arreglo. La función `expr` también puede ser utilizada para encontrar la posición de un caracter específico en una cadena utilizando la expresión `index`.
+## Ver también:
 
-```Bash
-cadena="Hola mundo"
-posicion=`expr index "$cadena" m` # Devuelve la posición de la primera "m" en la cadena
-echo "La posición de la primera \"m\" es $posicion" # Salida: La posición de la primera "m" es 5
-```
-
-Además, podemos utilizar la expresión `substr` para obtener una subcadena de una cadena dada, especificando la posición inicial y la longitud deseada.
-
-```Bash
-cadena="Hola mundo"
-subcadena=`expr substr "$cadena" 2 5` # Devuelve la subcadena desde la posición 2 hasta 5
-echo "La subcadena es \"$subcadena\"" # Salida: La subcadena es "ola m"
-```
-
-## Ver también
-
- - [Documentación de Bash: String Manipulation](https://www.gnu.org/software/bash/manual/html_node/String-Manipulation.html)
- - [Expansión de parámetros en Bash](https://www.lifewire.com/using-bash-parameter-expansion-4028097)
- - [Explorando los arreglos en Bash](https://www.linuxjournal.com/content/bash-arrays)
+- Manual de Bash: https://www.gnu.org/software/bash/manual/bash.html
+- Tutorial de Bash: https://linuxconfig.org/bash-scripting-tutorial
+- Ejemplos de Bash: https://linuxconfig.org/bash-scripting-tutorial-for-beginners

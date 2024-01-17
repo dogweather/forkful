@@ -10,46 +10,97 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Чому
-Попереднє завантаження веб-сторінки може бути корисним для отримання доступу до інформації, яка відображається в Інтернеті, та використання її в програмах або скриптах.
+## Що & чому?
 
-## Як це зробити
-Використовуючи мову програмування C, можна з легкістю завантажити сторінку з Інтернету. Нижче наведено приклад коду для завантаження сторінки та його виконання:
+Завантаження веб-сторінки - це коли ваша програма отримує веб-сторінку з Інтернету і зберігає її на вашому комп'ютері. Програмісти роблять це, щоб мати доступ до вмісту веб-сторінки для подальшої обробки або використання у своїх програмах.
+
+## Як:
 
 ```C
 #include <stdio.h>
-#include <stdlib.h>
 #include <curl/curl.h>
 
 int main(void)
 {
   CURL *curl;
-  FILE *fp;
   CURLcode res;
-  char *url = "https://www.example.com/";
-  char outfilename[FILENAME_MAX] = "page.html";
 
   curl = curl_easy_init();
-  if (curl)
-  {
-    fp = fopen(outfilename, "wb");
-    curl_easy_setopt(curl, CURLOPT_URL, url);
-    curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, NULL);
-    curl_easy_setopt(curl, CURLOPT_WRITEDATA, fp);
+  if(curl) {
+    curl_easy_setopt(curl, CURLOPT_URL, "https://www.example.com/");
     res = curl_easy_perform(curl);
+    if(res != CURLE_OK)
+      fprintf(stderr, "curl_easy_perform() failed: %s\n",
+              curl_easy_strerror(res));
     curl_easy_cleanup(curl);
-    fclose(fp);
   }
   return 0;
 }
 ```
+Вивід:
+```
+<!doctype html>
+<html>
+<head>
+  <title>Example Domain</title>
 
-Як результат, цей код завантажує сторінку в HTML-файл з назвою "page.html".
+  <meta charset="utf-8" />
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style type="text/css">
+  body {
+    background-color: #f0f0f2;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+  div {
+    width: 600px;
+    margin: 5em auto;
+    padding: 2em;
+    background-color: #fdfdff;
+    border-radius: 0.5em;
+    box-shadow: 2px 3px 7px 2px rgba(0,0,0,0.02);
+  }
+  a:link, a:visited {
+    color: #38488f;
+    text-decoration: none;
+  }
+  @media (max-width: 700px) {
+    body {
+      background-color: #fff;
+    }
+    div {
+      width: auto;
+      margin: 0 auto;
+      border-radius: 0;
+      padding: 1em;
+      box-shadow: none;
+    }
+  }
+  </style>
+</head>
 
-## Глибоке погруження
-Іноді, для більш складних завдань, потрібно поглибитись у технічні деталі попереднього завантаження сторінки. Наприклад, ви можете налаштувати CURL, щоб додатково передати параметри запиту або обробити дані, що повертаються з сервера. Для цього варто заглянути до офіційної документації CURL та прочитати про можливі опції та функції.
+<body>
+<div>
+  <h1>Example Domain</h1>
+  <p>This domain is for use in illustrative examples in documents. You may use this
+  domain in literature without prior coordination or asking for permission.</p>
+  <p><a href="https://www.iana.org/domains/example">More information...</a></p>
+</div>
+</body>
+</html>
+```
 
-## Дивіться також
-- [Офіційна документація CURL](https://curl.se/docs/)
-- [Приклади коду для завантаження веб-сторінок в C](https://www.includehelp.com/c-programs/download-web-page.aspx)
-- [Курс "Програмування на мові C" на Codeacademy](https://www.codecademy.com/learn/learn-c)
+## Розглянути детальніше:
+
+**Історичний контекст:** Завантаження веб-сторінки є однією з основних дій, які виконують програми з Інтернетом. Це стало можливим завдяки впровадженню протоколу HTTP у 1990-х роках, який дозволяє обмінюватись даними між веб-сервером і веб-клієнтом. З тих пір завантаження веб-сторінки стало необхідною частиною розробки веб-додатків.
+
+**Альтернативи:** Існує багато інших способів завантаження веб-сторінок, таких як використання інших протоколів, наприклад FTP або UDP, або використання готових бібліотек, наприклад libcurl. Однак, завантаження веб-сторінки за допомогою протоколу HTTP є найпоширенішим підходом.
+
+**Деталі реалізації:** У прикладі вище використовується бібліотека libcurl для здійснення HTTP-запиту на веб-сторінку. За допомогою функцій, таких як `curl_easy_setopt` і `curl_easy_perform`, програміст може встановити параметри запиту та отримати відповідь, включаючи HTML-код сторінки. Для написання більш складних програм, наприклад, парсерів веб-сторінок або ботів, може бути необхідно складніший код.
+
+## Дивіться також:
+
+- [Документація libcurl](https://curl.se/libcurl/)
+- [Програмування з використанням HTTP](https://developer.mozilla.org/uk/docs/Learn/Server-side/)

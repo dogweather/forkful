@@ -1,7 +1,7 @@
 ---
-title:                "Mayúsculas en una cadena"
-html_title:           "Haskell: Mayúsculas en una cadena"
-simple_title:         "Mayúsculas en una cadena"
+title:                "Majusculeando una cadena"
+html_title:           "Haskell: Majusculeando una cadena"
+simple_title:         "Majusculeando una cadena"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -10,38 +10,22 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¿Qué y Por qué?
+Capitalizar una cadena de texto significa convertir la primera letra de cada palabra en mayúscula y el resto en minúscula. Los programadores lo hacen para mejorar la legibilidad y presentación de sus códigos, ya que facilita distinguir entre palabras individuales y resaltar nombres de variables o funciones.
 
-Uno puede querer capitalizar una cadena de texto para hacer que la primera letra de cada palabra sea mayúscula. Esto puede ser útil en situaciones como imprimir nombres propios o títulos.
-
-## Cómo hacerlo
-
-La forma más sencilla de capitalizar una cadena en Haskell es utilizando la función `toUpper` del módulo `Data.Char`. Tomemos como ejemplo la cadena "hola mundo" y veamos cómo capitalizarla:
-
+## Cómo:
 ```Haskell
-import Data.Char (toUpper)
-
 capitalize :: String -> String
-capitalize str = (toUpper (head str)) ++ (tail str)
+capitalize str = unwords $ map (\x -> toUpper (head x) : tail x) $ words str
 
-main = putStrLn (capitalize "hola mundo")
+main = do
+    putStrLn $ capitalize "hola mundo" -- Hola Mundo
+    putStrLn $ capitalize "myNameIsJohn" -- Mynameisjohn
 ```
 
-Este código imprimirá "Hola mundo" en la consola. Aquí explicamos lo que hace cada línea:
+## Profundizando:
+La capitalización de cadenas de texto se basa en la escritura en mayúscula y minúscula que se utiliza en inglés. Otras alternativas para mejorar la legibilidad incluyen el uso de mayúsculas y minúsculas en negrita o cursiva. La implementación en Haskell se logra mediante el uso de funciones como `map` y `toUpper` que permiten iterar sobre una lista de caracteres y convertirlos a su equivalente en mayúscula.
 
-- La primera línea importa la función `toUpper` del módulo `Data.Char`, que nos permite convertir un carácter en su versión mayúscula.
-- La segunda línea define una función llamada `capitalize` que toma una cadena y devuelve otra cadena. El parámetro `str` representa la cadena que queremos capitalizar.
-- En la tercera línea, usamos la función `toUpper` para convertir la primera letra de `str` en mayúscula. Luego, con el operador `++`, concatenamos esa letra con el resto de la cadena, que se obtiene con la función `tail` que devuelve todos los elementos excepto el primero de una lista.
-- La última línea simplemente imprime el resultado de llamar a la función `capitalize` con la cadena "hola mundo" como argumento.
-
-## Profundizando
-
-Además de la función `toUpper`, el módulo `Data.Char` también contiene otras funciones útiles para trabajar con cadenas de caracteres, como `toLower` que convierte un carácter en su versión minúscula y `isUpper` que verifica si un carácter es mayúscula.
-
-También es importante mencionar que la función `capitalize` que definimos anteriormente solo funciona para cadenas de una sola palabra. Si queremos capitalizar una cadena con varias palabras, podemos usar la función `words` del módulo `Data.Strings`, que convierte una cadena en una lista de palabras, y luego aplicar nuestra función `capitalize` a cada palabra de esa lista.
-
-## Ver también
-
-- [Documentación de Haskell](https://www.haskell.org/documentation/)
-- [Curso interactivo de Haskell](https://www.learnhaskell.org/)
-- [Introducción a la programación funcional con Haskell](https://www.freecodecamp.org/news/an-introduction-to-functional-programming-with-haskell-12e54e79b6b5/)
+## Ver también:
+- [Un tutorial sobre cómo capitalizar cadenas en Haskell](https://dev.to/king_11/capitalizing-strings-in-haskell-4h21)
+- [Documentación oficial de funciones en Haskell](https://www.haskell.org/documentation/#string-manipulation)

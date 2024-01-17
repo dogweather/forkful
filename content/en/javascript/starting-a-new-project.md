@@ -10,51 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-So, you've decided to tackle a new project with Javascript. But why start a new project in the first place? Perhaps you have a brilliant idea or a problem to solve. Or maybe you just want to expand your skills and challenge yourself. No matter the reason, starting a new project can bring a sense of excitement and accomplishment.
+## What & Why?
 
-## How To
-To start a new project in Javascript, you'll need to follow these steps:
+Starting a new project in Javascript means creating a new program or application using the Javascript programming language. Programmers start new projects to build solutions for various problems or to create new products that meet certain user needs.
 
-1. Choose an IDE: An Integrated Development Environment (IDE) is a software application that helps with coding. Some popular options for Javascript include Visual Studio Code, Atom, and Sublime Text. Choose the one that works best for you.
-2. Set up a folder structure: A clear and organized folder structure will make your life easier in the long run. Create folders for your HTML, CSS, and Javascript files.
-3. Create an index.html file: This will be the starting point of your project. Add your basic HTML structure to this file, including the <head> and <body> tags.
-4. Link your CSS and Javascript files: Inside the head tag, use the <link> tag to link your CSS file. Inside the body tag, use the <script> tag to link your Javascript file.
-5. Start coding: Within your Javascript file, you can start writing your code using the ```Javascript ... ``` code blocks. You can use variables, functions, loops, and other Javascript features to bring your project to life.
-6. Test and debug: As you code, make sure to regularly test and debug your project. This will help you catch any errors and ensure your code is working as intended.
-7. Final touches: Once your project is complete, add any final touches such as styling and comments to make your code more readable.
+## How to:
 
-Example of a basic index.html file:
+To start a new project in Javascript, you first need to create a new file with a .js extension. This file will contain the code for your project. Here's an example of a simple "Hello World" program in Javascript:
 
-    ```HTML
-    <!DOCTYPE html>
-    <html>
-        <head>
-            <link rel="stylesheet" href="./css/styles.css">
-        </head>
-        <body>
-            <h1>Hello World!</h1>
-            <script src="./js/app.js"></script>
-        </body>
-    </html>
-    ```
+```Javascript
+console.log("Hello World");
+```
 
-Example of a simple Javascript code block:
+Running this code will output "Hello World" to the console. You can run your Javascript code using the Node.js runtime or by embedding it in an HTML file and opening it in a browser.
 
-    ```Javascript
-    // This code will display a message on the console
-    console.log("Welcome to my new project!");
-    ```
+## Deep Dive:
 
-## Deep Dive
-When starting a new project in Javascript, it's important to have a clear understanding of what you want to achieve. This will help guide your coding decisions and make the development process smoother. You can also consider these tips:
+Javascript was created in 1995 by Brendan Eich and was originally designed to be a scripting language for web browsers. However, with the advancements in Javascript and the introduction of the Node.js runtime, it is now used for building applications for both the client and server-side.
 
-- Plan out your code before you start writing it. This will help you stay organized and save time in the long run.
-- Break down your project into smaller, manageable tasks. This will make it easier to track your progress and stay motivated.
-- Use online resources, such as tutorials and forums, to learn new techniques and troubleshoot any issues you encounter.
-- Don't be afraid to try new things and experiment with different approaches. This is a great way to learn and improve your coding skills.
+Some alternatives to starting a new project in Javascript include using other programming languages like Python or Java, or using frameworks such as React or Angular. However, Javascript's simplicity and flexibility make it a popular choice for many developers.
 
-## See Also
-- [Visual Studio Code](https://code.visualstudio.com/)
-- [Atom](https://atom.io/)
-- [Sublime Text](https://www.sublimetext.com/)
+When starting a new project, it is important to plan and organize your code structure beforehand to ensure efficiency and maintainability. This can include creating separate files for different functionalities, using coding standards, and adopting best practices.
+
+## See Also:
+
+- [Node.js](https://nodejs.org/en/)
+- [React](https://reactjs.org/)
+- [Angular](https://angular.io/)

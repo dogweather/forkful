@@ -1,7 +1,7 @@
 ---
-title:                "Leyendo argumentos de línea de comando"
-html_title:           "Arduino: Leyendo argumentos de línea de comando"
-simple_title:         "Leyendo argumentos de línea de comando"
+title:                "Leyendo argumentos de línea de comandos"
+html_title:           "Arduino: Leyendo argumentos de línea de comandos"
+simple_title:         "Leyendo argumentos de línea de comandos"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Files and I/O"
@@ -10,48 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+¡Hola a todos! ¡Bienvenidos a mi artículo sobre cómo leer argumentos de línea de comandos en Arduino! En este artículo, aprenderás qué es leer argumentos de línea de comandos y por qué es importante para los programadores. También te mostraré cómo hacerlo de manera sencilla. ¡Así que agarra tu Arduino y vamos a empezar!
 
-¿Te has preguntado cómo puedes hacer que tu Arduino sea más adaptable y configurable? Una forma de lograrlo es utilizando argumentos de línea de comandos. Al leer este artículo, aprenderás cómo usarlos y de qué manera pueden ayudarte en tus proyectos.
+## ¿Qué y por qué?
 
-## Cómo hacerlo
+Leer argumentos de línea de comandos significa recibir información ingresada por el usuario en la línea de comandos de la interfaz de Arduino. Los programadores lo hacen para poder interactuar con su programa en tiempo de ejecución y modificar su comportamiento según la información proporcionada por el usuario. Esto puede ser especialmente útil en proyectos en los que es necesario ajustar ciertos parámetros o tomar acciones específicas a través de la entrada del usuario.
 
-Para leer argumentos de línea de comandos en Arduino, necesitarás una librería llamada "ArgParse". Esta librería te permite definir los argumentos que deseas leer y obtener fácilmente su valor.
+## ¿Cómo hacerlo?
 
-Debes comenzar descargando e instalando la librería ArgParse en tu IDE de Arduino. Luego, importa la librería en tu código, usando la instrucción ```#include <ArgParse.h>```.
-
-A continuación, debes crear un objeto de tipo ArgumentParser, que será el encargado de gestionar los argumentos. Puedes hacerlo de la siguiente manera:
+Para leer argumentos de línea de comandos en Arduino, debemos utilizar el objeto ```Serial```. Primero, asegúrate de que la configuración de velocidad de tu serial monitor coincida con la velocidad que has configurado en el código (`Serial.begin()`). Luego, en la función `setup()`, agrega la línea `Serial.begin()` para inicializar la comunicación serial. Ahora, en la función `loop()`, podemos usar `Serial.read()` para leer los datos ingresados por el usuario a través de la interfaz serial. Veamos un ejemplo:
 
 ```Arduino
-ArgumentParser parser;
+void setup() {
+  Serial.begin(9600);
+}
+
+void loop() {
+  if (Serial.available()) {
+    char input = Serial.read();
+    Serial.println(input);
+  }
+}
 ```
 
-Luego, deberás definir los argumentos que deseas leer. Puedes hacerlo usando la función ```addArgument()```, pasando como parámetro el nombre del argumento, el tipo de datos que esperas recibir y una descripción opcional. Por ejemplo:
-
-```Arduino
-parser.addArgument("led", STRING, "Indica el estado del LED");
-```
-
-Una vez que hayas definido todos los argumentos, es momento de leerlos. Puedes hacerlo usando la función ```parse()```, que analizará los argumentos ingresados y los almacenará en el objeto ArgumentParser. Por ejemplo:
-
-```Arduino
-parser.parse();
-```
-
-Finalmente, puedes obtener el valor de cada argumento usando la función ```get()```, pasando como parámetro el nombre del argumento. Por ejemplo:
-
-```Arduino
-String ledState = parser.get("led");
-```
+En este ejemplo, si ingresamos "hola" en la línea de comandos, la salida sería "hola". ¡Fácil, ¿verdad?
 
 ## Profundizando
 
-La librería ArgParse también incluye otras funciones útiles, como la posibilidad de establecer valores predeterminados para los argumentos, manejar argumentos opcionales y validar los tipos de datos ingresados.
-
-Además, si quieres saber más sobre cómo funcionan los argumentos de línea de comandos y cómo puedes utilizarlos en tus proyectos, te recomendamos que leas la documentación oficial de la librería ArgParse.
+Si bien leer argumentos de línea de comandos puede parecer una tarea simple, es importante entender cómo funciona para poder utilizarlo de manera efectiva. Alternativas a este método incluyen utilizar una pantalla LCD o un teclado matricial para ingresar la información del usuario. Sin embargo, esto requiere de componentes adicionales y podría no ser tan práctico en ciertos proyectos. En cuanto a la implementación, es importante tener en cuenta que `Serial.read()` devuelve un valor entero que representa el código ASCII del carácter ingresado. Por lo tanto, es necesario convertirlo al tipo de dato que deseamos utilizar en nuestro programa.
 
 ## Ver también
 
-- [Documentación oficial de ArgParse](https://github.com/darkcommander/Arduino-ArgParse)
-- [Tutorial sobre cómo leer argumentos de línea de comandos en Arduino](https://www.arduino.cc/en/tutorial/commandlineargs)
-- [Ejemplos de uso de la librería ArgParse](https://github.com/darkcommander/Arduino-ArgParse/tree/master/examples)
+Si deseas aprender más sobre cómo interactuar con Arduino a través de la línea de comandos, échale un vistazo a estos recursos:
+
+- [The Arduino Serial library reference](https://www.arduino.cc/en/Reference/Serial)
+- [A beginner's guide to the Arduino Serial Monitor](https://randomnerdtutorials.com/arduino-serial-monitor/)
+- [Arduino Projects Book](https://store.arduino.cc/products/arduino-starter-kit)

@@ -1,7 +1,7 @@
 ---
-title:                "Söka och ersätta text"
-html_title:           "Elixir: Söka och ersätta text"
-simple_title:         "Söka och ersätta text"
+title:                "'Sökning och ersättning av text'"
+html_title:           "Elixir: 'Sökning och ersättning av text'"
+simple_title:         "'Sökning och ersättning av text'"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -10,57 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
 
-Vi använder text hela tiden, både när vi läser och skriver kod. Ibland behöver vi göra ändringar i våra texter, och det är här söka- och ersätta-funktionen kommer in i bilden. Det kan spara tid och göra vårt arbete mer effektivt, vilket är varför det är en viktig del av programmering.
+Sökning och ersättning av text är en vanlig uppgift för programmerare. Det handlar helt enkelt om att hitta en viss text i en fil eller en sträng och ersätta den med en annan. Detta är användbart för att göra massvisa ändringar i kod, eller för att korrigera stavfel eller felaktig formatering.
 
-## Så här gör du
+## Så här:
 
-För att söka och ersätta text i Elixir, använder vi funktionerna `String.replace` och `Regex.replace`. Först behöver vi en sträng som vi vill göra ändringar i, och sedan en söksträng och en ersättningssträng. Här är ett exempel på hur vi kan använda `String.replace`:
+För att söka och ersätta text i Elixir kan du använda funktionen `String.replace/4`, som tar in fyra argument: en sträng, ett mönster att söka efter, vad som ska ersättas samt hur många gånger det ska ersättas.
 
-```Elixir
-iex> text = "Välkommen till Elixir!"
-"Välkommen till Elixir!"
-
-iex> String.replace(text, "Elixir", "Elixir 1.12")
-"Välkommen till Elixir 1.12!"
+```
+Elixir
+code = "Hej världen, jag är en programmerare."
+String.replace(code, "programmerare", "kodare", 1)
+# Output: "Hej världen, jag är en kodare."
 ```
 
-För att söka och ersätta med hjälp av reguljära uttryck, använder vi `Regex.replace`. Här är ett exempel där vi ersätter alla siffror i en sträng med "X":
+Du kan också använda regex för att söka och ersätta text i en sträng med hjälp av funktionen `Regex.replace/3`.
 
-```Elixir
-iex> text = "123 Elixir 456"
-"123 Elixir 456"
-
-iex> Regex.replace(~r/\d+/, text, "X")
-"X Elixir X"
+```
+Elixir
+code = "Hej världen, jag är en programmerare."
+Regex.replace(~r/programmerare/, code, "kodare")
+# Output: "Hej världen, jag är en kodare."
 ```
 
-## Djupdykning
+## Djupdykning:
 
-Söka- och ersätta-funktionen är väldigt användbar, men det finns några användbara knep som kan göra det ännu mer kraftfullt.
+Sökning och ersättning av text har funnits i många år och är en grundläggande funktion i de flesta programmeringsspråk. I Elixir finns det flera olika funktioner för detta ändamål, såsom `String.replace/4`, `Regex.replace/3` och `String.replace_leading/3`, vilka alla ger olika möjligheter för sök- och ersättningsfunktioner.
 
-För att ignorera skillnader mellan små och stora bokstäver, kan vi använda `String.replace/4` och `Regex.replace/4` tillsammans med flaggan `:caseless`. Till exempel:
+En alternativ metod för att söka och ersätta text i Elixir är att använda sig av `String.replace!/4`, där det fjärde argumentet är en modifierare för att ange hur ersättningen ska ske. Mer detaljerade beskrivningar och exempel kan hittas i Elixir-dokumentationen för dessa funktioner.
 
-```Elixir
-iex> text = "elixir is awesome!"
-"elixir is awesome!"
+## Se även:
 
-iex> String.replace(text, "elixir", "Elixir", [:caseless])
-"Elixir is awesome!"
-```
-
-Vi kan också använda `String.replace/4` för att bara ersätta ett visst antal förekomster i en sträng. Detta kan vara användbart om vi bara vill göra en del av ändringarna som vi söker efter. Till exempel:
-
-```Elixir
-iex> text = "Elixir is awesome and Elixir is fun!"
-"Elixir is awesome and Elixir is fun!"
-
-iex> String.replace(text, "Elixir", "Ruby", global: false)
-"Ruby is awesome and Elixir is fun!"
-```
-
-## Se även
-
-- [Elixir Dokumentation om String- och Regex-funktioner](https://elixir-lang.org/getting-started/string-patterns.html)
-- [Regex Cheatsheet](https://www.rexegg.com/regex-quickstart.html)
+- Elixir dokumentation för sökning och ersättning av text: https://hexdocs.pm/elixir/String.html#module-replacing-and-removing-substrings

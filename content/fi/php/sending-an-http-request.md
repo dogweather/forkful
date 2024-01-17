@@ -1,7 +1,7 @@
 ---
-title:                "Lähettämällä http-pyyntö"
-html_title:           "PHP: Lähettämällä http-pyyntö"
-simple_title:         "Lähettämällä http-pyyntö"
+title:                "Http-pyynnön lähettäminen"
+html_title:           "PHP: Http-pyynnön lähettäminen"
+simple_title:         "Http-pyynnön lähettäminen"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "HTML and the Web"
@@ -10,50 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
-Kun rakennat verkkosivustoja tai sovelluksia, sinun on usein tarpeen tehdä tietopyyntöjä toisille verkkosivuille tai palvelimille. Näiden tietopyyntöjen avulla voit hakea tai lähettää tietoja ja samalla hyödyntää monia erilaisia palveluita ja rajapintoja. PHP:n avulla voit helposti lähettää HTTP-pyyntöjä ja käsitellä vastaanotettua dataa.
+## Mikä & Miksi?
+Lähettäminen HTTP-pyyntö on tapa, jolla ohjelmoijat voivat lähettää pyyntöjä muille verkkosivustoille HTTP-protokollan avulla. Tämä on hyödyllistä, koska se mahdollistaa tiedon hakemisen ja jakamisen useiden eri sivustojen välillä.
 
-## Kuinka
-HTTP-pyyntöjen lähettäminen PHP:ssa on yksinkertaista. Voit käyttää siihen built-in funktiota `file_get_contents()` tarvittavan URL:n kanssa. Tämä funktio hakee kaiken vastaanotetun datan ja palauttaa sen merkkijonona. Esimerkiksi seuraava koodi hakee GitHubin rajapinnasta listan kaikista käyttäjän repositorioista ja tulostaa sen näytölle:
-
+## Kuinka:
+Esimerkiksi, voit käyttää PHP:ta lähettämään GET-pyynnön osoitteeseen "https://www.esimerkkisivusto.fi" ja tulostaa vastauksen tietokantaan käyttämällä seuraavaa koodia:
 ```PHP
-$url = "https://api.github.com/users/käyttäjänimi/repos";
-$data = file_get_contents($url);
-echo $data;
+$pyynto = file_get_contents("https://www.esimerkkisivusto.fi");
+echo $pyynto;
 ```
 
-Tuloksena saatava data on JSON-muodossa, joten voit käyttää `json_decode()`-funktiota muuttamaan sen PHP:n taulukoksi ja käsittelemään sitä helposti. Esimerkiksi voit tulostaa kaikkien repositorioiden nimet seuraavalla tavalla:
+Tulosteena saattaa olla sivuston HTML-koodi tai muu tieto, joka on saatavilla pyynnön antamasta sivustosta.
 
+Voit myös lähettää POST-pyynnön lisäämällä haluamasi tiedot data-muuttujaan ja käyttämällä "CURLOPT_POST" asetuksena. Esimerkiksi:
 ```PHP
-$url = "https://api.github.com/users/käyttäjänimi/repos";
-$data = file_get_contents($url);
-$repos = json_decode($data, true); //luodaan PHP-taulukko
-foreach ($repos as $repo) {
-    echo $repo['name'] . "\n";
-}
+$data = array("nimi" => "Matti", "ika" => "30");
+$pyynto = curl_init("https://www.esimerkkisivusto.fi");
+curl_setopt($request, CURLOPT_POST, true);
+curl_setopt($request, CURLOPT_POSTFIELDS, $data);
+curl_exec($pyynto);
 ```
 
-## Syväsukellus
-Voit lähettää HTTP-pyyntöjä myös muiden HTTP-metodien avulla, kuten POST ja PUT. Tämä tapahtuu samaan tapaan kuin GET metodi, mutta nyt voit määrittää myös pyynnön kohdeosoitteen, headerit ja pyyntöparametrit.
+## Syvemmälle:
+HTTP-pyyntöjen lähettäminen on tapa, jolla eri verkkosivustot kommunikoivat keskenään ja mahdollistavat tietojen jakamisen. Tätä tekniikkaa on käytetty jo vuosikymmeniä ja se on olennainen osa verkkokehitystä.
 
-```PHP
-$url = "https://api.example.com/post_endpoint";
-$data = ['name' => 'John', 'age' => 30, 'city' => 'Helsinki'];
-$options = [
-    'http' => [
-        'method' => 'POST',
-        'header' => "Content-type: application/json\r\n",
-        'content' => json_encode($data)
-    ]
-];
-$context = stream_context_create($options);
-$result = file_get_contents($url, false, $context);
-var_dump($result);
-```
+On myös muita tapoja lähettää HTTP-pyyntöjä, kuten käyttämällä JavaScriptia tai muita ohjelmointikieliä. Lisäksi on olemassa erilaisia kirjastoja ja työkaluja, jotka voivat auttaa lähettämään ja vastaanottamaan HTTP-pyyntöjä helposti.
 
-Tässä tapauksessa olemme lähettäneet POST-pyynnön ja määrittäneet headerin ja pyyntöparametrit. Vastaavasti voit käyttää `stream_context_create()`-funktiota lähettämään muita HTTP-metodeja ja lisäämään tarvittavat parametrit pyyntöön.
-
-## Katso myös
-- [PHP:n virallinen dokumentaatio HTTP-funktioista](https://www.php.net/manual/en/book.http.php)
-- [HTTP-pyynnön lähetys PHP:ssa - tutoriaali](https://www.w3schools.com/php/php_http.asp)
-- [HTTP-pyynnön lähettäminen käyttämällä CURL kirjastoa](https://www.php.net/manual/en/book.curl.php)
+## Katso myös:
+- [PHP:n viralliset dokumentaatiot HTTP-pyyntöjen lähettämisestä](https://www.php.net/manual/en/function.file-get-contents.php)
+- [Guide to HTTP Requests in JavaScript](https://www.javascripture.com/XMLHttpRequest)
+- [HTTP Requests in Other Programming Languages](https://www.freecodecamp.org/news/make-a-http-request-with-python/)
+- [CURL - Command Line Tool for Sending HTTP Requests](https://curl.haxx.se/)

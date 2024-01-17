@@ -1,7 +1,7 @@
 ---
-title:                "הורדת עמוד אינטרנט"
-html_title:           "TypeScript: הורדת עמוד אינטרנט"
-simple_title:         "הורדת עמוד אינטרנט"
+title:                "הורדת דף אינטרנט"
+html_title:           "TypeScript: הורדת דף אינטרנט"
+simple_title:         "הורדת דף אינטרנט"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "HTML and the Web"
@@ -10,37 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מדוע
+"מה ולמה?"
 
-ישנם מספר סיבות שמובילות אנשים להוריד את דף האינטרנט שלהם, כגון לגישה לתוכן מקוון במצב לא מחובר או לשמור את התוכן לשימוש חוזר בעתיד.
+להוריד דף אינטרנט הוא פעולה שמאפשרת לנו לקבל את קוד המקור של דף אינטרנט מהאתר המרוחק. פעולה זו מאפשרת לנו לעבד את המידע שנמצא בדף אינטרנט ולהציג אותו בצורה שאנחנו רוצים. תכניתנים עושים זאת בכדי ליצור אפליקציות או כלי אוטומציה שצריך להשתמש בנתונים מדף אינטרנט מסוים.
 
-## כיצד לעשות זאת
-
-טיפוסקריפט מספק כלים להורדת דפי אינטרנט על ידי שימוש בפעולות כמו `fetch` או `XMLHttpRequest`. לדוגמה, הנה קוד שיחזיר את תוכן הדף של ה-Google בפורמט JSON:
+"איך לעשות?"
 
 ```TypeScript
-fetch('https://www.google.com')
-  .then(response => response.json())
-  .then(data => console.log(data))
-  .catch(error => console.log(error));
+import fetch from 'node-fetch';
+
+fetch('https://www.example.com')
+  .then((response) => response.text())
+  .then((html) => console.log(html));
 ```
 
-הפלט של קוד זה יכול להיות משהו דומה לזה:
+את הדף אינטרנט מורידים באמצעות פונקציית ה-fetch של ספריית node-fetch. הפונקציה מחזירה לנו תוצאת Promise ואז משתמשים בפונקציות קולבק כדי להתייחס למידע המושג בפעמים הבאות. בדוגמה שלנו, אנחנו מדפיסים את מידע ה-HTML שנמצא בדף האינטרנט.
 
-```
-{
-  "html": "<html>...</html>",
-  "css": "body { ... }",
-  "js": "function() { ... }"
-}
-```
+"עולם מתמעמע"
 
-## מעמקים נמוכים
+להוריד דפי אינטרנט הינה פעולה שמתבצעת כבר שנים רבות והפונקציונליות שלה חלק מכלי הפיתוח החשובים ביותר. ישנן גם אלטרנטיבות להורדת דפים כגון פרוטוקול כמו https ופקודות Shell מסוג wget או cURL. מימוש הפונקציה כולל שימוש בפרוטוקול HTTP וקבלת התגובה מהשרת.
 
-למען הסר ספק, ישנן מספר מחלקות שניתן להשתמש בהם כדי להוריד דפי אינטרנט בטון יותר ותוך התייחסות לפרטים כמו כותרות, קובצי תמונות ועוד. כמו כן, טיפוסקריפט מאפשר התאמה גבוהה יותר של הבקשות ומתן יכולות נוספות כגון ניהול שגיאות וזיהוי פרטים רלוונטיים יותר בכתבי שגיאה.
+"ראו גם"
 
-## ראה גם
+למידע נוסף על פונקציית ה-fetch ניתן לעיין בתיעוד הרשמי של TypeScript: https://www.typescriptlang.org/docs/handbook/enums.html
 
-- [מדריך למידע נוסף על כלי ה-XHR של טיפוסקריפט](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest)
-- [החומר המפורט על סיסמת כלי ה-JavaScript של טיפוסקריפט](https://www.typescriptlang.org/docs/handbook/security.html#middleware)
-- [מאמר בנושא פעולות של ה-GitHub של טיפוסקריפט](https://github.com/Microsoft/TypeScript/wiki/TypeScpriptInternal1)
+לדוגמה נוספת והסברים על איך להתמודד עם שגיאות נפוצות בהורדת דף אינטרנט, ניתן לבקר במאמר הבא: https://blog.bitsrc.io/everything-you-need-to-know-about-browser-page-downloads-169dff68ca67

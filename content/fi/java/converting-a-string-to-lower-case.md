@@ -1,7 +1,7 @@
 ---
-title:                "Merkkijonon konvertointi pieniksi kirjaimiksi"
-html_title:           "Java: Merkkijonon konvertointi pieniksi kirjaimiksi"
-simple_title:         "Merkkijonon konvertointi pieniksi kirjaimiksi"
+title:                "Merkkijonon muuntaminen pieneksi kirjoituksesi"
+html_title:           "Java: Merkkijonon muuntaminen pieneksi kirjoituksesi"
+simple_title:         "Merkkijonon muuntaminen pieneksi kirjoituksesi"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Strings"
@@ -10,30 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi?
+Mikä & Miksi?
 
-Tekstisyöttö on erittäin yleistä ohjelmoinnissa ja joskus on tarpeen muuttaa annettu merkkijono pieniksi kirjaimiksi. Tässä ohjeessa opetan sinulle, kuinka voit helposti muuttaa merkkijonon pieniksi kirjaimiksi Java-ohjelmoinnissa.
+Miksi muuttaa merkkijono pienaakkosiksi? Merkkijonon muuttaminen pienaakkosiksi on yleinen tehtävä ohjelmoinnissa, jossa merkkijonoja käsitellään. Pienaakkosiksi muuttamalla merkkijonoja voidaan helpommin vertailla ja käsitellä, sillä pienet ja isot kirjaimet eivät enää häiritse vertailua.
 
-## Kuinka?
+Miten tehdään:
 
-```Java 
-String s = "TEKSTISYÖTTÖ";
-String lowerCase = s.toLowerCase();
+```Java
+String s = "TÄMÄ ON MERKKIJONO"; // Luodaan merkkijono s
 
-System.out.println(lowerCase); // tulostaa "tekstisyöttö"
+System.out.println(s.toLowerCase()); // Tulostetaan merkkijono pienaakkosina
 ```
 
-1. Aloita luomalla muuttuja, joka sisältää merkkijonon, jota haluat muuttaa pieniksi kirjaimiksi.
-2. Käytä `toLowerCase()` -metodia, joka muuttaa merkkijonon pieniksi kirjaimiksi ja tallentaa sen uuteen muuttujaan.
-3. Tulosta uusi muuttuja `System.out.println()` -metodilla.
+Tuloste:
 
-## Syvempi sukellus
+```Java
+tämä on merkkijono
+```
 
-`toLowerCase()` -metodi kuuluu `String` -luokkaan ja se muuttaa kaikki merkit alkuperäisessä merkkijonossa pieniksi kirjaimiksi. Tämä on erittäin hyödyllinen, kun haluat vertailla merkkijonoja, koska se poistaa mahdolliset erot kirjainten kirjoitusasuissa.
+Oletetaan, että merkkijono sisältää jo alunperinkin pieniä kirjaimia, eikä niiden muuttuminen pienaakkosiksi ole tärkeää. Silloin voidaan käyttää metodia **toLowerCase()** varmuuden vuoksi ja varmistaa, että kaikki kirjaimet ovat pieniä.
 
-Huomaa, että tämä metodi on kielestä riippumaton, joten se toimii myös muiden kielten kuin suomen kanssa.
+```Java
+String s = "tämä on pieni merkkijono";
 
-## Katso myös
+System.out.println(s.toLowerCase()); // Tulostetaan merkkijono pienaakkosina
+```
 
-- [`toUpperCase()` -metodi Java-dokumentaatiossa](https://docs.oracle.com/javase/9/docs/api/java/lang/String.html#toLowerCase--)
-- [StackOverflow-ketju merkkijonon muuttamisesta pieniksi kirjaimiksi Java-ohjelmoinnissa](https://stackoverflow.com/questions/26512375/case-insensitive-string-comparison-java)
+Tuloste:
+
+```Java
+tämä on pieni merkkijono
+```
+
+Deep Dive:
+
+Historiallisessa kontekstissa merkkijonon muuttaminen pienaakkosiksi ei ole ollut aina niin yksinkertaista. Esimerkiksi ASCII-koodissa ei ole ollut erillisiä koodiarvoja pienille ja isoille kirjaimille, jolloin muuttaminen on vaatinut erillisiä toimenpiteitä. Nykyään Java-kielessä tämä prosessi on paljon helpompaa, sillä kielessä on valmiina metodi **toLowerCase()**.
+
+On myös olemassa muita tapoja muuttaa merkkijono pienaakkosiksi, kuten käyttämällä **CharSequence**-rajapintaa tai käyttämällä esimerkiksi **for**-silmukkaa. Kuitenkin metodi **toLowerCase()** on yksi helpoimmista ja tehokkaimmista tavoista tehdä tämä toimenpide.
+
+Tarkemmat tiedot muuttamisprosessista löytyvät Java-dokumentaatiosta.
+
+Katso myös:
+
+[Java - String toLowerCase() Method](https://www.tutorialspoint.com/java/java_string_tolowercase.htm)

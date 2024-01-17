@@ -1,7 +1,7 @@
 ---
-title:                "Deletando caracteres que correspondem a um padrão"
-html_title:           "C++: Deletando caracteres que correspondem a um padrão"
-simple_title:         "Deletando caracteres que correspondem a um padrão"
+title:                "Excluindo caracteres que correspondem a um padrão"
+html_title:           "C++: Excluindo caracteres que correspondem a um padrão"
+simple_title:         "Excluindo caracteres que correspondem a um padrão"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -10,42 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+## O que & Por que?
 
-Você pode querer deletar certos caracteres de uma string por uma variedade de razões, como limpar dados de entrada ou restringir o formato de uma senha. Saber como fazer isso em C++ pode ser útil em muitos projetos de programação.
+A exclusão de caracteres que correspondem a um determinado padrão é o processo de remover caracteres específicos dentro de uma string ou sequência de texto de acordo com um padrão predefinido. Isso é útil para manipular e limpar dados em programas de processamento de texto, como corrigir erros de digitação ou remover caracteres indesejados. Os programadores realizam essa tarefa para criar strings mais limpas e padronizadas que possam ser processadas por seus programas de forma mais eficiente.
 
-## Como Fazer
+## Como fazer:
 
-Para deletar caracteres em C++, você pode usar a função erase() da biblioteca <string> junto com um laço for para percorrer a string e excluir os caracteres desejados. Veja um exemplo abaixo:
+Para excluir caracteres que correspondam a um determinado padrão em C++, você pode usar a biblioteca "regex" para trabalhar com expressões regulares. Primeiro, importe a biblioteca no início do seu código. Em seguida, crie um objeto de expressão regular usando o padrão desejado e passe-o como argumento para a função "regex_replace". Por exemplo, para excluir todos os números de uma string, o código seria semelhante ao seguinte:
 
 ```C++
-#include <iostream>
-#include <string>
+#include <regex>
 using namespace std;
 
-int main() {
-    string str = "Exemplo de string!";
-    char pattern = 'e';
-
-    for(int i = 0; i < str.length(); i++){
-        if(str[i] == pattern){
-            str.erase(i,1);
-        }
-    }
-    
-    cout << str; //saída: "xmplo d string!"
-    
-    return 0;
-}
+string original_str = "123abc456def789";
+regex pattern("\\d+");
+string cleaned_str = regex_replace(original_str, pattern, "");
+cout << cleaned_str << endl;
+// Output: abcdef
 ```
 
-Para deletar mais de um caractere, basta adicionar condições ao laço for. Você também pode usar a função remove_if() da biblioteca <algorithm> para excluir caracteres que correspondem a um predicado.
+## Mergulho Profundo:
 
-## Deep Dive
+A exclusão de caracteres que correspondam a um padrão foi uma das principais funcionalidades introduzidas na biblioteca <regex> do C++11. Anteriormente, os programadores precisavam usar bibliotecas de terceiros ou implementar suas próprias soluções para trabalhar com expressões regulares em suas aplicações.
 
-Ao usar a função erase(), tenha cuidado com o índice dos caracteres. Lembrando que o primeiro caractere de uma string tem o índice 0, então você precisa garantir que os índices estejam ajustados ao atualizar a string. Além disso, você pode armazenar o resultado em uma nova string ou atualizar a string original.
+Além disso, existem outras formas de lidar com a exclusão de caracteres que correspondam a um padrão em C++. Por exemplo, pode-se usar a biblioteca "string" e seus métodos para percorrer a string e remover manualmente os caracteres desejados. Entretanto, a utilização de expressões regulares é uma opção mais avançada e poderosa, uma vez que permite maior flexibilidade e abrange uma variedade maior de padrões.
 
-## Veja Também
+A implementação da exclusão de caracteres que correspondam a um padrão em C++ é feita através da adoção do paradigma de expressões regulares. Isso envolve a criação de objetos de expressão regular, a definição de padrões por meio de símbolos e metacaracteres, e a utilização de funções específicas da biblioteca "regex" para manipular strings.
 
-- [Função erase() na documentação do C++](https://www.cplusplus.com/reference/string/string/erase/)
-- [Função remove_if() na documentação do C++](https://www.cplusplus.com/reference/algorithm/remove_if/)
+## Veja também:
+
+- [String and Characters - C++ Documentation](https://www.cplusplus.com/reference/string/)
+- [Regular Expressions - C++ Reference](https://en.cppreference.com/w/cpp/regex)

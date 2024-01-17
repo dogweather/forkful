@@ -1,7 +1,7 @@
 ---
-title:                "Herunterladen einer Webseite"
-html_title:           "C#: Herunterladen einer Webseite"
-simple_title:         "Herunterladen einer Webseite"
+title:                "Webseite herunterladen"
+html_title:           "C#: Webseite herunterladen"
+simple_title:         "Webseite herunterladen"
 programming_language: "C#"
 category:             "C#"
 tag:                  "HTML and the Web"
@@ -10,46 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was & Warum?
+Webseiten herunterzuladen bedeutet, den Inhalt einer Internetseite auf deinen Computer zu übertragen. Programmierer machen dies, um den Quellcode einer Seite zu analysieren, Daten abzurufen oder Inhalte auf einer Webseite zu bearbeiten.
 
-Wenn du in der Welt der Programmierung unterwegs bist, ist es unvermeidbar, dass du irgendwann auf das Thema Webseiten-Downloads stößt. Ob du nun Daten für eine Analyse benötigst oder einfach nur neugierig bist, es gibt viele Gründe, warum es wichtig ist, eine Webseite herunterzuladen. Glücklicherweise ist dies mit C# ein einfacher Prozess.
-
-## Wie es geht
-
-Um eine Webseite in C# herunterzuladen, benötigst du die `System.Net`-Bibliothek. Du kannst dann eine Instanz der `WebClient`-Klasse erstellen und die `DownloadFile`-Methode verwenden, um die Seite herunterzuladen. Hier ist ein Beispielcode:
-
+## Wie geht's?
+Das Herunterladen einer Webseite in C# ist relativ einfach. Du kannst die `HttpClient` Klasse verwenden, um eine Verbindung mit der Webseite herzustellen und dann die `GetStringAsync()` Methode aufrufen, um den Inhalt der Seite als String zu erhalten.
 ```C#
-using System;
-using System.Net;
+using System.Net.Http;
 
-var client = new WebClient();
-client.DownloadFile("https://example.com", "example.html");
+var client = new HttpClient();
+var response = await client.GetStringAsync("https://www.beispielwebseite.com");
+Console.WriteLine(response);
 ```
+Dieser Code wird den gesamten HTML-Code der Webseite auf der Konsole ausgeben.
 
-Dieser Code erstellt einen `WebClient` mit dem Namen `client` und verwendet dann die `DownloadFile`-Methode, um die Seite von `https://example.com` herunterzuladen und als `example.html` zu speichern.
-
-Du kannst auch die `DownloadString`-Methode verwenden, um den HTML-Code einer Seite als Zeichenfolge herunterzuladen. Hier ist ein Beispiel:
-
+Du kannst auch den `HttpWebRequest` und `HttpWebResponse` verwenden, um eine Verbindung herzustellen und den Inhalt der Seite als Stream zu erhalten.
 ```C#
-using System;
-using System.Net;
+var request = (HttpWebRequest)WebRequest.Create("https://www.beispielwebseite.com");
+var response = (HttpWebResponse)request.GetResponse();
+var stream = response.GetResponseStream();
 
-var client = new WebClient();
-var html = client.DownloadString("https://example.com");
+StreamReader reader = new StreamReader(stream);
+Console.WriteLine(reader.ReadToEnd());
 ```
+Dieser Code wird ebenfalls den gesamten HTML-Code auf der Konsole ausgeben, funktioniert aber etwas anders als der vorherige Ansatz.
 
-Dieser Code erstellt wieder einen `WebClient` mit dem Namen `client`, aber dieses Mal wird die `DownloadString`-Methode verwendet, um den HTML-Code von `https://example.com` zu erhalten und in der Variablen `html` zu speichern.
+## Tiefer tauchen
+Das Herunterladen von Webseiten hat in der Vergangenheit oft illegale Zwecke gehabt, wie das Spiegeln von Inhalten oder das Umgehen von Zugriffsbeschränkungen. Daher kann es sein, dass du bei deinem Versuch, eine Webseite herunterzuladen, auf eine Anti-Scraping-Technik stößt, die das Herunterladen von Inhalten erschwert oder sogar blockiert.
 
-## Tiefere Einblicke
+Eine Alternative zum direkten Herunterladen einer Webseite ist die Verwendung von Web Scraping Frameworks wie Scrapy oder BeautifulSoup. Diese Frameworks bieten eine Vielzahl von Funktionen, die es dir ermöglichen, spezifische Teile von Webseiten zu extrahieren oder ganze Webseiten herunterzuladen.
 
-Während die `WebClient`-Klasse äußerst hilfreich ist, gibt es auch andere Möglichkeiten, Webseiten in C# herunterzuladen, wie zum Beispiel die Verwendung von `HttpWebRequest` und `HttpWebResponse`.
+Um Webseiten in deinem Code herunterzuladen, solltest du dich auch mit den Themen Cookies, Authentifizierung und HTTP-Header vertraut machen. Diese spielen oft eine wichtige Rolle beim Zugriff auf Webseiten und können bei fehlerhafter Implementierung zu Problemen führen.
 
-Eine weitere wichtige Überlegung ist, wie du mit Problemen wie Zeitüberschreitungen und Fehlercodes umgehst. Du kannst dies durch das Setzen von Zeitlimits oder das Überprüfen von HTTP-Antworten tun.
-
-Es gibt auch weitere Optionen für das Anpassen des Prozesses, wie das Herunterladen der Seite in Teilen oder das Hinzufügen von Cookies.
+Beim Herunterladen von Webseiten solltest du auch darauf achten, dass du nicht gegen die Nutzungsbedingungen der Seite verstößt. Manche Webseiten verbieten das Scrapen ihrer Inhalte und können rechtliche Schritte einleiten, wenn du trotzdem ihre Inhalte herunterlädst.
 
 ## Siehe auch
+Für weitere Informationen zum Herunterladen von Webseiten in C# kannst du folgende Quellen besuchen:
 
-- [Dokumentation von `WebClient`](https://docs.microsoft.com/en-us/dotnet/api/system.net.webclient?view=netcore-3.1)
-- [Dokumentation von `HttpWebRequest` und `HttpWebResponse`](https://docs.microsoft.com/en-us/dotnet/api/system.net.httpwebrequest?view=netcore-3.1)
-- [Beispielprojekt für Webseiten-Downloads in C#](https://github.com/example/webpage-downloader-csharp)
+- [MSDN - HttpClient Klasse](https://docs.microsoft.com/de-de/dotnet/api/system.net.http.httpclient)
+- [Codeburst - A Beginner's Guide to Web Scraping in C#](https://codeburst.io/a-beginners-guide-to-web-scraping-in-c-40ec4770e125)
+- [GeeksforGeeks - Web Scraping Using BeautifulSoup in C#](https://www.geeksforgeeks.org/web-scraping-using-beautifulsoup-in-c-sharp/)

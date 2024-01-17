@@ -1,7 +1,7 @@
 ---
-title:                "एक नया परियोजना शुरू करना"
-html_title:           "Arduino: एक नया परियोजना शुरू करना"
-simple_title:         "एक नया परियोजना शुरू करना"
+title:                "नवीन प्रोजेक्ट शुरू करना"
+html_title:           "Arduino: नवीन प्रोजेक्ट शुरू करना"
+simple_title:         "नवीन प्रोजेक्ट शुरू करना"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Getting Started"
@@ -10,35 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Kyon
-Kisi bhi naye project ko shuru karne ke liye ek bahut bada karan hai - uske through hum nayi cheezon ki khoj karte hain aur apne dimag ko chunauti dete hain. Arduino programming se shuru karna aapko apne computer se door khade devices tak pahunchne mein madad karega.
+# "## क्या और क्यूँ?"
+नई परियोजना शुरू करना क्या है, और क्यों प्रोग्रामर्स इसे करते हैं? प्रोग्रामर्स नए परियोजनाओं को आरंभ करके नए सॉफ्टवेयर, हार्डवेयर या आपलोडेड कोड को बनाने के लिए शुरू करते हैं।
 
-## Kaise Karein
-Aapne socha hoga ki Arduino programming bahut mushkil ho sakti hai, par sach toh yeh hai ki yeh bahut hi asaan hai. Sabse pehle aapko apne computer mein Arduino software download karna padega. Phir, yeh steps follow karein:
+# "## कैसे करें:"
+Arduino को अपने कंप्यूटर से डाउनलोड करें और उसे इंस्टॉल करें। यदि आपके पास पहले से ही Arduino नई परियोजना है, तो आप इसे खोलने के लिए उसे चलाएं। यदि नहीं, तो आप एक नई परियोजना बनाएं और कोड को आरंभ करने के लिए अपने Arduino बोर्ड को कंप्यूटर से जोड़ें। नीचे दिए गए कोड को कॉपी और पेस्ट करके आप अपने परियोजना को आरंभ कर सकते हैं।
 
 ```Arduino
 void setup() {
-  // Initialize the pins
   pinMode(LED_BUILTIN, OUTPUT);
 }
 
 void loop() {
-  // Blinking LED
-  digitalWrite(LED_BUILTIN, HIGH); // LED ON
-  delay(1000); // Wait for a second
-  digitalWrite(LED_BUILTIN, LOW); // LED OFF
-  delay(1000); // Wait for a second
+  digitalWrite(LED_BUILTIN, HIGH);
+  delay(1000);
+  digitalWrite(LED_BUILTIN, LOW);
+  delay(1000);
 }
 ```
 
-Is code mein humne LED ko ON-OFF karne ke liye ek blinking effect create kiya hai. Ab bas apne Arduino board ko apne computer se connect karein aur upar diye gaye code ko upload karein. Aap dekhenge ki LED blink ho rahi hai!
+# "## गहराई में जाएँ:"
+क्या आप जानते हैं कि Arduino को Massimo Banzi और David Cuartielles द्वारा पहली बार 2005 में बनाया गया था? इसके अलावा, आप अपने परियोजना में Arduino के साथ कनेक्ट होने के लिए कई अन्य माइक्रोकंट्रोलर भी उपयोग कर सकते हैं। आप अपने कोड में नए कार्यकारी या स्लाइडर सेंसर को जोड़कर अपने परियोजना को और भी रोचक बना सकते हैं।
 
-## Gehri Jhaank
-Naye project shuru karte time, aapko ek clear idea hona chahiye ki aap kya banana chahte hain aur uska kya use hoga. Arduino programming aapko apne project ko step by step develop karna sikhata hai. Ismein aap sensors, motors, LEDs jaisi components ko connect kar sakte hain aur unhe control kar sakte hain.
-
-## Dekhiye Bhi
-- [Getting Started with Arduino](https://www.arduino.cc/en/Guide/Introduction)
-- [Arduino Tutorials for Beginners](https://www.arduino.cc/en/Tutorial/BuiltInExamples)
-- [Beginner's Guide to Arduino](https://www.makerspaces.com/arduino-guide/)
-
-Dhanyavaad, aur sukriya ki aapne hamare article ko padha! Happy coding!
+# "## और भी देखें:"
+आप अपनी परियोजना को आरंभ करने से पहले और अधिक सेंसर और विभिन्न आर्थिक कार्यकारी कोड स्केच को ढूंढने के लिए निम्न लिंकों पर जा सकते हैं: 
+- https://www.arduino.cc/en/Guide/HomePage
+- https://www.arduino.cc/reference/en/
+- https://www.arduino.cc/getting-started/examples/

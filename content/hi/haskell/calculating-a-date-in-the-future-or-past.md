@@ -1,7 +1,7 @@
 ---
-title:                "भविष्य या भूतकाल में एक तारीख की गणना"
-html_title:           "Haskell: भविष्य या भूतकाल में एक तारीख की गणना"
-simple_title:         "भविष्य या भूतकाल में एक तारीख की गणना"
+title:                "भविष्य या भूतकाल में एक दिन की गणना"
+html_title:           "Haskell: भविष्य या भूतकाल में एक दिन की गणना"
+simple_title:         "भविष्य या भूतकाल में एक दिन की गणना"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Dates and Times"
@@ -10,34 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Kyun
-Kya aapne kabhi socha hai ki aapke paas ek sakt date calculator hai jo aapko future ya past ki tarikh ko calculate karne mein madad kar sakta hai? Haskell programming language ke saath, aap bilkul ye kar sakte hain. Par kyun karna chahiye ye sab? Isse aap apne coding skills ko improve kar sakte hain, aur badi sahi tarah se dates ko handle kar sakte hain.
+## क्या और क्यों?
+पुरानी तारीख को भविष्य में या भविष्य की तारीख को पिछले दिनों में हिसाब लगाना एक काम है। इसे करने का कारण है कि कई प्रोग्रामिंग कार्यों में तारीखों का उपयोग आवश्यक होता है।
 
-## Kaise Kare
-Sabse pehle, aapko Haskell programming language ke basic concepts aur syntax ko samajhna hoga. Agar aapne abhi tak Haskell coding nahi kiya hai, to ek simple tutorial follow karke aap iske base mein strong ho sakte hain.
-
-Ek date ko calculate karne ke liye, hum base date, jaise ki aaj ka date, aur fir usko add ya subtract karenge, jaise ki 6 din ya 1 mahina. Iske liye, ```Data.Time``` library ka use karenge.
-
+## कैसे करें:
+Haskell में एक तारीख को भविष्य में या पिछले दिनों में हिसाब लगाने के लिए, आप ```addDays``` फंक्शन का उपयोग कर सकते हैं। यह आपको दिनों का संख्यात्मक अंतर देकर अपनी पहली तारीख में से एक नई तारीख उत्पन्न करता है। नीचे दिए गए उदाहरण में, हम 10 दिन बाद की तारीख निकालते हैं और इसका परिणाम दिखाते हैं:
 ```Haskell
-import Data.Time
-
--- Let's define today's date
-baseDate = fromGregorian 2021 8 10 
-
--- 6 days in the future
-futureDate = addDays 6 baseDate 
-print futureDate -- Output: 2021-08-16
-
--- 1 month in the past
-pastDate = addGregorianMonthsClip (-1) baseDate
-print pastDate -- Output: 2021-07-10
+import Data.Time.Clock
+import Data.Time.Calendar
+today <- getCurrentTime
+let tenDaysFromNow = addDays 10 (utctDay today)
+print tenDaysFromNow
 ```
+उत्पाद:
+2020-04-24
 
-## Deep Dive
-Isse zyada complex tarikh calculation jaise leap years aur different time zones ke liye, ```Data.Time.Calendar.OrdinalDate``` aur ```Data.Time.Clock``` libraries bhi use kiye jaa sakte hain. Aap in libraries ke documentation aur code examples par dhyan dekar apne skills ko aur badha sakte hain.
+## गहराई में:
+तारीख को भविष्य में या पिछले दिनों में हिसाब लगाना इतिहास में बहुत ही पुरानी एक प्रक्रिया है। प्राचीन समय में, लोग चंद्रमा या सूर्य के उदय और अस्त होने को तारीख के रूप में उपयोग करते थे। अब ईंधन और शक्ति के क्षेत्र में तेजी से विकास के साथ, लोग समय को सटीक होने के लिए नए तरीके खोज रहे हैं। आजकल, इसे अलग-अलग कारणों के लिए एक साफ़ और सटीक तरीके से किया जा सकता है। अन्य तकनीकियों में इसे करने के लिए, पूर्व और भविष्यवाणी तारीख को देखने के लिए बड़े संख्यात्मक लेखन का उपयोग किया जाता है।
 
-Iss tarah se, aap Haskell programming language ke sath future ya past dates ko calculate kar sakte hain, aur ye aapke coding expertise ko bhi improve karega.
-
-## Dekhiye Bhi
-- [Learn You a Haskell](http://learnyouahaskell.com/)
-- [Haskell Wiki](https://wiki.haskell.org/)
+## इससे जुड़े लिंक:
+समय और तारीख को हिसाब लगाने के लिए और भी तकनीकों के बारे में अधिक जानकारी के लिए, इन लिंक को देखें:
+- https://www.geeksforgeeks.org/haskell-date-manipulation/
+- https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time-Clock.html
+- https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time-LocalTime.html
+- https://en.wikipedia.org/wiki/Date_calculation_in_software

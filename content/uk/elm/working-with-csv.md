@@ -10,41 +10,62 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Чому
+## Що & Чому?
 
-Найпростіший спосіб імпортувати, експортувати та обробляти дані в програмуванні - це використання CSV (Comma-Separated Values) файлів. Це особливо корисно для роботи з великими обсягами даних, які легко організувати та оновлювати.
+Робота з CSV є досить поширеною серед програмістів. CSV це формат для зберігання та обміну даними у вигляді таблиць. Це досить легкий та зручний спосіб зберігання великих обсягів даних, тому програмісти використовують його для роботи зі збреженням та обробкою даних.
 
-## Як
+## Як використовувати:
 
-Щоб розпочати роботу з CSV у Elm, спершу треба встановити модуль [joakin/elm-csv](https://package.elm-lang.org/packages/joakin/elm-csv/latest/). Після цього, можна використовувати його, імпортуючи модуль `Csv` у початку файлу.
+Для роботи з CSV у Elm потрібно використовувати модуль ```elm/parser``` та функцію ```decode```. Наприклад, для декодування CSV файлу, який містить назви книжок та їх авторів, ми можемо використовувати наступний код:
 
-```Elm
-import Csv
+```elm
+import Csv exposing (..)
+import File exposing (readFile)
+import Parser exposing (..)
+
+type alias Book =
+    { title : String
+    , author : String
+    }
+
+decodeBook : Decode.Decoder Book
+decodeBook =
+    Decode.map2 Book
+        (field "title" string)
+        (field "author" string)
+
+readCsv : String -> Cmd msg
+readCsv fileName =
+    let
+        decoder =
+            Decode.map (List.map decodeBook)
+                (decodeString (map Decode.oneOf [decodeRow, Decode.succeed []]))
+    in
+    readFile fileName
+        |> Cmd.andThen (\result -> case result of
+            Ok content ->
+                Csv.parse decoder content
+
+            Err error ->
+                -- handle error
+        )
+
+decodeRow : Decode.Decoder (List String)
+decodeRow =
+    Decode.field "Row data" (list string)
+        |> Decode.succeed
 ```
 
-Далі, потрібно отримати дані з CSV файлу за допомогою функції `decode` та вказати шлях до файлу. У цьому прикладі, ми отримуємо дані з файлу "data.csv".
+Результатом буде список книжок та авторів, який можна використовувати для подальшої обробки.
 
-```Elm
-Csv.decode "data.csv"
-```
+## Глибше вдивимося:
 
-Тепер можна обробляти дані з файлу, наприклад, вивести їх у консоль за допомогою функції `Debug.log`.
+Формат CSV був створений у 1972 році та став дуже популярним у зв'язку зі зростанням використання простих баз даних. На відміну від більш складних форматів, таких як XML, CSV є дуже простим та зрозумілим. Альтернативами до роботи з CSV у Elm можуть бути використання різних бібліотек, таких як ```elm-csv```, ```elm-decode-csv```, або реалізація власного декодера за допомогою модуля ```elm/parser```. 
 
-```Elm
-Csv.decode "data.csv"
-    |> Debug.log "Дані з CSV файлу"
-```
+При роботі з CSV необхідно враховувати можливі помилки, такі як неправильний формат файлу або відсутність певних даних. Також важливо використовувати правильні типи даних при декодуванні, щоб уникнути непередбачуваних помилок у подальшій обробці даних.
 
-Також, можна використовувати функції `Csv.Decode` модуля, щоб розпарсити дані з файлу та перетворити їх у тип даних, який необхідний для подальшої обробки.
+## Дивіться також:
 
-## Глибокий занурення
-
-У модулі [joakin/elm-csv](https://package.elm-lang.org/packages/joakin/elm-csv/latest/) є багато корисних функцій для роботи з CSV. Наприклад, функція `decodeWith` дозволяє вказати власний розпарсер, щоб обробити особливі типи даних.
-
-Також, треба пам'ятати, що дані з файлу мають бути відсортовані відповідно до заголовків стовпців, інакше їх обробка може бути ускладнена.
-
-## Дивись також
-
-- [Офіційна документація Elm для модуля `Csv`](https://package.elm-lang.org/packages/joakin/elm-csv/latest/)
-- [Приклади використання Elm для роботи з CSV](https://github.com/joakin/elm-csv/tree/master/examples)
-- [Стаття про роботу з CSV у Elm на англійській мові](https://korban.net/posts/elm/2019-04-05-working-csvs-elm/)
+- Офіційна документація Elm: https://elm-lang.org
+- Розширення Elm для роботи з CSV: https://package.elm-lang.org/packages/elm-explorations/csv/latest/
+- Приклади роботи з CSV у Elm: https://github.com/ggb/elm-csv

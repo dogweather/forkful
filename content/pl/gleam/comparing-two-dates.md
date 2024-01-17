@@ -10,36 +10,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co & dlaczego?
+Porównywanie dwóch dat jest procesem, w którym programista porównuje dwie daty, aby określić, która jest wcześniejsza lub późniejsza. Jest to powszechna czynność w programowaniu, ponieważ pozwala nam na wykrycie różnic między datami i na podjęcie odpowiednich działań w zależności od wyniku porównania.
 
-Porównywanie dat jest nieodłączną częścią wielu programów i aplikacji, szczególnie tych związanych z czasem lub planowaniem. Dzięki temu możliwe jest ustalenie, która z dat jest wcześniejsza lub późniejsza, co może być istotne w różnych sytuacjach. W tym artykule dowiesz się, jak w łatwy sposób porównać dwie daty za pomocą języka programowania Gleam.
-
-## Jak to zrobić
-
-Aby porównać dwie daty w Gleam, wykorzystaj funkcję `Date.compare` oraz operator porównania `>`, `<` lub `==` w zależności od potrzeby. Oto przykładowy kod porównujący daty w formacie `YYYY-MM-DD`:
+## Jak to zrobić:
+Przykłady kodu i wyjścia można znaleźć w poniższych blokach kodu `Gleam ...`:
 
 ```Gleam
-let date1 = Date.from_string("2021-01-01")
-let date2 = Date.from_string("2021-02-15")
+import Time
 
-if date1 > date2 {
-  // date1 jest późniejsza niż date2
-} else if date1 < date2 {
-  // date1 jest wcześniejsza niż date2
-} else {
-  // daty są identyczne
-}
+Time.is_before(Time.date(2021, 04, 20), Time.date(2021, 04, 18)) // Wynik: false
+Time.is_same_or_before(Time.date(2020, 12, 25), Time.date(2020, 12, 31)) // Wynik: true
+Time.compare(Time.date(2021, 03, 15), Time.date(2019, 05, 01)) // Wynik: greater_than
 ```
 
-W takim przypadku, porównanie daty1 z datą2 daje wynik `true` dla operacji porównania `>`, `false` dla `<` i `false` dla `==`. Możesz także wykorzystać tę samą metodę dla dat w innych formatach, jak np. `MM/DD/YYYY` czy `DD/MM/YY`.
+Funkcja `is_before` sprawdza, czy pierwsza data jest wcześniejsza niż druga. `is_same_or_before` porównuje dwie daty i zwraca `true`, jeśli są takie same lub jeśli pierwsza data jest wcześniejsza od drugiej. Natomiast funkcja `compare` zwraca jeden z trzech wyników: `greater_than` (pierwsza data jest późniejsza), `less_than`(pierwsza data jest wcześniejsza) lub `equal` (daty są takie same).
 
-## Głębsze zanurzenie
+## Głębszy zanurzenie:
+Porównywanie dat jest ważne w programowaniu, ponieważ pomaga nam w analizie i manipulacji danymi. Istnieje również wiele innych sposobów na porównywanie dat w innych językach programowania, takich jak `DateTime.Compare` w C# czy `before?` w Ruby. W Gleam funkcje `is_before`, `is_same_or_before` i `compare` wykorzystują operatory porównywania (`<`, `<=` i `==`) do porównywania dat. W kolejnych wersjach języka można spodziewać się dodatkowych funkcji do porównywania, takich jak porównywanie godzin lub uwzględnianie stref czasowych.
 
-W języku Gleam, daty są reprezentowane za pomocą typu `Date`, który przechowuje wartości roczne, miesięczne i dzienne. Funkcja `Date.compare` porównuje te wartości dla dwóch dat. Dla przykładu, gdy porównujemy daty w formacie `YYYY-MM-DD`, funkcja `compare` będzie porównywać najpierw rok, a następnie miesiąc i dzień.
-
-Warto także wiedzieć, że funkcja `Date.from_string` może przyjmować różne formaty dat, jednakże należy upewnić się, że format odpowiada temu używanemu w porównaniu za pomocą funkcji `Date.compare`.
-
-## Zobacz także
-
-- [Dokumentacja języka Gleam na temat typu Date](https://gleam.run/documentation/standard-library/date/)
-- [Porównywanie dat w języku programowania JavaScript](https://www.w3schools.com/js/js_dates.asp)
+## Zobacz także:
+Dowiedz się więcej o funkcjach porównywania dat w języku Gleam w [dokumentacji](https://gleam.run/documentation/general/dates-and-times/) języka. Możesz także przeczytać o porównywaniu dat w innych językach programowania, takich jak C# i Ruby, aby lepiej porównać różnice między nimi.

@@ -1,7 +1,7 @@
 ---
-title:                "Ekstrakcja podciągów"
-html_title:           "Kotlin: Ekstrakcja podciągów"
-simple_title:         "Ekstrakcja podciągów"
+title:                "Wydobywanie podciągów"
+html_title:           "Kotlin: Wydobywanie podciągów"
+simple_title:         "Wydobywanie podciągów"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Strings"
@@ -10,32 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Dlaczego
-Często, w czasie pisania kodu w języku Kotlin, może pojawić się potrzeba wyciągnięcia fragmentu tekstu z łańcucha znaków. Może to być na przykład odcięcie prefixu lub sufiksu, lub też wyodrębnienie określonych znaków na podstawie pozycji w łańcuchu. W takich sytuacjach wykorzystanie funkcji do wycinania podłańcuchów jest niezbędną umiejętnością.
+## Co & Dlaczego?
 
-# Jak to zrobić
-```Kotlin
-val text = "To jest przykładowy tekst"
-val substring = text.substring(3, 9)
+Wyciąganie podciągów to proces wyodrębniania fragmentów tekstu z danego ciągu znaków. Programiści często wykonują tę czynność, aby uzyskać dostęp do konkretnych informacji lub zmodyfikować dany tekst.
 
-println(substring) // "jest p"
-```
-Funkcja `substring` pozwala nam na podanie indeksów, od których do których chcemy wyodrębnić fragment tekstu. W powyższym przykładzie, parametry 3 i 9 oznaczają odpowiednio początkowy i końcowy indeks wycinanego podłańcucha. Należy pamiętać, że indeksy są numerowane od zera i nie są wliczane w wyodrębniony podłańcuch.
+## Jak to zrobić:
 
-Funkcja ta posiada również opcjonalny parametr `step`, który określa co który znak chcemy wyodrębnić. Jest to przydatne w przypadku, gdy potrzebujemy wyodrębnić co drugi lub co trzeci znak z tekstu.
+Poniżej znajdziesz przykłady kodów w języku Kotlin oraz odpowiadające im wyjścia.
 
-```Kotlin
-val text = "To jest przykładowy tekst"
-val substring = text.substring(3, 9, 2)
-
-println(substring) // "jtprk"
+```Kotlin 
+val text = "Witaj w świecie Kotlin!"
+println(text.substring(12)) // wyświetli "Kotlin!"
+println(text.substring(12, 15)) // wyświetli "Kot"
 ```
 
-# Wnikliwiej
-W języku Kotlin istnieje kilka funkcji do wycinania podłańcuchów, w tym `substring()`, `subSequence()` oraz `take()`. Korzystając z metod `substring()` oraz `subSequence()` możemy wyodrębnić fragment tekstu na podstawie indeksów. Natomiast funkcja `take()` pozwala na wyodrębnienie określonej liczby znaków od początku tekstu.
+W powyższym przykładzie używamy metody substring() do wyciągnięcia podciągu tekstu z określonego indeksu lub przedziału indeksów.
 
-Funkcje te są nie tylko użyteczne w odcięciu fragmentów tekstu, ale mogą również znacznie ułatwić manipulację łańcuchami znaków w naszym kodzie. Dzięki nim możemy na przykład rozbić długi łańcuch na mniejsze fragmenty i łatwiej operować na każdej części osobno.
+## Głębsza analiza:
 
-# Zobacz także
-- Dokumentacja języka Kotlin: https://kotlinlang.org/docs/reference/strings.html#string-slices
-- Wideo tutorial na temat wycinania podłańcuchów w Kotlinie: https://www.youtube.com/watch?v=U2vhDTY-gTg
+Wyodrębnianie podciągów jest powszechnie używaną operacją w wielu językach programowania. Powstało wiele różnych sposobów na przeprowadzanie tej czynności, jednak metoda substring() jest jedną z najprostszych i najbardziej popularnych opcji.
+
+Wykorzystując dłuższy przedział indeksów, można również przeprowadzić operację znaną jako "wytnij i wklej", czyli usunięcie danego fragmentu tekstu i wstawienie nowej treści w jego miejsce.
+
+Metoda substring() jest dostępna w wielu językach programowania, a nie tylko w Kotlinie. Jeśli jednak korzystasz z innego języka, być może będzie ona nazywana w nieco inny sposób, np. w Pythonie jest to funkcja slice().
+
+## Zobacz również:
+
+Dla większej głębi wiedzy na temat wyodrębniania podciągów oraz innych przydatnych operacji na tekście, możesz zajrzeć do dokumentacji języka Kotlin lub obejrzeć tutoriale dostępne na YouTube.

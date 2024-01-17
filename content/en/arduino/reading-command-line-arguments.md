@@ -10,81 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-Are you tired of manually entering input values every time you run your Arduino program? Are you looking for a more efficient and dynamic way to interact with your projects? By learning how to read command line arguments, you can easily pass in parameters to your program without the need for constant input.
+Reading command line arguments is the process of taking inputs from the command line and using them in a program. Programmers do this to make their programs more versatile by allowing users to customize their experience and provide dynamic inputs.
 
-## How To
+## How to:
 
-Reading command line arguments in Arduino involves using the ```Serial``` library and the ```argc``` and ```argv``` variables. Let's take a look at a simple program that reads in two numbers from the command line and prints their sum:
-
-```Arduino
-#include <stdio.h>
-int sum = 0;
-
-void setup() {
- Serial.begin(9600);
-}
-
-void loop() {
- if (Serial.available() > 0) {
-  int num1, num2;
-  // read in first number
-  num1 = atoi(Serial.readStringUntil(' ').c_str());
-  // read in second number
-  num2 = atoi(Serial.readStringUntil('\n').c_str());
-  // calculate sum
-  sum = num1 + num2;
-  // print result
-  Serial.print("The sum of ");
-  Serial.print(num1);
-  Serial.print(" and ");
-  Serial.print(num2);
-  Serial.print(" is: ");
-  Serial.println(sum);
- }
-}
+To read command line arguments in Arduino, we can use the `Serial.readString()` function. First, we declare a string variable to store the input data. Then, we use the `Serial.begin()` function to initialize serial communication with the computer. Next, we use a `while` loop to continuously read inputs from the serial port using `Serial.readString()`. Finally, we can use `Serial.println()` to print out the inputs. Here's an example: 
 
 ```
+Arduino String inputString;
+Serial.begin(9600);
 
-Input: 5 7
-Output: The sum of 5 and 7 is: 12
-
-In this program, we use the ```Serial``` library to read in the input from the serial monitor. The ```Serial.available()``` function checks if there is any data available to be read. We then use the ```Serial.readStringUntil()``` function to read in the numbers until a space or a newline character is encountered. These numbers are converted to integers using the ```atoi()``` function and then added together to get the sum. Finally, we use the ```Serial.print()``` and ```Serial.println()``` functions to print out the result on the serial monitor.
-
-## Deep Dive
-
-Using ```argc``` and ```argv```, we can also read in command line arguments directly from the Arduino IDE. If we modify our previous program to include these variables, we can pass in our input as command line arguments when running the program. Let's take a look at an example:
-
-```Arduino
-#include <stdio.h>
-int sum = 0;
-
-int main(int argc, char **argv) {
- int num1, num2;
- // read in first number
- num1 = atoi(argv[1]);
- // read in second number
- num2 = atoi(argv[2]);
- // calculate sum
- sum = num1 + num2;
- // print result
- Serial.print("The sum of ");
- Serial.print(num1);
- Serial.print(" and ");
- Serial.print(num2);
- Serial.print(" is: ");
- Serial.println(sum);
+while(Serial.available()>0){
+  inputString = Serial.readString();
+  Serial.println(inputString);
 }
 ```
 
-Input: 5 7
-Output: The sum of 5 and 7 is: 12
+If the user inputs "Hello World" in the serial monitor, the output would be: "Hello World".
 
-In this program, we use ```argc``` to determine the number of command line arguments passed in and ```argv``` to access each argument. The first argument (```argv[0]```) is the name of the program, so we start reading our input from the second argument (```argv[1]``` and ```argv[2]```). This allows for a more automated way to pass in input without having to manually enter it in the serial monitor.
+## Deep Dive:
 
-## See Also
+Historically, command line arguments were used in computers without graphical user interfaces as a way to input data and control programs. Nowadays, they are still widely used in programming languages like C and C++ for creating command-line programs. An alternative to reading command line arguments in Arduino is using the `Serial.parseInt()` function, which only reads integer values from the serial port. 
 
-- [Arduino Serial](https://www.arduino.cc/reference/en/language/functions/communication/serial/)
-- [Serial.available()](https://www.arduino.cc/reference/en/language/functions/communication/serial/available/)
-- [Serial.readStringUntil()](https://www.arduino.cc/reference/en/language/functions/communication/serial/readstringuntil/)
+When using the `Serial.readString()` function, it's important to note that the input data is stored in memory and can use up a lot of space if the inputs are too large. Therefore, it's recommended to use `Serial.readStringUntil()` instead, which reads the input until a specific character is encountered. This can save memory usage and improve performance.
+
+## See Also:
+
+For more information on using `Serial.readString()` and `Serial.readStringUntil()`, refer to the official Arduino documentation: https://www.arduino.cc/reference/en/language/functions/communication/serial/readstring/.
+
+To learn more about command line arguments in general, check out this article by FreeCodeCamp: https://www.freecodecamp.org/news/what-are-command-line-arguments-and-why-we-use-them/.
+
+Now you know how to read command line arguments in Arduino, so go ahead and try it out in your own projects! Happy coding!

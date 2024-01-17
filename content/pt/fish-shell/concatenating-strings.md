@@ -10,60 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que concatenar strings?
+## O que e por que?
 
-Você pode estar se perguntando por que você deveria se preocupar com a concatenação de strings. Afinal, por que escrever mais código quando você pode simplesmente escrever todo o texto junto? Mas a concatenação de strings pode ser útil quando você está trabalhando com variáveis e precisa combinar diferentes valores em uma única string.
+Concatenação de strings é simplesmente unir duas ou mais strings em uma única string. Programadores geralmente fazem isso quando precisam combinar informações diferentes para formar uma única mensagem ou para criar nomes dinâmicos para variáveis e funções.
 
-## Como fazer
+## Como fazer:
 
-Agora que entendemos por que a concatenação de strings pode ser útil, vamos aprender como fazer isso usando o Fish Shell. Existem várias maneiras de concatenar strings nesta linguagem de shell, mas uma das formas mais comuns é usar o operador `+`.
-
-```
-Fish Shell
-
-# Define duas variáveis com strings
-set texto1 "Meu nome é "
-set texto2 "Maria"
-
-# Concatena as duas strings usando o operador "+"
-set nome_completo $texto1 + $texto2
-
-# Imprime o resultado
-echo $nome_completo
-
-# Output: Meu nome é Maria
-```
-
-Neste exemplo, definimos duas variáveis com as strings "Meu nome é" e "Maria". Em seguida, usamos o operador `+` para concatená-las em uma única variável chamada `nome_completo`. Por fim, imprimimos o resultado usando o comando `echo`.
-
-Outra forma de concatenar strings é usando a função `string join`, que permite unir várias strings em uma única string.
+Usando o Fish Shell, a concatenação de strings é bastante fácil. Basta utilizar o sinal de adição (+) entre as strings que você deseja juntar. Veja o exemplo abaixo:
 
 ```
-Fish Shell
-
-# Define duas variáveis com strings
-set lista1 "Item 1" "Item 2" "Item 3"
-set lista2 "Item 4" "Item 5" "Item 6"
-
-# Concatena as duas listas em uma única string
-set lista_completa (string join " " $lista1 $lista2)
-
-# Imprime o resultado
-echo $lista_completa
-
-# Output: Item 1 Item 2 Item 3 Item 4 Item 5 Item 6
+Fish Shell> set operacao "adição"
+Fish Shell> echo "Operação escolhida:" + $operacao
+Operação escolhida: adição
 ```
 
-Neste exemplo, definimos duas variáveis com listas de strings e, em seguida, usamos a função `string join` para unir todas as strings em uma única lista. Podemos especificar um delimitador entre as strings, que neste caso é um espaço em branco.
+Note que a variável `$operacao` foi concatenada com a string fixa "Operação escolhida: " para formar a mensagem final.
 
-## Explorando mais
+## Mergulho profundo:
 
-Existem muitas outras formas de concatenar strings no Fish Shell, como usar o comando `string insert` para inserir uma string em uma posição específica de outra string, ou a função `string split` para dividir uma string em várias strings separadas por um delimitador. Se você quiser se aprofundar mais nesse assunto, consulte a documentação oficial do Fish Shell ou pesquise por tutoriais e exemplos online.
+A concatenação de strings é uma técnica muito utilizada em diversas linguagens de programação, pois permite a criação de mensagens personalizadas e dinâmicas. Alternativas incluem o uso de placeholders ou a utilização de funções específicas da linguagem para formatação de strings. O processo de concatenação geralmente envolve a alocação de um novo espaço de memória para armazenar a string resultante.
 
-## Veja também
+## Veja também:
 
-Se você quiser aprender mais sobre o Fish Shell ou se aprofundar em outros tópicos relacionados, confira os links abaixo:
-
-- [Documentação oficial do Fish Shell](https://fishshell.com/docs/current/index.html)
-- [Tutorial do Fish Shell no Medium](https://medium.com/@amarjeetkapoor04/getting-started-with-fish-shell-c49c5b57ace)
-- [Mais exemplos de concatenar strings em scripts do Fish Shell](https://github.com/fish-shell/fish-shell/blob/master/share/functions/string.joins)
+- [Documentação oficial do Fish Shell](https://fishshell.com/docs/current/commands.html#set)
+- [Definição de Concatenação de Strings na Wikipedia](https://pt.wikipedia.org/wiki/Concatena%C3%A7%C3%A3o)
+- [Artigo sobre a importância da concatenação de strings em programação](https://www.educba.com/string-concatenation-in-programming/)

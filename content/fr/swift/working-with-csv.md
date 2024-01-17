@@ -10,43 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+# Qu'est-ce que c'est et pourquoi le faire ?
+Travailler avec des fichiers CSV (Comma-Separated Values) est un moyen courant pour les programmeurs de gérer et manipuler des données tabulaires. Les CSV sont faciles à lire pour les humains et peuvent être facilement importés dans des applications comme des feuilles de calcul ou des bases de données. Les programmeurs utilisent les CSV pour stocker des données, telles que des noms, des adresses et des montants, qui peuvent être triées et analysées de manière efficace.
 
-Si vous travaillez avec des données tabulaires telles que des feuilles de calcul, il est probable que vous ayez été confronté au format CSV. Ce format est couramment utilisé pour stocker des données dans un format facilement lisible par les machines, ce qui le rend utile pour l'importation et l'exportation de données dans des applications.
+# Comment faire :
+La manipulation de fichiers CSV est relativement simple avec Swift. Voici un exemple de code pour ouvrir un fichier CSV, le lire ligne par ligne, et afficher les valeurs séparées par des virgules :
 
-## Comment faire
-
-Pour travailler avec des fichiers CSV en Swift, vous pouvez utiliser la librairie standard `CSV` qui est incluse dans le langage. Tout d'abord, il est nécessaire d'importer la librairie avec l'instruction `import Foundation`.
-
-Ensuite, vous pouvez créer un objet `CSVReader` en passant l'emplacement du fichier CSV en tant que paramètre. Par exemple :
-
-```Swift
-let csvPath = FileManager.default.homeDirectoryForCurrentUser.appendingPathComponent("example.csv")
-let csvReader = try! CSVReader.init(contentsOf: csvPath)
 ```
+import Foundation
 
-Une fois que vous avez créé l'objet `CSVReader`, vous pouvez parcourir le contenu du fichier CSV ligne par ligne en appelant la méthode `next()` et en utilisant une boucle while. Par exemple :
-
-```Swift
-while let row = csvReader.next() {
-  // faire quelque chose avec la ligne
+let csvFileURL = URL(fileURLWithPath: "sample.csv") // Définir l'URL du fichier CSV
+do {
+    let csvData = try String(contentsOf: csvFileURL) // Lire le contenu du fichier CSV en tant que chaîne de caractères
+    let csvLines = csvData.components(separatedBy: "\n") // Séparer les lignes du CSV en un tableau
+    
+    for line in csvLines {
+        let values = line.components(separatedBy: ",") // Séparer les valeurs de chaque ligne en un tableau
+        print(values) // Afficher les valeurs séparées par des virgules
+    }
+} catch {
+    print(error) // Gérer toute erreur de lecture du fichier CSV
 }
 ```
 
-À chaque itération de la boucle, la méthode `next()` renvoie un tableau de chaînes de caractères représentant les valeurs de chaque colonne dans la ligne actuelle. Vous pouvez ensuite facilement accéder à ces valeurs en utilisant des index ou des noms de colonnes.
+En utilisant l'exemple ci-dessus, si nous avons un fichier CSV avec les données suivantes :
 
-Une fois que vous avez terminé de travailler avec le fichier CSV, n'oubliez pas de fermer l'objet `CSVReader` en appelant la méthode `close()`.
+```
+Nom,Prénom,Âge
+Dupont,Julie,27
+Martin,Eric,35
+```
 
-## Plongée en profondeur
+La sortie du programme serait la suivante :
 
-La librairie `CSV` de Swift prend en charge diverses options pour personnaliser la façon dont les fichiers CSV sont lus. Par exemple, vous pouvez spécifier un délimiteur de colonne différent de la virgule par défaut en utilisant la propriété `delimiter` de l'objet `CSVReader`.
+```
+["Nom", "Prénom", "Âge"]
+["Dupont", "Julie", "27"]
+["Martin", "Eric", "35"]
+```
 
-Vous pouvez également utiliser la librairie `CSV` pour écrire des données dans un fichier CSV en utilisant un objet `CSVWriter`. Il suffit de créer l'objet avec l'emplacement du fichier en paramètre et d'utiliser la méthode `writeRow` pour enregistrer une ligne de données.
+# Plongée en profondeur :
+Les fichiers CSV ont été développés dans les années 1970 pour stocker des données tabulaires dans les systèmes informatiques. Ils sont devenus un format de fichier courant pour partager des données entre différentes applications et systèmes d'exploitation. En plus de séparer les valeurs par des virgules, les CSV peuvent également utiliser d'autres caractères de séparation, tels que des points-virgules ou des tabulations.
 
-Enfin, il est important de noter que la librairie `CSV` de Swift ne prend pas en charge les fichiers CSV avec des entêtes de colonnes. Si vous travaillez avec un fichier CSV qui en contient, vous devrez gérer la première ligne séparément.
+Alors que les fichiers CSV sont faciles à utiliser, ils peuvent avoir des limitations lorsqu'il s'agit de données complexes et structurées. Dans de tels cas, les programmeurs peuvent utiliser d'autres formats de données tels que JSON ou XML. De plus, il existe des librairies et des outils tels que SwiftCSV et CSVParser pour aider à travailler avec des fichiers CSV en Swift.
 
-## Voir aussi
-
-- [Documentation officielle de la librairie CSV de Swift](https://developer.apple.com/documentation/foundation/csvreader)
-- [Guide sur l'importation de données CSV en Swift](https://medium.com/@felixsanz/working-with-csv-files-in-swift-589ad89ae2f5)
-- [Exemple de manipulation de données CSV en Swift](https://github.com/samratashok/Countries/blob/master/Countries/Page1/DownloadData.swift)
+# Voir aussi :
+- [La documentation officielle de Swift sur la manipulation de fichiers](https://docs.swift.org/swift-book/LanguageGuide/WorkingWithFiles.html)
+- [SwiftCSV library](https://github.com/naoty/SwiftCSV)
+- [CSVParser library](https://github.com/yaslab/CSV.swift)

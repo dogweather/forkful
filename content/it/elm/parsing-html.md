@@ -1,7 +1,7 @@
 ---
-title:                "Analisi dei tag html"
-html_title:           "Elm: Analisi dei tag html"
-simple_title:         "Analisi dei tag html"
+title:                "Analisi dell'html"
+html_title:           "Elm: Analisi dell'html"
+simple_title:         "Analisi dell'html"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "HTML and the Web"
@@ -10,85 +10,66 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+## Cosa & Perché?
+Il parsing HTML è il processo di analisi del codice HTML per estrarre le informazioni contenute in una pagina web. I programmatori lo fanno per ottenere i dati di una pagina web e utilizzarli per creare o modificare un'applicazione.
 
-Sebbene non sembri la parte più eccitante della programmazione, essere in grado di parsare l'HTML è incredibilmente utile per gli sviluppatori. Questa abilità permette di ottenere informazioni strutturate da pagine web e di manipolarle per creare esperienze utente più dinamiche e personalizzate.
-
-## Come fare
-
-L'Elm fornisce una libreria integrata chiamata "elm/html" che contiene funzioni per parsare l'HTML. Vediamo un esempio di come usarla per ottenere il testo all'interno dell'elemento <h1> di una pagina web:
-
+## Come fare:
 ```Elm
 import Html exposing (..)
-import Html.Parser exposing (..)
-import Http
-import Json.Decode as Decode
+import Html.Attributes exposing (..)
+import Html.Parser as Parser
 
-type Msg
-    = ReceivedHtml (Result Http.Error String)
+-- Definire una funzione per il parsing di una pagina web
+parsePage : String -> Html msg
+parsePage htmlString =
+    case Parser.parse htmlString of
+        Ok html ->
+            div []
+                [ h1 [] [ text "Titolo della pagina" ]
+                -- Utilizzare la funzione find per trovare un elemento specifico
+                , text <| find "p" html |> extractText
+                ]
 
-type alias Model =
-    { title : String
-    , content : String
-    }
+        Err err ->
+            div []
+                [ h1 [] [ text "Errore" ]
+                , p [] [ text <| toString err ]
+                ]
 
-init : ( Model, Cmd Msg )
-init =
-    ( { title = "", content = "" }, Http.get "http://sito.com" ReceivedHtml )
+-- Funzione per estrarre il testo da un elemento HTML
+extractText : List (Html.Attribute msg, Html) -> String
+extractText element =
+    case element of
+        [] ->
+            ""
 
-update : Msg -> Model -> ( Model, Cmd Msg )
-update msg model =
-    case msg of
-        ReceivedHtml (Ok html) ->
-            let
-                parserResult =
-                    parse (all (chompUntil "<h1>") (map .content chompUntil "</h1>")) html
-            in
-                case parserResult of
-                    Ok result ->
-                        let
-                            (updatedModel, _) =
-                                model.title result [] { title = "", content = "" }
-                        in
-                            ( updatedModel, Cmd.none )
+        ( _, Html.text str ) :: _ ->
+            str
 
-                    Err err ->
-                        ( model, Cmd.none )
+        _ :: rest ->
+            extractText rest
 
-        _ ->
-            ( model, Cmd.none )
+-- URL della pagina web da analizzare
+url : String
+url = "https://www.esempio.com"
 
-subscriptions : Model -> Sub Msg
-subscriptions _ =
-    Sub.none
+-- Funzione di visualizzazione dell'output
+view : Html msg
+view =
+    parsePage <| Http.getString url
 
-view : Model -> Html Msg
-view model =
-    div []
-        [ h1 [] [ text model.title ]
-        , p [] [ text model.content ]
-        ]
-
-main : Program () Model Msg
-main =
-    Html.beginnerProgram
-        { model = init
-        , update = update
-        , view = view
-        , subscriptions = subscriptions
-        }
 ```
 
-In questo codice, utilizziamo la funzione `Http.get` per effettuare una chiamata HTTP per ottenere il contenuto della pagina web. Una volta ricevuto il contenuto, utilizziamo la funzione `Html.Parser.parse` per crearne un risultato parsato utilizzando un parser definito da noi. Nel nostro esempio, abbiamo definito un parser che cerca il contenuto all'interno di un <h1> e lo inserisce nel campo `title` del nostro modello.
+L'output dell'esempio sopra sarà:
+```Elm
+<h1>Titolo della pagina</h1>
+<p>Contenuto della pagina</p>
+```
 
-## Approfondimento
+## Approfondimento:
+Il parsing HTML è diventato una pratica comune negli ultimi anni con lo sviluppo di tecnologie come il web scraping e il web crawling. Esistono diversi strumenti e linguaggi di programmazione che consentono di fare il parsing HTML, come ad esempio Python con la libreria Beautiful Soup o JavaScript con jQuery.
 
-Oltre alla funzione `parse`, la libreria `elm/html` fornisce molte altre funzioni utili per parsare l'HTML. Ad esempio, ci sono funzioni per parsare elementi specifici, attributi, o anche per creare parser personalizzati. Inoltre, è possibile utilizzare la libreria `elm/parser` per creare parser ancora più avanzati.
+In Elm, il parsing HTML viene effettuato utilizzando una libreria esterna, Html.Parser, che fornisce funzioni utili per trovare e analizzare gli elementi di una pagina web. Inoltre, Elm ha la capacità di gestire ed elaborare dati in modo efficiente, rendendolo un'ottima scelta per il parsing HTML.
 
-Un'altro modo per parsare l'HTML è utilizzare il modulo `built-in Html.Events` che fornisce funzioni come `on`, `targetValue` e `targetChecked`. Queste funzioni possono essere utilizzate per scegliere informazioni da input di form o pulsanti e poi manipolarle tramite funzioni di alto livello come `String.join`, `String.split`, `String.fromList`, etc.
-
-## Vedi anche
-
-- Documentazione ufficiale su `elm/html`: https://package.elm-lang.org/packages/elm/html/latest
-- Tutorial su come parsare l'HTML con Elm: https://dev.to/kalaluce/how-to-parse-html-with-elm-3fp2
-- Tutorial su come utilizzare il modulo `Html.Events`: https://medium.com/@lysergicordan/input-events-in-elm-686c610859ea
+## Vedi anche:
+Per ulteriori informazioni sul parsing HTML in Elm, puoi consultare la documentazione ufficiale della libreria Html.Parser (https://package.elm-lang.org/packages/elm/parser/latest/) e il tutorial "Parsing HTML in Elm" su Medium (https://medium.com/tech-non-tech/parsing-html-in-elm-df833b663541).

@@ -10,48 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Quoi et Pourquoi?
 
-Si vous êtes un développeur Elm, vous vous demandez peut-être pourquoi vous devriez perdre votre temps à lire un fichier texte. Eh bien, la réponse est simple : les fichiers texte peuvent être utilisés pour stocker des données simples et structurées, ce qui peut être très utile dans de nombreux scénarios.
+Lire un fichier texte en programmation consiste simplement à accéder aux données écrites dans un texte brut. Les programmeurs peuvent le faire pour extraire des informations, les manipuler ou les utiliser dans leur code.
 
-## Comment faire
+## Comment faire:
 
-Dans cet article, nous allons apprendre à lire un fichier texte en utilisant Elm. Tout d'abord, nous allons créer un nouveau projet Elm et créer un fichier texte contenant quelques données de test. Le code ci-dessous montre un exemple de données que nous pourrions utiliser :
-
-```Elm
--- Exemple de données
-nom="John Doe"
-age=25
-pays="France"
-```
-
-Maintenant, nous allons écrire le code pour lire ce fichier texte et extraire les données. Tout d'abord, nous devons importer le module "File" d'Elm, qui nous permettra de gérer les fichiers :
+Voici un exemple de code en Elm pour lire un fichier texte et afficher son contenu :
 
 ```Elm
+import Text
 import File
+
+main =
+  Text.fromFile "mon_fichier.txt"
+    |> Text.lines
+    |> List.map Text.toUpper
+    |> String.join "\n"
+    |> Text.print
 ```
 
-Ensuite, nous pouvons utiliser la fonction "readTextFile" pour lire le fichier texte et stocker les données dans une variable :
+Résultat :
 
-```Elm
-fichierTexte = readTextFile "chemin/vers/monfichier.txt"
+```
+BONJOUR
+COMMENT ÇA VA?
+JE SUIS UN FICHIER TEXTE.
 ```
 
-Enfin, nous pouvons utiliser la fonction "String.split" pour séparer les données en utilisant le caractère "=" comme séparateur. Cela nous permettra d'obtenir une liste de paires clé-valeur :
+## Plongée en profondeur:
 
-```Elm
-donnees = String.split "=" fichierTexte
-```
+Historiquement, la lecture de fichiers texte est un aspect important de la programmation, car elle permet de travailler avec des données provenant d'autres sources que le code lui-même. Il existe également d'autres façons de traiter des données, telles que les bases de données ou les API.
 
-Et voilà, nous avons maintenant accès aux données stockées dans notre fichier texte !
+La lecture de fichiers texte en Elm est rendue possible grâce à l'utilisation de certains modules, tels que Text et File. Il est également important de noter que la manière dont les fichiers texte sont lus peut varier selon le système d'exploitation utilisé.
 
-## Plongeons plus en profondeur
+## Voir aussi:
 
-Maintenant que nous avons vu comment lire un fichier texte, il est utile de comprendre comment fonctionnent les fichiers texte en Elm. En général, ils sont stockés sous forme de chaînes de caractères, ce qui signifie que nous pouvons utiliser toutes les fonctions de traitement de chaînes d'Elm pour manipuler les données. De plus, il est important de garder à l'esprit que la fonction "readTextFile" renverra une "Task", qui doit être traitée de manière asynchrone en utilisant la fonction "Task.perform".
-
-## Voir aussi
-
-Pour en savoir plus sur la lecture de fichiers en Elm, vous pouvez consulter ces liens :
-
-- La documentation officielle d'Elm sur la manipulation de fichiers : https://package.elm-lang.org/packages/elm/file/latest/
-- Un exemple de projet utilisant la lecture de fichiers en Elm : https://github.com/elm/file/blob/master/examples/Json.elm
+Pour en savoir plus sur la lecture de fichiers texte en Elm, vous pouvez consulter la documentation officielle sur les modules Text et File. Vous pouvez également explorer d'autres solutions de traitement de données, telles que les bases de données ou les API.

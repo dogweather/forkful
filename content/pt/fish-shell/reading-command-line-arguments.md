@@ -10,33 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que ler argumentos da linha de comando
+## O quê e por quê?
 
-Se você está familiarizado com a programação em shell, provavelmente já ouviu falar sobre a leitura de argumentos da linha de comando. Mas por que essa prática é importante? Bem, ler esses argumentos permite que seu código seja mais dinâmico e adaptável às informações inseridas pelo usuário, tornando-o mais eficiente e fácil de usar.
+Ler argumentos da linha de comando é um processo comum para os programadores. Isso envolve acessar e ler os dados passados ​​para um programa a partir da linha de comando. Os programadores fazem isso para tornar seus programas mais interativos e para permitir que os usuários forneçam informações relevantes durante a execução do programa.
 
-## Como fazer
+## Como fazer:
 
-Para ler argumentos da linha de comando em Fish Shell, primeiro você precisa definir uma variável que irá armazenar esses argumentos, usando o comando `set`. Por exemplo, se você quiser ler três argumentos, pode usar o seguinte código:
-
-```Fish Shell
-set arg1 $argv[1]
-set arg2 $argv[2]
-set arg3 $argv[3]
+```
+Fish Shell tem suporte integrado para ler argumentos da linha de comando. Você pode acessar esses argumentos usando as variáveis ​​específicas do Fish, como $argv e $argc. Aqui está um exemplo simples:
 ```
 
-A variável `$argv` armazena todos os argumentos passados na linha de comando, e cada argumento é acessado usando um índice, começando em 1. Então, o primeiro argumento estará armazenado em `$argv[1]`, o segundo em `$argv[2]` e assim por diante.
+```
+$ fish programa.fish arg1 arg2
+```
 
-Depois de definir as variáveis com os argumentos, você pode usá-las em seu código da maneira que quiser. Por exemplo, se o usuário digitar um nome de arquivo como argumento, você pode usar a variável correspondente para abrir esse arquivo e fazer operações nele.
+```
+O código acima irá ler os argumentos "arg1" e "arg2" e você pode acessá-los usando $argv[1] e $argv[2], respectivamente. Aqui está um exemplo de código para percorrer todos os argumentos passados ​​para o programa:
+```
 
-## Mergulho profundo
+```
+for arg in $argv
+	echo $arg
+end
+```
 
-Há algumas coisas a serem consideradas quando se trata de ler argumentos da linha de comando em Fish Shell. Um detalhe importante é que o primeiro argumento, `$argv[1]`, é sempre o nome do próprio script que está sendo executado. Isso significa que os argumentos inseridos pelo usuário começam a partir de `$argv[2]`.
+## Profundando:
 
-Além disso, é importante saber que o valor de `$argv[1]` pode variar dependendo de como o script é executado. Por exemplo, se o usuário especificar o caminho completo do script (por exemplo, `/home/user/script.fish`), o valor de `$argv[1]` será esse caminho. Mas se o usuário executar o script a partir do diretório atual, usando apenas o nome (por exemplo, `./script.fish`), o valor de `$argv[1]` será apenas o nome do script.
+Ler argumentos da linha de comando é uma técnica que tem sido usada há décadas por programadores. Antes do Fish, outras linguagens de shell, como o Bash, também suportavam a leitura de argumentos da linha de comando. No entanto, o Fish tem uma sintaxe mais simples e intuitiva para acessar esses argumentos.
 
-Você também pode usar a opção `-h` como argumento para exibir uma ajuda ou descrição do script quando ele é executado. Isso pode ser feito verificando se o valor de `$argv[1]` é igual a `-h` e, em seguida, exibindo o texto de ajuda desejado.
+Existem alguns outros métodos para ler argumentos da linha de comando, como usando uma biblioteca externa ou implementando sua própria função de parsing. No entanto, o suporte integrado do Fish torna o processo mais fácil e rápido.
 
-## Veja também
+## Veja também:
 
-- [Tutorial de Fish Shell (em inglês)](https://fishshell.com/docs/current/tutorial.html)
-- [Documentação oficial de Fish Shell (em inglês)](https://fishshell.com/docs/current/index.html)
+- [Documentação oficial do Fish Shell](https://fishshell.com/docs/current/index.html)
+- [Tutorial sobre como ler argumentos da linha de comando em Fish Shell](https://fishshell.com/docs/current/tutorial.html#tut_arguments)
+- [Discussão sobre a leitura de argumentos da linha de comando no Fish Shell Github](https://github.com/fish-shell/fish-shell/issues/206)

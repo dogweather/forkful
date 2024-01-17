@@ -1,7 +1,7 @@
 ---
-title:                "Skriver en tekstfil"
-html_title:           "Elm: Skriver en tekstfil"
-simple_title:         "Skriver en tekstfil"
+title:                "Skrive en tekstfil"
+html_title:           "Elm: Skrive en tekstfil"
+simple_title:         "Skrive en tekstfil"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Files and I/O"
@@ -10,52 +10,21 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+Hva & Hvorfor?
+Å skrive en tekstfil er en måte for programmerere å lagre informasjon på en strukturert måte. Det lar deg lese og skrive data til en fil som kan hentes senere i koden din.
 
-Å skrive en tekstfil kan være en nyttig ferdighet for alle som ønsker å lære å kode i Elm. Det er en enkel måte å lagre og organisere data på, og det kan være nyttig i forskjellige programmeringsprosjekter.
-
-## Slik gjør du det
-
-Det første du må gjøre er å opprette en ny tekstfil med ".elm" som filtype. Deretter kan du begynne å skrive koden din. Her er et enkelt eksempel på hvordan du kan skrive en tekstfil med en liste over tall:
-
-```Elm
--- Definerer en liste med tall
-numbers = [1, 2, 3, 4, 5]
-
--- Åpne en fil for å skrive
-file = File.write "min_tekstfil.elm" (String.join "\n" (List.map String.fromInt numbers))
-
--- Sjekk om filen ble opprettet
-case file of
-    Err error ->
-        Debug.log "Det skjedde en feil!" error
-
-    Ok _ ->
-        Debug.log "Tekstfil opprettet suksessfult!"
+Hvordan:
+Elm har en innebygd funksjon kalt "text" som gjør at du kan skrive tekst til en fil. Denne funksjonen tar inn en tekststreng som parameter og lagrer det i en fil med navnet du angir. Her er et eksempel på hvordan du bruker denne funksjonen:
 ```
-
-Dette eksempelet viser hvordan du kan bruke funksjoner som "File.write" og "String.join" for å skrive en tekstfil med en liste over tall. Som et resultat vil du få en fil kalt "min_tekstfil.elm" som ser slik ut:
-
+Elm.text "Hello World!" "hello.txt"
 ```
-1
-2
-3
-4
-5
-```
+Dette vil skrive teksten "Hello World!" til en fil med navnet "hello.txt" i samme mappe som din Elm-fil.
 
-## Dypdykk
+Dypdykk:
+Tekstfilen har eksistert siden begynnelsen av datamaskinens tidsalder og brukes fortsatt mye i dag. Alternativene til å skrive til en tekstfil i Elm inkluderer å bruke porter, som lar deg kommunisere med eksterne programmer, eller å bruke et annet programmeringsspråk som støtter tekstfilmanipulasjon. Implementeringen av å skrive til en tekstfil i Elm er enkel på grunn av "text" funksjonen som håndterer det meste av arbeidet for deg.
 
-Når du skriver en tekstfil i Elm, er det viktig å vite at filen vil bli lagret i en tekstbasert UTF-8 format. Dette betyr at du kan skrive tekst på mange forskjellige språk, og at filen vil bli lagret riktig.
-
-Noen viktige ting å huske når du skriver en tekstfil i Elm:
-
-- Bruk funksjoner som "File.write" og "String.join" for å skrive data til filen.
-- Bruk "Text.encode" funksjonen for å sørge for at tekstfilen blir lagret i riktig format.
-- Sørg for at du har god forståelse av hvordan filstier fungerer i Elm, slik at du kan lagre og åpne filen på riktig sted.
-
-## Se også
-
-- [Elm Official Documentation](https://guide.elm-lang.org/)
-- [Elm Tutorials](https://elmprogramming.com/)
-- [Elm Community Packages](https://package.elm-lang.org/)
+Se også:
+Foreløpig er det ingen offisielle dokumentasjon for "text" funksjonen, men det er mange ressurser på nettet som kan hjelpe deg med å lære mer om hvordan du kan bruke den og håndtere tekstfiler generelt. Her er noen lenker som kan være nyttige:
+- Offisiell Elm-dokumentasjon: https://elm-lang.org/docs
+- Stack Overflow: https://stackoverflow.com/questions/tagged/elm
+- Elm Slack-kanalen: https://elmlang.herokuapp.com/

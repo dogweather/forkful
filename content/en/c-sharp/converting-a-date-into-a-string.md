@@ -10,32 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-In programming, there are often times when we need to convert data from one type to another. One common conversion is from a date to a string, which is necessary when working with user input or data that needs to be displayed in a specific format. In this article, we will discuss the process of converting a date into a string using C#.
+Date conversion is the process of converting a date data type into a string data type in a programming language. This is a common practice among programmers to enable easier manipulation and display of dates in a human-readable format. It allows programmers to customize the appearance of dates to fit different languages, cultural conventions, and user preferences.
 
-## How To
+## How to:
 
-Converting a date into a string is a fairly simple process in C#. We can achieve this using the `ToString()` method, which is available on all DateTime objects. Let's take a look at a simple example:
+Converting dates into strings in C# is a simple process using the `.ToString()` method. Here's an example:
 
 ```C#
-// Create a new DateTime object with the current date and time
-DateTime currentDate = DateTime.Now;
-
-// Convert the date into a string using the format "MM/dd/yyyy"
-string dateString = currentDate.ToString("MM/dd/yyyy");
-
-// Print the converted string to the console
+DateTime date = new DateTime(2021, 08, 20);
+string dateString = date.ToString("dd/MM/yyyy");
 Console.WriteLine(dateString);
 ```
 
-The code above will output the current date in the format "02/17/2021". We can also customize the format of the string by using different parameters in the `ToString()` method. For example, if we wanted to display the day of the week along with the date, we could use the format "ddd, MM/dd/yyyy", which would output "Wed, 02/17/2021". The possibilities for customization are endless, and you can find a full list of options on Microsoft's documentation for the `ToString()` method.
+The output of this code would be: `20/08/2021`. 
 
-## Deep Dive
+The `.ToString()` method can also accept a format parameter to display the date and time in different formats. For example, using `"dd-MMM-yyyy HH:mm:ss"` as the format parameter would display the date and time as `20-Aug-2021 00:00:00`.
 
-Behind the scenes, the `ToString()` method uses the format string and a `DateTimeFormatInfo` object to convert the date into a string. The `DateTimeFormatInfo` class provides information about how that specific culture formats dates, times, and numbers. By default, the `ToString()` method uses the culture of the current thread, but we can also specify the culture we want to use in the method's parameters. This can be useful when working with data from different cultures or when we want to provide a consistent date format for our users.
+## Deep Dive:
 
-## See Also
+Date and time are essential data types in programming, and converting them into strings is a crucial aspect of programming tasks. The need for date conversion emerged as computer systems and software became more global and needed to accommodate different date conventions. In the early days of programming, dates were often stored as integers or long numbers, making it challenging to read and manipulate them.
 
-- [Microsoft Documentation - DateTime.ToString Method](https://docs.microsoft.com/en-us/dotnet/api/system.datetime.tostring)
-- [Microsoft Documentation - DateTimeFormatInfo Class](https://docs.microsoft.com/en-us/dotnet/api/system.globalization.datetimeformatinfo)
+In C#, the `DateTime` data type represents a date and time, while the `ToString()` method is used to convert it into a string. This method accepts a format parameter that allows developers to control the appearance of the date and time. Some commonly used format parameters in C# include `"MM/dd/yyyy"` for displaying the date in the format of month/day/year, and `"dddd, dd MMMM yyyy"` for displaying the date as the day of the week, day, month, and year (e.g., Friday, 20 August 2021).
+
+There are also other ways to convert dates into strings in C#, such as using the `DateTime.Parse()` method or using the `ToString()` method with custom format providers. These approaches may be helpful for more advanced scenarios, but for most cases, using the simple `.ToString()` method with a format parameter will suffice.
+
+## See Also:
+
+Microsoft C# DateTime.ToString() Method: https://docs.microsoft.com/en-us/dotnet/api/system.datetime.tostring 
+
+Custom Date and Time Format Strings in C#: https://docs.microsoft.com/en-us/dotnet/standard/base-types/custom-date-and-time-format-strings 
+
+C# DateTime.Parse() Method: https://docs.microsoft.com/en-us/dotnet/api/system.datetime.parse

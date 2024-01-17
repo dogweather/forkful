@@ -1,7 +1,7 @@
 ---
-title:                "Hitta längden på en sträng"
-html_title:           "Swift: Hitta längden på en sträng"
-simple_title:         "Hitta längden på en sträng"
+title:                "Att hitta längden på en sträng."
+html_title:           "Swift: Att hitta längden på en sträng."
+simple_title:         "Att hitta längden på en sträng."
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -10,38 +10,21 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
+Att hitta längden på en sträng är att bestämma den totala mängden tecken som utgör en sträng. Programerare behöver ofta denna information för att utföra olika operationer eller för att kontrollera om förväntad input är av rätt längd.
 
-Att hitta längden av en sträng är en viktig del av programmering eftersom det låter dig manipulera och hantera data på ett effektivt sätt. Det är också en grundläggande färdighet som är användbar för att lösa olika problem i en mängd olika program.
+## Så här gör du:
+För att få längden på en sträng i Swift, använd ```count``` metoden på strängen och spara resultatet i en variabel.
 
-## Hur man gör
-
-För att hitta längden av en sträng i Swift, kan du använda `count` metoden. Detta gör att du enkelt kan räkna antalet tecken i en sträng oavsett dess innehåll.
-
+Exempel:
 ```Swift
-let myString = "Hej! Välkommen till Swift!"
-let length = myString.count
-print(length) // Output: 26
+let message = "Hej världen!"
+let length = message.count // output: 13
 ```
 
-Du kan också använda `String` objektets `count` egenskap för att hitta längden av en sträng:
+## Djupdykning:
+Historiskt sett har det funnits flera sätt att hitta längden på en sträng, men i Swift är ```count``` metoden den mest använda och effektiva metoden. Andra språk kan ha liknande metoder som kallas ```len``` eller ```length``` istället.
 
-```Swift
-let anotherString = "🌎 Hello, world!"
-let length = anotherString.count
-print(length) // Output: 15
-```
-
-Det är också värt att notera att tomma strängar har en längd på 0. Så när du använder `count` metoden på en tom sträng, kommer den att returnera 0.
-
-## Djupdykning
-
-När du använder `count` metoden, måste du vara medveten om att det returnerar antalet Unicode-tecken i en sträng. Detta innebär att även emoticons och andra specialtecken betraktas som enbart ett tecken, även om de kan visas som flera tecken på skärmen.
-
-Det finns också andra metoder som är relaterade till att hitta längden av en sträng, som till exempel `utf8.count` som returnerar antalet byte som behövs för att lagra strängen i UTF-8 format. Att förstå dessa olika metoder och deras användningsområden kan vara fördelaktigt i vissa situationer.
-
-## Se även
-
-- [The Swift Programming Language Guide](https://docs.swift.org/swift-book/LanguageGuide/TheBasics.html)
-- [String Manipulation in Swift](https://medium.com/swift-india/string-manipulation-in-swift-17f19945a9d8)
-- [Working with Strings in Swift](https://www.hackingwithswift.com/articles/178/working-with-strings-in-swift)
+## Se även:
+- [String manipulation in Swift](https://www.raywenderlich.com/9481-string-processing-in-swift)
+- [Working with strings in Swift](https://learnappmaking.com/working-with-string-swift-how-to-guide/)

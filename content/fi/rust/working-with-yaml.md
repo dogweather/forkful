@@ -1,7 +1,7 @@
 ---
-title:                "Työskentely yaml:n kanssa"
-html_title:           "Rust: Työskentely yaml:n kanssa"
-simple_title:         "Työskentely yaml:n kanssa"
+title:                "Työskentely yamlin kanssa"
+html_title:           "Rust: Työskentely yamlin kanssa"
+simple_title:         "Työskentely yamlin kanssa"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Data Formats and Serialization"
@@ -10,38 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä ja miksi?
+YAML (YAML Ain't Markup Language) on tiedostoformaatti, joka mahdollistaa datan tallentamisen selkeään ja luettavaan muotoon. YAML-tiedostot sisältävät tietoa tietorakenteista ja niitä käytetään usein konfigurointitiedostoina ohjelmistoissa. Ohjelmoijat käyttävät YAML:ää helpottaakseen datan tallentamista, lataamista ja käsittelyä ohjelmistoissaan.
 
-YAML-tiedostot ovat yleinen tapa tallentaa ja jakaa tietoja ohjelmistokehityksessä. Käyttämällä Rustia, voit käsitellä ja muokata YAML-tiedostoja tehokkaasti ja luotettavasti.
-
-## Kuinka
-
-YAML-tukea ei sisällytä Rustin standardikirjastoon, mutta se voidaan helposti lisätä kolmannen osapuolen kirjaston avulla. Tässä on esimerkki käytöstä serde_yaml -kirjaston avulla, jotta voit muuntaa YAML-tiedostot Rust-tietorakenteiksi:
+## Miten?
+Rustissa voit käyttää YAML:n käsittelyyn esimerkiksi ranke- tai serde-yaml-kirjastoja. Seuraavat esimerkit näyttävät, kuinka voit luoda ja lukea YAML-tiedostoja Rustin avulla.
 
 ```Rust
-// Lisää riippuvuus Cargo.toml-tiedostoon
-[riippuvuudet]
-serde_yaml = "0.8"
+// Luo YAML-tiedosto ja tallenna siihen tietoa
+let data = "
+name: John
+age: 30
+hobbies:
+- hiking
+- reading
+";
 
-// Tuo kirjasto
-Käyttö serde_yaml::aukeama;
+let mut file = File::create("tiedosto.yaml").unwrap();
+file.write_all(data.as_bytes()).unwrap();
 
-// Lue YAML-tiedosto ja muunna se rakenteeksi
-puu = serde_yaml::from_str(r"---
-nimet:
-  - Mikko
-  - Anna
-  - Juuso")?;
+// Lukee YAML-tiedostosta tiedot ja tulostaa ne konsoliin
+let f = File::open("tiedosto.yaml").unwrap();
+let buf_reader = BufReader::new(f);
+
+let yaml_value: Yaml = serde_yaml::from_reader(buf_reader).unwrap();
+println!("{:?}", yaml_value);
 ```
 
-Yllä olevassa esimerkissä luodaan puu-tyyppinen tietorakenne, jossa on "nimet" -kenttä, joka sisältää kolme nimeä. Voit käyttää samaa lähestymistapaa myös kirjoittaessasi Rust-tietorakenteita YAML-tiedostoiksi.
+## Syvemmälle
+YAML kehitettiin helpottamaan datan käsittelyä ja tiedon siirtämistä ohjelmien välillä. Se on suosittu vaihtoehto XML-tiedostoille, sillä YAML on helpompi lukea ja kirjoittaa ihmisille. Rustissa on myös muita vaihtoehtoja YAML:n käsittelyyn, kuten yaml-rust ja yaml-rs, jotka myös tarjoavat erilaisia toiminnallisuuksia.
 
-## Syvempi sukellus
-
-serde_yaml -kirjasto käyttää serde -kirjastoa muuntamaan YAML-muodon tietorakenteiksi ja takaisin. Voit lisätä benett-yaml -kirjaston konfiguroimaan muunnetun YAMLin muodon ja tiedostorakenne kirjoitettavaksi. Tämä antaa sinulle enemmän hallintaa siitä, miten tiedostoja käsitellään ja varmistaa, että ne ovat yhteensopivia muiden ohjelmien kanssa, jotka käyttävät YAML-tiedostomuotoa.
+YAML-tiedosto koostuu avain-arvo pareista, jotka on jäsennetty sisennyksillä. Tämä tarkoittaa, että tiedosto on helposti luettavissa ja ymmärrettävissä. YAML-tiedostoa käytetään yleisesti esimerkiksi konfigurointitiedostoina ohjelmistoissa ja tietojen tallentamiseen tietokannoissa.
 
 ## Katso myös
-
-- [serde_yaml-dokumentaatio](https://docs.rs/serde_yaml/0.8.16/serde_yaml/)
-- [benett-yaml-dokumentaatio](https://docs.rs/bennett-yaml/0.7.0/bennett_yaml/)
-- [YAML-spesifikaatio](https://yaml.org/spec/1.2/spec.html)
+- [Rustin virallinen dokumentaatio](https://doc.rust-lang.org/stable/book/ch11-00-testing.html)
+- [Ross Cruickshank: Yaml-rust](https://github.com/rust-lang-nursery/yaml-rust)
+- [Buster Neece: Yaml-rs](https://github.com/cybergeek94/yaml-rs)

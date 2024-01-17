@@ -10,89 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum?
+Gleam: JSON woordenboek
 
-Du bist entweder auf der Suche nach einer Sprache, die einfach zu verstehen und zu verwenden ist, oder du hast bereits von Gleam gehört und möchtest mehr darüber erfahren. In jedem Fall bist du hier genau richtig, denn in diesem Artikel werden wir uns mit der Verwendung von JSON in Gleam befassen.
+## Was & Warum?
 
-JSON (JavaScript Object Notation) ist ein äußerst beliebtes Datenformat, das für die Übertragung von strukturierten Daten verwendet wird. In der heutigen Zeit der Webanwendungen und APIs ist es unerlässlich, sich mit JSON vertraut zu machen. Aber warum sollte man sich speziell für Gleam entscheiden? Nun, Gleam ist eine moderne, funktionale und typisierte Sprache, die es dir ermöglicht, JSON in einer einfachen und sicheren Weise zu verarbeiten.
+JSON, auch bekannt als "JavaScript Object Notation", ist ein Datenformat, das häufig von Programmierern verwendet wird, um Daten zu speichern und zu übertragen. Es basiert auf der Syntax von JavaScript, ist aber unabhängig von der Programmiersprache und leicht zu lesen und zu schreiben. Programmierer verwenden JSON, um Daten zwischen verschiedenen Anwendungen und Systemen auszutauschen und zu verarbeiten, da es ein universelles Format ist, das von vielen gängigen Programmiersprachen unterstützt wird.
 
-## Wie man JSON in Gleam verwendet
+## Wie:
 
-Um mit JSON in Gleam zu arbeiten, benötigen wir das Paket `gleam/json`, das bereits in der Standardbibliothek von Gleam enthalten ist. Zunächst müssen wir dieses Paket importieren, indem wir `import json` am Anfang unserer Datei hinzufügen.
+ẞeitdem Gleam ein Typsystem hat, erleichtert es die Arbeit mit JSON. Der Typ ```Json.Value``` ermöglicht es, jedes JSON-Datenobjekt zu repräsentieren. Um auf ein bestimmtes Objekt oder Attribut zuzugreifen, können wir die Gleam-Weile-Schreibweise verwenden.
 
-Als nächstes definieren wir einen JSON-String in einer Variable:
+Beispiel:
 
-```
-let json_string =
-  """
-  {
-      "name": "John Doe",
-      "age": 30,
-      "hobbies": ["reading", "cooking", "hiking"],
-      "is_active": true
-  }
-  """
+```Gleam
+let json = Json.from_string("{ "name": "Max", "age": 25 }")
+let name = json.name
+let age = json.age
 ```
 
-Für eine einfache Überprüfung können wir den Inhalt dieser Variable mit `debug.print` ausgeben:
+Ausgabe:
 
 ```
-debug.print(json_string)
+"Hallo Max, du bist 25 Jahre alt!"
 ```
 
-Die Ausgabe sollte folgendermaßen aussehen:
+Um Daten in JSON umzuwandeln, können wir die Funktion ```Json.to_string``` verwenden, die ein Gleam-JSON-Wert als Parameter akzeptiert und eine lesbare JSON-Zeichenfolge zurückgibt.
 
-```
-{
-    "name": "John Doe",
-    "age": 30,
-    "hobbies": ["reading", "cooking", "hiking"],
-    "is_active": true
-}
+Beispiel:
+
+```Gleam
+let person = Json.from_string("{ "name": "Lisa", "age": 30 }")
+let person_as_json = Json.to_string(person)
 ```
 
-Jetzt können wir diese JSON-Daten in ein Gleam-Modul konvertieren und die Inhalte der verschiedenen Schlüsselwörter abrufen:
+Ausgabe:
 
 ```
-let john = json.parse(json_string)
-
-let name = json.get(john, "name")
-let age = json.get_int(john, "age")
-let hobbies = json.get_array(john, "hobbies")
-let is_active = json.get_bool(john, "is_active")
-
-debug.print("Name: {}", [name])
-debug.print("Age: {}", [age])
-debug.print("Hobbies: {}", [hobbies])
-debug.print("Is Active: {}", [is_active])
-
+"{ "name": "Lisa", "age": 30 }"
 ```
 
-Die Ausgabe sieht wie folgt aus:
+## Tiefer Eintauchen:
 
-```
-Name: John Doe
-Age: 30
-Hobbies: ["reading", "cooking", "hiking"]
-Is Active: true
-```
+JSON wurde ursprünglich 2001 von Douglas Crockford entwickelt und ist seitdem zu einem beliebten Format für die Übertragung von Daten zwischen Anwendungen geworden. Es wird oft als Alternative zu XML verwendet, da es kompakter und leichter zu lesen und zu schreiben ist. Auch in der heutigen Zeit wird es immer noch häufig in Webentwicklung und APIs verwendet.
 
-Nun, was ist, wenn wir den Wert eines Schlüssels aktualisieren möchten? Das ist mit Gleam auch sehr einfach:
+Es gibt einige Alternativen zu JSON, wie z.B. YAML oder MessagePack, aber aufgrund seiner Einfachheit und Universalität bleibt JSON die bevorzugte Wahl für viele Programmierer. In Gleam ermöglicht das Typsystem eine robuste und sichere Verarbeitung von JSON-Daten.
 
-```
-let updated_json_string = json.set(json_string, "age", 35)
-```
+## Siehe auch:
 
-Die Variable `updated_json_string` enthält nun den aktualisierten Wert von `age`.
-
-## Tiefere Einblicke in die Verwendung von JSON in Gleam
-
-Wie du sehen kannst, ist die Verarbeitung von JSON-Daten in Gleam sehr einfach und intuitiv. Aber es gibt noch weitere Möglichkeiten, wie du mit JSON in Gleam arbeiten kannst. Du kannst beispielsweise mithilfe des `from_bytes`-Befehls JSON direkt aus einem Byte-Array parsen oder mit dem `decode`-Befehl direkt in ein benutzerdefiniertes Gleam-Datentypen konvertieren.
-
-Um mehr über die verschiedenen Funktionen und Möglichkeiten der Verwendung von JSON in Gleam zu erfahren, empfehlen wir dir, die offizielle Gleam-Dokumentation zu besuchen.
-
-## Siehe auch
-
-- [Gleam-Dokumentation zu JSON](https://gleam.run/documentation/standard-library/json.html)
-- [JSON-Standard](https://www.json.org/json-de.html)
-- [Einführung in die Funktionsprogrammierung in Gleam](https://medium.com/@lpil/introduction-to-functional-programming-with-gleam-39b28767cbbe)
+- [JSON Tutorial auf w3schools.com](https://www.w3schools.com/js/js_json_intro.asp)
+- [Gleam-Dokumentation für JSON](https://gleam.run/articles/json/overview)

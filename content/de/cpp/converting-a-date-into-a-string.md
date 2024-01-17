@@ -1,7 +1,7 @@
 ---
-title:                "Umwandlung eines Datums in eine Zeichenkette"
-html_title:           "C++: Umwandlung eines Datums in eine Zeichenkette"
-simple_title:         "Umwandlung eines Datums in eine Zeichenkette"
+title:                "Umwandlung eines Datums in einen String"
+html_title:           "C++: Umwandlung eines Datums in einen String"
+simple_title:         "Umwandlung eines Datums in einen String"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Dates and Times"
@@ -10,53 +10,79 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum 
+## Was & Warum?
+"Datum in Zeichenfolge konvertieren" mag wie eine aufwendige Aufgabe klingen, aber es ist tatsächlich eine ziemlich häufige Aufgabe für Programmierer. Es bezieht sich einfach auf die Umwandlung eines Datums in eine menschenlesbare Form – ein String.
+Warum tun wir das? Nun, manchmal müssen wir Daten in einem bestimmten Format ausgeben oder speichern, das vom Benutzer leichter zu lesen oder zu verarbeiten ist. Die Konvertierung eines Datums in eine Zeichenfolge ermöglicht es uns, dies zu tun und gleichzeitig die Flexibilität zu haben, das Format nach Bedarf anzupassen.
 
-Werfen wir einen Blick auf die Notwendigkeit, ein Datum in einen String umzuwandeln. Oftmals müssen wir Daten in einem bestimmten Format ausgeben, sei es für eine Benutzeroberfläche, eine Datei oder eine Datenbank. Durch die Umwandlung in einen String können wir sicherstellen, dass das Datum in der gewünschten Form angezeigt wird.
-
-## Wie das geht
-
-Die Konvertierung eines Datums in einen String in C++ kann mit der Standardbibliotheksfunktion `to_string()` erfolgen. Zunächst müssen wir jedoch das Datum als  `tm`-Struktur definieren und mit Werten füllen. Hier ist ein Beispielcode, der das aktuelle Datum in einen String im Format "TT/MM/JJJJ" umwandelt:
-
+## Anleitung:
+### Beispiel 1:
 ```C++
 #include <iostream>
-#include <sstream>
-#include <iomanip>
+#include <string>
 #include <ctime>
 
-int main() {
-    // Definition einer tm-Struktur für das aktuelle Datum
-    std::tm date;
-    // Abrufen des aktuellen Datums und Zuweisen an die Struktur
-    std::time_t t = std::time(0);
-    date = *std::localtime(&t);
+using namespace std;
 
-    // Konvertierung in einen String
-    std::stringstream ss;
-    ss << std::put_time(&date, "%d/%m/%Y");
-    std::string date_string = ss.str();
-    
-    // Ausgabe des Strings
-    std::cout << "Das Datum im Format TT/MM/JJJJ lautet: " << date_string << std::endl;
+int main()
+{
+    // Erstellen eines tm-Structs mit einem bestimmten Datum
+    struct tm date = {0, 0, 0, 31, 12, 2021 - 1900};
+
+    // Konvertieren in eine Zeichenfolge mit dem Format "31-12-2021"
+    char str_date[11];
+    strftime(str_date, 11, "%d-%m-%Y", &date);
+
+    // Ausgabe des Ergebnisses
+    cout << "Das Datum in Zeichenfolge konvertiert: " << str_date << endl;
+
     return 0;
 }
 ```
-
-Dieser Code verwendet die Funktion `put_time()`, um das `tm`-Datum basierend auf dem angegebenen Format in einen String zu schreiben. In diesem Fall verwenden wir `%d` für den Tag, `%m` für den Monat und `%Y` für das Jahr.
-
-Die Ausgabe des obigen Beispiels wäre:
+Ausgabe:
 ```
-Das Datum im Format TT/MM/JJJJ lautet: 13/11/2021
+Das Datum in Zeichenfolge konvertiert: 31-12-2021
 ```
+Hier haben wir das Standard-C++-Daten- und Uhrzeit-Header-Datei <ctime> verwendet, um ein tm-Struct zu erstellen, das unser Datum enthält. Dann haben wir strftime verwendet, um das Datum in eine Zeichenfolge zu konvertieren, mit dem Format "%d-%m-%Y", das die Tag-Monat-Jahr-Reihenfolge verwendet und das Jahr in voller Länge anzeigt.
 
-## Tiefergehende Informationen
+### Beispiel 2:
+```C++
+#include <iostream>
+#include <string>
+#include <chrono>
+#include <iomanip>
 
-Es ist wichtig zu beachten, dass die oben genannte Methode zur Zeit nur mit dem Compiler C++11 oder höher kompatibel ist. Vorherige Versionen von C++ unterstützen diese Funktion nicht.
+using namespace std;
 
-Es gibt auch andere Möglichkeiten, ein Datum in einen String zu konvertieren, wie zum Beispiel die Verwendung von `strftime()` oder das Ausführen von benutzerdefiniertem Code, um die Konvertierung durchzuführen. Es ist wichtig, die richtige Methode je nach Anwendungsfall auszuwählen.
+int main()
+{
+    // Erstellen eines currTime-Objekts, das die aktuelle Zeit enthält
+    auto currTime = chrono::system_clock::now();
 
-## Siehe auch
+    // Konvertieren in eine Zeichenfolge mit dem Format "15-11-2019 20:20:00"
+    time_t time = chrono::system_clock::to_time_t(currTime);
+    char str_time[20];
+    strftime(str_time, 20, "%d-%m-%Y %H:%M:%S", localtime(&time));
 
-- [CppReference: to_string() Funktion](https://en.cppreference.com/w/cpp/string/basic_string/to_string)
-- [CppReference: put_time() Funktion](https://en.cppreference.com/w/cpp/io/manip/put_time)
-- [CppReference: strftime() Funktion](https://en.cppreference.com/w/cpp/chrono/c/strftime)
+    // Ausgabe des Ergebnisses
+    cout << "Das aktuelle Datum und Uhrzeit in Zeichenfolge konvertiert: " << str_time << endl;
+
+    return 0;
+}
+```
+Ausgabe:
+```
+Das aktuelle Datum und Uhrzeit in Zeichenfolge konvertiert: 15-11-2019 20:20:00
+```
+Hier haben wir <chrono> verwendet, um ein currTime-Objekt zu erstellen, das die aktuelle Zeit enthält. Dann haben wir strftime verwendet, um das Datum und die Uhrzeit in eine Zeichenfolge zu konvertieren, mit dem Format "%d-%m-%Y %H:%M:%S", das das Datum, die Stunden, Minuten und Sekunden anzeigt.
+
+## Tiefere Einblicke:
+Die Konvertierung eines Datums in eine Zeichenfolge mag zunächst trivial erscheinen, aber es gibt einige Aspekte, die beachtet werden müssen. Zum einen können wir verschiedene Formate verwenden, abhängig von unseren Anforderungen. Zum Beispiel könnte es hilfreich sein, einige der Grammatikfunktionen zu verwenden, die strftime anbietet, um die Ausgabe in der Sprache des Benutzers zu formatieren.
+
+Außerdem ist es wichtig zu beachten, dass die Konvertierung umkehrbar sein muss – die Möglichkeit, eine Zeichenfolge in ein Datum zu konvertieren, ist genauso wichtig. Hierfür gibt es jedoch verschiedene Methoden und es ist wichtig, die entsprechende Methode zu wählen, die auf die Art und Weise angepasst ist, wie das Datum ursprünglich konvertiert wurde.
+
+Schließlich gibt es noch andere Möglichkeiten, ein Datum in einer Zeichenfolge darzustellen, wie z.B. die Verwendung von Uhrzeit- und Datumsformaten, die internationalen Standards entsprechen, wie zum Beispiel ISO 8601.
+
+## Siehe auch:
+- [strftime Funktion](https://en.cppreference.com/w/cpp/chrono/strftime)
+- [Zeichenfolgenkonvertierung in std::chrono](https://www.fluentcpp.com/2017/04/21/how-to-convert-std-time_t-to-std-chrono-system_clocktime_point/)
+- [ISO 8601 Format](https://www.iso.org/iso-8601-date-and-time-format.html)

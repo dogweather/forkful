@@ -1,7 +1,7 @@
 ---
-title:                "Utskrift av felsökningsutmatning"
-html_title:           "Go: Utskrift av felsökningsutmatning"
-simple_title:         "Utskrift av felsökningsutmatning"
+title:                "Utskrift av felsökningsutdata"
+html_title:           "Go: Utskrift av felsökningsutdata"
+simple_title:         "Utskrift av felsökningsutdata"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Testing and Debugging"
@@ -10,13 +10,11 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
+Debugging handlar om att söka och åtgärda buggar eller fel i din kod. Ibland kan det vara svårt att förstå varför en kod inte fungerar som den ska, och det är då man behöver hjälp för att hitta problemet och lösa det. Genom att skriva ut debug information kan du som programmerare enkelt följa hur din kod beter sig och identifiera felaktiga eller oönskade resultat.
 
-När man arbetar med att utveckla program eller applikationer i Go, är det viktigt att kunna hitta och åtgärda eventuella fel och buggar. Genom att lägga till debug-utskrifter i koden, kan man få en bättre förståelse för koden och dess beteende, vilket i sin tur kan göra processen med att felsöka enklare och snabbare.
-
-## Hur man gör
-
-För att skriva ut debug-utskrifter i Go, kan vi använda funktionen `fmt.Printf()`. Denna funktion tar två argument - en string med ett format och en lista med värden som ska skrivas ut. Låt oss ta en titt på ett kodexempel:
+## Så här:
+Att skriva ut debug information i Go är enkelt. Du kan använda funktionen fmt.Println() för att skriva ut en sträng, variabel eller annan data till terminalen eller kommandotolken. Här är ett exempel på hur du kan göra det:
 
 ```Go
 package main
@@ -24,58 +22,36 @@ package main
 import "fmt"
 
 func main() {
-    num1 := 10
-    num2 := 5
-    fmt.Printf("Num1 is %d and num2 is %d.\n", num1, num2)
+   name := "Elin"
+   fmt.Println("Hej", name, "välkommen till Go programmering!")
 }
 ```
 
-I detta exempel skapar vi två variabler, `num1` och `num2`, och sedan skriver vi ut deras värden i en string genom att använda `%d` som placeholders och lista de två variablerna som argument.
+När du kör programmet ska det visa följande output: "Hej Elin, välkommen till Go programmering!"
 
-När vi kör denna kod får vi följande utskrift:
-
-```
-Num1 is 10 and num2 is 5.
-```
-
-Detta är ett enkelt exempel, men mängden information som du kan skriva ut och formatera med `fmt.Printf()` är obegränsad.
-
-## Djupdykning
-
-I de flesta fall kommer du troligtvis inte vilja ha debug-utskrifter permanent i din kod. Därför är det viktigt att kunna "toggle" dessa utskrifter utan att behöva ändra koden varje gång.
-
-En bra lösning på detta är att använda `log`-paketet i Go, som ger oss möjlighet att enkelt ställa in en nivå av loggning baserat på åtgärdenivåer (t.ex. `debug`, `info`, `warning`, `error`, etc.).
-
-För att använda log-paketet, måste vi först importera det i vår kod:
+Du kan också använda funktionen fmt.Printf() för mer detaljerade utskrifter. Detta tillåter dig att specificera formateringssträngar för olika datatyper. Här är ett exempel på hur du kan använda det:
 
 ```Go
-import "log"
+package main
+
+import "fmt"
+
+func main() {
+   age := 25
+   fmt.Printf("Min ålder är %d år.", age)
+}
 ```
 
-Sedan kan vi använda funktionen `Print()` för att skriva ut ett meddelande:
+Outputen kommer att vara: "Min ålder är 25 år."
 
-```Go
-log.Print("Debug message")
-```
+## Djupdykning:
+Debugging är en viktig del av programmering och har funnits sedan början av datorer. I äldre programmeringsspråk, som C och C++, användes vanligtvis funktioner som printf() och fprintf() för att skriva ut debug information. I dagens moderna språk som Go finns det inbyggda funktioner för att enkelt skriva ut debug information.
 
-För att ställa in loggnivån, kan vi använda funktionen `SetOutput()` och ange en fil där logg-meddelanden ska skrivas till:
+Alternativ till att skriva ut debug information är att använda debuggers eller att lägga till loggningsfunktionalitet i din kod. Men att skriva ut debug information är en snabb och enkel metod som fortfarande är användbar och populär bland programmerare.
 
-```Go
-log.SetOutput(os.File("logfile.log"))
-```
+Go har också en mängd inbyggda funktioner som kan hjälpa till vid debugging, som t.ex. runtime package som ger åtkomst till information om ditt program och dess körexekvering.
 
-Vi kan också använda `SetFlags()` för att specificera vilken information som ska inkluderas i logg-meddelanden, som t.ex. timestamp eller loggnivå.
-
-En annan användbar funktion är `Printf()`, som fungerar på samma sätt som `fmt.Printf()` men skriver till loggen istället för att skriva ut på skärmen:
-
-```Go
-log.Printf("Num1 is %d and num2 is %d.\n", num1, num2)
-```
-
-Med hjälp av log-paketet, kan vi enkelt lägga till och ta bort debug-utskrifter från vår kod utan att behöva ändra koden varje gång.
-
-## Se även
-
-- [Go Documentation: Package "log"](https://golang.org/pkg/log/)
-- [A Guide to Logging in Go](https://www.ardanlabs.com/blog/2013/11/using-log-package-in-go.html)
-- [Debugging Go Code](https://www.calhoun.io/debugging-go-code-from-the-very-basics-to-pitfalls-to-avoid/)
+## Se även:
+- [Go language specification](https://golang.org/ref/spec) - officiell specifikation för Go språket.
+- [Go tour](https://tour.golang.org/welcome/1) - ett interaktivt sätt att lära dig Go programmering.
+- [The Go Blog](https://blog.golang.org/) - offentlig blogg för nyheter och uppdateringar om Go.

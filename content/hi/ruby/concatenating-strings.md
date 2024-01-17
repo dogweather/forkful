@@ -1,7 +1,7 @@
 ---
-title:                "स्ट्रिंग को जोड़ना"
-html_title:           "Ruby: स्ट्रिंग को जोड़ना"
-simple_title:         "स्ट्रिंग को जोड़ना"
+title:                "स्ट्रिंग्स के जोड़ने"
+html_title:           "Ruby: स्ट्रिंग्स के जोड़ने"
+simple_title:         "स्ट्रिंग्स के जोड़ने"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Strings"
@@ -10,37 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+# क्या और क्यों?
 
-Agar aapne kabhi bhi Ruby programming language ke baare mein suna hai ya kisi experienced programmer se baat ki hai, toh aapko pata hoga ki isme "string concatenation" ek bahut important concept hai. Isse aap apne programs mein strings ko jod kar alag-alag words aur sentences bana sakte hain. Yeh ek bahut useful technique hai jo aapke coding skills ko improve karti hai.
+कंकेटिंग स्ट्रिंग क्या है और क्यों प्रोग्रामर्स इसे करते हैं?
 
-## How To
+कंकेटिंग स्ट्रिंग एक प्रोग्रामिंग टेक्निक है जिसमें हम दो या अधिक स्ट्रिंग्स को एक साथ जोड़ते हैं। ये एक आसान तरीका है एक स्ट्रिंग की तुलना में दूसरी स्ट्रिंग को जोड़ने का। प्रोग्रामर्स इसे करते हैं क्योंकि ये कोडिंग को सरल बनाता है और दोनों स्ट्रिंग वैल्यू को एक साथ प्रकट करने में मदद करता है।
 
-Iske liye sabse pehle aapko Ruby language ko achi tarah se samajhna hoga. Uske baad aapke paas kuch options hain strings ko concatenate karne ke liye. Yeh options aapko "```+```" plus operator aur "```<<```" concatenation assignment operator ke through dikhenge. Ab dekhte hain kaise hum inka use karein:
+## कैसे करें?
 
-```Ruby
-# Plus operator ka use karke string concatenate karna:
+रूबी में स्ट्रिंग्स को कोनकेट करने के लिए हम `+` और `concat` मेथड का उपयोग कर सकते हैं। यहां हम `+` और `concat` मेथड का उदाहरण दे रहे हैं:
 
-puts "Hello" + " " + "World"  
-# Output: Hello World 
+```ruby
+first_name = "राम"
+last_name = "लक्ष्मण"
 
-# Concatenation assignment operator ka use karke string concatenate karna:
+full_name = first_name + last_name
+puts full_name
+# रामलक्ष्मण
 
-name = "Hindi"
-name << " is a beautiful language."
-puts name
-# Output: Hindi is a beautiful language.
+full_name = first_name.concat(last_name)
+puts full_name
+# रामलक्ष्मण
 ```
 
-Yeh coding examples mein aapne dekha ki hum "```+```" operator aur "```<<```" operator ka use karke strings ko concatenate kar sakte hain. Aapke paas aur bhi options hain jaise "```concat()```" method aur "```interpolation```" method, jo aap apni research kar sakte hain.
+प्रोग्राम में `+` का उपयोग किया जाता है जब हम स्ट्रिंग्स में एक साथ जोड़ना चाहते हैं और `concat` का उपयोग हो जाता है जब हम स्ट्रिंग्स पर बड़े प्रभाव को उत्पन्न करने की आवश्यकता होती है। आप ये भी देख सकते हैं कि `concat` बड़े लंबे स्ट्रिंग्स पर काम करने में `+` से प्रभावी होता है।
 
-## Deep Dive
+## गहराई जाँच
 
-Yeh important hai ki aap Ruby language mein strings ko concatenate karte waqt kaise spaces ka use karte hain. Agar aapka program mein spaces nahi hain toh aapke output mein words aur sentences sahi se display nahi honge. Iske liye hum quotes ya phir interpolation method ka use kar sakte hain. Iske alawa, agar aap multiple variables ko concatenate karte hain, toh unmein se kisi bhi variable mein jitne bhi spaces honge, unhe output mein bhi include kiya jayega.
+### ऐतिहासिक पृष्ठभूमि
 
-## See Also
-[Official Ruby Language Documentation](https://ruby-lang.org)
+कंकेटिंग स्ट्रिंग एक पुरानी और प्रभावी प्रोग्रामिंग टेक्निक है। ये कंप्यूटर की शुरुआती दौर से ही उपयोग में आया है जब स्ट्रिंग्स को जोड़ना थोड़ा मुश्किल होता था। आज भी ये टेक्निक बहुत सरल और आसान है और बहुत से प्रोग्रामिंग भाषाओं में उपलब्ध है।
 
-[Ruby Beginner's Guide](https://www.rubyguides.com)
+### वैकल्पिक तरीके
 
-[Ruby String Methods](https://www.rubyguides.com/2018/04/ruby-string-methods/)
+कंकेटिंग स्ट्रिंग के अलावा भी कुछ तरीके हैं जो हमें स्ट्रिंग्स को जोड़ने की अनुमति देते हैं। प्रोग्रामिंग भाषाओं में इनमें से कुछ कोड को शामिल हैं, जो एक साथ स्ट्रिंग्स को जोड़ने के लिए उपयोग किया जा सकता है। हालांकि, कंकेटिंग स्ट्रिंग का उपयोग आज भी बहुत सरल और प्रभावी है।
+
+### जानने के लिए
+
+कंकेटिंग स्ट्रिंग के बारे में और भी जानकारी प्राप्त करने के लिए आप निम्नलिखित स्रोतों पर जा सकते हैं:
+
+- https://www.rubyguides.com/2019/02/ruby-string-concatenation

@@ -10,31 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
-Att skriva tester är ett viktigt steg i utvecklingsprocessen för att säkerställa att koden fungerar som förväntat och att eventuella buggar upptäcks och åtgärdas i ett tidigt skede. Det hjälper även till att förbättra kodens kvalitet och underlättar för teamarbetet.
+### Vad & Varför?
+Att skriva tester är en viktig del av programmering. Det innebär helt enkelt att skapa kod som kontrollerar och verifierar att vår huvudkod fungerar som den ska. Detta hjälper oss att upptäcka eventuella fel och buggar i vår kod tidigt, vilket leder till en mer stabil och pålitlig produkt.
 
-## Så här gör du
-För att börja skriva tester i Bash, används kommandot `assert`. Detta kommando tar in två parametrar, ett villkor och ett meddelande, och kommer att jämföra villkoret med det förväntade resultatet. Om villkoret är sant, kommer testet att passera, annars kommer det att misslyckas och det angivna meddelandet kommer att visas.
+### Hur man gör:
+Här är ett enkelt exempel på hur man skriver ett test i Bash:
 
-Här är ett exempel på hur man skriver ett enkelt test för en funktion som lägger ihop två tal:
-
-```
-Bash function add(a, b) {
-  echo $(($a + $b))
+```Bash
+# Skapa en funktion som adderar två tal
+add() {
+  echo $(($1 + $2))
 }
 
-assert "add 2 3" "5" 
+# Testa funktionen med två olika input och förväntat output
+test_add() {
+  result=$(add 2 3)
+  if [ $result -eq 5 ]; then
+    echo "Test success: 2 + 3 = 5"
+  else
+    echo "Test failed: 2 + 3 != 5"
+  fi
+
+  result=$(add 5 10)
+  if [ $result -eq 15 ]; then
+    echo "Test success: 5 + 10 = 15"
+  else
+    echo "Test failed: 5 + 10 != 15"
+  fi
+}
+
+# Kör testet
+test_add
 ```
 
-I det här fallet tar vi in parametrarna 2 och 3 till funktionen `add` och förväntar oss resultatet 5. Om funktionen returnerar ett annat värde, kommer testet att misslyckas och meddelandet "5" kommer att visas.
+Exempel på hur detta kan se ut när du kör det:
 
-## Djupdykning
-Det finns flera olika sätt att skriva tester i Bash, beroende på vilken typ av test du vill göra. Det kan vara enkelt att skriva små enhetstester för enskilda funktioner, men det kan bli mer komplicerat när det kommer till integrations- eller systemtester.
+```Bash
+Test success: 2 + 3 = 5
+Test success: 5 + 10 = 15
+```
 
-En bra praxis när man skriver tester är att ha en separat fil för dem, så att de inte blandas med koden. Detta hjälper till att hålla koden ren och läsbar. Du kan även använda verktyg som `grep` eller `awk` för att läsa resultatet från testerna och se om det finns några misslyckade tester.
+### Djupdykning:
+Att skriva tester är en viktig del av den moderna programmeringsprocessen och har funnits under lång tid. Ursprunget till testning går tillbaka till 1970-talet med utvecklingen av enhetstester för programmeringsspråket C.
 
-När det kommer till att välja vad du ska testa, är det viktigt att fokusera på de delar av koden som är mest kritiska eller som du vet har haft problem tidigare. Genom att prioritera dessa områden kan du säkerställa en högre kvalitet på koden.
+Det finns också andra verktyg för att skriva tester, som till exempel JUnit för Java och pytest för Python. Dessa verktyg erbjuder mer avancerade funktioner, men grundprincipen är densamma - att testa och verifiera vår kod.
 
-## Se även
-- [Bash Test Assertions](https://bash.cyberciti.biz/guide/If_structures_to_execute_code_based_on_a_condition)
-- [Testing and Debugging in Bash](https://linuxhint.com/testing_and_debugging_bash/)
+När det gäller implementation finns det många olika strategier och praxis för att skriva tester. Det är viktigt att hitta en metod som fungerar bäst för dig och ditt team.
+
+### Se även:
+- [Test-driven development](https://en.wikipedia.org/wiki/Test-driven_development)
+- [Bash man page](https://linux.die.net/man/1/bash)
+- [JUnit documentation](https://junit.org/junit5/docs/current/)
+- [pytest documentation](https://docs.pytest.org/en/latest/)

@@ -1,7 +1,7 @@
 ---
-title:                "Udostępnianie wartości w ciągach znakowych"
-html_title:           "C: Udostępnianie wartości w ciągach znakowych"
-simple_title:         "Udostępnianie wartości w ciągach znakowych"
+title:                "Zmiana wielkości liter w ciągu znaków"
+html_title:           "C: Zmiana wielkości liter w ciągu znaków"
+simple_title:         "Zmiana wielkości liter w ciągu znaków"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -10,43 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i dlaczego?
 
-Zastanawiałeś się kiedyś, jak zmieniać wielkość liter w ciągu znaków w języku C? Może masz aplikację, która wymaga wprowadzenia danych tylko w dużych literach lub chcesz, aby tekst w Twoim programie wyglądał estetycznie. Niezależnie od tego, jest wiele sytuacji, w których może być potrzebne dokonanie zmiany wielkości liter. W tym artykule dowiesz się, jak to zrobić w prosty sposób.
+Zacznijmy od podstaw - co to właściwie znaczy "kapitalizowanie" ciągu znaków? W prostych słowach, oznacza to zamienienie wszystkich liter w wyrazie na wielkie litery. Dlaczego programiści robią to? Przede wszystkim po to, aby ujednolicić dane wejściowe i uprościć porównywanie i przetwarzanie danych.
 
-## Jak to zrobić
+## Jak to zrobić:
 
-Aby zmienić wielkość liter w ciągu znaków w języku C, musisz wykorzystać funkcję `toupper()` znajdującą się w bibliotece `ctype.h`. Ta funkcja jest odpowiedzialna za zamianę pojedynczego znaku na jego odpowiednik w dużych literach. Przykładowy kod wykorzystujący tę funkcję wygląda następująco:
-
-```
+```C
 #include <stdio.h>
-#include <ctype.h>
+#include <string.h>
+
+void capitalize_string(char* str)
+{
+    int i;
+    for (i = 0; i < strlen(str); i++)
+    {
+        if (str[i] >= 'a' && str[i] <= 'z')
+        {
+            str[i] -= 32; // ASCII: 'a' = 97, 'A' = 65, dlatego '- 32'
+        }
+    }
+}
 
 int main()
 {
-    char str[] = "hello world";
-    int i;
-
-    for (i = 0; str[i] != '\0'; i++)
-    {
-        printf("%c", toupper(str[i])); // zamienia literę na dużą i wyświetla
-    }
+    char word[] = "programowanie";
+    capitalize_string(word);
+    printf("%s\n", word);
 
     return 0;
 }
 ```
+Wyjście: "PROGRAMOWANIE"
 
-Powyższy program wypisze na ekranie ciąg znaków "HELLO WORLD", zamieniając każdą literę na dużą. Aby zmienić wielkość liter w innym ciągu znaków, wystarczy zmienić wartość zmiennej `str`.
+## Głębsza analiza:
 
-## Deep Dive
+Jeśli zawsze używaliśmy tylko języka polskiego, to nie zdajemy sobie sprawy, że w innych językach istnieją typy liter, takie jak wielkie i małe litery. W przypadku języka C, różnica ta jest szczególnie ważna - wszystkie literki składają się z kombinacji zer i jedynek w postaci kodu ASCII. Dlatego, aby "kapitalizować" ciąg znaków, musimy zmniejszyć wartość odpowiadającą małej literze o 32, aby otrzymać kod odpowiadający jej odpowiednikowi w postaci wielkiej litery.
 
-W języku C istnieje również funkcja `tolower()`, która służy do zamiany liter na małe. Aby uzyskać pełen dostęp do wszystkich funkcji z biblioteki `ctype.h`, należy dołączyć stałą `__USE_MISC` na początku programu.
+Alternatywnym sposobem na kapitalizowanie ciągu znaków jest użycie funkcji ```toupper()``` lub biblioteki <ctype.h>. Jednakże, aby uzyskać lepszą kontrolę nad procesem, warto napisać własną funkcję, jak w przykładzie powyżej.
 
-Zmiana wielkości liter w języku C może się również przydać podczas porównywania ciągów znaków. Ponieważ litery różnych wielkości są traktowane jako różne, jeśli chcesz dokonać porównania bez uwzględniania wielkości liter, musisz najpierw zmienić wszystkie litery na jedną wielkość.
+## Zobacz też:
 
-Możesz także napisać własną funkcję do zmiany wielkości liter, np. zamieniając małe litery na duże i odwrotnie. Takie podejście pozwala na większą kontrolę i dostosowanie do własnych potrzeb.
-
-## Zobacz także
-
-- Oficjalna dokumentacja funkcji `toupper()` i `tolower()`: https://www.tutorialspoint.com/c_standard_library/c_function_toupper.htm
-- Przykładowe kody do zmiany wielkości liter w języku C: https://www.programiz.com/c-programming/examples/change-case-string
+- [Funkcja toupper() w języku C] (https://www.programiz.com/c-programming/library-function/ctype.h/toupper)
+- [Kod ASCII w języku C] (https://www.ibm.com/support/knowledgecenter/ssw_ibm_i_71/rtref/asciicodes.htm)

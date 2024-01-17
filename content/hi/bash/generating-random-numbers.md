@@ -1,7 +1,7 @@
 ---
-title:                "यादृच्छिक संख्याओं का उत्पादन"
-html_title:           "Bash: यादृच्छिक संख्याओं का उत्पादन"
-simple_title:         "यादृच्छिक संख्याओं का उत्पादन"
+title:                "यादृच्छिक संख्याएं उत्पन्न करना"
+html_title:           "Bash: यादृच्छिक संख्याएं उत्पन्न करना"
+simple_title:         "यादृच्छिक संख्याएं उत्पन्न करना"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Numbers"
@@ -10,27 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
+Kya hai aur kyun kare?
+Generating random numbers ek aisi coding technique hai jiske through hum ek arbitrary ya unpredictable sequence of numbers ko generate kar sakte hain. Programmers isko use karte hain for various purposes such as creating unique IDs, simulation, encryption, and so on. Iske alawa, isse security purposes ke liye bhi use kiya ja sakta hai.
 
-क्या आपको कभी एक तस्वीर बनाने के लिए कुछ रैंडम नंबर्स की गर्मी का सामना करना पड़ता है? या शायद आपको कोई गेम या साइट बनाने के लिए कुछ रैंडम नंबर्स की आवश्यकता होती है? इन सभी स्थितियों में, आपको रैंडम नंबर्स जेनरेट करने की आवश्यकता होती है। इस आर्टिकल में, हम आपको ये बताएंगे कि आप बैश में रैंडम नंबर्स कैसे बना सकते हैं।
+Kaise kare?
+Generating random numbers Bash mein kaafi asaan hai. Hamare paas ```$RANDOM``` built-in variable hai jo ek random integer value generate karta hai har bar jab hum isey call karte hain. Isi tarah hum ```/dev/urandom``` location ko bhi use kar sakte hain jaha se hum random bytes ko read kar sakte hain. Neeche hum ek simple example dekhte hain:
 
-## कैसे बनाएं
-
-टर्मिनल में निम्न लाइन को टाइप करें:
-
+```Bash
+# $RANDOM variable se random integer generate karein
+echo $RANDOM
+# /dev/urandom se random bytes read karein aur unko base64 format mein display karein
+cat /dev/urandom | base64
 ```
-#!/bin/bash
-echo $((RANDOM % 10))
+
+Sample output:
+
+```Bash
+28764
+XV9crzStv+Bp89YhH1dzZrCoQodP9ZNDAjhM98z0eGAoICLQANarLIx6LT+JyA==
 ```
 
-अब सेव करें और स्क्रिप्ट को चलाने के लिए उसे रनएन के साथ बनाएं:
+Gehri Khurak:
+Generating random numbers ko implement karne ke liye, bash shell ka use kiya ja sakta hai. Iske alawa, hum Python, Java, ya phir C++ jaise bhi programming languages mein bhi iska use kar sakte hain. In languages mein random number generators ya phir ```crypto/rand``` module available hota hai jo ki secure random numbers generate karta hai.
 
+Itna hi nahi, hum ek specific range ke numbers bhi generate kar sakte hain using some simple arithmetic. Jaise ki, agar hum chahte hain ki random numbers sirf 1 se lekar 10 tak hi generate ho, toh hum ```expr``` command ka use kar sakte hain:
+
+```Bash
+# Random number generate karein from 1 to 10
+expr $RANDOM % 10 + 1
 ```
-chmod +x random.sh
-./random.sh
-```
-यह कोड आपको 0 से 9 के बीच के एक रैंडम नंबर देगा। यदि आप अपने सीमा को बदलना चाहते हैं, तो संख्या के साथ `%` का उपयोग करके एक उपरांत सीमा दर्ज कर सकते हैं। उदाहरण के लिए, आप दस के बजाय 100 प्रतिशत का उपयोग कर सकते हैं।
 
-## गहरी तलाश
+Link:
+Generating random numbers ke liye aap https://www.gnu.org/software/bash/manual/html_node/Bash-Variables.html ya phir https://linuxhint.com/random_number_generator_bash/ jaise sources ko refer kar sakte hain.
 
-अब आपको न तो ऋद्धिरंजन के बारे में बहुत कुछ जानने की आवश्यकता है और न ही आपको रैंडम नंबर्स के बारे में अधिक जानकारी की आवश्यकता है। लेकिन आप जान सकते हैं कि बैश में ऋद्धिरंजन कैसे काम करता है और आप उसका उपयोग अपने स्क्रिप्ट में कैसे कर सकते हैं। एक रोबस्ट तरीके से ऋद्धिरंजन का उपयोग करने के लिए, आप `shuf` क
+Ab aap ko Bash mein random numbers generate karne ka process pata chal gaya hai. Toh aap paas wale security codes ke ek naye set ya phir apne kisi project mein use karne ke liye ab ready hain! Keep coding and happy generating!

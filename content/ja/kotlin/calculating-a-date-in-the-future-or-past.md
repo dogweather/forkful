@@ -1,7 +1,7 @@
 ---
-title:                "将来または過去の日付の計算"
-html_title:           "Kotlin: 将来または過去の日付の計算"
-simple_title:         "将来または過去の日付の計算"
+title:                "未来や過去の日付を計算する"
+html_title:           "Kotlin: 未来や過去の日付を計算する"
+simple_title:         "未来や過去の日付を計算する"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Dates and Times"
@@ -10,42 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-今日の日付を計算する方法 - Kotlin プログラミング記事
+## 何でも？: 
 
-## Why
-日付を計算することは、将来のイベントをプランするためや、過去の出来事を振り返るために役立ちます。この記事では、Kotlin を使って簡単に日付の計算ができる方法をご紹介します。
+日付の未来や過去の計算とは、指定した日付から一定の日数を加算または減算して得られる日付のことです。プログラマーがこのような計算を行うのは、日付を操作する必要があるさまざまなアプリケーションやゲームなどを開発する際に便利だからです。
 
-## How To
-```Kotlin 
-// 現在の日付を取得
-val currentDate = Calendar.getInstance().time
+## 方法: 
 
-// 1ヶ月後の日付を計算
-val futureDate = Calendar.getInstance()
-futureDate.add(Calendar.MONTH, 1)
+```Kotlin
+//今から1日後
+val today = LocalDate.now()
+val tomorrow = today.plusDays(1)
+println(tomorrow)
 
-// 1年前の日付を計算
-val pastDate = Calendar.getInstance()
-pastDate.add(Calendar.YEAR, -1)
-
-// 日付のフォーマットを指定
-val dateFormatter = SimpleDateFormat("yyyy/MM/dd")
-
-// 結果を出力
-println("現在の日付：" + dateFormatter.format(currentDate))
-println("1ヶ月後の日付：" + dateFormatter.format(futureDate.time))
-println("1年前の日付：" + dateFormatter.format(pastDate.time))
+//今から1年前
+val today = LocalDate.now()
+val lastYearToday = today.minusYears(1)
+println(lastYearToday)
 ```
 
-### 実行結果
-現在の日付：2021/07/25
-1ヶ月後の日付：2021/08/25
-1年前の日付：2020/07/25
+出力結果：
+```
+2021-10-10 //今日の次の日付
+2019-10-10 // 一年前の今日の日付
+```
 
-## Deep Dive
-日付を計算する際、Calendar クラスを使用します。このクラスには、様々なメソッドがあり、特定の日付の部分を変更することができます。また、SimpleDateFormat クラスを使用することで、日付のフォーマットを自由に指定することができます。
+## もっと詳しく: 
 
-See Also
-- [Kotlin 公式ドキュメント](https://kotlinlang.org/docs/home.html)
-- [Java Calendar クラスのドキュメント](https://docs.oracle.com/javase/8/docs/api/java/util/Calendar.html)
-- [Java SimpleDateFormat クラスのドキュメント](https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html)
+日付の計算は、古代から計算機の発明前まで遡ることができます。人々は、自然現象や季節の変化に対する調整として、日付を計算する必要がありました。しかし、計算機が発明されると、人々はより正確かつ迅速に日付の計算を行うことができるようになりました。
+
+代替として、日付の計算には多くのライブラリやアプリケーションがあります。しかし、最近のプログラミング言語は、日付や時間の操作に特化した便利なメソッドや組み込み関数を提供しており、より簡単に日付の計算を行うことができます。
+
+Kotlinでは、日付や時間を扱うための標準ライブラリがあります。また、Javaの日付と時刻に関するAPIを使用することもできます。
+
+## 他に見るもの: 
+
+- [Kotlin 公式ドキュメント](https://kotlinlang.org/docs/reference/datetime.html)
+- [Java 日付と時刻 API](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
+- [時計アプリケーションの作成チュートリアル](https://kotlinlang.org/docs/tutorials/java-date-time-api.html)

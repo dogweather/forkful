@@ -1,7 +1,7 @@
 ---
-title:                "Alihankkeiden alaluokkien irrottaminen."
-html_title:           "Rust: Alihankkeiden alaluokkien irrottaminen."
-simple_title:         "Alihankkeiden alaluokkien irrottaminen."
+title:                "Alastringien erotus"
+html_title:           "Rust: Alastringien erotus"
+simple_title:         "Alastringien erotus"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -10,37 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mikä & Miksi?
+Substringien ottaminen (extracting substrings) tarkoittaa tietyn osajonon tai merkkijonon ottamista toisesta merkkijonosta. Tätä tehdään yleisesti siksi, että tietynlaiset tiedot tai merkinnät voidaan erottaa ja käsitellä erikseen.
 
-On monia syitä, miksi haluaisit erotella alimerkkijonat Rustilla. Yleisimmät syyt ovat tekstikäsittely, tietojen etsiminen ja muotoilu. Alimerkkijonojen erottaminen on tärkeä taito, joka auttaa sinua käsittelemään merkkijonoja tehokkaammin ja luomaan monipuolisia ohjelmia.
+## Kuinka:
+Esimerkiksi jos haluat ottaa vain nimen sähköpostiosoitteesta, voit käyttää "split()" funktiota ja määritellä erotinmerkin, jonka mukaan jaat merkkijonon kahteen osaan. Tämän jälkeen voit ottaa halutun osan käyttämällä "get()" funktiota. 
 
-## Miten
-
-Alimerkkijonojen erottaminen Rustilla on helppoa ja suoraviivaista. Käytämme String-metodia nimeltä *slice*, jota voit käyttää erottamaan tietyn osan merkkijonosta. Katso esimerkki alla:
-
-```Rust
-let s = String::from("Tervetuloa maailmaan!");
-let alimerkkijono = &s[3..10];
-
-println!("{}", alimerkkijono); //tulos: vetuloa
+```Rust 
+let email = "esimerkki@gmail.com";
+let split_email: Vec<&str> = email.split("@").collect();
+let name = split_email.get(0).unwrap();
+println!("Nimi: {}", name); // Tulostaa: Nimi: esimerkki 
 ```
 
-Ensimmäisellä rivillä meillä on merkkijono *s*, josta haluamme erottaa alimerkkijonon. Sitten käytämme slice-metodia *[]*, jossa annamme indeksejä mistä ja mihin merkkeihin haluamme alimerkkijonon muodostuvan. Lopuksi tulostamme alimerkkijonon konsoliin.
+## Syvempi sukellus:
+Substringien ottaminen on yleinen tehtävä ohjelmoinnissa erityisesti silloin, kun halutaan käsitellä tai analysoida tietynlaisia merkkijonoja. Tämän avulla voidaan helposti erotella tiettyjä tietoja, kuten nimet, osoitteet tai puhelinnumerot, ja käsitellä niitä erikseen.
 
-## Syventävä sukellus
+Toinen tapa ottaa substringeja on käyttää "slice" syntaksia, joka ottaa tietyn alueen merkkijonosta. Tämä on hyödyllistä esimerkiksi silloin, kun halutaan ottaa tietyn määrän merkkejä merkkijonon alusta tai lopusta.
 
-Alimerkkijonojen erottaminen Rustilla on pohjimmiltaan tapa käyttää JavaScriptin *substring()*-metodia. Erona on, että Rustin slice-metodi ei sisällytä viimeistä indeksiä alimerkkijonoon, kun taas JS:ssä se sisältyy.
+Substringien ottaminen on myös mahdollista muilla ohjelmointikielillä, kuten Pythonissa ja Javassa. Näissä kielissä käytetään usein "substring" tai "slice" funktioita.
 
-```Rust
-let s = String::from("Tervetuloa maailmaan!");
-let alimerkkijono = &s[3..10];
-
-println!("{}", alimerkkijono); //tulos: vetuloa
-```
-
-Tässä esimerkissä viimeinen indeksi on *9*, mutta alimerkkijonossamme on vain *7* merkkiä, jotka alkavat indeksistä *3*. Tämä siksi, että viimeinen indeksi ei sisälly alimerkkijonoon. Muista tämä, kun erotat alimerkkijonoja Rustilla.
-
-## Katso myös
-
-- [Rustin virallinen dokumentaatio alimerkkijonojen erottamisesta](https://doc.rust-lang.org/stable/std/primitive.str.html#method.slice)
-- [W3Schools: JavaScript substring()](https://www.w3schools.com/jsref/jsref_substring.asp)
+## Katso myös:
+- [Rust `String` dokumentaatio](https://doc.rust-lang.org/std/string/struct.String.html)
+- [Merkkijonon jakaminen (split() function) dokumentaatio](https://doc.rust-lang.org/std/primitive.str.html#method.split)
+- [Substringien ottaminen muiden ohjelmointikielien kanssa](https://www.geeksforgeeks.org/substring-string-python/)

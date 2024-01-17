@@ -1,7 +1,7 @@
 ---
-title:                "Travailler avec le yaml"
-html_title:           "Java: Travailler avec le yaml"
-simple_title:         "Travailler avec le yaml"
+title:                "Travailler avec yaml"
+html_title:           "Java: Travailler avec yaml"
+simple_title:         "Travailler avec yaml"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Data Formats and Serialization"
@@ -10,88 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+# YAML en Java : Tout ce que vous devez savoir
 
-Si vous êtes un passionné de programmation, vous avez sûrement entendu parler de YAML. Mais qu'est-ce que c'est réellement et pourquoi devriez-vous l'utiliser ? YAML est un format de données léger, facile à lire et à écrire, utilisé pour représenter des données structurées. Il est souvent utilisé pour la configuration et le stockage de données dans les applications et offre une alternative plus simple et plus lisible que le format JSON.
+## Qu'est-ce que c'est et pourquoi les programmeurs l'utilisent ?
 
-## Comment faire
+Le YAML est un format de données simple et lisible par l'homme, souvent utilisé pour stocker des configurations ou des données structurées. Les programmeurs l'utilisent principalement pour sa simplicité et sa flexibilité, ce qui en fait un choix populaire dans de nombreux projets en Java.
 
-Pour utiliser YAML dans votre code Java, vous aurez besoin de la bibliothèque SnakeYAML. Voici un exemple de code pour lire un fichier YAML et en extraire des données :
+## Comment faire :
 
-```Java
-import org.yaml.snakeyaml.Yaml;
-import java.io.*;
-
-public class YAMLReader{
-    public static void main(String[] args) throws FileNotFoundException {
-        // créer un objet Yaml
-        Yaml yaml = new Yaml();
-        
-        // lire le fichier YAML
-        InputStream inputStream = new FileInputStream(new File("exemple.yml"));
-        
-        // parser le fichier et stocker les données dans une HashMap
-        HashMap<String, Object> data = yaml.load(inputStream);
-        
-        // accéder aux données et les afficher
-        System.out.println(data.get("nom"));
-        System.out.println(data.get("âge"));
-        System.out.println(data.get("ville"));
-    }
-}
-```
-
-Output :
-
-```
-John Doe
-25
-Paris
-```
-
-Vous pouvez également écrire des données dans un fichier YAML en utilisant la classe YamlWriter. Voici un exemple :
+Voici un exemple de code Java montrant comment lire un fichier YAML et accéder à ses données :
 
 ```Java
+// Importer la librairie
 import org.yaml.snakeyaml.Yaml;
-import java.io.*;
 
-public class YAMLWriter{
-    public static void main(String[] args) throws FileNotFoundException {
-        // créer un objet Yaml
-        Yaml yaml = new Yaml();
-        
-        // créer une HashMap avec des données à écrire
-        HashMap<String, Object> data = new HashMap<>();
-        data.put("nom", "Jane Doe");
-        data.put("âge", 30);
-        data.put("ville", "Lyon");
-        
-        // écrire les données dans un fichier YAML
-        OutputStream outputStream = new FileOutputStream(new File("nouveau.yml"));
-        yaml.dump(data, new OutputStreamWriter(outputStream));
-    }
-}
+// Lire le fichier YAML
+Yaml yaml = new Yaml();
+InputStream inputStream = this.getClass().getClassLoader().getResourceAsStream("config.yaml");
+Map<String, Object> data = yaml.load(inputStream);
+
+// Accéder aux données
+String version = (String) data.get("version");
+int port = (int) data.get("port");
+List<String> database = (List) data.get("database");
 ```
 
-Output (dans un fichier nommé "nouveau.yml") :
+La sortie de ce code pourrait ressembler à ceci :
 
+```Java
+version: 1.0
+port: 8080
+database:
+  - MySQL
+  - MongoDB
 ```
-nom: Jane Doe
-âge: 30
-ville: Lyon
-```
 
-## Plongée en profondeur
+## Plongeons plus en profondeur :
 
-Maintenant que vous savez comment lire et écrire des données avec YAML en Java, voici quelques points à garder à l'esprit :
+Le format YAML a été créé en 2001 et est devenu de plus en plus populaire en raison de sa lisibilité et de sa compatibilité multi-langages. Pour ceux qui préfèrent une approche plus orientée objet, il existe également des alternatives telles que Jackson et Gson.
 
-- Les données YAML peuvent être organisées en listes, en dictionnaires ou en objets, offrant une grande flexibilité.
-- Il est important de respecter l'indentation lors de l'écriture de données YAML, car cela détermine la structure et la hiérarchie des données.
-- La bibliothèque SnakeYAML prend également en charge la validation de schémas YAML pour s'assurer que les données sont dans le format attendu.
+Pour implémenter le support YAML dans vos projets Java, vous pouvez utiliser la librairie SnakeYAML ou JAXB (Java Architecture for XML Binding). SnakeYAML est considérée comme plus rapide et plus légère, tandis que JAXB offre une meilleure intégration avec le framework Spring.
 
-Maintenant que vous avez les bases, n'hésitez pas à explorer les nombreuses fonctionnalités de YAML et à l'utiliser dans vos projets pour une gestion de données plus simple et plus claire.
+## À voir également :
 
-## Voir aussi
+- [Site officiel de YAML](https://yaml.org/)
+- [La librairie SnakeYAML](https://bitbucket.org/asomov/snakeyaml)
+- [La librairie JAXB](https://www.oracle.com/java/technologies/jaxb.html)
 
-- [Documentation officielle de SnakeYAML](https://bitbucket.org/asomov/snakeyaml)
-- [Format YAML vs JSON](https://stackabuse.com/yaml-vs-json-which-is-the-better-configuration-format/)
+Fini les configurations complexes et les données illisibles ! Le YAML en Java vous permet de travailler avec des données structurées de manière simple et efficace. N'hésitez pas à l'essayer dans vos prochains projets.

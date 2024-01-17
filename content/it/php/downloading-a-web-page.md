@@ -1,7 +1,7 @@
 ---
-title:                "Scaricare una pagina web."
-html_title:           "PHP: Scaricare una pagina web."
-simple_title:         "Scaricare una pagina web."
+title:                "Scaricare una pagina web"
+html_title:           "PHP: Scaricare una pagina web"
+simple_title:         "Scaricare una pagina web"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "HTML and the Web"
@@ -10,39 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché 
+## Che cos'è e perché?
+Scaricare una pagina web significa ottenere il contenuto di una pagina web tramite una richiesta HTTP. I programmatori spesso lo fanno per ottenere dati da un sito web, come informazioni su prodotti, notizie o altre informazioni. Questi dati possono poi essere utilizzati per analisi, integrazioni con altri servizi o per creare applicazioni basate sui dati del sito web.
 
-Scaricare una pagina web è un'attività comune per molte persone coinvolte nello sviluppo di siti web o nella creazione di script automatizzati. È utile per controllare come appare una pagina web su diversi dispositivi o per estrarre informazioni da essa. In questo articolo, vedremo come fare con PHP.
-
-## Come Fare
-
-Per scaricare una pagina web in PHP, è necessario utilizzare la funzione `file_get_contents()` insieme all'URL della pagina che si desidera scaricare. Ecco un esempio di codice:
-
-```PHP
+## Come fare:
+```
 <?php
-// URL della pagina web da scaricare
-$url = "https://www.example.com";
-
-// Utilizzo della funzione file_get_contents() per scaricare la pagina
-$html = file_get_contents($url);
-
-// Stampa del contenuto della pagina web
-echo $html;
+$url = "https://www.example.com"; // URL della pagina da scaricare
+$ch = curl_init(); // Inizializza una sessione cURL
+curl_setopt($ch, CURLOPT_URL, $url); // Imposta l'URL della richiesta
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); // Imposta il trasferimento dei dati come stringa
+$output = curl_exec($ch); // Esegui la richiesta
+curl_close($ch); // Chiudi la sessione cURL
+echo $output; // Stampa il contenuto della pagina
 ?>
 ```
+Questo codice utilizza la funzione `curl_exec()` per eseguire una richiesta HTTP all'URL specificato, poi utilizza la funzione `curl_close()` per chiudere la sessione cURL. Infine, viene stampato il contenuto della pagina utilizzando la variabile `$output`.
 
-L'output di questo esempio sarà il codice HTML della pagina web. È possibile utilizzare questo codice per visualizzare il contenuto della pagina o per estrarre informazioni specifiche utilizzando funzioni di parsing o regolari espressioni.
+## Approfondimento:
+Scaricare una pagina web è diventato sempre più importante con l'avvento dell'era dei dati, dove l'accesso a informazioni precise e aggiornate è fondamentale per le aziende e gli utenti. Oltre alla funzione `curl_exec()`, esistono anche altre librerie e framework, come Guzzle e Symfony, che possono essere utilizzati per scaricare pagine web con maggiori opzioni e funzionalità. Inoltre, ci sono servizi di scraping che permettono di ottenere dati da siti web in modo automatizzato e organizzato.
 
-## Approfondimento
-
-Oltre alla semplice funzione `file_get_contents()`, PHP offre una vasta gamma di funzioni che possono essere utilizzate per scaricare una pagina web e gestire la risposta del server. Ad esempio, la funzione `curl_exec()` offre più opzioni di configurazione e la possibilità di gestire eventuali errori durante la richiesta. Inoltre, è possibile passare anche parametri nel caso in cui la pagina richiesta richieda una richiesta POST.
-
-Un'altra opzione per scaricare una pagina web è utilizzare la libreria PHP Simple HTML DOM, che facilita l'estrazione di informazioni specifiche dalla pagina web utilizzando selezionatori CSS o XPath.
-
-## Vedi Anche
-
-Ecco alcuni link utili per saperne di più su come scaricare una pagina web con PHP:
-
-- Documentazione ufficiale di PHP: https://www.php.net/manual/en/function.file-get-contents.php
-- Tutorial di W3Schools: https://www.w3schools.com/php/func_filesystem_file_get_contents.asp
-- Guida di PHP Simple HTML DOM: http://simplehtmldom.sourceforge.net/
+## Vedi anche:
+- [Documentazione di cURL](https://www.php.net/manual/en/book.curl.php)
+- [Guzzle](https://packagist.org/packages/guzzlehttp/guzzle)
+- [Symfony HttpClient](https://symfony.com/doc/current/http_client.html)
+- [Servizi di scraping come Import.io e Scraping Hub](https://www.import.io/, https://scrapinghub.com/)

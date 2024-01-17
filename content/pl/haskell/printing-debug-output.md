@@ -1,7 +1,7 @@
 ---
-title:                "Drukowanie wyjścia debugowania"
-html_title:           "Haskell: Drukowanie wyjścia debugowania"
-simple_title:         "Drukowanie wyjścia debugowania"
+title:                "Wydrukowanie danych debugowania"
+html_title:           "Haskell: Wydrukowanie danych debugowania"
+simple_title:         "Wydrukowanie danych debugowania"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Testing and Debugging"
@@ -10,66 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
-Debugowanie jest nieodłączną częścią tworzenia oprogramowania i często jest to jedna z najbardziej czasochłonnych czynności. Jednym z najważniejszych narzędzi w procesie debugowania jest wydruk debugowania, który pomaga programistom w identyfikacji błędów i weryfikacji poprawności działania kodu. W tym artykule dowiesz się, dlaczego wydruk debugowania jest tak ważny i jak można go wykorzystać w swoim kodzie w języku Haskell.
+# Co i Dlaczego?
 
-## Jak to zrobić
-Aby wypisać wydruk debugowania w języku Haskell, wystarczy użyć funkcji `print` z modułu `Debug.Trace`. Na przykład:
+Wydrukowanie wyjścia debugowania jest procesem wykorzystywanym przez programistów do wyświetlania informacji o działaniu programu w celu zrozumienia jego stanu. Jest to często stosowane podczas procesu debugowania, aby znaleźć i naprawić błędy w kodzie.
 
-```Haskell
-import Debug.Trace
+# Jak?
 
-main = do
-    let a = 5
-    print a
-    let b = a + 3
-    print b
-```
-
-Output:
-```Haskell
-5
-8
-```
-
-Możliwe jest również użycie funkcji `trace` z tego samego modułu, która dodaje własny tekst do wydruku. Na przykład:
+Funkcją wykorzystywaną do drukowania wyjścia debugowania w Haskell jest `Debug.Trace.trace`, która przyjmuje dwa argumenty: tekst do wyświetlenia i wartość do debugowania. Poniżej znajdują się przykładowe kody i ich wyjścia, aby zobaczyć jak to działa.
 
 ```Haskell
 import Debug.Trace
 
 main = do
-    let a = 5
-    trace "Początek wykonywania" $ print a
-    let b = a + 3
-    trace "Zakończenie wykonywania" $ print b
+  let x = 10
+
+  trace "Wartość x:" x
 ```
 
-Output:
+Wynik:
+
 ```Haskell
-"Początek wykonywania"
-5
-"Zakończenie wykonywania"
-8
+Wartość x: 10
 ```
 
 ## Deep Dive
-Funkcje `print` i `trace` są niezwykle przydatne podczas debugowania, ale należy pamiętać, że używanie ich w kodzie produkcyjnym może spowolnić działanie programu. Dlatego ważne jest, aby wyłączać wydruk debugowania przed uruchomieniem kodu w środowisku produkcyjnym. Można to zrobić, ustawiając zmienną środowiskową `DEBUG` na `False` lub korzystając z flagi kompilacji `-fno-print-bindings`.
 
-Dodatkowo, funkcje `print` i `trace` mogą być również używane do wypisywania wartości zmiennych wewnątrz funkcji. W tym celu należy dodać funkcję `traceShow` przed wypisaniem wartości. Na przykład:
+Istnieje wiele alternatywnych sposobów na wydrukowanie wyjścia debugowania w Haskell, takich jak użycie biblioteki `Debug.Show`, która pozwala na drukowanie informacji o własnych typach danych. Jednak popularnym wyborem jest funkcja `Debug.Trace.trace` ze względu na swoją prostotę.
 
-```Haskell
-import Debug.Trace
-
-fun x y = traceShow x $ y + x
-main = print $ fun 5 3
-```
-
-Output:
-```Haskell
-8
-```
+Implementacja funkcji `trace` opiera się na mechanizmie wywoływania wyjątków, co może wpływać na wydajność programu. Dlatego też ważne jest, aby nie zostawiać wywołań `trace` w produkcyjnym kodzie, ponieważ może to spowolnić działanie programu.
 
 ## Zobacz też
-- [Dokumentacja Debug.Trace](https://hackage.haskell.org/package/base/docs/Debug-Trace.html)
-- [Podstawy debugowania w Haskellu](https://dev.to/jacquespescatore/debugging-in-haskell-the-basics-5581)
-- [Przykłady użycia debugowania w języku Haskell](https://hackernoon.com/using-debugging-in-haskell-part-1-38bc6cab2db1)
+
+- [Dokumentacja funkcji trace w Hoogle](https://hoogle.haskell.org/?hoogle=trace)
+- [Artykuł o debuggingu w Haskell na stronie Learn You a Haskell](http://learnyouahaskell.com/debugging)

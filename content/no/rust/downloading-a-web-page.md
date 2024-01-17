@@ -1,7 +1,7 @@
 ---
-title:                "Nedlasting av en nettside"
-html_title:           "Rust: Nedlasting av en nettside"
-simple_title:         "Nedlasting av en nettside"
+title:                "Laste ned en nettside"
+html_title:           "Rust: Laste ned en nettside"
+simple_title:         "Laste ned en nettside"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "HTML and the Web"
@@ -10,32 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
-Det er mange grunner til hvorfor du skulle ønske å laste ned nettsider, enten det er for å lagre informasjon, hente data eller for å automatisere en prosess. Uansett hva grunnen måtte være, så har Rust et kraftig bibliotek som gjør det enkelt og effektivt å laste ned nettsider.
+Hva & Hvorfor?
 
-## Hvordan gjøre det
-For å laste ned en nettside med Rust, trenger du først å importere biblioteket "reqwest". Deretter kan du bruke følgende kode for å laste ned en nettside og skrive ut responsen:
+Å laste ned en nettside betyr å få tilgang til og lagre alle informasjonene og ressursene som finnes på siden på din egen datamaskin. Dette gjøres for å kunne behandle og manipulere informasjonen på en mer effektiv måte, for eksempel å vise den på en annen måte eller analysere den.
 
-```rust
-use reqwest;
+Hvordan:
+
+For å laste ned en nettside i Rust, kan du bruke curl biblioteket som gir et enkelt grensesnitt for å gjøre HTTP-forespørsler. Her er et eksempel som laster ned nettsiden til Rust-språket og skriver ut innholdet i konsollen: 
+
+```Rust
+extern crate curl;
+
+use std::io::{stdout, Write};
+use curl::easy::Easy;
 
 fn main() {
-    let mut response = reqwest::get("https://www.example.com").expect("Failed to get response");
-
-    println!("Response status code: {}", response.status());
-
-    let body = response.text().expect("Failed to read response body");
-    println!("Response body: {}", body);
+    let mut handle = Easy::new();
+    handle.url("https://www.rust-lang.org").unwrap();
+    handle.write_function(|data| {
+        Ok(stdout().write(data).unwrap())
+    }).unwrap();
+    handle.perform().unwrap();
 }
 ```
 
-Koden over vil først hente responsen fra nettsiden og deretter skrive ut statuskoden og innholdet på nettsiden. Dette er en enkel måte å laste ned en nettside på, men det finnes mange flere funksjoner og muligheter i "reqwest" biblioteket.
+Dette vil skrive ut hele HTML-koden til nettsiden. Du kan også bruke curl for å laste ned innholdet til en bestemt URL og lagre det i en fil. 
 
-## Dypdykk
-For de som er mer erfarne i Rust og ønsker å utforske mer avanserte muligheter for å laste ned nettsider, så er det flere alternativer tilgjengelig. Du kan for eksempel spesifisere en brukeragent, håndtere omdirigeringer eller legge til egendefinerte HTTP-headerfelter i forespørselen.
+Dypdykk:
 
-Det er også mulig å konfigurere "reqwest" for å bruke en HTTP-proxy eller aktivere HTTPS-verifisering. Det finnes også alternative biblioteker som gir mer fleksibilitet og kontroll over HTTP-forespørsler, som "hyper" og "curl".
+Laste ned en nettside har vært en viktig del av utviklerverktøy i lang tid. Tidligere var det vanlig å bruke biblioteker som wget eller cURL fra kommandolinjen for å laste ned nettsider, men nå kan man enkelt gjøre det direkte i koden. Alternativene for å laste ned en nettside i Rust er begrensede, men man kan også bruke biblioteker som reqwest eller hyper.
 
-## Se også
-- [Offisiell "reqwest" dokumentasjon](https://docs.rs/reqwest/0.11.1/reqwest/)
-- [Eksempelprosjekter på GitHub](https://github.com/search?q=reqwest+rust)
+Se også:
+
+- Offisiell dokumentasjon for Rust curl: https://docs.rs/curl
+- Github-siden til curl biblioteket: https://github.com/alexcrichton/curl-rust

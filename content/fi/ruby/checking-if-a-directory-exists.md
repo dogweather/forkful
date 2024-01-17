@@ -1,7 +1,7 @@
 ---
-title:                "Tarkistetaan, onko hakemistoa olemassa"
-html_title:           "Ruby: Tarkistetaan, onko hakemistoa olemassa"
-simple_title:         "Tarkistetaan, onko hakemistoa olemassa"
+title:                "Kansion olemassaolon tarkistaminen"
+html_title:           "Ruby: Kansion olemassaolon tarkistaminen"
+simple_title:         "Kansion olemassaolon tarkistaminen"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Files and I/O"
@@ -10,40 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mikä & Miksi?
 
-On monia tilanteita, joissa ohjelmoija tarvitsee tarkistaa, onko tietokoneen tiedostojärjestelmästä löytyy tietty hakemisto. Se voi olla tarpeen esimerkiksi tarkistettaessa, löytyykö tiedostoja ennen niiden käsittelyä tai luotaessa uusia tiedostoja.
+Tarkistamalla, onko hakemisto olemassa, selvitetään, onko tietylle polulle tallennettu tiedostoja tai kansioita. Tämä on tärkeää, jotta voidaan varmistaa, että halutut tiedostot ovat oikeassa paikassa ja koodin suoritus ei epäonnistu. Tämä on yleinen käytäntö ohjelmointimaailmassa, joka auttaa välttämään virheitä ja suorituskykyongelmia.
 
-## Kuinka tehdä
+## Miten:
 
-Ruby tarjoaa useita tapoja tarkistaa, löytyykö hakemisto tietokoneelta. Tässä esimerkkejä kahdesta erilaisesta tavasta, joilla voit toteuttaa tämän.
-
-```ruby
-# Käytä Dir.exist?() -metodia
-Dir.exist?("polku/hakemistoon") #=> true tai false
-
-# Käytä File.directory?() -metodia
-File.directory?("polku/hakemistoon") #=> true tai false
+```Ruby
+if Dir.exist?("hakemiston_nimi")
+  puts "Hakemisto on olemassa!"
+else
+  puts "Hakemistoa ei löytynyt."
+end
 ```
 
-Edellä mainitut esimerkit palauttavat joko totuusarvon "true", jos hakemisto löytyy, tai "false", jos hakemistoa ei löydy. Voit myös vaihtaa hakemiston polun mihin tahansa haluamaasi polkuun ja koodi toimii samalla tavalla.
+Yllä olevassa koodissa käytämme Ruby'n sisäänrakennettua `Dir.exist?`-metodia tarkistaaksemme, onko annetulla polulla oleva hakemisto olemassa. Jos hakemisto löytyy, tulostamme viestin "Hakemisto on olemassa!", muuten tulostamme "Hakemistoa ei löytynyt."
 
-## Syvempi sukellus
+## Syvempi sukellus:
 
-Kun tarkistat hakemiston olemassaoloa, on tärkeää huomata, että et välttämättä tarvitse tarkistaa koko tiedostojärjestelmää. Voit antaa parametrina tietyssä hakemistossa olevan polun ja Ruby tarkistaa vain tuon hakemiston.
+Tarkistamalla hakemiston olemassaolon on pitkät juuret historiassa. Aikaisemmin ohjelmoijat joutuivat käyttämään monimutkaisempia menetelmiä, kuten luomaan tiedostoja tai muuttujia tarkistaakseen hakemistoja. Onneksi Ruby'ssa on nyt sisäänrakennettu metodi, joka tekee tämän tehtävän paljon helpommaksi.
 
-Voit myös käyttää "Dir.glob()" -metodia, joka palauttaa taulukon tiedostoista ja hakemistoista, jotka vastaavat parametrina annettua hakemistoa.
+On myös muita tapoja tarkistaa hakemiston olemassaolo, kuten käyttämällä väärien käsittelyä, mikä suorittaa tarkistuksen automaattisesti virheen sattuessa. Tämä voi olla hyödyllistä, jos haluat välttää tarpeettomia tarkistuksia koodissasi.
 
-```ruby
-# Tarkista tiedostojen ja hakemistojen lukumäärä valitussa hakemistossa
-Dir.glob("polku/hakemistoon/**/*").length #=> lukumäärä
+Teknisten yksityiskohtien osalta Dir.exist? -metodi käyttää `File.directory?`-metodia tarkistaakseen, onko kyseessä hakemisto. Tämä on hyvä pitää mielessä, jos haluat käyttää samanlaisia tarkistuksia tiedostojen tai muiden kohteiden olemassaolosta.
 
-# Hae tiettyä tiedostopäätettä käyttävät tiedostot
-Dir.glob("polku/hakemistoon/*.rb")
-```
+## Katso myös:
 
-## Katso myös
-
-- [Ruby'n virallinen dokumentaatio hakemistojen tarkistamisesta](https://ruby-doc.org/core-2.7.2/File.html#method-c-directory-3F)
-- [Ruby'n virallinen dokumentaatio hakemistojen selaamisesta](https://ruby-doc.org/core-2.7.2/Dir.html)
-- [Käytännön esimerkki: Ruby-ohjelma, joka tarkistaa hakemiston olemassaolon](https://www.codingame.com/playgrounds/35462/ruby-ohjelmointikieli-harjoittelua/tehtava-7)
+Voit löytää lisätietoa Dir.exist? -metodista Ruby'n virallisesta dokumentaatiosta osoitteessa https://ruby-doc.org/core-3.0.0/Dir.html#method-c-exist-3F. Voit myös tutkia muita hyödyllisiä Ruby-metodeja ja -toimintoja tämän sivun kautta.

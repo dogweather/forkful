@@ -1,7 +1,7 @@
 ---
-title:                "yaml के साथ काम करना"
-html_title:           "C#: yaml के साथ काम करना"
-simple_title:         "yaml के साथ काम करना"
+title:                "यामल के साथ काम करना"
+html_title:           "C#: यामल के साथ काम करना"
+simple_title:         "यामल के साथ काम करना"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Data Formats and Serialization"
@@ -10,69 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Kyu
-YAML ek plain text data format hai jo configuration files aur data serialization ke liye istemal kiya jata hai. Yah ek simple aur readable syntax provide karta hai jise humans bhi aasani se samajh sakte hai. C# mein YAML ka use karne se aap apne code ko clean aur organized rakh sakte hai.
+## क्या और क्यों?
+तो दोस्तों, हमारे आज की आवाजाही में हम यम्ल के साथ काम करना सीखेंगे। अगर आप एक प्रोग्रामर हो तो आपने शायद सुना होगा कि लोग यम्ल के साथ काम करते हैं। तो आईए देखते हैं कि यह हमारे लिए क्यों महत्वपूर्ण है।
 
-## Kaise Kare
-YAML ko C# mein use karne ke liye, aapko 'YamlDotNet' library install karni hogi. Uske baad, aap 'YamlDotNet' namespace ko apne code mein import kar sakte hai. Fir aap 'YamlStream' object ka use karke YAML file ko read aur write kar sakte hai. Niche diye gaye code snippets mein ek basic example diya gaya hai.
+## कैसे करें?
+लोगों वक़्त की कमी के कारण यम्ल के साथ काम करना पसंद करते हैं। यम्ल कोड को अवश्य ही सादा और सरल बनाया गया है। हम यम्ल कोड में डेटा को स्टोर करते हैं और उसे आसानी से प्रोसेस कर सकते हैं। निम्नलिखित उदाहरण देखें:
 
 ```C#
-// Example YAML:
-// name: John Doe
-// age: 25
-
-// Reading YAML:
-using System;
-using YamlDotNet.Serialization;
-using YamlDotNet.Core;
-using YamlDotNet.Serialization.NamingConventions;
-
-public class Program
-{
-    public static void Main()
-    {
-        string yaml = "name: John Doe\nage: 25";
-        var deserializer = new DeserializerBuilder().Build();
-        var person = deserializer.Deserialize<Person>(yaml);
-        Console.WriteLine(person.Name); // Output: John Doe
-        Console.WriteLine(person.Age); // Output: 25
-    }
-    
-    public class Person
-    {
-        public string Name { get; set; }
-        public int Age { get; set; }
-    }
-}
-
-// Writing YAML:
-using System;
-using YamlDotNet.Serialization;
-using YamlDotNet.Serialization.NamingConventions;
-
-public class Program
-{
-    public static void Main()
-    {
-        var person = new Person { Name = "John Doe", Age = 25 };
-        var serializer = new SerializerBuilder().Build();
-        var yaml = serializer.Serialize(person);
-        Console.WriteLine(yaml); // Output: name: John Doe\nage: 25
-    }
-    
-    public class Person
-    {
-        public string Name { get; set; }
-        public int Age { get; set; }
-    }
-}
+// YAML में डेटा स्टोर करना
+string data = @"
+  - name: John Doe
+    age: 25
+  - name: Jane Smith
+    age: 30
+";
+// डेटा को प्रोसेस करना
+var deserializedData = YAML.Deserialize<List<Person>>(data);
+Console.WriteLine(deserializedData[0].Name); // John Doe
 ```
 
-## Deep Dive
-YAML mein strings, numbers, lists, objects aur comments ka use kiya ja sakta hai. Iske alawa, YAML mein ek important concept hai 'anchors'. Anchors kisi specific value ko assign karne ke liye use kiye jate hai taki use later mein kisi aur value mein refer kiya ja sake. Iske alawa, 'tags' bhi use kiye jate hai jisse ek specific data type ko indicate kiya ja sake. In sab concepts ko samajhna aur use karna YAML ka deeper dive hai.
+## डीप डाइव:
+इतिहास में देखने के लिए, यम्ल 2001 में आये हुए थे और उस समय से लोग इसे पसंद करते आ रहे हैं। यम्ल की एक बेहतरीन बात यह है कि यह एक सादा और लोजिकल सिन्टैक्स है। अल्टर्नेटिव की बात करें तो, JSON या XML भी डेटा को स्टोर करने के लिए उपयोग किया जा सकता है। लेकिन यम्ल कोड इन से बेहतर है क्योंकि यह सीधा, स्वचालित रूप से प्रोसेस होता है। यम्ल कोड को इम्प्लीमेंट करना बहुत आसान है, आप बस YAML लाइब्रेरी को अपने प्रोजेक्ट में इनस्टॉल कर सकते हैं और शुरू हो सकते हैं।
 
-## See Also
-Apne YAML knowledge ko aur improve karne ke liye, neeche diye gaye links ka istemal kar sakte hai:
-- [The Official YAML Website](https://yaml.org/)
-- [YAML Tutorial by Tutorialspoint](https://www.tutorialspoint.com/yaml/index.htm)
-- [YAML Syntax Cheatsheet by QuickRef.me](https://quickref.me/yaml)
+## और देखें:
+- [YAML.org](https://yaml.org/)
+- [C# YAML लाइब्रेरी](https://github.com/aaubry/YamlDotNet)

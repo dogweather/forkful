@@ -10,55 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+## O que & Por quê?
 
-A criação de arquivos temporários é uma técnica comumente utilizada na programação Bash para armazenar informações temporárias que podem ser facilmente descartadas após o seu uso. Isso ajuda a manter o ambiente limpo e organizado, além de evitar conflitos com arquivos permanentes.
+Criar um arquivo temporário no Bash é essencialmente criar um arquivo que será usado apenas temporariamente durante a execução de um programa. Programadores costumam criar arquivos temporários para armazenar dados temporários, realizar operações em arquivos existentes ou para fins de teste.
 
-## Como Fazer
+## Como fazer:
 
-Para criar um arquivo temporário em Bash, podemos usar o comando `mktemp` seguido pelo prefixo "tmp" que será adicionado ao nome do arquivo. Por exemplo:
-
-```Bash
-tmp_file=$(mktemp tmp.XXXXXX)
-```
-
-Este comando criará um arquivo com um nome aleatório, que começa com "tmp" e é seguido por seis caracteres aleatórios. Podemos então usar essa variável `tmp_file` em nosso script para armazenar dados temporários.
-
-Podemos também especificar o diretório onde queremos criar o arquivo temporário, usando a opção `-p`. Por exemplo:
+Para criar um arquivo temporário no Bash, podemos usar o comando `mktemp`. Por exemplo, podemos criar um arquivo temporário chamado "meutemp" usando o seguinte comando:
 
 ```Bash
-tmp_file=$(mktemp -p /home/usuario/tmp/ tmp.XXXXXX)
+mktemp -t meutemp
 ```
 
-Isso criará o arquivo temporário no diretório `/home/usuario/tmp/` com o mesmo nome aleatório.
-
-Podemos também usar o comando `touch` para criar um arquivo vazio e, em seguida, usá-lo como arquivo temporário. Por exemplo:
+Isso criará um arquivo com um nome único, como "meutemp.XXXX" (onde "XXXX" é uma string aleatória). Podemos então usar esse arquivo para armazenar dados temporários e, quando não precisarmos mais dele, podemos excluí-lo usando o comando `rm`.
 
 ```Bash
-touch tmp_file
+rm meutemp.XXXX
 ```
 
-Também podemos adicionar informações ao arquivo temporário usando redirecionamento de saída, como por exemplo:
+## Profundando:
 
-```Bash
-echo "Informações temporárias" > tmp_file
-```
+Criar arquivos temporários é uma prática comum em programação, especialmente em ambientes Unix e Linux. Antes do comando `mktemp` ser introduzido em 1999, os programadores costumavam usar nomes pré-definidos para seus arquivos temporários, o que poderia levar a conflitos se dois programas estivessem usando o mesmo nome. Com o comando `mktemp`, um nome único é gerado automaticamente, evitando esse problema.
 
-Depois de utilizarmos o arquivo temporário, é recomendado excluir ele usando o comando `rm`, para evitar a sobrecarga de arquivos desnecessários no nosso sistema. Por exemplo:
+Existem também outras formas de criar arquivos temporários no Bash, como usar o comando `touch` ou usar a variável de ambiente `$RANDOM`. Porém, o uso do comando `mktemp` é considerado o método mais seguro e recomendado.
 
-```Bash
-rm tmp_file
-```
+## Veja também:
 
-## Mergulho Profundo
-
-Ao criarmos um arquivo temporário usando `mktemp`, ele automaticamente será atribuído com permissão de leitura e escrita para o usuário atual e permissão de leitura para o grupo e outros usuários. Isso ajuda a garantir a segurança e privacidade dos dados armazenados no arquivo.
-
-Podemos usar a opção `-d` com o comando `mktemp` para criar um diretório temporário em vez de um arquivo. Isso pode ser útil para armazenar vários arquivos temporários relacionados em um mesmo diretório.
-
-Além disso, podemos usar a opção `-t` para especificar um prefixo personalizado para o nome do arquivo ou diretório temporário, ao invés do padrão "tmp".
-
-## Veja Também
-
-- [Documentação Bash - mktemp](https://www.gnu.org/software/bash/manual/html_node/Bourne-Shell-Builtins.html)
-- [Como usar o redirecionamento de saída em Bash](https://www.digitalocean.com/community/tutorials/como-usar-o-redirecionamento-de-saida-em-bash)
+- [Documentação do comando `mktemp`](https://www.gnu.org/software/coreutils/manual/html_node/mktemp-invocation.html)
+- [Outras opções para criação de arquivos temporários em Bash](https://stackoverflow.com/questions/11910713/bash-how-to-make-a-random-file-name/11912421#11912421)

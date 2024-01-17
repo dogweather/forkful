@@ -10,44 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Для чого
+# Що і чому?
 
-Програмування з використанням JSON може бути корисним для зберігання та передавання даних у веб-додатках, а також для взаємодії з API інших сервісів.
+Робота з JSON це процес обробки інформації у форматі JSON в програмі. Розробники зазвичай працюють з JSON, оскільки цей формат є широко використовуваним у веб-розробці та додатках.
 
-## Як
-
-Кодування та декодування даних JSON у Ruby є простим завданням за допомогою методів з модуля `JSON`.
+# Як?
 
 ```Ruby
 require 'json'
 
-# Кодування об'єкта у JSON рядок
-user = {name: 'John', age: 25, city: 'Kyiv'}
-user_json = JSON.generate(user)
+# Створення об'єкта JSON
+json_object = {"name" => "John", "age" => 25}
 
-# Виведення результату
-puts user_json
-# {"name":"John","age":25,"city":"Kyiv"}
+# Перетворення у JSON рядок
+json_string = json_object.to_json
 
-# Декодування JSON рядка у хеш
-product_json = '{"name":"Phone", "price": 500, "in_stock": true}'
-product = JSON.parse(product_json)
+# Зчитування та парсинг JSON файлу
+json_data = File.read('file.json')
+parsed_data = JSON.parse(json_data)
 
-# Виведення значень хеша
-puts product["name"]
-# Phone
-puts product["price"]
-# 500
-puts product["in_stock"]
-# true
+# Відображення потрібної інформації з об'єкту JSON
+puts parsed_data[0]["name"]
 ```
 
-## Глибоке занурення
+Вивід:
+```
+John
+```
 
-Більш складні операції з JSON можуть включати роботу з масивами та вкладеними структурами даних, а також обробку помилок та валідацію даних. Для детальної інформації варто ознайомитися з [офіційною документацією Ruby](https://ruby-doc.org/stdlib-2.7.2/libdoc/json/rdoc/JSON.html).
+# Глибокий занурення
 
-## Дивись також
+JSON був створений Дугласом Крокфордом у 1999 році та швидко став популярним завдяки простоті та відкритості. Існують також альтернативні формати, такі як XML та YAML, але JSON використовує менше місця для зберігання даних та є більш читабельним.
 
-- [Основи JSON для початківців](https://www.codecademy.com/learn/learn-json)
-- [Робота з JSON в Ruby on Rails](https://www.digitalocean.com/community/tutorials/how-to-work-with-json-in-ruby-on-rails-ru)
-- [Пакети для роботи з JSON в Ruby](https://rubygarage.org/blog/best-json-gems-for-ruby-on-rails)
+Парсинг та створення об'єкта JSON можна також виконати з використанням методів `load` та `dump` замість `File.read` та `to_json`. Також, якщо потрібно обробляти великі об'єкти JSON, можна використовувати потоковий парсер `JSON::Stream`.
+
+# Дивись також
+
+- [Офіційна документація по Ruby та JSON](https://ruby-doc.org/stdlib-2.3.1/libdoc/json/rdoc/JSON.html)
+- [JSON, або що, як та чому?](https://medium.com/nuances-of-programming/json-a1afdf31a5c9)
+- [Переглянути приклади коду JSON на GitHub](https://github.com/search?q=language%3Aruby+json)

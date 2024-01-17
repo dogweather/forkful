@@ -1,7 +1,7 @@
 ---
-title:                "Praca z plikami csv"
-html_title:           "Python: Praca z plikami csv"
-simple_title:         "Praca z plikami csv"
+title:                "Praca z formatem csv"
+html_title:           "Python: Praca z formatem csv"
+simple_title:         "Praca z formatem csv"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Data Formats and Serialization"
@@ -10,50 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i dlaczego?
+Working with CSV (Comma Separated Values) is a common task for programmers, especially when dealing with large amounts of data. CSV is a simple file format that stores tabular data in plain text, with each row representing a line and each column separated by a comma. Programmers often work with CSV files to analyze and manipulate data in a more efficient way.
 
-CSV to popularny format plików używany do przechowywania i przetwarzania danych tabelarycznych. Jest bardzo przydatny dla programistów, gdyż umożliwia łatwą wymianę danych między różnymi aplikacjami oraz możliwość ich dalszej obróbki.
-
-## Jak to zrobić
-
-Konfiguracja środowiska:
-```Python
+## Jak to zrobić:
+```python
 import csv
-```
 
-Tworzenie pliku CSV:
-```Python
-with open('dane.csv', 'w', newline='') as csv_file:
-    writer = csv.writer(csv_file)
-    writer.writerow(["Imię", "Nazwisko", "Wiek"])
-    writer.writerow(["Jan", "Kowalski", 35])
-    writer.writerow(["Anna", "Nowak", 28])
-```
-
-Odczytywanie pliku CSV:
-```Python
-with open('dane.csv', 'r') as csv_file:
-    reader = csv.reader(csv_file)
-    for row in reader:
+# Reading a CSV file
+with open('data.csv', 'r') as csv_file:
+    csv_reader = csv.reader(csv_file)
+    
+    # Print each row
+    for row in csv_reader:
         print(row)
+        
+# Writing to a CSV file
+with open('output.csv', 'w') as csv_file:
+    csv_writer = csv.writer(csv_file)
+    data = [['Name', 'Age', 'Gender'], ['John', 25, 'Male'], ['Lisa', 30, 'Female']]
+    
+    # Write each row
+    for row in data:
+        csv_writer.writerow(row)
 ```
 
-Zapisywanie danych do listy:
-```Python
-with open('dane.csv', 'r') as csv_file:
-    reader = csv.reader(csv_file)
-    data = list(reader)
-print(data)
+Output:
+```
+['Name', 'Age', 'Gender']
+['John', '25', 'Male']
+['Lisa', '30', 'Female']
 ```
 
-## Głębsza analiza
+## Głębsza analiza:
+CSV formatę has been around since the early 1970s and was created as a way to easily transfer data between different computer systems. While CSV is a popular choice for storing and exchanging data, it is not the only option. Other file formats such as JSON and XML also offer similar capabilities. Working with CSV also has its drawbacks, such as lack of data type enforcement and difficulty handling large files.
 
-CSV (Comma Separated Values) to format plików zwykle używany do przechowywania danych tabelarycznych, takich jak listy lub tabele. Każda linia pliku CSV reprezentuje jeden wiersz danych, a poszczególne pola są oddzielone przecinkami. Jest to format uniwersalny, który może być używany przez różne programy do przetwarzania danych.
-
-Podstawowy format pliku CSV można szybko i łatwo utworzyć lub odczytać za pomocą gotowych modułów jak `csv` w Pythonie. Przykładowe operacje, takie jak zapisywanie danych do listy lub wyświetlanie ich w konsoli, mają prostą i intuicyjną składnię. Jednak przy bardziej zaawansowanym przetwarzaniu danych w pliku CSV, warto zapoznać się z dokumentacją, aby dowiedzieć się o innych dostępnych funkcjach i opcjach.
-
-## Zobacz również
-
-- [Dokumentacja modułu CSV w Pythonie](https://docs.python.org/3/library/csv.html)
-- [Poradnik dla początkujących: Obsługa plików CSV w Pythonie](https://realpython.com/python-csv/)
-- [10 przydatnych operacji na plikach CSV w Pythonie](https://www.datacamp.com/community/tutorials/pandas-read-csv)
+## Zobacz także:
+- [Python CSV module](https://docs.python.org/3/library/csv.html)
+- [History of CSV Format](https://en.wikipedia.org/wiki/Comma-separated_values#History)

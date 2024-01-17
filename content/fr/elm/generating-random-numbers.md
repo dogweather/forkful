@@ -1,7 +1,7 @@
 ---
-title:                "Génération de nombres aléatoires"
-html_title:           "Elm: Génération de nombres aléatoires"
-simple_title:         "Génération de nombres aléatoires"
+title:                "Générer des nombres aléatoires"
+html_title:           "Elm: Générer des nombres aléatoires"
+simple_title:         "Générer des nombres aléatoires"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Numbers"
@@ -10,38 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Quoi & Pourquoi?
+Générer des nombres aléatoires est une action courante dans la programmation qui consiste à produire des nombres au hasard pour une utilisation ultérieure. Les programmeurs utilisent cette technique pour diverses raisons, notamment pour créer des jeux, des simulations et des tests.
 
-Êtes-vous prêt pour un peu de diversion dans votre code Elm ? Nous allons parler de quelque chose de vraiment amusant - la génération de nombres aléatoires ! Non seulement cela ajoute un aspect de jeu à votre application, mais cela peut également être utile pour simuler des données ou créer des tests automatisés avec des données variables.
+## Comment faire:
+Voici un exemple de code en Elm pour générer un nombre aléatoire compris entre 1 et 10 et l'afficher dans la console:
+```
+Elm
+import Random
 
-## Comment faire
-
-La génération de nombres aléatoires en Elm est assez simple grâce à la fonction `Random.generate`. Voici un exemple de code pour générer un nombre aléatoire entre 1 et 10 :
-
-```Elm
-Random.generate (Random.int 1 10) -- renvoie un entier entre 1 et 10
+main =    
+    Random.int 1 10
+        |> Random.generate (\num -> 
+            (Debug.log "Nombre aléatoire:" num))
+```
+Output:
+```
+Nombre aléatoire: 6
 ```
 
-Le résultat sera stocké dans un `Cmd` qui pourra être utilisé pour mettre à jour votre modèle. Voici un exemple de mise à jour de modèle utilisant la génération de nombre aléatoire :
+## Un peu plus en détail:
+La génération de nombres aléatoires est une pratique largement utilisée en informatique depuis de nombreuses années. Avant l'avènement des ordinateurs, des méthodes physiques telles que le lancer de dés ou le choix de cartes étaient utilisées pour générer des nombres aléatoires.
 
-```Elm
-update msg model =
-    case msg of
-        RandomNumber number ->
-            { model | random = number }
+Il existe également d'autres méthodes pour générer des nombres aléatoires en Elm, telles que la génération basée sur une graine (seed) ou en utilisant des algorithmes spécifiques.
 
-        GenerateRandom ->
-            ( model, Random.generate (Random.int 1 10) RandomNumber )
-```
-
-Ici, `RandomNumber` est une action que vous pouvez définir pour mettre à jour votre modèle avec le nombre aléatoire généré. Et `GenerateRandom` est une action qui peut être déclenchée par un bouton ou une autre interaction utilisateur pour lancer la génération de nombre aléatoire. Enfin, dans votre vue, vous pouvez afficher le résultat de la génération de nombre aléatoire en utilisant le champ `random` dans votre modèle.
-
-## Plongée en profondeur
-
-Maintenant que vous savez comment générer des nombres aléatoires, vous pourriez vous demander : "Qu'en est-il de la graine ou de la gestion des probabilités ?" Eh bien, ne vous inquiétez pas, vous pouvez également spécifier une graine pour la génération de nombre aléatoire en utilisant la fonction `Random.generateWithSeed`. De plus, vous pouvez également utiliser les fonctions `andMap` et `map2` pour combiner plusieurs générateurs de nombre aléatoire pour créer des résultats plus complexes. N'hésitez pas à explorer toutes les options que la bibliothèque `Random` d'Elm a à offrir !
-
-## Voir aussi
-
-- Documentation officielle Elm sur la génération de nombres aléatoires : https://package.elm-lang.org/packages/elm/random/latest/
-- Exemples d'utilisation de la génération de nombres aléatoires en Elm : https://elmprogramming.com/random-numbers-elm.html
-- Blog sur les avantages de la génération de nombres aléatoires en Elm : https://elm.brianthicks.com/random-number-generation/
+## À voir aussi:
+- [La documentation officielle d'Elm sur la génération de nombres aléatoires](https://guide.elm-lang.org/effects/random.html)
+- [Un tutoriel complet sur la génération de nombres aléatoires en Elm](https://medium.com/@alexmiller/using-random-numbers-in-elm-programs-58a1d4996683)
+- [Une discussion sur les différentes méthodes de génération de nombres aléatoires en informatique](https://www.geeksforgeeks.org/pseudo-random-vs-true-random-numbers/)

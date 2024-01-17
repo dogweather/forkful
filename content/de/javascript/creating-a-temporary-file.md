@@ -10,35 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+# Was? & Warum?
 
-Warum sollte man sich mit der Erstellung eines temporären Dateisystems beschäftigen? Es gibt viele Gründe, aber einer der wichtigsten ist die Notwendigkeit, Daten temporär zu speichern, um sie später zu verarbeiten oder zu löschen. Temporäre Dateien sind perfekt für die Verarbeitung von großen Mengen an Daten oder für die Durchführung von automatisierten Aufgaben, die nicht permanent gespeichert werden müssen.
+Das Erstellen einer temporären Datei ist eine gängige Praxis unter Programmierern, bei der eine Datei für einen begrenzten Zeitraum erstellt und verwendet wird. Dies kann hilfreich sein, um bestimmte Aufgaben auszuführen, die nur vorübergehend benötigt werden, wie z.B. das Speichern von Zwischenergebnissen oder das Ausführen von Tests.
 
-## Wie erstellt man ein temporäres Dateisystem
+# Wie geht's?
 
-Die Erstellung eines temporären Dateisystems in Javascript ist relativ einfach. Im Folgenden findest du ein Beispiel, wie man dies mit der `fs` Bibliothek macht:
-
+```Javascript
+function createTempFile() {
+  const tempFileName = 'myTempFile.txt';
+  const tempFileContent = 'This is a sample temporary file.';
+  // Creates a new temporary file with the specified name and content.
+  fs.writeFileSync(tempFileName, tempFileContent);
+  console.log(`Temporary file "${tempFileName}" successfully created.`);
+}
+createTempFile();
 ```
-let fs = require('fs');
-
-fs.mkdtemp('temp', (err, folderPath) => {
-  if (err) throw err;
-  console.log(`Temporärer Ordner erstellt unter ${folderPath}`);
-});
+Ausgabe:
+```
+Temporary file "myTempFile.txt" successfully created.
 ```
 
-Dieses Beispiel erstellt einen temporären Ordner mit dem Präfix "temp" und gibt den Pfad des erstellten Ordners aus. Du kannst dann diesen Ordner nutzen, um temporäre Dateien zu erstellen, zu speichern und zu bearbeiten.
+# Tief tauchen
 
-## Tiefer Einblick
+Das Erstellen von temporären Dateien wird schon seit Jahren von Programmierern verwendet. Früher war es üblich, manuell einen eindeutigen Dateinamen zu erstellen und die Datei zu löschen, wenn sie nicht mehr benötigt wurde. Heutzutage gibt es jedoch viele Bibliotheken und Frameworks, die das Erstellen von temporären Dateien vereinfachen und automatisieren.
 
-Beim Erstellen eines temporären Dateisystems gibt es ein paar wichtige Dinge zu beachten. Der erste ist, dass die erstellte temporäre Datei automatisch gelöscht wird, sobald dein Programm beendet wird. Das bedeutet, dass du dir keine Sorgen um das manuelle Löschen machen musst.
+Eine alternative Methode zum Erstellen von temporären Dateien ist die Verwendung von Speicherorten wie dem Arbeitsspeicher oder der Registrierung. Diese können jedoch begrenzte Größen haben und sind nicht so zuverlässig wie das Erstellen einer tatsächlichen Datei.
 
-Zudem ist es ratsam, eine eindeutige Präfixierung für den temporären Ordner zu verwenden, um sicherzustellen, dass es keine Konflikte mit bereits vorhandenen Ordnern gibt. In unserem Beispiel haben wir "temp" als Präfix verwendet, du kannst jedoch auch einen zufälligen String generieren und als Präfix nutzen.
+Die Implementierung des Erstellens von temporären Dateien kann je nach verwendeter Programmiersprache oder Bibliothek variieren. Es ist wichtig, sich mit der Dokumentation vertraut zu machen und sicherzustellen, dass die erstellten temporären Dateien ordnungsgemäß gelöscht werden.
 
-Eine weitere wichtige Sache ist, dass du die temporäre Datei oder den Ordner nicht doppelt verwenden kannst. Das bedeutet, dass du, wenn du eine temporäre Datei oder einen Ordner erstellt hast und ihn wieder verwenden möchtest, ihn zuerst löschen musst, bevor du ihn erneut nutzt.
+# Siehe auch
 
-## Siehe auch
-
-- [Node.js fs Dokumentation](https://nodejs.org/api/fs.html#fs_fs_mkdtemp_prefix_options_callback)
-- [Artikel über die Verwendung von temporären Dateien in Javascript](https://www.geeksforgeeks.org/node-js-fs-mkdtemp-method/)
-- [Node.js Tutorials auf freecodecamp.org](https://www.freecodecamp.org/news/how-to-code-with-nodejs/#how-to-create-a-temporary-file-or-directory-in-nodejs)
+- [fs.writeFileSync() Dokumentation](https://nodejs.org/api/fs.html#fs_fs_writefilesync_file_data_options)
+- [tmp-promise Bibliothek](https://www.npmjs.com/package/tmp-promise)
+- [Node.js für Anfänger – Dateien erstellen](https://www.tutorialspoint.com/nodejs/nodejs_file_system.htm)

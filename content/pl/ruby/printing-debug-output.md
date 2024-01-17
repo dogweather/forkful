@@ -10,35 +10,22 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i Dlaczego?
+Wypisywanie informacji debugowania jest procesem polegającym na wyświetlaniu różnego rodzaju danych w trakcie działania programu w celu ułatwienia jego analizy. Programiści używają tego narzędzia, aby zidentyfikować problemy w swoim kodzie i znaleźć sposoby ich rozwiązania.
 
-Czasami podczas pisania kodu w Rubym napotykamy na błędy lub problemy, które utrudniają nam znalezienie przyczyny niepoprawnego działania programu. Wykorzystanie wypisywania informacji debugowania może pomóc nam w szybkim rozwiązaniu tych problemów poprzez śledzenie kolejnych kroków wykonywanych przez program.
-
-## Jak to zrobić
-
-Aby wypisać informacje debugowania w Rubym, możemy wykorzystać metodę `puts` i przekazać jej zmienną lub wyrażenie, które chcemy wyświetlić. Możemy także wykorzystać specjalną metodę `p`, która wyświetli nam informacje debugowania w postaci czytelnego dla programisty zapisu.
-
-```Ruby
-# Wypisanie zmiennej do celów debugowania
-x = 5
-puts x # 5
-
-# Wykorzystanie metody p
-p "Hello World!" # "Hello World!"
+## Jak to zrobić:
+```Ruby 
+a = 5
+b = 10
+c = a + b
+puts c
 ```
+Wywołanie metody "puts" spowoduje wyświetlenie wartości zmiennej "c" na ekranie, co pozwala nam upewnić się, czy nasz kod działa poprawnie.
 
-Wykorzystanie metod `puts` i `p` pozwala nam na wypisanie wartości zmiennych oraz dokładne śledzenie kolejnych kroków wykonywanych przez program. Dodatkowo, możemy wykorzystać także argument `inspect` w metodzie `p` aby uzyskać szczegółowe informacje o obiekcie, które mogą być przydatne podczas debugowania.
+## Głębsze zagłębienie:
+Wypisywanie informacji debugowania jest powszechnie używaną praktyką w programowaniu, która pozwala programistom na szybsze i bardziej efektywne rozwiązywanie problemów. Alternatywnym sposobem na debugowanie jest użycie komunikatów błędów, jednak ta metoda może być mniej precyzyjna.
 
-## Dogłębna analiza
+W Ruby istnieje wiele metod wypisywania informacji debugowania, takich jak "puts", "p" i "pp". Każda z nich posiada swoje unikalne cechy i może być używana w zależności od potrzeb programisty.
 
-Istnieje również wiele innych metod i narzędzi, które pozwalają na wypisanie informacji debugowania w Rubym. Jednym z nich jest gem `pry`, który pozwala na interaktywne debugowanie naszego kodu oraz wyświetlanie wartości zmiennych w danym momencie wykonania programu.
-
-Innym ciekawym narzędziem jest gem `byebug`, który pozwala na zatrzymywanie wykonania programu w określonych miejscach i przeprowadzanie interaktywnych inspekcji zmiennych.
-
-Warto także zapoznać się z dokumentacją Rubiego, gdzie znajduje się więcej informacji na temat wypisywania informacji debugowania oraz dostępnych narzędzi.
-
-## Zobacz także
-
-- [Przykłady użycia metody `puts` w Rubym](https://www.rubyguides.com/2018/10/ruby-puts-method/)
-- [Interaktywne debugowanie z wykorzystaniem gemu `pry`](https://www.sitepoint.com/pry-a-simple-start/)
-- [Gem `byebug` w praktyce](https://www.petrbílek.cz/en/blog/gotta-stop-em-all-using-byebug/)
+## Zobacz również:
+Jeśli chcesz dowiedzieć się więcej o wypisywaniu informacji debugowania w Ruby, polecamy zapoznać się z dokumentacją języka oraz artykułami na ten temat. Możesz także poszukać poradników i tutoriali w internecie, które pomogą Ci lepiej zrozumieć tę praktykę.

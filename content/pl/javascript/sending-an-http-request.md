@@ -1,7 +1,7 @@
 ---
-title:                "Wysyłanie zapytania http"
-html_title:           "Javascript: Wysyłanie zapytania http"
-simple_title:         "Wysyłanie zapytania http"
+title:                "Wysyłanie żądania HTTP"
+html_title:           "Javascript: Wysyłanie żądania HTTP"
+simple_title:         "Wysyłanie żądania HTTP"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "HTML and the Web"
@@ -10,49 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+# Co i dlaczego?
 
-Ktoś mógłby zapytać, dlaczego powinniśmy się zainteresować wysyłaniem żądań HTTP w naszym kodzie JavaScript? Otóż, jest to niezbędne do komunikacji z innymi serwerami lub zewnętrznymi źródłami danych, co jest niezbędne w dzisiejszym świecie aplikacji internetowych.
+Wysyłanie żądania HTTP to proces, w którym komputer wysyła prośbę o zasób do innej maszyny w sieci. Programiści często wykorzystują to w swoich projektach, ponieważ pozwala to na pobieranie danych z innych stron lub serwerów, co ułatwia tworzenie rozbudowanych aplikacji.
 
-## Jak to zrobić
-
-Aby wysłać żądanie HTTP w kodzie JavaScript, musimy użyć obiektu XMLHttpRequest lub metody fetch. Poniżej znajdują się przykładowe kody, które pokazują, jak zastosować te dwie metody.
-
-##### Przykład z użyciem obiektu XMLHttpRequest:
+# Jak to zrobić:
 
 ```Javascript
-var xhr = new XMLHttpRequest();
-xhr.open("GET", "https://serwer.pl/dane", true);
-xhr.send();
-
-xhr.onreadystatechange = function () {
-    if (xhr.readyState == 4 && xhr.status == 200) {
-        console.log(xhr.responseText);
-    }
-}
+const request = new XMLHttpRequest();
+request.open('GET', 'https://jsonplaceholder.typicode.com/todos/1');
+request.send();
 ```
 
-##### Przykład z użyciem metody fetch:
+W tym przykładzie wykorzystujemy obiekt XMLHttpRequest, który pozwala nam na wysłanie żądania GET do serwera podanego w drugim argumencie funkcji `open()`. Następnie wywołujemy funkcję `send()` aby wysłać żądanie i zapisać odpowiedź do obiektu `request`.
 
-```Javascript
-fetch("https://serwer.pl/dane")
-    .then(response => response.json())
-    .then(data => console.log(data));
-```
+# Głębszy wgląd:
 
-W wyniku tych kodów otrzymamy odpowiedź z serwera w postaci tekstu lub danych w formacie JSON.
+1. Kontekst historyczny: Wysyłanie żądań HTTP stało się możliwe dzięki rozwojowi oraz standardyzacji protokołu HTTP. Dzięki niemu możemy komunikować się z serwerem i pobierać potrzebne nam zasoby.
 
-## Zagłębienie się w temat
+2. Alternatywy: Obecnie najpopularniejszą metodą wysyłania żądań HTTP jest wykorzystanie biblioteki `fetch` lub frameworków takich jak `Axios`.
 
-Wysyłanie żądania HTTP za pomocą JavaScript może być skomplikowane ze względu na różnice w obsłudze przez różne przeglądarki. Dlatego, warto rozważyć użycie bibliotek takich jak Axios lub jQuery, które ułatwiają pracę z żądaniami.
+3. Szczegóły implementacji: Wysyłanie żądań HTTP odbywa się przy użyciu różnych metod takich jak GET, POST, PUT czy DELETE. Każda z nich ma swoje zastosowanie i pozwala na różne operacje na zasobach.
 
-Każde żądanie HTTP składa się z różnych części, takich jak metoda (GET, POST, PUT, DELETE), adres URL i opcjonalnie ciało żądania. Możemy również dodać nagłówki do żądania, które zawierają dodatkowe informacje dla serwera.
+# Zobacz również:
 
-W przypadku żądań typu POST lub PUT, musimy przekazać dane do serwera w formacie JSON lub FormData. W przypadku używania metody fetch, możemy określić ustawienia zapytania, takie jak metoda, nagłówki i dane.
-
-Teraz, gdy znasz podstawy wysyłania żądań HTTP w JavaScript, możesz z powodzeniem komunikować się z innymi serwerami i pobierać dane z zewnętrznych źródeł.
-
-## Zobacz również
-
-- [Using XMLHttpRequest](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/Using_XMLHttpRequest)
-- [Using Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)
+- Dokumentacja XmlHttpRequest: https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest
+- Poradnik z wykorzystaniem `fetch`: https://www.sitepoint.com/fetch-api/
+- Biblioteka Axios: https://axios-http.com/docs/intro

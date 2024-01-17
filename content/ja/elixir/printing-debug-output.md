@@ -1,7 +1,7 @@
 ---
-title:                "デバッグ出力の印刷"
-html_title:           "Elixir: デバッグ出力の印刷"
-simple_title:         "デバッグ出力の印刷"
+title:                "デバッグ出力のプリント"
+html_title:           "Elixir: デバッグ出力のプリント"
+simple_title:         "デバッグ出力のプリント"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Testing and Debugging"
@@ -10,51 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# なぜデバッグ出力を行うのか
+## 何？なぜ？
 
-デバッグ出力とは、コードを実行する際に、実行中のプログラムの状態や値を確認するために使用される機能です。エラーが発生した際に、その原因を特定するためにも役立ちます。また、プログラムの正確性を保証するためにも重要です。
+デバッグの出力をプリントすることは、プログラマーがアプリケーションの実行中に特定の情報を表示したいときに使用する方法です。デバッグの出力は、問題のが原因を見つけるために役立ちます。
 
-## 方法
 
-デバッグ出力を行うには、`IO.inspect/2` という関数を使用します。この関数は、任意のデータを受け取り、その内容を出力します。例えば、以下のように使用します。
+## 方法：
 
-```Elixir
-IO.inspect("Hello world")
+Elixirでは```:debugger```モジュールを使用して簡単にデバッグ出力をプリントすることができます。以下のコードをコンパイルし、コードを実行します。
+
+```
+defmodule Example do
+  require Logger
+  use :debugger
+  
+  def get_name(name) do
+    Logger.debug("Name is #{name}")
+    name
+  end
+end
+
+Example.get_name("John")
 ```
 
-上記のコードを実行すると、ターミナル上に `"Hello world"` という文字列が出力されます。また、変数や関数の値を出力する際には、以下のように使用します。
+上記のコードを実行すると、コンソールに以下のような出力が表示されます。
 
-```Elixir
-name = "John"
-IO.inspect(name)
-
-addition = fn x, y -> x + y end
-IO.inspect(addition.(3, 4))
+```
+22:02:47.418 [debug] Name is John
 ```
 
-出力結果は、それぞれ `"John"` と `7` となります。
+この出力から、私たちが指定した名前が「John」であったことがわかります。これにより、私たちは特定の部分が機能しないということがわかります。
 
-## 深堀り
+## 深堀り：
 
-デバッグ出力を行う際には、必要に応じて `IO.inspect/2` の第二引数にオプションを指定することができます。例えば、以下のように `pretty: true` を指定すると、出力結果が整形されて見やすくなります。
+デバッグの出力は、プログラミングにおいて非常に重要なテクニックです。プログラム中にロギングを行うことで、プログラムの実行中に発生した情報を取得することができます。また、デバッグの出力を使用することで、コードをテストする際にも役立ちます。代わりに、デバッグ出力をブレークポイントとして使用することもできます。
 
-```Elixir
-IO.inspect([1, 2, 3], pretty: true)
-```
+Elixir以外の言語でも、同様のデバッグ技術を使用することができます。ただし、それぞれの言語には独自のデバッグツールがあります。
 
-出力結果は、以下のようになります。
+デバッグの出力は、プログラム開発のフェーズを選ばずに使用することができます。デバッグ出力を使用することで、プログラムを追跡し、問題を解決することができます。
 
-```Elixir
-[
-  1,
-  2,
-  3
-]
-```
+## 関連リンク：
 
-また、`IO.inspect/2` の第二引数に渡すオプションの一つに `label: "文字列"` というものがあり、指定した文字列が出力されるようになります。これを利用すると、どの箇所のデバッグ出力かを明示することができます。
-
-## 併せて参照
-
-* [Elixir 公式ドキュメント - IO.inspect/2](https://hexdocs.pm/elixir/IO.html#inspect/2)
-* [プログラミング初心者も活用できる Elixir のメリット・デメリットまとめ](https://herp.cafe/articles/eliixr-pros-cons)（日本語）
+- Elixir オフィシャルドキュメント: https://elixir-lang.org/docs.html
+- Elixirのデバッグ文書: http://debugger.exhale-db.com/elixir/debugging.html

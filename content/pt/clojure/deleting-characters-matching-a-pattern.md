@@ -1,7 +1,7 @@
 ---
-title:                "Apagando caracteres que correspondem a um padrão."
-html_title:           "Clojure: Apagando caracteres que correspondem a um padrão."
-simple_title:         "Apagando caracteres que correspondem a um padrão."
+title:                "Excluindo caracteres correspondentes a um padrão"
+html_title:           "Clojure: Excluindo caracteres correspondentes a um padrão"
+simple_title:         "Excluindo caracteres correspondentes a um padrão"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -10,34 +10,20 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+## O que & Por quê? 
+Deletar caracteres que correspondem a um padrão é um processo comum em programação, onde queremos remover um determinado conjunto de caracteres de uma determinada string ou seqüência de caracteres. Isso pode ser útil quando queremos limpar ou filtrar dados ou quando precisamos criar um formato específico para uma string.
 
-Algumas vezes, em nossos programas em Clojure, precisamos manipular strings de forma mais específica, removendo caracteres que correspondem a um determinado padrão. Isso pode ser útil em casos como filtrar dados ou formatar uma string de acordo com um determinado formato.
-
-## Como fazer
-
-Podemos usar a função `clojure.string/replace` para substituir esses caracteres por uma string vazia, efetivamente removendo-os. Por exemplo, se quisermos remover todos os dígitos de uma string, podemos usar a expressão regular `#"[0-9]"` como padrão e passá-la como argumento para a função `replace`. Veja um exemplo:
+## Como: 
+Nós podemos usar a função `replace` para excluir caracteres que correspondam a um padrão de uma string ou seqüência de caracteres. Veja o exemplo abaixo:
 
 ```Clojure
-(require '[clojure.string :as str])
-
-(str/replace "abc123xyz" #"[0-9]" "")
-;; resultado: "abcxyz"
+(replace #"\d" "abc123def")
 ```
 
-Podemos combinar esse método com outras funções de manipulação de strings para obter resultados mais complexos. Por exemplo, se quisermos remover todos os caracteres não alfabéticos de uma string, podemos primeiro usar a função `str/replace` para substituir todos os dígitos por uma string vazia e depois combinar isso com a função `str/reduce` para remover todos os caracteres especiais. Veja um exemplo:
+O código acima irá retornar a string `"abcdef"`, pois ele removeu todos os caracteres numéricos da string original. 
 
-```Clojure
-(str/reduce (fn [acc x] (if (Character/isLetter x) (str acc x) acc)) (str/replace "abc123.xyz" #"[0-9]" ""))
-;; resultado: "abcxyz"
-```
+## Mergulho Profundo: 
+Antes de `Clojure` existir, a linguagem `Perl` já tinha uma função chamada `s///` que fazia exatamente isso e serviu de inspiração para a função `replace` em `Clojure`. Existem outras maneiras de realizar essa mesma tarefa em `Clojure`, como usar a função `str/replace` do namespace `clojure.string` ou usar expressões regulares mais avançadas.
 
-## Profundando um pouco mais
-
-A função `replace` utiliza expressões regulares para encontrar padrões em uma string e substituí-los por outra. Essa flexibilidade nos permite realizar operações mais complexas e específicas de acordo com nossas necessidades. Além disso, as expressões regulares são uma ferramenta poderosa para trabalhar com strings em Clojure e vale a pena aprender mais sobre elas e suas funcionalidades.
-
-## Veja também
-
-- [Documentação oficial do Clojure](https://clojure.org/)
-- [Tutorial sobre expressões regulares em Clojure](https://www.braveclojure.com/regular-expressions/)
-- [Exemplos de uso da função `replace`](https://clojuredocs.org/clojure.string/replace)
+## Veja Também: 
+Para saber mais sobre o uso da função `replace` em `Clojure`, consulte a documentação oficial: https://clojuredocs.org/clojure.string/replace. Você também pode explorar outras funções úteis do namespace `clojure.string`, como `split` e `join`.

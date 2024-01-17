@@ -1,7 +1,7 @@
 ---
-title:                "Alaotsikko: Alimerkkijonojen erottaminen"
-html_title:           "Javascript: Alaotsikko: Alimerkkijonojen erottaminen"
-simple_title:         "Alaotsikko: Alimerkkijonojen erottaminen"
+title:                "Alimerkkijonojen erottaminen"
+html_title:           "Javascript: Alimerkkijonojen erottaminen"
+simple_title:         "Alimerkkijonojen erottaminen"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Strings"
@@ -10,37 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi käyttää substringien etsimistä?
+## Mikä & Miksi?
 
-Substringien etsiminen on hyödyllinen työkalu, jolla voidaan käsitellä merkkijonoja ja saada tarkkaa dataa halutusta kohdasta. Se on erityisen hyödyllinen silloin, kun käsiteltäviä merkkijonoja on paljon ja halutaan tehdä tarkkoja hakuja ja muokkauksia.
+Substringien eristäminen on prosessi, jossa valitaan ja paljastetaan tietty osa merkkijonosta. Ohjelmoijat tekevät näin esimerkiksi lopullisen tulosteen muotoilun tai tietojen käsittelyn vuoksi. Se on yleinen tekniikka, jota käytetään laajasti monissa ohjelmointikielessä.
 
-## Kuinka tehdä substringien etsiminen?
+## Kuinka tehdä?
 
 ```Javascript
-// Määritellään merkkijono
-let teksti = "Tämä on esimerkkilause";
+let merkkijono = "Tämä on esimerkkiteksti";
+let substr = merkkijono.substring(5, 14);
 
-// Etsitään alkuindeksin 5 jälkeen olevista merkeistä 10 substrin pituista osaa
-let osa = teksti.substring(5, 15);
-console.log(osa);
-// Output: on esimerk
-
-// Haku alkaen alusta ilman lopetusindeksiä
-let osa2 = teksti.substring(5);
-console.log(osa2);
-// Output: on esimerkkilause
+console.log(substr); // tulostaa "on esimerk"
 ```
 
-Tässä esimerkissä määritellään ensin merkkijono ja sen jälkeen käytetään ```substring()```-funktiota hakuun. Funktio ottaa kaksi parametria: alkuindeksin ja lopetusindeksin. Voit myös jättää lopetusindeksin pois, jolloin haku alkaa alusta ja jatkuu loppuun asti.
+- Määritä ensin muuttuja, joka sisältää merkkijonon, josta haluat eristää substringin.
+- Käytä `substring()` -funktiota ja anna sille aloitus- ja lopetusindeksit alueelle, jonka haluat eristää.
+- Tallenna tulos muuttujaan ja tulosta se käyttämällä `console.log()` -funktiota.
 
-## Syvempi sukellus substringien etsimiseen
+## Syvällinen sukellus
 
-Funktion sisällä tapahtuu muutama asia ennen kuin se palauttaa halutun substringin. Ensinnäkin, merkkijonon indeksit alkavat aina 0:sta, joten ensimmäinen merkki on indeksissä 0. Toiseksi, lopetusindeksi määrittää millä merkillä haku päättyy, mutta tätä merkkiä ei oteta mukaan osaksi palautettua substringia.
-
-Toinen tärkeä huomioitava asia on, että ```substring()```-funktio ei muuta alkuperäistä merkkijonoa, vaan palauttaa uuden merkkijonon. Tämä yhdessä ```let```-avainsanan kanssa mahdollistaa merkkijonon muokkauksen ilman että alkuperäistä dataa menetetään.
+- Substringien eristämisellä on pitkä historia, ja se on tullut yhä tärkeämmäksi nykyaikaisessa ohjelmoinnissa.
+- Vaikka `substring()` on yleinen ja kätevä funktio, on myös muita tapoja eristää substringeja, kuten `slice()` ja `substr()`.
+- Käytä `substring()` -funktiota varovaisesti ja muista ottaa huomioon indeksoinnin välittäminen.
 
 ## Katso myös
 
-- [String.substring() - MDN web docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
-- [Substring in JavaScript: Four Solutions to Find and Remove Substrings Inside a String](https://codeburst.io/substring-in-javascript-four-solutions-to-find-and-remove-substrings-b69c799f03b8)
-- [10 Common String Operations in JavaScript](https://dmitripavlutin.com/10-common-string-operations-in-javascript/)
+Jos haluat lisätietoja substringien eristämisestä Javascriptillä, tutustu seuraaviin lähteisiin:
+
+- [MDN Web Docs: substring()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
+- [W3Schools: JavaScript substring()](https://www.w3schools.com/jsref/jsref_substring.asp)
+- [JavaScript.info: Substrings and substr](https://javascript.info/string-substr)

@@ -10,72 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+## O que e por que?
 
-Obter a data atual é uma tarefa comum em muitos aplicativos de software e pode ser útil para várias finalidades, como registro de eventos, agendamento de tarefas e geração de relatórios. Com o Go, é fácil obter a data atual e manipulá-la de acordo com as necessidades do seu projeto.
+Obter a data atual é um processo importante para programadores em Go. Isso permite que eles tenham acesso à data e hora exatas no momento da execução do programa. Isso é útil para registrar eventos, calcular tempos de execução e outras tarefas que dependem de informações temporais precisas.
 
-## Como fazer
+## Como fazer:
 
-Para obter a data atual em Go, podemos usar a função `time.Now()`. Ela retorna uma instância do tipo `Time`, que contém a data e hora atuais. Veja um exemplo de código abaixo:
+Para obter a data atual em Go, você pode usar a função "Now()" do pacote "time". Ela retorna um objeto do tipo "Time" contendo a data e hora atuais.
 
-```Go
-package main
-
-import (
-	"fmt"
-	"time"
-)
-
-func main() {
-	agora := time.Now()
-	fmt.Println("Data e hora atual:", agora)
-}
 ```
-```
-Saída:
-Data e hora atual: 2020-07-20 15:30:45.6789 +0000 UTC m=+0.000000000
+Go time.Now()
 ```
 
-Podemos manipular a data e hora obtida utilizando os métodos da struct `Time`, como `Year()`, `Month()`, `Day()` e `Hour()`. Veja um exemplo mostrando apenas a data atual no formato dia/mês/ano:
+Para exibir a data e hora em um formato legível, você pode usar o método "Format()", que aceita uma string de formatação como argumento. Por exemplo, para exibir a data em formato "dia/mês/ano":
 
-```Go
-agora := time.Now()
-fmt.Printf("Data atual: %d/%d/%d", agora.Day(), agora.Month(), agora.Year())
 ```
-```
-Saída:
-Data atual: 20/7/2020
+Go time.Now().Format("02/01/2006")
 ```
 
-Também é possível adicionar ou subtrair um intervalo de tempo à data atual utilizando os métodos `Add()` e `Sub()`, respectivamente. Veja um exemplo de adição de um dia à data atual:
+O resultado será exibido como: "25/12/2021".
 
-```Go
-package main
+## Uma olhada mais profunda:
 
-import (
-	"fmt"
-	"time"
-)
+Em versões anteriores do Go, a função "Now()" não era tão eficiente e precisava de operações matemáticas adicionais para retornar a data e hora atual. Porém, na versão atual do Go, essa função usa o relógio do sistema operacional diretamente, tornando-a muito mais rápida e precisa.
 
-func main() {
-	agora := time.Now()
-	amanha := agora.Add(time.Hour * 24)
-	fmt.Println("Data atual:", agora)
-	fmt.Println("Data de amanhã:", amanha)
-}
-```
-```
-Saída:
-Data atual: 2020-07-20 15:30:45.6789 +0000 UTC m=+0.000000000
-Data de amanhã: 2020-07-21 15:30:45.6789 +0000 UTC m=+86400.000000000
-```
+Uma alternativa para obter a data atual em Go seria utilizar a função "Unix()" do pacote "time", que retorna a data e hora em formato Unix. Isso pode ser útil se o objetivo é comparar as datas ou armazená-las em um banco de dados.
 
-## Aprofundamento
+## Veja também:
 
-A struct `Time` também possui métodos para formatar a data em diferentes layouts, além de permitir a comparação entre datas e a verificação de intervalo de tempo. Para obter mais informações sobre esses métodos e outras funcionalidades relacionadas à manipulação de datas e horas no Go, consulte a documentação oficial: https://golang.org/pkg/time/
+Para mais informações sobre a função "Now()" e suas opções de formatação, acesse a documentação oficial do pacote "time": https://golang.org/pkg/time/#Now.
 
-## Veja também
-
-- https://golang.org/pkg/time/
-- https://www.calhoun.io/working-with-date-and-time-in-go/
-- https://www.sohamkamani.com/blog/golang/working-with-time-in-go/
+Outra opção é usar a biblioteca "github.com/jinzhu/now", que possui funcionalidades adicionais para trabalhar com datas e horas em Go: https://github.com/jinzhu/now.

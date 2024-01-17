@@ -1,7 +1,7 @@
 ---
-title:                "एक टेक्स्ट फाइल लिखना"
-html_title:           "Ruby: एक टेक्स्ट फाइल लिखना"
-simple_title:         "एक टेक्स्ट फाइल लिखना"
+title:                "एक पाठ फ़ाइल लिखना"
+html_title:           "Ruby: एक पाठ फ़ाइल लिखना"
+simple_title:         "एक पाठ फ़ाइल लिखना"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Files and I/O"
@@ -10,42 +10,22 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Kyaorama
-Abhinav Topedar, 
-Ek text file likhneka kya fayda hota hai? Shayad aapko lage ki koi app aapki diary likhna hai parantu agara aap programming mein pravesh karna chahate hai na, to text file likhna ek aadhunik tarika hai. Technique ka matlab hai ki aap apne thode samay mein note karsakte hain apne code mein aur test karsakte hain saamne laya respect kuch samay baad. Ye ek aasaan aur bharoseemand tarika hai apne progress ko track karne ka.
+"आपने शायद मलूम होगा कि प्रोग्रामिंग क्या है और इसमें प्रोग्रामर द्वारा किए गए काम कितना महत्वपूर्ण है। लेकिन क्या आपको पता है कि टेक्स्ट फाइल लिखना भी एक प्रोग्रामिंग काम है? हाँ, आप बिल्कुल सही पढ़ रहे हैं। टेक्स्ट फाइल लिखना प्रोग्रामर के लिए भी एक आवश्यक कौशल है, क्योंकि इससे उन्हें अपने प्रोग्राम्स को स्टोर और ब्यूनिक करने की अनुमति मिलती है।
 
-## Kaise Kare
-Aapko Ruby ka instalation jaruri hai aapki system par. Jab aap apne terminal mein Ruby command likhenge, aapko IRB prompt screen mein dikhega. Lekin abhi hum text file likhege. Chaliye, ye ek simple Ruby code example ka padhna shuru kare jismein hum ek text file likhege aur uski output ko print karege:
-```ruby
-# Create a new text file and open it
-file = File.new("new_file.txt", "w")
+## क्या और क्यों?
+टेक्स्ट फाइल का अर्थ है किसी भी प्रकार के दस्तावेज़ को प्लेन टेक्स्ट के रूप में लिखना। प्रोग्रामर इसे अपने प्रोग्राम के रूप में इस्तेमाल करते हैं, जिससे वे अपने कोड को अन्य प्रोग्रामरों के साथ साझा कर सकते हैं और अपनी प्रोग्राम्स को संग्रहित रख सकते हैं।
 
-# Add some text to the file
-file.puts "Welcome to my first text file!"
-file.puts "I am learning Ruby and it's awesome!"
-
-# Close the file
+## कैसे करें?
+```Ruby
+file = File.new("sample.txt", "w")
+file.puts("यह मेरी पहली टेक्स्ट फाइल है।")
+file.puts("मैं रबी प्रोग्रामिंग आसानी से सीख सकता हूं।")
 file.close
-
-# Open the file in read mode and print the contents
-puts "The file contains:"
-puts File.read("new_file.txt")
 ```
-Jaise aapko dikh raha hoga, humne `File.new` ke dwara ek naya text file create kiya aur `file.puts` ke dwara usmein content add kiya. Fir `close` ke dwara file ko band kiya aur `File.read` se file ka content print kiya. Chaliye ab is code ko chalakar dekhe:
-```
-The file contains:
-Welcome to my first text file!
-I am learning Ruby and it's awesome!
-```
+इस उदाहरण कोड के द्वारा हम एक टेक्स्ट फाइल बना रहे हैं और उसमें दो लाइनें लिख रहे हैं। यह कोड सबसे पहले "sample.txt" नाम की फाइल बनायेगा और उसे "w" विकल्प के साथ ओपन करेगा। यह फाइल हमेशा के लिए ओपन होगी, जब तक कि हम उसे बंद नहीं करते हैं। हम फाइल में ```puts``` फंक्शन के द्वारा टेक्स्ट को लिख रहे हैं और फाइल को बंद कर रहे हैं। "sample.txt" फाइल उसी डिरेक्टरी में बनेगी जहां हमारा कोड है।
 
-## Gehri Jhanki
-Likhne ke doran, `file.puts` ka istemal hota hai content ko file mein likhne ke liye. Hum `w` ka istemal karte hain `File.new` mein text file ko likhne ke liye. Humein `close` ke dwara file ko band karna jaruri hai taki humare changes file mein save ho. Agar hum `close` na kare, toh humare changes file mein save nahi honge. Humein `File.read` se file ko read karna padega taki hum file ka content print kar sake.
+## गहरायी में जानकारी
+टेक्स्ट फाइलें प्रोग्रामरों के लिए बहुत उपयोगी हैं। पहले इनका इस्तेमाल मुख्य रूप से साझा कोड को डीबग के लिए किया जाता था, लेकिन अब ये प्रोग्राम रिसोर्सों को संग्रहित करने के लिए इस्तेमाल होते हैं। टेक्स्ट फाइलें को पढ़ने और लिखने के लिए कई अन्य विकल्प भी मौजूद हैं, जैसे CSV और XML फाइलें। प्रोग्रामर को टेक्स्ट फाइलें बनाना और उन्हें संग्रहित करने के लिए बहुत ही बेस्ट प्रैक्टिस है।
 
-## Dekhe bhiay
-Agar aap aur bhi Ruby sikhna chahate hain, toh niche diye gaye links check kare:
-- [RubyKoariya](https://rubymonk.com/) Ek interactive platform jaha aap Ruby ko seekh sakte hain.
-- [RubyKoariya pane ke liye Ruby installer](https://www.ruby-lang.org/en/documentation/installation/) Installation guide aur steps ke liye.
-- [The Ruby language](https://www.ruby-lang.org/) Official website jaha se aap latest updates aur documentation dekh sakte hain.
-
-## Dekh na Bhai
-Jab bhi aap kuch programming seekhte hain, ek text file likhna ek bharoseemand aur zaroori technique hai. Ruby mein, ye kaam bohot hi aasaan hai. Abhi aap gaye! Happy coding!
+## हम कहाँ जा सकते हैं?
+अगर आपको और भी गहराई से जानकारी चाहिए टेक्स्ट

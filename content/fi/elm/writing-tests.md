@@ -1,7 +1,7 @@
 ---
-title:                "Testien kirjoittaminen."
-html_title:           "Elm: Testien kirjoittaminen."
-simple_title:         "Testien kirjoittaminen."
+title:                "Ohjelmointitestien kirjoittaminen"
+html_title:           "Elm: Ohjelmointitestien kirjoittaminen"
+simple_title:         "Ohjelmointitestien kirjoittaminen"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Testing and Debugging"
@@ -10,45 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä & Miksi?
+Testien kirjoittaminen on tärkeä osa ohjelmointia, sillä se auttaa varmistamaan koodin toimivuuden ja vähentää virheiden mahdollisuutta. Ohjelmoijat kirjoittavat testejä varmistaakseen, että heidän koodinsa toimii oikein ja pysyy toimivana myös tulevaisuudessa.
 
-Testien kirjoittaminen on tärkeä osa ohjelmistokehitystä. Se varmistaa, että koodi toimii odotetusti ja auttaa havaitsemaan mahdollisia bugeja ennen kuin ne päätyvät tuotantoon.
+## Miten:
+Elm-kielellä testien kirjoittaminen on helppoa ja tehokasta. Alla on muutamia esimerkkejä, miten voit kirjoittaa testejä Elm:llä ja mitä tulee tulos näyttämään.
 
-## Kuinka
+```
+Elm-testi
 
-Kirjoittamalla testejä Elm:llä voit varmistaa, että koodisi toimii niin kuin on tarkoitus. Testit ovat kirjoitettu käyttäen Elm-testikirjastoa ja voivat automaattisesti suorittaa tarkistuksia koodin toimivuudesta. Alla on esimerkki yksinkertaisesta testistä:
-
-```Elm
 import Test exposing (..)
-import Expect
+import Expect exposing (expect)
 
--- Esitellään funktio, jonka haluamme testata
-square : Int -> Int
-square x =
-  x * x
+testit : Test
+testit =
+    describe "Testaa kaksi lukua"
+        [ test "Lukujen summa on oikein" <|
+            \() ->
+                expect (1 + 2) toBe 3
+        , test "Lukujen erotus on oikein" <|
+            \() ->
+                expect (5 - 2) toBe 3
+        , test "Lukujen kertolasku on oikein" <|
+            \() ->
+                expect (4 * 3) toBe 12
+        ]
 
--- Kirjoitetaan testi
-squareTest : Test
-squareTest =
-  test "neliöfunktion testi" <|
-    \() ->
-      Expect.equal (square 5) 25
-
--- Suoritetaan testi
-main : Test
-main =
-  describe "Testit" [ squareTest ]
 ```
 
-Tämä yksinkertainen testi varmistaa, että funktio nimeltä "square" palauttaa oikean arvon syötteelle 5. Voit lisätä haluamasi määrän testejä ja suorittaa ne kaikki yhdellä komennolla. Testien avulla voit myös luoda simulaatioita eri syötteistä ja varmistaa, että koodi käyttäytyy odotetulla tavalla.
+Tulos:
+```
+Testata kaksi lukua
+    ✓ Lukujen summa on oikein
+    ✓ Lukujen erotus on oikein
+    ✓ Lukujen kertolasku on oikein
 
-## Syvempi sukellus
+Passed: 3, Failed: 0
+```
 
-Testien kirjoittaminen Elm:llä ei ole vain hyödyllistä koodin toimivuuden varmistamiseksi, vaan se myös auttaa parantamaan koodin laatua ja ylläpidettävyyttä. Testien avulla voit eristää virheitä, jotka voivat ilmetä muutoksien yhteydessä ja helpottaa koodin muokkaamista tulevaisuudessa.
+## Syvemmälle:
+Testaaminen on tärkeä osa ohjelmointia jo pitkään ollut käytäntö. Se auttaa ohjelmoijia löytämään ja korjaamaan virheitä nopeasti ja välttämään mahdollisia ongelmia tulevaisuudessa. Elm-kielellä on monia muitakin testaamistyökaluja, kuten elm-test-rs, joka tarjoaa helpon tavan suorittaa testejä projektissasi. Lisäksi voi myös olla hyödyllistä lukea lisää testaamisesta yleisesti ja löytää parhaita käytäntöjä testaamiseen.
 
-Testien kirjoittaminen Elm:llä seuraa yleensä kolmea vaihetta: syötteiden luominen, koodin suorittaminen ja odotusten asettaminen. Voit käyttää testikirjastoa lisätäksesi lisättyä monimutkaisuutta testien luomiseen tai voit luoda omia funktioita, jotka vastaavat yksinkertaisiin testitarpeisiisi.
-
-## Katso myös
-
-- [Elm-testikirjaston dokumentaatio](https://package.elm-lang.org/packages/elm-explorations/test/latest/)
-- [Elm-oppaat ja esimerkit](https://elmprogramming.com/)
+## Katso myös:
+- [Elm-test-rs](https://github.com/gdotdesign/elm-test-rs)
+- [Testaaminen yleisesti](https://en.wikipedia.org/wiki/Software_testing)
+- [Testaamisen parhaat käytännöt](https://www.softwaretestinghelp.com/software-testing-best-practices/)

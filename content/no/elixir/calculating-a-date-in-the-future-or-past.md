@@ -1,7 +1,7 @@
 ---
-title:                "Beregning av en dato i fremtiden eller fortiden"
-html_title:           "Elixir: Beregning av en dato i fremtiden eller fortiden"
-simple_title:         "Beregning av en dato i fremtiden eller fortiden"
+title:                "Beregning av dato i fremtid eller fortid"
+html_title:           "Elixir: Beregning av dato i fremtid eller fortid"
+simple_title:         "Beregning av dato i fremtid eller fortid"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Dates and Times"
@@ -10,28 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hva & hvorfor?
 
-Å kunne beregne en dato i fremtiden eller fortiden er en viktig ferdighet for å håndtere tidsfølsomme oppgaver i programmering. Dette kan inkludere å planlegge fremtidige oppgaver, håndtere tidsbegrensede data og mye mer.
+Å beregne en dato i fremtiden eller fortiden er et vanlig problem for programmerere. Det kan være nyttig for å utvikle funksjoner som tidsstyrte tjenester eller for å vise datoer på en nettside basert på brukerens tidssone.
 
-## Hvordan
+## Slik gjør du det:
 
-Å beregne en dato i Elixir er enkelt og intuitivt. Alt du trenger å gjøre er å bruke funksjonen `:calendar.date_to_gregorian_days/1` for å konvertere en dato til dens tilsvarende dag i den gregorianske kalenderen. Deretter kan du bruke `:calendar.gregorian_days_to_date/1` for å konvertere ønsket antall dager tilbake eller fremover fra den opprinnelige datoen. La oss se på et eksempel:
+For å beregne en dato i fremtiden eller fortiden i Elixir, kan du bruke funksjonen `Date.shift/3` og angi antall dager fra nå eller antall dager siden. For eksempel:
 
 ```Elixir
-iex> start_date = {2019, 03, 20}
-iex> days_to_add = 7
-iex> future_date = start_date |> :calendar.date_to_gregorian_days() |> Kernel.+(days_to_add) |> :calendar.gregorian_days_to_date()
+Date.shift(Date.utc_today(), 10) # Beregner datoen 10 dager frem i tid
+=> ~D[2020-09-21]
+
+Date.shift(Date.utc_today(), -5) # Beregner datoen 5 dager tilbake i tid
+=> ~D[2020-09-06]
 ```
 
-I dette tilfellet vil `future_date` bli `{2019, 03, 27}`, som er 7 dager frem i tiden fra `start_date`. Du kan også beregne datoer i fortiden ved å bruke `-` operatøren på stedet for `+`.
+Hvis du vil beregne en dato basert på en annen dato, kan du bruke funksjonen `Date.add/2` og angi antall dager du vil legge til. Eksempel:
 
-## Dypdykk
+```Elixir
+Date.add(~D[2020-09-15], 3) # Beregner datoen 3 dager etter 15. september 2020
+=> ~D[2020-09-18]
+```
 
-Elixir har også innebygde funksjoner for å håndtere skuddår og å konvertere datoer til ulike kalendersystemer. Du kan også bruke `:calendar.week_start/1` for å angi hvilken ukedag som er den første i uken, og `:calendar.set_gregorian_change/1` for å endre når den gregorianske kalenderen ble innført. Dette er nyttige verktøy for å håndtere ulike behov og spesifikasjoner knyttet til datoer i programmene dine.
+## Dypdykk:
 
-## Se også
+Historisk sett har beregning av datoer vært komplisert på grunn av ulike kalendere og tidssoner. Men i dag er det mange biblioteker og verktøy tilgjengelig for å enkelt håndtere forskjellige datoformater og tidssoner i Elixir.
 
-- Offisiell Elixir dokumentasjon for å arbeide med datoer: https://hexdocs.pm/elixir/Calendar.html
-- Elixir Cheatsheet for en rask oversikt over Elixir funksjoner: https://devhints.io/elixir
-- Stack Overflow-spm. om å beregne datoer i Elixir: https://stackoverflow.com/questions/3336551/2012-1-1-to-a-date-in-elixir
+En annen måte å beregne datoer på er å bruke funksjonen `Date.diff/2` som lar deg beregne antall dager mellom to datoer. 
+
+## Se også:
+
+- Elixir's offisielle dokumentasjon om [Date modulen](https://hexdocs.pm/elixir/Date.html)
+- [Time](https://hexdocs.pm/ecto/Ecto.Time.html) biblioteket for håndtering av tidssoner i Elixir.
+- [Calendars](https://github.com/lsm/calendars) biblioteket for å håndtere forskjellige kalendere i Elixir.

@@ -10,70 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+## 何かとは？
+サブストリングを抽出するとは、文字列の箇所を切り出すことを指します。プログラマーがこれを行う理由は、特定の文字列の一部を必要とする場合や、文字列の内容を比較する際に役立つためです。
 
-文字列から部分文字列を抽出することに興味を持つ人は多いかもしれません。それは、与えられた文字列から必要な情報を取り出すためにとても便利だからです。
-
-## 使い方
-
-文字列から部分文字列を抽出するには、  ```Kotlin str.substring(startIndex, endIndex) ```というメソッドを使用します。例えば、文字列 ```Kotlin "Hello World" ```から、  ```Kotlin "World" ```を抽出する場合、次のようになります。
+## 方法：
+サブストリングを抽出する最も基本的な方法は、文字列の範囲を指定して `substring()` メソッドを使用することです。例えば、次のコードは、`Hello world`という文字列から`world`という部分を抽出します。
 
 ```Kotlin
-val str = "Hello World"
-val subStr = str.substring(6, 11)
-println(subStr)
+val str = "Hello world"
+val sub = str.substring(6, 11)
+println(sub) // output: world
 ```
 
-出力結果：
-```
-World
-```
-
-## 詳細な説明
-
-文字列から部分文字列を抽出する方法についてさらに詳しく説明します。
-
-### インデックス
-
-部分文字列を取得する際、2つのパラメーターを指定する必要があります。1つ目のパラメーターは「開始位置」、2つ目のパラメーターは「終了位置」です。この位置は文字列のインデックスによって表され、最初の文字のインデックスは0から始まります。
-
-例えば、文字列 ```Kotlin "Hello World" ```における、"H"のインデックスは0、"e"のインデックスは1となります。
-
-### インデックスの省略
-
-部分文字列を取得する際、2つ目のパラメーターである「終了位置」は省略することができます。省略した場合、開始位置から文字列の最後までを含む部分文字列が抽出されます。
-
-例えば、文字列 ```Kotlin "Hello World" ```から、最初の5つの文字列を抽出するには次のようになります。
+他にも、正規表現を使用してパターンに一致する文字列を抽出することもできます。例えば、次のコードは、文字列から数字のみを抽出します。
 
 ```Kotlin
-val str = "Hello World"
-val subStr = str.substring(0, 5)
-println(subStr)
+val str = "My age is 25"
+val sub = str.replace(Regex("[^0-9]"), "")
+println(sub) // output: 25
 ```
 
-出力結果：
-```
-Hello
-```
+## より詳しく：
+サブストリングの抽出には、多くの方法がありますが、それらはすべて同じ目的を持つものです。サブストリングの抽出は、多くのプログラミング言語でサポートされており、Kotlinでも例外ではありません。正規表現を使用することで、より複雑な抽出を行うこともできます。ただし、正規表現の処理にはノウハウが必要であり、パフォーマンスにも影響することがあります。そのため、単純なサブストリング抽出には、基本的なメソッドを使用することをお勧めします。
 
-### 負のインデックス
+## 関連情報：
+もし、さらに詳しくサブストリング抽出について学びたい場合は、以下のリンクを参考にしてください。
 
-部分文字列を取得する際、開始位置と終了位置に負のインデックスを指定することができます。負のインデックスとは、最後の文字から数えたインデックスのことを指します。例えば、最後の文字のインデックスは-1、最後から2番目の文字のインデックスは-2となります。
-
-例えば、文字列 ```Kotlin "Hello World" ```から、最後の5つの文字を抽出するには次のようになります。
-
-```Kotlin
-val str = "Hello World"
-val subStr = str.substring(-5)
-println(subStr)
-```
-
-出力結果：
-```
-World
-```
-
-## 参考リンク
-
-- [Kotlin Strings](https://kotlinlang.org/docs/reference/basic-types.html#strings)
-- [Kotlin String.substring() Method](https://www.javatpoint.com/kotlin-string-substring)
+- Kotlin 公式ドキュメント: https://kotlinlang.org/docs/strings.html#string-slices
+- JavaDoc: https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#substring-int-int-
+- 正規表現について学べるサイト: https://regexone.com/

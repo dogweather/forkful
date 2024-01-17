@@ -10,29 +10,22 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
-文字列の長さを調べることの利点を知りたい人にとって、Gleamの機能を活用することができるように実用的な方法を説明します。
+## 何 & なぜ？
+文字列の長さを求めることは、プログラマーにとって重要なタスクです。文字列の長さを知ることにより、プログラムが文字列を正しく処理できるようになります。また、文字列の長さを求めることは、文字列の操作や分析にも役立ちます。
 
-## 方法
-```Gleam
-//文字列の長さを調べる関数
-fn string_length(string) {
-    //文の終わりのnull文字を除外する
-    let adjusted_string = string.trim_end(null);
-    //調べたい文字列の長さを返す
-    std.string.length(adjusted_string)
+## 手順：
+まず、「$ string_length(string)」を使用して、文字列の長さを求める関数を定義します。次に、定義した関数に文字列を入力し、返された結果を確認します。例えば、```Gleam
+let string_length(string) {
+  ...
 }
 
-//例：文字列の長さを調べる
-let input_string = "こんにちは！";
-stdio.println(string_length(input_string));
+let length = string_length("こんにちは")
+``` 
+のように使用することができます。このコードを実行すると、返される結果は"5"となります。
 
-//出力：5
-```
+## 深く掘り下げる：
+文字列の長さを求める方法は、プログラミング言語によって異なります。Gleamでは、文字列の長さを求めるための組み込み関数を提供していますが、他の言語では独自の方法を使用することができます。また、文字列の長さを求める際には、文字のエンコーディングにも注意する必要があります。
 
-## 深堀り
-文字列の長さを調べることは、文字列を操作する上で非常に重要です。Gleamの`std.string`モジュールには、標準的な文字列操作機能が組み込まれており、特に`length`関数は文字列を扱う上で便利な機能です。また、文字列の長さを調べる際には、文の終わりのnull文字を除外することも重要です。
-
-## 参考リンク
-- Gleam 公式ドキュメント: https://gleam.run/documentation/
-- 文字列操作のための`std.string`モジュールの詳細: https://gleam.run/documentation/stdlib/stdlib-string/
+## 関連情報：
+- 文字列処理の基本: https://gleam.run/book/std-lib-string.html
+- 文字列の操作について: https://www.unicode.org/unicode/support.html#string_manipulation

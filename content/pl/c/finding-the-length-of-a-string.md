@@ -10,43 +10,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i dlaczego?
+Znalezienie długości ciągu znaków to proces, w którym programista określa liczbę znaków w danym ciągu. Robi się to z różnych powodów, na przykład w celu wykrywania błędów lub przetwarzania danych.
 
-Często podczas pisania kodu w języku C mamy do czynienia z wykorzystywaniem ciągów znaków. Większość operacji na tych ciągach wymaga określenia ich długości, co jest niezbędne do poprawnego wykonywania operacji. Dlatego warto wiedzieć, jak znaleźć długość ciągu znaków w języku C.
-
-## Jak to zrobić
-
-Aby znaleźć długość ciągu znaków w języku C, możemy wykorzystać funkcję `strlen()`, która jest dostępna w bibliotece standardowej `string.h`. Należy jednak pamiętać, że ta funkcja nie uwzględnia znaku końca ciągu (`'\0'`) i zwraca liczbę znaków przed tym znakiem. Spójrzmy na prosty przykład:
-
-```C
-#include <stdio.h>
-#include <string.h>
-
-int main() {
-    char str[] = "Hello World!";
-    int length = strlen(str);
-
-    printf("Długość ciągu znaków '%s' to %d\n", str, length);
-
-    return 0;
+## Jak to zrobić:
+```
+// Założyliśmy ciąg znaków "Hello World!"
+int length = 0;
+for (int i = 0; string[i] != '\0'; i++) {
+    length++;
 }
+printf("Długość ciągu to: %d", length);
 ```
 
-**Wyjście:**
+Wynik: Długość ciągu to: 12
 
-```
-Długość ciągu znaków 'Hello World!' to 12
-```
+## Wnikliwa analiza:
+(1) Proces znajdowania długości ciągu znaków jest starożytny – pisało się go już w języku asembler. (2) Alternatywne metody obejmują użycie funkcji bibliotecznych takich jak `strlen` lub wykorzystanie wskaźnika końca ciągu `\0` w pętli. (3) Implementacja może różnić się w zależności od języka programowania, jednak podstawową ideą jest zliczanie znaków do momentu natrafienia na wskaźnik końca ciągu.
 
-Mamy tu zdefiniowaną zmienną `str`, która przechowuje ciąg znaków "Hello World!". Następnie wykorzystujemy funkcję `strlen()` i przypisujemy jej wynik do zmiennej `length`. Wypisujemy te wartości na ekranie i dostajemy oczekiwany wynik.
-
-## Wyróżnijmy szczegóły
-
-Chociaż funkcja `strlen()` jest bardzo przydatna, to warto wiedzieć, że operuje ona na tablicach typu `char`. Oznacza to, że jeśli będziemy jej używać do innych typów danych, takich jak `int` czy `float`, to nie otrzymamy poprawnego wyniku. W takiej sytuacji najlepiej użyć funkcji `sizeof()`, która zwróci nam liczbę bajtów, a nie znaków w ciągu.
-
-Pamiętajmy także, że funkcja `strlen()` może zwracać nieprawidłowy wynik, jeśli przekazany jej ciąg znaków nie ma znaku końca (`'\0'`). Jest to przydatne, jeśli chcemy wykorzystać bardziej wyrafinowane metody manipulacji ciągami znaków.
-
-## Zobacz także
-
-- [Dokumentacja funkcji strlen()](https://www.cplusplus.com/reference/cstring/strlen/)
-- [Wykorzystanie funkcji strlen() w praktyce](https://www.geeksforgeeks.org/strlen-function-in-c/)
+## Zobacz też:
+[Strona dokumentacji C](https://pl.cppreference.com/w/c/string/byte/strlen)

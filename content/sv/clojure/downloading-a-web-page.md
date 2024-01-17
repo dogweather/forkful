@@ -10,41 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
+Att ladda ner en webbsida innebär att hämta information och data från en specifik webbadress och visa den på en enhet, såsom en dator eller en mobiltelefon. Programerare gör detta för att hämta data från en specifik webbplats och bearbeta den på ett sätt som passar deras behov eller applikation.
 
-Det finns många anledningar till varför du skulle vilja ladda ner en webbsida med Clojure. Det kan vara för att använda informationen för analys eller för att bygga en webbskrapa för att samla in data.
-
-## Så här gör du
-
-För att ladda ner en webbsida i Clojure behöver du använda dig av bibliteket "clj-http" som tillhandahåller funktioner för HTTP-anrop. Först installerar du bibliteket genom att lägga till det i din projekts dependecies.
+## Så här gör du:
+Det finns många olika sätt att ladda ner en webbsida på, men i sin enklaste form använder man sig av ett bibliotek som kallas för "clj-http". Här är ett exempel på hur man skulle kunna ladda ner en webbsida med hjälp av detta bibliotek:
 
 ```Clojure
-:dependencies [[clj-http "3.11.0"]]
+(require '[clj-http.client :as http])
+
+(def result (http/get "https://www.example.com"))
+(println (:status result))
+(println (:body result))
 ```
 
-Sedan importerar du biblioteket och skapar en funktion som tar en URL som indata och returnerar innehållet på webbsidan som en sträng.
+Resultatet av detta kodexempel skulle bli status 200 (vilket innebär att sidan har laddats ner utan problem) och innehållet på sidan.
 
-```Clojure
-(require '[clj-http.client :as client])
+## Djupdykning:
+Att ladda ner en webbsida är en viktig del av många webbapplikationer och kan användas för att skapa användare, insamla data eller hämta information från andra webbplatser. I Clojure finns det flera olika bibliotek för att ladda ner webbsidor, såsom HttpKit, clj-webdriver och jsoup. Det är viktigt att välja det bästa biblioteket för ens specifika behov och applikation.
 
-(defn download-webpage [url]
-  (client/get url {:as :string}))
-```
-
-Slutligen kan du anropa funktionen med en URL för den webbsida du vill ladda ner och skriva ut innehållet.
-
-```Clojure
-(let [webpage (download-webpage "https://www.example.com")]
-  (println webpage))
-```
-
-Detta kommer att skriva ut innehållet på webbsidan i terminalen.
-
-## Djupdykning
-
-Om du vill ha mer kontroll över HTTP-anropet kan du lägga till fler parametrar i funktionen, såsom header och body för att skicka med i förfrågan. Du kan också använda dig av "clj-time" biblioteket för att hantera tidszoner och datumformat. Se gärna dokumentationen för "clj-http" och "clj-time" för mer information och exempel på hur du kan använda dem.
-
-## Se också
-
-* [clj-http dokumentation](https://github.com/dakrone/clj-http/blob/master/README.md)
-* [clj-time dokumentation](https://github.com/clj-time/clj-time/blob/master/README.md)
+## Se även:
+- [https://github.com/dakrone/clj-http](https://github.com/dakrone/clj-http)
+- [https://github.com/http-kit/http-kit](https://github.com/http-kit/http-kit)
+- [https://github.com/semperos/clj-webdriver](https://github.com/semperos/clj-webdriver)
+- [https://jsoup.org/](https://jsoup.org/)

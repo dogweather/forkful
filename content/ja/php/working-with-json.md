@@ -1,7 +1,7 @@
 ---
-title:                "jsonを使用する"
-html_title:           "PHP: jsonを使用する"
-simple_title:         "jsonを使用する"
+title:                "「JSONで作業する」"
+html_title:           "PHP: 「JSONで作業する」"
+simple_title:         "「JSONで作業する」"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Data Formats and Serialization"
@@ -10,42 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ 
+## 何 & なぜ？
 
-JSONを使ってプログラミングするのは、データの受け渡しや保存によく使われる形式で、PHPのような言語では簡単に扱うことができるからです。
+JSONを扱うこととは、データのやりとりをする際に使用する形式の1つです。プログラマーたちはJSONを使用する理由として、データを効率的に取り扱い、他の形式よりも簡単に使えることが挙げられます。
 
-## 使い方 
+## 方法：
 
-JSONをPHPで扱うには、`json_encode()`と`json_decode()`という関数を使います。例えば、次のコードでは、PHPの配列をJSON形式で出力し、そのJSONを再度PHPの配列に変換しています。 
+PHPでJSONを扱う方法は簡単です。まず、JSONをパースするために利用できる「json_decode」関数を使います。例えば、以下のようにコードを書くことができます。
 
-```PHP 
-$input = ["apple", "orange", "banana"];
-$json = json_encode($input); 
-$output = json_decode($json);
-var_dump($output); 
+```PHP
+<?php
+$json = '{"name":"John", "age":30, "city":"New York"}';
+$decoded = json_decode($json);
+echo $decoded->name; // John
+echo $decoded->age; // 30
+echo $decoded->city; // New York
+?>
 ```
 
-出力は次のようになります。 
+```json_decode```関数はJSONデータをオブジェクト型に変換し、指定したプロパティを取得することができます。
 
-```PHP 
-array(3) {
-  [0]=> string(5) "apple"
-  [1]=> string(6) "orange"
-  [2]=> string(6) "banana"
-}
+もしJSONデータを配列型で取得したい場合は、```json_decode($json, true)```というように引数に```true```を指定します。
+
+例えば、以下のようにコードを書くことができます。
+
+```PHP
+<?php
+$json = '{"name":"John", "age":30, "city":"New York"}';
+$decoded = json_decode($json, true);
+echo $decoded["name"]; // John
+echo $decoded["age"]; // 30
+echo $decoded["city"]; // New York
+?>
 ```
 
-## 深堀り 
+## 深堀り：
 
-JSONを扱う際に注意する点として、データのエスケープやフォーマットについてです。特にユーザーの入力を含むデータをJSONに変換する場合は、`json_encode()`に`JSON_HEX_TAG`や`JSON_HEX_QUOT`などのオプションを指定して、HTMLタグやクォーテーションをエスケープするようにすると安全です。また、`json_decode()`では第二引数に`true`を指定することで、返り値を連想配列に変換することができます。
+JSONはJavaScript Object Notationの略であり、JavaScriptでデータを格納するための軽量なデータフォーマットです。1999年にJavaScriptの開発者によって作成されましたが、現在では広く使われるようになっています。
 
-## 参考リンク 
+JSONの代替としては、XMLやYAMLなどのデータフォーマットがありますが、JSONのシンプルさと扱いやすさから、プログラマーたちの間で幅広く使用されています。
 
-- [PHP: JSON 関数 - Manual](https://www.php.net/manual/ja/ref.json.php)
-- [JSON - Wikipedia](https://ja.wikipedia.org/wiki/JSON)
+また、PHPに限らず、HTMLやJavaScriptなど他のプログラミング言語でも同様にJSONを扱うことができます。
 
-## 参考になるリンク 
+## 関連情報：
 
-- [安全なJSONエンコーディング・デコーディング]https://developer.okta.com/blog/2019/02/04/create-and-understand-json-web-tokens)
-- [PHPとJSONの相互変換方法]https://www.tutorialspoint.com/php/php_json.htm)
-- [PHPにおけるソート済みJSON出力方法]https://stackoverflow.com/questions/43847233/php-output-multidimensional-array-as-sorted-json)
+- [PHP公式ドキュメント：json_decode](https://www.php.net/manual/ja/function.json-decode.php)
+- [JSONの歴史について知る](https://ja.wikipedia.org/wiki/JavaScript_Object_Notation)
+- [JSON以外のデータフォーマットについて学ぶ](https://dev.classmethod.jp/server-side/php/vs-json-and-others/)
+- [無料で学べる最高のPHP講座](https://h-navi.jp/php-school/)

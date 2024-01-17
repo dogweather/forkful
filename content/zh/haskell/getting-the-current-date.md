@@ -10,34 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
+# 简介
+Haskell是一个优秀的编程语言，在当前版本中，它提供了强大的功能来获取当前日期。对于程序员来说，获取当前日期是一个常见的需求，因为它可以帮助我们跟踪时间并将其与其他数据相关联。
 
-获取当前日期是编写复杂程序或应用程序时的一项基本任务。Haskell提供了简单且强大的方法来获取当前日期，以便在程序中使用。
+# 什么及为什么
+获取当前日期意味着获取当天的日期和时间。它是一个常见的需求，因为它可以帮助我们跟踪事件发生的时间，例如启动一个程序、保存数据等等。程序员通常会使用它来记录日志或调试错误。
 
-## 如何
-
-```Haskell
-import Data.Time.Clock
-import Data.Time.Format
-
-main = do
-    now <- getCurrentTime
-    printf "当前时间为：%s" (formatTime defaultTimeLocale "%d/%m/%Y %H:%M:%S" now)
+# 如何
+要在Haskell中获取当前日期，我们可以使用Data.Time库中的getCurrentTime函数。首先，我们需要导入Data.Time库：
 ```
+import Data.Time
+```
+然后，我们可以使用getCurrentTime函数来获取当前日期：
+```
+currentDate <- getCurrentTime
+```
+最后，我们可以使用formatTime函数来格式化日期的显示方式，例如：
+```
+let formattedDate = formatTime defaultTimeLocale "%Y-%m-%d" currentDate
+```
+这将返回一个带有年份、月份和日期的字符串，例如“2021-04-20”。
 
-运行代码后，将输出类似于 `当前时间为：18/06/2021 13:24:45` 的结果，其中日期和时间是根据当地时区和语言格式化的。
+# 深入探讨
+历史背景：在早期版本的Haskell中，并没有提供内置的方法来获取当前日期。直到最新版本，Haskell才提供了Data.Time库来满足这一需求。
 
-## 深入探讨
+其他选择：除了使用getCurrentTime函数，我们也可以使用其他外部库来获取当前日期，例如Data.Time.Clock.System库和Data.Time.Clock.POSIX库。
 
-获取当前日期的基本方法是使用 `Data.Time.Clock` 和 `Data.Time.Format` 模块中的 `getCurrentTime` 和 `formatTime` 函数。`getCurrentTime` 返回系统的当前时间，以UTC格式表示，而 `formatTime` 函数可以将时间格式化为字符串，如前面示例中所使用的格式。
+实现细节：getCurrentTime函数会返回当前日期和时间的UTCTime类型。我们可以使用formatTime函数来格式化日期的显示方式。除了上述示例中提到的默认格式外，我们还可以使用自定义的格式来显示日期和时间的不同部分。
 
-另一个有用的函数是 `getCurrentTimeZone`，它返回当前系统的本地时区。这可以避免使用 `getCurrentTime` 返回的UTC时间与本地时区相差的问题。
-
-但是，在某些情况下，格式化字符串中的日期和时间的顺序取决于语言设置。如果你的系统语言设置中的日期顺序与预期的不同，可以使用 `defaultTimeLocale` 更改它。
-
-另外，还有其他有用的日期和时间处理函数，如计算时间差，比较不同的时间等。你可以在官方的[Haskell文档](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time-Clock.html)中查找更多信息。
-
-## 参考链接
-
-- [Haskell官方文档：Data.Time.Clock模块](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time-Clock.html)
-- [Haskell官方文档：Data.Time.Format模块](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time-Format.html)
+# 相关链接
+- [Haskell官方网站](https://www.haskell.org/)
+- [Data.Time文档](https://downloads.haskell.org/)

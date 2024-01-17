@@ -10,92 +10,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
-Se você está procurando enviar solicitações HTTP com Arduino, provavelmente está tentando se comunicar com um servidor ou obter informações de uma API. Este recurso pode ser útil para projetos que envolvam a transferência de dados pela internet, como monitoramento remoto ou conectividade com a nuvem.
+## O que & Porquê?
+Enviar uma solicitação HTTP significa que estamos pedindo para que algo seja realizado por um servidor web. Isso é feito através do protocolo HTTP (Hypertext Transfer Protocol), que é a base da comunicação da internet. Programadores frequentemente enviam solicitações HTTP para obter ou enviar informações do ou para o servidor, como por exemplo ao acessar uma página da web ou enviar dados de um formulário.
 
-## Como fazer
-Enviar uma solicitação HTTP com Arduino não é tão complicado quanto parece. Tudo o que você precisa é de uma placa Arduino com capacidade de conexão à internet, como o modelo Uno WiFi Rev2, e um módulo WiFi ou Ethernet. Siga os passos abaixo para começar:
-
-1. Certifique-se de ter os cabos de energia e dados adequados para sua placa e módulo WiFi ou Ethernet.
-
-2. Conecte o módulo ao Arduino de acordo com as instruções do fabricante.
-
-3. Abra o IDE do Arduino em seu computador e crie um novo sketch.
-
-4. Importe as bibliotecas necessárias para fazer uma solicitação HTTP. Por exemplo, se você estiver usando o módulo WiFi, inclua as bibliotecas "WiFi.h" e "WiFiClient.h".
-
-5. Defina as constantes que serão usadas em sua solicitação, como a URL do servidor e o caminho da API.
-
-6. Inicialize e conecte-se ao módulo WiFi ou Ethernet na função "setup()". Verifique se a conexão foi estabelecida corretamente.
-
-7. Na função "loop()", crie um objeto de cliente e use o método "connect()" para se conectar ao servidor especificado.
-
-8. Use o método "print()" para enviar sua solicitação HTTP, incluindo o método, caminho e cabeçalhos necessários.
-
-9. Use o método "available()" para verificar se a resposta do servidor está disponível.
-
-10. Leia e processe os dados da resposta usando os métodos "read()" e "findUntil()" conforme necessário.
-
-11. Feche a conexão usando o método "stop()" e retorne para a função "loop()".
-
-Aqui está um exemplo simples de código para enviar uma solicitação GET a uma API usando o módulo WiFi:
-
+## Como fazer:
 ```Arduino
-#include <WiFi.h>
-#include <WiFiClient.h>
+#include <ESP8266WiFi.h>
+#include <ESP8266HTTPClient.h> // Biblioteca para enviar solicitações HTTP
 
-// Constantes da solicitação HTTP
-const char* SSID = "nome-da-sua-rede";
-const char* SSID_PASSWORD = "senha-da-sua-rede";
-const char* SERVER_URL = "endereco-do-servidor";
-const int SERVER_PORT = 80;
-const char* API_PATH = "/api/exemplo";
+const char* ssid = "NOME_DA_REDE";
+const char* password = "SENHA_DA_REDE";
 
-WiFiClient client;
-
-void setup() {
-  // Inicialize o módulo WiFi e conecte-se à rede
-  WiFi.begin(SSID, SSID_PASSWORD);
-  while (WiFi.status() != WL_CONNECTED) {
+void setup () {
+  Serial.begin(115200);
+  WiFi.begin(ssid, password); // Conectar ao WiFi
+  while (WiFi.status() != WL_CONNECTED) { // Aguardar até estar conectado
     delay(500);
   }
-  // Verifique se a conexão foi estabelecida
-  Serial.println("Conectado à rede WiFi!");
+  Serial.println("Conectado ao WiFi com sucesso!")
+  
+  HTTPClient http; // Criar objeto HTTPClient
+  http.begin("https://www.example.com"); // Especificar o endereço do servidor
+  int httpCode = http.GET(); // Enviar solicitação GET ao servidor
+  String response = http.getString(); // Obter resposta do servidor
+  Serial.println(response); // Imprimir a resposta no monitor serial
+  http.end(); // Encerrar a conexão HTTP
 }
 
-void loop() {
-  // Crie uma conexão com o servidor
-  if (!client.connect(SERVER_URL, SERVER_PORT)) {
-    Serial.println("Falha na conexão!");
-    return;
-  }
-  // Envie a solicitação GET com os cabeçalhos necessários
-  client.println("GET " + String(API_PATH) + " HTTP/1.1");
-  client.println("Host: " + String(SERVER_URL));
-  client.println("Connection: close");
-  client.println();
-  // Leia e processe a resposta do servidor
-  while (client.available()) {
-    String response = client.readStringUntil('\r');
-    Serial.print(response);
-  }
-  // Feche a conexão
-  client.stop();
-  // Espere 5 segundos antes de enviar outra solicitação
-  delay(5000);
-}
-```
+void loop() {}
 
-A saída na Serial Monitor deve ser semelhante a isso:
-
+``` 
+#### Saída do Monitor Serial:
 ```
 HTTP/1.1 200 OK
-Content-Type: application/json
+Date: Thu, 29 Apr 2021 00:00:00 GMT
+Server: example-server
+Connection: close
+Content-Type: text/html; charset=UTF-8
 
-{"dado1": 123, "dado2": "abc"}
+<html>
+<head>
+...
+</head>
+<body>
+...
+</body>
+</html>
 ```
 
-## Mergulho profundo
-Existem várias bibliotecas disponíveis para enviar solicitações HTTP com Arduino, cada uma com suas próprias vantagens e requisitos de hardware. Além disso, códigos de status, como redirecionamentos e erros, devem ser tratados adequadamente para garantir o correto processamento da resposta do servidor. Além disso, considere a segurança ao lidar com dados confidenciais em suas solicitações. É importante ter um bom entendimento de como o protocolo HTTP funciona para enviar solicitações corretamente.
+## Profundidade:
+Existem várias alternativas para enviar solicitações HTTP em placas Arduino, como por exemplo a biblioteca cURL e a biblioteca ESP8266HTTPClient utilizada no exemplo acima. A utilização do protocolo HTTPS (Hypertext Transfer Protocol Secure) também é comum para aumentar a segurança durante a comunicação com o servidor. É importante verificar a documentação do servidor para entender como enviar uma solicitação corretamente, já que diferentes servidores podem ter diferentes requisitos.
 
-## Veja
+## Veja também:
+- [Documentação da biblioteca WiFi do ESP8266](https://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/readme.html)
+- [Documentação da biblioteca HTTPClient do ESP8266](https://github.com/esp8266/Arduino/blob/master/libraries/ESP8266HTTPClient/src/ESP8266HTTPClient.h)
+- [Tutorial completo sobre como enviar solicitações HTTP com o ESP8266](https://circuits4you.com/2018/02/04/esp8266-http-get-request-example-arduino/)

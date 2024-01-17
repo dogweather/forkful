@@ -10,39 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+## O que & Porquê?
 
-Escrever para o erro padrão é uma prática útil para testar e depurar seu código. Ao escrever para o erro padrão, você pode visualizar informações importantes sobre erros e exceções que ocorrem durante a execução do seu programa.
+Ao escrever um programa, é comum que os desenvolvedores queiram imprimir mensagens para informar o usuário sobre o que está acontecendo no código. No entanto, nem todas essas mensagens são importantes o suficiente para serem mostradas na saída padrão (standard output). É aqui que entra a escrita para o erro padrão (standard error). Esse método de impressão é usado para mostrar mensagens de erro e outros tipos de informação que podem ajudar os desenvolvedores a entenderem melhor o funcionamento do programa.
 
-## Como Fazer
+## Como fazer:
 
-Primeiro, você precisa entender o que é o erro padrão. Em C#, o erro padrão é um fluxo de saída que é usado para exibir mensagens de erro e informações de depuração. Para gravar mensagens para o erro padrão, você pode usar o método `Console.Error.WriteLine`.
+A maneira mais comum de escrever para o erro padrão em C# é usando o objeto "Console" e o método "Error". O seguinte trecho de código mostra como fazer isso:
 
-Veja um exemplo simples de como escrever para o erro padrão em C#:
-
-```
-C# Console.Error.WriteLine("Este é um exemplo de mensagem de erro.");
+```C#
+Console.Error.WriteLine("Esta é uma mensagem de erro!");
 ```
 
-O resultado deste código será a impressão da mensagem "Este é um exemplo de mensagem de erro." no console. Você também pode utilizar formatação de string para adicionar informações adicionais:
+O código acima irá imprimir a mensagem entre as aspas na saída de erro. Aqui está um exemplo de como o resultado pode aparecer:
 
+```bash
+Esta é uma mensagem de erro!
 ```
-C# string nome = "João";
-Console.Error.WriteLine("Olá, {0}. Seu nome possui {1} letras.", nome, nome.Length);
-```
 
-O resultado deste código será a impressão da mensagem "Olá, João. Seu nome possui 4 letras." no console.
+## Mergulho Profundo:
 
-## Aprofundando
+A escrita para o erro padrão é uma técnica amplamente utilizada em programação. Ela foi introduzida para ajudar os desenvolvedores a lidar com erros e outras questões do programa de forma mais eficaz. No entanto, é importante observar que existem alternativas para a escrita para o erro padrão. Uma opção é usar o log de eventos do sistema operacional, que pode ser útil para questões de monitoramento e depuração.
 
-Além do método `Console.Error.WriteLine`, existem outras formas de escrever para o erro padrão em C#. Você também pode utilizar a classe `StreamWriter` para gravar informações para o erro padrão.
+Falando em implementação, a escrita para o erro padrão é feita usando a interface de programação "Console". Este objeto é definido na biblioteca padrão de C# e fornece métodos para a entrada e saída de dados. O método "Error" é usado especificamente para escrever mensagens de erro na saída de erro.
 
-Outro ponto importante é que, ao usar o erro padrão, as mensagens serão imediatamente impressas no console, independentemente de onde o código está sendo executado. Isso pode ser útil para rastrear erros em aplicações multithread ou serviços.
+## Veja também:
 
-Se você estiver trabalhando em um projeto maior, uma boa prática é criar uma classe de registro de erros personalizada. Desta forma, você pode organizar melhor suas mensagens de erro e adicionar informações adicionais, como data e hora, número de linha ou nome do método.
-
-## Veja Também
-
-- Documentação oficial da Microsoft: https://docs.microsoft.com/pt-br/dotnet/api/system.console.error
-- Diferença entre erro padrão e erro de rede: https://stackoverflow.com/questions/183202/difference-between-standard-error-and-error-from-dos-command-line
-- Tutorial de como criar uma classe de registro de erro: https://exceptionnotfound.net/basics-csharp-custom-exception-classes/#creating-a-custom-exception-class-in-c
+- [Documentação oficial do Console.Error](https://docs.microsoft.com/pt-br/dotnet/api/system.console.error?view=net-5.0)
+- [Artigo sobre Debugging em C#](https://www.educba.com/debugging-in-c-sharp/)
+- [Vídeo tutorial sobre como usar a saída de erro em C#](https://www.youtube.com/watch?v=c-wpWzmIOGo)

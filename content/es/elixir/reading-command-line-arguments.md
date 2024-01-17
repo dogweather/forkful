@@ -1,7 +1,7 @@
 ---
-title:                "Leyendo argumentos de línea de comando"
-html_title:           "Elixir: Leyendo argumentos de línea de comando"
-simple_title:         "Leyendo argumentos de línea de comando"
+title:                "Leyendo argumentos de línea de comando."
+html_title:           "Elixir: Leyendo argumentos de línea de comando."
+simple_title:         "Leyendo argumentos de línea de comando."
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Files and I/O"
@@ -10,46 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué leer argumentos de línea de comando?
+## ¿Qué & Por qué?
 
-La lectura de argumentos de línea de comando es una habilidad esencial para cualquier programador de Elixir. Al comprender cómo funcionan los argumentos de línea de comando, podrás hacer que tus programas sean más flexibles y adaptables, lo que mejora la experiencia del usuario.
+En programación, leer argumentos de la línea de comandos se refiere a obtener los valores que se proporcionan al ejecutar un programa desde la línea de comandos. Esto permite a los programadores personalizar la ejecución de sus programas de acuerdo a sus necesidades. 
 
-## Cómo hacerlo
+Los programadores utilizan la lectura de argumentos de la línea de comandos para proporcionar una manera flexible de interactuar con sus programas, lo que facilita su uso y adaptación a diferentes situaciones y entornos.
 
-Para leer argumentos de línea de comando en Elixir, puedes utilizar el módulo `System` y su función `argv`. Esto te devolverá una lista con los argumentos ingresados al ejecutar el programa.
+## How to:
+Elixir proporciona una manera sencilla de leer argumentos de la línea de comandos utilizando la función `System.argv`. Esta función devuelve una lista de todos los argumentos proporcionados, incluyendo el nombre del archivo que se está ejecutando como primer argumento.
 
-Veamos un ejemplo de cómo utilizarlo:
+```elixir
+# Ejemplo de código
 
-```Elixir
-# Este programa toma un nombre como argumento de línea de comando
-defmodule CommandLine do
-  def main do
-    args = System.argv
-    nombre = Enum.at(args, 0)
-
-    IO.puts "¡Hola #{nombre}!"
-  end
-end
-
-CommandLine.main()
+args = System.argv           # Obtener argumentos
+IO.puts "¡Hola #{args[1]}!"  # Imprime el primer argumento
 ```
 
-Si ejecutas este programa desde la línea de comando escribiendo `elixir hello.exs World`, la salida será:
+Para ejecutar este código, desde la línea de comandos se debe escribir `elixir hola.exs Mundo`, lo que imprimirá "¡Hola Mundo!".
 
-```
-¡Hola World!
-```
+## Deep Dive
+La lectura de argumentos de la línea de comandos no solo se limita a Elixir, esto también es una técnica común en muchos otros lenguajes de programación. Algunas alternativas para Elixir incluyen `OptionParser` y `Getopt`, que proporcionan una manera más estructurada de manejar y validar argumentos de la línea de comandos.
 
-Además de esto, también puedes utilizar la función `get_env` del módulo `System` para acceder a las variables de entorno, que pueden ser pasadas como argumentos al ejecutar el programa.
+La implementación de `System.argv` en Elixir utiliza la biblioteca `elixir_argv` para obtener los argumentos de la línea de comandos. Esta biblioteca a su vez utiliza la biblioteca C `getopt` para obtener los argumentos. Esto significa que la lectura de argumentos de la línea de comandos en Elixir no es compatible con Windows, ya que `getopt` solo está disponible en sistemas Unix.
 
-## Profundizando
-
-La función `argv` es útil, pero tiene algunas limitaciones. Por ejemplo, si los argumentos contienen espacios, estos se interpretarán como argumentos separados. Para solucionar esto, puedes utilizar el módulo `OptionParser` que permite parsear argumentos de manera más flexible.
-
-Además, al utilizar la función `argv` también se obtienen otros argumentos del sistema, como la ruta del archivo ejecutado y la bandera `--no-halt`, que indica si se debe finalizar la ejecución de manera forzada. Si no quieres obtener estos argumentos, puedes utilizar la función `command_line` del módulo `Kernel` para acceder solo a los argumentos específicos de tu programa.
-
-## Ver también
-
-- Documentación del módulo [System](https://hexdocs.pm/elixir/System.html)
-- Documentación del módulo [OptionParser](https://hexdocs.pm/elixir/OptionParser.html)
-- Ejemplos de [argumentos de línea de comando en Elixir](https://github.com/dwyl/learn-elixir/blob/master/command-line-arguments.md)
+## See Also
+- Documentación oficial de Elixir sobre `System.argv`: https://hexdocs.pm/elixir/System.html#argv/0
+- Alternativas para leer argumentos de la línea de comandos en Elixir: https://github.com/mensfeld/elixir-argv

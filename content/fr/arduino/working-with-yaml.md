@@ -10,80 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Qu'est-ce que c'est et pourquoi?
+YAML (YAML Ain't Markup Language) est un langage de sérialisation de données qui permet aux programmeurs de structurer et de stocker des informations sous forme de texte. Les programmeurs utilisent YAML pour rendre les données lisibles et faciles à modifier, ce qui est particulièrement utile lors de la configuration de périphériques ou de la création de fichiers de configuration.
 
-Si vous voulez stocker et organiser des données en toute simplicité, YAML est le bon choix. C'est un format de données lisible par les humains et facilement manipulable par les machines, ce qui le rend très pratique pour l'utilisation avec Arduino.
-
-## Comment faire
-
-Pour utiliser YAML avec Arduino, vous devez d'abord inclure la bibliothèque adaptée dans votre code. Voici un exemple de code pour vous montrer comment utiliser YAML pour stocker une liste de noms :
-
-```Arduino
+## Comment faire:
+```arduino
 #include <YAML.h>
 
-// Créez une variable qui contiendra vos données
-YAML::Node noms;
-
-// Ajoutez des valeurs à votre variable
-noms["nom1"] = "Jean";
-noms["nom2"] = "Marie";
-noms["nom3"] = "Paul";
-
-// Écrivez vos données dans un fichier YAML nommé "noms.yml"
-File f = SD.open("noms.yml", FILE_WRITE);
-YAML::Printer printer(f);
-printer.print(noms);
-f.close();
-
-// Lisez vos données depuis le fichier et affichez-les dans la console série
-File f = SD.open("noms.yml", FILE_READ);
-YAML::Parser parser(f);
-while(parser.next()) {
-  parser.print();
+void setup() {
+  // initialise la communication avec le port série
+  Serial.begin(9600);
+  // crée un objet YAML
+  YAMLClass yaml;
+  // stocke un tableau de valeurs dans un bloc YAML
+  const char *yamlData = "mesures:\n  - temperature: 25\n  - pression: 1013";
+  // charge les données YAML
+  yaml.begin(yamlData);
+  // imprime la température dans le bloc YAML
+  Serial.print("Température: ");
+  Serial.println(yaml["mesures"][0]["temperature"].as<int>());
+  // imprime la pression dans le bloc YAML
+  Serial.print("Pression: ");
+  Serial.println(yaml["mesures"][1]["pression"].as<int>());
 }
-f.close();
+
+void loop() {
+  // programme principal
+}
 ```
 
-Résultat de la console série :
+## Plongée profonde:
+YAML a été créé en 2001 et est basé sur la syntaxe des listes dans le langage de programmation Python. Il est souvent utilisé pour remplacer d'autres formats de données tels que JSON ou XML en raison de sa simplicité et de sa facilité de lecture. Les bibliothèques de YAML sont disponibles pour la plupart des langages de programmation, y compris pour l'Arduino.
 
-```
-nom1: Jean
-nom2: Marie
-nom3: Paul
-```
-
-## Plongez plus profondément
-
-YAML utilise une syntaxe simple avec des indentations pour représenter la structure des données. Par exemple, si vous voulez stocker une liste de noms avec leurs âges, vous pouvez utiliser ce format :
-
-```YAML
-noms:
-  - nom: Jean
-    age: 25
-  - nom: Marie
-    age: 32
-  - nom: Paul
-    age: 28
-```
-
-Vous pouvez également utiliser YAML pour stocker des objets avec des propriétés en utilisant des tirets au lieu de points :
-
-```YAML
-personne1:
-  nom: Jean
-  age: 25
-personne2:
-  nom: Marie
-  age: 32
-personne3:
-  nom: Paul
-  age: 28
-```
-
-Pour en savoir plus sur la syntaxe YAML, vous pouvez consulter la documentation officielle [ici] (https://yaml.org/spec/1.2/spec.html) ou faire des recherches en ligne.
-
-## Voir aussi
-
-- [Bibliothèque YAML pour Arduino] (https://github.com/arduino-libraries/ArduinoYaml) : bibliothèque officielle pour utiliser YAML avec Arduino.
-- [Documentation Arduino] (https://www.arduino.cc/reference/en/) : pour plus d'informations sur les différentes fonctions et bibliothèques.
-- [Site officiel de YAML] (https://yaml.org/) : pour en savoir plus sur ce format de données.
+## Voir aussi:
+- [Documentation officielle YAML](https://yaml.org)
+- [Bibliothèque YAML pour Arduino](https://www.arduinolibraries.info/libraries/yaml)
+- [Format de données YAML sur Wikipédia](https://fr.wikipedia.org/wiki/YAML)

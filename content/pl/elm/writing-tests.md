@@ -1,7 +1,7 @@
 ---
-title:                "Pisanie testów."
-html_title:           "Elm: Pisanie testów."
-simple_title:         "Pisanie testów."
+title:                "Pisanie testów"
+html_title:           "Elm: Pisanie testów"
+simple_title:         "Pisanie testów"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Testing and Debugging"
@@ -10,48 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+"Czym jest i po co są testy?"
 
-Jeśli jesteś programistą, prawdopodobnie słyszałeś o pisaniu testów jednostkowych. Możesz się zastanawiać, czy warto poświęcić swój czas na ich tworzenie. Krótko mówiąc - tak, warto! Testy jednostkowe są nieodzownym elementem wytwarzania solidnego i niezawodnego kodu.
+Testy pisane przez programistów są kodem, który sprawdza, czy dany program działa poprawnie. Jest to ważny krok w procesie tworzenia oprogramowania, ponieważ pomaga programistom upewnić się, że wszystko działa zgodnie z założeniami.
 
-## Jak to zrobić
+"Jak to zrobić?"
 
-```elm
-testAddition : Test
-testAddition =
-    describe "Addition" (
-        test "1 + 1 should equal 2" (
-            Expect.equal 2 (1 + 1)
-        )
-    )
+Kod testów w Elm jest napisany w taki sam sposób jak kod programu. Poniżej przedstawiam przykłady testów wraz z ich wynikami.
+
+```Elm
+test "Dodawanie liczb całkowitych" 
+    (assert (1 + 1 == 2))
 ```
 
-Wykorzystując wbudowaną bibliotekę `Test`, możemy łatwo tworzyć testy dla naszego kodu. Przykładowy test pokazuje, jak możemy sprawdzić, czy nasza funkcja dodawania działa poprawnie. Testy pojawią się w okienku wyników jako zielone lub czerwone, informując nas o tym, czy testy zostały wykonane pomyślnie.
-
-```elm
--- 1 
-1 + 1
--- 2
-2
+```Elm
+test "Dodawanie liczb zmiennoprzecinkowych" 
+    (assert (1.5 + 2.5 == 4.0))
 ```
 
-Jeśli wszystko zostało zaimplementowane prawidłowo, testy powinny zwrócić zielony wynik. Jednak jeśli coś zostało zrobione nieprawidłowo, testy poinformują nas w jaki sposób i gdzie wystąpił błąd.
+```Elm
+Dodawanie liczb całkowitych: PASS
+Dodawanie liczb zmiennoprzecinkowych: PASS
+```
 
-## Głębszy zanurzenie
+"Dogłębna analiza"
 
-Pisanie testów jednostkowych może początkowo wydawać się czasochłonne, ale w dłuższej perspektywie może ułatwić nam pracę i oszczędzić dużo czasu. Dzięki testom możemy szybciej wychwycić błędy w naszym kodzie i szybciej je naprawić. Dodatkowo, gdy rozwijamy nasz projekt i wprowadzamy zmiany, testy zapewniają nam pewność, że nic nie zostało przypadkowo uszkodzone.
+Pisanie testów nie jest niczym nowym w świecie programowania. Już w latach 50. XX wieku programiści stosowali testy jednostkowe, czyli krótkie programy, które sprawdzały poprawność poszczególnych kawałków kodu. W Elm testy nazywają się "asercjami", a wykonują się podczas kompilacji programu.
 
-Przy pisaniu testów warto pamiętać o kilku zasadach:
-- Testy powinny być niezależne od siebie - żaden test nie powinien zależeć od wyników innego testu.
-- Testy powinny być odzwierciedleniem oczekiwań dla funkcjonalności naszego kodu.
-- Dzięki testom możemy zapewnić sobie bezpieczeństwo nawet przy wprowadzaniu większych zmian w naszym kodzie.
+Alternatywą dla pisania testów jest ręczne sprawdzanie poprawności kodu. Jednak taka metoda jest czasochłonna i podatna na błędy. Dzięki testom można szybko znaleźć i poprawić ewentualne problemy w programie.
 
-Spróbuj przyzwyczaić się do pisania testów jako części swojego procesu programowania, a z czasem zauważysz, że stają się one nieodłącznym elementem wytwarzania wysokiej jakości oprogramowania.
+Pisanie testów w Elm jest proste i nie wymaga specjalnej wiedzy ani narzędzi. Testy są zintegrowane z samym kodem programu i wykonują się automatycznie podczas jego kompilacji.
 
-## Zobacz także
+"Zobacz również"
 
-- [Oficjalna strona dokumentacji Elm](https://guide.elm-lang.org/)
-- [The Coding Train - Elm tutorial dla początkujących](https://www.youtube.com/playlist?list=PLRqwX-V7Uu6ZiZxtDDRCi6uhfTH4FilpH)
-- [Cassandra Salisbury - Tworzenie testowalnego kodu w Elm](https://www.youtube.com/watch?v=exjOjW5WgMc)
-
-Teraz, gdy już wiesz jak pisać testy jednostkowe w Elm, czas nauczyć się ich użycia w praktyce. Życzę Ci powodzenia w tworzeniu niezawodnego i solidnego kodu!
+- Dokumentacja Elm: https://elm-lang.org/docs
+- Poradnik o pisaniu testów w Elm: https://medium.com/@thebucknellian/testing-in-elm-...690e3c3aebf
+- Książka "Elm in Action" omawiająca testowanie kodu w Elm: https://www.manning.com/books/elm-in-action

@@ -1,7 +1,7 @@
 ---
-title:                "Yhdistävien merkkijonojen yhdistäminen"
-html_title:           "Haskell: Yhdistävien merkkijonojen yhdistäminen"
-simple_title:         "Yhdistävien merkkijonojen yhdistäminen"
+title:                "Merkkijonojen yhdistäminen"
+html_title:           "Haskell: Merkkijonojen yhdistäminen"
+simple_title:         "Merkkijonojen yhdistäminen"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -10,46 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+# Miksi ja miten yhdistää merkkijonoja Haskellilla
 
-Miksi haluaisit yhdistää merkkijonoja Haskellilla? On monia tilanteita, joissa on tarpeen yhdistää erillisiä merkkijonoja yhdeksi kokonaisuudeksi. Esimerkiksi voit käyttää sitä luomaan dynaamisia lausekkeita tai tulostamaan muotoiltuja tekstejä.
+## Mikä ja miksi?
+Concatenating strings eli merkkijonojen yhdistäminen on yleinen ohjelmointitekniikka, jossa kaksi tai useampi merkkijono yhdistetään yhdeksi merkkijonoksi. Tätä tarvitaan usein esimerkiksi tulostettaessa tekstiä eri muuttujien arvojen kanssa tai luotaessa uusia merkkijonoja. Haskellia käyttävät ohjelmoijat käyttävät tätä tekniikkaa helpottamaan työtään ja saadakseen halutunlaisia tuloksia aikaan.
 
-## Miten
-
-Yksinkertaisimmassa muodossaan merkkijonojen yhdistäminen tapahtuu käyttämällä `++` operaattoria. Tämä yhdistää kaksi merkkijonoa yhdeksi uudeksi merkkijonoksi. Voit myös yhdistää useita merkkijonoja kerralla käyttämällä `concat` funktion avulla.
-
-```Haskell
-"Hello " ++ "World!" -- "Hello World!"
-
-concat ["Hello ", "World!"] -- "Hello World!"
-```
-
-Yhdistämisen lisäksi voit myös tehdä muotoiltuja merkkijonoja käyttämällä `printf` funktion avulla. Tämä toimii samalla tavalla kuin C-kielen `printf` funktio.
+## Miten?
+Haskellissa merkkijonojen yhdistäminen tapahtuu käyttäen operaattoria ```++```. Se ottaa kaksi merkkijonoa ja yhdistää ne yhdeksi uudeksi merkkijonoksi. Esimerkiksi:
 
 ```Haskell
-printf "%s %s!" "Hello" "World" -- "Hello World!"
+"Graafinen" ++ "käyttöliittymä"
 ```
 
-## Syvempi sukellus
-
-Haskellissa merkkijonot ovat listoja, joiden alkioina ovat merkit. Siksi merkkijonojen yhdistäminen käyttäen `++` operaattoria on samanlaista kuin listojen liittäminen. Tämä mahdollistaa myös muiden listafunktioiden käytön merkkijonojen kanssa, kuten `map` ja `filter`.
+Palauttaa tuloksen: *Graafinen käyttöliittymä*. Merkkijonoja voidaan myös yhdistää muuttujien kanssa, esimerkiksi:
 
 ```Haskell
-map toUpper "hello" -- "HELLO"
-
-filter isDigit "abc123" -- "123"
+"Koodaamme" ++ " " ++ programmingLanguage
 ```
 
-Haskellissa on myös `Text` tyyppi, joka tarjoaa tehokkaamman tavan käsitellä isoja merkkijonoja. Voit muuntaa merkkijonon `Text` tyyppiin ja takaisin käyttämällä `pack` ja `unpack` funktioita.
+Missä ```programmingLanguage``` on esim. muuttuja, joka sisältää arvon "Haskell". Tämä palauttaa tuloksen: *Koodaamme Haskellia*.
+
+Merkkijonojen yhdistäminen voidaan tehdä myös käyttämällä ```concat```-funktiota, joka ottaa listan merkkijonoja ja yhdistää ne yhdeksi merkkijonoksi. Esimerkiksi:
 
 ```Haskell
-import Data.Text
-
-let text = pack "Hello"
-unpack text -- "Hello"
+concat ["1","2","3"]
 ```
+
+Palauttaa tuloksen: *123*.
+
+## Syväsukellus
+Merkkijonojen yhdistämistä on käytetty ohjelmoinnissa jo pitkään. Aiemmin se oli usein hidas toimenpide, mutta Haskellissa ```++```-operaattorin ja ```concat```-funktion käyttö tekee siitä tehokkaamman ja nopeamman. Kannattaa myös tutustua muihin tapoihin käsitellä merkkijonoja Haskellissa, kuten ```intercalate```-funktioon, joka yhdistää merkkijonolistassa olevat merkkijonot halutun erotinmerkin avulla.
 
 ## Katso myös
-
-- [String-tyyppi Haskellin dokumentaatiossa](https://www.haskell.org/tutorial/strings.html)
-- [Data.Text-moduulin dokumentaatio](https://hackage.haskell.org/package/text/docs/Data-Text.html)
+- [Haskellin virallinen dokumentaatio](https://www.haskell.org/documentation/)
+- [Tutorialspointin opas Haskellin merkkijonojen yhdistämiseen](https://www.tutorialspoint.com/haskell/haskell_strings.htm)
+- [Real World Haskell -kirjan luku merkkijonomenetelmistä ja -analyysistä](http://book.realworldhaskell.org/read/efficient-file-processing-regular-expressions-and-file-name-matching.html)

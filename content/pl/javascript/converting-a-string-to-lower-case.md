@@ -1,7 +1,7 @@
 ---
-title:                "Konwertowanie ciągu znaków na małe litery"
-html_title:           "Javascript: Konwertowanie ciągu znaków na małe litery"
-simple_title:         "Konwertowanie ciągu znaków na małe litery"
+title:                "Zmiana ciągu znaków na małe litery"
+html_title:           "Javascript: Zmiana ciągu znaków na małe litery"
+simple_title:         "Zmiana ciągu znaków na małe litery"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Strings"
@@ -10,43 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i dlaczego?
 
-Konwertowanie tekstu na małe litery jest powszechnym zadaniem w programowaniu Javascript. Jest to przydatne, gdy chcesz porównać dwa teksty niezależnie od wielkości liter lub wyświetlić tekst w jednolitej formie.
+Konwertowanie ciągu znaków na małe litery jest procesem zmiany każdej litery w tekście na jej odpowiednik w małym formacie. Programiści często wykonują tę operację w celu porównania dwóch ciągów znaków, ponieważ to pozwala uniknąć błędów związanych z różnicami w wielkości liter.
 
-## Jak to zrobić
-
-Konwersja tekstu na małe litery jest bardzo prosta w Javascript. Możesz użyć metody ```toLowerCase()```, która jest wbudowana w obiekcie String. Poniżej jest przykładowy kod, który konwertuje napis "JAkiSz TEkSt" na "jakisz tekst" i wyświetla go w konsoli.
+## Jak to zrobić:
 
 ```Javascript
-let tekst = "JAkiSz TEkSt";
-console.log(tekst.toLowerCase());
+let text = "PRZYKŁADOWY TEKST"; // Tworzymy zmienną z ciągiem znaków w formacie dużym
+let lowerCaseText = text.toLowerCase(); // Wykonujemy konwersję na małe litery
+console.log(lowerCaseText); // Wyświetlamy rezultat w konsoli: "przykładowy tekst"
 ```
 
-Output:
-```
-jakisz tekst
-```
+## Głębsza analiza:
 
-Jeśli chcesz zmienić wartość zmiennej tekstowej na zawsze, możesz przypisać nową wartość do zmiennej:
-```Javascript
-tekst = tekst.toLowerCase();
-console.log(tekst);
-```
+1. Kontekst historyczny: Konwersja ciągu znaków na małe litery jest częstym problemem w informatyce od czasów, gdy powstały pierwsze języki programowania. Przez lata wykształciły się różne sposoby na rozwiązanie tego problemu, jednak obecnie funkcja `toLowerCase()` jest najpopularniejszym wyborem w języku JavaScript.
+2. Alternatywy: W języku JavaScript istnieje także funkcja `toUpperCase()`, która wykonuje odwrotną operację - zamienia wszystkie litery na wielkie. Istnieją również zewnętrzne biblioteki, które oferują bardziej rozbudowane funkcje zmiany wielkości liter w ciągu znaków.
+3. Szczegóły implementacji: Podczas wykonywania konwersji na małe litery funkcja `toLowerCase()` korzysta z tablicy ASCII, która przypisuje każdej literze swoją wartość numeryczną. Dzięki temu możliwa jest zamiana litery z jej wartością numeryczną na jej odpowiednik w małym formacie.
 
-Output:
-```
-jakisz tekst
-```
+## Zobacz również:
 
-## Głębsze wgląd
-
-Metoda ```toLowerCase()``` jest jedną z wielu wbudowanych funkcji, które pomagają w manipulowaniu tekstami w Javascript. Ta metoda po prostu przekształca wszystkie duże litery w napisie na małe litery.
-
-W Javascript istnieją również inne sposoby na konwertowanie tekstu na małe litery, takie jak metoda ```replace()```, która może zastąpić określone fragmenty tekstu i ```concat()```, która łączy dwa lub więcej ciągów znakowych. Możesz również użyć funkcji pętli, aby iteracyjnie zmienić każdą literę w napisie na małe litery.
-
-## Zobacz także
-
-1. Dokumentacja metody ```toLowerCase()```: https://developer.mozilla.org/pl/docs/Web/JavaScript/Referencje/Obiekty/String/toLowerCase
-2. Wideo na YouTube o konwertowaniu tekstu na małe litery w Javascript: https://www.youtube.com/watch?v=InfpmdOt3ik
-3. Praktyczne zastosowania konwersji tekstu na małe litery: https://www.geeksforgeeks.org/javascript-program-to-convert-string-into-lower-case/
+- [Funkcja toLowerCase() - dokumentacja MDN](https://developer.mozilla.org/pl/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)
+- [Konwersja znaków w języku JavaScript - artykuł na blogu Medium](https://medium.com/@nitinpatel_20236/conversions-in-javascript-c298ae64ea47)

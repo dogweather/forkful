@@ -1,7 +1,7 @@
 ---
-title:                "Lesing av kommandolinjeargumenter"
-html_title:           "C: Lesing av kommandolinjeargumenter"
-simple_title:         "Lesing av kommandolinjeargumenter"
+title:                "Lesing av kommandolinje-argumenter"
+html_title:           "C: Lesing av kommandolinje-argumenter"
+simple_title:         "Lesing av kommandolinje-argumenter"
 programming_language: "C"
 category:             "C"
 tag:                  "Files and I/O"
@@ -10,68 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hvorfor
-Ved hjelp av kommandolinjeargumenter kan du gi programmet ditt ulike innganger hver gang det kjører, noe som gjør det mer fleksibelt og tilpasset ulike behov. Enten du er en erfaren C-programmerer eller nybegynner, kan det være nyttig å vite hvordan du leser kommandolinjeargumenter i koden din.
+Hva & Hvorfor?
 
-# Hvordan
-For å lese kommandolinjeargumenter i C, må du inkludere "stdio.h"-biblioteket i koden din. Deretter kan du bruke "argc" og "argv" variabler til å få tilgang til argumentene som er gitt ved kjøring av programmet.
+Lesing av kommandolinje argumenter er en viktig del av å utvikle C-programmer. Dette tillater programmerere å gi instruksjoner til programmet mens det kjører, i stedet for å hardkode dem direkte i kildekoden. Dette gir større fleksibilitet og gjør det enklere å endre programmet uten å måtte endre selve koden.
 
-```C
+Hvordan:
+
+For å lese kommandolinje argumenter i C, bruker vi funksjonen `main()` og dens to parametere: `argc` og `argv`. Her er et eksempel på hvordan du kan bruke dette i praksis:
+
+```c
 #include <stdio.h>
 
 int main(int argc, char *argv[]) {
-  printf("Antall argumenter: %d\n", argc);
+    printf("Antall argumenter: %d\n", argc);
 
-  // Skriv ut alle argumentene som er gitt ved kjøring av programmet
-  for (int i = 0; i < argc; i++) {
-    printf("Argument %d: %s\n", i, argv[i]);
-  }
+    for (int i = 0; i < argc; i++) {
+        printf("Argument %d: %s\n", i, argv[i]);
+    }
 
-  return 0;
+    return 0;
 }
 ```
 
-For eksempel, ved å kjøre programmet med "gcc program.c -o program" og "program arg1 arg2", vil du få følgende utgang:
+La oss si at vi kjører programmet med følgende kommandolinje argumenter:
+
+```
+./program navn alder
+```
+
+Da blir følgende resultat:
 
 ```
 Antall argumenter: 3
-Argument 0: program
-Argument 1: arg1
-Argument 2: arg2
+Argument 0: ./program
+Argument 1: navn
+Argument 2: alder
 ```
 
-Du kan også lese enkeltargumenter ved å bruke indeksering på "argv" variabelen.
+Det første argumentet (`argv[0]`) er alltid navnet på programmet.
 
-```C
-// Leser kun det første argumentet som ble gitt
-char *argument = argv[1];
-```
+Deep Dive:
 
-Husk at kommandolinjeargumenter kun er tilgjengelige mens programmet kjører, så det kan være lurt å ha en logisk sjekk for å sikre at de er tilstede før du prøver å lese dem.
+Å lese kommandolinje argumenter har vært en viktig del av programmering siden tidlig på 1970-tallet da C ble utviklet av Dennis Ritchie og Ken Thompson. Det er flere alternative måter å lese argumenter på, for eksempel ved bruk av biblioteker som `getopt` eller ved å lese innholdet i en fil i stedet for kommandolinjen. For å lese argumenter i en mer kompleks programstruktur, kan du bruke `getopt_long` funksjonen.
 
-# Dypdykk
-I dypdykk-seksjonen forklarer vi nærmere hvordan "argc" og "argv" variablene fungerer, samt noen nyttige funksjoner for å håndtere kommandolinjeargumenter.
+Implementeringen av å lese kommandolinje argumenter er avhengig av operativsystemet og C-kompilatoren som brukes. Derfor bør du alltid sjekke dokumentasjonen for å sikre at koden din er kompatibel.
 
-"argc" variabelen (argument count) inneholder antall argumenter som ble gitt ved kjøring av programmet, inkludert navnet på selve programmet. For eksempel, hvis du kjører "program arg1 arg2", vil "argc" være 3.
+Se også:
 
-"argv" variabelen (argument vector) er et array av strenger som inneholder alle argumentene som ble gitt ved kjøring av programmet. Navnet på programmet er alltid den første elementet på "argv" arrayet, etterfulgt av alle de andre argumentene.
-
-I tillegg til å lese argumenter som vanlige strenger, kan du også bruke funksjoner som "atoi()" for å konvertere argumenter til andre datatyper, slik som heltall.
-
-```C
-// Konverterer første argument til heltall og lagrer det i en variabel
-int tall = atoi(argv[1]);
-```
-
-Det finnes også funksjoner som "strcmp()" for å sammenligne argumenter med hverandre. Dette kan være nyttig hvis du for eksempel vil utføre ulike handlinger basert på hvilket argument som ble gitt.
-
-```C
-// Sjekker om første argument er lik "help"
-if (strcmp(argv[1], "help") == 0) {
-  // Utfør handlingen for å vise hjelpetekst
-}
-```
-
-# Se også
-- [Command Line Arguments in C](https://www.geeksforgeeks.org/command-line-arguments-in-c-cpp/)
-- [C Programming Tutorial - Command line arguments](https://www.learn-c.org/en/Command_Line_Arguments)
+- [C Programming Language](https://en.wikipedia.org/wiki/C_(programming_language))
+- [getopt Long Function](https://www.gnu.org/software/libc/manual/html_node/Using-Getopt-Long.html)

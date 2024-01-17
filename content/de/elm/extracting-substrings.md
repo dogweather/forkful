@@ -1,7 +1,7 @@
 ---
-title:                "Extrahieren von Teilzeichenketten"
-html_title:           "Elm: Extrahieren von Teilzeichenketten"
-simple_title:         "Extrahieren von Teilzeichenketten"
+title:                "Untersuchen von Teilzeichenketten"
+html_title:           "Elm: Untersuchen von Teilzeichenketten"
+simple_title:         "Untersuchen von Teilzeichenketten"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -10,40 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was & Warum?
+Substring-Extraktion ist ein gängiger Vorgang in der Programmierung, bei dem ein Teil eines Strings oder einer Zeichenkette aus einem größeren String extrahiert wird. Programmierer nutzen dies häufig, um bestimmte Daten oder Informationen aus Strings zu isolieren und zu verwenden.
 
-Extrahieren von Teilstrings kann in vielen verschiedenen Situationen nützlich sein, z.B. beim Überprüfen von Eingaben oder beim Bearbeiten von Texten. In diesem Artikel werden wir uns ansehen, wie man Teilstrings in Elm extrahiert und einige Hinweise geben, wann es sinnvoll ist, dies zu tun.
-
-## Wie geht's
-
-Das Extrahieren von Teilstrings in Elm ist sehr einfach. Wir haben zwei Hauptfunktionen zur Verfügung: `String.slice` und `String.left`. Lass uns mit `String.slice` anfangen, die uns einen Teilstring aus einem gegebenen String zurückgibt. Hier ist ein Beispiel:
-
+## So geht's:
 ```Elm
-String.slice 3 6 "Hallo Welt" -- gibt "lo " zurück
+import String
+
+-- Beispiel: Extrahieren des Wortes "Blau" aus einem Satz
+String.dropUntil "Blau" "Der Himmel ist Blau und die Sonne scheint"
+
+-- Output: "Blau und die Sonne scheint"
 ```
 
-Wie du sehen kannst, müssen wir den Start- und Endindex des Teilstrings angeben, den wir extrahieren möchten. In diesem Fall haben wir "lo " als Ergebnis erhalten, da es sich um die Buchstaben von Index 3 bis 6 handelt.
-
-Wenn du einfach die ersten n Buchstaben eines Strings extrahieren möchtest, kannst du die `String.left` Funktion verwenden. Sie nimmt nur zwei Argumente, die Anzahl der Buchstaben, die wir extrahieren möchten, und den ursprünglichen String. Ein Beispiel:
-
 ```Elm
-String.left 4 "Hallo Welt" -- gibt "Hall" zurück
+import String
+
+-- Beispiel: Extrahieren aller Vokale aus einem String
+String.filter (\c -> List.member (String.toLower c) ["a", "e", "i", "o", "u"]) "Hallo Welt"
+
+-- Output: "a ae"
 ```
 
-Beide Funktionen sind sehr nützlich, wenn wir Teilstrings aus einem String extrahieren möchten, aber es gibt noch ein paar weitere Details zu beachten.
+## Tiefentauchen:
+Die erste Implementierung von Substring-Extraktion wurde in der Programmiersprache SNOBOL (StriNg Oriented and symBOlic Language) entwickelt, die 1960 von David Farber, Ralph Griswold und Ivan Polonsky entworfen wurde. Heutzutage gibt es auch alternative Methoden, um Substrings zu extrahieren, wie zum Beispiel reguläre Ausdrücke. In Elm kann der Befehl `String.access` verwendet werden, um auf bestimmte Zeichen innerhalb eines Strings zuzugreifen und sie auszugeben.
 
-## Tiefer Einblick
-
-Die `String.slice` Funktion kann auch negative Indizes akzeptieren, was es uns ermöglicht, Teilstrings vom Ende des Originalstrings aus zu extrahieren. Zum Beispiel:
-
-```Elm
-String.slice -7 -1 "Hallo Welt" -- gibt "o Wel" zurück
-```
-
-Die `String.left` Funktion ist auch sehr praktisch, wenn wir einen Teil eines Strings ignorieren möchten. Wenn wir zum Beispiel alle Zeichen nach dem 4. Index in einem String entfernen möchten, können wir einfach `String.left 4` verwenden und den Rest ignorieren.
-
-Es ist auch wichtig zu beachten, dass die erste Stelle in einem String den Index 0 hat, nicht 1. Das heißt, dass der erste Buchstabe eines Strings mit einem Index von 0 extrahiert wird, nicht mit einem Index von 1.
-
-## Siehe auch
-
-Weitere Informationen über die Verwendung von Strings in Elm findest du in der offiziellen Dokumentation [hier](https://guide.elm-lang.org/strings/). Du kannst auch unsere anderen Artikel über Elm-Syntax und Funktionen durchstöbern, um deine Elm-Fähigkeiten weiter zu verbessern. Viel Spaß beim Programmieren!
+## Siehe auch:
+https://package.elm-lang.org/packages/elm/strings/latest/String#right
+https://www.tutorialspoint.com/snobol_programming/snobol_language_basics.htm
+https://developer.mozilla.org/de/docs/Web/JavaScript/Guide/Regular_Expressions

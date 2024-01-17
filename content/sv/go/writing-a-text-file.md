@@ -10,51 +10,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför: 
+## Vad & Varför?
 
-Du kanske undrar varför det är viktigt att lära sig att skriva textfiler i Go? Svaret är enkelt - textfiler är en grundläggande del av programmering och används för att lagra och dela data i olika program. Att kunna skriva och manipulera textfiler kommer att göra dig till en mer effektiv programmerare och öppna upp möjligheter för mer komplexa projekt.
+Att skapa en textfil är en vanlig uppgift för programmerare. En textfil är en fil som kan innehålla text och ibland även andra typer av data. Att skriva en textfil innebär att man lägger till eller ändrar textinnehåll i en befintlig fil.
 
-## Hur man gör det:
+Programmerare använder textfiler för att lagra data och kommunicera med andra program eller användare. Det är ett enkelt och effektivt sätt att dela information och samarbeta i programmeringsprojekt.
 
-För att skriva en textfil i Go behöver du först importera "io" paketet. Detta ger dig funktioner som kan hantera inläsning och skrivning av filer. Efter att ha initierat en ny fil, kan du öppna den för skrivning genom att använda "OpenFile" funktionen och sedan använda "WriteString" funktionen för att skriva den önskade texten till filen.
+## Hur gör man:
 
 ```Go
 package main
 
-import "io"
+import (
+    "fmt"
+    "os"
+)
 
 func main() {
-  // Skapa en ny texfil
-  fil, err := io.Create("mitt_text.doc") 
-  
-  if err != nil {
-    // Om det uppstår ett fel, avsluta programmet
-    panic(err) 
-  }
-  
-  // Öppna filen för skrivning
-  fil, err = io.OpenFile("mitt_text.doc", os.O_RDWR, 0666) 
-  
-  if err != nil {
-    // Om det uppstår ett fel, avsluta programmet
-    panic(err) 
-  }
-  
-  // Skriv text till filen
-  fil.WriteString("Detta är en text som skrivs till fileen")
+    // Öppna en fil för skrivning
+    file, err := os.Create("mittDokument.txt")
+    if err != nil {
+        fmt.Println(err)
+        return
+    }
+    defer file.Close()
+
+    // Skriv text till filen
+    _, err = file.WriteString("Hej världen!")
+    if err != nil {
+        fmt.Println(err)
+        return
+    }
+
+    fmt.Println("Texten har sparats till filen!")
 }
 ```
 
-När du har skrivit klart din text till filen, bör du stänga den för att undvika eventuella läs- och skrivfel. Detta gör du genom att använda "Close" funktionen.
+Output:
+```
+Texten har sparats till filen!
+```
 
 ## Djupdykning:
 
-Att skriva en textfil i Go kan verka enkelt, men det finns flera saker att tänka på för att göra det mer effektivt och robust. Till exempel kan det vara bra att använda funktionen "defer" för att stänga filen efter att du har skrivit klart till den. Detta säkerställer att filen stängs även om det uppstår ett fel under skrivningsprocessen. Det är också viktigt att handskas med eventuella fel som kan uppstå, som att filen inte kan hittas eller att du inte har behörighet att skriva till den.
+Historiskt sett har textfiler använts som ett sätt för datorer att lagra och hantera data. Idag är textfiler fortfarande en viktig del av programmering och används för att lagra programmeringskod, konfigurationsfiler och andra typer av data.
+
+Det finns alternativa sätt att skriva till filer i Go, som t.ex. ```ioutil```-paketet, men att använda ```os```-paketets ```Create()```-funktion är en vanligare metod.
+
+När man skriver till en textfil måste man se till att den har rätt filändelse baserat på vilken typ av text som den kommer att innehålla. Detta är viktigt för att filen ska kunna läsas och hanteras korrekt av andra program eller användare.
 
 ## Se även:
 
-Om du vill lära dig mer om hur man hanterar filer i Go, så kan dessa länkar vara till hjälp:
-
-- [Official documentation for I/O package](https://golang.org/pkg/io/)
-- [Working with Files in Go](https://www.digitalocean.com/community/tutorials/how-to-work-with-files-in-go)
-- [Learn How to Read and Write Files in Go](https://www.callicoder.com/golang-read-write-file/)
+- [Introduction to Go Programming](https://golang.org/doc/)
+- [Creating and Writing Files in Go](https://gobyexample.com/writing-files)
+- [Working with Files and Folders in Go](https://www.calhoun.io/working-with-files-and-folders-in-go/)

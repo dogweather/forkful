@@ -10,54 +10,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hvorfor
+Hva & Hvorfor?:
+Lesing av kommandolinjeargumenter er en måte for programmerere å gi instruksjoner til et program ved hjelp av tekstkommandoer som er skrevet i terminalen. Dette er nyttig for automatisering av oppgaver og kan gjøre det enklere å kjøre flere kommandoer samtidig.
 
-Hvorfor skulle noen bry seg om å lese kommandolinjeargumenter når man koder i Swift? Vel, det er en enkel måte å gi dine programmer mer fleksibilitet og dynamisk funksjonalitet på. Du kan lese argumenter som brukeren skriver inn og deretter tilpasse programmet ditt basert på disse argumentene. Dette åpner opp for mange muligheter, som å kjøre forskjellige funksjoner avhengig av argumentene, eller endre programinnstillinger basert på brukerens preferanser.
-
-# Slik gjør du det
-
-For å lese kommandolinjeargumenter i Swift, kan du bruke `CommandLine`-klassen. Først må du importere Foundation-frameworket, som inneholder denne klassen. Deretter kan du bruke `CommandLine.arguments`-egenskapen for å få en liste over alle argumentene som ble gitt til programmet ditt.
-
-Her er et eksempel på hvordan du kan skrive ut alle argumentene til konsollen:
-
+Slik gjør du:
 ```Swift
-import Foundation
-
-// Skriv ut alle argumentene
-print(CommandLine.arguments)
-
-// Kjør dette programmet fra Terminalen med noen argumenter, for eksempel:
-// swift myProgram.swift arg1 arg2 arg3
-// Resultatet vil bli ["myProgram.swift", "arg1", "arg2", "arg3"]
+let arguments = CommandLine.arguments
+print("Kommando linje argumenter: \(arguments)")
 ```
+Dette kodeeksempelet viser hvordan du kan bruke 'CommandLine' for å lese kommandolinjeargumenter og deretter skrive ut dem. Hvis du for eksempel kjører programmet med argumentene "Hello" og "World", vil konsollen skrive ut "Kommando linje argumenter: [Hello, World]".
 
-Som du kan se, vil det første argumentet alltid være navnet på programmet, etterfulgt av alle de andre argumentene som ble gitt.
+Dypdykk:
+Historisk kontekst: Lesing av kommandolinjeargumenter har vært en viktig del av programmering siden begynnelsen av datamaskinene. Før grafiske brukergrensesnitt ble vanlige, var det eneste måten å kommunisere med datamaskiner gjennom kommandolinjen.
 
-# Dypdykk
+Alternativer: Selv om lesing av kommandolinjeargumenter er en viktig del av programmering, er det ikke den eneste måten å interagere med et program på. GUI-baserte brukergrensesnitt har blitt vanligere og mer populære blant programmerere.
 
-Nå som du vet hvordan du kan få tilgang til kommandolinjeargumentene, kan du begynne å bruke dem til å tilpasse ditt eget program. En måte å gjøre dette på er å bruke `if`-setninger for å sjekke hvilket argument som ble gitt, og utføre forskjellige handlinger basert på det.
+Implementeringsdetaljer: I Swift er kommandolinjeargumenter tilgjengelige gjennom 'CommandLine' -strukturen, som gir tilgang til alle argumentene som er gitt ved kjøring av programmet. Det finnes også tredjeparts biblioteker som kan gjøre lesing og prosessering av argumenter enklere.
 
-Her er et eksempel på hvordan du kan bruke kommandolinjeargumenter til å endre språkinnstillingene til programmet ditt:
-
-```Swift
-import Foundation
-
-// Sjekk om argumentet "language" ble gitt
-if CommandLine.arguments.contains("language") {
-  // Finn indeksen til argumentet "language"
-  if let index = CommandLine.arguments.firstIndex(of: "language") {
-    // Bruk argumentet som kommer etter "language" som et nytt språk
-    let newLanguage = CommandLine.arguments[index+1]
-    // Endre programinnstillingene til å bruke det nye språket
-    changeLanguage(to: newLanguage)
-  }
-}
-```
-
-Dette er bare ett eksempel, men det er mange andre måter du kan bruke kommandolinjeargumenter på for å gjøre programmene dine mer dynamiske og tilpassbare.
-
-# Se også
-
-- [Dokumentasjon om `CommandLine`-klassen](https://developer.apple.com/documentation/foundation/commandline) fra Apple.
-- [En introduksjon til kommandolinjeargumenter i Swift](https://www.raywenderlich.com/817037-command-line-arguments-in-swift) fra Ray Wenderlich.
-- [En guide til å lage konsollapplikasjoner i Swift](https://www.hackingwithswift.com/articles/195/how-to-make-a-command-line-application-using-swift) fra Hacking with Swift.
+Se også:
+- [Swift Standard Library - CommandLine](https://developer.apple.com/documentation/foundation/commandline)
+- [ArgumentParser - et tredjeparts bibliotek for kommandolinjeargumenter i Swift](https://github.com/apple/swift-argument-parser)

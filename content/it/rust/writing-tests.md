@@ -10,83 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché scrivere test è importante
+Ciao ragazzi! Se siete programmatori (o aspiranti tali), sicuramente avete già sentito parlare di testing del codice. Ma cosa significa esattamente? E perché è importante per i programmatori?
 
-Se sei un programmatore, probabilmente hai sentito parlare dell'importanza di scrivere test per il tuo codice. Ma perché è così importante? In breve, i test ci permettono di verificare che il nostro codice funzioni correttamente e che non si verifichino errori inaspettati quando lo aggiorniamo o lo modifichiamo. Inoltre, i test ci aiutano a rilevare più facilmente e correggere eventuali errori di codice.
+## Cosa & Perché?
 
-## Come scrivere test in Rust
+Scrivere test è il processo di creare codice specifico che verifica se il nostro codice funziona correttamente. Questo ci aiuta a identificare eventuali errori o bug nel nostro codice prima che venga utilizzato dai nostri utenti. Inoltre, i test forniscono una documentazione utile sulle funzionalità del nostro codice e ci aiutano a mantenere la qualità del nostro software nel tempo.
 
-In Rust, i test sono inclusi all'interno dei file di codice tramite l'attributo `#[test]`. Possiamo utilizzare l'assertione `assert!()` per verificare che un'espressione booleana sia vera. Ecco un esempio:
+## Come fare:
 
-```Rust
-#[test]
-fn test_somma() {
-    let x = 2;
-    let y = 3;
-
-    // Verifichiamo che la somma di x e y sia uguale a 5
-    assert!(x + y == 5);
-}
-```
-
-Una volta scritti i test all'interno dei nostri file di codice, possiamo eseguirli utilizzando il comando `cargo test`. Verranno eseguiti tutti i test presenti nei file del progetto e otterremo un output simile a questo:
-
-```sh
-running 1 test
-test test_somma ... ok
-
-test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out
-```
-
-Se uno dei nostri test fallisce, otterremo un output diverso che ci aiuterà a identificare l'errore. Ad esempio:
-
-```sh
-running 1 test
-test test_somma ... FAILED
-
-failures:
-
----- test_somma stdout ----
-thread 'test_somma' panicked at 'assertion failed: `(left == right)`
-  left: `6`,
- right: `5`', src/main.rs:6
-
-failures:
-    test_somma
-
-test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out
-```
-
-## Approfondimenti sui test in Rust
-
-Per scrivere test efficaci in Rust, è importante comprendere i concetti di ***testing framework*** e ***unit testing***. Un testing framework è un insieme di strumenti e funzionalità che ci aiutano a gestire e eseguire i nostri test. Unit testing, invece, si riferisce alla pratica di testare le unità di codice, ovvero le singole funzioni o moduli, per assicurarsi che funzionino correttamente.
-
-Inoltre, in Rust possiamo utilizzare il costrutto `#[should_panic]` per testare che una determinata funzione generi un errore specifico. Vediamo un esempio:
+Per scrivere test in Rust, utilizziamo il modulo integrato di testing "test". Iniziamo creando una funzione di test utilizzando l'attributo `#[test]`. All'interno di questa funzione, utilizziamo l'assertion `assert_eq!()` per confrontare il risultato della nostra funzione con un risultato predefinito. Vediamo un esempio:
 
 ```Rust
 #[test]
-fn test_divisione() {
-    let x = 2;
-    let y = 0;
-
-    // La divisione per 0 deve generare un errore
-    assert_eq!(x / y, 0);
-}
-
-#[test]
-#[should_panic] // Questo test deve generare un errore
-fn test_scelta_lista_vuota() {
-    let lista = Vec::new();
-
-    // Tentiamo di selezionare un elemento dalla lista vuota
-    lista[0];
+fn test_addition() {
+    let result = add(5, 10);
+    assert_eq!(result, 15);
 }
 ```
 
-Con questi strumenti, possiamo iniziare a scrivere test per il nostro codice in modo più efficace e migliorare la qualità del nostro software.
+Possiamo anche testare funzioni che ci aspettiamo che generino un errore utilizzando l'attributo `#[should_panic]`. Ad esempio:
 
-## Vedi anche
+```Rust
+#[test]
+#[should_panic]
+fn test_division_by_zero() {
+    div(10, 0);
+}
+```
 
-- [La documentazione ufficiale di Rust sui test](https://doc.rust-lang.org/book/ch11-00-testing.html)
-- [Un tutorial dettagliato sui test in Rust (in inglese)](https://blog.rust-lang.org/inside-rust/2020/06/08/test-suite.html)
-- [Un video tutorial sui test in Rust (in inglese)](https://www.youtube.com/watch?v=EZetWEPW6Ec&ab_channel=mearan)
+Una volta scritte le nostre funzioni di test, possiamo eseguirle utilizzando il comando `cargo test` nella nostra cartella del progetto. Vedremo l'output dei test eseguiti e se sono tutti passati o meno.
+
+## Approfondimento:
+
+Scrivere test per il nostro codice prima era considerato una pratica non essenziale, ma negli ultimi anni è diventato sempre più importante. Grazie all'adozione di metodologie di sviluppo come il "Test Driven Development" (TDD) e "Continuous Integration" (CI), i test sono diventati un modo fondamentale per assicurare la qualità del nostro codice.
+
+Oltre al modulo di testing integrato di Rust, esistono anche altri framework di testing come "JUnit" e "RSpec". Inoltre, ci sono anche strumenti di testing automatizzati che possono aiutarci a eseguire i nostri test in modo più efficiente.
+
+Per quanto riguarda l'implementazione dei test, è importante ricordare di scrivere test indipendenti e non dipendenti da altri test. Inoltre, è consigliato seguire il principio di "write once, test everywhere" per assicurare che il nostro codice sia testato su più piattaforme.
+
+## Vedi anche:
+
+- [Documentazione sul modulo di testing di Rust](https://doc.rust-lang.org/stable/book/ch11-01-writing-tests.html)
+- [Articolo su Test Driven Development](https://en.wikipedia.org/wiki/Test-driven_development)
+- [Continous Integration: cos'è e perché è importante](https://en.wikipedia.org/wiki/Continuous_integration)

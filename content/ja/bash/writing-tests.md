@@ -1,7 +1,7 @@
 ---
-title:                "テストの書き方"
-html_title:           "Bash: テストの書き方"
-simple_title:         "テストの書き方"
+title:                "テストの作成"
+html_title:           "Bash: テストの作成"
+simple_title:         "テストの作成"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Testing and Debugging"
@@ -10,58 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ？
+## 何をして、なぜそれをするの？ 
+テストを書くとは、プログラマーが自分が書いたコードを自動的にテストすることです。これにより、バグを早期に発見し、品質の高いソフトウェアを作ることができます。
 
-プログラムを書く際に、テストを書くことは非常に重要です。テストを書くことで、コードの品質を保証し、バグの発生を未然に防ぐことができます。また、将来的な変更にも対応しやすくなります。
+## やり方： 
+```Bash
+# テストを書く基本的な手順
+# テストを実行するためには、実際のコードの前に「test」というキーワードを使います。
+# テスト関数には、入力値と期待される出力値を指定します。
 
-## どのようにするか？
+# テストを書く例
+# この例では、スクリプトをあなたのディレクトリ内のファイルを数えるものだとします。
+# count_files関数を書きますが、実際の仕事をしていて、正しく機能するかどうかを確認するためのテストをしなければなりません。
 
-テストを書くために、まずはBashのテストフレームワークである[Bats](https://github.com/bats-core/bats-core)をインストールします。次に、テストしたいコードをBashスクリプトで書きます。最後に、Batsを使用してテストを実行します。下記の例をご覧ください。
-
-```
-#! /usr/bin/env bash
-
-# test.sh
-
-# Batsのインストール（MacOS）
-$ brew install bats
-
-# テストケースを含んだBashスクリプト
-# addition.sh
-
-#!/usr/bin/env bats
-
-load test_helper.bash
-
-@test "1 + 1 は 2であること" {
-  run addition 1 1
-  [ "$status" -eq 0 ]
-  [ "$output" -eq 2 ]
+count_files() {
+    num_files=$(ls | wc -l)
+    echo "Number of files in directory: $num_files"
 }
 
-@test "10 + 5 は 15であること" {
-  run addition 10 5
-  [ "$status" -eq 0 ]
-  [ "$output" -eq 15 ]
+test_count_files() {
+    echo "Testing count_files function..."
+    if [ "$(count_files)" == "$(ls -1 | wc -l)" ]
+    then
+        echo "PASS!"
+    else
+        echo "FAIL!"
+    fi
 }
 
-# テストケースの実行
-$ bats addition.sh
+# テストを実行する
+# test_count_files関数を実行して、出力結果を見ます。
+test_count_files
 ```
 
-上記の例では、テストを書くためにBatsのビルトイン関数である`load`や`test`などを使用しています。詳しくは、[Batsのドキュメント](https://github.com/bats-core/bats-core#usage)をご覧ください。
+## より詳しく：
+テストを書くことは、品質保証プロセスの重要な部分であり、プログラマーにとって非常に重要です。テストを書くことで、バグを早期に発見することができ、変更を加えた時にも正しく機能するかどうかを確認することができます。代替手段として、手動でテストを実行することもできますが、効率的ではありません。テストを自動化することで、より迅速かつ正確にプログラムの品質を確保することができます。
 
-## ディープダイブ
-
-テストを書く際には、以下のポイントに注意することが重要です。
-
-- テストは可能な限り自動化することが望ましいです。
-- テストはコードと同じリポジトリ内に保存することで、将来的な変更に対応しやすくなります。
-- テストコードも頻繁にリファクタリングすることで、品質を保つことができます。
-
-テストを書くことで、プログラムの品質を維持し、バグを未然に防ぐことができるだけでなく、開発プロセスを改善することもできます。
-
-## 関連情報
-
-- [Bats](https://github.com/bats-core/bats-core): Bashのためのテストフレームワーク
-- [テスト駆動開発](https://ja.wikipedia.org/wiki/%E3%83%86%E3%82%B9%E3%83%88%E9%A7%86%E5%8B%95%E9%96%8B%E7%99%BA): テストを最初に書くための手法の一つ
+## 参考: 
+- テストの書き方：https://www.tutorialspoint.com/unix/unix-writing-tests.htm
+- テストの実行：https://www.tutorialspoint.com/unix/unix-executing-tests.htm

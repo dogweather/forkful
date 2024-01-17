@@ -10,65 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
-CSV (Comma-Separated Values) är en vanlig format för att lagra och dela tabulära data. Det är ett användbart verktyg för programmerare att arbeta med eftersom det är lätt att läsa och hantera data från CSV-filer.
+## Vad & Varför?
+CSV står för "comma-separated values" och är ett format för att lagra och hantera tabellinformation i textform. Det är vanligtvis användbart när man behöver bearbeta stora mängder data, särskilt när det gäller att importera eller exportera tabellinformation från olika program och verktyg. CSV är också lättläst för både människor och datorer, vilket gör det till ett populärt val för datalagring.
 
-## Hur man gör
-Att arbeta med CSV i Gleam är enkelt och smidigt. Först behöver vi importera paketet `"csv"` för att få tillgång till dess funktioner. Sedan kan vi använda funktionen `Csv.read` för att läsa in en CSV-fil som en lista av rader och kolumner.
+## Hur man gör:
+Gleam har inbyggda funktioner för att läsa och skriva CSV-filer, vilket gör det enkelt att arbeta med detta format. Här är ett exempel på hur man läser en CSV-fil och skriver ut den till konsolen:
 
-```Gleam
-use gleam/csv
+```
+let rows = file::csv::read("data.csv")
 
-let csv = "namn,ålder,land
-Lisa,25,Sverige
-Eva,30,Norge"
-
-let data = Csv.read(csv)
-
-// data blir: [ ["namn", "ålder", "land"], ["Lisa", "25", "Sverige"], ["Eva", "30", "Norge"] ]
+do
+  rows
+  |> List.iter(fn(row) -> 
+    row
+    |> List.map(fn(cell) -> 
+      cell
+      |> String.join(", ")
+    )
+    |> String.join(" | ")
+    |> io::println
+  )
 ```
 
-Om du vill ändra på formatet av en CSV fil, kan du använda funktionen `Csv.format` för att omvandla listan av rader och kolumner till en sträng i CSV-format.
+Detta kodexempel använder funktionen `file::csv::read` för att läsa in en CSV-fil och lagrar resultaten i en lista. Sedan använder den sedan den inbyggda höjnivåfunktionen `List.iter` för att iterera över varje rad i filen och skriva ut den till konsolen i ett läsbart format.
 
-```Gleam
-use gleam/csv
+## Djupdykning:
+CSV-formatet uppfanns på 1970-talet och har sedan dess blivit en standard för datahantering, särskilt inom affärsvärlden. Det finns också alternativ till CSV, som till exempel JSON och XML, men CSV behåller sin popularitet på grund av dess enkelhet och kompatibilitet med olika program.
 
-let data = [
-  ["namn", "ålder", "land"],
-  ["Lisa", "25", "Sverige"],
-  ["Eva", "30", "Norge"]
-]
+När man arbetar med CSV i Gleam, är det viktigt att se till att både din kod och CSV-filen är korrekt formaterade. Om kolumnerna i din CSV-fil inte stämmer överens med de datatyper du förväntar dig, kan din kod ge oväntade resultat eller felmeddelanden. Se till att du också kontrollerar om filer har några speciella tecken som kan förstöra parsningen.
 
-let csv = Csv.format(data)
-
-// data blir: "namn,ålder,land
-// Lisa,25,Sverige
-// Eva,30,Norge"
-```
-
-För att skriva ut en CSV-fil till en fil kan vi använda funktionen `Csv.write` tillsammans med en filhandtag.
-
-```Gleam
-use gleam/csv
-use gleam/io
-
-let data = [
-  ["namn", "ålder", "land"],
-  ["Lisa", "25", "Sverige"],
-  ["Eva", "30", "Norge"]
-]
-
-let csv = Csv.format(data)
-
-let file = File.create("minfil.csv", .write)
-Csv.write(file, csv)
-```
-
-## Djupdykning
-Det finns många funktioner för att hantera CSV i Gleam, som till exempel `Csv.row` för att läsa in en specifik rad, `Csv.column` för att läsa in en specifik kolumn och `Csv.decode` för att omvandla data från CSV-filen till specifika typer.
-
-Det är också möjligt att konfigurera `Csv.read` för att hantera specialfall, till exempel olika skiljetecken eller escape-tecken.
-
-## Se även
-- [Officiell dokumentation för gleam/csv paketet](https://gleam.run/packages/gleam/csv/latest/)
-- [GitHub-repositorium för gleam/csv paketet](https://github.com/gleam-lang/csv)
+## Se även:
+- Officiell dokumentation för CSV-funktioner i Gleam: https://gleam.run/lib/file.csv.html
+- En introduktion till CSV-formatet: https://en.wikipedia.org/wiki/Comma-separated_values

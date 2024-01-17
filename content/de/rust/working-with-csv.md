@@ -10,67 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was ist CSV und warum nutzen Programmierer es?
 
-CSV (Comma Separated Values) ist ein weit verbreitetes Datenformat für den Austausch von Tabellen und einfach strukturierten Daten. Da Rust eine Sprache ist, die auf Performance, Sicherheit und Parallelität ausgelegt ist, kann es eine gute Wahl sein, CSV-Dateien zu analysieren oder zu generieren.
+CSV steht für "Comma Separated Values" und ist ein verbreitetes Dateiformat, das zur Speicherung von tabellarischen Daten verwendet wird. Programmierer nutzen oft CSV-Dateien, weil sie einfach zu erstellen und zu lesen sind und eine gute Möglichkeit bieten, strukturierte Daten zu speichern.
 
-## Wie
+## Anleitung:
 
-### Lesen von CSV-Dateien
-
-Um eine CSV-Datei zu lesen, können Sie die `csv`-Bibliothek verwenden. Zunächst müssen Sie diese in Ihrem Projekt importieren:
+Um mit CSV-Dateien in Rust zu arbeiten, benötigen wir das Paket "csv". Hier ist ein Beispiel, wie wir eine CSV-Datei einlesen und die Daten in eine Vektorsammlung speichern können:
 
 ```Rust
-extern crate csv;
-
+use csv;
 use std::error::Error;
-use std::fs::File;
+use std::path::Path;
 
-use csv::ReaderBuilder;
-```
-
-Als nächstes können Sie die Datei mit dem `ReaderBuilder` öffnen und die Daten in einem Vektor speichern:
-
-```Rust
-let file = File::open("daten.csv")?;
-let mut reader = ReaderBuilder::new().from_reader(file);
-
-// Vektor zum Speichern der Daten initialisieren
-let mut daten: Vec<Record> = vec![];
-
-// Daten iterativ in den Vektor speichern
-for result in &mut reader.records() {
-    let record = result?;
-    daten.push(record);
+fn main() -> Result<(), Box<dyn Error>> {
+    let path = Path::new("data.csv");
+    let mut reader = csv::Reader::from_path(path)?;
+    let mut data: Vec<Vec<String>> = Vec::new();
+    for result in reader.records() {
+        let record = result?;
+        let row: Vec<String> = record.iter().map(|field| field.to_string()).collect();
+        data.push(row);
+    }
+    println!("{:?}", data);
+    Ok(())
 }
 ```
 
-Das `Record`-Objekt enthält die Daten jeder Zeile der CSV-Datei. Sie können nun auf die Daten zugreifen und diese weiterverarbeiten.
+Die Ausgabe könnte wie folgt aussehen:
 
-### Schreiben von CSV-Dateien
-
-Wenn Sie Daten in eine CSV-Datei schreiben möchten, können Sie dies mit der `Writer`-Klasse tun:
-
-```Rust
-let file = File::create("ergebnisse.csv")?;
-let mut writer = csv::Writer::from_writer(file);
-
-// Daten aus einem Vektor schreiben
-writer.write_record(&["Name", "Alter", "Stadt"])?;
-writer.write_record(&["Max", "25", "Berlin"])?;
-writer.write_record(&["Lisa", "31", "Hamburg"])?;
+```
+[["Name", "Alter", "Beruf"], ["Max", "24", "Programmierer"], ["Anna", "32", "Designer"], ["Tom", "28", "Student"]]
 ```
 
-Im obigen Beispiel werden drei Zeilen mit den entsprechenden Spalten geschrieben. Beachten Sie, dass Sie die Daten als Referenz übergeben müssen, da die `Writer`-Klasse eine `&[&str]`-Argument erwartet.
+## Tiefergehende Informationen:
 
-## Deep Dive
+CSV wurde in den 1970er Jahren entwickelt und ist seitdem zu einem der am häufigsten verwendeten Dateiformate geworden. Es gibt auch alternative Formate wie TSV (Tab Separated Values), bei denen Tabulatoren statt Kommas als Trennzeichen verwendet werden.
 
-Wenn Sie tiefer in die Arbeit mit CSV-Dateien einsteigen möchten, können Sie sich mit der Dokumentation der `csv`-Bibliothek vertraut machen. Außerdem gibt es weitere Bibliotheken wie zum Beispiel `serde_csv`, die eine vereinfachte Schnittstelle für das Lesen und Schreiben von CSV-Dateien bieten.
+Das "csv" Paket in Rust bietet eine Vielzahl von Funktionen, die es uns ermöglichen, CSV-Dateien effizient zu verarbeiten. Wir können auch Optionen wie das Trennzeichen, die Zeilenbegrenzung und das Encoding anpassen.
 
-Eine wichtige Sache, die Sie beachten sollten, ist die Formatierung von CSV-Dateien. Während die meisten Programme Kommas als Trennzeichen verwenden, gibt es auch andere Möglichkeiten wie zum Beispiel Semikolons oder Tabs. Außerdem müssen Sonderzeichen wie Anführungszeichen oder Zeilenumbrüche richtig behandelt werden, um Fehler bei der Verarbeitung der Daten zu vermeiden.
+## Weitere Ressourcen:
 
-## Siehe auch
-
-- [Dokumentation der CSV-Bibliothek](https://github.com/BurntSushi/rust-csv)
-- [Serde-CSV Bibliothek](https://github.com/BurntSushi/rust-csv)
-- [Rust Programmiertutorial](https://www.rust-lang.org/learn)
+- Offizielle Dokumentation des "csv" Pakets in Rust: https://docs.rs/csv/
+- Beispielcode für das Schreiben von Daten in eine CSV-Datei: https://gist.github.com/weiznich/3642f6e787a7f0302ed5
+- Ein Einführungsvideo in die Verwendung von CSV in Rust: https://www.youtube.com/watch?v=OXVpwpn0-K4

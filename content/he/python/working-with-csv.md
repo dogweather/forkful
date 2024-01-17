@@ -1,7 +1,7 @@
 ---
-title:                "עבודה עם קובץ CSV"
-html_title:           "Python: עבודה עם קובץ CSV"
-simple_title:         "עבודה עם קובץ CSV"
+title:                "עבודה עם CSV"
+html_title:           "Python: עבודה עם CSV"
+simple_title:         "עבודה עם CSV"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Data Formats and Serialization"
@@ -10,40 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## למה csv?
-קבצי CSV הם נפוצים מאוד בעולם התכנות ומשמשים לאחסון וקריאת נתונים בפורמט טקסט פשוט. המאמר הזה ילמד אותך איך לעבוד עם קבצי CSV בשפת פייתון ויתן לך כלים לשליטה על נתונים בצורה יעילה ונוחה.
+## מה ולמה
+עבודה עם קבצי CSV היא פעולה נפוצה בעולם התכנות שמאפשרת לנו לקרוא ולכתוב נתונים ממוחשבים בפורמט נוח ופשוט. תוכניתנים משתמשים בקבצי CSV כאחד מהאמצעים הפופולריים ביותר לייצוג נתונים כדי לבצע פעולות שונות על הנתונים.
 
-## איך לעבוד עם CSV בפייתון
-כדי להתחיל לעבוד עם קבצי CSV בפייתון עליך לייבא את המודול "csv". באמצעות הפונקציה "reader" ניתן לקרוא נתונים מקובץ CSV ולהציג אותם במבנה של רשימות. ניתן גם להשתמש בפונקציה "writer" כדי לכתוב נתונים לקובץ CSV בצורה מקומפקטית ומועילה. ניתן לראות דוגמאות קוד במסגרת הערכה הזו.
+## כיצד ל
+כדי למשוך נתונים מקובץ CSV, אנו משתמשים בג'נק של Python. למשל, כדי לקרוא קובץ CSV ולהדפיס את הנתונים שלו, נכתוב את הקוד הבא:
 
-```Python
-import csv
+```python
+import pandas as pd
 
-# פותח קובץ CSV לקריאה ומחזיר אובייקט
-with open('file.csv', 'r') as csvfile:
-    # מאתחל קורא פייתון עבור הקובץ
-    reader = csv.reader(csvfile)
-
-    # נקרא את הנתונים בצורה של רשימות
-    for row in reader:
-        print(row)
-        
-# פותח קובץ CSV לכתיבה ומחזיר אובייקט
-with open('file.csv', 'w') as csvfile:
-    # מאתחל כותב פייתון עבור הקובץ
-    writer = csv.writer(csvfile)
-
-    # כותב את הנתונים לקובץ בפורמט תאים
-    writer.writerow(['Name', 'Age', 'Location'])
-    writer.writerow(['John', '30', 'New York'])
+df = pd.read_csv('file.csv')
+print(df)
 ```
 
-פלט של הקוד הזה הייחודי יכול להיות:
+כדי לכתוב נתונים לקובץ CSV, נשתמש בפקודת `to_csv()` כמו בדוגמה הבאה:
 
-```
-['Name', 'Age', 'Location']
-['John', '30', 'New York']
+```python
+import pandas as pd
+
+data = [['John', 30],['Jane', 28],['Bob', 25]]
+df = pd.DataFrame(data, columns=['Name', 'Age'])
+df.to_csv('new_file.csv', index=False)
 ```
 
-## מעמיקים בעבודה עם CSV
-ניתן לשחק עם המודול "csv" כדי לעבוד עם נתונים בכוחות נוספים כמו פונקציות למניפולציה, איתות וטיפול בשגיאות. כדי ללמוד עוד על היכולות של מודול ה-"csv" ניתן לבקר במסמ
+פקודת `index=False` מובילה לכך שלא נוספים מספרי שורות לטבלה היוצאת.
+
+## טפסים מתקדמים
+קבצי CSV נמצאים בשימוש כבר מאז שנוצרה הטכנולוגיה של מחשבים ותכנות. טכניקה זו מאפשרת לנו לעבוד עם נתונים בצורה פשוטה ויעילה. כמו כן, ישנן טכנולוגיות אחרות לעבודה עם נתונים, כגון קבצי XML ו-JSON, אך קבצי CSV נותנים לנו גמישות רבה יותר.
+
+כאשר אנו עובדים עם קבצי CSV, חשוב לקחת בחשבון כי ייתכן שהנתונים אינם מסודרים בצורה מושלמת וכי ייתכן שנאלצנו לבצע שינויים כדי לאחזר את הנתונים הרצויים בצורה נכונה.
+
+## ראו גם
+- תיעוד רשמי של פייתון על עבודה עם קבצי CSV: https://docs.python.org/3/library/csv.html
+- מדריך מקיף על עבודה עם נתונים ב-Python: https://realpython.com/python-data-csv/
+- למידע נוסף על ההבדלים בין קבצי CSV, XML ו-JSON: https://www.teradata.com/Resources/Whitepaper/the-difference-between-xml-json-and-csv

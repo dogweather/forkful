@@ -1,7 +1,7 @@
 ---
-title:                "Analiza kodu html"
-html_title:           "C++: Analiza kodu html"
-simple_title:         "Analiza kodu html"
+title:                "Analiza kodu HTML"
+html_title:           "C++: Analiza kodu HTML"
+simple_title:         "Analiza kodu HTML"
 programming_language: "C++"
 category:             "C++"
 tag:                  "HTML and the Web"
@@ -10,58 +10,138 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i dlaczego?
 
-Każdy, kto chce programować w C++, musi mieć pewną wiedzę na temat parsowania HTML. Jest to niezbędna umiejętność, jeśli planujesz tworzenie aplikacji internetowych lub robotów przeszukujących internet.
+Parsowanie HTML to proces analizowania i przetwarzania kodu HTML w celu wyodrębnienia elementów i danych z danej strony internetowej. Programiści wykorzystują parsowanie HTML do automatycznego przetwarzania i wyświetlania zawartości stron internetowych.
 
-## Jak
-
-Możesz użyć biblioteki HTML parser, aby łatwo przetwarzać kod HTML. Oto przykładowy kod, który będzie pobierał zawartość elementów `<p>` z witryny internetowej i wypisywał ją na ekran:
-
+## Jak to zrobić:
 ```C++
 #include <iostream>
-#include <htmlparser/htmlparser.h>
+#include <fstream>
+#include <string>
+#include <sstream>
+#include <vector>
+#include <algorithm>
 
-using namespace std;
+// Funkcja do parsowania HTML
+std::vector<std::string> parseHTML(std::string html) {
+    // Deklaracja zmiennych
+    std::vector<std::string> result; // przechowywanie elementów HTML
+    std::string tag, data; // przechowywanie tagu i danych
+    std::stringstream ss; // strumień danych
+    bool insideTag = false; // flaga do sprawdzania, czy znajdujemy się wewnątrz tagu
+
+    // Przeglądanie kodu HTML po znakach
+    for (char c : html) {
+        // Jeśli napotkamy znak rozpoczynający tag
+        if (c == '<') {
+            // Jeśli już jesteśmy wewnątrz innego tagu, wstaw w wynik poprzedni tag i dane, które już przechowujemy                
+            if (insideTag) {
+                result.push_back(tag);
+                result.push_back(data);
+            }
+            // Przełączamy flagę na true i czyścimy zmienne
+            insideTag = true;
+            tag.clear();
+            data.clear();
+        }
+        // Jeśli napotkamy znak kończący tag
+        else if (c == '>'){
+            // Przełączamy flagę na false i zapisujemy tag i dane do zmiennych
+            insideTag = false;
+            tag = ss.str();
+            ss.str("");
+        }
+        // Jeśli jesteśmy wewnątrz tagu i napotkamy kolejny znak
+        else if (insideTag){
+            // Dopisujemy go do zmiennej data
+            ss << c;
+        }
+        // Jeśli nie jesteśmy wewnątrz tagu, ale napotkamy kolejny znak
+        else {
+            // Dopisujemy go do zmiennej tag
+            data += c;
+        }
+    }
+    // Dodaj ostatni tag i dane do wyniku
+    result.push_back(tag);
+    result.push_back(data);
+    // Zwróć wynik
+    return result;
+}
 
 int main() {
-    // Tworzenie obiektu parsera HTML
-    HTMLParser parser;
+    // Wczytywanie pliku HTML
+    std::ifstream file("index.html");
+    std::string html;
 
-    // Wczytywanie pliku HTML z podanej URL
-    bool result = parser.parse("http://www.example.com/index.html");
-
-    // Sprawdzanie, czy wczytanie pliku się powiodło
-    if (result == false) {
-        cout << "Wystąpił błąd podczas wczytywania pliku." << endl;
+    // Jeśli wczytano plik, przypisz kod HTML do zmiennej
+    if (file){
+        html = std::string( std::istreambuf_iterator<char>(file), std::istreambuf_iterator<char>() );
+        file.close();
+    }
+    // Jeśli nie, wyświetl komunikat o błędzie
+    else {
+        std::cout << "Błąd podczas wczytywania pliku!" << std::endl;
         return 0;
     }
 
-    // Przechodzenie przez wszystkie znalezione elementy <p> i wypisywanie ich zawartości
-    for (HTMLIterator it = parser.begin(); it != parser.end(); ++it) {
-        if (((*it).tag() == "p")) {
-            cout << (*it).content();
-        }
-    }
+    // Parsowanie HTML przy użyciu naszej funkcji
+    std::vector<std::string> parsed = parseHTML(html);
 
-    return 0;
+    // Wyświetlanie wyniku
+    for (auto it = parsed.begin(); it != parsed.end(); it+=2 ) {
+        std::cout << "Tag: " << *it << ", Dane: " << *(it+1) << std::endl; 
+    }
 }
 ```
 
-Przykładowy output dla strony www.example.com/index.html:
+Przykładowy kod HTML w pliku:
+
+```html
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Przykładowa strona</title>
+    </head>
+    <body>
+        <h1>Witaj na mojej stronie!</h1>
+        <p>Tekst</p>
+        <a href="https://www.example.com">Link</a>
+    </body>
+</html>
+```
+
+Przykładowy output:
 
 ```
-To jest zawartość pierwszego akapitu.
-To jest zawartość drugiego akapitu.
-To jest zawartość trzeciego akapitu.
+Tag: <!DOCTYPE html>, Dane: 
+Tag: <html>, Dane: 
+Tag: <head>, Dane: 
+Tag: <title>, Dane: Przykładowa strona
+Tag: </title>, Dane: 
+Tag: </head>, Dane: 
+Tag: <body>, Dane: 
+Tag: <h1>, Dane: Witaj na mojej stronie!
+Tag: </h1>, Dane: 
+Tag: <p>, Dane: Tekst
+Tag: </p>, Dane: 
+Tag: <a href="https://www.example.com">, Dane: Link
+Tag: </a>, Dane: 
+Tag: </body>, Dane: 
+Tag: </html>, Dane: 
 ```
 
-## Deep Dive
+Parsowanie HTML może być użyteczne w wielu przypadkach, na przykład do automatycznego przetwarzania danych ze stron internetowych lub do wyświetlania ich w odpowiedni sposób. Możliwe są również inne sposoby na parsowanie HTML, takie jak wykorzystanie bibliotek specjalnie stworzonych do tego celu.
 
-Parsowanie HTML może być trudne ze względu na niespójności w strukturze kodu na różnych stronach internetowych. Dlatego ważne jest, aby użyć solidnej biblioteki, która radzi sobie z niepoprawnym formatowaniem. Kilka popularnych bibliotek do parsowania HTML w C++ to na przykład HTMLParser, libxml2 i htmlcxx.
+## Głębsza analiza
 
-## Zobacz też
+Parsowanie HTML ma swoje początki w latach 90-tych, gdy powstał język HTML i zaczął być wykorzystywany w budowaniu stron internetowych. Obecnie istnieje wiele bibliotek i narzędzi, które ułatwiają ten proces. Istnieją również różne sposoby parsowania HTML, takie jak wykorzystanie wyrażeń regularnych lub drzewa DOM.
 
-- [https://github.com/mgdm/htmlparser](https://github.com/mgdm/htmlparser)
-- [http://www.xmlsoft.org/](http://www.xmlsoft.org/)
-- [https://htmlcxx.sourceforge.io/](https://htmlcxx.sourceforge.io/)
+## Zobacz także
+
+- [Tutorial: Jak napisać prosty algorytm parsowania HTML w C++](https://www.codeproject.com/Articles/4765/An-HTML-parser-in-C)
+
+- [Biblioteka do parsowania HTML w C++](https://code.google.com/archive/p/html-parser/)
+
+- [Szybkie przeglądanie HTML w C++](https://github.com/ot/metafi/blob/master/src/prolog/html_parser.cc)

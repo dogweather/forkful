@@ -1,7 +1,7 @@
 ---
-title:                "Inviare una richiesta http con autenticazione di base"
-html_title:           "Arduino: Inviare una richiesta http con autenticazione di base"
-simple_title:         "Inviare una richiesta http con autenticazione di base"
+title:                "Invio di una richiesta http con autenticazione di base"
+html_title:           "Arduino: Invio di una richiesta http con autenticazione di base"
+simple_title:         "Invio di una richiesta http con autenticazione di base"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "HTML and the Web"
@@ -10,56 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+## Che cosa & Perché?
+In questa guida parleremo di come inviare una richiesta HTTP con autenticazione di base utilizzando Arduino. Questa è una pratica comune tra i programmatori per accedere e ottenere dati da servizi web protetti.
 
-Quando si utilizza una scheda Arduino per comunicare con il web, può essere necessario inviare richieste HTTP con l'autenticazione di base. Questo è particolarmente utile se si vuole accedere a risorse protette da password.
-
-## Come fare
-
-Per inviare una richiesta HTTP con autenticazione di base utilizzando Arduino, è necessario utilizzare la libreria ESP8266WiFi (se si sta utilizzando un modulo WiFi) o la libreria Ethernet (se si sta utilizzando una scheda Ethernet). In entrambi i casi, si deve impostare la comunicazione con il server web utilizzando la classe WiFiClient (per ESP8266) o la classe EthernetClient (per Ethernet).
-
-```Arduino
-#include <WiFiClient.h>   // o #include <EthernetClient.h> se si utilizza Ethernet
-
-// Creare l'oggetto cliente
-WiFiClient client;   // o EthernetClient client; se si utilizza Ethernet
-
-// Connessione al server web
-if (client.connect(server, port)) {   // impostare server e porta del server web desiderato
-  // Generare una stringa di autenticazione di base
-  String authString = "Basic " + base64Encode(username + ":" + password);   // sostituire username e password con le proprie credenziali
-
-  // Invio della richiesta con l'intestazione di autenticazione di base
-  client.println("GET /protected-resource HTTP/1.1");   // sostituire "/protected-resource" con il percorso della risorsa desiderata
-  client.println("Host: www.example.com");   // sostituire "www.example.com" con l'indirizzo del server web
-  client.println("Authorization: " + authString);   // attenzione alle virgolette: la stringa deve iniziare con "Basic "
-  client.println();   // invia una riga vuota per indicare la fine dell'intestazione
+## Come fare:
+1) Per prima cosa, assicurati di avere una connessione internet stabile e funzionante per il tuo Arduino.
+2) Quindi, definisci l'URL del servizio web al quale vuoi inviare la richiesta. Ad esempio:
+```
+char url[] = "https://www.example.com";
+```
+3) Ora, dovrai impostare le credenziali di autenticazione di base del servizio web. Questo di solito avviene attraverso un username e una password, che verranno codificati in base64 e inseriti nell'header della tua richiesta. Ad esempio:
+```
+char username[] = "utente";
+char password[] = "pass123";
+String auth = username + ":" + password;
+char base64Auth[auth.length()];
+auth.toCharArray(base64Auth, auth.length());
+```
+4) Successivamente, dovrai creare e configurare la tua richiesta HTTP. Puoi farlo utilizzando la libreria WiFiClient di Arduino e specificando il tipo di richiesta (GET, POST, ecc.), l'URL e l'header contenente le credenziali di autenticazione di base. Ad esempio:
+```
+WiFiClient client;
+client.setTimeout(5000);
+if (client.connect(url, 443)) { // 443 per HTTPS, 80 per HTTP
+  client.println("GET /api/dati HTTP/1.1");
+  client.print("Authorization: Basic ");
+  client.println(base64Auth);
+  client.println("Host: www.example.com");
+  client.println("Connection: close");
+  client.println();
 }
-
-// Lettura della risposta
-while (client.available()) {
-  String response = client.readStringUntil('\r');   // legge la risposta del server fino alla fine della riga
-
-  // Fare qualcosa con la risposta ottenuta
-  Serial.println(response);   // stampa la risposta sulla seriale
+```
+5) Ora puoi inviare la tua richiesta e leggere la risposta del servizio web. Ad esempio, puoi utilizzare il metodo readStringUntil() per leggere i dati dall'API:
+```
+while (client.connected()) {
+  String line = client.readStringUntil('\n');
+  // Fare qualcosa con i dati letti
 }
-
-// Disconnessione dal server web
-client.stop();
 ```
 
-Si noti che prima di inviare la richiesta, è necessario generare una stringa di autenticazione base64 utilizzando le proprie credenziali e inserirla nell'intestazione della richiesta. Inoltre, è importante controllare se la connessione al server è stata stabilita correttamente prima di inviare la richiesta.
+## Approfondimenti:
+1) L'autenticazione di base è una delle tante metodologie di autenticazione utilizzate dai servizi web per proteggere i propri dati. Altre opzioni possono includere l'autenticazione con token o con chiave API.
+2) Puoi utilizzare altri tipi di comunicazione come MQTT o WebSocket per inviare e ricevere dati dall'Arduino a un servizio web, ma l'autenticazione di base è ancora una pratica comune per accedere a dati protetti.
+3) Per garantire la sicurezza nella comunicazione tra Arduino e servizio web, è consigliato utilizzare HTTPS invece di HTTP. Ciò significa che avrai bisogno di un certificato SSL installato sul tuo server per stabilire la connessione con Arduino.
 
-È possibile utilizzare questo stesso metodo per inviare richieste HTTP con altri metodi (ad esempio POST o PUT), basta modificare la prima riga della richiesta (GET nel codice sopra) in base al metodo desiderato.
-
-## Approfondimenti
-
-L'autenticazione di base è solo uno dei vari modi per effettuare l'autenticazione in una richiesta HTTP. Altri metodi comuni includono OAuth e Token-based authentication. È importante utilizzare l'autenticazione adeguata in base alle esigenze specifiche del proprio progetto.
-
-Un'altra cosa da tenere a mente è che l'autenticazione di base non è sicura in quanto le credenziali vengono inviate in chiaro. È consigliato utilizzare una connessione HTTPS per garantire la sicurezza delle credenziali.
-
-## Vedi anche
-
-[Documentazione ufficiale di Arduino](https://www.arduino.cc/en/Reference/ClientConstructor)
-
-[Tutorial su HTTP Requests con Arduino](https://lastminuteengineers.com/esp8266-http-get-post-arduino/)
+## Vedi anche:
+- [Libreria WiFiClient di Arduino](https://www.arduino.cc/en/Reference/WiFiClient)
+- [Esempi di autenticazione di base con Arduino](https://randomnerdtutorials.com/send-get-requests-arduino/)
+- [Documentazione sull'autenticazione di base](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)

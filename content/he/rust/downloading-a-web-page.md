@@ -10,54 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## למה
+שלום חברים! היום אני אראה לכם איך להוריד אתרי אינטרנט בשפת ראסט - גרסת התכנות הנוכחית.
 
-למה צריך להוריד עמוד אינטרנט? המטרה העיקרית היא לקבל גישה לתוכן שמופיע באתרים שונים, כגון נתונים, תמונות וכתבות.
+## מה ולמה?
+הורדת דף אינטרנט היא תהליך שבו משתמשים תוכנת מחשב כדי לקבל קובץ HTML שמתאר את התוכן של הדף. תוכנית המחשב שתעשה את זה יכולה להיות מאוד שימושית כאשר אתם פותחים אתר אינטרנט ואתם רוצים לבדוק שהכל עובד כפי שצריך.
 
-## כיצד לעשות זאת
-
-הנה דוגמאות של קוד רוסט להורדת עמוד אינטרנט:
-
-```rust
-use std::io::prelude::*;
+## כיצד לעשות:
+```Rust
+use std::io::Read;
 use std::fs::File;
-use std::path::Path;
-use reqwest::Client;
+use std::error::Error;
+use std::io::Write;
+use reqwest;
 
-fn main() {
-    // הגדרת כתובת האתר
-    let url = "https://www.example.com";
+// Specify URL to download
+let url = "https://www.example.com";
 
-    // יצירת קליינט ובקשת הגעה לעמוד האתר
-    let client = Client::new();
-    let mut response = client.get(url).send().unwrap();
+// Use reqwest library to make a GET request
+let response = reqwest::blocking::get(url).expect("Unable to make request.");
 
-    // יצירת קובץ חדש לשמירת התוכן
-    let path = Path::new("example.html");
-    let mut file = File::create(&path).unwrap();
+// Check if response was successful
+if response.status().is_success() {
+    // Open a new file to write the response to
+    let mut file = File::create("example.html").expect("Unable to create file.");
 
-    // קריאה של תוכן העמוד לקובץ ושמירתו
-    let mut buffer = [0; 512];
-    loop {
-        let sz = response.read(&mut buffer).unwrap();
-        if sz == 0 {
-            break;
-        }
-        file.write_all(&buffer[..sz]).unwrap();
-    }
+    // Read response and write to file
+    response.copy_to(&mut file).expect("Unable to write to file.");
+} else {
+    println!("Request unsuccessful.");
 }
 ```
 
-פלט הקוד לאחר הרצתו הוא קובץ בשם "example.html" המכיל את כל התוכן שנמצא בכתובת האתר שצוינה בקוד. ניתן להשתמש בתוכן זה לצורך ניתוח, עיבוד או שימוש נוסף.
+## טיפול עמוק:
+היסטוריית ההורדה של אתרי אינטרנט החלה עם פרוטוקולי HTTP ו-FTP המאפשרים הורדה מרוחקת של קבצים. כיום, יש גם כלים נוספים כמו ספריות של קיימות בשפות תכנות אחרות כמו Python ו-Java.
 
-## מעמקים
-
-להורדת עמוד אינטרנט באמצעות רוסט ניתן להשתמש בספריות שונות כגון reqwest או hyper. ספריות אלה מציעות פונקציות נוחות יותר כגון יצירת קליינטים או בקשות GET והן נכתבות בעבורת ויסטות פשוטה יותר.
-
-תיעוד בספריות אלה גם מציע הרבה בוחן ופרטים נוספים שיכולים לסייע בהבנת תהליך ההורדה ובכתיבת קוד יעיל יותר.
-
-## ראו גם
-
-* [מדריך לנושא הפונקציונליות ברוסט](https://blog.khymos.org/2015/01/30/writing-clean-haskell-code-with-monads/)
-* [תיעוד רשמי לספריית reqwest](https://docs.rs/reqwest/latest/reqwest/)
-* [מדריך ל
+## ראו גם:
+למידע נוסף על הורדת אתרי אינטרנט בראסט, ניתן לעיין במסמכי המדריכים בקוד הפתוח ובאתר הרשמי של ראסט.

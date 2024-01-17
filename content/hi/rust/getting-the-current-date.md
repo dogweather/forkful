@@ -1,7 +1,7 @@
 ---
-title:                "वर्तमान दिनांक प्राप्त करना"
-html_title:           "Rust: वर्तमान दिनांक प्राप्त करना"
-simple_title:         "वर्तमान दिनांक प्राप्त करना"
+title:                "वर्तमान तारीख पाना"
+html_title:           "Rust: वर्तमान तारीख पाना"
+simple_title:         "वर्तमान तारीख पाना"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Dates and Times"
@@ -10,29 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
+## Kya Aur Kyu?
+"Kya Hum abhi ki tarikh nikal sakte hain? Aur kyu programmers isse karte hain?"
 
-Rust में अपने कोड में वर्तमान तिथि को हासिल करना बहुत ही उपयोगी हो सकता है। यह आपको अपने एप्लिकेशन को उच्च परिपूर्णता वाला बनाने में मदद कर सकता है और समय-संगत प्रक्रियाओं को सुव्यवस्थित करने में मदद कर सकता है।
+Abhi ki tarikh nikalna ek aam kaam hai jo kayi baar programmers ko karne ko milta hai. Isse hum apne program me sahi tarikh daal sakte hain aur future ke tasks aur events par nazar rakh sakte hain.
 
-## कैसे करें
-
-वर्तमान तिथि को हासिल करने के लिए, आपको पहले `chrono` पैकेज को अपने कोड में शामिल करना होगा। यदि आप पहले से ही इस पैकेज को अपने `Cargo.toml` फ़ाइल में शामिल करते हैं, तो आपको कुछ खास नहीं करना होगा। इसके बाद, आप `Utc::now()` फ़ंक्शन का उपयोग करके वर्तमान तिथि का निर्णय कर सकते हैं। निम्न उदाहरण में आप `println!()` मैक्रो का उपयोग करके वर्तमान तिथि को प्रिंट कर सकते हैं।
-
+## Kaise Karein:
 ```Rust
-extern crate chrono; // `Cargo.toml` में `chrono` पैकेज शामिल किया गया है
-use chrono::{Utc, DateTime};
+use std::time::{SystemTime, UNIX_EPOCH};
 
-fn main() {
-    let current_date: DateTime<Utc> = Utc::now();
-    println!("वर्तमान तिथि है: {}", current_date); // उत्पादन: वर्तमान तिथि है: 2021-05-14 09:00:00 UTC
-}
+let now = SystemTime::now();
+let secs = now.duration_since(UNIX_EPOCH).unwrap().as_secs();
+
+println!("Current Date: {}", secs);
 ```
 
-## गहराई पर जाइए
+Is code se hum ek Unix timestamp nikal sakte hain jo current date ko represent karta hai. Hum ```chrono``` library bhi use kar sakte hain jo same functionality provide karta hai.
 
-`Utc::now()` फ़ंक्शन आपको UTC समय में वर्तमान तिथि देता है। यदि आप दूसरी समय क्षेत्रों के लिए वर्तमान तिथि को जानना चाहते हैं, तो आप `Local::now()` फ़ंक्शन का उपयोग कर सकते हैं। इसके अलावा, आप `DateTime` और `TimeZone` संरचनाओं का उपयोग करके विशिष्ट तिथि और समय की जानकारी देख सकते हैं।
+## Gehri Jankari:
+Is kaam ko karne ke liye, hum ```std::time::SystemTime``` aur ```std::time::Duration``` structs ka istemal karte hain. Iske alawa, hum apne desired format me date ko display karne ke liye ```chrono``` aur ```time``` libraries ka istemal kar sakte hain. 
 
-## देखें भी
+Ek aur tarika hai current date ko get karne ka, jisme hum Internet se time fetch karte hain. Isme hum "http" ya "ntp" libraries ka istemal kar sakte hain lekin ye approach dependability ko kam kar sakta hai.
 
-- [chrono पैकेज दस्तावेज़ीकरण](https://docs.rs/chrono/)
-- [R
+## Jyada Padhein:
+- [Rust Standard Library Documentation for Date and Time](https://doc.rust-lang.org/std/time/index.html)
+- [Chrono library](https://crates.io/crates/chrono)
+- [Time library](https://crates.io/crates/time)
+
+Itna karne ke baad, aapko current date nikalne me asani hogi! Happy coding!

@@ -1,7 +1,7 @@
 ---
-title:                "Radera tecken som matchar ett mönster."
-html_title:           "Haskell: Radera tecken som matchar ett mönster."
-simple_title:         "Radera tecken som matchar ett mönster."
+title:                "Radering av tecken som matchar ett mönster"
+html_title:           "Haskell: Radering av tecken som matchar ett mönster"
+simple_title:         "Radering av tecken som matchar ett mönster"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -10,29 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad och Varför?
+Att ta bort tecken som matchar ett mönster är en vanlig uppgift som programmerare behöver göra för att rensa textsträngar från oönskade tecken. Det kan till exempel handla om att ta bort alla mellanslag eller siffror från en textsträng. Det kan också vara ett sätt att filtrera bort icke-önskvärda tecken för att förbereda data för vidare bearbetning. Oavsett anledning, är att ta bort matchande tecken ett praktiskt verktyg för att hantera textbehandling i Haskell.
 
-Att ta bort tecken som matchar ett mönster kan vara en användbar funktion när man hanterar textdata eller vill rensa ut onödiga tecken från en sträng.
-
-## Hur man gör det
-
-Haskell har ett inbyggt verktyg som heter `delete` för att ta bort element från en lista baserat på ett visst villkor. I detta fall kommer vi att använda funktionen `isAlpha` för att kolla om det är ett alfabetiskt tecken och sedan ta bort det från vår sträng.
+## Så här gör du:
+Här är två enkla exempel på hur du kan ta bort tecken som matchar ett mönster i Haskell:
 
 ```Haskell
-deleteChars :: String -> String
-deleteChars str = delete `isAlpha` str
+-- Ta bort alla mellanslag från en textsträng
+deletePattern ' ' "Hej på dig" 
+
+Output: "Hejpådig"
+
+-- Ta bort alla siffror från en textsträng
+deletePattern isDigit "1+2=3"
+
+Output: "+="
 ```
 
-Om vi kör funktionen med en sträng som innehåller "Hello World!" som innehåller både bokstäver och symboler, kommer vi att få ut "HelloWorld" som ett resultat.
+Som du kan se, tar funktionen `deletePattern` emot två argument - det första är det önskade mönstret som du vill ta bort, och det andra är textsträngen som ska rensas. Du kan använda inbyggda funktioner som `isDigit` eller ange ditt eget tecken som argument.
 
-## Djupdykning
+## Djupdykning:
+Att ta bort tecken som matchar ett mönster är inte något unikt för Haskell - det finns andra programmeringsspråk som också har liknande funktioner, till exempel Python. En annan vanlig metod för att rensa textsträngar är att använda regex, vilket står för "regular expressions", eller reguljära uttryck på svenska. Regex ger mer avancerade mönstermatchningar och är ett kraftfullt verktyg för textbehandling.
 
-Haskell har en mängd olika funktioner för att hantera textdata, inklusive `delete`. Det finns också funktioner som `filter`, `map` och `fold` som kan användas för att manipulera strängar på olika sätt. Man kan också skapa egna funktioner för att uppnå önskade resultat.
+När det kommer till implementationen av att ta bort matchande tecken i Haskell, används vanligtvis en loop eller rekursion för att gå igenom varje tecken i textsträngen och jämföra det med det givna mönstret. Om tecknet matchar, tas det bort från strängen och den rensade strängen returneras som output.
 
-En annan användbar funktion som ofta används i samband med `delete` är `takeWhile`, som låter oss ta bort tecken från en lista tills ett villkor inte längre är uppfyllt. Det finns också möjlighet att ta bort enbart delar av en sträng genom att använda indexering, till exempel `str !! index` för att få ett specifikt tecken.
-
-## Se också
-
-- [Haskell.org](https://www.haskell.org/) - Officiell hemsida för Haskell
-- [Learn You a Haskell](http://learnyouahaskell.com/) - En interaktiv guide för att lära sig Haskell
-- [CodeWars](https://www.codewars.com/?language=haskell) - Träna på att lösa problem och utöka din Haskell-kunskap
+## Se även:
+- Officiell Haskell dokumentation om [Text Handling](https://downloads.haskell.org/~ghc/latest/docs/html/libraries/base-4.14.1.0/Data-Text.html)
+- En grundläggande guide till [Regular Expressions](https://www.regular-expressions.info/)
+- [Learn You a Haskell for Great Good!](http://learnyouahaskell.com/) - En underhållande och lättläst introduktion till Haskell för nybörjare

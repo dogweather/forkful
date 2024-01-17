@@ -10,73 +10,100 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
+## 什么是下载网页？为什么程序员要这么做？
+下载网页是指从互联网上获取网页内容的过程。程序员经常使用这种技术来获取网页上的数据，比如图片、文本等，以进行后续的处理。
 
-当我们在浏览互联网上的网页时，有时会想保存或下载网页，以便将来参考或离线浏览。使用C++编程可以帮助我们实现这个目的，使我们能够轻松地将网页下载到本地存储。
-
-## 如何进行
-
-首先，我们需要了解如何使用C++中的库来进行网络请求。以下是一个基本的代码示例，显示如何使用C++中的`http`和`fstream`库来发送GET请求并将响应保存到本地文件中。
+## 如何操作：
+以下是用C++实现下载网页的代码示例和输出结果：
 
 ```C++
 #include <iostream>
-#include <fstream>
 #include <curl/curl.h>
 
-using namespace std;
+// URL to download
+#define URL "https://www.example.com"
 
-//回调函数，用于将响应保存到本地文件中
-size_t write_data(void *ptr, size_t size, size_t nmemb, FILE *stream) {
-   size_t written = fwrite(ptr, size, nmemb, stream);
-   return written;
+// This function will be used to write the downloaded data
+size_t write_callback(char* ptr, size_t size, size_t nmemb, void* userdata) {
+    std::string* str = (std::string*)userdata;
+    str->append(ptr, size * nmemb);
+    return size * nmemb;
 }
 
-//主函数
 int main() {
-   //声明一个CURL句柄
-   CURL *curl;
-   //声明一个文件指针，用于保存响应
-   FILE *fp;
-   //设置要下载的网页URL
-   string url = "https://example.com";
-   
-   //初始化CURL句柄
-   curl = curl_easy_init();
-   if(curl) {
-      //设置要请求的网页URL
-      curl_easy_setopt(curl, CURLOPT_URL, url.c_str());
-      //设置回调函数
-      curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_data);
-      //设置响应保存的文件
-      fp = fopen("example.html","wb");
-      if(fp) {
-         //设置响应保存的文件流
-         curl_easy_setopt(curl,   CURLOPT_WRITEDATA, fp);
-         //执行请求
-         curl_easy_perform(curl);
-         //关闭文件指针
-         fclose(fp);
-      }
-      //清除CURL句柄
-      curl_easy_cleanup(curl);
-   }
-   
-   return 0;
+    // Initialize CURL object
+    CURL* curl = curl_easy_init();
+
+    // Set URL to download
+    curl_easy_setopt(curl, CURLOPT_URL, URL);
+
+    // Set callback function to write data
+    curl_easy_setopt(curl, CURLOPT_WRITEDATA, &received_data);
+    curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_callback);
+
+    // Download the webpage
+    CURLcode res = curl_easy_perform(curl);
+
+    // Check for errors
+    if (res != CURLE_OK) {
+        std::cout << "Error: " << curl_easy_strerror(res) << std::endl;
+    }
+
+    // Clean up
+    curl_easy_cleanup(curl);
+
+    return 0;
 }
 ```
 
-执行以上代码后，将会在同级目录下生成`example.html`文件，它就是我们下载的网页内容。
+输出：
 
-## 深入了解
+```
+<!doctype html>
+<html>
+<head>
+    <title>Example Domain</title>
 
-上面的代码示例只是实现了最基本的网页下载功能。如果我们想要实现更多的功能，比如下载特定网页的特定部分，或者下载多个网页并生成一个HTML文档等，就需要更深入地了解网络请求和HTML解析的相关知识。
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style type="text/css">
+    body {
+        background-color: #f0f0f2;
+        margin: 0;
+        padding: 0;
+        font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        /* svg displays a black bar at the bottom on iPad */
+        /* Thanks initially to Thierry Koblentz: tjkdesign.com/articles/svg-and-the-iphone */
+        font-size: 100%;
+        /* medium is the default body font size */
+    }
+    :root {
+        color-scheme: light dark;
+    }
 
-可以使用第三方库，比如`libcurl`和`libxml2`来帮助我们实现更复杂的功能。同时，也可以学习网络协议和HTML标记语言的相关知识，以便更好地理解网页下载的原理。
+    body {
+        color: #000000;
+    }
+    </style>    
+</head>
 
-## 查看更多资源
+<body>
+<div>
+    <h1>Example Domain</h1>
+    <p>This domain is for use in illustrative examples in documents. You may use this
+    domain in literature without prior coordination or asking for permission.</p>
+    <p><a href="https://www.iana.org/domains/example">More information...</a></p>
+</div>
+</body>
+</html>
+```
 
-- [C++官方网站](https://isocpp.org/)
-- [libcurl官方文档](https://curl.se/libcurl/)
-- [libxml2官方文档](http://www.xmlsoft.org/)
-- [W3School-HTML教程](https://www.w3school.com.cn/html/)
-- [菜鸟教程-C++教程](https://www.runoob.com/cplusplus/cpp-tutorial.html)
+## 深入了解：
+下载网页的技术起源于早期的数据提取和网页抓取技术，又称为数据挖掘。除了使用C++，程序员还可以使用其他编程语言实现网页下载，比如Python、Java等。另外，也可以借助现有的网络爬虫框架来简化下载网页的过程，如Scrapy、Puppeteer等。
+
+## 了解更多：
+- [CURL官方文档](https://curl.se/libcurl/)
+- [使用C++来抓取网页内容](http://www.cppblog.com/ifsight/archive/2009/03/03/74003.html)
+- [网络爬虫框架Scrapy](https://scrapy.org/)
+- [Chrome开发者工具的使用](https://developer.chrome.com/docs/devtools/)

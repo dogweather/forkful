@@ -1,7 +1,7 @@
 ---
-title:                "使用基本身份验证发送http请求"
-html_title:           "Ruby: 使用基本身份验证发送http请求"
-simple_title:         "使用基本身份验证发送http请求"
+title:                "你喜欢编程吗？使用基本认证发送http请求"
+html_title:           "Ruby: 你喜欢编程吗？使用基本认证发送http请求"
+simple_title:         "你喜欢编程吗？使用基本认证发送http请求"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "HTML and the Web"
@@ -10,34 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
+## 什麼 & 為甚麼？
 
-在编写网络应用程序时，可能需要使用HTTP请求来与其他系统通信。使用基本认证是一种常见的安全措施，可以确保只有经过授权的用户才能访问系统。
+發送具有基本驗證的HTTP請求是一種常見的網絡通信方式，它使得程序員可以在發送請求時驗證自己的身份。這樣可以確保只有授權的用戶可以訪問受保護的資源，從而增強了網絡安全性。
 
-## 如何
+## 如何實現：
 
-```Ruby
-require 'uri'
+```ruby
+# 首先需要引入 "net/http" 和 "uri" 模塊
 require 'net/http'
+require 'uri'
+ 
+# 通過 URI 對象定義請求地址
+http_uri = URI.parse('https://example.com/api')
 
-uri = URI('https://example.com/api/posts')
-req = Net::HTTP::Post.new(uri)
-req.basic_auth('username', 'password')
+# 設置需要驗證的用戶名和密碼
+username = 'username'
+password = 'password'
 
-res = Net::HTTP.start(uri.hostname, uri.port, use_ssl: uri.scheme == 'https') do |http|
-  http.request(req)
+# 使用 "Net::HTTP::Get" 方法發送帶有驗證的請求
+request = Net::HTTP::Get.new(http_uri, { 'Authorization' => "Basic #{Base64.encode64("#{username}:#{password}")}" })
+
+# 使用 "Net::HTTP" 模塊發送請求
+response = Net::HTTP.start(http_uri.hostname, http_uri.port, use_ssl: http_uri.scheme == 'https') do |http|
+  http.request(request)
 end
 
-puts res.code     # 200
-puts res.message  # OK
-puts res.body     # response body from server
+# 打印服務器返回的回復狀態碼和回復主體
+p "Status code: #{response.code}"
+p "Response body: #{response.body}"
 ```
 
-## 深入了解
+## 深入了解：
 
-要发送带有基本认证的HTTP请求，需要使用Net::HTTP标准库。在发送请求之前，必须创建一个URI对象，并使用基本信息（用户名和密码）创建一个Net::HTTP::Post对象。使用start方法来实际发起请求，并通过调用request方法来发送请求。最后，可以从服务器返回的res对象中获取响应的代码、消息和正文内容。
+發送具有基本驗證的HTTP請求可以追溯到早期的網絡通信方式，它基於HTTP的身份驗證標準。對於程序員來說，還有其他替代方式可供選擇，例如使用OAuth 2.0協議進行驗證。 在實際實現時，還需注意在發送請求時使用加密的HTTPS協議來保護用戶數據的安全性。
 
-## 参考资料
+## 參考鏈接：
 
-- 官方Ruby文档：https://ruby-doc.org/stdlib/libdoc/net/http/rdoc/Net/HTTP.html
-- HTTP基本认证介绍：https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#Basic_authentication_scheme
+- [Ruby Net::HTTP文檔](https://ruby-doc.org/stdlib-2.7.2/libdoc/net/http/rdoc/Net/HTTP.html)
+- [URI模塊文檔](https://ruby-doc.org/stdlib-2.7.2/libdoc/uri/rdoc/URI.html)
+- [HTTP基本認證標準](https://tools.ietf.org/html/rfc7617)

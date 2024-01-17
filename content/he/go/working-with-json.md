@@ -1,7 +1,7 @@
 ---
-title:                "עובדים עם JSON"
-html_title:           "Go: עובדים עם JSON"
-simple_title:         "עובדים עם JSON"
+title:                "עבודה עם json"
+html_title:           "Go: עבודה עם json"
+simple_title:         "עבודה עם json"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Data Formats and Serialization"
@@ -10,49 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## למה
+##
 
-נעשה פתיחה נכונה ונציין שהעיקר במאמר הוא על JSON וכתיבת קוד ב-Go. אנחנו כאן כדי ללמוד איך לעבוד עם נתונים מבני כתובת וניתוחים בפורמט JSON תמיכה מלאה בשפת Go (הגרסה הנוכחית).
+## מה ולמה?
+עבודה עם JSON היא תהליך שבו מתאגדים נתונים בפורמט קורא עבור סיירים אינטרנט. תהליך זה נעשה כדי להעביר מידע בצורה יעילה וקריאה הרבה יותר עבור מכשירים אלקטרוניים. תהליך זה יעיל במיוחד עבור פיתוחנים, שמנסים לבנות אפליקציות או אתרי אינטרנט.
 
-## איך לעשות זאת
-
-פעולת הפורמטים נתונים נכתבים בו-קומפקטיים, נוחים ונקיים כמו השפה עצמה, Go. קוד הדגמה לכתיבת קטע קוד JSON והפלט המצורף היא:
-
-```Go
-package main
-
-import (
-    "encoding/json"
-    "fmt"
-)
-
-func main() {
-    type Person struct {
-        Name string `json:"name"`
-        Age int `json:"age"`
-    }
-    
-    p := Person{Name: "John", Age: 35}
-    b, _ := json.Marshal(p)
-    
-    fmt.Println(string(b))
+## איך לעשות זאת:
+קוד דוגמה עם הפלט עבור שניים מסוגי התצוגה
+```Go 
+type Location struct { 
+  Name string `json:name` 
+  Country string `json:country, omitempty` 
 }
+
+type User struct {
+  Username string
+  Name string
+  Birthday Time `json:birthday`
+}
+
+joe := User{Username: "joe123", Name: "Joe Smith", Birthday: time.Now()}
+encodedJoe, _ := json.Marshal(joe)
+fmt.Println(encodedJoe)
+// Output: {"username":"joe123", "name":"Joe Smith", "birthday":"2021-07-13T00:00:00Z"}
 ```
 
-פלט:
+## כייטור לעומק:
+תהליך זה נוצר כדי להיות אלטרנטיבה לשימוש בווב סרוויס רב פיי. הפורמט הנוכחי שלו נוצר בשנת 2002 על ידי דאג קאסטלטון וכריס סאלסו. חזרה אז זה הייתה פורמט מאוד פשוט לנהל בשילוב עם ריאק.
 
-```Go
-{"name":"John","age":35}
-```
-
-## חפירה עמוקה
-
-פורמט JSON יכול להיות מסובך, ולכן יש לכתוב פרק כזה "עמוק" לכיוון שבו נוכל להתייחס לעצמים קשורים נהולים בפורמט JSON ולטפל בהם כמצופה עם הספרייה encoding/json ב-Go. ניתן לכתוב ולקרוא פונקציות עבור אותו פורמט כדי לייצג נתונים בצורה מובנית ולוודא כי הפרמטים לא ייובאו או ייוצאו עם יעדים ריקים ריקים.
-
-## ראו גם
-
-רשימת קישורים שיכולים להוות כלים נוספים לימוד JSON ועבודה עם פורמט זה בשפת Go:
-
-- מדריך התחלה ל-JSON ב-Go: https://www.codewithgo.com/post/go-json/
-- ספריה רשמית בשפת Go לניתוח ויצירת JSON: https://pkg.go.dev/encoding/json
-- עורך JSON באינטרנט מומלץ: https://jsoneditoronline.org/
+## ראו גם:
+- [המאמר המקורי על JSON](https://www.json.org/)
+- [עמוד הוויקי על JSON באתר שפות] רשת עם רְאוּי וטיי)
+- [המדריך הרשמי של גו על פורמט JSON]רג'קט סאפלי נוצר על ידי),

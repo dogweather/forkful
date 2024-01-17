@@ -1,7 +1,7 @@
 ---
-title:                "Kirjoitus standardivirheeseen"
-html_title:           "Clojure: Kirjoitus standardivirheeseen"
-simple_title:         "Kirjoitus standardivirheeseen"
+title:                "Kirjoittaminen standardivirheelle"
+html_title:           "Clojure: Kirjoittaminen standardivirheelle"
+simple_title:         "Kirjoittaminen standardivirheelle"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Files and I/O"
@@ -10,22 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+# Mitä & Miksi?
 
-Miksi kirjoittaa standardivirheille? Yksi syy voisi olla virheiden parempi hallinta ohjelmassa.
+Kirjoittaminen standardivirheeseen (standard error) tarkoittaa viestin lähettämistä virheriville, jota ohjelmointikieli käyttää ohjelman virheilmoitusten tulostamiseen käyttäjälle. Tämä on yleinen tapa ohjelmoijille ilmoittaa virheistä, jotka voivat auttaa korjaamaan ja vianetsimään koodia.
 
-## Miten
+# Miten:
 
 ```Clojure
-(println :standardivirhe "Tämä on virhe!")
+;; Koodiesimerkki
+(println "Tämä viesti lähetetään standardivirheelle.")
 ```
-Tämä koodi tulostaa "standardivirhe Tämä on virhe!" standardivirheelle. Tästä syystä se näkyy käyttäjän näytöllä tai tallentuu lokitiedostoon.
 
-## Syvällisempi sukellus
+```
+Tämä viesti lähetetään standardivirheelle.
+```
 
-Kirjoittaminen standardivirheille on hyödyllistä, jos haluat erottaa virheilmoitukset muusta tulostuksesta. Voit myös käyttää `eprintln`-funktiota, joka tulostaa koko virheen ilman ylimääräisiä tekstirivejä.
+# Syventyvä sukellus:
 
-# Katso myös
+Standardivirheellä on historiallisia juuria Unix-käyttöjärjestelmästä, jossa se oli tapa ilmoittaa käyttäjälle virheet ja muut tärkeät viestit. Nykyään se on yleisessä käytössä myös muissa ohjelmointikielissä, eikä ole ainoa tapa ilmoittaa virheistä. Esimerkiksi voi myös käyttää standarditulostetta (standard output) tai tallentaa virheet lokitiedostoon.
 
-- [Ohjeet standardivirheiden käsittelystä Clojuressa](https://clojure.org/guides/err)  
-- [Virheiden hallinta Clojuressa](https://clojure.org/reference/exceptions)
+# Katso myös:
+
+- [Clojure - Virheiden hallinta](https://clojuredocs.org/clojure.core/throw)
+- [Unix - Standardivirhe](https://www.computerhope.com/unix/unix-stderr.htm)

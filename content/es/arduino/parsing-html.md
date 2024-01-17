@@ -10,53 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué?
-¿Alguna vez has querido extraer información específica de una página web? Ya sea para utilizarla en tu proyecto de Arduino o simplemente para recopilar datos, el análisis de HTML puede ser una herramienta útil para obtener los datos que necesitas. En este artículo, te enseñaremos cómo realizar este proceso utilizando Arduino.
+## ¿Qué y por qué? 
 
-## Cómo hacerlo
-Para comenzar, necesitarás un Arduino y una conexión a Internet. También es útil tener conocimientos básicos de HTML y cómo funciona la estructura de una página web.
+Parsing HTML es el proceso de analizar y estructurar el código HTML de una página web para poder manipularlo y extraer información específica. Los programadores usan este proceso para automatizar tareas como extraer datos de una página web o crear contenido dinámico.
 
-Primero, debes descargar e instalar la biblioteca "ESP8266HTTPClient.h". Esta biblioteca te permitirá realizar solicitudes HTTP utilizando tu módulo WiFi.
+## Cómo hacerlo: 
 
-Luego, utilizando la función "HTTPClient", puedes realizar una solicitud a una página web específica. Por ejemplo, si queremos obtener la temperatura actual de una ciudad, podríamos utilizar la API de OpenWeatherMap. El código se vería algo así:
+Para analizar y parsear HTML en Arduino, podemos utilizar la librería HTMLino. A continuación se muestra un ejemplo de código que extrae el título de una página web y lo imprime en el monitor serial:
 
 ```
-#include <ESP8266HTTPClient.h>
+#include <HTMLino.h>
+
+HTMLNode* root;
 
 void setup() {
-  Serial.begin(115200); // Iniciamos la comunicación serial
-  WiFi.begin("nombre de tu red WiFi", "contraseña"); // Conectamos a la red WiFi
-  while (WiFi.status() != WL_CONNECTED) { // Esperamos a que se conecte
-    delay(500);
-  }
+  Serial.begin(9600);
+  HTMLino.get("https://www.ejemplo.com", root); // URL de la página a analizar
 }
 
 void loop() {
-  if (WiFi.status() == WL_CONNECTED) { // Si estamos conectados a la red
-    HTTPClient http; // Creamos una instancia de HTTPClient
-    http.begin("http://api.openweathermap.org/data/2.5/weather?id=524901&appid=API_KEY"); // Realizamos la solicitud a la URL especificada
-    int httpCode = http.GET(); // Obtenemos el código de respuesta
-    if (httpCode > 0) { // Si existe una respuesta
-      String payload = http.getString(); // Guardamos los datos de la respuesta en una variable
-      Serial.println(payload); // Imprimimos los datos en la consola serial
-    }
-    http.end(); // Terminamos la conexión
+  if(HTMLino.update(root)){
+    Serial.println(root->readInner("title")); // extrae el título de la página y lo imprime en el monitor serial
   }
-  delay(60000); // Esperamos 1 minuto antes de realizar otra solicitud
 }
 ```
 
-En este ejemplo, estamos solicitando los datos de la ciudad de Moscú (identificado con "id=524901") utilizando una API key de OpenWeatherMap. Una vez que tenemos los datos, los imprimimos en la consola serial cada 1 minuto.
+La salida en el monitor serial sería algo como "Ejemplo de página web".
 
-Este es solo un ejemplo básico de cómo puedes utilizar Arduino para obtener y analizar datos de una página web. Puedes adaptar este código a tus necesidades y realizar solicitudes a diferentes APIs o páginas web.
+## Profundizando:
 
-## Profundizando
-Si deseas profundizar en el análisis de HTML, hay bibliotecas disponibles que te permiten analizar el contenido de una página web y extraer información específica. Algunas de estas bibliotecas son "ESP8266WebServer.h" y "ESP8266WiFiServer.h". Con estas bibliotecas, puedes crear un servidor web en tu Arduino y utilizarlo para mostrar o enviar datos a través de una página web.
+La necesidad de analizar y parsear HTML surgió con el auge de la web en la década de 1990. En aquel entonces, se requería procesar manualmente el código HTML para extraer información, lo que era un proceso tedioso y propenso a errores. La alternativa a utilizar una librería como HTMLino sería escribir nuestro propio código para analizar y estructurar el código HTML, lo que es mucho más complejo y requiere un conocimiento avanzado de programación.
 
-También puedes explorar la posibilidad de utilizar Arduino para raspar (scraping) datos de páginas web, lo que implica analizar y extraer información de una gran cantidad de páginas. Sin embargo, es importante tener en cuenta que algunas páginas web pueden prohibir esta práctica, así que asegúrate de comprobar las políticas de cada página antes de realizar cualquier análisis.
+La librería HTMLino es compatible con HTML 3.2, 4.0 y 5.0, lo que nos permite analizar páginas web modernas sin problemas. Además, también permite manipular el código HTML, por ejemplo, para agregar o eliminar elementos.
 
-## Ver también
-- [Página oficial de Arduino](https://www.arduino.cc/)
-- [Documentación de la biblioteca ESP8266HTTPClient.h](https://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/http-client.html)
-- [Documentación de la biblioteca ESP8266WebServer.h](https://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/esp8266webserver.html)
-- [Documentación de la biblioteca ESP8266WiFiServer.h](https://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/esp8266wifi-server.html)
+## Ver también:
+
+- [Documentación de la librería HTMLino](https://arduinojson.org/)
+- [Tutorial de HTMLino](https://randomnerdtutorials.com/parsing-html-arduino-esp8266-esp-32/)
+- [Ejemplos de código con HTMLino](https://github.com/ekolodenko/HTMLino/tree/master/examples)

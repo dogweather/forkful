@@ -1,7 +1,7 @@
 ---
-title:                "스트링의 길이를 찾는 방법"
-html_title:           "Rust: 스트링의 길이를 찾는 방법"
-simple_title:         "스트링의 길이를 찾는 방법"
+title:                "문자열의 길이 찾기"
+html_title:           "Rust: 문자열의 길이 찾기"
+simple_title:         "문자열의 길이 찾기"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -10,32 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 왜 문자열의 길이를 찾아야 할까요?
+# Rust로 문자열의 길이를 찾는 방법
 
-문자열의 길이를 알아내는 것은 프로그래밍에서 매우 중요한 일입니다. 예를 들어, 입력한 패스워드가 일정 길이를 초과하는지 확인할 때 문자열의 길이가 필요합니다. 따라서 프로그래밍을 하면서 문자열의 길이를 알아내는 기능은 꼭 필요한 일입니다.
+## 무엇 & 왜?
+문자열의 길이를 찾는 것은, 단순히 문자열이 얼마나 긴지를 알아내는 것입니다.
+프로그래머들은 이를 자주 사용하는데, 예를 들면 입력된 문자열의 유효성을 검사하거나 출력 시 문자열의 길이를 제한하기 위해 사용될 수 있습니다.
 
-## 어떻게 하나요?
+## 사용 방법:
+아래의 코드 블록에 Rust 언어로 작성된 예제와 그 결과가 포함되어 있습니다. 공백 문자를 포함하여 길이를 계산할 때는 ```len()``` 함수를 사용할 수 있으며, 또는 한국어 문자열의 길이를 계산할 때는 ```chars()``` 함수를 사용합니다.
 
-우선, Rust에서 문자열의 길이를 알아내려면 `len()` 함수를 사용해야 합니다. 이 함수는 해당 문자열의 길이를 반환합니다. 아래는 `len()` 함수를 사용하여 문자열 "안녕하세요"의 길이를 알아내는 예제 코드입니다.
-
-```rust
-let string = "안녕하세요";
-let length = string.len(); // 문자열의 길이를 변수에 저장
-println!("길이: {}", length); // 출력 결과: "길이: 5"
+``` Rust
+let input = "안녕하세요";
+let len = input.len(); // 한국어는 3 byte 문자로 인식하므로 len은 15가 됩니다.
+let chars = input.chars().count(); // chars는 한글을 5개로 인식하므로 5가 됩니다.
+println!("len: {}", len);
+println!("chars: {}", chars);
 ```
-위 코드에서 볼 수 있듯이 `len()` 함수를 사용하기 위해선 문자열을 변수에 할당해야 합니다. 그리고 해당 변수를 이용하여 `len()` 함수를 호출하여 문자열의 길이를 알아낼 수 있습니다.
 
-## 깊게 파헤쳐 보기
+## 더 깊이 알아보기:
+- 이전에는 문자열의 길이를 구하기 위해 루프를 사용하는 등 복잡한 방법들이 존재했으나, Rust에서는 표준 라이브러리의 함수를 통해 더 효율적이고 안전하게 길이를 구할 수 있습니다.
+- 다른 언어에서는 문자열 길이를 저장하는 변수나 코드를 따로 작성해야하는 경우가 많지만, Rust는 표준 라이브러리의 함수를 통해 길이를 쉽게 구할 수 있습니다.
+- Rust의 ```len()``` 함수는 문자열의 길이를 byte 단위로, ```chars()``` 함수는 Unicode 문자를 기준으로 계산합니다.
 
-Rust에서 문자열의 길이를 알아내는 방법은 여러가지가 있습니다. 위 예제에서는 `len()` 함수를 사용하였지만 `chars()`를 사용해도 문자열의 길이를 알아낼 수 있습니다. `chars()`는 문자열의 길이를 문자 단위로 반환하므로 한글의 경우 모음이나 자음 개수를 알아낼 수 있습니다. 이 외에도 `bytes()` 함수를 사용하면 문자열의 길이를 바이트 단위로 반환하므로 문자열 내부의 다양한 문자를 분석하는 데에도 유용합니다.
-
-# 참고자료
-
-- [Rust 공식 문서 - String](https://doc.rust-lang.org/std/string/index.html)
-- [Rust by Example - Strings](https://doc.rust-lang.org/rust-by-example/std/str.html)
-- [Rust Programming Language - String Length](https://www.tutorialspoint.com/rust/rust_string_length.htm)
-
-## 더 보기
-
-- [Rust퀴즈 - 문자열 길이 알아내기](https://rustquiz.com/ko/strings/length.html)
-- [Rust 커뮤니티 포럼](https://forum.rustkr.org/)
+## 관련 정보 보기:
+- [Rust 표준 라이브러리 문서](https://doc.rust-lang.org/std/string/struct.String.html)
+- [StackOverflow에서 Rust 문자열 관련 질문과 답변](https://stackoverflow.com/questions/31238615/how-do-i-get-the-length-of-a-string-in-rust)

@@ -1,7 +1,7 @@
 ---
-title:                "Omvandla en sträng till gemener"
-html_title:           "Kotlin: Omvandla en sträng till gemener"
-simple_title:         "Omvandla en sträng till gemener"
+title:                "Omvandla en sträng till små bokstäver"
+html_title:           "Kotlin: Omvandla en sträng till små bokstäver"
+simple_title:         "Omvandla en sträng till små bokstäver"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Strings"
@@ -10,41 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
+När vi pratar om att konvertera en sträng till gemener i Kotlin, menar vi att göra alla bokstäver i strängen små. Detta är en vanlig operation inom programmering och används främst för att förbättra sök- eller jämförelsefunktioner.
 
-Att konvertera en sträng till gemener (lower case) kan vara användbart för att jämföra strängar på ett icke-ordinärt sätt eller för att anpassa data för olika formateringar, som till exempel att omvandla en sträng till små bokstäver för att visa en enhetlig presentation.
+## Hur gör man:
+```
+// Enkelt exempel på konvertering av en sträng till gemener
+val str = "HEJ!"
+val lowercaseStr = str.toLowerCase()
+println(lowercaseStr)
 
-## Hur man gör det
-
-För att konvertera en sträng till gemener i Kotlin, använd funktionen `toLowerCase()` på strängen. Här är ett enkelt exempel:
-
-```Kotlin
-val str = "Hej, Världen!"
-println(str.toLowerCase()) // "hej, världen!"
+// Output: hej!
 ```
 
-I det här fallet är `toLowerCase()` en inbyggd funktion i Kotlin, så du behöver inte importera något extra bibliotek för att använda den.
+```
+// Användardefinierad funktion för konvertering av sträng till gemener
+fun toLowerCase(str: String): String {
+    val sb = StringBuilder()
+    
+    for (c in str) {
+        if (c in 'A'..'Z') { // Kontrollerar om tecknet är en stor bokstav
+            sb.append(c.toLowerCase()) // Konverterar till gemener
+        } else {
+            sb.append(c)
+        }
+    }
+    
+    return sb.toString()
+}
 
-## Djupdykning
+// Användning av den användardefinierade funktionen
+val str = "HELLO WORLD!"
+val lowercaseStr = toLowerCase(str)
+println(lowercaseStr)
 
-När du använder `toLowerCase()` i Kotlin, tar den hänsyn till språk och regioninställningar för att säkerställa att konverteringen sker på ett korrekt sätt. Det är också viktigt att notera att `toLowerCase()` endast konverterar bokstäver i det engelska alfabetet till gemener, så bokstäver som "Å", "Ä" och "Ö" kommer inte att konverteras. För att hantera specialtecken och icke-engelska bokstäver, kan du använda funktionen `Locale` för att ange en specifik språk- och regionkod.
-
-```Kotlin
-val str = "Hej, Världen!"
-println(str.toLowerCase(Locale("sv","SE"))) // "hej, världen!"
+// Output: hello world!
 ```
 
-Om du vill ha mer finjusterad kontroll över vilka tecken som ska konverteras, kan du använda `map` tillsammans med en benämnare för unicode ( \\u för Kotlin) för att ange specifika tecken att konvertera.
+## Djupdykning:
+Historiskt sett, har konvertering av strängar till gemener använts för att underlätta sortering och jämförelse av textdata. Det finns även andra alternativ för att åstadkomma samma resultat, som t.ex. att använda inbyggda jämförelsefunktioner som inte är fallkänsliga.
 
-```Kotlin
-val str = "Hej, Världen!"
-val lowerCaseMapping = mapOf("\\u0041" to "\\u0061") // Konverterar bokstaven "A" till "a"
+När det kommer till implementationen av att konvertera en sträng till gemener, finns det flera olika metoder och algoritmer som kan användas. Valet av metod kan bero på faktorer som prestanda och minnesanvändning.
 
-println(str.map { lowerCaseMapping[it].toString() }.joinToString("")) // "hej, Världen!"
-```
-
-## Se även
-
-- [Kotlin dokumentation för String Class](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/)
-- [Language & Region codes for Unicode](https://www.unicode.org/cldr/charts/latest/supplemental/territory_language_information.html)
-- [Convert string to lowercase in Java](https://www.geeksforgeeks.org/convert-string-lowercase-java/)
+## Se även:
+- [Kotlin: Strings and Characters](https://kotlinlang.org/docs/reference/basic-types.html#strings)
+- [Java String: toLowerCase()](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#toLowerCase--)

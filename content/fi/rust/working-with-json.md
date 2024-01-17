@@ -10,64 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mikä & Miksi?
+Työskentely JSON:n kanssa tarkoittaa tietojen muuttamista binäärimuodosta tekstipohjaiselle formaatille, jota kutsutaan JSON-muodoksi. JSON on erittäin suosittu monissa ohjelmoinnin sovelluksissa, koska siinä on yksinkertainen syntaksi ja se mahdollistaa tiedon siirtämisen eri alustojen välillä.
 
-Miksi Rustin kanssa työskenneltäisiin JSONin kanssa? Koska JSON on yleisesti käytetty tiedonvaihtomuoto ja Rust tarjoaa tehokkaan ja turvallisen tavan käsitellä sitä.
-
-## Miten
-
-JSON-tiedoston lukeminen ja kirjoittaminen on helppoa Rustilla. Käytä vain "serde_json" -kirjastoa ja "serde" -makroja.
+## Miten:
+Koodin kirjoittaminen Rustissa JSON-muotoon tapahtuu käyttäen serde-kirjastoa. Esimerkiksi, kun haluat muuntaa JSON-muotoisen tekstin rakenteelliseksi datatyypiksi, voit käyttää serde-json kirjastoa.
 
 ```Rust
-use serde_json::{Result, Value};
+use serde_json::{Result,Value};
 
 fn main() -> Result<()> {
-    // Luetaan JSON-tiedosto
+    // JSON-muotoinen teksti
     let data = r#"
         {
-            "eläin": "koira",
-            "ikä": 7,
-            "omistaja": "Matti"
+            "name": "John Snow",
+            "age": 28,
+            "hobbies": ["fighting", "exploring"]
         }
     "#;
 
-    // Muunna JSON-string Value-tyypiksi
+    // Muunnetaan teksti natiiviksi JSON-rakenteeksi
     let v: Value = serde_json::from_str(data)?;
 
-    // Hae arvot avaimilla
-    let eläin = v["eläin"].as_str().unwrap();
-    let ikä = v["ikä"].as_i64().unwrap();
-    let omistaja = v["omistaja"].as_str().unwrap();
-
-    // Tulosta tiedot
-    println!("{} on {}-vuotias ja sen omistaa {}", eläin, ikä, omistaja);
-
-    // Muodosta uusi JSON-tiedosto
-    let uusi_tiedosto = serde_json::json!({
-        "eläin": eläin,
-        "ikä": ikä,
-        "omistaja": omistaja
-    });
-
-    // Kirjoita tiedosto levylle
-    serde_json::to_writer_pretty(&File::create("uusi_tiedosto.json")?, &uusi_tiedosto)?;
-
+    // Printataan JSON-rakenne konsoliin
+    println!("{} is {} years old and likes {}.",
+        v["name"], 
+        v["age"], 
+        v["hobbies"].as_array().unwrap().join(", ")
+    );
     Ok(())
 }
 ```
 
-Esimerkkituloste:
+Tulostus:
 
+```bash
+John Snow is 28 years old and likes fighting, exploring.
 ```
-koira on 7-vuotias ja sen omistaa Matti
-```
 
-## Syventävä sukellus
+## Syväsukellus:
+JSON-muoto otettiin käyttöön jo vuonna 2001 ja siitä tuli nopeasti suosittu vaihtoehto XML:lle tiedon muodostamiseen ja siirtämiseen verkon yli. Sen yksinkertaisempi syntaksi ja pienempi tiedostokoko tekivät siitä houkuttelevan monissa sovelluksissa, erityisesti web-sovelluksissa. Vaikka JSON on yleisesti käytetty, on olemassa myös muita vaihtoehtoja, kuten YAML ja CSV.
 
-Rust tarjoaa monia erilaisia tapoja käsitellä JSON-tietoja "serde_json" kirjaston avulla. Tarkkaan ottaen, "serde" -makrot tekevät koodista helpommin luettavan ja vähentävät virheitä.
+Rustin serde-kirjasto tarjoaa monipuolisen ja tehokkaan tavan koodata ja dekoodata JSON-muotoa. Kirjasto pystyy käsittelemään monenlaisia JSON-tietorakenteita ja tukee myös tiettyjä lisäominaisuuksia, kuten järjestettyä JSON:ia ja dataa merkkijonoina.
 
-## Katso myös
-
-- [serde-json - GitHub](https://github.com/serde-rs/json)
-- [Rust, JSON ja serde - Medium](https://medium.com/swlh/working-with-json-in-rust-using-serde-3bdde100d513)
-- [Rust-json - Crates.io](https://crates.io/crates/rust-json)
+## Katso myös:
+- [serde-kirjasto](https://crates.io/crates/serde)
+- [JSON-esimerkki: API-pyyntö Rustilla](https://github.com/serde-rs/json#example-making-an-api-request-from-rust)

@@ -1,7 +1,7 @@
 ---
-title:                "Sende en http-request med grunnleggende autentisering"
-html_title:           "Python: Sende en http-request med grunnleggende autentisering"
-simple_title:         "Sende en http-request med grunnleggende autentisering"
+title:                "Å sende en HTTP-forespørsel med grunnleggende autentisering"
+html_title:           "Python: Å sende en HTTP-forespørsel med grunnleggende autentisering"
+simple_title:         "Å sende en HTTP-forespørsel med grunnleggende autentisering"
 programming_language: "Python"
 category:             "Python"
 tag:                  "HTML and the Web"
@@ -10,43 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
-Sending av HTTP-forespørsler med basic authentication er en vanlig måte å verifisere identiteten din på når du kommuniserer med en server. Dette er spesielt viktig når du sender sensitive data, som passord eller personlig informasjon.
+Hva & hvorfor?
 
-## Slik gjør du det
-```python
+Når du sender en HTTP-forespørsel med grunnleggende autentisering, legger du til en ekstra del i forespørselsheaderen som spesifiserer brukernavn og passord. Dette er en vanlig måte for programmerere å autentisere seg mot et nettsted eller en server.
+
+Hvorfor gjør vi dette? Fordi det gir sikker kommunikasjon mellom klient og server. Med grunnleggende autentisering blir informasjonen kryptert før den sendes over nettverket, noe som gjør den mindre sårbar for uautorisert tilgang.
+
+Hvordan:
+
+```Python
 import requests
+from requests.auth import HTTPBasicAuth
 
-# Definer brukernavn og passord
-username = "brukernavn"
-password = "passord"
+url = 'http://www.example.com'
+username = 'brukernavn'
+password = 'passord123'
 
-# Sett opp basic authentication
-auth = requests.auth.HTTPBasicAuth(username, password)
+response = requests.get(url, auth=HTTPBasicAuth(username, password))
 
-# Spesifiser URL og send request med authentication
-url = "https://www.example.com/api/users"
-response = requests.get(url, auth=auth)
-
-# Sjekk statuskode for å se om requesten var vellykket
-print(response.status_code)
-
-# Skriv ut innholdet i response
 print(response.text)
 ```
 
-**Output:**
-200<br>
-```json
-{
-    "user_id": 123,
-    "username": "brukernavn"
-}
-```
+Deep Dive:
 
-## Dypdykk
-Når du sender en HTTP-request med basic authentication, må du inkludere brukernavn og passord i headeren til requesten. Dette sikrer at kun autoriserte brukere har tilgang til serveren. Det er viktig å merke seg at basic authentication sender brukernavnet og passordet som "åpen teksts", noe som kan være en sikkerhetsrisiko. Derfor bør du alltid bruke HTTPS-protokollen når du sender slike requests.
+HTTP-forespørsler med grunnleggende autentisering har vært en standard autentiseringsmetode siden tidlig på 90-tallet. Den bruker en Base64-koding for å konvertere brukernavn og passord til en streng som legges til i forespørselsheaderen.
 
-## Se også
-- [Requests dokumentasjon](https://requests.readthedocs.io)
-- [Hvordan lage en HTTP-request med Python](https://realpython.com/python-requests/)
+En alternativ metode er å bruke OAuth-autentisering, som lar brukerne gi tilgang til sine ressurser uten å gi ut passordet sitt. Implementering av grunnleggende autentisering i Python er enkelt ved hjelp av Requests-biblioteket og HTTPBasicAuth-modulen.
+
+Se også:
+
+- Dokumentasjon for Requests biblioteket: https://requests.readthedocs.io/en/master/
+- Informasjon om HTTP grunnleggende autentisering: https://www.ietf.org/rfc/rfc2617.txt

@@ -1,7 +1,7 @@
 ---
-title:                "与yaml一起工作"
-html_title:           "Arduino: 与yaml一起工作"
-simple_title:         "与yaml一起工作"
+title:                "使用yaml的计算机编程"
+html_title:           "Arduino: 使用yaml的计算机编程"
+simple_title:         "使用yaml的计算机编程"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Data Formats and Serialization"
@@ -10,51 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-请在阅读这篇文章之前先打瞌睡，因为今天我们要谈论的主题是关于YAML。你可能听说过它，但是它到底是什么？它是一个用于描述数据的语言，它可以轻松地配置和处理数据，在Arduino编程中也有很多实用的用途。
+# 关于Arduino中使用YAML的简介
 
-## 为什么
+YAML是一种用来存储数据的格式，它可以被程序员用来读取和写入数据。程序员使用YAML来存储和共享配置文件、数据库设置和其他任何需要存储的结构化数据。
 
-为什么要使用YAML？简而言之，它可以让你的Arduino编程更简单和更有条理。通过使用YAML语言，你可以轻松地配置和管理你的数据，使得编程过程更高效和易读。
+## 如何使用YAML
 
-## 如何使用
+使用YAML的第一步是导入相关的库。Arduino IDE已经预装了YAML库，您只需要选择“库管理器”并在搜索栏中输入“YAML”就可以找到它。导入YAML库后，您就可以开始编写代码来读取和写入YAML文件了。
 
-使用YAML并不复杂，下面是一个简单的例子：
+### 如何读取YAML文件：
 
-```Arduino
-#include <Arduino_YAML.h>
-
-int ledPin = 13;
-int buttonPin = 3;
-
-YAML::Node config = YAML::LoadFile("config.yaml");
-
-void setup() {
-  pinMode(ledPin, OUTPUT);
-  pinMode(buttonPin, INPUT);
-}
-
-void loop() {
-  if (digitalRead(buttonPin) == HIGH) {
-    digitalWrite(ledPin, config["led_status"].as<bool>());
-  }
-}
+```
+Arduino ...
+#include <YAML.h>
+...
+YAML.load("config.yaml");
 ```
 
-在这个例子中，我们先导入`Arduino_YAML`库，然后定义一些变量用于引脚和YAML配置文件。然后，我们使用`YAML::LoadFile`函数加载我们的配置文件。在`setup`函数中，我们设定引脚的模式。在`loop`函数中，我们通过读取按钮引脚的值来控制LED灯的亮灭，而这个值是从配置文件中读取的。
+### 如何写入YAML文件：
+
+```
+Arduino ...
+#include <YAML.h>
+...
+YAML.begin();
+YAML.addValue("name", "Arduino");
+YAML.addValue("version", "1.8.12");
+YAML.end("config.yaml");
+```
 
 ## 深入了解
 
-除了上面的例子，YAML还可以做更多事情，比如配置网络设置、sensor数据、甚至是控制逻辑。它的语法简洁而有结构，这使得它非常适合用于Arduino编程。
+YAML是一种轻量级的数据格式，在2001年被开发出来。与JSON和XML相比，YAML更易读，因为它使用缩进来表示层级关系。与XML相比，YAML也更容易编辑和修改，因为它不需要闭合标签。在Arduino中，除了YAML，您也可以使用JSON或XML来存储数据。
 
 ## 参考资料
 
-- YAML官方网站: https://yaml.org/
-- Arduino官方网站: https://www.arduino.cc/
-- Arduino_YAML库: https://github.com/azillion/arduino-yaml
+如果您想了解更多关于YAML的内容，可以参考以下链接：
 
-谢谢阅读这篇关于使用YAML的文章，希望它能帮助你更有效地在Arduino编程中处理数据。
-
-## 另请参阅
-
-- Markdown语法指南: https://www.markdownguide.org/basic-syntax/
-- Arduino编程入门指南: https://www.arduino.cc/en/Guide/Introduction
+1. YAML官方网站：https://yaml.org/
+2. YAML库文档：https://arduinojson.org/doc/api/classes/yaml-document/

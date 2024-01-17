@@ -10,51 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co to jest i po co?
 
-Parsing HTML jest ważnym aspektem programowania w C. Pozwala nam na efektywne przetwarzanie i analizę struktur HTML, co jest kluczowe w dzisiejszym świecie internetu. Dzięki temu możemy łatwo korzystać z danych i informacji znajdujących się na stronach internetowych.
+Parseowanie HTML to proces analizowania strony internetowej i wyodrębniania z niej informacji, takich jak tytuł, nagłówki czy teksty. Programiści często korzystają z tej techniki, aby automatyzować zadania związane z gromadzeniem danych ze stron internetowych.
 
-## Jak to zrobić
+## Jak to zrobić?
 
-Aby rozpocząć parsowanie HTML w C, możemy użyć biblioteki libxml2, która jest jedną z najpopularniejszych wśród programistów C. Poniżej przedstawiony jest przykładowy kod, który wypisze zawartość tytułu strony internetowej.
-
-```C
+```
 #include <stdio.h>
-#include <libxml/HTMLparser.h>
-
-void print_title(xmlNode *node) {
-    xmlChar *title = xmlGetProp(node, (const xmlChar *) "title");
-    printf("Tytuł strony: %s\n", title);
-    xmlFree(title);
-}
+#include <stdlib.h>
+#include <string.h>
 
 int main() {
-    htmlDocPtr doc = htmlParseFile("index.html", NULL);
-    
-    xmlNode *root = xmlDocGetRootElement(doc);
-    xmlNode *head = root->children->next;
-    
-    xmlNode *title = head->children;
-    print_title(title);
-    
-    xmlFreeDoc(doc);
-    return 0;
+  // przykładowy kod
+  char html[] = "<html><head><title>Tytuł strony</title></head><body><h1>Nagłówek</h1><p>Treść</p></body></html>";
+  char *title = strstr(html, "<title>"); // wyszukaj tag <title>
+  title += strlen("<title>"); // przejdź do początku tytułu
+  char *endTitle = strstr(html, "</title>"); // wyszukaj koniec tagu <title>
+  *endTitle = '\0'; // ustaw znak końca stringa
+  printf("%s", title); // wyświetl tytuł: "Tytuł strony"
+  
+  char *header = strstr(html, "<h1>"); // wyszukaj tag <h1>
+  header += strlen("<h1>"); // przejdź do początku nagłówka
+  char *endHeader = strstr(html, "</h1>"); // wyszukaj koniec tagu <h1>
+  *endHeader = '\0'; // ustaw znak końca stringa
+  printf("%s", header); // wyświetl nagłówek: "Nagłówek"
+  
+  char *paragraph = strstr(html, "<p>"); // wyszukaj tag <p>
+  paragraph += strlen("<p>"); // przejdź do początku tekstu
+  char *endParagraph = strstr(html, "</p>"); // wyszukaj koniec tagu <p>
+  *endParagraph = '\0'; // ustaw znak końca stringa
+  printf("%s\n", paragraph); // wyświetl tekst: "Treść"
+  
+  return 0;
 }
 ```
 
-Rezultat wykonania tego programu dla strony internetowej "https://www.example.com/" będzie wyglądał następująco:
+### Deep Dive
 
-```
-Tytuł strony: Example Domain
-```
+Parseowanie HTML pojawiło się w latach 90. wraz z rozwojem internetu. Jego popularność wzrosła dzięki potrzebie automatyzacji procesów związanych z przetwarzaniem informacji z internetu. Obecnie istnieją także inne metody analizowania stron, takie jak web scraping czy wykorzystywanie API, jednak parsowanie HTML wciąż znajduje zastosowanie w wielu projektach.
 
-## Deep Dive
+### Zobacz także
 
-Biblioteka libxml2 zapewnia wiele funkcji do parsowania HTML, takich jak możliwość pobierania atrybutów elementów, szukania konkretnych elementów za pomocą wyrażeń XPath czy nawet tworzenia nowych dokumentów HTML. Warto przejrzeć jej dokumentację, aby wykorzystać wszystkie jej możliwości.
-
-Istnieją również inne biblioteki, takie jak libtidy czy gumbo-parser, które mogą być użyte do parsowania HTML w C. Zawsze warto przetestować różne rozwiązania i wybrać to, które najlepiej pasuje do konkretnego zastosowania.
-
-## Zobacz również
-
-- Dokumentacja biblioteki libxml2: http://xmlsoft.org/html/index.html
-- Przykładowe kody wykorzystujące inne biblioteki do parsowania HTML w C: https://github.com/gnesher/C-HTML-Parsers
+- [Dokumentacja języka C](https://docs.microsoft.com/en-us/cpp/c-language/cpp-c-language-reference)
+- [Inne sposoby na analizowanie stron internetowych](https://www.scrapinghub.com/web-scraping-vs-api-whats-the-difference/)

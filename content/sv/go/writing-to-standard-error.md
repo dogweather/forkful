@@ -1,7 +1,7 @@
 ---
-title:                "Skrivande till standardfel"
-html_title:           "Go: Skrivande till standardfel"
-simple_title:         "Skrivande till standardfel"
+title:                "Skrivning till standardfel"
+html_title:           "Go: Skrivning till standardfel"
+simple_title:         "Skrivning till standardfel"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Files and I/O"
@@ -10,24 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
-Att skriva till standardfel när du programmerar kan hjälpa dig att felsöka och hitta eventuella problem i ditt program. Genom att skicka felmeddelanden till standardfel istället för standardutdata, kan du enkelt skilja mellan de två och fokusera på att lösa problem.
+## Vad & Varför?
+Att skriva till standardfel (standard error) innebär att skicka ut felmeddelanden och andra typer av output till ett speciellt strömutflöde istället för det vanliga utflödet som används för att visa resultat. Detta är användbart för att separera olika typer av information och göra det lättare att felsöka och hitta eventuella fel i koden.
 
-## Hur du gör
-För att skriva till standardfel i Go, behöver du använda funktionen `fmt.Fprintln()` och specificera standardfel som din destination. Här är ett exempel på en kod som skriver ut ett felmeddelande till standardfel:
+## Hur:
+I Go kan du skriva till standardfel genom att använda funktionen ```fmt.Fprintf(os.Stderr, format, args...)```. Det är viktigt att notera att alla argument efter formatet i denna funktion måste vara av typen ```interface{}```, vilket innebär att det kan vara vilken typ som helst.
 
-```Go
-fmt.Fprintln(os.Stderr, "Detta är ett felmeddelande!")
+Exempelkod:
+```
+package main
+
+import (
+    "fmt"
+    "os"
+)
+
+func main() {
+    // Variabel för att simulera ett felmeddelande
+    err := fmt.Errorf("Något gick fel")
+    
+    // Skriv ut till standardfel
+    fmt.Fprintf(os.Stderr, "Ett fel uppstod: %v", err)
+}
 ```
 
-Detta kommer att skriva ut meddelandet "Detta är ett felmeddelande!" till standardfel. Värdet `os.Stderr` i koden ovan specificerar att standardfel är destinationen för vårt felmeddelande.
+Exempeloutput (till standardfel):
+```
+Ett fel uppstod: Något gick fel
+```
 
-## Djupdykning
-När du skriver till standardfel, är det viktigt att förstå skillnaden mellan standardfel och standardutdata. Standardutdata är den vanliga platsen där ditt program skriver ut information, medan standardfel används för fel och varningar.
+## Djupdykning:
+Att skriva till standardfel är vanligt i många programmeringsspråk och är en viktig del av felhantering och felsökning. Det ger möjlighet att skilja på olika typer av information och hantera dem på olika sätt. Alternativet till att skriva till standardfel är att skriva till standardutflödet, vilket är det vanliga sättet att visa resultat på. Men om koden innehåller mycket output eller felmeddelanden kan det bli svårt att hitta eventuella fel i resultatet.
 
-En annan viktig punkt att notera är att standardfel inte ska användas för vanliga felhanteringsrutiner. Istället bör du använda paketet `log` för att logga fel i ditt program.
+I Go är standardfel representerat av variabeln ```os.Stderr```, vilket är ett ```os.File``` objekt som representerar standardfelströmmen. Genom att använda funktionen ```fmt.Fprintf()``` med detta objekt kan vi skriva direkt till standardfel.
 
-## Se även
-- [Go Language - fmt Package](https://golang.org/pkg/fmt/)
-- [Go Language - os Package](https://golang.org/pkg/os/)
-- [Go Language - log Package](https://golang.org/pkg/log/)
+## Se även:
+- [Go-lang.org: Writing to Standard Error](https://golang.org/pkg/fmt/#Fprintf)
+- [Medium: Error handling in Go — Part I](https://medium.com/go-walkthrough/go-walkthrough-error-handling-in-go-part-i-89a0f89f7671)
+- [Os.File - Go Standard Library Documentation](https://golang.org/pkg/os/#File)

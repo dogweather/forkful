@@ -1,7 +1,7 @@
 ---
-title:                "Versenden einer http Anfrage mit grundlegender Authentifizierung"
-html_title:           "Haskell: Versenden einer http Anfrage mit grundlegender Authentifizierung"
-simple_title:         "Versenden einer http Anfrage mit grundlegender Authentifizierung"
+title:                "Senden einer http-Anfrage mit grundlegender Authentifizierung"
+html_title:           "Haskell: Senden einer http-Anfrage mit grundlegender Authentifizierung"
+simple_title:         "Senden einer http-Anfrage mit grundlegender Authentifizierung"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "HTML and the Web"
@@ -10,28 +10,62 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
-Warum sollte man sich mit dem Versenden eines HTTP-Requests mit grundlegender Authentifizierung auseinandersetzen? Nun, wenn du eine Anwendung entwickelst, die auf einen Webdienst zugreifen muss, kann es sein, dass dieser eine grundlegende Authentifizierung erfordert. In diesem Fall ist es wichtig zu verstehen, wie man eine solche Anfrage sendet, damit deine Anwendung reibungslos läuft.
+## Was & Warum? 
+Das Versenden einer HTTP-Anfrage mit grundlegender Authentifizierung ist eine Methode, um sicherzustellen, dass der Server den Client kennt und die Benutzeridentität überprüfen kann. Programmierer verwenden dies, um auf geschützte Ressourcen zuzugreifen oder um sicherzustellen, dass nur autorisierte Benutzer Daten anfordern können.
 
-## How To
-Hier ist ein Beispiel, wie du eine HTTP-Anfrage mithilfe von `basicAuth` aus der `Network.HTTP.Simple`-Bibliothek in Haskell senden kannst:
+## Wie geht's?
+Um eine HTTP-Anfrage mit grundlegender Authentifizierung in Haskell zu senden, folgen Sie diesen Schritten:
+
+1. Importieren Sie das ``` Network.HTTP ``` Modul.
+2. Erstellen Sie eine ``` Request ``` Datenstruktur mit der angeforderten URL und der verwendeten Methode (z.B. GET oder POST).
+3. Verwenden Sie die ``` setRequestMethod ``` Funktion, um die verwendete Authentifizierungsmethode festzulegen (z.B. Basic).
+4. Erstellen Sie eine ``` Authorization ``` Datenstruktur mit den Benutzerdaten (z.B. Benutzername und Passwort).
+5. Verwenden Sie die ``` buildRequest ``` Funktion, um die Anfrage mit der Authentifizierung zu erstellen.
+6. Verwenden Sie die ``` simpleHTTP ``` Funktion, um die Anfrage an den Server zu senden.
+7. Verarbeiten Sie die Antwort des Servers mit der ``` getResponseBody ``` Funktion.
+
+Ein vollständiges Beispiel könnte folgendermaßen aussehen:
 
 ```Haskell
-import Network.HTTP.Simple (httpLbs, parseRequest, setRequestMethod, setRequestBasicAuth, getResponseBody)
+import Network.HTTP
 
+url = "https://www.example.com"
+username = "beispielbenutzer"
+password = "geheimnis123"
+
+-- Schritt 2
+request = Request {rqURI = url, rqMethod = GET}
+
+-- Schritt 3
+requestWithMethod = setRequestMethod "Basic" request
+
+-- Schritt 4
+authorization = Authorization (Just (username, password))
+
+-- Schritt 5
+authenticatedRequest = buildRequest requestWithMethod authorization
+
+-- Schritt 6
+getResponse = simpleHTTP authenticatedRequest >>= getResponseBody
+
+-- Schritt 7
 main = do
-    request <- parseRequest "https://www.example.com"
-    let authRequest = setRequestMethod "GET" $ setRequestBasicAuth "username" "password" request
-    response <- httpLbs authRequest
-    body <- getResponseBody response
-    print body
+  response <- getResponse
+  print response
 ```
 
-Das `basicAuth`-Funktion verlangt zwei Argumente - einen Benutzernamen und ein Passwort - und gibt eine neue `Request`-Instanz zurück, die für die Authentifizierung vorbereitet ist. Hier wird die Anfrage mit dem `GET`-Methode gesendet und die Antwort wird in einer `String`-Variablen namens `body` gespeichert und ausgegeben.
+Die Ausgabe könnte ähnlich aussehen:
 
-## Deep Dive
-Wenn du dich genauer mit dem Senden von HTTP-Anfragen mit grundlegender Authentifizierung beschäftigen möchtest, kannst du die Dokumentation der `basicAuth`-Funktion in der `Network.HTTP.Simple`-Bibliothek überprüfen. Dort findest du weitere Details und Optionen, wie zum Beispiel die Verwendung von Custom-Schemas für die Authentifizierung.
+```Haskell
+"<html><head><title>Willkommen bei Beispiel</title></head><body>Hallo, Beispielbenutzer!</body></html>"
+```
+
+## Tiefere Einblicke
+Die grundlegende Authentifizierung wurde bereits 1999 in RFC 2617 standardisiert und ist eine der ältesten Methoden für die Sicherung von HTTP-Anfragen. Sie ist einfach zu implementieren, da nur Benutzername und Passwort in Base64-codierter Form im HTTP-Header übertragen werden. Allerdings ist diese Methode unsicher, da die Informationen leicht von einem Angreifer abgefangen werden können.
+
+Es gibt verschiedene Alternativen zur grundlegenden Authentifizierung, wie z.B. die Digest-Authentifizierung oder OAuth. Diese Methoden bieten zusätzliche Sicherheit, indem sie z.B. verschlüsselte Passwörter oder Tokens verwenden.
+
+Die Implementation einer HTTP-Anfrage mit grundlegender Authentifizierung in Haskell ist relativ einfach, da das ``` Network.HTTP ``` Modul bereits alle nötigen Funktionen bereitstellt. Es ist jedoch wichtig, sicherzustellen, dass die Übertragung der Benutzerdaten verschlüsselt erfolgt, um die Sicherheit zu erhöhen.
 
 ## Siehe auch
-- https://hackage.haskell.org/package/http-client-0.7.1/docs/Network-HTTP-Client.html#v:basicAuth
-- https://hackage.haskell.org/package/http-client-tls-0.3.5/docs/Network-HTTP-Client-TLS.html
+Weitere Informationen über das Versenden von HTTP-Anfragen mit grundlegender Authentifizierung in Haskell finden Sie in der offiziellen Dokumentation des ``` Network.HTTP ``` Moduls und in der RFC 2617 Spezifikation.

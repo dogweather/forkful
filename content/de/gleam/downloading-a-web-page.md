@@ -10,44 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was & Warum?
 
-Warum sollte man sich die Mühe machen, eine Webseite herunterzuladen? Nun, es gibt viele mögliche Gründe, einschließlich des Wunsches, die Seite offline zu lesen oder bestimmte Informationen aus der Seite zu extrahieren.
+Wenn wir eine Webseite besuchen, wird sie auf unseren Bildschirm geladen und wir können sie lesen und nutzen. Aber was passiert eigentlich im Hintergrund, wenn wir eine Webseite "runterladen"? In der Programmierwelt wird dieser Vorgang als "Webseiten-Download" bezeichnet und ist ein wichtiger Teil der Entwicklung von Web-Anwendungen.
 
-## Wie geht's
+## Wie geht das?
 
-Um eine Webseite in Gleam herunterzuladen, verwenden wir die `HttpGet` Funktion. Zum Beispiel:
-
-```Gleam
-let result = Http.get("https://www.example.com")
-
-result |> Log.info
-```
-
-Das Ergebnis der `HttpGet` Funktion ist ein `Http.Response`-Datentyp. Wir können darauf zugreifen, indem wir das `Body` Feld des `Http.Response`-Records verwenden:
+Das Herunterladen einer Webseite kann in Gleam mit Hilfe des `httpc`-Moduls einfach umgesetzt werden. Wir benutzen die Funktion `httpc.get`, um eine URL anzugeben und einen `on_success`-Callback, der aufgerufen wird, wenn die Seite erfolgreich heruntergeladen wurde.
 
 ```Gleam
-// Beispiel: Zugriff auf den HTML-Inhalt der Webseite
-result.body 
-|> String.lines
-|> Enum.take(10)
-|> Log.info
+httpc.get("https://www.example.com", on_success: \response -> {
+    // `response` ist der heruntergeladene Inhalt
+    switch response {
+        Ok(body) -> {
+            // Der Inhalt wird in der Reihenfolge angezeigt, in der er angegeben wurde
+            Console.print(body)
+            // => "<!DOCTYPE html>...
+            //    <title>Welcome to example.com</title>..."
+        }
+        Err(error) -> {
+            Console.print("Oops! Etwas ist schief gelaufen!")
+        }
+    }
+})
 ```
 
-Das Ergebnis der `HttpGet` kann auch fehlschlagen, daher ist es wichtig, entsprechende Fehlerbehandlung zu implementieren. Hier ist ein Beispiel, bei dem wir das `Http.expectOk` Helper-Funktion verwenden:
+## Tiefere Einblicke
 
-```Gleam
-let result = Http.get("https://www.example.com") |> Http.expectOk
+Das Herunterladen von Webseiten ist ein wichtiger Teil der Webentwicklung, da viele Web-Anwendungen auf die Daten von externen Quellen angewiesen sind. Beispielsweise können wir mit dem Inhalt einer heruntergeladenen Webseite Informationen für unsere Anwendung abrufen oder überprüfen, ob eine bestimmte Seite verfügbar ist.
 
-result.body |> Log.info
-```
+Eine Alternative zum `httpc`-Modul ist das beliebte `curl`-Tool, das jedoch nicht so einfach zu bedienen ist und mehr Einarbeitungszeit erfordert. Mit Hilfe von `httpc` können wir jedoch schnell und effizient Webseiten herunterladen und in unsere Anwendungen integrieren.
 
-## Deep Dive
-
-Die `HttpGet` Funktion implementiert einen HTTP-Client, der die Webseite herunterlädt und die entsprechenden HTTP-Response-Informationen zurückgibt. Dies ermöglicht es uns, jederzeit auf beliebige Webseiten zuzugreifen und ihre Inhalte zu verarbeiten. Um mehr über die `HttpGet`-Funktion und die Möglichkeiten der Manipulation von Webseiten zu erfahren, können Sie die offizielle Gleam-Dokumentation besuchen.
+In der Tiefe der Implementierung verwendet das `httpc`-Modul das HTTP-Protokoll, um Anfragen an eine Webseite zu senden und deren Antwort zu empfangen. Dies erfordert Kenntnisse über Netzwerkprogrammierung und Protokolle, aber dank Gleam können wir dies einfach und sicher umsetzen.
 
 ## Siehe auch
 
-- [Gleam-Http-Verteilungsdokumentation](https://gleam.run/documentation/stdlib/http.html)
-- [Einführung in die Gleam-Programmierung](https://gleam.run/getting-started/introduction.html)
-- [Offizielle Gleam-Website](https://gleam.run/)
+- Das offizielle Gleam `httpc`-Modul: https://github.com/gleam-lang/httpc
+- Ein umfassendes Tutorial zu Webentwicklung mit Gleam: https://github.com/gleam-lang/gleam_web_tutorial

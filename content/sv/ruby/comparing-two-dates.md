@@ -1,7 +1,7 @@
 ---
-title:                "Jämföring av två datum"
-html_title:           "Ruby: Jämföring av två datum"
-simple_title:         "Jämföring av två datum"
+title:                "Jämföra två datum"
+html_title:           "Ruby: Jämföra två datum"
+simple_title:         "Jämföra två datum"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Dates and Times"
@@ -10,49 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför 
+# Vad & Varför?
 
-Det är vanligt att man behöver jämföra två datum i Ruby-programmering. Det kan vara för att kontrollera om ett datum har passerat, eller för att sortera en lista med datum. 
+Att jämföra två datum är en vanlig uppgift för programmerare. Det är ett sätt att kontrollera om ett datum är tidigare, senare eller samma som ett annat datum. Detta kan vara användbart i många olika programmeringsprojekt, från kalenderapplikationer till finansiella system.
 
-## Hur man gör 
+# Hur man gör:
 
-För att jämföra två datum i Ruby kan man använda sig av metoden `Date#<=>`. Den kommer att returnera en negativ, noll eller positiv siffra beroende på om det första datumet är tidigare, samma dag eller senare än det andra datumet. 
+```ruby
+date1 = Date.new(2021, 3, 14)
+date2 = Date.new(2021, 3, 21)
 
-```Ruby
-today = Date.today
-future_date = Date.parse('2021-12-25')
-past_date = Date.new(2021, 1, 1)
-
-# Jämför idag med ett datum i framtiden
-today <=> future_date # returnerar -1
-
-# Jämför två framtida datum
-future_date <=> Date.parse('2022-01-01') # returnerar -1
-
-# Jämför två förflutna datum
-past_date <=> Date.new(2020, 12, 25) # returnerar 1
-
-# Jämför två lika datum
-today <=> Date.today # returnerar 0
+# Använd <=> operatorn för att jämföra två datum
+puts date1 <=> date2
 ```
 
-Man kan även använda sig av klassen `DateTime` för att jämföra datum och tider. Syntaxen för jämförelse är densamma som för `Date`.
+Output: -1
 
-```Ruby
-current_time = DateTime.now
-future_time = DateTime.new(2022, 1, 1, 12, 0, 0)
+Detta betyder att date1 är tidigare än date2. Om resultatet var 0, skulle det betyda att de två datum är samma, och om det var 1, skulle date1 vara senare än date2.
 
-# Jämför nuvarande tid med en framtida tid
-current_time <=> future_time # returnerar -1
-```
+# Djupdykning:
 
-## Djupdykning 
+## Historisk kontext:
+Jämförelse mellan datum har varit en utmaning för programmerare sedan tidiga dagar av datateknik. Innan standardfordonsgränssnittet för datum (ISO 8601) fastställdes var det vanligt med olika format och tolkningar av datum. Detta gjorde att jämförelse mellan datum ofta blev komplicerat och problematiskt.
 
-Metoden `Date#<=>` och `DateTime#<=>` använder sig av en metod som heter `__cmp__` som jämför två datum och returnerar en negativ, noll eller positiv siffra beroende på resultatet. Man kan också använda sig av `Date#eql?` och `DateTime#eql?` för att kontrollera om två datum är exakt lika eller inte. 
+## Alternativ:
+Det finns flera olika sätt att jämföra datum i Ruby, inklusive användning av Date#eql? och Date#<=> metoder, eller genom att konvertera datum till integers och jämföra dem med == operatorn.
 
-Det är också värt att notera att `Date` och `DateTime` är två olika klasser i Ruby, och har därför olika metoder för att hantera datum och tider. Det är viktigt att använda rätt klass beroende på vad man behöver jämföra. 
+## Implementeringsdetaljer:
+I Ruby är Date objekt baserade på det gregorianska kalendersystemet och har inbyggda metoder för att utföra olika operationer på datum, inklusive jämförelse.
 
-## Se även 
+# Se även:
 
-- [Ruby Date och Time klasser](https://ruby-doc.org/stdlib-2.7.2/libdoc/date/rdoc/Date.html)
-- [Kolla om ett datum har passerat i Ruby](https://medium.com/@cecilgj/how-to-check-if-date-has-passed-in-ruby-949f087b6a7b)
+- Ruby Date Klass Documentation: https://ruby-doc.org/stdlib-2.7.2/libdoc/date/rdoc/Date.html
+- Jämföra datum i Ruby: https://www.rubyguides.com/2015/10/ruby-comparison-operators/ 
+- Historia och utmaningar med datum i programmering: https://arstechnica.com/science/2009/12/the-perils-of-date-parsing-and-comparison/

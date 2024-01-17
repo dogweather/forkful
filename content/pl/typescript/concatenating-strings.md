@@ -10,66 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i dlaczego?
+Łączenie ciągów znaków jest podstawowym narzędziem w programowaniu. Polega ono na łączeniu różnych fragmentów tekstu w jedną dłuższą ciągłą linię. Programiści stosują tę technikę, aby tworzyć bardziej czytelny i praktyczny kod.
 
-Zamiana, łączenie lub łączenie ciągów jest powszechną operacją w programowaniu. W przypadku, gdy trzeba wyświetlić użytkownikowi tekstowy komunikat, podać dokładną ścieżkę pliku lub stworzyć skomplikowany adres URL, konieczne jest połączenie kilku ciągów znaków w jeden. W tym artykule dowiesz się, jak w łatwy sposób wykonać tę operację w języku TypeScript.
-
-## Jak to zrobić
-
-Aby połączyć dwa ciągi znaków w języku TypeScript, możesz skorzystać z operatora "+" lub metody "concat()". Przykładowy kod wykorzystujący obie metody wyglądałby następująco:
-
+## Jak to zrobić:
+Przykład prostego łączenia dwóch ciągów znaków w TypeScript wygląda następująco: 
 ```TypeScript
-// Operator "+"
-let firstName = "Anna";
-let lastName = "Kowalska";
-
-let fullName = firstName + " " + lastName;
-console.log(fullName); // Wynik: Anna Kowalska
-
-// Metoda "concat()"
-let firstWord = "Hello";
-let secondWord = "World";
-
-let sentence = firstWord.concat(" ", secondWord);
-console.log(sentence); // Wynik: Hello World
+let imie: string = "Kasia";
+let nazwisko: string = "Kowalska";
+let pelne_imie = imie + " " + nazwisko;
+console.log(pelne_imie);
 ```
 
-Jednym z większych wyzwań, jeśli chodzi o łączenie ciągów znaków, jest kontrola ich ilości i formatu. Dlatego warto poznać inne metody, które umożliwią nam bardziej zaawansowane operacje. Przykładowo, jeśli chcesz dodać jakieś określenie lub wartość do ciągu, możesz skorzystać z metody "replace()" lub "trim()". Sprawdź poniższy kod:
-
+W wyniku otrzymamy:
 ```TypeScript
-let sentence = "Mam 5 dolarów";
-let valueToAdd = 10;
-
-let newValue = sentence.replace("5", valueToAdd.toString());
-console.log(newValue); // Wynik: Mam 10 dolarów
-
-let text = "   Cześć,   ";
-let trimmedText = text.trim();
-console.log(trimmedText); // Wynik: "Cześć"
+Kasia Kowalska
 ```
 
-## Głębsze zagadnienia
-
-Warto zauważyć, że w języku TypeScript każdy ciąg jest traktowany jako obiekt typu String. Dzięki temu możemy korzystać z wielu metod dostępnych dla typów obiektowych, np. "toUpperCase()" czy "substring()". Poniżej przedstawione jest przykładowe użycie tych metod:
-
+Możemy również łączyć więcej niż dwa ciągi znaków. Na przykład:
 ```TypeScript
-let text = "Ważna informacja!";
-console.log(text.toUpperCase()); // Wynik: WAŻNA INFORMACJA!
-console.log(text.substring(0, 6)); // Wynik: Ważna
+let opcja1: string = "opcja1";
+let opcja2: string = "opcja2";
+let opcja3: string = "opcja3";
+let wybor = "Możesz wybrać: " + opcja1 + ", " + opcja2 + " lub " + opcja3;
+console.log(wybor);
 ```
 
-Kolejnym ważnym aspektem jest to, że łączenie ciągów znaków jest procesem kosztownym dla pamięci i czasu wykonania. Dlatego ważne jest, aby unikać zbędnych i powtarzalnych operacji łączenia w kodzie. Możliwe jest również wykorzystanie szablonów literałowych, które pozwalają na wprowadzenie dynamicznych wartości do ciągu znaków w bardziej czytelny sposób. Przykład:
-
+Otrzymamy:
 ```TypeScript
-let productName = "Smartfon";
-let unitPrice = 1000;
-let quantity = 2;
-let totalPrice = `Kupiłeś ${productName} w cenie ${unitPrice} złotych. Całkowita kwota do zapłaty to ${unitPrice * quantity} złotych.`;
-console.log(totalPrice); // Wynik: Kupiłeś Smartfon w cenie 1000 złotych. Całkowita kwota do zapłaty to 2000 złotych.
+Możesz wybrać: opcja1, opcja2 lub opcja3
 ```
 
-## Zobacz także
+## Głębsze spojrzenie:
+Łączenie ciągów znaków jest powszechnie używaną techniką w wielu językach programowania. Wcześniej, w językach takich jak C czy Java, zwykle korzystano ze specjalnych funkcji do łączenia ciągów. W TypeScript mamy na to prostsze rozwiązanie - można po prostu użyć operatora "+" do łączenia ciągów. Alternatywą do łączenia ciągów jest również szablonowanie, co jest szczególnie przydatne przy łączeniu większej liczby fragmentów tekstu.
 
-- [Dokumentacja języka TypeScript](https://www.typescriptlang.org/docs/)
-- [Oficjalna strona TypeScript](https://www.typescriptlang.org/)
-- [Inne artykuły na temat programowania w języku TypeScript](https://dev.to/search?q=typescript)
+## Zobacz też:
+Jeśli chcesz poznać więcej na temat łączenia ciągów w TypeScript, warto zajrzeć na stronę dokumentacji Microsoft: https://www.typescriptlang.org/docs/handbook/basic-types.html#string. Możesz też zapoznać się z innymi funkcjonalnościami języka, które mogą być przydatne w Twoim kodzie.

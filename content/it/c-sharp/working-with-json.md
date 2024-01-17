@@ -10,62 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché lavorare con JSON?
+## Cosa & Perché?
+Working with JSON è quando i programmatori utilizzano un formato di dati molto comune utilizzato per la trasmissione di dati da un sistema all'altro. È ampiamente utilizzato nei sistemi web e mobile perché è leggero e facile da leggere e scrivere.
 
-Se si lavora con dati strutturati in un programma, è probabile che si sia già incontrato il formato JSON. JSON, acronimo di JavaScript Object Notation, è un formato di testo leggibile e leggero per lo scambio di dati. È ampiamente utilizzato in diverse applicazioni, come ad esempio il web e i servizi API, rendendolo uno strumento importante per gli sviluppatori.
+## Come fare:
+[C# ... ]
 
-## Come utilizzare JSON in C#
+Per lavorare con JSON in C#, è necessario utilizzare il pacchetto "Newtonsoft.Json". Qui di seguito è riportato un esempio di come utilizzare questo pacchetto per serializzare un oggetto in una stringa JSON:
 
-Per utilizzare JSON in C#, è necessario importare lo spazio dei nomi `System.Json` nel proprio progetto. Qui di seguito è riportato un esempio di codice che mostra come convertire un oggetto C# in una stringa JSON e viceversa:
+```C#
+using Newtonsoft.Json;
 
-```
-using System;
-using System.Json;
-
-namespace JsonTutorial
+public class Studente
 {
-    class Program
+    public string Nome { get; set; }
+    public string Cognome { get; set; }
+}
+
+class Program
+{
+    static void Main(string[] args)
     {
-        static void Main(string[] args)
-        {
-            // Oggetto C#
-            var persona = new
-            {
-                nome = "Mario",
-                cognome = "Rossi",
-                età = 30
-            };
-
-            // Convertire in stringa JSON
-            string jsonString = JsonValue.Parse(persona.ToString()).ToString();
-
-            // Stampa della stringa JSON
-            Console.WriteLine(jsonString);
-
-            // Convertire la stringa JSON in oggetto C#
-            var personaJson = JsonValue.Parse(jsonString);
-
-            // Stampa dei valori
-            Console.WriteLine(personaJson["nome"]);
-            Console.WriteLine(personaJson["cognome"]);
-            Console.WriteLine(personaJson["età"]);
-            
-            // Output:
-            // {"nome":"Mario","cognome":"Rossi","età":30}
-            // Mario
-            // Rossi
-            // 30
-        }
+        Studente studente = new Studente { Nome = "Mario", Cognome = "Rossi" };
+        string json = JsonConvert.SerializeObject(studente);
+        Console.WriteLine(json);
     }
 }
 ```
 
-## Approfondimento su JSON
+L'output sarà qualcosa del genere:
 
-JSON utilizza un formato di dati gerarchico, che facilita la lettura e l'organizzazione dei dati. È costituito da coppie chiave-valore, dove il valore può essere un altro oggetto JSON, un array o un valore primitivo come una stringa o un numero. JSON è anche facilmente integrabile con molti linguaggi di programmazione, rendendolo uno strumento flessibile per lo scambio di dati tra diverse piattaforme.
+```json
+{ "Nome": "Mario", "Cognome": "Rossi" }
+```
 
-## Vedi anche
+Per deserializzare una stringa JSON in un oggetto, è possibile utilizzare il metodo `DeserializeObject` della classe `JsonConvert`. Ad esempio, se si ha una stringa JSON come questa: `"{ "Nome": "Mario", "Cognome": "Rossi" }"`, è possibile creare un oggetto `Studente` con i valori corrispondenti utilizzando il seguente codice:
 
-- [Documentazione ufficiale di JSON](https://www.json.org/json-en.html)
-- [Tutorial su JSON in C#](https://www.newtonsoft.com/json/help/html/T_Newtonsoft_Json_Linq_JObject.htm)
-- [Introduzione a JSON](https://www.w3schools.com/js/js_json_intro.asp) (in inglese)
+```C#
+Studente studente = JsonConvert.DeserializeObject<Studente>(json);
+```
+
+## Approfondimento:
+JSON (JavaScript Object Notation) è stato inventato da Douglas Crockford nel 2001 ed è diventato uno dei formati di dati più utilizzati nel mondo della programmazione. Alcune alternative popolari a JSON includono XML e YAML. JSON ha guadagnato popolarità grazie alla sua facile leggibilità per il computer e per gli umani, il che lo rende ideale per l'utilizzo nei sistemi web e mobile. I dettagli di implementazione di JSON variano a seconda del linguaggio di programmazione utilizzato, ma in generale utilizza una sintassi molto semplice basata sui costrutti di JavaScript.
+
+## Vedi anche:
+- [Documentazione ufficiale di Newtonsoft.Json](https://www.newtonsoft.com/json)
+- [Introduzione a JSON su MDN](https://developer.mozilla.org/it/docs/Learn/JavaScript/Objects/JSON)
+- [JSON vs XML](https://programmaticponderings.com/2014/09/09/number-8-json-vs-xml-which-is-the-best-for-your-enviroment/)

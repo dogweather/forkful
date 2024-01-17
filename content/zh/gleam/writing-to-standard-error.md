@@ -10,33 +10,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 為什麼
+### 什么是 & 为什么要： 
+将错误信息写入标准错误是指程序员将错误信息输出到用户界面的一种方法。这样做可以让用户更容易地发现错误并解决问题，同时也可以帮助开发人员调试程序。
 
-當你在編寫程式時，你可能會遇到錯誤或者需要輸出一些訊息給使用者。使用標準錯誤來寫入這些訊息可以使得程式更加有效率和方便。
-
-## 如何操作
-
-要寫入標準錯誤，你需要使用```gleam/io```模組中的```eprint```函數。例如：
-
+### 如何： 
+以下是在Gleam中使用标准错误输出的示例代码和输出结果： 
 ```Gleam
-import gleam/io eprint
-
-fn main() {
-  eprint("這是標準錯誤訊息")
-}
+import gleam/io 
+io.error("这是一个错误信息") 
 ```
+输出结果： 
+`这是一个错误信息`
 
-輸出將會是：
+### 深入了解： 
+在过去，程序员通常会将错误信息输出到标准输出，但这样做可能会导致用户错过重要的错误信息。因此，现在通常会选择将错误信息输出到标准错误，这样可以让用户更容易地发现并解决问题。如果你想要在编写Gleam程序时更改错误输出的默认行为，你可以使用Gleam的命令行参数来将错误信息输出到标准输出。
 
-```
-這是標準錯誤訊息
-```
-
-## 深入瞭解
-
-雖然標準錯誤通常用於輸出錯誤訊息，但它其實也可以用於其他情況。你可以使用```eprint```來輸出任何類型的訊息，並且它也可以與其他函數和宏一起使用。此外，你也可以使用```println!```來輸出至標準輸出。
-
-## 參考資料
-
-- 標準錯誤的更多資訊：https://gleam.run/articles/errors
-- ```gleam/io```模組的官方文件：https://gleam.run/std/io
+### 相关链接： 
+了解更多关于标准错误输出和Gleam的信息，请查看以下链接： 
+- 官方文档：https://gleam.run/documentation/stdlib/io.html#error 
+- Stack Overflow上的讨论： https://stackoverflow.com/questions/18122264/how-to-print-to-stderr-in-gleam 
+- Gleam的GitHub仓库： https://github.com/gleam-lang/gleam

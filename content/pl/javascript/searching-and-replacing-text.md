@@ -1,7 +1,7 @@
 ---
-title:                "Wyszukiwanie i zamienianie tekstu"
-html_title:           "Javascript: Wyszukiwanie i zamienianie tekstu"
-simple_title:         "Wyszukiwanie i zamienianie tekstu"
+title:                "Wyszukiwanie i zamiana tekstu"
+html_title:           "Javascript: Wyszukiwanie i zamiana tekstu"
+simple_title:         "Wyszukiwanie i zamiana tekstu"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Strings"
@@ -10,60 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co to jest i dlaczego to robić?
 
-Zastępowanie tekstu jest kluczowym elementem programowania, ponieważ pozwala nam w łatwy sposób wprowadzać zmiany w naszym kodzie. Jest to szczególnie przydatne, gdy chcemy wprowadzić jednocześnie wiele podobnych modyfikacji lub gdy potrzebujemy zmienić pewne elementy w wielu plikach jednocześnie.
+W programowaniu często występuje potrzeba zmiany tekstu wewnątrz naszego kodu. Na przykład, chcielibyśmy zmienić wszystkie wystąpienia słowa "kot" na "pies", lub usunąć określone fragmenty z tekstu. Do tego służy tzw. wyszukiwanie i zastępowanie tekstu, czyli proces znajdowania i zmiany konkretnych fragmentów tekstu w danym pliku lub programie. Programiści korzystają z tej funkcji, aby ułatwić sobie i przyspieszyć pracę nad swoim kodem.
 
-## Jak to zrobić
+## Jak to zrobić:
 
-```Javascript
-// Przykładowy string, w którym chcemy dokonać zmiany
-let string = "Cześć, jestem programistą w języku Javascript!"
+### Wyszukiwanie tekstu:
+W JavaScript możemy wyszukiwać tekst przy użyciu wbudowanej funkcji `indexOf()` lub `lastIndexOf()`. Obie funkcje zwracają indeks pierwszego lub ostatniego znalezionego wystąpienia szukanego słowa. Możemy też użyć wyrażeń regularnych, co pozwoli na bardziej zaawansowane i precyzyjne wyszukiwanie.
 
-// Użycie metody replace() do zamiany słowa "programistą" na "developerem"
-let newString = string.replace("programistą", "developerem")
-
-console.log(newString) 
-// Output: Cześć, jestem developerem w języku Javascript!
+#### Przykład:
+```javascript
+let text = "Kotek to mały łowca myszy";
+let index = text.indexOf("kot"); // zwróci 0
+// ponieważ pierwsze wystąpienie słowa "kot" znajduje się na początku tekstu
 ```
-W powyższym przykładzie użyliśmy metody `replace()` na stringu, aby zmienić jedno słowo na inne. Możemy w ten sam sposób wprowadzać zmiany w całych zdaniach lub wyrażeniach. Dodatkowo, możemy wykonać wielokrotne zastępowanie, używając wyrażenia regularnego oraz flagi globalnej `g`.
-
-```Javascript
-// Przykładowy string z wieloma wystąpieniami słowa "programista"
-let string = "Jestem programistą zarówno w języku Javascript, jak i Python. Programista to bardzo ciekawy zawód."
-
-// Użycie wyrażenia regularnego oraz flagi globalnej dla zastąpienia wszystkich wystąpień słowa "programista"
-let newString = string.replace(/programista/g, "developer")
-
-console.log(newString)
-// Output: Jestem developerem zarówno w języku Javascript, jak i Python. Developer to bardzo ciekawy zawód.
+```javascript
+let text = "Kotek to mały łowca myszy";
+let lastIndex = text.lastIndexOf("kot"); // zwróci 18
+// ponieważ ostatnie wystąpienie słowa "kot" znajduje się na pozycji 18
 ```
 
-## Głębszy przegląd
+### Zastępowanie tekstu:
+Aby zastąpić dany fragment tekstu, możemy użyć funkcji `replace()` wraz z wyrażeniami regularnymi. Ta funkcja zastąpi pierwsze wystąpienie wyszukanego wyrażenia danym tekstem lub innym wyrażeniem.
 
-Podczas korzystania z metody `replace()` mamy również możliwość dostosowania naszego zastępowania za pomocą funkcji zwrotnej (callback). Możemy też używać wyrażeń regularnych z grupami dopasowań, aby wykonywać bardziej zaawansowane operacje zastępowania.
-
-```Javascript
-// Przykładowy string zawierający wielokrotne wystąpienie słów oddzielonych przecinkami
-let string = "HTML, CSS, Javascript, Python, Java"
-
-// Użycie funkcji zwrotnej, aby zamienić każde słowo na wersję z dużymi literami
-let newString = string.replace(/\w+/g, function(match) {
-  return match.toUpperCase()
-})
-
-console.log(newString)
-// Output: HTML, CSS, JAVASCRIPT, PYTHON, JAVA
-
-// Użycie grupy dopasowań, aby zamienić kolejność słów
-let newString = string.replace(/(\w+),\s(\w+)/g, "$2, $1")
-
-console.log(newString)
-// Output: CSS, HTML, Python, Javascript, Java
+#### Przykład:
+```javascript
+let text = "Kotek to mały łowca myszy";
+let newText = text.replace("kot", "pies"); // zwróci "Piesek to mały łowca myszy"
+```
+```javascript
+let text = "Kotek to mały łowca myszy";
+let newText = text.replace(/kot/g, "pies"); // zwróci "Piesek to mały łowca myszy"
+// dzięki użyciu flagi 'g' zastąpione zostaną wszystkie wystąpienia
 ```
 
-## Zobacz też
+## Głębszy zanurzenie:
 
-- [MDN - Metoda replace()](https://developer.mozilla.org/pl/docs/Web/JavaScript/Referencje/Obiekty/String/Replace)
-- [W3Schools - Wyrażenia regularne w Javascript](https://www.w3schools.com/jsref/jsref_obj_regexp.asp)
-- [FreeCodeCamp - Przetwarzanie tekstu z Javascript](https://www.freecodecamp.org/news/how-to-process-text-with-javascript/)
+### Kontekst historyczny:
+Wyszukiwanie i zastępowanie tekstu jest nieodłączną częścią programowania już od początków tej dziedziny. Pierwsze narzędzia do przetwarzania tekstu pojawiły się w latach 50. XX wieku, a od tego czasu stały się nieodzownym elementem każdego języka programowania.
+
+### Inne metody:
+W zależności od języka programowania, istnieje wiele różnych metod i funkcji do wyszukiwania i zastępowania tekstu. JavaScript oferuje wbudowane funkcje, ale w niektórych przypadkach może być też przydatne użycie narzędzi zewnętrznych.
+
+### Szczegóły implementacji:
+W celu wykonania wyszukiwania i zastępowania tekstu w JavaScript, wykorzystywane są wyrażenia regularne, czyli specjalne wzorce służące do dopasowania i manipulacji tekstami. Ważne jest także użycie odpowiednich funkcji, aby dokładnie określić czego szukamy i jakie zmiany chcemy wprowadzić.
+
+## Zobacz także:
+- [Metody String w JavaScript](https://developer.mozilla.org/pl/docs/Web/JavaScript/Referencje/Obiekty/String)
+- [Wyrażenia regularne w JavaScript](https://developer.mozilla.org/pl/docs/Web/JavaScript/Guide/Regular_Expressions)

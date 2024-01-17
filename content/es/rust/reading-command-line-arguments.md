@@ -10,76 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¡Qué y Por qué?
 
-Si estás aprendiendo Rust o ya eres un programador experimentado, saber cómo trabajar con argumentos de línea de comandos es una habilidad importante. Te permitirá construir aplicaciones más versátiles y flexibles, además de mejorar tu conocimiento sobre Rust como lenguaje de programación.
+Leer los argumentos de la línea de comandos es una técnica común en la programación para permitir a los usuarios ingresar datos o configurar un programa al ejecutarlo. Los programadores lo hacen para hacer que sus programas sean más interactivos y personalizables para los usuarios.
 
-## Cómo hacerlo
+## ¡Cómo hacerlo!
 
-Para leer argumentos de línea de comandos en Rust, necesitas importar el módulo "std::env" y llamar a la función "args()". Luego, puedes utilizar el método "collect()" para obtener un vector que contiene cada argumento ingresado desde la línea de comandos. A continuación, puedes iterar sobre el vector y usar los argumentos según sea necesario.
+Para leer argumentos de la línea de comandos en Rust, se puede utilizar la estructura `std::env::args()`. Aquí hay un ejemplo de cómo hacerlo:
 
-```
-Rust
+```Rust
 use std::env;
 
 fn main() {
+    // Obtener los argumentos de la línea de comandos
     let args: Vec<String> = env::args().collect();
-
+    
+    // Iterar a través de los argumentos y mostrarlos en la consola
     for arg in args.iter() {
         println!("{}", arg);
     }
 }
 ```
 
-Si ejecutamos este código con el siguiente comando en nuestra terminal:
+**Salida de muestra:**
 
 ```
-cargo run hola mundo
-```
-
-Obtendremos la siguiente salida:
-
-```
+$ mi_programa hola mundo
 hola
 mundo
 ```
 
-## Profundizando
+## Inmersión Profunda
 
-Además de leer argumentos de línea de comandos simples, también puedes manejar argumentos con opciones y valores. Por ejemplo, puedes utilizar el paquete "clap" para crear una interfaz de línea de comandos más robusta.
+Leer argumentos de la línea de comandos ha sido una técnica utilizada por los programadores desde los primeros días de la programación. En Rust, también se puede utilizar el crate `structopt` para leer argumentos y configurar opciones de línea de comandos de manera más avanzada.
 
-```
-Rust
-use clap::{Arg, App};
+Otra alternativa es utilizar bibliotecas externas como `clap` o `getopts`. Ambas ofrecen una variedad de funciones para facilitar la lectura y el manejo de argumentos de la línea de comandos.
 
-fn main() {
-   let matches = App::new("mi_app")
-       .arg(Arg::with_name("opcion")
-           .short("o")
-           .long("opcion")
-           .value_name("OPCION")
-           .help("La opción que deseas usar")
-           .takes_value(true))
-       .get_matches();
+En cuanto a la implementación, la estructura `env::args()` en Rust devuelve un `std::env::Args` que contiene una referencia a los argumentos en forma de cadenas. Puede iterar a través de este objeto o utilizar funciones como `next()` o `nth()` para obtener argumentos específicos.
 
-   if let Some(opcion) = matches.value_of("opcion") {
-       println!("Usaste la opción {}", opcion);
-   }
-}
-```
+## Ver También
 
-Con este código, podemos ejecutar nuestro programa con la siguiente línea de comandos: `cargo run --opcion hola`
-
-Y obtendremos la siguiente salida:
-
-```
-Usaste la opción hola
-```
-
-## Ver también
-
-- [Documentación oficial sobre argumentos de línea de comandos en Rust](https://doc.rust-lang.org/std/env/fn.args.html)
-- [Tutorial sobre el uso de argumentos de línea de comandos en Rust](https://www.tutorialspoint.com/rust/rust_command_line_arguments.htm)
-- [Paquete "clap" en crates.io para manejar opciones de línea de comandos en Rust](https://crates.io/crates/clap)
-
-¡Ahora que sabes cómo trabajar con argumentos de línea de comandos en Rust, ve y crea aplicaciones increíbles!
+- [Documentación oficial de Rust sobre `std::env`](https://doc.rust-lang.org/std/env/index.html)
+- [Crate `structopt` para manejar argumentos de la línea de comandos de manera avanzada en Rust](https://crates.io/crates/structopt)
+- [Crate `clap` para manejar argumentos de la línea de comandos en Rust](https://crates.io/crates/clap)
+- [Crate `getopts` para manejar argumentos de la línea de comandos en Rust](https://crates.io/crates/getopts)

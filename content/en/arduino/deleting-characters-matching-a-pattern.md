@@ -10,30 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-There are many reasons why you might want to delete characters from a string that match a specific pattern. It could be to filter out unwanted information, remove formatting, or simply to make the string more readable.
+## What & Why?
 
-## How To
-To delete characters matching a pattern in Arduino, you can use the `replace()` function from the `String` library. This function takes two parameters: the pattern to look for, and the replacement string. For example, if we have a string called `myString` and we want to remove all spaces from it, we could do the following:
+Deleting characters that match a certain pattern is a common task in programming. This involves removing specific characters from a given input string that meet a certain condition, such as being a vowel or a number. Programmers do this in order to filter out unwanted or irrelevant information and manipulate the data in a more efficient way.
 
-```Arduino
-myString.replace(" ", "");
-```
+## How to:
 
-This will replace all spaces in `myString` with an empty string, effectively deleting them. You can also use wildcards in the pattern, such as `*` to delete all characters between two specific characters. Let's say we have a string `myName` and we want to remove all characters between the letters "a" and "n":
+To delete characters that match a pattern in Arduino, we can use the ```replace()``` function. This function takes in three parameters: the input string, the character to be replaced, and the replacement character. Here's an example of how we can use it to remove all vowels from a string and print the result:
 
 ```Arduino
-myName.replace("a*n", "");
+String input = "Hello world!";
+input.replace("a", "");
+input.replace("e", "");
+input.replace("i", "");
+input.replace("o", "");
+input.replace("u", "");
+Serial.println(input);
 ```
 
-This will delete all characters between the letters "a" and "n" (including both letters).
+This will output: "Hll wrld!". As you can see, all the vowels have been removed from the original string.
 
-## Deep Dive
-The `replace` function uses regular expressions to match and replace patterns in a string. Regular expressions are a special syntax for specifying patterns in text. If you want to learn more about regular expressions, you can check out this [Arduino tutorial](https://www.arduino.cc/reference/en/language/functions/string/functions/replace/) or this [documentation from the PCRE library](https://pcre.org/current/doc/html/pcre2syntax.html). 
+## Deep Dive:
 
-Additionally, the `replace` function is just one of many string manipulation functions available in the `String` library. You can also use functions like `remove`, `substring`, and `startsWith` to customize the manipulation of your strings. For a full list of string functions and their usage, check out the [Arduino String Reference](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/).
+Historically, deleting characters matching a pattern was a tedious process that involved using loops and conditional statements. This method was not only time-consuming, but also prone to errors. With the introduction of string manipulation functions in modern programming languages like Arduino, the process has become much simpler and more efficient.
 
-## See Also
-- [Arduino String Reference](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/)
-- [Arduino String library documentation](https://github.com/arduino-libraries/String)
-- [Regular Expression Tutorial](https://medium.com/factory-mind/regex-tutorial-a-simple-cheatsheet-by-examples-649dc1c3f285)
+An alternative to using the ```replace()``` function is using regular expressions. These expressions allow for more complex patterns to be matched and replaced in a string. However, they may be more difficult for beginners to understand and implement compared to the straightforward ```replace()``` function.
+
+In terms of implementation, the ```replace()``` function uses the ```indexOf()``` function to locate the position of the character to be replaced in the input string, and then replaces it with the replacement character. This process is repeated for each character that matches the pattern.
+
+## See Also:
+
+To learn more about string manipulation in Arduino, check out the official documentation [here](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/). You can also explore different functions for manipulating strings, such as ```substring()``` and ```toUpperCase()```, for more advanced applications.

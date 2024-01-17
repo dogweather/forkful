@@ -10,65 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+# Was & Warum?
 
-Das Erstellen von temporären Dateien kann in vielen Fällen nützlich sein, wie zum Beispiel beim Testen von Code oder beim Zwischenspeichern von Daten. Es ermöglicht auch die effiziente Nutzung von Systemressourcen und das Vermeiden von Dateikonflikten.
+Die Erstellung von temporären Dateien ist ein gängiges Konzept in der Programmierung, bei dem eine Datei dynamisch im Speicher erstellt wird, um temporäre Daten zu speichern. Programmierer nutzen diese Technik, um schnell auf temporäre Daten zuzugreifen oder um sicherzustellen, dass die Daten nicht dauerhaft im Speicher vorhanden sind, was Speicherplatz spart.
 
-## Wie geht das?
+# Wie geht's?
 
-Das Erstellen einer temporären Datei in TypeScript ist sehr einfach. Alles, was Sie brauchen, ist das `fs`-Modul, das in Node.js eingebaut ist.
+```TypeScript
+const fs = require('fs');
+const path = require('path');
 
-```TypeScript 
-const fs = require('fs'); 
+// Erstellen Sie eine temporäre Datei im Speicher
+const tempFile = fs.createTempFile();
+
+// Schreiben Sie Daten in die temporäre Datei
+fs.writeFileSync(tempFile, 'Diese Daten sind temporär');
+
+// Lesen Sie Daten aus der temporären Datei
+const data = fs.readFileSync(tempFile);
+
+// Löschen der temporären Datei
+fs.unlinkSync(tempFile);
+
+// Output:
+// Diese Daten sind temporär
+
 ```
 
-Als nächstes können Sie die `fs`-Funktion `mkdtempSync()` verwenden, um eine temporäre Verzeichnisname zu erstellen, in dem Sie Ihre Datei speichern können.
+# Tiefer tauchen
 
-```TypeScript 
-const tempDir = fs.mkdtempSync(''); 
-```
+Die Erstellung von temporären Dateien hat eine lange Geschichte in der Programmierung, insbesondere in Betriebssystemen, die nicht über eingebaute Speicher-Management-Funktionen verfügen. Eine Alternative zur Verwendung von temporären Dateien ist die Verwendung von temporären Variablen im Speicher, bei denen die Daten direkt gespeichert und anschließend überschrieben werden, anstatt sie in einer Datei zu speichern. Die Implementierung von temporären Dateien kann je nach Betriebssystem variieren, wobei einige spezielle Funktionen oder Bibliotheken erfordern.
 
-Durch das Verwenden eines leeren Strings als Argument erstellt die `mkdtempSync()`-Funktion einen zufälligen Verzeichnisnamen, der mit dem Betriebssystem temporären Verzeichnispfad beginnt.
+# Siehe auch
 
-Jetzt können wir den Pfad zu unserer temporären Datei erstellen, indem wir den zuvor erstellten temporären Verzeichnisnamen und den gewünschten Dateinamen kombinieren.
-
-```TypeScript 
-const tempFilePath = `${tempDir}/myTempFile.txt`; 
-```
-
-Als nächstes können wir den Inhalt unserer temporären Datei erstellen und speichern, indem wir die `fs`-Funktion `writeFileSync()` verwenden.
-
-```TypeScript 
-const fileContent = 'Hello world!'; 
-fs.writeFileSync(tempFilePath, fileContent); 
-```
-
-Und das ist alles! Sie haben erfolgreich eine temporäre Datei erstellt und mit Inhalt gefüllt. Achten Sie jedoch darauf, dass das Verzeichnis und die Datei anschließend gelöscht werden müssen, um Speicherplatz zu sparen und Dateikonflikte zu vermeiden.
-
-## Tief eintauchen
-
-Das `fs`-Modul bietet auch die Möglichkeit, eine temporäre Datei mit einem benutzerdefinierten Präfix zu erstellen. Dies kann nützlich sein, um die temporäre Datei zu identifizieren und von anderen Dateien zu unterscheiden.
-
-```TypeScript 
-const tempDir = fs.mkdtempSync('myTempFolder_'); 
-const tempFilePath = `${tempDir}/myTempFile.txt`; 
-```
-
-Darüber hinaus bietet Node.js die Möglichkeit, temporäre Dateien automatisch zu erstellen und zu löschen, indem man das `os`-Modul verwendet.
-
-```TypeScript 
-const os = require('os'); 
-const path = require('path'); 
-
-// Erstelle eine temporäre Datei 
-const tempFilePath = path.join(os.tmpdir(), 'myTempFile.txt'); 
-
-// Lösche die temporäre Datei nach Verwendung 
-fs.unlinkSync(tempFilePath); 
-```
-
-## Siehe auch
-
-- [https://nodejs.org/api/fs.html](https://nodejs.org/api/fs.html)
-- [https://nodejs.org/api/child_process.html](https://nodejs.org/api/child_process.html)
-- [https://nodejs.org/api/os.html](https://nodejs.org/api/os.html)
+Weitere Informationen zur Verwendung von temporären Dateien in TypeScript finden Sie in der offiziellen Dokumentation unter: https://www.typescriptlang.org/docs/handbook/deno-api.html#gdrw0009. Alternativ können Sie auch die Funktionen von Node.js, einer populären JavaScript-Plattform, nutzen, da es auch die Erstellung und Verwaltung von temporären Dateien unterstützt. Weitere Informationen dazu finden Sie unter: https://nodejs.org/api/fs.html#fs_fs_createtempfile_options_callback.

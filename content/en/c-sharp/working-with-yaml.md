@@ -10,95 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-YAML (YAML Ain't Markup Language) is a popular data serialization format that is human-friendly and easy to read. It allows developers to store and transfer data in a structured way, making it a useful tool in various programming scenarios.
+## What & Why?
 
-## How To
-To work with YAML in C#, you will need to install the YamlDotNet library using NuGet. Once installed, you can start using it in your project. 
+Working with YAML, also known as YAML Ain't Markup Language, is a way for programmers to define and organize data in a human-readable format. It is often used to store configuration data and can be used in various programming languages. Programmers use YAML because it provides a simple and concise way to represent complex data structures.
 
-To start, create a `YamlStream` object and load a YAML file using the `YamlStream.Load()` method. 
+## How to:
 
-```
-using YamlDotNet.RepresentationModel;
+To work with YAML in C#, you will need to install a YAML library such as YamlDotNet or SnakeYAML. Once imported into your project, you can use the library's methods to load and manipulate YAML data.
 
-YamlStream yaml = new YamlStream();
-yaml.Load(File.OpenText("sample.yaml"));
-```
+Let's take a look at a simple example using YamlDotNet:
 
-Next, you can access the data stored in the YAML file by using the `RootNode` property of the `YamlStream` object. 
-
-```
-YamlMappingNode rootNode = (YamlMappingNode)yaml.RootNode;
-```
-
-You can then use the `Children` property to loop through the key-value pairs in the YAML file. 
-
-```
-foreach (var node in rootNode.Children)
+```C#
+//Load YAML data from a file
+YamlStream stream = new YamlStream();
+using (var reader = new StreamReader("config.yaml"))
 {
-    Console.WriteLine(node.Key + ": " + node.Value);
+    stream.Load(reader);
+}
+
+//Access YAML data
+YamlMappingNode mapping = (YamlMappingNode)stream.Documents[0].RootNode;
+string username = mapping.Children[new YamlScalarNode("username")].ToString();
+
+//Update YAML data
+mapping.Children[new YamlScalarNode("password")] = "newPassword";
+
+//Save changes to file
+using (StreamWriter writer = new StreamWriter("config.yaml"))
+{
+    stream.Save(writer, false);
 }
 ```
 
-To write data to a YAML file, you can use the `Dump()` method of the `YamlStream` object. 
+The output of this code will be a YAML file with the updated password value. Note that the specific syntax and methods may vary depending on the YAML library used.
 
-```
-var data = new Dictionary<string, string>
-{
-    {"name", "John"},
-    {"age", "30"}
-};
+## Deep Dive:
 
-var yamlData = new YamlStream();
-yamlData.Add(new YamlMappingNode(data));
-string output = yamlData.Dump();
+YAML was first introduced in 2001 as a human-readable data serialization language. It is often compared to JSON, another popular data format, but YAML offers advantages such as better readability and the ability to include comments. Other alternatives such as XML and INI files may also be used for configuration data, but YAML has gained popularity for its simplicity and flexibility.
 
-Console.WriteLine(output);
-```
+When working with YAML in C#, developers should be aware that YAML uses indentation to define data structures, much like Python. It is also important to check the syntax and structure of the YAML documents to ensure its readability and avoid parsing errors.
 
-The above code will output the following YAML string:
+## See Also:
 
-```
-name: John
-age: 30
-```
-
-## Deep Dive
-YamlDotNet offers various helpful features such as serializing and deserializing custom objects, handling comments and multiple documents in a single YAML file, and more. 
-
-To serialize objects into YAML, you can use the `Serializer` class. 
-
-```
-using YamlDotNet.Serialization;
-
-var obj = new
-{
-    Name = "Mary",
-    Age = 25
-};
-
-var serializer = new Serializer();
-string yamlString = serializer.Serialize(obj);
-```
-
-The above code will output the following YAML string:
-
-```
-Name: Mary
-Age: 25
-```
-
-To deserialize a YAML string into an object, you can use the `Deserializer` class. 
-
-```
-var deserializer = new Deserializer();
-var obj = deserializer.Deserialize<YourClassName>(yamlString);
-Console.WriteLine(obj.Name); // output: Mary
-Console.WriteLine(obj.Age); // output: 25
-```
-
-For more information about working with YAML in C#, refer to the YamlDotNet documentation.
-
-## See Also
-- [YamlDotNet on GitHub](https://github.com/aaubry/YamlDotNet)
-- [YAML Specification](https://yaml.org/spec/1.2/spec.html)
+- [YAML spec](https://yaml.org/spec/)
+- [YamlDotNet](https://github.com/aaubry/YamlDotNet)
+- [SnakeYAML](https://bitbucket.org/asomov/snakeyaml/wiki/Home)

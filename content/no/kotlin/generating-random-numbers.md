@@ -10,49 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hva & Hvorfor?
+Generering av tilfeldige tall er en vanlig praksis i programmering for å få tilfeldig data eller gjenskape tilfeldige situasjoner. Dette kan være nyttig for spill, sikkerhetsfunksjoner, eller testing av kode.
 
-Hvorfor generere tilfeldige tall? Det kan være mange grunner til å ønske å generere tilfeldige tall i programmering. Kanskje du skal lage et spill som trenger et tilfeldig tall for å bestemme neste trekk, eller kanskje du skal generere et tilfeldig passord for en bruker. Uansett hva grunnen måtte være, så er det viktig å vite hvordan man kan generere tilfeldige tall i Kotlin.
-
-## Hvordan
-
-Kotlin har en innebygd funksjon for å generere tilfeldige tall, kalt `Random()`. La oss se på et eksempel hvor vi skal generere et tilfeldig tall mellom 1 og 10:
-
+## Hvordan:
 ```Kotlin
-val tilfeldigTall = Random().nextInt(10) + 1
-println(tilfeldigTall)
+//Eksempel på generering av tilfeldig tall innenfor et bestemt område
+val randomNum = (1..10).random()
+print(randomNum) // Output: tilfeldig tall mellom 1 og 10
+
+//Eksempel på generering av tilfeldig tall fra en liste av verdier
+val options = listOf("hund", "katt", "fisk", "fugl")
+val randomChoice = options.random()
+print(randomChoice) // Output: en tilfeldig valgt verdi fra listen
+
+//Eksempel på generering av flere tilfeldige tall
+val randomList = (1..7).map { (1..10).random() }
+print(randomList) // Output: en liste med syv tilfeldige tall mellom 1 og 10
 ```
 
-I dette tilfellet vil `tilfeldigTall` ha en verdi mellom 1 og 10. Vi bruker `nextInt()`-metoden fra `Random`-klassen til å generere et tall mellom 0 og 9, og så legger vi til 1 for å få et tall mellom 1 og 10.
+## Dypdykk:
+Generering av tilfeldige tall har vært en utfordring i dataprogrammering på grunn av dets avhengighet av deterministiske algoritmer. Tidligere, var pseudorandom tallgenerering (PRNG) den vanligste metoden, hvor en algoritme bruker en startverdi for å produsere tall som kan virke tilfeldige, men er egentlig forutsigbare. I Kotlin, er det flere alternativer for tilfeldig tallgenerering, som inkluderer bruk av PRNG, eksterne APIer eller maskinvarebaserte tilfeldig tallgeneratorer.
 
-Du kan også bruke `Random()`-funksjonen til å generere tilfeldige desimaltall. Her er et eksempel hvor vi skal generere et tilfeldig desimaltall mellom 0 og 1:
-
-```Kotlin
-val tilfeldigDesimal = Random().nextDouble()
-println(tilfeldigDesimal)
-```
-
-I dette tilfellet vil `tilfeldigDesimal` ha en verdi mellom 0 og 1. `nextDouble()`-metoden fra `Random`-klassen generer en tilfeldig desimaltall mellom 0 og 1.
-
-Det er også mulig å generere tilfeldige tall innenfor et spesifikt område. Her er et eksempel hvor vi skal generere et tilfeldig tall mellom 100 og 500:
-
-```Kotlin
-val tilfeldigTall = Random().nextInt(401) + 100
-println(tilfeldigTall)
-```
-
-I dette tilfellet bruker vi `nextInt(max)`-metoden og legger på et tall til max-verdien for å definere et område.
-
-## Deep Dive
-
-Å generere tilfeldige tall er ikke alltid like lett som det kan virke. I programmering er det nemlig viktig at resultatene er så tilfeldige som mulig. Heldigvis tar `Random()`-funksjonen i Kotlin hensyn til dette og bruker avanserte algoritmer for å generere tilfeldige tall.
-
-Det er viktig å være klar over at tilfeldige tall ikke er helt tilfeldige. De er basert på tall som kalles "seed" og det er denne seeden som bestemmer hvilke tilfeldige tall som skal genereres. Derfor er det viktig å alltid oppdatere seeden når man genererer tilfeldige tall, så man ikke ender opp med de samme tallene hver gang.
-
-Man kan også bruke `setSeed(seed)`-metoden for å kontrollere seeden og dermed også kontrollere hvilke tilfeldige tall som blir generert.
-
-## Se også
-
-- [Offisiell Kotlin-dokumentasjon om Random](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.random/-random/index.html)
-- [Tutorial: Hvordan generere tilfeldige tall i Kotlin](https://www.geeksforgeeks.org/kotlin-random-class/)
-- [Diskusjon om tilfeldige tall i Kotlin](https://stackoverflow.com/questions/45283797/is-random-in-kotlin-truly-randomized-what-are-the-hazards-of-using-random-insi)
+## Se også:
+- [Offisiell Kotlin dokumentasjon for tilfeldig tallgenerering](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.random/-r-a-n-d-o-m/)
+- [Artikkel om tilfeldig tallgenerering og sikkerhet i Kotlin](https://blog.jetbrains.com/kotlin/2019/04/security-and-randomness/)

@@ -1,7 +1,7 @@
 ---
-title:                "Téléchargement d'une page web"
-html_title:           "Rust: Téléchargement d'une page web"
-simple_title:         "Téléchargement d'une page web"
+title:                "Telechargement d'une page web"
+html_title:           "Rust: Telechargement d'une page web"
+simple_title:         "Telechargement d'une page web"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "HTML and the Web"
@@ -10,50 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Qu'est-ce que le Téléchargement d'une Page Web et Pourquoi les Programmeurs le Font?
 
-Tu veux savoir comment télécharger une page web en Rust ? Eh bien, tu es au bon endroit ! Que tu sois un développeur en herbe ou un expert en Rust, cet article te donnera toutes les informations dont tu as besoin pour réussir.
+Télécharger une page web signifie récupérer le contenu d'un site internet sur votre ordinateur. Les programmeurs le font pour accéder aux informations ou données de la page afin de les utiliser dans leur propre programme.
 
-## Comment faire
-
-Télécharger une page web en Rust est assez simple. Tout d'abord, tu auras besoin d'importer la bibliothèque `reqwest` dans ton projet. Ensuite, tu peux utiliser la fonction `get` pour obtenir le contenu de la page web désirée. Voici un exemple de code :
+## Comment faire:
 
 ```Rust
-extern crate reqwest;
+use reqwest;
 
-use std::io::Read;
+let response = reqwest::get("https://www.example.com")?
+    .text()?;
 
-fn main() {
-    let mut response = reqwest::get("https://example.com").unwrap();
-
-    let mut content = String::new();
-    response.read_to_string(&mut content).unwrap();
-
-    println!("{}", content);
-}
+println!("{}", response);
 ```
+Ce code utilise la bibliothèque externe "reqwest" pour effectuer une requête GET et récupérer le contenu de la page dans une variable nommée "response". Ensuite, le contenu est imprimé à l'aide de la fonction ```println!```.
 
-Et voici le résultat de l'exécution du code :
+## Plongée en Profondeur:
 
-```text
-<!doctype html>
-<html>
-<head>
-    <title>Example Domain</title>
+Dans le passé, les programmeurs utilisaient principalement la bibliothèque "hyper" pour télécharger des pages web en Rust. Cependant, "reqwest" est maintenant la bibliothèque recommandée car elle offre une interface plus simple et plus intuitive.
 
-    <meta charset="utf-8" />
-    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-...
-```
+Il existe également d'autres alternatives telles que "curl" et "wget" en dehors de l'écosystème Rust pour télécharger des pages web.
 
-Comme tu peux le voir, le contenu de la page est stocké dans une chaîne de caractères. Tu peux ensuite le manipuler comme tu le souhaites.
+L'implémentation de "reqwest" utilise le protocole HTTP pour établir une connexion avec le site internet et récupérer le contenu de la page. Il est important de bien comprendre les concepts de base du protocole HTTP pour utiliser efficacement cette bibliothèque.
 
-## Plongée en profondeur
+## Voir Aussi:
 
-Maintenant que tu sais comment télécharger une page web en Rust, tu voudras peut-être découvrir quelques fonctionnalités supplémentaires. La bibliothèque `reqwest` offre de nombreuses options pour personnaliser ta requête, telles que l'ajout d'en-têtes et de paramètres, ainsi que la gestion des erreurs. Tu peux aussi utiliser des méthodes comme `post` ou `put` pour envoyer des données avec ta requête. N'hésite pas à consulter la documentation officielle pour en savoir plus.
-
-## Voir aussi
-
-- [Documentation officielle de la bibliothèque `reqwest`](https://docs.rs/reqwest)
-- [Tutoriel pour débuter avec Rust](https://doc.rust-lang.org/book/ch01-00-getting-started.html)
-- [Exemple de projet utilisant `reqwest`](https://github.com/seanmonstar/reqwest/tree/master/examples)
+Pour plus d'informations sur le téléchargement de pages web en Rust, vous pouvez consulter la documentation officielle de "reqwest" sur [GitHub](https://github.com/seanmonstar/reqwest) ainsi que des exemples de code sur [Rust Cookbook](https://rust-lang-nursery.github.io/rust-cookbook/web/scraping.html).

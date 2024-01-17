@@ -10,34 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co & Dlaczego?
+Zaczynanie nowego projektu w programowaniu to proces polegający na tworzeniu nowej aplikacji lub programu od podstaw. Programiści decydują się na to z różnych powodów, takich jak potrzeba rozwiązania problemu, zaspokojenie potrzeb klienta, rozwój umiejętności lub też szansa na przyszłe zyski.
 
-Nie ma nic bardziej ekscytującego niż rozpoczęcie nowego projektu w PHP! To język programowania, który jest nie tylko prosty w użyciu, ale także potężny i map w dzięki bogatej gamie funkcji i narzędzi. Rozpoczęcie nowego projektu w PHP może otworzyć wiele możliwości i pomóc w realizacji Twoich pomysłów.
-
-## Jak to zrobić
-
-1. Najpierw musisz pobrać najnowszą wersję PHP z oficjalnej strony internetowej i zainstalować ją na swoim komputerze.
-2. Następnie będziesz potrzebować edytora kodu, aby móc pisać i testować swoje skrypty PHP.
-3. Po zainstalowaniu PHP i wybraniu odpowiedniego edytora kodu, możesz zacząć od napisania pierwszego skryptu. Nie martw się, jeśli nie znasz jeszcze języka PHP, jest wiele darmowych i łatwo dostępnych materiałów edukacyjnych, które pomogą Ci nauczyć się go w krótkim czasie.
-4. Gdy już masz swoją aplikację gotową, możesz ją przetestować lokalnie na swoim komputerze, używając serwera wirtualnego lub lokalnej instancji Apache.
-5. Kiedy już jesteś zadowolony z działania swojej aplikacji, możesz ją udostępnić w Internecie, za pomocą hostingu i domeny.
-
+## Jak to zrobić:
+Przykład kodu PHP, który wyświetla prosty napis "Witaj świecie!":
 ```PHP
 <?php
-// przykładowy skrypt wyświetlający "Witaj Świecie!"
-echo "Witaj Świecie!";
+echo "Witaj świecie!";
 ?>
 ```
 
-Output:
-Witaj Świecie!
+Przykład kodu PHP, który wyświetla wartość zmiennej:
+```PHP
+<?php
+$liczba = 5;
+echo "Wartość zmiennej liczbowej to: " . $liczba;
+?>
+```
 
-## Wnikliwe rozeznanie
+## Głębszy zanurzenie:
+Tworzenie nowego projektu w programowaniu jest nieodłączną częścią procesu tworzenia oprogramowania. W przeszłości, kiedy komputery nie były tak powszechne jak dziś, tworzenie projektów od podstaw wymagało sporo czasu i pracy. Jednak dzięki narzędziom i technologiom dostępnym obecnie, proces ten jest znacznie prostszy i szybszy. Alternatywami dla tworzenia nowego projektu są m.in. korzystanie z gotowych szablonów czy też korzystanie z istniejących aplikacji dostępnych w internecie. Ważnym aspektem w tym procesie jest też wybór odpowiedniego języka programowania, w tym przypadku PHP, który jest jednym z najpopularniejszych języków w budowaniu stron internetowych.
 
-Tworzenie nowego projektu w PHP wymaga wybierania odpowiednich narzędzi i technik programowania. Dlatego warto zacząć od zapoznania się z różnymi frameworkami PHP, takimi jak Laravel, Symfony czy CodeIgniter, aby wybrać ten, który najbardziej odpowiada Twoim potrzebom i preferencjom. Istnieje również wiele narzędzi i bibliotek, które mogą pomóc w tworzeniu nowych projektów, jak na przykład Composer, który ułatwia zarządzanie zależnościami. Pamiętaj także o wdrażaniu dobrych praktyk programowania, takich jak testowanie jednostkowe i wdrażanie wersji kontrolowanych dzięki systemowi kontroli wersji, na przykład Git.
-
-## Zobacz również
-
-- [Oficjalna strona PHP](https://www.php.net/)
-- [Darmowy kurs PHP na Codecademy](https://www.codecademy.com/learn/learn-php)
-- [Dokumentacja frameworka Laravel](https://laravel.com/docs/7.x)
+## Zobacz również:
+- [Oficjalna dokumentacja PHP](https://www.php.net/manual/en/index.php)
+- [Nauka PHP w przystępny sposób](https://www.learn-php.org/)
+- [Czy warto zacząć naukę PHP?](https://www.codecademy.com/learn/learn-php)

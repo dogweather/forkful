@@ -10,39 +10,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 为什么
+什麼是創建臨時文件以及為什麼程式設計師會這麼做？
+創建臨時文件是指程式設計師在需要暫時存儲數據時所執行的動作。這樣做的理由是因為臨時文件可以通過模擬真實文件的方式來進行數據的流動和處理，讓程式設計師更加方便地對數據進行操作。
 
-为什么会有人创建临时文件？这可能是因为程序需要暂时存储一些数据，或者需要在程序执行完毕后清理临时数据。临时文件通常在程序执行期间被创建和删除，可以帮助程序更有效地管理数据。
-
-# 如何实现
-
-要在Gleam中创建临时文件，我们可以使用标准库中的`os.tmpdir()`函数来获取系统临时文件夹的路径，再结合`os.tmpname()`来生成一个唯一的临时文件名，最后使用`File.write()`函数来将数据写入临时文件。
-
+如何進行創建臨時文件？
 ```Gleam
-// 获取系统临时文件夹路径
-let temp_dir = os.tmpdir()
+// 在Gleam中，創建臨時文件可以通過使用以下的函數：
+let file = File.tmp()
 
-// 生成唯一的临时文件名
-let temp_name = os.tmpname()
-
-// 将数据写入临时文件
-File.write(temp_dir/temp_name, "这是写入临时文件的数据")
+// 然後，可以對創建的臨時文件進行讀寫操作，例如：
+File.write(file, "Hello! This is a temporary file.")
+let content = File.read(file)
 ```
 
-当程序执行完毕后，我们可以使用`File.delete()`函数来删除临时文件，以确保不占用空间或资源。
+深入探討創建臨時文件
+一個早期的方法是使用Unix/Linux系統命令來創建臨時文件，這種方法通常可以使用tmpfs來加快讀寫速度。另外，一些程式設計語言也內建了創建臨時文件的函數，例如Python的tempfile模組。
 
-```Gleam
-// 删除临时文件
-File.delete(temp_dir/temp_name)
-```
-
-# 深入了解
-
-创建临时文件并不只是简单的生成一个文件名和写入数据，还需要考虑多线程情况和异常处理。在多线程程序中，可能会有多个线程同时访问同一个临时文件，因此需要使用锁来保证数据的正确性。同时，程序在处理临时文件时，也需要处理可能出现的异常情况，如文件损坏或写入失败等。
-
-# 参考链接
-
-- [Gleam标准库文档](https://gleam.run/documentation/)
-- [Gleam中文社区](https://gleam.run/cn/)
-- [os模块文档](https://gleam.run/documentation/stdlib/os/)
-- [file模块文档](https://gleam.run/documentation/stdlib/file/)
+參考資料
+- [Gleam 文件：File Module](https://gleam.run/core/file/)
+- [Unix 命令：mktemp](https://man7.org/linux/man-pages/man1/mktemp.1.html)
+- [Python 語言官方文檔：tempfile 模組](https://docs.python.org/3/library/tempfile.html)

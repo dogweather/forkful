@@ -1,7 +1,7 @@
 ---
-title:                "Att arbeta med json"
-html_title:           "C#: Att arbeta med json"
-simple_title:         "Att arbeta med json"
+title:                "Arbeta med json"
+html_title:           "C#: Arbeta med json"
+simple_title:         "Arbeta med json"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Data Formats and Serialization"
@@ -10,51 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
-Det är vanligt att vilja utbyta data mellan program och system. JSON är en vanlig filformat för att lägga strukturerad data i filer. Så här använder du JSON med C#.
+## Vad & Varför?
 
-## Hur du gör det
-Alla versioner av C# kommer med inbyggda verktyg för att arbeta med JSON. Här är några exempel på hur du kan arbeta med JSON-data i C#.
+Arbetet med JSON (JavaScript Object Notation) innebär att programmera för att hantera data i ett läsbart format som används för att överföra och lagra information. Det är ett populärt sätt för programmerare att hantera data på grund av dess enkelhet och universalitet.
 
-### Skapa en JSON-fil
-Om du vill skapa en JSON-fil i C# kan du använda följande kod:
+## Så här gör du:
+
+Här är ett exempel på hur du kan hantera JSON-data i C#:
+
 ```C#
-var data = new { name = "Anna", age = 25 };
-var json = Newtonsoft.Json.JsonConvert.SerializeObject(data);
-System.IO.File.WriteAllText(@"C:\Users\Anna\Documents\data.json", json);
-```
-Detta skapar en JSON-fil med innehållet 
-```json
-{ 
-    "name": "Anna", 
-    "age": 25 
-}
+string json = "{\"name\":\"Lisa\",\"age\":25}";
+dynamic person = JsonConvert.DeserializeObject(json);
+Console.WriteLine("Namn: " + person.name);
+Console.WriteLine("Ålder: " + person.age);
 ```
 
-### Läsa en JSON-fil
-Om du redan har en JSON-fil och vill läsa in datan i din C#-kod kan du använda följande kod:
-```C#
-var json = System.IO.File.ReadAllText(@"C:\Users\Anna\Documents\data.json");
-var data = Newtonsoft.Json.JsonConvert.DeserializeObject(json);
-Console.WriteLine(data.name); // Skriver ut "Anna"
+Utmatningen av detta kodexempel blir:
+
 ```
-
-### Konvertera mellan JSON och C#-objekt
-JSON-filer kan enkelt konverteras till C#-objekt och vice versa. I exemplet nedan skapar vi ett C#-objekt från JSON-datan och sedan konverterar tillbaka till en JSON-sträng:
-```C#
-var json = System.IO.File.ReadAllText(@"C:\Users\Anna\Documents\data.json");
-var data = Newtonsoft.Json.JsonConvert.DeserializeObject(json);
-Console.WriteLine(data.name); // Skriver ut "Anna"
-
-// Konverterar C#-objektet tillbaka till en JSON-sträng
-var newJson = Newtonsoft.Json.JsonConvert.SerializeObject(data);
-Console.WriteLine(newJson); // Skriver ut { "name": "Anna", "age": 25 }
+Namn: Lisa
+Ålder: 25
 ```
+Notera att vi använder JsonConvert-klassen för att deserialisera JSON-datan till en dynamisk variabel, vilket gör det enkelt att komma åt datan med hjälp av dot notation.
 
-## Deep Dive
-JSON är en lättviktig och läsbar filformat som ofta används för att överföra data mellan olika system. C# har många inbyggda funktioner för att arbeta med JSON, inklusive deserialisering och serialisering av objekt. Det finns också flera externa bibliotek för mer avancerad hantering av JSON-filer.
+## Djupdykning:
 
-## Se även
-- [Officiell dokumentation för System.Text.Json Namespace](https://docs.microsoft.com/en-us/dotnet/api/system.text.json?view=netcore-3.1)
-- [JSON i .NET: En tutorial](https://www.newtonsoft.com/json/help/html/Introduction.htm)
-- [Detaljerad information om JSON och C#](https://www.c-sharpcorner.com/UploadFile/dhananjaycoder/json-serialization-and-deserialization-in-C-Sharp/)
+JSON har funnits sedan 2001 och har blivit en populär standard för dataöverföring. Det finns också andra format som används för samma ändamål som t.ex. XML, men JSON har blivit föredraget av många på grund av dess enkelhet och läsbarhet.
+
+Det finns flera bibliotek för att arbeta med JSON i C#, inklusive Json.NET, som är det mest populära alternativet på grund av dess snabbhet och funktioner för att hantera olika datatyper.
+
+## Se även:
+
+- [Json.NET](https://www.newtonsoft.com/json)
+- [JSON.org](https://www.json.org/json-en.html)

@@ -1,7 +1,7 @@
 ---
-title:                "Lesen von Befehlszeilenargumenten"
-html_title:           "Python: Lesen von Befehlszeilenargumenten"
-simple_title:         "Lesen von Befehlszeilenargumenten"
+title:                "Das Lesen von Befehlszeilenargumenten."
+html_title:           "Python: Das Lesen von Befehlszeilenargumenten."
+simple_title:         "Das Lesen von Befehlszeilenargumenten."
 programming_language: "Python"
 category:             "Python"
 tag:                  "Files and I/O"
@@ -10,59 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was & Warum?
 
-Das Lesen von Befehlszeilenargumenten ist eine nützliche Fähigkeit, die es erlaubt, Programme flexibler zu gestalten und auf verschiedene Eingaben zu reagieren. Wenn du Python lernst oder bereits ein erfahrener Python-Entwickler bist, ist es wichtig, auch die Arbeit mit Befehlszeilenparametern zu beherrschen.
+Das Lesen von Befehlszeilenargumenten ist eine wichtige Fähigkeit für Programmierer. Es ermöglicht uns, Eingaben vom Benutzer zu erhalten und diese in unserer Python-Anwendung zu verarbeiten. Dadurch können wir unsere Programme flexibler gestalten und auf verschiedene Situationen reagieren.
 
-## Wie es geht
+## So geht's:
 
-Die Verarbeitung von Befehlszeilenargumenten in Python ist einfach und kann mit nur wenigen Zeilen Code erledigt werden. Zuerst importiere das `sys` Modul:
-
-```Python
-import sys
-```
-
-Anschließend greifen wir auf die `argv` Variable des `sys` Moduls zu, die eine Liste mit allen Befehlszeilenargumenten enthält. Das erste Argument in der Liste ist immer der Name des Programms selbst. Um die anderen Argumente auszugeben, können wir eine `for` Schleife verwenden:
-
-```Python
-for arg in sys.argv[1:]:
-    print(arg)
-```
-
-In diesem Beispiel verwenden wir die Slice-Notation `sys.argv[1:]`, um das erste Argument - also den Programmnamen - zu überspringen und nur die restlichen Argumente auszugeben.
-
-Probieren wir es aus! Hier ist ein Beispiel, bei dem wir eine Datei als Argument übergeben und deren Textinhalt ausgeben:
+Die folgenden Beispiele zeigen, wie man Befehlszeilenargumente in Python lesen kann:
 
 ```Python
 import sys
+# liest das erste Argument, welches nach dem Dateinamen eingegeben wird
+arg1 = sys.argv[1] 
+print("Das erste Argument ist:", arg1)
 
-if len(sys.argv) != 2:  # Überprüft, ob genau ein Argument übergeben wurde
-    print("Bitte geben Sie eine Datei als Argument an!")
-    exit()
-
-with open(sys.argv[1], "r") as f:
-    for line in f:
-        print(line)
+# liest eine Liste aller Argumente
+args = sys.argv[1:] 
+print("Alle Argumente:", args)
 ```
 
-Wenn wir dieses Skript mit dem Argument `test.txt` aufrufen, wird der Inhalt der Datei `test.txt` ausgegeben.
+Beispielaufruf in der Kommandozeile: `python my_program.py argument1 argument2`
 
-```Python
-python read_args.py test.txt
-```
+Ausgabe:
 
 ```
-Dies ist eine Beispieltextdatei.
-Hier befindet sich noch mehr Text.
-Und noch ein letzter Satz.
+Das erste Argument ist: argument1
+Alle Argumente: ['argument1', 'argument2']
 ```
 
-## Tiefer Einblick
+## Tiefere Einblicke:
 
-Mit der `getopt` Bibliothek können auch argumentierte Optionen verarbeitet werden. Dies ist besonders nützlich, wenn man komplexe Programme schreibt, die mehrere Optionen unterstützen sollen. Ein weiteres interessantes Feature ist die Möglichkeit, Argumente mit dem `argparse` Modul zu parsen und direkt als Argumente für Funktionen zu nutzen.
+Das Lesen von Befehlszeilenargumenten ist ein grundlegender Bestandteil der Unix-Philosophie "Kleine Werkzeuge schnell miteinander kombinieren". Es ermöglicht eine einfache Kommunikation zwischen verschiedenen Programmen und stellt sicher, dass Programme unabhängig voneinander funktionieren können.
 
-## Siehe auch
+Alternativ zum Lesen von Befehlszeilenargumenten können auch Umgebungsvariablen oder Konfigurationsdateien genutzt werden, um Eingaben vom Benutzer zu erhalten. Diese Methoden bieten eine größere Flexibilität, erfordern jedoch auch eine höhere Komplexität bei der Implementierung.
 
-- [Python sys Modul Dokumentation](https://docs.python.org/3/library/sys.html)
-- [Python getopt Modul Dokumentation](https://docs.python.org/3/library/getopt.html)
-- [Python argparse Modul Dokumentation](https://docs.python.org/3/library/argparse.html)
+Um Befehlszeilenargumente in Python zu lesen, wird die `sys` Bibliothek genutzt, die Funktionen und Variablen für die Interaktion mit dem Python-Interpreter bereitstellt.
+
+## Siehe auch:
+
+- [Python-Dokumentation zu sys.argv](https://docs.python.org/3/library/sys.html#sys.argv)
+- [Unix Philosophy](https://en.wikipedia.org/wiki/Unix_philosophy)

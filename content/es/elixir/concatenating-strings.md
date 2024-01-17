@@ -10,34 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
-Si estás familiarizado con la programación, probablemente hayas utilizado la concatenación de cadenas en algún momento. Esta técnica te permite unir varias cadenas de texto para formar una sola, lo que puede ser útil en muchas situaciones, como la creación de mensajes personalizados o la manipulación de datos.
+## ¿Qué y por qué?
+La concatenación de cadenas es simplemente unir dos o más cadenas de texto en una sola cadena más larga. Esto es útil para combinar diferentes piezas de información para formar un mensaje más completo. Los programadores a menudo lo hacen para crear mensajes claros y concisos en sus programas.
 
-## Cómo hacerlo
-Para concatenar cadenas en Elixir, podemos utilizar el operador `<>`. Veamos un ejemplo sencillo:
-
-```Elixir
-"Greetings" <> " from" <> " Elixir!" # Output: Greetings from Elixir!
-```
-
-En el código anterior, utilizamos el operador `<>` para unir tres cadenas de texto y formar una sola. También es posible concatenar variables, como en el siguiente ejemplo:
+## Cómo:
+Las cadenas se pueden concatenar en Elixir utilizando el operador `<>`. Por ejemplo, si queremos crear una cadena que salude a alguien con su nombre, podríamos hacer lo siguiente:
 
 ```Elixir
-name = "John"
-"Greetings " <> name <> "!" # Output: Greetings John!
+nombre = "Carlos"
+saludo = "¡Hola " <> nombre <> "!"
+Salida: ¡Hola Carlos!
 ```
 
-Además del operador `<>`, también podemos utilizar la función `String.concat/2` que toma dos parámetros y los concatena en una cadena. Veamos otro ejemplo:
+También es posible concatenar cadenas con variables de otros tipos de datos, como enteros o booleanos. Elixir los convertirá automáticamente a cadenas y los unirá.
 
 ```Elixir
-String.concat(["Welcome", " to", " Elixir!"]) # Output: Welcome to Elixir!
+nombre = "María"
+edad = 25
+presentacion = "¡Hola, soy " <> nombre <> " y tengo " <> edad <> " años!"
+Salida: ¡Hola, soy María y tengo 25 años!
 ```
 
-## Profundizando
-En Elixir, las cadenas de texto son representadas como listas de caracteres, lo que significa que el operador `<>` y la función `String.concat/2` en realidad están concatenando listas. Esta es una de las razones por las que Elixir es tan eficiente en la manipulación de cadenas.
+## Profundizando:
+La concatenación de cadenas ha sido una técnica común en la programación desde los primeros días de las computadoras. Sin embargo, en algunos lenguajes de programación heredados, como C, puede ser un proceso engorroso que requiere la asignación de memoria para la cadena resultante y la copia de los contenidos de las cadenas individuales. Afortunadamente, Elixir maneja la concatenación de manera más eficiente detrás de escena, lo que significa que puedes usarla sin preocupaciones.
 
-También es importante tener en cuenta que cada vez que concatenamos una cadena en Elixir, en realidad estamos creando una nueva cadena en memoria. Esto puede ser un problema si estamos trabajando con grandes cantidades de datos, ya que puede afectar el rendimiento de nuestra aplicación. Una forma de evitar esto es utilizando la función `<<>>` que permite unir cadenas sin crear una nueva cadena cada vez.
+Si bien la concatenación es la forma más común de unir cadenas, también existen otras técnicas, como usar `String.join/2` para combinar elementos de una lista en una cadena separada por un delimitador. Sin embargo, en la mayoría de los casos, la concatenación sigue siendo la forma más simple y efectiva de unir cadenas en Elixir.
 
-## Ver también
-- ["Elixir Strings" por Elixirschool](https://elixirschool.com/es/lessons/basics/strings/)
-- ["String API" en la documentación de Elixir](https://hexdocs.pm/elixir/String.html)
+## Ver también:
+- [Elixir docs](https://hexdocs.pm/elixir/String.html#concatenation/2)
+- [Tutorial en español de Elixir](https://elixir-lang.org/getting-started/introduction.html#string-concatenation)

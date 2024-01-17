@@ -10,36 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##Perché
+## Che cos'è e perché scaricare una pagina web?
 
-Se sei interessato ad estrarre informazioni da una pagina web o ad utilizzare i suoi contenuti in un tuo progetto, allora scaricare una pagina web utilizzando Haskell può essere la soluzione che stai cercando. Inoltre, imparare a utilizzare Haskell per il web può arricchire le tue competenze di programmazione e aprirti ad un nuovo mondo di possibilità.
+Scaricare una pagina web significa ottenere il codice sorgente di una pagina web da un server tramite una connessione Internet. I programmatori spesso scaricano pagine web per analizzare il codice o estrarre informazioni utili.
 
-##Come Fare
+## Come fare:
 
-Per prima cosa, assicurati di aver installato il compilatore di Haskell sul tuo computer. Dopo aver fatto ciò, segui questi semplici passaggi per scaricare una pagina web utilizzando Haskell.
+```Haskell 
+import Network.HTTP.Simple
+import qualified Data.ByteString.Lazy as L
+import Network.HTTP.Client
 
-```
-Haskell
-import Network.HTTP.Simple -- Importa il modulo per la gestione di richieste HTTP
-
--- Esegue una richiesta GET all'URL specificato
-pagina <- httpGet "https://www.example.com"
-
--- Legge il contenuto della pagina e lo converte in una stringa
-contenuto <- getResponseBody pagina
-
--- Stampa il contenuto della pagina
-print contenuto
+main :: IO ()
+main = do
+  request <- parseRequest "https://www.example.com"
+  response <- httpLbs request
+  print $ getResponseStatusCode response
+  print $ getResponseHeader "Content-Type" response
+  L.putStr $ getResponseBody response
 ```
 
-Questo codice esegue una richiesta HTTP all'URL specificato e legge il contenuto della pagina in formato di stringa. Utilizzando il modulo `Network.HTTP.Simple`, non è necessario preoccuparsi di gestire le connessioni HTTP, poiché il modulo si occupa di questo per te. Inoltre, puoi utilizzare anche altri metodi di richiesta, come POST o PUT, a seconda delle tue esigenze.
+Esempio di output:
 
-##Deep Dive
+```Haskell 
+200
+Just "text/html; charset=utf-8"
+<!DOCTYPE html>
+<html>
+<head>
+<title>Example Domain</title>
+...
+```
 
-Oltre alla semplice richiesta di una pagina web, Haskell consente di effettuare operazioni più avanzate, come il parsing del contenuto della pagina per estrarre solo le informazioni di interesse. Ci sono molti pacchetti disponibili per il parsing di HTML, come `tagsoup` o `html-conduit`, che possono semplificare notevolmente questa operazione. Inoltre, puoi utilizzare librerie di scraping web come `scrape` o `scraper` per facilitare ulteriormente il processo di estrazione di dati da una pagina web.
+## Approfondiamo:
 
-##Vedi Anche
+Scaricare pagine web è un'operazione comune nella programmazione moderna. Ci sono diverse librerie disponibili in Haskell per farlo, come ad esempio `http-client` e `http-conduit`. Inoltre, è possibile utilizzare anche strumenti come `curl` e `wget` da riga di comando.
 
-- [Haskell for Beginners](https://www.haskell.org/learn/)
-- [Haskell Web Programming](https://haskellwebprogramming.com/)
-- [Scraper Package](https://hackage.haskell.org/package/scraper)
+Un aspetto importante da tenere in considerazione quando si scaricano pagine web è il trattamento dei dati sensibili, come ad esempio password e token di autenticazione. E' importante utilizzare protocolli sicuri come HTTPS e gestire correttamente la sicurezza dei dati.
+
+## Vedi anche:
+
+- [Hackage - HTTP Client](https://hackage.haskell.org/package/http-client)
+- [Hackage - HTTP Conduit](https://hackage.haskell.org/package/http-conduit)
+- [CURL](https://curl.haxx.se/)
+- [Wget](https://www.gnu.org/software/wget/)

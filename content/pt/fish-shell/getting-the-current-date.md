@@ -10,42 +10,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que?
-
-Quando estamos programando em linguagens de script, muitas vezes precisamos obter informações sobre a data atual. Isso pode ser necessário para criar arquivos com nomes exclusivos, registrar timestamps em registros de log ou até mesmo como parte de uma mensagem de saída em nosso script. Felizmente, o Fish Shell facilita a obtenção da data atual com alguns comandos simples.
+## O que é e por que fazer:
+Pegar a data atual é um recurso muito útil para programadores, pois permite que eles obtenham a data e a hora atual em que o código está sendo executado. Isso pode ser usado para registrar eventos, criar nomes de arquivo com marcação de data e hora, ou para fins de depuração.
 
 ## Como fazer:
+Para obter a data atual usando o Fish Shell, podemos usar o comando `date`. Por exemplo, para imprimir a data atual no formato ISO 8601, podemos usar o seguinte código:
 
-Para obter a data atual no Fish Shell, podemos usar o comando `date` seguido de uma string de formatação. Por exemplo, para obter a data no formato "dia/mês/ano" podemos usar o seguinte comando:
-
-```Fish Shell
-date +%d/%m/%Y
+```
+Fish Shell  date +%Y-%m-%d
 ```
 
-Isso irá retornar a data atual no seguinte formato:
-
-```Shell
-11/10/2021
-```
-
-Também podemos obter informações adicionais, como o dia da semana, a hora atual e até mesmo o fuso horário, usando códigos de formatação específicos. Por exemplo, para obter o dia da semana e a hora atual com o fuso horário, podemos usar o seguinte comando:
-
-```Fish Shell
-date +"%A às %H:%M %Z"
-```
-
-Isso irá retornar algo parecido com:
-
-```Shell
-Segunda-feira às 18:30 CEST
-```
+Isso irá imprimir a data atual no formato "ano-mês-dia", por exemplo, `2020-08-15`. Podemos também incluir a hora atual adicionando `%H:%M:%S` ao comando, resultando em `2020-08-15 12:30:00`.
 
 ## Mergulho profundo:
+Em versões anteriores do Fish Shell, o recurso de pegar a data atual era limitado e incentivava o uso de outros comandos, como `date` ou `date -u`. No entanto, na versão mais recente do Fish Shell, esse recurso foi aprimorado, permitindo que os usuários obtenham facilmente a data e a hora atual sem a necessidade de comandos extras.
 
-O comando `date` é na verdade um utilitário Unix que é amplamente suportado por diferentes sistemas operacionais e shells. Isso significa que podemos usar a mesma sintaxe e códigos de formatação em outros shells, como o Bash ou Zsh. Além disso, também podemos usar o comando `man date` para obter mais informações sobre todas as opções de formatação disponíveis.
+Existem também alternativas para obter a data e a hora atual, como usar a biblioteca `python-datetime` ou o módulo `moment.js` no JavaScript. No entanto, para simplificar e ter um código mais leve, a utilização do comando `date` no Fish Shell é a opção mais recomendada.
 
 ## Veja também:
-
-- [Documentação oficial do Fish Shell](https://fishshell.com/docs/current/)
-- [Documentação do comando Unix "date"](https://www.unix.com/man-page/posix/1p/date/)
-- [Tutorial do Fish Shell no DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-use-the-fish-shell-in-linux-and-os-x)
+- Documentação oficial do Fish Shell para o comando date: https://fishshell.com/docs/current/cmds/date.html
+- Referência de formato de data e hora ISO 8601: https://www.iso.org/iso-8601-date-and-time-format.html

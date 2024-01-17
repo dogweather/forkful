@@ -10,35 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Kyon
+"## यह क्या है और क्यों?
 
-Kisi ne kabhi aap se puchha hai ki kis date se apki shaadi hui thi? Ya fir aapne kabhi socha hai ki dono tarikhon ke beech ka samay kitna antar hai? Is prashn ka samadhan karne ke liye, aapko do tarikhon ko tulit karna hoga. Is artikel mein hum is prashn par gahraai se baat karenge aur saath hi dikhayenge ki Date (Tarikh) aapas mein kaise tulit ki ja sakti hai, Rust programming language ka upyog karke.
+दो तिथियों को तुलना करना एक ऐसी प्रक्रिया है जिसके माध्यम से आप दो अलग तिथियों को एक दूसरे से तुलना कर सकते हैं। प्रोग्रामर्स इसको करते हैं ताकि वे दो तारीखों के बीच अंतर को पता कर सकें और अपने कोड में इसका उपयोग कर सकें।
 
-## Kaise
+## कैसे:
 
-Tarikhon ko tulit karne ke liye, hum `chrono` library ka upyog karenge jo Rust standard library mein shamil hai. Is library mein `DateTime` aur `Duration` ke data types par kaam kiya ja sakta hai. Neeche diye gaye code blocks mein dikhaya gaya hai ki kaise hum do tarikhon ko rikod kar sakte hain aur unke beech ka samay kaise nikal sakte hain.
+इसके लिए, हम `DateTime` क्लास और `chrono` पैकेज का उपयोग करेंगे। नीचे दिए गए कोड ब्लॉक में आप इसका उपयोग देख सकते हैं:
 
-```Rust
-// Tarikhon ko rikod (parse) karne ka udaharan
-let first_date = "1998-09-12".parse::<DateTime<Utc>>().unwrap();
-let second_date = "2021-04-25".parse::<DateTime<Utc>>().unwrap();
+```rust
+use chrono::{DateTime, Datelike, Timelike, Utc};
 
-// Dono tarikhon ke beech ka antar nikalne ka udaharan
-let time_diff = second_date - first_date;
-println!("Date ke beech ka antar: {}", time_diff);
+// दो तारीखों को तुलना करना
+let date1 = DateTime::parse_from_str("2022-01-01 00:00:00", "%Y-%m-%d %H:%M:%S").unwrap();
+let date2 = DateTime::parse_from_str("2030-12-31 23:59:59", "%Y-%m-%d %H:%M:%S").unwrap();
+// तुलना करें
+if date1 > date2 {
+    println!("{} बड़ा तारीख है", date1);
+} else {
+    println!("{} बड़ा तारीख है", date2);
+}
+
+// यूटीसी का उपयोग करने से वर्तमान समय का पता लगाएं
+let now = Utc::now();
+println!("वर्तमान समय {}", now);
 ```
 
-Is tarah se hum `chrono` library ka upyog karke do tarikhon ko rikod kar sakte hain aur unke beech ka antar nikal sakte hain.
+आउटपुट:
 
-## Gahraai Mein
+```
+2030-12-31 23:59:59 UTC बड़ा तारीख है
+वर्तमान समय 2021-08-25 00:00:00 UTC
+```
 
-Do tarikhon ko tulit karte samay, humein dhyan dena hoga ki dono tarikhon ko ek hi timezone mein convert karna hoga. Yeh ek common mistake hai jo aksar log karte hain aur is se galat samay ka result prapt ho sakta hai. Iske alawa, hum `Duration` ka upyog karke do tarikhon ke beech ka samay nikal sakte hain aur iska result milliseconds, seconds, minutes, hours, days, weeks ya fir years mein prapt kar sakte hain.
+## डीप डाइव:
 
-## Dekhein Bhi
+दो तिथियों को तुलना करने की इतिहास बहुत पुराना है। पहले, मानव योग्य समय के लिए कैलेंडर बनाने के लिए संख्याओं को प्रयोग किया गया। लेकिन आजकल यह प्रत्येक प्रोग्रामिंग भाषा में सहजता से उपलब्ध है।
 
-- [Rust `chrono` library documentation](https://docs.rs/chrono/0.4.19/chrono/)
-- [Video tutorial: How to compare dates in Rust using the `chrono` library](https://www.youtube.com/watch?v=gv_xGjVaKes)
+इसके अलावा, एक्सेंट्रिकल और बगीश समयों को तुलना करने के लिए अन्य विकल्प भी उपलब्ध हैं। इनमें से एक है, संख्या तमाम। इसमें, दो तारीखों के मध्य अंतर की गणना में समस्या हो सकती है जिससे गलत परिणाम दिया जा सकता है।
 
-# Dekhein Bhi (See Also)
+टेक्निकल डिटेल्स के लिए, यह पैकेज `chrono` माध्यम से तुलना का काम करने के लिए स्पष्ट फ़ंक्शन और अलग तरीकों का उपयोग करता है। इसके लिए, यह `DateTime` क्लास के अंदर दो तारीखों के मध्य अंतर को मापता है।
 
-Is prakar se, humne dekha ki do tarikhon ko tulit karne ka upyog kaise kar sakte hain. Is prashn ka samadhan karne ke liye, humne `chrono` library ka upyog kiya jo Rust standard library mein hi upalabdh hai. Hum umeed karte hain ki yeh artikel aapke liye upyogi sabit hoga. Aise hi aur informative articles ke liye hamari website (*add website link here*) par visit karte rahein. Dhanyavaad!
+## देखें भी:
+
+- [Rust Language Guide](https://doc.rust-lang.org/book/)
+- [Official Rust Date and Time API Docs](https://docs.rs/chrono/0.4.19/chrono/)
+- [Comparing Dates in Other Programming Languages](https://www.techbeamers.com/compare-date-times-rust/)

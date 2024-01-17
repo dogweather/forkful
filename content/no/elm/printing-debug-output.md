@@ -1,7 +1,7 @@
 ---
-title:                "Utskrift av feilsøkingsutdata"
-html_title:           "Elm: Utskrift av feilsøkingsutdata"
-simple_title:         "Utskrift av feilsøkingsutdata"
+title:                "Utskrift av feilsøkingsresultater"
+html_title:           "Elm: Utskrift av feilsøkingsresultater"
+simple_title:         "Utskrift av feilsøkingsresultater"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Testing and Debugging"
@@ -10,35 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hva & Hvorfor?
+Printing av debug-utdata er en vanlig praksis blant programmerere for å hjelpe med å feilsøke og finne feil i koden deres. Dette kan være nyttig når man jobber med komplekse programmer eller når man har problemer med å identifisere og løse bugs.
 
-Hvorfor skulle man bry seg om å skrive ut feilsøkingsinformasjon når man koder? Vel, det kan virke tidkrevende og unødvendig, men faktum er at det kan være en uvurderlig ressurs når du finner bugs og feil i koden din. Det kan hjelpe deg med å identifisere hvor problemet oppstår, og dermed gjøre debugging og troubleshooting mye enklere.
-
-## Slik gjør du det
-
-For å skrive ut feilsøkingsinformasjon i Elm, kan du bruke funksjonen `Debug.log` som tar inn en streng som beskriver informasjonen du ønsker å skrive ut, og en variabel som inneholder den aktuelle informasjonen. La oss si at vi har en funksjon som beregner summen av to tall:
-
-```Elm
-add x y =
-    Debug.log "Funksjonen add ble kalt" (x + y)
-```
-
-I dette eksempelet vil vi skrive ut en beskjed som forteller oss at funksjonen `add` ble kalt, og deretter skrive ut summen av variablene `x` og `y`. Når du kjører koden, vil følgende vises i konsollen:
+## Hvordan:
+For å skrive ut debug-utdata i Elm, bruker man funksjonen `Debug.log` og gir den en streng som beskriver den utdataen man vil skrive ut, og en verdi som skal skrives ut.
 
 ```
-Funksjonen add ble kalt: 9
+Elm.funksjon |> Debug.log "Beskrivelse av utdata" |> Debug.toString
 ```
 
-Dette gjør det enkelt å bekrefte at funksjonen ble kalt med de riktige verdiene, og at summen ble beregnet riktig.
+Eksempel på utdata:
 
-## Dykke dypere
+```
+Beskrivelse av utdata 55
+```
 
-I tillegg til `Debug.log` finnes det også andre funksjoner du kan bruke for å skrive ut feilsøkingsinformasjon, som for eksempel `Debug.logMany` som lar deg skrive ut flere variabler og `Debug.todo` som lar deg markere steder i koden som ennå ikke er implementert.
+## Dypdykk:
+Denne praksisen med å skrive ut debug-utdata stammer fra den første tiden med programmering, da det var den eneste måten å inspisere og forstå programmet på. I dag finnes det mer avanserte verktøy og metoder for å feilsøke, som gjør denne praksisen mindre vanlig. En annen mulighet i Elm er å bruke `Debugger`-modulen til å inspisere programmet og se på alle variablene i sanntid.
 
-Det er også verdt å merke seg at `Debug`-modulen er utformet slik at funksjonene ikke vil bli kjørt i produksjonsmiljøet, så du trenger ikke bekymre deg for at feilsøkingsinformasjonen vil påvirke ytelsen til applikasjonen din.
-
-## Se også
-
-- [Debugging in Elm](https://guide.elm-lang.org/debugging/)
-- [The Power of Elm's Debug Module](https://medium.com/javascript-inside/the-power-of-elms-debug-module-37bb47404ac8)
-- [Debugging in Elm with Chrome DevTools](https://www.brianthicks.com/post/2016/10/28/debugging-elm-with-chrome-devtools/)
+## Se også:
+- [Elm sin offisielle dokumentasjon om debug-utdata](https://package.elm-lang.org/packages/elm/core/latest/Debug)
+- [En guide til debugging i Elm](https://medium.com/@z5h/understanding-debugging-in-elm-26ee168ab265)

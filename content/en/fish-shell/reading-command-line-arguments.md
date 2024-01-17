@@ -10,54 +10,66 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-So, you may have heard about Fish Shell and its capabilities for speeding up your command line workflow. But why would you specifically want to learn about reading command line arguments? Well, it all comes down to efficiency and convenience. By understanding how to use command line arguments in Fish Shell, you can save yourself time and effort by automating repetitive tasks and creating more streamlined workflows.
+Reading command line arguments is the process of retrieving user-provided input when using a command line interface. This input can be used to customize the behavior of a program or script. Programmers often use this technique to create more versatile and user-friendly programs that can be modified on-the-go without needing to edit the code.
 
-## How To
+## How to:
 
-Okay, let's dive into the nitty-gritty of how to read command line arguments in Fish Shell. First, we need to understand the basic structure of a command line argument. It consists of two parts: the flag, which is preceded by a dash ("-"), and the value, which follows the flag. For example, in the command `ls -a`, the flag is "a" and there is no value.
-
-To read command line arguments in Fish Shell, we can use the `fish_opt` function. This function takes in two arguments: the flag and the default value. Here's an example:
+Coding Example:
 
 ```
 Fish Shell
-for arg in (fish_opt -f "") # -f is the flag, "" is the default value
+
+# This command will display the arguments passed by the user when executing the script.
+echo $argv
+```
+
+Sample Output:
+
+```
+Fish Shell
+
+$ fish shell_example.fish arg1 arg2 arg3
+arg1 arg2 arg3
+```
+
+If no arguments are provided, the output will be blank. Keep in mind that the `$argv` variable will only contain the arguments passed after the script name, not the script name itself.
+
+Another useful command to retrieve individual arguments is `$argv[1]`, which will display the first argument given by the user. To display all arguments one by one, you can use a for loop:
+
+```
+Fish Shell
+
+# This loop will display each argument on a separate line.
+for arg in $argv
     echo $arg
 end
 ```
-This code will loop through all the arguments passed in via command line and print them out. However, it will only print out arguments that have the "f" flag. If there are no arguments with the "f" flag, the default value ("") will be used instead.
 
-To use this in a practical scenario, let's say we want to create a script that will list all files with a certain extension (e.g. ".txt") in the current directory. We can use the `ls` command with the `-f` flag and the extension as the value. Here's the code:
+Sample Output:
 
 ```
 Fish Shell
-set extension (fish_opt -f .txt)
-ls *$extension
-```
 
-By using `fish_opt`, we can specify a default value (in this case, ".txt") in case the user doesn't provide a value when running the script. This saves us from having to manually type the extension every time we want to run the script.
+$ fish shell_example.fish arg1 arg2 arg3
+arg1
+arg2
+arg3
+
+```
 
 ## Deep Dive
 
-Now that we have a basic understanding of how to read command line arguments, let's take a deeper look at some other features and functions that can come in handy.
+Command line arguments have been an integral part of shell programming since the earliest days of Unix. They allow programs to be tailored to specific needs without the need for hardcoded values.
 
-- `count $argv`: This function returns the number of arguments passed in on the command line.
-- `commandline -i`: This command prints out all the arguments passed in, including flags and their values.
-- `switch case`: By using a `switch` statement, we can specify different actions to take depending on the flag provided in the command line arguments. Here's an example:
+While the `$argv` variable is specific to the Fish shell, other shells have their own equivalent variables. For example, in Bash, the command line arguments can be accessed through the `$@` variable, while in Zsh, they can be accessed through the `$args` array.
 
-```
-Fish Shell
-switch $arg in
-    case -l; echo "Listing files..."
-    case -h; echo "Showing help menu..."
-end
-```
-
-By combining these functions and tools, we can create powerful scripts that utilize command line arguments to their full potential.
+There are also alternative ways to parse command line arguments, such as using the `getopt` system utility in conjunction with a `while` loop, or using a scripting language like Python or Ruby.
 
 ## See Also
 
-- [Fish Shell documentation on command line arguments](https://fishshell.com/docs/current/tutorial.html#command-line-arguments)
-- [Bash Shell tutorial on command line arguments](https://www.tutorialkart.com/bash-shell-scripting/bash-command-line-arguments/)
-- [Command Line Arguments in Python](https://www.geeksforgeeks.org/command-line-arguments-in-python/)
+- [Fish Shell's Official Documentation on Command Substitutions](https://fishshell.com/docs/current/cmdsubst.html)
+- [Bash's Official Documentation on Command Line Arguments](https://www.gnu.org/software/bash/manual/html_node/Command-Line-Arguments.html)
+- [Zsh's Official Documentation on Command Substitutions](https://zsh.sourceforge.io/Doc/Release/Expansion.html#Command-Substitution)
+- [Alternative methods for parsing command line arguments](https://stackoverflow.com/questions/192249/how-do-i-parse-command-line-arguments-in-bash)

@@ -10,36 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hva & Hvorfor?
+Å sende en HTTP-forespørsel med grunnleggende autentisering betyr å legge til brukernavn og passord i en forespørsel for at serveren skal kunne verifisere identiteten til forespørselen. Dette er vanligvis gjort for å sikre at bare autoriserte brukere kan få tilgang til en ressurs eller utføre en handling.
 
-Hvorfor ville noen sende en HTTP-forespørsel med grunnleggende autentisering? Det kan være nyttig for å legge til et ekstra lag av sikkerhet til en nettapplikasjon. Basic authentication krever at brukeren gir et brukernavn og et passord for å få tilgang til en ressurs, og er derfor en enkel måte å beskytte sensitive data på.
-
-## Hvordan
-
-Å sende en HTTP-forespørsel med grunnleggende autentisering i Elixir er enkelt. Først må vi importere modulen for å sende HTTP-forespørsler, og deretter legge til autentiseringsinformasjon i headeren til forespørselen.
-
-```elixir
-# Importer HTTP-modulet
-import HTTPoison
-
-# Definer autentiseringsinformasjon
-auth = {:basic, "brukernavn", "passord"}
-
-# Send en GET-forespørsel med basic authentication
-{:ok, response} = HTTPoison.get("https://eksmpel.com/api/ressurs", [auth: auth])
-
-# Skriv ut statuskoden for responsen
-IO.puts(response.status_code)
+# Hvordan:
+Eksempel 1:
+```Elixir
+response = HTTPotion.get("https://example.com/api/users", auth: {"username", "password"})
 ```
+Output:
+Et svar som inneholder informasjon om brukerne som ble hentet fra API-en.
 
-Dette vil sende en HTTP-forespørsel til "https://eksmpel.com/api/ressurs" og autentisere med brukernavn og passord som er gitt i "auth" variabelen. Hvis autentiseringen er vellykket, vil statuskoden til responsen være 200, ellers vil det være en annen feilkode.
+Eksempel 2:
+```Elixir
+response = HTTPotion.get("https://example.com/api/posts", headers: ["authorization": Basic.encode64("username:password")])
+```
+Output:
+Et svar som inneholder informasjon om innlegg som ble hentet fra API-en.
 
-## Dypdykk
+# Dypdykk:
+Grunnleggende autentisering er en enkel form for autentisering som har blitt brukt i lang tid på internett. Det er imidlertid en sikkerhetsrisiko, da brukernavn og passord kan bli avlyttet og stjålet. En alternativ metode for autentisering er OAuth, som bruker tokens i stedet for brukernavn og passord. Implementeringen av grunnleggende autentisering involverer å legge til en `Authorization` header med brukernavn og passord som er kodet med Base64.
 
-HTTP-forespørsler med grunnleggende autentisering bruker en enkel autentiseringsprotokoll som krever brukernavn og passord som sendes i klartekst. Dette gjør det sårbart for avlytting, så det anbefales å bruke HTTPS i stedet for HTTP når du bruker basic authentication. En annen begrensning er at basic authentication ikke støtter utlogging, så brukeren må sende utloggingsforespørsel for å bli logget ut.
-
-## Se også
-
-* [HTTPoison dokumentasjon](https://github.com/edgurgel/httpoison)
-* [Elixir HTTP-håndbok](https://hexdocs.pm/elixir/http.html)
-* [Grunnleggende autentiseringsprotokoll](https://www.w3.org/Protocols/rfc2617/rfc2617.html)
+# Se også:
+- [HTTPotion biblioteket](https://hexdocs.pm/httpotion/HTTPotion.html) for å utføre HTTP-forespørsler i Elixir.
+- [BaseX biblioteket](https://hexdocs.pm/basex/BaseX.html) for å kryptere tekst med Base64 i Elixir.
+- [Elixir Style Guide](https://github.com/christopheradams/elixir_style_guide) for å lære mer om å skrive ren og lesbar Elixir-kode.

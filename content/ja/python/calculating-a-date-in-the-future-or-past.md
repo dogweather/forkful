@@ -10,42 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+## なに & なぜ?
+日付を未来や過去に計算することとは、指定された日付から一定の期間を増減させた新しい日付を生成することです。プログラマーがこれをする理由は、日付を操作したい場合や特定期間の計算を行いたい場合に役立つからです。
 
-日付を計算する理由は、将来または過去の日付を特定する必要があるためです。例えば、予定や重要なイベントを計画する場合、特定の日付を知ることが重要です。
+## 方法:
+```Python
+from datetime import date, timedelta 
 
-## 方法
+# 今日の日付を取得 
+today = date.today() 
 
-```python
-import datetime # datetimeモジュールをインポート
+# 一年後の日付を計算 
+one_year_later = today + timedelta(days=365) 
 
-# 今日の日付を取得
-today = datetime.date.today()
-
-# １週間後の日付を計算
-one_week = today + datetime.timedelta(days=7)
-
-print(one_week) # 今日から１週間後の日付を出力 (例: 2020-09-07)
+print("今日の日付:", today)
+print("一年後の日付:", one_year_later)
 ```
 
-```python
-import datetime # datetimeモジュールをインポート
-
-# 指定した日付を設定
-date = datetime.date(2020, 10, 15)
-
-# １０日前の日付を計算
-ten_days_ago = date - datetime.timedelta(days=10)
-
-print(ten_days_ago) # １０日前の日付を出力 (例: 2020-10-05)
+出力:
+```
+今日の日付: 2021-01-01 
+一年後の日付: 2022-01-01
 ```
 
-## ディープダイブ
+## ディープダイブ:
+1. 歴史的な背景:
+日付の計算が必要になった背景には、グレゴリオ暦の導入があります。グレゴリオ暦は、1582年にローマ教皇グレゴリウス13世によって採用されました。それまでのユリウス暦には誤差があったため、新しい暦が導入されることになりました。
+2. 代替手段:
+Pythonの標準モジュールであるdatetimeモジュールを使用する他、dateutilやarrowなどのサードパーティ製のモジュールもあります。
+3. 実装の詳細:
+Pythonでは、日付の計算を行うためにtimedeltaオブジェクトを使用します。これは、datetimeオブジェクトに対して日付の増減を行うことができるクラスです。
 
-日付の計算には、datetimeモジュールのtimedeltaクラスを使用します。日数、週数、月数、年数を指定して、特定の日付を計算することができます。また、dateクラスを使用することで、指定した年月日のオブジェクトを作成することができます。
-
-## 参考リンク
-
-- [datetimeモジュールドキュメント](https://docs.python.org/ja/3/library/datetime.html)
-- [timedeltaクラスドキュメント](https://docs.python.org/ja/3/library/datetime.html#timedelta-objects)
-- [dateクラスドキュメント](https://docs.python.org/ja/3/library/datetime.html#date-objects)
+## 参考:
+- datetimeモジュール: https://docs.python.org/ja/3/library/datetime.html
+- dateutilモジュール: https://dateutil.readthedocs.io/en/stable/
+- arrowモジュール: https://arrow.readthedocs.io/en/latest/

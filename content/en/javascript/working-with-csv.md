@@ -10,54 +10,81 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-CSV (Comma-Separated Values) files are a popular way to store and handle data, especially in the world of web development. It is a lightweight and easy-to-use format, making it a go-to for many developers. Whether you are creating a data-driven application or simply need to import or export data, knowing how to work with CSV files can be a valuable skill in your coding arsenal.
+Working with CSV (Comma Separated Values) is a common task for programmers. It involves parsing and manipulating data stored in a text file with a specific format, where each value is separated by a comma. Programmers use CSV to import and export data from different sources, such as databases, spreadsheets, and other applications.
 
-## How To
+## How to:
 
-To start working with CSV files in Javascript, we first need to understand how to read and write to them using built-in functions and libraries. Let's take a look at some code examples to get started:
+To work with CSV in Javascript, there are a few useful methods and libraries available. The following examples will demonstrate how to read and write CSV files using the built-in `fs` module and the popular `csv-parser` library.
+
+### Reading CSV files
+
+To read a CSV file in Javascript, we can use the `readFile` method from the `fs` module. This method takes in the path of the file to be read and a callback function to handle the data.
 
 ```javascript
-// Reading from a CSV file using Node.js
 const fs = require('fs');
 
 fs.readFile('data.csv', 'utf8', (err, data) => {
   if (err) throw err;
-
-  console.log(data); // Displays the content of the CSV file
+  console.log(data);
 });
 ```
 
-In this example, we use Node.js to read the contents of a CSV file and display it in the console. The `fs` library provides a way to read from and write to files in Node.js, and the `readFile` function takes in the name of the file, the desired encoding (in this case, `utf8`), and a callback function that will be executed once the file has been read.
+In the above example, the `data.csv` file is read and logged to the console. However, the output is still in a string format, and we need to convert it to an array of objects to work with the data effectively.
+
+To do so, we can use the `csv-parser` library, which will automatically parse the CSV data and return an array of objects, with each object representing a row in the CSV file.
 
 ```javascript
-// Writing to a CSV file using a third-party library
-const csv = require('csvtojson');
+const csv = require('csv-parser');
 const fs = require('fs');
 
-csv()
-  .fromFile('input.csv')
-  .then((jsonObj) => {
-    fs.writeFile('output.json', jsonObj, (err) => {
-      if (err) throw err;
-      console.log('CSV file converted to JSON and saved as output.json');
-    });
+fs.createReadStream('data.csv')
+  .pipe(csv())
+  .on('data', (row) => {
+    console.log(row);
+  })
+  .on('end', () => {
+    console.log('CSV file successfully processed');
   });
 ```
 
-In this example, we use the `csvtojson` library to convert a CSV file into a JSON format and then write it out to a new file using the `fs` library. This can be helpful when working with different data formats or when sending data to a database.
+The above code uses the `createReadStream` method from `fs` to create a readable stream from the CSV file. Then, the `pipe` method is used to pipe the stream to the `csv` parser. Finally, we can handle the data using the `on` method, where the `data` event is emitted for each row in the CSV file, and the `end` event is emitted when all the data has been processed.
+
+### Writing CSV files
+
+To write data to a CSV file, we can use the `writeFile` method from the `fs` module. This method takes in the path of the file to be written and the data to be written. However, since CSV requires each row to be in a string format, we need to convert our data to a string before writing it.
+
+```javascript
+const fs = require('fs');
+
+const data = [
+  { name: 'John', age: 25 },
+  { name: 'Jane', age: 30 },
+  { name: 'Bob', age: 35 },
+];
+
+const csv = data.map((row) => Object.values(row).join(','));
+
+fs.writeFile('data.csv', csv.join('\n'), (err) => {
+  if (err) throw err;
+  console.log('CSV file successfully written');
+});
+```
+
+In the above example, we have an array of objects representing the data we want to write to the CSV file. The `map` method is used to convert each object to a string, and the `join` method is used to join each value with a comma. Then, we use the `writeFile` method to write the CSV data to the file.
 
 ## Deep Dive
 
-CSV files are essentially just text files with a specific structure. Each row represents a record, and each column represents a field within that record. The values are separated by commas, hence the name Comma-Separated Values.
+CSV has been in use since the early days of spreadsheets and databases, and it remains a popular format for exchanging tabular data. It is a simple and human-readable format that is supported by most programming languages. However, it does have some limitations, such as not being able to handle complex data types or nested structures. In such cases, other formats like JSON or XML may be more suitable.
 
-One thing to keep in mind when working with CSV files is the possibility of errors with data that contains special characters or line breaks. It is important to properly escape these characters to avoid any issues when reading or writing to the file.
+Apart from the `csv-parser` library, there are other alternatives for working with CSV in Javascript, such as `fast-csv` and `csvtojson`. These libraries provide additional features and performance optimizations, which can be useful for larger CSV files. It is always recommended to research and compare different options before choosing the best one for your project.
 
-Additionally, there are various third-party libraries and tools available for working with CSV files in Javascript, each with their own features and functionalities. It is important to research and choose the one that best fits your specific needs.
+When working with CSV, it is essential to have a good understanding of how the data is structured, as well as how to properly handle and format it. Handling uppercase vs lowercase letters, white spaces, and special characters can be challenging, so it is crucial to use well-tested libraries or consider using a CSV validation tool.
 
 ## See Also
 
-- [Node.js "fs" Module Documentation](https://nodejs.org/api/fs.html)
-- ["csvtojson" Library Documentation](https://github.com/Keyang/node-csvtojson)
-- [10 npm Packages to Use for Working with CSV in Node.js](https://www.digitalocean.com/community/tutorials/nodejs-csv-processing-package-comparison)
+- [MDN CSV](https://developer.mozilla.org/en-US/docs/Glossary/CSV)
+- [RFC 4180 - Common Format and MIME Type for Comma-Separated Values (CSV) Files](https://tools.ietf.org/html/rfc4180)
+- [Comparing CSV vs JSON](https://www.json-csv.com/csv-vs-json.html)
+- [CSV file format: A formal structure](https://support.monday.com/hc/en-us/articles/360007686480-CSV-file-format-A-formal-structure)

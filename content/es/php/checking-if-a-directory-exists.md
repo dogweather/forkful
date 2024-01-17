@@ -1,7 +1,7 @@
 ---
-title:                "Comprobando si existe un directorio"
-html_title:           "PHP: Comprobando si existe un directorio"
-simple_title:         "Comprobando si existe un directorio"
+title:                "Verificando si existe un directorio"
+html_title:           "PHP: Verificando si existe un directorio"
+simple_title:         "Verificando si existe un directorio"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Files and I/O"
@@ -10,53 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+## Qué y Por qué?
+Comprobar si un directorio existe es una forma común para que los programadores se aseguren de que su código pueda acceder a ciertas rutas de archivos o directorios. Esto es especialmente importante en aplicaciones web, donde se necesita acceder a diferentes recursos o datos almacenados en el servidor. Verificar la existencia de un directorio antes de realizar operaciones en él también evita errores y fallas en el código.
 
-A veces, cuando estamos escribiendo código, es necesario saber si una carpeta existe o no en nuestro sistema de archivos. Esto puede ser útil para evitar errores o para llevar a cabo ciertas acciones en función de si la carpeta existe o no. En esta sección, aprenderemos cómo verificar si una carpeta existe utilizando PHP.
+## Cómo hacerlo:
 
-## Cómo hacerlo
-
-La función que nos permitirá verificar si una carpeta existe o no se llama `file_exists()`. Esta función toma una ruta de archivo como argumento y devuelve `true` si el archivo o carpeta existe, y `false` si no existe. Echemos un vistazo a un ejemplo de código:
-
-```PHP
-if(file_exists("ruta/a/carpeta")){
-  echo "La carpeta existe";
-} else {
-  echo "La carpeta no existe";
+```
+<?php
+if (is_dir($ruta_directorio)) { // Comprueba si la ruta del directorio existe
+    echo "El directorio existe";
+}else{
+    echo "El directorio no existe";
 }
 ```
 
-Si la ruta especificada apunta a una carpeta existente, el código imprimirá "La carpeta existe". De lo contrario, imprimirá "La carpeta no existe".
+El código anterior utiliza la función `is_dir()` de PHP para verificar si la ruta de un directorio dado existe. En caso de que la ruta sea válida, la función devuelve `true`, de lo contrario devuelve `false`. Luego, podemos utilizar un simple condicional para imprimir un mensaje en consecuencia.
 
-También podemos utilizar la función `is_dir()` para verificar si la ruta especificada es una carpeta o no. Esta función devuelve `true` si la ruta es una carpeta y `false` si no lo es. Echemos un vistazo a un ejemplo de código:
+```
+<?php
+$ruta_directorio = "archivos/";
 
-```PHP
-if(is_dir("ruta/a/carpeta")){
-  echo "La ruta apunta a una carpeta";
-} else {
-  echo "La ruta no apunta a una carpeta";
+// Comprueba si la ruta del directorio existe
+if (is_dir($ruta_directorio)) {
+    // Abre el directorio
+    if ($directorio = opendir($ruta_directorio)) {
+        // Recorre todos los archivos en el directorio
+        while (($archivo = readdir($directorio)) !== false) {
+            // Solo muestra los archivos (y no los directorios)
+            if (!is_dir($archivo)) {
+                echo $archivo . "<br>";
+            }
+        }
+        // Cierra el directorio
+        closedir($directorio);
+    }
 }
 ```
 
-Si la ruta especificada es una carpeta, el código imprimirá "La ruta apunta a una carpeta". De lo contrario, imprimirá "La ruta no apunta a una carpeta".
+En este ejemplo, además de verificar si el directorio existe, también mostramos el contenido de ese directorio mediante un bucle `while` y la función `readdir()`. Tenga en cuenta que, en este caso, el directorio solo se abrirá si se ha confirmado previamente su existencia.
 
-## Profundizando
+## Profundizando:
 
-Puede que te estés preguntando qué sucede si la carpeta que estamos verificando no está en la ruta que especificamos, sino en una ruta diferente. En ese caso, necesitaremos utilizar la función `realpath()`, que nos permite obtener la ruta real de la carpeta. Por ejemplo, si tenemos una carpeta llamada "carpeta" en la ruta "ruta/a/carpeta", pero queremos verificar si existe en la ruta "ruta/b/carpeta", necesitamos utilizar `realpath()` como sigue:
+Antes de la versión 4.0.6 de PHP, se utilizaba la función `realpath()` para verificar la existencia de un directorio. Sin embargo, esta función tiene un comportamiento diferente al de `is_dir()`, ya que también resuelve cualquier enlace simbólico en la ruta del directorio. A partir de la versión 4.0.6, la función `is_dir()` se incorporó al núcleo de PHP para proporcionar un método más consistente y confiable para verificar la existencia de un directorio.
 
-```PHP
-if(file_exists(realpath("ruta/b/carpeta"))){
-  echo "La carpeta existe";
-} else {
-  echo "La carpeta no existe";
-}
-```
+Existen otras formas de verificar si un directorio existe, como utilizar la función `file_exists()` o la clase `Directory`. Sin embargo, la función `is_dir()` sigue siendo la opción recomendada debido a su simplicidad y eficiencia.
 
-Además, si necesitas crear una nueva carpeta en una ruta específica, puedes utilizar la función `mkdir()`, que toma como argumento la ruta de la carpeta que quieres crear.
+## Ver también:
 
-## Ver también
-
-- [Documentación de PHP para file_exists()](https://www.php.net/manual/es/function.file-exists.php)
-- [Documentación de PHP para is_dir()](https://www.php.net/manual/es/function.is-dir.php)
-- [Documentación de PHP para realpath()](https://www.php.net/manual/es/function.realpath.php)
-- [Documentación de PHP para mkdir()](https://www.php.net/manual/es/function.mkdir.php)
+- [Documentación oficial de PHP sobre la función `is_dir()`](https://www.php.net/manual/es/function.is-dir.php)
+- [Documentación oficial de PHP sobre la función `readdir()`](https://www.php.net/manual/es/function.readdir.php)

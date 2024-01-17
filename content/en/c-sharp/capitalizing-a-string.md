@@ -10,63 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
+Capitalizing a string in C# refers to converting all the characters in a string to uppercase letters. This is useful for making data more visually consistent and for following certain programming conventions. It also allows for easier string manipulation and comparison when all letters are in the same case.
 
-Capitalizing a string is a common task in many programming languages, including C#. It is often required when working with user inputs or data that needs to be formatted in a specific way. By capitalizing a string, you can ensure consistency and readability in your code and output.
-
-## How To
-
-To capitalize a string in C#, you can use the `ToUpper()` method in the `String` class. This method converts all lowercase characters in a string to uppercase. Here's an example:
+## How to:
+To capitalize a string in C#, we can use the `ToUpper()` method from the `String` class. This method takes in a string and returns a new string with all characters converted to uppercase. Here is an example of how to use it:
 
 ```C#
-// Input string
-string name = "john";
+string word = "hello";
+string capitalizedWord = word.ToUpper();
+Console.WriteLine(capitalizedWord);
 
-// Capitalize the string using ToUpper() method
-string capitalized = name.ToUpper();
-
-Console.WriteLine(capitalized);
-// Output: JOHN
+// Output: HELLO
 ```
 
-You can also use the `CultureInfo` class to specify the language-specific casing rules for your string. For example:
+We can also use the `ToUpper()` method along with the `ToLower()` method to toggle between capitalization and lowercase. Here is an example of how to do this:
 
 ```C#
-// Input string
-string sentence = "hello world";
+string sentence = "HeLlO WoRlD";
+string toggledSentence = sentence.ToUpper().ToLower();
+Console.WriteLine(toggledSentence);
 
-// CultureInfo object for English (United States) culture
-CultureInfo enUS = new CultureInfo("en-US");
-
-// Capitalize the string using ToTitleCase() method
-string capitalized = enUS.TextInfo.ToTitleCase(sentence);
-
-Console.WriteLine(capitalized);
-// Output: Hello World
+// Output: hello world
 ```
 
-It's worth noting that the `ToUpper()` and `ToTitleCase()` methods do not modify the original string, but instead return a new string with the capitalized characters. So if you want to save the capitalization in a variable, be sure to assign it to a new string.
+## Deep Dive:
+Capitalization has been around for centuries, with the concept originating from the Latin alphabet. In programming, capitalization is often used to follow certain conventions, such as using uppercase letters for constants and lowercase letters for variables. However, not all programming languages are case-sensitive, meaning that the casing of letters does not affect the outcome of the code.
 
-## Deep Dive
+In addition to using the `ToUpper()` method, there are other ways to capitalize a string in C#. One alternative is to use the `CultureInfo` class, which allows for more advanced string manipulation and casing based on specific cultures.
 
-While the `ToUpper()` and `ToTitleCase()` methods are convenient for simple string capitalization, they may not work as expected for more complex situations. For example, if your string contains special characters or punctuation, the capitalization may not be accurate.
+When it comes to the implementation of the `ToUpper()` method, it uses the `TextInfo.ToUpper()` method internally, which in turn uses a combination of Unicode data and culture-specific rules to convert the string to uppercase. This allows for consistent and accurate results no matter what language the string is in.
 
-In such cases, you can use the `TextInfo` class and its properties to handle specific situations. For instance, the `TextInfo.ANSICodePage` property can help with capitalization in strings that contain ANSI characters. Similarly, the `TextInfo.OEMCodePage` property is useful for strings with OEM (original equipment manufacturer) characters.
+## See Also:
+To learn more about capitalizing strings in C#, check out the official documentation: 
+https://docs.microsoft.com/en-us/dotnet/api/system.string.toupper
 
-Moreover, the `ToUpper()` method uses the casing rules of the current culture by default. This can cause unexpected results if you have different cultures in your application. To avoid this, you can specify the culture using the `StringComparison` enum in the `ToUpper()` method, as shown here:
-
-```C#
-// Input string
-string name = "müller";
-
-// Capitalize the string using ToUpper() method and specify Turkish culture
-string capitalized = name.ToUpper(StringComparison.CurrentCultureIgnoreCase);
-
-Console.WriteLine(capitalized);
-// Output: MÜLLER (if current culture is Turkish)
-```
-
-## See Also
-
-- [C# String.ToUpper() Method](https://docs.microsoft.com/en-us/dotnet/api/system.string.toupper)
-- [C# TextInfo Class](https://docs.microsoft.com/en-us/dotnet/api/system.globalization.textinfo)
+Additional resources on cultural differences in casing and string manipulation:
+https://docs.microsoft.com/en-us/dotnet/standard/globalization-localization/

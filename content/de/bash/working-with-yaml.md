@@ -10,39 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was & Warum?
 
-Wenn Sie schon einmal mit Konfigurationsdateien gearbeitet haben, haben Sie wahrscheinlich von YAML gehört. YAML steht für "YAML Ain't Markup Language" und ist eine einfache, lesbare Auszeichnungssprache, die für Konfigurationsdateien verwendet wird. Es ist nützlich für Entwickler, Systemadministratoren und jeder, der mit strukturierten Daten arbeitet.
+Bash (Bourne-Again Shell) ist eine beliebte interaktive Shell und Skriptsprache, die in verschiedenen Betriebssystemen wie Linux, macOS und anderen eingesetzt wird. YAML ist eine datenorientierte Dateiformatierungssprache, die häufig in Kombination mit Bash verwendet wird, um intuitiv lesbaren Daten- und Konfigurationsdateien zu erstellen. Programmierer nutzen YAML, um ihre Skripte und Programme effizient und funktional zu gestalten.
 
-## Wie man mit YAML in Bash arbeitet
+## Wie geht das?
 
-Um mit YAML in Bash zu arbeiten, benötigen Sie ein paar grundlegende Befehle und eine YAML-Parser-Bibliothek namens "YQ". Hier sind einige Beispiele, wie Sie YAML in Bash nutzen können:
+Um mit YAML in Bash zu arbeiten, muss zuerst ein YAML-Parser installiert werden. Ein Beispiel dafür ist das Programm "yaml2json". Hier ist der Code, um YAML in ein JSON-Format umzuwandeln:
 
-```bash
-# Installieren von yq
-sudo apt install yq
-
-# Ausgabe des Inhalts einer YAML-Datei
-yq read config.yml
-
-# Ausgabe von bestimmten Werten aus der YAML-Datei
-yq read config.yml 'section.subsection.value'
-
-# Aktualisieren einer YAML-Datei
-yq write config.yml 'section.subsection.value' 'new value'
+```Bash
+$ yaml2json example.yaml
 ```
 
-Beachten Sie, dass yq das Ergebnis in JSON formatiert, das für Bash leichter zu verarbeiten ist. Um den Output als YAML zu erhalten, können Sie den Befehl `yq read --prettyPrint config.yml` verwenden.
+Das Ergebnis sieht dann etwa so aus:
 
-Wenn Sie mehr über die yq-Befehle und deren Verwendung erfahren möchten, können Sie die offizielle Dokumentation [hier](https://mikefarah.gitbook.io/yq/) nachlesen.
+```Bash
+{
+   "name": "John Doe",
+   "age": 30,
+   "favorite_foods": ["pizza", "sushi", "chocolate"]
+}
+```
 
-## Tieferes Eintauchen
+## Tiefere Einblicke
 
-Es gibt viele Möglichkeiten, wie Sie YAML in Bash nutzen können. Sie können z.B. Integer, Float, Strings, Listen und sogar komplexe Datenstrukturen wie Dictionary und Nested-Attribute in YAML definieren. Wenn Sie sich in die Tiefe begeben möchten, können Sie lernen, wie Sie diese Datentypen in Bash verwenden und verarbeiten können. Sie können auch verschiedene Tools und Bibliotheken erkunden, die speziell für die Arbeit mit YAML in Bash entwickelt wurden.
+YAML wurde ursprünglich von einem Debian-Entwickler als einfacheres und übersichtlicheres Alternativ zu XML entwickelt. Neben der Verwendung in Bash ist YAML auch in anderen Programmiersprachen wie Python, Ruby und Java weitverbreitet. YAML Syntax ist auf eine einfache und lesbare Darstellung von Daten ausgelegt, wodurch sie für Programmierer und Nicht-Programmierer gleichermaßen zugänglich ist.
 
 ## Siehe auch
 
-- [YAML offizielle Website](https://yaml.org/)
-- [YQ Dokumentation](https://mikefarah.gitbook.io/yq/)
-- [Bash Dokumentation](https://www.gnu.org/software/bash/manual/)
-- [YAML Syntax Überblick](https://learnxinyminutes.com/docs/yaml/)
+Wenn du mehr über die Verwendung von YAML in Bash erfahren möchtest, empfehlen wir dir, die offizielle YAML-Website und die Dokumentation von Bash zu besuchen. Du findest auch weitere hilfreiche Ressourcen wie Tutorials und Beispiele auf GitHub.

@@ -1,7 +1,7 @@
 ---
-title:                "编写测试"
-html_title:           "C#: 编写测试"
-simple_title:         "编写测试"
+title:                "编写测试。"
+html_title:           "C#: 编写测试。"
+simple_title:         "编写测试。"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Testing and Debugging"
@@ -10,48 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-為什麼： 很多人可能會覺得寫測試很無聊或浪費時間，但是實際上，寫測試可以幫助我們更有效率地開發程式，並降低出錯的機率。
+##
+什么是写测试？
+写测试是编写代码的一部分，并且旨在验证代码的正确性。它是一种良好的实践，可以帮助程序员发现并修复他们代码中的错误。
 
-## 為什麼要寫測試？
+为什么程序员要写测试？
+写测试可以帮助程序员在开发过程中发现代码中的错误，从而提高代码质量和可靠性。它也可以帮助开发团队更有效地协作和沟通。
 
-寫測試可以幫助我們驗證程式碼是否符合預期功能，並且在程式碼改動後避免出現意外的錯誤。同時，寫測試可以幫助我們更快速地定位問題，提高程式碼的可靠性和可讀性。
+如何进行写测试？
+以下是一个使用C#语言的简单示例来演示如何写测试：
+```
+using System;
 
-## 如何寫測試？
-
-```C#
-// 假設我們有一個計算兩個數字相加的方法
-public int Add(int num1, int num2)
+namespace Calculator
 {
-    return num1 + num2;
-}
-
-// 使用測試框架 NUnit 進行測試
-[TestFixture]
-public class CalculatorTests
-{
-    [Test]
-    public void TestAdd()
+    class Calculator
     {
-        // Arrange - 初始化測試所需的參數
-        var calculator = new Calculator();
-        int num1 = 2;
-        int num2 = 3;
+        public int Add(int num1, int num2)
+        {
+            return num1 + num2;
+        }
 
-        // Act - 呼叫要測試的方法
-        int result = calculator.Add(num1, num2);
+        static void Main(string[] args)
+        {
+            Calculator calc = new Calculator();
 
-        // Assert - 驗證方法的回傳結果與預期是否相符
-        Assert.AreEqual(5, result);
+            int result = calc.Add(2, 3);
+            Console.WriteLine(result);
+        }
     }
 }
 ```
+输出：5
 
-## 深入探討寫測試
+深入了解
+写测试是一种测试驱动开发（TDD）的实践方法中的一部分。它的目的是通过编写测试来指导代码的开发，从而提高代码的质量和可靠性。除了编写测试，还有一些其他的测试方法，例如集成测试和验收测试。
 
-除了使用測試框架外，我們也可以手動撰寫測試程式碼，例如使用 `Console.WriteLine()` 來輸出結果。另外，也可以使用 [Moq](https://github.com/moq/moq4) 等工具來模擬特定的環境和物件，進行更全面的測試。在寫測試時，也要注意測試的範圍，避免過於龐大和冗雜的測試，以及盡量避免重複測試。
-
-## 參考資料
-
-- [NUnit](https://github.com/nunit/nunit)
-- [Moq](https://github.com/moq/moq4)
-- [微軟：.NET 測試技術入門](https://docs.microsoft.com/zh-tw/dotnet/core/testing/)
+相关链接
+更多关于TDD的信息，请查看以下链接：
+- [Test-Driven Development: By Example](https://www.amazon.com/Test-Driven-Development-Kent-Beck/dp/0321146530)
+- [Exploring TDD in C#](https://www.pluralsight.com/guides/exploring-test-driven-development-c-sharp)

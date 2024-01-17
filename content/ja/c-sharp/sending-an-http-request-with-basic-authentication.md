@@ -1,7 +1,7 @@
 ---
-title:                "基本認証を用いてhttpリクエストを送信する"
-html_title:           "C#: 基本認証を用いてhttpリクエストを送信する"
-simple_title:         "基本認証を用いてhttpリクエストを送信する"
+title:                "基本認証付きのhttpリクエストの送信"
+html_title:           "C#: 基本認証付きのhttpリクエストの送信"
+simple_title:         "基本認証付きのhttpリクエストの送信"
 programming_language: "C#"
 category:             "C#"
 tag:                  "HTML and the Web"
@@ -10,41 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
-HTTPリクエストを基本認証で送信する必要があるのかを2文で説明します。
+## 何？なぜ？
 
-一般的に、ウェブサイトやアプリケーションでログインや個人情報の保護のために、ユーザーの認証を行う必要があります。基本認証は最も単純な認証形式であり、HTTPリクエストに含まれるユーザー名とパスワードを用いて認証を行います。この認証を使うことで、サーバー側はユーザーの正当性を確認し、セキュリティを保護することができます。
+HTTP要求を基本認証で送信することは、プログラマーがWebサービスに接続するための一般的な方法です。この方法は、セキュリティを強化し、機密性の高い情報を保護するために使用されます。
 
-## 使い方
-基本認証でHTTPリクエストを送信するためには、次のようなコードを使用します。
+## 方法：
 
-```csharp
+```C#
 // リクエストを作成
-WebRequest request = WebRequest.Create("http://example.com/endpoint");
+var request = (HttpWebRequest)WebRequest.Create("https://example.com/api/endpoint");
+request.Method = "GET";
 
-// ユーザー名とパスワードを指定
-request.Credentials = new NetworkCredential("ユーザー名", "パスワード");
+// 基本認証ヘッダーを作成
+string credentials = "username:password";
+Byte[] credentialBytes = Encoding.UTF8.GetBytes(credentials);
+string encodedCredentials = Convert.ToBase64String(credentialBytes);
+request.Headers.Add("Authorization", "Basic " + encodedCredentials);
 
-// リクエストを送信してレスポンスを取得
-WebResponse response = request.GetResponse();
-
-// レスポンスを処理
-using(StreamReader reader = new StreamReader(response.GetResponseStream()))
+// レスポンスを取得
+var response = (HttpWebResponse)request.GetResponse();
+using (var streamReader = new StreamReader(response.GetResponseStream()))
 {
-    Console.WriteLine(reader.ReadToEnd());
+    var result = streamReader.ReadToEnd();
+    Console.WriteLine(result);  // サーバーからの応答を表示
 }
 ```
 
-この例では、```WebRequest```クラスを使用してHTTPリクエストを作成し、```Credentials```プロパティを使用してユーザー名とパスワードを指定しています。そして、```request.GetResponse()```メソッドを使用してリクエストを送信し、レスポンスを```StreamReader```を使用して処理しています。
+## ディープダイブ：
 
-## 深堀り
-実際には、基本認証にはさまざまな種類があります。例えば、```Basic```や```Digest```などがあり、それぞれ違う仕組みを使用して認証を行います。また、セキュリティを強化するために、SSL/TLSを使用して暗号化した通信を行うこともできます。詳細については、Microsoftの公式ドキュメントを参照してください。
+基本認証は、HTTP仕様の一部であり、長年にわたって使用されてきた古典的な認証方法です。近年、より安全な認証方法が開発されているため、基本認証は使用されなくなる可能性があります。代替手段として、トークンベースの認証があります。
 
-参考：
-- [HTTP 基本認証の動作方法](https://docs.microsoft.com/ja-jp/dotnet/api/system.net.httpwebrequest.credentials?view=netframework-4.8)
-- [HTTP SSL/TLS 接続の確立](https://docs.microsoft.com/ja-jp/dotnet/api/system.net.security.sslstream?view=netframework-4.8)
+基本認証を実装するには、リクエストヘッダーにHTTP Authorizationヘッダーの形式でユーザー名とパスワードを含める必要があります。また、セキュリティを強化するために、HTTPS通信を使用することをお勧めします。
 
-## 参考リンク
-- [MSDN: HTTP 基本認証の動作方法](https://docs.microsoft.com/ja-jp/dotnet/api/system.net.httpwebrequest.credentials?view=netframework-4.8)
-- [MSDN: HTTP SSL/TLS 接続の確立](https://docs.microsoft.com/ja-jp/dotnet/api/system.net.security.sslstream?view=netframework-4.8)
-- [Sending HTTP Requests with Basic Authentication in C#](https://www.c-sharpcorner.com/article/sending-http-requests-with-basic-authentication-in-c-sharp/)
+## 関連情報：
+
+- [HTTP Basic Access Authentication](https://developer.mozilla.org/ja/docs/Web/HTTP/Authentication#Basic_Authentication_scheme)
+- [HTTP Authentication](https://www.w3.org/Protocols/HTTP/Authentication.html)
+- [Token-based authentication vs. session-based authentication](https://medium.com/@sherryhsu/session-vs-token-based-authentication-11a6c5ac45e4)

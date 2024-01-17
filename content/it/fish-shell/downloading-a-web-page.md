@@ -10,41 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+## Cosa e perché?
 
-Se sei un programmatore in erba o un esperto nella tecnologia, è possibile che tu abbia incontrato situazioni in cui hai bisogno di ottenere dati da una pagina web. Fortunatamente, il Fish Shell è uno strumento potente e versatile che può aiutarti in questo compito. Continua a leggere per scoprire come utilizzare il Fish Shell per scaricare una pagina web.
+Quando si scarica una pagina web, si sta effettivamente copiando il codice HTML e il contenuto di una pagina web dal suo server web su un dispositivo. Ciò è utile per i programmatori perché consente loro di analizzare, manipolare e utilizzare il codice HTML e il contenuto della pagina web per scopi diversi.
 
-## Come fare
+## Come fare:
 
-Per scaricare una pagina web utilizzando Fish Shell, segui questi semplici passaggi:
+Questo è un semplice codice di esempio in Fish Shell per scaricare una pagina web utilizzando il comando `curl`:
 
-1. Apri il terminale e accedi alla directory in cui vuoi salvare la pagina web.
-2. Digita il comando `fish`, seguito da uno spazio e l'URL della pagina web che desideri scaricare. Ad esempio: `fish https://www.miosito.com`.
-3. Premi Invio e il Fish Shell inizierà a scaricare la pagina web nella directory corrente.
-
-Ecco un esempio di codice e output:
-
-```fish
-fish https://www.miosito.com
+```Fish Shell
+curl www.example.com
 ```
 
-```
-Scaricamento: https://www.miosito.com [OK]
-File salvato come index.html
-```
+Questo comando scaricherà il contenuto della pagina web www.example.com e lo mostrerà nel terminale.
 
-Il Fish Shell utilizzerà il suo potentissimo strumento di download per scaricare la pagina web e salvare il file resultante con il nome "index.html". Tutto questo in una sola riga di codice!
+## Approfondimento:
 
-## Approfondimento
+Storicamente, ci sono stati diversi modi per scaricare una pagina web, come l'utilizzo di un browser o di un'applicazione dedicata come `wget`. Tuttavia, oggi molti programmatori preferiscono utilizzare strumenti di linguaggio di scripting come Fish Shell per automatizzare il processo di download delle pagine web.
 
-Ora che sai come utilizzare il Fish Shell per scaricare una pagina web, ecco alcune informazioni aggiuntive che potrebbero esserti utili:
+Altri strumenti utili per il download di pagine web includono `wget` (soprattutto per l'utilizzo da riga di comando), `selenium` (per l'automazione del browser) e `BeautifulSoup` (per il parsing del codice HTML).
 
-- Se vuoi specificare un nome diverso per il file, basta aggiungere il nome desiderato dopo l'URL. Ad esempio: `fish https://www.miosito.com pagina.html`.
-- Puoi anche scaricare più pagine web contemporaneamente, basta separare gli URL con uno spazio.
-- Se la pagina che stai cercando di scaricare richiede l'autenticazione, puoi usare il comando `fish -u username -p password URL` per specificare le credenziali necessarie.
-- Il Fish Shell supporta anche il download di file tramite protocollo FTP utilizzando il comando `fish -P ftp://url`. 
+Per quanto riguarda l'implementazione, il comando `curl` utilizza il protocollo di trasferimento di dati HTTP per scaricare il contenuto delle pagine web dal server. Inoltre, i programmatori possono anche specificare opzioni aggiuntive per modificare il comportamento del comando, come il salvataggio dei dati scaricati in un file o l'utilizzo di un proxy.
 
-## Vedi anche
+## Vedi anche:
 
-- [Fish Shell homepage](https://fishshell.com/): visita il sito ufficiale del Fish Shell per ulteriori informazioni e documentazione.
-- [10 comandi essenziali per iniziare con Fish Shell](https://ostechnix.com/10-essential-commands-get-started-fish-shell/): un articolo che spiega 10 comandi fondamentali per utilizzare il Fish Shell.
+- [Documentazione ufficiale di Fish Shell](https://fishshell.com/docs/current/)
+- [Guida al download di pagine web utilizzando curl](https://linuxize.com/post/curl-download-files-with-ftp-sftp-ftp/)
+- [Esempi di utilizzo di Beautiful Soup per il parsing di pagine web in Python](https://www.dataquest.io/blog/web-scraping-tutorial-python/)

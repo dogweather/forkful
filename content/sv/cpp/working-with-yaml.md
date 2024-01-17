@@ -10,38 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
-YAML är ett lättläst och användarvänligt sätt att strukturera och lagra data i ett programmeringsprojekt. Det är ett populärt verktyg för att hantera konfigurationsfiler och definiera datastrukturer.
+## Vad & Varför?
 
-## Så här
-För att använda YAML i ditt C++-projekt behöver du först inkludera YAML-biblioteket. Detta görs genom att lägga till följande rad i din kod:
+Arbetar du med YAML i dina C++-projekt men undrar vad det är och varför man använder det? YAML är ett språk för att strukturera data i filer, som till exempel konfigurationsdata eller informationsutbyten. Programerare använder YAML för att göra det enklare och mer läsbart att organisera och dela data inom sina program.
+
+## Hur man:
+
 ```C++
+#include <iostream>
 #include <yaml-cpp/yaml.h>
-```
-Sedan kan du läsa in och skriva ut YAML-filer med hjälp av följande kodexempel:
-```C++
-YAML::Node data = YAML::LoadFile("file.yaml"); // Läser in innehållet från filen "file.yaml"
-std::cout << data["key1"]; // Skriver ut värdet för "key1" i filen
-```
-För att skapa en YAML-fil och skriva data till den kan du använda följande kod:
-```C++
-YAML::Emitter emitter; // Skapar en emitter för att skriva YAML
-emitter << YAML::BeginMap; // Börjar en mapp
-emitter << YAML::Key << "key1"; // Definierar en nyckel
-emitter << YAML::Value << "value1"; // Definierar ett värde
-emitter << YAML::EndMap; // Avslutar mappen
-std::ofstream file("file.yaml"); // Öppnar filen för skrivning
-file << emitter.c_str(); // Skriver ut emittern till filen
+
+int main() {
+  // Skapar en YAML-fil
+  YAML::Emitter out;
+  out << YAML::BeginMap;
+  out << YAML::Key << "Person" << YAML::Value << "John Smith";
+  out << YAML::Key << "Age" << YAML::Value << 25;
+  out << YAML::EndMap;
+
+  // Skriver ut filen
+  std::cout << "YAML-fil:" << std::endl;
+  std::cout << out.c_str() << std::endl;
+
+  // Läser av YAML-filen
+  YAML::Node node = YAML::Load(out.c_str());
+  std::cout << "Data:" << std::endl;
+  std::cout << "Namn: " << node["Person"].as<std::string>() << std::endl;
+  std::cout << "Ålder: " << node["Age"].as<int>() << std::endl;
+
+  return 0;
+}
 ```
 
-## Deep Dive
-YAML stödjer flera datatyper från standard C++, såsom strängar, tal, boolska värden och arrayer. Det finns också stöd för mer avancerade datatyper som kan definieras i koden. 
+Körning: 
 
-Det är också möjligt att inkludera andra YAML-filer inuti ditt YAML-dokument. Detta kan vara användbart för att återanvända data och för att hålla din YAML-fil mer strukturerad och lättläst.
+```
+YAML-fil:
+Person: John Smith
+Age: 25
 
-En annan fördel med YAML är dess flexibilitet och förmåga att anpassa sig till olika strukturer och datatyper. Det finns också möjlighet att kommentera din YAML-kod för att ge ytterligare förklaringar och förbättra läsbarheten.
+Data:
+Namn: John Smith
+Ålder: 25
+```
+
+## Djupdykning
+
+YAML står för "YAML Ain't Markup Language" och skapades som ett alternativ till XML för att lösa problem med läsbarhet och komplexitet. YAML är utformat för att enkelt kunna läsas av människor och dess syntax är baserad på indentering istället för taggar, vilket gör det lättare att läsa och uppdatera datafiler. YAML används i många olika programmeringsspråk och det finns många alternativ för att arbeta med YAML i C++, som till exempel biblioteket "yaml-cpp" som användes i exemplet ovan. 
 
 ## Se även
-- [YAML-bibliotekets officiella hemsida](https://yaml-cpp.github.io/)
-- [En enkel guide till YAML](https://rollbot.net/yaml-guide/)
-- [C++ - En introduktion](https://www.cplusplus.com/)
+
+- [yaml-cpp](https://github.com/jbeder/yaml-cpp)
+- [YAML:s officiella hemsida](https://yaml.org/)

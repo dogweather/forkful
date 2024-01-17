@@ -1,7 +1,7 @@
 ---
-title:                "Odkrywanie długości ciągu znaków"
-html_title:           "C#: Odkrywanie długości ciągu znaków"
-simple_title:         "Odkrywanie długości ciągu znaków"
+title:                "Znajdowanie długości ciągu znaków"
+html_title:           "C#: Znajdowanie długości ciągu znaków"
+simple_title:         "Znajdowanie długości ciągu znaków"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Strings"
@@ -10,44 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co & Dlaczego?
 
-Jeden z podstawowych zadań w programowaniu jest manipulowanie ze stringami, czyli ciągami znaków. Aby to zrobić, często musimy znać długość tych stringów. W tym artykule dowiesz się, dlaczego znajomość długości stringa jest ważna i jak ją uzyskać w języku C#.
+Odnajdywanie długości ciągu znaków jest powszechnym zadaniem programistów. Polega to na obliczeniu liczby znaków w podanym ciągu oraz zwróceniu wyniku. Zadanie to jest często wykorzystywane do analizy tekstu, filtrowania danych lub walidacji wprowadzonych informacji.
 
-## Jak to zrobić
-
-C# ma wbudowaną funkcję "Length", która pozwala nam szybko i łatwo uzyskać długość stringa. Możemy użyć jej na różne sposoby, w zależności od naszej potrzeby. Przykładowe zastosowania tej funkcji znajdziesz poniżej:
+## W jaki sposób:
 
 ```C#
-string word = "Hello";
-int length = word.Length;
-Console.WriteLine(length); //Output: 5
+string text = "Cześć, jestem artykułem o programowaniu!";
+int length = text.Length;
+Console.WriteLine("Długość tekstu to: " + length);
 ```
+Sample output: Długość tekstu to: 35
 
-Możemy również wykorzystać funkcję "Length" do pętli for w celu wykonania określonego działania dla każdego znaku w stringu:
+Podajemy nasz tekst do zmiennej "text", następnie wykorzystujemy metodę Length, aby obliczyć długość tego tekstu. Wreszcie, korzystając z metody WriteLine, wyświetlamy wynik w konsoli.
 
-```C#
-string sentence = "This is a long sentence.";
-for(int i = 0; i < sentence.Length; i++)
-{
-    Console.WriteLine(sentence[i]); //Output: This is a long sentence.
-}
-```
+## Głębsze zagłębienie:
 
-Jeśli chcemy znać długość stringa z uwzględnieniem spacji, możemy wykorzystać funkcję "Replace" w połączeniu z funkcją "Length":
+Historia odnajdywania długości ciągu znaków jest powiązana z rozwojem programowania. Wcześniej programiści musieli samodzielnie obliczać długość tekstu, natomiast dziś jest to funkcja wbudowana w większości języków programowania, w tym w C#. Alternatywnie, możemy również użyć metody GetByteCount, która zwraca liczbę bajtów w podanym ciągu.
 
-```C#
-string sentence = "This is a long sentence.";
-string newSentence = sentence.Replace(" ", "");
-int length = newSentence.Length;
-Console.WriteLine(length); //Output: 21
-```
+## Zobacz również:
 
-## Deep Dive
-
-W języku C#, stringi są traktowane jako tablica znaków, więc długość stringa jest po prostu liczbą elementów w tej tablicy. Warto jednak pamiętać, że funkcja "Length" liczy każdy znak, nawet spacje, przecinki czy cudzysłowy. Jeśli chcemy zignorować te znaki i poznać tylko liczbę wyrazów w stringu, musimy wykorzystać metodę "Split" i dopiero potem policzyć długość tablicy zwróconej przez tę metodę.
-
-## Zobacz także
-
-- [Dokumentacja C# o funkcji Length](https://docs.microsoft.com/pl-pl/dotnet/api/system.string.length?view=net-5.0)
-- [Przykłady wykorzystania funkcji Length w C#](https://www.geeksforgeeks.org/c-sharp-string-length-property/)
+- [Documentacja C# dotycząca metody Length](https://docs.microsoft.com/en-us/dotnet/api/system.string.length?view=net-5.0)
+- [Porównanie metod Length i GetByteCount](https://stackoverflow.com/questions/9864526/c-sharp-string-length-getbytecount-getcharcount)

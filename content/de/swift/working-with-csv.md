@@ -1,7 +1,7 @@
 ---
-title:                "Arbeiten mit csv"
-html_title:           "Swift: Arbeiten mit csv"
-simple_title:         "Arbeiten mit csv"
+title:                "Die Arbeit mit csv"
+html_title:           "Swift: Die Arbeit mit csv"
+simple_title:         "Die Arbeit mit csv"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Data Formats and Serialization"
@@ -10,97 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Warum
+## Was & Warum?
 
-CSV steht für "Comma Separated Values" und ist ein häufig verwendetes Dateiformat zum Speichern von tabellarischen Daten. Es ist besonders nützlich für die Verarbeitung großer Datenmengen, die in einer einfachen, strukturierten Form vorliegen. In diesem Artikel werden wir untersuchen, warum CSV in der Swift-Programmierung nützlich sein kann und wie man damit umgeht.
+CSV steht für "Comma-Separated Values" und ist ein Dateiformat, das verwendet wird, um strukturierte Daten in Textform zu speichern. Programmierer nutzen CSV, um Daten in einer einfach lesbaren Art und Weise zu organisieren und zu speichern.
 
-# Wie geht man vor?
+## Wie geht's?
 
-Um mit CSV-Dateien in Swift zu arbeiten, gibt es einige nützliche Bibliotheken wie z.B. "CSwiftV". Wir werden jedoch in diesem Artikel die Verwendung der integrierten "Foundation" Bibliothek untersuchen, da sie bereits alle notwendigen Funktionen für die Arbeit mit CSV-Dateien bietet.
+```Swift 
 
-Zunächst müssen wir unsere Datei einlesen und in eine String-Variable speichern. Dazu können wir die Funktion `String(contentsOfFile: String)` verwenden. Um die Daten in eine benutzerfreundlichere Form zu bringen, können wir die String-Methode `components(separatedBy: String)` verwenden, um die Daten anhand des Trennzeichen "," aufzuteilen und in Arrays zu speichern. Ein Beispielcode sieht folgendermaßen aus:
+// Beispiel einer CSV-Datei
+Name,Alter,Stadt
+Max,30,Berlin
+Anna,25,Hamburg
+Peter,40,München
 
-```Swift
-// Einlesen der CSV-Datei
-let csvString = try String(contentsOfFile: "meineDaten.csv")
+// Lesen einer CSV-Datei
+let fileURL = URL(fileURLWithPath: "meineDatei.csv")
+let csvString = try String(contentsOf: fileURL)
 
-// Aufteilen der Daten anhand des Trennzeichens
-let rows = csvString.components(separatedBy: ",")
-
-// Beispiel-Ausgabe der Daten
-print(rows)
-```
-
-Wenn wir die obige Funktion auf eine CSV-Datei mit folgendem Inhalt anwenden würden:
-
-```
-Name, Alter, Stadt
-Anna, 26, Berlin
-Max, 32, Hamburg
-Lisa, 18, München
-```
-
-würde die Ausgabe folgendermaßen aussehen:
-
-```
-["Name", "Alter", "Stadt", "Anna", "26", "Berlin", "Max", "32", "Hamburg", "Lisa", "18", "München"]
-```
-
-Das ist jedoch noch nicht sehr benutzerfreundlich. Wir können nun die Einträge besser gruppieren, indem wir eine Schleife verwenden, um jedes Array-Element in ein Dictionary einzufügen:
-
-```Swift
-// Leerzeichen-entfernte Kopfzeile (Erste Zeile)
-let header = rows[0].replacingOccurrences(of: " ", with: "")
-
-// Vorbereiten eines leeren Arrays für die Ausgabe
-var output: [[String: Any]] = []
-
-// Durchlaufen der Arrays und Hinzufügen der Einträge zum Ausgabe-Array
-for row in rows[1...] {
-    let entry = row.components(separatedBy: ",")
-    var dictionary: [String: Any] = [:]
-
-    for (index, value) in entry.enumerated() {
-        dictionary[header[index]] = value
-    }
-    output.append(dictionary)
+// Parsen des CSV-Strings
+let lines = csvString.components(separatedBy: "\n")
+for line in lines {
+    let values = line.components(separatedBy: ",")
+    // Werte verarbeiten
 }
 
-// Beispiel-Ausgabe der Daten
-print(output)
+// Schreiben in eine CSV-Datei
+let fileURL = URL(fileURLWithPath: "neueDatei.csv")
+var csvString = "Name,Alter,Stadt"
+csvString.append("\nMax,30,Berlin")
+csvString.append("\nAnna,25,Hamburg")
+try csvString.write(to: fileURL, atomically: true, encoding: .utf8)
+
 ```
 
-Die Ausgabe würde jetzt folgendermaßen aussehen:
+## Tief einsteigen
 
-```Swift
-[["Name": "Anna", "Alter": "26", "Stadt": "Berlin"], ["Name": "Max", "Alter": "32", "Stadt": "Hamburg"], ["Name": "Lisa", "Alter": "18", "Stadt": "München"]]
-```
+CSV-Dateien sind seit den 1970er Jahren beliebt und werden immer noch häufig verwendet, insbesondere in der Software-Entwicklung und im Datenmanagement. Alternativen zu CSV sind zum Beispiel JSON oder XML, die jedoch oft komplexere Datenstrukturen erlauben. Die Verarbeitung von CSV-Dateien kann mithilfe von CSV-Parser-Libraries wie CSwiftV oder SwiftCSV erleichtert werden.
 
-# Tiefere Einblicke
+## Sieh dir auch an
 
-Jetzt, wo wir die grundlegenden Funktionen zum Einlesen und Verarbeiten von CSV-Dateien kennengelernt haben, können wir noch einen Schritt weitergehen und direkt mit der Datei interagieren, ohne sie in eine String-Variable zu konvertieren. Die "Foundation" Bibliothek bietet die `CSVReader`-Klasse, mit der wir direkt auf eine CSV-Datei zugreifen können.
-
-Ein Beispielcode sieht folgendermaßen aus:
-
-```Swift
-// Importieren der Foundation Bibliothek
-import Foundation
-
-// Pfad zur CSV-Datei
-let csvFilePath = "meineDaten.csv"
-
-// Öffnen der Datei mit dem CSVReader
-if let reader = try? CSVReader.init(fileURL: URL.init(fileURLWithPath: csvFilePath), hasHeaderRow: true) {
-
-    // Schleife zum Durchlaufen der Datei
-    while reader.next() != nil {
-        // Zugriff auf die einzelnen Spalten der Zeile über die "headerRow" Variable
-        let entry = reader.headerRow
-
-        // Beispielhafte Ausgabe einer Spalte
-        print(entry["Name"])
-    }
-}
-```
-
-Mit dem `
+- [CSwiftV](https://github.com/Daniel1of1/CSwiftV)
+- [SwiftCSV](https://github.com/naoty/SwiftCSV)

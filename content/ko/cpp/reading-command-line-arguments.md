@@ -1,7 +1,7 @@
 ---
-title:                "컴퓨터 프로그래밍에서 명령 줄 인수 읽기"
-html_title:           "C++: 컴퓨터 프로그래밍에서 명령 줄 인수 읽기"
-simple_title:         "컴퓨터 프로그래밍에서 명령 줄 인수 읽기"
+title:                "컴퓨터 프로그래밍에 관한 기사 제목: 커맨드 라인 인자 읽기"
+html_title:           "C++: 컴퓨터 프로그래밍에 관한 기사 제목: 커맨드 라인 인자 읽기"
+simple_title:         "컴퓨터 프로그래밍에 관한 기사 제목: 커맨드 라인 인자 읽기"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Files and I/O"
@@ -10,62 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+## 무엇 & 왜?
+커맨드 라인 인수를 읽는 것은 프로그래머가 사용자가 실행하는 프로그램에 특정한 변수 또는 설정을 제공할 수 있도록하는 것입니다. 대개 프로그램이 시작될 때 주어진 인수를 읽어와 실행에 대한 추가적인 정보를 제공합니다. 이를 통해 프로그램이 다양한 경우에 대응할 수 있으며 사용자 요구를 충족시킬 수 있게 됩니다.
 
-C++ 프로그램에서 커맨드 라인 인수를 읽는 것은 매우 중요합니다. 이를 통해 사용자는 프로그램을 실행할 때 옵션과 인수를 제공하고 원하는 결과를 얻을 수 있습니다. 따라서 이 기능을 습득하는 것은 C++ 프로그래밍에서 필수적입니다.
-
-## 어떻게
-
-커맨드 라인 인수를 읽는 방법은 간단합니다. 먼저 `main()` 함수의 매개변수 `argc`와 `argv`를 사용하여 커맨드 라인 인수의 개수와 값을 받아옵니다. 이후 `for` 반복문을 사용하여 `argv` 배열에서 값을 순서대로 읽어오면 됩니다.
-
-```C++
+## 작동 방식:
+```
 #include <iostream>
-
-int main(int argc, char* argv[]) {
-    // 프로그램의 매개변수 개수 출력
-    std::cout << "커맨드 라인 인수 개수: " << argc << std::endl;
-    // 모든 인수를 출력
-    std::cout << "커맨드 라인 인수: ";
-    for (int i = 0; i < argc; i++) {
-        std::cout << argv[i];
-        if (i < argc - 1) {
-            std::cout << ", ";
-        }
-    }
-    // 실행 중지
-    return 0;
+  
+int main(int argc, char *argv[]) {
+  std::cout << "Command line arguments:" << std::endl;
+  for (int i = 0; i < argc; i++)
+    std::cout << argv[i] << std::endl;
 }
-```
-
-**출력:**
 
 ```
-커맨드 라인 인수 개수: 4
-커맨드 라인 인수: ./program, -o, output.txt, -v
-```
 
-## 깊게 더 들어가보기
-
-`argc`와 `argv`가 어떻게 동작하는지 알아보기 위해 실행파일을 터미널에서 다른 인수와 함께 실행해보면 `argv` 배열이 어떻게 변하는지 확인할 수 있습니다. 예를 들어 다음과 같이 실행했을 때
+위의 코드는 인수의 총 개수(argc)와 각 인수의 내용(argv[])를 출력하는 기본적인 예제입니다. 만약 프로그램을 ```./program argument1 argument2 argument3```와 같이 실행하면 아래와 같은 결과가 출력됩니다.
 
 ```
-./program -n --help output.txt -v
+Command line arguments:
+./program
+argument1
+argument2
+argument3
 ```
 
-`argv` 배열은 다음과 같이 변합니다.
+## 깊은 곳까지 들어가보기:
+커맨드 라인 인수는 유닉스 시스템에서 많이 사용되어온 개념입니다. 이전에는 명령어에 대한 일부 옵션을 지정하기 위해 사용되었으며 다양한 프로그래밍 언어에서 이 개념을 지원하고 있습니다. 또한 프로그램을 실행하는 동안 사용자의 입력을 요구하지 않고 인수를 통해 프로그램을 제어하는 것은 자동화 작업에 매우 유용합니다. 그 외에도, 다양한 라이브러리를 사용해 커맨드 라인 인수를 읽는 다른 방법들이 존재합니다.
 
-```C++
-argv[0]: ./program
-argv[1]: -n
-argv[2]: --help
-argv[3]: output.txt
-argv[4]: -v
-```
-
-즉, `argv[0]`에는 실행파일의 경로가, `argv[1]`부터는 옵션과 인수가 순서대로 들어오게 됩니다. 이를 활용하여 `argc`와 `argv`를 조합해서 사용자가 원하는 대로 프로그램을 실행할 수 있습니다.
-
-## 관련 링크
-
-- [C++ - 커맨드 라인 인수](https://sjh836.tistory.com/141)
-- [C++ - 포인터 배열로 커맨드 라인 인수 다루기](http://www.tcpschool.com/cpp/cpp_stream_argc)
-- [C++ - 커맨드 라인 인수를 이용한 간단한 예제 코드](https://modoocode.com/271)
+## 관련 자료:
+- https://www.geeksforgeeks.org/command-line-arguments-in-c-cpp/
+- https://opensource.com/article/19/5/how-argument-options-c
+- https://www.gnu.org/software/libc/manual/html_node/Argument-Syntax.html

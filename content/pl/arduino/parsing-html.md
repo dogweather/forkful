@@ -1,7 +1,7 @@
 ---
-title:                "Analizowanie html"
-html_title:           "Arduino: Analizowanie html"
-simple_title:         "Analizowanie html"
+title:                "Analiza składni HTML"
+html_title:           "Arduino: Analiza składni HTML"
+simple_title:         "Analiza składni HTML"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "HTML and the Web"
@@ -10,63 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co&dlaczego?
+Parsing HTML to proces, który pozwala programistom na analizowanie i przetwarzanie kodu źródłowego stron internetowych. Wykorzystuje się go w celu pobierania i wyświetlania zawartości witryn, wyodrębniania określonych informacji lub weryfikacji poprawności formatowania. Jest to niezbędne narzędzie dla twórców aplikacji internetowych i automatycznych robotów przeglądających sieci.
 
-Kody HTML są często używane do tworzenia stron internetowych, jednak czasami może być potrzebne ich parsowanie w celu odczytania i wykorzystania zawartości. W tym artykule dowiesz się, jak za pomocą Arduino możesz wykonywać to zadanie.
-
-## Jak to zrobić
-
-Parsowanie HTML za pomocą Arduino jest prostsze, niż mogłoby się wydawać. Wystarczy użyć gotowej biblioteki o nazwie "HTML Parser", którą możesz pobrać z oficjalnego repozytorium Arduino lub zainstalować wtyczkę do swojego środowiska programistycznego.
-
-Przykładowy kod wraz z wyjściem wyglądałby następująco:
-
-```
-#include <HTMLParser.h> // Importowanie biblioteki
-
-HTMLParser parser; // Inicjalizacja obiektu parsera HTML
+## Jak to zrobić:
+```Arduino
+#include <ESP8266WiFi.h>
+#include <ESP8266HTTPClient.h>
 
 void setup() {
-  Serial.begin(9600); // Inicjalizacja komunikacji z komputerem
-  parser.begin(Serial); // Uruchomienie parsera na porcie Serial
+  Serial.begin(115200); // inicjacja portu szeregowego
+  WiFi.begin("WIFI nazwa sieci", "WIFI hasło"); // połączenie z siecią 
+  while (WiFi.status() != WL_CONNECTED) { //pętla oczekująca 
+    delay(500);
+    Serial.println("Connecting to WiFi..");
+  }
 }
 
 void loop() {
-  if (Serial.available() > 0) { // Sprawdzenie, czy są dostępne dane
-    parser.parse(Serial); // Parsowanie danych z portu Serial
-    if (parser.isTag()) { // Sprawdzenie, czy to jest tag HTML
-      parser.printTag(); // Wyświetlenie tagu
-    } else if (parser.isText()) { // Sprawdzenie, czy to jest tekst HTML
-      parser.printTag(); // Wyświetlenie tekstu
+  if (WiFi.status() == WL_CONNECTED) {
+    HTTPClient http; //deklaracja obiektu HTTPClient
+    http.begin("http://blabla.com/"); //adres żądanej strony
+    int httpCode = http.GET(); //wysłanie żądania GET
+    if (httpCode > 0) {
+      String payload = http.getString(); //przypisanie odpowiedzi do stringa
+      Serial.println(payload); //wyświetlenie odpowiedzi w serial monitorze
     }
+    http.end(); //zakończenie sesji HTTP
+    
   }
+  delay(5000); // opóźnienie między kolejnymi żądaniami
 }
 ```
 
-Przykładowe wyjście:
+## W zagłębienie:
+Parsing HTML istniał już w latach 90-tych, a jego popularność zwiększyła się wraz z rozwojem aplikacji internetowych. W alternatywnych podejściach do przetwarzania kodu HTML wykorzystuje się również inne narzędzia, takie jak XPath czy BeautifulSoup. W przypadku implementacji w Arduino, należy jednak uważać na zużycie pamięci i czas wykonania, ponieważ analiza kodu źródłowego może wymagać dużej ilości zasobów.
 
-```
-<html> // Tag
-<head> // Tag
-<title> // Tag
-Parsowanie HTML za pomocą Arduino // Tekst
-</title> // Tag
-</head> // Tag
-<body> // Tag
-<h1> // Tag
-Witaj na mojej stronie internetowej! // Tekst
-</h1> // Tag
-</body> // Tag
-</html> // Tag
-```
-
-W powyższym przykładzie, za pomocą metody `isTag()` sprawdzamy, czy otrzymany znak jest tagiem, a następnie wyświetlamy go za pomocą metody `printTag()`. Podobnie postępujemy z tekstem, wykorzystując odpowiednie metody.
-
-## Głębszy zanurzenie
-
-Biblioteka "HTML Parser" oferuje także wiele innych metod, dzięki którym możesz dokładnie kontrolować proces parsowania HTML. Możesz na przykład ustawić, żeby parser ignorował niektóre tagi lub pobierał tylko zawartość konkretnych tagów. Więcej informacji na ten temat znajdziesz w oficjalnej dokumentacji biblioteki.
-
-## Zobacz też
-
-- [Oficjalna dokumentacja biblioteki "HTML Parser"](https://arduinojson.org/doc/)
-- [Oficjalna strona Arduino](https://www.arduino.cc/)
-- [Artykuł o podstawach programowania Arduino](https://www.nettiny.net/pl/artykul/2-Jak-zaczac-programowac-Arduino)
+## Zobacz też:
+- Dokumentacja Arduino: https://www.arduino.cc/reference/en/libraries/webservicesclient/
+- Instrukcje tworzenia aplikacji internetowych: https://developer.mozilla.org/pl/docs/Web/API/Document_Object_Model
+- Poradnik dla początkujących w programowaniu Arduino: https://www.arduino.cc/en/Guide/HomePage

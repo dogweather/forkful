@@ -1,7 +1,7 @@
 ---
-title:                "पैटर्न के समान अक्षरों को हटाना"
-html_title:           "C: पैटर्न के समान अक्षरों को हटाना"
-simple_title:         "पैटर्न के समान अक्षरों को हटाना"
+title:                "पैटर्न के समान अक्षर हटाना"
+html_title:           "C: पैटर्न के समान अक्षर हटाना"
+simple_title:         "पैटर्न के समान अक्षर हटाना"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -10,62 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Kyun
-Kisi bhi programming language mein, data manipulation bohot zaroori hai. Aur kabhi kabhi humein specific pattern matches ko delete karne ki zaroorat hoti hai. C programming language mein, hum yeh kar sakte hain by using functions like `strchr()` aur `strcspn()`.
+## क्या और क्यों?
+कार्यकारी प्रोग्रामर दृष्टिकोण से, एक तरीका है जिसमें उन्हें एक निश्चित पैटर्न को पूरा करने के लिए स्ट्रिंग से अमेजिंग तत्व को हटाना होता है। इसके लिए, वे सी भाषा का भी सहारा लेते हैं पूर्णिंग सीरियल बनाने में जो उन्हें पैटर्न के अनुसार तत्व हटाने में मदद करती है।
 
-## Kaise Karein
-Agar humein kisi string se specific characters ko delete karna hai, toh hum `strchr()` function ka use kar sakte hain. Yeh function char ko dusre character mein search karta hai aur agar match milta hai toh use delete karta hai.
-
+## कैसे करें?
 ```
-#include <stdio.h>
-#include <string.h>
+कोड ब्लॉक में
+कोई स्ट्रिंग और उसी स्ट्रिंग में एक प्राइमर दी जाती है जो कोई भी सामान्य वेरिएबल को देती है जिसे उस तत्व से जोड़ा जाता है।
 
-int main() {
-  char str[] = "Hindi readers, welcome to C programming!";
-  char target = 'e';
-  char *result;
-
-  result = strchr(str, target); // target character 'e' delete ho jayega
-  printf("String after deletion: %s\n", result);
-
-  return 0;
-}
+समाप्ति के रूप में, यह एक रिटर्न स्टेटमेंट देता है जो तत्वों को त्रुटिफ्री स्ट्रिंग में कॉपी करता है जो खाली स्ट्रिंग सिग्मेंट के अतिरिक्त हमेशा से पास कंप्लिटनग नहीं होता है।
 ```
+इस प्रकार से आप एक छोटे से प्रोग्राम को लिख सकते हैं जो स्ट्रिंग से अवतरित तत्व को हटा सकता है जो स्विस्से से मॅचत नहीं है।
 
-Output:
+## गहरे पानी में
 ```
-String after deletion: Hindi radrs, welcom to C programming!
-```
+जब सी भाषा शुरू हुई, तब तैयार हटाने अभी तक बहुत मश्हूर नहीं था। फिर भी, इस तकनीक को लागू करने में काफी उपयोगी था सी भाषा में। अभी भी यह काफी लोकप्रित है प्रोग्रामरों में जो स्ट्रिंग से तत्वों को हटाने के लिए काम करते हैं।
 
-Agar humein ek specific pattern ko match karne ke baad delete karna hai, toh hum `strcspn()` function ka use kar sakte hain. Yeh function match ke baad se leke string ka end tak ke characters ko delete karta hai.
+अगर आप दूसरे तरीकों की तलाश हैं, तो आप में से अमेजिंग है एक डायरेक्ट वेक्सन का उपयोग कर सकते हैं जो रिटर्न वेक्सन को हटाने का एक और तरीका है।
 
-```
-#include <stdio.h>
-#include <string.h>
+यहां कुछ विचार आपके लिए: पेटर्न के अनुसार तत्व हटाते समय, आपको उस तत्व के पीछे और आगे की यादी को भी देखने की जरुरत होती है। यह आपके प्रोग्राम को कम साइड इफ़ेक्ट वाले हम इंप्लेमेंटेशन को चुने।
 
-int main() {
-  char str[] = "Hindi readers, welcome to C programming!";
-  char target[] = "wel";
-  char *result;
+और एक बात, अगर आपको इस प्रश्न के बारे में अधिक जानकारी चाहिए तो, आप जुडी लिंक्स का आश्रन कर सकते हैं जो इस विषय पर अधिक जानकारी देते हैं।
 
-  result = strcspn(str, target); // target pattern 'wel' delete ho jayega
-  printf("String after deletion: %s\n", result);
+## यहां भी देखें
+- [String Manipulation in C](https://www.programiz.com/c-programming/library-function/string.h) 
+- [The strchr() Function](https://www.geeksforgeeks.org/strchr-cpp-reference/)
 
-  return 0;
-}
-```
-
-Output:
-```
-String after deletion: Hindi readers, c programming!
-```
-
-## Gehri Jankari
-`strchr()` aur `strcspn()` functions ka use string manipulation mein bohot common hai. In dono functions ka syntax ek jaisa hota hai jisme pehle parameter mein string diya jata hai aur dusre parameter mein character ya pattern diya jata hai. Agar match milta hai, toh woh character ya pattern string se delete ho jata hai aur remaining string return ho jata hai.
-
-## Dekhein Alag Se
-- [String Manipulation using strchr() function in C](https://www.geeksforgeeks.org/strchr-c-language/)
-- [String Manipulation using strcspn() function in C](https://www.geeksforgeeks.org/strcspn-in-c/)
-- [String Manipulation in C - Video Tutorial (Hindi)](https://youtu.be/Tsppr6ZLxFY)
-
-## Dekhein Alag Se
+शुक्रिया की आप ने हमारे लेख को पढ़ा। इसे

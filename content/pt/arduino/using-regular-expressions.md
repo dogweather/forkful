@@ -10,53 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que usar expressões regulares no Arduino?
+# O que & Por quê?
 
-As expressões regulares são uma ferramenta útil e poderosa para manipulação de padrões em cadeias de texto. Elas podem ser úteis para filtrar e validar dados, além de permitir uma maior flexibilidade na busca e substituição de informações. No Arduino, o uso de expressões regulares pode ser especialmente útil em projetos que envolvem comunicação com outros dispositivos ou em aplicações que envolvem a manipulação de dados.
+Regular expressions (expressões regulares) são uma ferramenta útil para programadores que precisam fazer buscas e substituições específicas em texto. Elas permitem que você defina padrões de caracteres a serem encontrados, facilitando tarefas repetitivas de manipulação de strings em seus códigos.
 
-## Como usar expressões regulares no Arduino?
+# Como fazer:
 
-Para utilizar expressões regulares no Arduino, é necessário incluir a biblioteca "Regex.h" no seu código. Em seguida, é preciso criar um objeto da classe "Regex" e utilizar os métodos disponíveis para realizar as operações desejadas.
+As expressões regulares são amplamente utilizadas em linguagens de programação, e para incluí-las em seu código Arduino, é necessário utilizar a biblioteca padrão "Regex.h". Aqui está um exemplo simples de como utilizar expressões regulares para verificar se um número está presente em uma string:
 
-Por exemplo, se quisermos verificar se uma determinada entrada de usuário é um número de telefone válido, podemos utilizar o seguinte código:
+```
+Arduino Code Block:
+// Incluindo a biblioteca Regex
+#include <Regex.h>
 
-```Arduino
-#include <regex.h>
+// Define a expressão regular para encontrar o padrão de um número
+Regex numberPattern("\d+");
 
-Regex phoneRegex("[0-9]{2,3} [0-9]{4,5}-[0-9]{4}");
+// Define a string de teste
+String str = "Este é um exemplo de string com o número 1234 presente.";
 
-String userInput = "11 91234-5678";
-
-boolean valid = phoneRegex.match(userInput);
-
-if(valid){
-  Serial.println("Número de telefone válido!");
+// Utiliza a função 'match' para verificar se a expressão regular é encontrada na string de teste
+if (numberPattern.match(str)) {
+  Serial.println("Número encontrado!");
 }
-else{
-  Serial.println("Número de telefone inválido.");
+else {
+  Serial.println("Número não encontrado.");
 }
+
 ```
 
-No código acima, criamos um objeto "phoneRegex" que irá verificar se o padrão de um número de telefone está sendo seguido (2 a 3 dígitos + espaço + 4 a 5 dígitos + hífen + 4 dígitos). Em seguida, utilizamos o método "match" para verificar se a string de entrada do usuário é válida de acordo com esse padrão. Caso seja válido, uma mensagem será exibida no Serial Monitor.
+Este código irá imprimir "Número encontrado!" na tela serial, pois a expressão regular encontrou um padrão numérico na string de teste.
 
-## Deep Dive: Trabalhando com expressões regulares
+# Mergulho Profundo:
 
-Para utilizar expressões regulares de forma mais avançada no Arduino, é importante entender os diferentes caracteres e operadores utilizados nessa linguagem. Algumas das principais características das expressões regulares são:
+As expressões regulares remontam aos anos 1950, quando foram utilizadas pela primeira vez em linguagens de programação específicas para manipulação de texto. Atualmente, elas são amplamente suportadas em várias linguagens de programação, incluindo C++, Java e Python.
 
-- Os colchetes ([]) são utilizados para indicar um conjunto de caracteres possíveis. Por exemplo, [aeiou] irá buscar por todas as vogais em uma string.
-- O asterisco (*) indica que o elemento anterior pode aparecer zero ou mais vezes. Por exemplo, o padrão "a*" irá buscar por todas as ocorrências da letra "a".
-- O sinal de mais (+) indica que o elemento anterior pode aparecer uma ou mais vezes. Por exemplo, o padrão "b+" irá buscar por todas as sequências de "b".
-- Os parênteses () são utilizados para agrupar elementos e criar subexpressões. Por exemplo, (ab)* irá buscar por qualquer número de ocorrências da sequência "ab".
-- O ponto (.) indica ocorrência de qualquer caractere, exceto quebra de linha.
-- O sinal de interrogação (?) indica que o elemento anterior pode aparecer zero ou uma vez.
-- O caractere de escape (\) é utilizado para indicar que o próximo caractere deve ser interpretado literalmente, ao invés de realizar uma função especial.
+No Arduino, a biblioteca "Regex.h" fornece funções úteis, como 'match' e 'search' para encontrar padrões em suas strings. Se você não estiver familiarizado com expressões regulares, pode parecer inicialmente difícil de entender, mas com estudo e prática, elas podem ser uma ferramenta poderosa para economizar tempo e esforço em suas tarefas de programação.
 
-Para aprofundar seus conhecimentos em expressões regulares e suas aplicações no Arduino, você pode conferir os links abaixo:
+# Veja também:
 
-- [Tutorial de Expressões Regulares para Arduino](https://www.link.com)
-- [Documentação da Biblioteca Regex.h](https://www.link.com)
-- [Exemplos de uso de expressões regulares no Arduino](https://www.link.com)
-
-## Veja também
-- [Exemplos de uso de expressões regulares em projetos do Arduino](https://www.projeto1.com)
-- [Biblioteca Regex.h no Arduino Reference](https://www.projeto2.com)
+- [Documentação oficial da biblioteca Regex.h](https://www.arduino.cc/reference/en/libraries/regex/)
+- [Aprenda mais sobre expressões regulares com o livro "Mastering Regular Expressions"](https://www.oreilly.com/library/view/mastering-regular-expressions/0596528124/)
+- [Tutorial sobre como utilizar expressões regulares no Arduino](https://www.hackster.io/jinithjm/using-regular-expression-regex-in-arduino-f84621)

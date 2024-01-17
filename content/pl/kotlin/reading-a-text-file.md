@@ -10,34 +10,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co to jest i dlaczego?
+Czytasz wiele kodów i widzisz funkcję `readTextFile()`, ale nie wiesz, co to jest? Czy ktokolwiek tak naprawdę potrzebuje czytać plik tekstowy? Odpowiedź brzmi - tak! Programiści często muszą przetwarzać dane z plików tekstowych, ponieważ jest to popularny format plików do przechowywania i przesyłania informacji.
 
-Prawdopodobnie zastanawiasz się, po co ci czytanie plików tekstowych w Kotlinie. Cóż, jest to częsta czynność w programowaniu, zwłaszcza jeśli pracujesz z danymi. Dzięki temu artykułowi dowiesz się, jak w łatwy sposób czytać pliki tekstowe i wykorzystywać te informacje do swoich celów.
+## Jak to zrobić:
+Zobacz przykładowy kod w języku Kotlin poniżej, aby dowiedzieć się, jak odczytać plik tekstowy i wyświetlić jego zawartość:
 
-## Jak to zrobić
-
-Aby czytać pliki tekstowe w Kotlinie, potrzebne będą nam dwa elementy: strumienie (streams) oraz wykorzystanie funkcji readFile(). Spójrzmy na przykład kodu, który pokaże Ci, jak dokładnie to zrobić:
-
-```
-import java.io.File
-
-fun main() {
-    val file = File("sample.txt")
-    val lines = file.readLines()
-    for (line in lines) {
-        println(line)
-    }
-}
+```Kotlin
+val plik = File("ścieżka/do/pliku.txt")
+val zawartość = plik.readText()
+println(zawartość)
 ```
 
-Wykorzystaliśmy klasę File, aby odwołać się do pliku "sample.txt" w naszym projekcie. Następnie za pomocą funkcji readLines() odczytaliśmy zawartość pliku i przypisaliśmy ją do zmiennej lines. W pętli for wyświetliliśmy każdą linię pliku na konsoli. Proste, prawda? Aby wykorzystać te informacje w dalszej części naszego kodu, możemy np. przypisać je do innych zmiennych lub wykorzystać w wyrażeniach warunkowych.
+**Wynik:** Zostanie wyświetlona zawartość pliku tekstowego.
 
-## Deep Dive
+## Głęboki zanurzyć:
+Pierwsze biblioteki do manipulacji plikami tekstowymi pojawiły się już w latach 60-tych. Jednym z najpopularniejszych sposobów czytania plików tekstowych jest wykorzystanie funkcji `readText()`, która jest dostępna w większości języków programowania. Alternatywnym rozwiązaniem może być czytanie pliku wiersz po wierszu, co jest przydatne w przypadku dużych plików. Implementacja funkcji `readText()` jest oparta na buforowaniu, dzięki czemu odczyt wielu znaków na raz jest szybszy.
 
-Jeśli chcesz zagłębić się w temat czytania plików tekstowych w Kotlinie, warto przeczytać oficjalną dokumentację języka, gdzie znajdziesz więcej szczegółów na temat działania funkcji readFile(). Jest także wiele przydatnych tutoriali dostępnych online, które mogą pomóc Ci w bardziej zaawansowanych zastosowaniach, takich jak przetwarzanie większych plików tekstowych czy obsługa wyjątków przy czytaniu pliku. Warto także zapoznać się z innymi narzędziami, takimi jak BufferedReader czy Scanner, które mogą ułatwić pracę z plikami tekstowymi w Kotlinie.
-
-## Zobacz także
-
-- Oficjalna dokumentacja języka Kotlin: https://kotlinlang.org/docs/reference/input-output.html#file-io
-- Tutorial o czytaniu plików tekstowych w Kotlinie: https://www.javatpoint.com/kotlin-read-file
-- Przykłady wykorzystania funkcji readFile(): https://thetechnocafe.com/how-to-read-a-text-file-in-kotlin/
+## Zobacz również:
+- Dokumentacja języka Kotlin: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/read-text.html
+- Poradnik dla początkujących: https://kotlinlang.org/docs/tutorials/kotlin-for-py/reading-files.html

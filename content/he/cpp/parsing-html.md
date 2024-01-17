@@ -1,7 +1,7 @@
 ---
-title:                "פירוק HTML"
-html_title:           "C++: פירוק HTML"
-simple_title:         "פירוק HTML"
+title:                "ניתוח html"
+html_title:           "C++: ניתוח html"
+simple_title:         "ניתוח html"
 programming_language: "C++"
 category:             "C++"
 tag:                  "HTML and the Web"
@@ -10,59 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-למה: הסבר מוכרז למה מישהו ירצה לעסוק בניתוח של קוד HTML.
+## מה ולמה?
 
-כיצד: דוגמאות של קודים ופלט תוך שימוש בבלוקי קוד "```C++ ... ```". 
+דירוג HTML הוא התהליך של קריאה וניתוח של קוד HTML והמרתו למבנה נתונים נוח. תפקידו העיקרי של המתכנת בפעם הזו הוא להציל את המידע מתוך הקוד העגול של HTML ולהשתמש בו כדי ליצור תוכניות ואפליקציות מתקדמות.
 
-### Why
-במהלך פיתוח תוכניות מחשב, חשוב לנתח ולהבין את תוכן הדפים של אתרי אינטרנט. בכדי לעשות זאת, ניתוח HTML מאפשר לנו לקרוא ולהבין את התוכן באופן מעולה ולהשתמש בו כחלק מהפיתוח.
+## איך לעשות?
 
-### How To
-כדי לנתח ולקרוא קוד HTML בתוך קוד פייתון, למעשה נצטרך להשתמש בספריית שנקראת "HTML Parser". הנה דוגמא מוכפת לכדי שנדמה למחולל הדפים של ה"Sanmina Corporation".
+ככל שנראה קל, דירוג HTML קשה לקריאה כי הוא כתוב בצורה סותרת דוגמאות. אבל עלינו לעבוד בעיקר עם C++ ולהשתמש בכלים וטכניקות שיאפשרו לנו להבין את הקוד ולהפוך אותו למבנה נתונים נוח.
 
 ```C++
-#include <iostream>
-#include <html-parser>
-using namespace std;
+#include <iostream> 
+using namespace std; 
 
-int main() {
-    
-    Parser p = new Parser();
-    string url = "http://www.sanmina.com/";
-    HTMLPage page = p.parse(url);
-    
-    cout << page.getContent() << endl;
-    
-    return 0;
+int main() 
+{ 
+	string html_code = "<html><body><h1>Hello, World!</h1></body></html>"; 
+
+	// Parsing HTML
+
+	int start = html_code.find("<h1>") + 4; // finding the start of the text inside the <h1> tag
+	int end = html_code.find("</h1>"); // finding the end of the text inside the <h1> tag
+
+	string result = html_code.substr(start, end - start); // extracting the text between the tags
+
+	cout << result << endl; // output: "Hello, World!"
+
+	return 0; 
 }
 ```
 
-Sample output:
-```
-<!DOCTYPE html>
-<html>
-   <head>
-      <title>Welcome to Sanmina | Sanmina</title>
-      <meta name="description" content="Sanmina is a global electronics manufacturing services (EMS) provider. It offers complex supply chain management and technology solutions to original equipment manufacturers." />
-      <meta name="keywords" content="Sanmina, EMS provider, electronics manufacturing services, technology solutions" />
-   </head>
-   <body class="flex-col">
+## צלילה עמוקה
 
-      <!-- Header -->
-      <div class="header-wrapper">
-        <header class="alt flex">
-            <h1>Sanmina</h1>
-        </header>
-    </div>
+דירוג HTML נפוץ מאוד כי הוא קל לקריאה והבנה. אבל ישנן טכניקות נוספות לקריאה של דירוגים וניתוחם כמו שבNLP, בעקבות הסתברות חישובית, וקוגניציה. ישנן גם מספר רחב של כלים וספריות כמו BeautifulSoup ו-JavaSoup הניתנים לשימוש בכדי לקרוא ולנתח את קוד HTML בצורה יעילה יותר.
 
-   </body>
-</html>
+## ראה גם
 
-```
-
-### Deep Dive
-כאשר אנו משתמשים בספריית "HTML Parser", אנו יכולים להעביר לה גם פרמטרים נוספים כגון "תווים מיוחדים" כך שהפלט יהיה בפורמט שנוח יותר לנו. בנוסף, הספרייה מאפשרת לנו גם להציג את התוכן בפורמט מסודר יותר בעזרת פונקציות כגון "clean_content()" ו-"format_print()".
-
-See Also
-- הספרייה הרשמית של "HTML Parser": https://html-parser.sourceforge.io/
-- מאמר ממאגר ידע בהקשר של "HTML Parsing": https://knowledgebase.progress.com/articles/Article/How-to-parse-HTML-in-C-using-HTMLparser-C?popup=true
+https://www.w3schools.com/whatis/whatis_html.asp

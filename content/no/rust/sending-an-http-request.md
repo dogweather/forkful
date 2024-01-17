@@ -1,7 +1,7 @@
 ---
-title:                "Sender en http-forespørsel"
-html_title:           "Rust: Sender en http-forespørsel"
-simple_title:         "Sender en http-forespørsel"
+title:                "Å sende en http-forespørsel"
+html_title:           "Rust: Å sende en http-forespørsel"
+simple_title:         "Å sende en http-forespørsel"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "HTML and the Web"
@@ -10,41 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hvorfor
+# Hva & Hvorfor?
 
-Å sende HTTP-forespørsler kan være en viktig del av å utvikle nettapplikasjoner og automatisere prosesser. Det kan hjelpe deg å kommunisere med eksterne tjenester og få tilgang til data eller ressurser som du trenger.
+Å sende en HTTP-forespørsel er en måte å kommunisere med en webserver på. Dette er en vanlig oppgave for programmerere, da det tillater dem å hente data fra en webserver og bruke den i sine programmer.
 
-# Hvordan
-
-Hvis du vil sende en HTTP-forespørsel i Rust, kan du bruke et bibliotek som heter "reqwest". Først må du legge til det i prosjektet ditt ved å legge til dette i din "Cargo.toml" fil:
+# Hvordan:
 
 ```Rust
-[dependencies]
-reqwest = { version = "0.10", features = ["json"] }
+use reqwest::blocking::get;
+
+let response = get("https://www.example.com").unwrap();
+println!("Response status code: {}", response.status());
+println!("Response headers:\n{:?}", response.headers());
+println!("Response body:\n{}", response.text().unwrap());
 ```
 
-Deretter kan du importere biblioteket i filen din:
-
-```Rust
-use reqwest;
+Output:
+```
+Response status code: 200 OK
+Response headers:
+{"content-type": "text/html"}
+Response body:
+<!DOCTYPE html>
+<html>
+<head>
+<title>Example Domain</title>
+...
+</html>
 ```
 
-For å sende en HTTP GET-forespørsel til en URL, kan du bruke følgende kode:
+# Dypdykk:
 
-```Rust
-let resp = reqwest::blocking::get("https://www.example.com")?
-    .text()?;
-println!("{:#?}", resp);
-```
+HTTP (Hypertext Transfer Protocol) er et protokoll som brukes for å sende informasjon mellom en klient (for eksempel en nettleser) og en server (for eksempel en webside). Det er flere andre alternativer til å sende HTTP-forespørsler i Rust, som for eksempel Hyper og Surf biblioteker.
 
-Dette vil sende en GET-forespørsel til den spesifiserte URL-en og skrive ut svaret som tekst. Du kan også utføre andre handlinger som å sende POST-forespørsler, sette tilpassede headere og behandle feilmeldinger ved hjelp av dette biblioteket.
+Implementasjonen av å sende HTTP-forespørsler i Rust er enkelt takket være de mange nyttige bibliotekene som finnes. Disse bibliotekene håndterer alle detaljer som å opprette TCP-tilkoblinger og håndtere Request and Response objekter.
 
-# Dykk dypere
+# Se også:
 
-Det finnes forskjellige måter å sende HTTP-forespørsler på i Rust, og "reqwest" er bare ett alternativ. Hvis du er interessert i å se på andre biblioteker eller bygge din egen løsning, kan du lese mer om "hyper" biblioteket eller se på "actix-web" rammeverket for nettutvikling i Rust.
-
-# Se også
-
-- [reqwest dokumentasjon](https://docs.rs/reqwest)
-- [hyper bibliotek](https://hyper.rs/)
-- [actix-web rammeverk](https://actix.rs/)
+- Rust's offisielle documentation om HTTP-forespørsler: [https://doc.rust-lang.org/book/ch12-01-accepting-command-line-arguments.html](https://doc.rust-lang.org/book/ch12-01-accepting-command-line-arguments.html)
+- Eksempler på å sende HTTP-forespørsler i Rust: [https://github.com/alexcrichton/twitch-rs/blob/master/src/api.rs](https://github.com/alexcrichton/twitch-rs/blob/master/src/api.rs)

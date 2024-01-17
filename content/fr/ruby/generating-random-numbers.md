@@ -10,41 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+# Qu'est-ce que c'est et pourquoi le faire?
 
-Tu te demandes peut-être pourquoi tu voudrais générer des nombres aléatoires en utilisant Ruby. Eh bien, la génération de nombres aléatoires peut être utile dans de nombreux cas, comme la génération de données de test pour ton code ou la simulation de résultats aléatoires pour un jeu.
+Générer des nombres aléatoires est un moyen pour les programmeurs de créer des valeurs aléatoires dans leurs programmes. Cela peut servir à de nombreuses fins, telles que des jeux, des études de données et des tests d'algorithmes.
 
-## Comment faire
-
-Générer des nombres aléatoires en Ruby est assez simple. Tout d'abord, tu devras utiliser la méthode ```rand()``` en spécifiant la plage de nombres à l'intérieur des parenthèses. Par exemple, si tu veux générer un nombre aléatoire entre 1 et 10, tu peux utiliser ```rand(1..10)```.
-
-Voici un exemple de code qui génère 5 nombres aléatoires entre 1 et 100 et les imprime à l'écran :
+# Comment faire:
 
 ```Ruby
-(1..5).each do
-    puts rand(1..100)
-end
+# Générer un nombre aléatoire entre 1 et 10
+rand(1..10)
+# => 7
+
+# Générer un nombre aléatoire entre 0 et 1
+rand
+# => 0.23175719101114115
 ```
 
-Voici le résultat de cet exemple :
+# Plongée en profondeur:
 
-```
-52
-16
-85
-41
-99
-```
+Il existe différentes techniques pour générer des nombres aléatoires, allant de l'utilisation de générateurs pseudo-aléatoires à base de données aléatoires matérielles. Certaines fois, il est possible d'ajuster la "graine" ou la "seed" utilisée pour générer les nombres aléatoires afin d'obtenir une séquence spécifique de valeurs aléatoires.
 
-## Plongée profonde
+Il existe également des alternatives à la fonction rand() de Ruby, telle que la méthode Kernel.srand(), qui permet de définir la graine et d'utiliser des algorithmes plus complexes pour générer des nombres aléatoires.
 
-La méthode ```rand()``` utilise en fait une formule mathématique pour générer des nombres pseudo-aléatoires. Cela signifie que les nombres ne sont pas vraiment aléatoires, mais ils semblent l'être. Cela peut sembler étrange, mais en informatique, il est difficile de générer des nombres vraiment aléatoires, donc les méthodes pseudo-aléatoires sont souvent utilisées.
+# Voir aussi:
 
-Il est également important de noter que la méthode ```rand()``` utilise comme base un nombre appelé "seed". Ce nombre peut être spécifié en utilisant ```srand()```, ce qui te donnera toujours la même séquence de nombres aléatoires si tu utilises le même seed.
-
-## Voir aussi
-Pour en savoir plus sur la génération de nombres aléatoires en Ruby, tu peux consulter les liens suivants :
-- [Documentation officielle de Ruby sur ```rand()```](https://ruby-doc.org/core-2.7.0/Kernel.html#method-i-rand)
-- [Un tutoriel sur la génération de nombres aléatoires en Ruby](https://www.educative.io/edpresso/ruby-generating-random-numbers)
-
-Et n'oublie pas de t'amuser en expérimentant avec la génération de nombres aléatoires en utilisant Ruby !
+- [La documentation officielle de Ruby sur la fonction rand()](https://ruby-doc.org/core-2.7.1/Random.html#method-c-rand)
+- [Un article sur différents types de générateurs aléatoires](https://www.geeksforgeeks.org/random-vs-pseudorandom-numbers/)
+- [Quelques outils Ruby pour la génération de nombres aléatoires](https://rubygems.org/search?utf8=%E2%9C%93&query=random)

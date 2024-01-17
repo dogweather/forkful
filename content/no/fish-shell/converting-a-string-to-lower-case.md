@@ -10,29 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor 
-Hvorfor vil du konvertere en streng til små bokstaver? Det er enkelt - for å endre tekst til en mer lesbar og konsistent form.
+Hva & hvorfor?
+Konvertering av en streng til små bokstaver er en vanlig praksis blant programmerere for å gjøre tekstbehandling og sammenligning av tekst mer pålitelig. Dette gjøres ved å endre alle bokstavene til små bokstaver, noe som gjør det enklere å sammenligne to tekster uten å bekymre seg for forskjeller i store og små bokstaver.
 
-## Hvordan
-Bruk følgende kode i Fish Shell for å konvertere en streng til små bokstaver:
+Slik gjør du:
+Fish Shell tilbyr en enkel kommando for å konvertere en streng til små bokstaver: `lowercase`. Her er et eksempel på hvordan du kan bruke denne kommandoen:
 
-```fish
-set string "GRØNN FISK"
-echo $string | tr '[:upper:]' '[:lower:]'
+```
+Fish Shell ~> lowercase "HeLlO wOrLD"
+hello world
 ```
 
-Dette vil gi følgende output:
+Resultatet av å kjøre denne kommandoen vil være en streng med alle bokstaver konvertert til små bokstaver. Dette kan også gjøres med variabler eller output fra andre kommandoer, for eksempel:
 
-```fish
-grønn fisk
+```
+Fish Shell ~> set greeting "Hei, Velkommen!"
+Fish Shell ~> lowercase $greeting
+hei, velkommen!
 ```
 
-## Dypdykk
-Metoden som brukes i eksempelet ovenfor, bruker kommandoen "tr" for å konvertere alle store bokstaver ([:upper:]) til små bokstaver ([:lower:]). Dette er en enkel, men effektiv måte å konvertere en streng til små bokstaver på. 
+Dypdykk:
+Å konvertere en streng til små bokstaver er en vanlig praksis som har eksistert i lang tid blant programmerere. Dette sikrer at sammenligninger av tekst er nøyaktige og pålitelige uavhengig av hvilken plattform eller programmeringsspråk som brukes.
 
-Det finnes også andre måter å oppnå dette på i Fish Shell, for eksempel ved bruk av kommandoen "sed". Du kan lese mer om dette og andre metoder i Fish Shell sin dokumentasjon.
+Som en alternativ metode kan noen programmeringsspråk også tilby en innebygd funksjon for å konvertere en streng til små bokstaver, som for eksempel `toLowerCase()` i JavaScript.
 
-## Se også
-- [Offisiell dokumentasjon for Fish Shell](https://fishshell.com/docs/current/index.html)
-- [Grunnleggende bruk av terminalen](https://www.dreamhost.com/blog/the-command-line-is-your-friend/)
-- [Utforsk forskjellige kommandoer i Fish Shell](https://fishshell.com/docs/current/cmds.html)
+I Fish Shell blir konvertering av en streng til små bokstaver gjort ved hjelp av POSIX-funksjonen `tolower`, som gjør bruken av denne kommandoen rask og effektiv.
+
+Se også:
+Hvis du ønsker å lære mer om andre nyttige kommandoer og funksjoner i Fish Shell, kan du sjekke ut dokumentasjonen på deres offisielle nettside: https://fishshell.com/docs/current/
+
+Du kan også utforske mulighetene og tilpasningsalternativene i Fish Shell ved å se på eksempler og diskusjoner på deres GitHub-samfunn: https://github.com/fish-shell/fish-shell

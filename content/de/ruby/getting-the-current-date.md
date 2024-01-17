@@ -1,7 +1,7 @@
 ---
-title:                "Das aktuelle Datum erhalten."
-html_title:           "Ruby: Das aktuelle Datum erhalten."
-simple_title:         "Das aktuelle Datum erhalten."
+title:                "Das aktuelle Datum abrufen."
+html_title:           "Ruby: Das aktuelle Datum abrufen."
+simple_title:         "Das aktuelle Datum abrufen."
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Dates and Times"
@@ -10,43 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was & Warum?
+Das Abrufen des aktuellen Datums ist eine gängige Aufgabe für Programmierer in Ruby. Es ermöglicht ihnen, das aktuelle Datum und die aktuelle Zeit für verschiedene Zwecke zu nutzen, wie zum Beispiel zur Verfolgung der Ausführungszeit eines Programms oder zur Anzeige des aktuellen Datums in einem Benutzerinterface. Es ist eine einfache, aber nützliche Funktion, die in vielen Programmen verwendet wird.
 
-Das Abrufen des aktuellen Datums kann in vielen Anwendungen nützlich sein, z.B. für die Anzeige der aktuellen Zeit oder für die Datumsberechnung in einer Aufgabenverwaltung.
+## Wie geht's?
 
-## Wie man das aktuelle Datum in Ruby erhält
-
-Um das aktuelle Datum in Ruby zu erhalten, nutzen wir die `Date`-Klasse und rufen ihre `today`-Methode auf:
-
-```Ruby
-heute = Date.today
-puts heute
-```
-
-Die Ausgabe ist das heutige Datum im Format `YYYY-MM-DD`, z.B. `2021-05-05`.
-
-## Tiefergehende Information
-
-Die `Date`-Klasse gehört zum Standardpaket von Ruby und bietet viele nützliche Methoden für die Arbeit mit Datumsangaben. Wenn wir der `today`-Methode ein Argument übergeben, können wir das aktuelle Datum in einem anderen Format erhalten, z.B. als String mit `DD.MM.YYYY`:
+Die aktuelle Datumsfunktion in Ruby ist ```Date.today```. Sie gibt das heutige Datum als Objekt des Typs ```Date``` zurück. Hier ist ein Beispielcode, der das aktuelle Datum abruft und es in einer Variablen speichert, um es später zu verwenden:
 
 ```Ruby
-heute = Date.today.strftime("%d.%m.%Y")
-puts heute
+current_date = Date.today
+puts current_date
 ```
 
-Die Ausgabe wäre dann z.B. `05.05.2021`.
+Die Ausgabe dieses Codes wäre das aktuelle Datum in folgendem Format: Jahr-Monat-Tag (z.B. 2021-08-12).
 
-Eine weitere hilfreiche Methode ist `strftime`, mit der wir ein `DateTime`-Objekt in ein gewünschtes Format umwandeln können. Hier ein Beispiel für die Ausgabe im 12-Stunden-Format:
+## Tiefentauchgang
 
-```Ruby
-jetzt = DateTime.now.strftime("%I:%M%p")
-puts jetzt
-```
+#### Historischer Kontext
+Die Verwendung des aktuellen Datums ist ein wichtiger Teil der Programmierung. Früher mussten Entwickler komplexe Berechnungen durchführen, um das aktuelle Datum zu erhalten. Mit der Einführung von Ruby und anderen Programmiersprachen ist es nun viel einfacher, das aktuelle Datum zu erhalten.
 
-Die Ausgabe wäre dann z.B. `05:50PM`.
+#### Alternativen
+Während ```Date.today``` die gängigste Methode ist, um das aktuelle Datum in Ruby zu erhalten, gibt es auch andere Möglichkeiten, dies zu tun. Zum Beispiel können Entwickler die ```Time.now``` Funktion verwenden, die das aktuelle Datum und die aktuelle Zeit zurückgibt. Es ist wichtig zu beachten, dass diese Funktion die Zeitzone des Systems verwendet, auf dem das Programm ausgeführt wird.
+
+#### Implementierungsdetails
+Die Standardbibliothek von Ruby enthält die Klasse ```Date``` und die Methode ```today```, um das aktuelle Datum abzurufen. Diese Methode ruft das Datum aus dem Betriebssystem des Computers ab. Es ist auch möglich, das Datum mit benutzerdefinierten Formatierungsoptionen abzurufen, indem man die Methode ```strftime``` verwendet.
 
 ## Siehe auch
 
-- [Ruby-Dokumentation zu Dateien](https://www.ruby-doc.org/stdlib-2.5.3/libdoc/date/rdoc/Date.html)
-- [Rails-Dokumentation zu Datumsformaten](https://guides.rubyonrails.org/active_support_core_extensions.html#time-date-and-active-support)
-- [Stack Overflow-Thread zu Datumsformaten in Ruby](https://stackoverflow.com/questions/25200598/converting-date-format-in-ruby)
+Weitere Informationen zum Abrufen des aktuellen Datums in Ruby finden Sie in der offiziellen Dokumentation unter [https://ruby-doc.org/stdlib-2.7.1/libdoc/date/rdoc/Date.html#method-i-today](https://ruby-doc.org/stdlib-2.7.1/libdoc/date/rdoc/Date.html#method-i-today).
+
+Weitere Möglichkeiten, das aktuelle Datum in Ruby zu erhalten, finden Sie in diesem nützlichen Artikel: [https://www.rubyguides.com/2015/05/working-with-dates-ruby/](https://www.rubyguides.com/2015/05/working-with-dates-ruby/).

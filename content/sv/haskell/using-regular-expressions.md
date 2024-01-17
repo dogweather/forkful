@@ -10,29 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
-Reguljära uttryck är ett kraftfullt verktyg för strängmanipulering, vilket kan vara användbart i många olika situationer. Det kan användas för att söka efter mönster i en text, ersätta texter eller validera användarinput.
+## Vad & Varför?
+Reguljära uttryck är ett sätt för programmerare att söka efter specifika mönster i textsträngar. Detta kan vara användbart när man behöver hitta eller ersätta delar av texten baserat på ett visst mönster. Reguljära uttryck används ofta för att validera och formatera inmatning från användare, eller för att manipulera data på ett effektivt sätt.
 
-## Så här gör du
-För att använda reguljära uttryck i Haskell måste du importera "Text.Regex.Posix" biblioteket i din kod. Sedan kan du använda funktionerna "makeRegex" och "match" för att skapa och tillämpa ditt reguljära uttryck. Här är ett exempel som söker efter alla delsträngar som innehåller siffror i en given sträng:
+## Hur gör man:
+Att skriva reguljära uttryck kan verka krångligt till en början, men det blir enklare med övning. Här är ett exempel på hur man kan söka efter alla ord som börjar med bokstaven "A" i en text:
 
 ```Haskell
-import Text.Regex.Posix (makeRegex, match)
+-- Skapa ett reguljärt uttryck som matchar ord som börjar med "A"
+let uttryck = "A[a-zA-Z]*"
 
-main = do
- let str = "Det finns 25 elever i klassen."
- let regex = makeRegex "[0-9]+" :: Regex
- print $ match regex str
+-- Använd funktionen "match" för att kolla om uttrycket matchas i en viss text
+match uttryck "Anna äter äpplen."
+
+-- Resultatet blir True, eftersom det finns ord som matchar uttrycket
 ```
 
-Detta kodexempel kommer att skriva ut en lista med träffar, vilket i detta fall kommer att vara ["25"]. Du kan också använda reguljära uttryck med funktioner som "subRegex" för att ersätta delsträngar eller "matchTest" för att validera en sträng mot det reguljära uttrycket.
+## Djupdykning:
+Reguljära uttryck har funnits sedan 1950-talet och används i många programmeringsspråk, inklusive Haskell. Det finns även andra sätt att söka och manipulera textsträngar, som t.ex. strängfunktioner i standardbiblioteken, men reguljära uttryck är ofta mer kraftfulla och effektiva. I Haskell implementeras reguljära uttryck med hjälp av en parser-bibliotek kallad "regex-base", vilket ger stöd för avancerade funktioner som gruppering och omfång.
 
-## Djupdykning
-En reguljär uttryck är en sträng av tecken som definierar ett mönster av tecken som kan matchas mot en annan sträng. Det finns många olika specialtecken som kan användas i reguljära uttryck för att specificera mönster. Till exempel representerar "." vilket som helst tecken och "[0-9]" representerar alla siffror.
+## Se även:
+Här är några användbara länkar för att lära sig mer om reguljära uttryck och hur man använder dem i Haskell:
 
-För att lära dig mer om hur du kan använda reguljära uttryck i Haskell, kan du kolla in dokumentationen för "Text.Regex.Posix" biblioteket. Där hittar du en fullständig lista över funktioner och exempel på hur de kan användas.
-
-## Se även
-- [Haskell dokumentation för "Text.Regex.Posix"](https://hackage.haskell.org/package/regex-posix)
-- [Regex Cheat Sheet](https://www.rexegg.com/regex-quickstart.html)
-- [Regex Tutorial](https://www.regular-expressions.info/tutorial.html)
+- [Officiell dokumentation för regex-base](https://hackage.haskell.org/package/regex-base)
+- [Interaktiva tutorials för reguljära uttryck](https://regexone.com/)
+- [Haskells dokumentation för parser-biblioteket](https://wiki.haskell.org/Parsec)

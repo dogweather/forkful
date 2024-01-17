@@ -1,7 +1,7 @@
 ---
-title:                "Convertir une chaîne en minuscules"
-html_title:           "Gleam: Convertir une chaîne en minuscules"
-simple_title:         "Convertir une chaîne en minuscules"
+title:                "Conversion d'une chaîne de caractères en minuscules"
+html_title:           "Gleam: Conversion d'une chaîne de caractères en minuscules"
+simple_title:         "Conversion d'une chaîne de caractères en minuscules"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -10,35 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Qu'est-ce que & pourquoi ?
 
-Si vous travaillez avec des chaînes de caractères dans vos projets de programmation, il est probable que vous ayez rencontré la nécessité de convertir une chaîne en lettres minuscules. Cela peut être utile pour comparer des chaînes sans prendre en compte la casse, pour une meilleure lisibilité ou pour d'autres raisons. Dans cet article, nous allons vous montrer comment réaliser cette tâche en utilisant Gleam, un langage de programmation fonctionnel robuste et expressif.
+La conversion d'une chaîne de caractères en minuscules est une opération courante dans la programmation. Cela signifie simplement changer tous les caractères en majuscules d'une chaîne en leurs équivalents en minuscules. Les programmeurs le font généralement pour uniformiser les données et rendre la recherche et le tri plus faciles.
 
-## Comment procéder
+## Comment faire :
 
-Pour convertir une chaîne en lettres minuscules en utilisant Gleam, il existe deux méthodes principales: utiliser la fonction `String.to_lower/1` ou la fonction `String.map/1`. Voici un exemple de code pour chaque méthode:
+Pour convertir une chaîne en minuscules en utilisant Gleam, vous pouvez utiliser la fonction `String.to_lower`. Elle prend une chaîne en tant qu'argument et renvoie la même chaîne avec tous les caractères en minuscules. Voici un exemple de code :
 
 ```Gleam
-let str = "Bonjour Tout Le Monde"
-let lower_case_str = String.to_lower(str)
-# Résultat: "bonjour tout le monde"
-
-let mapped_str = String.map(str, fn(c) -> 
-    String.to_lower(c) 
-end)
-# Résultat: "bonjour tout le monde"
+let string = "HELLO WORLD"
+let lower_case_string = String.to_lower(string)
 ```
 
-Comme vous pouvez le voir, les deux méthodes aboutissent au même résultat: une chaîne avec toutes les lettres en minuscules. Cependant, la fonction `String.to_lower/1` est plus concise et intuitive puisqu'elle ne nécessite pas l'utilisation d'une fonction de mappage. Il est donc conseillé de l'utiliser dans la plupart des cas.
+Lorsque vous exécutez ce code, la valeur de `lower_case_string` sera "hello world".
 
-## Approfondissement
+## Plongée en profondeur :
 
-Maintenant que vous savez comment convertir une chaîne en lettres minuscules en utilisant Gleam, vous pouvez vous demander comment cela fonctionne réellement. En fait, il n'y a rien de magique à cela. La fonction `String.to_lower/1` utilise simplement la fonction `String.map/2` en interne pour appliquer la fonction `String.to_lower/1` à chaque caractère de la chaîne d'entrée.
+La conversion de chaîne en minuscules n'est pas une fonction spécifique à Gleam, elle est disponible dans la plupart des langages de programmation. Cela remonte à l'ASCII, un codage de caractères utilisé pour représenter les symboles de texte. Dans l'ASCII, les codes numériques pour les lettres majuscules et minuscules ont une différence de 32. C'est pourquoi la conversion de chaîne en minuscules est également appelée "baisser la casse" ou "changer la casse".
 
-Il est également important de noter que lors de la conversion en minuscules, certaines lettres peuvent être remplacées par plusieurs caractères. Par exemple, la lettre "ß" en majuscule devient "SS" en minuscule en allemand. Cela peut être surprenant, mais c'est le comportement attendu.
+Dans Gleam, il existe également la fonction `String.to_upper` pour convertir une chaîne en majuscules. Si vous voulez ignorer les accents lors de la conversion, vous pouvez utiliser `String.to_ascii_upper` et `String.to_ascii_lower`.
 
-## Voir aussi
+## À voir aussi :
 
-- Documentation de la fonction `String.to_lower/1`: https://hexdocs.pm/gleam/std-string.html#to_lower/1
-- Documentation de la fonction `String.map/1`: https://hexdocs.pm/gleam/std-string.html#map/1
-- Exemples de projets utilisant Gleam: https://github.com/search?q=language%3Agleam
+Si vous voulez en savoir plus sur les fonctionnalités disponibles pour les chaînes de caractères en Gleam, consultez la documentation officielle sur les chaînes. Vous pouvez également apprendre différentes façons de modifier le cas des chaînes dans d'autres langages de programmation, tels que Python ou JavaScript.

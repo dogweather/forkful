@@ -1,7 +1,7 @@
 ---
-title:                "Sammenslåing av strenger."
-html_title:           "Fish Shell: Sammenslåing av strenger."
-simple_title:         "Sammenslåing av strenger."
+title:                "Sammenstilling av strenger"
+html_title:           "Fish Shell: Sammenstilling av strenger"
+simple_title:         "Sammenstilling av strenger"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -10,54 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hva & Hvorfor?
 
-Å kombinere strenger kan være en nyttig teknikk når man arbeider med tekstdokumenter og dataprogrammering generelt. Ved å kombinere flere strenger kan man lage lengre og mer varierte tekster og variabler, og dermed oppnå mer kompleks funksjonalitet i programmet ditt.
+Sammenkobling av strenger, også kjent som concatenation, er når man slår sammen to eller flere strenger til en enkelt streng. Dette kan være nyttig for å lage mer komplekse tekster eller variabler i koden din. Programmører gjør det ofte for å lage dynamiske meldinger, konfigurasjonsvariabler og mye mer.
 
-## Hvordan
+# Slik gjør du det:
 
-For å kombinere strenger i Fish Shell, bruker man operatoren `+` eller `string join`. Her er et eksempel som kombinerer to strenger og lagrer resultatet i en variabel kalt `concatenated_string`:
+```Fish Shell``` har innebygde funksjoner for å håndtere sammenkobling av strenger. La oss se på et enkelt eksempel:
 
-```Fish Shell
-set concatenated_string "Hei " + "verden!"
-echo $concatenated_string
-
-# Output: Hei verden!
+```fish
+set message "Hei, verden!"
+echo $message
 ```
 
-Man kan også kombinere flere strenger ved å bruke `string join` og angi et mellomromskarakter for å skille dem:
+I dette eksempelet, lager vi en variabel kalt "message" som inneholder teksten "Hei, verden!" og bruker deretter "echo" funksjonen for å skrive ut teksten i terminalen. Du kan også kombinere flere variabler eller tekststrenger ved hjelp av "string replace" funksjonen:
 
-```Fish Shell
-set names "Bob" "Jill" "Alice"
-set combined_names (string join " " $names)
-echo "Navnene er: " $combined_names
-
-# Output: Navnene er: Bob Jill Alice
+```fish
+set name "Ole"
+set message "Hei, $name!"
+string replace -r "Hei," "" $message
 ```
 
-## Dypdykk
+Dette vil resultere i utskriften "Ole!". Som du kan se, brukte vi "$" tegnet for å indikere at teksten som skal settes inn kommer fra en variabel. Dette er en viktig del av konkatenering i ```Fish Shell```.
 
-Fish Shell har også flere muligheter for å formatere og kombinere strenger på avansert nivå. Ved hjelp av `string sub` kan man for eksempel bytte ut deler av en streng med en annen streng:
+# Dykk dypere:
 
-```Fish Shell
-set name "Peter"
-set formatted_name (string sub -r -a "P" "B" $name)
-echo "Det riktige navnet er: " $formatted_name
+Sammenkobling av strenger har eksistert siden begynnelsen av programmering og er en grunnleggende del av de fleste programmeringsspråk. Alternativene for sammenkobling kan variere, men i ```Fish Shell```, kan du bruke "string join" eller "printf" funksjonene til å oppnå samme resultat som "string replace" funksjonen.
 
-# Output: Det riktige navnet er: Better
-```
+Når det gjelder implementering, bruker ```Fish Shell``` "string interpolation" for å erstatte variabler i en streng mens den er i ferd med å bli utskrevet. Dette gjør det lettere og raskere enn mange andre programmeringsspråk som krever at variabler må konkatenere først før de kan bli utskrevet.
 
-Man kan også bruke `string replace` for å bytte ut deler av en streng med en annen:
+# Se også:
 
-```Fish Shell
-set sentence "Jeg liker katter"
-set new_sentence (string replace "katter" "hunder" $sentence)
-echo "Men jeg liker faktisk hunder mer, så jeg vil si: " $new_sentence
-
-# Output: Men jeg liker faktisk hunder mer, så jeg vil si: Jeg liker hunder
-```
-
-## Se også
-
-- Offisiell dokumentasjon for Fish Shell: https://fishshell.com/docs/current/index.html
-- En enkel guide til å komme i gang med Fish Shell: https://github.com/jorgebucaran/fish-shell-cookbook/blob/master/README.md#the-one-minute-introduction
+- Offisiell dokumentasjon for ```Fish Shell``` sin string handling: https://fishshell.com/docs/current/index.html#string-handling
+- Enkel forklaring av concatenering med eksempler på flere programmeringsspråk: https://www.geeksforgeeks.org/string-concatenation-in-various-programming-languages/

@@ -1,7 +1,7 @@
 ---
-title:                "디렉터리의 존재 여부 확인하기"
-html_title:           "Swift: 디렉터리의 존재 여부 확인하기"
-simple_title:         "디렉터리의 존재 여부 확인하기"
+title:                "디렉터리가 존재하는지 확인하기"
+html_title:           "Swift: 디렉터리가 존재하는지 확인하기"
+simple_title:         "디렉터리가 존재하는지 확인하기"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Files and I/O"
@@ -10,27 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
---- 
-## 왜
-누군가 디렉토리가 존재하는지 확인하는 것에 참여하는 이유는, 코드의 실행 중 간혹 디렉토리가 없는 상황에서 코드가 오류 없이 계속 진행하기 위해서입니다.
+## 무엇이고 왜?
 
-## 코딩하는 방법
+디렉토리의 존재 여부를 확인하는 것은 프로그래머들이 많이 사용하는 기능입니다. 이를 통해 우리는 파일의 유무를 체크하거나, 디렉토리에 파일을 생성하기 전에 확인할 수 있습니다.
+
+## 하기 방법:
 ```Swift
-if FileManager.default.fileExists(atPath: "Documents") {
-    print("Documents 디렉토리가 존재합니다.")
+if FileManager.default.fileExists(atPath: "myDir") {
+    print("디렉토리가 존재합니다")
 } else {
-    print("Documents 디렉토리가 존재하지 않습니다.")
+    print("디렉토리가 존재하지 않습니다")
 }
-
-```
-### 예시 출력
-```
-Documents 디렉토리가 존재하지 않습니다.
 ```
 
-## 깊이 파고들기
-디렉토리의 존재 여부를 확인하는 것은 코드의 안전성을 높이는 중요한 부분입니다. 만약 디렉토리가 존재하지 않는 상황에서 해당 디렉토리로 파일을 생성하려고 한다면, 예기치 않은 오류가 발생할 수 있습니다. 이를 방지하기 위해 항상 디렉토리의 존재 여부를 체크하는 것이 좋습니다.
+위의 예제를 통해 우리는 `FileManager` 클래스의 `fileExists` 메소드를 사용하여 디렉토리의 존재 여부를 확인할 수 있습니다. `if` 문을 사용하여 디렉토리가 존재하는 경우와 존재하지 않는 경우에 대해 각각 다른 출력을 하도록 설정할 수 있습니다.
 
-## 또 다른 정보
-### [Swift FileManager Documentation](https://developer.apple.com/documentation/foundation/filemanager)
-### [How to create and check for an existing directory using Swift](https://medium.com/@sauvik_dolui/how-to-create-and-check-for-an-existing-directory-using-swift-4-7089fa597f13)
+## 깊이 알아보기:
+디렉토리의 존재 여부를 확인하는 것은 파일 시스템의 개념 중 하나입니다. 파일 시스템은 파일과 폴더를 모아서 관리하는 방식입니다. 이를 통해 우리는 우리가 필요로 하는 파일들을 쉽게 찾을 수 있고, 다양한 작업을 할 수 있습니다. 디렉토리의 존재 여부를 확인하기 위해 다른 방법으로는 `NSFileManager` 클래스의 `fileExistsAtPath` 메소드를 사용할 수도 있습니다. 이 클래스는 이전 버전의 스위프트에서 사용되었으며, 현재 버전에서는 `FileManager`를 사용하는 것이 권장됩니다.
+
+## 더 알아보기:
+- [File System](https://en.wikipedia.org/wiki/File_system)
+- [NSFileManager Class Reference](https://developer.apple.com/documentation/foundation/nsfilemanager)
+- [FileManager Class Reference](https://developer.apple.com/documentation/foundation/filemanager)

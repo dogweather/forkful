@@ -1,7 +1,7 @@
 ---
-title:                "Työskentely csv:n kanssa"
-html_title:           "Rust: Työskentely csv:n kanssa"
-simple_title:         "Työskentely csv:n kanssa"
+title:                "Csv:n käsittely"
+html_title:           "Rust: Csv:n käsittely"
+simple_title:         "Csv:n käsittely"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Data Formats and Serialization"
@@ -10,34 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+# Mitä ja miksi?
+CSV (Comma-Separated Values) eli pilkulla erotetut arvot on yleinen tapa tallentaa ja jakaa taulukkomuotoisia tiedostoja. Tämä on hyödyllistä ohjelmoijille, sillä se mahdollistaa tiedon siirtämisen eri ohjelmistojen välillä helposti ja kätevästi, ilman että tarvitsee huolehtia tiedostojen yhteensopivuudesta.
 
-Miksi kukaan haluaisi aloittaa työskentelyn CSV-tiedostojen kanssa? No, ensinnäkin CSV-tiedostot ovat erittäin yleisiä tapoja tallentaa ja jakaa taulukkomuotoista dataa, joten niiden käsittelyyn liittyvät taidot ovat hyödyllisiä monilla eri aloilla, kuten ohjelmistokehityksessä, data-analytiikassa ja taloustieteessä.
-
-## Miten
-
-Rustin CSV-kirjasto, nimeltään "csv", tarjoaa helpon ja tehokkaan tavan käsitellä ja lukea CSV-tiedostoja. Tässä esimerkissä näytämme, kuinka lukea CSV-tiedosto ja tulostaa sen sisältö konsoliin:
-
+# Miten:
 ```Rust
-use csv::Reader;
+// Avataan CSV-tiedosto ja luodaan uusi lukija
+let file = std::fs::File::open("tiedosto.csv").unwrap();
+let mut reader = csv::ReaderBuilder::new().from_reader(file);
 
-fn main() {
-    let mut csv_reader = Reader::from_path("data.csv").unwrap();
-    for result in csv_reader.records() {
-        let record = result.unwrap();
-        println!("{:?}", record);
+// Käydään läpi jokainen rivi tiedostossa ja tulostetaan kentät
+for result in reader.records() {
+    let record = result.unwrap();
+    for field in record.iter() {
+        println!("{}", field);
     }
 }
 ```
+Esimerkkitulostus:
+```bash
+Rusting, on, hauskaa
+Terve, maailma!
+```
 
-Tämä koodi luo Reader-tyypin instanssin, joka lukee tiedoston "data.csv" ja käy läpi jokaisen rivin sisällön käyttäen `.records()` -metodia. Koodin suorittamisen jälkeen näet kaikki tiedoston rivit tulostettuna konsoliin.
+# Syvemmälle:
+CSV muoto kehitettiin ensimmäisen kerran 1972 IBM:n toimesta ja siitä tuli nopeasti yleinen taulukkomuodon tallennusformaatti. Vaikka se on helppokäyttöinen ja tunnettu, on myös muita vaihtoehtoja kuten JSON ja XML. Rustin csv-kirjasto tarjoaa tehokkaan ja nopean tavan käsitellä CSV-tiedostoja, mutta on myös muita kirjastoja, kuten Serde, jotka tarjoavat samanlaisen toiminnallisuuden.
 
-## Syvempää
-
-Kun olet perehtynyt perusteisiin, voit tutkia CSV-kirjaston muita ominaisuuksia, kuten datan kirjoittamista CSV-tiedostoon tai räätälöityjä tapoja käsitellä tietueita. Voit myös harkita muiden Rust-kirjastojen, kuten "serde", käyttöä datan lukemiseen ja muokkaamiseen erilaisissa muodoissa.
-
-## Katso myös
-
-- [csv Rust-kirjaston dokumentaatio](https://docs.rs/csv/)
-- [Serde Rust-kirjasto](https://serde.rs/)
-- [Rustin virallinen verkkosivusto](https://www.rust-lang.org/)
+# Katso myös:
+- [Rustin csv-kirjasto](https://crates.io/crates/csv)
+- [Serde - kirjasto tietomuodon käsittelyyn](https://crates.io/crates/serde)
+- [Kuinka käsitellä CSV-tiedostoja Rustilla](https://blog.logrocket.com/parsing-csv-files-in-rust-with-serde/)

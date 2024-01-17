@@ -10,48 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+Mikä & Miksi?
 
-Koodin kirjoittaminen on usein hyvin spesifistä. Jokaisen ohjelmoijan täytyy joskus muuttaa kalenteripäivämäärä merkkijonoksi ja tämä on tärkeä taito, joka lisää joustavuutta ja ymmärrystä ohjelmoinnissa.
+Päivämäärän muuntaminen merkkijonoksi tarkoittaa päivämäärän esittämistä tekstimuodossa, esimerkiksi "1.1.2020". Tätä tehdään usein ohjelmoinnissa, jotta päivämäärän käsittely olisi helpompaa ja tarkempaa.
 
-## Kuinka
+Kuinka tehdä se:
 
-```java
+```
+Java
+
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 public class DateToString {
-
     public static void main(String[] args) {
+        // Luo LocalDate -objekti halutulla päivämäärällä
+        LocalDate date = LocalDate.of(2020, 1, 1);
         
-        // Luodaan LocalDate-olio nykyisestä päivämäärästä
-        LocalDate today = LocalDate.now();
-
-        // Määritetään haluttu muoto
+        // Luo DateTimeFormatter -objekti halutulla formaatilla
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
-
-        // Muutetaan LocalDate merkkijonoksi käyttäen valittua muotoa
-        String dateAsString = today.format(formatter);
-
-        // Tulostetaan tulos
-        System.out.println("Päivämäärä merkkijonona: " + dateAsString);
+        
+        // Muunna päivämäärä merkkijonoksi käyttäen DateTimeFormatter -objektia
+        String dateString = date.format(formatter);
+        
+        // Tulosta tulos
+        System.out.println(dateString); // output: 01.01.2020
     }
 }
 ```
 
-**Tulos:**
+Syväsukellus:
 
-```
-Päivämäärä merkkijonona: 21.09.2021
-```
+Päivämäärän muuttaminen merkkijonoksi on yleinen tehtävä ohjelmoinnissa ja sitä varten on erilaisia vaihtoehtoja. Yksi yleisesti käytetty vaihtoehto on Java 8:n tarjoama LocalDate ja sen tarjoamat DateTimeFormatterit. Myös vanhemmissa Java-versioissa on erilaisia tapoja muuntaa päivämäärä merkkijonoksi, kuten SimpleDateFormat-luokka.
 
-## Syväsukellus
+Katso myös:
 
-Java-kielen LocalDate-luokka tarjoaa useita eri metodeja päivämääräolion muuttamiseksi merkkijonoksi. Yllä olevassa esimerkissä käytimme **format()**-metodia, joka ottaa vastaan **DateTimeFormatter**-olion ja palauttaa lopputuloksen merkkijonona. Voit myös käyttää **toString()**-metodia, joka palauttaa päivämäärän oletusmuodossa tai **format(DateTimeFormatter.BASIC_ISO_DATE)**-metodia, joka palauttaa päivämäärän ISO-standardin mukaisessa muodossa.
+https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html
 
-On tärkeää muistaa, että kaikissa näissä metodeissa käytetty **DateTimeFormatter**-olio määrää, millaiseen muotoon päivämäärä muutetaan. Voit esimerkiksi käyttää **DateTimeFormatter.ofPattern()**-metodia ja määrittää haluamasi muodon käyttämällä erilaisia merkkejä, kuten "MM" kuukaudelle tai "yyyy" vuodelle.
+https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html
 
-## Katso myös
-
-- [Java Time API](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
-- [Java String-luokka](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
+https://www.baeldung.com/java-date-to-string

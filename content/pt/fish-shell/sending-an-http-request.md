@@ -10,40 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que enviar uma solicitação HTTP com o Fish Shell?
-
-Se você é um programador ou está aprendendo a programar, provavelmente já ouviu falar sobre solicitações HTTP. Mas por que alguém usaria o Fish Shell para enviar uma solicitação HTTP? Essas solicitações são úteis para se comunicar com servidores online ou acessar APIs de terceiros, o que pode ser uma tarefa comum em muitos projetos de programação.
+## O que e porquê?
+Enviar uma solicitação HTTP é uma forma de comunicação entre um aplicativo e um servidor. Os programadores usam isso para obter informações de um servidor ou atualizar informações enviadas anteriormente.
 
 ## Como fazer:
+```
+Fish Shell
+# Enviar solicitação GET para uma URL específica
+curl -X GET URL
 
-Para enviar uma solicitação HTTP com o Fish Shell, primeiro precisamos do pacote `curl` instalado. Você pode instalá-lo usando o gerenciador de pacotes Homebrew com o comando `brew install curl`, se você estiver usando um Mac. Se estiver usando Linux, você pode instalar com o gerenciador de pacotes da sua distribuição.
-
-Com o `curl` instalado, podemos usar o comando `curl -X` seguido do método de solicitação desejado (GET, POST, PUT, DELETE) e a URL da solicitação. Por exemplo, para fazer uma solicitação GET para o site "https://www.example.com", podemos usar o seguinte comando no Fish Shell:
-
-```Fish Shell
-curl -X GET https://www.example.com
+# Enviar solicitação POST com dados JSON para uma URL específica
+curl -X POST -H "Content-Type: application/json" -d '{"username": "exemplo", "password": "senha"}' URL
 ```
 
-Este comando irá enviar a solicitação GET para o servidor e retornar o conteúdo da página da web, incluindo código HTML, cabeçalhos e outras informações.
+## Deep Dive:
+Anteriormente, os programadores geralmente usavam a ferramenta de linha de comando cURL para enviar solicitações HTTP. No entanto, com o Fish Shell, isso pode ser feito diretamente no shell.
 
-Também podemos adicionar parâmetros à nossa solicitação usando a opção `-d` seguida dos parâmetros desejados. Por exemplo, para enviar uma solicitação POST com parâmetros de formulário, podemos usar o seguinte comando:
+Uma alternativa para o Fish Shell é o cURL Shell, que oferece recursos adicionais para o uso do cURL.
 
-```Fish Shell
-curl -X POST -d "name=John&age=25" https://www.example.com/form
-```
+O processo de envio de solicitações HTTP no Fish Shell é feito usando o comando `curl`. Ele aceita vários parâmetros, como o tipo de solicitação (GET, POST, PUT) e os cabeçalhos (H) e dados (d) necessários para a solicitação.
 
-Isso enviará os parâmetros "name=John" e "age=25" para a URL especificada, que seria útil para preencher um formulário on-line.
-
-## Mergulho Profundo:
-
-Enviar solicitações HTTP com o Fish Shell é uma maneira rápida e conveniente de acessar dados ou serviços on-line. Além do método e URL, também podemos adicionar cabeçalhos à nossa solicitação usando a opção `-H 'Nome: Valor'`. Isso pode ser útil para autenticar a solicitação ou definir outras informações importantes.
-
-Podemos até mesmo salvar a saída da solicitação em um arquivo usando a opção `-o` seguida do nome do arquivo desejado. Isso é útil para salvar dados baixados ou relatórios gerados por APIs.
-
-Você também pode achar útil explorar mais opções do `curl` e suas funcionalidades avançadas para personalizar ainda mais suas solicitações HTTP no Fish Shell. 
-
-## Veja também:
-
-- Documentação oficial do `curl`: https://curl.haxx.se/
-- Página do Fish Shell no GitHub: https://github.com/fish-shell/fish-shell
-- Comunidade de usuários do Fish Shell: https://fishshell.com/
+## Ver também:
+- [Documentação oficial do Fish Shell](https://fishshell.com/docs/current/index.html)
+- [cURL Shell](https://github.com/mrmuino/curl-sh)

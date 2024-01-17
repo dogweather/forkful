@@ -1,7 +1,7 @@
 ---
-title:                "Päivämäärän laskeminen tulevaisuuteen tai menneisyyteen"
-html_title:           "Ruby: Päivämäärän laskeminen tulevaisuuteen tai menneisyyteen"
-simple_title:         "Päivämäärän laskeminen tulevaisuuteen tai menneisyyteen"
+title:                "Päivämäärän laskeminen tulevaisuudessa tai menneisyydessä"
+html_title:           "Ruby: Päivämäärän laskeminen tulevaisuudessa tai menneisyydessä"
+simple_title:         "Päivämäärän laskeminen tulevaisuudessa tai menneisyydessä"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Dates and Times"
@@ -10,48 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä ja miksi?
 
-Joskus on tarpeen laskea tietty päivämäärä menneisyydessä tai tulevaisuudessa. Tämä voi olla esimerkiksi laskutusohjelmassa tai tapahtumakalenterissa.
+Päivämäärän laskeminen tulevaisuuteen tai menneisyyteen on tärkeä osa ohjelmointia, koska se auttaa meitä hallitsemaan aikaa ja pitämään sovelluksiamme päivitettyinä. Se on myös hyödyllistä esimerkiksi tapahtuma- ja varaussovelluksissa, joissa tarvitaan tietoa tulevista päivämääristä.
 
-## Kuinka
+## Miten:
 
-Määritä Rubyyn päivä, kuukausi ja vuosi `Date.new()` -menetelmällä ja tallenna se muuttujaan. Voit myös käyttää `Time.now` -metodia, jos haluat nykyisen päivämäärän. Sitten lisää haluamasi aika päälle käyttämällä `days` tai `months` -parametreja `+` -operaattorilla. Lopuksi, tulosta uusi päivämäärä `puts` -metodilla.
+Laskeminen tapahtuu Ruby-ohjelmointikielellä helposti käyttämällä `Date`-luokan metodeja. Esimerkiksi, jos haluat laskea päivämäärää tulevaisuuteen kolmen päivän verran, voit käyttää seuraavaa koodia:
 
-```Ruby
-# luo uusi päivä ja tallenna se muuttujaan
-paiva = Date.new(2020, 10, 1)
+```ruby
+require 'date'
 
-# lisää 30 päivää päälle
-uusi_paiva = paiva + 30
-
-# tulosta uusi päivä
-puts uusi_paiva
+pvm = Date.today + 3
+puts pvm
 ```
 
-Tuloste: 2020-10-31
+Tämä koodi tulostaisi kolmen päivän päästä olevan päivän päivämäärän. Vastaavasti voit käyttää `Date`-luokan metodeja myös päivämäärien vähentämiseen menneisyydessä.
 
-Voit myös käyttää samankaltaista lähestymistapaa kahden päivämäärän välillä laskemiseen. Voit käyttää `Date` -luokan `>>` -operaattoria, joka antaa tuloksen päivien määrässä.
+## Syvempään sukellus:
 
-```Ruby
-# luo kaksi päivää
-paiva1 = Date.new(2020, 10, 1)
-paiva2 = Date.new(2020, 11, 1)
+Päivämäärän laskemisen tarve on ollut olemassa jo aikojen alusta saakka, sillä ihmiset ovat halunneet hallita ja tietää aikaa sekä tapahtumia tulevaisuudessa. Myös muissa ohjelmointikielissä on saatavilla vastaavia työkaluja päivämäärien laskemiseen.
 
-# laske päivien määrä paiva1:sta paiva2:een
-p = (paiva1 >> paiva2).to_i
+## Katso myös:
 
-# tulosta tulos
-puts p
-```
-
-Tuloste: 31
-
-## Deep Dive
-
-Ruby tarjoaa useita erilaisia tapoja laskea päivämääriä tulevaisuudessa tai menneisyydessä. Voit käyttää myös `Date` -luokan muita metodeja, kuten `yesterday` tai `next_year`, saadaksesi halutun päivämäärän. Lisäksi, Rubyssä on myös mahdollista laskea eri aikavyöhykkeillä käyttämällä `DateTime` -luokkaa.
-
-## Katso myös
-
-- Date-luokan dokumentaatio: https://ruby-doc.org/stdlib/libdoc/date/rdoc/Date.html
-- Time-luokan dokumentaatio: https://ruby-doc.org/core-2.7.1/Time.html
+Voit lukea lisää `Date`-luokasta ja sen metodeista Ruby-dokumentaatiosta: https://ruby-doc.org/stdlib-2.7.2/libdoc/date/rdoc/Date.html

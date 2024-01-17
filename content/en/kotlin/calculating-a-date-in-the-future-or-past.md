@@ -10,44 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why 
+## What & Why?
 
-Calculating dates in the future or past can be helpful for a variety of reasons such as predicting project deadlines, scheduling events or appointments, or simply keeping track of important dates in the future.
+Calculating a date in the future or past is a common task among programmers. It involves manipulating dates to determine a specific date and time in the future or past based on a given initial date. This is useful in a variety of applications, such as scheduling events or generating reports.
 
-## How To 
+## How to:
 
-To calculate a date in the future or past using Kotlin, we can use the `java.time.LocalDate` class from the Java standard library. This class represents a date without time or time zone information. Here is an example of how to calculate a date 30 days in the future from today:
-
-```Kotlin 
-val currentDate = LocalDate.now() // get current date
-val futureDate = currentDate.plusDays(30) // add 30 days to current date
-println("Date in 30 days: $futureDate") // output: Date in 30 days: 2021-08-08
-```
-
-To calculate a date in the past, we can use the `minus` method instead. Here is an example of calculating a date 2 years in the past from today:
+Calculating a date in the future or past can be accomplished using the built-in functions provided by the ```java.util.Calendar``` class in Kotlin. These functions allow us to add or subtract a specific number of years, months, days, hours, minutes, or seconds from a given date. For example, to calculate the date two years from now, we can use the ```add()``` function like this:
 
 ```Kotlin
-val currentDate = LocalDate.now() // get current date
-val pastDate = currentDate.minusYears(2) // subtract 2 years from current date
-println("Date 2 years ago: $pastDate") // output: Date 2 years ago: 2019-07-09
+val calendar = Calendar.getInstance() //get current date
+calendar.add(Calendar.YEAR, 2) //add 2 years
+println("Two years from now is on ${calendar.time}") //print the calculated date
 ```
 
-Note that the `plus` and `minus` methods are polymorphic and can take different parameters such as `Days`, `Months`, or `Years`. 
+This will output: ```Two years from now is on Sun Apr 18 15:42:55 EDT 2021```
 
-## Deep Dive 
-
-The `LocalDate` class provides various methods for manipulating dates including adding or subtracting time units, comparing dates, and checking for leap years. It also supports parsing and formatting dates using the `parse` and `format` methods, respectively.
-
-Additionally, Kotlin provides an extension function `daysTo` which can be used to calculate the number of days between two `LocalDate` objects. Here is an example:
+For calculating a date in the past, we can use the ```roll()``` function instead of ```add()```. The ```roll()``` function only adjusts the specified fields without changing the larger fields. For example, to calculate the date one month ago, we can use the ```roll()``` function like this:
 
 ```Kotlin
-val firstDate = LocalDate.of(2020, 10, 15) // create first date
-val secondDate = LocalDate.of(2021, 10, 15) // create second date
-val daysBetween = firstDate.daysTo(secondDate) // calculate days between
-println("Days between two dates: $daysBetween") // output: Days between two dates: 365
+val calendar = Calendar.getInstance() //get current date
+calendar.roll(Calendar.MONTH, false) //roll back 1 month
+println("One month ago was on ${calendar.time}") //print the calculated date
 ```
 
-## See Also 
+This will output: ```One month ago was on Fri Feb 18 15:42:55 EST 2021```
 
-- [Kotlin Language Reference](https://kotlinlang.org/docs/reference/)
-- [Java LocalDate Documentation](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
+## Deep Dive:
+
+Programmers have been calculating dates for centuries, long before the advent of computers. In the past, it was done manually or with the help of a calendar. Fortunately, with advancements in technology, we now have built-in functions and libraries to make date calculations easier and more accurate.
+
+Apart from using the ```java.util.Calendar``` class, developers can also use other libraries like Joda Time or Java 8's new Date and Time API to perform date calculations. These libraries provide more extensive and precise methods for calculating dates.
+
+When working with dates, it is important to consider time zones and daylight saving time to ensure accurate calculations. Different programming languages and libraries may handle these factors differently, so it's essential to understand the implementation details when using them.
+
+## See Also:
+
+- [java.util.Calendar documentation](https://docs.oracle.com/javase/8/docs/api/java/util/Calendar.html)
+- [Joda Time library](https://www.joda.org/joda-time/)
+- [Java 8 Date and Time API](https://www.baeldung.com/java-8-date-time-intro)

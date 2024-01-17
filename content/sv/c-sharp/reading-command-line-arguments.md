@@ -10,55 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
+Läsning av kommandoradsargument är en vanlig praxis bland programmerare för att få åtkomst till information som användaren skriver in vid körning av ett program. Genom att läsa in dessa argument kan programmeraren göra sitt program mer användarvänligt och addera olika funktioner baserat på användarens input.
 
-Att kunna läsa in argument från kommandoraden är en viktig kunskap för alla C#-programmerare. Det ger oss möjlighet att göra våra program mer anpassningsbara och effektiva genom att kunna ta emot olika data från användaren. Det är också ett grunderna ämne inom programmering och kommer att nyttigt oavsett vad man vill utveckla.
-
-## Så här gör du
-
-För att läsa in argument från kommandoraden i C#, kan vi använda "args" parameteren i funktionen "Main". Detta är en array som innehåller alla argument som angivits när programmet startas. Se nedan för ett exempel:
-
+## Hur man gör:
 ```C#
+// Kodexempel för läsning av kommandoradsargument:
 static void Main(string[] args)
 {
-    Console.WriteLine("Argument som angavs: ");
-    foreach (string arg in args)
+    // Läs in argumentslista från kommandoraden
+    string[] arguments = Environment.GetCommandLineArgs();
+
+    // Loopa igenom arguments och skriv ut dem
+    foreach (string argument in arguments)
     {
-        Console.WriteLine(arg);
+        Console.WriteLine(argument);
     }
 }
 ```
-
-Om vi till exempel anger "dotnet program.exe Hej världen!", kommer konsolen att skriva ut:
-
-Argument som angavs:
-Hej
-världen!
-
-Vi kan också använda metoden "Environment.GetCommandLineArgs" för att få åtkomst till argumenten från vilken som helst del av programmet. Se följande exempel:
-
-```C#
-static void Main(string[] args)
-{
-    string[] commandLineArgs = Environment.GetCommandLineArgs();
-    Console.WriteLine("Argument som angavs: ");
-    foreach (string arg in commandLineArgs)
-    {
-        Console.WriteLine(arg);
-    }
-}
+Exempel på hur programmet kan köras från kommandoraden och dess output:
+```
+> myProgram.exe arg1 arg2
+arg1
+arg2
 ```
 
-Det finns också möjlighet att använda externa paket som tillhandahåller mer avancerade funktioner för att hantera och tolka argument från kommandoraden.
+## Djupdykning:
+Historiskt sett har kommandoradsargument varit en vanlig metod för att konfigurera och köra program på operativsystem som DOS och Unix. Idag används det fortfarande flitigt även i modernt operativsystem som Windows och macOS.
 
-## Fördjupning
+Det finns dock alternativ till kommandoradsargument, som till exempel att använda konfigurationsfiler eller grafiska användargränssnitt (GUI). Valet av metod beror oftast på programmerarens personliga preferenser och vilket som passar bäst för programmet i fråga.
 
-När vi läser in argument från kommandoraden, är det viktigt att vi förstår de olika delarna av argumenten och hur de ska tolkas. Argument kan till exempel vara flaggor som indikerar ett specifikt beteende eller de kan vara datavärden som användaren vill skicka till programmet. Det är också viktigt att vi hanterar eventuella felaktiga argument eller om användaren inte angav några argument alls.
+Implementeringsdetaljer för läsning av kommandoradsargument kan skilja sig mellan olika programmeringsspråk, men principen är densamma. Det är viktigt att hantera eventuella fel och ogiltiga argument på ett säkert sätt för att undvika programkrascher.
 
-För att lära dig mer om hur du hanterar och tolkar argument från kommandoraden i C#, kan du läsa dokumentationen för ditt val av externa paket eller kolla på olika exempel och övningar online.
-
-## Se också
-
-- Microsoft dokumentation: https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/main-and-command-args/command-line-arguments
-- Tutorial: https://www.tutorialspoint.com/csharp/csharp_command_line_arguments.htm
-- Youtube-video: https://www.youtube.com/watch?v=2XAmk8QGJNs
+## Se även:
+- [Dokumentation för Environment.GetCommandLineArgs metoden (Microsoft Docs)](https://docs.microsoft.com/en-us/dotnet/api/system.environment.getcommandlineargs?view=net-5.0)
+- [Kommandoradsargument (Wikipedia på svenska)](https://sv.wikipedia.org/wiki/Kommandoradsargument)

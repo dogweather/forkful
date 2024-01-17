@@ -1,7 +1,7 @@
 ---
-title:                "Lettura di un file di testo"
-html_title:           "Kotlin: Lettura di un file di testo"
-simple_title:         "Lettura di un file di testo"
+title:                "Leggere un file di testo"
+html_title:           "Kotlin: Leggere un file di testo"
+simple_title:         "Leggere un file di testo"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Files and I/O"
@@ -10,32 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
-Se sei nuovo nella programmazione o stai cercando di imparare una nuova lingua di programmazione, è importante essere a conoscenza dei concetti fondamentali come la lettura di file di testo. Questo ti permetterà di manipolare i dati all'interno del codice e creare programmi più complessi.
+## Cosa & Perché?
+Lettura di un file di testo è il processo di aprire e leggere un file che contiene testo o stringhe di caratteri. I programmatori spesso fanno questo per manipolare o elaborare dati contenuti nel file di testo.
 
-## Come fare
-Per leggere un file di testo in Kotlin, puoi usare la funzione `readText()` insieme al metodo `File()` della libreria standard di Java. Ecco un esempio di codice:
+## Come fare:
+```kotlin
+// leggere il file di testo
+val file = File("nome_file.txt")
+val lines = file.readLines()
 
-```Kotlin
-import java.io.File
-
-fun main() {
-    val file = File("file.txt") // imposta il percorso del file di testo
-    val text = file.readText() // legge il contenuto del file e lo assegna alla variabile text
-    println(text) // stampa il contenuto del file di testo
+// ciclo per stampare ogni riga
+for (line in lines) {
+  println(line)
 }
 ```
 
-### Esempio di output:
+Esempio di file di testo (```nome_file.txt```):
 ```
-Questo è un file di testo!
-Buongiorno a tutti!
+Ciao!
+Come stai?
+Spero che tutto vada bene.
 ```
 
-## Approfondimento
-La funzione `readText()` legge l'intero contenuto di un file di testo come una stringa e restituisce un valore di tipo `String`. Questo rende facile manipolare e lavorare con i dati all'interno del codice. Inoltre, è possibile specificare l'encoding del file utilizzando il parametro `charset`, ad esempio `file.readText(charset = Charsets.UTF_8)`.
+Output:
+```
+Ciao!
+Come stai?
+Spero che tutto vada bene.
+```
 
-## Vedi anche
-- [Documentazione Kotlin su lettura di file di testo](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/read-text.html)
-- [Tutorial di base di Kotlin](https://kotlinlang.org/docs/tutorials/getting-started.html)
-- [Documentazione Java su lettura di file di testo](https://docs.oracle.com/javase/tutorial/essential/io/file.html)
+## Approfondimento:
+La lettura di un file di testo è una delle operazioni più comuni in programmazione, poiché permette ai programmatori di accedere e manipolare dati esterni ai loro programmi. È possibile leggere un file di testo utilizzando diverse metodologie, come ad esempio utilizzando librerie di terze parti come Apache Commons IO o utilizzando metodi built-in di linguaggi di programmazione. È importante considerare anche l'encoding del file, poiché può influire sulla corretta lettura dei caratteri speciali.
+
+## Vedi anche:
+- [Documentazione su come leggere un file di testo in Kotlin](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/read-text.html)
+- [Tutorial su come leggere un file di testo in Java utilizzando Apache Commons IO](https://www.baeldung.com/java-read-file)

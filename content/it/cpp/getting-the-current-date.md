@@ -10,52 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+## Cosa & Perché?
+Ottenere la data attuale è un'operazione comune tra i programmatori, che serve ad inserire la data corretta in diverse applicazioni. Solitamente si utilizza questa funzionalità per registrare gli eventi, generare rapporti o per calcolare la durata tra due date.
 
-Molte volte come programmatori ci troveremo nella situazione in cui abbiamo bisogno di ottenere la data corrente all'interno del nostro codice, per svolgere determinate operazioni o per mostrare informazioni aggiornate all'utente. Questo può essere fatto facilmente utilizzando il linguaggio di programmazione C++.
-
-## Come Fare
-
-Per ottenere la data corrente in C++, esistono alcune funzioni disponibili all'interno della libreria standard del linguaggio. La più comune è la funzione `time()` che restituisce il numero di secondi trascorsi dal 1 gennaio 1970. Utilizzando questa funzione all'interno di una variabile di tipo `time_t` possiamo poi utilizzare la funzione `localtime()` per ottenere la data corrente in un formato più leggibile.
-
-Ecco un esempio di codice che mostra come ottenere e stampare la data corrente nel formato DD/MM/AAAA:
+## Come fare:
+Per ottenere la data attuale in C++, è possibile utilizzare la libreria standard ```ctime```. Questa libreria fornisce la funzione ```std::time()``` che restituisce il numero di secondi trascorsi dal 1 gennaio 1970. Ecco un esempio di codice:
 
 ```C++
 #include <iostream>
 #include <ctime>
 
 int main() {
-    // Otteniamo i secondi trascorsi dal 1/1/1970
-    time_t now = time(0);
+  // Ottenere la data attuale
+  std::time_t t = std::time(nullptr);
 
-    // Lo convertiamo in una data più leggibile
-    struct tm* currentDate = localtime(&now);
+  // Convertire i secondi in una struttura tm
+  struct std::tm * now = std::localtime(&t);
 
-    // Otteniamo le informazioni di data dal currentDate
-    int day = currentDate->tm_mday;         // giorno (da 1 a 31)
-    int month = currentDate->tm_mon + 1;    // mese (da 0 a 11)
-    int year = currentDate->tm_year + 1900; // anno (da 1900)
+  // Stampare la data attuale
+  std::cout << "La data attuale è: "
+            << now->tm_mday << '/' << (now->tm_mon + 1) << '/' << (now->tm_year + 1900)
+            << std::endl;
 
-    // Stampiamo la data nel formato DD/MM/AAAA
-    std::cout << day << "/" << month << "/" << year;
-
-    return 0;
+  return 0;
 }
 ```
 
-L'output del codice sarà la data corrente nel formato DD/MM/AAAA. Ad esempio, se il codice viene eseguito il 17/02/2021, l'output sarà:
-
+Output:
 ```
-17/02/2021
+La data attuale è: 31/12/2021
 ```
 
-## Approfondimento
+## Approfondimento:
+La funzione ```std::time()``` è stata introdotta nella libreria ```ctime``` nel C++11, ma esistono anche altre alternative per ottenere la data attuale, come ad esempio la libreria ```chrono```. Inoltre, è importante notare che la funzione ```std::time()``` restituisce i secondi trascorsi dal 1970 nell'orario locale, ma ci sono altre funzioni che permettono di ottenere la data in UTC.
 
-Oltre alla funzione `localtime()`, esistono altre funzioni della libreria standard di C++ che possono essere utilizzate per ottenere la data e l'ora corrente in diversi formati. Ad esempio, la funzione `strftime()` permette di ottenere la data nel formato desiderato, passando come argomenti il formato desiderato e la struttura che contiene le informazioni di data e ora.
-
-Inoltre, esistono anche librerie esterne che offrono funzionalità più avanzate per la gestione della data, come ad esempio la libreria Boost.Date_Time.
-
-## Vedi Anche
-
-- [Documentazione ufficiale di C++ sulla libreria `ctime`](https://en.cppreference.com/w/cpp/header/ctime)
-- [Tutorial su come lavorare con le date in C++](https://www.learncpp.com/cpp-tutorial/511-arithmetic-with-dates-and-times/)
+## Vedi anche:
+- [Documentazione della libreria ctime in C++](https://en.cppreference.com/w/cpp/chrono/c/strftime)
+- [Tutorial sulla gestione della data in C++](https://www.geeksforgeeks.org/date-manipulation-c-c/)

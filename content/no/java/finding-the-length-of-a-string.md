@@ -1,7 +1,7 @@
 ---
-title:                "Å finne lengden av en streng"
-html_title:           "Java: Å finne lengden av en streng"
-simple_title:         "Å finne lengden av en streng"
+title:                "Å finne lengden på en streng"
+html_title:           "Java: Å finne lengden på en streng"
+simple_title:         "Å finne lengden på en streng"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Strings"
@@ -10,41 +10,22 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hva & Hvorfor?
+Å finne lengden av en streng er en vanlig oppgave i programmering, spesielt når vi jobber med tekstbehandling. Med lengden av en streng mener vi antall tegn i den gitte strengen. Dette kan være nyttig for å begrense brukerens inndata, eller for å sjekke om en streng er tom eller ikke.
 
-Enten du er en erfaren Java-programmerer eller nybegynner, er det viktig å forstå hvordan å finne lengden til en streng. Dette er en grunnleggende funksjon som brukes i mange programmer og kan hjelpe deg å håndtere data mer effektivt.
-
-## Hvordan du gjør det
-
-For å finne lengden til en streng i Java, kan du bruke metoden `length()`. Her er et enkelt eksempel som viser hvordan du bruker denne metoden:
+# Hvordan:
+Java har en innebygd metode som heter `length()`, som kan brukes til å finne lengden av en streng. Denne metoden returnerer antall tegn i strengen som er angitt i parentes. Her er et eksempel:
 
 ```Java
-String navn = "Ole";
-int lengde = navn.length();
-System.out.println(lengde);
+String navn = "Ingrid";
+System.out.println(navn.length());
 ```
 
-Dette vil gi deg outputen `3`, siden strengen "Ole" består av tre bokstaver. Hvis du ønsker å finne lengden av en tekst som brukeren skriver inn, kan du bruke en skanner og deretter kalle `length()`-metoden på den skannede strengen.
+Dette vil skrive ut 6, siden det er 6 tegn i ordet "Ingrid".
 
-```Java
-Scanner in = new Scanner(System.in);
-System.out.print("Skriv inn en setning: ");
-String setning = in.nextLine();
-int lengde = setning.length();
-System.out.println(lengde);
-```
+# Dypdykk:
+Funksjonen for å finne lengden av en streng er en del av Java-klassen `String`. Denne metoden ble introdusert i Java 1.0 og er fortsatt en av de mest brukte metodene i dag. Det finnes også andre måter å finne lengden av en streng på, som for eksempel å bruke en løkke for å telle antall tegn. Det er også viktig å merke seg at `length()`-metoden ikke fungerer fult ut for multibyte tegn i Unicode.
 
-For eksempel, hvis brukeren skriver inn "Jeg elsker å programmere!", vil outputen bli `22`.
-
-## Deep Dive
-
-Den `length()`-metoden vi brukte i eksemplene ovenfor, returnerer antall tegn i en streng. Men visste du at den faktisk teller antall Unicode-tegn, ikke bare bokstaver?
-
-En Unicode-karakter er et standardisert tall som representerer et skrifttegn eller et symbol for alle språk. Dette betyr at hvilken som helst streng, uansett språk, vil ha en korrekt lengde. For eksempel, hvis du bruker `length()`-metoden på en streng som inneholder kinesiske tegn, vil den returnere det riktige antall tegn.
-
-En annen viktig ting å merke seg når du bruker `length()`-metoden, er at den teller med alle mellomrom og spesialtegn. Dette betyr at en streng som kun inneholder ett mellomrom vil ha en lengde på 1.
-
-## See Also
-
-* [Javas offisielle dokumentasjon for `length()`-metoden](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#length--)(engelsk) 
-* [Tutorial for å jobbe med strenger i Java (på norsk)](https://www.ntnu.no/wiki/pages/viewpage.action?pageId=2953804)
+# Se også:
+- Oracle sitt offisielle Java-dokumentasjon for [`length()`-metoden](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#length--) (på engelsk)
+- Stack Overflow-diskusjon om [hvilken metode som er best for å finne lengden på en streng](https://stackoverflow.com/questions/9080475/shortest-way-to-get-the-length-of-a-string) (på engelsk)

@@ -1,7 +1,7 @@
 ---
-title:                "搜索和替换文本"
-html_title:           "Swift: 搜索和替换文本"
-simple_title:         "搜索和替换文本"
+title:                "搜索和替换文本。"
+html_title:           "Swift: 搜索和替换文本。"
+simple_title:         "搜索和替换文本。"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -10,49 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
+## 什么是搜索和替换？
 
-在编程过程中，我们经常需要对大量的文本进行修改。搜索和替换文字是一个非常有效的方法，可以帮助我们节省大量的时间和精力。
+搜索和替换文本是一种程序员经常使用的技术，它允许我们在文本中查找特定的内容，并用我们自己选择的文本进行替换。这种技术可以节省我们大量的时间和精力，尤其是当我们需要对大量文本进行修改时。
 
-## 如何搜索和替换文字
+## 如何进行搜索和替换：
 
-```Swift
-// 定义一个字符串变量
-var sentence = "今天是周一，明天是周二。"
-
-// 使用replaceOccurrences方法，将“周一”替换为“周日”
-sentence.replaceOccurrences(of: "周一", with: "周日")
-
-// 输出结果为：“今天是周日，明天是周二。”
-```
-
-我们可以看到，使用replaceOccurrences方法可以很方便地替换文本中的特定内容。除了使用具体的文字，也可以使用正则表达式来进行替换。
+在Swift中，我们可以使用字符串的```replacingOccurrences(of:with:)```方法来进行搜索和替换。例如，如果我们想把句子中的"apple"替换为"orange"，我们可以这样写：
 
 ```Swift
-// 定义一个字符串变量
-var sentence = "李明的电话号码是：13888888888。"
+let sentence = "I like to eat apple."
+let newSentence = sentence.replacingOccurrences(of: "apple", with: "orange")
+print(newSentence)
 
-// 使用正则表达式，将电话号码替换为"***********"，保护隐私
-let regex = try NSRegularExpression(pattern: "\\d{11}", options: [])
-let modifiedString = regex.stringByReplacingMatches(in: sentence, options: [], range: NSRange(0..<sentence.utf16.count), withTemplate: "***********")
-
-// 输出结果为：“李明的电话号码是：***********。”
+// Output: I like to eat orange.
 ```
 
-## 深入了解搜索和替换文字
+## 深入探讨：
 
-除了replaceOccurrences方法，Swift还提供了其他方法来搜索和替换文字。其中，range方法可以帮助我们精确定位要替换的文字。另外，利用replaceSubrange方法也可以实现相同的效果。
+在过去的计算机编程中，搜索和替换文本是一种很常见的技术，但它的实现方式可能有所不同。在现代的编程语言中，通常都会有类似```replacingOccurrences(of:with:)```这样的方法来实现搜索和替换。除了这种方法外，我们也可以使用正则表达式来进行更复杂的文本替换。
 
-另外，正则表达式也是非常强大的工具，它可以帮助我们快速地搜索和替换文本中的特定内容。如果您想更深入地了解正则表达式的使用，请参考官方文档。
+## 参考资料：
 
-## 参考链接
-
-- [Swift官方文档](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
-- [正则表达式使用指南](https://www.jianshu.com/p/113f59a9c9fe)
-- [iOS开发常用正则表达式汇总](http://www.cocoachina.com/ios/20180109/21717.html)
-
-## 参见
-
-- [Swift文本处理指南](https://blog.csdn.net/lingfengSU/article/details/54271159)
-- [Swift高阶字符串操作技巧](https://blog.csdn.net/fc_lemon3/article/details/53347880)
-- [Swift字符串常用方法总结](https://blog.csdn.net/qq_36408030/article/details/78665335)
+- [Apple官方文档](https://developer.apple.com/documentation/foundation/nsstring/1414264-replacingoccurrences)
+- [正则表达式教程](https://www.runoob.com/regexp/regexp-tutorial.html)

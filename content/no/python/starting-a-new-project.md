@@ -10,45 +10,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hva & Hvorfor?
+Et nytt prosjekt er når en utvikler starter på å lage noe nytt, enten det er en applikasjon, et bibliotek, eller en nettside. Programmerere starter nye prosjekter for å utvikle sin kompetanse og kreativitet, og for å løse problemer eller utfordringer de står ovenfor.
 
-Å starte et nytt prosjekt kan være en spennende og givende opplevelse for alle som er interessert i programmering. Med Python kan du lage alt fra enkle skript til komplekse applikasjoner, og det er enkelt å komme i gang.
-
-## Slik gjør du det
-
-For å starte et nytt prosjekt i Python, følg disse enkle trinnene:
-
-1. Åpne din teksteditor og opprett en ny fil.
-2. Skriv inn følgende kode:
-
+## Hvordan:
 ```Python
-print("Hei, verden!")
+def start_prosjekt():
+    print("Hei, velkommen til mitt nye prosjekt!")
+    
+start_prosjekt()
 ```
+Output:
+```Hei, velkommen til mitt nye prosjekt!```
 
-3. Lagre filen som "hello_world.py".
-4. Åpne en terminal og naviger til mappen hvor filen er lagret.
-5. Skriv inn kommandoen "python hello_world.py" for å kjøre programmet.
-6. Du bør se "Hei, verden!" som output i terminalen.
+## Dykk dypere:
+Nye prosjekter har blitt en viktig del av softwareutvikling de siste årene, særlig med fremveksten av Open Source bevegelsen. Det finnes også mange populære plattformer for å håndtere prosjekter, som for eksempel Git og GitHub. Alternativt kan man også lage et nytt prosjekt ved å bygge videre på eksisterende kode eller ved å forkaste og restrukturere gammel kode.
 
-Dette er bare en enkel måte å starte et nytt prosjekt på. Du kan eksperimentere med ulike kodesnutter og lære deg mer om Python ved å lese dokumentasjonen og tutorials på nettet.
-
-## Dypdykk
-
-Når du starter et nytt prosjekt, er det viktig å ha en klar plan og en ide om hva du ønsker å oppnå. Her er noen tips for å lykkes med ditt nye Python-prosjekt:
-
-- Forskning: Ta deg tid til å gjøre grundig research på temaet ditt og hva som allerede finnes der ute. Det kan være nyttig å se på lignende prosjekter og ta lærdom av deres suksesser og feil.
-- Planlegg: Lage en plan eller en struktur for prosjektet ditt vil hjelpe deg å organisere og holde oversikt over koden din.
-- Test jevnlig: Å teste koden din underveis er viktig for å oppdage og fikse eventuelle feil eller bugs. Dette vil bidra til å sikre at prosjektet ditt fungerer som det skal.
-- Vær tålmodig: Å lære et nytt språk og utvikle et prosjekt tar tid og tålmodighet. Ikke gi opp hvis det går sakte eller du møter utfordringer underveis.
-
-Med disse tipsene i tankene, er du klar for å starte ditt neste Python-prosjekt!
-
-## Se også
-
-Her er noen nyttige ressurser for å hjelpe deg i gang med å utvikle prosjekter i Python:
-
-- [Offisiell Python-dokumentasjon](https://docs.python.org/nb/3/)
-- [Real Python](https://realpython.com/)
-- [Codecademy Python-kurs](https://www.codecademy.com/learn/learn-python)
-
-Lykke til med ditt nye prosjekt!
+## Se også:
+- [GitHub guides for starting a new project](https://guides.github.com/introduction/flow/)
+- [A beginner's guide to starting a new project](https://medium.com/@MaximAbramchuck/a-beginners-guide-to-starting-a-side-project-15f81120feb7)
+- [The importance of personal projects for programmers](https://medium.freecodecamp.org/the-importance-of-side-projects-for-your-career-as-a-software-developer-c873cb6f0296)

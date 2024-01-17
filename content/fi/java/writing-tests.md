@@ -10,45 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Miksi
-Testien kirjoittaminen on tärkeä ja olennainen osa Java-ohjelmointia, koska se auttaa varmistamaan koodin toimivuuden ja parantaa sen luotettavuutta. Hyvin testattu koodi on myös helpompi ylläpitää ja päivittää tulevaisuudessa.
+Mitä ja Miksi?
+Testien kirjoittaminen tarkoittaa ohjelmakoodin suorituskyvyn ja oikeellisuuden tarkistamista. Ohjelmoijat tekevät sitä varmistaakseen, että heidän koodinsa toimii odotetulla tavalla ja löytääkseen mahdollisia virheitä jo ennen kuin ohjelma pääsee käyttäjien käsiin.
 
-# Kuinka
-Testien kirjoittaminen Java-ohjelmointikielellä on helppoa ja vaivatonta. Seuraavassa on esimerkki yksinkertaisesta testistä, joka tarkistaa, että annettu funktio palauttaa odotetun tuloksen:
+Kuinka:
+Java-testien kirjoittamiseksi tarvitset JUnit-kirjaston, jonka avulla voit tehdä automatisoituja testejä Java-ohjelmalle. Seuraavassa esimerkissä luodaan yksinkertainen testi, joka tarkistaa, että kaksi lukua lisätään oikein:
 
 ```Java
-public class Testi {
+import static org.junit.Assert.assertEquals;
 
-  public static void main(String[] args) {
-    // Kutsutaan testattavaa funktiota ja tallennetaan tulos muuttujaan
-    int tulos = laskeSumma(5, 7);
-    // Tarkistetaan, että tulos on odotettu
-    if (tulos == 12) {
-      System.out.println("Testi läpäisty: oikea tulos saatiin!");
-    } else {
-      System.out.println("Testi ei läpäissyt: odotettu tulos oli 12, mutta saatiin " + tulos);
+public class CalculatorTest {
+
+    @Test
+    public void addTest() {
+        Calculator calc = new Calculator();
+        int result = calc.add(2, 2);
+        assertEquals(4, result);
     }
-  }
-  
-  // Yksinkertainen funktio, joka laskee kahden luvun summan
-  public static int laskeSumma(int luku1, int luku2) {
-    return luku1 + luku2;
-  }
 }
 ```
 
-Tulostus:
+Tämä testi luo uuden laskimen ja käyttää sen add-metodia syöttäen sille kaksi lukua. Sen jälkeen se verrataan odotettuun tulokseen (4) ja jos ne ovat samat, testi onnistuu. On tärkeää, että testit ovat riippumattomia toisistaan ja niiden tulisi kattaa mahdollisimman paljon koodia.
 
-```
-Testi läpäisty: oikea tulos saatiin!
-```
+Syvä sukellus:
+JUnit-kirjasto kehitettiin alun perin vuonna 1998 ja on tähän päivään asti yksi suosituimmista testauskehyksistä Java-sovelluksille. Siinä on myös mahdollisuus käyttää JUnit Jupiter API:a, joka tuo mukanaan uusia ominaisuuksia, kuten parametrilliset testit ja lamba-lausekkeet. On myös muita vaihtoehtoja, kuten TestNG, joka tarjoaa vastaavia toiminnallisuuksia.
 
-# Deep Dive
-Testien kirjoittamisessa on hyvä noudattaa muutamia periaatteita, jotta ne olisivat mahdollisimman tehokkaita ja helppolukuisia. Ensinnäkin, on tärkeää testata rajatapauksia ja erikoistilanteita, jotta koodin virhealttius saadaan minimoitua. Lisäksi testit tulisi pitää mahdollisimman yksinkertaisina ja keskittyä vain yhteen asiaan kerrallaan. Testien tulee myös olla riippumattomia muista testeistä ja suorittua nopeasti.
+Testien kirjoittamiseen on monia erilaisia lähestymistapoja ja strategioita, mutta tärkeintä on löytää sopiva tapa tiimillesi ja projektisi tarpeisiin. Testikattavuuden lisäksi on myös tärkeää miettiä, mikä on sopiva määrä testaukselle - liikaa testejä voi hidastaa kehitystä.
 
-Mikäli olet kiinnostunut syvemmin testien kirjoittamisesta ja miten niitä voidaan hyödyntää Java-ohjelmoinnissa, suosittelemme tutustumaan seuraaviin resursseihin:
-
-## Katso myös
-- Java Test Driven Development: https://guides.webschools.io/community-guides/testing/java/
-- JUnit testing framework: https://junit.org/junit5/
-- TDD tutorial: https://www.tutorialspoint.com/junit/junit_test_framework.htm
+Katso myös:
+- JUnit: https://junit.org/junit5/
+- TestNG: https://testng.org/doc/index.html

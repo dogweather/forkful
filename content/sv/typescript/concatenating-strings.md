@@ -1,7 +1,7 @@
 ---
-title:                "Sammanslagning av strängar"
-html_title:           "TypeScript: Sammanslagning av strängar"
-simple_title:         "Sammanslagning av strängar"
+title:                "Sammanfogning av strängar"
+html_title:           "TypeScript: Sammanfogning av strängar"
+simple_title:         "Sammanfogning av strängar"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -10,68 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför 
-Det finns många tillfällen då man behöver slå samman flera textsträngar i en programkod. Det kan vara för att skapa en fullständig URL, skapa ett meddelande eller kombinera variabler med text. Oavsett syftet, så är det viktigt att veta hur man slår ihop strängar på ett korrekt sätt för att undvika fel i koden.
+## Vad & Varför?
+Att konkatenera strängar innebär helt enkelt att man slår ihop flera strängar till en enda lång sträng. Programmerare gör detta för att lägga till dynamisk data till sina strängar, såsom användarens namn eller datum. Det är en effektiv och enkel metod för att skapa dynamiska texter inom programmering.
 
-## Hur man gör
-Om man använder TypeScript för att utveckla applikationer, så finns det flera olika sätt att konkatenera strängar. Det enklaste sättet är att använda + -operatören för att slå ihop två strängar. Till exempel:
-
+## Hur man gör:
 ```TypeScript
-let förnamn: string = "Anna";
-let efternamn: string = "Andersson";
-let fullständigtNamn: string = förnamn + " " + efternamn;
+const name: string = "Sofie";
+const welcomeMessage: string = "Välkommen till vår webbplats, " + name + "!";
 
-console.log(fullständigtNamn); // Output: Anna Andersson
+console.log(welcomeMessage);
 ```
+Output: Välkommen till vår webbplats, Sofie!
 
-Man kan också använda en string template för att slå ihop strängar. String templates är särskilt användbara när man vill inkludera variabler i en sträng. Till exempel:
+## Deep Dive:
+Att konkatenera strängar är en mycket vanlig teknik inom programmering och används oftast för att bygga upp meddelanden och texter till användaren. Innan strängkonkatenering var möjligt, var det vanligt att använda komplexa metoder för att bygga upp dynamiska texter, vilket var mycket tidskrävande och gjorde koden svårare att läsa.
 
-```TypeScript
-let pris: number = 150;
-let produkt: string = "Sko";
+Alternativ till strängkonkatenering är att använda så kallade "template literals" som introducerades i ES6, vilket gör det möjligt att skriva strängar på ett mer effektivt sätt. Även om detta kan vara ett bättre alternativ för vissa programmerare, är strängkonkatenering fortfarande en mycket använd metod.
 
-let meddelande: string = `Produkten ${produkt} kostar ${pris} kr.`;
+För att implementera strängkonkatenering i TypeScript använder man operatorn "+" för att slå ihop strängarna. Det är viktigt att notera att typerna på de olika strängarna måste matcha för att få ett korrekt resultat. Om man till exempel försöker konkatenera en sträng och ett nummer, kommer TypeScript att ge ett felmeddelande.
 
-console.log(meddelande); // Output: Produkten Sko kostar 150 kr.
-```
-
-Det är också möjligt att använda String.concat() -metoden för att slå ihop flera strängar samtidigt. Detta är särskilt användbart om man behöver slå ihop en större mängd strängar. Till exempel:
-
-```TypeScript
-let förnamn: string = "Anna";
-let efternamn: string = "Andersson";
-let yrke: string = "utvecklare";
-
-let fullständigtNamn: string = String.concat(förnamn, " ", efternamn, " är en ", yrke);
-
-console.log(fullständigtNamn); // Output: Anna Andersson är en utvecklare
-```
-
-## Djupdykning
-När man använder + -operatören för att konkatenera strängar i TypeScript, så bör man vara medveten om att om man försöker konkatenera en sträng med en annan typ, så kommer den andra typen att konverteras till en sträng. Detta kan orsaka problem om man inte är medveten om det. Till exempel:
-
-```TypeScript
-let tal: number = 5;
-let text: string = "10";
-
-let resultat: string = tal + text;
-
-console.log(resultat); // Output: 510
-```
-
-Som du kan se, så konverterades talet 5 automatiskt till en sträng och sedan konkatenerades den med strängen "10", vilket resulterade i strängen "510". Detta kan leda till oönskade resultat om man inte är medveten om konverteringen.
-
-Det är också viktigt att notera att man inte bör använda `+=` -operatören för att konkatenera strängar i TypeScript. Detta kan ge oönskade resultat eftersom `+=` -operatören även används för att tilldela ett värde till en variabel. Till exempel:
-
-```TypeScript
-let text: string = "Hej";
-text += "välkommen!";
-
-console.log(text); // Output: Hejvälkommen!
-```
-
-Som du kan se i exemplet ovan, så konkatenerades "välkommen!" till variabeln text, men det är inte det resultatet som man kanske hade förväntat sig om man enbart ville slå ihop strängar. Det är därför bättre att använda + -operatören för konkatenering istället för `+=`.
-
-## Se även
-- [TypeScript Playground](https://www.typescriptlang.org/play/)
-- [Official TypeScript Documentation](https://www.typescriptlang.org/docs/)
+## Se även:
+- [TypeScript - Strings](https://www.typescriptlang.org/docs/handbook/basic-types.html#string)
+- [TypeScript - Template Literals](https://www.typescriptlang.org/docs/handbook/2/template-literal-types.html)

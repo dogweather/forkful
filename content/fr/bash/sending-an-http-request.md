@@ -10,59 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Qu'est-ce que c'est et pourquoi le faire?
 
-Si vous voulez interagir avec un serveur à distance, envoyer une requête HTTP est une étape essentielle. Cela vous permet de récupérer des données, d'envoyer des informations ou de simplement communiquer avec une application ou un site web.
+Envoyer une requête HTTP est un moyen pour les programmeurs d'interagir avec d'autres sites ou serveurs en utilisant le protocole HTTP. Cela leur permet d'accéder à des ressources, telles que des informations ou des données, disponibles sur ces sites ou serveurs.
 
-## Comment Faire
+## Comment faire:
 
-Tout d'abord, vous aurez besoin d'un terminal pour exécuter des commandes Bash. Une fois que vous avez ouvert votre terminal, suivez ces étapes pour envoyer une requête HTTP :
+Voici un exemple de code Bash pour envoyer une requête HTTP à un site web spécifique et en afficher la réponse:
 
-``` Bash
-# Déclarez votre méthode HTTP (GET, POST, PUT, etc.)
-method="GET"
-
-# Définissez l'URL à laquelle vous souhaitez envoyer la requête
-url="https://example.com/api/data"
-
-# Utilisez la commande curl pour exécuter la requête
-# Insérez les variables que vous avez définies pour la méthode et URL
-curl -X "$method" "$url"
+```Bash
+curl -i https://www.example.com
 ```
 
-En exécutant ces commandes, vous avez envoyé une requête GET à l'URL que vous avez spécifiée. Cependant, vous pouvez également ajouter des paramètres, des en-têtes ou un corps de requête en utilisant des options supplémentaires avec la commande curl. Voici un exemple de commande avec des options ajoutées :
+Ce code utilise la commande ```curl``` pour envoyer la requête et l'option ```-i``` pour afficher la réponse complète, y compris les en-têtes de la requête et de la réponse.
 
-``` Bash
-# Déclarez votre méthode HTTP, comme avant
-method="POST"
+Lorsque vous exécutez le code, vous devriez voir une réponse comme celle-ci:
 
-# Définissez l'URL, mais cette fois avec des paramètres
-url="https://example.com/api/users?username=john&email=john@example.com"
-
-# Ajoutez des en-têtes pour spécifier le type de contenu et l'acceptation de réponse
-headers="-H 'Content-Type: application/json' -H 'Accept: application/json'"
-
-# Définissez le corps de votre requête, ici avec un format JSON
-body="{'username': 'john', 'password': '12345'}"
-
-# Utilisez la commande curl avec les options et paramètres que vous avez définis
-curl -X "$method" "$url" "$headers" -d "$body"
+```
+HTTP/1.1 200 OK
+Server: nginx
+Date: Tue, 25 May 2021 19:12:50 GMT
+Content-Type: text/html; charset=UTF-8
+Content-Length: 29148
+Connection: keep-alive
 ```
 
-En utilisant la commande curl avec des options supplémentaires, vous pouvez personnaliser votre requête HTTP selon vos besoins.
+La réponse contient des informations sur le serveur, la date, le type de contenu et la longueur du contenu. En dessous de ces en-têtes, vous trouverez le contenu du site web lui-même.
 
-## Plongée en Profondeur
+## Plongée en profondeur:
 
-Il est important de comprendre comment fonctionne une requête HTTP pour l'envoyer correctement. Une requête HTTP est composée de plusieurs parties, notamment la méthode, l'URL, les en-têtes, le corps de requête et la réponse.
+L'envoi de requêtes HTTP est une partie importante de la programmation en raison de la grande quantité de données disponibles sur le web. Avant les protocoles HTTP, les programmeurs devaient utiliser des protocoles plus anciens et plus limités pour communiquer avec des sites extérieurs.
 
-La méthode définit l'action que vous souhaitez effectuer, comme GET pour récupérer des données ou POST pour en envoyer. L'URL est l'adresse à laquelle vous envoyez la requête. Les en-têtes spécifient les informations sur la requête, comme le type de contenu ou l'authentification. Le corps de requête contient les données à envoyer, telles qu'un formulaire ou un fichier. La réponse contient les informations renvoyées par le serveur, généralement au format JSON ou HTML.
+Bien que la commande ```curl``` soit le moyen le plus courant d'envoyer une requête HTTP en Bash, il existe également d'autres options telles que ```wget``` et les bibliothèques spécialisées en Bash pour l'envoi de requêtes.
 
-Maintenant que vous comprenez les composants d'une requête HTTP, vous pouvez les manipuler en utilisant la commande curl pour interagir avec des serveurs à distance.
+## Voir aussi:
 
-## Voir Aussi
+Pour en savoir plus sur l'envoi de requêtes HTTP en Bash, consultez ces sources:
 
-Pour en savoir plus sur la commande curl et les requêtes HTTP, vous pouvez consulter les liens suivants :
-
-- [Documentation officielle de curl](https://curl.haxx.se/docs/)
-- [Guide complet sur les requêtes HTTP](https://www.tutorialspoint.com/http/http_requests.htm)
-- [Vidéo explicative sur les requêtes HTTP et curl](https://www.youtube.com/watch?v=id9jW53_uNk)
+- [La documentation officielle de curl](https://curl.se/docs/manpage.html)
+- [Un tutoriel sur l'utilisation de curl en Bash](https://www.baeldung.com/curl-rest)

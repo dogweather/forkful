@@ -10,48 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Kyun
-CSV (Comma Separated Values) ek bahut hi prachalit format hai jo data ko store karne aur share karne ke liye use kiya jata hai. Iska use bahut saari applications aur systems mein kiya jata hai, jaise financial data, database management, aur spreadsheet software. CSV ek simple, lightweight, aur easily readable format hai, isliye bahut se developers CSV ko apni programming projects mein prefer karte hai.
+## क्या और क्यों?
 
-## Kaise
-CSV ka use Kotlin mein text based data store karne ke liye kiya jata hai. Iske liye hum `FileReader` aur `BufferedReader` ka use karenge. Yeh dono classes `kotlin.io` package mein available hai. Chaliye ek simple CSV file ko padhne aur uske data ko console par print karne ka example dekhte hai:
+CSV के साथ काम करना क्या है, और प्रोग्रामर्स इसे क्यों करते हैं। CSV स्प्रेडशीट डेटा को कॉमा separated values के रूप में संग्रहीत करता है, जिसे प्रोग्रामर्स डेटा को संसाधित और व्यवस्थित करने के लिए उपयोग कर सकते हैं।
+
+## कैसे करें:
 
 ```Kotlin
 import java.io.FileReader
-import java.io.BufferedReader
+import com.opencsv.CSVReader
 
-// CSV file ka path
-val path = "file.csv"
+val csvReader = CSVReader(FileReader("data.csv"))
+val data = csvReader.readAll()
+val header = data[0]
+val rows = data.drop(1)
 
-// FileReader aur BufferedReader ka initialization
-val fileReader = FileReader(path)
-val bufferedReader = BufferedReader(fileReader)
-
-// Saari lines ko read karte hue print karna
-bufferedReader.use { reader ->
-    reader.lines().forEach { line ->
-        println(line)
-    }
+for (row in rows) {
+    val name = row[0]
+    val email = row[1]
+    val age = row[2].toInt()
+    println("नाम: $name, ईमेल: $email, आयु: $age")
 }
 ```
 
-Output:
+इस मिसाल में, हम एक CSV फाइल से डेटा पढ़ते हैं और उसे संस्कारित सूची में बदलते हैं। फाइल से पहले पंक्ति अक्षरमाला हमारे डेटा कॉलम को संदर्भित करने के लिए उपयोग की जाती है। हम उस पंक्ति को छोड़कर सभी अन्य पंक्तियों को शामिल करते हैं जो हामारे डेटा को प्रतिनिधित करती हैं।
 
-```
-Name, Age, Salary
-John, 25, $50,000
-Sara, 30, $60,000
-Brandon, 32, $70,000
-```
+## डीप डाइव:
 
-Is example mein humne pehle CSV file ka path define kiya phir usko `FileReader` aur `BufferedReader` se read kiya. Saari lines ko read karne ke baad humne use `forEach` loop ka use karke print kiya. Is tarah se hum CSV file ke data ko Kotlin mein read aur print kar sakte hai.
+CSV फाइलें १९७० के दशक से प्रयुक्त हो रही हैं और ये लोकप्रिय रूप से सामान्य फाइल स्वरूप हैं। यदि आपको CSV के साथ काम करना नहीं होता है, तो आपको मुख्य डेटा संग्रहीत स्वरूप TXT, JSON या XML का उपयोग कर सकते हैं।
 
-## Deep Dive
-CSV files mein data comma separated format mein hota hai, iss liye unko padhna thoda tricky ho sakta hai. Agar CSV file mein quotation marks ya special characters hai toh data ko sahi se read karna aur alag columns mein split karna difficult ho sakta hai. Iske liye hum CSV parsing libraries ka use kar sakte hai, jaise ki OpenCSV aur SuperCSV.
+और यदि आप एक CSV पार्सर उपलब्ध नहीं है, तो आप स्वयं कोड लिख सकते हैं। एक सामान्य त्रुटि है कि हमारे डेटा में फार्मेटिंग गलत हो सकती है, जो मूल डेटा को संसाधित करने में दिक्कत पैदा कर सकती है। संबंधित लेखों के लिंक नीचे दिए गए हैं।
 
-CSV files ko read karne ke alawa, Kotlin mein hum CSV data ko modify aur manipulate bhi kar sakte hai. Hum `FileWriter` aur `BufferedWriter` ka use karke CSV files mein new data add kar sakte hai. CSV files bahut flexible hai aur inka use data exchange ke liye bahut helpful hai.
+## देखें भी:
 
-## See Also
-- [Kotlin Documentation](https://kotlinlang.org/docs/)
-- [OpenCSV Library](http://opencsv.sourceforge.net/)
-- [SuperCSV Library](https://www.supercsv.org/)
+- [How to Parse CSV in Kotlin](https://www.baeldung.com/kotlin/parse-csv)
+- [Comparison of CSV, JSON, and XML](https://medium.com/gocodee/csv-vs-json-vs-xml-443b3a9e6f27)
+- [Handling CSV Formatting Errors](https://stackoverflow.com/questions/19206418/how-do-i-handle-csv-files-when-some-fields-are-quoted-and-some-aren-t-in-kotlin)

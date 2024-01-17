@@ -1,7 +1,7 @@
 ---
-title:                "Calculando una fecha en el futuro o pasado"
-html_title:           "Ruby: Calculando una fecha en el futuro o pasado"
-simple_title:         "Calculando una fecha en el futuro o pasado"
+title:                "Calculando una fecha en el futuro o en el pasado"
+html_title:           "Ruby: Calculando una fecha en el futuro o en el pasado"
+simple_title:         "Calculando una fecha en el futuro o en el pasado"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Dates and Times"
@@ -10,46 +10,63 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-¿Por qué calcular una fecha en el futuro o en el pasado? Es importante poder predecir eventos o planificar tareas en fechas específicas, y conocer cómo hacerlo en Ruby puede facilitar este proceso.
+# ¡Calculando fechas en el futuro o pasado con Ruby!
 
-## ¿Cómo calcular una fecha en el futuro o en el pasado?
+## ¿Qué y por qué?
 
-Es bastante sencillo utilizar la función `DateTime` en Ruby para calcular fechas en el futuro o en el pasado. Primero, debemos importar la librería `date` utilizando `require 'date'`. Luego, podemos utilizar el método `DateTime.now` para obtener la fecha y hora actuales. A partir de ahí, podemos añadir o restar días, meses o años utilizando los métodos `next_day`, `prev_day`, `next_month` o `prev_month` según sea necesario. Por último, podemos utilizar el método `strftime` para darle formato a nuestra fecha de salida.
+Calcular una fecha en el futuro o pasado es una tarea común en la programación, especialmente cuando se trabaja con fechas y horarios en aplicaciones y sistemas.
 
-```ruby
-require 'date'
+Los programadores utilizan esta función para realizar cálculos con fechas y horarios, como por ejemplo, mostrar eventos próximos o calcular la duración entre dos fechas.
 
-today = DateTime.now
-future_date = today.next_year(2).next_month(3).next_day(10)
-puts "La fecha en 2 años, 3 meses y 10 días será #{future_date.strftime("%d/%m/%Y")}"
-# Salida: La fecha en 2 años, 3 meses y 10 días será 10/08/2022
+## ¡Cómo hacerlo!
+
+Para calcular una fecha en el futuro o pasado utilizando Ruby, primero necesitas tener una fecha inicial y un número de días o segundos a agregar o restar. Luego, puedes utilizar los siguientes métodos:
+
+```Ruby
+# Sumar días a una fecha
+fecha_inicio + numero_de_dias
+
+# Restar días a una fecha
+fecha_inicio - numero_de_dias
+
+# Sumar segundos a una fecha
+fecha_inicio + numero_de_segundos
+
+# Restar segundos a una fecha
+fecha_inicio - numero_de_segundos
 ```
 
-También podemos utilizar fechas específicas para realizar cálculos. Por ejemplo, si queremos conocer la fecha de dentro de 2 semanas, podemos utilizar el método `parse` para introducir una fecha específica y luego utilizar `next_day` para añadir los días necesarios.
+¡Así de sencillo! Veamos un ejemplo en acción:
 
-```ruby
-require 'date'
+```Ruby
+# Definimos una fecha inicial
+fecha_inicio = Time.new(2021, 9, 1)
 
-specific_date = DateTime.parse("2020/10/01")
-new_date = specific_date.next_day(14)
-puts "La fecha de dentro de dos semanas será #{new_date.strftime("%d/%m/%Y")}"
-# Salida: La fecha de dentro de dos semanas será 15/10/2020
+# Sumamos 10 días a la fecha inicial
+fecha_fin = fecha_inicio + 10
+
+puts fecha_fin
+# Output: 2021-09-11 00:00:00 +0200
 ```
 
-## Profundizando en el cálculo de fechas en el futuro o en el pasado
+En este ejemplo, hemos creado una variable que contiene una fecha inicial y luego utilizamos el operador de suma para agregar 10 días a esa fecha. Después, imprimimos el resultado que es una nueva fecha con el formato especificado.
 
-La clase `DateTime` en Ruby ofrece una gran variedad de métodos para manipular fechas. Además de los mencionados anteriormente, también podemos utilizar `next_year` y `prev_year` para añadir o restar años, `next_hour` y `prev_hour` para añadir o restar horas, entre otros. Además, podemos utilizar el método `new` para crear una fecha específica a partir de parámetros dados.
+## ¡Profundizando más!
 
-```ruby
-require 'date'
+### Contexto histórico
 
-specific_date = DateTime.new(year, month, day, hour, minute, second)
-```
+La manipulación de fechas y horarios es un tema que ha evolucionado a lo largo de los años en la programación. Antes, los programadores tenían que trabajar con números enteros para representar las fechas, mientras que ahora contamos con herramientas más avanzadas como la librería de fechas de Ruby.
 
-En resumen, calcular fechas en el futuro o en el pasado en Ruby puede ser muy útil y sencillo utilizando la clase `DateTime` y sus métodos. Con un poco de práctica, podremos planificar cualquier tarea o evento sin problemas.
+### Alternativas
 
-## Ver también
+Además de utilizar los operadores de suma y resta, también existen otras formas de calcular fechas en el futuro o pasado en Ruby. Por ejemplo, puedes utilizar el método `advance` de la clase `Date` o `DateTime` para agregar o restar diferentes unidades de tiempo (días, meses, años) a una fecha dada.
 
-- Documentación oficial de `DateTime` en Ruby: https://ruby-doc.org/stdlib-2.7.1/libdoc/date/rdoc/DateTime.html
-- Tutorial sobre manipulación de fechas en Ruby: https://www.rubyguides.com/2015/05/ruby-date-format/
-- Ejemplos de código para cálculo de fechas en diferentes lenguajes: https://www.includehelp.com/code-snippets/calculate-date-of-future-past.aspx
+### Detalles de implementación
+
+Internamente, Ruby utiliza el conteo de segundos desde la medianoche del 1 de enero de 1970 (sistema Unix) para representar las fechas y horarios. Esto facilita la realización de cálculos en diferentes zonas horarias ya que la hora y fecha inicial siempre se basan en un mismo punto de referencia.
+
+## ¡Links relacionados!
+
+- [Documentación de fechas en Ruby](https://ruby-doc.org/core-3.0.2/Time.html)
+- [Método advance en la clase Date](https://ruby-doc.org/stdlib-3.0.2/libdoc/date/rdoc/Date.html#method-i-advance)
+- [Método advance en la clase DateTime](https://ruby-doc.org/stdlib-3.0.2/libdoc/datetime/rdoc/DateTime.html#method-i-advance)

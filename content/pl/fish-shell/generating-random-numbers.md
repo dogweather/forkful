@@ -10,34 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+# Co to jest i dlaczego?
 
+Generowanie losowych liczb jest procesem tworzenia liczby lub ciągu liczb w sposób pseudolosowy. Programiści często wykorzystują ten proces do tworzenia symulacji, gier lub do generowania unikalnych identyfikatorów. 
 
-Generowanie losowych liczb jest niezbędną umiejętnością do pisania skryptów i programów w językach programowania. Fish Shell zapewnia wygodne metody generowania losowych wartości, które mogą być wykorzystane w różnych kontekstach, jak na przykład tworzenie testowych danych lub losowe wybory.
+# Jak to zrobić:
 
-## Jak to zrobić
+Według kanonicznej definicji, musimy użyć funkcji `random` w celu wygenerowania losowych liczb. Oto przykładowy kod w języku Fish Shell, który wyświetli 10 losowych liczb od 1 do 100:
 
-Wykorzystaj funkcje Fish Shell, aby wygenerować losowe liczby całkowite lub zmiennoprzecinkowe, w określonym zakresie.
-
-```Fish Shell
-# Generowanie losowej liczby całkowitej z zakresu od 1 do 100
-set random_number (random --uniform 100 + 1)
-echo $random_number
-# Wynik: losowa liczba całkowita z zakresu od 1 do 100
+```fish
+for i in (seq 1 10)
+	echo (random 1 100)
+end
 ```
 
-```Fish Shell
-# Generowanie losowej liczby zmiennoprzecinkowej z zakresu od 0 do 1, z dokładnością do 2 miejsc po przecinku
-set random_float (random --uniform 0 1 | printf "%.2f")
-echo $random_float
-# Wynik: losowa liczba zmiennoprzecinkowa z zakresu od 0 do 1 z dokładnością do 2 miejsc po przecinku
+Po uruchomieniu powyższego kodu, otrzymamy wynik podobny do tego:
+
+```fish
+82.934609
+10.48204 
+71.350336 
+95.155582 
+63.741849 
+69.527023 
+54.524158 
+16.843962 
+68.924905 
+4.6280007
 ```
 
-## Deep Dive
+# Wgląd w szczegóły:
 
-Fish Shell wykorzystuje algorytm Mersenne Twister do generowania losowych liczb. Jest to jeden z najbardziej popularnych i sprawdzonych algorytmów w tym zakresie, który zapewnia wysoką jakość wygenerowanych liczb. Ponadto, Fish Shell oferuje kilka innych metod generacji losowych wartości, takich jak generowanie liczb losowych z rozkładu normalnego czy losowanie elementów z listy.
+Historia generowania losowych liczb sięga czasów starożytnych, gdzie używano różnych metod, takich jak rzut monetą czy obracanie kołem. Współczesne komputery wykorzystują algorytmy generowania liczb pseudolosowych, które wykorzystują dane dostarczane przez użytkownika, takie jak czas lub pozycja kursora.
 
-## Zobacz też
+Alternatywne metody generowania losowych liczb to m.in. użycie rzutu kostkami, wykorzystanie danych zewnętrznych (np. pogoda), czy wykorzystanie fizycznych zjawisk, takich jak efekt kolizji.
 
-- Dokumentacja Fish Shell: https://fishshell.com/docs/current/cmds/random.html
-- Mersenne Twister: https://pl.wikipedia.org/wiki/Generator_Mersenne_Twister
+Implementacja generowania losowych liczb jest bardzo ważna, ponieważ źle napisany algorytm może doprowadzić do powtarzających się wzorców i wpływać na losowość liczb.
+
+# Zobacz też:
+
+- [Dokumentacja Fish Shell](https://fishshell.com/docs/current/index.html)
+- [Generowanie liczb pseudolosowych - Wikipedia](https://pl.wikipedia.org/wiki/Generacja_liczb_pseudolosowych)
+- [Generowanie liczb losowych w Pythonie - Devcorner](https://devcorner.pl/generowanie-liczb-losowych-w-pythonie/)

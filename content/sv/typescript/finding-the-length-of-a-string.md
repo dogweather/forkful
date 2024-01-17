@@ -1,7 +1,7 @@
 ---
-title:                "Hitta längden på en sträng"
-html_title:           "TypeScript: Hitta längden på en sträng"
-simple_title:         "Hitta längden på en sträng"
+title:                "Att hitta längden på en sträng"
+html_title:           "TypeScript: Att hitta längden på en sträng"
+simple_title:         "Att hitta längden på en sträng"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -10,47 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
 
-Att hitta längden på en sträng kan vara en vanligt förekommande uppgift vid programmering. Det kan vara för att jämföra olika strängar eller för att validera inmatade användardata. Genom att kunna hantera stränglängder effektivt kan man skriva mer robust och effektiv kod.
+Att hitta längden på en sträng är en viktig del av programmering eftersom det tillåter oss att få information om hur lång en rad av tecken är. Detta kan vara användbart vid bearbetning av text, utförande av loopar eller någon annan logik som kräver att man vet längden på en sträng.
 
-## Hur man gör det
+## Så här gör du:
 
-Att hitta längden på en sträng i TypeScript är enkelt. Det finns ett inbyggt tillvägagångssätt för att räkna antalet tecken i en sträng, som vi kommer att utforska nedan.
-
-Först bör vi tilldela en sträng till en variabel:
+TypeScript har en inbyggd funktion som heter `length` som kan användas för att hitta längden på en sträng. Se nedan för ett exempel på hur detta kan användas:
 
 ```TypeScript
-let sträng = "Hej allihopa!"
+let namn: string = "Maria";
+console.log(namn.length); // Resultat: 5
 ```
 
-För att hitta längden på denna sträng kan vi använda .length-egenskapen:
+## Djupdykning:
 
-```TypeScript
-console.log(sträng.length) // Outputs: 14
-```
+I programmering har vi oftast att göra med text, och det är därför viktigt att kunna hantera strängar på ett effektivt sätt. Innan `length`-funktionen fanns, var det vanligt att använda en `for`-loop för att gå igenom varje tecken i en sträng och räkna antalet. Detta var en tidskrävande process och därför är `length`-funktionen ett effektivare alternativ.
 
-Här har vi använt console.log() för att skriva ut längden på vår sträng i konsolen. Notera att det är .length och inte .Length, eftersom det är ett egenskapsattribut, inte en metod.
+En annan metod för att hitta längden på en sträng är att använda `charCodeAt`-funktionen som returnerar en numerisk representation av varje tecken i en sträng. Genom att räkna antalet värden som returneras kan vi få längden på strängen.
 
-## Djupdykning
+Det är också värt att notera att `length`-egenskapen endast returnerar längden på den synliga delen av en sträng. Om strängen innehåller icke synliga tecken som t.ex. mellanslag eller linjeskift så kommer dessa inte att räknas in i längden.
 
-Det är viktigt att förstå att length-egenskapen räknar antalet tecken i en sträng, inte antalet ord. Till exempel:
+## Se även:
 
-```TypeScript
-let sträng = "Denna sträng innehåller fem ord."
-console.log(sträng.length) // Outputs: 36
-```
-
-Observera att mellanslag räknas som ett tecken, så det totala antalet tecken i denna sträng är 36, trots att det finns endast fem ord.
-
-Det finns också funktioner som .trim() som kan hjälpa till att räkna antalet tecken i en sträng utan att inkludera mellanslag i början eller slutet av strängen.
-
-Att använda .length-egenskapen på en tom sträng returnerar 0.
-
-## Se även
-
-Här är några artiklar för vidare läsning om strängar och TypeScript:
-
-- [Officiell TypeScript-dokumentation om strängar](https://www.typescriptlang.org/docs/handbook/basic-types.html#string)
-- [En guide till strängmanipulering i TypeScript](https://www.smashingmagazine.com/2019/02/string-manipulation-series-typrescript/)
-- [10 användbara TypeScript-stringfunktioner och -egenskaper](https://www.javascripttutorial.net/typescript/typescript-string/)
+- [Microsoft TypeScript documentation](https://www.typescriptlang.org/docs/home.html)
+- [W3Schools guide on strings in TypeScript](https://www.w3schools.com/TS/TS_strings.asp)
+- [String length in JavaScript](https://www.w3schools.com/js/js_string_length.asp)

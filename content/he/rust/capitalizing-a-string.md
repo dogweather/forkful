@@ -1,7 +1,7 @@
 ---
-title:                "המרה למחרוזת גדולות"
-html_title:           "Rust: המרה למחרוזת גדולות"
-simple_title:         "המרה למחרוזת גדולות"
+title:                "כתיבת ראשית במחרוזת"
+html_title:           "Rust: כתיבת ראשית במחרוזת"
+simple_title:         "כתיבת ראשית במחרוזת"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -10,63 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## למה
+## מה ולמה?
 
-אנשים משתמשים בפעולת כיתוביות של שפת Rust בכדי לשדרג את מחרוזות התווים שלהם. זה מאפשר להם לטפל במחרוזות בצורה מקצועית ופשוטה, מתוך כך מבטיחים קוד איכותי יותר וקל יותר לתחזוקה.
+מכירים את הרגע הזה בו אתם מנסים לקרוא טקסט שכתוב באותיות קטנות ויש מילה אחת או יותר שמופיעה באותיות גדולות? בתכנות, הפעולה של גרידת מילים או העברת כל האותיות לצורתן הגדולה נקראת "capitalizing a string". תוכלו למצוא את כך במקרים רבים, כגון כאשר משתמשים בנתונים מהמשתמש, או כאשר מתכנתים רוצים להדגיש מילה מסוימת בקוד שלהם.
 
-## כיצד עושים זאת
+## איך לעשות זאת?
 
-הנה כמה דוגמאות של איך לכתוב טיפוס Rust כדי לכיתב מחרוזות תווים:
-
-```rust
-fn capitalize(string: &str) -> String {
-    return string.to_uppercase();
-}
-
-fn main() {
-    let input_string = "hello world!";
-    let capitalized_string = capitalize(input_string);
-    println!("Original string: {}", input_string);
-    println!("Capitalized string: {}", capitalized_string);
-}
+בשפת Rust, ניתן לבצע גרידת מילים בקלות באמצעות הפעולה המובנית `.to_uppercase()`. ניתן לבצע את זה על סטרינג כלשהו בעזרת הכתב התחתון והפסיק, לדוגמה: ```Rust
+let my_string = "hello world";
+let capitalized_string = my_string.to_uppercase();
+println!("{}", capitalized_string);
 ```
 
-פלט:
+בתוך הסטרינג `capitalized_string`, המילה "WORLD" תופיע באותיות גדולות כמו בדוגמה לעיל.
 
-```shell
-Original string: hello world!
-Capitalized string: HELLO WORLD!
-```
+## חקירה מעמיקה
 
-הפעולה "to_uppercase()" משנה את כל התווים במחרוזת לאותיות גדולות. בכל פעם שתרצו לכנות לפעולה את הפונקציה "capitalize()", תוכלו להשתמש בפונקציה הזו כדי להכין מחרוזת עם כל האותיות הגדולות.
+גרידת מילים היא פעולה מאוד יישומית שנמצאת בשימוש רב בתחום התכנות. הרעיון של העברת האותיות לצורתן הגדולה נמצא כבר כמה אלפי שנים, ונמצא בשימוש גם היום בתעשיית המחשוב והתקשורת. חלק מהשפות התכנותיות הפופולריות כמו C++, Java ו-Python מציעות גם הן פעולות נכונות לגרידת מילים.
 
-## חפירה עמוקה
-
-כדי להבין טוב יותר את הפעולה "to_uppercase()" וכיצד היא משנה את מחרוזת הקלט, נצפה בפונקציה המעתיקה את הפעולה ונבדוק קצת את הלוגיקה שלה:
-
-```rust
-fn to_uppercase(string: &str) -> String { 
-    let mut result = String::new();
-
-    for c in string.chars() {
-        // Check if current character is a lowercase letter
-        if c.is_ascii_lowercase() {
-            // Convert lowercase to uppercase by subtracting 32 from its ASCII value
-            let uppercase_char = (c as u8 - 32) as char;
-            // Add the uppercase character to the result string
-            result.push(uppercase_char);
-        } else {
-            // If the character is already an uppercase letter, add it to the result as is
-            result.push(c);
-        }
-    }
-
-    return result; 
-}
-```
-
-בכדי להבין מתוך מה כיתוביות של Rust משמשת לטיפוס שלהם כמו "char", עלינו להבין שאפשר לנגוח ולכתוב על הנתונים הללו בצורה ממוחשבת. במילים אחרות, הלוגיקה של להכניס אותיות גדולות לנתונים זהה לאיך המכשור ממיר אותיות גדולות וקטנות במחשב.
+קיימים גם שיטות אחרות לגרידת מילים, כגון שליפת האותיות והעברתן לתוך תוך מערך חדש, או שימוש בפעולת הגרידה המוכנה בספריית `std::string`. אולם, הפעולה `.to_uppercase()` היא הפתרון הכי פשוט ונוח עבור גרידת מילים בשפת Rust.
 
 ## ראו גם
 
-- [מסמ
+למידע נוסף על פעולת הגרידה בשפת Rust, ניתן לבדוק את הלינק הבא: 
+- https://doc.rust-lang.org/std/primitive.str.html#method.to_uppercase
+
+כמו כן, ניתן למצוא דוגמאות נוספות של גרידת מילים בספריית התיעוד הרשמית של Rust:
+- https://doc.rust-lang.org/std/string/struct.String.html#method.to_uppercase

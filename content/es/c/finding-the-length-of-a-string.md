@@ -10,40 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué encontrar la longitud de una cadena de caracteres?
+## ¿Qué y por qué?
 
-En programación, muchas veces necesitamos saber cuántos caracteres tiene una determinada cadena. Esto puede ser útil para hacer validaciones, crear bucles o simplemente para mostrar información al usuario con precisión.
+En la programación, a menudo es necesario conocer la longitud o tamaño de una cadena de texto. Esto se refiere a la cantidad de caracteres que contiene la cadena. Los programadores necesitan conocer la longitud de una cadena por diversas razones, como por ejemplo, para validar entradas de usuario o para manipular y procesar la cadena de manera adecuada.
 
-## Cómo hacerlo
+## ¿Cómo hacerlo?
 
-Para esto, utilizaremos la función `strlen()` de la biblioteca estándar de C. Esta función toma como parámetro una cadena de caracteres y devuelve un entero representando la longitud de dicha cadena.
+En C, podemos encontrar la longitud de una cadena utilizando la función `strlen()`, que se encuentra en la biblioteca estándar `<string.h>`. Esta función toma como argumento una cadena de caracteres y devuelve su longitud.
 
 ```C
 #include <stdio.h>
 #include <string.h>
-
+ 
 int main()
 {
-    char str[] = "¡Hola mundo!";
+    char str[] = "Hola mundo";
     int longitud = strlen(str);
-    printf("La cadena \"%s\" tiene una longitud de %d caracteres.", str, longitud);
+    printf("La longitud de la cadena es %d\n", longitud);
+
     return 0;
 }
 ```
 
-**Output:**
+Este código imprimirá: `La longitud de la cadena es 10`, ya que la cadena "Hola mundo" tiene 10 caracteres.
 
-```
-La cadena "¡Hola mundo!" tiene una longitud de 11 caracteres.
-```
+## Profundizando
 
-## Profundizando en la longitud de una cadena
+La función `strlen()` fue introducida en el estándar de C en la versión ANSI en 1989. Sin embargo, ya existía en sistemas UNIX desde hace tiempo. Existen otras formas de encontrar la longitud de una cadena, como iterar sobre la cadena contando los caracteres, pero la función `strlen()` es la forma más eficiente y recomendada en C.
 
-Es importante destacar que la función `strlen()` realmente cuenta los caracteres hasta el primer carácter nulo `'\0'` que encuentre en la cadena. Por lo tanto, si nuestra cadena no incluye explícitamente un carácter nulo, obtendremos resultados inesperados.
-
-Además, esta función solo cuenta los caracteres y no tiene en cuenta la codificación de caracteres, por lo que puede haber diferencias en la longitud dependiendo del lenguaje utilizado. También hay que tener en cuenta que los caracteres especiales o acentos pueden ser contados como más de un byte, lo que podría afectar el resultado final.
+En otros lenguajes de programación, como Python, la función para obtener la longitud de una cadena es simplemente `len()`, lo que demuestra su importancia en cualquier lenguaje de programación.
 
 ## Ver también
 
-- [Documentación oficial de la función `strlen()` en C](https://en.cppreference.com/w/c/string/byte/strlen)
-- [Guía de programación en C: Manejo de cadenas de caracteres](https://es.coursera.org/lecture/programacion-c/manejo-de-cadenas-de-caracteres-AiM8I) (Curso en línea)
+- [Referencia de la función strlen en C](https://www.tutorialspoint.com/c_standard_library/string_h.htm)
+- [Uso de la función strlen en C](https://www.geeksforgeeks.org/finding-length-of-string-in-c-programming/)

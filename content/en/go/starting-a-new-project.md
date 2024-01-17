@@ -10,53 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
+Starting a new project in Go means beginning a new coding endeavor. Programmers do this to create new software, applications, or programs using the Go programming language.
 
-Starting a new project is an exciting and challenging endeavor that can expand your skills as a coder and bring your ideas to life. With Go, the newest version of the popular programming language, you have a powerful tool at your disposal to create efficient, reliable, and scalable projects.
-
-## How to
-
-To start a new project in Go, you will need to have the latest version installed on your computer. Once you have that, you can create a new project by following these steps:
-
-1. Create a new folder for your project.
-2. Inside the folder, create a new Go file with the extension `.go`.
-3. Open the file in your preferred code editor.
-4. Begin by importing the necessary packages using the `import` statement.
-5. Define the `main` function, which is where your code will start executing.
-6. You can now write your code within the `main` function using the syntax of Go.
-7. When you are ready to run your code, use the `go run` command followed by the name of your file. For example, `go run main.go`.
-
-Here is an example of a simple "Hello World" program in Go, where we import the `fmt` package and use the `Printf` function to print a message to the console:
-
+## How to:
+To create a new project in Go, use the `go` command followed by `new` and the name of your project.
 ```
-package main
-
-import (
-  "fmt"
-)
-
-func main() {
-  fmt.Printf("Hello World!")
-}
+Go new project_name
 ```
+This will create a new folder called `project_name` with a basic Go file inside. To run this file, use the `go` command followed by `run`.
+```
+Go run project_name.go
+```
+This will compile and execute your Go code, showing the output in your command line.
 
-Running this code will output `Hello World!` to the console.
+## Deep Dive:
+- Historical Context: Go was first developed by Google in 2007 and officially released to the public in 2009. It was created as an alternative to existing programming languages, with the main focus being on simplicity, concurrency, and efficiency.
+- Alternatives: Some other popular programming languages for starting new projects include Java, Python, and C++. However, Go offers unique features such as built-in concurrency and garbage collection.
+- Implementation Details: When creating a new project in Go, the `go` command will automatically generate a `go.mod` file, which is used for managing dependencies. This allows for easier sharing and collaboration on projects.
 
-## Deep Dive
-
-When starting a new project in Go, it's important to understand the structure of a Go program. Here are the key components to keep in mind:
-
-- A Go program starts with the `package main` statement, indicating that this is the main package for your project.
-- The `import` statement allows you to access external packages that contain functions, data types, and other resources.
-- The `func` keyword is used to define functions in Go. The `main` function is the starting point of your program, but you can create other functions as needed.
-- The `Printf` function from the `fmt` package allows you to format and print messages to the console. There are many other useful functions in this package that you can explore.
-- Use `go build` to compile your code into an executable file, which can be executed using the command `./yourExecutableName`.
-
-With these basic concepts in mind, you are ready to start writing your own projects in Go!
-
-## See Also
-
-- [Official Go website](https://golang.org/)
-- [Go documentation](https://golang.org/doc/)
-- [Go code examples](https://github.com/golang/example)
-- [Go tutorials](https://golangbot.com/)
+## See Also:
+- [Official Go documentation](https://golang.org/doc/)
+- [Go project structure overview](https://tutorialedge.net/golang/go-project-structure-best-practices/)
+- [Go vs. other programming languages](https://www.freecodecamp.org/news/want-to-learn-go-heres-a-free-24-part-course-to-get-you-started/)

@@ -1,7 +1,7 @@
 ---
-title:                "Testien kirjoittaminen"
-html_title:           "Haskell: Testien kirjoittaminen"
-simple_title:         "Testien kirjoittaminen"
+title:                "Testausten kirjoittaminen"
+html_title:           "Haskell: Testausten kirjoittaminen"
+simple_title:         "Testausten kirjoittaminen"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Testing and Debugging"
@@ -10,44 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+Testing code is an essential practice for programmers, helping to ensure the quality and functionality of their code. By writing and running tests, programmers can catch bugs and errors early on and ensure their code is working as intended. 
 
-Miksi haluaisit kirjoittaa testeja? Yksinkertaisesti siksi, että se auttaa välttämään virheitä ja parantaa koodisi laatua. Testaaminen mahdollistaa myös koodin refaktoroinnin ja muokkaamisen helpommin ja turvallisemmin.
+## Mitä ja miksi?
 
-## Kuinka
+Testien kirjoittaminen on prosessi, jossa ohjelmoijat luovat koodeja, joiden avulla he voivat tarkistaa ohjelmansa toimivuuden ja laadun. Tämä on tärkeä käytäntö, joka auttaa estämään virheitä ja varmistamaan koodin toimivuuden. 
 
-Testien kirjoittaminen Haskellissa on helppoa ja intuitiivista. Tässä on muutama esimerkki ja tuloste näytteenomaisesta testikoodista:
+## Kuinka:
 
-```Haskell
--- Tuodaan testaamisen kirjasto käyttöön
-import Test.HUnit
-
--- Esimerkki yksikkötestistä
-testi1 = TestCase (assertEqual "Odotettu tulos" 5 $ 2 + 3)
--- Ajetaan testit
-runTestTT testi1
+Esimerkiksi, jos haluat testata yksinkertaisen laskutoimituksen, voit käyttää seuraavaa koodia:
 ```
-
-Tämä yksikkötesti tarkistaa, että laskutoimitus 2 + 3 antaa tuloksen 5. Voit myös lisätä oman testifunktion, joka kutsuu muita funktioita ja testaa niiden paluuarvoja:
-
-```Haskell
--- Yksinkertainen funktio
-nelio x = x * x
-
--- Testi funktiolle
-testi2 = TestCase (assertEqual "Nelion laskeminen" 9 $ nelio 3)
+Haskell
+testi = 2+2 
 ```
+Tämän jälkeen voit ajaa koodin, ja jos testi palauttaa oikean vastauksen, eli 4, niin voit olla varma, että laskutoimitus toimii oikein.
 
-Nämä olivat vain yksi yksikkötestin esimerkki, mutta voit kirjoittaa useita erilaisia testejä eri funktioille ja niiden eri ominaisuuksille. Lisäksi voit käyttää muita testaamisen kirjastoja, kuten HSpecia, joka tarjoaa vieläkin monipuolisempia testausmahdollisuuksia.
+## Syvemmälle:
 
-## Syvenny
+Testaus on ollut tärkeä osa ohjelmointia jo pitkään, ja monilla ohjelmointikielillä on omat testikehysjärjestelmänsä, kuten esimerkiksi Haskellin Hspec. Vaihtoehtoina testien kirjoittamiselle voi olla manuaalinen testaus tai käyttäjien antama palaute. 
 
-Haskellin testaaminen tarjoaa erilaisia lähestymistapoja ja näkökulmia, joihin voit syventyä. Voit esimerkiksi tutkia TDD:tä (Test Driven Development), jossa testit kirjoitetaan ennen itse koodia. Toinen mielenkiintoinen aihe on property-testaus, jossa testataan koodin ominaisuuksia satunnaisilla syötteillä.
+Testaamisen toteutus riippuu ohjelman ja sen tavoitteiden luonteesta. On tärkeää, että testit kattavat mahdollisimman paljon koodia ja erilaisia syötteitä. Testien kirjoittaminen voi myös auttaa löytämään mahdollisia virheitä tai puutteita ohjelmassa, ja antaa näin mahdollisuuden parantaa sen toimivuutta ja luotettavuutta.
 
-Laadukkaan koodin kirjoittamiseen kuuluu myös testien kattavuuden tarkistaminen. Voit esimerkiksi käyttää työkaluja kuten HPC (Haskell Program Coverage), joka kertoo prosentuaalisesti, kuinka paljon koodistasi on testattu.
+## Katso myös:
 
-## Katso myös
-
-- [Haskell testausdokumentaatio](https://www.haskell.org/documentation/#testing)
-- [HSpec testaamisen kirjasto](https://hspec.github.io/)
-- [TDD Haskellillä](https://dev.to/matbesancon/tdd-haskell-the-why-and-how-455g)
+- Lisätietoja Haskellin Hspec-testikehysjärjestelmästä: https://hspec.github.io/
+- Testausohjeita ja vinkkejä Haskell-koodaukseen: https://haskelltest.com/

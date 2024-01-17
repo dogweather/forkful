@@ -10,39 +10,17 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
-Å generere tilfeldige tall er en nøkkelfunksjon i mange programmeringsspråk, og Clojure er intet unntak. Å kunne generere tilfeldige tall åpner døren for et bredt spekter av funksjonaliteter, fra generering av testdata til implementering av algoritmer for simulering og maskinlæring. 
+Randomnummergenerering med Clojure
 
-## Hvordan gjøre det
-Det er flere måter å generere tilfeldige tall i Clojure, avhengig av behovet ditt.
+## Hva & Hvorfor?
+Generering av tilfeldige tall er en viktig del av programmering fordi det lar oss skape variabel data som kan brukes i ulike scenarioer. Dette er spesielt nyttig i spill, simuleringer og sikkerhetsapplikasjoner.
 
-For å generere et enkelt tilfeldig tall mellom en bestemt start og sluttverdi, kan du bruke ```rand-int``` funksjonen. For eksempel:
+## Slik:
+Bruk funksjonen ```(rand)``` for å generere et tilfeldig flyttall mellom 0 og 1. Dette kan deretter skaleres ved å multiplisere med ønsket område. For eksempel: ```(rand)``` * 100 vil gi et tilfeldig tall mellom 0 og 100. Du kan også bruke funksjonen ```(rand-int)``` for å generere et tilfeldig heltall.
 
-```Clojure
-(rand-int 10) ;returnerer et tilfeldig tall mellom 0 og 9
-(rand-int 50) ;returnerer et tilfeldig tall mellom 0 og 49
-``` 
+## Dypdykk:
+Generering av tilfeldige tall er en viktig del av datalogiens historie og har blitt brukt i ulike sammenhenger siden begynnelsen av datamaskinenes tidsalder. Det finnes også ulike alternativer til å bruke ```rand``` og ```rand-int``` i Clojure, som for eksempel [java.util.Random](https://docs.oracle.com/javase/8/docs/api/java/util/Random.html). Videre er det viktig å være klar over at disse funksjonene ikke genererer ekte tilfeldige tall, men heller pseudo-tilfeldige tall basert på et startpunkt kalt "seed". Seedet kan endres ved å bruke funksjonen ```(set! clojure.core/*rand-seed* <numbers>)``` for å få ulike sekvenser av tilfeldige tall.
 
-Hvis du trenger et tilfeldig desimaltall, kan du bruke ```rand``` funksjonen. Denne funksjonen returnerer et tall mellom 0 og 1, så du kan multiplisere det med ønsket maksverdi for å få et tilfeldig tall innenfor det ønskede området. For eksempel:
-
-```Clojure
-(* 10 (rand)) ;returnerer et tilfeldig tall mellom 0 og 10
-(* 50 (rand)) ;returnerer et tilfeldig tall mellom 0 og 50
-```
-
-Hvis du vil ha mer kontroll over tilfeldighetsnivået, kan du bruke ```seed-random``` funksjonen for å sette en bestemt frøverdi før du genererer tilfeldige tall. Dette kan være nyttig for å teste kode som bruker tilfeldige tall, siden du kan "sette" en bestemt tilfeldig tallssekvens for å gjenskape resultatene dine. For eksempel:
-
-```Clojure
-(seed-random 123)  ;setter frøverdi til 123
-(rand) ;returnerer alltid samme tilfeldige tall basert på frøverdien
-(rand) ;returnerer alltid samme tilfeldige tall basert på frøverdien
-```
-
-## Dykk dypere
-Den ```rand-int``` og ```rand``` funksjonene er bare enkle eksempler på hvordan du kan generere tilfeldige tall i Clojure. Hvis du ønsker mer avansert funksjonalitet, kan du se på biblioteker som ```clojure.data.generators``` og ```clojure.test.check```. Disse bibliotekene tilbyr mer omfattende metoder for å generere tilfeldige data og kan hjelpe deg med å bygge mer pålitelige og robuste applikasjoner.
-
-## Se også
-- [Offisiell Clojure dokumentasjon for rand-int](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/rand-int)
-- [Offisiell Clojure dokumentasjon for rand](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/rand)
-- [Clojure data.generators bibliotek](https://clojure.github.io/data.generators/)
-- [Clojure test.check bibliotek](https://github.com/clojure/test.check)
+## Se også:
+- [Offisiell Clojure dokumentasjon for ```rand``` og ```rand-int```](https://clojure.org/api/cheatsheet)
+- [Artikkel om bruk av tilfeldige tall i datamaskiner](https://www.experiment-resources.com/random-number-generators-in-computers.html)

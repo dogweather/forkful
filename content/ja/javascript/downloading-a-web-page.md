@@ -1,7 +1,7 @@
 ---
-title:                "「ウェブページのダウンロード」"
-html_title:           "Javascript: 「ウェブページのダウンロード」"
-simple_title:         "「ウェブページのダウンロード」"
+title:                "ウェブページのダウンロード"
+html_title:           "Javascript: ウェブページのダウンロード"
+simple_title:         "ウェブページのダウンロード"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "HTML and the Web"
@@ -10,38 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## 何 & なぜ？
 
-Web pages are essential for accessing and sharing information, so having the ability to download them is crucial. This can be useful for offline viewing, saving important data, or creating backups.
+ウェブページのダウンロードとは、インターネット上の情報を自分のコンピューターに保存することです。プログラマーがこれを行う理由は、ウェブページの内容をオフラインで参照するために必要な場合があるからです。
 
-## How To
+## 方法：
 
 ```Javascript
 const request = require('request');
-
-// download a web page and save it as a text file
-request('https://www.example.com', function(error, response, body) {
-    if(!error && response.statusCode == 200) {
-        fs.writeFile('page.txt', body, (err) => {
-            if (err) throw err;
-            console.log('Page downloaded and saved as page.txt');
-        })
-    }
+request('https://www.example.com', function(err, res, body) {
+    console.log(body);
 });
 ```
 
-Running this code will use the 'request' library to download the web page at the specified URL and save it as a text file named 'page.txt' in the same directory as your Javascript file. This can also be done with other programming languages and libraries, but Javascript provides a simple and versatile option.
+このコードはNode.jsを使用して、指定したウェブページをダウンロードし、ターミナル上に表示します。データを取得するために ```request``` パッケージを使用し、サーバーからのレスポンスを取得するためにコールバック関数を使用しています。
 
-## Deep Dive
+## 深堀り：
 
-The `request` library used in the code example is just one of many ways to download web pages in Javascript. Other popular libraries include `axios` and `node-fetch`. These libraries provide a convenient way to make network requests and handle the response data.
+ウェブページをダウンロードするプロセスは、1990年代初めに開発されたHTTPプロトコルに依存しています。以前は、ウェブページのダウンロードは手動で行われましたが、今ではプログラマーは自動化したスクリプトを使用して、大量のページをダウンロードすることができます。代替手段として、ブラウザーの機能を使用してウェブページをダウンロードすることもできます。ウェブページのダウンロードは、ウェブスクレイピングやデータ収集など、様々な用途に使用されています。
 
-In addition to downloading web pages, Javascript can also be used to parse and extract information from them. This can be done using libraries like `cheerio` or the built-in `DOMParser`. These tools allow you to access specific elements on the page and extract data from them, making it easier to manipulate and analyze web page content.
+## 関連リンク：
 
-See Also:
-
-- [Request library](https://github.com/request/request)
-- [Axios library](https://github.com/axios/axios)
-- [Node-fetch library](https://github.com/node-fetch/node-fetch)
-- [Cheerio library](https://github.com/cheeriojs/cheerio)
-- [DOMParser documentation](https://developer.mozilla.org/en-US/docs/Web/API/DOMParser)
+- [Node.js requestパッケージ](https://www.npmjs.com/package/request)
+- [ブラウザーでのウェブページのダウンロード](https://www.top10bestwebsitebuilders.com/how-to-download-a-website)
+- [ウェブスクレイピングの活用例](https://www.webharvy.com/articles/web-scraping-examples.html)

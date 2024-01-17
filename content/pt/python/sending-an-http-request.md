@@ -10,44 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que 
-Então você está curioso sobre como enviar uma solicitação HTTP? Talvez você esteja tentando automatizar um processo ou acessar dados de um servidor remoto. Independentemente do motivo, enviar uma solicitação HTTP é uma habilidade valiosa para ter em sua caixa de ferramentas de programação. 
+## O que e por que?
 
-## Como fazer
-Para enviar uma solicitação HTTP em Python, você precisará da biblioteca padrão `urllib.request`. Aqui está um exemplo básico de como enviar uma solicitação GET e imprimir a resposta:
+Enviar uma solicitação HTTP é um processo comum na programação web, em que um programa de computador faz uma solicitação a um servidor para obter informações ou executar uma ação. Programadores geralmente fazem isso para obter dados de fontes externas ou interagir com outras aplicações utilizando APIs.
 
-```python
-import urllib.request
-response = urllib.request.urlopen("https://www.google.com")
-print(response.read())
+## Como fazer:
+
+Para enviar uma solicitação HTTP em Python, o pacote "requests" pode ser utilizado com apenas algumas linhas de código. Veja um exemplo abaixo:
+
+```Python
+import requests
+
+# Fazendo uma solicitação GET
+response = requests.get("https://exemplo.com")
+print(response.status_code) # Imprime o código de status da resposta
+print(response.text) # Imprime o conteúdo da resposta
 ```
 
 Saída:
 ```
-b'<!doctype html> <html itemscope="" itemtype="http://schema.org/WebPage" lang="en-US"> ...</html>'
+200
+<html><body>Exemplo de conteúdo</body></html>
 ```
 
-Se você quiser personalizar sua solicitação, pode adicionar parâmetros adicionais no método `urlopen`. Por exemplo, para enviar uma solicitação POST, você pode fornecer dados no formato de dicionário e especificar o tipo de conteúdo. 
+## Aprofundando:
 
-```python
-import urllib.request
-import urllib.parse
-data = urllib.parse.urlencode({"username":"joao", "password":"1234"}).encode()
-req = urllib.request.Request("https://www.exemplo.com/login", data=data, method="POST")
-resp = urllib.request.urlopen(req)
-print(resp.read())
-```
+Enviar uma solicitação HTTP é algo que é feito desde o início da internet. Originalmente, os protocolos utilizados eram o HTTP e o FTP, mas com o crescimento dos serviços web, o HTTP se tornou mais popular. Existem outras formas de fazer solicitações HTTP em Python, como utilizando a biblioteca "urllib", mas o pacote "requests" oferece uma interface mais simples e amigável. Além disso, é possível customizar a solicitação com parâmetros opcionais, como headers e cookies.
 
-Saída:
-```
-b'<!doctype html> <html itemscope="" itemtype="http://schema.org/WebPage" lang="en-US"> ...</html>'
-```
+## Veja também:
 
-## Mais detalhes
-Para obter mais informações sobre o envio de solicitações HTTP em Python, dê uma olhada nas documentações oficiais do `urllib` e do `urllib.request`. Além disso, você pode explorar outras bibliotecas como `requests` e `http.client` para realizar solicitações HTTP de maneira ainda mais eficiente. Não tenha medo de experimentar e descobrir qual abordagem funciona melhor para o seu projeto.
-
-## Veja também
-- Documentação oficial do módulo `urllib`: https://docs.python.org/3/library/urllib.html
-- Documentação oficial do módulo `urllib.request`: https://docs.python.org/3/library/urllib.request.html
-- Documentação oficial do módulo `requests`: https://docs.python-requests.org/en/latest/
-- Documentação oficial do módulo `http.client`: https://docs.python.org/3/library/http.client.html
+- [Documentação do pacote "requests"](https://requests.readthedocs.io/en/latest/)
+- [Exemplos de uso do pacote "requests"](https://realpython.com/python-requests/)
+- [Comparação entre os pacotes "requests" e "urllib"](https://www.geeksforgeeks.org/python-difference-between-windowsurllib-request-and-requests-httprequest/)

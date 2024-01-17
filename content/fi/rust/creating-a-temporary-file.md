@@ -1,7 +1,7 @@
 ---
-title:                "Väliaikaisen tiedoston luominen"
-html_title:           "Rust: Väliaikaisen tiedoston luominen"
-simple_title:         "Väliaikaisen tiedoston luominen"
+title:                "Tilapäistiedoston luominen"
+html_title:           "Rust: Tilapäistiedoston luominen"
+simple_title:         "Tilapäistiedoston luominen"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Files and I/O"
@@ -10,32 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä & Miksi?
+Luodessa ohjelmia, saatat törmätä tarpeeseen luoda väliaikainen tiedosto. Tämä tarkoittaa, että tilapäinen tiedosto luodaan väliaikaisesti ja se poistetaan automaattisesti, kun se ei enää ole tarpeellinen. Ohjelmoijat tekevät tämän esimerkiksi varastoidakseen väliaikaisia tietoja tai suorittaakseen väliaikaisia tehtäviä.
 
-Luodessaan väliaikaisia tiedostoja, ohjelmoijat voivat hallita tiedostojärjestelmän resursseja tehokkaasti ja välttää turhia pysyvien tiedostojen luomisia. Tämä vähentää muistin käyttöä ja pitää järjestelmän puhtaampana.
-
-## Kuinka
-
-Rustilla on sisäänrakennettu tiedostojen hallintatoiminto, joka mahdollistaa luotujen tiedostojen väliaikaisen tallentamisen ja automaattisen poistamisen käytön jälkeen. Tämä tapahtuu käyttämällä `tempfile` -kirjastoa, joka sisältää funktion `TempFile::create()`, joka luo väliaikaisen tiedoston ja palauttaa `std::io::Result` vakiosuorituksen.
-
+## Kuinka tehdä se:
+Rustilla on sisäänrakennettu `tempfile` kirjasto, joka helpottaa väliaikaisten tiedostojen luomista. Sieltä löytyy `NamedTempFile`-rakenne, jota voidaan käyttää tilapäisen tiedoston luomiseen annetulla nimellä. Alla on esimerkki koodi, joka luo tilapäisen tiedoston nimeltään "example.txt" ja kirjoittaa siihen "Tämä on väliaikainen tiedosto." Vielä lopuksi se tulostaa tiedoston sisällön konsoliin.
 ```Rust
+use std::io::prelude::*;
 use std::fs::File;
-use tempfile::TempFile;
+use tempfile::NamedTempFile;
 
-let mut temporary_file = TempFile::create().unwrap();
-temporary_file.write_all(b"Hello world!").unwrap();
-
-// Tarkasta luodun tiedoston olemassaolo
-assert!(temporary_file.as_file().is_ok());
+let mut temp_file = NamedTempFile::new().expect("Tiedoston luomisessa tapahtui virhe");
+writeln!(temp_file, "Tämä on väliaikainen tiedosto.").expect("Kirjoittamisessa tapahtui virhe");
+println!("Tiedoston sisältö: {}", temp_file.path().display());
+```
+Tämän esimerkin tulostus olisi:
+```
+Tiedoston sisältö: /tmp/example.txt
 ```
 
-Väliaikaisen tiedoston poistaminen tapahtuu automaattisesti, kun siihen liittyvät objektit tuhoutuvat. Tämä tapahtuu tyypillisesti kun `temporary_file`-muuttuja poistuu käytöstä.
+On myös mahdollista luoda tilapäisiä tiedostoja eri muodossa, kuten `TempDir`-rakenteen avulla, joka luo väliaikaisen hakemiston.
 
-## Syvä sukellus
+## Syvemmälle:
+Luotaessa tilapäisiä tiedostoja, on tärkeää muistaa poistaa ne, kun ne eivät enää ole tarpeellisia, jotta ohjelmasi ei täyttyisi tarpeettomilla tiedostoilla. `tempfile` kirjasto hoitaa tämän ihanteellisesti ja varmistaa, että tilapäiset tiedostot poistetaan myös, jos ohjelmasi kaatuu ennen niiden poistamista.
 
-Väliaikaisen tiedoston luominen voi olla hyödyllistä esimerkiksi tiedon tallentamisessa tietokantoihin tai web-sovellusten välimuistitallennukseen. On myös hyvä huomata, että `tempfile`-kirjasto tarjoaa myös muita hyödyllisiä ominaisuuksia kuten väliaikaisen hakemiston luomisen `tempdir`-funktiolla.
+On myös muita vaihtoehtoja tilapäisten tiedostojen luomiseen, kuten `fs::File::create` toiminto, mutta näissä tapauksissa sinun täytyy manuaalisesti varmistaa tiedoston poistaminen.
 
-## Katso myös
+Tilapäisten tiedostojen käyttö on yleinen käytäntö ohjelmoijien keskuudessa, ja Rustin `tempfile` kirjasto tekee sen helpoksi ja turvalliseksi.
 
-- [Official Rust Documentation - std::fs::File](https://doc.rust-lang.org/std/fs/struct.File.html)
-- [Tempfile Documentation](https://docs.rs/tempfile/3.1.0/tempfile/)
+## Katso myös:
+Lisätietoa Rustin `tempfile` kirjastosta löytyy sen virallisesta dokumentaatiosta: https://docs.rs/tempfile/3.1.0/tempfile/.
+
+Voit myös lukea lisää tilapäisten tiedostojen käytöstä ja turvallisesta tiedostonhallinnasta Rustissa täältä: https://doc.rust-lang.org/book/ch12-03-improving-error-handling-and-modularity.html#managing-resources-by-implementing-drop.

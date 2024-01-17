@@ -10,42 +10,64 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
-Vous pourriez vous demander pourquoi travailler avec YAML, un langage de balisage léger. Une des raisons est que YAML est facile à lire et à écrire, ce qui en fait un choix populaire pour la configuration de fichiers de données.
+# Working with YAML in Kotlin: De-mystifying the Process
 
-## Comment faire
-Pour commencer à travailler avec YAML en utilisant Kotlin, vous devrez d'abord ajouter la dépendance YAML à votre projet. Vous pouvez le faire en ajoutant la ligne suivante à votre fichier de configuration Gradle :
+## What & Why?
+YAML stands for "YAML Ain't Markup Language" and is a popular data serialization language used in software development. It provides a human-friendly syntax for creating and storing data in a structured format, making it easy to read and understand. Programmers often use YAML to configure applications, transfer data between systems, and store data in a persistent manner.
+
+## How to:
+### Creating a YAML File:
+To create a YAML file in Kotlin, you can use the ```kotlin FileWriter``` class. First, import the necessary packages:
 ```
-dependencies {
-    implementation("net.revelc.code:kotlin-yaml:11.0.8")
-}
+import java.io.File
+import java.io.FileWriter
 ```
-À partir de là, vous pouvez utiliser les fonctionnalités de YAML dans votre code Kotlin en important la classe YAML. Par exemple, pour charger un fichier YAML, vous pouvez utiliser la fonction `load()` comme ceci :
+Next, create an instance of FileWriter with the name of the file as a parameter:
 ```
-val config = Yaml().load(File("config.yml").reader())
+val file = File("example.yaml")
+val writer = FileWriter(file)
 ```
-Vous pouvez également utiliser Kotlin pour générer des fichiers YAML en utilisant la fonction `dump()` :
+Then, use the ```write()``` method to add data to the file:
 ```
-val data = mapOf(
-    "nom" to "John Doe",
-    "âge" to 30,
-    "ville" to "Paris"
-)
+writer.write("name: John Doe \n")
+writer.write("age: 30 \n")
+writer.write("occupation: Developer \n")
+```
+Finally, close the writer to save the changes and create the file:
+```
+writer.close()
+```
+
+### Reading from a YAML File:
+To read data from a YAML file in Kotlin, you can use the ```kotlin Yaml``` class from the ```org.yaml``` package. First, import the necessary packages:
+```
+import org.yaml.snakeyaml.Yaml
+import java.io.File
+```
+Next, create an instance of ```Yaml``` and parse the file:
+```
 val yaml = Yaml()
-val output = yaml.dump(data)
-println(output)
+val data: Map<String, Any> = yaml.load(File("example.yaml").inputStream())
 ```
-Cela produirait la sortie suivante :
+Then, access the data using the key-value pairs:
 ```
-nom: John Doe
-âge: 30
-ville: Paris
+println(data["name"]) // output: John Doe
+println(data["age"]) // output: 30
+println(data["occupation"]) // output: Developer
 ```
 
-## Analyse approfondie
-Maintenant que vous savez comment travailler avec YAML dans Kotlin, voici quelques informations supplémentaires pour approfondir votre compréhension. YAML signifie "YAML Ain't Markup Language" et a été créé pour être facile à utiliser pour les humains. Il est basé sur une structure de clés et de valeurs, avec l'utilisation d'indentations pour définir les niveaux de hiérarchie. Vous pouvez également utiliser des structures de données JSON pour représenter des données dans YAML.
+## Deep Dive:
+### Historical Context:
+YAML was first developed in 2001 by Clark Evans, Ingy döt Net, and Oren Ben-Kiki. It was designed as a simpler alternative to XML with a focus on readability and ease of use. It has since become a popular choice for configuring software systems, especially in web and scripting languages like Python and Ruby.
 
-## Voir aussi
-- [Documentation officielle de Kotlin pour YAML](https://kotlinlang.org/docs/reference/other-formats.html#yaml)
-- [Tutoriel sur la manipulation de fichiers YAML avec Kotlin](https://www.baeldung.com/kotlin-yaml)
-- [Exemples de projets utilisant YAML en Kotlin](https://github.com/topics/kotlin-yaml)
+### Alternatives:
+Some alternatives to YAML include JSON, XML, and INI files. YAML stands out for its human-readable syntax, allowing developers to easily create and edit data files without using special tools.
+
+### Implementation Details:
+YAML in Kotlin is implemented using the Snakeyaml library, which is a YAML 1.1 parser and emitter for the Java Virtual Machine. It provides classes for parsing, loading, and writing YAML documents. The ```Yaml``` class provides methods for converting YAML data into objects, making it easy to work with in Kotlin.
+
+## See Also:
+To learn more about working with YAML in Kotlin, check out the following resources:
+- [Official Kotlin Docs on YAML](https://kotlinlang.org/api/latest/jvm/stdlib/kotlinx.io/-yaml/)
+- [Snakeyaml Documentation](https://bitbucket.org/asomov/snakeyaml/src/master/src/main/java/org/yaml/snakeyaml/)
+- [YAML Tutorial](https://www.tutorialspoint.com/yaml/)

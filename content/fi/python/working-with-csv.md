@@ -1,7 +1,7 @@
 ---
-title:                "Työskentely csv-tiedostojen kanssa"
-html_title:           "Python: Työskentely csv-tiedostojen kanssa"
-simple_title:         "Työskentely csv-tiedostojen kanssa"
+title:                "Työskentely csv:n kanssa"
+html_title:           "Python: Työskentely csv:n kanssa"
+simple_title:         "Työskentely csv:n kanssa"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Data Formats and Serialization"
@@ -10,47 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä ja miksi?
+CSV (Comma Separated Values) on yksinkertainen tapa tallentaa ja jakaa taulukkomuotoista dataa. CSV-tiedostot ovat yleensä luettavissa tekstieditorilla ja tietokoneohjelmilla, mikä tekee niistä helposti käytettävissä olevan vaihtoehdon moniin datan käsittelytehtäviin. Ohjelmoijat käyttävät CSV-tiedostoja usein, sillä ne tarjoavat helpon tavan siirtää tietoa eri ohjelmien välillä.
 
-CSV-tiedostot ovat erittäin yleisiä tietokannoissa ja taulukoissa, joten on tärkeää osata työskennellä niiden kanssa. Pythonilla tämä on helppoa ja nopeaa!
-
-## Miten
-
-CSV-tiedostojen lukeminen ja kirjoittaminen Pythonissa on hyvin suoraviivaista. Käytämme siihen built-in csv -kirjastoa ja sen avulla voimme käsitellä taulukoita helposti.
+## Näin teet sen:
+Python tarjoaa sisäänrakennetun moduulin, "csv", joka mahdollistaa CSV-tiedostojen käsittelyn. Katso alla oleva esimerkki, jossa tietoja luetaan tiedostosta ja tulostetaan näytölle:
 
 ```Python
 import csv
-
-# Luemme CSV-tiedoston ja tallennamme sen muuttujaan
-with open('data.csv', 'r') as csv_file:
-    csv_reader = csv.reader(csv_file)
-
-    # Käymme läpi jokaisen rivin tiedostossa
-    for row in csv_reader:
-        # Tulostamme rivin sisällön
-        print(row)
+with open('tiedosto.csv') as csv_tiedosto:
+    lukija = csv.reader(csv_tiedosto)
+    for rivi in lukija:
+        print(rivi)
 ```
 
-```Python
-import csv
+Tämä koodi lukee tiedostosta "tiedosto.csv" rivin kerrallaan ja tulostaa sen näytölle.
 
-# Luomme uuden CSV-tiedoston ja tallennamme siihen tietoja
-with open('uusi_tiedosto.csv', 'w', newline='') as csv_file:
-    csv_writer = csv.writer(csv_file)
+## Syvemmälle:
+CSV-formaatti on kehitetty 1970-luvulla ja se on pysynyt suosittuna datan tallennusmuotona sen yksinkertaisuuden ja yhteensopivuuden vuoksi. Vaihtoehtoisia tapoja tallentaa taulukkomuotoista dataa ovat esimerkiksi JSON ja XML. CSV:n etuna näihin verrattuna on sen helppokäyttöisyys, mutta sen haittapuolena voi olla, että se ei tue monimutkaisempia tietorakenteita.
 
-    # Lisäämme rivejä tiedostoon
-    csv_writer.writerow(['Otsikko 1', 'Otsikko 2', 'Otsikko 3'])
-    csv_writer.writerow(['Data 1', 'Data 2', 'Data 3'])
-```
+CSV-tiedoston käsittely Pythonilla on melko suoraviivaista, mutta on kuitenkin hyvä ottaa huomioon muutamia asioita. Esimerkiksi tiedostoa lukiessa täytyy ottaa huomioon mahdollinen rivinvaihtomerkki ja tekstin koodaustapa. CSV-moduuli tarjoaa vaihtoehtoja näiden käsittelyyn, joten hyvä dokumentaation lukeminen ennen käyttöä on suositeltavaa.
 
-### Deep Dive
-
-CSV-tiedostoissa on toisinaan haasteita, kuten erilaisten desimaalipisteiden käyttäminen. Tätä ongelmaa ratkaistaan usein käyttämällä `decimal`-kirjastoa ja määrittämällä `delimiter` parametriksi haluttu desimaalierotin.
-
-Voimme myös käyttää `csv.DictReader` ja `csv.DictWriter` -funktioita, jotka antavat meille mahdollisuuden käsitellä CSV-tiedostoja sanakirjojen avulla.
-
-## Katso myös
-
-- [Python built-in csv dokumentaatio](https://docs.python.org/3/library/csv.html)
-- [Python decimal dokumentaatio](https://docs.python.org/3/library/decimal.html)
-- [Django's CSV käyttöohje](https://docs.djangoproject.com/en/3.0/howto/outputting-csv/)
+## Katso myös:
+- [Pythonin virallinen dokumentaatio CSV-moduulista](https://docs.python.org/3/library/csv.html)
+- [CSV-tiedostojen käsittelykurssi Codecademyltä](https://www.codecademy.com/learn/learn-python-3/modules/learn-python3-files/cheatsheet)
+- [JSON vs. CSV: Mikä on parempi?](https://www.cagedata.org/articles/json-vs-csv/)

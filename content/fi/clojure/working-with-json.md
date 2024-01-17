@@ -10,37 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
-Haluatko käsitellä dataa, joka on helppo lukea ja muokata? JSON on yleinen tiedostomuoto, joka sopii hyvin tähän tarkoitukseen ja Clojure tekee sen käytöstä vieläkin helpompaa!
+Mitä & Miksi?
 
-## Kuinka tehdä
-```clojure
-;; Luodaan uusi JSON-muotoinen data rakenteessa
-(def data {:nimi "Juha" :ika 32 :harrastukset ["luistelu" "kirjoittaminen" "retkeily"]})
+JSON eli JavaScript Object Notation (JavaScriptin objektimuoto) on tiedostomuoto, jota käytetään tietojen tallentamiseen ja siirtämiseen. Se on yleisesti käytetty formaatti erityisesti web-sovelluksissa ja rajapinnoissa. JSON on suosittu ohjelmoijien keskuudessa, koska se on helppo lukea ja kirjoittaa, sekä sopii hyvin käytettäväksi erilaisten ohjelmointikielien välillä.
 
-;; Muuntaa Clojure-rakenteen JSON-muotoon
-(prn (json/write-str data))
-;; {"nimi":"Juha","ika":32,"harrastukset":["luistelu","kirjoittaminen","retkeily"]}
+Kuinka:
 
-;; Lukee JSON-tiedoston ja tallentaa sen Clojure-muotoon
-(def muistiinpanot (json/read-str (slurp "muistiinpanot.json")))
-;; {:otsikot ["Ensimmäinen päivä" "Toinen päivä" "Kolmas päivä"] :merkintä 1 "Tunteet" "Onnellinen ja energinen"}
+Clojure tarjoaa valmiin kirjaston käsittelemään JSON-muotoisia tietoja. Tämän kirjaston nimi on clj-json ja se tarjoaa helpon tavan lukea ja muokata JSON-dataa Clojure-koodissa.
 
-;; Muokkaa JSON-dataa
-(def uusi-muistiinpano (assoc muistiinpanot :neljäs-päivä "Hopeakannus"))
-(prn (json/write-str uusi-muistiinpano))
-;; {"otsikot":["Ensimmäinen päivä","Toinen päivä","Kolmas päivä","Neljäs päivä"],"merkintä 1":"Tunteet","tyyppi":"Onnellinen ja energinen"}
+```Clojure
+; Lisää ensin clj-json-kirjasto projektiisi
+[clj-json "1.7.4"]
 
-;; Poistaa tietoa JSON-datasta
-(def poistettu-muistiinpanot (dissoc muistiinpanot :merkintä 1))
-(prn (json/write-str poistettu-muistiinpanot))
-;; {"otsikot":["Ensimmäinen päivä","Toinen päivä","Kolmas päivä"],"tyyppi":"Onnellinen ja energinen"}
+; Tämän jälkeen voit käyttää kirjaston funktioita JSON-muotoisen datan käsittelyyn
+(use 'clj-json.core)
+
+; Lukee JSON-tiedoston ja palauttaa Clojure-maps-rakenteen
+(json/read-str "{}")
+; => {}
+
+; Luo uuden JSON-tiedoston Clojure-maps-rakenteesta ja tallentaa sen tiedostoon
+(spit "testi.json" (json/generate-string {:nimi "Olli" :ika 30}))
+; => nil
+
+; Lukee JSON-tiedoston ja palauttaa Clojure-maps-rakenteen
+(json/parse-string (slurp "testi.json"))
+; => {:nimi "Olli", :ika 30}
 ```
 
-## Syventävä tarkastelu
-JSON-tiedostoja käytettäessä on tärkeää muistaa, että muuttujien nimet tulee olla merkkijonoina ja datarakenteet tulee olla johdettu Clojure-rakenteista. JSON-tiedostot ovat myös käteviä, kun haluat kommunikoida eri ohjelmointikielten välillä, sillä ne ovat melko universaaleja ja helppoja lukea.
+Syvemmät tiedot:
 
-## Katso myös
-- [Clojure virallinen kotisivu](https://clojure.org/)
-- [JSON muotoilun opas](https://www.json.org/) 
-- [Clojure asetustiedoston tallentaminen JSON-muotoon](https://github.com/lgrapenthin/clojure-bind/blob/master/doc/upstart.md)
+JSON-muoto kehitettiin vuonna 2001 ja se perustuu JavaScriptin syntaksiin. Sen tarkoituksena oli korvata XML-kieli, jossa syntaksin monimutkaisuus oli ongelmana. JSON:lla ei ole kaikkia XML:n ominaisuuksia, mutta se on silti hyvin käytännöllinen ja sopii hyvin web-sovellusten käyttöön.
+
+JSON:n vaihtoehtona käytetään usein XML:ää ja YAML:ia. Ne kaikki ovat tiedostomuotoja tietojen tallentamiseen ja siirtämiseen, mutta ne eroavat hieman toisistaan syntaksinsa ja ominaisuuksiensa osalta.
+
+JSON-muoto koostuu arvoista ja avaimista muodossa "avain:arvo", joita kutsutaan myös sanakirjoiksi tai animoiksi. Tämä vastaa Clojuren maps-rakennetta ja siksi JSON-datan käsittely on helppoa Clojurella.
+
+Katso myös:
+
+- Clj-json kirjaston dokumentaatio: https://github.com/lynaghk/clj-json
+- JSON spesifikaatio: https://www.json.org/json-fi.html

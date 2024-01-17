@@ -10,45 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
- ランダムな数字を生成することに参加する理由を最大2文で説明します。
+## 何が必要で、なぜ？
 
-ランダムな数字を生成することが重要な理由の1つは、シミュレーションやゲームなどのアプリケーションで必要なランダムな要素を生成することです。ランダムな数字を利用することで、アプリケーションのリアリティや面白さを向上させることができます。
+乱数を生成するとは何か、プログラマーがそれをする理由は何かを2-3文で説明します。
 
-## 作り方
-以下は、TypeScriptを使用してランダムな数字を生成する方法のコーディング例と出力例です。
+プログラマーは、ゲーム、暗号化、テスト、データのランダムなサンプリングなど、さまざまな用途のためにランダムな数値が必要になることがあります。乱数生成は、それらの用途を実現するために重要です。
+
+## 使い方：
 
 ```TypeScript
-// 0から10までのランダムな整数を生成する関数
-function generateRandomNumber() {
-    return Math.floor(Math.random() * 11);
-}
+// 0から1までのランダムな小数を生成する例
+const randomNumber = Math.random();
+console.log(randomNumber); // 例：0.546342
 
-console.log(generateRandomNumber()); // 例：5
-
-// ランダムな数字の配列を生成する関数
-function generateRandomArray(length: number) {
-    let array = [];
-    for (let i = 0; i < length; i++) {
-        array.push(Math.floor(Math.random() * 101)); // 0から100までのランダムな整数を追加
-    }
-    return array;
-}
-
-console.log(generateRandomArray(5)); // 例：[10, 76, 42, 87, 34]
+// 範囲を指定してランダムな整数を生成する例
+const randomInt = Math.floor(Math.random() * 10) + 1; // 1から10の範囲でランダムな整数を生成
+console.log(randomInt); // 例：8
 ```
 
-## 深堀り
-ランダムな数字を生成するためには、乱数ジェネレーターと呼ばれるアルゴリズムを使用します。乱数ジェネレーターは、いくつかの数学的な計算を組み合わせて、擬似乱数列を生成します。この擬似乱数列は、乱数のように見えますが、実際には予測可能です。
+## 深堀り：
 
-JavaScriptでMath.random()を使用すると、0から1までの間の小数を返します。これを利用して、必要な範囲のランダムな整数を生成することができます。また、乱数ジェネレーターには独自のアルゴリズムを使用することで、よりランダムな数字を生成することができます。
+乱数生成は古くからコンピュータ科学の分野で重要な役割を果たしてきました。過去には様々なアルゴリズムが開発され、現在でも新しいアルゴリズムが研究されています。また、乱数生成の代替手段として、擬似乱数生成器がよく使われます。擬似乱数生成器は、乱数ではなく規則性のある数列を生成するものであり、完全にランダムではありませんが、多くの場合十分なものとして使用されています。
 
-## 早見表
-- ランダムな数字を生成することで、アプリケーションのリアリティや面白さを向上させることができる。
-- 乱数ジェネレーターを使用して、擬似乱数列を生成することができる。
-- Math.random()を使用することで、0から1までの間のランダムな小数を取得できる。
+乱数生成は、プログラミング言語の標準ライブラリや、外部ライブラリを使用して実装することができます。言語やライブラリによって、異なるアルゴリズムや細かい設定が提供されている場合がありますので、使用する際にはドキュメンテーションを確認することが重要です。
 
-## 参考リンク
-- [TypeScript公式サイト](https://www.typescriptlang.org/)
-- [MDN Web Docs - Math.random()](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
-- [Wikipedia - 乱数ジェネレーター](https://ja.wikipedia.org/wiki/%E4%B9%B1%E6%95%B0%E3%82%B8%E3%82%A7%E3%83%8D%E3%83%AC%E3%83%BC%E3%82%BF#:~:text=%E4%B9%B1%E6%95%B0%E3%82%B8%E3%82%A7%E3%83%8D%E3%83%AC%E3%83%BC%E3%82%BF%E3%81%AF%E3%80%81%E5%AE%9F%E9%9A%9B,1%E3%81%9E%E3%82%8C%E3%81%82%E3%82%8B%E3%82%82%E3%81%AE%E3%81%8B%E3%82%89%E4%B8%80%E9%83%A8%E5%88%86%E7%9
+## 関連情報
+
+- [Math.random() - MDN](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
+- [擬似乱数生成器- Wikipedia](https://ja.wikipedia.org/wiki/%E6%93%AC%E4%BC%BC%E4%B9%B1%E6%95%B0%E7%94%9F%E6%88%90%E5%99%A8)

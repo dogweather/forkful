@@ -10,28 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Чому
+## Що і З чого це?
 
-Завантаження веб-сторінок є необхідною складовою веб-розробки. Це дозволяє отримати доступ до інформації та взаємодіяти з інтернет-ресурсами.
+Завантаження веб-сторінки - це процес отримання інформації з інтернет-ресурсу на свій комп'ютер. Програмісти можуть використовувати цю функцію для отримання інформації з інших веб-сторінок, яка їм може знадобитися, наприклад, для обробки і подальшого використання.
 
-## Як
-
-Використання мови програмування PHP дає можливість легко та ефективно завантажувати веб-сторінки. Для цього потрібно використовувати наступну функцію:
+## Як це робити
 
 ```PHP
 <?php
-$file = file_get_contents("https://www.example.com");
-echo $file;
+// Використовуємо функцію file_get_contents для завантаження вмісту вказаної URL-адреси
+$page_content = file_get_contents('https://example.com');
+// Виводимо отриманий вміст
+echo $page_content;
 ?>
 ```
+**Вихід:**
+```
+<!DOCTYPE html>
+<html>
+<head>
+<title>Example Domain</title>
+</head>
+<body>
+<h1>Example Domain</h1>
+<p>This domain is for use in illustrative examples in documents. You may use this
+domain in literature without prior coordination or asking for permission.</p>
+<p><a href="https://www.iana.org/domains/example">More information...</a></p>
+</body>
+</html>
+```
 
-Результатом буде завантажена веб-сторінка з сайту www.example.com. Таким чином, цей код дозволяє отримати HTML-код сторінки та відобразити його.
+## Глибокий занурення
 
-## Глибше вдію
+Функція file_get_contents була введена в PHP версії 4 і з того часу є одним з найбільш популярних способів завантаження веб-сторінок. Альтернативою цьому може бути використання CURL (клієнтська бібліотека для передачі даних по мережі) або використання бібліотеки Simple HTML DOM для отримання певної інформації з веб-сторінки. При використанні функції file_get_contents слід враховувати можливість появи помилок або невірного вмісту від веб-сторінки, яку ми завантажуємо.
 
-Цей метод аналогічний до відкриття файлу на комп'ютері та відображення його вмісту. Однак, він також підтримує виконання HTTP запитів та обробку кукі. Крім того, можна налаштувати параметри запиту, такі як метод, заголовки та параметри POST.
+## Дивіться також
 
-## Дивись також
-
-- [Офіційна документація PHP](https://www.php.net/manual/uk/function.file-get-contents.php)
-- [Порівняння з іншими методами завантаження веб-сторінок у PHP](https://www.php.net/manual/uk/context.http.php)
+- [Офіційна документація PHP для функції file_get_contents](https://www.php.net/manual/en/function.file-get-contents.php)
+- [Керування HTTP-запитами в PHP з використанням CURL](https://www.php.net/manual/en/book.curl.php)
+- [Офіційна документація Simple HTML DOM бібліотеки](http://simplehtmldom.sourceforge.net/)

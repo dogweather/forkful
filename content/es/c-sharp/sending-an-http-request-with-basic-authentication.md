@@ -1,7 +1,7 @@
 ---
-title:                "Enviar una solicitud http con autenticación básica"
-html_title:           "C#: Enviar una solicitud http con autenticación básica"
-simple_title:         "Enviar una solicitud http con autenticación básica"
+title:                "Enviando una solicitud http con autenticación básica"
+html_title:           "C#: Enviando una solicitud http con autenticación básica"
+simple_title:         "Enviando una solicitud http con autenticación básica"
 programming_language: "C#"
 category:             "C#"
 tag:                  "HTML and the Web"
@@ -10,45 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+Qué y por qué?
 
-¿Alguna vez te has preguntado cómo los usuarios acceden a aplicaciones y sitios web protegidos por contraseña? Bueno, todo se debe a las solicitudes HTTP con autenticación básica.
+Enviar una solicitud HTTP con autenticación básica es un proceso que permite a los programadores realizar solicitudes a servidores web que requieren autenticación a través de un nombre de usuario y una contraseña. Los programadores lo hacen para acceder a recursos protegidos en el servidor y realizar operaciones seguras.
 
-## Cómo hacerlo
+Cómo hacerlo:
 
-Para enviar una solicitud HTTP con autenticación básica en C#, sigue estos sencillos pasos:
-
-1. Importa el espacio de nombres `System.Net`.
-2. Crea un objeto de la clase `WebRequest` y asigna la URL a la que deseas enviar la solicitud.
-3. Agrega las credenciales de autenticación al objeto de la solicitud mediante el método `WebRequest.Credentials`.
-4. Llama al método `GetResponse()` en el objeto de la solicitud para obtener la respuesta del servidor.
-5. Si la autenticación es exitosa, la respuesta del servidor será un código de estado HTTP 200 (OK) y podrás acceder al contenido de la respuesta mediante la propiedad `WebResponse.GetResponseStream()`.
-
-Aquí hay un ejemplo de código que muestra cómo enviar una solicitud HTTP con autenticación básica y imprimir el contenido de la respuesta:
+En C#, podemos enviar una solicitud HTTP con autenticación básica utilizando la clase HttpClient de la librería System.Net.Http. Primero, debemos inicializar un objeto de esta clase y configurarlo para que acepte autenticación básica. Luego, podemos construir nuestra solicitud y enviarla al servidor. A continuación se muestra un ejemplo de código que utiliza una URL y credenciales de autenticación básica ficticias para demostrar cómo se realiza este proceso:
 
 ```C#
-using System;
-using System.Net;
-class Program
-{
-    static void Main(string[] args)
-    {
-        string url = "https://api.ejemplo.com/informacion-protegida";
-        WebRequest solicitud = WebRequest.Create(url);
-        solicitud.Credentials = new NetworkCredential("nombre-usuario", "contraseña");
-        WebResponse respuesta = solicitud.GetResponse();
-        Console.WriteLine(respuesta.GetResponseStream());
-    }
-}
+// Inicializar HttpClient
+HttpClient cliente = new HttpClient();
+
+// Configurar autenticación básica
+cliente.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", Convert.ToBase64String(System.Text.Encoding.ASCII.GetBytes("nombre de usuario:contraseña")));
+
+// Construir solicitud y enviarla
+HttpResponseMessage respuesta = await cliente.GetAsync("https://ejemplo.com/recurso");
+string contenido = await respuesta.Content.ReadAsStringAsync();
+Console.WriteLine(contenido);
 ```
 
-## Profundizando
+El resultado de este código sería la respuesta del servidor en formato de cadena.
 
-Ahora que sabemos cómo enviar una solicitud HTTP con autenticación básica, exploremos un poco más en detalle cómo funciona todo esto. En términos sencillos, la autenticación básica en una solicitud HTTP implica agregar un encabezado de `Authorization` a la solicitud con las credenciales de acceso. Este encabezado incluye el nombre de usuario y la contraseña (en formato Base64) en un formato específico establecido por la especificación HTTP.
+Profundizando:
 
-Es importante tener en cuenta que la autenticación básica es un método de autenticación muy básico y no es muy seguro, ya que las credenciales se envían en texto plano. Además, solo se utiliza para enviar solicitudes a través de canales seguros como HTTPS.
+La autenticación básica fue una forma común de autenticación en los primeros días de la web. Sin embargo, debido a que las contraseñas se envían en texto plano, se considera una forma insegura de autenticación. Como alternativa, se recomienda utilizar autenticación más segura, como HTTPS o OAuth.
 
-## Ver también
+Véase también:
 
-- [Documentación oficial de Microsoft sobre el espacio de nombres System.Net en C#](https://docs.microsoft.com/en-us/dotnet/api/system.net?view=net-5.0)
-- [Especificación de autenticación básica HTTP en la IETF](https://tools.ietf.org/html/rfc7235#section-2.2)
+Más información sobre la clase HttpClient y la autenticación básica en C#: https://docs.microsoft.com/es-es/dotnet/api/system.net.http.httpclient?view=net-5.0
+Una explicación de la diferencia entre autenticación básica, HTTPS y OAuth: https://www.imperva.com/learn/application-security/difference-between-http-https-oauth/

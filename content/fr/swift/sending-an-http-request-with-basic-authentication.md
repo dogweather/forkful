@@ -10,80 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Qu'est-ce que c'est et pourquoi le faire?
+L'envoi d'une requête HTTP avec une authentification de base est une méthode courante utilisée par les programmeurs pour sécuriser les échanges de données entre un client et un serveur. Cela implique l'utilisation d'un nom d'utilisateur et d'un mot de passe pour accéder à un site ou une application en ligne. Cela garantit que seules les personnes autorisées peuvent accéder aux données sensibles.
 
-Il est souvent nécessaire d'envoyer des requêtes HTTP avec une authentification de base pour accéder à des ressources protégées sur le web, telles que des API ou des comptes utilisateur. Cela garantit la sécurité des données échangées entre le client et le serveur.
+## Comment faire:
+Voici un exemple simple en Swift pour envoyer une requête HTTP avec une authentification de base:
 
-## Comment Faire
+```Swift
+let url = URL(string: "https://example.com")
+let sessionConfig = URLSessionConfiguration.default
+let credentials = "\(username):\(password)"
+let base64Credentials = Data(credentials.utf8).base64EncodedString()
+let authString = "Basic \(base64Credentials)"
+sessionConfig.httpAdditionalHeaders = ["Authorization" : authString]
 
-Pour envoyer une requête avec une authentification de base en Swift, vous devez suivre les étapes suivantes :
+let session = URLSession(configuration: sessionConfig)
 
-1. Importez le framework `Foundation`
-2. Créez une instance de `URL` avec l'URL de la ressource à laquelle vous souhaitez accéder
-3. Créez une instance de `URLSession` avec une configuration de base
-4. Créez une instance de `URLRequest` en utilisant l'URL précédemment créée
-5. Définissez la méthode de requête à `GET` ou toute autre méthode requise
-6. Ajoutez un en-tête "Authorization" à votre requête avec les informations d'identification de base encodées en base64
-7. Utilisez la méthode `dataTask(with:)` de votre instance de `URLSession` pour envoyer la requête et récupérer les données de réponse
-8. Traitez la réponse en utilisant les données et l'objet `URLResponse` renvoyés par la méthode précédente
-
-Voici un exemple de code complet qui envoie une requête GET avec une authentification de base et imprime la réponse:
-
-```Swift 
-import Foundation 
-
-// 1. Créer l'URL de la ressource 
-let urlString = "https://myapi.com/users"
-guard let url = URL(string: urlString) else {
-    fatalError("L'URL fournie n'est pas valide")
-}
-
-// 2. Créer une instance de URLSession 
-let session = URLSession(configuration: .default)
-
-// 3. Créer la requête 
-var request = URLRequest(url: url)
-
-// 4. Définir la méthode de requête
-request.httpMethod = "GET"
-
-// 5. Ajouter l'en-tête d'authentification
-let username = "myusername"
-let password = "mypassword"
-let loginString = "\(username):\(password)"
-let loginData = loginString.data(using: .utf8)
-if let base64LoginString = loginData?.base64EncodedString() {
-    request.setValue("Basic \(base64LoginString)", forHTTPHeaderField: "Authorization")
-}
-
-// 6. Envoyer la requête et traiter la réponse
-let task = session.dataTask(with: request) { (data, response, error) in
-    if let error = error {
-        print("Erreur lors de l'envoi de la requête : \(error.localizedDescription)")
+let task = session.dataTask(with: url!) { data, response, error in  
+    guard let data = data, error == nil else {
+        print("Error: \(String(describing: error))")
         return
     }
     
-    guard let data = data, let response = response as? HTTPURLResponse else {
-        print("Réponse invalide reçue")
-        return
-    }
+    // Traitement des données reçues ici
     
-    print("Code de réponse : \(response.statusCode)")
-    if let dataString = String(data: data, encoding: .utf8) {
-        print("Données de réponse : \(dataString)")
+    if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {
+        print("Code d'état HTTP: \(httpStatus.statusCode)")
     }
 }
-
-task.resume() // N'oubliez pas d'appeler resume() pour exécuter la requête
+task.resume()
 ```
 
-## Plongée En Profondeur
+L'authentification de base nécessite un encodage en base64 du nom d'utilisateur et du mot de passe avant d'être ajouté à l'en-tête de la requête HTTP. Ensuite, une session est créée avec une configuration qui inclut l'en-tête d'authentification. La session envoie ensuite une requête au serveur en utilisant l'URL fournie et traite les données renvoyées dans la fermeture.
 
-Lorsque vous envoyez une requête avec une authentification de base, vous devez encoder les informations d'identification en base64 avant de les inclure dans l'en-tête "Authorization". Cela garantit que les informations restent sécurisées lors de leur transfert sur le réseau.
+## Plongée en profondeur:
+L'authentification de base est un moyen simple mais pas très sécurisé de protéger les données échangées entre un client et un serveur. Elle a été introduite dans le protocole HTTP dans les années 1990 et a été remplacée par des méthodes plus sécurisées telles que OAuth. Avec l'avancée de la sécurité en ligne, il est fortement recommandé d'utiliser des méthodes plus avancées pour protéger les données sensibles.
 
-Il est également important de noter que l'utilisation de l'authentification de base est considérée comme un moyen de sécurité faible, car les informations d'identification peuvent facilement être décodées à l'aide d'un décodeur en ligne. Il est recommandé d'utiliser une authentification plus robuste, telle que l'authentification par jeton, pour protéger vos ressources.
-
-## Voir Aussi
-
-- [Documentation officielle sur URLSession](https://developer.apple.com/documentation/foundation/urlsession)
-- [Guide sur l'authentification de base avec Swift](https://www.raywenderlich.com/710-basic-http-authentication-tutorial-for-ios#toc-anchor-001)
+## Voir aussi:
+Pour en savoir plus sur l'authentification de base en Swift et d'autres méthodes d'authentification, consultez la documentation officielle d'Apple sur les URLSessions et la sécurité en ligne.

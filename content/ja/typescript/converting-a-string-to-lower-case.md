@@ -10,29 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ文字列を小文字に変換するのか
+## 何となぜ？
 
-文字列を小文字に変換することで、文字列の比較や検索が簡単になります。また、データの整形や表示においても、小文字に変換することで統一性が保たれ、見やすくなります。
+文字列を小文字に変換することは、プログラマーが文字列を操作するときによく行われることです。大文字や小文字を区別しないようにするためや、データの整形を行うためなど、さまざまな理由があります。
 
-## 方法
+## 方法：
+
+TypeScriptで文字列を小文字に変換するには、 `toLowerCase()` メソッドを使用します。例えば、以下のように記述します。
 
 ```TypeScript
-const string = "Hello World";
-const lowerCase = string.toLowerCase();
-console.log(lowerCase);
-
-// Output: "hello world"
+let str: string = "Hello World";
+console.log(str.toLowerCase());
 ```
 
-TypeScriptでは、`toLowerCase()`メソッドを使用することで文字列を小文字に変換することができます。このメソッドはString型に組み込まれており、文字列を小文字に変換した新しい文字列を返します。変換前の文字列は変更されません。
+出力結果は、 `hello world` となります。
 
-## ディープダイブ
+## 深く調べる：
 
-このメソッドはES6の標準であるため、TypeScriptでも使用することができます。また、英語以外の言語にも対応しています。さらに、`toUpperCase()`メソッドがあり、逆に大文字に変換することもできます。
+文字列を小文字に変換するメソッドは、現代のプログラミング言語では非常に一般的なものです。しかし、以前の言語ではそれぞれ独自の方法で実現していました。例えば、C言語では `tolower()` という関数がありました。
 
-## 関連記事
+また、文字列を小文字に変換する代替手段として、正規表現を使う方法もあります。しかし、この方法はパフォーマンスの面では `toLowerCase()` メソッドよりも劣ることが多いです。
 
-## リンク
+文字列を小文字に変換する実装詳細については、Unicodeの規定に従って行われます。Unicodeは、文字やテキストをコンピュータで扱うための国際規格であり、文字とそれに対応する番号を結びつける仕組みを提供しています。
 
-- [String.prototype.toLowerCase() - JavaScript | MDN](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)
-- [Stringのトード変換を行う toLowerCase() と replace() 関数 - EagletLab 技術ブログ](https://eagletmt.github.io/topic/2016/unicode-ie9.html)
+## 関連記事：
+
+- [TypeScript Handbook: Strings](https://www.typescriptlang.org/docs/handbook/basic-types.html#string)
+- [MDN web docs: toLowerCase()](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)

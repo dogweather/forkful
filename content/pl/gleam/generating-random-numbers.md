@@ -10,38 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+Cześć programiści!
 
-Generowanie losowych liczb może być przydatne w wielu aplikacjach, takich jak gry, symulacje lub weryfikacji losowych wyborów. Ponadto, jest to ważna umiejętność w programowaniu, ponieważ pozwala na stworzenie bardziej złożonych i różnorodnych algorytmów.
+W dzisiejszym artykule dowiesz się, czym jest generowanie losowych liczb w programowaniu i dlaczego jest to ważne dla naszej pracy. Będziemy również patrzeć na praktyczne przykłady kodu w języku Gleam oraz zagłębiać się nieco w historię i alternatywy tego procesu.
 
-## Jak to zrobić
+## Co i dlaczego?
 
-```Gleam
-// Generowanie losowej liczby całkowitej z przedziału 1 do 10
-let random_num = Random.int(1, 10)
+Generowanie losowych liczb jest procesem, w którym komputer tworzy liczby w sposób losowy. Dzieje się tak za pomocą algorytmów, które wykorzystują takie aspekty, jak bieżący czas, stan pamięci lub inne dane, aby stworzyć pseudolosowe liczby. Programiści często wykorzystują ten proces do testowania swoich aplikacji lub do symulacji różnych prób i scenariuszy.
 
-// Generowanie losowej liczby rzeczywistej z przedziału 0 do 1
-let random_float = Random.float(0, 1)
+## Jak to zrobić?
 
-// Generowanie losowego ciągu znaków o długości 10
-let random_string = Random.string(10)
+Mając wyjaśnione czym jest generowanie losowych liczb, przejdźmy teraz do praktycznych kodów w języku Gleam. Oto przykładowy kod, który wygeneruje losową liczbę od 1 do 10:
+
+```
+Gleam.random.int(1, 10)
 ```
 
-Output: 
+Jeśli chcesz wygenerować tylko jedną liczbę, można użyć funkcji `Gleam.random.int_uniform()` zamiast `Gleam.random.int()`. Poniżej przedstawiamy również przykład wygenerowania 10 losowych liczb w zakresie od 50 do 100:
+
 ```
-random_num = 4
-random_float = 0.735678
-random_string = "aR82nJ4k9p"
+for _ in List.range(0, 9) {
+  Gleam.random.int_uniform(50, 100)
+}
 ```
 
-## Głębszy zanurzenie
+Aby sprawdzić wynik w konsoli lub terminalu, możesz użyć funkcji `IO.inspect()`:
 
-Generowanie losowych liczb jest możliwe dzięki tzw. generatorom pseudolosowym, które wykorzystują algorytm i ziarno, aby generować liczby, które wydają się być losowe. W Gleam, funkcje `int()`, `float()` i `string()` korzystają z generatora Mersenne Twister, który jest uważany za jeden z najbardziej wydajnych i dokładnych generatorów w świecie programowania.
+```
+IO.inspect(Gleam.random.int(1, 10))
+```
 
-Dodatkowo, w Gleam istnieją także funkcje `bool()` i `choose()` pozwalające na generowanie losowych wartości typu bool oraz wybór losowej wartości z listy podanych wartości.
+Wyświetli to w konsoli wynik takiej operacji jak np.:
+
+```
+4
+```
+
+## Wnikliwa analiza
+
+Generowanie losowych liczb jest procesem, który wywodzi się jeszcze z czasów komputerów analogowych. W dzisiejszych czasach jest to jednak nieodłączna część programowania, szczególnie w dziedzinach takich jak gry komputerowe, symulacje czy kryptografia. Istnieje wiele alternatywnych metod generowania losowych liczb, takich jak użycie generatora liczb pseudolosowych lub wykorzystanie czujnika losowego zewnętrznego. W języku Gleam generowanie losowych liczb jest możliwe dzięki bibliotece `gleam_rand`.
 
 ## Zobacz również
 
-- Dokumentacja Gleam na temat generowania liczb: https://gleam.run/documentation/std-lib-random/
-- Sposoby na wprowadzenie losowości do kodu: https://www.freecodecamp.org/news/random-number-generator-in-python/ 
-- Wyjaśnienie działania generatorów pseudolosowych: https://en.wikipedia.org/wiki/Pseudorandom_number_generator
+- Dokumentacja języka Gleam: https://gleam.run/
+- Biblioteka do generowania losowych liczb w Gleam: https://github.com/gleam-lang/gleam_rand

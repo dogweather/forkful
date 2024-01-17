@@ -10,63 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+## 무엇인가요? 그리고 왜 필요할까요?
 
-우리는 모두 우리의 일정과 스케줄을 관리하고 예측하기 위해 날짜를 계산하는 일에 참여합니다. Elm은 매우 강력한 언어로서 날짜를 정확하게 계산하는 기능을 제공합니다. 이 기사에서는 Elm을 사용하여 만들어진 간단하고 간결한 코드를 통해 날짜를 계산하는 방법을 배워보겠습니다.
+날짜를 미래나 과거로 계산하는 것은 프로그래밍에서 중요한 작업입니다. 이를 통해 특정 날짜의 이벤트를 계획하거나 미래에 발생할 이벤트를 예측할 수 있습니다. 프로그래머들은 이를 수행하는 이유는 앞으로 발생할 사건들에 대한 정확한 계획과 예측을 가능하게 하기 위해서입니다.
 
-## 해결 방법
-
-그것은 매우 간단합니다. 우리는 가장 먼저 필요한 날짜를 나타내는 변수를 정의합니다. 그런 다음, 이 날짜를 기준으로 원하는 만큼 더하거나 뺍니다. 오늘 날짜보다 과거의 날짜를 계산하려면 간단하게 마이너스 기호를 사용하여 뺍니다. 이 모든 것은 아래에 제시된 코드 블록에서 확인할 수 있습니다. 
+## 하는 방법:
 
 ```Elm
--- 현재 날짜로부터 3일 이전의 날짜 계산
-let
-  targetDate = Date.now
-  pastDate = Date.subDays 3 targetDate
-in
-  pastDate
+import Time
 
--- 현재 날짜로부터 2주 뒤의 날짜 계산
-let
-  targetDate = Date.now
-  futureDate = Date.addWeeks 2 targetDate
-in
-  futureDate
+Time.add Time.day 3 Time.Jan 10  // 2020년 1월 13일을 계산합니다.
+Time.sub Time.hour 6 Time.Jan 10  // 2020년 1월 9일 18시를 계산합니다.
 ```
 
-출력 결과:
+## 깊이 파헤치기:
 
-```
-계산된 과거 날짜: 2021년 9월 7일
-계산된 미래 날짜: 2021년 9월 25일
-```
+(1) 과거부터 현재까지 계산의 역사적 배경은 고대 로마 시대까지 거슬러 올라갑니다. 그 당시에는 검은 식탁과 달력의 계산을 통해 날짜를 파악했습니다.
 
-## 깊게 파헤치기
+(2) 날짜를 계산하는 또 다른 방법으로는 moment.js라는 자바스크립트 라이브러리를 사용하는 것입니다. elm-community/elm-time이 제공하는 Time 모듈은 기본적인 날짜 계산 기능을 제공하지만 moment.js 보다는 적은 기능을 제공합니다.
 
-보다 복잡한 날짜 계산을 할 수도 있습니다. 예를 들어, 현재 날짜로부터 정확히 6개월 전의 날짜를 계산하려면 어떻게 해야 할까요? 이 경우, 우리는 `Date.midnight` 함수를 사용하여 현재 날짜의 자정을 기준으로 정확한 결과를 얻을 수 있습니다.
+(3) Elm에서는 Time 모듈 내에서 날짜를 계산하는 함수를 제공합니다. 이 함수들은 내부적으로는 밀리초를 처리하기 때문에 시작 날짜와 offset 값을 계산하여 결과값을 반환해주는 방식으로 작동합니다.
 
-```Elm
--- 현재 날짜로부터 6개월 전의 날짜 계산
-let
-  targetDate = Date.now
-  sixMonthsAgo = Date.midnight targetDate |> Date.subMonths 6 
-in
-  sixMonthsAgo
-```
+## 더 알아보기:
 
-출력 결과:
-
-```
-계산된 날짜: 2021년 3월 3일
-```
-
-더 많은 날짜 계산 관련 함수와 사용 예제는 [Elm Documentaion](https://package.elm-lang.org/packages/elm/time/latest/)에서 확인할 수 있습니다.
-
-## 더 알아보기
-
-이번에 우리는 Elm을 사용하여 날짜를 계산하는 방법을 배웠습니다. 이 기능을 사용하여 우리의 프로젝트에 유용한 기능을 추가할 수 있습니다. 더 많은 Elm 관련 기사를 읽고 싶으시면 [Elm 공식 홈페이지](https://elm-lang.org/)를 참고해보세요.
-
-## 더 알아보기
-
-- [Elm 공식 홈페이지](https://elm-lang.org)
-- [Elm Documentaion](https://package.elm-lang.org/packages/elm/time/latest/)
+- [Moment.js](https://momentjs.com/): 자바스크립트 라이브러리
+- [elm-community/elm-time](https://package.elm-lang.org/packages/elm-community/elm-time/latest/): Elm에서 제공하는 Time 모듈

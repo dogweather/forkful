@@ -10,59 +10,81 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+## Che cos'è e perché?
 
-Ci sono molte ragioni per cui lavorare con YAML nella programmazione, ma la più importante è che questo formato di dati è leggibile per gli umani e facile da interpretare per le macchine. Questo lo rende un'ottima scelta per l'archiviazione e lo scambio di dati strutturati tra diversi sistemi.
+Lavorare con YAML significa utilizzare un formato di dati testuale che si basa su coppie chiave-valore. Questo formato è utilizzato principalmente dai programmatori per organizzare e strutturare i dati in maniera leggibile e facilmente manipolabile.
 
-## Come fare
+## Come fare:
 
-Per utilizzare YAML nel tuo codice C++, basta includere la libreria "yaml-cpp", disponibile su GitHub. Ci sono molte risorse online per la documentazione e gli esempi di utilizzo di questa libreria.
+Utilizzando lo standard di librerie C++ "yaml-cpp", è possibile importare ed esportare facilmente dati in formato YAML attraverso il codice. Di seguito, un esempio di codice che mostra come creare un file YAML e come leggerlo:
 
-Ecco un semplice esempio di codice C++ che carica e stampa un file YAML:
-
-```
-#include <iostream>
+```C++
 #include <yaml-cpp/yaml.h>
- 
-int main() {
-  YAML::Node config = YAML::LoadFile("config.yml");
+#include <iostream>
 
-  std::cout << "Nome utente: " << config["username"].as<std::string>() << "\n";
-  std::cout << "Età: " << config["age"].as<int>() << " anni\n";
-  std::cout << "Linguaggi di programmazione preferiti: \n";
-  for (auto lang : config["languages"]) {
-    std::cout << "- " << lang << "\n";
-  }
+void createYAMLFile() 
+{
+    YAML::Emitter out;
+
+    out << YAML::BeginMap; // inizio del file YAML
+    out << YAML::Key << "name" << YAML::Value << "Mario";
+    out << YAML::Key << "age" << YAML::Value << 30;
+ 
+    // creazione di una mappa all'interno del file
+    out << YAML::Key << "details";
+    out << YAML::BeginMap;
+    out << YAML::Key << "height" << YAML::Value << 1.8;
+    out << YAML::Key << "weight" << YAML::Value << 80;
+    out << YAML::EndMap; // fine della mappa
+    out << YAML::EndMap; // fine del file YAML
+ 
+    std::ofstream file("person.yaml");
+    file << out.c_str(); // scrittura del file
+    file.close();
+}
+
+void readYAMLFile() 
+{
+    YAML::Node data = YAML::LoadFile("person.yaml"); // carica il file YAML
+ 
+    // accesso ai dati all'interno del file
+    std::cout << "name: " << data["name"].as<std::string>() << "\n";
+    std::cout << "age: " << data["age"].as<int>() << "\n";
+    std::cout << "details:\n";
+    std::cout << "    height: " << data["details"]["height"].as<float>() << "\n";
+    std::cout << "    weight: " << data["details"]["weight"].as<float>() << "\n";
+}
+
+int main()
+{
+    createYAMLFile(); // chiamata alla funzione per creare il file YAML
+    readYAMLFile(); // chiamata alla funzione per leggere il file YAML
+    return 0;
 }
 ```
 
-Ecco il contenuto del file YAML "config.yml" usato nel codice sopra:
+Il file YAML creato avrà la seguente struttura:
 
-```
-username: Alice
-age: 25
-languages:
-  - C++
-  - Python
-  - Java
-```
-
-E questo è l'output che verrà stampato sul terminale:
-
-```
-Nome utente: Alice
-Età: 25 anni
-Linguaggi di programmazione preferiti:
-- C++
-- Python
-- Java
+```yaml
+name: Mario
+age: 30
+details:
+    height: 1.8
+    weight: 80
 ```
 
-## Approfondimento
+## Deep Dive:
 
-Se vuoi saperne di più su YAML, è possibile consultare la loro documentazione ufficiale o documentazioni gratuite su siti come YAML.org. Inoltre, ci sono molti tutorial e guide online su come utilizzare YAML in diversi linguaggi di programmazione, compreso C++.
+● YAML è un acronimo ricorsivo che significa "YAML Ain't Markup Language".
 
-## Vedi anche
+● YAML è stato creato da Clark Evans, dopo essersi reso conto che YAML era necessario per Age, un progetto open source.
 
-- [Documentazione ufficiale di YAML](https://yaml.org)
-- [Documentazione di yaml-cpp su GitHub](https://github.com/jbeder/yaml-cpp/wiki)
+● I principali formati alternativi a YAML includono JSON, XML e CSV. Mentre JSON è più popolare per l'interscambio dei dati tra i dispositivi, YAML è generalmente utilizzato per la configurazione e la documentazione dei dati.
+
+● Il parser di YAML utilizzato all'interno di "yaml-cpp" è basato sulla specifica YAML 1.2 e supporta una vasta gamma di caratteristiche come tipi personalizzati, referenze, inclusioni e altro.
+
+## See Also:
+
+● Sito ufficiale di YAML: https://yaml.org/
+
+● Documentazione di "yaml-cpp": https://github.com/jbeder/yaml-cpp/wiki

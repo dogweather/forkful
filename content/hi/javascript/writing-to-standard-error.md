@@ -1,7 +1,7 @@
 ---
-title:                "स्टैंडर्ड एरर में लिखना"
-html_title:           "Javascript: स्टैंडर्ड एरर में लिखना"
-simple_title:         "स्टैंडर्ड एरर में लिखना"
+title:                "स्टैंडर्ड त्रुटि पर लेखन"
+html_title:           "Javascript: स्टैंडर्ड त्रुटि पर लेखन"
+simple_title:         "स्टैंडर्ड त्रुटि पर लेखन"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Files and I/O"
@@ -10,25 +10,19 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
+## क्या और क्यों?
+Since we have been programming, we have been writing code to display output to the user. But sometimes, we also need to display error messages for debugging purposes. To do this, we use standard error in Javascript. It is a stream that displays error messages instead of regular output. Programmers use it to troubleshoot and fix issues in their code.
 
-कुछ समय जब हम प्रोग्राम लिखते हैं, तो हमे अपने कोड में कोई गलती या अनुचितता मिलती है। ऐसे स्थिति में, हम स्टैंडर्ड एरर को उठाना चाहते हैं जो हमे अपनी गलतियों का पता लगाने और सुधार करने का मौका देता है। इसलिए, स्टैंडर्ड एरर लिखना एक महत्वपूर्ण कौशल है जो हर प्रोग्रामर को जानना चाहिए। 
-
-## कैसे करे
-
-```javascript 
-console.error("यह मैसेज स्टैंडर्ड एरर में लिखा है।");
+## कैसे करें:
+```Javascript
+console.error("This is an error message");
 ```
+इस आसान syntax के प्रयोग से, हम एक error message standard error में दिखा सकते हैं। यह आपको प्रोग्रामिंग में त्रुटियों को सही करने में मदद करेगा।
 
-इस प्रकार से, हम `console.error()` फंक्शन का उपयोग करके स्टैंडर्ड एरर में संदेश लिख सकते हैं। वैसे तो `console.log()` भी काम करता है, लेकिन स्टैंडर्ड एरर में लिखना कोड में गलती को पकड़ने के लिए अधिक उपयोगी होगा। 
+## गहराई में जाएं:
+(1) ऐतिहासिक संदर्भ: स्टैंडर्ड एरर को बनाने की जरूरत बड़े प्रोग्राम्स को ठीक करने के लिए थी। पहले, इस्तेमाल किए जाने वाले operating systems के पास ये सुविधा नहीं थी और उन्हें अपने error messages को फाइल में लिखने की आवश्यकता पड़ती थी। (2) वैकल्पिक: आप console.log() का प्रयोग भी कर सकते हैं, लेकिन ये समय ले सकता है और debugging को कठिन बना सकता है। (3) अनुमेशन विवरण: standard error का उपयोग node.js में process.stderr, ब्राउज़र में console.error(), और इलेक्ट्रॉनिक कंप्यूटर में stderr के रूप में किया जाता है।
 
-## गहराई में
-
-स्टैंडर्ड एरर में लिखना एक महत्वपूर्ण कौशल है जो हर प्रोग्रामर को जानता होना चाहिए। `console.error()` के अलावा, `process.stderr.write()` भी स्टैंडर्ड एरर में लिखने के लिए उपयोगी हो सकता है। इसके अलावा, हम अपने कोड में `try-catch` ब्लॉक का भी उपयोग करके अपनी गलतियों को हैंडल कर सकते हैं। 
-
-## देखें भी
-
-- [MDN Documentation on console.error()](https://developer.mozilla.org/en-US/docs/Web/API/Console/error)
-- [Stack Overflow thread on using console.error()](https://stackoverflow.com/questions/1593090/list-of-what-console-errors-can-i-capture) 
-- [Node.js Documentation on process.stderr.write()](https://nodejs.org/api/process.html#process_process_stderr)
-- [GeeksforGeeks article on Error Handling in JavaScript](https://www.geeksforgeeks.org/error-handling-in-javascript/)
+## देखें भी:
+- [Javascript Console Methods](https://www.w3schools.com/js/js_console.asp)
+- [Debugging in Javascript](https://www.freecodecamp.org/news/how-to-debug-in-javascript/)
+- [Node.js Process Module](https://nodejs.org/api/process.html)

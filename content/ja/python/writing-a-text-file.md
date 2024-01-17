@@ -1,7 +1,7 @@
 ---
-title:                "テキストファイルを書く"
-html_title:           "Python: テキストファイルを書く"
-simple_title:         "テキストファイルを書く"
+title:                "テキストファイルの作成"
+html_title:           "Python: テキストファイルの作成"
+simple_title:         "テキストファイルの作成"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Files and I/O"
@@ -10,35 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##なぜ
-テキストファイルを書くことのメリットを説明します。
-テキストファイルを書くことにより、プログラムの出力やデータの保存が簡単になります。また、他のプログラムで読み込みやすく、様々な用途に活用することができます。
+## 何 & なぜ？
+テキストファイルを書くことは、テキストをファイルに保存することです。プログラマーがこれを行う理由は、データを永続的に保存したり、エクスポートしたり、他のプログラムと共有したりするためです。
 
-##やり方
-テキストファイルを書くにはPythonの `open()` 関数を使用します。以下のようにコードブロックで示します。
-
+## 方法：
 ```Python
-# テキストファイルを書き込みモードでオープン
-file = open("sample.txt", "w")
+# テキストファイルを作成して書き込む
+with open('new_file.txt', 'w') as file:
+    file.write('これはテキストファイルに書かれたテキストです。')
 
-# テキストファイルに"Hello, World!"を書き込み
-file.write("Hello, World!")
+# テキストファイルを読み取る
+with open('existing_file.txt', 'r') as file:
+    text = file.read()
+    print(text)
 
-# ファイルをクローズ
-file.close()
-
-# 作成されたファイルを読み込んで出力
-new_file = open("sample.txt", "r")
-print(new_file.read())
-
-#=> "Hello, World!"
+# テキストファイルを追記する
+with open('existing_file.txt', 'a') as file:
+    file.write('これは追加されたテキストです。')
 ```
 
-##深堀り
-テキストファイルを書く際、オープンするモードにより挙動が異なります。`"w"`モードでオープンすると、既存のファイルがあった場合は上書きされ、ファイルが存在しない場合は新しく作成されます。また、ファイルをクローズすることでメモリの解放やデータの保存が行われます。
+## 詳細：
+テキストファイルを書くことは、情報を古くからの方法で保存する一般的な方法です。他の方法としては、データベースやプログラミング言語固有の形式を使用する方法があります。テキストファイルを書くには、「open」関数を使用し、モードを指定してファイルを開きます。また、ファイルを読み取る際には、ファイルを閉じるまでメモリ上にデータが保持されることに注意してください。
 
-また、ファイルをオープンした後は、ファイルオブジェクトのメソッドを使用してファイルへの書き込みや読み込みを行います。例えば、`write()` メソッドを使用することでテキストを書き込むことができます。
-
-##参考リンク
-- [Python入門 (基本文法編)](https://www.python.jp/train/basic/intro.html)
-- [Pythonのopen関数について](https://qiita.com/kgsi/items/fb6a281f957e96d65e0d)
+## 関連リンク：
+- [Pythonのopen関数について（公式ドキュメント）](https://docs.python.org/ja/3/library/functions.html#open)
+- [テキストファイルを書き込む方法（Qiitaの記事）](https://qiita.com/kaityo256/items/11e9af781b580a6414ff)
+- [プログラムでのテキストファイルの生成方法（Tech Academyの記事）](https://www.tech-learn.net/2020/04/10374.html)

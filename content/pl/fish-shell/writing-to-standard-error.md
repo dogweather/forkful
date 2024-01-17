@@ -1,7 +1,7 @@
 ---
-title:                "Pisanie do standardowego wyjścia błędu"
-html_title:           "Fish Shell: Pisanie do standardowego wyjścia błędu"
-simple_title:         "Pisanie do standardowego wyjścia błędu"
+title:                "Pisanie do standardowego błędu"
+html_title:           "Fish Shell: Pisanie do standardowego błędu"
+simple_title:         "Pisanie do standardowego błędu"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Files and I/O"
@@ -10,31 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+Co to jest pisanie do standardowego błędu i dlaczego programiści to robią?
 
-Kodowanie w Fish Shell jest jednym z najbardziej popularnych sposobów na wykonywanie poleceń w terminalu. Jedną z ważnych umiejętności jest pisanie do standardowego błędu (stderr). W tym krótkim artykule dowiecie się, dlaczego warto nauczyć się tego podstawowego aspektu programowania w Fish Shell.
+Pisanie do standardowego błędu jest jedną z wielu technik używanych przez programistów, aby wyświetlić informacje dla użytkownika. Jest to oparta na tekście metoda komunikacji, która jest używana do wyświetlania komunikatów o błędach, ostrzeżeń lub informacji diagnostycznych. Programiści wykorzystują to, aby poinformować użytkownika o problemach z programem lub w celu uzyskania dodatkowych informacji dla celów debugowania.
 
-## Jak to zrobić
+Jak to zrobić:
 
-Pisanie do stderr jest wyjątkowo proste w Fish Shell. Wystarczy użyć specjalnego operatora `>&2` w linii kodu, aby wysłać dane do standardowego błędu. Poniżej przedstawiamy przykładowy kod, który wyświetla błąd w przypadku podania błędnych argumentów podczas uruchamiania skryptu:
+```Fish Shell``` oferuje wiele możliwości dzięki wbudowanej funkcji ```echo```. Można jej użyć do wyświetlenia tekstu na standardowym wyjściu, a także do standardowego błędu. Na przykład, jeśli chcemy wyświetlić komunikat o błędzie, użyjemy polecenia:
 
-```Fish Shell
-if not test -f $argv[1]
-    echo "Podany plik nie istnieje" >&2
-    exit 1
-end
+```
+echo "Błąd: Nie udało się otworzyć pliku!"
 ```
 
-W tym przykładzie, jeśli podany plik nie istnieje, zostanie wyświetlona wiadomość błędu na standardowym wyjściu błędu. Możesz również użyć `2>` aby przekierować wyjście błędu do pliku.
+To spowoduje wyświetlenie tekstu "Błąd: Nie udało się otworzyć pliku!" na standardowym wyjściu. Jeśli jednak chcemy wyświetlić komunikat o ostrzeżeniu, możemy użyć specjalnego flagi ```--stderr```, która spowoduje wyświetlenie tekstu na standardowym błędzie:
 
-## Deep Dive
+```
+echo --stderr "Uwaga: Użytkownik nie został znaleziony!"
+```
 
-Większość programów i skryptów generuje wyjście błędu w celu poinformowania użytkownika o ewentualnych błędach lub problemach. Pisanie do standardowego błędu jest szczególnie przydatne w przypadku skryptów, gdy chcemy wyświetlić wiadomość błędu i przerwać wykonanie dalszej części kodu.
+To spowoduje wyświetlenie tekstu "Uwaga: Użytkownik nie został znaleziony!" na standardowym błędzie.
 
-W Fish Shell, możemy również użyć funkcji `fish_add_error_handler` w celu definiowania własnych obsług błędów i wyświetlania spersonalizowanych wiadomości. Możesz się nauczyć więcej na temat tej funkcji poprzez wpisanie `help fish_add_error_handler` w terminalu.
+Głębszy zanurzenie:
 
-## Zobacz także
+Historia pisanie do standardowego błędu sięga początków programowania i tekstowego interfejsu użytkownika. W przeszłości programiści musieli polegać na wyświetlaniu tekstu na terminalu w celu komunikacji z użytkownikiem. Dziś metoda ta jest nadal wykorzystywana, ponieważ jest szybka, prosta i skuteczna.
 
-- [Dokumentacja Fish Shell](https://fishshell.com/docs/current/index.html)
-- [Oficjalny Poradnik Fish Shell](https://fishshell.com/docs/current/index.html#tut_friendly)
-- [Poradnik na temat pisanie skryptów w Fish Shell](https://fishshell.com/docs/current/commands.html#commands-writingScripts)
+Alternatywne metody wyświetlanie informacji dla użytkownika to na przykład użycie okien dialogowych czy logów. Jednak pisanie do standardowego błędu jest najbardziej przydatne w momencie, gdy występuje błąd lub potrzebna jest informacja diagnostyczna. Jest to również szybsze i prostsze niż otwieranie okna dialogowego lub przeszukiwanie logów.
+
+Jeśli chodzi o implementację, pisanie do standardowego błędu jest obsługiwane przez system operacyjny. Programista musi tylko wywołać odpowiednie polecenie, aby wyświetlić tekst na standardowym wyjściu lub błędzie.
+
+Zobacz również:
+
+- Oficjalna dokumentacja ```Fish Shell``` na temat pisania do standardowego błędu: https://fishshell.com/docs/current/cmds/echo.html
+- Wprowadzenie do ```Fish Shell``` dla początkujących: https://fishshell.com/docs/current/tutorial.html
+- Inne metody wyświetlania informacji dla użytkownika w programowaniu: https://www.geeksforgeeks.org/information-gui-vs-command-line-interface/

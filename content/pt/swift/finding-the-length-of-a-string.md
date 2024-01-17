@@ -10,54 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+## O que é e por que é importante?
 
-Você já se perguntou como os seus aplicativos favoritos conseguem calcular o número de caracteres em uma string? Saber como encontrar o comprimento de uma string é uma habilidade essencial para qualquer programador Swift.
+Encontrar o comprimento ou tamanho de uma string é uma tarefa comum e importante para os programadores em Swift. O comprimento de uma string é simplesmente a quantidade de caracteres que ela contém, incluindo espaços, símbolos e números. Saber o tamanho de uma string é útil para muitas operações, como formatar saídas de dados ou validar entradas do usuário.
 
-## Como fazer
+## Como fazer:
 
-Encontrar o comprimento de uma string é simples e pode ser feito de várias maneiras. Vamos dar uma olhada em algumas opções:
-
-```Swift
-let string = "Hello, world!"
-let length = string.count
-print(length) //Output: 13
-```
-
-Neste exemplo, usamos o método built-in `count` para encontrar o comprimento da string "Hello, world!". O resultado é armazenado na variável `length` e depois impresso na console.
-
-Também podemos usar o método `characters.count` para encontrar o comprimento de uma string:
+Para encontrar o comprimento de uma string em Swift, podemos usar o método `count` na própria string. Veja um exemplo:
 
 ```Swift
-let string = "Hello, world!"
-let length = string.characters.count
-print(length) //Output: 13
+let minhaString = "Olá mundo!"
+let tamanho = minhaString.count
+print("O tamanho da string é \(tamanho).") // Output: O tamanho da string é 12.
 ```
 
-Este método é semelhante ao `count`, mas é útil quando queremos encontrar o número de caracteres em uma string que contém símbolos especiais ou emojis.
+Como podemos ver, o tamanho da string é retornado como um valor numérico que podemos usar em outras partes do código.
 
-Outra opção é usar um loop `for` para iterar por cada caractere da string e adicionar 1 ao comprimento a cada iteração:
+## Aprofundando:
 
-```Swift
-let string = "Hello, world!"
-var length = 0
+Encontrar o comprimento de uma string é algo que os programadores têm feito há décadas em diferentes linguagens de programação. No entanto, a maneira como isso é feito pode variar de linguagem para linguagem. Em Swift, usar o método `count` é a maneira mais eficiente e direta de encontrar o tamanho de uma string. Uma alternativa seria usar um laço de repetição para iterar por cada caractere da string e contar manualmente.
 
-for _ in string {
-    length += 1
-}
+## Veja também:
 
-print(length) //Output: 13
-```
-
-Embora esta opção seja um pouco mais verbosa, é útil se quisermos adicionar alguma lógica adicional ao nosso código.
-
-## Mergulho Profundo
-
-Você pode estar se perguntando por que existem duas maneiras de encontrar o comprimento de uma string (`count` e `characters.count`). Isso ocorre porque, em Swift 4, os caracteres individuais em uma string não são mais considerados como coleção de caracteres. Em vez disso, uma string é considerada como uma coleção de caracteres em qualquer formato, incluindo símbolos especiais e emojis, e isso exigiu a introdução do método `characters.count`.
-
-Além disso, se você estiver interessado em compreender melhor como o método `count` funciona, ele usa o `UTF16View`, que é uma representação em UTF-16 de uma string. Isso significa que o método `count` não leva em conta o número de bytes em uma string, mas sim o número de elementos em sua representação UTF-16.
-
-## Veja também
-
-- [Guia da Apple sobre strings em Swift](https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/StringsAndCharacters.html)
-- [Documentação oficial da Apple sobre a propriedade `count`](https://developer.apple.com/documentation/swift/string/2894481-count)
+- Documentação oficial da Apple sobre strings em Swift: https://developer.apple.com/documentation/swift/string
+- Tutorial interativo sobre strings em Swift: https://www.hackingwithswift.com/quick-start/strings/introduction

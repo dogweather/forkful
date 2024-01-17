@@ -1,7 +1,7 @@
 ---
-title:                "转换字符串为小写"
-html_title:           "C#: 转换字符串为小写"
-simple_title:         "转换字符串为小写"
+title:                "将字符串转换为小写"
+html_title:           "C#: 将字符串转换为小写"
+simple_title:         "将字符串转换为小写"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Strings"
@@ -10,32 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么？（Why）
+# 什么和为什么？
 
-为了使字符串具有统一的格式，有时需要将其转换为小写。这样可以确保在字符串比较和搜索时不会因为大小写不同而出现错误。
+在C＃编程中，将字符串转换为小写是一种常见的操作。这意味着将字符串中的所有字母转换为小写形式。程序员经常这样做是因为在比较字符串时，它可以帮助我们忽略字母的大小写，从而使比较更加准确和精确。
 
-## 如何？（How To)
+## 如何做？
 
-使用 C# 中的内置方法 `ToLower()` 可以将字符串转换为小写形式。在下面的示例中，我们将使用两种不同的方法来演示这一过程：
-
-```C#
-string str = "Hello World";
-Console.WriteLine(str.ToLower()); // 输出 "hello world"
-
-// 使用 for 循环手动将每个字符转换为小写形式
-for (int i = 0; i < str.Length; i++)
-{
-    Console.Write(Char.ToLower(str[i])); // 输出 "hello world"
-}
+```
+string input = "HeLLo WoRlD";
+string output = input.ToLower();
+Console.WriteLine(output);
 ```
 
-## 深入了解（Deep Dive)
+这段代码的输出将是 "hello world"。
 
-字符串是不可变类型，这意味着原始字符串本身不会改变，而是返回一个新的字符串。因此，将字符串转换为小写形式会创建一个新的字符串对象。
+## 深入探讨
+尽管转换字符串到小写看起来很简单，但实际上它涉及到了几个步骤。首先，计算机使用ASCII码来表示字母和符号，每个字母都有一个特定的数字代码。小写字母和大写字母的ASCII码是不同的。因此，当我们将字符串转换为小写时，计算机必须将每个字母的ASCII码转换为对应的小写字母的ASCII码。这就是为什么我们可以使用ToLower（）方法来帮助我们实现这一点。
 
-此外，`ToLower()` 方法默认会使用当前系统的文化信息来确定如何进行大小写转换。但如果需要，可以通过使用重载的 `ToLower()` 方法来指定特定的文化信息。
+另一种方法是使用LINQ查询来转换字符串。它可以写成类似下面的形式：
 
-## 更多参考（See Also)
+`string output = string.Join("", input.Select(c => char.ToLower(c)));`
 
-- [Microsoft 文档：ToLower() 方法](https://docs.microsoft.com/en-us/dotnet/api/system.string.tolower)
-- [C# 字符串操作指南](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/strings/)
+这个方法会更慢一些，但是在某些情况下可能更方便和灵活。
+
+## 参考链接
+
+- [String.ToLower 方法 (System) - Microsoft文档](https://docs.microsoft.com/zh-cn/dotnet/api/system.string.tolower?view=netcore-3.1)
+- [ASCII码表 - Baidu百科](https://baike.baidu.com/item/ASCII/309296)

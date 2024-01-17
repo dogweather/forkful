@@ -10,30 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Kya Kyon
+## क्या & क्यों?
 
-Kuch log ek naya project shuru karne ka sochte hai kyunki unke paas kisi specific problem ka solution nahi hai ya fir kisi innovative idea ko execute karna hai. Ek naya project shuru karne se aapko naye skills sikhne ka mauka milta hai aur aap apne talent ko showcase kar sakte hai.
+एक नई परियोजना शुरू करना होता है क्या? इसका मतलब है कि आप नई और रोचक कोडिंग काम से जुड़े हो सकते हैं। इसके आसान, मजेदार और चुनौतीपूर्ण होने के कारण, प्रोग्रामर्स इसे करते हैं।
 
-## Kaise Karein
+## कैसे करें:
 
-Sabse pehle hume Kotlin ka environment setup karna hoga. Uske baad hum ek basic hello world program ko run karke dekhenge. Finally, hum ek naya project create karenge aur usme kuch basic modules ko add karke uska debug karne ka tarika sikhenge.
-
-```Kotlin
+```Kotlin 
 fun main() {
-    println("Namaste Duniya!")
+    println("नई परियोजना शुरू करने के लिए कोड कैसे लिखें?")
+    // आप जानना चाहते हैं न कि कोणसा तरीका अधिक बेहतर है, यहां हम आपको दो तरीके दिखाएंगे।
+ 
+    //तरीका 1: 
+    val projectOne = Project(1, "नई परियोजना");
+    println(projectOne.name);
+ 
+    //तरीका 2:
+    val projectTwo = Project(id=2, name="नई परियोजना");
+    println(projectTwo.id + projectTwo.name);
 }
-
-// Output: Namaste Duniya!
 ```
 
-Ab hum new project start karne ki deep jayenge aur sikhenge ki kuch important factors hote hai jo ek successful project banane mein important hai. Yeh factors include karte hai project ki scope, timeline, budget, resources, aur communication channels. Hum bhi explore karenge ki kaun se tools and technologies project ke liye appropriate hote hai.
+आउटपुट: 
+```
+नई परियोजना शुरू करने के लिए कोड कैसे लिखें? 
+नई परियोजना 
+तरीका 2 संख्या 2 नई परियोजना
+```
 
-## Gehri Taak
+## डीप डाइव:
 
-Ek naya project start karne se pehle hume apne goals aur objectives ko define karna hoga. Agar hum sahi starting point se shuru karenge to baad mein humein project mein kisi bhi tarah ki issue ka samna nahi karna padega. Hum bhi discuss karenge ki kaun se collaboration tools aur project management techniques project ke liye useful hote hai. In sabke saath saath, yeh bhi important hai ki hum project ko regularly review karein aur usme improvements karein jisse hum apne goals tak pahunch sakein.
+इसके अतिरिक्त, प्रोग्रामर्स को ढाँचा, लाइब्रेरी के आवश्यकता, एप्लिकेशन है, जो नई परियोजना शुरू करने के लिए महत्वपूर्ण है। वे भी सक्रिय रूप से काम करते हैं, और नई और बेहतर तकनीकों और विशेषताओं को अपनाते हैं जो उन्हें अपने प्रोजेक्ट्स में शातिर करते हैं।
 
-## Dekhiye Bhi
+## देखें भी:
 
-- [Kotlin official website](https://kotlinlang.org/)
-- [IntelliJ IDEA - the recommended IDE for Kotlin development](https://www.jetbrains.com/idea/)
-- [Kotlin for Android development](https://developer.android.com/kotlin)
+https://kotlinlang.org/docs/tutorials/getting-started.html
+https://www.jetbrains.com/help/idea/creating-and-running-your-first-kotlin-application.html

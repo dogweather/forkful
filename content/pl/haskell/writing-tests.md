@@ -10,44 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego pisać testy w Haskellu?
+## Co i Dlaczego?
+Pisanie testów to proces, w którym programiści tworzą kod, który sprawdza, czy dany kod działa poprawnie. Jest to ważna część tworzenia oprogramowania, ponieważ pomaga w wykrywaniu błędów i zapewnieniu, że program działa zgodnie z oczekiwaniami.
 
-Czasy, kiedy programiści uważali testowanie za zbędny luksus, już dawno minęły. W dzisiejszych czasach, kiedy projekty są coraz większe i bardziej skomplikowane, testy stają się niezbędną częścią tworzenia oprogramowania. W przypadku języka Haskell, który promuje funkcjonalność, pisanie testów jest szczególnie ważne. Pozwala to zapewnić, że nasze funkcje działają zgodnie z oczekiwaniami i nie występują w nich niepożądane efekty uboczne.
+## Jak to zrobić:
+Przykłady kodu i wyjścia można znaleźć poniżej:
 
-## Jak napisać testy w Haskellu?
-
-Aby napisać testy w Haskellu, możesz skorzystać z biblioteki HUnit. Najpierw, musisz zaimportować ją do swojego pliku:
-
-```
+```Haskell
+-- importowanie modułu do testowania
 import Test.HUnit
+
+-- funkcja, którą chcemy przetestować
+myFunction :: Int -> Int
+myFunction x = x * 2
+
+-- testowanie funkcji
+testMyFunction1 = TestCase (assertEqual "2 razy 2 to 4" 4 (myFunction 2))
+testMyFunction2 = TestCase (assertEqual "3 razy 3 to 9" 9 (myFunction 3))
+
+-- grupowanie testów
+tests = TestList [TestLabel "testMyFunction1" testMyFunction1, TestLabel "testMyFunction2" testMyFunction2]
+
+-- wywołanie wszystkich testów
+main = do
+  runTestTT tests
+  return ()
 ```
 
-Następnie, możesz definiować testy przy użyciu funkcji `TestList`. Przykładowy test może wyglądać tak:
-
+Output:
 ```
-test1 = TestCase (assertEqual "Dodawanie do siebie dwóch liczb" (2+2) 4)
-```
-
-Aby uruchomić ten test, musisz użyć funkcji `runTestTT` w głównej funkcji `main`:
-
-```
-main = runTestTT test1
+Cases: 2  Tried: 2  Errors: 0  Failures: 0
+Counts {cases = 2, tried = 2, errors = 0, failures = 0}
 ```
 
-Jeśli test się nie powiedzie, zobaczysz odpowiednie komunikaty w konsoli. Aby przetestować wiele przypadków, możesz użyć funkcji `TestLabel` do nazwania każdego testu i umieścić je w liście:
+## Głębszy Zanurzenie:
+Pisanie testów ma swoje korzenie w koncepcji TDD (Test Driven Development) i jest szeroko stosowane w dzisiejszym świecie programowania. Alternatywą dla pisania testów jest manualne sprawdzanie kodu, co jest bardziej czasochłonne i podatne na błędy. W implementacji testów w języku Haskell wykorzystuje się biblioteki takie jak HUnit, QuickCheck czy SmallCheck.
 
-```
-tests = TestList [TestLabel "Test dodawania" test1, TestLabel "Test odejmowania" test2]
-```
-
-## Dogłębne zagłębienie
-
-Podczas pisania testów w Haskellu, warto pamiętać o kilku ważnych aspektach. Po pierwsze, testy powinny być proste i łatwe do zrozumienia. W przeciwnym razie, zmiana testów może stać się koszmarem. Po drugie, testy powinny być niezależne od siebie. Nie powinno być zależności pomiędzy testami, ponieważ może to prowadzić do błędów i pomyłek. Oznacza to, że każdy test powinien testować tylko jedną funkcję lub pojedynczy scenariusz.
-
-Warto również pamiętać o wyjątkach i niepożądanych efektach ubocznych. Testowanie funkcji, które wywołują inne funkcje lub mają niezależne efekty uboczne jeszcze bardziej zwiększa potrzebę pisania testów.
-
-## Zobacz również
-
-- [Documentation for HUnit](https://hackage.haskell.org/package/HUnit)
-- [Haskell School of Expression](https://www.cs.yale.edu/homes/hudak/SOE/)
-- [10 Minute Test-Driven Development in Haskell](https://medium.com/@dinosanciagopardo/test-driven-haskell-a-how-to-2d10cabba19e)
+## Zobacz także:
+- Dokumentacja Haskell dla HUnit: https://hackage.haskell.org/package/HUnit-1.6.0.0/docs/Test-HUnit.html
+- Tutoriale związane z pisaniem testów w Haskell: https://wiki.haskell.org/Testing_guidelines
+- Poradnik do TDD w języku Haskell: https://medium.com/@jamesacarr/test-driven-development-on-real-haskell-projects-106618141f84

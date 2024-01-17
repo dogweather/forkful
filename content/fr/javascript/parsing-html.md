@@ -10,36 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Qu'est-ce que le parsing HTML et pourquoi les programmeurs le font-ils?
 
-L'analyse du HTML est essentielle pour extraire des données précieuses à partir d'une page Web. Cela peut être utile pour le développement de sites Web, l'automatisation de tâches ou l'extraction de données pour l'analyse et la visualisation.
+Le parsing HTML est le processus de lecture et d'analyse du code HTML pour le convertir en une structure de données utilisable par le navigateur. Les programmeurs font cela pour permettre à leurs sites web d'être interprétés correctement par les navigateurs et d'afficher le contenu de manière cohérente.
 
-## Comment faire
+## Comment faire:
 
-Pour analyser le HTML en utilisant Javascript, vous pouvez utiliser la méthode native `document.querySelector()` pour sélectionner un élément spécifique à partir du DOM. Par exemple, si vous souhaitez extraire le contenu d'une balise `<p>`, vous pouvez utiliser le sélecteur `p` : 
+Voici un exemple simple de parsing HTML en utilisant Javascript:
 
-```javascript
-const pElement = document.querySelector('p');
-console.log(pElement.textContent);
+```Javascript
+const html = "<h1>Bienvenue sur mon site web!</h1>"; // html à parser
+const parser = new DOMParser(); // création du parseur
+const parsedHtml = parser.parseFromString(html, 'text/html'); // parsing de l'HTML
+console.log(parsedHtml.getElementsByTagName('h1')[0].innerText); // affiche "Bienvenue sur mon site web!" dans la console
 ```
 
-Vous pouvez également utiliser un outil externe tel que Cheerio pour simplifier l'extraction de données à partir du DOM. Par exemple, pour extraire tous les liens d'une page HTML, vous pouvez utiliser :
+## Plongée en profondeur:
 
-```javascript
-const $ = cheerio.load(html);
-$('a').each((index, element) => {
-  console.log($(element).attr('href'));
-});
-```
+Le parsing HTML existe depuis le début du web, car c'était la façon dont les navigateurs ont commencé à afficher le contenu des sites web. Avant HTML5, le parsing était plutôt rudimentaire et pouvait entraîner des erreurs si le code était mal formé. Maintenant, il existe des alternatives comme JSON, mais le parsing HTML reste la méthode la plus courante pour afficher des pages web.
 
-## Plongée en profondeur
+## Voir aussi:
 
-L'analyse du HTML en Javascript est possible grâce aux méthodes natives telles que `querySelector()` et `querySelectorAll()`. Cependant, ces méthodes peuvent être limitées lorsqu'il s'agit de structures de pages complexes ou de données dynamiques. Dans de tels cas, il peut être plus efficace d'utiliser un outil externe tel que Puppeteer pour simuler un navigateur et accéder au DOM.
+Pour en savoir plus sur le parsing HTML et Javascript, voici quelques liens utiles:
 
-Il est également important de comprendre la structure du HTML pour une analyse précise. Vous devrez peut-être utiliser des méthodes supplémentaires telles que `getAttribute()` pour accéder aux attributs des éléments HTML.
-
-## Voir aussi
-
-- [Document.querySelector()](https://developer.mozilla.org/fr/docs/Web/API/Document/querySelector)
-- [Cheerio](https://cheerio.js.org/)
-- [Puppeteer](https://pptr.dev/)
+- [La spécification HTML5](https://www.w3.org/TR/html52/)/
+- [La documentation officielle de Javascript](https://developer.mozilla.org/fr/docs/Web/JavaScript)
+- [Un tutoriel sur le parsing HTML en Javascript](https://devdocs.io/domparser/)

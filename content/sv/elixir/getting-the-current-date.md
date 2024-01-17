@@ -1,7 +1,7 @@
 ---
-title:                "Hämta nuvarande datum"
-html_title:           "Elixir: Hämta nuvarande datum"
-simple_title:         "Hämta nuvarande datum"
+title:                "Att få den aktuella datumen"
+html_title:           "Elixir: Att få den aktuella datumen"
+simple_title:         "Att få den aktuella datumen"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Dates and Times"
@@ -10,36 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
+Att få den aktuella datumet är en viktig del av programmering, eftersom det låter oss hantera och spåra tidsbaserade händelser i våra program. Detta inkluderar allt från schemaläggning av uppgifter till att beräkna ålder och hantera tidszoner.
 
-Att kunna får dagens datum är en grundläggande funktion som många program behöver. Oavsett om man bygger en kalenderapplikation eller ett bokningssystem, är det viktigt att kunna få den nuvarande datumen för att skapa en användarvänlig och strukturerad upplevelse.
-
-## Så här gör du
-
-För att få det nuvarande datumet i Elixir, finns det en inbyggd funktion som heter `Date.utc_today()`. Genom att använda denna funktion får man tillbaka en sträng i formatet YYYY-MM-DD, vilket är standardformatet för datum och tid i ISO 8601. Här är ett exempel på hur man använder funktionen:
+## Hur du gör:
+För att få den aktuella datumet i Elixir kan du använda funktionen `:calendar.local_time()`. Det är en inbyggd funktion som returnerar ett tupel med det aktuella datumet som första element och klockslaget som andra element. Exempelvis:
 
 ```Elixir
-current_date = Date.utc_today()
-IO.puts "Idag är det " <> current_date
+{:ok, date_time} = :calendar.local_time()
+IO.puts("Idag är det #{date_time.date}")
 ```
 
-Det här skulle resultera i output: "Idag är det 2021-09-14". Genom att använda `<>` operatören, kan vi sammanfoga strängar i Elixir.
-
-## Djupdykning
-
-Det finns också andra sätt att få det nuvarande datumet i Elixir. En annan inbyggd funktion som är tillgänglig är `Date.utc_now()`, som returnerar datumet och tiden i UTC-tidzon. Denna funktion tar också emot ett argument för att ange den önskade tidszonen. Här är ett exempel:
+Detta kommer att skriva ut den aktuella datumet i formatet DD/MM/YYYY. Om du behöver ett specifikt datum kan du också använda funktionen `:calendar.date_to_gregorian_days()` som tar emot ett datum som argument och returnerar det som antal dagar sedan det gregorianska kalendariet startade. Exempelvis:
 
 ```Elixir
-current_datetime = Date.utc_now("Europe/Stockholm")
-IO.puts "Nu är det " <> current_datetime
+today = Date.utc_today()
+days_since_epoch = :calendar.date_to_gregorian_days(today)
+IO.puts("Idag är det #{days_since_epoch} dagar sedan det gregorianska kalendariet startade.")
 ```
 
-Det här skulle ge output: "Nu är det 2021-09-14 15:00:00.000000Z", baserat på den nuvarande tiden i Stockholm, Sverige.
+## Djupdykning:
+För att få en bättre förståelse av hur den aktuella datumet fungerar i Elixir, är det viktigt att förstå bakgrunden. Elixir är byggt på Erlang som i sin tur är inspirerat av språket Prolog. I Prolog används datumet som ett sätt att matcha och söka efter data. Elixir har ärvt denna funktionalitet genom pattern matching, vilket låter oss jämföra datum på ett enkelt sätt.
 
-Det finns också ytterligare bibliotek som erbjuder mer avancerade funktioner för att hantera datum och tid i Elixir, såsom "timex" och "calendar" biblioteken. Dessa kan vara värdefulla att utforska om man behöver mer specifika datum- och tidsfunktioner.
+En annan metod för att få den aktuella datumet är att använda biblioteket `Calendar` som erbjuder ett brett utbud av funktioner för att hantera datum och tider. Detta kan vara användbart om du behöver göra mer avancerade beräkningar eller arbeta med olika tidszoner.
 
-## Se även
-
-- Officiell dokumentation för `Date` modulen i Elixir: https://hexdocs.pm/elixir/Date.html
-- "timex" biblioteket för mer avancerad datum och tidsbehandling: https://hexdocs.pm/timex/readme.html
-- "calendar" biblioteket för datum och tidsberäkningar: https://hexdocs.pm/calendar/readme.html
+## Se även:
+- Officiell dokumentation för Elixir's `Calendar` bibliotek: https://hexdocs.pm/elixir/Calendar.html 
+- En tutorial om hur man hanterar datum och tider i Elixir: https://elixirschool.com/sv/lessons/basics/dates/

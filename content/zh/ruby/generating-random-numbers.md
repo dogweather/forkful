@@ -1,7 +1,7 @@
 ---
-title:                "生成随机数"
-html_title:           "Ruby: 生成随机数"
-simple_title:         "生成随机数"
+title:                "产生随机数"
+html_title:           "Ruby: 产生随机数"
+simple_title:         "产生随机数"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Numbers"
@@ -10,43 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
+## 做什麼和為什麼？
+隨機數字生成是指使用電腦程式來產生一系列看似無規律的數字。程序員之所以這麼做，是因為隨機數字在很多應用中都扮演著重要的角色。例如遊戲中的隨機地圖生成、加密技術中的密鑰生成等等。
 
-有时候，在编程中需要使用随机数。比如，当需要选择一个随机元素时，或者创建一个随机的游戏环境。
-
-## 如何使用
-
+## 如何：
+首先，我們需要使用 `rand` 方法來產生隨機數字。這個方法可以接受一個參數，指定數字的上限。舉例來說，如果我們想要產生一個 1 到 10 之間的隨機數字，可以使用下面的程式碼：
 ```Ruby
-# 生成一个 0-100 之间的随机整数
-random_number = rand(0..100) 
-# => 42
+rand(10) + 1
+```
+這個表達式的結果會是從 1 到 10 之間的一個整數。如果我們想要產生一個小數，可以使用 `rand` 方法的另一個版本 `rand()`，這個方法會產生介於 0 到 1 之間的一個小數，例如：
+```Ruby
+rand()
+# 輸出可能是 0.8269941163249325 或 0.12461126459170875
+```
+此外，我們也可以利用 `range` 物件來產生一個指定範圍的隨機數，例如：
+```Ruby
+(1..5).to_a.sample
+# 輸出可能是 1、2、3、4 或 5 的隨機數字
 ```
 
-```Ruby
-# 从给定的数组中随机选择一个元素
-fruits = ["apple", "banana", "orange", "kiwi"]
-random_fruit = fruits.sample
-# => "orange"
-```
+## 深入探討：
+隨機數字在現代電腦技術中已經被廣泛運用，其歷史可追溯到 20 世紀。最初，程式員們使用物理現象來產生隨機數，例如擲骰子或翻硬幣。現在，我們通常使用電腦生成偽隨機數，即看似隨機但實際上是按規律生成的數字。除了 `rand` 方法外，Ruby 也提供了其他生成隨機數的方法，例如 `Random` 類別和 `SecureRandom` 模組。如果想要了解更多有關在電腦中生成隨機數的實作細節，可以參考以下資源。
 
-```Ruby
-# 创建一个随机的多项选择题
-questions = ["What is the capital of France?", "What is 2 + 2?", "What color is an orange?"]
-random_question = questions.sample
-# => "What is 2 + 2?"
-```
-
-## 深入了解
-
-Ruby 提供了内置的 `rand` 方法来生成随机数。它可以接收两个参数，第一个参数是范围的起始值，第二个参数是结束值。例如 `rand(0..100)` 可以生成一个 0 到 100 之间的随机整数。
-
-如果需要从给定的数组中随机选择一个元素，可以使用 `sample` 方法。它会随机选择一个元素并返回。除了数组，还可以使用 `sample` 方法来从字符串、哈希表等数据结构中随机选择元素。
-
-## 猜一个数字游戏
-
-为了深入了解随机数生成，我们可以一起来创建一个“猜一个数字”的游戏。首先，我们需要生成一个 1 到 100 之间的随机整数作为目标数字，让用户猜测。每次用户猜测，我们都会给出提示，比如猜测的数字是否在目标数字的左边或右边。直到用户猜对为止，游戏会一直进行。
-
-## 查看也可以
-
-- [Ruby doc - Random class](https://ruby-doc.org/core-2.7.1/Random.html)
-- [Ruby Monk - Generating Random Numbers](https://rubymonk.com/learning/books/4-ruby-primer-ascent/chapters/45-more-classes/lessons/112-generating-random-numbers)
+## 參考資料：
+- [Ruby `rand` 方法文檔](https://ruby-doc.org/core-3.0.0/Kernel.html#method-i-rand)
+- [Ruby `Random` 類別文檔](https://ruby-doc.org/core-3.0.0/Random.html)
+- [Ruby `SecureRandom` 模組文檔](https://ruby-doc.org/stdlib-3.0.0/libdoc/securerandom/rdoc/SecureRandom.html)
+- [如何在電腦中生成隨機數？](https://blog.csdn.net/On2hill/article/details/89094593) (中文文章)

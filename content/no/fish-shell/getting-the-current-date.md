@@ -1,7 +1,7 @@
 ---
-title:                "Hente nåværende dato"
-html_title:           "Fish Shell: Hente nåværende dato"
-simple_title:         "Hente nåværende dato"
+title:                "Få nåværende dato"
+html_title:           "Fish Shell: Få nåværende dato"
+simple_title:         "Få nåværende dato"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Dates and Times"
@@ -10,41 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hva & Hvorfor?
 
-Så hvorfor skulle noen bry seg om å få den nåværende datoen? Tja, det kan være flere grunner til det. Kanskje du ønsker å sette opp en automatisk påminnelse for et viktig møte eller en begivenhet, eller kanskje du bare vil følge med på hvilken dag det er. Uansett grunn, så er det alltid nyttig å kunne få den nåværende datoen raskt og enkelt.
+Å få den nåværende datoen er en viktig funksjon for programmerere, da den lar dem hente og vise den aktuelle datoen under kjøring. Dette kan være nyttig for å organisere og presentere informasjon på en relevant måte.
 
-## Slik gjør du det
+# Hvordan:
 
-For å få den nåværende datoen i Fish Shell, kan du bruke innebygde funksjoner som kalles variabler. Variabelen "today" vil gi deg den nåværende datoen i formatet "dd.mm.yyyy". Du kan bruke denne variabelen i dine kommandoer, for eksempel:
+Fish Shell har en innebygd kommando,```date```, for å hente den nåværende datoen. Dette kan gjøres ved å følge disse enkle trinnene:
 
-```Fish Shell
-echo I dag er $today
+1. Åpne Fish Shell-terminalen.
+2. Skriv inn ```date``` og trykk Enter.
+3. Du vil nå se den nåværende datoen i formatet "Day Month Date Hour:Minute:Second Timezone Year".
+
+Eksempel output:
+
+``` 
+Fri 19 Feb 16:50:09 CET 2021
 ```
 
-Dette vil skrive ut "I dag er [dato]" i terminalen din. Du kan også tilpasse måten datoen blir vist på ved å bruke "date" kommandoen. For eksempel, hvis du vil ha datoen i formatet "mm/dd/yy", kan du bruke:
+# Dypdykk:
 
-```Fish Shell
-echo Dagens dato er (date +%m/%d/%y)
-```
+Funksjonen for å få den nåværende datoen er ikke begrenset til Fish Shell, men er tilgjengelig i de fleste skall (shells). Dette inkluderer BASH, CSH og ZSH. I tillegg, for å få en mer spesifikk datoformat, kan du bruke flagg som ```date -r``` for å vise dato og klokkeslett for en spesifikk fil og ```date +%B``` for å få kun månedsnavnet.
 
-Dette vil skrive ut "Dagens dato er [dato]". Som du kan se, vil "date" kommandoen fungere som en funksjon som returnerer datoen i ønsket format.
+# Se også:
 
-Et annet nyttig triks er å få den nåværende dagen i uken. Dette kan gjøres ved å bruke variabelen "day". For eksempel:
-
-```Fish Shell
-echo I dag er det $day
-```
-
-Dette vil skrive ut "I dag er det [dag i uken]". Du kan kombinere denne variabelen med "date" kommandoen for å få en fullstendig uttrykt dato og dag i uken.
-
-## Grav dypere
-
-Hvis du vil ha mer detaljert informasjon om datoen, kan du bruke "cal" kommandoen. Denne kommandoen vil vise kalenderen for den nåværende måneden, og du kan også velge å vise kalenderen for en spesifikk måned og år hvis ønskelig. Ved å bruke "cal" kommandoen med "--year" og "--month" flagg kan du spesifisere året og måneden for kalenderen du vil se.
-
-En annen nyttig kommando er "date -I". Dette vil gi deg datoen i det internasjonale formatet "yyyy-mm-dd". Dette er nyttig hvis du trenger å sortere eller sammenligne datoer i et skript.
-
-## Se også
-
-- [Fish Shell documentation](https://fishshell.com/docs/current/)
-- [A Beginner's Guide to Fish Shell](https://www.freecodecamp.org/news/a-beginners-guide-to-fish-shell/)
+For mer informasjon om å få den nåværende datoen i Fish Shell, sjekk ut dokumentasjonen på [Fish Shell-nettstedet](https://fishshell.com/docs/current/commands.html#date). Du kan også se [date-kommandoen i Linux manualen](http://man7.org/linux/man-pages/man1/date.1.html).

@@ -1,7 +1,7 @@
 ---
-title:                "ディレクトリが存在するかを確認する"
-html_title:           "Gleam: ディレクトリが存在するかを確認する"
-simple_title:         "ディレクトリが存在するかを確認する"
+title:                "ディレクトリの存在を確認する"
+html_title:           "Gleam: ディレクトリの存在を確認する"
+simple_title:         "ディレクトリの存在を確認する"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Files and I/O"
@@ -10,34 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+---
 
-あなたはディレクトリが存在するかどうかを確認するのに興味があるかもしれません。これは、ファイルやデータベースの作成、読み書き、編集などのプログラミングタスクを行う際に、重要なステップです。
+Gleam: ディレクトリの存在を確認する
 
-## 方法
+## 何か? それは何ですか？
 
-ディレクトリの存在をチェックする方法は、Gleamの"File"モジュールを使用することです。下記のコード例を参考にしてください。
+ディレクトリの存在を確認するとは、コンピュータ上にある特定のフォルダーが実際に存在するかどうかを判断することです。プログラマーは、プログラムが正しく実行されるために、必要なディレクトリが存在するかどうかを確認する必要があります。
+
+## 方法：
+
+Gleamでは、```fs.exists```関数を使用してディレクトリの存在を確認することができます。まず、必要なモジュールをインポートします。
 
 ```Gleam
-import File
+import fs
 
-// ディレクトリが存在するかどうかをチェック
-let result = File.exists("path/to/directory")
-
-// 結果を表示
-IO.print("Directory exists: " ++ String.to_bool_string(result))
 ```
 
-上記のコードを実行すると、指定したディレクトリが存在する場合には"Directory exists: true"、存在しない場合には"Directory exists: false"と表示されます。
+次に、```fs.exists```を使用してディレクトリが存在するかどうかをチェックします。チェックするディレクトリのパスを指定し、結果をBool値として返します。
 
-詳細な情報やオプションパラメータを使用する方法については、Gleamの公式ドキュメントをご参照ください。
+```Gleam
+let dir = "/Users/johndoe/documents"
+let exists = fs.exists(dir)
 
-## ディープダイブ
+/* 出力
+true
+*/
+```
 
-ディレクトリのチェックには、単純に存在を確認するだけでなく、指定したディレクトリが実際にディレクトリであるかどうかを確認することもできます。また、オプションパラメータを使用することで、パーミッションのチェックや非同期の処理も行えます。
+もしくは、存在しないディレクトリをチェックした場合には、false値を返します。
 
-## 詳しくは以下を参照
+```Gleam
+let dir = "/Users/johndoe/pictures"
+let exists = fs.exists(dir)
 
-- [Gleam 公式ドキュメント - Fileモジュール](https://gleam.run/modules/file/)
-- [Gleam 公式ドキュメント - File.exists関数](https://gleam.run/guide/functions/)
-- [Gleam 公式ドキュメント - ファイルまたはディレクトリの作成方法](https://gleam.run/guide/file-io/)
+/* 出力
+false
+*/
+```
+
+## 詳細を見る
+
+ディレクトリの存在を確認する必要性は、プログラミングの歴史に関わるものです。昔のコンピュータでは、エラーメッセージは不親切だったため、プログラム実行時に必要なフォルダーがないとエラーが発生していました。そのため、事前にディレクトリの存在を確認することが重要になりました。
+
+Gleamでは、```fs.exists```以外にも、ファイルシステムに関する機能を提供しているため、ディレクトリの存在確認だけでなく、他のファイル操作も可能です。また、別の方法として、コマンドラインでディレクトリをチェックすることもできます。
+
+## 関連情報を見る
+
+- ```fs``` モジュールの公式ドキュメント: https://gleam.run/modules/fs.html
+- より詳細なファイル操作方法を学ぶ: https://en.wikibooks.org/wiki/Gleam/FileSystem/File_I/O
+- コマンドラインでディレクトリをチェックする方法: https://www.geeksforgeeks.org/check-if-a-directory-exists-in-a-given-path-in-python/

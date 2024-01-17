@@ -10,49 +10,63 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+Salut à tous les programmeurs et programmeuses ! Aujourd'hui, nous allons parler de YAML et comment l'utiliser avec le Fish Shell. Si vous êtes curieux(se) de savoir ce qu'est YAML et pourquoi les programmeurs l'utilisent, suivez le guide !
 
-Si vous êtes un amateur de programmation, il est fort probable que vous ayez entendu parler de YAML. Cette syntaxe de données est de plus en plus populaire, et est utilisée par de nombreux langages de programmation pour stocker et gérer des données structurées. Dans cet article, nous allons explorer comment utiliser YAML dans votre shell Fish.
+## Qu'est-ce que YAML et pourquoi l'utiliser ?
 
-## Comment faire
+YAML, ou "YAML Ain't Markup Language", est un format de données qui permet de structurer et stocker des informations de manière lisible et structurée. Cela peut sembler un peu compliqué, mais c'est en fait très utile pour les développeurs car cela leur permet de stocker des configurations ou des données dans un format facilement accessible et modifiable.
 
-La première étape pour travailler avec YAML dans Fish Shell est d'installer le plugin correspondant. Pour ce faire, vous pouvez utiliser la commande suivante :
+## Comment faire ?
 
-```Fish Shell
-omf install yaml
-```
-
-Une fois le plugin installé, vous pouvez utiliser la commande `yq` pour travailler avec des fichiers YAML. Par exemple, pour afficher le contenu d'un fichier YAML, vous pouvez utiliser la commande suivante :
+Pour utiliser YAML avec le Fish Shell, il vous suffit d'installer le plugin `fish-yaml` en utilisant la commande suivante :
 
 ```Fish Shell
-yq read fichier.yaml
+omf install fish-yaml
 ```
 
-Pour ajouter une nouvelle entrée dans le fichier YAML, vous pouvez utiliser la commande `yq write` en spécifiant le chemin de la nouvelle clé et sa valeur, comme ceci :
+Une fois le plugin installé, vous pouvez commencer à travailler avec YAML en utilisant les commandes `yaml get` et `yaml set`, qui vous permettent de récupérer et modifier des données dans un fichier YAML.
+
+Par exemple, si vous avez un fichier YAML nommé `config.yml` avec les données suivantes :
+
+```yaml
+fruit:
+  - pomme
+  - banane
+  - kiwi
+```
+
+Vous pouvez utiliser la commande `yaml get` pour récupérer le deuxième élément de la liste `fruit` :
 
 ```Fish Shell
-yq write fichier.yaml chemin.clé "nouvelle valeur"
+yaml get config.yml fruit[2]
 ```
 
-Vous pouvez également utiliser `grep` pour rechercher des éléments spécifiques dans un fichier YAML :
+Et vous obtiendrez en sortie le résultat suivant :
+
+```
+banane
+```
+
+Vous pouvez également utiliser la commande `yaml set` pour modifier les valeurs d'un fichier YAML. Par exemple, si vous voulez ajouter un nouveau fruit à la liste, vous pouvez utiliser cette commande :
 
 ```Fish Shell
-yq read fichier.yaml | grep "élément recherché"
+yaml set config.yml fruit[3] "orange"
 ```
+
+Et si vous vérifiez le contenu de votre fichier YAML, vous verrez que le nouvel élément a bien été ajouté à la liste.
 
 ## Plongée en profondeur
 
-Maintenant que vous savez comment utiliser les commandes principales pour travailler avec YAML dans Fish Shell, regardons de plus près les différentes manières de modifier et d'analyser des fichiers YAML.
+YAML a été créé en 2001 et a été conçu pour être un format de données facilement lisible par les humains. Il est souvent utilisé pour stocker des configurations de logiciels, des données de test ou même du contenu de sites web.
 
-Vous pouvez modifier un fichier YAML en utilisant des expressions régulières avec `sed`. Par exemple, pour remplacer toutes les occurences d'une chaîne de caractères dans un fichier YAML, vous pouvez utiliser la commande suivante :
+Il existe d'autres formats de données similaires à YAML, tels que JSON et XML, mais YAML se distingue par sa simplicité et sa lisibilité. En plus du Fish Shell, il est également pris en charge par de nombreux autres langages de programmation.
 
-```Fish Shell
-sed -i "s/ancienne_chaîne/nouvelle_chaîne/g" fichier.yaml
-```
+Si vous voulez en savoir plus sur les syntaxes et les fonctionnalités avancées de YAML, vous pouvez consulter la documentation officielle sur leur site web.
 
-De plus, si vous avez besoin d'analyser un fichier YAML avec des scripts, vous pouvez utiliser la bibliothèque Python `pyyaml` pour le faire facilement.
+## À voir également
 
-## Voir aussi
+Si vous voulez en savoir plus sur les plugins pour le Fish Shell, vous pouvez consulter la [documentation officielle](https://fishshell.com/docs/).
 
-- [Documentation officielle Fish Shell](https://fishshell.com/docs/current/index.html)
-- [Github du plugin YAML pour Fish Shell](https://github.com/fishery/yaml)
+De plus, si vous utilisez YAML pour stocker des configurations, vous pourriez également être intéressé par le plugin de completion `fish-getopt` qui vous permet d'analyser et de traiter facilement des fichiers de configuration en utilisant la convention `getopt`.
+
+Merci d'avoir lu cet article sur l'utilisation de YAML avec le Fish Shell. Nous espérons que cela vous a été utile dans votre travail de développement ! N'hésitez pas à explorer et à découvrir d'autres fonctionnalités intéressantes du Fish Shell. Happy coding !

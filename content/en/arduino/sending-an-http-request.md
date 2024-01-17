@@ -10,67 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-You may be wondering why someone would want to send an HTTP request using their Arduino board. Well, the answer is simple - to access and retrieve data from the internet! By sending an HTTP request, you can communicate with web servers and retrieve information that can enhance your projects, such as weather data or real-time stock prices.
+Sending an HTTP request means establishing communication between a client (like your computer) and a server (like a website). Programmers do it to retrieve data from a server, such as a web page or an API response.
 
-## How To
+## How To:
 
-To send an HTTP request using Arduino, you'll need an Ethernet or WiFi shield to connect your board to the internet. Once you have that set up, here's a simple code example using the built-in WiFi library:
-
+To send an HTTP request using Arduino, you'll need the Ethernet library. Below is a basic example using the GET method:
 ```
-#include <WiFi.h> //include WiFi library
-char ssid[] = "Your Network Name"; //replace with your network name
-char password[] = "Your Network Password"; //replace with your network password
-int status = WL_IDLE_STATUS; //wifi connection status
-WiFiClient client;
+#include <Ethernet.h>
 
-void setup() {
-  Serial.begin(9600); //initialize serial communication
-  while (!Serial) {} //wait for serial port to connect
-  //attempt to connect to WiFi network
-  while (status != WL_CONNECTED) {
-    Serial.print("Attempting to connect to Network named: ");
-    Serial.println(ssid);
-    status = WiFi.begin(ssid, password);
-  }
-  Serial.println("Connected to Wifi!"); //print confirmation message
-}
+byte server[] = { 192,168,1,1 }; // server IP address
+char page[] = "/samplepage.html"; // page to request
 
-void loop() {
-  //establish connection with server
-  if (client.connect("example.com", 80)) {
-    Serial.println("Successfully connected to server!");
-    //send HTTP request
-    client.println("GET / HTTP/1.1");
-    client.println("Host: example.com");
-    client.println("Connection: close");
-    client.println();
-  }
-  else {
-    Serial.println("Connection failed."); //print error message
-  }
+EthernetClient client;
+
+if (client.connect(server, 80)) { // connect to server on port 80
+  client.print("GET ");
+  client.print(page);
+  client.println(" HTTP/1.1");
+  client.println("Host: 192.168.1.1");
+  client.println("Connection: close"); // close connection after response
+  client.println(); // end of request
 }
 ```
 
-This code connects your board to your WiFi network and sends a basic HTTP GET request to the server "example.com". Make sure to replace the network name and password with your own, as well as edit the server in the code to the one you want to communicate with.
+The output will be the response from the server, which you can read and parse in your code.
 
-Upon running this code, you should see the serial monitor print out a successful connection message. You can also add another `Serial.println()` statement to print out the response from the server, which can be useful for troubleshooting.
+## Deep Dive:
 
-## Deep Dive
+HTTP (Hypertext Transfer Protocol) was created in 1989 by Tim Berners-Lee for exchanging information on the World Wide Web. It is now widely used for communication between clients and servers. There are several HTTP methods, such as GET, POST, PUT, and DELETE, that specify the type of request being made.
 
-Now, let's break down the `client.println()` statements in the code. The first line, `GET / HTTP/1.1`, is the actual HTTP request. The "GET" method is used to retrieve data from the server, and the "/" after it is the path or resource you want to access. In this case, we are accessing the root directory of the server. The "HTTP/1.1" indicates the HTTP version being used.
+Apart from using the Ethernet library, you can also send HTTP requests using a WiFi shield or module. Additionally, you can use libraries like HttpClient or ESP8266HTTPClient for simplified implementation.
 
-The next line, `Host: example.com`, tells the server which host or domain you want to access. This is necessary for servers that host multiple websites or have different IP addresses.
+When sending an HTTP request, you must specify the correct header information, including the method, URL, and host. You can also add any necessary headers, such as authentication or content-type.
 
-The third line, `Connection: close`, specifies the type of connection to be used. In this case, we are closing the connection after the request is made. Other options include "keep-alive", which keeps the connection open for multiple requests, and "upgrade", which requests a different protocol for the connection.
+## See Also:
 
-It's important to note that in order to receive a response from the server, you may need to add a `delay()` statement after sending the request. This gives the server time to process the request and send a response back.
-
-## See Also
-
-For more information on sending HTTP requests using Arduino, check out these resources:
-
-- [Arduino WiFi library documentation](https://www.arduino.cc/en/Reference/WiFi)
-- [HTTP GET request tutorial by Programming Electronics Academy](https://programmingelectronics.com/http-requests-with-arduino/)
-- [ESP8266 HTTP GET tutorial by Random Nerd Tutorials](https://randomnerdtutorials.com/esp8266-http-get-request-getting-started/)
+- Official Ethernet Library documentation: https://www.arduino.cc/en/Reference/Ethernet
+- Alternatives to sending HTTP requests on Arduino: https://www.arduino.cc/en/Reference/WiFi101
+- Arduino HttpClient library: https://github.com/amcewen/HttpClient
+- ESP8266HTTPClient library: https://github.com/esp8266/Arduino/tree/master/libraries/ESP8266HTTPClient

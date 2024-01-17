@@ -1,7 +1,7 @@
 ---
-title:                "Napsaustaminen alamerkkijonoista"
-html_title:           "PHP: Napsaustaminen alamerkkijonoista"
-simple_title:         "Napsaustaminen alamerkkijonoista"
+title:                "Aliljonojen erottaminen"
+html_title:           "PHP: Aliljonojen erottaminen"
+simple_title:         "Aliljonojen erottaminen"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Strings"
@@ -10,35 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
-Miksi joku haluaisi käyttää alastringien hakua PHP:ssa? Yksinkertaisesti siksi, että se on tehokas tapa käsitellä merkkijonoja ja hakea tiettyjä tietoja suuremmista merkkijonoista.
+Mitä & miksi?
 
-## Kuinka
-Substringien hakeminen PHP:ssa on helppoa ja nopeaa. Käytämme tähän strpos() -funktiota, joka palauttaa merkkijonon tietyn alastringin ensimmäisen esiintymän sijainnin. Tämän jälkeen voimme käyttää substr() -funktiota hakeaksemme haluamamme alastringin.
+Substringien etsiminen on yksi tapa käsitellä merkkijonoja PHP-ohjelmoinnissa. Se tarkoittaa tietyn osan merkkijonosta poimimista ja sen käsittelemistä erillisenä yksikkönä. Tämä voi auttaa ohjelmoijaa käsittelemään ja manipuloimaan tekstin osia tarvittavalla tavalla.
 
-Esimerkiksi, jos haluamme hakea alistringin "maailma" merkkijonosta "Hello maailma!", voimme käyttää seuraavaa koodia:
+Miksi ohjelmoijat sitten käyttävät substringeja? Syitä on monia, kuten esimerkiksi tekstin analysointi ja käsittely, tiettyjen sanojen tai merkkijonojen etsiminen suuremmasta kokonaisuudesta tai esimerkiksi tekstin muotoiluun liittyvät tarpeet.
 
-```PHP
-$merkkijono = "Hello maailma!";
-$sijainti = strpos($merkkijono, "maailma");
-$alistring = substr($merkkijono, $sijainti, 7);
-echo $alistring; // tulostaa "maailma"
+Kuinka?
+
+Alla on kaksi yksinkertaista esimerkkiä siitä, kuinka substringeja voi etsiä ja käsitellä PHP:n avulla.
+
+### Esimerkki 1:
+
+```php
+$teksti = "Tervehdys maailma!";
+$substring = substr($teksti, 8);
+echo $substring;
 ```
+Tulos: _maailma_
 
-Voimme myös asettaa alistringin aloituskohdan ja pituuden itse. Esimerkiksi, jos haluamme hakea "maailma" alistringin "Hello maailma!" -merkkijonon lopusta, voimme käyttää seuraavaa koodia:
+Kuten esimerkistä nähdään, ```substr()```-funktio ottaa kaksi parametria: ensimmäisenä merkkijonon ja toisena halutun alueen aloituskohdan. Tässä tapauksessa aloitamme merkkijonosta kohdasta 8 ja loppuosa palautuu tuloksena olevaan muuttujaan.
 
-```PHP
-$merkkijono = "Hello maailma!";
-$alistring = substr($merkkijono, -7, 7);
-echo $alistring; // tulostaa "maailma"
+### Esimerkki 2:
+
+```php
+$teksti = "123456789";
+$substring = substr($teksti, 3, 4);
+echo $substring;
 ```
+Tulos: _4567_
 
-## Syvempi sukellus
-Hakemalla alastringejä PHP:ssa, voimme myös käyttää erilaisia hakuparametrejä, kuten alistringin sijoittumista merkkijonon sisällä ja alistringin suuruutta. Voimme myös käyttää regex-sääntöjä (regular expressions) alistringin hakemiseen, mikä tekee prosessista vieläkin monipuolisemman.
+Tässä esimerkissä käytetään myös kolmatta parametria, joka määrittää halutun alueen pituuden. Tässä tapauksessa haluamme etsiä neljä merkkiä aloittaen kohdasta 3.
 
-On kuitenkin tärkeää huomata, että alistringien haku voi aiheuttaa ongelmia, jos käsiteltävänä oleva merkkijono muuttuu. Tällöin sijainti ja pituus, joilla olemme hakenneet alastringiä, eivät enää ole oikein.
+## Syvemmälle
+
+//TODO
 
 ## Katso myös
-- [PHP strpos dokumentaatio](https://www.php.net/manual/en/function.strpos.php)
-- [PHP substr dokumentaatio](https://www.php.net/manual/en/function.substr.php)
-- [Regular expressions in PHP](https://www.php.net/manual/en/book.pcre.php) (englanniksi)
+
+- PHP:n [virallinen dokumentaatio](https://www.php.net/manual/en/function.substr.php)
+- Videotutoriaali [substringien käytöstä PHP:ssä](https://www.youtube.com/watch?v=8-4jsK3B9I8)
+- [Substringien käyttömahdollisuuksia](https://www.codecademy.com/courses/learn-php/lessons/php-substrings/exercises/substr?action=resume_content_item) käytännössä.

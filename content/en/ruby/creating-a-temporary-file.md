@@ -10,38 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-Creating temporary files is a common practice in programming, especially in languages like Ruby where memory management is handled by the operating system. These temporary files serve as a temporary storage space for data and can be useful in various situations such as data processing, file handling, and testing.
+Creating temporary files is a common practice in programming, where developers need to temporarily store data or information during the execution of a program. Temporary files are created and used only for a specific purpose and are discarded once the program has finished running. This helps in avoiding clutter and maintaining the overall efficiency of the program. 
 
-## How To
+## How to:
 
-To create a temporary file in Ruby, you can use the `Tempfile` class from the `tempfile` library. Here's an example:
+To create a temporary file in Ruby, we can use the `Tempfile` class. An instance of this class can be created by passing in a prefix for the file name. Once the data has been written to the file, we can open it using the `open` method and perform operations on it. Here's an example: 
 
 ```Ruby
-require 'tempfile'
-
-temp_file = Tempfile.new('my_temp_file') # specify a prefix for the file name
-temp_file.write('This is a temporary file.') # write some data to the file
-puts temp_file.path # print the path of the file
-temp_file.close # close the file
+require 'tempfile' 
+file = Tempfile.new("data") 
+file.write("This is a temporary file.") 
+file.open 
+puts file.read 
+# Output: This is a temporary file.
 ```
 
-Output:
-
-```
-/var/folders/5k/0426t1xj071d4plg5gwlz9m00000gn/T/my_temp_file20190917-35979-c2ri1s # the file path will be different for each execution
-```
-
-As you can see, the `Tempfile.new` method creates a file with a unique name in the system's temporary directory. You can also pass in an optional `mode` parameter to specify the file's permissions.
+After the program has finished executing, the temporary file is automatically deleted. We can also specify a specific directory for the temporary file by passing in a directory path as a second argument to the `Tempfile.new` method. 
 
 ## Deep Dive
 
-Behind the scenes, the `Tempfile` class uses the `File.open` method to create the temporary file. This means that all the methods available in the `File` class, such as `#write` and `#close` can be used on a `Tempfile` object as well.
+The concept of creating temporary files has been around for a long time and is commonly used in operating systems as well. However, with the advancement of programming languages and technologies, developers now have the option to use alternative methods for temporary data storage, such as in-memory databases. 
 
-One important thing to note is that the file will be automatically deleted when the `Tempfile` object is garbage collected or when the program terminates. If you want to explicitly delete the file, you can use the `#unlink` method.
+In Ruby, another way to create temporary files is by using the `File` class and the `Dir` class. However, using the `Tempfile` class is considered a better option as it ensures proper handling and deletion of the file. The `Tempfile` class also provides additional methods for file operations.
+
+While creating temporary files, it is important to consider security measures to prevent any unauthorized access or manipulation of the data. In Ruby, we can set permissions for the temporary file using the `chmod` method from the `File` class.
 
 ## See Also
 
-- [Official Ruby Documentation for Tempfile Class](https://ruby-doc.org/stdlib-2.6.5/libdoc/tempfile/rdoc/Tempfile.html)
-- [Ruby Guides: Working with Temporary Files](https://www.rubyguides.com/2015/04/working-with-temporary-files/)
+To learn more about the `Tempfile` class, check out the official Ruby documentation: 
+https://ruby-doc.org/stdlib-2.7.1/libdoc/tempfile/rdoc/Tempfile.html
+
+To explore alternative methods for temporary data storage in Ruby, take a look at in-memory databases like `PStore` and `Memcached`: 
+https://ruby-doc.org/stdlib-2.7.1/libdoc/pstore/rdoc/PStore.html 
+https://memcached.org/

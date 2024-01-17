@@ -10,48 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
-Warum sollte man etwas auf die Standardfehlerausgabe schreiben? Nun, es ist eine effektive Möglichkeit, Fehlermeldungen und Warnungen aus Ihrem Programm zu überwachen und diese Informationen an Entwickler oder Benutzer weiterzugeben.
+Was und Warum?
 
-## Wie geht das?
-Um auf die Standardfehlerausgabe zu schreiben, müssen Sie das Modul `std::io` importieren und die Funktion `io::stderr()` verwenden, um einen Handle auf die Standardfehlerausgabe zu erhalten. Dann können Sie die Funktion `write()` verwenden, um eine Nachricht auf die Standardfehlerausgabe zu schreiben. Hier ist ein Beispielcode:
+Das Schreiben auf den Standardfehler ist eine Möglichkeit für Programmierer, Fehlermeldungen und andere wichtige Informationen während der Laufzeit ihres Programms anzuzeigen. Es gibt uns die Möglichkeit, kritische Informationen auf eine separate Ausgabe zu senden, anstatt sie zwischen den regulären Programmausgaben zu verlieren.
 
-```Rust
-use std::io;
-use std::io::Write;
-
-fn main() {
-    let mut stderr = io::stderr();
-    stderr.write(b"Dies ist eine Fehlermeldung.").unwrap();
-}
-```
-Das `write()` Funktion nimmt eine Schnittstelle als Argument, daher nutzen wir hier `b` um unsere Nachricht in ein Byte-Slice zu konvertieren.
-
-Die Ausgabe würde so aussehen:
+Wie zu:
 
 ```Rust
-Dies ist eine Fehlermeldung.
+eprintln!("Dies ist eine Fehlermeldung!");
 ```
 
-## Tieferer Einblick
-Wussten Sie, dass die Standardfehlerausgabe auch in den `println!` und `eprintln!` Makros verwendet werden kann? Diese Makros schreiben ihre Argumente zur Standardausgabe beziehungsweise zur Standardfehlerausgabe und fügen automatisch einen Zeilenumbruch hinzu. So können Sie Ihre Fehlermeldungen und Warnungen etwas eleganter gestalten. Hier ist ein Beispiel:
+Standardfehler kann in Rust mit der Funktion `eprintln!` aufgerufen werden. Wir können dem Aufruf auch eine Zeichenkette übergeben, die die Fehlermeldung oder andere relevante Informationen enthält. Diese Zeichenkette wird dann auf den Standardfehler ausgegeben.
+
+Wenn wir unser Programm ausführen, sehen wir die Zeichenkette auf der Konsole anders ausgegeben als die regulären Programmausgaben:
 
 ```Rust
-fn main() {
-    let num = 42;
-    eprintln!("Oh nein! Die Zahl {} ist zu groß.", num);
-    println!("Aber keine Sorge, ich ignoriere einfach alle Zahlen über 10.");
-}
+Dies ist eine Fehlermeldung!
 ```
 
-Die Ausgabe würde so aussehen:
+Tiefe Tauchgänge:
 
-```Rust
-Oh nein! Die Zahl 42 ist zu groß.
-Aber keine Sorge, ich ignoriere einfach alle Zahlen über 10.
-```
+Es hat sich erwiesen, dass das Schreiben auf den Standardfehler eines der nützlichsten Tools für die Fehlerbehandlung in Programmiersprachen ist. Es ermöglicht uns, wichtige Informationen zu erhalten, ohne das Programm zu unterbrechen oder die Ausgaben zu verfälschen.
 
-See Also
-- [std::io - Rust Standard Library](https://doc.rust-lang.org/std/io/)
-- [Rust By Example: I/O](https://doc.rust-lang.org/rust-by-example/std_misc/io.html)
-- [The Rust Book: Standard Input and Output](https://doc.rust-lang.org/book/ch09-00-error-handling.html)
+Es gibt auch Alternativen, um auf den Standardfehler zu schreiben, wie zum Beispiel die Funktion `error!` in der Standardbibliothek von Rust. Diese Funktion ermöglicht es uns, Fehlermeldungen nach Bedarf zu formatieren, anstatt nur eine Zeichenkette auszugeben.
+
+Die Umsetzung des Schreibens auf den Standardfehler erfolgt in Rust auf systemunabhängige Weise, was bedeutet, dass es in verschiedenen Betriebssystemen funktionieren sollte, ohne dass zusätzlicher Code erforderlich ist.
+
+Siehe auch:
+
+- Dokumentation der `eprintln!` Funktion in der Rust-Standardbibliothek: https://doc.rust-lang.org/std/macro.eprintln.html
+- Artikel über das Schreiben auf den Standardfehler in verschiedenen Programmiersprachen: https://www.jstorimer.com/blogs/workingwithcode/7766093-when-to-use-stderr-instead-of-stdout

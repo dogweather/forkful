@@ -10,53 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hvorfor
+==============
 
-Å skrive tester kan virke som en ekstra byrde når du allerede har mye kode å skrive. Men å inkludere tester i koden din kan spare deg for mye tid og frustrasjon på lang sikt. Tester hjelper deg med å finne feil tidlig i utviklingsprosessen, noe som gjør det enklere og raskere å rette dem. De bidrar også til å sikre at koden din fortsetter å fungere som forventet når du gjør endringer eller legger til ny funksjonalitet.
+## Hva & Hvorfor?
 
-# Hvordan
+Testing i programmering er en måte å sjekke om koden vår fungerer som den skal. Det er en viktig del av utviklingsprosessen fordi det hjelper oss med å oppdage og fikse feil før de når brukerne våre.
 
-For å skrive tester i Gleam, bruker vi rammeverket Gleam Expect. Dette lar oss definere forventet oppførsel for funksjonene våre, og kjøre tester for å sørge for at de faktisk oppfører seg som de skal. La oss se på et eksempel:
+## Slik gjør du det:
 
-```
-Gleam Expect.suite "Tester for addisjonsfunksjon"
-  "Skal returnere summen av to tall" {
-    Gleam Expect.equal (Calculator.addition 2 3) 5
-  }
-```
-Dette kodeeksempelet definerer en test-suite med en enkel test. Vi forventer at funksjonen `addition` fra en hypotetisk `Calculator`-modul skal returnere summen av to tall, og sjekker at dette faktisk skjer ved å bruke `Gleam Expect.equal`.
+Gleam kommer med et innebygd bibliotek som heter `gleam/test` for å hjelpe oss med å skrive tester. La oss se på et enkelt eksempel:
 
-For å kjøre testene våre, kan vi kjøre følgende kommando i terminalen:
+```Gleam
+import gleam/test
 
-```
-gleam test
-```
+pub fn add(a: Int, b: Int) -> Int {
+  a + b
+}
 
-Dette vil deretter vise resultatene av testene våre, og gi oss beskjed om noen feiler.
-
-# Dypdykk
-
-I Gleam kan vi også skrive tester på typer for å sikre at de oppfører seg som forventet. Dette kan være spesielt nyttig når vi jobber med komplekse datastrukturer eller moduler som er avhengige av bestemte typer.
-
-For eksempel kan vi definere en test for å sjekke at en liste kun inneholder heltall:
-
-```
-Gleam Expect.suite "Tester for liste-typer"
-  "Skal bare tillate heltall i en liste" {
-    let valid_list = [1,2,3]
-    let invalid_list = ["a", 1, 2]
-
-    Gleam Expect.all [
-      Gleam Expect.type_valid Int valid_list
-      Gleam Expect.type_valid Int invalid_list
-    ]
-  }
+test "add should add two numbers" {
+  assertion expect(add(2,3)) to_equal(5)
+}
 ```
 
-Her bruker vi `Gleam Expect.type_valid` for å sjekke at typen til elementene i en liste er som forventet. Dette kan være nyttig når vi ønsker å sikre at funksjoner kun tar inn bestemte typer, eller når vi ønsker å unngå utilsiktede feil i kodesnuttene våre.
+Her importerer vi test-biblioteket og bruker `test`-funksjonen til å opprette en ny test. Inne i testen kaller vi `expect`-funksjonen for å sjekke om `add`-funksjonen gir riktig resultat når vi gir den to tall. Hvis testen feiler, vil vi få en feilmelding med informasjon om hvilken forventet og faktisk verdi som ikke stemmer.
 
-# Se også
+For å kjøre testene våre, kan vi bruke `gleam test`-kommandoen i terminalen. Da vil Gleam kjøre alle testene våre og gi oss en oversikt over hvilke som har passert og eventuelle feil som ble funnet.
 
-- [Gleam dokumentasjon for testing](https://gleam.run/documentation/unit_testing)
-- [Gleam Expect dokumentasjon](https://gleam.run/documentation/expect)
-- [Eksempelprosjekt med Gleam tester](https://github.com/gleam-lang/gleam-test-example)
+## Dypdykk:
+
+Det å skrive tester er en viktig del av testdrevet utvikling (TDD), en utviklingsmetode hvor man først skriver tester og så koden som skal passe disse testene. Dette hjelper oss med å skrive kode som er mer pålitelig og enklere å vedlikeholde.
+
+Et alternativ til å bruke Gleams innebygde test-bibliotek er å bruke et eksternt bibliotek som heter `gleam-expect`. Dette biblioteket tilbyr flere assert-funksjoner og har også støtte for å kjede flere tester sammen.
+
+Hvis du er interessert i å se hvordan `gleam/test`-biblioteket er implementert, kan du ta en titt på kildene på GitHub: https://github.com/gleam-lang/gleam/blob/master/gleam_stdlib/src/test.gleam
+
+## Se også:
+
+- Gleam sin offisielle dokumentasjon om testing: https://gleam.run/book/testing
+- En introduksjon til TDD med Gleam: https://gleam.run/articles/test-driven-development
+- Eksempelprosjekter på GitHub som bruker test-biblioteket: https://github.com/topics/gleam-test

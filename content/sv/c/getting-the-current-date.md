@@ -1,7 +1,7 @@
 ---
-title:                "Hämta aktuell datum"
-html_title:           "C: Hämta aktuell datum"
-simple_title:         "Hämta aktuell datum"
+title:                "Att få den nuvarande datumet."
+html_title:           "C: Att få den nuvarande datumet."
+simple_title:         "Att få den nuvarande datumet."
 programming_language: "C"
 category:             "C"
 tag:                  "Dates and Times"
@@ -10,51 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
 
-Att kunna få den aktuella datumet i ditt C-program kan vara användbart i många situationer, som att visa när programmet senast kördes eller jämföra datum för att utföra viss åtgärd.
+Att få den aktuella datumet är en mycket vanlig uppgift för programmerare. Det hjälper till att hålla koll på när ett program eller en applikation är i drift och om det behöver uppdateras eller inte.
 
-## Så här gör du
+## Hur man gör:
 
-Först måste vi inkludera en header-fil som heter `time.h` i vårt program. Denna header-fil innehåller funktioner för datum och tidshantering.
+För att få den aktuella datumet i C, används funktionen `time()` tillsammans med `ctime()` för att konvertera tidsinformationen till ett läsbar format. Se kodexemplet nedan:
 
-```
+```C
+#include <stdio.h>
 #include <time.h>
+
+int main() {
+  // Hämtar den aktuella datumet
+  time_t t = time(NULL);
+
+  // Konverterar till ett läsbart format
+  char *aktuellt_datum = ctime(&t);
+
+  // Skriver ut den aktuella datumet
+  printf("Aktuellt datum: %s", aktuellt_datum);
+
+  return 0;
+}
 ```
 
-Sedan behöver vi definiera en variabel av typen `time_t`, vilket är den typ som används för att hålla datum och tid i C-program. Sedan kör vi `time()` för att få den aktuella tiden i sekunder.
-
+### Utskrift:
 ```
-time_t curr_time;
-time(&curr_time);
+Aktuellt datum: Fri Feb 05 12:34:17 2021
 ```
 
-Nu kan vi använda funktionen `localtime()` för att konvertera `time_t`-variabeln till en struktur som innehåller den aktuella lokala tiden. Vi kan också använda `strftime()` för att formatera datumet enligt våra önskemål.
+## Djupdykning:
 
-```
-struct tm *local_time = localtime(&curr_time);
+Att få den aktuella datumet har varit en viktig uppgift för programmerare sedan begynnelsen av datorer. Innan standardbiblioteket `time.h` introducerades, var det mycket mer komplicerat att få den aktuella datumet. Alternativen idag inkluderar användning av API:er från olika operativsystem eller användning av färdiga bibliotek som `boost::date_time` för C++. 
 
-char buffer[80];
-strftime(buffer, 80, "%d/%m/%Y", local_time);
+När funktionen `time()` anropas, returneras antalet sekunder sedan UNIX-epoken (1 januari 1970 00:00:00 UTC). Sedan konverteras detta nummer till en läsbar sträng med funktionen `ctime()`.
 
-printf("Idag är det: %s", buffer);
-```
+## Se även:
 
-Output:
-
-```
-Idag är det: 14/10/2021
-```
-
-## Djupdykning
-
-I vårt exempel använde vi `strftime()` för att formatera datumet enligt vår preferens. Det finns dock många andra sätt att formatera datumet i C-programmering.
-
-`localtime()` returnerar en struktur som innehåller alla element som behövs för att representera datum och tid, som dag, månad, år, timmar, minuter osv. Du kan utforska mer om dessa element och använda dem enligt dina behov.
-
-För mer avancerade användningsområden, kan du också utforska andra funktioner i `time.h`-header-filen som `mktime()` och `difftime()`.
-
-## Se även
-
-- [Time functions in C](https://www.tutorialspoint.com/c_standard_library/time_h.htm)
-- [The beauty of strftime() in C](https://www.codingame.com/playgrounds/2487/c---time-date-and-time-tutorials/the-beauty-of-strftime-in-c)
+- [C time library](https://www.tutorialspoint.com/c_standard_library/time_h.htm)
+- [boost::date_time](https://www.boost.org/doc/libs/1_72_0/doc/html/date_time.html)
+- [Alternative methods for getting current date in C](https://www.geeksforgeeks.org/alternative-ways-get-current-date-java/)

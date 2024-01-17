@@ -1,7 +1,7 @@
 ---
-title:                "Escribir a error estándar"
-html_title:           "C: Escribir a error estándar"
-simple_title:         "Escribir a error estándar"
+title:                "Escribir en el error estándar"
+html_title:           "C: Escribir en el error estándar"
+simple_title:         "Escribir en el error estándar"
 programming_language: "C"
 category:             "C"
 tag:                  "Files and I/O"
@@ -10,51 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¿Qué y por qué?
 
-Es importante aprender a escribir en el estándar de error en C porque es una forma útil de depurar o solucionar problemas en tus programas. Al imprimir mensajes de error en el estándar de error, puedes identificar fácilmente dónde se producen errores en tu código y corregirlos eficientemente.
+Escribir a la salida estándar de error es una técnica común en programación en C. Consiste en imprimir mensajes de error o advertencias en lugar de la salida estándar, lo que permite al programador identificar y corregir errores en su código de manera más eficiente.
 
-## Cómo hacerlo
+## Cómo:
 
-Escribir en el estándar de error en C es muy simple. Todo lo que necesitas es utilizar la función `fprintf()` y especificar `stderr` como el primer argumento. Aquí hay un ejemplo de cómo imprimir un mensaje de error en el estándar de error:
-
-```C
-fprintf(stderr, "Error: No se pudo abrir el archivo.\n");
-```
-
-El `\n` al final del mensaje es un carácter de nueva línea que nos asegura que el mensaje se imprima en una línea separada. Puedes utilizar cualquier otro carácter de escape como `\t` para crear una tabulación en el mensaje.
-
-Ahora, si ejecutas este código y hay un error al abrir el archivo, verás el mensaje impreso en el estándar de error de esta manera:
+Vamos a ver un ejemplo simple de cómo escribir a la salida estándar de error en C:
 
 ```
-Error: No se pudo abrir el archivo.
-```
+#include <stdio.h>
 
-## Profundizando
-
-El estándar de error (`stderr`) es una salida de error predeterminada en la mayoría de los sistemas operativos. Si seleccionas la salida de error en lugar de la salida estándar (`stdout`), tus mensajes de error se imprimirán en un lugar diferente al de la salida de tu programa. Esto es útil, ya que puedes redirigir fácilmente la salida estándar a un archivo mientras mantienes tus mensajes de error en la pantalla.
-
-Otra función útil para escribir en el estándar de error es `perror()`, que toma un argumento de cadena y automáticamente agrega un mensaje de error asociado al valor actual de `errno`. Aquí hay un ejemplo:
-
-```C
-FILE* archivo = fopen("archivo.txt", "r");
-if (archivo == NULL) {
-    perror("Error");
-    exit(EXIT_FAILURE);
+int main() {
+  fprintf(stderr, "¡Hola, Mundo!\n");
+  return 0;
 }
 ```
 
-Si ocurre un error al abrir el archivo, se imprimirá un mensaje como este:
+Este código imprime "¡Hola, Mundo!" en la salida estándar de error, en lugar de en la salida estándar normal.
+
+Al ejecutar este programa, verás el siguiente resultado:
 
 ```
-Error: No existe el archivo o directorio
+¡Hola, Mundo!
 ```
 
-## Otras consideraciones
+## Profundizando:
 
-Recuerda que el estándar de error es una salida no almacenada, lo que significa que no la puedes guardar en una variable. Si necesitas almacenar un mensaje de error para su uso posterior, puedes redirigir la salida estándar a un archivo o utilizar un buffer para guardar el mensaje.
+Escribir a la salida estándar de error tiene una larga historia en la programación en C. Anteriormente, era común que los programadores escribieran mensajes de error a un archivo, lo que requería más código y recursos. Por lo tanto, escribir a la salida estándar de error se convirtió en una alternativa más eficiente y práctica.
 
-## Ver también
+En lugar de utilizar `fprintf` como en el ejemplo anterior, también puedes utilizar la función `perror` para imprimir mensajes de error predefinidos, como en el siguiente ejemplo:
 
-- [La función fprintf en C](https://www.geeksforgeeks.org/fprintf-in-c/)
-- [La función perror en C](https://www.geeksforgeeks.org/perror-in-c/)
+```
+#include <stdio.h>
+
+int main() {
+  FILE *fp = fopen("archivo_que_no_existe.txt", "r");
+  if (fp == NULL) {
+    perror("Error al abrir el archivo:");
+  }
+  return 0;
+}
+```
+
+Este código imprime el mensaje de error "Error al abrir el archivo: No such file or directory" en la salida estándar de error.
+
+## Ver también:
+
+- [Documentación sobre la función fprintf en C](https://www.programiz.com/c-programming/library-function/stdio.h/fprintf)
+- [Escribir a la salida estándar de error en otros lenguajes de programación](https://es.stackoverflow.com/questions/165/por-qu%C3%A9-escribir-en-la-salida-de-error-stderr-rather-than-stdout)

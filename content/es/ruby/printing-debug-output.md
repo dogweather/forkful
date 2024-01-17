@@ -1,7 +1,7 @@
 ---
-title:                "Impresión de salida de depuración"
-html_title:           "Ruby: Impresión de salida de depuración"
-simple_title:         "Impresión de salida de depuración"
+title:                "Imprimiendo salida de depuración"
+html_title:           "Ruby: Imprimiendo salida de depuración"
+simple_title:         "Imprimiendo salida de depuración"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Testing and Debugging"
@@ -10,55 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué?
+# ¿Qué y por qué?
 
-Imprimir mensajes de depuración puede ser útil en la programación para identificar errores y entender cómo funciona el código. Esto es especialmente importante en Ruby, donde existen múltiples formas de imprimir mensajes de depuración.
+El proceso de imprimir salidas de depuración (debug output) es una técnica comúnmente utilizada por los programadores para verificar el funcionamiento de su código y encontrar posibles errores. Al imprimir ciertas variables o mensajes específicos en diferentes puntos de un programa, los desarrolladores pueden tener una mejor comprensión de lo que está sucediendo en cada etapa y así detectar y solucionar problemas más fácilmente.
 
-## ¿Cómo hacerlo?
+# Cómo hacerlo:
 
-Para imprimir mensajes de depuración en Ruby, se pueden utilizar los métodos `p`, `puts` o `print` seguidos del texto o variable que se desea imprimir. Por ejemplo:
+En Ruby, podemos imprimir salidas de depuración utilizando el método `puts` o `p`. A continuación se muestra un ejemplo de cómo imprimir un mensaje y el valor de una variable:
 
-```Ruby
-p "Hola mundo!"
-# Output: "Hola mundo!"
-
-num = 5
-puts "El número es: #{num}"
-# Output: El número es: 5
-
-print "El cuadrado de #{num} es: "
-print num**2
-# Output: El cuadrado de 5 es: 25
+```
+puts "¡Hola Ruby!"
+p x
 ```
 
-También se pueden utilizar estos métodos para imprimir el contenido de un arreglo o hash:
+La salida sería:
 
-```Ruby
-array = [1, 2, 3]
-p array
-# Output: [1, 2, 3]
-
-hash = {nombre: "Ana", edad: 30}
-puts "Mi nombre es #{hash[:nombre]} y tengo #{hash[:edad]} años."
-# Output: Mi nombre es Ana y tengo 30 años.
+```
+¡Hola Ruby!
+42
 ```
 
-Es importante tener en cuenta que `p` imprime el valor literal de una variable, mientras que `puts` y `print` lo convierten a una cadena. Por lo tanto, `p` es especialmente útil para imprimir el valor de una variable booleana o un objeto.
+Aquí podemos ver cómo se imprime el mensaje y el valor de la variable `x`, que en este caso es igual a 42.
 
-## Deep Dive
+# Profundizando:
 
-Además de utilizar los métodos mencionados anteriormente, también se puede utilizar la herramienta `pp` (pretty print) para imprimir objetos complejos de manera más legible. Por ejemplo:
+La impresión de salidas de depuración no es una técnica exclusiva de Ruby, de hecho, se utiliza en muchos otros lenguajes de programación. Sin embargo, Ruby cuenta con algunas características que la hacen especialmente adecuada para esta tarea.
 
-```Ruby
-array = [1, 2, {nombre: "Juan", edad: 25}]
-pp array
-# Output: [1, 2, {:nombre=>"Juan", :edad=>25}]
-```
+Una alternativa común a la impresión de debug output es utilizar un depurador (debugger). Sin embargo, a diferencia de la impresión de salidas, los depuradores requieren de habilidades adicionales y pueden ser más complicados de usar.
 
-En caso de necesitar imprimir mensajes de depuración en una parte específica del codigo, se pueden utilizar las gemas `pry` o `byebug`, las cuales permiten detener la ejecución del código y acceder al contexto actual para inspeccionar variables y objetos.
+En cuanto a la implementación, el método `puts` es más adecuado para imprimir mensajes y `p` para imprimir valores de variables. `p` también incluye información adicional como el tipo de dato de la variable, lo que puede ser útil para la depuración.
 
-## Ver también
+# Ver también:
 
-- [Blog sobre impresión de mensajes de depuración en Ruby](https://blog.honeybadger.io/ruby-debugging-magic-cheat-sheet/)
-- [Documentación oficial de Ruby para el método `p`](https://ruby-doc.org/core-2.7.1/Kernel.html#method-i-p)
-- [Documentación oficial de Ruby para el método `pp`](https://ruby-doc.org/stdlib-2.7.1/libdoc/pp/rdoc/PP.html)
+- [Documentación oficial de Ruby sobre `puts`](https://ruby-doc.org/core-3.0.0/Kernel.html#method-i-puts)
+- [Documentación oficial de Ruby sobre `p`](https://ruby-doc.org/core-3.0.0/Kernel.html#method-i-p)
+- [Aprende a depurar en Ruby](https://www.rubyguides.com/2015/05/byebug/)

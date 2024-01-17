@@ -1,7 +1,7 @@
 ---
-title:                "Utvinning av substrenger"
-html_title:           "Go: Utvinning av substrenger"
-simple_title:         "Utvinning av substrenger"
+title:                "Utvinning av delstrenger"
+html_title:           "Go: Utvinning av delstrenger"
+simple_title:         "Utvinning av delstrenger"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Strings"
@@ -10,79 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hva er det og hvorfor brukes det?
+Ekstrahering av substrings er en metode som lar deg plukke ut en del av en tekststreng og lagre den som en egen variabel. Dette kan være nyttig når du bare trenger en del av en lengre tekst, for eksempel å isolere et søkeord fra en nettside eller å hente ut navnet på en fil fra en filsti. Programmere bruker dette for å gjøre koden sin mer effektiv og for å få nøyaktig den informasjonen de trenger.
 
-Hvorfor vil noen ønske å ekstrahere substringer i en Go-programmeringskode? Vel, det kan være flere grunner til det. Noen ganger trenger vi bare en del av en tekststreng for å bruke det til en bestemt oppgave. Eller kanskje vi ønsker å utføre operasjoner på deler av en tekststreng uten å endre den originale strengen. Uansett hva årsaken måtte være, er det viktig å vite hvordan man ekstraherer substringer i Go for å gjøre koden mer effektiv og hendig.
-
-## Hvordan
-
-For å ekstrahere substringer i Go, kan vi bruke den innebygde funksjonen "substring()" som tar inn en startindeks og lengden på ønsket substring. La oss se på et eksempel:
+## Slik gjør du det:
+Hvis du vil ta ut en substring i Go, kan du bruke funksjonen `Substr()` sammen med indeksering. La oss si at du har en variabel `tekst` med en lang streng, og du bare vil ha de første fem bokstavene. Da kan du skrive `Substr(tekst, 0, 5)` for å få en ny variabel med kun de første fem tegnene. Her er et eksempel:
 
 ```Go
-str := "Hei, dette er en tekststreng"
-sub := str[4:11] // Denne koden vil ekstrahere "dette er" fra den opprinnelige teksten
-
-fmt.Println(sub)
+tekst := "Hei, mitt navn er Go programmering"
+fmt.Println(Substr(tekst, 0, 5))
+```
+Dette vil gi følgende output:
+```
+Hei, m
 ```
 
-Output:
-```Go
-dette er
-```
+## Dykk dypere:
+Å extrahere substrings er ikke en ny metode og har blitt brukt i programmering i lang tid. Tidligere måtte man ofte bruke flere linjer med kode for å nå et tilsvarende resultat, men med Go sin enkle syntaks kan man nå gjøre det på en enkel linje. Alternativene til å bruke `Substr()` i Go er å bruke regulære uttrykk eller for-løkker, men disse metodene kan bli mer kompliserte og krever ofte mer kode. Ved å bruke `Substr()` gjør du koden din mer lesbar og effektiv.
 
-Vi kan også bruke funksjonen "len()" for å finne lengden på en tekststreng, og dermed kan vi ekstrahere en substring basert på dette. La oss ta et annet eksempel:
-
-```Go
-str := "Dette er en lang tekststreng"
-sub := str[4:len(str)-7] // Denne koden vil ekstrahere "er en lang tekst"
-
-fmt.Println(sub)
-```
-
-Output:
-```Go
-er en lang tekst
-```
-
-En annen metode for å ekstrahere substringer er ved hjelp av funksjonen "strings.Split()" som deler en tekststreng basert på et gitt tegn eller delstreng. La oss se et eksempel:
-
-```Go
-str := "Dette,er,en,tekststreng"
-sub := strings.Split(str, ",") // Denne koden vil returnere en liste med substrings ("Dette", "er", "en", "tekststreng")
-
-fmt.Println(sub)
-```
-
-Output:
-```Go
-[Dette er en tekststreng]
-```
-
-## Dypdykk
-
-Å ekstrahere substringer kan også gjøres ved hjelp av Regular Expressions (regex) i Go. Dette er en kraftig metode for å søke etter spesifikke mønstre i en tekststreng og ekstrahere de ønskede delene. For å bruke regex i Go, må vi importere "regexp" pakken og deretter kan vi bruke funksjonen "FindStringSubmatch()" for å ekstrahere substrings basert på et regex-mønster. La oss se på et eksempel:
-
-```Go
-str := "Dette er en tekststreng 12345"
-regex := regexp.MustCompile(`(\w+) (\d+)`) // regex mønsteret som brukes for å ekstrahere tekst før og etter tallet
-substr := regex.FindStringSubmatch(str)
-
-fmt.Println(substr[0]) // Denne koden vil ekstrahere "Dette er en tekststreng 12345" fra den opprinnelige teksten
-fmt.Println(substr[1]) // Denne koden vil ekstrahere "Dette er en tekststreng" 
-fmt.Println(substr[2]) // Denne koden vil ekstrahere "12345"
-```
-
-Output:
-```Go
-Dette er en tekststreng 12345
-Dette er en tekststreng
-12345
-```
-
-Som du kan se, er det flere måter å ekstrahere substringer i Go, avhengig av dine behov og preferanser. Ved å bruke substrings riktig kan vi gjøre koden mer effektiv og lesbar.
-
-## Se også
-
-- [Strings pakken i Go](https://golang.org/pkg/strings/)
-- [Regexp pakken i Go](https://golang.org/pkg/regexp/)
-- [Go regex tutorial](https://gobyexample.com/regular-expressions)
+## Se også:
+- [Go sin offisielle dokumentasjon om Substr()](https://golang.org/pkg/strings/#Substring)
+- [En grundig guide til å bruke Substr() i Go](https://www.calhoun.io/substringing/)
+- [En annen kilde om alternativer til Substr() i Go](https://www.golangprograms.com/substring-a-string-in-golang.html)

@@ -10,53 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+Vad & Varför?
+Att starta ett nytt projekt är när en programmerare börjar arbeta på en ny kodbas eller programvara. Programmare gör detta för att lösa ett specifikt problem eller förbättra en befintlig lösning. Det kan också vara för att utforska nya tekniker och möjligheter.
 
-Att starta ett nytt projekt kan vara ett spännande och givande äventyr för en utvecklare. Det ger dig möjlighet att utmana dig själv och skapa något unikt som kan hjälpa många människor. Dessutom är TypeScript ett språk som växer i popularitet och kan ge dig möjlighet att lära dig nya tekniker och utveckla din kunskap.
-
-## Så här gör du
-
-För att börja ett nytt TypeScript-projekt, behöver du först installera Node.js och TypeScript-compiler. Sedan kan du följa dessa enkla steg:
-
-1. Skapa en ny mapp för ditt projekt och navigera in i den.
-2. Öppna en terminal och skriv ```npm init``` för att skapa en `package.json`-fil.
-3. Installera TypeScript genom att skriva ```npm install typescript --save-dev```.
-4. Skapa en fil som heter `tsconfig.json` med följande innehåll:
-
+Hur man:
 ```TypeScript
-{
-  "compilerOptions": {
-    "target": "es6",
-    "module": "commonjs",
-    "outDir": "dist",
-    "strict": true,
-    "esModuleInterop": true
-  },
-  "include": [
-    "./src/**/*"
-  ],
-  "exclude": [
-    "./node_modules"
-  ]
-}
+// Skapa ett nytt projekt med TypeScript
+tsc --init
+
+// Kompilerar TypeScript till JavaScript
+tsc app.ts
+
+// Köra TypeScript-program
+node app.js
 ```
 
-5. Skapa en mapp som heter `src` och lägg till en fil med namnet `index.ts` som innehåller din första TypeScript-kod.
-6. Navigera till roten av din mapp och skriv ```npx tsc``` för att kompilera din kod till JavaScript och skapa en mapp med namnet `dist`.
-7. Nu kan du börja koda! För att köra din kod, skriv ```node dist/index.js```.
+## Djupdykning:
+Att starta ett nytt projekt är en viktig del av utvecklingsprocessen och kan vara avgörande för dess framgång. Det finns många olika alternativ till TypeScript för att lösa problem, men TypeScript har blivit populärt på grund av dess starka typning och förmåga att identifiera fel vid kompilering. Implementeringen av ett nytt projekt med TypeScript kan vara krävande, men det finns många resurser och dokumentation tillgängliga för att underlätta processen.
 
-## Djupdykning
-
-Att starta ett nytt projekt är en viktig process och det finns många saker att tänka på. Här är några tips som kan hjälpa dig:
-
-- Planera ditt projekt noggrant innan du börjar koda för att undvika onödig omkodning.
-- Utvärdera olika designmönster och välj den som passar ditt projekt bäst.
-- Använd verktyg som Git för att hantera din kod och samarbeta med andra utvecklare.
-- Glöm inte bort att testa din kod noggrant för att försäkra dig om att den fungerar som den ska.
-
-## Se även
-
-- [https://www.typescriptlang.org/](https://www.typescriptlang.org/) - officiell hemsida för TypeScript.
-- [https://github.com/Microsoft/TypeScript](https://github.com/Microsoft/TypeScript) - officiell GitHub-sida för TypeScript.
-- [https://www.nodejs.org/](https://www.nodejs.org/) - officiell hemsida för Node.js.
-- [https://www.npmjs.com/](https://www.npmjs.com/) - officiell hemsida för npm (Node Package Manager).
+## Se även:
+- [TypeScript dokumentation] (https://www.typescriptlang.org/docs/)
+- [10 anledningar till att använda TypeScript] (https://stackify.com/10-reasons-to-use-typescript/)
+- [TypeScript-tutorials] (https://www.tutorialspoint.com/typescript/index.htm)

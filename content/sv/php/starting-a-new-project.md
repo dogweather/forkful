@@ -1,7 +1,7 @@
 ---
-title:                "Att starta ett nytt projekt"
-html_title:           "PHP: Att starta ett nytt projekt"
-simple_title:         "Att starta ett nytt projekt"
+title:                "Att börja ett nytt projekt"
+html_title:           "PHP: Att börja ett nytt projekt"
+simple_title:         "Att börja ett nytt projekt"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Getting Started"
@@ -10,58 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
 
-Om du är nyfiken på hur webbutveckling och programmering fungerar, är PHP en utmärkt plattform att lära sig. Det är ett användarvänligt och populärt språk som används för att skapa dynamiska och interaktiva webbsidor.
+Att starta ett nytt projekt inom programmering betyder att man börjar arbeta på ett nytt program eller en ny applikation. Det kan vara allt från att skriva en enkel kod för att lösa ett specifikt problem till att bygga en komplex hemsida. Programmare startar nya projekt för att utveckla och förbättra sina kunskaper och för att skapa användbara och innovativa lösningar.
 
-## Hur man börjar
+## Hur man gör:
 
-För att starta ett nytt PHP-projekt behöver du en texteditor och en webbläsare. Börja med att skapa en ny fil med filändelsen ".php" och öppna den i din texteditor. Sedan kan vi börja med att skriva en grundläggande "Hello World!"-applikation.
-
-Först behöver vi skriva några enkla HTML-taggar för att skapa en webbsida:
+Ett effektivt sätt att starta ett nytt projekt är att använda PHP, ett populärt programmeringsspråk som är utformat för att bygga dynamiska webbsidor och applikationer. För att starta ett PHP-projekt kan du följa dessa enkla steg:
 
 ```PHP
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Min första PHP-applikation</title>
-</head>
-<body>
-	<h1>Hello World!</h1>
-</body>
-</html>
+<?php
+// Skapa en ny fil med .php förlängning
+// Skriv koden för ditt projekt, till exempel en enkel hemsida
+echo "Välkommen till mitt nya projekt!";
+// Öppna filen i en webbläsare eller köra den via en webbserver
+?>
 ```
 
-Spara filen och öppna den i din webbläsare genom att skriva in filens sökväg i adressfältet. Om allt har gått rätt till bör du nu se en enkel webbsida med stora bokstäver som säger "Hello World!".
+Exempel output:
 
-Nu kommer vi till det roliga, att lägga till PHP-kod. PHP-kod skrivs inom `<?php` och `?>` taggar. Allt innehåll som är innan dessa taggar kommer att tolkas som vanlig HTML. Låt oss ändra vår tidigare kod för att inkludera PHP:
-
-```PHP
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Min första PHP-applikation</title>
-</head>
-<body>
-	<?php
-	echo "<h1>Hello World!</h1>";
-	?>
-</body>
-</html>
+```
+Välkommen till mitt nya projekt!
 ```
 
-Spara filen och uppdatera din webbläsare. Nu bör du se samma output som tidigare, men denna gång använder vi PHP för att skriva ut "Hello World!"-meddelandet.
+## Djupdykning:
 
-## Djupdykning
+PHP lanserades 1995 av Rasmus Lerdorf och har sedan dess utvecklats och förbättrats av ett stort community av programutvecklare. Alternativ till PHP för att starta nya projekt inkluderar andra webbprogrammeringsspråk som till exempel Java, Python och Ruby. Att använda PHP för projektutveckling kräver också en webbserver och databas för att köra koden på.
 
-PHP är ett server-side skriptspråk, vilket innebär att koden körs på servern istället för på din klient. Detta ger dig möjligheten att skapa dynamiska webbsidor som kan anpassas baserat på användarens input och andra faktorer.
+## Se även:
 
-En av de vanligaste anledningarna till att starta ett PHP-projekt är för att bygga en e-handelswebbplats. Detta är möjligt tack vare funktionerna för att hantera data, såsom lagring av användares kundvagnar eller inloggningssystem för att skydda känsliga uppgifter.
+För mer information om hur man startar ett PHP-projekt och för att lära dig mer om programmering, besök följande resurser:
 
-En annan fördel med PHP är dess stora community och ständiga utveckling. Det finns en mängd tillgängliga resurser och dokumentation för att hjälpa dig att lära dig och utveckla din kunskap inom språket. Oavsett om du är en nybörjare eller en erfaren utvecklare, finns det alltid något nytt att lära sig och utforska.
-
-## Se även
-
-- [Officiell PHP-dokumentation](https://www.php.net/manual/sv/)
-- [Codecademy's PHP-kurs](https://www.codecademy.com/learn/learn-php)
-- [W3Schools PHP-tutorial](https://www.w3schools.com/php/)
+- https://www.php.net/ - Hemsidan för PHP där du kan hitta dokumentation, nyheter och resurser för språket.
+- https://www.w3schools.com/php/ - En interaktiv webbplats som erbjuder gratis lektioner och exempel på PHP-kod.
+- https://www.codecademy.com/learn/learn-php - En interaktiv plattform för lärande av programmering, inklusive PHP.

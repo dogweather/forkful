@@ -10,26 +10,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i dlaczego?
+Wysyłanie zapytania HTTP to podstawowa czynność w programowaniu. Polega ona na wysłaniu zapytania do serwera przez program i otrzymaniu odpowiedzi. Programiści wykonują tę czynność w celu pobrania informacji z zewnętrznych źródeł lub komunikacji z innymi programami.
 
-Wysyłanie żądania HTTP jest niezbędnym elementem w programowaniu aplikacji internetowych. Jest to jedna z podstawowych czynności, których musimy się nauczyć, aby móc korzystać z danych zdalnych lub innego serwisu.
-
-## Jak to zrobić
-
-W celu wysłania żądania HTTP w Gleam, musimy użyć funkcji `http.send()`. Poniżej znajduje się przykładowy kod, który wysyła żądanie GET do strony internetowej i drukuje odpowiedź w konsoli.
-
+## Jak to zrobić:
 ```Gleam
-let response = http.send(Request.get("https://example.com"))
-console.log(response.body)
+
+import gleam/http
+
+let res = http.send("https://www.example.com")
+// Tutaj zmienna 'res' będzie zawierać odpowiedź serwera
+
 ```
 
-Wywołanie funkcji `http.send()` zwraca obiekt `Response`, który zawiera informacje o odpowiedzi serwera, w tym status, nagłówki i ciało odpowiedzi.
+## W toku:
+Wysyłanie zapytania HTTP było możliwe dzięki rozwojowi protokołu HTTP w latach 90. Alternatywami dla tej metody komunikacji są między innymi protokoły FTP czy SSH. W Gleam istnieje moduł "http" umożliwiający wysyłanie zapytań i odbieranie odpowiedzi. Implementacja tego modułu jest oparta na języku Erlang, co zapewnia szybkość i niezawodność.
 
-## Wnikliwe zagłębienie
-
-Podczas wysyłania żądania HTTP w Gleam, możemy również ustawić opcje, takie jak nagłówki, parametry lub ciało żądania. Możemy również wybrać metodę wysyłania, na przykład `GET`, `POST` lub `PUT`. Wszystkie dostępne opcje są szczegółowo opisane w oficjalnej dokumentacji Gleam.
-
-## Zobacz także
-
-- Dokumentacja Gleam o wysyłaniu żądania HTTP: https://gleam.run/articles/http-client
-- Przykładowy kod z wykorzystaniem biblioteki HTTP w Gleam: https://github.com/gleam-lang/awesome-gleam#client-side-http-requests
+## Zobacz także:
+- Oficjalna dokumentacja Gleam: https://gleam.run/
+- Moduł "http" Gleam: https://gleam.run/modules/gleam/http/latest/
+- Wprowadzenie do programowania w Gleam: https://medium.com/@lpil/introduction-to-gleam-f818a1f489e0

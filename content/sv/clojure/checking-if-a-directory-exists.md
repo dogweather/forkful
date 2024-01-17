@@ -10,67 +10,22 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
+Att kontrollera om en mapp existerar är en viktig del av programmering eftersom det hjälper till att hantera filer och strukturera koden på ett effektivt sätt. Detta är särskilt användbart när man arbetar med stora projekt som har många filer och mappar.
 
-Om du arbetar med filer och mappar i ditt Clojure-program kan det vara viktigt att kunna kontrollera om en viss mapp finns eller inte. Det kan hjälpa dig att undvika problem och se till att ditt program fungerar korrekt.
-
-## Hur man gör
-
-Det finns två sätt att kontrollera om en mapp finns i din Clojure-kod, beroende på vilken version du använder. Vi kommer att gå igenom båda alternativen nedan.
-
-### För Clojure 1.9 och högre
-
-För att kontrollera om en mapp finns i ditt system, använd funktionen `file?` tillsammans med `file-symlink?` för att hantera symboliska länkar. Här är ett exempel på hur du kan göra det:
+## Hur man gör:
+För att kontrollera om en mapp existerar i Clojure kan du använda funktionen "exists?" från standardbiblioteket "clojure.java.io". Här är ett exempel på hur den kan användas:
 
 ```Clojure
-;; Skapa en väg till mappen du vill kontrollera
-(def path "/home/user/documents/")
-
-(println (file? (io/file path))) ; => true om mappen finns
-(println (file-symlink? (io/file path))) ; => false om mappen inte är en symbolisk länk
+(require '[clojure.java.io :as io])
+(io/exists? "/mapp_namn")
 ```
 
-Om du får "false" som svar på båda anropen betyder det att mappen inte finns eller att den är en symbolisk länk.
+Om mappen existerar kommer funktionen att returnera sann, annars returneras falskt.
 
-### För äldre Clojure-versioner
+## Djupdykning:
+I äldre versioner av Clojure användes funktionen "file-exists?" från "clojure.contrib.io" för att kontrollera mappar, men den har nu ersatts av "exists?" från standardbiblioteket. Det finns också alternativ som "file-seq" och "walk" som kan användas för att iterera genom en mapp och dess undermappar. Funktionen "exists?" använder sig av Java-biblioteket "File" för att utföra kontrollen.
 
-Om du använder en äldre version av Clojure, innan `file?` och `file-symlink?` fanns i språket, kan du använda funktionen `file-seq` för att lista alla filer och mappar i en viss sökväg. Sedan kan du kontrollera om namnet på mappen finns i den listan. Här är ett exempel:
-
-```Clojure
-;; Skapa en väg till mappen du vill kontrollera
-(def check-dir "/home/user/documents/")
-
-;; Hämta lista över filer och mappar i sökvägen
-(def dir-list (file-seq (io/file check-dir)))
-
-;; Kontrollera om mappen finns i listan
-(if (some #(= (:name %) (io/file check-dir)) dir-list)
-  (println "Mappen finns")
-  (println "Mappen finns inte"))
-```
-
-Om du får "Mappen finns" som svar betyder det att mappen finns på den angivna sökvägen.
-
-## Djupdykning
-
-I vissa fall kanske du inte bara vill kontrollera om en mapp finns, utan också få mer information om den. I så fall kan du använda funktionen `file-info` tillsammans med `file?` för att få tillgång till metadata om mappen. Här är ett exempel:
-
-```Clojure
-;; Skapa en väg till mappen du vill undersöka
-(def path "/home/user/documents/")
-
-;; Kontrollera om mappen finns
-(if (file? (io/file path))
-  ;; Hämta metadata om mappen
-  (let [info (file-info (io/file path))]
-    (println "Namn:" (.getName info)) ; => Namnet på mappen
-    (println "Storlek:" (.length info)) ; => Storlek i bytes
-    (println "Skapad:" (.creationTime info)) ; => Datum då mappen skapades
-    (println "Senast ändrad:" (.lastModified info))) ; => Datum då mappen senast ändrades
-  (println "Mappen finns inte"))
-```
-
-## Se även
-
-- [Clojure dokumentation: io/file](https://clojure.github.io/clojure/clojure.java.io-api.html#clojure.java.io/io)
-- [Clojure dokumentation: file-info](https://clojure.github.io/clojure/clojure.java.io-api.html#clojure.java.io/file-info)
+## Se också:
+Officiell dokumentation för "clojure.java.io" - https://clojure.github.io/clojure/clojure.java.io-api.html  
+Exempel på användning av "exists?" från Clojure for the Brave and True - https://www.braveclojure.com/files-directories/

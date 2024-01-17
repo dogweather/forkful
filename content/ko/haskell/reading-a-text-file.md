@@ -10,31 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+# 무엇이고 왜?
 
-텍스트 파일을 읽는 것은 프로그래밍에서 중요한 기능 중 하나입니다. 텍스트 파일을 읽을 수 있다면 다양한 데이터에 접근하고 처리할 수 있어 프로그램의 유연성을 높일 수 있습니다.
+텍스트 파일을 읽는 것은 컴퓨터 프로그래밍에서 매우 중요한 작업입니다. 텍스트 파일은 우리가 일상적으로 사용하는 텍스트 문서와 같은 형식으로 저장된 정보를 포함하고 있습니다. 프로그래머들은 이러한 파일을 읽고 그 안에 저장된 정보를 사용하여 다양한 작업을 수행합니다.
 
-## 방법
+# 방법:
 
-파일을 읽는 다양한 방법 중에서도 Haskell에서는 `System.IO` 라이브러리를 사용하는 것이 가장 간단하고 효율적입니다. 다음은 텍스트 파일을 읽어서 각 라인을 출력하는 예제 코드입니다.
-```Haskell
-import System.IO
+텍스트 파일을 읽는 것은 Haskell에서 매우 간단한 작업입니다. 우리는 Haskell의 내장 함수 중 하나인 `readFile`을 사용하여 이 작업을 할 수 있습니다. 다음은 `readFile` 함수를 사용하여 텍스트 파일의 내용을 읽는 방법을 보여주는 예제입니다.
 
-main = do
-    handle <- openFile "textfile.txt" ReadMode   -- 파일을 읽기 모드로 열기
-    contents <- hGetContents handle               -- 파일 내용을 읽어서 변수에 저장
-    putStr contents                              -- 파일 내용 출력
-    hClose handle                                -- 파일 닫기
+```
+Haskell Prelude> let fileContents = readFile "example.txt"
+Haskell Prelude> fileContents
+"This is an example text file."
 ```
 
-위 코드를 실행하면 `textfile.txt`에 있는 내용이 콘솔에 출력됩니다.
+위의 예제에서, 우리는 "example.txt"라는 텍스트 파일을 불러와 `fileContents` 변수에 저장하고, `fileContents`를 출력하여 파일의 내용을 확인할 수 있습니다.
 
-## 깊이 파고들기
+# 심층 분석:
 
-Haskell에서 파일을 읽는 방법은 크게 두 가지로 나뉩니다. 첫 번째는 위에서 보인 `openFile`과 `hGetContents`를 사용하는 방법이고, 두 번째는 `withFile`을 사용하는 방법입니다. `withFile`을 사용하면 파일을 자동으로 닫아줄 수 있어서 더 안전하고 편리합니다. 또한 `System.IO`에는 `readFile`이라는 함수도 있어서 파일 내용을 한 번에 읽어서 문자열로 반환할 수 있습니다.
+텍스트 파일을 읽는 것은 컴퓨터 역사에서 오래된 작업 중 하나입니다. 이전에는 많은 프로그래밍 언어들이 이 작업을 수행하기 위해 별도의 함수나 라이브러리를 제공했지만, Haskell에서는 `readFile`이라는 내장 함수를 제공하여 이를 간단하게 해결할 수 있도록 하였습니다. 또한, `readFile` 함수는 파일의 내용을 한 번에 모두 읽어오는 것이 아니라 필요할 때마다 읽기 때문에 메모리 측면에서도 효율적입니다. 따라서 우리는 큰 파일을 불러올 때도 쉽게 읽을 수 있습니다.
 
-## 참고
+# 더 알아보기:
 
-[Real World Haskell](http://book.realworldhaskell.org/read/io.html)  -- Haskell에서 파일 다루는 방법에 대한 상세한 설명  
-[Hackage - System.IO](https://hackage.haskell.org/package/base-4.14.0.0/docs/System-IO.html)  -- `System.IO` 라이브러리의 공식 문서  
-[W3Schools - Haskell Files](https://www.w3schools.com/haskell/haskell_files.asp) -- `readFile`을 사용하는 방법에 대한 예제 코드
+- [Haskell Wiki - IO functions](https://wiki.haskell.org/IO_functions)
+- [Learn You a Haskell - I/O actions](http://learnyouahaskell.com/input-and-output#files-and-streams)

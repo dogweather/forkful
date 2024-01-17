@@ -10,52 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+## What & Why?
+La data corrente è semplicemente la data di oggi. I programmatori spesso utilizzano questa funzionalità per tenere traccia del tempo o per stampare la data in applicazioni come calendari o pannelli di controllo.
 
-Se stai sviluppando un programma o un'applicazione che richiede conoscenza sulla data corrente, come ad esempio un calendario o un promemoria, avrai bisogno di codice che prenda la data corrente dal sistema. In Haskell, esistono alcune librerie e funzioni predefinite che rendono questa operazione molto semplice e rapida.
-
-## Come fare
-
-Per ottenere la data corrente in Haskell, è necessario importare il modulo `Data.Time` che contiene le funzioni per manipolare il tempo. Una volta importato il modulo, puoi utilizzare la funzione `getCurrentTime` che restituisce un oggetto di tipo `IO UTCTime`, ovvero un'azione di input/output che restituisce l'ora corrente in formato UTC.
+## How to:
+Per ottenere la data corrente in Haskell, possiamo utilizzare la funzione `getCurrentTime` del modulo `Data.Time`. Dopo aver importato il modulo, possiamo semplicemente chiamare questa funzione per ottenere un valore di tipo `UTCTime`, che rappresenta l'ora corrente in formato universale.
 
 ```Haskell
-import Data.Time -- Importa il modulo "Data.Time"
-
-main = do
-    currentTime <- getCurrentTime -- Salva l'ora corrente nella variabile "currentTime"
-    print currentTime -- Stampa l'ora corrente
+import Data.Time
+getCurrentTime
 ```
+Output: `2021-10-04 20:24:16.123456 UTC`
 
-L'output di questo codice sarà qualcosa del genere: `2021-11-23 10:30:00 UTC`. Tieni presente che l'ora restituita è nel formato UTC, quindi potrebbe non corrispondere all'ora locale del tuo computer.
-
-È anche possibile ottenere l'ora corrente in un formato più leggibile utilizzando la funzione `getCurrentTime` insieme alla funzione `formatTime` che accetta un pattern di formattazione come argomento. Ad esempio, se vogliamo stampare l'ora corrente nel formato "gg/mm/aaaa hh:mm:ss", il codice sarebbe il seguente:
+Possiamo anche convertire la data in un formato più leggibile utilizzando la funzione `formatTime` e specificando il formato desiderato come primo argomento.
 
 ```Haskell
-import Data.Time.Format -- Importa il modulo "Data.Time.Format"
-
-main = do
-    currentTime <- getCurrentTime -- Salva l'ora corrente nella variabile "currentTime"
-    let formattedTime = formatTime defaultTimeLocale "%d/%m/%Y %H:%M:%S" currentTime -- Applica il formato desiderato all'ora corrente
-    print formattedTime -- Stampa l'ora corrente nel formato specificato
+import Data.Time
+import Data.Time.Format
+getCurrentTime >>= print . formatTime defaultTimeLocale "%d/%m/%Y"
 ```
+Output: `04/10/2021`
 
-L'output sarà qualcosa del genere: `24/11/2021 10:30:00`.
+## Deep Dive:
+La funzione `getCurrentTime` è stata introdotta nella versione 4.8.0.0 di Haskell e fa parte del pacchetto standard `time`. Inoltre, esistono altre librerie come `haskell-time` e `time-locale-compat` che forniscono funzioni simili per lavorare con le date in Haskell. Tuttavia, è importante notare che la gestione del tempo e delle date può essere complicata e può portare a errori se non trattata correttamente.
 
-## Approfondimento
-
-La funzione `getCurrentTime` utilizza l'orologio di sistema per ottenere l'ora corrente, che potrebbe non essere sempre affidabile. Per garantire la precisione dell'ora corrente, è consigliabile utilizzare la libreria `TZ` che utilizza un server di tempo NTP per ottenere l'ora corrente in formato UTC.
-
-Per utilizzare la libreria TZ, è necessario installarla utilizzando `cabal` e quindi importarla nel tuo codice. Ecco un esempio di come utilizzare la libreria per ottenere l'ora corrente in UTC:
-
-```Haskell
-import Data.Time.TZ -- Importa il modulo "Data.Time.TZ"
-
-main = do
-    currentTime <- getCurrentTimeTZ "pool.ntp.org" -- Specifica il server NTP da utilizzare
-    print currentTime -- Stampa l'ora corrente in formato UTC
-```
-
-## Vedi anche
-
-- [Documentazione ufficiale su Data.Time](https://hackage.haskell.org/package/time/docs/Data-Time.html)
-- [Documentazione ufficiale su TZ](https://hackage.haskell.org/package/tz/docs/Data-Time-TZ.html)
+## See Also:
+- [Documentazione ufficiale di `Data.Time`](https://hackage.haskell.org/package/time/docs/Data-Time.html)
+- [Tutorial su come lavorare con le date in Haskell](https://mitchellwrosen.github.io/lifting-applications-ch-24.html)

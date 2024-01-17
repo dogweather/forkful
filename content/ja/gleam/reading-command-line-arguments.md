@@ -1,7 +1,7 @@
 ---
-title:                "コマンドライン引数の読み取り"
-html_title:           "Gleam: コマンドライン引数の読み取り"
-simple_title:         "コマンドライン引数の読み取り"
+title:                "コマンドライン引数の読み込み"
+html_title:           "Gleam: コマンドライン引数の読み込み"
+simple_title:         "コマンドライン引数の読み込み"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Files and I/O"
@@ -10,42 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+## 何 & なぜ？
 
-コマンドライン引数を読み取る方法を学ぶことで、あなたのプログラミングスキルを向上させることができます。また、コマンドライン引数を使うことで、プログラムをより動的に制御できるようになります。
+コマンドライン引数を読み取るとは、プログラマーが実行時にコマンドラインから渡された引数をプログラム内で利用することです。この機能を利用することで、プログラムをより柔軟にカスタマイズでき、ユーザーにとっても使いやすいものになります。
 
-## 方法
+## 方法：
 
-コマンドライン引数を読み取るには、Gleamの標準ライブラリに含まれている `gleam/io/argv` モジュールを使用します。以下のコードを参考にしてください。
+```
+Gleam.attach_arguments()
+```
 
-```Gleam
-import gleam/io/argv
+上記のように、```attach_arguments()``` 関数を使うことで、コマンドラインで渡された引数をプログラム内で利用することができます。以下は、実際のコーディング例です。
 
-pub fn main() {
-  args = argv.args()               // 引数を取得する
-  println(args)                    // 引数を表示する
-  println(args[0])                 // 最初の引数を表示する
-  println(args[1])                 // 2番目の引数を表示する
-  println(args.len())              // 引数の数を表示する
+```
+import gleam/inspect
+
+fn main(args: List(String)) {
+    // 第1引数を取得する
+    argument1 = args |> List.head(|> unwrap_or("default_value"))
+
+    // 第2引数を取得する
+    argument2 = args |> List.tail() |> List.head(|> unwrap_or("default_value"))
+
+    // 全ての引数を出力する
+    gleam/inspect.p(format!("Arguments: {}", args))
 }
 ```
 
-もしあなたが `gleam build` コマンドでコンパイルしたプログラムを実行する場合は、 `gleam run my_program`` `と入力してください。もしもあなたが、 `gleam repl`` `でプログラムを実行する場合、コマンドライン引数は自動的に与えられます。
+## 深掘り：
 
-サンプルの出力は以下のようになります。
+コマンドライン引数の機能は、プログラミングの世界では一般的であり、多くの言語でサポートされています。代替手段として、環境変数を利用する方法もありますが、コマンドライン引数の方がより直感的で使いやすいと言えます。Gleamでは、環境変数を扱うモジュールが提供されていますが、コマンドライン引数を読み取る方がよりシンプルなコーディングが可能です。
 
-```Gleam
-my_program
-arg1
-arg2
-2
-```
+## 関連リンク：
 
-## 詳細
-
-`argv.args()` 関数は、文字列のリストを返します。もしもコマンドライン引数を指定しなかった場合、この関数は空のリストを返します。`argv.args()` 関数で返されるリストは、配列に似ていますが、 `append`` ` や `split` などの配列の一部の関数を使用することはできません。そのため、 `args[0]`` ` のようなインデックスを使用する必要があります。
-
-## 関連情報
-
-- [Gleamのドキュメンテーション](https://gleam.run/documentation/)
-- [コマンドライン引数の読み取りについての詳細](https://gleam.run/articles/command-line-arguments/)
+- [Gleamの公式ドキュメント](https://gleam.run)
+- [GleamのGitHubリポジトリ](https://github.com/gleam-lang/gleam)
+- [Gleamでのコマンドライン引数の利用方法](https://gleam.run/articles/command_line_args)

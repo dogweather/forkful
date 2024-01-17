@@ -1,7 +1,7 @@
 ---
-title:                "Scrivere su standard di errore"
-html_title:           "Python: Scrivere su standard di errore"
-simple_title:         "Scrivere su standard di errore"
+title:                "Scrivere su errore standard"
+html_title:           "Python: Scrivere su errore standard"
+simple_title:         "Scrivere su errore standard"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Files and I/O"
@@ -10,33 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+## Cos'è e perché?
 
-Scrivere su standard error è utile quando si vuole visualizzare informazioni di errore o di debug nel terminale invece di mostrarle direttamente nella propria applicazione.
+Scrivere a standard error è il processo di inviare output ai messaggi di errore anziché al normale output del programma. I programmatori fanno questo per fornire informazioni su eventuali errori che si verificano durante l'esecuzione del codice, facilitando così il processo di debugging.
 
-## Come fare
+## Come fare:
 
-Per scrivere su standard error in Python, è necessario utilizzare il modulo `sys` e il suo metodo `stderr.write()`. Ecco un esempio:
+Ecco un esempio di codice Python che utilizza la funzione di stampa per inviare un messaggio a standard error:
 
 ```Python
 import sys
-
-sys.stderr.write("Errore: nome file non trovato\n")
+print("Errore: divisione per zero", file=sys.stderr)
 ```
 
-Questo codice scriverà la stringa "Errore: nome file non trovato" su standard error, invece che su standard output. 
+Output:
 
 ```
-Errore: nome file non trovato
+Errore: divisione per zero
 ```
 
-## Approfondimento
+## Approfondimento:
 
-La differenza tra standard error e standard output può sembrare sottile, ma è importante capire quando utilizzare uno o l'altro. In generale, standard error dovrebbe essere utilizzato per mostrare informazioni di errore o di debug, mentre standard output dovrebbe essere utilizzato per tutte le altre informazioni.
+Scrive a standard error esiste fin dai primi tempi della programmazione, quando i programmi venivano eseguiti su terminali. Quando si utilizzano molteplici output, come ad esempio standard output e standard error, si consiglia di utilizzare uno dei molti moduli disponibili per facilitare il processo.
 
-Inoltre, è possibile redirezionare standard error al di fuori del terminale, ad esempio in un file di log, utilizzando il simbolo `>` o il comando `tee`.
+In alternativa, si può anche utilizzare la funzione ```logging.error()``` per inviare messaggi di errore a standard error. Questo offre ulteriori funzionalità come la possibilità di specificare il livello di gravità dell'errore.
 
-## Vedi anche
+Per implementare efficientemente la scrittura a standard error, è importante assicurarsi che il codice sia compatibile con tutti i sistemi operativi su cui si desidera eseguirlo, in quanto il modo di gestire i messaggi di errore potrebbe variare tra di loro.
 
-- Documentazione ufficiale del modulo `sys`: https://docs.python.org/3/library/sys.html
-- Tutorial su come redirezionare output e errori in Linux: https://www.howtogeek.com/435903/how-to-use-the-linux-tee-command/
+## Vedi anche:
+
+- Documentazione ufficiale Python: https://docs.python.org/3/library/sys.html#sys.stderr
+- Tutorial dettagliato su come utilizzare la scrittura a standard error: https://realpython.com/python-logging/
+- Spiegazione più tecnica delle differenze tra standard output e standard error: https://www.jstorimer.com/blogs/workingwithcode/7766119-when-to-use-stdout-and-when-to-use-stderr

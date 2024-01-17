@@ -1,7 +1,7 @@
 ---
-title:                "Wyszukiwanie i zamiana tekstu"
-html_title:           "Ruby: Wyszukiwanie i zamiana tekstu"
-simple_title:         "Wyszukiwanie i zamiana tekstu"
+title:                "Wyszukiwanie i wymienianie tekstu"
+html_title:           "Ruby: Wyszukiwanie i wymienianie tekstu"
+simple_title:         "Wyszukiwanie i wymienianie tekstu"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Strings"
@@ -10,36 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego 
+# Co & Dlaczego?
+Szukanie i zamiana tekstu jest kluczowym elementem w pracy programisty. Pozwala nam w szybki i prosty sposób zmienić określone fragmenty tekstu w naszym kodzie. Dzięki temu możemy uniknąć ręcznego edytowania wszystkich wystąpień danego tekstu, co jest czasochłonne i może prowadzić do błędów. 
 
-Oto dlaczego warto uczyć się używać funkcji wyszukiwania i zamiany tekstu w Ruby: może to znacznie usprawnić naszą pracę przy przetwarzaniu i edycji danych. Zamiast ręcznie wykonywać mnóstwo operacji, możemy po prostu napisać kilka linijek kodu, które wykonają za nas to zadanie.
+# Jak to zrobić:
+Możemy używać wbudowanych metod w Ruby do wyszukiwania i zamiany tekstu. Oto kilka przykładowych funkcji:
 
-## Jak używać
-
-Do wyszukiwania i zamiany tekstu w Ruby możemy użyć metody `gsub`, która działa na łańcuchach znaków. Przyjmuje ona dwa argumenty: pierwszy to wyrażenie regularne, które chcemy znaleźć, a drugi to łańcuch znaków, którym chcemy je zamienić. Na przykład:
 ```Ruby
-text = "To jest przykładowy tekst, który chcemy zmodyfikować."
+# Zamiana wystąpienia jednego słowa na inne
+str = "Cześć, jestem Ruby"
+puts str.gsub("Ruby", "programista")
+# Output: Cześć, jestem programista
 
-puts text.gsub("przykładowy", "nowy")
-# Output: To jest nowy tekst, który chcemy zmodyfikować.
-```
-Możemy także użyć wyrażeń regularnych, aby jeszcze dokładniej wyszukać interesujący nas tekst. Przykładowo, jeśli chcemy zamienić wszystkie liczby w tekście na słowo "liczba", możemy to zrobić używając wyrażenia regularnego `\d+`, które oznacza jeden lub więcej cyfr. Zobaczmy to na przykładzie:
-```Ruby
-text = "W tym zdaniu jest 1234567890 cyfr."
-
-puts text.gsub(/\d+/, "liczba")
-# Output: W tym zdaniu jest liczba cyfr.
+# Zamiana kilku słów na inne
+str = "Koduję w Ruby, ale czasami używam też Pythona"
+puts str.gsub("Ruby", "Ruby on Rails").gsub("Pythona", "Django")
+# Output: Koduję w Ruby on Rails, ale czasami używam też Django
 ```
 
-## Wnikliwa analiza
+Możemy również użyć wyrażeń regularnych, aby dokonać bardziej szczegółowych zmian. Na przykład, aby zamienić wszystkie liczby w tekście na ich kwadraty, możemy użyć takiej funkcji:
 
-Funkcja `gsub` jest jednym z wielu sposobów na wyszukiwanie i zamianę tekstu w Ruby. Istnieją też inne metody, takie jak `sub` czy `tr`, które mogą być przydatne w różnych sytuacjach. Oprócz tego, wyrażenia regularne mogą być bardzo skomplikowane i wymagać trochę nauki, ale potrafią znacznie ułatwić i usprawnić pracę z tekstem.
+```Ruby
+str = "Te słowa mają odpowiednio 1, 2 i 3 literki"
+puts str.gsub(/\d+/) { |match| (match.to_i)**2 }
+# Output: Te słowa mają odpowiednio 1, 4 i 9 literki
+```
+## Głęboki Zanurzenie:
+Szukanie i zamiana tekstu już od samego początku było istotną częścią programowania. Wcześniej, programiści musieli dokonywać tych zmian ręcznie, co było bardzo czasochłonne. Jednak obecnie, dzięki zaawansowanym narzędziom, możemy to robić w kilka prostych krokach.
 
-## Zobacz również
+Alternatywnym sposobem na dokonywanie zmian w tekście jest użycie narzędzi do edycji tekstu takich jak Vim, Emacs lub Sublime Text. 
 
-Jeśli chcesz dowiedzieć się więcej o wyrażeniach regularnych i innych funkcjach Ruby do manipulacji tekstem, zapoznaj się z poniższymi linkami:
+Podczas zamiany tekstu, ważne jest również aby pamiętać o występujących różnicach w wielkości liter. Dlatego używanie metod takich jak `gsub` (global substitution) jest zalecane, ponieważ dokonują one zmian bez względu na wielkość liter. 
 
-- [Dokumentacja Ruby dla metody `gsub`](https://ruby-doc.org/core-3.0.2/String.html#method-i-gsub)
-- [Przewodnik po wyrażeniach regularnych w Ruby](https://www.rubyguides.com/2015/06/ruby-regex/)
-- [Artykuł o metodach String w Ruby](https://www.freecodecamp.org/news/ruby-string-methods/)
-- [Kurs Ruby na platformie Codecademy](https://www.codecademy.com/learn/learn-ruby)
+## Zobacz też:
+Jeśli chcesz dowiedzieć się więcej na temat wyszukiwania i zamiany tekstu w Ruby, zalecam przeczytanie dokumentacji Ruby lub znalezienie tutoriala online. 
+
+- [Dokumentacja Ruby](https://www.ruby-lang.org/pl/documentation/)
+- [Dokumentacja Ruby - metoda gsub](https://ruby-doc.org/core-2.6.3/String.html#method-i-gsub)
+- [Kurs Ruby w Codecademy](https://www.codecademy.com/learn/learn-ruby)

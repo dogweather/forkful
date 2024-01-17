@@ -1,7 +1,7 @@
 ---
-title:                "Comparaison de deux dates"
-html_title:           "C++: Comparaison de deux dates"
-simple_title:         "Comparaison de deux dates"
+title:                "Comparer deux dates"
+html_title:           "C++: Comparer deux dates"
+simple_title:         "Comparer deux dates"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Dates and Times"
@@ -10,49 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Qu'est-ce que & Pourquoi?
+Comparer deux dates est une tâche commune pour les programmeurs en C++. Cela implique de comparer deux valeurs de date pour déterminer si elles sont égales, antérieures ou postérieures l'une à l'autre. Cette comparaison est généralement utilisée pour trier des données ou pour effectuer des calculs basés sur des dates.
 
-Comparer deux dates peut être utile lorsque vous travaillez avec des données temporelles dans votre programme. Cela peut vous aider à déterminer si une date est antérieure, postérieure ou égale à une autre date. Comparer des dates peut également être utile pour trier des données chronologiquement dans votre programme.
-
-## Comment faire
-
-Pour comparer deux dates en C++, vous pouvez utiliser la classe `std::chrono::system_clock` et la fonction `time_since_epoch()` pour obtenir le temps écoulé depuis le 1er janvier 1970 à minuit (également appelé "epoch"). Voici un exemple de code qui compare deux dates en utilisant cette méthode :
+## Comment faire:
+Voici un exemple simple de comparaison de deux dates en C++:
 
 ```C++
 #include <iostream>
-#include <chrono>
+#include <ctime>
 
-int main() {
-	// Obtenez la date actuelle
-	std::chrono::system_clock::time_point today = std::chrono::system_clock::now();
+int main(){
+  std::time_t date1 = std::time(nullptr);
+  std::time_t date2 = std::time(nullptr);
 
-	// Obtenez la date du 1er janvier 2019
-	std::chrono::system_clock::time_point newYear( 
-		std::chrono::hours(24 * 365 + 5));
+  if(date1 == date2){
+    std::cout << "Les deux dates sont égales." << std::endl;
+  } else if(date1 < date2){
+    std::cout << "La première date est antérieure à la deuxième date." << std::endl;
+  } else{
+    std::cout << "La première date est postérieure à la deuxième date." << std::endl;
+  }
 
-	// Comparez les deux dates en utilisant la fonction time_since_epoch()
-	if (today.time_since_epoch() > newYear.time_since_epoch()) {
-		std::cout << "Aujourd'hui est après le 1er janvier 2019." << std::endl;
-	} else if (today.time_since_epoch() < newYear.time_since_epoch()) {
-		std::cout << "Aujourd'hui est avant le 1er janvier 2019." << std::endl;
-	} else {
-		std::cout << "Aujourd'hui est le 1er janvier 2019!" << std::endl;
-	}
-	
-	return 0;
+  return 0;
 }
 ```
 
-La sortie de ce programme sera "Aujourd'hui est après le 1er janvier 2019." car la date actuelle est après le 1er janvier 2019.
+Voici un exemple d'output basé sur la date actuelle :
 
-## Plongée profonde
+```
+La première date est postérieure à la deuxième date.
+```
 
-En C++, il existe plusieurs façons de comparer des dates, en utilisant différentes classes et fonctions telles que `std::chrono::steady_clock`, `std::time_t` et `std::tm`. Ces différentes options peuvent être utiles en fonction du type de comparaison de dates que vous souhaitez effectuer.
+## Zoom en profondeur:
+La comparaison de dates est devenue plus simple avec l'introduction du type de données de date standard en C++11. Avant cela, les programmeurs devaient utiliser les fonctions de manipulation de temps de la bibliothèque C pour effectuer des comparaisons de date. Il existe également des alternatives telles que l'utilisation de structures de données spécifiques à la date ou le stockage des dates en tant que chaînes de caractères.
 
-Il est également important de comprendre la notion de résolution de temps en C++. Par exemple, la classe `std::chrono::system_clock` a une résolution minimale d'une seconde, ce qui signifie que toutes les dates seront arrondies à la seconde près lorsqu'elles sont comparées. Si vous avez besoin d'une résolution plus précise, vous pouvez utiliser une classe avec une résolution plus fine comme `std::chrono::high_resolution_clock`.
-
-## Voir aussi
-
-- [Documentation officielle de C++ sur la gestion du temps](https://en.cppreference.com/w/cpp/chrono)
-- [Guide pour travailler avec les dates en C++](https://medium.com/@jaceklaskowski/c-zones-for-dates-dealing-with-c-chrono-in-c-b04b9d22f9f7) 
-- [Différentes méthodes pour comparer des dates en C++](https://www.techiedelight.com/compare-dates-cpp/)
+## Voir aussi:
+- [Documentation sur le type de données de date en C++](https://en.cppreference.com/w/cpp/chrono)
+- [Guide pour utiliser les fonctions de manipulation de temps en C](https://www.programiz.com/c-programming/c-timing-clocks)
+- [Utilisation de structures de données spécifiques à la date en C++](https://www.geeksforgeeks.org/c-program-find-difference-two-dates/)

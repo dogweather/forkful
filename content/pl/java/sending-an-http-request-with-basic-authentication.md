@@ -1,7 +1,7 @@
 ---
-title:                "Wysyłanie żądania http z autoryzacją podstawową."
-html_title:           "Java: Wysyłanie żądania http z autoryzacją podstawową."
-simple_title:         "Wysyłanie żądania http z autoryzacją podstawową."
+title:                "Wysyłanie żądania http z podstawową autoryzacją"
+html_title:           "Java: Wysyłanie żądania http z podstawową autoryzacją"
+simple_title:         "Wysyłanie żądania http z podstawową autoryzacją"
 programming_language: "Java"
 category:             "Java"
 tag:                  "HTML and the Web"
@@ -10,61 +10,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co & Dlaczego?
 
-Wysyłanie żądania HTTP z podstawową autoryzacją jest ważnym elementem w procesie komunikacji między klientem a serwerem. Pozwala ono na uwierzytelnienie użytkownika i zapewnienie bezpieczeństwa podczas przesyłania danych.
+Wysyłanie żądania HTTP z podstawowym uwierzytelnianiem jest procesem pozwalającym na bezpieczny dostęp do zasobów internetowych. Programiści wykorzystują to w celu uwierzytelniania użytkowników i autoryzacji dostępu do różnych stron internetowych.
 
-## Jak to zrobić
-
-Aby wysłać żądanie HTTP z podstawową autoryzacją w Javie, możemy skorzystać z klasy `HttpURLConnection`. Najpierw musimy utworzyć obiekt klasy `URL` z adresem URL serwera, do którego chcemy się połączyć. Następnie tworzymy obiekt `HttpURLConnection` i ustalamy metodę zadania, w naszym przypadku będzie to `GET`.
+## Jak to zrobić:
 
 ```Java
-URL url = new URL("https://example.com/api");
-HttpURLConnection con = (HttpURLConnection) url.openConnection();
-con.setRequestMethod("GET");
-```
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.Base64;
 
-Kolejnym krokiem jest ustawienie podstawowej autoryzacji przy pomocy metody `setRequestProperty()`, gdzie podajemy nazwę nagłówka `Authorization` oraz zakodowane dane użytkownika w formacie Base64.
+public class HttpExample {
 
-```Java
-String user = "username";
-String pass = "password";
-String userPass = user + ":" + pass;
-String auth = "Basic " + Base64.getEncoder().encodeToString(userPass.getBytes());
-con.setRequestProperty("Authorization", auth);
-```
-
-W końcu możemy wysłać nasze żądanie i odczytać odpowiedź.
-
-```Java
-int status = con.getResponseCode();
-BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
-String inputLine;
-StringBuffer content = new StringBuffer();
-
-while ((inputLine = in.readLine()) != null) {
-    content.append(inputLine);
+  public static void main(String[] args) throws Exception {
+      
+    String url = "https://example.com";
+    URL obj = new URL(url);
+    HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+    
+    con.setRequestMethod("GET");
+    
+    String user = "username";
+    String password = "password";
+    String credentials = user + ":" + password;
+    String encodedAuth = Base64.getEncoder().encodeToString(credentials.getBytes());
+    
+    con.setRequestProperty("Authorization", "Basic " + encodedAuth);
+    
+    int responseCode = con.getResponseCode();
+    
+    BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
+    String inputLine;
+    StringBuffer response = new StringBuffer();
+    
+    while((inputLine = in.readLine()) != null) {
+      response.append(inputLine);
+    }
+    in.close();
+    
+    System.out.println(response.toString());
+  }
 }
-in.close();
-
-System.out.println("Status code: " + status);
-System.out.println("Response body: " + content.toString());
 ```
 
-Sample output:
-```
-Status code: 200
-Response body: {"message": "Hello World!"}
-```
+Przykładowy wynik wyświetli HTML strony internetowej dostępnej pod adresem https://example.com, do której zostało wysłane żądanie z użyciem podstawowego uwierzytelniania.
 
-## Deep Dive
+## Deep Dive:
 
-Podstawowa autoryzacja w protokole HTTP jest jednym z najprostszych sposobów na uwierzytelnienie klienta. Polega ona na przesyłaniu zakodowanych danych użytkownika w nagłówku `Authorization` za pomocą podstawowego kodowania Base64. Jednak jest to metoda bezpieczeństwa o niskim poziomie, ponieważ dane są wysyłane w otwartej postaci i mogą być z łatwością przechwycone przez niepożądane osoby.
+Wysyłanie żądania HTTP z podstawowym uwierzytelnianiem jest jednym z wielu sposobów, w jaki programiści mogą zapewnić bezpieczny dostęp do zasobów internetowych. Inne metody obejmują m.in. uwierzytelnianie OAuth i uwierzytelnianie z użyciem kluczy API. Wysyłanie żądania z podstawowym uwierzytelnianiem jest możliwe dzięki nagłówkom Authorization i Base64 Encoding, które pozwalają na przesłanie danych uwierzytelniających w formacie zrozumiałym dla serwera. Ta metoda jest często wykorzystywana w aplikacjach mobilnych i jest stosunkowo prosta w implementacji.
 
-Alternatywą dla podstawowej autoryzacji może być np. protokół HTTPS, który zapewnia szyfrowanie danych przez użycie certyfikatów SSL. Istnieją także inne metody uwierzytelniania, takie jak np. autoryzacja oparta na tokenach.
+## Zobacz też:
 
-## Zobacz także
-
-- [Java Tutorials: Basic Authentication](https://www.baeldung.com/java-basic-authentication)
-- [Java Doc: HttpURLConnection](https://docs.oracle.com/javase/8/docs/api/java/net/HttpURLConnection.html)
-- [RFC 2617: Basic Authentication Scheme](https://tools.ietf.org/html/rfc2617)
+- [HTTP Basic Authentication](https://www.w3.org/Protocols/HTTP/1.0/spec.html#BasicAA)
+- [Using Basic Authentication in Java HTTP Connections](https://www.baeldung.com/java-http-request)
+- [Base64 Encoding in Java](https://docs.oracle.com/javase/8/docs/api/java/util/Base64.html)

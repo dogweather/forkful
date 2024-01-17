@@ -1,7 +1,7 @@
 ---
-title:                "Å få dagens dato"
-html_title:           "Ruby: Å få dagens dato"
-simple_title:         "Å få dagens dato"
+title:                "Få dagens dato"
+html_title:           "Ruby: Få dagens dato"
+simple_title:         "Få dagens dato"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Dates and Times"
@@ -10,37 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
-Det er mange tilfeller hvor du kanskje trenger å ha den nåværende datoen i et Ruby-program. Kanskje du vil vise datoen til brukeren, lagre en transaksjonsdato eller lage en dynamisk filnavn med den nåværende datoen.
+## Hva & Hvorfor?
+Henting av dagens dato er en vanlig oppgave for programmerere, og det er alltid viktig å ha en nøyaktig tidsreferanse for å håndtere og organisere data. Å få den aktuelle datoen er enkelt og kan brukes til en rekke formål i programmering, som å sjekke tidspunktet for en spesifikk hendelse eller opprette en automatisk rapport.
 
-## Hvordan få nåværende dato
-Det er enkelt å få den nåværende datoen i Ruby ved hjelp av `Time`-klassen. Her er et eksempel på å få nåværende dato og lagre den i en variabel:
-
-```Ruby
-nåværende_dato = Time.now
-```
-
-Du kan også tilpasse utskriften av datoen ved å bruke `strftime`-metoden og angi ønsket format. For eksempel:
+## Hvordan:
+For å få den nåværende datoen i Ruby, kan du bruke `Date.today` -metoden. Dette vil returnere en `Date` -objekt som inneholder den aktuelle datoen. Du kan også bruke `Time.now` -metoden, som vil gi deg en `Time` -objekt som inkluderer både dato og tid.
 
 ```Ruby
-nåværende_dato.strftime("%d.%m.%Y") # => 04.05.2021
+puts Date.today
+#=> 2020-09-28
+
+puts Time.now
+#=> 2020-09-28 10:00:00 +0200
 ```
 
-## Dypdykk
-Nåværende dato er egentlig en datastruktur kalt `Time` som inneholder informasjon om dato, tid og tidssone. Du kan få tilgang til forskjellig informasjon om datoen, for eksempel dag, måned, år, time, minutt og sekunder.
+## Dypdykk:
+Henting av dagens dato kan spores tilbake til 1960-tallet, da datamaskiner begynte å inkludere klokker for å holde styr på tiden. I tillegg til å bruke innebygde Ruby-metoder, kan du også bruke tredjepartsbiblioteker som `Date.today` og `DateTime.now` for mer avanserte funksjoner.
 
-```Ruby
-nåværende_dato.day # => 4
-nåværende_dato.month # => 5
-```
+## Se Også:
+For mer informasjon om henting av dagens dato, sjekk ut disse ressursene:
 
-I tillegg kan du også utføre matematiske operasjoner på datoer, for eksempel å legge til eller trekke fra et antall dager.
-
-```Ruby
-neste_uke = nåværende_dato + 7 # legger til 7 dager
-forrige_måned = nåværende_dato - 30 # trekker fra 30 dager
-```
-
-## Se også
-- Ruby Time-klassen dokumentasjon: https://ruby-doc.org/core-3.0.1/Time.html
-- Enkel guide til bruk av Time-klassen i Ruby: https://www.rubyguides.com/2019/02/ruby-time-class/
+- [Ruby DateTime Dokumentasjon](https://ruby-doc.org/stdlib-2.3.0/libdoc/date/rdoc/DateTime.html)
+- [Ruby Date og Time Dokumentasjon](https://ruby-doc.org/core-2.3.0/Time.html)

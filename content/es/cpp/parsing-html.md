@@ -1,7 +1,7 @@
 ---
-title:                "Analizando html"
-html_title:           "C++: Analizando html"
-simple_title:         "Analizando html"
+title:                "Analizando el html"
+html_title:           "C++: Analizando el html"
+simple_title:         "Analizando el html"
 programming_language: "C++"
 category:             "C++"
 tag:                  "HTML and the Web"
@@ -10,65 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¿Qué y por qué?
 
-¿Te has preguntado alguna vez cómo los navegadores web son capaces de mostrar páginas web correctamente? La respuesta está en el lenguaje HTML, utilizado para crear y estructurar el contenido de una página web. En este artículo, descubriremos por qué es necesario parsear HTML cuando se trabaja con data en C++, y cómo puedes hacerlo tú mismo.
+Parsing HTML en programación es el proceso de analizar un documento en formato HTML para extraer información específica de él. Los programadores lo hacen para automatizar tareas, como extraer datos de una página web o generar código HTML estructurado.
 
-## Cómo hacerlo
+## Cómo:
 
-Para parsear HTML en C++, utilizaremos la biblioteca "libxml2". Esta biblioteca es completa y fácil de usar, y te permite leer y manipular archivos HTML con facilidad. A continuación, se muestra un ejemplo sencillo de cómo parsear un archivo HTML utilizando libxml2:
+Aquí hay un ejemplo de cómo se puede parsear HTML usando C++:
 
-```C++
-#include <libxml/tree.h>
-#include <libxml/HTMLparser.h>
+```
 #include <iostream>
+#include <fstream>
+#include <htmlcxx/html/parser.hxx>
 
 int main() {
-    // Crear un parser de HTML
-    htmlParserCtxtPtr parser = htmlCreatePushParserCtxt(NULL, NULL, NULL, 0, NULL, 0);
+    std::ifstream html_file("ejemplo.html");
+    std::string html_content((std::istreambuf_iterator<char>(html_file)),
+                             std::istreambuf_iterator<char>());
 
-    // Abrir un archivo HTML y leerlo línea por línea
-    FILE* archivo = fopen("página.html", "r");
-    while (!feof(archivo)) {
-        // Leer una línea del archivo y parsearla
-        char buffer[1024];
-        fgets(buffer, 1024, archivo);
-        htmlParseChunk(parser, buffer, strlen(buffer), 0);
-    }
+    htmlcxx::HTML::Parser parser;
+    parser.parse(html_content);
 
-    // Obtener el árbol de nodos del documento HTML
-    xmlDocPtr documento = parser->myDoc;
-    xmlNodePtr raiz = xmlDocGetRootElement(documento);
+    htmlcxx::HTML::Node body = parser.getTree()->exposedRoot()->find("body");
 
-    // Recorrer los nodos e imprimir sus nombres
-    xmlNodePtr nodo = raiz;
-    while (nodo != NULL) {
-        std::cout << nodo->name << std::endl;
-        nodo = nodo->next;
-    }
+    std::cout << "Contenido del elemento <body>:" << std::endl;
+    std::cout << body.content() << std::endl;
 
-    // Cerrar el parser y el archivo
-    htmlFreeParserCtxt(parser);
-    fclose(archivo);
-    
     return 0;
 }
 ```
 
-En este ejemplo, utilizamos la función `htmlParseChunk` para parsear cada línea del archivo HTML y obtener un árbol de nodos del documento. Luego, utilizamos la función `xmlDocGetRootElement` para obtener el nodo raíz del documento, y recorremos los demás nodos utilizando la propiedad `next`.
-
-El resultado de este código sería la impresión de los nombres de todos los nodos del documento HTML.
+La salida de este ejemplo sería el contenido del elemento `<body>` del archivo "ejemplo.html".
 
 ## Profundizando
 
-El proceso de parsear HTML en realidad implica mucho más que simplemente obtener una estructura de nodos del documento. El parser también se encarga de validar la estructura del documento y convertir el contenido de los nodos a un formato legible para la computadora.
+Parsing HTML ha sido una práctica muy común desde la aparición de la World Wide Web. Anteriormente, se usaban herramientas como el SGML para analizar documentos HTML. Hoy en día, existen lenguajes específicos como XPath o CSS selectors que también pueden ser utilizados para parsear HTML.
 
-Además, existen diferentes tipos de nodos que pueden aparecer en un documento HTML, como etiquetas, texto, comentarios y atributos. Cada uno de estos tipos de nodos tiene sus propios métodos y propiedades que pueden ser accedidos a través del árbol de nodos.
+Otro enfoque para parsear HTML es mediante el uso de bibliotecas externas, como libxml2 o BeautifulSoup. Estas bibliotecas son útiles cuando se trabaja con archivos HTML más complejos que pueden incluir CSS y JavaScript.
 
-No es necesario conocer todos los detalles y especificaciones del lenguaje HTML para poder parsear un archivo en C++, pero es importante tener una comprensión básica de cómo funciona el lenguaje y su estructura para poder manipular correctamente los nodos.
+La implementación de un parser HTML puede ser un desafío, ya que hay muchos casos especiales y excepciones a tener en cuenta. Por esta razón, es recomendable utilizar bibliotecas existentes, a menos que se tenga un conocimiento profundo del lenguaje y se quiera crear una solución personalizada.
 
 ## Ver también
 
-* [Documentación de la biblioteca "libxml2"](http://www.xmlsoft.org/html/)
-* [Tutorial de "libxml2" para parsear HTML en C++](https://www.xml.com/pub/a/2000/10/18/libxml/index.html)
-* [Especificaciones del lenguaje HTML](https://www.html5rocks.com/en/tutorials/internals/howbrowserswork/#Main_flow_of_HTML_receiver)
+Para obtener más información sobre parsing HTML en C++, estos enlaces pueden ser útiles:
+
+- Documentación para la biblioteca htmlcxx: http://htmlcxx.sourceforge.net/
+- Tutorial sobre cómo usar XPath y CSS selectors en C++: https://eduardokortright.medium.com/parse-html-in-c-using-xpath-and-css-selectors-f13627f6febb

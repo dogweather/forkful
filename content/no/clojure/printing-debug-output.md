@@ -1,7 +1,7 @@
 ---
-title:                "Utskrift av feilrettingsresultater"
-html_title:           "Clojure: Utskrift av feilrettingsresultater"
-simple_title:         "Utskrift av feilrettingsresultater"
+title:                "Utskrift av feilsøkingsmeldinger"
+html_title:           "Clojure: Utskrift av feilsøkingsmeldinger"
+simple_title:         "Utskrift av feilsøkingsmeldinger"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Testing and Debugging"
@@ -10,77 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hva & Hvorfor?
+Printing debug output er en måte for programmerere å få informasjon om hvordan et program kjører. Dette kan hjelpe dem med å finne og feilsøke problemer i koden. Det er spesielt nyttig når man utvikler stort og komplekst programvare.
 
-Hvorfor skulle noen engasjere seg i å skrive ut feilsøkingsutgang? Det er en vanlig praksis for å få mer innsikt i koden og identifisere feil og problemer som kan oppstå under kjøring.
 
-## Hvordan
+# Hvordan:
+```Clojure
+(defn hello-world []
+  (println "Hello, world!"))
 
-For å skrive ut feilsøkingsutgang i Clojure, kan du bruke funksjonen `prn`. Dette vil skrive ut hvilken som helst form for data som en lesbar streng i terminalen.
+(hello-world)
+``` 
+Resultat:
+`Hello, world!`
 
-```
-Clojure
-(prn "Dette er en tekststreng")
-; Dette er en tekststreng
-```
+I dette eksempelet, bruker vi `println` funksjonen til å skrive ut en tekststreng til konsollen. Dette vil bli brukt til å bekrefte at funksjonen `hello-world` blir kalt og kjører som forventet. Det er viktig å merke seg at vi kun bruker print-funksjoner for å utskrive debug informasjon, og bør fjerne dem fra koden når vi har løst problemet.
 
-Du kan også skrive ut datastrukturer, som for eksempel vektorer og kart, ved hjelp av `prn` funksjonen.
+# Dykk dypere:
+Historisk sett, brukte programvareutviklere ofte `println` eller lignende funksjoner for å få debug informasjon. Dette ble ofte sett på som upresist og ineffektivt. En mer moderne tilnærming er å bruke debug biblioteker som `clojure.tools.logging` og `timbre`, som gir bedre kontroll over utskriftsformatering og mer robuste alternativer for debugging.
 
-```
-Clojure
-(prn [1 2 3 4])
-; [1 2 3 4]
+En alternativ metode for å få debug informasjon er å bruke en interaktiv debugger, som for eksempel ` CIDER` eller `Calva`. Dette gjør det mulig å sette breakpoints i koden og stegvis debugge koden.
 
-(prn {:navn "Mia" :alder 25})
-; {:navn "Mia", :alder 25}
-```
+Når det kommer til implementasjon av utskriftsfunksjoner, bør man være forsiktig med å bruke dem for ofte, da det kan føre til unødvendig bloat i koden. Det kan være lurt å bruke betinget utskrift, slik at utskriftskallene kun blir kalt når et bestemt kriterium er oppfylt.
 
-Hvis du vil skrive ut mer spesifikk informasjon, kan du bruke `println` funksjonen og inkludere variabler eller ekstra tekst for å gi mer kontekst.
-
-```
-Clojure
-(def navn "Maria")
-(def alder 30)
-
-(println "Brukeren heter" navn "og er" alder "år gammel.")
-; Brukeren heter Maria og er 30 år gammel.
-```
-
-## Dypdykk
-
-En annen nyttig metode for å skrive ut feilsøkingsutgang er ved hjelp av `clojure.pprint` biblioteket. Dette gir mer detaljert og organiseret utdata, spesielt for komplekse datastrukturer.
-
-For eksempel, hvis vi har et kart med flere lag, kan vi bruke `pprint` funksjonen for å skrive ut det organiserte og leselige utdataet.
-
-```
-Clojure
-(require '[clojure.pprint :refer [pprint]])
-
-(def bruker {:navn "Sara"
-             :adresse {:gate "Hovedveien 10"
-                       :postnummer 12345
-                       :by "Oslo"}})
-
-(pprint bruker)
-; {:navn "Sara",
-;  :adresse {:gate "Hovedveien 10",
-;            :postnummer 12345,
-;            :by "Oslo"}}
-```
-
-Ved å inkludere `:linear` argumentet i `pprint` funksjonen, kan vi få utskrift av datastrukturen på en enklere og mer kompakt måte.
-
-```
-Clojure
-(pprint bruker :linear)
-; {:navn "Sara",
-;  :adresse {:gate "Hovedveien 10",
-;            :postnummer 12345,
-;            :by "Oslo"}}
-```
-
-## Se også
-
-- [Clojure Official Documentation](https://clojure.org/)
-- [Effective Debugging Techniques in Clojure](https://blog.codeship.com/effective-debugging-techniques-clojure/)
-- [Mastering Clojure's Debugging Techniques](https://practicalli.github.io/clojure/development/debugging/)
+# Se også:
+- [Clojure dokumentasjon: Debugging](https://clojure.org/guides/debugging)
+- [Clojure Cookbook: Debugging](https://github.com/clojure-cookbook/clojure-cookbook/blob/master/03_language/3-05_debugging.asciidoc)
+- [Calva: Interactive Clojure programming](https://calva.io/)

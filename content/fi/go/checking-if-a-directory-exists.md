@@ -10,42 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+Mitä ja miksi?
+Tarkistaminen, onko hakemisto olemassa, on tapa tarkistaa, onko tietyllä polulla oleva hakemisto olemassa vai ei. Tämä on tärkeää monissa ohjelmoinnin tilanteissa, kuten varmistaessa, että tarvittavat tiedostot löytyvät ennen niiden käsittelyä.
 
-On olemassa monia tilanteita, joissa voit joutua tarkistamaan, onko tietyssä hakemistossa olemassa tiedostoja. Tämä voi olla hyödyllistä esimerkiksi tietoturvallisuuden kannalta, jotta varmistat, etteivät arkaluonteiset tiedostot päädy vääriin käsiin.
-
-## Kuinka
+Miten:
+Voit tarkistaa, onko hakemisto olemassa Go-kielen osana tarjottavilla toiminnoilla. Esimerkiksi ```os.Stat()``` -toiminto palauttaa virheen, jos tiedostoa ei löydy annetusta polusta. Alla oleva koodiesimerkki näyttää, miten tarkistaa, onko "hakemisto" niminen hakemisto olemassa ja tulostaa sen olemassaolon mukaisen viestin.
 
 ```Go
-package main
-
-import (
-    "fmt"
-    "os"
-)
-
 func main() {
-    // Tarkistetaan, onko hakemisto "tiedostot" olemassa
-    _, err := os.Stat("tiedostot")
-     
-    // Jos err muuttuja on nil, hakemisto on olemassa
-    if err == nil {
-        fmt.Println("Hakemisto löytyi!")
+    if _, err := os.Stat("hakemisto"); os.IsNotExist(err) {
+        fmt.Println("Hakemistoa ei löydy")
     } else {
-        // Muussa tapauksessa tulostetaan virheilmoitus
-        fmt.Println("Virhe:", err)
+        fmt.Println("Hakemisto löytyy")
     }
 }
 ```
 
-Esimerkissä käytetään `os.Stat()` -funktiota, joka palauttaa nil-arvon, jos hakemisto on olemassa, ja muussa tapauksessa virheen.
+Esimerkkilähtö:
 
-## Syvemmälle
+```
+Hakemistoa ei löydy
+```
 
-`os.Stat()` -funktio käyttää käyttöjärjestelmän `stat()` -systeemikutsua tarkistaakseen, onko tiedosto tai hakemisto olemassa. Tämä kutsu palauttaa erilaisia tietoja tiedoston tai hakemiston tilasta, kuten koko, aikaleimat ja käyttöoikeudet. Näitä tietoja voidaan käyttää tarkempiin tarkastuksiin.
+Syvä päätyminen:
+Hakemistojen olemassaolon tarkistaminen on ollut osa monia ohjelmointikieliä jo pitkään. Yleinen tapa tarkistaa olemassaolo on kokeilla pääsyä hakemistoon ja käsitellä havaitut virheet sen perusteella. Lisäksi voit käyttää myös muita toimintoja, kuten ```os.Open()```, joka palauttaa virheen, jos hakemistoa ei löydy. Lopuksi, jotkut käyttävät myös ```os.Lstat()``` -toimintoa, joka toimii samoin kuin ```os.Stat()```, mutta palauttaa myös tiedoston tai hakemiston tiedot.
 
-## Katso myös
-
-- [Go'n virallinen dokumentaatio os-paketeista](https://golang.org/pkg/os/)
-- [Go'n dokumentaatio os-paketin Stat()-funktiosta](https://golang.org/pkg/os/#Stat)
-- [Stack Overflow -keskustelu tiedoston tai hakemiston olemassaolon tarkistamisesta Go:lla](https://stackoverflow.com/questions/12518876/how-to-check-if-a-file-exists-in-go)
+Katso myös:
+- Go-kirjasto pääsy tiedostoihin ja hakemistoihin: https://golang.org/pkg/os/
+- Go-kurssi, joka käsittelee tiedostojen ja hakemistojen käsittelyä: https://tour.golang.org/programs/12
+- "Tarkista hakemiston olemassaolo Go-kielellä" -artikkeli: https://www.digitalocean.com/community/tutorials/how-to-check-if-a-directory-exists-in-go-fi

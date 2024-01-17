@@ -1,7 +1,7 @@
 ---
-title:                "컴퓨터 프로그래밍의 '명령 줄 인수 읽기'"
-html_title:           "Haskell: 컴퓨터 프로그래밍의 '명령 줄 인수 읽기'"
-simple_title:         "컴퓨터 프로그래밍의 '명령 줄 인수 읽기'"
+title:                "명령줄 인수 읽기"
+html_title:           "Haskell: 명령줄 인수 읽기"
+simple_title:         "명령줄 인수 읽기"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Files and I/O"
@@ -10,47 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+# 무엇이고 왜 필요한가?
+명령 줄 인수를 읽는 것은 데이터를 입력으로 받아들이기 위해 프로그램에서 사용하는 일반적인 기술입니다. 프로그래머는 이를 통해 사용자로부터 다양한 유형의 입력을 받고, 이를 프로그램 내에서 처리하고 응답하는 데 사용할 수 있습니다.
 
-입력받은 커맨드 라인 인자를 읽는 방법을 배우는 것은 한 컴퓨터 프로그래머로서 중요한 능력입니다. 이를 통해 프로그램에 유동성을 부여하고 사용자와 상호작용하는 기능을 추가할 수 있습니다. 
-
-## 어떻게
-
+# 사용 방법:
+Haskell에서 명령 줄 인수를 읽는 방법은 간단합니다. 먼저 `System.Environment` 모듈을 가져와야 합니다. 그 다음 `getArgs` 함수를 사용하여 입력된 인수들을 가져올 수 있습니다. 예를 들어, 다음과 같이 코드를 작성할 수 있습니다:
 ```Haskell
 import System.Environment
 
 main = do
     args <- getArgs
-    putStrLn $ "입력받은 인자는 " ++ show args ++ "입니다."
+    putStrLn $ "입력된 인수: " ++ show args
+```
+이 코드를 실행하면 `getArgs` 함수로부터 입력된 인수들을 가져와서 콘솔에 출력하게 됩니다.
+
+### 출력 예:
+```
+입력된 인수: ["Hello", "World", "123"]
 ```
 
-위 코드는 `System.Environment` 모듈을 임포트하고 `getArgs` 함수를 사용하여 입력받은 인자들을 `args` 변수에 할당합니다. 그리고 `putStrLn` 함수를 사용하여 해당 변수의 값을 출력합니다.
+# 깊이 들여다보기:
+명령 줄 인수를 읽는 기술은 운영 체제의 커맨드 라인 인터페이스와 밀접한 관련이 있습니다. 초기 컴퓨터에서는 명령 줄 인수를 읽는 것이 프로그램의 꼭대기에 위치한 `argv` 라는 변수로 이루어졌지만, 이후 이를 더 쉽게 사용할 수 있는 함수들이 개발되었습니다. 이러한 함수들은 Haskell에서도 여전히 사용되고 있습니다.
 
-입력받은 인자를 사용하여 조건문을 작성하거나 다양한 형태로 가공하는 것도 가능합니다.
+다른 언어에서는 명령 줄 인수를 읽는 다른 방법들도 존재합니다. 예를 들어, C언어의 경우 `getopt` 함수를 사용할 수 있습니다. 그러나 Haskell에서는 위에서 소개한 `System.Environment` 모듈을 통해 간편하게 명령 줄 인수를 읽을 수 있습니다.
 
-또한, 인자의 개수나 특정 인자의 값 등을 확인하고 처리하는 것도 가능합니다.
-
-```Haskell
-import System.Environment
-
-main = do
-    args <- getArgs
-    let numArgs = length args
-    if numArgs == 0
-        then putStrLn "인자를 입력하지 않았습니다."
-        else do
-            putStrLn $ "입력받은 인자의 개수는 " ++ show numArgs ++ "개입니다."
-            putStrLn $ "첫 번째 인자는 " ++ head args ++ "입니다."
-```
-
-위 코드는 `length` 함수를 사용하여 입력받은 인자의 개수를 확인하고, `if`문을 이용하여 인자가 없는 경우와 있는 경우를 구분합니다. `head` 함수를 사용하여 첫 번째 인자의 값을 가져와 출력합니다.
-
-## 딥 다이브
-
-위 코드에서 `getArgs` 함수는 `IO [String]` 타입의 값을 반환합니다. 이는 `IO` 모나드와 `[String]` 리스트 타입의 조합입니다. 이는 프로그래머가 실제로 인자 값을 읽는 시점을 컨트롤 하기 위해 사용되는 메커니즘입니다. 이러한 메커니즘은 side effect를 줄이고 프로그램을 더 안전하게 만들어줍니다. 또한, `getArgs` 함수는 리스트를 사용하기 때문에 `map`, `filter`와 같은 고차함수를 사용하여 더 복잡한 로직을 작성할 수도 있습니다.
-
-## 관련 자료
-
-- [Haskell System.Environment 모듈 문서](https://hackage.haskell.org/package/base-4.15.0.0/docs/System-Environment.html)
-- [Haskell 입문서](https://wiki.haskell.org/Haskell_in_5_steps)
-- [RWH: Chapter 9. Parsing command line arguments](http://book.realworldhaskell.org/read/command-line.html)
+# 관련 자료:
+- [Haskell Command Line Arguments](https://wiki.haskell.org/Command_line_option_parsing)
+- [System.Environment Haskell Documentation](https://hackage.haskell.org/package/base-4.14.1.0/docs/System-Environment.html)

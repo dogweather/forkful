@@ -10,36 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä ja miksi?
 
-Miksi ihminen kirjoittaisi ohjelmaan standardi virheestä?
+Kirjoittaminen virheen sijainnin tulosteeseen (engl. writing to standard error) on tapa, jolla ohjelmoijat voivat näyttää virheilmoituksia ohjelman suorituksen aikana. Tämä auttaa ohjelmoijia etsimään ja korjaamaan virheitä koodissaan ja helpottaa ohjelman debuggaamista.
 
-Kirjoittaminen standardi virheeseen on tärkeä osa ohjelmointia, koska se auttaa löytämään ja korjaamaan virheitä ohjelmassa. Kun ohjelma kohtaa virheen, se kirjoittaa virheilmoituksen standardi virheeseen, joka voidaan sitten lukea ja käsitellä. Tämä auttaa kehittäjiä löytämään ja korjaamaan virheet nopeammin, mikä säästää aikaa ja vaivaa.
+## Miten:
 
-## Miten
-
-Koodiesimerkkejä ja näytelähtöä "```C# ... ```" koodilohkoissa.
-
-Kirjoittaminen standardi virheeseen on helppoa C# -ohjelmointikielen avulla. Käytä `Console.Error.WriteLine()` -metodia kirjoitaaksesi haluamasi tekstin standardi virheeseen. Voit myös käyttää `Console.Error.Write()` -metodia, jos haluat kirjoittaa ilman rivinvaihtoa. Alla oleva koodiesimerkki näyttää, kuinka kirjoittaa teksti "Virhe!" standardi virheeseen ja sitten "Success!" standardi tulostukseen.
+Seuraavassa esimerkissä käytetään C#-kieltä näyttämään virheilmoitus kirjoittamalla se standardi virheen sijaintiin:
 
 ```C#
-Console.Error.WriteLine("Virhe!");
-Console.WriteLine("Success!");
+using System;
+
+int x = 5;
+int y = 0;
+try
+{
+    int result = x / y;
+    Console.WriteLine("Result: " + result);
+}
+catch (Exception e)
+{
+    // Kirjoitetaan virheilmoitus standardi virheen sijaintiin
+    Console.Error.WriteLine("Virhe: " + e.Message);
+}
 ```
 
-Tulostus näyttää seuraavalta:
+Esimerkin tulosteena näkyy "Virhe: Attempted to divide by zero", mikä kertoo ohjelmoijalle, että laskutoimituksessa on yritetty jakaa nollalla.
 
-Virhe! 
-Success!
+## Syväsukellus:
 
-## Syvempi sukellus
+Kirjoittaminen standardi virheen sijaintiin on ollut käytössä jo pitkään ohjelmoinnissa ja se on yleinen tapa koodin debuggaamisessa. Se on myös yksi tapa, jolla ohjelmistoilta saadaan tietoa ongelmista, jota käyttäjät kohtaavat. Toisaalta on myös muita tapoja käsitellä virheilmoituksia, kuten kirjoittaminen standardi tulosteeseen (engl. standard output) tai kirjoittaminen lokitiedostoon (engl. log file).
 
-Kirjoittaminen standardi virheeseen voi olla hyödyllistä myös virheen jäljittämisessä ja debuggaamisessa. Voit lisätä lisätietoja virheilmoitukseen käyttämällä `Console.Error.Write()` -metodia useammin, jolloin saat enemmän tietoa siitä, missä virhe on tapahtunut ja minkä arvojen kanssa ohjelma on toiminut ennen virheen tapahtumista.
+## Katso myös:
 
-Voit myös käyttää `Console.Error.SetOut()` -metodia ohjaamaan standardi virheen tulostus toiseen tiedostoon tai tietovirtaan. Tämä voi olla hyödyllistä, jos haluat tallentaa kaikki virheilmoitukset erilliseen lokitiedostoon.
-
-## Katso myös
-
-- [C# Console-luokka](https://docs.microsoft.com/en-us/dotnet/api/system.console?view=net-5.0) 
-- [C# kirjoitusarvot](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/assignment-operator) 
-- [Debuggaaminen C# -ohjelmissa](https://docs.microsoft.com/en-us/dotnet/core/tutorials/debugging-with-visual-studio-code)
+- https://docs.microsoft.com/en-us/dotnet/api/system.console.error
+- https://www.dotnetperls.com/console-error
+- https://stackoverflow.com/questions/19766396/c-sharp-writing-to-standard-error

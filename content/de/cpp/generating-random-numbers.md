@@ -1,7 +1,7 @@
 ---
-title:                "Generierung von zufälligen Zahlen"
-html_title:           "C++: Generierung von zufälligen Zahlen"
-simple_title:         "Generierung von zufälligen Zahlen"
+title:                "Erzeugung zufälliger Zahlen"
+html_title:           "C++: Erzeugung zufälliger Zahlen"
+simple_title:         "Erzeugung zufälliger Zahlen"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Numbers"
@@ -10,38 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum 
-Das Generieren von Zufallszahlen ist ein grundlegender Aspekt in der Programmierung und kann in verschiedenen Anwendungsbereichen nützlich sein. Es ermöglicht zum Beispiel die Erstellung von zufällig generierten Passwörtern, die Simulation von Prozessen oder die Erstellung von Testdaten für statistische Analysen.
+# Was & Warum?
+Generieren von Zufallszahlen ist eine Technik, die in der Programmierung häufig verwendet wird, um zufällige oder pseudo-zufällige Werte zu erzeugen. Dies kann hilfreich sein, um Simulationen zu erstellen, Daten zu generieren oder Spiele zu programmieren.
 
-## How To
-Um in C++ zufällige Zahlen zu generieren, kann die Standardbibliotheksfunktion `rand()` verwendet werden. Zunächst muss jedoch die Bibliothek `<cstdlib>` importiert werden. Dann kann die Funktion aufgerufen werden, um eine zufällige Ganzzahl zurückzugeben. Um den Zufallszahlengenerator zu initialisieren, muss `srand()` mit einem Startwert aufgerufen werden, der sich zum Beispiel aus der aktuellen Systemzeit berechnen lässt.
+# Wie geht's?
+Um in C++ Zufallszahlen zu generieren, muss die Bibliothek `cstdlib` eingebunden werden. Dann kann die Funktion `rand()` verwendet werden, um eine Zufallszahl zwischen 0 und `RAND_MAX` zu generieren. Um eine benutzerdefinierte Range zu haben, kann die Funktion `srand()` verwendet werden, um den Startpunkt festzulegen. Hier ist ein Beispiel:
 
 ```C++
 #include <cstdlib>
 #include <iostream>
-using namespace std;
 
-int main() {
-    // Initialisierung des Zufallszahlengenerators
-    srand(time(0));
-    
-    // Generierung einer zufälligen Ganzzahl zwischen 0 und 10
-    int random_num = rand() % 11;
-    
-    // Ausgabe der Zufallszahl
-    cout << "Zufällige Ganzzahl: " << random_num << endl;
+int main()
+{
+  // Eine Zufallszahl in der Range von 1 bis 10 erzeugen
+  srand(10); // Startpunkt auf 10 setzen
+  int random_number = rand() % 10 + 1; // Ein zufälliger Wert zwischen 0 und 9 wird generiert und mit 1 addiert, um die Range 1 bis 10 zu erhalten.
+  std::cout << random_number << "\n"; // Beispiel: 7
+
+  // Eine Zufallszahl in der Range von 50 bis 100 erzeugen
+  srand(100); // Startpunkt auf 100 setzen
+  random_number = rand() % 51 + 50; // Ein zufälliger Wert zwischen 0 und 50 wird generiert und mit 50 addiert, um die Range 50 bis 100 zu erhalten.
+  std::cout << random_number << "\n"; // Beispiel: 78
+  
+  return 0;
 }
-
 ```
 
-Der obige Code generiert eine zufällige Ganzzahl zwischen 0 und 10 und gibt diese in der Konsole aus. Um eine zufällige Gleitkommazahl zu generieren, kann `rand()` auf ein Gleitkommaintervall skaliert werden, zum Beispiel mit `double random_float = rand() / (1.0 + RAND_MAX);`.
+# Tiefgründig
+Das Generieren von Zufallszahlen ist eine Technik, die bereits seit den Anfängen der Computerprogrammierung verwendet wird. Die Funktion `rand()` basiert auf einem Algorithmus, der ein mathematisches Konzept namens linearer Kongruenzgenerator verwendet. Dieser Algorithmus ist nicht perfekt und kann gewisse Muster aufweisen, weshalb alternative Methoden wie die Verwendung von externen Zufallszahlengeneratoren empfohlen werden.
 
-## Deep Dive
-In C++ wird der Zufallszahlengenerator durch eine deterministische Funktion implementiert, die eine Sequenz von Pseudozufallszahlen erzeugt. Das bedeutet, dass bei einem festen Startwert immer die gleiche Folge von Zufallszahlen generiert wird. Um dies zu vermeiden, muss der Zufallszahlengenerator jedes Mal mit einem anderen Startwert initialisiert werden, zum Beispiel mit `srand(time(0))` oder `srand(clock())`.
-
-Es ist auch wichtig zu beachten, dass der Zufallszahlengenerator nicht wirklich zufällig ist. Die erzeugte Sequenz folgt einem deterministischen Algorithmus und kann daher durch Vorhersage oder Analyse beeinflusst werden. Es gibt jedoch komplexe Methoden, um die Zufälligkeit zu verbessern, wie zum Beispiel die Verwendung von externen Quellen wie Hardware-Geräten oder Internetdiensten, um den Startwert zu generieren.
-
-## Siehe auch
-- [Random number generation in C++ (Englisch)](https://www.cplusplus.com/reference/cstdlib/rand/)
-- [Pseudo-random number generation (Englisch)](https://en.wikipedia.org/wiki/Pseudorandom_number_generator)
-- [True Random Number Generator in C++ (Englisch)](https://www.geeksforgeeks.org/implement-random-0-6-using-the-given-random-0-1/)
+# Siehe auch
+- [C++ Referenz für die Funktion `rand()`](https://www.cplusplus.com/reference/cstdlib/rand/)
+- [Linearer Kongruenzgenerator](https://de.wikipedia.org/wiki/Linearer_Kongruenzgenerator)
+- [Externe Zufallszahlengeneratoren](https://de.wikipedia.org/wiki/Externer_Zufallszahlengenerator)

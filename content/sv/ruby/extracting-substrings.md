@@ -1,7 +1,7 @@
 ---
-title:                "Utdragning av substränger"
-html_title:           "Ruby: Utdragning av substränger"
-simple_title:         "Utdragning av substränger"
+title:                "Extrahera substrängar"
+html_title:           "Ruby: Extrahera substrängar"
+simple_title:         "Extrahera substrängar"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Strings"
@@ -10,47 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
-Varför skulle man vilja extrahera substrängar i Ruby? Det kan vara användbart när du behöver isolera en del av en sträng för att manipulera eller analysa den på ett specifikt sätt.
+## Vad & Varför?
 
-## Hur man gör
-För att extrahera en substräng i Ruby kan du använda metoden `slice` eller `[]` på en sträng med de index som motsvarar den del du vill extrahera. Här är ett exempel som visar hur man kan extrahera de första fyra bokstäverna i en sträng:
+Att extrahera substrängar i Ruby handlar om att hämta en del av en textsträng baserat på dess position eller ett visst mönster. Programerare gör detta för att effektivt hantera och manipulera data medan de utvecklar program och applikationer.
 
-```Ruby
-name = "Johanna"
-puts name[0..3] #=> "Joha"
-puts name.slice(0, 4) #=> "Joha"
+## Hur Man Gör:
+
+Här är några exempel på hur man kan extrahera substrängar i Ruby, med en kort beskrivning av hur resultaten blir.
+
+**Från början**
+```ruby
+"Hello World!"[0,5]
+=> "Hello"
 ```
 
-Om du vill extrahera från en viss position i strängen kan du också använda `slice` med ett utropstecken före indexet. Det här exemplet visar hur man kan extrahera allt efter den tredje bokstaven:
-
-```Ruby
-address = "Stockholm"
-puts address[3..-1] #=> "kholm"
-puts address.slice(3..-1) #=> "kholm"
+**Från slutet**
+```ruby
+"Hello World!"[-1,5]
+=> "World"
 ```
 
-## Djupdykning
-När du extraherar substrängar bör du vara medveten om att Ruby använder 0-indexing, vilket innebär att det första tecknet i en sträng har index 0. Om du försöker extrahera en del av strängen med ett högre index än det sista tecknet, kommer du inte få någon utdata tillbaka.
-
-Du kan också använda `slice` med bara ett index för att extrahera en singel bokstav, och du kan även använda negativa index för att räkna bakifrån. Här är ett exempel som visar detta:
-
-```Ruby
-word = "programmering"
-puts word[-5..-1] #=> "ering"
-puts word.slice(-5, 5) #=> "ering"
-puts word[1] #=> "r"
+**Med en specifik position och längd**
+```ruby
+"Hello World!"[6,5]
+=> "World"
 ```
 
-En annan användbar funktion när man extraherar substrängar är `split`. Den delar upp en sträng i en array baserad på ett mellanslag eller annan vald karaktär. Här är ett exempel som delar upp en sträng baserad på mellanslag och sedan extraherar en del av den:
-
-```Ruby
-sentence = "Jag älskar att programmera"
-words = sentence.split(" ")
-puts words[2] #=> "att"
+**Med regular expressions (regex)**
+```ruby
+"Hello World!"[/[a-z]+/]
+=> "ello"
 ```
 
-## Se även
-* [Ruby-docs: String](https://ruby-doc.org/core-2.7.0/String.html)
-* [Ruby-docs: Array](https://ruby-doc.org/core-2.7.0/Array.html)
-* [Ruby-docs: Enumerable](https://ruby-doc.org/core-2.7.0/Enumerable.html)
+## Djupare Dyk:
+
+### Historisk Kontext:
+Extrahering av substrängar har varit en viktig del av programmering sedan början av datorer när textbearbetning var en av de främsta användningsområdena. Det är fortfarande en viktig funktion i moderna programmeringsspråk som Ruby.
+
+### Alternativ:
+En annan metod för att extrahera substrängar i Ruby är genom användning av `slice()`-metoden, som fungerar på ett liknande sätt men med lite annorlunda syntax.
+
+### Implementation Detaljer:
+I Ruby är substrängar representerade av `String`-objekt och kan manipuleras med hjälp av inbyggda metoder som `[]` och `slice()`. När substrängar extraheras från en textsträng orsakar det inte några förändringar i den ursprungliga strängen, utan returnerar en helt ny sträng.
+
+## Se Även:
+
+För mer information och exempel på hur man kan extrahera substrängar i Ruby, besök [Ruby's officiella dokumentation om strängar](https://ruby-doc.org/core-2.7.1/String.html#method-i-5B-5D).

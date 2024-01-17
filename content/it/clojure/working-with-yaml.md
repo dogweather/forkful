@@ -10,48 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+# Cosa & Perché?
+Lavorare con YAML significa gestire dati strutturati in formato testo, utilizzato principalmente per configurazioni e scambi di dati. I programmatori lo utilizzano per rendere le informazioni leggibili e facilmente manipolabili.
 
-Se sei un programmatore che lavora con dati strutturati, probabilmente hai sentito parlare di YAML. Questo formato di file è ampiamente utilizzato per gestire configurazioni e dati complessi in modo leggibile per le persone e facilmente parsabile dai computer. In questo articolo, esploreremo come utilizzare Clojure per lavorare con YAML e ottenere il massimo da questo potente strumento.
-
-## Come fare
-
-Il primo passo per lavorare con YAML in Clojure è importare la libreria `clojure-yaml` nel nostro progetto. Possiamo farlo con il seguente codice:
+# Come:
+I codici di esempio di seguito mostrano l'utilizzo di YAML in Clojure.
 
 ```Clojure
-(ns my-project.core
-  (:require [clojure-yaml.core :as yaml]))
+(require '[clojure.data.yaml :as yaml])
+(require '[clojure.java.io :as io])
+(yaml/write-str {:nome "Mario" :età 30})
 ```
-
-Una volta importata la libreria, possiamo utilizzare la sua funzione `parse-string` per convertire una stringa YAML in una mappa Clojure. Ad esempio:
 
 ```Clojure
-(def yaml-string "# Questo è un commento valido in YAML\nnome: John Smith\netà: 30")
-(yaml/parse-string yaml-string)
-;; output: {:nome "John Smith", :età 30}
+(require '[clojure.data.yaml :as yaml])
+(require '[clojure.java.io :as io])
+(binding [*default-data-writer-fn* nil] (yaml/read-str (slurp "esempio.yml")))
 ```
 
-In alternativa, possiamo utilizzare la funzione `emit-string` per convertire una mappa Clojure in una stringa YAML. Ad esempio:
+Ecco l'output del primo codice:
 
 ```Clojure
-(def data {:numero 10, :lista [1 2 3], :map {"chiave" "valore"}})
-(yaml/emit-string data)
-;; output: "{numero: 10, lista: [1, 2, 3], map: {chiave: valore}}"
+"eta: 30\ nome: Mario\n"
 ```
 
-Una volta che abbiamo i nostri dati in formato YAML, possiamo utilizzare la funzione `write-file` per salvarli su un file. Ad esempio:
+# Approfondimento:
+YAML è stato sviluppato da Clark Evans nel 2001, con l'obiettivo di creare un formato di dati più leggibile per le persone e più facile da scrivere per i programmi. Alcune alternative a YAML includono JSON e XML. 
+L'implementazione di YAML in Clojure è basata sul pacchetto "snakeyaml", che offre funzionalità complete per la lettura e scrittura di file YAML.
 
-```Clojure
-(yaml/write-file "config.yaml" {:nome "John Smith", :attivo true})
-```
-
-## Approfondimento
-
-YAML supporta diversi tipi di dati, tra cui interi, decimali, stringhe, booleani, date e altro ancora. Per ulteriori informazioni sui tipi di dati supportati e sulla sintassi di YAML, puoi consultare la sua documentazione ufficiale.
-
-Inoltre, la libreria Clojure per YAML supporta anche opzioni avanzate come la gestione di riferimenti tra diversi documenti YAML e la personalizzazione del processo di conversione. Puoi esplorare questi aspetti maggiormente nella documentazione della libreria.
-
-## Vedi anche
-
-- Documentazione ufficiale di YAML: https://yaml.org/
-- Documentazione della libreria Clojure per YAML: https://github.com/novemberborn/clojure-yaml
+# Vedi anche:
+Per ulteriori informazioni su YAML in Clojure, puoi consultare la documentazione ufficiale su https://github.com/clj-commons/data.yaml. Inoltre, puoi esplorare altre librerie di terze parti, come "clj-yaml" e "data-reader-yaml", per sfruttare al massimo l'utilizzo di YAML nella tua programmazione.

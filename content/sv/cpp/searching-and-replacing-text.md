@@ -10,74 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför?
+## Vad & Varför?
+Att söka och byta ut text är en vanlig uppgift för programmerare. Det handlar om att hitta ett visst ord eller fras i en text och ersätta det med något annat. Det kan låta enkelt, men det är en viktig del av programmeringsprocessen för att korrigera databasfel eller uppdatera gammal kod.
 
-Att söka och ersätta text är en vanlig uppgift i programmering, särskilt när man arbetar med större mängder data eller textfiler. Genom att använda lämpliga sök- och ersättningsfunktioner kan man effektivt hitta och byta ut önskad text i en given kod eller fil.
+## Så här:
+Det finns många olika metoder för att söka och byta ut text i C++. Här är några enkla exempel:
 
-## Så här gör du
-
-För att söka och ersätta text i C++ finns det flera användbara funktioner tillgängliga. Nedan följer några exempel på hur man kan använda dessa funktioner i kod och vilken output man kan förvänta sig:
-
+- För att söka efter en viss text i en sträng, använd funktionen ```find()``` tillsammans med ```string``` klassen:
 ```C++
-// Läser in en fil som en sträng
-#include <iostream>
-#include <string>
-#include <fstream>
-
-int main(){
-    std::string file_content;
-    std::ifstream input_file ("input.txt");
-
-    if (input_file.is_open()){
-        // Sparar innehållet i filen i en sträng
-        file_content.assign(std::istreambuf_iterator<char>(input_file), std::istreambuf_iterator<char>());
-        input_file.close();
-    }
-
-    // Söker efter förekomsten av "älgen" i filen och ersätter med "renen"
-    size_t found = file_content.find("älgen");
-    while(found != std::string::npos){
-        file_content.replace(found, 5, "renen"); // 5 är längden på "älgen"
-        found = file_content.find("älgen", found + 5); // Flyttar sökningen framåt
-    }
-
-    // Skriver det nya innehållet till en ny fil
-    std::ofstream output_file ("output.txt");
-    output_file << file_content;
-    output_file.close();
-
-    return 0;
-}
+string str = "Hej världen";
+int index = str.find("världen");
+cout << index; // Output: 4
 ```
 
-I ovanstående exempel används funktionerna `find()` och `replace()` för att söka igenom en fil och ersätta viss text. Efter att ha läst in filen som en sträng med hjälp av `ifstream` klassen, används `find()` för att leta efter förekomsten av "älgen" i strängen. Om det hittas så används `replace()` för att byta ut det mot "renen". Sedan flyttas sökningen framåt med hjälp av `found` variabeln, så att inte samma förekomst ersätts flera gånger. Slutligen skrivs den nya strängen till en ny fil med hjälp av `ofstream` klassen.
-
-En annan vanlig funktion som kan användas för att söka och ersätta text är `str_replace()` från `<algorithm>` biblioteket. Detta kan användas för att enkelt byta ut en viss sträng mot en annan i en given text.
-
+- För att ersätta en del av en sträng med en annan, använd funktionen ```replace()```:
 ```C++
-// Byter ut alla förekomster av "solen" mot "månen"
-#include <iostream>
-#include <string>
-#include <algorithm>
-
-int main(){
-    std::string sentence = "solen går upp när sommaren kommer";
-    std::replace(sentence.begin(), sentence.end(), "solen", "månen");
-
-    std::cout << sentence << std::endl;
-
-    return 0;
-}
+string str = "Äpple och päron";
+str.replace(0, 5, "Banan");
+cout << str; //Output: Banan och päron
 ```
 
-I exemplet ovan används `replace()` för att byta ut alla förekomster av "solen" mot "månen" i en given text. Genom att använda `begin()` och `end()` funktionerna kan man ange att sökningen ska göras i hela strängen.
+- Du kan också använda enkel regex för att söka efter ett mönster i en sträng och byta ut det med något annat med ```regex_replace()``` funktionen:
+```C++
+string str = "Min favoritfärg är grönt";
+regex pattern("grönt");
+cout << regex_replace(str, pattern, "blått"); // Output: Min favoritfärg är blått
+```
 
-## Deep Dive
+## Djupdykning:
+Sök- och ersättningsfunktionerna i C++ har funnits sedan de tidiga versionerna av språket. Innan regex-biblioteket tillkom år 2011 användes istället ```replace()``` funktionen med hjälp av en kombination av ```find()``` och ```substr()``` för att utföra komplexa substitutioner.
 
-När man söker och ersätter text i en given kod eller fil finns det vissa faktorer man bör tänka på för att undvika oönskade resultat. En vanlig fallgrop är att sökningen och ersättningen sker på hela strängen, vilket kan leda till att andra delar av kod eller text också påverkas. Det är viktigt att noggrant ange vilka delar av strängen som ska sökas och eventuellt ersättas.
+Det finns också andra alternativ för att söka och byta ut text i C++, till exempel använda ```stringstream``` tillsammans med ```getline()``` och ```replace()``` för att arbeta med större textfiler.
 
-En annan viktig aspekt att tänka på är att vara noga med teckenkodning. Om man söker och ersätter text i en kod eller fil som har en annan teckenkodning än den standard som används i ens kod, kan det leda till oönskade resultat eller till och med göra att koden eller filen slutar fungera.
+Implementeringen av sök- och ersättningsfunktionerna i C++ är optimerade för prestanda och kan hantera stora mängder data effektivt. Det är också möjligt att använda olika parametrar för att specificera vilken del av texten som ska sökas igenom, vilket ger mer flexibilitet och precision.
 
-## Se även
-
-- [C++ String
+## Se också:
+- [C++ Standard Library - Regular Expressions](https://en.cppreference.com/w/cpp/regex)
+- [C++ Standard Library - String](https://en.cppreference.com/w/cpp/string/basic_string)
+- [C++ Standard Library - Stringstream](https://en.cppreference.com/w/cpp/io/basic_stringstream)

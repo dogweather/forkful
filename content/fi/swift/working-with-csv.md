@@ -1,7 +1,7 @@
 ---
-title:                "Työskentelytäuölle csv:n kanssa."
-html_title:           "Swift: Työskentelytäuölle csv:n kanssa."
-simple_title:         "Työskentelytäuölle csv:n kanssa."
+title:                "Työskentely csv:n kanssa"
+html_title:           "Swift: Työskentely csv:n kanssa"
+simple_title:         "Työskentely csv:n kanssa"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Data Formats and Serialization"
@@ -10,52 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mikä & Miksi?
 
-CSV-tiedostot (Comma-Separated Values) ovat yleisiä tiedostotyyppejä, joita käytetään tiedon tallentamiseen ja jakamiseen erityisesti taulukkomuodossa. Nämä tiedostot ovat suosittuja erityisesti liiketoiminta- ja tieteellisissä sovelluksissa, ja siksi on hyödyllistä tietää, kuinka työskennellä niiden kanssa ohjelmoinnin kautta.
+CSV eli "comma-separated values" on yksinkertainen ja suosittu tapa tallentaa ja jakaa tietoja taulukkomuodossa. Se koostuu riveistä ja sarakkeista, jotka on erotettu pilkulla. Ohjelmoijat käyttävät CSV:tä usein tietojen lukuun ja kirjoittamiseen, koska se on helppo ja yleisesti tuettu tiedostomuoto.
 
-## Kuinka
-
-CSV-tiedostojen käsittely Swift-ohjelmoinnin avulla on melko helppoa. Tämä esimerkki näyttää kuinka lukea CSV-tiedosto, jossa on sarakkeita "nimi" ja "ikä", ja tulostaa sen sisältö konsoliin:
+## Miten:
 
 ```Swift
-if let csvPath = Bundle.main.path(forResource: "henkilötiedot", ofType: "csv") {
-    do {
-        let csvData = try String(contentsOfFile: csvPath, encoding: .utf8)
-        let csvLines = csvData.components(separatedBy: "\n")
-        
-        for line in csvLines {
-            let person = line.components(separatedBy: ",")
-            let name = person[0]
-            let age = person[1]
-            print("\(name) on \(age) vuotta vanha.")
-        }
-    } catch {
-        print("Virhe luettaessa tiedostoa.")
+// Luodaan CSV-muodossa oleva taulukko
+let data = [["1", "Apple", "10"], ["2", "Orange", "6"], ["3", "Banana", "3"]]
+
+// Tallennetaan taulukko CSV-muodossa tiedostoon nimeltä "fruits.csv"
+let csv = data.map { $0.joined(separator: ",") }.joined(separator: "\n")
+try csv.write(toFile: "fruits.csv", atomically: true, encoding: .utf8)
+
+// Luetaan CSV-tiedosto ja tulostetaan sen sisältö
+if let csvString = try? String(contentsOfFile: "fruits.csv", encoding: .utf8) {
+    csvString.enumerateLines { line, _ in
+        let columns = line.components(separatedBy: ",")
+        let id = columns[0]
+        let name = columns[1]
+        let quantity = columns[2]
+        print("\(name): \(quantity) in stock")
     }
-} else {
-    print("Tiedostoa ei löytynyt.")
 }
 ```
 
 Tulostus:
-
 ```
-Matti on 32 vuotta vanha.
-Maria on 28 vuotta vanha.
-Timo on 45 vuotta vanha.
+Apple: 10 in stock
+Orange: 6 in stock
+Banana: 3 in stock
 ```
 
-Huomaa, että osa CSV-tiedostoista voi sisältää rivinvaihtoja, jotka on otettava huomioon koodissa. Tässä esimerkissä käytämme ```components(separatedBy: "\n")``` -metodia jakamaan tiedoston rivit taulukoksi.
+## Syvempi sukellus:
 
-## Syväsukellus
+CSV:n esiaste oli yksinkertaisempi käyttöliittymälijstämuoto, joka kehitettiin IBM:n toimesta 1972. CSV:n suosio kasvoi 1980-luvulla, kun Microsoft käytti sitä ensimmäisessä Excel-versiossaan. Nykyään CSV on yleisesti käytössä tietojen siirrossa eri ohjelmien välillä, kuten tietokantojen ja taulukkolaskentaohjelmien välillä.
 
-CSV-tiedostojen käsittelyyn on olemassa monia erilaisia vaihtoehtoja Swiftissä. Voit esimerkiksi käyttää valmiita kirjastoja, kuten [SwiftCSV](https://github.com/swiftcsv/SwiftCSV), joka tarjoaa monia hyödyllisiä toimintoja tiedostojen lukemiseen ja kirjoittamiseen. Voit myös käyttää [Swiftin sisäänrakennettua](https://developer.apple.com/documentation/foundation/nscsvparser) ```CSVParser``` -luokkaa, jonka avulla voit käsitellä CSV-tiedostoja asynkronisesti.
+On myös muita taulukkoformaatteja, kuten JSON, jotka voivat olla parempia monimutkaisempien tietorakenteiden tallentamiseen. Mutta jos kyseessä on yksinkertainen tietojen tallentaminen ja jakaminen, niin CSV on helppo ja tehokas vaihtoehto.
 
-On myös tärkeää huomata, että CSV-tiedostot voivat sisältää monia erilaisia muotoiluja ja näiden muotoilujen käsittelyyn on erilaisia tekniikoita. Jos haluat syvällisempää tietoa CSV-tiedostojen käsittelystä, tämä [artikkeli](https://csv-solutions.org/getting-started/) tarjoaa kattavan oppaan erilaisiin käsittelytapoihin.
+CSV-tiedoston lukeminen ja kirjoittaminen voidaan toteuttaa myös itse käyttämällä esimerkiksi tekstikäsittelyohjelmaa. Tämä voi kuitenkin olla työlästä ja altis virheille, joten Swift-ohjelmointikielen avulla CSV:n käsittely on nopeampaa ja luotettavampaa.
 
-## Katso myös
+## Katso myös:
 
-- [SwiftCSV](https://github.com/swiftcsv/SwiftCSV)
-- [Foundation Framework: CSVParser](https://developer.apple.com/documentation/foundation/nscsvparser)
-- [CSV Solutions](https://csv-solutions.org/getting-started/)
+- [Apple Swift blogi: Working with CSV Files](https://developer.apple.com/swift/blog/?id=37)
+- [CSV-lukijan ja kirjoittajan kirjasto Swiftille](https://github.com/swiftcsv/SwiftCSV)
+- [CSV-formaatin määritelmä](https://tools.ietf.org/html/rfc4180)

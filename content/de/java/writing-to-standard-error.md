@@ -1,7 +1,7 @@
 ---
-title:                "Einschreiben auf Standardfehler"
-html_title:           "Java: Einschreiben auf Standardfehler"
-simple_title:         "Einschreiben auf Standardfehler"
+title:                "Schreiben auf die Standardfehlerausgabe."
+html_title:           "Java: Schreiben auf die Standardfehlerausgabe."
+simple_title:         "Schreiben auf die Standardfehlerausgabe."
 programming_language: "Java"
 category:             "Java"
 tag:                  "Files and I/O"
@@ -10,38 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was & Warum?
+Beim Schreiben von Programmen kommt es oft vor, dass man sich mit verschiedenen Problemen und Fehlern auseinandersetzen muss. In solchen Fällen kann es hilfreich sein, die Fehlermeldungen oder wichtige Informationen nicht auf der normalen Ausgabe (standard output), sondern auf dem sogenannten Standardfehler (standard error) auszugeben. Dadurch können Fehler schneller erkannt und behoben werden.
 
-Das Schreiben auf die Standard Error-Konsole kann hilfreich sein, um Fehler und Warnungen in Ihrem Java-Code zu erkennen und zu beheben. Es ermöglicht auch eine dynamische Kommunikation mit dem Benutzer während der Codeausführung.
+## Wie geht's?
+Um etwas auf dem Standardfehler auszugeben, benutzt man in Java die Methode `System.err.println()`. Dabei wird die Nachricht, die man auf dem Fehlerausgabekanal ausgeben möchte, als Parameter in die Methode gegeben. Hier ein Beispiel:
 
-## Wie geht das?
-
-Um auf die Standard Error-Konsole zu schreiben, verwenden Sie die Methode `System.err.println()`. Hier ist ein Beispiel in Java:
-
-```
-public class Main {
-  public static void main(String[] args) {
-    System.err.println("Dies ist eine Fehlermeldung.");
-  }
-}
+```Java
+System.err.println("Es ist ein Fehler aufgetreten!");
 ```
 
-Die Ausgabe auf der Konsole wird folgendermaßen aussehen:
+Die Ausgabe sieht dann in der Konsole etwa so aus:
 
-```
-Dies ist eine Fehlermeldung.
+```none
+Es ist ein Fehler aufgetreten!
 ```
 
 ## Tiefere Einblicke
+Die Idee, wichtige Informationen auf dem Standardfehler auszugeben, kommt aus der Unix-Welt. Dort gibt es verschiedene Ausgabe-Kanäle, die für unterschiedliche Zwecke genutzt werden. Während die normale Ausgabe nur für normale Ausgaben gedacht ist, kann der Standardfehler für Fehlermeldungen oder wichtige Hinweise genutzt werden.
 
-Die Standard Error-Konsole unterscheidet sich von der Standard Output-Konsole in der Art, wie sie Nachrichten behandelt. Während die Standard Output-Konsole für reguläre Ausgaben bestimmt ist, wird die Standard Error-Konsole für Fehlermeldungen und Warnungen verwendet.
-
-Mit `System.err.println()` können Sie auch Ausnahmefehler direkt auf die Konsole schreiben, anstatt sie in eine Log-Datei zu schreiben. Dies kann bei der Fehlerbehebung sehr hilfreich sein, da Sie sofort sehen können, wo und warum der Fehler aufgetreten ist.
-
-Ein weiterer Vorteil der Verwendung der Standard Error-Konsole ist, dass Sie während der Codeausführung Nachrichten an den Benutzer senden können, um ihn über den Fortschritt des Codes oder bestimmte Aktionen zu informieren.
+Als Alternative zur `System.err` Methode kann auch die `System.out` Methode genutzt werden, um Meldungen auf dem Standardfehler auszugeben. Allerdings wird diese Methode auch für die normale Ausgabe verwendet, weshalb es besser ist, die `System.err` Methode zu nutzen.
 
 ## Siehe auch
-
-- [Java Documentation: System class](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/System.html)
-- [Difference between System.out.println() and System.err.println() in Java](https://www.tutorialspoint.com/difference-between-system-out-println-and-system-err-println-in-java)
-- [Debugging Java Programs using Standard Error Console](https://www.youtube.com/watch?v=S-4mQAMQ0oc)
+- [Java Dokumentation zur System-Klasse](https://docs.oracle.com/javase/10/docs/api/java/lang/System.html)
+- [Wikipedia-Artikel über Standard Streams](https://en.wikipedia.org/wiki/Standard_streams#Standard_error)

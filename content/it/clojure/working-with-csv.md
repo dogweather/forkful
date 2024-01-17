@@ -10,35 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+## Cosa & Perché?
 
-Se sei un programmatore alle prime armi o un esperto in cerca di un linguaggio funzionale, Clojure è quello che fa per te. Con la sua sintassi semplice e una vasta libreria di funzioni, Clojure è perfetto per lavorare con file CSV.
+Lavorare con i file CSV è un'attività comune per i programmatori poiché i dati sono spesso memorizzati in questo formato. CSV, o Comma-Separated Values, è un formato di file di testo che utilizza una virgola come separatore per organizzare i dati in colonne e righe.
 
-## Come Fare
-
-Per iniziare a lavorare con file CSV in Clojure, è necessario prima importare la libreria "clojure.data.csv". Possiamo farlo semplicemente digitando il seguente codice all'inizio del nostro file:
+## Come fare:
 
 ```Clojure
 (require '[clojure.data.csv :as csv])
+
+;; Caricare un file CSV in una collezione
+(csv/read-csv "mio_file.csv")
+
+;; Scrivere una collezione in un file CSV
+(csv/write-csv "nuovo_file.csv" [["Gianni" "Rossi" 25]
+                                ["Maria" "Bianchi" 33]
+                                ["Luca" "Verdi" 42]])
+
+;; Con questo codice, convertiamo la collezione in una struttura di dati tabellare che può essere facilmente manipolata dal programma.
+
 ```
-Ora possiamo leggere un file CSV usando la funzione "csv/read-csv". Ad esempio, se abbiamo un file chiamato "users.csv" con i campi "nome", "cognome" e "età", possiamo leggerlo e salvarlo in una variabile chiamata "utenti" in questo modo:
 
-```Clojure
-(utenti (csv/read-csv "users.csv"))
-```
-Possiamo quindi accedere agli elementi del file CSV utilizzando la sintassi standard Clojure di "primi-1", "primi-2", ecc. Ad esempio, per accedere al nome del primo utente nel file, possiamo scrivere:
+## Approfondimento:
 
-```Clojure
-(primi-1 utenti)
-```
-Che dovrebbe restituire il nome del primo utente nell'elenco.
+Il formato CSV è stato introdotto negli anni '70 per semplificare lo scambio di dati tra le applicazioni. Oggi, nonostante l'uso di diverse alternative più avanzate, il CSV è ancora ampiamente utilizzato per la sua semplicità e praticità. Nel mondo Clojure, esistono diverse librerie per lavorare con i file CSV, tra cui la libreria standard `clojure.data.csv` e la popolare libreria `incanter.io`.
 
-## Approfondimento
+## Vedi anche:
 
-Una volta ottenuta la lista dei dati dal file CSV, possiamo manipolarli utilizzando le funzioni Clojure standard. Ad esempio, possiamo utilizzare "filter" per filtrare gli utenti in base a determinate condizioni, "map" per applicare una funzione a ogni utente nella lista e "reduce" per combinare i dati in una singola struttura. Inoltre, Clojure offre alcune librerie esterne che semplificano ulteriormente la lettura, la scrittura e la manipolazione di file CSV, come ad esempio "clojure-csv" e "data.csv". Per saperne di più su come lavorare con CSV in Clojure, consulta la documentazione ufficiale e prova a scrivere alcuni esempi di codice.
-
-## Vedi Anche
-
-- [Documentazione ufficiale di Clojure](https://clojure.org/)
-- [Libreria Clojure "clojure.data.csv"](https://cljdoc.org/d/clojure-data-csv/clojure.data.csv/0.1.4/doc/read-csv)
-- [Esempi di codice per lavorare con CSV in Clojure](https://gist.github.com/russolsen/57a69ab50f2b3e9f701a)
+- [Documentazione ufficiale della libreria clojure.data.csv](https://clojure.github.io/data.csv/)
+- [Libreria incanter.io per il lavoro scientifico in Clojure](https://incanter.github.io/incanter/tables.html)

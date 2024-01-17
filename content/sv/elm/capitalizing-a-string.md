@@ -1,7 +1,7 @@
 ---
-title:                "Stora bokstäver i en sträng"
-html_title:           "Elm: Stora bokstäver i en sträng"
-simple_title:         "Stora bokstäver i en sträng"
+title:                "Kapitalisera en sträng"
+html_title:           "Elm: Kapitalisera en sträng"
+simple_title:         "Kapitalisera en sträng"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -10,46 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
 
-Att förstora bokstäver i en sträng är en viktig funktion i många programmeringsspråk, inklusive Elm. Genom att förstå hur man gör det kan du enkelt modifiera strängar för att passa dina behov.
+Kapitalisering av en sträng i programmering innebär att man gör om den första bokstaven i varje ord i strängen till stor bokstav. Detta görs för att göra strängen läsbarare och mer estetiskt tilltalande. Det är en vanlig konvention som följs av många programmerare.
 
-## Så här gör du
+## Så här gör man:
 
-```elm
+### Elm:
+
+```
 import String
 
-String.toUpper "hej världen"
+String.capitalize "detta är en sträng" 
+--> "Detta är en sträng"
 ```
 
-Detta kodblock använder den inbyggda funktionen `toUpper` i `String`-modulen för att förstora alla bokstäver i strängen `"hej världen"`. Resultatet är `"HEJ VÄRLDEN"`.
+### Utdata:
 
-En annan möjlighet är att använda `String.map` för att iterera över varje tecken i en sträng och förstora det.
-
-```elm
-import String exposing (map, toUpper)
-
-map toUpper "hej världen"
+```
+Detta är en sträng
 ```
 
-Detta kodblock ger samma resultat som det föregående, men visar hur man kan använda `map` för att förstora en sträng på ett mer flexibelt sätt.
+## Djupdykning:
 
-## Djupdykning
+### Historisk bakgrund:
 
-Att förstora bokstäver i en sträng är en relativt enkel uppgift, men kan vara till stor hjälp i vissa situationer. Till exempel kan du använda det för att standardisera inmatning från användare eller för att enkelt jämföra strängar oavsett storlek på bokstäver.
+Att kapitalisera en sträng har varit en långvarig konvention inom programmeringsvärlden. Det har sitt ursprung i att göra text lättare att läsa för människor och har sedan dess blivit standardiserat i många programmeringsspråk.
 
-I Elm finns det också möjlighet att förstora specifika tecken i en sträng baserat på deras position. Detta kan göras med hjälp av den inbyggda funktionen `toUpperAt`.
+### Alternativ:
 
-```elm
-import String
+En alternativ metod för att kapitalisera en sträng är att använda funktionen `String.toUpper`, vilket gör hela strängen till versaler istället för bara den första bokstaven. Detta kan dock påverka läsbarheten i vissa fall.
 
-String.toUpperAt 2 "hej världen"
-```
+### Implementeringsdetaljer:
 
-Detta kodblock kommer att förstora bokstäverna vid position 2 i strängen, vilket resulterar i `"HeJ Världen"`.
+I Elm finns funktionen `String.capitalize` som tar en sträng och returnerar en ny sträng med den första bokstaven i varje ord kapitaliserad. Detta görs genom att först splitta strängen till en lista av ord, sedan använda funktionen `List.map` för att göra om varje första bokstaven till stor bokstav och slutligen använda funktionen `String.join` för att sätta ihop strängen igen.
 
-## Se även
+## Se även:
 
-- [Officiell Elm-dokumentation för String-modulen](https://package.elm-lang.org/packages/elm/core/latest/String)
-- [Elm Guide: Strings](https://guide.elm-lang.org/types/strings.html)
-- [Elm Tutorial: Working with Strings](https://korban.net/elm/elm-tutorial-working-with-strings/)
+[Elm Docs - String](https://package.elm-lang.org/packages/elm/core/latest/String)

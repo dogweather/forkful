@@ -1,7 +1,7 @@
 ---
-title:                "날짜를 문자열로 변환하는 방법"
-html_title:           "Clojure: 날짜를 문자열로 변환하는 방법"
-simple_title:         "날짜를 문자열로 변환하는 방법"
+title:                "날짜를 문자열로 변환하기"
+html_title:           "Clojure: 날짜를 문자열로 변환하기"
+simple_title:         "날짜를 문자열로 변환하기"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Dates and Times"
@@ -10,39 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+## 무엇 & 왜?
+날짜를 문자열로 변환하는 것은 날짜 데이터를 사람이 이해할 수 있는 형식으로 표현하는 것을 의미합니다. 프로그래머들은 날짜 데이터를 다양한 출력 형식으로 변환할 필요가 있기 때문에 이 작업을 수행합니다.
 
-Clojure는 Date와 String 사이의 변환 기능을 제공하기 때문에 더 효율적으로 날짜를 다룰 수 있습니다. 따라서 Clojure를 사용하면 날짜와 관련된 작업을 더 쉽고 간편하게 수행할 수 있습니다.
+## 방법:
+`Clojure` 코드 블록 내에 코딩 예제와 출력 예시를 제공합니다.
 
-## 방법
-
-Clojure에서 Date를 String으로 변환하는 방법은 다음의 예시 코드를 통해 알려드리겠습니다. 
-
-```Clojure 
-(require '[clojure.java-time :as t])
-
-;; 현재 날짜와 시간을 얻어옵니다.
-(def current-date-time (t/local-date-time))
-
-;; 날짜를 String으로 변환합니다.
-(t/format current-date-time "yyyy-MM-dd")
-
-;; 결과: "2021-01-01"
+```
+; 날짜를 YYYY-MM-DD 형식의 문자열로 변환하기
+(str (format "%04d-%02d-%02d" year month day))
+; 결과: "2021-05-01"
 ```
 
-만약 포맷을 변경하고 싶다면 다음과 같이 포맷 문자열을 수정하면 됩니다.
-
-```Clojure
-;; 날짜를 "MM/dd/yyyy" 포맷으로 변환합니다.
-(t/format current-date-time "MM/dd/yyyy")
-
-;; 결과: "01/01/2021"
+```
+; 날짜와 시간을 YYYY년 M월 D일 HH시 MM분 형식의 문자열로 변환하기
+(str (format "%04d년 %d월 %d일 %02d시 %02d분" year month day hour minute))
+; 결과: "2021년 5월 1일 09시 30분"
 ```
 
-## 깊이 있는 탐구
+## 깊이 들어가기:
+날짜를 문자열로 변환하는 작업은 다양한 프로그래밍 언어에서 지원되고 있으며, 대부분의 언어에서는 `format` 함수를 사용하거나 내장 함수를 제공합니다. `Clojure`에서는 `str` 함수와 `format` 함수를 사용하여 날짜를 원하는 형식의 문자열로 변환할 수 있습니다.
 
-Clojure에서 Date와 String 사이의 변환은 Java의 java.time 패키지에 있는 클래스들을 사용하여 이루어집니다. Clojure의 t/format 함수는 java.time 패키지의 DateTimeFormatter 클래스를 이용하여 날짜를 포맷팅합니다. 그리고 날짜와 시간을 다루는 데 있어서 Clojure의 java-time 라이브러리는 매우 유용한 도구입니다. 따라서 Clojure에서 날짜와 관련된 작업을 수행할 때는 java-time 라이브러리를 적극적으로 활용하는 것이 좋습니다.
-
-## 확인해보세요
-[자바타임(JT라이브)](https://docs.oracle.com/javase/8/docs/technotes/guides/i18n/formatting_l10n.html)
-[Clojure java-time 라이브러리 문서](https://clojure.github.io/java-time/)
+## 참고문헌:
+- https://clojure.org/api/java.time/readme
+- https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html

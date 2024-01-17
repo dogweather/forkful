@@ -10,34 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Pourquoi
+## Qu'est-ce que c'est et pourquoi le faire?
 
-Tu as déjà eu besoin de extraire un morceau de texte à partir d'une chaîne de caractères en Elm ? Peut-être que tu as un formulaire où tu dois valider une adresse e-mail à partir de laquelle tu veux extraire le domaine. Ou peut-être que tu veux extraire le nom d'utilisateur d'une URL pour afficher des informations personnalisées sur une page. Dans ces cas-là, savoir comment extraire des sous-chaines en Elm peut être très utile.
+L'extraction de sous-chaînes est une technique couramment utilisée en programmation, qui consiste à extraire une partie spécifique d'une chaîne de caractères. Les programmeurs le font souvent pour traiter des données, effectuer des recherches ou pour faciliter la manipulation de chaînes plus longues.
 
-# Comment faire
-
-C'est très simple de extraire des substrings en Elm. Tout d'abord, tu dois utiliser la fonction `String.dropLeft` ou `String.dropRight` pour indiquer à Elm combien de caractères tu veux enlever du début ou de la fin de ta chaîne de caractères. Ensuite, utilise la fonction `String.slice` pour extraire le morceau de ta chaîne de caractères en utilisant l'index du début et de la fin que tu veux garder.
+## Comment le faire:
 
 ```Elm
-input = "john.smith@gmail.com" 
-domain = String.slice 11 -4 input
--- output: "gmail"
+-- Exemple 1: Extraction d'une sous-chaîne à partir d'une position spécifique
+substring 2 5 "Bonjour!" -- Sortie: "njour"
+
+-- Exemple 2: Extraction d'une sous-chaîne en utilisant une plage de positions
+substring 0 3 "Elm est génial!" -- Sortie: "Elm"
+
+-- Exemple 3: Extraction d'une sous-chaîne en utilisant un motif
+substring "est" "Elm est génial!" -- Sortie: "est"
 ```
 
-Tu peux également utiliser l'indexation par caractère pour extraire une sous-chaîne en utilisant la fonction `String.map`. Par exemple, si tu veux extraire le prénom `john` à partir de `john.smith@gmail.com`, tu peux utiliser `String.map` pour trouver l'index du premier point et extraire les caractères avant cet index.
+## Approfondissement
+L'extraction de sous-chaînes a été introduite dans le langage de programmation Elm dans sa version 0.18. Il existe également d'autres méthodes pour extraire des sous-chaînes, telles que l'utilisation de la fonction `String.slice` ou le module `String.Extra` qui offre des fonctions supplémentaires pour manipuler les chaînes de caractères. 
 
-```Elm
-input = "john.smith@gmail.com"
-firstName = input |> String.map toSlug |> String.dropRight 10
--- output: "john"
-```
+Dans Elm, la méthode `substring` prend en compte la position de début et de fin d'extraction, ainsi que le motif à extraire. Si aucun motif n'est spécifié, il extraira simplement la sous-chaîne en fonction des positions données. Il est également possible d'utiliser des nombres négatifs pour compter à partir de la fin de la chaîne.
 
-# Plongeon en profondeur
-
-Il y a quelques choses à garder à l'esprit lors de l'extraction de substrings en Elm. Tout d'abord, la fonction `String.dropLeft` renverra une chaîne de caractères vide si tu essaies de supprimer plus de caractères qu'il n'y en a dans ta chaîne de caractères. Cela peut causer des erreurs si tu ne vérifies pas cela dans ton code. Deuxièmement, la fonction `String.dropRight` renverra une erreur si tu utilises un index négatif. Donc, assure-toi de toujours utiliser un index positif avec cette fonction.
-
-# Voir aussi
-
-- Documentation officielle d'Elm sur la manipulation de chaînes de caractères : https://guide.elm-lang.org/strings/
-- Un tutoriel sur la manipulation de chaînes de caractères en Elm : https://dev.to/benjaminadk/elm-strings-1ckc
-- Exemples pratiques d'utilisation de fonctions pour extraire des sous-chaînes en Elm : https://medium.com/@svalaskevicius/elm-string-operations-compared-26f71961c9d4
+## Voir aussi:
+- Documentation officielle sur la fonction `substring` en Elm : https://package.elm-lang.org/packages/elm/core/latest/String#substring
+- Documentation sur la fonction `slice` en Elm : https://package.elm-lang.org/packages/elm/core/latest/String#slice
+- Documentation sur le module `String.Extra` en Elm : https://package.elm-lang.org/packages/elm/core/latest/String-Extra

@@ -10,61 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que utilizar expressões regulares?
+## What & Why?
+Regular Expressions (ou Expressões Regulares) são ferramentas poderosas que os programadores utilizam para encontrar padrões específicos em um texto. Elas são úteis para validar entradas de usuário, pesquisar e filtrar dados e até mesmo substituir informações em um documento. Além disso, eles economizam tempo e esforço, já que permitem que você processe grandes quantidades de dados de forma rápida e eficiente.
 
-As expressões regulares são uma ferramenta poderosa para manipulação de texto em programas C++. Com elas, é possível realizar uma série de operações, desde validação de strings até a manipulação de grandes quantidades de dados.
-
-## Como usar expressões regulares em C++
-
-Para utilizar expressões regulares em C++, é necessário incluir a biblioteca "regex". Em seguida, é preciso definir um objeto do tipo "regex" e atribuir a ele a expressão regular desejada. Por exemplo:
-
-```C++
-#include <regex>
+## How to:
+Um exemplo simples de como usar expressões regulares em C ++ é através da biblioteca `std::regex`. Ela oferece vários métodos para trabalhar com strings e analisar padrões em um texto.
+```
 #include <iostream>
+#include <regex>
 using namespace std;
 
-int main()
-{
-    // Definindo a expressão regular
-    regex re("([a-z]+)@(\\w+\\.\\w+)(\\.\\w+)?");
+int main(){
+  // Definindo o padrão de busca
+  regex pattern ("[0-9]+"); 
+  // String de entrada 
+  string text = "Hoje é dia 15 de agosto, faltam 16 dias para o meu aniversário!";
+  
+  // Buscando padrão na string
+  smatch results;
+  regex_search(text, results, pattern);  
 
-    // Criando uma string para testar a expressão regular
-    string email = "exemplo@dominio.com";
+  // Imprimindo o primeiro resultado encontrado
+  cout << results[0] << endl;
 
-    // Realizando a pesquisa na string de acordo com a expressão regular
-    smatch matches;
-    regex_search(email, matches, re);
+  // Substituindo o primeiro resultado por asteriscos
+  string new_text = regex_replace(text, pattern, "***");
+  
+  // Imprimindo o novo texto
+  cout << new_text << endl;
 
-    // Imprimindo o resultado da busca
-    cout << matches[1].str() << "@" << matches[2].str() << matches[3].str();
-
-    return 0;
+  return 0;
 }
 ```
-
-### Saída:
-
+A saída desse código será:
 ```
-exemplo@dominio.com
+15
+Hoje é dia ** de agosto, faltam ** dias para o meu aniversário!
 ```
 
-## Mergulhando mais fundo
+## Deep Dive:
+As expressões regulares têm sido utilizadas desde a década de 1950 e foram popularizadas pelo linguista norte-americano Stephen Kleene. Há diversas variações e implementações de expressões regulares em diferentes linguagens de programação, mas o conceito básico permanece o mesmo.
 
-Expressões regulares permitem o uso de metacaracteres para facilitar a definição de padrões de busca. Alguns exemplos são:
+Alternativas às expressões regulares incluem o uso de funções de string, como `find()` e `replace()`, ou o uso de algoritmos de busca tradicionais. Embora essas opções possam ser eficazes em alguns casos, as expressões regulares oferecem uma sintaxe mais poderosa e flexível para lidar com padrões em textos.
 
-- `.`: qualquer caractere
-- `*`: zero ou mais ocorrências do caractere anterior
-- `+`: uma ou mais ocorrências do caractere anterior
-- `?`: zero ou uma ocorrência do caractere anterior
-- `[ ]`: conjunto de caracteres permitidos
-- `[^]`: conjunto de caracteres proibidos
-- `^`: início da string
-- `$`: fim da string
-
-Além disso, é possível utilizar quantificadores para definir o número de ocorrências desejado, como `*` (zero ou mais), `+` (uma ou mais), `?` (zero ou uma), `{n}` (exatamente n), `{n,}` (pelo menos n) e `{n,m}` (entre n e m).
-
-## Veja também
-
-- [Documentação da biblioteca regex em C++](https://en.cppreference.com/w/cpp/regex)
-- [Tutorial sobre expressões regulares em C++](https://www.regular-expressions.info/cpp.html)
-- [Ferramenta online para testar expressões regulares](https://regex101.com/)
+## See Also:
+- [C++ Regular Expressions - cppreference.com](https://en.cppreference.com/w/cpp/regex)
+- [The Theory of Regular Expression - regular-expressions.info](https://www.regular-expressions.info/)
+- [Funções de string em C++ - cplusplus.com](http://www.cplusplus.com/reference/string/string/)

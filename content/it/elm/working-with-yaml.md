@@ -10,62 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+## Cosa & Perché?
 
-Vuoi semplificare la gestione dei dati strutturati nel tuo progetto Elm? Allora devi imparare a lavorare con YAML!
+Il YAML è un formato di file leggibile dall'uomo e dalla macchina che è comunemente utilizzato per la configurazione dei programmi e lo scambio di dati strutturati. I programmatori spesso scelgono di utilizzare il YAML perché è più facile da leggere rispetto ad altri formati come JSON e XML, ed è più flessibile e modulare rispetto alla configurazione diretta nel codice.
 
-## Come
-
-Usando la libreria `elm-tools/parser` puoi facilmente parsare un documento YAML in un valore Elm.
+## Come fare:
 
 ```Elm
-import Parser exposing (..)
-import YAML exposing (..)
+import Json.Decode exposing (decodeValue)
+import Yaml exposing (load)
 
-yamParser : Parser (YAM Document)
-yamParser =
-  yamlDocument
-    |> fromString "title: Hello World!\n
-                  body: This is an article written in Elm"
+type alias Config =
+    { firstName : String
+    , lastName : String
+    , age : Int
+    }
 
-result : Result (List (Error YAM.Error)) (YAM Document)
-result =
-  parse yamParser
+configDecoder : Decode.Decoder Config
+configDecoder =
+    Decode.map3 Config
+        (Decode.field "firstName" Decode.string)
+        (Decode.field "lastName" Decode.string)
+        (Decode.field "age" Decode.int)
 
--- Result = Ok [ { title = "Hello World!", body = "This is an article written in Elm" } ]
+env = "firstName: John\nlastName: Doe\nage: 30"
 
+config : Result String Config
+config =
+    env
+        |> load
+        |> decodeValue configDecoder
 ```
 
-## Deep Dive
+Il codice sopra mostra come caricare un file YAML e decodificarlo in un tipo di dati Elm. Viene utilizzata la libreria Yaml per caricare il file e la funzione `Decode.map3` per effettuare il parsing dei dati nel tipo di dati `Config`. Infine, viene utilizzato l'operatore `Result` per gestire i possibili errori di decodifica.
 
-Una volta che hai parsato un documento YAML, puoi facilmente accedere ai singoli valori utilizzando la loro chiave come indice. Puoi anche creare funzioni personalizzate per manipolare i dati secondo le tue esigenze.
+## Approfondimenti:
 
-```Elm
-import Parser
-import YAML exposing (..)
+Il formato YAML è stato introdotto nel 2001 ed è stato creato con l'obiettivo di essere più leggibile per gli esseri umani rispetto ad altri formati come JSON e XML. Alcune alternative al YAML includono TOML e INI, ma entrambi sono meno flessibili e modulari. 
 
-type alias Person = 
-  { name : String 
-  , age : Int
-  , profession : String
-  }
+Il modulo Elm Yaml utilizza la libreria di parser JS-YAML per effettuare il parsing dei file YAML. Inoltre, è in grado di convertire i dati decodificati in tipi di dati Elm, rendendo più semplice l'utilizzo dei dati all'interno del tuo programma.
 
-personParser : Parser Person
-personParser =
-  yamlDocument
-    |> andThen (\yaml -> 
-      Parser.succeed Person
-        |. field "name" string
-        |. field "age" int
-        |. field "profession" string
-    )
+## Vedi anche:
 
-result : Result (List (Error YAM.Error)) Person
-result =
-  parse personParser
-```
-
-## Vedi anche
-
-- Documentazione ufficiale della libreria `elm-tools/parser`: https://package.elm-lang.org/packages/elm-tools/parser/latest/
-- Documentazione ufficiale della libreria YAML per Elm: https://package.elm-lang.org/packages/mdgriffith/elm-node-widgets/latest/
+Per ulteriori informazioni sul formato YAML, è possibile consultare il sito ufficiale all'indirizzo https://yaml.org/. Per informazioni specifiche sulla libreria Yaml di Elm, è possibile visitare la sua pagina su Elm Package Docs: https://package.elm-lang.org/packages/yiito/elm-yaml/latest/

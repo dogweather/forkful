@@ -10,48 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
+Att kontrollera om en mapp existerar är en vanlig uppgift för programmerare. Det är en process som innebär att man undersöker om en mapp finns på en viss plats på en dator. Detta kan vara användbart för att se till att programmet kan hitta och använda nödvändiga resurser.
 
-Det är viktigt att kontrollera om en mapp existerar innan man försöker läsa från eller skriva till den. Detta säkerställer att ditt program inte kraschar på grund av en saknad mapp och det ger också möjlighet för dig att hantera eventuella felmeddelanden på ett bättre sätt.
+## Hur man gör:
+För att kontrollera om en mapp existerar i Gleam, kan man använda sig av funktionen ```Gleam.fs.exists```. Nedan finns ett kodexempel som visar hur man kan implementera detta:
 
-## Så här gör du
-
-Att kontrollera om en mapp existerar är enkelt med hjälp av Gleam's standardbibliotek. Du behöver bara använda funktionen `File.exists` och ge den sökvägen till mappen du vill kontrollera. Här är ett exempel:
-
-```gleam
-import gleam/io
-
-let path = "./dokument/mapp"
-
-let mapp_finns = io.File.exists(path)
 ```
+import gleam/fs
 
-Funktionen `File.exists` returnerar antingen `True` eller `False` beroende på om mappen finns eller inte. Om du vill kolla om en mapp INTE finns, kan du använda funktionen `File.not_exists`.
-
-Du kan också använda `match` för att hantera olika fall beroende på resultatet av `File.exists`. Till exempel:
-
-```gleam
-import gleam/io
-
-let path = "./dokument/mapp"
-
-let mapp_finns = io.File.exists(path)
-
-match mapp_finns {
-    True -> io.print("Mappen finns!")
-    False -> io.print("Mappen finns inte.")
+fn check_directory_exists(path) {
+  case Gleam.fs.exists(path) {
+    True -> "Mappen finns."
+    False -> "Mappen finns inte."
+  }
 }
 ```
 
-## Deep Dive
+Om man till exempel vill kontrollera om en mapp med namnet "Dokument" finns i den aktuella mappen, kan man skriva:
 
-Vad händer i bakgrunden när vi använder `File.exists`? Funktionen anropar faktiskt operativsystemets filsystem för att kontrollera om en fil eller mapp existerar. Om mappen inte existerar så returnerar operativsystemet ett felmeddelande som vårt program därefter behandlar.
+```
+fn run() {
+  check_directory_exists("./Dokument")
+}
+```
 
-Det finns också en annan funktion som du kan använda när du kontrollerar om en mapp existerar - `File.stat`. Denna funktion returnerar mer detaljerad information om en fil eller mapp, som till exempel storlek, skapandetid och ändringstid.
+Detta kommer att ge oss utskriften "Mappen finns." om mappen existerar, eller "Mappen finns inte." om den inte gör det.
 
-## Se även
+## Djupdykning:
+Det finns flera alternativ för att kontrollera om en mapp existerar, bland annat genom att använda sig av kommandot ```Gleam.os.path.exists``` för att specificera en absolut sökväg. Det finns också andra programmeringsspråk som erbjuder liknande funktioner, som till exempel Python med sin ```os.path.exists()```. I Gleam implementeras ```Gleam.fs.exists``` som en wrapper runt ```Gleam.os.path.exists```, vilket gör det möjligt att enkelt anpassa funktionen vid behov.
 
-Se Gleam's officiella dokumentation för mer information om `File.exists` och `File.stat`:
-
-- [Officiell dokumentation för File.exists](https://gleam.run/documentation/#file.exists)
-- [Officiell dokumentation för File.stat](https://gleam.run/documentation/#file.stat)
+## Se också:
+- [Gleam fs modul](https://gleam.run/documentation/stdlib/fs)
+- [Python os modul](https://docs.python.org/3/library/os.path.html)

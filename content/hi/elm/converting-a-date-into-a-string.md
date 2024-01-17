@@ -10,28 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
+# What & Why?
 
-एक तारीख को स्ट्रिंग में परिवर्तित करने के लिए लोग Elm प्रोग्रामिंग सीखते हैं क्योंकि यह उनके लिए सरल और सहज बनाता है। इससे उन्हें अपने कोड को संपादित करने और उसमें परिवर्तन करने का आसान तरीका मिलता है।
+Jab hum ek date ko string mein convert karte hai to hum us date ko readable format mein represent kar rahe hote hai. Programmers ki sabse common use case hai jab wo ek date ko website ya database mein store karna chahte hai. String format mein store karna unko flexibility deta hai aur dates ko alag-alag tarike se display karne ki aasani bhi deta hai.
 
-## कैसे करें
+# How to:
 
-आप Elm में एक तारीख को स्ट्रिंग में परिवर्तित करने के लिए `Date.toString` फ़ंक्शन का उपयोग कर सकते हैं। यह फ़ंक्शन तारीख को `yyyy-mm-dd` के रूप में स्ट्रिंग में रिटर्न करता है।
+```Elm
+import Time exposing (Date)
+import Time.Format exposing (format)
 
-```
-Elm प्रोग्रामिंग में तारीख स्ट्रिंग में परिवर्तित करने का उदाहरण:
-
-import Date
-
-Date.toString (Date.fromUtc 2021 5 16)
--- यह आउटपुट देगा 2021-05-16
+dateToString : Date -> String
+dateToString date =
+    format "%Y-%m-%d" date
 ```
 
-## गहराई में जाएं
+Yahan humne `Time` aur `Time.Format` libraries ko import kiya hai jiske andar `Date` aur `format` functions available hai. Phir humne `dateToString` function declare kiya hai jo ek `Date` type ka argument lega aur use `%Y-%m-%d` format mein string mein convert karega. Is format mein `%Y` saal, `%m` month aur `%d` day represent karte hai. Iske baad hum `dateToString` function ko sahi date ke sath call kar sakte hai aur uska output kuch iss tarah se hoga: `"2021-05-28"`
 
-Elm में तारीख को स्ट्रिंग में परिवर्तित करने के लिए `Date.fromString` फ़ंक्शन का भी उपयोग किया जा सकता है। इससे आप अपनी स्ट्रिंग से तारीख को अलग ढंग से पढ़ सकते हैं।
+# Deep Dive
 
-## देखें भी
+Converting dates into strings is not a new concept and has been used in programming for a long time. In fact, most programming languages provide built-in functions or libraries to make this task easier. Some alternatives to the `%Y-%m-%d` format used in our example are `%m/%d/%y`, `%d/%m/%y`, or even `%B %d, %Y` which displays the month name instead of a numeric representation.
 
-- [Elm के आधिकारिक डॉक्यूमेंटेशन](https://guide.elm-lang.org/)
-- [Elm कोड स्टाइल गाइड](https://github.com/NoRedInk/elm-style-guide)
+Implementing this conversion can involve various steps such as parsing the date, checking for leap years, and formatting the output. While it may seem like a simple task, there are nuances and edge cases that programmers have to consider when working with dates and strings.
+
+# See Also
+
+1. Elm Time module: https://package.elm-lang.org/packages/elm/time/latest/
+2. Time formatting in Elm: https://guide.elm-lang.org/effects/time.html#formatting-time

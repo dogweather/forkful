@@ -10,48 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+## O que e por quê?
 
-Se você trabalha com programação ou análise de dados, provavelmente já se deparou com arquivos JSON. JSON é uma forma comum de armazenar e transmitir dados estruturados, e saber como lidar com ele pode ser fundamental para o sucesso em diversas áreas de atuação.
+Trabalhar com JSON é uma maneira de lidar com dados estruturados na linguagem de programação Bash. Programadores o utilizam para armazenar, acessar e manipular informações de uma forma organizada e simplificada.
 
-## Como fazer
+## Como fazer:
 
-Para começar a trabalhar com JSON em Bash, você precisa ter em mente que tudo se baseia em manipulação de strings. O Bash não possui funções nativas para lidar com esse formato de dados, então é necessário utilizar ferramentas externas. Uma das opções mais populares é o utilitário "jq", que permite analisar e manipular dados JSON de forma eficiente.
+Para começar, é importante ter o utilitário JSON1.1 instalado no seu sistema. Em seguida, você pode usar o comando `jq` para trabalhar com JSON no Bash. Aqui está um exemplo de como converter um arquivo JSON em um arquivo CSV:
 
-Para instalar o jq, basta utilizar o gerenciador de pacotes da sua distribuição Linux. Por exemplo, no Ubuntu, você pode executar o seguinte comando:
-
-```Bash
-sudo apt-get install jq
+```bash
+jq -r '. | @csv' arquivo.json > arquivo.csv
 ```
 
-Agora, vamos ver alguns exemplos práticos de como utilizar o jq para trabalhar com JSON:
+O resultado será um arquivo CSV com os dados convertidos do arquivo JSON. Você também pode usar filtros e transformações com o comando `jq` para obter as informações desejadas de um arquivo JSON. Por exemplo:
 
-### Exemplo 1: Listando valores específicos
-
-Suponha que você tenha um arquivo JSON com informações de usuários, como nome, idade e e-mail. Para listar somente os nomes desses usuários, você pode usar o comando:
-
-```Bash
-jq '.nome' usuarios.json
+```bash
+jq '.fruits | map(.name + " is " + .color)' arquivo.json
 ```
 
-Isso irá imprimir na tela somente os valores correspondentes à chave "nome" de cada objeto JSON no arquivo.
+Este comando irá listar os nomes e cores das frutas especificadas no arquivo JSON.
 
-### Exemplo 2: Filtrando valores
+## Aprofundando:
 
-É possível também realizar filtros mais específicos utilizando o jq. Por exemplo, para listar apenas os usuários que tenham mais de 18 anos, podemos usar o comando:
+JSON significa JavaScript Object Notation e foi criado em 2001 por Douglas Crockford. É uma forma de representar dados estruturados que pode ser lida e interpretada facilmente por humanos e máquinas. Alternativas ao JSON incluem XML e YAML, mas JSON se tornou extremamente popular por ser simples de entender e usar.
 
-```Bash
-jq '.[] | select(.idade > 18)' usuarios.json
-```
+A implementação do JSON no Bash é feita através do utilitário `jq`, que é escrito em C e mantido pela comunidade. Ele usa a biblioteca jansson para manipular dados JSON. Além disso, existem outras ferramentas e bibliotecas disponíveis para lidar com JSON em outras linguagens de programação, como o JSON Simple para Java e o JSON for Modern C++.
 
-Nesse caso, o filtro "select" é aplicado a cada objeto JSON presente no arquivo, e somente os que atendem a condição especificada serão apresentados na saída.
+## Veja também:
 
-## Mergulho Profundo
-
-O jq possui uma série de recursos avançados que permitem uma manipulação mais complexa de dados JSON. Além dos exemplos apresentados, você pode utilizar funções para realizar cálculos, agrupar informações e até mesmo criar novos objetos JSON. Para explorar mais sobre o jq, consulte a documentação oficial.
-
-## Veja também
-
-- [Documentação oficial do jq](https://stedolan.github.io/jq)
-- [Artigo sobre o uso de JSON em Bash](https://medium.com/@fidelissauro/utilizando-json-em-bash-dbf74275b782)
-- [Videoaula sobre o jq](https://www.youtube.com/watch?v=SM9VappyMHI)
+- [Site oficial do JSON](https://www.json.org/json-en.html)
+- [Documentação do utilitário jq](https://stedolan.github.io/jq/)
+- [Biblioteca jansson para trabalhar com JSON em C](https://digip.org/jansson/)

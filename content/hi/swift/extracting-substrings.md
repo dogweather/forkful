@@ -1,7 +1,7 @@
 ---
-title:                "सबस्ट्रिंग निकालना"
-html_title:           "Swift: सबस्ट्रिंग निकालना"
-simple_title:         "सबस्ट्रिंग निकालना"
+title:                "उपस्तंभ निकालना"
+html_title:           "Swift: उपस्तंभ निकालना"
+simple_title:         "उपस्तंभ निकालना"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -10,25 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
+## क्या और क्यों?
 
-कुछ अपने को इस प्रकार के स्ट्रिंग मानचित्रीरण का उपयोग करके स्ट्रिंग के भागों को हस्तांतरित करने का सोच सकते हैं। इसके कई उपयोग हो सकते हैं, जैसे एसपीएएस, डेटा वैद्यता या उपयोगकर्ता द्वारा दर्ज की गई जानकारी को प्रसंस्करण करना। कैसे इस प्रकार के सबस्ट्रिंग्स को हस्तांतरित किया जा सकता है?
+Substring निकालना क्या है और programmers इसे क्यों करते हैं, यह दोनों ही महत्वपूर्ण सवाल हैं। Substring, किसी भी string से छोटे हिस्से को निकालना होता है जो उस string के भीतर होता है। Programmers substring का इस्तेमाल अक्सर string में से निर्दिष्ट जानकारी को निकालने और उसे उपयोगी तरीके से प्रदर्शित करने के लिए करते हैं।
 
-## कैसे
+## कैसे करें?
 
-स्ट्रिंग से भाग को हस्तांतरित करने के लिए, हम ```Swift String``` की प्रतियोगिता ```subString ()``` का उपयोग कर सकते हैं। यह फ़ंक्शन भाग से एक नया स्ट्रिंग लौटाता है जो आगमन भाग के अनुरूप होता है। यहां एक उदाहरण है:
+`Swift` में substring निकालने का सबसे आसान और प्रभावी तरीका `substring(from: )` और `substring(to: )` है। दूसरे स्थानों पर, `substring(from: )` से आप किसी भी string में से दिया गया starting index से शुरू होकर उपलब्ध character तक का substring निकाल सकते हो। वहीं, `substring(to: )` से आप किसी भी string में से शुरू से लेकर दिए गए ending index तक का substring निकाल सकते हो। नीचे कुछ coding उदाहरण हैं:
 
 ```Swift
-let name = "आद्रि"
-let lastIndex = name.firstIndex(of: "ि")!
-let firstName = name.subString(to: lastIndex)
-let lastName = name.subString(from: lastIndex)
-print(firstName) // आद
-print(lastName) // रि 
+let name = "John Doe"
+
+// substring(from: )
+let first = name.substring(from: 0) // output: "John Doe"
+let last = name.substring(from: 5) // output: "Doe"
+
+// substring(to: )
+let beginning = name.substring(to: 6) // output: "John D"
+let end = name.substring(to: 3) // output: "Joh"
 ```
 
-उपरोक्त उदाहरण में, हमने एक स्ट्रिंग को दो भागों में अलग कर दिया है - पहले भाग में पहला अक्षर और दूसरे भाग में अन्य अक्षर शामिल हैं। हम चाहें तो प्रत्येक भाग को छोटे भागों में भी हस्तांतरित कर सकते हैं।
+## गहराई में जाओ
 
-## गहराई में खोज
+Substring का इस्तेमाल बहुत सालों से किया जाता रहा है, और कई अन्य programming भाषाओं में भी उपलब्ध है। उपलब्ध विकल्पों में, `substring` सबसे अधिक प्रभावी तरीका है, और भाषा के उत्पादकों की ओर से इसे समर्थन किया गया है। यह भी उल्लेखनीय है कि `substring` के लिए आपको string का starting index और ending index दोनों ही देने होते हैं, जो कि indexing में ध्यान रखने की जरूरत होती है।
 
-स्ट्रिंग से सबस्ट्रिंग्स को हस्तांतरित करना एक उपयोगी समाधान है जो डेटा का प्रसंस्करण करने को आसान बनाता है। आप इसे त्यागने के लिए उपयोगकर्ता के अनुरोधों को पूरा करने के लिए भी उपयोग कर सकते हैं। इस तरह से, स्ट्रिंग से कोई समस्या नहीं है कि आपको उपयोगकर्ता को तै
+## अन्य संबंधित लिंक
+
+- [Swift Official Documentation on Substrings](https://developer.apple.com/documentation/swift/string#2975925)
+- [Substrings Explained in Hindi](https://www.geeksforgeeks.org/swift-substring/)
+- [Understanding String Indices in Swift](https://www.hackingwithswift.com/example-code/strings/what-are-indices-in-swift)

@@ -10,63 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-CSV (Comma Separated Values) is a popular file format used for storing tabular data. It is widely used in data analysis, data exchange, and data storage due to its simple and universal structure. As a result, being able to work with CSV files is a valuable skill for any programmer.
+## What & Why?
+Working with CSV (comma-separated values) in C++ involves reading and writing data in a specific format where each field is separated by a comma. Programmers often work with CSV files because they are a convenient and efficient way to store and manipulate large amounts of data, such as spreadsheets or databases.
 
-## How To
-To start working with CSV files in C++, we need to include the `<fstream>` library and declare our input file stream and CSV parser objects as follows:
+## How to:
+To work with CSV files in C++, you can use the built-in library function ```getline``` to read each line of the file and ```stringstream``` to split the line by commas into separate strings. Here's an example of reading data from a CSV file and printing it out:
 ```C++
-#include <fstream> 
+#include <fstream>
+#include <sstream>
 #include <iostream>
-#include <sstream> 
+
 using namespace std;
-  
-ifstream input_file("data.csv"); 
-string line; 
-string cell; 
-stringstream ss;
-```
-Next, we can use a `while` loop to read each line from the CSV file and then use a `while` loop nested within it to delimit each line into separate cells using the `getline()` function. The parsed data can then be stored in a 2D vector for easy access and manipulation. Here's an example code:
-```C++
-vector<vector<string>> data; 
-  
-while(getline(input_file, line)) 
-{ 
-    vector<string> row; 
-    ss.str(line); 
-  
-    while(getline(ss, cell, ',')) 
-    { 
-        row.push_back(cell); 
-    } 
-  
-    data.push_back(row); 
-    ss.clear(); 
+
+int main() {
+    ifstream file("data.csv"); // open file
+    string line;
+    while (getline(file, line)) { // read each line
+        stringstream ss(line); // split the line into chunks
+        string field;
+        while (getline(ss, field, ',')) { // read each field
+            cout << field << " ";
+        }
+        cout << endl;
+    }
+    return 0;
 }
 ```
-To access a specific cell in the data, we can use the index of the row and column, like `data[2][3]` for the fourth cell in the third row. Now, let's say we want to display the data in a formatted table, we can use a `for` loop to iterate through the vector and print out the data using `cout` as shown below:
-```C++
-for(int i = 0; i < data.size(); i++) 
-{ 
-    for(int j = 0; j < data[i].size(); j++) 
-    { 
-        cout << data[i][j] << " | "; 
-    } 
-    cout << endl; 
-} 
+**Sample output:**
 ```
-Here's a sample output for reference:
-```
-ID | Name | Age | Occupation | 
-01 | John | 25 | Student | 
-02 | Sarah | 28 | Teacher | 
-03 | Peter | 30 | Engineer |
+John Doe 30
+Jane Smith 25
+Bob Johnson 40
 ```
 
-## Deep Dive
-While CSV files are simple to work with, it's essential to keep in mind a few things. Firstly, not all CSV files are the same. Some may use a different delimiter, such as a semicolon (;) or a tab, instead of a comma. So it's best to check the file beforehand and adjust the code accordingly. Secondly, CSV files may also contain empty cells, so it's crucial to handle those cases using conditionals or error handling. Lastly, for larger files, it's more efficient to use a memory-mapped file instead of storing all the data in a vector.
+## Deep Dive:
+CSV was first introduced in the 1970s as a way to transfer data between different computer programs. It remains popular today due to its simple and universal format. Alternatives to CSV include other text-based formats such as TSV (tab-separated values) or XML. These may have specific advantages for certain use cases, but CSV is widely used due to its simplicity.
 
-## See Also
-- [C++ Documentation](https://en.cppreference.com/w/)
-- [CSV File Formats](https://en.wikipedia.org/wiki/Comma-separated_values)
-- [Working with CSV Files in C++](https://www.javatpoint.com/csv-parser-in-cpp)
+When working with CSV files, it's important to handle special characters and escaping properly, as well as dealing with different line endings on different operating systems. The C++ standard library provides functions such as ```getline``` and ```getchar``` to handle these issues.
+
+## See Also:
+- [C++ reference for getline function](https://www.cplusplus.com/reference/string/string/getline/)
+- [Tutorial on working with CSV files in C++](https://www.programmingworldtech.com/2019/01/how-to-read-and-write-data-from-csv-file-in-c.html)
+- [Comparison of different file formats](https://www.computerhope.com/issues/ch001356.htm)

@@ -1,7 +1,7 @@
 ---
-title:                "הדפסת פלט ניפוי שגיאות"
-html_title:           "Haskell: הדפסת פלט ניפוי שגיאות"
-simple_title:         "הדפסת פלט ניפוי שגיאות"
+title:                "הדפסת פלט נקודת תיקון"
+html_title:           "Haskell: הדפסת פלט נקודת תיקון"
+simple_title:         "הדפסת פלט נקודת תיקון"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Testing and Debugging"
@@ -10,49 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# למה
-כדי לאתר בעיות בקוד וליצור פתרונות להן, מדפיסים מידע על הקוד תוך כדי הרצתו. תכנות ב־Haskell מאפשר לנו לכתוב קוד נקי ותמציתי, ומציג הדפסת מידע ניצולי כדי לנתח את התהליך של הקוד ולמצוא אזורים אפשריים לשיפור.
+כתיבת פלט דיבאג בפונקציות ב הסקל - טון לא יפוקס ובסגנון לא פורמלי
 
-## איך לעשות זאת
-כדי להדפיס מידע על הקוד, נוכל להשתמש בפונקציית `trace` מהמודול `Debug.Trace`. היא מאפשרת לנו להדפיס מחרוזת ולהציג מידע נוסף כדי לעזור לנו לאתר את הקוד הנכון לתיקון. ניתן להשתמש בה בצורה הבאה:
+## מה ולמה?
 
+תעודת הוצאה דיבוג היא כאשר מתכנתים מדפיסים פלט מידע לצורך ניתוח בעת מפתחת כוללות כגון מצב התוכנית, ערך המשתנים, וכו '. היא שיטה נפוצה למציאת באגים ושיפור ביצועים של קוד. 
+
+## איך לעשות:
+
+דוגמאות קוד ופלט להלן בלוקים ```Haskell ...```
+
+קוד:
 ```Haskell
-import Debug.Trace
+factorial :: Int -> Int
+factorial 0 = 1
+factorial n = n * factorial (n - 1)
 
+main :: IO ()
 main = do
-  let x = 5
-  trace "x equals" $ show x
+  putStrLn "Enter a number: "
+  n <- readLn
+  let result = factorial n
+  putStrLn ("The factorial of " ++ show n ++ " is " ++ show result)
+  putStrLn "Debug output:"
+  print [n-2, n-1]
 ```
 
-הפלט של הקוד הזה יהיה:
-
+פלט:
 ```
-x equals5
-```
-
-ניתן לראות שהוספנו את המידע הזה לפני התוצאה. עם זאת, יחשוב מידע יתכנם יותר משימושולא ננסה לפספס את כל המידע הזה בכשל הקוד.
-
-## שיטת לילד
-כאשר מדברים על הדפסת מידע נוסף בזמן ריצה, חשוב לתכנן את הפלט שאנחנו רוצים לקבל. בגישה המובנת של `trace` יש מספיק מקום לשיפור. במקום לתכנן פלט ידייד לצורך ההדפסה אוטומטית, ניתן להתממש את הפלט באופן ידני. ננסה לדוגמא:
-
-```Haskell
-import Debug.Trace
-
-debug :: Show a => String -> a -> a
-debug str x = trace (str ++ ": " ++ show x) x
-
-main = do
-  let x = 5
-  debug "x equals" x
+Enter a number:
+5
+The factorial of 5 is 120.
+Debug output:
+[3,4]
 ```
 
-הפלט של הקוד הזה יהיה:
+## העמקה:
 
-```
-x equals: 5
-```
+### היסטוריה:
+תעודת הוצאה דיבוג הייתה נפוצה כאשר בתורה פותחה בשנות ה 70 כאשר טכנולוגיות פיתוח כדי לקבוע את נקודות השגיאה. מאז, זה הפך מנפוצה יותר כאשר טכנולוגיות מתוקשבות השתמשו בתעודת הוצאה דיבוג כמיוחד בתכנות קצר. 
 
-ניתן לראות שהשתמשנו בפונקציית `debug` כדי להדפיס את המידע שביקשנו ושמרנו את הערך המקורי להשתמש בו בשלבים אחרים של הקוד.
 
-## מכירתכם
-א
+### אלטרנטיבות:
+ישנם כמה אלטרנטיבות לתעודת הוצאה דיבוג, כמו שימוש במתכנתי שאילתות להתאמת תנאים ומבחן יחידות (באנגולית: unit testing). כמו כן, יש כלים ספציפיים לתעודת הוצאה דיבוג כגון (באנגולית: debuggers) שמשמשים לניתוח כולל, אבל הם לא מתאימים לכל הפשע בגלל עלויות נקיון הקוד.
+
+### פירטי עיבוד:
+בדרך כלל, תעודת הוצאה דיבוג יתווספו את הפן האדם מלהשלים את הקוד. כמו כן, באמצעות כלי תעודת הוצאה דיבוג מתבצע בזמן אמת, זה אנן אפטים לפשע אחר-תהליך מתוך תוקן הקוד.
+
+## ראו גם:
+
+- [The Power of Debugging in Haskell](https://www.schoolofhaskell.com/user/commercial/content/the-power-of-debugging-in-haskell)
+- [Debugging Tips for Haskell](https://www.reddit.com/r/haskell/comments/1g39jr/debugging_tips_for_haskell/)
+- [Haskell Debug Adapter for Visual Studio Code](https://github.com/JustusAdam/vscode-haskell-debug)

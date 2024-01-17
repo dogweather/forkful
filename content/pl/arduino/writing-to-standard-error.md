@@ -1,7 +1,7 @@
 ---
-title:                "Pisanie do standardowego wyjścia błędów"
-html_title:           "Arduino: Pisanie do standardowego wyjścia błędów"
-simple_title:         "Pisanie do standardowego wyjścia błędów"
+title:                "Pisanie do standardowego błędu"
+html_title:           "Arduino: Pisanie do standardowego błędu"
+simple_title:         "Pisanie do standardowego błędu"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Files and I/O"
@@ -10,37 +10,22 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co to jest i dlaczego to robimy?
 
-Pisanie do standardowego błędu jest ważnym narzędziem w programowaniu, ponieważ pozwala nam na wyświetlenie komunikatów o błędach i ostrzeżeń w czasie wykonywania programu. Jest to szczególnie przydatne podczas debugowania kodu i znajdowania potencjalnych problemów.
+Pisząc do standardowego błędu w Arduino oznacza wysyłanie komunikatów o błędach lub ostrzeżeń do specjalnego strumienia, który jest przeznaczony do wyświetlania użycia konsoli. Programiści robią to, aby uzyskać informacje o ewentualnych problemach w swoim kodzie i pomóc w identyfikacji błędów.
 
-## Jak to zrobić
+## Jak to zrobić?
 
-Używanie Arduino do pisania do standardowego błędu jest bardzo proste. Wystarczy użyć funkcji ```Serial.println()``` i podać wiadomość lub wartość, którą chcemy wyświetlić. Poniższy przykład wyświetla komunikat "Błąd: wartość czujnika jest za niska!" w czasie wykonywania programu:
-
+```Arduino
+Serial.print("Błąd: Brak połączenia");
 ```
-Arduino void setup() {
-  // kod inicjalizacyjny
-}
+W powyższym przykładzie wykorzystujemy funkcję `Serial.print()` do wysłania komunikatu o błędzie "Brak połączenia" do standardowego błędu. Możemy także użyć `Serial.println()` aby dodać nową linię po komunikacie. Oba te polecenia wymagają wcześniejszego zainicjowania portu szeregowego przy użyciu polecenia `Serial.begin()`.
 
-void loop() {
-  // kod wykonywany w pętli
-  if (value < 10) {
-    Serial.println("Błąd: wartość czujnika jest za niska!");
-  }
-}
-```
+## Deep Dive
 
-W takim przypadku, jeśli wartość przekracza 10, nic się nie wyświetli. W przeciwnym razie, komunikat zostanie wyświetlony w konsoli Arduino.
+Pisanie do standardowego błędu jest stosowane od dawna w programowaniu, szczególnie w przypadku języków wysokiego poziomu, aby pomóc programistom w debugowaniu swojego kodu. Alternatywną metodą jest użycie debuggera, ale nie wszystkie platformy lub języki obsługują tę funkcję. W przypadku Arduino, zawarte oprogramowanie zapewnia konsolę szeregową, która umożliwia wykorzystanie funkcji pisania do standardowego błędu.
 
-## Głębszy zanurzanie
+## Zobacz także
 
-Podczas pisania do standardowego błędu istnieje kilka ważnych rzeczy, których należy być świadomym. Pierwszą z nich jest ustawienie prędkości transmisji (baud rate) w funkcji ```Serial.begin()```. Domyślnie jest to 9600 bitów na sekundę, ale można to zmienić na inną wartość, dopasowując ją do swoich potrzeb. Należy również pamiętać, aby zawsze zamknąć konsolę monitora serialowego przed wręczeniem finalnego projektu.
-
-## Zobacz również
-
-Jeśli potrzebujesz dalszej pomocy w pisaniu do standardowego błędu w Arduino, zapoznaj się z poniższymi linkami:
-
-- Dokumentacja funkcji ```Serial.println()```: https://www.arduino.cc/reference/en/language/functions/communication/serial/println/
-- Tutoriał na temat debugowania kodu w Arduino: https://learn.sparkfun.com/tutorials/debugging-an-arduino-sketch/all
-- Forum wsparcia dla Arduino: https://forum.arduino.cc/
+- Dokumentacja Arduino o wykorzystywaniu Serial Communication: https://www.arduino.cc/reference/en/language/functions/communication/serial/
+- Poradnik o debuggowaniu w Arduino: https://learn.adafruit.com/debugging-arduino-code-with-seral-serial-begin-and-print/serial-begin

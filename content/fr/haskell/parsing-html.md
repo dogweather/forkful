@@ -1,7 +1,7 @@
 ---
-title:                "Analyse de html"
-html_title:           "Haskell: Analyse de html"
-simple_title:         "Analyse de html"
+title:                "Analyse de HTML"
+html_title:           "Haskell: Analyse de HTML"
+simple_title:         "Analyse de HTML"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "HTML and the Web"
@@ -10,65 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Qu'est-ce que c'est & Pourquoi?
 
-Si vous êtes intéressé par le développement web, vous avez probablement entendu parler de HTML. C'est le langage de balisage utilisé pour créer la structure des pages web. Pour manipuler et extraire des données à partir d'un site web, il est nécessaire de comprendre la structure de son HTML. Cela rend le parsing HTML un outil extrêmement utile pour les développeurs.
+Parser (analyser) du HTML est une pratique courante dans la programmation. Le HTML est le langage de balisage standard utilisé pour créer des pages web. Les programmeurs utilisent le parsing HTML pour extraire des données spécifiques d'une page web et les manipuler dans leur code.
 
-## Comment Faire
+## Comment faire:
 
-### Installation
-Pour utiliser Haskell pour le parsing HTML, vous devez d'abord installer le package "tagsoup". Vous pouvez le faire en utilisant la commande suivante :
-
-```Haskell
-stack install tagsoup
-```
-
-### Exemple de code
-Supposons que nous voulons extraire le titre d'un article à partir d'une page web. Voici comment nous pouvons le faire en utilisant Haskell et tagsoup :
+**Exemple 1: Extraire le titre d'une page web en utilisant le module Text.HTML.TagSoup**
 
 ```Haskell
-{-# LANGUAGE OverloadedStrings #-}
 import Text.HTML.TagSoup
 
 main = do
-    html <- readFile "example.html" -- remplacez "example.html" par le nom de votre fichier HTML
-    let tags = parseTags html
-    print $ fromTagText $ head $ dropWhile (~/= "<title>") tags
+  -- Charger une page web
+  tags <- getTags "https://www.exemple.com/"
+  -- Extraire le contenu de la balise <title>
+  let title = fromTagText $ head $ dropWhile (~/= "<title>") tags
+  print title
 ```
+Output: "Exemple - Site officiel"
 
-Le code ci-dessus lit le contenu du fichier HTML dans une chaîne de caractères, puis utilise la fonction "parseTags" de tagsoup pour convertir cette chaîne en une liste de balises HTML. Ensuite, à l'aide de la fonction "fromTagText" et de la notation de liste Haskell, nous extrayons le texte de la première balise "title" que nous trouvons. Enfin, nous imprimons le résultat, qui devrait être le titre de la page.
+**Exemple 2: Récupérer une liste de liens à partir d'une page web en utilisant le module Text.HTML.TagSoup**
 
-### Sortie d'exemple
-Pour une page avec le HTML suivant :
+```Haskell
+import Text.HTML.TagSoup
 
-```HTML
-<html>
-<head>
-<title>Titre de l'article</title>
-</head>
-<body>
-<h1>Titre Principal</h1>
-<p>Ceci est un article intéressant</p>
-</body>
-</html>
+main = do
+  -- Charger une page web
+  tags <- getTags "https://www.exemple.com/links"
+  -- Extraire les balises <a> contenant les liens
+  let links = [fromAttrib "href" tag | tag <- tags, tag ~== "<a>"]
+  print links
 ```
+Output: ["https://www.exemple.com/page1", "https://www.exemple.com/page2", "https://www.exemple.com/page3"]
 
-La sortie serait :
+## Profondeur:
 
-```
-Titre de l'article
-```
+**Contexte historique:**
 
-## Deep Dive
+Le parsing HTML a été présent dès les premiers navigateurs web, mais il a évolué avec le temps. À l'origine, les navigateurs étaient moins stricts en matière de syntaxe HTML et pouvaient donc parser des pages web avec une grande variété de balises. Mais avec l'avènement des normes web et des balises plus complexes, le parsing HTML est devenu un défi pour les programmeurs.
 
-Le parsing HTML implique de comprendre la structure des balises et des attributs dans une page web. Pour ce faire, il est important de connaître les standards HTML et de comprendre comment les balises et les attributs sont utilisés pour décrire la structure d'une page.
+**Alternatives:**
 
-Ensuite, il est important de comprendre l'utilisation de tagsoup pour analyser le HTML. Tagsoup est un outil puissant pour manipuler des balises HTML en tant que données de Haskell. En utilisant des fonctions telles que "fromTagText" et "~=/=", il est possible de sélectionner et de filtrer des balises spécifiques pour extraire les données souhaitées.
+Il existe plusieurs outils et bibliothèques en Haskell pour effectuer le parsing HTML. Outre le module Text.HTML.TagSoup, on peut également utiliser le module Text.XML.Light pour parser des documents XML ou XHTML, ou encore le module Text.HTML.Parser pour une approche plus bas niveau.
 
-L'étape suivante consiste à combiner cela avec des concepts de programmation fonctionnelle tels que les fonctions d'ordre supérieur et la composition de fonctions pour créer des fonctions réutilisables et flexibles pour analyser différentes pages web.
+**Détails de mise en œuvre:**
 
-## Voir Aussi
+Le parsing HTML en Haskell utilise généralement des expressions régulières pour filtrer les balises et les attributs des pages web. Le module Text.HTML.TagSoup fournit également des fonctions pour manipuler facilement les données extraites, comme la recherche de balises spécifiques ou la modification du contenu des balises.
 
-- [Documentation de tagsoup](https://hackage.haskell.org/package/tagsoup)
-- [Tutoriel sur le parsing HTML en Haskell](https://blog.logrocket.com/a-practical-guide-to-parsing-html-in-haskell/)
-- [Introduction à Haskell](https://www.haskell.org/)
+## Voir aussi:
+
+- [Documentation officielle du module Text.HTML.TagSoup](https://hackage.haskell.org/package/tagsoup-0.14.8/docs/Text-HTML-TagSoup.html)
+- [Tutoriel pour le parsing HTML en Haskell](https://www.schoolofhaskell.com/school/starting-with-haskell/libraries-and-frameworks/text-manipulation/tagsoup)
+- [Comparatif de différentes bibliothèques de parsing en Haskell](https://wiki.haskell.org/XML/Introduction)

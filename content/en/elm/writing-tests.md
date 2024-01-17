@@ -10,81 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-Writing tests in Elm is crucial for ensuring the reliability and functionality of your code. It allows you to catch bugs and errors early on, saving you time and headaches in the long run. Plus, by writing tests, you also document and communicate the intended behavior of your code to other developers.
+Writing tests in Elm is the process of creating automated tests that check the functionality of your code. It's an important part of the development process because it helps ensure that your code is working correctly and consistently. By creating tests, you can catch bugs early on and have confidence that your code performs as intended.
 
-## How To
+## How to:
 
-Writing tests in Elm is a straightforward process. First, you will need to install the Elm Test package by running the following command in your terminal:
+To write tests in Elm, you will need to use the Elm Test package, which is included in Elm's standard library. Here's a basic example of writing a simple test that checks the result of a function:
 
-```Elm
-elm-install install elm-explorations/test
-```
-
-Once the package is installed, you can start writing tests in a separate file from your main code. Here's an example of a test file:
-
-```Elm
-module MyTests exposing (..)
-
+```Elm 
 import Test exposing (..)
-import Expect
 
-add : Int -> Int -> Int
-add x y =
-    x + y
-
+addNum : Int -> Int -> Int
+addNum x y =
+  x + y
+  
 tests : Test
 tests =
-    describe "Add Function"
-        [ test "adds two numbers correctly" <|
-            \_ -> 
-                Expect.equal (add 5 7) 12
-        ]
+  describe "Addition"
+    [ test "1 + 2 equals 3"
+        (addNum 1 2
+          |> Expect.equal 3
+        )
+    ]
+
 ```
 
-In this example, we have defined a function named `add` that takes in two numbers and returns their sum. Then, we have written a test case using the `expect` function to check if our `add` function returns the correct result for a given input. 
+Running these tests will output the following:
 
-To run this test, we can use the Elm Test runner by executing the following command in the terminal:
+``` 
 
-```Elm
-elm-test
+Testing 1 test
+PASS ==> Addition
 ```
 
-This will output the following result:
+The `describe` function creates a named group of tests, while the `test` function sets up a specific test with a name and an `Expect` that specifies the desired outcome. 
 
-```bash
-Successfully generated /elm-stuff/generated-code/elm-explorations/test/elmTestOutput.js
+## Deep Dive:
 
-TEST RUN PASSED
+The idea of writing tests to check code functionality is not unique to Elm, it is a practice used in many programming languages. However, Elm's approach is slightly different as it uses the concept of "fuzz testing," where it generates random inputs for a function to test various scenarios.
 
-Duration: 1 millisecond
-Passed:   1
-Failed:   0
-```
+An alternative to writing tests in Elm is using the Elm Debugger, which allows you to check code functionality while running your application. While this can be a helpful tool, it is not a replacement for writing tests as it is limited to checking a single execution of a function.
 
-If there were any errors or failures in the test, they would be reported in the output. Now, let's dive deeper into the `Expect` module and explore some of its useful functions for writing tests.
+Under the hood, the Elm Test package uses Elm's built-in fuzz testing features, along with custom `Expect` and `describe` functions, to create a comprehensive testing framework.
 
-## Deep Dive
+## See Also:
 
-The `Expect` module contains various functions for making assertions in your tests, such as `equal`, `notEqual`, `beTrue`, `beFalse`, etc. These functions take in the actual and expected values and compare them to determine if the test should pass or fail.
+To learn more about writing tests in Elm, check out the official documentation for the Elm Test package: https://package.elm-lang.org/packages/elm-explorations/test/latest/
 
-In addition to these basic functions, the `Expect` module also has a `Expectation` type, which allows you to chain multiple expectations and create more complex assertions. Here's an example:
+For more details on the process of fuzz testing in Elm, check out this blog post by the creator of Elm, Evan Czaplicki: https://elm-lang.org/news/fuzz-testing
 
-```Elm
-Expect.equal 
-    (add 10 5)
-    |> Expect.andThen (\result -> Expect.lessThan result 20)
-```
-
-In this case, we first check if our `add` function returns the correct result and then use the `andThen` function to check if the result is less than 20. If either of these expectations fails, the overall test will fail.
-
-Additionally, the `Test` module provides functions for testing your code's error handling, asynchronous code, and more. You can also define custom expectations using `Expect.satisfy` and `Expect.custom` functions, enabling you to test your code's logic in detail.
-
-Overall, writing tests in Elm is not only essential for ensuring the functionality of your code but also an opportunity to dive deeper into its inner workings and improve its quality.
-
-## See Also
-
-- [Elm Test Package Documentation](https://package.elm-lang.org/packages/elm-explorations/test/latest/)
-- [Writing reliable Elm code with tests](https://medium.com/twilio/writing-reliable-elm-code-with-tests-2cd7f58e3ea9)
-- [Testing in Elm: Part 1](https://pragmaticstudio.com/blog/2018/11/19/testing-in-elm-part-1)
+To learn about other useful packages and tools for Elm development, check out the official Elm Guide: https://guide.elm-lang.org/

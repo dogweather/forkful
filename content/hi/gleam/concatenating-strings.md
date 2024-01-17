@@ -1,7 +1,7 @@
 ---
-title:                "स्ट्रिंग्स जोड़ना"
-html_title:           "Gleam: स्ट्रिंग्स जोड़ना"
-simple_title:         "स्ट्रिंग्स जोड़ना"
+title:                "स्ट्रिंग्स को सम्मिलित करना"
+html_title:           "Gleam: स्ट्रिंग्स को सम्मिलित करना"
+simple_title:         "स्ट्रिंग्स को सम्मिलित करना"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -10,34 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
+# Kya & Kyun?
+Yeh article humein batata hai ki strings ko concatenate karna kya hai aur programmers isko kyun karte hain. 
 
-कोई भी व्यक्ति अक्षर स्ट्रिंग जोड़ने में रुचि रखता है। यह उनके कोड में एक पाठ्यक्रम को समायोजित और संगत बनाने में मदद करता है, जो उनके लिए अधिक समय और परिश्रम से बचाता है।
-
-## कैसे करें
-
-```Gleam
-str1 = "हैलो"
-str2 = "दुनिया"
-full_str = str1 ++ " " ++ str2
+## Kaise:
 ```
-इस उदाहरण में, हमने "++" ऑपरेटर का उपयोग करके दो स्ट्रिंग्स को जोड़ा है और नई स्ट्रिंग "हैलो दुनिया" को बनाया है। यदि आप चाहें तो आप अगले उदाहरण के साथ अन्य स्ट्रिंग्स को भी जोड़ सकते हैं।
-
-```Gleam
-greeting = "नमस्ते"
-name = "अमित"
-age = "25"
-full_msg = greeting ++ " " ++ name ++ ", आपकी उम्र " ++ age ++ " साल है।"
+Gleam-schedule/application:/Gleam
+def main() {
+  person1 := "John"
+  person2 := "Doe"
+  full_name := person1 ++ " " ++ person2
+  Gleam.format("Full name: {}", [full_name])
+}
 ```
 
-जब आप अपने स्ट्रिंग्स को जोड़ते हैं, ध्यान रखें कि वे हमेशा समान डाटा प्रकार का होना चाहिए। अन्यथा आपको त्रुटि मिल सकती है।
+Output: Full name: John Doe
 
-## गहराई में जाओ
+## Gehri Jankari
+(1) Is tarah ke code ko English mein "string concatenation" bhi kaha jata hai aur yeh ek common programming technique hai. Ismein humein ek se zyada strings ko merge karna hota hai. (2) Agar hum multiple variables mein data store kar rahe hain aur use ek variable mein combine karna chahte hain, tab hum string concatenation ka istemal karte hain. Isse code aur bhi readable aur efficient ho jata hai. (3) Gleam mein, "&" operator ka istemal bhi string concatenation ke liye kiya ja sakta hai.
 
-स्ट्रिंग्स को जोड़ने के अलावा, आपको इस्तेमाल करने के लिए और भी ऑपरेटर उपलब्ध है। इसमें समांतर ("||"), विपरीत ("<>"), अधिकतम ("<>"), अधिकतम नमोनीकरण ("<>="), और अधिकतम संख्या ("<<=") शामिल हैं। आप किसी भी दो स्ट्रिंग्स के बीच प्रतीकों को जोड़ सकते हैं और इस तरह कई अनुक्रम बना सकते हैं।
-
-## देखें भी
-
-- [Gleam अधिक ऑपरेटर](https://gleam.run/book/tour/operators.html)
-- [Gleam स्ट्रिंग डॉक्यूमेंटेशन](https://gleam.run/modules/introduction.html#docs)
-- [Gleam डेटा प्रकार](https://gleam.run/book/tour/types.html#strings)
+## Dekhein Bhi:
+- Tutorial on Strings in Gleam: https://gleam.run/getting-started/strings.html
+- Alternative ways to concatenate strings in Gleam: https://github.com/gleam-lang/gleam/blob/master/docs/user_guide.md#concatenating-strings
+- The official documentation for string concatenation in Gleam: https://gleam.run/docs/std/string.html#concat

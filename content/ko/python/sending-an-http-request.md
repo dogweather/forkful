@@ -10,31 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
-네트워크를 통해 데이터를 주고받는 일은 현대의 모든 어플리케이션에서 중요한 역할을 합니다. HTTP 요청을 보내는 것은 웹 서버로부터 정보를 가져오는 가장 일반적인 방법입니다. 즉, 모든 종류의 웹 데이터를 쉽게 가져올 수 있게 해줍니다.
+## 무엇 & 왜?
+HTTP 요청을 보내는 것이란 무엇인지 알아보고, 프로그래머들이 왜 그렇게 하는지 이해해 봅시다.
 
-## 하우 투
-HTTP 요청은 Python에서 매우 쉽게 보낼 수 있습니다. 아래의 코드 예제를 참고하여 이해해보세요.
+HTTP (HyperText Transfer Protocol)는 웹 페이지에서 다른 데이터를 받아오기 위해 사용되는 프로토콜입니다. 이 프로토콜을 사용해 데이터를 전송하기 위해서는 우리가 다른 서버에 요청을 보내야 합니다. 따라서 프로그래머들은 HTTP 요청을 보내고 그에 따른 응답을 받아오는 것이 중요합니다.
+
+## 어떻게:
+아래의 코드 블록 안에서 코딩 예시와 샘플 출력을 살펴봅시다.
 
 ```Python
+# requests 라이브러리 import
 import requests
 
 # GET 요청 보내기
-response = requests.get("http://www.example.com")
+response = requests.get("https://www.example.com")
+
+# 응답 출력
 print(response.text)
 
 # POST 요청 보내기
 payload = {'key1': 'value1', 'key2': 'value2'}
-response = requests.post("http://www.example.com", data=payload)
-print(response.text)
+response = requests.post("https://www.example.com", data=payload)
+
+# 응답 출력
+print(response.status_code)
 ```
 
-위의 예제에서 우리는 `requests` 모듈을 사용하여 간단하게 HTTP 요청을 보내는 방법을 보여주고 있습니다. `get()` 함수는 GET 요청을, `post()` 함수는 POST 요청을 보냅니다. GET 요청은 매개변수로 URL을 받고, POST 요청은 매개변수로 URL과 데이터(payload)를 받습니다. `response.text`는 서버로부터 받은 응답을 나타냅니다.
+## Deep Dive:
+(1) Historical Context: HTTP 요청은 1990년대 초반에 등장한 웹 프로토콜입니다. 원래 HTML 페이지를 전송하는 용도였지만, 현재는 다양한 데이터를 전송하기 위해 사용됩니다. (2) Alternatives: Python에서 HTTP 요청을 보내는 다른 방법으로는 urllib 라이브러리를 사용하는 것도 가능합니다. 하지만 일반적으로 requests 라이브러리를 더 많이 사용합니다. (3) Implementation Details: GET과 POST 요청은 각각 서버로부터 데이터를 받기만 하고, 데이터를 보내지 않을 때 사용됩니다. 하지만 PUT, PATCH 또는 DELETE 요청은 서버로부터 데이터를 받는 것이 아니라 서버의 데이터를 수정 또는 삭제할 때 사용됩니다.
 
-## 딥 다이브
-HTTP 요청은 요청의 종류(GET, POST, PUT 등)와 URL 외에도 많은 파라미터들을 가지고 있습니다. 예를 들어서, 요청 헤더(header)는 요청의 대상 서버에게 추가 정보를 제공하는 역할을 합니다. 이 외에도 Cookie, User-Agent, Accept 등의 파라미터들이 있으며, 이들을 모두 알아두는 것이 요청을 보내는 데에 있어 중요한 부분입니다.
-
-## 씨 알이오
-- [Requests Package Official Documentation](https://requests.readthedocs.io/)
-- [HTTP 요청과 응답 개념 정리](https://developer.mozilla.org/ko/docs/Web/HTTP/Overview)
-- [HTTP 요청 파라미터에 대한 더 자세한 정보](https://www.w3schools.com/tags/ref_httpmethods.asp)
+## See Also:
+관련된 자료를 참고해 보세요.
+- [requests library 공식 문서](https://requests.readthedocs.io/en/latest/)
+- [urllib library 공식 문서](https://docs.python.org/3/library/urllib.html)

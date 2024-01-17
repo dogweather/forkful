@@ -1,7 +1,7 @@
 ---
-title:                "Écrire vers la sortie d'erreur standard"
-html_title:           "Clojure: Écrire vers la sortie d'erreur standard"
-simple_title:         "Écrire vers la sortie d'erreur standard"
+title:                "Écrire sur la sortie d'erreur standard"
+html_title:           "Clojure: Écrire sur la sortie d'erreur standard"
+simple_title:         "Écrire sur la sortie d'erreur standard"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Files and I/O"
@@ -10,36 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Qu'est-ce et pourquoi ?
 
-Ecrire vers le flux d'erreur standard est un moyen pratique de déboguer votre code. Cela vous permet de voir les erreurs qui se produisent pendant l'exécution de votre programme, ce qui est essentiel pour identifier et résoudre les problèmes.
+Ecrire sur la sortie standard d'erreur est une façon pour les programmeurs de communiquer des messages d'erreurs ou de débogage directement à l'utilisateur du programme. Cela peut être utile pour signaler des problèmes lors de l'exécution du code, tels que des erreurs de syntaxe ou des valeurs incorrectes.
 
-## Comment faire
+## Comment faire :
 
-Pour écrire vers le flux d'erreur standard en Clojure, utilisez la fonction `println-multiline` en lui passant en paramètre une chaîne de caractères. Par exemple :
+Voici un exemple de code en Clojure montrant comment écrire sur la sortie standard d'erreur :
 
-```Clojure
-(println-multiline "Ceci est une erreur")
 ```
-Cela écrira la chaîne de caractères `"Ceci est une erreur"` vers le flux d'erreur standard, qui sera ensuite affichée dans la console lors de l'exécution du programme.
+(defn print-error [message]
+  (println "Erreur :" message))
 
-Si vous voulez écrire un objet plus complexe vers le flux d'erreur standard, vous pouvez utiliser la fonction `prn`en lui passant en paramètre l'objet que vous souhaitez afficher. Par exemple :
-
-```Clojure
-(def error {:type "Erreur de validation" :message "La valeur entrée n'est pas valide"})
-
-(prn error)
+(print-error "Valeur incorrecte")
 ```
 
-Cela écrira l'objet `error` vers le flux d'erreur standard, qui sera ensuite affiché sous la forme d'une liste dans la console.
+Cela donnera en sortie :
 
-## Plongée en profondeur
+```
+Erreur : Valeur incorrecte
+```
 
-La différence entre les fonctions `println-multiline` et `prn` est que `println-multiline` affiche la chaîne de caractères passée en paramètre telle quelle, tandis que `prn` affiche une version lisible de l'objet. Cela peut être utile lorsque vous essayez de comprendre la structure d'un objet ou d'un ensemble de données complexes.
+## Profonde plongée :
 
-Il est également bon de noter que le flux d'erreur standard est généralement réservé pour les erreurs et les avertissements importants. Pour les messages de débogage ou de journalisation, il est préférable d'utiliser le flux de sortie standard avec la fonction `println`.
+L'écriture sur la sortie standard d'erreur est une pratique courante dans la programmation depuis des décennies. Avant l'apparition des systèmes de gestion d'erreurs plus sophistiqués, c'était l'un des seuls moyens pour les programmeurs de signaler des erreurs à l'utilisateur. De nos jours, il existe des alternatives telles que les exceptions, mais écrire sur la sortie standard d'erreur reste une méthode simple et efficace.
 
-## Voir aussi
+## A voir également :
 
-- Documentation officielle de Clojure sur l'utilisation des flux d'erreur : https://clojuredocs.org/clojure.core/with-err-out
-- Un article de blog sur la gestion des erreurs en Clojure : https://purelyfunctional.tv/article/error-handling-in-clojure/
+Vous pouvez en apprendre plus sur l'écriture sur la sortie standard d'erreur en consultant la documentation de Clojure : https://clojure.org/reference/exceptions
+
+Si vous cherchez d'autres méthodes de débogage, vous pouvez également consulter cet article sur les outils de débogage en Clojure : https://lambdaisland.com/guides/clojure-debugging-tools

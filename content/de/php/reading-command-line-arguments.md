@@ -10,54 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was & Warum?
 
-Wenn du PHP-Entwickler bist, hast du wahrscheinlich schon einmal von "Command Line Arguments" gehört. Diese Begriffe beziehen sich auf die Argumente, die ein Skript erhält, wenn es über die Befehlszeile aufgerufen wird. Das Lesen von Befehlszeilenargumenten kann sehr nützlich sein, wenn du Skripte schreibst, die von der Befehlszeile aus gestartet werden sollen. In diesem Artikel werde ich dir zeigen, wie du Befehlszeilenargumente in PHP lesen kannst und warum es wichtig ist, dies zu wissen.
+Das Lesen von Befehlszeilenargumenten ist ein grundlegender Teil der PHP Programmierung. Dabei handelt es sich um die Möglichkeit, Informationen, die bei der Ausführung eines PHP Skripts angegeben werden, abzurufen. Programmierer nutzen diese Funktion, um z.B. Daten zu verarbeiten, die von einem Nutzer über die Kommandozeile eingegeben wurden.
 
-## Wie geht das?
+## Wie geht's?
 
-Um Befehlszeilenargumente in PHP zu lesen, können wir die Funktion "getopt()" verwenden. Sie erwartet zwei Argumente: den Befehl (also den Namen deines PHP-Skripts) und eine Zeichenkette mit den erwarteten Argumenten. Schauen wir uns das an einem Beispiel an:
+Um Befehlszeilenargumente in PHP auszulesen, gibt es die Funktion "getopt()". Diese Funktion erwartet zwei Parameter: die Optionen, die das Skript unterstützen soll, und die eingegebenen Argumente. Hier ein Beispiel:
 
 ```PHP
 <?php
-// Aufruf des Skripts: php beispiel.php -u Benutzer -p Passwort -d Datenbank
-$options = getopt("u:p:d:");
+$erlaubteOptionen = "f:h";
+$eingabeargumente = getopt($erlaubteOptionen);
 
-if(isset($options["u"])) {
-    echo "Benutzer: " . $options["u"] . PHP_EOL;
-}
-
-if(isset($options["p"])) {
-    echo "Passwort: " . $options["p"] . PHP_EOL;
-}
-
-if(isset($options["d"])) {
-    echo "Datenbank: " . $options["d"] . PHP_EOL;
+if (array_key_exists("f", $eingabeargumente)) {
+    $datei = $eingabeargumente["f"];
+    echo "Datei: " . $datei . "\n";
+} elseif (array_key_exists("h", $eingabeargumente)) {
+    echo "Hilfe: Zeige alle verfügbaren Optionen\n";
+} else {
+    echo "Bitte geben Sie eine Datei an oder verwenden Sie die Option -h für Hilfe.\n";
 }
 ?>
 ```
 
-In diesem Beispiel lesen wir drei Befehlszeilenargumente: "-u" für den Benutzernamen, "-p" für das Passwort und "-d" für den Datenbanknamen. Diese Argumente werden dann in ein Array gespeichert, das wir mit der Funktion "isset()" überprüfen können. Wenn das entsprechende Argument gesetzt ist, wird der Wert ausgegeben.
+Angenommen, das Skript heißt "beispiel.php" und liegt im selben Verzeichnis wie eine Datei mit dem Namen "test.txt", dann kann man es auf folgende Weise ausführen:
 
-Wenn wir also unser Skript mit den obigen Argumenten aufrufen, erhalten wir folgende Ausgabe:
+`php beispiel.php -f test.txt`
 
-```
-Benutzer: Benutzer
-Passwort: Passwort
-Datenbank: Datenbank
-```
+Und die Ausgabe sieht dann so aus:
 
-## Tiefer tauchen
+`Datei: test.txt`
 
-Jetzt wo du weißt, wie du Befehlszeilenargumente in PHP lesen kannst, lass uns etwas tiefer tauchen und uns einige nützliche Funktionen anschauen, die uns dabei helfen können.
+## Tiefere Einblicke
 
-Zunächst einmal können wir über die Funktion "getopt()" auch optionale Argumente definieren, indem wir ein ":" oder ein "=" hinter den Buchstaben setzen. Zum Beispiel könnten wir in unserem Beispiel sagen, dass das Argument "-p" ein erforderliches Argument ist, während das Argument "-d" optional ist. Dafür müssen wir die Zeichenkette in unserer "getopt()" Funktion wie folgt anpassen: "u:p:d::".
+Das Auslesen von Befehlszeilenargumenten ist in PHP schon seit der Einführung der Version 4 möglich. Alternative Funktionen wie "getopt_long()" bieten erweiterte Möglichkeiten, um Optionen und Argumente zu verarbeiten. Auch die Verwendung von Bibliotheken wie "Symfony Console" kann die Handhabung von Befehlszeilenargumenten erleichtern.
 
-Außerdem können wir auch überprüfen, ob ein spezielles Argument gesetzt wurde oder nicht und entsprechend darauf reagieren. Zum Beispiel könnten wir überprüfen, ob die Option "-v" (für "verbose") gesetzt wurde und dann zusätzliche Informationen während der Ausführung unseres Skripts ausgeben.
+## Weitere Informationen
 
-Zuletzt ist es auch möglich, den Befehl dynamisch zu übergeben. Anstatt die Befehlszeile statisch in unserem Skript zu definieren, können wir sie auch in einer Variablen speichern und dann an "getopt()" übergeben. Dadurch wird unser Skript noch flexibler und kann mit verschiedenen Befehlen aufgerufen werden.
+Hier noch ein paar Links für weitere Informationen und Beispiele zur Verwendung von Befehlszeilenargumenten in PHP:
 
-## Siehe auch
-
-- [PHP Dokumentation zu getopt()](https://www.php.net/manual/de/function.getopt.php)
-- [Weitere Informationen zu Befehlszeilenargumenten in PHP](https://www.sitepoint.com/command-line-php-argparse)
+- Die offizielle Dokumentation: https://www.php.net/manual/de/function.getopt.php
+- PHP.net Tutorial: https://www.php.net/manual/de/features.commandline.php
+- Beispielprojekt auf GitHub: https://github.com/php/cli-tools
+- Symfony Console: https://symfony.com/doc/current/components/console.html

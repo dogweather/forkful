@@ -10,45 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+--------------------------------------------------
+## O que e Porque?
 
-O uso de impressão de saída para debug é uma ferramenta essencial para os programadores que desejam rastrear o comportamento de seus programas e encontrar possíveis erros de maneira eficiente.
+Imprimir a saída de depuração é uma técnica frequentemente usada por programadores para visualizar o estado do código durante a execução. Isso é útil para identificar e corrigir erros, bem como para entender melhor o comportamento do programa.
 
-## Como Fazer
+## Como fazer:
 
-Para utilizar a impressão de saída para debug em Gleam, você pode seguir o exemplo abaixo:
+As impressões de depuração no Gleam podem ser feitas usando a macro `debug!` seguida de uma expressão a ser impressa. Por exemplo:
 
 ```Gleam
-import gleam/io
-
-pub fn main() {
-  let name = "Maria"
-  let age = 28
-
-  io.print("Nome: {}", [name])
-  io.print("Idade: {}", [age])
-}
+debug! 2 + 3
 ```
 
-Este código irá imprimir a seguinte saída:
+Isso imprimirá `5` no console durante a execução do programa.
 
+Você também pode adicionar uma mensagem à sua impressão, usando a forma `debug!("Sua mensagem", expressão)`. Por exemplo:
+
+```Gleam
+debug!("O resultado é:", 2 + 3)
 ```
-Nome: Maria
-Idade: 28
-```
 
-Note que utilizamos `{}` nos textos que queríamos inserir o valor das variáveis. Isso é chamado de formatação de string e é uma maneira conveniente de exibir o valor de variáveis em textos.
+A saída seria `O resultado é: 5`.
 
-## Deep Dive
+## Aprofundando:
 
-Existem diferentes métodos de impressão de saída para debug em Gleam, como `io.print`, `io.print_line`, `io.print_info`, entre outros. Cada um destes métodos pode ser usado para imprimir diferentes tipos de dados, como números, texto, listas e até mesmo estruturas de dados complexas.
+Imprimir a saída de depuração não é exclusivo do Gleam, mas é uma técnica amplamente utilizada em programação. Está disponível em várias linguagens de programação e é uma das maneiras mais rápidas e eficazes de rastrear bugs em um programa.
 
-Além disso, a impressão de saída para debug pode ser combinada com estruturas de controle de fluxo, como `if`, `case` e `for`, para exibir informações apenas quando certas condições são atendidas.
+Algumas alternativas para imprimir a saída de depuração incluem o uso de um depurador, como o GDB ou o LLDB, ou a utilização de ferramentas de rastreamento de chamadas, como o strace.
 
-Não subestime o poder da impressão de saída para debug em sua jornada de programação. Com ela, você pode economizar tempo e esforço na hora de encontrar e corrigir erros em seu código.
+As impressões de depuração no Gleam são implementadas usando macros, que permitem que o código seja gerado dinamicamente em tempo de compilação. Isso torna as impressões de depuração muito eficientes e não afeta o desempenho do programa em tempo de execução.
 
-## Veja Também
+## Veja também:
 
-- [Documentação Oficial do Gleam](https://gleam.run/documentation/)
-- [Tutorial de Gleam](https://gleam.run/getting-started/)
-- [Gleam no Github](https://github.com/gleam-lang/gleam)
+- [Documentação do Gleam sobre impressões de depuração](https://gleam.run/book/concurrency-debugging)
+- [Artigo sobre impressões de depuração em Rust](https://docs.rs/log/0.4.8/log/)
+- [Tutoriais sobre o depurador GDB](https://www.gnu.org/software/gdb/documentation/)

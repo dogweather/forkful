@@ -10,31 +10,19 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+# Mitä & Miksi?
+Kirjoittaminen teksti tiedostoon on yksinkertainen tapa tallentaa tietoa, jota voidaan käyttää myöhemmin ohjelmoinnissa. Koodaajat käyttävät teksti tiedostoja tallentaakseen esimerkiksi käyttäjän syötteitä, ohjelman loki tietoja tai muita muuttujia.
 
-Kirjoittamalla tekstilahetis voidaan tallentaa tietoa pysyvästi ja jakaa sitä muille ohjelmille ja käyttäjille.
-
-## Kuinka
-
-```elixir
-# Avataan uusi tiedosto
-file = File.open("uusi_tiedosto.txt", [:write])
-
-# Kirjoitetaan tiedostoon
-File.write(file, "Tämä on tekstiä uudessa tiedostossa")
-File.close(file)
-
-# Luetaan tiedosto
-File.read("uusi_tiedosto.txt")
+## Kuinka:
+```Elixir
+File.write("teksti.txt", "Tervetuloa") 
 ```
+Tämä koodi luo teksti tiedoston nimeltä "teksti.txt" ja tallentaa siihen tekstin "Tervetuloa". Voit vaihtaa tekstin ja tiedoston nimen halutessasi. Voit myös käyttää `File.append` komentoa lisätäksesi uutta tietoa olemassa olevaan teksti tiedostoon.
 
-Tulostus: "Tämä on tekstiä uudessa tiedostossa"
+## Syvempi sukellus:
+Teksti tiedostojen luominen ja muokkaaminen on ollut perusosa ohjelmoinnissa jo vuosikymmenien ajan. Kyseessä on yksinkertainen, mutta tehokas tapa tallentaa ja käsitellä tietoa. On myös useita muita tapoja tallentaa tietoa, kuten tietokantoja tai taulukoita, mutta teksti tiedostot ovat edelleen erittäin hyödyllisiä monissa tilanteissa.
 
-## Syvällinen syventymis
-
-Tekstilahde on keskeinen osa Elixir-ohjelmointikieltä ja se on integroitu vahvasti kieleen. Textiä voidaan käyttää eri tapoja, kuten tallentaa tietoa, luoda lokitiedostoja tai jopa luoda käyttöliittymään sisältöä. Jatka tutustumista tähän tärkeään osa-alueeseen ja löydä uusia tapoja käyttää tekstilahetis Elixirin kanssa.
-
-## Katso myös
-- [Elixirin virallinen dokumentaatio tekstilahetiksi](https://hexdocs.pm/elixir/File.html)
-- [Elixirin tekstilahetin perusteet](https://www.tutorialspoint.com/elixir/elixir_files.htm)
-- [Käyttötapoja Elixirin tekstilahetille](https://www.dailydrip.com/blog/working-with-elixir-binary-text-files)
+## Katso myös:
+- [Elixirin viralliset dokumentaatiot tiedoston käsittelystä](https://hexdocs.pm/elixir/File.html)
+- [Elixirin viralliset dokumentaatiot tiedoston käsittelystä](https://hexdocs.pm/elixir/File.html)
+- [Elixirin viralliset dokumentaatiot teksti tiedostojen lukemisesta](https://hexdocs.pm/elixir/File.html#content)

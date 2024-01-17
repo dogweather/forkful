@@ -1,7 +1,7 @@
 ---
-title:                "HTML:n jäsentäminen"
-html_title:           "C#: HTML:n jäsentäminen"
-simple_title:         "HTML:n jäsentäminen"
+title:                "Html:n jäsentäminen"
+html_title:           "C#: Html:n jäsentäminen"
+simple_title:         "Html:n jäsentäminen"
 programming_language: "C#"
 category:             "C#"
 tag:                  "HTML and the Web"
@@ -10,64 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä & Miksi?
+HTML:n jäsentäminen ("parsing") tarkoittaa HTML-koodin lukemista ja sen sisältämien elementtien tunnistamista. Tämä on tärkeää, koska ohjelmoijat usein haluavat luoda ohjelmia, jotka pystyvät käsittelemään ja muokkaamaan HTML-tiedostoja automaattisesti.
 
-Oletko koskaan joutunut työskentelemään verkkosivujen kanssa ja tarvinnut tietoa tietystä elementistä? HTML-parsiminen mahdollistaa sivustojen sisällön analysoinnin ja tiedon hakemisen helposti ja nopeasti.
-
-## Kuinka
-
-HTML-parsimista varten voit käyttää C#-kielen [HtmlAgilityPackia](https://html-agility-pack.net/). Se tarjoaa kätevän tavan ladata ja analysoida HTML-tiedostoja.
-
-Seuraava koodiesimerkki näyttää kuinka ladata HTML-sivu ja tulostaa kaikki sen otsikkoelementit:
-
+## Miten:
 ```C#
-var html = new HtmlDocument();
-html.Load("https://www.example.com/");
+using System;
+using HtmlAgilityPack;
 
-var headings = html.DocumentNode.Descendants("h1");
-foreach(var heading in headings)
+var url = "www.example.com";
+var web = new HtmlWeb();
+var doc = web.Load(url);
+var nodes = doc.DocumentNode.SelectNodes("//a[@href]");
+
+foreach(var node in nodes)
 {
-    Console.WriteLine(heading.InnerText);
-}
-
-// Output:
-// Example Website Title
-// First Heading
-// Second Heading
-```
-
-Voit myös parsia HTML-tiedoston tai sivun tiettyä elementtiä käyttämällä sen ID:tä tai luokkaa:
-
-```C#
-var elementWithId = html.GetElementById("elementId");
-var elementsWithClass = html.DocumentNode.SelectNodes("//div[@class='className']");
-
-// Output:
-// <div id="elementId">Content</div>
-// <div class="className">Content 1</div>
-// <div class="className">Content 2</div>
-```
-
-## Syvällisempi sukellus
-
-HTML-parsiminen mahdollistaa myös datan keräämisen ja manipuloinnin verkkosivuilla. Voit esimerkiksi hakea ja tallentaa tiettyjä tietoja sivulta tietokantaan.
-
-Hyödyntämällä CssSelectoria voit parsia haluamiesi elementtien CSS-pohjalta:
-
-```C#
-var elements = html.DocumentNode.SelectNodes("cssSelector");
-
-foreach(var element in elements)
-{
-    // Code to manipulate or store data
+    Console.WriteLine(node.GetAttributeValue("href", ""));
 }
 ```
+Tässä esimerkissä käytetään HtmlAgilityPack-kirjastoa, joka tarjoaa valmiita työkaluja HTML:n jäsentämiseen. Ensimmäisillä riveillä asetetaan muuttujat url-osoitteelle ja HtmlWeb-olioon. Seuraavaksi ladataan HTML-tiedosto ja etsitään siitä kaikki a-elementit sen attribuutilla "href". Lopuksi tulostetaan löytyneiden elementtien "href"-attribuutit.
 
-HTML-parsiminen on hyödyllinen taito, jota on helppo oppia ja käyttää. Se auttaa tehostamaan erilaisia verkkosivujen ja sovellusten kehitysprojekteja.
+## Pureutuminen:
+HTML:n jäsentämisen tarve on alkanut kasvaa Internetin kehityksen myötä. Aikaisemmin sivustot olivat staattisia ja sisälsivät vähemmän elementtejä, joten niiden käsittely ei ollut niin tärkeää. Nykyään sivustot ovat monimutkaisia ja sisältävät paljon erilaisia elementtejä, joten tarve jäsentämiseen on suurempi. Vaihtoehtoisia tapoja jäsentämiseen ovat esimerkiksi regex eli säännölliset lausekkeet ja manuaalinen käsittely, mutta ne ovat usein huomattavasti hankalampia ja epäluotettavampia kuin erilaiset kirjastot. HTML:n jäsentämisessä käytetään yleensä erilaisia XPath-kyselyitä löytämään haluttuja elementtejä. Tekniikan käytöstä löytyy paljon oppaita ja esimerkkejä, joten sen omaksuminen ei ole vaikeaa.
 
-## Katso myös
-
-- [HtmlAgilityPackin dokumentaatio](https://html-agility-pack.net/documentation)
-- [C#-kielen virallinen sivusto](https://docs.microsoft.com/en-us/dotnet/csharp/)
-
-Kiitos lukemisesta! Toivottavasti tämä artikkeli auttoi sinua ymmärtämään HTML-parsimisen tärkeyttä ja käyttöä C#-ohjelmoinnissa.
+## Katso myös:
+- [HtmlAgilityPack-dokumentaatio](https://html-agility-pack.net/documentation)
+- [XPath-tutoriaali](https://www.w3schools.com/xml/xpath_intro.asp)
+- [Esimerkki HTML:n jäsentämisestä Pythonilla](https://realpython.com/parsing-html-web-page/)

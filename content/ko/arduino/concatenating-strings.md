@@ -10,32 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
-문자열을 연결하는 것(Concatenating strings)의 이유는 때때로 한번에 여러 값을 출력하는 것이 더 유용 할 수 있습니다.
+## What & Why?
+문자열 결합이란 무엇이고, 프로그래머들이 왜 이것을 하는지에 대해 간략히 설명합니다.
 
-## 어떻게
-문자열을 연결하는 방법은 아래의 코드 블록을 이용해 다음과 같이 표현할 수 있습니다:
+문자열 결합은 두 개 이상의 문자열을 하나의 문자열로 결합하는 것을 말합니다. 이는 한 문자열에 여러 가지 정보를 함께 표현할 수 있어 프로그래밍에서 자주 사용됩니다.
 
-```Arduino
-// "Hello"와 "world" 문자열을 연결하여 "Hello world" 출력
-Serial.println("Hello" + "world");
-```
-
-아두이노에서는 "+"를 이용하여 두 문자열을 연결할 수 있습니다. 위의 코드를 실행하면 "Helloworld"라는 결과값이 출력됩니다. 
-
-## 깊이 파고들기
-문자열을 연결할 때 주의해야할 점이 있습니다. 예를 들어, 아래의 예제 코드를 살펴보겠습니다.
+## How to:
+아래의 코드 블록을 참고하여 코드 예제와 결과를 확인할 수 있습니다.
 
 ```Arduino
-// "Hello"와 "world" 문자열 연결
-String str = "Hello" + "world"; 
+// 문자열 "Hello"와 "world"를 결합하는 예제
+String first = "Hello";
+String second = "world";
+String result = first + second;
+Serial.println(result);
 ```
+결과: ```Helloworld```
 
-위의 코드는 예상하지 못한 결과를 출력합니다. "str" 변수에는 "Helloworld"가 아닌 "Hello0"라는 값을 가지게 됩니다. 이는 "+" 연산자가 두 문자열을 단순히 붙여서 출력하는 것이 아니라, 두 문자열의 길이를 참조하여 새로운 배열을 만들어주기 때문입니다. 이러한 경우 "+" 대신에 "concat()" 함수를 이용하여 문자열을 연결하는 것이 좋습니다.
+```Arduino
+// 숫자와 문자열을 결합하는 예제
+int number = 10;
+String word = "apples";
+String result = String(number) + " " + word;
+Serial.println(result);
+```
+결과: ```10 apples```
 
-또한, 아두이노에서는 문자열을 저장할 수 있는 메모리 공간이 제한적입니다. 따라서, 많은 양의 문자열을 연결하게되면 프로그램이 충돌할 수 있으므로 주의해야 합니다.
+## Deep Dive:
+(1) 문자열 결합은 1960년대 중반에 탄생한 언어인 ALGOL에서 처음 사용되었습니다.
 
-## 같이 보기
-- [String concatenation in Arduino]("https://www.arduino.cc/en/Tutorial/StringAdditionOperator"): 아두이노 공식 사이트에서 제공하는 문자열 연결에 관련된 튜토리얼입니다.
-- [JavaScript String concatenation]("https://www.w3schools.com/jsref/jsref_concat_string.asp"): 아두이노에서 사용하는 "+" 연산자와 비슷한 기능을 하는 JavaScript의 문자열 연결 방법을 살펴볼 수 있습니다.
-- [Tips for improving Arduino strings]("https://www.sweetpeaswap.com/tips-for-improving-arduino-strings/"): 아두이노에서 문자열을 다루는 방법에 대한 팁을 제공하는 블로그 글입니다.
+(2) 문자열 결합의 대안으로는 문자열 포맷팅이 있습니다. 문자열 포맷팅은 문자열 내에 변수나 값을 삽입하여 보다 복잡한 문자열을 생성할 수 있습니다.
+
+(3) 문자열 결합 기능은 아두이노에서 제공하는 String 라이브러리를 통해 사용할 수 있습니다. 이 라이브러리는 매우 쉬운 문법을 가지고 있어 사용자 편의성이 높습니다.
+
+## See Also:
+문자열 포맷팅: https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/formatstring/

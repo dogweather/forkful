@@ -1,7 +1,7 @@
 ---
-title:                "הבהרת שרשרת"
-html_title:           "TypeScript: הבהרת שרשרת"
-simple_title:         "הבהרת שרשרת"
+title:                "העברת נתונים לכתיב קפיטלי"
+html_title:           "TypeScript: העברת נתונים לכתיב קפיטלי"
+simple_title:         "העברת נתונים לכתיב קפיטלי"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -10,35 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## למה
-מידי פעם בזמן כשאתה כותב קוד בטיפוסקריפט, עלול להיות לך צורך להדפיס טקסט עם האות הראשונה בגודל גדול. במקרים כאלה, ייתכן ותרצה להחזיר את הטקסט עם אות הראשונה באות גדולה כדי להדגיש יותר את המידע החשוב.
+## מה ולמה?
 
-## איך לעשות זאת
-ישנם מספר דרכים להגדיל את האות הראשונה של טקסט בטיפוסקריפט. נהדיר פונקציה פשוטה שתקבל מחרוזת ותחזיר את אותה מחרוזת עם האות הראשונה באות גדולה. הנה דוגמא קודם כל:
+לכתוב תווים גדולים בסדרה זה פעולה שמאפיינת את הטכנאיות שלנו. היא משנה את אופיו של התווים מהטקסט המקורי לטקסט גדול ומודגש. זאת פעולה שאנחנו עושים כדי להדגיש חלק מתוך הטקסט, לחלץ מידע חשוב או פשוט כדי לעצב את המראה שלנו.
 
-```typescript
-function capitalizeString(str: string) {
-  return str[0].toUpperCase() + str.slice(1);
-}
+## איך לעשות?
 
-console.log(capitalizeString("hello")); // Output: Hello
+```TypeScript
+let str = "hello world";
+console.log(str.toUpperCase()); // Output: HELLO WORLD
 ```
 
-ניתן גם להשתמש בפעולת החלפה (replace) כדי להחליף את האות הראשונה באות גדולה ולשמור על שאר המחרוזת:
+הקוד לעיל מראה איך ניתן להשתמש בפונקציה `toUpperCase()` של שפת TypeScript כדי לכתוב תווים גדולים בסדרה. המלל המקורי של המשתנה `str` הוא "hello world" ולאחר השימוש בפונקציה הוא משתנה ל"HELLO WORLD". כך קיבלנו את הטקסט בתווים גדולים.
 
-```typescript
-function capitalizeString(str: string) {
-  return str.replace(/^\w/, c => c.toUpperCase());
-}
+## Deep Dive
 
-console.log(capitalizeString("world")); // Output: World
-```
+מאז ומתמיד, השימוש בתווים גדולים היה דרך להצביע על חלק מהטקסט כלול וחשוב. בעבר, טכנאיות עשו את זה בעזרת כלי כתיבה והפעלה של צבעים. היום, עם שיפור הפיתוחים הטכנולוגיים, אנחנו משתמשים בתווים גדולים כדי להדגיש מידע חשוב ומשמעויות שונות.
 
-קל לשכור שאפשרויות רבות נוספות לכתיבת פונקציות כדי להגדיל את הטקסט, מה שמאפשר לנו להתאים ולשנות את הקוד בהתאם לצורך שלנו.
+בנוסף לפונקציות המובנות בשפת TypeScript, ישנן גם תוכניות שמאפשרות כתיבת תווים גדולים בסדרה ותוכניות שמאפשרות ליצור תמונות וסמלים כתיבתיים. בחירת האלמנטים הללו תלויה בסוג הפרויקט ובהעדפות המתכנתים.
 
-## מה זה אומר בעצם להגדיל את הטקסט?
-בדרך כלל, אנחנו משתמשים בפעולה כדי להכניס דגש על מילה מסוימת בטקסט. האות הראשונה בגודל גדול מסמלת חשיבה והדגשה על המלה הזאת והופכת אותה לחלק חשוב יותר מהטקסט הסביבתי.
+כאשר משתמשים בתווים גדולים במסגרת כתיבת טקסט, חשוב לקחת בחשבון את התמיכה בשפות נוספות ומבני קוד שונים. כדי להיות יצירתיים ולמקסם את ההשפעה שלנו, יש לבחור את התווים הגדולים בסדרה ביעילות.
 
-## ראית גם
-- [String.prototype.replace()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
-- [CSS :first-letter pseudo-element](https://developer.mozilla.org/en-US/docs/Web/CSS/::first-letter)
+## ראה גם
+
+- [שינוי כתיבת טקסט לתווים גדולים ב-PHP](https://www.w3schools.com/php/func_string_strtoupper.asp)
+- [כתיבת טקסט בתווים גדולים ב-Python](https://www.tutorialspoint.com/python/string_upper.htm)
+- [כיצד להשתמש בתווים גדולים בסדרה בפרויקט JavaScript?](https://www.geeksforgeeks.org/javascript-string-prototype-uppercase/)

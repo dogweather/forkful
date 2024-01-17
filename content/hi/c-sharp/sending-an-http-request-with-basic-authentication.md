@@ -1,7 +1,7 @@
 ---
-title:                "बेसिक प्रमाणीकरण के साथ http अनुरोध भेजना"
-html_title:           "C#: बेसिक प्रमाणीकरण के साथ http अनुरोध भेजना"
-simple_title:         "बेसिक प्रमाणीकरण के साथ http अनुरोध भेजना"
+title:                "बेसिक प्रमाणीकरण के साथ एचटीटीपी अनुरोध भेजें"
+html_title:           "C#: बेसिक प्रमाणीकरण के साथ एचटीटीपी अनुरोध भेजें"
+simple_title:         "बेसिक प्रमाणीकरण के साथ एचटीटीपी अनुरोध भेजें"
 programming_language: "C#"
 category:             "C#"
 tag:                  "HTML and the Web"
@@ -10,32 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
+## क्या और क्यों?
 
-कई बार हमें अपने ऐप्लिकेशन को किसी सर्वर से डेटा को डाउनलोड या अपलोड करने की जरूरत होती है। यदि हम अपने सर्वर पर सुरक्षित तरीके से पहुंचना चाहते हैं, तो हमें अपने HTTP अनुरोध में बेसिक प्रमाणीकरण का उपयोग करना होगा। यह अनुरोध हमारे अनुरोध को सुरक्षित बनाता है और केवल सत्यापित उपयोगकर्ताओं को हमारे सर्वर से संवाद करने की अनुमति देता है।
+HTTP के साथ बेसिक प्रमाणीकरण के साथ एक अनुरोध भेजना वे कार्य हैं जो प्रोग्रामर स्वयं बनाते हैं। यह उन्हें अन्य वेब सर्विसेज के साथ संवाद करने की अनुमति देता है अपने अनुप्रयोगों को।
 
-## कैसे करें
-
-अब हम HTTP अनुरोध में बेसिक प्रमाणीकरण का उपयोग करना सीखेंगे। निम्नलिखित उदाहरण में हम इस्तेमाल करेंगे: एक GET अनुरोध को उत्तरित करने के लिए एक API एंडपॉइंट का उपयोग करके जो एक उपयोगकर्ता की डेटा वापस लेता है। तो आइए शुरू करते हैं!
+## कैसे करें:
 
 ```C#
-// आवश्यक पैकेज इंपोर्ट करें
-using System.Net.Http;
+using System;
 using System.Net;
+using System.IO;
 
-// `HttpClient` इंस्टेंस बनाने के लिए उपयोग किया जाता है।
-HttpClient client = new HttpClient();
+class Program
+{
+    static void Main(string[] args)
+    {
+        //यहाँ प्रयुक्त URL को बदल सकते हैं
+        string url = "https://www.example.com";
 
-// निम्न लाइन भी हमें अपने क्रेडेंशियल को सेट करते हैं।
-client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", Convert.ToBase64String(Encoding.UTF8.GetBytes("username:password")));
+        //एक नया HttpWebRequest बनाएं
+        HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
 
-// अपने एपीआई एंडपॉइंट तक अपने अनुरोध को सेट करें
-HttpResponseMessage response = await client.GetAsync("https://myapi.com/endpoint");
+        //बेसिक प्रमाणीकरण चालू करें
+        NetworkCredential credentials = new NetworkCredential("username", "password");
+        request.Credentials = credentials;
 
-// उत्तर को उद्धृत करें
-Console.WriteLine(response.StatusCode);
+        //उससे जुड़े अनुरोध भेजें
+        HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+
+        //जवाब पढ़ें
+        Stream dataStream = response.GetResponseStream();
+        StreamReader reader = new StreamReader(dataStream);
+        string responseFromServer = reader.ReadToEnd();
+
+        //जवाब दिखाए
+        Console.WriteLine(responseFromServer);
+        Console.ReadLine();
+
+        //जवाब से जुड़े संसाधन बंद करें
+        reader.Close();
+        response.Close();
+    }
+}
 ```
 
-सूचना: ऊपर दिए गए उदाहरण में, हमने अनुमानित वैल्यूज को स्थापित नहीं किया है। आपको अपने खुद के उपयोगकर्ता नाम और पासवर्ड को प्रतिस्थापित करना होगा।
+## गहराई में जाओ:
 
-## डीप डाइव
+बेसिक प्रमाणीकरण HTTP अनुरोध से अधिक बेहतर सुरक्षा प्रदान करने के लिए विकसित किया गया था। इससे अन्य प्रकार के प्रमाणीकरण की तुलना में यह अत्यधिक सरल है। इसके अलावा, आप अपने अनुप्रयोगों को प्रमाणित उपयोगकर्ता के साथ बिना सर्वर साइड कोड तक पहुंच कर सुरक्षित रख सकते हैं। इसके साथ साथ, आप सरलता के साथ साइटों को प्रमाणित करने में भी सक्षम होंगे।
+
+## अन्य लिंक:
+
+- [बेसिक प्रमाणीकरण के साथ HTTP अनुरोध भेजना (Microsoft Docs)](https://docs.microsoft.com/en-us/dotnet/framework/network-programming/how-to-send-an-http-request-with-basic-authentication)
+- [C# गाइड (Microsoft Docs)](https://docs.microsoft.com/en-us/dotnet/csharp/)
+- [सीखने के लिए C# कोड (CodeCademy)](https://www.codecademy.com/learn/learn-c-sharp)

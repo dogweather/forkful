@@ -10,49 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
-ウェブページをダウンロードする理由は様々です。例えば、外出先でスマートフォンを使用せずにコンピューターでウェブサイトを閲覧する必要がある場合や、特定のデータを取得したい場合などがあります。
+## 何と、なぜするの？
 
-## ダウンロードする方法 
-以下のArduinoコードを使用して、特定のウェブサイトのコンテンツをダウンロードすることができます。
+ウェブページをダウンロードするとは、インターネットから特定のウェブページを取得することです。プログラマーは主に、ウェブサイトから必要なデータを取得するためにこれを行います。
+
+##  方法：
+
+```
+Arduinoを使用し、ウェブページをダウンロードする方法はいくつかあります。まず、ウェブサーバーへの接続を確立する必要があります。次に、HTTPリクエストを使用して特定のページを指定し、サーバーからデータを取得します。最後に、必要なデータを処理し、使用する形式に変換します。以下は、ダウンロードしたウェブページをシリアルモニターに表示する例です。
 
 ```Arduino
-#include <WiFi.h>
-#include <HTTPClient.h>
-
-void setup() {
-  Serial.begin(9600);
-
-  WiFi.begin("Wi-Fiネットワークの名前", "パスワード");
-
-  while (WiFi.status() != WL_CONNECTED) {
-    delay(500);
-    Serial.println("接続中...");
-  }
+// ウェブサーバーへの接続を確立する
+WiFiClient client;
+if (!client.connect(server, 80)) {
+  Serial.println("接続に失敗しました");
+  return;
 }
 
-void loop() {
-  if (WiFi.status() == WL_CONNECTED) {
-    HTTPClient http;
+// ページを要求する
+client.println("GET /index.html HTTP/1.1");
+client.println("Host: www.example.com");
+client.println("Connection: close");
+client.println();
 
-    http.begin("ウェブサイトのURL");
-    int httpCode = http.GET();
-
-    if (httpCode > 0) {
-      String payload = http.getString();
-      Serial.println(payload);
-    }
-    http.end();
-  }
-  delay(5000);
+// ページのデータを取得する
+while(client.available()){
+  char c = client.read();
+  Serial.print(c);
 }
+
+// 接続を閉じる
+client.stop();
 ```
 
-上記のコードは、Wi-Fiネットワークに接続し、指定したウェブサイトのコンテンツを取得した後、シリアルモニターに内容を出力します。ご自身の目的に合わせてコードをカスタマイズすることができます。
+## ディープダイブ：
 
-## 深堀り
-HTTPClientライブラリを使用すると、より詳細な操作を行うことができます。例えば、POSTリクエストを使用してデータを送信したり、HTTPヘッダーを設定したりすることができます。また、セキュリティのためにHTTPSリクエストを行うこともできます。
+ウェブページをダウンロードする方法には、さまざまなアプローチがあります。Arduino以外にも、例えばESP32やESP8266を使用することもできます。また、HTTP以外のプロトコルを使用することも可能です。さらに、ウェブスクレイピングと呼ばれる、ウェブサイトからデータを収集する方法もあります。
 
-## おまけ 
-- [HTTPClientライブラリのドキュメント](https://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/httpclient-class.html)
-- [ウェブサイトにリクエストを送信するプログラムのサンプルコード](https://randomnerdtutorials.com/esp32-http-get-post-arduino/)
+## 関連リンク：
+
+- [ウェブスクレイピングについての記事](https://qiita.com/manabuyasuda/items/edb7e6f69622c9ccf28d)
+- [ESP32を使用したウェブページのダウンロードの方法についてのチュートリアル](https://randomnerdtutorials.com/esp32-web-server-getting-query-parameters/)
+- [ESP8266を使用したウェブページのダウンロードの方法についてのチュートリアル](https://circuitdigest.com/microcontroller-projects/esp8266-based-web-page-download-to-sd-card)

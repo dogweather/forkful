@@ -1,7 +1,7 @@
 ---
-title:                "Skapa en temporär fil"
-html_title:           "Java: Skapa en temporär fil"
-simple_title:         "Skapa en temporär fil"
+title:                "Skapa en tillfällig fil"
+html_title:           "Java: Skapa en tillfällig fil"
+simple_title:         "Skapa en tillfällig fil"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Files and I/O"
@@ -10,47 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Varför
-*Varför skulle någon vilja skapa en temporär fil i Java?*
+## Vad & Varför?
+Skapandet av en temporär fil är en vanlig praxis bland programmerare för att hantera tillfälliga data eller utföra vissa operationer. Det är ett sätt att tillfälligt lagra data som inte behöver sparas permanent eller för att utföra en snabb operation som genererar ett resultat.
 
-Att skapa temporära filer i Java är ett användbart verktyg för att hantera data som endast behövs temporärt under exekveringen av ett program. Det kan vara till nytta när man behöver lagra data temporärt, till exempel för att utföra beräkningar eller bearbetningar.
+## Hur man gör det:
+Ett enkelt sätt att skapa en temporär fil i Java är att använda klassen `File` och metoden `createTempFile()` som finns tillgänglig från Java SE 7 och uppåt. Här är ett kodexempel:
 
-## Så här gör du
-*Här är ett enkelt kodexempel för att skapa en temporär fil i Java:*
+```java
+// Skapa en temporär fil
+File tempFile = File.createTempFile("temp", ".txt");
 
-```Java
-import java.io.File;
-import java.io.IOException;
+// Skriv tillfälliga data till filen
+FileWriter writer = new FileWriter(tempFile);
+writer.write("Det här är en temporär fil.");
+writer.close();
 
-public class TemporaryFile {
-
-    public static void main(String[] args) {
-        try {
-            File tempFile = File.createTempFile("test", ".txt");
-            System.out.println("Temporär fil skapad på: " + tempFile.getAbsolutePath());
-
-            // Vid slutet av programmet, ta bort den temporära filen
-            tempFile.deleteOnExit();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
+// Läs från filen
+FileReader reader = new FileReader(tempFile);
+int character;
+while ((character = reader.read()) != -1) {
+    System.out.print((char) character);
 }
+reader.close();
+
+// Resultat:
+// Det här är en temporär fil.
 ```
-**Output:**
 
-`Temporär fil skapad på: C:\Users\Namn\AppData\Local\Temp\testXXXXXX.txt`
+För att ta bort en temporär fil efter användning kan du använda metoden `delete()`:
 
-## Djupdykning
-Det finns flera användbara metoder för att skapa temporära filer i Java, till exempel `createTempFile()` som vi använde i exemplet ovan. Denna metod skapar en temporär fil på systemets standardplats för temporära filer. 
+```java
+// Ta bort filen
+tempFile.delete();
+```
 
-En annan metod är `createTempFile(String prefix, String suffix)`, där du också kan ange ett prefix och ett suffix för den temporära filen. Prefix-förlängningen läggs till filnamnet före den automatiskt genererade delen (i exemplet ovan var prefixet "test") och suffix-förlängningen läggs till efter.
+## Djupdykning:
+Det är inte alltid lämpligt eller säkert att använda en temporär fil, speciellt om filen innehåller känslig data. I så fall kan det vara bättre att använda en temporär databas eller lagra datan i minnet istället för en fil.
 
-Det finns också en möjlighet att välja en specifik mapp för den temporära filen att skapas i, genom att använda `createTempFile(String prefix, String suffix, File directory)`.
+Förutom `File`-klassen finns det också andra sätt att skapa en temporär fil, till exempel genom att använda `FileUtils` från Apache Commons IO-biblioteket eller `TemporaryFolder` från JUnit-testramen.
 
-En annan användbar metod är `File.createTempFile(prefix, suffix, directory)` som skapar en temporär fil direkt i en specifik mapp utan att behöva välja den genom att använda `File`-objektet.
+När man skapar en temporär fil i Java används operativsystemets standardmapp för temporära filer. Om du vill ange en annan mapp kan du använda metoden `createTempFile(String prefix, String suffix, File directory)` och ange önskad mapp som sista argument.
 
-## Se även
-- [Java File API](https://docs.oracle.com/javase/8/docs/api/java/io/File.html)
-- [Java I/O Tutorial](https://www.tutorialspoint.com/java/io/java_io_file.htm)
-- [How to Create a Temporary File in Java](https://www.baeldung.com/java-temp-file)
+## Se även:
+Läs mer om klassen `File` och dess metoder här: https://docs.oracle.com/javase/8/docs/api/java/io/File.html
+
+Mer info om undvikande av temporära filer i Java: https://blog.codinghorror.com/zipped-my-doodads/
+
+Läs mer om Apache Commons IO här: https://commons.apache.org/proper/commons-io/
+
+Läs mer om JUnit här: https://junit.org/junit5/

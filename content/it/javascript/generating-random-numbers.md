@@ -10,20 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
-Il generare numeri casuali è un utile strumento per diverse attività, che spaziano dalla creazione di giochi a scopo ludico fino all'elaborazione di algoritmi più complessi. Questa funzionalità è disponibile nel linguaggio Javascript attraverso la libreria Math.random ().
+# Che cos'è e perché lo si fa?
 
-## Come fare
-Per generare un numero casuale in Javascript, è necessario utilizzare il metodo Math.random () che restituisce un numero decimale compreso tra 0 e 1. Per convertirlo in un numero intero e allargare il range, si possono utilizzare metodi come Math.floor () e Math.ceiling (). Ad esempio, per creare un numero casuale compreso tra 1 e 10, si può utilizzare il seguente codice:
+Generare dei numeri casuali è un processo molto comune per i programmatori. Si tratta di ottenere numeri casuali in modo randomico, ovvero senza un preciso ordine o schema predefinito. La ragione principale per cui i programmatori generano numeri casuali è per rendere il loro codice più dinamico e imprevedibile.
+
+# Come si fa?
+
+Ci sono diverse opzioni nella programmazione per generare numeri casuali. Una delle più comuni è l'utilizzo della funzione Math.random() in Javascript. Questa funzione restituisce un numero casuale compreso tra 0 e 1. Ad esempio, scrivendo ```Javascript
+Math.random();
+``` 
+verrà restituito un numero simile a 0.46789123322. 
+
+Un'altra opzione è l'utilizzo della libreria Lodash, che offre una funzione più avanzata per generare numeri casuali con una maggiore precisione. Ad esempio, per ottenere un numero casuale compreso tra 1 e 10 in Lodash, possiamo scrivere:
 ```Javascript
-Math.floor(Math.random() * 10) + 1;
-```
-Il risultato sarà un numero intero tra 1 e 10. È possibile creare numeri casuali in diversi intervalli modificando i parametri dei metodi utilizzati.
+_.random(1, 10);
+``` 
+questo restituirà un numero compreso tra 1 e 10, come ad esempio 7.
 
-## Approfondimento
-Per comprendere meglio il funzionamento della generazione dei numeri casuali in Javascript, è importante conoscere alcuni concetti matematici alla base. Il metodo Math.random () utilizza un algoritmo chiamato "Generatore di Numeri Casuali Lineare Congruenziale" (LCG). Questo algoritmo utilizza un parametro chiamato "seed" che determina il valore iniziale del numero casuale generato. Se questo parametro viene lasciato vuoto, verrà utilizzato un seed predefinito dal browser.
+# Approfondisci
 
-## Vedi anche
-- [Documentazione Math.random()](https://developer.mozilla.org/it/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
-- [Funzionamento del Generatore di Numeri Casuali Lineare Congruenziale](https://en.wikipedia.org/wiki/Linear_congruential_generator)
-- [Esempi di utilizzo di numeri casuali in Javascript](https://www.w3schools.com/js/js_random.asp)
+La generazione di numeri casuali è una pratica molto utilizzata in varie applicazioni di programmazione, come giochi, algoritmi di sicurezza e simulazioni. Una delle prime metodologie utilizzate per generare numeri casuali è stata l'utilizzo di calcoli basati sul tempo, tuttavia questa tecnica ha dimostrato di non essere efficiente e sicura. Al giorno d'oggi, esistono diverse alternative per generare numeri casuali, tra cui l'utilizzo di hardware specializzato e l'implementazione di algoritmi avanzati.
+
+# Vedi anche
+
+Per ulteriori informazioni sulla generazione di numeri casuali in Javascript, puoi consultare la documentazione ufficiale di Math.random() e della libreria Lodash. Inoltre, esistono anche altre risorse online che trattano l'argomento in modo più approfondito, come articoli o tutorial su siti di programmazione.

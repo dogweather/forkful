@@ -1,7 +1,7 @@
 ---
-title:                "तारीख को स्ट्रिंग में रूपांतरित करना"
-html_title:           "Rust: तारीख को स्ट्रिंग में रूपांतरित करना"
-simple_title:         "तारीख को स्ट्रिंग में रूपांतरित करना"
+title:                "एक तारीख को स्ट्रिंग में रूपांतरित करना"
+html_title:           "Rust: एक तारीख को स्ट्रिंग में रूपांतरित करना"
+simple_title:         "एक तारीख को स्ट्रिंग में रूपांतरित करना"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Dates and Times"
@@ -10,34 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
+## Kya Aur Kyun?
+Tareekh ko ek string mein badalna ek prachalit prakriya hai jismein programmers tareekh ko aasani se padhne aur samajhne ke liye ek string mein convert karte hain. Yeh kaam kisi bhi programming language mein kiya ja sakta hai, lekin hum aaj Rust mein is prakriya ki baat karenge. Is process ka upyog alag-alag programming tasks mein date ko manipulate karne ke liye kiya jaata hai.
 
-Date को string में convert करना एक आम टास्क है जो कई अलग-अलग उद्देश्यों के लिए किया जाता है। इसको automate करने से आपको समय, कष्ट और गलतियां बचाने में मदद मिल सकती है।
-
-## कैसे करें
-
-कैसे आप अपने Rust प्रोजेक्ट में Date को string में convert कर सकते हैं? इसके लिए हमारे पास कई विकल्प हैं। आप मूल्य तर्क या किसी अन्य प्रोग्रामिंग भाषा के साथ सहयोग कर सकते हैं, लेकिन हम आपको आसान और उपयोगशील तरीकों के बारे में बताएंगे।
+## Kaise Karein:
+Mehmaan, ab baat aati hai ki tareekh ko string mein convert kaise karein. Rust mein, hum is kaam ke liye ```DateTime``` aur ```format``` libraries ka upyog karte hain. Neeche diye gaye code block mein ek simple example hai jo date ko "DD/MM/YYYY" format mein string mein convert karta hai.
 
 ```Rust
+use std::time::SystemTime;
+use chrono::{DateTime, Utc, Datelike};
+
 fn main() {
-    use chrono::{DateTime, Utc};
-    
-    // Getting current datetime
-    let now: DateTime<Utc> = Utc::now();
-
-    // Converting to string
-    let date_string = now.format("%Y-%m-%d %H:%M:%S").to_string();
-
-    println!("{}", date_string); // Output: 2021-07-12 14:30:00
+    let now: DateTime<Utc> = SystemTime::now().into();
+    let string_date = format!("{}", now.format("%d/%m/%Y"));
+    println!("{}", string_date); // Output: 17/08/2021
 }
 ```
 
-उपरोक्त उदाहरण में, हमने Rust की `format()` फ़ंक्शन का उपयोग करके Date को string में convert किया है। आप `%Y`, `%m`, `%d` आदि के द्वारा दिनांक, महीने और वर्ष का प्रारूप निर्धारित कर सकते हैं। आप अपनी आवश्यकतानुसार निर्धारित किया गया प्रारूप उपयोग कर सकते हैं।
+Is code mein humne ```DateTime``` aur ```format``` libraries ko import kiya hai. Phir, hum ```now``` constant variable mein aktarit tareekh ko "DateTime" object ke roop mein store karte hain. Uske baad, hum ```format``` function ka upyog karke tareekh ko "DD/MM/YYYY" format mein string mein convert karte hain. Is code ka output "17/08/2021" hoga.
 
-## गहराई में
+## Gehri Khurak:
+Doston, date ko string mein convert karne ka yeh tarika kaafi asaan aur upyogi hai. Isse humans ke liye bhi date ko padhna aur comprehend karna aasan ho jata hai. Lekin yeh prakriya huee tareekh se judi ek lambi history se judi hai. Pehle, date ko calculate karne ke liye mathematical formulas ka upyog kiya jaata tha. Lekin ab computers ke aane se yeh prakriya kaafi easy aur precise ho gayi hai.
 
-डेटा को string में convert करने का यह तरीका date-time के साथ मज़बूत रूप से सामग्रीकरण करता है। इस लेख के अन्य भागों में हम आपको अन्य विकल्पों के बारे में बताएंगे जो आपको इस काम को करने में मदद कर सकते हैं। Rust के अलावा, आप date-time को string में convert करने के लिए सामान्य रूप से अन्य पॉपुलर प्रोग्रामिंग भाषाओं जैसे PHP, Java, और Python का उपयोग कर सकते हैं।
+Agar aapki project mein tareekhon ke saath kaam karna hai toh aap ```DateTime``` aur ```format``` libraries ke alawa bhi ```chrono``` library ka upyog kar sakte hain. Yeh ek bahut hi useful library hai jiske ek saath kayi tarah ke date-time manipulation functions available hain.
 
-## देखें भी
+Iske alawa, aap date ko string mein convert karne ke liye dusre programming languages jaise C++, Java, Python, etc. ka bhi upyog kar sakte hain. Har language mein alag-alag libraries aur methods hote hain, lekin basic concept same rehta hai.
 
-- [Rust गाइ
+## See Also:
+Agar aapko aur deep-dive information chahiye converting a date into a string ke baare mein toh aap neeche diye gaye sources ko refer kar sakte hain:
+
+- [Rust Documentation - Date and Time](https://doc.rust-lang.org/std/time/)
+- [Chrono Documentation](https://docs.rs/chrono/0.4.19/chrono/)
+- [GeeksforGeeks - Date to String in Rust](https://www.geeksforgeeks.org/date-string-rust/)
+- [Stack Overflow - Convert Date to String in Rust](https://stackoverflow.com/questions/30748104/convert-date-to-string-in-rust)

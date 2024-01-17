@@ -1,7 +1,7 @@
 ---
-title:                "パターンにマッチする文字の削除"
-html_title:           "Clojure: パターンにマッチする文字の削除"
-simple_title:         "パターンにマッチする文字の削除"
+title:                "パターンに一致する文字を削除する"
+html_title:           "Clojure: パターンに一致する文字を削除する"
+simple_title:         "パターンに一致する文字を削除する"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -10,47 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Clojure *最新バージョン*プログラミングの記事を書いて、日本語読者向けのカジュアルなトーンと非冗長なスタイルで追及する。"## なぜ", "## 方法", "## 深層"の3つのセクションに分け、それぞれ日本語で翻訳する。
+Clojureに興味を持ってくれてありがとう！ここでは、特定のパターンと一致する文字を削除するClojureの機能について紹介していきたいと思います。この機能は一見あまり重要ではないように思えますが、実はプログラマーにとって非常に役に立つものです。
 
-## なぜ
+## What & Why?
 
-パターンにマッチする文字を削除する理由は、データの整理や操作を目的としたプログラミングにおいて非常に有用です。例えば、ファイル読み込み時に不要な文字を削除することで、データの構造をより明確にすることができます。
+この機能は、文字列内の特定のパターンと一致する文字を削除するものです。例えば、改行やタブ、空白などが該当します。プログラマーがこの機能を使う理由は、文字列の整形や処理をする際に不要な文字を削除することで、より効率的にコードを書くことができるからです。
 
-## 方法
+## How to:
 
-Clojureでは、文字列を操作するための便利な関数が多数用意されています。その中でも、特定のパターンにマッチする文字を削除する方法を紹介します。
-
-まずは、`clojure.string`ライブラリをインポートします。
-
-```Clojure
-(require '[clojure.string :as str])
+```
+; ここでは、"Hello, World!"という文字列からカンマとスペースを削除する例を示します。
+; 文字列を定義します。
+(def str "Hello, World!")
+; カンマとスペースを指定して削除します。
+(clojure.string/replace str #", " "")
+; 出力は"HelloWorld!"になります。
 ```
 
-次に、`str`関数を使って文字列を作成します。
-
-```Clojure
-(def sample-str "Hello, World!!!")
+```
+; もう一つの例として、文字列内の数字を削除する方法を紹介します。
+; 文字列を定義します。
+(def str "Apple1234Orange5678Banana")
+; 数字を指定して削除します。
+(clojure.string/replace str #"[0-9]" "")
+; 出力は"AppleOrangeBanana"になります。
 ```
 
-この文字列から、英数字以外の文字を削除するには、`replace`関数を使用します。ここでは、正規表現を使ってマッチングさせます。
+## Deep Dive:
 
-```Clojure
-(str/replace sample-str #"[^\w\s]" "")
-```
+この機能は、Clojure 1.2以降で利用可能になりました。以前は、正規表現を使って同様のことを行う必要がありましたが、よりシンプルに文字列を処理することができるようになったのです。なお、文字列を置換する場合は、`replace`関数の代わりに`str`関数を使うこともできます。
 
-上記のコードを実行すると、以下のような結果が得られます。
+また、文字列ではなくシーケンスを処理する際は、`clojure.core/remove`関数を使用することで同様の結果を得ることができます。
 
-```Clojure
-"Hello World"
-```
+## See Also:
 
-これで、英数字以外の文字が削除され、整形された文字列を取得することができました。
-
-## 深層
-
-Clojureでは、文字列を操作するために正規表現を使うことができます。`str`や`replace`のような関数を組み合わせることで、より複雑な操作も可能です。また、`clojure.string`ライブラリには他にも便利な関数が多数用意されているので、ぜひ活用してみてください。
-
-## See Also
-
-- [Clojure string functions](https://clojuredocs.org/clojure.string)
-- [Regular expressions in Clojure](https://clojuredocs.org/clojure.core/re-matches)
+- [Clojure String API](https://clojure.org/reference/java_interop#_clojure_string_api)
+- [Clojure Cheatsheet](https://clojure.org/api/cheatsheet)

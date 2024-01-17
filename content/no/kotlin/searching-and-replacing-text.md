@@ -1,7 +1,7 @@
 ---
-title:                "Søking og utskifting av tekst"
-html_title:           "Kotlin: Søking og utskifting av tekst"
-simple_title:         "Søking og utskifting av tekst"
+title:                "Søk og erstatte tekst"
+html_title:           "Kotlin: Søk og erstatte tekst"
+simple_title:         "Søk og erstatte tekst"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Strings"
@@ -10,45 +10,22 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hva & Hvorfor?
+Searching og erstattetekst er essensielle funksjoner i programmering som lar deg finne og bytte ut spesifikke tekster i en kodebase. Dette er viktig for å gjøre kode mer effektiv og for å forenkle endringer og oppdateringer.
 
-Noen ganger kan man trenge å erstatte tekst i et dokument eller en kodebase. Dette kan være for å fikse skrivefeil, oppdatere gamle kodelinjer eller for å gjøre en rask endring i mange filer samtidig. I slike tilfeller kan det være nyttig å vite hvordan man enkelt kan søke og erstatte tekst ved hjelp av Kotlin.
-
-## Slik gjør du det
-
-For å søke og erstatte tekst i Kotlin, kan du bruke bruk av funksjonen `replace()` og `Regex`-klasse. Følgende kodeblokk viser et enkelt eksempel på hvordan dette kan gjøres:
-
-```Kotlin
-val originalString = "Hallo verden"
-val newString = originalString.replace(Regex("verden"), "Universe")
-println(newString) // Output: Hallo Universe
+# Hvordan:
 ```
-
-Her erstattes teksten "verden" med "Universe" i strengen "Hallo verden". Du kan også bruke variabler i søket og erstatningen, for eksempel:
-
-```Kotlin
-val firstName = "Sara"
-val lastName = "Olsen"
-val fullName = "$firstName $lastName" // Sara Olsen
-val newFullName = fullName.replace(Regex(lastName), "Smith")
-println(newFullName) // Output: Sara Smith 
+Kotlin erstatteAlle - fungerer som tallet erstattarAlle.
+Input : (Hello World, World, Kotlin)
+Output : Hello Kotlin
 ```
+I eksempelet ovenfor vil alle forekomster av "World" i teksten "Hello World" bli erstattet med "Kotlin". Dette gjør det enkelt å gjøre store endringer i en kodebase uten å måtte gå gjennom alle linjene manuelt.
 
-Legg merke til hvordan man kan bruke variabler i Regex-uttrykket ved å bruke `$` foran variabelnavnet. Dette gjør det enkelt å oppdatere og endre søket hvis man trenger det.
+# Dypdykk:
+Søke og erstatte funksjoner har eksistert siden de første programmeringsspråkene ble utviklet. I eldre språk som C og Java var dette ofte mer krevende og tidskrevende å implementere, men med nye språk som Kotlin har disse funksjonene blitt mer intuitiv og brukervennlig.
 
-## Dypdykk
+En alternativ metode for å søke og erstatte tekst er med regulære uttrykk (regex), som gir mer avanserte muligheter for å finne og bytte ut tekst. Imidlertid er dette ofte mer komplekst og krever mer kunnskap for å bruke effektivt.
 
-Ved å bruke `Regex`-klassen, kan man også gjøre mer avanserte søk og erstatninger. For eksempel kan man søke etter uttrykk som starter på en bestemt bokstav:
-
-```Kotlin
-val originalString = "Banan, Bringebær, Blåbær, Jordbær"
-val newString = originalString.replace(Regex("^B"), "F")
-println(newString) // Output: Fanan, Fringebær, Flåbær, Fjordbær 
-```
-
-Søket vil her bare gjelde ord som starter på bokstaven "B", og disse vil bli erstattet med "F". Man kan også bruke `replaceFirst()`- og `replaceAll()`-funksjonene for å gjøre søket mer spesifikt, og man kan også bruke `Regex`-flagg for å gjøre søket ikke-eksakt eller mer komplekst.
-
-## Se også
-
-- [Kotlin regex tutorial](https://www.tutorialspoint.com/kotlin/kotlin_string_replace.htm)
-- [Official Kotlin documentation](https://kotlinlang.org/docs/strings.html#string-regular-expressions)
+# Se også:
+- [Kotlin String-referanse](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/)
+- [Bruk av regulære uttrykk i Kotlin](https://www.baeldung.com/kotlin-regex)

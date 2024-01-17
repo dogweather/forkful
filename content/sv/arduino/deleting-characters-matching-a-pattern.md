@@ -1,7 +1,7 @@
 ---
-title:                "Ta bort tecken som matchar ett mönster"
-html_title:           "Arduino: Ta bort tecken som matchar ett mönster"
-simple_title:         "Ta bort tecken som matchar ett mönster"
+title:                "Radering av tecken som matchar ett mönster"
+html_title:           "Arduino: Radering av tecken som matchar ett mönster"
+simple_title:         "Radering av tecken som matchar ett mönster"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Strings"
@@ -10,26 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
-Att ta bort tecken som matchar ett visst mönster kan vara användbart i många olika situationer. Till exempel kan det hjälpa till att rensa en sträng från onödiga tecken, vilket gör den lättare att hantera och bearbeta.
+## Vad & Varför?
+Att radera tecken som matchar ett mönster är en vanlig programmeringsteknik för att kunna manipulera textsträngar på ett effektivt sätt. Det används ofta för att ta bort oönskade tecken eller för att söka efter specifika mönster i en text.
 
-## Hur man gör det
-Det finns flera sätt att gå tillväga för att ta bort tecken som matchar ett visst mönster i Arduino. Ett sätt är att använda sig av den inbyggda funktionen "replace" som finns i "String" biblioteket. Se nedan för ett exempel på hur man kan implementera detta i sin kod:
-
+## Hur man gör:
+Här är ett enkelt exempel på hur du kan radera alla siffror från en textsträng:
 ```Arduino
-String originalString = "Hej alla Arduino-användare!";
-String modifiedString = originalString.replace("a", "");
-
-Serial.println(modifiedString);
+String text = "Hej123 vad456";
+for (int i = 0; i < text.length(); i++) {
+  if (isdigit(text.charAt(i))) {    // kollar om tecknet är en siffra
+    text.remove(i,1);               // tar bort tecknet på positionen
+    i--;                            // korrigerar loopen efter borttagningen
+  }
+}
+Serial.println(text);               // skriver ut "Hej vad"
 ```
-Detta kodblock kommer att ta bort alla "a" från den ursprungliga strängen och skriva ut resultatet på seriell monitor. Resultatet blir "Hej ll Arduno-nvändre!".
+I detta exempel använder vi en for-loop för att gå igenom varje tecken i textsträngen och kontrollera om det är en siffra med hjälp av funktionen `isdigit()`. Om det är en siffra, använder vi funktionen `remove()` för att ta bort tecknet från textsträngen och korrigerar sedan loopen så att den fortsätter på rätt position.
 
-## Djupdykning
-När man använder sig av "replace"-funktionen för att ta bort tecken som matchar ett mönster, är det viktigt att vara medveten om vad som händer bakom kulisserna. I grund och botten ersätts de matchande tecknen med en tom sträng, vilket innebär att den ursprungliga strängens längd förändras. Detta kan påverka prestandan i ens kod om man arbetar med stora och/eller många strängar.
+## Djupdykning:
+Att radera tecken som matchar ett mönster kan spåras tillbaka till programmeringsspråket C, där man använde funktionen `strpbrk()` för att hitta positionen för det första tecknet som matchade ett visst mönster. I andra moderna programmeringsspråk finns det inbyggda funktioner för att radera tecken från textsträngar, såsom `trim()` i Java.
 
-Det finns också andra sätt att ta bort tecken som matchar ett mönster, som att använda sig av regelbundna uttryck eller loopa genom varje tecken i strängen och jämföra dem med det önskade mönstret. Det är viktigt att välja den lämpligaste metoden beroende på ens specifika behov och kodens krav.
+Alternativ till att radera tecken är att ersätta dem med andra tecken, eller att använda funktioner för att söka efter specifika mönster och sedan manipulera textsträngen baserat på det. Det är också möjligt att använda reguljära uttryck (regular expressions) för mer avancerade mönstermatchning.
 
-## Se även
-- [Arduino String replace dokumentation](https://www.arduino.cc/en/Curie/replace)
-- [Guide till regelbundna uttryck i Arduino](https://learn.sparkfun.com/tutorials/regular-expressions/reg-ex-in-arduino)
-- [Enkel Arduino kod för att ta bort mellanslag](https://www.maketecheasier.com/delete-spaces-string-arduino/)
+Implementeringen av att radera tecken som matchar ett mönster kan variera beroende på programmeringsspråk och plattform, men konceptet är detsamma. Det kräver en loop för att gå igenom varje tecken i textsträngen och en mekanism för att ta bort eller ersätta tecknen baserat på ett visst mönster.
+
+## Se även:
+- [Dokumentation för Arduino String Class](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/)
+- [Information om reguljära uttryck i programmering](https://www.regular-expressions.info/)

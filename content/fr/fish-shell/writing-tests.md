@@ -1,7 +1,7 @@
 ---
-title:                "Écriture des tests"
-html_title:           "Fish Shell: Écriture des tests"
-simple_title:         "Écriture des tests"
+title:                "Écriture de tests"
+html_title:           "Fish Shell: Écriture de tests"
+simple_title:         "Écriture de tests"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Testing and Debugging"
@@ -10,42 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi écrire des tests en Fish Shell ?
+# Qu'est-ce que c'est et pourquoi le faire?
+Ecrire des tests est une pratique courante pour les programmeurs afin de vérifier la fiabilité et la stabilité de leur code. Cela consiste à créer des cas de test pour exercer différentes parties du code et s'assurer qu'elles fonctionnent comme prévu.
 
-Si vous programmez en Fish Shell, vous savez sûrement déjà à quel point cette interface est puissante et pratique pour automatiser certaines tâches. Mais saviez-vous que vous pouvez aller encore plus loin en écrivant des tests pour votre code ?
+# Comment faire:
+Voici un exemple simple pour créer et exécuter un test avec Fish Shell:
 
-Écrire des tests en Fish Shell peut sembler fastidieux et inutile, mais cela apporte de nombreux avantages. En effet, cela vous permet de vérifier rapidement et facilement si votre code fonctionne correctement et de détecter d'éventuels bugs. Cela vous fait également gagner du temps à long terme en vous assurant que votre code reste fonctionnel au fur et à mesure que vous le modifiez ou le mettez à jour.
-
-## Comment faire des tests en Fish Shell ?
-
-Pour écrire des tests en Fish Shell, vous pouvez utiliser la commande `test` intégrée. Cette commande se comporte de manière similaire à la commande `if`, en évaluant une expression et retournant un résultat True ou False en fonction de sa réussite. Voici un exemple de test :
-
-```
-Fish Shell - Tests
-
-set variable "bonjour"
-
-if test "$variable" = "bonjour"
-  echo "Le test a réussi"
-else
-  echo "Le test a échoué"
+```Fish Shell
+function add_numbers
+  set result (math "$argv[1] + $argv[2]")
+  echo $result
 end
+
+begin; and
+  add_numbers 2 3
+end
+
+# Output: 5
 ```
 
-Dans cet exemple, nous vérifions si la variable `variable` est égale à la chaîne de caractères "bonjour". Si c'est le cas, notre test renvoie "Le test a réussi" ; sinon, il renvoie "Le test a échoué". Vous pouvez également utiliser des opérateurs logiques tels que `and` et `or` pour combiner plusieurs expressions dans un seul test.
+Dans cet exemple, nous créons une fonction qui ajoute deux nombres et utilisons la commande "begin; and" pour exécuter le test. Si le résultat est correct, le test retournera "ok", sinon il affichera un message d'erreur.
 
-## Plongée en profondeur
+# Plongée en profondeur:
+L'écriture de tests a une longue histoire et a été popularisée par les pratiques de développement Agile et Extreme Programming. Bien qu'il existe d'autres outils pour écrire des tests, Fish Shell offre une syntaxe simple et facile d'utilisation.
 
-Si vous voulez aller encore plus loin dans l'écriture de tests en Fish Shell, vous pouvez également utiliser les fonctions intégrées `fail` et `pass` pour spécifier explicitement si un test doit échouer ou réussir, plutôt que de simplement évaluer une expression. Vous pouvez également utiliser la commande `set -e` pour que votre script s'arrête automatiquement en cas d'erreur.
+Il existe également différentes approches pour écrire des tests, telles que les tests unitaires, les tests d'intégration et les tests fonctionnels. Choisissez celui qui correspond le mieux à vos besoins et à votre style de développement.
 
-De plus, vous pouvez utiliser la commande `describe` pour créer une description de vos tests qui sera affichée lors de l'exécution, rendant ainsi vos tests plus clairs et plus faciles à comprendre.
-
-## Voir aussi
-
-Pour en savoir plus sur l'écriture de tests en Fish Shell, vous pouvez consulter les ressources suivantes :
-
-- [Le guide officiel de Fish Shell](https://fishshell.com/docs/current/cmds/test.html)
-- [Un tutoriel complet sur l'écriture de tests en Fish Shell](https://www.maketecheasier.com/write-test-cases-fish-shell/)
-- [Une liste de bonnes pratiques pour écrire des tests en Fish Shell](https://www.sitepoint.com/fish-shell-testing/)
-
-Maintenant que vous avez toutes les clés en main pour écrire des tests en Fish Shell, n'hésitez plus à les utiliser pour garantir la robustesse de votre code et gagner en efficacité !
+# Voir aussi:
+- [Fish Shell Documentation](https://fishshell.com/docs/current/index.html)
+- [Automatiser avec Fish Shell](https://medium.com/@Dindaleon/automatiser-avec-fish-shell-9f61d3825a57)
+- [History and Evolution of Writing Tests](https://medium.com/@martyav/writing-tests-a-primer-cea715c78e90)

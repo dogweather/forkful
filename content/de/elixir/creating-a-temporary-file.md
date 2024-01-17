@@ -10,55 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+# Was & Warum?
 
-Das Erstellen von temporären Dateien ist in der Programmierung oft nützlich, um Daten zwischenspeichern oder vorübergehend speichern zu können. Es ist besonders hilfreich in Elixir, da es eine funktionale Programmiersprache ist und das Erstellen von Dateien auf eine einfache und effiziente Art und Weise ermöglicht.
+Die Erstellung einer temporären Datei ist ein häufiger Prozess in der Programmierung, bei dem vorübergehend eine Datei erstellt wird, um Daten zu speichern oder zu bearbeiten. Programmierer nutzen diese Methode oft, um Daten zwischen verschiedenen Schritten oder Funktionen innerhalb ihres Codes auszutauschen und zu verarbeiten.
 
-## Wie geht das?
-
-Um eine temporäre Datei in Elixir zu erstellen, können wir die Funktion `File.Temp` verwenden. Sie erzeugt eine temporäre Datei mit automatisch generiertem Namen und gibt den Datei-Pfad als Ergebnis zurück. Wir können auch die Option `prefix` verwenden, um einen präfix vor dem Dateinamen anzuhängen.
+# Wie geht's?
 
 ```Elixir
-# Beispiel ohne Präfix
-file_path = File.Temp.temp_file()
-# Ergebnis: "/tmp/erlF419.temp"
+file = Tempfile.new() # Erstellt eine neue temporäre Datei
+File.write(file.path, "Hallo Welt!") # Schreibt den Text "Hallo Welt!" in die temporäre Datei
+IO.puts(File.read(file.path)) # Gibt den Inhalt der Datei aus (in diesem Fall: "Hallo Welt!")
 
-# Beispiel mit Präfix
-file_path = File.Temp.temp_file(prefix: "meine_datei_")
-# Ergebnis: "/tmp/meine_datei_erlF419.temp"
+file_path = Tempfile.tmpdir() # Gibt den Pfad zum temporären Verzeichnis zurück
+File.delete(file.path) # Löscht die temporäre Datei
 ```
 
-Nachdem die temporäre Datei erstellt wurde, können wir sie nutzen, um Daten zu schreiben oder lesen. Anschließend sollten wir die Datei wieder löschen, um den Speicherplatz frei zu geben.
+# Tiefergehende Informationen
 
-```Elixir
-# Dateiinhalt schreiben
-file_path = File.Temp.temp_file()
-File.write(file_path, "Hallo Welt")
+Die Verwendung von temporären Dateien ist in der Programmierung seit langem ein gängiges Verfahren, um Datenbausteine effizient zu verwalten und zu bearbeiten. Alternativen zu temporären Dateien sind in Elixir beispielsweise die Verwendung von funktionalen Datenstrukturen oder die Konvertierung von Daten in ETS-Tabellen.
 
-# Dateiinhalt lesen
-File.read(file_path) 
-# Ergebnis: {:ok, "Hallo Welt"}
+Bei der Erstellung einer temporären Datei in Elixir wird ein Prozess erstellt, der im Hintergrund läuft und die Verwaltung und Löschung der Datei übernimmt. Dies stellt sicher, dass die Datei nach ihrer Verwendung automatisch gelöscht wird.
 
-# Datei löschen
-File.rm(file_path)
-```
+# Siehe auch
 
-## Tiefer tauchen
+Weitere Informationen zu Elixir und dem Umgang mit Dateien finden Sie in der offiziellen Dokumentation: https://elixir-lang.org/getting-started/file-operations.html
 
-Die Funktion `File.Temp` verwendet standardmäßig das Verzeichnis `"/tmp"` um die temporären Dateien zu erstellen. Dies kann jedoch mit der Option `dir` geändert werden, um ein anderes Verzeichnis zu verwenden. Außerdem gibt es noch die Option `path`, mit der wir selbst einen vollständigen Dateipfad angeben können.
+Weitere Tipps und Tricks zur effektiven Nutzung von Elixir finden Sie in der Elixir-Schule: https://elixirschool.com/lessons/basics/files/
 
-Eine weitere Möglichkeit, temporäre Dateien zu erstellen, ist die Funktion `File.open_temp/3`. Diese öffnet die Datei automatisch und gibt eine Datei-Deskriptor-Struktur zurück, die wir weiter nutzen können. Am Ende sollte diese Datei ebenfalls gelöscht werden.
-
-```Elixir
-# Beispiel mit angegebenem Verzeichnis
-file_path = File.Temp.temp_file(dir: "/home/benutzer/tmp/")
-
-# Beispiel mit angegebenem Pfad
-file_path = File.Temp.temp_file(path: "/home/benutzer/tmp/datei.txt")
-```
-
-## Siehe auch
-
-- [Elixir File Dokumentation](https://hexdocs.pm/elixir/File.html)
-- [Offizielle Elixir Website](https://elixir-lang.org/)
-- [Einführung in Elixir](https://www.tutorialspoint.com/elixir/index.htm)
+Weitere Informationen zu funktionalen Datenstrukturen und ETS-Tabellen in Elixir finden Sie in diesem Blog-Beitrag: https://blog.appsignal.com/2018/08/14/elixir-alternatives-temporary-files.html

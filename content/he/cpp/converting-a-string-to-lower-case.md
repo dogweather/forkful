@@ -10,34 +10,79 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מדוע
+## מה ולמה?
+להמיר מחרוזת לתווים קטנים הוא תהליך שבו נשנה את כל האותיות במחרוזת לאותיות קטנות. תהליך זה נהוג לשימוש על מנת להפוך את הטקסט לאחיד ולקלוע קוד, ומצוין במגוון רחב של מטרות תכנותיות.
 
-להמרת מחרוזת לאותיות קטנות יש מספר מטרות, בין היתר לצורך השוואת מחרוזות, עיבוד טקסט ומניעת שגיאות בריצה של קוד.
-
-## כיצד לעשות זאת
-
-אחת הדרכים הנפוצות להמרת מחרוזת לאותיות קטנות היא על ידי השתמשות בפונקציה `std::transform` ובאופרטור `tolower`. הנה דוגמה לקוד בשפת C++:
+## איך לעשות:
+הנה כמה דוגמאות להמרת מחרוזת לתווים קטנים בשפת C++:
 
 ```C++
 #include <iostream>
-#include <algorithm>
 #include <string>
+#include <cctype>
 
-int main() {
-  std::string str = "HELLO WORLD";
-  // מעביר לכל תו במחרוזת את האופרטור tolower
-  std::transform(str.begin(), str.end(), str.begin(), [](unsigned char c){ return std::tolower(c); }); 
-  std::cout << str; // מדפיס "hello world" למסך
+int main()
+{
+  std::string str = "HELLO WORLD";//המחרוזת להמרה
+  for(auto& c : str) //עבור כל תו במחרוזת
+    c = std::tolower(c); //שנה את התו לתו קטן
+  std::cout << str << '\n'; //הדפס את המחרוזת המומרת
   return 0;
 }
 ```
 
-## Deep Dive
+פלט:
+```
+hello world
+```
 
-כאשר נעביר את הפונקציה `tolower` על מחרוזת, היא תעבוד רק על תווים שבין A-Z בזיהוי הסיימול. לכן, שימו לב שהפונקציה לא תעבוד על תווים בלתי תקינים או תווים באותיות קטנות כברירת מחדל.
+כמו כן, ניתן גם להשתמש בפונקציה `tolower` להמרת תו יחיד, כך:
 
-## See Also
+```C++
+#include <iostream>
+#include <string>
+#include <cctype>
 
-- [מסמך היכולות והאופציות של C++](https://cppreference.com/)
-- [פרק ייעודי למחרוזות בקורס של C++ על Codecademy](https://www.codecademy.com/courses/learn-c-plus-plus/lessons/cpp-strings/exercises/review)
-- [מאמר על טכניקת "sentence case" בתכנות](https://medium.com/@wobenshain/string-manipulation-tips-for-developers-b09b9ae2b190)
+int main()
+{
+  char c = 'A'; //התו להמרה
+  c = std::tolower(c); //שנה את התו לתו קטן
+  std::cout << c << '\n'; //הדפס את התו הממור
+  return 0;
+}
+```
+
+פלט:
+```
+a
+```
+
+## חקר עמוק:
+העברת מחרוזת לתווים קטנים לא תמיד הייתה שגרתית בשפת C++. בעבר, השימוש בפונקציה `std::tolower` היה תלוי באנגלית בלבד, ולכן לא הייתה דרך יעילה להמיר מחרוזות לתווים קטנים בשפות אחרות. אולם, ממחקרים שנערכו במהלך השנים, נוצרו פונקציות תחלופה כמו `std::to_lower` ו- `std::tolower_l` שתומכות במגוון שפות ותרבויות.
+
+לפני ביצוע ההמרה, חשוב לוודא שהמחרוזת מכילה אותיות בלבד. לכן, נוכל להשתמש בפונקציה `isalpha` (מהמילה "אלפא" באנגלית) לבדיקת כל תו במחרוזת והחלטה האם להפעיל את הפונקציה `tolower` עליו או להשאיר אותו כמו שהוא.
+
+כמו כן, בשפת C++ קיימת דרך נוספת להמרת מחרוזת לתווים גדולים לתווים קטנים בעזרת הספריית מערכת, באמצעות הפונקציה `transform`:
+
+```C++
+#include <iostream>
+#include <string>
+#include <algorithm>
+#include <cctype>
+
+int main()
+{
+  std::string str = "Hello World";//המחרוזת להמרה
+  std::transform(str.begin(), str.end(), str.begin(),
+                 [](unsigned char c){ return std::tolower(c); });//המרת המחרוזת לתווים קטנים
+  std::cout << str << '\n';//הדפס את המחרוזת המומרת
+  return 0;
+}
+```
+
+ניתן לראות שהשימוש ב- `transform` הוא מספר פעמים יותר אפקטיבי, ויכול להיות שימושי יותר עבור מחרוזות באורך גדול.
+
+## ראה גם:
+[מדריך למחרוזות בשפת C++](https://www.geeksforgeeks.org/stdstring-class-in-c/) - מכיל מידע על מגוון פונקציות ומתודות לעיבוד מחרוזות בשפת C++.
+
+[C++ מדריך להפעל

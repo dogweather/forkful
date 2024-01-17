@@ -10,37 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Porquê
+## O que é e por quê?
 
-Se você é um aspirante a desenvolvedor ou está curioso sobre como as coisas funcionam nos bastidores da internet, então aprender a baixar páginas da web pode ser um ótimo lugar para começar. Além disso, pode ser útil para quem deseja criar um banco de dados local de informações disponíveis na internet.
+Fazer o download de uma página da web significa obter o conteúdo de uma página da internet para uso em um programa. Os programadores geralmente fazem isso para realizar tarefas como análise de dados, automação de processos ou obter informações valiosas.
 
-## Como Fazer
-
-Baixar uma página da web em Python é muito fácil e pode ser feito em apenas algumas linhas de código. Primeiro, você precisará importar o módulo "urllib.request", que contém funções para manipular URLs. Em seguida, utilize a função "urllib.request.urlretrieve()" para baixar a página e salvá-la em um arquivo local. Veja o exemplo abaixo:
+## Como fazer:
 
 ```Python
-# Importando o módulo "urllib.request"
-import urllib.request
+# Importando a biblioteca necessária
+import requests
 
-# Definindo o URL da página que será baixada
-url = "https://www.example.com"
+# Definindo a URL da página a ser baixada
+url = "https://www.dados.gov.br/"
 
-# Utilizando a função "urlretrieve()" para baixar a página e salvá-la como "example.html"
-urllib.request.urlretrieve(url, "example.html")
+# Fazendo o download da página usando o método get() do Requests
+response = requests.get(url)
 
-# Imprimindo uma mensagem de sucesso
-print("Página baixada com sucesso!")
+# Imprimindo o conteúdo da página
+print(response.text)
+```
+Saída de exemplo:
+```
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dados.gov.br</title>
+  ...
+</head>
+<body>
+  ...
+</body>
+</html>
 ```
 
-Com isso, a página será baixada e salva no mesmo diretório em que o script Python está sendo executado. Você também pode especificar um caminho e nome de arquivo diferentes, se desejar.
+## Mergulho profundo:
 
-## Mergulho Profundo
+Fazer o download de páginas da web é uma técnica comum usada pelos programadores desde o início da internet. Existem várias bibliotecas e ferramentas disponíveis para fazer isso em várias linguagens de programação. Além do método get(), o Requests também possui os métodos post() e put() para enviar dados para a web. Alguns sites podem exigir autenticação ou consentimento para fazer o download, o que pode ser tratado no código.
 
-Além da função "urlretrieve()", o módulo "urllib.request" também oferece outras funções úteis para trabalhar com URLs. Por exemplo, você pode usar a função "urlopen()" para abrir uma conexão com um URL e depois ler o conteúdo da página utilizando o método "read()". Você também pode especificar cabeçalhos HTTP personalizados, além de autenticação de usuário e senha, se necessário.
+## Veja também:
 
-Além disso, você também pode baixar arquivos de imagem, PDFs e outros tipos de mídia utilizando a função "urlretrieve()". Basta fornecer o URL do arquivo desejado e um nome de arquivo válido.
-
-### Veja Também
-
-- Documentação do módulo "urllib.request": https://docs.python.org/3/library/urllib.request.html
-- Tutorial sobre web scraping com Python: https://realpython.com/python-web-scraping-practical-introduction/
+- [Documentação do Requests](https://docs.python-requests.org/en/master/)
+- [Tutorial do Real Python sobre fazer o download de páginas da web](https://realpython.com/python-requests/)
+- [Artigo sobre as melhores bibliotecas do Python para fazer o download de páginas da web](https://www.pknowhow.com/blog/python-web-scraping-libraries/)

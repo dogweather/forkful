@@ -10,43 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
-Att jämföra två datum kan vara användbart för att se skillnaden mellan dem, till exempel hur många dagar det är mellan dem eller om ett datum kommer före eller efter det andra. Det kan också vara användbart när man arbetar med tidsbaserade data eller behöver utföra beräkningar baserade på datum.
+## Vad & Varför?
 
-## Så här gör du
-För att jämföra två datum i Python kan du använda modulen "datetime". Först måste du importera modulen:
+Jämförelse av två datum är en vanlig programmeringsuppgift där två datum jämförs för att se om de är lika eller om ett datum är tidigare eller senare än det andra. Detta är användbart för att sortera datum i en viss ordning eller för att kontrollera om ett datum har passerat.
 
-```Python
-import datetime
-```
-
-Sedan kan du skapa två datetime-objekt med de önskade datumen:
+## Hur man gör:
 
 ```Python
-date1 = datetime.datetime(2020, 1, 1)
-date2 = datetime.datetime(2021, 1, 1)
+# Skapar två olika datum objekt
+datum_1 = datetime.datetime(2021, 8, 23)
+datum_2 = datetime.datetime(2021, 8, 25)
+
+# Jämför om det första datumet är före det andra datumet
+print(datum_1 < datum_2) # Output: True
+
+# Jämför om de båda datumen är lika
+print(datum_1 == datum_2) # Output: False
 ```
 
-För att jämföra dessa två datum kan du använda jämförelseoperatorerna "<", "<=", ">", ">=" eller "==".
+## Djupdykning:
 
-```Python
-print(date1 < date2) # True
-print(date1 == date2) # False
-print(date1 > date2) # False
-```
+Jämförelse av datum är en viktig del av datalogi och används ofta för att hantera tidsstämplar i program. Innan Python 2.4 fanns det inte något inbyggt sätt att jämföra datum, men sedan dess har PythonDateTime-modulen introducerat funktioner för detta ändamål. Det finns också andra alternativ som att använda ögonblick eller Unix-tid för att jämföra datum. I Python används vanligtvis ekvivalensen och ojämförlighetstecken (<,>, ==) för jämförelser.
 
-Du kan också få ut skillnaden mellan de två datumen i dagar genom att subtrahera dem och använda ".days" på resultatet:
+## Se även:
 
-```Python
-print((date2 - date1).days) # 366
-```
-
-## Djupdykning
-När du jämför två datum måste de vara av typen "datetime". Om du har datum som strings eller i annat format måste du först konvertera dem till datetime-objekt. Du kan använda "strptime" för att konvertera från string till datetime eller "strftime" för att konvertera från datetime till string.
-
-En vanlig fallgrop när man jämför datum är tidszoner. Ett datum som är i en annan tidszon kan resultera i en felaktig jämförelse. Se till att ange rätt tidszon när du skapar datetime-objekt för att undvika detta.
-
-## Se även
-- [Python datetime-modulen](https://docs.python.org/3/library/datetime.html)
-- [Jämförelseoperatorer i Python](https://www.w3schools.com/python/python_operators.asp)
-- [Python strptime() och strftime() för datumkonvertering](https://www.programiz.com/python-programming/datetime/strftime)
+- [Python Jämförelse av olika datum](https://docs.python.org/3/library/datetime.html#datetime.datetime)
+- [Jämförelse av datum i andra programmeringsspråk](https://en.wikipedia.org/wiki/Comparison_of_programming_languages_(date_and_time))

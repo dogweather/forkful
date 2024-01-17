@@ -1,7 +1,7 @@
 ---
-title:                "Wysyłanie żądania HTTP z podstawową autoryzacją"
-html_title:           "Bash: Wysyłanie żądania HTTP z podstawową autoryzacją"
-simple_title:         "Wysyłanie żądania HTTP z podstawową autoryzacją"
+title:                "Wysyłanie żądania http z podstawową autoryzacją"
+html_title:           "Bash: Wysyłanie żądania http z podstawową autoryzacją"
+simple_title:         "Wysyłanie żądania http z podstawową autoryzacją"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "HTML and the Web"
@@ -10,35 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Dlaczego
+## O co chodzi?
 
-W dzisiejszym artykule dowiesz się, dlaczego przesyłanie żądań HTTP z podstawową autoryzacją jest ważnym narzędziem dla programistów i jak można to łatwo osiągnąć w Bash.
+Wysyłanie żądania HTTP z podstawową autoryzacją jest jedną z metod uwierzytelniania w sieci. Programiści korzystają z niej, aby potwierdzić swoją tożsamość i uzyskać dostęp do chronionych zasobów.
 
-# Jak to zrobić
+## Jak to zrobić:
 
-W Bash istnieje wiele sposobów na wysłanie żądania HTTP z podstawową autoryzacją, ale przedstawimy tutaj najprostszy i najbardziej przejrzysty sposób. W pierwszej kolejności należy ustawić zmienne z nazwą użytkownika i hasłem, a następnie wykonać polecenie ```curl``` z odpowiednimi flagami. Oto przykładowy kod:
+Aby wysłać żądanie HTTP z podstawową autoryzacją w Bashu, użyj polecenia `curl` z flagą `-u` i podaj login i hasło w formacie `login:hasło`. Przykładowe użycie:
 
 ```Bash
-username='example'
-password='password123'
-
-curl -u $username:$password http://example.com
+curl -u user:password http://example.com/api
 ```
 
-W powyższym przykładzie, zmienna ```$username``` przechowuje nazwę użytkownika, a zmienna ```$password``` przechowuje hasło. Następnie, używając flagi ```-u```, możemy przekazać te zmienne do polecenia ```curl```, razem z adresem URL, na który chcemy wysłać żądanie.
+Jeśli uwierzytelnienie przebiegnie pomyślnie, to otrzymasz odpowiedź serwera. W przeciwnym razie, dostaniesz błąd autoryzacji.
 
-Po wykonaniu powyższego polecenia, w konsoli powinien pojawić się wynik tego żądania, w tym również odpowiedź serwera.
+## Głębszy zanurzenie:
 
-# Deep Dive
+Podstawowa autoryzacja HTTP powstała w 1996 roku jako sposób na uwierzytelnianie użytkowników w Internecie. Jest to prosta, ale niezależna od sieci metoda, która nie wymaga żadnych dodatkowych narzędzi lub bibliotek.
 
-Podstawowa autoryzacja jest jednym z najprostszych sposobów na zabezpieczenie żądań HTTP. Polega ona na przekazywaniu nazwy użytkownika i hasła w nagłówku ```Authorization```. Serwer porównuje te dane z danymi znajdującymi się w jego bazie danych i jeśli się zgadzają, udziela dostępu do żądanego zasobu.
+Alternatywnymi metodami uwierzytelniania są m.in. uwierzytelnianie oparte o tokeny, OAuth lub SSL. Każda z nich ma swoje wady i zalety, dlatego wybór najlepszej metody zależy od konkretnego przypadku.
 
-W przypadku wysyłania żądania z podstawową autoryzacją w Bash, polecenie ```curl``` po prostu generuje odpowiedni nagłówek i przekazuje go wraz z żądaniem. Istnieje również możliwość przekazania danych w sposób bezpieczniejszy, poprzez użycie pliku zawierającego nazwę użytkownika i hasło, a następnie wykorzystanie flagi ```--netrc```.
+W Bashu, podstawowa autoryzacja jest realizowana przez protokół HTTP, który komunikuje się z serwerem z użyciem zapytań GET, POST, PUT i DELETE. Dzięki temu, programiści mogą wykorzystać ją w prosty i intuicyjny sposób.
 
-Warto również wspomnieć, że podstawowa autoryzacja nie jest zalecana do użytku w bezpiecznych systemach, ponieważ dane uwierzytelniające są przekazywane jako tekst jawny i mogą być wyłapane przez niepożądane osoby. W takich sytuacjach lepiej użyć bardziej zaawansowanych metod autoryzacji, takich jak np. OAuth.
+## Zobacz również:
 
-# Zobacz również
-
-- Dokumentacja cURL: https://curl.haxx.se/docs/manpage.html
-- Artykuł na temat podstawowej autoryzacji: https://developer.mozilla.org/pl/docs/Web/HTTP/Authentication
-- Przykładowe użycie autoryzacji w Bash: https://stackoverflow.com/questions/30089327/pass-username-password-to-curl-in-bash
+Jeśli chcesz dowiedzieć się więcej o podstawowej autoryzacji HTTP, to polecamy przeczytać dokumentację protokołu HTTP. Możesz także wykorzystać inne narzędzia takie jak Postman lub Insomnia do wysyłania zapytań z podstawową autoryzacją.

@@ -10,41 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
+Python Debug 输出：为程序员的简易指南
 
-调试输出是在编写Python程序时经常用到的一个技巧。它允许开发人员在程序执行过程中打印出特定变量的值或重要信息，以帮助debug程序，从而提高代码的质量和效率。
+## 什么？为什么？
 
-## 如何实现
+打印调试输出是指将程序中的运行信息打印出来，以帮助程序员调试代码和发现错误。程序员经常会通过打印输出来确定代码的执行流程和变量的值，从而更容易地进行修复和优化。
 
-想要打印调试输出，首先需要将打印功能的语句写入到代码中。在Python中，我们使用print()函数来实现打印输出。下面是一个简单的示例代码：
-
-```Python
-num = 10
-print("Num的值为：", num)
-```
-
-当我们运行这段代码时，会在终端窗口中打印出`Num的值为： 10`这句话，从而让我们知道变量`num`的值为10。除了打印变量的值，我们也可以打印出一些重要的信息来帮助debug程序，比如：
+## 如何：
 
 ```Python
-print("正在执行for循环...")
+# 使用 print() 函数打印变量的值
+name = "张三"
+print(name)
+
+# 打印运算结果
+num1 = 3
+num2 = 5
+print(num1 + num2)
+
+# 打印调试信息
+def add_nums(a, b):
+  res = a + b
+  print("a的值为：" + str(a))
+  print("b的值为：" + str(b))
+  print("a和b的和为：" + str(res))
+  return res
+
+add_nums(2, 4)
 ```
 
-这样在程序运行时，我们就可以清楚地知道程序执行到哪一步了。
+输出：
+
+张三
+8
+a的值为：2
+b的值为：4
+a和b的和为：6
 
 ## 深入了解
 
-除了简单的打印语句外，Python还提供了一些高级的调试输出方法。其中最常用的是使用`logging`模块来打印调试信息。它可以帮助我们在程序执行过程中设置不同级别的调试信息，可以选择输出到不同的目标，比如控制台、文件等。更多关于`logging`模块的用法可以参考官方文档。
+打印调试输出在计算机科学与编程中有着悠久的历史。在早期的程序设计中，打印输出是唯一的调试工具。如今，随着计算技术的发展，也出现了更多高级的调试工具，但是打印输出仍然是程序员最常用的调试方式之一。
 
-此外，Python还提供了一个内置的调试工具`pdb`，它可以让我们在程序出错时逐行查看程序的运行状态，从而更快地找到错误的原因。
+除了使用 print() 函数，程序员还可以使用 logging 模块来打印调试信息。logging 模块提供了更多的调试选项和更灵活的日志管理功能。
 
-## 参考链接
+在编写代码时，更推荐使用打印调试输出来确定程序的执行流程和变量的值，因为它是一种简单和直观的方式。
 
-- [官方文档 - print()函数](https://docs.python.org/3/library/functions.html#print)
-- [官方文档 - logging模块](https://docs.python.org/3/library/logging.html)
-- [官方文档 - pdb调试工具](https://docs.python.org/3/library/pdb.html)
+## 参考资料
 
-## 参考阅读
-
-- [Python调试技巧带你快速定位错误](https://www.cnblogs.com/millergriffin/p/6613541.html)
-- [Python中的调试工具使用方法](https://www.jianshu.com/p/d8b48971bf62)
-- [Python中调试技巧总结](https://blog.csdn.net/XIAOYUMmy/article/details/53601389)
+- [Python 官方文档：打印调试输出](https://docs.python.org/zh-cn/3.9/library/functions.html#print)
+- [logging 模块官方文档](https://docs.python.org/zh-cn/3.9/library/logging.html)

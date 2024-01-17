@@ -10,57 +10,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
+## 什么 & 为什么？
 
-创建临时文件在编程中非常常见，它可以帮助我们在运行脚本或程序时存储临时数据。临时文件还可以用来传递数据给其他程序或脚本，从而使我们的代码更加灵活。
+创建临时文件是指在编程过程中临时生成一个文件，以便存储临时数据或执行某些操作。程序员通常会创建临时文件来处理大量数据或进行临时性的操作，以免影响到原始文件或系统性能。
 
-## 怎么做
+## 如何：
 
-```Fish Shell``` 提供了一个方便的方法来创建临时文件，我们可以使用 ```mktemp``` 命令来生成一个唯一的临时文件名。
+使用Fish Shell中的```touch```命令可以轻松创建临时文件。只需在命令行上输入```touch temp.txt```，就会在当前目录下生成一个名为```temp.txt```的临时文件。你也可以在命令行上添加路径参数，将临时文件创建在指定的目录中。
 
-```
-# 在当前目录下创建一个临时文件
-mktemp
+使用```mktemp```命令也可以创建临时文件，并在文件名中添加随机字符串，以避免文件名冲突。例如，```mktemp -p /tmp/ tempfile```会在```/tmp/```目录下创建一个临时文件，并将文件名命名为```tempfile_gB7Nj4```，其中的随机字符串每次执行该命令时都会不同。
 
-# 创建一个以指定前缀开头的临时文件
-mktemp -p <prefix>
+## 深入了解：
 
-# 创建一个以指定后缀结尾的临时文件
-mktemp -s <suffix>
+创建临时文件的概念最早出现在Unix操作系统上，它可以作为创建临时目录和临时文件的基础。除了上述提到的两种方式外，程序员也可以使用C语言中的```tmpfile()```函数来创建临时文件。另外，一些编程语言如Python也提供了创建临时文件的内置函数。
 
-# 创建一个以指定前缀和后缀的临时文件
-mktemp -p <prefix> -s <suffix>
-```
+除了创建临时文件，程序员也可以使用内存缓冲区来存储临时数据，以避免频繁读写硬盘带来的性能影响。但在处理大量数据时，使用临时文件往往更为高效。同时，也要注意及时清理临时文件以免占用过多的磁盘空间。
 
-使用以上命令，我们可以快速创建一个临时文件。接下来，我们可以使用 ```echo``` 命令来向该临时文件写入数据。
+## 参考资料：
 
-```
-# 向临时文件写入数据，使用 > 符号会覆盖文件原有内容
-echo "这是一个临时文件" > <file>
-
-# 在文件末尾追加数据，使用 >> 符号
-echo "这是第二行数据" >> <file>
-
-# 查看文件内容
-cat <file>
-
-# 输出结果
-这是一个临时文件
-这是第二行数据
-```
-
-我们也可以在脚本或程序中使用 ```mktemp``` 和 ```echo``` 命令来动态地创建临时文件。
-
-## 深入探讨
-
-临时文件一般会被存储在系统临时目录中，例如 ```/tmp``` 或 ```/var/tmp```。当我们的程序或脚本结束时，这些临时文件会被自动清除，因此不会占用过多的磁盘空间。
-
-此外，我们还可以使用 ```trap``` 命令来在程序或脚本结束时手动删除临时文件，从而确保磁盘空间的最大利用率。
-
-## 参考链接
-
-- [Fish Shell官方文档](https://fishshell.com/docs/current/)
-- [使用Shell中的临时文件](https://www.shellscript.sh/tips/temporary-files/)
-- [Linux mktemp命令详解](https://www.runoob.com/linux/linux-comm-mktemp.html)
-
-## 参见
+- [Fish Shell官方文档](https://fishshell.com/docs/current/index.html)
+- [Linux Man Pages - touch](https://www.man7.org/linux/man-pages/man1/touch.1.html)
+- [Unix - Temporary Files](https://www.oreilly.com/library/view/unix-in-a/0596002215/ch01s03.html)

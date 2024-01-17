@@ -10,25 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
-文章の検索と置換を行う理由は、特定のキーワードを含む文を一括で変更したい場合や、誤ったスペルを修正するためなど、大量の文書を効率的に編集するためです。
+## 何 & なぜ？
+テキストの検索と置換とは何か、そしてなぜプログラマーがそれを行うのかを説明してみましょう。テキストの検索と置換は、特定のテキストを見つけてそれを別のテキストで置き換えることを指します。プログラマーは、コード内の特定の部分を素早く修正するためにテキストの検索と置換を使用します。
 
-## やり方
-Elixirでテキストの検索と置換を行うには、`String.replace/3`関数を使用します。例えば、以下のコードで"Hello"を"こんにちは"に置換することができます。
+## 方法：
+以下のようなコード例を使用して、テキストの検索と置換の方法をご紹介します。
+```Elixir
+# 文字列内の特定のテキストを置換する
+str = "こんにちは、世界！"
+str = String.replace(str, "こんにちは", "Hello")
+# strは"Hello、世界！"となります。
 
+# 正規表現を使用して複数の文字列を一括置換する
+str = "10 apples, 20 oranges, 30 bananas"
+str = Regex.replace(str, ~r/\d+/, "5")
+# strは"5 apples, 5 oranges, 5 bananas"となります。
 ```
-Elixir
-string = "Hello World"
-new_string = String.replace(string, "Hello", "こんにちは")
-IO.puts new_string
-```
 
-出力結果は、"こんにちは World"となります。
+## 詳しく見ていきましょう：
+テキストの検索と置換は、古くから存在する基本的なコンピューターの機能です。プログラム内の特定の部分を見つけて修正するために、プログラマーは検索と置換を使用します。ただし、検索と置換はパターンマッチングや正規表現のような高度な手法を使用することで、より複雑な操作も可能になります。Elixirでは、StringモジュールやRegexモジュールを使用してテキストの検索と置換を行うことができます。
 
-## ディープダイブ
-Elixirでは`String.replace/3`の他にも、正規表現を使用した検索と置換ができる`Regex.replace/3`があります。この関数を使用すると、より柔軟な置換が可能になります。また、文字列だけでなくリストやタプルにも置換を行うことができます。
+他にも、テキストの検索と置換にはいくつかの代替手段があります。例えば、JavaScriptの正規表現を使用したり、SedやAwkなどのコマンドラインツールを使用したりすることができます。ただし、Elixirは強力なパターンマッチング機能を備えているため、他の言語やツールよりも柔軟で効率的にテキストの検索と置換を行うことができます。
 
-## 参考リンク
-- Elixirの公式ドキュメント: https://hexdocs.pm/elixir/String.html#replace/3
-- 正規表現の基本: https://qiita.com/mogulla3/items/a56a0d08a2a16c71f651
-- 文字列操作のチートシート: https://devhints.io/elixir-string
+## 関連ソースを参照してみましょう：
+- ElixirのStringモジュール: https://hexdocs.pm/elixir/String.html
+- ElixirのRegexモジュール: https://hexdocs.pm/elixir/Regex.html
+- Sedの使用方法: https://www.gnu.org/software/sed/manual/sed.html
+- Awkの使用方法: https://www.gnu.org/software/gawk/manual/gawk.html

@@ -1,7 +1,7 @@
 ---
-title:                "Capitalizzare una stringa"
-html_title:           "Java: Capitalizzare una stringa"
-simple_title:         "Capitalizzare una stringa"
+title:                "Convertire una stringa in maiuscolo"
+html_title:           "Java: Convertire una stringa in maiuscolo"
+simple_title:         "Convertire una stringa in maiuscolo"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Strings"
@@ -10,41 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
- Se stai scrivendo codice Java, è molto probabile che a volte ti trovi a dover capitalizzare una stringa. Questa operazione è comune in molti casi, ad esempio quando si deve mostrare un testo in formato titolo o quando si intende effettuare un confronto di stringhe in modo case-insensitive.
+## Cosa e perché?
+La capitalizzazione di una stringa in informatica si riferisce alla pratica di rendere maiuscola la prima lettera di ogni parola in una stringa. Ciò rende più leggibile e ordinato il testo, soprattutto quando si tratta di titoli o di testi inseriti dall'utente. I programmatori spesso lo fanno per motivi di estetica e facilmente leggibilità del codice.
 
-## Come fare
- Per capitalizzare una stringa in Java, puoi utilizzare il metodo `toUpperCase()` della classe `String`. Basta semplicemente passare la stringa che vuoi capitalizzare come parametro e il metodo restituirà una nuova stringa con tutti i caratteri in maiuscolo. Ad esempio:
-
+## Come fare:
 ```Java
-String s1 = "ciao a tutti";
-String s2 = s1.toUpperCase();
+String stringa = "questa è una stringa di esempio";
 
-System.out.println(s2);
+String stringaCapitalizzata = stringa.substring(0,1).toUpperCase() + stringa.substring(1);
+
+System.out.println(stringaCapitalizzata);
 ```
 
-Output:
+Output: 
 ```
-CIAO A TUTTI
-```
-
-È importante notare che il metodo `toUpperCase()` non modifica direttamente la stringa originale, ma ne restituisce una nuova. Se vuoi che la stringa originale venga modificata, puoi utilizzare il metodo `toUpperCase(Locale)` e passare come parametro una specifica località linguistica. Ad esempio:
-
-```Java
-String s1 = "hello";
-String s2 = s1.toUpperCase(Locale.ITALIAN);
-
-System.out.println(s2);
+Questa è una stringa di esempio
 ```
 
-Output:
-```
-HELLO
-```
+## Approfondimento:
+La pratica di capitalizzare una stringa è stata introdotta già negli anni '60 insieme alla creazione delle prime librerie di programmazione. Ci sono anche alternative come l'utilizzo di tag HTML o l'utilizzo di funzioni di formattazione nei linguaggi di programmazione moderni. L'implementazione della capitalizzazione di una stringa può variare a seconda del linguaggio utilizzato, ma il concetto di base rimane lo stesso.
 
-## Approfondimento
- Se vuoi conoscere meglio come funziona l'operazione di capitalizzazione di una stringa in Java, devi prima capire che i caratteri alfanumerici (a-z, A-Z, 0-9) sono rappresentati all'interno del computer tramite un codice numerico. Ad esempio, la lettera "a" ha un codice corrispondente di 97, mentre la lettera "A" ha un codice di 65. Quando viene eseguita l'operazione `toUpperCase()`, il codice della lettera viene modificato sommando o sottraendo una costante, a seconda se si tratta di una lettera minuscola o maiuscola. La costante utilizzata è 32, quindi per convertire la lettera "a" in "A", si sottrae 32 dal suo codice (97 - 32 = 65).
-
-## Vedi anche
-- [Documentazione ufficiale Java per la classe String](https://docs.oracle.com/javase/10/docs/api/java/lang/String.html)
-- [Java String toUpperCase() method tutorial](https://www.journaldev.com/17409/java-string-touppercase)
+## Vedi anche:
+https://www.techopedia.com/definition/7491/capitalize
+https://www.geeksforgeeks.org/capitalize-first-letter-of-each-word-in-a-string-in-java/

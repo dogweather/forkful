@@ -10,36 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜?
+## 무슨 말이야?
+문자열의 첫 번째 문자를 대문자로 만드는 것을 문자열 대문자화라고 합니다. 프로그래머들은 주로 입력된 문자열의 첫 번째 문자를 대문자로 바꾸는 것을 선호하는데, 이는 엄격한 코딩 규칙을 준수하고 문자열을 보다 더 보기 좋게 만들기 위해서입니다.
 
-문자열을 대문자로 변환하는 것을 왜 시도해야 할까요? 그 이유는 무엇인가요? 문자열을 대문자로 바꾸는 것은 컴퓨터 프로그래밍에서 매우 일반적이고 유용한 작업입니다. 예를 들어, 사용자의 입력을 검증하거나 출력을 포매팅하는 데에 사용할 수 있습니다.
-
-## 어떻게?
-
-자바에서 문자열을 대문자로 바꾸는 방법은 간단합니다. 아래의 코드 블록을 참고해주세요.
+## 어떻게 하지?
+자바 코드 블록 안에 코딩 예제와 예상 출력을 포함하여 문자열 대문자화를 어떻게 할 수 있는지 알아보겠습니다.
 
 ```Java
-String str = "hello world";
-String uppercaseStr = str.toUpperCase();
-System.out.println(uppercaseStr);
+// 문자열 대문자화 예제
+String input = "hello world";
+String output = input.substring(0, 1).toUpperCase() + input.substring(1);
+
+System.out.println(output); // 출력: Hello world
 ```
 
-위 코드는 "HELLO WORLD"를 출력합니다. 대문자로 변환하는 것 외에도, 자바에는 다양한 문자열 변환 메소드가 있으며, 이를 사용하여 비슷한 작업을 수행할 수 있습니다. 예를 들어, `toLowerCase()` 메소드는 문자열을 소문자로 변환하고, `replace()` 메소드는 문자열 안의 특정 문자를 다른 문자로 대체할 수 있습니다.
+## 깊게 파헤쳐보기
+1. 역사적 배경: 초기 프로그래밍에서는 변수 이름을 모두 대문자로 작성하는 것이 일반적이었지만, 현재는 소문자와 대문자를 구분하는 코드 컨벤션에 따라 대문자화를 선호합니다.
+2. 대안: 문자열 대문자화에는 다양한 방법이 있지만 가장 일반적인 방법은 substring() 메소드와 toUpperCase() 메소드를 사용하는 것입니다.
+3. 구현 세부사항: 입력된 문자열을 잘라 첫 번째 문자를 대문자로 변환하고 나머지 문자열을 원래의 상태로 유지하는 방식으로 구현할 수 있습니다.
 
-## 더 들어가기
-
-문자열을 대문자로 바꾸는 데에 앞서 변환된 문자열을 저장할 변수를 선언해야합니다. 그렇지 않으면 원래의 문자열이 수정되는 위험이 있습니다. 예를 들어, 아래의 코드를 살펴봅시다.
-
-```Java
-String str = "hello world";
-str.toUpperCase();
-System.out.println(str);
-```
-
-위 코드는 "hello world"를 출력합니다. 왜냐하면 `toUpperCase()` 메소드는 문자열을 수정하는 것이 아니라, 대문자로 변환된 새로운 문자열을 반환하는 것이기 때문입니다. 따라서, 문자열을 손상시키지 않으려면 변환된 문자열을 새로운 변수에 저장하는 것이 중요합니다.
-
-## 더보기
-
-- [Java String 관련 메소드들](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
-- [자바 앱 개발을 위한 기본 용어 정리](https://javapapers.com/core-java/java-terminology/)
-- [자바 프로그래밍 초보자를 위한 튜토리얼](https://beginnersbook.com/java-tutorial-for-beginners/)
+## 관련 자료
+문자열에 대한 더 많은 정보를 알고 싶다면 아래 링크를 참고하세요.
+- [Java Substring](https://www.w3schools.com/java/java_strings_substring.asp)
+- [Java String toUpperCase() Method](https://www.w3schools.com/java/ref_string_touppercase.asp)
+- [Java Coding Conventions](https://en.wikipedia.org/wiki/Naming_convention_(programming)#Java)

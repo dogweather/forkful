@@ -1,7 +1,7 @@
 ---
-title:                "패턴과 일치하는 문자 삭제"
-html_title:           "Java: 패턴과 일치하는 문자 삭제"
-simple_title:         "패턴과 일치하는 문자 삭제"
+title:                "패턴과 일치하는 문자 삭제하기"
+html_title:           "Java: 패턴과 일치하는 문자 삭제하기"
+simple_title:         "패턴과 일치하는 문자 삭제하기"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Strings"
@@ -10,30 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+## 무엇 & 왜?
 
-문자열 매칭 패턴과 일치하는 문자를 삭제하는 작업을 수행하는 이유는 특정한 문자열에서 원하지 않는 문자를 제거하기 위해서입니다. 예를 들어, 사용자가 입력한 정보에서 특정한 문자 또는 공백을 제거하여 데이터를 정제하기 위해서 이 작업이 수행될 수 있습니다.
+패턴을 일치하는 문자를 삭제하는 것은 말 그대로 패턴과 일치하는 문자를 찾아서 삭제하는 것을 의미합니다. 이는 특정한 작업을 수행하기 위해서는 필요하지 않은 문자를 제거하는데 사용됩니다.
 
+프로그래머들이 이를 하는 이유는 보다 깨끗하고 효율적인 코드를 작성하기 위해서입니다. 불필요한 문자를 삭제함으로써 코드의 가독성을 높이고, 작업을 더욱 빠르고 효율적으로 수행할 수 있게 됩니다.
 
-## 어떻게
+## 어떻게:
 
-가장 먼저, 삭제할 문자열을 포함한 문자열을 지정합니다. 그리고 해당 문자열에서 삭제할 패턴을 지정하고 해당 패턴을 매칭하는 문자를 삭제하도록 코드를 작성합니다. 아래는 문자열에서 숫자를 제거하는 예제 코드와 출력 결과입니다.
 ```Java
-String str = "He11o W0rld!";
-String pattern = "\\d+";
-// 코드를 작성하여 문자열에서 숫자를 제거하는 작업을 수행합니다.
-System.out.println(str); // 출력 결과: He11o W0rld!
+// 예제 1: 특정 패턴을 일치하는 문자 삭제하기
+String str = "Hello, World!";
+str = str.replaceAll("[eo]", ""); // "eo" 패턴에 일치하는 문자 삭제
+System.out.println(str); // 출력: Hll, Wrld!
+
+// 예제 2: 정규식을 이용한 패턴 삭제
+String str = "Java is awesome!";
+str = str.replaceAll("[a-z]", ""); // 알파벳 소문자를 모두 삭제
+System.out.println(str); // 출력: J
+
+// 예제 3: 특정 단어 삭제
+String str = "Today is a great day!";
+str = str.replaceAll("great", ""); // "great" 단어 삭제
+System.out.println(str); // 출력: Today is a day!
 ```
 
-## 깊이있게 살펴보기
+## 깊게 파고들기:
 
-정규 표현식을 사용하여 문자열 매칭 패턴을 지정할 수 있습니다. 위의 예제에서 사용한 "\\d+"는 숫자를 나타내는 정규 표현식입니다. "d"는 숫자를 나타내는 메타 문자이고 "+"는 해당 문자가 한 번 이상 나타날 수 있음을 나타냅니다. 따라서 오직 숫자만을 포함하는 패턴에 매칭됩니다. 정규 표현식을 적절히 사용하면 원하는 문자를 더욱 쉽게 삭제할 수 있습니다. 
+(1) 패턴을 일치하는 문자를 삭제하는 작업은 오래 전부터 사용되었습니다. 그리고 오늘날에도 여전히 많은 개발자들이 이를 사용합니다. (2) 패턴을 일치하는 문자를 삭제하는 대안으로는 다른 문자로 대체하는 방법이 있습니다. 이는 꼭 문자를 삭제해야 할 필요가 없을 때 매우 유용합니다. (3) 구현 세부 사항을 보면 문자열을 조작하기 위해 정규식(regular expression)이 사용된다는 것을 알 수 있습니다. 정규식은 패턴을 검색, 대체 및 분할하기 위해 사용되는 강력한 도구입니다.
 
-## 더 알아보기
+## 관련 자료 보기:
 
-- [Java 정규 표현식 사용법](https://www.javatpoint.com/java-regex)
-- [문자열 다루기](https://www.w3schools.com/java/java_strings.asp)
-
-## 참고
-
-Java에서 문자열을 다루는 방법은 다양합니다. 이 문서에서는 정규 표현식을 사용하여 문자열에서 패턴을 매칭하는 방식을 다루었지만 다른 방식 또한 존재합니다. 적절한 방식을 선택하여 사용하시면 됩니다.
+- [Java String 클래스 문서](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
+- [Java 중간 수준 프로그래밍 언어(Pattern matching)](https://www.javatpoint.com/java-pattern-matching)

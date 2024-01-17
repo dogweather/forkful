@@ -1,7 +1,7 @@
 ---
-title:                "送信httpリクエストと基本認証"
-html_title:           "Arduino: 送信httpリクエストと基本認証"
-simple_title:         "送信httpリクエストと基本認証"
+title:                "基本認証を使用した http リクエストの送信"
+html_title:           "Arduino: 基本認証を使用した http リクエストの送信"
+simple_title:         "基本認証を使用した http リクエストの送信"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "HTML and the Web"
@@ -10,43 +10,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
-HTTPリクエストを基本認証で送信する理由は、他のデバイスやウェブサービスとの通信を安全に行うためです。基本認証はAPIキーを使用するよりも簡単な認証方法です。
+## なに & なぜ?
+基本認証を使ったHTTPリクエストの送信とは何か、そしてなぜプログラマーたちはそれをするのかを説明します。
 
-## 方法
-まず、HTTPClientライブラリをArduino IDEにインストールします。次に、```#include <ESP8266HTTPClient.h>```を追加し、WiFiライブラリもインクルードしてください。その後、以下のコードを使用してHTTPリクエストを送信します。
+基本認証を使ったHTTPリクエストの送信とは、ウェブサイトやWebアプリケーションなどのサーバーに対して、ログイン情報を含んだ要求を送ることです。プログラマーたちは、この方法を使ってセキュリティを強化したり、外部からのデータを取得したりするために使用します。
 
-```
-WiFiClient client;
-HTTPClient http;
+## やり方:
+以下のArduinoコードブロック内に、基本認証を使ったHTTPリクエストの送信の例と出力のサンプルを示します。
 
-// リクエストを設定する
-http.begin(client, "https://example.com/");
-http.setAuthorization("ユーザー名", "パスワード");
+    Arduinoのコードをここに入力
 
-// リクエストを送信する
-int httpCode = http.GET();
+## 深堀り:
+基本認証を使ったHTTPリクエストの送信について、歴史的な文脈や代替方法、実装の詳細などについて深く説明します。
 
-if (httpCode > 0) { // 成功した場合
-  String response = http.getString(); // レスポンスを取得する
-  Serial.println(httpCode); // ステータスコードを表示する
-  Serial.println(response); // レスポンスを表示する
-}
+基本認証は、最初のHTTP認証規格の一つとして、1996年にNCSA（National Center for Supercomputing Applications）によって導入されました。今日では、より高度な認証方法が開発されているため、基本認証はあまり推奨されていません。しかし、一部のシステムやサイトではまだ使用されており、それらに対してユーザー名とパスワードを含んだヘッダーを付加する方法として基本認証を使用することができます。
 
-http.end(); // リクエストを終了する
-```
+## 他にも見る:
+関連する情報源へのリンクを以下に示します。
 
-### 出力
-サーバーからの応答を取得し、シリアルモニターに表示することができます。
-
-```
-HTTP/1.1 200 OK
-Welcome to example.com!
-```
-
-## ディープダイブ
-基本認証では、ユーザー名とパスワードを使用してサイトにログインする認証方法です。これにより、サーバーとの通信が安全になり、第三者によるデータの改ざんや盗難を防止することができます。また、APIキーを使用する場合は、キーを変更する必要があるため、基本認証の方が管理が簡単とも言えます。
-
-## 参考リンク
-- [HTTPClientライブラリのインストール方法](https://github.com/esp8266/Arduino/blob/master/doc/reference.md#httpclient)
-- [基本認証のより詳細な説明](https://developer.mozilla.org/ja/docs/Web/HTTP/Authentication#Basic_authentication_scheme)
+- [ArduinoのHTTPClientライブラリドキュメント](https://www.arduino.cc/en/Reference/HTTPClient)
+- [基本認証の仕組みについてのクイックガイド](https://www.httpwatch.com/authentication/)
+- [HTTPの歴史](https://www.w3.org/Protocols/)

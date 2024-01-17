@@ -10,37 +10,22 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä & Miksi?
+Merkkijonon pituuden löytäminen on yksinkertainen mutta tärkeä ohjelmointikäytäntö, jota käytetään usein Swiftissä. Se tarkoittaa yksinkertaisesti merkkijonon sisältämien merkkien määrän laskemista. Tämä on hyödyllistä esimerkiksi merkkijonojen käsittelyssä ja tarkistamisessa.
 
-Haluatko saada selville merkkijonon pituuden? Lue tämä artikkeli ja opi miten se tapahtuu Swiftin avulla!
-
-## Miten
-
-Merkkijonon pituuden saaminen Swiftissä on helppoa. Sinun tarvitsee vain käyttää ".count" -metodia merkkijonon perään. Tämä metodi laskee merkkijonon kaikki merkit ja antaa lukumäärän takaisin.
-
+## Miten:
 ```Swift
-let string = "Tämä on merkkijono"
-print(string.count)
-
-// Output: 20
+let text = "Tervehdys!"
+print(text.count) // Tulostaa 10
 ```
 
-Tämä metodi toimii myös emoji-merkkien kanssa, sillä jokainen merkki lasketaan yhdeksi.
+Yllä oleva esimerkki käyttää Swiftin `count`-ominaisuutta laskeakseen merkkijonon pituuden. Se toimii laskemalla kaikki merkit merkkijonosta ja palauttamalla niiden määrän. Voit myös käyttää `String`-tyypin `count`-metodia samalla tavalla.
 
-```Swift
-let emojiString = "😊👍🏼"
-print(emojiString.count)
+## Syväsukellus:
+Merkkijonojen pituuden laskeminen on ollut olennainen osa ohjelmointia jo pitkään. Aikaisemmin tämä tehtiin usein manuaalisesti laskemalla merkkien määrää merkkijonosta. Nykypäivän ohjelmointikielissä, kuten Swiftissä, on kuitenkin sisäänrakennettuja ominaisuuksia tähän tarkoitukseen.
 
-// Output: 2
-```
+Jos haluat löytää merkkijonon pituuden ilman näitä sisäänrakennettuja ominaisuuksia, voit käyttää myös `index(startIndex, offsetBy: String.IndexDistance)` -metodia. Tämä metodi palauttaa annetun määrän metkkiä alkuperäisen merkkijonon alusta ja laskee niiden määrän.
 
-Merkkijonon pituuden laskeminen on myös hyödyllistä esimerkiksi silloin kun haluat tarkistaa, onko käyttäjän antama syöte sopivan pituinen tai jos haluat asettaa rajoituksia syötteelle.
-
-## Syventyvä tarkastelu
-
-Miksi .count metodi laskee merkkien määrän eikä vain palauta valmista arvoa? Tämä johtuu siitä, että merkkijonojen taustalla Swift käyttää Unicode-standardia, joka voi sisältää monimutkaisia merkkejä kuten esimerkiksi akkenteita, diakriittejä ja ligatuureja. Jokainen näistä merkeistä lasketaan erikseen, joten .count metodi takaa tarkan tuloksen.
-
-## Katso myös
-
-- [Swiftin dokumentaatio merkkijonon pituudesta](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#ID287)
-- [Swift Playground -tutoriaali merkkijonojen käsittelystä](https://developer.apple.com/swift/blog/?id=16)
+## Katso myös:
+- [Swiftin virallinen dokumentaatio String-tyypin `count`-ominaisuudesta](https://developer.apple.com/documentation/swift/string)
+- [Stack Overflow - Englanninkielinen keskusteluketju merkkijonon pituuden laskemisesta Swiftissä](https://stackoverflow.com/questions/24050634/counting-length-of-a-string-in-swift)

@@ -1,7 +1,7 @@
 ---
-title:                "नियमित अभिव्यक्तियों का उपयोग"
-html_title:           "Gleam: नियमित अभिव्यक्तियों का उपयोग"
-simple_title:         "नियमित अभिव्यक्तियों का उपयोग"
+title:                "नियमित अभिव्यक्तियों का प्रयोग"
+html_title:           "Gleam: नियमित अभिव्यक्तियों का प्रयोग"
+simple_title:         "नियमित अभिव्यक्तियों का प्रयोग"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -10,13 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# क्यों
+# Kya Aur Kyon?
+Regular expressions ka upyog karke programmers text data ko search aur manipulate karte hain. Iska upyog text data ko process karne ke tasks ko aasan banata hai, jaise ki validation, formatting, aur filtering.
 
-आपने कभी सोचा है कि आपको कहीं से एक ही प्रकार के डेटा को खोजने के लिए जीतना समय लगेगा, उससे कहीं अधिक समय आपको उस डाटा को संशोधित करने में लगेगा? या आपने अधिक से अधिक उपयोगकर्ताओं के साथ साथ डेटा को खोजने या प्रदर्शित करने को लेकर अपने को एक अच्छे प्रोग्रामर के रूप में बनाना चाहा है? यदि हाँ, तो आपको नियमवार अभिक्षमता बेहद उपयोगी हो सकती है। यह एक शक्तिशाली उपकरण है जो आपको संस्करणों, प्रतिनिधित्वों, अंकों और समीकरणों को आसानी से परिभाषित करने में मदद करता है। इस लेख के माध्यम से हम आपको नियमवार अभिक्षमता के बारे में एक सरल जानकारी प्रदान करेंगे जो आपको इस उपकरण का अधिकतम फायदा उठाने में मदद करेगी।
-
-## कैसे करें
-
-नियमवार अभिक्षमता चाँद से दूर स्थित एक उपरोक्तिक भाषा है जो आपको खोजी गई स्ट्रिंग के साथ साथ उस पर काम करवाने और उसकी स्थिति को बदलने के लिए संचित संचित जानकारी के साथ मिलती है। यह मैच के बारे में जानकारी को सूचित करने के लिए प्रयुक्त होता है। यदि आपको सिर्फ मैच की जानकारी की आवश्यकता होती है और यह सही स्थान पर होता है तो ग्लीम कोड को लिखें, जैसा कि निम्न उदाहरण में दिखाए गए हैं।
+# Kaise Karein:
+Gleam mein, regular expressions ka upyog karne ke liye, ```Regex``` module ka upyog karna hota hai. Is module ki help se hum patterns ko define kar sakte hain aur text data mein se match karte hue information ko extract kar sakte hain. Neeche diye gaye sample code blocks mein, ek string ko validate aur 10 digit mobile number ko extract karne ka example diya gaya hai.
 
 ```Gleam
-let str = "मेरा नाम अंक
+
+import Regex
+
+Regex.match?("^[A-Za-z0-9+_.-]+@(.+)$", "example@gmail.com") # validation pattern
+
+Regex.scan("([0-9]{10})", "My contact is 1234567890") # extracting 10 digit mobile number
+
+```
+
+Output:
+``` ["1234567890"] ```
+
+# Gehri Jankari:
+Regular expressions ek powerful tool hain jiski shuruat 1950s mein ki gayi thi. Pehle ye Unix operating system mein hi upyog mein le liye jaate the lekin ab ye almost sabhi programming languages mein available hain. Kuch popular alternatives hain ```sed```, ```grep```, aur ```awk```. Regular expressions mein symbols aur metacharacters ka istemal hota hai jisse hum patterns ko define karte hain. Ye patterns compile ho kar humare text data se match karte hain aur required information ko extract karte hain.
+
+# Aur Dekhein:
+- [Gleam Language Website](https://gleam.run/)
+- [Regular Expressions Tutorial](https://www.regular-expressions.info/tutorial.html)
+- [Regex Playground](https://regexr.com/)

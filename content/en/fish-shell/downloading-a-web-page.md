@@ -10,49 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why 
+## What & Why?
 
-Have you ever wanted to save a webpage for later offline reading, or to access it from a remote location with limited internet access? With Fish Shell, a command-line shell tool, you can effortlessly download web pages directly from the terminal. No need for browser extensions or separate downloading software. 
+Downloading a web page simply means retrieving the content present on the website and saving it onto your local computer. Programmers often do this for various reasons, such as analyzing the website's structure, extracting information, or testing their code's functionality.
 
-## How To
+## How to:
 
-Using Fish Shell, the *curl* command is your go-to tool for downloading web pages. From a terminal window, simply type:
+To download a web page using the Fish Shell, we can use the `curl` command. Here's an example:
 ```Fish Shell
-curl <URL> -o <filename>.html
+curl https://www.example.com
 ```
-This command will download the webpage at the specified URL and save it as an HTML file with the given filename.
-
-You can also use the *wget* command, like this:
+The output of this command would be the HTML content of the website, which we can save into a file using the `-o` flag. Here's a full example:
 ```Fish Shell
-wget -O <filename>.html <URL>
+curl -o website.html https://www.example.com
 ```
-This command works similarly to the *curl* command, allowing you to specify the output filename.
+This will save the HTML content into a file called `website.html` in the current directory.
 
-Another useful option is to use the *-L* flag, which follows any redirects and ensures that the final webpage is downloaded.
+To save only a specific portion of the web page, we can use the `grep` command to filter out the desired section. Here's an example:
 ```Fish Shell
-curl -L <URL> -o <filename>.html
+curl https://www.example.com | grep "title"
 ```
+This command will download the webpage and only show the lines containing the word "title."
 
-## Deep Dive
+## Deep Dive:
 
-In addition to saving web pages, Fish Shell also allows you to download specific files from a webpage. For example, you can use the *-O* flag to specify the output filename for a specific file:
-```Fish Shell
-curl -O <URL>/images/logo.png
-```
-This command will download the logo.png file from the specified URL and save it with its original filename.
+Downloading web pages using command-line tools has been around since the beginning of the internet. However, with the advancements in web technologies, it has become more common for developers to use client-side scripting languages like JavaScript to render web pages, making it more challenging to retrieve the content using a command-line tool. In such cases, using a headless browser like PhantomJS or Selenium can be an alternative to downloading web pages.
 
-You can also use the *-I* flag to download only the headers of a webpage, without downloading the actual content. This can be useful for checking URLs and file sizes before downloading:
-```Fish Shell
-curl -I <URL>
-```
+## See Also:
 
-Furthermore, Fish Shell allows for basic authentication through the *-u* flag. This allows you to download web pages from sites that require a username and password for access:
-```Fish Shell
-curl -u <username>:<password> <URL> -o <filename>.html
-```
-
-## See Also
-
-- [Fish Shell documentation](https://fishshell.com/docs/current/tutorial.html)
-- [Curl documentation](https://curl.haxx.se/docs/manpage.html)
-- [Wget manual](https://www.gnu.org/software/wget/manual/wget.html)
+- [Fish Shell documentation](https://fishshell.com/docs/current/index.html)
+- [Curl's website](https://curl.haxx.se/)
+- [A Beginner's Guide to Curl](https://blog.runcloud.io/what-is-curl-with-example-commands/)

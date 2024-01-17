@@ -1,7 +1,7 @@
 ---
-title:                "ランダムな数字の生成"
-html_title:           "Rust: ランダムな数字の生成"
-simple_title:         "ランダムな数字の生成"
+title:                "ランダムな数値を生成する"
+html_title:           "Rust: ランダムな数値を生成する"
+simple_title:         "ランダムな数値を生成する"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Numbers"
@@ -10,52 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+# ランダムな数値を生成するには？
 
-Random numbers are important in programming for a variety of reasons. They can be used to simulate unpredictable events, create unique identifiers, or generate encryption keys. In Rust, the standard library provides a simple and efficient way to generate random numbers, making it a useful language for tasks that require this functionality.
+## 何で、何故？
+ランダムな数値を生成することは、コンピュータープログラマーにとって非常に重要なタスクの一つです。ランダムな数値とは、コンピューターが自動的に生成し、予測不能な値のことを指します。プログラマーがランダムな数値を利用する理由は様々ですが、主な用途はゲームやセキュリティーを担保するためです。
 
-## How To
+## 方法：
+Rustでは、ランダムな数値を生成するために```rand```ライブラリーを使用します。まず、プロジェクトの```Cargo.toml```ファイルに次の行を追加します。
 
-To generate random numbers in Rust, we first need to import the `rand` crate. This crate provides various functions and types for generating random values.
 ```
-Rust
+rand = "0.8.3"
+```
+
+次に、生成したいランダムな数値の範囲を指定し、乱数ジェネレーターを作成します。
+
+```Rust
 use rand::Rng;
-```
-Next, we can use the `thread_rng` function to create a thread-local random number generator. This ensures that each thread has its own source of randomness, avoiding issues with concurrent access.
-```
-Rust
-let mut rng = rand::thread_rng();
-```
-Now, we can use the `gen_range` function to generate random numbers within a given range.
-```
-Rust
-let num: i32 = rng.gen_range(1..=10); // generates a random number between 1 and 10 (inclusive)
-```
-We can also use the `gen` function to generate random values of different types, such as booleans or characters.
-```
-Rust
-let boolean = rng.gen_bool(0.5); // generates a random boolean with 50% probability
-let c: char = rng.gen(); // generates a random unicode character
+let random_number = rand::thread_rng().gen_range(1, 11);
 ```
 
-## Deep Dive
+上記の例では、1から10までのランダムな数値を生成しています。
 
-The `ThreadRng` type returned by `thread_rng` implements the `Rng` trait, which provides all the necessary methods for generating random values. This trait also allows us to specify the type of randomness we want, such as uniform or Gaussian distribution.
-```
-Rust
-let num: f64 = rng.gen(); // generates a random float between 0 and 1
-let num2: f64 = rng.gen_range(1.0..=5.0); // generates a random float between 1 and 5 (inclusive)
-```
-Additionally, the `rand` crate also provides support for generating random numbers from other distributions, such as the exponential or geometric distribution.
-```
-Rust
-let num: f64 = rng.gen::<StandardNormal>();
-let num2: f64 = rng.gen::<Exp>(0.5); // generates a random float from the exponential distribution with a rate of 0.5
-```
-This deeper dive into the `rand` crate highlights the versatility and flexibility of Rust when it comes to generating random numbers.
+## 詳細説明：
+ランダムな数値を生成する方法には様々なアプローチがありますが、Rustでは標準の乱数ジェネレーターである```rand::thread_rng```を使用することが推奨されています。また、より高度な乱数ジェネレーターを使用する場合は、外部のライブラリーを導入することもできます。
 
-## See Also
-
-For more information on generating random numbers in Rust, check out the official documentation for the `rand` crate here: 
-- https://docs.rs/rand/0.8.4/rand/
-- https://docs.rs/rand_distr/0.2.2/rand_distr/
+## 関連リンク：
+- [Rustの公式ドキュメンテーション](https://doc.rust-lang.org/std/rand/)
+- [外部の乱数ジェネレーターであるrand](https://crates.io/crates/rand)
+- [ランダムな数値を生成する方法の比較](https://stackoverflow.com/questions/54075171/which-random-number-package-should-i-use-in-rust)

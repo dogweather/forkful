@@ -1,7 +1,7 @@
 ---
-title:                "Das Senden einer http-Anfrage"
-html_title:           "Elm: Das Senden einer http-Anfrage"
-simple_title:         "Das Senden einer http-Anfrage"
+title:                "Senden einer http-Anfrage"
+html_title:           "Elm: Senden einer http-Anfrage"
+simple_title:         "Senden einer http-Anfrage"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "HTML and the Web"
@@ -10,52 +10,73 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Warum
+## Was ist eine HTTP-Anfrage und warum machen Programmierer sie?
 
-Wenn du ein Webentwickler bist, der eine benutzerfreundliche Programmiersprache mit einer starken Typisierung und einer sanften Lernkurve sucht, dann ist Elm die perfekte Wahl für dich. Mit Elm können wir auch HTTP-Anfragen senden, um Daten von anderen Webressourcen abzurufen. In diesem Artikel zeige ich dir, wie du das machen kannst.
+Eine HTTP-Anfrage ist eine Anfrage, die ein Computer an einen Server sendet, um Daten oder Ressourcen anzufordern. Programmierer nutzen HTTP-Anfragen, um mit externen APIs oder Webseiten zu interagieren, um Daten zu erhalten oder zu manipulieren.
 
-## So geht's
-
-Um eine HTTP-Anfrage in Elm zu senden, müssen wir zunächst das `Http`-Modul importieren. Dann können wir die Funktion `send` verwenden, um eine Anfrage an eine bestimmte URL zu senden. Die Antwort wird als ein `Result`-Typ zurückgegeben, der entweder eine erfolgreiche Antwort oder einen Fehler enthalten kann. Schauen wir uns das Ganze mal in einem Beispiel an:
+## Wie geht das?
 
 ```Elm
 import Http
+import Json.Decode exposing (..)
 
-Http.send {
-    method = "GET",
-    headers = [],
-    url = "https://myapi.com/users",
-    body = Http.emptyBody
-}
-    |> Task.attempt handleResponse
-```
+url : String
+url = "https://jsonplaceholder.typicode.com/posts"
 
-Hier senden wir eine GET-Anfrage an die URL `https://myapi.com/users` und geben die Antwort an die Funktion `handleResponse` weiter. Wir können auch Parameter wie Headers, Body und mehr angeben, um die Anfrage anzupassen.
+-- eine GET-Anfrage mit Http.get
+Http.get url
+  |> Http.send GotPosts
 
-```Elm
-Http.send {
-    method = "POST",
-    headers = [("Content-Type", "application/json")],
-    url = "https://myapi.com/users",
-    body = Http.jsonBody <| Encode.object <| {
-        name = "John Doe",
-        age = 28,
-        email = "johndoe@example.com"
-    }
-}
-    |> Task.attempt handleResponse
-```
 
-Hier senden wir eine POST-Anfrage an dieselbe URL, aber diesmal geben wir an, dass der Body in JSON-Format übergeben wird.
+type Msg
+  = GotPosts (Result Http.Error (List Post))
 
-## Tiefere Einblicke
+type alias Post =
+  { userId : Int
+  , id : Int
+  , title : String
+  , body : String
+  }
 
-Bei der Verwendung von `Http.send` müssen wir auch sicherstellen, dass wir die notwendigen Berechtigungen für die Verwendung von HTTP-Anfragen haben. Dies kann entweder durch den `elm.json`-Datei-Eintrag `"dependencies"` oder durch den `elm-full.json`-Datei-Eintrag `"full-dependencies"` erreicht werden. Ohne diese Einträge wird dein Code nicht kompilieren und eine entsprechende Fehlermeldung ausgegeben werden.
+view : Model -> Html Msg
+view model =
+  case model.posts of
+    Err _ ->
+      text "Error getting posts"
+    Ok posts ->
+      div [] (List.map renderPost posts)
 
-Es ist auch wichtig zu beachten, dass `Http.send` asynchron ist, was bedeutet, dass es eine Aufgabe (Task) zurückgibt. Wir müssen also eine Funktion wie `Task.attempt` verwenden, um die Antwort zu erhalten.
+renderPost : Post -> Html Msg
+renderPost post =
+  div []
+    [ text ("Author: " ++ toString post.userId)
+    , text ("Title: " ++ post.title)
+    , text ("Body: " ++ post.body)
+    ]
+
+
+update : Msg -> Model -> (Model, Cmd Msg)
+update msg model =
+  case msg of
+    GotPosts response ->
+      case response of
+        Ok posts ->
+          ( { model | posts = Ok posts }, Cmd.none )
+        Err _ ->
+          ( { model | posts = Err "Could not get posts" }, Cmd.none )
+
+``` 
+
+Der obige Code zeigt, wie mit Elm eine HTTP-Anfrage an die API von "jsonplaceholder.typicode.com" gesendet werden kann. Wir importieren das Http-Paket, um HTTP-Anfragen zu ermöglichen, und das Json.Decode-Paket, um die empfangenen Daten zu interpretieren. Dann definieren wir eine URL und senden eine GET-Anfrage mit Http.get. Die Antwort wird in der update-Funktion verarbeitet und gerendert.
+
+## Tiefgehende Informationen
+
+HTTP-Anfragen sind ein grundlegendes Konzept für die Webentwicklung und wurden erstmals in den 1990er Jahren eingeführt. Es gibt auch alternative Möglichkeiten für HTTP-Anfragen, wie zum Beispiel Ajax oder Fetch, aber Elm bietet eine einfache und sichere Möglichkeit, um mit externen APIs zu kommunizieren.
+
+Ein wichtiger Punkt bei der Verwendung von HTTP-Anfragen ist die Verarbeitung der empfangenen Daten. Elm bietet hierfür das Json.Decode-Paket, um sicherzustellen, dass die erhaltenen Daten das erwartete Format haben.
 
 ## Siehe auch
 
-- [Elm-Dokumentation zum `Http`-Modul](https://package.elm-lang.org/packages/elm/http/latest/)
-- [Video-Tutorial zum Senden von HTTP-Anfragen in Elm](https://www.youtube.com/watch?v=7s8ex-4FyP8)
-- [Blogbeitrag über HTTP-Anfragen in Elm](https://www.simonherteby.com/blog/2017/05/02/elm-sending-http-request.html)
+- [Elm Dokumentation zu HTTP-Anfragen](https://package.elm-lang.org/packages/elm/http/latest/)
+- [Tutorial zu HTTP-Anfragen mit Elm](https://guide.elm-lang.org/effects/http.html)
+- [Alternativen zu HTTP-Anfragen in Elm](https://package.elm-lang.org/packages/elm-lang/virtual-dom/latest/VirtualDom#task)

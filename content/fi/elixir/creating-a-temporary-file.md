@@ -1,7 +1,7 @@
 ---
-title:                "Luodaan tilapäistiedosto"
-html_title:           "Elixir: Luodaan tilapäistiedosto"
-simple_title:         "Luodaan tilapäistiedosto"
+title:                "Tilapäistiedoston luominen"
+html_title:           "Elixir: Tilapäistiedoston luominen"
+simple_title:         "Tilapäistiedoston luominen"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Files and I/O"
@@ -10,37 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi luoda väliaikaisia tiedostoja Elixirillä?
+# What & Why?
 
-Joskus ohjelmointitehtävät vaativat tiedostojen käsittelyä, ja väliaikaiset tiedostot voivat olla hyödyllisiä tällaisissa tilanteissa. Elixirin avulla voit helposti luoda ja manipuloida väliaikaisia tiedostoja, mikä tekee siitä hyödyllisen työkalun monissa eri tilanteissa.
+Luonnollisesti ohjelmointitehtävät kuluttavat tietokoneen resursseja, ja siksi on tärkeää varmistaa, että kaikki käytetyt tiedostot vapautetaan oikea-aikaisesti. Väliaikaisten tiedostojen luominen on yksi tapa hallita resursseja ja varmistaa, että oleelliset tiedostot eivät jää turhaan järjestelmään.
 
-## Kuinka luoda väliaikaisia tiedostoja Elixirillä?
+# How to:
 
-Elixirin `File`-moduuli tarjoaa useita toimintoja tiedostojen käsittelyyn, mukaan lukien väliaikaisen tiedoston luominen. Käytä `Tempfile.open/1`-funktiota määrittelemällä haluamasi tiedoston nimi ja kirjoita haluamasi sisältö `do`-lohkoon.
+Elixirin avulla voimme luoda väliaikaisen tiedoston ```Tempfile``` -moduulin avulla. Se tarjoaa meille yksinkertaisen tavan luoda ja poistaa väliaikaisia tiedostoja ohjelmassamme. Katso esimerkki alla:
 
-```elixir
-file = Tempfile.open("temp.txt")
-IO.write(file, "Tämä on väliaikainen tiedosto.")
+```Elixir
+tempfile = Tempfile.new("nimi")
 ```
 
-Voit myös käyttää `Tempfile.stream/2`-funktiota luomaan virtuaalisen tiedoston ja kirjoittamaan siihen haluamasi tiedot.
+Kun tiedosto on luotu, voimme kirjoittaa siihen haluamamme tiedot ja käyttää sitä ohjelmassamme niin kauan kuin tarvitsemme. Kun olemme valmiita, voimme poistaa tiedoston seuraavasti:
 
-```elixir
-file = Tempfile.stream("temp.txt")
-file |> Stream.into(File.stream!("original.txt"))
-|> Enum.each(&IO.puts/1)
+```Elixir
+File.delete!(tempfile.path)
 ```
 
-Molemmat näistä esimerkeistä luovat väliaikaisen tiedoston nimeltä "temp.txt" ja kirjoittavat siihen halutut tiedot. Muista sulkea luomasi tiedosto `File.close/1`-funktiolla, kun olet valmis käyttämään sitä.
+Tämä varmistaa, että tiedosto poistetaan varmasti ja säästää resursseja, joita ohjelma tarvitsee.
 
-## Syvempi sukellus väliaikaisten tiedostojen luomiseen
+# Deep Dive:
 
-Elixirin väliaikaisten tiedostojen luomisen toimintoja kannattaa käyttää silloin, kun tarvitset hetkellisen tallennustilan tiedostoille ja haluat, että ne poistetaan automaattisesti käytön jälkeen. Väliaikaiset tiedostot luodaan usein `Tempfile.open/1`- tai `Tempfile.stream/2`-funktioiden avulla, mutta voit myös käyttää `File.mkstemp/2`-funktiota luomaan väliaikaisen tiedoston ja saamaan takaisin sen tiedostonumeron.
+Tämä menetelmä on ollut käytössä jo pitkään ja on hyvä tapa hallita resursseja. Toinen vaihtoehto väliaikaisten tiedostojen luomiseen on käyttää Unix järjestelmille tarkoitettua ```mktemp``` -komentoa. Se toimii samalla tavalla, mutta vaatii hieman enemmän koodia. Elixirin ```Tempfile``` -moduuli tekee tämän kaiken meille yksinkertaisemmaksi.
 
-Elixirin `Tempfile`-moduuli tarjoaa myös muita hyödyllisiä toimintoja, kuten `Tempfile.copy/2`-funktion, jolla voit kopioida tiedostosta toiseen väliaikaisen tiedoston ja `Tempfile.open!/1`-funktion, joka heittää virheen, jos tiedoston luominen ei onnistu.
+Moduulin sisäisesti se luo lisäksi ```File.open/2``` -funktion avulla väliaikaisen tiedoston ja palauttaa siitä avoimen tiedoston kahvana käytettäväksi ohjelmassa. Tämä tarjoaa lisää varmuutta tiedoston avauksessa ja käytössä.
 
-## Katso myös
+# See Also:
 
-- [Elixirin virallinen dokumentaatio tiedostojen käsittelystä](https://hexdocs.pm/elixir/File.html)
-- [Elixirin `Tempfile`-moduulin virallinen dokumentaatio](https://hexdocs.pm/elixir/Tempfile.html)
-- [Artikkeli väliaikaisista tiedostoista Elixirillä Hackernoonissa](https://hackernoon.com/elixir-quick-tip-temporary-files-b6a8b4787ac9)
+Voit lukea lisää Elixirin ```Tempfile``` -moduulista täältä: https://hexdocs.pm/elixir/Tempfile.html.

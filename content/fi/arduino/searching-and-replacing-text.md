@@ -10,40 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mikä & Miksi?
 
-Jokaiselle, joka viettää paljon aikaa ohjelmien kirjoittamiseen, voi olla hyödyllistä oppia etsimään ja korvaamaan tekstiä. Tämä voi auttaa säästämään aikaa ja välttämään virheitä.
+Etsiminen ja korvaaminen tekstillä on tärkeä ohjelmointikäytäntö, joka auttaa ohjelmoijia muokkaamaan suuria määriä koodia nopeasti ja tehokkaasti. Kun etsit tekstiä ja korvaat sen uudella, voit muuttaa helposti monia koodeja kerralla ja välttää virheet, jotka voivat syntyä manuaalisella muokkaamisella. 
 
-## Kuinka
+## Miten:
 
-Arduino-ohjelmistossa on sisäänrakennettuna ```replace()``` -funktio, joka mahdollistaa tehokkaan ja helpon tekstien etsimisen ja korvaamisen. Funktion syntaksi on seuraava:
+Ehkä yksinkertaisin tapa etsiä ja korvata tekstiä on käyttää `replace()` -funktiota Arduino-koodissa. Voit käyttää tätä funktiota esimerkiksi vaihtaaksesi vanhoja sanoja uusiin tai muuttaaksesi tiettyjä lauseita ohjelmassasi. 
 
-```Arduino
-replace(alkuperäinen_teksti, etsittävä_teksti, korvaava_teksti);
+```
+Arduino.replace("vanha sana", "uusi sana");
 ```
 
-Esimerkiksi, jos haluat korvata kaikki "Hello" sanat "Hei", voit käyttää tätä funktiota seuraavasti:
+Tämä koodi korvaa kaikki esiintymät "vanha sana" uudella sanalla "uusi sana". Voit myös muuttaa vain osan sanasta käyttämällä sijoitusrunkoa, joka näyttää tältä: 
 
-```Arduino
-replace("Hello world", "Hello", "Hei");
+```
+Arduino.replace("vanha sana", "uusi sana", index);
 ```
 
-Tämä tuottaa tuloksen "Hei world".
+Tässä index on kohta, josta haluat aloittaa tekstinhaku ja korvaaminen. Tämä antaa sinulle enemmän joustavuutta ja tarkkuutta muokkaamisessa. 
 
-## Syvemmälle
+## Syvä sukellus:
 
-On tärkeää huomata, että ```replace()``` -funktio korvaa kaikki esiintymät alkuperäisessä tekstissä. Jos haluat korvata vain ensimmäisen esiintymän, voit käyttää ```replaceFirst()``` -funktiota.
+Hakemisen ja korvaamisen käytäntö on ollut olemassa jo vuosikymmeniä ja se on edelleen tärkeä osa nykypäivän ohjelmointia. On myös olemassa muita vaihtoehtoja, kuten regular expression -käsittelyt tai ohjelmointitarkkuusohjelmat, jotka voivat tehdä monimutkaisempia tekstinhakuja ja korvauksia. 
 
-Lisäksi, voit käyttää myös säännöllisiä lausekkeita etsimisen ja korvaamisen helpottamiseksi. Esimerkiksi, voit käyttää ```replace()``` -funktiota seuraavasti:
+Arduino tarjoaa myös muita hyödyllisiä funktioita, kuten `replaceAll()` ja `replaceFirst()`. Näiden avulla voit tehdä korvauksia koko koodisi tai vain ensimmäisen esiintymän aikana. Voit myös säätää hakukriteerejä, kuten kirjainkoolla. 
 
-```Arduino
-replace("1234ABC5678", "[0-9]", "X");
-```
+## Katso myös:
 
-Tämä korvaa kaikki numerot "X":llä ja palauttaa tuloksen "XXXXABCXXXX".
-
-## Katso myös
-
-- [Arduino Reference - replace()](https://www.arduino.cc/reference/en/language/structure/functions/stringfunctions/replace/)
-- [Arduino Tutorial - Regular Expressions](https://www.arduino.cc/en/Tutorial/RegexpReplace)
-- [FreeCodeCamp - An Introduction to Regular Expressions](https://www.freecodecamp.org/news/an-introduction-to-regular-expressions-regex/)
+Voit lukea lisää tekstinhauista ja korvaamisista Arduino-ohjelmoinnissa Arduino-oppaastamme (linkki: https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/replace/). Voit myös löytää hyödyllisiä vinkkejä ja neuvoja Arduino-yhteisöstä ja foorumeilta (linkki: https://forum.arduino.cc/).

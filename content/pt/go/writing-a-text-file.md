@@ -10,51 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+## O que e por que?
 
-Escrever um arquivo de texto é uma atividade fundamental ao escrever programas. É a maneira de armazenar dados de forma persistente e acessá-los facilmente através do código.
+A escrita de arquivos de texto é uma tarefa comum em programação, e envolve a criação ou modificação de um arquivo que contém texto formatado. Os programadores normalmente realizam essa ação para armazenar dados importantes em um formato legível e portátil, que pode ser facilmente acessado e compartilhado entre diferentes plataformas e sistemas.
 
-## Como Fazer
+## Como fazer:
 
-Escrever um arquivo de texto é uma tarefa bastante simples em Go. Primeiro, precisamos criar um arquivo usando a função `Create` do pacote `os`. Passamos o nome do arquivo como parâmetro e ele será criado no diretório atual do programa.
-
-```Go
-file, err := os.Create("arquivo.txt")
-if err != nil {
-    log.Fatal(err)
-}
-```
-
-Com o arquivo criado, precisamos escrever algum conteúdo nele. O pacote `bufio` fornece uma maneira conveniente de escrever dados em um arquivo.
+Para escrever um arquivo de texto em Go, podemos usar a função `WriteFile` do pacote `io/ioutil`. Primeiro, importe o pacote em seu código:
 
 ```Go
-writer := bufio.NewWriter(file)
-texto := "Este é um texto de exemplo."
-_, err = writer.WriteString(texto)
-if err != nil {
-    log.Fatal(err)
-}
+import "io/ioutil"
 ```
 
-Não esqueça de salvar o conteúdo no arquivo e fechá-lo antes de finalizar o programa.
+Em seguida, use a função `WriteFile` fornecendo o nome do arquivo que deseja criar ou modificar, o conteúdo a ser escrito e as permissões do arquivo:
 
 ```Go
-writer.Flush()
-file.Close()
+err := ioutil.WriteFile("meu_arquivo.txt", []byte("Olá mundo!"), 0644)
 ```
 
-## Deep Dive
+Se o arquivo não existir, ele será criado. Já se o arquivo existir, seu conteúdo será substituído pelo novo conteúdo fornecido. A função `WriteFile` também retorna um erro caso algo dê errado, então é importante sempre verificar se ocorreu algum erro após a chamada da função.
 
-Ao escrever arquivos de texto, é importante entender os diferentes modos de escrita disponíveis. O exemplo anterior usou o modo "escrita única", que sobrescreve o conteúdo do arquivo a cada execução. Outra opção é o modo "append", que adiciona o conteúdo no final do arquivo sem remover o que já está lá.
+## Mergulho profundo:
 
-```Go
-file, err := os.OpenFile("arquivo.txt", os.O_APPEND|os.O_WRONLY, 0644)
-```
+Em Go, a função `WriteFile` é apenas uma das várias opções para escrever arquivos de texto. Outra alternativa popular é o uso do pacote `bufio`, que fornece uma camada adicional de buffer para gravar dados com mais eficiência. Além disso, é importante lembrar que a escrita de arquivos de texto envolve operações de entrada e saída (I/O), o que significa que pode ser um processo mais lento do que trabalhar apenas com dados em memória.
 
-Também é possível especificar permissões do arquivo ao cria-lo, utilizando o valor `0644`. Aqui, o primeiro "0" indica que estamos definindo as permissões básicas para todos os usuários, o "6" é para o dono com permissões de leitura e escrita, e o "4" é para todos os demais usuários com permissão apenas de leitura.
+## Veja também:
 
-## Veja Também
-
-- Documentação oficial do pacote `os`: https://golang.org/pkg/os/
-- Documentação oficial do pacote `bufio`: https://golang.org/pkg/bufio/
-- Guia de escrita de arquivos em Go: https://www.digitalocean.com/community/tutorials/how-to-read-and-write-files-in-go#choosing-the-scope-of-your-file-io-operations
+- Documentação oficial do pacote `io/ioutil` em Go: https://golang.org/pkg/io/ioutil/
+- Documentação oficial do pacote `bufio` em Go: https://golang.org/pkg/bufio/
+- Tutorial sobre escrita de arquivos em Go: https://gobyexample.com/writing-files

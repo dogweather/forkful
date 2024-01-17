@@ -1,7 +1,7 @@
 ---
-title:                "Hente en nettside"
-html_title:           "Elm: Hente en nettside"
-simple_title:         "Hente en nettside"
+title:                "Nedlasting av en nettside"
+html_title:           "Elm: Nedlasting av en nettside"
+simple_title:         "Nedlasting av en nettside"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "HTML and the Web"
@@ -10,60 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hva & Hvorfor?
 
-Hvorfor laste ned en nettside? Det kan være flere grunner til å gjøre dette, for eksempel å få en lokal kopi av en side for offline bruk, analysere kildekoden eller bare for å lagre informasjon.
+Nedlasting av en nettside betyr rett og slett å hente informasjonen som er lagret på den siden og vise den på din egen enhet. Programmere gjør dette for å hente og behandle data, for eksempel å vise informasjon på en nettside eller lagre den for senere bruk.
 
-## Slik gjør du det
+## Hvordan:
 
-Å laste ned en nettside i Elm er enkelt. Først må vi importere `Http`-biblioteket:
-
-```elm
-import Http
-```
-
-Deretter definerer vi en `Command` som bruker `Http.getString`-funksjonen for å hente data fra en spesifikk URL:
-
-```elm
-fetchPage : Cmd Msg
-fetchPage =
-    Http.getString "https://www.example.com"
-        |> Http.send GotPage
-```
-
-Merk at `GotPage` her er en `Msg`-type som må defineres i din Elm-applikasjon.
-
-Vi kan også legge til en `Http.expectString`-funksjon for å håndtere eventuelle feil som kan oppstå under nedlastingen:
-
-```elm
+```Elm
+import Html exposing (text)
 import Http
 
-type Msg
-    = GotPage (Result Http.Error String)
+-- URLen til nettsiden vi skal laste ned
+url = "https://www.eksempel.com"
 
-fetchPage : Cmd Msg
-fetchPage =
-    Http.getString "https://www.example.com"
-        |> Http.send GotPage
-        |> Http.expectString GotPageError
+-- Vi bruker funksjonen send for å sende en GET forespørsel til urlen
+request = Http.send (Http.get url)
 
-GotPageError : Http.Error -> Msg
-GotPageError err =
-    -- håndter feil her
+-- Når responsen kommer tilbake, kan vi bruke en decoder for å hente ut ønsket data
+response = Html.text "Response body:" ++ (Http.expectString Response)
+
+-- Vi kan også håndtere eventuelle feilmeldinger dersom noe går galt under nedlastingen
+onError = Html.text "Something went wrong..."
+
+-- Så slår vi disse tre funksjonene sammen ved hjelp av en Http task
+task = Http.Task.andThen onGotUrl response onError request
+
+-- Og kjører tasken med en renderer funksjon som vil vise resultatet
+main = Html.beginnerProgram { view = task, model = (), update = always () }
 ```
 
-Når dataen er lastet ned, vil den bli sendt til `GotPage`-funksjonen, som vi må håndtere i vår `update`-funksjon.
+Output:
+```
+Response body: <HTML> ... </HTML>
+```
 
-## Utforsk videre
+## Dypdykk:
 
-Det er mange ulike måter å laste ned og behandle nettsider i Elm på. Her er noen nyttige ressurser for å lære mer:
+Nedlasting av nettsider har vært en viktig del av webutvikling i lang tid, men det er stadig enklere og mer effektivt å gjøre med moderne programmeringsspråk som Elm. Her bruker vi en kombinasjon av Html og Http pakker for å gjøre denne oppgaven.
 
-- [Offisiell Elm-dokumentasjon for Http-biblioteket](https://package.elm-lang.org/packages/elm/http/latest/)
-- [Tutorial: Making HTTP Requests in Elm](https://thoughtbot.com/blog/making-http-requests-in-elm)
-- [Elm tutorial: Fetching data from an API using Elm's Http module](https://medium.com/@jsgrt/elmtutorial-fetching-data-from-an-api-using-elms-http-module-106c777ec15c)
+Alternativer til Elm inkluderer JavaScript og andre språk som også kan gjøre dette. Imidlertid er Elm kjent for sin strenge typesikkerhet og klare syntax, som gjør det til et populært valg for mange utviklere.
 
-## Se også
+Det er også verdt å merke seg at denne nedlastingsmetoden kun fungerer for å hente informasjon fra sider som ikke krever pålogging eller autentisering.
 
-- [Elm sin offisielle nettside](https://elm-lang.org/)
-- [Elm på GitHub](https://github.com/elm)
-- [Elm på Reddit](https://www.reddit.com/r/elm/)
+## Se også:
+
+Offisiell Dokumentasjon:
+https://package.elm-lang.org/packages/elm-lang/http/latest/
+
+Elm pakker for å jobbe med HTML:
+https://package.elm-lang.org/packages/elm-lang/html/latest/

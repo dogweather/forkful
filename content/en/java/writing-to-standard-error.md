@@ -10,37 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-Writing to standard error, also known as "stderr", can be a useful tool for Java programmers when debugging their code. It allows for error messages to be displayed separately from regular output, making it easier to identify and troubleshoot any issues in the code.
+Printing to standard error is a way for Java programmers to display error messages or debug information in their code. It is a separate stream from standard output, which is typically used for normal program output. 
 
-## How To
+Programmers use writing to standard error in order to clearly differentiate error messages from regular output and to provide helpful information for troubleshooting and debugging purposes. 
 
-To write to stderr in Java, we can use the `System.err` object and the `print()` or `println()` methods. Here is a simple example:
+## How to:
 
-```Java
-System.err.println("This is an error message.");
-```
-
-The above code will print the message "This is an error message." in the console, but in red font instead of the standard black. This can be helpful in quickly identifying where an error has occurred in a long list of console output.
-
-Additionally, we can also specify where the error message should appear by using the `setErr()` method on the `PrintStream` class. For example, if we want the error message to be displayed in a separate log file, we can do the following:
+To write to standard error in Java, simply use the `System.err` stream and the `println` method. Here is an example code snippet:
 
 ```Java
-PrintStream errStream = new PrintStream(new File("error.log"));
-System.setErr(errStream);
-System.err.println("This will be printed to error.log");
+System.err.println("Something went wrong!");
 ```
 
-## Deep Dive
+This will print the message "Something went wrong!" to the console in a different color, making it easier to spot and identify as an error message.
 
-Writing to stderr can be especially useful when dealing with exceptions in Java. By default, the stack trace for an exception is printed to stderr, making it easier to pinpoint the cause of the error. This can be further enhanced by using a logging framework such as Log4j, which allows for more detailed error messages to be displayed in stderr.
+Additionally, you can also use the `e.printStackTrace()` method to print out more detailed information about a caught exception to the standard error stream. Here is another example:
 
-It's worth noting that writing to stderr should not be used for regular logging purposes. This should only be used for error messages and debugging purposes. For regular logging, it's best to use the `System.out` object and the `Logger` class.
+```Java
+try {
+    // Some code that might throw an exception
+} catch (Exception e) {
+    e.printStackTrace();
+}
+```
 
-## See Also
+This will print out the stack trace, including the line numbers of where the exception occurred, to the standard error stream.
 
-- [Java System Class JavaDoc](https://docs.oracle.com/javase/8/docs/api/java/lang/System.html)
-- [Log4j Documentation](https://logging.apache.org/log4j/2.x/manual/api.html)
+## Deep Dive:
 
-By following these simple steps, you can use writing to stderr as a helpful tool in your Java coding journey. Happy debugging!
+Writing to standard error has been a commonly used practice in programming, dating back to the early days of UNIX systems and the C programming language. It allows for better separation between regular output and error messages, making it easier to distinguish them and handle them appropriately.
+
+An alternative to writing to standard error is to use logging frameworks, such as Log4j or SLF4J, which provide more advanced logging capabilities. However, for simple error messages and debugging purposes, using the `System.err` stream is a quick and easy solution.
+
+When writing to standard error, it is important to note that the output will usually be displayed in a different color to indicate that it is an error message. This can be helpful in quickly identifying and troubleshooting issues in a program.
+
+## See Also:
+
+- [The official Java documentation on System](https://docs.oracle.com/javase/8/docs/api/java/lang/System.html)
+- [A tutorial on standard output and error in Java](https://www.baeldung.com/java-printstream-printf)

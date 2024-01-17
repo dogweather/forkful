@@ -10,35 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Quoi & Pourquoi?
 
-Écrire dans la sortie d'erreur standard (standard error) peut sembler effrayant pour les débutants en programmation, mais c'est en fait une compétence importante à maîtriser. Cela peut vous aider à comprendre les erreurs dans votre code et à les résoudre plus facilement, ce qui vous permettra de devenir un meilleur programmeur.
+Écrire vers la sortie d'erreur standard (stderr) est une pratique courante en programmation qui consiste à rediriger les messages d'erreur vers un canal spécifique plutôt que de les intégrer aux messages de sortie standards (stdout). Cela permet aux développeurs de mieux distinguer les informations de débogage des résultats attendus, et d'améliorer ainsi la lisibilité du code.
 
-## Comment
+## Comment faire:
 
-Pour écrire dans la sortie d'erreur standard en Python, vous pouvez utiliser la fonction intégrée "stderr" du module "sys". Elle accepte une chaîne de caractères comme argument et l'affichera dans la sortie d'erreur standard. Voici un exemple de code :
+Utiliser la fonction `sys.stderr.write(message)` pour écrire vers la sortie d'erreur standard (stderr), en donnant en paramètre le message à afficher. Ensuite, n'oubliez pas d'utiliser l'instruction `import sys` pour importer le module `sys` qui contient cette fonction.
 
-```Python
+```
 import sys
-sys.stderr.write("Une erreur s'est produite !")
+
+sys.stderr.write("Une erreur est survenue.")
 ```
 
-La sortie sera alors :
+Cela affichera "Une erreur est survenue." dans la sortie d'erreur standard (stderr).
 
-```
-Une erreur s'est produite !
-```
+## Plongée en profondeur:
 
-Cette fonction peut être utile lorsque vous voulez afficher un message d'erreur spécifique dans votre code, au lieu de simplement laisser le programme planter.
+Avant l'émergence de la console d'erreur standard (stderr), les messages d'erreurs étaient souvent mélangés avec les messages de sortie standards (stdout), rendant ainsi la tâche de débogage plus difficile pour les programmeurs. C'est pourquoi l'utilisation de la sortie d'erreur standard (stderr) devient de plus en plus courante dans le développement logiciel actuel.
 
-## Plongée en profondeur
+Il existe également d'autres façons d'écrire vers la sortie d'erreur, telles que la fonction `logging.error(message)` du module `logging`. Cependant, cette méthode nécessite la configuration d'un logger et peut être plus lourde à mettre en place par rapport à l'utilisation de la fonction `sys.stderr.write`.
 
-La sortie d'erreur standard en Python est également utile pour déboguer votre code. Lorsqu'une erreur se produit, vous pouvez utiliser la fonction "print" pour afficher des messages dans la sortie standard, mais cela peut interférer avec le déroulement normal de votre programme. En écrivant dans la sortie d'erreur standard, vous pouvez séparer les messages d'erreur du reste de votre code et les afficher sans perturber l'exécution du programme.
+En termes d'implémentation, la sortie d'erreur standard (stderr) est généralement gérée par le système d'exploitation plutôt que par le langage de programmation lui-même. Cela signifie que la redirection vers la sortie d'erreur standard (stderr) peut varier selon le système d'exploitation utilisé.
 
-De plus, en utilisant la redirection de la sortie d'erreur standard vers un fichier, vous pouvez enregistrer les erreurs dans un fichier pour les examiner plus tard et les corriger. Cela peut être particulièrement utile lorsque votre programme est exécuté sur un serveur distant sans accès à la sortie standard en direct.
+## Voir aussi:
 
-## Voir aussi
-
-- Documentation officielle de Python sur la fonction "stderr" : https://docs.python.org/fr/3/library/sys.html#sys.stderr
-- Tutoriel sur les erreurs et exceptions en Python : https://www.programiz.com/python-programming/exceptions
-- Plus d'informations sur la redirection de la sortie d'erreur standard en utilisant la ligne de commande : https://www.geeksforgeeks.org/redirecting-stderr-stdout-stderr/
+- Documentation officielle de Python sur la sortie d'erreur standard (https://docs.python.org/fr/3/library/sys.html#sys.stderr)
+- Article sur la gestion des erreurs en Python (https://realpython.com/python-logging/)

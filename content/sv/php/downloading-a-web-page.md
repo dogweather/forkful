@@ -1,7 +1,7 @@
 ---
-title:                "Hämta en webbsida"
-html_title:           "PHP: Hämta en webbsida"
-simple_title:         "Hämta en webbsida"
+title:                "Ladda ner en webbsida"
+html_title:           "PHP: Ladda ner en webbsida"
+simple_title:         "Ladda ner en webbsida"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "HTML and the Web"
@@ -10,31 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
-Att ladda ner en webbsida kan vara ett användbart verktyg för webbutvecklare eller datavetare för att analysera innehållet på en specifik sida. Det kan också användas för att skapa backup eller arkiv av en sida.
+## Vad & Varför? 
+Att ladda ner en webbsida innebär att hämta dess innehåll och visa det på din enhet. Programmerare gör detta för att kunna manipulera och analysera innehållet på ett strukturerat sätt.
 
-## Hur du gör det
-Det finns flera sätt att ladda ner en webbsida i PHP, men det enklaste sättet är att använda PHPs inbyggda funktion "file_get_contents ()". Till exempel, om vi vill ladda ner den svenska versionen av Wikipedia's huvudsida:
+## Så här:
+Ett enkelt sätt att ladda ner en webbsida är att använda funktionen `file_get_contents()` i PHP. Detta tar en URL som parameter och returnerar innehållet som en sträng. Exempel:
 
 ```PHP
-<?php
-// Hämta innehållet på en sida
-$wiki_sida = file_get_contents("https://sv.wikipedia.org/wiki/Huvudsida");
-
-// Skriv ut innehållet på skärmen
-echo $wiki_sida;
-?>
+$webbsida = file_get_contents('https://www.example.com');
+echo $webbsida;
+```
+Output:
+```
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Exempelwebbplats</title>
+</head>
+<body>
+  <h1>Välkommen</h1>
+  <p>Denna webbplats är endast ett exempel.</p>
+</body>
+</html>
 ```
 
-**Sample output:**
-Textversionen av Wikipedia's huvudsida.
+## Djupdykning:
+Att kunna ladda ner en webbsida är användbart för att till exempel hämta data från en extern källa eller skapa en cache för att förbättra prestandan på en webbplats. Innan `file_get_contents()` infördes, användes funktionen `fopen()` för att öppna en URL som en fil och sedan läsa in innehållet. Detta fungerar fortfarande, men `file_get_contents()` är enklare att använda.
 
-## Djupdykning
-För mer avancerade användare som är intresserade av att ladda ner fler än en sida eller en hel sajt, finns det mer avancerade lösningar såsom att använda "cURL" eller "wget", vilka båda kan hantera nedladdning av flera sidor och hantera eventuella autentiseringsproblem.
-
-Det finns också många tredjepartsbibliotek som kan hjälpa till att ladda ner och hantera webbsidor i PHP, såsom "Guzzle" och "Crawler." Dessa kan vara användbara för mer komplicerade uppgifter som att extrahera specifikt innehåll eller följa länkar på en sida.
-
-## Se även
- - [PHPs officiella dokumentation om file_get_contents ()](https://www.php.net/manual/en/function.file-get-contents.php)
- - [Guzzle](https://docs.guzzlephp.org/en/stable/), en tredjepartsbibliotek för att hantera HTTP-förfrågningar i PHP.
- - [Crawler](https://github.com/danwriggins/crawler), ett PHP-bibliotek för att ladda ner och analysera webbsidor.
+## Se även:
+- [PHP's dokumentation för file_get_contents()](https://www.php.net/manual/en/function.file-get-contents.php)
+- [Exempel på användning av file_get_contents()](https://www.php.net/manual/en/function.file-get-contents.php#example-5446)
+- [Alternativ för att ladda ner en webbsida i PHP](https://www.php.net/manual/en/function.file-get-contents.php#example-3009)

@@ -1,7 +1,7 @@
 ---
-title:                "文字列の長さを求める"
-html_title:           "Arduino: 文字列の長さを求める"
-simple_title:         "文字列の長さを求める"
+title:                "文字列の長さを見つける"
+html_title:           "Arduino: 文字列の長さを見つける"
+simple_title:         "文字列の長さを見つける"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Strings"
@@ -10,37 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+# What & Why?
+ 文字列の長さを求めるとは何か？プログラマーがそれを行う理由は？
 
-アルドゥイーノを使う際、文字列の長さを知ることは重要です。文字列の長さを知ることで、必要なメモリの量を正しく計算することができます。
+文字列の長さを求めるとは、文字列の文字数をカウントすることです。プログラマーがこれを行う理由は、入力された文字列の長さに基づいてプログラムの処理を調整するためです。
 
-## 方法
+# How to:
+ Arduinoのプログラム例とサンプル出力を```Arduino ...```のコードブロックで示します。
 
-Arduinoの`strlen()`関数を使うことで、使用する文字列の長さを求めることができます。以下の例を参考にしてください。
-
-```Arduino
-// 文字列の宣言
+```
+Arduinoのプログラム例:
 char str[] = "こんにちは";
+int len = strlen(str);
+Serial.print("文字列の長さ：");
+Serial.println(len);
 
-// 文字列の長さを求める
-int length = strlen(str);
-
-// シリアルモニターに結果を出力
-Serial.println(length);
+サンプル出力：
+文字列の長さ：5
 ```
 
-上記のコードを実行すると、シリアルモニター上に「5」という数字が表示されるはずです。このように、`strlen()`関数を使うことで簡単に文字列の長さを求めることができます。
+# Deep Dive:
+ 1. 文字列の長さを求めることは、1960年代に開発されたC言語の標準ライブラリ関数である「strlen」に由来しています。
+ 2. 他のプログラミング言語では、文字列の長さを求めるための組み込み関数が提供されています。例えば、Pythonでは「len()」関数を使います。
+ 3. Arduinoでは、文字列の長さを求めるために「strlen()」関数を使用する前に、string.hライブラリをインクルードする必要があります。
+ 
+# See Also:
+関連リソースへのリンク
 
-## さらに深く
-
-`strlen()`関数は、空白を含めた文字の数を数えてくれます。しかし、日本語のように1文字が複数バイトで表現される言語の場合、`strlen()`関数では正確な文字数を数えることができません。そのため、`str.length()`を使うことでより正確な文字数を表示することができます。
-
-## 参考リンク
-
-- [Arduino Reference - strlen()](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/strlen/)
-- [知らないと損する文字列の長さを調べる方法](https://qiita.com/weedslayer/items/80e770a2ce5cb2961e53)
-- [str.lengthとstrlenの違いと使い分け方](https://qiita.com/bus0614/items/e6a5375a1d54d197dfc2)
-
-## 参考文献
-
-- Arduino Reference - strlen(): https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/strlen/
+- Arduinoリファレンス：https://www.arduino.cc/reference/ja/language/variables/data-types/string/functions/strlen/
+- Pythonリファレンス：https://docs.python.org/ja/3/library/stdtypes.html#str.__len__

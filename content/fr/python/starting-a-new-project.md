@@ -10,32 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi démarrer un nouveau projet en Python ?
+## Qu'est-ce que c'est et pourquoi? 
 
-Si vous êtes un développeur Python expérimenté ou un novice cherchant à apprendre ce langage de programmation populaire, vous pouvez être motivé à démarrer un nouveau projet pour diverses raisons. Peut-être avez-vous une idée passionnante que vous souhaitez mettre en œuvre en utilisant Python, ou peut-être cherchez-vous simplement à pratiquer vos compétences en codage. Quelle que soit la raison, démarrer un nouveau projet en Python peut être amusant et enrichissant pour tout développeur.
+Commencer un nouveau projet en programmation peut sembler intimidant, mais c'est simplement le processus de créer quelque chose à partir de zéro. Les programmeurs font cela pour résoudre un problème, améliorer un logiciel existant ou simplement pour s'amuser et apprendre de nouvelles compétences.
 
-## Comment faire ?
+## Comment faire:
 
-Pour commencer un nouveau projet en Python, vous aurez besoin d'un environnement de développement installé sur votre ordinateur. Il existe plusieurs options disponibles, telles que l'utilisation de l'éditeur de texte intégré IDLE, d'un IDE comme PyCharm ou de la console interactive Python. Une fois que vous avez choisi votre environnement, vous pouvez commencer à écrire votre code.
-
-Voici un exemple de code Python pour afficher un message simple à l'écran :
+Voici quelques étapes simples pour démarrer un nouveau projet en python:
 
 ```python
-print("Bonjour! Je suis un nouveau projet en Python.")
+# Créez un nouveau fichier python
+fichier = open("nouveau_projet.py", "w")
+
+# Ecrivez votre code
+fichier.write("print('Bonjour, nouveau projet!')")
+
+# Enregistrez et fermez le fichier
+fichier.close()
 ```
 
-Lorsque vous exécutez ce code, vous devriez voir le message s'afficher dans la console de votre environnement de développement.
+Exécution du code:
 
-## Plongée en profondeur
+```python
+Bonjour, nouveau projet!
+```
 
-En démarrant un nouveau projet en Python, il est important de prendre en compte quelques éléments clés pour garantir sa réussite. Tout d'abord, assurez-vous d'avoir une compréhension solide des bases du langage, telles que la syntaxe et les concepts de base. Ensuite, déterminez le but de votre projet et élaborez un plan avant de commencer à coder. N'oubliez pas de documenter votre code et de le tester régulièrement pour éviter les erreurs et les bugs.
+## Plongée profonde:
 
-## Voir aussi
+Si vous êtes intéressé par l'historique du projet, sachez que le langage de programmation Python a été créé par Guido van Rossum en 1989. Depuis lors, il a connu une augmentation constante de popularité en raison de sa simplicité et de sa polyvalence. Bien que Python soit le langage de choix pour démarrer de nouveaux projets, il existe d'autres alternatives telles que Java, C ++ ou JavaScript.
 
-Pour en savoir plus sur le développement de projets en Python, consultez les ressources suivantes :
+Pour implémenter au mieux un nouveau projet en python, il est important de s'assurer que vous avez accès aux bonnes bibliothèques et outils pour répondre à vos besoins spécifiques. Vous pouvez également rechercher des tutoriels en ligne ou demander des conseils à d'autres programmeurs pour vous aider à démarrer votre projet.
 
-- Documentation officielle de Python : https://docs.python.org/fr/3/
-- Tutoriels Python de W3Schools : https://www.w3schools.com/python/
-- Chaîne YouTube de Corey Schafer sur Python : https://www.youtube.com/channel/UCCezIgC97PvUuR4_gbFUs5g
+## Voir aussi:
 
-Maintenant que vous avez les connaissances de base pour démarrer un nouveau projet en Python, n'hésitez pas à explorer et à expérimenter pour créer des projets incroyables !
+Pour en savoir plus sur le démarrage de nouveaux projets en python, voici quelques liens utiles:
+
+- [Documentation Python](https://docs.python.org/3/tutorial/index.html)
+- [Tutoriels Python](https://realpython.com/)
+- [Communauté Python](https://www.python.org/community/)

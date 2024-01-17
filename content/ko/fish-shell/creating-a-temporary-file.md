@@ -10,51 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+## 무엇이고 왜?
 
-여러분들이 임시 파일을 만드는 방법을 배우는 이유는 간단합니다. 간혹 특정 작업을 할 때, 임시적이고 일시적으로 정보를 저장해야 할 때가 있습니다. 이때 임시 파일을 사용하면 우리가 필요한 정보를 효율적으로 저장하고, 프로그램이 종료되면 자동으로 삭제되기 때문에 공간 절약과 보안 측면에서도 유용합니다.
+임시 파일 생성은 프로그래머들이 프로그램을 실행하는 동안 필요한 임시 데이터를 저장하는 한 가지 방법입니다. 이를테면, 작업 중에 프로그램에서 생성한 데이터를 임시 파일에 저장하고, 작업이 끝나면 해당 파일을 삭제하는 것입니다.
 
-## 해보기전에
+## 방법:
 
-먼저, Fish Shell을 사용하기 위해 설치가 되어있어야 합니다. 아래의 명령어를 사용하여 설치할 수 있습니다.
+Fish Shell에서 임시 파일을 생성하는 방법은 간단합니다. 아래의 예제 코드를 따라해 보세요.
 
-```
-설치 명령어 입력 예: brew install fish
-```
+```fish
+# 임시 파일 생성
+set temp (mktemp)
 
-임시 파일을 만드는 가장 간단한 방법은 다음과 같습니다.
+# 생성한 임시 파일에 데이터를 쓰기
+echo "Hello, world" > $temp
 
-```
-Fish Shell 예제 입력:
-set temp_file (mktemp)
-echo "임시 파일 텍스트" > $temp_file
-echo $temp_file
-```
+# 임시 파일 내용 출력
+cat $temp
 
-위 코드를 실행하면 해당 디렉토리에 임시 파일이 생성되고, 텍스트가 쓰여진 후 해당 파일의 경로가 출력됩니다. 다음으로는 임시 파일을 삭제하는 방법입니다.
-
-```
-Fish Shell 예제 입력:
-rm $temp_file
-ls $temp_file
+# 임시 파일 삭제
+rm $temp
 ```
 
-`rm` 명령어를 사용하여 임시 파일을 삭제하고, 다시 `ls` 명령어를 사용하여 해당 파일이 삭제되었는지 확인할 수 있습니다.
+위 코드를 실행하면, 임시 파일이 생성되고 해당 파일에 "Hello, world"라는 내용이 쓰여지며, 임시 파일을 삭제하면 해당 내용이 사라집니다.
 
-## 더 깊게
+## 깊이 들어가보기:
 
-위의 예시 코드는 기본적인 임시 파일 생성과 삭제 방법을 보여주기 위한 것입니다. 하지만 실제로 프로그래밍에서 임시 파일을 생성하는 데에는 여러 옵션이 존재합니다. 예를 들어, 파일의 이름을 지정하거나, 특정 디렉토리에 생성하는 등의 다양한 방식이 있습니다. 자세한 내용은 Fish Shell 공식 문서를 참고하시기 바랍니다. 또한 임시 파일 생성 외에도, 임시 디렉토리를 생성하는 `mktemp -d` 명령어도 있으니 참고해보시기 바랍니다.
+임시 파일 생성은 프로그래밍에서 자주 사용되는 기법입니다. 옛날에는 프로그램이 실행 중에 메모리가 부족하다면 임시 파일을 사용해서 데이터를 저장했었기 때문입니다. 하지만 최근에는 프로그램이 메모리를 더욱 효율적으로 사용할 수 있게 되면서 임시 파일을 사용하는 경우는 드물어졌습니다. 그래도 여전히 메모리 부족 문제를 해결하기 위해 가끔 사용되는 기법이기도 합니다. Fish Shell에서는 다른 쉘과 비교했을 때 더 간편하게 임시 파일을 생성하고 관리할 수 있습니다. 다른 대안으로는 메모리 내 테이블을 사용하는 방법이 있지만, 이는 임시 파일 생성보다 복잡하고 느릴 수 있습니다.
 
-## 처음이시라면
+## 참고:
 
-에디터와 터미널을 다루는 데에 익숙한 분들이라면 누구나 쉽게 실습해볼 수 있을 것입니다. 하지만 익숙하지 않다면, 아래의 링크를 참고하여 Fish Shell과 기본적인 터미널 명령어를 익힐 수 있습니다.
-
-[Learning Fish Shell](https://fishshell.com/docs/current/index.html)
-
-## 유용한 링크
-
-- [Fish Shell 공식 문서](https://fishshell.com/docs/current/index.html)
-- [Brew로 Fish Shell 설치하기](https://formulae.brew.sh/formula/fish)
-- [mktemp 명령어 설명서](https://linux.die.net/man/1/mktemp)
-- [Learn Shell in 10 Minutes](https://www.codecademy.com/learn/learn-the-command-line/modules/learn-the-command-line-navigation/cheatsheet)
-- [Terminus: Fish Shell Live Tutorial](https://www.youtube.com/watch?v=F_gznforSE0)
+- [Fish Shell Documentation on Temporary Files](https://fishshell.com/docs/current/index.html#tempfiles)
+- [Wikipedia Article on Temporary Files](https://ko.wikipedia.org/wiki/%EC%9E%84%EC%8B%9C_%ED%8C%8C%EC%9D%BC)

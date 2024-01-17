@@ -1,7 +1,7 @@
 ---
-title:                "デバッグ出力を印刷する"
-html_title:           "Elm: デバッグ出力を印刷する"
-simple_title:         "デバッグ出力を印刷する"
+title:                "デバッグ出力の印刷"
+html_title:           "Elm: デバッグ出力の印刷"
+simple_title:         "デバッグ出力の印刷"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Testing and Debugging"
@@ -10,59 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+「## 何 & なぜ?」: デバッグ出力をプリントするとは何か、そしてなぜプログラマーがそれを行うのか、を2〜3文で説明します。
 
-デバッグ出力を表示することに関わって最も重要なのは、コードを理解するためです。デバッグ出力を使用することにより、開発者はコードの実行中に何が起こっているのかをより詳細に把握することができます。
+「## 方法:」: ```Elm ... ```のコードブロックで、プログラム化例とサンプル出力を示します。
 
-## 方法
+## 何 & なぜ?
 
-デバッグ出力を表示するには、 `Debug.log` 関数を使います。以下は、 `Debug.log` 関数を使用して値を出力する例です。
+デバッグ出力をプリントするとは、プログラム実行中にプログラムの内部情報を表示することです。これにより、プログラムの動作を理解し、バグを特定するのに役立ちます。プログラマーがこれを行う理由は、プログラムの実行中に起きている問題を特定し、それを解決するために正しいコードを書くことができるようにするためです。
 
-```Elm
-import Debug
+## 方法:
 
-main =
-  let
-    name = "John"
-    age = 25
-  in
-    Debug.log "Name: " name
-    Debug.log "Age: " (toString age)
+```
+myList = ["apple", "orange", "banana"]
+debug myList
+```
+出力:
+```
+["apple", "orange", "banana"]
 ```
 
-上記のコードでは、 `Debug.log` 関数を使用して`name`と`age`の値を出力しています。出力はデバッガーに表示されるため、実行中に変数の値を確認することができます。
+デバッグ出力を使用するには、まず ```Debug```モジュールをインポートする必要があります。その後、```debug```関数を使用して、出力したい変数を渡します。出力されるのは、変数の値と型の情報です。
 
-また、複雑なデータ構造の値を出力する場合は、 `Debug.toString` 関数を使用することもできます。
+## 深堀り:
 
-```Elm
-import Debug
+デバッグ出力は、プログラムの実行中に問題が発生した場合に特に役立ちます。以前は、プログラムの内部情報を理解するために、変数の値を手動でプリントする必要がありました。しかし、デバッグ出力を使用することで、プログラマーはより効率的にプログラムをデバッグすることができるようになりました。
 
-type alias Person =
-  { name: String
-  , age: Int
-  , address: String
-  }
+デバッグ出力以外にも、デバッグを支援するためのツールや手法があります。例えば、デバッガーやログファイルを使用することができます。しかし、どの方法を使用するかは、プログラマーの好みやケースバイケースで異なります。
 
-person = Person "John" 25 "Tokyo"
+デバッグ出力は、Elmの中で広く使用されているツールの1つです。この言語は、静的型付けと関数型プログラミングの両方の特徴を持っており、デバッグをより簡単にするために設計されています。
 
-Debug.log "Person: " (Debug.toString person)
-```
+## 関連情報:
 
-出力結果は以下のようになります。
-
-```elm
-Person: 
-    { address = "Tokyo"
-    , age = 25
-    , name = "John"
-    }
-```
-
-## 深堀り
-
-`Debug.log` 関数を使用する際に注意することがあります。デバッグ出力は必ずしも正しい値を反映しない場合があり、最終的なプログラムの動作に影響しないこともあります。コードの最適化や最適箇所の特定には、 `Debug.log` を使用することが役立つ場合がありますが、本番環境では避けるべきです。
-
-## 参考リンク
-
-- [Official guide to Debugging in Elm](https://guide.elm-lang.org/debugging/debugging.html)
-- [Debug module documentation](https://package.elm-lang.org/packages/elm/core/latest/Debug)'
+- [Elm公式ドキュメント](https://guide.elm-lang.org) - デバッグ出力を含むElmの機能について詳細に説明しています。
+- [「デバッグ出力とは何か」 (英語)](https://dev.to/t/elm/debugging) - デバッグ出力について詳しく説明したブログ記事です。

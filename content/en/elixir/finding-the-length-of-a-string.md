@@ -10,53 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
+Finding the length of a string means determining the number of characters in a given string. This is a common and crucial task for programmers, as it allows them to manipulate and validate user inputs, calculate data sizes, and perform various string operations.
 
-As a language that prioritizes concurrency and scalability, Elixir offers a powerful and efficient way to determine the length of a string. Whether you are developing a web application, parsing data, or manipulating text, knowing the length of a string is a common task that can greatly improve the performance of your code.
-
-## How To
+## How to:
+To find the length of a string in Elixir, we can use the `String.length` function. This function takes in a string as an argument and returns the number of characters in the string. See the example below:
 
 ```Elixir
 string = "Hello, world!"
-
-# Using the String.length function
 String.length(string)
-
-# Output: 13
-
-# Using the String.codepoints function
-string
-|> String.codepoints()
-|> Enum.count()
-
-# Output: 13
 ```
-
-The easiest way to find the length of a string in Elixir is by using the built-in `String.length` function. This function takes in a string as its argument and returns the length in terms of the number of characters. 
-
-Another approach is to use the `String.codepoints` function, which converts a string into a list of Unicode codepoints. We can then use the `Enum.count` function to determine the number of characters in the list, which is equivalent to the length of the string.
-
-## Deep Dive
-
-Elixir strings are stored using UTF-8 encoding, which means that each character can be represented by one or more bytes. This can lead to inconsistencies when trying to determine the length of a string. For example, depending on the encoding, the word "café" can be represented as either 4 or 5 characters.
-
-To overcome this issue, Elixir provides the `String.graphemes` function, which returns a list of graphemes instead of codepoints. Graphemes refer to the smallest unit of a written language and are more accurate in representing the actual characters in a string.
+Output:
+```
+13
+```
+In addition to the `String.length` function, we can also use the `length/1` function, which takes in a list as an argument and returns the size of the list. Since strings in Elixir are essentially lists of characters, this function can also be used to find the length of a string. See the example below:
 
 ```Elixir
-string = "café"
-
-# Using String.graphemes function
-string
-|> String.graphemes()
-|> Enum.count()
-
-# Output: 4
+string = "Hello, world!"
+length(string)
+```
+Output:
+```
+13
 ```
 
-It is important to note that the length of a string can also be influenced by the current locale setting, which defines the language and region preferences of the user. In such cases, it is recommended to use the `String.length/2` function that takes in a second argument for the locale and provides a more accurate length based on the given locale.
+## Deep Dive:
+Historically, finding the length of a string has been a task that required manual counting by the programmer. However, with the advancement of programming languages, built-in functions like `String.length` and `length/1` have made this task much easier and faster. Alternatives to using these functions include using regular expressions or writing custom functions to iterate through the string and count the characters.
 
-## See Also
+To understand how finding the length of a string works, it's important to know that strings in Elixir are encoded as UTF-8, which is a variable-width character encoding. This means that characters can have different byte sizes, making it crucial to use a built-in function to accurately find the length of a string.
 
-- Official Elixir documentation on String module: https://hexdocs.pm/elixir/String.html
-- Elixir School article on Strings: https://elixirschool.com/en/lessons/basics/string/
-- Discussion on determining the length of a string in Elixir: https://stackoverflow.com/questions/39190553/determining-the-length-of-a-string-in-elixir
+## See Also:
+- [Elixir-lang.org](https://elixir-lang.org/docs/stable/elixir/String.html#length/1) for more information on the `String.length` function.
+- [Elixir-lang.org](https://elixir-lang.org/docs/stable/elixir/Kernel.html#length/1) for more information on the `length/1` function.

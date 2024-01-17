@@ -10,48 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i dlaczego?
+ Konwersja daty na łańcuch znaków oznacza przekształcenie daty i godziny, zapisanej w formacie ułatwiającym przetwarzanie przez komputer, na tekstowy format wyświetlany użytkownikowi. Programiści używają tego sposobu, aby dostosować wyświetlany czas do potrzeb użytkownika lub do formatowania na stronie internetowej.
 
-Czasem w programowaniu musimy przekonwertować datę na ciąg znaków, na przykład w celu wyświetlenia jej w przyjaznym dla użytkownika formacie. W tym artykule dowiesz się, jak w łatwy sposób wykonać taką konwersję w PHP.
-
-## Jak to zrobić
-
-Zacznijmy od wykorzystania wbudowanej funkcji `date()` w PHP, która pozwala na formatowanie daty według podanych parametrów. Poniższy kod zamienia aktualną datę na ciąg znaków w formacie `d-m-Y`, czyli dzień-miesiąc-rok.
-
-```PHP
-$date = date("d-m-Y");
-echo $date;
+## Jak to zrobić:
+``` PHP
+$timestamp = 1577854800;
+echo date("d-m-Y", $timestamp);
 ```
 
-Output: `18-07-2021`
+**Output:**
+01-01-2020
 
-Możemy także wykorzystać funkcję `strtotime()`, która pozwala na konwersję daty podanej w formacie tekstowym na datę w formacie timestamp. Następnie, korzystając z funkcji `date()`, możemy zmienić format tego timestampu na dowolny, który potrzebujemy. Na przykład:
+W powyższym przykładzie $timestamp oznacza liczbę sekund, która minęła od Początku Ery Unix (1 stycznia 1970 r.), a "d-m-Y" to format daty, w którym:
+" d " oznacza dzień, " m " - miesiąc, a " Y " - rok.
 
-```PHP
-$date = "July 18, 2021";
-$timestamp = strtotime($date);
-$converted_date = date("d/m/Y", $timestamp);
-echo $converted_date;
+``` PHP
+echo date("l, F d, Y");
 ```
+**Output:**
+Wednesday, January 01, 2020
 
-Output: `18/07/2021`
+Powyższy kod nie wymaga podania timestamp, ponieważ automatycznie pobiera aktualną datę i godzinę.
 
-Możemy też wykorzystać wbudowany dodatek `DateTime`, który umożliwia wygodną manipulację datami. Poniższy kod zamienia obecną datę na ciąg znaków w formacie `Y-m-d`, czyli rok-miesiąc-dzień.
+## Głębsza analiza:
+ Konwersja daty na łańcuch znaków jest często wykorzystywana w tworzeniu aplikacji internetowych, blogów, czy wszędzie tam, gdzie wyświetlanie aktualnej daty i godziny jest istotne. Alternatywą dla tej metody może być wykorzystanie gotowych bibliotek lub pluginów, które umożliwiają bardziej zaawansowane formatowanie daty oraz uwzględnienie stref czasowych.
 
-```PHP
-$date = new DateTime();
-$date_string = $date->format('Y-m-d');
-echo $date_string;
-```
-
-Output: `2021-07-18`
-
-## Głębsze rozważania
-
-W języku PHP istnieje wiele funkcji i narzędzi pozwalających na konwersję daty na string. Co ciekawe, niektóre z nich, takie jak `strftime()`, umożliwiają także wyświetlenie daty w różnych językach, uwzględniając ustawienia lokalne. Ponadto, warto pamiętać, że PHP posiada wiele wbudowanych formatów dat, które można wykorzystać w funkcji `date()`, zmieniając jedynie podany parametr. Dzięki temu możliwa jest szybka i prosta konwersja daty na dowolny format.
-
-## Zobacz także
-
-- Dokumentacja PHP na temat funkcji `date()`: https://www.php.net/manual/en/function.date.php
-- Dokumentacja PHP na temat narzędzia `DateTime`: https://www.php.net/manual/en/class.datetime.php
-- Opis funkcji `strftime()`: https://www.php.net/manual/en/function.strftime.php
+## Zobacz także:
+- Dokumentacja PHP: https://www.php.net/manual/en/function.date.php
+- Porównanie różnych sposobów konwersji daty w PHP: https://www.tutorialrepublic.com/php-tutorial/php-working-with-date-and-time.php

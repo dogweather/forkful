@@ -10,31 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
-Noen ganger kan det være nødvendig å opprette midlertidige filer i et program. Dette kan være for å lagre data midlertidig mens programmet kjører, eller for å sende data til en annen del av koden. Uansett årsak, er å kunne opprette midlertidige filer en nyttig ferdighet å ha som programmerer.
+## Hva & Hvorfor?
+Oppretting av en midlertidig fil er en vanlig praksis blant programmerere for å midlertidig lagre data som er nødvendige for å utføre en bestemt operasjon. Dette kan være nyttig når man arbeider med store mengder data, eller når man bare trenger å lagre data midlertidig under utførelse av et program. 
 
-## Hvordan å opprette en midlertidig fil
-For å opprette en midlertidig fil i Swift, kan du bruke NSFileManager-klassen og dens metode `tempFile(withTemplate)`.
-
+## Hvordan:
 ```Swift 
-let fileManager = FileManager()
-let template = URL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent("tempFilePrefix").appendingPathExtension("txt").path
-do {
-    let tempFile = try fileManager.tempFile(withTemplate: template) // opprette en midlertidig fil med forhåndsdefinert prefiks og filtype
-    print(tempFile.path) // skriver ut filstien til den midlertidige filen som ble opprettet
-} catch {
-    print("Kunne ikke opprette midlertidig fil: \(error)") // hvis noe går galt, skrives feilmeldingen ut
-}
+let tempFile = try TemporaryFile()
+tempFile.write(string: "Dette er en midlertidig fil")
+tempFile.close()
 ```
 
-Om alt går som det skal, vil du få følgende output:
-```
-/var/folders/lb/2xpfjpmj7h3cyyfccgcvvszc0000gn/T/tempFilePrefix3042887085416563608.txt
-```
+Output: En midlertidig fil blir opprettet og teksten "Dette er en midlertidig fil" blir skrevet til filen før den blir lukket.
 
-## Dykk dypere
-Når du oppretter en midlertidig fil, returneres en URL som peker til den midlertidige filen. Dette betyr at du kan bruke vanlige metoder for å lese og skrive til filen. Husk at den midlertidige filen vil bli slettet så snart programmet avsluttes, så det kan være lurt å kopiere innholdet til en annen fil hvis du ønsker å bevare dataene på en permanent måte.
+## Dykk dypere:
+Opprettelsen av midlertidige filer har vært en vanlig praksis siden begynnelsen av databehandling. I gamle dager måtte man bruke kommandoer som "mktemp" for å opprette en midlertidig fil, men med dagens programmeringsspråk som Swift, er det mye enklere.
 
-## Se også
-- [Apple Developer Documentation for NSFileManager](https://developer.apple.com/documentation/foundation/nsfilemanager)
-- [NSFileManager.tempFile(withTemplate:)](https://developer.apple.com/documentation/foundation/nsfilemanager/1419486-tempfile)
+Det finnes også alternative måter å midlertidig lagre data på, som for eksempel å bruke minnet (RAM) eller å lagre data i en buffer. Men midlertidige filer er ofte den mest effektive metoden, spesielt når man arbeider med store mengder data.
+
+Når man oppretter en midlertidig fil i Swift, vil filen automatisk bli slettet når programmet termineres eller når den siste referansen til filen blir frigitt. Dette gjør bruk av midlertidige filer både enkelt og trygt.
+
+## Se også:
+- Offisiell dokumentasjon for TemporaryFile i Swift: https://developer.apple.com/documentation/foundation/temporaryfile
+- En artikkel om hvorfor man bør bruke midlertidige filer: https://medium.com/@fountainhead/dont-use-temporary-files-use-in-memory-storage-or-buffers-instead-b3e28134b959

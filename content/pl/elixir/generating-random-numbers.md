@@ -10,40 +10,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co & Dlaczego?
+Generowanie losowych liczb jest ważną częścią programowania, ponieważ pozwala na tworzenie losowych i nieprzewidywalnych danych. Programiści często wykorzystują generowanie liczb losowych do testowania swoich kodów, symulacji różnych scenariuszy oraz do tworzenia gier czy losowań.
 
-Generowanie losowych liczb jest nieodłączną częścią programowania. Wykorzystujemy je do symulowania rzeczywistości, gier, losowania i wielu innych zastosowań. W Elixir, możemy generować losowe liczby w prosty i wydajny sposób.
-
-## Jak to zrobić
-
+## Jak to zrobić:
 ```Elixir
-# Wygenerowanie losowej liczby całkowitej
-random_integer = :random.uniform()
-
-# Wygenerowanie losowej liczby z przedziału
-random_float = :random.uniform(1.0..10.0)
-
-# Wygenerowanie losowego ciągu znaków
-random_string = :random.uniform("ABCDEF", length: 5)
-
-# Wygenerowanie listy losowych liczb
-random_list = for _ <- 1..5, do: :random.uniform(1..10)
+rand = :rand.uniform(1..10)
+IO.puts("Wylosowana liczba to #{rand}")
 ```
 
-Output:
+Sample output:
 ```
-random_integer: 162077
-random_float: 5.322336
-random_string: DACEB
-random_list: [7, 2, 10, 9, 4]
+Wylosowana liczba to 4
 ```
 
-## Głębsze spojrzenie
+## Głębszy zanurzenie:
+Pierwszy algorytm do generowania liczb losowych został opracowany w 1946 roku przez Rudy'ego Goldberga i Gerarda Saltona. Alternatywne sposoby tworzenia liczb losowych to m.in. szum gaussowski i symulowane obliczenia kwantowe. W Elixir, generator pseudolosowy został zaimplementowany w module `:rand`, który oferuje różne funkcje do generowania losowych liczb.
 
-W Elixir, funkcja :random.uniform/2 jest wykorzystywana do generowania liczb losowych o rozkładzie jednostajnym na podstawie generatora liczb losowych Xorshift. Możemy również wykorzystać moduł :rand, który oferuje więcej funkcji do generacji różnego typu danych, takich jak listy, krotki i czasami nawet atomów. Warto również zauważyć, że Elixir zapewnia szybkie i wydajne generowanie liczb losowych, co jest szczególnie ważne w aplikacjach wymagających dużych ilości danych losowych.
-
-## Zobacz także
-
-* Dokumentacja Elixir na temat generowania liczb losowych: https://hexdocs.pm/elixir/Random.html
-* Przykładowe zastosowanie generowania liczb losowych w grach: https://www.youtube.com/watch?v=5xZGmEdj-bg
-* Porównanie wydajności generowania liczb losowych w Elixir i innych językach programowania: https://engineering.appsflyer.com/random-numbers-in-elixir-and-other-languages/
+## Zobacz też:
+- Dokumentacja Elixir dla generatora pseudolosowego: https://elixir-lang.org/getting-started/random-numbers.html
+- Biblioteka do generowania liczb losowych: https://hexdocs.pm/secure_random/SecureRandom.html
+- Dyskusja na temat bezpieczeństwa generowania liczb losowych w Elixir: https://elixirforum.com/t/random-number-generation-in-elixir/13404/3

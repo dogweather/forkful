@@ -1,7 +1,7 @@
 ---
-title:                "Écrire des tests"
-html_title:           "C: Écrire des tests"
-simple_title:         "Écrire des tests"
+title:                "Ecrire des tests"
+html_title:           "C: Ecrire des tests"
+simple_title:         "Ecrire des tests"
 programming_language: "C"
 category:             "C"
 tag:                  "Testing and Debugging"
@@ -10,37 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Pourquoi écrire des tests en C
+## Quoi & Pourquoi ?
 
-Si vous développez des applications en C, il est nécessaire de tester votre code pour assurer sa fiabilité et sa qualité. Les tests vous permettent de détecter des bugs, de valider des fonctionnalités et d'améliorer la maintenance de votre code.
+Écrire des tests est une pratique courante pour les programmeurs. Cela consiste à écrire du code supplémentaire pour vérifier que le code existant fonctionne correctement. Les programmeurs le font pour s'assurer que leur code n'a pas de bugs et qu'il fonctionne comme prévu.
 
-## Comment écrire des tests en C
+## Comment faire :
 
-Pour écrire des tests en C, vous avez besoin de la bibliothèque de test standard de C, "assert.h". Elle fournit des macros pour effectuer différentes vérifications sur des expressions et des variables. Voici un exemple de code avec une assertion basique :
+Pour écrire des tests en C, il y a plusieurs étapes à suivre :
 
 ```C
+#include <stdio.h>
 #include <assert.h>
 
-int somme(int a, int b) {
+// Fonction à tester
+int additionner(int a, int b) {
     return a + b;
 }
 
 int main() {
-    int resultat = somme(2, 2);
-    assert(resultat == 4);
+    // Tests avec assert
+    assert(additionner(2, 2) == 4); // Le test réussit, rien ne s'affiche
+    assert(additionner(5, 10) == 15); // Le test réussit, rien ne s'affiche
+    assert(additionner(3, 6) == 9); // Le test échoue, un message d'erreur s'affiche
     return 0;
 }
 ```
-Lorsque vous exécutez ce code, si la condition n'est pas satisfaite, le programme s'arrêtera et affichera un message d'erreur contenant l'expression qui a échoué et le numéro de ligne. Essayez de changer le résultat de l'addition pour voir comment le test échoue.
 
-## Plongée profonde
+## Plongée en profondeur :
 
-Il existe d'autres fonctionnalités dans la bibliothèque "assert.h" qui permettent de tester plus en détail votre code. Vous pouvez notamment utiliser la macro "assert_true" pour tester si une expression est vraie ou "assert_false" pour tester si elle est fausse. De plus, en utilisant la macro "assert_fail", vous pouvez définir vous-même un message d'erreur plus précis en cas d'échec du test.
+Les tests sont devenus une pratique courante dans le développement logiciel pour améliorer la qualité et la fiabilité du code. Avant l'avènement des tests automatisés, les programmeurs devaient tester manuellement leur code, ce qui était fastidieux et sujet à des erreurs. Les tests automatisés permettent d'économiser du temps et de détecter plus facilement les bugs.
 
-N'oubliez pas que les tests doivent être écrits à l'avance et ne doivent pas dépendre d'une logique métier complexe, car ils sont conçus pour tester des comportements précis et spécifiques de votre code.
+Il existe différentes façons d'écrire des tests en C, telles que l'utilisation de bibliothèques de tests comme CUnit ou la mise en place de macros personnalisées pour faciliter l'écriture des tests.
 
-# Voir aussi
+## Voir aussi :
 
-- [Documentation de la bibliothèque assert.h](https://www.gnu.org/software/libc/manual/html_node/Assert.html)
-- [Article sur les bonnes pratiques de test en C](https://hackaday.com/2017/02/07/embed-with-elliot-better-firmware-through-testing/)
-- [Exemple de tests unitaires en C avec la bibliothèque Unity](https://www.throwtheswitch.org/unity)
+- [Guide de tests unitaires en C](https://www.apriorit.com/dev-blog/556-testing-c-code)
+- [Tutoriel sur CUnit](https://triia.fr/articles/][https://triia.fr/articles/tutoriel-csqa-cunit/]

@@ -1,7 +1,7 @@
 ---
-title:                "디버그 출력하기"
-html_title:           "Swift: 디버그 출력하기"
-simple_title:         "디버그 출력하기"
+title:                "디버그 출력을 프린트하기"
+html_title:           "Swift: 디버그 출력을 프린트하기"
+simple_title:         "디버그 출력을 프린트하기"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Testing and Debugging"
@@ -10,26 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
-디버그 출력을 하는 이유는 디버깅 중에 코드의 동작을 이해하고 문제를 해결하는 데 도움을 주기 때문입니다.
+나는 말이야, 프로그래밍을 배우면, 디버그 출력(printing debug output)이 언제나 우리의 코드를 디버깅하는 데 도움이 된다고 생각해. 그래서 이번 글에서는 디버그 출력이 무엇이고, 왜 프로그래머들이 이를 하는지 알아볼 거야.
 
-## 하는 방법
-디버그 출력을 하려면 `print()` 함수를 사용합니다. 예를 들어, `age`라는 변수를 디버그 출력하려면 다음과 같이 코딩합니다.
+## What & Why?
 
-```Swift
-var age = 25
-print("나이는 \(age)살 입니다.")
+디버그 출력은 단순히 우리의 코드 중간에 값을 출력하는 것을 의미해. 이렇게 하면 코드를 실행할 때 어떤 값이 사용되는지 따라갈 수 있어. 이렇게 출력된 값을 보면, 코드에서 버그가 발생하는 곳을 더 쉽게 찾을 수 있어.
+
+## How to:
+
+### 예제 1:
+
+``` swift
+let num1 = 5
+let num2 = 10
+
+print(num1 + num2)
 ```
 
-실행 결과는 다음과 같이 나타납니다.
+### 예제 2:
 
-```Swift
-나이는 25살 입니다.
+``` swift
+func calculateArea(length: Int, width: Int) -> Int {
+  let area = length * width
+
+  print("방의 넓이는 \(area)입니다.")
+
+  return area
+}
+
+calculateArea(length: 5, width: 10)
 ```
 
-## 깊게 파고들기
-디버그 출력에 사용되는 여러 가지 메서드에는 `dump()`와 `debugPrint()` 등이 있으며, 각각 다른 형태의 출력을 제공합니다. 또한, `print()` 함수의 괄호 안에 여러 개의 매개변수를 넣어 한 줄에 여러 개의 출력을 할 수도 있습니다. 이러한 디버그 출력 기법을 적재적소에 활용하여 디버깅을 효율적으로 진행할 수 있습니다.
+## Deep Dive:
 
-## 참고
-- [Apple 공식 문서 - 디버깅 출력](https://developer.apple.com/documentation/swift/swift_standard_library/debugging_output)
-- [Swift 프로그래밍 언어 - 디버깅 출력](https://docs.swift.org/swift-book/LanguageGuide/BasicOperators.html#ID510)
+디버그 출력은 과거에는 프로그래밍의 주요 방법 중 하나였어. 하지만 이제는 디버거(debugger)와 같은 도구들이 발전하면서 많은 프로그래머들이 디버그 출력을 대체하고 있어. 하지만 여전히 간단한 방법으로 코드를 디버깅하는 데 많은 도움이 되는 경우가 많아.
+
+## See Also:
+
+- [The Basics of Debugging in Swift](https://www.twilio.com/blog/basics-of-debugging-in-swift)
+- [Advanced Debugging in Swift](https://sweettutos.com/2020/03/31/advanced-debugging-in-swift-using-lldb/)
+끝이라지만... 계속 디버그 출력을 사용하면 코드 작성에 많은 도움이 될 거야!

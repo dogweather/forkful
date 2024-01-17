@@ -1,7 +1,7 @@
 ---
-title:                "Utiliser les expressions régulières"
-html_title:           "Javascript: Utiliser les expressions régulières"
-simple_title:         "Utiliser les expressions régulières"
+title:                "L'utilisation des expressions régulières."
+html_title:           "Javascript: L'utilisation des expressions régulières."
+simple_title:         "L'utilisation des expressions régulières."
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Strings"
@@ -10,39 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+# Qu'est-ce que c'est et pourquoi les programmeurs utilisent-ils des expressions régulières?
+Les expressions régulières, également connues sous le nom de "RegEx", sont des motifs utilisés pour rechercher et manipuler du texte dans les programmes informatiques. Elles offrent aux programmeurs un moyen puissant et flexible de trouver et de modifier des portions de texte dans leurs codes.
 
-Les expressions régulières sont un outil très utile pour manipuler des données et rechercher des motifs spécifiques dans du texte. En utilisant des expressions régulières, vous pouvez automatiser certaines tâches qui seraient fastidieuses à faire à la main, ce qui peut vous faire gagner du temps et éviter les erreurs.
-
-## Comment faire
-
-Pour utiliser des expressions régulières en Javascript, vous devez d'abord créer une instance de l'objet RegExp, en spécifiant le motif que vous recherchez. Voici un exemple de code qui montre comment rechercher un numéro de téléphone dans une chaîne de caractères :
+# Comment faire:
+Voici quelques exemples de code en Javascript montrant comment utiliser des expressions régulières :
 
 ```Javascript
-const phoneNumber = "Mon numéro de téléphone est le 555-123-4567.";
-const pattern = /\d{3}-\d{3}-\d{4}/; // Le motif doit correspondre à un format de numéro de téléphone américain.
-const result = pattern.exec(phoneNumber); // Utilisation de la méthode exec pour rechercher le motif dans la chaîne.
-console.log(result); // Résultat : ["555-123-4567"]
+// Rechercher un nombre dans une chaîne de caractères
+let string = "Il y a 5 pommes dans le panier.";
+let pattern = /\d/; // utiliser l'expression régulière \d pour trouver un chiffre
+let result = string.match(pattern);
+console.log(result); // affiche 5
+
+// Remplacer un mot dans une phrase
+let sentence = "Je mange du pain au petit-déjeuner.";
+let newWord = "croissant";
+let oldWord = "pain";
+let pattern = new RegExp(oldWord, 'g'); // utiliser la méthode RegExp pour créer une expression régulière avec le mot à remplacer et l'indicateur "g" pour le trouver partout dans la phrase
+let newSentence = sentence.replace(pattern, newWord);
+console.log(newSentence); // affiche "Je mange du croissant au petit-déjeuner."
 ```
 
-Comme vous pouvez le voir, le résultat est une chaîne de caractères correspondant au motif que nous avons spécifié. Cela peut être très utile si vous devez extraire des informations spécifiques d'un grand ensemble de données.
+# Plongée en profondeur:
+Les expressions régulières sont nées dans les années 1950 avec le langage SNOBOL. Elles sont devenues populaires en informatique grâce aux langages Perl et Unix. Les autres alternatives pour la recherche de texte incluent les fonctions de chaîne de caractères en Javascript, mais les expressions régulières offrent une plus grande flexibilité et plus de fonctionnalités.
 
-## Plongée en profondeur
+Outre la méthode `match()` utilisée dans l'exemple ci-dessus, Javascript propose également les méthodes `test()`, `replace()` et `split()` pour travailler avec des expressions régulières. Il est également possible d'utiliser des drapeaux tels que "i" pour ignorer la casse ou "g" pour trouver toutes les occurrences.
 
-Il existe de nombreux caractères spéciaux que vous pouvez utiliser dans des expressions régulières, tels que "\d" pour représenter un chiffre, "\w" pour représenter un caractère alphanumérique et "\s" pour représenter un espace. Vous pouvez également utiliser des quantificateurs pour spécifier le nombre de fois qu'un motif doit apparaître, par exemple "{3}" pour indiquer qu'il doit y avoir exactement trois occurrences du motif.
-
-Il est également possible d'utiliser des groupes de capture dans des expressions régulières. Ces groupes vous permettent de récupérer des parties spécifiques d'une chaîne correspondant au motif. Par exemple, si nous voulons récupérer séparément le code régional et le numéro de téléphone à partir de notre chaîne précédente, nous pouvons utiliser des parenthèses pour créer des groupes de capture :
-
-```Javascript
-const pattern = /(\d{3})-(\d{3}-\d{4})/;
-const result = pattern.exec(phoneNumber);
-console.log(result); // Résultat : ["555-123-4567", "555", "123-4567"]
-```
-
-Vous pouvez ensuite accéder à ces groupes en utilisant les propriétés "index" et "input" de l'objet RegExp.
-
-## Voir aussi
-
-- [MDN Web Docs - Regular Expressions](https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide/Expressions_r%C3%A9guli%C3%A8res)
-- [W3Schools - JavaScript Regular Expressions](https://www.w3schools.com/jsref/jsref_obj_regexp.asp)
-- [RegExp Cheat Sheet](https://www.debuggex.com/cheatsheet/regex/javascript)
+# Voir aussi:
+Pour en savoir plus sur les expressions régulières en Javascript, consultez ces sources :
+- [La documentation officielle de Mozilla](https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide/Expressions_r%C3%A9guli%C3%A8res)
+- [Regex101.com - un site pour tester et debugger des expressions régulières](https://regex101.com/)
+- [Le tutoriel en ligne "Expressions régulières - Apprendre à les utiliser"](https://openclassrooms.com/fr/courses/1304236-apprenez-a-utiliser-les-expressions-regulieres/1304421-les-expressions-regulieres-cest-quoi)

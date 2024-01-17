@@ -1,7 +1,7 @@
 ---
-title:                "Å starte et nytt prosjekt"
-html_title:           "Javascript: Å starte et nytt prosjekt"
-simple_title:         "Å starte et nytt prosjekt"
+title:                "Å begynne på et nytt prosjekt"
+html_title:           "Javascript: Å begynne på et nytt prosjekt"
+simple_title:         "Å begynne på et nytt prosjekt"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Getting Started"
@@ -10,38 +10,18 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
-
-Hvis du er en kreativ person som elsker å lage og bygge, er det å starte et nytt Javascript-prosjekt en flott måte å uttrykke deg på og utvikle dine programmeringsferdigheter. Det er også en god mulighet til å lære nye teknologier og utvide dine kunnskaper innen webutvikling.
-
-## Hvordan
-
-For å starte et nytt Javascript-prosjekt trenger du bare å følge disse enkle trinnene:
-
-- Åpne din foretrukne teksteditor og opprett en ny fil.
-- Lagre filen som "index.js" eller et annet passende navn for prosjektet ditt.
-- Skriv inn følgende kode:
-
-```Javascript
-console.log("Hei verden!");
-```
-
-- Åpne terminalen og naviger til mappen der filen din er lagret.
-- Skriv "node index.js" og trykk enter for å kjøre prosjektet ditt.
-- Du vil se "Hei verden!" utskrevet i terminalen din.
-
-Dette er det mest grunnleggende eksemplet på hvordan du kan starte et Javascript-prosjekt. Du kan også utforske forskjellige Javascript-rammeverk og biblioteker for å utvikle mer avanserte og funksjonsrike applikasjoner.
-
-## Dypdykk
-
-Før du starter et nytt Javascript-prosjekt, er det viktig å ha en klar forståelse av målene dine og hvordan du vil implementere dem ved hjelp av Javascript. Det er også viktig å ha god kjennskap til grunnleggende programmeringskonsepter som variabler, løkker og funksjoner.
-
-Det er også viktig å velge riktig teknologi for prosjektet ditt. For eksempel, hvis du planlegger å utvikle en dynamisk nettapplikasjon, kan du vurdere å bruke et frontend-rammeverk som React eller Vue.js.
-
-Det er også viktig å ha en strukturert og organisert kodebase. Dette vil gjøre det lettere å finne og feilsøke problemer underveis i prosjektet. Det kan være lurt å følge et bestemt utviklingsmønster som MVC eller MVVM.
-
-## Se også
-
-- [The Modern JavaScript Tutorial](https://javascript.info/)
-- [10 Essential Tips for Starting a New Project](https://dev.to/kritika_pattalam/10-essential-tips-for-starting-a-new-project-1o3i)
-- [5 Tips for Structuring Your JavaScript Codebase](https://www.freecodecamp.org/news/5-tips-for-structuring-your-javascript-codebase-12f9b63a4a49/)
+## Hva & Hvorfor?
+Når vi snakker om å starte et nytt prosjekt i Javascript, betyr det å skrive og organisere kode for å lage et nytt program eller applikasjon. Programmerere starter nye prosjekter for å oppnå forskjellige mål, som å utvide funksjonaliteten til et eksisterende prosjekt, eller å lære nye ferdigheter.
+## Slik gjør du det:
+For å starte et nytt prosjekt i Javascript, trenger du bare å følge noen enkle steg:
+1. Lag en ny mappe på datamaskinen din for prosjektet ditt.
+2. Lag en HTML-fil i denne mappen og gi den et passende navn.
+3. Åpne HTML-filen i en tekstredigerer som Visual Studio Code.
+4. Skriv koden din i dette dokumentet mellom ``` <script> ``` og ``` </script> ``` tagger.
+5. Åpne HTML-filen i nettleseren din for å se resultatet av koden din.
+## Dykk dypere:
+En interessant historisk kontekst er at Javascript ble utviklet av Brendan Eich i 1995 mens han arbeidet for Netscape Communications Corporation. Det finnes også alternativer for å starte et Javascript-prosjekt, som å bruke et Javascript-rammeverk som React eller Vue, som gir en mer strukturert og effektiv tilnærming til webutvikling. For å implementere et prosjekt i Javascript, er det viktig å ha grunnleggende forståelse av programmeringskonsepter som variabler, funksjoner og løkker.
+## Se også:
+- [A brief history of JavaScript](https://www.w3.org/community/history/js/)
+- [React: A JavaScript library for building user interfaces](https://reactjs.org/)
+- [Vue.js: The Progressive JavaScript Framework](https://vuejs.org/)

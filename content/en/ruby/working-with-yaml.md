@@ -10,46 +10,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+# Working with YAML in Ruby 
 
-Working with YAML can make your life as a programmer much easier. It allows you to easily store and access data in a human-readable format, making it ideal for configuration files, data storage, and more.
+## What & Why?
+YAML (YAML Ain't Markup Language) is a simple data serialization language, widely used in programming for storing and exchanging data in a human-readable format. It is often used to easily store configuration settings or structured data for applications. Programmers use YAML for its simplicity, readability, and flexibility, making it a popular choice for storing data in Ruby projects.
 
-## How To
-
-To start using YAML in your Ruby projects, first make sure you have the `yaml` gem installed. Then, you can use the `YAML.load_file` method to load a YAML file:
+## How to:
+To use YAML in Ruby, first, we need to require the `yaml` library in our code. Then, we can use the `load` and `dump` methods to convert data to and from YAML format. Let's take a look at an example:
 
 ```Ruby
 require 'yaml'
 
-data = YAML.load_file('config.yml')
+# Create a hash object
+person = { name: "John", age: 30, hobbies: ["coding", "reading", "playing guitar"] }
+
+# Convert to YAML format
+yaml_person = person.to_yaml
+
+# Print YAML output
+puts yaml_person
+
+# Convert YAML back to hash
+hash_person = YAML.load(yaml_person)
+
+# Print hash output
+puts hash_person
 ```
 
-You can also use the `YAML.dump` method to convert a Ruby object into a YAML string:
-
-```Ruby
-hash = { key1: "value1", key2: "value2" }
-
-yaml_string = YAML.dump(hash)
+Output:
+```yaml
+---
+:name: John
+:age: 30
+:hobbies:
+  - coding
+  - reading
+  - playing guitar
+```
+```ruby
+{:name=>"John", :age=>30, :hobbies=>["coding", "reading", "playing guitar"]}
 ```
 
-And to save a YAML file, you can use the `File.write` method with the `YAML.dump` method:
+As you can see, the `to_yaml` method converts the hash object into a string in valid YAML format, while the `load` method converts the YAML string back into a Ruby hash.
 
-```Ruby
-hash = { key1: "value1", key2: "value2" }
+## Deep Dive:
+YAML was first designed in 2001 and is a human-friendly, cross-platform, programming language independent format. It is widely used in various applications and can also be used for configuration files, providing a more readable alternative to traditional formats like XML or JSON. Alternatively, other options for storing data in Ruby include using built-in data structures like arrays or hashes.
 
-File.write("data.yml", YAML.dump(hash))
-```
+One key feature of YAML is that it supports comments, making it easier for developers to add notes or explanations for each data entry. This makes the format more user-friendly and organized compared to others.
 
-## Deep Dive
+The implementation of YAML in Ruby is done through the `Psych` library, which is part of the standard library since Ruby 1.9.3. This library can be extended to support custom objects, making it even more versatile for data serialization.
 
-YAML stands for "YAML Ain't Markup Language" and is a human-readable data serialization language. It uses indentation and colons to represent data structures, making it easy to read and write. 
-
-YAML also supports various data types such as strings, numbers, booleans, arrays, and hashes. These data types can be nested and even referenced within the same YAML document. 
-
-Additionally, YAML allows for comments within the document, making it a great choice for configuration files that may require explanations or notes. 
-
-## See Also
-
-- [YAML specification](https://yaml.org/spec/1.2/spec.html)
-- [YAML gem documentation](https://rubydoc.info/stdlib/yaml/index)
-- [Ruby official website](https://www.ruby-lang.org/)
+## See Also:
+- [YAML Specification](https://yaml.org/spec/1.2/spec.html)
+- [Psych Library Documentation](https://ruby-doc.org/stdlib-2.6.3/libdoc/psych/rdoc/Psych.html)
+- [YAML vs. JSON: Which is Best for Configuration Files?](https://deliciousbrains.com/yaml-vs-json/)

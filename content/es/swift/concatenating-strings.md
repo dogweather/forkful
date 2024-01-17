@@ -1,7 +1,7 @@
 ---
-title:                "Uniendo cadenas de texto"
-html_title:           "Swift: Uniendo cadenas de texto"
-simple_title:         "Uniendo cadenas de texto"
+title:                "Concatenando cadenas"
+html_title:           "Swift: Concatenando cadenas"
+simple_title:         "Concatenando cadenas"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -10,47 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¿Qué y por qué?
 
-La concatenación de strings, o la unión de varias cadenas de texto en una sola, es una práctica común en la programación en Swift. Puede ser útil en situaciones como la creación de mensajes personalizados para el usuario o la construcción de una URL con parámetros específicos. En resumen, la concatenación de strings es una herramienta esencial para manejar texto en cualquier aplicación de Swift.
+Concatenar cadenas simplemente significa unir dos o más cadenas en una sola. Los programadores a menudo lo hacen para crear una cadena más larga o para combinar variables con texto para formatear una salida.
 
-## Cómo hacerlo
+## Cómo:
 
-Para concatenar strings en Swift, podemos utilizar el operador `+` o el método `append()`. Veamos algunos ejemplos de ambos en acción:
+Aquí hay un ejemplo simple de cómo concatenar cadenas en Swift utilizando el operador de adición (+) y la palabra clave "string":
 
 ```Swift
-// Utilizando el operador +
 let nombre = "Juan"
-let saludo = "¡Hola, " + nombre + "!"
-
-print(saludo) // output: ¡Hola, Juan!
-
-// Utilizando el método append()
-let primerNombre = "María"
-let segundoNombre = "Elena"
-let nombreCompleto = primerNombre.append(" ").append(segundoNombre)
-
-print(nombreCompleto) // output: María Elena
+let apellido = "Pérez"
+let nombreCompleto = nombre + " " + apellido
+print(nombreCompleto) // Output: "Juan Pérez"
 ```
 
-Como podemos ver, el operador `+` nos permite unir strings de forma sencilla, mientras que el método `append()` nos da más control sobre cómo queremos combinar nuestras cadenas de texto.
-
-## Profundizando
-
-Además de utilizar el operador `+` y el método `append()`, también podemos concatenar strings utilizando la interpolación de cadenas, utilizando el símbolo `\()`. Veamos un ejemplo:
+Ya que las cadenas se pueden tratar como secuencias de caracteres en Swift, también puedes usar el método de cadena `joined()` para concatenar varias cadenas en lugar del operador de adición:
 
 ```Swift
-let edad = 25
-let mensaje = "Tengo \(edad) años."
-
-print(mensaje) // output: Tengo 25 años.
+let saludo = "¡Hola!"
+let conjunto = ["Buenos", "días"]
+let saludoCompleto = saludo + " " + conjunto.joined(separator: " ")
+print(saludoCompleto) // Output: "¡Hola! Buenos días"
 ```
 
-Aquí, el valor de `edad` se inserta directamente en el string utilizando la interpolación. Esto puede ser especialmente útil para crear mensajes personalizados utilizando datos variables.
+## Buceo Profundo:
 
-También es importante tener en cuenta que, al concatenar strings, es importante asegurarnos de que estemos trabajando con el mismo tipo de datos. Por ejemplo, si intentamos unir un string con un número, obtendremos un error. En su lugar, podemos utilizar el método `String()` para convertir cualquier tipo de dato en un string antes de concatenarlo.
+En el pasado, concatenar cadenas era una tarea tediosa y propensa a errores en los lenguajes de programación, ya que se tenían que manejar los espacios vacíos y otros caracteres especiales manualmente. Sin embargo, en Swift, la sintaxis y los métodos incorporados hacen que esta tarea sea más fácil y menos propensa a errores.
 
-## Ver también
+Además de usar el operador de adición y el método `joined()`, también puedes utilizar la función `String(describing:)` para convertir valores de otros tipos en cadenas y concatenarlos con otras cadenas. Por ejemplo:
 
-- [Documentación oficial de Apple sobre la concatenación de strings en Swift](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#ID290)
-- [Artículo en español sobre el uso de Strings en Swift](https://www.appcoda.com.mx/strings-swift/)
+```Swift
+let edad = 20
+let mensaje = "Tengo " + String(describing: edad) + " años"
+print(mensaje) // Output: "Tengo 20 años"
+```
+
+Hay alternativas a la concatenación de cadenas en Swift, como el método `append()` para agregar cadenas a una cadena existente y el método `appendFormat()` para agregar texto formateado a una cadena. Sin embargo, para la mayoría de los casos, el uso del operador de adición y el método`joined()` será suficiente.
+
+## Ver también:
+
+- [Documentación oficial de Swift sobre cadenas](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+- [Ejemplos de concatenación de cadenas en Swift](https://www.hackingwithswift.com/example-code/strings/how-to-combine-strings-together)

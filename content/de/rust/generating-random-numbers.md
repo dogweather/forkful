@@ -1,7 +1,7 @@
 ---
-title:                "Zufallszahlen generieren"
-html_title:           "Rust: Zufallszahlen generieren"
-simple_title:         "Zufallszahlen generieren"
+title:                "Erzeugung von Zufallszahlen"
+html_title:           "Rust: Erzeugung von Zufallszahlen"
+simple_title:         "Erzeugung von Zufallszahlen"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Numbers"
@@ -10,47 +10,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
-
-Sich mit Zufallszahlen zu beschäftigen kann in vielen Situationen nützlich sein. Zum Beispiel in der Spieleentwicklung, bei der Simulation von Daten oder beim Testen von Software.
+## Was & Warum?
+Das Generieren von Zufallszahlen ist eine gängige Programmieraufgabe, bei der eine zufällige Zahl innerhalb eines bestimmten Bereichs erstellt wird. Programmierer verwenden dies, um zufällige Entscheidungen zu treffen, Spiele zu erstellen, bestimmte Testfälle zu generieren und vieles mehr.
 
 ## Wie geht's?
-
-Um in Rust Zufallszahlen zu generieren, können wir das `rand` Crate verwenden. Zunächst müssen wir es in unserem `Cargo.toml` File hinzufügen:
-
-```Rust
-[dependencies]
-rand = "0.8.4"
+Die `Rand`-Crate in Rust bietet eine einfache Möglichkeit, Zufallszahlen zu generieren. Nachdem diese Crate in Ihr Projekt eingebunden wurde, können Sie die Methode `thread_rng().gen_range()` verwenden, um eine zufällige Zahl in einem bestimmten Bereich zu generieren. Hier ist ein Beispiel:
 ```
-
-Als nächstes importieren wir das Crate in unserem Code:
-
-```Rust
 use rand::Rng;
+
+fn main() {
+    let mut rng = rand::thread_rng();
+    println!("Eine zufällige Zahl zwischen 1 und 10: {}", rng.gen_range(1, 11));
+}
 ```
+Die Ausgabe könnte beispielsweise `Eine zufällige Zahl zwischen 1 und 10: 7` sein.
 
-Jetzt können wir verschiedene Funktionen aus dem Crate nutzen, um Zufallszahlen zu generieren. Zum Beispiel können wir mit `thread_rng()` einen Thread-sicheren Zufallsgenerator erstellen und mit `gen_range()` eine Zufallszahl aus einem bestimmten Bereich generieren:
-
-```Rust
-let my_number = rand::thread_rng().gen_range(1, 10);
-// my_number kann jetzt eine Zahl zwischen 1 und 10 sein
-```
-
-Um Zufallszahlen mit einem bestimmten Datentyp zu generieren, können wir die `gen()` Funktion nutzen, die einen Wert vom Typ `u32` zurückgibt:
-
-```Rust
-let my_number: u32 = rand::thread_rng().gen();
-```
-
-Man kann auch Zufallszahlen mit einer bestimmten Verteilung erzeugen, wie zum Beispiel gleichmäßig oder normal verteilt. Dafür gibt es verschiedene Funktionen wie `gen_range` oder `gen_normal` in dem Crate.
-
-## Tieferes Eintauchen
-
-Das `rand` Crate bietet noch viele weitere Funktionen und Optionen für die Generierung von Zufallszahlen. Man kann zum Beispiel auch eigene Zufallszahlengeneratoren erstellen oder spezielle Generatoren für benutzerdefinierte Datentypen nutzen.
-
-Eine wichtige Sache, die man beim Generieren von Zufallszahlen bedenken sollte, ist, dass diese nicht wirklich zufällig sind. Sie werden mithilfe von mathematischen Formeln und sogenannten "Seed"-Werten erzeugt. Wenn man also den gleichen Seed benutzt, erhält man auch die gleichen Zufallszahlen. Das kann beim Testen von Software hilfreich sein, sollte aber bedacht werden, wenn es um Sicherheit oder Verschlüsselung geht.
+## Tiefergehende Informationen
+Das Generieren von Zufallszahlen ist eine wichtige Aufgabe in der Programmierung und hat eine lange Geschichte. Früher wurden Zufallszahlen durch komplexe mathematische Algorithmen erzeugt, aber heutzutage gibt es viele moderne Bibliotheken und APIs, die diese Aufgabe vereinfachen. In Rust wird die Methode `thread_rng()` von der standardmäßig eingebundenen `rand`-Crate verwendet, die auf der C-Bibliothek `librand` basiert.
 
 ## Siehe auch
-
-- [offizielle Dokumentation des `rand` Crates](https://docs.rs/rand/0.8.4/rand/)
-- [Rust Book: Zufallszahlen](https://doc.rust-lang.org/book/ch07-01-packages-and-crates.html)
+- [Die offizielle Dokumentation zur `Rand`-Crate in Rust](https://docs.rs/rand/0.7.3/rand/)
+- [Weitere Möglichkeiten, Zufallszahlen in Rust zu generieren](https://www.geeksforgeeks.org/generating-random-numbers-in-rust/)

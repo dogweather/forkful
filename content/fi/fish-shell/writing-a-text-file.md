@@ -1,7 +1,7 @@
 ---
-title:                "Tekstitiedoston kirjoittaminen"
-html_title:           "Fish Shell: Tekstitiedoston kirjoittaminen"
-simple_title:         "Tekstitiedoston kirjoittaminen"
+title:                "Tekstitiedoston kirjoittaminen."
+html_title:           "Fish Shell: Tekstitiedoston kirjoittaminen."
+simple_title:         "Tekstitiedoston kirjoittaminen."
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Files and I/O"
@@ -10,50 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mikä & Miksi?
+Teksti tiedoston kirjoittaminen on oleellinen osa ohjelmointia. Koodausprojekteissa saattaa olla tarvetta tallentaa ja lukea erilaisia tietoja, kuten käyttäjän syöttämiä arvoja tai ohjelman tuottamia tuloksia. Tämä onnistuu helposti teksti tiedostojen avulla ja siksi ohjelmoijat käyttävät niitä usein.
 
-Miksi kirjoittaa teksti tiedostoon? On monia syitä, miksi voit haluta tallentaa tietoa teksti tiedostoon. Se voi olla hyödyllistä organisoida tietoa, luoda ohjeita tai tallentaa koodiasi. Jotkut käyttävät sitä myös henkilökohtaisena päiväkirjana tai ajatusten muistiinpanoja. Riippumatta siitä, miksi kirjoitat teksti tiedostoon, tämä opas auttaa sinua tekemään sen Fish Shellin avulla.
+## Kuinka tehdä:
+Fish Shellilla teksti tiedostojen kirjoittaminen on helppoa käyttäen `echo` komentoa ja `>` operaattoria. Alla on esimerkki kirjoittamisesta uuteen tiedostoon nimeltä "teksti.txt":
 
-## Miten
-
-Fishin avulla teksti tiedoston kirjoittaminen on helppoa. Seuraa näitä askelia saadaksesi selkeän kuvan siitä, miten se tehdään.
-
-1. Avaa Fish Shell terminaali.
-2. Luo uusi teksti tiedosto käyttämällä komentoa `touch <tiedoston_nimi.txt>`. Voit antaa tiedostolle haluamasi nimen ja lisätä ".txt" -päätteen varmistaaksesi, että se tallentuu teksti tiedosto muodossa.
-3. Avaa tiedosto teksti editorilla käyttämällä komentoa `nano <tiedoston_nimi.txt>`. Tämä avaa tiedoston `nano` editorissa ja voit alkaa kirjoittaa sisältöä.
-
-```Fish Shell
-
-touch uusi_tiedosto.txt
-
-nano uusi_tiedosto.txt
+```
+Fish Shell: echo "Tämä on uusi teksti tiedosto!" > teksti.txt
 ```
 
-4. Kirjoita haluamasi sisältö tiedostoon ja tallenna se painamalla `CTRL + X` ja sitten `y` vahvistaaksesi muutokset.
-5. Voit nyt nähdä sisällön tiedostossa käyttämällä `cat <tiedoston_nimi.txt>` komentoa.
+Voit myös käyttää `>>` operaattoria, joka lisää tekstiä jo olemassa olevaan tiedostoon sen sijaan että kirjoittaisi uuden tiedoston. Alla on esimerkki:
 
-```Fish Shell
-
-cat uusi_tiedosto.txt
+```
+Fish Shell: echo "Tämä on lisättya tekstiä!" >> teksti.txt
 ```
 
-Tämä tulostaa kaiken tiedostossa olevan tekstin terminaaliin.
+Voit tarkistaa tiedoston sisällön käyttämällä `cat` komentoa:
 
-## Syväsukellus
+```
+Fish Shell: cat teksti.txt
+Tämä on uusi teksti tiedosto!
+Tämä on lisättyä tekstiä!
+```
 
-Kun kirjoitat teksti tiedostoa Fish Shellin avulla, sinulla on käytössäsi useita hyödyllisiä toimintoja ja komentoja.
+## Syvempi sukellus:
+Teksti tiedostojen kirjoittaminen on ollut mahdollista ohjelmoinnin alusta asti. Alun perin tietokoneet käyttivät teksti tiedostoja ohjeiden tallentamiseen ja kommunikointiin käyttäjän kanssa. Nykyään on olemassa monia muita tapoja tallentaa ja lukea tietoja, kuten tietokannoilla ja JSON tiedostoilla. Jotkut käyttävät myös tehokkaampia pyöreitä -> koodaus virheitä välttääkseen.
 
-- Voit käyttää `echo <teksti>` komentoa lisätäksesi tekstin tiedostoon.
-- `>>` -operaattori lisää tekstin tiedoston loppuun ilman, että se korvaa aiemman sisällön.
-- Voit käyttää `wc -w <tiedoston_nimi.txt>` komentoa saadaksesi tietoon, kuinka monta sanaa tiedostossa on.
-- Voit myös käyttää `grep <etsittävä_sana> <tiedoston_nimi.txt>` komentoa löytääksesi tiettyjä sanoja tiedostosta.
-
-Nämä ovat vain muutamia esimerkkejä siitä, mitä voit tehdä Fish Shellin avulla teksti tiedoston kanssa. Kokeile rohkeasti erilaisia komentoja ja löydä itsellesi parhaiten sopivat tavat käyttää tätä kätevää työkalua.
-
-## Katso myös
-
-- [Fish Shellin viralliset dokumentaatiot](https://fishshell.com/docs/current/)
-- [Fish Shell ohjelmointi opas](https://fishshell.com/docs/current/tutorial.html)
-- [Fish Shell - Ainutlaatuinen vaihtoehto bashille](https://www.howtogeek.com/362409/what-is-fish-the-friendly-interactive-shell-for-macos-and-linux/)
-
-Toivottavasti tämä opas auttoi sinua ymmärtämään, miten voit kirjoittaa teksti tiedoston Fish Shellin avulla. Onnea matkaan ja hyödynnä kaikkia Fish Shell:in tarjoamia mahdollisuuksia!
+## Katso myös:
+[Teksti tiedostojen lukeminen Fish Shellilla](https://github.com/fish-shell/fish-shell/blob/master/doc_src/faq.md#How-do-I-access-the-contents-of-a-file)
+[Teksti tiedostojen käsittely ohjelmoinnissa](https://www.codecademy.com/articles/txt-extensions)
+[Fish Shellin virallinen dokumentaatio](https://fishshell.com/docs/current/)

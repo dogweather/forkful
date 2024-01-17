@@ -1,7 +1,7 @@
 ---
-title:                "Arbeid med yaml"
-html_title:           "C++: Arbeid med yaml"
-simple_title:         "Arbeid med yaml"
+title:                "Å jobbe med yaml"
+html_title:           "C++: Å jobbe med yaml"
+simple_title:         "Å jobbe med yaml"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Data Formats and Serialization"
@@ -10,54 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hva & Hvorfor?
+YAML er en populær måte å representere og lagre data på i programmering. Det brukes ofte som et enkelt og menneskelesbart alternativ til JSON-formatet. Programmører bruker YAML for å organisere og strukturere data på en oversiktlig måte.
 
-Hvis du er en C++ programmerer, har du sannsynligvis hørt om YAML-filer. Som er enkelt og leselig format som brukes for å lagre og overføre data. Denne artikkelen vil fortelle deg hvorfor det er verdt å lære hvordan du kan jobbe med YAML i din C++ kode.
-
-## Hvordan
-
-For å jobbe med YAML i C++, må du først inkludere yaml-cpp biblioteket i din kode. Dette biblioteket tillater deg å lese, skrive og manipulere YAML-filer i din C++ applikasjon.
-
-```C++
-#include <yaml-cpp/yaml.h>
+## Hvordan:
+Slik ser en enkel YAML-fil ut:
 ```
-
-Deretter kan du enkelt lese en YAML-fil ved å bruke YAML::Load() metoden og angi filnavnet som parameter. Dette vil returnere en YAML::Node som kan brukes til å få tilgang til dataene i filen.
-
-```C++
-YAML::Node data = YAML::Load("example.yaml");
+name: John Doe
+age: 30
+hobbies:
+- coding
+- reading
 ```
+For å lese denne filen i C++ trenger vi et bibliotek som støtter YAML. Et populært alternativ er [yaml-cpp](https://github.com/jbeder/yaml-cpp). Vi kan deretter lese filen og få tilgang til dataene slik:
+```
+YAML::Node data = YAML::LoadFile("file.yaml");
 
-For å få tilgang til en bestemt dataen i noden, kan du bruke operator[] og angi nøkkelen til dataen som du ønsker å hente.
-
-```C++
 std::string name = data["name"].as<std::string>();
+int age = data["age"].as<int>();
+std::vector<std::string> hobbies = data["hobbies"].as<std::vector<std::string>>();
 ```
 
-Du kan også enkelt legge til data i en YAML-fil ved å bruke operator<< og angi nøkkelen og verdien til dataen du ønsker å legge til.
+## Dypdykk:
+YAML ble opprinnelig laget i 2001 av Clark Evans og Ingy döt Net. Det er inspirert av XML, men med fokus på lesbarhet og enklere syntaks. Alternativer til YAML inkluderer JSON og XML, men YAML er ofte foretrukket på grunn av sin menneskelesbare formatering.
 
-```C++
-data << "age" << 25;
-```
+Når du jobber med YAML, kan det være nyttig å vite at nøkler (keys) er case-sensitiv og at tegn som `:` og `-` har en spesiell betydning i syntaksen. Du kan også bruke ankre (`&`) og referanser (`*`) for å unngå å gjenta data.
 
-For å skrive endringene tilbake til filen, kan du bruke YAML::Emitter og YAML::Node::Write() metoden.
-
-```C++
-YAML::Emitter out;
-out << data;
-std::ofstream myfile("example.yaml");
-myfile << out.c_str();
-```
-
-## Deep Dive
-
-En av fordelene med å jobbe med YAML-filer i C++ er at det er enkelt og effektivt å lese og skrive store mengder data. YAML støtter alle de grunnleggende datatypene, inkludert int, string, float og bool. Det støtter til og med lister og komplekse datatyper som kan være nyttige hvis du trenger å lagre hierarkisk data.
-
-YAML::Node har også mange nyttige metoder som YAML::Node::size() for å få størrelsen på en liste, YAML::Node::begin() og YAML::Node::end() for å iterere gjennom en liste, og YAML::Node::IsScalar() for å sjekke om noden inneholder en enkel verdi.
-
-Hvis du vil ha en mer detaljert forklaring på hvordan du kan jobbe med YAML i C++, kan du sjekke ut yaml-cpp dokumentasjonen på GitHub (https://github.com/jbeder/yaml-cpp/wiki).
-
-## Se også
-
-- YAML.org (https://yaml.org/)
-- yaml-cpp dokumentasjon (https://github.com/jbeder/yaml-cpp/wiki)
+## Se også:
+- [YAML offisiell nettside](https://yaml.org/)
+- [YAML forstått som det er ment å være forstått](https://www.yaml.info/)

@@ -1,7 +1,7 @@
 ---
-title:                "下载网页"
-html_title:           "Elixir: 下载网页"
-simple_title:         "下载网页"
+title:                "从网页上下载 (Cóng wǎngyè shàng xiàzài)"
+html_title:           "Elixir: 从网页上下载 (Cóng wǎngyè shàng xiàzài)"
+simple_title:         "从网页上下载 (Cóng wǎngyè shàng xiàzài)"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "HTML and the Web"
@@ -10,28 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-为什么：从事网页下载的原因可能有很多，例如进行数据抓取、网页分析以及构建网络爬虫等。不管是哪种情况，通过下载网页可以获取所需的信息并对其进行处理。
+当我们浏览网页时，实际上是在下载网页内容并显示在我们的屏幕上。程序员们也会使用类似的方式来下载网页内容，以便进一步处理和操作。
 
-## Why
-为什么要下载网页？下载网页可以帮助我们进行数据抓取、网页分析以及构建网络爬虫等任务。通过下载网页，我们可以获取所需的信息并对其进行处理，从而实现我们的目的。
+### 什么是下载网页和为什么程序员会这么做？
 
-## How To
-下载网页在Elixir中非常简单，只需要使用HTTPoison库中的get函数即可。以下是一个简单的代码示例，展示如何在Elixir中下载网页并打印出网页的内容：
+下载网页可以被视为一个程序员从网络上获取数据的方式。程序员们需要下载网页内容来进行数据分析、网页抓取和其他数据处理操作。这么做的目的是为了从网页中提取重要信息，或者将网页内容作为输入来进行其他操作。
+
+### 如何实施：
 
 ```Elixir
-url = "https://www.example.com"
+require HTTPoison
 
-{:ok, response} = HTTPoison.get(url)
-IO.puts(response.body)
+{:ok, result} = HTTPoison.get("https://www.example.com")
 ```
 
-运行该代码会打印出网页的内容，这样我们就可以对其进行处理或分析了。
+上面的代码使用Elixir内置的HTTPoison库来获取网页内容，并将结果保存在`result`变量中。你可以在这之后使用`result`变量来进一步处理网页内容。
 
-## Deep Dive
-如果想要深入了解网页下载，可以进一步探讨HTTP协议、HTTPoison库的使用方法以及相关的网络知识。HTTP协议是用于在网页间传输数据的通信协议，而HTTPoison则是基于Elixir提供的简单网络服务的库。通过进一步学习这些知识，我们可以更加灵活地应用网页下载技术。
+### 深入了解：
 
-## See Also
-## 链接
-- [HTTPoison文档](https://hexdocs.pm/httpoison/HTTPoison.html)
-- [Elixir教程](https://elixir-lang.org/getting-started/introduction.html)
-- [HTTP协议详解](https://developer.mozilla.org/zh-CN/docs/Web/HTTP)
+历史背景：在过去，下载网页是通过发送HTTP请求和接收HTTP响应来实现的。然而，随着网络技术的发展，现在可以使用更高效的技术来实现网页下载，例如WebSockets或gRPC。
+
+替代方案：除了使用Elixir内置的HTTPoison库，程序员也可以使用其他下载网页的工具和库，例如Scrappy和Crawlkit。
+
+实现详情：HTTPoison库使用Erlang的HTTP-client库来进行网页下载。HTTP-client库又调用Erlang的Inets库来进行底层的网络通信。
+
+### 参考资料：
+
+- [HTTPoison官方文档](https://hexdocs.pm/httpoison)
+- [Scrappy库官方网站](https://github.com/elixir-scraper/scrappy)
+- [Crawlkit库官方文档](https://hexdocs.pm/crawlkit)

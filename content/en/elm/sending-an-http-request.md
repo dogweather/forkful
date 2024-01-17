@@ -10,48 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
+Sending an HTTP request is simply a way for a programmer to communicate with other systems on the internet. It allows for retrieving and sending data between different servers and clients. Programmers often use this to access and manipulate data from external sources, such as APIs, databases, or web services.
 
-Sending HTTP requests is a crucial part of modern web development. Whether you are retrieving data from an external API or posting information to a server, understanding how to send HTTP requests in Elm is essential for building dynamic and interactive web applications.
-
-## How To
-
-To send an HTTP request in Elm, we first need to import the `Http` module.
-
-```Elm
+## How to:
+To send an HTTP request in Elm, we can use the HTTP module. First, we need to import it in our code:
+```
 import Http
+
+```
+Next, we can use the `send` function to create a request and send it to a specific URL:
+```
+Http.send
+    { method = "GET"
+    , headers = [ ]
+    , url = "https://example.com/api"
+    , body = Http.emptyBody
+    , expect = Http.expectJson (\_ -> Json.Decode.succeed SuccessMsg)
+    }
 ```
 
-Next, we can use the `send` function from the `Http` module to create and send our request. It takes two arguments, the first being the configuration for the request and the second being a decoder that will handle the response.
+This code will send a GET request to `https://example.com/api`, with no headers and an empty body. The `expect` field specifies the type of data we expect to receive in response, in this case, a `SuccessMsg` defined beforehand.
 
-```Elm
-request : Http.Request String
-request =
-    Http.get
-        { url = "https://jsonplaceholder.typicode.com/todos/1"
-        , expect = Http.expectString id
-        }
-
-send request
+The `send` function is asynchronous, meaning the code after it will continue executing while the request is being sent. To handle the response, we can use the `Task` module. Here's an example:
+```
+Http.send MsgDecoder <| Http.get "/api/user/123"
 ```
 
-In this example, we are making a `GET` request to the URL of the JSON placeholder API, which will return the first todo item in the form of a string. We use `Http.expectString id` as our decoder, which simply returns the raw string response without any changes.
+In this example, we use `Http.get` which is a shorthand for creating a GET request. `MsgDecoder` is a function that decodes the received data and triggers a `Msg` type with the decoded data. We can then handle this `Msg` type in our `update` function.
 
-Once the request is sent, it will return a response in the form of an `Http.Response` type, which we can handle using the `send` function. Here is an example of how we can handle the response and display it on the page using `Html`.
+## Deep Dive:
+The HTTP module was created to provide a simple and type-safe API for making HTTP requests. It also handles various errors and exceptions that might occur while communicating with external systems.
 
-```Elm
-Html.text response.body
-```
+There are alternative ways to send HTTP requests in Elm, such as using libraries built on top of the HTTP module, or combining the HTTP module with the `Task` module. However, using the default HTTP module is recommended for simpler and more streamlined code.
 
-This will display the response body on the page, which in this case would be the string "the first todo item".
+The implementation details of the HTTP module involve using the Fetch API in the browser, which handles the actual sending of requests. In addition, the Elm compiler enforces a type system on HTTP requests, ensuring they are well-structured and will not fail due to type errors.
 
-## Deep Dive
-
-The `Http` module in Elm comes with various functions that allow us to customize and handle different types of requests, such as `get`, `post`, `put`, and `delete`. We can also add headers and data to our request using the `Http.Header` and `Http.stringBody` functions.
-
-Additionally, Elm provides a built-in error handling mechanism for HTTP requests, using the `Http.Error` type. This allows us to handle various error scenarios, such as network failures, timeouts, and invalid or unexpected responses.
-
-## See Also
-
-- `Http` module documentation: https://package.elm-lang.org/packages/elm/http/latest/
-- Guide to building web apps with Elm: https://guide.elm-lang.org/webapps/
+## See Also:
+- Official Elm documentation for HTTP: https://package.elm-lang.org/packages/elm/http/latest/
+- A beginner-friendly tutorial on using the HTTP module in Elm: https://elmprogramming.com/advanced/http.html
+- A detailed explanation of how the HTTP module works under the hood: https://medium.com/@robertsosinski/the-internals-of-elm-http-90e2e5e97589

@@ -10,59 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+# Testy w Ruby: Dlaczego i jak programiści je piszą?
 
-Czy kiedykolwiek zastanawiałeś się dlaczego programiści spędzają tyle czasu na pisaniu testów? Przecież to tylko kolejny etap w procesie tworzenia oprogramowania. Jednak naprawdę warto poświęcić ten dodatkowy wysiłek. Pisząc testy, możemy mieć pewność, że nasz kod jest funkcjonalny i nie dopuszcza do błędów, co przekłada się na wyższą jakość i niezawodność finalnego produktu.
+## Co & Dlaczego?
+Testy to po prostu fragmenty kodu, które służą do potwierdzenia poprawności działania naszego programu. Są one niezwykle ważnym narzędziem w pracy programisty, ponieważ pozwalają nam upewnić się, że nasz kod jest tak naprawdę odporny na błędy i działa zgodnie z oczekiwaniami. Poza tym, testy dają nam pewność, że zmiany w kodzie nie wpłynęły negatywnie na działanie już istniejących funkcji.
 
-## Jak to zrobić
-
-Aby przetestować swój kod w języku Ruby, możemy wykorzystać framework testowy o nazwie "RSpec". W pierwszym kroku zainstalujmy go przy użyciu polecania `gem install rspec`. Następnie, stwórzmy nowy projekt Ruby i dodajmy do niego folder `spec`. W tym folderze będziemy przechowywać nasze testy.
-
-Teraz, gdy mamy już odpowiednie narzędzia, możemy przystąpić do pisania samych testów. Poniżej przedstawiam przykład testu jednostkowego wraz z wyjaśnieniami:
+## Jak to zrobić:
+W Ruby, pisząc testy, będziemy korzystać z narzędzia o nazwie RSpec. Poniżej znajdziesz przykładowy test, który sprawdza, czy funkcja dodająca dwie liczby działa poprawnie:
 
 ```Ruby
-# Ten test sprawdza, czy suma dwóch liczb jest poprawna.
-# Zaczynamy od podłączenia biblioteki "RSpec".
-require 'rspec'
-
-# Następnie definiujemy nazwę testu.
-RSpec.describe 'Dodawanie' do
-  # Wewnątrz bloku describe możemy zagnieżdżać kolejne bloki.
-  # W tym przypadku tworzymy blok dla metody "sum".
-  describe '#sum' do
-    # Tego typu blok używamy, gdy testujemy konkretną funkcję.
-    context 'gdy oba argumenty są liczbami' do
-      # Podajemy nazwę naszego testu.
-      it 'zwraca poprawną sumę' do
-        # Tworzymy obiekt, na którym będziemy testować metodę "sum".
-        calculator = Calculator.new
-        # Wywołujemy metodę "sum" z dwoma argumentami.
-        result = calculator.sum(2, 3)
-        # W tym miejscu definiujemy oczekiwany wynik.
-        expected_result = 5
-        # Porównujemy wyniki z użyciem metody "expect".
-        expect(result).to eq(expected_result)
-      end
-    end
+# definicja testu
+RSpec.describe "addition" do
+  # przykładowa metoda do testowania
+  it "adds two numbers correctly" do
+    # warunek, który powinien zwrócić true
+    expect(2 + 2).to eq(4)
   end
 end
 ```
-Aby uruchomić nasz test, musimy przejść do folderu z projektem i wpisać w konsoli komendę `rspec spec`, która uruchomi wszystkie testy w folderze `spec`.
 
-## Deep Dive
+## Głębsza analiza:
+Pisanie testów ma długą historię w programowaniu, a pierwsze metody testowania pojawiły się już w latach 60. XX wieku. W Ruby jesteśmy też w stanie pisać testy jednostkowe, które sprawdzają pojedyncze elementy kodu, oraz testy integracyjne, które testują działanie kilku elementów na raz. Alternatywą dla RSpec jest framework MiniTest, jednak większość programistów uważa, że RSpec jest prostszy w użyciu i bardziej intuicyjny.
 
-Pisząc testy, musimy pamiętać o kilku rzeczach:
-
-1. Każdy test powinien być opisowy i czytelny. Dzięki temu łatwiej będzie nam zlokalizować błąd, gdy test nie przejdzie.
-
-2. Musimy sprawdzać warunki brzegowe. Często pomijamy takie przypadki, a to właśnie one mogą powodować błędy w naszym kodzie.
-
-3. Pamiętajmy o testach jednostkowych oraz testach integracyjnych. Te pierwsze odpowiadają za testowanie pojedynczych funkcji, natomiast te drugie za poprawne działanie całego systemu.
-
-4. Przeprowadzajmy testy często, aby na bieżąco weryfikować nasz kod. Dzięki temu unikniemy problemów w przyszłości.
-
-## Zobacz również
-
-- [RubySpec](https://www.rubydoc.info/github/rubyspec/rubyspec)
-- [Tutorial RSpec](https://www.youtube.com/watch?v=JhR9IbX0DR8)
-- [The RSpec Book](https://pragprog.com/book/achbd/the-rspec-book)
+## Zobacz też:
+- Oficjalna strona RSpec: https://rspec.info/
+- MiniTest: https://rubygems.org/gems/minitest
+- Artykuł na temat testowania w Ruby: https://semaphoreci.com/community/tutorials/getting-started-with-rspec

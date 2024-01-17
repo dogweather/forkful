@@ -1,7 +1,7 @@
 ---
-title:                "Satunnaisten lukujen luominen"
-html_title:           "Ruby: Satunnaisten lukujen luominen"
-simple_title:         "Satunnaisten lukujen luominen"
+title:                "Satunnaislukujen luominen"
+html_title:           "Ruby: Satunnaislukujen luominen"
+simple_title:         "Satunnaislukujen luominen"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Numbers"
@@ -10,32 +10,21 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä ja miksi?
+Satunnaisia numeroita generoidaan satunnaislukugeneraattoreilla, jotka ovat algoritmeja, jotka tuottavat luvun, joka ei ole ennustettavissa tai toistettavissa. Tätä tarvitaan monissa ohjelmointitilanteissa, kuten pelien pelaamisessa, salausavaimien luomisessa tai testaamisessa.
 
-Jos haluat luoda tai testata jotakin, jossa tarvitaan satunnaislukuja, Rubyn sisäänrakennettu satunnaislukugeneraattori voi olla erittäin hyödyllinen ja helppo tapa saavuttaa tämä tavoite.
-
-## Miten
+## Miten:
+Käytä Rubyn `rand`-metodia generoidaksesi satunnaisen kokonaisluvun tai liukuluvun. Voit myös määrittää haluamasi välialueen antamalla parametreiksi luvut, joista lukujen tulee olla. Esimerkiksi `rand(1..10)` generoi luvun väliltä 1-10. Tässä on esimerkki koodista ja sen tuottamasta tuloksesta:
 
 ```Ruby
-# Luodaan satunnaisluku välistä 1-10
-puts rand(1..10) 
-# Tulostaa esimerkiksi: 7
-
-# Luodaan satunnaisluku väliltä 0-1
-puts rand() 
-# Tulostaa esimerkiksi: 0.478202347
-
-# Luodaan joukko satunnaislukuja
-puts Array.new(3) { rand(50..100) }
-# Tulostaa esimerkiksi: [64, 87, 55]
+random_number = rand(1..10)
+puts random_number
 ```
 
-## Syväluotaus
+Tässä tapauksessa tulostettu luku voisi olla esimerkiksi 7.
 
-Ruby ohjelmointikielessä on sisäänrakennettu satunnaislukufunktio, joka käyttää Mersenne Twister -algoritmia. Tämä algoritmi on suosittu satunnaislukugeneraattori, joka tuottaa korkealaatuisia ja tasaisesti jakautuneita satunnaislukuja. Jos haluat tarkempaa kontrollia satunnaislukujen luomiseen, voit myös asettaa satunnaislukugeneraattorin siemenen ```srand()```-funktiolla.
+## Syväsukellus:
+Satunnaislukuja on pyritty generoimaan jo vuosisatojen ajan ja algoritmeja on kehitetty jatkuvasti paremmiksi ja luotettavimmiksi. Monet ohjelmointikielet tarjoavat valmiita satunnaislukufunktioita, mutta ne eivät aina ole yhtä tehokkaita tai luotettavia kuin Rubyn `rand`-metodi.
 
-## Katso myös
-
-- [Ruby Docs - Random Class](https://ruby-doc.org/core-2.7.1/Random.html)
-- [Mersenne Twister Algorithm Implementation in Ruby](https://github.com/seattlerb/mersenne_twister)
-- [RubyMonk: Randomness in Ruby](https://rubymonk.com/learning/books/3-ruby-primer-ascent/chapters/11-randomness/lessons/47-randomness-in-ruby)
+## Katso myös:
+[Random numbers in computer science](https://en.wikipedia.org/wiki/Random_number_generation)

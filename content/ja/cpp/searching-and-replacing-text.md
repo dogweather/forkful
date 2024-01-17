@@ -10,74 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+#- Japanese Version
 
-なぜ検索および置換を行うのか、それを理解するためにはプログラマーの視点から考えてみましょう。一つのファイル内には膨大な量の文字列が含まれており、その中から特定の文字列を探し出して置換することは非常に手間がかかります。そこで検索および置換機能を利用することで、効率的に文字列を変更することができるようになります。
+## 何となぜ？
+プログラマーがテキストを検索して置換するのは、コードをより効率的に作成するためです。テキストの検索と置換により、同じコードパターンの使用や不要な手作業を避けることができ、時間と労力を節約することができます。
 
-## How To
+## 方法：
+`` `C++…```コードブロック内にコーディングの例と出力を示します。
 
-検索および置換を行う方法を示すために、以下の例をご覧ください。まずは文字列を宣言し、その中に特定の文字列が含まれているかどうかを検索します。
-
-```C++
+```
 #include <iostream>
 #include <string>
-
 using namespace std;
-
+ 
 int main() {
-
-    // 文字列の宣言
-    string message = "Hello World!";
-
-    // 文字列の検索
-    int index = message.find("World");
-
-    // 検索した文字列の位置を出力
-    cout << "Worldの位置: " << index << endl;
-
+    // テキストを含む文字列を作成する
+    string text = "今日はとても暑いです。私はアイスクリームが欲しいです。";
+    
+    // 検索したい単語を指定する
+    string search = "暑い";
+    
+    // 置換する単語を指定する
+    string replace = "寒い";
+    
+    // 検索して置換する
+    size_t pos = text.find(search);
+    text.replace(pos, search.length(), replace);
+    
+    // 結果をコンソールに出力する
+    cout << text << endl;
     return 0;
 }
 ```
+出力：今日はとても寒いです。私はアイスクリームが欲しいです。
 
-上記のコードを実行すると、"World"の位置である "6" が出力されます。
+## 深く掘り下げる：
+テキストの検索と置換は、プログラミングの世界では古くから行われてきました。これにより、プログラマーはより早く、効率的にコードを作成できるようになりました。代替手段として、正規表現を使用することもできます。また、テキストの検索と置換には、アルゴリズムが使用されます。これらのアルゴリズムには、検索と置換の速度を最適化するためのさまざまな方法があります。
 
-次に、置換を行う例を示します。先ほどと同様に、特定の文字列を検索し、それを置換します。
-
-```C++
-#include <iostream>
-#include <string>
-
-using namespace std;
-
-int main() {
-
-    // 文字列の宣言
-    string message = "Hello World!";
-
-    // 文字列の検索
-    int index = message.find("World");
-
-    // 検索した文字列を "Universe" に置換
-    message.replace(index, 5, "Universe");
-
-    // 置換後のメッセージを出力
-    cout << message << endl;
-
-    return 0;
-}
-```
-
-上記のコードを実行すると、"Hello Universe!"という置換された文字列が出力されます。
-
-## Deep Dive
-
-検索および置換機能を行うためには、文字列を扱う際に使用する「string」クラスが必要です。このクラスには、文字列の検索や置換を行うための多くの便利なメソッドが用意されています。例えば、「find」メソッドは、特定の文字列を検索し、その文字列がある位置を返します。「replace」メソッドは、検索した文字列を任意の文字列に置換します。
-
-さらに、検索や置換の際には正規表現を使用することもできます。これにより、特定のパターンにマッチする文字列を効率的に検索したり、置換したりすることができます。
-
-## See Also
-
-詳しい記述や例を知りたい方には、以下のリンクをご参照ください。
-
-- [C++のstringクラスのドキュメント](https://ja.cppreference.com/w/cpp/string/basic_string)
-- [正規表現について学ぶ](https://www.regular-expressions.info/)
+## 関連リンク：
+- [C++のStringクラスのドキュメント](https://msdn.microsoft.com/ja-jp/library/50zxafb8.aspx)
+- [正規表現チュートリアル](https://www.tutorialspoint.com/cpp_standard_library/regular_expressions_in_stl.htm)
+- [Algorithms and Data Structures in C++](https://www.geeksforgeeks.org/c-plus-plus/)

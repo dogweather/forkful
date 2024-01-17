@@ -10,53 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##为何使用正则表达式
+什么是正则表达式？为什么程序员要使用它？
 
-正则表达式是一种强大的文本搜索工具，可以用来快速匹配特定的文本模式。在编程中，我们经常会遇到需要查找、替换、提取特定字符或字符串的情况，而正则表达式可以帮助我们高效地解决这些问题。
+正则表达式是一种用于匹配文本模式的强大工具。程序员使用它来快速而方便地搜索和替换文本。例如，你可以使用正则表达式来查找所有包含特定单词的文件，或者将一段文本中的某些内容替换为其他内容。正则表达式是一种快速有效的处理文本的方式，因此很多程序员都喜欢使用它们。
 
-##如何使用
+如何在Fish Shell中使用正则表达式？
 
-如果想在Fish Shell中使用正则表达式，首先需要了解其基本语法：使用特殊符号来定义要匹配的模式。例如，想要查找以"S"开头的单词，可以使用 `^S\w*`，其中 `^`表示匹配开头，`\w*`表示匹配后面的任意字符。
+使用正则表达式的基本语法是在Fish Shell中使用正则表达式模式进行搜索和替换。让我们看一个例子：
 
-下面是一个简单的例子，假设我们有一个文件包含以下内容：
-
-```
-Apple
-Banana
-Cherry
-Dragonfruit
+```Fish Shell
+echo "今天是2021年，明天是2022年" | sed "s/[0-9]+/${n}$/g"
 ```
 
-我们想要提取所有以字母A开头的水果名称，可以使用正则表达式 `^A\w*`，并用命令 `grep` 来筛选内容：
+这个例子中使用了`sed`命令来匹配并替换文本中的所有数字，将其替换为`${n}$`。输出结果将是`今天是$n$年，明天是$n+$年`。
 
-```
-$ grep "^A\w*" fruits.txt
-Apple
-```
+深入了解正则表达式
 
-##深入了解
+正则表达式的历史可以追溯到上个世纪50年代，在那时它们被用来处理复杂的匹配问题。现在，几乎所有的编程语言和文本编辑器都集成了正则表达式功能。除了在命令行中使用，你也可以在Java、Python、PHP等编程语言中使用正则表达式。
 
-正则表达式的语法非常灵活，可以根据不同的需求进行组合和调整。下面是一些常用的元字符和用法：
+如果你不想在Fish Shell中使用正则表达式，也可以尝试其他的文本处理工具，如`awk`和`grep`。它们都具有类似的功能，但语法略有不同。
 
-- `.`: 匹配任意单个字符
-- `*`: 匹配前一个字符的零个或多个实例
-- `?`: 匹配前一个字符的零个或一个实例
-- `+`: 匹配前一个字符的一个或多个实例
-- `^`: 用于匹配字符串的开头
-- `$`: 用于匹配字符串的结尾
-- `[]`: 用于匹配指定范围内的字符
-- `|`: 用于指定多个可选模式中的一个
-- `()`: 用于将模式组合在一起
+值得一提的是，在Fish Shell中使用多行正则表达式需要加上`m`标记。你也可以使用`i`来忽略大小写，`g`来匹配所有结果。
 
-更详细的语法和用法可以通过阅读Fish Shell官方文档和其他在线资源来了解。
+相关资源
 
-##参考链接
-
-- [Fish Shell官方文档](https://fishshell.com/docs/current/index.html)
-- [正则表达式教程](https://www.regular-expressions.info/tutorial.html)
-- [简洁易懂的正则表达式指南](https://github.com/ziishaned/learn-regex/blob/master/translations/README-cn.md)
-- [正则表达式测试器](https://regexr.com/)（可在线测试你的正则表达式）
-- [正则表达式游戏](https://alf.nu/RegexGolf)（通过游戏提升你的正则表达式技能）
-
-##参考
-- [Why use Regular Expressions](https://www.datacamp.com/community/tutorials/extracting-data-substrings-regular-expressions)
+-[Fish Shell官方文档](https://fishshell.com/docs/current/index.html)
+-[正则表达式教程](https://regexr.com/)
+-[正则表达式在线测试工具](http://regexr.com/)

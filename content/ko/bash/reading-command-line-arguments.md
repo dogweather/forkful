@@ -1,7 +1,7 @@
 ---
-title:                "컴퓨터 프로그래밍: 커맨드 라인 인수 읽기"
-html_title:           "Bash: 컴퓨터 프로그래밍: 커맨드 라인 인수 읽기"
-simple_title:         "컴퓨터 프로그래밍: 커맨드 라인 인수 읽기"
+title:                "명령 줄 인수 읽기"
+html_title:           "Bash: 명령 줄 인수 읽기"
+simple_title:         "명령 줄 인수 읽기"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Files and I/O"
@@ -10,41 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+## 무엇인가 & 왜?:
+커맨드라인 인자를 읽는 것은 프로그래머가 사용자로부터 입력받은 데이터를 읽어오는 것을 말합니다. 이를 통해 우리는 프로그램을 실행할때 다양한 입력 값을 전달할 수 있습니다. 그리고 이러한 기능은 사용자의 요구에 맞는 커스터마이징된 프로그램을 만드는 데에 도움이 됩니다.
 
-무엇이 바로 Bash 프로그래밍을 배워야 할 이유일까요? 바로 커맨드 라인 인자를 읽는 것입니다. 이 기능은 이제까지 배웠던 다른 언어에서는 볼 수 없었던 다양한 기능을 사용할 수 있게 해줍니다. 따라서 우리는 굳이 프로그래밍이나 개발을 할 때마다 복잡한 IDE를 사용하지 않고도 편리하게 프로그램을 실행할 수 있습니다.
-
-## 사용 방법
-
-커맨드 라인 인자를 읽는 방법은 아주 간단합니다. 우선, 명령어 뒤에 공백을 두고 "```-옵션```"과 같은 형식으로 추가 인자를 넣어줍니다. 그리고 이 명령어와 함께 함께 입력된 인자들은 자동으로 "```$@```"라는 변수에 저장됩니다. 이제 이 변수를 활용하여 원하는 작업을 수행하면 됩니다. 아래는 예제 코드와 실행 결과입니다.
+## 하우 투:
+```Bash
+echo "Hello $1!"
+```
+위 코드는 "Hello" 다음에 오는 첫 번째 인자를 받아서 출력하는 예제입니다. 예를 들어, "bash example.sh world"를 실행하면 "Hello world!"라는 결과가 나옵니다.
 
 ```Bash
-# 인자가 존재하는지 확인하기
-if [ $# -eq 0 ]; then
-  echo "사용법: ./program -option"
-  exit 1
-fi
-
-# 모든 인자 출력하기
-echo "전달된 인자들: $@"
-
-# 특정 인자 추출하여 사용하기
-option="$1"
-echo "넘겨받은 옵션: $option"
+echo "The sum of $1 and $2 is $(($1+$2))"
 ```
+이 코드는 첫 번째와 두 번째 인자를 받아서 그 값을 더한 후 출력하는 예제입니다. 예를 들어, "bash example.sh 3 5"를 실행하면 "The sum of 3 and 5 is 8"라는 결과가 나옵니다.
 
-```
-사용법: ./program -option
-전달된 인자들: -option
-넘겨받은 옵션: -option
-```
+## 깊이 들어가보기:
+커맨드라인 인자를 읽는 것은 일반적으로 C언어나 자바를 비롯한 다양한 프로그래밍 언어에서 가능합니다. 이는 입력값을 전달하는 간편한 방법이기 때문에 매우 흔한 기능입니다. 그러나 이 방법보다 더 복잡한 입력 값 처리가 필요한 경우, 사용자가 직접 입력하는 대화형 명령어를 받는 전용 라이브러리를 사용하는 것도 가능합니다.
 
-## 깊게 들어가기
-
-커맨드 라인 인자를 다루는 방법은 상황에 따라 다양합니다. 예를 들어, 여러 개의 인자를 받아서 각각 다른 작업을 수행하거나, 인자가 없을 때 실행되는 기본 동작을 지정하는 등 다양한 방법이 있습니다. 또한, "```getopt```"와 같은 라이브러리를 활용하면 더욱 복잡한 옵션 처리도 쉽게 할 수 있습니다. 더 자세한 정보는 관련 문서나 블로그를 참고하시기 바랍니다.
-
-## 관련 자료
-
-- [GNU Bash 공식 문서](https://www.gnu.org/software/bash/manual/bash.html)
-- [유용한 Bash 스크립팅 튜토리얼](https://linuxhint.com/bash_scripting_basic/)
-- [Bash 커맨드 라인 인자 처리하기](https://www.baeldung.com/linux/bash-command-line-arguments)
+## 참고 자료:
+- [Bash command line arguments](https://www.tutorialspoint.com/unix_commands/bash.htm)
+- [Reading command line arguments in Bash](https://www.gnu.org/software/bash/manual/html_node/Bash-Builtins.html)
+- [Command line arguments in Bash scripting](https://www.shell-tips.com/bash/command-line-arguments-in-bash-scripting/)
+- [Bash scripting cheatsheet](https://devhints.io/bash)

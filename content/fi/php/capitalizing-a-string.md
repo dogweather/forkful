@@ -1,7 +1,7 @@
 ---
-title:                "Merkkijonon muuttaminen isoiksi kirjaimiksi"
-html_title:           "PHP: Merkkijonon muuttaminen isoiksi kirjaimiksi"
-simple_title:         "Merkkijonon muuttaminen isoiksi kirjaimiksi"
+title:                "Merkkijonon suurennus"
+html_title:           "PHP: Merkkijonon suurennus"
+simple_title:         "Merkkijonon suurennus"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Strings"
@@ -10,44 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+Mikä & Miksi?
+Merkkijonon suuriksi kirjaimiksi muuttaminen tarkoittaa, että jokainen merkki merkkijonossa muuttuu isoiksi kirjaimiksi. Ohjelmoijat tekevät tämän yleensä selkeyttääkseen tai yhdenmukaistaakseen tekstiä, tai helpottaakseen merkkijonojen vertailua.
 
-Yksi yleinen toimenpide PHP-ohjelmoinnissa on merkkijonojen muokkaaminen. Toisinaan haluamme esimerkiksi muuttaa merkkijonon ensimmäisen kirjaimen isoksi. Tämä voi olla hyödyllistä esimerkiksi, kun haluat näyttää käyttäjän syötteet oikeassa muodossa.
-
-## Kuinka tehdä
-
+Miten:
+PHP:n strtoupper-funktio voidaan käyttää merkkijonojen suuriksi kirjaimiksi muuttamiseen. Esimerkki:
 ```PHP
-$string = "tämä on esimerkki";
-echo ucfirst($string);
-```
-
-Tulostus:
-```
-Tämä on esimerkki
-```
-
-Funktio `ucfirst()` muuttaa merkkijonon ensimmäisen kirjaimen isoksi. Tämä koskee kuitenkin vain ensimmäistä kirjainta eikä vaikuta muihin kirjaimiin merkkijonon sisällä.
-
-Voimme myös muuttaa kaikki merkkijonon kirjaimet isoksi käyttämällä funktiota `strtoupper()`:
-
-```PHP
-$string = "tämä on esimerkki";
+$string = "Tämä on esimerkkiteksti";
 echo strtoupper($string);
+// Tulostaa "TÄMÄ ON ESIMERKKITEKSTI"
 ```
 
-Tulostus:
+Jos haluat muuttaa vain ensimmäisen merkin suureksi kirjaimeksi, voidaan käyttää ucfirst-funktiota. Esimerkki:
+```PHP
+$string = "tämä on esimerkkiteksti";
+echo ucfirst($string);
+// Tulostaa "Tämä on esimerkkiteksti"
 ```
-TÄMÄ ON ESIMERKKI
-```
 
-## Syvempi sukellus
+Deep Dive:
+Merkkijonon suuriksi kirjaimiksi muuttamista käytettiin ennen vanhaan välttämään koodin aiheuttamia ongelmia eri järjestelmien välillä. Nykyisin se on enemmänkin tapa tehdä tekstistä yhtenäisempää ja selkeämpää. Muita vaihtoehtoja tähän ovat esimerkiksi strtolower, joka muuttaa merkkijonon pieniksi kirjaimiksi, tai mb_convert_case, joka ottaa huomioon myös erikoismerkit ja kielitiedon.
 
-Merkkijonon muokkaamiseen on muitakin tapoja kuin vain muuttaa ensimmäinen kirjain isoksi. Voimme käyttää esimerkiksi funktioita `strtolower()` ja `ucwords()` muuttaaksemme kaikki kirjaimet pieniksi tai muuttaaksemme pelkän ensimmäisen kirjaimen jokaisessa sanassa isoksi.
-
-Lisäksi merkkijonoihin on mahdollista käyttää monia muita manipulointifunktioita, kuten `trim()` poistaaksemme tyhjät välilyönnit merkkijonon alusta ja lopusta.
-
-## Katso myös
-
-- [PHP:n virallinen dokumentaatio merkkijonojen muokkaamisesta](https://www.php.net/manual/en/ref.strings.php)
-- [Tutoriaali merkkijonojen muokkaamisesta PHP:llä](https://www.w3schools.com/php/php_string.asp)
-- [Konversiokytkimet ja merkkijonon muotoilu PHP:ssä](https://www.freecodecamp.org/news/a-quick-intro-to-formatting-strings-in-php-sprintf-strftime-and-more/)
+See Also:
+- strtoupper-funktion dokumentaatio: https://www.php.net/manual/en/function.strtoupper.php
+- Tietoa merkkijonon muokkaamisesta PHP:ssa: https://www.php.net/manual/en/ref.strings.php

@@ -1,7 +1,7 @@
 ---
-title:                "Analisando HTML"
-html_title:           "Gleam: Analisando HTML"
-simple_title:         "Analisando HTML"
+title:                "Parsing HTML"
+html_title:           "Gleam: Parsing HTML"
+simple_title:         "Parsing HTML"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "HTML and the Web"
@@ -10,30 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
-Parsing HTML pode ser uma tarefa tediosa e propensa a erros, mas com a linguagem de programação [Gleam](https://gleam.run/), é possível tornar esse processo mais simples e eficiente.
+## O que e por que?
 
-## Como fazer
-Para começar a fazer o parsing de HTML com Gleam, é preciso primeiro instalar a [biblioteca de HTML](https://hex.pm/packages/gleam_html) disponível no [Hex](https://hex.pm/).
+Fazer o parsing (análise) de HTML é essencial para manipular informações em páginas da web. Isso permite que os programadores extraiam dados específicos de uma página e os utilizem em seus aplicativos. Além disso, o parsing de HTML é necessário para fornecer uma experiência interativa ao usuário e realizar tarefas automatizadas em sites.
 
-Dentro do seu código, é preciso importar essa biblioteca utilizando o comando `import html` e, em seguida, utilizar a função `parse` para passar o conteúdo HTML que deseja analisar. Por exemplo:
+## Como fazer:
+
+Para fazer o parsing de HTML no Gleam, você pode usar a biblioteca `html_parser`, que permite a extração de dados de uma página HTML de forma fácil e eficiente. Aqui está um exemplo de como utilizar essa biblioteca:
 
 ```
-Gleam ..
+Gleam.import_html.parser
 
-import html
+let html = "
+<html>
+  <body>
+    <h1>Olá, Gleam!</h1>
+    <p>Este é um exemplo de página HTML.</p>
+  </body>
+</html>
+"
 
-html.parse("<h1>Olá Gleam!</h1>")
+let doc = html_parser.parse(html)
+
+let header = html_parser.find_one(doc, "h1")
+let paragraph = html_parser.find_one(doc, "p")
+
 ```
 
-O resultado deste código será uma estrutura de dados que representa o HTML fornecido, permitindo que você acesse o conteúdo de forma mais organizada e precisa.
+O código acima importa a biblioteca `html_parser`, define uma variável com o conteúdo HTML, faz o parsing desse conteúdo e utiliza a função `find_one` para extrair o conteúdo do `h1` e do `p` da página.
 
-## Aprofundando
-Além de simplesmente fazer o parsing de um documento HTML, o Gleam também oferece um conjunto de funções para extrair dados específicos do documento, como tags, atributos e texto. Essas funções incluem `get_tag`, `get_attr` e `get_text`.
+## Explorando mais:
 
-Além disso, o Gleam também permite a utilização de expressões XPath para selecionar elementos específicos do documento, tornando o processo de parsing ainda mais poderoso e flexível.
+Apesar de ser uma tarefa comum no desenvolvimento web, o parsing de HTML pode ser um desafio para muitos programadores. Além disso, existem alternativas ao uso de bibliotecas externas, como o uso de expressões regulares, por exemplo. No entanto, a biblioteca `html_parser` do Gleam oferece uma implementação simples e robusta para essa tarefa.
 
-## Veja também
-- [Documentação oficial do Gleam](https://gleam.run/documentation/)
-- [Guia de instalação](https://gleam.run/getting-started/)
-- [Pacote Gleam HTML no Hex](https://hex.pm/packages/gleam_html)
+## Veja também:
+
+[Repositório do html_parser no GitHub](https://github.com/gleam-lang/html_parser)
+
+[Tutorial sobre parsing de HTML em Gleam](https://gleam.run/news/html-parsing-tutorial/)

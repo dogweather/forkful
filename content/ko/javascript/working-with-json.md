@@ -1,7 +1,7 @@
 ---
-title:                "json 작업하기"
-html_title:           "Javascript: json 작업하기"
-simple_title:         "json 작업하기"
+title:                "JSON 사용하기"
+html_title:           "Javascript: JSON 사용하기"
+simple_title:         "JSON 사용하기"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Data Formats and Serialization"
@@ -10,42 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+## 뭘? 왜?
 
-JSON은 자바스크립트에서 데이터를 교환하는 데에 널리 사용되는 형식입니다. 이를 사용하면 데이터를 쉽게 읽고 사용할 수 있으며, 전송 및 저장 과정에서도 유용하게 사용될 수 있습니다.
+JSON은 자바스크립트와 다른 프로그래밍 언어 간에 데이터를 교환하기 위한 가벼운 형식입니다. 프로그래머들은 이를 사용하여 데이터를 구조화하고 전송하기 쉽게 만들기 위해 사용합니다.
 
-## 방법
-
-JSON은 일반적으로 객체 형식으로 작성되며, 키와 값 쌍으로 구성됩니다. 예를 들어 다음과 같이 작성할 수 있습니다.
+## 어떻게:
 
 ```Javascript
-let myObj = {
+// JSON 형식의 데이터 생성
+var person = {
   name: "John",
-  age: 25,
-  profession: "Developer"
-}
+  age: 30,
+  occupation: "Developer"
+};
 
-console.log(JSON.stringify(myObj));
+// JSON 형식의 데이터 출력
+console.log(JSON.stringify(person)); 
+
+// JSON 데이터를 자바스크립트 객체로 변환
+var data = '{"id": 1, "name": "Jane", "occupation": "Designer"}';
+var person2 = JSON.parse(data);
+console.log(person2.name); // "Jane"
 ```
 
-위 코드에서는 `JSON.stringify()` 메소드를 사용하여 객체를 문자열 형태로 변환하고, `console.log()`를 사용하여 해당 결과를 출력합니다.
+## 깊게 파헤치기:
 
-출력 결과는 다음과 같습니다.
+JSON은 2001년에 더글라스 크락포드(Douglas Crockford)가 만든 형식이며, 기존의 XML보다 가볍고 간결한 형식으로 많이 사용되고 있습니다. 대안으로는 XML, YAML, CSV 등이 있지만, JSON의 단순성과 높은 호환성으로 인해 다른 형식들에 비해 많은 사용자들이 있습니다. 자바스크립트에서는 위 예시와 같이 JSON을 다루기 위한 내장 함수인 `JSON.stringify()`와 `JSON.parse()`가 있습니다.
 
-```Javascript
-{"name":"John","age":25,"profession":"Developer"}
-```
+## 더 알아보기:
 
-JSON 형식은 보기 쉽고, 다루기 쉽습니다. 따라서 자바스크립트에서 데이터를 다룰 때 유용하게 활용될 수 있습니다.
-
-## 깊이 들어가기
-
-JSON은 텍스트 형식으로 데이터를 저장하므로, 다양한 프로그래밍 언어 간에도 쉽게 교환될 수 있습니다. 예를 들어 서버와 클라이언트 간에 데이터를 주고받을 때 많이 사용됩니다.
-
-또한 JSON은 많은 유용한 메소드들을 제공합니다. 위에서 언급한 `JSON.stringify()` 외에도 `JSON.parse()`를 사용하여 문자열 형태의 JSON 데이터를 자바스크립트 객체로 변환할 수 있습니다.
-
-## 연관된 링크
-
-- [MDN JSON 문서](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/JSON)
-- [JSON Tutorial](https://www.tutorialspoint.com/json/)
-- [JSON Validator](https://jsonlint.com/)
+- [JSON 공식 홈페이지](https://www.json.org/json-ko.html)
+- [JSON의 장단점 비교하기](https://www.mobilize.net/blog/bid/66525/Comparing-XML-and-JSON)

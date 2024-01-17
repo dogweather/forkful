@@ -10,41 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Warum:
+## Was & Warum?
 
-Es kann mühsam sein, Tests zu schreiben, aber es hat viele Vorteile. Tests helfen, Fehler im Code frühzeitig zu erkennen und verhindern Regressionen bei zukünftigen Änderungen. Sie ermöglichen auch eine schnellere Fehlerbehebung und verbessern die Code-Qualität insgesamt.
+Tests schreiben ist eine gängige Praxis in der Programmierung, um sicherzustellen, dass der Code richtig funktioniert und keine unerwünschten Fehler enthält. Programmierer tun dies, um die Qualität des Codes zu gewährleisten und sicherzustellen, dass er den Anforderungen entspricht.
 
-Wie geht's:
+## Wie geht's?
 
-```Fish Shell``` enthält ein eingebautes Test-Framework namens ```fish_assert```, das es einfach macht, Tests zu schreiben. Hier ist ein einfaches Beispiel eines Tests, der überprüft, ob die Ausgabe einer Funktion mit der erwarteten Ausgabe übereinstimmt:
+Das Schreiben von Tests in Fish Shell ist äußerst einfach und erfordert nur ein paar Zeilen Code. Im Folgenden sehen Sie ein Beispiel, wie Sie einen einfachen Test für eine Funktion schreiben, die zwei Zahlen addiert:
 
-```
-function double (num)
-    return $num * 2
+```Fish Shell
+start_test "Teste addiere Funktion"
+set -q result (math add 2 3)
+if [ $result -eq 5 ]
+    echo "Test erfolgreich"
+else
+    echo "Test fehlgeschlagen"
 end
-
-fish_assert double(5) -eq 10
 ```
-Dieser Test verwendet die Funktion ```fish_assert```, um zu überprüfen, ob die Ausgabe von ```double(5)``` gleich 10 ist. Wenn dies der Fall ist, gibt der Test erfolgreich zurück. Andernfalls wird eine Fehlermeldung ausgegeben.
 
-Ein weiteres Beispiel ist ein Test mit benutzerdefinierten Nachrichten, um den Testfall zu beschreiben:
+Wenn dieser Code ausgeführt wird, wird die Nachricht "Test erfolgreich" ausgegeben, da die Funktion tatsächlich 2 und 3 zu 5 addiert. Dies ist eine einfache Möglichkeit, um sicherzustellen, dass die Funktion korrekt arbeitet.
 
-```
-function is_even (num)
-    return $num % 2 == 0
-end
+## Tiefere Einblicke
 
-fish_assert is_even(4) -eq 1 "Expected 4 to be even, but it was odd."
-```
-Dieser Test verwendet den zusätzlichen Parameter, um eine Nachricht anzugeben, die angezeigt wird, wenn der Test fehlschlägt. Dies kann hilfreich sein, um den Grund für den Fehler schnell zu identifizieren.
+Das Konzept des Testens ist nicht neu und wird schon seit vielen Jahren von Programmierern verwendet. Es gibt auch alternative Methoden, um Tests in Fish Shell zu schreiben, wie zum Beispiel die Verwendung von speziellen Test-Frameworks. Diese können jedoch komplexer sein und zusätzliche Kenntnisse erfordern.
 
-Tiefentauchen:
+In Fish Shell gibt es auch die Möglichkeit, unterschiedliche Arten von Tests auszuführen, wie zum Beispiel Unit-Tests und Integrationstests. Dies hängt von den spezifischen Anforderungen des Projekts und der Komplexität des Codes ab.
 
-Es gibt verschiedene Arten von Tests, die in der Praxis verwendet werden können, wie z.B. Unit-Tests, Integrationstests und Funktionstests. Es ist wichtig, dass Tests ausreichend abdeckend sind und verschiedene Szenarien abdecken, um sicherzustellen, dass der Code korrekt funktioniert.
+## Siehe auch
 
-Es ist auch wichtig, dass Tests regelmäßig ausgeführt werden und bei Bedarf aktualisiert werden, um sicherzustellen, dass sie mit den Änderungen im Code Schritt halten. Es ist eine gute Praxis, Tests automatisiert auszuführen, z.B. bei jedem Push in ein Repository oder als Teil eines Continuous Integration-Prozesses.
-
-Siehe auch:
-
-- [Fish Shell Dokumentation](https://fishshell.com/docs/current/index.html#assertions)
-- [Einleitung zu Tests mit Fish Shell](https://dev.to/johlepisto/introduction-to-tests-with-fish-shell-1k9h)
+Wenn Sie mehr über das Schreiben von Tests in Fish Shell erfahren möchten, empfehlen wir die offizielle Dokumentation und die zahlreichen Tutorials, die im Internet verfügbar sind. Das Schreiben von Tests ist eine wichtige Fähigkeit für jeden Programmierer und kann dazu beitragen, zuverlässige und fehlerfreie Anwendungen zu entwickeln. Also zögern Sie nicht, sich einzulesen und Ihre Test-Fähigkeiten zu verbessern!

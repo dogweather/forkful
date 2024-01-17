@@ -1,7 +1,7 @@
 ---
-title:                "Analys av html"
-html_title:           "C++: Analys av html"
-simple_title:         "Analys av html"
+title:                "Analysera html"
+html_title:           "C++: Analysera html"
+simple_title:         "Analysera html"
 programming_language: "C++"
 category:             "C++"
 tag:                  "HTML and the Web"
@@ -10,47 +10,69 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
-Det finns många webbapplikationer som genererar HTML-kod och ibland behöver vi extrahera information från dessa sidor. Det är då vi kan använda oss av HTML-parsing för att effektivt extrahera den informationen vi behöver.
+## Vad & Varför?
 
-## Hur man gör det
+Att parsra HTML är processen att återställa strukturen på en webbsida från sin textbaserade kod till en mer läsbar form. Detta hjälper till att extrahera information från en webbsida och kan vara användbart för att skapa webbskrapare eller automatiserade processer.
+
+## Hur man gör:
+
 ```C++
 #include <iostream>
+#include <fstream>
 #include <string>
-#include <algorithm>
+#include <regex> // regex library for C++
+using namespace std;
 
-int main()
-{
-    // Skapa en sträng med HTML-kod
-    std::string html = "<h1>Detta är en rubrik</h1>";
+int main() {
+  // Open HTML file for parsing
+  ifstream file("index.html");
+  string line;
 
-    // Hitta början på taggen
-    auto start = std::find(html.begin(), html.end(), '<');
-    // Hitta slutet på taggen
-    auto end = std::find(html.begin(), html.end(), '>');
+  // Read each line of the file
+  while(getline(file, line)) {
+    // Use regex to find tags and their attributes
+    regex tag_regex("<\\w+>|<\\/\\w+>");
+    regex attr_regex("\\w+=\"[^\"]+\"");
 
-    // Skriv ut resultatet
-    std::cout << "Rubrik: " << std::string(start + 1, end) << std::endl;
-
-    return 0;
+    // Find and output tags
+    smatch tag_match;
+    while (regex_search(line, tag_match, tag_regex)) {
+      cout << "Tag: " << tag_match[0] << endl;
+      // Find and output attributes
+      smatch attr_match;
+      while (regex_search(tag_match[0].str(), attr_match, attr_regex)) {
+        cout << "Attribute: " << attr_match[0] << endl;
+      }
+      // Remove the found tag from the line
+      line = tag_match.suffix();
+    }
+  }
 }
+```
+
+Output:
 
 ```
-**Output:** Rubrik: Detta är en rubrik
+Tag: <html>
+Tag: <head>
+Tag: <title>
+Attribute: title="Min Websida"
+Tag: </title>
+Tag: </head>
+Tag: <body>
+Tag: <h1>
+Attribute: class="rubrik"
+Tag: </h1>
+```
 
-Det här är ett enkelt exempel på hur man kan extrahera information från HTML-kod. Först använder vi funktionen "find" för att hitta början och slutet på taggen. Sedan använder vi "string" för att extrahera den text som finns mellan taggarna. Detta är en grundläggande teknik för HTML-parsing men det finns många andra metoder som kan användas beroende på dina specifika behov.
+## Djupgående:
 
-## Djupdykning
-HTML-parsing innebär att man extraherar information från HTML-dokument för att använda den i sin egen applikation. Det finns flera olika metoder som kan användas för att hitta och extrahera data från HTML-kod. Här är några av de vanligaste teknikerna som kan användas:
+Att parsra HTML har blivit ett viktigt verktyg för webbprogrammerare, särskilt med den ökande användningen av automatiserade processer och webbskrapare. Historiskt sett har det funnits många olika sätt att parse HTML, inklusive användning av parserbibliotek som "libxml" eller "clang", men regex har blivit alltmer populärt som ett enklare och snabbare alternativ.
 
-1. DOM-parsing: DOM (Document Object Model) är ett representationssätt för HTML-dokument som gör det möjligt att manipulera dess struktur med hjälp av JavaScript eller andra programmeringsspråk. Genom att använda en parser som "libxml" kan man läsa in HTML-dokument som en DOM-struktur och sedan navigera och extrahera data från den.
+För de som vill ha mer kontroll över parsingprocessen kan man också implementera en egen parser från grunden. Detta kan vara användbart för komplicerade och specialiserade parseringar, men det kräver mer kunskap och tid för utveckling.
 
-2. Regular Expressions: Reguljära uttryck är ett kraftfullt verktyg som kan användas för att söka och matcha mönster i text. Genom att använda uttryck som specifikt riktar in sig på HTML-kod kan man enkelt hitta och extrahera den informationen man behöver.
+## Se även:
 
-3. Tredjepartsbibliotek: Det finns många tredjepartsbibliotek som kan hjälpa till med HTML-parsing i C++. Exempel på sådana är "HTML Parser" och "Gumbo HTML Parser". Dessa bibliotek har olika funktioner och möjligheter men kan vara till stor hjälp för att effektivt extrahera information från HTML-kod.
-
-## Se även
-- [HTML Parser](https://htmlparser.sourceforge.io/)
-- [Gumbo HTML Parser](https://github.com/google/gumbo-parser)
-- [libxml](http://www.xmlsoft.org/)
-- [Reguljära uttryck i C++](https://www.cplusplus.com/reference/regex/)
+- [C++ Regex Library](https://www.cplusplus.com/reference/regex/)
+- [LibXML](http://xmlsoft.org/)
+- [Clang](https://clang.org/)

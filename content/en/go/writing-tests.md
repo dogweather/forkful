@@ -10,37 +10,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-Writing tests is an essential and fundamental aspect of software development. It allows developers to ensure the functionality and stability of their code, catch bugs early on, and make future changes and updates with confidence.
+Writing tests is the process of creating small pieces of code to check if the main code is working as expected. Programmers do this to ensure that their code is functional, maintainable, and free of bugs. It also helps catch any errors or unexpected behavior before the code is deployed, saving time and effort in the long run.
 
-## How To
+## How to:
 
-Writing tests in Go is simple and straightforward. First, you need to create a test file with a name ending in `_test.go`. This distinguishes it from your regular Go code files. Then, use the `testing` package to write your tests. Here's an example of a simple test function:
+Writing tests in Go is a simple and efficient process. Here are some examples to get you started:
 
 ```Go
-func TestSum(t *testing.T) {
-	result := sum(5, 10)
-	if result != 15 {
-		t.Errorf("Expected result to be 15, but got %d", result)
-	}
+// Create a test file with the suffix _test.go, e.g. mycode_test.go
+package main
+
+import (
+    "testing" // Import testing package
+    "math"
+)
+
+// Write a function to be tested
+func SquareRoot(x float64) float64 {
+    return math.Sqrt(x)
+}
+
+// Write a test function with the prefix Test
+func TestSquareRoot(t *testing.T) {
+    result := SquareRoot(16)
+    if result != 4 {
+        t.Errorf("SquareRoot(16) = %v; want 4", result)
+    }
 }
 ```
 
-The `testing` package provides the `t` parameter, which has methods for reporting test failures and logging messages. You can use the `t.Errorf()` method to report an error and halt the test execution if the result is not as expected.
+Running the test with `go test` should produce the following output:
 
-To run your tests, navigate to your project directory and use the `go test` command. If all tests passed, you will see a `PASS` message, otherwise, you will see a `FAIL` message with details about which tests failed.
+```Go
+--- FAIL: TestSquareRoot (0.00s)
+    mycode_test.go:14: SquareRoot(16) = 5.656854249492381; want 4
+FAIL
+```
+
+The output shows that the test has failed due to the incorrect expected result. This helps identify bugs or issues in the code.
+
+More complex tests involving different scenarios and conditions can also be written using functions like `t.Run()` and assertions like `t.Errorf()`.
 
 ## Deep Dive
 
-Go provides a robust testing framework that allows for different types of tests, such as unit tests, integration tests, and end-to-end tests. It also supports code coverage analysis to help you identify areas of your code that may need more testing.
+Writing tests has become a common practice in software development, especially with the rise of agile methodologies. It not only helps in catching errors but also aids in designing and refactoring code. In Go, tests are an integral part of the language and are executed with the `go test` command.
 
-Some best practices for writing tests in Go include using table-driven testing, where you create a table of input and expected output values for a specific function, and using meaningful test function names that describe what is being tested. You can also use the `t.Skip()` method to skip certain tests if a particular condition is not met.
+There are other alternative testing frameworks in Go such as Testify and Ginkgo, which provide additional features and functionalities.
 
-In addition, Go has a built-in benchmarking tool that allows you to measure the performance of your code. You can use the `testing.B` parameter and the `b.ResetTimer()` method to reset the timer before each iteration, ensuring accurate benchmark results.
+When writing tests, it is important to follow good practices like naming test functions with the `Test` prefix, testing one specific behavior at a time, and using appropriate assertions. These practices help in writing maintainable tests and reduce the chances of unexpected results.
 
 ## See Also
 
-- [Effective Go - Testing](https://golang.org/doc/effective_go#testing)
-- [The Go Blog - How to Write Go Code](https://blog.golang.org/organizing-go-code)
-- [Go by Example - Testing](https://gobyexample.com/testing)
+- [Official Go documentation on testing](https://golang.org/pkg/testing/)
+- [Testify framework](https://github.com/stretchr/testify)
+- [Ginkgo framework](https://github.com/onsi/ginkgo)

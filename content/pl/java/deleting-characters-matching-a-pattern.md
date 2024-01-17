@@ -10,34 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i Dlaczego?
 
-Czasami, podczas pisania kodu w języku Java, może zdarzyć się, że będziemy musieli usunąć pewne znaki z naszych zmiennych lub stringów. Może to być konieczne, na przykład, do usunięcia znaków niedrukowalnych lub zastąpienia niechcianych znaków innymi.
+Usuwanie znaków pasujących do wzorca jest powszechną i przydatną operacją w programowaniu. Polega ono na odnalezieniu i usunięciu wszystkich wystąpień danego wzorca w tekście. Programiści często wykonują tę operację w celu oczyszczenia danych lub przetworzenia tekstu w celu dalszego wykorzystania.
 
-## Jak To Zrobić
+## Jak to zrobić:
 
-Usunięcie znaków pasujących do określonego wzorca w języku Java jest możliwe za pomocą metody `replaceAll()` i wyrażenia regularnego. Przykład kodu poniżej pokazuje jak usunąć wszystkie znaki spoza przedziału od A do Z i od 0 do 9 z ciągu znaków:
+    Java isGreat = new Java();
+    String example = "abcdefg1234@#$";
+    String pattern = "[a-z]"; // wzorzec, który pasuje do małych liter
+    String result = isGreat.pattern_matching(example, pattern); // usuwa wszystkie małe litery z tekstu
 
-```Java
-String sentence = "T3st0wy t3xt z z@naki #sp3?cjalne.";
-String cleanSentence = sentence.replaceAll("[^A-Za-z0-9 ]", "");
-System.out.println(cleanSentence);
-```
+    System.out.println(result); // wyświetli "1234@#$"
 
-Output: `T3st0wy t3xt z znaki spcjalne`
+W powyższym przykładzie tworzymy nowy obiekt klasy Java, a następnie przekazujemy do niego przykładowy tekst i wzorzec. Metoda "pattern_matching" zwraca wynik, który jest przypisany do zmiennej "result". W efekcie wyświetlamy wynik i otrzymujemy tekst, w którym znikły wszystkie małe litery.
 
-Jak widzimy, metoda `replaceAll()` zastępuje wszystkie znaki pasujące do podanego wzorca (w tym przypadku wszystkie znaki spoza przedziału od A do Z i od 0 do 9) pustym ciągiem znaków, czyli usuwa je.
+## Głębszy Zanurzenie:
 
-Możemy również określić inne wzorce, np. aby usunąć wszystkie cyfry z tekstu, możemy użyć wyrażenia regularnego `[0-9]`, lub aby pozostawić tylko litery i spacje, możemy użyć `[A-Za-z ]`.
+Wyszukiwanie i usunięcie znaków pasujących do wzorca jest operacją, która pojawiła się już w początkowych latach programowania. Wcześniej wykorzystywano głównie metody znane dzisiaj jako "substring", aby wyciąć określony fragment tekstu. Jednak z czasem pojawiły się nowe możliwości, takie jak wyrażenia regularne, które ułatwiają bardziej złożone operacje na tekście, w tym znajdowanie i usuwanie określonych znaków.
 
-## Głębsze Zagłębianie Się
+Alternatywnym sposobem na usuwanie znaków pasujących do wzorca jest użycie pętli i warunków. Jednak metody oparte na wyrażeniach regularnych są znacznie bardziej wygodne i elastyczne, gdyż pozwalają na wykorzystanie różnych wzorców i dodatkowych opcji filtrowania.
 
-Podczas korzystania z metody `replaceAll()` ważne jest, aby pamiętać, że przyjmuje ona wyrażenie regularne jako pierwszy argument, a nie pojedynczy znak. Oznacza to, że jeśli chcemy usunąć wszystkie wystąpienia konkretnej litery lub znaku, musimy użyć znaku `\\` przed tym znakiem w wyrażeniu regularnym. Na przykład, aby usunąć wszystkie wystąpienia litery "a" z tekstu, musimy użyć `sentence.replaceAll("a", "")`, ale aby usunąć wszystkie znaki "a", musimy użyć `sentence.replaceAll("\\\\", "")`.
+W implementacji usuwania znaków pasujących do wzorca, wyrażenia regularne są interpretowane i przetwarzane przez specjalny silnik, który przeszukuje tekst w poszukiwaniu pasujących wzorcowi znaków i usuwa je z podanego tekstu. Jest to proces skomplikowany, ale dzięki temu programowanie staje się łatwiejsze i bardziej efektywne.
 
-Dodatkowo, metoda `replaceAll()` jest wrażliwa na wielkość liter, więc trzeba uważać na to, jakie znaki i litery są zawarte w wyrażeniu regularnym. Jeśli chcemy, aby metoda zignorowała wielkość liter, musimy dodać `(?i)` na początku wyrażenia regularnego. Na przykład, aby usunąć wszystkie litery "a" niezależnie od wielkości, możemy użyć `sentence.replaceAll("(?i)a", "")`.
+## Zobacz także:
 
-## Zobacz również
+Jeśli chcesz dowiedzieć się więcej o wyrażeniach regularnych i innych operacjach na tekście, zapoznaj się z poniższymi źródłami:
 
-- [Java - Strings and Regular Expressions](https://www.programiz.com/java-programming/strings-regular-expressions)
-- [Regular Expressions in Java](https://www.baeldung.com/java-regular-expressions)
-- [RegExr - Online tool for testing regular expressions](https://regexr.com/)
+- Dokumentacja Java: https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html
+- Tutorial wyrażeń regularnych w Javie: https://www.vogella.com/tutorials/JavaRegularExpressions/article.html
+- Przewodnik po wyrażeniach regularnych w programowaniu: https://www.regular-expressions.info/tutorial.html

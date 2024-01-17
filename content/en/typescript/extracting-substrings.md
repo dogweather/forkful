@@ -10,55 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
+Extracting substrings is the process of retrieving a part of a string based on a specified start and end position. Programmers often do this to manipulate or analyze data within strings, such as retrieving a username from an email address or extracting a specific date from a longer string.
 
-Substring extraction is a useful technique in programming for manipulating and extracting specific parts of a string. This can be useful for a variety of tasks, such as data processing, text parsing, and creating more dynamic and customizable outputs.
-
-## How To
-
-```TypeScript
-// The basic syntax for extracting substrings in TypeScript is as follows:
-
-let myString: string = "Hello World";
-
-// To extract a substring, we can use the substring() method, which takes in two parameters: the starting index and the ending index.
-
-myString.substring(0, 5); //returns "Hello"
-
-// We can also use the slice() method, which also takes in two parameters, but instead of the ending index, it takes in the desired length of the substring.
-
-myString.slice(6, 11); // returns "World"
-
-// We can also use the substr() method, which takes in two parameters, the starting index and the desired length of the substring.
-
-myString.substr(6, 5); // returns "World"
-```
-
-These methods can also be combined with other string manipulation methods, such as toUpperCase() or toLowerCase(), for even more flexibility in extracting substrings.
-
-```TypeScript
-// We can also use a negative index to start from the end of the string.
-
-myString.substring(-6); // returns "World"
-
-// We can also use these methods to extract substrings from arrays.
-
-let myArray: string[] = ["apple", "banana", "orange"];
-
-myArray[1].slice(3); // returns "ana"
+## How to:
+To extract a substring in TypeScript, you can use the built-in ```substring()``` method. The method takes in two arguments, the start index and the end index of the desired substring. For example:
 
 ```
+let str: string = "Hello World";
 
-## Deep Dive
+console.log(str.substring(0, 5)); // Output: "Hello"
+console.log(str.substring(6)); // Output: "World"
+```
 
-The substring extraction methods in TypeScript are based on the ones in JavaScript, and they both have slightly different behaviors. In TypeScript, the substring() method will throw an error if the starting index is greater than the ending index, while in JavaScript, it will swap the two values and still return the substring. Additionally, the substr() method in TypeScript does not support negative starting indices, while it does in JavaScript.
+You can also use ```slice()``` method which works the same way as ```substring()```. The only difference is that ```slice()``` allows you to use negative index values, where -1 would refer to the last character, -2 would refer to the second to last character, and so on. Example:
 
-It's also worth noting that these methods are not just limited to strings and arrays. They can also be used on objects or any data type that has a length property.
+```
+let str: string = "Hello World";
 
-## See Also
+console.log(str.slice(0, 5)); // Output: "Hello"
+console.log(str.slice(6)); // Output: "World"
+```
 
-Here are some helpful links for further reading on substring extraction in TypeScript:
+## Deep Dive:
+Extracting substrings has been a commonly used method for manipulating strings since the early days of programming. However, with the introduction of regular expressions, developers now have an alternative method for extracting substrings. Regular expressions provide more powerful and flexible ways to not only extract substrings but also perform pattern matching and replacement within strings.
 
-- [TypeScript Documentation](https://www.typescriptlang.org/docs/)
-- [MDN Web Docs for JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-- [W3Schools](https://www.w3schools.com/js/)
+In TypeScript, you can use the ```match()``` method with a regular expression to extract substrings. Example:
+
+```
+let str: string = "The quick brown fox jumps over the lazy dog";
+
+let result = str.match(/quick/);
+console.log(result[0]); // Output: "quick"
+```
+
+It is worth noting that the ```match()``` method returns an array of matched strings, whereas ```substring()``` and ```slice()``` only return a single string.
+
+## See Also:
+- [MDN web docs - substring()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
+- [MDN web docs - slice()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice)
+- [MDN web docs - regular expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)

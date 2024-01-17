@@ -1,7 +1,7 @@
 ---
-title:                "Arbeta med CSV"
-html_title:           "Javascript: Arbeta med CSV"
-simple_title:         "Arbeta med CSV"
+title:                "Arbeta med csv"
+html_title:           "Javascript: Arbeta med csv"
+simple_title:         "Arbeta med csv"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Data Formats and Serialization"
@@ -10,64 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför? 
+Working with CSV står för Comma Separated Values och är ett vanligt filformat för att lagra och utbyta tabellformatad data. Det är användbart för programmerare eftersom det gör det möjligt att enkelt importera och exportera data mellan olika program och system.
 
-Att jobba med CSV-filer kan vara en användbar färdighet för dig som arbetar med datahantering, analys eller programmering. CSV står för "Comma-Separated Values" och det är ett enkelt filformat som låter dig lagra stora mängder strukturerad data på ett enkelt sätt.
-
-## Hur man gör det
-
-CSV-filer kan tas emot och hanteras på flera olika sätt i Javascript. Det enklaste sättet är att använda en befintlig modul eller bibliotek. Ett populärt alternativ är "Papa Parse", som tillåter dig att enkelt importera en CSV-fil och läsa av dess innehåll. Nedan följer ett enkelt exempel på hur du kan använda "Papa Parse" för att läsa av en CSV-fil och sedan skriva ut dess innehåll i konsolen:
-
+## Så här gör man: 
+För att arbeta med CSV i Javascript, kan man använda sig av ett externt bibliotek som heter "fast-csv". Detta bibliotek gör det enkelt att läsa och skriva CSV-filer i Javascript. Ett exempel på hur man kan läsa och logga en CSV-fil med hjälp av "fast-csv" ser ut såhär:
 ```Javascript
-var csvFile = "example.csv"; //ange namnet på din CSV-fil här
+const csv = require('fast-csv');
 
-Papa.parse(csvFile, {
-    download: true, //talar om för "Papa Parse" att ladda ner filen från filvägen
-    complete: function(results) { //använder en callback-funktion för att få ut resultatet
-        console.log(results.data); //skriver ut innehållet i filen i konsolen
-    }
-});
+csv.parseFile('example.csv', { headers: true })
+    .on('data', data => {
+        console.log(data);
+    })
+    .on('error', error => {
+        console.log(error);
+    });
 ```
 
-Om du vill skriva innehållet från CSV-filen i en HTML-tabell kan du göra det med hjälp av "Papa Parse" och vanlig Javascript kod. Nedan följer ett exempel på hur du kan göra det:
+Detta kodexempel läser in en CSV-fil som heter "example.csv" och loggar varje rad i konsolen som ett objekt med hjälp av filens kolumnrubriker som egenskaper.
 
+För att skriva en CSV-fil med hjälp av "fast-csv" kan man använda sig av följande kod:
 ```Javascript
-var table = document.getElementById("myTable"); //hämtar en befintlig tabell från HTML-koden
-var csvFile = "example.csv"; //ange namnet på din CSV-fil här
+const csv = require('fast-csv');
 
-Papa.parse(csvFile, {
-    download: true, //talar om för "Papa Parse" att ladda ner filen från filvägen
-    complete: function(results) { //använder en callback-funktion för att få ut resultatet
-        results.data.forEach(function(row) { //loopar igenom varje rad
-            var newRow = table.insertRow(); //lägger till en ny rad i tabellen
-            row.forEach(function(cell) { //loopar igenom varje cell i raden
-                var newCell = newRow.insertCell(); //lägger till en ny cell i raden
-                newCell.innerHTML = cell; //lägger till cellens innehåll i HTML-koden
-            });
-        });
-    }
-});
+csv.writeToPath('example.csv', [
+    ["Name", "Age"],
+    ["John", 30],
+    ["Sarah", 25]
+]);
 ```
+Detta kodexempel skapar en CSV-fil med namnet "example.csv" och lägger till två rader med data: Namn och ålder för John och Sarah.
 
-Det är också möjligt att lägga till nya datapunkter i en befintlig CSV-fil med hjälp av "Papa Parse". Nedan följer ett exempel där vi lägger till en ny rad med data och sparar den nya versionen av filen:
+## Djupdykning:
+CSV-filer har funnits sedan 1972 och har sedan dess blivit ett standardformat för att utbyta tabellformatad data. Det är ett enkelt och lättläst format som kan läsas och användas av de flesta program och språk. Dessutom finns det många alternativ till "fast-csv" för att arbeta med CSV-filer i Javascript, såsom "csv-parse" och "csv-writer".
 
-```Javascript
-var newData = ["Jane", "Doe", "jane@gmail.com"]; //skapar en array med ny data att lägga till
-var csvFile = "example.csv"; //ange namnet på din CSV-fil här
+Det finns även möjlighet att implementera en egen funktion för att läsa och skriva CSV-filer utan att använda sig av ett externt bibliotek. Det kan vara en bra övning för att förbättra sina programmeringskunskaper och förstå hur CSV-filer fungerar.
 
-Papa.parse(csvFile, {
-    download: true, //talar om för "Papa Parse" att ladda ner filen från filvägen
-    complete: function(results) { //använder en callback-funktion för att få ut resultatet
-        results.data.push(newData); //lägger till den nya data-arrayen i filens data
-        var csv = Papa.unparse(results.data); //konverterar den uppdaterade datan till CSV-format
-        var link = document.createElement("a"); //skapar en länk för att spara filen
-        link.download = "updated_file.csv"; //anger filnamnet för den uppdaterade filen
-        link.href = URL.createObjectURL(new Blob([csv], { type: "text/csv" })); //skapar en Blob med filens innehåll och länkar hän till den ny skapade länken
-        link.click(); //klickar på länken för att spara den uppdaterade filen
-    }
-});
-```
-
-## Djupdykning
-
-För de som är intresserade av mer avancerad datahantering med CSV i Javascript finns det flera andra möjligheter och bibliotek att utforska. Ett exempel är "d3-dsv", ett bibliotek som konverterar CSV-data till
+## Se också:
+- [CSV-writer](https://www.npmjs.com/package/csv-writer)
+- [csv-parse](https://www.npmjs.com/package/csv-parse)
+- [Wikipedia: CSV](https://sv.wikipedia.org/wiki/CSV)

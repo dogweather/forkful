@@ -10,49 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##为什么
-如果你是一名开发人员，你可能会知道测试的重要性。它可以帮助我们发现代码中的错误，提高代码质量，减少未来可能发生的问题。写测试可以为我们的项目带来更好的稳定性和可维护性，使我们的工作更加高效。
+##什么&为什么?
+写测试是指在软件开发过程中，为了保证程序的正确性和稳定性，程序员编写的一种自动化的代码检查工具。通过编写测试，程序员可以在早期阶段就发现程序中的潜在问题，并帮助提高程序的质量和可靠性。
 
-##怎么做
-写测试可以让我们的代码更加可靠并确保我们的功能按预期运行。下面是在Fish Shell中编写测试的示例代码和输出：
-
+##如何:
+```Fish Shell``` 是一个流行的命令行壳（shell），它具有简单易用的语法和强大的功能，非常适合用来编写测试。下面是编写测试的简单示例：
 ```
-Fish Shell版本：3.2.2
-
-# 定义一个函数，对给定的数字进行平方运算
-function square
-    set number $argv[1]
-    # 使用shell中的“math”命令进行计算
-    set result (math "$number * $number")
-    echo "$number的平方是$result"
+function add_num
+    math $argv[1] + $argv[2]
 end
 
-# 运行测试
-begin; describe "Square test"
-    it "should correctly square a number"
-        set output (square 5)
-        # assert函数用于比较输出结果和预期结果
-        assert equal $output 25
-    end
-end; end
+# Test Case 1
+if math (add_num 3 5) -eq 8
+    echo "Test 1 Passed"
+else
+    echo "Test 1 Failed"
+end
+
+# Test Case 2
+if math (add_num 10 20) -eq 30
+    echo "Test 2 Passed"
+else
+    echo "Test 2 Failed"
+end
 ```
 
-输出结果：
-
+编写测试的输出结果如下：
 ```
-Square test
-  √ should correctly square a number
-
-1 test, 0 passed, 0 failed
+Test 1 Passed
+Test 2 Passed
 ```
 
-通过这个示例，我们可以看到测试成功通过，证明了我们的代码可以正确执行平方运算。
+##深度探讨:
+写测试的概念源于软件工程的质量保证（QA）实践，旨在帮助程序员发现并解决代码中的错误和缺陷。除了 ```Fish Shell```，其他流行的编程语言和框架也都有提供丰富的测试工具和框架，如 ```Jasmine```、```JUnit```等。
 
-##深入了解
-写测试可以帮助我们更加深入地了解我们的代码。通过编写不同的测试场景，我们可以发现平常可能忽略的潜在问题，并且在开发过程中可以提早解决这些问题。此外，写测试还可以作为文档，记录下我们代码的预期行为，方便未来代码维护和更新。
+编写测试的关键是要保证测试覆盖范围，即要覆盖到程序中的所有关键代码路径，以确保程序的正确性。同时，编写测试也要考虑到程序的边界条件和异常情况，以提高程序的健壮性。
 
-##相关链接
-- [Fish Shell 官方文档](https://fishshell.com/docs/current/)
-- [Fish Shell Github 代码仓库](https://github.com/fish-shell/fish-shell)
-- [如何编写高质量的测试 (英文)](https://www.freecodecamp.org/news/writing-a-high-quality-test-cases-6f2d2b30b196/#:~:text=A%20good%20test%20case%20should,that%20functionality%20is%20broken%20up)
-- [如何使用Fish Shell中的math命令 (英文)](https://realpython.com/intermediate-python-tools/#the-math-command)
+##参考资料:
+- 官方文档：https://fishshell.com/docs/index.html
+- 测试驱动开发（TDD）介绍：http://www.jianshu.com/p/2271bdf30373
+- TDD实践：https://github.com/kbroman/little-book-of-r-for-bioinformatics/blob/master/tdd.Rmd

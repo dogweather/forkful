@@ -1,7 +1,7 @@
 ---
-title:                "Tulostamisen virheenkorjaustulos (Virheenkorjaustulostus)"
-html_title:           "Gleam: Tulostamisen virheenkorjaustulos (Virheenkorjaustulostus)"
-simple_title:         "Tulostamisen virheenkorjaustulos (Virheenkorjaustulostus)"
+title:                "Tulostamisen virheenetsintä"
+html_title:           "Gleam: Tulostamisen virheenetsintä"
+simple_title:         "Tulostamisen virheenetsintä"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Testing and Debugging"
@@ -10,32 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä & Miksi?
 
-Miksi tulostamme vianetsintätulosteita?
+Debug-tulostuksen printtaaminen tarkoittaa koodirivin lisäämistä ohjelmaan, jotta sen suoritusvaiheet ja mahdolliset virheet voi tarkistaa helpommin. Kehittäjät tekevät tätä ohjelman vianmäärityksen helpottamiseksi ja korjaamiseksi.
 
-Vianetsintätulosteiden tulostaminen auttaa sinua näkemään, mitä koodisi tekee ja löytämään mahdollisia virheitä. Se on tärkeä työkalu ohjelmoinnissa ja auttaa sinua kehittämään parempia ohjelmia.
-
-## Kuinka
+## Miten:
 
 ```Gleam
-// Tässä koodiesimerkissä tulostamme tekstin "Hei maailma!" vianetsintätulosteena.
-import gleam/io
-io.debug("Hei maailma!")
+// Koodiesimerkki 1
+test := "Hello World!"
+debug!(test)
 ```
 
-Koodiesimerkissä käytämme `gleam/io`-moduulia, joka tarjoaa meille `debug`-funktion vianetsintätulosteiden tulostamiseen. Voit tulostaa minkä tahansa arvon tai muuttujan käyttämällä tätä funktiota, joten voit räätälöidä tulosteet tarpeidesi mukaan.
+Tämä lisää test-muuttujan debug-tulostuksen koodiin, mikä auttaa kehittäjää varmistamaan, että muuttujan arvo on oikea. Tulostus näkyy ohjelman suoritusta seuratessa.
 
-Vianetsintätulosteet tulostuvat virran tarkkailijan konsoliin tai lokiin, joten varmista, että käytät sitä ohjelmaasi ajaessasi.
+```Gleam
+// Koodiesimerkki 2
+for x in [1, 2, 3] {
+  debug!("x:n arvo on {}", x)
+}
+```
 
-## Syvempi sukellus
+Tämä esimerkki käyttää debug-makroa silmukan sisällä, jolloin kehittäjä voi nähdä jokaisen x:n arvon silmukan suorituksen aikana.
 
-Vianetsintätulosteiden tulostaminen Gleamissa on helppoa, mutta on myös muutamia huomioon otettavia asioita. Ensinnäkin, on hyvä tapa käyttää `debug`-funktion sijaan `debug_i`-funktiota, joka hyväksyy formaattiargumentteja. Tämä auttaa sinua tulostamaan monimutkaisempia arvoja selkeämmin.
+## Syvemmälle:
 
-Lisäksi, jos aiot tulostaa useita vianetsintätulosteita, on parempi luoda `debug`-funktio moduulin yläpuolelle, jotta sitä voidaan käyttää muissa moduuleissa. Tällä tavoin voit helposti muuttaa vianetsintätulosteen käyttöä koko ohjelmassa vain muuttamalla yhtä funktiota.
+Debug-tulostuksen käyttö on yleinen tapa vianmäärityksessä ja se on ollut osa ohjelmoinnissa jo pitkään. Muita tapoja tarkistaa koodin suoritusta ovat esimerkiksi koodin ajaminen vaiheittain ja breakpointtien käyttö.
 
-## Katso myös
+Gleamin lisäksi muut ohjelmointikielet tarjoavat myös vastaavia debug-toimintoja, esimerkiksi Pythonin "print" ja JavaScriptin "console.log". Gleamissa debug-tulostuksen toteutus on tehty makron avulla, jotta se olisi tehokas ja helppokäyttöinen.
 
-- [Gleam dokumentaatio](https://gleam.run/)
-- [Vianetsinnän perusteet Gleamissa](https://gleam.run/articles/debugging-intro)
-- [Gleam virran tarkkailija](https://gleam.run/articles/debugging-tracing)
+## Katso myös:
+
+Gleam-dokumentaatio debug-makron käytöstä: https://gleam.run/book/core-modules-debug.html

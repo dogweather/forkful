@@ -10,36 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä & Miksi?
 
-Miksi edes vaivautua vertailemaan kahta päivämäärää? Syitä voi olla monia, mutta yleisimpiä ovat esimerkiksi tilanteet, joissa tarvitaan tarkkaa tietoa ajankohdista tai ajallinen järjestys on tärkeää.
+Päivämäärien vertailu on prosessi, jossa ohjelmoijat vertaavat kahta eri päivämäärää ja tarkistavat, ovatko ne samat, eri vai kumpi on suurempi. Tämä on tärkeätä esimerkiksi tietokannoissa, kun etsitään tietoja tietyltä ajanjaksolta tai järjestetään tuloksia aikajärjestykseen.
 
-## Miten
-
-Vertaileminen kahden päivämäärän välillä ei ole vaikeaa Elixirilla. Käytännössä se tapahtuu käyttämällä `Date.compare/2`-funktiota ja antamalla sille kaksi päivämäärämuodossa olevaa arvoa, esimerkiksi:
+## Miten:
 
 ```Elixir
-Date.compare({2021, 4, 20}, {2021, 4, 21})
+Date.compare({{2020, 12, 1}, {2020, 12, 2}}) 
 ```
 
-Tämän komennon tulos on `-1`, mikä tarkoittaa, että ensimmäinen päivämäärä on pienempi kuin toinen.
+Tuloksena on:
 
-Voit myös vertailla päivämäärän osia erikseen käyttämällä `Date.after?/2`- tai `Date.before?/2`-funktioita, esimerkiksi:
-
-```Elixir
-Date.before?({2021, 4, 20}, {2021, 4, 21})
+```
+:lt
 ```
 
-Tämä palauttaa `true` tässä tapauksessa, sillä ensimmäinen päivämäärä on pienempi kuin toinen.
+Suurin osa Elixirin päivämäärätoiminnoista käyttää Erlangin kalenterimoduulia, joka käyttää Gregoriaanista kalenteria ja tallentaa päivämäärän tietueena {vuosi, kuukausi, päivä}.
 
-## Syvällisempi tarkastelu
+## Syvemmälle:
 
-Elixirilla päivämäärien vertailemiseen on monia eri vaihtoehtoja, kuten tarkistaa ovatko ne samat (`Date.same?/2`), laskea niiden ero päivinä (`Date.diff/2`) tai jopa muuttaa ne eri aikavyöhykkeille (`Date.shift_zone/2`).
+Päivämäärien vertailu on ollut haastavaa monille ohjelmointikielille, mutta Elixirin tapauksessa se on helppoa ja tehokasta Erlangin kalenterimoduulin ansiosta. Lisäksi voit käyttää myös Elixirin date-moduulia, joka tuo lisää toimintoja päivämäärien käsittelyyn.
 
-On myös mahdollista tehdä vertailuja käyttämällä `DateTime`-tyyppiä, joka sisältää myös kellonajan tiedot.
+## Katso myös:
 
-## Katso myös
+[Lisätietoa Elixirin päivämäärätoiminnoista](https://hexdocs.pm/elixir/master/Date.html)
 
-- [Elixir Date -dokumentaatio](https://hexdocs.pm/elixir/Date.html)
-- [Elixir DateTime -dokumentaatio](https://hexdocs.pm/elixir/DateTime.html)
-- [Elixir Date Calculator -sovellus](https://github.com/filmil/elixir-date-calculator)
+[Turvallisempi tapa vertailla päivämääriä](https://dev.to/rizafahmi/comparing-dates-in-elixir-3la4)

@@ -10,39 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¿Qué y por qué?
 
-Descargar una página web puede ser útil en diferentes situaciones, como por ejemplo para obtener información específica, guardar contenido para accederlo sin conexión o simplemente por curiosidad. En este artículo, aprenderemos cómo descargar una página web utilizando TypeScript.
+Descargar una página web es el acto de obtener el código fuente de una página web y guardarlo en un archivo en tu computadora. Los programadores hacen esto para acceder a la información de la página web y ser capaces de analizarla, extraer datos, o automatizar ciertas tareas.
 
-## Cómo hacerlo
+## ¡Cómo hacerlo!
 
-```TypeScript 
-const request = require('request');
-const fs = require('fs');
+Para descargar una página web en TypeScript, podemos utilizar la biblioteca "node-fetch". Primero, asegúrate de tener Node.js instalado en tu computadora. Luego, en tu terminal, puedes instalar la biblioteca con el siguiente comando:
 
-request('www.example.com', (error, response, body) => {
-    if (!error && response.statusCode === 200) {
-        fs.writeFile('example.html', body, (error) => {
-            if (error) {
-                console.log('Hubo un error al guardar el archivo');
-            } else {
-                console.log('La página web se ha descargado con éxito');
-            }
-        });
-    } else {
-        console.log('Hubo un error al hacer la solicitud');
-    }
-});
+```TypeScript
+npm install node-fetch --save
 ```
 
-En este ejemplo, estamos utilizando el módulo `request` para hacer una solicitud a la página web en la URL especificada. Luego, utilizamos el módulo `fs` para guardar el contenido de la respuesta en un archivo HTML. Si la solicitud es exitosa, el archivo se guardará en la carpeta actual con el nombre `example.html`. Si hay algún error, se mostrará un mensaje de error en la consola.
+Una vez instalada, podemos usarla en nuestro código para descargar una página web. Por ejemplo, si queremos descargar la página principal de Google, podemos hacer lo siguiente:
 
-## Profundizando en el tema
+```TypeScript
+const fetch = require('node-fetch');
 
-Al descargar una página web, es importante tener en cuenta que cualquier contenido dinámico (como elementos cargados con JavaScript) no se descargará. Solo se obtendrá el código HTML que está presente en el momento de la descarga. Además, es posible que algunos sitios web requieran autenticación o bloqueen solicitudes malintencionadas, por lo que es posible que no se pueda descargar la página deseada. Otro detalle a tener en cuenta es que al descargar una página web, se está consumiendo el ancho de banda del servidor al hacer una solicitud, por lo que se debe utilizar esta técnica con responsabilidad.
+// URL de la página a descargar
+const url = 'https://www.google.com';
 
-## Ver también
+// Utilizamos la función fetch para obtener los datos de la página
+fetch(url)
+    .then(response => response.text()) // Convertimos los datos a texto
+    .then(data => console.log(data)); // Imprimimos los datos en la consola
+```
 
-- [Cómo hacer solicitudes HTTP en TypeScript](https://www.digitalocean.com/community/tutorials/how-to-use-the-request-module-in-node-js)
-- [Documentación oficial de TypeScript](https://www.typescriptlang.org/docs/)
-- [Node.js - documentación oficial](https://nodejs.org/es/docs/)
+Al ejecutar este código, se imprimirá todo el código fuente de la página de Google en la consola.
+
+## Buceo Profundo
+
+Descargar páginas web ha sido una práctica común en la programación desde los inicios de la internet. Originalmente, los programadores utilizaban el protocolo HTTP para acceder y descargar páginas web, pero con el surgimiento de nuevas tecnologías como JavaScript, se ha permitido la descarga de páginas web de manera más robusta y eficiente.
+
+Existen otras formas de descargar páginas web, como utilizando un navegador automatizado como Selenium o utilizando API's de terceros. Sin embargo, descargar páginas web directamente desde el código sigue siendo una opción muy común debido a su simplicidad y control total sobre los datos descargados.
+
+## Ver También
+
+Si quieres saber más sobre la biblioteca "node-fetch" que utilizamos en nuestro ejemplo, puedes visitar su sitio web oficial: [https://www.npmjs.com/package/node-fetch](https://www.npmjs.com/package/node-fetch)
+
+También puedes aprender más sobre Node.js aquí: [https://nodejs.org/es/](https://nodejs.org/es/)

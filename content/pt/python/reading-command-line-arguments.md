@@ -10,71 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+## O que e por que?
+Ler argumentos da linha de comando é um processo em que um programa Python pode receber informações do usuário por meio do terminal. Os programadores muitas vezes fazem isso para possibilitar a personalização dos seus programas e interação com o usuário.
 
-Muitos programas de computador permitem aos usuários fornecerem entradas personalizadas através da linha de comando. Aprender a ler argumentos de linha de comando em Python pode ajudá-lo a criar programas mais interativos e flexíveis.
-
-## Como fazer
-
-Usando o módulo `sys` em Python, podemos acessar os argumentos fornecidos pela linha de comando. Aqui está um exemplo simples:
-
+## Como fazer:
+Utilize o módulo `sys` para importar a função `argv` e receber os argumentos passados na linha de comando. Em seguida, basta acessar esses argumentos por meio de índices, começando pelo primeiro após o nome do arquivo. Veja um exemplo abaixo:
 ```python
 import sys
 
-# Verifica se pelo menos um argumento foi fornecido
-if len(sys.argv) > 1:
-    # Imprime o primeiro argumento
-    print("Olá, " + sys.argv[1] + "!")
-else:
-    print("Favor fornecer um nome como argumento.")
+# Executando o programa com o comando: python programa.py arg1 arg2 arg3
+argumentos = sys.argv
+print(argumentos[0]) # nome do arquivo
+print(argumentos[1]) # arg1
+print(argumentos[2]) # arg2
+print(argumentos[3]) # arg3
+```
+Saída: 
+```
+programa.py
+arg1
+arg2
+arg3
 ```
 
-Para testar este código, salve-o como `argumentos.py` e execute na linha de comando com um nome como argumento:
+## Aprofundamento:
+Ler argumentos da linha de comando é uma técnica antiga, sendo comum em linguagens de programação como C e Perl. No entanto, em Python, existem outras formas de se obter entrada do usuário, como a função `input()`. Além disso, é importante sempre validar e tratar os argumentos recebidos, para evitar erros e falhas no programa.
 
-```bash
-python argumentos.py Maria
-```
-
-O programa deve imprimir "Olá, Maria!".
-
-## Profundidade
-
-A função `sys.argv` retorna uma lista de strings. O primeiro item da lista é sempre o nome do programa sendo executado. Qualquer argumento fornecido pela linha de comando é armazenado como uma string nos itens subsequentes da lista. Podemos usar a função `len()` para verificar quantos argumentos foram fornecidos, e acessá-los usando a indexação padrão de lista.
-
-Veja abaixo um exemplo mais complexo que permite aos usuários fornecerem vários argumentos e também exibe uma mensagem agradável:
-
-```python
-import sys
-
-# Verifica se pelo menos um argumento foi fornecido
-if len(sys.argv) > 1:
-    # Imprime uma mensagem personalizada
-    print("Obrigado por fornecer {} argumento(s) da linha de comando!".format(len(sys.argv) - 1))
-    # Imprime cada argumento fornecido
-    print("Seus argumentos foram:")
-    for argumento in sys.argv[1:]:
-        print("- " + argumento)
-else:
-    print("Favor fornecer um ou mais argumentos.")
-```
-
-Agora, se executarmos o seguinte comando:
-
-```bash
-python argumentos.py Maria Pedro João
-```
-
-A saída será:
-
-```
-Obrigado por fornecer 3 argumentos da linha de comando!
-Seus argumentos foram:
-- Maria
-- Pedro
-- João
-```
-
-## Veja também
-
-- Documentação oficial do módulo `sys` (em inglês): https://docs.python.org/3/library/sys.html
-- Como criar e executar um arquivo Python (em português): https://www.alura.com.br/artigos/criando-e-executando-um-programa-python
+## Veja também:
+- Documentação oficial do módulo `sys`: https://docs.python.org/3/library/sys.html
+- Tutorial sobre input e argumentos na linha de comando: https://www.geeksforgeeks.org/command-line-arguments-in-python/

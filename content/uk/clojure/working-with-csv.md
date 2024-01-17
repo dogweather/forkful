@@ -10,35 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Чому
+## Що & чому?
+CSV - це формат для представлення табличних даних в текстовому вигляді, де кожен рядок відповідає одному рядку таблиці, а значення розділені комами. Програмісти часто працюють з CSV для обробки, аналізу та імпорту даних з різних джерел.
 
-Готувати суші дімашніх м.Люди починають працювати з CSV для збереження, обробки та обміну даних. CSV є одним з найпоширеніших форматів для представлення табличних даних, тому знання роботи з ним є необхідним для багатьох програмістів та аналітиків даних.
-
-## Як це зробити
-
+## Як це робити:
 ```Clojure
-;; Читання CSV файлу
-(require '[clojure-csv.core :as csv])
+(ns my-project.core
+  (:require [clojure.data.csv :as csv]))
 
-(csv/read-csv "data.csv" :delimiter \,)
+(defn read-csv [file]
+  (with-open [rdr (clojure.java.io/reader file)]
+    (doall (csv/read-csv rdr))))
 
-;; Запис CSV файлу
-(csv/write-csv "new_data.csv" data)
-
-;; Додавання рядка даних до CSV файлу
-(csv/append-csv "data.csv" [1 "John Doe" "john@email.com"])
+(defn write-csv [file data]
+  (with-open [wrtr (clojure.java.io/writer file)]
+    (csv/write-csv wrtr data)))
 ```
 
-Зверніть увагу, що дані в CSV файлі представлені у вигляді списків Clojure, тому для роботи з ними можна використовувати звичні функції для списків, такі як `map`, `filter` та інші.
+## Глибинне занурення:
+CSV був створений в 1972 році і використовується до сьогодні. Існують інші формати для подібних завдань, наприклад, JSON та XML, але CSV є простим і легко у використанні. У Clojure існує багато бібліотек для роботи з CSV, але найбільш популярною є clojure.data.csv. Ця бібліотека надає функції для читання та запису CSV файлів, а також можливість вказати власний роздільник і знак кінця рядка.
 
-## Поглиблене дослідження
-
-Для більш складних операцій обробки CSV даних існують бібліотеки, такі як `clojure.data.csv` та `clojure.data.csv`. Вони мають розширені можливості, такі як обробка різних типів даних, встановлення власних роздільників та інших параметрів.
-
-Ще однією корисною функцією є зчитування даних з веб-ресурсів у форматі CSV за допомогою бібліотеки `clj-http`. Це дозволяє отримувати оновлені дані безпосередньо з Інтернету та опрацьовувати їх у програмі.
-
-## Дивіться також
-
-- [Clojure CSV бібліотека](https://github.com/didibus/csv)
-- [clj-http бібліотека](https://github.com/dakrone/clj-http)
-- [Clojure документація](https://clojure.org/)
+## Дивись також:
+- [ClojureDocs: clojure.data.csv](https://clojuredocs.org/clojure.data.csv)
+- [Official Clojure CSV Library Documentation](https://clojure.github.io/data.csv/)
+- [A Comprehensive Guide to Working with CSV files in Clojure](https://purelyfunctional.tv/guide/clojure-csv/)

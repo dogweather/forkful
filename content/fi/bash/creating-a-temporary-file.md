@@ -10,39 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä ja miksi?
+Väliaikaistiedoston luominen on yksinkertaisesti tiedoston luomista, joka on tarkoitus poistaa tai korvata myöhemmin. Tämä voi olla hyödyllistä esimerkiksi tiedon tallentamisessa väliaikaisesti ennen kuin se siirretään pysyvään sijaintiin. Ohjelmoijat tekevät väliaikaistiedostoja helpottaakseen tiedonhallintaa ja estääkseen turhia pysyviä tiedostoja.
 
-On monia syitä miksi saattaisit haluta luoda väliaikaisen tiedoston Bash-skriptissä. Yleisimmät syyt ovat tietojen tallentaminen väliaikaisesti sekä tiedostojen prosessointi ja manipulointi.
+## Miten:
+Esimerkkejä ja tulostuksia koodinpätkissä ```Bash ...```.
 
-## Näin
-Bash-tehtävän suorittamisen aikana saatat tarvita väliaikaista tiedostoa tallentaaksesi väliaikaisesti muuttuvia tietoja tai prosessoitaaksesi tiedostoja. Tämä onnistuu luomalla väliaikainen tiedosto `mktemp` komennolla.
-
-```Bash
-tmpfile=$(mktemp) # tiedostonimi tallennetaan muuttujaan
-echo "Tämä on väliaikainen tiedosto" > "$tmpfile"
-cat "$tmpfile" # tulostetaan tiedoston sisältö
-```
-
-Suoritettaessa tätä skriptiä, näet seuraavan tulosteen:
-
-```
-Tämä on väliaikainen tiedosto
-```
-
-## Syvempi sukellus
-`mktemp` komento luo uniikin väliaikaisen tiedoston, jonka nimi tallennetaan muuttujaan. Oletuksena tiedosto luodaan `/tmp` hakemistoon, mutta voit määrittää haluamasi hakemiston `--tmpdir` argumentilla.
-
-Voit myös itse määrittää väliaikaisen tiedoston nimen `–t` argumentilla. Tämä on hyödyllistä, jos haluat luoda useita väliaikaisia tiedostoja ja pitää kirjaa niiden nimistä.
-
-Lisäksi voit määrittää tiedostomaskin `–m` argumentilla, joka sallii sinun asettaa tiedoston oikeudet luomisen yhteydessä.
+Luodaan väliaikainen tiedosto käyttäen mktemp-komentoa:
 
 ```Bash
-mktemp -m 666 --tmpdir=/home/käyttäjä/Dokumentit –t tmp-XXXXXX
+tempfile=$(mktemp)
+echo "Tämä on väliaikainen tiedosto." >> $tempfile
+cat $tempfile
+rm $tempfile
 ```
 
-Tämä komento luo väliaikaisen tiedoston nimeltään `tmp-XXXXXX`, jonka oikeudet ovat 666 ja sijainti `/home/käyttäjä/Dokumentit` hakemistossa.
+Tulostus:
 
-## Katso myös
-- `man mktemp` komentorivin käyttöohjeet
-- [Linux Bash -opas](https://linux.die.net/man/1/mktemp) `mktemp` komennosta
-- [Bash skriptaus tutoriaali](https://linuxize.com/post/bash-scripting-tutorial/) johon sisältyy myös väliaikaisten tiedostojen luominen
+```
+Tämä on väliaikainen tiedosto.
+```
+
+## Syvä sukellus:
+Väliaikaisten tiedostojen käyttö on ollut välttämätöntä jo kauan ennen tietokoneita. Ennen tietokoneiden keksimistä työläiset tekivät väliaikaisia kopioita kirjoittamalla tekstejä kopioissentekijälle, jos alkuperäinen teksti piti pysyä muuttumattomana.
+
+Vaihtoehtoisia tapoja luoda väliaikaistiedostoja ovat muun muassa Unixin mkstemp ja System V:n tmpnam, joita Bashin mktemp-komento käyttää taustalla. Väliaikaisten tiedostojen luomiseen käytetään usein myös /tmp-hakemistoa, johon on yleensä oikeudet kaikilla käyttäjillä.
+
+Mktemp-komento luo yksilöllisiä tiedostonimiä, jotta vältetään mahdolliset epäonnistumiset tiedostonimesamassa ja turvaudutaan mahdollisiin turvallisuusuhkiin.
+
+## Katso myös:
+- [Bashin mktemp man-sivu](https://www.gnu.org/software/bash/manual/html_node/Creating-Temporary-Files.html)
+- [Unixin mkstemp man-sivu](https://www.freebsd.org/cgi/man.cgi?query=mkstemp&apropos=0&sektion=0&manpath=FreeBSD+8.2-RELEASE&format=html)
+- [System V:n tmpnam man-sivu](https://nxmnpg.lemoda.net/3/tmpnam)

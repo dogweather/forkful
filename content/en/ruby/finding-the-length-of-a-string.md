@@ -10,40 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-You may be wondering why anyone would bother finding the length of a string in Ruby? Well, knowing the length of a string can be incredibly useful when working with text-based data. It allows us to manipulate and analyze strings in a more efficient and accurate way.
+Finding the length of a string means determining the number of characters in a given string. This is a commonly used operation in programming because it allows us to manipulate strings and perform various tasks on them.
 
-## How To
-
-To find the length of a string in Ruby, we can use the `.length` method. Let's take a look at a simple example:
+## How to:
 
 ```Ruby
-string = "Hello there!"
+string = "Hello, World!"
 puts string.length
 ```
 
-This code will output `12`, since there are 12 characters in the string "Hello there!" (including the space). It's important to note that the `.length` method will include all characters, including spaces, punctuation, and special characters.
+Output: `13`
 
-We can also use the `.size` method, which essentially does the same thing as `.length` and is considered a synonym for it. So you can use whichever one you prefer.
-
-Now, what if we want to find the length of a specific word within a string? For that, we can use the `.size` or `.length` method in combination with the `.split` method. Let's see an example:
-
-```Ruby
-string = "Ruby is a fun language!"
-puts string.split(" ").last.length
-```
-
-This code will output `8`, since we are using the `.split` method to separate the string into an array of words and then accessing the last word (in this case, "language") and finding its length.
+We can use the `length` method on a string variable to find out its length. This method returns an integer representing the number of characters in the string. In the above example, the string "Hello, World!" has a length of 13.
 
 ## Deep Dive
 
-Behind the scenes, the `.length` or `.size` method in Ruby is actually calling the underlying `length` instance method. This method checks the `length` property of the string object and returns the number of characters. So, when we use `.length` or `.size`, we are just accessing this underlying method.
+### Historical Context:
 
-There is also a difference between the `length` and `size` methods when it comes to arrays. The `.size` method will return the number of items in the array, while the `.length` method will return the total number of elements in the multidimensional array. Keep this in mind when working with arrays in your code.
+In the early days of computing, strings were limited to a fixed length. But with the development of high-level programming languages like Ruby, strings now have a variable length and can be as long as the system's memory allows. The length of a string is now a dynamic property that can change as the string is modified.
 
-## See Also
+### Alternatives:
 
-- [Ruby String documentation](https://ruby-doc.org/core-3.0.2/String.html)
-- [Ruby Arrays documentation](https://ruby-doc.org/core-3.0.2/Array.html)
-- [Ruby language website](https://www.ruby-lang.org/en/)
+Apart from using the `length` method, we can also find the length of a string by converting it into an array and then using the `count` method. This approach is useful when we want to count specific characters or substrings within a string.
+
+### Implementation Details:
+
+The `length` method calculates the number of bytes required to store the string, which may vary depending on the character encoding used. This can cause discrepancies in the length of a string if different character encodings are used.
+
+## See Also:
+
+- [Ruby String Documentation](https://ruby-doc.org/core-#{version}/String.html)
+- [Ruby Array Documentation](https://ruby-doc.org/core-#{version}/Array.html)

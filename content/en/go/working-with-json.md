@@ -10,61 +10,88 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-JSON, or JavaScript Object Notation, is a popular data format for transmitting and storing data. It is easily readable by both humans and machines, making it a common choice for applications and web services. Working with JSON in Go allows developers to easily retrieve and manipulate data, making it a valuable skill for anyone working with data-intensive projects.
+JSON, short for JavaScript Object Notation, is a popular format for storing and transmitting data in a human-readable way. It is commonly used in web development and data transfer as an alternative to heavy and complex formats like XML. Programmers use JSON to organize and exchange data between different systems and languages, making it an essential tool for efficient and seamless communication.
 
-## How To
+## How to:
 
-To work with JSON in Go, we first need to import the `encoding/json` package. This provides functions for encoding and decoding JSON data. 
+To work with JSON in a Go program, the built-in "encoding/json" package provides helpful functions to easily marshal (convert to JSON) and unmarshal (convert from JSON) data. Here's an example of how to marshal a map into JSON:
 
-To encode data into JSON, we can use the `json.Marshal()` function, passing in a Go data structure as the parameter. Let's say we have a struct called `Person` with two fields, `Name` and `Age`. We can encode this into a JSON string using the following code:
+```
+Go mapToJson 
+import (
+	"encoding/json"
+	"fmt"
+)
 
-```Go
-type Person struct {
-  Name string
-  Age int
+func main() {
+    //Create a map with sample data
+    data := map[string]string{
+        "name":  "John",
+        "age":   "25",
+        "title": "Software Engineer",
+    }
+    
+    //Marshal the data into JSON
+    jsonData, err := json.Marshal(data)
+    if err != nil {
+        fmt.Println(err)
+        return
+    }
+    
+    //Print the JSON data
+    fmt.Println(string(jsonData))
 }
+```
+Output: ```{"age":"25","name":"John","title":"Software Engineer"}```
 
-p := Person{Name: "John", Age: 25}
+On the other hand, if you have JSON data and want to unmarshal it into a Go struct, you can do it as follows:
+```
+Go jsonToStruct 
+import (
+	"encoding/json"
+	"fmt"
+)
 
-jsonString, err := json.Marshal(p)
-if err != nil {
-  fmt.Println("Error encoding JSON:", err)
+func main() {
+    //Create a JSON string with sample data 
+    jsonString := `{"name":"John", "age":"25", "title":"Software Engineer"}`
+    
+    //Unmarshal the data into a struct
+    type Person struct {
+        Name  string `json:"name"`
+        Age   string `json:"age"`
+        Title string `json:"title"`
+    }
+    var person Person
+    err := json.Unmarshal([]byte(jsonString), &person)
+    if err != nil {
+        fmt.Println(err)
+        return
+    }
+    
+    //Print the retrieved data from the struct
+    fmt.Println("Name: ", person.Name)
+    fmt.Println("Age: ", person.Age)
+    fmt.Println("Title: ", person.Title)
 }
-fmt.Println(string(jsonString))
+```
+Output: 
+```
+Name: John
+Age: 25
+Title: Software Engineer
 ```
 
-The output of this code would be: `{"Name":"John","Age":25}`. We can also specify which fields we want to include in the JSON string by adding tags to the struct fields. For example, `Name string `json:"name"` will result in a JSON key of `"name"` instead of `"Name"`.
+## Deep Dive:
 
-To decode JSON into Go data structures, we can use the `json.Unmarshal()` function. This takes a JSON string as the first parameter and a pointer to the Go data structure as the second parameter.
+JSON was first introduced in 2001 by Douglas Crockford as a lightweight alternative to XML. It is based on a subset of the JavaScript language, making it easy for web developers to use. Other alternatives to JSON include YAML, BSON, and CSV, each having its own pros and cons. However, it is widely accepted that JSON is the best choice for web-related data exchange due to its simplicity, compatibility, and popularity.
 
-```Go
-type Person struct {
-  Name string
-  Age int
-}
+Behind the scenes, the encoding/json package in Go uses the "reflect" package to analyze and convert data structures. This allows it to handle complex types such as maps, structs, and arrays. Additionally, you can use tags on struct fields to control the generated JSON keys. Moreover, the package provides options for pretty-printing JSON and handling null values.
 
-var p Person
+## See Also:
 
-jsonString := `{"Name":"John","Age":25}`
-err := json.Unmarshal([]byte(jsonString), &p)
-if err != nil {
-  fmt.Println("Error decoding JSON:", err)
-}
-fmt.Printf("%+v", p)
-```
-
-The output of this code would be: `{Name: "John", Age: 25}`. We can also use maps and slices to decode JSON arrays and objects.
-
-## Deep Dive
-
-Go also provides the `json.Decoder` and `json.Encoder` types, which allow for more control and flexibility when working with JSON data. The `Decoder` type is used for reading and decoding JSON data from an `io.Reader` source, such as a file or network connection. The `Encoder` type is used for writing and encoding JSON data to an `io.Writer` destination.
-
-Other features of the `encoding/json` package include the ability to validate JSON data against a custom data structure, and the ability to omit empty struct fields from the encoded JSON string.
-
-## See Also
-
-- [Official Go documentation on working with JSON](https://golang.org/pkg/encoding/json/)
-- [A Beginner's Guide to Working with JSON in Go](https://www.sohamkamani.com/blog/2017/10/18/parsing-json-in-golang/)
-- [JSON to Go: Convert JSON to Go Structs](https://mholt.github.io/json-to-go/)
+- [Official Go documentation on JSON](https://golang.org/pkg/encoding/json/)
+- [JSON syntax rules](https://www.json.org/json-en.html)
+- [Difference between JSON and XML](https://www.thoughtco.com/the-differences-between-json-and-xml-2033970)

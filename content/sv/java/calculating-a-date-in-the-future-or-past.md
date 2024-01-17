@@ -10,28 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
-Det kan finnas många olika anledningar till varför man skulle vilja räkna ut ett datum i framtiden eller i det förflutna. Det kan vara för att planera evenemang, för att hålla reda på födelsedagar eller för att beräkna hur lång tid det är kvar till ett visst datum.
+## Vad & Varför?
+Att beräkna ett datum i framtiden eller det förflutna är en vanlig uppgift som programmerare behöver hantera. Det kan vara användbart för att bestämma utgångsdatum för projekt eller att göra beräkningar baserat på ett specifikt datum.
 
-## Hur man gör det
-Det finns flera sätt att beräkna ett datum i framtiden eller i det förflutna i Java. Ett enkelt sätt är att använda klassen `LocalDate` och dess metod `plusDays` eller `minusDays` beroende på om man vill räkna framåt eller bakåt i tiden. Till exempel:
+## Så här gör du:
+För att beräkna ett datum i Java, används Date-klassen och dess metoder. Här är ett exempel där vi räknar ut datumet som ligger 10 dagar efter ett givet startdatum:
 
 ```Java
-LocalDate today = LocalDate.now(); // dagens datum
-LocalDate tomorrow = today.plusDays(1); // räkna ut datumet för imorgon
-LocalDate yesterday = today.minusDays(1); // räkna ut datumet för igår
-System.out.println("Imorgon är det: " + tomorrow); // skriver ut: Imorgon är det: 2021-09-07
-System.out.println("Igår var det: " + yesterday); // skriver ut: Igår var det: 2021-09-05
+import java.util.Date;
+
+public class DateCalculator {
+
+    public static void main(String[] args) {
+        // Skapa ett startdatum
+        Date startDate = new Date();
+
+        // Använd Date-klassens .setTime-metod för att lägga till 10 dagar till startdatumet
+        startDate.setTime(startDate.getTime() + (10 * 24 * 60 * 60 * 1000));
+
+        // Skriv ut resultatet
+        System.out.println("Datumet som ligger 10 dagar efter startdatumet är: " + startDate);
+    }
+}
+
+/* Output:
+Datumet som ligger 10 dagar efter startdatumet är: Mon Jul 19 14:33:35 CEST 2021
+*/
 ```
 
-Man kan också använda klassen `LocalDateTime` om man även vill inkludera tid i beräkningen, eller klassen `ZonedDateTime` om man vill hantera olika tidszoner.
+## Djupdykning:
+Att beräkna datum i framtiden eller det förflutna är en vanlig uppgift inom programmering, och detta har varit en viktig funktion sedan de tidiga dagarna av datorer. Alternative metoder för att beräkna datum i Java inkluderar att använda Calendar-klassen eller att använda tredjeparts bibliotek som Joda-Time. När det gäller implementationen av detta i Java, används "Unix timestamp" som är antalet millisekunder från 1 januari 1970.
 
-## Djupdykning
-När man beräknar ett datum i framtiden eller i förflutna är det viktigt att ta hänsyn till eventuella skillnader i tidszoner och sommartid. Det kan också vara bra att använda sig av andra metoder som `plusMonths` eller `plusYears` beroende på vilken precis precision man behöver i beräkningen. Det finns också möjlighet att använda sig av andra klasser såsom `java.util.Calendar` eller `java.time.Period` för att göra mer avancerade beräkningar.
-
-## Se även
-- [Java's LocalDate Class](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
-- [Java's LocalDateTime Class](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDateTime.html)
-- [Java's ZonedDateTime Class](https://docs.oracle.com/javase/8/docs/api/java/time/ZonedDateTime.html)
-- [Java's Calendar Class](https://docs.oracle.com/javase/8/docs/api/java/util/Calendar.html)
-- [Java's Period Class](https://docs.oracle.com/javase/8/docs/api/java/time/Period.html)
+## Se även:
+- [Java Date-klassen](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html)
+- [Alternativ för datumberäkning i Java](https://stackify.com/how-to-get-current-date-time-in-java/)
+- [Joda-Time biblioteket](https://www.joda.org/joda-time/)

@@ -10,54 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego?
+## Co i dlaczego?
 
-Parsing HTML może być bardzo przydatnym narzędziem dla programistów w wielu różnych sytuacjach. Może on pomóc w szybkim i skutecznym przetwarzaniu dużych ilości danych, takich jak strony internetowe czy dokumenty HTML. Dzięki temu łatwiej można wyłuskać potrzebne informacje lub przekonwertować je na inny format.
+Parsing HTML to czynność polegająca na analizowaniu kodu HTML i wyodrębnianiu z niego potrzebnych informacji. Programiści często używają tej techniki do automatycznego przetwarzania dużej ilości danych, takich jak adresy email czy treści artykułów, zamiast przepisywać je ręcznie.
 
-## Jak to zrobić?
+## Jak:
 
-Aby rozpocząć parsowanie HTML w Ruby, potrzebujemy jedynie kilku prostych kroków. Najpierw musimy zainstalować i zaimportować gem Nokogiri, który jest biblioteką do przetwarzania dokumentów HTML.
+Przykładowy kod w Ruby do wyparsowania adresów email ze strony internetowej:
 
-```ruby
+```Ruby
 require 'nokogiri'
+require 'open-uri'
+
+doc = Nokogiri::HTML(URI.open('strona_internetowa'))
+emails = doc.css('a[href*="mailto:"]').map { |a| a["href"].gsub("mailto:", "") }
+puts emails
 ```
 
-Następnie musimy pobrać dane HTML ze źródła, na przykład z adresu URL lub z lokalnego pliku. Możemy to zrobić przy użyciu modułu OpenURI.
-
-```ruby
-page = Nokogiri::HTML(URI.open("https://www.example.com"))
+Output:
+```
+["example1@gmail.com", "example2@yahoo.com", "example3@hotmail.com"]
 ```
 
-Teraz możemy przystąpić do parsowania. Możemy użyć różnych metod w zależności od naszych potrzeb, na przykład ```css```, aby wybrać elementy za pomocą selektorów CSS, lub ```xpath```, aby wybrać elementy za pomocą wyrażeń xpath.
+## Głębsze zagadnienia:
 
-```ruby
-# wybieranie wszystkich linków z atrybutem "href"
-links = page.css("a[href]")
+Parsing HTML jest powszechnie używane od początku internetowej ery. Jedną z popularnych bibliotek do tego celu jest Nokogiri, lecz istnieje także wiele innych opcji, takie jak BeautifulSoup czy regular expressions. W celu uzyskania dokładniejszego wyniku, konieczne jest również zrozumienie CSS selectors, dzięki którym można precyzyjnie wybierać interesujące elementy z kodu HTML.
 
-# wybieranie pojedynczego elementu po identyfikatorze
-element = page.xpath('//*[@id="element_id"]')
-```
+## Zobacz także:
 
-W celu wyświetlenia wybranych danych, możemy użyć pętli lub metod zwracających tablice, takich jak ```map```.
-
-```ruby
-# wyświetlanie zawartości wszystkich linków
-links.each do |link|
-  puts link.content
-end
-
-# zapisywanie zawartości wszystkich linków do tablicy
-links_list = links.map { |link| link.content }
-```
-
-## Głębsza analiza
-
-Parsing HTML może być wyzwaniem ze względu na różnorodność i nieprzewidywalność stron internetowych. Istnieją jednak pewne sposoby na ułatwienie sobie zadania. Możemy na przykład użyć narzędzi do analizy HTML, takich jak Chrome DevTools, aby zobaczyć strukturę kodu i znaleźć odpowiednie selektory.
-
-Warto również pamiętać o korzystaniu z dobrej dokumentacji biblioteki Nokogiri oraz sprawdzania typów danych zwracanych przez poszczególne metody. Przede wszystkim, warto eksperymentować i testować różne metody, aby znaleźć najlepsze rozwiązanie dla swoich potrzeb.
-
-## Zobacz także
-
-* [Dokumentacja Nokogiri](https://www.rubydoc.info/github/sparklemotion/nokogiri/Nokogiri)
-* [Poradnik do korzystania z Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools)
-* [Przykładowe skrypty do parsowania HTML w Ruby](https://github.com/search?q=html+parsing+ruby)
+- Dokumentacja Nokogiri: https://nokogiri.org/
+- 10 sposobów na parsing HTML w Ruby: https://www.rubyguides.com/10-ways-to-parse-html-in-ruby/

@@ -1,7 +1,7 @@
 ---
-title:                "This is the title of an article on computer programming: פיענוח HTML."
-html_title:           "Kotlin: This is the title of an article on computer programming: פיענוח HTML."
-simple_title:         "This is the title of an article on computer programming: פיענוח HTML."
+title:                "פיענוח HTML"
+html_title:           "Kotlin: פיענוח HTML"
+simple_title:         "פיענוח HTML"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "HTML and the Web"
@@ -10,28 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## עבור מה 
+## מה ולמה?
+לתרגם בברירת מחדל, שורת קוד מן הקוד המקורי שהופך בהמשך להופך לטקסט HTML ויכול להיות מושג כ "לפרק" את הטקסט HTML. מתכנתים משתמשים בקשת עדיין ולמשתמשים כדי לתכנת את אתרים, אפליקציות, וממשקי משתמש אחרים לתפוס ולעבד גם טקסט בקוד HTML.
 
-Parsing (פענוח) של קוד HTML הוא תהליך חשוב ביישומי אינטרנט, מחשב והחטיפה של נתונים מאתרים שונים. באמצעות פענוח HTML, ניתן לקרוא ולנתח את קוד הדף האינטרנטי, ולכן יכול לעזור לפיתוח מתקדם ויצירת יישומים מתקדמים.
-
-## איך לבצע פענוח HTML ב-Kotlin
-
-תחילה, יש ליצור פרויקט חדש ב-Kotlin ולהתקין את הספרייה הנחוצה עבור פענוח HTML. לדוגמה, ניתן להשתמש בספרייה הפופולרית Jsoup. לאחר מכן, ניתן להשתמש בפונקציות המובנות של Jsoup עבור החלפת תווים, חיפוש ואיחסון של מידע מוצא בקוד HTML. נהלך דוגמא קוד בקטע הבא שמדגים כיצד לחשב את מספר המילים בדף אינטרנט:
-
-```kotlin
-import org.jsoup.Jsoup
-
-fun main() {
-    val url = "https://en.wikipedia.org/wiki/HTML"
-    val doc = Jsoup.connect(url).get()
-    val text = doc.text()
-    val words = text.split(" ")
-    println("Number of words in HTML webpage: ${words.size}")
+## איך ל:
+קוד בספריה נוספת HTML כמו הבא זנק (הוספה כמו סימולט אנא לבדוק:
+ 
+```
+ממשק כמו הלהט שחום {
+        כי לייגן : מובנה במידע
 }
+
 ```
 
-בקוד זה, אנו משתמשים בספריית Jsoup כדי להתמקד בקוד HTML של הדף האינטרנטי שלנו. נשתמש בפונקציות כמו `connect` ו- `get` כדי ליצור חיבור לדף ולקבל את קוד הדף כטקסט. לאחר מכן, נשתמש בפונקציות כמו `text` ו- `split` כדי לפרוס את הטקסט למילים ולחשב את מספר המילים בדף. כמו שאתם רואים, פענוח HTML ב-Kotlin נעשה בצורה קלה ומהירה באמצעות היכולות המתקדמות של ספריית Jsoup.
+כתוצאה מכך, בתיבת האימות נראה כי הטקסט המקבץ כמו האקטיביות, כאשר HTML לוקח בערך של `להשתמש ב-`ונקרא התוכן של המסך. אתה יכול להשתמש בפרמטרים מוגדרים מראש של ערך בשפת המחשב בסדרות נסל כאוואינתה רכושים חלק חדשים במובלק
 
-## צלילה עמוקה
+## חקירה מקומית:
+כדי להתמודד עם אתרים אנחנו צריכים לשמועת רובים צרים ולכן ממש את הסוג תוך משקף את שונה הטקסטים הנלהבים HTML מכולם דרוח בשנה ויצירת במדע ממסכמת את קשרים איתניים ולחכומי או עבור עריכת טקסטים בתור מיקי דביטות טומפס התברר צריך דעת! את מתאצים כל האובת שלו:
 
-אם ברצונכם להצטייד ביכולות מתקדמות יותר במתן שירותים אינטרנטיים בסביבת Kotlin, כדאי ללמוד עוד על
+- Hebrew Programming: https://he.wikibooks.org/wiki/מדריך_לתכנות_בשפת_התכנות_Kotlin
+- HTML parsing guide: https://www.w3schools.com/html/html_parse.asp
+
+## ראה גם:
+- שפת התכנות Kotlin: https://kotlinlang.org/
+- תיעוד הרשומות הקודםות של Kotlin: https://kotlinlang.org/docs/reference/

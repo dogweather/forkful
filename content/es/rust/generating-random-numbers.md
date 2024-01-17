@@ -1,7 +1,7 @@
 ---
-title:                "Generación de números aleatorios"
-html_title:           "Rust: Generación de números aleatorios"
-simple_title:         "Generación de números aleatorios"
+title:                "Generando números aleatorios"
+html_title:           "Rust: Generando números aleatorios"
+simple_title:         "Generando números aleatorios"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Numbers"
@@ -10,48 +10,20 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué generar números aleatorios en Rust?
+## ¿Qué es y por qué se hace?
 
-Generar números aleatorios es una habilidad fundamental en la programación, ya sea para simular situaciones, realizar pruebas o aumentar la seguridad en las aplicaciones. En Rust, existen varias formas de generar números aleatorios de manera eficiente y segura, lo que lo convierte en un lenguaje ideal para esta tarea.
+Generar números aleatorios es una técnica utilizada por los programadores para producir valores numéricos aleatorios con propósitos diversos, como juegos, pruebas y criptografía. Al generar números aleatorios, se puede simular diferentes escenarios y crear resultados impredecibles, lo que puede ser útil en muchas aplicaciones.
 
-## Cómo hacerlo en Rust
+## Cómo hacerlo:
 
-Para generar números aleatorios en Rust, primero debemos importar la biblioteca "rand". Luego, podemos utilizar los métodos de esta biblioteca para generar diferentes tipos de números aleatorios, como enteros, decimales o booleanos.
+La biblioteca estándar de Rust proporciona la macro ```rand::random```, que devuelve un valor de tipo ```u64``` aleatorio generado por el generador de números aleatorios global (PRNG). Se pueden especificar tipos específicos agregando una anotación de tipo antes de la llamada a la macro. Por ejemplo, ```let random_number: i32 = rand::random();``` generará un valor entero aleatorio de 32 bits.
 
-```Rust
-use rand::prelude::*; // Importar la biblioteca "rand"
+## Exploración profunda
 
-// Generar un número entero aleatorio entre 1 y 10
-let num: u32 = rand::thread_rng().gen_range(1, 11);
-println!("Número aleatorio: {}", num);
+La generación de números aleatorios ha sido un área de investigación en la informática desde sus inicios. Algunos de los primeros algoritmos incluyen el método del cuadrado medio, el método del producto medio y el método de congruencia lineal. Hay muchas alternativas al PRNG global implementado en Rust, como el Mersenne Twister, que es conocido por producir secuencias de números aleatorios de alta calidad.
 
-// Generar un número decimal aleatorio entre 0 y 1
-let num: f64 = rand::thread_rng().gen();
-println!("Número aleatorio: {}", num);
+## Ver también:
 
-// Generar un booleano aleatorio
-let booleano: bool = rand::thread_rng().gen();
-println!("Booleano aleatorio: {}", booleano);
-```
-
-## Profundizando en la generación de números aleatorios en Rust
-
-En Rust, la generación de números aleatorios se basa en un generador llamado "Mersenne Twister". Este generador utiliza un estado interno para producir una secuencia de números aparentemente aleatorios, pero que siguen un patrón predecible. Además, Rust implementa medidas de seguridad para evitar que los números aleatorios sean adivinados por posibles atacantes.
-
-Si deseamos generar números aleatorios con una distribución específica, podemos utilizar las funciones de la biblioteca "rand_distr". Por ejemplo, si deseamos generar un número aleatorio con distribución normal, podemos hacer lo siguiente:
-
-```Rust
-use rand::prelude::*;
-use rand_distr::{Normal, Distribution}; // Importar biblioteca "rand_distr"
-
-// Generar un número aleatorio con distribución normal
-let distribucion = Normal::new(0.0, 1.0).unwrap();
-let num: f64 = rand::thread_rng().sample(distribucion);
-println!("Número aleatorio con distribución normal: {}", num);
-```
-
-## Ver también
-
-- [Documentación de Rust sobre la generación de números aleatorios](https://doc.rust-lang.org/rand/)
-- [Ejemplo de uso de diferentes funciones de la biblioteca "rand"](https://web.archive.org/web/20200710045717/https://rust-lang-nursery.github.io/rust-cookbook/science/mathematics/random.html)
-- [Explicación detallada del generador Mersenne Twister](https://web.archive.org/web/20200710134450/https://doc.rust-lang.org/rand/rand/hc/struct.Hc128Core.html)
+- Documentación oficial de Rust sobre generación de números aleatorios: https://doc.rust-lang.org/book/ch07-06-managing-growing-projects-with-packages-crates-and-modules.html#generating-random-numbers 
+- El libro "Introduction to Randomness and Random Numbers" de Miguel Sanchez: http://random.mat.sbg.ac.at/people/sk/2011/sk-isc-2011.pdf
+- Pseudo-random number generator en Wikipedia: https://en.wikipedia.org/wiki/Pseudorandom_number_generator

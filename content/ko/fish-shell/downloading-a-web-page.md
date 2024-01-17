@@ -10,30 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
-웹 페이지를 다운로드하는 이유는? 아마도 친구에게 쉽게 공유하기 위해서일 거에요. 
+## 무엇과 왜?
+웹 페이지 다운로드는 인터넷에서 페이지를 다운로드하는 것을 말합니다. 프로그래머들은 이를 수행하여 웹사이트에서 원하는 내용을 추출하거나, 데이터를 수집하거나, 자동화된 작업을 수행하기 위해 사용합니다.
 
-## 하는 법
-우선 `curl`을 사용해 URL을 지정해주고 다운로드할 파일의 이름을 지정해줍니다. 그리고 `wget`을 사용해 파일을 다운로드하면 됩니다. 
+## 방법:
+### 기본적인 사용법
+```Fish Shell``` 내에서는 간단한 명령어를 사용하여 웹 페이지를 다운로드할 수 있습니다. 예를 들어, ```wget <url>``` 명령어를 입력하면 해당 URL로부터 파일을 다운로드할 수 있습니다. 또는 ```curl <url>``` 명령어를 사용하여 해당 URL의 내용을 확인할 수 있습니다.
 
-```Fish Shell
-curl -o 파일이름 URL
-wget URL
-```
+### 웹 페이지 내용 추출
+웹 페이지 다운로드를 통해 웹사이트에서 원하는 내용을 추출할 수 있습니다. 예를 들어, ```curl -s <url> | grep "<tag>"``` 명령어를 사용하면 웹 페이지에서 원하는 HTML 태그의 내용을 추출할 수 있습니다.
 
-예를 들어, `fish.io`라는 웹사이트의 로고를 다운로드하고 싶다면 다음과 같이 입력할 수 있어요.
+### 자동화
+웹 페이지 다운로드를 자동화하는 스크립트를 작성할 수도 있습니다. ```Fish Shell```의 유연한 문법을 활용하여 다양한 작업을 자동으로 수행할 수 있습니다.
 
-```Fish Shell
-curl -o logo.png https://fish.io/logo.png
-wget https://fish.io/logo.png
-```
+## 깊게 파헤치기:
+### 역사적인 배경
+웹 페이지 다운로드는 인터넷이 생겨나기 전부터 사용되었습니다. 초기에는 프로그래머들이 직접 소켓 프로그래밍을 통해 웹 페이지를 다운로드했습니다. 하지만 지금은 간편한 명령어나 라이브러리를 사용하여 보다 쉽게 수행할 수 있게 되었습니다.
 
-이제 현재 디렉토리에 `logo.png` 파일이 다운로드된 것을 확인할 수 있습니다.
+### 대안들
+웹 페이지 다운로드를 위해 ```Fish Shell``` 외에도 다른 도구들을 사용할 수 있습니다. 예를 들어, ```Python```의 ```requests``` 라이브러리나 ```cURL``` 등이 있습니다.
 
-## 깊이 알아보기
-웹 페이지를 다운로드할 때 사용되는 프로그램들은 다양한 기능을 제공합니다. `curl`은 다양한 인증 방식을 지원하고 `wget`은 다운로드 속도를 개선하는 기능을 가지고 있어요. 또한, 웹 페이지를 다운로드할 때는 서버의 부하나 네트워크 상황에 따라 다운로드 속도가 달라질 수 있습니다. 이러한 다양한 요소들을 고려하면서 웹 페이지를 다운로드하는 것이 중요합니다.
+### 구현 세부 사항
+웹 페이지 다운로드는 주로 HTTP 메서드를 사용하여 서버와 통신하는 과정을 거칩니다. 서버로부터 데이터를 받아와서 해당 데이터를 파일로 저장하거나, 화면에 출력하는 방식으로 동작합니다.
 
-## 참고 
-[Official Fish Shell Documentation](https://fishshell.com/docs/current/index.html)
-[Using cURL to Download a File](https://linuxize.com/post/wget-command-examples/)
-[Using wget to Download a File](https://www.computerhope.com/unix/wget.htm)
+## 더 알아보기:
+- [Fish Shell 공식 문서](https://fishshell.com/docs/current/)
+- [HTTP 메서드에 대한 자세한 설명](https://developer.mozilla.org/ko/docs/Web/HTTP/Methods)

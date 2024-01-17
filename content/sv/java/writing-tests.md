@@ -1,7 +1,7 @@
 ---
-title:                "Att skriva tester"
-html_title:           "Java: Att skriva tester"
-simple_title:         "Att skriva tester"
+title:                "Skriva tester"
+html_title:           "Java: Skriva tester"
+simple_title:         "Skriva tester"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Testing and Debugging"
@@ -10,45 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
+När vi pratar om att skriva tester i programmering så menar vi att skapa en uppsättning instruktioner som testar koden för vårt program och kontrollerar att det fungerar som det ska. Detta är viktigt eftersom det hjälper oss att hitta och fixa buggar och fel i koden innan vi släpper den till användare.
 
-När du skriver kod kan du ibland stöta på buggar eller ineffektivitet. Att skriva tester för din kod hjälper dig att hitta och lösa dessa problem tidigare, vilket sparar tid och frustration på lång sikt.
+## Så här:
+För att skriva tester i Java behöver vi använda ett ramverk som heter JUnit. Detta låter oss skapa olika tester för olika delar av koden och köra dem automatiskt för att kontrollera att allt fungerar som det ska.
 
-## How To
+```Java
+public class CalculatorTest {
 
-```java
-// Skapa en enkel metod att testa
-public int addNumbers(int num1, int num2) {
-    return num1 + num2;
-}
+  @Test
+  public void testSum() {
+    int result = Calculator.sum(3, 7);
+    assertEquals(10, result);
+  }
+  
+  @Test
+  public void testDivision() {
+    double result = Calculator.divide(10, 2);
+    assertEquals(5.0, result);
+  }
 
-// Importera JUnit biblioteket
-import org.junit.Test;
-import static org.junit.Assert.assertEquals;
-
-// Skapa ett testfall med hjälp av @Test annotationen
-@Test
-public void testAddNumbers() {
-    // Arrange (förbereda)
-    int num1 = 5;
-    int num2 = 10;
-
-    // Act (utföra)
-    int result = addNumbers(num1, num2);
-
-    // Assert (verifiera)
-    assertEquals(15, result);
 }
 ```
 
-Output: Om testet lyckas kommer inget utskrift att visas. Men om det misslyckas kommer en feedback att visas med information om vilket test som misslyckades och vad det förväntade resultatet var.
+Testerna lägger vi sedan i en egen testmapp inuti vårt projekt och kör dem med hjälp av en IDE eller genom att skriva "mvn test" i terminalen. Om något test inte lyckas betyder det att vi behöver gå tillbaka till vår kod och fixa det som inte fungerar.
 
-## Deep Dive
+## Deep Dive:
+Historiskt sett har skrivande av tester ofta sett som en tidskrävande process, men med JUnit och andra ramverk har processen blivit automatiserad och mycket snabbare. Det finns även andra alternativ för att skriva tester, såsom TestNG och Mockito, men JUnit är det mest populära valet inom Java-världen.
 
-Att skriva tester är en viktig del av utvecklingsprocessen eftersom det hjälper till att säkerställa att din kod fungerar som den ska. Det finns olika typer av tester som kan skrivas, inklusive enhetstester och integrationstester. Det är också viktigt att skriva testbara kod som är löst kopplad och väl strukturerad för att underlätta skrivandet av tester.
+Det finns många olika metoder för att skriva tester, men ett vanligt sätt är att använda en teknik som kallas "test-driven development" (TDD). Detta innebär att vi skriver våra tester innan vi skriver själva kod, vilket hjälper oss att fokusera på vad vår kod faktiskt ska göra och hur vi ska testa det.
 
-## Se även
-
-- [JUnit](https://github.com/junit-team/junit4) - det populära ramverket för att skriva Java-tester
-- [Test-driven development (TDD)](https://en.wikipedia.org/wiki/Test-driven_development) - en metodik för att skriva kod där tester skrivs först och koden skrivs sedan för att passera testerna
-- [Best practices for writing maintainable and testable code](https://www.oracle.com/java/technologies/writing-maintainable-testable-code.html) - råd från Oracle om hur man skriver bättre och testbar kod
+## Se även:
+- [JUnit 5 User Guide](https://junit.org/junit5/docs/current/user-guide/)
+- [TestNG](https://testng.org/doc/index.html)
+- [Mockito](https://site.mockito.org/)
+- [Test-driven development (Wikipedia)](https://en.wikipedia.org/wiki/Test-driven_development)

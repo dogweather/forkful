@@ -10,50 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why 
+## What & Why?
 
-Starting a new project with Arduino is a great way to bring your ideas to life and learn about electronics, programming, and physical computing in an engaging and practical way. With its easy-to-use interface and endless possibilities, Arduino is the perfect platform for makers, hobbyists, and DIY enthusiasts to turn their imagination into reality.
+Starting a new project in Arduino is essentially creating a new program or project using the Arduino programming language. This involves writing code in a specific format to control electronic components and create interactive devices. Programmers use it as a way to bring their ideas to life and create functional and fun projects.
 
-## How To 
-
-To start a new project with Arduino, you will need the following materials:
-
-- An Arduino board (such as the Uno, Nano, or Mega)
-- A USB cable to connect the board to your computer
-- A computer with the Arduino IDE (Integrated Development Environment) installed
-- Breadboard, jumper wires, and electronic components (such as sensors, LEDs, and resistors) for your project
-
-Once you have all the materials, follow these steps:
-
-1. Connect your Arduino board to your computer using the USB cable.
-2. Open the Arduino IDE on your computer.
-3. In the IDE, click on "Tools" and select your board type and port from the drop-down menus.
-4. To get familiar with the IDE, let's try uploading a simple blinking LED program to your board. Copy and paste the following code into the IDE:
+## How to:
 
 ```
-Arduino void setup() {
-  pinMode(LED_BUILTIN, OUTPUT); //initialize built-in LED as output
-}
-
-void loop() {
-  digitalWrite(LED_BUILTIN, HIGH); //turn on LED
-  delay(1000); //wait for 1 second
-  digitalWrite(LED_BUILTIN, LOW); //turn off LED
-  delay(1000); //wait for 1 second
-}
+Arduino
 ```
 
-5. Click on the "Upload" button and wait for the code to be uploaded to your board.
-6. If everything goes well, you should see the built-in LED on your board blinking on and off every second, congratulations!
+In order to start a new project in Arduino, follow these simple steps:
 
-## Deep Dive
+1. Open the Arduino IDE (Integrated Development Environment). This is where you will write your code and upload it to the Arduino board.
+2. Click on File > New to create a new sketch.
+3. Give your project a name by clicking on File > Save As.
+4. Write your code using the Arduino syntax and commands. For example, to turn on an LED light connected to pin 13, you would write ```digitalWrite(13, HIGH);```.
+5. To upload your code to the Arduino board, click on Sketch > Upload.
+6. If there are no errors in your code, the project will be successfully uploaded to the board and you will see your project come to life!
 
-Before starting a new project with Arduino, it's essential to have a good understanding of the basics. The Arduino board is a microcontroller-based platform, meaning it has a small computer (microcontroller) embedded in it that can read and write digital and analog signals, process data, and control electronic components. The Arduino language, based on C++, is used to program the board and communicate with the external components. With just a few lines of code, you can read data from sensors, control motors, and create complex projects.
+## Deep Dive:
 
-To start a new project, you need to have an idea of what you want to create and a basic understanding of the electronic components needed for your project. With Arduino, the possibilities are endless, and there are plenty of tutorials, project ideas, and community forums to help you get started and troubleshoot any issues you may encounter.
+Arduino was created in 2005 by a team in Italy as a way to provide an inexpensive and easy-to-use platform for creating interactive projects. It is a popular choice among hobbyists, students, and professionals due to its user-friendly interface and affordable price.
 
-## See Also
+While there are other alternatives for programming microcontrollers such as Raspberry Pi and MicroPython, Arduino has a large and active community and a vast library of tutorials and resources. This makes it a great choice, especially for beginners.
 
-- [Arduino Official Website](https://www.arduino.cc/)
-- [Arduino Tutorials](https://www.arduino.cc/en/Tutorial/HomePage)
-- [Arduino Forum](https://forum.arduino.cc/)
+Arduino projects can also be enhanced by using various shields, which are add-on boards that provide additional features and functionalities. These shields can be easily connected to the Arduino board, making it a versatile and customizable platform.
+
+## See Also:
+
+- [Official Arduino Website](https://www.arduino.cc/)
+- [Arduino Stack Exchange](https://arduino.stackexchange.com/)
+- [Arduino Projects Hub](https://create.arduino.cc/projecthub)

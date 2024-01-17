@@ -1,7 +1,7 @@
 ---
-title:                "Beräkna ett datum i framtiden eller förflutna"
-html_title:           "Ruby: Beräkna ett datum i framtiden eller förflutna"
-simple_title:         "Beräkna ett datum i framtiden eller förflutna"
+title:                "Beräkna ett datum i framtiden eller i det förflutna"
+html_title:           "Ruby: Beräkna ett datum i framtiden eller i det förflutna"
+simple_title:         "Beräkna ett datum i framtiden eller i det förflutna"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Dates and Times"
@@ -10,55 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
 
-Att kunna beräkna ett datum i framtiden eller det förflutna är en viktig del av programmering. Det kan vara användbart för att hålla reda på tidsbaserade händelser eller för att skapa dynamiska funktioner i en applikation.
+Att beräkna ett datum i framtiden eller det förflutna är en vanlig uppgift inom programmering. Vanligtvis görs detta för att program behöver planera eller agera baserat på specifika tidsramar och datum. Till exempel kan en kalenderapplikation behöva beräkna datumet för en uppgift i framtiden, eller en bokningssida kan behöva beräkna datumet för en återbetalning baserat på en avbokning.
 
-## Hur man gör
+## Hur man gör:
 
-Beräkna ett datum i framtiden eller förflutna är enkelt med Ruby. Det finns flera metoder som kan användas för detta ändamål.
-
-För att beräkna ett datum i framtiden, använd `+` operatören tillsammans med `Date` klassen. Här är ett exempel på att lägga till 30 dagar till dagens datum:
+Att beräkna ett datum i framtiden eller det förflutna i Ruby är enkelt med hjälp av innebyggda funktioner och metoder. För att beräkna en specifik dag i framtiden kan vi använda `Date` klassens `+` metoden tillsammans med antalet dagar vi vill lägga till. Exempelvis, för att beräkna datumet för två veckor framåt:
 
 ```Ruby
-Date.today + 30
-=> "2021-08-07"
+require 'date'
+puts Date.today + 14
 ```
 
-För att beräkna ett datum i förflutna, använd `-` operatören. Här är ett exempel på att subtrahera 2 veckor från dagens datum:
+Output: 2021-08-30
+
+På samma sätt kan vi använda `-` metoden för att beräkna datumet för ett visst antal dagar tillbaka i tiden. Exempelvis, för att beräkna datumet för tre dagar sedan: 
 
 ```Ruby
-Date.today - 14
-=> "2021-07-14"
+require 'date'
+puts Date.today - 3
 ```
 
-För att beräkna ett datum baserat på ett specifikt datum, använd `parse` metoden tillsammans med `Date` klassen:
+Output: 2021-08-13
+
+För att beräkna ett specifikt datum i det förflutna eller framtiden kan vi använda `Date.new` metoden tillsammans med det önskade året, månaden och dagen. Exempelvis, för att beräkna datumet för min födelsedag år 1990:
 
 ```Ruby
-Date.parse("2021-07-15") + 10
-=> "2021-07-25"
+puts Date.new(1990, 9, 10)
 ```
 
-## Deep Dive
+Output: 1990-09-10
 
-När man beräknar ett datum i framtiden eller förflutna kan det vara viktigt att tänka på olika tidszoner och dagar som kan påverka resultatet. Ruby har inbyggda funktioner för att hantera olika tidszoner och för att ta hänsyn till skottår.
+## Djupdykning:
 
-För att använda en specifik tidszon, använd `TimeZone` klassen tillsammans med `+` operatören. Här är ett exempel på att lägga till 5 timmar för en viss tidszon:
+Det finns flera olika sätt att beräkna ett datum i framtiden eller det förflutna i Ruby, såsom att använda `DateTime` klassen istället för `Date` för att även inkludera tid eller att använda andra metoder som `next_year` eller `prev_year` för att beräkna ett datum baserat på år istället för dagar. Det finns även externa bibliotek såsom `Chronic` som gör det möjligt att beräkna datum baserat på naturligt språk.
 
-```Ruby
-TimeZone["Pacific Time (US & Canada)"].now + 5.hours
-=> "2021-07-08 18:22:00 -0700"
-```
+## Se även:
 
-För att ta hänsyn till skottår, använd `next_year` eller `prev_year` metoder tillsammans med `Date` klassen. Här är ett exempel på att beräkna nästa skottår från ett specifikt datum:
-
-```Ruby
-Date.new(2021).next_year
-=> "2024-01-01"
-```
-
-## Se även
-
-- [Ruby Date and Time Class](https://ruby-doc.org/stdlib-2.7.0/libdoc/date/rdoc/Date.html)
-- [Ruby Date and Time Format](https://ruby-doc.org/core-3.0.0/Date.html#method-i-strftime)
-- [Ruby Time Zones](https://ruby-doc.org/stdlib-2.7.0/libdoc/time/rdoc/Time.html#class-Time-label-Time+zone+conversion)
+- [Ruby dokumentation för Date klassen](https://ruby-doc.org/stdlib-2.7.1/libdoc/date/rdoc/Date.html)
+- [Chronic biblioteket för att hantera naturligt språk i datum beräkningar](https://github.com/mojombo/chronic)

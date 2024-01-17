@@ -10,49 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## 何？なぜ？
 
-クリーンアップを心配することなく、一時的なファイルを作成することができるからです。
+一時ファイルを作成するとは、一時的にデータを保持するためにプログラマーが作成する一時的なファイルのことです。 私たちプログラマーは、データを一時的に保存したり、バックアップしたり、データの削除を回避するために、多くの場合一時ファイルを作成します。
 
-## How To
-
-一時的なファイルを作成するには、`ioutil` パッケージの `TempFile()` 関数を使用します。以下のコードは、カレントディレクトリに一時的なファイルを作成し、そのパスを出力するものです。 
+## 方法：
 
 ```Go
-package main
+// 一時ファイルを作成して、内容を書き込む方法
+file, err := ioutil.TempFile("", "sample")
+if err != nil {
+    panic(err)
+}
+defer os.Remove(file.Name())
 
-import (
-	"fmt"
-	"io/ioutil"
-)
-
-func main() {
-	file, err := ioutil.TempFile("", "temp_file")
-	if err != nil {
-		panic(err)
-	}
-
-	defer file.Close()
-
-	fmt.Println("一時的なファイルのパス:", file.Name())
+// ファイルにデータを書き込む
+_, err = file.WriteString("Hello world!")
+if err != nil {
+    panic(err)
 }
 ```
 
-出力結果:
+```Go
+// 既存のファイルを元に一時ファイルを作成する方法
+input, err := ioutil.ReadFile("existing_file")
+if err != nil {
+    panic(err)
+}
+err = ioutil.WriteFile("new_temp_file", input, 0644)
+if err != nil {
+    panic(err)
+}
 ```
-一時的なファイルのパス: C:\Users\Username\AppData\Local\Temp\temp_file633073148
-```
 
-一時的なファイルを作成する際には、`suffix` として空の文字列を指定することで、作成されるファイルにランダムな文字列が追加されます。また、必要に応じて `prefix` としてファイル名の先頭に追加する文字列を指定することもできます。
+## 深い掘り下げ：
 
-## Deep Dive
+一時ファイルが作成されるのは何十年も前からで、プログラマーにとって非常に便利な機能であると言えます。一時ファイルの代替として、メモリ内でデータを保持する方法や、別の名前でファイルを保存する方法もあります。一時ファイルは、ファイルシステムに直接影響を与えないため、データの削除を避けるのに便利です。
 
-一時的なファイルはメモリを節約するために一時ファイルとして作成され、プログラムが終了した時点で自動的に削除されます。しかし、ファイル自体が自動的に削除されるわけではなく、プログラムがファイルを閉じた時点で削除されます。そのため、ファイルを使用し終わったら必ず `defer` を使用してファイルを閉じるようにする必要があります。
+Go言語では、一時ファイルを作成する際に一意の名前を生成するためにランダムな文字列が使用されます。また、一時ファイルはプログラムが終了した際に自動的に削除されるため、開発者は明示的に削除する必要はありません。
 
-一時的なファイルが作成されるディレクトリは、空の文字列が指定されている場合は `os.TempDir()` が使用されます。また、デフォルトのファイルパーミッションは `0666` になりますが、最終的なパーミッションは実行環境によって異なる場合があります。
+## 関連情報：
 
-## See Also
-
-- [ioutil パッケージドキュメント](https://golang.org/pkg/io/ioutil/)
-- [一時的なファイルの作成と削除](https://www.callicoder.com/golang-create-write-and-delete-temporary-file/)
-- [Go by Example: Temporary Files](https://gobyexample.com/temporary-files)
+- [ioutilのドキュメント](https://golang.org/pkg/io/ioutil/#TempFile)
+- [一時ファイルの作成についてのブログ記事](https://dev.to/nitish_the_techie/temporary-files-in-go-3c4k)
+- [一時ファイルの代替方法についてのスタックオーバーフローの質問](https://stackoverflow.com/questions/63913041/current-usage-for-temporary-files-in-go)

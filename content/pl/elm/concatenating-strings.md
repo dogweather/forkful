@@ -1,7 +1,7 @@
 ---
-title:                "Lączenie ciągów znaków"
-html_title:           "Elm: Lączenie ciągów znaków"
-simple_title:         "Lączenie ciągów znaków"
+title:                "Łączenie ciągów znaków"
+html_title:           "Elm: Łączenie ciągów znaków"
+simple_title:         "Łączenie ciągów znaków"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -10,41 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i dlaczego?
 
-Ciągłe łączenie stringów jest kluczowym elementem w procesie tworzenia oprogramowania. W Elm, łączenie stringów jest łatwe i przyjemne, a w tym artykule dowiesz się, jak tego dokonać!
+Konkatenacja ciągów znaków to po prostu operacja łączenia jednego ciągu z innym, tworząc w ten sposób nowy ciąg. Programiści często korzystają z tej techniki, aby wzbogacić swoje programy o dynamiczne komunikaty i wyświetlać użytkownikowi bardziej spersonalizowane informacje.
 
-## Jak to zrobić
+## Jak to zrobić:
 
+Elm udostępnia nam funkcję `String.concat`, która przyjmuje listę ciągów i zwraca połączony wynik. Na przykład:
 ```Elm
-"Hello, " ++ "World" 
-
+String.concat ["Witaj", " ", "świecie!"]
+-- Wynik: "Witaj świecie!"
+```
+Możemy również użyć operatora `++`, aby skleić dwa ciągi:
+```Elm
+"Witaj" ++ " " ++ "świecie!"
+-- Wynik: "Witaj świecie!"
 ```
 
-Kod powyżej łączy dwa stringi "Hello" i "World" w jeden ciąg znaków "Hello, World". Operacja ta jest wykonywana przez operator ++ (plus-plus), który jest specjalnie zaprojektowany do łączenia stringów w Elm. Możemy łączyć więcej niż dwa stringi, wystarczy połączyć je za pomocą kolejnych operatorów ++.
+## Wgląd w temat:
 
-Możemy także łączyć stringi za pomocą funkcji `String.join`, która przyjmuje separator oraz listę stringów jako argumenty. Przykład:
+Konkatenacja jest powszechnie stosowana w procesie tworzenia aplikacji internetowych, zwłaszcza w kontekście tworzenia interfejsów użytkownika. Alternatywą dla konkatenacji jest użycie formatowania tekstu lub szablonów, jednak w przypadku prostych operacji łączenia kilku ciągów, konkatenacja jest szybsza i prostsza w implementacji.
 
-```Elm
-String.join ", " ["Hello", "World", "!"] 
+W Elm, konkatenacja jest wykonywana za pomocą metody `String.append`, która jest optymalizowana dla wydajności. Podczas konkatenacji większej liczby ciągów, zaleca się użycie funkcji `String.concat` zamiast operatora `++`, ponieważ ta druga metoda wykorzystuje kolejne operatorów `++`, co może spowolnić działanie programu.
 
-```
-Wynik powyższego kodu to "Hello, World, !". Funkcja ta jest przydatna, gdy chcemy połączyć wiele stringów zawartych w liście.
+## Zobacz również:
 
-## Deep Dive
-
-W Elm, stringi są traktowane jako listy znaków, co oznacza, że posiadają wiele funkcji, które mogą być użyteczne podczas łączenia. Na przykład, funkcja `String.split` dzieli string na dwie części - wszystko przed pierwszym wystąpieniem określonego znaku i wszystko po nim. Jest to przydatne przy manipulowaniu danymi w formie stringów.
-
-Możemy także użyć operatora ++ z wartościami liczb zamiast stringów, wtedy zostaną one automatycznie przekonwertowane na stringi. Przykład:
-
-```Elm
-"Age: " ++ 27 
-
-```
-Wynik powyższego kodu to "Age: 27". Jest to bardzo użyteczne, gdy chcemy połączyć stringi z wartościami numerycznymi, bez konieczności wcześniejszej konwersji.
-
-## Zobacz też
-
-1. [Dokumentacja operatora ++ w Elm](https://elm-lang.org/docs/syntax#operators)
-2. [Funkcja String.join w Elm](https://package.elm-lang.org/packages/elm/core/latest/String#join)
-3. [Funkcja String.split w Elm](https://package.elm-lang.org/packages/elm/core/latest/String#split)
+Jeśli chcesz dowiedzieć się więcej na temat konkatenacji ciągów w Elm, zerknij na oficjalną dokumentację języka (https://package.elm-lang.org/packages/elm/core/latest/String#concat) oraz na tutoriali i przykłady w sieci. Możesz również spróbować samodzielnie zaimplementować konkatenację w innych językach programowania, aby lepiej zrozumieć tę operację.

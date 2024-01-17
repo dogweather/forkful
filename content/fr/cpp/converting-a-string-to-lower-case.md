@@ -10,66 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Qu'est-ce que c'est et pourquoi le faire?
 
-Convertir une chaîne de caractères en minuscules est une tâche courante en programmation car cela permet de normaliser les données pour faciliter les comparaisons et les recherches. De plus, de nombreuses fonctions dans les bibliothèques standard de C++ nécessitent que les chaînes soient en minuscules pour fonctionner correctement.
+La conversion d'une chaîne de caractères en minuscules est une manipulation courante pour les programmeurs. Elle consiste à convertir tous les caractères en lettres minuscules afin de standardiser la chaîne de caractères pour une utilisation ultérieure. Les programmeurs ont souvent besoin de manipuler des chaînes de caractères, et la conversion en minuscules peut faciliter le traitement et la comparaison des données.
 
-## Comment faire
+## Comment faire:
 
 ```C++
 #include <iostream>
+#include <algorithm>
 #include <string>
-#include <locale> // nécessaire pour la fonction std::tolower
 
 int main() {
-  // Déclarer et initialiser une chaîne de caractères
-  std::string message = "Bonjour à tous !";
-
-  // Boucle pour parcourir chaque caractère de la chaîne
-  for (size_t i = 0; i < message.length(); i++) {
-    // Utiliser la fonction std::tolower pour convertir chaque caractère en minuscule
-    message[i] = std::tolower(message[i]);
-  }
-
-  // Afficher le résultat
-  std::cout << message << std::endl;
+  // Exemple de chaîne de caractères en majuscules
+  std::string str = "PROGRAMMATION C++";
+    
+  // Conversion de la chaîne en minuscules
+  std::transform(str.begin(), str.end(), str.begin(), ::tolower);
+    
+  // Affichage du résultat
+  std::cout << str << '\n';
+  // Output: programmation c++
   return 0;
 }
 ```
 
-Output: bonjour à tous !
+## Profonde plongée:
 
-Il est également possible d'utiliser la fonction `transform` de la bibliothèque `<algorithm>` pour effectuer la conversion en une seule ligne de code.
+La conversion de chaînes de caractères en minuscules remonte aux débuts de la programmation informatique et est couramment utilisée dans de nombreux langages de programmation. Dans certains langages, comme Python, la conversion de chaînes de caractères en minuscules peut se faire simplement en utilisant une méthode intégrée. Cependant, en C++, la méthode la plus courante consiste à utiliser la fonction ```transform ()```, qui nécessite l'utilisation d'un itérateur et de la fonction ```tolower ()```. Il existe également des bibliothèques tierces qui offrent des fonctions spécifiques pour la conversion de chaînes en minuscules.
 
-```C++
-#include <iostream>
-#include <string>
-#include <algorithm> // nécessaire pour la fonction std::transform
-#include <locale> // nécessaire pour la fonction std::tolower
+## Voir aussi:
 
-int main() {
-  // Déclarer et initialiser une chaîne de caractères
-  std::string message = "Bonjour à tous !";
-
-  // Utiliser la fonction std::transform pour convertir la chaîne en minuscules
-  std::transform(message.begin(), message.end(), message.begin(),
-    [](unsigned char c) { return std::tolower(c); });
-
-  // Afficher le résultat
-  std::cout << message << std::endl;
-  return 0;
-}
-```
-
-Output: bonjour à tous !
-
-## Plongez plus en profondeur
-
-La fonction `std::tolower` utilisée dans les exemples précédents renvoie un caractère en minuscule selon les règles de la locale actuelle. La locale est un ensemble de paramètres régionaux qui déterminent les règles de conversion pour différentes langues et cultures. Par défaut, la locale standard est utilisée, mais il est possible de changer la locale en utilisant la fonction `std::setlocale`.
-
-De plus, il existe d'autres fonctions dans la bibliothèque standard de C++ pour manipuler les chaînes de caractères, telles que `std::toupper` pour convertir en majuscules et `std::stoi` pour convertir une chaîne en un entier.
-
-## Voir aussi
-
-- [Documentation de la fonction std::tolower sur cppreference.com](https://en.cppreference.com/w/cpp/string/byte/tolower)
-- [Conversion de chaînes de caractères en C++](https://www.learncpp.com/cpp-tutorial/converting-between-string-types/)
+- [Documentation](https://en.cppreference.com/w/cpp/string/byte/tolower)
+- [Article sur la manipulation de chaînes de caractères en C++](https://www.geeksforgeeks.org/string-manipulation-in-c-2/)
+- [Utilisation de bibliothèques tierces pour la manipulation de chaînes de caractères en C++](https://www.boost.org/doc/libs/1_62_0/doc/html/string_algo.html)

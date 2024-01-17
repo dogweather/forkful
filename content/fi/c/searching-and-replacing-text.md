@@ -1,7 +1,7 @@
 ---
-title:                "Tekstin etsiminen ja korvaaminen"
-html_title:           "C: Tekstin etsiminen ja korvaaminen"
-simple_title:         "Tekstin etsiminen ja korvaaminen"
+title:                "Tekstin etsiminen ja vaihtaminen"
+html_title:           "C: Tekstin etsiminen ja vaihtaminen"
+simple_title:         "Tekstin etsiminen ja vaihtaminen"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -10,38 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
-Miksi joku haluaa etsiä ja korvata tekstiä ohjelmoinnin yhteydessä? Yksi syy voi olla löytää ja vaihtaa tiettyjä tekstinpätkiä helposti ja nopeasti, mikä auttaa säästämään aikaa ja vähentämään virheiden mahdollisuutta.
+## Mitä & Miksi?
 
-## Miten
-Kun haluat etsiä ja korvata tekstiä C-ohjelmassasi, voit käyttää sisäänrakennettua "str_replace" -funktiota, joka korvaa kaikki annetun merkkijonon esiintymät toisella merkkijonolla. Alla on yksinkertainen esimerkki koodista:
+Hakeminen ja tekstikorvaaminen ovat yleisiä ohjelmointitehtäviä, joissa muokataan tekstiä ohjelmakoodissa. Tämä tehdään yleensä virheiden korjaamiseksi tai halutun toiminnallisuuden toteuttamiseksi.
+
+## Kuinka:
+
+Etsiessä ja korvatessa tekstiä C-koodissa, voit käyttää apuna esimerkiksi sisäänrakennettua funktiota `strstr`, joka etsii annetusta merkkijonosta toisen merkkijonon esiintymän ja palauttaa osoittimen kyseiseen kohtaan. Tämän avulla voit sitten korvata halutun tekstin uudella tekstillä käyttämällä esimerkiksi `strcpy`-funktiota.
 
 ```C
 #include <stdio.h>
 #include <string.h>
 
-int main() {
-    char str[50] = "Tämä on esimerkkiteksti";
-    
-    // Etsitään ja korvataan "on" merkkijonossa "in" avulla
-    str_replace(str, "on", "in");
-    
-    printf("%s", str);
-    
-    return 0;
+int main()
+{
+  char sana[20];
+  char korvaava[20];
+  char *osoitin;
+  
+  strcpy(sana, "Tämä on testi");
+  strcpy(korvaava, "esimerkki");
+  
+  osoitin = strstr(sana, "testi");
+  if (osoitin != NULL)
+  {
+    strcpy(osoitin, korvaava);
+  }
+  
+  printf("%s", sana); // Tulostaa "Tämä on esimerkki"
+  
+  return 0;
 }
 ```
 
-Tässä tapauksessa koodi tulostaa "Tämä in esimerkkiteksti".
+## Syvempää tietoa:
 
-## Syvällinen sukellus
-C-kielen sisäänrakennettujen funktioiden lisäksi voit myös käyttää "regex" -kirjastoa (regex.h), joka tarjoaa tehokkaampia ominaisuuksia tekstinpätkien etsimiseen ja korvaamiseen. Regex-kirjaston avulla voit käyttää säännöllisiä lausekkeita etsiessäsi ja korvatessasi tekstiä, mikä tarjoaa suuremman joustavuuden ja monipuolisuuden.
+Hakeminen ja tekstinkorvaaminen ovat olleet osa ohjelmointia jo pitkään, ja on olemassa monia muitakin tapoja suorittaa näitä tehtäviä. Esimerkiksi `sed`-työkalu Unix-ympäristöissä on suosittu tekstinkäsittelyyn tarkoitettu ohjelma, joka tarjoaa monipuolisia toimintoja tekstien etsimiseen ja korvaamiseen.
 
-Jos haluat lisätietoja säännöllisistä lausekkeista ja niiden käyttämisestä C-ohjelmissa, suosittelemme tutustumaan alla oleviin linkkeihin:
+Etsimisprosessissa voidaan myös hyödyntää erilaisia algoritmeja, kuten Boyer-Moore-algoritmia, jotka pyrkivät tehostamaan hakutoimintoa erityisesti suurissa tekstimassoissa.
 
-* [C Manual - Regular Expressions](https://www.gnu.org/software/libc/manual/html_node/Regular-Expressions.html)
-* [C Regex Library Documentation](https://www.regular-expressions.info/c.regex.html)
+## Katso myös:
 
-## Katso myös
-* [C Documentation](https://en.cppreference.com/w/c)
-* [C++ - Searching and Replacing Text](https://dev.to/shin8/c-searching-and-replacing-text-1bo9) (englanninkielinen artikkeli)
+Voit lukea lisää hakemisesta ja korvaamisesta C-koodissa täältä: [https://www.tutorialspoint.com/c_standard_library/c_function_strstr.htm](https://www.tutorialspoint.com/c_standard_library/c_function_strstr.htm)

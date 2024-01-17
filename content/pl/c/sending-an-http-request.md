@@ -1,7 +1,7 @@
 ---
-title:                "Wysyłanie żądania HTTP"
-html_title:           "C: Wysyłanie żądania HTTP"
-simple_title:         "Wysyłanie żądania HTTP"
+title:                "Wysyłanie żądania http"
+html_title:           "C: Wysyłanie żądania http"
+simple_title:         "Wysyłanie żądania http"
 programming_language: "C"
 category:             "C"
 tag:                  "HTML and the Web"
@@ -10,55 +10,61 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+Cześć programiści!
 
-W programowaniu często potrzebujemy komunikować się z serwerami internetowymi, wysyłając do nich żądania i oczekując odpowiedzi. W języku C możemy wykorzystać bibliotekę `libcurl`, aby w prosty sposób wysyłać zapytania HTTP.
+## Co i dlaczego?
 
-## Jak zacząć
+Wysyłanie żądania HTTP jest częstym zadaniem dla programistów. Polega ono na przesyłaniu informacji z klienta do serwera, aby uzyskać odpowiedź lub wykonanie określonego działania. Programiści używają tego do komunikacji z różnymi zasobami i usługami w Internecie.
 
-Najpierw musimy zaimportować bibliotekę `libcurl` w naszym kodzie. Możemy to zrobić za pomocą dyrektywy `#include <curl/curl.h>`. Następnie możemy zdefiniować funkcję, która będzie wysyłać nasze żądanie. W tym przypadku będzie to funkcja o nazwie `send_request`.
+## Jak to zrobić?
+
+Przykładowy kod w języku C, który wysyła żądanie GET:
 
 ```C
+#include <stdio.h>
+#include <stdlib.h>
 #include <curl/curl.h>
 
-void send_request() {
-    // Tutaj będziemy wysyłać żądanie
+int main(void) {
+    CURL *curl = curl_easy_init();
+    CURLcode res;
+    if(curl) {
+        curl_easy_setopt(curl, CURLOPT_URL, "https://www.example.com");
+        res = curl_easy_perform(curl);
+        if(res != CURLE_OK)
+            fprintf(stderr, "curl_easy_perform() failed: %s\n",
+                      curl_easy_strerror(res));
+        curl_easy_cleanup(curl);
+    }
+    return 0;
 }
 ```
 
-Teraz możemy stworzyć zmienną typu `CURL`, która będzie przechowywać nasze połączenie HTTP. Użyjemy funkcji `curl_easy_init()` aby ją zainicjować.
+Oto przykładowy wynik:
 
-```C
-CURL *curl = curl_easy_init();
+```
+<html>
+<head>
+<title>Example Domain</title>
+...
+</head>
+<body>
+<h1>Example Domain</h1>
+<p>This domain is established to be used for illustrative examples in documents. You may use this
+domain in examples without prior coordination or asking for permission.</p>
+<p><a href="http://www.iana.org/domains/example">More information...</a></p>
+</body>
+</html>
 ```
 
-Następnie ustawiamy URL serwera, do którego chcemy się połączyć, za pomocą funkcji `curl_easy_setopt()`. W tym przypadku będzie to http://example.com.
+## Głębsze zanurzenie
 
-```C
-curl_easy_setopt(curl, CURLOPT_URL, "http://example.com");
-```
+Wysyłanie żądań HTTP istnieje od początków Internetu i jest jednym z podstawowych sposobów komunikacji między klientem a serwerem. Istnieje wiele alternatywnych bibliotek i narzędzi, takich jak libcurl, które ułatwiają wysyłanie żądań HTTP w języku C. 
 
-Teraz możemy wysłać nasze żądanie, używając funkcji `curl_easy_perform()`. W przypadku sukcesu, funkcja zwróci `CURLE_OK`.
+Podczas implementacji warto pamiętać o bezpieczeństwie i walidacji danych wejściowych, aby uniknąć ataków typu XSS czy CSRF.
 
-```C
-CURLcode res = curl_easy_perform(curl);
-if (res != CURLE_OK) {
-    // Obsłuż błąd
-}
-```
+## Zobacz także
 
-Po zakończeniu połączenia, musimy jeszcze zwolnić pamięć, używając funkcji `curl_easy_cleanup()`.
-```C
-curl_easy_cleanup(curl);
-```
+Jeśli interesuje Cię temat wysyłania żądań HTTP, warto dowiedzieć się więcej na temat protokołu HTTP i różnych metod wysyłania żądań, takich jak GET, POST czy PUT. Polecam również zapoznać się z dokumentacją biblioteki libcurl oraz frameworkiem OpenSSL, który pomoże Ci w zabezpieczeniu przesyłanych danych.
 
-## Deep Dive
-
-Wysyłanie prostej żądania HTTP za pomocą biblioteki `libcurl` jest łatwe, ale biblioteka ta oferuje również wiele innych funkcji. Na przykład możemy ustawić różne opcje dla naszego żądania, takie jak nagłówki, limity czasu czy dane do wysłania. Możemy również przetwarzać odpowiedź serwera, wydobywając z niej potrzebne nam informacje.
-
-Każda z funkcji, takich jak `curl_easy_setopt()` czy `curl_easy_perform()`, ma wiele opcji dostępnych w dokumentacji `libcurl`. Możemy zapoznać się z nimi i dostosować wysyłane żądanie do naszych potrzeb.
-
-## Zobacz też
-
-- [Oficjalna dokumentacja biblioteki `libcurl`](https://curl.se/libcurl/)
-- [Przykłady użycia w języku C](https://curl.se/libcurl/c/example.html)
+Mam nadzieję, że ten bardzo krótki artykuł przybliżył Ci zagadnienie wysyłania żądań HTTP w języku C. Pozdrawiam i zapraszam do kontynuowania nauki!

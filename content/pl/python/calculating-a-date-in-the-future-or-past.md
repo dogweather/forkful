@@ -10,43 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego?
+## Co i dlaczego?
+Obliczanie daty w przeszłości lub przyszłości to proces wykorzystywany przez programistów do obliczania dat w sposób automatyczny. Może to być przydatne w wielu aplikacjach, na przykład w systemach rezerwacji lub harmonogramów. Programiści korzystają z tego narzędzia, aby uniknąć manualnego obliczania dat, co może być czasochłonne i podatne na błędy.
 
-Liczenie daty w przyszłości lub przeszłości może być przydatne w różnych sytuacjach, na przykład w planowaniu wydarzeń, określaniu ważnych dni czy w obliczaniu wieku.
+## Jak to zrobić:
+```
+Python ...
 
-## Jak to zrobić?
+# Obliczenie daty 30 dni w przyszłości
+future_date = datetime.date.today() + datetime.timedelta(days=30)
+print(future_date)
 
-W celu obliczenia daty w przyszłości lub przeszłości w języku Python, można skorzystać z modułu `datetime`. Najpierw należy zaimportować ten moduł, a następnie użyć funkcji `timedelta`, która pozwala na ustawienie dowolnej liczby dni, tygodni, miesięcy lub lat.
-
-Przykłady:
+# Obliczenie daty 30 dni w przeszłości
+past_date = datetime.date.today() - datetime.timedelta(days=30)
+print(past_date)
 
 ```
-from datetime import datetime, timedelta
 
-# Obliczanie daty 30 dni od teraz
-now = datetime.now()
-future = now + timedelta(days=30)
-print(future)
-
-# Obliczanie daty 2 tygodnie w przeszłości
-past = now - timedelta(weeks=2)
-print(past)
+Wyjście:
+```
+2021-09-05
+2021-07-06
 ```
 
-Wynik:
+## Głębszy zanurzenie:
+Obliczanie dat jest wykorzystywane już od dawna przez programistów i było szczególnie przydatne w systemach rezerwacji biletów lub spłat kredytów, gdzie wyznaczenie przyszłych dat jest niezbędne. Istnieją również inne metody wykonywania tych obliczeń, takie jak korzystanie z bibliotek zewnętrznych lub implementacja własnej funkcji w Pythonie.
 
-```
-2021-11-19 14:00:00.399843
-2021-10-05 14:00:00.399843
-```
+## Zobacz również:
+Niektóre przydatne źródła dotyczące obliczania dat w przeszłości lub przyszłości:
 
-## Warto wiedzieć!
-
-Funkcja `datetime.now()` zwraca aktualną datę i czas, a `timedelta()` pozwala na ustawienie dowolnych wartości w celu zwiększenia lub zmniejszenia daty. Jest to przydatne w przypadku potrzeby obliczenia daty w przyszłości lub przeszłości na podstawie innych, już istniejących dat.
-
-Można również użyć operatora arytmetycznego `-` w przypadku odejmowania dat, co pozwala na określenie różnicy między datami.
-
-## Zobacz również
-
-- Dokumentacja modułu datetime: https://docs.python.org/3/library/datetime.html
-- Poradnik programowania w Pythonie: https://pythonguide.pl/
+- Dokumentacja Pythona: https://docs.python.org/3/library/datetime.html
+- Wprowadzenie do wykorzystania biblioteki datetime w Pythonie: https://realpython.com/python-datetime/
+- Porównanie różnych metod obliczania dat w Pythonie: https://www.geeksforgeeks.org/python-date-operations-compare-dates/

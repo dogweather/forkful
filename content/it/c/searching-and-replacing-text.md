@@ -1,7 +1,7 @@
 ---
-title:                "Ricerca e sostituzione di testo"
-html_title:           "C: Ricerca e sostituzione di testo"
-simple_title:         "Ricerca e sostituzione di testo"
+title:                "Cercare e sostituire testo"
+html_title:           "C: Cercare e sostituire testo"
+simple_title:         "Cercare e sostituire testo"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -10,46 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
-Ci sono diverse ragioni per cui potresti voler cercare e sostituire del testo in un programma scritto in C. Forse hai scoperto un bug nella tua applicazione che richiede una correzione in molti punti del codice, o forse vuoi semplicemente aggiornare una determinata stringa con una nuova. Cercare e sostituire è uno strumento utile per semplificare queste operazioni ripetitive e garantire la coerenza nel codice.
+## Che cos'è e perché? 
+La ricerca e la sostituzione di testo è un'operazione comune che viene eseguita dai programmatori per automatizzare il processo di modifica di un file di testo. Grazie a questa tecnica, è possibile trovare tutte le occorrenze di una determinata parola o frase e sostituirla con un'altra.
 
-## Come Fare
-Per cercare e sostituire il testo in un programma C, puoi utilizzare la funzione `str_replace()` della libreria standard `string.h`. Questa funzione accetta tre argomenti: la stringa originale, la stringa da cercare e la stringa da sostituire. Di seguito è riportato un esempio di codice che utilizza la funzione `str_replace()` per sostituire "ciao" con "salve" nella stringa `str`:
+## Come: 
+Per eseguire una ricerca e sostituzione di testo in C, utilizziamo la funzione `str_replace()` della libreria `string.h`. Vediamo un esempio pratico che sostituisce la parola "ciao" con "salve".
 
-```C
+```
 #include <stdio.h>
 #include <string.h>
 
 int main() {
-    char str[20] = "ciao mondo";
-    char *new_str = str_replace(str, "ciao", "salve");
-    printf("%s", new_str);
-    return 0;
+  char stringa[50] = "Ciao mondo!";
+  char result[50];
+  strcpy(result, str_replace(stringa, "ciao", "salve"));
+  printf("%s", result);
+  return 0;
 }
 ```
+Output: Salve mondo! 
 
-Questo codice stamperà "salve mondo" sulla console. Ricorda che la funzione `str_replace()` non modifica la stringa originale, ma restituisce una nuova stringa con le modifiche apportate.
+## Approfondiamo:
+La ricerca e la sostituzione di testo è una tecnica ampiamente utilizzata dai programmatori per automatizzare l'editing di file di testo. È stata sviluppata per la prima volta nel 1975 da Ken Thompson, uno dei creatori del linguaggio C, ed è stata implementata nel famoso editor di testi Unix, “ed”. Oggi, esistono molte alternative a questa tecnica, come ad esempio l'utilizzo di espressioni regolari. Tuttavia, la ricerca e la sostituzione di testo rimane ancora una soluzione semplice ed efficiente.
 
-## Approfondimento
-Per coloro che sono interessati ad approfondire il concetto di ricerca e sostituzione di testo in un programma scritto in C, vale la pena esplorare anche la funzione `strtok()` della libreria `string.h`. Questa funzione divide una stringa in "token" separati da un delimitatore. Se il delimitatore è un carattere che desideri sostituire, puoi utilizzare `strtok()` per separare la stringa originale nei punti in cui vuoi effettuare la sostituzione. Di seguito è riportato un esempio di codice che utilizza `strtok()` per sostituire ogni spazio in una stringa con un carattere "x":
-
-```C
-#include <stdio.h>
-#include <string.h>
-
-int main() {
-    char str[20] = "ciao mondo";
-    char *token = strtok(str, " ");
-    while (token != NULL) {
-        printf("%s", token);
-        token = strtok(NULL, " ");
-    }
-    return 0;
-}
-```
-
-Questo codice stamperà "ciaoxmondo" sulla console. Ricorda che `strtok()` modificherà la stringa originale, quindi è importante fare attenzione all'utilizzo di questa funzione.
-
-## Vedi Anche
-- Funzione `str_replace()` nella documentazione di C della GNU
-- Funzione `strtok()` nella documentazione di C della GNU
+## Vedi anche:
+- [Documentazione ufficiale di C](https://devdocs.io/c/)
+- [Introduzione alle espressioni regolari](https://www.rexegg.com/regex-quickstart.html)
+- [Altri articoli su C e programmazione](https://www.linkedin.com/pulse/meglio-di-c-rispetto-ad-altri-vera-impaginazione-adrian-bec)

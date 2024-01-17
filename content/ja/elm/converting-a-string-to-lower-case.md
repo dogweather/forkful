@@ -1,7 +1,7 @@
 ---
-title:                "文字列を小文字に変換する"
-html_title:           "Elm: 文字列を小文字に変換する"
-simple_title:         "文字列を小文字に変換する"
+title:                "「文字列を小文字に変換する」"
+html_title:           "Elm: 「文字列を小文字に変換する」"
+simple_title:         "「文字列を小文字に変換する」"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -10,39 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## 何をし、なぜ?
 
-文字列を小文字に変換する理由は様々です。例えば、ユーザーからの入力を一貫性のあるフォーマットに変換する必要がある場合や、ソートや比較のために文字列を正規化する必要がある場合には便利です。
+文字列を小文字に変換することは、プログラマーにとって非常に重要なタスクです。これを行う主な理由は、データの整合性を保つためです。例えば、ユーザーから入力された文字列が大文字であった場合でも、データベースに保存される前に小文字に変換することで、同じ文字列であってもデータベース内の検索がスムーズに行われるようになります。
 
-## How To
+## 方法:
 
-まず、`String.toLower`関数を使用して文字列を小文字に変換します。
-
-```Elm
-import String
-
-String.toLower "HELLO WORLD" 
-```
-
-出力は`"hello world"`になります。
-
-また、リスト内の全ての文字列を小文字に変換することもできます。
+Elmでは、文字列を小文字に変換するために `String.toLower` 関数を使用します。以下の例をご覧ください。
 
 ```Elm
-import String
+import String exposing (toLower)
 
-List.map String.toLower ["CAT", "DOG", "FISH"]
+name = "ELM PROGRAMMING"
+lowercaseName = toLower name
+
+-- output: "elm programming"
 ```
 
-出力は`["cat", "dog", "fish"]`になります。
+## さらに詳しく:
 
-## Deep Dive
+### 歴史的背景:
 
-`String.toLower`関数は、内部でUnicodeの`String.foldl`関数を使用しています。これにより、どんな言語でも正確に小文字に変換されます。ただし、アクセントや記号などは除外されるので注意が必要です。
+文字列を小文字に変換するというアイディアは、古くから存在していました。プログラム言語やデータベースの中で、文字列を比較する際に大文字と小文字を区別しないという考え方は、効率的なデータ処理の重要な要素となっています。
 
-また、`String.toLower`関数はイミュータブルなので、元の文字列は変更されません。新しい文字列のコピーが作成されるため、パフォーマンスには影響します。
+### 代替手段:
 
-## See Also
+Elmでは `String.toLower` 関数以外にも、文字列を小文字に変換するための様々なツールがあります。例えば、正規表現やパターンマッチングを使用する方法もあります。
 
-- [Elm公式ドキュメント - String](https://elm-lang.org/docs/strings)
-- [Unicodeの小文字変換アルゴリズムについて](https://unicode.org/faq/casemap_charprop.html#28)
+### 実装の詳細:
+
+Elmで `String.toLower` 関数を使用する際、内部的にはUTF-8コードポイントに基づいて文字列を変換しています。このため、言語や文字系によらず正確な変換が行われることが保証されています。
+
+## 関連情報:
+
+- [Elm Documentation: Strings](https://package.elm-lang.org/packages/elm-lang/core/latest/String)
+- [Elm Guide: Strings](https://guide.elm-lang.org/strings/)

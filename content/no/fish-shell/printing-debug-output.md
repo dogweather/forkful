@@ -1,7 +1,7 @@
 ---
-title:                "Utskrift av feilsøkingsutgang"
-html_title:           "Fish Shell: Utskrift av feilsøkingsutgang"
-simple_title:         "Utskrift av feilsøkingsutgang"
+title:                "Utskrift av feilsøkingsutdata"
+html_title:           "Fish Shell: Utskrift av feilsøkingsutdata"
+simple_title:         "Utskrift av feilsøkingsutdata"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Testing and Debugging"
@@ -10,44 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hva & Hvorfor?
 
-Å skrive debug-utdata er en nyttig teknikk for å feilsøke og forbedre koden din. Ved å skrive ut variabler og verdier under kjøring, kan du enkelt identifisere problemer og gjøre endringer for å forbedre funksjonaliteten.
+Å skrive ut feilsøkingsutdata betyr i hovedsak å vise informasjon om hva som skjer i programmet ditt når det kjører. Dette kan være nyttig for å forstå hvordan programmet fungerer og for å finne og fikse feil. Programmerere bruker dette for å løse problemer og forbedre koden sin.
 
-## Slik gjør du det
-
-```Fish Shell``` har innebygde kommandoer som lar deg skrive ut debug-utdata. For å skrive ut en variabel, bruk kommandoen ```echo``` og legg til variabelnavnet:
+## Slik gjør du det:
 
 ```
-set variabelnavn "verdi"
-echo $variabelnavn
+Fish Shell har et enkelt og effektivt kommando for å skrive ut feilsøkingsutdata: `echo`. Her er et eksempel:
+
+$ set var1 'hello'
+$ set var2 'world'
+$ echo var1 var2
+hello world
 ```
 
-Dette vil skrive ut verdien av variabelen i terminalen. Du kan også skrive ut tekststrenger og tall ved å omgi dem med anførselstegn:
+## Dykk dypere:
 
-```
-echo "Dette er en tekststreng"
-echo 123
-```
+Feilsøkingsutdata har blitt brukt av programmerere siden kodetidens begynnelse. I dag er det flere alternativer for å skrive ut feilsøkingsutdata, som for eksempel å bruke loggingbiblioteker eller å bruke utviklerverktøy i nettleseren. Å bruke `echo` kommandoen i Fish Shell er raskt og enkelt, men det kan også være nyttig å undersøke andre alternativer hvis du har et større prosjekt eller en mer kompleks feilsøking.
 
-Hvis du vil skrive ut flere variabler eller verdier samtidig, kan du bruke kommandoen ```printf```. Dette lar deg skrive ut en formatert streng med variabelverdier:
+## Se også:
 
-```
-set navn "John"
-set alder 25
-printf "Navnet mitt er %s og jeg er %d år gammel" $navn $alder
-```
+[Fish Shell dokumentasjon](https://fishshell.com/docs/current/)
 
-Dette vil skrive ut "Navnet mitt er John og jeg er 25 år gammel" i terminalen.
-
-## Dypdykk
-
-Ved å bruke debug-utdata kan du enkelt se hvordan variabler endres under kjøring og identifisere eventuelle problemer. For å gjøre dette mer effektivt, kan du også inkludere en melding for hver debug-linje for å mer spesifikt identifisere hva som skrives ut.
-
-Du kan også bruke enda mer avanserte metoder for å formatere og skrive ut debug-utdata, som å bruke ```status``` for å kontrollere resultatet av en kommando, eller å vise innholdet i en fil ved hjelp av kommandoen ```cat```. Bruk av riktig formatering og inkludering av nyttig informasjon kan gjøre debug-utdataene mer leselige og forståelige.
-
-## Se også
-
-- [Fish Shell offisiell dokumentasjon](https://fishshell.com/docs/current/index.html)
-- [Debugging Strategies and Best Practices](https://www.codecademy.com/articles/fish-debugging-strategies)
-- [Using printf in Fish Shell](https://medium.com/@ogratton/using-printf-in-fish-shell-to-output-formatted-strings-3ff2c50cf24c)
+[Debugging med Echo](
+https://www.hostinger.no/tutorials/how-to-debug-in-fish-shell/)

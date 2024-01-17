@@ -1,7 +1,7 @@
 ---
-title:                "Omvandla en sträng till gemener"
-html_title:           "Go: Omvandla en sträng till gemener"
-simple_title:         "Omvandla en sträng till gemener"
+title:                "Konvertera en sträng till små bokstäver"
+html_title:           "Go: Konvertera en sträng till små bokstäver"
+simple_title:         "Konvertera en sträng till små bokstäver"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Strings"
@@ -10,74 +10,22 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
+Konvertering av en sträng till små bokstäver är en vanlig användning av programmeringsspråket Go. Detta innebär att man omvandlar alla bokstäver i en sträng till deras motsvarande små bokstäver, oavsett om bokstäverna är stora eller små från början. Detta kan vara användbart för att enhetliga hantering av text, för att jämföra textsträngar eller för att bara förbättra läsbarheten.
 
-Det finns många användbara fall där man behöver konvertera en sträng till gemener (lower case) i sitt Go-program. Till exempel kan det vara för formatering av data, sökningar eller jämförelser av strängar.
-
-## Så här gör du
-
-För att konvertera en sträng till gemener i Go använder vi funktionen `tolower` från paketet `strings`. Här är ett enkelt exempel:
-
-```Go
-package main
-
-import (
-    "fmt"
-    "strings"
-)
-
+## Så här gör du:
+```
+Go package main
+import "strings"
 func main() {
-    str := "HELLO WORLD"
-    lowerStr := strings.ToLower(str)
-    fmt.Println(lowerStr)
+	fmt.Println(strings.ToLower("HELLO WORLD"))
 }
 ```
+Detta skulle ge utskrift: "hello world". Vi importerar paketet "strings" för att ha tillgång till dess funktion för att konvertera en sträng till små bokstäver. Sedan använder vi funktionen "ToLower" och ger den som argument den sträng vi vill konvertera. Vi kan också använda denna funktion för att konvertera en variabel istället för en hårdkodad sträng.
 
-Detta kommer att skriva ut "hello world" i terminalen. Notera att funktionen modifierar inte ursprungliga strängen utan returnerar istället en ny sträng.
+## Djupdykning:
+Konvertering av en sträng till små bokstäver är en vanlig operation i många programmeringsspråk, inte bara Go. Detta kallas ibland också för "lågering" eller "normalisering" av en textsträng. I Go finns det också en inbyggd funktion "ToLower" som konverterar en sträng till små bokstäver, men det finns också en alternativ funktion "ToLowerSpecial" som ger möjlighet att specificera en "lokal" (locale) för strängen. Detta kan vara användbart om strängen innehåller speciella tecken eller bokstäver som inte följer standard ASCII-regler.
 
-Om du vill använda en annan enkelt sätt att konvertera en enskild bokstav till gemener, kan du använda `byte`-metoden `ToLower`. Här är ett exempel:
-
-```Go
-package main
-
-import "fmt"
-
-func main() {
-    ch := 'A'
-    lowerCh := byte(ch) + 'a' - 'A'
-    fmt.Println(string(lowerCh))
-}
-```
-
-I detta exempel konverterar vi bokstaven "A" till "a" genom att addera skillnaden mellan "a" och "A". Denna metod fungerar endast med bokstäver från A-Z.
-
-## Djupdykning
-
-För det mesta är det enkelt att konvertera en sträng till gemener i Go. Men vad händer om din sträng innehåller icke-engelska bokstäver? Till exempel "Ä" eller "Ö"? I standardbiblioteket för Go finns det inte ett enkelt sätt att konvertera dessa bokstäver till gemener.
-
-Istället måste vi använda paketet `unicode` för att konvertera dessa bokstäver. Här är ett exempel:
-
-```Go
-package main
-
-import (
-    "fmt"
-    "unicode"
-)
-
-func main() {
-    str := "Äpple"
-    var lowerStr string
-    for _, r := range str {
-        lowerStr += string(unicode.ToLower(r))
-    }
-    fmt.Println(lowerStr)
-}
-```
-
-I detta exempel loopar vi genom varje tecken i strängen och använder `unicode.ToLower` för att konvertera varje tecken till gemener. Slutresultatet kommer att bli "äpple". Detta kan vara lite mer krångligt, men det fungerar även för icke-engelska bokstäver.
-
-## Se även
-
- * [Go Strings Package](https://golang.org/pkg/strings/)
- * [Go Unicode Package](https://golang.org/pkg/unicode/)
+## Se även:
+- [Go Strings Package](https://golang.org/pkg/strings/)
+- [Converting Strings to Lowercase in Go](https://www.digitalocean.com/community/tutorials/how-to-convert-strings-to-lowercase-in-go)

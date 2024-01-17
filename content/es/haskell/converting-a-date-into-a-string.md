@@ -10,30 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¿Qué y Por qué?
 
-Si estás programando en Haskell, es posible que en algún momento necesites convertir una fecha en una cadena de texto. Esto puede ser útil, por ejemplo, para imprimir una fecha en un formato específico o para almacenarla en una base de datos.
+Convertir una fecha en una cadena de texto es el proceso de transformar una fecha en un formato legible para los humanos, como "12 de marzo de 2021". Los programadores a menudo realizan esta conversión para mostrar fechas en interfaces de usuario o para almacenarlas en una base de datos.
 
-## Cómo hacerlo
+## Cómo:
 
-Para convertir una fecha en una cadena de texto en Haskell, puedes usar la función "formatTime" de la librería Data.Time. Esta función toma como argumentos un formato de fecha y la fecha que quieres convertir. Veamos un ejemplo:
+Aquí hay un ejemplo simple en Haskell de cómo convertir una fecha en una cadena de texto:
 
 ```Haskell
-import Data.Time
+import Data.Time.Format
+import Data.Time.Clock
+import System.Locale
+
 main = do
-    let fecha = fromGregorian 2020 9 20 -- representa el 20 de septiembre de 2020
-        cadena = formatTime defaultTimeLocale "%d/%m/%Y" fecha
-    putStrLn cadena
+  let date = UTCTime (fromGregorian 2021 3 12) 0
+      format = "%d de %B de %Y"
+  putStrLn $ formatTime defaultTimeLocale format date
 ```
+ Esto producirá la siguiente salida:
 
-El resultado de este código sería "20/09/2020". En este caso, estamos usando el formato "%d/%m/%Y" que especifica que queremos la fecha en el formato día/mes/año. Puedes jugar con diferentes formatos y fechas para obtener el resultado deseado.
+`12 de marzo de 2021`
 
-## Profundizando
+## Inmersión profunda:
 
-Si quieres saber más sobre cómo trabajar con fechas y convertirlas en cadenas de texto en Haskell, puedes consultar la documentación de Data.Time en la [página oficial de Haskell](https://www.haskell.org/hoogle/?hoogle=Time). Allí encontrarás más información y ejemplos sobre cómo manejar fechas en Haskell.
+La conversión de fechas en cadenas de texto ha sido un problema común en programación desde los primeros días de la informática. En el pasado, los programadores tenían que escribir su propio código para convertir fechas en cadenas de texto, lo que a menudo era tedioso y propenso a errores. Sin embargo, con la disponibilidad de bibliotecas y funciones de alto nivel en lenguajes modernos como Haskell, esta tarea es mucho más sencilla y menos propensa a errores.
 
-## Ver también
+Un enfoque alternativo para convertir fechas en cadenas de texto es utilizar bibliotecas externas, como `time-locale-compat` y `time-format`. Estas bibliotecas proporcionan funciones adicionales y opciones de formato para la conversión de fechas.
 
-- [Cómo trabajar con tiempos y fechas en Haskell](https://wiki.haskell.org/Working_with_time)
-- [Documentación oficial de Data.Time](https://hackage.haskell.org/package/time/docs/Data-Time.html)
-- [Ejemplos de uso de formatTime](https://www.stackage.org/haddock/lts-10.0/time-1.8.0.2/Data-Time-Format.html#v:formatTime)
+En términos de implementación, la mayoría de las bibliotecas de Haskell utilizan el formato de fecha y hora ISO 8601, que es ampliamente reconocido y utilizado en todo el mundo.
+
+## Ver también:
+
+- Documentación sobre formatTime en la [Hackage de Haskell](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time-Format.html#v:formatTime).
+- Detalles sobre el [formato ISO 8601](https://es.wikipedia.org/wiki/ISO_8601) para fechas y horas.

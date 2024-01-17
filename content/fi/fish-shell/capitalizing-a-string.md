@@ -1,7 +1,7 @@
 ---
-title:                "Tekstin kirjoittaminen isolla alkukirjaimella"
-html_title:           "Fish Shell: Tekstin kirjoittaminen isolla alkukirjaimella"
-simple_title:         "Tekstin kirjoittaminen isolla alkukirjaimella"
+title:                "Pakistanissa: Merkkijonon suurien kirjainten käyttö"
+html_title:           "Fish Shell: Pakistanissa: Merkkijonon suurien kirjainten käyttö"
+simple_title:         "Pakistanissa: Merkkijonon suurien kirjainten käyttö"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -10,37 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä & Miksi?
 
-Stringin muuttaminen isolla alkukirjaimella voi olla hyödyllistä esimerkiksi silloin, kun halutaan korostaa jonkin asian merkitystä tai tehdä siitä erottuvampi.
+Pienelläkin ohjelmointikokemuksella on varmasti tullut vastaan tehtäviä, joissa täytyy muokata tekstiä ennen sen tulostamista. Tätä varten on olemassa koodifunktioita, jotka tekevät tekstien muokkauksesta helpompaa. Yksi tällainen on "capitalize" eli suuriksi kirjaimiksi muuttaminen.
 
-## Kuinka tehdä
+Miksi ohjelmoijat tekevät tämän? Yleensä siksi, että halutaan varmistaa, että teksti on selvästi luettavissa, esimerkiksi otsikoissa tai merkittävissä sanoissa.
 
-Capitalization onnistuu helposti käyttämällä fish shellin sisäänrakennettua `string` komentoa. Alla on esimerkkejä erilaisista tapauksista:
+## Miten:
 
-```Fish Shell
-# Ensimmäisen kirjaimen muuttaminen isoksi
-set string "fish shell"
-echo (string capitalize $string) # Tulostaa "Fish shell"
+Fish Shellissa capitalizen käyttäminen on hyvin helppoa. Tässä muutama esimerkki:
 
-# Kaikkien kirjainten muuttaminen isoiksi
-set string "fish shell"
-echo (string capitalize -a $string) # Tulostaa "FISH SHELL"
-
-# Sanojen ensimmäisten kirjainten muuttaminen isoiksi
-set string "fish shell"
-echo (string capitalize -w $string) # Tulostaa "Fish Shell"
-
-# Lisäämällä rivinvaihtoja stringiin
-set string "fish\nshell"
-echo (string capitalize -wl $string) # Tulostaa "Fish\nShell"
+```
+fish
+set name "jane doe"
+capitalize $name  #palauttaa "Jane Doe"
+capitalize "hello world"  #palauttaa "Hello world"
 ```
 
-## Syvemmälle
+Näitä funktioita voi myös ketjuttaa, jolloin voit yhdistää useamman tekstinmuokkausfunktion yhteen komentoon:
 
-`string` komennolla on myös muita hyödyllisiä vaihtoehtoja, kuten muuttaminen pieniksi kirjaimiksi (`-l`), muuttaminen isoiksi kirjaimiksi mutta säilyttäen muut kirjaimet samoina (`-uc`) tai muuttaminen camel case muotoon (`-c`). Lisätietoja näistä ja muista vaihtoehdoista löytyy fish shellin dokumentaatiosta.
+```
+capitalize firstLetterLowercase "jane doe"  #palauttaa "Jane doe"
+```
 
-## Katso myös
+## Syvemmälle:
 
-- [Fish Shell dokumentaatio](https://fishshell.com/docs/current/)
-- [String-komennon dokumentaatio](https://fishshell.com/docs/current/cmds/string.html)
+Capitalizen historia ulottuu aina ensimmäisiin koodikieliin, joissa on ollut mahdollisuus käsitellä tekstiä. Nykyään on myös muita tapoja muokata tekstiä, kuten "uppercasing", joka muuttaa kaikki kirjaimet suuriksi, tai "camel casing", jossa sanat kirjoitetaan yhteen ja jokainen uusi sana alkaa isolla kirjaimella.
+
+Fish Shellin capitalizen toiminta perustuu GNU-kanto-ohjelmaan "cut", joka löytyy lähes kaikista Unix-pohjaisista käyttöjärjestelmistä. Tämän avulla capitalizen toiminta on nopeaa ja tehokasta.
+
+## Katso myös:
+
+- [Fish Shellin viralliset ohjeet](https://fishshell.com/docs/current/index.html)
+- [GNU cutin dokumentaatio](https://www.gnu.org/software/coreutils/manual/html_node/cut-invocation.html)

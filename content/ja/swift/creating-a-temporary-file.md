@@ -1,7 +1,7 @@
 ---
-title:                "一時ファイルの作成"
-html_title:           "Swift: 一時ファイルの作成"
-simple_title:         "一時ファイルの作成"
+title:                "一時ファイルの作成 -"
+html_title:           "Swift: 一時ファイルの作成 -"
+simple_title:         "一時ファイルの作成 -"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Files and I/O"
@@ -10,41 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+## 何となぜ?
+一時的なファイルを作成するとは、プログラマーが使用する仮のファイルのことであり、通常は一時的なデータの保管に使用されます。このようなファイルは、プログラム実行中に必要な一時的な情報を保持するために使用され、実行が完了した後に削除されます。
 
-一時ファイルを作成する理由は、プログラムの実行中に一時的にデータを保存する必要がある場合です。例えば、ユーザーがアプリで添付ファイルを一時的に編集する場合や、アプリがデータベースから情報を取得して一時的に保存する場合などがあります。
-
-## 作り方
-
-一時ファイルを作成する際は、まず `FileManager` クラスを使用して一時フォルダを作成します。その後、 `URL` クラスを使用して作成したフォルダ内に一時ファイルを作成し、データを書き込みます。
+## 方法:
+Swiftでは、`NSTemporaryDirectory()`メソッドを使用して一時的なファイルを作成できます。以下のコードを使用して、一時的なファイルを作成し、削除する方法を確認してみましょう。
 
 ```Swift
-let fileManager = FileManager.default
+// 一時的なファイルを作成する
+let tempDir = NSTemporaryDirectory()
+let tempFileURL = URL(fileURLWithPath: "\(tempDir)/example.txt")
+FileManager.default.createFile(atPath: tempFileURL.path, contents: nil, attributes: nil)
+
+// ファイルが作成されたことを確認する
+print(FileManager.default.fileExists(atPath: tempFileURL.path))
+
+// ファイルを削除する
 do {
-    // Temporary folder is created
-    let temporaryFolder = try fileManager.url(
-        for: .itemReplacementDirectory,
-        in: .userDomainMask,
-        appropriateFor: URL(fileURLWithPath: "/"),
-        create: true
-    )
-    // Temporary file is created inside the temporary folder
-    let temporaryFile = temporaryFolder.appendingPathComponent("sample.txt")
-    // Data is written to the temporary file
-    try "This is a temporary file.".write(to: temporaryFile, atomically: true, encoding: .utf8)
-} catch {
-    print(error)
+    try FileManager.default.removeItem(at: tempFileURL)
+} catch let error {
+    print("Error: \(error.localizedDescription)")
 }
+
+// ファイルが削除されたことを確認する
+print(FileManager.default.fileExists(atPath: tempFileURL.path))
 ```
 
-上記のコードを実行すると、一時ファイルが作成され、指定した内容が書き込まれることが確認できます。
+実行結果:
 
-## 詳細を調べる
+```
+true
+false
+```
 
-一時ファイルを作成する際、`FileManager` クラスの `url(for:in:appropriateFor:create:)` メソッドはファイルシステムに依存して動作します。また、一時フォルダの作成に使用する `FileManager` オブジェクトは、他のオブジェクトよりも一時フォルダの優先順位が低いことに注意が必要です。
+## 深く掘り下げる:
+一時的なファイルの概念は、旧来のコンピューターシステムで使用されていたメモリ管理の手法の一部として起源を持っています。他の代替案としては、メモリ内の一時的な領域を使用する方法や、プログラムが終了すると自動的に削除される一時的なファイルを作成する方法があります。Swiftでは、`UUID()`を使用して一意のファイル名を生成し、重複を防ぐようにすることが推奨されています。
 
-## 関連リンク
-
-- [FileManager - Apple Developer Documentation](https://developer.apple.com/documentation/foundation/filemanager)
-- [URL - Apple Developer Documentation](https://developer.apple.com/documentation/foundation/url)
-- [Understanding temporary file handling in Swift - Hacking with Swift](https://www.hackingwithswift.com/example-code/system/how-to-create-a-temporary-file-in-swift)
+## 関連情報:
+- [NSTemporaryDirectory() - Apple Developer Documentation](https://developer.apple.com/documentation/foundation/1409219-nstemporarydirectory)
+- [Managing Temporary Files in Swift - AppCoda](https://www.appcoda.com/swift-temporary-files/)

@@ -1,7 +1,7 @@
 ---
-title:                "Alimerkkien erottaminen"
-html_title:           "C: Alimerkkien erottaminen"
-simple_title:         "Alimerkkien erottaminen"
+title:                "Alirivien poimiminen"
+html_title:           "C: Alirivien poimiminen"
+simple_title:         "Alirivien poimiminen"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -10,39 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä ja miksi?
 
-Substringeja voidaan käyttää monissa eri tilanteissa ohjelmoinnissa, kuten merkkijonojen manipuloinnissa tai datan käsittelyssä. Niiden avulla voidaan myös helpottaa ja tehostaa tietojen etsimistä ja käsittelyä.
+Olet varmasti törmännyt koodissasi tarpeeseen hakea tietty osa merkkijonosta tai sanasta. Tätä kutsutaan alimerkkijonojen erotteluksi ja se on tärkeä osa ohjelmointia. Alimerkkien erottelu on hyödyllistä esimerkiksi silloin, kun haluat tutkia tarkemmin merkkijonon sisältöä tai vertailla sanoja keskenään.
 
-## Miten
+## Kuinka tehdä?
 
-Substringien poimiminen on helppoa C-ohjelmoinnissa. Käytämme tähän memcpy-funktiota, joka kopioi halutun määrän merkkejä yhdestä merkkijonosta toiseen. Esimerkiksi jos haluamme poimia merkkijonosta "Hello world!" sanan "Hello", voimme käyttää seuraavaa koodia:
+Alimerkkien erottelu onnistuu helposti C-kielellä käyttäen sisäänrakennettua ```strstr()``` -funktiota. Tämä funktio tarkistaa annetusta merkkijonosta halutun alimerkkijonon ja palauttaa sen sijainnin tai ```NULL```, jos alimerkkijonoa ei löydy. Esimerkiksi:
 
-```C
-char str1[] = "Hello world!";
-char str2[6];
+```
+char str[] = "Tervetuloa maailma!";
+char *substring = "maailma";
 
-memcpy(str2, str1, 5);
-str2[5] = '\0';
-
-printf("%s", str2);
+char *ptr = strstr(str, substring);
+printf("%s", ptr);
 ```
 
-Tämän koodin tulos olisi "Hello". Koodissa määritellään ensin alkuperäinen merkkijono ja sen jälkeen toinen merkkijono, johon haluamme poimia substrings. Käytämme memcpy-funktiota, johon annamme parametreina kopioitavan merkkijonon, kohde-merkkijonon ja halutun määrän merkkejä. Lopuksi tarvitaan vielä muistinvaraus ja lopussa tulostetaan poimittu substring.
+Tulosteena saamme: ```maailma!```
 
-## Syvällisempi sukellus
+## Syvemmälle
 
-Substringit ovat myös osa C-kielen sisäänrakennettuja string-funktioita, kuten strcat, strcpy ja strstr. Substringien avulla voidaan helposti käsitellä merkkijonoja ja poimia tietoa halutuista kohdista. Tässä on muutama esimerkki substringien käytöstä:
-
-- Voit poimia merkkijonosta tietyn määrän merkkejä alkaen tietystä indeksistä memcpy-funktion avulla.
-- Voit etsiä tietyltä alueelta merkkijonoja strstr-funktiolla ja käyttää niitä osana erilaisia ehtoja ja operaatioita.
-- Voit myös yhdistellä eri merkkijonoja strcat-funktiolla ja poimia niistä tietyt osat käyttämällä substringeja.
-
-Kaiken kaikkiaan substringien käyttö on hyödyllistä ja monipuolista C-ohjelmoinnissa. Niiden avulla pystytään helposti käsittelemään ja muokkaamaan merkkijonoja erilaisissa tilanteissa ja tehostamaan koodin toimintaa.
+Alimerkkien erottelu ei ole uusi asia, vaan se on ollut käytössä jo vuosikymmenien ajan. Aikaisemmin siihen käytettiin monia eri tapoja, kuten ```strtok()``` -funktiota, joka erotteli merkkijonon eri osiin ja palautti ne taulukkona. Nykyään suositeltava tapa on kuitenkin käyttää ```strstr()``` -funktiota sen yksinkertaisuuden ja luotettavuuden takia.
 
 ## Katso myös
 
-- Standardi string-funktioihin: https://www.tutorialspoint.com/c_standard_library/string_h.htm
-- C-kielen memcpy-funktio: https://www.tutorialspoint.com/c_standard_library/c_function_memcpy.htm
-- Substringien käyttö: https://www.techbeamers.com/c-string-processing-functions/
-- Miksi memcpy on parempi kuin strncpy: https://stackoverflow.com/questions/16515004/why-is-memcpy-in-c-better-than-strncpy
+Lisätietoa alimerkkien erottelusta ja muista hyödyllisistä C-kielessä käytettävistä funktioista löydät [täältä](https://www.programiz.com/c-programming/c-library-function).

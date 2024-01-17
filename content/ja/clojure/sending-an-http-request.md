@@ -10,43 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# なぜ
+## 何 & なぜ？
 
-HTTPリクエストを送信する理由について、ユーザーが取り組むメリットを最大限2文で説明します。
+HTTPリクエストを送るとは、ウェブサーバーに対してデータを要求することです。プログラマーがHTTPリクエストを送る理由は、ネットワーク通信を行うことによって、アプリケーションやウェブサイトで必要なデータを取得するためです。
 
-HTTPリクエストを送信することで、Webサーバーにデータをリクエストしたり、Webサーバーからデータを受け取ることができます。これにより、Webアプリケーションを作成したり、外部アプリケーションと連携させることができます。
+## 方法：
 
-# 使い方
-
-下の「```Clojure ... ```」のコードブロックには、HTTPリクエストを送信するコーディング例と出力結果が含まれます。
+### GETリクエストを送る
 
 ```Clojure
-
-; HTTPリクエストを送信するためのライブラリを取得
-(require '[clj-http.client :as client])
-
-; GETメソッドを使用して、Googleのトップページにリクエストを送信する
-(client/get "http://www.google.com")
-
-; 同じリクエストを送信し、レスポンスのbodyを受け取る
-(def response (client/get "http://www.google.com"))
-(:body response) ; => "<!doctype html><html>...</html>"
-
-; POSTメソッドを使用して、POSTパラメーターをサーバーに送信する
-(client/post "http://www.example.com" {:form-params {:username "johndoe" :password "123456"}})
-
+(http/get "https://example.com")
 ```
 
-# ディープダイブ
+### POSTリクエストを送る
 
-HTTPリクエストを送信するという行為は、単純にURLにアクセスすることではありません。実際には、リクエストの種類やパラメーター、ヘッダーなど、さまざまなオプションをつけることが可能です。また、HTTPリクエストのレスポンスを受け取る際にも、レスポンスのbodyのみを取得するのか、ヘッダーも含めて取得するのかなど、様々な操作が可能です。
+```Clojure
+(http/post "https://example.com" {:body "some data"})
+```
 
-さらに、Clojureでは高レベルのライブラリを使用するだけでなく、Javaの標準ライブラリを使用することもできます。そのため、より細かい設定やカスタマイズが必要な場合には、Javaの豊富なライブラリを利用することもできます。
+### サーバーからのレスポンスを取得する
 
-# See Also
+```Clojure
+(def response (http/get "https://example.com"))
 
-ここでは、HTTPリクエストを送信する際に役立つ関連記事やドキュメントへのリンクを紹介します。
+(str "Response status: " (:status response))
+;=> "Response status: 200"
+```
 
-- [Clojure Cookbook - HTTP Clients](https://clojure-cookbook.com/http/clients.html)
-- [Clojure HTTP Client documentation](https://github.com/dakrone/clj-http)
-- [Java HTTPURLConnection documentation](https://docs.oracle.com/javase/8/docs/api/java/net/HttpURLConnection.html)
+## 深堀り：
+
+### 送信方法の歴史的背景
+
+HTTPリクエストは、ウェブの発展に伴って広く使用されるようになりました。最初のバージョンであるHTTP/1.0は1996年に発表され、その後改定されました。現在のバージョンはHTTP/2.0です。
+
+### 代替手段
+
+HTTPリクエストには、他にも多くの言語やツールで実装されたライブラリがあります。Clojure以外にも、PythonやRubyなどのプログラミング言語で使用することができます。
+
+### 実装の詳細
+
+Clojureでは、HTTPリクエストを送信するために「clj-http」ライブラリを使用することができます。このライブラリは、HTTPクライアントとして動作するClojureの関数を提供します。
+
+## 関連リンク：
+
+- [ClojureでHTTPリクエストを送信する方法](https://clojure.org/guides/http_clients)
+- [HTTP/1.0の仕様書](https://www.rfc-editor.org/rfc/rfc1945)
+- [HTTP/2.0の仕様書](https://www.rfc-editor.org/rfc/rfc7540)

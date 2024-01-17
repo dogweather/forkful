@@ -10,42 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¿Qué y por qué?
+Imprimir mensajes de depuración es una técnica utilizada por los programadores para obtener información sobre el funcionamiento de su código. Es una forma de verificar si el código está realizando correctamente las tareas deseadas y también puede ayudar a identificar errores y problemas en el mismo.
 
-Si eres nuevo en Elm, es posible que hayas notado que a medida que escribes código, no ves el típico resultado de "imprimir en consola" que se ve en otros lenguajes. Es por eso que en este artículo te mostraré cómo imprimir la salida de depuración en Elm y por qué es una práctica útil.
-
-## Cómo hacerlo
-
-En Elm, tienes acceso a una función llamada `Debug.log`. Esta función toma dos argumentos: una etiqueta y un valor. La etiqueta es simplemente una cadena de texto que te permite identificar fácilmente qué se está imprimiendo, y el valor puede ser cualquier cosa, desde una cadena hasta un entero o incluso una lista.
+## Cómo hacerlo:
+Hay diferentes formas de imprimir mensajes de depuración en Elm, pero la más común es utilizando la función `Debug.log` que acepta dos argumentos: una etiqueta para el mensaje y el valor que se desea imprimir. Por ejemplo, si queremos imprimir el valor de una variable `num`, podemos escribir:
 
 ```Elm
-import Debug exposing (log)
-
-age : Int
-age = 25
-
-log "Edad" age
+Debug.log "Número:" num
 ```
-
-Este código imprimirá la etiqueta "Edad" junto con el valor `25` en la consola del navegador. También puedes usar valores variables o expresiones en la etiqueta, lo que puede ser útil para distinguir entre diferentes puntos de la aplicación donde se llama a la función `Debug.log`.
+El mensaje resultante se mostrará en la consola del navegador, mostrando la etiqueta y el valor correspondiente. Aquí puedes ver un ejemplo de código y su correspondiente mensaje de depuración:
 
 ```Elm
-name : String
-name = "John"
-age : Int
-age = 25
-
-log ("Nombre: " ++ name) age
+x = 5
+Debug.log "Valor de x:" x
+```
+Mensaje de depuración:
+```
+Valor de x: 5
 ```
 
-En este ejemplo, la etiqueta se crea mediante la combinación de la cadena "Nombre: " con el valor de la variable `name` utilizando el operador de concatenación `++`.
+## Profundizando:
+Imprimir mensajes de depuración no es una técnica nueva, ya que ha sido utilizada por mucho tiempo por los programadores. Sin embargo, es importante tener en cuenta que su uso debe ser limitado y solo se debe utilizar para propósitos de prueba o durante el proceso de depuración de un código.
 
-## Profundizando
+En Elm, también existe la función `Debug.todo` que se utiliza como marcador cuando se sabe que una parte del código aún no está completa. Esta función devuelve un mensaje de advertencia en la consola del navegador cuando se ejecuta, lo cual puede ser útil para recordar qué partes del código aún necesitan ser trabajadas.
 
-La función `Debug.log` puede resultar muy útil para imprimir valores en la consola y verificar que tu código esté funcionando correctamente. Sin embargo, ten en cuenta que esta función solo debe usarse con fines de depuración y no debe incluirse en la versión final de tu aplicación.
+Otra alternativa al uso de `Debug.log` es utilizar el depurador integrado de Elm, que permite rastrear y examinar el estado de las variables durante la ejecución del código. Sin embargo, el depurador solo está disponible para aplicaciones en modo de desarrollo.
 
-Además, es importante tener en cuenta que la función `Debug.log` solo se compilará en tu código si se utiliza en un contexto de depuración, es decir, si la aplicación se está ejecutando en el modo de depuración. Por lo tanto, no afectará el rendimiento de tu aplicación en producción.
-
-## Ver también
-
-Para obtener más información sobre cómo depurar tu código en Elm, te recomiendo consultar la documentación oficial de Elm sobre depuración: https://guide.elm-lang.org/debugging/. También puedes aprender más sobre las mejores prácticas para imprimir valores de depuración en la consola en este artículo: https://elmprogramming.com/print-debug-values-in-elm.html.
+## Ver También:
+Puedes obtener más información sobre el uso de mensajes de depuración en la documentación oficial de Elm: [Debugging in Elm](https://guide.elm-lang.org/debugging/). También puedes encontrar recursos en línea como tutoriales y videos que te ayudarán a comprender mejor cómo utilizar esta técnica en tus proyectos.

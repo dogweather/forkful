@@ -10,67 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was und Warum?
 
-Arduino ist eine beliebte Plattform für die Entwicklung von Hardwareprojekten. Oft müssen wir dabei Datenströme verarbeiten, die im JSON-Format vorliegen. Deshalb ist es wichtig zu verstehen, wie man mit JSON bei Arduino umgeht, um komplexe Anwendungen zu entwickeln.
+JSON ist eine Dateiformat- und Datenübertragungsformat, das von Programmierern verwendet wird, um strukturierte Daten in einer menschenlesbaren Form zu speichern und zu übertragen. Programmierer verwenden JSON, um Daten effizient zu organisieren und auszutauschen, da es einfach zu lesen und zu schreiben ist und von vielen Programmiersprachen unterstützt wird.
 
-## Wie Geht's
+## Wie geht's?
 
-Die Behandlung von JSON in Arduino besteht aus zwei Schritten: Zunächst muss das JSON-Paket aus dem Datenstrom extrahiert und dann interpretiert werden. Dazu verwenden wir die ArduinoJson Library, die uns sowohl das Parsen von JSON als auch das Erstellen von Inhaltsobjekten ermöglicht.
+Um mit JSON in Arduino zu arbeiten, müssen Sie die ArduinoJSON-Bibliothek installieren. Diese Bibliothek ermöglicht es Ihnen, JSON-Daten zu empfangen, zu verarbeiten und zu erstellen. Hier ist ein Beispielcode, der eine JSON-Datei empfängt und die darin enthaltenen Daten ausgibt:
 
-Um JSON einzubinden, navigieren Sie in der Arduino-IDE zu `Sketch` > `Include Library` > `Manage Libraries`. Geben Sie dann im Suchfeld "ArduinoJson" ein und installieren Sie die Bibliothek.
+```
+Arduino ...
+#include <ArduinoJson.h>    // JSON Bibliothek einbinden
 
-Als nächstes definieren wir eine Empfangspuffergröße, in der das JSON-Paket übertragen wird, und eine Variable, in der die Daten gespeichert werden:
+void setup() {
+  Serial.begin(9600);       // Serielle Verbindung starten
+}
 
-    ```arduino
-    #include <ArduinoJson.h> 
-    const int BUFFER_SIZE = 200; 
-    char jsonBuffer[BUFFER_SIZE];
-    ```
+void loop() {
+  StaticJsonDocument<200> doc;    // JSON-Dokument erstellen
+  deserializeJson(doc, Serial);   // JSON-Dokument aus serial lesen
 
-Dann erstellen wir ein `StaticJsonDocument` und lesen den Datenstrom in den Puffer:
+  const char* name = doc["name"];     // Daten auslesen
+  int age = doc["age"];
 
-    ```arduino
-    StaticJsonDocument<BUFFER_SIZE> doc;
-    deserializeJson(doc, jsonBuffer);
-    ```
+  Serial.print("Name: ");        // Daten ausgeben
+  Serial.println(name);
+  Serial.print("Alter: ");
+  Serial.println(age);
+}
+```
 
-Um auf die Daten zuzugreifen, können wir die `JsonObject`-Methode verwenden:
+Die Ausgabe könnte folgendermaßen aussehen:
 
-    ```arduino
-    JsonObject& data = doc.to<JsonObject>();
-    ```
+```
+Name: Max
+Alter: 25
+```
 
-Wir können nun auf die im JSON-Paket enthaltenen Werte über ihren Schlüssel zugreifen. Nehmen wir an, das JSON-Paket enthält den Wert für die Temperatur und wir möchten diesen in eine Variable `temp` speichern:
+Mehr Informationen zu den Möglichkeiten mit der ArduinoJSON-Bibliothek finden Sie in der [offiziellen Dokumentation](https://arduinojson.org/).
 
-    ```arduino
-    float temp = data["temp"];
-    ```
+## Tiefen-Tauchgang
 
-Um ein JSON-Dokument zu erstellen und zu senden, können wir die `JsonDocument`-Klasse verwenden:
+JSON wurde erstmals im Jahr 2001 von Douglas Crockford vorgestellt und ist seitdem ein beliebtes Format bei Entwicklern. Es ist eine Alternative zu älteren Formaten wie XML, da es kompakter und einfacher zu lesen und zu schreiben ist.
 
-    ```arduino
-    JsonDocument doc;
-    doc["name"] = "Max";
-    doc["age"] = 30;
-    serializeJson(doc, Serial); 
-    // Output:{"name":"Max","age":30}
-    ```
+Es gibt auch andere Möglichkeiten, mit JSON in Arduino zu arbeiten, wie zum Beispiel die Verwendung der [ESP8266-JSON-Bibliothek](https://github.com/bblanchon/ArduinoJson). Diese Bibliothek ist für den ESP8266-Chip optimiert und bietet zusätzliche Funktionen.
 
-## Tiefer Eintauchen
+In Bezug auf die Implementierung sollten Sie beachten, dass die ArduinoJSON-Bibliothek nur mit festen Objektstrukturen funktioniert. Wenn Sie JSON-Dateien mit variablen Strukturen verarbeiten müssen, gibt es andere Bibliotheken, die möglicherweise besser geeignet sind.
 
-Die Verwendung von JSON in Arduino kann komplexer werden, wenn wir mit verschachtelten Objekten und Arrays arbeiten. In diesem Fall können wir die `JsonArray`-Klasse verwenden, um auf die Elemente zuzugreifen:
+## Sieh dir auch an
 
-    ```arduino
-    JsonArray& sensors = doc["sensors"];
-    float humidity = sensors[0]["humidity"];
-    ```
-
-Auch das Arbeiten mit dynamischen JSON-Dokumenten ist möglich, indem man `DynamicJsonDocument` anstelle von `StaticJsonDocument` verwendet.
-
-Es ist wichtig anzumerken, dass die Größe des JSON-Pakets die Größe des Empfangspuffers nicht überschreiten darf, sonst wird ein Fehler auftreten.
-
-## Siehe auch
-
-- Offizielle ArduinoJson-Dokumentation: https://arduinojson.org/
-- Tutorial zu ArduinoJson: https://arduinojson.org/v6/doc/upgrade/
+- [ArduinoJSON-Dokumentation](https://arduinojson.org/)
+- [ESP8266-JSON-Bibliothek](https://github.com/bblanchon/ArduinoJson)
+- [Douglas Crockford über die Geschichte von JSON](https://www.json.org/json-de.html)

@@ -10,32 +10,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Kyun
-Agar aap ek Ruby programmer hai, toh aapne shayad kabhi na kabhi future ya past mein kisi specific date ko calculate kiya hoga. Ye kaam bohot common hota hai aur hum iska use different applications mein karte hai. Is article mein hum aapko bataenge ki kaise aap Ruby mein aasani se date ko calculate kar sakte hai.
+# यह क्या है और क्यों?
+एक तारीख को भविष्य में या भूतकाल में परिभाषित करना, वास्तव में एक तारीख के साथ गणना करना है। प्रोग्रामर्स इसका उपयोग निर्दिष्ट समय अवधि के बाद या पहले किए गए कार्यों को संबंधित तारीखों के साथ सुनिश्चित करने के लिए करते हैं। 
 
-## Kaise
-Code mein ek date ko calculate karna kaafi simple hai. Hum bas `DateTime` class ke `future` ya `past` method ka use karenge aur usme desired number of days ya years add ya subtract kar denge. Neeche diye gaye code block ko dekhein:
+# कैसे करें:
+```
+# आज से 30 दिन बाद का दिनांक प्राप्त करें
+future_date = Date.today + 30 
+puts future_date
 
-```Ruby
-require 'date'
-
-# Current date
-current_date = DateTime.now
-
-# Calculate future date
-future_date = current_date.future(21) # Calculates future date 21 days from now
-puts future_date.strftime("%d %b %Y") # Output: 15 Jul 2020
-
-# Calculate past date
-past_date = current_date.past(10) # Calculates past date 10 days before current date
-puts past_date.strftime("%d %b %Y") # Output: 25 Jun 2020
+# आज से 2 हफ्ते पहले का दिनांक तय करें
+past_date = Date.today - 14 
+puts past_date
 ```
 
-## Deep Dive
-Ruby mein date ko calculate karne ke liye hum DateTime class ka use karte hai. Ismein kuch lambai aur chaudai add ya subtract karne ke methods hai jaise `future`, `past`, `next_day`, `prev_day`, etc. Iske alawa, hum `days` aur `years` method bhi use kar sakte hai jis se hum precise calculations kar sakte hai. Ye sab methods aapko date ko manipulate karne mein madad karenge.
+# गहराई में जाएं:
+(1) ऐतिहासिक प्रसंग: तारीखों के गणना का प्रयोग पुरातन समय से किया गया है। ये उस समय के जीवन और लोगों की स्मृतियों को संबंधित तारीखों के साथ जोड़ने के लिए किया जाता था। (2) विकल्प: तारीखों को गणना करने के लिए अन्य भाषाओं और लाइब्रेरी मौजूद हैं, जिनमें से कुछ popular चुनौतियों को आसान बनाने के लिए उपाय प्रदान करती हैं। (3) अंतर्निहित विवरण: Ruby का Date और DateTime वर्गों में तारीखों की गणना के लिए समाघानात्मक विधियां हैं। हमले, महीने, वर्ष आदि तारीख मूल्यों को भिन्न अंशों में जोड़कर इस महीने के द्वारा एक नया Ruby तारीख बनाई जाती है। इन वर्गों में स्थानीय समय पृष्ठभूमि प्राणादित किया जाता है, जो कि हमें विभिन्न समय एकांशों को ठीक और सही तथ्यांकन किया जाने की सुनिश्चित करता है।
 
-## Dekhiye
-Agar aapko date calculate karne ke alawa bhi Ruby programming se related articles padhne hai, toh aap neeche diye gaye links ko check kar sakte hai:
-- [Introduction to Ruby Programming](https://www.geeksforgeeks.org/ruby-programming-language/)
-- [Manipulating Dates and Times in Ruby](https://www.digitalocean.com/community/tutorials/how-to-work-with-dates-and-times-in-ruby)
-- [Ruby DateTime Class](https://www.rubyguides.com/2015/12/ruby-datetime/)
+# इससे जुड़े अन्य स्रोत देखें:
+- https://www.rubyguides.com/2015/10/ruby-date-format/
+- https://medium.com/@rubysys/using-ruby-date-time-and-time-zones-8fb0d032da9d
+- https://www.kaggle.com/rtatman/manipulating-dates-and-times-in-ruby

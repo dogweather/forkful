@@ -1,7 +1,7 @@
 ---
-title:                "Tulevaisuuden tai menneen päivämäärän laskeminen"
-html_title:           "Haskell: Tulevaisuuden tai menneen päivämäärän laskeminen"
-simple_title:         "Tulevaisuuden tai menneen päivämäärän laskeminen"
+title:                "Päivämäärän laskeminen tulevaisuudessa tai menneisyydessä"
+html_title:           "Haskell: Päivämäärän laskeminen tulevaisuudessa tai menneisyydessä"
+simple_title:         "Päivämäärän laskeminen tulevaisuudessa tai menneisyydessä"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Dates and Times"
@@ -10,33 +10,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä & Miksi?
+Päivämäärän laskeminen tulevaisuuteen tai menneisyyteen on tapa laskea päiviä tai aikoja tietystä lähtöpäivästä. Ohjelmoijat voivat tehdä tämän esimerkiksi tarkastellakseen tiettyjen tapahtumien tai tapaamisten päivämäärää tai yksinkertaisesti vain saadakseen tarkempaa tietoa ajasta.
 
-Miksi ihminen haluaisi laskea päivämäärän tulevaisuudessa tai menneisyydessä? Yksi mahdollinen syy on esimerkiksi tapahtuman suunnittelu tulevalle päivälle tai takautuvien laskujen tekeminen menneisyydestä.
+## Näin teet sen:
+Päivämäärän laskeminen tulevaisuuteen tai menneisyyteen on helppoa käyttäen Haskellin ```addDays``` ja ```addUTCTime``` -funktioita. Alla on esimerkkejä ja tulostus näistä funktioista.
 
-## Miten
+```haskell
+addDays 10 (fromGregorian 2021 10 10)
+-- Output: 2021-10-20
 
-Laskemalla päiviä tulevaisuuteen tai menneisyyteen Haskellilla on helppoa. Tarvitsemme vain kaksi tietotyyppiä: `Day` ja `DiffTime`.
-
-```Haskell
-import Data.Time
-
-tulevaPaiva = addDays 7 (utctDay getCurrentTime)
-putStrLn $ "Päivämäärä tasan viikon päästä: " ++ show tulevaPaiva
-
-menneisyys = addDays (-30) (utctDay getCurrentTime)
-putStrLn $ "Päivämäärä tasan kuukausi sitten: " ++ show menneisyys
+addUTCTime 3600 (UTCTime (fromGregorian 2021 10 10) (secondsToDiffTime 0))
+-- Output: 2021-10-10 01:00:00 UTC
 ```
 
-Tässä näemme, että voimme lisätä tai vähentää päiviä tietystä päivästä käyttämällä `addDays` -funktiota. Marina `utctDay getCurrentTime` käytetään nykyisen päivämäärän hakemiseen ja tulostetaan halutulla tavalla.
+## Syvempi sukellus:
+Päivämäärän laskenta tulevaisuuteen tai menneisyyteen perustuu julian-päivien käsitteeseen, joka tarkoittaa päivien lukumäärää 1.1.4713 eKr. lähtien. Historiallisesti julian-päiviä käytettiin päivämäärien laskemiseen, mutta nykyään yleisemmin käytetty Gregoriaaninen kalenteri perustuu tarkempaan laskentatapaan. Haskellissa on myös muita tapoja laskea päivämääriä, kuten käyttämällä ```diffDays``` ja ```diffUTCTime``` -funktioita.
 
-## Syväsukellus
-
-Haskelissa päivämäärätyyppejä käsitellään `Data.Time` -kirjastossa. Tämä kirjasto tarjoaa monia hyödyllisiä toimintoja päivämäärien ja aikojen laskemiseen ja muokkaamiseen.
-
-On myös syytä huomata, että päivämäärien käsittely Haskelissa on erityisen tarkkaa ja yksiselitteistä verrattuna muihin ohjelmointikieliin. Esimerkiksi tiettyä päivämäärää vastaava arvo on aina sama, riippumatta aikavyöhykkeestä tai muista tekijöistä.
-
-## Katso myös
-
-- [Data.Time-kirjasto Haskellin dokumentaatiossa](https://hackage.haskell.org/package/time/docs/Data-Time.html)
-- [Haskelldoc - yhteisöllinen dokumentaatio Haskellista](https://hackage.haskell.org/package/haskelldoc)
+## Katso myös:
+- [DateTime-kirjasto Haskellissa](https://hackage.haskell.org/package/datetime)
+- [Haskellin aikamoduulit](https://www.haskell.org/onlinereport/libraries/time.html)

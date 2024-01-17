@@ -1,7 +1,7 @@
 ---
-title:                "http 요청 보내기"
-html_title:           "Rust: http 요청 보내기"
-simple_title:         "http 요청 보내기"
+title:                "Http 요청 보내기"
+html_title:           "Rust: Http 요청 보내기"
+simple_title:         "Http 요청 보내기"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "HTML and the Web"
@@ -10,49 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+# What & Why?
+HTTP 요청을 보내는 것은 웹 개발에서 매우 중요한 부분입니다. 여러분이 웹 브라우저에 URL을 입력하고 엔터를 눌러 웹 페이지를 로드 할 때, 실제로는 HTTP 프로토콜을 사용하여 웹 서버로부터 해당 페이지를 요청하고 응답을 받는 과정이 일어납니다. 프로그래머들은 이러한 HTTP 요청을 통해 애플리케이션과 브라우저 간에 데이터를 교환하고 서비스를 제공하는 데 사용합니다.
 
-HTTP 요청을 보내는 것에 대해 알아보는 이유는 다양합니다. 가장 일반적인 이유는 웹 어플리케이션에서 서버와 통신을 하거나 API를 호출하기 위해서입니다. 또한, 크롤링이나 웹 스크래핑과 같은 웹 데이터를 수집하는 작업에서도 HTTP 요청을 사용합니다.
+# How to:
+Rust 언어는 웹 개발을 위한 많은 도구들을 제공하고 있습니다. 이 중에서는 Hyper라는 라이브러리를 사용하여 HTTP 요청을 보내는 방법을 알아보겠습니다. 우선, Hyper를 프로젝트에 추가해야 합니다. 다음 코드를 `Cargo.toml` 파일에 추가합니다:
+```
+[dependencies]
+hyper = "0.14.12"
+```
+그런 다음 다음과 같이 코드를 작성하고 실행하면, Google의 홈페이지에 HTTP GET 요청을 보내고, 응답을 출력하게 됩니다:
+```
+use hyper::Client;
 
-## 방법
-
-```rust
-// 기본적인 HTTP 요청을 보내는 코드
 fn main() {
-    let client = reqwest::blocking::Client::new();
-    let response = client.get("https://www.example.com").send().unwrap();
-    println!("Status Code: {}", response.status());
-    println!("Headers:\n{:?}", response.headers());
-    println!("Body:\n{}", response.text().unwrap());
+    let client = Client::new();
+    let res = client.get("https://www.google.com").send().unwrap();
+    let body = res.text().unwrap();
+    println!("{}", body);
 }
 ```
+이제 `cargo run` 명령을 실행하여 코드를 실행하면, Google의 홈페이지의 HTML 코드가 출력될 것입니다.
 
-```rust
-// POST 요청을 보내고 응답을 분석하는 코드
-fn main() {
-    let mut params = HashMap::new();
-    params.insert("username", "rust_lover");
-    params.insert("password", "super_secret");
-    
-    let client = reqwest::blocking::Client::new();
-    let response = client.post("https://www.example.com/login")
-        .form(&params)
-        .send()
-        .unwrap();
-    
-    // 응답에서 JSON 데이터를 추출하는 예시
-    let json: serde_json::Value = response.json().unwrap();
-    println!("Login Status: {}", json["status"]);
-    println!("Message: {}", json["message"].as_str().unwrap());
-}
-```
+# Deep Dive:
+HTTP 요청은 World Wide Web의 핵심 개념 중 하나입니다. 웹의 초기에는 웹 페이지가 정적이었기 때문에, 웹 서버에서 모든 내용을 전송하는 것이 가능했지만, 현재는 동적으로 생성되는 페이지가 많아졌기 때문에 HTTP 요청이 매우 중요해졌습니다.
 
-## 딥 다이브
+Rust 언어에서도 Hyper 외에도 Reqwest나 Surf 같은 HTTP 클라이언트 라이브러리가 있으며, 다른 언어에서도 많은 HTTP 클라이언트 라이브러리들이 존재합니다.
 
-HTTP 요청은 클라이언트가 서버에게 데이터를 전송하거나 서버가 클라이언트에게 데이터를 제공하는 표준화된 방법입니다. 이를 통해 웹 어플리케이션의 동적인 기능과 앱 개발에 필수적인 API 호출을 가능하게 합니다. Rust의 내장 모듈인 `std::net`을 사용하여도 HTTP 요청을 보낼 수 있지만, `reqwest` 패키지를 사용하면 더 쉽고 안전하게 관리할 수 있습니다.
+HTTP 요청에는 여러 개의 메소드 (GET, POST, PUT 등)가 있으며, 요청 본문이나 헤더를 추가하여 요청을 조작할 수도 있습니다. 이러한 내용은 각 라이브러리의 문서를 참조하시면 됩니다.
 
-## 참고 자료
-
-- [Rust 공식 홈페이지](https://www.rust-lang.org/)
-- [reqwest 패키지 문서](https://docs.rs/reqwest)
-- [Rust로 웹 스크래퍼 만들기 튜토리얼](https://www.ssfcstudy.com/2021/01/09/rust-web-scraper/)
+# See Also:
+- [Hyper Documentation](https://docs.rs/hyper/0.14.12/hyper/index.html)
+- [Reqwest](https://docs.rs/reqwest/0.11.3/reqwest/)
+- [Surf](https://docs.rs/surf/2.0.1/surf/)
+- [HTTP Methods](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods)

@@ -10,57 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
+Sending an HTTP request with basic authentication is a way for programmers to securely access data from a server that requires authentication. It involves including a username and password in the HTTP request header, allowing the server to verify the identity of the requester and grant access to the requested data.
 
-If you're working with APIs or web services, sending an HTTP request with basic authentication is necessary for authorizing and accessing protected resources. This allows you to securely transmit sensitive information between your application and server.
+## How to:
+In Swift, sending an HTTP request with basic authentication can be done using the `URLRequest` and `URLSession` APIs. First, create a `URL` with the URL of the server endpoint. Then, create a `URLRequest` with the `url` and set its `httpMethod` to "GET" or "POST". Next, add the basic authentication credentials to the header of the `URLRequest` using the `setValue(_:forHTTPHeaderField:)` method. Finally, use the `URLSession` API to send the request and handle the response.
 
-## How To
-
-To send an HTTP request with basic authentication in Swift, follow these steps:
-
-1. Import the Foundation framework into your project:
+Example:
 ```Swift
-import Foundation
-```
-
-2. Create a `URLRequest` object with the URL of the endpoint you want to access:
-```Swift
-let url = URL(string: "https://example.com/api/resource")!
+// Creating the URL and URL Request
+let url = URL(string: "https://api.example.com/data")
 var request = URLRequest(url: url)
-```
-
-3. Set the HTTP method to `GET` or `POST` depending on what your API requires:
-```Swift
 request.httpMethod = "GET"
-```
 
-4. Add the basic authentication credentials to the request by creating a `Data` object from your username and password, and setting it as the value for the `Authorization` header:
-```Swift
+// Adding basic authentication credentials to the header
 let username = "myUsername"
 let password = "myPassword"
-let credentials = "\(username):\(password)".data(using: .utf8)
-if let encodedCredentials = credentials?.base64EncodedString() {
-    request.setValue("Basic \(encodedCredentials)", forHTTPHeaderField: "Authorization")
-}
-```
+let loginString = "\(username):\(password)"
+let loginData = loginString.data(using: .utf8)
+let base64LoginString = loginData?.base64EncodedString()
+request.setValue("Basic \(base64LoginString)", forHTTPHeaderField: "Authorization")
 
-5. Send the request and handle the response:
-```Swift
-let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-    if let data = data {
-        // Handle the response data
-    } else {
-        print(error?.localizedDescription ?? "Error sending request")
+// Sending the request and handling the response
+let task = URLSession.shared.dataTask(with: request) { data, response, error in
+    guard let data = data, error == nil else {
+        print(error?.localizedDescription ?? "Response Error")
+        return
     }
+    // Handle the data from the response
+    print(String(data: data, encoding: .utf8)!)
 }
 task.resume()
 ```
 
-## Deep Dive
+Output:
+```
+{"id": 123, "name": "John Doe", "age": 35}
+```
 
-Sending an HTTP request with basic authentication involves setting the `Authorization` header with a base64-encoded string of your username and password, separated by a colon. It's important to note that basic authentication is not considered secure and should only be used with HTTPS connections to prevent the credentials from being intercepted.
+## Deep Dive:
+Sending HTTP requests with basic authentication has been a common practice since the early days of the internet. It was initially used for accessing data from FTP servers, but with the rise of RESTful APIs, it has become a widely used method for accessing data from web servers.
 
-## See Also
+There are other types of authentication supported by HTTP, such as Digest, OAuth, and OAuth2. Each has its own advantages and use cases, but basic authentication remains the simplest method.
 
-- [Apple Documentation on URLRequest](https://developer.apple.com/documentation/foundation/urlrequest)
-- [This tutorial on Accessing REST APIs in Swift using URLComponents](https://medium.com/@darthpelo/accessing-rest-apis-in-swift-4ceb8049c038)
+To implement basic authentication, the username and password are typically encoded using Base64, a common form of data encoding. However, this does not provide a high level of security as the credentials can easily be decoded by anyone with access to the request header.
+
+## See Also:
+- Official documentation for [URLRequest](https://developer.apple.com/documentation/foundation/urlrequest) and [URLSession](https://developer.apple.com/documentation/foundation/urlsession)
+- A tutorial on [Sending HTTP Requests in Swift](https://programmingwithswift.com/how-to-send-an-http-request-in-swift/)

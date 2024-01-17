@@ -10,47 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que encontrar o comprimento de uma string?
+## O que & Por quê?
 
-Encontrar o comprimento de uma string é uma tarefa comum em linguagens de programação, incluindo C#. Saber como fazer isso pode ser útil em muitos cenários, como validar o input do usuário, manipular dados em arquivos e muito mais.
+Encontrar o comprimento de uma string é uma tarefa comum na programação. String é um tipo de dado que armazena sequências de caracteres, e saber o tamanho dessa sequência é essencial para diversas operações. Os programadores geralmente precisam encontrar o comprimento de uma string para manipular e formatar textos, verificar a validade de entradas de usuário, entre outras necessidades.
 
-## Como fazer isso?
+## Como fazer:
 
-Para encontrar o comprimento de uma string em C#, pode-se utilizar o método `Length`, que retorna o número de caracteres da string. Veja um exemplo abaixo:
-
-```C#
-string nome = "Maria";
-Console.WriteLine(nome.Length); // output: 5
-```
-
-Este método é sensível a maiúsculas e minúsculas, ou seja, caracteres com acentos e letras maiúsculas serão contados como um caractere. Também é importante notar que o índice da string começa em 0, ou seja, o último caractere terá o índice igual ao comprimento da string -1.
-
-Além disso, o método `Length` também pode ser utilizado em outras estruturas de dados, como arrays, listas e dicionários, retornando o número de elementos na estrutura.
-
-## Deep Dive
-
-Em C#, strings são imutáveis, o que significa que uma vez criada, seu conteúdo não pode ser alterado. Isso pode ser importante ao trabalhar com o comprimento de uma string, pois, como o método `Length` não faz nenhuma alteração, seu valor sempre permanecerá o mesmo.
-
-Para garantir que uma string tenha um comprimento específico, pode-se utilizar o método `PadLeft` ou `PadRight`, que adicionam espaços vazios ou caracteres definidos para atingir o comprimento desejado.
-
-Além disso, podemos acessar elementos individuais de uma string utilizando o operador `[]`, passando o índice desejado. Por exemplo:
+É fácil encontrar o comprimento de uma string em C#, basta usar o método `Length`, que retorna um valor inteiro representando o número de caracteres presentes na string. Por exemplo:
 
 ```C#
-string frase = "Olá, mundo!";
-Console.WriteLine(frase[4]); // output: a
+string texto = "Hello world!";
+Console.WriteLine(texto.Length);
 ```
 
-Também é possível utilizar o método `Substring` para obter uma parte específica de uma string, passando o índice de início e o comprimento desejado. Por exemplo:
+Este código imprimirá o valor `12`, pois há 12 caracteres na string "Hello world!".
 
-```C#
-string palavra = "programação";
-Console.WriteLine(palavra.Substring(0,4)); // output: prog
-```
+## Profundando:
 
-Existem mais métodos e técnicas para trabalhar com o comprimento de uma string em C#, mas as principais já foram abordadas aqui. Agora, é hora de colocar esse conhecimento em prática!
+O cálculo do comprimento de uma string tem uma longa história na programação. Em linguagens mais antigas, como C ou Assembly, era necessário percorrer cada caractere da string para determinar seu tamanho, o que era uma tarefa muito mais complexa. Atualmente, a maioria das linguagens de programação, incluindo C#, possuem métodos nativos para o cálculo do comprimento de strings.
 
-## Veja também
+Uma alternativa ao método `Length` em C# é o uso da função `strlen()` da biblioteca padrão de C, que é importada utilizando a diretiva `extern`. No entanto, isso só é necessário se sua aplicação estiver trabalhando com strings no formato de C, o que não é comum em C#.
 
--Como trabalhar com strings em C#: <https://www.w3schools.com/cs/cs_strings.asp>
--Documentação oficial do método `Length`: <https://docs.microsoft.com/en-us/dotnet/api/system.string.length>
--O guia completo de strings em C#: <https://docs.microsoft.com/en-us/dotnet/standard/base-types/strings>
+Além disso, é importante notar que o método `Length` retorna o número de caracteres, não o número de bytes necessários para armazenar a string. Isso pode ser importante em situações de manipulação de dados binários, por exemplo.
+
+## Veja também:
+
+- Documentação oficial do método `Length` em C#: https://docs.microsoft.com/pt-br/dotnet/api/system.string.length?view=netcore-3.1
+
+- Mais informações sobre a função `strlen()` em C: https://www.tutorialspoint.com/c_standard_library/c_function_strlen.htm

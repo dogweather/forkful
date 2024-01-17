@@ -10,29 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+지금 코딩의 세계에서 무작위성은 매우 중요합니다. 많은 경우에 프로그래머들은 코드를 작성하는 과정에서 임의의 값을 생성하고 싶어합니다. 이를 해결하기 위해 Clojure는 무작위 숫자를 생성하는 기능을 제공합니다. 이 기능을 사용하면 개발자들은 코드를 더욱 다양하게 작성하고, 더 많은 환경에서 테스트할 수 있습니다.
 
-왜이 아픠 때문에 난수를 생성하는 것에 놀라게 될 수 있습니다. 그냥 새로운 코딩 기술을 배우는 것보다 더 나은 이유는 이기쁜 일이 없어요!
+## 무엇이며 그 이유?
+무작위 숫자를 생성하는 것은 코드에서 예상치 못한 동작을 시뮬레이션하거나 여러 가지 테스트를 수행하는데 아주 효율적인 방법입니다. 예를 들어, 어떤 게임의 결과를 시뮬레이션하거나 엄청난 양의 데이터를 생성할 때 유용합니다.
 
-## 하는 법
+## 사용 방법:
+Clojure에서는 ```(rand)``` 함수를 사용하여 무작위 실수를 생성할 수 있습니다. 만약 0과 1사이의 숫자만을 원한다면, ```(rand)``` 대신에 ```(rand 1.0)``` 을 사용하면 됩니다. 또는 특정 범위 내에서 무작위 정수를 생성하려면, ```(rand-int n)``` 함수를 사용하면 됩니다.
 
-Here's an easy way to generate random numbers in Clojure:
+예시:
+```Clojure
+(rand) ;; 0.781654092
+(rand 10) ;; 5 (0과 10 사이의 정수)
+(rand-int 100) ;; 64 (0과 100 사이의 정수)
+```
 
- ``` Clojure
- (rand) 
- ;; 0.6875913269905133
+## 깊이 파헤치기:
+Clojure는 Java의 ```java.util.Random``` 클래스를 사용하여 무작위 숫자를 생성합니다. 이 클래스는 시드 값을 기준으로 무작위 값을 생성하므로, 시드 값을 설정하지 않으면 실행마다 같은 무작위 값을 반환합니다. 따라서 시드 값이 코드의 여러 부분에서 동일하게 유지되어야 한다는 점에 유의해야 합니다.
 
-(random 1 10) 
-;; 4 
- ```
+Clojure에서는 또한 무작위 검사를 지원하기 위해 ```rand-nth```와 ```rand-uniform``` 함수를 제공합니다. 더 많은 정보를 원한다면 [공식 문서](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/rand)를 참조해주세요.
 
-These functions can take in arguments to specify the range and type of random number to be generated. For example, `rand` generates a random floating-point number between 0 (inclusive) and 1 (exclusive), while `random` takes in the start and end numbers of the range and returns a random integer within that range.
-
-## 깊이 들어가기
-
-Clojure에서 난수를 생성하는 더욱 자세한 정보를 알고 싶다면 [Clojure 공식 문서](https://clojuredocs.org)에서 `rand`와 `random` 함수를 찾아보세요. 이 함수들은 어떤 서수열을 기반으로 난수를 생성하는지와 그 로직에 대해서도 자세히 설명하고 있습니다. 또한 Clojure의 랜덤 함수는 입력값에 대한 캐싱(cache) 및 동시성 이슈에 대한 자세한 내용도 참고할 수 있습니다. 
-
-## 참고 자료
-
-* [Clojure 공식 문서](https://clojuredocs.org)
-* [Clojure 코드의 난수 생성](https://clojure.org/guides/random_numbers)
+## 참고 자료:
+Clojure 공식 문서: <https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/rand>

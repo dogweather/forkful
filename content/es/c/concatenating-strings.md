@@ -10,49 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué concatenar cadenas de texto en C?
+## ¿Qué y por qué?
 
-Una de las tareas más comunes en programación es la manipulación de cadenas de texto. Ya sea para mostrar un mensaje al usuario, para realizar operaciones matemáticas con números representados como texto, o para almacenar y analizar información, es necesario trabajar con cadenas de texto de alguna forma u otra. Y una de las formas más eficientes de hacerlo en el lenguaje de programación C es mediante la concatenación de cadenas.
+La concatenación de cadenas es un término utilizado en programación para referirse a la unión de dos o más cadenas de texto en una sola. Los programadores realizan esta acción para combinar diferentes variables y crear una cadena de texto más larga y completa.
 
-## Cómo hacerlo
+## Cómo:
 
-La concatenación de cadenas en C se logra mediante el uso de la función "strcat" que se encuentra en la biblioteca de cadenas "string.h". Esta función toma dos cadenas como parámetros y concatena la segunda cadena al final de la primera. Veamos un ejemplo:
-
-```C
-#include <stdio.h>
-#include <string.h>
-
-int main() {
-    char saludo[15] = "¡Hola ";
-    char nombre[10] = "amigo!";
-    strcat(saludo, nombre);
-    printf("%s", saludo);
-    return 0;
-}
-```
-
-En este ejemplo, la función "strcat" concatena la palabra "amigo!" al final de la cadena "¡Hola ", resultando en la cadena "¡Hola amigo!". Una vez que se ha realizado la concatenación, la cadena original se modifica, por lo que es importante asegurarse de tener suficiente espacio en la cadena original para la adición de la segunda cadena.
-
-## Profundizando en la concatenación de cadenas
-
-Otra forma de concatenar cadenas en C es mediante el uso de la función "sprintf". Esta función también se encuentra en la biblioteca "string.h" y permite formatear cadenas de texto con distintos tipos de datos. Veamos un ejemplo:
+El lenguaje C ofrece diferentes formas de concatenar cadenas. A continuación se presentan algunos ejemplos de cómo realizar esta acción:
 
 ```C
-#include <stdio.h>
-#include <string.h>
+// Utilizando el operador de concatenación "+"
+char saludo[] = "Hola ";
+char nombre[] = "Juan";
+char frase_saludo[12];
 
-int main() {
-    char frase[50];
-    int numero = 10;
-    sprintf(frase, "El número es %d", numero);
-    printf("%s", frase);
-    return 0;
-}
+frase_saludo = saludo + nombre;
+printf("%s", frase_saludo);
+// Salida: "Hola Juan"
+
+// Utilizando la función strcat()
+char saludo[] = "Hola ";
+char nombre[] = "Juan";
+char frase_saludo[12];
+
+strcat(frase_saludo, saludo);
+strcat(frase_saludo, nombre);
+printf("%s", frase_saludo);
+// Salida: "Hola Juan"
+
+// Utilizando sprintf()
+char frase[20];
+
+sprintf(frase, "Hola %s", "Juan");
+printf("%s", frase);
+// Salida: "Hola Juan"
 ```
 
-En este ejemplo, la función "sprintf" formatea la variable "numero" como un entero y la concatena a la cadena "El número es ". Luego, la cadena resultante se guarda en la variable "frase", que puede ser impresa con la función "printf". Esta forma de concatenación permite una mayor flexibilidad en cuanto al formato de los datos que deseamos agregar a la cadena.
+## Profundizando:
 
-## Ver también
+La concatenación de cadenas es una técnica comúnmente utilizada en lenguajes de programación, especialmente en aquellos orientados a la manipulación de cadenas de texto. Antes de la introducción de funciones específicas como ```strcat()``` en C, los programadores debían implementar su propia lógica para concatenar cadenas.
 
-- Documentación oficial de la función "strcat": https://www.tutorialspoint.com/c_standard_library/c_function_strcat.htm
-- Documentación oficial de la función "sprintf": https://www.tutorialspoint.com/c_standard_library/c_function_sprintf.htm
+Además de las formas mencionadas anteriormente, también es posible realizar concatenación utilizando punteros y la función ```strcpy()```. Es importante tener en cuenta que, al unir cadenas, se debe asegurar tener suficiente espacio para almacenar la cadena final resultante.
+
+## Ver también:
+
+- [Documentación oficial de C](https://devdocs.io/c/)
+- [Ejemplos de concatenación de cadenas en C](https://www.programiz.com/c-programming/examples/concatenate-string)

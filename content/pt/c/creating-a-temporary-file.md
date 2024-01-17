@@ -10,57 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+## O que & Por quê?
+Criar um arquivo temporário é uma tarefa comum realizada por programadores em C. Isso porque, ao criar um arquivo temporário, é possível armazenar dados temporários que serão usados durante a execução do programa e que não precisam ser armazenados permanentemente no sistema.
 
-Criar arquivos temporários é uma tarefa comum em programação, pois permite armazenar dados temporariamente durante a execução de um programa. Isso pode ser útil em diversas situações, como gerar relatórios, armazenar caches ou criar arquivos de backup.
-
-## Como Fazer
-
-Para criar um arquivo temporário em C, podemos utilizar a função `tmpfile()` da biblioteca padrão `<stdio.h>`. Essa função irá retornar um ponteiro para um arquivo temporário aberto em modo binário, que poderá ser usado para escrever ou ler dados.
-
-Um exemplo de código seria:
+## Como fazer:
+Para criar um arquivo temporário em C, é necessário utilizar a função `tmpfile()`. Ela criará um arquivo temporário e retornará um ponteiro para o mesmo. A seguir, um exemplo prático:
 
 ```
 #include <stdio.h>
 
-int main() {
-  // Criar arquivo temporário
-  FILE *arquivo_temporario = tmpfile();
+int main()
+{
+    FILE * fp; //ponteiro para o arquivo temporário
+    char c; //variável para armazenar o conteúdo do arquivo
+    
+    fp = tmpfile(); //criando o arquivo temporário
+    
+    //verificando se o arquivo foi criado corretamente
+    if(fp != NULL)
+    {
+        fputs("Esse é um arquivo temporário criado em C.", fp); //escrevendo no arquivo
+        rewind(fp); //retornando ao começo do arquivo
+        c = fgetc(fp); //lendo um caractere do arquivo
+        printf("Conteúdo do arquivo: %c", c); //mostrando o conteúdo do arquivo
+        fclose(fp); //fechando o arquivo
+    }
+    else //caso ocorra algum erro
+    {
+        printf("Não foi possível criar o arquivo temporário.");
+    }
 
-  // Verificar se o arquivo foi criado corretamente
-  if (arquivo_temporario == NULL) {
-    printf("Erro ao criar arquivo temporário.");
-    return 1;
-  }
-
-  // Escrever dados no arquivo temporário
-  fputs("Esse é um exemplo de arquivo temporário.", arquivo_temporario);
-
-  // Ler dados do arquivo temporário e imprimir na tela
-  rewind(arquivo_temporario);
-  char buffer[100];
-  fgets(buffer, 100, arquivo_temporario);
-  printf("%s", buffer);
-
-  // Fechar arquivo temporário
-  fclose(arquivo_temporario);
-
-  return 0;
+    return 0;
 }
 ```
+**Output:**
+```
+Conteúdo do arquivo: E
+```
 
-O código acima irá criar um arquivo temporário, escrever a string fornecida e depois ler e imprimir na tela. Ao final, o arquivo temporário será fechado e excluído automaticamente.
+## Profundando:
+A criação de arquivos temporários é uma técnica muito antiga e é amplamente utilizada em diferentes linguagens de programação. Além da função `tmpfile()`, também é possível criar um arquivo temporário utilizando as funções `fopen()` e `mkstemp()`. No entanto, a função `tmpfile()` é considerada mais segura, pois o arquivo criado é automaticamente removido quando o programa é finalizado, evitando a poluição do sistema com arquivos inúteis.
 
-## Deep Dive
+É importante ressaltar que o uso de arquivos temporários pode ser uma vulnerabilidade de segurança, pois eles podem ser acessados e modificados por outros programas. Portanto, é fundamental ter cuidado ao usar esse recurso e sempre excluir o arquivo temporário após o seu uso.
 
-Ao usar a função `tmpfile()`, o arquivo temporário criado será automaticamente excluído ao ser fechado. Isso é útil para evitar poluição no sistema com arquivos desnecessários.
-
-Além disso, também é possível criar um arquivo temporário com nome especificado usando a função `tmpnam()`, que irá retornar uma string contendo o caminho para o arquivo temporário criado.
-
-Outra funcionalidade interessante é a possibilidade de definir um diretório específico para criação do arquivo temporário, usando a função `tmpfile_s()` presente na biblioteca `<stdio.h>`.
-
-## Veja Também
-
-- [Documentação Oficial da Função `tmpfile()` em C](https://www.gnu.org/software/libc/manual/html_node/Temporary-Files.html#Temporary-Files)
-- [Exemplo de Uso da Função `tmpfile()` em C](https://www.geeksforgeeks.org/tmpfile-function-in-c-with-examples/)
-- [Outras Funções Relacionadas à Criação de Arquivos Temporários](https://www.tutorialspoint.com/c_standard_library/c_function_tmpnam.htm)
+## Veja também:
+- [Documentação oficial da função `tmpfile()` em C](https://www.cplusplus.com/reference/cstdio/tmpfile/)
+- [Diferença entre arquivos temporários e permanentes](https://pt.stackoverflow.com/questions/50216/qual-%C3%A9-a-diferen%C3%A7a-entre-arquivo-tempor%C3%A1rio-e-arquivo-permanente)

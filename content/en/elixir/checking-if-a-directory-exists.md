@@ -10,40 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
+Checking if a directory exists is a way for programmers to determine if a given directory is present in a specified path. This is commonly used in file management and error handling, as it allows developers to handle directories and files accordingly.
 
-Checking if a directory exists is a crucial part of file management in any programming language, Elixir included. In order to properly manipulate files and folders, it is important to verify that the desired directory exists before performing any operations on it.
-
-## How To
-
-To check if a directory exists in Elixir, we can use the `File.dir?/1` function. This function takes in a path to a directory as its argument and returns a boolean value indicating whether the directory exists or not.
-
-Let's take a look at an example:
-
+## How to:
 ```Elixir
-File.dir?("/home/user/my_directory")
+# Using the File module
+File.dir?("path/to/directory")
+
+# Using the Path module
+Path.dir?("path/to/directory")
 ```
 
-The above code will return `true` if the "my_directory" folder exists in the "/home/user" directory, or `false` if it does not exist.
+Sample Output:
+`true` - if the directory exists
+`false` - if the directory does not exist
 
-We can also use this function in combination with other file management functions, such as `File.list/1` which returns a list of all the files and folders within the specified directory.
+## Deep Dive:
+The functionality of checking if a directory exists is not specific to Elixir. The concept of checking for existence of a directory has been present in many programming languages, such as Java and Python, for years. In Elixir, there are two common ways to check for directory existence: by using the File module or the Path module.
 
-```Elixir
-if File.dir?("/home/user/my_directory") do
-  files = File.list("/home/user/my_directory")
-  # perform operations on the files in "my_directory"
-end
-```
+The `dir?` function in the File module takes a path as input and returns a boolean value indicating whether a directory exists at that path or not. The same functionality can also be achieved by using the `dir?` function in the Path module, which is specifically designed to handle file paths.
 
-## Deep Dive
+In terms of alternatives, there are other methods to check for directory existence, such as using Unix commands through the `:os.cmd` function or using the Erlang `:filelib` library. However, the File and Path modules are the recommended ways in Elixir to handle file management tasks.
 
-Under the hood, the `File.dir?/1` function uses the `:filelib.is_dir/1` BIF (Built-In Function) provided by the Erlang standard library. This function checks whether the given path is a valid directory and returns a boolean. If the path does not exist or is not a directory, it will return `false`.
-
-It is important to note that the `File.dir?/1` function only checks for the existence of the directory, not its accessibility or permissions. For further error handling, it is recommended to use the `File.readable?/1` or `File.writable?/1` functions to confirm if the directory can be read from or written to, respectively.
-
-## See Also
-
-- [File module Documentation](https://hexdocs.pm/elixir/File.html)
-- [Elixir Standard Library Documentation](https://hexdocs.pm/elixir/stdlib/)
-
-By following the steps outlined in this article, you should now have a better understanding of how to check if a directory exists in Elixir. Happy coding!
+## See Also:
+Elixir official documentation for the [File](https://hexdocs.pm/elixir/File.html) and [Path](https://hexdocs.pm/elixir/Path.html) modules.

@@ -1,7 +1,7 @@
 ---
-title:                "Debug-Ausgabe drucken"
-html_title:           "Java: Debug-Ausgabe drucken"
-simple_title:         "Debug-Ausgabe drucken"
+title:                "Ausgabe von Fehlerbehebung drucken"
+html_title:           "Java: Ausgabe von Fehlerbehebung drucken"
+simple_title:         "Ausgabe von Fehlerbehebung drucken"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Testing and Debugging"
@@ -10,64 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was & Warum?
 
-Debug-Ausgaben werden verwendet, um Informationen während der Programmierung anzuzeigen, um Fehler zu finden und zu beheben. Dies kann dabei helfen, das Debugging-Prozess zu beschleunigen und die Effizienz der Programmierung zu erhöhen.
+Debug-Ausgabe oder einfach nur "printn" ist eine Technik, die Programmierer verwenden, um während der Entwicklung zusätzliche Informationen aus ihrem Code zu extrahieren. Durch das Hinzufügen von printn-Anweisungen können Programmierer sehen, was ihr Code tatsächlich tut und Fehler besser verstehen.
 
-## Wie man Debug-Ausgaben in Java verwendet
+## Wie man:
 
-Debug-Ausgaben in Java werden mithilfe der Methode `System.out.println()` erstellt. Diese Methode akzeptiert einen String als Parameter und gibt ihn in der Konsole aus. Zum Beispiel:
-
-```Java
-System.out.println("Debug-Ausgabe");
-```
-
-Dies würde den Text "Debug-Ausgabe" in der Konsole ausgeben.
-
-Weitere Beispiele:
+Hier ein einfaches Beispiel, um zu zeigen, wie Debug-Ausgabe in Java verwendet wird:
 
 ```Java
-int num = 5;
-System.out.println(num);
+int a = 5, b = 10, c;
+c = a + b;
+System.out.println("c = " + c);
 ```
 
-Dies würde die Variable `num`, mit dem Wert 5, in der Konsole ausgeben.
+Die Ausgabe des Codes wird "c = 15" sein. Durch die Verwendung von Debug-Ausgaben im Code können Programmierer sehen, wie der Wert von "c" in jeder Iteration des Programms verändert wird. Dies kann helfen, Probleme zu lokalisieren und zu beheben.
 
-```Java
-String name = "Max";
-System.out.println("Hello " + name);
-```
+## Tief getaucht:
 
-Dies würde den Text "Hello Max" in der Konsole ausgeben.
+Historischer Kontext: Debug-Ausgabe ist eine der ältesten und grundlegendsten Techniken zur Fehlerbehebung in der Programmierung. Sie wurde bereits in den frühen Tagen der Computerentwicklung verwendet und ist auch heute noch ein wichtiger Bestandteil der Entwicklung.
 
-## Tiefer Einblick
+Alternativen: Obwohl printn die gebräuchlichste Methode ist, um Debugging-Ausgaben in Java zu erzeugen, gibt es andere Alternativen wie das Logging-Framework log4j oder die Java Debugger-Schnittstelle.
 
-Debug-Ausgaben können auch dazu verwendet werden, den Wert von Variablen während der Programmierung zu überwachen. Zum Beispiel:
+Implementierungsdetails: In Java können Debug-Ausgaben einfach durch die Verwendung der System-Klasse und des printn-Befehls implementiert werden. Es ist auch wichtig zu beachten, dass Debug-Ausgaben aus Performance-Gründen oft deaktiviert werden sollten, wenn die Anwendung in Produktion läuft.
 
-```Java
-int counter = 0;
-while(counter < 10) {
-  System.out.println("Der Zählwert beträgt: " + counter);
-  counter++;
-}
-```
+## Siehe auch:
 
-Dies würde den aktuellen Wert von `counter` bei jedem Durchlauf der Schleife ausgeben und somit helfen, Fehler in der Logik des Codes zu finden.
+[Offizielle Java-Dokumentation über Debugging-Ausgaben](https://docs.oracle.com/javase/tutorial/essential/exceptions/debug.html)
 
-Es ist auch möglich, mehrere Variablenwerte in einer Debug-Ausgabe zu kombinieren. Zum Beispiel:
+[Java Logging-Framework log4j](https://logging.apache.org/log4j/2.x/)
 
-```Java
-int width = 10;
-int height = 5;
-System.out.println("Das Rechteck hat die Maße: " + width + " x " + height);
-```
-
-Dies würde den Text "Das Rechteck hat die Maße: 10 x 5" in der Konsole ausgeben.
-
-Zusätzlich zu `System.out.println()` gibt es auch andere Methoden wie `System.out.print()` und `System.out.printf()`, die ebenfalls für Debug-Ausgaben verwendet werden können.
-
-## Siehe auch
-
-- [Java Dokumentation zu System.out](https://docs.oracle.com/javase/8/docs/api/java/io/PrintStream.html)
-- [Tutorial zu Debugging in Java](https://www.baeldung.com/java-debugging)
-- [Beispiele für Debug-Ausgaben in Java](https://www.journaldev.com/15041/java-sout-examples)
+[Java Debugger-Schnittstelle](https://docs.oracle.com/javase/8/docs/technotes/guides/jpda/)

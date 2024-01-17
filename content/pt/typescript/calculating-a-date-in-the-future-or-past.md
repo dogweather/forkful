@@ -1,7 +1,7 @@
 ---
-title:                "Cálculo de uma data no futuro ou passado"
-html_title:           "TypeScript: Cálculo de uma data no futuro ou passado"
-simple_title:         "Cálculo de uma data no futuro ou passado"
+title:                "Calculando uma data no futuro ou passado"
+html_title:           "TypeScript: Calculando uma data no futuro ou passado"
+simple_title:         "Calculando uma data no futuro ou passado"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Dates and Times"
@@ -10,42 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+## O que e Por que?
 
-Calculando uma data no futuro ou no passado pode ser útil para diversas situações, como planejar eventos, acompanhar prazos de vencimento ou até mesmo simular cenários.
+Calcular uma data no futuro ou no passado é uma técnica comumente usada pelos programadores para obter uma data específica a partir de uma data inicial. Isso é útil em muitas situações, incluindo cálculos de prazos, agendamento de eventos, agendamento de tarefas, etc. 
 
-## Como Fazer
-
-Para calcular uma data no futuro ou no passado usando TypeScript, podemos utilizar a classe nativa `Date`. Primeiramente, devemos criar uma nova instância dessa classe passando a data atual como argumento. Em seguida, podemos utilizar o método `setDate()` para alterar o dia desejado e o método `setMonth()` para alterar o mês. Veja um exemplo abaixo:
+## Como fazer:
 
 ```TypeScript
+// Para calcular uma data no futuro, podemos usar o operador de soma (+) com um número de dias. 
+// Por exemplo, para obter a data de amanhã, podemos usar o seguinte código:
 const dataAtual = new Date();
-console.log("Data atual:", dataAtual.getDate(), dataAtual.getMonth() + 1);
+dataAtual.setDate(dataAtual.getDate() + 1);
+console.log(dataAtual);
+// Output: Thu Jul 23 2020 11:35:54 GMT-0400 (Eastern Daylight Time)
 
-dataAtual.setDate(dataAtual.getDate() + 5);
-dataAtual.setMonth(dataAtual.getMonth() + 1);
-console.log("Data no futuro:", dataAtual.getDate(), dataAtual.getMonth() + 1);
+// Para calcular uma data no passado, podemos usar o operador de subtração (-) com um número de dias.
+// Por exemplo, para obter a data de ontem, podemos usar o seguinte código:
+const dataAtual = new Date();
+dataAtual.setDate(dataAtual.getDate() - 1);
+console.log(dataAtual);
+// Output: Tue Jul 21 2020 11:35:54 GMT-0400 (Eastern Daylight Time)
 ```
 
-O código acima primeiro cria uma instância da classe `Date` com a data atual e imprime essa data no console. Em seguida, utiliza os métodos `setDate()` e `setMonth()` para adicionar 5 dias e 1 mês na data atual, respectivamente. Por fim, imprime a nova data no console.
+## Deep Dive:
 
-A saída desse código seria:
+A técnica de calcular datas no futuro ou no passado é comum em programação e remonta aos primeiros dias da computação. Antes do uso de linguagens de programação de alto nível, os programadores costumavam contar manualmente as datas usando sistemas de calendário. Com o avanço da tecnologia e o surgimento de linguagens de programação mais modernas, essa tarefa foi simplificada, permitindo aos desenvolvedores calcular datas com muita facilidade. Alternativas para calcular datas incluem o uso de bibliotecas de terceiros e APIs de calendário. A implementação específica pode variar dependendo da linguagem de programação utilizada.
 
-```
-Data atual: 31 8
-Data no futuro: 5 10
-```
+## Veja também:
 
-## Deep Dive
-
-A classe `Date` também possui outros métodos úteis para manipulação de datas, como `setFullYear()`, `setHours()`, `setMinutes()` e `setSeconds()`, que permitem alterar o ano, hora, minutos e segundos, respectivamente.
-
-Além disso, a classe também possui métodos para retornar as informações de data, como `getDay()`, que retorna o dia da semana, e `getTime()`, que retorna o tempo em milissegundos desde 1 de janeiro de 1970.
-
-Para mais informações sobre a classe `Date` e seus métodos, você pode consultar a documentação oficial do TypeScript.
-
-## Veja Também
-
-- Documentação oficial do TypeScript sobre a classe Date: https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-4.html#date-parsing-with--lib-es2015-_-setting-getters-and-setters-with--lib-es2015-dates
-- Tutorial sobre manipulação de datas em JavaScript: https://www.w3schools.com/js/js_dates.asp
-- Perguntas frequentes sobre datas em TypeScript: https://stackoverflow.com/questions/tagged/typescript+date
+- [Documentação oficial do Date Object em TypeScript](https://www.typescriptlang.org/docs/handbook/functions.html#date)
+- [Tutorial de Data e Hora em TypeScript](https://www.tutorialspoint.com/typescript/typescript_date_time.htm)

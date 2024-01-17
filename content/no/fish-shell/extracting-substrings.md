@@ -1,7 +1,7 @@
 ---
-title:                "Utvinning av understrenger"
-html_title:           "Fish Shell: Utvinning av understrenger"
-simple_title:         "Utvinning av understrenger"
+title:                "Ekstrahering av substringer"
+html_title:           "Fish Shell: Ekstrahering av substringer"
+simple_title:         "Ekstrahering av substringer"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -10,28 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-Hvorfor skal du bry deg om å trekke ut delstrenger? Det kan være svært nyttig når du prøver å manipulere og behandle tekstdata på en rask og effektiv måte.
+## Hva og Hvorfor?
 
-## How To
-Kodingseksempler og utførsel av utdata innenfor "```Fish Shell ... ```" kodelag kan være forvirrende å ta inn for nybegynnere. Men ikke bekymre deg, det er enklere enn det ser ut til.
+Ekstrahering av substringer er en måte å isolere deler av en tekst på basert på bestemte karakterer eller posisjoner. Dette kan være nyttig for programmerere for å manipulere og behandle data på en mer effektiv måte.
 
-For å trekke ut en delstreng i Fish Shell, bruker du kommandoen `string sub`, etterfulgt av startindeks og lengde på substringsen du ønsker å ekstrahere. Se nedenfor for et eksempel på hvordan dette ser ut i praksis:
+## Hvordan?
+
+```Fish Shell``` tilbyr flere metoder for å ekstrahere substringer fra en gitt tekst. En vanlig metode er å bruke "cut" kommandoen, som kan brukes til å velge et gitt antall tegn fra starten eller slutten av en tekstlinje.
 
 ```
-Fish Shell $ string sub 3 5 "eksempeltekst"
-[input/output] se
+$ echo "Hei alle sammen" | cut -c 4-8
+alle 
 ```
 
-I eksempelet over trekker vi ut delstrengen "se" fra "eksempeltekst", med startindeks 3 og lengde 5. Du kan også bruke negative tall for å telle bakfra i strengen, for eksempel `string sub -4 3 "eksempeltekst"` for å få ut delstrengen "eks".
+I dette tilfellet vil "cut" kommandoen returnere tegnene fra posisjon 4 til 8 i den gitt tekstlinjen.
 
-## Deep Dive
-La oss dykke litt dypere inn i `string sub` kommandoen. I tillegg til å bruke startindeks og lengde, kan du også bruke `string sub` for å trekke ut delstrenger basert på et bestemt mønster eller uttrykk. For eksempel kan du bruke `string sub match "e(.*)t" "eksempeltekst"` for å få ut delstrengen "eks" basert på et regex-uttrykk.
+Et annet alternativ er å bruke "sed" kommandoen, som kan brukes til å bytte ut eller erstatte deler av en tekstlinje basert på et gitt mønster.
 
-En annen nyttig funksjon tilgjengelig med `string sub` er muligheten til å bruke variabler. Dette gjør det mulig å trekke ut delstrenger basert på variabelverdier i stedet for å hardkode dem. For eksempel kan du bruke `string sub $start $length "eksempeltekst"` for å få ut delstrengen basert på variablene `$start` og `$length`.
+```
+$ echo "Goodbye, World!" | sed 's/Goodbye/Hello/'
+Hello, World!
+```
 
-## See Also
-Sjekk ut disse lenkene for mer informasjon om å trekke ut delstrenger i Fish Shell:
+## Dykk dypere
 
-- [Fish Shell dokumentasjon](https://fishshell.com/docs/current/cmds/string-sub.html)
-- [RegExr - online regex tester](https://regexr.com/)
+Eksistrering av substringer har vært en del av programmering siden de tidlige dagene av UNIX-operativsystemet. I tillegg til "cut" og "sed" finnes det flere verktøy som kan oppnå samme resultat, som for eksempel "grep" og "awk".
+
+Implementeringen av disse verktøyene kan variere basert på hvilket operativsystem de brukes på, men essensen av å ekstrahere substringer forblir den samme.
+
+## Se også
+
+- [Fish Shell dokumentasjon](https://fishshell.com/docs/current/index.html)
+- [Kort introduksjon til regulære uttrykk](https://www.regular-expressions.info/intro.html)

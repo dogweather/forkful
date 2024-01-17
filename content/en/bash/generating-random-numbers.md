@@ -10,35 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-Are you looking to add a bit of unpredictability to your Bash scripts? Or maybe you just want to generate some randomized data for testing purposes? Whatever your reason may be, learning how to generate random numbers in Bash can be a useful skill to have.
+## What & Why?
 
-## How To
+Generating random numbers is the process of producing a sequence of numbers that have no discernable pattern. This can be a useful tool for programmers in a variety of applications, such as cryptography, statistical simulations, and game development.
+
+## How to:
+
 ```Bash
-# Generate a random integer between 0 and 10
-echo $(( RANDOM % 11 ))
+#To generate a random integer between 1 and 10:
+echo $((1 + RANDOM % 10))
 
-# Generate a random number between 0 and 1 with 2 decimal places
-echo $(printf "%.2f" $RANDOM/32767)
+#To generate a random decimal between 0 and 1:
+echo $(awk -v n=2 -v r="$RANDOM" 'BEGIN{srand(r);printf "%.2f\n",rand()/n}')
 
-# Generate a random string of 10 characters
-cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 10 | head -n 1
+#To generate a secure random password with 12 characters:
+< /dev/urandom tr -dc A-Za-z0-9 | head -c12
 ```
+
 Sample output:
-```
-7
-0.81
-uSfXbYqL1I
-```
+- Random integer: 5
+- Random decimal: 0.31
+- Random password: Af8sRb32Gh9E
 
-## Deep Dive
-Bash offers several different methods for generating random numbers. The first example above uses the built-in `$RANDOM` variable which returns a random number between 0 and 32767. By using the modulus operator, we can limit the range of the random number to our desired range.
+## Deep Dive:
 
-The second example demonstrates using the `printf` function to format a random number into two decimal places. The `$RANDOM` variable generates a random integer, so we divide it by 32767 (which is the maximum value) and then use `printf` to specify the number of decimal places.
+When computers were first developed, there was no way for them to generate truly random numbers. Instead, algorithms were used to produce "pseudo-random" numbers that appeared random, but were actually determined by a mathematical formula. However, with the advancement of technology, computers can now generate truly random numbers by using sources of entropy such as keystrokes and system noise.
 
-Lastly, the third example uses the `cat` and `tr` commands to extract random characters from the `/dev/urandom` file. Then, the `fold` command limits the character count to 10 and `head` ensures we only get one output.
+There are also other programming languages, such as Python and Java, that have built-in functions for generating random numbers. These functions typically use more advanced and secure algorithms than the one used in Bash.
 
-See Also
-- [Bash Variables Reference](https://www.gnu.org/software/bash/manual/html_node/Bash-Variables.html)
-- [Bash Arithmetic Expansion](https://www.gnu.org/software/bash/manual/html_node/Arithmetic-Expansion.html)
-- [Bash Text Manipulation Commands](https://www.gnu.org/software/bash/manual/html_node/Text-Manipulation.html)
+The implementation of generating random numbers in Bash is done through the use of built-in variables, such as $RANDOM, which produces a random integer between 0 and 32767. This value can then be manipulated to fit the desired range or format.
+
+## See Also:
+
+- [Bash manual](https://www.gnu.org/software/bash/manual/html_node/Shell-Parameters.html#Shell-Parameters)
+- [Random Numbers in Python](https://docs.python.org/3/library/random.html)
+- [Random Numbers in Java](https://docs.oracle.com/javase/8/docs/api/java/util/Random.html)

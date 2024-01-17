@@ -10,64 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was & Warum?
+Testen ist ein wichtiger Bestandteil der Programmierung, bei dem der Code auf mögliche Fehler und Fehlerquellen überprüft wird. Es hilft Programmierern, sicherzustellen, dass ihr Code zuverlässig funktioniert und die erwarteten Ergebnisse liefert.
 
-Tests sind ein wichtiger Bestandteil des Programmierens mit Arduino. Sie helfen dabei, Fehler im Code zu erkennen und zu beheben, bevor sie zu größeren Problemen führen. Außerdem können sie dabei helfen, die Zuverlässigkeit und Funktionalität eines Projekts zu verbessern.
+## So geht's:
+Um Tests für Arduino-Code zu schreiben, können wir die ```ArduinoUnit.h``` Bibliothek nutzen. Hier ein einfaches Beispiel, das eine Testklasse für eine einfache Funktion erstellt:
 
-## Wie geht es
-
-Um Tests in deine Arduino-Programme zu implementieren, musst du zunächst die Bibliothek "ArduinoUnit" installieren. Diese Bibliothek stellt verschiedene Funktionen und Methoden bereit, die dir dabei helfen, Tests zu schreiben und auszuführen.
-
-Als nächstes musst du deine Tests in separate Dateien oder Funktionen schreiben. Diese Dateien oder Funktionen sollten mit dem Präfix "test_" beginnen, damit die Bibliothek sie als Tests erkennen kann. Beispiel:
-
-```Arduino
+```
 #include <ArduinoUnit.h>
 
-test_schaltplan() {
-  schaltplan.anfangsKapazität();
-  assertEqual(12, schaltplan.spannung);
+test(function_test) {
+  assertEqual(2, addNumbers(1,1));
 }
 
-test_antrieb() {
-  // Teste die Geschwindigkeit des Antriebs
-  assertGreater(antrieb.geschwindigkeit, 0);
+void addNumbers(int a, int b) {
+  return a+b;
 }
 ```
 
-Im obigen Beispiel werden zwei Tests erstellt: "schaltplan" und "antrieb". In jedem Test werden verschiedene Funktionen und Methoden aufgerufen und ihre Ergebnisse mit der "assert"-Funktion überprüft.
+Nachdem wir die Bibliothek eingebunden haben, können wir eine Testklasse mit dem Namen "function_test" erstellen, in der wir unsere Funktion testen wollen. Mit dem ```assertEqual()``` Befehl prüfen wir, ob die erwarteten Werte übereinstimmen. Anschließend definieren wir unsere Funktion und können mit ```return``` den Rückgabewert überprüfen.
 
-Nachdem du deine Tests geschrieben hast, kannst du sie mithilfe des Arduino-Boards ausführen und die Ergebnisse in der seriellen Monitor-Ansicht überprüfen. Beispiel:
+Die Ausgabe sollte nun "1 test, 1 passed, 0 failed" sein, was bedeutet, dass unser Test erfolgreich war.
 
-```Arduino
-void setup() {
-  Serial.begin(9600);
-}
+## Tiefentauchen:
+Die ArduinoUnit.h Bibliothek wurde von M. F. Mc Laughlin erstellt und ist eine Alternative zu anderen Test-Frameworks wie beispielsweise Unity oder CppUnit. Mit ihr können sowohl Unit-Tests als auch Integrationstests geschrieben werden. Eine ausführlichere Dokumentation und weitere Beispiele findest du auf der offiziellen GitHub-Seite.
 
-void loop() {
-  // Führe alle Tests aus
-  Test::run();
-}
-```
-
-## Tiefer eintauchen
-
-Um deine Tests noch effektiver zu machen, kannst du auch verschiedene Parameter und Optionen in der "assert"-Funktion verwenden. Diese ermöglichen es dir, genauere Aussagen zu treffen und spezifische Fehlermeldungen zu generieren. Beispiel:
-
-```Arduino
-assertEqual[message](expected, actual[, tolerance])
-assertNotEqual[message](expected, actual[, tolerance])
-assertTrue[message](expression)
-assertFalse[message](expression)
-assertGreaterThan[message](a, b)
-assertGreaterThanOrEqual[message](a, b)
-assertLessThan[message](a, b)
-assertLessThanOrEqual[message](a, b)
-```
-
-Zusätzlich dazu kannst du auch spezielle Funktionen wie "before()" und "after()" verwenden, um vor und nach jedem Test bestimmte Aufgaben auszuführen, z.B. das Initialisieren von Variablen oder das Drucken von Debugging-Informationen.
-
-## Siehe auch
-
-- [Offizielle ArduinoUnit-Dokumentation] (https://github.com/mmurdoch/arduinounit)
-- [Tutorial zur Verwendung von Tests in Arduino] (https://www.arduino.cc/reference/en/libraries/arduinounit/)
-- [Video: Wie man Tests mit Arduino schreibt] (https://www.youtube.com/watch?v=iDaTDpUkSUQ)
+## Siehe auch:
+- [ArduinoUnit.h GitHub](https://github.com/mmcaughlin/ArduinoUnit)
+- [Einführung in das Testen von Arduino-Code](https://www.arduino.cc/en/Guide/IntroductionToArduinoUnitTesting)
+- [Ein ausführliches Tutorial zu ArduinoUnit.h](https://www.arduino.cc/en/Tutorials/ArduinoUnitTesting)

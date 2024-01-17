@@ -10,38 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## O co chodzi i dlaczego?
 
-Praca z formatem JSON jest nieodłączną częścią wielu zadań programistycznych w Bashu. Wiedza na temat tego formatu jest niezbędna do skutecznego przetwarzania danych w różnych projektach.
+JSON (JavaScript Object Notation) to popularny format danych używany przez programistów do przechowywania i przesyłania informacji w prosty i czytelny sposób. Jest to tekstowy format, który można wykorzystać w wielu językach programowania, w tym w Bash. Programiści lubią pracować z JSON, ponieważ jest łatwo przetwarzalny przez komputery oraz jest stosunkowo intuicyjny dla ludzi do czytania.
 
-## Jak to zrobić
+## Jak to zrobić?
 
-Podstawowym narzędziem w celu pracy z JSON w Bashu jest polecona komenda `jq`. Przykładowe użycie wygląda następująco:
-
-```Bash
-response='{"name": "John", "age": 26}'
-echo "$response" | jq '.name'
-
-```
-
-Powyższy przykład zwróci wartość `"John"` dla klucza `"name"`. Inne przydatne funkcje `jq` to `select` i `map`, które pozwalają filtrować odpowiedzi w bardziej zaawansowany sposób. Przykładowe wykorzystanie:
+Aby pracować z JSON w Bash, musisz użyć komendy `jq`, która jest narzędziem do analizowania i manipulowania JSON. Poniżej znajdują się przykładowe polecenia z wykorzystaniem `jq` oraz odpowiadające im wyjścia:
 
 ```Bash
-response='[{"name": "John", "age": 26}, {"name": "Mary", "age": 30}]'
-echo "$response" | jq 'map(select(.age >= 30))'
+# Wyświetlenie zawartości pliku JSON
+$ jq '.' plik.json
 
+{"imię": "Anna", "wiek": 30, "hobby": ["czytanie", "pływanie", "gotowanie"]}
+
+# Wyświetlenie wartości pod kluczem "wiek"
+$ jq '.wiek' plik.json
+
+30
+
+# Wyświetlenie wszystkich wartości z tablicy pod kluczem "hobby"
+$ jq '.hobby[]' plik.json
+
+czytanie
+pływanie
+gotowanie
 ```
 
-Wynikiem będzie tablica z jednym elementem o wartości `{ "name": "Mary", "age": 30 }`.
+## Głębsza analiza
 
-## Deep Dive
+JSON został opracowany w latach 90. jako format danych dla języka programowania JavaScript. Od tego czasu stał się powszechnie używany w innych językach programowania, w tym w Bash. W przeciwieństwie do innych formatów danych, JSON jest składniowo prosty i nie wymaga osobnego programu do odczytu i zapisu danych. Alternatywami dla JSON są m.in. YAML, XML czy CSV, jednakże JSON jest najczęściej wybieranym formatem ze względu na swoją prostotę i czytelność.
 
-Format JSON jest powszechnie stosowany do przechowywania i przesyłania danych w aplikacjach webowych i mobilnych. Jest to zapisywany w postaci tekstu, co czyni go łatwym do odczytania przez ludzi i łatwym do przetwarzania przez komputery.
+W Bash, `jq` wykorzystuje język wyrażeń regularnych oraz składniowe elementy języka JavaScript do przetwarzania danych w formacie JSON. Aby uzyskać pełną listę dostępnych funkcji `jq`, można skorzystać z dokumentacji tego narzędzia.
 
-Komenda `jq` jest również wykorzystywana do wstępnie przetwarzania danych zanim są przekazane do innych narzędzi. Dzięki temu można szybko i łatwo wyodrębnić potrzebne informacje z dużych i złożonych struktur danych.
+## Zobacz też
 
-## Zobacz również
-
-- Dokumentacja oficjalna `jq`: https://stedolan.github.io/jq/
-- Przetwarzanie JSON w Bashu z użyciem `jq`: https://www.baeldung.com/linux/jq-json-processing-bash
-- Inne narzędzia pomocne w pracy z JSON w Bashu: https://www.computerhope.com/unix/jq.htm
+- [Dokumentacja oficjalna `jq`](https://stedolan.github.io/jq/)
+- [Tutorial o `jq` w Bash](https://www.freecodecamp.org/news/how-to-parse-json-in-bash/)

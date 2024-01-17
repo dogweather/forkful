@@ -1,7 +1,7 @@
 ---
-title:                "Fehlersuchausgabe drucken"
-html_title:           "Bash: Fehlersuchausgabe drucken"
-simple_title:         "Fehlersuchausgabe drucken"
+title:                "Debug-Ausgabe drucken"
+html_title:           "Bash: Debug-Ausgabe drucken"
+simple_title:         "Debug-Ausgabe drucken"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Testing and Debugging"
@@ -10,65 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was & Warum?
+Debug-Ausgaben sind kurze und nützliche Textnachrichten, die beim Programmieren verwendet werden, um zu überprüfen, ob der Code wie erwartet funktioniert. Programmierer nutzen sie, um Fehler zu finden und zu beheben, sowie um die Funktionsweise des Codes besser zu verstehen.
 
-Debug-Ausgaben sind eine wichtige Methode, um Fehler in Bash-Programmen zu finden und zu beheben. Durch das Drucken von Debug-Ausgaben können Sie den Programmablauf verfolgen und eventuelle Probleme schnell identifizieren.
+## Wie geht's?
+Um Debug-Ausgaben in Bash zu erstellen, kannst du das integrierte Kommando ```echo``` verwenden. Hier ist ein Beispiel:
 
-## So geht's
-
-Um Debug-Ausgaben in Ihrem Bash-Code zu drucken, können Sie das `echo`-Befehl verwenden. Hier ist ein Beispiel:
-
-```Bash
-#!/bin/bash
-
-VAR="Hallo Welt!"
-echo "Die Variable VAR enthält: $VAR"
+```bash
+echo "Die Debug-Ausgabe wird hier angezeigt."
 ```
 
-Dieses Beispiel verwendet den `echo`-Befehl, um den Wert der Variablen `VAR` zu drucken. Die Ausgabe sieht dann wie folgt aus:
+Die Ausgabe sieht dann so aus:
 
 ```
-Die Variable VAR enthält: Hallo Welt!
+Die Debug-Ausgabe wird hier angezeigt.
 ```
 
-Sie können auch den `set -x` Befehl verwenden, um den gesamten Programmablauf mit Debug-Ausgaben anzuzeigen. Verwenden Sie jedoch diese Methode mit Vorsicht, da dies zu einer übermäßigen Ausgabe führen kann.
+Du kannst auch Variablen in die Ausgabe einfügen, um bestimmte Werte oder Informationen zu überprüfen. Hier ist ein Beispiel:
 
-## Tief einsteigen
-
-Es gibt verschiedene Methoden, um Debug-Ausgaben in Bash-Programmen zu drucken. Eine weitere Möglichkeit ist die Verwendung des `printf`-Befehls. Dieser Befehl bietet mehr Möglichkeiten zur Formatierung der Ausgabe. Hier ist ein Beispiel:
-
-```Bash
-#!/bin/bash
-
-VAR="42"
-printf "Der Wert der Variablen VAR ist %s\n" "$VAR"
+```bash
+var1="Hallo!"
+var2=42
+echo "Das ist Variable 1: $var1 und das ist Variable 2: $var2"
 ```
 
-In diesem Beispiel wird der Wert der Variablen `VAR` mit dem `%s`-Platzhalter formatiert. Die Ausgabe sieht dann wie folgt aus:
+Die Ausgabe sieht dann so aus:
 
 ```
-Der Wert der Variablen VAR ist 42
+Das ist Variable 1: Hallo! und das ist Variable 2: 42
 ```
 
-Eine andere nützliche Methode ist die Verwendung von `die`-Befehl, um Debug-Ausgaben in Kombination mit einer Fehlermeldung zu drucken. Hier ist ein Beispiel:
+## Tiefer Einblick
+Debug-Ausgaben gibt es schon seit den frühen Tagen der Programmierung. Früher wurden sie vor allem in textbasierten Programmiersprachen wie C verwendet, um zu überprüfen, ob der Code richtig ausgeführt wird. Heutzutage werden sie immer noch verwendet, aber auch moderne Programmiersprachen wie Bash haben integrierte Debugging-Tools, um dieses Verfahren zu erleichtern.
 
-```Bash
-#!/bin/bash
+Eine Alternative zu Debug-Ausgaben sind sogenannte Debugger-Tools, die es ermöglichen, den Code in Echtzeit zu überwachen und zu untersuchen. Diese können jedoch komplexer und schwieriger zu benutzen sein, vor allem für Anfänger.
 
-NUM=0
-if [ "$NUM" -eq 0 ]; then
-    die "NUM darf nicht 0 sein!"
-fi
-```
-
-Wenn das Skript ausgeführt wird und die Bedingung `"$NUM" -eq 0` erfüllt ist, wird die folgende Ausgabe gedruckt:
-
-```
-NUM darf nicht 0 sein!
-```
+Die Implementierung von Debug-Ausgaben in Bash ist relativ einfach und erfordert keine speziellen Tools oder Kenntnisse. Es ist eine schnelle und effektive Methode, um den Code während der Entwicklung zu überprüfen.
 
 ## Siehe auch
-
-- [Bash Debugging Guide (auf Englisch)](https://wiki.bash-hackers.org/scripting/debuggingtips)
-- [Einführung in die Bash-Programmierung (auf Deutsch)](https://wiki.ubuntuusers.de/Shell/Bash-Programmierung_Einfuehrung/)
-- [Bash-Dokumentation (auf Deutsch)](https://www.gnu.org/software/bash/manual/html_node/index.html)
+- [Bash Debugging Basics](https://devhints.io/bash-debugging)
+- [Bash Scripting Best Practices – Debugging](https://betterprogramming.pub/bash-scripting-best-practices-debugging-1555154ce746)
+- [Debugging Shell Scripts](https://www.gnu.org/software/bash/manual/html_node/Debugging-Shell-Scripts.html) (offizielle Bash-Dokumentation)

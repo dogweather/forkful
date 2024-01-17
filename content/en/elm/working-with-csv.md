@@ -10,87 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
- CSV (Comma Separated Values) files are a common way of storing and exchanging data. Many applications use CSV as a standard format for importing and exporting data. By learning how to work with CSV in Elm, you can efficiently manipulate and analyze large datasets and integrate them into your applications.
+Dealing with CSV or Comma-Separated Values is a common task for programmers. CSV is a popular file format used to store tabular data, similar to spreadsheets. It consists of rows and columns, with each row representing a record and each column representing a field. Programmers usually work with CSV files to read or write data to and from a database or to export data from an application for further analysis.
 
-## How To
+## How to:
 
-To begin working with CSV in Elm, you will first need to install the elm-csv package. This can be done by running the following command in your project directory:
-
-```Elm
-elm install elm-csv
-```
-
-Once the package is installed, you can import it into your Elm file using the following code:
+Working with CSV in Elm is straightforward and efficient. The `elm-csv` package provides useful functions for parsing and generating CSV files. Let's take a look at an example of how to read data from a CSV file and display it on the browser.
 
 ```Elm
-import Csv
+import Csv exposing (parse)
+
+fileData : String
+fileData = 
+  "Name,Age,Gender\nJohn,30,Male\nMaria,25,Female"
+
+{ data, fields } = 
+  case parse fileData of
+    Ok result ->
+      result
+    Err _ ->
+      ([], [])
+
+table : List (List String) -> Html msg
+table rows =
+  table [] (List.map row rows)
+
+row : List String -> Html msg
+row data =
+  tr [] (List.map (cell "") data)
+
+cell : List (Attribute msg) -> String -> Html msg
+cell att content =
+  td att [ text content ]
+
+main =
+  table data
 ```
 
-To read a CSV file, you can use the `Csv.Decode.decode` function. This function takes in a CSV file and converts it into a list of lists containing the data. For example, if we have a CSV file with the following data:
-
-```csv
-Name, Age, Occupation
-John Doe, 30, Software Engineer
-Jane Smith, 25, Designer
-```
-
-We can read the file in Elm using the following code:
-
-```Elm
-csvData : String
-csvData =
-  "Name, Age, Occupation\n" ++
-  "John Doe, 30, Software Engineer\n" ++
-  "Jane Smith, 25, Designer"
-
-decodedData = Csv.Decode.decode csvData
-```
-
-The `decodedData` variable will now contain the following list structure:
-
-```Elm
-[ [ "Name", "Age", "Occupation" ]
-, [ "John Doe", "30", "Software Engineer" ]
-, [ "Jane Smith", "25", "Designer" ]
-]
-```
-
-You can then use this list to manipulate and analyze the data as needed.
-
-To write data to a CSV file, you can use the `Csv.Encode.encode` function. This function takes in a list of lists and converts it into a CSV file. For example, if we have the following data in Elm:
-
-```Elm
-data =
-  [ [ "Name", "Age", "Occupation" ]
-  , [ "John Doe", "30", "Software Engineer" ]
-  , [ "Jane Smith", "25", "Designer" ]
-  ]
-```
-
-We can convert it into a CSV file using the following code:
-
-```Elm
-csvFile = Csv.Encode.encode data
-```
-
-This will produce the following CSV file:
-
-```csv
-Name, Age, Occupation
-John Doe, 30, Software Engineer
-Jane Smith, 25, Designer
-```
+In this example, we import the `parse` function from the `Csv` package which takes a string of CSV data and returns a `Result` with a tuple containing the parsed data and the headers. We then use pattern matching to extract these values and display them in a table using Elm's `Html` module.
 
 ## Deep Dive
 
-One important thing to note when working with CSV in Elm is that the data must be in a specific format. Each line of the file must end with a newline character (`\n`) and each field must be separated by a comma (`,`). It's also important to consider data types when working with CSV - for example, numbers may need to be converted to strings in order to be properly encoded.
+CSV has been around since the 1970s and has become a popular format due to its simplicity and compatibility with most systems. It is also highly configurable, allowing for different delimiters, line terminators, and encodings.
 
-There are also additional options available in the `Csv` package, such as the ability to customize the delimiter and handle empty fields. For more information, you can refer to the official documentation for the elm-csv package.
+Besides using the `elm-csv` package, another way of working with CSV in Elm is by using the `Url` library to make HTTP requests to CSV files. This method can be useful when working with larger CSV files as it allows for streaming data instead of loading the entire file into memory.
+
+Internally, `elm-csv` uses a parser combinator library called `nom` to parse the CSV data efficiently. This library is also used in other languages such as Rust and Python, making it a familiar tool for developers.
 
 ## See Also
 
-- Official documentation for the elm-csv package: https://package.elm-lang.org/packages/elm/csv/latest/
-- How to use Elm's CSV library: https://programmaticponderings.com/2020/08/28/using-elms-csv-library/
-- Working with CSV files in Elm: https://levelup.gitconnected.com/working-with-csv-files-in-elm-ae8b33de5d35
+- [elm-csv package](https://package.elm-lang.org/packages/elm-community/csv/latest/)
+- [Url library](https://package.elm-lang.org/packages/elm/http/latest/)
+- [nom library](https://github.com/Geal/nom)

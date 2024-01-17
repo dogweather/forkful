@@ -1,7 +1,7 @@
 ---
-title:                "텍스트 파일 쓰기"
-html_title:           "C: 텍스트 파일 쓰기"
-simple_title:         "텍스트 파일 쓰기"
+title:                "텍스트 파일 작성하기"
+html_title:           "C: 텍스트 파일 작성하기"
+simple_title:         "텍스트 파일 작성하기"
 programming_language: "C"
 category:             "C"
 tag:                  "Files and I/O"
@@ -10,41 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 왜 쓸까요?
+## 무엇 & 왜?
+텍스트 파일을 작성하는 것이란 무엇일까요? 그것은 단순하게 말하면 텍스트 데이터를 저장하는 파일입니다. 프로그래머들이 이를 하는 이유는 이러한 텍스트 파일을 이용하여 다양한 정보를 저장하고 불러오기 위해서입니다.
 
-텍스트 파일을 쓰는 이유는 여러 가지가 있을 수 있습니다. 가장 일반적인 이유는 데이터를 저장하고 나중에 사용하기 위함입니다. 특히, C 프로그래밍에서는 텍스트 파일을 사용하여 프로그램에 필요한 정보를 저장하고 불러오는 것이 매우 흔합니다.
+## 방법:
+아래에 ```C ... ``` 코드 블록 안에 코딩 예제와 샘플 출력을 함께 제공하겠습니다. 이를 이용하여 텍스트 파일을 작성하는 방법을 배워보세요.
 
-## 어떻게 쓸까요?
-
-아래 예시 코드를 통해 C 프로그래밍에서 텍스트 파일을 쓰는 방법을 알아보겠습니다.
-
-```C
+```c
 #include <stdio.h>
+int main(){
+    // 파일을 쓰기 모드로 연다.
+    FILE* text_file = fopen("sample.txt", "w");
 
-int main() {
-  // 텍스트 파일 열기
-  FILE *fp = fopen("sample.txt", "w");
+    // 텍스트 파일에 쓸 내용 작성하기
+    fprintf(text_file, "안녕하세요! 이것은 텍스트 파일입니다.");
 
-  // 파일에 쓸 내용
-  char *text = "Hello, world!";
+    // 파일 닫기
+    fclose(text_file);
 
-  // 파일에 쓰기
-  fprintf(fp, "%s", text);
-
-  // 파일 닫기
-  fclose(fp);
-
-  return 0;
+    return 0;
 }
+
 ```
 
-위 코드를 실행하면, "sample.txt"라는 파일이 생성되고 그 안에 "Hello, world!"라는 내용이 저장됩니다. 이제 다른 프로그램에서 이 파일을 열어 내용을 읽을 수 있습니다.
+## 깊이 파고들기:
+텍스트 파일을 작성하는 방법을 알아봤으니, 조금 더 자세히 살펴보도록 하겠습니다. 텍스트 파일은 보통 ASCII, UTF-8 또는 UTF-16과 같은 문자 인코딩을 이용하여 저장됩니다. 이를 이해하기 위해서는 문자 인코딩과 관련된 몇 가지 개념을 알고 있어야 합니다. 또한, 다른 파일 형식을 이용하여 데이터를 저장하는 방법도 있습니다. 예를 들어, 바이너리 파일은 텍스트 파일과 달리 특정 데이터 구조를 따라 데이터를 저장하는 방식으로 사용됩니다.
 
-## 더 들어가기
-
-위의 예시에서는 간단하게 파일에 쓰기만을 다루었습니다. 하지만 텍스트 파일 쓰기에는 더 다양한 기능들이 존재합니다. 예를 들어, 파일을 열 때 "w" 대신 "a"를 사용하여 파일의 끝에 내용을 추가할 수도 있습니다. 또한, 텍스트 파일을 읽어서 변수에 저장하는 방법도 있습니다. 모든 가능한 기능을 소개하기에는 용량이 너무 커지므로, 관련 링크를 참고하시기 바랍니다.
-
-# 관련 링크
-
-- C 프로그래밍에서 텍스트 파일 저장하기: https://www.tutorialspoint.com/c_standard_library/c_function_fprintf.htm
-- C 파일 입출력 함수: https://www.programiz.com/c-programming/c-file-input-output
+## 관련 자료:
+텍스트 파일 작성에 대해 더 알고 싶다면 아래 링크를 참고해보세요.
+- [파일 입출력(C)](https://modoocode.com/37)
+- [UTF-8(위키피디아)](https://ko.wikipedia.org/wiki/UTF-8)
+- [바이너리 파일(위키피디아)](https://ko.wikipedia.org/wiki/%EB%B0%94%EC%9D%B4%EB%84%88%EB%A6%AC_%ED%8C%8C%EC%9D%BC)

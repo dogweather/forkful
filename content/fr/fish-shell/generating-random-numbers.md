@@ -1,7 +1,7 @@
 ---
-title:                "Production de nombres aléatoires"
-html_title:           "Fish Shell: Production de nombres aléatoires"
-simple_title:         "Production de nombres aléatoires"
+title:                "Génération de nombres aléatoires"
+html_title:           "Fish Shell: Génération de nombres aléatoires"
+simple_title:         "Génération de nombres aléatoires"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Numbers"
@@ -10,39 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi 
+Pourquoi & Comment? 
 
-Si vous êtes un programmeur ou un amateur de la ligne de commande (command line), il est fort probable que vous ayez besoin de générer des nombres aléatoires à un moment donné. Peut-être pour tester un code, simuler un scénario ou même pour des jeux. Dans cet article, nous allons explorer comment générer des nombres aléatoires en utilisant le langage de shell Fish.
+Générer des nombres aléatoires est un processus où nous pouvons produire des nombres aléatoires sur notre ordinateur. Les programmeurs le font souvent pour simuler des situations aléatoires ou pour ajouter de l'imprévisibilité aux programmes.
 
-## Comment faire 
+Comment faire? 
 
-Nous allons utiliser la fonction `math` intégrée à Fish pour générer des nombres aléatoires. Voici un exemple de code simple pour générer un nombre aléatoire entre 1 et 10 :
+Utilisons Fish Shell pour générer des nombres aléatoires! Dans l'exemple ci-dessous, nous utiliserons la commande ```math (random)`` pour générer un nombre aléatoire entre 0 et 1. 
 
-````Fish Shell
-math $RANDOM % 10 + 1
-````
+```
+Fish Shell
 
-Le résultat de ce code sera un nombre aléatoire compris entre 1 et 10 (inclus). Vous pouvez modifier les valeurs pour obtenir un intervalle différent selon vos besoins. Voici un exemple de code pour générer un nombre aléatoire entre 100 et 200 :
+math (random)
 
-````Fish Shell
-math $RANDOM % 101 + 100
-````
+Output: 0.426902
+```
 
-Vous pouvez également utiliser cette fonction pour générer plusieurs nombres aléatoires en utilisant une boucle for. Par exemple, si vous voulez générer 10 nombres aléatoires entre 1 et 10 :
+Pour générer un nombre aléatoire entre un minimum et un maximum spécifié, nous pouvons utiliser la commande ```random``` suivie du minimum et du maximum séparés par un espace. Dans cet exemple, nous allons générer un nombre aléatoire entre 1 et 10. 
 
-````Fish Shell
-for i in (seq 1 10)
-    math $RANDOM % 10 + 1
-end
-````
+```
+Fish Shell
 
-Cela générera 10 nombres aléatoires différents, chacun compris entre 1 et 10.
+random 1 10
 
-## Plongée en profondeur 
+Output: 7
+```
 
-La fonction `math` utilise le générateur de nombres pseudo-aléatoires C, qui est un générateur assez simple mais suffisamment bon pour la plupart des cas d'utilisation. Si vous avez besoin de générer des nombres plus complexes ou pour des cas d'utilisation plus avancés, vous pouvez utiliser des modules externes comme `random` ou `numpy`.
+plongée en profondeur 
 
-## Voir aussi 
+La génération de nombres aléatoires est un concept important en informatique et a un usage courant dans de nombreux domaines tels que les jeux, les simulations et la cryptographie. Avant l'invention des ordinateurs, les nombres aléatoires étaient générés en utilisant des phénomènes aléatoires tels que le lancer de dés ou la roue de la roulette. Cependant, avec les ordinateurs, nous pouvons générer des nombres aléatoires de manière plus efficace et précise. 
 
-- [Documentation officielle sur `math` dans Fish](https://fishshell.com/docs/current/cmds/math.html)
-- [Documentation sur les modules externes `random` et `numpy`](https://pypi.org/project/random/)
+Alternatives possibles 
+
+Outre la méthode que nous avons utilisée avec Fish Shell, il existe d'autres façons de générer des nombres aléatoires en utilisant d'autres langages de programmation tels que Python, C et Java. Cependant, ces langages peuvent être plus verbeux et nécessitent parfois l'importation de bibliothèques supplémentaires. Avec Fish Shell, c'est une solution simple et rapide pour générer des nombres aléatoires. 
+
+Voir aussi 
+
+Pour en savoir plus sur la génération de nombres aléatoires avec Fish Shell, vous pouvez consulter la page man de Fish et découvrir d'autres commandes utiles telles que ```random```, ```pick``` et ```seq```. Vous pouvez également consulter des tutoriels en ligne pour découvrir des façons créatives d'utiliser ces commandes dans vos programmes.

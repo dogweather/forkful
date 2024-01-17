@@ -1,7 +1,7 @@
 ---
-title:                "基本認証を使用したHTTPリクエストの送信"
-html_title:           "Clojure: 基本認証を使用したHTTPリクエストの送信"
-simple_title:         "基本認証を使用したHTTPリクエストの送信"
+title:                "基本認証を使用したhttpリクエストの送信"
+html_title:           "Clojure: 基本認証を使用したhttpリクエストの送信"
+simple_title:         "基本認証を使用したhttpリクエストの送信"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "HTML and the Web"
@@ -10,43 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+# 何をするのか & なぜするのか?
+HTTPリクエストを基本認証で送るとは、ウェブサーバーに保護されたリソースへアクセスするためにユーザーが認証情報を提供することを意味します。プログラマーは基本認証を使用することで、セキュリティ保護されたリソースへのアクセスを制限することができます。
 
-あなたは、ネットワーク上での安全な通信を確保するために、クライアントが身元を証明できるようにするために、HTTPリクエストに基本認証を設定したいかもしれません。この記事では、ClojureでHTTPリクエストを送信する方法を学ぶことができます。
-
-## How To
-
-まずは、Clojureのライブラリであるclj-httpをインストールしましょう。
-
+## 方法:
 ```Clojure
+;; 使用するライブラリをインポート
 (require '[clj-http.client :as client])
+
+;; リクエストを送信する関数を定義
+(defn send-request [url username password]
+  ;; 基本認証用のヘッダーを設定
+  (let [auth-header (str "Basic " (b64/encode (str username ":" password)))]
+    ;; リクエストを送信
+    (client/get url {:headers { "Authorization" auth-header }})))
+
+;; リクエストを送信し、レスポンスを受け取る
+(def response (send-request "http://example.com" "username" "password"))
+
+;; レスポンスからステータスコードを取得
+(:status response)
+
+;; レスポンスからボディを取得
+(:body response)
 ```
 
-次に、基本認証を行うために、`:basic-auth`キーワードを利用します。これには、ユーザー名とパスワードを含むマップが必要です。
+## 深堀り:
+- 基本認証は、HTTPプロトコルの基本的なセキュリティ認証方法の1つです。
+- 代替として、OAuthやOpenID Connectなどのよりセキュアな認証方法があります。
+- 基本認証は、リクエストヘッダーにユーザー名とパスワードを含むことで実現されます。
 
-```Clojure
-(client/get "https://example.com"
-            {:basic-auth {:user "username" :password "password"}})
-```
-
-これで、基本認証を行いながら、HTTPSリクエストを送信することができます。応答は、クロージャのマップとして返ってきます。
-
-```Clojure
-{:status 200
- :headers {"Content-Type" "text/html"}
- :body "<html>...</html>"}
-```
-
-基本認証を行わずにHTTPSリクエストを送信する場合は、`client/get`の第二引数を`nil`に設定します。
-
-## Deep Dive
-
-clj-httpは、ClojureでHTTPリクエストを送信するための便利なライブラリです。しかし、基本認証に限らず、様々なカスタマイズやオプションがあります。例えば、ヘッダーを指定したり、クッキーを付け加えたりすることもできます。
-
-また、基本的なGETリクエストの他にも、POSTやPUTなどのメソッドを指定することもできます。
-
-## See Also
-
-- [clj-http ドキュメント](https://github.com/dakrone/clj-http)
-- [Clojure 公式サイト](https://clojure.org/)
-- [HTTP リクエスト基本認証についての詳細](https://developer.mozilla.org/ja/docs/Web/HTTP/Authentication)
+## 関連情報を見る:
+- [Clj-httpクライアントライブラリの公式ドキュメント](https://github.com/dakrone/clj-http)
+- [HTTP基本認証の詳細な解説](https://developer.mozilla.org/ja/docs/Web/HTTP/Authentication)

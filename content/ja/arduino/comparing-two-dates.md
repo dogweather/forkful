@@ -1,7 +1,7 @@
 ---
-title:                "日付の比較"
-html_title:           "Arduino: 日付の比較"
-simple_title:         "日付の比較"
+title:                "「二つの日付の比較」"
+html_title:           "Arduino: 「二つの日付の比較」"
+simple_title:         "「二つの日付の比較」"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Dates and Times"
@@ -10,39 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+## 何 & なぜ？
+「比較する」とは、2つの日付を見比べてどちらがより新しいか、古いかを見ることです。プログラマーは、日付を比較することで、二つのイベントの順序を判断したり、期限を設定したりすることができます。
 
-日付を比較することが重要な理由は、日付をより効率的に扱うためです。特定の日付が他の日付よりも前か後ろかを判断することで、より複雑な条件分岐や処理を行うことができます。この記事では、Arduinoを使って日付を比較する方法を解説します。
-
-## 方法
-
-比較する日付を変数に代入し、演算子を使用して2つの日付を比較することができます。例を示します。
+## 方法：
+Arduinoを使って、2つの日付を比較する方法を見ていきましょう。以下のコードをArduino IDEに入力してください。
 
 ```Arduino
-int date1 = 20210825;
-int date2 = 20210826;
+#include <TimeLib.h> // ライブラリをインポート
+tmElements_t now, then; // タイムスタンプを格納する変数を作成
+bool result; // 比較結果を格納する変数を作成
 
-if(date1 < date2) {   //date2がdate1よりも大きいことを比較
-  Serial.println("date2はdate1よりも後の日付です。");
-} else if(date1 > date2) {  //date2がdate1よりも小さいことを比較
-  Serial.println("date2はdate1よりも前の日付です。");
-} else {   //date1とdate2が同じ日付であることを比較
-  Serial.println("date1とdate2は同じ日付です。");
+// 現在の日付をnowに設定
+DateTime now = DateTime(2021, 10, 1, 10, 30, 00);
+
+// 比較する日付をthenに設定
+DateTime then = DateTime(2020, 9, 23, 12, 00, 00);
+
+// 2つの日付を比較して結果をresultに代入
+if(now > then){
+    result = true; // nowの方が新しい
+} else {
+    result = false; // thenの方が新しい
 }
+
+// 結果をシリアルモニターに出力
+Serial.println(result);
 ```
 
-上記のコードを実行すると、シリアルモニタに「date2はdate1よりも後の日付です。」と表示されます。
+上記のコードを実行すると、シリアルモニターには「1」が表示されます。これは、現在の日付がより新しいため、resultにtrueが代入されたことを意味しています。
 
-## ディープダイブ
+## 詳細説明：
+日付を比較する方法には、さまざまな方法がありますが、ArduinoではTimeLibライブラリを使用することで簡単に実装することができます。また、比較する日付をDateTimeオブジェクトとして作成することで、より柔軟に比較を行うことができます。
 
-日付を比較するためには、まず日付を数値として扱える形に変換することが重要です。Arduinoでは、`toInt()`関数を使用して数値型の変数に変換することができます。また、`strcmp()`関数を使用することで文字型の変数にも対応することができます。
-
-さらに、日付の比較を行う際には「年月日」の順番で比較することが重要です。例えば、2021年8月25日と2021年8月26日を比較する際には、年を最初に比較し、同じであれば月を、さらに同じであれば日を比較します。
-
-## 他の記事
-
-この記事では、Arduinoを使用して日付を比較する方法を紹介しました。他にもArduinoを使った日付処理について知りたい場合は、以下の記事を参考にしてください。
-
-- https://www.jikkyo.org/2019/09/02/arduino-date-print/
-- https://deviceplus.jp/hobby/entry_011/
-- https://qiita.com/tanukikeiji/items/bfaefb143f05800bba37
+## 関連情報：
+- TimeLibライブラリのドキュメント：https://github.com/PaulStoffregen/Time
+- Arduinoにおける日付比較の実装方法：https://www.instructables.com/Quick-Tip-Comparing-Dates-in-Arduino/

@@ -10,47 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##为什么
+## 什麼和為什麼？
 
-将日期转换为字符串可以让程序员在处理日期数据时更加灵活和便捷。通过将日期转换为字符串，可以直接在代码中进行比较、操作和存储，而无需考虑繁琐的日期格式。
+日期轉換成字串是將日期數據轉換為可讀的文字格式。程式設計師做這件事的原因是為了讓日期更容易閱讀和理解，以及方便日期在不同的程式語言和格式之間轉換。
 
-##如何进行
+## 如何：
 
-首先，我们需要使用Date对象来表示日期。然后通过调用Date对象的方法，可以将日期转换为字符串。下面是一个简单的示例代码：
+```
+// 使用JavaScript中的內建函式將日期轉換為字串
+let today = new Date(); // 創建一個日期物件
+let dateString = today.toDateString(); // 使用toDateString()方法將日期轉換為字串
+console.log(dateString); // 輸出："Sat Nov 14 2020"
 
-```Javascript
-const date = new Date(); //创建一个Date对象
-
-const dateString = date.toString(); //使用toString()方法将日期转换为字符串
-
-console.log(dateString); //输出当前日期的字符串格式
-
-// Output: Mon Sep 20 2021 09:29:38 GMT-0400 (Eastern Daylight Time)
+// 使用第三方函式庫Moment.js將日期轉換為指定格式的字串
+let today = new Date(); // 創建一個日期物件
+let dateString = moment(today).format('MMMM Do YYYY'); // 使用format()方法將日期轉換為"Month Day Year"格式的字串
+console.log(dateString); // 輸出："November 14th 2020"
 ```
 
-当我们调用Date对象的toString()方法时，它会将日期转换为以下格式的字符串：
+## 深入探討：
 
-`Mon Sep 20 2021 09:29:38 GMT-0400 (Eastern Daylight Time)`
+日期轉換成字串其實是一項很常見的任務，在不同的程式語言和平台中都會有相應的方法或函式可以使用。除了使用內建函式或第三方函式庫，也可以自己寫程式碼來完成日期轉換的任務。不過需要注意的是，日期的格式會影響轉換結果，因此在使用時需確保日期格式的準確性。
 
-除了toString()方法，我们还可以使用其他方法来转换日期为字符串，比如toLocaleString()、toDateString()等。不同的方法会生成不同格式的字符串，具体使用哪个方法取决于你的需求。
+## 參考資料：
 
-##深入探讨
-
-在Javascript中，日期的字符串格式受到本地环境的影响。这意味着不同的语言、不同的浏览器和操作系统可能会生成不同的日期字符串。因此，在处理日期字符串时，我们需要注意本地化设置，以免出现错误。
-
-另外，如果我们想要将日期字符串转换回日期对象，可以使用Date对象的构造函数，并传入日期字符串作为参数。例如：
-
-```Javascript
-const dateString = 'Mon Sep 20 2021 09:29:38 GMT-0400 (Eastern Daylight Time)';
-
-const date = new Date(dateString); //传入日期字符串作为参数来创建一个新的Date对象
-
-console.log(date); //输出转换后的日期对象
-
-// Output: Mon Sep 20 2021 09:29:38 GMT-0400 (Eastern Daylight Time)
-```
-
-##同类文章
-
-- [MDN文档：Date对象](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [阮一峰的Javascript教程：日期和时间](https://wangdoc.com/javascript/features/date.html)
+- [日期物件(Date) - JavaScript | MDN](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [Moment.js - Parse, validate, manipulate, and display dates in JavaScript](https://momentjs.com/)

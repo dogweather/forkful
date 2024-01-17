@@ -10,48 +10,61 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+Mitä ja Miksi?
 
-Miksi YAML:ia kannattaa käyttää ohjelmoinnissa? No, vastaus on yksinkertainen: se on helppo tapa tallentaa ja siirtää tietoa eri muodoissa. YAML on myös ihmisen luettavissa oleva formaatti, mikä tekee siitä erityisen hyödyllisen selkeissä ja jäsennellyissä tiedostoissa.
+Go on ohjelmointikieli, joka on yhä suositumpi valinta monien ohjelmoijien keskuudessa. Yksi syy tähän on sen kyky työskennellä YAML-muotoisten tiedostojen kanssa. YAML on tietojen tallennusmuoto, joka on helppo lukea ja ymmärtää ihmisen silmin, mutta myös helposti käsiteltävissä ohjelmointikielellä.
 
-## Kuinka Tehdä
-
-YAML:n käyttöön pääsee helposti käsiksi käyttämällä Go:n "gopkg.in/yaml.v2" kirjastoa. Ensiksi tarvitsemme paketin tuomista varten import-lausekkeen:
+Miten tehdä:
 
 ```Go
-import "gopkg.in/yaml.v2"
+package main
+
+import (
+	"fmt"
+	"gopkg.in/yaml.v2"
+	"io/ioutil"
+)
+
+type Person struct {
+	Name        string
+	Age         int
+	Interests   []string
+}
+
+func main() {
+	p := Person{Name: "Matti", Age: 25, Interests: []string{"Ohjelmointi", "Kirjoittaminen", "Ruuanlaitto"}}
+	d, err := yaml.Marshal(&p)
+	if err != nil {
+		fmt.Println(err)
+	}
+	fmt.Println(string(d))
+
+	err = ioutil.WriteFile("person.yaml", d, 0644)
+	if err != nil {
+		fmt.Println(err)
+	}
+}
+```
+Tämä koodi esittelee yksinkertaisen esimerkin Go:n käytöstä YAML-tiedostojen kanssa. Ensimmäisessä vaiheessa luodaan Person-rakenne, joka sisältää henkilön nimen, iän ja kiinnostuksen kohteet. Sitten tämä rakenne muunnetaan YAML-muotoon ja tulostetaan konsoliin sekä tallennetaan tiedostoon nimeltä "person.yaml". 
+Tuloksena saadaan seuraava YAML-tiedosto:
+
+```
+name: Matti
+age: 25
+interests:
+- Ohjelmointi
+- Kirjoittaminen
+- Ruuanlaitto
 ```
 
-Seuraavaksi luo yksinkertainen YAML-tiedosto, joka sisältää muutamia tietoja:
+Syvällisempi sukeltaminen:
 
-```Go
-var data = `
-  language: Go
-  version: current
-  releaseDate: 2021-08-09
-`
-```
+YAML julkaistiin vuonna 2001 ja sen tarkoituksena on tarjota helppolukuinen vaihtoehto JSON- ja XML-tiedostoille. Vaikka se onkin aloittanut lähinnä Python-yhteisössä, se on nykyään laajalti käytössä monissa muissa ohjelmointikielissä, mukaan lukien Go. 
+Yksi vaihtoehto YAML:lle on TOML (Tom's Obvious, Minimal Language), joka on todella minimalistinen tiedostomuoto, ja sitä käytetään erityisesti konfigurointitiedostojen kanssa. Yhteensopivien kirjastojen avulla Go:n avulla voit helposti työskennellä myös TOML-tiedostojen kanssa. 
+Tämä esimerkki näyttää vain perusteet, jotka auttavat sinua pääsemään alkuun Go:n käytössä YAML-tiedostojen kanssa. Kuitenkin tarkempi tutkimus auttaa sinua löytämään lisää hyödyllisiä toimintoja ja niksejä työskennellessäsi YAML-tiedostojen kanssa.
 
-Tämän jälkeen voimme helposti muuntaa YAML-tiedoston map-objektiksi käyttämällä yaml.Unmarshal() -funktiota:
+Linkkejä:
 
-```Go
-m := map[string]interface{}{}
-err := yaml.Unmarshal([]byte(data), &m)
-```
-
-Nyt meillä on muuttuja "m", joka sisältää kaikki tiedostossa määritellyt avaimet ja arvot. Voimme käyttää niitä haluamallamme tavalla, esimerkiksi tulostamalla ne konsoliin:
-
-```Go
-fmt.Println(m["language"]) // tulostaa "Go"
-fmt.Println(m["releaseDate"]) // tulostaa "2021-08-09"
-```
-
-## Syvempi Sukellus
-
-Vaikka YAML on hyvin yksinkertainen ja ihmisen luettavissa oleva formaatti, sen käsittelyyn voi liittyä muutamia sudenkuoppia. Yksi tärkeimmistä on sykliset viittaukset, eli tilanne, jossa yksi objekti viittaa toiseen, ja tämä toinen viittaa taas takaisin ensimmäiseen. Tällaiset viittaukset voivat aiheuttaa loputtoman silmukan ja ohjelman kaatumisen. Siksi on tärkeää varmistaa, että YAML-tiedoston sisältöä käsitellessä otetaan huomioon myös tällaiset viittaukset.
-
-## Katso Myös
-
-- Go:n virallinen YAML-dokumentaatio: https://yaml.org/
-- Gopkg.in/yaml.v2 -kirjaston GitHub-repositorio: https://github.com/go-yaml/yaml
-- Stack Overflow -kysymykset ja vastaukset YAML:ista: https://stackoverflow.com/questions/tagged/yaml
+- YAML-dokumentaatio: https://yaml.org/
+- TOML-dokumentaatio: https://toml.io/
+- Gopkg.in/yaml.v2-dokumentaatio: https://pkg.go.dev/gopkg.in/yaml.v2

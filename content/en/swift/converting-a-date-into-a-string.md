@@ -10,67 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why ##
+## What & Why? 
+Converting a date into a string means changing a date or time value into a text format. This is useful for displaying dates in a human-readable format or for storing them in a database. Programmers do this to make their apps more user-friendly and to ensure accurate date handling in their code.
 
-Converting a date into a string is a common task in programming, especially when dealing with user input or database entries. It allows for easy manipulation and formatting of dates, making them more user-friendly and readable.
+## How to: 
+Converting a date into a string can be done in a few simple steps in Swift. First, create a Date object using the desired date and time components. Then, use the DateFormatter class to specify the desired format for the string. Finally, use the string(from:) method to convert the Date object into a string.
 
-## How To ##
-
-To convert a date into a string in Swift, we can use the `DateFormatter` class. First, we create an instance of the `DateFormatter` and set its `dateFormat` property to the desired format. Next, we use the `string(from:)` method to pass in our date object and get a string representation in return.
-
+Here's an example of converting today's date into a string in the format of "MM/dd/yyyy":
 ```Swift
-// Create date formatter
+let date = Date()
 let dateFormatter = DateFormatter()
-
-// Set date format
 dateFormatter.dateFormat = "MM/dd/yyyy"
-
-// Convert date to string
-let dateString = dateFormatter.string(from: Date())
-
-print(dateString) // Outputs current date in "MM/dd/yyyy" format
+let dateString = dateFormatter.string(from: date)
+print(dateString) // Output: 12/02/2021
 ```
 
-We can customize the format by using various symbols such as "MM" for numerical month, "dd" for day, "yyyy" for year, and so on. The full list of symbols can be found in Apple's [documentation](https://developer.apple.com/documentation/foundation/dateformatter#symbols).
+## Deep Dive: 
+The ability to convert dates into strings has been around since the early days of programming, as it is a fundamental requirement for date handling in applications. In addition to the DateFormatter class, there are other methods of converting dates into strings, such as using the DateComponentsFormatter class or using specific formatting styles like ISO 8601.
 
-Additionally, we can also specify the date and time style depending on our desired output. For example, we can use `dateStyle` to get only the date, `timeStyle` to get only the time, or use both to get a combination of both.
+In some cases, developers may need to handle dates in different time zones or consider different calendar systems. Swift's Foundation framework offers robust solutions for these scenarios, such as the TimeZone and Calendar classes.
 
-```Swift
-// Create date formatter
-let dateFormatter = DateFormatter()
-
-// Set date and time style
-dateFormatter.dateStyle = .short
-dateFormatter.timeStyle = .long
-
-// Convert date to string
-let dateString = dateFormatter.string(from: Date())
-
-print(dateString) // Outputs current date and time in short and long format respectively
-```
-
-## Deep Dive ##
-
-The `DateFormatter` class is based on the Unicode Technical Standard #35 (UTS #35), which specifies how to format date and time values to be represented as strings. The `dateFormat` property uses a customizable template string that can be tailored to fit different locales and preferences.
-
-In addition to formatting, `DateFormatter` also handles localization, converting date and time values into different languages and regions. This is done by setting the `locale` property to the desired locale identifier. For example, if we want to get the date in Japanese, we can use the `ja_JP` locale identifier.
-
-```Swift
-// Create date formatter
-let dateFormatter = DateFormatter()
-
-// Set locale to Japanese
-dateFormatter.locale = Locale(identifier: "ja_JP")
-
-// Convert date to string
-let dateString = dateFormatter.string(from: Date())
-
-print(dateString) // Outputs current date in Japanese format
-```
-
-Another important aspect to note is that `DateFormatter` is not thread-safe. This means that it should not be used across different threads, as it could cause unexpected behavior or crashes. It is recommended to create a new instance of `DateFormatter` whenever it is needed.
-
-## See Also ##
-
-- Apple's [documentation](https://developer.apple.com/documentation/foundation/dateformatter)
-- Tutorial on [date and time formatting](https://medium.com/@abhimuralidharan/date-and-time-formatting-in-ios-swift-4-44181332b3d4) in Swift
+## See Also: 
+To learn more about date handling in Swift, check out the official Apple documentation on Dates and Times. You can also explore more advanced features for converting dates into strings by reading about Internationalization and Localization.

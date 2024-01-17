@@ -10,42 +10,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
+## 什么以及为什么？
+提取子字符串是什么？它指的是从一个字符串中获取部分内容。程序员之所以这样做，是因为它能够帮助他们从复杂、长的字符串中获取所需的特定信息。
 
-提取子字符串是很常见的编程任务，它可以帮助我们更方便地处理文本数据。如果你想精确地匹配或处理特定的文本，提取子字符串是非常有用的。
-
-## 如何进行
-
-```fish
-set string "This is a sample string"
-echo $string[1,4]
+## 如何：
+提取子字符串在Fish Shell中是一个简单的任务，只需使用内置的子字符串命令即可。以下是一个例子，假设我们有一个字符串 "Hello Mandarin readers!"，我们想要提取 "Mandarin":
 ```
-这段代码将在Fish Shell中输出 "This"，它使用了字符串变量以及子字符串的语法来提取字符串"string"中的前四个字符。
-
-而如果我们想从一个字符串的特定位置开始提取子字符串，可以使用如下代码：
-
-```fish
-set string "This is a sample string"
-echo $string[9:]
+set string "Hello Mandarin readers!"
+echo $string[6..13]
 ```
-这将输出 "sample string"，因为我们指定了从第九个字符开始提取直到末尾。
 
-除此之外，我们还可以使用如下代码来提取一个固定长度的子字符串：
-
-```fish
-set string "This is a sample string"
-echo $string[3:7]
+输出将会是：
 ```
-这将输出 "is is"，因为我们指定了从第三个字符开始提取，长度为七个字符。
+Mandarin
+```
 
-## 深入了解
+## 深入了解：
+提取子字符串作为一种技术已经存在了很长一段时间，它可以追溯到早期的Unix系统。除了使用Fish Shell内置命令之外，也可以使用其他编程语言来实现提取子字符串的功能，如Python、Java等。在实际应用中，提取子字符串常用于从大型数据文本中提取特定的信息。
 
-除了基本的用法外，还有一些重要的细节需要知道。首先是Fish Shell中使用的子字符串语法，它使用了类似于数组的形式来表示字符串的每个字符。通过指定起始和结束位置，我们可以提取出想要的子字符串。另外，如果我们想要提取最后一个字符，可以使用负数来表示，例如-1表示最后一个字符。
-
-另一个需要注意的重要细节是子字符串的索引起始值为1而不是0，这与其他编程语言有些不同。因此，要注意单独提取第一个字符时，写成 `$string[1]` 而不是 `$string[0]`。
-
-## 参考链接
-
-- <https://fishshell.com/docs/current/tutorial.html#syntax>
-- <https://fishshell.com/docs/current/commands.html#string-slicing>
-- <https://fishshell.com/docs/current/index.html#performance>
+## 参考链接：
+- [Fish Shell Github Repository](https://github.com/fish-shell/fish-shell)
+- [Python字符串提取](https://www.geeksforgeeks.org/python-string-extraction/)

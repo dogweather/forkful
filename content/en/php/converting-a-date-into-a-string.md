@@ -10,36 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-Converting a date into a string is a fundamental skill for any PHP programmer. It allows you to display dates in a user-friendly format and also gives you more control over how the date is displayed.
+Date conversion in programming refers to the process of converting a date data type into a string data type. This is commonly done for data manipulation and display purposes, such as when printing a date in a specific format. Programmers often do this to make dates more readable and understandable for both the software and the end user.
 
-## How To
+## How to:
 
-Converting a date into a string is a simple process in PHP. First, we need to create a date object using the `strtotime()` function. This function takes a string representing a date and converts it into a unix timestamp. 
-
-```PHP
-$date = strtotime('2020-11-30');
-```
-
-Next, we can use the `date()` function to format the date in any way we want. This function takes two parameters - the format we want and the date object we created above.
+To convert a date into a string in PHP, you can use the `date()` function. This function takes in two parameters: the format of the date and the date to be converted. Here is an example of converting the current date into a string in the format of "Month, Day Year":
 
 ```PHP
-echo date('F jS, Y', $date); // Output: November 30th, 2020
+$currentDate = date("F j, Y");
+echo $currentDate;
 ```
 
-The format parameter allows us to customize the output of the date. For example, `F` represents the full month name, `j` represents the day of the month without leading zeros, and `Y` represents the full year. You can find a full list of formatting options in the official PHP documentation.
+This will output something like "June 1, 2021." You can also specify a specific date by using the `strtotime()` function, which can convert textual date descriptions into Unix timestamp (the number of seconds since January 1, 1970). For example:
 
-## Deep Dive
+```PHP
+$specificDate = date("F j, Y", strtotime("next Monday"));
+echo $specificDate;
+```
 
-When converting a date into a string, there are a few important things to keep in mind. First, the `strtotime()` function uses the current time zone set in your PHP configuration. If your date is in a different time zone, you can use the `date_default_timezone_set()` function to change it before converting it into a date object.
+This will output the date of the next Monday in the format of "Month, Day Year." There are many different formats that you can use with the `date()` function, and you can find a full list of them in the "See Also" section below.
 
-Another thing to consider is leap years. PHP's `strtotime()` function automatically takes care of leap years, so you don't need to worry about it when formatting your dates.
+## Deep Dive:
 
-Additionally, PHP has a `DateTime` class that allows more flexibility and control over formatting dates. This class has many useful methods, such as `format()` and `modify()`, which can be helpful in certain situations.
+Historically, date manipulation has been a common challenge for programmers. The `date()` function was introduced in PHP 4 as a solution to this problem. Prior to this, PHP used the Unix timestamp format to represent dates, which was not very user-friendly. This function has since become a standard method for converting dates into strings in PHP.
 
-## See Also
+An alternative method to converting dates is to use the `strftime()` function, which is similar to the `date()` function but allows for localization for different languages and regions. However, this function is only available on operating systems that support the C strftime() function.
 
-- [PHP date() function documentation](https://www.php.net/manual/en/function.date.php)
-- [PHP DateTime class documentation](https://www.php.net/manual/en/class.datetime.php)
-- [Time zones in PHP](https://www.php.net/manual/en/datetime.settimezone.php)
+When using the `date()` function, it's important to note that the date and time displayed will be based on the default time zone set in the php.ini file. You can also set a specific time zone using the `date_default_timezone_set()` function.
+
+## See Also:
+
+- PHP documentation for `date()` function: https://www.php.net/manual/en/function.date.php
+- PHP documentation for `strtotime()` function: https://www.php.net/manual/en/function.strtotime.php
+- PHP documentation for `strftime()` function: https://www.php.net/manual/en/function.strftime.php

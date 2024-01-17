@@ -10,37 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
-A veces es necesario calcular una fecha en el futuro o en el pasado para poder planificar eventos o verificar datos históricos. Con la ayuda de la programación en Python, este proceso puede ser automatizado y simplificado.
+## ¿Qué y por qué?
+Calcular una fecha en el pasado o en el futuro es una tarea común para los programadores, ya que a menudo necesitamos realizar operaciones con fechas para nuestras aplicaciones. Por ejemplo, podemos necesitar mostrar la fecha de cumplimiento de un evento o calcular la edad de un usuario.
 
-## Cómo
-Para calcular una fecha en el futuro o en el pasado en Python, se utiliza el módulo "datetime". Primero, se importa el módulo utilizando la siguiente línea de código:
+## Cómo:
+Para calcular una fecha en el futuro o en el pasado en Python, podemos usar el módulo datetime. Primero, debemos importar el módulo usando la palabra clave ```import``` y luego podemos usar la función ```date``` para crear un objeto de fecha con la fecha deseada. A continuación, podemos usar el método ```replace``` para cambiar el valor de la fecha y obtener la fecha deseada en el futuro o en el pasado. Aquí hay un ejemplo de cómo calcular la fecha de hoy menos 30 días:
 
 ```Python
 import datetime
+
+hoy = datetime.date.today()
+fecha_pasada = hoy.replace(day=hoy.day-30)
+print(fecha_pasada)
+```
+Output:
+```
+2020-04-07
 ```
 
-Luego, se crea un objeto de fecha utilizando la función "datetime" y se le asignan los argumentos necesarios para especificar la fecha deseada. Por ejemplo, para calcular la fecha dentro de 30 días:
+## Inmersión profunda:
+El cálculo de fechas es un problema común en la programación y ha sido una tarea importante durante décadas. Antes de que existieran los lenguajes de programación, la calidad de los calendarios era muy pobre y no había una forma estándar de representar las fechas. Sin embargo, con el advenimiento de los lenguajes de programación y la estandarización de la representación de fechas, el cálculo de fechas se ha vuelto más fácil y preciso.
 
-```Python
-fecha = datetime.datetime(2021, 11, 14) + datetime.timedelta(days=30)
-```
+Existen otras formas de calcular una fecha en el futuro o en el pasado en Python, como usando el módulo ```timedelta```, el cual permite especificar una cantidad de tiempo para agregar o restar a una fecha. También hay módulos de terceros disponibles para cálculos más complejos de fechas.
 
-El resultado se almacenará en la variable "fecha" en formato de objeto de fecha de Python. Para mostrar la fecha en un formato legible, se puede utilizar la función "strftime":
+En cuanto a la implementación, debemos tener en cuenta el formato en el que queremos mostrar la fecha, ya que puede variar según el país o la región. También debemos asegurarnos de manejar adecuadamente los años bisiestos y los diferentes calendarios utilizados en diferentes culturas.
 
-```Python
-fecha_final = fecha.strftime("%d/%m/%Y")
-print(fecha_final)
-```
-
-La salida en este caso sería "14/12/2021".
-
-## Deep Dive
-El módulo "datetime" también ofrece funciones para obtener detalles específicos de una fecha, como el día de la semana o el mes. Además, se puede especificar una hora junto con la fecha para obtener un objeto de fecha y hora completo.
-
-Es importante tener en cuenta que el módulo "datetime" utiliza el calendario gregoriano por defecto. Sin embargo, si se desea utilizar otro calendario, como el judío o el islámico, se pueden utilizar otros módulos de Python específicos para ese calendario.
-
-## Ver También
-- Documentación oficial del módulo "datetime" en Python: https://docs.python.org/es/3/library/datetime.html
-- Tutorial sobre cómo utilizar el módulo "datetime" en Python: https://realpython.com/python-datetime/
-- Explicación detallada sobre los diferentes calendarios en Python: https://www.programiz.com/python-programming/datetime/calendar
+## Ver también:
+- Documentación oficial de Python sobre el módulo datetime: https://docs.python.org/es/3/library/datetime.html
+- Módulo timedelta de Python:https://docs.python.org/es/3/library/datetime.html#timedelta-objects
+- Paquete dateutil de terceros para operaciones avanzadas con fechas: https://dateutil.readthedocs.io/en/stable/

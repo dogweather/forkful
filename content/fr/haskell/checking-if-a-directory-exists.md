@@ -1,7 +1,7 @@
 ---
-title:                "Vérifier l'existence d'un répertoire"
-html_title:           "Haskell: Vérifier l'existence d'un répertoire"
-simple_title:         "Vérifier l'existence d'un répertoire"
+title:                "Vérification de l'existence d'un répertoire"
+html_title:           "Haskell: Vérification de l'existence d'un répertoire"
+simple_title:         "Vérification de l'existence d'un répertoire"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Files and I/O"
@@ -10,28 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
-Si vous travaillez avec des fichiers et des dossiers dans votre code Haskell, il peut être utile de vérifier si un dossier existe avant de continuer avec votre code. Cela peut vous éviter des erreurs et des bugs potentiels.
+# Qu'est-ce que c'est et pourquoi faire ?
 
-## Comment faire
-Pour vérifier si un dossier existe en Haskell, nous allons utiliser la fonction `doesDirectoryExist` du module `System.Directory`. Voici un exemple de code avec une sortie d'exemple:
+Vérifier si un répertoire existe est une opération courante utilisée par les programmeurs pour s'assurer qu'un chemin de fichier est valide avant de procéder à d'autres manipulations, telles que la création d'un nouveau fichier ou l'ouverture d'un fichier existant.
+
+# Comment faire :
+
+Voici un exemple de code montrant comment vérifier si un répertoire existe en Haskell :
 
 ```Haskell
 import System.Directory
 
 main = do
-  let directory = "monDossier/"
-  exists <- doesDirectoryExist directory
-  if exists
-    then putStrLn (directory ++ " existe!")
-    else putStrLn (directory ++" n'existe pas!")
-
--- Output: "monDossier/ n'existe pas!"
+    let path = "/chemin/vers/le/repertoire"
+    dirExists <- doesDirectoryExist path
+    if dirExists
+        then putStrLn "Le répertoire existe !"
+        else putStrLn "Le répertoire n'existe pas."
 ```
 
-## Plongez plus profondément
-En utilisant la fonction `doesDirectoryExist`, il est également possible de vérifier si un fichier ou un lien symbolique existe. La fonction renverra `True` si un fichier ou un dossier avec le même nom existe, même s'il ne s'agit pas d'un dossier. De plus, il est important de noter que cette fonction effectue une vérification synchrone, ce qui signifie que votre code sera en pause jusqu'à ce que la vérification soit terminée.
+Si le répertoire existait, le programme afficherait "Le répertoire existe !". Sinon, il afficherait "Le répertoire n'existe pas."
 
-## Voir aussi
-- [Documentation sur la fonction `doesDirectoryExist`](https://hackage.haskell.org/package/directory-1.3.6.1/docs/System-Directory.html#v:doesDirectoryExist)
-- [Exemple de gestion d'erreurs de fichiers en Haskell](https://stackoverflow.com/questions/33181843/handling-file-errors-in-haskell)
+# Zoom sur :
+
+## Contexte historique :
+La vérification de l'existence d'un répertoire a toujours été une tâche importante en informatique, car les programmes doivent savoir si une ressource est disponible avant de pouvoir l'utiliser.
+
+## Alternatives :
+Il existe différentes façons de vérifier si un répertoire existe, notamment en utilisant des bibliothèques externes ou en utilisant des fonctions spécifiques au système d'exploitation.
+
+## Détails de mise en œuvre :
+En Haskell, la fonction "doesDirectoryExist" de la bibliothèque System.Directory est utilisée pour vérifier si un répertoire existe. Elle renvoie un type de données de type Bool (True ou False) en fonction du résultat.
+
+# Voir aussi :
+
+- [Documentation de la fonction doesDirectoryExist de la bibliothèque System.Directory](https://hackage.haskell.org/package/directory/docs/System-Directory.html#v:doesDirectoryExist)
+- [Tutoriel sur la manipulation de fichiers en Haskell](https://www.tutorialspoint.com/haskell/haskell_files_io.htm)

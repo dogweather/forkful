@@ -1,7 +1,7 @@
 ---
-title:                "Tavalliselle virheelle kirjoittaminen"
-html_title:           "Javascript: Tavalliselle virheelle kirjoittaminen"
-simple_title:         "Tavalliselle virheelle kirjoittaminen"
+title:                "Kirjoittaminen vakiovirheeseen"
+html_title:           "Javascript: Kirjoittaminen vakiovirheeseen"
+simple_title:         "Kirjoittaminen vakiovirheeseen"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Files and I/O"
@@ -10,33 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
-Kirjoittaminen standardivirheeseen on tärkeä osa Javascriptin ohjelmointia, koska se mahdollistaa virheiden hallinnan ja korjaamisen tehokkaammin. Se auttaa myös ohjelmoijaa ymmärtämään, mitä ohjelmassa tapahtuu ja mikä aiheuttaa mahdollisia ongelmia.
+# Mitä ja Miksi?
 
-## Miten tehdä se
-Koodiesimerkki alla näyttää, miten voi kirjoittaa standardivirheeseen `console.error()` komennolla.
+Kirjoittaminen standardivirheen ulostuloon on tapa koodata, jossa käyttäjä voi tulostaa virheviestejä ohjelman suorituksen aikana. Tämä on hyödyllinen tapa selventää ohjelman toimintaa ja auttaa kehittäjiä tunnistamaan ja korjaamaan mahdollisia virheitä.
+
+# Miten?
+
 ```Javascript
-try {
-    // Tarkistetaan, onko käyttäjä täysi-ikäinen
-    if (age < 18) {
-        throw new Error("Käyttäjän tulee olla vähintään 18-vuotias.");
-    }
-    // Jos kaikki on kunnossa, jatketaan koodin suorittamista
-    console.log("Tervetuloa sisään!");
-} catch(error) {
-    // Jos ikä ei ole oikea, kirjoitetaan virheilmoitus standardivirheeseen
-    console.error("Virhe: " + error.message);
-}
-```
-Tulostus:
-```
-Virhe: Käyttäjän tulee olla vähintään 18-vuotias.
+console.error("Tämä on virheviesti");
 ```
 
-## Syvempää tietoa
-Kirjoittaminen standardivirheeseen auttaa ohjelmoijaa löytämään ja korjaamaan virheitä. Se on myös tärkeä osa testausta ja debuggausta. Standardivirheen lisäksi on myös mahdollista kirjoittaa tietoa muuhun konsoliin esimerkiksi `console.log()` komennolla.
+**Tulostus:** Tämä on virheviesti
 
-## Katso myös
-- [MDN Web Docs: console.error()](https://developer.mozilla.org/en-US/docs/Web/API/Console/error)
-- [W3Schools: JavaScript Error Messages](https://www.w3schools.com/js/js_errors.asp)
-- [ESLint: The Popular Code Quality Tool for JavaScript](https://eslint.org/)
+Voit myös lisätä muita tietoja viestiin, kuten:
+
+```Javascript
+console.error("Virhe sivulla " + sivunNimi + ": " + virheKoodi);
+```
+
+**Tulostus:** Virhe sivulla Etusivu: 404
+
+# Syväsukellus
+
+Kirjoittaminen standardivirheen ulostuloon on osa virheenkäsittelyä ohjelmoinnissa. Ennen standardivirheen käyttöönottoa, kehittäjät joutuivat käsittelemään virheitä vaihtoehtoisilla tavoilla, kuten kirjoittamalla ne konsoliin tai tallentamalla ne lokitiedostoon.
+
+On myös olemassa muita tapoja käyttää standardivirhettä, kuten käytettäessä ns. error event listeneria. Tämä mahdollistaa muiden virheiden kuuntelemisen, kuten verkkovirheet, ja virheiden hallitsemisen eri tavalla.
+
+# Tutustu myös
+
+Voit lukea lisää standardivirheestä ja sen käytöstä täältä: [MDN web docs - console.log()](https://developer.mozilla.org/en-US/docs/Web/API/console/error)

@@ -10,50 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Dlaczego Sprawdzamy Istnienie Katalogu w PHP?
+## Co i dlaczego?
+Sprawdzanie, czy katalog istnieje, to w prostych słowach jest to działanie, które pozwala programistom upewnić się, że katalog istnieje, zanim spróbują z nim coś zrobić. Jest to ważna część procesu pisania kodu, ponieważ pozwala uniknąć błędów i nieprzewidzianych problemów.
 
-Sprawdzanie, czy katalog istnieje, jest nieodłącznym elementem programowania w PHP. Jest to niezbędne do wykonywania wielu codziennych zadań, takich jak tworzenie plików i katalogów, praca z systemem plików oraz przechowywanie i dostęp do danych. Dlatego warto poznać ten proces i umieć go wykonać w swoich projektach.
-
-# Jak to zrobić?
+## Jak to zrobić:
+Sprawdzenie, czy katalog istnieje w PHP jest bardzo proste. Aby to zrobić, wystarczy użyć funkcji `is_dir()`, która przyjmuje jako argument ścieżkę do katalogu. Jeśli katalog istnieje, funkcja zwróci wartość `true`, a w przeciwnym razie `false`. Przykładowe użycie tej funkcji prezentuje się następująco:
 
 ```PHP
-if(file_exists($path)){
+if(is_dir("/sciezka/do/katalogu")){
     echo "Katalog istnieje";
-} else{
+}else{
     echo "Katalog nie istnieje";
 }
 ```
 
-Powyższy przykład wykorzystuje funkcję wbudowaną w PHP - `file_exists()`, która zwraca wartość logiczną true lub false w zależności od istnienia podanego w parametrze ścieżki. Jeśli katalog istnieje, zostanie wyświetlona wiadomość "Katalog istnieje", w przeciwnym razie zostanie wyświetlona wiadomość "Katalog nie istnieje".
+Przykładowe wyjście: `Katalog istnieje`
 
-Możemy również wykorzystać operator logiczny `!` do skrócenia kodu:
+## Zanurzenie:
+Sprawdzanie istnienia katalogu jest ważne od bardzo dawna, ponieważ pozwala uniknąć wielu problemów związanych z bezpieczeństwem i wydajnością. Istnieją jednak także inne sposoby na to, aby upewnić się, że katalog istnieje, na przykład za pomocą funkcji `file_exists()`. Różnicę między tymi dwiema funkcjami można poznać poprzez wywołanie funkcji `is_dir()` na nieistniejącym pliku, co zwróci wartość `false`, podczas gdy wywołanie `file_exists()` zwróci informację o błędzie.
 
-```PHP
-if(!file_exists($path)){
-    echo "Katalog nie istnieje";
-} else{
-    echo "Katalog istnieje";
-}
-```
+Jeśli chodzi o implementację, funkcja `is_dir()` korzysta z systemowego wywołania `stat`, które zwraca informacje o danym pliku lub katalogu. Jest to szybki sposób na sprawdzenie istnienia katalogu, ponieważ nie ma potrzeby odczytywania zawartości katalogu.
 
-Pamiętajmy również o sprawdzaniu, czy podana ścieżka jest właściwym katalogiem, a nie plikiem. Możemy to zrobić za pomocą funkcji `is_dir()`:
-
-```PHP
-if(is_dir($path)){
-    echo "Jest to katalog";
-} else{
-    echo "Nie jest to katalog";
-}
-```
-
-# Rzućmy okiem głębiej
-
-Sprawdzenie istnienia katalogu może być też wykorzystane do innych celów, na przykład do ochrony plików przed dostępem wysłanym przez użytkownika. W takim przypadku możemy wykorzystać funkcję `is_writable()`, która zwróci true, jeśli katalog jest zapisywalny. To ważna funkcja, szczególnie w przypadku stron internetowych, gdzie bezpieczna obsługa plików i katalogów jest niezwykle istotna.
-
-Należy również pamiętać, że funkcja `file_exists()` nie może sprawdzić istnienia katalogów z wykorzystaniem protokołu `http`. W przypadku, gdy potrzebujemy sprawdzić istnienie katalogu plików znajdujących się na zewnętrznym serwerze, możemy wykorzystać funkcję `get_headers()` i sprawdzić status odpowiedzi HTTP.
-
-# Zobacz również
-- Funkcja `file_exists()` w dokumentacji PHP: http://php.net/file_exists
-- Przykłady wykorzystania funkcji `file_exists()` i `is_writable()`: https://www.php.net/filesystem
-- Przydatne porady dotyczące bezpieczeństwa w PHP: https://www.acunetix.com/blog/articles/php-security-cheat-sheet/
-- Dokumentacja funkcji `is_dir()`: http://php.net/is_dir
+## Zobacz także:
+- Dokumentacja PHP o funkcji `is_dir()`: https://www.php.net/manual/en/function.is-dir.php
+- Porównanie `is_dir()` i `file_exists()`: https://stackoverflow.com/questions/3284563/php-file-exists-vs-is-dir
+- Funkcja `stat` w dokumentacji PHP: https://www.php.net/manual/en/function.stat.php

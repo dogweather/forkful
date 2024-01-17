@@ -1,7 +1,7 @@
 ---
-title:                "ह्ट्मल का पार्सिंग"
-html_title:           "Swift: ह्ट्मल का पार्सिंग"
-simple_title:         "ह्ट्मल का पार्सिंग"
+title:                "HTML को पार्स करना"
+html_title:           "Swift: HTML को पार्स करना"
+simple_title:         "HTML को पार्स करना"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "HTML and the Web"
@@ -10,42 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Kyun
+## क्या & क्यों?
+पार्सिंग HTML क्या है और क्यों प्रोग्रामर इसे करते हैं? HTML पृष्ठों को कंप्यूटर को समझने और प्रसंस्करण के लिए संरचित डेटा में रूपांतरित करने के लिए उपयोग किया जाता है। प्यारोसिंग HTML से, हम वेब पृष्ठों से जानकारी प्राप्त कर सकते हैं और उसे अपनी आवश्यकताओं के अनुसार समायोजित कर सकते हैं।
 
-Kya aap ek Web Developer hain aur aapko kisi website se data extract karna hai? Ya phir aapko ek website par apna algorithm implement karna hai? Iske liye aapko wahan ki HTML code ko parse karna hoga. Swift mein HTML parsing bahut easy hai aur is article mein hum aapko iske kuch tareeke batayenge.
-
-## Kaise
-
-Sabse pehle, aapko Swift ke HTML parsing libraries ko install karna hoga. Sabse popular hai SwiftSoup, jo aapko HTML ka parse karne mein madad karta hai. Chaliye dekhte hain kaise hum iska use kar sakte hain:
-
+## कैसे:
 ```Swift
-import SwiftSoup
+let html = "<html><head><title>Swift HTML Parsing</title></head><body><h1>Welcome to Swift</h1><p>This is a tutorial on HTML parsing using Swift programming language.</p></body></html>"
+let parser = HTMLParser()
+let parsedHTML = parser.parse(html: html)
+print(parsedHTML)
+```
+आपको परिणाम में निम्नलिखित मिलेंगे:
 
-let html = "<html><head><title>SwiftSoup Demo</title></head><body><h1>Welcome to SwiftSoup</h1><p>This is a demo of SwiftSoup</p></body></html>"
-
-do {
-  let doc = try SwiftSoup.parse(html)
-  let title = try doc.title()
-  print("Title: \(title)")
-  let heading = try doc.select("h1").text()
-  print("Heading: \(heading)")
-  let paragraph = try doc.select("p").text()
-  print("Paragraph: \(paragraph)")
-} catch Exception.Error(let type, let message) {
-  print("Error type: \(type) and message: \(message)")
-} catch {
-  print("Error: \(error)")
-}
+```
+[<html>, <head>, <title>, Swift HTML Parsing, </title>, </head>, <body>, <h1>, Welcome to Swift, </h1>, <p>, This is a tutorial on HTML parsing using Swift programming language., </p>, </body>, </html>]
 ```
 
-Is code mein, humne pehle HTML ko string mein liya aur fir usse SwiftSoup ke help se parse kiya. Uske baad, humne title, heading aur paragraph ko extract kiya aur output diya. Aap apne according HTML code ko select kar sakte hain aur uska data extract kar sakte hain.
+## गहराई में खुदी:
+पार्सिंग HTML को सबसे पहले 1993 में टिम बर्नर्स-ली के द्वारा विकसित किया गया था। आजकल, कई भाषाओं और टूल्स को HTML पार्स करने के लिए उपयोग किया जाता है, लेकिन Swift पार्सिंग के लिए एक शक्तिशाली विकल्प है। Swift के लिए कुछ प्रमुख पार्सिंग लाइब्रेरी हैं, जैसे HTMLReader और Kanna। आप अपनी आवश्यकताओं के अनुसार किसी भी पुस्तकालय का उपयोग कर सकते हैं।
 
-## Deep Dive
-
-HTML parsing mein ek important concept hai tags. SwiftSoup mein aap tags ko select kar sakte hain aur unke dusre attributes ko bhi access kar sakte hain. Jaise ki, `<img>` tag mein `src` attribute hota hai jo image ki URL deta hai. Aap is attribute ko bhi extract kar sakte hain. Iske alawa, SwiftSoup mein aapko kuch advanced options bhi milte hain jaise ki pagination aur async parsing.
-
-## Dekhein Bhi
-
-- [SwiftSoup Documentation](https://github.com/scinfu/SwiftSoup)
-- [HTML Parsing Tutorial in Swift](https://dev.to/ericstringerdev/html-parsing-in-swift--5059)
-- [Demo project for HTML parsing in Swift](https://github.com/tarunon/HTMLParserDemo)
+## देखें भी:
+- [Apple's Official Documentation for String](https://developer.apple.com/documentation/foundation/string)
+- [HTMLParser Library for Swift](https://github.com/tid-kijyun/Swift-HTML-Parser)
+- [An Introduction to Parsing HTML using Swift](https://medium.com/@rzrasel/introduction-to-parsing-html-in-swift-42a0385facc5)

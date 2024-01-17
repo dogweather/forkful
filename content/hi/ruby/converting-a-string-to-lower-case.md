@@ -1,7 +1,7 @@
 ---
-title:                "स्ट्रिंग को निचले अक्षर में रूपांतरित करना"
-html_title:           "Ruby: स्ट्रिंग को निचले अक्षर में रूपांतरित करना"
-simple_title:         "स्ट्रिंग को निचले अक्षर में रूपांतरित करना"
+title:                "स्ट्रिंग को लोअर केस में रूपांतरण करना"
+html_title:           "Ruby: स्ट्रिंग को लोअर केस में रूपांतरण करना"
+simple_title:         "स्ट्रिंग को लोअर केस में रूपांतरण करना"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Strings"
@@ -10,23 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Kyu
-Kisi vyakti ko ek string ko lower case mein convert karne mein kyun ruchi hogi, uska maksad 2 vaakyon mein samaanya karna.
+## क्या और क्यों?
 
-## Kaise Kare
-Coding ke udaharan aur sample output ke saath "```Ruby ... ```" code blocks ke andar.
+तार को निचले डिब्बे में बदलने का मतलब है कि आप उसमें मौजूद अक्षरों को छोटे अक्षर में बदल देते हैं। एक उदाहरण के रूप में, यदि आपके पास शब्द "Hello" है, तो आप उसे "hello" में बदल सकते हैं। इसका उद्देश्य यह है कि अक्षरों के मामले में स्थान को महत्व मिले, ओर एक स्ट्रिंग को मैनिपुलेट करने के लिए आसानी से प्रयोग किया जा सके।
+
+## कैसे:
+
+आप अपने शब्द को निचले डिब्बे में बदलने के लिए Ruby में निम्नलिखित आसान से कोड का उपयोग कर सकते हैं:
+
 ```Ruby
-string = "HELLO WORLD"
-puts string.downcase
-
-# output: hello world
+str = "Hello"
+puts str.downcase
 ```
 
-## Gehri Jhaank
-Ek string ko lower case mein convert karne ka sabse aasan tarika `downcase` method ka upyog karna hai. Is method se hum string ke saare aksharon ko lower case mein tabdeel kar sakte hain aur uska output ek naya string mein prapt kar sakte hain. Yadi hume string ke kisi hisse ko capital letter se lower case mein badalna ho, to hum `gsub` method ka bhi upyog kar sakte hain.
+उपरोक्त कोड का आउटपुट निम्नानुसार होगा:
+```
+hello
+```
 
-## Dekhein Bhi
-"See Also" 
-- [Ruby Strings](https://ruby-doc.org/core-2.7.1/String.html)
-- [Ruby Downcase Method](https://ruby-doc.org/core-2.7.1/String.html#method-i-downcase)
-- [Ruby Gsub Method](https://ruby-doc.org/core-2.7.1/String.html#method-i-gsub)
+## गहन जांच:
+
+(1) ऐतिहासिक परिदृश्य: स्ट्रिंग को निचले डिब्बे में बदलने की प्रक्रिया बहुत पुरानी है और आमतौर पर स्ट्रिंग संबंधी परिस्थितियों को सुलझाने के लिए प्रयोग की जाती है।
+
+(2) वैकल्पिक: अलग-अलग प्रोग्रामिंग भाषाओं की तुलना में, Ruby में स्ट्रिंग को निचले डिब्बे में बदलने के कई विकल्प हैं, जैसे कि downcase!, downcase, swapcase, और कई अन्य।
+
+(3) कार्यान्वयन विवरण: अंतर्निहित रूप से, Ruby इलेक्ट्रोनिक्स ऑफ अमेरिका द्वारा बनाई गई एक मुख्य भूमिका निभाता है जो स्ट्रिंग को निचले डिब्बे बनाने के लिए आत्मसात करता है।
+
+## देखें भी:
+
+- [Ruby String डॉक्यूमेंटेशन] (https://ruby-doc.org/core-3.0.0/String.html)
+- [और भी पढ़िए, डर ना] (https://www.rubyguides.com/2017/02/ruby-string-methods/)

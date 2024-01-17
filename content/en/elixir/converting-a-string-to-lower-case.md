@@ -10,35 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
+Converting a string to lower case is the process of transforming every uppercase letter in a string to its corresponding lowercase letter. Programmers often do this to standardize input and make it easier to compare strings, as lowercase and uppercase letters are treated as distinct characters in most languages.
 
-Converting a string to lower case is a common operation in programming, especially when dealing with user input. It allows for more flexibility in matching and comparing strings, as well as for consistent formatting of data.
+## How to:
+To convert a string to lower case in Elixir, we can use the `String.downcase/1` function. This function takes in a string as an argument and returns a new string with all letters transformed to lowercase. 
 
-## How To
-
-```Elixir
-# To convert a string to lower case, use the String.downcase/1 function:
-String.downcase("HELLO WORLD") #=> "hello world"
+```
+Elixir String.downcase("HELLO WORLD") 
 ```
 
-You can also convert a string to lower case by pattern matching in a function:
-
-```Elixir
-def downcase_string(string) do
-  _ = String.downcase(string)
-end
-
-downcase_string("HELLO WORLD") #=> "hello world"
+Output:
+```
+ "hello world"
 ```
 
-## Deep Dive
+We can also use the `String.downcase/2` function to specify a specific character set for the conversion. For example, if we want to convert a string to lowercase but preserve any accented characters, we can use the `ascii` option.
 
-Under the hood, the String.downcase/1 function uses the Unicode standard to correctly convert characters to lower case. This means that it takes into account different languages and their specific lower case rules.
+```
+Elixir String.downcase("Café", :ascii)
+```
 
-In addition to String.downcase/1, Elixir also provides String.downcase/2 and String.downcase!/1 for more advanced usage. These functions allow for specifying a locale, which dictates which lower case rules to use.
+Output:
+```
+"Café"
+```
 
-## See Also
+## Deep Dive:
+In the past, converting strings to lower case was a common task in programming languages as it was necessary for case-sensitive operations. However, with the rise of Unicode, which supports both uppercase and lowercase versions of each character, the need for case conversion has decreased.
 
-- [Elixir String Module](https://hexdocs.pm/elixir/String.html)
-- [Unicode Lower Case Guidelines](https://www.unicode.org/versions/Unicode8.0.0/ch03.pdf)
-- [Elixir String.downcase/1 function](https://hexdocs.pm/elixir/String.html#downcase/1)
+Some alternative methods for converting strings to lower case in Elixir include using the `Kernel.to_lower/1` function or explicitly converting each character using the `String.to_charlist/1` function.
+
+The `String.downcase/1` function in Elixir uses the `String.Unicode.downcase/1` function under the hood, which converts strings based on the Unicode standard. This ensures that strings are converted accurately, even for characters outside of the ASCII character set.
+
+## See Also:
+- [Official Elixir documentation on String module](https://hexdocs.pm/elixir/String.html)
+- [Source code for `String.downcase/2` function](https://github.com/elixir-lang/elixir/blob/master/lib/elixir/lib/string.ex#L1752-L1756)
+- [Unicode Standard](https://www.unicode.org/standard/standard.html)

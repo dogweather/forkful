@@ -10,45 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä & Miksi?
 
-JSON on yksi yleisimmin käytetyistä tiedonsiirtomuodoista web-kehityksessä, ja Elixir-ohjelmointikielen avulla sen käsittely on nopeaa ja tehokasta.
+JSON (JavaScript Object Notation) on yleisesti käytetty tiedon tallennusmuoto ja sitä käytetään usein tiedonsiirrossa verkon yli. Monet ohjelmoijat käyttävät JSONia helppona ja tehokkaana tapana tallentaa ja lukea tietoja sovelluksissaan.
 
-## Miten
+## Miten:
 
 ```Elixir
-# Esimerkki JSON-tiedon lukemisesta ja muuttamisesta
+#Tiedon tallentaminen JSON-muodossa
 
-# Avataan JSON-tiedosto ja tallennetaan sen sisältö muuttujaan
-{:ok, json_data} = File.read("data.json")
+data = %{nimi: "Jone", ikä: 25}
+JSON.encode(data)
 
-# Muutetaan JSON-data Elixirin map-tietotyypiksi
-json_map = Jason.decode!(json_data)
+# Tulostaa: "{\"nimi\":\"Jone\",\"ikä\":25}"
 
-# Haetaan mapista tietty arvo käyttäen avain-arvo-paria
-value = json_map["key"]
+# Tietojen avaaminen JSON-muodosta
 
-# Muutetaan Elixirin map takaisin JSON-muotoon
-new_json = Jason.encode!(json_map)
+encoded_data = "{\"nimi\":\"Jone\",\"ikä\":25}"
+JSON.decode(encoded_data)
+
+# Tulostaa: %{nimi: "Jone", ikä: 25}
 ```
 
-### Tulostus:
-```Elixir
-# json_map
-%{"key" => "value"}
+## Syväsukellus:
 
-# value
-"value"
+JSON kehitettiin alunperin vaihtoehdoksi XML:lle tiedon hallinnassa, ja se tuli suositummaksi sen yksinkertaisuuden ja tehokkuuden takia. Elixirin sisäänrakennettu JSON-moduuli helpottaa JSONin käsittelyä sovelluksissa ja tarjoaa paljon hyödyllisiä toimintoja, kuten tiedon koodaamisen ja dekoodaamisen.
 
-# new_json
-"{\"key\":\"value\"}"
-```
+## Katso myös:
 
-## Syventävä tutustuminen
-
-Elixir tarjoaa monipuolisia työkaluja JSON-datan käsittelyyn, kuten sisäänrakennetut moduulit Jason ja Poison. Jason on nopeampi mutta rajoitetumpi, kun taas Poison mahdollistaa monimutkaisemman JSON-rakenteen käsittelyn. Lisäksi Elixir tarjoaa mahdollisuuden luoda omia JSON-parsereita tarvittaessa.
-
-## Katso myös
-
-- [Elixirin virallinen JSON-dokumentaatio](https://hexdocs.pm/jason/readme.html)
-- [Poisonin GitHub-sivu](https://github.com/devinus/poison)
+- [JSON Home Page](https://www.json.org/)
+- [Elixir JSON Moduuli](https://hexdocs.pm/elixir/1.12/JSON.html)

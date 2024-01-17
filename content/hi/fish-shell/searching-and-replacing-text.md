@@ -1,7 +1,7 @@
 ---
-title:                "टेक्स्ट को खोजना और प्रतिस्थापित करना"
-html_title:           "Fish Shell: टेक्स्ट को खोजना और प्रतिस्थापित करना"
-simple_title:         "टेक्स्ट को खोजना और प्रतिस्थापित करना"
+title:                "टेक्स्ट खोजना और प्रतिस्थापन करना"
+html_title:           "Fish Shell: टेक्स्ट खोजना और प्रतिस्थापन करना"
+simple_title:         "टेक्स्ट खोजना और प्रतिस्थापन करना"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -10,37 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Kyun
-Tum logon ko pata hai, computer par kaam karte waqt hum kabhi-kabhi text ko badalna ya replace karna chahte hain. Jaise ki agar hume ek poora document me se ek particular word ko delete karna hai ya phir kisi word ki spelling theek karni hai. Yeh sab kaam manually karne me humara bahut time waste ho jaata hai. Lekin, fish shell ka use karke hum is process ko asaan aur tezi se kar sakte hain.
+## क्या और क्यों?
 
-## Kaise Karein
-Fish shell me text search and replace karne ke liye hum `sed` command ka use karenge. Iske liye sabse pehle hume `sed` command ko install karna hoga. Iske liye hum terminal me yeh command likhenge:
-```Fish Shell
-sudo apt-get install sed
+टेक्स्ट को ढूंढ़ना और बदलना क्या है, और प्रोग्रामर इसे क्यों करते हैं। 
+
+टेक्स्ट प्रोग्रामिंग में बहुत महत्वपूर्ण होता है। हमारी कोड में बहुत सारे टेक्स्ट लेखे होते हैं। इसमें कुछ गलतियां भी हो सकती हैं। लोगों को एक साथ बड़े प्रोजेक्ट के साथ काम करने की आवश्यकता होती है, और ऐसा करने से ये अधिक सरल हो जाता है।
+
+## कैसे करें:
+
+```Fish Shell``` में टेक्स्ट को ढूंढ़ना और बदलना करना बहुत ही आसान है। चलिए इसका एक उदाहरण देखें:
+
+```bash
+set greeting "नमस्ते"
+echo $greeting
+# output: नमस्ते
+
+string replace नमस्ते नमस्कार $greeting
+echo $greeting
+# output: नमस्कार
 ```
-Ab, hume `sed` command ka syntax jaanna hoga. Yeh command 3 parts se bana hai - `address`, `command` aur `input file`. Iske alawa, hum replace karne ke liye ek aur argument yaani `replacement` bhi use kar sakte hain.
 
-Ab, maan lijiye hume ek file me se ek particular word ko delete karna hai. Toh hum `sed` command ko iss tarah use karenge:
-```Fish Shell
-sed /word/d input_file.txt
-```
-Yahaan `/word/` ka matlab hai hume jo bhi word delete karna hai, woh `input_file.txt` me se humare liye search karega. Iske baad, humara naya output terminal par show hoga.
+यहां हमने ```greeting``` की मदद से एक चेक की मदद से नमस्ते और नमस्कार टेक्स्ट को थोड़ा सा बदला। आपको स्ट्रिंग के साथ बहुत सारे और ऑपरेटर मिलेंगे जो कि इस काम में मदद करेंगे।
 
-Agar hum kisi word ki spelling ko replace karna chahte hain, toh hum iss command ko use kar sakte hain:
-```Fish Shell
-sed s/old_word/new_word/g input_file.txt
-```
-Yahaan `/old_word/` ka matlab hai humare document me se hume woh word delete karna hai aur `/new_word/` ka matlab hai woh word jo hum iss file me daalna chahte hain.
+## गहराई में जाएं:
 
-## Deep Dive
-`sed` command bahut powerful hai aur hum iss command ki madad se bahut saare text manipulation tasks ko asaan se kar sakte hain. Iske alawa, hum iss command me `regex` bhi use kar sakte hain jiske baare me ek alag se article likha ja sakta hai.
+टेक्स्ट को ढूंढ़ना और बदलना टेक्स्ट एडिटिंग के दौरान बहुत ही अहम है। इससे हमारे कोड में ग़लतियां कम होती हैं और हमें और बेहतर काम करने में मदद मिलती है। इसके अलावा, आपको स्ट्रिंग कोडिंग के साथ अच्छा काम करना आने लगता है।
 
-Iske alawa, hum iss command ko use karke file ko modify bhi kar sakte hain. Hum iss command me `-i` flag ka use karke humare original file ko overwrite kar sakte hain. Isse hume ek naya file create karne ki zaroorat nahi padegi.
+यदि आप निराश हो रहे हैं या आपको फिश शेल के अलावा और कोई भी विकल्प चाहिए तो आप अन्य शेल जैसे bash, zsh या powershell का स्तेमाल कर सकते हैं। ये सभी बहुत ही लोकप्रिय हैं और अधिकांश प्रोग्रामर इन्हें पसंद करते हैं।
 
-## Dekhein Bhi
-1. [Fish Shell GitHub page](https://github.com/fish-shell/fish-shell)
-2. [Fish Shell tutorial by The Primeagen](https://www.youtube.com/watch?v=-M2amRgTu-8)
-3. [Regex tutorial by freeCodeCamp.org](https://www.youtube.com/watch?v=rhzKDrUiJVk)
+आप ```string replace``` के साथ और अधिक और ऑपरेटरों के साथ जाने के लिए [फिश शेल के डॉक्यूमेंटेशन](https://fishshell.com/docs/current/) को जांच सकते हैं। यहां आपको और भी बहुत सारी जानकारी मिलेगी जो कि आपके लिए उपयोगी होगी। 
 
-# Aur Jaanein
-Lagbhag har commands me, hum terminal se bahut saare text manipulation tasks asaanise kar sakte hain. Isliye, aapko apne terminal ke commands ko acche se jaan lena chahiye. Aasha karte hain aapko yeh article helpful laga hoga. Keep coding!
+अगर आप स्ट्रिंग और प्रोग्रामिंग के साथ जुड़ी और जानकारी चाहते हैं तो आप ये [यूट्यूब वीडियो](https://www.youtube.com/watch?v=Q2KECUYEjjM) देख सकते हैं। इसमें आपको और भी ज्यादा जानकारी मिलेगी और इससे आपका काम करना और भी आसान हो जाएगा।

@@ -10,59 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
+# 什么 & 为什么？
+读取文本文件是指从计算机存储中提取文本信息并将其加载到程序中。程序员在读取文本文件是为了从外部源获取相关数据，然后使用这些数据在程序中进行操作。
 
-你是否曾经想过如何使用Haskell来读取文本文件？它是一种强大的函数式编程语言，可以帮助你快速、高效地处理文本文件。读取文本文件是一项基本的编程任务，掌握它可以为你日后的编程工作带来不少方便。
-
-## 如何进行
-
-首先，我们需要导入`System.IO`库来处理文件输入输出。
-
+# 怎么做：
 ```Haskell
-import System.IO
+-- 从文本文件中读取所有内容
+main = do
+  contents <- readFile "sample.txt" -- 向程序中读取名为"sample.txt"的文本文件
+  putStrLn contents -- 将文本文件的内容打印到终端
+
+-- 逐行读取并处理文本文件
+main = do
+  lines <- readFile "sample.txt" -- 向程序中读取名为"sample.txt"的文本文件
+  let numLines = length . lines -- 计算文本文件中行数
+  putStrLn $ "This file has " ++ show numLines ++ " lines." -- 将行数打印到终端
 ```
 
-然后，我们可以使用`openFile`函数来打开一个文本文件，并指定它的操作模式。
-
-```Haskell
-fileHandle <- openFile "data.txt" ReadMode
+文件"sample.txt"中的内容：
+```
+Hello!
+This is a sample text file.
+It has four lines.
 ```
 
-接下来，我们可以使用`hGetContents`函数来读取文件内容并将其存储在一个字符串中。
-
-```Haskell
-fileContents <- hGetContents fileHandle
+输出内容：
+```
+Hello!
+This is a sample text file.
+It has four lines.
+This file has 4 lines.
 ```
 
-最后，我们可以使用`putStrLn`函数来打印出文件内容。
+# 深入探讨：
+(1) 阅读文本文件几乎是所有编程语言中都有的一项基本操作，它可以追溯到计算机的早期发展阶段。 (2) 除了使用Haskell内置的`readFile`函数，还可以使用系统命令或第三方库来读取文本文件。 (3) 在读取文本文件时，Haskell会将文件内容储存在内存中，并使用特定的编码来解析文本数据。
 
-```Haskell
-putStrLn fileContents
-```
-
-运行上述代码后，你将会在控制台上看到该文本文件的内容。
-
-## 深入了解
-
-使用`openFile`函数时，我们可以指定不同的操作模式来实现不同的功能。除了`ReadMode`，还有`WriteMode`、`AppendMode`和`ReadWriteMode`四种模式可供选择。此外，为了避免文件句柄未关闭造成的内存泄漏，我们可以使用`withFile`函数来自动关闭文件句柄。
-
-```Haskell
-withFile "data.txt" WriteMode (\fileHandle -> do
-    hPutStr fileHandle "Hello World!"
-    )
-```
-
-此外，如果你想要一次性读取文件的所有内容而不是按行读取，可以使用`readFile`函数来实现。
-
-```Haskell
-fileContents <- readFile "data.txt"
-```
-
-除了上述介绍的函数外，Haskell还提供了一系列文件处理相关的函数，如`hIsEOF`、`hGetLine`、`hPutStrLn`等，可以根据实际需求来使用。同时，补充了解有关Haskell文件处理的知识可以更深入地了解其强大的功能。
-
-## 参考链接
-
-- [Haskell官方文档](https://www.haskell.org/documentation)
-- [Learn You a Haskell for Great Good!](http://learnyouahaskell.com/)
-- [Real World Haskell](https://www.realworldhaskell.org/)
-- [Haskell Wikibook](https://en.wikibooks.org/wiki/Haskell)
+# 参考文章：
+- [Haskell官方文档](https://www.haskell.org/documentation/)
+- [Haskell Wikibooks: Input and Output](https://en.wikibooks.org/wiki/Haskell/Input_and_output)
+- [Haskell Wiki: Working with files](https://wiki.haskell.org/Working_with_files)

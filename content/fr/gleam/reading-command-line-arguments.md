@@ -10,73 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+#Qu'est-ce que la lecture des arguments de la ligne de commande et pourquoi les programmeurs le font-ils?
 
-## Comment faire
 
-La lecture des arguments de ligne de commande peut sembler être une tâche simple et ennuyeuse, mais elle peut en fait être très utile dans de nombreux cas. Que vous souhaitiez personnaliser le comportement de votre programme en fonction de l'entrée de l'utilisateur ou que vous ayez besoin d'informations spécifiques pour le débogage, la lecture des arguments de ligne de commande peut être une compétence très pratique à avoir.
+##Qu'est-ce que c'est et pourquoi le faire?
+La lecture des arguments de la ligne de commande, c'est simplement le fait de récupérer les valeurs fournies par l'utilisateur lorsqu'il exécute un programme en ligne de commande. Les programmeurs font cela pour pouvoir utiliser ces valeurs dans leur code et les adapter aux besoins spécifiques de leurs programmes.
 
-Pour lire les arguments de ligne de commande en utilisant Gleam, nous devons utiliser le module `std/args`. Ce module fournit des fonctions qui nous permettent de récupérer les arguments passés à notre programme, de les traiter et de les utiliser selon nos besoins.
+##Comment faire:
+Pour lire les arguments de la ligne de commande en utilisant Gleam, il suffit d'utiliser la fonction `Args.get/0` et de spécifier le numéro de l'argument que vous voulez récupérer. Par exemple:
 
-Voici un exemple simple de lecture des arguments de ligne de commande en utilisant Gleam:
-
+```Gleam
+...
+my_argument = Args.get(0)
 ```
-Gleam import std/args
+Et voilà! Vous avez maintenant accès à la valeur du premier argument fourni par l'utilisateur.
 
-fn main(_args) {
-    Gleam let args = Args.parse(_args)
-    Gleam let name = Args.flag("--name", "World", args)
-    Gleam IO.print("Hello, ") ++ name ++ "!"
-}
-```
+Si vous souhaitez récupérer tous les arguments en une seule fois, vous pouvez utiliser la fonction `Args.get_all/0`. Cela vous donnera une liste de toutes les valeurs fournies par l'utilisateur.
 
-Dans cet exemple, nous importons d'abord le module `std/args`. Nous utilisons ensuite la fonction `Args.parse` pour convertir les arguments passés à notre programme en un type de données approprié. Ensuite, nous utilisons la fonction `Args.flag` pour récupérer la valeur de l'argument nommé `--name` si elle existe. Si l'argument n'est pas passé, nous utilisons la valeur par défaut "World". Enfin, nous utilisons la fonction `IO.print` pour afficher un message de salutation en utilisant la valeur de `name`.
+##Plongée en profondeur:
+La lecture des arguments de la ligne de commande peut sembler simple, mais c'est en réalité une fonctionnalité très pratique pour les programmeurs. Avant l'existence des interfaces graphiques, la ligne de commande était le seul moyen de communiquer avec un ordinateur. Aujourd'hui, elle est toujours très utilisée pour automatiser des tâches ou pour exécuter des programmes sur des serveurs sans interface graphique.
 
-Si nous exécutons notre programme en utilisant la commande suivante :
+Une alternative courante à la lecture des arguments de la ligne de commande est l'utilisation de variables d'environnement. Cependant, cela peut être moins pratique et moins flexible dans certains cas.
 
-```
-$ gleam run hello.gleam --name "John"
-```
+Du point de vue de l'implémentation, la lecture des arguments de la ligne de commande se base sur les arguments fournis lors de l'appel du programme. Ces arguments sont stockés dans un tableau et peuvent être récupérés en utilisant les fonctions mentionnées précédemment.
 
-Nous obtiendrons la sortie suivante :
-
-```
-Hello, John!
-```
-
-Maintenant, que se passe-t-il si nous voulons passer plusieurs arguments de ligne de commande ? Gleam a également une fonction appelée `Args.non_flag_arguments` qui nous permet de récupérer tous les arguments qui ne sont pas des drapeaux (flags). Par exemple :
-
-```
-fn main(_args) {
-    let args = Args.parse(_args)
-    let name = Args.flag("--name", "World", args)
-    let arguments = Args.non_flag_arguments(args)
-
-    IO.print("Hello, ") ++ name ++ "!"
-    Gleam IO.print("You passed the following arguments: ") ++ arguments
-}
-```
-
-Si nous exécutons notre programme avec la commande suivante :
-
-```
-$ gleam run hello.gleam --name "John" "Gleam is awesome"
-```
-
-Nous obtiendrons cette sortie :
-
-```
-Hello, John!
-You passed the following arguments: ["Gleam", "is", "awesome"]
-```
-
-## Plongée en profondeur
-
-Maintenant que nous avons vu comment lire les arguments de ligne de commande en utilisant Gleam, il est important de noter que le module `std/args` offre d'autres fonctions pratiques pour la gestion des arguments. Par exemple, vous pouvez utiliser la fonction `Args.flag_with_default` pour définir une option avec une valeur par défaut, ou la fonction `Args.flag_with_callback` pour exécuter une fonction spécifique lorsque l'argument est passé.
-
-Nous pouvons également utiliser des drapeaux de type booléen avec la fonction `Args.flag_with_default`, qui sera true par défaut si l'argument est passé et false sinon. Nous pouvons également utiliser des valeurs de type `string` pour les arguments avec la fonction `Args.flag_string`, ou des valeurs de type `int` avec la fonction `Args.flag_int`. Pour plus d'informations sur ces fonctions et leurs utilisations, consultez la documentation du module `std/args`.
-
-## Voir aussi 
-
-- Documentation sur les arguments de ligne de commande en Gleam : https://gleam.run/modules/std.args.html
-- Tutoriel sur l'écriture de ligne de commande en Gleam : https://ellipses.io/learn/cli-app-gleam/
+##A voir aussi:
+Si vous souhaitez en savoir plus sur l'utilisation des lignes de commande dans Gleam, vous pouvez consulter la documentation officielle de la langue ainsi que des ressources externes telles que des tutoriels et des exemples de code. N'hésitez pas à expérimenter avec cette fonctionnalité pour mieux la comprendre et l'utiliser dans vos projets !

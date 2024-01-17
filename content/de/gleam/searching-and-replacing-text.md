@@ -1,7 +1,7 @@
 ---
-title:                "Suchen und Ersetzen von Text"
-html_title:           "Gleam: Suchen und Ersetzen von Text"
-simple_title:         "Suchen und Ersetzen von Text"
+title:                "Textsuche und -ersetzung"
+html_title:           "Gleam: Textsuche und -ersetzung"
+simple_title:         "Textsuche und -ersetzung"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -10,42 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+Was & Warum?
 
-Ein einfaches Suchen und Ersetzen von Text kann mühsam und zeitaufwendig sein. Mit der aktuellen Version von Gleam kannst du dieses Problem jedoch mit nur wenigen Codezeilen lösen und dir viel Zeit und Arbeit ersparen.
+Suchen und Ersetzen von Text ist ein häufiges Werkzeug in der Programmierung, mit dem Programmierer bestimmte Zeichenketten in einem Text finden und ersetzen können. Dies kann nützlich sein, um Fehler zu beheben, Variablen- oder Funktionsnamen anzupassen oder den Code für verschiedene Anforderungen anzupassen.
 
-## So geht's
+Wie geht's?
 
-Um Text in Gleam zu suchen und zu ersetzen, musst du zuerst die Standardbibliothek `gleam/text` importieren. Hier ist ein Beispiel, wie du den Text "Hallo Welt" in "Guten Tag" umwandelst:
+Um in Gleam Text zu suchen und zu ersetzen, können wir die integrierte Funktion `String.replace` verwenden. Hier ist ein Beispiel, wo wir alle Vorkommen von "Hund" in einem Satz durch "Katze" ersetzen:
 
-```
-import gleam/text
-let input = "Hallo Welt"
-let pattern = "Hallo"
-let replacement = "Guten Tag"
-let result = replace(input, pattern, replacement)
-
+```Gleam
+let ersetzt = String.replace("Ich habe einen Hund", "Hund", "Katze")
 ```
 
-Das Ergebnis ist nun `"Guten Tag Welt"`. Einfach, oder? Du kannst auch reguläre Ausdrücke verwenden, um noch flexiblere Suchmöglichkeiten zu haben.
+Das Ergebnis wird "Ich habe eine Katze" sein. Beachte, dass `String.replace` die geänderte Zeichenkette zurückgibt und die ursprüngliche Zeichenkette unverändert lässt. Falls wir mehr als ein Vorkommen ersetzen möchten, können wir den optionale Parameter `limit` verwenden:
 
-```
-import gleam/text
-let input = "Die Sonne scheint"
-let pattern = "[^ ]+"
-let replacement = "die"
-let result = replace(input, pattern, replacement)
-
+```Gleam
+let ersetzt = String.replace("Ich habe einen Hund und noch einen Hund", "Hund", "Katze", limit: 1)
 ```
 
-Das Ergebnis ist nun `"die die die"`. Mit regulären Ausdrücken kannst du auch Groß- und Kleinschreibung ignorieren oder spezielle Zeichen hinzufügen.
+Das Ergebnis hier wäre "Ich habe eine Katze und noch einen Hund". Der zweite Hund bleibt also unverändert.
 
-## Tiefgehende Infos
+Tiefentauchen
 
-Du kannst auch tiefer in das Thema suchen und ersetzen eintauchen, indem du dir die Dokumentation von `gleam/text` ansiehst. Dort findest du alle verfügbaren Funktionen und ihre Verwendung. Außerdem kannst du die Musterlösungen der Community durchsuchen und deine eigenen Fähigkeiten im Umgang mit Texttransformationen verbessern.
+Das Suchen und Ersetzen von Text ist seit den frühen Tagen der Programmierung ein wichtiges Werkzeug und wird in vielen Programmiersprachen unterstützt. In manchen Fällen, wie z.B. bei regulären Ausdrücken, ist es jedoch etwas komplexer und erfordert zusätzliche Kenntnisse. Alternativ können auch externe Tools oder Bibliotheken genutzt werden, um bestimmte Such- und Ersatzfunktionen anzubieten.
 
-## Siehe auch
+Siehe auch
 
-- Die offizielle Dokumentation von `gleam/text`: https://gleam.run/libraries/text
-- Reguläre Ausdrücke erklärt: https://www.regular-expressions.info/
-- Die Gleam-Community auf Discord: https://discord.gg/5Ju6gHzm
+Hier sind einige hilfreiche Links, um mehr über die Bearbeitung von Text in Gleam zu lernen:
+
+- Die offizielle Gleam-Dokumentation: https://gleam.run/documentation
+- Ein Tutorial zu Strings in Gleam: https://github.com/gleam-lang/gleam/blob/master/docs/tutorials/string.md#replace
+- Die offizielle Gleam-Community auf Discord: https://discord.gg/3SvYqYJ

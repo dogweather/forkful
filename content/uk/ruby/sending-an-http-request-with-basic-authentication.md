@@ -1,7 +1,7 @@
 ---
-title:                "Надсилання запиту http з основною автентифікацією"
-html_title:           "Ruby: Надсилання запиту http з основною автентифікацією"
-simple_title:         "Надсилання запиту http з основною автентифікацією"
+title:                "Надсилання http запиту з базовою аутентифікацією."
+html_title:           "Ruby: Надсилання http запиту з базовою аутентифікацією."
+simple_title:         "Надсилання http запиту з базовою аутентифікацією."
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "HTML and the Web"
@@ -10,28 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Чому
-Надіслати запит HTTP з основною автентифікацією є необхідністю при роботі з більшістю віддалених API інтерфейсів. Це забезпечує безпеку та доступ до обміну даними з обраним сервером.
+# Що і Чому?
+Надсилання HTTP-запиту з базовою аутентифікацією - це процес, коли програміст включає інформацію про аутентифікацію в HTTP-запит для доступу до певної веб-сторінки або апі. Це може бути корисно у випадках, коли веб-сайт вимагає логін та пароль для доступу або для безпечного передавання даних.
 
-## Як
-```ruby
+# Як це зробити:
+```Ruby
 require 'net/http'
+require 'uri'
 
-uri = URI('http://example.com/api/resource/123') # Змініть URL на свій відповідно до API.
+uri = URI('https://www.example.com')
 req = Net::HTTP::Get.new(uri)
-req.basic_auth 'username', 'password' # Замініть ім'я користувача та пароль на свої.
+req.basic_auth('username', 'password')
 
-res = Net::HTTP.start(uri.hostname, uri.port) {|http|
+res = Net::HTTP.start(uri.hostname, uri.port) do |http|
   http.request(req)
-}
+end
 
-puts res.body # Виведе тіло відповіді з сервера.
+puts res.body
 ```
+*Ви можете змінити метод HTTP-запиту та дані аутентифікації за своїм розсудом.*
 
-## Глибинний занурення
-Базова автентифікація (basic authentication) використовується для здійснення доступу до веб-ресурсів і забезпечує простий рівень контролю користувачів. Для виконання запиту з базовою автентифікацією потрібно включити заголовок "Authorization" з інформацією про ім'я користувача та пароль в форматі "username:password", зашифрованим у форматі Base64. Якщо сервер не може їх розшифрувати, запит буде відхилений з помилкою "401 Unauthorized".
+# Глибше в шостий
+Історичний контекст: базова аутентифікація була розроблена відразу після створення протоколу HTTP, тому це є однією з найстаріших і найбільш розповсюджених методів аутентифікації в веб-серверах.
 
-## Дивись також
-- [Офіційна документація Ruby з прикладами коду](https://ruby-doc.org/stdlib-2.7.1/libdoc/net/http/rdoc/Net/HTTP.html)
-- [Стаття про базову автентифікацію на MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#Basic_authentication_scheme)
-- [Більш детальна стаття про використання базової автентифікації в Ruby](https://www.rubyguides.com/2018/08/ruby-net-http/)
+Альтернативи: існують інші методи аутентифікації, такі як DIGEST і Bearer, які забезпечують більш безпечний спосіб доступу до веб-сайту чи апі.
+
+Деталі реалізації: при використанні базової аутентифікації, назва користувача та пароль будуть закодовані у форматі Base64 та додані до заголовка запиту `Authorization`.
+
+# Дивись також:
+- [Документація Ruby по Net::HTTP](https://ruby-doc.org/stdlib-2.7.1/libdoc/net/http/rdoc/Net/HTTP.html)
+- [Стаття в блозі про різні методи аутентифікації в HTTP](https://www.redhat.com/en/blog/implementing-http-basic-authentication-stateless-and-stateful-applications)

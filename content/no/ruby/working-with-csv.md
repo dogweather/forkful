@@ -1,7 +1,7 @@
 ---
-title:                "Arbeide med csv"
-html_title:           "Ruby: Arbeide med csv"
-simple_title:         "Arbeide med csv"
+title:                "Arbeid med csv"
+html_title:           "Ruby: Arbeid med csv"
+simple_title:         "Arbeid med csv"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Data Formats and Serialization"
@@ -10,48 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+##Hva & hvorfor?
 
-Hvorfor bry seg om CSV? CSV (Comma-Separated Values) er et tekstformat som brukes til å lagre og håndtere store mengder data. Det er et utmerket verktøy for å organisere og analysere data i programmeringsspråket Ruby.
+Å jobbe med CSV (Comma Separated Values) er en måte å lagre og håndtere data på i et lettleselig format. Det er spesielt nyttig for programmerere å bruke når de trenger å organisere og manipulere store mengder informasjon. CSV-filer kan enkelt leses og skrives med Ruby, noe som gjør det til et populært valg blant utviklere.
 
-## Hvordan
+##Hvordan:
 
-CSV-filer kan leses og skrives med Ruby ved hjelp av standardbiblioteket "csv". Bruk følgende kode for å åpne en CSV-fil og lese data fra den:
+La oss se på en enkel måte å lese og skrive til en CSV-fil med Ruby:
 
-```Ruby
+```ruby
 require 'csv'
-CSV.foreach("data.csv") do |row|
-  puts row
+
+# Les en fil og lagre dataene som et array
+data = CSV.read('data.csv')
+
+# Legg til en ny rad med data
+data << ['Jane', 22, 'New York']
+
+# Skriv dataene tilbake til filen
+CSV.open('data.csv', 'w') do |csv|
+  data.each do |row|
+    csv << row
+  end
 end
+
+# Skriver ut dataene til konsollen
+puts data
 ```
 
-Dette vil skrive ut hver rad i CSV-filen som et array. Du kan også spesifisere hvilke kolonner som skal skrives ut ved å bruke indeksering, for eksempel `row[0]` for å skrive ut første kolonne.
+Her har vi brukt `CSV`-modulen som følger med Ruby for å lese og skrive til en CSV-fil. Vi begynner med å lese inn en fil og lagre dataene som et array. Deretter legger vi til en ny rad med data til vårt array og til slutt skriver vi disse dataene tilbake til filen. Ved å skrive ut arrayet får vi se den siste raden vi la til.
 
-For å skrive data til en CSV-fil, må du først åpne en fil og deretter bruke `CSV::Writer` for å skrive ut dataene. Her er et eksempel på å skrive ut en liste med navn til en CSV-fil:
-
-```Ruby
-CSV.open("names.csv", "w") do |csv|
-  csv << ["John", "Jane", "Bob"]
-end
+Output:
+```ruby
+[['John', 25, 'London'], ['Maria', 31, 'Paris'], ['Jane', 22, 'New York']]
 ```
 
-Dette vil opprette en CSV-fil med en rad og tre kolonner med navnene "John", "Jane" og "Bob".
+##Dypdykk:
 
-## Dypdykk
+CSV-formatet har eksistert siden slutten av 1900-tallet og har blitt et standardformat for å lagre og utveksle data. Selv om Ruby gjør det enkelt å jobbe med CSV-filer, er det også andre biblioteker og verktøy som kan brukes til å behandle disse filene, som for eksempel `FasterCSV` og `Pandas` for Python.
 
-Når du arbeider med CSV i Ruby, er det viktig å håndtere både innledende og avsluttende linjer, tomme felt og eventuelle spesielle tegn som kan føre til feil i filen.
+Når det gjelder implementering av CSV i Ruby, bruker `CSV`-modulen en enkel og effektiv metode kalt "Row-oriented I/O" for å lese og skrive data i en CSV-fil. Denne metoden innebærer å behandle dataene rad for rad, i motsetning til å lese hele filen på en gang.
 
-En måte å håndtere disse problemene på er å bruke alternativet `headers: true` når du åpner en CSV-fil. Dette vil bruke den første linjen i filen som overskriftene for kolonnene, slik at du kan referere til dem ved navn i stedet for å bruke indeksering.
+##Se også:
 
-```Ruby
-CSV.foreach("data.csv", headers: true) do |row|
-  puts row["Name"]
-end
-```
-
-For å håndtere tomme felt, kan du bruke en `unless`-setning for å sjekke om feltet er lik `nil` før du gjør noe med det. For å håndtere spesielle tegn, kan du umidlebart konvertere alle dataene til UTF-8-format ved å bruke `string.encode("UTF-8", "binary", invalid: :replace, undef: :replace, replace: '')`.
-
-## Se også
-
-- [Ruby's CSV Library](https://ruby-doc.org/stdlib-2.7.0/libdoc/csv/rdoc/CSV.html)
-- [Ruby CSV Gem](https://github.com/ruby/csv)
+- [Ruby-dokumentasjonen for CSV](https://ruby-doc.org/stdlib-3.0.0/libdoc/csv/rdoc/CSV.html)
+- [FasterCSV](https://github.com/JEG2/faster_csv)
+- [Pandas](https://pandas.pydata.org/)

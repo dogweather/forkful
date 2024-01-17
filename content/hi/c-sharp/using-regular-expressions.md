@@ -1,7 +1,7 @@
 ---
-title:                "नियमित अभिव्यक्तियों का उपयोग"
-html_title:           "C#: नियमित अभिव्यक्तियों का उपयोग"
-simple_title:         "नियमित अभिव्यक्तियों का उपयोग"
+title:                "नियमित अभिव्यंजनों का उपयोग"
+html_title:           "C#: नियमित अभिव्यंजनों का उपयोग"
+simple_title:         "नियमित अभिव्यंजनों का उपयोग"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Strings"
@@ -10,56 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Kyun
+## क्या और क्यों?
 
-Regular Expressions (regex) C# ke programmers ke liye ek bahut hi useful tool hai. Ye hamare code me string manipulation, data validation aur search operations ko easy bana deta hai. Iske sath hi iske use se hamari code ki readability bhi badhti hai.
+रेगुलर एक्सप्रैशन प्रोग्रामिंग में उपयोग किया जाने वाला एक वेरीफायर है। इसका उपयोग डेटा को ढूढ़ने और उसकी पहचान करने में किया जाता है। प्रोग्रामर रेगुलर एक्सप्रैशन का उपयोग अन्य जानकारों द्वारा डेटा को संरक्षण और मेंपुलेट करने के लिए किया जाता है।
 
-## Kaise
+## कैसे करें:
 
-Regex ka use C# me karne ke liye sabse pehle hame System.Text.RegularExpression namespace ko import karna hoga. Fir ham Regex class ka ek object banayenge aur usko hamari required pattern ke sath match karne ke liye use karenge.
-
-```C#
-// Importing the namespace
-using System.Text.RegularExpression;
-
-// Creating a Regex object with the desired pattern
-Regex regexObject = new Regex("[a-z]");
-
-// Sample string to be matched
-string sampleString = "This is a sample string.";
-
-// Using the Regex object to match the first occurrence of a lowercase letter in the string
-Match match = regexObject.Match(sampleString);
-
-// Checking if there was a match
+```c#
+string text = "Some sample text";
+Regex regex = new Regex("sample");
+Match match = regex.Match(text);
 if (match.Success)
 {
-    // Printing out the matched value
-    Console.WriteLine("The first lowercase letter in the string is: " + match.Value);
+  Console.WriteLine("Match found!");
 }
 ```
 
-**Output:** The first lowercase letter in the string is: h
+इस उदाहरण में, हमने एक स्ट्रिंग को बनाया है और उसमें से एक शब्द को खोजने के लिए एक रेगुलर एक्सप्रैशन बनाया है। फिर हमने इस एक्सप्रैशन को मैच करने के लिए उपयोग किया और अगर मैच पाया जाता है तो उसके लिए एक संदेश प्रिंट किया है। इस तरह, रेगुलर एक्सप्रैशन का उपयोग डेटा को पहचानने और मैनिपुलेट करने में किया जाता है।
 
-Is tarah hum Regex ka use karke different patterns ko match kar sakte hai aur unko code me manipulate kar sakte hai.
+## गहराई में जाएँ:
 
-## Deep Dive
+इतिहासिक परिस्थितियों के बारे में, वैकल्पिक विकल्पों के बारे में और रेगुलर एक्सप्रैशन का लागू करने के बारे में विवरणीक जानकारी है। रेगुलर एक्सप्रैशन का उपयोग करने के लिए, आपको स्ट्रिंग प्रोसेसिंग और पैटर्न मैचिंग की समझ होनी चाहिए। यह एक शक्तिशाली डेटा मैनिपुलेशन उपकरण है जो प्रोग्रामरों को उनके क्षेत्र में सुधार करने में मदद करता है।
 
-Regex ek powerful tool hai jiske use se hum kisi bhi complex pattern ko search aur manipulate kar sakte hai. Ye hamare code me character matching, repetition, grouping, special characters, aur bahut kuch karne me help karta hai. Iske sath hi iska use hamare code ko efficiently run karne me bhi help karta hai.
+## देखें भी:
 
-Ek aur important aspect of Regex in C# is the use of Regular Expression Options. Ye options hamari pattern ke search ko modify karte hai aur use flexible banate hai.
-
-Kuch helpful links for a deeper dive into Regex in C#:
-
-- [Official Microsoft documentation](https://docs.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-language-quick-reference)
-- [Tutorialspoint's Regex Cheat Sheet](https://www.tutorialspoint.com/csharp/csharp_reg_expressions.htm)
-- [C# Regex Tester](https://regexr.com/)
-
-## Dekhiye Bhi
-
-Ye articles bhi aapke liye useful ho sakte hai:
-
-- [C# String Manipulation](https://www.programiz.com/csharp-programming/string-manipulation)
-- [Introduction to C# Programming](https://www.digitalocean.com/community/tutorial_series/introduction-to-c-sharp-programming)
-- [Mastering Regular Expressions in C#](https://www.udemy.com/course/mastering-regular-expressions-in-csharp/)
-- [Top 10 C# Programming Books](https://hackr.io/blog/best-c-sharp-books)
+- [C# रेगुलर एक्सप्रैशन गाइड] (https://www.javatpoint.com/c-sharp-regular-expression)
+- [वीडियो: कैसे करें रेगुलर एक्सप्रैशन?] (https://www.youtube.com/watch?v=aO23SACWw1A)
+- [रेगुलर एक्सप्रैशन का उपयोग करने के लिए 10 उदाहरण] (https://www.educba.com/regex-examples-in-c-sharp/)

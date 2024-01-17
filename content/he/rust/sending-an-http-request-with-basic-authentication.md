@@ -10,43 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## למה
+## מה זו הקושי הזה ולמה לעבור אותו?
+כשמתכנתים רוצים לשלוח בקשת HTTP עם אימות בסיסי, הם משתמשים בנתיב אינטרנט כדי לאכלס את המידע ולגשת אליו. השיטה הזאת מאפשרת לך להגיע למידע מאתרים ושירותים שונים ברשת.
 
- איך ל
-
-## להרחיב
-
-HTTP (פרוטוקול תעבורה משולת כמתשמש המאפשר לנו לתקשר עם שרתים באמצעות בקשות מקודדות. אחת מהבקשות הפופולריות ביותר היא בקשת GET, אשר מאפשרת לנו לקבל מידע משרת. אם אנו רוצים לאמת את הזהות שלנו בשרת, ניתן לעשות זאת באמצעות נתינת אישורים בסיסיים כחלק מהבקשה. למאמר זה יש כוונת ללמד אתכם כיצד לשלוח בקשת HTTP עם אימות בסיסי שיטות נפוצות שימוש בשפת ראסט.
-
-## איך ל
-
-ישנן כמה שיטות לבצע אימות בסיסי בתוך סביבת ראסט. בדוגמא זו, ננסה לשלוח בקשת GET עם אימות בשימוש בספריית hyper לצורך תרגול.
-
+## כיצד לבצע את זה:
 ```Rust
-// ייבוא הספרייה הנחוצה
-𝜆𝜆𝜆𝜆 use hyper::Client;
+use reqwest::{Client, Result};
+use reqwest::header::HeaderMap;
 
-fn main() {
-    // הכנסת כתובת URL למשתנה
-    let url = "https://example.com";
-
-    // יצירת אובייקט Client ופניית בקשה GET עם אימות בסיסי
+fn main() -> Result<()> {
     let client = Client::new();
-    let req = client.get(url).header(Authorization, "Basic dXNlcjpwYXNz").body(());
+    let mut headers = HeaderMap::new();
+    
+    // הוספת כותרת מדוך לבקשה
+    headers.insert(
+        header::AUTHORIZATION,
+        header::HeaderValue::from_str("Basic Zm9vOmJhcg==").unwrap(),
+    );
 
-    // שליחת הבקשה וקבלת התגובה
-    let mut res = req.send().unwrap();
+    // שליחת בקשה GET עם אימות בסיסי לאתר כלשהו
+    let response = client
+        .get("https://www.examplewebsite.com")
+        .headers(headers)
+        .send()?;
 
-    // הדפסת הגוף של התגובה לצורך אימות
-    println!("{}", res.text().unwrap());
+    // הפעלת תנאי על הקוד התגובה והדפסת התוצאה
+    if response.status().is_success() {
+        println!("Response Successful");
+    } else {
+        println!("{}", response.status());
+    }
+
+    Ok(())
 }
 ```
 
-תוצאה:
-```
-response body
-```
+## כיצד זה עובד?
+HTTP נוצר כדי לאפשר לאתרים ושירותים שונים לתקשר זה עם זה ולהעביר מידע ביניהם. תהליך האימות הבסיסי מאפשר לך לנצל את התקשורת הנתמכת ברשת HTTP כדי לגשת למידע בצורה מאובטחת יותר.
 
-## להרחיב
-
-בדוגמא זו, אנו משתמשים בספריית hyper כדי להתחבר לשרת עם בקשת GET אשר מכילה אימות בסיסי. נוסף לכך, אנו גם משתמשים בפניית בקשה עם כתובת URL ישירות, ולא באמצעות יצירת אובייקט Request נפרד. כאשר אנו משתמשים בפונקציה `.header()` כדי להוסיף אימות בסיסי לבקשה, נפריד את הנתונים הרלוונטים עם נקודתייים
+## ראה גם:
+- [מסמכי הנייד של גרם](https://docs.rs/reqwest/0.11.1/reqwest/)
+- [הסבר על Authorization אינטרנטי](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)

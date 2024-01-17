@@ -10,42 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+# Cosa e Perché?
 
-Se stai sviluppando un'applicazione che coinvolge date, potresti aver bisogno di calcolare una data futura o passata per mostrare informazioni rilevanti agli utenti. In questo articolo, vedremo come utilizzare il linguaggio di programmazione Kotlin per eseguire questo tipo di calcoli in modo semplice ed efficiente.
+La funzione di calcolo della data nel futuro o nel passato è un'operazione comune nella programmazione. Permette ai programmatori di ottenere una data specifica in base ad un determinato numero di giorni, settimane o mesi in avanti o indietro. Questa funzione è utile in situazioni come pianificazione di eventi futuri o gestione delle scadenze dei progetti.
 
-## How To
+# Come fare:
 
-Per calcolare una data futura o passata in Kotlin, possiamo utilizzare la classe `Calendar` della libreria standard. Vediamo un esempio di come calcolare una data futura di un anno a partire dalla data corrente:
+Per calcolare una data nel futuro o nel passato in Kotlin, è possibile utilizzare la funzione `add` della classe `Calendar`. Di seguito è presente un esempio di codice che calcola la data di oggi e la data tra tre mesi:
 
 ```Kotlin
-// Ottieni la data corrente
 val today = Calendar.getInstance()
+val futureDate = today.clone() as Calendar
+futureDate.add(Calendar.MONTH, 3)
 
-// Aggiungi un anno
-today.add(Calendar.YEAR, 1)
-
-// Ottieni la nuova data
-val futureDate = today.time
-
-// Stampa il risultato
-println("Data futura: $futureDate")
+println("Oggi è il ${today.get(Calendar.DAY_OF_MONTH)}/${today.get(Calendar.MONTH)}/${today.get(Calendar.YEAR)}")
+println("La data tra tre mesi sarà il ${futureDate.get(Calendar.DAY_OF_MONTH)}/${futureDate.get(Calendar.MONTH)}/${futureDate.get(Calendar.YEAR)}")
+```
+Output:
+```
+Oggi è il 21/9/2021
+La data tra tre mesi sarà il 21/12/2021
 ```
 
-In questo esempio, stiamo ottenendo la data corrente utilizzando il metodo `getInstance()` della classe `Calendar`. Quindi, utilizziamo il metodo `add()` per aggiungere un anno alla data corrente e ottenere la nuova data. Infine, utilizziamo il metodo `time` per convertire la data in un oggetto `Date`. Il risultato verrà stampato nella console come una stringa.
+# Approfondimento:
 
-Possiamo anche calcolare una data passata utilizzando il metodo `add()` con un valore numerico negativo, come ad esempio `-1` per sottrarre un anno. Inoltre, possiamo utilizzare altri campi come `Calendar.MONTH` o `Calendar.DAY_OF_MONTH` per aggiungere o sottrarre rispettivamente mesi o giorni alla data.
+**Contesto storico:** In passato, il calcolo di una data nel futuro o nel passato era molto più complesso e richiedeva l'utilizzo di algoritmi complessi. Con l'avvento della programmazione e dei linguaggi di programmazione ad alto livello come Kotlin, è diventato molto più semplice e rapido eseguire questa operazione.
 
-## Deep Dive
+**Alternative:** Oltre all'utilizzo della funzione `add` della classe `calendar`, è possibile utilizzare la libreria esterna `Joda-Time` oppure la nuova API `java.time` introdotta in Java 8 per il calcolo di date nel futuro o nel passato.
 
-La classe `Calendar` offre molti altri metodi utili per lavorare con le date, come ad esempio `set()`, che ci consente di impostare una data specifica, e `get()`, che ci permette di ottenere il valore di un campo di una data. Possiamo anche utilizzare la classe `SimpleDateFormat` per formattare una data specifica in una stringa secondo un determinato pattern.
+**Dettagli di implementazione:** La funzione `add` accetta due parametri: il primo è il campo di data (giorno, mese o anno) da modificare e il secondo è il valore da aggiungere. Ad esempio, `add(Calendar.MONTH, 3)` aggiunge tre mesi alla data corrente. Inoltre, è possibile utilizzare valori negativi per ottenere date nel passato.
 
-Inoltre, la libreria standard di Kotlin offre la classe `LocalDate` per la gestione delle date senza considerare il fuso orario, e la classe `ZonedDateTime` per rappresentare una data e un'ora con il fuso orario incluso.
+# Vedi anche:
 
-In generale, quando si lavora con le date in Kotlin, è importante tenere conto dei possibili errori legati ai fusi orari e alle diverse convenzioni sulle date nei diversi paesi.
-
-## See Also
-
-- Documentazione ufficiale di Kotlin sulla classe `Calendar`: [https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.time/java.util.-calendar/](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.time/java.util.-calendar/)
-- Tutorial su come lavorare con date in Kotlin: [https://www.tutorialspoint.com/kotlin/kotlin_date_time.htm](https://www.tutorialspoint.com/kotlin/kotlin_date_time.htm)
-- Articolo su come gestire fusi orari e date in Kotlin: [https://medium.com/@dbottillo/kotlin-dates-managing-time-in-a-multi-platform-way-5b8fbbb2a5e2](https://medium.com/@dbottillo/kotlin-dates-managing-time-in-a-multi-platform-way-5b8fbbb2a5e2)
+- Documentazione ufficiale di Kotlin sulle funzioni di manipolazione della data: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.time/-calendar/add.html
+- Documentazione di Java sulle funzioni di manipolazione della data: https://docs.oracle.com/javase/8/docs/api/java/util/Calendar.html#add-int-int-
+- Tutorial su come utilizzare la funzione `add` in Kotlin: https://www.baeldung.com/kotlin/date-time-api

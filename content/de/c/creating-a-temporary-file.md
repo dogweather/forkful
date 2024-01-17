@@ -1,7 +1,7 @@
 ---
-title:                "Ein temporäres Datei erstellen"
-html_title:           "C: Ein temporäres Datei erstellen"
-simple_title:         "Ein temporäres Datei erstellen"
+title:                "Erstellen einer temporären Datei"
+html_title:           "C: Erstellen einer temporären Datei"
+simple_title:         "Erstellen einer temporären Datei"
 programming_language: "C"
 category:             "C"
 tag:                  "Files and I/O"
@@ -10,36 +10,62 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
-Warum sollte man sich überhaupt die Mühe machen, eine temporäre Datei mit C zu erstellen? Nun, temporäre Dateien sind nützliche Werkzeuge, um Daten zwischen verschiedenen Programmen oder Prozessen auszutauschen. Sie dienen auch als vorübergehender Speicher, um Daten zu speichern, die später wieder gelöscht werden sollen.
+# Was & Warum?
 
-## Wie es geht
-Um eine temporäre Datei mit C zu erstellen, müssen wir die Standardbibliothek `stdio.h` einbinden und die Funktion `tmpfile()` verwenden. Hier ist ein Beispielcode:
+Temporäre Dateien sind Dateien, die von Programmen erstellt werden, um vorübergehende Daten zu speichern. Programmierer nutzen sie oft, um Zwischenergebnisse oder temporäre Variablen zu speichern. Diese Dateien werden normalerweise gelöscht, wenn das Programm beendet wird.
+
+# Wie geht's weiter?
+
+Die Erstellung einer temporären Datei ist relativ einfach. Der folgende Code zeigt, wie dies in C gemacht werden kann:
 
 ```C
-#include<stdio.h>
+#include <stdio.h>
+#include <stdlib.h>
 
-int main()
-{
-    FILE *temp_file;
-    temp_file = tmpfile();
-    if (temp_file == NULL)
-    {
-        printf("Fehler beim Erstellen der temporären Datei!");
+int main() {
+    // temporäre Datei erstellen
+    FILE *tempFile = tmpfile();
+
+    // Überprüfen, ob die Datei erfolgreich erstellt wurde
+    if (tempFile == NULL) {
+        printf("Fehler beim Erstellen der temporären Datei\n");
         return 1;
     }
-    printf("Temporäre Datei erfolgreich erstellt!");
+
+    // Schreibzugriff auf die Datei
+    fprintf(tempFile, "Das ist eine Testdatei\n");
+    fprintf(tempFile, "Sie wird bald gelöscht\n");
+
+    // Schließen und löschen der temporären Datei
+    fclose(tempFile);
+
+    // Ausgabe der Datei
+    printf("Inhalt der temporären Datei:\n");
+    system("cat /tmp/tmp*");
+
     return 0;
 }
 ```
 
-Hier verwenden wir die `tmpfile()` Funktion, um eine neue temporäre Datei zu erstellen und weisen sie der Variable `temp_file` zu. Dann überprüfen wir, ob die Datei erfolgreich erstellt wurde und geben entweder eine Fehlermeldung oder eine Bestätigung aus. Vergiss nicht, die temporäre Datei zu schließen und zu löschen, wenn du sie nicht mehr benötigst.
+Der oben stehende Code erstellt eine temporäre Datei mit Hilfe der Funktion `tmpfile()` aus der Standardbibliothek `stdio.h`. Anschließend wird die Datei mit `fprintf()` beschrieben und nach Beendigung des Programms über die Funktion `fclose()` gelöscht.
 
-## Tiefer Einblick
-Um besser zu verstehen, wie die `tmpfile()` Funktion funktioniert, werfen wir einen kurzen Blick auf den Prozess der Erstellung einer temporären Datei. C verwendet intern eine spezielle Struktur, um temporäre Dateien zu erstellen und zu verwalten. Diese Struktur speichert Informationen über die Daten und den Speicherort der temporären Datei.
+Wenn das Programm erfolgreich ausgeführt wird, wird der Inhalt der temporären Datei mit dem Befehl `cat` angezeigt. Der Output sollte folgendermaßen aussehen:
 
-Die `tmpfile()` Funktion erstellt dann eine temporäre Datei in einem temporären Ordner auf deinem System. Der genaue Speicherort hängt von deinem Betriebssystem und der Konfiguration ab. Sobald die Datei geschlossen oder das Programm beendet wird, wird sie automatisch gelöscht.
+```
+Inhalt der temporären Datei:
+Das ist eine Testdatei
+Sie wird bald gelöscht
+```
 
-## Siehe auch
-* Mehr über temporäre Dateien in C erfahren: https://www.geeksforgeeks.org/temporary-files-in-c-programming/
-* Weitere Funktionen in `stdio.h`: https://www.tutorialspoint.com/c_standard_library/stdio_h.htm
+# Tiefere Einblicke
+
+Die Verwendung von temporären Dateien ist eine häufig verwendete Methode in der Programmierung. Sie werden oft als Alternative zu anderen Speicherungen wie z.B. in Arrays oder Variablen verwendet. Zusätzlich dienen sie auch als eine Art Sicherungskopie für Daten, die während der Ausführung des Programms nicht benötigt werden.
+
+Die Funktion `tmpfile()` wird seit der Version C89 im Standard der Programmiersprache C aufgeführt. Es gibt jedoch auch andere Methoden, um temporäre Dateien zu erstellen. Zum Beispiel kann man die Funktion `mkstemp()` verwenden, die mehr Kontrolle über den Dateinamen bietet.
+
+Es ist wichtig, die erstellten temporären Dateien ordnungsgemäß zu schließen und zu löschen, um Speicherlecks oder ungewollte Speicherplatzbelegungen zu vermeiden.
+
+# Siehe auch
+
+- [C-Befehlsreferenz für tmpfile()](http://www.cplusplus.com/reference/cstdio/tmpfile/)
+- [Alternative: mkstemp() Funktion](http://www.cplusplus.com/reference/cstdlib/mkstemp/)

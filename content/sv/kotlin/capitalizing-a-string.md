@@ -1,7 +1,7 @@
 ---
-title:                "Konvertera en sträng till versaler"
-html_title:           "Kotlin: Konvertera en sträng till versaler"
-simple_title:         "Konvertera en sträng till versaler"
+title:                "Stavigering av en sträng"
+html_title:           "Kotlin: Stavigering av en sträng"
+simple_title:         "Stavigering av en sträng"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Strings"
@@ -10,31 +10,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
-Har du någonsin behövt ändra en sträng så att varje ord börjar med en stor bokstav? Det kan vara en ansträngande uppgift, men med Kotlin kan du enkelt utföra denna uppgift med hjälp av en inbyggd funktion.
+## Vad och varför?
+Att "kapitalisera" en sträng i programmering betyder att göra om alla bokstäver till versaler, eller stora bokstäver. Detta kan göras av olika skäl, bland annat för att förbättra läsbarheten eller för att matcha en gemensam standard för strängar. 
 
-## Hur man gör
+## Hur göra:
+Detta kan göras enkelt i Kotlin med hjälp av den inbyggda funktionen "capitalize()". Detta funktion tar en sträng som argument och returnerar en ny sträng med alla bokstäver som versaler. Nedan följer ett exempel på hur man kan använda denna funktion:
+
 ```Kotlin
-// Skapa en sträng
-val sträng = "detta är en sträng som ska ändras"
+val str = "hej världen"
+val capitalizedStr = str.capitalize()
 
-// Använd funktionen "capitalize" för att ändra strängen
-val nySträng = sträng.capitalize()
-
-// Skriv ut den nya strängen
-println(nySträng)
-
-// Output: Detta är en sträng som ska ändras
+println(capitalizedStr) // Skriver ut "Hej världen"
 ```
 
-## Deep Dive
-Funktionen "capitalize" finns tillgänglig för alla strängar i Kotlin och används för att konvertera den första bokstaven i varje ord till en stor bokstav. Om strängen redan har en stor bokstav i början av ett ord, kommer den att förbli oförändrad. Om ett ord har en blandning av både små och stora bokstäver i början, kommer endast den första bokstaven att ändras till en stor bokstav.
+## Djupdykning:
+Kapitalisering av strängar har funnits sedan tidiga programmeringsspråk och har använts för att göra det möjligt att skapa "enhetslig kod". Innan strängar skulle matas in för hand, vilket kunde leda till stavfel och varierande capitalisering. Idag finns det alternativ till att använda "capitalize()" i Kotlin, till exempel att använda reguljära uttryck eller skapa en egen funktion för capitalisering. När man förstår hur en sträng är uppbyggd är det också möjligt att implementera en egen funktion för kapitalisering.
 
-En annan användbar funktion för att ändra storlek på bokstäver är "decapitalize". Denna funktion gör motsatsen och omvandlar den första bokstaven i varje ord till en liten bokstav.
-
-Du kan också ange en parametrar för att specificera vilka tecken som ska vara med i konverteringen. Till exempel kan du bara ändra storleken på bokstäverna i ett specifikt intervall i en sträng.
-
-## Se även
-- [Officiell Kotlin dokumentation för funktionen capitalize](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/capitalize.html)
-- [Officiell Kotlin dokumentation för funktionen decapitalize](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/decapitalize.html)
-- [Mer om grundläggande strängoperationer i Kotlin](https://kotlinlang.org/docs/reference/basic-types.html#strings)
+## Se även:
+- Kotlin Dokumentation: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/capitalize.html
+- Reguljära uttryck för strängmanipulation: https://www.regular-expressions.info/index.html
+- Mer om strängar i Kotlin: https://kotlinlang.org/docs/reference/basic-types.html#strings

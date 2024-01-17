@@ -1,7 +1,7 @@
 ---
-title:                "yamlを使ったプログラミング"
-html_title:           "Elm: yamlを使ったプログラミング"
-simple_title:         "yamlを使ったプログラミング"
+title:                "「Yamlを使う」"
+html_title:           "Elm: 「Yamlを使う」"
+simple_title:         "「Yamlを使う」"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Data Formats and Serialization"
@@ -10,49 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜYAMLを使うのか
+## これは何というものか？
 
-YAMLは、データベースや設定ファイルなどの構造化されたデータを表現するための人間にも読みやすい形式です。 Elmに組み込まれたYAMLパーサーを使うことで、データを簡単に読み込み、操作することができます。
+YAMLとは、人間が読みやすい形式でデータを表現するための言語です。プログラマーは、YAMLを使用してコンフィグファイルやデータ処理に関する情報を整理、保存、共有することができます。
 
-## 使い方
-
-まず、YAMLパーサーをインストールします。Elmの依存パッケージを管理する `elm.json` ファイルに、以下のような行を追加します。
+## 使い方：
 
 ```Elm
-"dependencies": {
-   "elm-explorations/yaml": "1.0.0 <= v < 2.0.0"
-}
+-- 例1：コンフィグファイルを読み込む
+import Yaml.Decode as Decode
+
+type alias Config =
+  { username : String
+  , password : String
+  }
+
+config : Decode.Decoder Config
+config =
+  Decode.succeed Config
+    |> Decode.required "username" Decode.string
+    |> Decode.required "password" Decode.string
+
+loadConfig : String -> Result String Config
+loadConfig filePath =
+  Decode.decodeString config filePath
+
+-- 例2：データをYAML形式で保存する
+import Yaml.Encode as Encode
+
+data : List String
+data =
+  ["apple", "banana", "orange"]
+
+encodeData : String
+encodeData =
+  Encode.encode 2 data
+
+-- 出力：
+-- "- apple
+--   - banana
+--   - orange"
+
 ```
 
-次に、`Yaml.Document`モジュールをインポートし、 `decodeString`関数を使ってYAMLデータをデコードします。
+## より詳しく：
 
-```Elm
-import Yaml.Document
+YAMLは、XMLやJSONと同様に、データの構造化と交換を目的として作られました。XMLよりもヒューマンリーダブルな構文を持ち、JSONよりもさらに簡潔にデータを表現することができます。代替手段として、XMLやJSONを使用することもできますが、YAMLはデータの記述をよりシンプルにすることができます。また、Elm以外にも、PythonやRubyなどでも使用することができます。
 
-yamlString = "{ key1: value1, key2: value2 }"
+## 関連情報を確認する：
 
-decodedData = Yaml.Document.decodeString yamlString
-```
-
-YAMLデータは、`Result.Waitfor`型で返ってきます。 `Result.Waitfor`は値を一つだけ持ち、成功した場合はその値を、失敗した場合はエラーメッセージを保持します。 `case`式を使って結果を処理します。
-
-```Elm
-case decodedData of
-    Ok result -> 
-        -- 成功した場合の処理
-        result
-    Err err ->
-        -- エラーが発生した場合の処理
-        err
-```
-
-## ディープダイブ
-
-`Yaml.Document`モジュールには、`decodeFile`関数があります。これを使うことで、外部のYAMLファイルを読み込むことができます。また、オプションのパラメータを指定することで、デコードされたデータを具体的な型に変換することもできます。
-
-詳細な情報については、公式ドキュメントを参照してください。
-
-## 参考リンク
-
-- [公式ドキュメント](https://package.elm-lang.org/packages/elm-explorations/yaml/latest/)
-- [YAML言語の公式サイト](https://yaml.org/)
+- Elmの公式ドキュメント: https://elm-lang.org/docs/syntax#yamls
+- YAML公式サイト: https://yaml.org/
+- YAMLスニペット集: https://github.com/kesselborn/elm-yaml-snippets

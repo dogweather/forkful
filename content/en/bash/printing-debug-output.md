@@ -10,38 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-Debugging is an essential part of the coding process, helping developers identify and fix errors in their code. Printing debug output is a useful way to get a closer look at what is happening during program execution, making it easier to troubleshoot and resolve any issues.
+## What & Why?
 
-## How To
-To print debug output in Bash, you can use the `echo` command. This command displays a message on the terminal, which can be useful for debugging purposes. Let's look at an example:
+Debug output, or printing information during the process of writing code, is a way for programmers to track and identify any issues that may arise. By printing out relevant information, programmers can pinpoint where the code is failing and make necessary changes to fix it.
+
+## How to:
+
+To print debug output in Bash, use the `echo` command followed by the information you want to print. For example:
 
 ```Bash
-#!/bin/bash
-# Simple Bash script to demonstrate debug output
-
-# Set debug mode to 1
-DEBUG_MODE=1 
-
-# Print debug output if DEBUG_MODE is set to 1
-if [ $DEBUG_MODE -eq "1" ]; then
-  echo "Debug mode is ON"
-fi
-
-# Run the rest of the script
-echo "Welcome to my program!"
+echo "Debug output: This is the value of x: $x"
 ```
 
-In the above code, we have set a variable `DEBUG_MODE` to 1, indicating that debug mode is on. If the condition is true, the `echo` command will print the message `Debug mode is ON` on the terminal. This can be particularly useful when you have large and complex scripts, as it allows you to track the execution and pinpoint any issues.
+This will print out the value of the variable `x`, allowing you to see what the current value is and if it matches your expectations.
 
-## Deep Dive
-In Bash, you can also use the `set -x` command to enable tracing mode, which will print out each command before it is executed. This can be even more useful for debugging as it gives you a closer look at the sequence of commands being executed. To turn off tracing mode, you can use the `set +x` command.
+You can also use the `-e` flag with `echo` to enable interpretation of backslash escapes, allowing you to print special characters and format your output.
 
-Another helpful tool for printing debug output is the `printf` command, which allows you to format the output in a specific way. This can be helpful when you need to display specific variable values or need to format the output in a particular way for debugging purposes.
+## Deep Dive:
 
-Overall, printing debug output in Bash can significantly aid in troubleshooting and identifying any issues in your code. It allows you to track the execution and get a closer look at what is happening, making the debugging process more efficient.
+Debug output has been an integral part of programming since the early days of computing. In fact, the term "debugging" was coined by computer pioneer Grace Hopper in the 1940s when a moth got trapped in one of the first computers, causing it to malfunction.
 
-## See Also
-- [Bash Debugging Techniques](https://linuxize.com/post/bash-debugging-techniques/)
-- [Bash Scripting Tutorial for Beginners](https://linuxconfig.org/bash-scripting-tutorial-for-beginners)
-- [Debugging Shell Scripts](https://www.tecmint.com/debugging-shell-scripts/)
+There are various alternatives to printing debug output, such as using a debugger tool or logging function. However, printing debug output directly within the code can often be quicker and more convenient.
+
+When implementing debug output, it's important to consider the placement and frequency of the print statements. Too many print statements can clutter the output, while too few may not provide enough information.
+
+## See Also:
+
+- [The History of Debugging](https://www.historyofinformation.com/detail.php?id=3483)
+- [The Importance of Debugging in Programming](https://qarea.com/blog/importance-of-debugging-programming)

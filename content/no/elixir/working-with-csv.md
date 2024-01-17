@@ -1,7 +1,7 @@
 ---
-title:                "Arbeide med csv"
-html_title:           "Elixir: Arbeide med csv"
-simple_title:         "Arbeide med csv"
+title:                "Å jobbe med csv"
+html_title:           "Elixir: Å jobbe med csv"
+simple_title:         "Å jobbe med csv"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Data Formats and Serialization"
@@ -10,30 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hvorfor
-CSV (Comma-Separated Values) er et vanlig filformat for å lagre og utveksle data, spesielt i databaser og regneark. Det er nyttig for å organisere store mengder informasjon og kan være en effektiv måte å manipulere data på. Elixir har innebygde funksjoner for å håndtere CSV, noe som gjør det til et nyttig verktøy for alle som jobber med informasjonsbehandling eller dataanalyse.
+## Hva og Hvorfor?
+CSV står for Comma Separated Values og er en vanlig måte å organisere og lagre data på i tekstfiler. Programmører bruker CSV-filer for å lagre og arbeide med store mengder data på en enkel og strukturert måte. Dette gjør det enklere å importere og eksportere data til og fra ulike programmer og plattformer.
 
-# Hvordan
-For å lese en CSV-fil i Elixir, kan du bruke funksjonen `File.stream!` og `CSV.decode`. Først må du åpne CSV-filen og lagre den i en variabel:
+## Slik gjør du:
+I Elixir kan du arbeide med CSV-data ved å bruke funksjoner fra standardbiblioteket ```File```, ```CSV``` og ```Stream```. For eksempel kan du lese en CSV-fil ved å bruke ```File.stream!/2``` og deretter manipulere dataene ved hjelp av ```Stream.map/2```. Her er et eksempel på hvordan du kan skrive om hver rad i en CSV-fil til en liste i Elixir:
 
-```elixir
-file = File.stream!("data.csv") 
+```
+file_path = "min_fil.csv"
+
+File.stream!(file_path)
+|> CSV.decode()
+|> Stream.map(&IO.inspect/1)
+|> Stream.run()
 ```
 
-Deretter bruker du `CSV.decode` for å tolke filen som en CSV:
+Dette vil ta hver rad i filen og skrive den ut til konsollen som en liste. Du kan også bruke funksjonene ```CSV.encode/1``` og ```File.write!/2``` for å skrive data til en CSV-fil.
 
-```elixir
-CSV.decode(file, headers: true, trim: true) 
-```
+## Dypdykk:
+CSV er et populært filformat i dataverdenen og har vært i bruk siden 1972. Det finnes mange forskjellige måter å arbeide med CSV-data på, og Elixir tilbyr en enkel og effektiv måte å gjøre det på. Alternativer til Elixir inkluderer programmeringsspråk som Python og R, som også har biblioteker for å håndtere CSV-data.
 
-Her har vi satt `headers:` til `true` for å inkludere kolonnenavn, og `trim:` til `true` for å fjerne eventuelle mellomrom fra dataene. Resultatet vil være en liste med rader, hvor hver rad er en mappe med kolonnenavn som nøkler og tilhørende verdier.
+Når du arbeider med CSV-data i Elixir, bør du være oppmerksom på at funksjonene i standardbiblioteket ikke er ment for store datamengder. Hvis du har store CSV-filer, bør du vurdere å bruke et bibliotek som jobber med dataen i minne, som for eksempel `csv`-pakken fra Hex.
 
-# Dypdykk
-Elixir har også forskjellige funksjoner for å håndtere og manipulere dataene i en CSV-fil. Du kan for eksempel filtrere rader basert på et kriterium, ved hjelp av funksjonen `Enum.filter`. Du kan også sortere rader etter en bestemt kolonne ved å bruke `Enum.sort_by`.
+## Se også:
+Her er noen ressurser for å lære mer om å arbeide med CSV i Elixir:
 
-Elixir tilbyr også en ekstra `CSV.encode` funksjon for å skrive data til en CSV-fil. Du kan bruke `Enum.join` for å kombinere dataene i den ønskede CSV-formatet, og deretter bruke `File.write` for å skrive dataene til en ny fil.
-
-# Se også
-- [Offisiell Elixir dokumentasjon for CSV](https://hexdocs.pm/elixir/CSV.html)
-- [Elixir School tutorial om CSV](https://elixirschool.com/lessons/specifics/csv/)
-- [CSV bibliotek for Elixir](https://github.com/beatrichartz/csv)
+- [Elixir Standardbiblioteket](https://hexdocs.pm/elixir/Kernel.html#CSV)
+- [`csv`-pakken fra Hex](https://hex.pm/packages/csv)
+- [Den offisielle CSV-spesifikasjonen](https://tools.ietf.org/html/rfc4180)

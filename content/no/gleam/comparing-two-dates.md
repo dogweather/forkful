@@ -1,7 +1,7 @@
 ---
-title:                "Sammenligner to datoer"
-html_title:           "Gleam: Sammenligner to datoer"
-simple_title:         "Sammenligner to datoer"
+title:                "Sammenligne to datoer"
+html_title:           "Gleam: Sammenligne to datoer"
+simple_title:         "Sammenligne to datoer"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Dates and Times"
@@ -10,41 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hva & Hvorfor?
+Sammenligning av to datoer er en vanlig oppgave for utviklere for å håndtere dato- og tidsdata på en nøyaktig og effektiv måte. Dette kan være nyttig for å sortere og filtrere data, eller for å beregne tidsintervaller og forfallsdatoer. Det er også en viktig del av å løse problemer og feil knyttet til tidsformater og tidssoner.
 
-Sammenligning av datoer er en vanlig oppgave i programmering. Enten du jobber med å sortere data eller filtrere ut bestemte tidsperioder, er det viktig å kunne sammenligne datoer på en effektiv måte. I Gleam kan du gjøre dette ved å bruke innebygde funksjoner og metoder.
-
-## Slik gjør du det
-
-Du kan sammenligne to datoer ved å bruke `DateTime.compare()`-funksjonen i Gleam. Denne funksjonen tar inn to datoer som argumenter og returnerer en verdi som sier om den første datoen er før, lik eller etter den andre datoen. La oss se på et eksempel:
+# Hvordan:
+Gleam tilbyr ulike funksjoner og metoder for å sammenligne to datoer. Her er noen eksempler på hvordan du kan gjøre det:
 
 ```Gleam
-import DateTime
+import gleam/time
 
-let date1 = DateTime.from_string("2021-06-01")
-let date2 = DateTime.from_string("2021-05-01")
+fremtidig_dato = time.DateTime.new(2022, 05, 15)
+dagens_dato = time.now()
 
-let result = DateTime.compare(date1, date2)
+gleam/time.compare(dagens_dato, fremtidig_dato) // Output: time.Order.LessThan
 
-pub fn compare_dates() {
-  case result {
-    LT -> println("Date 1 is before date 2")
-    EQ -> println("Date 1 is equal to date 2")
-    GT -> println("Date 1 is after date 2")
-  }
-}
+gleam/time.difference(dagens_dato, fremtidig_dato, "days") // Output: -349
 ```
 
-I dette eksempelet bruker vi `DateTime.from_string()`-funksjonen for å konvertere strenger til datoer. Deretter sammenligner vi de to datoene ved hjelp av `DateTime.compare()`-funksjonen og skriver ut en passende melding basert på resultatet.
+# Dykk dypere:
+Mens datostyring er viktig for de fleste programmer, har det vært et konstant problem for programmerere å håndtere dato- og tidsdata riktig. Dette skyldes hovedsakelig ulike tidsstandarder og datomønstre som brukes over hele verden. Alternativer til Gleam for dato-og klokkeslett sammenligning inkluderer biblioteker som Moment.js og Luxon.
 
-## Dypdykk
+Gleam benytter seg av ISO 8601-standard for dato- og tidsformater, og implementerer funksjoner som gjør det enkelt å manipulere og sammenligne datoer og klokkeslett.
 
-For å forstå hvordan Gleam sammenligner datoer, er det nyttig å vite om `FromDate`- og `ToDate`-protokollene. Disse protokollene lar oss konvertere en `DateTime`-verdi til en `Date`-verdi og vice versa. Dette betyr at vi kan bruke metoder som `compare()` til å sammenligne datoer på en enkel måte.
-
-Et annet viktig poeng å merke seg er at `DateTime.compare()`-funksjonen også tar hensyn til tidsforskjeller når den sammenligner to datoer. Dette betyr at selv om to datoer kan virke like på overflaten, kan den ene være litt senere på dagen, og derfor bli regnet som "etter" den andre datoen.
-
-## Se også
-
-- [Gleam dokumentasjon for DateTime](https://gleam.run/docs/stdlib/datetime)
-- [Tutorial for å jobbe med datoer og tid i Gleam](https://gleam.run/news/time)
-- [GitHub repository for Gleam](https://github.com/gleam-lang/gleam)
+# Se også:
+- Offisiell Gleam dokumentasjon for ```gleam/time``` biblioteket: https://gleam.run/modules/time
+- ISO 8601-standard: https://www.iso.org/iso-8601-date-and-time-format.html

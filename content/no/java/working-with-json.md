@@ -10,64 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
-Har du noen gang ønsket å kommunisere data på en enkel og effektiv måte mellom klient og server? JSON (JavaScript Object Notation) er et populært format for å gjøre nettopp det. Det er enkelt å lese og skrive, og blir stadig mer brukt i moderne webutvikling.
+Hva & Hvorfor?
+Å jobbe med JSON er å behandle data ved hjelp av et format kalt JavaScript Object Notation (JSON). Dette blir ofte brukt for å utveksle data mellom forskjellige systemer og programmeringsspråk. Programmerere bruker JSON fordi det er enklere å lese og skrive enn andre dataformater, som XML.
 
-## Hvordan
-For å arbeide med JSON i Java, trenger du et bibiliotek kalt "json.jar". Dette kan lastes ned fra nettet og må deretter legges til i prosjektet ditt som en ekstern JAR-fil. Etter dette kan du bruke følgende kode for å lese inn JSON-data fra en fil og skrive den ut på konsollen:
-
-```Java
-try {
-    // Leser inn JSON-data fra fil
-    FileReader file = new FileReader("data.json");
-    // Bruker JSON-biblioteket til å parse dataene
-    JSONParser parser = new JSONParser();
-    // Lagrer dataene i et objekt
-    Object obj = parser.parse(file);
-    // Konverterer objektet til en JSON-objekt
-    JSONObject jsonObject = (JSONObject) obj;
-    // Skriver ut dataene på konsollen
-    System.out.println(jsonObject);
-} catch (Exception e) {
-    e.printStackTrace();
-}
-```
-
-Dette vil gi følgende utskrift:
-
-``` 
-{"navn":"Per", "alder": 30, "hobbyer":["fotball", "musikk"]}
-```
-
-For å skrive til en JSON-fil, kan du bruke følgende kode:
+Hvordan:
+For å jobbe med JSON i Java, må du bruke et bibliotek som heter Jackson. Først må du legge til denne avhengigheten i pom.xml-filen din: 
 
 ```Java
-// Oppretter et JSON-objekt
-JSONObject jsonObject = new JSONObject();
-// Legger til data
-jsonObject.put("navn", "Lisa");
-jsonObject.put("alder", 25);
-jsonObject.put("hobbyer", "matlaging");
-// Skriver ut til konsollen
-System.out.println(jsonObject);
-// Skriver til fil
-try (FileWriter file = new FileWriter("ny_data.json")) {
-    file.write(jsonObject.toJSONString());
-} catch (Exception e) {
-    e.printStackTrace();
-}
+<!-- Jackson -->
+<dependency>
+  <groupId>com.fasterxml.jackson.core</groupId>
+  <artifactId>jackson-databind</artifactId>
+  <version>2.11.4</version>
+</dependency>
 ```
 
-Dette vil skrive følgende JSON-innhold til filen "ny_data.json":
+Deretter kan du bruke kode som dette for å mappe JSON-data til Java-objekter:
 
-``` 
-{"navn":"Lisa", "alder": 25, "hobbyer":"matlaging"}
+```Java
+ObjectMapper mapper = new ObjectMapper();
+MyObject obj = mapper.readValue(jsonString, MyObject.class);
 ```
 
-## Dypdykk
-Nå som du vet hvordan du kan lese og skrive JSON-data i Java, kan du også utforske mer avanserte funksjoner som å endre eller legge til data, eller å bruke forskjellige typer datastrukturer som arrays og nestede objekter. Du kan også lese mer om validering av JSON-data og håndtering av eventuelle feil og unntak.
+Hvis du vil lage JSON fra et Java-objekt, kan du gjøre dette:
 
-## Se også
-- [Java-bibliotek for JSON](https://code.google.com/archive/p/json-simple/downloads)
-- [Offisiell nettside for JSON](https://www.json.org/json-en.html)
-- [Tutorial: Working with JSON in Java](https://www.tutorialspoint.com/json/json_java_example.htm)
+```Java
+ObjectMapper mapper = new ObjectMapper();
+MyObject obj = new MyObject();
+String jsonString = mapper.writeValueAsString(obj);
+```
+
+Dypdykk:
+JSON ble opprinnelig utviklet i 1999 som en enklere måte å strukturere data på sammenlignet med XML. Det finnes også andre alternativer for å behandle data, som for eksempel CSV og YAML. JSON har blitt et populært valg fordi det er enklere å lese og skrive, og det er godt støttet av de fleste programmeringsspråk og systemer.
+
+Se også:
+- Jackson: https://github.com/FasterXML/jackson
+- Baeldung sine Jackson tutorials: https://www.baeldung.com/jackson

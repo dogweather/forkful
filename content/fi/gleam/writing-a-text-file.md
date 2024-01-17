@@ -1,7 +1,7 @@
 ---
-title:                "Tiedostotiedoston kirjoittaminen"
-html_title:           "Gleam: Tiedostotiedoston kirjoittaminen"
-simple_title:         "Tiedostotiedoston kirjoittaminen"
+title:                "Tekstitiedoston kirjoittaminen"
+html_title:           "Gleam: Tekstitiedoston kirjoittaminen"
+simple_title:         "Tekstitiedoston kirjoittaminen"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Files and I/O"
@@ -10,42 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mikä & Miksi?
 
-Miksi kirjoittaa tekstitiedosto? Tekstitiedostojen kirjoittaminen on hyödyllinen taito, joka voi auttaa sinua tallentamaan ja jakamaan tietoa tietokoneen kanssa.
+Tekstitiedoston kirjoittaminen on yksinkertainen ja tärkeä osa ohjelmointia. Se tarkoittaa tekstin tallentamista tiedostoon tietokoneella, jota voidaan sitten käyttää myöhemmin. Ohjelmoijat tekevät sitä esimerkiksi tallentaakseen käyttäjän tietoja tai tallentaakseen tietoja ohjelman toiminnan aikana.
 
-## Kuinka
+## Miten:
 
-Kirjoittaminen tekstitiedostoja on helppoa Gleamilla. Seuraavassa esimerkissä luodaan uusi tiedosto nimeltä "testi.txt" ja kirjoitetaan siihen muutama rivi tekstiä:
-
-```Gleam
-let tekstitiedosto = File.create("testi.txt")
-File.write(tekstitiedosto, "Tämä on ensimmäinen rivi.")
-File.write(tekstitiedosto, "Tämä on toinen rivi.")
-File.close(tekstitiedosto)
-```
-
-Tämän jälkeen voit avata tiedoston ja nähdä, että sisältö on tallentunut onnistuneesti.
+Gleamilla tekstitiedoston kirjoittaminen on helppoa. Käytä funktiota ```File.write``` ja anna tiedoston nimi ja teksti, jonka haluat tallentaa.
 
 ```Gleam
-let lukija = File.open("testi.txt")
-File.read_all(lukija)
+let texti = "Hei maailma!"
+File.write("tekstitiedosto.txt", texti)
 ```
 
-Tämä tulostaa:
+Tämä koodi luo ```tekstitiedosto.txt``` nimisen tiedoston ja tallentaa siihen tekstin "Hei maailma!".
 
-```
-Tämä on ensimmäinen rivi.
-Tämä on toinen rivi.
-```
+## Syvällisempi sukellus:
 
-Voit myös vaihtoehtoisesti käyttää `File.append`, jos haluat lisätä tekstiä olemassa olevaan tiedostoon sen sijaan, että kirjoitat sen kokonaan uudelleen.
+Tekstitiedoston kirjoittaminen on ollut osa ohjelmointia jo pitkään. Ennen Gleamia, jotkut ohjelmoijat käyttivät C-kielen tiedostokirjastoa, mutta Gleamilla tämä on paljon helpompaa. On myös muita vaihtoehtoisia tapoja tallentaa tietoa, kuten tietokantoihin tai pilvipalveluihin. Tämä voi olla kätevämpiä tietyissä tilanteissa, mutta tekstitiedostoilla on edelleen tärkeä rooli ohjelmoinnissa.
 
-## Syventyvä sukellus
+## Katso myös:
 
-Tekstitiedostojen kirjoittamisessa on monia hienouksia, joita voi oppia kokeilemalla ja tutkimalla Gleam-dokumentaatiota. Jotkut hyödyllisistä toiminnoista ovat esimerkiksi `File.exists?`, joka tarkistaa, onko tiedosto jo olemassa, ja `File.delete`, joka poistaa tiedoston. Lisäksi voit tutkia muita tiedostoon liittyviä toimintoja, kuten `File.copy` ja `File.move`, jotka ovat hyödyllisiä, kun haluat siirtää tai kopioida tiedostoja tietokoneellasi.
+Lisää tietoa Gleamin tiedostokirjoituksesta löydät Gleamin virallisesta dokumentaatiosta: https://gleam.run/stdlib/file.html#write
 
-## Katso myös
-
-- [Gleam-dokumentaatio](https://gleam.run/documentation)
-- [Tekstitiedostojen käsittely Gleamilla](https://gleam.run/documentation/input_and_output#files)
+Toinen hyödyllinen artikkeli Gleamin perusteista löytyy täältä: https://gleam.run/articles/basic/

@@ -10,65 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-Writing to the standard error in Arduino can be useful for debugging and error handling in your program. It allows you to display error messages or other important information to the serial monitor, making it easier to identify and fix any issues in your code.
+Writing to standard error is a way for programmers to communicate important information or error messages to the user during the runtime of a program. This allows for easier troubleshooting and debugging, as it provides real-time feedback on the status of the program.
 
-## How To
+## How to:
 
-To write to the standard error in Arduino, you can use the `Serial.println()` function. This function takes in a string or variable and sends it to the standard error, which can be viewed in the serial monitor.
-
-For example, if you wanted to display an error message, you could write:
-
-```Arduino
-Serial.println("Error: something went wrong");
-```
-
-This will print the message "Error: something went wrong" in the serial monitor.
-
-You can also use this function to display variable values for debugging purposes. For instance, if you have a variable `temperature` that holds the temperature reading from a sensor, you could write:
-
-```Arduino
-Serial.println("Current temperature: " + String(temperature));
-```
-
-This will print "Current temperature: [temperature value]" in the serial monitor.
-
-## Deep Dive
-
-The standard error in Arduino is a stream that is separate from the standard output. This means that you can write to the standard error without affecting the standard output and vice versa. This is useful for differentiating between normal program output and error messages.
-
-You can also use the `Serial.print()` function to write to the standard error. However, this function does not add a new line at the end like `Serial.println()` does. So if you want to go to a new line, you will need to add the `\n` character at the end of your string.
-
-For example:
-
-```Arduino
-Serial.print("Some important info");
-Serial.println("This will be on a new line");
-```
-
-This will output:
+To write to standard error in Arduino, you can use the ```Serial``` object and the ```println()``` function. Simply connect your computer to your Arduino board and open the Serial Monitor. Then, use the ```Serial.println()``` function to print your desired message to the Serial Monitor. Here is a simple example:
 
 ```
-Some important infoThis will be on a new line
+void setup() {
+  Serial.begin(9600); // initialize Serial communication at 9600 bits per second
+}
+
+void loop() {
+  int myNumber = 10;
+  Serial.println("My number is: "); // prints "My number is: " to the Serial Monitor
+  Serial.println(myNumber); // prints the value of myNumber to the Serial Monitor
+  delay(1000); // waits for 1 second before repeating
+}
 ```
 
-To fix this, you can write:
-
-```Arduino
-Serial.print("Some important info\n");
-Serial.println("This will be on a new line");
-```
-
-This will output:
+The output in the Serial Monitor will look like this:
 
 ```
-Some important info
-This will be on a new line
+My number is: 
+10
 ```
 
-## See Also
+## Deep Dive:
 
-- [Arduino Reference - Serial](https://www.arduino.cc/reference/en/language/functions/communication/serial/)
-- [Serial.println vs Serial.print](https://www.arduino.cc/reference/en/language/functions/communication/serial/print/)
-- [Debugging Arduino Code using Serial Print](https://create.arduino.cc/projecthub/CircuitDigest/debugging-arduino-code-using-serial-print-debug-mode-8a1b92)
+Writing to standard error has been a common practice among programmers for a long time. In older programming languages, such as C and C++, printing to standard error was the only way to display information during program execution. However, with the advancement of programming languages and development tools, new methods such as logging and debugging have also become popular.
+
+When using ```Serial.println()```, keep in mind that the baud rate (bits per second) needs to match the one set in the Serial Monitor. Otherwise, the output will be garbled or nonexistent.
+
+## See Also:
+
+For more information on writing to standard error in Arduino, you can refer to the official Arduino documentation: https://www.arduino.cc/reference/en/language/functions/communication/serial/println/
+
+If you want to learn more about logging and debugging in Arduino, check out this informative tutorial: https://randomnerdtutorials.com/guide-to-arduino-debugging-methods/

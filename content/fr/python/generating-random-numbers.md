@@ -10,53 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi utiliser des nombres aléatoires?
+## Qu'est-ce que c'est et pourquoi?
+Générer des nombres aléatoires est une pratique courante en programmation qui consiste à générer des nombres aléatoires dans un intervalle spécifié. Les programmeurs le font pour diverses raisons, notamment pour créer des simulations ou des jeux, pour sécuriser des mots de passe et pour tester des algorithmes.
 
-Générer des nombres aléatoires est utile dans de nombreux cas de programmation, tels que la simulation de données, la génération de mots de passe sécurisés ou même dans les jeux. Cela peut également être utile pour tester un programme en lui fournissant différents scénarios aléatoires.
-
-## Comment faire?
-
-Il existe différentes manières de générer des nombres aléatoires en Python, voici quelques exemples :
+## Comment:
+Voici un exemple de code Python pour générer un nombre aléatoire entre 1 et 10 et l'imprimer:
 
 ```Python
-# Méthode 1 : Utiliser le module random pour générer un nombre entier entre 0 et 10
+from random import randint
 
-import random
-
-num = random.randint(0, 10)
-print(num)
-
-# Méthode 2 : Utiliser le module secrets pour générer un nombre entier entre 100 et 200
-
-import secrets
-
-num = secrets.randbelow(101) + 100
-print(num)
-
-# Méthode 3 : Utiliser le module numpy pour générer un nombre décimal entre 0 et 1
-
-import numpy as np
-
-num = np.random.rand()
-print(num)
+nbre_aleatoire = randint(1, 10)
+print(nbre_aleatoire)
 ```
 
 Output:
 
 ```
 7
-187
-0.523619775
 ```
 
-## Approfondissement
+## Plongée en profondeur:
+La génération de nombres aléatoires existe depuis des siècles, avec des méthodes telles que le lancer de dés. En programmation, il existe différentes façons de générer des nombres aléatoires, comme utiliser des algorithmes ou des générateurs pseudo-aléatoires. Il est important de garder à l'esprit que ces nombres ne sont pas vraiment aléatoires, mais ils sont déterministes dans leur nature.
 
-Python utilise un algorithme appelé Mersenne Twister pour générer des nombres aléatoires. Cet algorithme est basé sur des opérations mathématiques complexes et prend comme paramètres une "graine" initiale et une période. La période est le nombre de valeurs différentes que l'algorithme peut générer avant de répéter un nombre. La graine détermine le point de départ du générateur de nombres aléatoires.
-
-Il est également possible de définir une graine manuellement en utilisant la fonction `random.seed()`. Cela peut être utile si vous souhaitez reproduire exactement la même séquence de nombres aléatoires à chaque exécution de votre programme.
-
-## Voir aussi
-
-- La documentation officielle sur les modules random et secrets : https://docs.python.org/fr/3/library/random.html https://docs.python.org/fr/3/library/secrets.html
-- La documentation officielle sur le module numpy : https://numpy.org/doc/
-- Un tutoriel sur la génération de nombres aléatoires en Python : https://realpython.com/python-random/
+## Voir aussi:
+- [Documentation officielle de Python sur la génération de nombres aléatoires](https://docs.python.org/fr/3/library/random.html)
+- [Article Wikipédia sur la génération de nombres aléatoires](https://fr.wikipedia.org/wiki/Nombre_al%C3%A9atoire)
+- [Vidéo YouTube expliquant comment fonctionnent les générateurs pseudo-aléatoires en informatique](https://www.youtube.com/watch?v=GtOt7EBNEwQ)

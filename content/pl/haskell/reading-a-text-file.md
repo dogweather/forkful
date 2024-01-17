@@ -10,40 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co & Dlaczego?
 
-Czy kiedykolwiek zastanawiałeś się, dlaczego niektóre programy potrafią odczytywać pliki tekstowe, podczas gdy inne nie? W tym artykule dowiecie się, jak w języku Haskell odczytać zawartość pliku tekstowego i wykorzystać ją w swoich programach.
+Odczytywanie plików tekstowych to proces czytania zawartości pliku przechowywanego na dysku lub urządzeniu. Programiści często korzystają z tej techniki, aby przetworzyć dane z pliku do programu lub wyświetlić zawartość pliku na ekranie.
 
-## Jak to zrobić
+## Jak to zrobić:
 
-Rozpocznijmy od importu modułu `System.IO`, który umożliwi nam wykorzystanie funkcji do obsługi plików. Następnie stwórzmy funkcję `readFile` i podajmy jako argument ścieżkę do pliku, który chcemy odczytać. Przykładowo:
-
-```Haskell
-import System.IO
-
-main = do
-    contents <- readFile "plik.txt"
-    putStrLn contents
-```
-
-Wywołanie `readFile` zwróci nam zawartość pliku jako pojedynczy napis. Następnie wypisujemy ją na ekran za pomocą funkcji `putStrLn`. Koniec! Nasz program potrafi już czytać pliki tekstowe.
-
-## Głębsze zanurzenie
-
-Oczywiście, możliwości odczytywania plików tekstowych w Haskellu są o wiele większe. Możemy na przykład wczytać zawartość pliku wiersz po wierszu za pomocą funkcji `readFile` i `lines`:
+Sprawanie trzeba, by pobrać odpowiedni moduł biblioteki standardowej w języku Haskell - `System.IO`. Następnie, aby odczytać plik tekstowy używamy funkcji `readFile` i przekazujemy jej ścieżkę do pliku jako argument. Przykładowy kod wyglądać będzie następująco:
 
 ```Haskell
 import System.IO
 
 main = do
-    contents <- readFile "plik.txt"
-    let lines = splitOn "\n" contents
-    mapM_ putStrLn lines
+    content <- readFile "path/to/file.txt"
+    putStr content
 ```
 
-Funkcja `splitOn` pochodzi z modułu `Data.List.Split` i dzieli napis na listę w miejscach, gdzie występuje podany separator (w tym wypadku znak nowej linii). Następnie za pomocą funkcji `mapM_` (odpowiednik funkcji `mapM`, ale nie zwraca wyniku) wypisujemy każdy wiersz na ekran.
+Wynik będzie wypisany na ekranie w postaci zawartości pliku tekstowego.
 
-## Zobacz też
+## Deep Dive:
 
-- [Dokumentacja modułu System.IO](http://hackage.haskell.org/package/base-4.15.0.0/docs/System-IO.html)
-- [Dokumentacja modułu Data.List.Split](http://hackage.haskell.org/package/split-0.2.3.4/docs/Data-List-Split.html)
+Historia odczytywania plików jest długa i sięga początków programowania. Od początku tworzenia komputerów, programiści musieli znaleźć sposoby na przetwarzanie danych przechowywanych na dysku. Alternatywnymi metodami odczytu plików w języku Haskell są funkcje `openFile` i `hGetContents`. Dzięki nim można specyfikować sposób odczytu pliku, na przykład czy plik powinien być otwarty w trybie binarnym czy tekstowym.
+
+Wykorzystanie funkcji `readFile` jest prostym sposobem na odczytywanie plików, ale może być niewystarczające w bardziej złożonych scenariuszach. W takim przypadku warto zapoznać się z dokumentacją `System.IO` w celu znalezienia odpowiednich funkcji do własnego zastosowania.
+
+## Zobacz także:
+
+- Dokumentacja funkcji `readFile` w bibliotece standardowej języka Haskell (link)

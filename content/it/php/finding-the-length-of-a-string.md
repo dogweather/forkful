@@ -10,35 +10,21 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+## Che cos'è e perché?
+La lunghezza di una stringa è il numero di caratteri contenuti all'interno di essa. I programmatori spesso devono trovare la lunghezza di una stringa per poter manipolarla o stamparla correttamente.
 
-Trovarе la lunghezza di una stringa è un'operazione comune nella programmazione e può essere utile per manipolare le stringhe in modi diversi. Conoscere il numero esatto di caratteri in una stringa può semplificare il lavoro di un sviluppatore e aiutare a scrivere codice più efficiente.
-
-## Come Fare
-
-Per trovare la lunghezza di una stringa in PHP è possibile utilizzare la funzione incorporata ```strlen()``` seguita dalla variabile contenente la stringa desiderata.
-
+## Come fare:
+Ecco un esempio di codice in PHP per trovare la lunghezza di una stringa e stamparla:
+```PHP
+$stringa = "Ciao, mondo!";
+echo strlen($stringa);
+// Output: 12
 ```
-<?php
-$stringa = "Questa è una stringa";
-echo strlen($stringa); // output 20
-```
+In questo esempio, utilizziamo la funzione `strlen()` per trovare la lunghezza della stringa. Possiamo anche utilizzare un ciclo for per contare manualmente i caratteri all'interno della stringa.
 
-In questo esempio, la funzione ```strlen()``` restituisce il numero totale di caratteri nella variabile ```$stringa```, inclusi gli spazi bianchi. È importante notare che la funzione conta ogni carattere, compresi gli spazi, i simboli e i caratteri speciali. Anche i caratteri di escape come ```\n``` e ```\t``` vengono considerati come un solo carattere.
+## Approfondimento:
+Questa operazione è molto comune nella programmazione, soprattutto quando si lavora con input dell'utente o dati provenienti da fonti esterne. In passato, era comune utilizzare la funzione `strlen()` per trovare la lunghezza di una stringa, ma con l'avvento di PHP7, è stato introdotto il nuovo operatore `??` che può essere utilizzato per contare il numero di caratteri di una stringa.
 
-## Approfondimento
-
-PHP offre diverse alternative alla funzione ```strlen()``` per ottenere la lunghezza di una stringa. Ad esempio, è possibile utilizzare la funzione ```mb_strlen()``` per ottenere la lunghezza di una stringa mutlibyte, che gestisce correttamente i caratteri speciali di diverse lingue.
-
-Inoltre, è importante ricordare che PHP tratta le stringhe come array di caratteri, quindi è possibile accedere ai singoli caratteri utilizzando gli indici dell'array e quindi utilizzare la funzione ```count()``` per ottenere la lunghezza totale della stringa.
-
-```
-<?php
-$stringa = "Stringa";
-echo count($stringa); // output 7
-```
-
-## Vedi Anche
-
-- [Documentazione PHP su strlen()](https://www.php.net/manual/it/function.strlen.php)
-- [Funzioni incorporate di PHP per le stringhe](https://www.php.net/manual/it/ref.strings.php)
+## Vedi anche:
+- Documentazione ufficiale di PHP sulla funzione `strlen()`: https://www.php.net/manual/en/function.strlen.php
+- Spiegazione dell'operatore `??` nel blog di PHP: https://www.php.net/manual/en/migration70.new-features.php#migration70.new-features.coalesce

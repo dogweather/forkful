@@ -1,7 +1,7 @@
 ---
-title:                "Å jobbe med csv"
-html_title:           "Kotlin: Å jobbe med csv"
-simple_title:         "Å jobbe med csv"
+title:                "Arbeide med csv"
+html_title:           "Kotlin: Arbeide med csv"
+simple_title:         "Arbeide med csv"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Data Formats and Serialization"
@@ -10,51 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hva & Hvorfor?
+Kort sagt, arbeider man med CSV når man trenger å lagre data i tabellform for å kunne dele eller bruke senere. Programmere bruker CSV fordi det er en effektiv måte å organisere og behandle store datamengder på.
 
-Å jobbe med CSV-filer kan være svært nyttig for å håndtere store mengder data på en strukturert måte. Ved å bruke Kotlin kan man effektivt lese, skrive og manipulere CSV-filer, noe som kan spare mye tid og forenkle datahåndteringsprosessen.
-
-## Hvordan
-
-For å jobbe med CSV-filer i Kotlin, trenger du først å importere "kotlinx-io" biblioteket. Deretter kan du bruke følgende kode for å lese data fra en CSV-fil:
-
-```
-import kotlinx.io.core.*
-import kotlinx.serialization.*
-import kotlinx.serialization.csv.*
-
-val csvFile = File("path/to/file.csv")
-val csvContent = csvFile.readText()
-val csv = Csv { delimiter = ';' }
-val csvRecords = csv.readRecords(csvContent)
-```
-
-Dette vil gi deg en liste med rader fra CSV-filen, som hver kan aksesseres ved hjelp av indeksering. For eksempel:
-
-```
-val firstRow = csvRecords[0]
-println(firstRow[1]) // Gir deg andre kolonne av første rad
-```
-
-For å skrive data til en ny CSV-fil, kan du bruke følgende kode:
-
-```
-val newCSVFile = File("path/to/newFile.csv")
-csv.write(newCSVFile) {
-    writeRow("Navn", "Alder")
-    writeRow("Anne", 30)
-    writeRow("Ole", 28)
+## Hvordan:
+```Kotlin
+// For å lese en CSV-fil, bruker man standard library funksjonen readLines() og deler på komma for å få hver verdi som en egen streng.
+val fil = File("data.csv")
+val innhold = fil.readLines()
+innhold.forEach { rad ->
+    val verdier = rad.split(',')
 }
 ```
 
-Dette vil opprette en ny CSV-fil med navn og alder i hver rad.
+```Kotlin
+// For å skrive en CSV-fil, bruker man standard library funksjonen appendText() og kombinerer verdier med komma mellom hver verdi.
+val fil = File("data.csv")
+fil.appendText("navn, alder, yrke")
+var navn = "John"
+var alder = 30
+var yrke = "utvikler"
+fil.appendText("$navn, $alder, $yrke")
+```
 
-## Dypdykk
+## Dypdykk:
+CSV, eller "Comma-Separated Values", er et enkelt filformat som har vært brukt siden 1970-tallet for å lagre tabell-lignende data. Alternativene til CSV kan være mer komplekse filformater som JSON eller XML, men disse kan være unødvendige for mindre datamengder. Når man arbeider med CSV i Kotlin, er det viktig å håndtere eventuelle komplikasjoner som mellomrom, linjeskift eller sitat-tegn i dataene.
 
-Kotlin tilbyr også muligheten til å definere egendefinerte Serializers for komplekse CSV-strukturer. Dette gjøres ved å implementere CsvInput og CsvOutput grensesnittene. Det finnes også flere tredjepartsbiblioteker for å gjøre arbeidet med CSV-filer enda enklere i Kotlin, som for eksempel "Kotlin-CSV" og "Kotlin-Serialization-CSV".
-
-## Se også
-
-- [Kotlinx-io biblotek](https://github.com/Kotlin/kotlinx-io)
-- [Kotlin-CSV tredjepartsbibliotek](https://github.com/doyaaaaaken/kotlin-csv)
-- [Kotlin-Serialization-CSV tredjepartsbibliotek](https://github.com/doyaaaaaken/kotlin-csv/tree/master/kotlinx-serialization-csv)
+## Se også:
+- [https://kotlinlang.org/docs/reference/basic-types.html#string-template](https://kotlinlang.org/docs/reference/basic-types.html#string-template) for informasjon om string templates i Kotlin.
+- [https://try.kotlinlang.org/](https://try.kotlinlang.org/) for å prøve ut Kotlin-kode i nettleseren.
+- [https://www.json.org/json-en.html](https://www.json.org/json-en.html) for informasjon om JSON-filformatet.

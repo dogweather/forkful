@@ -10,34 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-为什么：比较两个日期在日常的编程工作中经常会用到，可以帮助我们判断事件发生的先后顺序。
-##为什么
-比较两个日期在日常的编程工作中经常会用到。它可以帮助我们判断事件发生的先后顺序，从而更好地控制程序的逻辑。
+# 什么和为什么？
+对比两个日期是指将两个日期进行比较，通常是指比较它们的年、月、日或具体时间。程序员这样做是为了在处理日期数据时能够得到精确的结果。
 
-##如何进行比较
-```TypeScript
-// 定义两个日期对象
-let date1: Date = new Date('2021-01-01');
-let date2: Date = new Date('2021-01-05');
+# 怎么做：
+使用TypeScript编写代码：
 
-// 使用getTime()方法获取日期的毫秒数进行比较
-if (date1.getTime() < date2.getTime()) {
-  console.log(`${date1} 在 ${date2} 之前`);
+```
+// 创建两个日期对象
+let date1 = new Date('2021-01-12');
+let date2 = new Date('2021-01-09');
+
+// 比较两个日期，如果date1晚于date2，则返回1，如果相等则返回0，如果date1早于date2，则返回-1
+let result: number = date1.getTime() - date2.getTime();
+if(result > 0) {
+    console.log("日期1晚于日期2");
+} else if (result < 0) {
+    console.log("日期1早于日期2");
 } else {
-  console.log(`${date2} 在 ${date1} 之前`);
+    console.log("两个日期相等");
 }
 ```
-输出：
+
+输出:
+
 ```
-2021-01-01T00:00:00.000Z 在 2021-01-05T00:00:00.000Z 之前
+日期1早于日期2
 ```
 
-##深入了解
-在 TypeScript 中，Date 类型是内置的日期类，可以通过 new Date() 的方式创建日期对象。日期对象中包含了一些常用的方法，如 getTime()、getFullYear()等，可以帮助我们方便地进行日期的比较和操作。
+# 深入了解：
+在编程中，比较日期是为了提高程序的准确性和效率。在历史上，人们使用的日历系统不同，导致日期间的比较非常困难。而现在，我们可以使用计算机语言来比较日期，帮助我们快速地处理日期数据。除了比较两个日期对象之外，我们还可以使用时间戳或日期字符串来比较日期。
 
-另外，我们也可以使用第三方库 Moment.js 来处理日期，它提供了更多的日期操作方法，如比较、格式化等，可以帮助我们更灵活地处理日期数据。
-
- ##参考链接
-- [TypeScript官方文档](https://www.typescriptlang.org/docs/handbook/basic-types.html#date)
-- [Moment.js官方文档](https://momentjs.com/docs/)
-- [TypeScript日期处理示例代码](https://www.tutorialspoint.com/execute_typescript_online.php?PID=0Bw_CjBb95KQMa0Jsb3lpZU9wN3M)
+# 参考资料：
+- [日期函数 - TypeScript](https://www.typescriptlang.org/docs/handbook/dates-and-times.html)
+- [原生JavaScript日期比较的指令](https://www.javatpoint.com/javascript-date-comparison)

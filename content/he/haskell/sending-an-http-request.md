@@ -1,7 +1,7 @@
 ---
-title:                "שליחת בקשת http."
-html_title:           "Haskell: שליחת בקשת http."
-simple_title:         "שליחת בקשת http."
+title:                "שליחת בקשת http"
+html_title:           "Haskell: שליחת בקשת http"
+simple_title:         "שליחת בקשת http"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "HTML and the Web"
@@ -10,39 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## למה
-כרגע, שליחת בקשת HTTP היא חלק בלתי נפרד מהדרכון בתחום התכנות. היא משמשת כדי ליצור תקשורת בין שתי מערכות ולקבל מידע בצורה מהירה ויעילה.
+## מה זה ולמה?
+שליחת בקשת HTTP היא פעולה שמאפשרת לתכנתנים ליצור תקשורת בין יישומים. היא מאפשרת לשלוח בקשות מכלל אינטרנט כמו אינטרנט או ​HTTP
 
-## איך לעשות זאת
-לשלוח בקשת HTTP ב- Haskell ישנם מספר ביטויים שיכולים להיות מועילים:
+כלומר, זהו כלי מועיל לתכנתנים שמאפשר להשאיר את קוד התיקשורת למכונה. זה מאפשר לתכנתנים לפתר את בעיות התקשורת ולתפשר עם קוד אחר.
 
+## איך לעשות זאת?
+הנה דוגמא של שליחת דרך בקשת HTTP בהשתמשות בשפת Haskell.
 ```Haskell
-import Network.HTTP.Simple
+import Network.HTTP
 
--- יצירת בקשת GET פשוטה לאתר
-response <- httpGetRequest "https://example.com"
-
--- שימוש במתודה יחידה כדי לקבל מידע מפורמט JSON
-response <- httpJSONRequest "https://example.com/api/users"
-
--- בדיקה של מצב התקשורת שלנו
-alive <- isAlive "https://example.com"
+main :: IO ()
+main = do
+    response <- simpleHTTP (getRequest "http://google.com")
+    html <- getResponseBody response
+    putStrLn html
+```
+פלט:
+```Haskell 
+<html>...</html>
 ```
 
-* ```httpSimpleRequest``` מאפשר לנו לשלוח בקשות פשוטות ולקבל תגובה בצורה נוחה ומבורכת.
-* ```httpJSONRequest``` מאפשר לנו גם לשלוח בקשות ולקבל מידע מפורמט JSON שנוח לעבוד איתו.
-* ```isAlive``` מאפשר לנו לבדוק את מצב התקשורת שלנו ולהבין האם האתר לא נגיש על ידי המחשב שלנו.
+## נכנסים לעומק
+זה שליחת בקשת HTTP היא כלי שקיים כבר למעלה מז' 30 שנים ומשמש לפתרון בעיות בתגובה של תיקשורת של העץ של המערכת. למעשה, קוד התקשורת הוא הרבה יותר פשוט וקל לתחזר, בעזרת זכרונות כלי הכמלול המכיל בקשת תקשורת.
 
-## עומק בנושא
-כאשר אנחנו שולחים בקשת HTTP, ישנם מספר שלבים שמתרחשים מאחורי הקלעים:
-
-* יצירת חיבור HTTP עם השרת שאנחנו מבקשים ממנו מידע.
-* שליחת הבקשה בצורה של HTTP וקבלת התגובה לחזרה.
-* עיבוד התוצאה המתקבלת והצגתה למשתמש.
-
-כאשר אנחנו עובדים ב-Haskell ישנם ספריות וכלים שיכולים לסייע לנו בביצוע החלקים השונים של שליחת בקשת HTTP ועיבוד המידע המתקבל.
+יש גם חפשת בעל דרך חשוב לתקשורת עם המערכת שאינו תגובה ולא בהתאם לבעיה. המערכת זו כלל כלים בני שליחת תקשורת ובסופו של כל יום לעבוד בצורה האחרונה כל יום. לכן, ככל יום הם יכוחים וככל יום הם יכוחים על עליו.
 
 ## ראה גם
-* [הרשמה לסדרת כתבות על Haskell](https://www.haskell.org/)
-* [תיעוד לספריית Network.HTTP.Simple](https://hackage.haskell.org/package/http-client-0.6.4/docs/Network-HTTP-Simple.html)
-* [מדריך לשליחת בקשות HTTP ב- Haskell](https://www.haskell.org/haskellwiki/Introduction_to_Haskell_IO/HTTP)
+- [Haskell בוויקיפדיה](https://he.wikipedia.org/wiki/Haskell)
+- [Network.HTTP בהובהאב](https://hackage.haskell.org/package/HTTP)
+- [שליחת בקשת HTTP בשפת התיכונה](https://www.geeksforgeeks.org/http-request-in-middle-of-network-programming-c/)

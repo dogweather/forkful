@@ -10,51 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué crear un archivo temporal en Gleam?
+# ¿Qué y por qué?
 
-La creación de un archivo temporal en Gleam es una técnica útil para manejar datos temporales en nuestra aplicación. Al crear un archivo temporal, podemos almacenar temporalmente información que no es necesaria a largo plazo, como datos de sesión, registros temporales o caché de información.
+La creación de un archivo temporal en la programación es una práctica común que consiste en generar un archivo temporal para almacenar datos de forma temporal mientras un programa está en ejecución. Los programadores lo hacen para evitar la sobrecarga de almacenar datos en memoria y para tener un espacio dedicado para almacenarlos de manera temporal.
 
-## Cómo crear un archivo temporal en Gleam
+# Cómo hacerlo:
 
-Para crear un archivo temporal en Gleam, podemos utilizar la función `Graphics.File.temp_file` que nos permite especificar una extensión para el archivo temporal y opcionalmente una ruta específica donde se almacenará. A continuación, utilizaremos la función `File.write` para escribir los datos que queremos almacenar en el archivo temporal.
+Para crear un archivo temporal en Gleam, puedes utilizar la función ```Gleam.FileSystem.Temp.create()```, que creará un archivo temporal en la ubicación predeterminada del sistema operativo. Este archivo tendrá un nombre generado automáticamente y podrás acceder a él a través de la estructura de datos que devuelve la función.
 
-```Gleam
-import gleam/graphics/file
+Ejemplo de código:
 
-let { ok, path } =
-  File.temp_file(ext: ".txt", dir: "/tmp/")
-
-case ok {
-  Ok -> File.write(path, "¡Hola Mundo!")
-  Err(err) -> Err(err)
+```
+funcion main() {
+  archivo_temp = Gleam.FileSystem.Temp.create()
+  GleamIO.print("Archivo temporal creado: ")
+  GleamIO.print(archivo_temp.path)
 }
 ```
 
-El código anterior crea un archivo temporal con una extensión ".txt" y lo almacena en la ruta "/tmp/". Luego, escribe el texto "¡Hola Mundo!" dentro del archivo. Si la creación del archivo y la escritura son exitosas, la función `temp_file` devuelve un `path` al archivo temporal.
+Salida:
 
-También podemos utilizar el módulo `Random` para generar nombres aleatorios para nuestros archivos temporales si no queremos especificar una extensión o ruta.
-
-```Gleam
-import gleam/random
-import gleam/graphics/file
-
-let { ok, path } =
-  File.temp_file(
-    ext: Random.string(10),
-    dir: Random.string(10)
-  )
-
-case ok {
-  Ok -> File.write(path, "¡Hola Gleammers!")
-  Err(err) -> Err(err)
-}
+```
+Archivo temporal creado: /tmp/glmMxkNgTH
 ```
 
-## Profundizando en la creación de archivos temporales
+# Buceo profundo:
 
-La función `Graphics.File.temp_file` es una abstracción que utiliza las funciones `temp_dir` y `temp_name` del módulo `File`. Al utilizar estas funciones, podemos tener un mayor control sobre cómo se crea y se nombra nuestro archivo temporal. Además, podemos especificar si queremos que el archivo se elimine automáticamente después de un período de tiempo o si queremos borrarlo manualmente.
+La creación de archivos temporales es una práctica que se remonta a los inicios de la programación, cuando las computadoras tenían una capacidad limitada de almacenamiento en memoria. Hoy en día, sigue siendo una práctica útil para programas que manejan grandes cantidades de datos.
 
-## Ver también
+Además de la función ```create()```, existen otras formas de crear archivos temporales en Gleam, como utilizando la biblioteca ```GleamFsTmp``` o pasando una ubicación personalizada a la función ```create()```.
 
-- [Documentación de Gleam sobre creación de archivos temporales](https://gleam.run/documentation/)
-- [Gleam Random Module](https://gleam.run/documentation/stdlib/random/)
+Otras alternativas a la creación de archivos temporales incluyen el uso de bases de datos o el almacenamiento de datos en la nube. Sin embargo, la creación de archivos temporales sigue siendo una opción eficiente y sencilla para almacenar datos de manera temporal.
+
+# Ver también:
+
+- Documentación de la función ```create()```: https://gleam.run/modules/gleamfs/tmp.html#create
+- Biblioteca GleamFsTmp: https://github.com/gleam-lang/gleam_fs_tmp

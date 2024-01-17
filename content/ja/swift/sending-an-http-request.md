@@ -10,54 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+## 何が？どうして？
 
-HTTPリクエストを送信することの最大の理由は、Webアプリケーションやウェブサイトとの通信を行うためです。これにより、リモートサーバーからデータを取得したり、データを送信したりすることができ、より複雑なタスクを実行できます。
+HTTPリクエストを送るとは、インターネット上でデータを送受信するための方法です。プログラマーは、ウェブサイトのデータやサーバーとの通信を処理するために、HTTPリクエストを使用します。
 
-## 使い方
+## 手順：
+
+まず、HTTPリクエストを送るためにはURL（ウェブサイトのアドレス）が必要です。次に、URLを使用してリクエストを作成し、HTTPメソッドを指定します。最後に、サーバーからのレスポンスを処理します。
 
 ```Swift
-// HTTPリクエストを送信するためのURL
-let url = URL(string: "https://example.com/api/data")!
+// URLを設定する
+let url = URL(string: "https://example.com")!
 
-// リクエストの作成
+// HTTPリクエストを作成する
 var request = URLRequest(url: url)
 
-// リクエストメソッドの設定
+// HTTPメソッドを指定する
 request.httpMethod = "GET"
 
-// リクエストをダウンロードし、レスポンスを処理する
-let task = URLSession.shared.dataTask(with: request) { data, response, error in
-    if let error = error {
-        print("データをダウンロードできませんでした。エラーコード: \(error)")
+// サーバーからのレスポンスを処理する
+URLSession.shared.dataTask(with: request) { data, response, error in
+    guard let data = data, error == nil else {
+        print(error?.localizedDescription ?? "Unknown error")
         return
     }
-    
-    // レスポンスを確認する
-    guard let response = response as? HTTPURLResponse,
-          (200...299).contains(response.statusCode) else {
-        print("サーバーが無効なレスポンスを返しました。")
-        return
-    }
-    
-    // データを処理する
-    if let data = data {
-        let dataString = String(data: data, encoding: .utf8)
-        print("受信したデータ: \(dataString)")
-    }
-}
-
-// リクエストを開始する
-task.resume()
+    print(String(data: data, encoding: .utf8)!)
+}.resume()
 ```
-実行すると、URL先にあるデータを取得することができます。
 
-## 深堀り
+上記のコードでは、URLを設定し、GETメソッドを使用してサーバーにリクエストを送信しています。レスポンスにはデータが含まれているので、`response`を使用してデータの処理を行っています。
 
-HTTPリクエストを送信する際には、さまざまなオプションがあります。例えば、`POST`や`PUT`などの他のリクエストメソッドを使用したり、HTTPヘッダーをカスタマイズしたり、認証情報を追加したりすることができます。また、さまざまなライブラリを使用して、より高度なHTTPリクエストの処理を行うことも可能です。
+## 詳細を見る：
 
-## 関連情報
+HTTPリクエストは、1990年代に開発された通信プロトコルです。代表的なバージョンはHTTP/1.1であり、最近ではHTTP/2やHTTP/3といった改良版が開発されています。
 
-- [Apple Developer Documentation: URLRequest](https://developer.apple.com/documentation/foundation/urlrequest)
-- [raywenderlich.com: HTTP Requests in Swift with URLSession](https://www.raywenderlich.com/3244963-urlsession-tutorial-getting-started)
-- [Swift by Sundell: Making types safer using the HTTP POST method](https://www.swiftbysundell.com/articles/using-the-http-post-method-in-swift/)
+代替手段として、WebSocketやgRPCといったプロトコルがありますが、HTTPリクエストがまだ最もポピュラーな方法です。また、`URLSession`クラスを使用することで、HTTPリクエストをより簡単に実装することができます。
+
+## 関連情報を見る：
+
+- [HTTPメソッドとは？](https://developer.mozilla.org/ja/docs/Web/HTTP/Methods)
+- [URLSessionでHTTPリクエストを行う方法](https://developer.apple.com/documentation/foundation/urlsession)
+- [WebSocketとは？](https://developer.mozilla.org/ja/docs/Web/API/WebSocket)
+- [gRPCとは？](https://grpc.io/)

@@ -1,7 +1,7 @@
 ---
-title:                "Jobbe med CSV"
-html_title:           "Python: Jobbe med CSV"
-simple_title:         "Jobbe med CSV"
+title:                "Å jobbe med csv"
+html_title:           "Python: Å jobbe med csv"
+simple_title:         "Å jobbe med csv"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Data Formats and Serialization"
@@ -10,51 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
-Hvis du jobber med dataanalyse eller data science, er det stor sjanse for at du vil komme over CSV-filer. CSV (Comma Separated Values) er en vanlig filtype for å lagre tabellformet data i en enkel og lesbar tekstformat. Ved å lære å jobbe med CSV-filer, vil du kunne importere og eksportere data i en rekke programmeringsspråk, inkludert Python.
+# Hva & Hvorfor?
+CSV står for Comma Separated Values og er en filformat brukt til å lagre og organisere data i tabulær form. Det er spesielt nyttig for programmerere som trenger å behandle store mengder data på en strukturert måte, for eksempel å importere eller eksportere data til og fra en database.
 
-## Slik gjør du det
-Å jobbe med CSV-filer i Python er enkelt og krever bare noen få linjer med kode. Først må du importere "csv" biblioteket ved å skrive: 
-```Python
-import csv 
-``` 
-Nå kan du åpne en CSV-fil ved å bruke "with" statement og lese filen med "csv.reader()":
-```Python
-with open('data.csv', 'r') as f:
-    reader = csv.reader(f)
-    for row in reader:
-        print(row)
+# Slik gjør du det:
+Å jobbe med CSV-filer er enkelt i Python ved hjelp av det innebygde biblioteket 'csv'. Først må du importere dette biblioteket og åpne filen du vil jobbe med. Deretter kan du lese inn dataene og behandle dem ved hjelp av de ulike funksjonene som tilbys i biblioteket. Til slutt må du ikke glem å lukke filen når du er ferdig med å jobbe med den.
+
+```python
+import csv
+
+with open('filnavn.csv', 'r') as fil:
+    data = csv.reader(fil)
+    for rad in data:
+        # Gjør nødvendige operasjoner med data her
+        print(rad)
 ```
-Dette vil skrive ut hver rad i CSV-filen som en liste. Du kan også lese dataene i en CSV-fil som et dictionary ved å bruke "csv.DictReader()":
-```Python
-with open('data.csv', 'r') as f:
-    reader = csv.DictReader(f)
-    for row in reader:
-        print(row['column1'], row['column2'])
-```
-Dette vil skrive ut verdiene i spesifikke kolonner for hver rad i CSV-filen.
 
-For å skrive data til en CSV-fil, kan du bruke "csv.writer()" og skrive hver rad som en liste:
-```Python
-data = [
-    ['John', 'Smith', '25'],
-    ['Lisa', 'Brown', '32'],
-    ['Mark', 'Johnson', '28']
-]
-with open('data.csv', 'w') as f:
-    writer = csv.writer(f)
-    for row in data:
-        writer.writerow(row)
-```
-Dette vil lage en CSV-fil med tre kolonner og tre rader.
+Dette eksempelet åpner en CSV-fil med lesertilgang og skriver ut hver rad i filen til skjermen. Det er ulike måter å behandle dataene på, for eksempel kan du velge å lagre dem i en liste for videre bruk.
 
-## Dypdykk
-Hvis du ønsker mer kontroll over hvordan dataene dine blir skrevet til og lest fra en CSV-fil, kan du bruke "csv.Dialect" for å definere egne formateringsregler. Du kan også spesifisere forskjellige tegn som skal brukes for å separere eller omgi verdiene i filen. Dette kan være nyttig hvis du jobber med CSV-filer fra forskjellige kilder som bruker forskjellige formater.
+# Dypdykk:
+CSV-formatet ble utviklet på 1970-tallet og har siden blitt standard for utveksling av data mellom ulike applikasjoner. Det finnes også alternative filformater, som f.eks. TSV (tab separated values) og JSON (JavaScript Object Notation), men CSV er fortsatt mye brukt på grunn av sin enkelhet.
 
-Det er også mulig å lese og skrive CSV-filer som har spesialtegn eller internasjonale tegnsett. Du må da spesifisere et "encoding" parameter i "open()" funksjonen som tilsvarer tegnsettet i filen din.
+Når du jobber med CSV i Python, er det viktig å være oppmerksom på formateringen av dataene. Hvis cellene inneholder komma eller andre spesielle tegn, må disse håndteres riktig for å unngå feil i lesingen av filen. Det finnes også flere alternative måter å lese og skrive til CSV-filer på, avhengig av behovene til ditt spesifikke prosjekt.
 
-## Se også
-- [Python "csv" biblioteket dokumentasjon](https://docs.python.org/3/library/csv.html)
-- [Python "io" biblioteket dokumentasjon](https://docs.python.org/3/library/io.html)
-- [Tutorial: Working with CSV files in Python](https://realpython.com/python-csv/)
-- [DataCamp: Working with CSV files in Python](https://www.datacamp.com/community/tutorials/python-read-csv)
+# Se også:
+Offisiell dokumentasjon for 'csv' biblioteket i Python: https://docs.python.org/3/library/csv.html
+
+En oversikt over ulike filformater og hvordan de kan behandles i Python: https://realpython.com/python-csv/
+
+Et eksempelprosjekt som viser hvordan man kan bruke CSV i et praktisk scenario: https://github.com/insafiodigital/CSV-to-JSON-converter

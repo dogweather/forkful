@@ -10,74 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-Sometimes, we may want to extract information from a web page or automate a task that requires us to download a specific web page. In such cases, knowing how to download a web page using C# can come in handy.
+Downloading a web page is the process of retrieving and saving the contents of a webpage from the internet so that it can be viewed offline. This is beneficial for programmers as it allows them to access and analyze webpage data without needing an internet connection. It can also be used for tasks such as web scraping or automated testing.
 
-## How To
+## How to:
 
-To download a web page using C#, we first need to use the `HttpClient` class from the `System.Net.Http` namespace. This class provides methods to make HTTP requests and retrieve responses from a web server. We can use the `GetAsync()` method to download a web page asynchronously and store the response in a `HttpResponseMessage` object.
+To download a web page in C#, we will be using the ```WebClient``` class from the ```System.Net``` namespace. We first create an instance of the ```WebClient``` class and then use the ```DownloadString()``` method to retrieve the webpage as a string. Let's take a look at an example:
 
-````C#
-using System;
-using System.Net.Http;
+```
+using System.Net;
 
-public class Program
-{
-    public static async Task Main()
-    {
-        // Create an instance of HttpClient
-        HttpClient client = new HttpClient();
+// Create an instance of WebClient
+WebClient client = new WebClient();
 
-        // Specify the URL of the web page to download
-        string url = "https://www.example.com";
+// Download the webpage as a string
+string webpage = client.DownloadString("https://www.example.com");
 
-        // Make a GET request to the URL and retrieve the response
-        HttpResponseMessage response = await client.GetAsync(url);
-
-        // Check if the response is successful
-        if (response.IsSuccessStatusCode)
-        {
-            // Get the response content as a string
-            string content = await response.Content.ReadAsStringAsync();
-
-            Console.WriteLine(content);
-        }
-    }
-}
-````
-Output:
-```html
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Example Domain</title>
-    <meta charset="utf-8" />
-    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-</head>
-<body>
-<div>
-    <h1>Example Domain</h1>
-    <p>This domain is for use in illustrative examples in documents. You may use this domain in literature without prior coordination or asking for permission.</p>
-    <p><a href="https://www.iana.org/domains/example">More information...</a></p>
-</div>
-</body>
-</html>
+// Display the contents of the webpage
+Console.WriteLine(webpage);
 ```
 
-## Deep Dive
+The output of this code will be the HTML code of the webpage, which can then be saved to a file or used for further analysis.
 
-The `HttpClient` class supports various methods for making HTTP requests, such as `GetAsync()`, `PostAsync()`, `PutAsync()`, and `DeleteAsync()`, to name a few. These methods take the URL of the web page as a parameter and return a `Task<HttpResponseMessage>`, which can then be awaited to get the response.
+## Deep Dive:
 
-The response from the `HttpClient` methods contains useful information, such as the status of the request, status code, headers, and content. We can use methods like `IsSuccessStatusCode` and `ReadAsStringAsync()` to check the status code and retrieve the response content, respectively.
+The concept of downloading web pages has been around since the early days of the internet. In the past, this was accomplished using lower-level protocols such as HTTP or FTP. However, with the advancement of languages like C#, the process has become much simpler and accessible to all levels of programmers.
 
-It is also important to properly handle exceptions while downloading a web page. We can use a `try-catch` block to catch any exceptions that may occur, such as a `HttpRequestException` or `TaskCanceledException`, and handle them accordingly. We can also set a timeout for the request using the `Timeout` property of the `HttpClient` object.
+An alternative to using WebClient is the ```HttpWebRequest``` class, also found in the ```System.Net``` namespace. It provides more fine-grained control over the web request process, but it also requires more code to achieve the same result as using WebClient. The choice between these two classes will depend on the specific use case.
 
-## See Also
+When downloading a web page, there are a few things to keep in mind. Many websites have measures in place to protect against automated web scraping, so it is important to read a website's terms of service before performing any data extraction. Additionally, some websites may require authentication before allowing access to their content.
 
-Here are some helpful resources for further reading on downloading a web page using C#:
+## See Also:
 
-- [HttpClient class - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/api/system.net.http.httpclient)
-- [Asynchronous programming with async and await - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/async/)
-- [Handling exceptions in C# - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/exceptions/)
+- [Microsoft Docs - Downloading Data with WebClient](https://docs.microsoft.com/en-us/dotnet/api/system.net.webclient?view=net-5.0)
+- [Microsoft Docs - Making Network Requests](https://docs.microsoft.com/en-us/dotnet/desktop/wpf/networking/making-network-requests?view=netframeworkdesktop-4.8)
+- [W3Schools - Web Scraping](https://www.w3schools.com/python/python_web_scraping.asp)

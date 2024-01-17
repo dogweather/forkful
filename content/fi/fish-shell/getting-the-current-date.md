@@ -1,7 +1,7 @@
 ---
-title:                "Nykyisen päivämäärän saaminen"
-html_title:           "Fish Shell: Nykyisen päivämäärän saaminen"
-simple_title:         "Nykyisen päivämäärän saaminen"
+title:                "Päivämäärän hankkiminen"
+html_title:           "Fish Shell: Päivämäärän hankkiminen"
+simple_title:         "Päivämäärän hankkiminen"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Dates and Times"
@@ -10,47 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mikä & Miksi?
 
-Miksi kukaan haluaisi saada nykyinen päivämäärä Fish Shell -ohjelmoinnin avulla? Yksinkertaisesti siksi, että ajanhallinta on tärkeä osa monia ohjelmointitehtäviä. Olipa kyseessä sitten tiedostojen tallentaminen ajastetusti tai komentojen toistaminen tiettynä päivänä, nykyisen päivämäärän saaminen helpottaa tehtävien suorittamista.
+Päivämäärän saaminen tarkoittaa järjestelmän nykyisen päivämäärän ja ajan hakemista. Tämä on hyödyllistä, koska se auttaa ohjelmoijia esimerkiksi erilaisten aikaleimojen ja ajastettujen toimintojen luomisessa.
 
-## Miten tehdä niin
+## Kuinka:
 
-Fish Shellillä on helppo saada nykyinen päivämäärä käyttämällä `date`-komentoa. Tämä komento palauttaa päivämäärän ja ajan kellonajalla varustettuna.
-
-```
-Fish Shell koodiesimerkki:
-
-date
+Fish Shellilla päivämäärän saaminen on helppoa. Käytä vain komentoa ```date```, ja nykyinen päivämäärä ja aika tulostetaan näytölle. Esimerkiksi:
 
 ```
-Tuloste:
-
-```
-tor elo 19 14:29:50 CEST 2021
+Fish Shell > date
+mauli tammi 06 10:06:23 EET 2020
 ```
 
-Tämä vaihtoehto palauttaa kaikki tiedot päivämäärästä ja ajasta. Jos haluat vain päivämäärän ilman tarkempia yksityiskohtia, voit käyttää `+%d.%m.%Y`-merkkijonoa.
+## Syväsukellus:
 
-```
-Fish Shell koodiesimerkki:
+Historiallisessa kontekstissa, ennen Fish Shellin käyttöä, ohjelmoijien täytyi käyttää erilaisia ohjelmointikielien kirjastoja tai suorittaa monimutkaisia komentoja saadakseen päivämäärän ja ajan. Fish Shell tekee tästä prosessista paljon helpomman yksinkertaisella ```date``` komennolla.
 
-date +%d.%m.%Y
-```
+On myös olemassa muita vaihtoehtoja kuin Fish Shell, kuten Bash ja Z Shell, joilla on myös samanlainen ```date``` komento. Fish Shellilla tämä komento kuitenkin tukee monia erilaisia vaihtoehtoja ja parametreja, joita voit käyttää mukauttaaksesi tuloksen.
 
-Tuloste:
+## Katso myös:
 
-```
-19.08.2021
-```
-
-Voit myös muokata tulostetta muiden vaihtoehtojen avulla, esimerkiksi `+%A` palauttaa nykyisen viikonpäivän.
-
-## Syvempi sukellus
-
-Fish Shellin `date`-komento perustuu Unix-järjestelmän `date`-komentoon, joten sen käyttö on samanlaista myös muissa käyttöjärjestelmissä. Voit löytää lisätietoja `date`-komentosta Unixin manuaalisivuilta, joten jos haluat muokata tulosteen ulkoasua tai käyttää muita vaihtoehtoja, suosittelemme tutustumaan näihin sivuihin.
-
-## Katso myös
-
-- [Fish Shellin viralliset dokumentaatiot](https://fishshell.com/docs/current/index.html)
-- [Fish Shellin GitHub-sivu](https://github.com/fish-shell/fish-shell)
+[Lisätietoja täältä.](https://fishshell.com/docs/current/cmds/date.html)

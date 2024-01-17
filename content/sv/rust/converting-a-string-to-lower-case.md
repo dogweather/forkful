@@ -10,25 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
-Du kanske undrar varför någon skulle behöva omvandla en sträng till små bokstäver i Rust. Det finns många goda skäl till varför detta är en vanlig uppgift i många programmeringsprojekt. Det kan vara för att göra jämförelser mellan strängar mer exakta, för att skapa en standardiserad form av data eller för att enkelt hantera data som skickas mellan olika system som kanske inte hanterar stora och små bokstäver på samma sätt.
+## Vad & Varför?
+Att konvertera en sträng till gemener innebär att göra alla bokstäver i strängen små bokstäver istället för stora. Detta är en vanlig operation inom programmering för att göra jämförelser av strängar case-insensitiva, vilket betyder att stora och små bokstäver behandlas som samma.
 
-## Så här gör du
-För att omvandla en sträng till små bokstäver i Rust använder vi funktionen `to_lowercase()`. Detta är en del av standardbiblioteket `std::string`, så vi behöver inte importera någonting extra för att använda den. Här är ett exempel på hur vi kan använda funktionen:
+## Hur man gör:
+Ett enkelt sätt att göra detta i Rust är att använda funktionen `to_lowercase()`, som är en del av standardbiblioteket. Här är ett exempel på hur man kan använda den:
 
 ```Rust
-let my_string = "HeLlO wOrLd";
-let lower_case_string = my_string.to_lowercase();
-println!("{}", lower_case_string);
+let sträng = "Hej Värld!";
+let lowercase_sträng = sträng.to_lowercase();
+println!("{}", lowercase_sträng);
 ```
-Output:
+
+Resultatet blir "hej värld!".
+
+En annan möjlighet är att använda `chars()` funktionen för att iterera över varje tecken i strängen och sedan använda `to_lowercase()` på varje enskilt tecken. Detta kan vara användbart om man vill göra andra operationer på strängen samtidigt. Här är ett exempel:
+
 ```Rust
-hello world
+let mut sträng = String::from("Hej Värld!");
+for c in sträng.chars() {
+    let lowercase_c = c.to_lowercase().to_string();
+    // Gör något med det lowercase tecknet här
+}
 ```
 
-## Djupdykning
-För att förstå hur `to_lowercase()` fungerar i bakgrunden, behöver vi titta på Unicode-standarderna. I Unicode finns det två olika typer av bokstäver som kan representeras: stora och små. När vi använder `to_lowercase()` i Rust, så används Unicode-tabellen för att hitta motsvarande små bokstav för varje stor bokstav i strängen. Denna process skiljer sig åt beroende på vilket språk strängen är skriven på, eftersom olika språk kan ha olika regler för omvandling av bokstäver.
+## Djupintervju:
+Att konvertera en sträng till gemener har varit en viktig del av programmering sedan tidiga datorer. I Unicode-standarderna behandlas gemener och versaler som olika tecken, vilket innebär att konverteringen av bokstäver är mer komplicerad än bara att göra dem små.
 
-## Se även
-- [The Rust Standard Library](https://doc.rust-lang.org/std/index.html)
-- [Unicode Standard](https://www.unicode.org/standard/standard.html)
+Det finns flera alternativ för att konvertera en sträng till gemener i Rust, inklusive `make_ascii_lowercase()` och `make_ascii_lowercase_inplace()` som enbart fungerar på ASCII-tecken och är därför snabbare. Det finns också externa bibliotek som kan användas för att göra konverteringen eller för att göra den snabbare för stora mängder data.
+
+Implementeringen av `to_lowercase()` i standardbiblioteket använder Unicode-standardernas regler för att identifiera tecken som kan ha en gemensam gemena form, och sedan konverterar dem enligt dessa regler. Det är också möjligt att ange ett språkkodargument till funktionen för att använda språkspecifika regler för konverteringen.
+
+## Se även:
+För mer information om olika sätt att hantera strängar i Rust, se "The Rust Programming Language" bokens kapitel om strängar (https://doc.rust-lang.org/book/ch08-02-strings.html). För en djupare förståelse av Unicode-standarderna, se Unicode-konsortiets hemsida (https://unicode.org/).

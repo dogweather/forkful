@@ -1,7 +1,7 @@
 ---
-title:                "生成随机数"
-html_title:           "C: 生成随机数"
-simple_title:         "生成随机数"
+title:                "产生随机数"
+html_title:           "C: 产生随机数"
+simple_title:         "产生随机数"
 programming_language: "C"
 category:             "C"
 tag:                  "Numbers"
@@ -10,47 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
+## 什么是生成随机数?为什么程序员要这么做?
 
-生成随机数在编程中是非常常见的需求。它可以用来模拟现实情况、测试算法的可靠性、增加程序的复杂度以及提高程序的安全性。因此，掌握如何生成随机数是非常重要的。
+生成随机数是一种计算机编程技术，它允许程序员生成一个随机的数字，而不是固定的值。程序员经常使用这种技术来增加程序的复杂性和随机性，使其更具有可玩性和挑战性。
 
-## 如何生成随机数
+## 如何实现:
 
-要在C语言中生成随机数，我们需要用到`rand()`函数，并结合`time()`函数来获取一个种子。让我们来看一个简单的例子：
-
-```C
+```c
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 
-int main() {
-    int random_number;
-    // 使用时间作为种子，确保每次运行都会生成不同的随机数
-    srand(time(NULL));
-    // 生成随机数，范围在0到99之间
-    random_number = rand() % 100;
-    // 打印结果
-    printf("随机数为：%d", random_number);
-    return 0;
+int main(void) {
+  
+  int random_num1 = 0;
+  int random_num2 = 0;
+  srand(time(0)); //设置seed
+
+  //生成一个1到10之间的随机数
+  random_num1 = (rand() % 10) + 1;
+
+  //生成一个0到100之间的随机数
+  random_num2 = rand() % 101;
+
+  printf("第一个随机数: %d\n", random_num1);
+  printf("第二个随机数: %d\n", random_num2);
+
+  return 0;
 }
+
 ```
 
-输出结果可能为：`随机数为：27`
+输出:
 
-## 进一步了解
+```
+第一个随机数: 6
+第二个随机数: 42
+```
 
-`rand()`函数在每次调用时都会返回一个伪随机数，它是根据上一次调用所生成的随机数来计算的。因此，我们需要使用`time()`函数来获取一个不同的种子，以确保每次生成的随机数都不同。此外，`rand()`函数的取值范围通常是0到`RAND_MAX`之间，其中`RAND_MAX`是一个宏，它通常在stdlib.h中定义。
+## 深入探讨:
 
-如果需要生成更大范围的随机数，我们可以使用`div()`函数来将`rand()`的返回值按照需求进行缩放。同时，对于需要高质量的随机数，我们可以使用更复杂的随机数生成算法，如线性同余算法和Mersenne Twister算法。
+生成随机数的历史可以追溯到20世纪早期的数学研究。在计算机科学中，有几种方法来实现生成随机数，包括伪随机数生成器，硬件随机数生成器和完全随机数生成器。程序员可以根据具体的需求来选择最适合的方法。
 
-## 参考链接
+## 查看更多:
 
-- [`rand()`函数文档](https://en.cppreference.com/w/cpp/numeric/random/rand)
-- [`time()`函数文档](https://en.cppreference.com/w/cpp/chrono/c/time)
-- [线性同余算法详解](https://en.wikipedia.org/wiki/Linear_congruential_generator)
-- [Mersenne Twister算法详解](https://en.wikipedia.org/wiki/Mersenne_Twister)
-
-## 参考资料
-
-- C语言编程指南，第四版，凯文·奈尔森，1994年，Peachpit Press出版。
-- 在C中生成随机数，C语言游戏设计指南，Michael Morrison，2004年，New Riders出版社。
+- [《C语言程序设计》- 第九章：随机数](https://book.douban.com/subject/30280646/)
+- [C语言官方文档-stdlib.h](https://zh.cppreference.com/w/c/numeric/random)
+- [透过随机数生成器巧思无穷](https://juejin.im/post/5c9ca188f265da60e37294f4)

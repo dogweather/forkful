@@ -1,7 +1,7 @@
 ---
-title:                "Att arbeta med csv"
-html_title:           "Elixir: Att arbeta med csv"
-simple_title:         "Att arbeta med csv"
+title:                "Arbeta med csv"
+html_title:           "Elixir: Arbeta med csv"
+simple_title:         "Arbeta med csv"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Data Formats and Serialization"
@@ -10,35 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
 
-Att arbeta med CSV-filer kan vara en vanlig uppgift för många programmerare, oavsett vilket språk de använder. Det är ett sätt att hantera data i tabellformat, vilket är vanligt förekommande i många branscher och projekt. Genom att lära sig hur man arbetar med CSV-filer i Elixir, kan du effektivt hantera data och automatisera viktiga uppgifter.
+Att arbeta med CSV, också känt som Comma-Separated Values, innebär att behandla data som är organiserad i tabeller med kolumner och rader. Det är vanligtvis ett enkelt sätt att dela och utbyta data, särskilt när man hanterar stora mängder information. Programvaror som Excel och databaser stöder också CSV-formatet. Därför är det viktigt att kunna läsa och skriva CSV-filer för att hantera data på ett effektivt sätt.
 
-## Hur man gör
-
-För att arbeta med CSV-filer i Elixir måste du först lägga till biblioteket "CSV" i din kod. Detta kan göras genom att lägga till det som en dependency i din "mix.exs" fil. När det är installerat, kan du använda funktioner som "CSV.parse" och "CSV.encode" för att läsa och skriva till CSV-filer.
-
-För att läsa från en CSV-fil, använd "CSV.parse" -funktionen och ange filvägen som en parameter. Detta kommer att returnera en lista med listor, där varje inneboende lista representerar en rad i CSV-filen.
+## Hur man:
 
 ```Elixir
-resultat = CSV.parse("Exempel.csv")
-IO.inspect(resultat) # Skriver ut listan av listor till terminalen
+defmodule CSV do
+  # Skapar en funktion för att läsa en CSV-fil
+  def read(file_name) do
+    raw_data = File.read!(file_name)
+    # Splittar raderna efter radbrytning
+    lines = String.split(raw_data, [ch: 10])
+    # Splittar raderna efter kommatecken och tar bort citattecken runt varje värde
+    lines |> Enum.map(fn line -> String.split(line, [ch: 44]) |> Enum.map(fn x -> String.trim(x, "\"") end) end)
+  end
+
+  # Skapar en funktion för att skriva till en CSV-fil
+  def write(file_name, data) do
+    # Konverterar data till en sträng och lägger till rad- och kommatecken på rätt ställen
+    output = data |> Enum.map(fn line -> Enum.join(line, ",") <> "\n" end) |> Enum.join
+    File.write!(file_name, output)
+  end
+end
+
+# Exempel på hur man kan använda funktionerna
+data = CSV.read("min_data.csv")
+CSV.write("ny_data.csv", data)
+
 ```
 
-För att skriva till en CSV-fil, använd "CSV.encode" -funktionen och ange önskad data tillsammans med filvägen som parametrar. Detta kommer att skriva data till CSV-filen i rätt format.
+## Deep Dive:
 
-```Elixir
-data = [["Svenska", "Elixir"], ["Artikel", "CSV"]]
-CSV.encode("Exempel.csv", data) # Skriver data till CSV-filen
-```
+CSV-formatet har funnits sedan 1972 och användes ursprungligen för tabellformat från IBM-mainframe. Sedan dess har det blivit ett populärt sätt att dela data mellan olika program och system. Alternativ till CSV inkluderar JSON och XML, men CSV är fortfarande mycket vanligt förekommande inom datahantering och utbyte. När man arbetar med CSV i Elixir är det viktigt att hantera eventuella speciella tecken som kan finnas i data, som till exempel radbrytningar eller kommatecken som inte är en del av värden.
 
-## Djupdykning
+## Se även:
 
-När du arbetar med CSV-filer är det viktigt att se till att data är i rätt format och kommer att tolkas korrekt av olika program som läser filen. För att undvika eventuella problem, se till att data som ska skrivas till filen är korrekt formaterad och innesluten i "" citationstecken om det innehåller kommatecken.
-
-Det finns också flera olika konfigurationsalternativ som finns tillgängliga när du arbetar med CSV-filer i Elixir. Du kan till exempel ange avgränsare, välja vilken typ av data som ska returneras, och ställa in hur data ska indelas i rader. Detta kan vara användbart när du behöver anpassa arbetet med CSV-filer för specifika behov eller program.
-
-Se även
-
-- [CSV biblioteket på Hex](https://hex.pm/packages/csv)
-- [Elixir dokumentation för CSV-biblioteket](https://hexdocs.pm/csv/)
+- Elixir's officiella dokumentation om [String-modulen](https://hexdocs.pm/elixir/String.html) som innehåller funktioner för att arbeta med text och teckensträngar.
+- [csv-elixir](https://github.com/csv-elixir/csv) biblioteket för att läsa och skriva CSV-filer i Elixir.
+- [Elixir School](https://elixirschool.com/en/) en gratis läroplattform för att lära sig Elixir och dess ekosystem.

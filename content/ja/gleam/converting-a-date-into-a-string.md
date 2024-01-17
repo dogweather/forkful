@@ -1,7 +1,7 @@
 ---
-title:                "「日付を文字列に変換する」"
-html_title:           "Gleam: 「日付を文字列に変換する」"
-simple_title:         "「日付を文字列に変換する」"
+title:                "日付を文字列に変換する"
+html_title:           "Gleam: 日付を文字列に変換する"
+simple_title:         "日付を文字列に変換する"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Dates and Times"
@@ -10,35 +10,22 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
-日付を文字列に変換することの利点は、プログラムで日付データを扱うために必要です。例えば、データベースに日付を格納する場合や、ユーザーに表示する場合などには、日付を理解しやすい形式に変換する必要があります。Gleamでは、簡単な方法で日付を文字列に変換することができます。
+## ものは何ですか？: 日付を文字列に変換するとは何か？なぜプログラマーがそれを行うのか？
+日付を文字列に変換するとは、日付の情報を文字列の形式に変換することです。プログラマーがこれを行う理由は、日付を表示する必要がある場合や、日付をファイル名やデータベースのキーとして使用する場合など、様々な用途があります。
 
-## ハウツー
-日付型から文字列型に変換する方法は、以下のようになります。
-
+## 方法：```Gleam ... ```コードブロック内のコーディング例とサンプル出力。
 ```Gleam
-import Time.Date
-import Time.Format
+import gleam/datetime.{Date, Format}
 
-let date = Time.Date(2021, 8, 17)
-
-let formatted_date = Time.Format.to_string(date, "%Y-%m-%d")
-
-IO.print("変換後の日付: " ++ formatted_date)
+let date = Date.from_utc_iso8601("2021-01-01")
+Format.to_string(date, "%Y/%m/%d")  
+// Output: "2021/01/01"
 ```
 
-このコードを実行すると、以下のような出力が得られます。
+## 詳細を掘り下げる: 日付を文字列に変換するための歴史的文脈、代替手段、および実装の詳細など。
+日付を文字列に変換する方法は、プログラミング言語や標準ライブラリによって異なります。例えば、GleamではISO8601形式を使用し、標準ライブラリのFormatモジュールを使用して変換を行います。代替手段としては、各プログラミング言語や外部モジュールを使用することもできます。
+日付を文字列に変換する際には、タイムゾーンやロケールなどにも注意が必要です。
 
-```
-変換後の日付: 2021-08-17
-```
-
-Gleamでは、 `Time.Format` モジュールを使用して日付を文字列にフォーマットすることができます。 `to_string` 関数には、フォーマットしたい日付とフォーマット文字列を渡すことで、日付を任意の形式に変換することができます。
-
-## ディープダイブ
-日付を文字列に変換する際には、フォーマット文字列をどのように指定するかが重要です。Gleamでは、 `strftime` という関数を使用して、日付と時刻を指定したフォーマットに整形することができます。また、日本語を含むフォーマット文字列もサポートされています。
-
-日付を文字列に変換する方法は他にもありますが、Gleamが提供する `Time.Format` モジュールを使用すれば、より簡単に日付を任意の形式に変換することができます。
-
-## 関連情報
-[Gleam公式ドキュメント](https://gleam.run/core/time.html#format)
+## 関連情報を参照: 関連するソースへのリンク。
+- Gleam公式ドキュメントのdatetimeモジュール: https://gleam.run/modules/gleam_datetime/latest
+- GleamのGoogleカレンダーライブラリ: https://github.com/gleam-lang/google-calendar

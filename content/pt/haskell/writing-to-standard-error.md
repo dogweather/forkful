@@ -10,53 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+## O que & Porquê?
 
-Você pode se perguntar por que alguém se interessaria em escrever para o erro padrão ao invés de simplesmente imprimir mensagens na tela. Bem, a resposta é simples: escrever para o erro padrão é útil quando você quer informar o usuário sobre um problema ou erro específico que ocorreu durante a execução do seu código.
+Escrever para o erro padrão (standard error) é uma prática comum entre programadores para relatar possíveis erros ou problemas durante a execução do código. Ao enviar mensagens de erro para o erro padrão, é possível identificar e corrigir falhas no código de maneira mais eficiente.
 
-## Como fazer
+## Como fazer:
 
-Escrever para o erro padrão em Haskell é bastante simples. Você pode usar a função `hPrint` do módulo `System.IO` para imprimir uma mensagem de erro em formato de string. Por exemplo:
-
-```Haskell
-import System.IO
-
-main = do
-    hPrint stderr "Ops, algo deu errado!"
-```
-
-Isso irá imprimir a mensagem "Ops, algo deu errado!" no erro padrão (standard error). Note que estamos usando `stderr` em vez de `stdout`, que seria o padrão para a função `print`.
-
-Outra opção é usar a função `hPutStrLn`, que também pertence ao módulo `System.IO`, para imprimir uma mensagem sem a necessidade de passar uma string como argumento. Por exemplo:
+Existem várias maneiras de escrever para o erro padrão em Haskell. Aqui estão dois exemplos simples utilizando o comando "putStrLn" e a função "hPutStrLn":
 
 ```Haskell
 import System.IO
 
-main = do
-    hPutStrLn stderr "Escrevendo para o erro padrão."
+putStrLn "Mensagem de erro"
+hPutStrLn stderr "Outra mensagem de erro"
+```
+Saída:
+```
+Mensagem de erro
+Outra mensagem de erro
 ```
 
-Isso irá imprimir a mensagem "Escrevendo para o erro padrão." no erro padrão.
+## Mergulho Profundo:
 
-## Mergulho profundo
+A prática de escrever para o erro padrão tem suas raízes na programação de sistemas operacionais Unix, onde havia diferentes canais de saída para relatar erros e mensagens de sistema. Além do uso do comando "putStrLn" e da função "hPutStrLn", existem outras funções disponíveis para escrever no erro padrão, como "hPutStr" e "hPutChar". Também é possível redirecionar o erro padrão para um arquivo ou outro dispositivo de saída.
 
-Agora que você já sabe como escrever para o erro padrão em Haskell, é importante entender algumas coisas sobre esse processo. A primeira é que ao escrever para o erro padrão, sua mensagem será impressa na tela junto com a saída do seu programa. Isso é útil quando você quer dar ao usuário informações sobre possíveis erros que ocorreram.
+## Veja Também:
 
-Além disso, é importante mencionar que você também pode utilizar a função `hPutStr` para imprimir uma string sem uma quebra de linha no final. Por exemplo:
-
-```Haskell
-import System.IO
-
-main = do
-    hPutStr stderr "Esse é um texto "
-    hPutStrLn stderr "que será impresso na mesma linha."
-```
-
-Isso irá imprimir "Esse é um texto que será impresso na mesma linha." sem uma quebra de linha entre os textos.
-
-## Veja também
-
-Se você quiser se aprofundar ainda mais no assunto, você pode dar uma olhada nos links abaixo:
-
-- [Documentação do módulo System.IO](https://hackage.haskell.org/package/base-4.15.0.0/docs/System-IO.html)
-- [Tutorial de programação em Haskell](https://wiki.haskell.org/Introduction)
+- [Documentação do Haskell](https://www.haskell.org/documentation/)
+- [Artigo sobre o comando putStrLn](https://hackage.haskell.org/package/base-4.15.0.0/docs/Prelude.html#v:putStrLn)
+- [Artigo sobre a função hPutStrLn](https://hackage.haskell.org/package/base-4.15.0.0/docs/System-IO.html#v:hPutStrLn)

@@ -1,7 +1,7 @@
 ---
-title:                "Analisi del codice html"
-html_title:           "C++: Analisi del codice html"
-simple_title:         "Analisi del codice html"
+title:                "Parsing html"
+html_title:           "C++: Parsing html"
+simple_title:         "Parsing html"
 programming_language: "C++"
 category:             "C++"
 tag:                  "HTML and the Web"
@@ -10,45 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+## Cosa & Perché?
+Il parsing HTML è il processo di analisi dei contenuti di una pagina web e della loro struttura per estrarre informazioni significative. I programmatori si impegnano nello sviluppo di algoritmi di parsing HTML per creare applicazioni che possano elaborare e manipolare i dati dei siti web in modo efficiente.
 
-Parseggiare l'HTML è un'attività importante per chiunque voglia lavorare con il web. Questo processo consente di estrarre informazioni utili dai siti web e di analizzarle in modo programmatico per creare strumenti, applicazioni o raccolte di dati.
+## Come fare:
+ Di seguito sono riportati alcuni esempi di codice in ```C++``` che illustrano come eseguire il parsing HTML utilizzando la libreria ```libxml2```. Il codice di seguito mostra come ottenere il contenuto di un elemento ```<p>```:
 
-## Come Fare
-
-Per iniziare a parseggiare l'HTML in C++, è necessario utilizzare una libreria esterna come "libxml". Una volta installata la libreria, è possibile utilizzare le sue funzionalità per analizzare il codice HTML e estrarre le informazioni desiderate. Ecco un esempio di codice per parsare un sito web e stampare il titolo della pagina:
-
-```C++
+```
 #include <libxml/HTMLparser.h>
-#include <libxml/tree.h>
 
-int main() {
-    const char *url = "https://www.esempio.com";
-    htmlDocPtr doc = htmlParseFile(url, NULL);
-    xmlChar *title = xmlGetProp(doc->xmlRootNode, (xmlChar *)"title");
-    printf("Il titolo della pagina è: %s\n", title);
+void parseHTML(char *filename) {
+    htmlDocPtr doc; /* puntatore al documento HTML da analizzare*/
+    xmlNodePtr cur; /* puntatore al nodo corrente*/
 
-    xmlFreeDoc(doc);
+    doc = htmlReadFile(filename, NULL, HTML_PARSE_NOBLANKS | HTML_PARSE_NOERROR | HTML_PARSE_NOWARNING | HTML_PARSE_NONET);
+    cur = xmlDocGetRootElement(doc);
+
+    if (cur == NULL) {
+        fprintf(stderr,"Errore nella lettura del documento\n");
+        return;
+    }
+
+    cur = cur->children; // si passa al primo nodo figlio
+    while (cur != NULL && strcmp((const char*)cur->name, "p"))
+        cur = cur->next; // si scorrono i nodi figli fino a trovare quello con l'elemento "p"
+
+    printf("Il contenuto dell'elemento <p> è %s\n", xmlNodeGetContent(cur)); // si stampa il contenuto del tag <p>
+    
+    xmlFreeDoc(doc); // si rilasciano le risorse allocate
+    return;
 }
 ```
 
-Esempio di output:
+## Approfondimento:
+Il parsing HTML ha una lunga storia, a partire dal suo utilizzo pionieristico negli anni '90 per la creazione dei primi motori di ricerca. Oggi, esistono varie alternative per eseguire il parsing HTML, tra cui librerie come ```libxml2```, ```HTMLParser``` e ```BeautifulSoup```. Il processo di parsing può essere complesso, in quanto è necessario gestire varie eccezioni e gli standard del linguaggio web sono in costante evoluzione.
 
-```
-Il titolo della pagina è: Esempio Sito Web
-```
-
-## Deep Dive
-
-Parsing l'HTML può diventare molto complesso e ricco di sfide, soprattutto quando si tratta di siti web complessi con una struttura di codice più articolata. Per questo motivo, è importante essere ben preparati prima di iniziare l'attività. Alcune cose da tenere in considerazione sono:
-
-- Imparare a utilizzare le funzionalità della libreria scelta in modo efficace per estrarre le informazioni desiderate senza errori.
-- Gestire adeguatamente la struttura ad albero dell'HTML per accedere ai diversi elementi e attributi.
-- Tenere conto delle possibili differenze di formattazione tra le varie pagine web e adottare una strategia flessibile.
-
-È importante anche tenere presente che, come per ogni attività di data-scraping, è consigliato rispettare le norme di cortesia sul web e non utilizzare questa tecnica per scopi illeciti. Inoltre, è opportuno essere consapevoli delle modifiche indicate nei termini di servizio del sito web da cui si sta estraendo il codice HTML, in modo da evitare problemi legali.
-
-## Vedi Anche
-
-- [Libreria libxml](http://www.xmlsoft.org/)
-- [Parsing HTML con C++](https://www.learncpp.com/cpp-tutorial/182-html-parsing/)
+## Vedi anche:
+- [Documentazione ufficiale di libxml](http://xmlsoft.org/html/)
+- [Documentazione ufficiale di HTMLParser](https://htmlparser.sourceforge.io/)
+- [Documentazione ufficiale di BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)

@@ -10,53 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么要使用正则表达式？
+## 什么是正则表达式？
+正则表达式是一种用来匹配和操作文本模式的表达式。它们可以帮助程序员更有效地搜索和处理文本数据，比如查找特定的字符串或者验证用户输入的格式是否正确。
 
-正则表达式是一种强大的工具，它可以帮助我们在字符串中查找和匹配特定的模式。在编程中，我们经常需要处理大量的文本数据，使用正则表达式可以大大提高我们的效率。它可以帮助我们快速地进行文本匹配、替换和提取等操作，从而帮助我们简化复杂的字符串处理问题。
-
-## 如何使用正则表达式
-
-要使用正则表达式，我们首先需要了解它的基本语法。正则表达式由特殊的字符和普通的字符组成。例如，我们想要在一个字符串中查找所有以A开头、以Z结尾且中间包含任意2个数字的单词时，可以使用正则表达式 `A[0-9][0-9]Z`。下面是一个简单的示例代码：
+## 如何使用？
+下面的代码示例展示了如何使用正则表达式来验证一个密码是否含有至少一个大写字母和数字。如果密码符合要求，则输出“密码符合要求”，否则输出“密码不符合要求”。
 
 ```C
 #include <stdio.h>
 #include <regex.h>
 
-int main(){
-    char *str = "A12Z B34Z C56Z D78Z";
+int main() {
     regex_t regex;
-    regcomp(&regex, "A[0-9][0-9]Z", REG_EXTENDED);
+    char password[20];
+    int match;
 
-    regmatch_t match[1];
-    regexec(&regex, str, 1, match, 0);
+    printf("请输入密码：");
+    scanf("%s", password);
 
-    char *result = str + match[0].rm_so;
-    printf("%.*s\n", (int)match[0].rm_eo - (int)match[0].rm_so, result);
+    // 编译正则表达式
+    match = regcomp(&regex, "[A-Z]+[0-9]+", 0);
 
-    regfree(&regex);
+    // 验证密码
+    if (match == 0) {
+        match = regexec(&regex, password, 0, NULL, 0);
+        if (match == 0) {
+            printf("密码符合要求");
+        } else {
+            printf("密码不符合要求");
+        }
+    }
+
     return 0;
 }
 ```
 
-运行结果：
+输出示例：
 
 ```
-A12Z
+请输入密码：StrongPass1
+密码符合要求
 ```
 
-在上面的代码中，我们使用`regcomp()`函数编译了正则表达式，然后使用`regexec()`函数进行匹配，最后利用`regmatch_t`结构体来获取匹配的结果。在实际的编程过程中，我们还可以使用一些标志来控制匹配的方式，比如`REG_EXTENDED`表示使用扩展的正则表达式语法，详情可以参考相关文档。
+## 深入探讨
+正则表达式最早出现在贝尔实验室的UNIX操作系统中，它们被称为“grep”的原因是因为它们作为“global regular expression print”的缩写。它们也经常被称为“regex”，“regexp”或者“RE”。
 
-## 深入了解正则表达式
+虽然使用字符串函数也可以完成类似的任务，但是正则表达式提供了更灵活和精确的模式匹配能力。它的替代方法是使用有限状态自动机（finite-state automaton）来搜索和解析文本，但是这种方法更复杂和更难以理解。
 
-正则表达式的语法比较复杂，一篇短文无法完全覆盖。除了上面提到的语法之外，还有很多高级的用法和技巧，比如使用子模式、反向引用、贪婪和非贪婪匹配等。是否熟练掌握正则表达式，还需要我们多加练习，并且在实际的编程中不断探索。
+想要在C语言中使用正则表达式，通常需要引入正则表达式的库，比如POSIX标准库或者PCRE库。然后使用现有的函数来编译、匹配和释放正则表达式。
 
-## 参考链接
-
-- [正则表达式教程](https://zhuanlan.zhihu.com/p/35018864)
-- [正则表达式入门教程](https://www.runoob.com/regexp/regexp-tutorial.html)
-- [REGEX(3)手册页](http://man7.org/linux/man-pages/man3/regex.3.html)
-
-## 参见
-
-- [用正则表达式优化文本匹配操作](https://www.zhihu.com/question/37698780)
-- [什么是正则表达式？](https://baike.baidu.com/item/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/244415)
+## 参考资料
+- [正则表达式基础教程](https://www.runoob.com/regexp/regexp-syntax.html)
+- [POSIX标准库正则表达式](https://www.gnu.org/software/libc/manual/html_node/Regular-Expressions.html)
+- [PCRE库](http://www.pcre.org/)

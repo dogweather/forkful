@@ -1,7 +1,7 @@
 ---
-title:                "Écriture vers l'erreur standard"
-html_title:           "Bash: Écriture vers l'erreur standard"
-simple_title:         "Écriture vers l'erreur standard"
+title:                "Écrire vers l'erreur standard"
+html_title:           "Bash: Écrire vers l'erreur standard"
+simple_title:         "Écrire vers l'erreur standard"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Files and I/O"
@@ -10,30 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
-Vous avez peut-être déjà vu un message d'erreur s'afficher en rouge dans votre terminal lorsque vous exécutez un script Bash. Eh bien, c'était le résultat de l'écriture vers une sortie d'erreur standard. Dans cet article, nous allons explorer pourquoi et comment écrire vers la sortie d'erreur standard dans Bash.
+## What & Why?
 
-## Comment faire
-Pour écrire vers la sortie d'erreur standard, nous pouvons utiliser la commande `echo` en spécifiant le caractère spécial `>&2`. Voici un exemple:
-```Bash
-echo "Erreur: impossible d'ouvrir le fichier" >&2
+Écrire dans la sortie d'erreur standard peut sembler étrange, mais c'est en fait une pratique courante chez les programmeurs. Cela permet d'afficher des messages d'erreur ou de débogage lors de l'exécution d'un script, afin d'aider à identifier et résoudre les problèmes plus rapidement.
+
+## How to:
+
+Voici deux exemples de la façon d'écrire dans la sortie d'erreur standard en utilisant Bash:
+
 ```
-Cela écrira le message d'erreur dans la sortie d'erreur standard plutôt que dans la sortie standard.
+#!/bin/bash
 
-Il est également possible d'écrire vers la sortie d'erreur standard en utilisant l'opérateur de redirection `2>`. Voici un exemple:
-```Bash
-ls fichier_inexistant 2> erreurs.log
+# Exemple 1: Afficher un message d'erreur
+echo "Une erreur s'est produite!" >&2
+
+# Exemple 2: Afficher un message de débogage
+echo "Variable x = $x" >&2
 ```
-Cela redirigera toutes les erreurs provenant de la commande `ls` vers le fichier "erreurs.log".
 
-## Plongée en profondeur
-La sortie d'erreur standard est une des trois sorties standard dans un terminal Unix, les deux autres étant la sortie standard et l'entrée standard. La sortie d'erreur standard (ou stderr en anglais) est utilisée pour afficher les messages d'erreur et les avertissements lors de l'exécution d'un script Bash.
+Lorsque ces commandes sont exécutées, les messages seront affichés dans la sortie d'erreur plutôt que dans la sortie standard. Voici à quoi cela ressemblerait une fois le script terminé:
 
-Écrire vers la sortie d'erreur standard peut être utile si vous souhaitez séparer les messages d'erreur de la sortie standard pour une meilleure lisibilité. De plus, certains programmes peuvent nécessiter la sortie d'erreur standard pour fonctionner correctement.
+```
+$ bash script.sh
+Une erreur s'est produite!
+Variable x = 10
+```
 
-Il est également possible de rediriger la sortie d'erreur standard vers un fichier en utilisant l'opérateur `2>&1`. Cela redirigera à la fois la sortie d'erreur et la sortie standard vers le même fichier.
+## Deep Dive:
 
-## Voir aussi
-- [Document officiel de Bash](https://www.gnu.org/software/bash/)
-- [Redirection de sortie standard et d'erreur standard](https://www.cyberciti.biz/faq/bash-redirecting-stderr-to-stdout/) (en anglais)
-- [Tutoriel vidéo sur la redirection de la sortie d'erreur standard en Bash](https://www.youtube.com/watch?v=AnG_uF4-NAU) (en anglais)
+### Contexte historique:
+
+La pratique d'écrire dans la sortie d'erreur standard provient des premiers systèmes UNIX, où les messages d'erreur étaient souvent envoyés à un fichier de journal. Cependant, cela posait des problèmes de sécurité car n'importe quel utilisateur pouvait accéder à ce fichier. Afin de résoudre ce problème, le concept de sortie d'erreur standard a été introduit pour séparer les messages d'erreur des messages normaux.
+
+### Alternatives:
+
+Bien qu'écrire dans la sortie d'erreur standard soit une pratique courante, il existe d'autres façons d'afficher des messages d'erreur ou de débogage. Par exemple, certains programmeurs utilisent des commandes tels que `logger` ou `syslog` pour envoyer des messages à des fichiers de journal dédiés systèmes. Cependant, cela peut être plus complexe et nécessite souvent des autorisations spéciales.
+
+### Détails de mise en œuvre:
+
+La syntaxe utilisée pour écrire dans la sortie d'erreur standard est `>&2`. Cela signifie que le curseur d'écriture est redirigé vers le descripteur de fichier 2, qui correspond à la sortie d'erreur standard. De plus, il est important de noter que la sortie d'erreur standard est également associée au descripteur de fichier 3, ce qui signifie que vous pouvez utiliser `>&3` pour envoyer des messages d'erreur à celui-ci si nécessaire.
+
+## See Also:
+
+Pour en savoir plus sur l'écriture dans la sortie d'erreur standard, consultez ces sources utiles :
+
+- [Bash Tutorial - Standard Input and Output](https://ryanstutorials.net/bash-scripting-tutorial/bash-input-output.php)
+- [The Linux Command Line - Standard I/O and Redirection](https://linuxcommand.org/lc3_lts0070.php)
+- [GNU Bash Manual - Redirections](https://www.gnu.org/software/bash/manual/html_node/Redirections.html)

@@ -1,7 +1,7 @@
 ---
-title:                "Mallille vastaavien merkkien poistaminen"
-html_title:           "TypeScript: Mallille vastaavien merkkien poistaminen"
-simple_title:         "Mallille vastaavien merkkien poistaminen"
+title:                "Pinnan mukaiset merkkien poistaminen"
+html_title:           "TypeScript: Pinnan mukaiset merkkien poistaminen"
+simple_title:         "Pinnan mukaiset merkkien poistaminen"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -10,26 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä ja miksi?
+Merkinpoisto, joka vastaa määrättyä kuvioa, on tapa poistaa tietyt merkit tietystä merkistöstä tai tekstimuodosta. Tätä tehdään usein ohjelmoinnin yhteydessä esimerkiksi tietojen puhdistamiseksi tai tietyn halutun tuloksen saamiseksi.
 
-Miksi joku haluaisi poistaa merkkejä, jotka vastaavat tietytä kaavaa? Tämä voi olla hyödyllistä, jos esimerkiksi haluat puhdistaa tekstiä tai muuttaa sen muotoa tietyllä tavalla.
+## Miten:
+Esimerkki TypeScript-koodin käytöstä:
+```
+TypeScript function removeChars(input: string, pattern: string): string {
+  return input.replace(new RegExp(pattern, 'g'), ''); 
+}
 
-## Näin teet sen
+console.log(removeChars('Hei Maailma!', '[aA]')); 
 
-```TypeScript
-const teksti: string = "Tämä on esimerkki tekstistä."
-const uusiTeksti: string = teksti.replace(/[Ttä]+/g, "")
-console.log(uusiTeksti)
+// Tulostaa: "Hei Mil!" 
 ```
 
-Tämä koodi poistaa kaikki "t" ja "ä" kirjaimet tekstin "Tämä on esimerkki tekstistä" ja tulostaa uuden tekstin "mo on esimerkki eksist." Miten tämä toimii? Vaihdetaan [Ttä]+ ilmaisun mukaiset merkit tyhjään merkkijonoon. Voit käyttää tätä tekniikkaa myös muissa kaavoissa tai sanojen korvaamiseen.
+## Syvälle sukellus:
+Merkinpoistoa vastaava menetelmä on ollut käytössä jo vuosien ajan ohjelmoinnin maailmassa. Muita vaihtoehtoja voivat olla esimerkiksi käyttää säännöllisiä lausekkeita tai luoda oma algoritmi poistamista varten. TypeScriptin regex-toiminnallisuus tarjoaa kuitenkin helpon ja tehokkaan tavan suorittaa merkinpoisto ohjelmassa. Tämä tapahtuu muodostamalla uusi RegExp-objekti, jossa määritellään haluttu kuvio ja käytetään sitten replace-metodia poistamiseen.
 
-## Syvemmällä
-
-Jos haluat oppia lisää, miten regex-kaavat toimivat TypeScriptissä ja miten voit muuttaa niitä erilaisiin tarkoituksiin, kannattaa tutustua TypeScriptin viralliseen dokumentaatioon ja löytää muita esimerkkejä ja oppaita verkosta.
-
-## Katso myös
-
-- [TypeScript dokumentaatio](https://www.typescriptlang.org/docs/)
-- [Regex-kaavojen perusopas](https://codeburst.io/javascript-learn-regular-expressions-for-beginners-bb610383e154)
-- [Regex-mallintaja](https://regexr.com/)
+## Katso myös:
+- [RegExp-objekti TypeScriptissä](https://www.typescriptlang.org/docs/handbook/regexp.html)
+- [Säännölliset lausekkeet ohjelmoinnissa](https://developer.mozilla.org/fi/docs/Web/JavaScript/Guide/Regular_Expressions)
+- [Kustomoitava merkinpoisto suurilla datamäärillä TypeScriptillä](https://blog.totaljs.com/blogs/tutorials/20190305-custom-character-remover-for-large-strings-in-typescript/)

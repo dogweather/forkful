@@ -1,7 +1,7 @@
 ---
-title:                "テキストファイルの書き方"
-html_title:           "PHP: テキストファイルの書き方"
-simple_title:         "テキストファイルの書き方"
+title:                "テキストファイルの作成"
+html_title:           "PHP: テキストファイルの作成"
+simple_title:         "テキストファイルの作成"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Files and I/O"
@@ -10,53 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+# What & Why?
+テキストファイルを書くとは何か？プログラマーがそれをする理由は何か？
 
-テキストファイルを書く理由は様々ですが、主なものはデータの永続性です。データベースやプログラムではなく、簡単なテキストファイルを使用することで、より柔軟な方法でデータを保管することができます。
+テキストファイルとは、テキスト形式で情報を保存することができるファイルのことです。プログラマーは、プログラミング言語でテキストファイルを作成することで、プログラムに必要なデータを保存および読み込むことができます。
 
-## How To
-
-テキストファイルを書くには、まずPHPのファイル操作関数を使用します。以下のコードを使用して、新しいテキストファイルを作成し、データを書き込むことができます。
-
-```PHP
-<?php
-
-// ファイルを作成し、書き込み用に開く
-$myfile = fopen("textfile.txt", "w") or die("Unable to open file!");
-
-// テキストファイルにデータを書き込む
-$txt = "This is a sample text.";
-fwrite($myfile, $txt);
-
-// ファイルを閉じる
-fclose($myfile);
-```
-
-上記のコードを実行すると、PHPファイルと同じディレクトリに "textfile.txt" という名前の新しいファイルが作成されます。テキストファイルを開くと、"This is a sample text." というテキストが書き込まれていることがわかります。
-
-また、既存のテキストファイルを編集することもできます。以下のコードを使用して、既存のテキストファイルに新しいデータを追記することができます。
+# How to:
+テキストファイルを作成するには、PHPの```fopen()```関数を使用します。 以下の例は、"text.txt"という名前のテキストファイルを作成し、その中に"Hello World!"というテキストを書き込んでいます。
 
 ```PHP
-<?php
-
-// ファイルを開き、追記用に開く
-$myfile = fopen("textfile.txt", "a") or die("Unable to open file!");
-
-// 既存のデータの後に新しいデータを追記
-$txt = "This is a new line.";
-fwrite($myfile, $txt);
-
-// ファイルを閉じる
-fclose($myfile);
+$file = fopen("text.txt", "w");
+fwrite($file, "Hello World!");
+fclose($file);
 ```
 
-上記のコードを実行すると、既存のテキストファイルの最後に "This is a new line." というテキストが追記されることがわかります。
+実行すると、"text.txt"ファイルが作成され、その中に"Hello World!"というテキストが書き込まれます。
 
-## Deep Dive
+# Deep Dive:
+歴史的な文脈や代替手段、テキストファイルを作成する方法についてのさらなる情報。
 
-ファイル操作関数の詳細については、PHPの公式ドキュメントを参照してください。また、テキストファイルを書く際には、文字エンコーディングにも注意が必要です。データを書き込む前に、適切な文字エンコーディングを指定することで、日本語や他の言語のテキストも正しく書き込むことができます。
+テキストファイルは、コンピューターの登場以前から存在していました。 しかし、今でもテキストファイルは、さまざまな言語やプログラムでデータを保存するために一般的に使用されています。代替手段としては、データベースやスプレッドシートなどのデータベース管理システムがありますが、小さなデータセットを扱う場合や、実行速度が重要な場合は、テキストファイルの使用が推奨されます。
 
-## See Also
+テキストファイルを作成する方法には、他にも```file_put_contents()```や```fwrite()```以外の方法がありますが、基本的には同じような手順でテキストファイルを作成することができます。
 
-- PHPのファイル操作関数: https://www.php.net/manual/ja/ref.filesystem.php
-- 文字エンコーディングについて: https://www.php.net/manual/ja/function.mb-convert-encoding.php
+# See Also:
+関連する情報源へのリンク。
+
+- PHP公式ドキュメント - fopen関数：https://www.php.net/manual/en/function.fopen.php
+- PHP公式ドキュメント - fwrite関数：https://www.php.net/manual/en/function.fwrite.php

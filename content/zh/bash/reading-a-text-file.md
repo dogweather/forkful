@@ -10,40 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
+## 什么是文本文件读取？为什么程序员要做？
 
-读取文本文件是编程中常见的任务。通过学习如何在Bash中读取文本文件，您可以轻松地提取数据并对其进行处理。这将使您的工作更快，更有效。
+文本文件读取是指通过编程语言来获取文本文件中的内容。程序员通常需要读取文本文件来处理数据或者获取其中的信息。
 
-## 如何进行
+## 如何做？
 
-首先，打开终端并进入想要读取文本文件的目录。然后，使用以下命令将文件内容输出到终端：
-
-```Bash
-cat file.txt
 ```
+Bash
+# 使用 cat 命令来显示文本文件中的内容
+cat file.txt
 
-如果您想要按行输出文件内容，可以使用 `read` 命令：
-
-```Bash
+# 使用 read 命令来逐行读取文本文件中的内容
 while read line; do
-  echo $line
+    echo "$line"
 done < file.txt
 ```
 
-这将逐行输出文件的内容。您还可以使用 `grep` 命令来筛选特定的文本行：
+#### 输出：
 
-```Bash
-grep "keyword" file.txt
+```
+This is a sample text file.
+It contains some random text characters.
 ```
 
-深入挖掘
+## 深入了解
 
-想要更深入了解如何在Bash中读取文本文件？您可以学习如何使用不同的命令来处理文件内容，如 `sed`、`awk` 和 `cut`。您也可以了解如何使用循环来处理大量文本文件。
+1.历史背景：早期的计算机系统并没有文本文件读取的功能，因此程序员不得不手动输入或者通过其他方式获取数据。
 
-## 参考链接
+2.替代方法：除了使用 Bash，程序员还可以使用其他编程语言如Python或者C来读取文本文件。
 
-- [Bash官方文档](https://www.gnu.org/software/bash)
-- [如何使用grep命令](https://www.tecmint.com/12-practical-examples-of-linux-grep-command/)
-- [如何使用sed命令](https://www.lifewire.com/uses-of-linux-sed-command-4051007)
-- [如何使用awk命令](https://www.computerhope.com/unix/uawk.htm)
-- [如何使用cut命令](https://www.baeldung.com/linux/cut-command)
+3.实现细节：在Bash中，可以使用特定的命令来读取文本文件，比如通过重定向运算符（<）将文本文件作为输入来源，或者使用循环来逐行读取文本文件中的内容。
+
+## 链接
+
+- Bash官方文档：https://www.gnu.org/software/bash/
+- 使用read命令读取文件：https://linuxize.com/post/bash-read-file/
+- 在Bash中读写文件：https://www.baeldung.com/linux/bash-read-write-files

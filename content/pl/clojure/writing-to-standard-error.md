@@ -1,7 +1,7 @@
 ---
-title:                "Pisanie do błędu standardowego"
-html_title:           "Clojure: Pisanie do błędu standardowego"
-simple_title:         "Pisanie do błędu standardowego"
+title:                "Pisanie do standardowego błędu"
+html_title:           "Clojure: Pisanie do standardowego błędu"
+simple_title:         "Pisanie do standardowego błędu"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Files and I/O"
@@ -10,37 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i Dlaczego?
 
-Niektórzy programiści uważają, że pisanie na standardowe wyjście błędów jest złym pomysłem, ponieważ może to przyczynić się do chaosu w konsoli i utrudnić analizowanie logów. Jednak istnieją sytuacje, w których pisanie na standardowe wyjście błędów może być przydatne, zwłaszcza podczas debugowania i testowania kodu. W tym artykule dowiesz się, dlaczego warto znać ten sposób wypisywania informacji oraz jak to zrobić w języku Clojure.
+Zapisywanie do standardowego błędu jest procesem, który polega na przesyłaniu informacji o błędach lub ostrzeżeniach na standardowe wyjście błędu zamiast na standardowe wyjście. Programiści często robią to, aby łatwiej monitorować i debugować swoje programy.
 
-## Jak to zrobić
+## Jak to zrobić:
 
-W Clojure, aby wypisać dane na standardowe wyjście błędów, należy użyć funkcji `(print-error some-data)`. Aby przetestować to w akcji, użyjmy poniższego kodu w REPL:
+Kodując w języku Clojure, można użyć funkcji `(System/err (str "Tekst, który chcesz zapisać do standardowego błędu"))`, aby przekierować informacje o błędach na standardowe wyjście błędu. Poniżej znajduje się przykładowy kod i wyjście, który pokazuje działanie tej funkcji.
 
 ```Clojure
-(print-error "Ten tekst zostanie wyświetlony na standardowym wyjściu błędów.")
+(defn throw-error []
+  (System/err (str "Wystąpił błąd!")))
+  
+(throw-error)
 ```
 
-To spowoduje wypisanie podanego tekstu na standardowe wyjście błędów:
-
+Output:
 ```
-Ten tekst zostanie wyświetlony na standardowym wyjściu błędów.
+Wystąpił błąd!
 ```
 
-## Deep Dive
+## Głębszy Przegląd:
 
-Funkcja `print-error` we właściwy sposób wymusza wypisanie danej wartości na standardowe wyjście błędów, nawet jeśli jest to skompilowany kod. Możemy również użyć funkcji `println-error`, która pozwala na dodanie znaku nowej linii na końcu wypisywanego tekstu.
+Zapisywanie do standardowego błędu jest częstym sposobem na komunikowanie informacji o błędach w programach. Praktyka ta pochodzi z Unixa, gdzie standardowe wyjście błędu jest oddzielone od standardowego wyjścia, co ułatwia debugowanie i przesyłanie informacji na zewnątrz. Alternatywą dla tego podejścia jest korzystanie z bibliotek do obsługi błędów, takich jak Sentry lub Log4j. Implementacja zapisywania do standardowego błędu w języku Clojure jest prostym procesem, ponieważ język ten jest zbudowany na platformie JVM, która obsługuje standardowe wyjście błędu.
 
-Warto również wspomnieć, że w języku Clojure dostępna jest również funkcja `eprintln`, która działa podobnie jak `print-error`, ale pozwala na wprowadzenie wielu argumentów do wypisania. Możemy użyć także funkcji `pprint` do wypisania danych w bardziej czytelnej formie.
+## Zobacz też:
 
-W przypadku, gdy potrzebujemy wyświetlić informacje o błędzie w naszym kodzie, można to zrobić za pomocą funkcji `eprint`, która jest podobna do `eprintln`, ale nie dodaje znaku nowej linii na końcu.
-
-## Zobacz też
-
-- Dokumentacja Clojure: https://clojure.org/
-- Funkcja print-error: https://clojuredocs.org/clojure.core/print-error
-- Funkcja println-error: https://clojuredocs.org/clojure.core/println-error
-- Funkcja pprint: https://clojuredocs.org/clojure.pprint/pprint
-- Funkcja eprintln: https://clojuredocs.org/clojure.core/eprintln
-- Funkcja eprint: https://clojuredocs.org/clojure.core/eprint
+- Oficjalna dokumentacja języka Clojure: https://clojure.org
+- Dokumentacja na temat standardowych strumieni w języku Java: https://docs.oracle.com/javase/tutorial/essential/io/stream.html

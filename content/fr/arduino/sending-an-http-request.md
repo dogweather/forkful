@@ -10,74 +10,73 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Pourquoi
+# Qu'est-ce que c'est et Pourquoi?
 
-## Pourquoi utiliser une requête HTTP sur Arduino ?
+Envoyer une requête HTTP, c'est simplement envoyer une demande à un serveur pour obtenir des informations ou pour effectuer une action. Les programmeurs le font souvent pour communiquer avec des services web tels que des API ou pour contrôler des appareils connectés à internet.
 
-Si vous voulez que votre projet Arduino soit connecté à Internet, vous aurez besoin d'envoyer des requêtes HTTP. Cela peut vous permettre d'obtenir des informations à partir d'un serveur ou de contrôler des dispositifs à distance.
+# Comment faire:
 
-# Comment faire
+Voici comment envoyer une requête HTTP en utilisant Arduino:
 
-## Comment envoyer une requête HTTP avec Arduino ?
+```Arduino
+#include <WiFi.h>
+#include <WiFiClient.h>
+#include <HTTPClient.h>
 
-Pour envoyer une requête HTTP avec Arduino, vous aurez besoin d'une connexion Internet et d'un bouclier Ethernet ou WiFi. Voici un exemple de code pour envoyer une requête GET à un serveur et afficher la réponse dans le moniteur série :
+const char *ssid = "MonWifi"; // Remplacez par le nom de votre réseau WiFi
+const char *password = "MotDePasse"; // Remplacez par votre mot de passe WiFi
 
-```Arduino 
-#include <SPI.h> // Inclure la bibliothèque SPI
-#include <Ethernet.h> // Inclure la bibliothèque Ethernet
-
-byte mac[] = { 0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED }; // Définir l'adresse MAC
-IPAddress server(192,168,1,1); // Définir l'adresse IP du serveur
-EthernetClient client; // Créer un objet client
-
-void setup() {
-  Serial.begin(9600); // Initialiser le moniteur série
-  Ethernet.begin(mac); // Initialiser la connexion Ethernet
-  delay(1000); // Attendre 1 seconde
+void setup()
+{
+    Serial.begin(115200); // Démarre la communication série
+    WiFi.begin(ssid, password); // Se connecte au réseau WiFi
+    Serial.println("En attente de connexion WiFi...");
+    
+    while (WiFi.status() != WL_CONNECTED) { // Attendez une connexion WiFi
+        delay(500);
+        Serial.print(".");
+    }
+    
+    Serial.println("Connecté au WiFi");
 }
 
-void loop() {
-  if (client.connect(server, 80)) { // Si la connexion au serveur réussit
-    Serial.println("Connexion établie."); // Afficher un message
-    client.println("GET / HTTP/1.1"); // Envoyer la requête GET
-    client.println("Host: 192.168.1.1"); // Ajouter l'en-tête Host
-    client.println("Connection: close"); // Ajouter l'en-tête Connection pour fermer la connexion après la réponse
-    client.println(); // Terminer la requête avec une ligne vide
-  } else {
-    Serial.println("Échec de la connexion."); // Afficher un message en cas d'échec
-  }
- 
-  while (client.available()) { // Tant qu'il y a des données à lire
-    char c = client.read(); // Lire un caractère
-    Serial.print(c); // Afficher le caractère dans le moniteur série
-  }
-
-  if (!client.connected()) { // Si la connexion est fermée
-    client.stop(); // Fermer la connexion
-    Serial.println("\nConnexion terminée."); // Afficher un message
-    while(true); // Attendre en boucle jusqu'à la prochaine connexion
-  }
+void loop()
+{
+    WiFiClient client; // Instancie un client WiFi
+    HTTPClient http; // Instancie un client HTTP
+    
+    Serial.print("Envoi d'une requête a l'adresse: ");
+    Serial.println("httpbin.org/ip");
+    
+    http.begin(client, "http://httpbin.org/ip"); // Débute une requête HTTP vers httpbin.org
+    int httpResponseCode = http.GET(); // Envoie la requête GET
+    
+    if (httpResponseCode > 0) {
+        String response = http.getString(); // Obtient la réponse
+        
+        Serial.println(httpResponseCode); // Affiche le code de réponse
+        Serial.println(response); // Affiche la réponse
+    }
+    else {
+        Serial.println("Erreur lors de la requête");
+    }
+    
+    http.end(); // Termine la requête HTTP
+    
+    delay(5000); // Attend 5 secondes avant de recommencer
 }
 ```
 
-Lorsque vous téléverserez ce code sur votre carte Arduino, vous devriez voir la réponse du serveur dans le moniteur série.
+Lorsque vous exécutez ce code, le moniteur série affichera le code de réponse de la requête ainsi que la réponse du serveur. Dans cet exemple, le code de réponse devrait être 200 et la réponse devrait contenir votre adresse IP.
 
-# Deep Dive
+# Plongée en profondeur:
 
-## En savoir plus sur l'envoi de requêtes HTTP avec Arduino
+Envoyer des requêtes HTTP est une pratique courante dans le développement web, car cela permet de communiquer avec des services externes et de récupérer des données en temps réel. Alternativement, vous pouvez également utiliser des protocoles tels que MQTT ou UDP pour la communication entre appareils connectés. L'envoi de requêtes HTTP avec Arduino peut également être réalisé en utilisant des bibliothèques tierces telles que HttpClient ou cURL.
 
-Voici quelques éléments à prendre en compte lorsque vous utilisez des requêtes HTTP sur Arduino :
+# Voir aussi:
 
-- Vous pouvez également envoyer des requêtes POST pour envoyer des données au serveur.
-- Vous pouvez ajouter des en-têtes supplémentaires à la requête en utilisant la fonction `client.println()`, comme dans l'exemple ci-dessus.
-- Vous pouvez utiliser un shield ou un module WiFi pour connecter votre Arduino à Internet.
-- Certaines bibliothèques peuvent faciliter l'envoi de requêtes HTTP sur Arduino, comme `HTTPClient.h` ou `WiFiClientSecure.h` pour utiliser une connexion sécurisée.
+Pour en savoir plus sur l'envoi de requêtes HTTP avec Arduino, vous pouvez consulter les ressources suivantes:
 
-En utilisant les requêtes HTTP, vous pouvez accéder à une multitude de services en ligne et contrôler votre Arduino à distance. Cela peut être très utile pour les projets de domotique, de surveillance ou de suivi de données en temps réel. N'hésitez pas à explorer davantage cette fonctionnalité et à l'implémenter dans vos projets !
-
-# Voir aussi
-
-- [Tutoriel sur l'utilisation de requêtes HTTP avec Arduino](https://www.arduino.cc/en/Tutorial/LibraryExamples/HTTPClient)
-- [Documentation Ethernet.h](https://www.arduino.cc/en/Reference/Ethernet)
-- [Documentation WiFiClient.h](https://www.arduino.cc/en/Reference/WiFiClient)
-- [Autre exemple de requête HTTP avec WiFiClientSecure.h](https://randomnerdtutorials.com/esp32-http-get-parameters-arduino-ide/)
+- Développement WiFi avec Arduino: https://www.arduino.cc/en/Reference/WiFi
+- Cours de base sur l'HTTP: https://www.tutorialspoint.com/http/index.htm
+- Bibliothèque HttpClient: https://github.com/amcewen/HttpClient

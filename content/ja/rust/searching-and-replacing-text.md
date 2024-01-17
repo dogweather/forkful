@@ -1,7 +1,7 @@
 ---
-title:                "テキストの検索と置き換え"
-html_title:           "Rust: テキストの検索と置き換え"
-simple_title:         "テキストの検索と置き換え"
+title:                "テキストの検索と置換"
+html_title:           "Rust: テキストの検索と置換"
+simple_title:         "テキストの検索と置換"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -10,42 +10,22 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Rustでテキスト検索と置換
+## What & Why?
+テキストの検索と置換とは、プログラマーがコード内の特定のテキストを探し出し、修正することを意味します。プログラマーはこの作業を行うことで、コードの変更や修正を効率的に行うことができます。
 
-Rustは高速で安全性が高いプログラミング言語として人気があります。その機能の一つに、テキストの検索と置換が挙げられます。この記事では、Rustでテキストを検索・置換する方法と深く掘り下げた情報を紹介します。
+## How to:
+```
+Rustでテキストの検索と置換を行うには、正規表現を使用します。以下のコードのように、検索するテキストと置換するテキストを指定し、マッチしたすべての箇所を変更することができます。
 
-## なぜテキストを検索・置換するのか
-
-テキストを検索・置換するのは、コンピュータ上のテキスト処理に欠かせないものです。例えば、大量のデータから特定のキーワードを検索し、そのキーワードを別のものに置換することで、データの整理や修正が可能になります。
-
-## テキストの検索・置換の方法
-
-Rustでは、標準ライブラリの`str`メソッドを使用することでテキストの検索・置換が可能です。以下の例では、`replace`メソッドを使用してテキストの置換を行っています。
-
-```Rust
-let text = "Hello, world!";
-let replaced_text = text.replace("Hello", "Hi");
-println!("Replaced text: {}", replaced_text);
+let search_text = "hello";
+let replace_text = "こんにちは";
+let new_text = regex::replace_all("hello world", search_text, replace_text);
+println!("{}", new_text); // 結果：こんにちは world
 ```
 
-上記のコードの実行結果は次のようになります。
+## Deep Dive:
+テキストの検索と置換は、古くからプログラミング言語における必要な機能の一つです。しかし、Rustではその実装が独自のものとなっています。また、別の方法として、文字列を直接変更する代わりに新しい文字列を作成する手法もあります。
 
-```console
-Replaced text: Hi, world!
-```
-
-Rustの`replace`メソッドは、第一引数で指定した文字列を全て第二引数の文字列に置換します。
-
-## テキストの検索・置換の深層
-
-テキストの検索・置換の最も基本的な方法は、先ほど紹介した`replace`メソッドです。しかし、より高度なテキスト処理を行うには、より複雑な方法も必要になるかもしれません。そのような場合は、正規表現を使用することができます。また、外部クレートを使用することでもより高度なテキスト処理を行うことが可能です。
-
-## 他にも参考になる記事を探してみよう
-
-- [RustのStringの`replace`メソッドの詳細](https://doc.rust-lang.org/std/string/struct.String.html#method.replace)
-- [Rustで正規表現を使用する方法](https://docs.rs/regex/1.3.6/regex/)
-- [より高度なテキスト処理を行うための外部クレート一覧](https://awesome-rust.com/categories/processing/text_processing.html)
-
-## もっとRustを学ぼう
-
-もしもっとRustについて学びたいと思ったら、[公式ドキュメント](https://www.rust-lang.org/ja/learn)や[エクササイズサイト](https://exercism.io/tracks/rust)で練習をすることをおすすめします。また、[Awesome Rust](https://github.com/rust-unofficial/awesome-rust)には多くの有益なリソースがまとめられています。ぜひチェックしてみてください！
+## See Also:
+- [Rustの正規表現](https://doc.rust-lang.org/std/re/)
+- [RustRegexライブラリ](https://github.com/rust-lang/regex)

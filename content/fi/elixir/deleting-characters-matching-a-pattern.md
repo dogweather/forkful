@@ -10,28 +10,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä ja miksi?
+Miksi me ohjelmoijat poistamme merkkejä, jotka vastaavat tietytä kaavaa? Se on yksinkertainen tapa käsitellä tekstiä Elixir-ohjelmointikielellä. Elixirin sisäänrakennettu "String" -moduuli tarjoaa monia toimintoja, jotka helpottavat tekstin käsittelyä ja manipulointia. Poistamalla merkkejä, jotka vastaavat tietyt kriteerit, voimme helposti valita haluamamme tiedot ja jättää pois tarpeettomat.
 
-Mikä voisi olla syy poistaa merkkejä, jotka vastaavat tiettyä kaavaa? Oikeastaan siinä voi olla monia perusteita. Saattaa olla, että haluat puhdistaa tietoa tai ehkä haluat vain tehdä koodista siistimmän ja helpommin luettavan.
-
-## Näin teet sen
-
-Tarvitsetko poistaa merkkejä, jotka vastaavat tiettyä kaavaa Elixirissä? Ei hätää, sillä siihen on helppo ratkaisu. Voit käyttää Regex-kirjastoa poistamaan halutut merkit. Katso esimerkkiä alla:
+## Miten:
+Poista merkkejä vastaavat toiminnon avulla voimme käyttää "String" -moduulin "replace" -funktiota. Se ottaa kaksi argumenttia: alkuperäisen merkkijonon ja muotoilun, jota haluamme korvata. Käytämme sitten regex-lausekkeita määrittääksemme mitä haluamme poistaa. Alla on yksinkertainen esimerkki:
 
 ```Elixir
-Regex.replace("Some text with numbers: 1234 and symbols: !@#$", ~r/[0-9!@#$]/, "")
-# Output: "Some text with numbers:  and symbols: "
+str = "Tervetuloa Elixir-maailmaan!"
+Regex.replace(str, ~r/Elixir/, "Hello") # tulostaa "Tervetuloa Hello-maailmaan!"
 ```
 
-Tämä esimerkki käyttää Regex.replace-funktiota korvaamaan kaikki numerot ja symbolit tyhjällä merkillä. Voit myös käyttää Regex.match-funktiota tarkistaaksesi, että poistanut merkit todella vastaavat haluamaasi kaavaa.
+## Syvempään:
+Poista merkkejä vastaavien toimintojen käyttäminen on tullut erittäin suosituksi Elixir-yhteisössä sen helppokäyttöisyyden ja nopeuden vuoksi. Ennen Elixir-versiota 1.6, poista merkkejä vastaavaa toimintoa ei ollut sisäänrakennettuna, mutta nykyään se on käytettävissä.
 
-## Syvemmälle aiheeseen
+On myös muita tapoja poistaa merkkejä, kuten käyttämällä "String" -moduulin "trim" -toimintoa, joka poistaa kaikki annetut merkit merkkijonon alusta ja lopusta.
 
-Elixirin Regex-kirjasto tarjoaa monia eri toimintoja, joilla voi käsitellä merkkien kaavoja. Voit esimerkiksi käyttää Regex.split-funktiota jakamaan merkkijonon kaavaa vastaavien merkkien kohdalta. Lisäksi voit käyttää Regex.scan-funktiota löytämään kaavaa vastaavat osat merkkijonosta.
+Regex-lausekkeet ovat myös erittäin voimakkaita ja monipuolisia, joten kannattaa tutustua niihin ja niiden käyttöön tekstin käsittelyssä.
 
-Jos haluat oppia lisää Regex-kirjastosta ja sen eri toiminnoista, suosittelemme lukemaan [virallisen dokumentaation](https://hexdocs.pm/elixir/Regex.html) sekä [Regular-Expressions.info](https://www.regular-expressions.info/).
-
-## Katso myös
-
-- [Regex-kirjaston virallinen dokumentaatio](https://hexdocs.pm/elixir/Regex.html)
-- [Regular-Expressions.info](https://www.regular-expressions.info/)
+## Katso myös:
+- [Elixirin virallinen dokumentaatio](https://elixir-lang.org/docs.html)
+- [Regex-lausekkeiden opas Elixirissa](https://hexdocs.pm/elixir/Regex.html)

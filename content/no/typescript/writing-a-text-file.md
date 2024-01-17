@@ -1,7 +1,7 @@
 ---
-title:                "Å skrive en tekstfil"
-html_title:           "TypeScript: Å skrive en tekstfil"
-simple_title:         "Å skrive en tekstfil"
+title:                "Skriver en tekstfil"
+html_title:           "TypeScript: Skriver en tekstfil"
+simple_title:         "Skriver en tekstfil"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Files and I/O"
@@ -10,30 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
-Å skrive en tekstfil er en veldig nyttig ferdighet å ha som programmerer. Det lar deg lagre data og informasjon på en enkel og organisert måte.
+## Hva & hvorfor? 
+Å skrive en tekstfil er en vanlig oppgave for programmerere. Det innebærer å lage en fil som inneholder tekst som kan leses og endres. Dette er nyttig for å lagre data eller informasjon som skal brukes senere i programmet.
 
-## Slik gjør du det
-For å skrive en tekstfil i TypeScript, trenger du å bruke Node.js. Her er et eksempel på hvordan du kan gjøre det:
+## Hvordan:
+I TypeScript kan du bruke File System-modulen for å skrive en tekstfil. Først må du importere modulen ved hjelp av ```import fs from 'fs'```. Deretter kan du bruke metoden ```writeFile()``` for å opprette en tekstfil og skrive innholdet i den. For å skrive til en eksisterende fil, kan du bruke metoden ```appendFile()```. Her er et eksempel på hvordan du kan skrive tekst til en fil:
 
 ```TypeScript
-import fs from 'fs'; // Importer fs modulen som lar deg skrive filer
+import fs from 'fs';
 
-// Definer en variabel med dataen du vil skrive til filen
-const data = "Dette er en tekstfil skrevet i TypeScript.";
+// Oppretter og skriver til en ny fil
+fs.writeFile('tekstfil.txt', 'Dette er en tekstfil skrevet med TypeScript', (err) => {
+   if (err) {
+      console.error(err);
+      return;
+   }
+   console.log('Tekstfilen ble opprettet og teksten ble skrevet.');
+});
 
-// Bruk fs.writeFile() metoden for å skrive til filen
-fs.writeFile('eksempel.txt', data, (err) => {
-    if (err) throw err; // Hvis det oppstår en feil, kast den og avslutt programmet
-    console.log('Tekstfilen ble skrevet!'); // Gi beskjed om at filen ble skrevet hvis alt går bra
+// Skriver tekst til en eksisterende fil
+fs.appendFile('tekstfil.txt', ' Ny tekst legges til.', (err) => {
+   if (err) {
+      console.error(err);
+      return;
+   }
+   console.log('Ny tekst ble lagt til i tekstfilen.');
 });
 ```
 
-Når du har kjørt dette scriptet, vil det opprette en ny fil kalt "eksempel.txt" og skrive den ønskede teksten til den.
+Output:
+Tekstfilen ble opprettet og teksten ble skrevet.
+Ny tekst ble lagt til i tekstfilen.
 
-## Dypdykk
-Hvis du ønsker å lære mer om å skrive tekstfiler i TypeScript, kan du også utforske fs modulen og dens forskjellige metoder. For eksempel kan du bruke fs.appendFile() metoden for å legge til tekst til en eksisterende fil, eller fs.readFile() for å lese data fra en fil.
+## Dypdykk:
+Å skrive tekstfiler har vært en viktig del av programmering siden de tidlige dager med datamaskiner. Først ble dette gjort med lavnivå kodespråk som maskinkode, men med utviklingen av høyere programmeringsspråk som TypeScript har denne oppgaven blitt mye enklere. En alternativ måte å skrive tekstfiler på er å bruke Node.js sin File System-modul, som fungerer på samme måte som File System-modulen i TypeScript.
 
-## Se også
-- [Offisiell dokumentasjon for fs modulen](https://nodejs.org/api/fs.html)
-- [En læringsressurs for å mestre TypeScript](https://www.typescriptlang.org/docs/)
+Når du skriver en tekstfil, må du være oppmerksom på hvilken type koding du bruker. Dette vil påvirke hvordan filen blir lest og tolket av datamaskinen. For eksempel bruker Windows og Mac forskjellige typer koding. Du kan spesifisere kodingen du ønsker å bruke ved å legge til et tredje argument i ```writeFile()``` og ```appendFile()``` metoden.
+
+## Se også:
+- [TypeScript File System-modulen](https://www.typescriptlang.org/docs/handbook/nodejs.html#working-with-file-systems)
+- [Node.js File System-modulen](https://nodejs.org/api/fs.html#fs_file_system)

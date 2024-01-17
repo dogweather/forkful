@@ -1,7 +1,7 @@
 ---
-title:                "Merkkijonon muotoilu"
-html_title:           "Arduino: Merkkijonon muotoilu"
-simple_title:         "Merkkijonon muotoilu"
+title:                "Merkkijonon ensimmäisen kirjaimen kirjoittaminen isoksi"
+html_title:           "Arduino: Merkkijonon ensimmäisen kirjaimen kirjoittaminen isoksi"
+simple_title:         "Merkkijonon ensimmäisen kirjaimen kirjoittaminen isoksi"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Strings"
@@ -10,32 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+Miks
+Angles
+For people new to programming, one of the first things you may come across is the concept of "capitalizing a string". This simply means converting all the letters in a word or phrase to uppercase. Programmers do this for a variety of reasons, such as ensuring consistency in data or making comparisons easier.
 
-Usein ohjelmointitilanteissa tarvitaan muotoiltuja merkkijonoja. Yksi yleinen muotoilu on tehdä merkkijonon ensimmäisestä kirjaimesta iso alkukirjain ja lopuista kirjaimista pieniä. Tähän tarvitaan pienen kikkailun lisäksi myös koodia, ja tässä artikkelissa käymme läpi miten se tehdään Arduino-ympäristössä.
+Mikä & Miksi?
+Miksi haluat muuttaa jonkin sanan tai lauseen isot kirjaimet? No, on monia syitä! Ehkä haluat varmistaa yhtenäisyyden datassa tai helpottaa vertailuja.
 
-## Käyttöohje
-
-Aloita luomalla uusi Arduino-tiedosto ja määrittele siinä ensin käsiteltävä merkkijono, esimerkiksi "hello world". 
+Miten:
+Aloitetaan yksinkertaisesta koodiesimerkistä, joka muuttaa sanan "koodaus" isot kirjaimet "KOODAUS" käyttäen Arduino-ohjelmointikieltä:
 ```
 Arduino
 
-String s = "hello world";
+/* Aluksi, määritetään muuttuja "sana", johon tallennetaan haluttu sana*/
+String sana = "koodaus";
+
+/* Käytetään String-kirjastoa, joka sisältää capitalize() funktion */
+String cappattu_sana = sana.capitalize();
+
+/* Tulostetaan kapitalisoitu sana sarjamonitoriin  */
+Serial.println(cappattu_sana);
+
+/* Tämä tulostaa "KOODAUS" */
 ```
-Seuraavaksi käytetään String-olioon kuuluvaa `capitalize`-funktiota, joka tekee halutun muotoilun merkkijonolle. Lopuksi tulostetaan muotoiltu merkkijono sarjamonitorille. 
-```
-Arduino
+Yksinkertaisesti siis luodaan muuttuja, johon tallennetaan alkuperäinen sana ja käytetään siihen sisäänrakennettua capitalize () -funktiota, joka palauttaa saman sanan mutta isot kirjaimet. Sitten voimme tulostaa kapitalisoidun sanan sarjamonitoriin.
 
-s.capitalize();
-Serial.println(s);
-```
-Tulosteena pitäisi nyt olla "Hello world". 
+Deep Dive:
+Capitalizing strings ei ole uusi käsite. Se on ollut osa ohjelmointia vuosikymmenten ajan. Alkuperäisesti se tehtiin jokaisen kirjaimen käsittelyllä, jossa pienet kirjaimet muutettiin isot ja tallennettiin uuteen muuttujaan. Nykyiset ohjelmointikielet, kuten Arduino, tarjoavat sisäänrakennetun toiminnon, joka tekee tämän prosessin helpommaksi.
 
-## Syvässä Vesi
+On myös muita tapoja kapitalisoida merkkijonoja, kuten käyttämällä valmista funktiota tai kirjastoa, joka tekee sen automaattisesti. Esimerkiksi String libraryllä on myös toinen toiminto capitalizeWords(), joka muuttaa jokaisen sanan alkukirjaimen isoksi.
 
-String-luokka sisältää muitakin hyödyllisiä funktioita, joilla voidaan helposti muotoilla merkkijonoja eri tavoin. `toLowerCase()` muuttaa kaikki merkit pieniksi ja `toUpperCase()` kaikki merkit isoiksi. Lisäksi `substring()`-funktio leikkaa merkkijonosta tietyn osan ja `indexOf()`-funktio etsii halutun merkkijonon ensimmäisen esiintymän. Näitä funktioita ja muita String-luokan toimintoja kannattaa tutkia tarkemmin, sillä ne voivat tehdä merkkijonojen muokkaamisesta paljon helpompaa ja tehokkaampaa.
-
-## Katso Myös
-
-- [String-luokan dokumentaatio](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/)
-- [Koodiesimerkkejä String-luokan käytöstä](https://create.arduino.cc/projecthub/tags/strings)
+Katso myös:
+- [C++ Reference - touppercase](https://www.cplusplus.com/reference/string/string/toupper/)
+- [W3Schools - PHP strtoupper()](https://www.w3schools.com/php/func_string_strtoupper.asp)

@@ -10,38 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+## What & Why?
 
-日付を文字列に変換することに取り組む理由は、日付の形式を自分のニーズに合わせやすくするためです。例えば、ファイル名に日付を含めたい場合や、データベースに日付を保存する際に文字列として扱いたい場合などがあります。
+日付を文字列に変換することは、プログラマーが日付をコンピュータで取り扱うための方法です。日付を文字列に変換することで、表示や処理が容易になります。
 
-## 方法
+## How to:
 
-日付を文字列に変換するには、Fish Shellの幾つかの便利なコマンドを使用します。例として、今日の日付を文字列で出力する方法を以下のように示します。
+```Fish Shell``` のコードブロック内には、日付を文字列に変換するためのコーディング例と出力結果があります。
 
-```Fish Shell
+```
+set -l today (date +%m/%d/%Y)
 
-# `date -u`コマンドで現在の日付をUTCで取得し、`string join`コマンドで"/"で区切った文字列に変換
-echo (date -u | string join "/")
+echo $today
 
-# 出力例：2020/10/01
+Output: 05/24/2021
 ```
 
-他にも、`strftime`コマンドを使用することで、より細かい日付のフォーマットを指定できます。例えば、"年-月-日"の形式で出力する場合は、以下のようにコードを書き換えます。
+```Fish Shell``` では、```date``` コマンドを使用して日付情報を取得し、```+%m/%d/%Y``` の形式で日付を文字列に変換します。変数 ```today``` に代入された日付は、```echo``` コマンドを使用して表示されます。
 
-```Fish Shell
+## Deep Dive
 
-# `strftime`コマンドで日付を指定した形式で出力
-echo (date -u | strftime "%Y-%m-%d")
+日付を文字列に変換する方法は、コンピュータの利用が一般化する前から存在し、ほとんどのプログラミング言語で標準的な機能として提供されています。代表的な形式としては、年・月・日の順に並べるYYYYMMDDや、月・日・年の順に並べるMMDDYYYYがあります。また、日付を文字列に限らず、数値やISOフォーマットにも変換することができます。
 
-# 出力例：2020-10-01
-```
+日付を文字列に変換する方法として、他にもグリニッジ標準時や協定世界時などの国際的な規格が存在します。これらの規格は、異なるタイムゾーンや夏時間の取り扱いなど、日付を正確に表すためのものです。プログラマーは、それぞれの規格に応じて適切な形式で日付を文字列に変換する必要があります。
 
-## ディープダイブ
+日付を文字列に変換する方法は様々ありますが、```Fish Shell```ではデフォルトで```date``` コマンドを使用することで簡単に実装することができます。また、PythonやJavaなどのプログラミング言語でも同様の変換を行うことができ、さらに多様なオプションを提供しています。
 
-日付を文字列に変換する際には、文字列のフォーマットを指定することが重要です。Fish Shellでは、`strftime`コマンドを使用することで、自由にフォーマットを指定することができます。詳しい使い方やサポートしているフォーマットの一覧は、[公式ドキュメント](https://fishshell.com/docs/current/cmds/strftime.html)を参照してください。
+## See Also
 
-## 参考リンク
-
-- [Fish Shell公式ドキュメント](https://fishshell.com/docs/current/index.html)
-- [Fish Shell GitHubリポジトリ](https://github.com/fish-shell/fish-shell)
-- [Fish Shellを使いこなそう！初心者向けのチートシート](https://dev.classmethod.jp/articles/fish-shell-cheat-sheet/)
+- [Fish Shell Documentations](https://fishshell.com/docs/current/index.html)
+- [ISO 8601 Standard for Date and Time Representations](https://www.iso.org/iso-8601-date-and-time-format.html)
+- [Python Date Formatting](https://docs.python.org/3/library/datetime.html)

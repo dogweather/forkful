@@ -1,7 +1,7 @@
 ---
-title:                "Parsa html"
-html_title:           "Kotlin: Parsa html"
-simple_title:         "Parsa html"
+title:                "Analysera html"
+html_title:           "Kotlin: Analysera html"
+simple_title:         "Analysera html"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "HTML and the Web"
@@ -10,32 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
 
-Att analysera HTML, eller parsar som det kallas inom programmering, är ett vanligt problem som många utvecklare stöter på när de arbetar med webbapplikationer. Genom att lära sig attparsa HTML, kan man enkelt extrahera data från webbsidor och använda det i sina egna applikationer.
+Parsing HTML handlar om att extrahera data från HTML-dokumentet och konvertera den till ett läsbart format för datorer. Detta är viktigt eftersom nästan all information på webben presenteras i HTML-format, så som titlar, text, bilder och länkar. Genom att använda parsing-tekniker kan programmerare enkelt hämta och använda all denna information för att skapa användbar mjukvara.
 
-## Hur man gör det
+## Så här gör du:
 
-En av de bästa sätten att parsar HTML i Kotlin är genom att använda biblioteket Jsoup. Här är ett exempel på hur man kan använda det för att hämta data från en webbsida:
+```kotlin 
+val input = "<h1>Hej världen!</h1>"
+val output = jsoup.parse(input)
+println(output.text())
 
-```Kotlin
-val url = "https://www.example.com"
-val doc = Jsoup.connect(url).get()
-println("Titel: " + doc.title())
+// Output: Hej världen!
 ```
 
-I det här exemplet använder vi Jsoup för att ansluta till en webbsida och sedan hämta titeln på den sidan. Resultatet skulle bli: "Titel: Example Domain".
+Det finns flera sätt att använda för att parsiva HTML i Kotlin, men en av de vanligaste är att använda biblioteket JSoup. Detta bibliotek tillåter dig att hämta data från en HTML-källa och manipulera det på olika sätt. I detta exempel parsar vi en enkel HTML-tagg och extraherar dess textinnehåll.
 
-## Djupdykning
+## Djupdykning:
 
-När man parsar HTML i Kotlin är det viktigt att förstå hur HTML är strukturerat och vad man vill extrahera från det. Jsoup har en mängd olika metoder för att navigera och hämta data från webbsidan. Det är också viktigt att ha lite grundläggande kunskaper om CSS-selektorer för att kunna välja specifika element på en sida.
+Parsing HTML har varit en viktig del av webbutveckling sedan internet introducerades. Innan fanns det olika program som användes för att ladda ner och analysera HTML, men med tiden har mer sofistikerade tekniker utvecklats för att göra denna process snabbare och mer effektiv.
 
-När man använder Jsoup, är det också viktigt att hantera eventuella fel som kan uppstå. Det kan finnas scenarion där webbsidan har en annan struktur eller om ändringar görs på sidans layout.
+Som en alternativ metod för att parsiva HTML, kan programmerare också använda sig av regular expressions (regex) för att hitta och extrahera information från HTML-dokument. Men det finns risk för komplexa regex-uttryck och fel som kan uppstå från ändringar i HTML-strukturen. JSoup erbjuder ett mer tillförlitligt och enkelt sätt att parsiva HTML.
 
-## Se även
+När det gäller implementationen av parsing HTML i Kotlin, finns det flera bibliotek att välja mellan. Utöver JSoup finns bibliotek som Kanna och Html-kit som också erbjuder olika funktioner för att parsiva HTML i Kotlin.
 
-Här är några användbara länkar för att lära dig mer om attparsers HTML i Kotlin:
+## Se även:
 
-- [Det officiella Kotlin hemsidan](https://kotlinlang.org/)
-- [Using Jsoup in Kotlin](https://levelup.gitconnected.com/using-jsoup-in-kotlin-d29250a52270)
-- [Kotlin vs Java for Web Development](https://www.section.io/engineering-education/kotlin-vs-java-for-web-development/)
+- [JSoup - ett HTML-parserbibliotek för Java och Kotlin](https://jsoup.org/)
+- [Kanna - ett Kotlin-bibliotek för webbskrapning och parsing](https://github.com/Kotlin/kotshi)
+- [Html-kit - parsning av HTML i Kotlin och Java](https://html-kit.github.io/)

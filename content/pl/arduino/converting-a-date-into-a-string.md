@@ -1,7 +1,7 @@
 ---
-title:                "Konwersja daty na łańcuch znaków"
-html_title:           "Arduino: Konwersja daty na łańcuch znaków"
-simple_title:         "Konwersja daty na łańcuch znaków"
+title:                "Konwersja daty na ciąg znaków"
+html_title:           "Arduino: Konwersja daty na ciąg znaków"
+simple_title:         "Konwersja daty na ciąg znaków"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Dates and Times"
@@ -10,41 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Dlaczego
+## Co to jest i dlaczego?
 
-Konwersja daty na ciąg znaków jest niezbędnym narzędziem dla wielu projektów opartych na Arduino. Umożliwia ona wyświetlanie daty i czasu na ekranie LCD, zapisywanie ich w plikach lub wysyłanie ich przez sieć. Wiele urządzeń IoT również wykorzystuje konwersję daty na ciąg znaków do synchronizacji z serwerem lub bazy danych.
+Konwertowanie daty na ciąg znaków jest procesem, w którym przekształcamy datę w formacie tekstowym. Programiści często wykonują to w celu łatwego wyświetlenia lub przetwarzania dat w swoim kodzie.
 
-# Jak to zrobić
-
-Aby przekonwertować datę na ciąg znaków w Arduino, należy użyć funkcji `sprintf ()`. Poniższy przykład demonstruje konwersję bieżącej daty na ciąg znaków w formacie "dzień-miesiąc-rok" i wyświetla ją na monitorze szeregu.
+## Jak to zrobić:
 
 ```Arduino
-#include <Time.h> 
+#include <TimeLib.h>
+
 void setup() {
-  Serial.begin(9600);
-  setTime(18, 40, 0, 25, 5, 2021); //Ustawia aktualną datę i czas
+    int month = 2; // numerical representation of month
+    int day = 14; // day of the month
+    int year = 2020; // year
+    char dateString[11]; // string to store the date
+    sprintf(dateString, "%02d/%02d/%04d", month, day, year); // converting date to string with format "mm/dd/yyyy"
+    Serial.print(dateString); // printing the string
 }
  
 void loop() {
-  char dateStr[9];
-  sprintf(dateStr, "%02d-%02d-%04d", day(), month(), year()); //Konwertuje datę na ciąg znaków
-  Serial.println(dateStr); //Wyświetla datę na monitorze szeregowym
-  delay(1000); //Czeka 1 sekundę
+    // other code here
 }
-```
-**Wynik:**
-```
-25-05-2021
+
 ```
 
-Aby uzyskać pełną listę formatów daty i czasu dostępnych w funkcji `sprintf()`, można przejrzeć dokumentację biblioteki Time.
+Output: ```02/14/2020```
 
-# Głębsza analiza
+## W głębi duszy:
 
-Funkcja `sprintf()` jest często wykorzystywana do konwersji liczbowych wartości na ciągi znaków w Arduino. W przypadku konwersji daty, funkcja ta jest szczególnie przydatna, ponieważ pozwala na manipulację formatem daty według własnych preferencji. Poza tym, Arduino nie ma wbudowanej funkcji do przekształcania daty na ciąg znaków, więc `sprintf()` staje się niezastąpionym narzędziem w tego typu operacjach.
+Konwersja daty na ciąg znaków jest ważna z kilku powodów. Po pierwsze, pozwala na łatwe wyświetlanie dat w różnych formatach na ekranie lub innym urządzeniu wyjściowym. Po drugie, może ułatwić wykonywanie obliczeń związanych z datami w kodzie, ponieważ daty przekonwertowane do postaci tekstowej są łatwiejsze do porównania i manipulacji. Inną metodą konwersji daty na ciąg znaków jest użycie biblioteki String, jednak jest to mniej wydajne i wymaga więcej zasobów pamięci.
 
-# Zobacz też
+## Zobacz też:
 
-- Dokumentacja funkcji sprintf() w bibliotece Arduino: https://www.arduino.cc/reference/en/language/functions/character-functions/sprintf/
-- Tutorial o bibliotece Time w Arduino: https://www.instructables.com/Use-RCtime-From-a-Library-Into-an-Instructable/
-- Poradnik o konwersji liczb na ciągi znaków w Arduino: https://randomnerdtutorials.com/arduino-data-type-conversion-functions-tostring-constrain-map/
+- [Biblioteka TimeLib do obsługi czasu i daty w Arduino](https://www.pjrc.com/teensy/td_libs_Time.html)
+- [Dokumentacja funkcji sprintf() w języku C](http://www.cplusplus.com/reference/cstdio/sprintf/)

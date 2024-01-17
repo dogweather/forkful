@@ -1,7 +1,7 @@
 ---
-title:                "Pisanie pliku tekstowego"
-html_title:           "Swift: Pisanie pliku tekstowego"
-simple_title:         "Pisanie pliku tekstowego"
+title:                "Tworzenie pliku tekstowego"
+html_title:           "Swift: Tworzenie pliku tekstowego"
+simple_title:         "Tworzenie pliku tekstowego"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Files and I/O"
@@ -10,80 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## O co chodzi i dlaczego?
 
-Pisanie plików tekstowych jest nieodłączną częścią wielu projektów programistycznych. Dzięki nim możemy przechowywać dane w zorganizowanej strukturze i korzystać z nich w naszych programach.
+Pisanie pliku tekstowego to po prostu tworzenie i zapisywanie tekstu w pliku na komputerze. Programiści często robią to, aby zachować ważne informacje lub wyniki swojego kodu, tak aby mogli do nich powrócić w przyszłości.
 
-## Jak to zrobić
-
-Tworzenie plików tekstowych w języku Swift jest łatwe i wygodne. Wystarczy użyć wbudowanych metod i klasy FileManager. Poniżej znajdują się przykładowe kody z wyjaśnieniami.
+## Jak to zrobić:
 
 ```Swift
-// Tworzenie pliku
-let fileName = "moj_plik.txt"  // nazwa pliku
-let fileContents = "To jest nasza pierwsza linijka tekstu." // zawartość pliku
-
-do { // do-try-catch blok służący do obsługi błędów
-    let fileURL = try FileManager.default
-        .url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
-        .appendingPathComponent(fileName)
-
-    try fileContents.write(to: fileURL, atomically: true, encoding: .utf8) // zapisujemy zawartość do pliku
-} catch {
-    print(error.localizedDescription) // w przypadku błędu wyświetlamy opis błędu
-}
-
-// Odczytywanie pliku
+// Tworzenie nowego pliku tekstowego o nazwie "moj_plik.txt"
+let nazwaPliku = "moj_plik.txt"
+let tekst = "Ten tekst zostanie zapisany w pliku!"
+ 
 do {
-    let fileURL = try FileManager.default
-        .url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
-        .appendingPathComponent(fileName)
-
-    let contents = try String(contentsOf: fileURL, encoding: .utf8) // odczytujemy zawartość pliku
-    print(contents) // wyświetlamy zawartość w konsoli
-} catch {
-    print(error.localizedDescription)
+  // Używanie mechanizmu "try-catch" w przypadku, gdyby nie udało się utworzyć pliku.
+  try tekst.write(toFile: nazwaPliku, atomically: false, encoding: String.Encoding.utf8)
+}
+catch {
+  print("Nie udało się zapisać pliku!")
 }
 ```
 
-W powyższych przykładach tworzymy i odczytujemy plik o nazwie "moj_plik.txt" w lokalizacji dokumentów użytkownika. Możemy użyć innej lokalizacji, np. biblioteki lub folderu tymczasowego, w zależności od potrzeb naszego projektu. Warto również zwrócić uwagę na używanie bloku "do-try-catch", który pozwala nam na kontrolowanie i obsługę ewentualnych błędów.
+Powyższy kod utworzy nowy plik "moj_plik.txt" w folderze, w którym uruchomiono kod. Jeśli chcesz zmienić miejsce zapisu, możesz podać ścieżkę do odpowiedniego folderu w nazwie pliku.
 
-## Głębszy zanurzenie
+## Głębsze wody:
 
-Pisanie plików tekstowych w języku Swift może być bardziej zaawansowane, gdy potrzebujemy przechowywać struktury danych. W takim przypadku możemy skorzystać z klasy NSCoder, która pozwala nam na serializację i deserializację danych.
+- Pisanie pliku tekstowego jest często używane w celu zapisywania wyników obliczeń lub zmiennych, przetwarzania danych lub nawet tworzenia plików konfiguracyjnych dla innych aplikacji.
+- Istnieje wiele alternatywnych sposobów na pisanie plików w języku Swift, takich jak używanie funkcji `FileHandle` lub `Data` zamiast `String`.
+- Staraj się nie zapisywać ważnych danych w plikach tekstowych, ponieważ mogą one być narażone na utratę lub nadpisane przez inne aplikacje na twoim komputerze.
 
-```Swift
-struct Kolor: Codable {
-    var red: Float
-    var green: Float
-    var blue: Float
-    var alpha: Float
-}
+## Zobacz też:
 
-let kolorNiebieski = Kolor(red: 0, green: 0, blue: 1, alpha: 1)
-
-do {
-    let data = try JSONEncoder().encode(kolorNiebieski) // serializacja struktury do postaci danych binarnych
-    let fileURL = try FileManager.default
-        .url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
-        .appendingPathComponent("kolor.txt")
-
-    try data.write(to: fileURL) // zapisujemy dane do pliku
-} catch {
-    print(error.localizedDescription)
-}
-
-do {
-    let fileURL = try FileManager.default
-        .url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
-        .appendingPathComponent("kolor.txt")
-
-    let data = try Data(contentsOf: fileURL) // odczytujemy dane z pliku
-    let kolor = try JSONDecoder().decode(Kolor.self, from: data) // deserializacja danych do wcześniej zdefiniowanej struktury
-    print(kolor) // wyświetlamy zdeserializowane dane
-} catch {
-    print(error.localizedDescription)
-}
-```
-
-W powyższym przykładzie używamy klasy JSONEncoder i JSONDecoder do serializacji i deserializacji struktury Kolor z wykorzystaniem standardu JSON. Możemy również skorzystać z innych formatów, np. PropertyList lub NSKeyed
+- [Apple's documentation on writing files in Swift](https://developer.apple.com/documentation/foundation/data_writing)
+- [A guide to file handling in Swift](https://medium.com/@jacobawenger/file-handling-in-swift-1f851551c2a6)
+- [Apple's guide to using FileHandle for file operations in Swift](https://developer.apple.com/documentation/foundation/filehandle)

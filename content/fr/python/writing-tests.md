@@ -10,49 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+# Qu'est-ce que les tests de code et pourquoi en faire?
 
-Ecrire des tests est un aspect essentiel dans le développement de logiciels pour garantir leur bon fonctionnement et leur fiabilité. Cela permet également de détecter et de résoudre les erreurs dès leur apparition, ce qui peut faire gagner du temps et de l'argent à long terme.
+Les tests de code sont des morceaux de code écrits spécifiquement pour vérifier si une autre partie de code fait ce qu'elle est censée faire. Les programmeurs font des tests pour s'assurer que leur code fonctionne correctement et pour éviter les erreurs et les bugs.
 
-## Comment faire
+# Comment faire:
 
-Pour commencer à écrire des tests en Python, il est important de comprendre le concept de test unitaire. Il s'agit d'un type de test qui consiste à vérifier le bon fonctionnement d'une partie spécifique de code, comme une fonction ou une classe. Voici un exemple de test unitaire en Python :
-
-```Python
-def addition(a, b):
-    return a + b
-
-assert addition(2, 3) == 5
+```python
+def sum(a, b):
+  return a + b
+# Exemple de test pour la fonction de somme
+# On s'attend à ce que 2+2 soit égal à 4
+assert sum(2, 2) == 4
 ```
 
-Dans cet exemple, nous avons défini une fonction `addition()` qui effectue une simple somme de deux nombres et nous avons vérifié son résultat en utilisant l'instruction `assert`. Si le résultat est bien égal à 5, notre test passe avec succès.
+Les tests peuvent également être organisés en modules ou classes pour tester différentes parties de code. Voici un autre exemple:
 
-Il existe plusieurs bibliothèques de test en Python qui offrent des fonctionnalités avancées pour écrire des tests. L'une des plus populaires est `unittest`, qui permet d'organiser et d'exécuter des tests de manière systématique. Voici un exemple d'utilisation de la bibliothèque `unittest` pour effectuer un test similaire à celui précédemment mentionné :
+```python
+# Une classe pour tester une calculatrice
+class TestCalculator:
 
-```Python
-import unittest
+  def test_addition(self):
+    assert sum(5, 10) == 15
 
-def addition(a, b):
-    return a + b
+  def test_subtraction(self):
+    assert subtract(10, 5) == 5
 
-class TestAddition(unittest.TestCase):
-
-    def test_addition(self):
-        self.assertEqual(addition(2, 3), 5)
-
-if __name__ == '__main__':
-    unittest.main()
+  def test_multiplication(self):
+    assert multiply(2, 3) == 6
 ```
+# Plongée en profondeur:
 
-Dans cet exemple, nous avons créé une classe `TestAddition` qui hérite de la classe `unittest.TestCase` et contient une méthode de test `test_addition()` où nous utilisons l'assertion `assertEqual` pour vérifier que le résultat de notre fonction `addition()` est bien égal à 5. Enfin, nous lançons l'exécution de nos tests en utilisant la méthode `unittest.main()`.
+Les tests de code ont été utilisés depuis les premiers jours de la programmation, car ils permettent de détecter les erreurs dès leur apparition et de les corriger avant qu'elles ne se propagent. Les alternatives aux tests incluent la revue de code par des pairs et l'utilisation de l'intégration continue pour détecter les erreurs à mesure qu'elles sont ajoutées au code.
 
-## Plongée en profondeur
+Les tests de code peuvent également être écrits à l'aide de différentes bibliothèques et frameworks, tels que unittest, pytest ou nose. Chacun a ses propres avantages et il est important de choisir celui qui convient le mieux à votre projet.
 
-Ecrire des tests est un processus qui peut sembler fastidieux au départ, mais qui peut s'avérer très utile et efficace à long terme. En plus de vérifier le bon fonctionnement de votre code, cela peut également servir de documentation pour les futurs développeurs qui reprendraient votre code. De plus, la pratique du TDD (Test Driven Development) consiste à écrire les tests avant même d'écrire le code, ce qui peut aider à avoir une réflexion plus structurée sur la logique de votre programme.
+# Voir aussi:
 
-Il est également important de noter que les tests doivent être rédigés de manière à être facilement compréhensibles, maintenables et réutilisables. Il est donc conseillé d'utiliser des noms de test explicites et d'éviter les tests trop complexes pour ne pas compliquer la compréhension de votre code.
-
-## Voir aussi
-
-- [Documentation officielle de Python sur les tests](https://docs.python.org/fr/3/library/unittest.html)
-- [Introduction au TDD avec Python](https://realpython.com/python-testing/)
+Vous pouvez en apprendre plus sur les tests de code en consultant ces sources:
+- [Python Testing 101](https://realpython.com/python-testing/)
+- [Writing Tests in Python](https://docs.python.org/3/library/unittest.html)
+- [Pytest Documentation](https://docs.pytest.org/en/stable/)

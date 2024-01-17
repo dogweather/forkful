@@ -10,48 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Pourquoi
+# Quoi & Pourquoi?
+Calculer une date dans le futur ou dans le passé est une fonctionnalité couramment utilisée en programmation qui permet de déterminer une date qui se situe à une certaine distance dans le temps par rapport à une date de référence. Les programmeurs utilisent cette fonctionnalité pour planifier des tâches, valider des données ou pour d'autres besoins spécifiques.
 
-Les dates sont un élément essentiel de tout système de programmation. La capacité de calculer une date dans le futur ou dans le passé est importante pour de nombreuses applications, telles que les rappels, les planifications et les prévisions. En utilisant Elixir, nous pouvons facilement réaliser cette tâche et gagner du temps dans nos projets.
+# Comment faire:
+Il existe différentes manières de calculer une date dans le futur ou dans le passé en utilisant Elixir. Vous pouvez utiliser la bibliothèque standard Elixir `DateTime` ou la bibliothèque tierce `Timex`, qui offre des fonctionnalités plus avancées. Voici un exemple d'implémentation avec `DateTime`:
 
-## Comment faire
-
-Tout d'abord, nous avons besoin d'importer le module `Calendar` en utilisant `require Calendar` ou `import Calendar` dans notre fichier Elixir. Ensuite, nous pouvons utiliser les fonctions du module pour calculer les dates.
-
-Voici un exemple de code pour calculer la date dans 3 jours à partir de la date actuelle :
-
-```elixir
-require Calendar
-
-today = Calendar.local_days()
-future_date = Calendar.plus(today, 3)
-
-IO.puts("La date dans 3 jours sera : #{future_date.to_string()}")
+```
+selon obtenir_date (date) do
+  date
+  |> DateTime.from_iso8601! ()
+  |> DateTime.shift (days: 7)
+  |> DateTime.to_iso8601! ()
+fin
 ```
 
-La sortie de ce code sera : "La date dans 3 jours sera : 2021-09-04".
+Le résultat devrait être une date qui se situe sept jours après la date de référence. Vous pouvez également utiliser des fonctions telles que `DateTime.add/3` pour ajouter ou soustraire des jours, mois ou années à une date.
 
-Il est également possible de spécifier une date de départ différente en utilisant la fonction `Date.new/3` qui prend les paramètres de l'année, du mois et du jour. Par exemple, pour calculer la date dans 2 mois à partir du 25 décembre 2021 :
+# Deep Dive:
+L'API `DateTime` a été ajoutée en 2014 lors de la sortie de la version 1.0 d'Elixir. Avant cela, il fallait utiliser des bibliothèques tierces pour gérer les dates et les heures. La bibliothèque `Timex` offre plus de fonctionnalités que `DateTime`, telles que la prise en charge de fuseaux horaires et de formats de date personnalisés.
 
-```elixir
-require Calendar
+Dans le cas où vous auriez besoin de gérer des dates avant l'ère Unix (1970), Elixir offre également la bibliothèque `Calendar` qui prend en charge les dates du calendrier julien et grégorien.
 
-start_date = Date.new(2021, 12, 25)
-future_date = Calendar.plus(start_date, Month.add(2))
-
-IO.puts("La date dans 2 mois à partir du 25 décembre est : #{future_date.to_string()}")
-```
-
-La sortie sera : "La date dans 2 mois à partir du 25 décembre est : 2022-02-25".
-
-## Plongée en profondeur
-
-En utilisant le module `Calendar`, nous pouvons également calculer des dates dans le passé en utilisant la fonction `Calendar.minus/2`. De plus, il existe une variété de fonctions pour manipuler les dates, telles que `Calendar.diff/2` pour calculer la différence entre deux dates, `Calendar.format!/3` pour formater une date selon un modèle spécifique, et bien d'autres encore.
-
-De plus, Elixir nous permet également de travailler avec des dates et des heures en utilisant le module `DateTime`. Ce module offre des fonctions similaires à celles de `Calendar` mais prend également en compte les heures, les minutes et les secondes.
-
-## Voir aussi
-
-- Le module `Calendar` : https://hexdocs.pm/elixir/Calendar.html
-- Le module `DateTime` : https://hexdocs.pm/elixir/DateTime.html
-- Le langage de programmation Elixir : https://elixir-lang.org/
+# Voir aussi:
+- Documentation de la bibliothèque standard Elixir `DateTime`: https://hexdocs.pm/elixir/DateTime.html
+- Documentation de la bibliothèque tierce `Timex`: https://hexdocs.pm/timex/
+- Documentation de la bibliothèque `Calendar`: https://hexdocs.pm/calendar/

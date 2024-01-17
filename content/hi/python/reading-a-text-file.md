@@ -1,7 +1,7 @@
 ---
-title:                "एक टेक्स्ट फ़ाइल पढ़ना"
-html_title:           "Python: एक टेक्स्ट फ़ाइल पढ़ना"
-simple_title:         "एक टेक्स्ट फ़ाइल पढ़ना"
+title:                "एक पाठ फ़ाइल को पढ़ना"
+html_title:           "Python: एक पाठ फ़ाइल को पढ़ना"
+simple_title:         "एक पाठ फ़ाइल को पढ़ना"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Files and I/O"
@@ -10,39 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Kyun
-Kai baar humein text files padhne ki zarurat hoti hai, jaise ki kisi program mein jaankariyan ko padhne ke liye, ya fir kisi data ko analyze karne ke liye. Agar aapko Python mein kaam karna hai, toh text files ko padhna ek important skill hai.
+## क्या और क्यों?
+एक टेक्स्ट फ़ाइल को पढ़ना क्या है और क्यों प्रोग्रामर्स इसे करते हैं, इसका सामान्य रूप से जवाब है कि संख्याओं, वर्णों, या सेहत को सुरक्षित रखने या सेव करने की जरुरत होती है।
+## कैसे करें:
+```python
+# ‘file.txt’ फाइल को खोलें
+file = open(‘file.txt’, ‘r’)
 
-## Kaise Padhein Text File Python mein
-Text files ko Python mein padhna kaafi easy hai. Sabse pehle, aapko `open()` function ka use karna hoga. Iss function mein aapko do arguments pass karne hote hain - file ka naam aur uss file ko kis mode mein open karna hai. Jaise: `file = open('sample.txt', 'r')` yahaan `sample.txt` file ka naam hai aur `r` mode hai, jo ki read mode hai.
+# फाइल से प्रथम पंक्ति पर पुनःटिप्पणित करें
+print(file.readline())
 
-Ab hum `read()` method ka use karenge `file` object pe. Iss method se hum file ka pura content padh sakte hain. Jaise: `file_content = file.read()` yahaan `file_content` variable mein humari file ka pura content store ho jaayega.
-
-Ab, agar hume kuch specific lines ya words padhne hain, toh hum `readlines()` method ka use kar sakte hain. Iss method se hum file ka har ek line ko list ke form mein padh sakte hain. Jaise: `file_content = file.readlines()` yahaan `file_content` variable mein list of lines store ho jaayega.
-
-Finally, humein `close()` method ka use karna hai `file` object ko close karne ke liye. Jaise: `file.close()`.
-
-Iss article mein humne ek basic example dekha, lekin aapko agar aur details chahiye toh aap humari See Also section mein diye gaye links ko check kar sakte hain.
-
-```Python
-file = open('sample.txt', 'r')
-file_content = file.read()
-print(file_content)
+# फाइल को बंद करें
 file.close()
+
+# फाइल से सारी पंक्तियाँ प्रिंट करें
+with open(‘file.txt’, ‘r’) as file:
+  for line in file:
+    print(line)
 ```
-
-## Deep Dive
-Python mein text file read karne ke liye kaafi saare methods available hote hain jaise ki `read()`, `readlines()`, `readline()`, etc. Iske saath hi, file ko open karne ke liye bhi kaafi modes hote hain jaise ki `r`, `r+`, `w`, `a`, etc. Aur in modes ka use aapki file pe depend karta hai.
-
-Iss article mein humne sirf text files ke read karne ke baare mein baat ki hai, lekin aap text files ko write aur manipulate bhi kar sakte hain Python mein. Aapko agar in topics pe aur jaankari chahiye toh aap humari See Also section mein diye gaye links ko check kar sakte hain.
-
-## Dekhein Bhi
-Yahaan kuch aur articles aur resources hain jo aapke liye helpful ho sakte hain:
-
-- [Reading and Writing Files in Python](https://realpython.com/read-write-files-python/)
-- [Python File Handling](https://www.w3schools.com/python/python_file_handling.asp)
-- [Python Tutorial: File Objects and Methods](https://www.datacamp.com/community/tutorials/file-objects-python)
-- [Manipulating Files with Python](https://realpython.com/working-with-files-in-python/)
-- [Python Text File Processing - Reading and Writing Files](https://www.geeksforgeeks.org/python-text-processing-reading-and-writing-text-files/)
-
-Dhanyawaad aur happy coding!
+आउटपुट:
+```
+प्रथम पंक्ति
+दूजी पंक्ति
+तीसरी पंक्ति
+```
+## गहराई में जाओ:
+इस कार्य में इस्तेमाल किए गए प्रोग्रामिंग भाषाएं कई सालों से उपयोग में हैं। अलग-अलग भाषाओं में भी कई विकल्प उपलब्ध हैं जैसे कि ‘with’ का उपयोग करना या ‘readline()’ इस्तेमाल करना। कोनकोनकोभार दायरों को खोलने और बंद करने के लिए ‘open()’ कमांड को जरूरत के हिसाब से आगे-पीछे किया जाता है।
+## इस से जुड़े भी देखें:
+[अधिक जानकारी के लिए: “पायथन में फाइल को पढ़ना और लिखना”](https://www.programiz.com/python-programming/file-operation)

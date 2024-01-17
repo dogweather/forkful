@@ -10,69 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
-Si estás aprendiendo a programar en C++ o si ya tienes experiencia, es importante entender cómo leer un archivo de texto. Este conocimiento te permitirá manejar y procesar grandes cantidades de datos almacenados en un archivo de texto.
+## ¡Qué es y por qué!
 
-## Cómo hacerlo
-Para leer un archivo de texto en C++, necesitarás seguir los siguientes pasos:
+Leer un archivo de texto en programación es una forma de acceder a la información almacenada en un archivo que contiene texto plano. Los programadores a menudo lo hacen para leer y procesar datos estructurados contenidos en un archivo de texto, como configuraciones, bases de datos simples o registros de actividad.
 
-1. Incluir la biblioteca fstream en tu programa: ```C++
-#include <fstream>
-```
-2. Crear un objeto ifstream para manejar el archivo de texto: ```C++
-ifstream archivo;
-```
-3. Abrir el archivo de texto en modo lectura (ios::in): ```C++
-archivo.open("archivo.txt", ios::in);
-```
-4. Verificar que el archivo se haya abierto correctamente: ```C++
-if (!archivo) {
-  cout << "Error al abrir el archivo.";
-  exit(1);
-}
-```
-5. Leer el contenido del archivo línea por línea usando un ciclo while: ```C++
-string linea;
-while (getline(archivo, linea)) {
-  // Procesar la línea de texto
-}
-```
-6. Cerrar el archivo una vez que hayas terminado de leerlo: ```C++
-archivo.close();
-```
-
-A continuación, se muestra un ejemplo completo de cómo leer un archivo de texto en C++:
+## Cómo hacerlo:
 
 ```C++
-#include <iostream>
-#include <fstream>
+#include <iostream> //biblioteca estándar para entrada/salida
+#include <fstream> //biblioteca para manejar archivos
+
 using namespace std;
 
 int main() {
-  ifstream archivo;
-  string linea;
-  
-  archivo.open("archivo.txt", ios::in);
-  if (!archivo) {
-    cout << "Error al abrir el archivo.";
-    exit(1);
-  }
+    ifstream archivo; //crea un objeto para leer archivos
+    archivo.open("archivo.txt"); //abre el archivo de texto
 
-  while (getline(archivo, linea)) {
-    cout << linea << endl; // Imprimir la línea de texto
-  }
-  archivo.close();
-  return 0;
+    //itera sobre cada línea del archivo de texto
+    string linea;
+    while (getline(archivo, linea)) { 
+        //haz algo con la línea, como imprimir en la consola
+        cout << linea << endl;
+    }
+
+    archivo.close(); //cierra el archivo
+
+    return 0;
 }
 ```
 
-El código anterior imprimirá cada línea del archivo de texto en la consola.
+**Salida de ejemplo:**
+```
+Hola, mundo!
+Este es un archivo de texto.
+Contiene varias líneas.
+```
 
-## Profundizando
-Al leer un archivo de texto en C++, es importante entender cómo funciona el proceso detrás de escena. Cuando abres un archivo en modo lectura, el sistema operativo asigna un búfer para almacenar temporalmente los datos del archivo. En cada iteración del ciclo while, se lee una cantidad específica de datos del archivo en el búfer y luego se procesan, lo que reduce la cantidad de acceso al disco y hace que el proceso sea más eficiente.
+## Profundizando:
 
-También es importante tener en cuenta que el objeto ifstream se puede utilizar para leer diferentes tipos de datos, como enteros, flotantes, caracteres, entre otros. Simplemente necesitas utilizar los métodos adecuados, como ``` archivo >> variable; ``` para leer un valor de una línea específica del archivo.
+Antes de que surgieran las bases de datos, los archivos de texto eran una forma común de almacenar y procesar información en una computadora. Aunque todavía se utilizan hoy en día para ciertos propósitos, las bases de datos han ganado popularidad debido a su capacidad para manejar grandes cantidades de datos de forma más eficiente.
 
-## Ver también
-- [Documentación oficial de C++ sobre lectura de archivos](https://es.cppreference.com/w/cpp/io/basic_ifstream)
-- [Tutorial sobre lectura de archivos en C++](https://www.programiz.com/cpp-programming/file-handling)
+Hay varias formas de leer archivos de texto en C++, incluyendo la función `fgets()` y la librería [Boost](https://www.boost.org/doc/libs/1_77_0/libs/iostreams/doc/coding_guide.html#static_vs_dynamic). Sin embargo, la forma más sencilla es utilizar la librería estándar `<fstream>`.
+
+Para leer un archivo de texto, la computadora primero debe abrir y leer el archivo, luego procesar los datos y finalmente cerrar el archivo antes de devolver el control al usuario. Es importante seguir este flujo para evitar problemas de lectura o escritura en el archivo.
+
+## Ver también:
+
+- [Leer y escribir archivos de texto en C++](https://es.cppreference.com/w/cpp/io/basic_filebuf)
+- [Introducción a la librería Boost para manipulación de archivos](https://www.boost.org/doc/libs/1_77_0/libs/iostreams/doc/coding_guide.html#introduction)

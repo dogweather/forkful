@@ -10,54 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
+# 概述
 
-为什么在编写代码时需要添加测试？很简单，这可以确保代码的质量和功能的正确性。测试可以帮助开发者在修改代码后快速检查是否引入了新的错误，并且确保旧的代码仍然正常工作。
+在编写程序的过程中，测试是一个很重要的环节。它可以确保程序的正确性，同时也可以提供一个稳定的开发环境。在本文中，我们将讨论Ruby的测试，为什么程序员需要进行测试，并展示如何做到这一点。
 
-## 如何做
+## 什么是测试？为什么需要测试？
 
-编写测试的第一步是在代码中引入RSpec测试框架。下面是一个简单的示例：
+测试是一种用于检查程序功能和正确性的方法。它可以帮助程序员发现潜在的bug，并确保程序在不同场景下都能正常运行。程序员需要进行测试，是因为程序会不断地发生变化，可能存在一些无法预料的错误。测试可以让程序员更加放心地进行开发，同时也有助于提高程序的质量。
+
+## 如何进行测试？
+
+测试在Ruby中是非常简单的。我们可以使用内置的Test Unit库来编写和执行测试。下面是一个简单的示例，假设我们有一个名为```Calculator```的类，它有一个方法```add```用于求和。
 
 ```ruby
-class Calculator
-  def add(a, b)
-    return a + b
-  end
+require "test/unit"
 
-  def subtract(a, b)
-    return a - b
-  end
-end
-
-describe "Calculator" do
-  let(:calculator) {Calculator.new}
-
-  it "adds two numbers" do
-    expect(calculator.add(2, 5)).to eq(7)
-  end
-
-  it "subtracts two numbers" do
-    expect(calculator.subtract(10, 3)).to eq(7)
+class CalculatorTest < Test::Unit::TestCase
+  def test_add
+    result = Calculator.add(2, 3)
+    assert_equal(5, result)
   end
 end
 ```
-代码定义了一个计算器类，其中包含两个函数用于加法和减法。测试用例使用`expect`关键字来断言函数的返回值是否符合预期。运行测试可以得到以下输出：
-
-```
-Finished in 0.00153 seconds (files took 0.074 seconds to load)
-2 examples, 0 failures
-```
-
-这说明两个测试用例都通过了，也就是说我们的代码无错误。
+上面的代码中，我们首先导入```test/unit```库，然后创建一个名为```CalculatorTest```的测试类，继承自```Test::Unit::TestCase```。在类中，我们定义了一个名为```test_add```的测试方法，用于测试```add```方法的正确性。我们通过调用```Calculator```类的```add```方法来获得结果，并使用```assert_equal```断言来验证结果是否为我们期望的值。如果测试通过，则没有输出，如果测试失败，则会显示错误信息。
 
 ## 深入了解
 
-写好的测试应该涵盖代码的各种情况，包括异常情况和边界条件。测试覆盖率也是评估测试质量的一个重要指标。代码中若有分支语句，测试应该覆盖每一种可能的情况。
+### 历史背景
 
-此外，测试代码应该具有可读性和可维护性，遵循编码规范和最佳实践。一些常见的测试方法包括TDD（测试驱动开发）和BDD（行为驱动开发），可以帮助开发者更有效地编写测试。
+测试在软件开发中已经存在很长时间。在Ruby之前，也有很多语言都有自己的测试框架，如Java的Junit和Python的Unittest。但是，Ruby语言的简洁性和灵活性使得它在测试方面获得了很大的成功。
 
-## 查看更多
+### 其他选择
 
-- [RSpec文档](https://rspec.info/documentation/)
-- [TDD和BDD的区别](https://medium.com/@tofra1999/test-driven-development-tdd-%E6%98%AF%E4%BB%80%E4%B9%88-918a156e65a5)
-- [编写有效的测试用例](https://www.ibm.com/developerworks/cn/linux/l-cn-test/index.html)
+除了Test Unit库，还有其他一些流行的Ruby测试框架，如RSpec和Minitest。它们提供了更多的灵活性，可以让程序员根据自己的喜好来编写测试。
+
+### 实现细节
+
+Test Unit库使用了一种叫做断言（Assertion）的技术来验证测试结果。这种技术可以让程序员声明测试结果，并与期望的结果进行比较，从而判断测试是否通过。
+
+## 参考资料
+
+- [Ruby官方文档]（https://ruby-doc.org）  
+- [Test Unit文档]（https://ruby-doc.org/stdlib-2.7.1/libdoc/test/unit/rdoc/Test/Unit.html）  
+- [RSpec文档]（https://rspec.info）

@@ -10,51 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä ja miksi?
+Ohjelmistokehittäjät käyttävät nykyaikana yhä enemmän testeille omistettua aikaa ja resursseja, jotta varmistetaan koodin laatu ja toimivuus. Testaamisen tarkoituksena on havaita mahdollisia virheitä ja vikoja ohjelmistossa ennen sen julkaisemista, mikä puolestaan säästää aikaa ja vaivaa virheiden korjaamisessa myöhemmin.
 
-Yksi tärkeimmistä asioista ohjelmoinnissa on varmistaa, että koodimme toimii oikein ja pysyy toimivana jatkossakin. Kirjoittamalla testejä voimme vahvistaa, että koodimme toimii halutulla tavalla ja löytää mahdolliset virheet ennen kuin ne aiheuttavat ongelmia.
+## Miten?
+Testien kirjoittaminen Javascriptillä on suhteellisen helppoa ja nopeaa. Se voidaan tehdä hyödyntämällä erilaisia kirjastoja, kuten esimerkiksi Jestiä tai Mochaa. Kirjastojen avulla voit luoda yksikkö-, integraatio- ja toiminnallisia testejä, jotka tarjoavat kattavan kattavuuden koodillesi.
 
-## Miten se tehdään
-
-Kirjoittamalla testejä voimme tarkistaa, että koodimme tuottaa halutunlaisia tuloksia ja toimii odotetulla tavalla. Voimme käyttää esimerkiksi Jest-kirjastoa, joka on suosittu testauskirjasto JavaScript-sovelluksille.
-
-```Javascript
-// Tehdään funktio, joka laskee kahden luvun summan
-function sum(x, y) {
-  return x + y;
+```
+function sum(a, b) {
+  return a + b;
 }
 
-// Testataan, että funktio toimii halutulla tavalla
-test('sum-funktio laskee summan oikein', () => {
-  expect(sum(2, 2)).toBe(4);
+test('sum funktio laskee summan oikein', () => {
+  expect(sum(2, 3)).toBe(5);
 });
 ```
 
-Testien avulla voimme myös varmistaa, että koodimme ei aiheuta odottamattomia sivuvaikutuksia, joita voisi olla vaikea havaita muuten.
+Testikoodi suoritetaan ajamalla testitiedosto erikseen tai käyttämällä automaattista testaamista, joka tarkistaa koodin jokaisen muutoksen jälkeen. Tämä auttaa havaitsemaan mahdollisia virheitä ja varmistaa, että koodi toimii kuten odotetaan.
 
-```Javascript
-// Tehdään funktio, joka lisää uuden arvon taulukkoon
-function addItem(array, item) {
-  array.push(item);
-}
+## Syvemmälle
+Testien kirjoittamista on käytetty ohjelmistokehityksessä jo vuosikymmeniä, ja se on vakiintunut käytäntö ketterien menetelmien yhteydessä. Vaikka manuaalinen testaaminen on edelleen tärkeää, automaattisten testien käyttöönotto on lisännyt kehittäjien tuottavuutta ja auttanut parantamaan ohjelmistojen laatua.
 
-// Testataan, että funktio lisää uuden arvon taulukkoon oikein
-test('addItem-funktio lisää uuden arvon taulukkoon', () => {
-  const array = [1, 2, 3];
-  addItem(array, 4);
-  expect(array).toHaveLength(4);
-  expect(array).toContain(4);
-});
-```
-
-## Syvempi sukellus
-
-Testien kirjoittaminen auttaa myös parantamaan koodimme laatua ja ylläpidettävyyttä. Kun lisäämme uusia ominaisuuksia tai teemme muutoksia koodiin, voimme suorittaa testeistä ja varmistaa, että kaikki toimii odotetulla tavalla. Tämä auttaa myös tunnistamaan mahdollisia ristiriitaisuuksia tai ongelmia eri osien välillä.
-
-Yksi tärkeä seikka testeissä on myös niiden avulla dokumentoida koodiamme ja sen toimintaa. Kirjoittamalla selkeitä ja ymmärrettäviä testejä, voimme myös auttaa muita kehittäjiä ymmärtämään koodiamme ja sen tarkoitusta.
+Vaihtoehtoisia tapoja testaamiseen ovat esimerkiksi BDD (Behaviour-driven development) ja TDD (Test-driven development), joissa testit kirjoitetaan ennen varsinaista koodia. Nämä lähestymistavat auttavat suunnittelemaan koodia ja varmistavat, että tarvittavat toiminnot ovat testattuja.
 
 ## Katso myös
-
-- [Jest-kirjaston virallinen sivusto](https://jestjs.io/)
-- [Testien kirjoittamisen perusteet](https://medium.com/@zoeames/testing-javascript-what-is-a-test-8cf2a9df1a50)
-- [Hyviä käytäntöjä testien kirjoittamisessa](https://medium.freecodecamp.org/the-right-way-to-test-react-components-548a4736ab22)
+- Jest: https://jestjs.io/
+- Mocha: https://mochajs.org/
+- BDD: https://en.wikipedia.org/wiki/Behavior-driven_development
+- TDD: https://en.wikipedia.org/wiki/Test-driven_development

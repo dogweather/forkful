@@ -10,46 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué?
+## ¿Qué y por qué?
+Generar números aleatorios es una tarea común en la programación, que consiste en obtener valores numéricos sin un patrón o secuencia específica. Los programadores utilizan esta técnica para simular situaciones de la vida real, mejorar la seguridad de sus aplicaciones y crear variedad en sus programas.
 
-Generar números aleatorios es una habilidad importante en la programación ya que permite crear programas más dinámicos y divertidos. Además, puede ser útil para aplicaciones de juegos, criptografía, pruebas de software y más.
-
-## Cómo hacerlo
-
-Para generar números aleatorios en Kotlin, primero debemos importar la clase `Random` del paquete `kotlin.random`. Luego, podemos llamar al método `nextInt()` para obtener un número aleatorio de tipo entero. Aquí hay un ejemplo de código que genera cinco números aleatorios y los imprime en la consola:
+## Cómo hacerlo:
+Para generar un número aleatorio en Kotlin, podemos utilizar la función `random()` de la clase `kotlin.random.Random`. Esta función devuelve un valor aleatorio de tipo `Double` entre 0.0 y 1.0. A continuación, un ejemplo de cómo utilizar esta función y su correspondiente salida:
 
 ```Kotlin
-import kotlin.random.Random
+val randomNum = kotlin.random.Random.random()
+println(randomNum)
 
-fun main() {
-    for (i in 1..5) {
-        val number = Random.nextInt()
-        println(number)
-    }
-}
-
-// Salida de ejemplo:
-// 18237236
-// -456896
-// 907312
-// -982347
-// 6207354
+// Output:
+0.7614217807816673 
 ```
 
-También podemos especificar un rango para los números aleatorios utilizando el método `nextInt(range)`, donde `range` es un rango de valores entre los cuales queremos generar el número aleatorio. Por ejemplo, si queremos generar un número aleatorio entre 1 y 10, podemos usar `Random.nextInt(1..10)`.
+## Profundizando:
+La generación de números aleatorios ha sido una técnica ampliamente utilizada en la informática desde sus inicios. Una de las razones de su popularidad es que proporciona resultados impredecibles y no repetitivos, lo que es útil para simular situaciones reales, como el lanzamiento de un dado o la barajada de cartas.
 
-Además, también podemos especificar el tipo de datos que queremos para el número aleatorio, como `nextBoolean()` para un valor booleano, `nextDouble()` para un número de punto flotante o `nextBytes()` para un arreglo de bytes aleatorios.
+Además de la función `random()` en Kotlin, también existen otras formas de generar números aleatorios. En algunos lenguajes de programación, como Java, se utiliza la clase `java.util.Random`, que ofrece una mayor variedad de opciones para generar diferentes tipos de datos numéricos. También hay bibliotecas de terceros disponibles en Kotlin, como `kotlinx.random`, que ofrecen algoritmos más avanzados para la generación de números aleatorios.
 
-## Profundizando en generar números aleatorios
+Para aquellos interesados en cómo funciona la generación de números aleatorios, es importante entender que sean generados realmente de manera aleatoria o si utilizan algún tipo de patrón o algoritmo para simular la aleatoriedad. En informática, no hay formas reales de generar números verdaderamente aleatorios, ya que dependen de algoritmos deterministas. Sin embargo, estos algoritmos están diseñados para generar valores que parezcan aleatorios e impredecibles.
 
-La generación de números aleatorios se basa en algoritmos que utilizan semillas para producir una secuencia de números aparentemente aleatorios. En Kotlin, la clase `Random` utiliza el algoritmo Mersenne Twister para generar números aleatorios, que es un algoritmo ampliamente utilizado y probado.
-
-Sin embargo, es importante tener en cuenta que los números generados no son realmente aleatorios, sino que se obtienen de una secuencia determinística. Esto significa que si ejecutamos el mismo código varias veces, obtendremos la misma secuencia de números aleatorios.
-
-También podemos utilizar semillas para controlar la secuencia de números aleatorios que se generan. Esto puede ser útil para fines de pruebas o para obtener la misma secuencia de números aleatorios en diferentes ejecuciones del programa.
-
-## Véase también
-
-- [Documentación oficial de Random en Kotlin](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.random/-random/)
-- [Tutorial sobre generación de números aleatorios en Kotlin](https://developer.android.com/kotlin/controls/random)
-- [Mersenne Twister en Wikipedia (en inglés)](https://en.wikipedia.org/wiki/Mersenne_Twister)
+## Ver también:
+- [Documentación oficial de Kotlin sobre la función random()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.random/random.html)
+- [Clase Random en Java](https://docs.oracle.com/javase/8/docs/api/java/util/Random.html)
+- [Biblioteca kotlinx.random](https://github.com/Kotlin/kotlinx.random)

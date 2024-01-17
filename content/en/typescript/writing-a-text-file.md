@@ -10,61 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
+Writing a text file is essentially creating a document made up of plain text that can be opened and read by anyone. Programmers often write text files as a way to save and organize code, configurations, or data that can be easily accessed and shared with others. This allows for better collaboration and organization in the development process.
 
-Writing a text file in TypeScript can be a useful tool for organizing and storing data, creating documentation, or simply for personal note-taking. It allows for structured and easily readable text that can be accessed and manipulated in various ways.
-
-## How To
-
-To write a text file in TypeScript, follow these steps:
-
-1. Import the `fs` module from Node.js, which provides file system operations.
-2. Use the `fs.writeFile()` method to write data to a file, providing the file name, data, and a callback function to handle any errors.
-3. Within the callback function, use the `if(err)` statement to check for errors and log them if they occur.
-4. If there are no errors, log a success message.
-5. Use the `fs.appendFile()` method to add additional data to the file, if desired.
-6. To read the file, use the `fs.readFile()` method and pass in the file name and encoding type (usually `utf-8`).
-7. Within the callback function, use the data parameter to access the contents of the file.
-
-Here is a code example of writing and reading a text file:
+## How to:
+To write a text file in TypeScript, you can use the `fs` module from Node.js. First, you need to import the module using the `require` function. Then, you can use the `writeFile` function to create and write to a text file.
 
 ```TypeScript
-import * as fs from 'fs';
+const fs = require('fs');
 
-// Writing to a file
-fs.writeFile('myFile.txt', 'This is some example text.', (err) => {
-    // Error handling
-    if (err) {
-        console.log(err);
-    } else {
-        console.log('File successfully written.');
-    }
+fs.writeFile('myFile.txt', 'Hello, world!', (err) => {
+  if(err) throw err;
+  console.log('File created and data written successfully.');
 });
 
-// Appending to a file
-fs.appendFile('myFile.txt', '\nHere is some more text.', (err) => {
-    // Error handling
-    if (err) {
-        console.log(err);
-    }
-});
-
-// Reading the file
-fs.readFile('myFile.txt', 'utf-8', (err, data) => {
-    // Error handling
-    if (err) {
-        console.log(err);
-    } else {
-        console.log(data); // Outputs: "This is some example text. \nHere is some more text."
-    }
-});
 ```
 
-## Deep Dive
+Running this code will create a file called `myFile.txt` and write the text "Hello, world!" inside it. You can also specify a path for the file to be created in a specific directory, by passing the directory path as the first parameter of `writeFile`.
 
-In addition to the basic functionality of writing and reading a text file, there are various options and methods available to further customize and manipulate the data. These include specifying the file encoding, using the `fs.rename()` method to rename a file, or using the `fs.unlink()` method to delete a file. The `fs.createReadStream()` and `fs.createWriteStream()` methods also provide more control over reading and writing large or binary files.
+## Deep Dive:
+Historically, before the use of computers, writing a text file was done on paper manually. With the advent of modern technology, computers and programming languages like TypeScript, writing text files has become much more efficient and scalable. Alternatively, text files can also be created and edited using text editors, but using TypeScript allows for automation and speed in creating and modifying large amounts of data.
 
-## See Also
+In terms of implementation, the `writeFile` function in the `fs` module uses a callback function to ensure that the file is created and written successfully. The first parameter is the name or path of the file, the second parameter is the data to be written, and the third parameter is an error handling function.
 
-- [Node.js `fs` Module Documentation](https://nodejs.org/api/fs.html)
-- [Node.js `fs` Module Tutorial](https://www.w3schools.com/nodejs/nodejs_filesystem.asp)
+## See Also:
+- [Node.js: File System module](https://nodejs.org/api/fs.html)
+- [Managing file operations in TypeScript](https://docs.microsoft.com/en-us/archive/msdn-magazine/2014/july/typescript-managing-file-operations)

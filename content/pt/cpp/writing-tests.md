@@ -10,43 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que escrever testes em C++
+## O que & Porquê?
 
-Testes são uma parte importante do processo de desenvolvimento de software, principalmente em linguagens como C++ onde erros podem ser mais difíceis de serem identificados. Além disso, escrever testes pode ajudar a garantir a qualidade do código e reduzir o tempo gasto em depuração.
+Escrever testes é simplesmente o ato de verificar se o seu código funciona como esperado. Os programadores fazem isso para garantir que o código seja confiável e está de acordo com as expectativas dos usuários.
 
-## Como escrever testes em C++
+## Como fazer:
 
-Para escrever testes efetivos em C++, é necessário usar uma estrutura de teste, como o [Catch](https://github.com/catchorg/Catch2). Veja um exemplo de como seria um teste simples em C++ usando Catch:
+Para escrever testes em C++, é necessário usar a biblioteca de testes padrão do C++. Aqui está um exemplo básico de um teste de unidade:
 
-```C++
-#define CATCH_CONFIG_MAIN
-#include "catch.hpp"
+```
+#include <cassert> // Inclui a biblioteca de testes do C++
 
-// Função que será testada
-int square(int x) {
-  return x * x;
+int soma(int a, int b) {
+  return a + b;
 }
 
-// Casos de teste
-TEST_CASE("Square function", "[square]") {
-  REQUIRE(square(2) == 4); //Verifica se o resultado é o esperado
-  REQUIRE(square(-3) == 9);
-  REQUIRE(square(0) == 0);
+int main() {
+  assert(soma(2, 2) == 4); // Verifica se a soma de 2 e 2 é igual a 4
+  return 0;
 }
 ```
-Ao executar esse teste, o output seria:
 
-```
-===============================================================================
-All tests passed (3 assertions in 1 test case)
+A saída esperada seria "OK", indicando que o teste foi aprovado.
 
-```
+## Profundidade:
 
-## Mergulho Profundo
+Escrever testes não é uma prática nova. Na verdade, ela vem sendo utilizada há décadas no desenvolvimento de software. Existem outras bibliotecas de teste disponíveis além da biblioteca padrão do C++, como o Google Test e o Catch2, que oferecem recursos adicionais.
 
-Ao escrever testes em C++, é importante seguir algumas práticas para garantir que eles sejam efetivos. Primeiramente, os casos de teste devem cobrir todos os possíveis cenários de uso da função ou código testado. Além disso, é importante verificar se o resultado esperado é igual ao resultado obtido, usando a macro `REQUIRE()` como no exemplo acima. Também é recomendável utilizar mensagens claras e significativas para os casos de teste, facilitando a identificação de erros no código.
+Além disso, é possível implementar testes automatizados, que podem ser executados sempre que o código for alterado, garantindo que os testes sejam executados frequentemente e de forma consistente.
 
-## Veja também
+## Veja também:
 
-- [Catch Framework](https://github.com/catchorg/Catch2)
-- [Como escrever testes efetivos em C++](https://www.infoworld.com/article/3562151/6-steps-to-writing-world-class-code-test-driven-development.html)
+- [Documentação da biblioteca de testes do C++](https://en.cppreference.com/w/cpp/header/cassert)
+- [Google Test](https://github.com/google/googletest)
+- [Catch2](https://github.com/catchorg/Catch2)

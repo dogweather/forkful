@@ -10,68 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+## O que & Por que?
 
-Você já se perguntou como comparar uma data com outra em Python? Bem, há diversas razões pelas quais isso pode ser útil, como comparar a data atual com uma data de entrada do usuário ou verificar se uma data específica ocorreu antes ou depois de outra.
+Comparar duas datas é uma tarefa comum na programação, que envolve verificar se uma data é mais recente ou mais antiga do que outra. Isso é especialmente útil para realizar tarefas como programar alarmes, agendar tarefas ou organizar dados temporais.
 
-## Como fazer
+## Como fazer:
 
-Para comparar datas em Python, usamos o módulo `datetime`, que nos permite trabalhar com objetos de data e hora. Primeiro, vamos importá-lo em nosso código:
+Veja dois exemplos de código em Python para comparar duas datas:
 
-```Python
-import datetime
-```
+```python
+# Exemplo 1 - Comparando duas datas usando operadores lógicos
+a = "01/01/2020"
+b = "01/01/2021"
 
-Agora, vamos criar duas variáveis que representam as datas que queremos comparar:
+if a < b:
+    print("A data é mais antiga do que B") # Saída: A data é mais antiga do que B
+elif a > b:
+    print("A data é mais recente do que B") # Saída: A data é mais recente do que B
+else:
+    print("As datas são iguais") # Saída: As datas são iguais
 
-```Python
-data1 = datetime.date(2020, 6, 15)
-data2 = datetime.date(2021, 1, 1)
-```
+# Exemplo 2 - Usando a biblioteca datetime
+from datetime import date
 
-Em seguida, podemos usar os operadores de comparação para verificar a relação entre as duas datas. Por exemplo, se quisermos verificar se `data1` ocorreu antes de `data2`, podemos usar o operador `<` da seguinte forma:
+data1 = date(2020, 1, 1)
+data2 = date(2021, 1, 1)
 
-```Python
 if data1 < data2:
-    print("data1 ocorreu antes de data2")
+    print("Data 1 é mais antiga do que Data 2") # Saída: Data 1 é mais antiga do que Data 2
+elif data1 > data2:
+    print("Data 1 é mais recente do que Data 2") # Saída: Data 1 é mais recente do que Data 2
+else:
+    print("As datas são iguais") # Saída: As datas são iguais
 ```
 
-Da mesma forma, podemos usar o operador `>` para verificar se uma data ocorreu depois de outra. Se quisermos verificar se as datas são iguais, usamos o operador `==`:
+## Mergulho Profundo:
 
-```Python
-if data1 == data2:
-    print("As datas são iguais")
-```
+Comparar datas é uma tarefa antiga na programação, que se tornou ainda mais importante com o surgimento de aplicações web e mobile que precisam lidar com grandes quantidades de dados temporais. Existem também alternativas para realizar essa tarefa em outras linguagens de programação, como C e Java. Para comparar duas datas no Python, é importante prestar atenção ao formato das datas e utilizar recursos como a biblioteca datetime.
 
-Podemos até mesmo usar os operadores de comparação em conjunto com outras operações para fazer comparações mais complexas. Por exemplo, podemos verificar se uma data está dentro de um determinado intervalo:
+## Veja também:
 
-```Python
-data3 = datetime.date(2020, 1, 1)
-if data1 > data3 and data1 < data2:
-    print("data1 está entre as datas de data3 e data2")
-```
-
-## Mergulho profundo
-
-O módulo `datetime` oferece uma variedade de funções e métodos que nos permitem trabalhar com datas de forma eficaz. Por exemplo, podemos usar o método `weekday()` para obter o dia da semana em que uma determinada data cai. O dia da semana é representado como um número inteiro, sendo 0 para segunda-feira e 6 para domingo.
-
-```Python
-data4 = datetime.date(2020, 6, 18)
-dia_da_semana = data4.weekday()
-print(dia_da_semana) # output: 3 (quinta-feira)
-```
-
-Além disso, o módulo `datetime` também possui uma classe `timedelta` que nos permite realizar operações com intervalos de tempo. Por exemplo, se quisermos calcular a diferença entre duas datas, podemos criar um objeto `timedelta` a partir delas e imprimir o resultado:
-
-```Python
-intervalo = data2 - data1
-print(intervalo) # output: 200 dias, 0:00:00
-```
-
-Essas são apenas algumas das muitas funcionalidades que o módulo `datetime` nos oferece. Explore a documentação oficial para descobrir mais maneiras de trabalhar com datas em Python.
-
-## Veja também
-
-- Documentação oficial do módulo `datetime`: https://docs.python.org/3/library/datetime.html
-- Guia de referência para o módulo `datetime`: https://www.programiz.com/python-programming/datetime
-- Vídeo tutorial sobre como trabalhar com datas em Python: https://www.youtube.com/watch?v=zB28makjTso
+- [Documentação oficial da biblioteca datetime do Python](https://docs.python.org/3/library/datetime.html)
+- [Post no blog Real Python sobre como trabalhar com datas em Python](https://realpython.com/python-datetime/)
+- [Exemplos de como comparar datas em outras linguagens de programação](https://www.includehelp.com/code-snippets/compare-dates-in-c.aspx)

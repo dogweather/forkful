@@ -1,7 +1,7 @@
 ---
-title:                "Tekstitiedoston lukeminen"
-html_title:           "Bash: Tekstitiedoston lukeminen"
-simple_title:         "Tekstitiedoston lukeminen"
+title:                "Tiedostosta lukeminen"
+html_title:           "Bash: Tiedostosta lukeminen"
+simple_title:         "Tiedostosta lukeminen"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Files and I/O"
@@ -10,41 +10,18 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
-Jotenkin on aika tuttu tilanne: sinulla on valtava teksti-tiedosto, joka sisältää kaikki tärkeät tiedot, mutta sinun täytyy löytää tietty tieto sieltä. Näin saat tietää, miten voit lukea teksti-tiedostoja Bashilla ja helpottaa elämääsi.
+## Mitä & Miksi?
 
-## Kuinka
-Bash on erittäin hyödyllinen ohjelmointikieli ja käy kätevästi kaikkeen komentoon-perustuvaan tiedon käsittelyyn, kuten teksti-tiedostojen lukemiseen. Tässä on yksinkertainen esimerkki:
+Tekstikansion lukeminen on yksinkertaisesti tiedoston sisällön lukemista ohjelmakoodilla. Ohjelmoijat tekevät tätä usein saadakseen tietoa tiedostoista, jotka sisältävät tarvittavia tietoja heidän sovelluksilleen.
 
-```Bash
-while read line; do        # silmukka lukee rivin kerrallaan
-  echo $line              # tulostaa luettavan rivin
-done < tiedosto.txt       # ohjaa tiedoston sisältö silmukkaan
-```
+## Miten tehdä?
 
-Tämä koodi lukee tiedoston rivi kerrallaan ja tulostaa sen sisällön. Voit myös tallentaa luettavat tiedot muuttujaksi ja käyttää niitä myöhemmin:
+Käyttäessäsi Bash-komentoriviä, voit avata tekstikansion komennolla ```cat tiedostonimi```. Tämä tulostaa kansion sisällön komentoriville. Voit myös määrittää tulostettavan tiedoston ja käyttää sitä myöhemmin, esimerkiksi ```tulostettava_tiedosto="tiedosto.txt"``` ja ```cat $tulostettava_tiedosto``` joka tulostaa tiedoston sisällön.
 
-```Bash
-while read line; do        # silmukka lukee rivin kerrallaan
-  data=$line              # tallentaa luettavan rivin muuttujaan
-  # tee jotakin data-muuttujalla
-done < tiedosto.txt       # ohjaa tiedoston sisältö silmukkaan
-```
+## Syväsukellus
 
-## Syvä Sukellus
-Bashilla on monia tapoja lukea teksti-tiedostoja, kuten `cat`, `grep` ja `awk` komennot. Voit käyttää näitä komentoja yhdessä erilaisilla parametreilla saadaksesi haluamasi tuloksen. Esimerkiksi, voit käyttää `grep` komentoa löytääksesi tietyn sanan tai ilmauksen tiedostosta:
+Tiedoston lukemisen historiallinen tausta liittyy tietokoneiden alkuaikoihin, jolloin tulostaminen paperille oli tärkeää. Nykyään monet muut vaihtoehdot ovat saatavilla, kuten tiedostojen lukeminen muilla ohjelmointikielillä tai eri ohjelmilla. Bashin tekstikansion lukeminen on kuitenkin edelleen suosittu tapa tiedostojen sisällön hankkimiseksi.
 
-```Bash
-grep "etsittävä_sana" tiedosto.txt       # tulostaa rivit, joissa esiintyy sana
-```
+## Katso myös
 
-Voit myös ohjata tulosteen uuteen tiedostoon `>`-merkin avulla:
-
-```Bash
-grep "etsittävä_sana" tiedosto.txt > uusi_tiedosto.txt    # tallentaa tuloksen uuteen tiedostoon
-```
-
-## Katso myös:
-- [Bashin virallinen dokumentaatio](https://www.gnu.org/software/bash/)
-- [Vinkkejä Bash-ohjelmointiin](https://linuxhint.com/bash_programming_tutorial/)
-- [Oppaita tekstimuotoisten tiedostojen käsittelyyn Bashilla](https://www.digitalocean.com/community/tutorials/how-to-use-bash-to-manipulate-text-in-files)
+Jos olet kiinnostunut oppimaan lisää Bash-komentorivin käytöstä, voit tarkastella [Bashin käyttöopasta](https://www.tutorialspoint.com/unix_commands/bash.htm). Lisätietoja tiedostojen lukemisesta ja manipuloinnista Bashilla löytyy myös [täältä](https://www.tecmint.com/13-basic-cat-command-examples-in-linux/).

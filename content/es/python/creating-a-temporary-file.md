@@ -10,38 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué crear un archivo temporal en Python?
+## Qué & Por qué?
+Crear un archivo temporal es una práctica común en la programación que permite a los desarrolladores almacenar información temporalmente durante la ejecución del código. Esto es especialmente útil para guardar datos que no necesitan ser permanentes, como archivos de configuración o registros de eventos.
 
-Crear un archivo temporal en Python puede ser útil cuando necesitamos almacenar datos temporales en nuestro programa. Por ejemplo, si queremos guardar información mientras se ejecuta un proceso, pero no deseamos crear un archivo permanente en el sistema, un archivo temporal es la mejor opción.
+## Cómo:
+Para crear un archivo temporal en Python, puedes utilizar la función ```mkstemp()``` del módulo ```tempfile```. Esta función crea un archivo con un nombre y extensión aleatorios en la ubicación especificada. También puedes usar la función ```NamedTemporaryFile()```, que crea automáticamente un archivo temporal en el sistema de archivos y devuelve un objeto de archivo que puedes utilizar para escribir y leer contenido en él.
 
-## Cómo crear un archivo temporal en Python
+Ejemplo de uso de la función ```mkstemp()```:
 
-Crear un archivo temporal en Python es muy sencillo. Solo necesitamos importar el módulo `tempfile` y utilizar la función `NamedTemporaryFile()`, como se muestra a continuación:
-
-```Python
+```
 import tempfile
+import os
 
-archivo_temporal = tempfile.NamedTemporaryFile()
+archivo_temporal, ruta = tempfile.mkstemp()
+
+print("Ruta del archivo temporal:", ruta) 
+print("Nombre del archivo temporal:", os.path.basename(ruta))
 ```
 
-Podemos especificar el nombre y la extensión del archivo temporal si lo deseamos, como en el siguiente ejemplo:
-
-```Python
-import tempfile
-
-archivo_temporal = tempfile.NamedTemporaryFile(suffix='.txt', prefix='datos_')
+Salida:
+```
+Ruta del archivo temporal: /tmp/tmp03ls5pl0
+Nombre del archivo temporal: tmp03ls5pl0
 ```
 
-Para escribir en el archivo temporal, podemos utilizar métodos similares a los de cualquier archivo en Python, como `write()` o `writelines()`. Una vez que hayamos terminado de utilizar el archivo, podemos cerrarlo con el método `close()`. El archivo temporal se borrará automáticamente al cerrarlo.
+Ejemplo de uso de la función ```NamedTemporaryFile()```:
 
-## Una mirada más profunda: ¿cómo funciona un archivo temporal en Python?
+```
+import tempfile
 
-Un archivo temporal en Python se crea en la ubicación especificada por el sistema operativo, generalmente en la carpeta de archivos temporales. Es importante tener en cuenta que el archivo se borra automáticamente al cerrarlo, pero también es posible especificar que se conserve en el sistema después de su uso. Esto se puede hacer utilizando el argumento `delete=False` al crear el archivo.
+with tempfile.NamedTemporaryFile() as archivo_temporal:
+    print("Ruta del archivo temporal:", archivo_temporal.name)
+    archivo_temporal.write(b"Ejemplo de contenido temporal")
+    archivo_temporal.seek(0)
+    print("Contenido del archivo temporal:", archivo_temporal.read())
+```
 
-Además, un archivo temporal se crea en modo binario por defecto. Si deseamos abrirlo en modo texto, podemos especificarlo con el argumento `mode='w'` al crearlo.
+Salida:
+```
+Ruta del archivo temporal: /tmp/tmp97fjz1pm
+Contenido del archivo temporal: b'Ejemplo de contenido temporal'
+```
 
-## Ver también
+## Profundizando:
+Aunque crear archivos temporales es una práctica común y útil, es importante tener en cuenta que el uso de memoria temporal también puede ser un tema de seguridad, ya que estos archivos pueden almacenar información confidencial. Por lo tanto, siempre es recomendable borrar los archivos temporales una vez que ya no se necesitan mediante la función ```os.remove()```.
 
-- Documentación oficial de `tempfile` en la biblioteca estándar de Python: https://docs.python.org/es/3/library/tempfile.html
-- Tutorial sobre el manejo de archivos en Python: https://realpython.com/read-write-files-python/
-- Ejemplos prácticos de uso de archivos temporales: https://stackabuse.com/managing-temporary-files-in-python/
+Como alternativa a las funciones mencionadas anteriormente, también puedes utilizar el módulo ```tempfile.TemporaryFile()```, que crea un archivo temporal de manera similar a ```NamedTemporaryFile()``` pero lo borra automáticamente una vez que se cierra.
+
+Para aquellos que quieren implementar su propia lógica de limpieza del archivo temporal, también existe la opción de utilizar la función ```mkdtemp()``` del módulo ```tempfile``` que crea un directorio temporal en lugar de un archivo.
+
+## Ver también:
+Puedes obtener más información sobre la creación de archivos temporales en Python en la documentación oficial del lenguaje en el módulo ```tempfile``` aquí: https://docs.python.org/3/library/tempfile.html

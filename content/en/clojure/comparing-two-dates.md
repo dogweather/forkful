@@ -10,66 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
+Comparing two dates is the process of determining whether one date is earlier, later, or equal to another date. This is a common task for programmers when working with date-related data, such as scheduling events or calculating durations. It allows them to efficiently organize and manipulate data based on their chronological order.
 
-Comparing dates is a common task in many programming applications, allowing us to check for events that occurred before or after a certain date or to calculate the difference between two dates. In Clojure, there are a few ways to compare dates and determine their relative positions, making it a useful skill for any developer to have.
-
-## How To
-
-To compare two dates in Clojure, we first need to understand the data types used for representing dates: `java.util.Date` and the Clojure-specific `#inst` tag. The `java.util.Date` class represents a specific moment in time, while the `#inst` tag represents an instant on the timeline.
-
-### Comparing `java.util.Date` objects
-
-To compare `java.util.Date` objects, we can use the `compare` function, which returns -1 if the first date is earlier, 0 if they are equal, and 1 if the first date is later. This function takes two date objects as arguments, like so:
+## How to:
+To compare two dates in Clojure, we can use the `compare` function. This function takes two date values and returns an integer that indicates the relationship between the two dates. Here's an example:
 
 ```Clojure
-(def date1 (java.util.Date. 2020 5 10))
-(def date2 (java.util.Date. 2020 5 11))
-
-(compare date1 date2)
-;; Output: -1
-(compare date2 date1)
-;; Output: 1
-(compare date1 date1)
-;; Output: 0
+(compare (java.util.Date. 2000 1 1) (java.util.Date. 2000 1 2))
 ```
 
-### Comparing `#inst` tags
+This will return -1, indicating that the first date is earlier than the second date. Here are all the possible return values and their corresponding relationships:
 
-To compare `#inst` tags, we can use the `before?` and `after?` functions, which return true or false depending on their relative positions. These functions also take two arguments, like `compare`.
+- -1: First date is earlier than second date
+- 0: Dates are equal
+- 1: First date is later than second date 
 
-```Clojure
-(def date1 #inst "2020-05-10T00:00:00.000-00:00")
-(def date2 #inst "2020-05-11T00:00:00.000-00:00")
+## Deep Dive:
+The `compare` function in Clojure is based on the `java.util.Date` class, which represents a specific moment in time. This class has a `compareTo` method that is used by the `compare` function to determine the relationship between two dates.
 
-(before? date1 date2)
-;; Output: true
-(after? date1 date2)
-;; Output: false
-(before? date1 date1)
-;; Output: false
-```
+An alternative way to compare dates in Clojure is to use the `before?` and `after?` functions. These functions take two date values and return a boolean value indicating whether the first date is before or after the second date.
 
-### Calculating the difference between dates
+Implementing date comparison in Clojure is relatively straightforward due to its built-in support for the `java.util.Date` class. However, it's important to be aware of potential issues with time zones and daylight saving time when dealing with date comparisons.
 
-To determine the difference between two dates, we can use the `days` function, which returns the number of days between two `java.util.Date` objects.
-
-```Clojure
-(def date1 (java.util.Date. 2020 5 10))
-(def date2 (java.util.Date. 2020 5 14))
-
-(days date2 date1)
-;; Output: 4
-```
-
-## Deep Dive
-
-While the methods above allow us to compare dates easily, they may not give us the most accurate results in all situations. For example, daylight saving time and leap years can affect the comparison outcome. To handle these scenarios, we can use the `com.clojure/java-time` library, which provides a more robust and accurate date/time API.
-
-This library uses the `java.time` package from Java 8, which offers a wide range of functionality for working with dates and times. It also supports time zones and daylight saving time adjustments.
-
-## See Also
-
-- Java-time library: https://github.com/dm3/clojure.java-time
-- ClojureDocs  `java.util.Date` documentation: https://clojuredocs.org/clojure.core/date
-- ClojureDocs `#inst` tag documentation: https://clojuredocs.org/clojure.core/inst
+## See Also:
+- [Clojure Date and Time library](https://github.com/clj-time/clj-time)
+- [Official Clojure Documentation on java.util.Date](https://clojure.org/reference/java_interop#_java_util_date)

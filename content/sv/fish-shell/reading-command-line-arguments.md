@@ -10,55 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
 
-Det finns många olika sätt att interagera med datorer, men ibland kan det enklaste sättet vara via kommandoraden. Genom att läsa kommandoradsargument kan du snabbt och enkelt utföra olika uppgifter utan att behöva öppna ett grafiskt gränssnitt. I denna artikel kommer vi att utforska hur du kan läsa kommandoradsargument i Fish Shell och hur det kan förenkla din arbetsflöde.
+Att läsa kommandoradsargument är när du tar in information som användaren matar in direkt från kommandoraden, istället för att hardkoda den i ditt program. Detta är användbart eftersom det ger användaren mer kontroll och flexibilitet över hur programmet körs.
 
-## Så här
-
-### Skapa ett nytt Fish Shell-skript
-Först måste du skapa ett nytt skript i Fish Shell. Öppna din terminal och skriv in kommandot `touch script.fish` för att skapa en ny tom fil med namnet "script". Du kan sedan öppna filen i din favorittextredigerare för att börja koda.
-
-```Fish Shell
-touch script.fish // Skapar en ny fil med namnet script
-```
-
-### Läs ett specifikt kommandoradsargument
-För att läsa ett specifikt kommandoradsargument kan du använda variabeln `$argv`. Den innehåller en lista med alla argument som skickas till ditt skript. I exemplet nedan kommer vi att läsa första argumentet som skickas till skriptet och skriva ut det i terminalen.
-
-```Fish Shell
-echo $argv[1] // Skriver ut första argumentet
-```
-
-Om vi nu kör vårt skript med kommandot `./script.fish Hello`, kommer output att bli "Hello" eftersom "Hello" är det första argumentet som vi skickade till skriptet.
-
-### Loopa igenom alla kommandoradsargument
-Ibland kan du vilja läsa och hantera flera kommandoradsargument. För att göra det kan du använda en for-loop för att loopa igenom alla argumenten. I exemplet nedan kommer vi att skriva ut varje argument i en egen rad.
-
-```Fish Shell
-for arg in $argv
-  echo $arg
-end
-```
-
-Kör du nu skriptet med kommandot `./script.fish Hello World`, kommer output att bli:
+## Så här:
 
 ```
-Hello
-World
+Fish Shell har inbyggda kommandon och variabler för att läsa in kommandoradsargument.
+
+# ~ `argv` är en variabel som innehåller en lista över alla argument som matas in.
+$ fish my_program.fish hello world
+
+# Output:
+$ argv = ('hello', 'world')
+
+# Du kan också använda `count`-kommandot för att räkna antalet argument.
+$ fish my_program.fish one two three
+
+# Output:
+$ count $argv
+3
+
+# Om du vill läsa ett specifikt argument från listan, kan du använda `set`-kommandot.
+$ fish my_program.fish hello world
+
+# Output:
+$ set argument $argv[1]
+hello
 ```
 
-## Djupdykning
+## Deep Dive:
 
-Det finns många olika kommandoradsalternativ som du kan använda för att läsa argument i Fish Shell. Här är några exempel:
+Att läsa kommandoradsargument är en vanlig praxis inom programmering och stöds av många olika programmeringsspråk och skalor. Alternativ till Fish Shell inkluderar bash, zsh och PowerShell.
 
-- `$argv[0]` innehåller namnet på det skript som körs.
-- Om ingen input ges i kommandoraden, kommer `$argv` att vara en tom lista.
-- `$argv[-1]` innehåller det sista argumentet i listan.
-- Du kan även använda `$#` för att få antalet argument som skickats till skriptet.
+När du matar in kommandon och argument i Fish Shell, sparar den dem som en lista i variabeln `argv` och numreras från 1. Det är bra att notera att kommandot självt kommer att listas som det första argumentet.
 
-## Se också
+## Se även:
 
-- [Fish Shell dokumentation](https://fishshell.com/docs/current/index.html)
-- [En introduktion till Fish Shell](https://dev.to/jonmcalder/an-introduction-to-fish-shell-3b7)
-- [Bash vs Fish Shell: En jämförelse](https://medium.com/@ivanaugustobd/bash-vs-fish-shell-e7080a184557)
+- Information om Fish Shell på deras hemsida: https://fishshell.com
+- Artikel om Fish Shell på Wikipedia: https://sv.wikipedia.org/wiki/Fish_(programmeringsspråk)
+- Dokumentation om hur man läser argument i andra programmeringsspråk såsom Python och Java.

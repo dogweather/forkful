@@ -10,54 +10,77 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum?
+# Aktuelles Datum mit Arduino bekommen
 
-Die aktuelle Datumserfassung ist ein wesentliches Merkmal in vielen Anwendungen, insbesondere bei der Verwendung von Sensoren und Aktuatoren. Das Datum ermöglicht es uns, zeitliche Daten aufzuzeichnen und zu analysieren. Wenn Sie also in der Welt des Arduino-Programmierens unterwegs sind, ist es wichtig zu wissen, wie man das aktuelle Datum abruft.
+## Was & Warum?
+Das aktuelle Datum bekommen ist ein wichtiger Bestandteil der Programmierung. Es ermöglicht es uns, aktuelle Zeitstempel zu setzen oder zu überprüfen, ob ein bestimmtes Datum bereits erreicht wurde. Dies ist besonders nützlich für Projekte, die eine zeitliche Komponente haben, wie z.B. automatisierte Anlagensteuerungen oder Datensammlungen.
 
 ## Wie geht das?
+Um das aktuelle Datum mit Arduino zu bekommen, können wir die ```millis()``` Funktion verwenden. Diese Funktion gibt die vergangenen Millisekunden seit dem Start des Programms zurück. Um diese in ein Datum umzuwandeln, nehmen wir einfach den aktuellen Tag und berechnen die vergangenen Tage seit dem 1. Januar 1970. Dies ist der sogenannte "Unix Epoch". Wir können dann diese Anzahl von Tagen in ein Datum umwandeln, indem wir die entsprechenden Werte für den Tag, Monat und Jahr berechnen.
 
-Um das aktuelle Datum abzurufen, müssen Sie zunächst die Bibliothek `RTClib` in Ihr Sketch einbinden. Diese Bibliothek ermöglicht es dem Arduino, mit einem Real-Time-Clock-Modul (RTC) zu kommunizieren, das das Datum und die Uhrzeit in Echtzeit aufbewahrt.
+```arduino
+unsigned long days = millis() / 86400000; // 86400000 Millisekunden entsprechen einem Tag
+int year = 1970; // Unix Epoch Jahr
+int month, day;
 
-```Arduino
-#include <Wire.h> // Wire-Bibliothek einbinden für I2C-Kommunikation
-#include "RTClib.h" // RTClib-Bibliothek einbinden
+// Berechne den Monat und Tag basierend auf der Anzahl von vergangenen Tagen
+for (int i = 0; i < days; i++) {
+  if (year % 4 == 0) { // Schaltjahre berücksichtigen
+    if (days > 366) {
+      days -= 366;
+      year++;
+    }
+  } else {
+    if (days > 365) {
+      days -= 365;
+      year++;
+    }
+  }
+}
+
+// Berechne den Monat basierend auf der Anzahl von verbleibenden Tagen
+for (int i = 1; i <= 12; i++) {
+  int daysInMonth = 31;
+  if (i == 4 || i == 6 || i == 9 || i == 11) {
+    daysInMonth = 30;
+  }
+  if (i == 2) {
+    if (year % 4 == 0) { // Schaltjahr
+      daysInMonth = 29;
+    } else {
+      daysInMonth = 28;
+    }
+  }
+  if (days > daysInMonth) {
+    days -= daysInMonth;
+    month++;
+  }
+}
+
+day = days;
+
+// Ausgabe des Datums
+Serial.print(day);
+Serial.print("/");
+Serial.print(month);
+Serial.print("/");
+Serial.println(year);
+
 ```
 
-Als nächstes müssen Sie ein RTC-Objekt initialisieren und eine Verbindung zu Ihrem RTC-Modul herstellen. Für dieses Beispiel verwenden wir das RTC-Modul DS3231.
-
-```Arduino
-RTC_DS3231 rtc; // Initialisiere das RTC-Objekt
+###Beispiel Ausgabe
+``` 
+28/10/2021
 ```
 
-Im `setup()` Teil Ihres Sketches müssen Sie die RTC-Verbindung herstellen, indem Sie `rtc.begin()` aufrufen. Wir können auch eine optionale Funktion `setDate()` verwenden, um das Datum manuell einzustellen, falls dies nicht bereits auf dem RTC-Modul eingestellt ist.
+## Tief eintauchen
+Die Idee, das Datum basierend auf der Anzahl von vergangenen Tagen seit dem Unix Epoch zu berechnen, stammt aus dem sogenannten "Unix Time Stamp". Dies ist ein in der UNIX-Welt weit verbreitetes Zeitformat, das auch von vielen anderen Programmiersprachen und Betriebssystemen übernommen wurde.
 
-```Arduino
-rtc.begin(); // RTC-Verbindung herstellen
-// rtc.setDate(2021, 12, 31); - Manuelle Datumeinstellung (optional)
-```
+Eine alternative Methode, das Datum mit Arduino zu bekommen, ist die Verwendung eines speziellen Real-Time-Clocks (RTC) Moduls. Diese Module werden an den Arduino angeschlossen und enthalten eine batteriebetriebene Uhr, die unabhängig vom Arduino funktioniert und somit genaue Zeit- und Datumsinformationen liefern kann.
 
-Um das aktuelle Datum abzurufen, können Sie die Funktion `rtc.now()` verwenden, die ein `DateTime`-Objekt zurückgibt. Dieses Objekt enthält Informationen über Datum und Uhrzeit, die mit verschiedenen Methoden abgerufen werden können.
+Unabhängig von der verwendeten Methode ist es wichtig zu beachten, dass die Genauigkeit des Datumswerts vom genutzten Mikrocontroller abhängen kann. In manchen Fällen kann es notwendig sein, die Zeit mit einer externen Quelle, wie z.B. einem GPS-Modul, synchronisieren zu lassen.
 
-```Arduino
-DateTime now = rtc.now(); // Aktuelles Datum abrufen
-int year = now.year(); // Jahr abrufen
-int month = now.month(); // Monat abrufen
-int day = now.day(); // Tag abrufen
-```
-
-Um das Datum im Seriellen Monitor anzuzeigen, können Sie die Funktion `Serial.print()` verwenden.
-
-```Arduino
-Serial.print("Aktuelles Datum: ");
-Serial.println(now); // Datum im Format: YYYY-MM-DD
-```
-
-## Tiefer eintauchen
-
-Das `DateTime`-Objekt hat noch mehr nützliche Methoden, die Sie beim Arbeiten mit dem Datum verwenden können. Zum Beispiel können Sie die Funktion `dayOfTheWeek()` verwenden, um den Wochentag abzurufen, oder `second()` für die Sekunden. Eine vollständige Liste aller verfügbaren Methoden finden Sie auf der offiziellen Dokumentationsseite der `RTClib`-Bibliothek.
-
-## Siehe auch
-
-- [Dokumentation der RTClib-Bibliothek](https://github.com/adafruit/RTClib/blob/master/README.md)
-- [RTC DS3231 Modul kaufen](https://www.adafruit.com/product/255)
-- [RTC DS3231 Modul Anschlussanleitung](https://learn.adafruit.com/ds3231-precision-rtc-breakout/circuitpython)
+## Weitere Ressourcen
+- [Unix Time Stamp](https://en.wikipedia.org/wiki/Unix_time)
+- [Tutorial zur Verwendung von RTC Modulen mit Arduino](https://www.electronics-lab.com/project/using-the-ds1307-real-time-clock-with-arduino/)
+- [Tutorial zur Verwendung von GPS-Modulen mit Arduino](https://learn.sparkfun.com/tutorials/gps-basics/all)

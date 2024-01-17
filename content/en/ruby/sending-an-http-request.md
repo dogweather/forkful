@@ -10,51 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
+Sending an HTTP request is a way for a program to interact with a web server. This involves sending a message to the server with a specific URL and receiving a response back. Programmers use this functionality to retrieve data or make changes to a website or web application.
 
-Have you ever wanted to interact with a website or web service through your code? You can do so by sending an HTTP request. Whether you want to retrieve data, submit information, or perform other actions, sending an HTTP request allows you to communicate with websites and web services in a simple and efficient way.
+## How to:
+There are multiple ways to send an HTTP request in Ruby. One simple way is to use the [Net::HTTP](https://ruby-doc.org/stdlib-2.7.1/libdoc/net/http/rdoc/Net/HTTP.html) module, which is built-in to the standard library. Here's an example of how to use Net::HTTP to make an HTTP GET request and print out the response body:
 
-## How To
-
-To send an HTTP request in Ruby, you will need to use the `Net::HTTP` library. First, you need to require the library in your code:
-
-```ruby
+```Ruby
 require 'net/http'
-```
 
-Next, you will need to create a `Net::HTTP` object and specify the URL of the website or web service you want to communicate with:
+url = URI("https://example.com")
 
-```ruby
-uri = URI('https://example.com') # replace with your desired URL
-http = Net::HTTP.new(uri.host, uri.port)
-```
-
-You can also specify any additional parameters or headers in the `uri` object, such as authentication credentials or specific query parameters.
-
-Once you have set up your `Net::HTTP` object, you can use it to make various types of requests, including GET, POST, PUT, and DELETE. For example, to make a GET request and retrieve data from the specified URL, you can use the `get` method and assign the response to a variable:
-
-```ruby
-response = http.get(uri)
-```
-
-You can then access the response body, headers, and other information by calling specific methods on the `response` object. Here's an example of printing the body of the response:
-
-```ruby
+response = Net::HTTP.get_response(url)
 puts response.body
 ```
 
-And that's it! You have successfully sent an HTTP request using Ruby.
+This code will send a GET request to "example.com" and output the HTML body of the website. You can also use other HTTP methods like POST, PUT, and DELETE with Net::HTTP.
+
+You can also use [HTTParty](https://github.com/jnunemaker/httparty) gem, which provides a more user-friendly interface for making HTTP requests. Here's an example of using HTTParty to make a POST request and print out the response:
+
+```Ruby
+require 'httparty'
+
+response = HTTParty.post("https://jsonplaceholder.typicode.com/posts",
+                         body: { title: "New Post", body: "This is a new post." })
+puts response.body
+```
+
+This code will make a POST request to the "jsonplaceholder" API and print out the response, which in this case will be the newly created post.
 
 ## Deep Dive
+Sending HTTP requests has been a core feature of programming since the early days of the web. Before the modern tools and libraries we have today, programmers had to manually set up sockets and send raw HTTP requests. The introduction of libraries like Net::HTTP and HTTParty have made it much easier to interact with web servers.
 
-Sending an HTTP request involves several steps under the hood. When you call the `get` method, for example, Ruby sends an HTTP GET request to the specified URL using the TCP protocol. The server then responds with an HTTP response, which contains a status code, headers, and a body.
+There are also alternative ways to make HTTP requests in Ruby, such as [Faraday](https://github.com/lostisland/faraday) and [RestClient](https://github.com/rest-client/rest-client). These libraries provide more advanced features like request logging, authentication, and error handling.
 
-If the response indicates a successful request (e.g. a status code of 200), you can access the information in the response body to retrieve the data you were looking for. Otherwise, you may need to handle any errors or unexpected responses.
-
-It's also worth noting that the `Net::HTTP` library offers more advanced options, such as persistent connections and SSL/TLS support. You can explore these features further in the official [documentation](https://ruby-doc.org/stdlib-2.7.0/libdoc/net/http/rdoc/Net/HTTP.html).
+Behind the scenes, sending an HTTP request involves establishing a TCP connection with the web server, sending the request headers and body, and then receiving and processing the response.
 
 ## See Also
-
-- Official `Net::HTTP` documentation: https://ruby-doc.org/stdlib-2.7.0/libdoc/net/http/rdoc/Net/HTTP.html
-- HTTP requests tutorial: https://www.theodinproject.com/courses/ruby-programming/lessons/http-networking
-- HTTP basics explained: https://www.ntu.edu.sg/home/ehchua/programming/webprogramming/HTTP_Basics.html
+- [Net::HTTP documentation](https://ruby-doc.org/stdlib-2.7.1/libdoc/net/http/rdoc/Net/HTTP.html)
+- [HTTParty documentation](https://github.com/jnunemaker/httparty)
+- [Faraday documentation](https://github.com/lostisland/faraday)
+- [RestClient documentation](https://github.com/rest-client/rest-client)

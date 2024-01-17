@@ -1,7 +1,7 @@
 ---
-title:                "Ein Datum in der Zukunft oder Vergangenheit berechnen"
-html_title:           "Arduino: Ein Datum in der Zukunft oder Vergangenheit berechnen"
-simple_title:         "Ein Datum in der Zukunft oder Vergangenheit berechnen"
+title:                "Eine Datum in der Zukunft oder Vergangenheit berechnen"
+html_title:           "Arduino: Eine Datum in der Zukunft oder Vergangenheit berechnen"
+simple_title:         "Eine Datum in der Zukunft oder Vergangenheit berechnen"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Dates and Times"
@@ -10,37 +10,76 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+Was & Warum?
 
-Die Berechnung von zukünftigen und vergangenen Datum kann für verschiedene Anwendungen nützlich sein, wie z.B. für die Steuerung von Zeitabläufen, für zeitgesteuerte Aufgaben oder für die Darstellung von Datums- und Zeitanzeigen. Mit der aktuellen Version von Arduino können diese Berechnungen einfach und effektiv durchgeführt werden.
+Das Berechnen eines Datums in der Zukunft oder Vergangenheit ist eine wichtige Funktion in der Programmierung, um genaue Abläufe zu planen und Ereignisse vorherzusagen. Programmierer nutzen diese Funktion, um zukünftige Ereignisse zu planen oder vergangene Ereignisse zu analysieren und besser zu verstehen.
 
-## Wie geht's
+Wie geht's?
 
-In der Arduino-Programmiersprache gibt es verschiedene Funktionen, die es ermöglichen, ein zukünftiges oder vergangenes Datum zu berechnen. Im Folgenden werden wir uns auf die Funktion "getDate" konzentrieren, die das aktuelle Datum als Rückgabewert liefert.
+Hier sind Beispiele für die Berechnung eines Datums in der Zukunft und Vergangenheit mit dem aktuellen Arduino.
 
 ```Arduino
-#include <Time.h> // Einbinden der Time-Library
+// Berechnung eines Datums in der Zukunft
+#include <TimeLib.h>
 
-void setup(){
-    TimeElements futureDate; // Erstellt ein Objekt für das zukünftige Datum
-    getDate(futureDate); // Holt sich das aktuelle Datum
-
-    futureDate.Year += 1; // Addiert ein Jahr zu dem aktuellen Datum
-    convertElements(futureDate); // Konvertiert das Datum in ein neues Format
-    Serial.println(UTCDateTime(futureDate)); // Gibt das berechnete Datum aus
+void setup() {
+  Serial.begin(9600);
+  
+  // Aktuelles Datum und Zeit einstellen
+  setTime(12, 30, 30, 23, 8, 2021);
+  
+  // Datumsberechnung
+  int future_day = day() + 7; // 7 Tage in der Zukunft
+  int future_month = 8; // September
+  int future_year = year(); // aktuelles Jahr
+  
+  // Ausgabe
+  Serial.print("Das Datum in 7 Tagen ist: ");
+  Serial.print(future_month);
+  Serial.print("/");
+  Serial.print(future_day);
+  Serial.print("/");
+  Serial.println(future_year);
 }
+
+void loop() {}
 ```
 
-Die Funktion "getDate" ist Teil der Time-Library und wird verwendet, um das aktuelle Datum zu erhalten. Das zurückgegebene Datum wird in Form einer Zeitstruktur gespeichert, die verschiedene Elemente wie Jahr, Monat, Tag, Stunde, Minute und Sekunde enthält. In unserem Beispiel haben wir dem aktuellen Datum ein Jahr hinzugefügt und es in das Format UTCDateTime konvertiert, um es auf dem seriellen Monitor anzuzeigen. Natürlich kann die Funktion "getDate" auch mit anderen Rechenoperationen kombiniert werden, um komplexere Datumsberechnungen durchzuführen.
+```Arduino
+// Berechnung eines Datums in der Vergangenheit
+#include <TimeLib.h>
 
-## Tiefer Einblick
+void setup() {
+  Serial.begin(9600);
+  
+  // Aktuelles Datum und Zeit einstellen
+  setTime(12, 30, 30, 23, 8, 2021);
+  
+  // Datumsberechnung
+  int past_day = day() - 10; // 10 Tage in der Vergangenheit
+  int past_month = 7; // Juli
+  int past_year = year(); // aktuelles Jahr
+  
+  // Ausgabe
+  Serial.print("Das Datum vor 10 Tagen war: ");
+  Serial.print(past_month);
+  Serial.print("/");
+  Serial.print(past_day);
+  Serial.print("/");
+  Serial.println(past_year);
+}
 
-Die Funktion "getDate" basiert auf dem internen Systemtimer von Arduino, der die aktuelle Zeit seit dem Einschalten des Boards zählt. Dadurch können auch Langzeitberechnungen durchgeführt werden, da das Systemdatum nicht verloren geht, selbst wenn das Board ausgeschaltet wird.
+void loop() {}
+```
 
-Zusätzlich zu "getDate" gibt es noch weitere hilfreiche Funktionen in der Time-Library, wie z.B. "makeTime", mit der man eine vordefinierte Zeitstruktur erstellen kann, sowie verschiedene Konvertierungsfunktionen, um das Datum in verschiedene Formate zu bringen.
+Vertiefung
 
-## Siehe auch
+Die Berechnung von Datumsangaben ist ein wichtiger Bestandteil der Programmierung und wird schon seit langem genutzt. Alternativ können auch Datum- und Zeitbibliotheken verwendet werden, welche jedoch möglicherweise spezielle Funktionen bieten und eine andere Syntax verwenden.
 
-- offizielle Arduino-Dokumentation zu Time-Library: https://www.arduino.cc/en/Reference/Time
-- Tutorial für Zeit- und Datumsberechnungen mit Arduino: https://www.circuitbasics.com/how-to-work-with-time-and-dates-in-arduino/
-- Beispielprojekt für eine Uhr mit Datumsanzeige: https://create.arduino.cc/projecthub/ansh6kevv/usdgraph-a-date-time-based-analog-clock-using-arduino-1f877c
+Weitere Informationen und Funktionen zur Arbeit mit Datum und Zeit finden Sie in der offiziellen TimeLib-Dokumentation. [Link zur Dokumentation](https://github.com/PaulStoffregen/Time)
+
+Siehe auch
+
+- [Vergleich von Datum- und Zeitbibliotheken](https://arduino-projekte.info/zeit-datum-arduino-einfach-verst%c3%a4ndlich/)
+- [Berechnung von Zeitintervallen in der Programmierung](https://www.instructables.com/How-to-Calculate-Time-Intervals-in-Arduino/)
+- [Praktische Anwendung von Datum und Zeit in der Realität](https://www.geekstips.com/arduino-date-time-timestamp-arhus-real-time-clock/)

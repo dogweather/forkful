@@ -1,7 +1,7 @@
 ---
-title:                "Att hitta strängens längd"
-html_title:           "Javascript: Att hitta strängens längd"
-simple_title:         "Att hitta strängens längd"
+title:                "Hitta längden på en sträng"
+html_title:           "Javascript: Hitta längden på en sträng"
+simple_title:         "Hitta längden på en sträng"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Strings"
@@ -10,40 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
-Att veta längden på en sträng är en grundläggande funktion inom programmering, speciellt inom språket Javascript. Det kan vara användbart för att hantera textinput, validera data och för att skapa dynamiska funktioner.
+## Vad & Varför?
 
-## Hur man gör
-För att få längden på en sträng i Javascript, används funktionen `.length` tillsammans med variabeln som innehåller strängen.
+Att hitta längden på en sträng är en vanlig uppgift inom programmering. Det innebär helt enkelt att ta reda på hur många tecken en sträng innehåller. Detta är användbart för att hantera och manipulera textsträngar på olika sätt.
 
-```Javascript
-// Skapa en variabel som innehåller en sträng
-var namn = "Anna";
-
-// Använd .length för att få längden på strängen
-console.log(namn.length); // Output: 4
-```
-
-Om du vill kunna räkna med antalet tecken i en sträng utan mellanslag, kan du använda `.replace()` metoden tillsammans med en reguljäruttryck (RegExp) för att ta bort mellanslag från strängen.
+## Så här:
 
 ```Javascript
-// Skapa en sträng med mellanslag
-var mening = "Det är en vacker dag";
+// Exempel 1: Hitta längden på en statisk sträng
+let str = "Hello World";
+console.log(str.length); // Output: 11
 
-// Använd .replace() metoden för att ta bort mellanslag med hjälp av reguljäruttrycket /\s/g
-var renMening = mening.replace(/\s/g,"");
-
-// Använd .length för att få längden på den rena strängen
-console.log(renMening.length); // Output: 14
+// Exempel 2: Hitta längden på en dynamisk sträng
+let userInput = prompt("Skriv en sträng: ");
+console.log(userInput.length); // Output: längden på användarens input
 ```
 
-## Djupdykning
-När du använder funktionen `.length` på en variabel som inte innehåller en sträng, kommer Javascript att automatiskt konvertera variabeln till en sträng och sedan räkna antalet tecken.
+## Djupdykning:
 
-En annan sak att tänka på är att `.length` funktionen räknar både siffror och bokstäver. Så om du har en variabel med värdet `1234`, kommer längden att bli 4 trots att det egentligen bara är en siffra. 
+Att hitta längden på en sträng är inte en ny eller komplicerad koncept inom programmering. Det har funnits med sedan de tidiga dagarna av programmeringsspråk som C och Fortran. Det finns också flera sätt att uppnå samma resultat.
 
-Du kan också använda `.length` i en loop för att gå igenom varje tecken i en sträng och göra viss manipulation av data baserat på dess position. Detta kan vara användbart när du arbetar med stora dataset eller om du vill använda specifika delar av en sträng.
+Ett alternativ till att använda .length-metoden är att använda en for-loop och iterera över varje tecken i strängen, räkna dem under tiden. Detta kan vara användbart om man vill utföra andra operationer på tecknen samtidigt.
 
-## Se även
-- [String.prototype.length](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length) (engelska)
-- [String.prototype.replace()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace) (engelska)
+Implementeringen av .length-metoden kan också variera lite beroende på programmeringsspråk. I Javascript är .length en egenskap och inte en metod, så det är inget behov av parenteser efter .length.
+
+## Se även:
+
+- [String.length - MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length) - officiell dokumentation från Mozilla.
+- [String length() Function - W3Schools](https://www.w3schools.com/jsref/jsref_length_string.asp) - en tutorial med exempel och förklaringar.

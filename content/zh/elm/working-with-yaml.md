@@ -1,7 +1,7 @@
 ---
-title:                "使用YAML进行编程"
-html_title:           "Elm: 使用YAML进行编程"
-simple_title:         "使用YAML进行编程"
+title:                "使用yaml编程"
+html_title:           "Elm: 使用yaml编程"
+simple_title:         "使用yaml编程"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Data Formats and Serialization"
@@ -10,66 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-为什么：为了解 *为什么* 我们应该使用 YAML 进行编程。
+# Elm 中的YAML：什么 & 为什么要使用
 
-在今天的软件开发过程中，与大量的数据和配置文件打交道是常态。作为一种轻量级且易于阅读的语言，YAML 是处理这些数据和配置文件的理想工具。 
+YAML是一种轻量级的数据序列化语言，用于在不同编程环境下存储和传输数据。程序员们使用YAML是为了在不同系统之间共享数据，或者将数据存储为可读性较高的格式，便于维护和管理。
 
+# 如何使用
 
-## 如何使用
+```elm
+import Json.Decode as Decode
+import Yaml.Decode as Yaml
 
-```Elm
-type alias Person = 
-    { name : String
-    , age : Int
-    , occupation : String
-    }
+yamlDecoder : Decode.Decoder a -> String -> Decode.Result a
+yamlDecoder decoder string =
+    Yaml.decode string
+        |> Decode.andThen decoder
 
-data : Person
-data = 
-    { name = "Alice"
-    , age = 25
-    , occupation = "Software Engineer"
-    }
+decoder : Decode.Decoder MyData
+decoder =
+    Decode.succeed MyData
+        |> Decode.field "key" Decode.int
+        |> Decode.field "value" Decode.string
 
-yaml : String
-yaml = """
-name: Bob
-age: 28
-occupation: Business Analyst
-"""
+yamlString : String
+yamlString =
+    """
+    key: 123
+    value: "Hello World!"
+    """
 
-decoder : Decoder Person
-decoder = 
-    Decode.map3 Person
-        (Decode.field "name" Decode.string)
-        (Decode.field "age" Decode.int)
-        (Decode.field "occupation" Decode.string)
-
-output : Result String Person
-output = 
-    Decode.decodeString decoder yaml
+result : Decode.Result MyData
+result =
+    yamlDecoder decoder yamlString
 ```
 
-输出：
+输出：`Ok { key = 123, value = "Hello World!" }`
 
-```
-Ok
-    { name = "Bob"
-    , age = 28
-    , occupation = "Business Analyst"
-    }
-```
+# 深入解析
 
-## 深入探讨
+- 历史背景：YAML最初于2001年由Clark Evans创建，旨在提供一种易于人类阅读和机器解析的数据格式。
+- 替代方案：除了YAML，JSON也是一种流行的数据序列化语言。YAML相比JSON更易读，并支持注释和锚点功能。
+- 实现细节：Elm中使用YAML需要通过第三方库，如上例所示，需要使用`Json.Decode`和`Yaml.Decode`模块。
 
-YAML 是一种基于键值对的语言，它使用缩进来表示层级关系，是一种易于阅读和理解的数据结构。使用 Elm 的 YAML 模块，您可以方便地将 YAML 数据转换成 Elm 的类型，从而更加灵活地处理数据和配置文件。
+# 查看更多
 
-查看 [官方文档](https://package.elm-lang.org/packages/Gizra/elm-yaml/latest/) 了解更多关于 YAML 模块的使用方法和注意事项。
-
-## 查看更多
-
-[官方文档](https://docs.ansible.com/ansible/latest/reference_appendices/YAMLSyntax.html) 
-
-[YAML 教程](https://www.yudesignthinking.com/YAML.html) 
-
-[YAML 简介](https://www.runoob.com/w3cnote/yaml-intro.html)
+- [Official YAML Website](https://yaml.org/)
+- [Elm Yaml Package](https://package.elm-lang.org/packages/BrianHicks/elm-yaml/latest/)

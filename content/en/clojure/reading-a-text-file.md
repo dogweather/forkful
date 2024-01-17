@@ -10,52 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
+Reading a text file is the ability to access and extract data from a plain text document. This is a common practice for programmers as text files are often used to store information that can be easily manipulated and processed using code.
 
-If you've ever needed to process or extract information from a text file, you know how tedious and time-consuming it can be to manually search and edit the file. This is where Clojure comes in, as it offers efficient and elegant tools for reading and manipulating text files.
-
-## How To
-
-To read a text file in Clojure, we will use the `slurp` function. This function takes in a path to a text file and returns the contents of the file as a string.
+## How to:
+In Clojure, reading a text file is a simple process that can be done using the `slurp` function. This function takes in a file path as its argument and returns the contents of the file as a string. Here's an example code block showing how to use `slurp` and the output it produces:
 
 ```Clojure
-(def file-content (slurp "my-file.txt"))
+(def file (slurp "my_file.txt"))
+println file
 ```
 
-Now that we have the contents of the file, we can use various functions and operations to manipulate the data. For example, we can split the string into a sequence of lines using the `clojure.string/split-lines` function.
+Output:
+```
+This is the contents of my_file.txt
+```
+
+We can also specify the character encoding of the text file we are reading by passing it as a second argument to the `slurp` function. For example, if our text file is encoded in UTF-8, we can do the following:
 
 ```Clojure
-(def lines (clojure.string/split-lines file-content))
+(def file (slurp "my_file.txt" :encoding "UTF-8"))
+println file
 ```
 
-We can also use the `clojure.string/split` function to split the string into a sequence of words, using a specified delimiter.
-
-```Clojure
-(def words (clojure.string/split file-content #"\s+"))
+Output:
+```
+This is the contents of my_file.txt
 ```
 
-Once we have the data in a structured format, we can use functions like `filter` or `map` to extract specific information or transform the data. For instance, we can filter out all the lines that contain a specific word using the `filter` function.
+## Deep Dive:
+Text files have been a fundamental method of storing and sharing data since the early days of computing. They are simple, easily readable, and can be opened and edited by a variety of programs. In Clojure, using the `slurp` function is the most common way to read a text file. However, there are other third-party libraries available that provide additional options for handling text files, such as `clojure.java.io` and `clojure.contrib.io`.
 
-```Clojure
-(def filtered-lines (filter #(.contains % "Clojure") lines))
-```
+Additionally, when using `slurp`, it is important to note that the entire contents of the file are read into memory as a string. This means that reading large text files can potentially use a lot of memory and slow down the performance of your program. In such cases, it may be more efficient to use a streaming approach, which reads the file line by line, rather than loading it all at once.
 
-## Deep Dive
-
-One important thing to note when reading text files in Clojure is that the `slurp` function reads the entire contents of the file into memory as a string. This means that if the file is large, we might run into memory issues.
-
-To avoid this, we can use the `with-open` macro, which will automatically close the file after reading it, thus freeing up the memory resources.
-
-```Clojure
-(with-open [rdr (clojure.java.io/reader "my-file.txt")]
-  (doseq [line (line-seq rdr)]
-    (println line)))
-```
-
-Additionally, Clojure also offers the `clojure.java.io/reader` function, which allows for more advanced options when reading a file, such as specifying character encoding.
-
-## See Also
-
-- [Clojure Official Documentation on Reading Files](https://clojure.org/reference/io)
-- [ClojureDocs page on Slurp function](https://clojuredocs.org/clojure.core/slurp)
-- [Blog post on working with large text files in Clojure](https://indielambda.com/blog/working-with-large-text-files-in-clojure/)
+## See Also:
+- [ClojureDocs: slurp](https://clojuredocs.org/clojure.core/slurp)
+- [clojure.java.io library](https://clojuredocs.org/clojure.java.io)
+- [clojure.contrib.io library](https://clojuredocs.org/clojure.contrib.io)

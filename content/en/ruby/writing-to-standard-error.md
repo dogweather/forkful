@@ -10,48 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-Writing to standard error is a useful technique for debugging and error handling in Ruby programming. It allows developers to output informational messages, warnings, and errors to the standard error stream, which can then be viewed separately from standard output.
+Writing to standard error in Ruby is a way for programmers to display error messages or debugging information to the user. Unlike standard output (usually displayed on the terminal), standard error is meant for displaying important information that the user should be aware of, such as unexpected errors or warnings. By using standard error, programmers can ensure that these messages are not overlooked and can be easily identified by the user.
 
-## How To
+## How to:
 
-To write to standard error in Ruby, we use the `warn` method, passing in the message we want to output as a string. This will print the message to the standard error stream, separate from any standard output that may also be present.
-
-```Ruby
-# Output a warning to standard error
-warn "Oops, something went wrong!"
-```
-
-This will produce the following output:
-
-```sh
-Oops, something went wrong!
-```
-
-We can also use the `puts` method with the special global variable `$stderr` to write to standard error. This will have the same effect as using `warn`.
+To write to standard error in Ruby, you can use the `STDERR.puts` method, followed by the message you want to display. For example:
 
 ```Ruby
-# Output an error message to standard error
-$stderr.puts "Error: Invalid input"
+STDERR.puts "Something went wrong"
 ```
 
-This will produce the following output:
+This will print "Something went wrong" to the standard error stream.
 
-```sh
-Error: Invalid input
+You can also use string interpolation to provide more specific information in your error message. For instance:
+
+```Ruby
+username = "John"
+STDERR.puts "#{username} is not a valid username"
 ```
 
-## Deep Dive
+This will output "John is not a valid username" to the standard error stream.
 
-Writing to standard error differs from writing to standard output in that it is intended for error and warning messages, rather than regular program output. By default, standard error messages are displayed on the user's screen whereas standard output is often redirected to a file.
+## Deep Dive:
 
-It is important to note that standard error messages are not the same as exceptions in Ruby. Exceptions are used for handling errors that occur during execution, while writing to standard error is more for informational messages and debugging purposes.
+The concept of standard error in programming dates back to the early days of computer programming. It was initially implemented as a way to differentiate between regular output and error messages, as both were printed on the same screen. Nowadays, standard error also serves as a way for programmers to redirect specific types of information to a different location, such as a log file.
 
-Additionally, it is good practice to provide a descriptive message when writing to standard error to aid in debugging and troubleshooting. This can include information such as the name of the method or function being executed, the input parameters, and any relevant data or context.
+In Ruby, an alternative method to writing to standard error is using the `Kernel#warn` method. This method also outputs the given message to the standard error stream, but it includes additional information such as the location of the code where the message was called.
 
-## See Also
+Standard error is implemented in Ruby using the `IO` class, which represents input/output streams. The standard error stream, specifically, is represented by the `STDERR` constant.
 
-- [Ruby documentation on `warn` method](https://ruby-doc.org/core-2.7.1/Kernel.html#method-i-warn)
-- [Ruby documentation on standard streams](https://ruby-doc.org/core-2.7.1/IO.html#class-IO-label-Streaming)
-- [Difference between standard error and standard output streams](https://unix.stackexchange.com/questions/4689/what-does-it-mean-to-write-to-stderr)
+## See Also:
+
+To learn more about standard error and its implementation in Ruby, you can refer to the [Ruby documentation for STDERR](https://ruby-doc.org/core-2.7.0/STDERR.html). Additionally, to understand more about the `Kernel#warn` method, you can check out its documentation [here](https://ruby-doc.org/core-2.7.0/Kernel.html#method-i-warn).

@@ -1,7 +1,7 @@
 ---
-title:                "Å finne lengden til en tekststreng"
-html_title:           "PHP: Å finne lengden til en tekststreng"
-simple_title:         "Å finne lengden til en tekststreng"
+title:                "Å finne lengden på en streng"
+html_title:           "PHP: Å finne lengden på en streng"
+simple_title:         "Å finne lengden på en streng"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Strings"
@@ -10,45 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hva & Hvorfor?
+Å finne lengden til en streng er en vanlig oppgave i programmering, og det refererer til å bestemme antall tegn eller bytes i en tekststreng. Dette gjøres ofte for å kunne behandle strenger på riktig måte, for eksempel å begrense brukerinndata eller formatere tekst på en bestemt måte.
 
-Å finne lengden på en streng er en vanlig oppgave når man jobber med PHP-programmering. Det er nyttig å kunne for å kunne håndtere og manipulere tekstdata på en effektiv måte i koden din.
-
-## Slik gjør du det
-
-Det finnes flere måter å finne lengden på en streng i PHP, avhengig av hva som passer best for oppgaven din. Her er noen eksempler:
-
+## Slik gjør du:
+Her er et eksempel på hvordan du finner lengden av en streng i PHP:
 ```PHP
-// Bruker funksjonen strlen() for å finne lengden på en streng
-$string = "Dette er en test";
-echo strlen($string); // Output blir 16, siden det er 16 tegn i strengen
-
-// Bruker count() funksjonen på en streng som et array av tegn
-echo count(str_split($string)); // Output blir også 16
-
-// Bruker mb_strlen() funksjonen for å håndtere flerspråklige strenger
-// Denne funksjonen tar hensyn til spesielle tegn og bokstaver som kan oppta mer enn én byte
-$string = "Dette er en test på norsk: Værsågod";
-echo mb_strlen($string, 'UTF-8'); // Output blir 30
-
-// Du kan også bruke en løkke til å telle hvert tegn i strengen manuelt
-$count = 0;
-foreach(str_split($string) as $char){
-    $count++;
-}
-echo $count; // Output blir også 30
+<?php
+$string = "Dette er en streng.";
+echo strlen($string); // output: 21
+?>
 ```
 
-## Dykk dypere
+Slik fungerer eksempelet:
+- Først definerer vi en variabel som inneholder en tekststreng.
+- Deretter bruker vi funksjonen `strlen()` til å finne lengden av strengen.
+- Til slutt skriver vi ut resultatet ved å bruke `echo`.
 
-Det er viktig å være klar over at lengden på en streng i PHP er basert på antall tegn, ikke antall ord. Dette betyr at mellomrom også blir telt som et tegn.
+Du kan også bruke `mb_strlen()` i stedet hvis du trenger å håndtere flerspråklige strenger som inneholder andre språk enn det som benytter det latinske alfabetet.
 
-Du bør også være oppmerksom på hvilken type tegnkoding som brukes i strengen din. Hvis det er forskjellig fra standarden UTF-8, må du sørge for å sette riktig tegnkoding i parameteren for mb_strlen() funksjonen.
+## Dypdykk:
+Før i tiden, da datamaskiner brukte begrensede mengder data, ble lengden til en streng ofte brukt til å optimalisere plass og ytelse. I dag brukes det mest som et praktisk mål for å behandle tekststrenger på en riktig måte.
 
-En annen nyttig funksjon for å håndtere strenger er substr() funksjonen, som lar deg hente en del av en streng basert på startposisjon og lengde.
+Alternativer til å bruke `strlen()` inkluderer å bruke en løkke til å telle antall tegn eller å bruke funksjonen `count_chars()` for å telle unike tegn. Det finnes også lignende funksjoner i andre programmeringsspråk som Python ( `len()` ) og Java ( `length()` ).
 
-## Se også
+Når det kommer til implementering, er `strlen()` en innebygd funksjon i PHP, noe som betyr at du ikke trenger å importere noen ekstra biblioteker for å bruke den.
 
-- Offisiell PHP Manual for strlen(): https://www.php.net/manual/en/function.strlen.php
-- Eksempler på bruk av mb_strlen(): https://www.php.net/manual/en/function.mb-strlen.php
-- Dokumentasjon for substr() funksjonen: https://www.php.net/manual/en/function.substr.php
+## Se også:
+- [PHP.net - Get String Length](https://www.php.net/manual/en/function.strlen.php)
+- [W3Schools - PHP String Functions](https://www.w3schools.com/php/php_ref_string.asp)

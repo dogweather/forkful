@@ -1,7 +1,7 @@
 ---
-title:                "Berechnung eines Datums in der Zukunft oder Vergangenheit"
-html_title:           "Rust: Berechnung eines Datums in der Zukunft oder Vergangenheit"
-simple_title:         "Berechnung eines Datums in der Zukunft oder Vergangenheit"
+title:                "Das Berechnen eines Datums in der Zukunft oder Vergangenheit"
+html_title:           "Rust: Das Berechnen eines Datums in der Zukunft oder Vergangenheit"
+simple_title:         "Das Berechnen eines Datums in der Zukunft oder Vergangenheit"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Dates and Times"
@@ -10,44 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was & Warum?
+Das Berechnen eines Datums in der Zukunft oder Vergangenheit ist ein häufiges Problem in der Programmierung. Es erfordert die Verwendung von verschiedenen Datums- und Zeitfunktionen, um das gewünschte Ergebnis zu erhalten. Programmierer benötigen diese Funktionen, um Daten aufzubereiten und zu organisieren, beispielsweise für die Planung von Ereignissen oder das Erstellen von Zeitplänen.
 
-Das Berechnen eines Datums in der Zukunft oder Vergangenheit kann sehr nützlich sein, zum Beispiel für die Planung von Terminen oder die Erstellung von Kalendern. Mit Rust und seinen leistungsstarken Datums- und Zeitenbibliotheken können wir dies einfach und effizient erreichen.
+## Wie geht's?
+Um ein Datum in der Zukunft oder Vergangenheit in Rust zu berechnen, können wir die Datetime-Bibliothek verwenden. Schauen wir uns ein Beispiel an, bei dem wir 10 Tage von einem bestimmten Datum in der Zukunft subtrahieren:
 
-## Wie geht's
+```
+Rust use chrono::prelude::*;
+let date = Utc.ymd(2021, 11, 20);
+let ten_days_before = date - Duration::days(10);
 
-Um ein Datum in der Zukunft oder Vergangenheit zu berechnen, müssen wir zuerst das aktuelle Datum bekommen und es dann um die gewünschte Anzahl an Tagen erhöhen oder reduzieren. Hier ist ein Beispiel, das das Datum von heute um 7 Tage in der Zukunft berechnet:
-
-```Rust
-use chrono::prelude::*; // Importieren der Chrono-Bibliothek
-
-let now = Local::now(); // Aktuelles Datum bekommen
-let future_date = now + Duration::days(7); // 7 Tage zu heute hinzufügen
-
-println!("Datum in 7 Tagen: {}", future_date.format("%d.%m.%Y")); // Output: Datum in 7 Tagen: 24.07.2021
+println!("{}", ten_days_before);
 ```
 
-Und hier ist ein Beispiel, das das Datum von heute um 2 Wochen in der Vergangenheit berechnet:
+Das obige Beispiel verwendet die Datetime-Bibliothek, um ein Datum in der Zukunft zu erstellen und dann 10 Tage davon zu subtrahieren. Die Ausgabe wird das Datum 10 Tage vor dem angegebenen Datum sein, in diesem Fall 10. November 2021.
 
-```Rust
-use chrono::prelude::*;
+## Tiefer Einblick
+Das Berechnen von Datum und Zeit kann schwierig sein, da es viele Faktoren zu berücksichtigen gibt, wie z.B. verschiedene Zeitzonen und Schaltjahre. Alternativ können Programmierer auch die Standardbibliothek von Rust verwenden, um auf die Systemzeit zuzugreifen und damit das aktuelle Datum und die aktuelle Zeit zu erhalten.
 
-let now = Local::now();
-let past_date = now - Duration::weeks(2);
-
-println!("Datum vor 2 Wochen: {}", past_date.format("%A, %d.%m.%Y")); // Output: Datum vor 2 Wochen: Montag, 05.07.2021
-```
-
-Wie wir sehen können, können wir die Datums- und Zeitenbibliothek von Rust verwenden, um sehr präzise und formatierte Ergebnisse zu erhalten.
-
-## Tiefer tauchen
-
-Wenn wir genauer auf die Datums- und Zeitenbibliothek von Rust schauen, werden wir sehen, dass sie auf der ISO 8601-Standardformatierung basiert. Das bedeutet, dass das Datum in der Form "Jahr-Monat-Tag" dargestellt wird. Zum Beispiel wird der 5. Juli 2021 als "2021-07-05" angezeigt.
-
-Außerdem können wir auch andere Funktionen der Chrono-Bibliothek nutzen, wie zum Beispiel das Berechnen von Zeitspannen oder das Konvertieren von Zeitstempeln in Datumsangaben. Die Dokumentation von Rust bietet eine detaillierte Anleitung und Beispiele zu diesen Funktionen.
+Es gibt auch andere Bibliotheken wie DateTime und Chrono, die ähnliche Funktionen anbieten, aber die Datetime-Bibliothek ist in Rust integriert und wird von der Community unterstützt.
 
 ## Siehe auch
-
-- [Chrono Dokumentation](https://docs.rs/chrono)
-- [How to Use DateTime, Calendar and Date Classes in Rust](https://www.section.io/engineering-education/how-to-use-datetime-calendar-and-date-classes-in-rust/)
-- [Creating Dates and Time in Rust using chrono](https://www.section.io/engineering-education/creating-date-and-time-in-rust-using-chrono/)
+- [Datetime-Bibliothek in Rust](https://docs.rs/datetime/0.4.5/datetime/)
+- [Chrono-Bibliothek in Rust](https://docs.rs/chrono/0.4.19/chrono/)
+- [Standardbibliothek in Rust](https://doc.rust-lang.org/std/time/)

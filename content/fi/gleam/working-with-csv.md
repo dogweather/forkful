@@ -10,31 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Miksi
+## Mikä & Miksi?
 
-CSV eli erotettu-arvot tiedosto on yleinen tapa tallentaa ja jakaa tietoa. Sen avulla voit tallentaa tietoa taulukkomuodossa, mikä tekee sen käyttämisestä helppoa ja tehokasta. Gleam-ohjelmointikielen avulla voit käsitellä CSV-tiedostoja nopeasti ja helposti.
+CSV on tietomuoto, jota ohjelmoijat käyttävät taulukkotietojen tallentamiseen ja jakamiseen. Se on lyhenne sanoista "Comma-Separated Values" ja se koostuu riveistä ja sarakkeista, jotka on eroteltu pilkulla. Olet varmasti törmännyt CSV-tiedostoihin esimerkiksi lataamalla Excel-taulukoita tai tuodessa dataa sovelluksiin.
 
-# Miten
+Ohjelmoijat käyttävät CSV-muotoa, koska se on yksinkertainen ja helppo käsitellä. Sen avulla voidaan tallentaa suuriakin tietomääriä tehokkaasti ja helposti jakaa tietoa eri järjestelmien välillä.
 
-Lyhyesti, luo ensin yhteys CSV-tiedostoon Gleamin avulla käyttämällä avainmoduulia ja sen jälkeen käytä yhteiset CSV-funktiot tiedon hakemiseen ja käsittelyyn. Joten, jos haluat esimerkiksi lukea CSV-tiedostosta ja tulostaa sen sisällön konsolille, kirjoita seuraavasti:
+## Miten:
 
-```Gleam
-tiedosto = "tiedosto.csv"
-tulos = Csv.read_file(tiedosto)
-case tulos {
-Ok(tiedot) -> x Printf("Data: #{tiedot}")
-Error(virhe) -> x Printf("Virhe: #{virhe}")
-}
+Gleam-ohjelmoinnissa CSV-tiedostoja käsitellään kätevästi [csv-paketin](https://github.com/gleam-lang/csv) avulla. Ensimmäiseksi meidän täytyy lisätä paketin riippuvuus projektiimme käyttämällä `rebar3`, minkä jälkeen voimme aloittaa CSV-tiedoston käsittelyn.
+
+```
+{ ok, data } = File.read("data.csv")
+|> csv.parse()
+|> csv.row_vectors()
 ```
 
-Tämä esimerkki lukee CSV-tiedoston nimeltä "tiedosto.csv" ja tulostaa sen sisällön konsolille. Tämä osoittaa, kuinka helposti Gleam-kieli käsittelee CSV-tiedostoja. Voit myös käyttää muita funktioita, kuten `Csv.write_file` tiedon tallentamiseen CSV-muodossa. Lisäksi Gleamin avulla voit suorittaa monimutkaisempia toimintoja, kuten tietojen muokkausta ja validointia.
+Yllä olevassa koodiesimerkissä käytämme `csv.parse()` -funktiota lukemaan ja parsimaan CSV-tiedoston sisältö muuttujaksi `data`. Tämän jälkeen `csv.row_vectors()` luo taulukon riveistä, jotka voidaan helposti käsitellä Gleamin taulukkopakettien avulla.
 
-# Syvälle sukellus
+## Syventymistä:
 
-Gleam-ohjelmointikieli tarjoaa laajan valikoiman CSV-funktioita, jotka helpottavat CSV-tiedostojen käsittelyä. Voit esimerkiksi käyttää `Csv.parse_row` funktiota jakamaan yksittäiset rivit CSV-tiedostosta tai `Csv.format_row` funktiota luomaan uusia rivejä CSV-tiedostoon. Lisäksi, Gleam tarjoaa myös muita käteviä työkaluja, kuten `List.to_csv` ja `List.from_csv` helpottamaan muunnoksia CSV-tiedostojen ja muiden tietorakenteiden välillä.
+CSV:tä on käytetty jo yli 50 vuotta ja se on edelleen erittäin suosittu tiedostoformaatti. Sen yksinkertaisuuden ansiosta sitä käytetään laajasti lähes kaikissa ohjelmointikielissä ja se on käytössä esimerkiksi tiedon siirrossa järjestelmien välillä.
 
-# Katso myös
+Gleamin lisäksi CSV-tiedostoja voi käsitellä monella muullakin ohjelmointikielellä, kuten Pythonilla ja Javalla. Lisäksi on olemassa erilaisia CSV-paketteja ja kirjastoja, jotka tarjoavat erilaisia toimintoja CSV-tiedostojen käsittelyyn.
 
-- Gleam-kielen virallinen dokumentaatio: https://gleam.run/
-- Gleam-kielen CSV-moduulin dokumentaatio: https://gleam.run/modules/csv
-- Pragmatismo-julkaisu, suomenkielinen artikkeli Gleam-kielestä: https://pragmatismo.news/2020/02/12/esittelyssa-gleam-ohjelmointikieli/
+CSV-tiedostoon tallennettuja tietoja käsitellään Gleamissa sisäisesti binäärinä, mikä tekee tiedostojen käsittelystä nopeaa ja tehokasta.
+
+## Katso myös:
+
+- [csv-paketti Gleam documentaatiossa](https://github.com/gleam-lang/csv)
+- [CSV Wikipediassa](https://en.wikipedia.org/wiki/Comma-separated_values)
+- [CSV-tiedostoja käsittelevät libraryt Pythonissa](https://docs.python.org/3/library/csv.html)

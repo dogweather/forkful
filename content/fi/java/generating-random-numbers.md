@@ -1,7 +1,7 @@
 ---
-title:                "Sattumanvaraisten lukujen luominen"
-html_title:           "Java: Sattumanvaraisten lukujen luominen"
-simple_title:         "Sattumanvaraisten lukujen luominen"
+title:                "Satunnaislukujen luominen"
+html_title:           "Java: Satunnaislukujen luominen"
+simple_title:         "Satunnaislukujen luominen"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Numbers"
@@ -10,64 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä ja miksi?
 
-Monissa Java-ohjelmissa tarvitaan satunnaisia numeroita esimerkiksi pelilogiikassa, testauksessa tai tietojen generoinnissa.
+Satunnaislukujen generointi tarkoittaa satunnaisten numeroiden luomista ohjelmassa. Ohjelmoijat tekevät tätä esimerkiksi testauksen, pelien tai salausalgoritmien toteuttamiseksi.
 
-## Kuinka tehdä
+## Kuinka tehdä:
 
-```Java
-// Java Random-luokkaa käyttäen
+Java tarjoaa valmiin luokan nimeltä Random, joka sisältää metodeja satunnaislukujen generoimiseksi. Esimerkiksi:
 
-import java.util.Random;
+```Java 
+Random random = new Random();
 
-public class RandomNumbers {
-    public static void main(String[] args) {
-
-        // Luo uusi Random-objekti
-        Random random = new Random();
-
-        // Satunnaisen kokonaisluvun generointi väliltä 1-10
-        int randomInt = random.nextInt(10) + 1;
-        System.out.println("Satunnainen kokonaisluku: " + randomInt);
-
-        // Satunnaisen liukuluvun generointi väliltä 0.0-1.0
-        double randomDouble = random.nextDouble();
-        System.out.println("Satunnainen liukuluku: " + randomDouble);
-    }
-}
+// Generoi kokonaisluku väliltä 0-9
+int randomInt = random.nextInt(10);
+System.out.println(randomInt);
 ```
 
-```Java
-// Java Math-luokkaa käyttäen
+Tämä koodi tulostaisi esimerkiksi luvun 5.
 
-public class RandomNumbers {
-    public static void main(String[] args) {
+## Syväsukellus:
 
-        // Satunnaisen kokonaisluvun generointi väliltä 1-10
-        int randomInt = (int)(Math.random() * 10) + 1;
-        System.out.println("Satunnainen kokonaisluku: " + randomInt);
+Satunnaislukujen generoinnilla on pitkä historia matematiikassa ja tietojenkäsittelyssä. Aikaisemmin satunnaislukuja saatiin esimerkiksi arpakuutioita heittämällä, mutta nykyään tietokoneohjelmat tarjoavat tarkempia ja nopeampia tapoja generoida satunnaisia lukuja.
 
-        // Satunnaisen liukuluvun generointi väliltä 0.0-1.0
-        double randomDouble = Math.random();
-        System.out.println("Satunnainen liukuluku: " + randomDouble);
-    }
-}
-```
+Java tarjoaa myös muita vaihtoehtoja satunnaislukujen generointiin, kuten ThreadLocalRandom-luokan, joka on suunniteltu monisäikeisissä ympäristöissä toimiville sovelluksille.
 
-Esimerkkilähtö:
+Satunnaislukujen generoiminen perustuu matemaattisiin algoritmeihin, jotka tuottavat luvut, jotka näyttävät satunnaisilta mutta ovat todellisuudessa ennustettavissa. Tämä on tärkeää ottaa huomioon esimerkiksi salausalgoritmeja suunnitellessa.
 
-> Satunnainen kokonaisluku: 7
->
-> Satunnainen liukuluku: 0.8708039083763881
+## Katso myös:
 
-## Syvempi sukellus
-
-Java tarjoaa sekä Random- että Math-luokan avulla mahdollisuuden generoida satunnaisia numeroita. Random-luokkaa käyttämällä voimme luoda uuden objektin, joka tarjoaa erilaisia metodeja satunnaisen numeron luomiseen. Math-luokka tarjoaa puolestaan staattisia metodeja, joiden avulla satunnainen luku voidaan generoida ilman erillistä objektia.
-
-Satunnaisien numeroiden luomisessa on tärkeä ottaa huomioon, että ne eivät ole täysin satunnaisia vaan ennalta määrättyjen kaavojen ja algoritmien tulosta. Siksi niitä ei tulisi käyttää tietoturvasovelluksissa.
-
-## Katso myös
-
-- [Java Random-luokka](https://docs.oracle.com/javase/8/docs/api/java/util/Random.html)
-- [Java Math-luokka](https://docs.oracle.com/javase/8/docs/api/java/lang/Math.html)
+- [Oracle: Random-luokan dokumentaatio (englanniksi)](https://docs.oracle.com/javase/8/docs/api/java/util/Random.html)
+- [Oracle: ThreadLocalRandom-luokan dokumentaatio (englanniksi)](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ThreadLocalRandom.html)

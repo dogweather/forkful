@@ -10,51 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-Converting a date into a string is a common task in Python programming. A string representation of a date is useful for displaying dates in a human-readable format and for data manipulation and analysis.
+## What & Why?
+Converting a date into a string is the process of changing a date object in Python to a human-readable string format. Programmers do it to display dates in a more readable format, make comparisons between dates, or storing dates in databases.
 
-## How To
-The process of converting a date into a string involves using the built-in `strftime()` method. This method takes in a specified date format and returns a string representation of the date.
-
-To begin, we need to import the `datetime` module:
+## How to:
+Converting a date into a string is a simple process in Python. First, we need to import the datetime module, which is a built-in module in Python that allows us to work with dates and time. Then, we can use the ```datetime``` class to create a date object:
 
 ```Python
 import datetime
-```
 
-Next, we can create a `datetime` object using the `datetime()` constructor and specify the desired date:
+date = datetime.datetime(2021, 2, 20)
+```
+Next, we can use the ```.strftime()``` method to convert the date object into a string with a specific format. We need to provide a format string to specify how we want the date to be displayed. For example, if we want the date to be displayed as "Feb 20 2021", we can use the following code:
 
 ```Python
-my_date = datetime.datetime(2021, 8, 12)
+date.strftime("%b %d %Y")
 ```
 
-Now, we can use the `strftime()` method to convert the date into a string in a specific format. Let's say we want the date to be displayed as "Month/Day/Year", we can use the format string "%m/%d/%Y" within the `strftime()` method:
+The output will be:
 
 ```Python
-my_string = my_date.strftime("%m/%d/%Y")
+'Feb 20 2021'
 ```
 
-The variable `my_string` now holds the string representation of our date: "08/12/2021".
+## Deep Dive:
+Converting a date into a string is a common task in programming, especially when working with dates and time. Before the ```datetime``` module was introduced in Python 2.3, the most common way to represent and manipulate dates was using the time module. However, with the introduction of the ```datetime``` module, converting dates into strings has become much easier and more efficient.
 
-We can also include additional information such as the day of the week or the time of day in our string format. For example, using "%A, %I:%M %p" will give us a string like "Thursday, 04:30 PM".
+There are also alternative ways to convert a date into a string in Python, such as using the ```str()``` function or the ```.isoformat()``` method. However, these methods may not provide the flexibility to specify a specific date format.
 
-## Deep Dive
-The `strftime()` method allows us to customize the format of our date string using format codes. Some commonly used format codes are:
+The ```strftime()``` method follows the C language's ```strftime()``` function, which stands for "string format time". It allows us to create a custom format string to display the date in the desired format. This allows programmers to display dates in a familiar or consistent format across different applications.
 
-- %Y - year with century
-- %m - month as a zero-padded decimal number
-- %d - day of the month as a zero-padded decimal number
-- %H - hour (24-hour clock) as a zero-padded decimal number
-- %M - minute as a zero-padded decimal number
-- %S - second as a zero-padded decimal number
-
-These are just a few examples, and there are many more options available. You can find a complete list of format codes in the [Python datetime documentation](https://docs.python.org/3/library/datetime.html#strftime-and-strptime-format-codes).
-
-It's also worth noting that the `strftime()` method is not limited to only `datetime` objects. It can also be used with `date` and `time` objects, allowing for even more flexibility in date string formatting.
-
-## See Also
-- [Python datetime documentation](https://docs.python.org/3/library/datetime.html)
-- [Python strftime reference](https://www.programiz.com/python-programming/datetime/strftime)
-- [Python date and time tutorial](https://realpython.com/python-datetime/)
-
-Happy coding!
+## See Also:
+- [Python datetime Module](https://docs.python.org/3/library/datetime.html)
+- [Python strftime() Method](https://docs.python.org/3/library/datetime.html#datetime.datetime.strftime)
+- [Python time Module](https://docs.python.org/3/library/time.html)
+- [strftime() function in C](https://www.cplusplus.com/reference/ctime/strftime/)

@@ -1,7 +1,7 @@
 ---
-title:                "Trabalhando com yaml"
-html_title:           "Javascript: Trabalhando com yaml"
-simple_title:         "Trabalhando com yaml"
+title:                "Trabalhando com o Yaml"
+html_title:           "Javascript: Trabalhando com o Yaml"
+simple_title:         "Trabalhando com o Yaml"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Data Formats and Serialization"
@@ -10,45 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que trabalhar com YAML?
+## O que? Por que?
+Trabalhar com YAML é uma forma de representar dados de forma legível tanto para humanos quanto para máquinas. Programadores utilizam YAML para criar arquivos de configuração e estruturar dados em seus projetos, pois é uma linguagem simples e flexível.
 
-YAML é uma linguagem simples e legível por humanos para representar dados estruturados. Com a sua sintaxe intuitiva, é uma escolha popular para arquivos de configuração e troca de dados entre diferentes sistemas. Ao aprender Javascript, entender como trabalhar com YAML pode ser útil para processar e manipular dados de forma eficiente.
-
-## Como fazer
+## Como fazer:
+Para utilizar YAML em seu código Javascript, é necessário primeiro instalar o pacote `js-yaml` através do gerenciador de pacotes NPM. Depois, basta importar o pacote utilizando `require` e utilizar suas funções para ler e escrever arquivos YAML. Veja um exemplo básico abaixo:
 
 ```Javascript
-// Exemplo de objeto YAML
-let frutas = `
-- maçã
-- banana
-- pera
-- laranja
-- melão
-`;
-
-// Saída após conversão para array
-let listaFrutas = YAML.parse(frutas);
-console.log(listaFrutas); // ['maçã', 'banana', 'pera', 'laranja', 'melão']
-
-// Exemplo de conversão de objeto Javascript para YAML
-let carro = {
-    marca: 'Tesla',
-    modelo: 'Model 3',
-    ano: 2021
-}
-
-console.log(YAML.stringify(carro)); // marca: Tesla, modelo: Model 3, ano: 2021
-
+const yaml = require('js-yaml');
+// Lendo um arquivo YAML
+const dadosYAML = yaml.load('config.yml');
+// Escrevendo um arquivo YAML
+const dados = {
+  nome: 'Ana',
+  idade: 30,
+};
+yaml.dump(dados, 'perfil.yml');
 ```
 
-Para trabalhar com YAML em Javascript, é necessário primeiro instalar a biblioteca `js-yaml`. Em seguida, é possível usar métodos como `YAML.parse()` para converter uma string YAML em um objeto Javascript e `YAML.stringify()` para converter um objeto Javascript em uma string YAML. Isso torna mais fácil a manipulação e transferência de dados entre diferentes sistemas e aplicações.
+O pacote `js-yaml` possui diversas outras funções e opções para trabalhar com YAML em seu código Javascript. Consulte a documentação oficial para mais detalhes.
 
-## Mergulho aprofundado
-
-O YAML, que significa "YAML Ain't Markup Language", foi criado em 2001 e é baseado em uma combinação de linguagem de marcação e linguagens de programação. Ele suporta tipos de dados como strings, números, objetos e arrays, e também permite a criação de chaves personalizadas para categorizar os dados. Além disso, é uma linguagem extensível e pode ser personalizada para atender às necessidades específicas de um projeto.
+## Profundidade
+YAML (acrônimo para "YAML Ain't Markup Language") foi criado em 2001 por um grupo de desenvolvedores e tem como objetivo ser uma linguagem mais amigável e intuitiva que o XML. Além disso, existem outras alternativas para trabalhar com estruturação de dados, como o formato JSON, por exemplo. A implementação do pacote `js-yaml` utiliza a biblioteca `libyaml`, que é escrita em C e otimizada para performance.
 
 ## Veja também
-
-- [Documentação do YAML](https://yaml.org/)
-- [Repositório da biblioteca `js-yaml`](https://github.com/nodeca/js-yaml)
-- [Tutorial de YAML para iniciantes em Javascript](https://dev.to/mdenchev/understanding-yaml-4edd)
+- [Documentação oficial do pacote js-yaml](https://github.com/nodeca/js-yaml)
+- [Website oficial do YAML](https://yaml.org)
+- [Outras alternativas para estruturação de dados](https://www.freecodecamp.org/news/json-vs-xml-which-is-the-best-data-format/)

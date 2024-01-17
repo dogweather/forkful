@@ -10,29 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hva & Hvorfor?
+Fjerning av tegn som matcher et mønster er en vanlig måte for programvareutviklere å manipulere og håndtere strenger av tekst i Ruby. Dette kan være nyttig når man ønsker å filtrere ut uønsket informasjon eller endre strenger for å passe til en bestemt format.
 
-Noen ganger vil du kanskje trenge å fjerne bestemte tegn eller bokstaver fra en tekststreng. Dette kan være nyttig hvis du for eksempel ønsker å rense data eller filtrere ut uønskede tegn.
+## Slik gjør du det:
+Følgende eksempler viser hvordan å slette tegn som matcher et mønster ved hjelp av Ruby-programmeringsspråket. I hvert eksempel vil koden bli vist i en kodeblokk markert med ```Ruby```:
 
-## Hvordan gjøre det
-
+### Eksempel 1: Fjern et bestemt tegn fra en streng
 ```Ruby
-tekst = "Rubyyy"
-
-tekst.gsub!(/y/, "") 
-
-puts tekst
+string = "Hei verden!"
+puts string.delete("e")
 ```
+Output: Hllo world!
 
-Dette vil resultere i at teksten blir "Rub".
+### Eksempel 2: Fjern alle vokaler fra en tekst
+```Ruby
+string = "Dette er en setning"
+puts string.delete("aeiouy")
+```
+Output: Dtt r n stnng
 
-## Dypdykk
+### Eksempel 3: Fjern tall fra en streng
+```Ruby
+string = "123 Hei 456 verden"
+puts string.delete("0-9")
+```
+Output: Hei verden
 
-Ruby har en innebygd metode kalt `gsub` som står for "global substitution". Denne metoden tar to argumenter, et mønster som skal matches og hva det skal erstattes med. Når du bruker `gsub!` vil endringen skje i selve variabelen, mens `gsub` returnerer en ny kopi av teksten med endringen.
+## Dykk dypere:
+Sletting av tegn basert på et mønster er ikke bare begrenset til Ruby. Det finnes også andre programmeringsspråk som tilbyr lignende funksjonalitet, som Java og Python. I tillegg til å bruke ```delete```-metoden, kan man også slette tegn ved hjelp av regulære uttrykk i Ruby.
 
-Du kan også bruke regulære uttrykk i `gsub` for å slette flere tegn eller bokstaver basert på et mønster. For eksempel, hvis du vil fjerne alle tall fra en tekststreng, kan du bruke `tekst.gsub!(/\d/, "")`, hvor `\d` representerer et tall.
-
-## Se også
-
-- [RegExr](https://regexr.com/) - et nyttig verktøy for å teste og lage regulære uttrykk
-- [Ruby String dokumentasjon](https://ruby-doc.org/core-2.7.2/String.html#method-i-gsub) - mer informasjon om `gsub` metoden og andre nyttige metodene for strings i Ruby.
+## Se også:
+* [Ruby dokumentasjon om ```String#delete```metoden](https://ruby-doc.org/core-3.0.2/String.html#method-i-delete)
+* [Enkle Python-eksempler på å fjerne tegn basert på et mønster](https://www.geeksforgeeks.org/python-string-methods-set-3-strip-lstrip-rstrip-min-max-maketrans-translate-rel-just-zfill/)

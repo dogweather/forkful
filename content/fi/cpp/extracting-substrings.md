@@ -1,7 +1,7 @@
 ---
-title:                "Alirivien erottaminen"
-html_title:           "C++: Alirivien erottaminen"
-simple_title:         "Alirivien erottaminen"
+title:                "Alimerkkijonojen erottaminen"
+html_title:           "C++: Alimerkkijonojen erottaminen"
+simple_title:         "Alimerkkijonojen erottaminen"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -10,36 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä & Miksi?
+Stringien erottaminen, eli niin kutsuttu substringien erottaminen, on tapa, jolla voidaan poimia osia merkkijonoista tiettyjen kriteerien perusteella. Tämä on hyödyllistä esimerkiksi silloin, kun halutaan käsitellä vain tietyn osan sisältävä merkkijono. Ohjelmoijat käyttävät tätä tekniikkaa parantaakseen koodin suorituskykyä ja tarkkuutta.
 
-Joskus saattaa olla tarvetta hakea tai eritellä tiettyjä osia merkkijonosta, eli tällöin tarvitaan alimerkkijonojen etsimistä. Tämä toiminto on erittäin hyödyllinen esimerkiksi tekstin käsittelyssä tai tiedonhakupalveluissa.
-
-## Kuinka tehdä
-
-Voit helposti etsiä alimerkkijonoja C++-koodilla! Käytä funktiota `substr()` ja anna sille aloitusindeksi ja haluttu pituus alimerkkijonolle. Tässä on yksinkertainen esimerkki:
-
+## Kuinka:
 ```C++
 #include <iostream>
+#include <string>
 using namespace std;
 
 int main() {
-  string teksti = "Tässä on esimerkkiteksti.";
-  string alimerkki = teksti.substr(11, 11);
-  cout << alimerkki;
+  // Alustetaan esimerkkimerkkijono
+  string s = "Tervetuloa Suomeen";
+
+  // Poimitaan merkkejä 7.-14. indeksin väliltä, eli "Suomeen"
+  string substring = s.substr(7, 7);
+
+  // Tulostetaan poimittu osa
+  cout << substring << endl;
 
   return 0;
 }
-
-// Output:
-// esimerkkiteksti
 ```
 
-## Syvemmälle
+Tulos:
+```
+Suomeen
+```
 
-`substr()`-funktio on käytössä vain C++:n kirjaston `string`-luokassa. Sen toiminta on myös hieman erilainen verrattuna esimerkiksi C-kielessä käytettyyn `substring()`-funktioon. `substr()` perii merkkijonon määrittelevät toiminnot, kuten pituuden ja indeksit. Lisäksi `substr()` tarjoaa myös mahdollisuuden asettaa oletusarvoisen pituuden, jos pituutta ei anneta parametrina.
+## Syventymistä:
+Substringien erottaminen on ollut osa ohjelmoinnin maailmaa jo pitkään, mutta modernit kielet, kuten C++, tarjoavat helppokäyttöisiä työkaluja tähän tarkoitukseen. Toisinaan voit törmätä myös termiin "slice", joka viittaa samaan asiaan. Toisin kuin monissa muissa kielissä, C++:ssa substringien indeksointi lähtee nollasta, joten ensimmäinen merkki on indeksissä 0 eikä 1.
 
-## Katso myös
-
-- [substr() dokumentaatio (cppreference.com)](https://en.cppreference.com/w/cpp/string/basic_string/substr)
-- [Merkkijonon alimerkkijonon etsiminen (w3schools.com)](https://www.w3schools.com/cpp/cpp_strings_substrings.asp)
-- [C++ ohjelmointikielen virallinen sivusto](https://isocpp.org)
+## Katso myös:
+- [C++:n virallinen dokumentaatio substringien erottamisesta](https://en.cppreference.com/w/cpp/string/basic_string/substr)
+- [Tietoja substringeista ja slicing-tekniikasta](https://www.geeksforgeeks.org/slicing-string-python/)
+- [String-funktioita ja niiden hyödyntämistä C++:ssa](https://www.tutorialspoint.com/cplusplus/cpp_strings.htm)

@@ -1,7 +1,7 @@
 ---
-title:                "Lecture des arguments en ligne de commande"
-html_title:           "Clojure: Lecture des arguments en ligne de commande"
-simple_title:         "Lecture des arguments en ligne de commande"
+title:                "Lecture des arguments de ligne de commande"
+html_title:           "Clojure: Lecture des arguments de ligne de commande"
+simple_title:         "Lecture des arguments de ligne de commande"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Files and I/O"
@@ -10,58 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+Qu'est-ce que c'est et pourquoi le font-ils ?
+La lecture des arguments de la ligne de commande consiste à récupérer les informations saisies par l'utilisateur lorsqu'il exécute un programme en utilisant la ligne de commande. Les programmeurs le font pour pouvoir personnaliser le comportement de leur programme en fonction des arguments fournis par l'utilisateur.
 
-Vous avez déjà utilisé des programmes en ligne de commande et vous vous demandez comment ils peuvent recevoir des arguments ? Cet article vous explique comment lire les arguments de la ligne de commande en utilisant Clojure.
-
-## Comment faire
-
+Comment faire :
 ```Clojure
-(def args *command-line-args*)
-(print "Les arguments de la ligne de commande sont:")
-(doseq [arg args] (println arg))
+(defn read-args []
+  (vec *command-line-args*))
+
+(defn print-args [args]
+  (println "Les arguments saisis sont :" args))
+
+;; Exemple d'utilisation
+(def args (read-args))
+(print-args args)
+```
+Sortie :
+```
+Les arguments saisis sont : ["argument1" "argument2"]
 ```
 
-Pour lire les arguments de la ligne de commande, nous pouvons utiliser la variable spéciale `*command-line-args*` qui stocke tous les arguments passés lors de l'exécution du programme. En utilisant la fonction `doseq`, nous pouvons itérer à travers ces arguments et les imprimer à l'aide de `println`.
+Plongée en profondeur :
+Dans le passé, les programmes étaient principalement exécutés en utilisant des interfaces utilisateur graphiques (GUI). Cependant, avec l'avènement des langages de script et des systèmes d'exploitation en ligne de commande, lire les arguments de la ligne de commande est devenu une pratique courante pour les programmeurs. Il existe également des alternatives telles que l'utilisation de fichiers de configuration ou l'interaction avec l'utilisateur via des menus.
 
-Voici un exemple d'exécution du programme avec des arguments :
+Implémentation :
+En Clojure, la fonction `*command-line-args*` retourne une séquence d'arguments saisis par l'utilisateur lors de l'exécution du programme en ligne de commande. La fonction `vec` est utilisée pour convertir la séquence en un vecteur pour faciliter la manipulation. La fonction `println` est utilisée pour afficher les arguments saisis par l'utilisateur.
 
-```
-$ clojure mon_programme.clj arg1 arg2 arg3
-Les arguments de la ligne de commande sont:
-arg1
-arg2
-arg3
-```
-
-## Plongée en profondeur
-
-Il est également possible de spécifier des options et des valeurs pour les arguments de la ligne de commande. Par exemple, nous pouvons utiliser la librairie [`clojure.tools.cli`](https://github.com/clojure/tools.cli) pour traiter les arguments de manière plus structurée. Voici un exemple basique :
-
-```Clojure
-(ns mon-programme
-  (:require [clojure.tools.cli :refer [parse-opts]]))
-
-(def cli-options [["-n" "--name" "Votre nom" :required true]])
-
-(defn -main
-  "Mon programme"
-  [& args]
-  (let [[opts params (parse-opts args cli-options)]]
-	(if (:name opts)
-      (println (str "Bonjour " (:name opts)))
-      (println "Bonjour tout le monde!"))))
-```
-
-Là, nous spécifions que notre programme peut être appelé avec une option `-n` ou `--name` qui prendra une valeur en tant que notre nom. Nous utilisons `parse-opts` pour traiter les arguments et stocker leurs options et valeurs correspondantes dans la variable `opts`. Ensuite, nous pouvons utiliser ces valeurs dans notre programme, par exemple pour saluer le nom spécifié.
-
-```
-$ clojure mon_programme.clj -n Tom
-Bonjour Tom
-```
-
-## Voir aussi
-
-- [Documentation officielle de Clojure](https://clojure.org/reference/command_line_tools)
-- [Librairie cli-tools pour gérer les arguments en ligne de commande](https://github.com/clojure/tools.cli)
-- [Exemples avancés pour traiter les arguments de la ligne de commande en Clojure](https://github.com/jafingerhut/examples.cliargs)
+Voir aussi :
+Pour plus d'informations sur la lecture des arguments de la ligne de commande en Clojure, consultez la documentation officielle : https://clojure.org/reference/command_line_tools

@@ -10,43 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä & Miksi?
 
-JSON (JavaScript Object Notation) on yleisesti käytetty tapa tallentaa ja vaihtaa tietoa.selvityssivu mikä sisältää, työtä ja sen tus ihmiset kuin ei työskentelevät PHP:n? Sitä käytetään usein web-sovelluksissa ja sen avulla voi lähettää tietoa esimerkiksi API-kutsujen välillä. JSON on myös helppo ymmärtää ja kirjoittaa, joten se on suosittu vaihtoehto tietojen tallentamiseen ja siirtämiseen.
+JSON eli JavaScript Object Notation on tapa tallentaa ja välittää tietoa JavaScript-objekteina. Se on yleisesti käytetty muoto tietojen siirtoon sovellusten välillä. JSON on helposti luettava ja ymmärrettävä, mikä tekee siitä suositun valinnan ohjelmoijille.
 
-## Miten
+## Kuinka:
 
-```typescript
-const user = {
-  name: "Matti",
-  age: 28,
-  hobbies: ["lukeminen", "lenkkeily", "valokuvaus"]
-};
+```TypeScript
+let data = {
+    name: "John",
+    age: 30,
+    hobbies: ["reading", "coding", "music"],
+}
 
-console.log(JSON.stringify(user));
-// Output: {"name": "Matti", "age": 28, "hobbies": ["lukeminen", "lenkkeily", "valokuvaus"]}
+// Muuntaa JavaScript-objektin JSON-merkkijonoksi
+let json = JSON.stringify(data);
+
+// Tulostaa JSON-merkkijonon
+console.log(json);
+
+// Muuntaa JSON-merkkijonon JavaScript-objektiksi
+let obj = JSON.parse(json);
+
+// Tulostaa JavaScript-objektin
+console.log(obj);
 ```
 
-Kuten näet, JSON-objektin luominen TypeScriptissä on helppoa. Voit käyttää erilaisia tietotyyppejä, kuten merkkijonoja, numeroita ja jopa taulukoita. Kun käytät JSON.stringify() -funktiota, voit muuntaa objektin helposti merkkijonoksi, joka on helppo siirtää ja tallentaa.
+Tulos:
 
-```typescript
-const json = '{"name": "Anna", "age": 32, "hobbies": ["kirjoittaminen", "piirtäminen", "retkeily"]}';
-
-const user = JSON.parse(json);
-
-console.log(user.name);
-// Output: Anna
+```TypeScript
+{"name":"John","age":30,"hobbies":["reading","coding","music"]}
+{name: "John", age: 30, hobbies: ["reading", "coding", "music"]}
 ```
 
-JSON-tiedon purkaminen merkkijonosta takaisin objektiksi on myös yksinkertaista. Voit käyttää JSON.parse() -funktiota ja antaa sille merkkijonon muuttujana. Tämän jälkeen voit käyttää objektia kuten mitä tahansa muuta objektia.
+## Syväsukellus:
 
-## Syvällinen sukellus
+JSON kehitettiin vuonna 2001 Douglas Crockfordin toimesta, joka halusi standardoida tavan siirtää tietoa JavaScript-sovellusten välillä. Sittemmin JSON on noussut yhdeksi suosituimmista tiedonsiirtomuodoista.
 
-JSON-tiedostojen käyttäminen TypeScriptissä on helppoa, mutta on tärkeää muistaa muutamia asioita. JSON-tiedostoissa käytetään aina kaksoislainausmerkkejä merkkijonojen ympärillä. Tästä syystä on tärkeää käyttää yksinkertaisia lainausmerkkejä objektin luomisessa, jotta vältytään virheiltä.
+Muita vaihtoehtoja JSONille ovat esimerkiksi XML ja CSV. Vaikka XML on ollut käytössä pidempään, JSON on yleisesti ottaen nopeampi ja helpommin luettava. CSV on yksinkertaisempi muoto, joka sopii paremmin numeeristen tietojen välittämiseen.
 
-JSON-tiedostot koostuvat avain-arvo pareista, joissa käytetään kaksoispistettä erotin. Muista myös, että JSON-tietoja ei voi kommentoida, joten pidä koodi siistinä ja yksinkertaisena.
+JSONin toteutus TypeScriptissa on mahdollista käyttämällä JSON-rajapintaa, joka tarjoaa metodeja JSON-tietojen muuntamiseen JavaScript-objekteiksi ja päinvastoin.
 
-## Katso myös
+## Katso myös:
 
-- [JSON:n viralliset sivut] (https://www.json.org/json-fi.html)
-- [TypeScriptin viralliset sivut] (https://www.typescriptlang.org/)
+- [MDN web docs: JSON](https://developer.mozilla.org/fi/docs/Web/JavaScript/Reference/Global_Objects/JSON)
+- [TypeScript Doku: JSON](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-9.html#new-json-file-handling)
+- [JSON.org](https://www.json.org/)

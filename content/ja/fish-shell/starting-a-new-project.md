@@ -1,7 +1,7 @@
 ---
-title:                "新しいプロジェクトを開始する"
-html_title:           "Fish Shell: 新しいプロジェクトを開始する"
-simple_title:         "新しいプロジェクトを開始する"
+title:                "新しいプロジェクトの開始"
+html_title:           "Fish Shell: 新しいプロジェクトの開始"
+simple_title:         "新しいプロジェクトの開始"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Getting Started"
@@ -10,44 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ始めるのか
+## 何 & なぜ?
 
-プログラミング言語の一つであるFish Shellを始めるのは、コマンドライン操作をより便利に、よりスマートに行うためです。あなたのシェル体験を大幅に改善するために、この新しいプロジェクトに取り組みましょう。
+プログラマーは新しいプロジェクトを始めるのは重要です。新しいプロジェクトを始めることは、新しい問題に取り組み、スキルを向上させる機会です。または、既存のプロジェクトを改善するための新しいアイデアを実装することもできます。
 
-## やり方
+## How to:
 
-まず、Fish Shellをインストールします。コードブロック内にコマンドを示します。
-
-```
-Fish Shellをインストールする方法：
-
-brew install fish
-```
-
-次に、Fish Shellに保存されたコマンドを単一の行で表示する方法を学びましょう。
+プロジェクトを始めるには、``` fishシェル start-project ```を使用します。このコマンドは、新しいプロジェクトのためのディレクトリを作成し、必要なファイルを作成してくれます。また、既存のプロジェクトをクローンすることもできます。例えば、
 
 ```
-コマンドの表示方法：
-
-bind; funced; fish_mode; funcsave; key_bindings -L
+Fish Shell start-project my-project
 ```
 
-最後に、独自の関数を作成して、あなたのプロジェクトを最適化します。
+このコマンドは、 ``` my-project ```という名前のディレクトリを作成し、その中に必要なファイルを自動的に作成します。
 
-```
-独自の関数の作成方法：
+## Deep Dive:
 
-function project
-  # あなたのプロジェクトに実行するコマンドを記述します
-end
-```
+fishシェルのstart-projectコマンドは、より最新のbashシェルのコマンドである``` mkdir ```や``` touch ```を使用するよりも簡単です。このコマンドは、プロジェクトを始めるために必要なファイルとディレクトリを自動的に作成し、新しいプロジェクトを素早く始めることができます。また、他のシェルのコマンドや外部プログラムを使用してプロジェクトを始めることもできますが、このコマンドを使用すれば、よりシンプルかつ効率的にプロジェクトを始めることができます。
 
-## 深ぼる
+## See Also:
 
-新しいプロジェクトを始める際には、プロジェクト固有の関数やエイリアスを作成することで、より効率的な作業を行うことができます。また、Fish Shellは他のシェルよりも柔軟であり、より多くのカスタマイズが可能です。ぜひ、自分に合ったカスタマイズを探求してみてください。
-
-## 参考リンク
-
-- [Fish Shellの公式サイト](https://fishshell.com/)
-- [Fish Shellのドキュメンテーション](https://fishshell.com/docs/current/)
-- [Fish Shellを使いこなすためのTips](https://dev.to/jonhoo/tips-for-fish-shell-2mmc)
+- [Fish Shell Documentation](https://fishshell.com/docs/current/)
+- [Bash Shell Documentation](https://www.gnu.org/software/bash/manual/bash.html)
+- [Start Project オプションの説明](https://fishshell.com/docs/current/cmds/start-project.html)

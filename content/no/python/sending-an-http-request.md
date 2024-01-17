@@ -1,7 +1,7 @@
 ---
-title:                "Sende en http-forespørsel"
-html_title:           "Python: Sende en http-forespørsel"
-simple_title:         "Sende en http-forespørsel"
+title:                "Å sende en http-forespørsel"
+html_title:           "Python: Å sende en http-forespørsel"
+simple_title:         "Å sende en http-forespørsel"
 programming_language: "Python"
 category:             "Python"
 tag:                  "HTML and the Web"
@@ -10,29 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hva og hvorfor?
+Når vi programmerer, må vi noen ganger kommunisere med andre datamaskiner og servere for å hente informasjon eller utføre handlinger. Dette kalles å sende en HTTP-forespørsel. Det er en vanlig og viktig oppgave for mange programmer.
 
-Hvorfor bry seg med å sende en HTTP-forespørsel? Vel, det er en nødvendig del av å lage nettapplikasjoner og bruke API-er. Det er også en måte å kommunisere med andre servere og få tilgang til data og ressurser på nettet.
-
-## Hvordan gjøre det
-
-For å sende en HTTP-forespørsel i Python, kan du bruke innebygde biblioteker som urllib eller requests. Her er et eksempel på å sende en GET-forespørsel til et nettsted:
-
-```Python
+## Slik gjør du det:
+For å sende en HTTP-forespørsel i Python, kan du bruke biblioteket "requests". Først importerer du biblioteket:
+```
 import requests
-
-response = requests.get("https://www.example.com")
-print(response.text)
+```
+Deretter kan du bruke funksjonen `get()` for å sende en GET-forespørsel. For eksempel:
+```
+response = requests.get('https://www.google.com')
+```
+Dette vil sende en forespørsel til Google sin nettside og lagre svaret i variabelen `response`. Du kan deretter hente informasjon fra svaret, for eksempel statuskoden til forespørselen (200 betyr suksess) og innholdet i svaret (HTML-koden til nettsiden). For eksempel:
+```
+print(response.status_code)
+print(response.content)
+```
+Dette vil gi deg følgende utput:
+```
+200
+b'<!doctype html>\n<html ... '
 ```
 
-Dette koden bruker requests-biblioteket for å sende en GET-forespørsel til nettadressen "https://www.example.com". Deretter skriver den ut innholdet i forespørselen ved hjelp av response.text-metoden. Det er også mulig å sende POST-forespørsler eller legge til spesifikke parametere og headers i forespørselen.
+## Dypdykk:
+Å sende HTTP-forespørsler har vært en viktig del av webutvikling siden starten av internett. Det finnes flere alternative måter å sende slike forespørsler, som for eksempel "urllib" og "httplib". Men "requests" er den mest populære og anbefalte måten å gjøre det på i Python. Det finnes også avanserte teknikker for å konfigurere og håndtere HTTP-forespørsler i mer kompliserte programmer.
 
-## Dykk dypere
-
-Når du sender en HTTP-forespørsel, sender du en forespørsel til en spesifikk URL med en bestemt metode (for eksempel GET, POST, PUT, DELETE). Denne forespørselen sendes til en server, som svarer med en responskode og eventuelle data eller ressurser som ble forespurt. Det finnes forskjellige metoder og HTTP-statuskoder som angir forskjellige handlinger og svar, og det er viktig å forstå disse når du sender en forespørsel.
-
-## Se også
-
-- [Offisiell dokumentasjon for Python urllib-biblioteket](https://docs.python.org/3/library/urllib.html)
-- [Offisiell dokumentasjon for Python requests-biblioteket](https://docs.python-requests.org/en/master/)
-- [HTTP-forespørsler i Python: En praktisk guide](https://realpython.com/python-requests/)
+## Se også:
+- [Requests dokumentasjon](https://requests.readthedocs.io/en/master/)
+- [W3Schools HTTP tutorial](https://www.w3schools.com/whatis/whatis_http.asp)
+- [Enkel guide til HTTP-forespørsler](https://krakenservices.github.io/kraken-rest/docs/http.html)

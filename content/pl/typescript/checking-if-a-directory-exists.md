@@ -1,7 +1,7 @@
 ---
-title:                "Sprawdzanie, czy istnieje katalog."
-html_title:           "TypeScript: Sprawdzanie, czy istnieje katalog."
-simple_title:         "Sprawdzanie, czy istnieje katalog."
+title:                "Sprawdzanie istnienia katalogu"
+html_title:           "TypeScript: Sprawdzanie istnienia katalogu"
+simple_title:         "Sprawdzanie istnienia katalogu"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Files and I/O"
@@ -10,53 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+Czy katalog istnieje? - Sprawdzamy to w TypeScript
 
-Sprawdzanie istnienia katalogu jest ważnym elementem w programowaniu. Wiele aplikacji wymaga dostępu do określonego katalogu w celu odczytu lub zapisu danych. Dlatego ważne jest, aby móc sprawdzić, czy katalog istnieje przed próbą dostępu do niego.
+## Co & Dlaczego?
+Sprawdzenie, czy katalog istnieje, jest procesem, który pozwala programistom na ustalenie, czy określony katalog jest obecny w danym systemie plików. Jest to ważne, ponieważ umożliwia to programistom podejmowanie odpowiednich działań w zależności od tego, czy dany katalog istnieje lub nie.
 
-## Jak To Zrobić
-
-Sprawdzenie istnienia katalogu w TypeScript jest proste i wymaga użycia wbudowanej funkcji `existsSync` z modułu `fs`. Przykładowy kod przedstawiający sprawdzenie istnienia katalogu "test":
-
-```TypeScript
-import * as fs from "fs";
-
-if (fs.existsSync("test")) {
-  console.log("Katalog istnieje.");
-} else {
-  console.log("Katalog nie istnieje.");
-}
-```
-
-W powyższym przykładzie, jeśli katalog "test" istnieje, na ekranie zostanie wyświetlone "Katalog istnieje." W przeciwnym razie zostanie wyświetlone "Katalog nie istnieje." Można również użyć asynchronicznej wersji funkcji `exists`, która przyjmuje dwa parametry: ścieżkę do katalogu oraz funkcję zwrotną (callback). Przykład:
+## Jak to zrobić:
+Wykorzystując wbudowane funkcje w TypeScript, można w prosty sposób sprawdzić, czy katalog istnieje w systemie plików. Przykładowy kod wyglądałby następująco:
 
 ```TypeScript
-fs.exists("test", (exists) => {
-  if (exists) {
-    console.log("Katalog istnieje.");
-  } else {
-    console.log("Katalog nie istnieje.");
-  }
-});
+import fs from 'fs';
+
+fs.existsSync('/sciezka/do/katalogu');
 ```
 
-## Deep Dive
+Jeśli katalog istnieje, funkcja zwróci wartość true, w przeciwnym razie zwróci false.
 
-Funkcja `existsSync` zwraca wartość logiczną `true` lub `false` w zależności od istnienia katalogu. W przypadku używania asynchronicznej wersji, funkcja zwrotna przyjmuje parametr `exists`, który również jest wartością logiczną. 
+## Głębsza analiza:
+Sprawdzanie, czy katalog istnieje, jest często wykorzystywane podczas pisania aplikacji webowych lub programów, które muszą operować na plikach. Jest to szczególnie przydatne w przypadku, gdy program musi najpierw sprawdzić, czy określony plik znajduje się w danym katalogu, zanim podejmie działania z nim związane.
 
-W przypadku, gdy katalog nie istnieje, spróbujemy uzyskać dostęp do niego przez funkcję `readdirSync` lub `readdir` (w przypadku wersji asynchronicznej). Oba typy funkcji służą do odczytu zawartości katalogu. Jeśli katalog nie istnieje, zostanie wygenerowany wyjątek, który można obsłużyć przy użyciu bloku `try-catch`. Przykład:
+Alternatywnym sposobem na sprawdzenie, czy katalog istnieje, jest użycie funkcji statystyki wraz z odpowiednim parametrem, który wskazuje, czy plik jest katalogiem lub nie. Jednakże, ten sposób wymaga więcej kodu i jest mniej czytelny.
 
-```TypeScript
-try {
-  const files = fs.readdirSync("test");
-  console.log(files);
-} catch (err) {
-  console.error(err);
-}
-```
+Implementacja wbudowanej funkcji fs.existsSync() jest oparta na dostępie do systemowego API systemu plików. Oznacza to, że wynik może różnić się w zależności od systemu operacyjnego.
 
-## Zobacz także
-
-- Dokumentacja fs: https://nodejs.org/api/fs.html
-- Inne przydatne metody w module fs: https://nodejs.org/api/fs.html#fs_fs_accesssync_path_mode
-- Wideo tutorial o проверке существования каталога: https://www.youtube.com/watch?v=MoSsYEFwZJ8
+## Zobacz także:
+- Dokumentacja fs.existsSync(): https://nodejs.org/api/fs.html#fs_fs_existssync_path
+- Przykładowy kod: https://www.w3schools.com/nodejs/ref_fs.asp

@@ -10,48 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何故
-新しいプロジェクトを始める理由は無数ですが、一番の理由は新しい技術やスキルを学ぶチャンスだと思います。
+## What & Why?
+プロジェクトをスタートさせるとは、新しいアプリケーションやプログラムを開始することを意味します。プログラマーが新しいプロジェクトを始める理由は、新しいアイデアや技術を試したり、既存のコードを改善したりするためです。
 
-## 作り方
-新しいプロジェクトを始める際の基本的な手順をご紹介します。
-
-### プロジェクトの作成
-新しいプロジェクトを作成するには、コマンドラインで以下のように入力します。
-```Ruby
-rails new my_project
+## How to:
+### 新しいプロジェクトの作成
+新しいプロジェクトを作成するためには、まず新しいディレクトリを作成します。次に、ターミナルでそのディレクトリに移動し、以下のコマンドを実行します。
 ```
-これにより、新しいプロジェクトのためのフォルダーが作成されます。
-
-### コードの記述
-作成したプロジェクトのフォルダーに移動し、コードを記述していきます。例えば、データベースについて次のように定義することができます。
-```Ruby
-class User < ActiveRecord::Base
-  has_many :posts
-end
+$ mkdir new_project
+$ cd new_project
 ```
 
-### サーバーの起動
-記述したコードを反映させるために、サーバーを起動します。以下のコマンドを入力してください。
-```Ruby
-rails server
+### プロジェクトの初期化
+新しいプロジェクトを初期化するためには、プロジェクト内で以下のコマンドを実行します。
 ```
-これにより、ローカルで作成したプロジェクトを閲覧することができます。
+$ bundle init
+```
+このコマンドにより、Gemfileが作成されます。
 
-## 深堀り
-新しいプロジェクトを始める際には、様々なことを考える必要があります。例えば、どのような機能を実装するか、どのようなデータベースを使用するか、どのようなセキュリティ対策が必要かなどです。これらのことをしっかりと考えた上で、計画を立てることが重要です。
+### 必要なGemをインストール
+プロジェクトに必要なGemをインストールするには、Gemfileに以下のように追加します。
+```
+gem 'gem_name'
+```
+そして、以下のコマンドを実行します。
+```
+$ bundle install
+```
+これにより、必要なGemがインストールされます。
 
-## 先を見る
-新しいプロジェクトを始める際には、いくつかの参考となるリソースがあります。以下のリンクを参考にしてみてください。
+## Deep Dive:
+Starting a new project has been made more efficient with the use of tools such as the Bundler gem, which helps manage dependencies and allows for a more streamlined process. Other alternatives to starting a new project include cloning an existing project and building on top of it or using a project generator tool like Rails.
 
-### [Ruby on Rails ドキュメント](https://guides.rubyonrails.org/)
-このドキュメントでは、Ruby on Rails の基本的な使い方や様々な機能について詳しく記載されています。
-
-### [RailsCasts](http://railscasts.com/)
-このウェブサイトでは、Ruby on Rails に関する動画チュートリアルを提供しています。実際のコーディングの手順を動画で見ることで、より理解を深めることができます。
-
-### [Ruby on Rails Tutorial](https://www.railstutorial.org/)
-このオンラインブックでは、Ruby on Rails の基本的な使い方から実際のウェブアプリケーションの作成まで詳しく解説されています。もし初心者の方が新しいプロジェクトを始める際には特にオススメです。
-
-## 見てみてください
-新しいプロジェクトを始める際には、まず計画を立てることが重要です。そして、必要な知識や技術を学んでいくことで、より良いプロジェクトを作成することができるでしょう。頑張ってください！
+## See Also:
+- [Bundler](https://bundler.io/)
+- [Rails](https://rubyonrails.org/)
+- [Git Clone](https://git-scm.com/docs/git-clone)

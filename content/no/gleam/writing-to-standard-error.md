@@ -1,7 +1,7 @@
 ---
-title:                "Å skrive til standardfeil."
-html_title:           "Gleam: Å skrive til standardfeil."
-simple_title:         "Å skrive til standardfeil."
+title:                "Skriver til standardfeil"
+html_title:           "Gleam: Skriver til standardfeil"
+simple_title:         "Skriver til standardfeil"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Files and I/O"
@@ -10,32 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hva og hvorfor?
+Å skrive til standard error er en metode for å sende feilmeldinger og annen nyttig informasjon til en spesiell strøm som kalles "standard error". Programmere bruker dette for å få en bedre oversikt over feilene og for å kunne fange dem i koden.
 
-Skriver du kode og blir frustrert når det ikke fungerer som det skal? Da kan skriving til standard error være løsningen for deg! Her får du en enkel guide til hvordan du kan bruke Gleam til å skrive feilmeldinger til standard error.
-
-## Hvordan
-
-```Gleam
-let feilmelding = "Det har oppstått en feil."
-error.print(feilmelding)
+## Hvordan:
+```
+Gleam.hvordan_skriver(shader)
+Gleam.hvordan_skriver("Til standard error: Dette er en feilmelding")
 ```
 
-Dette enkle kodesnippet vil skrive feilmeldingen "Det har oppstått en feil" til standard error. Du kan også skrive variabler eller annen informasjon til standard error ved å inkludere dem i feilmeldingen. Dette er nyttig når du trenger å få mer informasjon om hva som gikk galt i koden din.
+Eksempel på utgang:
+```
+Feil: Til standard error: Dette er en feilmelding
+```
 
-### Feilmeldinger med tegnsett
+## Dykk dypere:
+Å skrive til standard error ble først brukt på Unix-systemer som en måte å skille mellom feilmeldinger og annen informasjon. Andre alternativer for å håndtere feil inkluderer å skrive til standard utgang eller å kaste unntak.
 
-Noen ganger kan det oppstå feil som krever spesifikke tegnsett, for eksempel når du jobber med internasjonale karakterer. Du kan enkelt skrive feilmeldinger med dette i Gleam ved å bruke `error.print_utf8` eller `error.print_ascii`.
+En implementasjonsdetalj å merke seg er at når man skriver til standard error, vil det legges til en linjeskift på slutten av meldingen, mens standard utgang vil beholde meldingen som den er.
 
-### Deaktivering av standard error
-
-Hvis du ikke vil ha feilmeldinger som skrives til standard error, kan du enkelt deaktivere dette ved å bruke `error.ignore()`.
-
-## Dypdykk
-
-Skriving til standard error kan være nyttig for feilhåndtering og debugging i koden din. Det er en enkel måte å få mer informasjon om hva som gikk galt og hvor i koden feilen oppsto. Det kan også være nyttig for å sikre at programmet ditt kjører feilfritt og at eventuelle feil blir fanget opp.
-
-## Se også
-
-- [Gleam dokumentasjon om error](https://gleam.run/crash-reporting)
-- [Artikkel om håndtering av feil i Gleam](https://dev.to/gleam/a-beginners-guide-to-error-handling-in-gleam-2jji)
+## Se også:
+- [Official Gleam Documentation](https://gleam.run/documentation/)
+- [Gleam Github Repository](https://github.com/gleam-lang/gleam)

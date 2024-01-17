@@ -1,7 +1,7 @@
 ---
-title:                "Merkkijonon isojen kirjainten muokkaaminen"
-html_title:           "Clojure: Merkkijonon isojen kirjainten muokkaaminen"
-simple_title:         "Merkkijonon isojen kirjainten muokkaaminen"
+title:                "Merkkijonon kirjoittaminen isoin kirjaimin"
+html_title:           "Clojure: Merkkijonon kirjoittaminen isoin kirjaimin"
+simple_title:         "Merkkijonon kirjoittaminen isoin kirjaimin"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -10,55 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä & Miksi?
+Capitalize on merkkijonon muuntaminen siten, että sen ensimmäinen kirjain muutetaan isoksi. Ohjelmoijat tekevät tämän usein paremman luettavuuden ja yhtenäisyyden vuoksi.
 
-Miksi joku haluaisi muuttaa merkkijonon alkukirjaimen isoksi? Se voi olla hyödyllistä esimerkiksi silloin, kun tarvitaan yhdenmukainen muotoilu tai vertailu.
-
-## Miten tehdä se
-
-Capitalization eli alkukirjaimen suurentaminen voidaan hoitaa helposti Clojurella `capitalize`-funktiolla. Siirry `user`-namespacen sisälle ja kokeile seuraavaa:
-
+## Miten:
 ```Clojure
-(capitalize "tämä on merkkijono")
+(use 'clojure.string)
+(clojure.string/capitalize "hello world")
+;; Output: "Hello world"
 ```
 
-Tulos tulisi näyttää tältä:
-
 ```Clojure
-"Tämä on merkkijono"
+(clojure.string/capitalize "a random sentence")
+;; Output: "A random sentence"
 ```
 
-Jos halutaan suurentaa vain merkkijonon ensimmäinen kirjain, käytetään `capitalize-first`-funktiota:
+## Syväsukellus:
+- Historiallinen konteksti: ennen kuin Clojure tarjosi tähän funktiota, ohjelmoijat joutuivat luomaan oman funktionsa tai käyttämään muun ohjelmointikielen vastaavaa funktiota.
+- Vaihtoehdot: muita tapoja isojen kirjainten asettamiseen ovat `lower-case` ja `upper-case`.
+- Toteutuksen yksityiskohdat: Clojuren `capitalize`-funktio käyttää `java.lang.Character`-luokkaa muuttaakseen merkkijonon ensimmäisen kirjaimen isoksi.
 
-```Clojure
-(capitalize-first "eka sana on iso")
-```
-
-Tuloksen pitäisi olla:
-
-```Clojure
-"Eka sana on iso"
-```
-
-## Syvempi sukellus
-
-Clojuren `capitalize`-funktio käyttää Java-luokkien `Character`-luokkaa, joka tarjoaa monia eri metodeja merkkien käsittelyyn.
-
-JAVA API:n mukaan `capitalize`-metodi muuttaa kaikki merkin lukuasettotunnisteen (`islowert`-metodi) palauttamat merkit ison kirjaimen muotoon. Tämä tarkoittaa, että esimerkiksi skandinaaviset kirjaimet, kuten "å" tai "ö", eivät välttämättä muutu oikeaksi isoksi kirjaimeksi.
-
-Jos haluat taata, että kaikki merkit muutetaan isoksi, voit käyttää `toUpperCase`-metodia:
-
-```Clojure
-(.toUpperCase "änkkäin muuttuu isoksi")
-```
-
-Tuloksen pitäisi olla:
-
-```Clojure
-"ÄNKKÄIN MUUTTUU ISOKSI"
-```
-
-## Katso myös
-
-- [Clojure Dokumentaatio - capitalize](https://clojuredocs.org/clojure.core/capitalize)
-- [Java API - Character-luokka](https://docs.oracle.com/javase/7/docs/api/java/lang/Character.html)
+## Katso myös:
+- [clojure.string | ClojureDocs](https://clojuredocs.org/clojure.string)
+- [clojure.string/capitalize | ClojureDocs](https://clojuredocs.org/clojure.string/capitalize)
+- [java.lang.Character | Oracle](https://docs.oracle.com/javase/8/docs/api/java/lang/Character.html)

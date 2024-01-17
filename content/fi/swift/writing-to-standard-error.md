@@ -1,7 +1,7 @@
 ---
-title:                "Kirjoittaminen standardilähtöön"
-html_title:           "Swift: Kirjoittaminen standardilähtöön"
-simple_title:         "Kirjoittaminen standardilähtöön"
+title:                "Tietokoneohjelmoinnin artikkeli: Kirjoittaminen standardivirheeseen"
+html_title:           "Swift: Tietokoneohjelmoinnin artikkeli: Kirjoittaminen standardivirheeseen"
+simple_title:         "Tietokoneohjelmoinnin artikkeli: Kirjoittaminen standardivirheeseen"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Files and I/O"
@@ -10,40 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+# Mitä ja miksi?
+Kirjoittaminen standardivirheeseen on kätevä tapa ohjelman suoritusvirheiden hallintaan. Kun ohjelmassa tapahtuu virhe, se kirjoitetaan standardivirheeseen, jolloin se näkyy suoraan ohjelman suorituksen seurannassa. Tämä helpottaa virheen havaitsemista ja korjaamista.
 
-Kirjoittaminen standard erroriin voi olla hyödyllistä silloin, kun halutaan tulostaa virheilmoituksia tai lokimerkintöjä, jotka eivät haluta näkyvän käyttäjän näytöllä.
-
-## Miten
-
-Kirjoittaminen standard erroriin onnistuu käyttämällä Swiftin *print()* -funktiota ja siihen liittyvää parametria *standardError*. Esimerkkejä ja tulostuksia alla:
-
+# Miten?
+### Swift:ssä standardivirheeseen kirjoittaminen tapahtuu käyttämällä print-funktiota ja säädetään parametriksi .standardError.
 ```Swift
-print("Tämä tulostuu standard outputiin.")
-print("Tämä tulostuu standard erroriin.", to: &standardError)
+print("Tämä on virheviesti.", to: .standardError)
 ```
+Tämän jälkeen viesti näkyy ohjelman suorituksen seurannassa punaisella värillä, jolloin se erottuu muusta tekstistä.
 
-Tulostus:
-
-```
-Tämä tulostuu standard outputiin.
-Tämä tulostuu standard erroriin.
-```
-
-Voimme myös luoda uuden *FileHandle* -objektin ja liittää sen *standardError* -muuttujaan, jolloin voimme kirjoittaa suoraan haluttuun tiedostoon:
-
+### Esimerkki:
 ```Swift
-let file = FileHandle(forWritingAtPath: "/polku/tiedostoon")
-standardError = file
-print("Tämä tulostuu tiedostoon.", to: &standardError)
+let luku1 = 10
+let luku2 = 0
+
+if luku2 == 0 {
+    print("Toinen luvuista ei voi olla nolla.", to: .standardError)
+} else {
+    let tulos = luku1 / luku2
+    print("Jakolaskun tulos on \(tulos).")
+}
 ```
+Tässä esimerkissä tulee virhe, jos luku2 on nolla. Ohjelma tulostaa tällöin virheviestin standardivirheeseen ja pysähtyy. Muussa tapauksessa ohjelma tulostaa normaalisti jakolaskun tuloksen.
 
-## Syväsukellus
+# Syvempi sukellus
+### Historiallinen konteksti:
+Standardivirheeseen kirjoittaminen on ollut käytössä Unix-käyttöjärjestelmissä jo vuosikymmeniä. Sen avulla on mahdollista kontrolloida ja ohjata ohjelmien virhetilanteita.
 
-Swiftin standardikirjaston *print()* -funktio käyttää taustalla *FileOutputStream* -tyyppistä streamiä tietojen kirjoittamiseen *standardError* -objektiin. Tällä tavoin voimme helposti ohjata virheilmoituksia tai lokimerkintöjä muualle, esimerkiksi tiedostoon. On myös mahdollista luoda omia *OutputStream* -objekteja ja liittää ne *standardError* -muuttujaan.
+### Vaihtoehtoja:
+Pythonissa ja C:ssä käytetään vastaavia toimintoja, kuten sys.stderr ja perror().
 
-## Katso myös
+### Toteutus:
+Swift:ssä standardivirheen tulostaminen onnistuu käyttämällä Foundation-frameworkia, joka tarjoaa print-funktiolle .standardError-parametrin.
 
-- [Swiftin virallinen dokumentaatio](https://docs.swift.org/swift-book/LanguageGuide/BasicOperators.html#ID551)
-- [FileHandle -luokan dokumentaatio](https://developer.apple.com/documentation/foundation/filehandle)
-- [FileOutputStream -luokan dokumentaatio](https://developer.apple.com/documentation/foundation/fileoutputstream)
+# Katso myös:
+- [Foundation - Apple Developer Documentation](https://developer.apple.com/documentation/foundation)
+- [Swift Standard Library - Apple Developer Documentation](https://developer.apple.com/documentation/swift)

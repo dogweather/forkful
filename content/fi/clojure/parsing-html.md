@@ -10,32 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä & Miksi?
 
-Jos haluat analysoida verkkosivujen sisältöä ja hakea tiettyä tietoa tekstistä tai muotoiluista, HTML-parsiminen on välttämätöntä. Se mahdollistaa verkkosivujen tietojen keräämisen ja jatkoprosessoinnin helposti ja vaivattomasti.
+HTML parsing tarkoittaa HTML-koodin purkamista ja analysointia. Ohjelmoijat käyttävät tätä työkalua lukeakseen ja muokatakseen verkkosivujen sisältöä ja rakennetta. 
 
-## Kuinka tehdä
+
+## Kuinka tehdä:
 
 ```Clojure
-(require '[clojure.data.zip.xml :as xml])
-(require '[clojure.xml :as xml-parse])
+(def html-string "<html><head><title>Otsikko</title></head><body><p>Tervetuloa!</p></body></html>")
 
-(def html (xml-parse "<html><body><h1>Otsikko</h1><p>Tekstiä</p></body></html>"))
+(require '[clojure.data.xml :as xml])
 
-(defn get-text [node]
-  (when (xml/tag node)
-    (apply str (map #(get-text %) (xml/children node))))
-  (when (xml/text node)
-    (xml/text node)))
-
-(xml-> html :body :p get-text)
-;; Tuloste: "Tekstiä"
+(xml/parse-str html-string)
+; => {:tag :html, :attrs nil, :content [{:tag :head, :attrs nil, :content [{:tag :title, :attrs nil, :content ["Otsikko"]}]} {tag :body, :attrs nil, :content [{:tag :p, :attrs nil, :content ["Tervetuloa!"]}]}]} 
 ```
 
-## Syventyminen
+## Syvemmälle sukeltaminen:
 
-HTML-parsiminen hyödyntää Clojuren sisäistä XML-paketointia, joka helpottaa HTML-elementtien käsittelyä. XML-sivutus toimii siten, että se navigoi XML-solmujen läpi ja tarjoaa pääsyn atribuutteihin ja teksteihin. Lisäksi Clojure tarjoaa monia hyödyllisiä kirjastoja, kuten clojure.data.zip.xml ja clojure.xml, jotka auttavat yksinkertaistamaan parsimista ja haunopeuttamista.
+HTML-parsingilla on pitkä historia ja se on tärkeä työkalu verkkokehittäjille. On olemassa myös muita tapoja selata HTML-sisältöä, kuten käyttämällä CSS-selektoreita tai XPath-kyselykieltä. Clojuren tapauksessa käytetään clojure.data.xml -kirjastoa, joka perustuu .NET-ohjelmointikieleen.
 
-## Katso myös
-- [Clojure XML-pakkauksen dokumentaatio](https://clojure.github.io/clojure/clojure.data.zip-api.html#clojure.data.zip.xml)
-- [Clojure XML-pakkauksen lähdekoodi GitHubissa](https://github.com/clojure/clojure/blob/master/src/clj/clojure/data/zip/xml.clj)
+## Katso myös:
+
+https://clojure.github.io/clojure/clojure.data.xml-api.html

@@ -1,7 +1,7 @@
 ---
-title:                "Kontrollera om en mapp existerar"
-html_title:           "C#: Kontrollera om en mapp existerar"
-simple_title:         "Kontrollera om en mapp existerar"
+title:                "Kontrollera om en mapp finns"
+html_title:           "C#: Kontrollera om en mapp finns"
+simple_title:         "Kontrollera om en mapp finns"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Files and I/O"
@@ -10,53 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
+Att kontrollera om en mapp existerar betyder helt enkelt att man tittar på en specifik plats i datorn och ser om det finns en mapp med det namnet som man anger. Detta är en vanlig uppgift för programmerare eftersom det kan vara viktigt att veta om en mapp existerar innan man försöker använda den i sitt program.
 
-Att kontrollera om en mapp existerar är en viktig del av filhantering inom programmering. Genom att ha denna funktion i ditt C#-program kan du hantera eventuella fel och undvika att försöka öppna en mapp som inte finns.
-
-## Så här gör du
-
-För att kontrollera om en mapp existerar i C# kan du använda dig av metoden `Directory.Exists()`. Denna metod tar in en sträng som representerar sökvägen till mappen som du vill kontrollera. Om mappen existerar kommer metoden att returnera `true`, annars `false`.
-
+## Så här gör du:
 ```C#
-if(Directory.Exists(@"C:\Users\Example\Desktop"))
+if (Directory.Exists(path))
 {
-    Console.WriteLine("Mappen existerar.");
+    Console.WriteLine("Mappen existerar!");
 }
 else
 {
-    Console.WriteLine("Mappen existerar inte.");
+    Console.WriteLine("Mappen existerar inte!");
 }
-
-// Output: Mappen existerar.
 ```
+I detta exempel visar vi hur man med en enkel if-sats kan kontrollera om en mapp existerar på en specifik sökväg (path) och sedan skriver ut ett meddelande beroende på om mappen existerar eller inte.
 
-Om du vill kontrollera en mapp inuti en annan mapp kan du använda dig av `Path.Combine()` för att kombinera sökvägarna.
+## Djupdykning:
+Historiskt sett har det funnits olika sätt att kontrollera om en mapp existerar i C#, men sedan .NET Framework 2.0 introducerades så har Directory-klassen funnits tillgänglig och det har blivit det vanligaste sättet att göra detta.
 
-```C#
-string parentPath = @"C:\Users\Example\Desktop";
-string childFolder = "NewFolder";
+Ett alternativ till att använda Directory-klassen är att använda metoden File.Exists(), som kan ta både en fil- och mapp-sökväg som argument. Detta kan vara användbart om man vill kontrollera både filer och mappar i sitt program.
 
-if(Directory.Exists(Path.Combine(parentPath, childFolder)))
-{
-    Console.WriteLine("Mappen existerar.");
-}
-else
-{
-    Console.WriteLine("Mappen existerar inte.");
-}
+När det kommer till implementation kan man även använda sig av try-catch-block för att hantera eventuella fel som kan uppstå när man kontrollerar om en mapp existerar. Det finns även andra sätt att implementera detta, men det viktigaste är att använda en pålitlig och effektiv metod för att kontrollera om en mapp faktiskt existerar.
 
-// Output: Mappen existerar inte.
-```
-
-## Djupdykning
-
-En sak att tänka på när du använder `Directory.Exists()` är att det endast kontrollerar om själva mappen existerar, och inte om det finns något innehåll i mappen. Om du vill kontrollera om en mapp är tom kan du använda dig av metoden `Directory.GetFileSystemEntries()` som returnerar en array av filer och mappar som finns i den angivna mappen.
-
-Det är också viktigt att komma ihåg att `Directory.Exists()` inte garanterar att mappen kommer att finnas kvar när du försöker öppna den. Om du behöver göra något med en mapp efter att ha kontrollerat om den existerar kan det vara en god idé att lägga till felhantering för att undvika eventuella problem.
-
-## Se även
-
-- [Microsoft's dokumentation om Directory.Exists()](https://docs.microsoft.com/en-us/dotnet/api/system.io.directory.exists)
-- [C# Coding Conventions (C# Programming Guide)](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/inside-a-program/coding-conventions)
-- [Path.Combine() - C# Guide](https://docs.microsoft.com/en-us/dotnet/api/system.io.path.combine?view=net-5.0)
+## Se även:
+- [Directory-klassen i .NET documentation](https://docs.microsoft.com/en-us/dotnet/api/system.io.directory?view=net-5.0)
+- [File.Exists() metoden i .NET documentation](https://docs.microsoft.com/en-us/dotnet/api/system.io.file.exists?view=net-5.0)

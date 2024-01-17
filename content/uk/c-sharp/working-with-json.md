@@ -10,57 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Чому
-Цікавитесь програмуванням і хочете розширити свої знання? Користування форматом JSON допоможе вам ефективніше працювати з даними в вашому програмі. 
+## Що і для чого?:
+Робота з JSON - це метод обробки даних в програмуванні, який дозволяє зберігати та передавати дані у вигляді об'єктів у форматі тексту. Програмісти використовують цей формат для обміну даними між різними системами та зберігання структурованих даних з різних джерел.
 
-## Як користуватися JSON у C#
-JSON (JavaScript Object Notation) є популярним форматом обміну даними, особливо веб-додатках. Для роботи з ним у C#, вам потрібно використовувати бібліотеку Newtonsoft.Json. Ось приклад коду для зчитування та запису даних у форматі JSON:
-
+## Як це зробити:
 ```C#
-// Приклад об'єкта JSON
-string json = @"{ 'name': 'John', 'age': 30, 'city': 'Kyiv' }";
-// Зчитування об'єкта у форматі JSON у змінну
-var person = JsonConvert.DeserializeObject<Person>(json);
-// Виведення даних
-Console.WriteLine($"Name: {person.name}");
-Console.WriteLine($"Age: {person.age}");
-Console.WriteLine($"City: {person.city}");
-// Код у випадку, якщо об'єкта немає у масиві
-string emptyJson = "[]";
-var emptyList = JsonConvert.DeserializeObject<List<Person>>(emptyJson);
-Console.WriteLine($"Number of persons in the list: {emptyList.Count}");
-// Приклад створення об'єкта JSON
-var newPerson = new Person()
-{
-    Name = "Anna",
-    Age = 25,
-    City = "Lviv"
-};
-// Перетворення у формат JSON
-var newPersonJson = JsonConvert.SerializeObject(newPerson);
-Console.WriteLine(newPersonJson);
+// Приклад створення JSON об'єкту:
+var person = new { name = "John", age = 30, city = "Kyiv" };
 
-// Код класу персона
-public class Person
-{
-    public string Name { get; set; }
-    public int Age { get; set; }
-    public string City { get; set; }
-}
-```
-Отриманий результат:
-```
-Name: John
-Age: 30
-City: Kyiv
-Number of persons in the list: 0
-{"name":"Anna","age":25,"city":"Lviv"}
+// Приклад кодування об'єкту в JSON формат:
+var json = JsonConvert.SerializeObject(person);
+Console.WriteLine(json);
+
+// Виведення результату:
+// {"name":"John","age":30,"city":"Kyiv"}
 ```
 
-## Поглиблене дослідження
-У форматі JSON можна зберігати різні типи даних, такі як рядки, числа, булеві значення, масиви та об'єкти. Для цього використовується так звана "синтаксична цукерка", яка дозволяє зручно створювати та читати дані. У більш складних випадках, коли у об'єкта є багато полів, можна використовувати атрибути `[JsonProperty("коректне ім'я поля")]` для зручності конвертації даних.
+## Підробиці:
+JSON (JavaScript Object Notation) був розроблений в 1999 році і став популярним використовувати як спосіб передачі даних. Цей формат є альтернативою XML та є більш спрощеним та зручним для опрацювання. У програмуванні, дані у форматі JSON можна легко перетворювати в об'єкти та здійснювати обробку даних. Для роботи з JSON у C# існує багато бібліотек, таких як Newtonsoft.Json, які спрощують роботу з цим форматом.
 
-## Дивіться також
-- [Офіційна документація по бібліотеці Newtonsoft.Json](https://www.newtonsoft.com/json)
-- [Відеоурок "Робота з JSON у C#"](https://www.youtube.com/watch?v=NXyZ-LhZcz0) 
-- [Стаття "Робота з JSON в .NET за допомогою бібліотеки Newtonsoft.Json"](https://code.tutsplus.com/uk/tutorials/working-with-json-in-net--cms-31875)
+## Дивіться також:
+- [JSON у Вікіпедії](https://uk.wikipedia.org/wiki/JSON)
+- [Офіційна документація по Newtonsoft.Json](https://www.newtonsoft.com/json/help/html/Introduction.htm)
+- [Курс по роботі з JSON у С#](https://www.pluralsight.com/courses/deserialize-json-csharp-getting-started)

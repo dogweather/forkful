@@ -10,32 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué?
+## ¿Qué & Por qué?
 
-Si estás escribiendo un código en Ruby que involucra la manipulación de archivos y directorios, es útil saber si un directorio ya existe antes de crear uno nuevo. Esto te ahorrará tiempo y garantizará que tu código funcione correctamente.
+Comprobar si un directorio existe es una acción común en la programación. Básicamente, es una forma de verificar si una determinada carpeta o directorio está presente en un sistema de archivos. Los programadores suelen hacer esto para asegurarse de que los archivos o recursos que necesitan estén disponibles antes de seguir adelante con su código.
 
-## Cómo hacerlo
+## Cómo:
 
-Comprobar si un directorio existe en Ruby es muy sencillo. Primero, necesitamos importar la biblioteca "FileUtils" y luego podemos usar el método "exist?" para verificar si un directorio existe en una ubicación específica. Veamos un ejemplo:
+Para comprobar si un directorio existe en Ruby, podemos usar el método `Dir.exist?`seguido por el nombre del directorio que queremos verificar. Por ejemplo:
 
 ```Ruby
-require 'fileutils'
-
-if FileUtils.exist?('ruta/al/directorio')
-  puts "¡El directorio ya existe!"
-else
-  puts "El directorio no existe, se creará uno nuevo."
-end
+Dir.exist?("mi_directorio")
 ```
 
-En este ejemplo, utilizamos la palabra clave "require" para importar la biblioteca "FileUtils", que nos proporciona una variedad de métodos útiles para trabajar con archivos y directorios. Luego, usamos el método "exist?" y le pasamos la ruta del directorio que queremos verificar. Este método devuelve un valor booleano, por lo que podemos usar una declaración "if" para imprimir un mensaje apropiado según el resultado.
+El resultado de este código será un valor booleano `true` o `false`, dependiendo de si el directorio existe o no.
 
-## Profundizando
+## Inmersión Profunda:
 
-Ahora que sabemos cómo verificar si un directorio existe en Ruby, es importante tener en cuenta algunas cosas adicionales. Por ejemplo, el método "exist?" también puede verificar si un archivo existe en lugar de un directorio, por lo que debes asegurarte de pasar la ruta correcta en tu código. Además, si necesitas realizar operaciones más complejas, como crear o cambiar permisos en un directorio existente, puedes utilizar otros métodos de la biblioteca "FileUtils" como "mkdir" o "chmod".
+La verificación de la existencia de un directorio ha sido una tarea común en la programación durante mucho tiempo. En el pasado, los programadores solían usar el comando `ls` (en sistemas Unix/Linux) o `dir` (en sistemas Windows) para listar los archivos y directorios en un sistema de archivos y luego buscar el nombre del directorio en esa lista. Sin embargo, esto no era muy eficiente ya que podía ser lento si el directorio estaba en un directorio profundo o si había muchos archivos en el sistema.
 
-## Ver también
+Otra alternativa es usar el comando `File.exist?`, que también puede verificar la existencia de un directorio (aunque también puede usarse para verificar la existencia de un archivo). Sin embargo, el método `Dir.exist?` es más específico y recomendado para este propósito.
 
-- [Documentación de la biblioteca FileUtils de Ruby](https://ruby-doc.org/stdlib-2.6.3/libdoc/fileutils/rdoc/FileUtils.html)
-- [Comprobación de la existencia de un archivo en Ruby](https://www.rubyguides.com/2018/09/ruby-file-exist/)
-- [Manipulación de archivos y directorios con Ruby](https://www.digitalocean.com/community/tutorials/how-to-work-with-file-operations-in-ruby-es)
+En cuanto a la implementación, el método `Dir.exist?` usa llamadas al sistema para verificar si el directorio existe. Esto significa que es una forma más rápida y eficiente de comprobar la existencia de un directorio en comparación con el uso de comandos externos como `ls` o `dir`.
+
+## Ver también:
+
+- [Documentación de Ruby sobre el método Dir.exist?](https://ruby-doc.org/core-2.7.1/Dir.html#method-c-exist-3F)
+- [Método File.exist? para verificar la existencia de archivos](https://ruby-doc.org/core/Dir.html#method-c-exist-3F)
+- [Stack Overflow: Check if a directory exists in Ruby](https://stackoverflow.com/questions/8256079/check-if-a-directory-exists-in-ruby)

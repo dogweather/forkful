@@ -1,7 +1,7 @@
 ---
-title:                "Drukowanie danych debugowania"
-html_title:           "Gleam: Drukowanie danych debugowania"
-simple_title:         "Drukowanie danych debugowania"
+title:                "Wydrukowanie wyników debugowania"
+html_title:           "Gleam: Wydrukowanie wyników debugowania"
+simple_title:         "Wydrukowanie wyników debugowania"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Testing and Debugging"
@@ -10,61 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Czym jest wyjście debugowania i dlaczego programiści go używają?
 
-Drukowanie debug outputu jest nieodłącznym elementem procesu programowania. Dzięki niemu możemy zobaczyć, co dzieje się w naszym kodzie, a także znaleźć ewentualne błędy i poprawić je szybko i skutecznie.
+Wyjście debugowania to narzędzie, które pomaga programistom w śledzeniu i zrozumieniu kodu, szczególnie w celu naprawiania błędów. Pozwala ono na wyświetlenie informacji podczas wykonywania programu, co ułatwia identyfikację problemów oraz zrozumienie, jak kod działa.
 
-## Jak to zrobić
+## Jak to zrobić?
 
-Gleam jest językiem bardzo przyjaznym dla programistów, również jeśli chodzi o dedukowanie i wyświetlanie debug outputu. Wystarczy użyć funkcji `Debug.todo/1` lub `Debug.inspect/1` przy odpowiednich zmiennych lub wyrażeniach. 
+Możesz użyć funkcji `debug!`, aby wyświetlić dane lub zmienne do konsoli podczas wykonywania kodu. Na przykład:
 
-```
-Gleam> import Debug
-
-Gleam> number = 42
-Gleam> Debug.inspect(number)
-42: Number
-```
-
-Możemy również użyć funkcji `Debug.format/1` aby sformatować output w określony sposób. 
-
-```
-Gleam> fruit = "apple"
-Gleam> colour = "red"
-Gleam> Debug.format("{fruit} is {colour}", [fruit, colour])
-apple is red
-```
-
-Gleam również oferuje nam możliwość wyświetlenia debug outputu w funkcjach rekurencyjnych. Wystarczy dodać kolejny parametr do funkcji `Debug.inspect/2`, który będzie reprezentował aktualny poziom rekursji. 
-
-```
-fn count_down(number, depth) {
-  if number <= 0 {
-    Debug.inspect(number, depth)
-  } else {
-    Debug.inspect(number, depth)
-    count_down(number - 1, depth + 1)
-  }
+```Gleam
+fn print_example() {
+  let name = "John"
+  let age = 30
+  debug!("Hello", name)
+  debug!("He is", age, "years old")
 }
 ```
 
-Możesz także użyć funkcji `Debug.todo/2` aby oznaczyć miejsca w kodzie, które chcesz jeszcze uzupełnić. Funkcja ta wyświetli błąd i podpowie Ci gdzie powinieneś dalej pracować. 
+Wyżej wymieniony kod wyświetli w konsoli tekst `Hello John` oraz `He is 30 years old` podczas wykonania programu.
 
-```
-Gleam> name = "John"
-Gleam> Debug.todo("Make a function to greet {name}") 
-Error: Unexpected TODO in the code. "Make a function to greet {name}"
-```
+## W pogłębionej perspektywie
 
-## Deep Dive
+Wyjście debugowania jest popularną techniką, która jest stosowana przez programistów od wielu lat. Alternatywnym sposobem na wyświetlanie informacji jest użycie specjalnych narzędzi do debugowania, takich jak debugery. Jednakże, w wielu przypadkach użycie `debug!` jest szybszym i prostszym rozwiązaniem.
 
-Podczas używania funkcji `Debug.inspect/1`, widzimy obiekt `Gleam.Debug.Output` z opisem wartości i typu. Jest to bardzo przydatne, szczególnie gdy potrzebujemy wyświetlić bardziej złożone struktury danych, jak na przykład krotki czy listy. 
+## Zobacz również
 
-Funkcja `Debug.format/1` działa na podobnej zasadzie jak `Printf` w innych językach programowania. Operujemy na słowach kluczowych (takich jak `{fruit}` w poprzednim przykładzie), których wartości podstawiane są zgodnie z kolejnością w argumencie listy. Dzięki temu możemy swobodniej formatować nasz output. 
-
-W przypadku użycia funkcji `Debug.todo/1` powinniśmy pamiętać, aby w końcowej wersji naszego kodu usunąć wszystkie takie wywołania. W przeciwnym razie zostanie nam zwrócony błąd. 
-
-## Zobacz także
-
-- Oficjalna dokumentacja Gleam dotycząca debugowania: [Gleam - Debugging](https://gleam.run/book/tour/debugging.html)
-- Wideo tutorial omawiające debugowanie w Gleam: [Gleam - Debugging with Nuby](https://www.youtube.com/watch?v=sGikLa2yQvA)
+Jeśli chcesz dowiedzieć się więcej o wyjściu debugowania w języku Gleam, możesz przejrzeć dokumentację lub przeczytać artykuły na ten temat. Możesz także sprawdzić alternatywne metody wyświetlania informacji, aby znaleźć najlepsze rozwiązanie dla swoich potrzeb.

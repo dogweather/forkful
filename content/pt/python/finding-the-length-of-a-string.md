@@ -1,7 +1,7 @@
 ---
-title:                "Encontrando o comprimento de uma cadeia de caracteres"
-html_title:           "Python: Encontrando o comprimento de uma cadeia de caracteres"
-simple_title:         "Encontrando o comprimento de uma cadeia de caracteres"
+title:                "Encontrando o comprimento de uma string."
+html_title:           "Python: Encontrando o comprimento de uma string."
+simple_title:         "Encontrando o comprimento de uma string."
 programming_language: "Python"
 category:             "Python"
 tag:                  "Strings"
@@ -10,46 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por Que
+## O que e por que?
 
-Você já se perguntou como os programas conseguem saber quantos caracteres têm em uma palavra ou frase? Saber o tamanho de uma string é uma habilidade essencial para qualquer programador, e neste artigo vamos te mostrar como fazer isso usando Python.
+Encontrar o comprimento de uma string é uma tarefa comum em programação, onde o objetivo é determinar o número de caracteres de uma determinada string. Isso é útil para manipulação e processamento de texto, além de ser uma habilidade fundamental para a resolução de problemas em diversos projetos de programação.
 
-## Como Fazer
+## Como fazer:
 
-Para encontrar o tamanho de uma string em Python, usamos a função `len()`. Por exemplo, se tivermos a string "Olá, mundo", podemos usar a função da seguinte maneira:
+```python
+# Exemplo 1 - Usando a função len()
+texto = "Olá, mundo!"
+print(len(texto))
 
-```Python
-print(len("Olá, mundo"))
+# Saída: 12
+
+# Exemplo 2 - Usando um loop for
+texto = "Python"
+contador = 0
+for letra in texto:
+    contador += 1
+print(contador)
+
+# Saída: 6
 ```
 
-O resultado dessa função será 11, já que há 11 caracteres, incluindo espaços, na frase "Olá, mundo".
+## Mergulho Profundo:
 
-Você também pode utilizar a função `len()` para encontrar o tamanho de uma variável que contenha uma string. Por exemplo:
+Encontrar o comprimento de uma string é uma tarefa que remonta aos primeiros dias da programação de computadores. Antigamente, era uma tarefa mais complicada e exigia algoritmos complexos. No entanto, com o avanço da tecnologia, essa tarefa se tornou muito mais fácil e simples de ser realizada. Além disso, existem outras formas de encontrar a extensão de uma string, como utilizando a função len() na maioria das linguagens de programação.
 
-```Python
-mensagem = "Python é incrível!"
-print(len(mensagem))
-```
+## Veja também:
 
-O resultado será novamente 11, pois a variável `mensagem` contém uma string com 11 caracteres.
-
-## Deep Dive
-
-Ao usar a função `len()`, é importante ter em mente que ela conta todos os caracteres da string, incluindo espaços em branco e caracteres especiais como pontuação. Além disso, a função também pode ser usada para encontrar o tamanho de outros tipos de dados, como listas e dicionários.
-
-Outra coisa importante a se notar é que, em Python, as strings são imutáveis, o que significa que não podemos alterar diretamente a string original. Isso significa que, se tentarmos atribuir um novo valor a um determinado índice em uma string, receberemos um erro.
-
-Por exemplo, se tentarmos executar o seguinte código:
-
-```Python
-mensagem = "Python é incrível!"
-mensagem[0] = "J"
-```
-
-Receberemos um erro informando que a string não pode ser modificada. Para contornar isso, podemos usar a concatenação de strings para criar uma nova string com o valor atualizado.
-
-## Veja Também
-
-- [Tutorial de Introdução à Programação em Python](https://www.learnpython.org/pt/)
-- [Documentação oficial do Python](https://docs.python.org/pt-br/3/index.html)
-- [Artigo do Real Python sobre strings em Python](https://realpython.com/python-strings/)
+- Documentação oficial do Python sobre strings: https://docs.python.org/3/library/stdtypes.html#str
+- Tutorial sobre manipulação de strings em Python: https://www.w3schools.com/python/python_strings.asp
+- Discussão sobre a diferença entre a função len() e a propriedade len em Python: https://stackoverflow.com/questions/26525498/difference-between-len-function-and-len-attribute-in-python

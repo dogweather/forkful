@@ -10,20 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
-세상은 매우 복잡하다! 우리는 간단한 것도 이해하기 쉽지 않다. 문자열의 길이를 정확히 알고 싶은 경우가 있을 수 있다. 이 길이를 알고 싶을 때, 문제를 더 쉽게 볼 수 있고, 효과적인 해결책을 찾을 수 있다.
+## 뭐고 왜?: 
+문자열 길이를 찾는 것은 문자열에 포함된 문자의 개수를 파악하는 것입니다. 프로그래머들은 이 작업을 일반적으로 문자열을 다루는 프로그래밍 작업에서 사용하기 때문에 수행합니다.
 
-## 사용 방법
-### "```Fish Shell```" 코드 블록 내에 ```string length``` 명령어를 사용해 문자열의 길이를 얻을 수 있다. 예를 들어:
-
+## 방법: 
+Fish Shell에서 문자열 길이를 찾는 방법은 간단합니다. 다음은 여러분이 따라할 수 있는 예제와 출력입니다.
+```Fish Shell
+# 변수에 문자열 값 저장
+set my_string "Hello World"
+# "count" 함수를 사용하여 문자열 길이 찾기
+echo (count $my_string)
 ```
-Fish Shell> string length "안녕하세요"
-6
+출력:
+```
+11
 ```
 
-## 깊이 파고들기
-문자열의 길이를 찾는 것은 간단해 보이지만, 실제로는 알고리즘이라는 수학적인 개념을 포함하고 있다. 알고리즘을 이해하려면 컴퓨터의 메모리 관리, 데이터 타입 등에 대한 이해가 필요하다. 그러나 우리는 이 모든 것을 이해하지 않고도 유용한 프로그래밍을 할 수 있다는 것을 명심해야 한다.
+## 자세히 살펴보기: 
+(1) 문자열 길이를 찾는 작업은 프로그래밍의 일부로서 오랜 역사를 가지고 있습니다. 초기에는 C 언어에서 사용되던 "strlen" 함수로 이 작업을 수행할 수 있었고, 현재 다양한 프로그래밍 언어에서도 비슷한 함수를 제공합니다. (2) 다른 언어들에서는 "length" 또는 "size" 함수를 사용하여 문자열 길이를 찾는 경우도 많습니다. (3) Fish Shell의 "count" 함수는 문자열을 문자 단위로 쪼개서 그 개수를 세는 방식으로 문자열 길이를 찾습니다.
 
-## 더 찾아보기
-- [Fish Shell 공식 문서 (영문)](https://fishshell.com/docs/current/index.html)
-- [Fish Shell 온라인 커뮤니티 (영문)](https://github.com/fish-shell/fish-shell)
+## 관련 링크: 
+- [Fish Shell 공식 문서](https://fishshell.com/docs/current/cmds/count.html)
+- [C 언어에서 문자열 길이 찾기](https://www.programiz.com/c-programming/library-function/string.h/strlen)
+- [다른 언어에서 문자열 길이 찾기의 다양한 방법](https://www.techonthenet.com/sql_server/functions/len.php)

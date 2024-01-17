@@ -1,7 +1,7 @@
 ---
-title:                "Tiedoston kirjoittaminen"
-html_title:           "Rust: Tiedoston kirjoittaminen"
-simple_title:         "Tiedoston kirjoittaminen"
+title:                "Tekstitiedoston kirjoittaminen"
+html_title:           "Rust: Tekstitiedoston kirjoittaminen"
+simple_title:         "Tekstitiedoston kirjoittaminen"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Files and I/O"
@@ -10,38 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä ja miksi?
+Tiedoston kirjoittaminen on yksinkertainen tapa tallentaa tietoa tietokoneellesi. Ohjelmoijat käyttävät tätä työkalua tallentaakseen tietoja, joita he tarvitsevat myöhemmin käyttääkseen ja lukemiseen.
 
-Miksi kukaan haluaisi kirjoittaa tekstitiedostoa Rust-kielellä? On monia syitä, kuten luoda tiedostoja automaattisesti, tallentaa dataa tai luoda konfiguraatiotiedostoja ohjelmille.
+## Kuinka tehdä se:
+Rustilla, tiedoston kirjoittaminen on helppoa ja selkeää. Käytä ```std::fs::File``` -rajoitinta luodaksesi uuden tiedoston ja kirjoita siihen haluamasi sisältö ```write_all ()``` -toiminnon avulla. Katso seuraava koodiesimerkki nähdäksesi kuinka se tehdään:
 
-## Miten
+```rust
+use std::fs::File;
+use std::io::prelude::*;
 
-Tässä osiossa esittelemme yksinkertaisen esimerkin, kuinka kirjoittaa tekstitiedosto Rustissa käyttäen standardikirjaston `std::fs` -moduulia.
-
-```Rust
-// Tuodaan käyttöön std-kirjaston fs-moduuli
-use std::fs;
-
-// Määritellään muuttujan nimi ja sisältö
-let filename = "esimerkkitiedosto.txt";
-let content = "Tämä on esimerkkitiedosto, johon on tallennettu teksti.";
-
-// Käytetään fs-moduulin `write` -funktiota tallentamaan sisältö tiedostoon
-fs::write(filename, content).expect("Virhe tallennettaessa tiedostoa.");
-
-// Tulostetaan viesti onnistuneesta tallennuksesta
-println!("Tiedosto {} tallennettu onnistuneesti.", filename);
+fn main() {
+    let mut file = File::create("uusi_tiedosto.txt")
+        .expect("Ei voitu luoda uutta tiedostoa");
+    
+    file.write_all(b"Tervetuloa Rust-maailmaan!")
+        .expect("Ei voitu kirjoittaa tiedostoon");
+}
 ```
 
-Tämän esimerkin tulos on uusi tekstitiedosto nimeltä `esimerkkitiedosto.txt`, joka sisältää tekstin "Tämä on esimerkkitiedosto, johon on tallennettu teksti."
+Tämä luo uuden tiedoston nimeltä "uusi_tiedosto.txt" ja kirjoittaa siihen tekstirivin "Tervetuloa Rust-maailmaan!". Voit tarkistaa tiedoston sisällön avaamalla sen tekstieditorilla tai käyttämällä `cat` -komentoa terminaalissa.
 
-## Syventävä tarkastelu
+## Syvempi sukellus:
+Tiedostonkirjoitus on yksi helpoimmista tavoista tallentaa tietoa tietokoneellesi. Ennen Rustia, C-kielessä käytettiin `FILE` -rakennetta ja `fwrite()` -funktiota tiedostojen kirjoittamiseen. Muihin vaihtoehtoihin kuuluu myös Pythonin `open()` -funktio ja Java IO -kirjasto.
 
-Rust tarjoaa monia hyödyllisiä työkaluja tekstitiedostojen kirjoittamiseen, kuten `fs::write` -funktion lisäksi myös `fs::OpenOptions` -tietorakenteen mahdollistamaan tiedostoon sisällön lisäämisen, kirjoittamisen olemassa olevan tiedoston perään sekä monia muita vaihtoehtoja.
+Tiedostonkirjoituksen toteutuksessa käytetään `std::io` -moduulia, jota käytetään tiedostojen lukemiseen ja kirjoittamiseen. `File` -rajapinta käyttää tiedostoputkia, jotka ovat järjestelmän resursseja tiedostojen lukemiseen ja kirjoittamiseen.
 
-Lisäksi, Rust tarjoaa myös erilaisia kirjastoja ja kehyksiä tekstitiedostojen käsittelyyn, kuten `serde` kirjaston, joka mahdollistaa tiedostojen tallentamisen ja lukemisen tietyssä datan muodossa.
-
-## Katso myös
-
-- [Rust Standardikirjasto dokumentaatio](https://doc.rust-lang.org/std/fs/index.html)
-- [Rust Cookbook tekstien käsittely](https://rust-lang-nursery.github.io/rust-cookbook/file/text.html)
+## Katso myös:
+- [Rustin virallinen verkkosivusto](https://www.rust-lang.org/)
+- [Tiedostojen kirjoittaminen Rustilla](https://doc.rust-lang.org/std/io/trait.Write.html)
+- [Rustin opas tiedostonkirjoitukseen](https://doc.rust-lang.org/book/ch12-02-reading-a-file.html)

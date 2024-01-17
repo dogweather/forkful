@@ -10,49 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
-Há muitas razões pelas quais alguém pode querer trabalhar com YAML em Ruby. YAML é uma linguagem simples e intuitiva para armazenar e transmitir dados estruturados, tornando-a uma escolha popular para configurações de aplicativos e comunicação entre sistemas.
+## O que é & Por quê?
 
-## Como Fazer
-Para começar a trabalhar com YAML em Ruby, primeiro precisamos instalar a biblioteca "yaml" usando o gerenciador de pacotes RubyGems. Em seguida, podemos importar a biblioteca em nosso código usando a função "require".
+Trabalhar com YAML é uma maneira simples de armazenar e transmitir dados estruturados em um formato legível para humanos. Programadores usam YAML para configurar e armazenar dados de forma mais eficiente do que em outros formatos, como JSON ou XML.
 
-```Ruby
-require 'yaml'
+## Como fazer:
 
-# Criando um objeto YAML
-dados = { nome: "João", sobrenome: "Silva", idade: 30 }
+Para utilizar YAML em seu código Ruby, primeiro você precisa requerer o módulo YAML. Em seguida, é possível carregar e manipular dados YAML usando os métodos fornecidos pelo módulo, como `YAML.load` e `YAML.dump`.
 
-# Convertendo para YAML
-yaml_dados = dados.to_yaml
-
-# Imprimindo o conteúdo YAML
-puts yaml_dados
-
-# Saída:
-# --- # A linha três é apenas um comentário de organização
-# :nome: João
-# :sobrenome: Silva
-# :idade: 30
-```
-
-Para carregar dados YAML em nosso código, podemos usar o método "load_file" da biblioteca YAML. Precisamos fornecer o caminho do arquivo YAML que desejamos carregar e, em seguida, podemos acessar os dados como se fosse uma hash.
+Exemplo de código:
 
 ```Ruby
 require 'yaml'
 
-# Carregando dados YAML
-dados = YAML.load_file("dados.yml")
+# carregar dados YAML de um arquivo
+data = YAML.load(File.read('arquivo.yaml'))
 
-# Acessando dados
-puts dados[:nome]
-
-# Saída:
-# João
+# modificar os dados e salvá-los em um novo arquivo
+data['chave'] = valor
+File.write('novo_arquivo.yaml', YAML.dump(data))
 ```
 
-## Mergulho Profundo
-Além de armazenar e transmitir dados estruturados, YAML também pode ser usado para criar configurações para aplicativos Ruby ou até mesmo para armazenar dados persistentes em um arquivo. Se você quiser se aprofundar mais em YAML, você pode conferir o guia de referência da linguagem oficial [aqui](https://yaml.org/spec/1.2/spec.html).
+Exemplo de saída:
 
-## Veja também
-- [Documentação oficial da biblioteca YAML em Ruby](https://ruby-doc.org/stdlib-2.7.1/libdoc/yaml/rdoc/YAML.html)
-- [Guia de referência da linguagem YAML](https://yaml.org/spec/1.2/spec.html)
+```Ruby
+chave: valor
+```
+
+## Profundando:
+
+YAML, que é a sigla para "YAML Ain't Markup Language", é um formato de serialização inventado em 2001 por um programador que queria uma maneira mais intuitiva de armazenar dados estruturados do que XML. Outras alternativas ao YAML incluem JSON e XML, mas YAML é frequentemente escolhido devido à sua simplicidade e legibilidade. É importante lembrar que YAML é um formato que não permite a execução de código, tornando-o mais seguro do que outros formatos que permitem a injeção de comandos.
+
+## Veja também:
+
+- Documentação oficial do módulo YAML para Ruby: https://ruby-doc.org/stdlib-2.7.0/libdoc/yaml/rdoc/YAML.html
+- Tutorial de YAML para iniciantes: https://www.tutorialspoint.com/ruby/yaml_really_ain_t_markup_language.htm
+- Comparação entre YAML, JSON e XML: https://medium.com/swlh/yaml-vs-json-vs-xml-which-one-to-choose-and-why-1e4281b53b9b

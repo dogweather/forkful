@@ -10,50 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que criar um arquivo temporário em Go?
+## O que e por que criar um arquivo temporario?
 
-Criar e utilizar arquivos temporários é uma prática comum em programação, especialmente quando se trabalha com dados sensíveis ou temporários. Em Go, isso é feito de forma simples e eficiente, permitindo que os desenvolvedores evitem o acúmulo de arquivos não utilizados ou expostos.
+Criar um arquivo temporario e simplesmente criar um arquivo temporario que pode ser usado temporariamente para armazenar dados ou informações. Os programadores geralmente usam esse recurso para armazenar dados temporarios que nao precisam ser permanentemente salvos.
 
-## Como fazer em Go?
-
-A criação de um arquivo temporário em Go é feita utilizando a biblioteca "io/ioutil". Abaixo, temos um exemplo de como criar um arquivo temporário e escrever alguns dados nele:
+## Como fazer:
 
 ```Go
-import (
-    "fmt"
-    "io/ioutil"
-)
+// Importar a biblioteca "os"
+import "os"
 
-func main() {
-    // criando o arquivo temporário e capturando seu nome e eventuais erros
-    arquivo, err := ioutil.TempFile("", "meuarquivo")
-    if err != nil {
-       fmt.Println(err)
-    }
+// Criar um arquivo temporario usando a funcao "TempFile"
+arquivoTemp, err := os.TempFile("", "exemplo")
 
-    // escrevendo dados no arquivo
-    _, err = arquivo.Write([]byte("Meus dados"))
-    if err != nil {
-        fmt.Println(err)
-    }
-
-    // fechando e removendo o arquivo temporário após a utilização
-    defer os.Remove(arquivo.Name())
-
-    // exibindo o nome do arquivo
-    fmt.Println(arquivo.Name())
+// Verificar se houve algum erro ao criar o arquivo
+if err != nil {
+    panic(err)
 }
+
+// Imprimir o caminho do arquivo temporario criado
+fmt.Println("Caminho do arquivo temporario:", arquivoTemp.Name())
+
+// Fechar o arquivo temporario criado
+defer os.Remove(arquivoTemp.Name())
 ```
 
-A saída do código acima será algo como "/tmp/meuarquivo012345678". Além disso, o arquivo será automaticamente excluído após sua utilização, evitando assim a necessidade de limpezas manuais.
+Exemplo de saída:
+```
+Caminho do arquivo temporario: /var/folders/2v/8cw1kpcx3tg57q0n0yvmy3m1gwx2y1/T/exemplo758371380
+```
 
-## Aprofundando
+## Mais informacoes:
 
-Ao criar um arquivo temporário em Go, é possível definir o diretório onde ele será criado e seu nome através dos dois argumentos passados para a função "TempFile". Caso o primeiro argumento seja uma string vazia ("") o arquivo será criado no diretório padrão definido pelo sistema operacional.
+Criar arquivos temporarios e um recurso comum em linguagens de programacao. Ele permite que os programadores armazenem dados temporarios sem precisar se preocupar com onde ou como esses dados serao armazenados permanentemente. Uma alternativa ao uso de arquivos temporarios seria o uso de variaveis temporarias na memoria, mas esta solucao pode ser util em situacoes onde os dados sao muito grandes ou quando o programa precisa ser executado em diferentes maquinas.
 
-É importante ressaltar que é necessário utilizar o prefixo "os" para remover o arquivo temporário criado, como mostrado no exemplo acima. Além disso, é possível definir um sufixo para o nome do arquivo, que por padrão será um identificador único.
+Ao criar um arquivo temporario no Go, o prefixo "tmp" sera adicionado ao nome do arquivo para ajudar a identifica-lo. Alguns outros parametros podem ser adicionados a funcao ``TempFile``, como o caminho e o prefixo do arquivo, para personalizar ainda mais o arquivo temporario.
 
-## Veja também
+## Veja tambem:
 
-- [Documentação oficial da biblioteca ioutil](https://golang.org/pkg/io/ioutil/)
-- [Guia de estilo do Go](https://github.com/golang/go/wiki/CodeReviewComments#identifier-names)
+- [Documentacao oficial - Pacote "os"](https://golang.org/pkg/os/#TempFile)
+- [Tutorial - Como criar um arquivo temporario com Go](https://www.digitalocean.com/community/tutorials/how-to-create-temporary-files-in-go-pt)

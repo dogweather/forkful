@@ -1,7 +1,7 @@
 ---
-title:                "json과 함께 작업하기"
-html_title:           "C#: json과 함께 작업하기"
-simple_title:         "json과 함께 작업하기"
+title:                "JSON 처리하기"
+html_title:           "C#: JSON 처리하기"
+simple_title:         "JSON 처리하기"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Data Formats and Serialization"
@@ -10,57 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+## 무엇 & 왜?
 
-JSON은 인터넷에서 데이터를 교환하기 위한 가장 일반적인 방법 중 하나입니다. 이를 사용하는 이유는 매우 다양하며, 대부분의 인터넷 서비스에서 JSON을 사용하므로 프로그래밍에서도 작동하는 것이 중요합니다.
+JSON 처리는 데이터 교환과 저장에 널리 사용되는 간단한 형식입니다. 프로그래머들은 JSON을 사용하여 데이터를 쉽게 읽고 쓸 수 있고, 다른 시스템과 데이터를 공유하기에도 편리합니다.
 
-## 방법
+## 방법:
 
-JSON을 사용하는 가장 간단한 방법은 C#에서 Newtonsoft.Json 패키지를 사용하는 것입니다. 이 패키지를 사용하려면, 다음과 같은 코드를 추가해야 합니다:
-
-```C#
-using Newtonsoft.Json;
-```
-
-이제 객체를 JSON 문자열로 변환하려면 다음과 같은 예제 코드를 사용할 수 있습니다:
+JSON을 처리하는 가장 간단한 방법은 Newtonsoft의 JSON.NET 라이브러리를 사용하는 것입니다. 다음과 같이 간단한 예제를 통해 어떻게 사용하는지 살펴보겠습니다:
 
 ```C#
-var obj = new { Name = "John", Age = 25 };
-var jsonString = JsonConvert.SerializeObject(obj);
-Console.WriteLine(jsonString);
+// Serialize to JSON
+var person = new Person
+{
+    Name = "John",
+    Age = 30
+};
+var json = JsonConvert.SerializeObject(person);
+
+// Output: {"Name":"John","Age":30}
+
+// Deserialize from JSON
+var json = @"{'Name':'Jane','Age':25}";
+var person = JsonConvert.DeserializeObject<Person>(json);
+
+// Output:
+// Name: Jane
+// Age: 25
 ```
 
-출력:
+## 깊이 파보기:
 
-```console
-{"Name":"John","Age":25}
-```
+JSON은 1999년 더그 커락(Douglas Crockford)에 의해 만들어졌으며, 현재는 데이터 교환과 웹 애플리케이션에서 매우 널리 사용되고 있습니다. 다른 대안으로는 XML, YAML, CSV 등이 있지만, JSON은 구조가 간단하고 가벼워서 널리 사용됩니다.
 
-반대로, JSON 문자열을 C# 객체로 변환하려면 다음과 같은 예제 코드를 사용할 수 있습니다:
+JSON 데이터를 처리하는 데에는 많은 라이브러리가 있지만, JSON.NET은 가장 널리 사용되는 라이브러리입니다. 이 라이브러리는 높은 성능과 다양한 기능으로 인기를 끌고 있습니다.
 
-```C#
-string jsonString = "{\"Name\":\"John\",\"Age\":25}";
-var obj = JsonConvert.DeserializeObject<dynamic>(jsonString);
-Console.WriteLine(obj.Name);
-Console.WriteLine(obj.Age);
-```
+## 참고 자료:
 
-출력:
-
-```console
-John
-25
-```
-
-## 깊이 들어가기
-
-JSON은 프로그래밍에서 사용하기 매우 유용한 데이터 형식입니다. 그러나 중첩된 객체나 배열과 같은 복잡한 구조를 다루기 위해서는 추가적인 공부가 필요합니다. 그래도 C#에서는 JObject나 JArray와 같은 클래스를 사용하여 복잡한 JSON 데이터를 다룰 수 있습니다. 또한 LINQ를 사용하여 JSON 질의도 가능합니다.
-
-더 많은 정보를 알고 싶다면, 공식 문서나 인터넷에서 제공되는 다양한 자료를 참고하시기 바랍니다.
-
-## 참고자료
-
-- [Newtonsoft.Json 패키지](https://www.nuget.org/packages/Newtonsoft.Json/)
-- [JSON 공식 문서](https://www.json.org/json-en.html)
-- [LINQ 공식 문서](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/)
-- [C#에서 JSON 다루기에 대한 블로그 포스트](https://www.c-sharpcorner.com/blogs/handling-json-format-in-c-sharp1)
+- [JSON.NET 공식 사이트](https://www.newtonsoft.com/json)
+- [JSON 표준 문서](https://www.json.org/json-ko.html)

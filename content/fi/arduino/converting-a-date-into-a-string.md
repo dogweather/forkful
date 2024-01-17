@@ -1,7 +1,7 @@
 ---
-title:                "Päivämäärän muuttaminen merkkijonoksi"
-html_title:           "Arduino: Päivämäärän muuttaminen merkkijonoksi"
-simple_title:         "Päivämäärän muuttaminen merkkijonoksi"
+title:                "Päivämäärän muuntaminen merkkijonoksi"
+html_title:           "Arduino: Päivämäärän muuntaminen merkkijonoksi"
+simple_title:         "Päivämäärän muuntaminen merkkijonoksi"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Dates and Times"
@@ -10,55 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+# Mitä & Miksi?
+Päivämäärän muuntaminen merkkijonoksi tarkoittaa päivämäärän esittämistä tekstilukuna. Tätä tehdään yleisesti ohjelmointikohteissa, joissa päivämäärää tarvitaan eri muodoissa tai esimerkiksi tallennettavaksi tiedostoksi.
 
-Monissa projekteissa on tarvetta muuntaa päivämäärä nimenomaiseksi merkkijonoksi, jotta voidaan näyttää päivämäärä tarkemmin tai tallentaa se tiedostoon. Arduino-pohjaiset projektit eivät ole poikkeus. Tässä artikkelissa opit, miten voit helposti muuntaa päivämäärän merkkijonoksi käyttäen Arduino-ohjelmointikieltä.
+# Miten:
+Arduino on avoin ja joustava alusta, johon voit ohjelmoida päivämäärän muuntamisen merkkijonoksi helposti. Esimerkkikoodi alla olevassa esimerkissä muuntaa tämän päivän päivämäärän merkkijonoksi. Tulostus näkyy sarjaportissa, kun Arduinon kytketään tietokoneeseen.
 
-## Miten
-
-Muuntaaksesi päivämäärän merkkijonoksi Arduinolla, tarvitset kaksi kirjastoa: `RTClib` ja `Wire`. Ensimmäinen kirjasto vastaa oikean ajan saamisesta ja toinen kirjasto on vastuussa kommunikaatiosta RTC-piirin kanssa. Tallenna ensin `RTClib.h` tiedosto ja `Wire.h` kirjasto kansioosi ja sisällytä ne koodiisi seuraavasti:
-
-```Arduino
-#include <Wire.h>
-#include <RTClib.h>
 ```
-
-Sitten sinun on luotava RTC-olio ja käynnistettävä RTC-kirjasto:
-
-```Arduino
-RTC_DS3231 rtc;
+Arduino
+String today = String(day()) + "/" + String(month()) + "/" + String(year()); 
+Serial.println(today);
 ```
+Tulostus voi olla esimerkiksi "28/4/2020".
 
-Oletetaan, että haluat muuntaa ja tulostaa nykyisen päivämäärän sarjaporttiin. Ensimmäinen vaihe on aloittaa sarjaportin käyttö:
+# Syväsukellus:
+Päivämäärän muuntaminen merkkijonoksi on ollut tärkeä osa ohjelmointia jo vuosikymmenien ajan. Aikaisemmin se suoritettiin monimutkaisilla laskutoimituksilla, mutta nykyään se on helpompaa ja nopeampaa erilaisten ohjelmointialustojen ansiosta.
 
-```Arduino
-Serial.begin(9600);
-```
+On myös muita tapoja muuttaa päivämäärä merkkijonoksi, kuten käyttämällä kirjastoja tai omia funktioita. Kuten aina ohjelmoinnissa, kannattaa etsiä ja kokeilla erilaisia ratkaisuja ja valita itselleen sopivin vaihtoehto.
 
-Sitten sinun on avattava RTC-yhteys `begin()` -toiminnon avulla:
-
-```Arduino
-rtc.begin();
-```
-
-Viimeinen askel on käyttää `now()` -toimintoa saadaksesi nykyisen päivämäärän ja tallentaa se muuttujaan. Sitten voit helposti muuntaa päivämäärän merkkijonoksi ja tulostaa sen sarjaporttiin:
-
-```Arduino
-DateTime now = rtc.now(); // saa nykyisen päivämäärän
-String date = now.timestamp(DateTime::TIMESTAMP_DATE); // muuntaa päivämäärän merkkijonoksi
-Serial.println(date); // tulostaa merkkijonon sarjaporttiin
-```
-
-Jos kaikki onnistui, tulosteena pitäisi olla nykyinen päivämäärä muodossa `dd.mm.yyyy`. Voit myös muuttaa päivämäärän muotoa vaihtamalla `DateTime::TIMESTAMP_DATE` vaihtoehtoa. Voit esimerkiksi käyttää `DateTime::TIMESTAMP_FULL` saadaksesi tulosteen muodossa `hh:mm:ss dd.mm.yyyy`.
-
-## Deep Dive
-
-Jos haluat syventää ymmärrystäsi päivämäärän muuntamisesta merkkijonoksi, voit tutustua RTC-kirjaston lähdekoodiin. Sieltä löytyy tarkempi dokumentaatio, joka auttaa sinua ymmärtämään paremmin eri toimintoja ja vaihtoehtoja.
-
-Voit myös kokeilla vaihtoehtoisia tapoja muuntaa päivämäärä merkkijonoksi, kuten käyttämällä `char` -muuttujaa tai `sprintf()` -toimintoa. Näiden vaihtoehtojen avulla voit tuottaa erilaisia merkkijonotulosteita ja sovittaa ne paremmin juuri sinun projektiisi.
-
-## Katso myös
-
-- [Arduino Reference – RTC DS3231](https://www.arduino.cc/reference/en/libraries/rtc/)
-- [RTC Piirilevy Arduinolle](https://www.sparkfun.com/products/12708)
-- [Eri muotoisia päivämääränäkymät Arduinolle](https://www.pjrc.com/teensy/td_libs_Time.html)
+# Katso myös:
+- [Arduino String reference](https://www.arduino.cc/reference/en/language/variables/data-types/string/)
+- [Converting a date into a string](https://www.geeksforgeeks.org/converting-date-string-using-arduino/)
+- [Arduino Date and Time functions](https://www.arduino.cc/en/Tutorial/BuiltInExamples/DateTime)

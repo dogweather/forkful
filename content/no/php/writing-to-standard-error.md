@@ -1,7 +1,7 @@
 ---
-title:                "Skriving til standardfeil"
-html_title:           "PHP: Skriving til standardfeil"
-simple_title:         "Skriving til standardfeil"
+title:                "Skriving til standard feil"
+html_title:           "PHP: Skriving til standard feil"
+simple_title:         "Skriving til standard feil"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Files and I/O"
@@ -10,29 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor?
+# Hva & Hvorfor?
 
-Det er mange grunner til å skrive til standard error i PHP-kode. Noen ganger vil du kanskje vise en feilmelding til brukeren, eller logge feil for senere å finne og fikse problemer. Uansett hva årsaken er, kan skriving til standard error være et nyttig verktøy i utviklingsprosessen.
+Å skrive til standard error er en vanlig praksis blant programmerere for å rapportere feil og annen relevant informasjon til terminalen eller loggfiler. Dette gir en mer pålitelig og strukturert måte å feilsøke og analysere programmet på.
 
-## Hvordan gjør du det?
+# Hvordan:
 
-Det er enkelt å skrive til standard error i PHP, du trenger bare å bruke funksjonen `fwrite()` og pekeren `STDERR`. Her er et eksempel:
-
+Kodings eksempler og utgangsresultat 
 ```PHP
 <?php
-fwrite(STDERR, "Dette er en feilmelding som blir skrevet til standard error.");
+fwrite(STDERR, "Dette er en feilmelding.");
+```
+Utgang:
+```
+Dette er en feilmelding.
 ```
 
-Dette vil skrive teksten "Dette er en feilmelding som blir skrevet til standard error." til standard error, som vanligvis vil vises i terminalen eller loggfiler, avhengig av teknologien du bruker.
+# Dypdykk:
 
-## Dypdykk
+Å skrive til standard error er en del av det å bruke stderr-funksjonen i PHP, som returnerer en åpen håndtak til standard error-strømmen. Denne praksisen er en del av standardisert Unix-programmering, der stderr brukes til å skrive ut feilmeldinger. Alternativer til å skrive til standard error inkluderer bruk av loggfiler eller å sende feilmeldinger til standard output (stdout). Implementeringen av denne funksjonen kan variere avhengig av programmeringsspråk og operativsystem.
 
-Når du skriver til standard error, er det viktig å huske på at dette er annerledes enn å skrive til standard output (som vanligvis er terminalen eller nettleseren). Standard error brukes spesielt for å vise feil og unntak, mens standard output er beregnet for vanlig utdata og meldinger til brukeren.
+# Se også:
 
-Det er også verdt å nevne at `fwrite()` funksjonen vil returnere antall skrevne bytes, som kan være nyttig for å feilsøke mulige problemer.
-
-## Se også
-
-- [PHP fwrite() Function](https://www.w3schools.com/php/func_filesystem_fwrite.asp)
-- [PHP stderr](https://www.php.net/manual/en/wrappers.php.php)
-- [Logging in PHP](https://www.digitalocean.com/community/tutorials/how-to-use-logging-in-php)
+- [PHP Manualens sider om Writing to Standard Error](https://www.php.net/manual/en/function.fwrite.php)
+- [Unix Documentation om Standard Output and Standard Error](https://pubs.opengroup.org/onlinepubs/9699919799/functions/stdout.html) 
+- [Ressurser for å lære mer om feilsøking i PHP](https://www.makeuseof.com/tag/troubleshoot-php-html-css-scripts-easily/)

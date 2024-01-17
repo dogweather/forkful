@@ -10,55 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché scrivere test?
+# Cos'è e perché scriverle?
 
-Scrivere test è fondamentale per garantire la qualità del codice e risparmiare tempo nel processo di sviluppo. I test permettono di individuare errori in modo tempestivo, facilitare la manutenzione del codice e garantire che le nuove funzionalità non rompano quelle già esistenti.
+Scrivere i test è un processo importante per i programmatori. Ciò implica la creazione di codice aggiuntivo per testare il funzionamento del codice principale. I test aiutano i programmatori a verificare che il loro codice sia accurato e funzionante correttamente in varie situazioni, riducendo così il rischio di errori durante lo sviluppo e l'utilizzo dell'applicazione.
 
-## Come scrivere test in PHP
-
-Per iniziare a scrivere test in PHP, è consigliato utilizzare un framework di testing come PHPUnit. Questo framework permette di creare e gestire i test in modo semplice e organizzato.
-
-Nella seguente sezione, vedremo come creare e eseguire un semplice test utilizzando PHPUnit.
+# Come si fa:
 
 ```PHP
-// Include il file dove è definita la classe da testare
-require_once 'src/EsempioClasse.php';
 
-// Importa la classe PHPUnitTestCase
-use PHPUnit\Framework\TestCase;
-
-class EsempioClasseTest extends TestCase
-{
-    // Metodo per verificare che la classe sia istanziata correttamente
-    public function testClassCreation()
-    {
-        $esempio = new EsempioClasse();
-
-        // Verifica che l'istanza sia della classe EsempioClasse
-        $this->assertInstanceOf(EsempioClasse::class, $esempio);
-    }
-
-    // Metodo per verificare il corretto funzionamento di un metodo della classe
-    public function testExampleMethod()
-    {
-        $esempio = new EsempioClasse();
-
-        // Invoca il metodo da testare
-        $result = $esempio->esempioMetodo();
-
-        // Verifica che il risultato sia quello atteso
-        $this->assertEquals('Esempio', $result);
-    }
+// Definizione della funzione per testare
+function add($num1, $num2) {
+   return $num1 + $num2;
 }
+
+// Chiamata alla funzione e output
+echo add(5, 3) . PHP_EOL; // Output: 8
+echo add(2, -1) . PHP_EOL; // Output: 1
 ```
 
-Una volta creati i test, per eseguirli è sufficiente utilizzare il comando `phpunit` seguito dal nome del file che contiene i test.
+# Approfondimento:
 
-## Approfondimento
+I test sono diventati una pratica comune nella programmazione grazie all'approccio di sviluppo guidato dai test (TDD) introdotto negli anni '90. Questa metodologia prevede la scrittura dei test prima del codice stesso, al fine di guidare lo sviluppo e garantire che ogni componente funzioni come previsto.
 
-Oltre ai test di unità, è importante includere anche i test di integrazione, che verificano il corretto funzionamento di più componenti del sistema. E' inoltre consigliabile utilizzare il principio di test-driven development, dove si scrivono prima i test e poi il codice per soddisfare quei test.
+Esistono varie alternative ai test automatizzati, come i test manuali o i test di accettazione, ma la scrittura di test automatizzati è diventata una pratica essenziale per la maggior parte dei progetti software moderni. Inoltre, esistono numerose librerie e framework di testing disponibili in PHP, tra cui PHPUnit, Codeception e Behat.
 
-## Vedi anche
+Per implementare correttamente i test automatizzati, è importante seguire alcune best practice come scrivere test atomici, mantenere una buona copertura dei test e concentrarsi sui casi di test più importanti.
 
-- [Guida a PHPUnit (in italiano)](https://phpunit.de/manual/8.0/it/index.html)
-- [Principi del test-driven development](https://www.agilealliance.org/glossary/tdd/)
+# Vedi anche:
+
+- [PHPUnit documentazione](https://phpunit.de/manual/6.5/en/index.html)
+- [Codeception documentazione](https://codeception.com/docs/)
+- [Behat documentazione](https://docs.behat.org/en/latest/)

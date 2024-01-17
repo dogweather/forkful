@@ -10,71 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Qu'est-ce que c'est et pourquoi les programmeurs le font-ils? 
+L'affichage des informations de débogage, également appelé "printf debugging" en référence à la fonction printf en C, est une technique couramment utilisée par les programmeurs pour comprendre le comportement d'un programme en affichant du texte ou des valeurs de variables lors de l'exécution du code. Cela peut aider à localiser et à résoudre les erreurs de façon plus efficace.
 
-La mise en place de débogage dans un code peut être un outil extrêmement utile pour les programmeurs. Cela permet de suivre l'exécution du code, d'identifier les erreurs et de résoudre rapidement les bugs. En bref, c'est un moyen efficace pour améliorer la qualité du code et faciliter le processus de débogage.
-
-## Comment faire
-
-Pour imprimer une sortie de débogage dans un code C#, il suffit d'utiliser la méthode `System.Diagnostics.Debug.WriteLine()`. Cette méthode prend en paramètre une expression ou une variable et l'affiche dans la fenêtre de débogage. Voyons un exemple simple :
+## Comment faire: 
+Voici un exemple en utilisant la console de sortie en C# pour afficher du texte et les valeurs de variables :
 
 ```C#
-int num1 = 5;
-int num2 = 10;
-
-System.Diagnostics.Debug.WriteLine($"Le résultat de l'addition est : {num1 + num2}");
+string nom = "Bob";
+int age = 35;
+Console.WriteLine("Bonjour, je m'appelle " + nom);
+Console.WriteLine("J'ai " + age + " ans");
 ```
 
-Lorsque vous exécutez ce code, vous verrez la ligne suivante s'afficher dans la fenêtre de débogage :
-
+La sortie de ce code serait la suivante : 
 ```
-Le résultat de l'addition est : 15
-```
-
-Vous pouvez également utiliser la méthode `System.Diagnostics.Debug.Write()` pour imprimer une sortie sans saut de ligne. Cela peut être utile pour afficher des valeurs dans une boucle, par exemple :
-
-```C#
-for (int i = 0; i < 10; i++)
-{
-    System.Diagnostics.Debug.Write(i + " ");
-}
+Bonjour, je m'appelle Bob
+J'ai 35 ans
 ```
 
-Ce code affichera les nombres de 0 à 9 sur une seule ligne dans la fenêtre de débogage.
+## Plongée en profondeur: 
+Bien que l'affichage des informations de débogage soit souvent considéré comme une technique de débogage rudimentaire, cela reste un outil utile dans certaines situations. Avant l'apparition des debuggers, l'affichage de valeurs de variables était le seul moyen de comprendre le comportement du code. Aujourd'hui, il existe des alternatives plus avancées telles que le débogage pas à pas avec un debugger ou l'utilisation de points d'arrêt. Cependant, afficher des informations de débogage reste une méthode simple et efficace pour comprendre rapidement le fonctionnement d'un programme.
 
-Si vous souhaitez désactiver temporairement l'impression de la sortie de débogage, vous pouvez utiliser la directive de préprocesseur suivante :
-
-```C#
-#define DEBUG
-
-// Votre code ici
-
-#if DEBUG
-System.Diagnostics.Debug.WriteLine("Cette ligne ne sera imprimée que si DEBUG est défini");
-#endif
-```
-
-## Plongée en profondeur
-
-La méthode `System.Diagnostics.Debug.WriteLine()` est très utile, mais elle peut être encore plus efficace si vous combinez son utilisation avec des informations de débogage supplémentaires. Par exemple, vous pouvez inclure le nom de la méthode et le numéro de ligne où le message est imprimé en utilisant la classe `System.Diagnostics.StackTrace`. Cela peut être particulièrement utile lors du débogage de code multi-thread, car vous pouvez savoir exactement quelle ligne de code a déclenché la sortie.
-
-Voici un exemple de code utilisant `System.Diagnostics.StackTrace` :
-
-```C#
-System.Diagnostics.StackTrace stackTrace = new System.Diagnostics.StackTrace(true);
-
-System.Diagnostics.Debug.WriteLine($"Erreur dans la méthode {stackTrace.GetFrame(0).GetMethod().Name} à la ligne {stackTrace.GetFrame(0).GetFileLineNumber()}");
-```
-
-Ce code affichera une sortie comme celle-ci :
-
-```
-Erreur dans la méthode Main à la ligne 10
-```
-
-Vous pouvez également utiliser la classe `System.Diagnostics.Debug` pour créer différents niveaux de débogage, en utilisant les méthodes `WriteIf()` et `Assert()`. Ces méthodes prennent toutes deux un paramètre de condition ou une expression booléenne et n'impriment que si cette condition est vraie. Cela peut vous aider à cibler des parties spécifiques de votre code pour un débogage plus efficace.
-
-## Voir aussi
-
-- [Guide de débogage en C#](https://docs.microsoft.com/fr-fr/visualstudio/debugger/debugger-feature-tour?view=vs-2019)
-- [Utilisation de la méthode WriteLine dans la documentation Microsoft](https://docs.microsoft.com/fr-fr/dotnet/api/system.diagnostics.debug.writeline?view=net-5.0)
+## Voir aussi: 
+Pour en savoir plus sur l'affichage des informations de débogage en C#, vous pouvez consulter la documentation officielle de Microsoft sur la console de sortie : https://docs.microsoft.com/fr-fr/dotnet/standard/io/troubleshoot-debug-console. Vous pouvez également trouver des conseils et astuces sur les techniques de débogage dans le livre "The Pragmatic Programmer" de Andrew Hunt et David Thomas.

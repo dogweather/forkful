@@ -1,7 +1,7 @@
 ---
-title:                "Schreiben auf Standardfehler"
-html_title:           "Go: Schreiben auf Standardfehler"
-simple_title:         "Schreiben auf Standardfehler"
+title:                "Schreiben auf den Standardfehler"
+html_title:           "Go: Schreiben auf den Standardfehler"
+simple_title:         "Schreiben auf den Standardfehler"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Files and I/O"
@@ -10,38 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was & Warum?
+Schreiben auf den Standardfehler ist eine Möglichkeit für Programmierer, Fehlermeldungen oder andere wichtige Informationen auf dem Terminal auszugeben. Dies ist besonders nützlich, wenn das Programm im Hintergrund ausgeführt wird und es keine grafische Benutzeroberfläche gibt. Ebenfalls hilfreich ist diese Methode, um sicherzustellen, dass wichtige Informationen nicht in der Standardausgabe überschrieben werden.
 
-Warum sollte jemand seine Fehlermeldungen in Go-Code an den Standardfehlerausgabestrom schreiben? Nun, das Schreiben an den Standardfehlerausgabestrom ist oft nützlich, um Fehler in der Ausführung eines Programms zu identifizieren, da sie direkt auf dem Bildschirm angezeigt werden und somit schneller erkannt werden können.
-
-## Wie geht das?
-
-Es ist ganz einfach, Fehler an den Standardfehlerausgabestrom in Go zu schreiben. Alles, was du tun musst, ist die "fmt" Bibliothek zu importieren und die Funktion "Fprintf" zu verwenden, die es dir ermöglicht, direkt in den Standardfehlerstrom zu schreiben.
+## Wie geht's?
+Um auf den Standardfehler zu schreiben, kann die Funktion ```Fprintf``` aus der Standardbibliothek "fmt" verwendet werden. Ein einfaches Beispiel dafür sieht folgendermaßen aus:
 
 ```Go
-  import "fmt"
+package main
 
-  func main() {
+import "fmt"
+
+func main() {
     fmt.Fprintf(os.Stderr, "Dies ist eine Fehlermeldung")
-  }
+}
 ```
 
-Die oben genannten Codezeilen werden eine einfache Fehlermeldung auf dem Bildschirm ausgeben. Du kannst jedoch auch zusätzliche Informationen wie Datei- oder Zeilennummern angeben, indem du die Printf-Funktion verwendest und Platzhalter in deinen Fehlermeldungen verwendest.
+Die Ausgabe wird dann auf dem Terminal als "Dies ist eine Fehlermeldung" angezeigt. Wenn Sie in Ihrer Funktion bereits einen Fehlerwert haben, können Sie auch die Funktion ```Fprintln``` verwenden, um eine Fehlermeldung zu generieren. Ein solches Beispiel sieht wie folgt aus:
 
 ```Go
-  import "fmt"
+package main
 
-  func main() {
-    fmt.Fprintf(os.Stderr, "Fehler in Datei %s auf Zeile %d", filename, lineNum)
-  }
+import "fmt"
+
+func main() {
+    if err := doSomething(); err != nil {
+        fmt.Fprintln(os.Stderr, "Fehler:", err)
+    }
+}
 ```
 
-## Tiefer Einblick
+Die Ausgabe würde dann beispielsweise "Fehler: Datei nicht gefunden" sein.
 
-Um einen tieferen Einblick in das Schreiben von Fehlern an den Standardfehlerausgabestrom in Go zu bekommen, solltest du dir die verschiedenen Möglichkeiten ansehen, wie du die Printf-Funktion verwenden kannst. Du kannst zum Beispiel Farbcodes verwenden, um deine Fehlermeldungen hervorzuheben oder benutzerdefinierte Funktionen schreiben, um spezifische Typen von Fehlern zu behandeln. Es gibt unzählige Möglichkeiten, um deine Fehlermeldungen effektiver zu gestalten und somit das Debugging deines Codes zu erleichtern.
+## Tiefer tauchen
+Das Schreiben auf den Standardfehler ist eine gängige Praxis in der Programmierung und wird auch von vielen anderen Sprachen unterstützt. Beispiele dafür sind die Funktionen "console.error" in JavaScript oder "System.err" in Java.
+
+Alternativ zu der Funktion ```Fprintf``` kann auch direkt auf die Variable ```os.Stderr``` zugegriffen werden, um Text auf den Standardfehler zu schreiben.
+
+In der Go-Standardbibliothek gibt es auch die Funktion ```Log``` aus dem Paket "log", die automatisch auf den Standardfehler schreibt. Diese kann jedoch nicht so präzise angepasst werden wie die Funktionen aus dem Paket "fmt".
 
 ## Siehe auch
-
-- [Go Standardbibliothek "fmt"](https://golang.org/pkg/fmt/)
-- [Effektives Debugging in Go](https://medium.com/@nazmulnyc/effective-debugging-in-go-a4bcc59a05a1)
-- [Anzeige von Farben in der Konsolenausgabe mit Go](https://medium.com/swlh/displaying-colors-in-console-output-with-go-e339c07b0c4f)
+[Die offizielle Dokumentation zu "fmt.Fprintf"](https://golang.org/pkg/fmt/)

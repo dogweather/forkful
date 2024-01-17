@@ -10,50 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi créer un fichier temporaire en Python ?
+## Quoi & Pourquoi?
+Créer un fichier temporaire est une pratique courante en programmation Python. Les programmeurs le font pour stocker temporairement des données ou des fichiers qui ne seront pas nécessaires après leur utilisation.
 
-Créer un fichier temporaire en Python peut être utile lorsqu'on a besoin d'utiliser des données temporaires dans un programme. Cela permet notamment de stocker des informations de manière temporaire sans avoir à créer un nouveau fichier ou à écraser un fichier existant.
-
-## Comment faire pour créer un fichier temporaire en Python ?
-
+## Comment faire:
 ```Python
-# Importer le module "tempfile"
 import tempfile
 
-# Créer un fichier temporaire en utilisant la méthode ".TemporaryFile()"
-mon_fichier_temp = tempfile.TemporaryFile()
-
-# Écrire du contenu dans le fichier temporaire
-mon_fichier_temp.write(b"Voici un exemple de fichier temporaire en Python.")
-
-# Déplacer le curseur au début du fichier
-mon_fichier_temp.seek(0)
-
-# Lire le contenu du fichier
-contenu = mon_fichier_temp.read()
-
-# Afficher le résultat
-print(contenu)
-
-# Fermer le fichier temporaire
-mon_fichier_temp.close()
+with tempfile.TemporaryFile() as tmp:
+    # écrire des données dans le fichier temporaire
+    tmp.write(b"Ceci est un exemple de données à écrire dans le fichier temporaire")
+    # lire les données écrites
+    tmp.seek(0)
+    data = tmp.read()
+    # afficher les données
+    print(data)
 ```
+Output: `b"Ceci est un exemple de données à écrire dans le fichier temporaire"`
 
-**Résultat :**
+## Plongée en profondeur:
+Les fichiers temporaires ont été introduits pour la première fois dans Python 2.3 avec le module "tempfile", qui permet de créer des fichiers temporaires sur le système de fichiers. Il existe également d'autres alternatives pour stocker temporairement des données en mémoire, comme par exemple les objets StringIO. L'implémentation de la suppression automatique du fichier temporaire est assurée par le gestionnaire de contexte "with" en Python.
 
-```
-b'Voici un exemple de fichier temporaire en Python.'
-```
-
-## Plongeons plus en profondeur
-
-Le module "tempfile" propose différentes méthodes pour créer des fichiers temporaires en Python, en fonction de nos besoins. Par exemple, la méthode ".NamedTemporaryFile()" permet de créer un fichier temporaire avec un nom spécifique, tandis que la méthode ".SpooledTemporaryFile()" permet de stocker le contenu en mémoire plutôt que dans un fichier physique sur le disque.
-
-Il est également possible de spécifier le mode d'ouverture du fichier temporaire (lecture, écriture, ajout), ainsi que d'autres options telles que le préfixe et le suffixe du nom du fichier.
-
-Pour en savoir plus sur les différentes possibilités offertes par le module "tempfile", vous pouvez consulter la documentation officielle : https://docs.python.org/fr/3/library/tempfile.html
-
-## Voir aussi
-
-- Documentation officielle sur le module "tempfile" en Python : https://docs.python.org/fr/3/library/tempfile.html
-- Tutoriel sur la création de fichiers temporaires en Python : https://www.tutorialspoint.com/python/temporary_file.htm
+## Voir aussi:
+- [Documentation officielle de Python pour créer des fichiers temporaires](https://docs.python.org/fr/3/library/tempfile.html)
+- [Autres alternatives pour stocker des données en mémoire en Python](https://docs.python.org/fr/3/library/io.html)

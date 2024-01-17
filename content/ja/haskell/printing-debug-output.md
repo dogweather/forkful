@@ -1,7 +1,7 @@
 ---
-title:                "デバッグ出力の印刷"
-html_title:           "Haskell: デバッグ出力の印刷"
-simple_title:         "デバッグ出力の印刷"
+title:                "「デバッグ出力の印刷」"
+html_title:           "Haskell: 「デバッグ出力の印刷」"
+simple_title:         "「デバッグ出力の印刷」"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Testing and Debugging"
@@ -10,56 +10,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜプログラマーがデバッグ用の出力を表示するのか
+## 何？それが何であり、プログラマーがなぜそれをするのか
 
-デバッグ用の出力を表示することで、プログラムの実行中に起きていることを確認しやすくなります。特に複雑なプログラムや不具合が起きた際に、どの部分が原因かを特定するのに役立ちます。
+デバッグ出力のプリントとは、プログラムの実行中に発生した情報やエラーメッセージをコンソールやファイルに出力することを指します。プログラマーはこの出力を使用して、プログラムの実行中に何が起こっているかを把握し、問題を特定して修正することができます。
 
-## 方法
+## 方法：
 
-デバッグ用の出力を表示するための基本的な方法は、`putStrLn`関数を使うことです。以下の例を参考にしてください。
+Haskellでは、 ```print```関数を使用してデバッグ出力をプリントすることができます。
 
-```Haskell
-main :: IO ()
-main = do
-    putStrLn "Start of program" -- プログラムの開始を表示
-    -- プログラムの実行中に変数の値を表示
-    let number = 5
-    putStrLn $ "Number is " ++ show number
-```
-実行結果は以下のようになります。
-```
-Start of program
-Number is 5
-```
-変数の値を表示する際には、`show`関数を使う必要があります。
-
-より複雑なデバッグをする場合には、`Debug.Trace`モジュールを使うことができます。以下の例を参考にしてください。
+例：
 
 ```Haskell
-import Debug.Trace (trace)
+num1 :: Int
+num1 = 5
 
-myFunction :: Int -> Int
-myFunction x = trace ("myFunction called with " ++ show x) (x + 1)
+num2 :: Int
+num2 = 10
 
-main :: IO ()
-main = do
-    let result = myFunction 5
-    putStrLn $ "Result is " ++ show result
+print (num1 + num2)
 ```
 
-実行結果は以下のようになります。
+出力：
+```Haskell
+15
 ```
-myFunction called with 5
-Result is 6
+
+また、特定の条件でのみ出力するように制御することもできます。例えば、特定の変数の値がある値よりも大きい場合にのみ出力するようにするには、以下のようにします。
+
+```Haskell
+num :: Int
+num = 20
+
+if num > 10
+  then print "Num is bigger than 10"
+  else print "Num is smaller than or equal to 10"
 ```
-`trace`関数は第一引数の文字列を表示し、第二引数の値をそのまま返します。これで、関数のどの部分が呼び出されたかを確認することができます。
 
-## 深堀り
+出力：
+```Haskell
+ "Num is bigger than 10"
+```
 
-デバッグ用の出力を表示する際には、`Debug.Trace`モジュールを使うことをおすすめします。このモジュールには、`trace`関数の他にも`traceShow`や`traceId`などの便利な関数が用意されています。さらに、Haskellでは`Debug.Trace`の他にもデバッグ用のライブラリがたくさんありますので、用途に合わせて選んでください。
+## 詳細：
 
+デバッグ出力は、プログラミング言語の歴史が古い時代から使用されてきました。初期のプログラミング言語では、コンソールに直接メッセージを出力することが一般的でしたが、近年ではファイルに出力することも可能になりました。
 
-## 関連リンク
+Haskell以外にも、他のプログラミング言語でも同様のデバッグ出力機能が利用できます。例えば、Pythonでは ```print```関数を使用して出力することができます。
 
-- [Haskellでのデバッグ用の出力](https://www.stackage.org/package/base/docs/System-IO.html#v:putStrLn)
-- [デバッグ用のライブラリ一覧](https://github.com/mrkkrp/awesome-haskell-debugging)
+デバッグ出力の実装は、基本的にはプログラミング言語の標準ライブラリに含まれていますが、コンソールやファイルに出力する方法はプログラミング言語ごとに異なります。
+
+## 関連リンク：
+
+- [Haskellの公式ドキュメント](https://www.haskell.org/documentation/)
+- [Pythonの公式ドキュメント](https://www.python.org/doc/)
+- [プログラミング入門サイト「ドットインストール」のPython講座](https://dotinstall.com/lessons/basic_python_v2)

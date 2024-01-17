@@ -10,67 +10,67 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi?
+Ymmärrä kahden päivämäärän vertailu Arduino-ohjelmoinnissa
 
-On monia käytännön tilanteita, joissa on tarpeen vertailla kahta eri päivämäärää. Yleisimmin tämä tehdään esimerkiksi ohjelmoidessa automatisoituja järjestelmiä, jotka käyttävät päivämääriä tärkeiden tapahtumien ja muiden tietojen vertailuun.
+## Mitä ja miksi?
 
-## Miten?
+Kahden päivämäärän vertailu on prosessi, jossa verrataan kahta päivämäärää ja selvitetään, kumpi niistä on suurempi tai pienempi. Tämä on tärkeää ohjelmoijille, jotka tarvitsevat tapoja hallita päivämäärätietoja ja tehdä päätöksiä niiden perusteella.
 
-Vertaillessa kahta päivämäärää, on tärkeää muistaa, että päivämäärät tallennetaan Arduinoon joko kokonaislukuina tai merkkijonoina. Jos päivämäärät ovat merkkijonoja, ne täytyy ensin muuntaa kokonaisluvuiksi ennen vertailua. Esimerkiksi:
+## Miten:
+
+Seuraavassa on kaksi esimerkkikoodia vertailemaan kahta päivämäärää ja tulostamaan tulos:
+
+Arduino-koodiesimerkki 1:
 
 ```Arduino
-// Tallennetaan päivämäärät merkkijonoina
-String date1 = "2021-05-01";
-String date2 = "2021-05-10";
+int date1 = 20210805; // ensimmäinen päivämäärä muodossa vuosi, kuukausi, päivä
+int date2 = 20210810; // toinen päivämäärä muodossa vuosi, kuukausi, päivä
 
-// Muunnetaan merkkijonot kokonaisluvuiksi
-int date1_int = atoi(date1.c_str());
-int date2_int = atoi(date2.c_str());
-
-// Vertaillaan päivämääriä
-if (date1_int < date2_int) {
-  Serial.println("Ensimmäinen päivämäärä on aiempi!");
-} else if (date1_int > date2_int) {
-  Serial.println("Toinen päivämäärä on aiempi!");
-} else {
+if (date1 < date2) { // tarkistetaan, onko date1 pienempi kuin date   
+  Serial.println("Ensimmäinen päivämäärä on pienempi kuin toinen päivämäärä!");
+} else if (date1 == date2) { // tarkistetaan, ovatko päivämäärät samat
   Serial.println("Päivämäärät ovat samat!");
+} else { // jos edelläolevat ehdot eivät täyty, date1 on suurempi kuin date2
+  Serial.println("Ensimmäinen päivämäärä on suurempi kuin toinen päivämäärä!");
 }
 ```
 
-**Tulostus:**
+Tulostus:
+
 ```
-Ensimmäinen päivämäärä on aiempi!
+Päivämäärät ovat samat!
 ```
 
-Kokonaislukumuodossa olevia päivämääriä voidaan vertailla suoraan käyttämällä matemaattisia operaattoreita, kuten esimerkiksi:
+Arduino-koodiesimerkki 2:
 
 ```Arduino
-// Tallennetaan päivämäärät kokonaislukuina
-int date1 = 20210501;
-int date2 = 20210510;
+String date1 = "2021-08-05"; // ensimmäinen päivämäärä merkkijonona
+String date2 = "2021-08-10"; // toinen päivämäärä merkkijonona
 
-// Vertaillaan päivämääriä
-if (date1 < date2) {
-  Serial.println("Ensimmäinen päivämäärä on aiempi!");
-} else if (date1 > date2) {
-  Serial.println("Toinen päivämäärä on aiempi!");
-} else {
+if (date1 < date2) { // tarkistetaan, onko date1 pienempi kuin date2
+  Serial.println("Ensimmäinen päivämäärä on pienempi kuin toinen päivämäärä!");
+} else if (date1 == date2) { // tarkistetaan, ovatko päivämäärät samat
   Serial.println("Päivämäärät ovat samat!");
+} else { // jos edelläolevat ehdot eivät täyty, date1 on suurempi kuin date2
+  Serial.println("Ensimmäinen päivämäärä on suurempi kuin toinen päivämäärä!");
 }
 ```
 
-**Tulostus:**
+Tulostus:
+
 ```
-Ensimmäinen päivämäärä on aiempi!
+Ensimmäinen päivämäärä on pienempi kuin toinen päivämäärä!
 ```
 
-## Syvemmälle
+## Syvemmälle:
 
-Päivämäärävertailuun liittyy muutamia tärkeitä seikkoja, joita kannattaa pitää mielessä. Ensinnäkin, päivämäärät tallennetaan tavallisesti päiväysjärjestelmään, eli allekirjoitusnumero muuttuu päivämäärän kasvaessa. Tästä syystä esimerkiksi vuosi 2021 tarkoittaa kokonaislukua 2021 ja maaliskuun kolmattakymmenettä ensimmäistä päivää kokonaislukua 20210330. Tämä tulee ottaa huomioon päivämäärien vertailussa.
+Päivämäärän vertailu on ollut tärkeä osa ohjelmointia jo pitkään ja sitä on käytetty monilla eri ohjelmointikielillä. Arduino-kirjastot, kuten "Time" ja "RTCLib", tarjoavat valmiita toimintoja päivämäärien vertailuun.
 
-Toiseksi, jos päivämäärät ovat tallennettuina merkkijonoina, tulee niiden olla samassa muodossa vertailua varten. Esimerkiksi kirjoitettaessa päivämääriä järjestelmään, jossa päivä ja kuukausi ovat eroteltu välilyönnillä, tulee muuttaa myös vertailtavat päivämäärät samanlaiseen muotoon.
+On myös olemassa muita tapoja vertailla päivämääriä, kuten käyttämällä Unix-timestamp-työkalua tai muuntamalla päivämäärät kokonaislukumuotoon ja vertailemalla niitä.
 
-## Katso myös
+Päivämäärien vertailuun voi vaikuttaa myös aikavyöhykkeet ja kesäaika, jotka on huomioitava vertaillessa päivämääriä.
 
-- [Arduino Reference - atoi()](https://www.arduino.cc/reference/en/language/functions/conversion/atoi/)
-- [C++ Reference - c_str()](https://www.cplusplus.com/reference/string/string/c_str/)
+## Katso myös:
+
+1. [Time - Arduino-kirjasto päivämäärien hallintaan] (https://www.arduino.cc/en/reference/time)
+2. [RTCLib - Arduinon kirjasto RTC piirien käyttöön] (https://www.arduino.cc/en/reference/rtclib)

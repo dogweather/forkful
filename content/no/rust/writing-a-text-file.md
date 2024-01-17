@@ -1,7 +1,7 @@
 ---
-title:                "Skriving av en tekstfil"
-html_title:           "Rust: Skriving av en tekstfil"
-simple_title:         "Skriving av en tekstfil"
+title:                "Å skrive en tekstfil"
+html_title:           "Rust: Å skrive en tekstfil"
+simple_title:         "Å skrive en tekstfil"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Files and I/O"
@@ -10,37 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hva & Hvorfor? 
+Å skrive en tekstfil er å lage en fil som inneholder tekst, som kan leses av en datamaskin. Programmere gjør dette for å lagre informasjon som kan brukes senere, enten for å lagre data eller for å lese og manipulere informasjonen.
 
-Hvorfor skulle du bry deg med å skrive en tekstfil i Rust? Svaret er enkelt: for å lagre og organisere data på en strukturert måte som kan brukes av datamaskinen din. Enten det er et enkelt notat eller et komplekst dataprogram, å kunne skrive til en tekstfil er en viktig ferdighet for enhver programmerer.
-
-## Slik
-
-Skrive til en tekstfil i Rust er enkelt og rett frem. Først må du inkludere "std" biblioteket ved å skrive `use std::fs::File;` øverst i koden din. Deretter kan du bruke `File::create` funksjonen til å opprette en ny tekstfil og få en `File`-objekt som representerer filen. Her er et eksempel på å skrive tekst inn i filen:
+## Hvordan:
+I Rust, kan du enkelt skrive en tekstfil ved å bruke standard biblioteket "std::fs". Først, importer biblioteket ved å legge til linjen "use std::fs;" øverst i filen. Deretter kan du bruke funksjonen "write" for å skrive tekst til en fil, som vist i følgende eksempel:
 
 ```Rust
-use std::fs::File;
+use std::fs;
 
-let mut file = File::create("min_fil.txt")?; // Oppretter en fil med navnet "min_fil.txt"
-file.write_all(b"Hei, verden!")?; // Skriver til filen
+fn main() {
+    let mut file = fs::File::create("tekstfil.txt") // lager en ny fil
+        .expect("Kunne ikke lage fil"); // håndterer feil
+    file.write(b"Tekst som skal skrives til filen") // skriver tekst ved å konvertere det til bytes
+        .expect("Kunne ikke skrive til fil"); // håndterer feil
+}
 ```
 
-Dette vil skrive teksten "Hei, verden!" til tekstfilen "min_fil.txt". Legg merke til `?` etter funksjonene. Dette er Rusts måte å håndtere eventuelle feil på. Du kan også bruke `writeln!` makroen for å skrive til filen og legge til linjeskift automatisk:
+Dette vil lage en ny fil med navnet "tekstfil.txt" og skrive teksten "Tekst som skal skrives til filen" til den. Du kan også legge til forskjellige tekstformateringsfunksjoner hvis du ønsker det.
 
-```Rust
-use std::fs::File;
-use std::io::Write; // Trenger for å bruke writeln! makroen
+## Dypdykk:
+Skriving av tekstfiler har vært en viktig del av programmering siden starten av databehandling. Det finnes også alternative metoder for å lagre informasjon, som for eksempel å lagre data i en database. I Rust, er skriving av tekstfiler implementert ved hjelp av standard biblioteket "std::fs", som gjør det enkelt og effektivt.
 
-let mut file = File::create("min_fil.txt")?;
-writeln!(file, "Dette er en linje")?; // Skriver "Dette er en linje" og legger til linjeskift
-```
-
-## Dypdykk
-
-Det er flere detaljer du kan lære for å utvide dine ferdigheter i å skrive til en tekstfil i Rust. En av dem er å åpne en eksisterende tekstfil og lese data fra den. Du kan også bruke forskjellige formateringsmakroer som `format!` og `println!` for å formatere data før du skriver dem til filen. Det er også nyttig å lære mer om håndtering av feil og unntak når du arbeider med filer.
-
-## Se også
-
-- [Rust Dokumentasjon om filer](https://doc.rust-lang.org/std/fs/index.html)
-- [Rust Tutorial: File I/O](https://www.tutorialspoint.com/rust/rust_file_io.htm)
-- [Rust Book - Kapittel 12: Anor de konsert](https://doc.rust-lang.org/book/ch12-00-an-io-project.html)
+## Se også:
+For mer informasjon om å skrive tekstfiler i Rust, kan du sjekke ut Rusts offisielle dokumentasjon på det standard biblioteket "std::fs":
+https://doc.rust-lang.org/std/fs/

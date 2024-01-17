@@ -1,7 +1,7 @@
 ---
-title:                "Html को खोजना"
-html_title:           "C++: Html को खोजना"
-simple_title:         "Html को खोजना"
+title:                "पार्सिंग HTML"
+html_title:           "C++: पार्सिंग HTML"
+simple_title:         "पार्सिंग HTML"
 programming_language: "C++"
 category:             "C++"
 tag:                  "HTML and the Web"
@@ -10,51 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Kyun
-HTML parshing se kya matlab hai aur isse kyu hume lena chahiye?
+## क्या और क्यों?
 
-Parsing HTML, yaani web pages ko analyze karna, bahut zaroori hai kyun ki internet par har information aur content HTML format mein hota hai. Agar hum APIs, web scraping ya data extraction ka use karna chahte hai, toh hame HTML code ko parse karna padega. 
+पार्सिंग HTML क्या है, और इसे क्यों प्रोग्रामर्स करते हैं? पार्सिंग HTML का मतलब है कि आप किसी वेब पेज को ब्राउज़र में देखने के लिए इस्तेमाल होने वाले HTML कोड को समझ रहे हैं। प्रोग्रामर्स इसे करते हैं क्योंकि वे वेब डेवलपमेंट, डेटा स्क्रैपिंग, और डेटा व्यवस्थापन से जुड़ी कई चुनौतियों को हल कर सकते हैं।
 
-## Kaise Karein
+## कैसे करें:
+
 ```C++
-// Sabse pehle, hum HTML ko parse karne ke liye "HTMLParser" library ko include karenge
-#include <HTMLParser.h>
+#include <iostream>
+#include <string>
+#include <algorithm>
 
-// Phir, hum ek instance banayenge "HTMLParser" class ka
-HTMLParser parser;
+using namespace std;
 
-// Ab hum input HTML code ko string ke roop mein store karenge
-string html = "<html><body><div><h1>Hello World!</h1></div></body></html>";
+int main() {
+  // HTML के कोड को string में स्टोर करें
+  string html = "<p>Hello, world!</p>";
 
-// Next, hum "parse" function ka use karke HTML code ko parse karenge
-parser.parse(html);
+  // string में से टैग हटाएं
+  html.erase(remove(html.begin(), html.end(), '<'), html.end());
+  html.erase(remove(html.begin(), html.end(), '>'), html.end());
 
-// Ab, hum apni HTML code se specific elements ko extract kar sakte hai
-string title = parser.getElement("h1"); // Output: Hello World!
+  // शब्दों को अलग अलग चिह्नों पर स्प्लिट करें
+  vector<string> words;
+  stringstream ss(html);
+  string word;
+  while (ss >> word) {
+    words.push_back(word);
+  }
 
-// Iske alawa, hum attributes bhi extract kar sakte hai, jaise ki:
-string titleClass = parser.getElementAttribute("h1", "class"); // Output: None
+  // output: Hello, world!
+  cout << words[1] << " " << words[2] << " " << words[3];
 
-// Yeh sirf ek basic example hai, aur HTMLParser library ke aur bhi functions hai jo hume HTML parsing mein madad karte hai. Aap inki documentation check kar sakte hai.
-
-// Ek aur tareeka hai html parsing ka, jo ki "Regular Expressions" ka use karta hai
-// Hum <title> tag ko extract karne ke liye yeh regex ka use karenge:
-regex titleRegex("<title>(.*?)</title>");
-
-// Phir, hum apni HTML code ke saath yeh regex use karenge:
-smatch matches;
-regex_search(html, matches, titleRegex);
-
-// Ab, hum title ko output karenge:
-cout << matches.str(1) << endl; // Output: Hello World!
-
+  return 0;
+}
 ```
 
-## Gehrayi Mein Jao
-HTML parsing ek intricate process ho sakta hai, kyun ki HTML code bahut sare tags, attributes aur nested elements ka combination hota hai. Kuch important libraries aur tools jo HTML parsing mein useful kaam karte hai, woh hai BeautifulSoup aur XPATH. Inme se BeautifulSoup ek powerful HTML parsing library hai jo Python mein available hai. Iske alawa, Chrome ya Firefox ke developer tools bhi useful hai HTML parsing ke liye.
+## गहराई में जाएं:
 
-## Dekho Bhi
-- HTMLParser library: https://github.com/mozilla/HTMLParser
-- BeautifulSoup library: https://www.crummy.com/software/BeautifulSoup/
-- XPATH: https://www.w3schools.com/xml/xpath_intro.asp
-- Web scraping tutorial: https://realpython.com/beautiful-soup-web-scraper-python/
+1. इतिहासिक पृष्ठभूमि: HTML के साथ पार्सिंग का शुरुआती रूप से चन्द तरीकों का उल्लेख है, जैसे SGML और XML
+2. वैकल्पिक तरीके: कुछ प्रोग्रामर्स दूसरी भाषाओं का उपयोग करके HTML को पार्स करते हैं, जैसे Python के लिए BeautifulSoup और Java के लिए Jsoup
+3. प्रयोग करने की स्थिति: इस अनुप्रयोग को में बहुत से तरीके हो सकते हैं, जैसे कि कैसे बिजली का संचार करें, या अपने स्क्रिप्ट से कुछ डेटा स्क्रैप करें
+
+## जाने के लिए:
+
+- [MDN - HTML introduction](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML)
+- [W3Schools - HTML tutorial](https://www.w3schools.com/html/default.asp)
+- [Codecademy - HTML course](https://www.codecademy.com/learn/learn-html)

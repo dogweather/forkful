@@ -10,72 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
+## 什么是日期比较？为什么程序员需要它？
 
-当我们需要比较两个日期时，我们可能会用到一些比较操作符，比如大于、小于和等于。这有助于我们在程序中判断某个日期是在另一个日期之前还是之后。
+日期比较是指在编程中比较两个日期的过程。程序员经常需要比较两个日期来确定它们是否相等或者哪个日期更早或更晚。
 
-## 如何
-
-比较两个日期可以通过使用以下方法来实现：
+## 如何进行日期比较：
 
 ```C
-// 引入 <stdio.h> 头文件
 #include <stdio.h>
+#include <time.h>
 
-// 定义函数来比较日期
-int compareDate(int year1, int month1, int day1, int year2, int month2, int day2) {
+int main()
+{
+    // 创建两个时间结构体，分别表示要比较的日期
+    struct tm date1 = { .tm_year = 2021, .tm_mon = 4, .tm_mday = 11 };
+    struct tm date2 = { .tm_year = 2021, .tm_mon = 4, .tm_mday = 10 };
 
-    // 若第一个日期在第二个日期之前，则返回 -1
-    if (year1 < year2) {
-        return -1;
+    // 使用difftime函数来比较两个日期的差异
+    double difference = difftime(mktime(&date1), mktime(&date2));
+
+    // 打印日期1是否晚于日期2
+    if (difference > 0) {
+        printf("日期1晚于日期2");
+    } else if (difference < 0) {
+        printf("日期1早于日期2");
+    } else {
+        printf("日期1和日期2相等");
     }
-    else if (year1 == year2 && month1 < month2) {
-        return -1;
-    }
-    else if (year1 == year2 && month1 == month2 && day1 < day2) {
-        return -1;
-    }
-
-    // 若第一个日期与第二个日期相等，则返回 0
-    else if (year1 == year2 && month1 == month2 && day1 == day2) {
-        return 0;
-    }
-
-    // 若第一个日期在第二个日期之后，则返回 1
-    else {
-        return 1;
-    }
-}
-
-// 调用函数，并打印输出
-int main(void) {
-    int year1 = 2020;
-    int month1 = 4;
-    int day1 = 30;
-    int year2 = 2021;
-    int month2 = 2;
-    int day2 = 14;
-
-    int result = compareDate(year1, month1, day1, year2, month2, day2);
-
-    printf("结果为：%d", result);
 
     return 0;
 }
 ```
 
-以上代码的输出结果为：1，表示第一个日期在第二个日期之后。
+输出:
 
-## 深入了解
+```C
+日期1早于日期2
+```
 
-日期的比较涉及到对年份、月份和日期的比较，需要注意的是在比较月份和日期时，要考虑到不同月份的天数和闰年的情况。比如，在比较 2020 年 2 月 14 日和 2021 年 2 月 14 日时，若只简单地比较月份和日期，则会得出两个相等的日期，但实际上它们是不同的日期。
+## 深入了解：
 
-## 参考链接
+日期比较在编程中扮演着重要的角色。在早期，计算机系统并没有内置日期比较功能，程序员们不得不使用其它方法来实现日期比较。现在，可以使用C语言中的time.h头文件来轻松地比较日期。除了difftime函数，也可以使用比较运算符（如>、<、==）来比较两个日期。此外，还有一些库可以更方便地处理日期和时间，如Boost库和C++中的chrono库。
 
-- [C 语言教程](https://www.runoob.com/cprogramming/c-tutorial.html)
-- [日期比较函数](https://www.tutorialspoint.com/c_standard_library/c_function_difftime.htm)
-- [C 语言比较操作符](https://www.geeksforgeeks.org/relational-operators-in-c-c/)
+## 参考链接：
 
-## 参见
-
-- [C语言比较字符串](https://github.com/example/c_compare_strings)
+- [time.h指南](https://www.tutorialspoint.com/c_standard_library/time_h.htm)
+- [Boost.Date_Time库](https://www.boost.org/doc/libs/1_37_0/doc/html/date_time.html)
+- [C++标准库chrono](https://en.cppreference.com/w/cpp/chrono)

@@ -1,7 +1,7 @@
 ---
-title:                "Estrazione di sottostringhe"
-html_title:           "TypeScript: Estrazione di sottostringhe"
-simple_title:         "Estrazione di sottostringhe"
+title:                "Estrarre sottostringhe"
+html_title:           "TypeScript: Estrarre sottostringhe"
+simple_title:         "Estrarre sottostringhe"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -10,48 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché estrarre sottostringhe?
+## Che cos'è e perché?
 
-Se hai familiarità con la programmazione, probabilmente hai incontrato situazioni in cui era necessario estrarre una parte di una stringa più lunga. Ciò può essere dovuto alla necessità di manipolare o analizzare i dati in modo più efficiente. In TypeScript, ci sono diverse opzioni per estrarre sottostringhe e in questo articolo esploreremo come farlo in modo semplice ed efficace.
+Il processo di estrarre sottostringhe (o "substring") è una pratica comune tra i programmatori. Si tratta di prelevare una sottostringa più piccola da una stringa più grande, in base a criteri specifici. Ad esempio, potresti voler estrarre solo i primi 5 caratteri di una parola.
 
-## Come fare
+In generale, gli sviluppatori utilizzano la tecnica delle sottostringhe per poter manipolare le stringhe in modo più flessibile e preciso, adattandole alle proprie esigenze.
 
-Estrarre sottostringhe in TypeScript è un processo relativamente semplice e può essere fatto utilizzando il metodo `.slice()` oppure tramite l'utilizzo delle espressioni regolari. Vediamo alcuni esempi pratici di entrambi i metodi utilizzando la seguente stringa di esempio:
+## Come:
 
-```TypeScript
-const stringa = "Questo è un esempio di stringa";
-```
-
-### Metodo slice()
-Il metodo `.slice()` permette di estrarre una sezione specifica di una stringa sulla base degli indici di inizio e fine. Questi indici devono essere passati come argomenti nel seguente modo: `.slice(indiceInizio, indiceFine)`. Vale la pena notare che il carattere corrispondente all'indice finale non viene incluso nell'estrazione della sottostringa. Vediamo un esempio:
+Di seguito ci sono alcuni esempi di come estrarre sottostringhe in TypeScript:
 
 ```TypeScript
-console.log(stringa.slice(6,8)); // output: è
+let str = 'Benvenuti!';
+let subs = str.substring(0, 5); // estrae i primi 5 caratteri
+console.log(subs); // output: Benve
 ```
-
-### Espressioni regolari
-Un'altra opzione per estrarre sottostringhe in TypeScript è l'utilizzo delle espressioni regolari. Questo metodo offre una maggiore flessibilità in termini di criteri di ricerca. Vediamo un esempio di come utilizzare l'espressione regolare per estrarre la parola "esempio" dalla nostra stringa di esempio:
+```TypeScript
+let str = '123456';
+let subs = str.substr(-3); // estrae gli ultimi 3 caratteri
+console.log(subs); // output: 456
+```
 
 ```TypeScript
-const esempio = stringa.match(/esempio/g); 
-console.log(esempio); // output: [ 'esempio' ]
+let str = 'Buon compleanno';
+let subs = str.slice(4, 13); // estrae i caratteri dalla posizione 4 alla 12
+console.log(subs); // output: compleanno
 ```
 
-Come puoi vedere, in questo caso è stata creata una variabile `esempio` che contiene l'array delle corrispondenze trovate tramite l'espressione regolare. Se volessimo estrarre una sottostringa specifica da questa corrispondenza, possiamo utilizzare il metodo `.slice()` come nell'esempio precedente.
+Oltre alle funzioni `substring()`, `substr()` e `slice()`, TypeScript offre anche il metodo `charAt()` che permette di estrarre un singolo carattere da una stringa in base alla sua posizione.
 
-## Deep Dive
+## Approfondimento:
 
-Per coloro che sono interessati a conoscere più approfonditamente il funzionamento delle espressioni regolari, TypeScript offre la possibilità di utilizzare l'operatore `[]` per specificare un gruppo di caratteri da cercare. Ad esempio, possiamo creare un'espressione regolare per estrarre tutte le vocali dalla nostra stringa di esempio:
+L'operazione di estrarre sottostringhe ha radici nelle prime versioni di linguaggi di programmazione come il Fortran e il Cobol. In quei tempi, le stringhe erano trattate come array di caratteri e per accedere a una parte specifica si usavano tecniche di indicizzazione simili a quelle utilizzate oggi con le sottostringhe.
 
-```TypeScript
-const vocali = stringa.match(/[aeiou]/g); 
-console.log(vocali); // output: ['i', 'a', 'i', 'e', 'e', 'o', 'a', 'i', 'a', 'a']
-```
+Un'alternativa alla tecnica delle sottostringhe è l'utilizzo di espressioni regolari, che permettono di manipolare le stringhe utilizzando pattern di ricerca e sostituzione.
 
-Come puoi vedere, l'operatore `[]` consente di specificare un gruppo di caratteri o intervalli di caratteri da cercare all'interno della stringa. Se vuoi saperne di più sulle espressioni regolari, ti consiglio di consultare la documentazione ufficiale di TypeScript.
+Per quanto riguarda l'implementazione in TypeScript, le funzioni `substring()`, `substr()` e `slice()` si comportano in modo simile alle loro controparti in JavaScript, con alcune differenze riguardo ai valori di input.
 
-## See Also
+## Vedi anche:
 
-- Documentazione ufficiale di TypeScript su espressioni regolari: https://www.typescriptlang.org/docs/handbook/declarations-regex.html
-- Altro articolo su come estrarre sottostringhe in TypeScript: https://www.tutorialsteacher.com/typescript/typescript-string
-- Articolo su come utilizzare il metodo `.slice()` in TypeScript: https://www.javatpoint.com/typescript-string-slice
+- La documentazione ufficiale di TypeScript: https://www.typescriptlang.org/docs/
+- Una guida dettagliata all'utilizzo delle sottostringhe in TypeScript: https://www.tutorialspoint.com/typescript/typescript_strings.htm
+- Un confronto tra le funzioni di manipolazione delle stringhe in TypeScript: https://www.javascripttuts.com/typescript-string-functions/

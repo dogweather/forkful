@@ -10,51 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+## O que e para que serve?
 
-Se você é novo no mundo da programação ou já está envolvido em desenvolvimento há algum tempo, é provável que já tenha ouvido falar sobre a importância de escrever testes. Mas por que se preocupar em escrever testes para o seu código? A resposta é simples: testes são essenciais para garantir que o seu código funcione corretamente e evita possíveis erros e bugs no futuro. Além disso, escrever testes pode ajudar a melhorar a qualidade do seu código e a facilitar a manutenção no longo prazo.
+Escrever testes em programação é uma técnica utilizada pelos programadores para garantir que o código que estão desenvolvendo está funcionando corretamente. Esses testes são pequenos programas criados para verificar se o código produz os resultados esperados e identificar possíveis erros.
 
-## Como fazer
+Muitas vezes, os programadores escrevem testes antes mesmo de iniciar a escrita do código em si, pois isso ajuda a definir melhor o propósito do código e quais resultados ele deve produzir.
 
-Escrever testes não é uma tarefa difícil, mas requer um pouco de prática e conhecimento básico de como o Bash funciona. Aqui estão alguns passos para ajudá-lo a começar a escrever testes eficientes em Bash.
+## Como fazer:
 
-Primeiro, é importante identificar qual parte do seu código precisa de testes. Em outras palavras, quais são as funções, comandos ou trechos de código mais críticos que precisam ser testados? Uma vez identificado isso, você pode começar a escrever testes específicos para essas partes do seu código.
-
-Aqui está um exemplo de como escrever um teste simples para uma função em Bash que soma dois números:
+Para escrever testes em Bash, você pode utilizar o comando `assert` seguido de um comando ou expressão ao qual você quer testar. Por exemplo:
 
 ```Bash
-#!/bin/bash
-
-# Definindo uma função que soma dois números
-sum() {
-  local result=$(( $1 + $2 ))
-  echo "Resultado: $result"
-}
-
-# Teste: soma de dois números positivos
-sum_result=$(sum 5 10)
-if [ "$sum_result" != "Resultado: 15" ]; then
-  echo "Teste falhou: soma de 5 e 10 não produziu o resultado esperado!"
-  exit 1
-fi
-echo "Teste passou: soma de 5 e 10 produziu o resultado esperado."
+assert 5 -gt 3
 ```
 
-Neste exemplo, criamos uma função chamada `sum` que recebe dois parâmetros e soma os valores, e em seguida verificamos se o resultado está correto utilizando um teste simples. Se o resultado não for o esperado, o teste falha e encerra o script com status de saída 1. Caso contrário, o teste é considerado bem sucedido e o script continua sua execução normalmente.
+Este comando verifica se o número 5 é maior que 3 e retorna um código de saída `0` caso o teste seja bem sucedido. Caso contrário, o código de saída será diferente de `0`, indicando que o teste falhou.
 
-## Profundidade
+## Mergulho profundo:
 
-Aqui estão algumas dicas adicionais para escrever testes em Bash:
+A prática de escrever testes não é exclusiva do Bash, mas sim uma técnica adotada por programadores em diversas linguagens de programação. Ela se originou no movimento de desenvolvimento de software chamado "Programação Extrema" (XP), que preza por agilidade e qualidade no processo de desenvolvimento.
 
-- Utilize o comando `set -e` no início do seu script para garantir que ele sai imediatamente se algum comando falhar. Isso ajuda a prevenir problemas futuros no seu código.
-- Uma alternativa para o comando `set -e` é usar `set -u`, que sai imediatamente se alguma variável não estiver definida. Isto pode ser útil para evitar erros relacionados a variáveis não inicializadas.
-- Ao escrever um teste, é importante também testar casos de uso inválidos e limites. Isso garante que o seu código seja robusto e capaz de lidar com diferentes cenários.
-- Utilize ferramentas como `grep`, `awk` e `sed` para verificar a saída de algum comando e garantir que ela está correta. Esses utilitários podem ser muito úteis ao escrever testes mais avançados.
+Existem outras ferramentas que também podem ser utilizadas para escrever testes em Bash, como o `shUnit2` e o `bats`. Além disso, você pode implementar testes automatizados em diferentes áreas, como testes unitários, de integração e de aceitação.
 
-## Veja também
+## Veja também:
 
-Aqui estão algumas referências adicionais sobre escrever testes em Bash:
-
-- [Bash Unit Testing Guide](https://stevens.netmeister.org/631/bash_unit_testing.html)
-- [Effective Testing in Bash – Part I](https://spin.atomicobject.com/2018/05/15/effective-testing-bash-part-1/)
-- [Building a test framework with Bash](https://www.mnielsen.org/blog/building-a-test-framework-with-bash/)
+- [Documentação oficial do Bash](https://www.gnu.org/software/bash/)
+- [Documentação oficial do shUnit2](https://github.com/kward/shunit2)
+- [Documentação oficial do bats](https://github.com/bats-core/bats-core)

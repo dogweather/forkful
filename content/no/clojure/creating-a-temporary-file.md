@@ -1,7 +1,7 @@
 ---
-title:                "Å lage en midlertidig fil"
-html_title:           "Clojure: Å lage en midlertidig fil"
-simple_title:         "Å lage en midlertidig fil"
+title:                "Lage en midlertidig fil"
+html_title:           "Clojure: Lage en midlertidig fil"
+simple_title:         "Lage en midlertidig fil"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Files and I/O"
@@ -10,27 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
-Det kan være nyttig å opprette midlertidige filer i Clojure når du trenger å lagre midlertidige data eller når du jobber med operativsystemspesifikke funksjoner som krever en midlertidig fil. Ved å opprette en midlertidig fil, kan du enkelt lagre og utføre operasjoner på data uten å bekymre deg for å lagre det permanent eller manuelt slette filen etterpå.
+## Hva & Hvorfor?
 
-## Slik gjør du det
-For å opprette en midlertidig fil i Clojure, kan du bruke funksjonene `java.io.File/createTempFile` eller `java.nio.file.Files/createTempFile`. Begge funksjonene tar to argumenter - et prefiksnavn og en suffiksnavn - som brukes til å generere et unikt navn for den midlertidige filen.
+Å opprette en midlertidig fil er en vanlig oppgave for programmerere. Dette innebærer å opprette en fil som bare skal være tilgjengelig for en kort periode, vanligvis i løpet av programkjøringen. Dette gjøres ofte for å lagre midlertidige data eller for å håndtere filoperasjoner på en sikrere måte.
 
-Enkelt eksempel:
+## Hvordan:
 
 ```Clojure
 (require '[clojure.java.io :as io])
 
-(io/file (io/temporary-directory) "temp" nil ".txt") 
+;; Opprett en midlertidig fil med et unikt navn
+(def temp-file (io/file "temp_file.txt"))
+
+;; Skriv til filen
+(with-open [w (io/writer temp-file)]
+  (.write w "Dette er en midlertidig fil."))
+
+;; Les fra filen
+(io/slurp temp-file)
+
+;; Slett filen når den ikke lenger er nødvendig
+(io/delete-file temp-file)
 ```
 
-Dette vil opprette en midlertidig fil med navnet "tempXXX.txt" (der XXX er et unikt tall) i den midlertidige mappen på ditt operativsystem.
+Output: ```"Dette er en midlertidig fil."```
 
-## Dypere dykk
-Når du oppretter en midlertidig fil, vil filen automatisk bli slettet når programmet ditt avsluttes. Men hvis du vil slette filen manuelt, kan du bruke funksjonen `java.io.File/deleteOnExit` for å angi at filen skal slettes når JVM-en avsluttes.
+## Dypdykk:
 
-Du kan også angi midlertidige mappen der filen skal opprettes ved å bruke funksjonen `io/temporary-directory`. Standard plasseringen kan variere avhengig av operativsystemet, så det er nyttig å bruke denne funksjonen for å sikre en konsistent plassering.
+Å opprette midlertidige filer er ikke noe nytt, det er en vanlig praksis som har blitt brukt i mange år. Alternativet til å opprette en midlertidig fil er å bruke minnebufferen istedenfor, men dette kan føre til at data går tapt ved uventede avbrudd. Midlertidige filer gir derfor en mer pålitelig måte å håndtere data på.
 
-## Se også
-- [Clojure docs for java.io.File](https://clojure.github.io/clojure/clojure.java.io-api.html#clojure.java.io/file)
-- [Clojure docs for java.nio.file.Files](https://clojure.org/reference/java_interop#_nio_paths)
+I Clojure er det flere måter å opprette midlertidige filer på, både ved hjelp av standardbiblioteket og tredjepartsbiblioteker som Raynes' Tempura. Det anbefales å bruke standardbiblioteket hvis man har det tilgjengelig, da man da unngår å legge til unødvendige avhengigheter i prosjektet.
+
+Implementeringen av opprettelse av midlertidige filer i Clojure er basert på Java's [File.createTempFile()](https://docs.oracle.com/javase/8/docs/api/java/io/File.html#createTempFile-java.lang.String-java.lang.String-java.io.File-) metode. Denne metoden oppretter en fil med et unikt navn og legger den i operativsystemets midlertidige mappe.
+
+## Se Også:
+
+- [Clojure's Java IO namespace](https://clojure.github.io/clojure/clojure.java.io-api.html)
+- [Tempura by Raynes](https://github.com/Raynes/tempura)
+- [Java's File.createTempFile() metode](https://docs.oracle.com/javase/8/docs/api/java/io/File.html#createTempFile-java.lang.String-java.lang.String-java.io.File-)

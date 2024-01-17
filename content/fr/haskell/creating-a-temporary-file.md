@@ -1,7 +1,7 @@
 ---
-title:                "Création d'un fichier temporaire"
-html_title:           "Haskell: Création d'un fichier temporaire"
-simple_title:         "Création d'un fichier temporaire"
+title:                "Créer un fichier temporaire."
+html_title:           "Haskell: Créer un fichier temporaire."
+simple_title:         "Créer un fichier temporaire."
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Files and I/O"
@@ -10,41 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Pourquoi
+## Qu'est-ce que c'est et pourquoi le faire?
 
-De temps en temps, lorsque vous programmez en Haskell, vous pourriez avoir besoin de créer un fichier temporaire pour stocker des données ou effectuer des opérations temporaires. La création de fichiers temporaires peut également être utile pour tester ou déboguer du code.
+Créer un fichier temporaire est une pratique courante pour les programmeurs. Il s'agit de créer un fichier vide qui existe uniquement pour une durée limitée ou pour une tâche spécifique. Les programmeurs le font pour éviter d'encombrer leur système de fichiers avec des fichiers inutiles ou pour stocker des données qui ne seront utilisées qu'une seule fois.
 
-# Comment faire
-
-La création d'un fichier temporaire en Haskell est très simple. Tout d'abord, nous devons importer un module appelé "System.IO.Temp" qui nous permet de travailler avec des fichiers temporaires. Ensuite, nous pouvons utiliser la fonction "withSystemTempFile" pour créer un fichier temporaire et y écrire des données. Voici un exemple de code pour créer un fichier temporaire et y écrire le texte "Bonjour Haskell !":
+## Comment faire ?
 
 ```Haskell
-import System.IO.Temp
+import System.IO
+import System.Directory
+import System.FilePath
 
-main = withSystemTempFile "example.txt" $ \path handle -> do
-  hPutStr handle "Bonjour Haskell !"
-  putStrLn $ "Fichier temporaire créé : " ++ path
+main = do
+    tempDir <- getTemporaryDirectory
+    (tempFile, tempHandle) <- openTempFile tempDir "example.txt"
+    putStrLn $ "Fichier temporaire créé : " ++ tempFile
+    hPutStrLn tempHandle "Contenu du fichier temporaire"
+    hClose tempHandle
 ```
 
-Notez que la fonction "withSystemTempFile" prend deux arguments. Le premier est le nom que vous souhaitez donner au fichier temporaire et le deuxième est une fonction qui manipule le fichier temporaire. Dans cet exemple, nous utilisons une fonction lambda pour écrire des données dans le fichier.
+Output :
 
-Lorsque nous exécutons ce code, nous devrions voir le message "Fichier temporaire créé : /tmp/example.txt" s'afficher dans la console. Vous pouvez ensuite vérifier le contenu du fichier en utilisant la fonction "readFile" comme ceci :
-
-```Haskell
-main = withSystemTempFile "example.txt" $ \path handle -> do
-  hPutStr handle "Bonjour Haskell !"
-  content <- readFile path
-  putStrLn $ "Le contenu du fichier temporaire est : " ++ content
+```
+Fichier temporaire créé : /var/folders/f8/kjk123kalkjsdf/example.txt
 ```
 
-# Plongée profonde
+## Plongée en profondeur
 
-La fonction "withSystemTempFile" que nous avons utilisée prend en charge la création de fichiers temporaires de manière sûre et efficace. Elle crée un fichier temporaire dans le répertoire système approprié et s'assure également que le fichier est supprimé une fois que la fonction est terminée. Cela est particulièrement utile si votre programme est interrompu ou s'il se termine avant d'avoir supprimé le fichier temporaire.
+Créer des fichiers temporaires est une pratique courante en programmation depuis de nombreuses années. Avant les ordinateurs, les programmeurs le faisaient en utilisant du papier ou des cartes perforées pour stocker temporairement des données. De nos jours, il existe des alternatives telles que l'utilisation de la mémoire ou de bases de données temporaires pour stocker des données temporaires.
 
-En plus de la fonction "withSystemTempFile", le module "System.IO.Temp" offre également d'autres fonctions utiles pour travailler avec des fichiers temporaires, telles que "withTempDirectory" pour créer un répertoire temporaire et "withTempFile" pour créer un fichier temporaire spécifique au répertoire courant. Vous pouvez en savoir plus sur ces fonctions dans la documentation du module.
+L'implémentation de la création d'un fichier temporaire dépend du langage de programmation utilisé. En Haskell, la fonction ```openTempFile``` utilise le répertoire de l'utilisateur par défaut pour stocker le fichier temporaire, mais il est également possible de spécifier un répertoire différent.
 
-# Voir aussi
+## À voir aussi
 
-- [Documentation du module System.IO.Temp](https://hackage.haskell.org/package/temporary-1.3/docs/System-IO-Temp.html)
-- [Guide pratique Haskell sur la manipulation de fichiers](https://serokell.io/blog/haskell-file-manipulation)
-- [Tutoriel Haskell pour débutants](https://www.haskell.org/tutorial/)
+Pour en savoir plus sur la manipulation de fichiers en Haskell, vous pouvez consulter la documentation officielle : https://www.haskell.org/documentation/#files. Vous pouvez également trouver des exemples de création de fichiers temporaires dans des projets open source tels que Hackage : https://hackage.haskell.org/.

@@ -10,51 +10,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+## 何? & なぜ?
+文字列内のパターンにマッチする文字を削除することは、プログラマーが文字列処理を行う際によく使われるテクニックです。文字列内の特定の文字を削除することで、より簡潔で効率的なコードを作ることができます。
 
-あなたはKotlinで文字列から特定のパターンにマッチする文字を削除する必要があるかもしれません。この記事では、その理由と方法を解説します。
+## 方法:
+以下に、「abc」という文字列から「b」を削除する方法を示します。 
 
-## 方法
-
-```
-Kotlin val string = "Hello! This is a sample string." 
-val pattern = "\\p{Punct}".toRegex() 
-val result = string.replace(pattern, "") 
-println(result)
-```
-
-このコードを実行すると、以下の結果が得られます。
-
-```
-Hello This is a sample string
+```Kotlin
+val str = "abc"
+val result = str.replace("b", "")
+println(result) // "ac"
 ```
 
-`replace()`関数を使用して、マッチする文字を空文字に置換することで、簡単に文字列から特定のパターンにマッチする文字を削除することができます。
+## 詳細を深く調べる:
+文字列のパターンマッチングは、主に正規表現と呼ばれる記法を使用して行われます。正規表現を使用することで、より柔軟なパターンにマッチする文字を削除することができます。
 
-## ディープダイブ
+また、文字列のパターンマッチングは、プログラミング言語によって異なる実装方法があります。例えば、JavaではStringクラスのメソッドを使用することでパターンマッチングを行いますが、Kotlinでは正規表現を直接サポートしているのでより簡単に行うことができます。
 
-もしもあなたが文字列からマッチする文字を1文字ずつ削除する場合、以下のようなコードを書くことができます。
-
-```
-Kotlin fun deleteChar(string: String, pattern: String): String { 
-    var result = "" 
-    for(char in string) { 
-        if(!pattern.contains(char)) { 
-            result += char 
-        } 
-    } 
-    return result 
-}
-
-val string = "Hello! This is a sample string." 
-val pattern = "\\p{Punct}"
-val result = deleteChar(string, pattern) 
-println(result)
-```
-
-しかし、`replace()`関数を使用することで、より簡潔で効率的なコードを書くことができます。また、`replace()`関数には正規表現を使用することができるため、より柔軟に文字を削除することができます。
-
-## 参考リンク
-
-- Kotlin公式ドキュメント: https://kotlinlang.org/docs/reference/strings.html
-- 正規表現チュートリアル: https://developer.mozilla.org/ja/docs/Web/JavaScript/Guide/Regular_Expressions
+## 関連情報:
+- [Kotlin公式ドキュメント](https://kotlinlang.org/docs/reference/strings.html#string-regular-expressions)
+- [正規表現についての入門記事](https://www.ibm.com/developerworks/jp/linux/library/l-regexp.html)

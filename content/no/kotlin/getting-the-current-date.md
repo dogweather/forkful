@@ -1,7 +1,7 @@
 ---
-title:                "Få gjeldende dato."
-html_title:           "Kotlin: Få gjeldende dato."
-simple_title:         "Få gjeldende dato."
+title:                "Få dagens dato"
+html_title:           "Kotlin: Få dagens dato"
+simple_title:         "Få dagens dato"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Dates and Times"
@@ -10,49 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hva og hvorfor?
 
-Å få nåværende dato kan være nyttig for å vise korrekt informasjon til brukere, beregne forfallsdatoer eller for å loggføre aktiviteter.
+Å få den nåværende datoen er ganske selvsagt; det er bare å få datoen som er øyeblikket vi er i. Programmere gjør dette for å kunne lage programmer som er avhengige av nåværende dato og tid.
 
-## Hvordan gjøre det
+# Hvordan:
 
-For å få nåværende dato i Kotlin, kan du bruke `LocalDate.now()` funksjonen som returnerer en dato objekt som representerer dagens dato.
+Kotlin støtter å få den nåværende datoen gjennom bruk av ```java.util.Date```- og ```java.time.LocalDate```-klassene. Se eksempler nedenfor:
 
 ```Kotlin
+// Få den nåværende datoen som en java.util.Date-objekt.
+val currentDate = Date()
+
+// Få den nåværende datoen som en java.time.LocalDate-objekt.
 val currentDate = LocalDate.now()
-println("Dagens dato er: $currentDate")
 ```
 
-Output: Dagens dato er: 2021-09-14
-
-Hvis du vil få nåværende tidspunkt i tillegg til dato, kan du bruke `LocalDateTime.now()` funksjonen.
+Utskrift av datoer kan gjøres slik:
 
 ```Kotlin
-val currentDateTime = LocalDateTime.now()
-println("Nå er klokken: $currentDateTime")
+// Utskrift av den nåværende datoen som en tekststreng.
+println(currentDate.toString())
+
+// Utskrift av bare dato-delen av den nåværende datoen.
+println(currentDate.toLocalDate().toString())
 ```
 
-Output: Nå er klokken: 2021-09-14T14:28:40.123456
+# Dypdykk
 
-Du kan også angi en spesifikk tidsone ved å bruke `now(zone)` funksjonen. For eksempel, hvis du vil ha nåværende dato i New York tidsone, kan du bruke `TimeZone.getTimeZone("America/New_York")` som parameter.
+Historisk sett var håndtering av datoer og tid i programmer ofte en krevende og kompleks oppgave. Dette skyldtes blant annet forskjellige kalendere og tidsstandarder som kunne føre til feil i programmer. Med moderne programmeringsspråk som Kotlin, som støtter innebygd funksjonalitet for å håndtere datoer, er denne oppgaven mye enklere.
 
-```Kotlin
-val currentDateInNY = LocalDate.now(TimeZone.getTimeZone("America/New_York").toZoneId())
-println("Dagens dato i New York er: $currentDateInNY")
-```
+Alternativer til å få den nåværende datoen inkluderer å bruke tredjeparts biblioteker som Joda-Time eller ThreeTenABP. Disse bibliotekene tilbyr mer omfattende funksjonalitet for å håndtere datoer og tid.
 
-Output: Dagens dato i New York er: 2021-09-14
+Implementasjonen av å få den nåværende datoen i Kotlin er avhengig av Java-plattformen. Dette betyr at det vil være små forskjeller mellom å få den nåværende datoen i Kotlin og å få den i Java.
 
-## Dypdykk
+# Se også
 
-Når du bruker `now()` funksjonen, vil datoen bli hentet fra datamaskinen din sin lokale klokke. Dette betyr at hvis klokken på datamaskinen din ikke er korrekt satt, vil heller ikke datoen som returneres være korrekt.
-
-For å få en mer nøyaktig dato, kan du bruke `Clock` objektet sammen med `now(clock)` funksjonen. `Clock` objektet lar deg spesifisere en bestemt kilde for datoen, for eksempel en NTP-server eller en GPS-klokke.
-
-Et annet alternativ er å bruke `ZonedDateTime` klassen som lar deg få nåværende dato og tid i en bestemt tidsone, samt konvertere mellom ulike tidsone.
-
-## Se også
-
-- Kotlin dokumentasjon for `LocalDate` og `LocalDateTime`: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.time/-local-date/index.html
-- Kotlin dokumentasjon for `ZonedDateTime`: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.js/-zoned-date-time/index.html
-- Hent nåværende dato og tid i Java: https://www.baeldung.com/java-date-to-localdate-and-localdatetime
+- Offisiell Kotlin dokumentasjon for å få datoer: https://kotlinlang.org/docs/reference/datetime.html
+- ThreeTenABP bibliotek dokumentasjon: https://github.com/JakeWharton/ThreeTenABP
+- Joda-Time bibliotek dokumentasjon: https://www.joda.org/joda-time/

@@ -1,7 +1,7 @@
 ---
-title:                "使用基本身份验证发送http请求"
-html_title:           "Kotlin: 使用基本身份验证发送http请求"
-simple_title:         "使用基本身份验证发送http请求"
+title:                "基本认证下发送http请求"
+html_title:           "Kotlin: 基本认证下发送http请求"
+simple_title:         "基本认证下发送http请求"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "HTML and the Web"
@@ -10,40 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么要发送带基本身份验证的HTTP请求？
+什么 & 为什么？
 
-在网络开发中，有时候我们需要通过HTTP请求来与服务器进行通信，但是为了保证安全性，我们需要使用身份验证来确认请求的发送者身份。基本身份验证是一种简单的验证方式，可以有效地保护服务器免受未经授权的请求。
+HTTP请求是Web开发中常用的一种技术，它允许前端应用程序向服务器发送请求，以获取数据或执行某些操作。使用基本身份验证将用户名和密码包含在HTTP请求中可以提高安全性，确保只有授权用户才能访问数据。因此，程序员经常使用基本身份验证来保护和授权他们的应用程序。
 
-## 如何发送带基本身份验证的HTTP请求
+如何：
 
-```Kotlin
-val url = URL("https://example.com/api")
+下面是一个使用基本身份验证发送HTTP请求的Kotlin代码示例：
+
+```
+val username = "John"
+val password = "123456"
+val url = URL("http://example.com")
 val connection = url.openConnection() as HttpURLConnection
 connection.requestMethod = "GET"
-connection.setRequestProperty("Authorization", "Basic " + Base64.getEncoder().encodeToString("username:password".toByteArray()))
+val auth = "$username:$password"
+val encodedAuth = Base64.getEncoder().encodeToString(auth.toByteArray())
+connection.setRequestProperty("Authorization", "Basic $encodedAuth")
 val responseCode = connection.responseCode
-val responseMessage = connection.responseMessage
-println("Response Code: $responseCode")
-println("Response Message: $responseMessage")
+println("Response code: $responseCode")
 ```
-执行以上代码，可以获取到服务器响应的状态码和消息，用来确认请求是否成功发送和身份验证是否通过。
 
-## 深入了解发送带基本身份验证的HTTP请求
+运行以上代码，输出将是：`Response code: 200`，表示请求成功，服务器返回了预期的响应。
+ 
+深入探讨：
 
-在上述示例中，我们使用了Base64编码来对用户名和密码进行加密，并将其放在HTTP请求头中的"Authorization"字段中。服务器在接收到请求后，会将该字段进行解码，并与存储的用户名和密码进行比对，从而判断请求是否允许通过。
+基本身份验证是HTTP协议早期版本的一种身份验证机制，在互联网上广泛使用。然而，它存在一个弱点，即用户名和密码以纯文本形式发送，容易遭受黑客攻击。因此，现在已有更安全的身份验证机制，如OAuth。但是，基本身份验证仍然是一种简单且广泛支持的方式，可以在许多场景下使用。
 
-另外，如果身份验证失败，服务器会返回401未授权的响应码，这也是我们在开发过程中需要注意的地方。
+相关链接：
 
-## 参考链接
-
-- [Kotlin官方网站](https://kotlinlang.org/)
-- [HTTP基本身份验证](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Authentication)
-- [Kotlin中的Base64编码](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/base64-encoding.html)
-
-# 查看更多
-
-如果想了解更多关于Kotlin的知识，请查看以下链接：
-
-- [Kotlin中文社区](https://www.kotlincn.net/)
-- [Kotlin深入浅出](https://www.kotlincn.net/docs/reference/)
-- [Kotlin入门视频教程](https://www.youtube.com/watch?v=_QVl0zRqCk8)
+- [Kotlin官方文档](https://kotlinlang.org/docs/reference/)
+- [HTTP请求与Kotlin](https://www.tutorialkart.com/kotlin/kotlin-http-request-get-post-data/)
+- [基本身份验证与OAuth：什么是更好的选择？](https://blog.cpanel.com/http-basic-auth-vs-oauth-which-is-the-better-choice/)

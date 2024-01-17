@@ -1,7 +1,7 @@
 ---
-title:                "Utskrift av felsökningsresultat"
-html_title:           "Haskell: Utskrift av felsökningsresultat"
-simple_title:         "Utskrift av felsökningsresultat"
+title:                "Utskrift av felsökningsutdata"
+html_title:           "Haskell: Utskrift av felsökningsutdata"
+simple_title:         "Utskrift av felsökningsutdata"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Testing and Debugging"
@@ -10,46 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+# Vad & Varför?
 
-Att skriva felsökningsutskrift är ett viktigt verktyg för att förstå vad som händer i vår kod. Genom att skriva ut värden på olika variabler och delar av programflödet kan vi se exakt vad som händer vid varje steg och hitta eventuella fel eller förbättringsområden.
+Att skriva ut debug-utdata är när programmerare inkluderar extra information i koden för att hjälpa till att hitta och lösa buggar i sitt program. Detta innebär att man skriver ut variabler, värden och meddelanden i viktiga delar av koden för att kunna spåra problemen.
 
-## Hur man gör
+## Hur man gör det:
 
-För att skriva ut felsökningsutskrift i Haskell kan vi använda oss av funktionen "print". Den tar ett värde som parameter och skriver ut det till skärmen. Låt oss till exempel säga att vi har en variabel "number" med värdet 42. Genom att skriva:
+För att skriva ut debug-utdata i Haskell, kan du använda funktionen `trace` från paketet `Debug.Trace`. Här är ett exempel på hur det kan se ut:
+
 ```Haskell
-print number
+import Debug.Trace
+
+main :: IO ()
+main = do
+  let x = 5
+  trace ("Value of x: " ++ show x) $ do
+    let sum = x + 10
+    putStrLn ("Sum: " ++ show sum)
 ```
-kommer värdet 42 att skrivas ut till skärmen.
 
-En annan användbar funktion är "trace" från "Debug.Trace" biblioteket. Den kan användas för att skriva ut förklarande text tillsammans med värden. Till exempel:
-```Haskell
-import Debug.Trace (trace)
+Detta kommer att skriva ut följande:
 
-let x = 10
-let y = 5
-trace ("x = " ++ show x) (x + y) 
 ```
-skriver ut "x = 10" och returnerar sedan värdet 15.
-
-## Djupdykning
-
-När vi printar värden som är av en komplexare typ, som en lista eller en tuple, kan vi använda oss av "show" funktionen för att få en mer läsbar utskrift. Till exempel:
-```Haskell
-let myTuple = (1, "Hello", True)
-print $ show myTuple
+Value of x: 5
+Sum: 15
 ```
-skriver ut "(1, "Hello", True)" istället för det mer svårlästa "(1,"Hello",True)". 
 
-Vi kan också använda oss av "putStrLn" för att skriva ut flera värden på samma rad. Till exempel:
-```Haskell
-putStrLn "My favorite color is" ++ " blue!"
-```
-skriver ut "My favorite color is blue!".
+Som du kan se, skriver vi ut värdet av variabeln `x` före vi beräknar summan. På så sätt kan vi kontrollera att värdet är korrekt.
 
-Det är även möjligt att använda felsökningsutskrift med hjälp av monader, som "IO". Genom att använda "putStrLn" och >>= operatorn kan vi printa värden inuti våra monader.
+## Djupdykning:
 
-## Se även
+Att skriva ut debug-utdata är ett vanligt verktyg som används av programmerare för att felsöka och förbättra sina program. Det är särskilt användbart när man arbetar med större program och komplexa kodsegment.
 
-- [Haskell Debugging Techniques](https://wiki.haskell.org/Debugging_techniques)
-- [Debugging in Haskell with trace](https://stackify.com/haskell-debugging-with-trace/)
+Ett alternativ till att skriva ut debug-utdata är att använda en speciell debugging-miljö eller en interaktiv debugger. Dessa verktyg erbjuder en mer omfattande och interaktiv metod för att felsöka koden.
+
+För implementationen av `trace` använder Haskell en funktionell teknik som kallas "monad transformers". Detta är en avancerad teknik som gör det möjligt att skapa användbara funktioner som `trace` för att hantera debugging-utdata på ett enklare sätt.
+
+## Se även:
+
+- [Debug.Trace dokumentation](http://hackage.haskell.org/package/base-4.15.0.0/docs/Debug-Trace.html)
+- [Haskell debugging verktyg och tekniker](https://wiki.haskell.org/Debugging)

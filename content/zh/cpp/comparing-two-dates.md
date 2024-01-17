@@ -10,40 +10,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
-有时我们需要比较两个日期，例如在编写计算工具或生成报告时。这可以帮助我们确定时间间隔或在特定日期之前或之后执行不同的操作。
+# 什么是日期比较？为什么程序员要做它？
 
-## 如何进行
-比较两个日期的基本方法是使用比较运算符（如“>”，“<”，“==”）来比较它们的值。首先，我们需要将日期表示为C++中的日期对象，使用“tm”结构，其中包含有关日期的年，月，日和其他信息。
+日期比较是一种编程技术，用于比较两个日期之间的差异。程序员经常使用日期比较来检查某个日期是早于、等于还是晚于另一个日期。这对于排序、筛选和判断事件发生的顺序等任务非常有用。
 
-```C++
-#include <iostream> 
-#include <ctime> 
+# 如何进行日期比较？
 
-using namespace std;
+下面是一个简单的示例，展示了如何使用 ```C++``` 编写代码来比较两个日期并输出结果：
 
-int main() { 
-	// 创建两个日期对象
-	tm date1 = {0, 0, 0, 1, 0, 2021 - 1900};	// Jan 1, 2021
-	tm date2 = {0, 0, 0, 1, 11, 2021 - 1900};	// Jan 11, 2021
-	// 使用比较运算符比较两个日期
-	if (date1 < date2)
-		cout << "Date1 is earlier than Date2" << endl;
-	else if (date1 == date2)
-		cout << "Date1 is the same as Date2" << endl;
-	else
-		cout << "Date1 is later than Date2" << endl;
-	return 0; 
-} 
+```
+#include <iostream>
+#include <ctime>
+
+int main() {
+    // 定义需要比较的两个日期
+    std::tm date1 = { 0, 0, 0, 1, 0, 121, 120 }; // 2021年1月1日
+    std::tm date2 = { 0, 0, 0, 1, 0, 121, 119 }; // 2020年1月1日
+
+    // 比较两个日期
+    if (std::mktime(&date1) < std::mktime(&date2)) {
+        std::cout << "日期1早于日期2";
+    } else if (std::mktime(&date1) == std::mktime(&date2)) {
+        std::cout << "日期1等于日期2";
+    } else {
+        std::cout << "日期1晚于日期2";
+    }
+
+    return 0;
+}
+
 ```
 
-上述代码将输出“Date1 is earlier than Date2”，因为1月1日比1月11日早10天。
+运行结果：
 
-## 深入了解
-在C++中，有两种表示日期的常见方法：使用time标准函数库中的结构“tm”和使用第三方库，如boost::date_time。使用tm结构，日期表示为一个标准的C结构，其中包含有关年，月，日，小时，分钟，秒和其他信息。另一方面，使用boost::date_time，日期表示为一个对象，其行为更类似于数学中的日期。
+```
+日期1晚于日期2
+```
 
-您也可以使用其他方法来比较日期，例如计算日期之间的差异并将其转换为天数或秒数。对于复杂的日期计算，使用第三方库可能更方便和可靠。
+# 深入了解日期比较
 
-## 参考链接
-- [C++中的日期和时间](https://www.cplusplus.com/reference/ctime/)
-- [boost::date_time库](https://www.boost.org/doc/libs/1_76_0/doc/html/date_time.html)
+## 历史背景
+
+在现代编程中，日期比较是一项常见的任务。然而，在过去，人们并不是使用数字形式的日期，而是用文字来表示日期，例如 “十一月十一日”。随着计算机的发展，日期被转换为数字形式，使得日期比较成为可能。
+
+## 其他方法
+
+除了使用 ```C++``` 内置的日期比较函数，也可以使用第三方库来进行日期比较，例如 Boost.Date_Time 和 Chrono。这些库提供更多的日期比较功能，可以满足更复杂的需求。
+
+## 实现细节
+
+在 ```C++``` 中，日期是以秒数来表示，从某个固定的起始日期开始计算，通常为 1970 年 1 月 1 日。所以，比较两个日期其实是比较它们对应的秒数大小。
+
+# 相关资源
+
+- [C++ 时间和日期函数](https://www.w3schools.com/cpp/cpp_date.asp)
+- [C++ Boost.Date_Time 库](https://www.boost.org/doc/libs/1_77_0/doc/html/date_time.html)
+- [C++ Chrono 库](https://en.cppreference.com/w/cpp/chrono)

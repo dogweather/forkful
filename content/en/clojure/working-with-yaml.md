@@ -10,52 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
+Working with YAML (YAML Ain't Markup Language) is a common practice for programmers, as it allows for easy and human-readable data serialization. YAML is well-suited for writing configuration files, as well as for storing and transferring structured data. It is also a popular choice for creating data-driven applications.
 
-YAML is a popular data serialization format that is used in various programming languages, including Clojure. It offers a human-readable and easy-to-learn syntax, making it a preferred choice for configuring applications and sharing data between systems.
-
-## How To
-
-To work with YAML in Clojure, we first need to add the "org.clojure/data.xml" dependency to our project. Then, we can use the `clojure.data.xml` namespace and its functions to read and parse YAML files.
-
+## How to:
+To work with YAML in Clojure, you will need to use a library called clj-yaml. First, you will need to add it as a dependency in your project.clj file:
+```Clojure
+[clj-yaml "0.5.1"]
+```
+Next, require the library in your namespace:
 ```Clojure
 (ns my-project.core
-  (:require [clojure.data.xml :as xml]))
-
-(defn read-yaml [file]
-  (let [content (xml/parse file)]
-    content))
-
-(defn print-yaml [yaml-data]
-  (xml/emit yaml-data))
-
-;; reading a YAML file
-(def my-yaml (read-yaml "my-yaml-file.yml"))
-
-;; printing the YAML data in a readable format
-(print-yaml my-yaml)
+  (:require [clj-yaml.core :as yaml]))
 ```
-
-Output:
-
+Now, you can use the functions provided by the library to read and write YAML data. Here's an example of reading a YAML file and converting it into a Clojure map:
 ```Clojure
-{:key1 "value1",
- :key2 "value2",
- :key3 ["value3" "value4"],
- :key4 {:nested-key1 "nested-value1",
-        :nested-key2 "nested-value2"}}
+(defn read-yaml [filepath]
+  (yaml/parse-string (slurp filepath)))
+  
+(def data (read-yaml "config.yml"))
+```
+And here's an example of writing a YAML file from a Clojure map:
+```Clojure
+(defn write-yaml [data filepath]
+  (with-open [f (io/writer filepath)]
+    (yaml/emit data f)))
+    
+(write-yaml {"name" "John" "age" 28} "person.yml")
 ```
 
-## Deep Dive
+## Deep Dive:
+YAML was originally designed by Clark Evans in 2001, with the goal of creating a human-friendly data serialization format that is easy to read and modify. It is based on the syntax of Python, and borrows concepts from other programming languages such as Perl, Lisp, and C. YAML is a text file format, with the extension ".yaml" or ".yml", and uses indentation to define its data structure.
 
-YAML supports a wide range of data types, including strings, numbers, lists, maps, and even custom types. In Clojure, YAML data is parsed into Clojure data structures, such as maps and vectors, making it easy to work with and manipulate.
+There are other popular data serialization formats, such as JSON and XML, but YAML differs in its emphasis on readability and its ability to handle complex and nested data structures. However, it should be noted that YAML is not suitable for all use cases, and it may not be the best choice for large amounts of data or situations where performance is critical.
 
-Additionally, YAML also allows for the inclusion of multiple documents in a single file, which can be useful when dealing with complex data structures. Clojure's `clojure.data.xml` includes functions to read and parse multiple YAML documents from a single file.
+The clj-yaml library is built on top of the popular Java library SnakeYAML, which provides fast and efficient parsing of YAML data. This ensures that working with YAML in Clojure is both easy and performant.
 
-Parsing and printing YAML in Clojure is straightforward, but we can also convert YAML data into other formats using `clojure.data.xml`. For example, we can convert YAML into JSON or EDN (Clojure's native data format) using the `xml/emit-json` and `xml/emit-edn` functions respectively.
-
-## See Also
-
-- [Clojure YAML Documentation](https://clojure.github.io/data.xml/), for more information about `clojure.data.xml` and its functions.
-- [YAML Official Website](https://yaml.org/), for a complete specification and documentation of the YAML format.
-- [Clojure Official Website](https://clojure.org/), for more information about the Clojure programming language.
+## See Also:
+- Official YAML website: https://yaml.org
+- clj-yaml library documentation: https://clojars.org/clj-yaml
+- SnakeYAML library documentation: https://bitbucket.org/asomov/snakeyaml/wiki/Documentation

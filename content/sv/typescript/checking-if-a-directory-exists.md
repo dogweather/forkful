@@ -10,36 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
+När programmerare pratar om att kontrollera om en mapp existerar, så menar vi att vi vill veta om en fil finns på en viss sökväg. Det är användbart för att undvika felmeddelanden eller krascher i våra program, då vi kan ta olika åtgärder beroende på om mappen finns eller inte.
 
-Att kolla om en mapp finns kan vara till nytta för att kontrollera om en specifik plats existerar eller för att hantera filer och mappar på ett effektivt sätt i ditt TypeScript-projekt. Detta kan hjälpa till att undvika felaktig kodning och optimera din applikations prestanda.
-
-## Hur man gör det
+## Hur görs det:
+Ett enkelt sätt att kontrollera om en mapp existerar i TypeScript är genom att använda inbyggda funktioner som finns i Node.js. Här är ett exempel på hur det kan se ut:
 
 ```TypeScript
 import fs from 'fs';
 
-// Metod 1: Använda "fs.existsSync" för att kontrollera en mapp
-console.log(fs.existsSync('./minMapp')); // Output: true (om mappen finns)
-
-// Metod 2: Använda "fs.statSync" för att kontrollera en mapp
-console.log(fs.statSync('./minMapp').isDirectory()); // Output: true (om mappen finns)
+fs.existsSync('./min-mapp'); // returnerar true om mappen finns
 ```
 
-Metod 1: Vi importerar fs-modulen och använder sedan funktionen "existsSync" för att kontrollera om den specificerade mappen finns. Om mappen finns returneras värdet "true", annars returneras "false". 
+Om mappen inte finns blir resultatet "false". Detta kan sedan tas som ett villkor för att utföra olika åtgärder i koden.
 
-Metod 2: Vi använder funktionen "statSync" för att få information om en fil eller en mapp. Här använder vi metoden "isDirectory" för att kontrollera om det är en mapp som vi får information om. Om mappen finns returneras värdet "true", annars returneras "false".
+## Deep Dive:
+Historiskt sett så har kontrollen av mappar och filer varit viktig för att hålla ordning på filstrukturerna i operativsystem. I modern programmering så behöver vi fortfarande denna funktion för att säkerställa att vi inte försöker läsa en fil som inte existerar eller att vi försöker skriva till en mapp som inte finns.
 
-## Djupdykning
+En annan möjlig metod för att kontrollera mappar är genom att använda "try/catch" block i kombination med "stat" funktionen i Node.js. Detta ger oss mer flexibilitet i hur vi vill hantera eventuella felmeddelanden som uppstår om mappen inte existerar.
 
-Det finns flera sätt att kontrollera om en mapp existerar, men de två mest använda metoderna är "existsSync" och "statSync" som nämns ovan. Det finns också andra metoder, som att använda "path" modulen tillsammans med "existsSync" och "statSync".
+Det är också värt att notera att kontroll av mappar är något som bara behöver göras i miljöer där filstrukturer kan ändras, som till exempel på en webbserver.
 
-Det är också viktigt att komma ihåg att både "existsSync" och "statSync" returnerar "true" även om mappen är tom. Om du behöver kolla om mappen är tom eller inte, kan du använda "readdirSync" funktionen i "fs"-modulen för att få en lista över filer i mappen och sedan kontrollera om denna lista är tom eller inte.
-
-## Se också
-
-Här är några användbara länkar för att lära dig mer om att kontrollera om en mapp existerar i ett TypeScript-projekt:
-
-- [Dokumentation för "fs" modulen i TypeScript](https://nodejs.org/api/fs.html)
-- [Översikt över "path" modulen och dess metoder](https://nodejs.org/api/path.html) 
-- [Guide för att kontrollera om en mapp är tom med "readdirSync" funktionen](https://www.geeksforgeeks.org/node-js-fs-readdirectorysync-method/)
+## Se även:
+- https://nodejs.org/api/fs.html#fs_fs_exists_path_callback - Node.js dokumentation för "fs.existsSync" funktionen.
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch - Dokumentation för "try/catch" block i JavaScript.

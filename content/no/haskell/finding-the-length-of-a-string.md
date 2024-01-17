@@ -1,7 +1,7 @@
 ---
-title:                "Å finne lengden av en streng"
-html_title:           "Haskell: Å finne lengden av en streng"
-simple_title:         "Å finne lengden av en streng"
+title:                "Å finne lengden på en streng"
+html_title:           "Haskell: Å finne lengden på en streng"
+simple_title:         "Å finne lengden på en streng"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -10,40 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
-Å finne lengden til en streng er en vanlig oppgave i mange programmeringsspråk, inkludert Haskell. Det er nyttig å kunne gjøre dette for å kunne behandle og manipulere strenger på en effektiv måte.
+## Hva & Hvorfor?
+Lengden til en streng i programmering er antallet tegn eller bokstaver som finnes i en streng. Det kan være nyttig å vite lengden til en streng når man skal manipulere eller behandle data. 
 
-## Hvordan
-For å finne lengden til en streng i Haskell, kan vi bruke den innebygde funksjonen `length`. Denne funksjonen tar inn en streng som argument og returnerer antall tegn i strengen. La oss se på et eksempel:
-
-```Haskell
-length "Hei, verden!"
-
--- output: 12
-```
-
-Vi kan også bruke denne funksjonen på variabler som inneholder strenger. La oss si at vi har en variabel `navn` som inneholder navnet vårt. Da kan vi finne lengden til denne strengen ved å skrive:
+## Hvordan:
+For å finne lengden til en streng i Haskell, kan vi bruke den innebygde funksjonen `length`. Denne funksjonen tar inn en liste av elementer, inkludert strenger, og returnerer lengden som en numerisk verdi. Her er et eksempel på hvordan du kan bruke den:
 
 ```Haskell
-length navn
-
--- output: 5 (hvis navnet er "Hans")
+length "Hei verden!" 
 ```
-
-Vi kan også bruke `length` på symboliske strenger, som for eksempel tall. La oss si at vi vil finne antall sifre i tallet 123456. Da kan vi skrive:
+Dette vil returnere verdien 11, siden det er 11 tegn i strengen "Hei verden!". Du kan også bruke `length` på mer komplekse strukturer som lister:
 
 ```Haskell
-length (show 123456)
-
--- output: 6
+length ["apple", "banana", "orange"] 
 ```
+Dette vil returnere verdien 3, siden det er tre elementer i listen.
 
-## Dykk dypere
+## Dykk dypere:
+I eldre versjoner av Haskell måtte man lage en egen funksjon for å finne lengden til en streng. Dette førte ofte til at man måtte bruke løkker og telle variabler for å finne lengden, noe som kunne være tidkrevende og komplisert. Med den innebygde `length`-funksjonen i dagens versjoner av Haskell, blir dette mye enklere og mer effektivt.
 
-Hvis du vil forstå hvordan `length` funksjonen egentlig fungerer, kan du dykke dypere inn i Haskell sine strengmanipuleringsfunksjoner. En streng i Haskell er egentlig bare en liste med tegn. Dette betyr at lengden til en streng egentlig er lengden til denne listen. Derfor fungerer `length` ved å telle antall elementer i listen som representerer strengen.
+En alternativ måte å finne lengden til en streng i Haskell på er å bruke funksjonen `Data.Text.length` fra pakken `text`. Denne funksjonen kan være nyttig når man arbeider med store tekstmengder på grunn av sin høye ytelse. 
 
-## Se også
+Når man ser på implementasjonen av `length`-funksjonen i Haskell, vil man se at den bruker prinsippet om rekursjon for å telle elementene i listen. Dette er en effektiv måte å finne lengden på, spesielt for store lister.
 
-- [Haskell dokumentasjon for `length`](https://hackage.haskell.org/package/base-4.14.1.0/docs/Data-List.html#v:length)
-- [Haskell lærebøker på norsk](https://wiki.haskell.org/Norsk)
-- [Enkle intro til Haskell på norsk](https://martinlearnsruby.github.io/examples/haskell-sanity-check-0.6.3.pdf)
+## Se også:
+- [Lengdefunksjonen i Haskell dokumentasjonen](https://hackage.haskell.org/package/base-4.15.0.0/docs/Prelude.html#v:length)
+- [Alternativ til `length`-funksjonen: `Data.Text.length` fra `text`-pakken](https://hackage.haskell.org/package/text-1.2.4.1/docs/Data-Text.html#v:length)

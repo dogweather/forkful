@@ -10,31 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+## O Que & Por Que?
 
-Você provavelmente já precisou descobrir a quantidade de caracteres em uma frase ou palavra. Talvez porque você precisa garantir que seu texto se encaixe em determinado espaço, ou apenas por curiosidade. Independentemente do motivo, saber o tamanho de uma string é uma habilidade essencial na programação.
+Encontrar o comprimento (ou tamanho) de uma string é uma operação fundamental em programação. Isso porque, ao lidar com strings, é importante saber quantos caracteres ela contém para percorrer corretamente seus elementos, executar determinadas manipulações ou validar sua estrutura. Saber o comprimento de uma string também é útil para otimizar o uso de memória e garantir a eficiência do código.
 
-## Como fazer
+## Como Fazer:
 
-Para encontrar o tamanho de uma string utilizando o Fish Shell, é muito simples. Basta utilizar o comando `begin` seguido de `string length` e a string desejada, tudo dentro de um ```Fish Shell code block```. Veja um exemplo abaixo:
+Usar o Fish Shell para encontrar o comprimento de uma string é simples e direto. Basta usar o comando `string length`, seguido da string entre aspas. Veja um exemplo abaixo:
 
-```Fish Shell
-begin
-string length "Olá, mundo!"
+```
+Fish Shell
+string length "Olá, mundo!" 
+->
+12
 ```
 
-Isso retornará o valor 12, indicando que a string "Olá, mundo!" possui 12 caracteres, incluindo espaços e pontuações. Você pode testar com outras strings para ver o resultado.
+Também é possível usar variáveis contendo strings no lugar das aspas. Veja:
 
-## Mergulho profundo
+```
+Fish Shell
+set nome "João" 
+string length $nome 
+->
+4
+```
 
-Para entender melhor como o comando `string length` funciona, é preciso entender como o Fish Shell lida com strings. No Fish, strings são tratadas como uma sequência de caracteres, onde cada caractere tem um valor numérico atribuído a ele. Esse valor determina quantos bytes o caractere ocupa na memória.
+## Mergulho Profundo:
 
-Então, quando utilizamos `string length` estamos pedindo ao Fish que conte quantos caracteres existem em uma determinada sequência e nos retorne esse valor.
+Encontrar o comprimento de uma string é uma tarefa muito comum em programação e, por isso, existem diversos métodos e funções para realizá-la em diferentes linguagens de programação. Alguns exemplos são o `strlen()` em C, o `len()` em Python e o `length()` em JavaScript.
 
-## Veja também
+É importante lembrar que, em algumas linguagens, o comprimento de uma string pode diferir do número de caracteres visíveis, já que contam com metacaracteres e acentuações, por exemplo. Portanto, é necessário conhecer bem a linguagem e suas características para utilizar corretamente os métodos de encontrar o comprimento de uma string.
 
-Para mais informações sobre o Fish Shell e suas funcionalidades, confira os links abaixo:
+## Veja Também:
 
-- [Fish Shell Documentação](https://fishshell.com/docs/current/index.html)
-- [Fish Shell Tutorial](https://fishshell.com/docs/current/tutorial.html)
-- [Fish Shell Cheatsheet](https://gist.github.com/wolever/5596964)
+- Documentação oficial do Fish Shell sobre `string length`: https://fishshell.com/docs/current/cmds/string_length.html
+- Exemplos de uso do `string length` no Stack Overflow: https://stackoverflow.com/questions/38096876/how-to-find-the-length-of-a-string-in-fish-shell
+- Tutorial sobre strings em programação: https://www.digitalocean.com/community/tutorials/how-to-work-with-strings-in-javascript

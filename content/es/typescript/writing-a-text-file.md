@@ -10,35 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué escribir un archivo de texto?
+## ¿Qué es y por qué se hace?
+Escribir un archivo de texto es una tarea común en la programación. Consiste en guardar texto en un archivo para su posterior lectura o manipulación. Los programadores lo hacen para almacenar datos o información importante que puedan necesitar más adelante.
 
-Escribir un archivo de texto es una tarea esencial para cualquier programador, ya que permite almacenar y compartir información de manera sencilla. En el caso de TypeScript, un lenguaje de programación relativamente nuevo, escribir un archivo de texto es una habilidad básica que te permitirá crear y manipular datos de manera eficiente.
+## Cómo hacerlo:
+A continuación se muestran dos ejemplos de cómo escribir un archivo de texto en TypeScript utilizando la librería "fs" integrada en NodeJS. Estos ejemplos asumen que tenemos un archivo llamado "mi-archivo.txt" en la misma ruta que nuestro código TypeScript.
+```
+// Importamos la librería "fs"
+import * as fs from 'fs';
 
-## Cómo hacerlo en TypeScript
+// Creamos una variable con el texto que queremos escribir en el archivo
+let texto = "¡Hola, mundo!";
 
-Para escribir un archivo de texto en TypeScript, simplemente debes seguir los siguientes pasos:
-
-1. Primero, debes importar el módulo `fs`, que proporciona funciones para trabajar con archivos en el sistema.
-2. Después, puedes usar la función `writeFileSync()` del módulo `fs` para escribir en un archivo.
-3. Finalmente, escribe el contenido que deseas guardar en el archivo dentro de los paréntesis de `writeFileSync()`, usando comillas para indicar que se trata de una cadena de texto.
-
-Por ejemplo, si queremos crear un archivo llamado `miArchivo.txt` con el texto "Hola Mundo" dentro, nuestro código se vería así:
-
-```TypeScript
-import * as fs from "fs";
-
-fs.writeFileSync("miArchivo.txt", "Hola Mundo");
+// Sintaxis para escribir un archivo de texto
+fs.writeFile('mi-archivo.txt', texto, (error) => {
+  if (error) { // Si ocurre un error, lo mostramos en la consola
+    console.log(error)
+  } else { // Si no hay error, mostramos un mensaje de éxito
+    console.log('Archivo creado correctamente');
+  }
+});
 ```
 
-Una vez que ejecutemos este código, se creará un archivo llamado `miArchivo.txt` en el directorio actual con el texto deseado dentro.
+Otra forma de escribir un archivo de texto en TypeScript es utilizando el módulo "fs-extra". Este módulo proporciona algunas funcionalidades adicionales y una sintaxis más sencilla para trabajar con archivos. Aquí hay un ejemplo de cómo usarlo:
+```
+// Importamos el módulo "fs-extra"
+import * as fs from 'fs-extra';
 
-## Un vistazo más profundo
+// Creamos una variable con el texto que queremos escribir en el archivo
+let texto = "¡Hola, mundo!";
 
-Además de la función `writeFileSync()`, el módulo `fs` también ofrece otras funciones útiles para manipular archivos, como `readFileSync()` para leer archivos y `appendFileSync()` para añadir contenido a un archivo existente. También podemos especificar opciones adicionales, como la codificación del archivo o el modo de escritura, al utilizar estas funciones.
+// Sintaxis para escribir un archivo de texto
+fs.outputFile('mi-archivo.txt', texto)
+  .then(() => { // Si el archivo se escribe correctamente, mostramos un mensaje de éxito
+    console.log('Archivo creado correctamente');
+  })
+  .catch((error) => { // Si ocurre un error, lo mostramos en la consola
+    console.log(error);
+  });
+```
 
-Además de esto, TypeScript también cuenta con una sintaxis sencilla y fácil de entender para trabajar con archivos. Por ejemplo, podemos utilizar el operador `in` para comprobar si un archivo existe o no en un directorio determinado.
+## Profundizando:
+Históricamente, escribir un archivo de texto ha sido una forma común de almacenar y compartir datos. Sin embargo, con el avance de la tecnología, han surgido alternativas más eficientes y especializadas para diferentes tipos de datos, como bases de datos o servicios en la nube.
 
-## Ver también
+Implementar la escritura de un archivo de texto en TypeScript es sencillo gracias a las librerías integradas en NodeJS. Sin embargo, es importante tener en cuenta que este proceso puede variar según la plataforma en la que se esté ejecutando el código, ya sea en un servidor o en un navegador.
 
-- Documentación oficial de TypeScript: https://www.typescriptlang.org/
-- Documentación oficial de Node.js en español: https://nodejs.org/es/docs/
+## También puede interesarte:
+- [Tutorial de NodeJS sobre cómo escribir archivos de texto](https://nodejs.dev/learn/writing-files-with-nodejs)
+- [Documentación oficial de TypeScript sobre la librería "fs"](https://www.typescriptlang.org/docs/handbook/nodejs/fs.html)
+- [Documentación oficial de "fs-extra"](https://github.com/jprichardson/node-fs-extra)

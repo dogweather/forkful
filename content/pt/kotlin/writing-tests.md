@@ -10,37 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que escrever testes em Kotlin
+## O que e por que?
 
-Você já ouviu falar sobre a importância de escrever testes em linguagens de programação, mas por que isso é tão importante para o desenvolvimento em Kotlin? Escrever testes pode parecer uma tarefa tediosa e demorada, mas é fundamental para garantir a qualidade e a consistência do seu código. Além disso, a prática de testes é uma forma eficiente de detectar e corrigir possíveis erros antes que eles causem problemas em produção.
+Escrever testes é uma prática comum entre os programadores para garantir que seu código funciona corretamente. Testes são pedaços de código que verificam se as funcionalidades criadas pelos desenvolvedores estão produzindo os resultados esperados. Isso pode evitar erros indesejados e garantir a qualidade do código.
 
-## Como escrever testes em Kotlin
+## Como fazer:
 
-Escrever testes em Kotlin é bastante simples e pode ser feito facilmente seguindo algumas práticas recomendadas. Primeiro, crie um novo arquivo de teste na mesma pasta em que está o código que você deseja testar. Em seguida, adicione os testes utilizando a função de asserção `assert()` e execute-o utilizando uma ferramenta de teste, como o JUnit.
+Para escrever testes em Kotlin, podemos usar a biblioteca de testes integrada no framework de desenvolvimento Kotlin, o JUnit. Vamos assumir que temos uma classe chamada "Calculadora" com um método "somar" que recebe dois números inteiros e retorna sua soma. O teste em Kotlin seria escrito da seguinte forma:
 
 ```Kotlin
-fun sum(a: Int, b: Int): Int {
-    return a + b
-}
-
-@Test
-fun testSum() {
-    val result = sum(2, 3)
-    assert(result == 5)
+class CalculadoraTest {
+    
+    @Test
+    fun testSomar() {
+        val calculadora = Calculadora()
+        assertEquals(4, calculadora.somar(2,2))
+    }
 }
 ```
 
-Neste exemplo, estamos testando a função `sum()` que recebe dois números inteiros e retorna a sua soma. Usando a função de asserção `assert()`, estamos garantindo que o resultado da função seja igual a 5. Se o resultado for diferente, o teste falhará e será necessário corrigir o código.
+O método "assertEquals" do JUnit compara o resultado da operação com o valor esperado. Se forem iguais, o teste passa. Se forem diferentes, o teste falha. É possível escrever vários testes para diferentes cenários, como por exemplo, testar se a calculadora funciona corretamente com números negativos ou decimais.
 
-## Aprofundando-se nos testes em Kotlin
+## Profundando:
 
-Além dos testes unitários, é importante explorar outras formas de teste em Kotlin, como os testes de integração e os testes de aceitação. Além disso, é fundamental ter uma boa cobertura de testes, ou seja, testar todas as principais funcionalidades do seu código. Para isso, você pode utilizar a biblioteca MockK para criar objetos simulados e testar cenários mais complexos.
+A prática de escrever testes foi introduzida no desenvolvimento de software na década de 1980. Antes disso, os programas eram testados manualmente por suas equipes de desenvolvimento, o que levava a muitos erros e atrasos no lançamento de produtos. Atualmente, existem outras alternativas para escrever testes em Kotlin, como o framework de teste Spek ou a ferramenta MockK para testar classes com dependências.
 
-Outra dica importante é utilizar a funcionalidade de anotações em Kotlin para especificar o comportamento esperado do teste. Por exemplo, a anotação `@Test` indica que o método é destinado a ser executado como um teste e a anotação `@Before` pode ser usada para indicar métodos que devem ser executados antes de cada teste.
+Para implementar testes em Kotlin, é importante criar classes de teste separadas da classe principal e utilizar as anotações "@Test" para indicar quais métodos devem ser executados como testes. Também é possível adicionar anotações como "@Before" ou "@After" para executar certas ações antes ou depois dos testes, como inicializar variáveis ou limpar dados. Além disso, podemos utilizar o recurso de "asserções personalizadas" do JUnit para criar nossas próprias verificações de resultados.
 
-## Veja também
+## Veja também:
 
-- [Documentação oficial do Kotlin sobre testes](https://kotlinlang.org/docs/tutorials/testing.html)
-- [Tutorial de testes em Kotlin do Baeldung](https://www.baeldung.com/kotlin/testing)
-- [A biblioteca MockK para testes em Kotlin](https://mockk.io/)
-- [Tutorial de testes de integração em Kotlin do The Code Ninja](https://thecodeninja.dev/testing-integration-kotlin)
+- [Documentação oficial do JUnit para Kotlin](https://junit.org/junit5/docs/current/user-guide/#overview) 
+- [Framework de teste Spek para Kotlin](https://spekframework.org/) 
+- [Ferramenta MockK para testar classes com dependências em Kotlin](https://mockk.io/)

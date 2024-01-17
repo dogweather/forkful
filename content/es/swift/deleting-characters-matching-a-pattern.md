@@ -1,7 +1,7 @@
 ---
-title:                "Eliminando caracteres que coinciden con un patrón"
-html_title:           "Swift: Eliminando caracteres que coinciden con un patrón"
-simple_title:         "Eliminando caracteres que coinciden con un patrón"
+title:                "Borrando caracteres que coinciden con un patrón"
+html_title:           "Swift: Borrando caracteres que coinciden con un patrón"
+simple_title:         "Borrando caracteres que coinciden con un patrón"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -10,45 +10,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
-Eliminar caracteres que coinciden con un patrón es una tarea común en la programación y puede ser útil para limpiar entradas de datos o realizar búsquedas más específicas en una cadena de caracteres.
+## ¿Qué y por qué?
+Eliminar caracteres que coinciden con un patrón se refiere a eliminar parte o toda una cadena de texto basándose en un patrón predefinido. Los programadores a menudo realizan esta tarea para limpiar, formatear o manipular cadenas de texto de manera efectiva.
 
-## Cómo hacerlo
-La función `replacingOccurrences(of:with:)` de Swift permite reemplazar una cadena de caracteres con otra en función de un patrón. Por ejemplo, si queremos eliminar todas las vocales de una palabra, podemos utilizar la siguiente línea de código:
-
-```Swift
-let palabra = "programación"
-let palabraSinVocales = palabra.replacingOccurrences(of: "[aeiou]", with: "", options: .regularExpression)
-```
-La variable `palabra` contiene la cadena original y en `palabraSinVocales` se almacenará el resultado, en este caso "prgrmcón". Al utilizar `options: .regularExpression`, le estamos indicando a Swift que queremos utilizar expresiones regulares para buscar el patrón que le hemos especificado entre corchetes (`[aeiou]`, en este caso).
-
-Otra opción es utilizar la función `filter` para crear un nuevo arreglo con los caracteres que no cumplan con nuestro patrón. Por ejemplo, si queremos eliminar todas las letras minúsculas de una cadena, podemos hacer lo siguiente:
+## Cómo:
+Eliminando caracteres utilizando el método ```removeAll(where:)``` en Swift, seguido del patrón a coincidir entre paréntesis. Por ejemplo:
 
 ```Swift
-let cadena = "Código123"
-let cadenaSoloNumeros = cadena.filter { !"abcdefghijklmnopqrstuvwxyz".contains($0) }
+var string = "Hola, ¿cómo estás?"
+string.removeAll(where: {$0 == ","}) // Elimina todas las comas
+print(string) // "Hola ¿cómo estás?"
 ```
 
-En este caso, la variable `cadenaSoloNumeros` contendrá "123".
+## Profundizando:
+La eliminación de caracteres en programación tiene sus raíces en la manipulación de cadenas de texto, un aspecto clave en la mayoría de lenguajes de programación. Actualmente, hay varias formas de eliminar caracteres en Swift, como el uso de métodos similares a ```removeAll(where:)```, o utilizando expresiones regulares. 
 
-## Profundizando
-Como mencionamos antes, utilizar expresiones regulares es una forma poderosa y versátil de buscar patrones en una cadena de caracteres. En el ejemplo anterior, `[aeiou]` representa una clase de caracteres, lo que significa que cualquier vocal (minúscula o mayúscula) será reemplazada. Sin embargo, podemos utilizar otros caracteres especiales para realizar búsquedas más complejas, como por ejemplo:
+La implementación de este proceso puede variar dependiendo del lenguaje de programación, pero en general, se basa en la comparación y eliminación de caracteres basándose en ciertos criterios. Si bien es una tarea común y útil en la programación, también puede ser un desafío para los principiantes, ya que requiere un conocimiento sólido de las cadenas de texto y sus métodos.
 
-- `.`: coincide con cualquier caracter
-- `\d`: coincide con un dígito
-- `\w`: coincide con un caracter alfanumérico
-- `\s`: coincide con un espacio en blanco
-- `^`: coincide con el inicio de la cadena
-- `$`: coincide con el final de la cadena
-- `*`: coincide con 0 o más repeticiones de un patrón
-- `+`: coincide con 1 o más repeticiones de un patrón
-- `?`: coincide con 0 o 1 repetición de un patrón
-- `{n}`: coincide con exactamente `n` repeticiones de un patrón
-- `{n,}`: coincide con al menos `n` repeticiones de un patrón
-- `{n,m}`: coincide con entre `n` y `m` repeticiones de un patrón
-
-Puedes encontrar más información sobre expresiones regulares en la [documentación oficial de Swift](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#ID291).
-
-## Ver también
-- [Cómo utilizar expresiones regulares en Swift](https://www.hackingwithswift.com/articles/108/how-to-use-regular-expressions-in-swift)
-- [Documentación oficial de Swift sobre strings y caracteres](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+## Ver también:
+- [Documentación oficial de Swift sobre el método removeAll(where:)](https://developer.apple.com/documentation/swift/array/2884661-removeall)
+- [Explicación en video de cómo eliminar caracteres en Swift](https://www.youtube.com/watch?v=CddQc1qPvsM)
+- [Otras formas de eliminar caracteres en Swift](https://theswiftdev.com/how-tos-in-swift-coding/do-you-know-how-to-trim-a-string-in-swift/)

@@ -10,34 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué escribir en la salida estándar de error?
+## ¿Qué y por qué?
 
-Escribir en la salida estándar de error es una técnica común en la programación en Java. Es una manera de mostrar mensajes de error o advertencia al usuario durante la ejecución del programa. Esto permite una mejor gestión de errores y ayuda a mejorar la calidad del código.
+Escribir en el error estándar es una técnica común en la programación en Java. Se utiliza para imprimir mensajes de error y diagnóstico mientras se ejecuta un programa. Los programadores lo hacen para ayudar a identificar y solucionar problemas en su código de manera eficiente.
 
-## Cómo hacerlo
+## Cómo hacerlo:
 
-Para escribir en la salida estándar de error en Java, se utiliza el objeto System.err. A continuación se muestra un ejemplo de cómo imprimir un mensaje de error en la consola:
+Puedes escribir en el error estándar utilizando la clase System de Java y su método "err". Aquí hay un ejemplo de código:
 
 ```Java
-System.err.println("¡Error! Algo salió mal.");
+System.err.println("¡Este es un mensaje de error!");
 ```
 
-El resultado de este código sería:
+La salida de este código se verá así en tu consola:
 
 ```
-¡Error! Algo salió mal.
+¡Este es un mensaje de error!
 ```
 
-Además de imprimir un mensaje de error, también se pueden escribir otros tipos de datos en la salida estándar de error, como números o caracteres. Todo lo que se imprima utilizando el objeto System.err se mostrará en la consola con un color rojo, lo que ayuda a identificar fácilmente los mensajes de error en medio de la salida estándar de la ejecución del programa.
+## Profundizando:
 
-## Profundizando
+Esta técnica se ha utilizado durante décadas en el desarrollo de software. Antes de la introducción de las herramientas de depuración modernas, los programadores dependían de imprimir mensajes en el error estándar para identificar y solucionar problemas en su código.
 
-Hay diferentes escenarios en los que escribir en la salida estándar de error puede ser útil. Por ejemplo, si se está trabajando en un proyecto en equipo y se desea colaborar con otros programadores, escribir en la salida estándar de error puede ser una manera de comunicar problemas o advertencias de manera clara y concisa. También es útil cuando se están realizando pruebas de código y se necesita ver cuando ocurre un error específico.
+Aunque escribir en el error estándar sigue siendo una técnica útil, hay muchas otras formas de depurar código, como la depuración en tiempo real y las herramientas de seguimiento de pila. Sin embargo, aún es una herramienta importante en el proceso de resolución de problemas para muchos programadores.
 
-Además de imprimir mensajes de error en la salida estándar de error, también es posible redirigir esta salida a un archivo de texto. Esto puede ser útil para guardar registros o para informar sobre errores en un archivo específico en lugar de imprimirlos en la consola.
+Si bien el uso de System.err es una forma sencilla y directa de escribir en el error estándar, existen otras formas más avanzadas de realizar esta tarea utilizando las clases PrintStream y PrintWriter.
 
-## Ver también
+## Ver también:
 
-- [Java documentation on System.err](https://docs.oracle.com/javase/8/docs/api/java/lang/System.html#err)
-- [Tutorial on Standard I/O in Java](https://www.tutorialspoint.com/java/java_system_class.htm)
-- [Stack Overflow thread discussing the use of System.err](https://stackoverflow.com/questions/8366080/difference-between-system-out-println-and-system-err-println-in-java)
+- Documentación oficial de Java sobre System.err: https://docs.oracle.com/javase/8/docs/api/java/lang/System.html#err
+- Artículo de StackOverflow sobre cómo escribir en el error estándar en Java: https://stackoverflow.com/questions/26459705/writing-to-standard-error

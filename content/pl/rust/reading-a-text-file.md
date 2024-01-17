@@ -10,51 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+Co to jest odczytywanie plików tekstowych?
+Odczytywanie plików tekstowych to proces pobierania informacji z pliku tekstowego i wykorzystania ich w programie. Jest to powszechna czynność w programowaniu, ponieważ pozwala na wykorzystanie zapisanych danych w celu wykonania określonych działania.
 
-Jeśli jesteś zainteresowany językiem programowania Rust, prawdopodobnie chcesz nauczyć się, jak czytać pliki tekstowe w tym języku. Jest to bardzo przydatna umiejętność, ponieważ wiele aplikacji i narzędzi, takich jak bazy danych, wykorzystuje pliki tekstowe jako format przechowywania danych. W tym artykule dowiesz się, jak w łatwy sposób czytać pliki tekstowe w Rust.
+Dlaczego programiści to robią?
+Programiści odczytują pliki tekstowe, ponieważ często są one wykorzystywane do przechowywania danych lub konfiguracji, które są potrzebne do działania programu. Odczytywanie tych informacji umożliwia korzystanie z nich w programie, co zwiększa jego funkcjonalność i możliwości.
 
-## Jak to zrobić
+Jak to zrobić?
+Odczytywanie plików tekstowych w języku Rust jest bardzo proste. Wystarczy użyć funkcji "fs::read_to_string" i przekazać jej jako argument ścieżkę do pliku. Na przykład:
 
-Aby móc czytać pliki tekstowe w Rust, musisz najpierw zaimportować moduł "fs" (filesystem). Możesz to zrobić używając słowa kluczowego "use" i podając nazwę modułu, w tym przypadku "fs". Następnie możesz użyć funkcji "fs::read_to_string", aby odczytać zawartość pliku tekstowego i zachować ją w zmiennej. 
-
-```Rust
-use std::fs;
-
-let tekst = fs::read_to_string("plik.txt").expect("Nie udało się odczytać pliku!");
+```
+let data = std::fs::read_to_string("plik.txt").expect("Nie można odczytać pliku!");
 ```
 
-W powyższym przykładzie, wykorzystaliśmy funkcję "expect" w celu obsługi wyjątków. Jeśli wystąpił błąd podczas odczytu pliku, zostanie wyświetlony komunikat "Nie udało się odczytać pliku!". Możesz również użyć funkcji "unwrap", która zawiera w sobie błąd i automatycznie go obsługuje.
+Kolejnym krokiem jest przetworzenie odczytanych danych, na przykład wyświetlenie ich na ekranie. Można to zrobić z użyciem pętli lub metod dostępnych w języku Rust.
 
-Aby odczytać pojedynczą linię z pliku, możesz użyć funkcji "read_line" i zachować wynik w zmiennej typu String.
+Jak to działa?
+Odczytywanie plików tekstowych w języku Rust jest oparte na metodzie "Open-Close-Read" (OCR). Polega to na otwarciu pliku, odczytaniu jego zawartości i zamknięciu pliku. W przypadku nieudanego odczytu, program może obsłużyć wyjątek i przekazać użytkownikowi odpowiedni komunikat.
 
-```Rust
-let mut linia = String::new();
-let wynik = fs::File::open("plik.txt").expect("Nie udało się otworzyć pliku!");
+Alternatywy i szczegóły implementacji
+W języku Rust istnieje wiele alternatywnych bibliotek do odczytu plików tekstowych, takich jak "std::fs::read" czy "std::io::BufReader". Każda z nich ma swoje własne zalety i może być wybierana w zależności od potrzeb programistów.
 
-wynik.read_line(&mut linia).expect("Nie udało się odczytać linii.");
-```
+Podsumowując
+Odczytywanie plików tekstowych jest niezbędnym elementem w wielu programach, a język Rust umożliwia to w łatwy i intuicyjny sposób. Dzięki temu możemy wykorzystać zapisane informacje i dostosować działanie programu do naszych potrzeb. Polecamy zapoznać się z innymi bibliotekami i eksperymentować, aby wybrać najbardziej odpowiednią dla nas rozwiązanie.
 
-Jeśli chcesz odczytać całą zawartość pliku w celu przetworzenia danych, możesz użyć pętli for i funkcji "lines".
-
-```Rust
-let wynik = fs::File::open("plik.txt").expect("Nie udało się otworzyć pliku!");
-
-for linia in wynik.lines() {
-    //przetworzenie danych
-}
-```
-
-## Deep Dive
-
-W powyższych przykładach wykorzystaliśmy funkcję "expect", która jest dostępna w każdym typie zwracanym przez funkcje biblioteki standardowej. Jednak w niektórych przypadkach może to powodować problemy i warto jest użyć funkcji "unwrap", która zwraca wynik lub wyrzuca błąd.
-
-Podczas przetwarzania plików tekstowych, często zdarza się, że chcesz wykluczyć pewne części tekstu lub pominąć linie, które nie zawierają potrzebnych informacji. W tym celu możesz skorzystać z funkcji "filter" i "find". Funkcja "filter" pozwala na wykluczenie całych linii zawierających określony ciąg znaków, natomiast funkcja "find" pozwala na znalezienie kawałka tekstu lub wyrażenia regularnego w linii.
-
-Na koniec chciałbym wspomnieć o funkcji "fs::metadata", która zwraca informacje o pliku, takie jak rozmiar, data ostatniej modyfikacji, czy też flagi dostępu. Używając tej funkcji, możesz łatwo sprawdzić, czy plik jest pusty i czy nie został ostatnio zmodyfikowany.
-
-## Zobacz też
-
-- Dokumentacja Rust na temat czytania i zapisywania plików: https://doc.rust-lang.org/std/fs/index.html
-- Przykłady kodu na GitHubie: https://github.com/rust-lang/rust/tree/master/src/libstd/fs.rs
-- Poradnik na YouTube: https://www.youtube.com/watch?v=KJOkRG4-uMA
+Zobacz także
+- Dokumentacja języka Rust: https://www.rust-lang.org
+- Biblioteka std::fs: https://doc.rust-lang.org/std/fs/index.html
+- Biblioteka std::io: https://doc.rust-lang.org/std/io/index.html

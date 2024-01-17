@@ -1,7 +1,7 @@
 ---
-title:                "Arbeiten mit CSV"
-html_title:           "C#: Arbeiten mit CSV"
-simple_title:         "Arbeiten mit CSV"
+title:                "In Zusammenarbeit mit CSV arbeiten"
+html_title:           "C#: In Zusammenarbeit mit CSV arbeiten"
+simple_title:         "In Zusammenarbeit mit CSV arbeiten"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Data Formats and Serialization"
@@ -10,79 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was & Warum?
+CSV ist eine Abkürzung für Comma-Separated Values und ist ein weit verbreitetes Dateiformat für den Austausch von Tabellendaten. Programmierer nutzen CSV, um Daten aus verschiedenen Quellen in ein einheitliches Format zu bringen oder um Daten in Excel-Tabellen zu importieren und zu exportieren.
 
-Sicherlich ist es schon vorgekommen, dass du mit großen Mengen von Daten arbeiten musstest. CSV-Dateien sind dabei ein häufig genutztes Format, um strukturierte Daten zu speichern. Mit C# kannst du CSV-Dateien ganz einfach einlesen, bearbeiten und speichern.
+## So geht's:
+Beim Lesen oder Schreiben von CSV-Dateien gibt es einige wichtige Schritte zu beachten. Zunächst müssen wir die ```System.IO```-Bibliothek importieren, um mit Dateien zu arbeiten. Dann können wir die Klasse ```CsvReader``` oder ```CsvWriter``` verwenden, je nachdem ob wir Daten lesen oder schreiben möchten. Ein Beispiel zum Lesen einer CSV-Datei könnte folgendermaßen aussehen:
 
-## Wie es geht
-
-Um mit CSV-Dateien in C# zu arbeiten, benötigst du die `CsvHelper`-Bibliothek. Diese kannst du entweder manuell herunterladen und in dein Projekt einbinden oder über NuGet installieren.
-
-Als Erstes musst du eine Klasse definieren, die die Struktur deiner CSV-Datei repräsentiert. Die Eigenschaften dieser Klasse müssen dabei den Spaltennamen in der CSV-Datei entsprechen. Zum Beispiel:
-
-```C#
-public class Person
-{
-    public string Vorname { get; set; }
-    public string Nachname { get; set; }
-    public int Alter { get; set; }
-}
 ```
+string filepath = "C:\\example.csv";
 
-Um eine CSV-Datei einzulesen, erstellst du einen `CsvReader` und gibst den Dateipfad als Argument an. Dann liest du die Zeilen der Datei nacheinander aus und wandelst sie in Objekte der definierten Klasse um. Hier ein Beispiel:
-
-```C#
-using (var reader = new CsvReader(new StreamReader("meine-datei.csv")))
+using (var reader = new CsvReader(filepath))
 {
     while (reader.Read())
     {
-        var person = reader.GetRecord<Person>();
-
-        // hier kannst du mit den Daten der Person arbeiten
-        Console.WriteLine($"{person.Vorname} {person.Nachname} ({person.Alter})");
+        string column1 = reader.GetField<string>(0);
+        int column2 = reader.GetField<int>(1);
+        // weitere Logik
     }
 }
 ```
 
-Du kannst aber auch selbst bestimmen, wie die Daten aus der CSV-Datei in dein Objekt umgewandelt werden sollen. Dafür kannst du sogenannte "mappings" definieren, die festlegen, wie die Spalten in der CSV-Datei mit den Eigenschaften deiner Klasse verknüpft werden sollen. Zum Beispiel:
+## Tief eintauchen:
+CSV wurde bereits in den 1970er Jahren entwickelt, lange bevor Excel oder andere Tabellenkalkulationsprogramme existierten. Heutzutage gibt es verschiedene Alternativen wie JSON oder XML, die ebenfalls für den Datenaustausch verwendet werden können. Bei der Implementierung ist zu beachten, dass CSV keine standardisierte Spezifikation hat, was zu verschiedenen Interpretationen führen kann. Es ist daher wichtig, immer darauf zu achten, dass die Daten korrekt formatiert sind.
 
-```C#
-// Spalte "Vorname" wird mit der Property "FirstName" gemappt
-Map(m => m.FirstName).Name("Vorname");
-```
-
-Um eine CSV-Datei zu erstellen, erstellst du einen `CsvWriter` und übergibst als Argument das Ziel der Datei. Dann schreibst du einfach deine Daten in die Datei. Hier ein Beispiel:
-
-```C#
-using (var writer = new CsvWriter(new StreamWriter("neue-datei.csv")))
-{
-    // Definiere, wie die Spalten heißen sollen
-    writer.WriteHeader<Person>();
-
-    // Schreibe Objekte in CSV-Datei
-    writer.WriteRecords(new List<Person>
-    {
-        new Person { Vorname = "Max", Nachname = "Mustermann", Alter = 28 },
-        new Person { Vorname = "Maria", Nachname = "Musterfrau", Alter = 32 }
-    });
-}
-```
-
-In der erzeugten CSV-Datei hätten wir dann folgende Inhalte:
-
-```
-Vorname,Nachname,Alter
-Max,Mustermann,28
-Maria,Musterfrau,32
-```
-
-## Deep Dive
-
-Wenn du tiefer in das Thema einsteigen möchtest, bietet die `CsvHelper`-Bibliothek noch viele weitere Funktionen. Zum Beispiel kannst du Datentypen konvertieren lassen, Zeilen ignorieren oder manipulieren und Header-Namen anpassen.
-
-Zusätzlich ist es wichtig, dass die Werte in deiner CSV-Datei richtig formatiert sind. Wenn du zum Beispiel Texte hast, die Kommas enthalten, musst du diese in Anführungszeichen setzen, damit sie korrekt eingelesen werden können. Auch hierfür bietet `CsvHelper` eine Lösung, indem es automatisch die Anführungszeichen hinzufügt.
-
-## Siehe auch
-
-- [CsvHelper-Dokumentation](https://joshclose.github.io/CsvHelper/) 
-- [CSV-Dateien einlesen und schreiben mit C#](https://www.c-sharpcorner.com/article/read-and-write-csv-files-in-c-sharp/)
+## Siehe auch:
+- Offizielle Dokumentation zur CsvHelper-Bibliothek: https://joshclose.github.io/CsvHelper/
+- Vergleich von CSV, JSON und XML: https://www.upwork.com/resources/csv-json-xml-comparison
+- Spezifikation von CSV: https://tools.ietf.org/html/rfc4180

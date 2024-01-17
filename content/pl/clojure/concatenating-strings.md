@@ -10,55 +10,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i dlaczego?
 
-Concatenacja jest procesem łączenia wielu ciągów znaków w jeden większy ciąg. Jest to często spotykana operacja w programowaniu, która jest używana do tworzenia czytelnych i dynamicznych wyjść dla użytkownika. W Clojure, możemy łatwo łączyć ciągi znaków w bardziej złożone struktury danych za pomocą funkcji concatenation.
+Kontaktowanie lub łączenie ciągów znaków to podstawowa operacja w programowaniu, polegająca na połączeniu dwóch lub więcej ciągów w jeden. Programiści często stosują tę operację, aby tworzyć wygodne i czytelne wyjście, np. wyświetlać informacje użytkownikom.
 
-## Jak to zrobić
-
-Możemy użyć funkcji `str` w Clojure, aby połączyć dwa lub więcej ciągów znaków w jeden. Na przykład, jeśli chcielibyśmy połączyć "Hello" i "World", nasz kod wyglądałby następująco:
+## Jak to zrobić:
 
 ```Clojure
-(str "Hello" "World")
+(str "Hello" " " "World")               ; Output: "Hello World"
+(str "I have " 5 " apples")             ; Output: "I have 5 apples"
+(.concat "Hey" " there")                ; Output: "Hey there"
 ```
 
-Jego wynikiem będzie "HelloWorld". Możemy również użyć zmiennej do przechowywania ciągów znaków i połączyć je później za pomocą funkcji `str`. Na przykład:
+## Głębszy wgląd:
 
-```Clojure
-(def str1 "Hello")
-(def str2 "World")
-(str str1 str2)
-```
-Wynikiem będzie również "HelloWorld".
+Kontaktowanie ciągów znaków jest powszechnym zabiegiem w programowaniu od lat. Inną metodą łączenia ciągów jest użycie funkcji `StringBuilder` lub `StringBuffer`, które są bardziej wydajne niż standardowa konkatenacja. W Clojure możemy również użyć makra `str`, które przyjmuje wiele argumentów i łączy je w jeden ciąg.
 
-Możemy również użyć operatora `str` do łączenia ciągów znaków w mapach i listach. Na przykład, jeśli chcemy łączyć wartości z mapy, nasz kod może wyglądać tak:
+## Zobacz również:
 
-```Clojure
-(def map1 {:name "John" :age "30"})
-(str (str (:name map1) " is " (:age map1) " years old."))
-```
-Wynikiem będzie "John is 30 years old."
+Więcej informacji o użyciu `str` w Clojure: https://clojuredocs.org/clojure.core/str
 
-## Głębsze zagłębianie
-
-Funkcja `str` w Clojure jest bardzo elastyczna, ponieważ pozwala nam łączyć różne typy danych, takie jak liczby, znaki i obiekty. Możemy również użyć operatora `str` do interpolacji, co pozwala nam wstawiać zmienne do ciągów znaków. Na przykład:
-
-```Clojure
-(def name "John")
-(str "My name is ${name}.")
-```
-Wynikiem będzie "My name is John." 
-
-Warto również wspomnieć o funkcji `join`, która jest również użyteczna do łączenia ciągów znaków. Jednak w przeciwieństwie do `str`, `join` działa na kolekcjach, takich jak listy i mapy, i wymaga podania separatora. Na przykład, jeśli chcemy połączyć elementy w liście z separatorem "-":
-
-```Clojure
-(def list1 ["hello" "world"])
-(join "-" list1)
-```
-Wynikiem będzie "hello-world".
-
-## Zobacz również
-
-- Dokumentacja Clojure: https://clojure.org/
-- Oficjalna strona Clojure: https://clojure.org/
-- Poradnik dla początkujących w Clojure: https://www.braveclojure.com/
+Inne sposoby na łączenie ciągów znaków w Clojure: https://medium.com/swl-blog/string-concatenation-in-clojure-f5609f54b1d8

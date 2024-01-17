@@ -10,35 +10,20 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## למה
+## מה & למה?
+מחיקת תווים שתואמים הוא תהליך בו משתמשים בתכנות כדי למחוק תווים מאחורי מחרוזת על סמך תבנית מסוימת. תהליך זה חשוב לתיקון ושיפור טקסטים שונים וכן נפוץ בתכנות.
 
-אנשים משתמשים במחיקת תווים התואמים לפעולות כמו ניקוי טקסטים או סינון תיבות מילון.
-
-## איך לעשות זאת
-
-עבור מחרוזות מסוימות, ניתן להשתמש בפקודת `replacingOccurrences(of:with:)` למחיקת התווים המתאימים לתבנית כלשהי. לדוגמה, נתון הטקסט הבא:
+## איך לעשות?
+בקוד הבא ניתן לראות דוגמה למחיקת תווים שתואמים בשפת סוויפט:
 ```Swift
-let text = "היום הוא שישי"
+let originalString = "Hello World!"
+let newString = originalString.replacingOccurrences(of: "o", with: "")
+print(newString) // Prints "Hell Wrld!"
 ```
+בדוגמה זו, אנו משתמשים בפונקציה של שפת סוויפט שנקראת `replacingOccurrences(of:with:)` ומציין בתוכה את התבנית שאנו רוצים למחוק מתוך המחרוזת ואת התו אליו נרצה להחליף את התבנית. הקוד יחזיר את המחרוזת החדשה ללא התווים שהתאימו לתבנית שצוינה.
 
-נרצה להסיר את האות "ה" מתוך הטקסט. כדי לעשות זאת, נשתמש בפקודה הבאה:
-```Swift
-let newText = text.replacingOccurrences(of: "ה", with: "")
-```
+## עיון עמוק
+למחיקת תווים שתואמים יש יישומים מגוונים בתכנות כגון ניקוי מחרוזות, מחיקת תווים ספציפיים מטקסט ועוד. בעבר, בשפות תכנות ישנות יותר כמו פסקל וקובול, המצביעים סימן המחרוזת כדי להצביע על התווים שתרצו למחוק. אולם, בשפת סוויפט ניתן להשתמש בתבניות כדי לסמן את התווים שרוצים למחוק, מה שהופך את התהליך לפשוט וקל להבנה יותר.
 
-כתוצאה מכך, `newText` יהיה "יום ושישי".
-
-## מעומקים
-
-פקודת `replacingOccurrences(of:with:)` באמת מספקת את כל האפשרויות הנדרשות כדי למחוק תווים ממחרוזות, כולל תמיכה בתבניות רגולריות. לדוגמה, ניתן למחוק את כל התווים בכתובת המייל שמתחילים באות "h" עם הפקודה הבאה:
-```Swift
-let email = "example@domain.com"
-let newEmail = email.replacingOccurrences(of: "h.+@", with: "", options: .regularExpression)
-```
-
-כאן, הפקודה מתאם לאתר תבנית כל תו המגיע אחרי האות "h" עד לתו ה"@", ומחליף את כל התווים האלה ברק מלחציות של מחרוזת ריקה. כתוצאה מכך, `newEmail` יהיה "@domain.com".
-
-## ראה גם
-
-- [המדריך הרשמי של Swift על פקודת `replacingOccurrences(of:with:)`](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#ID285)
-- [הדרכות מתקדמות לאימון על תבניות רגולריות ב-Swift](https://www.hackingwithswift.com/articles/108/how-to-use-regular-expressions-in-swift)
+## ראו גם
+למידע נוסף על מחיקת תווים שתואמים, ניתן לקרוא על זה בכתב העת של סיליקון וואלי, [מחיקת תווים שתואמים בסוויפט](https://www.swift.com/articles/deleting-characters-matching-pattern), וגם בפורום המקוון של סוויפט, [פורום סוויפט עבור מתכנתים](https://forum.swift.org/t/deleting-characters-matching-a-pattern/8539).

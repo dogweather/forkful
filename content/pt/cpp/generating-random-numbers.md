@@ -1,7 +1,7 @@
 ---
-title:                "Gerando números aleatórios."
-html_title:           "C++: Gerando números aleatórios."
-simple_title:         "Gerando números aleatórios."
+title:                "Geração de números aleatórios"
+html_title:           "C++: Geração de números aleatórios"
+simple_title:         "Geração de números aleatórios"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Numbers"
@@ -10,50 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+# O que e por que?
 
-Gerar números aleatórios é útil em muitos programas diferentes. Pode ser usado para criar senhas de forma segura, fazer simulações e testes, e até mesmo para jogos de azar.
+Gerar números aleatórios é o processo de criar valores numéricos sem nenhum padrão aparente. Os programadores usam esse recurso para adicionar elementos de imprevisibilidade e aleatoriedade em seus programas, o que pode ser útil em jogos, simulações e criptografia.
 
-## Como fazer
+# Como fazer:
 
-A geração de números aleatórios pode ser feita utilizando a biblioteca padrão de C++, `cstdlib`. Primeiro, será necessário incluir a biblioteca no início do código:
+Existem várias maneiras de gerar números aleatórios em C++. Uma opção é usar a função ```rand()``` da biblioteca ```<cstdlib>```, que retorna um número inteiro aleatório. Por exemplo:
 
 ```C++
-
+#include <iostream>
 #include <cstdlib>
+using namespace std;
 
+int main() {
+    // Gera um número aleatório entre 1 e 100
+    int num = rand() % 100 + 1;
+    cout << "Número aleatório: " << num << endl;
+    return 0;
+}
 ```
 
-Em seguida, podemos utilizar a função `rand()` para gerar um número aleatório:
+Este código irá imprimir um número aleatório na tela toda vez que for executado.
 
-```C++
-// Gerando um número aleatório entre 0 e 10 (não incluindo o 10)
-int numero = rand() % 10;
+# Deep Dive:
 
-// Gerando um número aleatório entre 1 e 100 (incluindo o 100)
-numero = rand() % 100 + 1;
-```
+Historicamente, a geração de números aleatórios em computadores era feita por meio de algoritmos determinísticos, ou seja, algoritmos que seguem um conjunto de regras definidas para gerar uma sequência de números. No entanto, esses números não são verdadeiramente aleatórios, pois o resultado pode ser previsto se o algoritmo e sua semente (um número inicial usado no cálculo) forem conhecidos.
 
-Para garantir que os números gerados sejam realmente aleatórios, é importante inicializar a semente da função `rand()` usando a função `srand()` e o tempo atual:
+Uma alternativa para gerar números verdadeiramente aleatórios é o uso de fontes de entropia, como ruído ambiental ou dados de movimento do mouse, combinados com algoritmos que os transformam em números aleatórios. Isso é conhecido como geração de números pseudo-aleatórios.
 
-```C++
-// Inicializando a semente com o tempo atual
-srand(time(NULL));
+Além disso, é importante mencionar que alguns algoritmos de geração de números aleatórios podem produzir resultados tendenciosos ou até mesmo repetir a mesma sequência após um determinado número de iterações. Por esse motivo, é importante que os programadores se atentem à qualidade e propriedades estatísticas dos números gerados.
 
-// Gerando um número aleatório entre 1 e 50 (incluindo o 50)
-numero = rand() % 50 + 1;
-```
+# Veja também:
 
-Podem ser feitas várias manipulações com o uso de operações matemáticas, como adição ou multiplicação, para gerar diferentes limites e faixas de números aleatórios.
-
-## Mergulho profundo
-
-É importante entender que a função `rand()` não gera números verdadeiramente aleatórios. Ela utiliza um algoritmo baseado em uma semente inicial para gerar uma sequência pseudoaleatória. Isso significa que, se a semente inicial for a mesma, a sequência de números gerados também será a mesma.
-
-Por esse motivo, é importante sempre inicializar a semente de forma diferente a cada execução do programa, para garantir que os números gerados sejam o mais aleatórios possíveis.
-
-## Veja também
-
-- [Documentação da função `rand()` (em inglês)](http://www.cplusplus.com/reference/cstdlib/rand/)
-- [Outras formas de gerar números aleatórios em C++ (em inglês)](https://www.learncpp.com/cpp-tutorial/59-random-number-generation/)
-- [Explicações mais detalhadas sobre pseudoaleatoriedade (em inglês)](https://www.azillionmonkeys.com/qed/random.html)
+- [Documentação sobre a função ```rand()```](https://www.cplusplus.com/reference/cstdlib/rand/)
+- [Artigo sobre geração de números aleatórios em C++](https://www.geeksforgeeks.org/rand-and-srand-in-ccpp/)
+- [Article on generating random numbers in C++](https://www.geeksforgeeks.org/generating-random-number-range-c/) (em inglês)

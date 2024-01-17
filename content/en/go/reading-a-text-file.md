@@ -10,93 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-Reading a text file is a common task in programming, and must be done correctly in order to access and manipulate data. This article will guide you through the process of reading a text file in Go, ensuring that you have the necessary skills to tackle this task in your own projects.
+Reading a text file is the process of accessing and extracting data stored in a file that is made up of plain text. Programmers commonly do this in order to retrieve important information, such as user data, from a file. 
 
-## How To
+## How to:
 
-Reading a text file in Go is a simple process that involves a few steps. First, we need to open the file using the `os.Open` function.
-
-```Go
-file, err := os.Open("data.txt")
-if err != nil {
-  // handle error
-}
-```
-
-Next, we need to read the contents of the file using the `bufio` package. This package provides a `Scanner` type that makes it easy to read a file line by line.
+In Go, reading a text file involves using the `ioutil` package's `ReadFile()` function. First, we need to import the `ioutil` package into our code. Next, we can use the `ReadFile()` function to read a text file and store its contents into a variable. Below is an example code that reads a text file named "data.txt" and prints its contents to the standard output:
 
 ```Go
-scanner := bufio.NewScanner(file)
-for scanner.Scan() {
-  line := scanner.Text()
-  // do something with the line
-}
-```
-
-Finally, don't forget to close the file after you have finished reading it.
-
-```Go
-err = file.Close()
-if err != nil {
-  // handle error
-}
-```
-
-Let's put it all together in a working example. Assume we have a file named "data.txt" with the following contents:
-
-```
-1,John,Doe
-2,Jane,Smith
-3,Bob,Johnson
-```
-
-Our goal is to read this file and print out each line. Here is the complete code:
-
-```Go
-package main
-
 import (
-  "bufio"
   "fmt"
-  "os"
-  "strings"
+  "io/ioutil"
 )
 
 func main() {
-  file, err := os.Open("data.txt")
+  data, err := ioutil.ReadFile("data.txt")
   if err != nil {
-    panic(err)
+    fmt.Println(err)
   }
-  defer file.Close()
-
-  scanner := bufio.NewScanner(file)
-  for scanner.Scan() {
-    line := scanner.Text()
-    fmt.Println(strings.Split(line, ","))
-  }
+  fmt.Println(string(data))
 }
 ```
 
-The output of this program will be:
+The output of this code will be the contents of "data.txt", as shown below:
 
 ```
-[1 John Doe]
-[2 Jane Smith]
-[3 Bob Johnson]
+This is the data stored in the text file.
 ```
 
-## Deep Dive
+## Deep Dive:
 
-Now let's take a deeper look at what is happening in our code. When we use `os.Open` to open a file, we are provided with a `File` type, which represents an open file descriptor. This type has a `Read` method that we can use to read data from the file.
+Historically, reading a text file was a much more complicated process as each programming language had its own unique way of accessing and extracting data from a file. However, with the advancements in modern programming languages, reading a text file has become a standardized and simplified process. 
 
-However, the `bufio.Scanner` type abstracts away the lower-level details of reading data from a file, making it much easier for us to work with. It handles the reading and buffering of data, and provides a convenient `Text` method to retrieve the current line being read.
+An alternative to using the `ioutil.ReadFile()` function is to use the `os.Open()` function in combination with the `bufio` package's `NewScanner()` function, which provides more functionality for reading and manipulating data from a text file.
 
-Additionally, the `strings.Split` function allows us to split a string based on a delimiter, in this case a comma. This is useful for parsing the data from our file.
+The implementation details of reading a text file primarily involve handling any errors that may occur, such as the file not being found or not having the correct permissions. It is important to properly handle these errors to ensure that the program can continue running smoothly.
 
-## See Also
+## See Also:
 
-- [Go documentation on files](https://golang.org/pkg/os/#File)
-- [Go documentation on bufio package](https://golang.org/pkg/bufio/)
-- [Go documentation on strings package](https://golang.org/pkg/strings/)
+To learn more about reading a text file in Go, you can check out the official [Go documentation](https://golang.org/pkg/io/ioutil/#ReadFile). You can also explore other techniques and methods for reading text files, such as using regular expressions, as well as different use cases for storing and extracting data from files in general.

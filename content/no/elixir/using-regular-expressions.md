@@ -10,38 +10,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hva & Hvorfor?
+Regular expressions er kraftige verktøy som gjør det mulig å søke, manipulere og validere tekststrenger basert på et gitt mønster. Dette er spesielt nyttig for å håndtere tekstinput i programmering, slik som å finne en bestemt e-postadresse eller validere et telefonnummer. Mange programmerere bruker regulære uttrykk for å forenkle oppgaver og håndtere kompleks tekstbehandling.
 
-Hvorfor bør du lære om regulære uttrykk? Fordi de er et kraftig verktøy for å manipulere tekst på en effektiv og presis måte i Elixir programmering. De kan hjelpe deg med å gjøre komplekse søk og erstattingsoperasjoner, noe som sparer deg for mye tid og krefter i programmering.
-
-## Hvordan
-
-For å bruke regulære uttrykk i Elixir, må du først importere Regex-modulen. Dette gjøres ved å skrive `import Regex` i begynnelsen av filen din. Deretter kan du opprette et Regex-objekt ved å bruke `~r` og plassere uttrykket ditt mellom to skråstreker. For eksempel, for å finne alle forekomster av ordet "heis" i en streng, kan du bruke `~r/heis/`.
+## Hvordan:
+I Elixir, bruker vi regulære uttrykk ved å bruke modulen Regex. For å søke etter et gitt mønster i en tekststring, bruker vi funksjonen `Regex.match?(pattern, string)` hvor "pattern" er det vi ønsker å søke etter og "string" er tekststrengen vi vil søke gjennom. Her er et eksempel på hvordan vi kan finne alle ord som begynner med "h" i en tekststreng:
 
 ```Elixir
-import Regex
-
-str = "Denne heisen går opp og ned"
-regex = ~r/heis/
-Regex.scan(regex, str) |> Enum.to_list #=> ["heis", "heis"]
+text = "Hello world, how are you?"
+Regex.match?(/h\w+/, text)
 ```
 
-For å erstatte et ord med et annet, kan du bruke `Regex.replace/3` funksjonen og angi hvilken del av strengen som skal erstattes og hva den skal erstattes med.
+Dette vil returnere `true` siden teksten inneholder ordene "Hello" og "how".
 
-```Elixir
-import Regex
+## Dypdykk:
+Regular expressions ble først utviklet på 1950-tallet og har siden blitt en standard i mange programmeringsspråk. Det finnes også alternative metoder for å håndtere tekststrenger, som for eksempel string-matching algoritmer, men regulære uttrykk er fortsatt svært populære og kraftige verktøy i programmering.
 
-str = "Jeg har en grønn bil"
-regex = ~r/grønn/
-Regex.replace(regex, str, "rød") #=> "Jeg har en rød bil"
-```
+Når vi bruker regulære uttrykk i Elixir, blir de kompilert til NFA (Nondeterministic Finite Automaton) og utført veldig effektivt. Dette gjør Elixir og andre språk som bruker regulære uttrykk ideelle for store tekstbehandlingsoppgaver.
 
-## Dypdykk
-
-Regulære uttrykk kan være forvirrende i begynnelsen, men det er verdt å ta seg tid til å lære dem. En ting å merke seg er at de er case-sensitive, så `~r/grønn/` vil ikke matche `grønn` eller `Grønn`. I tillegg kan du bruke karakterklasser for å matche et hvilket som helst antall tegn, for eksempel `~r/grø[ae]nn/` vil matche både `grønn` og `grånn`. Du kan også bruke kvantareller som `*` og `+` for å matche for eksempel `grønn` eller `grøøøønn`. For å lære mer om regulære uttrykk og hvordan de fungerer, kan du se på dokumentasjonen for Regex-modulen eller prøve å øve på koding med dem.
-
-## Se også
-
-- [Elixir Regex-dokumentasjon](https://hexdocs.pm/elixir/Regex.html)
-- [Elixir Regex Playground](https://elixirplayground.sh/)
-- [Elixir regular expression cheatsheet](https://millermedeiros.github.io/mdoc/examples/elixir_by_example/07-strings_regex.html)
+## Se også:
+- [Documentation for Elixir Regex module](https://hexdocs.pm/elixir/Regex.html)
+- [Online regular expression tester](https://regex101.com/) for å øve og teste ut regulære uttrykk på ulike tekststrenger.

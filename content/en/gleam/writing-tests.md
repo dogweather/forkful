@@ -10,41 +10,21 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
+Testing is a crucial aspect of programming where we write small snippets of code to check if our main code works correctly. Programmers do it to catch bugs early, prevent regressions, and improve code quality.
 
-Writing tests is an essential part of software development, as it helps ensure code stability and catch bugs early on. By writing tests, you can have confidence in the functionality of your code and prevent unexpected issues from arising in the future.
+## How to:
+To write tests, we use the built-in ```Gleam``` testing module. It has a ```test/1``` function that takes a ```Gleam.Test``` argument, under which we use the ```assert_eq``` function to verify that the output matches the expected value. Let's look at a simple example:
 
-## How To
-
-To start writing tests in Gleam, you will need to use the `gleam-test` library, which can be installed through the Gleam package manager. Once installed, you can import it into your project with the following code:
-
-```Gleam
-import gleam/test
 ```
-
-Next, you can write your first test using the `test` function, which takes in a description and a function that contains your test code. Here's an example of a simple test that checks if the result of adding two numbers is correct:
-
-```Gleam
-test "Adding two numbers should return the correct result"() {
-  let result = 2 + 2
-  expect(result).toBe(4)
+test "addition adds two numbers" {
+  assert_eq 2 (1 + 1)
 }
 ```
 
-You can also use other assertions, such as `toBeNil`, `toEqual`, and `toContain`, to check for more specific conditions in your tests.
+## Deep Dive:
+In the past, testing was typically done manually, which was both time-consuming and prone to errors. However, with the rise of automated testing frameworks like ```Gleam```, writing tests has become easier and more efficient. Alternatives to writing tests include using third-party libraries or writing custom functions to check for expected values. Additionally, writing tests also encourages modular code design and helps with code refactoring.
 
-Once you have written your tests, you can run them by executing the command `gleam test` in your project directory. This will run all the tests and provide a report on the number of passing and failing tests.
-
-## Deep Dive
-
-Writing tests in Gleam follows the Arrange-Act-Assert (AAA) pattern, where you set up the initial state of your code, perform an action, and then assert that the result is as expected. It is essential to follow this pattern to ensure that your tests are organized and easy to understand.
-
-Additionally, Gleam has other testing libraries such as `gleam-expect` that provide more advanced assertions, and `gleam-check` that can generate random inputs for testing.
-
-It is also recommended to write multiple tests for each function and to update them when making changes to your code, as it helps catch bugs and ensure code stability.
-
-## See Also
-
-- [Official Gleam Documentation](https://gleam.run/documentation/)
-- [Writing Tests in Gleam Tutorial](https://github.com/codenoid/Gleam-talk/blob/master/src/guide/writing-tests.md)
-- [Gleam Testing Example Project](https://github.com/mjm/greeter)
+## See Also:
+- [Gleam testing documentation](https://gleam.run/documentation/tests)
+- [Article on the importance of testing in software development](https://www.techopedia.com/2/33901/software/qa/why-is-software-testing-important)

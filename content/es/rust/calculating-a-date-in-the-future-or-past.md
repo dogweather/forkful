@@ -10,45 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
-¿Alguna vez te has preguntado cómo sería tu vida si pudieras viajar en el tiempo? Aunque aún no es posible físicamente, en la programación podemos hacer algo similar. Podemos calcular y obtener fechas en el futuro o en el pasado utilizando lenguajes de programación como Rust. Ya sea para fines prácticos o simplemente por diversión, saber cómo calcular fechas puede ser una habilidad útil para tener en tu kit de herramientas de programación.
+## Qué y por qué?
+Calcular una fecha en el futuro o pasado es una tarea común para los programadores. Esta acción implica determinar una fecha basada en una fecha de origen y un número específico de días, meses o años del futuro o pasado. Los programadores realizan esta tarea para diversas aplicaciones, como por ejemplo, programación de citas, cálculo de plazos de entrega o creación de calendarios personalizados.
 
-## Cómo Hacerlo
-```rust
-use chrono::{DateTime, Duration, Utc};
-
-fn calcular_fecha(ano: i32, mes: u32, dia: u32, dias_a_sumar: i64) -> DateTime<Utc> {
-    let fecha = Utc.ymd(ano, mes, dia);
-    fecha + Duration::days(dias_a_sumar)
-}
-
-fn main() {
-    let fecha_actual = Utc::now();
-    // Calcular fecha 30 días en el futuro
-    let fecha_futura = calcular_fecha(fecha_actual.year(), fecha_actual.month(), fecha_actual.day(), 30);
-    // Calcular fecha 14 días en el pasado
-    let fecha_pasada = calcular_fecha(fecha_actual.year(), fecha_actual.month(), fecha_actual.day(), -14);
-    
-    // Imprimir fechas
-    println!("Fecha Actual: {}", fecha_actual);
-    println!("Fecha Futura: {}", fecha_futura);
-    println!("Fecha Pasada: {}", fecha_pasada);
-}
+## Cómo:
+Para calcular una fecha en Rust, se puede usar la librería `chrono`. Primero, se debe importar la librería en el código:
+```Rust
+use chrono::{NaiveDate, Duration};
 ```
-
-### Resultado:
+Luego, se puede crear una fecha de origen y usar la función `checked_add_signed` para calcular una fecha en el futuro o `checked_sub_signed` para una fecha en el pasado:
+```Rust
+let date = NaiveDate::from_ymd(2020, 03, 15); //fecha de origen
+let new_date = date.checked_add_signed(Duration::days(30)); //fecha en el futuro (30 días después)
+let new_date_past = date.checked_sub_signed(Duration::weeks(2)); //fecha en el pasado (2 semanas antes)
 ```
-Fecha Actual: 2021-05-29 21:18:47.895860+00:00
-Fecha Futura: 2021-06-28 21:18:47.895860+00:00
-Fecha Pasada: 2021-05-15 21:18:47.895860+00:00
-```
+La salida de este código mostrará la fecha correspondiente en formato `yyyy-mm-dd`.
 
-## Inmersión Profunda
-En Rust, podemos utilizar la librería `chrono` para manejar fechas y horas. Esta librería nos permite crear una fecha utilizando el método `Utc.ymd()`, el cual recibe como argumentos el año, mes y día en ese orden. Además, podemos utilizar el método `Duration::days()` para sumar o restar días a una fecha determinada.
+## Profundizando:
+La necesidad de calcular fechas en el futuro o pasado surge de la necesidad de automatizar tareas relacionadas con el tiempo y la planificación. Antes de la llegada de las librerías como `chrono`, los programadores tenían que realizar cálculos manuales para obtener estas fechas, lo que llevaba más tiempo y aumentaba la posibilidad de cometer errores.
 
-Es importante tener en cuenta que el resultado de la función `calcular_fecha()` es un objeto de tipo `DateTime<Utc>`. Esto significa que la fecha está ajustada a la zona horaria UTC (Coordinated Universal Time) en lugar de utilizar la zona horaria local del sistema.
+Otra forma de calcular fechas en Rust es usando la librería `time`. Sin embargo, `chrono` es considerada como una alternativa más moderna y recomendada para estos cálculos.
 
-## Ver También
-- [Documentación oficial de la librería `chrono`](https://docs.rs/chrono)
-- [Tutorial sobre el manejo de fechas en Rust](https://doc.rust-lang.org/std/time)
-- [Guía para principiantes de Rust](https://www.rust-lang.org/learn/get-started)
+En cuanto a la implementación, `chrono` utiliza el progreso de tiempo actual de Unix como base para todas las funciones de cálculo de tiempo. Esta medida de tiempo se basa en el número de segundos transcurridos desde el 1 de enero de 1970. Al utilizar incrementos o decrementos de tiempo en segundos, la librería puede calcular fechas en el futuro o pasado con precisión.
+
+## Ver también:
+- Documentación oficial de `chrono`: https://docs.rs/chrono/0.4.19/chrono/
+- Cálculo de fechas en Rust con `time`: https://crates.io/crates/time

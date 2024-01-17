@@ -1,7 +1,7 @@
 ---
-title:                "ランダムな数字の生成"
-html_title:           "C++: ランダムな数字の生成"
-simple_title:         "ランダムな数字の生成"
+title:                "ランダムな数字を生成する"
+html_title:           "C++: ランダムな数字を生成する"
+simple_title:         "ランダムな数字を生成する"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Numbers"
@@ -10,39 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
-ランダムな数値を生成することのメリットについて説明します。人々はこの機能を使用して、シミュレーション、ランダムなデータの生成、そして暗号化など、さまざまな目的で利用することができます。
+＃＃ 何か＆なぜ？
+ランダムな数字を生成することはプログラマーによって行われることであり、その中には特定の範囲内のランダムな整数または少数を生成することも含まれます。これは、乱数を使用してゲームやシミュレーション、または暗号アルゴリズムなどさまざまなアプリケーションで使用されることができます。
 
-## 使い方
-ランダムな数値を生成するためには、C++の標準ライブラリである`<random>`を使用します。以下のコード例を参考に、ランダムな整数を生成する方法をご紹介します。
-
-```C++
+＃＃ ハウツー：
+＃ C++コードを使用した例：
+```
+using namespace std;
 #include <iostream>
-#include <random>
+#include <cstdlib>
 
 int main() {
-    // ランダムな整数を生成するためのエンジンを作成
-    std::random_device rd;
-    std::mt19937 gen(rd());
+    // 1から10までのランダムな整数を生成する
+    int random_int = rand() % 10 + 1;
+    cout << "Random integer between 1 and 10: " << random_int << endl;
 
-    // 生成される数値の範囲を指定
-    std::uniform_int_distribution<> dist(1, 10);
-
-    // 10回ループしてランダムな数値を表示
-    for (int i = 0; i < 10; i++) {
-        std::cout << dist(gen) << " ";
-    }
-    std::cout << std::endl;
+    // 0から1までのランダムな少数を生成する
+    float random_float = rand() / (float)RAND_MAX;
+    cout << "Random float between 0 and 1: " << random_float << endl;
 }
 ```
+＃ 出力：
+```
+Random integer between 1 and 10: 7
+Random float between 0 and 1: 0.32564
+```
 
-上記のコードを実行すると、1から10の範囲でランダムな数値が生成されます。実行するたびに異なる結果が得られることが確認できるでしょう。
+＃＃ 深堀り：
+乱数生成の歴史は広く、遠くまで遡ることができます。古代ギリシャや中国など、さまざまな文明においてすでに乱数生成は用いられていました。今日では、擬似乱数生成アルゴリズムが一般的に使用されています。これは、ある種の数学的計算に基づいてランダムな数列を生成するものです。
 
-## ディープダイブ
-ランダムな数値を生成するアルゴリズムには、メルセンヌ・ツイスターやリニア・コングルエンシャル法などの様々な手法が存在します。また、seed(種)を指定することで、同じ結果を得ることも可能です。
+代替手段としては、ハードウェア乱数生成器があります。これは、物理的なプロセスに基づいて真の乱数を生成することができますが、ソフトウェア乱数生成器ほど高速ではありません。
 
-特に注意すべき点として、標準ライブラリの`<random>`は疑似乱数を生成するため、完全にランダムな数値を生成することはできません。しかし、一般的な用途では十分な精度でランダムな数値を生成することができます。
+C++の標準ライブラリには、擬似乱数生成に使用するための様々な関数と生成器が用意されており、一般的に使用されています。
 
-## 参考リンク
-- [C++ Reference: Random Number Generating](https://en.cppreference.com/w/cpp/numeric/random)
-- [C++標準ライブラリの<random>の使い方(日本語ブログ)](https://marycore.jp/prog/cpp/random/)
+＃＃ 関連情報：
+ [C++ Reference: rand()](https://www.cplusplus.com/reference/cstdlib/rand/)

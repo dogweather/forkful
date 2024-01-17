@@ -10,33 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 为什么
+什么是HTTP基本身份验证？为什么程序员会这样做？
 
-在Web开发中，我们经常需要发送HTTP请求以与服务器通信。使用基本认证（Basic Authentication）可以确保我们的请求是安全和经过授权的，因此非常重要。
+发送一个HTTP请求时，客户端需要通过身份验证来证明自己的身份，以便访问受保护的资源。基本身份验证是最简单和最常用的身份验证方式，它要求客户端在HTTP请求头中以Base64编码的方式传递用户名和密码，服务器则会验证这些信息并返回相应的响应码。
 
-# 如何使用
+如何实现基本身份验证？
 
-我们可以使用Clojure中的```clojure (clj-http)```库来发送HTTP请求。首先，我们需要导入该库以及我们需要使用的其他库。
+在Clojure中，我们可以使用clj-http库来发送HTTP请求并包含基本身份验证信息。以下是一个示例代码：
 
-```clojure
-(require '[clj-http.client :as client])
-(require '[clojure.data.json :as json])
+```Clojure
+(ns my-namespace
+  (:require [clj-http.client :as http]))
+
+(defn send-request [url username password]
+  (let [response (http/post url
+                            {:basic-auth [username password]})
+    (if (= (:status response) 200)
+      (:body response)
+      (println "Authentication failed."))))
 ```
 
-然后，我们可以使用```client/basic-auth```函数来为请求添加基本认证。该函数需要两个参数：用户名和密码。下面是一个发送GET请求的例子：
+这段代码首先引入clj-http库，并定义了一个函数来发送一个带有基本身份验证的POST请求。我们可以通过调用这个函数并传入URL、用户名和密码来发送请求并获取响应结果。
 
-```clojure
-(def response (client/get "https://example.com" {:basic-auth ["USERNAME" "PASSWORD"]}))
-```
+深入了解基本身份验证
 
-我们可以使用```(:headers response)```来查看响应头部信息，使用```(:status response)```来查看状态码，使用```(:body response)```来查看具体内容。
+基本身份验证是HTTP协议中最早的身份验证方式，在HTTP / 1.0中就已经存在。它的主要优点是简单易懂和兼容性强，但同时也存在一些缺点，比如无法防止信息被窃取和容易受到中间人攻击。因此，一些更安全的替代方式已经被开发出来，比如OAuth和OpenID。
 
-# 深入了解
+在实现基本身份验证时，我们还需要注意一些细节。比如，用户名和密码需要在发送请求时以Base64编码的形式放入HTTP请求头中，并且在服务器端也需要进行正确的解码和验证。
 
-基本认证是一种最简单的HTTP认证方式。它使用用户名和密码作为凭证，并将其以Base64编码的形式传输到服务器。服务器会验证凭证是否正确，并返回相应的响应码。虽然这种方式足够简单，但是它并不安全，因为凭证在传输过程中是明文可见的。
+相关资源
 
-# 参考链接
+如果想进一步学习关于HTTP基本身份验证的知识，可以参考以下资源：
 
-- [clj-http官方文档](https://github.com/dakrone/clj-http)
-- [HTTP基本认证（Basic Authentication）](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
-- [Clojure中文网](https://www.clojure.cn/)
+- [HTTP Authentication: Basic and Digest Access Authentication](https://tools.ietf.org/html/rfc2617)
+- [clj-http库的官方文档](https://github.com/dakrone/clj-http)
+- [使用Basic认证保护API](https://www.baeldung.com/spring-security-basic-authentication)

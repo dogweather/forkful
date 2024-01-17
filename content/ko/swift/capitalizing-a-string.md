@@ -1,7 +1,7 @@
 ---
-title:                "문자열 대문자로 변환하기"
-html_title:           "Swift: 문자열 대문자로 변환하기"
-simple_title:         "문자열 대문자로 변환하기"
+title:                "문자열 대문자화하기"
+html_title:           "Swift: 문자열 대문자화하기"
+simple_title:         "문자열 대문자화하기"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -10,28 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+## 무엇 & 왜?
 
-대부분의 프로그래밍 언어에서 문자열의 대소문자를 변환하는 기능은 자주 사용됩니다. Swift에서는 이를 쉽게 수행할 수 있도록 제공하는 `capitalized` 메서드가 있습니다. 이 기능을 사용하는 이유는 소문자로 입력된 문자열을 첫 글자를 대문자로 변경해주어 보기 좋거나, 대문자로 입력된 문자열을 소문자로 변경하여 일관된 형식을 유지하기 위함입니다.
+문자열 대문자로 바꾸기는 무엇인가요? 프로그래머들이 왜 이 작업을 하는 걸까요?
 
-## 방법
-
-우선 `capitalized` 메서드를 실제로 사용해보기 위해 `str`이라는 변수에 문자열을 할당해줍니다. 이후 `str` 변수 뒤에 `.capitalized`를 붙여주면 해당 문자열이 첫 글자를 대문자로 변경된 상태로 반환됩니다. 예시 코드는 아래와 같습니다.
+## 방법:
 
 ```Swift
-let str = "swift programming"
-print(str.capitalized)
-
-// Output: Swift Programming
+let sampleString = "hello, world!"
+let capitalizedString = sampleString.uppercased()
+print(capitalizedString) // Prints "HELLO, WORLD!"
 ```
 
-보다시피 `capitalized` 메서드를 사용하면 손쉽게 문자열의 대소문자를 변경할 수 있습니다. 또한 이 메서드는 첫 글자가 아닌 나머지 문자열의 소문자는 그대로 유지됩니다.
+```Swift
+var sampleString = "hello, world!"
+sampleString.capitalizeFirstLetter()
+print(sampleString) // Prints "Hello, world!"
+```
 
-## 깊이 파헤치기
+## 깊이 들어가보기:
 
-실제로 `capitalized` 메서드의 내부는 어떻게 구현되어 있을까요? 이 메서드는 문자열의 첫 번째 단어를 대문자로 변경한 후 나머지 문자열을 소문자로 변경하는 과정을 거쳐 동작합니다. 따라서 첫 글자가 아닌 나머지 문자열의 대소문자는 그대로 유지됩니다. 또한 이 메서드는 다중 언어를 지원하기 위해 유니코드를 사용하여 문자열을 분석하므로 다양한 언어에서도 정확하게 동작합니다.
+(1) 역사적 맥락: 문자열 대문자로 바꾸기는 문자열을 다루는 프로그래밍에서 오랜 영향을 미쳤습니다.
 
-## 관련 링크
+(2) 대안: 문자열 대문자로 바꾸기는 다양한 방법으로 구현할 수 있습니다. 위 코드는 가장 일반적인 방법이지만, 다른 언어에서도 지원하거나 기존 라이브러리에서 제공할 수도 있습니다.
 
-- [Swift 공식 문서 - 문자열](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
-- [Swift 문자열 다루기 - 블로그 포스트](https://luxiana-medium.tistory.com/25)
+(3) 구현 세부 사항: ```uppercased()``` 메소드는 문자열의 모든 문자를 대문자로 바꿀 뿐만 아니라 유니코드 기반으로 구현되어 여러 언어를 지원합니다.
+
+## 관련 자료:
+
+- [Swift 문자열 대문자로 바꾸기 메소드](https://developer.apple.com/documentation/swift/string#2854681)
+- [Swift 문자열 처리 공식 문서](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)

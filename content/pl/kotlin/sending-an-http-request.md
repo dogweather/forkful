@@ -1,7 +1,7 @@
 ---
-title:                "Przesyłanie żądania http"
-html_title:           "Kotlin: Przesyłanie żądania http"
-simple_title:         "Przesyłanie żądania http"
+title:                "Wysyłanie żądania http"
+html_title:           "Kotlin: Wysyłanie żądania http"
+simple_title:         "Wysyłanie żądania http"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "HTML and the Web"
@@ -10,46 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+Co to jest wysyłanie zapytań HTTP i dlaczego programiści to robią?
 
-Istnieje wiele powodów, dla których możesz wchodzić w interakcje z zasobami sieciowymi, ale jeden z najczęstszych to pobieranie danych z zewnętrznych serwerów. Przykładowo, możesz chcieć pobrać informacje o pogodzie z API pogodowego lub dane użytkownika z zewnętrznej bazy danych. Do tego potrzebny jest wysyłanie żądań HTTP.
+Wysyłanie zapytań HTTP jest procesem przesyłania żądań do serwera w celu uzyskania informacji lub wykonania określonej operacji. Programiści często korzystają z tego mechanizmu w swoich aplikacjach, ponieważ umożliwia on interakcję z zewnętrznymi źródłami danych, takimi jak API lub bazy danych.
 
-## Jak to zrobić
-
-Aby wysłać żądanie HTTP w języku Kotlin, możesz skorzystać z biblioteki Retrofit. Najpierw musisz dodatkowo dodać bibliotekę do swojego projektu, na przykład poprzez dodanie jej do pliku Gradle. Następnie, musisz zdefiniować interfejs z metodami, które odpowiadają żądanym operacjom HTTP. Podajemy przykładowy interfejs i przykładowe użycie w kodzie Kotlin:
+Jak to zrobić:
 
 ```Kotlin
-// Definicja interfejsu
-interface WeatherApi {
-    @GET("weather")
-    fun getWeather(
-        @Query("city") city: String,
-        @Query("units") units: String
-    ): Call<WeatherResponse>
+class MainActivity : AppCompatActivity() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+        
+        // Utworzenie obiektu klasy URLRequest
+        val url = URL("http://www.example.com")
+        val urlConnection = url.openConnection() as HttpURLConnection
+        // Ustawienie metody żądania HTTP i czasu oczekiwania
+        urlConnection.requestMethod = "GET"
+        urlConnection.readTimeout = 10000
+        urlConnection.connectTimeout = 15000
+        // Odczytanie danych z serwera i przypisanie ich do zmiennej
+        val stream = urlConnection.inputStream
+        val response = stream.bufferedReader().use { it.readText() }
+        // Wyświetlenie odpowiedzi serwera w konsoli
+        Log.d("Response from server", response)
+    }
 }
 
-// Tworzenie obiektu serwisu
-val retrofit = Retrofit.Builder()
-    .baseUrl("https://api.openweathermap.org/data/2.5/")
-    .addConverterFactory(GsonConverterFactory.create())
-    .build()
-
-// Wywołanie żądania
-val service = retrofit.create(WeatherApi::class.java)
-val call = service.getWeather("Warsaw", "metric")
-val response = call.execute()
+// Output:
+// D/Response from server: example response
 ```
 
-W przykładzie powyżej użyto metody `GET`, ale można również używać innych metod HTTP, takich jak `POST`, `PUT` czy `DELETE`. Możesz również przekazywać parametry w różnych formatach, np. jako ścieżkę lub zapytanie (`@Path` lub `@Query`). Dodatkowo, biblioteka Retrofit umożliwia łatwe przetwarzanie danych, dzięki zastosowaniu konwerterów, w tym w tym przypadku formatu JSON.
+Wielka płyta:
 
-Wynik żądania można odczytać na kilka sposobów, na przykład można skorzystać z biblioteki Gson, aby przekonwertować dane na obiekty. Przykładowo, w powyższym kodzie użyto metody `execute()`, aby otrzymać odpowiedź jako obiekt `WeatherResponse`.
+Wysyłanie zapytań HTTP jest integralną częścią komunikacji w internecie od początku jego istnienia. Zamiast używać zwykłego protokołu, takiego jak TCP, przeglądarki internetowe oraz aplikacje mobilne i webowe korzystają z protokołu HTTP w celu uzyskania żądanych informacji lub danych.
 
-## Głębsze zagłębienie
+Alternatywy:
 
-Wysyłanie żądań HTTP jest szerokim zagadnieniem, które można badać na wiele sposobów. Przedstawiony powyżej przykład jest tylko jednym z możliwych podejść i tylko we fragmentaryczny sposób dotyka tematu. Warto zapoznać się z innymi bibliotekami, takimi jak okHttp czy ktor, aby porównać ich funkcjonalność i wybrać najlepsze rozwiązanie dla swojego projektu.
+Podczas wysyłania żądań HTTP w Kotlinie możemy użyć również bibliotek takich jak Retrofit, Volley czy Fuel. Pomagają one w uproszczeniu procesu tworzenia i obsługi zapytań.
 
-## Zobacz także
+Szczegóły implementacji:
 
-- Dokumentacja Retrofit: https://square.github.io/retrofit/
-- Dokumentacja Gson: https://github.com/google/gson
-- Porównanie bibliotek HTTP w języku Kotlin: https://medium.com/@mayankwhat/okhttp-vs-ktor-vs-retrofit-which-networking-library-i-should-use-for-android-app-b7358897286e
+Wysyłanie zapytań HTTP w Kotilnie możliwe jest dzięki wykorzystaniu klas jak HttpURLConnection lub OkHttpClient. Wykorzystują one metody takie jak requestMethod, readTimeout czy connectTimeout do konfiguracji żądań i ustalenia odpowiedniego czasu oczekiwania.
+
+Zobacz również:
+
+1. Dokumentacja Kotlin do klasy HttpURLConnection: https://developer.android.com/reference/java/net/HttpURLConnection
+2. Porównanie bibliotek do obsługi zapytań HTTP w Kotlinie: https://futurestud.io/tutorials/retrofit-vs-volley-vs-fuel-for-th...
+3. Przykładowe projekty wykorzystujące Kotlin do wysyłania zapytań HTTP: https://github.com/ligi/code_gen_move_to_kotlin#http-based-api-wi...

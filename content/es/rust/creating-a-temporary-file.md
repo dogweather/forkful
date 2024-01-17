@@ -10,57 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por Qué
+## ¿Qué y por qué?
+Crear un archivo temporal es una práctica común en programación que implica crear un archivo que solo se utiliza durante una sesión de ejecución y se elimina automáticamente al finalizar. Los programadores suelen hacer esto para almacenar temporalmente datos o resultados que no necesitan ser permanentes.
 
-¿Alguna vez has necesitado crear un archivo temporal en tu programa? Ya sea para almacenar datos temporales o para realizar alguna operación específica, la creación de archivos temporales es una tarea común en la programación. En este artículo, vamos a explorar cómo crear archivos temporales en Rust y por qué es útil hacerlo.
-
-## Cómo
-
-Primero, importaremos el módulo `std::fs` para poder interactuar con el sistema de archivos en Rust. Luego, usaremos la función `tempfile` que nos permite crear un archivo temporal en el directorio actual:
+## Cómo:
+La siguiente es una forma simple de crear un archivo temporal en Rust utilizando la librería estándar `std::fs`:
 
 ```Rust
-use std::fs::File;
-use std::io::Write;
+use std::fs::{File, remove_file};
 
-fn main() {
-  let temp_file = tempfile::tempfile().expect("Error al crear archivo temporal.");
-}
+// Crea el archivo temporal "mi_temp_file.txt"
+let archivo = File::create("mi_temp_file.txt").expect("No se pudo crear el archivo");
+
+// Realiza operaciones con el archivo...
+// ...
+
+// Elimina el archivo temporal al finalizar
+remove_file("mi_temp_file.txt").expect("No se pudo eliminar el archivo");
 ```
 
-Ahora que hemos creado nuestro archivo temporal, podemos escribir en él utilizando los métodos de `std::io::Write`:
+## Inmersión profunda:
+La creación de archivos temporales ha sido una práctica común en programación desde los primeros días de la informática. Sin embargo, en algunos lenguajes de programación, como C, esta tarea puede ser tediosa y propensa a errores ya que se requiere administrar manualmente la eliminación del archivo. En Rust, esto se simplifica gracias a la implementación segura de la gestión de recursos con su sistema de tipos.
 
-```Rust
-use std::fs::File;
-use std::io::Write;
+Otra alternativa para crear archivos temporales en Rust es el uso de la librería `tempfile`, que proporciona funciones más avanzadas para manejar archivos temporales.
 
-fn main() {
-  let mut temp_file = tempfile::tempfile().expect("Error al crear archivo temporal.");
-  temp_file.write(b"¡Hola desde Rust!").expect("Error al escribir en archivo temporal.");
-}
-```
-
-Por último, debemos asegurarnos de cerrar el archivo temporal después de haber terminado de usarlo para liberar recursos:
-
-```Rust
-use std::fs::File;
-use std::io::Write;
-
-fn main() {
-  let mut temp_file = tempfile::tempfile().expect("Error al crear archivo temporal.");
-  temp_file.write(b"¡Hola desde Rust!").expect("Error al escribir en archivo temporal.");
-
-  // Cerramos el archivo temporal
-  temp_file.close().expect("Error al cerrar archivo temporal.");
-}
-```
-
-## Deep Dive
-
-La función `tempfile` en realidad devuelve un objeto `NamedTempFile` que implementa el trait `Write`. Esto significa que podemos utilizar todos los métodos de `Write` para escribir en nuestro archivo temporal, como por ejemplo `write_all` o `flush`. Además, al utilizar `tempfile` no tenemos que preocuparnos por darle un nombre único al archivo, ya que se encarga automáticamente de eso.
-
-También hay casos en los que necesitamos mantener el archivo temporal después de cerrarlo, por ejemplo, si queremos que nuestros datos sean accesibles desde otros procesos. En ese caso, podemos utilizar el método `persist` en lugar de `close` para mantener el archivo abierto en el sistema de archivos.
-
-## Ver También
-
-- [Documentación oficial de Rust sobre creación de archivos temporales](https://doc.rust-lang.org/std/fs/struct.NamedTempFile.html)
-- [Ejemplo de creación de archivo temporal en Rust](https://play.rust-lang.org/?version=stable&mode=debug&edition=2018&gist=08ae147963a3079467bf50a092bf25dc)
+## Ver también:
+- [Librería `std::fs` en la documentación de Rust](https://doc.rust-lang.org/std/fs/index.html)
+- [Librería `tempfile` en crates.io](https://crates.io/crates/tempfile)

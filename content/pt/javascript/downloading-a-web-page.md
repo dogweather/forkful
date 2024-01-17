@@ -10,29 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+## O que é e por que fazer isso?
 
-Baixar uma página da web é uma tarefa comum para desenvolvedores web. Isso pode ser necessário para extrair informações de uma página, fazer testes de integração ou armazenar um site offline.
+Baixar uma página da web significa recuperar seu conteúdo por meio de um programa de computador. Isso é útil para desenvolvedores porque permite que eles acessem e manipulem o conteúdo de uma página da web diretamente em seu código.
 
-## Como fazer
-
-Caso você esteja usando o Node.js, você pode baixar uma página da web facilmente usando o módulo `request`. Aqui está um exemplo de como baixar a página inicial do Google e imprimir o conteúdo em seu terminal:
+## Como fazer:
 
 ```Javascript
-const request = require('request');
-request('https://www.google.com', function(err, res, body) {
-  console.log(body);
-});
+const pagina = "https://www.exemplo.com/";
+fetch(pagina)
+  .then(response => response.text())
+  .then(data => console.log(data));
 ```
 
-O exemplo acima faz uma chamada HTTP para o URL especificado e retorna o conteúdo da página no parâmetro `body`. Você pode alterar o URL para baixar qualquer página da web que desejar.
+Saída de exemplo:
+```
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Exemplo</title>
+</head>
+<body>
+  <h1> Bem-vindo ao Exemplo </h1>
+  <p> Esta é uma página de exemplo </p>
+</body>
+</html>
+```
 
-## Mergulho Profundo
+## Profundando:
 
-Existem diferentes maneiras de baixar uma página da web em Javascript, como usando a API `Fetch` ou o módulo` http`. Além disso, você pode especificar cabeçalhos HTTP personalizados ou usar autenticação para fazer o download de páginas restritas. Também é importante considerar a segurança ao fazer chamadas HTTP, pois dados sensíveis podem ser expostos.
+Download de páginas da web é uma funcionalidade importante para muitos aplicativos da web. Antigamente, isso era feito com linguagens de programação como Perl ou Python. Com o aumento da popularidade de Javascript, tornou-se mais comum o uso de bibliotecas e frameworks como jQuery ou Axios para realizar essa tarefa. Além disso, o elemento `fetch` é uma adição recente ao padrão Javascript que torna mais fácil e direta a recuperação de conteúdo de páginas da web.
 
-## Veja também
+## Veja também:
 
-- [Módulo request no NPM](https://www.npmjs.com/package/request)
-- [API Fetch no MDN](https://developer.mozilla.org/pt-BR/docs/Web/API/Fetch_API)
-- [Módulo HTTP no Node.js](https://nodejs.org/api/http.html)
+- [Learn Javascript: Making a Request to a Server](https://www.learn-js.org/en/Fetching_Data)
+- [MDN Web Docs: Fetch API](https://developer.mozilla.org/pt-BR/docs/Web/API/Fetch_API)
+- [jQuery: API Documentation](https://api.jquery.com/)

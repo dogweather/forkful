@@ -10,70 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-Comparing two dates is a common requirement in web development when dealing with time-sensitive data, such as events, bookings, or subscriptions. By doing this, we can easily determine which date is earlier or later, and perform different actions accordingly.
+## What & Why?
+Comparing two dates is a way to determine whether one date is before, after, or equal to another date. Programmers often need to compare dates to sort data, calculate time intervals, or validate inputs. It is a fundamental operation in date and time processing, making it an essential skill in programming.
 
-## How To
-In Javascript, we can compare dates using the `Date()` object and its built-in methods. Here's an example of comparing two dates and getting a clear output of which one is earlier.
+## How to:
+To compare two dates in JavaScript, you can use the `Date` object, which represents a specific moment in time. Here's an example comparing two dates with the `>` operator:
 
 ```Javascript
-let date1 = new Date('2021-01-01');
-let date2 = new Date('2020-12-25');
+const date1 = new Date('January 1, 2020');
+const date2 = new Date('January 1, 2021');
 
 if (date1 > date2) {
-  console.log('Date 1 is later than date 2');
-} else if (date2 > date1) {
-  console.log('Date 2 is later than date 1');
+  console.log("date1 is after date2");
 } else {
-  console.log('Both dates are equal');
+  console.log("date1 is before date2");
 }
+
+// Output: date1 is before date2
 ```
 
-Output:
-
-```
-Date 1 is later than date 2
-```
-
-We can also use comparison operators like `>`, `<`, `>=`, `<=` to directly compare two date objects. These operators return a boolean value, true if the condition is met, else false. Here's an example:
+You can also use the `getTime()` method to get the time in milliseconds since January 1, 1970, and then compare these values. Here's an example:
 
 ```Javascript
-let date1 = new Date('2021-01-01');
-let date2 = new Date('2020-12-25');
+const date1 = new Date('January 1, 2020').getTime();
+const date2 = new Date('January 1, 2021').getTime();
 
-if (date1 >= date2) {
-  console.log('Date 1 is later than or equal to date 2');
+if (date1 > date2) {
+  console.log("date1 is after date2");
+} else {
+  console.log("date1 is before date2");
 }
-```
 
-Output:
-
-```
-Date 1 is later than or equal to date 2
+// Output: date1 is before date2
 ```
 
 ## Deep Dive
-When comparing two dates, it's important to note that we are actually comparing the time values associated with them. If two dates have the same time, but different timezones, they will still be considered equal. This is because the `Date()` object stores the time in milliseconds, which is converted to the local timezone of the device.
+Date and time processing have come a long way since the early days of programming. In the past, programmers had to manually calculate time intervals and validate inputs, which was a time-consuming and error-prone process. Fortunately, with the introduction of the `Date` object and its various methods, date and time handling in JavaScript has become much easier.
 
-Another important factor to consider is that dates are not just limited to a single day. We can also compare specific time values, such as hours, minutes, and seconds, by using the `getHours()`, `getMinutes()`, and `getSeconds()` methods. Here's an example:
+One alternative to using the `Date` object for date comparison is using third-party libraries, such as Moment.js, js-Joda, or Day.js. These libraries offer more extensive features and better performance compared to the built-in `Date` object. However, if you only need basic date comparison, using the `Date` object will suffice.
 
-```Javascript
-let date1 = new Date();
-date1.setHours(10); // set time to 10 AM
-let date2 = new Date();
-date2.setHours(14); // set time to 2 PM
-
-if (date1.getHours() > date2.getHours()) {
-  console.log('Date 1 is later than date 2 in terms of hours');
-}
-```
-
-Output:
-
-```
-Date 1 is later than date 2 in terms of hours
-```
+When comparing dates, it is essential to keep in mind that the `Date` object in JavaScript stores dates as the number of milliseconds since January 1, 1970. This date is known as the Unix Epoch, and it serves as the starting point for calculating dates and time in many programming languages.
 
 ## See Also
-- [MDN Docs on Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [ECMAScript Language Specification - Dates](https://262.ecma-international.org/11.0/#sec-dates-and-times)
+- [MDN Web Docs: Date Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [Moment.js](https://momentjs.com/)
+- [js-Joda](https://js-joda.github.io/js-joda/)
+- [Day.js](https://day.js.org/)

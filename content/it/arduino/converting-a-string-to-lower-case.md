@@ -1,7 +1,7 @@
 ---
-title:                "Convertire una stringa in minuscolo"
-html_title:           "Arduino: Convertire una stringa in minuscolo"
-simple_title:         "Convertire una stringa in minuscolo"
+title:                "Conversione di una stringa in minuscolo"
+html_title:           "Arduino: Conversione di una stringa in minuscolo"
+simple_title:         "Conversione di una stringa in minuscolo"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Strings"
@@ -10,20 +10,22 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
-Il convertitore di stringhe in minuscolo è utile quando si lavora con input utente o dati da fonti esterne, in modo da poter uniformare il formato delle stringhe e facilitare le operazioni di confronto e manipolazione dei dati.
+## Cosa & Perché?
+Convertire una stringa in lettere minuscole è un'operazione comune nella programmazione, che consente di uniformare l'input dell'utente e semplificare la manipolazione dei dati. In pratica, significa rendere tutte le lettere della stringa in minuscolo, indipendentemente dal caso in cui sono state inserite.
 
-## Come Fare
-```arduino
-String input = "Hello World";
-String lowerCase = input.toLowerCase();
-Serial.println(lowerCase);
+## Come fare:
+Per convertire una stringa in lettere minuscole su Arduino, è possibile utilizzare la funzione "toLowerCase()". Di seguito è riportato un esempio di codice che mostra come utilizzarla:
+
 ```
-L'output di questo codice sarà "hello world", poiché il metodo `toLowerCase()` trasforma tutte le lettere maiuscole in minuscole all'interno della stringa.
+String str = "Hello World!";
+String lower_str = str.toLowerCase();
+Serial.println(lower_str);
+```
 
-## Approfondimento
-Il convertitore di stringhe in minuscolo si basa sulle operazioni asciitabellari, che assegnano un numero alle lettere e ai caratteri. In base a questo numero, la funzione `toLowerCase()` sostituisce le lettere maiuscole con la loro corrispondente minuscola. Tieni presente che questo processo può variare leggermente a seconda delle impostazioni di codifica del sistema.
+Questo codice restituirà "hello world!" come output sulla porta seriale, indipendentemente dal caso in cui è stata inserita la stringa originale.
 
-## Vedi Anche
-- [Documentazione su toLowerCase()](https://www.arduino.cc/reference/tr/language/variables/data-types/string/functions/tolowercase/)
-- [Un esempio di utilizzo di toLowerCase() per elaborare input utente](https://www.arduino.cc/en/Tutorial/StringCaseChanges)
+## Approfondimento:
+Nella programmazione, l'utilizzo di lettere minuscole è importante per garantire la correttezza dei dati e facilitare la loro elaborazione. In passato, quando le risorse di memoria erano limitate, i programmatori dovevano utilizzare metodi più complessi per convertire le stringhe in minuscolo. Oggi, con l'avvento di linguaggi di programmazione più moderni, come C++ (il linguaggio utilizzato su Arduino), la conversione è diventata più semplice grazie all'uso di funzioni predefinite come "toLowerCase()".
+
+## Vedi anche:
+Per ulteriori informazioni sulla funzione "toLowerCase()" e sull'utilizzo di stringhe su Arduino, puoi consultare la documentazione ufficiale di Arduino all'indirizzo https://www.arduino.cc/reference/en/language/variables/data-types/string/.

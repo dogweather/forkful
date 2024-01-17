@@ -10,40 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Varför
+## Vad & Varför?
 
-Att läsa kommandoradsargument kan vara användbart i Arduino-programmering för att göra koden mer flexibel och anpassningsbar. Det kan också vara användbart för att skicka kommandon eller parametrar till din Arduino via en extern enhet eller program.
+Att läsa kommandoradsargument är en vanlig praxis bland programmerare för att kunna anpassa en kod till olika användningsområden. Genom att läsa kommandoradsargument kan vi välja viss funktionalitet, ange specifika värden eller utföra olika uppgifter i en programvara.
 
-## Hur du gör det
+## Så här gör du:
 
-För att läsa kommandoradsargument i Arduino, behöver du först inkludera biblioteket "Arduino.h". Sedan kan du använda funktionen "Serial.readString()" för att läsa de inkommande kommandona som en sträng.
+För att läsa kommandoradsargument i Arduino, använd funktionen `parseCommand()` tillsammans med `Serial.begin()` för att skicka kommandon från din dator till en ansluten Arduino-enhet. Se nedan för ett kodexempel:
 
-```arduino
-#include <Arduino.h>
+```Arduino
+int num; // Skapa en variabel för att lagra värdet på det första kommandot
+float val; // Skapa en variabel för att lagra värdet på det andra kommandot
 
 void setup() {
-  // Initiera seriell kommunikation
-  Serial.begin(9600);
+  Serial.begin(9600); // Starta seriell kommunikation med baudhastighet på 9600
 }
 
 void loop() {
-
-  // Läser inkommande kommandoradsargument som en sträng
-  String input = Serial.readString();
-
-  // Skriver ut inkommande kommando
-  Serial.println(input);
+  if (Serial.available()) {
+    String command = Serial.readStringUntil('\n'); // Läs in det första kommandot och lagra det som en sträng
+    num = parseInt(command); // Konvertera strängen till ett heltal och lagra det i variabeln num
+    command = Serial.readStringUntil('\n'); // Läs in det andra kommandot och lagra det som en sträng
+    val = parseFloat(command); // Konvertera strängen till ett decimaltal och lagra det i variabeln val
+    // Här kan du utföra olika uppgifter beroende på de inlästa kommandona
+  }
 }
 ```
 
-Om du skickar "LED ON" till din Arduino via den seriella kommunikationen, kommer det att skrivas ut "LED ON" i seriell monitor.
+När du skickar kommandon från datorn till Arduino-enheten, skriv kommandot och tryck sedan på "Enter" eller "Return" - knappen för att skicka en radbrytning (`\n`). Se nedan för ett exempel på hur seriell kommunikation kan se ut:
 
-## Djupdykning
+```
+5
+3.14
+```
 
-Du kan också använda funktionen "Serial.parseInt()" för att läsa inkommande nummer eller använda olika argument för att läsa inkommande bokstäver som t.ex "Serial.read()". Du kan också lägga till felhantering för att hantera ogiltiga kommandon eller argument.
+Det första kommandot `5` läses in som ett heltal och sparas i variabeln `num`, medan det andra kommandot `3.14` läses in som ett decimaltal och sparas i variabeln `val`.
 
-# Se även
+## Djupdykning:
 
-- [Arduino Serial Programming](https://www.arduino.cc/en/Serial/Read)
-- [Arduino Reference - Serial](https://www.arduino.cc/reference/en/language/functions/communication/serial/)
-- [Arduino Forum - Reading Arguments](https://forum.arduino.cc/index.php?topic=335535.0)
+Innan den digitala åldern, användes kommandoradsargument huvudsakligen för att köra program eller starta operativsystem via en kommandotolk eller terminal. Idag används det främst för att konfigurera och anpassa programvaror till specifika behov, och är en viktig del av många programmeringsspråk och plattformar, inklusive Arduino.
+
+Alternativ till att använda `parseCommand()`-funktionen inkluderar att använda `Serial.parseInt()` och `Serial.parseFloat()`. Det är också möjligt att skicka flera kommandon i en sekvens och läsa in dessa genom att använda en loop eller en buffert. Det beror helt på hur du vill utforma din kod och vad som passar bäst för ditt projekt.
+
+När du läser kommandoradsargument finns det några saker att tänka på. Först och främst måste du säkerställa att seriell kommunikation är aktiverad i din setup-funktion. Du bör också kontrollera att kommandona som skickas från datorn är korrekt formaterade och att ditt program kan hantera eventuella felaktiga eller ofullständiga kommandon.
+
+## Se även:
+
+- [Serial communication with Arduino](https://www.arduino.cc/reference/en/language/functions/communication/serial/)
+- [Arduino serial read functions](https://forum.arduino.cc/index.php?topic=229148.0)
+- [Command-line interface](https://en.wikipedia.org/wiki/Command-line_interface)

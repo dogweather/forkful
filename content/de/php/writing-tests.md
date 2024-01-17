@@ -10,30 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
-Warum sollte man sich überhaupt die Mühe machen, Tests zu schreiben? Nun, es gibt mehrere Gründe dafür. Zum einen helfen Tests dabei, mögliche Fehler in einem Programmcode zu finden und zu beheben. Dadurch wird die Qualität des Codes verbessert und die Wahrscheinlichkeit von Fehlern in der Anwendung reduziert. Zudem dienen Tests auch als Dokumentation des Codes und erleichtern somit die Arbeit für andere Entwickler, die den Code lesen oder bearbeiten müssen.
+## Was & Warum?
 
-## Wie man Tests schreibt
-Das Schreiben von Tests ist im Grunde genommen ganz einfach. Zunächst muss man eine Testumgebung einrichten, in der die Tests ausgeführt werden können. Dies kann zum Beispiel das PHPUnit Framework sein. Anschließend muss der Code, der getestet werden soll, in einzelne Funktionen oder Klassen aufgeteilt werden. Für jede Funktion oder Klasse wird dann eine entsprechende Testfunktion geschrieben, die überprüft, ob das erwartete Ergebnis erreicht wird. Hier ein Beispiel in PHP:
+Tests schreiben ist eine wichtige Aufgabe in der Programmierung. Dabei werden automatisierte Tests erstellt, um sicherzustellen, dass der Code wie erwartet funktioniert und alle zugehörigen Anforderungen erfüllt werden. Programmierer machen das, um sicherzustellen, dass ihre Programme zuverlässig und fehlerfrei sind.
+
+## Wie man es macht:
 
 ```PHP
-// Die zu testende Funktion
-function add($a, $b) {
-  return $a + $b;
+<?php
+// Beispiel einer einfachen Funktion
+function add($x, $y) {
+  return $x + $y;
 }
 
-// Die entsprechende Testfunktion
+// Testfall für die Funktion add()
 function testAdd() {
-  $result = add(3, 5);
-  assert($result == 8, "Die Funktion add() liefert das falsche Ergebnis!");
+  $x = 5;
+  $y = 10;
+  $expected = 15;
+  $actual = add($x, $y);
+
+  // Vergleicht das erwartete Ergebnis mit dem tatsächlichen Ergebnis
+  if ($expected === $actual) {
+    echo "Test erfolgreich durchgeführt!";
+  } else {
+    echo "Test fehlgeschlagen.";
+  }
 }
+
+// Aufrufen der Testfunktion
+testAdd();
 ```
 
-Nachdem alle Testfunktionen geschrieben wurden, können sie durch die Testumgebung ausgeführt werden. Wenn alle Tests erfolgreich sind, bedeutet das, dass der Code den Erwartungen entspricht und keine Fehler aufweist. Sollte jedoch ein Test fehlschlagen, liegt höchstwahrscheinlich ein Fehler im Code vor, der behoben werden muss.
+Der Output würde hier "Test erfolgreich durchgeführt!" sein.
 
-## Tiefergehende Informationen
-Beim Schreiben von Tests gibt es einige wichtige Punkte zu beachten. Zum einen müssen die Tests unabhängig voneinander sein, das heißt, das Ergebnis eines Tests darf nicht von einem anderen Test beeinflusst werden. Außerdem sollten die Tests so einfach wie möglich gehalten werden, um die Lesbarkeit zu erhöhen. Eine gute Testabdeckung, also die Anzahl der getesteten Codezeilen, ist ebenfalls wichtig, um Lücken im Code aufzudecken. Zudem ist es sinnvoll, Tests frühzeitig in den Entwicklungsprozess einzubinden, um Fehler möglichst frühzeitig zu finden.
+## Tiefer Einblick:
 
-## Siehe auch
-- [PHP Testing with PHPUnit](https://phpunit.de/)
-- [The Art of Unit Testing by Roy Osherove](https://artofunittesting.com/)
+Tests wurden bereits in den Anfängen der Softwareentwicklung verwendet, um sicherzustellen, dass Programme korrekt funktionieren. Alternativen zu automatisierten Tests sind manuelles Testen oder Code Reviews durch andere Programmierer. Es gibt verschiedene Arten von Tests, wie z.B. unit tests, integration tests oder acceptance tests. Beim Schreiben von Tests ist es wichtig, klare und verständliche Testfälle zu erstellen und alle möglichen Szenarien abzudecken. Die Implementierung von Tests in den Entwicklungsprozess führt zu stabilerem Code und weniger Fehlern in der Anwendung.
+
+## Siehe auch:
+
+- [PHPUnit] (https://phpunit.de/) - Eine beliebte Test-Framework-Bibliothek für PHP
+- [PHP CodeSniffer] (https://github.com/squizlabs/PHP_CodeSniffer) - Ein Code-Qualitäts-Tool, das auch auf fehlende Tests hinweist
+- [The Art of Unit Testing] (https://www.manning.com/books/the-art-of-unit-testing-third-edition) - Ein empfohlenes Buch zum Thema Unit Testing in der Praxis

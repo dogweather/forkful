@@ -1,7 +1,7 @@
 ---
-title:                "文字列の先頭を大文字にする"
-html_title:           "Swift: 文字列の先頭を大文字にする"
-simple_title:         "文字列の先頭を大文字にする"
+title:                "文字列の大文字化"
+html_title:           "Swift: 文字列の大文字化"
+simple_title:         "文字列の大文字化"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -10,29 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-今回は、Swiftで文字列の大文字化を行う方法について紹介します。文字列の大文字化を行うことで、テキストの表示を統一したり、処理を使いやすくしたりすることができます。
+## 何 & なぜ？
 
-## How To
-文字列を大文字化するには、`uppercased()`メソッドを使用します。例として、以下のようなコードを書きます。
+文字列の大文字化とは何かを説明し、プログラマーがなぜそれを行うのかを2〜3文で説明します。
+
+## 方法：
+
+文字列を大文字化する方法と、その結果を示す```Swift ... ```コードブロック内のコーディング例を示します。
 
 ```Swift
-let sentence = "this is a sample sentence"
-let uppercasedSentence = sentence.uppercased()
-
-print(uppercasedSentence)
+let name = "hello world"
+let capitalizedName = name.uppercased()
+print(capitalizedName) // Output: HELLO WORLD
 ```
 
-このコードを実行すると、`THIS IS A SAMPLE SENTENCE`という出力が得られます。
+## 詳細を掘り下げる：
 
-## Deep Dive
-`uppercased()`メソッドは、文字列をすべて大文字に変換するだけでなく、特定のロケールに合わせて変換することもできます。デフォルトでは、システムの規定のロケールが使用されますが、`uppercased(with:)`メソッドを使用することで任意のロケールを指定することができます。
+文字列の大文字化に関する歴史的な文脈や、代替方法、実装の詳細など、より深い情報を提供します。
 
-また、文字列以外のデータ型でも大文字化することができます。例えば、`Int`型の変数を`String`型に変換し、`uppercased()`メソッドを使用することで、数値を大文字の文字列に変換することができます。
+大文字化はいつでもオプションですが、特に英語と他の言語の大文字化を区別する必要がある場合に役立ちます。また、大文字と小文字の区別が重要なプログラミング言語では、文字列の大文字化は重要です。
 
-## See Also
-参考リンク：
-- [Official documentation for `uppercased()`](https://developer.apple.com/documentation/swift/string/3127166-uppercased)
-- [Tutorial for string manipulation in Swift](https://www.raywenderlich.com/5527-string-cheat-sheet-for-swift-4-and-later)
+```Swift
+//代替方法
+let name = "Hello World"
+let capitalizedName = name.capitalized // Output: Hello World
 
-コード例や詳細な解説は、上記のリンクを参考にしてください。
+//実装の詳細
+public func uppercased() -> String { ... }
+//全文字を大文字に変換します。
+
+public func capitalized() -> String { ... }
+//最初の文字またはすべての単語の最初の文字を大文字に変換します。
+```
+
+## 関連情報：
+
+文字列の大文字化に関する関連情報を提供するリンクを掲載します。
+
+- [Swift Documentation - String Basics](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+- [String Manipulation in Swift](https://www.raywenderlich.com/267-string-manipulation-in-swift)
+- [How to Capitalize Strings in Swift](https://www.hackingwithswift.com/example-code/strings/how-to-capitalize-strings-using-capitalize)

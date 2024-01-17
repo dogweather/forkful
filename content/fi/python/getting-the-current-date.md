@@ -1,7 +1,7 @@
 ---
-title:                "Päivämäärän hankkiminen"
-html_title:           "Python: Päivämäärän hankkiminen"
-simple_title:         "Päivämäärän hankkiminen"
+title:                "Hankkimassa nykyistä päivämäärää"
+html_title:           "Python: Hankkimassa nykyistä päivämäärää"
+simple_title:         "Hankkimassa nykyistä päivämäärää"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Dates and Times"
@@ -10,59 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä & Miksi?
 
-On monia syitä, miksi haluaisit käyttää Pythonin nykyistä versiota saadaksesi päivämäärän. Päivämäärän hakeminen on tärkeää monissa ohjelmoinnin sovelluksissa, kuten laskurit, kalenterit tai tapahtumien aikaleimat.
+"Päivämäärän hankkiminen" tarkoittaa nykyisen päivämäärän ja ajan selvittämistä. Ohjelmoijat tekevät tätä esimerkiksi aikaleimojen lisäämiseksi tietokantaan tai tiedostoihin.
 
-## Miten
-
-Python tarjoaa valmiin moduulin päivämäärän hallintaan, joka tekee siitä helppoa ja kätevää. Voit käyttää "datetime" -moduulia saadaksesi nykyisen päivämäärän ja ajan, kuten alla olevassa esimerkissä:
+## Kuinka:
 
 ```Python
-from datetime import datetime
-nykyinen_päivä = datetime.now()
-print(nykyinen_päivä)
+import datetime
+
+nykyinen_paivamaara = datetime.datetime.now()
+
+print("Nykyinen päivämäärä ja aika:", nykyinen_paivamaara)
 ```
-
-Tämä koodi tuottaa seuraavan tulosteen:
-
-2021-06-29 13:57:12.993947
-
-Nyt voit käyttää saamiasi päivämäärätietoja eri tavoin ohjelmasi sisällä.
-
-## Syventyvä sukellus
-
-Datetime-moduuli tarjoaa monia muita toimintoja päivämäärän ja ajan hallintaan. Voit esimerkiksi muotoilla päivämäärän haluamallasi tavalla käyttämällä "strftime" -funktiota. Tämä koodi esimerkiksi tulostaa nykyisen päivämäärän muodossa "päivä, kuukausi vuosi":
 
 ```Python
-from datetime import datetime
-nykyinen_päivä = datetime.now()
-muotoiltu_päivä = nykyinen_päivä.strftime("%d, %B %Y")
-print(muotoiltu_päivä)
+# Tulos:
+
+Nykyinen päivämäärä ja aika: 2020-12-09 09:30:00.000000
 ```
 
-Tulostus on seuraava:
+## Syväsukellus:
 
-29, kesäkuu 2021
+Päivämäärän ja ajan hankkiminen on yksi perusoletustoiminnoista Pythonissa. Tätä varten käytetään datetime-moduulia, jonka avulla voidaan luoda objekti, joka sisältää nykyisen päivämäärän ja ajan. Tätä objektia voidaan sitten käyttää esimerkiksi erilaisissa laskutoimituksissa ja muissa toiminnoissa.
 
-Voit myös tehdä laskelmia eri päivämäärien välillä käyttämällä "timedelta" -funktiota. Tämä koodi esimerkiksi lisää 30 päivää nykyiseen päivämäärään ja tulostaa lopputuloksen:
+### Historiallinen konteksti:
 
-```Python
-from datetime import datetime, timedelta
-nykyinen_päivä = datetime.now()
-uusi_päivä = nykyinen_päivä + timedelta(days=30)
-print(uusi_päivä)
-```
+Aikaisemmissa Pythonin versioissa (ennen versiota 2.3) oli mahdollista käyttää time-moduulia nykyisen ajan ja päivämäärän hankkimiseen. Time-moduuli kuitenkin palauttaa arvonaan tarkkaa aikaa Unix epoch -muodossa, eli sekunteina 1. tammikuuta 1970:stä lähtien. Nykyään datetime-moduuli on suositeltu tapa hankkia nykyinen päivämäärä ja aika, koska se antaa käyttäjälle selkeämmän ja helpommin muokattavan objektin päivämäärälle ja ajalle.
 
-Tulostus on seuraava:
+### Vaihtoehtoiset tavat:
 
-2021-07-29 13:57:12.993947
+Pythonin lisäksi useimmissa käyttöjärjestelmissä ja ohjelmointikielissä on valmiina mahdollisuus hankkia nykyinen päivämäärä ja aika. Esimerkiksi Unix-käyttöjärjestelmässä käytetään "date" -komennolla ja Java-kielellä Date-luokalla.
 
-Voit tutkia lisää datetime-moduulin toimintoja [Pythonin virallisilla verkkosivuilla](https://docs.python.org/3/library/datetime.html).
+### Toteutus:
 
-## Katso myös
+Datetime-moduulin toiminta perustuu ajanjaksoon, joka on kulunut Unix epochista nykyhetkeen. Moduuli käyttää tätä ajanjaksoa ja siitä laskettua aikaleimaa selvittämään nykyisen päivämäärän ja ajan.
 
-- [Pythonin viralliset verkkosivut](https://www.python.org/)
-- [DateTime-moduulin dokumentaatio](https://docs.python.org/3/library/datetime.html)
-- [Pythonin datetime opetusohjelma](https://realpython.com/python-datetime/)
-- [PyDateTime - datetime-moduulin dokumentaatio C-kielisille laajennoksille](https://docs.python.org/3/c-api/datetime.html)
+## Katso myös:
+
+- [Datetime-moduuli Pythonin virallisessa dokumentaatiossa](https://docs.python.org/3/library/datetime.html)
+- [Time-moduuli Pythonin virallisessa dokumentaatiossa](https://docs.python.org/3/library/time.html)

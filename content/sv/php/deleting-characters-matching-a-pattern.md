@@ -10,35 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
 
-Att radera tecken som matchar ett mönster är en användbar funktion i PHP för att manipulera och hantera strängar. Det kan vara användbart vid till exempel förberedelse av data för bearbetning eller för att ta bort oönskade tecken i en sträng.
+Att ta bort tecken som matchar ett mönster är en viktig del av programmering. Det innebär helt enkelt att ta bort specifika tecken från en textsträng baserat på ett angivet mönster. Detta kan vara användbart för att rensa en text på oönskade tecken eller för att utvinna specifika delar av information från en sträng.
 
-## Hur man gör det
+## Så här gör du:
 
-För att radera tecken som matchar ett visst mönster i en sträng i PHP kan du använda funktionen `preg_replace()`. Denna funktion tar in tre parametrar: mönstret som ska matchas, ersättningen för mönstret och strängen som ska manipuleras.
-
-Ett enkelt exempel på hur `preg_replace()` kan användas för att ta bort alla siffror från en sträng ser ut så här:
+Ett vanligt sätt att ta bort tecken som matchar ett mönster i PHP är att använda funktionen `preg_replace()`. I exemplet nedan tar vi bort alla siffror från en textsträng.
 
 ```PHP
-$string = "Jag är 27 år gammal.";
-$ny_sträng = preg_replace("/[0-9]/", "", $string);
-echo $ny_sträng;
-
-// Output: Jag är år gammal.
+$text = "Det finns 123 äpplen i korgen.";
+$ny_text = preg_replace("/[0-9]/", "", $text);
+echo $ny_text;
+// Output: Det finns äpplen i korgen.
 ```
 
-I detta exempel används mönstret `"/[0-9]/"`, vilket betyder att alla siffror i strängen kommer att matchas och ersättas med en tom sträng. Detta mönster kan sedan anpassas efter dina behov för att matcha olika tecken eller teckenkombinationer.
+Notera att mönstret som vi matchar är `[0-9]`, vilket betyder alla siffror från 0 till 9. Det andra argumentet är en tom sträng, vilket innebär att alla matchande tecken kommer att tas bort från vår ursprungliga sträng. Slutligen skriver vi ut vår nya sträng för att se resultatet.
 
-## Djupdykning
+## Djupt dykande:
 
-För att förstå mer om hur `preg_replace()` fungerar är det viktigt att förstå vad reguljära uttryck är. Reguljära uttryck är mönster som används för att matcha textsträngar och filtrera ut önskad information. I PHP används de ofta tillsammans med funktionen `preg_replace()` för att manipulera strängar.
+Ta bort tecken som matchar ett mönster är en del av det som kallas reguljära uttryck eller Regex. Detta koncept är inte specifikt för PHP utan finns i många andra programmeringsspråk också. Regex kan användas för att matcha och manipulera text på ett mycket mer avancerat sätt än det enkla exempel vi har sett här.
 
-Som vi ser i exemplet ovan används hakparenteser `[ ]` för att specifiera en grupp av tecken som ska matchas. Inuti dessa hakparenteser kan man även ange ett intervall av tecken, såsom `[a-z]` för att matcha alla små bokstäver. Andra specialtecken som ofta används i reguljära uttryck är till exempel `^` för att matcha början av en sträng, `$` för att matcha slutet av en sträng och `+` för att matcha en eller flera förekomster av ett tecken.
+En annan metod för att ta bort tecken som matchar ett mönster är att använda funktionen `str_replace()`. Detta är en enklare metod som bara tar bort exakta tecken eller strängar, i motsats till Regex som kan hantera mer komplexa mönster.
 
-En annan viktig del av `preg_replace()` är ersättningsparametern. I vårt exempel använde vi en tom sträng, men du kan även ersätta det matchande mönstret med en annan sträng eller till och med en funktion som returnerar en sträng. Det finns också olika modifierare som kan användas för att ändra beteendet hos `preg_replace()`, såsom `i` för att göra matchningen icke-skiftlägeskänslig eller `g` för att matcha flera förekomster av mönstret.
+Att använda `preg_replace()` kan vara lite mer resurskrävande och fungerar bäst på mindre strängar. Om du behöver bearbeta större mängder data kan det vara mer effektivt att använda `str_replace()`.
 
-## Se även
+## Se även:
 
-- Mer information om reguljära uttryck i PHP: https://www.php.net/manual/en/regexp.reference.php
-- Allmän information om `preg_replace()`: https://www.php.net/manual/en/function.preg-replace.php
+- PHP's dokumentation för `preg_replace()`: https://www.php.net/manual/en/function.preg-replace.php
+- En introduktion till Regex: https://www.regular-expressions.info/
+- En utförlig guide om PHP och Regex: https://www.php.net/manual/en/reference.pcre.pattern.syntax.php

@@ -1,7 +1,7 @@
 ---
-title:                "Das Senden einer http-Anfrage"
-html_title:           "Python: Das Senden einer http-Anfrage"
-simple_title:         "Das Senden einer http-Anfrage"
+title:                "Eine HTTP-Anfrage senden"
+html_title:           "Python: Eine HTTP-Anfrage senden"
+simple_title:         "Eine HTTP-Anfrage senden"
 programming_language: "Python"
 category:             "Python"
 tag:                  "HTML and the Web"
@@ -10,62 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was & Warum?
+Das Senden von HTTP-Anfragen ist ein wichtiger Aspekt beim Programmieren, da es es ermöglicht, Informationen von einer Website oder einem Server abzurufen. Programmer nutzen es, um Daten zu erhalten und sie in ihre Programme zu integrieren.
 
-HTTP-Anfragen sind ein wesentlicher Bestandteil der modernen Webentwicklung. Sie ermöglichen es, Daten zwischen Servern und Clients auszutauschen und sind somit unerlässlich für die Interaktion mit Webanwendungen. In diesem Artikel erfahren Sie, wie Sie mit Python HTTP-Anfragen senden und empfangen können.
-
-## Wie man es macht
-
-Um eine HTTP-Anfrage mit Python zu senden, müssen Sie zunächst das `requests`-Modul installieren. Dies kann einfach mit dem Befehl `pip install requests` in Ihrer Befehlszeile durchgeführt werden.
-
-Sobald das Modul installiert ist, können Sie es in Ihrem Code importieren:
+## So funktioniert's:
+Das Senden von HTTP-Anfragen kann mit Hilfe von Python sehr einfach durchgeführt werden. Hier ist ein Beispiel, wie man eine GET-Anfrage an die Website "www.example.com" senden kann:
 
 ```Python
 import requests
-```
-
-Als nächstes müssen Sie eine URL festlegen, an die Sie die Anfrage senden möchten, und die gewünschten Parameter und Daten angeben. Zum Beispiel, um eine GET-Anfrage an die Website "www.example.com" zu senden, könnten Sie Folgendes tun:
-
-```Python
-url = "https://www.example.com"
-params = {"key": "value"}
-```
-
-Jetzt können Sie `requests` verwenden, um Ihre Anfrage zu senden:
-
-```Python
-response = requests.get(url, params=params)
-```
-
-Die Antwort wird als `response`-Objekt zurückgegeben, das verschiedene Informationen wie den Statuscode und die empfangene Daten enthält. Um den Inhalt der Antwort zu erhalten, können Sie die `text`-Methode verwenden:
-
-```Python
+response = requests.get("http://www.example.com")
 print(response.text)
 ```
 
-In diesem Beispiel würden Sie den HTML-Code der Website "www.example.com" ausgeben.
-
-## Tiefer in die Materie eintauchen
-
-Neben GET-Anfragen, die für das Abrufen von Daten verwendet werden, können Sie mit `requests` auch POST-Anfragen senden. POST-Anfragen werden normalerweise verwendet, um Daten an einen Server zu senden, z.B. beim Ausfüllen eines Formulars. Um eine POST-Anfrage zu senden, müssen Sie zusätzlich die zu sendenden Daten angeben:
+Die Ausgabe wird den HTML-Code der Website enthalten. Man kann auch Parameter an die Anfrage anhängen, um bestimmte Informationen zu erhalten:
 
 ```Python
-url = "https://www.example.com/login"
-data = {"username": "user1", "password": "123456"}
-response = requests.post(url, data=data)
+import requests
+params = {'key': 'value'}
+response = requests.get("http://www.example.com", params=params)
+print(response.text)
 ```
 
-Sie können auch einen Header mit zusätzlichen Informationen zu Ihrer Anfrage hinzufügen, indem Sie ein `headers`-Argument verwenden:
+Die Ausgabe könnte in diesem Beispiel zum Beispiel eine Liste von Suchergebnissen sein.
 
-```Python
-headers = {"Content-Type": "application/json"}
-response = requests.post(url, data=data, headers=headers)
-```
+## Tiefergehende Informationen:
+Das Senden von HTTP-Anfragen hat eine lange Geschichte. Früher wurde es vor allem für einfache HTML-Seiten genutzt, aber heutzutage wird es für die Kommunikation zwischen Servern und die Integration von Web-Services in Programme verwendet.
 
-Es gibt viele weitere Optionen und Funktionen, die Sie beim Senden von HTTP-Anfragen mit Python verwenden können. Für weitere Details und Beispiele empfehle ich Ihnen, die offizielle Dokumentation von `requests` zu lesen.
+Es gibt auch alternative Methoden, um Daten von Websites abzurufen, wie z.B. das Scraping von HTML oder die Nutzung von APIs. Diese können je nach Anwendungsbereich möglicherweise bessere Optionen sein.
 
-## Siehe auch
+Um HTTP-Anfragen in Python zu senden, gibt es verschiedene Bibliotheken, die genutzt werden können, wie z.B. Requests, Urllib oder httplib. Jede Bibliothek hat ihre eigenen Vor- und Nachteile, daher ist es wichtig, die Dokumentation zu lesen und die beste Option für das jeweilige Projekt auszuwählen.
 
-- [Offizielle Dokumentation von Requests](https://requests.readthedocs.io/en/master/)
-- [Python - Requests Modul](https://www.geeksforgeeks.org/python-requests-module/)
-- [Making HTTP Requests in Python](https://stackabuse.com/making-http-requests-in-python-using-pythons-requests-module/)
+## Siehe auch:
+- [Requests Library Documentation](https://requests.readthedocs.io/en/master/)
+- [Urllib Library Documentation](https://docs.python.org/3/library/urllib.html)
+- [httplib Library Documentation](https://docs.python.org/3/library/http.client.html)

@@ -1,7 +1,7 @@
 ---
-title:                "Travailler avec le json"
-html_title:           "C: Travailler avec le json"
-simple_title:         "Travailler avec le json"
+title:                "Travailler avec json"
+html_title:           "C: Travailler avec json"
+simple_title:         "Travailler avec json"
 programming_language: "C"
 category:             "C"
 tag:                  "Data Formats and Serialization"
@@ -10,51 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Qu'est-ce que c'est et pourquoi on le fait?
 
-Si vous êtes un développeur C et que vous travaillez souvent avec des données structurées, vous devez savoir comment travailler avec le format JSON. JSON (JavaScript Object Notation) est un format de données léger et facile à utiliser, qui est largement utilisé dans les applications web et mobiles. En apprenant à utiliser JSON en C, vous pourrez facilement accéder, manipuler et échanger des données avec d'autres applications.
+JSON, ou JavaScript Object Notation, est un format de données très utilisé par les programmeurs pour échanger des données entre différentes applications. Il est léger, facile à lire et à écrire, et est basé sur la syntaxe de JavaScript. Les programmeurs utilisent JSON pour structurer et organiser les données de manière à ce qu'elles puissent être facilement traitées par d'autres programmes.
 
-## Comment faire
+## Comment faire:
 
-Pour commencer à travailler avec JSON en C, vous devez inclure le fichier d'en-tête ```<stdlib.h>``` et utiliser la fonction ```malloc()``` pour allouer de l'espace mémoire pour vos données JSON.
+Voici un exemple de code en C pour afficher et parser des données JSON:
 
-```C
+```
+#include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+#include "json.h"
 
-// Allouer de l'espace mémoire pour un objet JSON
-char* json_object = (char*) malloc(sizeof(char) * 50); // 50 étant la taille maximale de l'objet JSON
+int main() {
+    // Déclaration d'une chaîne de caractères représentant le JSON
+    char* json_string = "{\"nom\": \"Jean\", \"age\": 30}";
 
-// Remplir l'objet avec des données (un exemple simplifié)
-strcpy(json_object, "{\"nom\": \"Jean\", \"age\": 25}");
+    // Déclaration d'une structure pour stocker les données JSON
+    json_value* json;
 
-// Pour afficher l'objet JSON
-printf("%s\n", json_object);
+    // Parse de la chaîne de caractères en données JSON
+    json = json_parse(json_string, strlen(json_string));
+
+    // Utilisation des données pour afficher le nom et l'âge
+    printf("Nom: %s\n", json->u.object.values[0].value->u.string.ptr);
+    printf("Age: %d\n", json->u.object.values[1].value->u.integer);
+
+    // Libération de la mémoire allouée pour les données JSON
+    json_value_free(json);
+
+    return 0;
+}
 ```
 
-La sortie pour l'exemple ci-dessus devrait être: ```{"nom": "Jean", "age": 25}```
+La sortie de ce code sera:
 
-Pour accéder aux valeurs spécifiques dans un objet JSON, vous pouvez utiliser la fonction ```strstr()``` pour trouver la clé correspondant à la valeur que vous recherchez, puis utilisrez la fonction ```atoi()``` ou ```atof()``` pour convertir la valeur en entier ou en flottant.
-
-```C
-// Trouver la clé "age" dans l'objet JSON
-char* key = "age";
-char* age_ptr = strstr(json_object, key);
-
-// Convertir la valeur "age" en entier
-int age = atoi(age_ptr);
-
-// Afficher la valeur
-printf("L'age de %s est de %d ans.\n", json_object, age);
+```
+Nom: Jean
+Age: 30
 ```
 
-La sortie pour cet exemple devrait être: ```L'age de Jean est de 25 ans.```
+## Plongée en profondeur:
 
-## Deep Dive
+JSON a été développé par Douglas Crockford en 2001 en tant que format de données léger et facile à utiliser pour les applications web. Il est largement utilisé dans le monde de la programmation pour échanger des données entre différents systèmes. Alternatives à JSON incluent XML, CSV et YAML. JSON est souvent utilisé avec les frameworks de développement web tels que JavaScript et PHP. Pour travailler avec JSON en C, vous pouvez utiliser des bibliothèques open-source comme [cJSON](https://github.com/DaveGamble/cJSON) ou [Jansson](https://github.com/akheron/jansson).
 
-Travailler avec des données JSON en C peut sembler un peu intimidant au début, mais une fois que vous comprenez les bases, vous pourrez facilement interagir avec n'importe quelles données structurées. En plus des fonctions mentionnées précédemment, il existe d'autres fonctions utiles telles que ```strtod()``` pour la conversion de chaînes de caractères en nombres décimaux, et ```strcpy()``` pour la copie de chaînes de caractères. De plus, il est important de comprendre les différentes structures de données disponibles en C, telles que les tableaux et les structures, pour mieux manipuler les données JSON complexes.
+## Voir aussi:
 
-## Voir aussi
-
-- [Documentation officielle de JSON en C](https://github.com/json-c/json-c)
-- [Tutoriel vidéo sur l'utilisation de JSON en C](https://www.youtube.com/watch?v=y8zi7N0jtJk)
-- [Article sur la manipulation de données JSON en C++](https://www.freecodecamp.org/news/how-to-work-with-json-in-cpp/)
+- [Documentation officielle de JSON](https://www.json.org/)
+- [Tutoriel sur le traitement de JSON en C](https://www.section.io/engineering-education/json-in-c/)

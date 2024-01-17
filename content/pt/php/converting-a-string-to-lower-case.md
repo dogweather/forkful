@@ -10,45 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que converter uma string para minúsculas?
+## O que e por que?
 
-Converter uma string para minúsculas pode ser útil em várias situações, seja para padronizar a entrada de dados em um formulário, para fazer comparações de strings sem diferenciar maiúsculas e minúsculas ou simplesmente por preferência de formatação.
+Converter uma string para letras minúsculas é um dos processos comuns na programação usando PHP. Isso significa transformar todas as letras maiúsculas em minúsculas em uma string. Isso pode ser útil quando se lida com entradas de usuários, onde pode haver inconsistências na capitalização do texto. Além disso, muitas funções e métodos do PHP aceitam apenas strings em letras minúsculas, então é necessário converter as strings para garantir que elas funcionem corretamente.
 
-## Como fazer a conversão em PHP
+## Como fazer:
 
-Usar a função `strtolower()` é a maneira mais simples e rápida de converter uma string para letras minúsculas. Veja um exemplo de código abaixo:
+Existem várias maneiras de converter uma string para letras minúsculas em PHP. As duas funções principais são `strtolower()` e `mb_strtolower()`. A primeira é usada para strings em inglês, enquanto a segunda pode lidar com diferentes tipos de caracteres, como acentos e símbolos. Aqui está um exemplo de como usar ambas as funções:
 
-```PHP
-$string = "EXEMPLO DE STRING EM LETRAS MAIÚSCULAS";
-echo strtolower($string);
+```
+$string = "Olá Mundo!";
+echo strtolower($string); // saída: olá mundo!
+echo mb_strtolower($string); // saída: olá mundo!
 ```
 
-**Saída:**
-```
-exemplo de string em letras maiúsculas
-```
+## Mergulho profundo:
 
-Além disso, também é possível fazer a conversão utilizando a função `mb_strtolower()`, que suporta caracteres multibyte (como acentos). Veja um exemplo de código:
+A ideia de converter strings para letras minúsculas não é exclusiva do PHP. Na verdade, essa prática pode ser encontrada em diversas linguagens de programação. No entanto, pode haver variações na implementação, especialmente quando lida com diferentes conjuntos de caracteres e idiomas. Além das funções mencionadas acima, também é possível converter uma string para letras minúsculas usando métodos específicos de cada idioma, como `mb_convert_case()` para caracteres multibyte em PHP.
 
-```PHP
-$string = "EXEMPLO DE STRING COM CARACTERES MULTIBYTE ÁÉÍÓÚ";
-echo mb_strtolower($string);
-```
+## Veja também:
 
-**Saída:**
-```
-exemplo de string com caracteres multibyte áéíóú
-```
-
-## Aprofundando na conversão de string para minúsculas
-
-Ao converter uma string para minúsculas, é importante ter em mente que a função `strtolower()` considera a tabela ASCII para fazer a conversão. Isso significa que não irá funcionar corretamente com letras acentuadas ou caracteres multibyte.
-
-Por isso, é recomendado utilizar a função `mb_strtolower()` se você estiver lidando com strings que contenham caracteres multibyte. Além disso, é importante também estar atento ao conjunto de caracteres (charset) utilizado, para evitar possíveis problemas de exibição.
-
-Em alguns casos, pode ser necessário fazer a conversão reversa, ou seja, de minúsculas para maiúsculas. Para isso, basta utilizar a função `strtoupper()` ou `mb_strtoupper()` de maneira semelhante às funções mencionadas anteriormente.
-
-## Veja também
-
-- Documentação oficial do PHP sobre a função [`strtolower()`](https://www.php.net/manual/pt_BR/function.strtolower.php)
-- Documentação oficial do PHP sobre a função [`mb_strtolower()`](https://www.php.net/manual/pt_BR/function.mb-strtolower.php)
+- Documentação oficial do PHP sobre `strtolower()`: https://www.php.net/manual/en/function.strtolower.php
+- Documentação oficial do PHP sobre `mb_strtolower()`: https://www.php.net/manual/en/function.mb-strtolower.php
+- Documentação oficial do PHP sobre `mb_convert_case()`: https://www.php.net/manual/en/function.mb-convert-case.php

@@ -1,7 +1,7 @@
 ---
-title:                "Hankkimassa nykyinen päivämäärä"
-html_title:           "C: Hankkimassa nykyinen päivämäärä"
-simple_title:         "Hankkimassa nykyinen päivämäärä"
+title:                "Päivämäärän hakeminen"
+html_title:           "C: Päivämäärän hakeminen"
+simple_title:         "Päivämäärän hakeminen"
 programming_language: "C"
 category:             "C"
 tag:                  "Dates and Times"
@@ -10,64 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
-Kuinka saada nykyinen päivämäärä C-kielellä? Tässä artikkelissa käymme läpi syyn taustalla ja kuinka se on mahdollista toteuttaa.
+## Mitä & miksi?
 
-## Kuinka tehdä
-Nykypäivän C-koodarit usein tarvitsevat käyttää nykyisen päivämäärän tietoa ohjelmissaan. Tämä voidaan suorittaa käyttämällä `time.h` kirjastoa ja sen sisältämää `time` rakennetta. Seuraavassa koodiesimerkissä luodaan muuttuja `current_time`, joka sisältää nykyisen päivämäärän tiedot.
+Nykyisen päivämäärän saaminen on ohjelmoinnissa tavanomainen tehtävä, joka mahdollistaa käyttäjien näkemisen järjestelmissä ja yhteyksissä. Tätä tehdään usein, jotta voidaan tarkistaa, onko jokin toiminto päivitetty viimeisimmästä istunnosta.
 
-```C 
-#include <stdio.h>
-#include <time.h>
+## Miten:
 
-int main() {
-    // Luo tm-struct (rakenne) nykyiselle ajalle
-    time_t current_time;
-    time(&current_time);
-
-    // Tulostaa nykyisen ajan
-    printf("Nykyinen aika: %s", ctime(&current_time));
-
-    return 0;
-}
-```
-
-Output käskyn ajamisen jälkeen:
-
-```
-Nykyinen aika: Mon Mar 29 19:12:24 2021
-```
-
-## Syvällisempi sukellus
-`time.h` kirjasto sisältää useita hyödyllisiä funktioita ja rakenteita, jotka muokkaavat ja hallitsevat aikaa ja päivämääriä. Yksi näistä on `gmtime()` funktio, joka muuntaa ajan UTC-ajaksi (koordinoitu yleisaika) ja palauttaa pointerin `tm` rakenteeseen.
+Käyttämällä C-ohjelmointikielen date.h ja time.h kirjastoja, voimme helposti saada nykyisen ajan ja päivämäärän. Seuraavassa on esimerkki:
 
 ```C
 #include <stdio.h>
 #include <time.h>
 
-int main() {
-    // Luo tm-struct nykyiselle ajalle
-    time_t current_time;
-    time(&current_time);
-
-    // Muuntaa ajan UTC-ajaksi ja tallentaa pointerin tm-structiin
-    struct tm *gmtm = gmtime(&current_time);
-
-    // Tulostaa UTC-ajan
-    printf("UTC-aika: %s", asctime(gmtm));
-
+int main()
+{
+    time_t t = time(NULL);
+    struct tm *timeinfo = localtime(&t);
+    printf("Nykyinen päivämäärä ja aika: %s\n", asctime(timeinfo));
     return 0;
 }
 ```
 
-Output käskyn ajamisen jälkeen:
+Tulostus olisi jotain tällaista:
 
 ```
-UTC-aika: Tue Mar 30 02:12:24 2021
+Nykyinen päivämäärä ja aika: Sat Mar 27 14:25:00 2021
 ```
 
-`time.h` kirjaston avulla voit myös manipuloida aikaa ja päivämääriä haluamallasi tavalla, kuten lisätä tai vähentää päiviä nykyisestä päivämäärästä. Tutustu tarkemmin kirjaston dokumentaatiosta löytyviin `time.h` funktioihin ja rakenteisiin saadaksesi lisätietoa.
+## Syvällinen sukellus:
 
-## Katso myös
-- [`time.h` kirjaston dokumentaatio (englanniksi)](https://www.gnu.org/software/libc/manual/html_node/Calendar-Time.html#Calendar-Time)
-- [C-kieletutoriaalit (suomeksi)](https://www.cs.helsinki.fi/group/java/antti/c-opas-opettajille_index.html)
+Päiväyksen ja ajan saaminen järjestelmissä on ollut tärkeä osa ohjelmointia jo vuosikymmenien ajan. Alun perin se tehtiin käyttämällä POSIX:ää tai ANSI C -toimintoja, mutta nykyään useimmissa kielissä on sisäänrakennettu tuki päivämäärän ja ajan käsittelyyn.
+
+Vaihtoehtoinen tapa saada nykyinen aika ja päivämäärä on käyttää date-komentoa, jolla on useita eri vaihtoehtoja saatavilla. Myös erilaisten laajennettujen kirjastojen, kuten Boost C++ ja Python-kielen datetime-moduulin avulla voi helposti käsitellä päivämääriä ja aikoja monimutkaisemmin.
+
+Tämän kirjoituksen esimerkki käyttää localtime-funktiota, joka muuntaa UTC-aikavyöhykkeen tämänhetkisen ajan paikalliseksi ajaksi. Tämä voi kuitenkin vaihdella käyttöjärjestelmän ja ympäristön mukaan.
+
+## Katso myös:
+
+- [C time.h dokumentointi](https://www.tutorialspoint.com/c_standard_library/time_h.htm)
+- [Boost C++ DateTime Library](https://theboostcpplibraries.com/boost.datetime)

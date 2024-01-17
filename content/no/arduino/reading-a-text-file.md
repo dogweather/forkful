@@ -1,7 +1,7 @@
 ---
-title:                "Å lese en tekstfil"
-html_title:           "Arduino: Å lese en tekstfil"
-simple_title:         "Å lese en tekstfil"
+title:                "Lesing av en tekstfil"
+html_title:           "Arduino: Lesing av en tekstfil"
+simple_title:         "Lesing av en tekstfil"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Files and I/O"
@@ -10,33 +10,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+Hva og hvorfor?
+Det å lese en tekstfil betyr å åpne en fil og lese informasjonen som er lagret i den. Dette er en viktig del av programmering fordi det lar deg hente og behandle data fra filer, noe som kan være nyttig for å håndtere store mengder informasjon eller for å samhandle med eksterne enheter.
 
-Hvis du ønsker å lagre og behandle større mengder data på Arduino-en din, er det å lese en tekstfil en nyttig ferdighet å ha. Dette kan åpne for flere muligheter for prosjekter og utvide hva du kan gjøre med Arduino. 
-
-## Hvordan
-
-Det første trinnet for å lese en tekstfil på Arduino er å åpne en seriell tilkobling. Deretter må du åpne filen ved hjelp av `SD.begin()` kommandoen. Bruk deretter `SD.open()` for å åpne filen og lagre en referanse til den i en variabel. Nå kan du bruke `file.read()` for å lese data fra filen og lagre den i en variabel. Husk å lukke filen med `file.close()` når du er ferdig for å unngå at det oppstår problemer.
+Hvordan:
+Du kan lese en tekstfil ved å bruke "File" funksjonen i Arduino biblioteket. Først må du åpne filen ved å oppgi filnavnet og "r"-modus for å lese. Deretter kan du lese informasjonen i fila ved å bruke "readString" eller "readLine" funksjonene. Her er et eksempel på hvordan dette kan gjøres:
 
 ```
-Arduino.setup() {
-    Serial.begin(9600);
-    SD.begin(10);
-
-    File file = SD.open("tekstfil.txt", FILE_READ);
-    String data = file.read();
-    Serial.print(data);
-    file.close();
+Arduino fil = fil.open("data.txt", FILE_READ); // Åpner filen "data.txt"
+hvis (fil) {                                   // Sjekker om åpningen var vellykket
+  streng s = fil.readString();                // Leser hele filen som en streng
+  fil.close();                                // Lukker filen for å spare minne
+  seriell.print(s);                          // Sender informasjonen til seriell overvåking
 }
 ```
 
-Når koden kjøres, vil teksten fra filen bli skrevet ut i serieporten. Du kan deretter behandle disse dataene på ønsket måte i koden din.
+Dykk ned:
+Å lese tekstfiler har vært en viktig del av programmering siden de første datamaskinene ble laget. Det finnes også andre måter å lese filer på, for eksempel ved å bruke tekstbehandlingsprogrammer eller databaseteknologi. I Arduino, kan du også bruke SD-kortet for å lese eksterne filer. Det er viktig å lære om hvordan du leser tekstfiler for å kunne behandle store mengder informasjon og for å kommunisere med andre enheter, noe som er spesielt nyttig for Internet of Things (IoT) prosjekter.
 
-## Dypdykk
-
-Det finnes flere mulige måter å lese en tekstfil på Arduino på, avhengig av hvilken versjon av Arduino du bruker og hvilket lagringsmedium du ønsker å lese fra. Det er også mulig å lese en tekstfil fra en ekstern enhet, som for eksempel en datamaskin, ved å opprette en seriell kommunikasjon mellom enhetene.
-
-## Se også
-
-- [SD-biblioteket for Arduino](https://www.arduino.cc/en/Reference/SD) 
-- [Eksempelkode for lesing av tekstfiler på Arduino](https://www.arduino.cc/en/Tutorial/FileRead)
+Se også:
+- Arduino Offisiell Dokumentasjon: https://www.arduino.cc/reference/en/language/functions/files-io/file/
+- "Reading and Writing Files on an SD Card with an Arduino": https://learn.sparkfun.com/tutorials/reading-and-writing-files-to-an-sd-card-with-an-arduino/all

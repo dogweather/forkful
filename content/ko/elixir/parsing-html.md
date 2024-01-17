@@ -1,7 +1,7 @@
 ---
-title:                "파싱 HTML"
-html_title:           "Elixir: 파싱 HTML"
-simple_title:         "파싱 HTML"
+title:                "HTML 파싱"
+html_title:           "Elixir: HTML 파싱"
+simple_title:         "HTML 파싱"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "HTML and the Web"
@@ -10,69 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+## 무엇 & 왜?
 
-HTML 파싱에 대해 관심이 있는 분들은 웹 스크래핑, 데이터 마이닝, 자동화 작업 등 다양한 목적으로 HTML을 파싱할 수 있습니다. Elixir는 강력한 패턴 매칭을 제공하기 때문에 이러한 작업에 이상적입니다. 
+HTML 파싱이 무엇인지 그리고 이를 왜 프로그래머들이 하는지에 대해 간단히 설명합니다.
 
-## 방법
+HTML 파싱이란 웹 페이지의 코드를 해석하고 분석하여 웹 브라우저가 이해할 수 있는 형식으로 변환하는 것을 의미합니다. 프로그래머들은 이를 하게 되는 이유는 웹 크롤링이나 스크래핑, 자동화 작업 등을 위해서입니다.
 
-Elixir에서 HTML 파싱을 하는 가장 일반적인 방법은 Floki 라이브러리를 사용하는 것입니다. Floki는 CSS 선택자를 사용하여 HTML을 쉽게 파싱할 수 있는 강력한 도구입니다. 아래는 Floki를 사용하여 제목 태그를 추출하는 예제 코드입니다.
+## 하우 투:
 
-```elixir
-# Floki 라이브러리를 임포트합니다.
-import Floki
-
-# 웹페이지의 HTML을 가져옵니다. 
-html = "<div><h1>Hello, World!</h1></div>"
-
-# Floki를 사용하여 제목 태그를 추출합니다.
-title_tag = Floki.find(html, "h1") |> Floki.text
-
-# 결과를 출력합니다.
-IO.puts title_tag
-```
-
-출력 결과는 다음과 같습니다.
-
-```
-Hello, World!
-```
-
-선택자를 사용하면 더욱 복잡한 HTML 구조에서도 원하는 요소를 파싱할 수 있습니다. 다음은 클래스가 "product"인 제품의 가격을 추출하는 예제 코드입니다.
+아래의 코드 블록에는 Elixir를 사용하여 HTML 파싱을 하는 예제와 출력 결과가 포함되어 있습니다.
 
 ```elixir
-# Floki 라이브러리를 임포트합니다.
-import Floki
-
-# 웹페이지의 HTML을 가져옵니다. 
-html = """
-<div class="product">
-  <h2>iPhone 12</h2>
-  <p class="price">$999</p>
-</div>
-"""
-
-# Floki를 사용하여 가격 태그를 추출합니다.
-price_tag = Floki.find(html, "div.product p.price") |> Floki.text
-
-# 결과를 출력합니다.
-IO.puts price_tag
+# HTTP 라이브러리를 사용하여 웹 페이지의 HTML 코드 가져오기
+html = HTTP.get!("http://www.example.com").body
+# Floki 라이브러리를 사용하여 HTML 파싱하기
+parsed_html = Floki.parse_html(html)
+# CSS 선택자를 사용하여 특정 요소 찾기
+title = Floki.find(parsed_html, "h1.title")
+# 요소의 내용 출력하기
+IO.puts(title)
 ```
 
-출력 결과는 다음과 같습니다.
-
+출력 결과:
 ```
-$999
+"Hello World!"
 ```
 
-더 많은 코드 예제와 결과는 [Floki 공식 문서](https://hexdocs.pm/floki/readme.html)에서 확인할 수 있습니다.
+## 깊게 알아보기:
 
-## 깊게 파헤치기
+이 섹션에서는 HTML 파싱에 대한 역사적인 배경, 대체 가능한 방법들, 그리고 구현에 대한 자세한 정보를 제공합니다.
 
-Elixir의 최신 버전은 HTML 파싱에 필요한 모든 기능을 제공합니다. Floki 라이브러리를 사용하면 강력한 패턴 매칭과 CSS 선택자를 이용하여 HTML을 쉽게 파싱할 수 있습니다. 또한 Elixir는 멀티 스레드를 지원하기 때문에 HTML을 동시에 파싱할 수 있어서 빠른 속도로 데이터를 수집할 수 있습니다.
+웹 페이지의 HTML 코드를 해석하고 분석하는 것은 웹 개발이나 웹 스크래핑 뿐만 아니라 검색 엔진이나 웹 크롤러 등에서도 매우 중요한 역할을 합니다. Elixir를 비롯한 많은 프로그래밍 언어들에서는 HTML 파싱을 위한 라이브러리를 제공하며, 이를 사용하면 간단하고 효율적으로 파싱 작업을 수행할 수 있습니다.
 
-## 또 다른 참고 자료
+## 관련 자료:
 
-- [Floki 공식 문서](https://hexdocs.pm/floki/readme.html)
-- [Elixir 공식 웹사이트](https://elixir-lang.org/)
-- [Floki를 사용한 HTML 파싱 예제](https://medium.com/@akoutmos/getting-started-with-floki-elixirs-best-html-parser-a8893927c0b0)
+HTML 파싱과 관련된 자세한 내용을 알고 싶다면 아래의 링크들을 참고해보세요.
+
+- [Floki - Elixir에서 HTML 파싱을 위한 라이브러리](https://github.com/philss/floki)
+- [HTML 파싱에 대한 나무위키 문서](https://namu.wiki/w/HTML#s-3.1)

@@ -10,48 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-If you're interested in web scraping or data extraction, downloading a web page is an essential step. It allows you to access and manipulate the content of a website for various use cases, such as data analysis or automation.
+Downloading a web page simply means retrieving a webpage from the internet and storing it on your local machine. It is commonly done by programmers to extract information from a webpage that can be used for various purposes such as data analysis and content scraping.
 
-## How To
+## How to:
 
-To download a web page in Clojure, we can use the `clojure.java.io` library. This library provides functions for input and output operations, including downloading web pages. Let's see an example of how to download a webpage using the `clojure.java.io` library:
-
-```Clojure
-(require '[clojure.java.io :as io])
-
-(defn download-webpage [url]
-  (with-open [reader (io/reader url)]
-    (slurp reader)))
-
-(download-webpage "https://www.example.com")
-```
-
-The above code will download the HTML content of the webpage at the specified URL and return it as a string. You can then manipulate this string as needed for your use case.
-
-If you want to save the downloaded webpage as a file, you can use the `io/copy` function, which takes in the source and destination paths as arguments:
+The `clojure.java.io` library provides a simple and efficient way to download a web page in Clojure. Here's an example:
 
 ```Clojure
 (require '[clojure.java.io :as io])
-
-(defn save-webpage [url file-path]
-  (with-open [in (io/reader url)
-              out (io/output-stream file-path)]
-    (io/copy in out)))
-
-(save-webpage "https://www.example.com" "example.html")
+(io/copy (io/input-stream "https://www.example.com") (io/output-stream "example.html"))
 ```
+The above code will download the web page from `https://www.example.com` and save it as `example.html` in your current directory.
 
-This will save the webpage at the specified URL as a local file named "example.html".
+## Deep Dive:
 
-## Deep Dive
+Downloading web pages has been a common practice since the early days of the internet. In the past, it was done manually by copying and pasting the HTML code. However, with the advancement of technology, developers have created various tools and libraries to make the process more efficient and automated.
 
-Behind the scenes, the `clojure.java.io` library uses Java's `java.net.URL` and `java.net.URLConnection` to handle the actual downloading of web pages. These classes provide methods for establishing a connection to a URL and retrieving the content.
+Some alternatives to the `clojure.java.io` library for downloading web pages include [clj-http](https://github.com/dakrone/clj-http) and [http-kit](https://github.com/http-kit/http-kit). These libraries provide additional features like HTTP authentication and automatic handling of redirects.
 
-The `io/reader` and `io/output-stream` functions from the `clojure.java.io` library are just wrappers around the `java.net.URL` and `java.net.URLConnection` APIs, providing a convenient way to access and process the content of a webpage.
+Behind the scenes, downloading a web page involves making a HTTP request to the specified URL and receiving a response from the server. The `clojure.java.io` library uses the Java standard library for networking to handle these requests.
 
-## See Also
-- [Clojure Documentation: clojure.java.io](https://clojure.github.io/clojure/clojure.java.io-api.html)
-- [Java Documentation: java.net.URL](https://docs.oracle.com/javase/8/docs/api/java/net/URL.html)
-- [Java Documentation: java.net.URLConnection](https://docs.oracle.com/javase/8/docs/api/java/net/URLConnection.html)
+## See Also:
+
+- [clj-http](https://github.com/dakrone/clj-http)
+- [http-kit](https://github.com/http-kit/http-kit)
+- [Java standard library for networking](https://docs.oracle.com/javase/8/docs/api/java/net/package-summary.html)

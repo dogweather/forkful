@@ -10,49 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+# Was & Warum?
+Das Konvertieren eines Strings in Kleinbuchstaben ist ein häufiger Schritt in der Programmierung, bei dem ein String in eine einheitliche Schreibweise gebracht wird. Programmierer nutzen dies, um Vergleiche oder Suchanfragen zu erleichtern, da Groß- und Kleinschreibung oft keine Rolle spielt und verschiedene Einheiten so zu einer Einheit werden.
 
-Es gibt mehrere Gründe, warum man einen String in Kleinbuchstaben konvertieren möchte. Zum Beispiel, wenn man sicherstellen möchte, dass alle Buchstaben in einer Eingabe auf die gleiche Weise behandelt werden, oder wenn man Strings vergleichen möchte und dabei auf die Groß- und Kleinschreibung keine Rolle spielen soll.
-
-## Wie geht man vor?
-
-Die Konvertierung eines Strings in Kleinbuchstaben kann mit nur wenigen Zeilen Code erreicht werden. Schauen wir uns dazu ein Beispiel an:
-
-```C++
+# Wie geht's?
+```C++ 
+// Beispielcode für die Konvertierung eines Strings in Kleinbuchstaben
 #include <iostream>
+#include <algorithm>
 #include <string>
-#include <algorithm> 
 using namespace std;
 
-int main()
-{
-    // Eingabe-String 
-    string input = "HaLLo WoRld";
+int main() {
+    // Eingangsstring definieren
+    string s = "HALLO WELT";
     
-    // Konvertierung in Kleinbuchstaben
-    transform(input.begin(), input.end(), input.begin(), ::tolower);
+    // String in Kleinbuchstaben umwandeln mit transform 
+    transform(s.begin(), s.end(), s.begin(), ::tolower);
     
-    // Ausgabe 
-    cout << input << endl;
+    // Ausgabe des konvertierten Strings
+    cout << s;
     
     return 0;
 }
 
+// Output: hallo welt
 ```
 
-**Ausgabe:**
-```
-hallo world
-```
+# Tiefes Eintauchen
+Die Verwendung von Groß- und Kleinschreibung in der Sprachverarbeitung ist eine relativ neue Entwicklung. Frühere Programmiersprachen hatten dies nicht und daher war die Konvertierung von Strings in der Praxis nicht relevant. In C++ gibt es verschiedene Möglichkeiten, um einen String in Kleinbuchstaben umzuwandeln, einschließlich der Verwendung von Bibliotheksfunktionen wie transform oder der Verwendung von Schleifen. Es gibt auch Alternativen wie die Verwendung von regulären Ausdrücken oder die Verwendung von Standardfunktionen wie tolower.
 
-In diesem Beispiel wird die ```transform()``` Funktion aus der Standard Template Library (STL) verwendet. Sie akzeptiert drei Argumente: den Anfang eines Bereichs, das Ende des Bereichs und eine Funktion, die auf jedes Element im Bereich angewendet wird. In diesem Fall verwenden wir die Funktion ```::tolower``` aus der Header-Datei ```<algorithm>```, um jeden Buchstaben in Kleinbuchstaben zu konvertieren. Die Funktion ```::tolower``` erwartet ein Argument vom Datentyp ```int``` und gibt einen Wert vom selben Datentyp zurück, der den entsprechenden Kleinbuchstaben darstellt.
-
-## Tiefergehende Infos
-
-Es ist wichtig zu erwähnen, dass die Konvertierung in Kleinbuchstaben von den Konventionen einer bestimmten Sprache oder Region abhängen kann. Zum Beispiel kann die Konvertierung von ```ß``` in einen Kleinbuchstaben in der deutschen Sprache unvorhersehbar sein. In solchen Fällen können spezifische Funktionen oder Bibliotheken verwendet werden, um eine genaue und kulturspezifische Konvertierung sicherzustellen.
-
-## Siehe auch
-
-- [Referenz für die STL ```transform()``` Funktion](https://www.cplusplus.com/reference/algorithm/transform/)
-- [Tutorial zur Nutzung der STL in C++](https://www.tutorialspoint.com/cplusplus/cpp_stl_tutorial.htm)
-- [Weitere Infos zur Behandlung von Strings in C++](https://www.cprogramming.com/tutorial/string.html)
+# Weitere Quellen
+* Mehr über die Verarbeitung von Strings in C++: [C++ Strings](https://www.programiz.com/cpp-programming/string)
+* Eine detaillierte Erklärung zum Konzept von Groß- und Kleinschreibung: [Wikipedia - Case Sensitivity](https://de.wikipedia.org/wiki/Gro%C3%9F-_und_Kleinschreibung)

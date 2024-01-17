@@ -1,7 +1,7 @@
 ---
-title:                "文字列の長さを求める"
-html_title:           "Fish Shell: 文字列の長さを求める"
-simple_title:         "文字列の長さを求める"
+title:                "文字列の長さを見つける"
+html_title:           "Fish Shell: 文字列の長さを見つける"
+simple_title:         "文字列の長さを見つける"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -10,26 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+## 何をするのか？その理由は？
 
-文字列の長さを求めることの利点は、プログラミングにおいて非常に重要です。例えば、入力されたデータの長さをチェックすることで、バグを防いだり、正しい処理を行ったりすることができます。Fish Shellを使用して文字列の長さを求める方法を紹介します。
+文字列の長さを見つけるとは、文字列の中の文字の数を計算することです。プログラマーは、文字列を操作する際に、その長さを知る必要があるため、この操作を行います。
 
-## やり方
+## 方法：
 
-```Fish Shell
-# 文字列の長さを求めるコマンド
-echo -n "Hello World" | wc -c 
-
-# 出力： 11（改行文字が含まれないため、-nオプションを使用）
+```
+Fish Shellには、'string length'という組み込み関数があります。これを使用することで、文字列の長さを簡単に計算することができます。例を見てみましょう。
 ```
 
-上記のコマンドを使用することで、文字列の長さを求めることができます。echoコマンドで出力した文字列を、wcコマンドの-cオプションを使用することで、文字数をカウントすることができます。
+```
+set my_string "Hello"
+echo (string length $my_string)
+=> 5
+```
 
-## 深堀り
+## 詳しく見る
 
-文字列の長さを求める際には、注意点があります。例えば、改行文字を含む文字列の場合、-nオプションを使用する必要があります。また、wcコマンドはファイルの文字数をカウントすることができる他、入力された文字列の文字数をカウントすることもできます。詳しくは[wcコマンドのドキュメント](https://fishshell.com/docs/current/commands.html#wc)を参考にしてください。
+### 歴史的背景
 
-## 参考リンク
+文字列の長さを見つけるという操作は、プログラミング言語やシェルの標準の機能として提供されてきました。古くは、C言語のstrlen()関数が有名です。
 
-- [Fish Shellドキュメント](https://fishshell.com/docs/current/index.html)
-- [WCコマンドについて知ろう！](https://qiita.com/chihiro/items/0bd48eb12459418df64c)
+### 代替手段
+
+Fish Shell以外でも、文字列の長さを見つけることができるシェルやプログラミング言語は多数あります。例えば、Bashシェルでは、'${#string}'という構文を使うことで文字列の長さを取得できます。
+
+### 実装の詳細
+
+Fish Shellの'string length'関数は、内部的には文字列の長さを確認することで実装されています。詳しい実装に興味がある方は、Fish Shellのソースコードを確認してみてください。
+
+## 関連情報
+
+- Official Fish Shell Documentation: https://fishshell.com/docs/current/
+- C言語のstrlen()関数について: https://www.tutorialspoint.com/c_standard_library/c_function_strlen.htm

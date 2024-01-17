@@ -10,41 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä & Miksi?
 
-Kirjoittaminen standardivirheeseen ei välttämättä ole kaikkein jännittävin ohjelmointitehtävä, mutta se voi olla erittäin hyödyllistä virheiden havaitsemisessa ja korjaamisessa. Kun käytämme tätä työkalua oikein, voimme helpommin paikallistaa ja ratkaista ohjelmistoomme liittyvät ongelmat.
+Kirjoittaminen vakioerolle on tapa, jolla ohjelmoijat voivat ilmoittaa ohjelman suorituksessa tapahtuneista virheistä tai häiriöistä. Tämä auttaa kehittäjiä tunnistamaan ja korjaamaan ongelmia, mikä parantaa ohjelman toimintaa ja luotettavuutta.
 
-## Kuinka tehdä se
+## Miten:
 
 ```Elm
-import Text exposing (toPadded)
-import Platform
+import Debug
 
-main =
-  Platform.sendToSelf "Tässä on virheilmoitus!" Nothing
-  |> Task.onError (
-      \error ->
-        Platform.sendToSelf ("Tämä on virhe: " ++ Text.toPadded 5 ' ' error)
-        Nothing
-    )
+Debug.crash "Tapahtui virhe"
 ```
 
-Yllä olevassa esimerkissä näytetään, kuinka voimme käyttää Elm:n standardikirjastosta löytyvää `Platform.sendToSelf` funktiota kirjoittamaan viesti virhetilanteessa. Tämä funktio lähettää viestin suoraan selaimelle, mikä tekee siitä erittäin kätevän töitä tehdessämme.
+Tämä koodiesimerkki käyttää `Debug`-moduulia kirjoittamaan vakioerolle viestin "Tapahtui virhe". Tämä viesti näkyy ohjelman suorittamisen yhteydessä henkilökohtaisessa konsolissasi tai kehittäjän välineissä, kuten Chrome DevToolsissa.
 
-```
-> Tässä on virheilmoitus!
->     TNT   This is an error
+Vakioerolle kirjoittaminen on erityisen hyödyllistä, kun haluat ilmoittaa poikkeuksellisista tapahtumista tai virheistä, jotka eivät ehkä näy tavallisessa käyttäjälle näkyvässä käyttöliittymässä.
 
-> TNT = Tämä on virhe
-```
+## Syvemmälle:
 
-Ylläoleva koodi luo virheilmoituksen, joka näytetään selaimen konsolissa. Tämän lisäksi virheen tiedot on myös muotoiltu ja tulostettu konsoliin, mikä tekee virheen paikantamisesta ja ratkaisemisesta helpompaa.
+Vakioerolle kirjoittaminen on yleinen tapa käsitellä virheitä ja merkityksellinen myös muissa ohjelmointikielissä. Joissakin kielissä, kuten Java, vakioerolle kirjoittaminen tapahtuu automaattisesti, ja kehittäjän ei tarvitse erikseen kirjoittaa koodia virheiden ilmoittamiseksi.
 
-## Pohjustietoja
+On myös muita tapoja käsitellä virheitä, kuten `Result` ja `Maybe` tyyppitietojen käyttäminen Elm-kielessä. Nämä vaihtoehdot voivat olla parempia tietyissä tilanteissa, joten kannattaa tutustua niihin ennen kuin käytät vakioerolle kirjoittamista.
 
-Kuten huomasimme esimerkeistä, `Platform.sendToSelf` funktiota voidaan käyttää virheilmoitusten lisäksi myös muuhun viestien lähettämiseen selaimelle. Usein tämä voi olla hyödyllistä esimerkiksi testauksessa ja debuggaamisessa. On myös hyvä muistaa, että Elm:n koodin suoritus tapahtuu pääasiassa selaimessa, joten virheviestit kulkevat suoraan siihen.
+Vakioerolle kirjoittamisessa käytetään standardipuskurialuetta, joka on osa tietokoneen muistia, johon ohjelma voi kirjoittaa tietoja suorituksen aikana. Kun ohjelma kaatuu, tämä puskurialue näytetään kehittäjälle viestinä, joka auttaa tunnistamaan virheen syyn.
 
-## Katso myös
+## Katso myös:
 
-- Elm:n viralliset dokumentaatiot virheenkäsittelystä: [https://elm-lang.org/docs/error](https://elm-lang.org/docs/error)
-- Tietoa standardivirheestä ja sen käytöstä Elm:ssä: [https://guide.elm-lang.org/error_handling/](https://guide.elm-lang.org/error_handling/)
+- [Elm Debug moduuli dokumentaatio](https://package.elm-lang.org/packages/elm/core/latest/Debug)
+- [Elm Result ja Maybe tyyppitiedot](https://guide.elm-lang.org/error_handling/)
+- [Mitä on vakioerolle kirjoittaminen?](https://www.geeksforgeeks.org/what-is-debugging/)

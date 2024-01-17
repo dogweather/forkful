@@ -10,52 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-Writing a text file using Ruby is a useful skill to have, especially for those who are working on projects that require reading and writing data. It allows for easy manipulation and storage of information without relying on a database.
+Writing a text file in Ruby means creating a file on your computer that contains text. Programmers do this to store data in a more permanent and accessible way, or to save the results of a program for later use.
 
-## How To
+## How to:
 
-To create a text file using Ruby, we first need to create a new file and open it for writing, specifying the file name and the "w" mode for writing. Then, we can use the `.write` method to add text to the file. Finally, we need to close the file to ensure all changes are saved.
+To write a text file in Ruby, you can use the File class and its corresponding methods. First, you'll need to open or create the file using the `File.open()` method, and specify the file name and the writing mode (`w`). Then, you can use the `puts` method to add the desired text to your file. Finally, use the `close` method to save your changes and close the file.
 
-```
 ```Ruby
-file = File.open("example.txt", "w")
-file.write("This is an example text file created using Ruby! \n")
-file.write("It's as easy as using the .write method! \n")
-file.close
-```
-```
+# Create a new text file and write text to it
+File.open("my_file.txt", "w") do |file|
+  file.puts "This is some text written to a file!"
+end
 
-Running this code will create a new file called "example.txt" with the specified text inside. The `\n` is used to indicate a line break in the file.
-
-We can also use string interpolation to add variables or dynamically generated content to our text file. For example:
-
-```
-```Ruby
-name = "John"
-age = 30
-
-file = File.open("example2.txt", "w")
-file.write("#{name} is #{age} years old. \n")
-file.close
-```
+# Open an existing text file and append text to it
+File.open("my_file.txt", "a") do |file|
+  file.puts "This text will be added to the end of the file."
+end
 ```
 
-This will create a new file called "example2.txt" with the text "John is 30 years old" inside.
+This will result in a `my_file.txt` file that contains the following text:
 
-## Deep Dive
+```
+This is some text written to a file!
+This text will be added to the end of the file.
+```
 
-When writing a text file, it's important to keep in mind the mode we use for opening the file. As mentioned, we used "w" for writing, but there are other modes we can use such as "a" for appending to an existing file or "r+" for both reading and writing.
+## Deep Dive:
 
-Additionally, we can add more advanced options such as specifying the encoding of the file or using the `puts` method instead of `.write` to automatically add a line break after each piece of text.
+Writing text files has been a fundamental task in programming for a long time. Text files can contain different types of data, making them versatile for storing information in a readable format. Alternatives to writing text files in Ruby include using other languages like Python or even using a database. However, text files offer a simple and accessible way to save data without needing any external tools or software.
 
-There are also different ways to format the text in our file, such as using `.printf` or `.sprintf` methods to add formatted data or using the `<<` operator to concatenate strings.
+When writing a text file in Ruby, it's essential to pay attention to the writing mode used. There are three main modes: `w` (write mode), `a` (append mode), and `r` (read mode). Using `puts` in `w` mode will overwrite the entire existing file, while `puts` in `a` mode will add the text to the end of the file without deleting its content. Also, don't forget to close the file after making changes to save your changes and release the resources used to access the file.
 
-## See Also
+## See Also:
 
-- [Ruby File Class](https://ruby-doc.org/core-2.7.2/File.html)
-- [Ruby String Class](https://ruby-doc.org/core-2.7.2/String.html)
-- [RubyIO - The Basics](https://www.rubyguides.com/2018/11/ruby-io/)
-
-By practicing writing text files in Ruby, you'll have a useful skill that can be applied to various projects and tasks. Keep exploring the different methods and options available to hone your skills and make use of this powerful feature in Ruby. Happy coding!
+- [Ruby File Class Documentation](https://ruby-doc.org/core-3.0.0/File.html)
+- [Ruby Monk - Reading and Writing Files in Ruby](https://rubymonk.com/learning/books/1-ruby-primer/chapters/18-reading-writing-files-in-ruby)

@@ -1,7 +1,7 @@
 ---
-title:                "Att skriva tester"
-html_title:           "Elixir: Att skriva tester"
-simple_title:         "Att skriva tester"
+title:                "Skriva tester"
+html_title:           "Elixir: Skriva tester"
+simple_title:         "Skriva tester"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Testing and Debugging"
@@ -10,41 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför 
+## Vad & Varför?
+Att skriva tester är när man skriver kod som kontrollerar att ens program fungerar som förväntat. Det är ett sätt för programmerare att säkerställa att deras kod är robust och pålitlig.
 
-Att skriva tester är ett viktigt steg i utvecklingsprocessen eftersom det hjälper till att säkerställa att koden fungerar som det är tänkt och minskar risken för buggar i produktion. Det hjälper också till att spara tid och pengar på lång sikt genom att undvika fel och buggfixning i efterhand. 
-
-## Så här 
-
-För att skriva tester i Elixir använder man huvudsakligen ett ramverk som heter ExUnit. Det ingår i Elixir och behöver inte installeras separat. Vi kommer att titta på ett enkelt exempel på hur man kan skriva tester i Elixir. 
-
+## Så här gör du:
 ```Elixir
-defmodule CalculatorTest do 
-  use ExUnit.Case 
-  
-  test "addition" do 
-    assert Calculator.add(2, 3) == 5 
-  end 
+defmodule Calculator do
+  def add(x, y) do
+    x + y
+  end
 end
 ```
 
-Vi börjar med att skapa ett modul som heter CalculatorTest och använder oss av ExUnit.Case. Sedan skapar vi en testfunktion där vi använder assert för att jämföra värdet av funktionen add() från modulen Calculator med det förväntade resultatet. Om testet passerar kommer vi att se något som detta i terminalen:
+```Elixir
+defmodule CalculatorTest do
+  use ExUnit.Case
 
+  test "addition" do
+    assert Calculator.add(2, 3) == 5
+  end
+end
 ```
-1 test, 1 assertion, 0 failures.
-````
 
-## Djupdykning
+Output:
+```
+.....
+Finished in 0.03 seconds
+5 tests, 0 failures
+```
 
-Det finns många olika sätt att skriva tester i Elixir och ExUnit erbjuder en mängd olika funktioner och metoder för att skapa testfall. Ett av de mest använda är "setup" som låter dig göra inställningar innan ett test körs. Detta är särskilt användbart när du behöver göra vissa förberedelser innan du testar en funktion. 
+## Djupdykning:
+Att skriva tester är en viktig del av den moderna programutvecklingsprocessen eftersom det hjälper till att förhindra fel och buggar i koden. Det finns också andra alternativ för testning, såsom testdriven utveckling (TDD) som involverar att skriva testerna innan man skriver koden.
 
-Det finns också funktionen "setup_all" som låter dig göra inställningar för alla tester i en modul. Detta kan vara användbart om du behöver ansluta till en databas eller hämta data som behövs för flera tester. 
+Testerna kan också användas för att förbättra kodens utformning och struktur. Genom att skriva tester måste man tänka igenom sin kod och se till att den är lätt att testa och förstå.
 
-För att läsa mer om hur man skriver tester i Elixir kan du kolla in ExUnit-dokumentationen [här](https://hexdocs.pm/ex_unit/ExUnit.html) och [här](https://elixir-lang.org/getting-started/mix-otp/introduction-to-mix.html#testing-your-project).
+I Elixir finns det inbyggda verktyg för testning, vilket gör det enkelt att skapa och köra tester. Det är också möjligt att integrera externa testverktyg för mer avancerade tester.
 
-## Se även 
-
-- [Elixir](https://elixir-lang.org/)
-- [ExUnit-dokumentation](https://hexdocs.pm/ex_unit/ExUnit.html)
-- [Mix-dokumentation](https://hexdocs.pm/mix/Mix.html)
-- [Elixir School](https://elixirschool.com/sv/lessons/basics/testing/)
+## Se även:
+- Elixir's officiella dokumentation om testning: https://elixir-lang.org/getting-started/introduction.html#testing
+- Elixir School's tutorial om testning: https://elixirschool.com/en/lessons/basics/testing/
+- Video tutorial om testning i Elixir: https://www.youtube.com/watch?v=fEzBAjBLcY8

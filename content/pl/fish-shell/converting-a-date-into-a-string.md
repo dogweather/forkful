@@ -1,7 +1,7 @@
 ---
-title:                "Konwertowanie daty na ciąg znaków"
-html_title:           "Fish Shell: Konwertowanie daty na ciąg znaków"
-simple_title:         "Konwertowanie daty na ciąg znaków"
+title:                "Przekształcenie daty na ciąg znaków"
+html_title:           "Fish Shell: Przekształcenie daty na ciąg znaków"
+simple_title:         "Przekształcenie daty na ciąg znaków"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Dates and Times"
@@ -10,52 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i dlaczego?
 
-Każdy programista, który pracuje z datami, zostanie z pewnością zmuszony do konwertowania ich na ciągi znaków w różnych formatach. To ważny aspekt w programowaniu, aby zapewnić poprawną prezentację dat w interfejsie użytkownika lub w plikach.
+Konwersja daty na ciąg znaków to proces przekształcenia daty (np. "2021-01-01") w formacie zrozumiałym dla komputera (np. "1 stycznia 2021"). Programiści często wykonują tę operację, aby dane mogły być łatwiejsze do przetwarzania i wyświetlania.
 
-## Jak to zrobić
-
-Konwersja daty na ciąg znaków wymaga użycia odpowiedniej funkcji w języku programowania. W przypadku Fish Shell, używamy funkcji `date` z opcją `+%Y-%m-%d` do konwersji na format rok-miesiąc-dzień.
-
-Przykładowy kod w Fish Shell wyglądałby następująco:
+## Jak to zrobić:
 
 ```
-set dzis=date +%Y-%m-%d
-echo $dzis  
+Fish Shell pozwala na łatwą konwersję daty na ciąg znaków za pomocą wbudowanej funkcji `strftime`. Należy podać dwie informacje - format daty oraz data, którą chcemy skonwertować. 
 ```
 
-Po uruchomieniu tego kodu, otrzymamy aktualną datę w formacie roku-miesiąc-dzień:
+Przykładowy kod:
 
-```
-2021-11-10
-```
-
-## Wnikliwe zagłębienie
-
-W przypadku, gdy potrzebujemy bardziej szczegółowej konwersji daty, możemy użyć opcji `date` z odpowiednimi znacznikami. Na przykład, używając opcji `+%A, %B %d, %Y` otrzymamy datę w formacie dzisiejszy dzień tygodnia, nazwa miesiąca, dzień i rok.
-
-```
-set dzis=date +%A, %B %d, %Y
-echo $dzis  
+```Fish Shell
+strftime "%d %B %Y" 2021-01-01
 ```
 
-To spowoduje wyświetlenie daty w następującym formacie:
+Przykładowy wynik:
 
 ```
-środa, listopad 10, 2021
+1 stycznia 2021
 ```
 
-Za pomocą opcji `date` można również zmienić strefę czasową, na przykład używając `+%z` i `+%Z` otrzymamy informacje o przesunięciu czasowym oraz pełną nazwę strefy czasowej.
+## Głębsze zagadnienia:
 
-```
-set dzis=date +%A, %B %d, %Y +%z %Z
-echo $dzis  
-```
+Konwersja daty na ciąg znaków jest powszechnie stosowanym procesem w programowaniu. Przez długi czas jedynym sposobem na to było ręczne przekształcanie daty w odpowiedni format, co było czasochłonne i podatne na błędy. Obecnie istnieją również inne narzędzia, takie jak biblioteki programistyczne, które ułatwiają tę operację. Fish Shell jest jednym z wielu języków programowania, które oferują wbudowaną funkcję do konwersji daty na ciąg znaków.
 
-Output będzie zawierał dodatkowe informacje, takie jak "Central European Time" lub "UTC+0100".
+## Zobacz także:
 
-## Zobacz również
-
-- [Dokumentacja Fish Shell: Date Manipulation](https://fishshell.com/docs/current/cmds/date.html)
-- [Strona Fish Shell w języku polskim](https://fishshell.com/docs/current/index.html#polish)
+- Dokumentacja Fish Shell: https://fishshell.com/docs/current/cmds/strftime.html
+- Inne narzędzia do konwersji daty na ciąg znaków: https://www.datetimeformatter.com/
+- Przydatne informacje dotyczące formatowania daty: https://www.strfti.me/

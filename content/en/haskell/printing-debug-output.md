@@ -10,55 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-Debug output is a critical tool for programmers to identify and fix issues in their code. By printing out the values of specific variables or steps in the program, developers can better understand the flow of their code and catch any unexpected behavior.
+Printing debug output is the process of displaying information about the state of a program during its execution. This is often used by programmers to track down bugs and optimize their code. Printing debug output can provide valuable insights into the program's behavior and help in identifying and resolving issues.
 
-## How To
+## How to:
 
-Printing debug output in Haskell is simple and can be done using the `trace` function from the `Debug.Trace` module. Let's look at an example:
+To print debug output in Haskell, we can use the `trace` function from the `Debug.Trace` module. This function takes in a string as its first argument, which will be displayed as the debug output. We can then use this function anywhere in our code to print out useful information.
 
 ```Haskell
 import Debug.Trace
 
--- A function that adds two numbers
-add :: Int -> Int -> Int
-add x y = trace ("Adding " ++ show x ++ " and " ++ show y) (x + y)
+-- simple example
+let x = 5
+trace "x is now: " x
+
+-- output: x is now: 5
 ```
 
-In the above code, we have imported the `Debug.Trace` module and defined a function `add` that takes in two integers and returns the sum of those numbers. However, we have also used the `trace` function to print out a message before returning the result. Let's see the output when we call this function:
+We can also use the `traceShow` function to print out the value of a variable along with a custom message.
 
 ```Haskell
-> add 2 3
-Adding 2 and 3
-5
+import Debug.Trace
+
+-- using traceShow
+let x = 5
+traceShow "x is now: " x
+
+-- output: x is now: 5
 ```
 
-As you can see, the message we provided in `trace` is printed out before the result. This can be extremely helpful when debugging complex functions or when unexpected results are obtained.
+## Deep Dive:
 
-Another useful feature of `trace` is that it can also print out the result of an expression. Let's modify our previous example to showcase this:
+Historically, printing debug output has been a popular method for debugging and troubleshooting code. However, with advances in debugging tools and IDEs, it's becoming less common. Some alternative methods for debugging in Haskell include using the `Debug.Trace` module with GHCi or using a debugger such as GHCi's `-fbreak-on-error` option.
 
-```Haskell
--- A function that multiplies two numbers
-multiply :: Int -> Int -> Int
-multiply x y = trace ("Multiplying " ++ show x ++ " and " ++ show y ++ " = " ++ show (x*y)) (x * y)
-```
+The `trace` function works by adding the debug output to the program's standard output. This means that it will also be included in the program's final output, which may not be desirable. To avoid this, we can use the `traceM` function, which discards the output and only prints it to the console. Another issue with using `trace` for debugging is its significant performance overhead, so it's recommended to remove the `trace` calls in a production-ready code.
 
-Now when we call this function, we will get the multiplication result printed out along with our custom message:
+## See Also:
 
-```Haskell
-> multiply 5 6
-Multiplying 5 and 6 = 30
-30
-```
-
-## Deep Dive
-
-Behind the scenes, the `trace` function works by inserting a value into the program's IO stream. This value is then printed out in the standard output. However, this also means that the `trace` function should only be used for debugging purposes and not for production code. This is because printing to the standard output can have a significant impact on the performance of the program.
-
-Additionally, the `trace` function can only output strings. So if you need to print out the value of a non-string variable, you will need to use the `show` function to convert it into a string.
-
-## See Also
-
-- [Haskell Debugging and Tracing](https://wiki.haskell.org/Debugging_and_tracing)
-- [Debugging in Haskell with `import Debug.Trace`](https://www.fpcomplete.com/blog/2017/06/debugging-in-haskell-with-import-meaning-debug-trace/)
+- [Debugging in Haskell](https://wiki.haskell.org/Debugging)
+- [GHCi Debugging Options Documentation](https://downloads.haskell.org/~ghc/latest/docs/html/users_guide/debugging.html)
+- [Proper Debugging in Haskell](https://blog.jez.io/debugging-in-haskell/)

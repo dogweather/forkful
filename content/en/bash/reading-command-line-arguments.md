@@ -10,48 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why 
-If you're a programmer, chances are you've heard about Bash. This popular command line interpreter allows you to automate tasks and improve productivity. One helpful feature of Bash is the ability to read command line arguments, making it easier to pass information to your scripts. 
+## What & Why?
 
-## How To 
-To start, open a Terminal and navigate to the directory where your Bash script is located. Then, follow these steps to read command line arguments in Bash: 
+Reading command line arguments is a way for Bash programmers to pass input to their script or program from the command line. This allows for more flexibility and customization, as the user can specify different values or options when executing the script.
 
-1. Create a new Bash file by using the command `touch script.sh`. This will create a blank file named "script" with the extension ".sh".
-2. Add the necessary Bash shebang at the top of your script file by typing `#!/bin/bash`. This tells the computer to run the script using the Bash interpreter.
-3. Define a function to read the command line arguments by using the `read` command followed by the variable name. For example, `read input` will store the first argument in the variable "input".
-4. To access the arguments, use the `echo` command followed by the variable name. For example, `echo $input` will print the first argument provided when running the script.
-5. Save and exit the file, then run your Bash script by typing `./script.sh argument1 argument2`. The arguments will be read and displayed in the terminal.
+## How to:
+
+To read command line arguments in a Bash script, you can use the $1, $2, and so on variables to represent the arguments passed in. For example, if your script is named "myScript.sh" and you want to pass in two arguments, you would use the following command:
 
 ```
-```Bash
+$ bash myScript.sh 123 "Hello"
+```
+
+Inside your script, you can access the arguments as follows:
+
+```
 #!/bin/bash
-
-# defining function to read command line arguments
-read input1
-read input2
-
-# accessing arguments using echo command
-echo $input1
-echo $input2
-```
+echo "The first argument is: $1"
+echo "The second argument is: $2"
 ```
 
-Sample output:
+The output of this script would be:
+
 ```
-$ ./script.sh hello world 
-hello
-world 
+The first argument is: 123
+The second argument is: Hello
 ```
 
-## Deep Dive 
-When reading command line arguments in Bash, there are a few things to keep in mind:
+## Deep Dive
 
-1. The first argument is stored in the variable `$1`, the second argument in `$2` and so on.
-2. You can use the `$#` variable to find the total number of arguments passed to the script.
-3. Arguments are separated by spaces, so if an argument contains a space, it should be enclosed in quotes when running the script. For example, `./script.sh "hello world"` will treat "hello world" as one argument.
-4. You can also use the `shift` command to remove the first argument and make the second argument the new first argument. This can be useful if you want to handle each argument separately in a loop.
+Before reading command line arguments became a common practice, Bash programmers had to rely on hardcoded values within their scripts. This made it difficult to make their scripts more dynamic and customizable for different use cases.
+
+There are a few alternative methods to reading command line arguments, such as using environmental variables or making use of the "shift" command. However, these methods may not always be as straightforward as simply using the $1, $2 variables.
+
+When implementing the ability to read command line arguments, it is important to note that the arguments are separated by spaces, so it is best to be mindful of any arguments that may contain spaces themselves. This can be accounted for by using quotation marks around the arguments when executing the script.
 
 ## See Also
-- [Bash scripting tutorial](https://linuxconfig.org/bash-scripting-tutorial-for-beginners)
-- [Command line arguments in Bash](https://www.baeldung.com/linux/bash-command-line-arguments)
-- [Bash scripting cheat sheet](https://devhints.io/bash)
+
+- [Bash Guide for Beginners - Command Line Arguments](http://tldp.org/LDP/Bash-Beginners-Guide/html/sect_07_01.html)
+- [Bash Accessories - Command Line Arguments](http://tldp.org/LDP/abs/html/bashver4.html#COMMANDLINEARGS)

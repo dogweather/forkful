@@ -1,7 +1,7 @@
 ---
-title:                "「yamlとの作業」"
-html_title:           "TypeScript: 「yamlとの作業」"
-simple_title:         "「yamlとの作業」"
+title:                "YAMLでの作業"
+html_title:           "TypeScript: YAMLでの作業"
+simple_title:         "YAMLでの作業"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Data Formats and Serialization"
@@ -10,30 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-YAMLは人気があります。なぜなら、YAMLは人間にとって読みやすく論理的なデータ構造を持っており、コンピューターにとっても理解しやすいためです。
+## YAMLとは？
 
-## How To
-YAMLを使うためには、まずはTypeScriptでYAMLライブラリーをインストールします。
+YAMLとは、プログラマーが使用するデータ表現言語の一つです。主に設定ファイルや構成ファイルをシンプルに書くことができます。プログラマーがYAMLを使う理由は、コードを見やすく保守性を高めるためです。
+
+## やり方：
+
+以下のように、TypeScriptでYAMLを使う方法を説明します。
+
 ```TypeScript
-npm install yaml
-```
-そして、YAMLファイルを読み込んで解析するには次のようなコードを使います。
-```TypeScript
-const yaml = require('yaml');
-const yamlString = `
-name: John
-age: 27 
-`;
-const parsedYaml = yaml.parse(yamlString);
-console.log(parsedYaml.name); 
-```
-上記のコードでは、YAMLのparseメソッドを使ってオブジェクトに変換することで、YAMLのデータを取得することができます。
+import * as yaml from "js-yaml";
+import * as fs from "fs";
 
-## Deep Dive
-YAMLを扱う際によく使われる機能として、マルチラインデータやエイリアスがあります。マルチラインデータを使うと、複数行にまたがるデータを簡単に表現することができます。また、エイリアスを使うことで同じデータを複数の場所で参照することができます。さらにYAMLはコンパクトでスペースを使ったインデント形式でデータを表現するため、読みやすくネストされたデータ構造を作ることができます。
+// YAMLファイルを読み込みます
+const yamlFile = fs.readFileSync("./sample.yaml", "utf8");
 
-## See Also
-- [TypeScriptでYAMLをパースする方法](https://qiita.com/watcher0226/items/f368063a606fd9c2b074)
-- [YAMLの基本文法](https://www.lifewithpython.com/2014/05/yaml-basic-syntax.html)
-- [YAML公式ドキュメント](https://yaml.org/spec/)
+// YAMLをオブジェクトに変換します
+const yamlObject = yaml.safeLoad(yamlFile);
+
+// オブジェクトをYAMLに変換し、新しいファイルに書き込みます
+const newYaml = yaml.safeDump(yamlObject);
+fs.writeFileSync("./newSample.yaml", newYaml, "utf8");
+```
+
+## 深堀り：
+
+YAMLは、XMLやJSONに比べてシンプルで読みやすい表現ができるため、主に設定ファイルや構成ファイルとして使用されてきました。しかし、最近ではJSONやGraphQLがより人気になってきています。それでも、YAMLは依然として多くのプロジェクトで使われています。
+
+## 参考：
+
+- [YAML 公式サイト](https://yaml.org/)
+- [js-yaml Library](https://github.com/nodeca/js-yaml)
+- [JSON vs YAML vs XML: The Battle of the Data Format Titans](https://stackify.com/what-are-json-xml-yaml-and-yaml-used-for/)

@@ -1,7 +1,7 @@
 ---
-title:                "Ladda ner en webbsida"
-html_title:           "C#: Ladda ner en webbsida"
-simple_title:         "Ladda ner en webbsida"
+title:                "Att ladda ner en webbsida"
+html_title:           "C#: Att ladda ner en webbsida"
+simple_title:         "Att ladda ner en webbsida"
 programming_language: "C#"
 category:             "C#"
 tag:                  "HTML and the Web"
@@ -10,46 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
+Att ladda ner en webbsida innebär att hämta all information som visas på en viss webbadress och visa den på din egen dator. Programmare använder den här tekniken för att hämta data från webben, bearbeta den och använda den i sina egna program.
 
-Att ladda ner en webbplats är användbart om du vill skriva en webbprogrammeringsskript, offline-användning, eller om du vill spara en kopia av webbplatsen för framtida referens.
-
-## Så här gör du
-
+## Så här:
 ```C#
-// Skapa en ny instans av webbclient
-WebClient client = new WebClient();
+using System;
+using System.Net;
 
-// Ange webbadressen som ska laddas ner
-string url = "https://www.example.com";
+namespace WebbHämtning
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Skapa en ny WebClient
+            WebClient client = new WebClient();
 
-// Ladda ner webbsidan och spara som en textfil
-client.DownloadFile(url, "sida.txt");
+            // Ladda ner en webbsida och spara den som en sträng
+            string htmlString = client.DownloadString("https://www.example.com");
 
-// Öppna textfilen och skriv ut innehållet
-string innehall = File.ReadAllText("sida.txt");
-Console.WriteLine(innehall);
+            // Skriv ut den hämtade webbsidan till konsolen
+            Console.WriteLine(htmlString);
+        }
+    }
+}
 ```
 
 Output:
-```
-<!DOCTYPE html>
+```html
+<!doctype html>
 <html>
 <head>
-  <title>Exempelwebbplats</title>
+    <title>Exempel</title>
 </head>
 <body>
-  <h1>Välkommen till vår webbplats!</h1>
-  <p>Här kan du hitta massor av intressant information.</p>
+    <h1>Välkommen till vår webbsida!</h1>
+    <p>Här kan du lära dig mer om webbhämtning med C#!</p>
 </body>
 </html>
 ```
 
-## Djupdykning
+## Deep Dive:
+Webbhämtning har funnits sedan början av webbens historia och har varit en viktig teknik för att hämta och bearbeta data från webben. Innan C#-kodet ovan använde programmerare ofta språk som HTML och JavaScript för att göra liknande saker. Det finns också andra bibliotek, som Selenium, som kan användas för att ladda ner webbsidor i C#.
 
-Att ladda ner en webbplats innebär att du hämtar allt innehåll som finns på webbsidan, inklusive text, bilder, länkar och annan media. Du kan också använda olika metoder för att ange var du vill spara den nedladdade filen, till exempel som en textfil eller en HTML-fil. Dessutom kan du använda olika inställningar för att hantera eventuella fel eller för att ange hur länge en nedladdning ska pågå.
-
-## Se även
-
-- [WebClient Class](https://docs.microsoft.com/en-us/dotnet/api/system.net.webclient?view=net-5.0) - MSDN-dokumentation för C# WebClient-klassen.
-- [How to Download a Web Page in C#](https://www.codeproject.com/Articles/662027/How-to-Download-a-Web-Page-in-Csharp) - En djupare guide för att ladda ner en webbplats i C#.
+## Se även:
+- [Lär dig mer om webbhämtning i C#](https://www.w3schools.com/cs/cs_webpages.asp)
+- [Hitta andra tillgängliga bibliotek för webbhämtning i C#](https://en.wikipedia.org/wiki/C_Sharp_(programming_language)#Frameworks_and_tools)
+- [Lär dig mer om hur webben fungerar](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web)

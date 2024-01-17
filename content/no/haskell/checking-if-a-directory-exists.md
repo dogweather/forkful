@@ -10,40 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hvorfor
+## Hva & Hvorfor?
 
-Det er viktig å vite om en mappe eksisterer eller ikke i Haskell-programmering, spesielt når man arbeider med filbehandling. Dette kan være nyttig for å unngå feil under kjøring og for å sørge for at programmet fungerer som forventet.
+Å sjekke om en mappe eksisterer er en vanlig praksis blant programmere. Dette refererer til å sjekke om en gitt mappe eller et gitt sti eksisterer i filsystemet på datamaskinen. Dette er nyttig for å sikre at programmet vårt kan håndtere tilfeller der en mappe mangler eller ikke er tilgjengelig.
 
-# Slik gjør du det
+## Slik gjør du det:
+
+For å sjekke om en mappe eksisterer i Haskell, kan vi bruke funksjonen `doesDirectoryExist` fra `System.Directory` biblioteket. Denne funksjonen tar inn en sti som en streng og returnerer en boolsk verdi som indikerer om mappen eksisterer eller ikke.
 
 ```Haskell
 import System.Directory
 
-checkDirectory :: FilePath -> IO Bool
-checkDirectory path = doesDirectoryExist path
-```
-
-I dette eksempelet importerer vi funksjonen ```doesDirectoryExist``` fra modulen ```System.Directory```. Deretter bruker vi denne funksjonen i ```checkDirectory```-funksjonen vår for å sjekke om en mappe med en spesifikk filsti eksisterer. Funksjonen returnerer en ```IO Bool```, som indikerer om mappen eksisterer eller ikke. 
-
-```Haskell
-main :: IO ()
 main = do
-  print "Sjekker om mappen eksisterer..."
-  exist <- checkDirectory "min_mappe"
-  if exist
-    then print "Mappen eksisterer."
-    else print "Mappen eksisterer ikke."
+  isExist <- doesDirectoryExist "test"
+  if isExist
+    then putStrLn "Mappen finnes!"
+    else putStrLn "Mappen finnes ikke!"
 ```
 
-I dette eksempelet viser vi hvordan vi kan bruke ```checkDirectory```-funksjonen i et faktisk program. Vi bruker ```do```-blokk for å utføre handlingene våre ved kjøring av programmet. Vi sjekker om mappen "min_mappe" eksisterer, og hvis den gjør det, skriver vi ut en melding om at den eksisterer. Hvis ikke, skriver vi ut en annen melding. 
+Output:
 
-# Dypdykk
+```
+Mappen finnes ikke!
+```
 
-Når du bruker funksjonen ```doesDirectoryExist```, er det viktig å merke seg at den sjekker om mappen eksisterer på det nåværende tidspunktet. Hvis du for eksempel sjekker om en mappe eksisterer, og deretter oppretter den i samme program, vil funksjonen returnere ```False``` fordi mappen ikke eksisterte når den ble sjekket. 
+## Dypdykk:
 
-En annen viktig ting å huske på er at ```doesDirectoryExist``` bare sjekker om mappen eksisterer, ikke om det er en vanlig mappe eller en fil. Det er derfor viktig å kontrollere hva slags fil det er før du prøver å behandle den videre. 
+Å sjekke om en mappe eksisterer kan være nyttig når vi ønsker å utføre spesifikke handlinger bare hvis en mappe finnes. Det kan også være nyttig å validere brukerinput for å sikre at en mappe faktisk finnes før vi forsøker å arbeide med den.
 
-# Se også
+En alternativ måte å sjekke om en mappe eksisterer på er gjennom å bruke funksjonen `doesDirectoryExist` fra `System.Posix.Directory` biblioteket. Denne funksjonen kjører på POSIX-systemer og returnerer også en boolsk verdi.
 
-- [Dokumentasjon for System.Directory](https://hackage.haskell.org/package/directory/docs/System-Directory.html)
-- [Haskell filbehandling](https://wiki.haskell.org/Handling_files)
+Når det gjelder implementasjon, bruker funksjonen `doesDirectoryExist` en kombinasjon av `stat` og `isDirectory` funksjonene fra filbehandlingssystemet for å sjekke om stien peker på en mappe eller ikke. Dette gjør den mer pålitelig enn bare å sjekke om stien er en gyldig mappe, da det kan være tilfeller der en gyldig mappe inneholder filer.
+
+## Se også:
+
+- [Dokumentasjon for `System.Directory` biblioteket](https://hackage.haskell.org/package/directory/docs/System-Directory.html)
+- [Dokumentasjon for `System.Posix.Directory` biblioteket](https://hackage.haskell.org/package/directory/docs/System-Posix-Directory.html)

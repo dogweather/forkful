@@ -1,7 +1,7 @@
 ---
-title:                "Skriva en textfil"
-html_title:           "Fish Shell: Skriva en textfil"
-simple_title:         "Skriva en textfil"
+title:                "Att skriva en textfil"
+html_title:           "Fish Shell: Att skriva en textfil"
+simple_title:         "Att skriva en textfil"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Files and I/O"
@@ -10,32 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
+Att skriva en textfil är att skapa en fil med textinnehåll som kan användas av datorprogram. Programerare använder textfiler för att lagra och organisera data som behövs för att köra sina program.
 
-Det finns många anledningar till varför du skulle vilja skriva en textfil med Fish Shell. Kanske vill du automatisera vanliga uppgifter i datorn, hålla koll på olika kommandon eller helt enkelt utforska vad Fish Shell har att erbjuda.
+## How to:
+Skapa en textfil i Fish Shell med hjälp av kommandot `echo` följt av texten som ska skrivas i filen och använd avslutningskommandot `>` följt av namnet på filen du vill skapa. Här är ett exempel:
 
-## Hur man gör
-
-Vi kommer nu gå igenom de grundläggande stegen för att skriva en textfil med Fish Shell. Först och främst behöver du öppna Fish Shell i terminalen, detta kan du göra genom att söka efter det i ditt operativsystem eller genom att öppna en ny flik i terminalen och skriva "fish". Sedan kan du följa dessa steg:
-
-1. Skapa en ny textfil med kommandot "touch" och namnge den med ".txt" som tillägg.
-2. Öppna textfilen med valfritt textredigeringsprogram.
-3. Skriv dina önskade kommandon i textfilen, förslagsvis med en kort beskrivning av vad de gör.
-4. Spara filen och stäng den.
-
-Här är ett exempel på hur det kan se ut:
-
-```Fish Shell
-touch minaKommandon.txt
-open minaKommandon.txt
+```
+Fish Shell> echo "Hej Världen!" > hello.txt
 ```
 
-## Djupdykning
+Detta kommer skapa en textfil med namnet "hello.txt" som innehåller texten "Hej Världen!".
 
-När du väl har skapat din textfil med Fish Shell finns det möjlighet att göra mer avancerade saker. Du kan till exempel inkludera villkor och loopar för att skapa ett mer dynamiskt och effektivt skript. Du kan också lägga till kommentarer i din textfil för att göra den mer läsbar och förklara dina kommandon för andra som eventuellt skulle använda samma fil.
+För att lägga till mer text i en befintlig fil, använd kommandot `echo` följt av texten och avslutningskommandot `>>` följt av filnamnet. Här är ett exempel:
 
-## Se också
+```
+Fish Shell> echo "Välkommen till mina anteckningar" >> notes.txt
+```
 
-- Fish Shell hemsida: https://fishshell.com/
-- Fish Shell dokumentation: https://fishshell.com/docs/current/
-- Fish Shell GitHub repository: https://github.com/fish-shell/fish-shell
+Detta kommer lägga till texten "Välkommen till mina anteckningar" längst ned i en existerande textfil med namnet "notes.txt".
+
+## Deep Dive:
+Att skriva textfiler har varit en viktig del av programmering sedan de tidiga dagarna av datorer. Det finns många alternativ för att skriva och hantera textfiler, men Fish Shell erbjuder en snabb och enkel metod som är lätthanterlig för både nybörjare och erfarna användare.
+
+Det finns också andra sätt att skapa textfiler i Fish Shell, till exempel med hjälp av kommandot `touch` eller genom att öppna en textredigerare som Vim eller Nano. Men kommandot `echo` är ofta det snabbaste och mest direkta sättet att skapa och skriva till textfiler.
+
+## Se även:
+- Fish Shell dokumentation (https://fishshell.com/docs/current/index.html)
+- Att läsa och skriva textfiler i Unix (https://kb.iu.edu/d/acxp)

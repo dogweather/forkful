@@ -1,7 +1,7 @@
 ---
-title:                "JSONを使ったプログラミング"
-html_title:           "Rust: JSONを使ったプログラミング"
-simple_title:         "JSONを使ったプログラミング"
+title:                "「JSONを扱うこと」"
+html_title:           "Rust: 「JSONを扱うこと」"
+simple_title:         "「JSONを扱うこと」"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Data Formats and Serialization"
@@ -10,77 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜJSONを使用するのか
+## 何 & なぜ？
+JSONとは、データの構造化されたフォーマットの一つであり、プログラマーがデータの受け渡しや保存に使用することができます。JSONを使用することで、データを柔軟に管理することができるため、多様なアプリケーションやシステムでよく使われています。
 
-JSONは現代のソフトウェア開発の中で非常に重要な役割を果たしています。データのシリアライズやネットワーク通信など、多くの用途に使用されています。Rustは安全性とパフォーマンスの両方を備えた強力な言語であり、JSON処理に最適です。
-
-## JSONの使用方法
-
-Rustでは、複数のライブラリを使用することでJSONの処理が可能です。まずは、Serdeというライブラリを使用してみましょう。以下の例では、JSONオブジェクトを作成し、シリアライズして標準出力に出力しています。
+## やり方：
+以下のコードブロック内には、JSONを作成・アクセスする方法の例とその出力が示されています。
 
 ```Rust
-extern crate serde_json;
-use serde_json::json;
+use serde_json::{Value, json}; // クレートのインポート
 
 fn main() {
-    let person = json!({
-        "name": "John Doe",
+    // JSONを作成
+    let mut my_json = json!({
+        "name": "John",
         "age": 30,
-        "occupation": "Developer"
+        "hobbies": ["reading", "gaming", "cooking"]
     });
-    println!("{}", serde_json::to_string(&person).unwrap());
+
+    // JSONの値にアクセス
+    println!("Name: {}", my_json["name"]); // 出力：Name: John
+    println!("Age: {}", my_json["age"]); // 出力：Age: 30
+
+    // 新しいキーと値を追加
+    my_json["favorite_color"] = json!("blue");
+
+    // JSONの値を変更
+    my_json["age"] = json!(31);
+
+    // インデントを使用して美しく表示
+    println!("JSON: {}", serde_json::to_string_pretty(&my_json).unwrap());
+    /*
+    出力：
+    {
+        "name": "John",
+        "age": 31,
+        "hobbies": ["reading", "gaming", "cooking"],
+        "favorite_color": "blue"
+    }
+    */
 }
 ```
 
-上記のコードを実行すると、以下のような出力が得られます。
+## 詳細を調べる：
+JSONは、データの保存や交換のために生み出された軽量なフォーマットです。他にもXMLやYAMLといったフォーマットが存在し、それぞれ特有の特性がありますが、JSONはシンプルで理解しやすいため、広く使われています。Rustでは、serde_jsonというクレートを使用してJSONを扱うことができます。
 
-```Rust
-{"name":"John Doe","age":30,"occupation":"Developer"}
-```
-
-さらに、JSONをパースしてRustの構造体に変換することも可能です。例えば、先ほどのJSONを格納するためのPersonという構造体を定義し、JSONをその構造体に変換してみましょう。
-
-```Rust
-extern crate serde;
-extern crate serde_json;
-#[macro_use]
-extern crate serde_derive;
-
-use serde_json::json;
-
-#[derive(Serialize, Deserialize)]
-struct Person {
-    name: String,
-    age: u32,
-    occupation: String,
-}
-
-fn main() {
-    let person = json!({
-        "name": "John Doe",
-        "age": 30,
-        "occupation": "Developer"
-    });
-    let person_object: Person = serde_json::from_value(person).unwrap();
-    println!("Name: {}, Age: {}, Occupation: {}", person_object.name, person_object.age, person_object.occupation);
-}
-```
-
-上記のコードでは、serdeを使用してJSONからPerson構造体への変換を行い、各プロパティを取り出しています。実行すると、以下のような出力が得られます。
-
-```Rust
-Name: John Doe, Age: 30, Occupation: Developer
-```
-
-## JSONの深い掘り下げ
-
-Rustでは、JSONの処理をより高度に行うためのさまざまなライブラリが提供されています。例えば、json-diffやjsonwebtokenなどのライブラリを使用することで、JSONデータの比較や認証などの処理が行えます。また、パフォーマンスを向上させるために、JSONデータを直接操作するライブラリも存在します。
-
-## 参考リンク
-
-- [Serde公式ドキュメント](https://serde.rs/)
-- [RustのJSON処理について知る](https://www.snoozy.ninja/posts/2018-01-03-rust-json-processing/)
-- [RustでJSONを扱う方法](https://doc.rust-lang.org/rust-by-example/std/json.html)
-- [JSONパーシングやシリアライズのためのRustライブラリ](https://docs.rs/crates/serde_json)
-- [RustでのBest Practices for working with JSON](https://github.com/serde-rs/json)
-- [JSONに関するRustコミュニティフォーラム](https://users.rust-lang.org/c/community/libs/38)
+## 関連リンク：
+- [RustにおけるJSONのドキュメント](https://docs.serde.rs/serde_json/)
+- [JSONの歴史と背景についての記事](https://www.json.org/json-ja.html)
+- [JSONの代替フォーマットとしてのXMLとYAMLの比較](https://medium.com/@chrisalbon/why-json-isnt-really-xml-javascript-object-notation-vs-extensible-markup-language-301692b25c0c)

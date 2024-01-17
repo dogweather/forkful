@@ -10,36 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+## 무엇 & 왜?
+텍스트 파일을 읽는 것은 파일 내용을 읽고 처리하기 위한 프로그래머의 기술입니다. 이것은 데이터를 저장하고 공유하는 일반적인 방법 중 하나입니다.
 
-텍스트 파일을 읽기 위해 이 글을 읽어야 하는 이유는 뭘까요? 그 이유는 TypeScript를 사용하여 텍스트 파일을 처리하는 방법을 배우고 싶기 때문입니다.
-
-## 하는 법
-
-우선, 프로젝트에 TypeScript를 설치해야 합니다. 그리고 파일을 읽는 데 사용할 fs 모듈도 필요합니다. 다음은 코드 예시입니다:
+## 방법:
+TypeScript 코드 블록 내에서 코딩 예시와 샘플 출력을 사용하여 텍스트 파일을 읽는 방법을 살펴보겠습니다.
 
 ```TypeScript
+// 파일을 읽기 위한 모듈 불러오기
 import * as fs from 'fs';
 
-// fs 모듈을 사용하여 'example.txt' 파일을 읽습니다.
-fs.readFile('example.txt', 'utf-8', (err, data) => {
-  if (err) {
-    // 파일을 읽는 중 에러가 발생하면 에러를 출력합니다.
-    console.log(err);
-  } else {
-    // 파일을 성공적으로 읽으면 읽은 내용을 출력합니다.
+// 파일의 내용을 읽고 출력하기
+fs.readFile('textfile.txt', 'utf8', (err, data) => {
+    if (err) throw err;
     console.log(data);
-  }
 });
 ```
 
-위 예시 코드를 실행하면 `example.txt` 파일의 내용이 출력될 것입니다.
+## 깊게 들어가기:
+텍스트 파일을 읽는 것은 컴퓨터와 함께 오랜 시간을 보냈던 프로그래밍의 기본적인 기술 중 하나입니다. 이전에는 바이너리 파일을 읽는 방법보다 더 까다로웠지만 현재는 다양한 모듈을 사용하여 간단하게 처리할 수 있습니다.
 
-## 깊이 파고들기
+## 관련 자료:
+- [Node.js에서 파일 읽기](https://nodejs.org/api/fs.html#fs_fs_readfile_path_options_callback)
+- [파일 시스템 모듈 이해하기](https://www.geeksforgeeks.org/node-js-fs-module/)
 
-`fs` 모듈은 Node.js의 내장 모듈 중 하나로, 파일 시스템에 접근할 수 있는 다양한 메서드를 제공합니다. 파일을 읽을 때 사용하는 `readFile` 메서드 외에도 `fs` 모듈의 다른 메서드를 사용할 수 있습니다. 더 자세한 내용은 [Node.js 공식 문서](https://nodejs.org/api/fs.html)를 참고하시기 바랍니다.
-
-## 관련 문서
-
-- [코딩 시작하기: TypeScript 설치하기](https://typescript-kr.bootcss.com/docs/tutorials/getting-started.html)
-- [TypeScript 공식 문서](https://typescript-kr.bootcss.com/docs/home.html)
+## 참고:
+- 이번 글에서는 Node.js를 사용하여 텍스트 파일을 읽는 방법을 다루었습니다. 다른 언어에서도 비슷한 방식으로 파일을 읽을 수 있으므로 관심이 있다면 찾아보시기를 권장합니다.

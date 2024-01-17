@@ -1,7 +1,7 @@
 ---
-title:                "Kontrollera om en katalog finns"
-html_title:           "Elm: Kontrollera om en katalog finns"
-simple_title:         "Kontrollera om en katalog finns"
+title:                "Kontrollera om en mapp finns"
+html_title:           "Elm: Kontrollera om en mapp finns"
+simple_title:         "Kontrollera om en mapp finns"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Files and I/O"
@@ -10,37 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
-Att kontrollera om en mapp existerar är en viktig del av programmering, speciellt om du skapar ett program som behöver hantera filer eller sökvägar. Det är också användbart för att undvika att programmet kraschar om mappen inte finns.
+## Vad och Varför?
+Att kontrollera om en mapp existerar är en vanlig operation för programmerare. Det innebär helt enkelt att man undersöker om en viss mapp finns på en viss plats i datorsystemet. Detta är särskilt användbart när man vill undvika att skriva över en befintlig mapp eller för att kunna navigera till rätt mapp innan man utför en viss operation.
 
-## Såhär gör du
-Det finns en inbyggd funktion i Elm som heter `Directory.dirExists`, vilket gör det enkelt att kolla om en mapp existerar eller inte. Här är ett exempel på hur du kan använda den:
-
+## Så här gör du:
 ```Elm
-import Directory
-
--- Skapa en funktion som tar en sökväg som argument och returnerar en bool som säger om mappen finns eller inte.
-directoryExists : String -> Bool
-directoryExists path =
-    Directory.dirExists path
+directoryExists : FilePath -> Task x Bool
 ```
 
-Om vi till exempel vill kolla om mappen "Bilder" existerar, kan vi skriva:
+För att kontrollera om en mapp finns i Elm så kan man använda funktionen `directoryExists`. Denna funktion tar en `FilePath` som parameter och returnerar sedan en `Task` som antingen innehåller `True` om mappen existerar eller `False` om den inte gör det. Här är ett exempel på hur man kan använda denna funktion för att kontrollera om en mapp med namnet "bilder" finns på skrivbordet:
 
 ```Elm
-directoryExists "Bilder"
---> True
+import Task exposing (..)
+import File.Path exposing (..)
+
+task : Task x Bool
+task =
+    directoryExists (fromString "/Users/username/Desktop/bilder")
+
+main : Program x
+main =
+    task
+        |> andThen (\exists -> if exists then text "Mappen finns!" else text "Mappen finns inte.")
+        |> Task.perform identity
 ```
 
-Om mappen inte finns, returneras `False` istället.
+I det här fallet använder vi `andThen` för att hantera `Task` och skriva ut ett meddelande beroende på resultatet.
 
 ## Djupdykning
-Det finns några saker att tänka på när man använder `Directory.dirExists`:
+Att kontrollera om en mapp existerar är en del av filhanteringsfunktionerna i Elm. Det finns också andra sätt att hantera filer och mappar, som t.ex. att lista dem eller skapa nya. Det är också möjligt att använda JavaScript-funktioner för att utföra mer avancerade filhanteringsoperationer.
 
-- Funktionen tar en sträng som argument, vilket innebär att du behöver kolla efter mappar baserat på sökvägen.
-- Det är viktigt att säkerställa att du har tillräckliga rättigheter för att kolla efter mappen, annars kommer funktionen att returnera `False`.
-- Om mappen du kollar efter innehåller specialtecken, behöver du koda om dem först innan du använder `Directory.dirExists`.
+Det är viktigt att notera att `directoryExists`-funktionen använder sig av `Task` för att hantera asynkrona operationer. Detta gör att man kan skriva säkrare kod och hantera eventuella fel på ett bättre sätt.
 
 ## Se även
-- [Elm dokumentation om Directory](https://package.elm-lang.org/packages/elm/core/latest/Directory)
-- [Stack Overflow svar på hur man kollar om en mapp existerar i Elm](https://stackoverflow.com/questions/53019146/how-do-i-check-if-a-folder-exists-in-elm/53024682)
+- Filhanteringsfunktioner i Elm: https://package.elm-lang.org/packages/elm/file/latest/
+- Elm dokumentation: https://guide.elm-lang.org/
+- JavaScript-funktionalitet i Elm: https://guide.elm-lang.org/interop/javascript.html

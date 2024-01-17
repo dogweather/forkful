@@ -10,55 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-Regular expressions (regex for short) are powerful tools used for pattern matching and text manipulation. Learning how to use regex in Bash can greatly enhance your scripting skills and make your code more efficient and concise.
+## What & Why?
+Using regular expressions in Bash allows programmers to efficiently search and manipulate text data. Regular expressions are a set of characters that define a search pattern, allowing complex matching and replacement of text. Programmers use regular expressions to automate tasks that involve text manipulation and data validation.
 
-## How To
-First, we need to understand the basic syntax of regular expressions in Bash. To start, we use the `=~` operator to match a string against a regex pattern. For example, let's say we want to check if a string contains the word "hello", we can use the following code:
+## How to:
+To use regular expressions in Bash, we can use the "grep" command with the "-E" option for extended regular expressions. For example, to search for the word "hello" in a file called "text.txt", we would use the following command:
 ```Bash
-if [[ "hello world" =~ hello ]]; then
-  echo "Match found!"
+grep -E "hello" text.txt
+```
+This will output any lines in the "text.txt" file that contain the word "hello".
+
+We can also use regular expressions for data manipulation. For example, if we wanted to replace all occurrences of the word "cat" with "dog" in a file called "animals.txt", we can use the "sed" command with the "s" option:
+```Bash
+sed -i "s/cat/dog/g" animals.txt
+```
+This will replace all instances of "cat" with "dog" in the "animals.txt" file.
+
+Regular expressions can also be used for data validation. We can use the "=~" operator in Bash to check if a string matches a regular expression. For example:
+```Bash
+if [[ "1234" =~ ^[0-9]+$ ]]; then
+  echo "Valid number"
+else
+  echo "Invalid number"
 fi
 ```
+This will output "Valid number" as the string "1234" consists of only numbers.
 
-In the above code, we are using the `=~` operator to check if the string "hello world" contains the pattern "hello". If it does, the code inside the `if` statement will be executed and we will see the output "Match found!".
+## Deep Dive:
+Regular expressions have been around since the 1950s and were originally used in the programming language SNOBOL. They have since been adopted by many other programming languages, including Bash.
 
-We can also use regular expressions for more complex pattern matching. Here are some common regex metacharacters and their meanings:
+There are also other ways to use regular expressions in Bash. The "awk" command also supports regular expressions and can be used for more complex data manipulation. Additionally, there are various third-party libraries and tools that can be used for regular expressions in Bash.
 
-- `.` - Matches any single character.
-- `*` - Matches zero or more occurrences of the previous character.
-- `+` - Matches one or more occurrences of the previous character.
-- `?` - Matches zero or one occurrence of the previous character.
-- `^` - Matches the beginning of a string.
-- `$` - Matches the end of a string.
-- `[]` - Matches any character within the brackets.
-- `()` - Groups characters together as a single element.
-- `\` - Escapes metacharacters, allowing them to be treated literally.
+Regular expressions in Bash are implemented using the "regex" library and its corresponding functions. This library follows the POSIX regular expression standard, which means that regular expressions used in Bash will also work in other POSIX-compliant programming languages.
 
-Let's see an example of using regex with these metacharacters:
-```Bash
-if [[ "helloooo" =~ ^hel+o*$ ]]; then
-  echo "Match found!"
-fi
-```
-
-In this code, we are using the `^` and `*` metacharacters to match strings starting with "hel" and ending with any number of "o"s. If we run this code, we will see the output "Match found!".
-
-## Deep Dive
-It is important to note that Bash uses a different type of regular expression compared to other programming languages. Bash uses POSIX extended regular expressions, while other languages may use Perl-Compatible Regular Expressions (PCRE). This means that some advanced features, such as lookaheads and lookbehinds, are not supported in Bash regex.
-
-Additionally, Bash regex is also case-sensitive by default. To make it case-insensitive, we can use the `shopt` command:
-```Bash
-shopt -s nocasematch
-if [[ "hello" =~ HELLO ]]; then
-  echo "Match found!"
-fi
-```
-In this code, we are turning on the `nocasematch` option to make our regex case-insensitive. Now, if we run this code, we will see the output "Match found!" even though "HELLO" is not in the same case as our string "hello".
-
-## See Also
-- [Bash Guide for Beginners](http://tldp.org/LDP/Bash-Beginners-Guide/html/sect_04_01.html)
-- [GNU Bash Manual - Pattern Matching](https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html#Pattern-Matching)
-- [Regular Expressions Cheat Sheet](https://www.rexegg.com/regex-quickstart.html)
-
-Regular expressions may seem daunting at first, but with practice, they can greatly improve your scripting skills. So go ahead and dive deeper into the world of regex, and you'll see the benefits it can bring to your Bash scripts. Happy coding!
+## See Also:
+To learn more about regular expressions in Bash, check out the official Bash documentation on using regular expressions (https://www.gnu.org/software/bash/manual/html_node/Pattern-Matching.html). You can also refer to the Bash manual page for a more detailed explanation of regular expressions (https://www.gnu.org/software/bash/manual/html_node/Regular-Expressions.html). Additionally, there are various online tutorials and resources available for learning regular expressions in Bash.

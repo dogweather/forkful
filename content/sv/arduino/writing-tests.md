@@ -1,7 +1,7 @@
 ---
-title:                "Skrivning av tester"
-html_title:           "Arduino: Skrivning av tester"
-simple_title:         "Skrivning av tester"
+title:                "Att skriva tester"
+html_title:           "Arduino: Att skriva tester"
+simple_title:         "Att skriva tester"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Testing and Debugging"
@@ -10,42 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-#Varför
+# Vad & Varför?
 
-Vi vet alla att programmering kan vara roligt och spännande, men det kan också vara en utmaning. Att skriva kod som fungerar är en sak, men att se till att koden fungerar korrekt och förväntat är en annan. Här kommer testning in i bilden - att skriva tester kan hjälpa dig att säkerställa att din kod fungerar som den ska och minska risken för buggar och fel.
+Att skriva tester är en viktig del av programmering för att säkerställa att koden fungerar som den ska. Det är en metod för att identifiera och åtgärda fel innan koden används i produktion.
 
-#Hur man gör
+# Hur man:
 
-Att skriva tester i Arduino kan vara enkelt med hjälp av testbiblioteket "ArduinoUnit". Här är en grundläggande kod som visar hur du kan skapa och köra ett enkelt test:
+Att skriva tester i Arduino är enkelt med hjälp av inbyggda funktioner och bibliotek. Här är ett exempel på en kod som testar en funktion som lägger till två tal och returnerar resultatet:
 
-```
-#include <ArduinoUnit.h>
-
-// Testfunktion för att kontrollera om två tal är lika
-unittest(equalNumbers) {
-  int num1 = 5;
-  int num2 = 5;
-  assertEquals(num1, num2);
+```Arduino
+int add(int x, int y) {
+  return x + y;
 }
-
-// Köra alla tester
-unittest_main();
 ```
 
-Genom att inkludera testbiblioteket och skriva tester i unittest(), kan du enkelt skapa en uppsättning tester som körs automatiskt varje gång du laddar upp koden till din Arduino.
+För att testa denna funktion kan vi använda "assert" funktionen för att verifiera att det förväntade resultatet returneras:
 
-#Djupdykning
+```Arduino
+assert(add(2, 3) == 5);
+```
 
-Nu när du har en grundläggande förståelse för testning, låt oss titta på några viktiga koncept att överväga när du skriver tester för din Arduino-kod.
+Om det förväntade resultatet inte returneras kommer testet att misslyckas och indikera att det finns ett problem som behöver åtgärdas.
 
-En viktig sak att tänka på är att dina tester bör vara självständiga. Det betyder att varje test bör kunna köras utan att vara beroende av andra tester. Om du till exempel har flera tester som är beroende av en viss hårdvarukomponent, se till att detta test körs först innan du kör de andra testen.
+# Djupdyka:
 
-En annan viktig aspekt är att inkludera både positiva och negativa tester. Det betyder inte bara att testa när koden fungerar som den ska, utan också att testa när den inte fungerar som den ska. Det här kan hjälpa till att avslöja eventuella buggar och fel som kan uppstå.
+Att skriva tester har blivit en allt vanligare praxis inom programmering sedan början av 2000-talet. Det finns flera verktyg och ramverk som hjälper till att automatiskt köra tester och generera rapporter om eventuella fel.
 
-När du skriver tester är det också viktigt att ha en tydlig och konsekvent namngivningsstruktur för dina tester. På så sätt kan du enkelt identifiera och åtgärda eventuella fel och felmeddelanden som uppstår.
+Ett annat alternativ till att skriva tester är att använda statisk kodanalys, vilket granskar koden utan att faktiskt köra den. Detta kan också vara en effektiv metod för att hitta eventuella fel.
 
-#Se även
+Implementering av tester i Arduino-projekt kan vara en tidsbesparande process men har fördelar på lång sikt genom att minska risken för fel och förenkla felsökning.
 
-- ArduinoUnit biblioteket: https://github.com/mmurdoch/arduinounit
-- "Test Driven Development" för Arduino: https://www.arduino.cc/reference/en/test-driven-development/
-- "Writing Stable Arduino Code" guide: https://www.arduino.cc/en/Guide/StableReleaseTest
+# Se även:
+
+[Officiell Arduino dokumentation om enhetstestning](https://www.arduino.cc/en/guide/unit_testing)
+
+[ArdunioTest - ett populärt enhetstestbibliotek för Arduino](https://github.com/leethomason/ArduinoTest)

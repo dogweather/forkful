@@ -10,35 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜 
-다른 프로그래밍 언어에 비해 Elixir가 날짜를 문자열로 변환하는 것이 유용한 이유는 무엇일까요? 그 이유에 대해 간단하게 알아보도록 하겠습니다.
+## 무엇 & 왜?
 
-## 어떻게
-Elixir에서 날짜를 문자열로 변환하는 방법에 대해 살펴보겠습니다. 먼저, `Date` 모듈의 `to_string` 함수를 사용할 수 있습니다. 예를 들어, 다음과 같은 코드를 작성할 수 있습니다.
+날짜를 문자열로 변환하는 것은 프로그래머가 날짜와 시간 정보를 더 직관적이고 사용하기 쉬운 형식으로 바꾸기 위한 일입니다. 이를 통해 더 쉽게 날짜와 시간을 표현하고 관리할 수 있습니다.
 
-```Elixir
-Date.to_string(Date.utc_today())
-```
-
-위의 코드를 실행하면 현재 날짜를 UTC 시간대로 변환한 후 문자열로 반환합니다. 예상되는 결과는 "2021-09-20"과 같습니다. 또 다른 방법으로는 `Calendar` 모듈의 `to_string` 함수를 사용하는 것입니다. 아래의 예제 코드를 살펴보세요.
+## 하는 방법:
 
 ```Elixir
-Calendar.to_string(System.system_time(:millisecond))
+# Elixir에서 현재 날짜를 문자열로 변환하는 방법:
+
+date = Date.utc_today()  # 현재 날짜 가져오기
+output = Date.to_string(date)  # 날짜를 문자열로 변환
+IO.inspect(output)  # 결과 출력
 ```
 
-위 코드는 현재 시간을 밀리초 단위로 반환한 다음 문자열로 변환합니다.
+출력:
+```
+"2021-11-23"
+```
 
-## 깊이 들어가보기
-날짜를 문자열로 변환하는 더 깊은 내용에 대해 알아보겠습니다. Elixir에서는 날짜와 관련된 여러 가지 모듈을 제공합니다. 예를 들어, `Date`, `Calendar`, `Time`, `DateTime` 등이 있습니다. 각각의 모듈에는 날짜와 관련된 다양한 함수들이 있으며, 이를 조합해서 사용할 수 있습니다. 또한, 다양한 시간대를 지원하므로 원하는 시간대로 날짜를 변환할 수도 있습니다.
+```Elixir
+# Elixir에서 특정 날짜를 원하는 형식에 맞게 문자열로 변환하는 방법:
 
-## 더 알아보기
-자세한 내용을 학습하기 위해 아래의 링크들을 참고해보세요.
+date = Date.new(2021, 11, 23)  # 원하는 날짜 정보 입력
+format = "{0}/{1}/{2}"  # 원하는 형식 지정
+output = Date.to_string(date, format)  # 날짜를 문자열로 변환
+IO.inspect(output)  # 결과 출력
+```
 
-- Elixir 날짜 모듈 문서: https://hexdocs.pm/elixir/Date.html
-- Elixir 캘린더 모듈 문서: https://hexdocs.pm/elixir/Calendar.html
-- Elixir 시간 모듈 문서: https://hexdocs.pm/elixir/Time.html
-- Elixir 날짜 및 시간 관련 함수 문서: https://hexdocs.pm/elixir/1.12/calendar-and-time-functions.html
+출력:
+```
+"11/23/2021"
+```
 
-## 참고 자료
-- Elixir 공식 문서: https://elixir-lang.org/docs.html
-- Elixir 커뮤니티: https://elixirforum.com/
+## 깊이 파헤치기:
+
+(1) 이 기능은 Elixir의 날짜 라이브러리인 `Date` 모듈에서 제공됩니다. 이러한 기능은 프로그래밍 언어나 라이브러리에서 일반적으로 가지는 기능 중 하나로, 날짜와 시간 정보를 더 쉽게 다룰 수 있도록 합니다.
+
+(2) 날짜를 문자열로 변환하는 다른 방법으로는 `DateTime` 모듈의 `to_string/2` 함수를 사용하는 방법이 있습니다. 이 방법의 경우 시간 정보까지 포함되어 더 상세하게 문자열로 변환할 수 있습니다.
+
+(3) `to_string/2` 함수의 내부 구현은 `__to_string__/2` 함수를 호출하여 해당 데이터를 문자열로 변환하는 것입니다. 이를 통해 사용자 정의 데이터 타입에서도 `to_string/1` 함수를 통해 문자열로 변환할 수 있습니다.
+
+## 더 알아보기:
+
+- [Date 모듈 문서](https://hexdocs.pm/elixir/Date.html)
+- [DateTime 모듈 문서](https://hexdocs.pm/elixir/DateTime.html)
+- [Elixir에서 날짜와 시간 다루기](https://elixir-lang.org/getting-started/datetime.html)

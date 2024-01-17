@@ -10,44 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por Qué
+¡Hola, queridos lectores! ¿Alguna vez te has preguntado por qué algunas palabras en un programa están escritas en mayúsculas? Bueno, hoy te explicaré qué es capitalizar una cadena y porqué los programadores lo hacen.
 
-Escribir en mayúsculas es una tarea bastante común en la programación. Puede ser necesario para mostrar un mensaje en la pantalla, para convertir una entrada del usuario a mayúsculas o simplemente para mantener una consistencia en el formato de texto. En este artículo, aprenderás cómo capitalizar una cadena en el lenguaje de programación Arduino.
+## ¿Qué y porqué?
 
-## Cómo Hacerlo
+Capitalizar una cadena simplemente significa convertir todas las letras de una palabra o frase en mayúsculas. Los programadores hacen esto para facilitar la identificación de ciertas palabras en su código y también para cumplir con ciertos estándares de codificación. Además, algunas funciones y comandos en Arduino requieren que las cadenas estén escritas en mayúsculas para funcionar correctamente.
 
-El proceso de capitalizar una cadena en Arduino es relativamente sencillo. Simplemente debes seguir los siguientes pasos:
+## Cómo:
 
-1. Primero, declara una variable de tipo string y asígnale el valor de la cadena que quieras capitalizar. Por ejemplo: 
+```Arduino
+String texto = "hola mundo";
 
+// Utilizamos la función toUpperCase() para convertir todas las letras de la cadena en mayúsculas
+texto.toUpperCase();
+
+// Imprimimos la cadena original y la cadena con letras mayúsculas
+Serial.println("Original: " + texto);
+Serial.println("Mayúsculas: " + texto.toUpperCase());
 ```
-Arduino String mensaje = "hola mundo";
+Output:
 ```
-
-2. A continuación, utiliza el método "toUpperCase()" para convertir la cadena a mayúsculas. Esto se hace mediante el operador de punto "." después del nombre de la variable y luego escribiendo el método. Ejemplo:
-
-```
-mensaje.toUpperCase();
-```
-
-3. Finalmente, imprime el valor de la variable para verificar que la cadena haya sido convertida a mayúsculas:
-
-```
-Serial.println(mensaje);
+Original: hola mundo
+Mayúsculas: HOLA MUNDO
 ```
 
-El resultado en la pantalla debería ser "HOLA MUNDO".
+## Profundizando:
 
-## Profundizando
+En el pasado, capitalizar una cadena era necesario debido a las limitaciones de los lenguajes de programación antiguos. Sin embargo, con los avances en la tecnología y los lenguajes de programación actuales, capitalizar una cadena se ha vuelto más una práctica personal para hacer el código más legible.
 
-El método "toUpperCase()" utilizado en el ejemplo anterior es una función incorporada de la clase String en Arduino. Esto significa que puede ser utilizado en cualquier variable de tipo string sin necesidad de declararlo previamente.
+En lugar de utilizar la función toUpperCase(), también es posible utilizar la biblioteca <string.h> para capitalizar una cadena utilizando la función strtoupper().
 
-Además de "toUpperCase()", también existe el método "toLowerCase()" que convierte una cadena a minúsculas. Estos métodos son especialmente útiles en casos en los que se necesite validar la entrada del usuario o comparar cadenas sin importar si están en mayúsculas o minúsculas.
+En términos de implementación, la función toUpperCase() utiliza el código ASCII para convertir cada letra en su equivalente en mayúsculas. Es importante tener en cuenta que esta función solo funciona en letras y no afectará a otros caracteres.
 
-También es importante tener en cuenta que el método "toUpperCase()" no altera el valor de la variable original, sino que crea una nueva cadena con los caracteres convertidos a mayúsculas. Por lo tanto, si deseas guardar el valor de la cadena en mayúsculas, debes asignar el resultado del método a una nueva variable.
+## Ver también:
 
-## Ver También
-
-Más información sobre el uso de variables de tipo string en Arduino: [https://www.arduino.cc/reference/en/language/variables/data-types/string/](https://www.arduino.cc/reference/en/language/variables/data-types/string/)
-
-Métodos incorporados de la clase String: [https://www.arduino.cc/reference/en/language/variables/data-types/string/methods/](https://www.arduino.cc/reference/en/language/variables/data-types/string/methods/)
+- Documentación de Arduino sobre la función toUpperCase(): https://www.arduino.cc/reference/en/language/functions/strings/stringtoupper/
+- Más información sobre el código ASCII: https://www.arduino.cc/en/Reference/ASCIIchart

@@ -10,63 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-Sending HTTP requests is an important aspect of web development and programming in general. It allows for communication between a client and a server, making it possible to retrieve and send information over the internet.
+## What & Why?
 
-## How To
-Sending an HTTP request in C++ is fairly straightforward. The following code snippet shows a basic example of how to send a GET request using the C++ networking library:
+Sending an HTTP request is the process of making a request to a web server using the HTTP protocol. Programmers do this to retrieve data or information from a server, such as accessing a web page or retrieving data from an API.
+
+## How to:
+Sending an HTTP request in C++ can be done using the built-in library called "curl". Here's a simple example of sending a GET request:
 
 ```C++
 #include <iostream>
-#include <boost/asio.hpp>
+#include <curl/curl.h> // include the curl library
 
-using namespace boost::asio; // For simplicity, not recommended for large projects
-
-int main() {
-  // Create an io_context object to handle asynchronous operations
-  io_context ioc{};
-  
-  // Create a TCP resolver to resolve a given endpoint
-  tcp::resolver resolver{ioc};
-  
-  // Resolve the endpoint of the server we want to send a request to
-  auto endpoints = resolver.resolve("www.example.com", "http");
-  
-  // Create a TCP socket and connect it to the resolved endpoint
-  tcp::socket socket{ioc};
-  boost::asio::connect(socket, endpoints);
-  
-  // Create a GET request message
-  std::string request = "GET / HTTP/1.1\r\n"
-                        "Host: www.example.com\r\n"
-                        "Connection: close\r\n\r\n";
-                        
-  // Send the request to the server
-  write(socket, buffer(request));
-  
-  // Read the server's response
-  std::string response;
-  std::array<char, 2048> buffer;
-  while(read(socket, buffer, boost::asio::transfer_at_least(1))) {
-    response.append(buffer.data(), buffer.data() + buffer.size());
-  }
-  
-  // Print out the response
-  std::cout << response << std::endl;
-  
-  return 0;
+int main()
+{
+    // initialize a CURL object
+    CURL *curl;
+    // set the URL to send the request to
+    curl = curl_easy_init();
+    curl_easy_setopt(curl, CURLOPT_URL, "http://www.example.com");
+    // send the request and print the response
+    CURLcode res = curl_easy_perform(curl);
+    if (res == CURLE_OK)
+    {
+        std::cout << "Request sent successfully!";
+    }
+    else
+    {
+        std::cout << "Error sending request: " << curl_easy_strerror(res);
+    }
+    // clean up the CURL object
+    curl_easy_cleanup(curl);
+    return 0;
 }
 ```
 
-The output of this code would be the HTML for the home page of example.com. You can modify the request message to send different HTTP methods and headers based on the server's requirements.
+This example uses the "curl_easy_init" function to create a CURL object, sets the URL using the "curl_easy_setopt" function, and then uses "curl_easy_perform" to send the request. This function also returns a CURLcode, which we can check to see if the request was successful or not. Finally, we clean up the CURL object using "curl_easy_cleanup".
 
-## Deep Dive
-To send an HTTP request, we first need to understand the structure of a request message. It consists of three parts: the request line, request headers, and a body (optional). The request line contains information about the method, path, and version of HTTP being used. Request headers convey additional information about the request, such as the host, connection type, and accepted content types. And finally, the body carries any data that needs to be sent with the request. The code example above shows how we can construct a basic request message using these parts.
+## Deep Dive:
+In the early days of the internet, the protocol used for retrieving data from a server was called "FTP" (File Transfer Protocol). However, as the need for more sophisticated and complex web applications arose, HTTP (HyperText Transfer Protocol) was developed to allow for more flexible communication between clients and servers. Today, HTTP is the most widely used protocol for retrieving data from web servers.
 
-Apart from the basic TCP socket and networking libraries, other C++ libraries can be used to send HTTP requests. Some popular options include the Poco C++ libraries, the cItppNetLib library, and the libcurl library. These libraries offer more high-level functions and abstractions for sending HTTP requests, making the process even easier.
+An alternative to using the "curl" library for sending HTTP requests would be to create a TCP connection and manually send the request using sockets. However, this would require more code and would not be as user-friendly as using a library like "curl". Additionally, there are other HTTP libraries available for C++ such as "libhttp" and "cpp-httplib".
 
-## See Also
-- [Boost C++ Libraries](https://www.boost.org/)
-- [Poco C++ Libraries](https://pocoproject.org/)
-- [cItppNetLib Library](https://citpp.it-innovation.soton.ac.uk/)
-- [libcurl Library](https://curl.se/libcurl/)
+Sending an HTTP request involves creating a connection, sending the request, and receiving the response. The request typically contains a method (such as GET or POST), a URL, and optional request headers and body. The response will also have headers, status code, and a body.
+
+## See Also:
+- [libcurl docs](https://curl.haxx.se/libcurl/)
+- [cpp-httplib](https://github.com/yhirose/cpp-httplib)
+- [libhttp](https://github.com/brainboxdotcc/libhttp)

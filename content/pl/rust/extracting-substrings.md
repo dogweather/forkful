@@ -1,7 +1,7 @@
 ---
-title:                "Wydobywanie podciągów"
-html_title:           "Rust: Wydobywanie podciągów"
-simple_title:         "Wydobywanie podciągów"
+title:                "Ekstrakcja podciągów"
+html_title:           "Rust: Ekstrakcja podciągów"
+simple_title:         "Ekstrakcja podciągów"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -10,42 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co & dlaczego?
 
-Jeśli programujesz w Rust, prawdopodobnie zdarzyło Ci się chcieć wyodrębnić kawałek tekstu ze stringa. Może to być fragment, który chcesz wyświetlić w innej części programu lub wyciągając dane z pliku. W tym artykule dowiecie się, jak wydobywać podciągi ze stringów w Rust i jak te operacje mogą pomóc w poprawie Twojego kodu.
+Wycinanie podciągów (czyli małych fragmentów) z tekstu jest częstym zadaniem w programowaniu. Programiści często wykorzystują to do wyodrębnienia konkretnych informacji z dłuższych ciągów znaków, co ułatwia przetwarzanie danych.
 
-## Jak to zrobić
+## Jak to zrobić:
 
-W celu wyodrębnienia podciągu ze stringa w Rust, możemy użyć metody `get()` lub `slice()`. Metoda `get()` jest przydatna, jeśli chcemy wyodrębnić pojedynczą wartość, natomiast `slice()` pozwala nam na wyciągnięcie fragmentu tekstu o określonej długości.
+### Wycinanie podciągów zaczynających się od konkretnego indeksu
 
-```rust
-let text = "To jest nasz przykładowy string";
-let podciag = text.get(0..3); // "To "
-let fragment = text.slice(11..18); // "przykład"
+```Rust
+let text = "To jest przykładowy tekst";
+let subtext = &text[8..];
+println!("{}", subtext);
 ```
 
-Jeśli chcesz wyodrębnić podciąg bez określania konkretnej długości, możemy użyć metody `find()` w celu znalezienia indeksu znaku, od którego chcemy zacząć wyodrębnianie.
+Wynik: `przykładowy tekst`
 
-```rust
-let text = "Hello World!";
-let index = text.find("W").unwrap();
-let podciag = text.slice(index..); // "World!"
+### Wycinanie podciągów o określonej długości
+
+```Rust
+let text = "12345";
+let subtext = &text[..2];
+println!("{}", subtext);
 ```
 
-Możemy również użyć metody `split()` do podzielenia stringa na kilka podciągów na podstawie określonego separatora.
+Wynik: `12`
 
-```rust
-let text = "Jutro jest piękny dzień";
-let splited = text.split(" "); // ["Jutro", "jest", "piękny", "dzień"]
-```
+## Głębsze spojrzenie:
 
-## Deep Dive
+### Kontekst historyczny
 
-Podczas wyodrębniania podciągów z stringów w Rust, warto zwrócić uwagę na wydajność i bezpieczeństwo naszego kodu. Jeśli znane nam jest dokładne miejsce, od którego chcemy zacząć wyodrębnianie, zawsze powinniśmy użyć metody `get()`, ponieważ jest ona bardziej wydajna.
+Wycinanie podciągów jest powszechne w wielu językach programowania. Pierwsze algorytmy do przetwarzania tekstu i wyodrębniania podciągów pojawiły się już w latach 60. W dzisiejszych czasach jest to podstawowa operacja w praktycznie każdym języku programowania.
 
-Jeśli jednak nie jesteśmy pewni, w którym miejscu znajduje się nasz podciąg, lepiej użyć metody `slice()` lub `split()`, ponieważ nie wymagają one podawania konkretnych indeksów i są łatwiejsze w obsłudze.
+### Alternatywy
 
-## Zobacz również
+W języku Rust wycinanie podciągów można również wykonać przy użyciu metody `split_at()` lub używając biblioteki `regex`.
 
-- [Dokumentacja Rust: String](https://doc.rust-lang.org/std/string/index.html)
-- [Poradnik: Wyodrębnianie podciągów w Rust](https://www.codementor.io/@rustacademy/string-slicing-in-rust-47hyiv5ns)
+### Szczegóły implementacji
+
+Wycinanie podciągów w języku Rust jest oparte na indeksach typu `usize`. Najważniejsze operacje, takie jak sprawdzenie poprawności indeksów czy zwrócenie fragmentu tekstu, są wykonywane poprzez wykorzystanie metod typu `slice`.
+
+## Zobacz też:
+
+- [Dokumentacja Rust](https://doc.rust-lang.org/std/primitive.slice.html)
+- [Tutorial o wycinaniu podciągów w języku Rust](https://www.tutorialspoint.com/rust/rust_string_slice.htm)
+- [Alternatywne metody wycinania podciągów w języku Rust](https://doc.rust-lang.org/std/primitive.slice.html#methods)

@@ -10,56 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-Do you want to make your code a little more user-friendly? Or maybe you just want to add a touch of professionalism? Either way, capitalizing a string can make a big difference in how your output looks. Plus, with Fish Shell, it's quick and easy to do.
+Capitalizing a string simply means converting the first letter of each word in the string to uppercase. This is commonly done in programming to ensure consistency and readability in text. It also makes the code more user-friendly and easier to understand.
 
-## How To
+## How to:
 
-Capitalizing a string in Fish Shell is simple. Just follow these steps:
-
-1. Open up your Fish Shell terminal.
-2. Use the `string capitalize` command, followed by the string you want to capitalize, within Fish Shell's "```" code block.
-3. Hit enter, and voila! Your string will now be capitalized.
-
-Here's an example:
-
-```Fish Shell
-string capitalize "fish shell"
+```fish
+set my_string "hello world"
+echo (string capitalize $my_string) # Output: Hello World
 ```
 
-Output:
-```
-Fish Shell
-```
+In the above example, we first set a variable named `my_string` with the value "hello world". Then we use the `string capitalize` command to convert the first letter of each word to uppercase and finally we use the `echo` command to print the output.
 
-## Deep Dive
+## Deep Dive:
 
-While the `string capitalize` command is the easiest way to capitalize a string in Fish Shell, it's not the only way. You can also use the `tr` command to capitalize a string, although it requires a bit more code. Here's an example:
+Capitalizing strings has been a common practice since the early days of programming when computers were not case-sensitive. If you are working with a programming language that is not case-sensitive, capitalizing your string can help differentiate between variables and reserved keywords.
 
-```Fish Shell
-echo "fish shell" | tr '[a-z]' '[A-Z]'
-```
+Some alternative ways to capitalize a string include using regular expressions or writing a custom function to loop through the string and convert each first letter to uppercase. However, most modern programming languages now have built-in functions or methods to easily capitalize strings.
 
-Output:
-```
-FISH SHELL
-```
+In the Fish Shell, the `string capitalize` command uses the `strtoupper()` function from the C language to capitalize strings. This function is also used in other programming languages like PHP and Java.
 
-You can also use the `sed` command to capitalize a string, but again, it requires more code. Here's an example:
+## See Also:
 
-```Fish Shell
-echo "fish shell" | sed -e 's/^./\u&/' -e 's/.*/\L&/'
-```
-
-Output:
-```
-Fish Shell
-```
-
-Ultimately, the `string capitalize` command is the most efficient way to capitalize a string in Fish Shell.
-
-## See Also
-
-- [Fish Shell documentation](https://fishshell.com/docs/current/)
-- [Learn Fish Shell in Y minutes](https://learnxinyminutes.com/docs/fish/)
+- [Fish Shell documentation for string commands](https://fishshell.com/docs/current/commands.html#string)
+- [Understanding String Capitalization in Programming](https://www.geeksforgeeks.org/understanding-string-capitalization/)
+- [strtoupper() function documentation](https://www.php.net/manual/en/function.strtoupper.php)

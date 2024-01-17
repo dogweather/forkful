@@ -10,55 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+# Quoi & Pourquoi?
 
-Il y a plusieurs raisons pour lesquelles vous pourriez vouloir obtenir la date actuelle dans vos programmes Rust. Vous pourriez avoir besoin d'afficher la date sur une interface utilisateur, de sauvegarder des données avec une date de création ou même de déterminer le temps écoulé depuis une certaine date.
+Obtenir la date actuelle est une tâche courante pour les programmeurs Rust. Cela consiste à récupérer la date et l'heure actuelles sur le système d'exploitation. Les programmeurs utilisent souvent cette information pour enregistrer la date de création ou de modification d'un fichier, ou pour planifier l'exécution de certaines tâches en fonction de la date actuelle.
 
-## Comment faire
+# Comment faire:
 
-Obtenir la date actuelle en Rust est assez simple. Tout d'abord, vous devez importer le module `time` :
-
-```Rust
-use time;
-```
-
-Ensuite, vous pouvez utiliser la méthode `now()` pour obtenir la date et l'heure actuelles dans le fuseau horaire local :
+Pour obtenir la date actuelle en Rust, vous pouvez utiliser la méthode ```Utc::now()``` de la bibliothèque standard ```chrono```. Voici un exemple de code qui récupère la date actuelle et l'imprime ensuite:
 
 ```Rust
-let now = time::now();
-println!("La date actuelle est : {}", now);
+use chrono::Utc;
+
+let current_date = Utc::now().format("%Y-%m-%d").to_string();
+println!("La date actuelle est: {:?}", current_date);
 ```
 
-Vous pouvez également récupérer chaque composant individuel de la date comme suit :
+Ce code va produire une sortie similaire à ceci:
 
-```Rust
-println!("Date : {}/{}/{}", now.tm_mday, now.tm_mon + 1, now.tm_year + 1900);
-println!("Heure : {}:{}:{}", now.tm_hour, now.tm_min, now.tm_sec);
+```Console
+La date actuelle est: 2021-05-17
 ```
 
-Et voici la sortie que vous obtiendrez en exécutant ces lignes de code :
+# Plongée en profondeur:
 
-```
-La date actuelle est : Mon May 17 22:12:56 2021
-Date : 17/5/2021
-Heure : 22:12:56
-```
+Avant Rust 1.38, la méthode ```now()``` de la bibliothèque standard retournait un type de données ```SystemTime```, qui représentait la date et l'heure actuelles sous forme de nombre de secondes depuis l'époque Unix.
 
-## Plongeons plus profondément
+Depuis Rust 1.38, la méthode ```now()``` retourne un type de données ```DateTime<Utc>```, qui stocke la date et l'heure sous forme de structure avec différents champs pour les années, mois, jours, heures, minutes, secondes et millisecondes.
 
-Lorsque vous utilisez la méthode `now()`, vous obtenez un objet `Time`, qui contient toutes les informations sur la date et l'heure actuelles. Vous pouvez également spécifier un fuseau horaire différent en utilisant la méthode `now_utc()` ou `now_local()`.
+Une alternative à l'utilisation de la bibliothèque standard serait d'utiliser des bibliothèques tierces telles que ```time``` ou ```chrono-tz```. Ces bibliothèques offrent des fonctionnalités supplémentaires telles que la prise en compte des fuseaux horaires.
 
-De plus, il est possible d'effectuer des opérations sur les objets `Time`, comme l'ajout ou la soustraction d'une certaine quantité de temps. Par exemple, vous pouvez ajouter une heure à la date actuelle en utilisant la méthode `add_hours()` :
+# À voir aussi:
 
-```Rust
-let in_one_hour = now.add_hours(1);
-println!("Dans une heure, il sera : {}", in_one_hour);
-```
-
-Il existe également d'autres méthodes utiles pour formater la date comme `strftime()` et `rfc3339()`, que vous pouvez découvrir dans la documentation officielle.
-
-## Voir aussi
-
-- [Documentation officielle pour le module `time`](https://docs.rs/time/latest/time/)
-- [Exemples de formatage de date en Rust](https://docs.rs/time/latest/time/format/strftime/index.html)
-- [Guide pour manipuler les dates et heures en Rust](https://blog.cloudflare.com/how-to-work-with-dates-and-times-in-rust/)
+- [Chrono documentation](https://docs.rs/chrono/latest/chrono/)
+- [Time documentation](https://docs.rs/time/latest/time/)
+- [Chrono-TZ documentation](https://docs.rs/chrono-tz/latest/chrono_tz/)

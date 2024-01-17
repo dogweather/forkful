@@ -1,7 +1,7 @@
 ---
-title:                "Leyendo argumentos de la línea de comandos"
-html_title:           "Fish Shell: Leyendo argumentos de la línea de comandos"
-simple_title:         "Leyendo argumentos de la línea de comandos"
+title:                "Leyendo argumentos de línea de comandos"
+html_title:           "Fish Shell: Leyendo argumentos de línea de comandos"
+simple_title:         "Leyendo argumentos de línea de comandos"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Files and I/O"
@@ -10,70 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué leer argumentos de línea de comandos?
+## ¿Qué y Por Qué?
 
-Si eres un programador o un amante de la tecnología, probablemente ya estés acostumbrado a trabajar con la línea de comandos. Sin embargo, puede que no estés familiarizado con cómo leer y manipular argumentos de línea de comandos en la Fish Shell. En este artículo te explicaremos por qué deberías aprender a hacerlo y cómo puedes hacerlo.
+La lectura de argumentos de línea de comando es una técnica común utilizada por programadores para poder interactuar con sus programas mediante la línea de comandos. Estos argumentos son información adicional que se puede proporcionar al programa al momento de ejecutarlo, lo que permite modificar su comportamiento o realizar tareas específicas de manera más eficiente.
 
-## Cómo hacerlo
+Esta funcionalidad es muy útil para aquellos usuarios avanzados que prefieren realizar tareas mediante comandos en lugar de una interfaz gráfica. También es útil para automatizar tareas mediante scripts o para permitir la personalización de un programa según las necesidades del usuario.
 
-Para leer argumentos de línea de comandos en la Fish Shell, simplemente debes utilizar la variable especial `$argv`. Esta variable contiene una lista de todos los argumentos que se pasaron al ejecutar el script o comando en la línea de comandos. Veamos un ejemplo:
+## Cómo Hacerlo:
 
-```Fish Shell
-# Este script suma dos números
-echo "La suma de $argv[1] y $argv[2] es igual a $argv[1] + $argv[2]"
+Fish Shell, al igual que otros intérpretes de línea de comandos, ofrece varias formas de leer y utilizar argumentos de línea de comando. A continuación, se presentan dos ejemplos de cómo hacerlo:
+
+```
+# Ejemplo 1:
+# Supongamos que nuestro programa se llama "contador" y queremos que cuente la cantidad de argumentos que le pasamos
+Fish Shell contador.fish uno dos cuatro
+# La salida será:
+3
+
+# Ejemplo 2:
+# Supongamos que queremos buscar un archivo en una carpeta determinada
+Fish Shell buscar.fish -t txt -d /carpeta -n archivo
+# La salida será:
+El archivo "archivo.txt" ha sido encontrado.
 ```
 
-Si ejecutamos este script en la línea de comandos de la siguiente manera:
+Como se puede ver en los ejemplos, los argumentos de línea de comando se pueden pasar después del nombre del programa, separados por espacios. También se pueden utilizar opciones, como en el segundo ejemplo, para proporcionar información adicional al programa.
 
-```Fish Shell
-./sumar_script 2 3
-```
+## Inmersión Profunda
 
-Obtendremos la siguiente salida:
+La lectura de argumentos de línea de comando ha sido una funcionalidad presente en los sistemas operativos desde hace décadas. En los sistemas UNIX, es común utilizar la convención de los parámetros con guiones, como en el segundo ejemplo, donde "-t" significa tipo de archivo y "-d" significa directorio. Sin embargo, cada intérprete de línea de comandos tiene su propia forma de trabajar con estos argumentos, por lo que es importante revisar la documentación específica de cada uno.
 
-```Fish Shell
-La suma de 2 y 3 es igual a 2 + 3
-```
-
-Como puedes ver, los valores de los argumentos se pueden acceder mediante `$argv[indice]`, donde el índice comienza en 1 (ya que el nombre del script es `$argv[0]`). También puedes acceder a todos los argumentos en una sola cadena con la variable `$arguments`.
-
-## Un vistazo más profundo
-
-La Fish Shell también tiene la capacidad de leer opciones de línea de comandos, que son argumentos precedidos por un guión (`-`). Estos se pueden acceder mediante la variable `$options`, que contiene un diccionario donde la clave es el nombre de la opción y el valor es su valor. Veamos un ejemplo:
-
-```Fish Shell
-# Este script suma dos números
-echo "La suma de $argv[1] y $argv[2] es igual a $argv[1] + $argv[2]"
-echo "El resultado es:"
-
-# Obtener la opción -v que indica si queremos que se muestre el resultado en modo verboso
-if test $options['-v'] = true
-    set resultado $argv[1] + $argv[2]
-    echo "El resultado de $argv[1] + $argv[2] es igual a $resultado"
-else 
-    echo $argv[1] + $argv[2]
-end
-```
-
-Si ejecutamos este script de la siguiente manera:
-
-```Fish Shell
-./sumar_script -v 2 3
-```
-
-Obtendremos la siguiente salida:
-
-```Fish Shell
-La suma de 2 y 3 es igual a 2 + 3
-El resultado es:
-El resultado de 2 + 3 es igual a 5
-```
-
-Como puedes ver, se puede acceder a la opción `-v` a través de `$options['-v']`, que devuelve el valor `true` si está presente en la línea de comandos.
+También existen alternativas a la lectura de argumentos de línea de comando, como por ejemplo el uso de variables de entorno, que pueden ser útiles en ciertas situaciones. Sin embargo, la lectura de argumentos sigue siendo una técnica ampliamente utilizada y recomendada por su simplicidad y eficiencia.
 
 ## Ver también
 
-Si quieres seguir aprendiendo sobre la Fish Shell, te recomendamos estos recursos:
-
-- Documentación oficial de la Fish Shell (https://fishshell.com/docs/current/index.html)
-- Guía de introducción a la Fish Shell por Anish Athalye (https://medium.com/@anishathalye/learning-fish-shell-4e99cb8de87d)
+- Documentación oficial de Fish Shell: https://fishshell.com/docs/current/cmds/fish.html
+- Tutorial sobre argumentos de línea de comando en Fish Shell: https://www.techgoat.net/fish-shell-command-line-arguments/
+- Comparación entre argumentos de línea de comando y variables de entorno: https://www.baeldung.com/linux/command-line-arguments-vs-environment-variables

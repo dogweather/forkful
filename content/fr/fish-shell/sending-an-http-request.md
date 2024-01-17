@@ -10,71 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Pourquoi
+## Qu'est-ce que c'est et pourquoi?
 
-Vous vous demandez peut-être pourquoi vous devriez apprendre à envoyer une requête HTTP en utilisant Fish Shell. La réponse est simple : cela peut vous permettre d'interagir avec des API pour récupérer des données, automatiser des tâches, ou encore intégrer votre script Fish dans vos projets web.
+Envoyer une requête HTTP est une action essentielle pour les programmeurs. Cela leur permet d'établir une communication avec un serveur web pour récupérer des données ou effectuer des actions. Les requêtes HTTP sont utilisées pour créer des applications web dynamiques et interagir avec des API.
 
-# Comment faire
-
-Le processus pour envoyer une requête HTTP en utilisant Fish Shell est relativement simple grâce à la commande intégrée `curl`. Voici un exemple de code et sa sortie correspondante :
-
-```Fish Shell
-curl -X GET https://pokeapi.co/api/v2/pokemon/pikachu
-```
-Sortie :
+## Comment faire:
 
 ```
-{
-	"abilities": [{
-		"ability": {
-			"name": "static",
-			"url": "https://pokeapi.co/api/v2/ability/9/"
-		},
-		"is_hidden": false,
-		"slot": 1
-	}, {
-		"ability": {
-			"name": "lightning-rod",
-			"url": "https://pokeapi.co/api/v2/ability/31/"
-		},
-		"is_hidden": true,
-		"slot": 3
-	}, {
-		"ability": {
-			"name": "cute-charm",
-			"url": "https://pokeapi.co/api/v2/ability/56/"
-		},
-		"is_hidden": true,
-		"slot": 2
-	}],
-	"base_experience": 112,
-	"forms": [{
-		"name": "pikachu",
-		"url": "https://pokeapi.co/api/v2/pokemon-form/25/"
-	}],
-	...
-	"types": [{
-		"slot": 1,
-		"type": {
-			"name": "electric",
-			"url": "https://pokeapi.co/api/v2/type/13/"
-		}
-	}],
-	"weight": 60
-}
+Fish Shell est un outil puissant pour envoyer des requêtes HTTP. Voici comment vous pouvez l'utiliser:
+
+# Pour envoyer une requête GET simple:
+curl http://www.example.com
+
+# Pour inclure des en-têtes avec la requête:
+curl -H "Content-Type: application/json" http://www.example.com
+
+# Pour envoyer une requête POST avec des données:
+curl -X POST -d '{"username":"John", "password":"12345"}' http://www.example.com/login
+
+# Pour afficher le code de statut de la réponse:
+curl -s -o /dev/null -w "%{http_code}" http://www.example.com
+
 ```
 
-Comme vous le voyez, la réponse renvoie les informations sur le Pokémon Pikachu depuis l'API PokeAPI.
+## Plongée en profondeur:
 
-# Exploration approfondie
+Les requêtes HTTP ont été inventées en 1989 par Tim Berners-Lee, le fondateur du World Wide Web. Le protocole a évolué au fil du temps et est maintenant utilisé largement pour les échanges de données sur le web. Bien que curl soit l'outil standard pour envoyer des requêtes HTTP en ligne de commande, il existe également d'autres alternatives telles que wget ou httpie. Les programmeurs peuvent également implémenter leurs propres fonctions pour envoyer des requêtes HTTP en utilisant des bibliothèques telles que Requests ou cURL.
 
-La commande `curl` peut être utilisée pour envoyer différents types de requêtes HTTP, tels que GET, POST, PUT et DELETE. Vous pouvez également spécifier des headers, des données à envoyer dans le corps de la requête, et même ajouter des options de sécurité comme des certificats SSL.
+## À voir également:
 
-Une autre option utile est d'ajouter l'option `-s` pour supprimer la sortie de progression de `curl` et n'afficher que la réponse. De plus, vous pouvez utiliser `jq`, un outil de traitement de JSON en ligne de commande, pour filtrer et manipuler les données de réponse.
-
-Pour en savoir plus sur les différentes options et fonctionnalités de `curl`, vous pouvez consulter la documentation officielle ici : https://curl.haxx.se/docs/. De plus, vous pouvez également explorer les API disponibles et tester vos requêtes en utilisant Postman : https://www.postman.com/.
-
-# Voir aussi
-
-- Documentation officielle de `curl` : https://curl.haxx.se/docs/
-- Postman : https://www.postman.com/
+- [Documentation Fish Shell](https://fishshell.com/docs/current/cmds/curl.html)
+- [Tutorial Curl](https://curl.haxx.se/docs/httpscripting.html)
+- [Autres utilitaires pour envoyer des requêtes HTTP](https://www.quora.com/How-can-I-make-HTTP-requests-without-using-curl)

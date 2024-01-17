@@ -10,40 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hvorfor
+# Hva & Hvorfor?
+Parsing av HTML er en prosess der en datamaskin leser og tolker kode skrevet i HTML-format. Dette er viktig for programmerere fordi det gjør det mulig for en datamaskin å forstå og behandle nettsider og deres innhold.
 
-Hvis du ønsker å hente data fra en nettside eller analysere HTML-koden, må du parse (analysere og tolke) HTML. Dette kan være nyttig for å lage automatiserte web scraping-skript eller for å behandle data fra nettet i Java-applikasjoner.
-
-# Hvordan
-
-For å parse HTML i Java, kan du bruke et bibliotek som heter Jsoup. Dette biblioteket gjør det enkelt å hente ut data fra HTML-kilder.
-
-Først må du importere Jsoup-biblioteket i Java-koden din ved å legge til følgende linje øverst i filen:
+# Hvordan:
+For å parse HTML i Java, kan du bruke biblioteker som "JSoup" eller "Jericho HTML Parser". Nedenfor er et enkelt eksempel på hvordan du kan bruke "JSoup" til å hente alle linker fra en nettside:
 
 ```Java
-import org.jsoup.Jsoup;
+Document doc = Jsoup.connect("https://www.example.com").get(); // Hent nettsiden
+Elements links = doc.select("a[href]"); // Velg alle linker
+for (Element link : links) { // Gå gjennom alle linker
+    System.out.println(link.attr("href")); // Print ut linken
+}
 ```
 
-Deretter kan du bruke følgende kode for å koble til en nettside og hente ut innholdet fra en bestemt HTML-tag:
+Dette eksempelet vil skrive ut alle linker på nettsiden "https://www.example.com".
 
-```Java
-String url = "https://www.nettside.no";
-Document doc = Jsoup.connect(url).get();
-String content = doc.select("h1").text();
+# Dykke dypere:
+Parsing av HTML ble først utviklet på 1990-tallet som en del av utviklingen av World Wide Web. Før dette var det vanlig å bruke manuelle metoder for å behandle nettsteddata. Det finnes også andre programmeringsspråk som har innebygde funksjoner for å parse HTML, som for eksempel Python og PHP.
 
-System.out.println(content);
-```
+Når du parser HTML i Java, er det viktig å huske å håndtere eventuelle feil som kan oppstå, som for eksempel ugyldig HTML-kode. Du bør også være bevisst på hvor mange ressurser (CPU og minne) du bruker, spesielt hvis du parser store mengder data.
 
-I dette eksempelet vil du få utskrevet teksten fra alle h1-tagene på nettsiden.
-
-# Dypdykk
-
-Jsoup-biblioteket gir mange ulike metoder for å hente og behandle data fra HTML. Du kan for eksempel filtrere ut spesifikke attributter eller klasser, eller kjøre en søkefunksjon for å finne en spesifikk del av HTML-koden.
-
-Det er også viktig å merke seg at Jsoup kan håndtere ugyldig eller ufullstendig HTML-kode, noe som gjør det enklere å parse komplekse nettsider.
-
-# Se Også
-
-- Jsoup-bibliotekets offisielle dokumentasjon: https://jsoup.org/
-- En grundig gjennomgang av hvordan Jsoup kan brukes for å hente data fra HTML: https://dzone.com/articles/using-jsoup-java-html-parser-to-get-html-page-content
-- En tutorial på norsk om hvordan du bruker Jsoup: https://javarush.ru/groups/posts/377-prekrashejshij-java-parser-jsoup-kogda-vse-prosto
+# Se også:
+- [JSoup](https://jsoup.org/)
+- [Jericho HTML Parser](http://jericho.htmlparser.net/docs/index.html)

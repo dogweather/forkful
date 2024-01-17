@@ -1,7 +1,7 @@
 ---
-title:                "Concaténation de chaînes"
-html_title:           "Gleam: Concaténation de chaînes"
-simple_title:         "Concaténation de chaînes"
+title:                "Concaténer des chaînes de caractères"
+html_title:           "Gleam: Concaténer des chaînes de caractères"
+simple_title:         "Concaténer des chaînes de caractères"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -10,40 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Quoi et pourquoi ? 
+La concaténation de chaînes est le processus de fusionner plusieurs chaînes de caractères en une seule. Les programmeurs utilisent cette technique pour créer des phrases complètes ou pour créer des messages d'erreur personnalisés.
 
-Concaténer des chaînes est une tâche courante en programmation qui consiste à fusionner plusieurs chaînes de caractères en une seule. Cela est utile pour construire des phrases ou des messages dynamiques à partir de différentes variables.
+## Comment faire :
+Voici un exemple de code Gleam montrant comment concaténer des chaînes de caractères :
 
-## Comment le faire
-
-```Gleam
-let prenom = "Marie"
-let nom = "Dupont"
-let message = "Bonjour, je m'appelle " ++ prenom ++ " " ++ nom ++ "."
+```
+Gleam 
+    fn concatener() {
+    let nom = "Marie"
+    let prenom = "Dupont"
+    let phrase = nom + " " + prenom
+    IO.format("{:?}", phrase)
+}
 ```
 
-Ce code va concaténer les variables `prenom` et `nom` avec du texte statique pour créer le message suivant : "Bonjour, je m'appelle Marie Dupont.". Il est également possible de concaténer plusieurs chaînes à la fois en utilisant la fonction `concat` :
+Lorsque vous exécutez cette fonction, vous obtenez une phrase complète en sortie : "Marie Dupont". La concaténation des chaînes est particulièrement utile lorsque vous devez combiner des variables avec du texte pour créer des chaînes dynamiques.
 
-```Gleam
-let mots = ["Bonjour", "je", "suis", "Gleam"]
-let phrase = concat(mots)
-// phrase == "Bonjourje' m'appelleGleam"
-```
+## Plongée en profondeur :
+La concaténation de chaînes est une technique couramment utilisée dans de nombreux langages de programmation, y compris Gleam. Cependant, d'autres approches peuvent être utilisées, telles que la formatage de chaînes, qui utilise des marqueurs pour insérer des variables dans une chaîne. En interne, Gleam utilise le type 'String' pour gérer les chaînes de caractères et offre plusieurs méthodes pour concaténer des chaînes. Par exemple, vous pouvez utiliser l'opérateur '+' ou la fonction 'String.concat' pour réaliser une concaténation.
 
-De manière générale, il est important de faire attention à l'ordre de concaténation pour éviter des espaces ou des caractères indésirables dans le résultat final. Pour ajouter des espaces entre les chaînes, il suffit de les inclure dans la concaténation :
-
-```Gleam
-let prenom = "Marie"
-let nom = "Dupont"
-let message = "Bonjour, je m'appelle " ++ prenom ++ " " ++ nom ++ "."
-```
-
-## Plongée en profondeur
-
-Il est important de noter que la concaténation de chaînes peut être gourmande en ressources si elle est utilisée à grande échelle. En effet, à chaque concaténation, une nouvelle chaîne est créée en mémoire, ce qui peut entraîner des problèmes de performance. Pour éviter cela, il est recommandé d'utiliser des types spéciaux tels que `StringBuilder` qui permettent de concaténer des chaînes de manière plus efficace.
-
-## Voir aussi
-
-- [Documentation Gleam sur les chaînes](https://gleam.run/documentation/stdlib/string#concat)
-- [Article sur les performances des opérations de chaînes en Java](https://dzone.com/articles/string-concatenation-performance-io)
-- [Exemples pratiques de concaténation de chaînes en C#](https://www.tutorialsteacher.com/csharp/csharp-string-tutorial)
+## À voir aussi :
+Pour en savoir plus sur la concaténation de chaînes en Gleam, vous pouvez consulter la documentation officielle : https://gleam.run/documentation/guides/strings.html. Vous pouvez également jeter un œil aux tutoriels et exemples de code disponibles sur le site Gleam : https://gleam.run/documentation/. N'hésitez pas à explorer et à expérimenter par vous-même pour devenir un pro de la concaténation de chaînes en Gleam !

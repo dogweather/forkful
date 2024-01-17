@@ -10,48 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was & Warum?
 
-Wer in der Programmierung mit C arbeitet, wird nicht umhin kommen, auch mit Kommandozeilen-Argumenten zu tun zu haben. Diese erlauben es, dem Programm bei jedem Aufruf unterschiedliche Werte zu übergeben. In diesem Artikel erfahrt ihr, wie ihr in C auf diese Argumente zugreift und sie im Programm nutzen könnt.
+Das Lesen von Befehlszeilenargumenten ist eine häufige Aufgabe in der Programmierung. Dabei werden die Argumente, die bei der Ausführung des Programms in der Befehlszeile angegeben wurden, vom Programm eingelesen und verwendet. Dies ermöglicht es dem Programmierer, die Ausführung seines Programms zu steuern und anzupassen.
 
-## So funktioniert's
+## Wie geht's?
 
-Um die Argumente aus der Kommandozeile auszulesen, wird die main-Funktion verwendet. Deren Argumente sind ein Integer, der die Anzahl der Argumente enthält, sowie ein Array von Strings mit den einzelnen Argumenten.
+Um Befehlszeilenargumente in C zu lesen, können wir die vordefinierten Variablen `argc` und `argv` verwenden. `argc` enthält die Anzahl der Argumente, die in der Befehlszeile angegeben wurden, und `argv` ist ein Array von Zeigern auf die einzelnen Argumente. Wir können dann einfach über `argv` iterieren und auf die Argumente zugreifen. Zum Beispiel:
 
-Ein Beispiel-Programm könnte so aussehen:
-
-```C
+```
 #include <stdio.h>
 
 int main(int argc, char *argv[]) {
-    // Argumente ausgeben
-    printf("Anzahl der Argumente: %d\n", argc);
-    for (int i = 0; i < argc; i++) {
-        printf("Argument %d: %s\n", i, argv[i]);
-    }
-    return 0;
+  printf("Anzahl der Argumente: %d \n", argc);
+  for (int i=0; i<argc; i++) {
+    printf("Argument %d: %s \n", i, argv[i]);
+  }
+  return 0;
 }
 ```
-
-Wenn dieses Programm mit den Argumenten "Hallo Welt" aufgerufen wird, würde die Ausgabe folgendermaßen aussehen:
+Wenn wir dieses Programm als `./programmname argument1 argument2` ausführen, erhalten wir die Ausgabe:
 
 ```
 Anzahl der Argumente: 3
-Argument 0: ./programm
-Argument 1: Hallo
-Argument 2: Welt
+Argument 0: ./programmname
+Argument 1: argument1
+Argument 2: argument2
 ```
 
-Bei der Ausführung eines Programms werden auch immer mindestens ein Argument übergeben, nämlich der Name des Programms selbst. Daher wird das erste Argument als "./programm" angezeigt.
+## Tiefere Einblicke
 
-## Tiefergehende Informationen
+Das Lesen von Befehlszeilenargumenten ist eine gängige Aufgabe in vielen Programmiersprachen. Neben C unterstützen auch Sprachen wie Python, Java und Perl das Lesen von Befehlszeilenargumenten auf ähnliche Weise.
 
-Die Argumente können nicht nur ausgelesen, sondern auch zur Verarbeitung im Programm genutzt werden. Dabei ist zu beachten, dass die Argumente immer als Strings übergeben werden und bei Bedarf noch in den jeweiligen Datentyp umgewandelt werden müssen.
+Eine alternative Möglichkeit besteht darin, eine externe Bibliothek zu verwenden, die das Parsen von Befehlszeilenargumenten erleichtert, wie zum Beispiel `getopt` oder `argp` in C.
 
-Ein weiteres wichtiges Konzept sind Optionen. Diese werden häufig bei Aufrufen von Befehlszeilenprogrammen verwendet, um bestimmte Verhaltensweisen festzulegen. Sie werden durch einen Bindestrich und einen Buchstaben angegeben, z.B. "-v" für die Ausgabe von Versioninformationen. Um diese Optionen zu verarbeiten, können Funktionen wie "strcmp" und "getopt" aus der Standardbibliothek verwendet werden.
+Bei der Implementierung von Befehlszeilenargumenten in C ist es wichtig, auf die Reihenfolge der Argumente und die Behandlung von Optionen und Argumenten zu achten. Es kann auch hilfreich sein, Fehlerbehandlungen und Validierungen hinzuzufügen, um die Benutzerfreundlichkeit des Programms zu verbessern.
 
 ## Siehe auch
 
-- Dokumentation des C Standard Library: https://en.cppreference.com/w/c
-- Einsteiger-Tutorial zur Programmierung mit C: https://www.learn-c.org/
-- Mehr über Befehlszeilenargumente in C: https://www.tutorialspoint.com/cprogramming/c_command_line_arguments.htm
+- [C-Programmierhandbuch: Befehlszeilenargumente](https://www.gnu.org/software/libc/manual/html_node/Command_002dLine-Arguments.html)
+- [How to Read Command Line Arguments in C](https://www.geeksforgeeks.org/how-to-read-command-line-arguments-in-c/)
+- [Using Command Line Arguments in C](https://www.codingunit.com/using-command-line-arguments-in-c)

@@ -10,69 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
 
-Att läsa textfiler är en grundläggande uppgift för programmerare eftersom det tillåter oss att få tillgång till och bearbeta data på ett effektivt sätt.
+Att läsa en textfil är en vanlig uppgift som programmerare behöver göra för att behandla och manipulera data. Det innebär att läsa och hämta information från en fil som innehåller text, såsom en CSV-fil med tabellformat eller en ren textfil. Att kunna läsa textfiler i ditt program ger dig möjlighet att automatisera processer och arbeta med stora mängder data på ett effektivt sätt.
 
-## Hur man gör det
+## Så här gör du:
 
-För att läsa en textfil i Python, behöver du först öppna filen med hjälp av den inbyggda funktionen `open()`. Du behöver ange filnamnet och läge (t.ex. "r" för läsning) som parametrar. Sedan kan du använda en `for`-loop för att iterera över varje rad i filen och genomföra önskade operationer.
-
-```Python
-file = open("textfil.txt", "r")
-
-for line in file:
-    # vidta åtgärder för varje rad i filen
-    print(line) # exempelvis att skriva ut varje rad
-
-file.close()
-```
-Exempel på utdata:
-
-```
-Detta är första raden i textfilen.
-Detta är andra raden.
-Och detta är den tredje och sista raden.
-```
-
-## Djupdykning
-
-När du läser en textfil i Python, returneras varje rad som en sträng. Om du vill konvertera denna sträng till ett objekt av typen `list`, kan du använda metoden `split()`.
+Att läsa en textfil i Python är en enkel process. Du börjar med att öppna filen med `open()` funktionen och anger filnamnet och önskat läge (till exempel `'r'` för läsning). Sedan kan du använda standard Python-läsning och överföringsmetoder för att hämta informationen från filen, till exempel `read()` och `readlines()`.
 
 ```Python
-file = open("textfil.txt", "r")
-
-for line in file:
-    words = line.split() # konvertera till list
-
-    # vidta åtgärder för varje ord i raden
-    for word in words:
-        print(word) # exempelvis att skriva ut varje ord
-
-file.close()
+with open('exempelfil.txt', 'r') as file:  # Öppnar filen för läsning
+    line = file.readline()  # Läser en rad från filen och lagrar den i "line" variabeln
+    print(line)  # Skriver ut raden till konsolen
 ```
-Exempel på utdata:
 
+Output:
 ```
-Detta
-är
-första
-raden
-Detta
-är
-andra
-raden.
-Och
-detta
-är
-den
-tredje
-och
-sista
-raden.
+Det här är en exempeltext.
 ```
+
+## Deep Dive
+
+Att läsa textfiler är en grundläggande kunskap inom programmering och används ofta i kombination med andra uppgifter, som att skriva till en fil eller bearbeta data. Det är också en viktig färdighet när du arbetar med datahantering och automation.
+
+Det finns flera metoder för att läsa textfiler i Python, såsom att använda `read()` för att hämta hela filen som en sträng eller `readlines()` för att hämta alla rader som en lista. Det är också möjligt att använda olika lägen för att öppna en fil för läsning, såsom `'r'`, `'rb'` för binärläsning eller `'r+'` för både läsning och skrivning.
 
 ## Se även
 
-- Dokumentation för `open()`-funktionen: https://docs.python.org/sv/3/library/functions.html#open
-- Dokumentation för `split()`-metoden: https://docs.python.org/sv/3/library/stdtypes.html#str.split
+- Python's officiella dokumentation om filhantering: https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files
+- En guide till filhantering i Python: https://realpython.com/read-write-files-python/

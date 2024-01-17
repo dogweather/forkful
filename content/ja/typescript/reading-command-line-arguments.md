@@ -1,7 +1,7 @@
 ---
-title:                "コンピューター・プログラミングの記事タイトル：コマンドライン引数の読み取り"
-html_title:           "TypeScript: コンピューター・プログラミングの記事タイトル：コマンドライン引数の読み取り"
-simple_title:         "コンピューター・プログラミングの記事タイトル：コマンドライン引数の読み取り"
+title:                "コンピュータプログラミングの記事タイトル: コマンドライン引数の読み込み"
+html_title:           "TypeScript: コンピュータプログラミングの記事タイトル: コマンドライン引数の読み込み"
+simple_title:         "コンピュータプログラミングの記事タイトル: コマンドライン引数の読み込み"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Files and I/O"
@@ -10,28 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ？
+何が& なぜ？
 
-コマンドライン引数を読み取ることは、一見難しく感じられるかもしれませんが、実際には非常に役に立つスキルです。たとえば、ユーザーから動的な入力を受け取る必要がある場合や、複数のバージョンのプログラムを実行する際に役立ちます。
+コマンドライン引数を読み取ることは、コマンドラインからの入力をプログラム内で処理することです。プログラマーは、ユーザーからの入力をプログラムに反映するために、コマンドライン引数を読み取る必要があります。
 
-## 使い方
+方法：
 
-コマンドライン引数を読み取るには、`process.argv`メソッドを使用します。これはNode.jsで提供されるグローバルオブジェクトです。具体的なコーディング例は以下の通りです。
+コマンドライン引数を読み取るには、TypeScriptでprocess.argv を使用します。これにより、プログラム内でコマンドライン引数を配列として受け取ることができます。
 
 ```TypeScript
-// 実行コマンド：node myProgram.ts firstArg secondArg
+const args: string[] = process.argv;
 
-const args = process.argv.slice(2);
-console.log(args[0]); // firstArg
-console.log(args[1]); // secondArg
+console.log(args); // コマンドライン引数の配列を出力
 ```
 
-このように、`process.argv`メソッドを使用して引数を読み取ることができます。
+例えば、`node index.ts hello world`というコマンドラインを実行した場合、それぞれ`args[0]`には`node`、`args[1]`には`index.ts`、`args[2]`には`hello`、`args[3]`には`world`が格納されます。
 
-## もっと深く掘り下げる
+Deep Dive:
 
-コマンドライン引数にはさまざまなオプションがあり、それぞれの役割を理解することは重要です。たとえば、`process.argv[0]`は実行中のプログラムのパスを示し、`process.argv[1]`は実行中のスクリプトのパスを示します。また、スイッチと呼ばれる特殊な引数があり、値の有無に基づいてプログラムの動作を変更することができます。詳細な情報は公式ドキュメントを参照してください。
+コマンドライン引数の読み取りは、プログラミングの中でも古くから存在する重要な機能です。コマンドライン引数を使用することで、プログラムに対して動的な情報を与えることができます。代替手段として、プログラム内でユーザーからの入力を受け取るためのメソッドや関数を使用することもできますが、コマンドライン引数を使用することで、より柔軟な入力が可能になります。
 
-## 同じ為参照
+コマンドライン引数を読み取る実装には、他の言語でも使用されている方法が多数存在します。TypeScriptで使用されているprocess.argvも、Node.jsで使用されている方法と同じです。また、一部のライブラリやフレームワークでは、プログラム内でコマンドライン引数を読み取るための機能を提供しています。
 
-- [Node.jsの公式ドキュメント](https://nodejs.org/docs/latest/api/process.html#process_process_argv)
+See Also:
+
+- [Node.jsのprocess.argv](https://nodejs.org/docs/latest/api/process.html#process_process_argv)
+- [オープンソースのコマンドライン引数パーサーyargs](http://yargs.js.org/)
+- [コマンドライン引数の解析原理](https://www2.cs.arizona.edu/~rts/student_projects/distributedsystems/commandLineArgs.html)

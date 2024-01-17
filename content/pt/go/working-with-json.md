@@ -1,7 +1,7 @@
 ---
-title:                "Trabalhando com json."
-html_title:           "Go: Trabalhando com json."
-simple_title:         "Trabalhando com json."
+title:                "Trabalhando com json"
+html_title:           "Go: Trabalhando com json"
+simple_title:         "Trabalhando com json"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Data Formats and Serialization"
@@ -10,79 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que trabalhar com JSON em Go?
+## O que e por que?
+JSON, ou JavaScript Object Notation, e um formato de dados popular usado por programadores para armazenar e transmitir informações estruturadas de forma legível e compacta. Isso facilita a comunicação entre diferentes sistemas e linguagens de programação.
 
-JSON (JavaScript Object Notation) é um formato popular para troca de dados entre sistemas, sendo amplamente utilizado na web e em aplicações móveis. Ao trabalhar com Go, uma linguagem de programação de alto desempenho e eficiente em termos de recursos, trabalhar com JSON pode ajudar a tornar seu código mais flexível e interoperável.
-
-## Como fazer
-
-Para começar a trabalhar com JSON em Go, é necessário primeiro importar o pacote padrão `encoding/json`. Em seguida, podemos criar uma estrutura de dados que represente o formato JSON com o qual desejamos trabalhar.
+## Como fazer:
+Trabalhar com JSON em Go e bastante simples, pois a linguagem possui uma biblioteca padrão poderosa para manipulação de dados JSON. Veja um exemplo de como criar um JSON a partir de uma estrutura em Go:
 
 ```
-package main
-
-import (
-	"encoding/json"
-	"fmt"
-	"log"
-)
-
-type Person struct {
-	Name    string `json:"name"`
-	Age     int    `json:"age"`
-	Country string `json:"country"`
+type Pessoa struct {
+	Nome string `json:"nome"`
+	Email string `json:"email"`
+	Telefone string `json:"telefone"`
 }
 
-func main() {
-	// Criando a estrutura de dados Person
-	p := Person{
-		Name:    "Maria",
-		Age:     35,
-		Country: "Brasil",
-	}
+p := Pessoa{"João", "joao@example.com", "(11) 99999-9999"}
 
-	// Convertendo a estrutura em JSON
-	jsonData, err := json.Marshal(p)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	// Imprimindo o JSON na tela
-	fmt.Println(string(jsonData))
-}
-```
-
-A saída deste código seria: `{"name":"Maria","age":35,"country":"Brasil"}`, que é um objeto JSON válido. Ao definir as tags `json` em nossa estrutura de dados, podemos controlar como os campos serão formatados no JSON resultante.
-
-Mas e se quisermos fazer o inverso? Ou seja, converter um objeto JSON em uma estrutura de dados Go? Podemos fazer isso usando a função `json.Unmarshal()`.
+jsonBytes, _ := json.Marshal(p) // Converte a estrutura para JSON
+fmt.Println(string(jsonBytes))  // Exibe o JSON
 
 ```
-// JSON de exemplo
-jsonStr := `{"name":"João","age":40,"country":"Portugal"}`
+Output: `{"nome":"João","email":"joao@example.com","telefone":"(11) 99999-9999"}`
 
-// Convertendo o JSON para a estrutura Person
-var p Person
-err := json.Unmarshal([]byte(jsonStr), &p)
-if err != nil {
-	log.Fatal(err)
-}
+Para ler um JSON e converter para uma estrutura em Go, podemos utilizar o seguinte código:
 
-// Imprimindo os valores da estrutura
-fmt.Println(p.Name)     // Saída: João
-fmt.Println(p.Age)      // Saída: 40
-fmt.Println(p.Country)  // Saída: Portugal
 ```
+jsonString := `{"nome":"Maria","email":"maria@example.com","telefone":"(11) 88888-8888"}`
 
-## Mergulho Profundo
+var p Pessoa
+json.Unmarshal([]byte(jsonString), &p) // Converte o JSON para uma estrutura em Go
+fmt.Println(p.Nome) // Exibe o nome da pessoa lido do JSON
+```
+Output: `Maria`
 
-Além das funções básicas de conversão de dados, Go também possui recursos poderosos para trabalhar com JSON, como a possibilidade de fazer a manipulação diretamente em streams de dados. Algumas outras coisas que vale a pena mencionar ao trabalhar com JSON em Go são:
+## Mergulho Profundo:
+JSON foi originalmente criado por Douglas Crockford em 2001 e se tornou popular como um meio para enviar e receber dados pela web. Apesar de ser baseado em JavaScript, é uma linguagem independente e pode ser usado com vários tipos de aplicativos e linguagens de programação, incluindo Go.
 
-- O pacote `encoding/json` também possui a função `NewDecoder()` que nos permite decodificar dados JSON de uma fonte de entrada, como um arquivo ou uma requisição HTTP.
-- Para ignorar campos em branco durante a codificação do JSON, podemos usar a tag `json:"-"` em nossa estrutura de dados.
-- Para definir campos opcionais em nossa estrutura de dados, podemos usar a tag `json:"nome_do_campo,omitempty"`, indicando que esse campo deve ser ignorado se estiver vazio.
+Existem algumas alternativas populares ao uso de JSON, como XML e YAML. No entanto, JSON tem se mostrado mais leve, fácil de ler e de usar, tornando-se a escolha preferida para muitos desenvolvedores.
 
-## Veja também
+Em Go, a biblioteca padrão `encoding/json` possui funcionalidades avançadas, como a capacidade de trabalhar com dados JSON aninhados, apelidos de campos e tags de estrutura para personalizar o formato do JSON.
 
-- Documentação oficial sobre o pacote `encoding/json`: https://golang.org/pkg/encoding/json/
-- Exemplos de uso do pacote `encoding/json`: https://gobyexample.com/json
-- Tutorial completo sobre como trabalhar com JSON em Go: https://tutorialedge.net/golang/go-json-tutorial/
+## Ver também:
+- [Documentação oficial do pacote `encoding/json`](https://golang.org/pkg/encoding/json/)
+- [Tutorial de JSON em Go da plataforma Learn Go](https://learn.go.dev/lessons/json)
+- [Um comparativo entre JSON, XML e YAML](https://www.afternerd.com/blog/difference-between-json-xml-yaml/)

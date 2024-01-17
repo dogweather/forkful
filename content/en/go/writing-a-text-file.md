@@ -10,66 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
+Writing a text file is the process of creating a plain text document that can be opened and read by any text editor. Programmers often write text files to store data or configuration information that can be easily accessed and modified. 
 
-Writing a text file may seem like a mundane task, but it is a fundamental aspect of programming. Whether you are creating configuration files, saving user input, or generating reports, text files are an essential part of most applications.
+## How to:
+To write a text file in Go, we first need to import the "io/ioutil" package, which allows us to read and write to files. Next, we use the "ioutil.WriteFile()" function to write our desired data to a text file. The function takes in three parameters: the file name, the data to be written, and the file permissions. Here's an example:
 
-## How To
-
-To write a text file in Go, we first need to import the `os` package, which provides functionality for interacting with the operating system. Then, we can use the `Create` method from the `os` package to create a file and open it for writing. Finally, we can use the `WriteString` method to write our desired text to the file and close it when we are finished. Let's take a look at an example:
-
-```
-package main
-
-import (
-    "fmt"
-    "os"
-)
+```Go
+import "io/ioutil"
 
 func main() {
-    // Create a file named "my-file.txt" in the current directory
-    file, err := os.Create("my-file.txt")
-    // Check for any errors
+    data := []byte("Hello, world!") // convert string to byte slice
+    err := ioutil.WriteFile("myfile.txt", data, 0644) // 0644 represents file permissions
     if err != nil {
-        fmt.Println(err)
+        panic(err)
     }
-    // Write "Hello, World!" to the file
-    _, err = file.WriteString("Hello, World!")
-    // Check for any errors
-    if err != nil {
-        fmt.Println(err)
-    }
-    // Close the file
-    file.Close()
 }
 ```
 
-Running this code will create a file named "my-file.txt" in the same directory as our program, and when we open it, we will see the text "Hello, World!".
+Running this code will create a file called "myfile.txt" in the same directory as our Go file, with the text "Hello, world!" written to it. 
 
-## Deep Dive
+## Deep Dive:
+Writing text files has been a fundamental operation in programming since the early days of computing. However, with the rise of databases and other storage options, text files have become less prevalent. Nevertheless, being able to create and manipulate text files is a useful skill for programmers. 
 
-When writing a text file in Go, we have a few other methods besides `WriteString` that we can use:
+An alternative to using the "ioutil.WriteFile()" function is the "os.OpenFile()" function, which allows for more control over the file operations. Additionally, using the "os.File" type gives us access to methods such as "WriteString()" and "Write()", making it easier to write string or byte data to a file. 
 
-- `Write` - This method takes a byte slice as input and writes it to the file.
-- `WriteAt` - This method allows us to write at a specific position in the file.
-- `WriteByte` - This method takes a single byte as input and writes it to the file.
+## See Also:
+To learn more about the "io/ioutil" package and its functions, check out the official Go documentation: https://golang.org/pkg/io/ioutil/
 
-Additionally, we can also use the `Format` function from the `fmt` package to format our data before writing it to the file. This allows us to include variables, values, and other data types in our text file. For example:
+For an in-depth tutorial on writing text files in Go, check out this article from Learn Go Programming: https://www.learngoprogramming.com/learn-go/write-to-text-file
 
-```
-// Create a file named "my-file.txt" in the current directory
-file, err := os.Create("my-file.txt")
-// Check for any errors
-if err != nil {
-    fmt.Println(err)
-}
-// Write formatted text to the file
-fmt.Fprintf(file, "Today is %s and the time is %d", "Monday", 10)
-```
-
-This will write the text "Today is Monday and the time is 10" to our file.
-
-## See Also
-
-- [Go's os package documentation](https://golang.org/pkg/os/)
-- [A Beginner's Guide to Writing Files in Go](https://www.digitalocean.com/community/tutorials/how-to-write-files-in-go)
+Lastly, for a deeper dive into the "os" package and its "OpenFile()" function, take a look at this tutorial from Go In Examples: https://goinbigdata.com/golang-writing-to-file-efficiently/

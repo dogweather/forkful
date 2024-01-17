@@ -10,47 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ?
+##[What & Why?]
+テキストの検索と置換とは何かを説明するため、プログラマーがこの作業をする理由を紹介します。テキストの検索と置換とは、プログラム内の文字列を検索して、必要に応じて別の文字列で置き換えることを指します。プログラマーはこの作業を行うことで、多数のコードを手作業で変更する手間を省き、効率的にプログラムを開発することができるようになります。
 
-テキストを検索して置換する必要があるかもしれません。例えば、大きな文書がある場合や複数のファイルに同じ修正が必要な場合など、手作業での修正は非常に時間がかかります。コンピューターを使って自動的に検索して置換することで、より効率的に作業を行うことができます。
-
-## 使い方
-
-まず、Javaの `String` クラスの `replace()` メソッドを使用して、テキスト内の特定の文字を置換する方法を見ていきましょう。次のコードを使用して、テキスト内の "Hello" を "こんにちは" に置換する例を示します。
+##[How to:]
+Javaを使用してテキストの検索と置換を行う方法をご紹介します。まずは、下記のコードブロックをコピーして使用してください。
 
 ```Java
-String text = "Hello World!";
-String replacedText = text.replace("Hello", "こんにちは");
-
-System.out.println(replacedText); // Output: こんにちは World!
+// テキストの置換を行うためのメソッドを定義する
+public static void replaceString(String original, String target, String replacement){
+    int index = original.indexOf(target);
+    String newString = original.substring(0, index) + replacement + original.substring(index + target.length());
+    System.out.println(newString);
+}
 ```
 
-さらに、`replace()` メソッドは正規表現を使用して複数の文字を一度に置換することもできます。次のコードでは、"Hello" と "Hi" を一度に "こんにちは" に置換しています。
+上記のコードでは、`replaceString`メソッドを使用して「original」という文字列内の「target」という文字列を「replacement」で置き換えています。例えば、`replaceString("Hello World", "World", "Java")`というコードを実行すると、「Hello Java」という結果が得られます。
 
-```Java
-String text = "Hello World! Hi there!";
-String replacedText = text.replaceAll("Hello|Hi", "こんにちは");
+##[Deep Dive]
+テキストの検索と置換は、プログラミングにおいて非常に重要な役割を果たしてきました。以前は、大量のコードを手作業で修正することが一般的でしたが、テキストの検索と置換を使うことで、簡単かつ迅速にコードを変更することができるようになりました。
 
-System.out.println(replacedText); // Output: こんにちは World! こんにちは there!
-```
+テキストの検索と置換を行う方法は様々ありますが、Javaには`replace()`や`replaceAll()`といったメソッドが用意されており、これらを使用することで簡単にテキストの置換を行うことができます。
 
-また、`replace()` メソッドでは大文字と小文字を区別しないオプションも指定することができます。次のコードでは、"hello" と "HELLO" を同じく "こんにちは" に置換しています。
+また、テキストの検索と置換を行う作業は、プログラムの自動化にも貢献しています。例えば、大きなプロジェクトでは、コードの一部分を変更するだけでも多大な時間を要することがありますが、テキストの検索と置換を使うことで短時間で全てのコードを変更することが可能になります。
 
-```Java
-String text = "Hello World. HELLO there!";
-String replacedText = text.replaceAll("(?i)Hello", "こんにちは");
-
-System.out.println(replacedText); // Output: こんにちは World. こんにちは there!
-```
-
-## 深堀り
-
-上記のコードでは、`replaceAll()` メソッドを使用して複数の文字を一度に置換していますが、`replace()` メソッドを使用すると、1回の置換ごとにオリジナルの文字列がコピーされるため、パフォーマンスが低下します。そのため、複数の文字を置換する場合は `replaceAll()` メソッドを使用することが推奨されています。
-
-また、正規表現を使用することで、より柔軟な検索と置換が可能になります。正規表現を学ぶことで、様々な文字列処理の場面で強力なツールとして活用することができます。
-
-## さらに見る
-
-- [JavaのStringクラスのドキュメント](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
-- [正規表現チュートリアル](https://www.tohoho-web.com/ex/regex.html)
-- [Javaでの正規表現の使用方法について詳しく学ぶ](https://www.baeldung.com/java-regex)
+##[See Also]
+- [JavaのStringクラスのドキュメント](https://docs.oracle.com/javase/jp/8/docs/api/java/lang/String.html)
+- [Regular Expressions in Java](https://docs.oracle.com/javase/jp/8/docs/api/java/util/regex/package-summary.html)
+- [Text Editing: Searching and Replacing in Java](https://www.codeproject.com/Tips/441657/Text-Editing-Searching-and-Replacing-in-Java)

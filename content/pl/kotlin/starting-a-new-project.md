@@ -10,37 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Dlaczego zacząć nowy projekt w Kotlinie?
+## Co i dlaczego?
 
-Kotlin to język programowania, który zyskuje coraz większą popularność w świecie programistów. Po pewnym czasie korzystania z niego, często zaczynamy się zastanawiać, czy nie warto rozpocząć nowego projektu w tym właśnie języku. W tym artykule odpowiemy na pytanie "dlaczego?" oraz pokażemy, jak przejść na Kotlin w prosty sposób.
+W programowaniu, otwarcie nowego projektu oznacza rozpoczęcie pracy nad nowym projektem, który zazwyczaj wymaga utworzenia nowego środowiska i struktury kodu. Programiści często otwierają nowy projekt, gdy potrzebują zacząć od zera lub gdy chcą oddzielić kod od innych projektów.
 
-# Jak to zrobić?
+## Jak to zrobić:
 
-Aby rozpocząć pracę nad nowym projektem w Kotlinie, potrzebujemy przede wszystkim środowiska programistycznego. Możemy skorzystać z wielu dostępnych opcji, takich jak Android Studio, IntelliJ IDEA czy też Eclipse z odpowiednim pluginem. Po zainstalowaniu środowiska, możemy przejść do kodowania w Kotlinie.
-
-```Kotlin
+```kotlin
 fun main() {
-    // przykładowy kod
-    val name = "Jan"
-    println("Witaj, $name!")
+  println("Cześć! Witaj w naszym nowym projekcie!")
 }
 ```
 
-````
-Witaj, Jan!
-````
+```
+Cześć! Witaj w naszym nowym projekcie!
+```
 
-Możemy również skorzystać z narzędzia online, takiego jak Kotlin Playground, aby szybko przetestować nasz kod bez konieczności instalacji środowiska. 
+## Głębsza analiza:
 
-## Pogłębione informacje
+W przeszłości, otwarcie nowego projektu wymagało użycia narzędzi takich jak Maven lub Gradle, aby skonfigurować odpowiednie środowisko i strukturę projektu. Jednak dzięki językowi programowania Kotlin, którego głównym założeniem jest prostota i elastyczność, otwarcie nowego projektu stało się dużo łatwiejsze. Alternatywnym podejściem jest również użycie integracji z środowiskiem programistycznym takim jak IntelliJ IDEA, które pozwala łatwo utworzyć i zarządzać nowymi projektami. W przypadku, gdy programiści chcą rozpocząć pracę nad istniejącym projektem, mogą skorzystać z narzędzi takich jak Git, aby utworzyć nowy branch dla wystarczająco izolowanego środowiska.
 
-Przed rozpoczęciem nowego projektu w Kotlinie, warto zapoznać się z jego podstawowymi konceptami, takimi jak funkcje, zmienne czy typy danych. W ten sposób łatwiej będzie nam zrozumieć składnię i wykorzystanie języka. Dobrym pomysłem jest również przejrzenie popularnych frameworków i narzędzi, które używają Kotlin jako główny język programowania, takich jak Spring czy Ktor.
+## Zobacz też:
 
-Kotlin oferuje wiele zalet, takich jak bezpieczeństwo typów, null-safety czy wygodną składnię, co czyni go atrakcyjnym wyborem dla nowych projektów. Dodatkowo, język ten jest wspierany przez Google jako oficjalny język do tworzenia aplikacji na Androida, co świadczy o jego potencjale.
-
-# Zobacz również
-
-- [Oficjalna strona Kotlina](https://kotlinlang.org/)
-- [Dokumentacja języka Kotlin](https://kotlinlang.org/docs/reference/)
-- [Kotlin Playground](https://play.kotlinlang.org/)
-- [Kotlin na platformie Android](https://developer.android.com/kotlin)
+- Oficjalne dokumentacje Kotlin: https://kotlinlang.org/docs/reference/
+- Poradniki i kursy Kotlin: https://kotlinlang.org/docs/resources.html
+- Alternatywne środowiska programistyczne: https://www.jetbrains.com/idea/

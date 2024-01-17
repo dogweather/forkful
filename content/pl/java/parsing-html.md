@@ -1,7 +1,7 @@
 ---
-title:                "Analiza składni HTML"
-html_title:           "Java: Analiza składni HTML"
-simple_title:         "Analiza składni HTML"
+title:                "Wyszukiwanie html"
+html_title:           "Java: Wyszukiwanie html"
+simple_title:         "Wyszukiwanie html"
 programming_language: "Java"
 category:             "Java"
 tag:                  "HTML and the Web"
@@ -10,58 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i Dlaczego?
+Parsowanie HTML to proces analizowania kodu źródłowego strony internetowej w celu wydobycia danych z określonych tagów HTML. Programiści używają tej techniki do automatycznego przetwarzania i zbierania danych z wielu stron internetowych, co może znacznie ułatwić pracę z dużymi zbiorami informacji.
 
-Masz już dość ręcznego przeglądania i kopiowania danych z stron internetowych? Chcesz poznać sposoby, jak automatycznie wyodrębnić potrzebne informacje z kodu HTML? Właśnie dlatego warto poznać parsing HTML w języku Java!
-
-## Jak to zrobić
-
+## Jak to zrobić:
 ```Java
-//importowanie bibliotek
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.URL;
-import java.util.Scanner;
+// Importuj potrzebne pakiety
+import org.jsoup.Jsoup; 
+import org.jsoup.nodes.Document; 
+import org.jsoup.nodes.Element; 
+import org.jsoup.select.Elements; 
 
-public class HTMLParser {
+// Pobierz kod źródłowy strony internetowej
+Document doc = Jsoup.connect("https://www.example.com").get();
 
-    public static void main(String[] args) {
-        try {
-            //pobranie kodu źródłowego strony
-            URL url = new URL("https://example.com/");
-            InputStream is = url.openStream();
-            Scanner scanner = new Scanner(is);
-
-            //przeszukiwanie kodu linia po linii
-            while (scanner.hasNextLine()) {
-                String line = scanner.nextLine();
-                //wyszukiwanie wybranego tagu HTML
-                if (line.contains("<h1>")) {
-                    //wyodrębnianie tekstu znajdującego się pomiędzy tagami
-                    String result = line.substring(line.indexOf("<h1>") + 4, line.indexOf("</h1>"));
-                    System.out.println(result);
-                }
-            }
-            scanner.close();
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
+// Wybierz elementy z określonym tagiem HTML i wyświetl ich zawartość
+Elements links = doc.select("a");
+for (Element link : links) {
+    System.out.println("Link: " + link.attr("href"));
 }
 ```
 
-Przykładowy output: 
+Wyjście:
 ```
-Hello World!
+Link: https://www.example.com/about
+Link: https://www.example.com/products
+Link: https://www.example.com/contact
 ```
 
-## Głębszy zanurzenie
+## Wnikliwe spojrzenie:
+Parsowanie HTML jest często wykorzystywane w aplikacjach do sczytywania informacji z internetu, takich jak agregatory wiadomości czy narzędzia do automatycznego pobierania danych. Alternatywnym sposobem na przetwarzanie stron internetowych może być użycie narzędzi takich jak Selenium lub regularne wyrażenia, jednak parsowanie HTML jest najbardziej skutecznym sposobem na analizowanie treści stron w większej skali.
 
-Parsing HTML polega na analizowaniu kodu HTML i wyodrębnianiu z niego potrzebnych informacji. W języku Java możemy to osiągnąć za pomocą różnych bibliotek, takich jak JSoup, HTML Parser czy TagSoup. Warto zapoznać się z ich różnicami i możliwościami, a także nauczyć się wykorzystywać XPath do precyzyjnego wyszukiwania węzłów w dokumencie HTML.
-
-## Zobacz także
-
-- [JSoup - biblioteka do parsowania HTML w języku Java](https://jsoup.org/)
-- [HTML Parser - darmowa biblioteka do wyodrębniania danych z kodu HTML](http://htmlparser.sourceforge.net/)
-- [TagSoup - narzędzie umożliwiające parsowanie niepoprawnych dokumentów HTML](https://vrici.lojban.org/~cowan/XML/tagsoup/)
+## Zobacz także:
+- [Dokumentacja Jsoup](https://jsoup.org/)
+- [Porównanie Selenium i Jsoup](https://www.blazemeter.com/blog/selenium-vs-jsoup-which-one-should-you-choose/) 
+- [Przykłady działania na stronie Codecademy](https://www.codecademy.com/articles/how-to-parse-html)

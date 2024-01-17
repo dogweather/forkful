@@ -10,36 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+Cosa & Perché?
+Calcolare una data in futuro o passato è il processo di determinare una data che si trova un certo numero di giorni prima o dopo una data di riferimento. I programmatori spesso eseguono questo calcolo per aggiungere o sottrarre un certo numero di giorni a una data specificata, ad esempio per calcolare la scadenza di un abbonamento o la data di consegna di un ordine.
 
-Calcolare una data nel passato o nel futuro è un'operazione molto utile quando si tratta di gestire dati temporali. Ad esempio, potresti voler sapere quando sarà il compleanno del tuo amico tra 10 anni, oppure quando è stato pubblicato un articolo su un blog.
-
-## Come fare
-
-Per calcolare una data in Java, esistono diverse opzioni. Una delle più semplici prevede l'utilizzo del metodo "add" della classe "Calendar". In questo modo, puoi aggiungere un determinato numero di giorni, mesi o anni a una data esistente. Di seguito un esempio di codice:
-
-```Java
-// Creazione di un oggetto Calendar con la data corrente
-Calendar c = Calendar.getInstance();
-
-// Aggiunta di 1 anno alla data corrente
-c.add(Calendar.YEAR, 1);
-
-// Aggiunta di 6 mesi alla data corrente
-c.add(Calendar.MONTH, 6);
-
-// Output della data risultante
-System.out.println(c.getTime());
+Come fare:
+Per calcolare una data in futuro o passato, è possibile utilizzare la classe `Calendar` di Java. Di seguito è riportato un esempio di codice che calcola la data esatta di 30 giorni fa e la data esatta di 30 giorni in futuro rispetto alla data odierna:
+```Java 
+Calendar cal = Calendar.getInstance(); // ottieni un'istanza della classe Calendar
+cal.add(Calendar.DATE, -30); // sottrai 30 giorni dalla data attuale
+Date dataPassata = cal.getTime(); // ottieni la data risultante come oggetto Date
+cal.add(Calendar.DATE, 60); // aggiungi 60 giorni dalla data attuale
+Date dataFutura = cal.getTime(); // ottieni la data risultante come oggetto Date
+```
+Output:
+```
+Data esatta di 30 giorni fa: Mon May 31 00:00:00 CEST 2021
+Data esatta di 30 giorni in futuro: Wed Jul 28 00:00:00 CEST 2021
 ```
 
-L'output di questo codice sarà la data attuale più 1 anno e 6 mesi. Ovviamente, è possibile personalizzare il codice per ottenere il risultato desiderato.
+Approfondimento:
+La classe `Calendar` di Java è stata introdotta per la prima volta nella versione 1.1 del linguaggio e rappresenta uno dei modi più comuni per gestire le date. Tuttavia, con l'avvento di Java 8, è stata introdotta una nuova classe chiamata `LocalDate` che semplifica notevolmente la gestione delle date e offre funzionalità più specifiche, come ad esempio il calcolo della differenza tra due date.
 
-## Approfondimento
+Per coloro che sono abituati a lavorare con la libreria Joda-Time, una delle alternative più popolari alla classe `Calendar`, è importante notare che Java 8 ha preso ispirazione da questa libreria per la creazione della nuova classe `LocalDate`.
 
-Nel mondo della programmazione, la gestione dei dati temporali può rivelarsi molto complessa. Esistono diverse librerie e strumenti che possono aiutarti a gestire le date in modo più semplice ed efficiente. Ad esempio, la libreria "Joda-Time" offre una vasta gamma di funzioni per la gestione delle date. Inoltre, è importante tenere conto di fattori come i fusi orari e i calendari in uso in determinati paesi quando si lavora con date nel mondo reale.
+Per quanto riguarda l'implementazione, è importante tenere presente che Java utilizza il sistema "anno-mese-giorno" per rappresentare le date, mentre alcuni altri linguaggi come SQL utilizzano il sistema "giorno-mese-anno". Questo può portare a confusione quando si lavora con entrambi i linguaggi, quindi è sempre consigliabile prestare attenzione al formato della data utilizzato.
 
-## Vedi anche
-
-- [Guida completa a Java Date and Time API](https://www.baeldung.com/java-date-time)
-- [Documentazione ufficiale di Java Calendar class](https://docs.oracle.com/javase/8/docs/api/java/util/Calendar.html)
-- [Joda-Time library](https://www.joda.org/joda-time/)
+Vedi anche:
+- [Documentazione ufficiale di Java su `Calendar`](https://docs.oracle.com/javase/8/docs/api/java/util/Calendar.html)
+- [Documentazione ufficiale di Java su `LocalDate`](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
+- [Joda-Time](https://www.joda.org/joda-time/)

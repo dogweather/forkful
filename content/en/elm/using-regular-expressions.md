@@ -10,38 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-If you're new to programming, you may not be familiar with regular expressions. These powerful tools allow you to search and manipulate strings of text with just a few lines of code. Using regular expressions can save you time and energy by streamlining your code and making complex text processing tasks easier.
+Regular expressions are a powerful tool used by programmers to find and manipulate patterns in text. These patterns can include specific words, numbers, or symbols, making them a crucial part of data validation and text processing. 
 
-## How To
+## How to:
 
-Using regular expressions in Elm is simple and straightforward. First, you'll need to import the standard library for regular expressions by adding `import Regex` to the top of your code. Then, you can use the `Regex.fromString` function to create a regular expression pattern. For example:
+To use regular expressions in Elm, first, we need to import the Regex module using the ```import Regex``` statement. Then, we can use the ```Regex.find``` function to search for a specific pattern in a given string. For example, to find all words that start with the letter "a" in a sentence, we can use the following code:
 
-```elm
+```Elm
 import Regex
 
-pattern = Regex.fromString "[a-z]+"
+sentence = "Apples are always delicious."
+
+Regex.find (Regex.regex "a\\w+") sentence
+
 ```
 
-This code creates a regular expression that will match any lowercase letters in a string. Next, you'll need to use the `Regex.find` or `Regex.replace` function to search for or manipulate strings using your pattern. For example:
+The output would be a list of matches, in this case, ["Apples", "always"].
 
-```elm
-string = "Hello regular expressions!"
+We can also use regular expressions for more complex patterns, such as email validation. To validate an email address in Elm, we can use the following code:
 
-matches = Regex.find pattern string
+```Elm
+import Regex
 
--- matches = ["ello","regular","expressions"]
+email = "info@example.com"
+
+Regex.find (Regex.regex "[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}") email
 ```
 
-Here, we use `Regex.find` to search for any matches within our string and return the results as a list. You can also use `Regex.replace` to replace any matches with a specified string.
+The output would be ["info@example.com"] if the email is valid, or an empty list if it is not.
 
-## Deep Dive
+## Deep Dive:
 
-Regular expressions offer a wide range of powerful tools for string manipulation. You can use special characters and symbols to search for patterns such as digits, whitespace, and specific characters. Additionally, you can use modifiers to find variations or repetitions of these patterns. For a full list of available characters and modifiers, check out the [regular expressions documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions).
+Regular expressions have been around since the 1950s and are used in many programming languages, including Elm. They offer a concise and efficient way to find and manipulate text patterns. 
 
-It's important to note that regular expressions can be complex and difficult to read, especially for beginners. Make sure to test and debug your expressions thoroughly to ensure they are working as intended. You can also use online tools, such as [regex101](https://regex101.com/), to help you build and test your expressions.
+While regular expressions can be powerful, they can also be complex and challenging to understand. For simpler text patterns, Elm offers alternative functions such as ```String.startsWith``` and ```String.contains```, which provide an easier way to find specific strings within a given text.
 
-## See Also
+In terms of implementation, regular expressions in Elm are based on the PCRE library and support a wide range of features, including grouping, quantifiers, and character classes. The official Elm website offers detailed documentation on Regex functions and their usage.
 
-For more information on using regular expressions in Elm, check out the official [documentation](https://package.elm-lang.org/packages/elm/regex/latest/) and this [tutorial](https://survivejs.com/elm/parsing/regular-expressions/). Also, consider learning about [functional programming in Elm](https://www.chrisjmendez.com/2016/03/02/functional-programming-with-elm/), as it will help you better understand and utilize regular expressions.
+## See Also:
+
+To learn more about regular expressions in Elm, check out the official Regex documentation at <https://package.elm-lang.org/packages/elm/regex/latest/>. You can also explore other helpful resources, such as online tutorials and forums, to deepen your understanding of this powerful text processing tool.

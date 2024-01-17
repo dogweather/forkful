@@ -10,45 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why:
-Kya aap JSON ke saath kaam karna chahte hain? JSON ek simple aur shaktishali data format hai jo aapko apne application mein data ko store aur transmit karne mein madad karta hai. JSON ismein readable aur easily maintainable strings ka format hai jo APIs aur web services ke liye popular hai.
+## क्या और क्यों?
+क्या आपने कभी जीएसओएन (JSON) का उपयोग किया है? अगर हाँ, तो आपको पता होगा कि यह क्या है। फिर भी, यदि आप वह व्यापारी हैं जो जीएसओएन (JSON) के साथ काम करते हैं, तो आपको यह समझना जरूरी है कि यह क्यों किया जाता है। जीएसओएन (JSON) एक प्रोग्रामिंग के लिए सरल और सुव्यवस्थित माध्यम है जो डेटा को संग्रहीत करने और एक ही फॉर्मेट से एक दूसरे में परिवर्तित करने की अनुमति देता है।
 
-## How To:
-Coding examples aur sample output ke saath ek step-by-step guide:
+## कैसे करें:
+जीएसओएन के साथ काम करने की सबसे सरल तरीके में से एक उदाहरण है। जो सबसे अधिक प्रभाव वाला है। इससे पहले आप प्रोग्राम करने के लिए उपयोग किया जाने वाला है। इस उदाहरण में ```Gleam ... ``` कोड ब्लॉक्स के साथ उपयोग किया गया है जो तेरहवीं पारंपरिक में कर्णाजाल के साथ होता है। जो जीएसओएन (JSON) के कोडिंग के लिए दो उदाहरण नीचे दिए गए है।
+
+मामला १: 
 
 ```Gleam
-// Ek simple JSON object banayein
-let data =
-
-  // Object ke andar string, number, aur boolean values add karein
-  {
-    "name": "John Doe",
-    "age": 25,
-    "isFemale": false
-  }
-
-// JSON object ko convert karein string mein
-let dataString = data|>Json.Encode.encode_pretty(2)
-
-// Output: "{"name": "John Doe", "age": 25, "isFemale": false}"
-
-// Agar aapko kisi key ki value access karni hai
-
-// Object ke key se value retrieve karein
-let name = data["name"]
-
-// Agar aapko array ke andar multiple objects ka data store karna hai
-// Apne array ke size ko pass karein aur uski value ko assign karein
-let customerList: List(Json.Value) = List.repeat(3, data)
-
-// Ab aap JSON ko utilize kar sakte hain apne applications mein!
+Decoding.decode_string('{"name": "John", "age": 30}')
+``` 
+आउटपुट: 
+```Gleam 
+Ok({"name": "John", "age": 30})
 ```
 
-## Deep Dive:
-JSON ke alawa bhi kai data formats aate hain jaise XML, CSV, ya HTML. Lekin JSON ke saath kaam karna asaan aur flexible hai. JSON ko isliye popular choice mana jata hai kyunki ismein data ko easily retrieve aur manipulate kiya ja sakta hai. Iske alawa, kai programming languages mein iska support hota hai aur aap isko use karke data ko cross-platform transmit kar sakte hain. Agar aap JSON ke depth mein jaana chahte hain, to aap JSON Schema, JSON Pointer, aur JSON Web Tokens jaise concepts ko explore kar sakte hain.
+मामला २: 
 
-## See Also:
-Agar aapko JSON ke baare mein aur jaankari chahiye, to aap in links ko check kar sakte hain:
-- JSON Tutorial: https://www.geeksforgeeks.org/json-tutorial/
-- JSON Basics: https://www.w3schools.com/js/js_json.asp
-- Working with JSON in Gleam: https://gleam.run/documentation/json/overview.html
+```Gleam
+Encoding.encode_string({"name": "John", "age": 30})
+```
+
+आउटपुट: 
+```Gleam
+Ok('{"name": "John", "age": 30}')
+```
+
+## गहराई में जाएं:
+जीएसओएन (JSON) का इतिहासिक संबंध बहुत पुराना है। इसकी शुरुआत वर्धमान मामलों (XML) के सामान आधार पर हुई थी। यह मॉर्चिम सफलता के साथ स्टैंडार्ड डेटा फॉरमेट में विकसित हुआ। अन्य विकल्पों में जीएसओएन (JSON) दूसरे साधारण डेटा फॉरमेट हैं। और अंत में, इस माध्यम की सबसे महत्त्वपूर्ण चीज़ों में से एक है हो।
+
+## इससे जुड़े भाग:
+जीएसओएन (JSON) पर काम करते समग्र जानकारी देते हुए। यदि आपको और अधिक जानकारी चाहिए तो आप इन रिसोर्स से जुड़ सकते हैं: 
+
+[जीएसओएन (JSON) डॉक्स](https://www.json.org/json-en.html)
+
+[हमारा प्रोग्रामिंग कीटाबहार](https://gleam.run)
+
+[जीएसओएन (JSON) उदाहरण](https://www.w3schools.com/js/js_json_intro.asp)

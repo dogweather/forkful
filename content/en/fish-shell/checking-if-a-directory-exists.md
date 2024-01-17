@@ -10,54 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-If you're a developer or a system administrator, you may often encounter situations where you need to check if a certain directory exists before running a command. This is important for preventing errors and ensuring smooth execution of your scripts.
+Checking if a directory exists is a way for programmers to determine whether a specific directory exists within the system. This is useful for tasks such as creating a new directory only if it does not already exist, or for checking if a certain file path is valid before performing any actions on it.
 
-## How To
+## How to:
 
-To check if a directory exists in Fish Shell, you can use the `test` command with the `-d` flag. This flag checks if the given path is a directory.
-
+To check if a directory exists in Fish Shell, we can use the `test` command with the `-d` flag. For example:
 ```
-Fish Shell
-if test -d <directory_path>
-    echo "Directory exists!"
-end
+Fish Shell> test -d /home/user/directory
 ```
+This will return a `0` exit code if the directory exists, or a `1` exit code if it does not.
 
-If the directory exists, the `echo` statement will be executed, and if it doesn't, nothing will happen.
-
-You can also use the `and` and `or` operators to perform operations based on the existence of the directory.
-
+We can also use the `if` statement to check for the existence of a directory in a more readable way:
 ```
-Fish Shell
-if test -d <directory_path> and <condition>
-    # do something
-else if test -d <directory_path> or test -d <another_directory_path>
-    # do something else
-end
+Fish Shell> if test -d /home/user/directory
+                 echo "Directory exists!"
+             else
+                 echo "Directory does not exist."
+             end
 ```
 
-This can come in handy when you want to execute different commands based on the existence of different directories.
+## Deep Dive:
 
-## Deep Dive
+In the early days of shell programming, the `test` command was known as `[` and required a closing `]` bracket. This syntax can still be used for POSIX compatibility. Some other shells may also have a dedicated `test` command, but in Fish Shell, it is built in.
 
-The `test` command in Fish Shell is a built-in shell command and is also known as the `[` command. It has various flags for performing different types of tests, including checking the existence of a directory.
+As an alternative to using the `test` command, we can also use the `test` function provided by Fish Shell. This has the advantage of being more readable and easier to use, but it is not POSIX compatible.
 
-In Fish Shell, the keyword `test` is equivalent to the `[` command with the `-f` flag, which checks for the existence of a file. This is why we need to explicitly specify the `-d` flag to check for the existence of a directory.
+Implementation wise, the `test` command checks if the given file path exists and if it is a directory. This is done using the `stat` system call. If the file exists and is a directory, it will return a `0` exit code, otherwise it will return a `1` exit code.
 
-You can also use the `set -q` command to make the code snippet more concise. This command returns `1` if the given path exists, and `0` if it doesn't.
+## See Also:
 
-```
-Fish Shell
-if set -q <directory_path>
-    # do something
-end
-```
-
-With this, you don't need to specify the `-d` flag, as it automatically checks for the existence of a directory.
-
-## See Also
-
-- [Fish Shell documentation on `test` command](https://fishshell.com/docs/current/cmds/test.html)
-- [Fish Shell tutorial on conditional statements](https://fishshell.com/docs/current/tutorial.html#conditional-statements)
+- [Fish Shell documentation on `test`](https://fishshell.com/docs/current/cmds/test.html)
+- [A tutorial on File and Directory Testing in Bash](https://www.gnu.org/software/bash/manual/html_node/Bash-Conditional-Expressions.html)

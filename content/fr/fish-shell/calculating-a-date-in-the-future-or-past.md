@@ -1,7 +1,7 @@
 ---
-title:                "Calculer une date dans le futur ou le passé"
-html_title:           "Fish Shell: Calculer une date dans le futur ou le passé"
-simple_title:         "Calculer une date dans le futur ou le passé"
+title:                "Calculation d'une date dans le futur ou le passé"
+html_title:           "Fish Shell: Calculation d'une date dans le futur ou le passé"
+simple_title:         "Calculation d'une date dans le futur ou le passé"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Dates and Times"
@@ -10,37 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
-Calculer une date future ou passée peut être utile dans de nombreuses situations, comme planifier des événements, gérer des tâches ou simplement suivre le temps qui passe.
+## Quoi & Pourquoi?
+Calculer une date dans le futur ou dans le passé est une pratique courante pour les programmeurs. Cela leur permet de manipuler facilement les dates dans leurs programmes et d'effectuer des calculs tels que l'ajout ou la soustraction de jours, mois ou années à une date donnée.
 
-## Comment faire
-Pour effectuer ces calculs de dates dans Fish Shell, vous pouvez utiliser la commande `date` combinée avec des opérateurs mathématiques et des variables. Par exemple, pour calculer la date dans 3 jours à partir d'aujourd'hui, vous pouvez taper la commande suivante :
-
-```Fish Shell
-date -d "now + 3 days"
+## Comment faire:
+Voici un exemple simple pour calculer une date dans le futur en utilisant la dernière version de Fish Shell : 
+```
+Fish Shell (v3.1.2) ➜ date --date='next week'
+lun. 31 août 2020 00:00:00 CEST
 ```
 
-Et voici ce que vous obtiendrez comme résultat :
-
+Pour calculer une date dans le passé, il suffit d'utiliser l'option `--date` avec une date antérieure à celle actuelle : 
 ```
-mer. 01 déc. 2021 08:21:10 CET
-```
-
-Vous pouvez également spécifier une date de départ à partir de laquelle calculer, en utilisant le format `yyyy-mm-jj`. Par exemple, pour calculer la date dans 1 an et 5 mois à partir du 15 février 2019, vous pouvez utiliser la commande suivante :
-
-```Fish Shell
-date -d "2019-02-15 + 1 year + 5 months"
+Fish Shell (v3.1.2) ➜ date --date='last month'
+mer. 1 juil. 2020 00:00:00 CEST
 ```
 
-Et voici le résultat :
+## Plongée en profondeur:
+Au fil des années, la manipulation des dates a évolué et les programmeurs ont utilisé différentes méthodes pour calculer les dates dans le futur ou dans le passé. Avant l'avènement des shells modernes comme Bash ou Fish, les utilisateurs devaient utiliser des programmes tels que `dateutils` pour effectuer ces calculs. Cependant, avec l'intégration de l'option `--date` dans les shells, cette tâche est devenue beaucoup plus simple et intuitive.
 
-```
-dim. 15 juil. 2020 08:21:10 CEST
-```
+Si vous n'utilisez pas Fish Shell, sachez que d'autres shells comme Bash, Zsh et Ksh offrent également l'option `--date` pour calculer une date spécifique.
 
-## Plongée en profondeur
-La commande `date` utilise la bibliothèque Python `dateutil` pour effectuer les calculs de dates. Vous pouvez donc également utiliser les méthodes de cette bibliothèque directement dans Fish Shell pour des calculs plus avancés. Consultez la documentation de `dateutil` pour plus d'informations sur les fonctions disponibles.
+## Voir aussi:
+Pour plus d'informations sur la manipulation des dates dans Fish Shell, consultez la documentation officielle : https://fishshell.com/docs/current/cmds/date.html
 
-## Voir aussi
-- [Documentation de la commande date](https://fishshell.com/docs/current/commands.html#date)
-- [Documentation de la bibliothèque dateutil](https://dateutil.readthedocs.io/en/stable/)
+Pour en savoir plus sur les différentes méthodes pour calculer les dates dans les shells, vous pouvez également consulter cet article intéressant : https://www.lifewire.com/bash-tutorials-4091007#difference-between-bash-shell-date-and-timestamp

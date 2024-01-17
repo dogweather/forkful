@@ -10,54 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-Sending HTTP requests is a common task in web development. It allows us to communicate with other web servers, retrieve data, and integrate our applications with external services.
+Sending an HTTP request is a fundamental aspect of web development that allows communication between a client (such as a web browser) and a server. Programmers use this process to retrieve data, send information, and perform other actions within web applications.
 
-## How To
+## How to:
 
-Sending an HTTP request in Elixir is straightforward. First, we need to use the `HTTPoison` library, which provides a simple and easy-to-use interface for making HTTP requests.
+To send an HTTP request in Elixir, we can use the `HTTPoison` library, which provides a simple API for making HTTP requests.
 
+First, we need to add `HTTPoison` as a dependency in our `mix.exs` file:
 ```Elixir
-# Import HTTPoison
-import HTTPoison
-
-# Make a GET request to a URL
-response = HTTPoison.get("http://example.com")
-
-# Display the response status code
-IO.inspect response.status_code 
-
-# Display the response body
-IO.inspect response.body
-```
-Sample Output:
-```
-200
-<!DOCTYPE html>
-<html>
-<head>
-<title>Example Domain</title>
-...
-</html>
+defp deps do
+  [
+    {:httpoison, "~> 1.7"}
+  ]
+end
 ```
 
-The first line imports the `HTTPoison` module into our code. Then, we use the `get/1` function to make a GET request to the specified URL. The `get/1` function takes the URL as a parameter and returns a `HTTPoison` response. We can access the status code and body of the response using the `status_code` and `body` fields, respectively.
-
-We can also send other types of HTTP requests, such as POST and PUT, by using the `post/2` and `put/2` functions and passing in the request body as the second parameter.
-
+Then, we can make a GET request by calling the `get/4` function from the `HTTPoison` module and passing in the URL we want to request from:
 ```Elixir
-# Make a POST request with a JSON body
-response = HTTPoison.post("http://example.com/post", %{name: "John", age: 30})
-
-# Make a PUT request with a form body
-response = HTTPoison.put("http://example.com/user", {:form, "name=John&age=30"})
+response = HTTPoison.get("https://example.com")
 ```
+
+We can also make a POST request by passing in additional parameters in the `get/4` function:
+```Elixir
+response = HTTPoison.post("https://example.com", body: "Hello World") 
+```
+
+The `response` variable will contain the result of our HTTP request, which we can access through its `body` attribute. We can then manipulate and process the data as needed for our application.
 
 ## Deep Dive
 
-The `HTTPoison` library is built on top of the `hackney` HTTP client, making it a reliable and performant choice for making HTTP requests in Elixir. It also supports different adapters, such as `:hackney` and `:ibrowse`, allowing us to choose the one that best fits our application's needs. Additionally, `HTTPoison` handles redirects, authentication, and other common HTTP features, making it a convenient option for handling HTTP requests.
+HTTP (Hypertext Transfer Protocol) was first created in the 1990s as a way to transfer data between clients and servers on the World Wide Web. It has since evolved to become the standard protocol for communication on the internet.
 
-See Also
-- [HTTPoison Documentation](https://hexdocs.pm/httpoison/)
-- [Elixir HTTP Clients](https://github.com/h4cc/awesome-elixir#http-clients)
+While `HTTPoison` is a popular library for making HTTP requests in Elixir, there are also other options such as `Mint` and `HTTPotion`.
+
+Under the hood, `HTTPoison` uses Elixir's `HTTP` module, which in turn uses Erlang's `Inets` library to handle the underlying network communication. This allows for a fast, efficient, and reliable way to send HTTP requests in Elixir.
+
+## See Also
+
+- [Official HTTPoison documentation](https://github.com/edgurgel/httpoison)
+- [Alternative HTTP libraries for Elixir](https://elixir.libhunt.com/categories/122-http)
+- [Elixir HTTP module documentation](https://hexdocs.pm/elixir/HTTP.html)

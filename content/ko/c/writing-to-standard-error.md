@@ -1,7 +1,7 @@
 ---
-title:                "표준 에러에 쓰는 방법"
-html_title:           "C: 표준 에러에 쓰는 방법"
-simple_title:         "표준 에러에 쓰는 방법"
+title:                "표준 에러 작성하기"
+html_title:           "C: 표준 에러 작성하기"
+simple_title:         "표준 에러 작성하기"
 programming_language: "C"
 category:             "C"
 tag:                  "Files and I/O"
@@ -10,46 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+## 무엇 & 왜?
 
-표준 오류에 쓰기에 참여할 이유를 짧게 설명합니다. 
+표준 에러 로그에 쓰기란 무엇을 의미하는가? 이것은 프로그래머가 컴퓨터 프로그램에서 나타는 오류 또는 경고 메시지를 기록하는 방법입니다. 이렇게 하면 프로그램이 실행 중에 문제가 발생하면 쉽게 찾아 수정할 수 있습니다.
 
-때로는 디버깅을 위해 프로그램에서 발생하는 오류 메시지를 표준 오류에 출력하는 것이 매우 유용할 수 있습니다. 이를 통해 사람들은 프로그램이 어디서 문제를 일으키고 있는지에 대한 정보를 얻을 수 있습니다. 또한 표준 오류에 메시지를 출력하면 로그 파일을 생성하는 것보다 간단하며 디버깅 과정이 더욱 편리해집니다.
+## 어떻게:
 
-## 어떻게
-
-아래의 예제 코드와 샘플 출력을 살펴보면서 표준 오류에 쓰는 법을 익혀보세요.
-
-```C
+```c
 #include <stdio.h>
 
-int main() {
-    int x = 2;
-    int y = 0;
-    float result;
-
-    if (y == 0) {
-        fprintf(stderr, "Cannot divide by zero!");
-    }
-    else {
-        result = (float)x / y;
-        printf("%d divided by %d is %f", x, y, result);
-    }
-    return 0;
+int main()
+{
+  fprintf(stderr, "Error: division by zero");
+  return 0;
 }
 ```
+위의 예제에서 ``` fprintf(stderr, "Error: division by zero"); ``` 는 표준 에러 로그에 "Error: division by zero" 메시지를 작성하는 방법을 보여줍니다. 만약 이 코드가 실행 중에 오류가 발생하면, 해당 메시지가 표시됩니다.
 
-위의 예제 코드에서는 먼저 `stderr` 파일을 `fprintf()` 함수를 사용하여 열고 메시지를 출력합니다. `stderr`는 표준 오류 파일로서 주로 에러 메시지를 출력하는 데 사용됩니다. 그리고 `printf()` 함수를 사용하여 정상적인 출력을 `stdout` 파일에 하도록 합니다. 이렇게 함으로써 사용자는 오류 메시지와 함께 프로그램의 다른 부분의 출력도 동시에 볼 수 있습니다.
+## 깊이 들어가기:
 
-## 딥 다이브
+### 역사적 맥락:
 
-보통 프로그램에서 오류 메시지를 출력할 때 `fprintf(stderr, ...)`와 같은 방식을 사용합니다. 하지만 여러분은 `perror()`와 같은 더 편리한 함수도 사용할 수 있습니다. `perror()` 함수를 사용하면 오류 메시지와 함께 해당 에러 코드의 의미를 알려줍니다. 예를 들어, `perror("Cannot open file")`를 호출하면 에러 메시지 뒤에 해당 오류 코드의 뜻인 "No such file or directory"가 출력됩니다.
+표준 에러 로그에 쓰기는 오래된 프로그래밍 기술입니다. 이전에는 오류 메시지를 모니터에 직접 출력하는 것이 일반적이었습니다. 그러나 이는 사용자가 보는 것이 아니기 때문에, 프로그래머에게 오류 정보를 전달하는 데 어려움이 있었습니다. 그래서 표준 에러 로그에 쓰기가 만들어졌습니다.
 
-또한 `errno`이라는 전역 변수를 사용하여 발생한 오류의 코드를 얻을 수 있습니다. `errno`이 0이 아닌 값을 가지고 있다면 어떤 오류가 발생했는지 확인할 수 있습니다.
+### 대안:
 
-위에서 소개한 방법들을 사용하면 더욱 편리하게 표준 오류에 쓸 수 있습니다. 하지만 주의할 점은 `stderr` 출력이 크게 성능에 영향을 주지는 않지만, 가능하면 남용하지 않는 것이 좋습니다.
+표준 에러 로그에 쓰기는 오류 정보를 기록하는 가장 일반적인 방법 중 하나입니다. 그러나 다른 방법으로는 파일, 데이터베이스, 또는 로그 파일에 오류를 기록하는 것이 있습니다.
 
-## 참고
+### 구현 세부 정보:
 
-- [C 표준 라이브러리 문서](https://www.gnu.org/software/libc/manual/html_node/Error-Reporting.html)
-- [C 프로그래밍 입문서](https://ko.wikipedia.org/wiki/C_%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8)
+표준 에러 로그에 쓰는 방법은 각 프로그래밍 언어마다 다릅니다. C 프로그래밍 언어에서는 ``` fprintf ``` 함수를 사용하고, Java에서는 ``` System.err.println() ``` 메소드를 사용합니다. 또한, 프로그래밍 언어 외에도 운영 체제에 따라 출력되는 방식이 다를 수 있습니다.
+
+## 관련 자료:
+
+- [C 프로그래밍 언어 공식 문서](https://docs.microsoft.com/ko-kr/cpp/c-runtime-library/reference/fprintf-fprintf-l-output-to-stream)
+- [Java 프로그래밍 언어 공식 문서](https://docs.oracle.com/javase/specs/jls/se8/html/jls-8.html#jls-8.4)
+- [생각보다 중요한 표준 에러 로그에 대해 알아보기](https://medium.com/@rajatmehra0506/the-one-thing-you-should-really-know-about-logging-tools-standard-error-9e6d4c27e1f3)

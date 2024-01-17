@@ -1,7 +1,7 @@
 ---
-title:                "Scrittura di test"
-html_title:           "Gleam: Scrittura di test"
-simple_title:         "Scrittura di test"
+title:                "Scrivere test"
+html_title:           "Gleam: Scrivere test"
+simple_title:         "Scrivere test"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Testing and Debugging"
@@ -10,46 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+## Cosa & Perché?
 
-Scrivere test è un'attività fondamentale nella programmazione moderna. Non solo aiuta a garantire il corretto funzionamento del codice, ma anche a facilitare l'aggiunta di nuove funzionalità e a mantenere il codice pulito e organizzato.
+Scrivere i test è una pratica comune per i programmatori che consiste nel creare piccoli pezzi di codice che verificano la correttezza delle funzioni principali. Questo aiuta a garantire che il programma funzioni correttamente e che non ci siano bug.
 
-## Come fare
+## Come fare:
 
-Per scrivere test efficaci in Gleam, è necessario seguire alcuni semplici passaggi.
-
-1. Definire una funzione di test
-Per prima cosa, è necessario definire una funzione di test che descriva cosa si vuole testare. Ad esempio, se si vuole testare una funzione `double` che raddoppia un numero, si può definire la funzione di test `test_double`.
+Per creare un test in Gleam, utilizziamo la funzione `test` seguita dal nome del nostro test e una funzione che controlla se il nostro codice produce il risultato atteso. Ecco un esempio:
 
 ```
 Gleam
-fn test_double() {
-  assert.equal(double(2), 4)
-}
+  test "addition test" {
+    assert.equal(add(3, 4), 7)
+  }
 ```
 
-2. Utilizzare l'asserzione appropriata
-L'assertion `assert.equal` confronta il valore di output della funzione con quello atteso. Altre asserzioni disponibili includono `assert.not_equal`, `assert.true` e `assert.false`.
-
-3. Eseguire i test
-Per eseguire i test, si può utilizzare il comando `gleam test` seguito dal nome del file contenente la funzione di test.
-
-```
-$ gleam test test_double.gleam
-```
-
-4. Verificare gli output dei test
-Una volta terminata l'esecuzione dei test, si otterrà un output simile a questo:
-
-```
-✓ test_double passed
-```
+Questo test verifica che la funzione `add` restituisca 7 quando viene passato 3 e 4 come argomenti. Se il risultato non è quello atteso, il test fallirà e ci segnalerà il risultato ottenuto.
 
 ## Approfondimento
 
-Scrivere test efficaci in Gleam richiede una buona comprensione dei tipi di dati e delle funzioni. Inoltre, è importante ricordare di testare non solo gli scenari di successo, ma anche quelli di fallimento. Un buon approccio è implementare i test prima di scrivere il codice effettivo, in modo da poter verificare il corretto funzionamento durante lo sviluppo.
+Scrivere test è importante perché ci aiuta a identificare eventuali problemi nel nostro codice prima che venga utilizzato in produzione. Ciò risulta particolarmente utile quando si apportano modifiche al codice, in quanto i test possono aiutarci a individuare dove si è verificato un errore.
 
-## Vedi anche
+Una possibile alternativa ai test è l'utilizzo di strumenti di debugging, ma non sempre questi sono in grado di individuare tutti i problemi nel nostro codice. Invece, i test ci aiutano a individuare eventuali errori in modo più preciso e completo.
 
-- [Documentazione ufficiale di Gleam](https://gleam.run/)
-- [Articolo su come scrivere codice pulito in Gleam](https://www.lucidchart.com/techblog/2018/04/30/writing-beautiful-code-in-gleam/)
+Per quanto riguarda l'implementazione dei test in Gleam, è tornato in auge grazie all'approccio funzionale della programmazione, che rende più semplice scrivere codice testabile e creare funzioni pure senza effetti collaterali.
+
+## Vedi anche:
+
+- [Documentazione ufficiale di Gleam sugli unit test](https://gleam.run/documentation/guides/unit_tests)
+- [Articolo su Medium che spiega l'importanza dei test nel codice](https://medium.com/javascript-scene/why-i-use-tape-instead-of-mocha-so-should-you-6aa105d8eaf4)

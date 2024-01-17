@@ -1,7 +1,7 @@
 ---
-title:                "「httpリクエストの送信」"
-html_title:           "Go: 「httpリクエストの送信」"
-simple_title:         "「httpリクエストの送信」"
+title:                "HTTPリクエストの送信"
+html_title:           "Go: HTTPリクエストの送信"
+simple_title:         "HTTPリクエストの送信"
 programming_language: "Go"
 category:             "Go"
 tag:                  "HTML and the Web"
@@ -10,35 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
-  HTTPリクエストを送信することは、Web開発やAPIの使用など、多くのアプリケーションで重要な機能です。Go言語を使用することで、簡単にHTTPリクエストを送信することができます。
+## 何となぜ？
+HTTPリクエストを送るとは何かと、プログラマーがそれを行う理由を説明する二、三の文。
 
-## 作り方
-  誰でも簡単にHTTPリクエストを送信することができる、Go言語でのコーディング例を紹介します。まず、`net/http`パッケージをインポートします。次に、`http.Get()`を使用して、リクエストを送信します。例えば、Googleのホームページを取得するコードは以下のようになります。
+HTTPリクエストを送るとは、インターネット上のサーバーに対しデータを要求することです。プログラマーはこの方法を使ってデータを取得したり、サーバーにコマンドを送ったりすることができます。
+
+## 方法：
+下記のようなコードブロック内のコーディング例とサンプル出力。
 
 ```Go
-package main
-
+// インポートは必須
 import (
-  "fmt"
-  "net/http"
+    "fmt"
+    "net/http"
 )
 
-func main() {
-  resp, err := http.Get("https://www.google.com/")
-  if err != nil {
-    fmt.Println("Error:", err)
-  }
-  fmt.Println(resp)
+// リクエストを作成する
+req, err := http.NewRequest("GET", "https://example.com", nil)
+
+// リクエストを送信し、レスポンスを取得する
+resp, err := http.DefaultClient.Do(req)
+
+// エラー処理
+if err != nil {
+    fmt.Println(err)
 }
+
+// レスポンスのステータスコードを表示
+fmt.Println(resp.Status)
 ```
 
-上記のコードを実行すると、HTTPリクエストに対するレスポンスが表示されます。HTTPステータスコードやヘッダー情報などを確認することができます。
+### 出力：
+```200 OK```
 
-## ディープダイブ
-  もし必要があれば、より詳細にHTTPリクエストをカスタマイズすることもできます。例えば、HTTPメソッドやリクエストヘッダーを設定することが可能です。詳細な情報は、公式ドキュメントやオンラインのチュートリアルを参考にしてください。
+## 詳しく見る：
+(1)歴史的文脈、(2)代替手段、そして(3)HTTPリクエストの実装についての詳しい情報。
 
-## 関連リンク
-- [Goドキュメント](https://golang.org/doc/)
-- [HTTPリクエストの処理-Microsoft Docs](https://docs.microsoft.com/ja-jp/dotnet/csharp/tutorials/console-webapicall)
-- [GoでHTTPリクエストを送信 - Qiita](https://qiita.com/kd9951/items/51c223e676802b52dc28)
+### 歴史的文脈：
+HTTPリクエストは1991年にティム・バーナーズ＝リーによって開発されました。当初はテキストベースのプロトコルでしたが、現在では画像やビデオなどのメディアでも使用されています。HTTP/2やHTTPSのような新しいバージョンやセキュリティプロトコルも登場しました。
+
+### 代替手段：
+HTTPリクエストの代替手段としては、WebSocketやgRPCなどのプロトコルが存在します。それぞれ異なる用途や利点があり、開発者は必要に応じて適切なプロトコルを選択することができます。
+
+### HTTPリクエストの実装：
+Go言語では、```net/http```パッケージを使用してHTTPリクエストを実装することができます。このパッケージには様々なメソッドや関数が用意されており、簡単にリクエストを作成、送信、取得することができます。
+
+## 関連情報：
+関連する情報源へのリンク。
+
+- [Go言語公式ドキュメント](https://golang.org/pkg/net/http/)
+- [HTTPリクエストの仕組みを理解する](https://developer.mozilla.org/ja/docs/Web/HTTP/Overview)
+- [WebSocketとは？](https://developer.mozilla.org/ja/docs/Web/API/WebSocket/Introduction)

@@ -1,7 +1,7 @@
 ---
-title:                "स्ट्रिंग को निचले भाग में बदलना"
-html_title:           "Go: स्ट्रिंग को निचले भाग में बदलना"
-simple_title:         "स्ट्रिंग को निचले भाग में बदलना"
+title:                "स्ट्रिंग को लोअर केस में रूपांतरण करना"
+html_title:           "Go: स्ट्रिंग को लोअर केस में रूपांतरण करना"
+simple_title:         "स्ट्रिंग को लोअर केस में रूपांतरण करना"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Strings"
@@ -10,45 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Kyu
+## क्या है और क्यों करें?
+कोई भी प्रोग्रामर कोड को लिखते समय अक्सर स्ट्रिंग को लोअर केस में कन्वर्ट करना चाहता है। स्ट्रिंग को लोअर केस में कन्वर्ट करने से स्ट्रिंग में अलग अलग अक्षर दिखाई देते हैं जो कोड लिखने और उसके साथ मानचित्रण करने में आसानी प्रदान करते हैं। 
 
-Agar aap apne Go programming skills ko improve karna chahte hain ya fir abhi tak aapne string ko lower case mein convert karne ka tarika nahi sikha hai, toh yeh article aapke liye hai. Yahan hum jaanenge ki kyu kisi bhi programmer ko string ko lower case mein convert karna jaruri hai.
+## कैसे करें:
+मन में विभिन्न स्ट्रिंग को लोअर केस में कन्वर्ट करने की आवश्यकता हो जाती है। इसके लिए आप ```Go strings.ToLower()`` का उपयोग कर सकते हैं। नीचे दिए गए कोड ब्लॉक में दिखाए गए तरीके से आप भी अपनी स्ट्रिंग को लोअर केस में कन्वर्ट कर सकते हैं।
 
-## Kaise Kare
-
-Agar aap string ko lower case mein convert karna chahte hain, toh aapko `strings` package ka istemal karna hoga. Is package mein `ToLower()` function moujood hai jo kisi bhi string ko lower case mein convert karta hai. Chaliye isko ek code example ke through samajhte hain.
-
-```
-package main
-
-import (
-    "fmt"
-    "strings"
-)
+```Go
+// यहां, हमें strings पैकेज को इम्पोर्ट करने की आवश्यकता हो सकती है।
+import "strings"
 
 func main() {
-    str := "HELLO WORLD"
-    lowerStr := strings.ToLower(str)
-    fmt.Println(lowerStr)
+  // स्ट्रिंग को लोअर केस में कन्वर्ट करें
+  s := "HELLO WORLD"
+  lower := strings.ToLower(s)
+  fmt.Println(lower) // आउटपुट: hello world
 }
-
 ```
 
-Output:
+## गहराई में जायें:
+स्ट्रिंग को लोअर केस में कन्वर्ट करने से पहले, टेक्स्ट प्रोसेसिंग में जो इतिहास छिपा हुआ है उसके बारे में जानना जरूरी है। यहां मुख्य फर्क इस बात में है कि स्ट्रिंग को कैसे प्रकाशित कर सकते हैं और प्रोग्राम के अन्य भागों के साथ कैसे इस्तेमाल किया जा सकता है।
 
-```
-hello world
-```
+अल्टरनेटिव्स के रूप में, आप स्ट्रिंग को लोअर केस में फिर से कॉन्वर्ट कर सकते हैं। आप इसके लिए अलग-अलग स्ट्रिंग मेथड का उपयोग कर सकते हैं।
 
-Is code mein humne `ToLower()` function ka istemal kiya aur `HELLO WORLD` string ko lower case mein convert karke output ke roop mein print kiya. Is tarah se hum kisi bhi string ko lower case mein convert kar sakte hain.
+## और जानें:
+अगर आप अपनी स्ट्रिंगों को कैपिटलाइज़ या अन्य फॉर्मेट में कन्वर्ट करना चाहते हैं, तो आप निम्नलिखित लिंक पर जाकर अन्य स्ट्रिंग मेथड का उपयोग कर सकते हैं।
 
-## Gehri Jankari
-
-Jab bhi ham kisi programming language mein code likhte hain, toh string ka use bahut common hota hai. Isliye string ko lower case mein convert karna bhi bahut zaruri ho jata hai. Yeh string comparison mein help karta hai kyun ki lower case mein likhi gayi string ko comparison karne mein programming language ko jyada samay nahi lagta. Isse code ki execution time bhi kam hoti hai.
-
-## See Also
-
-Ab aapko pata chal gaya hoga ki kyu kisi bhi programmer ko string ko lower case mein convert karna zaruri hai aur kaise hum is task ko asani se kar sakte hain. Agar aapko aur bhi Go programming ke bare mein jaankari chahte hain, toh neeche diye gaye links zarur check kare.
-
-- [Go Language Documentation](https://golang.org/doc/)
-- [Go Language Tour](https://tour.golang.org/welcome/)
+[Go strings package documentation](https://golang.org/pkg/strings/)

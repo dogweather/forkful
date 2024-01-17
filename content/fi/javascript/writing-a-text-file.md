@@ -1,7 +1,7 @@
 ---
-title:                "Tekstitiedoston kirjoittaminen"
-html_title:           "Javascript: Tekstitiedoston kirjoittaminen"
-simple_title:         "Tekstitiedoston kirjoittaminen"
+title:                "Tiedostotiedoston kirjoittaminen"
+html_title:           "Javascript: Tiedostotiedoston kirjoittaminen"
+simple_title:         "Tiedostotiedoston kirjoittaminen"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Files and I/O"
@@ -10,45 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+# Mitä ja miksi?
+Kirjoittaminen tekstitiedostoon on tapa tallentaa tietoja ohjelmassa käytettäväksi myöhemmin. Ohjelmoijat voivat käyttää tätä tietoa esimerkiksi tallentaakseen käyttäjän antamia arvoja tai tulostaa tekstiä käyttäjän nähtäväksi myöhemmin.
 
-Miksi joku haluaisi kirjoittaa tekstitiedostoa? On monia syitä, mutta muutamia yleisimpiä ovat tallennustilan säästäminen, tiedon jakaminen ja koodin dokumentointi.
-
-## Miten
-
-Käyttämällä Javascriptia, voit helposti luoda ja kirjoittaa tekstitiedoston sisältöä. Tässä on yksinkertainen esimerkki:
+# Kuinka tehdä?
+Tässä on esimerkki siitä, kuinka voit kirjoittaa tiedon tekstitiedostoon käyttäen Javascriptia:
 
 ```Javascript
-let fs = require('fs'); // Avaaminen ja kirjoittaminen tiedostoon "testi.txt"
-fs.writeFile('testi.txt', 'Tervetuloa lukijoille!', function (err) {
+const fs = require('fs'); // Importataan tiedostojärjestelmä-moduuli
+
+// Tiedon tallentaminen
+const data = 'Tervetuloa tekstitiedostoon!';
+fs.writeFile('teksti.txt', data, (err) => {
   if (err) throw err;
-  console.log('Tiedot tallennettu!');
+  console.log('Tiedot tallennettu onnistuneesti.');
+});
+
+// Tiedon lisääminen jo olemassa olevaan tiedostoon
+const newData = '\nTämä on uusi rivi.';
+fs.appendFile('teksti.txt', newData, (err) => {
+  if (err) throw err;
+  console.log('Tiedot lisätty onnistuneesti.');
+});
+
+// Tiedon lukeminen tiedostosta
+fs.readFile('teksti.txt', (err, data) => {
+  if (err) throw err;
+  console.log(data.toString());
 });
 ```
 
-Tämän koodin suorittamisen jälkeen löydät "testi.txt" tiedostosta "Tervetuloa lukijoille!" sisällön.
+Tämän koodin tuloksena syntyy tiedosto nimeltä "teksti.txt", joka sisältää seuraavan tekstin:
 
-Voit myös lisätä sisältöä jo olemassa olevaan tekstitiedostoon käyttämällä "appendFile" -toimintoa, kuten tässä:
-
-```Javascript
-fs.appendFile('testi.txt', '\n Tämä on uusi rivi!', function (err) {
-  if (err) throw err;
-  console.log('Tiedot lisätty!');
-});
+```
+Tervetuloa tekstitiedostoon!
+Tämä on uusi rivi.
 ```
 
-Nyt "testi.txt" -tiedostossa on kaksi riviä: "Tervetuloa lukijoille!" ja "Tämä on uusi rivi!".
+# Syväsukellus
+Kirjoittaminen tekstitiedostoon on ollut tärkeä osa ohjelmointia jo pitkään. Aiemmin tätä toimintoa käytettiin enemmän, kun tiedot tallennettiin tietokoneen muistiin eikä pilvipalveluihin ollut vielä mahdollista tallentaa tietoja.
 
-## Syvällinen sukellus
+Javascriptissa on muitakin tapoja tallentaa tietoa, kuten esimerkiksi käyttäen JSON-tiedostoja tai verkkopalveluiden kautta. Kuitenkin tiedoston lukeminen ja kirjoittaminen suoraan tekstitiedostoon on edelleen hyödyllistä esimerkiksi yksinkertaisemmissa ohjelmissa.
 
-Kirjoittaessa tekstitiedostoa Javascriptilla, voit valita erilaisia datatyyppejä, kuten merkkijonoja, numeroita ja taulukoita. Käytä "toString ()" -toimintoa muuttaaksesi erilaiset datatyypit merkkijonoiksi ja lisätä ne tiedostoon.
+Tiedon kirjoittaminen tapahtuu käyttäen Node.js:n fs-moduulia, joka tarjoaa erilaisia metodeja tiedon lukemiseen, kirjoittamiseen ja muokkaamiseen tiedostossa.
 
-Voit myös käyttää "readFile" -toimintoa lukeaksesi tiedostosta ja tallentaa sisällön muuttujaan. Tämä voi olla hyödyllistä, jos haluat käyttää tiedoston sisältöä myöhemmin koodissasi.
-
-## Katso myös
-
-Täältä löydät lisätietoa Javascriptin käytöstä tekstitiedostojen kanssa:
-
-- https://www.w3schools.com/nodejs/nodejs_filesystem.asp
-- https://nodejs.org/api/fs.html
-- https://www.geeksforgeeks.org/javascript-program-to-write-data-in-a-text-file/
+# Katso myös
+Noden viralliset dokumentaatiot tiedoston lukemiseen, kirjoittamiseen ja muokkaamiseen: https://nodejs.org/dist/latest-v14.x/docs/api/fs.html

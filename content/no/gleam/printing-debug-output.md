@@ -10,32 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+Hva & Hvorfor?
 
-Hvorfor vil du bruke tid på å legge til utskriftsfeil i koden din? Vel, feilsøking er en nødvendig del av enhver programmerers jobb, og debug-informasjon er en enkel og effektiv måte å finne og rette feil på. Uten utskriftsfeil kan du bruke unødvendig mye tid på å lete etter og rette feil, noe som kan føre til frustrasjon og dårligere kode.
+Å skrive ut feilsøkingsutdata er en måte for programmører å få informasjon om hvordan programmet deres kjører. Dette kan hjelpe dem med å finne og rette feil i koden sin. Det er også nyttig for å forstå hva som skjer i programmet og hvordan dataene endrer seg underveis.
 
-## Hvordan gjøre det
+Slik gjør du:
 
-For å legge til utskriftsfeil i Gleam, bruker du funksjonen `debug!` med en verdi eller variabel du vil skrive ut som argument. For eksempel:
-
-```Gleam
-debug!(navn)
-```
-
-Dette resulterer i at verdien av variabelen `navn` blir skrevet ut i debug-informasjonen. Du kan også skrive ut en kombinasjon av tekst og variabler ved å bruke en interpolert streng, som dette:
+For å skrive ut feilsøkingsutdata i Gleam, kan du bruke funksjonen `io.format`. For eksempel:
 
 ```Gleam
-debug!("Bestillingsnummer: {}", bestillingsnummer)
+io.format("Debugging output: {} \n", ["Hello, world!"])
 ```
 
-Dette vil skrive ut en melding som inkluderer både teksten "Bestillingsnummer:" og verdien av variabelen `bestillingsnummer`.
+Output:
 
-## Dypdykk
+```
+Debugging output: Hello, world!
+```
 
-Hvis du vil ha mer kontroll over hvordan debug-informasjonen vises, kan du bruke funksjonen `debug` i stedet for `debug!`. Dette lar deg velge et format for utskriften, for eksempel JSON, og angi en fil eller strøm som utgang. Du kan også velge å deaktivere utskrift i produksjonsmiljøet ved å bruke `debug_disabled`.
+Dykk ned i detaljene:
 
-## Se også
+Skriving av feilsøkingsutdata har vært en høyt elsket metode blant programmører i mange år. Selv om det finnes alternative metoder som for eksempel å bruke en interaktiv debugger, er det fortsatt en enkel og effektiv måte å få innsikt i programmet ditt på. I Gleam, kan du også bruke `log`-funksjonen for å skrive ut meldinger, men `io.format` gir deg mer kontroll over formateringen og utdataen.
 
-- [Offisiell dokumentasjon for debug-modulen](https://gleam.run/modules/gleam_debug/latest)
-- [Video tutorial om å legge til debug-informasjon i Gleam](https://www.youtube.com/watch?v=ocqBMDl7xZY) 
-- [Gleam slack community - #debug channel](https://gleam-lang.slack.com/archives/C01HS9MGLG0)
+Se også:
+
+- [Gleam dokumentasjon](https://gleam.run/book/tutorials/logging.html)
+- [En oversikt over feilsøkingsmetoder i programmering](https://www.freecodecamp.org/news/7-debugging-techniques-any-developer-should-know/)
+- [Diskusjon om fordelene og ulempene ved å skrive ut feilsøkingsutdata](https://stackoverflow.com/questions/885908/good-way-to-log-code)

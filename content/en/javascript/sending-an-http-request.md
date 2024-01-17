@@ -10,31 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-Sending an HTTP request is a fundamental task in web development. It allows your application to communicate with servers and retrieve data, making it necessary for any type of dynamic web application or website.
+Sending an HTTP request is a way for web applications to communicate with servers. Essentially, it is a request sent to a server asking for information or actions to be performed. Programmers use this feature to make web applications interactive, dynamic, and to provide a way for users to access data from a server.
 
-## How To
+## How to:
 
-Sending an HTTP request involves using the `fetch()` function in Javascript. This function takes in a URL as a parameter and returns a `Promise` which can be used to access the response data. Here's an example:
+Sending an HTTP request in Javascript is a simple process. First, we need to create an instance of the XMLHttpRequest object. This object allows us to send the request and handle the response from the server. Let's see an example:
 
 ```
-Javascript
-fetch('http://www.example.com')
-  .then(response => response.text())
-  .then(data => console.log(data));
+const request = new XMLHttpRequest();
 ```
 
-In this example, we are sending a `GET` request to the URL `http://www.example.com` and accessing the response as plain text. We can also specify other types of data, such as `JSON` or `blob`, depending on the type of response we expect to receive.
+Next, we need to specify the URL we want to send the request to, along with the HTTP method we want to use. For example, we can use the `open()` method to set the method and URL:
 
-## Deep Dive
+```
+request.open("GET", "https://example.com");
+```
 
-Apart from the `fetch()` function, there are other ways to send an HTTP request in Javascript. One alternative is using the `XMLHttpRequest` object, which has been around for a long time and has been the go-to method for sending requests in older browsers. However, with the introduction of `fetch()`, it has become the preferred method due to its simplicity and built-in support for promises.
+Then, we can send the request using the `send()` method:
 
-When sending a request, it's essential to handle any potential errors that may occur. For this, we use the `catch()` method to catch any errors that may arise during the request. It's also a good practice to set headers for your request, which can be done using the `Headers` object.
+```
+request.send();
+```
 
-## See Also
+Now, we can handle the response from the server. We can set a function to be called when the server responds using the `onreadystatechange` event:
 
-- [MDN Web Docs: fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)
-- [MDN Web Docs: XMLHttpRequest](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest)
-- [MDN Web Docs: Headers](https://developer.mozilla.org/en-US/docs/Web/API/Headers)
+```
+request.onreadystatechange = function() {
+  if (this.readyState == 4 && this.status == 200) {
+    console.log(this.responseText); // display the response from the server
+  }
+}
+```
+
+## Deep Dive:
+
+HTTP (Hypertext Transfer Protocol) was developed by Tim Berners-Lee in the early 1990s as a way to transfer data between a web server and a web browser. Before the implementation of HTTP, communication between servers and clients was limited and mostly manual.
+
+There are other ways to send requests in Javascript, such as using the `fetch` API or libraries like Axios. These methods typically use promises to handle the response instead of the `onreadystatechange` event.
+
+When sending an HTTP request, there are multiple methods that can be used, such as GET, POST, PUT, DELETE, etc. Each has its own purpose and restrictions, and it is essential to choose the appropriate one based on the desired outcome.
+
+## See Also:
+
+To learn more about sending HTTP requests in Javascript, check out these resources:
+
+- [MDN Web Docs - XMLHttpRequest](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest)
+- [MDN Web Docs - Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
+- [Axios Github Page](https://github.com/axios/axios)

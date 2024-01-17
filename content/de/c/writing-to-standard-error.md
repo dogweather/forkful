@@ -1,7 +1,7 @@
 ---
-title:                "Schreiben auf die Standardfehlerausgabe"
-html_title:           "C: Schreiben auf die Standardfehlerausgabe"
-simple_title:         "Schreiben auf die Standardfehlerausgabe"
+title:                "Schreiben auf den Standardfehler"
+html_title:           "C: Schreiben auf den Standardfehler"
+simple_title:         "Schreiben auf den Standardfehler"
 programming_language: "C"
 category:             "C"
 tag:                  "Files and I/O"
@@ -10,37 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Warum
+# Was ist das Schreiben auf den Standardsfehler und warum machen es Programmierer?
 
-Neben der Standardausgabe (STDOUT) gibt es in der C-Programmierung auch die Möglichkeit, Daten an den Standardfehlerausgang (STDERR) zu schreiben. Dies ist zum Beispiel nützlich, um Fehlermeldungen oder Debugging-Informationen während der Ausführung eines Programms auszugeben.
+Das Schreiben auf den Standardsfehler (englisch: Standard Error), auch bekannt als stderr, ist ein Weg für Programmierer, Fehler- und Diagnoseinformationen während der Programm-Ausführung auszugeben. Durch das Schreiben auf stderr können Programmierer Fehler in ihrem Code identifizieren und beheben, was letztendlich zu einer besseren und stabileren Software führt.
 
 # Wie geht das?
 
-Die Funktion `fprintf()` kann verwendet werden, um Daten an den Standardfehlerausgang zu schreiben. Sie benötigt als ersten Parameter einen Zeiger auf den Ausgabestrom `stderr` und als zweiten Parameter einen Format-String, der angibt, wie die Daten formatiert werden sollen. Hier ein Beispielcode:
+Das Schreiben auf den Standardsfehler ist in C sehr einfach. Mit der Funktion `fprintf` kann man Nachrichten und Variablenwerte direkt auf stderr ausgeben. Hier ist ein Beispiel, welches einen Fehler meldet, wenn eine Datei nicht geöffnet werden kann:
 
 ```C
-#include <stdio.h>
-
 int main(){
-    int num = 5;
-    fprintf(stderr, "Die Zahl ist %d\n", num);
-    return 0;
+    FILE* file;
+    file = fopen("meine_datei.txt", "r");
+    if (file == NULL) {
+        fprintf(stderr, "Fehler beim Öffnen der Datei!");
+        return 1;
+    }
+    // weiterer Code
 }
 ```
 
-Die Ausgabe dieses Programms wird auf dem Standardfehlerausgang geschrieben und somit als Fehlermeldung angezeigt:
+Wenn die Datei `meine_datei.txt` nicht geöffnet werden kann, wird die Fehlermeldung "Fehler beim Öffnen der Datei!" auf stderr ausgegeben. Diese Nachricht kann dann von einem Entwickler gelesen werden, um den Fehler zu finden und zu beheben. 
 
-```
-Die Zahl ist 5
-```
+# Tiefer tauchen
 
-# Tiefer eintauchen
+Während das Schreiben auf stderr ein sehr einfaches und nützliches Werkzeug für Programmierer ist, gibt es auch alternative Methoden, um Fehlermeldungen auszugeben. Eine bekannte Alternative ist das Schreiben auf den Standardsausgang (englisch: Standard Output), oder stdout. Hier werden Nachrichten als Teil der normalen Programmausgabe ausgegeben. Dies kann nützlich sein, um Benutzer über den Fortschritt des Programms zu informieren. 
 
-Die Verwendung von `fprintf()` zum Schreiben auf den Standardfehlerausgang ist besonders nützlich, wenn es um das Debugging von Programmen geht. Durch die Ausgabe von Variablenwerten oder Meldungen auf dem Standardfehlerausgang können Entwickler schnell sehen, wo mögliche Fehler auftreten.
+Es ist auch wichtig zu beachten, dass stderr und stdout in der Regel nicht direkt vom Programmierer gelesen werden können. Stattdessen werden sie in einem Terminal oder einer virtuellen Konsole ausgegeben, wo der Benutzer sie lesen kann. Eine weitere wichtige Eigenschaft von stderr ist, dass es ungepuffert bleibt, was bedeutet, dass Nachrichten sofort ausgegeben werden, im Gegensatz zu stdout, wo sie in einem Buffer gespeichert und später ausgegeben werden. 
 
-Es ist auch wichtig zu beachten, dass der Standardfehlerausgang nicht gepuffert ist, im Gegensatz zur Standardausgabe. Das bedeutet, dass die Ausgabe sofort angezeigt wird und nicht auf eine neue Zeile oder auf ein `fflush()` wartet.
+Zusätzlich zur Verwendung von `fprintf` gibt es auch die Möglichkeit, den Präprozessorbefehl `#error` zu verwenden, um Fehlermeldungen während der Übersetzung des Programms zu erzeugen. Dies kann nützlich sein, um beispielsweise auf bestimmte Plattformen oder Compiler-Versionen hinzuweisen, die nicht unterstützt werden.
 
-# Siehe auch
+# Weiterlesen
 
-- [fprintf() Dokumentation](https://www.cplusplus.com/reference/cstdio/fprintf/)
-- [Quick Guide to C Error Handling](https://www.codingame.com/playgrounds/14213/how-to-handle-errors-in-c/error-handling)
+- [Offizielle C-Dokumentation zu `fprintf`](https://www.cplusplus.com/reference/cstdio/fprintf/)
+- [Eine Einführung in die Standard Streams in C](https://www.codingame.com/playgrounds/14213/understanding-c-inputs-and-outputs)
+- [Detaillierter Artikel über stderr und stdout in C](https://www.geeksforgeeks.org/understanding-stderr-stdout-linux/)

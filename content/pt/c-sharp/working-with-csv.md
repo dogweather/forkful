@@ -10,68 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que utilizar CSV
+## O que é CSV e por que os programadores o usam?
 
-Se você é um programador C# ou está apenas começando a aprender essa linguagem de programação, é provável que já tenha ouvido falar sobre arquivos CSV. Mas, afinal, por que tantas pessoas trabalham com eles?
+CSV é um formato de arquivo utilizado para armazenar dados de maneira simples e eficiente. Ele consiste em uma lista de valores separados por vírgulas, onde cada linha representa uma entrada de dados. Programadores muitas vezes usam CSV para importar ou exportar dados de um programa para outro, ou para armazenar dados estruturados em um formato legível por humanos.
 
-Bem, a resposta é simples: CSV, ou "Comma Separated Values", é um formato de arquivo simples e amplamente utilizado para armazenar, organizar e compartilhar dados. É especialmente útil para armazenar dados tabulares, como planilhas ou tabelas, e pode ser facilmente importado e exportado por muitos softwares e bancos de dados.
+## Como fazer:
 
-## Como utilizar CSV em C#
+Para trabalhar com CSV em C#, você pode usar a biblioteca padrão "System.IO", que fornece a classe "StreamReader" para ler arquivos e a classe "StreamWriter" para escrever em arquivos. Primeiro, é preciso abrir o arquivo CSV usando a classe "StreamReader", informando o caminho do arquivo como parâmetro. Em seguida, é possível usar a função "ReadLine()" para ler cada linha do arquivo. Para separar os valores da linha, basta usar o método "Split()" e passar como argumento o delimitador desejado, geralmente uma vírgula. Depois disso, é possível manipular os dados como desejar. Abaixo, segue um exemplo simples de leitura e escrita em um arquivo CSV:
 
-Agora que você conhece a utilidade do formato CSV, vamos dar uma olhada em como é simples e fácil trabalhar com ele em C#.
-
-Para começar, é necessário importar o namespace `System.IO`, que contém classes para operações de entrada e saída de dados, incluindo a classe `StreamReader` que nos permitirá ler um arquivo CSV:
-
-```C#
+```
 using System.IO;
-```
 
-Em seguida, podemos usar o método `ReadLine()` da classe `StreamReader` para ler cada linha do arquivo CSV e armazená-la em uma variável. Para isso, precisaremos abrir e criar uma instância da classe `StreamReader` com o caminho do arquivo CSV como parâmetro:
+// Lendo arquivo CSV
+StreamReader reader = new StreamReader("arquivo.csv");
 
-```C#
-StreamReader reader = new StreamReader(@"C:\Users\Usuario\arquivo.csv");
-string linha;
-while((linha = reader.ReadLine()) != null)
+// Escrevendo em arquivo CSV
+StreamWriter writer = new StreamWriter("arquivo.csv");
+
+string line = "";
+
+// Lendo cada linha do arquivo
+while((line = reader.ReadLine()) != null)
 {
-    // aqui você pode fazer o que quiser com a linha do arquivo
+    // Separando valores da linha
+    string[] values = line.Split(',');
+
+    // Fazendo alterações nos valores
+    values[1] = values[1] * 2;
+
+    // Escrevendo alterações no arquivo
+    writer.WriteLine(string.Join(",", values));
 }
-```
 
-Com a linha do arquivo armazenada em uma variável, podemos realizar diferentes tarefas, como separar os valores em colunas, processar os dados e salvá-los em uma estrutura de dados ou imprimir na tela.
-
-Por exemplo, se quisermos armazenar cada valor em uma lista de strings, podemos usar o método `Split()` para separar os valores com base no caractere de separação, que por padrão é a vírgula (`,`) em arquivos CSV:
-
-```C#
-string[] valores = linha.Split(',');
-```
-
-E para imprimir esses valores na tela, podemos usar um loop `foreach`:
-
-```C#
-foreach(string valor in valores)
-{
-    Console.WriteLine(valor);
-}
-```
-
-Por fim, para garantir que o arquivo seja fechado corretamente e liberar os recursos utilizados, é importante utilizar o método `Close()` da classe `StreamReader`:
-
-```C#
+// Fechando arquivos
 reader.Close();
+writer.Close();
 ```
 
-## Aprofundando-se em CSV
+## Mergulho profundo:
 
-Agora que você já sabe como ler um arquivo CSV em C#, é importante conhecer alguns detalhes importantes sobre o formato.
+O formato CSV é amplamente utilizado desde a década de 1970 para facilitar a troca de dados entre diferentes sistemas. Ele é um formato simples e leve, o que o torna popular entre os programadores. Além disso, por ser um arquivo de texto, é facilmente editável por qualquer pessoa com um editor de texto básico. No entanto, existem outros formatos de arquivos de dados mais avançados, como JSON e XML, que podem ser mais adequados para determinadas situações.
 
-Embora a maioria dos arquivos CSV sejam separados por vírgulas, as versões mais recentes também permitem outros caracteres de separação, como ponto e vírgula (`;`). Além disso, é possível que os dados estejam delimitados por aspas (`"`), principalmente quando os valores contêm o caractere de separação.
-
-Também é importante ter em mente que arquivos CSV podem não seguir um padrão rígido, podendo conter diferentes tipos de delimitadores, formatos de data e hora, etc. Por isso, é sempre bom testar o seu código com diferentes arquivos para garantir que tudo esteja funcionando corretamente.
-
-A documentação oficial da linguagem C# também possui uma classe `CsvReader` que facilita o trabalho com arquivos CSV e pode ser uma ótima opção caso você precise lidar com arquivos mais complexos ou queiram uma solução pronta.
-
-## Veja também
+## Veja também:
 
 - [Documentação oficial do C#](https://docs.microsoft.com/pt-br/dotnet/csharp/)
-- [Referência da classe CsvReader](https://docs.microsoft.com/pt-br/dotnet/api/microsoft.visualbasic.fileio.textfieldparser?view=netframework-4.8)
-- [Tutorial: Como trabalhar com arquivos CSV em C#](https://www.codeproject.com/Articles/415732/Reading-and-Writing-CSV-Files-in-Csharp)
+- [Tutorial sobre leitura e escrita em arquivos CSV em C#](https://www.c-sharpcorner.com/article/export-import-csv-file-in-c-sharp/)

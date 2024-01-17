@@ -1,7 +1,7 @@
 ---
-title:                "Invio di una richiesta http con autenticazione di base"
-html_title:           "Gleam: Invio di una richiesta http con autenticazione di base"
-simple_title:         "Invio di una richiesta http con autenticazione di base"
+title:                "Inviare una richiesta http con autenticazione di base"
+html_title:           "Gleam: Inviare una richiesta http con autenticazione di base"
+simple_title:         "Inviare una richiesta http con autenticazione di base"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "HTML and the Web"
@@ -10,40 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
-Ci sono molte ragioni per cui potresti voler inviare una richiesta HTTP con l'autenticazione di base. Ad esempio, potresti essere un sviluppatore che lavora su un'API e hai bisogno di autenticare gli utenti per gestire le autorizzazioni. Oppure potresti essere un utente che sta cercando di accedere a un sito che richiede un login per accedere ai contenuti.
+## Cosa e Perché?
+In questo articolo, parleremo di come inviare una richiesta HTTP con l'autenticazione di base utilizzando il linguaggio di programmazione Gleam. Ma prima di addentrarci nei dettagli, vediamo brevemente di cosa si tratta e perché i programmatori lo fanno. In poche parole, l'autenticazione di base è un metodo di sicurezza che richiede un nome utente e una password per accedere a determinate informazioni o servizi su Internet. I programmatori spesso utilizzano questo metodo per proteggere i dati sensibili e garantire l'accesso solo agli utenti autorizzati.
 
-## How To
-Per inviare una richiesta HTTP con l'autenticazione di base in Gleam, è necessario utilizzare la funzione `Request.basic_auth` e fornire le credenziali necessarie come parametri. Ecco un esempio di codice che illustra come farlo:
-
-```Gleam
-let username = "utente"
-let password = "password"
-let request = Request.basic_auth("http://www.esempio.com/api", username, password)
-```
-
-Il codice sopra creerà una richiesta con l'URL specificato e includerà le credenziali di autenticazione nella sua intestazione.
-
-Per visualizzare l'output della richiesta, è possibile utilizzare la funzione `Response.body_text` per estrarre il corpo della risposta come testo. Ecco un esempio completo di come inviare una richiesta con l'autenticazione di base e stampare il risultato:
+## Come fare:
+Per inviare una richiesta HTTP con l'autenticazione di base, dobbiamo prima importare la libreria http in Gleam. Quindi possiamo utilizzare la funzione `basic_auth_request`, specificando il metodo di richiesta, l'URL e le credenziali di autenticazione come argomenti. Di seguito è riportato un esempio di codice Gleam che mostra come inviare una richiesta GET con l'autenticazione di base:
 
 ```Gleam
-let username = "utente"
-let password = "password"
-let request = Request.basic_auth("http://www.esempio.com/api", username, password)
-let response = Http.send(request)
-let body = Response.body_text(response)
-Log.info(body)
+import http
+
+basic_auth_request("GET", "https://api.example.com", "username", "password")
 ```
+L'output di questa richiesta sarà una risposta con i dati richiesti o un codice di errore, se l'autenticazione fallisce.
 
-Questo codice invierà una richiesta al sito `www.esempio.com` con le credenziali di autenticazione fornite e stamperà il testo della risposta.
+## Approfondimento:
+L'autenticazione di base è stata introdotta per la prima volta nel protocollo HTTP nel 1999 come un modo semplice per autenticare gli utenti. Sebbene sia ancora ampiamente utilizzata, è stata criticata per la sua mancanza di sicurezza e la mancanza di supporto per la gestione delle sessioni. Per questo motivo, molte alternative più sicure sono state sviluppate, come l'autenticazione digest e l'autenticazione a chiave pubblica.
 
-## Deep Dive
-L'autenticazione di base è uno dei metodi più semplici per autenticare una richiesta HTTP. Consiste nell'inviare le credenziali (generalmente nome utente e password) come stringhe nella richiesta. Tuttavia, questo metodo non è sicuro poiché le credenziali sono inviate in chiaro e possono essere intercettate da terzi.
+Per implementare l'autenticazione di base in Gleam, la libreria http utilizza il campo di intestazione HTTP "Authorization" per includere le credenziali di autenticazione nella richiesta. Le informazioni di autenticazione sono codificate in Base64 per garantire la riservatezza durante il trasferimento dei dati.
 
-Per aumentare la sicurezza, è possibile utilizzare la codifica Base64 per codificare le credenziali prima di inviarle nella richiesta. In questo modo, le credenziali saranno meno leggibili e più difficili da intercettare.
+## Vedi anche:
+Se vuoi approfondire l'argomento o scoprire altre alternative all'autenticazione di base, ecco alcuni link utili:
 
-Inoltre, è importante notare che l'autenticazione di base non supporta il concetto di sessioni. Ogni richiesta deve contenere le credenziali per essere autenticata, quindi non c'è un sistema di autenticazione persistente come per le sessioni.
+- Documentazione Gleam sull'utilizzo della libreria http: https://gleam.run/modules/http.html
+- Articolo sulle differenze tra autenticazione di base e autenticazione digest: https://www.mishpati.co.il/using-http-basic-over-https/
+- Spiegazione dettagliata su come funziona l'autenticazione di base: https://www.httpwatch.com/httpgallery/authentication/#basicbasic
+- Documentazione ufficiale del protocollo HTTP che spiega l'utilizzo dell'intestazione "Authorization": https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.8
 
-## See Also
-- [Documentazione ufficiale di Gleam su richieste HTTP](https://gleam.run/modules/http.html)
-- [Articolo su autenticazione di base su Wikipedia](https://it.wikipedia.org/wiki/Basic_access_authentication)
+Con queste risorse, sei pronto per utilizzare l'autenticazione di base nelle tue applicazioni Gleam!

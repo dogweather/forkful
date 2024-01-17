@@ -10,49 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ダウンロードする理由
+## 何がそんなに面白いの？
 
-Webページをダウンロードすることで、ウェブコンテンツをオフラインで閲覧したり、ブログやニュースサイトの記事を保存したりすることができます。また、自分のプログラムやアプリケーションの一部としてウェブスクレイピングを用いることもできます。
+ウェブページをダウンロードすることは、インターネット上でデータを入手するために一般的に使用されている方法です。プログラマーにとって、ウェブページをダウンロードすることは、データの収集や処理に役立ちます。
 
-## ダウンロードの方法
-
-まず、必要なライブラリをインポートします。
+## 方法：
 
 ```Haskell
+{-# LANGUAGE OverloadedStrings #-}
+
+-- ライブラリをインポート
 import Network.HTTP.Simple
-import qualified Data.ByteString.Lazy.Char8 as L8
-```
 
-次に、`httpSimpelRequest`を使ってウェブサイトのURLを与えてリクエストを作成します。
+-- 指定したURLからウェブページをダウンロード
+getResponse :: IO ()
+getResponse = do
+    response <- httpLBS "https://www.google.com"
+    putStrLn $ "Status code: " ++ show (getResponseStatusCode response)
+    print $ getResponseBody response
+```
+出力：
 
 ```Haskell
-request <- parseRequest "https://example.com"
+Status code: 200
+<!doctype html><html itemscope="" itemtype="http://schema.org/WebPage" lang="ja"><head><meta content="Google" itemprop="name"/><meta content="Google.co.jp は すぐにアクセスできる、無料のウェブサイトです。インターネットをもっと楽しく、便利に使いましょう。" name="description"><meta content="nocache" name="robots"><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><meta content="width=device-width,initial-scale=1" name="viewport"><title>Google</title><script nonce="kFM1USUziR6d5foEHDRKsg==">(function(){var aa=aa||{};...
 ```
 
-リクエストを実行してレスポンスを得るには、`httpLBS`関数を使います。
+## 深入り：
 
-```Haskell
-response <- httpLBS request
-```
+ウェブページのダウンロードは、HTTPプロトコルを使用して行われます。このプロトコルは、クライアント（ウェブブラウザやプログラム）がサーバーとやり取りするためのルールを定めたものです。HTTPプロトコル以外にも、FTPやSFTPなどのプロトコルを使用してダウンロードすることもできます。
 
-レスポンスからコンテンツを抽出するためには、`getResponseBody`関数を使います。
+## 関連情報：
 
-```Haskell
-body <- getResponseBody response
-```
-
-抽出したコンテンツはバイト文字列として返されるため、必要に応じて文字列に変換することができます。
-
-```Haskell
-let content = L8.unpack body
-```
-
-## 詳細を深く掘り下げる
-
-ウェブページをダウンロードするにはさまざまな方法があります。例えば、`httpSimpelRequest`の代わりに`httpSimpelRequestBS`を使うことで、レスポンスをバイト文字列ではなくテキストとして直接受け取ることができます。また、パラメータを追加することで、リクエストをカスタマイズすることもできます。詳細については、Haskellのドキュメントを参照してください。
-
-## 他にも参考になる記事
-
-- [Haskellで簡単なウェブスクレイピング](https://qiita.com/yuyakato/items/7c3f1f1693fb8e0df803)
-- [HaskellのHTTP Simpleパッケージのドキュメント](https://hackage.haskell.org/package/http-client)
-- [Haskellでウェブスクレイピングをする方法](https://qiita.com/emergent/items/9fd00405254468c09801)
+[HTTPリクエストを取り扱うHaskellライブラリ](https://hackage.haskell.org/package/http-client)

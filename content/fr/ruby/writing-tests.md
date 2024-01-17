@@ -1,7 +1,7 @@
 ---
-title:                "Écriture de tests"
-html_title:           "Ruby: Écriture de tests"
-simple_title:         "Écriture de tests"
+title:                "Ecrire des tests"
+html_title:           "Ruby: Ecrire des tests"
+simple_title:         "Ecrire des tests"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Testing and Debugging"
@@ -10,52 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Quoi & Pourquoi?
 
-Si vous êtes un développeur Ruby et que vous passez des heures à écrire du code, vous savez à quel point il peut être frustrant de découvrir des bugs lors de l'exécution de votre programme. C'est là qu'interviennent les tests - ils vous aident à identifier et à corriger ces bugs dès le départ, vous faisant gagner du temps et des maux de tête à long terme.
+Les tests de code sont des morceaux de code écrits pour vérifier si d'autres morceaux de code fonctionnent comme ils le devraient. Les programmeurs effectuent des tests pour s'assurer que leur code est sans erreur et fonctionne correctement. Cela peut aider à prévenir les bugs et à garantir que le code est de qualité.
 
-## Comment faire
+## Comment faire:
 
-Pour écrire des tests en Ruby, vous pouvez utiliser le framework de test intégré appelé MiniTest. Voici un exemple de test pour une méthode qui calcule la somme de deux nombres :
+```ruby 
+require 'test/unit' 
 
-```Ruby
-require 'minitest/autorun'
-
-def sum(a, b)
-  a + b
+def additionner(x, y)
+    x + y
 end
 
-class TestSum < Minitest::Test
-  def test_sum
-    assert_equal 5, sum(2, 3)
-  end
+class TestAddition < Test::Unit::TestCase 
+    def test_additionner 
+        assert_equal(4, additionner(2, 2)) 
+    end 
 end
 ```
 
-Lorsque vous exécutez le test, vous verrez le résultat suivant :
+```ruby
+Costumes = ["Batman", "Superman", "Wonder Woman"]
 
+Test::Unit::TestCase 
+
+def setup 
+    @costumes = Costumes 
+end
+
+def test_heroes 
+    assert_equal("Batman", Costumes[0]) 
+    assert_equal("Wonder Woman", Costumes[2]) 
+end 
 ```
-Run options: --seed 32810
 
-# Running:
+### Résultat de l'exécution:
 
-.
+Exécutez vos tests en utilisant la commande `ruby nom_du_fichier_test.rb`.
 
-Finished in 0.000887s, 1126.5245 runs/s, 1126.5245 assertions/s.
+![Test results output](link_to_image)
 
-1 runs, 1 assertions, 0 failures, 0 errors, 0 skips
-```
+## Deep Dive:
 
-Comme vous pouvez le voir, le test a été réussi avec une assertion valide. Vous pouvez ajouter d'autres tests pour couvrir plusieurs cas d'utilisation et vous assurer que votre méthode fonctionne correctement.
+Historiquement, les tests étaient écrits après le code, mais de nos jours, en utilisant des méthodes telles que le développement piloté par les tests (TDD), les tests sont écrits avant le code. Cela peut aider à créer un code plus modulaire et plus facile à maintenir. Il existe également des alternatives aux tests unitaires, telles que les tests d'intégration et les tests fonctionnels.
 
-## Plongée en profondeur
+## See Also:
 
-Écrire des tests efficaces nécessite une bonne connaissance du comportement attendu de votre code. Il est important de tester différents cas d'utilisation, y compris les entrées invalides, pour vous assurer que votre code peut gérer toutes les situations possibles.
-
-Vous pouvez également profiter de la méthodologie TDD (Test-Driven Development) en écrivant d'abord les tests pour définir le comportement souhaité, puis en écrivant le code pour passer ces tests. Cela peut vous aider à créer un code plus propre et à éviter les bugs à l'avenir.
-
-## Voir aussi
-
-- [Documentation MiniTest](https://ruby-doc.org/stdlib-2.7.2/libdoc/minitest/rdoc/MiniTest.html)
-- [Guide TDD en Ruby](https://thoughtbot.com/upcase/test-driven-rails-resources/tdd)
-- [Tutoriel sur les tests en Ruby](https://www.rubyguides.com/2016/02/rspec-ruby-testing-tutorial/)
+Pour plus d'informations sur l'écriture de tests en Ruby, consultez le [Guide des tests en Ruby](link_to_guide) et le [Guide TDD en Ruby](link_to_TDD_guide).

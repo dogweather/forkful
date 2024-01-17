@@ -1,7 +1,7 @@
 ---
-title:                "将文档写入标准错误"
-html_title:           "C#: 将文档写入标准错误"
-simple_title:         "将文档写入标准错误"
+title:                "标准错误的编写"
+html_title:           "C#: 标准错误的编写"
+simple_title:         "标准错误的编写"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Files and I/O"
@@ -10,58 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 为什么
+## 内容及原因
+写入标准错误是一种程序员常用的技术，它允许将错误消息输出到控制台，而不是被隐藏在程序中。程序员使用它来帮助调试和查找程序中的错误。
 
-在编写C#程序时，有时候我们需要输出一些错误信息来帮助我们调试代码。这就是为什么我们需要了解如何将信息写入标准错误流的原因。
-
-# 如何做
-
-通过使用标准错误流（standard error）来输出错误信息，可以让我们更轻松地调试和修复程序中的错误。下面是一些使用C#语言写入标准错误流的示例代码和输出：
+## 如何操作
+在C#中，使用 `Console.Error.WriteLine()` 方法来将错误消息输出到标准错误。这个方法接受一个字符串参数，可以是任何你想要输出的消息。接下来，让我们看一下具体的代码示例和输出。
 
 ```C#
 try
 {
-   // 尝试执行某些代码，可能会产生错误
+    // some code that may throw an exception
 }
-catch(Exception ex)
+catch (Exception ex)
 {
-   // 将错误信息写入标准错误流
-   Console.Error.WriteLine("发生错误：" + ex.Message);
+    Console.Error.WriteLine("错误消息：" + ex.Message);
 }
 ```
 
 输出：
 
 ```
-发生错误：对象引用未设置到对象的实例。
+错误消息：无效的操作数。
 ```
 
-```C#
-int num1 = 10;
-int num2 = 0;
-try
-{
-   // 尝试除以0，会产生除数为0的错误
-   int result = num1 / num2;
-}
-catch(DivideByZeroException ex)
-{
-   // 将错误信息写入标准错误流
-   Console.Error.WriteLine("发生错误：" + ex.Message);
-}
-```
+## 深入探讨
+写入标准错误最初是由Unix系统引入的，旨在通过控制台输出错误消息来帮助调试。如今，它已经成为许多编程语言的标准功能，包括C#。除了使用 `Console.Error.WriteLine()` 方法之外，还可以使用其他方法来实现写入标准错误，比如使用 `TraceListener` 类或 `EventLog` 类。
 
-输出：
+## 相关资料
+想要了解更多关于写入标准错误的信息，可以参考以下资源：
 
-```
-发生错误：尝试除以零。
-```
-
-# 深入探讨
-
-标准错误流（standard error）是C#程序中一个很重要的概念，它可以让我们更轻松地调试程序中的错误。通过将错误信息写入标准错误流，我们可以在程序运行时实时地捕获并处理错误，从而更快地修复程序中的bug。
-
-# 链接
-
-- [MSDN文档：标准错误流](https://docs.microsoft.com/zh-cn/dotnet/api/system.console.error?view=net-5.0)
-- [C# Guide：异常处理](https://docs.microsoft.com/zh-cn/dotnet/csharp/programming-guide/exceptions/)
+- [Microsoft官方文档：Console类](https://docs.microsoft.com/zh-cn/dotnet/api/system.console?view=netcore-3.1)
+- [C#基础教程：Console的标准输入输出](https://www.runoob.com/csharp/csharp-console-input-output.html)
+- [C#高级编程：日志处理](https://www.tutorialsteacher.com/csharp/csharp-logging)

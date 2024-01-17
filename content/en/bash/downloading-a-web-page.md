@@ -10,52 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-Have you ever come across a website with important information that you wanted to access offline? Or maybe you wanted to save a copy of an online recipe for later use? By downloading a web page, you can easily access its content without an internet connection.
+Downloading a web page is the process of retrieving the HTML code of a specific webpage from the internet. Programmers often do this in order to extract data or information from the webpage, which can then be used for a variety of purposes such as web scraping or data analysis.
 
-## How To
+## How to:
 
-To download a web page using Bash, you can use the "wget" command followed by the URL of the page you want to download. For example:
-
-```Bash
-wget https://www.example.com
-```
-
-This will download the homepage of the website and save it in the current directory. You can also specify a different directory to save the downloaded page by adding the "-P" flag followed by the directory path.
+To download a web page using Bash, we can use the `curl` command. Here's an example of how to download the HTML code of Google's homepage:
 
 ```Bash
-wget -P /home/user/downloads https://www.example.com
+curl https://www.google.com
 ```
 
-You can also use the "curl" command to download a web page. Similar to "wget," you just need to specify the URL of the page.
+This will return the HTML code of Google's homepage as the output of the command. We can then save this output to a file by using the `-o` flag followed by the name of the file we want to save it as:
 
 ```Bash
-curl https://www.example.com
+curl -o google.html https://www.google.com
 ```
 
-Both "wget" and "curl" will download the HTML source code of the webpage. If you want to save a specific file from the webpage, you can use the "-O" flag followed by the file name.
+We can also specify the location where we want to save the file by providing the full path instead of just the file name.
 
-```Bash
-wget https://www.example.com/myfile.pdf -O myfile.pdf
-```
+## Deep Dive:
 
-To download multiple files from a webpage, you can use the "-i" flag followed by a file containing the list of URLs. For example, create a text file named "urls.txt" with the URLs of the files you want to download, each on a separate line, and use the following command:
+In the early days of the internet, downloading web pages was a slow and cumbersome process. But with the development of faster internet speeds and advanced technologies, this process has become much more efficient and streamlined.
 
-```Bash
-wget -i urls.txt
-```
+Besides `curl`, there are several other alternatives for downloading web pages in Bash such as `wget` and `lynx`. These commands offer similar functionalities with slight differences in their usage and capabilities.
 
-## Deep Dive
+Behind the scenes, downloading a web page involves making a HTTP request to a web server and receiving a response containing the HTML code. This process is handled by protocols like TCP/IP and HTTP.
 
-Both "wget" and "curl" are command-line tools that are used for downloading files from URLs. They have various options and flags that you can use to customize the download process, such as setting download speed limits, including or excluding certain file types, and using authentication.
+## See Also:
 
-Additionally, you can also use these tools to perform various other operations apart from downloading, such as uploading files, testing API endpoints, and fetching server information.
-
-## See Also
-
-Check out these links for more information on downloading web pages using Bash:
-
-- Bash scripting tutorial: https://ryanstutorials.net/bash-scripting-tutorial/
-- "wget" manual: https://www.gnu.org/software/wget/
-- "curl" manual: https://curl.haxx.se/docs/manpage.html
+- [Curl man Page](https://curl.se/docs/)
+- [Wget man Page](https://www.gnu.org/software/wget/)
+- [Lynx Homepage](https://lynx.browser.org/)

@@ -10,54 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+# Créer un fichier temporaire en Rust
 
-Créer un fichier temporaire peut être utile pour stocker des données de manière temporaire, telles que des fichiers de cache ou des informations générées lors de l'exécution d'un programme.
+## Quoi & Pourquoi?
+Créer un fichier temporaire est un moyen pour les programmeurs de générer un fichier qui sera utilisé temporairement pendant l'exécution d'un programme. Cela peut être utile lorsque vous avez besoin d'un fichier pour stocker des données temporaires ou pour réaliser des opérations de manière sécurisée.
 
-## Comment faire
-
-Pour créer un fichier temporaire en Rust, nous pouvons utiliser la fonction `std::fs::File::create`. Cette fonction prend en paramètre le chemin du fichier temporaire à créer et renvoie un objet `std::fs::File` qui peut être utilisé pour écrire des données dans le fichier. Voici un exemple de code :
-
-```Rust
-use std::fs::File;
-
-fn main() {
-    let temp_file = File::create("temp.txt").unwrap();
-    // Fichier temporaire créé avec succès
-}
-```
-
-Notez que la fonction `create` renvoie un `Result` qui peut être déballé à l'aide de la méthode `unwrap` pour gérer les éventuelles erreurs lors de la création du fichier temporaire.
-
-Une fois que nous avons créé notre fichier temporaire, nous pouvons utiliser les méthodes du type `std::fs::File` pour écrire des données dans le fichier. Par exemple, nous pouvons utiliser la méthode `write` pour écrire une chaîne de caractères dans le fichier :
+## Comment faire:
+Pour créer un fichier temporaire en Rust, vous pouvez utiliser la fonction `tempfile::tempfile()` de la bibliothèque standard. Cela renvoie un `Result<File>` qui peut être utilisé pour lire et écrire des données dans le fichier temporaire. Voici un exemple de code qui crée un fichier temporaire et y écrit une chaîne de caractères:
 
 ```Rust
 use std::fs::File;
-use std::io::Write;
+use std::io::prelude::*;
 
-fn main() {
-    let mut temp_file = File::create("temp.txt").unwrap();
-    temp_file.write(b"Contenu du fichier temporaire").unwrap();
-    // Données écrites avec succès
-}
+let mut temp_file = tempfile::tempfile().expect("Impossible de créer le fichier temporaire");
+write!(temp_file, "Ceci est un fichier temporaire créé en Rust").expect("Impossible d'écrire dans le fichier temporaire");
 ```
 
-## Plongée en profondeur
+## Plongée en profondeur:
+La création de fichiers temporaires a été un sujet de discussion dans le monde de la programmation depuis un certain temps. Les programmeurs ont longtemps cherché des moyens de stocker des données de manière temporaire sans avoir à créer de fichier physique. En plus de la méthode mentionnée ci-dessus, il existe d'autres façons de créer des fichiers temporaires en Rust, comme l'utilisation de la bibliothèque `tempdir` ou en utilisant des bibliothèques tierces telles que `rusty-machine`.
 
-Lors de la création d'un fichier temporaire en Rust, il est important de prendre en compte la sécurité et la gestion des erreurs. Pour assurer la sécurité, il est recommandé d'utiliser la macro `tempfile::Builder` qui offre de nombreuses fonctionnalités pour la gestion des fichiers temporaires. Voici un exemple de code utilisant cette macro :
-
-```Rust
-use tempfile::Builder;
-
-fn main() {
-    let temp_file = Builder::new().tempfile().unwrap();
-    // Fichier temporaire créé avec succès
-}
-```
-
-De plus, il est important de s'assurer que le fichier temporaire est supprimé après son utilisation. Pour cela, nous pouvons utiliser la méthode `tempfile::NamedTempFile::persist` qui renvoie un `TempPath` représentant le chemin du fichier temporaire à supprimer après sa fermeture.
-
-## Voir aussi
-
-- [Documentation officielle de Rust sur les fichiers](https://doc.rust-lang.org/std/fs/index.html)
-- [Exemple de création de fichier temporaire avec la macro `tempfile::Builder`](https://play.rust-lang.org/?version=stable&mode=debug&edition=2018&gist=dd56990dbe9b2b3cfc97c0cda880fb82)
+## Voir aussi:
+- [Documentation de la fonction tempfile() dans la bibliothèque standard](https://doc.rust-lang.org/std/fs/fn.tempfile.html)
+- [Bibliothèque tempdir pour créer des répertoires temporaires en Rust](https://crates.io/crates/tempdir)
+- [Bibliothèque rusty-machine pour la création de fichiers temporaires de manière sécurisée](https://crates.io/crates/rusty-machine)

@@ -1,7 +1,7 @@
 ---
-title:                "Überprüfen, ob ein Verzeichnis vorhanden ist."
-html_title:           "Clojure: Überprüfen, ob ein Verzeichnis vorhanden ist."
-simple_title:         "Überprüfen, ob ein Verzeichnis vorhanden ist."
+title:                "Überprüfen, ob ein Verzeichnis existiert"
+html_title:           "Clojure: Überprüfen, ob ein Verzeichnis existiert"
+simple_title:         "Überprüfen, ob ein Verzeichnis existiert"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Files and I/O"
@@ -10,50 +10,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+# Was & Warum?
+Das Überprüfen, ob ein Verzeichnis existiert, ist eine gängige Aufgabe für Programmierer. Dies ermöglicht ihnen zu prüfen, ob ein bestimmter Ordner auf einem System vorhanden ist, bevor sie versuchen, auf ihn zuzugreifen.
 
-Wenn du in deiner Clojure-Anwendung auf Dateien zugreifen möchtest, kann es nützlich sein zu wissen, ob ein bestimmtes Verzeichnis existiert, bevor du versuchst, darauf zuzugreifen. Auf diese Weise kannst du sicherstellen, dass deine Anwendung nicht abstürzt, wenn ein erwartetes Verzeichnis nicht vorhanden ist.
-
-## So geht's
-
-Die Überprüfung, ob ein Verzeichnis in Clojure existiert, kann auf verschiedene Arten erfolgen. Eine Möglichkeit ist die Verwendung der `clojure.java.io/file` Funktion, die eine `java.io.File`-Instanz zurückgibt, die das angegebene Verzeichnis darstellt. Hier ist ein Beispiel, wie du diese Funktion verwenden kannst:
-
+# Wie geht's:
 ```Clojure
-(require '[clojure.java.io :as io])
+;; Um zu überprüfen, ob ein Verzeichnis existiert, können wir die Clojure-Funktion (clojure.java.io/file "Pfad/zum/Verzeichnis") verwenden. Diese Funktion gibt ein File-Objekt zurück, das als "wahr" ausgewertet wird, wenn das Verzeichnis existiert, und als "falsch" wenn nicht.
+(clojure.java.io/file "/Users/Benutzername/Downloads")
+;; => #object[java.io.File "Pfad/zum/Verzeichnis"]
 
-;; Erstelle eine `File`-Instanz für das Verzeichnis "test"
-(def directory (io/file "test"))
-
-;; Überprüfe, ob das Verzeichnis existiert
-(.exists directory)
-;; Output: true
+;; Wir können auch die Funktion "exists?" verwenden, um zu überprüfen, ob ein Verzeichnis existiert.
+(.exists (clojure.java.io/file "/Users/Benutzername/Downloads"))
+;; => true
 ```
 
-Wenn das Verzeichnis nicht vorhanden ist, wird `false` zurückgegeben.
+# Tiefere Einblicke:
+Das Überprüfen der Existenz eines Verzeichnisses ist Teil der "Datei- und Verzeichnisoperationen" in Clojure. Vor der Einführung von Clojure 1.7 mussten Programmierer jedoch die Java-Klasse "java.io.File" verwenden, um Verzeichnisse zu überprüfen. Es ist auch wichtig zu beachten, dass die Funktion "exists?" auch auf Dateien angewendet werden kann.
 
-Du kannst auch die `clojure.java.io/file?` Funktion verwenden, um direkt zu überprüfen, ob ein Verzeichnis existiert. Diese Funktion gibt `true` zurück, wenn das angegebene Verzeichnis vorhanden ist, ansonsten `false`.
-
-```Clojure
-(require '[clojure.java.io :as io])
-
-;; Überprüfe, ob das Verzeichnis "test" existiert
-(io/file? "test")
-;; Output: true
-
-;; Überprüfe, ob das Verzeichnis "non-existent" existiert
-(io/file? "non-existent")
-;; Output: false
-```
-
-## Tiefergehende Informationen
-
-Die Verwendung der `clojure.java.io/file` oder `clojure.java.io/file?` Funktion ist eine einfache Möglichkeit, um zu überprüfen, ob ein Verzeichnis vorhanden ist. Es ist jedoch wichtig zu beachten, dass diese Funktionen nur prüfen, ob auf Dateien auf dem Dateisystem zugegriffen werden kann. Sie überprüfen NICHT, ob das Verzeichnis tatsächlich existiert oder ob du Berechtigungen hast, auf das Verzeichnis zuzugreifen.
-
-Eine alternative Möglichkeit wäre die Verwendung der Java-`java.nio.file.Files.Exists` Methode, die verwendet werden kann, um sowohl das Vorhandensein als auch die Berechtigungen für einen Verzeichnispfad zu überprüfen.
-
-Zusammenfassend ist das Überprüfen, ob ein Verzeichnis in Clojure existiert, eine nützliche Technik, um sicherzustellen, dass deine Anwendung robust und fehlertolerant ist. Es ist wichtig, die verschiedenen Möglichkeiten zu verstehen und die beste Methode für deine spezifischen Anforderungen auszuwählen.
-
-## Siehe auch
-
-- Offizielle Clojure-Dokumentation für `clojure.java.io/file` und `clojure.java.io/file?`: https://clojure.github.io/clojure/clojure.java.io-api.html
-- Java-`java.nio.file.Files.Exists` Methode: https://docs.oracle.com/javase/7/docs/api/java/nio/file/Files.html#exists(java.nio.file.Path,%20java.nio.file.LinkOption...)
+# Siehe auch:
+- https://clojure.github.io/clojure/clojure.java.io-api.html#clojure.java.io/reset-bang
+- https://clojure.org/reference/java_interop#_exist_7za1&page=Clojure

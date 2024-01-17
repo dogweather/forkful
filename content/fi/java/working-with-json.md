@@ -10,37 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+# Mitä ja miksi?
 
-Kun ohjelmoimme Javaa, yksi yleinen tehtävä on työskennellä JSON-tiedostojen kanssa. JSON (JavaScript Object Notation) on yksi yleisimmistä tavoista tallentaa ja siirtää tietoja sovellusten välillä. Tässä artikkelissa opit, miten käsitellä JSON-tiedostoja Java-koodissa.
+JSON eli JavaScript Object Notation on yleisesti käytetty formaatti, joka mahdollistaa tietojen tallentamisen ja jakamisen ohjelmien välillä. Se on erityisen suosittu web-kehityksessä ja RESTful web-palveluissa. JSON:ia käytetään, koska se on helposti luettava ja kirjoitettava sekä helposti muunnettavissa eri ohjelmointikielille.
 
-## Miten
+# Kuinka?
 
-JSON-tietojen käsittely Javassa vaatii käyttöön JSONObject- ja JSONArray-luokat, jotka löytyvät org.json-paketista. Alla on esimerkki koodista, joka luo JSON-tiedoston ja lisää sinne tietoja:
+Java tarjoaa mukavan tavan käsitellä JSON-tietoja käyttämällä org.json kirjastoa. Kirjaston avulla voit helposti luoda, lukea ja muokata JSON-objekteja. Alla on esimerkki JSON-objektin luomisesta ja sen konvertoimisesta merkkijonoksi:
 
 ```Java
-JSONObject json = new JSONObject();
-json.put("nimi", "Matti");
-json.put("ikä", 25);
-JSONArray harrastukset = new JSONArray();
-harrastukset.put("jalkapallo");
-harrastukset.put("valokuvaus");
-json.put("harrastukset", harrastukset);
+JSONObject obj = new JSONObject();
+obj.put("nimi", "Matti Meikäläinen");
+obj.put("ikä", 30);
+obj.put("harrastukset", new JSONArray(Arrays.asList("luistelu", "tennis")));
+String json = obj.toString();
+System.out.println(json);
+
+// Output: {"nimi":"Matti Meikäläinen", "ikä":30, "harrastukset":["luistelu", "tennis"]}
 ```
 
-Tämä koodi luo JSON-tiedoston, jossa on Matti-niminen henkilö, joka on 25-vuotias ja hänellä on kaksi harrastusta. Voit myös lukea ja muokata JSON-tiedostoja käyttämällä JSONObject- ja JSONArray-luokkien metodeja.
+# Syventyminen
 
-## Syventyminen
+JSON syntyi vuonna 2001 ja on lähtenyt hallitsemaan tiedonsiirtoa webissä. Sitä käytetään laajalti mm. RESTful web-palveluissa ja siitä on tullut de facto-standardi antaa tietojen liikkua eri ohjelmointikielien välillä.
 
-Tässä muutama lisätieto JSON-tietojen käsittelystä Javassa:
+Java ei ole ainoa kieli, joka pystyy työskentelemään JSON:n kanssa. On olemassa monia muita vaihtoehtoja kuten GSON, Jackson ja JSON.simple. On tärkeää valita itsellesi sopiva kirjasto projektin tarpeiden mukaan.
 
-- Voit ladata JSON-tiedoston ulkoisesta lähteestä (kuten URL:stä) käyttämällä JSONTokener-luokkaa ja sen constructoria, joka ottaa parametrinä Inputstreamin.
-- Voit luoda JSON-tiedoston käyttämällä JSONObject-luokan constructoria, joka ottaa parametrinä JSON-merkkijonon.
-- Voit luoda JSON-tiedoston käyttämällä JSONObject-luokan constructoria, joka ottaa parametrinä Map-olion, jossa on avain-arvo-pareja.
-- Voit luoda JSON-tiedoston käyttämällä JSONObject-luokan constructoria, joka ottaa parametrinä JSON-tiedoston nimen, ja JSONObject tallentaa sen sisällön String-tyyppiseen muuttujaan.
+JSON oli alunperin inspiroitunut JavaScriptistä, mutta on nyt laajalti tuettu useimmissa ohjelmointikielissä. Kirjastoja löytyy myös muille kielille, joten JSON-objektien käsittely on helppoa käytännössä kaikilla ohjelmointikielillä.
 
-## Katso myös
+# Katso myös
 
-- [JSON.org](https://www.json.org/json-fi.html) - Lisätietoa JSON-formaatista ja sen käytöstä.
-- [JSON-lukija ja kirjoittaja](https://www.baeldung.com/java-org-json) - Vaivaton opas JSON-tiedostojen lukemiseen ja kirjoittamiseen Javassa.
-- [JSON Maven Repository](https://mvnrepository.com/artifact/org.json/json) - JSON-paketti, jonka voit lisätä Maven-projektiisi.
+Lue lisää JSON:sta ja sen käytöstä Java-sovelluksissa täältä:
+- [Oracle:n virallinen dokumentaatio](https://www.oracle.com/technetwork/articles/java/json-1973242.html)
+- [Tutoriaali JSON-kirjaston käytöstä](https://www.tutorialspoint.com/json/json_java_example.htm)
+- [JSON.org](https://www.json.org/) - JSON:n virallinen verkkosivusto

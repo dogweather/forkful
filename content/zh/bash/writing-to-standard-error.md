@@ -1,7 +1,7 @@
 ---
-title:                "标准错误的写作"
-html_title:           "Bash: 标准错误的写作"
-simple_title:         "标准错误的写作"
+title:                "写入标准错误"
+html_title:           "Bash: 写入标准错误"
+simple_title:         "写入标准错误"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Files and I/O"
@@ -10,41 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
+###
 
-为什么我们会有必要在Bash中编写到标准错误？事实上，写入标准错误可以帮助我们更容易地调试代码，因为它可以打印出错误信息，帮助我们找出问题的根源。
+什么&为什么？
 
-## 如何做
+写入标准错误是指将程序中产生的错误信息输出到终端窗口中。程序员这样做是为了让用户能够看到程序的错误，从而帮助调试和改进程序。
 
-我们可以使用`echo`命令将文本写入标准错误，语法如下：
+如何：
+
+有几种方法可以将错误信息写入标准错误。下面是一个例子：
+
 ```Bash
-echo "错误信息" >&2
+if [ $x -lt 0 ]; then
+  echo "x不能为负数" >&2
+  exit 1
+fi
 ```
-下面是一个简单的例子，输出错误信息"未找到文件"：
-```Bash
-echo "未找到文件" >&2
-```
-运行命令后，输出结果如下：
-```
-未找到文件
-```
-可以看到，错误信息被打印到了标准错误中。除了`echo`命令，我们还可以使用其他命令或者脚本来产生错误信息，比如在脚本中使用`exit`命令强制退出，并指定一个错误代码：
-```Bash
-exit 1
-```
-运行脚本后，会返回一个错误代码为1的错误信息。
 
-## 深入了解
+输出：
 
-在Bash中，标准输出和标准错误是两个不同的输出流，它们分别用于打印普通的输出和错误信息。默认情况下，标准输出会显示在屏幕上，而标准错误则会显示在屏幕的红色文字中，以区分出错的信息。
+x不能为负数
 
-除了使用`echo`命令和`exit`命令，我们也可以使用重定向符号`>`和`2>`来将文本写入标准错误。比如，将标准输出重定向到`/dev/null`，将标准错误重定向到标准输出：
-```Bash
-ls -l file1 file2 1>/dev/null 2>&1
-```
-这条命令会将`ls`命令的标准输出重定向到`/dev/null`，意为将输出信息丢弃，然后将标准错误重定向到标准输出，这样错误信息就会显示在屏幕上。
+深入探讨：
 
-## 参考资料
+写入标准错误的概念并不是新鲜的。早期的Unix系统已经使用这种方法来显示程序的错误信息。除了将错误信息写入标准错误，程序员也可以选择将它们写入日志文件。
 
-- [Bash Reference Manual: Redirections](https://www.gnu.org/software/bash/manual/html_node/Redirections.html)
-- [Standard Streams: What are the three default standard streams provided by the shell?](https://unix.stackexchange.com/questions/506994/what-are-the-three-default-standard-streams-provided-by-the-shell)
+另一种方法是使用标准错误重定向符号"2>"来指定将错误信息写入哪个文件。这种方法需要更复杂的代码来处理错误信息，因为程序不直接将它们输出到终端窗口。
+
+建议阅读：
+
+如果想了解更多关于标准错误的内容，可以参考以下资源：
+
+1. [Linux公共版权](https://wiki.archlinux.org/index.php/Standard_error_(简体中文))
+2. [GNU Bash文档](https://www.gnu.org/software/bash/manual/html_node/Redirections.html)
+
+请注意，这些资源是英文的，需要有一定的英文阅读能力。同时，也可以参考其他中文的博客和教程来学习标准错误的应用。

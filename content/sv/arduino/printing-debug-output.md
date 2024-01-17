@@ -1,7 +1,7 @@
 ---
-title:                "Utskrift av debug output"
-html_title:           "Arduino: Utskrift av debug output"
-simple_title:         "Utskrift av debug output"
+title:                "Utskrift av felsökningsresultat"
+html_title:           "Arduino: Utskrift av felsökningsresultat"
+simple_title:         "Utskrift av felsökningsresultat"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Testing and Debugging"
@@ -10,39 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
-Debug output, eller felsökningsutskrift, är ett användbart verktyg som hjälper dig att hitta och lösa problem i din Arduino-kod. Genom att skriva ut viktiga variabler och värden i din kod kan du enkelt spåra var problemet ligger och göra nödvändiga korrigeringar.
+## Vad & Varför?
+Att skriva ut debug output är när man ber Arduinoen att visa information om vad som händer i koden när den körs. Programmerare använder det för att felsöka och förstå hur koden fungerar.
 
-## Så här gör du
-För att skriva ut debug output i Arduino behöver du bara använda funktionen "Serial.print()". Till exempel kan du skriva:
-
-```Arduino
-int sensorValue = analogRead(A0);
-Serial.print("Sensorvärde: ");
-Serial.println(sensorValue);
+## Så här gör du:
 ```
-
-Detta kommer att skriva ut värdet av sensorn till din seriella monitor. Kom ihåg att du måste öppna serial monitor genom att klicka på "Verktyg" och sedan "Seriell monitor" för att se utskriften. 
-
-Du kan också använda "Serial.println()" för att skriva ut en tom rad efter varje utskrift för att få en mer läsbar output. Detta kan vara särskilt användbart när du skriver ut flera variabler.
-
-## Djupdykning
-I Arduino kan du också använda dig av olika formatteringsalternativ när du skriver ut debug output. Till exempel kan du använda "Serial.print()" tillsammans med "%s" för att skriva ut en textsträng:
-
-```Arduino
-String namn = "Anna";
-Serial.print("Hej, mitt namn är %s!", namn.c_str());
+Arduino.print("Hej värld!");
 ```
+Koden ovan kommer att skriva ut "Hej värld!" på seriell monitor vid programkörning.
 
-Du kan också använda "%d" för att skriva ut heltal och "%.2f" för att skriva ut decimaltal med två decimaler.
+```
+int a = 5;
+int b = 10;
+int summa = a + b;
+Arduino.print(summa);
+```
+Koden ovan kommer att skriva ut värdet av variabeln "summa" på seriell monitor.
 
-Debug output är också användbart när du ska läsa av sensorer och moduler som kommunicerar över I2C eller SPI. Genom att skriva ut rådata från dessa moduler kan du se om de fungerar korrekt och enkelt felsöka eventuella problem.
+## Djupdykning:
+Att skriva ut debug output är ett vanligt verktyg för felsökning, men det finns gott om alternativ som t.ex. att använda en debugger eller att använda någon form av loggning. Det är viktigt att inte ha för mycket debug output i koden då det kan påverka prestandan negativt. För att använda debug output på Arduino måste man ha en seriell anslutning mellan Arduinoen och datorn.
 
-## Se också
-Om du vill lära dig mer om hur man använder debug output i Arduino, kan du kolla in följande resurser:
+## Så här kan du använda dig av debug output:
+1. Använd kommandot "Serial.print()" för att skriva ut text och variabler på seriell monitor.
+2. Använd kommandot "Serial.println()" för att skriva ut en radbrytning efter varje utprintning.
+3. Använd kommandot "Serial.begin()" för att öppna en seriell anslutning mellan Arduinoen och datorn.
 
-- [Arduino Serial print() - Lär dig hur man använder funktionen Serial.print()](https://www.arduino.cc/reference/en/language/functions/communication/serial/print/)
-- [Arduino Serial monitor - Lär dig hur man öppnar och använder den seriella monitorn för att visa debug output](https://www.arduino.cc/reference/en/language/functions/communication/serial/println/)
-- [Viktigheten av debug output i Arduino - En artikel som förklarar varför debug output är en viktig del av Arduino-utveckling](https://blog.arduboy.com/the-importance-of-debug-output/)
-
-Nu är det dags att börja utnyttja debug output i din Arduino-kod för en smidigare och mer effektiv utvecklingsprocess!
+## Se även:
+- [Arduino Serial](https://www.arduino.cc/reference/en/language/functions/communication/serial/)
+- [Using Debug Output in Arduino](https://www.arduino.cc/en/Guide/ArduinoDebugging)

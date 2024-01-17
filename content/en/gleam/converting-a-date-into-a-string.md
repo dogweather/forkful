@@ -10,36 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why 
-Dates are a fundamental part of our daily lives, and as programmers, we often need to manipulate them in various formats. One common task is converting a date into a string. This article will explore how to do this in Gleam, a modern and powerful programming language.
+# Converting a Date into a String in Gleam
 
-## How To 
-To convert a date into a string in Gleam, we will use the `Time` module from the standard library. First, we need to import the module using the `import` keyword:
+## What & Why?
 
-```Gleam
-import gleam/time
-```
+Converting a date into a string means translating a date - which is in a formatted digital representation - into a printable string format. This is particularly useful for displaying dates in a human-readable form. Programmers often convert dates to strings to show them on user interfaces or to store them in databases.
 
-Next, we can use the `format` function from the `Time` module to convert our date into a string:
+## How to:
+
+The process of converting a date into a string is simple in Gleam. The `Time` module provides functions for converting dates into strings, as shown in the following code examples:
 
 ```Gleam
-let date = Time.Date.new(2021, 9, 1)
-let formatted_date = Time.format("%Y-%m-%d", date)
+import Time
+
+// Convert a date into an ISO 8601 string format
+Time.Date.to_iso8601_string(2021, 10, 25) // Outputs: "2021-10-25"
+
+// Convert a date into a custom string format
+Time.Date.to_string(2021, 10, 25, "%B %d, %Y") // Outputs: "October 25, 2021"
 ```
 
-In this example, we create a new `Date` object representing September 1st, 2021, and then use the `%Y-%m-%d` format string to convert it into a string in the format of year-month-day. The resulting `formatted_date` will be a string with the value of "2021-09-01".
+As you can see, the `to_iso8601_string` function converts the date into a standardized format, while the `to_string` function allows for a variety of custom formats.
 
-You can also specify different formats to suit your needs, such as `%b %d, %Y` for abbreviated month name, day, and year (e.g. Sep 01, 2021) or `%A, %B %e` for the full weekday name, full month name, and day (e.g. Wednesday, September 1).
+## Deep Dive
 
-## Deep Dive 
-Now that we have a basic understanding of how to convert a date into a string in Gleam, let's take a closer look at the `format` function. It takes in two arguments - a format string and the date to be formatted. The format string contains specific characters that represent different parts of the date, such as year, month, day, hour, minute, second, etc. By using the appropriate format characters, we can control how the final string will look.
+### Historical Context
 
-One important thing to note is that the `format` function uses the ISO 8601 standard for formatting dates, which is widely accepted and easily understandable. This standard specifies the use of four-digit years, two-digit months and days, and the use of dashes or colons as separators.
+Converting dates to strings has been an essential task in the programming world since the early days of computing. It was particularly challenging on older systems due to their limited character sets and variable ways of representing dates. However, with the introduction of standardized date formats, such as ISO 8601, this task has become much more streamlined and uniform.
 
-If needed, Gleam also offers the `strftime` function from the `Os` module, which allows for customizable formatting using the POSIX strftime formatting standard.
+### Alternatives
 
-## See Also 
-To learn more about working with dates in Gleam, check out the following resources: 
-- [Gleam Time Module Documentation](https://gleam.run/modules/time.html)
-- [ISO 8601 Standard](https://www.iso.org/iso-8601-date-and-time-format.html)
-- [POSIX strftime Format Codes](https://pubs.opengroup.org/onlinepubs/009695399/functions/strftime.html)
+In Gleam, there are a few alternative ways to represent dates, such as using integers or tuples. However, these formats are less versatile and may require more code to manipulate and display the date. Therefore, converting dates into strings remains the preferred method for displaying dates in a human-readable format.
+
+### Implementation Details
+
+Under the hood, Gleam's `Time` module uses Erlang's `calendar` module to perform date calculations and formatting. This module provides robust and efficient functions for handling dates and times, making it a suitable choice for these operations in Gleam.
+
+## See Also
+
+- Gleam documentation for the `Time` module: https://gleam.run/lib/gleam_stdlib/latest/Time.html
+- ISO 8601 standard for date and time representation: https://www.iso.org/iso-8601-date-and-time-format.html
+
+---
+
+Thanks for reading this short guide on converting dates into strings in Gleam. Hopefully, it has given you a better understanding of this essential task in programming. Happy coding!

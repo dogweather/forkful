@@ -1,7 +1,7 @@
 ---
-title:                "Escrevendo para o Erro Padrão"
-html_title:           "Elm: Escrevendo para o Erro Padrão"
-simple_title:         "Escrevendo para o Erro Padrão"
+title:                "Escrevendo no erro padrão"
+html_title:           "Elm: Escrevendo no erro padrão"
+simple_title:         "Escrevendo no erro padrão"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Files and I/O"
@@ -10,40 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+O que e Por Que?
 
-Se você é um programador iniciante ou experiente, sabe a importância de escrever códigos limpos e eficientes. Mas o que muitos não sabem é que uma das melhores ferramentas que temos em nossas mãos para garantir isso é o registro de erros. Escrever para o erro padrão pode ajudá-lo a identificar e corrigir rapidamente problemas em seu código.
+Escrever para o erro padrão é uma técnica usada pelos programadores para exibir mensagens de erro ou informações de depuração durante a execução de um programa. Isso permite que os desenvolvedores vejam o que está acontecendo no código em tempo real e facilite a identificação e correção de erros.
 
-## Como Fazer
+Como Fazer:
 
-Escrever para o erro padrão em Elm é bastante simples. Você só precisa usar a função `Debug.crash` e passar uma mensagem de erro como argumento. A seguinte linha de código é um exemplo de como isso pode ser feito:
+Para escrever para o erro padrão em Elm, usamos a função "Debug.log" que aceita uma string como primeiro argumento e um valor como segundo argumento. Aqui está um exemplo:
 
-```
-Debug.crash "Erro inesperado: x não pode ser igual a y."
-```
+Elm ...
 
-Quando este código é executado, ele irá parar a execução do programa e imprimir a mensagem de erro no console do navegador. Aqui está a saída que você pode ver no console:
+[1, 2, 3] 
+    |> Debug.log "Lista inicial" 
+    |> List.map (* 2) 
+    |> Debug.log "Lista multiplicada por 2"
 
-```
-Error: Erro inesperado: x não pode ser igual a y.
-```
+O resultado seria:
 
-Você também pode usar a função `Debug.log` para escrever para o erro padrão quando estiver depurando seu código. Esta função aceita um valor e uma mensagem de erro como argumentos e irá imprimi-los no console. Aqui está um exemplo de como usá-lo:
+Lista inicial: [1, 2, 3] 
+Lista multiplicada por 2: [2, 4, 6]
 
-```
-Debug.log "Variável x" x
-```
+Neste exemplo, usamos o "Debug.log" para exibir a lista inicial e a lista multiplicada por 2 para ajudar a entender como a função "List.map" funciona.
 
-Isso irá imprimir o valor da variável `x` junto com a mensagem "Variável x" no console do navegador.
+Mergulho Profundo:
 
-## Profundando
+A técnica de escrever para o erro padrão tem suas raízes nos primórdios da programação, quando os desenvolvedores tinham que usar dispositivos de saída externos para exibir informações úteis durante a execução do código. Hoje em dia, existem ferramentas mais avançadas para depuração, como depuradores e registradores, mas escrever para o erro padrão ainda é amplamente utilizado por sua simplicidade e facilidade de implementação em várias linguagens de programação.
 
-Para aqueles que gostam de entender como as coisas funcionam por trás dos panos, é importante saber que, quando usamos as funções `Debug.crash` e `Debug.log`, estamos escrevendo para um tipo de dado chamado `Msg` (mensagem). Este tipo de dado é usado para enviar mensagens simples entre partes do seu programa. Quando você chama `Debug.crash` ou `Debug.log`, está enviando uma mensagem para o log de erros (ou seja, escrevendo para o erro padrão).
+Veja Também:
 
-Além disso, é importante notar que, ao usar `Debug.crash`, você está interrompendo a execução do programa. Por esse motivo, é recomendável usá-la apenas em situações de erro graves. Use `Debug.log` para mensagens informativas durante o processo de depuração.
-
-## Veja Também
-
-- Documentação oficial sobre registro de erros em Elm: https://guide.elm-lang.org/debugging/errors.html
-- Tutorial sobre depuração de código em Elm: https://thoughtbot.com/blog/clearer-errors-with-type-annotations-in-elm
-- Exemplo de uso de `Debug.log` em um projeto Elm: https://github.com/zalando/elm-street-view/blob/master/src/Main.elm#L36
+Para saber mais sobre como escrever para o erro padrão em Elm, confira a documentação oficial do idioma em seu site oficial. Além disso, você pode explorar outras técnicas de depuração e ferramentas disponíveis para melhorar sua eficiência como desenvolvedor.

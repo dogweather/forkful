@@ -10,66 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i Dlaczego?
 
-Dlaczego ktoś chciałby poczytać o argumentach wiersza poleceń? W prosty sposób ten proces pomaga programiście uzyskać dane bezpośrednio z konsoli, co może być przydatne w różnych sytuacjach, takich jak testowanie lub konfiguracja kodu.
+Czy kiedykolwiek potrzebowałeś/musiałaś wywołać jakąś funkcję, przekazując do niej pewne parametry lub opcje? Wielu programistów z pewnością natknęło się na taką konieczność. Dzięki czytaniu argumentów z linii poleceń możemy dostosować funkcjonalność naszych programów w czasie wykonania. Jest to niezwykle przydatne narzędzie, które umożliwia nam dynamiczne wywoływanie funkcji w zależności od danych, z jakimi uruchamiany jest program.
 
-## Jak to zrobić
+## Jak to zrobić:
 
-Aby odczytać argumenty wiersza poleceń w Arduino, musimy skorzystać z obiektu **Serial**. Najpierw musimy zainicjować obiekt, a następnie użyć funkcji **Serial.read()**, aby odczytać pojedynczy znak z konsoli. Możemy również użyć funkcji **Serial.parseInt()**, aby odczytać argumenty liczbowe. Poniższy kod pokazuje przykład odczytania argumentów wiersza poleceń i wykorzystania ich w programie:
-```Arduino
-void setup(){
-  Serial.begin(9600); //inicjalizacja obiektu Serial
-}
+Arduino pozwala na odczytywanie argumentów z linii poleceń dzięki funckji ```Arduino.readArguments()```. Aby użyć tej funkcji, musimy najpierw dostarczyć jej odpowiedni obiekt, który przechowuje argumenty. Przykład dostarczania obiektu:
+```
+Arduino arduino = new Arduino();
 
-void loop(){
-  if (Serial.available()){ //sprawdzenie, czy są dostępne dane w konsoli
-    int arg = Serial.parseInt(); //odczytanie argumentu liczbowego
-    Serial.print("Odczytany argument to: ");
-    Serial.println(arg);
-  }
+int main() {
+  arduino.readArguments();
+  // kod realizujący dostarczone parametry
 }
 ```
 
-Poniżej znajduje się przykład z użyciem tekstu jako argumentu:
-```Arduino
-void setup(){
-  Serial.begin(9600);
+Po wywołaniu tej funkcji, możemy odczytywać argumenty za pomocą metody ```readArguments.getArgument()```. Przykładowy kod czytania argumentów i ich wykorzystania:
+```
+int argument1 = arduino.readArguments().getArgument(0);
+int argument2 = arduino.readArguments().getArgument(1);
+
+if(argument1 == 0){
+  // wywołanie pewnej funkcji
 }
 
-void loop(){
-  if (Serial.available()){
-    String arg = Serial.readString(); //odczytanie argumentu jako tekstu
-    Serial.print("Odczytany argument to: ");
-    Serial.println(arg);
-  }
+if(argument2 == 1){
+  // wywołanie innej funkcji
 }
 ```
 
-W konsoli należy wpisać argument, a następnie zakończyć go znakiem nowej linii (enter). Wyprintuje on odczytany argument w monitorze szeregowym.
+## Zagłębienie:
 
-## Głębsza analiza
+Czytanie argumentów z linii poleceń jest bardzo popularną praktyką w programowaniu od wielu lat. Zostało wprowadzone w celu umożliwienia programistom dostosowywania funkcjonalności swoich programów bez konieczności zmieniania kodu źródłowego. Alternatywą dla czytania argumentów z linii poleceń jest tworzenie konfiguracyjnych plików, które są odczytywane przez program podczas jego uruchamiania.
 
-Inną funkcją, która może być użyteczna przy odczytywaniu argumentów wiersza poleceń, jest **Serial.readStringUntil()**. Pozwala ona określić znak, który będzie kończył odczytywany tekst. Przykładowo, za pomocą kodu "Serial.readStringUntil(',')", odczytywany tekst zostanie zakończony przecinkiem. Możemy również użyć funkcji **Serial.find()**, aby pozwolić na odczytanie tylko części tekstu. Przykład z użyciem obu funkcji:
-```Arduino
-void setup(){
-  Serial.begin(9600);
-}
+Implementacja czytania argumentów z linii poleceń może różnić się w zależności od platformy i języka programowania. W Arduino, funkcjonalność ta jest dostępna dzięki bibliotece commandlineargs, która musi być zainstalowana w celu jej użycia.
 
-void loop(){
-  if (Serial.available()){
-    String arg = Serial.readStringUntil(','); //odczytywanie tekstu do przecinka
-    if (arg == "Hello"){ //sprawdzenie, czy odczytany tekst zawiera słowo "Hello"
-      Serial.println("Witaj użytkowniku!");
-    }
-  }
-}
-```
+## Zobacz także:
 
-Wydajemy polecenie "Serial.println("Hello, World!")" z konsoli. W odpowiedzi otrzymamy "Witaj użytkowniku!" w polu monitora szeregowego.
+Aby dowiedzieć się więcej o czytaniu argumentów z linii poleceń w Arduino, możesz przeczytać dokumentację biblioteki commandlineargs dostępnej [tutaj](https://github.com/kroimon/ArduinoCommandLineArgs).
 
-## Zobacz także
-
-Aby dowiedzieć się więcej o obsłudze obiektu Serial, zapoznaj się z dokumentacją Arduino ([https://www.arduino.cc/reference/en/language/functions/communication/serial/](https://www.arduino.cc/reference/en/language/functions/communication/serial/))
-
-Aby zobaczyć więcej przykładów użycia argumentów wiersza poleceń w Arduino, przejrzyj wpisy na forum dla społeczności Arduino ([https://forum.arduino.cc/](https://forum.arduino.cc/)) lub odwiedź stronę z projektami Arduino ([https://create.arduino.cc/projecthub](https://create.arduino.cc/projecthub)).
+Jeśli szukasz alternatywy dla czytania argumentów z linii poleceń, warto przyjrzeć się tworzeniu plików konfiguracyjnych, które mogą być odczytywane przez program przy jego uruchamianiu.

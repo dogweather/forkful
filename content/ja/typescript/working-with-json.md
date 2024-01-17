@@ -1,7 +1,7 @@
 ---
-title:                "「JSONを使ったプログラミング」"
-html_title:           "TypeScript: 「JSONを使ったプログラミング」"
-simple_title:         "「JSONを使ったプログラミング」"
+title:                "「JSONを扱う」"
+html_title:           "TypeScript: 「JSONを扱う」"
+simple_title:         "「JSONを扱う」"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Data Formats and Serialization"
@@ -10,41 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+## 何をするのか？ & なぜするのか？
+JSON とは、JavaScript Object Notation の略で、データのフォーマット方法のことを指します。プログラマーが JSON と一緒に作業する理由は、データを簡単に読み書きできるようにするためです。
 
-JSON（JavaScript Object Notation）は、ウェブ開発やAPI通信など、多くの場面で必要とされるデータ形式です。JavaScriptやTypeScriptのプログラミングにおいて、JSONを扱えるようになることで、より多くの機能を実現することができます。
-
-## 使い方
-
+## 作業方法：
 ```TypeScript
-// JSONのデータの作成
-const person = {
-  name: "太郎",
-  age: 24,
-  hobbies: ["スポーツ", "音楽", "旅行"],
+// JSONを使用するための準備
+import * as jsonData from './sample.json';
+
+// JSONファイルの作成
+const data = {
+  name: 'John',
+  age: 25,
+  interests: ['sports', 'music', 'reading']
 };
 
-// JSONのデータを文字列に変換
-const jsonString = JSON.stringify(person);
+// JSONファイルの読み込み
+console.log(jsonData.name); // John
 
-// 文字列からJSONデータに変換
-const personObject = JSON.parse(jsonString);
-console.log(personObject); // { name: "太郎", age: 24, hobbies: ["スポーツ", "音楽", "旅行"]}
+// JSONファイルの書き込み
+import fs from 'fs';
+fs.writeFileSync('./sample.json', JSON.stringify(data, null, 2));
+
+// 出力例
+{
+  "name": "John",
+  "age": 25,
+  "interests": [
+    "sports",
+    "music",
+    "reading"
+  ]
+}
 ```
 
-### Output:
+## 深堀り：
+JSON は、1990年代後半に JavaScript の一部として開発されました。他のデータフォーマットである XML や CSV と比べて、可読性が高く、扱いやすいという特徴があります。また、XML や CSV に比べてコード量が少なくて済むため、プログラマーにとっても便利です。JSON に似た形式である YAML もありますが、JSON の方が広く使用されています。
 
-```TypeScript
-JSONデータを文字列に変換するために、`JSON.stringify()`を使用することができます。また、文字列からJSONデータに変換するためには、`JSON.parse()`を使用します。これらのメソッドを使うことで、オブジェクトを簡単にJSONデータに変換し、処理することができます。
-
-## 深堀り
-
-JSONデータには、オブジェクトや配列の他にも、数値や文字列など様々なデータ型を含めることができます。また、`.json`ファイルとして外部ファイルに保存することもでき、プログラム内でそのデータを読み込むことができます。
-
-## おわりに
-
-### 参考リンク
-
-- [MDN Web Docs: Working with JSON](https://developer.mozilla.org/ja/docs/Learn/JavaScript/Objects/JSON)
-- [TypeScript 日本語ドキュメント: JSON サポート](https://typescript-jp.gitbook.io/deep-dive/type-system/json)
-- [JSONを活用してTypeScriptのしっかりとした型定義を行うための手書き型定義 - Qiita](https://qiita.com/takamii228/items/015745b4a80faaba1ede)
+## 関連情報を見る：
+- JSON 公式サイト: https://www.json.org/json-ja.html
+- TypeScript 公式サイト: https://www.typescriptlang.org/
+- YAML 公式サイト: https://yaml.org/

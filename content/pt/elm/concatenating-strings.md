@@ -1,7 +1,7 @@
 ---
-title:                "Concatenação de strings"
-html_title:           "Elm: Concatenação de strings"
-simple_title:         "Concatenação de strings"
+title:                "Concatenando strings"
+html_title:           "Elm: Concatenando strings"
+simple_title:         "Concatenando strings"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -10,40 +10,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+## O que e por que? 
+Concatenar strings é o processo de combinar várias strings em uma única string. Os programadores muitas vezes fazem isso para criar mensagens personalizadas, construir URLs dinamicamente ou formatar dados.
 
-Você já se perguntou por que precisamos concatenar strings ao programar em Elm? A resposta é simples: para unir duas ou mais strings em uma única string. Isso pode ser útil em diversas situações, como na construção de mensagens de erro ou na criação de caminhos de arquivo.
+## Como fazer:
+Elm torna a concatenação de strings simples através do uso do operador de adição (+) ou da função "append". Confira os exemplos abaixo:
 
-## Como fazer
+```
+Elm "Hello" + " World"
+--Output: "Hello World"
 
-Para concatenar strings em Elm, podemos usar o operador `++`. Veja dois exemplos de como utilizá-lo:
-
-```Elm
-nomeCompleto = "João" ++ " Silva"
-
-mensagem = "Bem-vindo, " ++ nomeCompleto
+Elm append ("Hello", " World")
+--Output: "Hello World"
 ```
 
-Nesse primeiro exemplo, estamos criando uma variável `nomeCompleto` que recebe a concatenação da string "João" com a string "Silva". Em seguida, criamos outra variável `mensagem` que utiliza a variável `nomeCompleto` para criar uma saudação personalizada.
+## Mergulho Profundo:
+Nem sempre foi tão fácil concatenar strings. Em linguagens de programação mais antigas, como C, era necessário declarar o tamanho da string antecipadamente, o que podia ser um processo complicado. Além disso, existem alternativas para a concatenação de strings, como a interpolação de strings, onde as variáveis são incorporadas diretamente em uma string, em vez de serem concatenadas. A implementação da concatenação de strings em Elm é baseada em uma biblioteca JavaScript chamada "mconcat".
 
-Outra forma de concatenar strings em Elm é utilizando a função `String.concat`. Ela permite unir várias strings em uma única, como no exemplo a seguir:
-
-```Elm
-nomes = ["Maria", "Ana", "Laura"]
-
-nomesComVirgula = String.concat ", " nomes
-```
-
-Nesse caso, a saída será a string "Maria, Ana, Laura", pois usamos a função `String.concat` para unir os elementos da lista `nomes` separados por vírgula.
-
-## Aprofundando mais
-
-Ao concatenar strings em Elm, é importante lembrar que as strings originais não são alteradas, pois a concatenação cria uma nova string. Além disso, é possível usar a concatenação em conjunto com outras funções, como `String.toUpper` para transformar todas as letras em maiúsculas ou `String.startsWith` para verificar se uma string começa com determinados caracteres.
-
-Uma dica importante é evitar usar a concatenação em loop, pois isso pode causar problemas de performance. Em vez disso, prefira utilizar a função `String.concat` quando precisar unir várias strings em uma lista.
-
-## Veja também
-
-- [Documentação oficial do Elm](https://elm-lang.org/docs)
-- [Tutorial de Elm para iniciantes](https://www.tutorialspoint.com/elm/index.htm)
-- [Exemplos de código em Elm](https://github.com/elm/example)
+## Veja Também:
+- Documentação do Elm para a concatenação de strings: https://guide.elm-lang.org/language/data_structures.html#strings 
+- Exemplo de interpolação de strings em Elm: https://ellie-app.com/3FTT3CS5PS6a1

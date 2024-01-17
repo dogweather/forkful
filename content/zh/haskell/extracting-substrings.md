@@ -1,7 +1,7 @@
 ---
-title:                "提取子字符串"
-html_title:           "Haskell: 提取子字符串"
-simple_title:         "提取子字符串"
+title:                "提取子串"
+html_title:           "Haskell: 提取子串"
+simple_title:         "提取子串"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -10,39 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么要提取子字符串？
+## 什么是子字符串，为什么程序员会用到它？
 
-提取子字符串在编程中经常会遇到，可用于处理文本数据、文档摘要和密码哈希等多种场景。通过掌握如何提取子字符串，你可以有效地处理文本数据，使得你的代码更加灵活和高效。
+子字符串指的是从一个字符串中提取出一部分字符组成新的字符串。程序员经常使用子字符串来处理文本，比如搜索和替换特定的字词。这种技术也可以用来解析复杂的文本数据。
 
-## 如何操作
+## 如何提取子字符串：
+
+使用Haskell中的```take```和```drop```函数可以方便地提取子字符串。比如，如果我们有一个字符串"Hello world!"，我们可以使用```take```和```drop```函数来提取出前5个字符"Hello"和后6个字符"world!"。代码示例如下：
 
 ```Haskell
--- 在Haskell中提取子字符串的方法很简单，我们可以通过以下几种方式来实现
--- 首先，我们需要引入 Data.List 模块
-import Data.List
-
--- 1. 使用 take 函数提取一定长度的子字符串
-take 4 "Hello World" -- 输出 "Hell"
-
--- 2. 使用 drop 函数来删除指定数量的字符后提取子字符串
-drop 2 "Hello World" -- 输出 "llo World"
-
--- 3. 使用 takeWhile 函数提取符合特定条件的子字符串
-takeWhile (/= ' ') "Hello World" -- 输出 "Hello"
-
--- 4. 使用 dropWhile 函数删除符合特定条件的字符后提取子字符串
-dropWhile (/= ' ') "Hello World" -- 输出 " World"
-
--- 5. 使用 splitAt 函数在指定位置分割字符串并提取子字符串
-splitAt 5 "Hello World" -- 输出 ("Hello", " World")
+let str = "Hello world!"
+take 5 str                 -- Output: "Hello"
+drop 6 str                 -- Output: "world!"
 ```
 
-## 深入了解
+## 深入探讨
 
-除了上述提到的函数，Haskell还提供了许多其他用于提取子字符串的函数，如 `substring`、`lines`、`words`等。同时，通过组合多种函数的方式，你也可以实现更复杂的提取子字符串操作。在处理大量文本数据时，提取子字符串也是一个不可忽视的性能优化点。因此，有必要深入了解提取子字符串的相关知识，以提高你的编程能力。
+提取子字符串的概念并不新鲜，在Haskell的前身Miranda语言中就有相关的函数。除了使用```take```和```drop```函数，还可以使用```substr```函数来提取子字符串，它接受一个起始位置和提取的长度作为参数。然而，```take```和```drop```函数更加灵活，可以通过结合使用来实现更复杂的提取操作。
 
-## 参考链接
+## 查看更多信息
 
-- [Haskell中的字符串处理](http://www.yesodweb.com/book/shakespearean-templates)
-- [Haskell库文档](https://hackage.haskell.org/package/base-4.14.0.0/docs/Data-List.html)
-- [Haskell编程入门](https://www.learnyouahaskell.com/chapters)
+了解更多有关提取子字符串的信息，请参考以下资源：
+
+- [Haskell字符串文档](https://www.haskell.org/onlinereport/standard-prelude.html#g:21)
+- [Haskell字符串函数教程](https://wiki.haskell.org/String_functions)
+- [Haskell字符串模式匹配教程](https://wiki.haskell.org/Pattern_matching)

@@ -1,7 +1,7 @@
 ---
-title:                "HTTPリクエストを送信する"
-html_title:           "Gleam: HTTPリクエストを送信する"
-simple_title:         "HTTPリクエストを送信する"
+title:                "「HTTPリクエストの送信」"
+html_title:           "Gleam: 「HTTPリクエストの送信」"
+simple_title:         "「HTTPリクエストの送信」"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "HTML and the Web"
@@ -10,50 +10,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
-ほとんどのwebアプリケーションは、HTTPリクエストを送信することでデータを取得したり送信したりすることに依存しています。Gleamでは、HTTPリクエストを送信することで、外部のAPIやサーバーとやり取りをすることができます。
+# GleamでHTTPリクエストを送信する
 
-## 方法
-まず、GleamのHTTPモジュールをインポートします。
-```
-Gleamモジュール
+## なに？なぜ？
 
-import gleam/http
-```
+HTTPリクエストを送信するとは、ウェブ上の情報を取得したりデータを更新したりするために、インターネット上のサーバーと通信することです。
+プログラマーがHTTPリクエストを送信する理由は、ユーザーがウェブサイトにアクセスした時に、情報を取得したり送信したりするためです。例えば、あなたがウェブサイトにログインするとき、HTTPリクエストを送信して認証情報を送信し、ウェブサイトにアクセスできるようにします。
 
-次に、送信したいHTTPリクエストの設定を行います。たとえば、GoogleのAPIからJSON形式のデータを取得する場合、以下のようにします。
-```
-リクエストを設定
+## 使い方：
 
-let request = http.request(
-    method: "GET",
-    url: "https://www.googleapis.com/books/v1/volumes",
-    headers: [(key: "Accept", value: "application/json")],
-    body: some(gleam/json/encode({"q": "Gleam programming"}))
-)
-```
+Gleamでは、`Http`モジュールを使用することで簡単にHTTPリクエストを送信することができます。以下のコードは、GleamでGETリクエストを送信し、レスポンスを取得する例です。
 
-設定したリクエストを送信し、結果を取得します。
-```
-リクエストを送信
+```Gleam
+import Http
 
-let response = http.send(request)
+let url = "https://example.com"
 
-```
-
-最後に、結果を確認し、必要なデータを取得します。
-```
-結果を確認
+let response = Http.get(url)
 
 case response {
-    Ok(resp) -> resp.body
-    Err(_err) -> HttpError
+  Ok(response) -> response.body
+  Error(err) -> "Error!"
+}
+```
+実行すると、`"Hello, World!"`のようなレスポンスが返ってきます。
+
+POSTリクエストを送信する場合は、以下のように書くことができます。
+```Gleam
+import Http
+
+let url = "https://example.com"
+let body = """{"username": "John", "password": "secret"}"""
+
+let response = Http.post(url, body)
+
+case response {
+  Ok(response) -> response.body
+  Error(err) -> "Error!"
 }
 ```
 
-## 深堀り
-リクエストを送信する際、さまざまなオプションを設定することができます。たとえば、ヘッダーやクエリーパラメーターの指定、Basic認証の追加などが可能です。詳細な設定方法については、Gleamの公式ドキュメントを参照してください。
+## 詳細を掘り下げる
 
-## さらに見る
-- [Gleam公式ドキュメント](https://gleam.run/documentation/)
-- [GleamのHTTPモジュールについて](https://gleam.run/documentation/#http)
+### 歴史的な背景
+HTTPリクエストは、ウェブの発展にとって非常に重要な役割を果たしてきました。1990年代に開発されたHTTPプロトコルは、ウェブブラウザとウェブサーバー間の通信を可能にしました。
+
+### 代替手段
+HTTPリクエストを送信するには、他にも様々な手段があります。例えば、CurlやNet/HTTPといったライブラリを使用する方法や、GoやPythonのような言語でHTTPリクエストをネイティブにサポートしている方法などがありますが、Gleamを使用することで型安全性や他の言語との相互運用性が向上します。
+
+### 実装の詳細
+Gleamの`Http`モジュールでは、内部的にはErlangの`httpc`モジュールを使用しています。また、`body`関数を使用することでレスポンスのボディーだけでなく、ヘッダーやステータスコードも取得することができます。
+
+## 関連情報
+
+- [Gleam Language Website](https://gleam.run/)
+- [Official Guide: Making HTTP requests](https://gleam.run/book/integrating-with-other-projects#making-http-requests)
+- [HTTP Request in Erlang](https://erlang.org/doc/man/httpc.html)

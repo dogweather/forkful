@@ -10,38 +10,21 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Porque
+## O que é e por que gerar números aleatórios?
+Gerar números aleatórios é um processo no qual um programa de computador é usado para produzir um número que não segue nenhum padrão ou ordem específica. Os programadores usam isso para criar elementos de imprevisibilidade e variedade em seus programas.
 
-Gerar números aleatórios é uma tarefa fundamental em muitas aplicações e pode fornecer resultados imprevisíveis e variáveis, tornando o processo mais interessante e dinâmico.
+## Como fazer:
+```Kotlin
+//Usando a função nextInt() do pacote Random para gerar um número inteiro aleatório entre 1 e 10
+val randomInt = (1..10).random()
 
-## Como Fazer
-
-```kotlin
-// Gerando um número inteiro aleatório entre 0 e 10
-val randomInt = (0..10).random()
-
-// Gerando um número decimal aleatório entre 0 e 1
-val randomDouble = Math.random()
-
-// Gerando uma lista com 5 números aleatórios entre 1 e 100
-val randomList = (1..100).shuffled().take(5)
+//Usando a função nextFloat() do pacote Random para gerar um número decimal aleatório entre 1.0 e 10.0
+val randomFloat = Random.nextFloat() * 9 + 1
 ```
 
-### Saída de Exemplo:
+## Mergulho Profundo:
+Historicamente, a geração de números aleatórios foi usada em jogos de azar, mas hoje em dia é amplamente utilizada em algoritmos de criptografia e simulações. Alternativas para gerar números aleatórios incluem usar valores de temperatura, pressão atmosférica ou o ruído de um microfone como fonte de imprevisibilidade. Na implementação, os números aleatórios são gerados por meio de equações matemáticas complexas, que são iniciadas com uma "semente" fornecida pelo sistema operacional.
 
-Número inteiro aleatório: 7
-
-Número decimal aleatório: 0,522313
-
-Lista de números aleatórios: [42, 87, 15, 99, 31]
-
-## Deep Dive
-
-A geração de números aleatórios é comumente usada em jogos, sorteios, criptografia e muitos outros casos. No entando, é importante entender que esses números não são verdadeiramente aleatórios, mas sim pseudorandomizados. Isso significa que são gerados através de um algoritmo matemático que usa um número inicial chamado de "seed" (semente) para gerar uma sequência de números que parecem aleatórios, mas na verdade são previsíveis e repetíveis quando a mesma semente é utilizada.
-
-Para controlar a semente utilizada nos números aleatórios, podemos utilizar a classe `Random` da biblioteca padrão do Kotlin. Além disso, é possível definir limites e escolher entre diferentes tipos de números, como inteiros, decimais e booleanos.
-
-## Veja Também
-
-- [Documentação Oficial do Kotlin sobre `Random`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.random/-random/index.html)
-- [Artigo da Baeldung sobre Geração de Números Aleatórios em Kotlin](https://www.baeldung.com/kotlin/random)
+## Veja também:
+- Documentação oficial do pacote Random em Kotlin: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.random/-random/
+- Explicação sobre a importância da qualidade dos números aleatórios em algoritmos de criptografia: https://www.journaldev.com/254/quality-of-random-numbers-cryptography

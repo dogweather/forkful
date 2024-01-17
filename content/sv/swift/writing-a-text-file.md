@@ -10,62 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-(# Swift och Skrivande Av Textfiler
+## Vad & Varför?
+ Att skriva en textfil är ett sätt för programmerare att spara information eller data på ett enkelt och permanent sätt. Det kan vara användbart för att hämta eller skicka data till andra system eller för att spara inställningar och användarinformation.
 
-Swift är ett populärt programspråk som används för att utveckla mobilappar och webbapplikationer. Det har också en mängd olika funktioner som gör det möjligt att hantera data och filer på en enkel och effektiv sätt. I denna artikel kommer vi att titta på hur man skriver en textfil i Swift på ett enkelt och okomplicerat sätt.
+## Hur:
 
-## Varför
+För att skriva en textfil i Swift finns det flera olika sätt, men ett enkelt sätt är att använda funktionen `write(to:atomically:encoding)` som finns i klassen `NSString`. Detta är ett bra val om du vill spara en textsträng till en fil. Här är ett exempel på hur det kan se ut:
 
-Att skriva en textfil kan vara användbart av flera olika skäl. Det kan vara ett sätt att spara data, till exempel användarinformation eller appinställningar. Det kan också vara ett sätt att dela data med andra användare eller program. Oavsett anledning, är det enkelt att skriva en textfil i Swift.
-
-## Så här gör du
-
-För att börja skriva en textfil i Swift behöver du först skapa en ny tom fil. Detta kan du göra genom att använda `FileManager` klassen.
-
-```
-let fileManager = FileManager.default
-let file = "myFile.txt"
-
-if let directoryURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first {
-    let fileURL = directoryURL.appendingPathComponent(file)
-}
-```
-
-Här skapar vi en ny instans av `FileManager` klassen och sedan ett filnamn för vår textfil. Sedan använder vi `urls(for:in:)` metoden för att få tillgång till dokumentmappen för vår app. Slutligen använder vi `appendingPathComponent` metoden för att skapa en `URL` för vår fil.
-
-Efter att vi har skapat denna `URL`, kan vi använda `write` metoden från `String` klassen och skriva till vår fil.
-
-```
-let text = "Det här är en text som vi vill skriva till vår fil"
+```Swift
+let text = "Hej världen!"
+let fileName = "textfil.txt"
+let fileURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent(fileName)
 
 do {
-    try text.write(to: fileURL, atomically: false, encoding: .utf8)
+    try text.write(to: fileURL, atomically: true, encoding: .utf8)
+    // Om allt går bra så kommer "Hej världen!" att sparas i en textfil som heter "textfil.txt" i dokumentmappen.
+    print("Textfilen har sparats!")
 } catch {
-    print("Kunde inte skriva till filen.")
+    // Om det uppstår ett fel kommer koden här att köras istället.
+    print("Det gick inte att spara textfilen, försök igen.")
 }
 ```
 
-Här använder vi `write` metoden tillsammans med `atomically` och `encoding` argument för att indikera att vi inte vill att filen ska skrivas atomiskt och att vi vill använda UTF8-kodning. Om allt går väl kommer vår text att sparas i vår fil på den angivna `URL`.
+## Deep Dive:
 
-## Djupdykning
+Historiskt sett har det funnits många sätt att skapa och spara textfiler. I Swift har det nu enkla metoder som `write(to:atomically:encoding)` blivit standard tack vare det enkla syntaxet och den enkla implementationen. Men vissa programmerare väljer fortfarande att använda äldre metoder, som `FileHandle` eller `FileManager`, för att ha mer kontroll över filen.
 
-Utöver att skriva till en fil, kan vi också använda `String` klassens `read` metod för att läsa innehållet i en fil.
+Det finns också alternativ till att skriva en textfil i Swift, som att spara data i en databas istället för en fil. Detta kan vara bättre i vissa situationer, men det är fortfarande vanligt att använda textfiler för att spara data.
 
-```
-do {
-    let text = try String(contentsOf: fileURL, encoding: .utf8)
-    print(text)
-} catch {
-    print("Kunde inte läsa filen.")
-}
-```
+När du skriver en textfil i Swift finns det också flera olika sätt att formatera den på. Den mest vanliga är att använda teckenkodningen `.utf8`, men det finns andra alternativ som `.ascii`, `.utf16` och `.utf32`. Det är viktigt att se till att filen har samma kodning som den data du vill spara för att undvika problem med specialtecken och icke-ASCII-tecken.
 
-Här använder vi `read` metoden tillsammans med `contentsOf` argumentet för att läsa innehållet i vår fil och spara det som en `String`. Vi kan också använda `append` metoden för att lägga till mer text till vår fil istället för att skriva över allt befintligt innehåll.
-
-Det finns också andra sätt att skriva och läsa textfiler i Swift med hjälp av olika klasser och metoder, så som `OutputStream` och `InputStream` för större filer eller när vi vill hantera filen bit för bit.
-
-## Se också 
-
-- [Apple's dokumentation om FileManager](https://developer.apple.com/documentation/foundation/filemanager)
-- [Swift för Nybörjare](https://swift.org/getting-started/)
-- [Enkel Swift tutorial från Apple](https://docs.swift.org/swift-book/GuidedTour/GuidedTour.html)
+## Se också:
+- [Apples dokumentation om att skriva till filer i Swift](https://developer.apple.com/documentation/foundation/filemanager/2293072-write)
+- [En tutorial om att skriva och läsa från filer i Swift](https://www.hackingwithswift.com/read/12/2/reading-and-writing-strings-to-a-file)
+- [En diskussion om variationer och alternativ till att skriva textfiler i Swift](https://stackoverflow.com/questions/2586747/writing-data-to-a-file-in-swift)

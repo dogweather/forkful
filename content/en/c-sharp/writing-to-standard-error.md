@@ -10,55 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-Writing to standard error, also known as stderr, is an important part of any C# programming project. It allows for better error handling and debugging, making it easier to identify and fix issues in your code.
+Writing to standard error in C# refers to the act of redirecting error messages to a separate channel known as the "Standard Error Stream". This is typically done in situations where traditional error handling methods, like exceptions, may not be sufficient. Programmers use this method to ensure that critical errors are recorded and communicated to the user, even if the program crashes.
 
-## How To
+## How to:
 
-Writing to standard error in C# is a simple process that can be accomplished using the `Console.Error` property. Here is an example of how to use it to write a custom error message:
-
-```C#
-Console.Error.WriteLine("Oops, something went wrong!");
-```
-
-The above code will write the message "Oops, something went wrong!" to the standard error stream. This can be helpful in situations where you want to differentiate between regular console output and error messages.
-
-You can also use the `Console.SetError` method to redirect the standard error stream to a different location, such as a file. Here is an example of how to do this:
+To write to standard error in C#, you can use the `Console.Error.WriteLine()` method. This takes a string as input and outputs it to the standard error stream. Here's an example:
 
 ```C#
-// Create a file to write errors to
-FileStream file = new FileStream("errors.txt", FileMode.Create);
-// Set standard error to write to the file
-Console.SetError(new StreamWriter(file));
-
-// Write an error message to the file
-Console.Error.WriteLine("Oops, something went wrong!");
-
-// Close the file stream
-file.Close(); 
+Console.Error.WriteLine("Error: Invalid input");
 ```
 
-This can be useful if you want to save error messages for later analysis or logging.
+This will print the error message to the standard error stream, which can then be captured and displayed to the user. 
 
-## Deep Dive
+## Deep Dive:
 
-Writing to standard error is not just limited to text messages. You can also write other types of data, such as objects or numbers. Here is an example of how to do this:
+In the early days of programming, error messages were simply written to the console along with regular output. However, this made it difficult for users to distinguish between standard output and errors, especially in long programs. To address this issue, the concept of standard error was introduced, providing a separate channel for error messages. This also allows for better logging and debugging of errors.
 
-```C#
-// Create a custom exception with a message and error code
-Exception customException = new Exception("Custom error message", 404);
+There are other alternatives to writing to standard error, such as using exceptions or creating custom error handling methods. However, these may not always be feasible or appropriate. Writing to standard error allows for a more straightforward and immediate way of communicating critical errors to users.
 
-// Write the exception to standard error
-Console.Error.WriteLine(customException.ToString());
-```
+In terms of implementation, standard error is typically handled by the operating system. In C#, the common language runtime (CLR) handles the standard error stream, making it easily accessible for programmers. Additionally, the standard error stream is usually redirected to the console by default. However, this can be customized as needed.
 
-The above code will write the exception object to standard error, including its message and error code. This can be helpful for more complex error handling scenarios.
+## See Also:
 
-It is important to note that any data written to standard error will not interrupt the execution of the program. Unlike standard output, which can be redirected and manipulated by another program, standard error is intended for error messages and will continue to be written to the console or designated output location.
-
-## See Also
-
-- [Official Microsoft documentation for Console.Error](https://docs.microsoft.com/en-us/dotnet/api/system.console.error?view=net-5.0)
-- [C# error handling best practices](https://www.c-sharpcorner.com/blogs/error-handling-best-practices-with-c-sharp1)
-- [Understanding the difference between standard output and standard error](https://www.techopedia.com/definition/25944/standard-output-stdout-and-standard-error-stderr)
+- [Microsoft Docs: Console.Error Property](https://docs.microsoft.com/en-us/dotnet/api/system.console.error)
+- [Codeguru: Writing to the Standard Error Stream in .NET C#](https://www.codeguru.com/csharp/writing-to-the-standard-error-stream-in-.net-c.html)
+- [C# Corner: Standard Error and Standard Output in C#](https://www.c-sharpcorner.com/article/standard-error-and-standard-output-in-c-sharp/)

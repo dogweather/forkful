@@ -10,51 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä & Miksi?
+YAML on tietokielto, jota käytetään datan tallentamiseen ja siirtämiseen erilaisissa ohjelmistokehityksen projekteissa. Ohjelmoijat käyttävät sitä, koska se mahdollistaa selkeän ja helposti luettavan datan esitystavan ja siten helpomman ymmärrettävyyden ja ylläpidettävyyden.
 
-Jos olet JavaScript-kehittäjä ja haluat tehokkaan ja helpon tavan hallita tietoja, jotka ovat tallennettu tekstiin, niin YAML on juuri sitä mitä tarvitset. Se on moderni tiedostomuoto, joka on helppo lukea ja kirjoittaa, mikä tekee siitä erinomaisen vaihtoehdon monimutkaisille tietoformaateille, kuten XML.
+## Miten:
+Käyttämällä JavaScriptiä ja sen tarjoamia työkaluja, voit helposti lukea ja kirjoittaa YAML-tiedostoja ohjelmassasi. Esimerkiksi, voit käyttää yaml-loader -moduulia Webpackin avulla saadaksesi YAML-tiedostojen datan suoraan JavaScript-objekteiksi käyttöösi. Alla on yksinkertainen esimerkki:
 
-## Miten
-
-YAML-tiedostojen käsittely JavaScriptissä on yksinkertaista ja suoraviivaista. Ensimmäiseksi varmista, että olet asentanut tarvittavan kirjaston, kuten [js-yaml](https://github.com/nodeca/js-yaml), käyttääksesi YAML-parseria.
-
-```Javascript
-// Esimerkki YAML-tiedostosta
-const yamlData = `
-  year: 2021
-  month: August
-  day: 24
-`;
-// Muunnetaan YAML JavaScript-objektiksi
-const jsObject = YAML.load(yamlData);
-// Tulostetaan tiedot konsolille
-console.log(`Tänään on ${jsObject.day}. ${jsObject.month} ${jsObject.year}.`);
+```JavaScript
+var yaml = require('yaml-loader!');
+var data = yaml.load('person:
+  name: John
+  age: 25');
+console.log(data.person.name); //tulostaa "John"
 ```
 
-Tämä koodi luo JavaScript-objektin, joka sisältää vuoden, kuukauden ja päivän tiedot YAML-tiedostosta. Huomaa, että YAML syntaksiin kuuluu sisennys merkityillä tasoilla, joten varmista että tiedostosi on oikeassa muodossa ennen kuin yrität muuntaa sen JavaScript-muotoon.
+Voit myös käyttää yamljs-moduulia suoraan JavaScriptissa, ilman Webpackia:
 
-## Syventävä sukellus
-
-YAML-tiedot voivat sisältää monenlaisia arvoja, kuten lukuja, tekstiä, listoja ja objekteja. Voit myös luoda muuttujia ja käyttää niitä myöhemmin tiedostossa. Tässä on toinen esimerkki muokatusta YAML-päivämäärätiedostosta:
-
-```Javascript
-date: &date
-  year: 2021
-  month: August
-  day: 24
-
-// Käytetään muuttujina
-date1: *date
-date2: *date
-// Muutetaan kuukausi ja päivä
-date2.month: September
-date2.day: 1
+```JavaScript
+var YAML = require('yamljs');
+var data = YAML.load('person:
+  name: John
+  age: 25');
+console.log(data.person.age); //tulostaa 25
 ```
 
-Tämä tuottaa kaksi JavaScript-objektia, joista kummallakin on sama vuosi, mutta eri kuukausi ja päivä. Tämä voi olla hyödyllistä, jos haluat käyttää samoja tietoja useissa eri kohdissa tiedostoa.
+## Syvemmälle:
+YAML kehitettiin alun perin vuonna 2001 korvaamaan XML:ää yksinkertaisempana ja helpommin luettavana vaihtoehtona. Vaikka sen suosio on kasvanut vuosien varrella, on olemassa myös muita vaihtoehtoja tiedon tallentamiseen ja siirtämiseen, kuten JSON tai HJSON. Valinta riippuu käyttötapauksista ja mieltymyksistä.
 
-## Katso myös
+YAML-tiedostot ovat rakenteeltaan erittäin yksinkertaisia, koska ne käyttävät loogisia sisennyksiä ja luettavissa olevaa syntaksia. Tämän ansiosta ne soveltuvat hyvin käytettäväksi konfiguraatiotiedostoina. Voit myös sisällyttää YAML-tiedostojen sisään HTML- tai Markdown-muotoilua, mikä tekee niistä erittäin monipuolisia.
 
-- [js-yaml](https://github.com/nodeca/js-yaml)
-- [YAML-oppaat](https://yaml.org/start.html)
-- [kustomoidut JavaScript-objektit](https://www.w3schools.com/js/js_objects.asp)
+## Katso myös:
+- [YAML-spesifikaatio](http://www.yaml.org/spec/1.2/spec.html)
+- [YAML-tutorial](http://www.yaml.org/start.html)
+- [webpack-yaml-loader](https://github.com/webpack-contrib/yaml-loader)
+- [yamljs](https://github.com/jeremyfa/yamljs)

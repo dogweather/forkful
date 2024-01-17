@@ -10,53 +10,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä ja miksi?
+Säännölliset lausekkeet ovat tapa (1) löytää ja (2) työstää tietoja merkkijonoista tietyllä säännöllisellä kaavalla. Koodareille tämä tarkoittaa esimerkiksi tietojen validointia tai etsimistä tietokannasta tietyillä kriteereillä.
 
-Jos olet koskaan joutunut käsiksi monimutkaisten merkkijonojen käsittelyyn, tiedät kuinka aikaa vievää ja haastavaa se voi olla. Regular expression eli regex on tehokas työkalu, joka auttaa sinua löytämään ja manipuloimaan merkkijonoja nopeasti ja helposti.
-
-## Miten käyttää regular expressioneja C#:ssa
-
-Regular expressioneja voi käyttää C#:ssa System.Text.RegularExpressions -kirjastolla. Ensimmäiseksi sinun tulee luoda Regex-objekti, joka sisältää säännön, jonka haluat etsiä merkkijonosta.
+## Miten:
+Käytä ```C#Regex``` luokkaa ja sen metodeja, kuten ```Match()``` ja ```Replace()```, säännöllisten lausekkeiden käyttämiseksi. Alla näet esimerkin, jossa tarkistamme onko annettu merkkijono validi sähköpostiosoite ja vaihdamme sen @-merkin tilalle %-merkin.
 
 ```C#
-// Luodaan Regex-objekti, joka etsii kaikki "koira" merkkijonossa
-Regex regex = new Regex("koira");
+string email = "example%email.com";
+string pattern = @"^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$";
+string replacement = "@";
+string result = Regex.Replace(email, pattern, replacement);
+// Output: "example@email.com" 
 ```
 
-Sitten voit käyttää erilaisia metodeja löytääksesi merkkijonoja, esimerkiksi käyttämällä Match-metodia, joka palauttaa ensimmäisen osuman:
+## Syventävää:
+Säännölliset lausekkeet ovat olleet läsnä jo varhain tekstipohjaisessa tiedonkäsittelyssä, mutta vasta tietokoneiden yleistymisen myötä niiden käyttö on yleistynyt myös koodareiden keskuudessa. Nykyään on myös muita tapoja käsitellä säännöllisiä lausekkeita, kuten ilmaista kieltä käyttämällä. Tästäkin voi löytyä etuja esimerkiksi monikielisissä sovelluksissa. C# tarjoaa erilaisia metodeja ja ominaisuuksia säännöllisten lausekkeiden hallitsemiseksi, joten kannattaa tutustua niihin tarkemmin esimerkiksi Microsoftin dokumentaatiosta.
 
-```C#
-// Etsitään ensimmäinen osuma Regex-objektilla
-Match match = regex.Match("Tänään näin ruskean koiran puistossa.");
-
-// Palauttaa "koira"
-string result = match.Value;
-```
-
-Voit myös käyttää Replace-metodia korvaamaan osuman toisella merkkijonolla, kuten alla:
-
-```C#
-// Korvataan ensimmäinen "koira" merkkijonolla "kissa"
-string replaced = regex.Replace("Tänään näin ruskean koiran puistossa.", "kissa");
-
-// Palauttaa "Tänään näin ruskean kissan puistossa."
-```
-
-## Syvällinen sukellus
-
-Regular expressioneja voi käyttää myös monimutkaisempien sääntöjen etsimiseen ja manipulointiin, kuten säännöllisten lausekkeiden avulla. Voit myös käyttää säännöistä ryhmiä, joiden avulla voit löytää tiettyjä osia merkkijonosta.
-
-```C#
-// Etsitään "koira" sana, joka on seuraavien kolmen sanan jälkeen
-Regex regex = new Regex("koira (?<jalkima>", 3);
-
-// Palauttaa "ruskean" kolmen sanan jälkeen
-string result = match.Groups["jalkima"].Value;
-```
-
-On myös mahdollista käyttää regular expressioneja suorittamaan tiettyjä toimenpiteitä, kuten leikkaamalla merkkijonosta osia tai tarkistamalla löytyykö merkkijonosta tiettyä sanaa.
-
-## Katso myös
-
-- [Microsoftin ohjeet regular expressioneista C#:ssa](https://docs.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-language-quick-reference)
-- [Regex101 - online-työkalu regular expressioneihin](https://regex101.com/)
+## Katso myös:
+- [Microsoftin dokumentaatio säännöllisistä lausekkeista](https://docs.microsoft.com/en-us/dotnet/standard/base-types/regular-expressions)
+- [C#Regex luokka](https://docs.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.regex?view=net-5.0)

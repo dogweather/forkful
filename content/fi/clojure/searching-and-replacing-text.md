@@ -10,33 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+Mikä & Miksi? 
+Haku ja korvaaminen on tärkeä osa ohjelmointia, jossa tekstiä etsitään ja korvataan tietyillä säännöillä tai hakuavaimilla. Tämä voi säästää paljon aikaa ja vaivaa, kun kyseessä on suurten tekstimäärien käsittely.
 
-Oletko väsynyt manuaalisesti etsimään ja korvaamaan tekstiä tiedostoista? Haluatko säästää aikaa ja vaivaa? Clojure tarjoaa helpon tavan tehdä tämä automaattisesti, mikä tekee tekstien muokkaamisesta paljon nopeampaa ja tarkempaa.
-
-## Miten tehdä se
-
-Etsi ja korvaa toiminto Clojurella on helppo oppia ja käyttää. Käytä funktiota `replace`  tekstien etsimiseen ja korvaamiseen. Voit käyttää myös `replace` funktiota taulukoiden tai merkkijonojen kanssa. Katso alla oleva esimerkki:
+Kuinka: 
+Tässä on muutama esimerkki siitä, kuinka voit suorittaa hakuja ja korvauksia Clojure-kielessä:
 
 ```Clojure
-(def teksti "Tämä on esimerkki tekstistä, jota haluat korvata.")
-(replace teksti "haluat korvata" "haluat muuttaa")
+;; Korvaa kaikki esiintymät merkkijonolla "hello" merkkijonossa "world"
+(clojure.string/replace "hello world world" #"world" "goodbye")
+
+Tulostaa: "hello goodbye goodbye"
+
+;; Etsi kaikki luvut, jotka ovat pienempiä kuin 10 ja korvaa ne merkkijonolla "pieni"
+(clojure.string/replace "1 5 10 15" #"[0-9]+" "pieni" :count 2)
+
+Tulostaa: "pieni pieni 10 15"
+
+;; Käytä säädyllistä korvausfunktiota korvaamiseen
+(clojure.string/replace "hello world" #"[a-z]+" (fn [_] "goodbye"))
+
+Tulostaa: "goodbye goodbye"
 ```
 
-Tuloksena on uusi merkkijono: "Tämä on esimerkki tekstistä, jota haluat muuttaa." Voit myös käyttää regex-merkkejä löytääksesi tiettyjä kuvioita tekstistä:
+Deep Dive: 
+Haku ja korvaaminen ovat tärkeitä ohjelmoinnin toimintoja, ja niitä on käytetty jo vuosikymmenien ajan. Yhä useammat kielet, kuten Clojure, tarjoavat valmiita funktioita näiden toimintojen suorittamiseen, jolloin ohjelmoijien ei tarvitse kirjoittaa omia haku- ja korvaustoimintojaan.
 
-```Clojure
-(def sana "tervehtimään")
-(replace sana #"eh$" "aa")
-```
+On myös muita tapoja suorittaa hakuja ja korvauksia, kuten regular expression -kielellä, joka tarjoaa enemmän joustavuutta sääntöjen määrittelyssä. Clojure tarjoaa myös muita funktioita, kuten ```clojure.string/replace-first```, joka korvaa vain ensimmäisen esiintymän, ja ```clojure.string/replace-nth```, jolla voidaan korvata tietty määrä esiintymiä.
 
-Tämä korvaa "eh"-loppuiset sanat "aa"-loppuisilla sanoilla, jolloin tuloksena on merkkijono "tervehtimään". Löydät lisätietoja Clojuren `replace` funktion käytöstä [Clojuren dokumentaatiosta](https://clojuredocs.org/clojure.string/replace).
-
-## Syvemmälle tekniseen
-
-Clojuren `replace` toiminto käyttää `replace-first` ja `replace-all` funktioita, jotka puolestaan käyttävät Java-kirjaston `java.util.regex.Pattern` ja `java.util.regex.Matcher` luokkia. Tämä mahdollistaa monipuolisen ja tarkan tekstin etsimisen ja korvaamisen Clojurella. Voit löytää lisätietoja Java-kirjaston toiminnasta [Java:n virallisilta verkkosivuilta](https://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html).
-
-## Katso myös
-
-- [Clojuren viralliset verkkosivut](https://clojure.org/)
-- [Etsi ja korvaa tekstiä Clojurella -opetusohjelma](https://www.braveclojure.com/finding-and-replacing-text-in-clojure/)
+See Also:
+Lisätietoja hakujen ja korvaamisen suorittamisesta Clojure-kielessä löytyy virallisesta dokumentaatiosta: https://clojure.github.io/clojure/clojure.string-api.html#clojure.string/replace. Voit myös löytää lisää tietoa regular expressionista ja sen käytöstä hakujen ja korvausten tekemiseen esimerkiksi täältä: https://www.regular-expressions.info/clojure.html.

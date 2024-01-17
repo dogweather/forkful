@@ -10,29 +10,21 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Czym jest i dlaczego to robimy?
+Znalezienie długości łańcucha znaków, czyli ilości znaków w danym tekście, jest ważnym zadaniem dla programistów podczas tworzenia oprogramowania. Wiele operacji na stringach wymaga znajomości ich długości, więc umiejętność znalezienia jej jest niezbędna.
 
-Znalezienie długości napisu może być niezbędne podczas tworzenia programów w języku Swift. Może być wykorzystywane do walidacji danych wejściowych lub do operacji na tekstach.
-
-## Jak
+## Jak to zrobić:
+Możesz użyć metody `count` aby znaleźć długość łańcucha znaków w Swift. Przykładowo, jeśli chcesz znaleźć długość tekstu "Cześć!", możesz użyć poniższego kodu:
 
 ```Swift
-let name = "John"
-let length = name.count
-print("Długość imienia to \(length) znaków.")
+let tekst = "Cześć!"
+print(tekst.count)
 ```
 
-W powyższym przykładzie tworzymy zmienną „name”, zawierającą imię „John”. Następnie używamy wbudowanej funkcji „count” na zmiennej „name”, aby uzyskać długość napisu. W końcu drukujemy wynik, używając interpolacji ciągu znaków. Ta sama metoda może być również użyta do sprawdzania długości innych napisów.
+W tym przypadku, metoda `count` zwróci wartość 6, ponieważ tekst składa się z sześciu znaków.
 
-## Deep Dive
+## Głębsza analiza:
+Znalezienie długości łańcucha znaków jest powszechnym zadaniem w programowaniu i istnieje wiele sposobów na to, aby to zrobić. Wcześniej, programiści musieli ręcznie liczyć znaki w tekście lub używać złożonych algorytmów. Jednak, dzięki nowoczesnym językom programowania, takim jak Swift, metoda `count` jest dostępna, co ułatwia nam zadanie.
 
-Długość napisu jest określana przez liczbę znaków, które składają się na dany napis. W języku Swift, każdy znak, niezależnie od tego czy jest literą czy symbolem, jest traktowany jako jedna jednostka. Dzięki temu funkcja „count” jest w stanie poprawnie obliczać długość napisu, nawet jeśli zawiera on różnego rodzaju znaki.
-
-Ponadto, funkcja „count” jest zawsze dostosowana do aktualnego języka urządzenia użytkownika. Oznacza to, że jeśli użytkownik ma ustawiony język na polski, funkcja ta będzie zliczać polskie znaki jako jednostki.
-
-Jeśli używasz starszych wersji języka Swift, musisz używać funkcji „characters.count” zamiast „count” do obliczania długości napisu.
-
-## Zobacz także
-
-- [Swift - String](https://developer.apple.com/documentation/swift/string)
-- [Swift - Counting Characters](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#ID285)
+## Zobacz także:
+Jeśli chcesz dowiedzieć się więcej o metodzie `count` lub innych operacjach na stringach w Swift, zapoznaj się z dokumentacją Swift od Apple lub wypróbuj różne przykłady kodu z udostępnionej przez nich witryny.

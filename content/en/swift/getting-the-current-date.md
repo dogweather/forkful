@@ -10,48 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-Have you ever needed to display the current date in your Swift program, whether it be for a calendar app or a reminder system? Knowing how to retrieve the current date and time is an essential skill for any Swift developer.
+## What & Why?
+Getting the current date is a common task in programming that involves retrieving the current date and time from a device or server. It is important for various applications such as scheduling, data tracking, and creating time-sensitive features. Programmers often use this data to ensure accuracy and consistency in their code.
 
-## How To
-Getting the current date in Swift is a simple process. First, we need to import the Foundation framework, which contains the Date class.
+## How to:
+To get the current date in Swift, we can use the Date class and its corresponding static methods. Here's a simple example:
 
-```
-import Foundation
-```
-
-Then, we can create an instance of the Date class and assign it to a variable.
-
-```
+```Swift
 let currentDate = Date()
 ```
 
-To display the date in a specific format, we can use the DateFormatter class. For example, to display the date in "MMMM dd, yyyy" format (e.g. January 1, 2022), we would use the following code:
+This creates a new Date instance with the current date and time. You can also get the current date in a specific time zone by using the Date's initializer with a time zone parameter:
 
-```
-let dateFormatter = DateFormatter()
-dateFormatter.dateFormat = "MMMM dd, yyyy"
-let formattedDate = dateFormatter.string(from: currentDate)
-
-print(formattedDate) // Output: January 1, 2022
+```Swift
+let currentDate = Date(in: TimeZone.current)
 ```
 
-We can also get the current time by specifying the time format in the DateFormatter class.
+To print the current date, we can use a DateFormatter to format it into a readable string:
 
+```Swift
+let formatter = DateFormatter()
+formatter.dateFormat = "MM/dd/yyyy"
+let currentDateString = formatter.string(from: currentDate)
+print(currentDateString) // Output: 01/01/2022
 ```
-let timeFormatter = DateFormatter()
-timeFormatter.dateFormat = "hh:mm a"
-let formattedTime = timeFormatter.string(from: currentDate)
 
-print(formattedTime) // Output: 05:30 PM
-```
+## Deep Dive:
+In the past, getting the current date required complex calculations and conversions. However, with the introduction of the Date class in Swift, this task became much easier. Before Swift 3, developers used the NSDate class to handle dates.
 
-## Deep Dive
-Behind the scenes, the Date class actually stores the number of seconds since January 1st, 2001 at 12:00 AM UTC. So, when we create an instance of the Date class without any parameters, we are essentially getting the current date and time in seconds.
+There are also alternative ways to get the current date in Swift, such as using the Calendar class or the NSDateComponents class. However, these are usually used for more specific purposes, and the Date class remains the most straightforward and widely used method.
 
-The DateFormatter class allows us to format the date and time according to our preferences. We can specify the formatting using various characters, such as "M" for the month, "d" for the day, "y" for the year, "h" for the hour, "m" for the minute, and "a" for am/pm. It's important to note that these characters are case-sensitive.
+Under the hood, the Date class is a thin wrapper over a Double value representing the time interval since January 1, 2001, at 00:00:00 UTC. This is known as the Unix epoch, a standard system for representing dates and times in computing.
 
-## See Also
-- [Apple's Documentation on the Date Class](https://developer.apple.com/documentation/foundation/date)
-- [DateFormatter Formatting Guide](https://www.nsdateformatter.com/)
-- [Swift Date Formatting Tutorial](https://www.hackingwithswift.com/articles/153/how-to-use-dateformatter-to-format-dates-and-times)
+## See Also:
+- Apple's official documentation on the Date class: https://developer.apple.com/documentation/foundation/date
+- Tutorial on Date and Time in Swift: https://www.ralfebert.de/ios-examples/date-pickers/ios-date-and-time-pickers/
+- Understanding Epoch Time: https://www.epochconverter.com/

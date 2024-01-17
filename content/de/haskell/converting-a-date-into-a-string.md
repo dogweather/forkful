@@ -1,7 +1,7 @@
 ---
-title:                "Ein Datum in eine Zeichenfolge umwandeln"
-html_title:           "Haskell: Ein Datum in eine Zeichenfolge umwandeln"
-simple_title:         "Ein Datum in eine Zeichenfolge umwandeln"
+title:                "Ein Datum in einen String umwandeln"
+html_title:           "Haskell: Ein Datum in einen String umwandeln"
+simple_title:         "Ein Datum in einen String umwandeln"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Dates and Times"
@@ -10,28 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum 
-Warum sollte man ein Datum in einen String umwandeln wollen? Nun, es gibt viele mögliche Gründe. Vielleicht müssen Sie ein Datumstempel für eine Datenbank oder eine Textausgabe vorbereiten, oder Sie wollen einfach nur ein bestimmtes Datumsformat für Ihre Anwendung verwenden. In jedem Fall ist die Fähigkeit, ein Datum in einen String umzuwandeln, ein wichtiger Bestandteil der Programmierung.
+Was ist das Konvertieren eines Datums in einen String und warum machen Programmierer das?
 
-## Wie geht das 
-Ein einfacher Weg, ein Datum in einen String umzuwandeln, ist die Verwendung der `formatTime` Funktion aus dem `Data.Time` Modul. Hier ist ein Beispiel, das das aktuelle Datum in das gängige Format "TT / MM / JJJJ" umwandelt:
+Das Konvertieren eines Datums in einen String bezieht sich auf die Umwandlung eines Datums, das in einem bestimmten Format gespeichert ist, in einen lesbaren Text. Dies kann nützlich sein, wenn Benutzer einen bestimmten Textstil bevorzugen oder ein Datum in einer bestimmten Sprache angezeigt werden soll. Programmierer führen diese Konvertierung durch, um die Lesbarkeit von Daten zu verbessern und sie für Benutzer oder andere Programmierer zugänglicher zu machen.
+
+Wie funktioniert es?
+
+Die Konvertierung eines Datums in einen String kann mit der `show` Funktion in Haskell erreicht werden. Diese Funktion nimmt ein Datum als Eingabe und gibt einen lesbaren String aus, der das Datum darstellt. Hier ein Beispiel:
 
 ```Haskell
-import Data.Time (getCurrentTime, formatTime, defaultTimeLocale)
-
-main = do
-    now <- getCurrentTime
-    let dateStr = formatTime defaultTimeLocale "%d/%m/%Y" now
-    print dateStr
+show (2019, 10, 20) -- Output: "(2019,10,20)"
 ```
 
-Dieses Programm importiert die benötigten Module, ruft `getCurrentTime` auf, um das aktuelle Datum zu erhalten, und verwendet dann `formatTime` mit dem gewünschten Format und dem `defaultTimeLocale` Parameter, um es in einen String umzuwandeln. Die Ausgabe ist in diesem Fall "03/08/2021".
+In diesem Beispiel wird ein Tuple mit einem Datum als Eingabe verwendet. Jedoch kann die `show` Funktion auch mit anderen Datentypen wie `Int`, `Float` oder `Bool` verwendet werden.
 
-## Tiefer eintauchen 
-Nun, da Sie wissen, wie man ein Datum in einen String umwandeln kann, lassen Sie uns etwas tiefer eintauchen. Die `formatTime` Funktion akzeptiert auch benutzerdefinierte Formate, die Sie durch das Erstellen Ihrer eigenen `TimeLocale`-Objekte definieren können. Dies kann hilfreich sein, wenn Sie ein spezielles Datumformat benötigen oder Ihre Anwendung in einer anderen Sprache ausgeben möchten.
+Als Alternative zur `show` Funktion gibt es auch die `formatTime` Funktion, die es ermöglicht, ein Datum in einem benutzerdefinierten Format auszugeben. Hier ein Beispiel:
 
-Außerdem gibt es noch die `showGregorian` Funktion aus dem `Data.Time.Calendar` Modul, die ein Datum im gregorianischen Kalender in einem bestimmten Format als String darstellt. Dies kann nützlich sein, wenn Sie mit speziellen Datumsobjekten arbeiten, die nicht von `Data.Time` unterstützt werden.
+```Haskell
+import Data.Time.Format (formatTime, defaultTimeLocale)
 
-## Siehe auch 
-- [Haskell Wiki - Adding time and dates](https://wiki.haskell.org/Adding_time_and_dates)
-- [Haskell - Data Time library](https://hackage.haskell.org/package/time/docs/Data-Time.html)
+formatTime defaultTimeLocale "%d.%m.%Y" (2019, 10, 20) -- Output: "20.10.2019"
+```
+
+Tiefer eintauchen
+
+Die `show` Funktion hat eine lange Geschichte in der Programmiersprache Haskell. Sie war Teil des ursprünglichen Standard Packages und wurde seitdem in verschiedene andere Packages importiert. Sie ist weiterhin eine beliebte Wahl für die Konvertierung von Datumsangaben in Strings aufgrund ihrer Einfachheit und Effektivität.
+
+Alternativ zur Verwendung von `show` und `formatTime`, können Programmierer auch eine benutzerdefinierte Funktion schreiben, um ein Datum in einen String zu konvertieren. Dies erfordert jedoch mehr Aufwand und Wissen über die internen Funktionen von Haskell.
+
+Schau dir auch an
+
+- [Haskell.org - `show` Funktion](https://wiki.haskell.org/Show_instance)
+- [Haskell.org - `formatTime` Funktion](https://hackage.haskell.org/package/time/docs/Data-Time-Format.html#g:5)
+
+Übersetzt aus dem Englischen von Gaelle McNeil

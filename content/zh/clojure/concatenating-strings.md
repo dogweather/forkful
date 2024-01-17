@@ -10,45 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##为什么
-您可能想知道为什么要学习如何连接字符串。简单来说，连接字符串是编程中常用的操作，它可以让您动态地将不同的字符串合并起来，创建出更复杂的字符串。比如您可以用它来构建一个完整的句子，或者将多个单词连在一起来创建一个单词游戏。
+## 什么是字符串连接？为什么程序员会这样做？
+字符串连接指的是将多个独立的字符串合并为一个字符串的操作。程序员通常使用字符串连接来将不同的文本信息组合成一个整体，以便在程序中更方便地使用和处理。
 
-##如何进行
-首先，让我们来看看如何在Clojure中连接字符串：
+## 如何实现字符串连接：
+字符串连接可以通过Clojure内置的str函数来实现，也可以使用concat函数将多个字符串连接起来。例如：
 
-```Clojure
-(str "Hello" " " "world")
+```
+Clojure
+(str "Hello" "world")  ; 输出： HelloWorld
+(concat "Welcome" " to" " my" "blog") ; 输出：Welcome to my blog
 ```
 
-这段代码将输出 "Hello world"。通过使用str函数，我们可以将多个字符串合并成一个，并在它们之间添加任意的分隔符。
+## 深入了解：
+在早期计算机编程中，字符串连接是一个相对复杂和耗时的操作，因为每次连接字符串都需要分配新的内存空间。但是，随着计算机技术的发展，现在的计算机已经可以轻松地处理大量的字符串连接操作。
 
-如果您想连接字符串和其他类型的值，可以使用clojure.string/join函数，它可以接受任意数量的参数，并将它们连接成一个字符串。例如：
+除了使用str和concat函数，还可以通过使用StringBuilder来实现字符串连接，这种方法可以提高性能，特别是在需要频繁连接大量字符串的情况下。
 
-```Clojure
-(require '[clojure.string :as string])
+## 参考链接：
+了解更多关于字符串连接的信息，请参考以下链接：
 
-(string/join " " "Hello" "world" "!")
-```
-
-这段代码将输出 "Hello world !"。除了空格，您还可以在join函数中指定任意的分隔符。
-
-##深入探讨
-连接字符串的底层原理其实并不复杂，Clojure中的字符串其实就是Java中的字符串，而连接字符串的方式也和Java是一样的。因此，您也可以使用Java中的方法来进行字符串连接。例如：
-
-```Clojure
-(.concat "Hello" " world")
-```
-
-除了特定的字符串连接函数，Clojure也提供了一些更加灵活的方法来操作字符串。比如，在连接字符串之前，我们经常需要操作字符串的形式，比如去除空格、转换大小写等。Clojure提供了一系列函数来进行这些操作，比如：
-
-```Clojure
-(clojure.string/trim "  Hello world ")
-```
-
-这段代码将输出 "Hello world"，因为我们去除了字符串两边的空格。
-
-除了这些基本的操作，Clojure还提供了许多其他方法来处理字符串，包括正则表达式、字符串替换等。如果您想进一步学习如何操作字符串，可以参考下面的链接。
-
-##另请参阅
-- [Clojure String函数文档](https://clojure.github.io/clojure/clojure.string-api.html)
-- [Clojure正则表达式文档](https://clojuredocs.org/clojure.core/re-pattern)
+- [Clojure文档：字符串操作](https://clojure.org/reference/data_structures#_strings)
+- [StringBuilder使用指南](https://www.baeldung.com/java-string-builder)

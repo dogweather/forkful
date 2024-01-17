@@ -10,42 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
-Tu as sûrement déjà croisé des expressions régulières (ou *regular expressions*), surtout si tu es un.e développeur.se. Mais pourquoi se donner la peine d'apprendre ces petits bouts de code ? En un mot : efficacité. Les expressions régulières te permettent de manipuler rapidement et précisément du texte, sans avoir à écrire une tonne de lignes de code.
+## Quoi & Pourquoi?
 
-## Comment faire
-Pour commencer, il faut savoir que les expressions régulières sont écrites entre deux barres obliques, comme ceci : `/expression regulière/`. Ensuite, il suffit de les utiliser avec les fonctions `Regex.matches` ou `Regex.replace`. Regardons un exemple :
+L'utilisation d'expressions régulières est une pratique courante parmi les programmeurs. Cela leur permet de rechercher et de manipuler des motifs spécifiques dans du texte, ce qui peut s'avérer très utile lors de la validation de données ou du traitement de chaînes de caractères.
 
-```Gleam
-let email_regex = Regex.compile("/^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$/")
+## Comment:
 
-let email = "john.doe@example.com"
-
-let is_valid = Regex.matches(email_regex, email)
-
-assert.equal(is_valid, True) // Renvoie True car l'email est valide selon l'expression régulière.
-```
-
-On peut également utiliser les expressions régulières pour remplacer une partie d'une chaîne de caractères. Par exemple :
+Voici un exemple simple d'utilisation des expressions régulières en Gleam:
 
 ```Gleam
-let sentence = "J'aime les chats et les chiens."
+let regex = Regex.compile("\\d{3}-\\d{2}-\\d{4}")
+let ssn = "123-45-6789"
 
-let regex = Regex.compile("/chats/")
-
-let new_sentence = Regex.replace(regex, sentence, "lapins")
-
-assert.equal(new_sentence, "J'aime les lapins et les chiens.") // Renvoie "J'aime les lapins et les chiens."
+match regex.match(ssn) {
+  Some(_) -> 
+    // Code exécuté lorsque le numéro de sécurité sociale est valide
+    //...
+  None -> 
+    // Code exécuté en cas d'erreur
+    //...
+}
 ```
 
-## Plongée en profondeur
-Si tu veux vraiment pousser tes connaissances en expressions régulières, il y a quelques éléments à savoir. Tout d'abord, les expressions régulières sont sensibles à la casse, c'est-à-dire qu'elles font la différence entre les lettres majuscules et minuscules. Pour ignorer la casse, il faut utiliser le drapeau `/i` après l'expression régulière.
+Dans cet exemple, nous définissons une expression régulière pour vérifier si un numéro de sécurité sociale est valide. Ensuite, nous faisons correspondre le numéro de sécurité sociale fourni à cette expression régulière. Si la correspondance est réussie, le code à l'intérieur du bloc "Some" est exécuté, sinon le code à l'intérieur du bloc "None" est exécuté.
 
-De plus, il est possible d'utiliser des quantificateurs pour spécifier le nombre de fois qu'un motif doit apparaître. Par exemple, `+` indique qu'un caractère doit apparaître une ou plusieurs fois, tandis que `*` indique qu'il peut apparaître zéro ou plusieurs fois. Il existe également des quantificateurs de nombre précis, comme `{3}` pour indiquer qu'un caractère doit apparaître exactement trois fois.
+## Plongée en profondeur:
 
-Enfin, les expressions régulières peuvent être utilisées avec des classes de caractères, qui permettent de spécifier un ensemble de caractères autorisés. Par exemple, `[a-z]` indique que le caractère doit être une lettre minuscule.
+Les expressions régulières ont été initialement développées dans les années 1950 et sont devenues un outil essentiel pour les programmeurs dans de nombreux langages, y compris dans Gleam. Bien qu'elles puissent sembler intimidantes au premier abord, les expressions régulières peuvent être très puissantes une fois que l'on en comprend les bases.
 
-## Voir aussi
-- [La documentation officielle de Gleam](https://gleam.run/libraries/regex/)
-- [Un guide complet sur les expressions régulières](https://regexone.com/)
-- [Un testeur en ligne pour les expressions régulières](https://regex101.com/)
+Il existe également d'autres alternatives aux expressions régulières, comme les analyseurs lexicaux et syntaxiques, qui peuvent être plus adaptés à certains scénarios. Cependant, les expressions régulières restent un outil très utile et polyvalent pour manipuler et valider des données.
+
+Pour comprendre comment les expressions régulières sont mises en œuvre en interne, vous pouvez jeter un coup d'œil au code source de Gleam qui utilise la bibliothèque Rust à cet effet.
+
+## Voir aussi:
+
+- Documentation sur les expressions régulières en Gleam: https://gleam.run/book/tour/regular-expressions.html
+- Documentation officielle sur les expressions régulières en général: https://www.regular-expressions.info/

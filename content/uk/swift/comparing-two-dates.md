@@ -10,42 +10,63 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Чому
+## Що & Чому?
+Порівняння двох дат означає визначення порядку між ними - чи одна дата відбулася до, після або в той самий час, що й інша дата. Програмісти використовують таке порівняння для сортування даних, визначення часових інтервалів та для багатьох інших завдань.
 
-Порівняння дат є важливою задачею в програмуванні, оскільки воно дозволяє перевірити, чи дві дати співпадають або яка з них більша чи менша. Це необхідно для роботи з часовими данними та для виконання певних дій в залежності від дат.
+## Як:
+```
+let firstDate = Date()
+let secondDate = Date(timeIntervalSinceNow: 3600)
 
-## Як
+// Порівняння за допомогою `compare`
+if firstDate.compare(secondDate) == .orderedAscending {
+  print("\(firstDate) відбулася до \(secondDate).")
+} else if firstDate.compare(secondDate) == .orderedDescending {
+  print("\(firstDate) відбулася після \(secondDate).")
+} else {
+  print("\(firstDate) та \(secondDate) відбулися в один час.")
+}
 
-Для порівняння двох дат використовується функція `compare()` з класу `Date`. Ця функція повертає об'єкт типу `ComparisonResult`, який може мати три значення: `.orderedAscending`, `.orderedDescending` або `.orderedSame`. Перші два вказують на те, що одна дата більша або менша за іншу, а третє - що вони рівні.
+// Використання операторів `>` та `<`
+if firstDate > secondDate {
+  print("\(firstDate) відбулася після \(secondDate).")
+} else if firstDate < secondDate {
+  print("\(firstDate) відбулася до \(secondDate).")
+} else {
+  print("\(firstDate) та \(secondDate) відбулися в один час.")
+}
 
-Давайте розглянемо приклад коду, щоб зрозуміти як це працює:
+// Використання оператора `==` для порівняння на той самий час
+if firstDate == secondDate {
+  print("\(firstDate) та \(secondDate) відбулися в один час.")
+}
 
-```Swift
-let date1 = Date()
-let date2 = Date(timeIntervalSinceNow: 3600)
-
-let comparisonResult = date1.compare(date2)
-
-switch comparisonResult {
-    case .orderedAscending:
-        print("\(date1) є більшою за \(date2)")
-    case .orderedDescending:
-        print("\(date1) є меншою за \(date2)")
-    case .orderedSame:
-        print("\(date1) та \(date2) рівні")
+// Порівняння за допомогою `timeIntervalSince`
+if firstDate.timeIntervalSince(secondDate) > 0 {
+  print("\(firstDate) відбулася після \(secondDate).")
+} else if firstDate.timeIntervalSince(secondDate) < 0 {
+  print("\(firstDate) відбулася до \(secondDate).")
+} else {
+  print("\(firstDate) та \(secondDate) відбулися в один час.")
 }
 ```
 
-В цьому прикладі ми створюємо два об'єкти `Date`: `date1` - поточна дата і `date2` - дата, яка наступає через 1 годину від поточної. За допомогою функції `compare()` ми отримуємо результат порівняння цих дат і за допомогою оператора `switch` виводимо в консоль відповідне повідомлення.
+Вихідні дані:
+```
+2019-08-21 17:10:56 +0000 відбулася до 2019-08-21 18:10:56 +0000. 
+2019-08-21 17:10:56 +0000 відбулася до 2019-08-21 18:10:56 +0000. 
+2019-08-21 17:10:56 +0000 та 2019-08-21 17:10:56 +0000 відбулися в один час.
+2019-08-21 17:10:56 +0000 відбулася до 2019-08-21 18:10:56 +0000.
+```
 
-## Глибоке дослідження
+## Глибша розмова:
+В порівнянні дат використовується логіка "менше", "більше" або "рівне". Історично, для порівняння дат використовувалися різні формати, наприклад Unix Timestamp або Julian Date. Але зараз, з появою класу `Date`, Swift надає простіший і більш зручний спосіб порівняння дат.
 
-Також існує можливість порівнювати дати за допомогою операторів `>`, `<`, `==` тощо. Також варто зазначити, що за замовчуванням дати порівнюються з точністю до секунди, але варто пам'ятати, що це може призводити до неточного результату, оскільки деякі дати можуть мати різний час до секунди.
+Існує кілька альтернативних способів порівняння дат, таких як використання `Calendar` або `DateComponents`. Вони дозволяють врахувати інший часовий пояс або календар при порівнянні дат.
 
-## Дивись також
+У Swift порівняння дат здійснюється з використанням UTC (Універсального координованого часу), тому необхідно враховувати різницю в часових зонах при порівнянні дат.
 
-Для отримання додаткової інформації про роботу з датами в Swift, дивіться наступні ресурси:
-
-- [Working with Dates in Swift](https://www.raywenderlich.com/67483099-working-with-dates-in-swift)
-- [How to Use the Date Class in Swift](https://www.hackingwithswift.com/example-code/system/how-to-use-the-date-class-in-swift)
-- [Introduction to Date and Time in Swift](https://medium.com/@abhimuralidharan/introduction-to-date-and-time-in-swift-c10b5eae99c1)
+## Дивіться також:
+- [Визначення часу та дати в Swift](https://www.raywenderlich.com/160413/learn-swift-3-collections-date-enum)
+- [Документація про `Date`](https://developer.apple.com/documentation/foundation/date)
+- [Порівняння часу і дати в Swift](https://www.hackingwithswift.com/articles/175/how-to-compare-date-and-time-in-swift)

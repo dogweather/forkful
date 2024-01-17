@@ -1,7 +1,7 @@
 ---
-title:                "Aloittaminen uudessa projektissa"
-html_title:           "Ruby: Aloittaminen uudessa projektissa"
-simple_title:         "Aloittaminen uudessa projektissa"
+title:                "Uuden projektin aloittaminen"
+html_title:           "Ruby: Uuden projektin aloittaminen"
+simple_title:         "Uuden projektin aloittaminen"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Getting Started"
@@ -10,44 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä & Miksi?
 
-Miksi joku aloittaisi uuden projektin Ruby-ohjelmointikielellä? Ruby on dynaaminen ja helppolukuinen kieli, joka tarjoaa paljon hyödyllisiä kirjastoja ja työkaluja ohjelmistokehittäjille. Se on myös suosittu kieli, joten yhteisön tuki ja resurssit ovat helposti saatavilla.
+Uuden projektin aloittaminen tarkoittaa uuden ohjelman tai sovelluksen luomista. Ohjelmoijat tekevät tätä, jotta he voivat kehittää uutta toiminnallisuutta tai parantaa olemassa olevaa ohjelmaa.
 
-## Kuinka aloittaa uusi Ruby-projekti
+## Miten:
 
-Aloittaaksesi uuden Ruby-projektin, tarvitset ensin Ruby-kääntäjän. Voit ladata sen ilmaiseksi Ruby-sivustolta tai asentamalla kääntäjän paketinhallintajärjestelmän kautta.
+```ruby
+# Luodaan uusi projekti nimeltä "Esimerkki"
+mkdir Esimerkki
 
-Kun kääntäjä on asennettu, voit aloittaa luomalla uuden tiedoston `.rb`-tiedostopäätteellä ja avaamalla sen tekstieditorilla.
+# Siirrytään Esimerkki-kansioon
+cd Esimerkki
 
-Alta löydät muutamia esimerkkejä Ruby-koodista:
+# Alustetaan uusi Ruby-projekti
+bundle init
 
-```Ruby
-# Tallennetaan muuttujaan merkkijono ja tulostetaan se konsoliin
-message = "Hei maailma!"
-puts message
-
-# Lasketaan listaan syötettyjen lukujen summa
-lukulista = [5, 10, 15, 20]
-puts lukulista.sum
+# Luodaan uusi tiedosto nimeltä "app.rb"
+touch app.rb
 ```
 
-Ja tässä on mitä tulostus näyttäisi:
+Projektin alustuksen jälkeen voimme aloittaa koodaamisen uuteen tiedostoon. Tämä antaa meille mahdollisuuden luoda uutta toiminnallisuutta ja testata sitä.
 
+```ruby
+#Lisätään koodia tiedostoon "app.rb"
+puts "Tervetuloa uuteen projektiin!"
+
+# Suoritetaan tiedosto
+ruby app.rb
 ```
-Hei maailma!
-50
-```
 
-Näiden esimerkkien avulla voit aloittaa oman Ruby-projektisi! Muista käyttää myös Ruby:n tarjoamia kirjastoja ja työkaluja helpottaaksesi ohjelmointia.
+Tämä tulostaa konsoliin viestin "Tervetuloa uuteen projektiin!".
 
-## Syvemmälle uuden projektin aloituksessa
+## Syvenny:
 
-Kun aloitat uuden Ruby-projektin, on tärkeää miettiä, mitä haluat saavuttaa ja mitä kirjastoja/tuotteita tarvitset sen toteuttamiseksi. Tutki erilaisia kirjastoja ja valitse ne, jotka sopivat parhaiten tarpeisiisi.
+Projektien luominen on yksi ohjelmoijien tärkeimmistä tehtävistä. Se mahdollistaa uuden toiminnallisuuden luomisen ja olemassa olevan koodin parantamisen. On myös olemassa muita työkaluja, kuten Ruby on Rails, jotka auttavat kehittämään projekteja nopeasti ja tehokkaasti.
 
-Voit myös harkita käyttäjäystävällisiä projektinhallintatyökaluja, kuten Github, jotta voit jakaa ja hallita koodiasi yhteistyössä muiden kanssa.
+Projektin luominen Rubylla tapahtuu Bundlerin avulla. Tämä työkalu auttaa hallinnoimaan projektin riippuvuuksia ja asennuksia. Tämä tekee projektin siirtämisestä eri ympäristöihin helpompaa ja estää riippuvuuksien aiheuttamia ongelmia.
 
-## Katso myös
+## Katso myös:
 
-- [Ruby-sivusto](https://www.ruby-lang.org/fi/)
-- [Github](https://github.com/)
+- [Bundlerin virallinen dokumentaatio](https://bundler.io/)
+- [Vuoruperäinen ohjelmointi Rubylla](https://fi.wikipedia.org/wiki/Vuoroper%C3%A4inen_ohjelmointi)
+- [Ruby on Rails](https://rubyonrails.org/)

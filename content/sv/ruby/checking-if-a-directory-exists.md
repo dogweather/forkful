@@ -1,7 +1,7 @@
 ---
-title:                "Kontrollera om en mapp finns"
-html_title:           "Ruby: Kontrollera om en mapp finns"
-simple_title:         "Kontrollera om en mapp finns"
+title:                "Kontrollera om en katalog finns"
+html_title:           "Ruby: Kontrollera om en katalog finns"
+simple_title:         "Kontrollera om en katalog finns"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Files and I/O"
@@ -10,44 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
-Det är viktigt att kunna kontrollera om en mapp finns på en dator när man skriver kod i Ruby. Detta kan hjälpa till att undvika felmeddelanden och felaktig kod som kan orsaka störningar.
+## Vad & Varför? 
+Att kontrollera om en katalog finns är en viktig del av programmering som hjälper till att säkerställa att programmet fungerar korrekt och undvika eventuella felmeddelanden. Det är särskilt användbart när man ska öppna eller skapa filer inom en specifik katalog.
 
-## Hur man gör
-För att kontrollera om en mapp finns i Ruby så kan man använda sig av en metod som heter `Dir.exist?()`. Denna metod tar en sträng som argument, vilken ska vara sökvägen till den mapp som man vill kontrollera. Om mappen finns kommer metoden att returnera `true` och om den inte finns så returnerar den `false`.
+## Hur man gör det: 
+Det finns två sätt att kontrollera om en katalog finns i Ruby. Antingen kan man använda sig av standardbiblioteket 'File' eller den inbyggda metoden 'Dir.exist?'. Här är ett exempel på hur man kan använda dessa metoder:
 
-```Ruby
-# Kontrollera om mappen "documents" finns
-if Dir.exist?("documents")
-  puts "Mappen finns"
+```Ruby 
+require 'file'
+if File.directory?("namn på katalog")
+  puts "Katalogen finns"
 else
-  puts "Mappen finns inte"
+  puts "Katalogen finns inte"
+end
+
+if Dir.exist?("namn på katalog")
+  puts "Katalogen finns"
+else
+  puts "Katalogen finns inte"
 end
 ```
 
-I det här exemplet så används en `if/else` sats för att skriva ut ett meddelande beroende på om mappen finns eller inte. Om man endast vill göra en handling om mappen finns så kan man använda `Dir.exist?()` i en `if` sats utan `else`.
+Exempeloutput: 
+Katalogen finns
 
-```Ruby
-# Skriv ut en lista på filerna i mappen "downloads" om den finns
-if Dir.exist?("downloads")
-  # Lista alla filer i mappen
-  Dir.each_child("downloads") { |file| puts file }
-end
-```
+## Djupdykning:
+När det kommer till att kontrollera om en katalog finns är det värt att nämna att 'File' biblioteket också har flera metoder som kan användas för att kontrollera om en fil eller en symbolisk länk existerar i en katalog. Några alternativ till dessa metoder är 'File.exist?' och 'File.symlink?'. Det är också värt att notera att 'Dir.exist?' returnerar en boolean (true eller false), medan 'File.directory?' returnerar katalogens namn om den finns och 'nil' om den inte existerar. Om du är osäker på vilken metod som passar dina behov bäst, kan du alltid kolla dokumentationen för att få mer information och hitta alternativ som fungerar bäst för ditt specifika projekt.
 
-### Deep Dive
-Om man vill kontrollera en mapp på en annan plats än där ens Ruby-kod körs, så kan man använda `Dir.exist?()` tillsammans med `File.expand_path()` för att få en absolut sökväg till mappen. Detta kan vara användbart när man arbetar med olika datorer eller filsystem.
-
-```Ruby
-# Kontrollera om mappen "downloads" finns på skrivbordet
-if Dir.exist?(File.expand_path("~/Desktop/downloads"))
-  puts "Mappen finns på skrivbordet"
-end
-```
-
-Man kan också använda `Dir.exist?()` tillsammans med andra metoder som till exempel `Dir.glob()` för att kontrollera om en mapp innehåller vissa filer eller mönster.
-
-## Se även
-- [Dir-class (Ruby 3.0.0)](https://ruby-doc.org/core-3.0.0/Dir.html)
-- [File-class (Ruby 3.0.0)](https://ruby-doc.org/core-3.0.0/File.html)
-- [Working with Directories in Ruby (SitePoint)](https://www.sitepoint.com/working-with-directories-in-ruby/)
+## Se också:
+- [Ruby dokumentation för File](https://ruby-doc.org/core-2.7.1/File.html)
+- [Ruby dokumentation för Dir](https://ruby-doc.org/core-2.7.1/Dir.html)
+- [En bra guide för att använda File och Dir](https://www.rubyguides.com/2015/05/working-with-files-ruby/)

@@ -10,54 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-Writing tests for C code is an important aspect of software development that helps ensure code quality and reduce the chances of bugs and errors. By writing tests, developers can catch and fix issues early on, saving time and effort in the long run.
+Writing tests in C is the process of creating small code snippets or functions that test various aspects of your program. These tests help ensure that your code is functioning as intended and can catch any potential bugs or errors before they become larger issues. Programmers write tests to increase the reliability and quality of their code, ultimately making it easier to maintain and debug.
 
-## How To
+## How to:
 
-To get started with writing tests in C, it is important to first understand the basic structure of a test. A test generally consists of three main parts: setting up the environment, executing the code to be tested, and verifying the expected output.
-
-To demonstrate this, let's consider a simple function that adds two numbers and return the result:
-
-```C
-int add(int a, int b) {
-    return a + b;
-}
-```
-
-To test this function, we can create a test case using the `assert` macro from the `<assert.h>` library. This macro takes in a condition and returns an error if the condition is false.
+To create a test in C, you first need to declare a `main` function, just like you would for any other C program. Within this function, you can use the `assert` function from the `<assert.h>` header file to check if a certain condition is true. Here's an example:
 
 ```C
 #include <assert.h>
 
 int main() {
-    // Setup
-    int a = 5;
-    int b = 10;
-
-    // Execute
-    int result = add(a, b);
-
-    // Verify
-    assert(result == 15);
-
+    int num = 5;
+    assert(num < 10);  // this test will pass
+    assert(num == 10); // this test will fail
     return 0;
 }
 ```
 
-After compiling and running this test, if all goes well, we should see an output of `OK` indicating that the test was successful.
+You can also use the `printf` function to display any desired output. To run your tests, compile and execute your program, and check the output to see if all tests passed or if any failed.
 
-## Deep Dive
+## Deep Dive:
 
-Writing tests in C can be a bit more challenging compared to other languages due to its low-level nature. This means the developer has to manually manage memory and handle potential errors to ensure the code behaves as expected.
+In the early days of C programming, writing tests was not a common practice due to the limitations of older testing frameworks. However, with the advancement of technology and the creation of new testing libraries, writing tests in C has become more accessible and popular.
 
-Fortunately, there are libraries such as `libcheck` that provide useful testing functions and macros to make writing tests in C easier. These libraries also offer more advanced features such as test grouping and parameterized testing.
+An alternative to using the `assert` function is to use a testing library such as `cmocka` or `seatest`. These libraries provide additional features and testing capabilities, making it easier to write and manage tests. They also allow for more detailed output and enable test-driven development, where tests are written before the actual code.
 
-Another important aspect to consider when writing tests is code coverage. Code coverage measures the percentage of code that is covered by tests. It is important to aim for high code coverage to ensure that all possible scenarios are tested.
+When writing tests, it's essential to have a good understanding of your code's logic and behavior. This helps in creating effective tests and improves the overall quality of your code. Additionally, it's crucial to regularly run your tests and make updates as your codebase changes.
 
-## See Also
+## See Also:
 
-- [Writing C unit tests with libcheck](https://libcheck.github.io/check/)
-- [Beginners guide to unit testing in C with examples](https://medium.com/@hardikpandya/unit-testing-in-c-beginners-guide-with-examples-4197395d4e5a)
-- [An Introduction to Code Coverage in C](https://medium.com/@coderunner/cpp-code-coverage-with-gcov-d398c40e1ab0)
+- [Official C documentation on <assert.h>](https://en.cppreference.com/w/c/error/assert)
+- [cmocka testing library](https://cmocka.org/)
+- [seatest testing library](https://github.com/phil-wilson/seatest)

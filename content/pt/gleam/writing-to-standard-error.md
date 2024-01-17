@@ -10,28 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que escrever para o erro padrão?
+## O que é e por quê?
 
-Escrever para o erro padrão é uma prática importante em programação que permite que os desenvolvedores capturem e relatem erros em seus códigos. Isso ajuda a identificar e corrigir problemas em tempo hábil, garantindo que o software seja executado sem falhas.
+Escrever para o erro padrão é uma técnica comum usada por programadores para imprimir mensagens de erro ou depuração durante a execução de um código. Isso permite que os desenvolvedores identifiquem e resolvam problemas em seu código de forma mais eficiente.
 
-## Como fazer?
+## Como fazer:
 
-Para escrever para o erro padrão em Gleam, utilizamos a função `println!` seguida do que desejamos imprimir. Por exemplo:
+Para escrever para o erro padrão em Gleam, utilize a função "error!" seguida de uma string contendo a mensagem que deseja imprimir. Veja um exemplo:
+
+```Gleam
+import gleam/io
+
+let mensagem = "Essa é uma mensagem de erro!"
+
+error!(mensagem)
+```
+
+A saída desse código seria:
 
 ```
-Gleam println!("Este é um exemplo de texto que será escrito para o erro padrão.")
+Essa é uma mensagem de erro!
 ```
+## Deep Dive:
 
-Esse código irá imprimir a mensagem "Este é um exemplo de texto que será escrito para o erro padrão." na tela do console. É importante ressaltar que a mensagem será escrita na saída padrão de erro, que é diferente da saída padrão de impressão `print!`.
+Escrever para o erro padrão é uma prática antiga, presente em diversas linguagens de programação. Ela surgiu como uma forma de fornecer informações úteis aos programadores durante a execução de um código, ajudando-os a encontrar e corrigir erros.
 
-## Mergulho profundo
+Uma alternativa ao uso do erro padrão é o uso de registros de log, que servem para armazenar informações sobre a execução do código. No entanto, escrever para o erro padrão é mais simples e rápido, e pode ser usado em conjunto com registros de log para uma melhor detecção de problemas.
 
-Ao escrever para o erro padrão, é importante levar em consideração o que você está imprimindo. Lembre-se de que essa mensagem será vista pelos usuários e é uma forma de comunicação importante entre o desenvolvedor e o usuário final.
+Em Gleam, a função "error!" é implementada utilizando a função "sys::printf" da biblioteca padrão, que permite imprimir uma string formatada para o erro padrão.
 
-Além disso, é importante que a mensagem de erro seja específica e informativa, para que o usuário entenda o que aconteceu e como pode solucionar o problema. Evite mensagens genéricas e pouco úteis, como "Erro inesperado".
+## Veja também:
 
-## Veja também
-
-- Documentação oficial do Gleam sobre a função `println!`: https://gleam.run/documentation/standard_library.html#println
-- Guia sobre como escrever boas mensagens de erro: https://blog.codinghorror.com/curlys-law-do-one-thing/
-- Exemplos de mensagens de erro bem projetadas: https://github.com/open-source-ideas/open-source-ideas/issues/381
+- [Função "error!" na documentação oficial de Gleam](https://gleam.run/documentation/#error!)
+- [Um guia completo sobre a escrita para o erro padrão em diversas linguagens](https://www.geeksforgeeks.org/different-ways-to-print-error-message/)
+- [Comparação entre o uso do erro padrão e registros de log (em inglês)](https://stackify.com/error-log-options/)

@@ -10,29 +10,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
+## 什么？为什么要检查目录是否存在？
+检查是否存在目录是指编程中通过代码确定某个目录是否已经创建或是否存在。程序员在使用特定目录或创建新目录之前需要先确认目录是否存在，以防止错误和干扰。
 
-在编写代码或脚本时，经常会需要检查某个目录是否存在，以确保程序的正常运行，避免出现错误。使用Fish Shell提供的内置命令，可以轻松地检查目录是否存在，节省时间和精力。
-
-## 如何使用
-
-```Fish Shell
-# 检查目录是否存在
-if test -d "目录路径"
-	echo "目录存在"
-else
-	echo "目录不存在"
-end
+## 如何进行检查？
+Fish Shell提供一个方便的功能来检查目录是否存在，即使用命令“test –d”以及要检查的目录的路径。例如：
 ```
+Fish Shell >> test -d /users/Documents/
+ Fish Shell >> echo $status
+ 0
+```
+如果目录不存在，将会返回一个错误码，并且输出结果为1。如果目录存在，将会返回结果为0，代表目录存在。
 
-这个例子中，我们使用了内置命令```test -d```来检查指定目录是否存在。如果存在，则会输出“目录存在”，否则会输出“目录不存在”。
-
-## 深入了解
-
-Fish Shell的判断命令```test```包含许多选项，其中包括```-d```用于检查目录是否存在。你也可以使用```-e```选项来检查文件或目录是否存在。除此之外，```test```命令还有其他选项可用于检查文件的权限、大小等。
+## 深入探讨
+在早期的操作系统中，检查目录是否存在是一项基本的功能。不同的操作系统可能有不同的命令来实现此功能，如Windows系统中使用“exist”命令。在Shell编程中，也可以使用其他方法来检查目录是否存在，如使用“ls”命令来查看目录是否存在或者使用通配符来匹配目录名称。而在Fish Shell中，使用“test –d”命令是最常用的方法。
 
 ## 参考链接
-
-- [Fish Shell官方文档](https://fishshell.com/docs/current/commands.html#test)
+更多关于Fish Shell的相关信息，请参考以下资源：
+- [Fish Shell官方网站](https://fishshell.com/)
 - [Fish Shell GitHub仓库](https://github.com/fish-shell/fish-shell)
-- [Linux命令教程](https://www.runoob.com/linux/linux-command-manual.html)
+- [《The Fish Book》](https://fishshell.com/docs/current/index.html)

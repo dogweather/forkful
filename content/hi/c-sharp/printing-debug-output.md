@@ -1,7 +1,7 @@
 ---
-title:                "डिबग आउटपुट छापना"
-html_title:           "C#: डिबग आउटपुट छापना"
-simple_title:         "डिबग आउटपुट छापना"
+title:                "डिबग आउटपुट छपाना"
+html_title:           "C#: डिबग आउटपुट छपाना"
+simple_title:         "डिबग आउटपुट छपाना"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Testing and Debugging"
@@ -10,32 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Kyu
-Kya aap kabhi apne C# code ke saath debugging kiya hai? Agar haan, toh aapne shayad debug output ka istemal kiya hoga. Debug output, ya fir console output, ek aasan aur zaroori tarika hai apne code ke har step ko samajhne ka. Is article mein hum baat karenge debug output ka istemal karna kyu zaroori hai.
+## क्या और क्यों? 
+डिबग आउटपुट प्रिंट करना क्या है और क्यों प्रोग्रामरों को इसे करना चाहिए, इसके बारे में दो से तीन सेटेंसें बताइए।
 
-## Kaise Kare
-Debug output ka istemal karna C# mein kaafi aasaan hai. Sabse pehle, aapko ```Console.WriteLine()``` method ka istemal karna hai. Is method mein aapko kuch bhi print karna hai apne console mein, jaise ki variables ke values, messages, ya fir error messages.
+डिबग आउटपुट से अर्थ है किसी प्रोग्राम में गलती या असुविधा को पता करना। डिबग आउटपुट को आम भाषा में बग-जीवित या छिपे फॉटो के रूप में जाना जाता है। जब प्रोग्रामर इसका उपयोग करते हैं तो वे अपने कोड में सुधार कर सकते हैं और सबसे आवश्यक रूप से अपने प्रोग्राम को शुरू से बुराई से बचा सकते हैं।
 
-Maan lijiye aapko ek program banana hai, jisme aap user se ek number input lete hain aur us number ka square calculate karke print karte hain. Is situation mein, aap debugging ke liye output print kar sakte hain, jaise ki:
+## कैसे करें:
+ `C# ... ` कोड ब्लॉकों के भीतर कोड के उदाहरण और माउस के स्क्रोल व्हील की मदद से उसमें दिखाए गए आउटपुट के साथ।
 
-```C#
-int num = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Input number: {0}", num);
-int square = num * num;
-Console.WriteLine("Square: {0}", square);
+**उदाहरण 1:** सामान्य डिबग आउटपुट दिखाएं
+```
+Debug.WriteLine("Hello World!");
+```
+**आउटपुट:**
+```
+Hello World!
 ```
 
-Is code mein, humne ```Console.WriteLine()``` method ko 2 baar use kiya hai. Pehle, humne input number ko print kiya hai, taaki hume pata chal sake kis number ka square hum calculate kar rahe hain. Fir, humne square ka value print kiya hai.
+**उदाहरण 2:** माउस स्क्रोल व्हील का उपयोग करके आउटपुट में सूचना को दिखाएं
+```
+Debug.WriteLine("Printing a variable value: {0}", value);
+```
+**आउटपुट:**
+```
+Printing a variable value: 10
+```
 
-Ek aur tareeka debug output ka istemal karne ka hota hai ```Debug.WriteLine()``` method. Is method ko istemal karne ke liye, aapko System.Diagnostics namespace ko ```using``` statement ke saath include karna hoga.
+**उदाहरण 3:** आउटपुट की स्तर अद्यतन करें
+```
+Debug.Indent();
+Debug.WriteLine("Message 1");
+Debug.WriteLine("Message 2");
+Debug.Unindent();
+```
+**आउटपुट:**
+```
+- Message 1
+- Message 2
+```
 
-## Deep Dive
-Debugging output ka istemal karne ka ek ke hazaar tareeko hote hain, lekin sabka ultimate goal ek hi hota hai - apne code ko debug karne ka aasan aur efficient tareeka. Debug output ka istemal karke, hum apne code ke errors aur bugs ko pakad sakte hain aur unhe fix kar sakte hain. Isse humara code stable aur reliable ban jata hai.
+## गहराई में जानें:
+इसमें किसी प्रोग्राम को डिबग करने के बारे में उपयोगी गहराई जानकारी दी गई है।
 
-Ek important point hai debug output ka istemal karna production code mein. Production code mein, debug output ka istemal avoid karna chahiye kyuki isse code ka execution slow ho sakta hai. Isliye, debug output ka istemal sirf development aur testing phase mein hi karna chahiye.
+**1. इतिहास परिचय:** डिबगिंग की प्रक्रिया बहुत पुरानी है। इसकी शुरुआत कंप्यूटर प्रोग्रामिंग के आरम्भिक दिनों में हुई थी जब यह एक प्रोग्रामर की प्रतिक्रियाओं पर ध्यान देता था। इसके बाद, कोड डिबगिंग टूल और मेथड्स का विकास हुआ जिसके बाद यह आसानी से किया जा सकता है।
 
-## Dekhiye Bhi
-Agar aapko C# aur debugging se judi aur articles padhna hai, toh yeh links aapke kaam aasakte hain:
-1. [C# basics for beginners](https://www.tutorialspoint.com/csharp/index.htm)
-2. [Debugging in C#](https://docs.microsoft.com/en-us/visualstudio/debugger/?view=vs-2019)
-3. [Best practices for debugging in C#](https://stackify.com/csharp-debugging-tips-tricks/)
+**2. वैकल्पिक:** कभी-कभी, कोड पर डिबग आउटपुट का उपयोग करने की जगह आप एक वैकल्पिक मेथड का उपयोग कर सकते हैं। इसमें-समझाने वाला कोड घटकों का उपयोग करके आप ग्राफिकल विश्लेषण और अन्य तरीकों का उपयोग कर सकते हैं।
+
+**3. कार्यान्‍वयन विवरण:** भविष्य में अपडेट तकनीकियों के बारे में जानकारी की जांच करने के लिए कार्यान्‍वयन विवरण पर ध्यान देना महत

@@ -10,34 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+Cosa & Perché?
 
-Generare numeri casuali è spesso necessario per molti tipi di programmazione, come giochi, simulazioni e criptografia.
-
-## Come fare
-
-Generare numeri casuali in Rust è semplice e diretto. Basta importare il modulo della libreria standard `rand` e utilizzarlo per generare un numero casuale, come nel seguente esempio:
+Generare dei numeri casuali è un modo per ottenere dei valori approssimativamente casuali all'interno di un programma. I programmatori spesso fanno uso di numeri casuali per generare dati di test, creare giochi o simulazioni e implementare algoritmi che richiedono input casuale.
 
 ```Rust
 use rand::Rng;
 
 fn main() {
-    let num: u32 = rand::thread_rng().gen_range(1, 100);
-    println!("Number generated: {}", num);
+    // Genera un numero casuale compreso tra 1 e 100
+    let random_number = rand::thread_rng().gen_range(1, 101);
+    println!("Il numero casuale generato è {}", random_number);
 }
 ```
 
-Questo codice utilizza il metodo `gen_range` del modulo `Rng` per generare un numero casuale compreso tra 1 e 100. È importante notare che il numero viene generato utilizzando un generatore di numeri casuale "sicuro" (thread-safe), che garantisce una maggiore casualità e non può essere influenzato dall'esecuzione del programma.
+## Come fare:
 
-Altri modi per generare numeri casuali in Rust includono l'utilizzo di `thread_rng().gen()` per generare un numero intero in un intervallo specificato e `thread_rng().gen_bool()` per generare un booleano casuale. È anche possibile specificare il tipo di dato che si desidera generare, come `f32` o `char`.
+Per generare numeri casuali in Rust, è necessario utilizzare la libreria `rand`. Questa libreria fornisce una serie di funzioni per generare numeri casuali di diversi tipi, come ad esempio `gen_range` che è utilizzata nell'esempio sopra. Per prima cosa, è necessario importare la libreria con `use rand::Rng;` e poi si può utilizzare la funzione `gen_range` per scegliere un intervallo di numeri da cui generare il numero casuale.
 
-## Scoprire in profondità
+## Approfondimento:
 
-La libreria `rand` di Rust offre una varietà di generatori di numeri casuali, inclusi alcuni che possono essere personalizzati per soddisfare le esigenze specifiche del programma. Per esempio, è possibile utilizzare il modulo `distributions` per generare numeri casuali secondo una distribuzione specifica, come la distribuzione normale o la distribuzione esponenziale. Inoltre, la libreria `rand` supporta anche la generazione di numeri casuali criptograficamente sicuri utilizzando il modulo `isahc_rng`, per garantire la massima sicurezza nel caso in cui ci sia bisogno di generare numeri casuali per scopi critici.
+Prima dell'introduzione della libreria `rand` in Rust, i programmatori dovevano utilizzare metodi non ufficiali per generare numeri casuali all'interno dei loro programmi. Questo spesso portava a risultati non sempre affidabili. Oggi, grazie alla libreria `rand`, è possibile generare numeri casuali in modo semplice e affidabile.
 
-Un'altra opzione interessante offerta dalla libreria `rand` è la possibilità di utilizzare un seme (seed) personalizzato per il generatore di numeri casuali, che può essere utile per riprodurre gli stessi risultati ogni volta che si esegue il programma.
+Altre alternative alla libreria `rand` sono ad esempio `rand_pcg` e `rand_xorshift`, che utilizzano altri algoritmi per generare numeri casuali.
 
-## Vedi anche
+Per quanto riguarda l'implementazione di `rand` in Rust, fa uso di generatori di numeri casuali pseudo-casuali, i quali non sono realmente casuali ma producono sequenze di numeri che appaiono casuali. La libreria `rand` sfrutta anche l'imprevedibilità dei valori di tempo di sistema per ottenere dei numeri casuali più affidabili.
 
-- Documentazione ufficiale di Rust sulla generazione di numeri casuali: https://doc.rust-lang.org/stable/book/ch07-08-doing-automated-tests.html#generating-random-numbers
-- Esempio di utilizzo della libreria `rand` per generare una password casuale: https://gist.github.com/Golony/baf7c8fe079a0b5748a0
+## Vedi anche:
+
+- Documentazione della libreria `rand`: https://docs.rs/rand
+- Come generare numeri casuali in altri linguaggi di programmazione: https://blog.abelotech.com/posts/generating-random-numbers-programming-languages/
+- Esempi di utilizzo della libreria `rand` in Rust: https://rust-random.github.io/book/intro.html

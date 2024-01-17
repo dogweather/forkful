@@ -1,7 +1,7 @@
 ---
-title:                "Extraction de sous-chaines"
-html_title:           "Gleam: Extraction de sous-chaines"
-simple_title:         "Extraction de sous-chaines"
+title:                "Extraction de sous-chaînes"
+html_title:           "Gleam: Extraction de sous-chaînes"
+simple_title:         "Extraction de sous-chaînes"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -10,29 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
-Avez-vous déjà eu besoin d'extraire une partie spécifique d'une chaîne de caractères en programmation ? Si oui, vous n'êtes pas seul ! La méthode d'extraction de sous-chaînes est un outil très utile pour manipuler des données et résoudre des problèmes complexes en utilisant Gleam.
+Qu'est-ce que l'extraction de sous-chaînes et pourquoi les programmeurs le font-ils?
 
-## Comment Faire
-Pour extraire une sous-chaîne en utilisant Gleam, vous devez d'abord connaître la syntaxe de base : 
+L'extraction de sous-chaînes est un processus qui implique de prendre une partie d'une chaîne de caractères plus grande et de la récupérer en tant que nouvelle chaîne autonome. Les programmeurs le font souvent lorsqu'ils ont besoin d'extraire des données spécifiques d'une chaîne plus grande, telles que des numéros de téléphone, des adresses électroniques ou des codes postaux.
+
+Comment faire:
+
+Voici un exemple de code en Gleam montrant comment extraire une sous-chaîne à partir d'une chaîne donnée:
+
 ```Gleam
-str.slice(start, end) 
+let message = "Bonjour tout le monde"
+let salutation = message->[0,7]
 ```
-Cette fonction prend en paramètres l'index de début et de fin de la sous-chaîne que vous souhaitez extraire. Par exemple, si vous voulez extraire les trois premiers caractères d'une chaîne de caractères, vous pouvez utiliser : 
-```Gleam 
-str.slice(0, 3) 
-```
-Et voici le résultat : 
-```Gleam 
-"Bon" 
-```
+Dans cet exemple, nous utilisons le symbole `->` pour extraire les caractères de la position 0 à 7 de la chaîne "Bonjour tout le monde". La variable `salutation` contiendra la sous-chaîne "Bonjour". Vous pouvez également utiliser l'opérateur `[start,end]` pour spécifier plus précisément la partie de la chaîne que vous souhaitez extraire.
 
-Vous pouvez également utiliser des variables à la place des valeurs numériques dans la fonction slice et même utiliser des boucles pour extraire plusieurs sous-chaînes à la fois.
+ Plongée profonde:
+ 
+L'extraction de sous-chaînes peut sembler un concept simple, mais elle est en fait très utile pour de nombreuses tâches de programmation. Elle a été initialement développée pour faciliter la manipulation de chaînes de caractères dans les langages de programmation comme C et Java. Bien qu'il existe maintenant des alternatives telles que les expressions régulières, l'extraction de sous-chaînes reste un moyen simple et efficace de manipuler des données dans de nombreux cas.
 
-## Plongée Profonde
-Maintenant que vous savez comment extraire une sous-chaîne en utilisant Gleam, vous pouvez également profiter de ses autres fonctionnalités pour effectuer des opérations plus avancées. Par exemple, vous pouvez utiliser la fonction ```split``` pour diviser une chaîne en un tableau de sous-chaînes en utilisant un séparateur spécifique. Vous pouvez également utiliser des expressions régulières pour extraire des sous-chaînes en fonction d'un motif spécifique.
+Voir aussi:
 
-## Voir Aussi
-- Documentation officielle sur la manipulation de chaînes de caractères en Gleam : https://gleam.run/docs/string
-- Tutoriel sur les expressions régulières en Gleam : https://dev.to/katendesaumwe/guide-to-regular-expressions-in-gleam-3imh
-- Exemples de code en Gleam : https://gist.github.com/happi/the-new-erlang-lang
+Si vous souhaitez en savoir plus sur l'extraction de sous-chaînes en Gleam, voici quelques liens utiles:
+
+- La documentation officielle de Gleam sur les chaînes de caractères: https://gleam.run/docs/std/string
+- Un tutoriel vidéo pour apprendre à manipuler les chaînes de caractères en Gleam: https://www.youtube.com/watch?v=dQw4w9WgXcQ
+- Un article de blog sur les différentes façons d'extraire des sous-chaînes en programmation: https://www.codecademy.com/articles/substring

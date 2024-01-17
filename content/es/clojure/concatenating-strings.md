@@ -10,43 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##Por qué
+## ¿Qué y por qué?
 
-¡Hola! Si estás leyendo esto, probablemente estás interesado en aprender sobre concatenar strings en Clojure. Este es un concepto básico pero muy útil en la programación, ya que te permite unir varias cadenas de texto en una sola.
+La concatenación de cadenas es simplemente unir varias cadenas en una sola. Los programadores lo hacen para crear cadenas más largas y complejas a partir de partes más pequeñas, lo que facilita la manipulación y el análisis de datos.
 
-##Cómo Hacerlo
+## Cómo:
 
-Para concatenar strings en Clojure, podemos usar la función "str", que toma cualquier cantidad de argumentos y los concatena en una sola cadena. Por ejemplo, si queremos unir las cadenas "¡Hola" y "mundo!", podemos escribir:
+Aquí está un ejemplo de cómo concatenar dos cadenas en Clojure:
 
 ```Clojure
 (str "¡Hola" "mundo!")
 ```
 
-Esto daría como resultado la cadena "¡Hola mundo!".
-
-También podemos usar la función "str" para concatenar cadenas con otros datos, como números. Por ejemplo, si queremos tener una cadena que diga "El resultado es 10", podemos escribir:
-
-```Clojure
-(str "El resultado es" 10)
+**Salida:**
+```
+¡Hola mundo!
 ```
 
-Esto nos daría como resultado la cadena "El resultado es 10".
+## Profundizando:
 
-##Profundizando
+La concatenación de cadenas ha sido una parte esencial de la programación desde los primeros lenguajes de programación. Alternativas a la concatenación de cadenas incluyen la interpolación de cadenas y la creación de cadenas a partir de plantillas.
 
-¿Sabías que también puedes usar el operador "+" para concatenar strings en Clojure? Este operador suma cualquier tipo de dato que le pasemos, incluyendo strings.
+En Clojure, la concatenación de cadenas se logra mediante la función "str", que convierte automáticamente todos los argumentos a cadenas antes de unirlos.
 
-Por ejemplo, podemos escribir:
+## Ver también:
 
-```Clojure
-(+ "¡Hola " "mundo!")
-```
-
-Esto también daría como resultado la cadena "¡Hola mundo!". Sin embargo, debes tener en cuenta que solo puedes usar el operador "+" con dos argumentos, mientras que la función "str" puede tomar cualquier cantidad.
-
-¡Ahora ya sabes cómo concatenar strings en Clojure! Recuerda que esto es solo una de las muchas funcionalidades de este poderoso lenguaje de programación funcional.
-
-##Ver también
-
-- [Documentación oficial de Clojure sobre la función "str"](https://clojuredocs.org/clojure.core/str)
-- [Guía de referencia rápida de Clojure](https://clojure.org/api/cheatsheet)
+- [La documentación oficial de Clojure] (https://clojuredocs.org/clojure.core/str)
+- [Un tutorial sobre concatencación de cadenas en Clojure] (https://www.tutorialspoint.com/clojure/concatenating_strings.htm)
+- [Artículo sobre la historia de la concatenación de cadenas en la programación] (https://en.wikipedia.org/wiki/Concatenation)

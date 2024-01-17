@@ -10,60 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que usar o Fish Shell?
+## O que é e porquê?
 
-Se você está procurando por uma shell moderna, fácil de aprender e com muitos recursos, o Fish Shell pode ser a melhor opção para você. Com uma sintaxe amigável e suporte a auto-completar, o Fish Shell torna a navegação e o gerenciamento do seu sistema muito mais eficiente.
+Começar um novo projeto é o ato de iniciar um novo desenvolvimento de software, criando um espaço limpo e organizado para escrever e testar seu código. Os programadores fazem isso para garantir que seu código seja bem estruturado e tenha um bom fluxo de trabalho durante o desenvolvimento.
 
-## Como usar o Fish Shell?
+## Como fazer:
 
-Confira esses exemplos de código para ter uma ideia de como a Fish Shell funciona:
+```Fish Shell``` torna o processo de iniciar um novo projeto extremamente fácil e eficiente. Aqui estão os passos simples para começar:
 
-```Fish Shell
-# Criando um novo diretório
-mkdir novo_diretorio
-```
+1. Crie um novo diretório para o seu projeto: ``` mkdir meu_projeto ```;
+2. Navegue até o novo diretório: ``` cd meu_projeto ```;
+3. Inicie o ambiente virtual: ``` source venv/bin/activate ```;
+4. Instale as dependências necessárias: ``` pip install requisitos.txt ```;
+5. Comece a escrever seu código!
+ 
+## Deep Dive:
 
-```Fish Shell
-# Navegando pelo diretório recém-criado
-cd novo_diretorio
-```
+O processo de começar um novo projeto tem sido feito há muito tempo por programadores, mas a Fish Shell trouxe uma nova abordagem com sua simplicidade e eficiência. Alternativas para iniciar um novo projeto em outras shells incluem comandos mais complicados e demorados.
 
-```Fish Shell
-# Listando os arquivos no diretório
-ls
-```
+Além disso, a Fish Shell possui uma implementação inteligente ao criar diretórios e ativar ambientes virtuais. Isso economiza seu tempo e esforço, permitindo que você se concentre na escrita de código de qualidade.
 
-```Fish Shell
-# Criando um novo arquivo
-touch novo_arquivo.txt
-```
+## Veja também:
 
-```Fish Shell
-# Adicionando conteúdo ao arquivo
-echo "Olá, mundo!" > novo_arquivo.txt
-```
-
-```Fish Shell
-# Visualizando o conteúdo do arquivo
-cat novo_arquivo.txt
-
-Output:
-Olá, mundo!
-```
-
-## Explorando mais sobre o Fish Shell
-
-Além dos comandos básicos, o Fish Shell também oferece uma variedade de recursos úteis, como histórico de comandos, temas personalizáveis e suporte para plugins. Você pode até mesmo escrever seus próprios scripts em Fish para automatizar tarefas repetitivas.
-
-Veja mais alguns recursos interessantes que o Fish Shell oferece:
-
-- Sintaxe colorida e facilitada para melhor legibilidade
-- Suporte para variáveis de ambiente e funções personalizadas
-- Auto-completar com sugestões baseadas nos arquivos e comandos existentes
-- Modo interativo para experimentar comandos sem executá-los
-
-## Veja também
-
-- [Página oficial do Fish Shell](https://fishshell.com/)
-- [Manual do usuário do Fish Shell](https://fishshell.com/docs/current/index.html)
-- [Guia básico do Fish Shell](https://dev.to/tnhunter10s/the-absolute-basics-of-fish-shell-fh6)
+- [Documentação oficial da Fish Shell](https://fishshell.com/docs/current/index.html)
+- [GitHub oficial da Fish Shell](https://github.com/fish-shell/fish-shell)
+- [Tutorial de como começar um novo projeto com o Fish Shell](https://medium.com/@hafizshafiei/starting-new-project-using-fish-shell-93cdc8a5df6c)

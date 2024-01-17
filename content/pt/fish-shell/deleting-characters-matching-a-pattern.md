@@ -10,28 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+## O que & Por quê?
+Deletar caracteres que correspondem a um padrão é quando removemos caracteres específicos de um texto ou string usando um padrão de pesquisa. Programadores geralmente fazem isso para limpar ou manipular dados de forma automatizada, economizando tempo e esforço.
 
-Imagine a situação em que você está trabalhando no seu terminal e de repente percebe que digitou uma palavra com um ou mais caracteres extras no final. Para quem preza pela organização e precisão, isso pode ser frustrante. Felizmente, o Fish Shell oferece uma maneira rápida e eficiente de excluir caracteres correspondentes a um determinado padrão, economizando tempo e esforço.
+## Como fazer:
+Exemplos de código e saída de amostra dentro de blocos de código ```Fish Shell...```
+```
+# Exemplo 1:
 
-## Como Fazer
+# Texto original:
+Olá, mundo! Este é um exemplo de texto.
 
-```Fish Shell
-# Para excluir todos os caracteres iguais ao padrão "!" no final de uma palavra
-> echo meu_comando | tr -d '\n!'
+# Comando para deletar caracteres que correspondem ao padrão 'e':
+echo "Olá, mundo! Este é um exemplo de texto." | sed 's/e//g'
 
-# Para excluir todos os caracteres comuns a "123" no início de uma palavra
-> echo meu_comando | tr -d '123'
+# Saída:
+Olá, mundo! s é um xmplo d txt.
+
+# Exemplo 2:
+
+# Texto original:
+12345abcde
+
+# Comando para deletar todos os números:
+echo "12345abcde" | tr -d [:digit:]
+
+# Saída:
+abcde
 ```
 
-O código acima usa o comando "tr" para excluir os caracteres que correspondem ao padrão especificado no final ou no início de uma palavra. Você pode personalizar o padrão para atender às suas necessidades, como remover todas as vogais ou símbolos específicos.
+## Mergulho Profundo:
+Deletar caracteres que correspondem a um padrão é uma técnica amplamente utilizada na programação, especialmente em linguagens de script como o Fish Shell. Existem outras alternativas para realizar essa tarefa, como utilizar expressões regulares ou funções específicas de manipulação de strings em outras linguagens. A implementação desse processo envolve um algoritmo de busca que identifica e remove os caracteres correspondentes, tornando-o um processo eficiente e flexível.
 
-## Mergulho Profundo
-
-O "tr" é um comando muito versátil que pode ser usado para várias tarefas, incluindo a exclusão de caracteres que correspondem a um padrão. Ele pode ser usado para substituir caracteres, deletar linhas vazias e muito mais. Ao aprender a usar esse comando, você estará expandindo seu conhecimento sobre o Fish Shell e suas capacidades.
-
-# Veja Também
-
-- [Fish Shell Documentation](https://fishshell.com/docs/current/index.html)
-- [Introduction to Fish Shell: A Beginner's Guide](https://www.baeldung.com/linux/fish-shell-intro)
-- [10 Fish Shell Tips and Tricks You Should Know](https://www.makeuseof.com/tag/fish-shell-tricks-tips/)
+## Veja também:
+- [Documentação oficial do Fish Shell](https://fishshell.com/docs/current/)
+- [Tutorial de expressões regulares com o Fish Shell](https://www.digitalocean.com/community/tutorials/fish-shell-regular-expressions-pt)
+- [Artigo sobre manipulação de strings em diferentes linguagens de programação](https://www.guru99.com/string-manipulation-in-c.html)

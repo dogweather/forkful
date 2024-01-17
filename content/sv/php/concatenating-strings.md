@@ -1,7 +1,7 @@
 ---
-title:                "Sammanslåning av strängar"
-html_title:           "PHP: Sammanslåning av strängar"
-simple_title:         "Sammanslåning av strängar"
+title:                "Slå ihop strängar"
+html_title:           "PHP: Slå ihop strängar"
+simple_title:         "Slå ihop strängar"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Strings"
@@ -10,62 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
+Att sammanfoga eller "concatenate" strängar är en vanlig uppgift för programmerare, där man lägger ihop flera textsträngar till en enda. Detta kan vara användbart när man vill skapa dynamiska textutskrifter eller strängar för datahantering.
 
-Att sammanslå strängar är en vanlig uppgift inom PHP-programmering. Genom att kombinera flera strängar till en enda kan du skapa dynamiska och anpassade meddelanden eller skapa mer läsbara koder.
-
-## Så här gör du
-
-Att sammanslå strängar i PHP är enkelt. Du kan använda operatorn "." för att sammanfoga två eller flera strängar tillsammans.
+## Så gör du:
+För att sammanfoga strängar i PHP använder man sig av operatorn ".", vilket står för "concatenation". Detta tillåter oss att kombinera flera strängar och skapa en ny. Till exempel:
 
 ```PHP
-echo "Hej, " . "världen!";
+$first_name = "Anna";
+$last_name = "Svensson";
+$full_name = $first_name . " " . $last_name;
+
+echo $full_name; // kommer att skriva ut "Anna Svensson"
 ```
 
-Resultatet av koden ovan blir "Hej, världen!". Du kan också använda variabler i sammanslagningen.
+Här använder vi operatorn "." för att slå ihop strängarna från variablerna $first_name och $last_name, och lägger även till ett mellanslag mellan dem.
 
-```PHP
-$name = "John";
-echo "Välkommen, " . $name . "!";
-```
+## Djupdykning:
+Sammanfogande av strängar är en viktig del av nästan alla programmeringspråk, inte bara i PHP. Detta koncept kommer från matematiken, där "+" representerar addition och "." representerar sammanslagning. I tidigare versioner av PHP användes även funktionen "strcat()" för att sammanfoga strängar, men detta har ersatts av operatorn "." sedan version 4.0.0.
 
-Det resulterande meddelandet blir "Välkommen, John!".
+Det finns också alternativ till att använda operatorn ".", såsom funktionen "sprintf()", som är speciellt användbar när man behöver formatera text dynamiskt eller skapa komplexa strängar.
 
-Du kan även sammanslå strängar med hjälp av funktionen "sprintf ()". Detta gör att du kan formatera ditt meddelande på ett mer organiserat sätt och lägga till variabler på specifika platser i strängen.
+När man sammanfogar strängar i PHP, så behandlas alla värden som strängar, även om de ursprungligen var nummer. Detta kan ibland leda till oväntade resultat, så det är viktig att vara medveten om detta när man använder operatorn ".".
 
-```PHP
-$name = "Lisa";
-$age = 25;
-$message = sprintf("Hej, mitt namn är %s och jag är %d år gammal.", $name, $age);
-echo $message;
-```
-
-Resultatet blir "Hej, mitt namn är Lisa och jag är 25 år gammal.".
-
-## Deep Dive
-
-När du sammanslår strängar i PHP måste du vara medveten om skillnaden mellan enkel- och dubbelcitationstecken. Enkla citationstecken tolkas bokstavligt, medan variabler eller specialtecken inuti dubbelcitationstecken tolkas som kod.
-
-Tänk på följande exempel:
-
-```PHP
-$name = "Johanna";
-echo 'Hej, $name!';
-```
-
-I det här fallet kommer variabeln $name inte att tolkas eftersom den finns inuti enkla citationstecken. Det resulterande meddelandet kommer att vara "Hej, $name!".
-
-Men om vi använder dubbelcitationstecken istället:
-
-```PHP
-$name = "Johanna";
-echo "Hej, $name!";
-```
-
-Resultatet blir "Hej, Johanna!". Variabeln $name tolkas som kod och dess värde ersätter variabeln i strängen.
-
-## Se även
-
-- [PHP Strängar](https://www.php.net/manual/en/language.types.string.php)
-- [PHP sprintf () funktionen](https://www.php.net/manual/en/function.sprintf.php)
-- [PHP Operators](https://www.php.net/manual/en/language.operators.php)
+## Se även:
+Läs mer om sammanfogande av strängar och andra string operationer i PHP på [PHP:s officiella dokumentation](https://www.php.net/manual/en/language.operators.string.php).

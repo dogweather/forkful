@@ -1,7 +1,7 @@
 ---
-title:                "Työskentele jsonin kanssa"
-html_title:           "Arduino: Työskentele jsonin kanssa"
-simple_title:         "Työskentele jsonin kanssa"
+title:                "Työskentely jsonin kanssa"
+html_title:           "Arduino: Työskentely jsonin kanssa"
+simple_title:         "Työskentely jsonin kanssa"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Data Formats and Serialization"
@@ -10,62 +10,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä ja miksi?
 
-JSON (JavaScript Object Notation) on yleisesti käytetty tiedon esitysmuoto, joka on helppo lukea ja kirjoittaa ihmisille ja koneille. Kun työskentelet Arduino-mikrokontrollerin kanssa, JSON:illa voi olla monia hyödyllisiä sovelluksia, kuten tiedon tallentaminen, verkkoviestinnät ja IoT-projektit.
+JSON eli Javascript Object Notation on yleinen formaatti tietojen tallentamiseen ja vaihtamiseen ohjelmoinnissa. JSONilla voidaan tallentaa ja lähettää tietoa eri ohjelmien ja laitteiden välillä, kuten esimerkiksi web-palvelimien ja Arduino-mikrokontrollerien välillä. Tämä helpottaa tietojen käsittelyä ja antaa mahdollisuuden luoda monimutkaisempia ohjelmia.
 
-## Kuinka
+## Kuinka:
 
-
-JSON-tietojen lukeminen ja kirjoittaminen Arduino-koodissa on melko helppoa käyttämällä liibsiä nimeltä "ArduinoJson". Se voidaan helposti ladata ja lisätä omaan koodiin seuraavalla tavalla:
+Esimerkiksi, jos haluat lähettää datan web-palvelimelle JSON-muodossa ja vastaanottaa sitä Arduino-mikrokontrollerillesi, voit käyttää seuraavaa koodia:
 
 ```Arduino
+// Kirjasto JSON-käsittelyyn
 #include <ArduinoJson.h>
+
+// Alustetaan JSON-objekti
+StaticJsonDocument<200> doc;
+
+// Lisätään data objektiin
+doc["nimi"] = "Matti";
+doc["ikä"] = 35;
+
+// Muutetaan objekti JSON-muotoon
+String json = "";
+serializeJson(doc, json);
+
+// Lähetetään data web-palvelimelle (esimerkiksi POST-pyynnöllä)
+// ja vastaanotetaan vastaus
+// ...koodi jätetty pois selkeyden vuoksi...
+
+// Parsitaan vastaanotettu JSON-data 
+const size_t capacity = JSON_OBJECT_SIZE(2);
+StaticJsonDocument<capacity> doc2;
+deserializeJson(doc2, json);
+
+// Haetaan data JSON-objektista
+String nimi = doc2["nimi"];
+int ikä = doc2["ikä"];
+
+// Tulostetaan data sarjaporttiin
+Serial.println(nimi);
+Serial.println(ikä);
+
 ```
 
-Ensimmäinen askel on määritellä JSON-muuttuja ja alustaa se halutulla arvolla:
+Esimerkissä käytetään ArduinoJson-kirjastoa, joka helpottaa JSON-muodon käsittelyä ja parsimista. Kirjasto täytyy asentaa ennen sen käyttöä. Esimerkissä käytetään myös POST-pyyntöä, joka tarvitsee omat lisäkoodinsa lähettämiseen ja vastaanottamiseen. 
 
-```Arduino
-StaticJsonDocument<200> doc; // luodaan JSON-objekti, joka voi sisältää enintään 200 merkkiä
-doc["nimi"] = "Matti"; // asetetaan "nimi"-avaimen arvoksi "Matti"
-doc["ikä"] = 30; // asetetaan "ikä"-avaimen arvoksi 30
+## Deep Dive:
 
-```
+JSON on kevyt ja yksinkertainen formaatti, joka syntyi tarpeesta korvata hankalammin käytettävä XML-tiedostoformaatti. JSON-muotoa voi verrata esimerkiksi YAML:iin ja CSV:hen, mutta JSON on yleisempi ja helpommin luettavissa ohjelmoijan näkökulmasta.
 
-JSON-objektin sisältämät tiedot voidaan myös hakea helposti käyttämällä avaimia:
+JSONia voi käyttää myös vaihtoehtona relaatiotietokannoille ja XML-tiedostoille. Se on nopeampi ja vaatii vähemmän tilaa kuin XML, mutta ei kuitenkaan ole yhtä rakenteellinen tietokannan kanssa kuin relaatiotietokannat. 
 
-```Arduino
-int ika = doc["ikä"];
-// ika-muuttujaan tallennetaan arvo 30
+## Katso myös:
 
-String nimi = doc["nimi"].as<String>();
-// nimi-muuttujaan tallennetaan arvo "Matti"
-// as<String>()-funktio muuntaa arvon String-tyyppiseksi
-```
-
-JSON-tietojen lukemisen ja kirjoittamisen lisäksi ArduinoJson-liibsi tarjoaa myös mahdollisuuden muuttaa JSON-tiedostoja muihin muotoihin, kuten tavalliseksi tekstimuotoiseksi tai jopa binaariseksi.
-
-## Syvenny
-
-JSON sisältää useita erilaisia tietorakenteita, kuten objekteja, taulukoita ja arvoja. JSON-objektin sisällä olevat tiedot ovat avain-arvo -pareja, jotka ovat yleensä merkkijonona esitettynä.
-
-Esimerkiksi:
-
-```json
-{
-  "nimi" : "Matti",
-  "ikä" : 30
-}
-```
-
-Avain-arvo -parit erotetaan toisistaan pilkulla ja niiden sisältämät tiedot esitetään kaksoispisteellä. JSON-taulukot puolestaan ovat merkkijonon sisällä sijaitsevia lista-arvoja, jotka ovat eroteltu pilkuilla.
-
-Kun työskentelet ArduinoJson-liibsin kanssa, on tärkeää muistaa varata tarpeeksi muistia JSON-tietojen tallentamiseen. Muistin koko määritellään luotaessa JSON-muuttujaa ja se on riippuvainen siitä, kuinka paljon tietoa halutaan tallentaa.
-
-## Katso myös
-
-Tässä oli lyhyt johdatus JSON-tietojen käsittelyyn Arduino-koodissa. Jos haluat oppia lisää, suosittelemme tutustumaan seuraaviin linkkeihin:
-
-- [ArduinoJson-dokumentaatio](https://arduinojson.org/)
-- [JSON-pikakurssi](https://www.json.org/json-fi.html)
-- [Arduino ja verkkoviestinnät](https://create.arduino.cc/projecthub/Arduino_Genuino/networking-13d78a)
+- [ArduinoJSON-kirjaston dokumentaatio](https://arduinojson.org/)
+- [JSON-wikipedia-artikkeli](https://fi.wikipedia.org/wiki/JavaScript_Object_Notation)
+- [JSON-opetusvideo](https://www.youtube.com/watch?v=iiADhChRriM)

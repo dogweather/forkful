@@ -1,7 +1,7 @@
 ---
-title:                "基本認証でhttpリクエストを送信する"
-html_title:           "Fish Shell: 基本認証でhttpリクエストを送信する"
-simple_title:         "基本認証でhttpリクエストを送信する"
+title:                "基本認証を使用してHTTPリクエストを送信する"
+html_title:           "Fish Shell: 基本認証を使用してHTTPリクエストを送信する"
+simple_title:         "基本認証を使用してHTTPリクエストを送信する"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "HTML and the Web"
@@ -10,25 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# なぜ
+## 何が & なぜ？
+HTTPリクエストを基本認証で送信するとはどういうことか、そしてなぜプログラマーがそれを行うのかを説明します。
 
-HTTPリクエストで基本認証を送信することのメリットは、セキュリティの向上です。これにより、アクセス制限がかかったウェブサイトやAPIに対して、認証情報を提供することができます。
+プログラマーがHTTPリクエストを基本認証で送信するのは、サイトやアプリケーションにアクセスする際に認証を必要とする場合があるからです。基本認証を使用すると、ユーザーのユーザー名とパスワードを使用して認証することができます。
 
-# 方法
+## やり方：
+```Fish Shell```のコードブロック内にコーディング例とサンプル出力を含めます。
 
-基本認証を使用してHTTPリクエストを送信するには、`curl`コマンドを使用します。以下のコードをターミナルで実行することで、認証情報を含んだリクエストを送信することができます。
-
-```Fish Shell
-curl -u <username>:<password> <URL>
+```
+# HTTPリクエストを基本認証で送信するコマンド
+curl -u "ユーザー名:パスワード" URL
 ```
 
-`<username>`と`<password>`には、ウェブサイトやAPIに登録する際に指定した認証情報を入力し、`<URL>`にはリクエストを送信したい先のURLを入力します。
+```
+# サンプル出力
+{
+  "title": "こんにちは、世界！"
+}
+```
 
-## 深く掘り下げる
+## 詳細説明：
+HTTPリクエストを基本認証で送信するとは、実際にはどのようなことを意味するのでしょうか？基本認証は、Webサイトやアプリケーションにアクセスする際に使用される最も古典的な認証方法の一つです。ただし、それ以外の認証方法もあります。たとえば、OAuthやAPIキーなどがあります。
 
-基本認証を使用してHTTPリクエストを送信する際には、curlコマンドの`-u`オプションによって認証情報を指定する点に注意が必要です。認証情報が暗号化されていないため、セキュリティ性は低いと言えます。より安全な認証方式を使用したい場合は、OAuthやトークンベースの認証を検討することをおすすめします。
+基本認証を使用することで、ユーザーのプライバシーが保護されると同時に、セキュアなアクセスが可能になります。しかし、ユーザーのパスワードがHTTPSで送信されない限り、ユーザーのプライバシーは守られません。
 
-## 参考リンク
-
-- [curl公式ドキュメント](https://curl.haxx.se/docs/)
-- [基本認証についての詳細な説明(英語)](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#Basic_authentication_scheme)
+## 関連サイト：
+- [curlコマンドのマニュアル](https://curl.haxx.se/docs/manual.html)
+- [基本認証の詳細説明](https://developer.mozilla.org/ja/docs/Web/HTTP/Authentication)
+- [HTTP認証の別のタイプ](https://developer.mozilla.org/ja/docs/Web/HTTP/Authentication#Other_authentication_methods)

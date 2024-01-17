@@ -10,65 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
-有时候，我们需要从网页中提取有用的信息，例如抓取新闻内容或者分析网站的数据。而这些信息通常储存在HTML代码中，因此我们需要通过解析HTML来提取所需的信息。
+## 什么是HTML解析？为什么程序员要做这个？
+HTML解析是指将HTML代码转换为可读的文本格式。程序员经常需要解析HTML，因为它是网页开发的基础。通过解析HTML，程序员可以轻松提取网页内容，并在开发网站或应用程序时使用这些信息。
 
-## 怎么做
-我们来看看如何使用Java来解析HTML代码。首先，我们需要导入Jsoup库，它是一个专门用于解析HTML的Java库。
+## 如何进行HTML解析：
+Java提供了多种用于解析HTML的工具。下面是一个简单的示例代码：
 
-````Java
+```Java
+import java.io.IOException;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
-````
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
 
-接下来，我们可以使用以下代码来加载HTML代码：
+public class HtmlParser {
 
-````Java
-String html = "<html><head><title>示例网页</title></head><body><h1>Hello World!</h1><p>这是一个段落。</p></body></html>";
-Document doc = Jsoup.parse(html);
-````
+    public static void main(String[] args) throws IOException {
 
-我们可以通过调用Document对象的方法来提取所需的信息，例如获取标题：
+        // 从URL解析HTML
+        Document doc = Jsoup.connect("https://www.example.com").get();
 
-````Java
-String title = doc.title(); // 结果：示例网页
-````
+        // 使用选择器获取特定元素
+        Element header = doc.select("h1").first();
 
-或者获取第一个段落的内容：
+        // 打印元素文本内容
+        System.out.println(header.text()); // 示例网站的标题将被打印出来
+    }
+}
+```
 
-````Java
-String paragraph = doc.select("p").first().text(); // 结果：这是一个段落。
-````
+## 深入了解HTML解析：
+HTML解析在网络发展早期并不是一个常见的技术。在那时，程序员需要手动处理HTML代码。随着技术的发展，出现了更多的解析工具，如DOM和SAX。Java的Jsoup库也是一个强大的HTML解析工具，它提供了一些方便的方法来快速解析HTML。
 
-以上就是解析HTML的基本使用方法，你可以根据自己的需求调用不同的方法来提取所需的信息。
-
-## 深入了解
-除了前面提到的基本用法，Jsoup库还提供了更多强大的功能，例如可以通过选择器来选择特定的HTML元素:
-
-````Java
-Elements paragraphs = doc.select("p"); // 所有的段落
-Element firstParagraph = doc.selectFirst("p"); // 第一个段落
-````
-
-同时，我们可以通过CSS选择器来选择具有特定属性的HTML元素:
-
-````Java
-Element element = doc.selectFirst("a[href*=example.com]");
-````
-
-除了选择，Jsoup还提供了操纵和修改HTML代码的功能，例如可以将指定的元素添加到HTML代码中:
-
-````Java
-Element link = doc.selectFirst("a[id=example]");
-doc.body().append(link.outerHtml());
-````
-
-通过这些更深层次的使用，我们可以灵活地解析和处理HTML代码，提取任意形式的信息。
-
-## 参考链接
-- [Jsoup官方文档](https://jsoup.org/cookbook/extracting-data/selector-syntax)
-- [JREPL: 解析HTML](https://www.jrepl.com/doc/howtojsoup.html)
-- [CSDN: Jsoup使用方法全解析](https://blog.csdn.net/u012373815/article/details/46834039)
-
-## 了解更多
-如果你对Java解析HTML还想了解更多，可以继续学习Jsoup的其他功能和用法，或者探索其他基于Java的HTML解析库，例如HtmlUnit和NekoHTML。
+## 参考文献：
+- [Jsoup官方网站](https://jsoup.org/)
+- [DOM和SAX解析器的比较](https://www.w3schools.com/xml/dom_vs_sax.asp)
+- [Java中的DOM解析教程](https://www.baeldung.com/java-dom)

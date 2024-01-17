@@ -10,43 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor?
+# Hva & Hvorfor?
+Sjekker du om en mappe eksisterer er en viktig del av programmering. Dette gjøres for å sikre at koden fungerer som den skal, og for å unngå feil og problemer med dataen som brukes.
 
-Har du noen gang prøvd å åpne en fil eller lese en fil fra en mappe, bare for å finne ut at mappen ikke eksisterer? Det er ikke bare frustrerende, men det kan også føre til krasj i programmet ditt. Å sjekke om en mappe eksisterer før du prøver å gjøre noe med den, er en viktig del av å skrive pålitelig og feilfri kode.
+# Slik gjør du det:
+I Gleam kan du enkelt sjekke om en mappe eksisterer ved å bruke ```std.fs.exists```. Dette vil returnere en boolsk verdi som viser om mappen eksisterer eller ikke. Du kan også bruke ```std.fs.is_dir``` for å spesifikt sjekke om en mappe eksisterer.
 
-## Hvordan du gjør det
-
-For å sjekke om en mappe eksisterer i Gleam, bruker du funksjonen `std.fs.exists` og gir den mappen du vil sjekke som et argument. Denne funksjonen vil returnere en `Result`-type som enten er `Ok` hvis mappen eksisterer, eller `Err` hvis den ikke gjør det. Her er et eksempel på hvordan du kan bruke denne funksjonen:
-
-```Gleam
-// Sjekker om mappen "bilder" eksisterer
-let resultat = std.fs.exists("bilder")
-
-// Hvis resultatet er en "Ok"-verdi, skriver vi ut at mappen eksisterer
-match resultat {
-  Ok -> println("Mappen 'bilder' eksisterer!")
-  Err -> println("Mappen 'bilder' eksisterer ikke.")
-}
+Eksempel:
+```
+// Sjekker om mappen "dokumenter" eksisterer
+let eksisterer = std.fs.exists("dokumenter")
+// Vil returnere true eller false, avhengig av om mappen eksisterer eller ikke
 ```
 
-I dette eksempelet sjekker vi om mappen "bilder" eksisterer, og skriver ut en passende melding basert på resultatet. Du kan også bruke en `if`-setning for å håndtere resultatet:
-
-```Gleam
-if std.fs.exists("bilder") == Ok {
-  println("Mappen 'bilder' eksisterer!")
+Eksempel på hvordan du kan bruke en betinget uttalelse for å håndtere situasjonen der mappen ikke eksisterer:
+```
+if std.fs.exists("bilder") {
+    // Gjør noe med dataen i mappen
 } else {
-  println("Mappen 'bilder' eksisterer ikke.")
+    // Håndter tilfellet der mappen ikke eksisterer
 }
 ```
 
-## Dypere dykk
+# Ta et dypdykk:
+Å sjekke om en mappe eksisterer er en vanlig praksis i programmering, spesielt når du jobber med filbehandling. Dette har vært en del av programmering lenge før Gleam ble utviklet, og er fortsatt like viktig som før.
 
-Som nevnt ovenfor, vil `std.fs.exists`-funksjonen returnere en `Result`-type. Dette er en type som kan være enten `Ok` eller `Err`, og den brukes mye i Gleam for å håndtere mulige feil. Hvis du vil ha en mer detaljert forklaring på hvordan `Result` fungerer, kan du sjekke ut dokumentasjonen [her](https://gleam.run/book/std/result.html).
+Alternativer til å bruke ```std.fs.exists``` inkluderer å bruke andre språk som støtter filbehandling, som for eksempel Rust eller Go. I tillegg finnes det også tredjepartsbiblioteker som tilbyr lignende funksjonalitet.
 
-Det er også verdt å merke seg at `std.fs.exists`-funksjonen kun sjekker om mappen eksisterer, den sjekker ikke om du har tilgang til den eller om det er andre problemer med mappen. Hvis du trenger mer avansert filbehandling, kan du se på `std.fs.open` og `std.fs.create`-funksjonene.
+Implementeringen av ```std.fs.exists``` er basert på operativsystemets funksjonalitet for å sjekke om en fil eller mappe eksisterer. Det er derfor viktig å være klar over eventuelle begrensninger og ulikheter mellom forskjellige operativsystemer når du bruker denne funksjonen.
 
-## Se også
-
-- [Dokumentasjon for Gleam sin standardbibliotek](https://gleam.run/book/std/)
-- [Gleam sin offisielle nettside](https://gleam.run/)
-- [Kodeeksempler på GitHub](https://github.com/gleam-lang/gleam/tree/main/examples)
+# Se også:
+- [Gleam sin offisielle dokumentasjon om std.fs.exists](https://gleam.run/documentation/stdlib/fs.html#exists)

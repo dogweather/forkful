@@ -1,7 +1,7 @@
 ---
-title:                "Ermitteln der Länge eines Strings"
-html_title:           "Bash: Ermitteln der Länge eines Strings"
-simple_title:         "Ermitteln der Länge eines Strings"
+title:                "Die Länge eines Strings finden"
+html_title:           "Bash: Die Länge eines Strings finden"
+simple_title:         "Die Länge eines Strings finden"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Strings"
@@ -10,36 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was & Warum?
 
-Möchtest du wissen, wie lang ein bestimmter Text in deinem Bash-Skript ist? Das Finden der Länge einer Zeichenkette kann sehr nützlich sein, zum Beispiel bei der Validierung von Eingaben oder der Manipulation von Daten.
+Das Finden der Länge einer Zeichenfolge ist ein häufiges Problem für Programmiererinnen und Programmierer. Grund dafür ist, dass die Länge einer Zeichenfolge für verschiedene Anwendungen relevant sein kann, wie z.B. das Überprüfen von Input-Limits oder das Formatieren von Ausgaben.
 
-## Wie geht's
+## Wie geht's?
 
-Um die Länge einer Zeichenkette in Bash zu finden, gibt es mehrere Möglichkeiten. Eine davon ist die Verwendung von `expr length`, wie im folgenden Beispiel:
-
-```Bash
-string='Hallo Welt'
-echo "Die Länge von $string ist $(expr length $string)"
-```
-
-Die Ausgabe für dieses Skript wäre "Die Länge von Hallo Welt ist 11".
-
-Eine andere Möglichkeit ist die Verwendung von `wc -c`, um die Anzahl der Zeichen zu zählen (diese Methode zählt jedoch alle Zeichen, einschließlich Leerzeichen und Sonderzeichen):
+Um die Länge einer Zeichenfolge in Bash zu finden, können wir das integrierte `expr` Tool verwenden. Wir geben einfach die Zeichenfolge innerhalb von Anführungszeichen in den `expr length` Befehl ein und erhalten die Länge als Ausgabe.
 
 ```Bash
-string='Hallo Welt'
-echo "Die Länge von $string ist $(echo -n $string | wc -c)"
+string="Hallo Welt!"
+length=`expr length "$string"`
+echo "Die Länge der Zeichenfolge ist: $length"
 ```
 
-Die Ausgabe für dieses Skript wäre ebenfalls "Die Länge von Hallo Welt ist 11".
+Die Ausgabe lautet: `Die Länge der Zeichenfolge ist: 11`
 
-## Deep Dive
+## In die Tiefe gehen
 
-Der Befehl `expr length` verwendet den `POSIX`-Standard `expr` und gibt die Länge der Zeichenkette in Zeichen zurück. Wenn du jedoch auch mehrsprachige Zeichen oder Sonderzeichen berücksichtigen möchtest, solltest du `wc -m` verwenden, welches die Anzahl der Bytes zurückgibt. Weitere Informationen findest du in der Dokumentation von `wc`.
+Die `expr length` Funktion ist Teil des GNU Core Utilities Pakets und wurde 1987 von Brian Kernighan und Dennis Ritchie entwickelt. Eine alternative Möglichkeit, die Länge einer Zeichenfolge in Bash zu finden, ist die Verwendung von `wc -c`, welches die Anzahl der Zeichen in einer Datei oder einem Input zählt.
+
+Eine interessante Tatsache ist, dass es auch möglich ist, die Länge einer Zeichenfolge ohne externe Tools oder Funktionen zu finden. Dies kann erreicht werden, indem man die String-Length-Expansion von Bash verwendet: `${#string}`.
 
 ## Siehe auch
 
-- Bash-Befehl: `expr`
-- Bash-Befehl: `wc`
-- [Offizielle Bash-Dokumentation](https://www.gnu.org/software/bash/manual/bash.html)
+- [GNU Core Utilities](https://www.gnu.org/software/coreutils/)
+- [Bash String Manipulation](https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html)

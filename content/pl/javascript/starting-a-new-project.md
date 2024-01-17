@@ -10,43 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Czym jest i dlaczego zaczynamy nowy projekt?
 
-Planowanie nowego projektu programistycznego może być bardzo ekscytującym wyzwaniem, które pozwala rozwinąć twórcze umiejętności i rozwiązać interesujące problemy. Dodatkowo, możesz również uczyć się nowych technologii i ulepszać swoje umiejętności, co przyczyni się do rozwoju Twojej kariery.
+Zaczęcie nowego projektu to proces tworzenia nowego programu lub aplikacji. Programiści mają tendencję do rozpoczynania nowych projektów, ponieważ chcą tworzyć nowe i lepsze rozwiązania, które ułatwią życie lub rozwiążą problemy.
 
-## Jak zacząć
-
-Aby rozpocząć nowy projekt w Javascript, musisz najpierw wybrać środowisko programistyczne, w którym będziesz pracować. Jest wiele opcji, takich jak Visual Studio Code, Atom czy Sublime Text, więc wybierz to, które najbardziej Ci odpowiada.
-
-Następnie musisz utworzyć nowy plik ```index.js``` z rozszerzeniem ```.js```. Jest to miejsce, w którym będziesz pisać swój kod. Możesz także dodać plik HTML, aby wyświetlić wynik swojego kodu w przeglądarce.
-
-Teraz możesz zacząć pisać swoją aplikację. Poniżej znajduje się prosty przykład cwiczenia: 
+## Jak to zrobić:
 
 ```Javascript
-// Przykład: Funkcja dodawania liczb
+// Stworzenie zmiennych z informacjami o projekcie
+let projectName = "Moja Aplikacja";
+let projectDescription = "Aplikacja do zarządzania finansami";
+let isCompleted = false;
 
-// Definiowanie funkcji
-function dodaj(a, b) {
-  return a + b;
-}
-
-// Wywołanie funkcji i przypisanie wyniku do zmiennej
-var suma = dodaj(5, 3);
-
-// Wyświetlenie wyniku w konsoli
-console.log(suma); // Output: 8
+// Wyświetlenie informacji o projekcie w konsoli
+console.log(`Nazwa projektu: ${projectName}`);
+console.log(`Opis: ${projectDescription}`);
+console.log(`Czy projekt jest ukończony? ${isCompleted}`);
 ```
 
-## Głębsze zagłębienie
+W powyższym przykładzie użyliśmy zmiennych i metody `console.log()` aby wyświetlić informacje o projekcie w konsoli. Jednak sposób rozpoczęcia projektu może się różnić w zależności od wybranego języka programowania i środowiska.
 
-Podczas tworzenia nowego projektu w Javascript, ważne jest, aby rozpocząć od stworzenia planu i architektury aplikacji. Zastanów się, jakie funkcjonalności musi mieć Twoja aplikacja i jak będą one ze sobą powiązane.
+## Głębsza analiza:
 
-Następnie możesz zacząć pisać kod i testować go na bieżąco, aby wykrywać ewentualne błędy i dokonywać ulepszeń. Pamiętaj także o używaniu odpowiedniego formatowania kodu i komentarzy, aby kod był czytelny i łatwiejszy do zrozumienia.
+### Kontekst historyczny
 
-Nie zapomnij również o korzystaniu z dokumentacji i przykładowych kodów, które mogą Ci pomóc w rozwiązywaniu problemów i lepszym zrozumieniu funkcji języka Javascript.
+Zaczynanie nowych projektów jest nieodłączną częścią pracy programisty od samego początku istnienia informatyki. Jednym z najstarszych języków programowania jest Fortran, który powstał w 1957 roku. Od tego czasu powstało wiele nowych języków i technologii, które ułatwiają prace programistów i stanowią podstawę dla coraz to nowszych projektów.
 
-## Zobacz także
+### Alternatywy
 
-- [Wprowadzenie do Javascript](https://developer.mozilla.org/pl/docs/Learn/JavaScript/First_steps/Wprowadzenie_do_JavaScript)
-- [Visual Studio Code](https://code.visualstudio.com/)
-- [MDN: Dokumentacja Javascript](https://developer.mozilla.org/pl/docs/Web/JavaScript)
+Wybór języka programowania oraz środowiska zależy od potrzeb i preferencji programisty. Niektóre popularne języki programowania to Java, Python, C++, a także Javascript, którym będziemy się zajmować w tym artykule. Dla osób, które dopiero zaczynają swoją przygodę z programowaniem, istnieją również łatwe w nauce narzędzia takie jak Scratch czy Code.org.
+
+### Szczegóły implementacji
+
+Rozpoczęcie nowego projektu zwykle wymaga wybrania odpowiedniego języka programowania oraz środowiska, w którym będziemy pracować. Należy także ustalić cel projektu i rozpisać plan jego realizacji. Programista musi także pamiętać o wykorzystaniu dobrych praktyk programistycznych, takich jak tworzenie czytelnego i zrozumiałego kodu oraz regularne wykonywanie testów.
+
+## Zobacz także:
+
+- [Poradnik dla początkujących w Javascript](https://www.codecademy.com/learn/introduction-to-javascript)
+- [Tworzenie projektu w środowisku Visual Studio Code](https://code.visualstudio.com/docs/nodejs/nodejs-tutorial)
+- [Strona domowa języka programowania Javascript](https://www.javascript.com/)

@@ -10,42 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-Converting a date into a string may seem like a simple task, but it is an essential skill for any Go developer. This conversion allows for easier manipulation and storage of dates in a format that is easily readable and understandable for both humans and machines.
+## What & Why?
+Converting a date into a string allows programmers to display the date in a human-readable format, making it easier to understand and work with. This is commonly needed for tasks such as displaying dates on a user interface or saving dates in a database.
 
-## How To
-To convert a date into a string in Go, we can use the `Format()` function from the `time` package. Here is an example code snippet:
+## How to:
+Converting a date into a string in Go is easy and can be done using the `format` function from the `time` package. Below is a code snippet showing how to do this and its corresponding output:
 
 ```Go
 package main
 
 import (
-	"fmt"
-	"time"
+  "fmt"
+  "time"
 )
 
 func main() {
-	now := time.Now() // get current time
-	dateString := now.Format("January 02, 2006") // convert to string in desired format
-	fmt.Println(dateString) // output: March 23, 2021
+  // Create a date object using the current time
+  date := time.Now()
+
+  // Convert the date into a string with the desired format
+  dateString := date.Format("Mon, Jan 02, 2006")
+
+  // Print the resulting string
+  fmt.Println(dateString)
 }
 ```
-
-In the above example, we first use the `time.Now()` function to get the current time and store it in the `now` variable. Then, we use the `Format()` function to convert the time to a string in the format specified by the layout string "January 02, 2006". This layout string is a reference to the input date "January 02, 2006 15:04:05" which is also known as the time layout in Go.
-
-Running this code will output the current date in the specified format. You can also format the date to any other desired format by changing the layout string. Here are a few more examples:
-
-```Go
-dateString := now.Format("Jan 02, 2006") // output: Mar 23, 2021
-dateString := now.Format("01/02/2006") // output: 03/23/2021
-dateString := now.Format("Mon, 01-02-2006 15:04:05") // output: Tue, 03-23-2021 20:10:15
+Output:
+```
+Mon, Oct 18, 2021
 ```
 
-## Deep Dive
-Under the hood, the `Format()` function uses the `Parse()` function to convert the time to a string. This function takes in a layout string and creates a new time object in the specified layout. Then, the `Format()` function simply returns the date and time components of this object in string format.
+The `Format` function takes in a layout string which specifies how the date should be formatted. The format uses a reference time "Mon Jan 2 15:04:05 -0700 MST 2006" to determine the formatting. You can mix and match different values to customize the layout to your preference.
 
-It is important to note that the layout string must be in the specific format "Monday, January 02, 2006" to correctly convert the time to a string. Any other format will result in an error.
+## Deep Dive:
+Converting a date into a string has been a common task for programming languages since the early days of computing. In fact, even before computers, people have been using different methods to represent dates in a more understandable and consistent way. In Go, the `Format` function is the standard way to convert a date into a string, but there are also alternatives such as the `String` method.
 
-## See Also
-- The Go time package documentation: https://golang.org/pkg/time/
-- A tutorial on working with dates and times in Go: https://golangbyexample.com/golang-datetime-example/
+Under the hood, the `Format` function uses a combination of format rules and the reference time to generate the resulting string. This function also takes into account the timezone and any specific location information for more accurate formatting.
+
+## See Also:
+- Official documentation for the `time` package in Go: https://pkg.go.dev/time
+- The Go tour interactive tutorial on the `time` package: https://tour.golang.org/basics/15
+- A detailed explanation of all the layout values for the `Format` function: https://programming.guide/go/format-parse-string-time-date-example.html

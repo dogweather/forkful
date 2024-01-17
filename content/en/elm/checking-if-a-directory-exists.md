@@ -10,40 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-Checking if a directory exists is a crucial step in any file handling operation. Whether you want to create a new directory, move files, or delete them, it is important to first confirm if the directory exists or not. This not only ensures the smooth functioning of your code but also prevents any potential errors or data loss.
+Checking if a directory exists is a common task for programmers, especially when working with file systems. It is essentially a way to verify if a specific directory (or folder) exists in a given location. Programmers do this to ensure that their code properly handles the situation when a directory is missing, and to avoid errors or unexpected behavior.
 
-## How To
+## How to:
 
-To check if a directory exists in Elm, we can use the `exists` function from the `Elm.IO.Directory` module. This function takes in a relative or absolute path to the directory as an argument and returns a `Result Error Bool` type.
-
-```
-Elm.IO.Directory.exists "/path/to/directory"
---> Ok True
-```
-
-In the above example, the `exists` function returns `Ok True` indicating that the directory does exist. Let's look at another example where the directory does not exist.
+To check if a directory exists in Elm, you can use the built-in `Directory` module. It provides a `exists` function that takes in a `String` representing the directory path, and returns a `Task` with a `Bool` value indicating whether the directory exists or not.
 
 ```
-Elm.IO.Directory.exists "/path/to/nonexisting/directory"
---> Ok False
+Elm.Task
+    .attempt Directory.exists "/path/to/directory"
+    .map (\result -> case result of
+        Err _ -> -- handle error
+        Ok exists -> -- use exists value
+    )
 ```
 
-Here, the function still returns `Ok False` but this time it indicates that the directory does not exist. It is important to handle this `Result` type in your code to handle potential errors or successful results.
+If the directory exists, the `exists` value will be `True`, otherwise it will be `False`.
 
 ## Deep Dive
 
-Behind the scenes, the `exists` function uses the `withDirectoryEntry` function which takes care of opening and closing the directory entry. This ensures efficient and safe handling of the directory. If the directory path is a relative one, it will be resolved based on the directory where the program is executed.
+Historically, checking if a directory exists was a crucial step in file management, especially in operating systems where file permissions and ownership were stricter. It was also important for error handling to prevent invalid paths from being accessed.
 
-A different approach to checking if a directory exists would be using the `getDir` function which returns a `Result Error Directory` type. This function also takes in the path to the directory as an argument but instead of returning a `Bool`, it returns a `Directory` type representing the directory. If the directory does not exist, the `Result` will contain an error message.
+An alternative to using the `exists` function is to use `FileSystem.access` which checks for both file and directory existence. However, this approach requires different handling for each type of existence, making the code less concise.
 
-```
-Elm.IO.Directory.getDir "/path/to/directory"
---> Ok <Directory>
-```
+The implementation of `exists` in the `Directory` module utilizes the `stat` system call to retrieve information about the directory. It then checks for specific flags in the returned data to determine if the directory exists.
 
-See Also
+## See Also
 
-- [Elm.IO.Directory module](https://package.elm-lang.org/packages/elm/file/latest/Elm-IO-Directory)
-- [Elm Docs on File and Directory handling](https://guide.elm-lang.org/interop/file_system.html)
+- [Elm Directory Module](https://package.elm-lang.org/packages/elm/core/latest/Directory)
+- [Elm FileSystem Module](https://package.elm-lang.org/packages/elm/filesystem/latest/FileSystem)
+- [stat system call](https://linux.die.net/man/2/stat)

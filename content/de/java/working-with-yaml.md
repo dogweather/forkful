@@ -10,74 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was ist das & Warum?
 
-Warum sollte man sich mit YAML beschäftigen? Ganz einfach: YAML ist eine strukturierte Datenformatierungssprache, die es ermöglicht, Daten in einem einfach zu lesenden und zu schreibenden Format zu organisieren. Sie wird häufig in der Softwareentwicklung verwendet, insbesondere bei der Konfiguration von Anwendungen.
+Bei der Arbeit mit Java müssen wir oft mit Konfigurationsdateien arbeiten, um unsere Anwendungen zu verwalten. Eine sehr beliebte Art, Konfigurationsdateien zu erstellen, ist die Verwendung von YAML, einer einfachen und menschenlesbaren Datenformatierungssprache. YAML ist besonders hilfreich, da es flexibel, benutzerfreundlich und plattformunabhängig ist. Es ist auch bekannt für seine einfache Syntax und Flexibilität bei der Integration mit anderen Programmiersprachen.
 
-## Wie geht's?
+## Wie geht das?
 
-In dieser Anleitung werden wir uns ansehen, wie man YAML in Java verwenden kann. Wir werden einige grundlegende Beispiele durchgehen und die Ausgabe betrachten. Zuerst müssen wir jedoch sicherstellen, dass wir die richtigen Abhängigkeiten in unserem Projekt haben. Wir benötigen die LibYAML Bibliothek, um die YAML-Dateien zu verarbeiten.
+Um mit YAML in Java zu arbeiten, müssen wir zuerst die YAML-Library in unserem Projekt importieren. Anschließend können wir ganz einfach YAML-Dateien in unserem Code verarbeiten.
 
-```Java
-// Import für die LibYAML Bibliothek
-import org.yaml.snakeyaml.*;
-```
-
-Nun können wir eine YAML-Datei analysieren und die Daten ausgeben:
+### Beispiel:
 
 ```Java
-// Erstellen eines Yaml-Objekts
 Yaml yaml = new Yaml();
 
-// Lade die Datei und speichere sie in einer HashMap
-HashMap data = (HashMap) yaml.load(new FileInputStream("example.yaml"));
+// Lese eine YAML-Datei und speichere die Daten in einem Map-Objekt
+Map<String, Object> configData = yaml.load(new FileInputStream("config.yml"));
+``` 
+Dieser Code liest eine YAML-Datei mit dem Namen "config.yml" und speichert die Daten in einem Map-Objekt, das wir dann in unserem Code verwenden können.
 
-// Gib den Inhalt der Datei aus
-System.out.println(data);
-```
+### Beispiele zur Verarbeitung von Daten:
 
-Die Ausgabe sieht wie folgt aus:
-
-```Java
-// Ausgabe
-{key1=value1, key2=value2, key3=value3}
-```
-
-Wir können auch spezifische Werte aus der Datei abrufen, indem wir den entsprechenden Schlüssel verwenden:
+Um auf einzelne Werte in unserem Map-Objekt zuzugreifen, können wir einfach den Schlüssel des entsprechenden Werts verwenden:
 
 ```Java
-// Ausgabe des Werts von key1
-System.out.println(data.get("key1"));
+// Zugriff auf Wert "port" in unserem Map-Objekt
+Integer port = (Integer) configData.get("port");
 ```
 
-Die Ausgabe wäre dann `value1`. Auf diese Weise können wir die Daten aus der YAML-Datei in unsere Java-Anwendung integrieren.
-
-## Tiefergehende Informationen
-
-In diesem Abschnitt werden wir etwas genauer darauf eingehen, wie man mit YAML in Java arbeitet und einige fortgeschrittene Funktionen betrachten.
-
-### YamlReader und YamlWriter
-
-Anstatt die `load()`-Methode von Yaml zu verwenden, können wir auch YamlReader und YamlWriter-Objekte verwenden, um die Daten aus einer YAML-Datei zu lesen und zu schreiben.
+Wir können auch komplexe Datenstrukturen wie Listen und verschachtelte Maps verarbeiten:
 
 ```Java
-// Ein YamlReader zum Lesen der Datei
-YamlReader reader = new YamlReader(new FileReader("example.yaml"));
-
-// Ein YamlWriter zum Schreiben von Daten in eine YAML-Datei
-YamlWriter writer = new YamlWriter(new FileWriter("example.yaml"));
+// Zugriff auf Titel des ersten Videos in unserer Liste
+String videoTitle = (String) ((Map<String, Object>) configData.get("videos")).get("1").get("title");
 ```
 
-### Benutzerdefinierte Typen
+## Tiefere Einblicke
 
-YAML unterstützt die Verwendung von benutzerdefinierten Typen, um eine präzisere Verarbeitung der Daten zu ermöglichen. Wir können z.B. eine Klasse erstellen, die das `YamlSerializable`-Interface implementiert, um die Daten in der YAML-Datei auf eine bestimmte Weise zu strukturieren.
+YAML wurde ursprünglich als Teil der Programmiersprache Perl entwickelt, um die Lesbarkeit von Konfigurationsdateien zu verbessern. Mittlerweile wird es jedoch von vielen anderen Programmiersprachen unterstützt. Als Alternative zu YAML gibt es auch andere Formate wie JSON oder XML, die jedoch in der Regel weniger benutzerfreundlich sind.
 
-### Fehlerbehandlung
-
-Beim Arbeiten mit YAML-Dateien ist es wichtig, auf Fehler zu achten. Wir können z.B. eine try-catch-Anweisung verwenden, um sicherzustellen, dass unsere Anwendung richtig funktioniert, auch wenn die YAML-Datei ungültige Daten enthält.
+Um YAML in Java zu verwenden, können wir auch die SnakeYAML-Library verwenden, die zusätzliche Funktionen bietet, um die Arbeit mit YAML noch einfacher zu gestalten.
 
 ## Siehe auch
 
-- [YAML-Spezifikation](https://yaml.org/spec/1.2/spec.html)
-- [YAML-Tutorial](https://www.baeldung.com/java-yaml)
-- [SnakeYaml-Dokumentation](https://bitbucket.org/asomov/snakeyaml/wiki/Documentation)
+- [YAML-Website](https://yaml.org/)
+- [Offizielle Dokumentation für SnakeYAML](https://bitbucket.org/asomov/snakeyaml/wiki/Documentation)

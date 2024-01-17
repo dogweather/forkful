@@ -10,37 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-Have you ever wanted to quickly check the current date without having to open your calendar app or search online? With Fish Shell, you can easily get the current date right in your terminal, saving you time and hassle.
+Getting the current date in Fish Shell is a way to retrieve the current date and time information. This is a common task for programmers as it allows them to timestamp events or automate tasks based on the current date.
 
-## How To
+## How to:
 
-First, open your terminal and enter the following command:
-
-```
-date
-```
-
-This will output the current date and time in the format specified by your system settings. 
-
-To customize the format, you can use the "-f" flag followed by a formatting string. For example, if you want the date to be displayed in the format of "Month/Day/Year", you can use the following command:
+To get the current date in Fish Shell, you can use the `date` command. Here are two examples of how it can be used:
 
 ```
-date -f "%m/%d/%Y"
-```
+# Get the current date and time in the default format
+Fish Shell> date
+Sun Apr 25 12:00:00 EST 2021
 
-This will output the date in the desired format. You can use any combination of formatting characters to customize the output according to your preference.
+# Get the current date in a custom format (YYYY-MM-DD)
+Fish Shell> date +"%Y-%m-%d"
+2021-04-25 
+```
 
 ## Deep Dive
 
-Behind the scenes, the "date" command in Fish Shell is utilizing the "date" function from the GNU Core Utilities. This function takes into account your system's current date and time and formats it accordingly. 
+### Historical Context:
 
-It also has the ability to perform various operations such as adding or subtracting time by using flexible input options. For a comprehensive list of available options, you can consult the official GNU Core Utilities documentation. 
+Getting the current date has been a common task for programmers since the early days of computing. As technology has advanced, so have the methods for retrieving this information.
 
-In addition, Fish Shell also has an internal function called "strftime" which allows for additional customization of the date output. This function implements the same formatting options as the "date" function, but also includes some additional characters for more advanced formatting. 
+### Alternatives:
 
-## See Also
+Other alternatives for getting the current date in Fish Shell include using the `date` command with different options, or using third-party libraries for more advanced functionality.
 
-- [GNU Core Utilities Documentation](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html)
-- [Fish Shell Documentation on strftime function](https://fishshell.com/docs/3.1/cmds/strftime.html)
+### Implementation Details:
+
+The `date` command in Fish Shell allows for various options to change the output format of the current date. These options follow the same syntax as the `date` command in the Unix operating system.
+
+## See Also:
+
+- [Fish Shell Documentation](https://fishshell.com/docs/current/cmds/date.html)
+- [Unix Date command](https://www.geeksforgeeks.org/date-command-in-linux-with-examples/)

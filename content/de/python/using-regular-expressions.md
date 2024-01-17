@@ -10,56 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+# Was & Warum?
 
-Reguläre Ausdrücke sind ein unverzichtbares Werkzeug für jeden Python-Entwickler. Sie ermöglichen es, komplexe Muster in Texten zu suchen und zu manipulieren, was die Programmierung von Textverarbeitungsaufgaben erheblich erleichtert. Durch die Verwendung regulärer Ausdrücke können Sie auch schnell und effizient Daten validieren und filtern.
+Wenn wir in der Programmierung Daten, Zeichenfolgen oder Wörter analysieren und bearbeiten müssen, ist ein Werkzeug besonders nützlich: reguläre Ausdrücke (auch bekannt als "regex"). Dies sind spezielle Ausdrücke, die uns helfen, bestimmte Muster in Texten zu finden und zu extrahieren. Warum nutzen Programmierer also reguläre Ausdrücke? Weil es uns Zeit spart und uns ermöglicht, komplexe Aufgaben schneller zu lösen.
 
-## Wie geht das?
+## Wie geht's?
 
-Reguläre Ausdrücke werden in Python mit dem Modul `re` verwendet. Um loszulegen, importieren Sie dieses Modul in Ihrem Code:
+Hier ist ein Beispiel, wie wir reguläre Ausdrücke in Python verwenden können:
 
 ```Python
 import re
+
+text = "Hallo, mein Name ist Max und ich bin ein Programmierer."
+
+# Wir definieren ein reguläres Ausdrucksmuster, das nach Namen sucht.
+name_pattern = r"Mein Name ist (\w+)"
+match = re.search(name_pattern, text) # Wir suchen nach Übereinstimmungen.
+
+if match:
+  # Wenn es eine Übereinstimmung gibt, drucken wir den Namen aus.
+  print("Mein Name ist", match.group(1))
+else:
+  print("Kein Name gefunden.")
 ```
 
-Um einen regulären Ausdruck auf einen String anzuwenden, verwenden Sie die `re.search()` Funktion. Sie nimmt zwei Argumente an: den regulären Ausdruck als String und den Text, auf den er angewendet werden soll.
+Das wird als Output "Mein Name ist Max" geben. Wir können auch mit regulären Ausdrücken suchen und ersetzen, Zeichenfolgen splitten und vieles mehr.
 
-```Python
-result = re.search(r'(\d+)-(\d+)-(\d+)', 'Heute ist der 25-06-2020')
+## Tief eintauchen
 
-# result entspricht dem regulären Ausdruck, wenn er im Text gefunden wird, sonst None
-```
+Reguläre Ausdrücke haben eine lange Geschichte und werden seit den 1950er Jahren in der Informatik verwendet. Obwohl sie sehr leistungsfähig sind, können sie auch komplex und schwer zu lesen sein. Eine Alternative zu regulären Ausdrücken ist die Verwendung von String-Methoden in Python, die eine einfachere Syntax haben.
 
-Um die gefundenen Übereinstimmungen zu extrahieren, verwenden Sie die `group()` Methode auf dem Ergebnisobjekt:
+Hier sind einige nützliche Ressourcen zum Lernen von regulären Ausdrücken:
 
-```Python
-# Die Gruppe(1) entspricht dem Tag, Gruppe(2) dem Monat und Gruppe(3) dem Jahr
-result.group(1) # 25
-result.group(2) # 06
-result.group(3) # 2020
-```
+- [Offizielle Python-Dokumentation](https://docs.python.org/3/library/re.html)
+- [Regular Expressions 101](https://www.regular-expressions.info/tutorial.html)
+- [RegExr - Online regulärer Ausdrucks-Tester](https://regexr.com/)
 
-Sie können auch reguläre Ausdrücke verwenden, um Texte zu ersetzen, indem Sie die `re.sub()` Funktion benutzen:
+## Weitere Informationen
 
-```Python
-new_text = re.sub(r'Python', 'Schlange', 'Ich liebe Python!')
-
-# new_text entspricht dem String "Ich liebe Schlange!"
-```
-
-## Tiefere Einblicke
-
-Reguläre Ausdrücke unterstützen auch verschiedene Flags, die beim Erstellen des regulären Ausdrucks verwendet werden können, um das Verhalten zu ändern. Zum Beispiel können Sie die `IGNORECASE` Flag setzen, um die Groß- und Kleinschreibung zu ignorieren.
-
-```Python
-result = re.search('PYTHON', 'Ich lerne Python', flags = re.IGNORECASE)
-
-# result entspricht dem regulären Ausdruck, unabhängig von der Groß- und Kleinschreibung
-```
-
-Es gibt auch spezielle Zeichenklassen, die verwendet werden können, um spezifische Arten von Zeichen in einem Text zu finden, wie z.B. Zahlen, Buchstaben oder Leerzeichen. Reguläre Ausdrücke ermöglichen auch das Definieren von Wiederholungen, z.B. das Suchen von einem oder mehreren Vorkommen eines bestimmten Musters.
-
-## Siehe auch
-
-- Dokumentation für `re` Modul in der offiziellen Python-Dokumentation: https://docs.python.org/3/library/re.html
-- Reguläre Ausdrücke Tutorial von Real Python: https://realpython.com/regex-python/
+- [Wikipedia-Artikel zu regulären Ausdrücken](https://de.wikipedia.org/wiki/Regul%C3%A4rer_Ausdruck)
+- [Sammlung von regulären Ausdrücken](https://github.com/ziishaned/learn-regex) für verschiedene Programmiersprachen.

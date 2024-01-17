@@ -1,7 +1,7 @@
 ---
-title:                "Merkkijonojen yhdistäminen"
-html_title:           "Rust: Merkkijonojen yhdistäminen"
-simple_title:         "Merkkijonojen yhdistäminen"
+title:                "Merkkijonojen liittäminen"
+html_title:           "Rust: Merkkijonojen liittäminen"
+simple_title:         "Merkkijonojen liittäminen"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -10,53 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä ja miksi?
 
- "Concatenating" eli yhdistämällä merkkijonoja on tärkeä osa ohjelmoinnin maailmaa. Se antaa meille mahdollisuuden luoda monimutkaisia ja dynaamisia viestejä ja tietoja, jotka ovat välttämättömiä monissa ohjelmointitehtävissä.
+Mikä sitten on stringien yhdistäminen? Se on yksinkertaisesti kahden tai useamman merkkijonon "liittämistä" yhdeksi isoksi merkkijonoksi. Tämä on hyödyllistä ohjelmoinnissa, kun halutaan esimerkiksi tulostaa tekstiä, joka koostuu useista eri merkkijonoista.
 
-## Miten
+## Kuinka?
 
-```Rust
-
-let nimi = "Maija"
-let tervehdys = "Hei " + nimi + ", tervetuloa!"
-
-println!("{}", tervehdys);
-
-// Tulostaa: Hei Maija, tervetuloa!
-
-```
-
-Kuten yllä olevassa esimerkissä, merkkijonojen yhdistämiseen voimme käyttää plusmerkkiä (+). Voimme myös käyttää `.to_string()` metodia muuttaaksemme muita tietotyyppejä (kuten numeroita) merkkijonoiksi ja yhdistää ne sitten.
+Esimerkiksi Rustilla stringien yhdistäminen tapahtuu käyttämällä operaattoria `+` tai käyttämällä `format!` makroa. Alla on esimerkkikoodi ja sen tuloste:
 
 ```Rust
+let hello = "Hei";
+let name = "Maija";
 
-let numero = 5;
-let merkkijono = "luku on ".to_string() + &numero.to_string();
+let greeting = hello + " " + name;
+println!("{}", greeting); // Tulostaa "Hei Maija"
 
-println!("{}", merkkijono);
-
-// Tulostaa: luku on 5
+let greeting2 = format!("{} {}", hello, name);
+println!("{}", greeting2); // Tulostaa "Hei Maija"
 ```
 
-## Syventävä sukellus
+## Syväsukellus
 
-Rustin `String`-tyyppi antaa meille mahdollisuuden luoda dynaamisia merkkijonoja, mutta siinä on myös muutamia erilaisia käyttötapoja kuin perinteisillä merkkijonoilla, kuten `&str`. Esimerkiksi `String`-tyyppiä voi käyttää myös `.push_str()`-metodin avulla lisäämään merkkijonoja sen perään.
-
-```Rust
-
-let mut viesti = String::from("Tämä on ");
-
-viesti.push_str("todella tärkeä viesti.");
-
-println!("{}", viesti);
-
-// Tulostaa: Tämä on todella tärkeä viesti.
-```
-
-On myös hyvä huomata, että merkkijonoilla ja `&str`-tyypeillä on erilaiset oletusarvot muistinhallinnassa. `String`-tyypin tapauksessa muistinhallinta on Russa automaattista, kun taas `&str`-tyypin kohdalla se täytyy hallita itse.
+Stringien yhdistäminen on ollut osa ohjelmointia jo pitkään ja löytyy useista eri ohjelmointikielistä. Lisäksi on olemassa myös muita tapoja yhdistää merkkijonoja, kuten käyttämällä `StringBuilder` tai `StringBuffer` -luokkia, mutta Rustin sisäänrakennetut metodit ovat yleensä suorituskykyisempiä.
 
 ## Katso myös
 
-- [Rustin viralliset dokumentaatiot merkkijonoista](https://doc.rust-lang.org/std/string/index.html)
-- [Merkkijonojen muotoilu Rustissa](https://www.section.io/engineering-education/string-formatting-in-rust/)
+Rustin virallinen dokumentaatio stringien käsittelystä: https://doc.rust-lang.org/std/string/
+
+Mahdollisuus tehdä merkkijonoista omia tietotyyppejä Rustilla: https://doc.rust-lang.org/book/ch05-00-structs.html

@@ -10,62 +10,21 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
+## 什么 & 为什么?
+转换日期为字符串是将日期对象转换成可读性高的字符串的过程。这在编程中非常常见，因为它让程序员能够更方便地处理和显示日期。例如，你可能想要将一个日期对象转换成"2020年5月1日"这样的格式来显示给用户。
 
-当我们需要在程序中展示日期信息时，我们通常会将日期转换成字符串。这样做可以让日期更易读，并且方便我们在不同格式之间切换。
-
-## 如何
-
-在Clojure中，我们可以使用`clojure.java-time`库来实现日期到字符串的转换。首先，我们需要导入该库：
-
+## 如何:
 ```Clojure
-(require '[clojure.java-time :as time])
+(require '[clojure.java-time :as t])
+(t/format (t/local-date 2020 5 1) "yyyy年M月d日")
 ```
 
-然后，我们可以使用`formatter`函数来定义日期的格式，例如：
+输出结果: "2020年5月1日"
 
-```Clojure
-(def df (time/formatter "yyyy年MM月dd日"))
-```
+## 深入了解:
+日期转换为字符串在计算机领域已经有很长的历史。以前，程序员必须自己编写代码来处理日期对象和字符串之间的转换。但是现在，在Clojure中我们可以使用clojure.java-time库来更简单地实现这一过程。另外，除了使用format函数，我们也可以使用其他函数来获取不同格式的日期字符串，例如t/local-date-time，t/local-date-time，等等。
 
-接下来，我们可以使用`local-date`函数来获取当前日期，并使用`format`函数将其转换成字符串：
-
-```Clojure
-(def now (time/local-date))
-
-(time/format df now) ; => "2021年07月10日"
-```
-
-如果我们想要指定一个不同的日期，我们可以使用`local-date`函数来创建一个特定的日期对象，并传递给`format`函数：
-
-```Clojure
-(def date (time/local-date 2020 12 25))
-
-(time/format df date) ; => "2020年12月25日"
-```
-
-## 深入探讨
-
-除了上面提到的日期格式，`clojure.java-time`库还支持许多其他日期格式，例如：
-
-- `yyyy/MM/dd`: "2021/07/10"
-- `MM/dd/yyyy`: "07/10/2021"
-- `dd-MMM-yyyy`: "10-Jul-2021"
-- `dd MMM yyyy`: "10 Jul 2021"
-
-我们也可以使用`formatter`函数来定义特定的时间格式，例如：
-
-```Clojure
-(def tf (time/formatter "HH:mm:ss"))
-
-(time/format tf (time/local-time)) ; => "22:42:59"
-```
-
-更多关于日期和时间的操作，请参考官方文档：https://github.com/clj-time/clj-time
-
-## 参考
-
-- 官方文档: https://github.com/clj-time/clj-time
-- Java时间库参考文档: https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/time/package-summary.html
-- Clojure函数文档: https://clojuredocs.org
-- Clojure开发者社区: https://clojureverse.org
+## 参考资料:
+1. [clojure.java-time库官方文档](https://cljdoc.org/d/java-time/java-time/0.2.0/doc/readme)
+2. [文档中有关日期转换的更多例子](https://cljdoc.org/d/java-time/java-time/0.2.0/doc/examples)
+3. [clojure.java-time源代码](https://github.com/dm3/clojure.java-time)

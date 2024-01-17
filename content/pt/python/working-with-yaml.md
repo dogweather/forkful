@@ -10,35 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que trabalhar com YAML?
+## O que é e por que fazemos isso?
+Trabalhar com YAML é uma forma de armazenar e representar dados em formato de texto simples. Os programadores usam YAML como uma alternativa legível por humanos para arquivos de configuração, especialmente em aplicações web.
 
-YAML é uma linguagem de serialização de dados que pode ser usada para estruturar e armazenar informações. Com sua sintaxe simples e fácil de ler, é uma ótima opção para aqueles que precisam organizar grandes quantidades de dados de forma eficiente.
+## Como fazer:
+Para começar a trabalhar com YAML em Python, primeiro importamos o módulo pyyaml, que nos permite ler e escrever arquivos YAML. Para ler um arquivo YAML existente, usamos a função load() e para salvar dados em um arquivo YAML, usamos a função dump(). Veja os exemplos abaixo:
 
-## Como usar YAML em Python
-
-Para trabalhar com YAML em Python, é necessário importar a biblioteca `pyyaml` e usar a função `yaml.safe_load()` para carregar um arquivo YAML em formato de dicionário. Aqui está um exemplo:
-
-```python
+```Python
+# Importando o módulo pyyaml
 import yaml
 
-with open('dados.yml', 'r') as arquivo:
-    dados = yaml.safe_load(arquivo)
+# Lendo um arquivo YAML existente
+dados = yaml.load(open("arquivo.yaml", "r"))
 
-print(dados)
+# Salvando dados em um arquivo YAML
+yaml.dump(dados, open("arquivo.yaml", "w"))
 ```
 
-Neste exemplo, usamos a função `open()` para abrir um arquivo YAML chamado "dados.yml" no modo de leitura. Em seguida, usamos a função `yaml.safe_load()` para carregar os dados do arquivo em um dicionário chamado "dados". Por fim, imprimimos o dicionário para confirmar que os dados foram carregados corretamente.
+## Mergulhando mais fundo:
+O formato YAML foi criado em 2001 por Clark Evans, Ingy döt Net e Oren Ben-Kiki como uma alternativa mais legível por humanos para linguagens de marcação como XML. Além disso, a formatação simples e compacta do YAML o torna muito popular em cenários de configuração de servidores e manipulação de arquivos de dados.
 
-## Aprofundando-se em YAML
+Alguns outros formatos populares de armazenamento de dados em formato de texto incluem JSON e CSV. No entanto, YAML oferece um suporte mais completo à estrutura de dados, permitindo que diferentes tipos de dados (como strings, listas e dicionários) sejam facilmente armazenados e acessados em um único arquivo.
 
-YAML é um formato bastante versátil e possui muitos recursos que podem ser explorados. Por exemplo, ele suporta diferentes tipos de dados, como strings, números, listas e dicionários. Além disso, é possível criar referências e incluir outros arquivos YAML dentro de um arquivo principal.
-
-Outro recurso interessante do YAML é a capacidade de adicionar comentários, o que pode ser útil para explicar partes do código ou fazer anotações. Os comentários começam com o caractere `#` e são ignorados pelo interpretador.
-
-Para saber mais sobre YAML e suas funcionalidades, consulte a documentação oficial do pyyaml ou outros recursos online.
-
-## Veja também
-
-- [Documentação oficial do pyyaml](https://pyyaml.org/wiki/PyYAMLDocumentation)
-- [Tutorial de YAML em Python](https://www.datacamp.com/community/tutorials/yaml-python)
-- [Conheça mais sobre a linguagem de serialização YAML](https://www.mundojs.com.br/2017/06/05/conhecendo-yaml/)
+## Veja também:
+- [Documentação oficial do módulo pyyaml](https://pyyaml.org/wiki/PyYAMLDocumentation)
+- [Introdução ao YAML](https://yaml.org/start.html)
+- [Diferença entre YAML, JSON e XML](https://www.educba.com/yaml-vs-json-vs-xml/)

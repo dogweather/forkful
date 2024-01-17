@@ -1,7 +1,7 @@
 ---
-title:                "Trabalhando com csv"
-html_title:           "Gleam: Trabalhando com csv"
-simple_title:         "Trabalhando com csv"
+title:                "Trabalhando com arquivos csv"
+html_title:           "Gleam: Trabalhando com arquivos csv"
+simple_title:         "Trabalhando com arquivos csv"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Data Formats and Serialization"
@@ -10,34 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que utilizar CSV no Gleam?
+## O que é e porquê?
 
-CSV (Comma-Separated Values) é um formato de arquivo amplamente utilizado para armazenar dados tabulares de forma simples e fácil de ser lida. Ao trabalhar com CSV no Gleam, você pode facilmente importar e exportar dados entre diferentes programas e bancos de dados. Além disso, o uso de CSV pode ajudar a manter a compatibilidade e interoperabilidade entre diferentes sistemas.
+CSV é a abreviação de "Comma Separated Values" (Valores Separados por Vírgula) e é um formato de arquivo de texto que armazena dados em formato tabular, onde cada linha representa uma entrada de dados e cada coluna representa um campo. Programadores costumam trabalhar com CSV porque é uma maneira simples e eficiente de armazenar e manipular dados estruturados.
 
-## Como usar CSV no Gleam
+## Como fazer:
 
-Você pode facilmente manipular arquivos CSV no Gleam usando as funções e módulos disponíveis na biblioteca padrão. Abaixo está um exemplo simples de como ler e imprimir os dados de um arquivo CSV:
+Para trabalhar com CSV em Gleam, precisamos importar o módulo `csv` utilizando a diretiva `use`:
 
-```Gleam
-import csv
-
-let reader = csv.new_reader("arquivo.csv")
-for row in reader do
-  io.println(row)
-pub fn main() {
-  ok
-}
+```
+use csv
 ```
 
-O arquivo CSV utilizado no exemplo possui três colunas: nome, idade e cidade. O código acima irá imprimir cada linha do arquivo, exibindo o nome da pessoa, sua idade e sua cidade.
+Em seguida, podemos usar a função `read_file` para ler um arquivo CSV:
 
-## Mergulho Profundo em CSV
+```
+let result = csv.read_file("./dados.csv")
+```
 
-Ao trabalhar com arquivos CSV no Gleam, é importante ter em mente que esses arquivos podem conter valores nulos ou vazios, o que pode causar erros ao manipulá-los. Portanto, é importante estar ciente disso ao escrever o seu código.
+Podemos então iterar sobre o resultado utilizando `Enum.each` e imprimir os dados na tela:
 
-Além disso, a biblioteca padrão do Gleam também oferece a possibilidade de escrever dados em arquivos CSV, utilizando a função `csv.new_writer()`.
+```
+Enum.each(result, fn(row) ->
+  io.println(row)
+end)
+```
 
-## Veja também
+O resultado da execução será uma lista de listas, onde cada lista interna representa uma linha do arquivo CSV.
 
-- Documentação oficial do CSV no Gleam: [https://gleam.run/documentation/standard-library/csv](https://gleam.run/documentation/standard-library/csv)
-- Tutorial sobre manipulação de arquivos CSV no Gleam: [https://medium.com/gleam-lang/manipulating-csv-files-in-gleam-26a95378386d](https://medium.com/gleam-lang/manipulating-csv-files-in-gleam-26a95378386d)
+## Profundando:
+
+CSV é um formato de arquivo muito popular, amplamente utilizado para trocar dados entre diferentes programas. Ele foi criado no início dos anos 1970 e se tornou um padrão para dados tabulares sem formatação fixa.
+
+Além de Gleam, existem outras opções para trabalhar com CSV, como o módulo `csv` da linguagem de programação Elixir, ou a biblioteca `papaparse` para JavaScript.
+
+No implementation details or historical context Brasil está cada vez mais inserido no mercado global de tecnologia, e saber como trabalhar com CSV é uma habilidade importante para qualquer programador. Com Gleam, temos uma opção poderosa e de fácil uso para lidar com esse formato de arquivo.
+
+## Veja também:
+
+- Documentação do módulo `csv` em Gleam: https://gleam.run/modules/csv.html
+- Site oficial do formato CSV: https://tools.ietf.org/html/rfc4180
+- Biblioteca `papaparse` para JavaScript: https://www.papaparse.com/

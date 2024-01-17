@@ -10,40 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hva & Hvorfor?
 
-Skal du lage et program som skal hente en nettside, trenger du å bruke Java. Dette er fordi Java har innebygde biblioteker og funksjoner som gjør det enkelt å laste ned og håndtere nettinnhold.
+Det å laste ned en nettside handler om å hente informasjon fra internett og lagre den på vår egen datamaskin eller enhet. Dette gjøres vanligvis av programmere for å kunne behandle og manipulere dataen på en mer effektiv måte.
 
-## Hvordan gjøre det
+## Slik gjør du det:
 
-For å laste ned en nettside i Java, må du først importere biblioteket "java.net.URL" for å få tilgang til funksjonene vi trenger. Deretter kan du bruke følgende kode for å opprette en tilkobling og lese innholdet på nettsiden:
+For å laste ned en nettside i Java, kan du bruke klassen URL og metoden openConnection() for å få en tilkobling til nettsiden. Deretter kan du lese dataen ved å bruke en InputStreamReader og BufferedReader. Her er et eksempel på hvordan du kan hente ut kildekoden på en nettside:
 
-```Java
-try {
-    URL url = new URL("https://www.example.com"); // bytt ut URLen med den faktiske nettsiden du vil laste ned
-    BufferedReader reader = new BufferedReader(new InputStreamReader(url.openStream()));
-
-    String line;
-    while ((line = reader.readLine()) != null) {
-        System.out.println(line); // skriver ut hver linje i innholdet på nettsiden
-    }
-
-    reader.close(); // husk å lukke leseren
-} catch (IOException e) {
-    e.printStackTrace(); // håndter eventuelle feil som kan oppstå under tilkobling eller lesing
+```java
+URL url = new URL("https://www.example.com");
+URLConnection connection = url.openConnection();
+InputStreamReader input = new InputStreamReader(connection.getInputStream());
+BufferedReader br = new BufferedReader(input);
+String line;
+while ((line = br.readLine()) != null) {
+    System.out.println(line);
 }
 ```
 
-Det kan også være nyttig å kunne håndtere henting av spesifikke deler av nettsiden, for eksempel bare teksten i en paragraf eller bildet på en knapp. For dette kan du bruke verktøy som "Jsoup" eller "HtmlUnit" for å analysere og manipulere HTML-koden til nettsiden.
+Dette eksempelet vil skrive ut kildekoden til nettsiden i konsollen.
 
-## Dykk dypere
+## Dypdykk:
 
-Når du henter en nettside, er det viktig å forstå hvordan protokollen "HTTP" fungerer. Dette vil hjelpe deg med å håndtere forskjellige koder for status for tilkoblingen og kunne håndtere eventuelle omdirigeringsløkker eller sikkerhetsproblemer.
+Å laste ned en nettside har vært en viktig funksjonalitet for programmere helt siden internett ble tilgjengelig. Det gir oss muligheten til å hente ut informasjon og bruke den i våre applikasjoner. Det finnes også alternative måter å gjøre dette på, som for eksempel ved hjelp av tredjepartsbiblioteker som Jsoup som gjør det enklere å håndtere HTML-kode.
 
-Det er også viktig å være forsiktig med hvordan du bruker programmet ditt, slik at du ikke overbelaster nettsiden eller bryter noen opphavsrettslige regler. Sørg for å lese gjennom nettsidens vilkår og betingelser før du laster ned noe innhold.
+Når man laster ned en nettside i Java, kreves det at man også behandler eventuelle feil som kan oppstå under tilkoblingen. Det er også viktig å være forsiktig med å laste ned store mengder data, da dette kan føre til at programmet vårt blir tregt og potensielt krasjer.
 
-## Se også
+## Se også:
 
-- [Offisiell Java-dokumentasjon for "java.net.URL" biblioteket](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/net/URL.html)
-- [Offisiell "Jsoup" dokumentasjon for HTML-analyse i Java](https://jsoup.org/)
-- [Offisiell "HtmlUnit" dokumentasjon for manipulering av HTML-kode i Java](https://htmlunit.sourceforge.io/)
+Her er noen ekstra ressurser om hvordan man kan laste ned en nettside i Java:
+
+- [URL-klassen Java dokumentasjon](https://docs.oracle.com/javase/8/docs/api/java/net/URL.html)
+- [Lesing av nettside i Java med BufferedReader](https://www.javacodegeeks.com/2012/09/reading-from-url-in-java.html)
+- [Jsoup biblioteket](https://jsoup.org/)

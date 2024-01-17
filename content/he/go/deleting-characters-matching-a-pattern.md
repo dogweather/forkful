@@ -1,7 +1,7 @@
 ---
-title:                "מחיקת תווים התואמים דפוס"
-html_title:           "Go: מחיקת תווים התואמים דפוס"
-simple_title:         "מחיקת תווים התואמים דפוס"
+title:                "מחיקת תווים המתאימים לתבנית"
+html_title:           "Go: מחיקת תווים המתאימים לתבנית"
+simple_title:         "מחיקת תווים המתאימים לתבנית"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Strings"
@@ -10,34 +10,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## למה
+# מה ולמה?
 
-מחיקת תווים המתאימים לתבנית היא כלי חשוב בתכנות בשפת גו, המאפשר למתכנתים לנתח ולערוך מחרוזות בצורה יעילה ומדויקת.
+מחיקת תווים המתאימים לתבנית היא פעולת מחיקה שבה משנים את הטקסט על פי תבנית מסוימת. תהליך זה נמצא בשימוש נרחב בתכנות המחשב ובעיקר על מנת לנקות קלטים לא רצויים או למנוע שגיאות בתוכנית.
 
-## איך לעשות זאת
+## איך לבצע:
 
-```Go
-func DeleteChars(str, pattern string) string {
-    output := strings.ReplaceAll(str, pattern, "")
-    return output
-}
+כדי למחוק תווים המתאימים לתבנית בשפת Go, ניתן להשתמש בפקודת `strings.ReplaceAll()` ולהעביר את הטקסט המקורי, את התבנית לחיפוש ואת המחרוזת הריקה כתוצאה. ניתן גם להשתמש בפקודת `regex.ReplaceAllString()` ולהכניס את הטקסט המקורי, את התבנית לחיפוש ואת המחרוזת הריקה כתוצאה.
 
-func main() {
-    str := "Hello World!"
-    newStr := DeleteChars(str, "l")
-    fmt.Println(newStr) // Prints "Heo Word!"
-}
-```
+במקרה שהטקסט מכיל מספר מופעים של התבנית המבוקשת, יש להשתמש בפקודת `regex.ReplaceAllString()` כדי למחוק את כולם בפעם אחת.
 
-הפונקציה "DeleteChars" מקבלת שני פרמטרים: מחרוזת ותבנית למחיקה. בעזרת פונקציית "ReplaceAll" מספרי המחרוזת מחולפים לפי התבנית והתוצאה מוחזרת. בעיה פרושה על ידי הפונקציה "main", וברזולטט תקבלו את המחרוזת המותאמת עם התווים שנמחקו.
+## מעמקים:
 
-## בירור עמוק
+מחיקת תווים המתאימים לתבנית היא פעולת טיפול במחרוזות נפתחת בניידות של תכנות אחרות, כמו Perl ו- AWK. בשפת Go, ניתן להשתמש גם בפקודות נוספות כגון `strings.Replace()` ו- `strings.Trim()` לטיפול במחרוזות.
 
-פונקציית "ReplaceAll" נמצאת בחבית "strings" והיא מאפשרת למתכנתים לבצע שינויים במחרוזות לפי תבנית מסוימת. הפונקציה מחזירה את אותה מחרוזת עם התווים המתאימים לתבנית מחולפים לפי התו המוגדר. כך ניתן לבצע מחיקת תווים במחרוזות פשוט ומהיר בעזרת שפת גו.
+בנוסף, ישנן אפשרויות נוספות למחיקת תווים בשפת Go, כגון פקודת `unicode.ReplaceAll()` שמשמשת לטיפול בפונטים ותווים מיוחדים. כמו כן, קיימות גם פקודות להחלפת תווים כגון `strings.Replace()` ו- `strings.ReplaceAll()`.
 
-## ראו גם
+## ראה גם:
 
-- [ReplaceAll documentation](https://golang.org/pkg/strings/#ReplaceAll)
-- [Go Tutorial - Working with Strings](https://www.tutorialspoint.com/go/go_working_with_strings.htm)
-- [Deleting Characters in Strings with Go](https://www.dotnetperls.com/tr
-ials/go/strings-replace)
+- [פקודת `strings.ReplaceAll()` מתוך התיעוד הרשמי של Go](https://golang.org/pkg/strings/#ReplaceAll)
+- [כיצד לבצע פעולת מחיקה של תווים בשפת Go](https://www.sohamkamani.com/golang/string-operations/delete-characters-from-string/)

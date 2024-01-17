@@ -10,42 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-Checking if a directory exists is an important aspect of programming, especially on the Arduino platform. It allows you to ensure that the program is accessing the correct directory and prevents errors from occurring.
+## What & Why?
+Checking if a directory exists simply means verifying whether a particular folder or directory exists on a computer's file system. Programmers often need to perform this check to ensure that the necessary folders are present before executing a code that relies on them. This prevents any errors or failures that may occur due to missing directories.
 
-## How To
-```Arduino
-#include <SPI.h>
-#include <SD.h>
-
-void setup() {
-  // initialize SD card
-  if(!SD.begin(10)) {
-    // if directory does not exist, create it
-    SD.mkdir("myDirectory");
-  }
-}
-
-void loop() {
-  // do something with directory
+## How to:
+```arduino
+if (SD.exists(directory)) { // Replace "directory" with the actual directory name to be checked
+  Serial.println("Directory exists!")
+} else {
+  Serial.println("Directory does not exist.")
 }
 ```
+The above Arduino code uses the SD library to check if a directory with the specified name exists. First, the `exists()` function is called, passing the directory name as its parameter. If the directory exists, the code inside the `if` statement is executed, printing out a message to the serial monitor. If not, the code inside the `else` statement is executed, indicating that the directory does not exist.
 
-The above code block shows how to use the `SD.mkdir()` function to check if a directory exists and create it if it doesn't. This function is part of the SD library which needs to be included in order to access the SD card on the Arduino.
+## Deep Dive:
+There are various reasons why a programmer may want to check if a directory exists. In some cases, the directory may be crucial for the proper functioning of the code, and its absence may result in unexpected errors or failures. Additionally, checking if a directory exists can also help in creating new directories if they are missing, ensuring that the code can run smoothly without any interruptions.
 
-Sample output:
-```
-Creating directory: myDirectory
-```
+An alternative to using the SD library for checking directory existence would be to use the `File()` constructor and `isDirectory()` function. However, this method can be more complex and may involve handling additional error cases.
 
-## Deep Dive
-Behind the scenes, the `SD.mkdir()` function uses the standard Arduino `mkdir()` function which is part of the `SPI.h` library. This function takes in a string as its argument, representing the name of the directory to be created.
+The implementation of the directory existence check may vary depending on the file system used on the device. For instance, on a Linux system, the `stat()` function can be used, while on a Windows system, the `GetFileAttributes()` function can be used.
 
-One important thing to note is that the `mkdir()` function can only create one directory at a time. So, if you want to create multiple directories, you will need to use a loop or call the function multiple times.
-
-If the directory already exists, the `SD.mkdir()` function will not create a new directory and will instead return a false value. This can be useful in case you need to check if a specific directory exists before trying to create it.
-
-## See Also
-- [Arduino SD Library Reference](https://www.arduino.cc/en/Reference/SD)
-- [SPI Library Reference](https://www.arduino.cc/en/Reference/SPI)
-- [Creating and Removing Directories on an SD card](https://create.arduino.cc/projecthub/SurtrTech/creating-and-removing-directories-on-sd-card-3664c1)
+## See Also:
+- [SD Library Reference - exists()](https://www.arduino.cc/en/Reference/SDexists)
+- [File() constructor and isDirectory() function](https://forum.arduino.cc/index.php?topic=668386.0)
+- [Detailed explanation of directory existence check implementation](https://unix.stackexchange.com/questions/82526/check-if-directory-exists-and-create-it-if-necessary-on-sh-exit)

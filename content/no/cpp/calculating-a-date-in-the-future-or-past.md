@@ -10,52 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
-Det kan være nyttig å kunne beregne en dato i fremtiden eller fortiden for å planlegge avtaler, organisere tidsfrister eller for skreddersydd rapportering.
+# Hva & Hvorfor?
+Det å beregne en dato i fremtiden eller fortiden er en vanlig oppgave for programmerere. Dette innebærer å bruke kodede algoritmer til å beregne en dato basert på et spesifisert antall dager i fremtiden eller fortiden. Dette kan være nyttig i en rekke programmer, som for eksempel kalendere eller tidsplanleggingssystemer.
 
-## Hvordan
-Det er enkelt å beregne en dato i fremtiden eller fortiden ved hjelp av C++ programvare. Følg disse trinnene:
+# Hvordan:
+Det er flere måter å beregne en dato i fremtiden eller fortiden på i C++. Nedenfor finner du et eksempel på hvordan dette kan gjøres ved å bruke en enkel funksjon:
 
-### Steg 1: Inkluder tidsløsningen
+```C++
+#include <iostream>
+#include <string>
+#include <ctime>
 
-For å utføre beregninger på datoer, må du inkludere tidsløsningsbiblioteket i C++. Dette kan gjøres ved å legge til følgende kode i toppen av filen din:
-```
-#include <chrono>
-```
+int main() {
+  // Spesifiserer dato og antall dager i fremtiden eller fortiden
+  std::string current_date = "2021-04-20";
+  int num_days = 10;
 
-### Steg 2: Definer en variabel for den nåværende datoen
+  // Bruker stl::tm struct for å konvertere dato til tidsstempel
+  std::tm date = {0};
+  std::strptime(current_date.c_str(), "%Y-%m-%d", &date);
+  std::time_t t = std::mktime(&date);
 
-Du kan definere en variabel for den nåværende datoen ved hjelp av tidsløsningsklassen ```std::chrono::system_clock```. Dette kan gjøres ved å legge til følgende kode:
-```
-auto nå = std::chrono::system_clock::now();
-```
+  // Legger til/subtraherer antall dager til tidsstempel
+  t += num_days * 24 * 60 * 60; // 24 timer * 60 minutter * 60 sekunder
+  std::tm* future_date = std::localtime(&t);
 
-### Steg 3: Bruk tidsenheten for å legge til eller trekke fra dager, uker, måneder eller år fra den nåværende datoen
+  // Output fremtidig dato som en string
+  std::cout << "Fremtidig dato: " << (future_date->tm_year + 1900) << "-"
+            << (future_date->tm_mon + 1) << "-" << future_date->tm_mday << std::endl;
 
-Tidsløsningsklassen inkluderer ulike tidsenheter som kan brukes til å legge til eller trekke fra tid fra den nåværende datoen. Her er noen eksempler:
-```
-// legg til 10 dager til den nåværende datoen
-nå += std::chrono::duration<int, std::ratio<86400>>(10); 
-// trekke fra 2 uker fra den nåværende datoen
-nå -= std::chrono::duration<int, std::ratio<604800>>(2); 
-// legg til 5 måneder til den nåværende datoen
-nå += std::chrono::duration<int, std::ratio<2629743>>(5); 
-// trekke fra 1 år fra den nåværende datoen
-nå -= std::chrono::duration<int, std::ratio<31556926>>(1); 
-```
-
-### Steg 4: Konverter datoen til ønsket format og skriv ut resultatet
-
-Til slutt kan du konvertere den beregnede datoen til ønsket format og skrive ut resultatet. Det kan se noe slik ut:
-```
-// konverter datoen til en lesbar string og skriv ut
-auto beregnet_dato = std::chrono::system_clock::to_time_t(nå);
-std::cout << "Beregnet dato: " << std::put_time(std::localtime(&beregnet_dato), "%F") << std::endl;
+  return 0;
+}
 ```
 
-## Deep Dive
-Tidsløsningsbiblioteket i C++ bruker et 64-bit antall sekunder siden 1. januar 1970 som basis for tidsenheter. Det er viktig å ta hensyn til ulike tidsenhetskonverteringer for å unngå unøyaktigheter i de beregnede datoene.
+Eksempelutgang:
+```
+Fremtidig dato: 2021-04-30
+```
 
-## Se Også
-- [C++ std::chrono bibliotek-dokumentasjon] (https://www.cplusplus.com/reference/chrono/) 
-- [C++ tutorial om å beregne datoer] (https://www.cplusplus.com/forum/articles/12317/)
+# Dykk ned:
+Beregning av datoer har vært en viktig del av dataprogrammering siden begynnelsen. Tidligere ble dette gjort ved å bruke komplekse matematiske formler, men med utviklingen av programmeringsspråk som C++ har det blitt mye enklere. Alternativene for å beregne datoer inkluderer også å bruke innebygde funksjoner og biblioteker i stedet for å skrive koden selv. Implementeringsdetaljer for beregning av datoer kan variere avhengig av språk og biblioteker som brukes.
+
+# Se også:
+- [C++ tid- og dato-funksjoner](https://www.cplusplus.com/reference/ctime/)
+- [Beregning av datoer i andre programmeringsspråk (engelsk)](https://stackabuse.com/calculate-time-difference-in-c/)

@@ -1,7 +1,7 @@
 ---
-title:                "Lavorare con csv"
-html_title:           "C#: Lavorare con csv"
-simple_title:         "Lavorare con csv"
+title:                "Lavorare con i file csv"
+html_title:           "C#: Lavorare con i file csv"
+simple_title:         "Lavorare con i file csv"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Data Formats and Serialization"
@@ -10,62 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+--------------------------------------
 
-Se sei un programmatore che lavora con dati strutturati, è molto probabile che prima o poi ti troverai a dover utilizzare il formato CSV. Questo è uno dei formati più comuni per la gestione dei dati, quindi è importante sapere come lavorare con esso.
+## Cosa & Perché?
+Lavorare con CSV (Comma Separated Values) significa manipolare dati in formato tabellare, dove le informazioni sono organizzate in righe e colonne separate da virgole. I programmatori utilizzano spesso il formato CSV perché è molto versatile e compatibile con diversi tipi di software.
 
-## Come fare
-
-Per iniziare a lavorare con CSV in C#, è necessario includere il namespace `System.IO` per accedere alla classe `StreamReader`. Ci sono diversi modi per leggere un file CSV e convertirlo in una struttura dati più facile da maneggiare. Uno di questi è utilizzando l'oggetto `TextFieldParser` del namespace `Microsoft.VisualBasic.FileIO`.
+## Come fare:
+Ecco un esempio di codice che mostra come aprire un file CSV utilizzando C# e stamparne il contenuto:
 
 ```C#
-using System.IO;
-using Microsoft.VisualBasic.FileIO;
+using System;
+using System.IO; // Importa lo spazio dei nomi per lavorare con i file
+using System.Text; // Importa lo spazio dei nomi per lavorare con i caratteri speciali
 
-// Leggi il file CSV e salva ogni riga in una lista di array di stringhe
-static List<string[]> ReadCSV(string filePath)
+class Program
 {
-    List<string[]> csvData = new List<string[]>();
-    using (TextFieldParser parser = new TextFieldParser(filePath))
+    static void Main()
     {
-        parser.Delimiters = new string[] { "," }; // specifica il separatore dei campi
-        while (!parser.EndOfData)
+        // Percorso del file CSV
+        string filePath = @"C:\Users\Utente\Desktop\dipendenti.csv";
+
+        // Usa il metodo StreamReader per leggere il file
+        using (StreamReader sr = new StreamReader(filePath, Encoding.UTF8))
         {
-            string[] csvLine = parser.ReadFields(); // leggi la riga e restituisci un array di stringhe
-            csvData.Add(csvLine);
+            string line;
+            while ((line = sr.ReadLine()) != null)
+            {
+                // Stampa ogni riga del file
+                Console.WriteLine(line);
+            }
         }
     }
-    return csvData;
 }
-
-// Utilizza la funzione per leggere un file CSV e stamparne il contenuto su console
-static void Main()
-{
-    List<string[]> data = ReadCSV("nome_file.csv");
-    foreach (string[] row in data)
-    {
-        foreach (string cell in row)
-        {
-            Console.Write(cell + " ");
-        }
-        Console.WriteLine();
-    }
-}
-
-//OUTPUT:
-//valore1 valore2 valore3
-//valore4 valore5 valore6
-//...
-
 ```
 
-## Approfondimento
+Ecco un esempio di output ottenuto con questo codice:
 
-Il formato CSV (Comma Separated Values) è un formato di file che viene utilizzato per rappresentare dati in una tabella, dove ogni riga corrisponde a una riga nella tabella e ogni valore è separato da una virgola. CSV è ampiamente utilizzato in applicazioni come fogli di calcolo, database e software di analisi dei dati.
+```
+Nome,Cognome,Età
+Mario,Rossi,35
+Paolo,Bianchi,40
+Luca,Verdi,25
+```
 
-Per lavorare con CSV in modo più avanzato, è possibile utilizzare strumenti come LINQ (Language Integrated Query) per manipolare e filtrare i dati in base alle tue esigenze. Inoltre, è importante prestare attenzione ai caratteri speciali che possono essere presenti nei dati CSV e gestirli correttamente durante il processo di lettura e scrittura.
+## Approfondimento:
+Il formato CSV è stato sviluppato negli anni '70 per permettere lo scambio di dati tra diversi software. Anche se originariamente era utilizzato principalmente per fogli di calcolo, ora è ampiamente utilizzato nei database e in altri contesti per la sua semplicità e versatilità.
 
-## Vedi anche
+Esistono anche altri formati di file per rappresentare dati tabellari, come ad esempio il formato Excel (.xlsx), ma spesso il formato CSV è preferito perché è più leggero e facile da lavorare con i dati. Tuttavia, è importante fare attenzione ad eventuali errori di formattazione nel file CSV, poiché possono causare problemi di importazione o esportazione dei dati.
 
-- [C# LINQ - Tutorial per principianti](https://www.c-sharpcorner.com/article/c-sharp-linq-tutorial-for-beginners/)
-- [Working with CSV Files in C#](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/file-system/how-to-read-and-write-to-a-newly-created-data-file)
+## Vedi anche:
+- [Documentazione ufficiale di C# su lavorare con file CSV](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/file-system/how-to-read-a-text-file-one-line-at-a-time)
+- [Esempi di codice per lavorare con file CSV in C#](https://www.codeproject.com/Tips/387327/Handling-CSVs-using-Csharp)
+- [Un'approfondimento sulla storia del formato CSV](https://blog.derefnull.com/convert-csv-to-json/)
+- [Un confronto tra diversi formati di file per dati tabellari](https://www.altexsoft.com/blog/datascience/csv-vs-xml-vs-json-vs-yaml-which-is-the-best-for-data-serialization/)

@@ -1,7 +1,7 @@
 ---
-title:                "Skrive tester"
-html_title:           "Java: Skrive tester"
-simple_title:         "Skrive tester"
+title:                "Skriving av tester"
+html_title:           "Java: Skriving av tester"
+simple_title:         "Skriving av tester"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Testing and Debugging"
@@ -10,33 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+Hva & Hvorfor?
 
-Å skrive tester er en viktig del av en utviklers verktøykasse. Det lar deg teste koden din og sikre at den fungerer som den skal før du sender den ut i produksjon. Dette sparer tid og unngår feil i koden.
+Skriving av tester er en viktig del av programmering som hjelper utviklere å sikre at koden deres fungerer som den skal. Ved å skrive tester kan man teste ulike deler av koden for å finne feil og sikre at koden fungerer som forventet. Dette gir utviklere trygghet og sikrer at koden deres er av høy kvalitet.
 
-## Hvordan
+Hvordan:
 
-For å skrive tester i Java, må du bruke et testrammeverk som JUnit eller TestNG. Disse rammeverkene lar deg strukturere testene dine og kjøre dem enkelt. Her er et eksempel på en JUnit-test som sjekker om to tall er like:
+For å skrive tester i Java, bruker man vanligvis et rammeverk som heter JUnit. Dette lar deg skrive tester ved å definere ulike tester for å sjekke at ulike deler av koden fungerer som de skal. Her er et eksempel på hvordan en test kan se ut:
 
-```Java
-@Test
-public void testEquality(){
-  int num1 = 5;
-  int num2 = 5;
-  assertEquals(num1, num2);
+```
+// Imports nødvendige biblioteker
+import org.junit.Test;
+
+// Definerer en klasse for testene
+public class TestKlasse {
+
+  // Definerer en test
+  @Test
+  public void testFunksjon() {
+    // Sjekker at funksjonen returnerer riktig verdi
+    assertEqual(Funksjon.finnVerdi(), ForventetVerdi);
+  }
 }
 ```
 
-I dette eksempelet bruker vi metoden `assertEquals()` som sammenligner to verdier og gir en feil hvis de ikke er like. Testene dine bør dekke alle mulige scenarier og ha en god dekning av koden din. Dette sikrer at koden din fungerer som den skal.
+Dypdykk:
 
-## Dypdykk
+Skriving av tester har vært en viktig del av utviklingsprosessen siden begynnelsen av programmering. I dag er det flere ulike rammeverk for å skrive tester i Java, med JUnit som det vanligste. Alternativene inkluderer Tester NG og Mockito, som tilbyr ulike funksjoner og tilnærminger til testing. Implementeringen av tester kan også inneholde konsepter som mock-objekter og testbar kode.
 
-En viktig del av å skrive tester er å forstå hva som skal testes. Det kan hjelpe å følge en testdrevet utviklingsmetodikk, hvor du skriver testene først og deretter utvikler koden som oppfyller testene. Du bør også vurdere å bygge automatiserte tester som kan kjøres hver gang du gjør endringer i koden din.
+Se også:
 
-I tillegg er det viktig å følge gode prinsipper for å skrive tester, som å sikre at de er uavhengige av hverandre og at de er enkle å vedlikeholde. En god praksis er også å skrive flere små tester i stedet for få store tester, da dette gjør feilsøking og vedlikehold lettere.
+Her er noen nyttige ressurser for å lære mer om skriving av tester i Java:
 
-## Se Også
-
-- [JUnit Tutorial](https://www.baeldung.com/junit-tutorial)
-- [TestNG Documentation](https://testng.org/doc/documentation-main.html)
-- [Test Driven Development](https://www.agilealliance.org/glossary/tdd/)
+- [Javas offisielle dokumentasjon om JUnit](https://junit.org/junit5/docs/current/user-guide/)
+- [En veiledning til skriving av tester i Java](https://www.baeldung.com/java-testing)
+- [En sammenligning av JUnit, TestNG og Mockito](https://www.baeldung.com/junit-vs-testng)

@@ -10,42 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+## Che cos'è e perché?
 
-Se stai lavorando con stringhe in Java, potresti avere la necessità di estrarre una porzione di una stringa più grande, detta sottolineatura. Questo può essere utile per analizzare una stringa in input, manipolare un dato specifico o semplicemente per ottenere una parte di una stringa per usarla in seguito.
+Estrarre sottostringhe significa ottenere una parte di una stringa più grande, solitamente basandosi su un indice o un pattern. I programmatori spesso fanno questo per manipolare e gestire meglio i dati all'interno di una stringa.
 
-## Come fare
-
-Per estrarre una sottolineatura da una stringa in Java, puoi utilizzare il metodo `substring()`. Questo metodo richiede due parametri, l'indice di inizio e la lunghezza della sottolineatura desiderata. Ad esempio:
+## Come fare:
 
 ```Java
-String stringa = "Buongiorno a tutti!";
-String sottolineatura = stringa.substring(0, 3);
-System.out.println(sottolineatura); // Output: Buo
+// Esempio di estrarre una sottostringa basata su un indice:
+String stringa = "Questo è un esempio";
+String sottostringa = stringa.substring(3);
+System.out.println(sottostringa); // Output: sto è un esempio
+
+// Esempio di estrarre una sottostringa basata su un pattern:
+String parola = "ciao123";
+String numero = parola.substring(4,6);
+System.out.println(numero); // Output: 12
 ```
 
-In questo esempio, stiamo estraendo una sottolineatura di lunghezza 3 a partire dall'indice 0 della stringa originale. Puoi anche specificare un solo parametro, l'indice di inizio, per estrarre una sottolineatura fino alla fine della stringa:
+## Approfondimento:
 
-```Java
-String stringa = "Buongiorno a tutti!";
-String sottolineatura = stringa.substring(4);
-System.out.println(sottolineatura); // Output: iorno a tutti!
-```
+Estrarre sottostringhe è diventato uno dei concetti fondamentali della programmazione grazie alla sua utlità nella manipolazione dei dati. Un'alternativa comune all'utilizzo del metodo `substring()` è l'utilizzo di espressioni regolari per trovare e sostituire parti specifiche delle stringhe.
 
-Un'altra opzione è utilizzare il metodo `indexOf()` per trovare l'indice di una determinata sottostringa all'interno di una stringa. Questo può essere utile se non si conosce l'indice esatto di inizio della sottolineatura desiderata. Ad esempio:
+## Vedi anche:
 
-```Java
-String stringa = "Buongiorno a tutti!";
-int indice = stringa.indexOf("giorno");
-String sottolineatura = stringa.substring(indice, indice + 5); // Il secondo parametro rappresenta la lunghezza della sottostringa
-System.out.println(sottolineatura); // Output: giorno
-```
-
-## Approfondimento
-
-Estrarre sottolineature può diventare molto utile quando si lavora con input utente o si analizzano dati da fonti esterne. Il metodo `substring()` è molto versatile e consente di manipolare facilmente stringhe grandi o complesse. Inoltre, l'utilizzo del metodo `indexOf()` può semplificare la ricerca di una sottostringa all'interno di una stringa più grande.
-
-## Vedi anche
-
-- Documentazione ufficiale di Java su `substring()`: https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/String.html#substring(int,int)
-- Tutorial su come lavorare con stringhe in Java: https://www.w3schools.com/java/java_strings.asp
+- Documentazione ufficiale di Java per il metodo `substring()`: https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#substring-int-int-
+- Tutorial su espressioni regolari in Java: https://www.vogella.com/tutorials/Javaregex/article.html

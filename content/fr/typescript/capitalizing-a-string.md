@@ -1,7 +1,7 @@
 ---
-title:                "Capitalisation d'une chaîne de caractères"
-html_title:           "TypeScript: Capitalisation d'une chaîne de caractères"
-simple_title:         "Capitalisation d'une chaîne de caractères"
+title:                "Majuscules d'une chaîne"
+html_title:           "TypeScript: Majuscules d'une chaîne"
+simple_title:         "Majuscules d'une chaîne"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -10,40 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Qu'est-ce que c'est et pourquoi?
+Capitaliser une chaîne de caractères en programmation signifie mettre la première lettre en majuscule et les autres en minuscules. Les programmeurs le font souvent lorsqu'ils doivent traiter des données utilisateur afin de les rendre plus cohérentes ou de les utiliser dans des conditions de recherche.
 
-La capitalisation de chaînes de caractères peut être utile lors de la manipulation de données afin de les mettre en forme de manière cohérente ou pour répondre à des exigences de présentation. Elle peut également être utilisée pour rendre les chaînes de caractères plus lisibles pour les utilisateurs finaux.
-
-## Comment faire
+## Comment faire:
+Voici un exemple simple en TypeScript pour capitaliser une chaîne de caractères donnée:
 
 ```TypeScript
-function capitalize(str: string): string {
-  // Vérifie si la chaîne est vide ou nulle
-  if (!str) {
-    return "";
-  }
-  // Divise la chaîne en mots séparés par des espaces
-  const words = str.split(" ");
-  // Parcours chaque mot et met en majuscule la première lettre
-  for (let i = 0; i < words.length; i++) {
-    words[i] = words[i][0].toUpperCase() + words[i].slice(1);
-  }
-  // Reconstruit la chaîne avec les mots capitalisés
-  return words.join(" ");
-}
+let myString = "ceci est une phrase";
+let capitalizedString = myString[0].toUpperCase() + myString.slice(1).toLowerCase();
+console.log(capitalizedString);
 
-console.log(capitalize("bonjour le monde")); // Bonjour Le Monde
-console.log(capitalize("javascript est super")); // Javascript Est Super
-console.log(capitalize("")); // (chaîne vide)
+// Output: "Ceci est une phrase"
 ```
 
-## Analyse approfondie
+## Plongeon en profondeur:
+- Historique: Le concept de capitaliser une chaîne de caractères existe depuis longtemps et a été utilisé dans les anciens langages de programmation tels que COBOL.
+- Alternatives: Il existe d'autres méthodes pour capitaliser une chaîne de caractères telles que l'utilisation de fonctions natives comme `toUpperCase()` ou des packages tiers.
+- Détails de mise en œuvre: La méthode présentée dans la section How to utilise la propriété string `slice()` pour extraire la partie de la chaîne après la première lettre et la concatène avec la première lettre en majuscule. Cela fonctionne car les chaînes de caractères sont des tableaux de caractères en JavaScript.
 
-La méthode `split` utilisée dans l'exemple divise une chaîne en un tableau de sous-chaînes en utilisant un séparateur. Dans notre cas, le séparateur est un espace, donc chaque mot est stocké dans une case du tableau. Ensuite, une boucle `for` parcourt chaque mot et utilise la méthode `toUpperCase` pour mettre en majuscule la première lettre. La méthode `slice` est également utilisée pour récupérer le reste du mot à partir de la deuxième lettre. Enfin, la méthode `join` est utilisée pour reconstruire la chaîne avec les mots capitalisés.
-
-## Voir aussi
-
-- [La méthode `split` en JavaScript](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/String/split)
-- [La méthode `toUpperCase` en JavaScript](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/String/toUpperCase)
-- [La méthode `slice` en JavaScript](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/String/slice)
-- [La méthode `join` en JavaScript](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Array/join)
+## Voir aussi:
+- Documentation TypeScript sur les chaînes de caractères : https://www.typescriptlang.org/docs/handbook/strings.html
+- Un package JavaScript pour capitaliser les chaînes de caractères : https://www.npmjs.com/package/capitalize

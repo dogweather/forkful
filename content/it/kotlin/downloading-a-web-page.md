@@ -1,7 +1,7 @@
 ---
-title:                "Scaricare una pagina web."
-html_title:           "Kotlin: Scaricare una pagina web."
-simple_title:         "Scaricare una pagina web."
+title:                "Scaricare una pagina web"
+html_title:           "Kotlin: Scaricare una pagina web"
+simple_title:         "Scaricare una pagina web"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "HTML and the Web"
@@ -10,66 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché 
+Cosa & Perché?
 
-Scaricare una pagina web può essere utile per molti motivi: salvare una pagina di riferimento per leggerla offline, recuperare informazioni da un sito per elaborarle o semplicemente per avere una copia locale di una pagina importante.
+Scaricare una pagina web significa ottenere il suo contenuto e salvarlo sul nostro computer. I programmatori spesso fanno questo per analizzare il contenuto della pagina o integrarlo in altre applicazioni.
 
-## Come Fare
-
-Per scaricare una pagina web in Kotlin, è possibile utilizzare la libreria `OkHttp` che offre un'interfaccia semplice ed efficiente per le operazioni di rete.
-
-Per iniziare, è necessario aggiungere la dipendenza di `OkHttp` nel `build.gradle`:
-
-```
-dependencies {
-    implementation("com.squareup.okhttp3:okhttp:4.9.0")
-}
-```
-
-Una volta aggiunta la dipendenza, è possibile creare una classe `Downloader` che gestirà il download della pagina web. Inizializziamo un oggetto di tipo `OkHttpClient` che ci permetterà di eseguire la richiesta HTTP:
+Come Fare:
 
 ```Kotlin
-class Downloader {
-  private val client = OkHttpClient()
-}
+import java.net.URL
+
+// Definisci l'URL della pagina web che vuoi scaricare
+val url = URL("https://www.example.com")
+
+// Usa il metodo openStream() per ottenere l'input stream del contenuto della pagina
+val inputStream = url.openStream()
+
+// Leggi il contenuto dell'input stream e salvalo in una variabile
+val contenuto = inputStream.bufferedReader().use { it.readText() }
+
+// Stampa il contenuto della pagina
+println(contenuto)
 ```
 
-Nella nostra classe, aggiungiamo un metodo `download` che accetterà come parametro l'URL della pagina web che vogliamo scaricare:
+Output:
 
-```Kotlin
-fun download(url: String) {
-  val request = Request.Builder()
-      .url(url)
-      .build()
-  
-  client.newCall(request).execute().use { response ->
-    if(!response.isSuccessful) throw IOException("Unexpected code $response")
-
-    println(response.body()?.string())
-  }
-}
+```
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Example Domain</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style type="text/css">
+    body {
+      background-color: #f0f0f2;
+      margin: 0;
+      padding: 0;
+      font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    
+    ...
 ```
 
-In questo esempio, l'URL viene passato come parametro al metodo `download` e viene utilizzato per creare una richiesta di tipo `GET` utilizzando la classe `Request` di `OkHttp`. Successivamente, utilizziamo il metodo `execute()` per eseguire la richiesta e aspettiamo una risposta. Infine, stampiamo il body della risposta utilizzando il metodo `string()`.
+Deep Dive:
 
-Ora possiamo utilizzare il nostro `Downloader` nella nostra classe principale per scaricare una pagina web. Ad esempio:
+Scaricare una pagina web può risalire ai primi giorni del World Wide Web quando i programmatori stavano sviluppando metodi per accedere ai contenuti dei siti web. Oltre all'approccio mostrato sopra, ci sono altre opzioni per scaricare una pagina web utilizzando librerie esterne come Jsoup o OkHttp. Inoltre, è importante considerare l'implementazione corretta della gestione degli errori e la gestione delle eccezioni quando si scaricano pagine web.
 
-```Kotlin
-fun main() {
-  val downloader = Downloader()
-  downloader.download("https://www.google.com")
-}
-```
+Vedi Anche:
 
-Questo esempio scaricherà la pagina di Google e stamperà il suo contenuto sulla console.
-
-## Deep Dive
-
-Oltre al semplice download di una pagina web, `OkHttp` offre anche molte altre funzionalità come il supporto ai protocolli HTTP/2 e HTTP/1, la gestione delle connessioni, la gestione delle cache e molto altro. Inoltre, è possibile impostare header personalizzati e gestire le richieste e le risposte in modo asincrono.
-
-Per ulteriori informazioni su `OkHttp`, è possibile consultare la documentazione ufficiale su [GitHub](https://github.com/square/okhttp) o su [Square's website](https://square.github.io/okhttp/).
-
-## Vedi Anche
-
-- [Kotlin Official Website](https://kotlinlang.org/)
-- [Kotlin Tutorial for Beginners](https://www.tutorialspoint.com/kotlin/index.htm)
+- [Tutorial su Jsoup in Kotlin](https://www.tutorialkart.com/kotlin/jsoup-kotlin-html-parser/ "Tutorial su Jsoup in Kotlin")
+- [Documentazione ufficiale di OkHttp per Kotlin](https://square.github.io/okhttp/ "Documentazione ufficiale di OkHttp per Kotlin")

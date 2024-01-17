@@ -1,7 +1,7 @@
 ---
-title:                "Vianjäljitystulostus"
-html_title:           "Arduino: Vianjäljitystulostus"
-simple_title:         "Vianjäljitystulostus"
+title:                "Virheenkorjaustulostuksen tulostaminen"
+html_title:           "Arduino: Virheenkorjaustulostuksen tulostaminen"
+simple_title:         "Virheenkorjaustulostuksen tulostaminen"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Testing and Debugging"
@@ -10,48 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
-Miksi tulostetaan vianmääritystietoja? Yksinkertaisesti sanottuna, kun ohjelmoimme, haluamme varmistaa, että koodimme toimii oikein ja että seuraamme sen toimintaa. Tulostamalla vianmääritystietoja voimme helposti seurata, mitä koodi tekee ja etsiä mahdollisia virheitä.
+## Mitä & Miksi?
 
-## Miten
-Tässä esimerkissä käytämme ```Serial.print()``` -toimintoa tulostamaan vianmääritystietoja Arduino IDEen sarjaporttikonsoliin:
+Debug-tulostus tarkoittaa ohjelmien virheiden etsimistä ja korjaamista koodin tulostamalla. Ohjelmoijat tekevät sitä varmistaakseen, että koodi toimii oikein ja löytää mahdolliset virheet.
 
-```
-void setup() {
-  Serial.begin(9600); // alustetaan sarjaportti 9600 baudin nopeudella
-}
+ ## Miten:
 
-void loop() {
-  // luodaan muuttujia
-  int x = 10;
-  float y = 3.14;
-  String z = "Terve maailma";
+Debng-tulostuksen käyttö Arduino-ohjelmoinnissa on helppoa. Voit tulostaa haluamasi tiedot sarjaportin kautta valitsemalla oikean avainsanan. Tässä muutama esimerkki, joissa käytämme avainsanaa ```Serial ... ```:
+ 
+```Arduino
+ Serial.begin(9600); // alustaa sarjaportin baudinopeudella 9600
 
-  // tulostetaan muuttujat sarjaporttiin
-  Serial.print("x: ");
-  Serial.println(x);
-  Serial.print("y: ");
-  Serial.println(y);
-  Serial.print("z: ");
-  Serial.println(z);
+ Serial.print("Hei maailma!"); // tulostaa vakiotekstin
 
-  // odotetaan 1 sekunti ennen seuraavaa kierrosta
-  delay(1000);
-}
+ int numero = 10;
+ Serial.println(numero); // tulostaa numeron 10 omalle rivilleen
 ```
 
-Tämä koodiesimerkki tulostaa arvoja muuttujista sarjaporttiin jokaisen ```loop()```-toiminnon suorituksen jälkeen. Voit avata sarjaporttikonsolin valitsemalla "Työkalut" -valikosta "Sarjaportti" tai painamalla ```Ctrl + Shift + M```.
+Näet tulostuksen avulla sarjaportin monitorissa (Monitor).
 
-**Tärkeä huomio**: jos et avaa sarjaporttikonsolia tai et ole yhdistänyt Arduinota tietokoneeseen, et näe mitään tulostusta.
+## Syvemmälle:
 
-## Syventyvä sukellus
-Tulostaminen sarjaporttiin voi olla erittäin hyödyllistä vianmäärityksessä. Voit käyttää erilaisia ```Serial``` -toimintoja, kuten ```print()```, ```println()```, ```write()``` ja ```print()``, riippuen siitä, mitä tietoa haluat tulostaa. Voit myös käyttää erilaisia muotoiluja, kuten ```Serial.print("x: ");```ja ```Serial.println(y, 2);```jne.
+Debug-tulostus on ollut tärkeä osa ohjelmoinnin historiaa jo pitkään. Aikaisemmin koodin tulostaminen tapahtui papereille tai käyttöliittymään, mutta nyt se voidaan tehdä yksinkertaisesti sarjaportin avulla. On myös muita tapoja toteuttaa debug-tulostus, kuten käyttämällä LED-valoja (valot vilkkuvat koodin suorituksen aikana) tai näytönohjaimia (näyttää tietoja LCD-näytöllä).
 
-Lisäksi voit käyttää myös ehtolauseita tai koodin suoritusajan seurantaa ja tulostaa sen sarjaporttiin. Näin voit tarkistaa, ovatko tiettyjen osien koodistasi hitaampia kuin toiset, mikä voi auttaa sinua optimoimaan koodiasi.
+Käytetyn avainsanan valinta riippuu siitä, mitä haluat tulostaa ja kuinka haluat sen näkyvän. Tässä muutamia vaihtoehtoja:
 
-## Katso myös
-Kehittäessäsi Arduino-projektiasi voit hyödyntää myös muita vianmääritystyökaluja, kuten LED-valoja ja sarjaportin eri tavoin vilkkuvia viestejä. Lisäksi voit myös käyttää seurantahiirtä, joka auttaa hahmottamaan, missä kohdassa koodia olet parhaillaan ja milloin se suorittaa tiettyjä toimintoja.
+- ```Serial.print```: Tulostaa koodin suorituksessa muuttuvia arvoja ja merkkejä.
+- ```Serial.println```: Tehnyt samaa kuin ```Serial.print``` mutta lisää loppuun rivinvaihto.
+- ```Serial.write```: Antaa sinulle mahdollisuuden tulostaa binäärimuodossa olevia tietoja.
+- ```Serial.flush```: Tyhjentää sarjaportin tulostopuskurin ennen komennon suorittamista.
 
-- [Arduino sarjaporttikonsolin ohjeet](https://www.arduino.cc/reference/en/language/functions/communication/serial/)
-- [Arduino debuggaus video-opas (englanniksi)](https://www.youtube.com/watch?v=ipyD0X6IUOY)
-- [Arduino forum](https://forum.arduino.cc/)
+Voit muokata sarjaportin asetuksia, kuten baudinopeutta ja puskurin kokoa, tarpeidesi mukaan. Voit myös käyttää muita Arduino-kirjastoja saadaksesi lisäominaisuuksia, kuten värinän ja äänen tuottamisen.
+
+## Katso myös:
+
+Jos haluat oppia lisää debug-tulostuksesta Arduino-ohjelmoinnissa, tutustu näihin lähteisiin:
+
+- Arduino-ohjeet: Sarjaportin käyttö - https://www.arduino.cc/reference/en/language/functions/communication/serial/
+- Ohjelmointiopas: Tulostaminen sarjaportin avulla - https://programmingguide.net/serial-print-function-arduino

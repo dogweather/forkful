@@ -10,43 +10,21 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+## Cosa & Perché?
+Working with JSON (JavaScript Object Notation) means being able to easily store and interchange data in a structured format. Programmers use JSON because it is lightweight, human-readable, and widely supported by programming languages.
 
-Perché vorresti impegnarti a lavorare con JSON? Semplicemente perché è un formato di dati molto flessibile e ampiamente utilizzato che consente di scambiare informazioni tra diverse piattaforme e linguaggi di programmazione. Inoltre, su Arduino è possibile gestire facilmente e manipolare i dati JSON grazie alla sua libreria integrata. 
-
-## Come fare 
-Per lavorare con JSON su Arduino, è necessario utilizzare la libreria ArduinoJSON, disponibile su GitHub. Prima di utilizzarla, è importante scaricarla e installarla seguendo le istruzioni riportate nel suo repository. Una volta installata, abbiamo bisogno di includere la libreria nel nostro sketch, per farlo basta aggiungere la seguente riga all'inizio dello sketch: 
-
-```Arduino
-#include <ArduinoJSON.h>
+## Come fare:
 ```
-
-Una volta inclusa la libreria, possiamo iniziare a creare i nostri oggetti e array JSON utilizzando la sua sintassi specifica. Ad esempio, per creare un oggetto JSON con due campi "nome" e "cognome" con i relativi valori, possiamo scrivere: 
-
-```Arduino
-// Creazione dell'oggetto JSON
-StaticJsonDocument<200> doc; // 200 è la dimensione del buffer
-
-// Aggiunta dei campi con i relativi valori
-doc["nome"] = "Mario";
-doc["cognome"] = "Rossi";
-
-// Serializzazione dell'oggetto in una stringa JSON
-char jsonString[200];
-serializeJson(doc, jsonString);
+ArduinoJsonArray array = doc.to<ArduinoJsonArray>();
+int value = array[0]["key"];
 ```
-In questo modo, abbiamo creato un oggetto JSON e lo abbiamo serializzato in una stringa. Ovviamente possiamo creare oggetti più complessi con più campi e valori, e utilizzare anche array per gestire più valori.
+L'esempio sopra mostra come leggere un valore da un array JSON utilizzando la libreria ArduinoJson. Il parametro "key" indica la chiave del valore che vogliamo ottenere. Il valore viene quindi memorizzato in una variabile int.
 
-Una volta creato l'oggetto JSON, possiamo utilizzarlo per scambiare informazioni tra il nostro Arduino e altri dispositivi come ad esempio uno smartphone o un server. Inoltre, con la libreria ArduinoJSON possiamo anche analizzare e manipolare dati JSON ricevuti dall'esterno. Ad esempio, possiamo leggere il valore di un campo o aggiungere nuovi valori all'oggetto.
 
-## Approfondimento
+## Approfondimento:
+La storia di JSON inizia negli anni '90, in cui veniva utilizzato principalmente come forma di scambio dati tra applicazioni web. Ora è diventato uno standard importante per lo scambio di dati fra diverse piattaforme. Un'alternativa a JSON è XML, ma in confronto JSON è più leggero e più facile da leggere e scrivere. Per utilizzare JSON con Arduino, è necessario installare la libreria ArduinoJson, disponibile su GitHub.
 
-La libreria ArduinoJSON utilizza una sintassi simile a quella di C++, quindi se sei già familiare con questo linguaggio di programmazione, sarà molto facile utilizzarla. Inoltre, la libreria è ottimizzata per funzionare su dispositivi con risorse limitate come Arduino, quindi puoi gestire anche grandi quantità di dati JSON senza problemi di memoria.
-
-Inoltre, la libreria supporta anche la compatibilità con altri formati di dati come XML e MessagePack, rendendola ancora più versatile e utile per progetti di Internet of Things.
-
-## Vedi anche
-
-- [Repository della libreria ArduinoJSON su GitHub](https://github.com/bblanchon/ArduinoJson)
-- [Documentazione ufficiale della libreria ArduinoJSON](https://arduinojson.org/)
-- [Articolo su come utilizzare JSON su Arduino su Maker Pro](https://maker.pro/arduino/projects/using-json-on-arduino)
+## Vedi anche:
+- [Introduzione a JSON](https://www.w3schools.com/js/js_json_intro.asp)
+- [Documentazione della libreria ArduinoJson](https://arduinojson.org/)
+- [Tutorial su come utilizzare JSON con Arduino](https://randomnerdtutorials.com/decoding-and-encoding-json-with-arduino-or-esp8266/)

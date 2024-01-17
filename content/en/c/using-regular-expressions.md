@@ -10,65 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-Regular expressions, also known as regex, are a powerful tool for pattern matching in text. They can help programmers search, validate, and manipulate data efficiently, making it a valuable skill to learn in the world of coding.
+Regular expressions are a powerful tool used by programmers to search, find, and manipulate text patterns in strings. They provide a concise and flexible way to perform complex tasks that would otherwise require many lines of code. Regular expressions are especially useful for tasks such as data validation, text parsing, and text substitution.
 
-## How To
+## How to:
 
-To use regular expressions in C, you must include the `<regex.h>` header file in your code. Then, you can use the `regex` functions to perform operations like matching, searching, replacing, and splitting strings. Here's an example of code that checks if a string matches a specific pattern:
+To use regular expressions in your C code, you need to include the `<regex.h>` header file. Then, you can use the `regex` data type and related functions to create, match, and manipulate regular expressions. For example, the following code snippet shows how to use regular expressions to search for a specific pattern in a string:
 
 ```C
-#include <stdio.h>
-#include <regex.h>
+regex_t reg;
+char str[] = "The quick brown fox jumps over the lazy dog";
 
-int main(){
-    char *pattern = "[0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]";
-    char *string = "123-4567";
-    regex_t regex;
-
-    if (regcomp(&regex, pattern, 0) != 0) {
-        printf("Error compiling regex pattern\n");
-        return 1;
-    }
-
-    if (regexec(&regex, string, 0, NULL, 0) == 0) {
-        printf("Valid phone number format\n");
+int status = regcomp(&reg, "fox", 0);
+if (status == 0) {
+    int result = regexec(&reg, str, 0, NULL, 0);
+    if (result == 0) {
+        printf("'fox' was found in '%s'\n", str);
+    } else if (result == REG_NOMATCH) {
+        printf("No match found\n");
     } else {
-        printf("Invalid phone number format\n");
+        printf("Error executing regular expression\n");
     }
-
-    regfree(&regex);
-    return 0;
+    regfree(&reg);
 }
 ```
 
-Output:
+The output of the above code would be:
 
 ```
-Valid phone number format
+'fox' was found in 'The quick brown fox jumps over the lazy dog'
 ```
-
-In this example, we use the `regcomp()` function to compile the regex pattern, and the `regexec()` function to match the pattern against the given string. If the string matches the pattern, the output will be "Valid phone number format". Otherwise, it will print "Invalid phone number format".
 
 ## Deep Dive
 
-Regular expressions can be as simple or as complex as needed, depending on the task at hand. They consist of characters and special metacharacters that act as anchors, modifiers, or quantifiers. Here are some commonly used metacharacters and their corresponding functions:
+Regular expressions have been around since the 1950s and have evolved over the years. They are based on a mathematical concept called finite automata and have been widely adopted in many programming languages. Some popular alternatives to regular expressions in C include string manipulation functions from the `<string.h>` header, custom parsers, and third-party libraries.
 
-- `.` - matches any single character.
-- `^` - matches the beginning of a line.
-- `$` - matches the end of a line.
-- `*` - matches the preceding character 0 or more times.
-- `+` - matches the preceding character 1 or more times.
-- `?` - matches the preceding character 0 or 1 time.
-- `()` - grouping characters.
-
-There are also special sequences that represent common patterns, such as `\d` for a digit, `\w` for a word character, and `\s` for a whitespace character. You can also use quantifiers to specify how many times a character or group should be repeated, for example, `{3}` for exactly 3 times, or `{2,4}` for 2 to 4 times.
-
-Regular expressions can be tested and experimented with using online tools like Regex101 or Regexr, where you can see the explanation and breakdown of your pattern as you type it.
+In C, regular expressions are implemented using the POSIX standard, which defines the grammar and semantics of regular expressions. This standard allows for some variations and extensions, so it's important to refer to the documentation when using regular expressions in your code.
 
 ## See Also
 
-- [C Regex Tutorial](https://www.regular-expressions.info/tutorial.html)
-- [GNU C Library - Regular Expressions](https://www.gnu.org/software/libc/manual/html_node/Regular-Expressions.html)
-- [Regex101](https://regex101.com/)
+To learn more about using regular expressions in C, check out the following resources:
+
+- [The POSIX standard for regular expressions](http://pubs.opengroup.org/onlinepubs/9699919799/basedefs/regex.h.html)
+- [A tutorial on regular expressions in C](https://www.ibm.com/support/knowledgecenter/ssw_ibm_i_71/rtref/regexec.htm)
+- [The GNU C Library manual on regular expressions](https://www.gnu.org/software/libc/manual/html_node/Regular-Expressions.html)

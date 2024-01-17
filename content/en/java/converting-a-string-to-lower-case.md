@@ -10,44 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why? 
+Converting a string to lower case simply means changing all the characters in the string to their lower case equivalents. This is commonly done by programmers to improve string comparisons or to ignore capitalization in user input.
 
-Converting a string to lower case is a common task in Java programming. It allows us to compare strings without worrying about case sensitivity and makes the code more readable.
-
-## How To
-
-To convert a string to lower case in Java, we can use the `toLowerCase()` method from the `String` class. Here's an example code block showing how to use this method:
-
+## How to:
+To convert a string to lower case in Java, we can use the `toLowerCase()` method from the `String` class. Here's an example:
 ```Java
-String str = "Hello World";
-String lowerStr = str.toLowerCase();
-System.out.println(lowerStr);
+String name = "JOHN DOE";
+String lowercaseName = name.toLowerCase();
+System.out.println(lowercaseName); // Output: john doe
+```
+We can also convert individual characters to lower case using the `toLowerCase()` method from the `Character` class. Here's an example:
+```Java
+char letter = 'A';
+char lowercaseLetter = Character.toLowerCase(letter);
+System.out.println(lowercaseLetter); // Output: a
 ```
 
-The output of this code block will be `hello world`, with all characters in lower case. We can also use this method to directly compare two strings without worrying about case sensitivity. For example:
+## Deep Dive:
+Historically, case-insensitive string comparisons were done by converting the strings to upper case. However, this approach is not suitable for all languages, especially those with complex upper and lower case rules. Hence, the `toLowerCase()` method was introduced in Java version 1.0.
 
-```Java
-String str1 = "Java";
-String str2 = "java";
-if(str1.equalsIgnoreCase(str2)){
-    System.out.println("The strings are equal");
-}
-```
+An alternative to using this method is to compare strings using the `equalsIgnoreCase()` method, which ignores case without changing the original string.
 
-In this code block, the `equalsIgnoreCase()` method is used to compare the two strings without considering case. This will print out `The strings are equal` even though the strings are technically not equal. 
+The `toLowerCase()` method uses the default locale's rules for converting characters to lower case. This can cause discrepancies when used in different locales. To avoid this, we can use the `toLowerCase(Locale)` method, which allows us to specify the locale to be used for conversion.
 
-## Deep Dive
-
-Under the hood, the `toLowerCase()` method uses the `Character.toLowerCase()` method to convert each character of the string to lower case. This method uses the Unicode standard to determine the case of each character. This means that it will work for all languages, not just English.
-
-It is important to note that the `toLowerCase()` method does not modify the original string. It returns a new string with all characters in lower case. So if we want to use the lower case version, we need to assign it to a new variable and use that variable further in the code.
-
-We should also be careful when using the `equalsIgnoreCase()` method to compare strings. While it ignores case, it does not ignore other differences such as punctuation or whitespace. So we need to make sure that the strings are in the same format before using this method for comparison.
-
-## See Also
-
-Here are some additional resources for working with strings in Java:
-
-- [Java String Tutorial](https://www.javatpoint.com/java-string)
-- [Working with Strings in Java](https://www.codecademy.com/learn/learn-java/modules/learn-java-strings)
-- [Official Java String API Documentation](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html)
+## See Also:
+- [Java String Class](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html)
+- [Java Character Class](https://docs.oracle.com/javase/7/docs/api/java/lang/Character.html)
+- [Introduction to Locale in Java](https://docs.oracle.com/javase/tutorial/i18n/locale/index.html)

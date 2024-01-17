@@ -1,7 +1,7 @@
 ---
-title:                "Iniciando um novo projeto"
-html_title:           "Gleam: Iniciando um novo projeto"
-simple_title:         "Iniciando um novo projeto"
+title:                "Começando um novo projeto"
+html_title:           "Gleam: Começando um novo projeto"
+simple_title:         "Começando um novo projeto"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Getting Started"
@@ -10,36 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por quê
+# Seja Criativo com Gleam
 
-Se você é um programador em busca de uma linguagem moderna, segura, com tipagem estática e eficiente, Gleam é a opção perfeita para você. Com uma sintaxe simples e uma comunidade acolhedora, Gleam é a escolha certa para iniciar seu próximo projeto.
+## O que e por que?
 
-## Como começar
+Começar um novo projeto significa dar vida a suas ideias e criatividade. Programadores iniciam novos projetos para construir soluções eficientes e inovadoras para problemas do mundo real.
 
-Para começar a usar Gleam, é necessário ter o compilador instalado em seu sistema. Você pode baixá-lo facilmente através do gerenciador de pacotes ou diretamente do site oficial do Gleam.
+## Como fazer:
 
-Uma vez instalado, é hora de criar o seu primeiro projeto. Você pode fazer isso através do comando "```Gleam new my_project```", onde "my_project" é o nome que você deseja dar ao seu projeto. Isso criará uma estrutura básica para seu projeto, incluindo um arquivo "```main.gleam```" para o código principal.
+Começar um novo projeto em Gleam é fácil e direto ao ponto. Basta seguir estes passos simples:
 
-Agora é só abrir o arquivo no seu editor de texto favorito e começar a programar em Gleam! Aqui está um exemplo simples de código que imprime "Olá mundo!" na tela:
+```Gleam
+let mensagem = "Olá, mundo!"
+IO.println(mensagem)```
 
-```
-Gleam import std/io
+O código acima criará uma variável `mensagem` contendo a string "Olá, mundo!" e a imprimirá no console. 
 
-fn main() {
-  io.println("Olá mundo!")
-}
-```
+## Mergulho Profundo:
 
-## Investigação aprofundada
+Gleam é uma linguagem moderna e funcional desenvolvida especificamente para programação concorrente e distribuída. Ela se inspira nas linguagens Erlang e OCaml, combinando suas melhores características em uma única linguagem.
 
-Ao iniciar um novo projeto em Gleam, é importante entender a estrutura básica do código da linguagem. O código é dividido em módulos, que contêm funções e tipos de dados. Os módulos podem ser importados e usados em outros módulos.
+Se você está procurando alternativas a Gleam, algumas opções populares são Elixir e Rust. No entanto, Gleam oferece uma sintaxe mais amigável e uma abordagem mais poderosa para lidar com concorrência e escalabilidade.
 
-Além disso, Gleam é fortemente tipado e usa inferência de tipos para determinar automaticamente o tipo de uma variável. Isso torna a linguagem segura e evita erros comuns durante a execução.
+Ao iniciar um novo projeto em Gleam, você pode escolher entre diferentes frameworks e ferramentas para ajudá-lo nessa jornada. Alguns exemplos são o web framework Phoenix, o frameworket de teste ExUnit e a ferramenta de gerenciamento de dependências rebar3.
 
-Outro aspecto interessante sobre Gleam é o sistema de tipos de dados personalizados, que permite a criação de tipos personalizados de acordo com as necessidades do seu projeto. Isso torna a linguagem muito flexível e adaptável a diferentes situações.
+## Veja Também:
 
-## Veja também
-
-- Site oficial do Gleam: https://gleam.run/
-- Documentação oficial: https://gleam.run/book/index.html
-- Exemplos de código: https://github.com/gleam-lang/gleam/tree/master/examples
+Se você quer saber mais sobre Gleam, confira a documentação oficial [aqui](https://gleam.run/). Você também pode se juntar à comunidade ativa de Gleam no [Slack](https://gleam-run.slack.com/) para aprender e compartilhar conhecimento com outros programadores.

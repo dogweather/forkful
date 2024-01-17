@@ -1,7 +1,7 @@
 ---
-title:                "jsonの扱い方"
-html_title:           "Fish Shell: jsonの扱い方"
-simple_title:         "jsonの扱い方"
+title:                "「Jsonでの作業」"
+html_title:           "Fish Shell: 「Jsonでの作業」"
+simple_title:         "「Jsonでの作業」"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Data Formats and Serialization"
@@ -10,44 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+## What & Why?
 
-JSONはデータの交換に使用される一般的なフォーマットです。このフォーマットは非常に人間にとって読みやすく、機械可読性も高いため、プログラミングで使用する必要があります。
+JSONとは何かを説明し、プログラマーがJSONを使用する理由を述べます。
+JSONは、データを簡単に読み書きできるフォーマットで、略式でのみ使用されることが多いです。プログラマーは、JSONを使用することでデータの伝送や保存を容易にすることができます。
 
-## 使い方
+## How to:
 
-まず、Fish Shellをダウンロードしてインストールします。次に、JSONパッケージをインストールします。
+Fish Shellを使ってJSONを扱う方法を説明します。
 
-```Fish Shell
-brew install jq
+```
+# JSON形式のデータを作成します
+set data '{"name": "John", "age": 32, "city": "Tokyo"}'
+
+# JSONをパースして、コンソールに表示します
+echo $data | fromjson
+
+# 変更したデータを再度JSON形式に変換します
+set changedData (echo $data | fromjson | jq '.age = 33' | tojson)
+
+#新しいデータを表示します
+echo $changedData
 ```
 
-次に、サンプルのJSONファイルを作成します。
+## Deep Dive
 
-```Fish Shell
-echo '{"name": "John", "age": 30}' > sample.json
-```
+JSONはJavaScript Object Notationの略です。元々JavaScriptのデータ型として開発されましたが、現在では多くのプログラミング言語で使用されています。しかし、JSONにはいくつかの代替方法があります。例えば、XMLやYAMLなどがあります。しかし、JSONはシンプルであるため、多くのプログラマーはJSONを好んで使用します。
 
-これで、`sample.json`ファイルが作成されました。次に、Fish Shellで以下のコマンドを実行してJSONファイルの内容を確認します。
+JSONは、データを読み書きするためのコマンドラインツールであるjqを使用することで操作することができます。jqは、パイプラインを使用することでJSONデータを非常に簡単に処理できるように設計されています。また、tojsonコマンドを使用することで、任意のデータをJSON形式に変換することができます。
 
-```Fish Shell
-jq . sample.json
-```
+## See Also
 
-これにより、JSONファイルの内容が表示されます。もし特定のキーの値だけを取得したい場合は、次のようにコマンドを変更します。
-
-```Fish Shell
-jq .name sample.json
-```
-
-これにより、`name`キーの値である`John`が表示されます。
-
-## ディープダイブ
-
-Fish Shellでは、より高度なJSONの処理が可能です。例えば、`jq`コマンドを使用してJSONファイル内の特定の値をフィルタリングすることができます。また、配列やオブジェクト内の値に対しても操作することができます。詳細な使い方やコマンドのオプションについては、[公式ドキュメント](https://stedolan.github.io/jq/)を参照してください。
-
-## 参考リンク
-
-- [Fish Shell](https://fishshell.com/)
-- [JSON Format](https://www.json.org/json-en.html)
-- [jq Official Documentation](https://stedolan.github.io/jq/)
+- [jq公式サイト](https://stedolan.github.io/jq/)
+- [JSON 入門 - MDN](https://developer.mozilla.org/ja/docs/Learn/JavaScript/Objects/JSON)

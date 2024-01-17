@@ -10,85 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-Starting a new project in Elm can be an exciting venture for developers. This functional programming language offers a unique and elegant approach to building web applications, making it a popular choice among web developers. With its ease of use, strong community, and excellent documentation, choosing to start a new project in Elm can lead to a smooth and successful development process.
+Starting a new project in Elm means creating a fresh codebase for a new application or program. This allows programmers to start from a clean slate and build a project from scratch, tailored to their specific needs and goals. Starting a new project can also be a great opportunity to learn and practice new techniques and improve one's skills.
 
-## How To
+## How to:
 
-Here is a simple example of how to create a "Hello World" program in Elm:
+To start a new project in Elm, first make sure you have the latest version of Elm installed. Then, create a new directory for your project and navigate to it in your command line. Once in the project directory, run the following command:
 
-```Elm
-module Main exposing (..)
-
-import Html exposing (Html, text)
-
-main : Html msg
-main =
-    text "Hello, World!"
+```
+elm init
 ```
 
-In this code block, we first declare the module name and the functions that will be accessible to it. Next, we import the `Html` library, which contains functions for creating HTML elements. Then, we define our `main` function, which returns an HTML element containing the text "Hello, World!". Finally, we compile and run our program in the Elm repl, and we should see the text "Hello, World!" displayed on the screen.
+This will create a new Elm project with the basic file structure and dependencies. You can then open the project in your preferred code editor and start writing your code in the `src` directory. When you're ready to compile your code into a JavaScript file, run the following command:
 
-Elm has a unique approach to handling HTML elements, using a virtual DOM to efficiently update the page when changes are made. Here is an example of how to create a simple HTML form in Elm:
-
-```Elm
-module Main exposing (..)
-
-import Html exposing (Html, button, div, form, label, input, text)
-
-type alias Model =
-    { name : String
-    , age : Int
-    }
-
-type Msg
-    = UpdateName String
-    | UpdateAge String
-
-init : Model
-init =
-    { name = ""
-    , age = 0
-    }
-
-view : Model -> Html Msg
-view model =
-    form []
-        [ label [] [ text "Name:" ]
-        , input [ onInput UpdateName ] []
-        , label [] [ text "Age:" ]
-        , input [ onInput UpdateAge ] []
-        , div [] [ text ("Hello, " ++ model.name ++ "! You are " ++ String.fromInt model.age ++ " years old.") ]
-        , button [] [ text "Submit" ]
-        ]
-
-update : Msg -> Model -> Model
-update msg model =
-    case msg of
-        UpdateName newName ->
-            { model | name = newName }
-
-        UpdateAge newAge ->
-            { model | age = Maybe.withDefault 0 (String.toInt newAge) }
-
-main : Html msg
-main =
-    view init
+```
+elm make src/Main.elm --output=main.js
 ```
 
-In this example, we create a simple model with two fields - `name` and `age` - and two message types - `UpdateName` and `UpdateAge`. The `view` function takes in the model and returns an HTML form with two input fields and a button. The `update` function handles the events from the input fields and updates the model accordingly. Finally, the `main` function calls the `view` function with the initial model.
+This will generate a `main.js` file in your project's directory, which you can then include in your HTML file to run your Elm code in the browser.
 
-## Deep Dive
+## Deep Dive:
 
-When starting a new project in Elm, it is important to familiarize yourself with the language's basic concepts, such as static typing and immutability. Elm also has a helpful community and a package manager called `elm-package`, which makes it easy to access third-party libraries.
+Elm was created by Evan Czaplicki in 2012 as a functional programming language for building web applications. It was designed to be simple, fast, and reliable, with a focus on code readability and maintainability. Starting a new project in Elm is a great choice for developers who prioritize efficient and bug-free code.
 
-Another important aspect to consider when starting a new project is the Elm architecture. This architecture follows a `model-update-view` pattern, where the model serves as the single source of truth, the update function handles all the changes to the model, and the view function creates the HTML representation of the model.
+As an alternative to starting a new project in Elm, some programmers may choose to use JavaScript or another popular web development language. However, these languages often have more complex syntax and can lead to more errors and bugs in the code. Elm's strict type system and functional approach help prevent common bugs and make refactoring and maintenance easier in the long run.
 
-Additionally, Elm has a feature called "time-travel debugging", which allows developers to step through each state of their application and easily debug any issues.
+To implement a new project in Elm, it's important to understand the basics of functional programming and Elm's architecture. The Elm Architecture is a well-defined pattern for structuring Elm applications, which consists of a model, a view, and an update function. By following this pattern, developers can easily manage state and user interactions in their application.
 
-## See Also
+## See Also:
 
-- Official Elm documentation: https://elm-lang.org/docs
-- Elm packages: https://package.elm-lang.org/
-- Elm forum: https://discourse.elm-lang.org/
+- Official Elm Documentation: https://guide.elm-lang.org/
+- Elm Cheat Sheet: https://devhints.io/elm
+- Getting Started with Elm video series: https://www.youtube.com/watch?v=H-i-iP2QiJI

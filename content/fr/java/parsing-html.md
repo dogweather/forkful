@@ -1,7 +1,7 @@
 ---
-title:                "Analyse de HTML"
-html_title:           "Java: Analyse de HTML"
-simple_title:         "Analyse de HTML"
+title:                "Analyse de l'html"
+html_title:           "Java: Analyse de l'html"
+simple_title:         "Analyse de l'html"
 programming_language: "Java"
 category:             "Java"
 tag:                  "HTML and the Web"
@@ -10,64 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Qu'est-ce que c'est et pourquoi le faisons-nous?
 
-Si vous êtes un développeur Java, vous avez probablement déjà entendu parler du terme "HTML parsing". Mais pourquoi est-il important de comprendre ce processus et comment peut-il être utile dans vos projets de développement ?
+On peut définir le parsing HTML comme le fait de « lire » un code HTML et d'en extraire des données ou de les manipuler. Les développeurs le font souvent pour exploiter des informations à partir de sites web, automatiser des tâches ou même créer des applications web.
 
-En bref, le parsing HTML consiste à analyser et à extraire des informations à partir de pages web en utilisant une structure de balises. Cela peut être utile pour extraire des données spécifiques, telles que des titres, des liens ou des images, à partir d'un site web.
+## Comment faire :
 
-## Comment Faire
-
-Pour commencer à pratiquer le parsing HTML en Java, voici un exemple simple qui utilise la bibliothèque JSoup :
+Voici un exemple de code Java qui utilise la bibliothèque Jsoup pour parser une page web et en extraire tous les liens :
 
 ```Java
-// Importer la bibliothèque JSoup
-import org.jsoup.Jsoup;
+Document doc = Jsoup.connect("https://www.example.com").get();
+Elements links = doc.select("a");
 
-// Définir l'URL à parser
-String url = "https://www.example.com";
-
-// Utiliser la méthode connect() pour créer une connection à l'URL
-// et get() pour obtenir une réponse sous forme de Document
-org.jsoup.nodes.Document doc = Jsoup.connect(url).get();
-
-// Utiliser la méthode select() pour sélectionner les balises spécifiques
-// en utilisant le sélecteur CSS
-// Dans cet exemple, nous sélectionnons toutes les balises <a> avec l'attribut "href"
-Elements links = doc.select("a[href]");
-
-// Itérer à travers les liens sélectionnés et imprimer leurs textes et leurs URLs
 for (Element link : links) {
-    System.out.println("Texte : " + link.text());
-    System.out.println("URL : " + link.attr("href"));
+    String linkHref = link.attr("href");
+    // faire quelque chose avec le lien extrait
 }
 ```
 
-Résultat :
+Lorsque vous exécutez ce code, vous obtiendrez une liste de tous les liens présents sur la page web.
 
-```
-Texte : Accueil
-URL : https://www.example.com/home
-Texte : À Propos
-URL : https://www.example.com/about
-Texte : Contact
-URL : https://www.example.com/contact
-```
+## Plongée en profondeur :
 
-En utilisant la bibliothèque JSoup, vous pouvez facilement sélectionner et extraire des données à partir d'une page web en fonction de vos besoins. Il existe d'autres bibliothèques disponibles pour le parsing HTML en Java, telles que HTMLParser, jSoup-Android, ou NekoHTML. Il est important de rechercher et de trouver la bibliothèque qui convient le mieux à votre projet.
+Le parsing HTML est né de la nécessité de traiter les données structurées présentes sur les pages web. Avant sa création, les développeurs devaient utiliser des méthodes plus laborieuses pour extraire des données, telles que la recherche manuelle et la copie-coller. Aujourd'hui, il existe des alternatives telles que les API et les bibliothèques de scraping, mais le parsing HTML reste une méthode simple et efficace pour traiter les données web.
 
-## Plongée Profonde
+## Voir aussi :
 
-Pour ceux qui souhaitent une compréhension plus approfondie du parsing HTML en Java, voici quelques points supplémentaires à prendre en compte :
-
-- Les données extraites à partir d'une page web seront souvent sous forme de chaînes de caractères. Par conséquent, il est important de comprendre comment manipuler et convertir ces chaînes pour obtenir les résultats souhaités.
-- Le sélecteur CSS utilisé dans la méthode `select()` peut être complexe et nécessite une certaine pratique pour le maîtriser. N'hésitez pas à consulter des ressources supplémentaires pour en apprendre davantage sur les sélecteurs CSS.
-- Les pages web peuvent être dynamiques, ce qui signifie que le contenu peut changer en fonction des interactions de l'utilisateur. Dans ces cas-là, il peut être nécessaire d'utiliser des outils tels que Selenium pour automatiser les actions et ainsi obtenir les données souhaitées.
-
-## Voir Aussi
-
-Pour en savoir plus sur le parsing HTML en Java, voici quelques liens utiles à consulter :
-
-- [Documentation officielle de JSoup](https://jsoup.org/)
-- [Tutoriel YouTube sur le parsing HTML en Java avec JSoup](https://www.youtube.com/watch?v=rB83DpBJQsE)
-- [Article sur le parsing HTML en Java avec HTMLParser](https://www.baeldung.com/java-html-parsing-htmlparser)
+- [Documentation de Jsoup](https://jsoup.org/)
+- [Différences entre parsing HTML et scraping](https://medium.com/octopus-investments-blog/scraping-vs-parsing-html-data-90de463c3a80)
+- [Exemples d'utilisation du parsing HTML en Java](https://www.geeksforgeeks.org/extract-html-links-java/)

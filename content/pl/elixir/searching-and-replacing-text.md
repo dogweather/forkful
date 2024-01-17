@@ -1,7 +1,7 @@
 ---
-title:                "Wyszukiwanie i zamiana tekstu"
-html_title:           "Elixir: Wyszukiwanie i zamiana tekstu"
-simple_title:         "Wyszukiwanie i zamiana tekstu"
+title:                "Znajdowanie i zamienianie tekstu"
+html_title:           "Elixir: Znajdowanie i zamienianie tekstu"
+simple_title:         "Znajdowanie i zamienianie tekstu"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -10,34 +10,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego?
+## Co i Dlaczego?
 
-Dlaczego warto uczyć się wyszukiwania i zamiany tekstu w języku Elixir? Otóż, jest to niezbędna umiejętność, jeśli chcemy pracować z tekstowymi danymi w naszych programach. Wyszukiwanie i zamiana tekstu używane jest często przy przetwarzaniu plików, tworzeniu automatycznych raportów, czy w analizie danych.
+"Szukaj i zamieniaj" (ang. search and replace) to proces polegający na wyszukiwaniu określonych fragmentów tekstu i zastępowaniu ich innymi. Jest to często stosowane przez programistów do szybkiej zmiany wielu wystąpień danej frazy na inną, bez konieczności ręcznego edytowania każdego z nich.
 
-## Jak to zrobić?
+## Jak to zrobić:
 
-W języku Elixir, do wyszukiwania i zamiany tekstu używamy funkcji `String.replace/3`. Pierwszym argumentem jest nasz oryginalny tekst, drugim argumentem jest wyrażenie regularne, które chcemy znaleźć, a trzecim argumentem jest tekst, którym chcemy zamienić znalezione wyrażenie.
-
-```Elixir 
-original_text = "Cześć! Witaj w świecie Elixir!"
-Regex.replace(~r/witaj/, original_text, "czesc")
-# Wynik: "Cześć! Cześć w świecie Elixir!"
+Możemy użyć funkcji ```Elixir String.replace/3``` do wyszukania i zamiany tekstu w łańcuchu znaków. Na przykład, 
 ```
-
-Możemy również wykorzystać tę samą funkcję do wielokrotnej zamiany w tekście, używając modułu `Regex`. Pierwszym argumentem jest wyrażenie regularne, a drugim jest lista par: [cecha, zastępowana wartość].
-
-```Elixir
-Regex.replace(~r/(@(\w+))/, "Mój nick to @joe", [capture: "____", replace: "____"])
-# Wynik: "Mój nick to ____"
+Elixir String.replace("Witaj świecie!", "świecie", "śliwka")
 ```
+zwróci ```"Witaj śliwka!"```. Można również używać wyrażeń regularnych do jeszcze bardziej zaawansowanych wyszukiwań i zamian.
 
-## Głębsze wgląd
+## Głębsza analiza:
 
-Funkcja `String.replace/3` jest jedynie jednym z narzędzi, które oferuje język Elixir w celu manipulacji tekstem. Inne przydatne funkcje to między innymi `String.insert/4` do wstawiania tekstu w wyznaczone miejsce, `String.reverse/1` do odwrócenia tekstu lub `String.trim/1` do usunięcia białych znaków na początku i końcu tekstu.
+Technika szukaj i zamieniaj została opracowana w latach 70. XX wieku i od tego czasu jest stosowana w różnych językach programowania. W Elixir możemy również użyć funkcji ```Elixir String.replace/4``` do wykonania wyszukiwania i zamiany jedynie na określonej liczbie wystąpień w tekście. Alternatywnym sposobem jest użycie biblioteki ```Elixir Regex``` do użycia wyrażeń regularnych.
 
-Pamiętaj, że wyrażenia regularne mogą być bardzo potężnym narzędziem przy wyszukiwaniu i zamianie tekstu. W Elixir, używamy składni `~r/.../` aby utworzyć wyrażenie regularne. Możemy również skorzystać z funkcji `Regex.escape/1` aby uniknąć błędów związanych ze znakami specjalnymi w tekście.
+## Zobacz też:
 
-## Zobacz również
-
-- Dokumentacja języka Elixir na temat manipulacji tekstem: https://hexdocs.pm/elixir/String.html
-- Przydatny poradnik dotyczący wyrażeń regularnych w Elixir: https://medium.com/elixir-magic/regex-in-elixir-f7c42d0c7c32
+- Dokumentacja Elixir dla funkcji ```String.replace/3```
+- Dokumentacja Elixir dla funkcji ```Regex.run/2```

@@ -10,30 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä & Miksi?
 
-On monia syitä, miksi haluat löytää merkkijonon pituuden ohjelmointitehtävässäsi. Ehkä haluat varmistaa, että merkkijono on tietyn pituinen ennen sen lähettämistä eteenpäin, tai ehkä haluat ohjelman suorittavan tietyn toiminnon vain, jos merkkijonon pituus täyttää tietyt vaatimukset. Riippumatta syistä, Rustilla on helppo tapa löytää merkkijonon pituus ja tässä artikkelissa opit, miten se tehdään.
+Stringin pituuden löytäminen on yksinkertainen tehtävä, jossa ohjelmoijat löytävät merkkijonon pituuden, eli kuinka monta merkkiä merkkijonossa on. Tämä on usein tarpeellista esimerkiksi merkkijonojen käsittelyssä tai laskutoimituksissa.
 
-## Kuinka
+Ohjelmoijat tekevät tätä tehtävää löytääkseen tarvittavat tiedot merkkijonon manipuloimiseksi halutulla tavalla. Ilman merkkijonon pituuden tuntemista, ohjelmoijat eivät pystyisi luomaan tehokasta ja tarkkaa koodia, joten tämä taito on erittäin tärkeä osa ohjelmointia.
 
-Jos haluat löytää merkkijonon pituuden Rustilla, sinun tarvitsee vain käyttää `len()`-metodia. Tämä metodi on käytettävissä kaikilla merkkijonoilla ja se palauttaa merkkijonon pituuden kokonaislukuna. Alla on esimerkki koodi, jossa laskemme merkkijonon "Hei maailma!" pituuden ja tulostamme sen näytölle:
+## Miten:
 
 ```Rust
-let merkkijono = "Hei maailma!";
-let pituus = merkkijono.len();
-
-println!("Merkkijonon pituus on {}", pituus);
+let s = "Tämä on esimerkki merkkijonosta";
+let length = s.len();
+println!("Merkkijonon pituus on {}", length);
+```
+#### Output:
+```
+Merkkijonon pituus on 29
 ```
 
-Kun suoritat tämän koodin, saat tulosteen "Merkkijonon pituus on 12". Huomaa, että välilyönnit ja erikoismerkit lasketaan myös merkkijonon pituuteen.
+## Syventyminen:
 
-## Syvempi sukellus
+Ohjelmoijien ei tarvitse usein miettiä merkkijonon pituuden löytämistä, sillä lähes jokaisessa ohjelmointikielessä on käytettävissä valmiina funktio, joka hoitaa tämän tehtävän. Stringin pituuden löytäminen on myös yksi tapa käsitellä merkkijonoja, mutta on myös muita tapoja, kuten esimerkiksi kääntää merkkijono taulukoksi ja laskea sen pituus.
 
-On tärkeää ymmärtää, että merkkijonon pituus ei ole sama asia kuin merkkijonon kapasiteetti. Kapasiteetilla tarkoitetaan tilaa, joka on varattu merkkijonolle mutta jota ei välttämättä käytetä. Voit tarkistaa merkkijonon kapasiteetin käyttämällä `capacity()`-metodia. Lisäksi, jos haluat muuttaa merkkijonon kapasiteettia, voit käyttää `reserve()`-metodia. Tämä on hyödyllistä esimerkiksi jos tiedät, että merkkijono kasvaa tulevaisuudessa ja haluat varata sille lisää tilaa etukäteen.
+Rustin tapauksessa merkkijonon pituuden löytämisen taustalla on käytännössä UTF-8 merkistöandardi, joka määrittelee miten merkkijonoja käsitellään ja lasketaan. Tämän ansiosta Rust pystyy käsittelemään erikoismerkkejä ja erilaisia kielialueita tarkasti.
 
-Lisäksi, jos haluat löytää merkkijonon pituuden lisäksi myös sen tavujen (bytes) määrän, voit käyttää `as_bytes()`-metodia. Tämä palauttaa tavuja sisältävän taulukon, josta voit laskea tavujen määrän.
+## Katso myös:
 
-## Katso myös
-
-- [Rustin dokumentaatio merkkijonojen käytöstä](https://doc.rust-lang.org/std/string/struct.String.html)
-- [MDN Web Docs - Merkkijonot](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
+- Rustin virallinen dokumentaatio: https://doc.rust-lang.org/std/primitive.str.html#method.len
+- UTF-8 merkistöandardi: https://www.utf8-chartable.de/unicode-utf8-table.pl

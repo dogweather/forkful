@@ -10,49 +10,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
 
-Att jämföra två datum är en vanlig uppgift inom programmering, särskilt när man arbetar med tidshantering eller sorteringsfunktioner. Det finns flera situationer där man behöver veta om ett datum är före, efter, eller samma som ett annat datum.
+Jämföring av två datum är en vanlig uppgift för programmerare. Det innebär helt enkelt att jämföra om två datum är lika, tidigare eller senare än varandra. Programmerare gör detta för att kunna sortera, filtrera eller hantera data baserat på datum.
 
-## Så här gör du
+## Så här gör du:
 
-Fish Shell erbjuder flera inbyggda funktioner för att enkelt jämföra två datum. Här är några exempel på hur du kan använda dessa funktioner:
+### Jämföra datum
+
+Du kan enkelt jämföra två datum i Fish Shell med hjälp av kommandot `date` tillsammans med flaggan `-d`. Du kan ange en datumsträng eller en fil som innehåller ett datum. Sedan kan du använda `test` kommandot tillsammans med `-nt` eller `-ot` flaggor för att jämföra de två datum som skapats av `date`.
 
 ```Fish Shell
-# Kontrollera om ett datum är efter ett annat datum
-if date "2021-01-01" > "2020-12-31"
-  echo "2021-01-01 är efter 2020-12-31"
+# Jämför två datum som anges som strängar
+if test (date -d "2020-10-10") -nt (date -d "2020-10-01") 
+     echo "Det andra datumet är tidigare än det första datumet."
 end
 
-# Kontrollera om två datum är samma
-if date "2020-10-10" = "2020-10-10"
-  echo "2020-10-10 är samma som 2020-10-10"
+# Jämför två datum från filer
+if test (date -d (head -n 1 file1.txt)) -ot (date -d (head -n 1 file2.txt))
+    echo "Datumet från file1 är senare än datumet från file2."
 end
-
-# Kontrollera om ett datum är före ett annat datum
-if date "2020-02-14" < "2020-12-24"
-  echo "2020-02-14 är före 2020-12-24"
-end
-
-# Omvandla datum till sekunder för att jämföra dem
-set january_first (date --date "2021-01-01" +%s)
-set december_thirtyfirst (date --date "2020-12-31" +%s)
-if test $january_first -gt $december_thirtyfirst
-  echo "2021-01-01 är efter 2020-12-31"
-end
-
 ```
 
-I detta exempel utnyttjar vi funktionen `date` för att konvertera specifika datum till sekunder och sedan jämföra dem med hjälp av `test`-kommandot.
+### Skriva ut datum
 
-## Djupt dyk
+En annan vanlig uppgift är att konvertera datum till olika format och skriva ut dem. Detta kan göras i Fish Shell med hjälp av `date` kommandot och flaggan `+%format`.
 
-När man jämför två datum är det viktigt att tänka på hur tidszoner kan påverka resultatet. Om du inte specifikt anger en tidszon, kommer datumet att tolkas utifrån den aktuella systemtidszonen. Detta kan leda till felaktiga resultat om du arbetar med datum från olika tidszoner.
+```Fish Shell
+# Skriv ut dagens datum i formatet DD/MM/YYYY
+date +%d/%m/%Y
+# Output: 12/11/2020
 
-En annan sak att tänka på är att formatet på dina datum måste vara korrekt för att jämförelsen ska fungera. Fish Shell accepterar många olika format, men det är viktigt att du håller dig till ett konsekvent format för att undvika problem.
+# Skriv ut veckonummer i år
+date +%V
+# Output: 46
+```
+
+## Djupdykning
+
+### Historisk bakgrund
+
+Jämförelse mellan datum har varit en viktig del av programmering sedan tidiga dagar. Även om datorkraft och programvaror har utvecklats, är grundläggande metoder för att jämföra datum fortfarande desamma.
+
+### Alternativ
+
+Det finns andra sätt att jämföra datum i Fish Shell, t.ex. med hjälp av kommandot `cal` eller `awk` programmet. Men `date` kommandot är det vanligaste sättet att göra det.
+
+### Implementation detaljer
+
+`date` kommandot i Fish Shell gör användning av operativsystemets C bibliotek för att konvertera datum till en Unix timestamp, som sedan kan jämföras med hjälp av `test` kommandot.
 
 ## Se även
 
--https://fishshell.com/docs/current/cmds/date.html
--https://www.geeksforgeeks.org/compare-two-dates-with-the-help-of-fish-shell-in-linux/
--https://stackoverflow.com/questions/52366389/how-to-compare-two-dates-in-bash
+- [Fish Shell dokumentation](https://fishshell.com/docs/current/index.html)
+- [Test kommandot](https://fishshell.com/docs/current/commands.html#test)

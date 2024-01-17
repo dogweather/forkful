@@ -1,7 +1,7 @@
 ---
-title:                "Imprimindo saída de depuração"
-html_title:           "Clojure: Imprimindo saída de depuração"
-simple_title:         "Imprimindo saída de depuração"
+title:                "Saida de depuração de impressão"
+html_title:           "Clojure: Saida de depuração de impressão"
+simple_title:         "Saida de depuração de impressão"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Testing and Debugging"
@@ -10,51 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+## O Que e Por Que?
 
-Você já teve dificuldade em entender porque seu código não está funcionando como esperado? Às vezes, pode ser difícil descobrir e entender exatamente o que está acontecendo em um programa. É aí que o recurso de impressão de saída de depuração pode ser útil.
+Debug output, ou saída de depuração, é a exibição de informações úteis durante a fase de desenvolvimento de um programa. Programadores utilizam isso para verificar o funcionamento do código e encontrar possíveis erros ou falhas. É uma técnica importante para garantir a qualidade do software.
 
-## Como fazer
+## Como Fazer:
 
-Para imprimir saída de depuração em Clojure, você pode usar a função `println` ou `prn`, que são incluídas na biblioteca padrão do Clojure. Aqui está um exemplo simples de como usá-las:
+```Clojure
+; Utilize a função println para imprimir mensagens de depuração
+(println "Essa é uma mensagem de depuração")
+; Saída: Essa é uma mensagem de depuração
 
-```Clojure 
-(def num1 5) 
-(def num2 10) 
-(println "O valor de num1 é" num1) 
-(prn "A soma de num1 e num2 é" (+ num1 num2))
+; Você também pode imprimir valores de variáveis
+(def x 10)
+(println "O valor de x é:" x)
+; Saída: O valor de x é: 10
 ```
 
-A saída deste código será:
+## Mergulho Profundo:
 
-```
-O valor de num1 é 5 
-"A soma de num1 e num2 é" 15
-```
+A prática de imprimir debug output é comum há décadas e é amplamente utilizada em diferentes linguagens de programação. Além da função println, também existem outras formas de imprimir saída de depuração, como a função print ou a biblioteca tools.logging. Algumas ferramentas de desenvolvimento oferecem recursos mais avançados para imprimir e analisar a saída de depuração, como o REPL no Clojure.
 
-Você também pode utilizar o recurso de formatação de strings do Clojure para personalizar a sua saída de depuração. Por exemplo:
+## Veja Também:
 
-```Clojure 
-(def nome "Ana") 
-(def sobrenome "da Silva") 
-(println (format "Olá, meu nome é %s %s" nome sobrenome))
-```
-
-A saída deste código será:
-
-```
-Olá, meu nome é Ana da Silva
-```
-
-## Mergulho profundo
-
-Além das funções `println` e `prn`, o Clojure também possui a função `print`, que funciona de maneira semelhante, mas não adiciona uma nova linha no final da saída. Você também pode usar a macro `dbg` para imprimir informações de depuração somente quando uma determinada condição é atendida, o que pode ser útil para evitar uma sobrecarga de saída de depuração.
-
-Outra técnica útil para imprimir saída de depuração é utilizar o `clojure.pprint`, que permite que você formate de forma mais específica a sua saída, como por exemplo, a largura máxima da linha ou o número de dígitos após a vírgula.
-
-Utilizar a impressão de saída de depuração também pode ser útil para entender a ordem de execução de funções e o valor de variáveis ​​em um programa mais complexo. Por isso, não tenha medo de utilizá-la sempre que necessário para ajudar a solucionar problemas no seu código.
-
-## Veja também
-
-- [Documentação do Clojure sobre a saída de depuração](https://clojure.org/reference/debugging)
-- [Tutorial sobre como utilizar formatação de strings no Clojure](https://purelyfunctional.tv/guide/clojure-string-formatting/)
+- [Documentação oficial do println](https://clojuredocs.org/clojure.core/println)
+- [Artigo sobre depuração em Clojure](https://clojure.org/guides/getting_started#debugging)
+- [Ferramentas de desenvolvimento Clojure](https://clojure.org/community/resources)

@@ -10,40 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was & Warum?
+Das Starten eines neuen Projekts bedeutet, ein neues Programm für dein Arduino-Board zu schreiben und auszuführen. Programmierer machen das, um ihre Ideen zum Leben zu erwecken und ihre Fähigkeiten zu verbessern.
 
-Du hast dein neues Arduino-Board gekauft und bist bereit, dein erstes Projekt zu starten. Aber warum überhaupt? Die Arduino-Programmierung ermöglicht es dir, deine eigene elektronische Welt zu erschaffen und deine Ideen zum Leben zu erwecken. Es ist auch eine unterhaltsame und kreative Möglichkeit, mehr über Elektronik und Programmierung zu lernen.
-
-## Wie geht's?
-
-Um anzufangen, lade zuerst die aktuelle Version der Arduino-Software herunter und installiere sie. Es ist auch eine gute Idee, das offizielle Arduino Starter Kit zu kaufen, das alle nötigen Komponenten und Anleitungen enthält. Öffne dann die Arduino-Software und schließe dein Board an den Computer an. Nun kannst du deinen Code schreiben und auf dein Board hochladen.
-
-Hier ist ein Beispielcode, um eine LED zum Blinken zu bringen:
-
+## Wie geht's:
+Ein Beispiel, um ein einfaches "Hallo, Welt!" Programm zu erstellen:
 ```Arduino
-int ledPin = 13;
-void setup() {
-  pinMode(ledPin, OUTPUT);
+void setup(){
+  Serial.begin(9600);
 }
-void loop() {
-  digitalWrite(ledPin, HIGH);
-  delay(1000);
-  digitalWrite(ledPin, LOW);
+
+void loop(){
+  Serial.println("Hallo, Welt!");
   delay(1000);
 }
 ```
+Ausgabe:
+```
+Hallo, Welt!
+Hallo, Welt!
+Hallo, Welt!
+...
+```
 
-Der Code definiert zuerst den Pin, an dem die LED angeschlossen ist, und gibt ihm dann die Anweisung, den Pin als Output zu setzen. In der Loop-Funktion wird die LED dann alle 1.000 Millisekunden für eine Sekunde eingeschaltet und danach wieder ausgeschaltet.
+## Tiefgehende Informationen:
+(1) Die Entwicklung von Arduino begann im Jahr 2005 als ein Projekt von Massimo Banzi und David Cuartielles, um Studenten den Einstieg in die Mikrocontroller-Programmierung zu erleichtern. (2) Es gibt auch Alternativen zu Arduino, wie z.B. Raspberry Pi, die ebenfalls als Plattform für Embedded-Systeme verwendet werden können. (3) Um ein neues Projekt zu starten, musst du zunächst ein Board auswählen, die erforderlichen Komponenten anschließen und dann dein Programm mithilfe der Arduino-IDE hochladen.
 
-## Tief eintauchen
-
-Um ein neues Projekt zu starten, ist es wichtig, sich gut vorzubereiten. Überlege dir zunächst ein Konzept für dein Projekt und zeichne es auf Papier. Dann solltest du dir Gedanken über die einzelnen Komponenten machen, die du dafür benötigst, und diese zusammen mit dem Arduino-Board und deinem Computer bereitlegen.
-
-Um mehr über die verschiedenen Komponenten und ihre Verwendung zu erfahren, empfehle ich dir, Tutorials im Internet zu suchen oder Bücher über Arduino zu lesen. Du kannst auch in Foren nach Hilfe suchen oder an Online-Kursen teilnehmen, um dein Wissen zu vertiefen.
-
-## Siehe auch
-
-- Offizielle Arduino-Website: https://www.arduino.cc/
-- Arduino-Tutorials: https://www.arduino.cc/en/Tutorial/HomePage
-- Arduino-Bücher: https://www.arduino.cc/en/Main/Books
-- Arduino-Forum: https://forum.arduino.cc/
+## Siehe auch:
+Weitere Informationen zum Erstellen von Projekten mit Arduino findest du auf der offiziellen Website: https://www.arduino.cc/en/Guide/HomePage

@@ -1,7 +1,7 @@
 ---
-title:                "Tulostusten debuggaaminen"
-html_title:           "C#: Tulostusten debuggaaminen"
-simple_title:         "Tulostusten debuggaaminen"
+title:                "Virheenjäljitystulostuksen tulostaminen"
+html_title:           "C#: Virheenjäljitystulostuksen tulostaminen"
+simple_title:         "Virheenjäljitystulostuksen tulostaminen"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Testing and Debugging"
@@ -10,45 +10,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
-Miksi kukaan haluaisi tulostaa debug-tulosteita? Yksinkertaisesti sanottuna, debug-tulosteiden tulostaminen on hyödyllinen työkalu ohjelmoinnin ongelmien ratkaisemisessa ja koodin virheiden jäljittämisessä.
+## Mitä & Miksi?
+Painetun debug-tulosteen avulla kehittäjät voivat seurata koodin toimintaa ja etsiä mahdollisia virheitä. Se on tärkeä työkalu ohjelman toimivuuden varmistamiseksi ja tehokkaan vianetsinnän tekemiseksi.
 
-## Näin teet sen
+## Kuinka:
 ```C#
-// Tulostetaan debug-tuloste
-Console.WriteLine("Tämä on debug-tuloste.");
+Console.WriteLine("Tämä on debug-tulosteen esimerkki");
 
-// Tulostetaan muuttujan arvo debug-tulosteena
-int numero = 10;
-Console.WriteLine("Muuttujan arvo on: " + numero);
-
-// Käytetään string.Format-metodia helpottamaan debug-tulosteen muotoilua
-string nimi = "Matti";
-int ikä = 25;
-string ammatti = "ohjelmoija";
-Console.WriteLine(string.Format("Hei, olen {0}, olen {1} vuotta vanha ja minusta tulee isona {2}.", nimi, ikä, ammatti));
+// Output: Tämä on debug-tulosteen esimerkki
 ```
 
-Alla on esimerkkilähtö ja sen vastaava debug-tuloste:
+Voit myös tallentaa debug-tulosteen tiedostoon käyttämällä ```Debug.Write``` tai ```Debug.WriteLine``` komentoja. Tämä helpottaa virheiden jäljittämistä pidemmissä ohjelmissa.
 
-**Lähtö:**
-```
-void Main()
-{
-    int numero = 20;
-    Console.WriteLine("Luku on " + numero);
-}
-```
+## Syväsukellus:
+Debug-tulosteiden käyttö on yleinen käytäntö ohjelmoinnissa jo vuosien ajan. Se auttaa kehittäjiä nopeasti löytämään ja korjaamaan ongelmia koodissaan. Toiset ohjelmointikielet, kuten Python ja Java, käyttävät myös vastaavia debug-tulostetoimintoja.
 
-**Debug-tuloste:**
-```
-Luku on 20
-```
+Joskus debug-tulosteiden käyttö voi hidastaa ohjelman suorituskykyä, joten se kannattaa poistaa lopullisesta tuotantoversiosta.
 
-## Syvemmälle debug-tulosteen käyttöön
-Debug-tulosteiden tulostaminen on yleinen tapa löytää ohjelmointivirheitä ja korjata niitä. Voit myös käyttää debug-tulosteita tarkistaaksesi, että koodisi toimii halutulla tavalla ja tarkistaa muuttujien arvoja ja väliaikaisia ​​laskelmia. Voit myös tulostaa debug-tulosteita osana virheenkorjausta lisäämällä ne eri kohdissa koodia ja tarkistaaksesi, missä vaiheessa virhe tapahtuu.
-
-## Katso myös
-- [MSDN: Debug-tulostaminen C#:ssa](https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.debug?view=netframework-4.8)
-- [C# Debug ja Trace luokat](https://www.tutorialsteacher.com/csharp/csharp-debugging)
-- [Yleisimmät C# -virheet ja niiden ratkaiseminen](https://code-maze.com/common-errors-csharp-programmer/)
+## Katso myös:
+- [Microsoftin virallinen dokumentaatio debug-tulosteista C# -ohjelmoinnissa](https://docs.microsoft.com/fi-fi/dotnet/api/system.diagnostics.debug?view=netcore-3.1)
+- [Vinkkejä debug-tulosteiden käytöstä Visual Studion kanssa](https://docs.microsoft.com/fi-fi/visualstudio/debugger/how-to-use-the-debugger-and-troubleshoot?view=vs-2019)

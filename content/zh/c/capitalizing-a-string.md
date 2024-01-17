@@ -1,7 +1,7 @@
 ---
-title:                "将字符串转换为大写"
-html_title:           "C: 将字符串转换为大写"
-simple_title:         "将字符串转换为大写"
+title:                "将字符串转换为大写字母"
+html_title:           "C: 将字符串转换为大写字母"
+simple_title:         "将字符串转换为大写字母"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -10,44 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
+# 究竟是什么?为什么?
+首先，让我们来澄清一个问题：什么是“字符串大写化”？简而言之，这就是把一个字符串中的所有字母变成大写形式。为什么程序员要这么做呢？因为这可以让我们更容易地处理不区分大小写的数据，也可以让字符串的比较更准确。
 
-当我们处理字符串时，有时候需要将其中的某些字符大写，这样可以让字符串更易读并且与其他字符串进行比较。这篇文章将会介绍如何使用C语言来实现字符串的大写操作。
+# 如何执行:
+让我们来看看如何使用C语言来大写化一个字符串。首先，我们要定义一个变量来存储这个字符串，然后使用一个循环来遍历这个字符串中的每一个字符。在循环中，我们可以使用库函数toupper()来把小写字母转换为大写字母。最后，我们将处理后的字符串打印出来。下面是一个例子：
 
-## 如何实现字符串大写
-
-首先，我们需要声明一个字符串变量，这样我们就可以在其上进行操作。然后，我们可以使用C语言内置的函数`toupper()`来将字符串中的字符转换为大写形式。下面是一个简单的例子：
-
-```C
+```
 #include <stdio.h>
 #include <ctype.h>
- 
-int main()
-{
-    char str[20] = "hello world";
-    int i = 0;
 
-    // 使用循环将字符串中的每个字符都转换为大写
-    while (str[i])
-    {
+int main() {
+    char str[] = "hello world";
+    int i;
+
+    for (i = 0; str[i] != '\0'; i++) {
         str[i] = toupper(str[i]);
-        i++;
     }
 
-    // 输出结果 "HELLO WORLD"
-    printf("%s\n", str);
+    printf("%s", str); // 输出: HELLO WORLD
 
     return 0;
 }
 ```
 
-这个例子中，我们使用了`while`循环来遍历字符串中的每个字符，并在循环中使用了`toupper()`函数来将字符转换为大写形式。在循环结束后，我们再次输出字符串，这时就会显示出转换后的大写形式。
+# 深入探索:
+现在让我们来看看一些关于字符串大写化的更深层次的信息。首先，这个概念在很多编程语言中都有，不仅仅局限于C语言。其次，在早期的电传打字机时代，因为没有小写字母，人们就一直在使用全部大写的形式。最后，除了使用循环和toupper()函数之外，还可以使用条件语句来判断字符是否为小写字母。但是使用库函数更简洁和高效。
 
-## 更深入地了解字符串大写
-
-在C语言中，字符串实际上是由字符数组来实现的。这意味着我们可以像处理数组一样来处理字符串，例如通过索引来访问特定字符。因此，我们也可以使用循环以外的方法来进行字符串的大写操作，例如使用`strcpy()`函数来复制字符串到一个新的变量中，并在其中进行大写转换。此外，`toupper()`函数只能将字符转换为大写形式，如果我们需要将字符串中的某些字符转换为小写形式，可以使用`tolower()`函数来实现。
-
-## 查看更多
-
-- [C语言字符串大写操作教程](https://www.runoob.com/cprogramming/c-function-toupper.html)
-- [C语言字符串教程](https://www.runoob.com/cprogramming/c-strings.html)
+# 参考资料:
+- [C语言字符串大写化示例代码](https://www.programiz.com/c-programming/examples/uppercase-string)
+- [toupper()函数的使用文档](https://www.tutorialspoint.com/c_standard_library/c_function_toupper.htm)
+- [字符串大小写转换的其他方法](https://stackoverflow.com/questions/3389728/what-is-the-best-way-to-char-to-uppercase-char-in-c)

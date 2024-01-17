@@ -10,36 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¿Qué y por qué?
 
-¿Alguna vez te has preguntado cómo los navegadores web pueden convertir todo ese código HTML en hermosas páginas web? La respuesta es que utilizan un proceso llamado "parsing" o análisis sintáctico. Así es como los programas pueden interpretar el código HTML y mostrarlo en una forma legible y atractiva. Aprender a analizar HTML es una habilidad valiosa para cualquier desarrollador web.
+Parsing HTML es el proceso de analizar un documento HTML para identificar su estructura y contenido. Los programadores suelen hacer esto para extraer información específica de una página web o para manipular el contenido dinámicamente.
 
-## Cómo hacerlo
-
-La biblioteca estándar de Rust incluye un módulo llamado "html" que proporciona funciones y tipos para analizar HTML de forma sencilla. Primero, debes importar el módulo en tu código:
+## Cómo hacerlo:
 
 ```Rust
-use std::fs; // para leer archivos
-use html::parse; // para analizar HTML
+// Dependencia para parsing HTML
+use scraper::{Html, Selector};
+
+// Creamos una instancia de scraper con un documento HTML
+let html = Html::parse_document(r#"
+    <html>
+        <body>
+            <h1>¡Hola Mundo!</h1>
+        </body>
+    </html>
+"#);
+
+// Usamos un selector para obtener el contenido del elemento H1
+let selector = Selector::parse("h1").unwrap();
+let h1 = html.select(&selector).next().unwrap().text().collect::<Vec<_>>();
+println!("{}", h1);
 ```
-Luego, puedes utilizar la función `parse()` para analizar una cadena de HTML:
 
-```Rust
-let codigo_html = "<div id="mi-div">¡Hola, mundo!</div>"; // una cadena de HTML
-let documento = parse(codigo_html); // analiza el código y lo almacena en la variable "documento"
-println!("{}", documento.find("div#mi-div").text()); // imprime el contenido del elemento "div" con el id "mi-div"
-```
+Salida: ¡Hola Mundo!
 
-El resultado será "¡Hola, mundo!", ya que el método `find()` encuentra el elemento deseado y el método `text()` devuelve su contenido como una cadena. También puedes utilizar otros métodos como `find_all()` o `attr()` para acceder a diferentes elementos y atributos del HTML.
+## Inmersión profunda:
 
-## Profundizando
+Parsing HTML se ha vuelto cada vez más importante a medida que la web se ha vuelto más dinámica. Antes, se utilizaba principalmente para indexar páginas web, pero ahora es una herramienta esencial para el desarrollo de aplicaciones web. Algunas alternativas populares al uso de scraper en Rust son Curl y BeautifulSoup, pero scraper se destaca por su simplicidad y concisión.
 
-Si quieres profundizar en el análisis de HTML, puedes aprender más sobre el modelo de datos del documento HTML y cómo se estructura. También puedes explorar otras bibliotecas externas como "select", que proporciona una sintaxis similar a la de jQuery para seleccionar elementos en el HTML.
+En términos de implementación, scraper utiliza la librería de HTML5 parse5 para realizar el análisis del documento HTML. Esto le permite procesar el HTML de manera eficiente y precisa.
 
-Además, es importante tener en cuenta que aunque las bibliotecas de análisis de HTML en Rust son rápidas y eficientes, pueden no ser tan maduras o completas como en otros lenguajes. Por lo tanto, siempre es importante leer la documentación y asegurarse de que la biblioteca cumpla con tus necesidades antes de utilizarla en un proyecto.
+## Ver también:
 
-## Ver también
-
-- [Documentación de la biblioteca estándar de Rust para análisis de HTML](https://doc.rust-lang.org/beta/std/html/index.html)
-- [Biblioteca "select" para selección de elementos en HTML](https://crates.io/crates/select)
-- [Tutorial sobre análisis de HTML en Rust](https://distransient.net/blog/rust-lang/html/analysis/parser/2017/10/01/how-to-parse-html-in-rust.html)
+- [Documentación de scraper](https://docs.rs/scraper/)
+- [Ejemplos de scraper](https://github.com/chevdor/scraper/tree/master/examples)
+- [Librería parse5](https://github.com/servo/html5ever)

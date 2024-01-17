@@ -1,7 +1,7 @@
 ---
-title:                "Söka och ersätta text"
-html_title:           "C: Söka och ersätta text"
-simple_title:         "Söka och ersätta text"
+title:                "Sökning och ersättning av text"
+html_title:           "C: Sökning och ersättning av text"
+simple_title:         "Sökning och ersättning av text"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -10,63 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+# Vad & Varför?
 
-Att söka och ersätta text är en viktig funktion inom programmering som kan hjälpa dig att snabbt och effektivt ändra stora mängder text i ditt program. Det kan också vara användbart för att städa upp och organisera din kod.
+Söka och ersätta text är en vanlig uppgift för programmerare. Det handlar helt enkelt om att leta efter en viss bit text och sedan ersätta den med något annat.
 
-## Så här gör du
+Varför gör vi det här? För det första kan det vara ett enkelt sätt att ändra flera förekomster av en viss text eller kod på en gång. Det kan också vara ett sätt att fixa fel eller uppdatera gammal kod.
 
-För att söka och ersätta text i C använder vi funktionen `strreplace()`. Den här funktionen tar tre parametrar - den ursprungliga strängen, den nya strängen och en pekare till den variabel där den modifierade strängen ska lagras. Här är en enkel kodexempel:
+# Hur?
 
-```C
+Här är två enkla sätt att utföra söka och ersätta i C-programmering:
+
+```
+// Kodexempel 1:
+char text[] = "Hej, världen!";
+char sök[] = "världen";
+char ersätt[] = "universum";
+
+// Användning av funktionen strstr:
+char *ptr = strstr(text, sök); // hitta positionen av "världen" i text
+strcpy(ptr, ersätt); // ersätt "världen" med "universum"
+
+printf("%s", text); // Skriver ut "Hej, universum!"
+
+```
+```
+// Kodexempel 2:
 #include <stdio.h>
 #include <string.h>
 
-int main() {
-    char original[] = "Hej, världen!";
-    char ersattning[] = "Hej alla!";
-    char ny_strang[50];
+int main(){
+  char text[] = "Hello, world!";
+  char sök[] = "Hello";
+  char ersätt[] = "Goodbye";
 
-    //söker efter "världen" och ersätter det med "alla"
-    strcpy(ny_strang, strreplace(original, "världen", ersattning));
-    printf("Den modifierade strängen är: %s", ny_strang);
-    return 0;
+  // Användning av funktionen strtok:
+  char *ptr = strtok(text, sök);
+  strcat(text, ersätt); // Lägger till "Goodbye" till slutet av strängen
+
+  printf("%s", text); // Skriver ut "Goodbye, world!"
+  return 0;
 }
 ```
 
-**Output:**
-Den modifierade strängen är: Hej, alla!
+# Djupdykning
 
-## Djupdykning
+Sök- och ersättningsfunktioner började som en del av Unix-operativsystemet på 1970-talet. Sedan dess har dussintals olika implementationer skapats för olika programmeringsspråk.
 
-Förutom att söka och ersätta en enkel textsträng kan vi också använda `strreplace()` för att ändra mer komplicerade mönster eller för att utföra fler än en ersättning på en gång. Här är en annan kodexempel där vi använder regular expressions för att söka efter alla siffror som är större än 5 och ersätter dem med "X":
+Det finns också andra sätt att söka och ersätta text i C, till exempel användning av reguljära uttryck (regex). Det är en mer avancerad metod som kräver regelbundna uttryck och specialfunktioner för att leta och ersätta text.
 
-```C
-#include <stdio.h>
-#include <string.h>
-#include <regex.h>
+# Se också
 
-int main() {
-    char original[] = "Jag har 10 äpplen, men bara 2 apelsiner och 6 bananer.";
-    char ny_strang[100];
-
-    // definierar regular expression
-    regex_t regex;
-    regmatch_t match;
-
-    // söker efter siffror som är större än 5 och ersätter dem med "X"
-    regcomp(&regex, "([6-9]|[1-9][0-9]+)", REG_EXTENDED);
-    strcpy(ny_strang, strreplace(original, &regex, "X"));
-
-    printf("Den modifierade strängen är: %s", ny_strang);
-    return 0;
-}
-```
-
-**Output:**
-Den modifierade strängen är: Jag har X äpplen, men bara 2 apelsiner och X bananer.
-
-## Se också
-
-- [C String Functions](https://www.tutorialspoint.com/c_standard_library/string_h.htm)
-- [Regular Expressions in C](https://www.tutorialspoint.com/c_standard_library/regex_h.htm)
+- [strstr documentation](https://www.tutorialspoint.com/c_standard_library/c_function_strstr.htm)
+- [strtok documentation](https://www.tutorialspoint.com/c_standard_library/c_function_strtok.htm)
+- [Regular Expressions in C](https://www.geeksforgeeks.org/different-ways-iterate-string-c/)

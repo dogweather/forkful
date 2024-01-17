@@ -1,7 +1,7 @@
 ---
-title:                "Generering av slumpmässiga nummer"
-html_title:           "Clojure: Generering av slumpmässiga nummer"
-simple_title:         "Generering av slumpmässiga nummer"
+title:                "Generera slumpmässiga nummer"
+html_title:           "Clojure: Generera slumpmässiga nummer"
+simple_title:         "Generera slumpmässiga nummer"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Numbers"
@@ -10,44 +10,16 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Varför
+## Vad & Varför?
+Att generera slumpmässiga tal handlar om att skapa nummer utan en fördefinierad ordning eller mönster. Programmörer använder detta ofta för att skapa variation och överraskningar i sina program eller för att testa funktioner som måste hantera olika typer av data.
 
-Att generera slumpmässiga nummer är en viktig del av många programmeringsprojekt. Det kan användas för att skapa variation och slumpmässighet i spel, simuleringsprogram, och många andra applikationer.
+## Så här:
+Att generera slumpmässiga tal i Clojure är enkelt. Använd funktionen ```(rand)``` för att få ett slumpmässigt tal mellan 0 och 1, till exempel ```(rand) ; => 0.423971193303735```. Om du vill ha ett heltal, använd ```(rand-int n)``` där n är det högsta talet du vill ha, till exempel ```(rand-int 10) ; => 5```.
 
-# Hur man gör det
+## Fördjupning:
+Att generera slumpmässiga tal har varit en viktig del av datavetenskap sedan dess början på 1940-talet. Det finns många olika algoritmer och metoder för att generera slumpmässiga tal, men vissa kan vara bättre än andra beroende på vilket syfte de används för. Om du inte är nöjd med Clojures inbyggda funktioner för att generera slumpmässiga tal kan du prova att använda en separat bibliotek som ```random``` eller skapa din egen egendefinierade algoritm.
 
-```Clojure
-;; För att generera ett slumpmässigt heltal från 0 till 10:
-(rand-int 10)
-
-;; För att generera ett slumpmässigt decimaltal från 0 till 1:
-(rand)
-
-;; För att generera ett slumpmässigt heltal från 1 till 100:
-(+ (rand-int 100) 1)
-
-;; För att generera ett slumpmässigt heltal från 5 till 10:
-(+ (rand-int 5) 5)
-
-;; För att generera ett slumpmässigt decimaltal från -10 till 10:
-(+(rand 20) -10)
-```
-
-**Exempelutskrift:**
-
-5
-0.5140587545049382
-64
-6
--8.239453394421031
-
-# Djupdykning
-
-Det finns flera olika funktioner i Clojure för att generera slumpmässiga nummer, varav de vanligaste är "rand-int" och "rand". Rand-int genererar ett heltal, medan rand genererar ett decimaltal mellan 0 och 1.
-
-För att få större kontroll över vilka tal som genereras, kan man använda funktionen "+" för att lägga till eller subtrahera från det genererade talet. Detta blir särskilt användbart om man vill ha heltal i ett visst intervall, istället för endast från 0 till en viss begränsning.
-
-# Se även
-
-- [Clojure.org - Slumpmässiga nummer](https://clojure.org/api/cheatsheet#random)
-- [Clojure for the Brave and True - Randomness](https://www.braveclojure.com/core-functions-in-depth/#Randomness)
+## Se även:
+- Random modulen i Clojure: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/rand
+- Random biblioteket: https://github.com/reiddraper/random
+- Wikipedia sida om generering av slumpmässiga tal: https://en.wikipedia.org/wiki/Random_number_generation

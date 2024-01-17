@@ -10,58 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+# 什么是读取命令行参数？为什么程序员要这么做？
 
-有时候，作为一个PHP程序员，你可能需要从命令行读取参数以便在你的代码中做一些动态的操作。本文将帮助你了解如何在PHP中读取命令行参数，并给出一些示例来帮助你更好的理解。
+读取命令行参数是指通过命令行获取用户输入的信息。这对于程序员来说非常重要，因为它允许他们根据用户输入的不同参数来执行不同的操作，从而使程序更加灵活和可控。
 
-## How To
+# 怎么做？
 
-首先，让我们看一个基本的例子来读取命令行参数。假设你有一个名为"hello.php"的PHP文件，并且希望从命令行获取一个用户输入的名字作为参数。
-
-```PHP
-// 从命令行读取名字参数
-$name = $argv[1];
-echo "你好，" . $name . "！";
-```
-
-现在，当你在命令行执行以下命令时：
+在PHP中，有两种主要的方式来读取命令行参数。首先是使用全局变量`$argv`，它是一个包含所有命令行参数的数组。以下是一个简单的示例：
 
 ```
-php hello.php John
+<?php
+// 获取第一个参数
+$parameter = $argv[1];
+
+// 输出
+echo $parameter;
 ```
 
-你将会得到以下输出：
+如果你在命令行中输入`php example.php hello`，那么输出将会是`hello`。
+
+另一种方式是使用`getopt()`函数，它允许你指定期望的参数以及它们的简写形式。以下是一个示例：
 
 ```
-你好，John！
+<?php
+// 定义所需的参数和选项
+$options = getopt("p:ht:");
+
+// 输出
+echo $options['p'] . ", " . $options['h'] . ", " . $options['t'];
 ```
 
-你也可以通过使用 "argc" 变量来指定在命令行参数中传递的参数数量，这样可以防止未定义的参数索引错误。
+如果你在命令行中输入`php example.php -p hello -h -t 123`，那么输出将会是`hello, 1, 23`。
 
-```PHP
-if ($argc < 2) {
-    echo "请提供一个名字作为参数。";
-}
-else {
-    $name = $argv[1];
-    echo "你好，" . $name . "！";
-}
-```
+# 深入探讨
 
-上面的代码将在没有传入参数时给出提示，而在传入参数后则会输出相应的欢迎语。
+从历史的角度来看，命令行参数在早期的操作系统中非常重要，因为它是唯一的用户和操作系统交互的方式。随着图形界面的发展，它的重要性有所下降，但仍然是程序员不可或缺的工具。
 
-## Deep Dive
+除了使用全局变量`$argv`和`getopt()`函数，还有其他一些第三方库可以帮助读取和解析命令行参数，比如`Symfony Console`和`GetOptionKit`。
 
-除了基本的命令行参数读取外，PHP也提供了一些内置函数来帮助我们更有效地读取和处理命令行参数。
+在实现命令行参数的过程中，需要注意处理用户错误输入的情况，以及如何处理多个参数和选项的组合。
 
-- `getopt()` 函数可以帮助我们解析复杂的命令行选项，并得到一个关联数组。
-- `getopt()` 函数的第三个参数可以用来指定需要接收哪些参数，可以是字符串、数组或者字符串数组。
-- 在PHP 8.0及以上版本中，我们也可以使用 "named arguments" 来处理命令行参数。
+# 参考链接
 
-更多关于命令行参数的深入内容，可以参考PHP官方文档。
-
-## See Also
-
-- [PHP官方文档 - 从命令行获取参数]()
-- [PHP官方文档 - 命令行选项解析]()
-- [PHP官方文档 - 命令行选项命名参数]()
+- PHP官方文档：https://www.php.net/manual/en/reserved.variables.argv.php
+- PHP官方文档：https://www.php.net/manual/en/function.getopt.php
+- Symfony Console库：https://symfony.com/doc/current/components/console.html
+- GetOptionKit库：https://github.com/c9s/GetOptionKit

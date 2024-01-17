@@ -1,7 +1,7 @@
 ---
-title:                "Ein Datum in einen String umwandeln"
-html_title:           "Clojure: Ein Datum in einen String umwandeln"
-simple_title:         "Ein Datum in einen String umwandeln"
+title:                "Umwandlung eines Datums in einen String"
+html_title:           "Clojure: Umwandlung eines Datums in einen String"
+simple_title:         "Umwandlung eines Datums in einen String"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Dates and Times"
@@ -10,58 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was & Warum?
+Converting von einer Datum in einen String bedeutet, das Datum in einem lesbaren Textformat zu präsentieren. Programmierer tun dies, um Daten in einem für Menschen leichter interpretierbaren Format zu erhalten.
 
-Es gibt viele Gründe, warum man ein Datum in einen String konvertieren möchte. Ein häufiger Grund ist, dass ein bestimmtes Dateiformat oder eine Datenbank dies erfordert. Indem man ein Datum in einen String umwandelt, kann man es auch in verschiedenen Bereichen des Codes einfacher verwenden.
+## Wie geht's:
+- Die gängigste Methode, ein Datum in einen String umzuwandeln, ist die Funktion `str`, die ein Datum in einen String im Format `YYYY-MM-DD` konvertiert.
+- Eine andere Möglichkeit ist die Verwendung der `format`-Funktion, die es ermöglicht, das Datum in einem benutzerdefinierten Format wie `DD.MM.YYYY` zu formatieren.
+```Clojure 
+;; Verwendung von 'str'
+(str 2021 10 25)
+;; Output: "2021-10-25"
 
-## Wie man es macht
-
-Die Umwandlung eines Datums in einen String kann in Clojure mithilfe der `format` Funktion durchgeführt werden. Diese Funktion nimmt zwei Argumente an: ein Datumsobjekt und ein String-Format. Das Datumsobjekt muss eine Instanz von `java.util.Date` sein. Das String-Format definiert, wie das Datum in einen String umgewandelt werden soll.
-
-```Clojure
-(def my-date (java.util.Date.)) ;; Erstelle ein neues Datumsobjekt
-
-(format my-date "dd.MM.yyyy") ;; Ausgabe: "02.08.2019"
-(format my-date "EEE, dd MMMM yyyy") ;; Ausgabe: "Fr, 02 August 2019"
+;; Verwendung von 'format'
+(format "Heute ist der %{dd}.%{MM}.%{YYYY}" 25 10 2021)
+;; Output: "Heute ist der 25.10.2021"
 ```
 
-In den obigen Beispielen können wir sehen, dass das Format argument verwendet wird, um das Datum in verschiedene Formate zu konvertieren. Einige häufig verwendete Formatierungen sind:
+## Tiefer tauchen:
+- Die Umwandlung von Datum in einen String war in früheren Programmiersprachen eine komplizierte Aufgabe, da sie manuelle Berechnungen erforderte. Mit der Einführung von Funktionen wie `str` und `format` in Clojure ist dies jedoch ein einfacher Prozess geworden.
+- Eine alternative Methode ist die Verwendung von Bibliotheken wie `clj-time` oder `chrono`, die eine Vielzahl von Funktionen zum Formatieren von Datum und Zeit bieten.
+- Die `str`-Funktion verwendet tatsächlich die `toString`-Methode der Klasse `java.util.Date` für die Umwandlung von Datum in String.
 
-- `dd` - Tag des Monats (zweistellig)
-- `MM` - Monat (zweistellig)
-- `yyyy` - Jahr (vierstellig)
-- `EEE` - Abgekürzter Wochentag (z.B. "Mo", "Di", "Mi")
-- `MMMM` - Vollständiger Monatsname (z.B. "Januar", "Februar")
-
-Es gibt noch viele weitere Formatierungsoptionen, die in der offiziellen Clojure-Dokumentation zu finden sind.
-
-## Tiefer Einblick
-
-Um das Datum in eine andere Zeitzone zu konvertieren, kann die `with-time-zone` Funktion verwendet werden. Diese Funktion nimmt ein Datumsobjekt, eine Zeitzone und ein optionaler Zeitraum an.
-
-```Clojure
-(with-time-zone "GMT" my-date) ;; Konvertiere my-date in die Zeitzone GMT
-(with-time-zone "GMT+2" my-date :hours) ;; Konvertiere my-date in GMT+2 und addiere 2 Stunden
-```
-
-Es ist auch möglich, die `with-local-tz` Funktion zu verwenden, um das Datum automatisch in die lokale Zeitzone zu konvertieren.
-
-```Clojure
-(def my-date (java.util.Date.))
-(with-local-tz my-date) ;; Konvertiere my-date in die lokale Zeitzone
-```
-
-Es ist wichtig zu beachten, dass das Format-Argument auch die Zeitzonenausgabe beeinflussen kann. Zum Beispiel:
-
-```Clojure
-(format my-date "dd.MM.yyyy HH:mm:ss Z") ;; Ausgabe: "02.08.2019 13:45:21 +0200"
-```
-
-Die `Z` Formatierung gibt die Zeitzonendifferenz in Stunden an. Es ist auch möglich, einen benutzerdefinierten Zeitraum in der `format` Funktion anzugeben.
-
-## Siehe auch
-
-- [Clojure Dokumentation zur `format` Funktion](https://clojuredocs.org/clojure.core/format)
-- [Offizielle Java-Dokumentation zu `java.util.Date`](https://docs.oracle.com/javase/7/docs/api/java/util/Date.html)
-- [Clojure Dokumentation zur `with-time-zone` Funktion](https://clojuredocs.org/clojure.java-time/with-time-zone)
-- [Clojure Dokumentation zur `with-local-tz` Funktion](https://clojuredocs.org/clojure.java-time/with-local-tz)
+## Sieh auch:
+- Dokumentation zu den `str` und `format` Funktion von Clojure: https://clojuredocs.org/clojure.core/str, https://clojuredocs.org/clojure.core/format
+- Die Bibliothek `clj-time`: https://github.com/clj-time/clj-time
+- Die Bibliothek `chrono`: https://github.com/Saikyun/chrono

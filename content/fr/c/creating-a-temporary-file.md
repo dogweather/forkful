@@ -10,46 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+# Quoi et Pourquoi?
 
-Les fichiers temporaires sont utiles pour stocker des informations de manière provisoire pendant l'exécution d'un programme, en particulier lorsqu'il s'agit de données volumineuses. Par exemple, un programme de traitement de données peut créer un fichier temporaire pour stocker des données intermédiaires avant de les traiter et de les supprimer une fois le processus terminé.
+Lorsque les programmeurs travaillent avec des fichiers dans leurs programmes C, ils peuvent parfois avoir besoin de créer un fichier temporaire. Un fichier temporaire est un fichier qui ne sera pas sauvegardé une fois le programme terminé. Les programmeurs utilisent généralement des fichiers temporaires pour stocker des données temporaires ou pour tester des fonctionnalités avant de les implémenter définitivement.
 
-## How To
+# Comment faire:
 
-Creating a temporary file in C requires the use of the `tmpfile()` function, which returns a `FILE*` pointer to the newly created file. Below is a code snippet demonstrating this:
+Voici un exemple de code pour créer un fichier temporaire en utilisant la fonction ```tmpfile()``` en C: 
 
-```C
+```
 #include <stdio.h>
-#include <stdlib.h>
 
-int main() {
-    FILE* temp_file = tmpfile(); // create temporary file
-    if (temp_file == NULL) {
-        printf("Failed to create temporary file\n");
-        exit(1);
+int main(void) {
+    FILE *req_file = NULL;
+    req_file = tmpfile();
+    
+    if (req_file != NULL) {
+        printf("Fichier temporaire créé avec succès.\n");
     }
-    // use the temporary file for storing data or performing operations
-    // ...
-    fclose(temp_file); // close and automatically delete the file
+    
     return 0;
 }
 ```
 
-Sample output:
-```
-Temporary file successfully created and used for processing data
-```
+La sortie de ce code sera ```Fichier temporaire créé avec succès.```.
 
-## Deep Dive
+# Plongée en profondeur:
 
-En plus de la fonction `tmpfile()`, il existe également d'autres fonctions pour créer et manipuler des fichiers temporaires en C. Par exemple, la fonction `tmpnam()` génère un nom unique pour un fichier temporaire et la fonction `remove()` permet de supprimer un fichier.
+La création de fichiers temporaires est une pratique courante en programmation C, remontant aux premières versions du langage. Cependant, avec l'évolution de la technologie, il existe aujourd'hui des alternatives telles que l'utilisation de mémoires tampons en lieu et place des fichiers temporaires. Cette approche peut être plus efficace dans certaines situations car elle évite la gestion de fichiers supplémentaires.
 
-Il est important de noter que les fichiers temporaires sont automatiquement supprimés à la fin du programme, mais ils peuvent également être supprimés manuellement à l'aide de la fonction `remove()` si nécessaire.
+La fonction ```tmpfile()``` est implémentée dans la bibliothèque standard C. Elle crée un fichier temporaire dans le répertoire par défaut pour les fichiers temporaires de l'utilisateur. Si vous souhaitez modifier cet emplacement, il existe d'autres fonctions telles que ```tmpnam()``` et ```tmpnam_r()``` qui vous permettent de spécifier un chemin personnalisé pour votre fichier temporaire.
 
-## See Also
+# Voir aussi:
 
-Pour en savoir plus sur les fichiers temporaires en C, vous pouvez consulter les ressources suivantes :
-
-- Documentation officielle de la fonction `tmpfile()` : https://www.cplusplus.com/reference/cstdio/tmpfile/
-- Tutoriel sur l'utilisation de fichiers temporaires en C : https://www.tutorialspoint.com/c_standard_library/c_function_tmpfile.htm
-- Discussion sur la suppression de fichiers temporaires en C : https://stackoverflow.com/questions/1503603/creating-deleting-temporary-files-in-c
+Pour plus d'informations sur la création de fichiers temporaires en C, vous pouvez consulter la documentation officielle de la fonction ```tmpfile()``` sur le site officiel de GNU. Vous pouvez également explorer d'autres alternatives telles que l'utilisation de mémoires tampons ou la création de fichiers temporaires avec des noms personnalisés.

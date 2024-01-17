@@ -10,49 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-So you want to check if a directory exists in your Javascript code? Well, there are a few reasons why you might want to do this. Maybe you want to make sure that a certain directory exists before trying to save a file to it, or perhaps you want to ensure that you are working with a valid directory before performing any operations on it. Whatever the reason may be, checking if a directory exists can help prevent errors and improve the overall functionality of your code. But how exactly do you go about doing this? Let's dive into the details.
+Checking if a directory exists is a common task in programming, especially when dealing with file systems. It allows us to determine if a certain directory is present or not, which is important when developing applications that require specific folders to be present in the system. We do this to ensure that our program can function properly and handle any potential errors that may arise if the directory is missing.
 
-## How To
+## How to:
 
-Checking if a directory exists in Javascript is a fairly straightforward process. You will need to use the `fs` module, which is part of the standard library in Node.js. First, you will need to import the `fs` module at the top of your file:
-
-```Javascript
-const fs = require('fs');
-```
-
-Next, you will need to use the `fs.existsSync()` method, passing in the path to the directory you want to check as an argument. This method will return a boolean value indicating whether or not the directory exists. Here's an example:
+To check if a directory exists in Javascript, we can use the `fs` module which comes built-in with Node.js. We can use the `existsSync()` method to check if a directory exists, and it returns a boolean value indicating its presence. Here's an example of how it looks in code:
 
 ```Javascript
 const fs = require('fs');
 
-const directoryPath = './example';
-
-if (fs.existsSync(directoryPath)) {
-  console.log('The directory exists!');
+if (fs.existsSync('/path/to/directory')) {
+  console.log("Directory exists!");
 } else {
-  console.log('The directory does not exist.');
+  console.log("Directory does not exist :(");
 }
 ```
 
-If the directory exists, the output will be `The directory exists!` If the directory does not exist, the output will be `The directory does not exist.`
+Output when directory exists:
 
-## Deep Dive
-
-Now, let's take a closer look at the `fs.existsSync()` method. This method checks if a path exists and, by default, it will check for both files and directories. If you only want to check if a directory exists, you can specify the `fs.constants.F_OK` flag as a second argument:
-
-```Javascript
-if (fs.existsSync(directoryPath, fs.constants.F_OK)) {
-  // code for if directory exists
-} else {
-  // code for if directory does not exist
-}
+```
+Directory exists!
 ```
 
-You can also use the `fs.existsSync()` method to check for the existence of a file by specifying the `fs.constants.R_OK` flag. Additionally, you can use the `fs.statSync()` method to check for more specific details about the path, such as whether it is a file or a directory, when it was last modified, and its size.
+Output when directory does not exist:
 
-## See Also
+```
+Directory does not exist :(
+```
 
-- [Node.js fs module documentation](https://nodejs.org/api/fs.html)
-- [How to check if a file or directory exists in Node.js](https://www.digitalocean.com/community/tutorials/how-to-check-if-a-file-or-directory-exists-in-node-js)
+## Deep Dive:
+
+### Historical Context:
+
+Before the `fs` module was introduced in Node.js, developers had to rely on external libraries or native commands to check if a directory exists. This often required writing more code and using external dependencies, making the process more cumbersome and less efficient.
+
+### Alternatives:
+
+Apart from using the `fs` module, developers can also use the `fs.access()` method to check if a directory exists. It is a more versatile method as it allows us to check for the existence of files and directories, and also provides more detailed information in case of failures. However, for simply checking if a directory exists, the `existsSync()` method is a more straightforward and efficient approach.
+
+### Implementation Details:
+
+The `fs.existsSync()` method performs a synchronous operation, meaning it blocks the main thread while it checks for the existence of a directory. This can cause performance issues in larger applications as it halts the execution until the operation is completed. To avoid this, we can use the asynchronous version, `fs.exists()`, which takes a callback function and does not block the main thread.
+
+## See Also:
+
+- [Node.js Official Documentation for fs Module](https://nodejs.org/api/fs.html)
+- [fs-exists-cached Github Repository](https://github.com/isaacs/fs-exists-cached)

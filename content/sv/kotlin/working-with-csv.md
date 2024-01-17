@@ -1,7 +1,7 @@
 ---
-title:                "Arbeta med csv"
-html_title:           "Kotlin: Arbeta med csv"
-simple_title:         "Arbeta med csv"
+title:                "Arbeta med CSV"
+html_title:           "Kotlin: Arbeta med CSV"
+simple_title:         "Arbeta med CSV"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Data Formats and Serialization"
@@ -10,65 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
+Att arbeta med CSV är ett sätt för programmerare att läsa och skriva data i ett tabellformat. Det är ett vanligt sätt att hantera stora datamängder och gör det enkelt att importera och exportera data från olika program. 
 
-CSV-filer, eller Comma Separated Values, är en populär format för att lagra och hantera data. Det är ett lättläst format för både människor och datorer, vilket gör det till en föredragen metod för att lagra och dela information. Genom att använda Kotlin för att arbeta med CSV-filer kan du effektivt hantera och analysera stora datamängder.
+## Hur Man:
 
-## Så här gör du
-
-För att arbeta med CSV-filer i Kotlin behöver du först importera CSV-biblioteket. Det kan du göra genom att lägga till följande kod i din build.gradle fil:
-
-```Kotlin
-implementation 'com.opencsv:opencsv:5.0'
-```
-
-När biblioteket är importerat kan du använda dess funktioner för att läsa och skriva till CSV-filer. Nedan är ett exempel på hur du kan läsa in en CSV-fil och få ut dess innehåll i en lista av rader:
+För att läsa data från en CSV-fil i Kotlin, använd följande kod:
 
 ```Kotlin
-import au.com.bytecode.opencsv.CSVReader
+import java.io.FileReader
+import com.opencsv.CSVReader
 
-fun main() {
-  val reader = CSVReader(FileReader("file.csv"))
+fun main(args: Array<String>) {
+    val reader = CSVReader(FileReader("data.csv"))
+    val data = reader.readAll()
 
-  var row: Array<String>?
-  while ((row = reader.readNext()) != null) {
-    println(Arrays.toString(row))
-  }
-
-  reader.close()
+    for (row in data) {
+        for (item in row) {
+            println(item)
+        }
+    }
 }
 ```
 
-Detta kodblock visar också hur du kan använda OpenCSV-biblioteket för att läsa en CSV-fil rad för rad och skriva ut dess innehåll. Vid varje iteration av while-loopen skrivs raden ut som en array av strängar, med varje element motsvarande ett fält i CSV-filen.
-
-För att skriva till en CSV-fil med hjälp av Kotlin kan du använda följande kod:
+För att skriva data till en CSV-fil i Kotlin, använd följande kod:
 
 ```Kotlin
-import au.com.bytecode.opencsv.CSVWriter
+import java.io.FileWriter
+import com.opencsv.CSVWriter
 
-fun main() {
-  val writer = CSVWriter(FileWriter("file.csv"))
+fun main(args: Array<String>) {
+    val writer = CSVWriter(FileWriter("data.csv"))
+    val data = arrayOf(arrayOf("Name", "Age", "Location"), arrayOf("John", "25", "Stockholm"), arrayOf("Lisa", "30", "Gothenburg"))
 
-  val record = arrayOf("Apple", "Banana", "Orange")
+    for (row in data) {
+        writer.writeNext(row)
+    }
 
-  writer.writeNext(record)
-
-  writer.close()
+    writer.close()
 }
 ```
 
-I det här exemplet används CSVWriter-funktionen för att skapa en ny fil och skriva en ny rad innehållande frukter. Precis som vid läsning av en CSV-fil, måste du stänga writer-objektet när du är klar för att säkerställa att alla datan sparas.
+## Djupdykning:
+CSV står för "Comma Separated Values" och har funnits i många år som ett enkelt format för att lagra data. Innan CSV användes ofta tab-separerade filer, men problem uppstod när texten som skulle sparas innehöll kommatecken. CSV introducerade då kommatecken för att separera värden och har varit ett populärt format sedan dess.
 
-## Djupdykning
+Alternativ till CSV inkluderar JSON och XML, men CSV är fortfarande det enklaste alternativet när det kommer till att hantera och läsa stora datamängder.
 
-Arbetet med CSV-filer kräver att du förstår deras struktur. I en CSV-fil är varje rad en post och varje fält inom en rad separeras av ett kommatecken. Du kan också välja att filen ska ha en rubrikrad som specifierar namnen på varje fält.
+I Kotlin kan man också använda biblioteket Apache Commons CSV för att hantera CSV-filer.
 
-En viktig färdighet vid arbetet med CSV-filer i Kotlin är att hantera felaktig data. Om ett fält i en CSV-fil exempelvis innehåller ett kommatecken, kommer det att försvåra läsningen av filen, eftersom kommatecken vanligtvis används som separeringsmarkör. För att hantera detta och andra problem med felaktig data kan du använda OpenCSV:s CSVParser-funktion.
-
-För en mer detaljerad guide till arbetet med CSV-filer i Kotlin, rekommenderar vi att du tittar på dokumentationen för OpenCSV-biblioteket och dess olika funktioner.
-
-## Se även
-
-- [OpenCSV dokumentation](http://opencsv.sourceforge.net/)
-
-- [Kotlin officiell hemsida](https://kotlinlang.org/
+## Se Även:
+- [Kotlin Dokumentation](https://kotlinlang.org/docs/home.html)
+- [Apache Commons CSV](http://commons.apache.org/proper/commons-csv/)
+- [Comma Separated Values på Wikipedia](https://sv.wikipedia.org/wiki/Comma-separated_values)

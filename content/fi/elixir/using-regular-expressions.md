@@ -1,7 +1,7 @@
 ---
-title:                "Säännöllisten lausekkeiden käyttäminen"
-html_title:           "Elixir: Säännöllisten lausekkeiden käyttäminen"
-simple_title:         "Säännöllisten lausekkeiden käyttäminen"
+title:                "Säännöllisten lausekkeiden käyttö"
+html_title:           "Elixir: Säännöllisten lausekkeiden käyttö"
+simple_title:         "Säännöllisten lausekkeiden käyttö"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -10,45 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä ja miksi?
 
-Regular expressions ovat tehokkaita työkaluja, jotka auttavat tiedonkäsittelyssä, tietojen etsinnässä ja muokkaamisessa. Niiden käyttö voi säästää aikaa ja vaivaa monimutkaisten tietojen käsittelyssä.
+Säännölliset lausekkeet ovat tärkeä osa monien ohjelmoijien työkalupakkia. Ne ovat tapa hakea, tarkistaa ja muokata tekstiä määritettyjen mallejen avulla. Tämä tekee niistä erittäin hyödyllisiä, kun joudutaan työskentelemään suurten tekstimäärien kanssa tai kun tietyn kuvion etsiminen on välttämätöntä.
 
-## Miten teet sen
+## Miten:
 
-### Haku
+Voit käyttää säännöllisiä lausekkeita Elixirissä käyttämällä regex-moduulia. Moduuli tarjoaa lukuisia funktioita, joilla voit luoda säännöllisiä lausekkeita ja suorittaa hakuja. Alla on esimerkkejä, jotka osoittavat, miten voit käyttää säännöllisiä lausekkeita Elixirissä.
 
-```elixir
-text = "Hei maailma!"
-Regex.run(~r/[aeiou]/, text) 
+```Elixir
+# Hae sana "koira" merkkijonosta
+Regex.run(~r/koira/, "Minulla on koira kotona") 
+# => ["koira"]
+
+# Hae kaikki sanat, joissa on vähintään kolme kirjainta
+Regex.scan(~r/[a-z]{3,}/, "Tämä on esimerkki") 
+# => [["Tämä"], ["esimerkki"]]
+
+# Korvaa sana "kissa" sanalla "hamsteri" merkkijonossa
+Regex.replace(~r/kissa/, "Meillä on kissa talossa", "hamsteri") 
+# => "Meillä on hamsteri talossa"
 ```
 
-Tämä pieni koodinpätkä etsii tekstistä "Hei maailma!" kaikki vokaalit, jotka on merkitty sulkujen väliin. Lopputuloksena on lista kohteista, joihin osuivat vokaalit.
+## Syvempi sukellus:
 
-### Korvaaminen
+Säännölliset lausekkeet ovat olleet tiedejulkaisujen keskuudessa jo vuosikymmeniä ja ne ovat vakiinnuttaneet paikkansa ohjelmoinnissa. Sittemmin on kehitetty erilaisia vaihtoehtoja, kuten muotoilufunktioita ja näihin kohdistuvia kirjastoja. Nämä vaihtoehdot perustuvat usein säännöllisiin lausekkeisiin ja niiden avulla voidaan luoda monimutkaisempia muotoilumalleja.
 
-```elixir
-text = "Tämä on merkittävä lause."
-Regex.replace(~r/merkittävä/, text, "upea")
-```
+Säännöllisten lausekkeiden toteutus Elixirissä perustuu POSIX-syntaksiin. Tämä takaa, että Elixirin säännölliset lausekkeet ovat yhteensopivia muiden ohjelmointikielten kanssa, jotka käyttävät samaa syntaksia.
 
-Tässä korvaamme tekstistä "Tämä on merkittävä lause." sanan "merkittävä" sanalla "upea". Lopputuloksena on "Tämä on upea lause."
+## Katso myös:
 
-### Ryhmät ja takaisinviitteet
-
-```elixir
-text = "Puhelinnumero: 123-456-7890"
-Regex.scan(~r/([0-9]{3})-([0-9]{3})-([0-9]{4})/, text)
-```
-
-Tämä koodinpätkä ryhmittelee 123-456-7890-numeron osiin ja palauttaa listan näistä ryhmistä. Eli esimerkissä meillä on lista numerosta, jonka jokainen osa on erilainen luku.
-
-## Syvenny siihen
-
-Regular expressions tarjoavat paljon muokkausmahdollisuuksia aina yksinkertaisista hauista monimutkaisiin korvaamisiin ja ryhmittelyihin. Niiden käyttöä voi laajentaa myös käyttämällä soveltuvia funktioita ja metodeja. Myös niiden käytön optimaalisuutta voi parantaa sääntöjen muuntamisella.
-
-## Katso myös
-
-- Elixirin dokumentaatio: https://hexdocs.pm/elixir/master/Regex.html
-- RegExr: https://regexr.com/
-- Regular expression cheat sheet: https://ihateregex.io/cheatsheet
+- [Elixirin virallinen dokumentaatio säännöllisistä lausekkeista](https://hexdocs.pm/elixir/1.12/Regex.html)
+- [Säännöllisten lausekkeiden opas](https://regexone.com/)

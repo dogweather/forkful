@@ -1,7 +1,7 @@
 ---
-title:                "Obteniendo la fecha actual."
-html_title:           "Ruby: Obteniendo la fecha actual."
-simple_title:         "Obteniendo la fecha actual."
+title:                "Obteniendo la fecha actual"
+html_title:           "Ruby: Obteniendo la fecha actual"
+simple_title:         "Obteniendo la fecha actual"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Dates and Times"
@@ -10,52 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué obtener la fecha actual en Ruby?
+## Qué & Por qué?
+Obtener la fecha actual es una tarea común en la programación. Permite a los desarrolladores trabajar con el tiempo en sus programas, ya sea para mostrar la fecha a los usuarios, realizar cálculos de tiempo o establecer fechas de caducidad.
 
-Obtener la fecha actual en Ruby es una tarea común al desarrollar aplicaciones. Puede ser útil para mostrar la fecha a los usuarios, realizar operaciones basadas en la fecha actual o para registrar la fecha de creación o modificación de un archivo.
+## Cómo hacerlo:
+```Ruby
+Time.now
+```
+Esta es la forma más sencilla de obtener la fecha y hora actuales en Ruby. Esto devolverá un objeto `Time` que contiene información como el año, mes, día, hora, minuto y segundo actuales.
 
-## Cómo hacerlo
-
-Para obtener la fecha actual en Ruby, podemos utilizar el método `Date.today` de la clase `Date` de la librería standard. Este método devuelve una instancia de la clase `Date` que representar la fecha actual. Veamos un ejemplo de código:
+Para obtener información más específica, como el día de la semana, la hora en un formato determinado o la hora en otra zona horaria, se puede utilizar el método `strftime`.
 
 ```Ruby
-hoy = Date.today
-puts hoy
+Time.now.strftime("Hoy es %A")
 ```
-
-Este código imprimirá en la consola la fecha actual en formato "YYYY-MM-DD". También podemos utilizar los métodos `day`, `month` y `year` de la instancia `hoy` para obtener cada parte de la fecha por separado:
+Salida: Hoy es jueves
 
 ```Ruby
-dia = hoy.day
-mes = hoy.month
-anio = hoy.year
-puts "Hoy es #{dia} de #{mes} del #{anio}"
+Time.now.strftime("Son las %I:%M%p")
 ```
-
-La librería standard también nos proporciona la clase `Time` para manejar fechas y horas. Utilizando el método `Time.now` podemos obtener la fecha y hora actuales:
+Salida: Son las 06:34PM
 
 ```Ruby
-ahora = Time.now
-puts ahora
+Time.now.getlocal("+02:00")
 ```
+Con este método, se puede obtener la hora en una zona horaria específica. En el ejemplo, se devuelve la hora actual en el huso horario GMT +2.
 
-Al imprimir la variable `ahora` obtendremos un resultado similar a "YYYY-MM-DD HH:MM:SS +0000", donde HH representa la hora, MM los minutos y SS los segundos. También podemos utilizar los métodos `hour`, `min` y `sec` de la instancia `ahora` para obtener cada parte por separado.
+## Profundizando:
+Aunque `Time.now` es la forma más común de obtener la fecha y hora actuales en Ruby, también existen otras opciones. Por ejemplo, se pueden utilizar las gemas `Date` y `DateTime` para trabajar específicamente con fechas y tiempos respectivamente.
 
-## Profundizando
+También es importante tener en cuenta que `Time.now` devuelve la hora del sistema en el que se está ejecutando el programa. Si se desea obtener la hora actual en una zona horaria diferente o en un servidor de tiempo en línea, se pueden utilizar otras opciones como la gema `time_difference`.
 
-Si queremos obtener la fecha actual en otro formato, podemos utilizar el método `strftime` de la clase `Time`. Este método acepta una cadena de formato y devuelve una cadena con la fecha y hora en el formato deseado. Por ejemplo:
+## Ver también:
+Para obtener más información sobre cómo trabajar con fechas y tiempos en Ruby, se pueden consultar las siguientes fuentes:
 
-```Ruby
-fecha = Time.now
-puts fecha.strftime("%d/%m/%Y")
-puts fecha.strftime("%A, %d de %B de %Y")
-```
-
-Esto imprimirá la fecha actual en los formatos "DD/MM/YYYY" y "Día de la semana, día de Mes de Año", respectivamente.
-
-Además, podemos utilizar varios métodos de comparación y operaciones matemáticas con las instancias de `Time` y `Date` para realizar tareas como sumar o restar días a una fecha determinada.
-
-## Ver también
-
-- [Documentación de la librería standard de Ruby](https://ruby-doc.org/stdlib-2.7.0/)
-- [Tutorial de Ruby en español](https://www.ruby-lang.org/es/documentation/quickstart/)
+- La documentación oficial de Ruby sobre la clase `Time`: [https://ruby-doc.org/core-2.7.0/Time.html](https://ruby-doc.org/core-2.7.0/Time.html)
+- La gema `time_difference`: [https://github.com/tmlee/time_difference](https://github.com/tmlee/time_difference)
+- El libro "The Ruby Way" de Hal Fulton: [https://www.amazon.com/gp/product/0672320835](https://www.amazon.com/gp/product/0672320835)

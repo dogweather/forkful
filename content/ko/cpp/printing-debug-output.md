@@ -1,7 +1,7 @@
 ---
-title:                "디버그 출력 출력"
-html_title:           "C++: 디버그 출력 출력"
-simple_title:         "디버그 출력 출력"
+title:                "디버그 출력 프린팅"
+html_title:           "C++: 디버그 출력 프린팅"
+simple_title:         "디버그 출력 프린팅"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Testing and Debugging"
@@ -10,43 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
-디버그 출력을 하려는 이유는 주로 코드에서 발생하는 오류를 찾기 위해서입니다. 디버그 출력을 통해 프로그램이 실행하는 동안 어떤 값을 가지고 있는지 확인할 수 있으며, 이를 토대로 문제가 발생하는 부분을 쉽게 파악할 수 있습니다.
+## 무엇 & 왜?
+디버그 출력(printing debug output)이란 무엇인지 알고 싶으세요? 그것은 우리가 우리가 작성한 코드가 정확하게 실행되고 디버그 과정에서 발생하는 문제를 추적하는 데 도움을 줍니다. 따라서 프로그래머들은 코드를 디버그하는 과정에서 이를 사용합니다.
 
-## 방법
-디버그 출력을 하기 위해서는 `cout` 또는 `printf` 함수를 사용합니다. 아래는 `cout`를 사용한 예제 코드와 출력 결과입니다.
+## 어떻게:
+디버그 출력을 수행하는 것은 매우 간단합니다. 첫째, 우리는 ```C++ ... ``` 코드 블록에서 우리의 코드를 작성합니다. 그런 다음, 디버그 출력을 원하는 부분에 ```std::cout``` 함수를 사용하여 해당 부분의 값을 출력합니다. 아래 예시를 참조하세요.
 
 ```C++
-#include <iostream>
+int num1 = 5;
+int num2 = 10;
+int sum = num1 + num2;
 
-using namespace std;
-
-int main()
-{
-    int num1 = 10;
-    double num2 = 3.14;
-    string str = "Hello World!";
-
-    cout << "num1의 값은 " << num1 << "입니다." << endl;
-    cout << "num2의 값은 " << num2 << "입니다." << endl;
-    cout << "str의 값은 " << str << "입니다." << endl;
-
-    return 0;
-}
+std::cout << "Sum of " << num1 << " and " << num2 << " is: " << sum << std::endl;
 ```
 
+위의 코드를 실행하면 다음과 같은 결과가 출력됩니다.
+
 ```
-num1의 값은 10입니다.
-num2의 값은 3.14입니다.
-str의 값은 Hello World!입니다.
+Sum of 5 and 10 is: 15
 ```
 
-위 예제 코드에서 `cout`는 디버그 출력을 담당하는 `std` 네임스페이스에 속해있는 객체이며, `<<` 연산자를 사용하여 값을 출력합니다. `endl`은 줄바꿈을 나타내는 명령어입니다.
+## 깊이 파고들기:
+디버그 출력은 프로그래밍에서 매우 중요한 역할을 합니다. 디버그 출력을 사용하여 우리의 코드를 쉽게 디버그하고 문제를 해결할 수 있습니다. 이 기술은 예전부터 사용되어 왔으며, 오늘날에도 여전히 광범위하게 사용되고 있습니다. 그러나 디버그 출력은 코드 실행 시간을 느리게 할 수 있으므로 대안과 함께 사용할 때 주의해야 합니다. 또한 해당 값을 수동으로 출력하는 대신 디버거와 같은 도구를 사용하여 디버그 출력을 관리할 수 있습니다. 이는 코드를 깔끔하게 유지하는 데 도움이 됩니다.
 
-## 딥 다이브
-디버그 출력을 할 때 주의해야 할 점은 너무 많은 출력이나 불필요한 출력을 하지 않는 것입니다. 너무 많은 출력을 하게 되면 불필요한 정보가 출력되어서 보기 어렵고 출력이 너무 길어질 수 있습니다. 따라서 디버그 출력을 추가할 때는 필요한 정보만 충분히 출력하도록 주의해야 합니다.
+## 참고 자료:
+디버그 출력에 대해 더 알아보고 싶으시다면 아래 링크를 참고하세요.
 
-## 참고 자료
-- [C++ 디버그 출력하는 방법](https://boycoding.tistory.com/212)
-- [C++ 출력 관련 함수](https://www.cplusplus.com/reference/cstdio/printf/)
-- [C++ 입출력 스트림](https://www.cplusplus.com/reference/iostream/)
+- [C++ Reference - std::cout](http://www.cplusplus.com/reference/iostream/cout/)
+- [GeeksforGeeks - Debugging Techniques in C/C++](https://www.geeksforgeeks.org/debugging-techniques-in-c-c/)

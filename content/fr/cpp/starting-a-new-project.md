@@ -1,7 +1,7 @@
 ---
-title:                "Commencer un nouveau projet"
-html_title:           "C++: Commencer un nouveau projet"
-simple_title:         "Commencer un nouveau projet"
+title:                "Démarrer un nouveau projet"
+html_title:           "C++: Démarrer un nouveau projet"
+simple_title:         "Démarrer un nouveau projet"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Getting Started"
@@ -10,33 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+Qu'est-ce que c'est et pourquoi les programmeurs le font-ils?
 
-Vous êtes-vous déjà demandé pourquoi il est si excitant de débuter un nouveau projet de programmation en C++? Eh bien, en plus de pouvoir créer des applications et des jeux incroyables, démarrer un nouveau projet vous permet également d'apprendre de nouvelles compétences et de relever de nouveaux défis.
+Lancer un nouveau projet est le processus de création d'un nouveau programme informatique. Les programmeurs le font pour résoudre des problèmes ou pour créer quelque chose de nouveau et d'utile.
 
-## Comment faire
+Comment faire:
 
-Pour commencer, assurez-vous d'avoir un compilateur C++ installé sur votre ordinateur. Ensuite, voici un exemple de code simple pour imprimer "Bonjour le monde" dans la console:
+Pour commencer un nouveau projet en C++, il suffit d'écrire le code suivant dans un fichier avec l'extension ".cpp":
 
 ```C++
 #include <iostream>
 
-int main() {
-    std::cout << "Bonjour le monde";
+using namespace std;
+
+int main(){
+    cout << "Bonjour le monde!" << endl;
     return 0;
 }
 ```
 
-La sortie de ce code devrait être "Bonjour le monde" imprimé dans la console. Maintenant que vous avez compris les bases, vous pouvez explorer davantage en créant des fonctions, en utilisant des bibliothèques externes et en implémentant des algorithmes complexes.
+Voici la sortie attendue : 
 
-## Plongée en profondeur
+```
+Bonjour le monde!
+```
 
-Avant de commencer votre nouveau projet, il est important de bien planifier et de bien organiser votre code. Déterminez vos objectifs et décomposez-les en plus petites tâches à accomplir. Utilisez également des outils de gestion du code source, tels que Git, pour suivre les modifications et collaborer avec d'autres développeurs.
+Plongée en profondeur: 
 
-De plus, n'hésitez pas à rechercher des ressources en ligne, telles que des forums de programmation et des tutoriels, pour résoudre des problèmes et obtenir de l'aide si nécessaire. Enfin, n'oubliez pas de documenter votre code de manière appropriée pour vous aider et aider les autres à comprendre votre projet.
+Le développement de projets informatiques a commencé dans les années 1950 et s'est répandu dans les années 1970 avec le développement de langages de programmation comme le C. Aujourd’hui, de nombreux frameworks et bibliothèques sont disponibles pour faciliter le processus de démarrage d'un nouveau projet en C++. Alternativement, les programmeurs peuvent également utiliser des IDE (environnements de développement intégrés) pour faciliter la création et le débogage du code.
 
-## Voir aussi
+Voir aussi: 
 
-- [Documentation officielle de C++](https://isocpp.org/)
-- [Community Hub de C++](https://cppreference.com/)
-- [Guide pour démarrer avec C++](https://www.cplusplus.com/doc/tutorial/)
+- [Wikipédia - Développement de logiciels] (https://fr.wikipedia.org/wiki/Développement_de_logiciels)
+- [Développez.com - Introduction au C++] (https://www.developpez.com/cours/cpp/)
+- [OpenClassrooms - Apprenez à programmer en C++] (https://openclassrooms.com/fr/courses/1894236-programmez-avec-le-langage-c)

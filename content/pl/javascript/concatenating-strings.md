@@ -10,34 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+Co i dlaczego?
 
-Konkatenacja, czyli łączenie ciągów znaków, jest powszechnie stosowaną operacją w programowaniu. Pozwala ona na tworzenie dynamicznych i spersonalizowanych wiadomości, np. w aplikacjach internetowych czy grach komputerowych. Dzięki niej można również wyświetlać dane użytkowników w czytelnej i estetycznej formie.
+Konkatenacja ciągów to po prostu połączenie dwóch lub więcej ciągów znaków w jedną dłuższą linię. Programiści wykorzystują tę technikę, aby łączyć różne elementy w celu wyświetlania tekstu lub budowania bardziej skomplikowanych napisów.
 
-## Jak to zrobić
+Jak to zrobić:
 
-Aby połączyć dwa ciągi znaków, używamy operatora plus "+". Możemy również wykorzystać metodę `concat()`, która działa na tablicach i łączy elementy w jeden string. Przykładowy kod wyglądałby następująco:
+👨‍💻 W JavaScript, możemy wykorzystać operator + do konkatenacji ciągów znaków:
 
-```Javascript
-let imie = "Jan";
-let nazwisko = "Kowalski";
-
-let pelneImie = imie + " " + nazwisko;
-//wynik: "Jan Kowalski"
-
-let dane = [imie, nazwisko];
-let pelneDane = dane.concat(["28 lat"]);
-//wynik: ["Jan", "Kowalski", "28 lat"]
+```javascript
+let pierwszyCiąg = "Witaj";
+let drugiCiąg = "świecie!";
+let wynik = pierwszyCiąg + " " + drugiCiąg;
+console.log(wynik); // Wyświetla "Witaj świecie!"
 ```
 
-Jeśli chcemy dodatkowo sformatować nasze stringi, możemy wykorzystać metody takie jak `slice()` czy `trim()`, a także wyrażenia szablonowe (ang. template literals), które pozwalają na wygodniejsze łączenie zmiennych z tekstem. 
+👨‍💻 Możemy również użyć metody concat():
 
-## Głębsza analiza
+```javascript
+let pierwszyCiąg = "Hello";
+let drugiCiąg = "world!";
+let wynik = pierwszyCiąg.concat(" ", drugiCiąg);
+console.log(wynik); // Wyświetla "Hello world!"
+```
 
-Podczas konkatenacji zachodzi konwersja typów, dlatego ważne jest, aby pamiętać o typach danych podczas łączenia stringów z innymi typami. Ponadto, jeśli musimy połączyć wiele ciągów znaków, warto skorzystać z metody `join()`, która jest bardziej wydajna niż kolejne użycia operatora plus.
+Najważniejsze jest to, aby pamiętać, aby wszystkie elementy były ciągami znaków. W przeciwnym razie mogą pojawić się problemy z działaniem kodu.
 
-## Zobacz również
+Pogłębione informacje:
 
-- [Mozilla Developer Network: Concatenate strings](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/concat)
-- [W3Schools: JavaScript String Concatenation](https://www.w3schools.com/js/js_string_concat.asp)
-- [JavaScript.info: String Concatenation](https://javascript.info/string#concatenation)
+🔍 Konkatenacja ciągów była możliwa już w języku programowania C, a następnie stała się standardem w innych językach, w tym w JavaScript. Alternatywą dla konkatenacji jest użycie szablonów literałów, które mogą być bardziej czytelne i łatwiejsze do zrozumienia.
+
+⚙️ W rzeczywistości, kiedy używamy operatora + do konkatenacji, wewnętrznie używany jest operator +=. W związku z tym, kiedy używamy konkatenacji wielokrotnie, może to mieć wpływ na wydajność kodu.
+
+Zobacz również:
+
+🔗 [Dokumentacja JavaScript na temat konkatenacji ciągów](https://developer.mozilla.org/pl/docs/Web/JavaScript/Reference/Global_Objects/String/concat)
+
+🔗 [Inne sposoby na łączenie ciągów w JavaScript](https://www.freecodecamp.org/news/three-ways-to-concatenate-strings-in-javascript-8850286b697c/)

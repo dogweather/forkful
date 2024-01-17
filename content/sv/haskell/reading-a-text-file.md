@@ -10,32 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
 
-Det finns många olika anledningar till varför man skulle vilja läsa en textfil med Haskell-kod. Det kan vara för att hitta och lösa problem, för att lära sig mer om språket eller för att bara utforska vad som är möjligt med denna funktionella programmeringsteknologi.
+Läsning av en textfil är en process där en datorprogram läser och hämtar information från en textfil. Detta är användbart för programmerare eftersom det tillåter dem att läsa och analysera information från externa källor, vilket kan användas i deras program.
 
-## Hur man gör
-
-För att läsa en textfil i Haskell behöver du först importera modulen "System.IO". Sedan kan du använda funktionen "readFile" för att läsa innehållet i filen. Här är ett exempel på kod för att läsa en fil som heter "exempel.txt" och skriva ut innehållet på skärmen:
+## Hur man gör:
 
 ```Haskell
 import System.IO
 
 main = do
-  innehall <- readFile "exempel.txt"
-  putStr innehall
+    handle <- openFile "textfil.txt" ReadMode
+    contents <- hGetContents handle
+    putStr contents
+    hClose handle
 ```
 
-Kodblocket ovan kommer att skriva ut innehållet i filen "exempel.txt" på skärmen när du kör programmet. Du kan även använda "writeFile" för att skriva till en fil från Haskell.
+## Djupdykning:
 
-## Djupdykning
+Det är inte ovanligt att behöva läsa information från en textfil i ett programmeringsprojekt. Det finns också andra sätt att läsa filer, till exempel med hjälp av inbyggda funktioner i Haskell som `readFile` eller `Data.Text` biblioteket.
 
-När du läser en textfil i Haskell, läses allt in som en enda lång sträng. Detta kan vara problematiskt om du vill utföra olika operationer på olika delar av filen. För att undvika detta kan du använda funktionen "lines". Den delar upp strängen i en lista av rader, vilket gör det lättare att hantera olika delar av filen.
+Implementeringen av att läsa en textfil kan också vara olika beroende på vilken plattform och operativsystem som används. Det är därför viktigt att se till att koden är kompatibel med olika system.
 
-En annan användbar funktion när du läser textfiler är "words". Den delar upp strängen i en lista av ord, perfekt för att behandla text som är uppdelad i ord eller fraser.
+## Se även:
 
-## Se även
+För mer information om att läsa textfiler i Haskell, se följande resurser:
 
-- [Haskell-dokumentationen om textfiler](https://www.haskell.org/documentation/)
-- [En guide till funktionell programmering med Haskell](https://www.tutorialspoint.com/functional_programming/functional_programming_haskell.htm)
-- [En komplett introduktion till Haskell](https://www.springer.com/us/book/9783319714514)
+- [Haskell dokumentation om IO-operations](https://www.haskell.org/tutorial/io.html)
+- [Haskell biblioteket "System.IO"](https://hackage.haskell.org/package/base-4.15.1.0/docs/System-IO.html)
+- [Haskell biblioteket "Data.Text"](https://hackage.haskell.org/package/text-1.2.4.1/docs/Data-Text.html)

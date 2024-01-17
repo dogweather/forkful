@@ -10,43 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué?
+## ¿Qué & Por qué?
 
-Si eres un programador Java, probablemente te has encontrado con la tarea de capitalizar una cadena de texto. La razón más común para hacer esto es formatear una cadena de nombres o títulos en un formato más legible.
+Capitalizar una cadena en java simplemente significa convertir la primera letra de cada palabra en mayúscula. Los programadores a menudo capitalizan cadenas para hacer que los resultados sean visualmente más atractivos y legibles.
 
-## ¿Cómo?
+## ¿Cómo hacerlo?
 
-Para capitalizar una cadena de texto en Java, podemos utilizar el método `toUpperCase()` o `toTitleCase()` de la clase `String`. Ambos métodos convierten la primera letra de cada palabra en mayúscula.
-
-```Java
-String cadena = "hola, soy un programador Java";
-System.out.println(cadena.toUpperCase()); // Salida: HOLA, SOY UN PROGRAMADOR JAVA
-
-System.out.println(cadena.toTitleCase()); // Salida: Hola, Soy Un Programador Java
-```
-
-Otra alternativa es utilizar la clase `Character` y su método `toUpperCase()` para convertir únicamente la primera letra de la cadena a mayúscula.
+Para capitalizar una cadena en Java, podemos usar el método `toUpperCase()` junto con el método `substring()` para obtener la primera letra de cada palabra y convertirla a mayúscula. Por ejemplo:
 
 ```Java
-String cadena = "hola, soy un programador Java";
-String primeraLetra = Character.toUpperCase(cadena.charAt(0)) + cadena.substring(1);
-System.out.println(primeraLetra); // Salida: Hola, soy un programador Java
+String str = "este es un ejemplo";
+String[] words = str.split(" ");
+String captitalizedString = "";
+for (String word : words) {
+    captitalizedString += Character.toUpperCase(word.charAt(0)) + word.substring(1)+ " ";
+}
+System.out.println(capitalizedString);
+```
+La salida sería:
+```
+Este Es Un Ejemplo 
 ```
 
-## Profundizando
+## Más información
 
-Es importante tener en cuenta que estos métodos solo convierten la primera letra de cada palabra, por lo que si tenemos nombres o títulos con apóstrofes, estos no serán capitalizados. Además, si la cadena ya contiene letras en mayúscula, estas no serán afectadas por los métodos mencionados anteriormente.
+La capitalización de cadenas ha sido una práctica común en programación desde los días de las máquinas de escribir. Además del método mencionado anteriormente, también podemos capitalizar una cadena usando la clase `StringBuilder` o la función `toUpperCase()` de la clase `String`. Si bien la capitalización de cadenas es útil para mejorar la legibilidad, también debemos tener cuidado al manejar cadenas en diferentes idiomas que tienen reglas de capitalización específicas.
 
-Para resolver estos problemas, podemos utilizar la clase `WordUtils` de la biblioteca Apache Commons Lang, que tiene el método `capitalizeFully()` que capitaliza todas las palabras de una cadena, incluyendo aquellas con apóstrofes y deja intactas las letras que ya están en mayúscula.
+## Vea también 
 
-```Java
-String cadena = "McDonald's es una cadena de restaurantes";
-System.out.println(WordUtils.capitalizeFully(cadena); // Salida: McDonald's Es Una Cadena De Restaurantes
-```
-
-## Ver también
-
-- [Método `toUpperCase()` de la clase `String` en Java](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#toUpperCase--)
-- [Método `toTitleCase()` de la clase `String` en Java](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#toTitleCase-int-) 
-- [Método `toUpperCase()` de la clase `Character` en Java](https://docs.oracle.com/javase/8/docs/api/java/lang/Character.html#toUpperCase-char-) 
-- [Clase `WordUtils` de Apache Commons Lang](https://commons.apache.org/proper/commons-lang/apidocs/org/apache/commons/lang3/text/WordUtils.html)
+- [Java String Class](https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/lang/String.html)
+- [StringBuilder Class](https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/lang/StringBuilder.html)
+- [Java Regular Expressions](https://docs.oracle.com/javase/tutorial/essential/regex/)

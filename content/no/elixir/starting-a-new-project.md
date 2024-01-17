@@ -10,43 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hva & Hvorfor?
 
-Hvorfor skulle man engasjere seg i å starte et nytt prosjekt med Elixir? Vel, Elixir er et kraftig og stadig voksende programmeringsspråk som er bygget for å håndtere distribuerte og tolerante systemer. Dette gjør det til et flott valg for å bygge moderne og skalerbare applikasjoner.
+Når vi starter et nytt prosjekt, er det vanligvis for å utvikle en ny applikasjon eller forbedre en eksisterende en. Dette gjøres vanligvis av utviklere for å løse et spesifikt problem eller forbedre en prosess.
 
-## Hvordan
+# Hvordan:
 
-For å starte et nytt prosjekt med Elixir, må du først installere det på datamaskinen din. Deretter kan du følge disse enkle trinnene:
+Et nytt Elixir-prosjekt kan opprettes ved å først installere Elixir-språket og deretter bruke kommandoen "mix new [prosjektnavn]". Dette vil opprette en mappe med prosjektnavnet og nødvendige filer for å kjøre en Elixir-applikasjon.
 
-```Elixir
-# Opprett en ny mappe for prosjektet ditt
-mkdir nyttprosjekt
-
-# Gå inn i mappen
-cd nyttprosjekt
-
-# Opprett en ny fil for koden din
-touch koden.min
-
-# Åpne filen og begynn å skrive Elixir-koden din
-nano koden.min
-
-# Kjør koden din ved å bruke Elixir-konsollen
-iex -S mix
-
-# Se på output og gjør eventuelle endringer i koden din
+```elixir
+mix new my_project
 ```
 
-Når du er ferdig med å kode, må du sørge for å lagre alle endringene og lukke filen. Deretter kan du kjøre koden din og se resultatet av arbeidet ditt!
+Etter å ha opprettet prosjektet, kan du navigere til mappen og åpne filen "lib/my_project.ex" for å begynne å skrive koden din.
 
-## Deep Dive
+```elixir
+defmodule MyProject do
+  # skriv koden din her
+end
+```
 
-Før du begynner å kode, er det viktig å ha en god forståelse av Elixir og dens syntaks. Elixir følger funksjonell programmeringstil og er bygget på Erlang VM, noe som gjør det svært effektivt og skalerbart. Det er også et dynamisk språk, noe som betyr at det ikke krever noe kjørekode, og det tillater utviklere å gjøre endringer i koden mens den kjører.
+For å kjøre prosjektet, bruk "mix run [filnavn]" kommandoen i terminalen.
 
-En annen viktig ting å huske på når du starter et nytt prosjekt med Elixir, er å implementere konsepter som "fault tolerance" og "concurrency". Dette er integrerte funksjoner i Elixir, og det er viktig å utnytte disse fra begynnelsen av for å sikre at prosjektet ditt er robust og skalerbart.
+```elixir
+mix run lib/my_project.ex
+```
 
-## Se også
+# Dypdykk:
 
-- Offisiell Elixir-nettside: https://elixir-lang.org/
-- Elixir Dokumentasjon: https://elixir-lang.org/getting-started/introduction.html
-- Ted Talk om Elixir av skaperen Jose Valim: https://www.youtube.com/watch?v=4IzU8fBvjEI
+Elixir er et funksjonelt programmeringsspråk som ble utgitt i 2011. Det er inspirert av språk som Ruby og Erlang, og er designet for å være skalerbart og robust for distribuerte systemer.
+
+Et alternativ til å starte et nytt Elixir-prosjekt er å bruke en ferdiglaget ramme, eller "framework". Eksempler på populære Elixir-rammer er Phoenix og Ecto.
+
+Når du starter et nytt prosjekt, vil mix kommandoen generere følgende mapper og filer: "config", "lib", "priv", "test", "mix.exs" og "mix.lock".
+
+# Se også:
+
+For mer informasjon om Elixir, kan du sjekke ut offisiell dokumentasjon [https://elixir-lang.org/].
+
+For å lære mer om Phoenix-rammen, kan du besøke [https://phoenixframework.org/].

@@ -10,41 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## למה
+## מה ולמה?
+שליחת בקשת HTTP עם אימות בסיסי היא פעולה שמאפשרת למתכנתים לשלוח ולקבל מידע מאתרים ושירותים באמצעות פרוטוקול האינטרנט. האימות הבסיסי מבטיח שרק משתמשים מורשים יכולים לגשת למידע המסופק.
 
-בשפה המתוכנתת Javascript, ישנן מקרים בהם נדרש לשלוח בקשת HTTP עם אימות בסיסי. זה היכולת להתחבר לשרת עם שם משתמש וסיסמה כדי לבצע פעולות או גישה למידע שמוגבל רק למשתמשים מורשים.
-
-במאמר זה, נלמד כיצד לשלוח בקשת HTTP עם אימות בסיסי באמצעות קוד Javascript, כך שתוכלו להשתמש בכך ביכולתיות שלכם כמתכנתי Javascript.
-
-## איך לעשות זאת
-
-כדי לשלוח בקשת HTTP עם אימות בסיסי, נדרשת בקשת AJAX ממשתמש. נתחיל ביצירת אינסטנס חדש לאובייקט XMLHttpRequest עם הקוד הבא:
-
+## כיצד לעשות זאת:
+כתיבת בקשת HTTP עם אימות בסיסי מתבצעת באמצעות הוספת כותרת מתאימה לבקשה. הנה דוגמה להרחבה של כותרת זו בשפת ג'אווהסקריפט:
 ```javascript
-let xhr = new XMLHttpRequest();
+const username = 'my_username';
+const password = 'my_password';
+
+// הפעלת בקשת HTTP עם אימות בסיסי
+fetch('https://example.com/api', {
+  headers: {
+    Authorization: `Basic ${btoa(`${username}:${password}`)}`
+  }
+})
+  .then(response => response.json())
+  .then(data => console.log(data));
 ```
 
-לאחר מכן, נגדיר את אופן הבקשה באמצעות הפונקציה "open", כאשר נכתוב את המכתבת (GET / POST), את הכתובת המתאימה ואת האופציות לאימות בסיסי. לדוגמה:
-
+כאשר מישתמשים בשפת ג'אווהסקריפט, הם יכולים גם להשתמש בספריות כדוגמת Axios כדי לפשט עוד יותר את התהליך:
 ```javascript
-xhr.open('GET', 'https://example.com', true, 'username', 'password');
+const axios = require('axios');
+
+const username = 'my_username';
+const password = 'my_password';
+
+// שליחת בקשת HTTP עם אימות בסיסי באמצעות Axios
+axios.get('https://example.com/api', {
+  auth: {
+    username,
+    password
+  }
+})
+  .then(response => console.log(response.data))
 ```
 
-לבסוף, נשלח את הבקשה עם הפונקציה "send" ונקבל את התשובה בתור טקסט פשוט:
+## מעמקים:
+אימות הבסיסי נוצר בשנות השמונים כפעולה נפוצה בפרוטוקול האינטרנט. היו דרכים קודמות לזה, אך רבותן לא היו כל כך בטוחות ונסמכו על תעודות TLS/SSL החדשות יותר.
 
-```javascript
-xhr.send();
-console.log(xhr.responseText);
-```
+בינתיים, ישנן תקן נוסף דרך השתמשות בהסכם צמיתות (Digest Authentication). התקן זה מבטיח אימות עוד יותר אבטחתי, אך הוא מצריך יותר חישובים ובניית הודעות מתוקנות יותר.
 
-כך אנו שולחים בקשת HTTP עם אימות בסיסי ומקבלים את התוצאה.
+כאשר משתמשים באימות בסיסי, חשוב להשתמש בחיבור מאובטח (HTTPS) כדי למנוע ניגודיות כנגד אימות בסיסי במקומות לא מאובטחים.
 
-## חפירה עמוקה
+## ראו גם:
+למידע נוסף על אימות בסיסי ניתן להיפגש במקומות הבאים:
 
-כפי שראינו בדוגמה, ניתן לשלוח בקשת HTTP עם אימות בסיסי באמצעות חיבור מקשד של AJAX. כמו כן, ניתן להשתמש בגישת Authorization בשביל כתובת האתר לאחר שהכנסת פרטי המשתמש לבקשה. גישת Authorization מאפשרת לכם לקבל גישה למידע מוגבל למשתמשים מסוימים על ידי הכנסת ביטוי סודי בכותרת הבקשה. לדוגמה:
-
-```javascript
-xhr.setRequestHeader('Authorization', 'Basic ' + btoa('username:password'));
-```
-
-את הכותרת Authorization אתם יכולים להשתמש בה בכל בקשה מ
+- [MDN פנקס המידע למתכנתים](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
+- [ויקיפדיה באנגלית](https://en.wikipedia.org/wiki/Basic_access_authentication)
+- [מפרט התקן של האינטרנט לאימות בסיסי](https://tools.ietf.org/html/rfc7617)

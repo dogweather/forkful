@@ -10,34 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué escribir pruebas en Go
+¡Hola programadores! ¿Quieres asegurar la calidad de tus programas en Go? ¡Entonces es hora de hablar sobre cómo escribir pruebas!
 
-Si eres programador en Go, una de las mejores prácticas que puedes seguir es escribir pruebas para tu código. No solo te ayudará a detectar y corregir errores, sino que también te asegurará que tu código funcione de manera adecuada en diferentes situaciones. Además, escribir pruebas puede ahorrar mucho tiempo y esfuerzo a largo plazo, ya que te permite detectar problemas antes de que se conviertan en grandes errores.
+## ¿Qué y por qué?
 
-## Cómo escribir pruebas en Go
+Escribir pruebas es simplemente crear piezas de código que verifican si otra parte del código funciona correctamente. Los programadores hacen esto para asegurarse de que su código se comporte como se espera y para prevenir errores en el futuro.
 
-Escribir pruebas en Go es bastante sencillo. Primero, debes importar el paquete "testing" en tu archivo de código para poder acceder a las funciones de prueba. Luego, puedes crear una función de prueba utilizando la siguiente estructura:
+## ¿Cómo?
+
+Escribir pruebas en Go es muy sencillo. Primero, debes importar el paquete "testing". Luego, puedes escribir funciones de prueba que comienzan con "Test". Dentro de estas funciones, puedes utilizar la función "t.Fail()" para indicar si la prueba falló o no. A continuación, puedes ejecutar las pruebas con el comando "go test" en la terminal y verás los resultados de tus pruebas.
 
 ```Go
-func TestNombreDeLaPrueba(t *testing.T) {
-  // Código de la prueba
+// Importar el paquete "testing"
+import "testing"
+
+// Función de prueba
+func TestSum(t *testing.T) {
+    // Lógica de prueba
+    result := sum(5, 7)
+    // Verificar si el resultado es correcto
+    if result != 12 {
+        t.Fail() // Prueba fallida
+    }
 }
 ```
 
-Dentro de esta función, puedes utilizar la función "t.Error()" o "t.Fail()" para indicar si la prueba ha fallado. También puedes usar la función "t.Log()" para imprimir mensajes de registro mientras se ejecuta la prueba.
+## Profundizando
 
-Para ejecutar tus pruebas, puedes utilizar el comando "go test" en la terminal, que buscará todas las funciones de prueba en tu código y las ejecutará. En caso de que alguna prueba falle, se te informará con un mensaje explicando el motivo del fallo.
+La idea de escribir pruebas no es nueva y ha existido en la programación desde hace mucho tiempo. En Go, la herramienta "go test" fue introducida en la versión 1.7 y ha sido ampliamente adoptada por los programadores para garantizar la calidad de sus programas.
 
-## Inmersión profunda en la escritura de pruebas
-
-Ahora que ya sabes cómo escribir pruebas en Go, es importante mencionar algunas buenas prácticas a seguir mientras escribes tus pruebas. Una de ellas es asegurarte de que tus pruebas sean independientes entre sí y no dependan del resultado de otras pruebas. Esto evitará falsos positivos o negativos en tus resultados de prueba.
-
-Otra buena práctica es utilizar nombres descriptivos y coherentes para tus funciones de prueba, para que sea más fácil entender qué se está probando en cada una. Además, puedes utilizar la función "t.Skip()" para saltar una prueba en particular si no es relevante en una plataforma o sistema operativo en particular.
-
-Escribir pruebas puede ser una tarea tediosa, pero sus beneficios a largo plazo hacen que valga la pena el esfuerzo. Recuerda también que siempre puedes volver y agregar pruebas a medida que tu código se vuelve más complejo o se agregan nuevas funcionalidades.
+Si bien escribir pruebas puede ser una tarea tediosa, es una práctica muy útil en el desarrollo de software. También existen otras herramientas en Go, como "Testify", que pueden ayudarte a escribir pruebas de manera más eficiente.
 
 ## Ver también
 
-- [Documentación oficial de Go sobre pruebas](https://golang.org/pkg/testing/)
-- [Tutorial de Go: Escribiendo pruebas - The Go Programming Language](https://tour.golang.org/basics/12)
-- [Video tutorial de Programación en Go: Pruebas de unidad - Código claro](https://www.youtube.com/watch?v=9WVsDT4EWoo)
+Si deseas obtener más información sobre cómo escribir pruebas en Go, te recomendamos estos recursos:
+
+- [Documentación oficial de pruebas en Go](https://golang.org/pkg/testing/)
+- [Artículo sobre pruebas en "Go Official Blog"](https://blog.golang.org/go15drs)
+- [Paquete "Testify" para mejorar tus pruebas](https://github.com/stretchr/testify)

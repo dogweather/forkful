@@ -10,49 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i dlaczego?
+Regular expressions są wyrażeniami służącymi do wyszukiwania wzorców w tekście. Programiści używają ich, aby skutecznie manipulować oraz wyciągać potrzebne informacje ze złożonych danych.
 
-Każdy programista wie, że regularne wyrażenia są nieodłącznym elementem pracy z tekstem. Znajomość ich składni i użycie może znacznie ułatwić i przyspieszyć pracę, dlatego warto poznać podstawy ich działania.
-
-## Jak to zrobić
-
-```Clojure
-;; Przykładowy ciąg znaków
-(def string "Alice ma 21 lat, Bob ma 29 lat, Chris ma 43 lata.")
-
-;; Wyszukanie wszystkich liczb w tekście
-(re-seq #"\d+" string)
-
-;; Output: ("21" "29" "43")
-```
+## Jak to zrobić:
+Przykłady kodu poniżej pokazują, jak użyć regular expressions w Clojure.
 
 ```Clojure
-;; Zamiana daty z formatu MM/DD/RRRR na DD-MM-RRRR
-(def data "09/30/2021")
-(re-sub #"(\d{2})/(\d{2})/(\d{4})" data "$2-$1-$3")
+;; Przykładowy tekst
+(def tekst "Ala ma kota, ale kot nie ma Ali.")
 
-;; Output: "30-09-2021"
+;; Wyszukaj wszystkie wystąpienia słowa 'kot'
+(re-seq #"kot" tekst)
+;; Output: ("kot" "kot")
+
+;; Zastąp każde wystąpienie słowa 'kot' na 'pies'
+(re.sub #"kot" "pies" tekst)
+;; Output: Ala ma kota, ale pies nie ma Ali.
 ```
 
-```Clojure
-;; Sprawdzenie czy ciąg zawiera email
-(def email "johndoe@email.com")
-(re-match #"\w+@\w+\.\w+" email)
+## Głębsza analiza:
+Regular expressions pierwotnie zostały opracowane przez matematyka Stephena Kleene w latach 50. jako sposób na opisywanie języków formalnych. Alternatywami dla regular expressions są inne wyrażenia, takie jak pobieranie podciągów lub użycie metody "contains" na tekście. Implementacja regular expressions w Clojure wykorzystuje dostępne funkcje języka, takie jak "re-find" czy "re-seq".
 
-;; Output: "johndoe@email.com"
-```
-
-## Pogłębiona analiza
-
-Podstawowym elementem regularnych wyrażeń jest wzorzec, którym chcemy dopasować ciąg znaków. Najczęściej używanymi są:
-- Znaki literowe - reprezentujące konkretne litery lub ciągi znaków, np. `a` lub `abc`.
-- Metaznaki - służące do reprezentacji grup znaków, np. `.` dla jednego dowolnego znaku, `+` dla jednego lub więcej znaków, `*` dla zera lub więcej znaków.
-- Klasy znaków - pozwalające na określenie zakresu znaków, np. `[a-z]` dla liter od A do Z, `[0-9]` dla cyfr od 0 do 9.
-- Sekwencje specjalne - reprezentujące konkretne znaki, np. `\s` dla spacji, `\d` dla cyfr.
-
-Regularne wyrażenia mogą być również wykorzystywane do modyfikacji tekstu, dzięki użyciu grup i specjalnych ciągów zamieniających.
-
-## Zobacz także
-
-- [Podstawowe wyrażenia regularne w Clojure](https://www.tutorialspoint.com/clojure/clojure_regular_expressions.htm)
-- [Inne przydatne funkcje Clojure do pracy z tekstem](https://clojure.org/api/cheatsheet)
+## Zobacz też:
+Dla lepszego zrozumienia i wykorzystania regular expressions w Clojure, warto zapoznać się z dokumentacją oficjalną: https://clojure.github.io/clojure/clojure.string-api.html#clojure.core/re-seq oraz z tutorialami dostępnymi online, takimi jak ten: https://purelyfunctional.tv/guide/clojure-regex/

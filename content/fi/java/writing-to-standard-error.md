@@ -10,30 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Miksi
-## Miksi kirjoittaa standardi virheeseen?
+## Mikä ja miksi?
+Kirjoittaminen standardierroriin on tapa tulostaa virheitä ja antaa tärkeitä tietoja koodin suorituksen aikana. Tämä auttaa ohjelmoijaa korjaamaan ja muokkaamaan koodiaan tehokkaasti.
 
-Kirjoittaminen standardi virheeseen on tärkeää, koska se auttaa kehittäjiä havaitsemaan ja korjaamaan virheitä ohjelmoinnin aikana. Kun ohjelma suoritetaan, virheet voivat ilmetä ja näkyvät tietokoneen konsolissa. Kirjoittaminen standardi virheeseen tarjoaa kehittäjille tärkeää tietoa virheistä ja auttaa heitä ymmärtämään, mitä osaa koodista tulee tarkastella ja korjata.
-
-# Miten
-## Miten kirjoittaa standardi virheeseen?
-
-Käytä Java-kielen _System.err_ -luokkaa kirjoittaaksesi standardi virheeseen koodisi sisällä seuraavalla tavalla:
-
-```
-Java System.err.println("Tämä on virheilmoitus");
+## Kuinka tehdä se:
+```Java
+System.err.println("Virheilmoitus tulee tähän"); 
 ```
 
-Tämän jälkeen voit suorittaa ohjelman ja se tulostaa virheilmoituksen konsoliin.
+Esimerkiksi, jos haluat tulostaa virheilmoituksen, että luku ei voi olla negatiivinen, voit käyttää seuraavaa koodia:
 
-# Syvenny
-## Syvenny kirjoittamiseen standardi virheeseen
+```Java
+if (luku < 0) {
+    System.err.println("Luku ei voi olla negatiivinen!");
+}
+```
 
-Kirjoittaessa standardi virheeseen, on tärkeää käyttää _try-catch_ -lausekkeita virheiden käsittelyyn ja hallintaan. _System.err_ -luokka tarjoaa myös muita hyödyllisiä toimintoja, kuten _printStackTrace()_, joka auttaa selvittämään, missä kohdassa koodissa virhe on tapahtunut.
+Tämä tulostaisi virheilmoituksen konsoliin ja auttaisi sinua tunnistamaan ja korjaamaan ongelman.
 
-Kun käytät virheen ilmaisua _System.err_, on tärkeää myös muistaa koodin luettavuus ja käytettävyys. On hyvä idea määritellä oma luokka virheiden hallintaa varten, joka voi sisältää erilaisia virheen käsittelymetodeja riippuen ohjelmasta ja sen tarkoituksesta.
+## Syvällinen sukellus:
+Kirjoittaminen standardierroriin on osa ohjelman suoritusympäristöä, joka on vastuussa virheiden ilmoittamisesta. Tämä tapa eroaa standarditulostuksesta, joka näytetään konsolissa. On myös muita tapoja ilmoittaa virheitä, kuten käyttämällä loggausta tai poikkeuksia.
 
-# Katso myös
-- [Java System.err Javadoc](https://docs.oracle.com/javase/7/docs/api/java/lang/System.html#err)
-- [Java Exception handling tutorial](https://www.javatpoint.com/exception-handling-in-java)
-- [Good coding practices in Java](https://www.vogella.com/tutorials/JavaBestPractices/article.html)
+## Katso myös:
+- [Java System-luokka] (https://docs.oracle.com/javase/8/docs/api/java/lang/System.html)
+- [Java Development Kit (JDK)] (https://www.oracle.com/java/technologies/javase-jdk15-downloads.html)

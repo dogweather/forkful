@@ -10,39 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-Starting a new project can be daunting, but with the right programming language, it can be an exciting and rewarding experience. This is where Gleam comes in - a modern, statically typed language designed specifically for building robust and scalable applications.
+# What & Why?
+Starting a new project in programming means creating something new using code. It can be a web app, a mobile app, a game, or anything else you can think of. Programmers start new projects for various reasons, such as building a new and innovative product, learning a new language or technology, or simply for fun.
 
-## How To
-To start a new project in Gleam, you'll need to follow a few simple steps:
+# How to:
+To start a new project in Gleam, follow these simple steps:
 
-1. Install the Gleam compiler by following the instructions on their [website](https://gleam.run/getting-started/).
-2. Create a new project directory and navigate to it.
-3. Initialize your project using the `gleam init` command, which will set up the necessary boilerplate code and folder structure for your project.
-4. Once your project is initialized, you can start writing code in the `src` directory. Gleam follows the familiar module-based system, so you'll need to create a `main.gleam` file and start writing code in it.
+1. Create a new directory for your project: ```mkdir my_project```
+2. Navigate to the project directory: ```cd my_project```
+3. Initialize a new Gleam project: ```gleam init```
+4. This will generate some boilerplate code to get you started, including a ```src``` folder for your source code and a ```tests``` folder for your tests.
+5. Open the ```src/main.gleam``` file and start coding your project.
+6. Once you are done, run ```gleam build``` to compile your project.
+7. You can then run your project by typing ```gleam run```.
+8. That's it! You have successfully started a new project in Gleam.
 
-Here's an example of a simple "Hello, World!" program in Gleam:
+# Deep Dive
+Gleam is a relatively new programming language, created in 2020 by Louis Pilfold and other contributors. It is a compiled, statically-typed language that runs on the Erlang Virtual Machine, making it highly performant and fault-tolerant. Starting a new project in Gleam gives you access to its powerful type system, excellent tooling, and functional programming paradigm.
 
-```Gleam
-import gleam/io
+If you are familiar with other languages like Rust, Elm, or Haskell, you will find some similarities in Gleam's syntax and features. However, Gleam has its unique features, including lightweight processes, pattern matching, and automatic memory management.
 
-fn main() {
-    io.print("Hello, World!")
-}
-```
+In the past, starting a new project in a functional language was not as simple as it is now. With Gleam, you no longer need to worry about complicated setup processes or dependency management. The language's tooling takes care of all that for you, so you can focus on writing code and building your project.
 
-To run this code, you'll need to compile it first using the `gleam build` command, which will generate an executable file. Then, simply run the executable to see the output.
-
-## Deep Dive
-When starting a new project in Gleam, there are a few things to keep in mind:
-
-- Gleam's strong type system ensures that your code is robust and error-free, making debugging much easier.
-- It has a simple and concise syntax, making it easy to pick up for developers of all levels.
-- Gleam follows functional programming principles, which promotes code reuse and maintainability.
-- The language is still in its early stages, so documentation and community support may be limited.
-
-To dive deeper into learning Gleam, check out their [official guide](https://gleam.run/book/getting_started.html) and [GitHub repository](https://github.com/gleam-lang/gleam).
-
-## See Also
-- [The official Gleam website](https://gleam.run/)
-- [Gleam on GitHub](https://github.com/gleam-lang/gleam)
+# See Also
+To learn more about Gleam and its features, check out the official documentation at https://gleam.run/documentation. You can also join the vibrant community on the Gleam Discord server at https://discord.gg/RZexrjq, where you can ask questions, share ideas, and learn from other developers. Happy coding!

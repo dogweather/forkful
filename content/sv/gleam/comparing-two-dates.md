@@ -1,7 +1,7 @@
 ---
-title:                "Jämförelse av två datum"
-html_title:           "Gleam: Jämförelse av två datum"
-simple_title:         "Jämförelse av två datum"
+title:                "Jämföra två datum"
+html_title:           "Gleam: Jämföra två datum"
+simple_title:         "Jämföra två datum"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Dates and Times"
@@ -10,44 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
+Ett viktigt koncept inom programmering är jämförelse av datum. Det innebär att man undersöker om ett datum är tidigare, senare eller samma som ett annat datum. Detta är viktigt för att kunna hantera och sortera datumdata på ett effektivt sätt i program.
 
-Att jämföra två olika datum kan vara användbart i många olika situationer, både inom professionell programmering och för personligt bruk. Det kan hjälpa dig att hålla koll på tidsintervaller, kontrollera giltigheten av ett datum eller utföra olika beräkningar baserat på datum.
-
-## Så här gör du
-
+## Så här:
+Enkelt uttryckt så jämför man två datum genom att använda villkorsuttryck som if-satser, som kollar om ett datum är mindre än, större än eller lika med det andra datumet. 
 ```Gleam
-import gleam/time
-
-let today = time.now()
-
-let tomorrow = today + time.Day
-let yesterday = today - time.Day
-
-// Jämföra två datum för likhet
-today == tomorrow
-// Output: false
-
-// Jämföra två datum för ordning, första datumet först
-yesterday < today
-// Output: true
-
-// Beräkna antalet dagar mellan två datum
-let diff = tomorrow - yesterday
-// Output: 2
-
-// Kontrollera giltigheten av ett datum
-let validDate = time.from_days(2021, 4, 31)
-// Output: false, eftersom april 2021 inte har 31 dagar
+if date1 < date2 {
+  print("date1 är tidigare än date2")
+} else if date1 > date2 {
+  print("date1 är senare än date2")
+} else {
+  print("date1 och date2 är samma datum")
+}
 ```
 
-## Djupdykning
+En annan möjlighet är att använda inbyggda funktioner för datumjämförelse, som till exempel `compare_dates()` eller `order_dates()`. Dessa funktioner returnerar en siffra som indikerar om ett datum är före, efter eller samma som det andra datumet.
 
-Det finns flera olika metoder för att jämföra datum i Gleam. En av de mest användbara är att använda operatorerna `==` (lika med) och `<` (mindre än). Dessa kan användas för att jämföra datum på olika sätt som visas i exemplet ovan.
+```Gleam
+let comparison = compare_dates(date1, date2)
+if comparison == -1 {
+  print("date1 är tidigare än date2")
+} else if comparison == 1 {
+  print("date1 är senare än date2")
+} else {
+  print("date1 och date2 är samma datum")
+}
+```
 
-Gleam erbjuder också funktioner som `difference_between` för att beräkna antalet enheter (t.ex. dagar eller månader) mellan två datum och `is_valid_date` för att kontrollera giltigheten av ett angivet datum.
+## Djupdykning:
+Historiskt sett har det funnits olika sätt att implementera jämförelse av datum, men oftast baserat på hur många dagar som gått sedan ett urdatum. Med moderna programmeringsspråk som Gleam finns det inbyggda funktioner och bibliotek som gör detta enklare.
 
-## Se även
+Det finns även olika format för datumrepresentation, såsom Unix-timestamps eller ISO-standarder, vilket kan påverka hur jämförelser görs.
 
-- Official Gleam documentation for the `time` module: https://gleam.run/documentation/stdlib/time.html
-- Date comparison in other programming languages: https://www.exploringbinary.com/date-comparisons-in-different-programming-languages/
+Alternativ till Gleam för datumjämförelse inkluderar andra programmeringsspråk som Rust och Elixir.
+
+## Se även:
+- Officiell dokumentation för Gleam: https://gleam.run/
+- Samhällsdiskussioner om Gleam: https://elixirforum.com/t/gleam-a-smooth-new-language-for-erlang-vm/29080
+- Officiell dokumentation för andra programmeringsspråk: https://www.rust-lang.org/ och https://elixir-lang.org/

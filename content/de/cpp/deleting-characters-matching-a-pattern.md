@@ -1,7 +1,7 @@
 ---
-title:                "Beseitigung von Zeichen, die einem Muster entsprechen"
-html_title:           "C++: Beseitigung von Zeichen, die einem Muster entsprechen"
-simple_title:         "Beseitigung von Zeichen, die einem Muster entsprechen"
+title:                "Entfernen von Zeichen, die einem Muster entsprechen"
+html_title:           "C++: Entfernen von Zeichen, die einem Muster entsprechen"
+simple_title:         "Entfernen von Zeichen, die einem Muster entsprechen"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -10,28 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was & Warum?
+Das Löschen von Zeichen, die zu einem bestimmten Muster passen, ist eine häufig verwendete Programmieraufgabe, bei der Zeichenfolgen manipuliert werden, um bestimmte Muster zu entfernen. Programmierer tun dies, um Texte zu bereinigen oder um Informationen zu extrahieren.
 
-Es kann Situationen geben, in denen es notwendig ist, bestimmte Zeichen aus Strings oder Textdateien zu entfernen. Dies kann zum Beispiel erforderlich sein, um unerwünschte Sonderzeichen oder Leerzeichen zu löschen, um die String-Manipulation zu erleichtern.
-
-## Wie geht man vor?
-
-Um Zeichen zu löschen, die einem bestimmten Muster entsprechen, können wir die Funktion `std::remove_if` aus der Standardbibliothek `<algorithm>` verwenden. Sie akzeptiert einen Iterator auf den Anfang und das Ende des Bereichs, in dem die Zeichen gelöscht werden sollen, sowie ein Prädikat, das das Muster definiert. Alternativ können wir auch eine For-Schleife verwenden und jedes Zeichen im String überprüfen, ob es dem Muster entspricht und es dann löschen.
-
+## Wie geht's?
+Es gibt verschiedene Möglichkeiten, Zeichenfolgen in C++ zu manipulieren, um Zeichen zu löschen, die einem bestimmten Muster entsprechen. Einfacher ausgedrückt, lassen sich Zeichenfolgen mit der `erase()` Funktion bearbeiten. Hier ist ein Beispiel:
 ```C++
-std::string text = "Dies ist ein Text mit einigen Satzzeichen!";
-text.erase(std::remove_if(text.begin(), text.end(), [](char c){ return c == ',' || c == '!'; }), text.end());
-// text enthält nun "Dies ist ein Text mit einigen Satzzeichen"
+std::string text = "Hallo Welt";
+text.erase(0, 6);
+std::cout << text;
 ```
+Das oben gezeigte Beispiel löscht die ersten sechs Zeichen in der Zeichenfolge `text` und gibt "Welt" aus. Der erste Parameter gibt den Index an, an dem das Löschen beginnen soll, und der zweite Parameter gibt die Anzahl der zu löschenden Zeichen an.
 
-## Tiefer eintauchen
+Es gibt auch die Möglichkeit, eine Schleife zu verwenden, um durch die Zeichenfolge zu iterieren und jedes Zeichen zu überprüfen, ob es dem gesuchten Muster entspricht. Wenn dies der Fall ist, kann das Zeichen gelöscht werden. Hier ist ein Beispiel:
+```C++
+std::string text = "Hallo Welt";
+for (unsigned int i = 0; i < text.length(); i++) {
+  if (text[i] == 'e') {
+    text.erase(i, 1);
+  }
+}
+std::cout << text;
+```
+Dieses Beispiel löscht alle "e"s in der Zeichenfolge `text` und gibt "Hallo Wlt" aus.
 
-Die Funktion `std::remove_if` arbeitet nach dem Prinzip "Zurückgeben, was behalten werden soll". Es verschiebt alle Elemente im Bereich, die dem Prädikat nicht entsprechen, an den Anfang und gibt einen Iterator auf das erste Element nach dem neuen Ende zurück. Das Endresultat ist also ein Bereich, der die gewünschten Zeichen enthält, gefolgt von Platzhaltern für die entfernten Zeichen. Diese Platzhalter können dann mit der Funktion `resize` des `std::string`-Objekts entfernt werden.
+## Tief tauchen
+Das Löschen von Zeichen in einer Zeichenfolge ist eine gängige Aufgabe in der Programmierung und es gibt viele Möglichkeiten, dies zu tun. Beispielsweise können Reguläre Ausdrücke verwendet werden, um komplexe Muster zu erkennen und zu löschen. Auch gibt es Funktionen wie `replace()` und `substr()`, die zur Manipulation von Zeichenfolgen verwendet werden können.
 
-Um weitere Informationen darüber zu erfahren, wie die Funktion `remove_if` funktioniert und wie man sie effektiv einsetzen kann, empfehlen wir die offizielle Dokumentation der C++ Standardbibliothek.
+Bei der Implementierung ist es wichtig, darauf zu achten, dass die Anzahl der Zeichen in der Zeichenfolge nach dem Löschen möglicherweise nicht mehr mit dem ursprünglichen Wert übereinstimmt. Daher sollte die Länge der Zeichenfolge nach dem Löschen überprüft werden.
 
 ## Siehe auch
-
-- [std::remove_if Dokumentation](https://en.cppreference.com/w/cpp/algorithm/remove)
-- [std::string Dokumentation](https://en.cppreference.com/w/cpp/string/basic_string)
-- [std::remove_if Beispielcode](https://www.geeksforgeeks.org/remove-characters-from-a-string-that-appear-consecutively/)
+* [C++ Referenz - `erase()`](https://en.cppreference.com/w/cpp/string/basic_string/erase)
+* [C++ Referenz - `replace()`](https://en.cppreference.com/w/cpp/string/basic_string/replace)
+* [C++ Referenz - `substr()`](https://en.cppreference.com/w/cpp/string/basic_string/substr)
+* [Reguläre Ausdrücke in C++](https://www.regular-expressions.info/cpp.html)

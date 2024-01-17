@@ -10,38 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué trabajar con JSON en Fish Shell?
+# ¿Qué es y por qué trabajamos con JSON en Fish Shell?
 
-Si eres un programador, es muy probable que en algún momento tengas que lidiar con datos en formato JSON. Este formato es muy utilizado para el intercambio de información en aplicaciones web, por lo que es importante saber cómo manejarlo adecuadamente en Fish Shell. A continuación, te explicaremos por qué y cómo trabajar con JSON en esta poderosa shell.
+JSON (JavaScript Object Notation) es un formato de datos ligero y de texto que se utiliza en el intercambio de información entre aplicaciones. Los programadores trabajan con JSON porque es fácil de leer y escribir, y es compatible con muchos lenguajes de programación.
 
-## Cómo hacerlo
+# Cómo hacerlo:
 
-La manera más sencilla de trabajar con JSON en Fish Shell es utilizando el comando `jq`. Este es un poderoso programa que te permite manipular y filtrar datos en formato JSON. A continuación, te mostramos algunos ejemplos de cómo utilizarlo:
+Para trabajar con JSON en Fish Shell, primero debes asegurarte de tener instalado el plugin `json` utilizando el administrador de paquetes `fisher`.
 
-```Fish Shell
-# Obtener el valor de una clave específica en un objeto JSON
-jq '.nombre_clave' archivo.json
-
-# Filtrar un arreglo de objetos por una clave específica
-jq '.[] | select(.nombre_clave == "valor_buscado")' archivo.json
-
-# Convertir JSON a un formato legible
-jq '.' archivo.json
+```
+fisher install json
 ```
 
-## Deep Dive
+A continuación, puedes utilizar los comandos de la librería `jq` para procesar y manipular datos JSON. Por ejemplo, para obtener los valores de una clave específica en un archivo JSON, puedes usar el comando `json get`.
 
-El comando `jq` cuenta con una amplia gama de opciones y funcionalidades que te permitirán realizar operaciones avanzadas con datos en formato JSON. Aquí te mencionamos algunos aspectos importantes a tener en cuenta al trabajar con `jq`:
+```
+json get mi_archivo.json .clave
+```
 
-- Utiliza la opción `-r` para obtener resultados en formato de texto plano, en lugar de JSON.
-- Utiliza la opción `-c` para obtener los resultados en un formato compacto, sin saltos de línea.
-- Puedes utilizar variables y condicionales en los filtros de `jq`, lo que te permitirá realizar operaciones más complejas.
-- Puedes utilizar el comando `foreach` para iterar sobre un arreglo de objetos en un archivo JSON.
+Esto devolverá el valor de la clave `clave` en el archivo `mi_archivo.json`.
 
-Con un poco de práctica, podrás realizar operaciones avanzadas con datos en formato JSON utilizando `jq` en Fish Shell.
+# Profundizando:
 
-## Ver también
+JSON fue creado en 2001 por Douglas Crockford y se ha convertido en un formato de datos muy popular en la programación web. Alternativas a JSON incluyen el formato XML, pero JSON es ampliamente utilizado debido a su simplicidad y facilidad de uso.
 
-- Sitio oficial de `jq`: https://stedolan.github.io/jq/
-- Documentación de Fish Shell: https://fishshell.com/docs/current/
-- Tutorial de JSON en Codecademy: https://www.codecademy.com/learn/learn-json
+Fish Shell utiliza la librería `jq` para trabajar con JSON, que proporciona una gran cantidad de funciones y herramientas para procesar y manipular datos JSON en línea de comandos. Puedes encontrar más información sobre `jq` en su sitio web oficial.
+
+# Ver también:
+
+- Página oficial de `jq`: https://stedolan.github.io/jq/
+- Página oficial de Fish Shell: https://fishshell.com/

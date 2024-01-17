@@ -1,7 +1,7 @@
 ---
-title:                "Tarkistetaan, onko hakemistoa olemassa"
-html_title:           "Arduino: Tarkistetaan, onko hakemistoa olemassa"
-simple_title:         "Tarkistetaan, onko hakemistoa olemassa"
+title:                "Tarkastetaan, onko kansio olemassa"
+html_title:           "Arduino: Tarkastetaan, onko kansio olemassa"
+simple_title:         "Tarkastetaan, onko kansio olemassa"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Files and I/O"
@@ -10,48 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mikä & Miksi?
+Tiedoston tarkistaminen, onko kansio olemassa, on koodin käyttöä jolla tarkistetaan, onko annetun polun kansio olemassa. Tätä tehdään yleensä ohjelmassa ennen kansioon tallentamista tai lukemista, jotta vältyttäisiin virheiltä.
 
-Olet ehkä törmännyt tilanteeseen, jossa haluat tarkistaa, onko tietyssä hakemistossa olemassa olevia tiedostoja tai kansioita. Tämä on hyödyllistä ennen esimerkiksi tiedoston avaamista ja käsittelyä, jotta vältetään virheet ja ohjelma toimii sujuvasti. Jatkossa kerromme, miten tätä tarkistusta voidaan toteuttaa Arduino-ohjelmoinnissa.
+## Kuinka:
+Alla esimerkki Arduino-koodista, jolla voidaan tarkistaa mikäli kansio "myFolder" on olemassa. Koodi tulostaa serial monitoriin "Kansio on olemassa" tai "Kansiota ei löytynyt", riippuen olemassaolosta.
 
-## Miten tehdä
-
-```Arduino
-#include <SD.h>
-
-void setup() {
-  // Alustetaan SD-kortin tiedostonhallinta
-  if (!SD.begin(10)) {
-    // Tulostetaan viesti, jos SD-korttia ei löydetty
-    Serial.println("SD-korttia ei löydy");
-    while (1);
-  }
-
-  // Tarkistetaan, onko hakemisto olemassa
-  if (!SD.exists("/hakemisto/")) {
-    // Tulostetaan viesti, jos hakemistoa ei löydy
-    Serial.println("Hakemistoa ei löydy");
-    // Tehdään halutut toimenpiteet, jos hakemistoa ei löytynyt
+```
+Arduino void setup() {
+  Serial.begin(9600); //Asetetaan serial monitorin nopeus
+  if (SD.exists("myFolder")) { //Tarkistetaan onko kansio olemassa
+    Serial.println("Kansio on olemassa");
   } else {
-    // Tehdään halutut toimenpiteet, jos hakemisto löytyi
+    Serial.println("Kansiota ei löytynyt");
   }
-}
-
-void loop() {
-
 }
 ```
 
-Tässä esimerkissä käytämme SD-kortin tiedostonhallinta-kirjastoa (SD.h). Aluksi alustamme SD-kortin `SD.begin()` ja tarkistamme, onko korttia löydetty `!SD.begin()`. Jos korttia ei löydy, tulostetaan kyseinen viesti ja ohjelma pysähtyy `while`-silmukkaan. Seuraavaksi tarkistamme, onko hakemisto olemassa `SD.exists("/hakemisto/")`. Jos hakemistoa ei löydy, tulostetaan viesti ja voidaan tehdä halutut toimenpiteet, kuten luoda uusi hakemisto `SD.mkdir()` tai ladata tiedosto `SD.open()` ja tallentaa se hakemistoon.
+## Syväsukellus:
+Tiedoston tarkistaminen on tärkeä osa koodin suorittamista, jotta vältyttäisiin esimerkiksi tallennus- tai lukuvirheiltä. Tämä on osa koodia, jolla varmistetaan, että ohjelma toimii oikein ja virheiltä vältytään.
 
-## Syvempi sukellus
+Erilaisia tapoja tarkistaa tiedoston olemassaolo on olemassa, joista yksi on SD.exists()-funktio, joka tarkistaa onko kansio olemassa SD-kortilla. Toinen vaihtoehto on käyttää File-kirjaston open()-funktiota, joka yrittää avata kansioon liittyvää tiedostoa. Jos tiedostoa ei löydy, kansio on todennäköisesti olemassa.
 
-Tarkasteltaessa `SD.exists()`-funktiota tarkemmin, huomaamme sen palauttavan `true` tai `false`-arvon riippuen siitä, löytyykö hakemisto vai ei. Funktio tarkistaa, onko tiedoston koko nolla tavua vai ei. Jos tiedosto on tyhjä, funktio palauttaa `false`. Muissa tapauksissa se palauttaa `true`, vaikka hakemistossa ei olisi tiedostoja tai alihakemistoja.
-
-Tämä tarkistus on hyödyllinen myös muissa tilanteissa, kuten tiedostojen kopiointiin tai kansioiden läpikäyntiin.
-
-## Katso myös
-
-- SD-Kirjastodokumentaatio: https://www.arduino.cc/en/reference/SD
-- SD-kirjaston esimerkit: https://www.arduino.cc/en/Tutorial/LibraryExamples/SD
-- SD-tiedostojärjestelmä: https://www.arduino.cc/en/Reference/FileExtensionSD
+## Katso myös:
+- SD-kortin käyttö Arduino-ympäristössä: https://www.arduino.cc/en/Reference/SD
+- File-kirjasto: https://www.arduino.cc/en/Reference/File
+- SD.exists()-funktio: https://www.arduino.cc/en/Reference/SDexists
+- File.open()-funktio: https://www.arduino.cc/en/Reference/FileOpen

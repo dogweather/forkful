@@ -1,7 +1,7 @@
 ---
-title:                "Att skapa en tillfällig fil"
-html_title:           "Javascript: Att skapa en tillfällig fil"
-simple_title:         "Att skapa en tillfällig fil"
+title:                "Skapa en tillfällig fil"
+html_title:           "Javascript: Skapa en tillfällig fil"
+simple_title:         "Skapa en tillfällig fil"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Files and I/O"
@@ -10,61 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
-Att skapa en temporär fil är ett användbart verktyg när man behöver lagra data temporärt eller ändra något tillfälligt utan att påverka de befintliga filerna. Det är också ett bra sätt att skydda känslig information från oönskade ändringar.
+## Vad & varför?
 
-## Hur Man Gör
-Att skapa en temporär fil i Javascript är relativt enkelt med hjälp av inbyggda funktioner. Nedan följer ett exempel på hur man kan skapa och skriva till en temporär fil.
+Skapandet av en temporär fil i Javascript refererar till att skapa en kortlivad fil som endast finns för en begränsad tidsperiod. Detta kan användas av programmerare för att temporärt lagra data eller utföra en specifik funktion inom ett program.
 
-```Javascript
-// Importera nödvändiga moduler
-const fs = require("fs");
-const path = require("path");
-const os = require("os");
+Detta koncept är vanligt inom datorprogrammering för att hantera data på ett effektivt sätt och för att undvika eventuella permanenta förändringar som kan orsaka problem i framtiden.
 
-// Skapa en temporär fil med ett unikt namn
-const tempFilePath = path.join(os.tmpdir(), "tempfile.txt");
+## Hur man:
 
-// Skriv data till filen
-fs.writeFileSync(tempFilePath, "Detta är en temporär fil!");
-
-// Läs innehållet från filen och skriv ut det till konsolen
-const fileContent = fs.readFileSync(tempFilePath, "utf8");
-console.log(fileContent);
-```
-Output:
-```
-Detta är en temporär fil!
-```
-Som du kan se använde vi oss av modulen "fs" för att skapa, skriva och läsa från filen. Vi använder också "path" för att skapa sökvägen till vår temporära fil och "os" för att hitta den temporära mappen på vårt system. 
-
-## Djupdykning
-När du skapar en temporär fil så kan du också ange en specifik tid som filen ska vara giltig. Detta kan vara användbart om du bara behöver filen för en viss period. För att göra detta använder du dig av funktionen "mkstemp" från modulen "fs". Nedan är ett exempel på hur man kan använda denna funktion.
+För att skapa en temporär fil i Javascript kan du använda inbyggda funktioner som `fs.mkdir()`och `fs.mkdtemp()`i Node.js. Här är ett exempel på hur du kan använda dessa funktioner för att skapa en temporär katalog och fil:
 
 ```Javascript
-// Importera nödvändiga moduler
-const fs = require("fs");
-const path = require("path");
+const fs = require('fs');
 
-// Skapa en temporär fil som är giltig i 24 timmar
-fs.mkstemp(path.join(os.tmpdir(), "tempfile.txt"), 24 * 60 * 60, (err, filename) => {
+// Skapar en temporär katalog
+fs.mkdtemp('temp-', (err, folder) => {
     if (err) throw err;
 
-    // Skriv data till filen
-    fs.writeFileSync(filename, "Detta är en temporär fil som är giltig i 24 timmar!");
-    
-    // Läs innehållet från filen och skriv ut det till konsolen
-    const fileContent = fs.readFileSync(filename, "utf8");
-    console.log(fileContent);
+    // Skapar en temporär fil inom katalogen
+    fs.writeFile(`${folder}/tempfile.js`, 'console.log("Det här är en temporär fil!")', function (err) {
+        if (err) throw err;
+
+        console.log('Temporär fil skapad!');
+    });
 });
 ```
-Output:
-```
-Detta är en temporär fil som är giltig i 24 timmar!
-```
 
-Det är också värt att nämna att det finns andra sätt att skapa temporära filer i Javascript, som till exempel att använda sig av modulen "tmp" eller skapa en temporär buffer direkt i minnet. Välj den metod som passar bäst för dina behov.
+Efter att ha kört detta kodexempel kommer en temporär fil med namnet "tempfile.js" att skapas inuti en temporär katalog som har prefixet "temp-". Du kan sedan använda denna fil för att temporärt lagra information eller utföra en specifik uppgift.
 
-## Se Även
-- [Node.js dokumentation om fs modulen](https://nodejs.org/api/fs.html)
-- [En guide till att skapa temporära filer i Javascript](https://masteringjs.io/tutorials/node/tmp)
+## Djupdykning:
+
+Att skapa temporära filer är ett vanligt koncept inom datorprogrammering och har funnits sedan tidigare språk som C och Unix. Det finns också alternativ för att skapa temporära filer i Javascript, såsom att använda en databashanterare som SQLite eller lagra data i minnet istället för på en fysisk fil.
+
+När en temporär fil skapas i Javascript, skapas den i det temporära systemets specifika mapp. Detta kan vara `/tmp`på Linux-system eller `C:\Users\[ditt användarnamn]\AppData\Local\Temp`på Windows.
+
+## Se även:
+
+- [Node.js dokumentation om `fs.mkdir()`](https://nodejs.org/api/fs.html#fs_fs_mkdir_path_options_callback)
+- [Node.js dokumentation om `fs.mkdtemp()`](https://nodejs.org/api/fs.html#fs_fs_mkdtemp_prefix_options_callback)
+- [W3Schools tutorial om Node.js `fs` modul](https://www.w3schools.com/nodejs/nodejs_filesystem.asp)

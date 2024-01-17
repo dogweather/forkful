@@ -10,73 +10,64 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-Sending an HTTP request with basic authentication is necessary for accessing resources that require user authentication, such as a website or API. This ensures a secure connection and allows for proper identification of the user.
+## What & Why?
 
-## How To
-To send an HTTP request with basic authentication in C++, we will be using the [CURL library](https://curl.haxx.se/libcurl/). This library allows us to make requests to URLs and supports different authentication methods including basic authentication.
+Sending an HTTP request with basic authentication is a way for programmers to securely access information from a web server. It involves adding a username and password to the request header, allowing the server to verify the identity of the sender. This is important for protecting sensitive information and ensuring that only authorized users have access.
 
-First, we need to include the CURL library in our code:
+## How to:
+
+To send an HTTP request with basic authentication in C++, you can use the CPPREST library or the libcurl library. First, include the necessary headers for the library you chose. Then, create a client object and set the credentials using the `set_credentials()` function. Finally, make the request with the `request()` function and handle the response accordingly.
+
 ```C++
+//Using the CPPREST library:
+#include <cpprest/http_client.h>
+#include <cpprest/basic_utils.h>
+
+//Create client object
+web::http::client::http_client client("https://example.com");
+
+//Set credentials
+client.set_credentials(web::credentials(username, password));
+
+//Make request
+web::http::http_response response = client.request(web::http::methods::GET).get();
+
+//Using the libcurl library:
 #include <curl/curl.h>
-```
 
-Next, we will set up our CURL object and specify the URL we want to make a request to:
-```C++
-// Initialize CURL object
-CURL *curl;
-curl = curl_easy_init();
+//Create client object
+CURL* curl = curl_easy_init();
 
-// Specify URL
-char url[] = "https://www.example.com";
-```
+//Set credentials
+curl_easy_setopt(curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
+curl_easy_setopt(curl, CURLOPT_USERPWD, "username:password");
 
-Now, we need to specify the credentials for basic authentication. This includes the username and password encoded in Base64 format. We can do this by creating a string with the following format: username:password, and then using the [Base64 encoding function](https://www.base64encode.org/) to encode the string.
-```C++
-// Set credentials
-char credentials[] = "username:password"; // replace with actual credentials
-char encoded_credentials[] = "encoded_credentials_here"; // replace with encoded credentials
-```
-
-Next, we need to set the appropriate HTTP headers for basic authentication:
-```C++
-// Set HTTP headers
-struct curl_slist *headers = NULL;
-headers = curl_slist_append(headers, "Content-Type: application/json");
-headers = curl_slist_append(headers, "Authorization: Basic " + std::string(encoded_credentials));
-```
-
-Now, we can make the actual HTTP request using the `curl_easy_setopt()` function:
-```C++
-// Make HTTP request
-curl_easy_setopt(curl, CURLOPT_URL, url);
-curl_easy_setopt(curl, CURLOPT_CUSTOMREQUEST, "GET");
-curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
-```
-
-Finally, we can execute the request and print the response:
-```C++
-// Execute request
+//Make request
 CURLcode res = curl_easy_perform(curl);
 
-// Check for errors
-if(res != CURLE_OK) {
-    fprintf(stderr, "Curl error: %s\n", curl_easy_strerror(res));
+//Handle response
+if(res == CURLE_OK) {
+  long response_code;
+  curl_easy_getinfo(curl, CURLINFO_RESPONSE_CODE, &response_code);
+  //Handle response code
 }
 
-// Print response
-printf("%s\n", response.c_str());
+//Clean up
+curl_easy_cleanup(curl); 
 ```
 
-That's it! You have successfully sent an HTTP request with basic authentication in C++.
-
 ## Deep Dive
-In the above example, we used the `CURLOPT_CUSTOMREQUEST` option with the value of "GET". This tells CURL to make a GET request to the specified URL. However, depending on the API or website you are accessing, you may need to use a different HTTP method such as POST or PUT. You can change the value of `CURLOPT_CUSTOMREQUEST` accordingly.
 
-Additionally, you may need to include other HTTP headers in your request, depending on the requirements of the API or website. You can add these headers using the `curl_slist_append()` function, as shown in the example.
+Sending HTTP requests with basic authentication has been a commonly used method for accessing web resources since the early days of the internet. However, it is not the most secure option available and should be used carefully, especially when working with sensitive data.
 
-Also, remember that for basic authentication, your credentials need to be encoded in Base64 format. You can use any online tool or function to encode your credentials before setting them in the `Authorization` header.
+There are other types of authentication, such as OAuth and API keys, which may be more suitable depending on the specific use case. These alternatives can offer additional levels of security and flexibility, but may also require more setup and configuration.
+
+In terms of implementation, the HTTP header for basic authentication consists of the keyword "Basic" followed by a base64-encoded string of the username and password separated by a colon. This means that the credentials are not encrypted, making it important to only use this method over a secure connection (HTTPS).
 
 ## See Also
-- [CURL library documentation](https://curl.haxx.se/docs/)
-- [Base64 encoding function](https://www.base64encode.org/)
+
+To learn more about HTTP requests and how to implement them in C++, check out the following resources:
+
+- [CPPREST library documentation](https://github.com/microsoft/cpprestsdk/wiki)
+- [libcurl documentation](https://curl.haxx.se/libcurl/)
+- [HTTP Authentication: Basic and Digest Access Authentication](https://tools.ietf.org/html/rfc7235#section-2.1) (RFC 7235)

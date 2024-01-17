@@ -1,7 +1,7 @@
 ---
-title:                "Envio de uma solicitação http com autenticação básica"
-html_title:           "Elixir: Envio de uma solicitação http com autenticação básica"
-simple_title:         "Envio de uma solicitação http com autenticação básica"
+title:                "Enviando uma solicitação http com autenticação básica"
+html_title:           "Elixir: Enviando uma solicitação http com autenticação básica"
+simple_title:         "Enviando uma solicitação http com autenticação básica"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "HTML and the Web"
@@ -10,44 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+## O que & Por que?
 
-Neste artigo, vamos discutir a importância de enviar uma solicitação HTTP com autenticação básica. Especificamente, veremos como isso pode ser útil para acessar recursos protegidos em APIs e outras aplicações que requerem autenticação.
+Enviar uma solicitação HTTP com autenticação básica é o ato de incluir um cabeçalho de autorização em uma solicitação HTTP para acessar um determinado recurso protegido. Os programadores geralmente fazem isso para acessar APIs ou páginas da web que requerem autenticação.
 
-## Como Fazer
+## Como fazer:
 
-Para enviar uma solicitação HTTP com autenticação básica em Elixir, usamos a biblioteca HTTPoison. Primeiro, precisamos adicionar a dependência em nosso `mix.exs`:
-
-```elixir
-defp deps do
-  [{:httpoison, "~> 1.6"}]
-end
+```Elixir
+  httpc.request(:get, "https://meusite.com/recurso", [
+    {:basic_auth, {"usuario", "senha"}}
+  ])
 ```
 
-Em seguida, instale as dependências com o comando `mix deps.get`. Depois disso, podemos utilizar a função `HTTPoison.get/4` para enviar uma solicitação GET com autenticação básica. Por exemplo, se quisermos acessar um recurso protegido em uma API, primeiro precisamos codificar nossas credenciais em Base64:
+Saída de exemplo:
 
-```elixir
-auth_string = Base.encode("username:password")
+```
+{:ok, %HTTPoison.Response{
+  status_code: 200,
+  body: "Dados do recurso protegido"
+}}
 ```
 
-Em seguida, podemos enviar a solicitação utilizando a função `HTTPoison.get/4`:
+## Mergulho Profundo:
 
-```elixir
-url = "<API_URL>"
-headers = [{"Authorization", "Basic " <> auth_string}]
-response = HTTPoison.get(url, headers, [], [timeout: 5000])
-```
+Este método de autenticação foi introduzido no HTTP 1.0 como uma forma de autenticação básica através do uso de um cabeçalho de autorização. Existem outras opções de autenticação, como a autenticação digest, que é mais segura, mas também mais complexa de implementar.
 
-Com isso, nossa solicitação será enviada com as credenciais codificadas e podemos acessar o recurso protegido.
+Ao enviar uma solicitação com autenticação básica, a informação de usuário e senha é base64-codificada e incluída no cabeçalho de autorização. Isso torna a comunicação menos segura, pois é fácil de decodificar e potencialmente expõe as credenciais do usuário.
 
-## Profundando o Assunto
+## Veja também:
 
-A autenticação básica é um método simples de autenticação em que as credenciais são codificadas em Base64 e enviadas com a solicitação HTTP. No entanto, é importante notar que essa forma de autenticação não é considerada segura, pois as credenciais são enviadas em texto simples e podem ser facilmente interceptadas.
+[Documentação oficial do Elixir sobre o módulo HTTPc](https://hexdocs.pm/elixir/HTTPc.html)
 
-Além disso, para acessar recursos protegidos em APIs, muitas vezes é necessário gerar um token de acesso que é enviado em vez das credenciais. Isso é feito para evitar o envio contínuo das credenciais em cada solicitação. Portanto, é sempre importante verificar a documentação da API para determinar o método de autenticação adequado.
-
-## Veja Também
-
-- [HTTPoison documentação](https://hexdocs.pm/httpoison/)
-- [API do Elixir - Autenticação Básica](https://hexdocs.pm/elixir/1.12/HTTPoison.BearerAuth.html)
-- [Artigo sobre autenticação em APIs](https://nandovieira.com.br/usando-o-httpoison-com-autenticacao-em-apis)
+[Artigo sobre autenticação HTTP básica na prática](https://www.apollographql.com/blog/authenticating-with-elixir/)

@@ -10,45 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co to jest i dlaczego?
 
-Konwersja ciągu znaków na małe litery jest niezbędna w wielu sytuacjach w programowaniu. Może to pomóc w porównywaniu tekstów, filtrowaniu danych i wielu innych zastosowaniach.
+Konwersja tekstu na małe litery jest procesem zmiany wszystkich liter w ciągu znaków na ich niskie odpowiedniki. Programiści często wykonują tę operację, ponieważ zapewnia to jednolitą formę danych, ułatwiając porównywanie i przetwarzanie tekstu.
 
-## Jak to zrobić
+## Jak to zrobić:
 
-Konwersja ciągu znaków na małe litery jest bardzo prosta w języku C. Do jej wykonania należy użyć funkcji `tolower()` z biblioteki `ctype.h`. Poniżej znajduje się przykładowy kod:
-
-```C
+``` C
 #include <stdio.h>
 #include <ctype.h>
+#include <string.h>
 
-int main(void)
-{
-    char string[] = "PRZYKŁADOWY TEKST";
-    int i = 0;
+int main() {
+   char str[] = "PRZYKLADOWY TEKST";
+   int i = 0;
 
-    while (string[i])
-    {
-        putchar(tolower(string[i]));
-        i++;
-    }
+   while(str[i]) {
+      putchar(tolower(str[i]));
+      i++;
+   }
 
-    return 0;
+   return 0;
 }
 ```
 
-Wynikiem działania programu będzie: `przykładowy tekst`.
+Output:
+```
+przykladowy tekst
+```
 
-## Głębszy wywiad
+## Głębsza analiza:
 
-Funkcja `tolower()` konwertuje pojedynczy znak na małą literę. Jest ona zdefiniowana w standardowej bibliotece `ctype.h` i przyjmuje jeden parametr typu `int`, który jest kodem ASCII znaku. Jeśli podamy jej znak, który jest już małą literą, zostanie on zwrócony bez zmiany. Jeśli natomiast podamy znak, który jest wielką literą, zostanie on przekonwertowany na małą literę.
+1. Kontekst historyczny:
+Konwersja tekstu na małe litery ma swoje korzenie w dawnych systemach komputerowych, które używały tylko dużych liter. Konieczność znormalizowania danych doprowadziła do rozwoju funkcji konwersji.
 
-Warto również pamiętać, że funkcja `tolower()` może działać tylko na pojedynczych znakach. Dlatego, jeśli chcemy skonwertować cały ciąg znaków, musimy użyć jej w pętli, jak w przykładzie powyżej.
+2. Alternatywy:
+Poza funkcją `tolower()`, istnieje również funkcja `strlwr()`, która wykonuje tę samą operację, ale dla całego ciągu znaków. Można także użyć pętli `for` lub funkcji `tolower()` z biblioteki `string.h`.
 
-## Zobacz również
+3. Szczegóły implementacji:
+W C, funkcja `tolower()` jest częścią biblioteki `ctype.h`, która dostarcza zestaw funkcji do analizy i manipulacji danych tekstowych. Funkcja ta wykorzystuje kod ASCII każdego znaku, aby określić jego niski odpowiednik.
 
-- Dokumentacja funkcji `tolower()` w języku C: [https://en.cppreference.com/w/c/string/byte/tolower](https://en.cppreference.com/w/c/string/byte/tolower)
+## Zobacz także:
 
-- Przykładowe zadania z wykorzystaniem konwersji na małe litery: [https://www.w3resource.com/c-programming-exercises/](https://www.w3resource.com/c-programming-exercises/)
-
-- Rozbudowane informacje o bibliotece `ctype.h`: [https://www.tutorialspoint.com/c_standard_library/ctype_h.htm](https://www.tutorialspoint.com/c_standard_library/ctype_h.htm)
+- [Funkcja `tolower()` w C](https://www.tutorialspoint.com/c_standard_library/c_function_tolower.htm)
+- [Inne funkcje z biblioteki `ctype.h`](https://www.geeksforgeeks.org/ctype-h-header-file-c/)

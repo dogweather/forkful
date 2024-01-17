@@ -1,7 +1,7 @@
 ---
-title:                "Descargar una página web"
-html_title:           "C#: Descargar una página web"
-simple_title:         "Descargar una página web"
+title:                "Descargar una página web."
+html_title:           "C#: Descargar una página web."
+simple_title:         "Descargar una página web."
 programming_language: "C#"
 category:             "C#"
 tag:                  "HTML and the Web"
@@ -10,29 +10,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué?
+# ¿Qué y por qué?
 
-Descargar una página web puede tener múltiples motivos, desde querer guardar una copia local para acceso sin conexión hasta para realizar análisis de datos.
+Descargar una página web es el proceso de obtener el código HTML de una página web y guardarlo en tu computadora. Los programadores hacen esto para acceder a la información de la página y usarla en sus aplicaciones.
 
-## Cómo hacerlo
-
-Para descargar una página web en C#, puedes utilizar la clase WebClient. A continuación, un ejemplo de cómo descargar una página en formato HTML y mostrar su contenido en la consola:
+# Cómo hacerlo:
 
 ```C#
-WebClient client = new WebClient();
-string htmlCode = client.DownloadString("https://www.example.com");
+using System.Net;
+
+// Crear un objeto para descargar la página
+WebClient webClient = new WebClient();
+
+// Descargar el código HTML de la página y guardarlo en una variable
+string htmlCode = webClient.DownloadString("https://www.example.com");
+
+// Imprimir el código HTML en la consola
 Console.WriteLine(htmlCode);
 ```
 
-La variable "htmlCode" contendrá todo el código HTML de la página descargada, que luego puede ser procesado o guardado en un archivo.
+Resultado:
 
-## Profundizando
+```C#
+<!DOCTYPE html>
+<html>
+<head>
+<title>Example Domain</title>
+<link rel="stylesheet" href="https://www.example.com/css/bootstrap.min.css">
+</head>
+<body>
+<h1>Example Domain</h1>
+<p>This domain is for use in illustrative examples in documents. You may use this domain in literature without prior coordination or asking for permission.</p>
+</body>
+</html>
+```
 
-La clase WebClient también ofrece otras funcionalidades para descargas más avanzadas, como descargar archivos o manejar cookies. Además, puedes especificar datos de autenticación en caso de que la página requiera un login.
+# Detalles adicionales:
 
-Es importante tener en cuenta que, al descargar una página web, se está consumiendo ancho de banda y recursos del servidor. Por lo tanto, es importante ser conscientes del uso que se le dará a dicha descarga.
+## Contexto histórico:
 
-## Ver también
+Descargar páginas web se ha vuelto una práctica común en la era de internet, ya que permite a los desarrolladores acceder a información valiosa y usarla en sus propias aplicaciones.
 
-- Documentación de la clase WebClient (en inglés): https://docs.microsoft.com/en-us/dotnet/api/system.net.webclient?view=netcore-3.1
-- Ejemplos de descarga de archivos con WebClient (en inglés): https://www.c-sharpcorner.com/article/downloading-and-uploading-files-with-webclient-in-C-Sharp/
+## Alternativas:
+
+Además de descargar la página completa, también se pueden descargar solo ciertos elementos específicos de una página web, como imágenes o archivos de código CSS. También existen herramientas y bibliotecas específicas diseñadas para descargar páginas web de manera más eficiente y con más funcionalidades.
+
+## Detalles de implementación:
+
+En este ejemplo, se usa la clase `WebClient` de la biblioteca estándar de C# para descargar la página web. Sin embargo, también existen otras formas de hacerlo, como usar la biblioteca de `HttpClient` o bibliotecas de terceros.
+
+# Ver también:
+
+- [WebClient Class](https://docs.microsoft.com/en-us/dotnet/api/system.net.webclient?view=net-5.0)
+- [HttpClient Class](https://docs.microsoft.com/en-us/dotnet/api/system.net.http.httpclient?view=net-5.0)
+- [AngleSharp - una biblioteca de C# para analizar y manipular código HTML](https://anglesharp.github.io/)

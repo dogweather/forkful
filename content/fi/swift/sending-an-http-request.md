@@ -1,7 +1,7 @@
 ---
-title:                "Lähettää http-pyyntö"
-html_title:           "Swift: Lähettää http-pyyntö"
-simple_title:         "Lähettää http-pyyntö"
+title:                "Lähettämällä http-pyyntö"
+html_title:           "Swift: Lähettämällä http-pyyntö"
+simple_title:         "Lähettämällä http-pyyntö"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "HTML and the Web"
@@ -10,57 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä & Miksi?
+Lähettäminen HTTP-pyyntö on tapa, jolla ohjelmoijat voivat kommunikoida verkon kautta muiden palvelimien kanssa. Tämä voi sisältää pyyntöjä, kuten tietojen hakemista tai lähettämistä ja voi auttaa sovelluksiasi kommunikoimaan muiden palveluiden kanssa.
 
-Miksi haluaisit lähettää HTTP-pyyntöjä? Usein haluamme noutaa tietoa verkkopalvelimelta, esimerkiksi hakemalla uusimmat tiedot sovellukseen, päivittämällä palvelimen tietokannan tai lähettämällä tietoa käyttäjän antamaa lomaketta varten.
-
-## Kuinka
-
+## Kuinka tehdä se:
 ```Swift
-let url = URL(string: "https://example.com")
+// Luodaan URL-osoite
+let url = URL(string: "https://www.example.com")
 
-var request = URLRequest(url: url)
+// Luodaan HTTP-pyyntö
+var request = URLRequest(url: url!)
 request.httpMethod = "GET"
 
-let task = URLSession.shared.dataTask(with: request) { (data, response, error)in
-    if let error = error {
-        print("Virhe: \(error)")
-    } else if let responseData = data {
-        print("Vastaus: \(responseData)")
+// Tehdään pyyntö
+let task = URLSession.shared.dataTask(with: request) { data, response, error in
+    guard let data = data, error == nil else {
+        print(error?.localizedDescription ?? "Unknown error")
+        return
+    }
+
+    // Tulostetaan saatu vastaus
+    if let response = response {
+        print(response)
+    }
+
+    // Muokataan vastausta haluttuun muotoon
+    if let dataString = String(data: data, encoding: .utf8) {
+        print(dataString)
     }
 }
 
+// Käynnistetään pyyntö
 task.resume()
 ```
+Lopputulos on HTTP-pyynnön vastaus ja mahdolliset virheet konsolissa.
 
- *Keskimääräinen koodiesimerkki lähettää GET-pyynnön URL-osoitteeselle ja tulostaa vastauksen, jos pyyntö onnistuu.*
+## Syvällisempi sukellus:
+HTTP-pyyntöjen lähettämistä käytetään laajalti verkko-ohjelmoinnissa ja se perustuu HTTP-protokollaan, joka on ollut olemassa vuodesta 1991 lähtien. On myös olemassa muita tapoja kommunikoida verkon kanssa, kuten REST-apit ja WebSocketit. Swiftissä HTTP-pyyntöjen lähettämiseen käytetään perinteisesti URLSessionia, mutta myös muita kirjastoja, kuten Alamofire ja Moya, ovat suosittuja vaihtoehtoja.
 
-```Swift
-let url = URL(string: "https://example.com")
-
-var request = URLRequest(url: url)
-request.httpMethod = "POST"
-request.httpBody = "data=exampleData".data(using: .utf8)
-
-let task = URLSession.shared.dataTask(with: request) { (data, response, error)in
-    if let error = error {
-        print("Virhe: \(error)")
-    } else if let responseData = data {
-        print("Vastaus: \(responseData)")
-    }
-}
-
-task.resume()
-```
-
- *Toinen esimerkki lähettää POST-pyynnön URL-osoitteeseen ja liittää mukaan tiedon JSON-muodossa.*
-
-## Syväsukellus
-
-HTTP-pyyntöjä lähetettäessä on tärkeä ottaa huomioon muutamia asioita. Ensinnäkin, pyyntöjen lähettämiseen käytetään yleensä URL-luokkaa ja URLRequest-luokkaa. Lisäksi on hyvä tietää, että pyynnön tyyppi määritellään httpMethod -muuttujalla ja mahdollinen lisätieto lähetetään httpBody -muuttujalla. Lopuksi pyyntö lähetetään käyttämällä URLSession-luokkaa ja kutsutaan dataTask-metodia, joka käynnistää itse pyynnön.
-
-## Katso myös
-
-[HTTP-pyynnöt Swiftillä](https://www.raywenderlich.com/158106/urlsession-tutorial-getting-started)
-
-[Apple:n dokumentaatio HTTP-pyyntöjen lähettämiseen](https://developer.apple.com/documentation/foundation/urlloadingystem)
+## Katso myös:
+- [NSURLSession-tekninen dokumentaatio](https://developer.apple.com/documentation/foundation/urlsession)
+- [Alamofire:n GitHub-sivut](https://github.com/Alamofire/Alamofire)
+- [Moya:n GitHub-sivut](https://github.com/Moya/Moya)

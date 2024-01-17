@@ -1,7 +1,7 @@
 ---
-title:                "Perusvarmennuksella lähetetään http-pyyntö"
-html_title:           "Fish Shell: Perusvarmennuksella lähetetään http-pyyntö"
-simple_title:         "Perusvarmennuksella lähetetään http-pyyntö"
+title:                "Perusautentikoinnin lähettäminen http-pyynnöllä"
+html_title:           "Fish Shell: Perusautentikoinnin lähettäminen http-pyynnöllä"
+simple_title:         "Perusautentikoinnin lähettäminen http-pyynnöllä"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "HTML and the Web"
@@ -10,60 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Tervetuloa lukemaan tämän artikkelin, jossa kerron sinulle, miksi ja miten voit lähettää HTTP-pyynnön perustason todennuksella Fish Shellin avulla. Ei turhia selityksiä, vaan suoraan asiaan!
+## Mikä & Miksi?
+Lähettäminen HTTP-pyyntö perustuu todennukselle yksinkertaisen todennuksen kanssa on tapa lähettää salaiset käyttöoikeudet API:lle tai verkkosivustolle. Ohjelmoijat käyttävät tätä menetelmää saadakseen pääsyn suojattuihin resursseihin ja hallitakseen muiden käyttäjien oikeuksia.
 
-## Miksi
-
-Voi olla monia syitä, miksi haluat lähettää HTTP-pyynnön perustason todennuksella Fish Shellin avulla. Ehkä haluat tarkistaa käyttäjätunnuksesi ja salasanasi tiettyyn palveluun tai ehkä haluat tehdä tietokantakyselyn, joka vaatii todennusta. Joka tapauksessa, tämä on hyödyllinen taito hallita, sillä lähes kaikki web-sovellukset käyttävät HTTP-pyyntöjä joten voit laajentaa osaamistasi monille eri alueille.
-
-## Miten
-
-Ensimmäinen askel on asentaa Fish Shellin HTTP-pyyntöjen hallintaan tarkoitettu lisäosa nimeltään [HTTPie](https://httpie.org/). Voit tehdä sen helposti käyttämällä `fisher`-pakettienhallintajärjestelmää. Jos et ole vielä asentanut `fisher`-ohjelmaa, voit tehdä sen komennolla:
+## Miten:
+```Fish Shell ...```
+Esimerkiksi, jos haluat lähettää GET-pyynnön verkkosivustolle, joka vaatii perustodennusta, voit käyttää seuraavaa koodia:
 
 ```Fish Shell
-curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish
+# URL josta lähetetään pyyntö
+set url https://www.example.com
+# Käyttäjänimi ja salasana
+set username "käyttäjänimi"
+set password "salasana"
+# Lähetä pyyntö käyttäen perustodennusta
+curl -u $username:$password $url
 ```
+Tämä pyyntö lähettää käyttäjänimen ja salasanan verkkosivustolle HTTP-otsakkeessa perustodennusta käyttäen.
 
-Seuraavaksi voit asentaa `httpie`-lisäosan komentamalla:
+## Syvemmälle:
+Tekniikka perustodennuksen käyttämiseen HTTP-pyynnöissä kehitettiin alunperin 90-luvulla auttamaan SMTP-sähköpostipalvelimia tarkistamaan sähköpostiosoitteiden aitoutta. On olemassa muitakin tapoja lähettää todennettuja HTTP-pyyntöjä, kuten OAuth ja OpenID Connect. Fish Shell tekee tämän prosessin helpoksi tarjoamalla curl-komennon, joka voi käsitellä todennuksen automaattisesti.
 
-```Fish Shell
-fisher install jethrokuan/httpie.fish
-```
-
-Nyt kun sinulla on `httpie`-lisäosa, voit käyttää sitä lähettämään HTTP-pyynnön perustason todennuksella. Alla on esimerkki, jossa lähetämme pyynnön Githubin API:lle käyttämällä käyttäjätunnustamme ja salasanaamme:
-
-```Fish Shell
-http -a username:password GET https://api.github.com/user
-```
-
-Ja tässä on oletettu vastaus:
-
-```Fish Shell
-HTTP/1.1 200 OK
-Connection: close
-Content-Type: application/json; charset=utf-8
-...
-{
-  "login": "myusername",
-  "id": 123456,
-  ...
-}
-```
-
-Voit myös käyttää `httpie`-lisäosan muita vaihtoehtoja, kuten `--form`-lippua jos haluat lähettää muotoiltuja tietoja tai `--json`-lippua jos haluat lähettää JSON-dataa. Voit lisätä niitä komentoon, esimerkiksi:
-
-```Fish Shell
-http -a username:password POST https://example.com/submit-form --form name=John --form age=25
-```
-
-## Deep Dive
-
-HTTP-pyynnön lähettäminen perustason todennuksella Fish Shellillä voi olla hyödyllistä jos haluat tehdä automaattisia tehtäviä web-palveluissa, kuten päivittää sivun tai hakea tietokantatietoja. Voit myös käyttää muita lisäosia, kuten [jq](https://stedolan.github.io/jq/) tai [bass](https://github.com/edc/bass), helpottamaan tiedon käsittelyä vastauksista.
-
-HTTPie-lisäosa tarjoaa myös muita toimintoja, kuten tiedostojen lähettämisen ja vastausten tallentamisen tiedostoihin. Voit lukea lisätietoja [HTTPie:n dokumentoinnista](https://httpie.org/doc).
-
-## Katso myös
-
-- [Opas Fish Shellin käyttöön aloittelijoille](https://medium.com/@Reiko82/fish-shell-opas-k%C3%A4ytt%C3%B6%C3%B6n-aloittelijoille-b7b7618b1001)
-- [Fisherman-pakettienhallintajärjestelmä](https://github.com/fisherman/fisherman)
-- [Fish Shellin
+## Katso myös:
+- Fish Shellin virallinen sivusto: https://fishshell.com/
+- Curl-komento: https://curl.se/
+- HTTP-perustodennus: https://www.w3.org/Protocols/rfc2616/rfc2616-sec2.html#sec2.27

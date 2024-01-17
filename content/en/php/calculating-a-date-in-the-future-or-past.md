@@ -10,57 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-Calculating dates in the future or past is a common task in web development, especially when creating features like event calendars or project timelines. It allows for better organization and planning of events or tasks.
+## What & Why?
+Calculating a date in the future or past refers to determining a specific date, either in the future or the past, given a starting date and a number of days to add or subtract. Programmers often need to calculate dates for various tasks, such as scheduling events, creating countdowns, or managing recurring tasks.
 
-## How To
-To calculate a date in the future or past, we can use PHP's built-in `DateTime` class. We first create a new instance of the `DateTime` class, passing in the desired date and time. Then, we can use the `modify()` method to add or subtract a specific amount of time.
-
-```PHP
-// Calculate 10 days from today
-$today = new DateTime();
-$today->modify('+10 days');
-echo $today->format('Y-m-d');
-// Output: 2021-08-16
-
-// Calculate 3 months and 2 weeks from a specific date
-$specificDate = new DateTime('2022-02-10');
-$specificDate->modify('+3 months +2 weeks');
-echo $specificDate->format('Y-m-d');
-// Output: 2022-06-24
-```
-
-We can also use the `DateTime` class to compare dates and determine the amount of time between them. The `diff()` method returns a `DateInterval` object, which can then be formatted to display the difference in days, weeks, months, etc.
+## How to:
+To calculate a date in the future or past in PHP, we can use the built-in `strtotime()` function. This function takes in two parameters - a string representation of a date and a number of days to add or subtract. Here's an example:
 
 ```PHP
-// Compare two dates and output the difference in days
-$date1 = new DateTime('2021-07-20');
-$date2 = new DateTime('2021-08-01');
-$diff = $date1->diff($date2);
-echo $diff->format('%a days');
-// Output: 12 days
+$date = "2020-10-10"; //starting date
+$days_to_add = 7; //number of days to add
+$new_date = strtotime($date . " +" . $days_to_add . " days"); //calculates the new date
+echo date("Y-m-d", $new_date); //outputs 2020-10-17
 ```
 
-## Deep Dive
-The `DateTime` class also allows for more complex calculations, such as finding the last day of a specific month or adjusting for daylight saving time. It also takes into account leap years when calculating dates.
+We can also specify a negative number of days to subtract from the starting date. This function supports various time formats as well, such as "next week", "next month", "next year", and "1 week ago". Here's another example:
 
 ```PHP
-// Get the last day of a specific month
-$date = new DateTime('2020-02-01');
-$date->modify('last day of this month');
-echo $date->format('Y-m-d');
-// Output: 2020-02-29
-
-// Adjust for daylight saving time
-$date = new DateTime('2021-03-14', new DateTimeZone('America/New_York'));
-$date->modify('+1 day');
-echo $date->format('Y-m-d');
-// Output: 2021-03-15 (due to daylight saving time, the date is automatically adjusted one hour ahead)
+$date = "2020-12-01"; //starting date
+$days_to_subtract = 14; //number of days to subtract
+$new_date = strtotime($date . " -" . $days_to_subtract . " days"); //calculates the new date
+echo date("m/d/Y", $new_date); //outputs 11/17/2020
 ```
 
-Keep in mind that the `DateTime` class only supports dates within the range of 1970-01-01 to 2038-01-19 due to limitations in the underlying system. For dates outside of this range, consider using the `DateTimeImmutable` class or a third-party library.
+## Deep Dive:
+The `strtotime()` function in PHP is based on the Unix timestamp, which represents the number of seconds that have elapsed since January 1, 1970. It is important to note that the maximum value for this timestamp is likely to be in the year 2038, as it is stored as a signed 32-bit integer. This can cause issues when calculating dates far in the future, so alternative solutions such as using the DateTime class or external libraries may be necessary for more accurate results.
 
-## See Also
-- PHP Manual on `DateTime` class: https://www.php.net/manual/en/class.datetime.php
-- Date and Time functions in PHP: https://www.php.net/manual/en/ref.datetime.php
-- Carbon PHP library for extended date and time functionality: https://carbon.nesbot.com/
+There are also other functions in PHP that can be used for date calculations, such as the `date_add()` and `date_sub()` functions, which allow for more specific date and time manipulations. Additionally, developers can also use the `DateTime` class, which offers more flexibility and built-in methods for date calculations.
+
+When implementing date calculations in a project, it is important to consider the desired output format and the potential limitations of the chosen method to ensure accurate and efficient results.
+
+## See Also:
+- [PHP strtotime() function documentation](https://www.php.net/manual/en/function.strtotime.php)
+- [DateTime class documentation](https://www.php.net/manual/en/datetime.format.php)
+- [Alternative date calculation methods in PHP](https://www.geeksforgeeks.org/php-date-calculation-functions/)

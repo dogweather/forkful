@@ -1,7 +1,7 @@
 ---
-title:                "HTTP-pyynnön lähettäminen"
-html_title:           "Gleam: HTTP-pyynnön lähettäminen"
-simple_title:         "HTTP-pyynnön lähettäminen"
+title:                "Lähettää http-pyyntö"
+html_title:           "Gleam: Lähettää http-pyyntö"
+simple_title:         "Lähettää http-pyyntö"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "HTML and the Web"
@@ -10,43 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mikä & Miksi?
 
-HTTP-pyyntöjen lähettäminen on olennainen osa modernin web-sovelluksen toimintaa. Se mahdollistaa tietojen hakemisen ja lähettämisen eri web-palvelimien välillä sekä käyttäjän vuorovaikutuksen verkkosivustojen kanssa.
+HTTP-pyynnön lähettäminen on tapa tietokoneohjelman kysyä ja vastaanottaa dataa verkkopalvelimelta. Tätä tehdään usein ohjelmoidessa verkkosovelluksia, jotka tarvitsevat tiedonkulun ulkopuoliseen palvelimeen.
 
-## Miten
+## Miten:
+
+Esimerkiksi, jos haluat lähettää HTTP-pyynnön osoitteeseen "www.sivusto.fi" ja saada vastauksena "200 OK", niin koodisi näyttää tältä:
 
 ```Gleam
-import gleam/http
-
-// Luo pyyntöobjekti ja aseta URL-osoite
-let request = http
-    .get("https://example.com/api")
-    .header("Content-Type", "application/json")
-
-// Lähetä pyyntö ja tallenna vastausmuuttujaan
-let response = http.send(request)
-
-// Hae vastauksen statuskoodi
-let status = response.status
-
-// Hae vastauksen sisältämä data
-let data = response.body
-
-// Tulosta vastaus
-gleam/io.format("Statuskoodi on %d ja data on %s", [status, data])
-
+request = http.Client.get("www.sivusto.fi")
+``` 
+```Gleam
+expect(request.status_code) == 200
 ```
 
-Yllä olevassa koodiesimerkissä näkyy, miten Gleam-kielellä luodaan HTTP-pyyntö ja lähetetään se käyttäen gleam/http-pakettia. Pyyntöön voi lisätä otsikkotietoja ja vastauksesta voi hakea statuskoodin ja sisällön.
+Tässä koodissa käytetään HTTP-kirjastoa "http", joka tarjoaa metodeja pyyntöjen lähettämiseen ja vastauksien käsittelyyn. Koodi kutsuu "Client" -funktiota ja antaa parametrina osoitteen, johon halutaan lähettää pyyntö. Tämän jälkeen vertaillaan vastauksen "status_code" -arvoa odotetun arvon kanssa.
 
-## Syvemmälle
+## Syvemmälle:
 
-HTTP-pyyntöjä lähetettäessä on tärkeää huomioida, että vastaanotetut tiedot eivät välttämättä ole turvallisia ja luotettavia. Tietoturvaan liittyvät riskit tulisi ottaa huomioon esimerkiksi lisäämällä tarkistuksia vastaanotetun datan muodolle ja alkuperälle.
+HTTP-protokolla kehitettiin alunperin vuonna 1989 Tim Berners-Leen toimesta. Sittemmin on kehitetty muita protokollia, kuten HTTPS, joka salakirjoittaa tiedonkulun ja tekee siitä turvallisemman. On myös olemassa muita käytössä olevia kirjastoja HTTP-pyyntöjen lähettämiseen, kuten "fetch" ja "requests", mutta Gleamin "http" -kirjasto on helppo ja tehokas vaihtoehto.
 
-Gleamissa on myös mahdollista lähettää asynkronisia HTTP-pyyntöjä käyttäen `http.async_send`-funktiota, joka palauttaa `Task`-objektin. Tätä voidaan hyödyntää esimerkiksi silloin, kun pyyntöihin ei ole heti tarvetta saada vastausta.
+## Katso myös:
 
-## Katso myös
-
-- [Gleam-http: HTTP-pyyntöjen lähettämiseen tarkoitettu paketti](https://github.com/JoelW-S/gleam-http)
-- [HTTP-koodit: Tietoa HTTP-pyyntöjen statuskoodeista](https://httpstatuses.com/)
+- https://gleam.run/libraries/http
+- https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol

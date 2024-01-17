@@ -1,7 +1,7 @@
 ---
-title:                "Ein neues Projekt beginnen"
-html_title:           "Elm: Ein neues Projekt beginnen"
-simple_title:         "Ein neues Projekt beginnen"
+title:                "Eine neue Projekt starten"
+html_title:           "Elm: Eine neue Projekt starten"
+simple_title:         "Eine neue Projekt starten"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Getting Started"
@@ -10,31 +10,19 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
-Warum sollte man sich die Mühe machen, ein neues Projekt in Elm zu starten? Ganz einfach: Elm ist eine funktionale Programmiersprache, die dafür bekannt ist, robuste und fehlerfreie Anwendungen zu ermöglichen. Sie bietet eine starke Typisierung und einen Compiler, der Fehler bereits während der Entwicklungsphase aufdeckt. Das bedeutet, dass man weniger Zeit mit der Fehlersuche verbringen muss und sich auf das eigentliche Codieren konzentrieren kann.
+## Was & Warum?
+Das Erstellen eines neuen Projekts bedeutet, dass man ein neues Softwareprojekt beginnt. Programmierer starten neue Projekte, um neue Ideen auszuprobieren, bestehende Probleme zu lösen oder ihre Fähigkeiten zu verbessern.
 
-## Wie geht's
-Um ein neues Projekt in Elm zu starten, muss man zunächst die Programmiersprache installieren. Das kann man entweder über den Webinstaller auf der offiziellen Website oder über den Paketmanager seines Betriebssystems tun. Sobald Elm installiert ist, kann man ein neues Projektverzeichnis erstellen und eine Elm-Datei mit dem Namen `Main.elm` darin erstellen. In dieser Datei sollte man nun das Grundgerüst eines Elm-Programms schreiben:
-
+## Wie geht's?
 ```Elm
-module Main exposing (..)
-
-import Html exposing (text)
-
 main =
-    text "Hello World"
+  "Hallo Welt!"
 ```
 
-Um das Programm auszuführen, navigiert man im Terminal in das Projektverzeichnis und führt den Befehl `elm make Main.elm` aus. Wenn alles glatt läuft, sollte man nun die Ausgabe "Hello World" sehen.
+Das obige Beispiel zeigt, wie einfach es ist, ein neues Projekt in Elm zu starten. Alles, was Sie brauchen, ist eine main-Funktion und ein Befehl, der etwas ausgibt. Voilà, Ihr neues Projekt ist gestartet!
 
-Als nächstes kann man die Datei `Main.elm` um weitere Funktionen und Module erweitern, um das gewünschte Programm zu erstellen.
+## Tiefere Einblicke 
+Elm wurde 2012 von Evan Czaplicki entwickelt und ist eine funktionale Programmiersprache, die hauptsächlich für die Entwicklung von Webanwendungen verwendet wird. Im Vergleich zu anderen Programmiersprachen ist Elm besonders für seine Garantien gegen Laufzeitfehler bekannt. Alternativen zu Elm sind zum Beispiel JavaScript, TypeScript oder PureScript. Bei der Implementierung von Projekten in Elm sollten Sie darauf achten, dass Sie die Syntax korrekt verwenden und Code sauber strukturieren, da dies zu besseren Ergebnissen führt.
 
-## Tiefergehende Informationen
-Bevor man mit der Entwicklung des eigentlichen Programms beginnt, ist es wichtig, sich mit den Grundlagen von Elm vertraut zu machen. Dazu gehört das Verständnis von Funktionen, Typisierung und der Verwendung von Modulen. Auch sollten die wichtigsten Elm-Bibliotheken und Konzepte wie JSON-Decodierung und Benutzeroberflächengestaltung untersucht werden.
-
-Ein weiterer wichtiger Aspekt ist die Verwendung von Elm-Architektur, einem bewährten Muster für die Strukturierung von Anwendungen in Elm. Dieses Muster besteht aus den drei Hauptkomponenten Model, View und Update und ermöglicht eine klare Trennung von Daten und Benutzeroberfläche.
-
-## Siehe auch
-- Offizielle Elm-Website: https://elm-lang.org/
-- Elm-Tutorial: https://guide.elm-lang.org/
-- Elm-Pakete: https://package.elm-lang.org/
+## Sieh auch 
+Für weitere Informationen und Beispiele zu Elm können Sie sich die offizielle Dokumentation unter https://guide.elm-lang.org/ ansehen oder den YouTube-Kanal von Evan Czaplicki unter https://www.youtube.com/channel/UC1uVjLpDl5sMzNlUe3WJ-ow abonnieren. Viel Spaß beim Programmieren in Elm!

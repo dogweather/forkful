@@ -10,11 +10,15 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
-¿Alguna vez te has encontrado en una situación en la que necesitas buscar patrones específicos en texto? Es ahí donde entran en juego las expresiones regulares. Son una herramienta poderosa y eficiente para buscar y manipular texto de forma precisa y rápida.
+## ¿Qué y por qué?
+Las expresiones regulares son un conjunto de patrones utilizados por los programadores para buscar y manipular cadenas de texto de manera eficiente. Esto permite realizar tareas como buscar y reemplazar texto en grandes cantidades de datos o validar el formato de una entrada de usuario. 
 
-## Cómo
-¡Es hora de aprender a utilizar las expresiones regulares en Go! Primero, importa el paquete "regexp" y compila tu expresión regular con la función `regexp.Compile`. A continuación, usa las funciones `MatchString` o `FindString` para buscar coincidencias en el texto. Aquí hay un ejemplo:
+Los programadores usan expresiones regulares porque son una herramienta poderosa y versátil para trabajar con cadenas de texto. Con su capacidad para realizar búsquedas precisas y manipular datos de manera rápida, las expresiones regulares son una parte esencial de cualquier kit de herramientas de programación.
+
+## ¡Manos a la obra!
+En Go, podemos utilizar expresiones regulares con el paquete ```regexp``` que viene incorporado en el lenguaje. A continuación, se presentan algunos ejemplos de cómo podemos usar expresiones regulares en Go:
+
+Para buscar una coincidencia exacta entre una cadena de texto y un patrón, podemos utilizar la función ```MatchString()``` que toma dos argumentos: el patrón a buscar y la cadena de texto a buscar en.
 
 ```
 package main
@@ -25,37 +29,35 @@ import (
 )
 
 func main() {
-	// Compila la expresión regular
-	re := regexp.MustCompile("go!")
-
-	// Busca coincidencias en el texto
-	fmt.Println(re.MatchString("¡Hola go!"))    // true
-	fmt.Println(re.MatchString("¡Hola mundo!")) // false
-
-	// Encuentra la primera coincidencia en el texto
-	fmt.Println(re.FindString("¡Vamos a programar go!"))
-	// go!
+	match, _ := regexp.MatchString("go", "go programming is awesome")
+	fmt.Println(match)
+	// Output: true
 }
+```
+
+Para buscar más de una coincidencia en una cadena de texto, podemos usar la función ```FindAllString()```, que toma también dos argumentos, pero devuelve un slice de todas las coincidencias encontradas.
 
 ```
-Ahora, ¡prueba a cambiar la expresión regular y el texto para ver diferentes resultados!
+package main
 
-## Deep Dive
-Las expresiones regulares en Go tienen una sintaxis similar a la de otros lenguajes de programación. Aquí hay algunos elementos que pueden ser útiles al trabajar con expresiones regulares:
+import (
+	"fmt"
+	"regexp"
+)
 
-- `.` coincide con cualquier carácter excepto nueva línea.
-- `+` coincide con el elemento anterior una o más veces.
-- `*` coincide con el elemento anterior cero o más veces.
-- `?` coincide con el elemento anterior cero o una vez.
-- `[]` define un conjunto de caracteres permitidos.
-- `^` coincide con el inicio del texto.
-- `$` coincide con el final del texto.
+func main() {
+	r := regexp.MustCompile("[0-9]+")
+	fmt.Println(r.FindAllString("There are 5 apples and 12 oranges", 2))
+	// Output: [5, 12]
+}
+```
 
-También puedes utilizar grupos de captura con paréntesis y retrocesos con `\` para referirte a esos grupos en la expresión regular.
+## En profundidad
+Las expresiones regulares tienen una larga historia en la informática, y se remontan a la década de 1950. Aunque hay muchas formas diferentes de trabajar con cadenas de texto en el mundo de la programación, las expresiones regulares siguen siendo una herramienta valiosa para aquellos que buscan una solución rápida y elegante para trabajar con grandes cantidades de datos de texto.
 
-## See Also
-Si quieres profundizar más en el uso de expresiones regulares en Go, aquí hay algunos recursos adicionales que te pueden ser útiles:
+Aunque Go tiene su propio paquete ```regexp``` incorporado, también existen otras bibliotecas y frameworks populares como PCRE y Perl Compatible Regular Expressions. Sin embargo, el paquete ```regexp``` de Go es muy eficiente y fácil de usar, por lo que siempre es una buena opción para aquellos que trabajan con Go.
 
-- [Documentación oficial de expresiones regulares en Go](https://golang.org/pkg/regexp/)
-- [Tutorial interactivo sobre expresiones regulares en Go](https://regex-golang.appspot.com/assets/html/index.html)
-- [Ejemplos prácticos de uso de expresiones regulares en Go](https://www.thepolyglotdeveloper.com/2019/02/working-regular-expressions-golang/)
+## Ver también
+- [Documentación oficial de Go sobre expresiones regulares] (https://golang.org/pkg/regexp/)
+- [Tutorial interactivo sobre expresiones regulares en Go] (https://regex-golang.appspot.com/assets/html/index.html)
+- [Repositorio de expresiones regulares de Go] (https://github.com/golang/example/tree/master/regexp)

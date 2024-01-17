@@ -10,48 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+# ElixirでHTMLをパースする方法
 
-HTMLを解析することに取り組む *なぜ* ですか？
+## 概要
 
-HTMLはウェブサイトを構築する際に使用される一般的な言語です。多くのウェブサイトがHTMLを使用するため、エンジニアやウェブ開発者にはHTMLを理解しておく必要があります。また、ウェブスクレイピングやデータ収集のためにHTMLを解析する必要があるかもしれません。
+HTMLパースとは、HTML文書を解析して必要な情報を抽出するプロセスのことです。プログラマーは、Webスクレイピングやデータ収集などのためにHTMLパースを行います。
 
-## 方法
+## 手順
 
-まず、Elixirをお使いのコンピューターにインストールしてください。次に、Elixirプロジェクトを作成しましょう。
-
-```Elixir
-mkdir my_html_parser
-cd my_html_parser
-mix new my_html_parser
-```
-
-次に、HTTPリクエストを使ってHTMLを取得し、Nokogiriライブラリを使ってHTMLを解析します。
+以下の例では、ElixirのNokogiriライブラリを使用して、HTML文書から特定のセレクターに一致するテキストを取得する方法を示します。
 
 ```Elixir
-url = "https://www.example.com"
-html = HTTPoison.get!(url).body
-document = Floki.parse(html)
+html = "<h1>Hello World</h1>"
 
-# ページのタイトルを取得する
-title = Floki.find(document, "title") |> Floki.text
+# HTML文書をパース
+doc = Nokogiri.HTML(html)
 
-# リンクを取得する
-links = Floki.find_all(document, "a") |> Floki.attribute("href")
+# h1セレクターに一致するテキストを取得
+text = doc |> Nokogiri.select("h1") |> List.first() |> Nokogiri.text()
 
-# 画像を取得する
-images = Floki.find_all(document, "img") |> Floki.attribute("src")
+# 出力結果: "Hello World"
 ```
 
-上記のコードでは、HTMLタグを指定して特定の情報を抽出することができます。Nokogiriライブラリは、HTMLをパースし、Flokiライブラリを使用することで、取得した情報をさまざまな形式で抽出することができます。
+## 詳細
 
-## ディープダイブ
+### 歴史的背景
 
-HTMLを解析するには、HTMLの基本構造やタグの意味を理解する必要があります。さらに、HTML内のタグの階層や属性についても知る必要があります。また、さまざまなライブラリやフレームワークを使用してHTMLをパースする方法もあります。Elixirには、NokogiriやFlokiの他にもScrivenerやNimbleParsecなどの優れたライブラリがあります。
+HTMLパースは、早くても1990年代初期に開始されました。当時は、Webスクレイピングやデータ収集のための簡単な方法として使用されていました。しかし、CSSやJavaScriptの普及により、より洗練された組み込みブラウザーが提供され、HTMLパースの需要は低下しました。
 
-## 参考文献
+### 代替手段
 
-- [Flokiライブラリ](https://github.com/philss/floki)
-- [Nokogiriライブラリ](https://github.com/elixir-nokogiri/nokogiri)
-- [Scrivenerライブラリ](https://github.com/awetzel/scrivener)
-- [NimbleParsecライブラリ](https://github.com/dashbitco/nimble_parsec)
+HTMLパースには、Elixirの他にも多くの言語やライブラリがあります。例えば、RubyにはNokogiriやMechanize、PythonにはBeautiful SoupやScrapyがあります。それぞれの言語やライブラリによって構文や使い方が異なるため、HTMLパースを行う際は適切なものを選択する必要があります。
+
+### 実装の詳細
+
+Elixirでは、Nokogiriライブラリを使用することでHTMLパースを行うことができます。NokogiriはElixir版のRubyのNokogiriライブラリで、HTML文書をパースしてDOMツリーを構築することができます。また、CSSセレクターを使用してHTML文書内の特定の要素を選択することができます。
+
+## 関連情報
+
+- Nokogiriライブラリ公式ドキュメント (https://hexdocs.pm/nokogiri/readme.html)

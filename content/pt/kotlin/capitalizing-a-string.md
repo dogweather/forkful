@@ -10,47 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+# O que e por que?
 
-Você já se deparou com a necessidade de capitalizar uma string em seus projetos de programação? Se sim, então este artigo é para você! Aprenda como capitalizar uma string de forma eficiente usando Kotlin e dê um toque especial aos seus códigos.
+Capitalize uma string significa tornar a primeira letra de cada palavra em maiúscula. Programadores fazem isso para tornar o texto mais legível e bem formatado em suas aplicações.
 
-## Como Fazer
-
-Começaremos com um exemplo simples, explicando o passo a passo de como capitalizar uma string em Kotlin:
+## Como fazer:
 
 ```Kotlin
-fun capitalizarString(string: String): String { // Declaração da função
-    return string.capitalize() // Uso do método capitalize() para capitalizar a string
+fun capitalizarString(palavra: String): String {
+    val palavras = palavra.split(" ")
+    var stringCapitalizada = ""
+    for (palavra in palavras) {
+        stringCapitalizada += "${palavra.capitalize()} "
+    }
+    return stringCapitalizada.trim()
 }
 
-val stringExemplo = "exemplo de texto" // String original
-val stringCapitalizada = capitalizarString(stringExemplo) // Chamando a função com a string original como argumento
-println(stringCapitalizada) // Output: "Exemplo de texto"
+println(capitalizarString("exemplo de texto em kotlin"))
+// Output: Exemplo De Texto Em Kotlin
 ```
 
-Parece fácil, não é? Em apenas algumas linhas de código, temos uma função que capitaliza uma string e nos retorna o resultado desejado. Mas o que está realmente acontecendo por trás dos bastidores?
+## Profundando:
 
-## Detalhes da Capitalização de String
+Historicamente, capitalizar strings era uma forma de destacar nomes próprios e títulos em textos manuscritos. Atualmente, essa prática é amplamente utilizada em programação para melhorar a legibilidade e organização de códigos, especialmente em situações onde é necessário exibir o texto em maiúsculas, como em cabeçalhos ou títulos de botões.
 
-Quando usamos o método `capitalize()`, Kotlin usa as regras das convenções de nomenclatura em inglês para transformar a primeira letra de cada palavra em maiúscula. No entanto, isso pode não funcionar para todos os idiomas.
-
-Por exemplo, no idioma turco, a letra "i" maiúscula é escrita como "İ", com um ponto na parte superior da letra. Se usarmos o método `capitalize()` em uma string com uma palavra em turco, esse ponto não será adicionado automaticamente e a capitalização ficará incorreta.
-
-Para resolver esse problema, Kotlin possui outro método chamado `capitalize(Locale)` que nos permite especificar a localidade do idioma desejado. Vamos ver como usar esse método em um exemplo:
+Uma alternativa ao método acima é usar a função `replace()` para substituir a primeira letra de cada palavra pela versão capitalizada, como mostrado no exemplo abaixo:
 
 ```Kotlin
-fun capitalizarString(string: String): String { 
-    return string.capitalize(Locale("tr", "TR")) // Adicionamos a localidade do idioma turco (Turquia)
-}
-
-val stringExemplo = "türkiye" // String original em turco
-val stringCapitalizada = capitalizarString(stringExemplo)
-println(stringCapitalizada) // Output: "Türkiye"
+"exemplo de texto em kotlin".replaceEachChar { if (isFirst()) it.titlecase(Locale.getDefault()) else it.toString() }
 ```
 
-Agora sim, a capitalização está correta para o idioma turco!
+Em termos de implementação, a função `capitalize()` é internamente chamada pelo método `titlecase()` para capitalizar a primeira letra de cada palavra, enquanto a função `replaceEachChar()` percorre a string e aplica a lógica definida pelo usuário para cada caractere.
 
-## Veja Também
+## Veja também:
 
-- [Documentação oficial do Kotlin sobre a função `capitalize()`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/capitalize.html)
-- [Mais informações sobre as regras de convenções de nomenclatura em inglês](https://medium.com/@jamesdawn/simple-guide-to-code-convention-camel-case-pascal-case-hungarian-notation-ace2b338e86e)
+- [Documentação da função `capitalize()`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/capitalize.html)
+- [Alternativas para capitalizar strings em Kotlin](https://www.techiedelight.com/capitalize-strings-kotlin/)

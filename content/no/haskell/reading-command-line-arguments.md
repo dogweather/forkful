@@ -1,7 +1,7 @@
 ---
-title:                "Lesing av kommandolinjeargumenter"
-html_title:           "Haskell: Lesing av kommandolinjeargumenter"
-simple_title:         "Lesing av kommandolinjeargumenter"
+title:                "Lesing av kommandolinje-argumenter"
+html_title:           "Haskell: Lesing av kommandolinje-argumenter"
+simple_title:         "Lesing av kommandolinje-argumenter"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Files and I/O"
@@ -10,72 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hvorfor
+## Hva & Hvorfor?
+Lesing av kommandolinjeargumenter er en vanlig og nyttig praksis for Haskell-programmere. Dette innebærer å lese inn informasjon som brukes til å konfigurere og kjøre et program gjennom kommandolinjen. Dette gjør det mulig for brukere å angi spesifikke parametere og verdier til programmet, noe som gir større fleksibilitet og kontroll.
 
-Av og til kan vi ønske at programmet vårt kan utføre forskjellige handlinger basert på informasjon som er gitt når programmet kjører. Et eksempel på dette kan være å la brukeren angi ulike filnavn, parametere eller andre innstillinger via kommandolinjen. For å lære hvordan man kan gjøre dette i Haskell, les videre.
-
-# Hvordan
-
-Det første vi må gjøre er å importere funksjonen `getArgs` fra modulet `System.Environment`. Denne funksjonen tar ingen parametere, men gir tilbake en liste med strenger som representerer kommandolinje argumentene som er gitt når programmet kjøres.
-
-```Haskell 
-import System.Environment
-
-main = do
-    args <- getArgs
-    putStrLn (head args)
-```
-Dette enkle programmet vil få tak i det første kommandolinje argumentet og skrive det ut til konsollen.
-
-Eksempel på kjøring: 
-```
-$ runhaskell args.hs argument1
-argument1
-```
-
-Det er også mulig å behandle flere argumenter ved hjelp av funksjoner som `map` eller `foldr`.
+## Hvordan:
+Vi kan lese kommandolinjeargumenter i Haskell ved å bruke funksjonen `getArgs` fra modulen `System.Environment`. Dette returnerer en liste av strenger som representerer hvert argument som ble gitt når programmet ble kjørt. Vi kan deretter behandle og bruke disse argumentene i vårt program.
 
 ```Haskell
-import System.Environment
+import System.Environment (getArgs)
 
+main :: IO ()
 main = do
-    args <- getArgs
-    putStrLn (unwords (map show args))
+  args <- getArgs
+  putStrLn ("Antall argumenter: " ++ show (length args))
+  putStrLn ("Argumenter: " ++ show args)
 ```
 
-I dette tilfellet vil alle argumentene skrives ut, konvertert til strenger.
-
-Eksempel på kjøring: 
+Når vi kjører dette programmet med kommandoen `runhaskell read_args.hs arg1 arg2 arg3`, vil output være:
 ```
-$ runhaskell args.hs argument1 argument2 argument3
-"argument1 argument2 argument3"
+Antall argumenter: 3
+Argumenter: ["arg1","arg2","arg3"]
 ```
 
-# Dykk dypere
+## Dypdykk:
+Selv om det kan virke som en enkel funksjon, har `getArgs` en viktig rolle i Haskell-programmering. I tidligere versjoner av Haskell ble kommandolinjeargumenter lest inn ved hjelp av funksjonen `getArgs` fra modulen `System`. Denne versjonen behandlet argumentene som strenger, mens den nåværende versjonen behandler dem som uendelige lister av strenger.
 
-Kommandolinje argumenter er lett å hente ut, men det finnes også noen ting å være oppmerksom på. For det første vil programmet alltid motta minst ett argument - nemlig navnet på programmet som kjører. For det andre vil alle argumentene være av typen `String`, noe som betyr at eventuelle tall eller andre datatyper må konverteres til riktig type før de kan brukes i programmet.
+Det finnes også alternative måter å lese kommandolinjeargumenter på i Haskell, for eksempel ved å bruke biblioteket `optparse-applicative`. Dette biblioteket gir et mer robust og elegant grensesnitt for å håndtere argumenter.
 
-Et eksempel på dette kan være å lese inn et tall som et kommandolinje argument og deretter behandle det som et tall i koden:
+Det er også verdt å merke seg at kommandolinjeargumenter ikke er den eneste måten å gi input til et Haskell-program. Det er også mulig å lese inn filer eller data direkte fra terminalen.
 
-```Haskell
-import System.Environment
-
-main = do
-    args <- getArgs
-    let num = read (head args) :: Int
-    print (num * 2)
-```
-
-Eksempel på kjøring: 
-```
-$ runhaskell args.hs 5
-10
-```
-
-Det finnes også ulike biblioteker som kan hjelpe deg med å behandle kommandolinje argumenter på en enklere måte, som for eksempel `optparse-applicative` eller `cmdargs`.
-
-# Se også
-
-- [Haskell dokumentasjon - System.Environment](https://www.haskell.org/cabal/users-guide/developing-packages.html)
-- [Haskell dokumentasjon - optparse-applicative](https://hackage.haskell.org/package/optparse-applicative)
-- [Haskell dokumentasjon - cmdargs](https://hackage.haskell.org/package/cmdargs)
+## Se også:
+- [Haskell dokumentasjon for System.Environment](https://hackage.haskell.org/package/base-4.14.1.0/docs/System-Environment.html)
+- [Optparse-applicative biblioteket](https://hackage.haskell.org/package/optparse-applicative)

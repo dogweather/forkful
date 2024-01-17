@@ -10,58 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
+Att konvertera ett datum till en sträng är en vanlig uppgift som utförs av programmerare för att göra det möjligt att läsa och hantera datum på ett enklare sätt. Genom att göra detta kan man omvandla ett datums numeriska värden till en textrepresentation som är mer läsbar och tydlig för människor.
 
-Att konvertera en datum till en sträng är en viktig och vanligt förekommande operation i C ++ programmering. Detta gör det möjligt att visa datumet i ett läsbart format för användare eller att spara datumet i en databas.
-
-## Hur man gör
-
-För att konvertera ett datum till en sträng i C ++, används strömmar och biblioteket "ctime". Här är ett exempel som visar hur man konverterar dagens datum till en sträng:
-
+## Så här gör du:
 ```C++
-#include <iostream>
-#include <ctime> // Bibloteket för tid och datum funktioner
-using namespace std;
+#include <iostream> 
+#include <sstream> 
+#include <iomanip> 
 
 int main() {
-  time_t now = time(0); // Skapar ett objekt som representerar nuvarande tidpunkten
-  char* str = ctime(&now); // Används för att konvertera "now" till en sträng
-  cout << "Idag är datumet: " << str << endl; // Skriver ut datumet
-  return 0;
+	// Skapa ett datumobjekt med dag, månad och år 
+	int dag = 15; 
+	int manad = 9; 
+	int år = 2021; 
+
+	// Skapa en ström för att konvertera datumet till en sträng
+	std::ostringstream ss; 
+
+	// Ange formatet för datumet 
+	ss << std::setfill('0') << std::setw(2) << dag << "/" << std::setw(2) << manad << "/" << år;
+
+	// Spara den konverterade strängen i en variabel
+	std::string datumStr = ss.str(); 
+
+	// Skriv ut resultatet 
+	std::cout << "Datum som sträng: " << datumStr << std::endl; 
+
+	return 0; 
 }
 ```
 
-Detta kodexempel kommer att producera output som ser ut så här:
-
-```
-Idag är datumet: Thu Nov 5 12:14:10 2020
-```
-
-## Djupdykning
-
-För att ändra formatet på datumet som visas i strängen, kan man använda funktionen "strftime". Detta gör det möjligt att anpassa datumet med hjälp av specifika formatsträngar. I följande exempel är formatsträngen "%d-%m-%Y" för dag/månad/år.
-
+Output:
 ```C++
-#include <iostream>
-#include <ctime> // Bibloteket för tid och datum funktioner
-using namespace std;
-
-int main() {
-  time_t now = time(0); // Skapar ett objekt som representerar nuvarande tidpunkten
-  char str[80]; // Skapar en ny sträng med 80 tecken
-  strftime(str, 80, "%d-%m-%Y", localtime(&now)); // Används för att konvertera och formatera datumet
-  cout << "Idag är datumet: " << str << endl; // Skriver ut datumet
-  return 0;
-}
+Datum som sträng: 15/09/2021
 ```
 
-Output för detta exempel kommer att se ut så här:
+## Djupdykning:
+Konverteringen av datum till strängar har varit en utmaning för programmerare sedan tidiga dagar av programmering. Innan standardiseringen av språk som C++, var det upp till varje programmerare att hitta en lösning på denna utmaning. Idag finns det emellertid inbyggda funktioner och bibliotek som gör det möjligt att konvertera datum till strängar på ett enklare och mer effektivt sätt.
 
-```
-Idag är datumet: 05-11-2020
-```
+Det finns också alternativa sätt att konvertera datum till strängar, som att använda delningsoperatorn (%) eller att använda en char-array. Dessa metoderna kan dock vara mer komplexa och mindre flexibla än den som presenteras i exemplet ovan.
 
-## Se även
+Den här konverteringsprocessen är också viktig för att kunna spara datum i en databas eller skriva ut det på olika språk och tidszoner. Det är därför viktigt för programmerare att behärska denna färdighet för att kunna hantera och hantera datum på ett effektivt sätt.
 
-- C++ Referens - <http://www.cplusplus.com/reference/ctime/> 
-- C++ Datum och tid - <http://www.cplusplus.com/reference/ctime/>
+## Se även:
+1. [http://www.cplusplus.com/reference/ctime/strftime/](http://www.cplusplus.com/reference/ctime/strftime/)
+2. [https://www.tutorialspoint.com/cplusplus/cpp_date_time.htm](https://www.tutorialspoint.com/cplusplus/cpp_date_time.htm)
+3. [https://en.wikipedia.org/wiki/C_date_and_time_functions](https://en.wikipedia.org/wiki/C_date_and_time_functions)

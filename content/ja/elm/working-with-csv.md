@@ -1,7 +1,7 @@
 ---
-title:                "「csvを使うことについて」"
-html_title:           "Elm: 「csvを使うことについて」"
-simple_title:         "「csvを使うことについて」"
+title:                "「csvとの作業」"
+html_title:           "Elm: 「csvとの作業」"
+simple_title:         "「csvとの作業」"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Data Formats and Serialization"
@@ -10,44 +10,68 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜCSVを扱うのか
+ElmでCSVを扱う: なぜして、どうする？
 
-CSVは多くのプログラムでデータを取り扱うための標準形式です。データを取り込む時やファイルをエクスポートする時に便利なフォーマットなので、エルムを使う上で重要なスキルです。
+## What & Why?
 
-## やり方
+CSVとは、データを表形式で表現するためのフォーマットです。プログラマーはこれを使用する理由として、データの整形や処理を容易にするために利用します。
 
-すぐにコードを書き始めるために、まずはCSVパッケージをインポートします。
+## How to:
+
+Elmでは、CSVを簡単に扱うことができます。以下のコードを使用して、CSVファイルを読み込み、データをテーブル形式で表示することができます。
 
 ```Elm
 import Csv
+import Html
+
+type alias Row = List String
+
+type alias Table = List Row
+
+data : Csv.Decode.Result (Table) 
+data =
+    Csv.Decode.decodeString "id,name,age\n1,John,30\n2,Amy,25"
+
+viewRow : Row -> Html.Html msg
+viewRow row =
+    Html.tr []
+        (List.map (\ col -> Html.td [] [Html.text col]) row)
+
+viewTable : Table -> Html.Html msg
+viewTable table =
+    Html.table []
+        (Html.tr []
+            [ Html.th [] [Html.text "ID"], Html.th [] [Html.text "Name"], Html.th [] [Html.text "Age"] ]
+            :: List.map viewRow table
+        )
+
+main : Html.Html Msg
+main =
+    case data of
+        Ok table ->
+            viewTable table
+        Err err ->
+            Html.text "Error: " ++ (Csv.Decode.errorToString err)
+
 ```
 
-次に、CSVファイルを読み込んでリストとして取得する方法を見ていきましょう。
+このコードを実行すると、以下のようなテーブルが表示されます。
 
-```Elm
-readCsv : Csv.File -> Result Csv.Error (List (List Csv.Field))
-readCsv file =
-  Csv.parse file
-    |> Result.mapError (always CannotParse)
-```
+| ID | Name | Age |
+|----|------|-----|
+| 1  | John | 30  |
+| 2  | Amy  | 25  |
 
-このように、`Csv.parse`関数を使うことで、CSVファイルをパースしてリストとして取得することができます。詳しい使い方は[公式ドキュメント](https://package.elm-lang.org/packages/elm-community/csv/latest/)を参照してください。
+## Deep Dive
 
-CSVを取得した後は、通常のリスト操作が可能です。例えば、次のようにしてデータをフィルタリングすることができます。
+CSVは、Comma-Separated Valuesの略称で、テキストファイルとして保存されます。パラメーターをコンマで区切り、改行文字で行を区切ってデータを表現します。
 
-```Elm
-filterRowsByColumn : String -> List (List Csv.Field) -> List (List Csv.Field)
-filterRowsByColumn value rows =
-  List.filter (\row -> List.member value row) rows
-```
+CSVは、テキストエディターで作成することもできますが、プログラムで処理することもできます。代替手段として、JSONやXMLなどのデータフォーマットもありますが、CSVはシンプルで取り扱いやすいため、よく利用されます。
 
-さらに詳しい例やCSVファイルを書き込む方法などは、[こちらのブログ記事](https://thoughtbot.com/blog/using-elm-with-csv-files)を参考にしてください。
+Elmでは、[Csvパッケージ](https://package.elm-lang.org/packages/elm-community/csv/latest/Csv)を使用してCSVデータを扱うことができます。また、[elm-parser](https://package.elm-lang.org/packages/elm/parser/latest/)を使うと、独自のCSVパーサーを作成することもできます。
 
-## 詳しく見る
+## See Also
 
-この記事では、基本的なCSVの扱い方を紹介しましたが、実際にはもっと複雑なデータ構造を扱う場合があります。そんな時には[elm-csv-decode](https://github.com/ryannhg/elm-csv-decode)パッケージが役に立つかもしれません。また、エラー処理やバリデーションを行いたい場合には、[elm-validate](http://package.elm-lang.org/packages/rtfeldman/elm-validate/1.2.1/)パッケージを使うこともできます。
-
-## 参考リンク
-
-- [Elm 0.19 公式ドキュメント](https://guide.elm-lang.jp/)
-- [公式パッケージリスト](https://package.elm-lang.org/)
+- [Csvパッケージ](https://package.elm-lang.org/packages/elm-community/csv/latest/Csv)
+- [elm-parser](https://package.elm-lang.org/packages/elm/parser/latest/)
+- [CSVファイルの形式](https://ja.wikipedia.org/wiki/CSV_(%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E5%BD%A2%E5%BC%8F))

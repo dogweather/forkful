@@ -1,7 +1,7 @@
 ---
-title:                "現在の日付を取得する"
-html_title:           "Javascript: 現在の日付を取得する"
-simple_title:         "現在の日付を取得する"
+title:                "「現在の日付の取得」"
+html_title:           "Javascript: 「現在の日付の取得」"
+simple_title:         "「現在の日付の取得」"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Dates and Times"
@@ -10,39 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ日付を取得する必要があるのか
+## 今日の日付を取得するには？
 
-日付は、私たちの日常生活でとても重要なものです。仕事や予定を組む際には、常に日付を意識しています。特にプログラミングをする際は、日付を取得する必要があります。JavaScriptを使って現在の日付を取得する方法を紹介します。
+現代のプログラミングにおいて、日付 (年/月/日) を取得することは非常に重要です。それにはいくつかの理由があります。例えば、プログラマーはユーザーにとって最新の情報を表示したいと考えることができます。また、日付を取得することで、ソフトウェアの処理時間やトラブルシューティングにも役立ちます。
 
-## JavaScriptを使った日付の取得方法
+## 方法：
 
-まず、現在の日付を取得するには、Dateオブジェクトを使用します。以下のコードを参考にしてください。
+```Javascript
+const today = new Date(); // 現在の日付を取得
+console.log(today); // 出力例: Thu Oct 14 2021 09:00:00 GMT+0900 (Japan Standard Time)
 
-```javascript
-let currentDate = new Date(); // 現在の日付を取得
-console.log(currentDate); // 例: Tue Sep 21 2021 12:33:26 GMT-0400 (Eastern Daylight Time)
+const year = today.getFullYear(); // 現在の年を取得
+console.log(year); // 出力例: 2021
+
+const month = today.getMonth() + 1; // 現在の月を取得
+console.log(month); // 出力例: 10
+
+const date = today.getDate(); // 現在の日を取得
+console.log(date); // 出力例: 14
 ```
 
-このように、Dateオブジェクトを作成すると、現在の日付が取得できます。ただし、使用するコンピューターのタイムゾーンを考慮する必要があることに注意してください。
+## 詳細を調べる：
 
-さらに、日付を指定した書式で取得することもできます。以下のコードを参考にしてください。
+日付を取得する方法は時代とともに進化してきましたが、現在のJavascriptのバージョンでは、```Date```オブジェクトを使用することが最も一般的です。他の方法として、多くのライブラリやフレームワークが提供している日付取得用の関数もありますが、それぞれの技術によって使用方法が異なるため、Javascriptの基本的な知識を学ぶことが重要です。
 
-```javascript
-let currentDate = new Date();
-let year = currentDate.getFullYear(); // 現在の年を取得
-let month = currentDate.getMonth() + 1; // 月は0から始まるので、+1する
-let day = currentDate.getDate(); // 日を取得
+また、日付を取得するための```Date```オブジェクトには、様々なメソッドが存在します。例えば、```getFullYear()```や```getMonth()```、```getDate()```の他にも、```getDay()```や```getTime()```などがあります。詳しい情報は公式ドキュメントを参照することができます。
 
-console.log(`${year}年${month}月${day}日`); // 例: 2021年9月21日
-```
+## 関連リンク：
 
-Dateオブジェクトには、年・月・日の他にも時間や曜日など、さまざまな情報が含まれています。必要に応じて、取得するデータを調整してください。
-
-## 日付の取得についての詳細
-
-Dateオブジェクトの詳細については、公式ドキュメントを参照することで深く理解することができます。また、JavaScript以外の言語でも、似たような方法で日付を取得することができるので、興味のある方はぜひ調べてみてください。
-
-## See Also
-
-- [Dateオブジェクトについて (MDN)](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [JavaScriptで日付を操作する方法 (Qiita)](https://qiita.com/koseig/items/77c525ba15f397a7021c)
+- [MDN Dateオブジェクト](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [JavaScriptで日付を取得する方法](https://webllica.com/javascript/getting-current-date-in-javascript/)
+- [JavaScriptについての日本語ドキュメント](https://developer.mozilla.org/ja/docs/Web/JavaScript)

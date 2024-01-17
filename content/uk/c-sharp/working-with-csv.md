@@ -1,7 +1,7 @@
 ---
-title:                "Робота з csv"
-html_title:           "C#: Робота з csv"
-simple_title:         "Робота з csv"
+title:                "Робота з CSV"
+html_title:           "C#: Робота з CSV"
+simple_title:         "Робота з CSV"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Data Formats and Serialization"
@@ -10,58 +10,64 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Чому
+## Що і навіщо? 
+Робота з CSV - це зберігання та обробка даних у вигляді таблиці, де рядки представляють записи, а стовпці - поля цих записів. Це популярний формат, що використовується для обміну даними між програмами. Програмісти користуються CSV для зручної та легкої обробки та збереження структурованих даних.
 
-Нещодавно створення та обробка файлів CSV стало дуже популярним у програмуванні, особливо в C#. Це дає можливість зберігати та обмінюватися даними легко і швидко. Цей стиль стає надзвичайно важливим для роботи зі структурованими даними із великою кількістю інформації.
-
-## Як це зробити
-
-Для початку нам потрібно імпортувати простір імен для роботи з CSV файлами. У нашому випадку це буде `using System.IO;`. Потім, нам потрібно визначити шлях до файлу CSV, з яким ми працюємо:
+## Як? 
+Нижче наведені кодові приклади та вихідні дані для роботи з CSV у C#. 
 
 ```C#
-string path = "file.csv";
-```
+// Читання CSV файлу та виведення даних
+using System;
+using System.IO;
 
-Після цього, ми можемо створити об'єкт `StreamReader`, який дозволить нам читати дані з файлу:
+var csvString = File.ReadAllText("file.csv");
+Console.WriteLine(csvString);
 
-```C#
-StreamReader sr = new StreamReader(path);
-```
+// Запис даних у CSV файл
+using System;
+using System.IO;
 
-Тепер, за допомогою циклу `while`, ми можемо проходитися по кожному рядку файлу і оброблювати його:
+var data = "Name, Age, City\nAnna, 25, Kyiv\nIvan, 30, Lviv";
 
-```C#
-while(!sr.EndOfStream)
+File.WriteAllText("newFile.csv", data);
+
+// Виведення певного стовпця з CSV файла
+using System;
+using System.IO;
+using System.Linq;
+
+var csvString = File.ReadAllLines("file.csv");
+var cityColumn = csvString.Select(line => line.Split(',')[2]);
+
+foreach (var city in cityColumn)
 {
-    string line = sr.ReadLine();
-    // тут можна виконати потрібні дії з кожним рядком
+    Console.WriteLine(city);
 }
-```
 
-Для зручності, ми можемо також використовувати бібліотеку `CsvHelper`, яка дозволяє нам зчитати дані з файлу та обробляти їх вже у вигляді об'єктів. Для цього нам необхідно встановити бібліотеку через NuGet та підключити її до проекту:
+// Повернення CSV таблиці у вигляді двовимірного масиву
+using System;
+using System.IO;
 
-```C#
-CsvReader csvReader = new CsvReader(sr, CultureInfo.InvariantCulture);
-var records = csvReader.GetRecords<User>().ToList();
-```
+var csvString = File.ReadAllLines("file.csv");
+var table = new string[csvString.Length, csvString[0].Split(',').Length];
 
-Після цього, ми можемо працювати з нашими об'єктами та зберігати дані до нового файлу, зазначивши шлях до нього і використовуючи об'єкт `StreamWriter`:
-
-```C#
-string outputPath = "new_file.csv";
-using(StreamWriter sw = new StreamWriter(outputPath, false, Encoding.UTF8))
+for (int i = 0; i < csvString.Length; i++)
 {
-    var csvWriter = new CsvWriter(sw, CultureInfo.InvariantCulture);
-    csvWriter.WriteRecords(records); // зберігаємо дані до файлу
+    for (int j = 0; j < csvString[i].Split(',').Length; j++)
+    {
+        table[i, j] = csvString[i].Split(',')[j];
+    }
 }
+
+Console.WriteLine(table[1, 2]); // Виведе дані з другого рядка та третього стовпця
 ```
 
-## Глибше занурення
+## Глибокий погляд
+Формат CSV був вперше запропонований у 1972 році та з тих пір став стандартом для обміну даними. Незважаючи на це, існують інші формати, такі як JSON та XML, які також широко використовуються для роботи з даними. Використання кожного з цих форматів залежить від потреб та вимог проекту. Робота з CSV у C# досить проста за допомогою вбудованих методів для роботи з файлами та рядками.
 
-У роботі з CSV є багато моментів, які можуть стати важливими, наприклад, робота з розділителями, кодуванням, назвами стовпців, тощо. Також, важливо врахувати особливості роботи з більшими обсягами даних, щоб уникнути помилок та зберегти продуктивність програми.
-
-## Дивіться також
-
-- [Документація Microsoft з роботи з CSV в C#](https://docs.microsoft.com/en-us/dotnet/api/system.io.filestream?view=netcore-3.1)
-- [Туторіал на Blog Of LVA Technologies з роботи з CSV в C#](https://www.lva-tech.lv/2017/11/working-with-csv-in-csharp/)
-- [Офіційна документ
+## Дивись також 
+Для детальнішої інформації про формат CSV та роботу з ним у C#, рекомендуємо переглянути наступні ресурси: 
+- [Документація Microsoft для роботи з CSV у C#](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/how-to-read-from-a-csv-file)
+- [Стаття на CodeProject про роботу з CSV у C#](https://www.codeproject.com/Articles/30705/C-CSV-Reader)
+- [GitHub репозиторій з книгою "A Guide to Working with CSV Files in C#"](https://github.com/efleurine/CSharp-CSV-Guide)

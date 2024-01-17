@@ -10,45 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué enviar una solicitud HTTP con autenticación básica?
+## ¿Qué y por qué?
+Enviar una solicitud HTTP con autenticación básica es una forma de comunicarse con un servidor web protegido mediante un usuario y contraseña. Los programadores lo hacen para verificar la identidad del usuario y acceder a recursos restringidos.
 
-Enviar una solicitud HTTP con autenticación básica es una forma segura de proteger la información que se envía entre el servidor y el cliente. Al utilizar este método de autenticación, se requiere un nombre de usuario y una contraseña para acceder a datos privados, lo que garantiza que solo las personas autorizadas puedan obtener acceso a ellos.
-
-## Cómo hacerlo
-
-Para enviar una solicitud HTTP con autenticación básica en Javascript, se pueden seguir los siguientes pasos:
-
-1. Crear una instancia del objeto XMLHttpRequest:
-```Javascript
-var xhr = new XMLHttpRequest();
+## Cómo:
 ```
-2. Establecer el método de solicitud y la URL:
-```Javascript
-xhr.open('GET', 'https://api.example.com/data');
+// Ejemplo de código en Javascript para enviar una solicitud HTTP con autenticación básica
+
+// Crear un objeto XMLHttpRequest
+const request = new XMLHttpRequest();
+
+// Especificar el método HTTP y la URL del servidor
+request.open('GET', 'https://www.ejemplo.com/recurso-protegido');
+
+// Agregar los encabezados de autenticación básica
+request.setRequestHeader('Authorization', 'Basic usuario:contraseña');
+
+// Enviar la solicitud
+request.send();
+
+// Obtener la respuesta del servidor
+request.onreadystatechange = function() {
+  if (this.readyState == 4 && this.status == 200) {
+    // Hacer algo con los datos recibidos
+    console.log(this.responseText);
+  }
+}
 ```
-3. Crear una cadena con el nombre de usuario y la contraseña en el formato "username:password":
-```Javascript
-var auth = btoa("username:password");
-```
-4. Agregar los encabezados necesarios para la autenticación básica:
-```Javascript
-xhr.setRequestHeader("Authorization", "Basic " + auth);
-```
-5. Enviar la solicitud al servidor:
-```Javascript
-xhr.send();
-```
 
-Una vez que se completa la solicitud, se puede acceder a la respuesta del servidor a través de la propiedad "responseText" del objeto XMLHttpRequest.
+La salida de este código podría ser una respuesta en formato JSON, XML o simplemente un mensaje de éxito o error, dependiendo de la implementación del servidor.
 
-## Profundizando
+## Profundizando:
+La autenticación básica es un método de autenticación de HTTP que ha existido desde los inicios de la web en 1999. Aunque sigue siendo utilizado, se considera menos seguro que otros métodos más recientes como OAuth o JWT (JSON Web Tokens). Sin embargo, sigue siendo una opción común para aplicaciones internas o en casos donde la seguridad no sea una preocupación tan importante. Además, es fácil de implementar y no requiere librerías adicionales.
 
-La autenticación básica es un método de autenticación ampliamente utilizado en el protocolo HTTP. Al enviar una solicitud con autenticación básica, se incluye un encabezado "Authorization" en la solicitud que contiene el nombre de usuario y la contraseña codificados en Base64. Esta codificación no es una forma segura de encriptar los datos, por lo que se recomienda utilizar otros métodos de autenticación si se envían datos sensibles.
-
-Además, cabe mencionar que este método solo cifra la información de inicio de sesión, por lo que se recomienda utilizar una conexión segura (HTTPS) para proteger el resto de la información enviada.
-
-## Ver también
-
-- [Documentación oficial de XMLHttpRequest](https://developer.mozilla.org/es/docs/Web/API/XMLHttpRequest)
-- [Ejemplo de autenticación básica en Javascript](https://jsfiddle.net/trevorhreed/dTtyr/)
-- [Información sobre otros métodos de autenticación en HTTP](https://tools.ietf.org/html/rfc7617)```
+## Ver también:
+- [Introducción a la autenticación HTTP básica](https://developer.mozilla.org/es/docs/Web/HTTP/Authentication)
+- [Alternativas a la autenticación básica](https://www.moesif.com/blog/technical/api-authentication-methods/)
+- [Especificación de autenticación básica en HTTP](https://tools.ietf.org/html/rfc2617)

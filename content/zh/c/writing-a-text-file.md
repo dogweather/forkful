@@ -1,7 +1,7 @@
 ---
-title:                "编写文本文件"
-html_title:           "C: 编写文本文件"
-simple_title:         "编写文本文件"
+title:                "撰写文本文件"
+html_title:           "C: 撰写文本文件"
+simple_title:         "撰写文本文件"
 programming_language: "C"
 category:             "C"
 tag:                  "Files and I/O"
@@ -10,43 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-为什么：写一个文本文件的原因只有一个：它可以帮助我们保存和组织数据。如果你要处理大量的数据，写一个文本文件是一个基本的技能。
+# C语言中的文本文件写入
 
-如何做：要编写一个文本文件，您需要使用C语言中的“ fprintf”命令来将数据格式化为文本，并使用“ fopen”命令打开一个文件来存储它们。以下是一个简单的例子：
+## 是什么 & 为什么？
+文本文件写入是指将文本数据存储到计算机中的过程。程序员经常这样做，因为它可以让他们的程序保存和读取数据，从而让程序更加灵活和实用。
 
+## 如何：
 ```C
-#include <stdio.h>
+//打开文件
+FILE *fp = fopen("example.txt", "w");
 
-int main() {
-  FILE *fp;
-  fp = fopen("data.txt", "w");
-
-  int num = 7;
-  float pi = 3.14;
-  char str[20] = "Hello World";
-
-  fprintf(fp, "My favorite number is %d\n", num);
-  fprintf(fp, "Pi is approximately %.2f\n", pi);
-  fprintf(fp, "I love saying %s\n", str);
-
-  fclose(fp);
-
-  return 0;
+//检查文件是否成功打开
+if (fp == NULL) {
+    printf("无法打开文件\n");
+    exit(1);
 }
+
+//写入文本数据
+fprintf(fp, "这是一行文本数据\n");
+fprintf(fp, "%d", 123); //可以写入变量和表达式
+fprintf(fp, "\n"); //写入换行符
+
+//关闭文件
+fclose(fp);
 ```
 
-输出：
+## 深入探讨：
+文本文件写入的历史可以追溯到计算机诞生时期，它是最早的数据存储方式之一。除了写入文件外，程序员也可以使用类似的方法读取文件中的文本数据。在C语言中，除了使用文本文件写入外，还有其他一些数据存储方式，比如二进制文件写入。文本文件写入的实现依赖于操作系统和编译器，但是基本原理是相同的。
 
-```txt
-My favorite number is 7
-Pi is approximately 3.14
-I love saying Hello World
-```
-
-深入探讨：编写文本文件可以提供更大的灵活性，因为它允许您以不同的方式存储和组织数据。您可以使用不同的格式和分隔符来简化数据的处理和分析。此外，文本文件也可以轻松地与其他程序共享和使用。
-
-## 查看更多
-
-- [C语言教程](https://www.runoob.com/cprogramming/c-tutorial.html)
-- [C语言文本文件处理教程](https://www.tutorialspoint.com/cprogramming/c_file_io.htm)
-- [C标准库文档](https://devdocs.io/c/)
+## 参考资料：
+- [C语言官方文档](https://zh.cppreference.com/w/c)提供了关于文件操作的详细说明。
+- [C语言中文网](https://c.biancheng.net/view/2173.html)提供了更多关于C语言中文本文件写入和读取的实例。

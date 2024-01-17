@@ -10,36 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+# Co & Dlaczego?
 
-Większość języków programowania posiada wbudowaną funkcję, służącą do łączenia ciągów znaków, określaną jako "konkatenacja". Pozwala ona na połączenie różnych ciągów znaków w jedną całość, co jest często wykorzystywane przy tworzeniu skryptów i programów. W Elixirze funkcja ta jest nie tylko wygodna, ale również bardzo wydajna, dzięki czemu warto poznać ją bliżej.
+Kontatenacja jest procesem łączenia ciągów znaków, czyli tekstowych danych, w jeden ciąg znaków. Programiści wykorzystują ten proces, aby tworzyć bardziej złożone teksty i wyświetlać je użytkownikom w czytelnej formie.
 
-## Jak to zrobić?
+# Jak to zrobić?
 
-```elixir
-# Przykładowe ciągi znaków
-imie = "Anna"
-nazwisko = "Nowak"
-wiek = 30
-
-# Łączenie za pomocą operatora ++
-pelne_imie = imie ++ " " ++ nazwisko
-
-# Łączenie z wykorzystaniem interpolacji
-dane_osobowe = "#{imie} #{nazwisko}, wiek #{wiek}"
-
-# Wyświetlenie wyników
-IO.puts(pelne_imie) # Wynik: "Anna Nowak"
-IO.puts(dane_osobowe) # Wynik: "Anna Nowak, wiek 30"
+```Elixir
+"Hello " <> "world"
+```
+```console
+Hello world
 ```
 
-Możliwość łączenia ciągów znaków za pomocą operatora ++ oraz interpolacji pozwala na elastyczne i czytelne tworzenie złożonych ciągów. Warto również zauważyć, że konkatenacja w Elixirze jest niezwykle szybka i nie wpływa na wydajność programu.
+W języku Elixir używa się operatora <> do konkatenacji ciągów znaków. W powyższym przykładzie, ciągi "Hello" i "world" są połączone w jeden - "Hello world".
 
-## Pogłębiona analiza
+# Głębsze spojrzenie
 
-W Elixirze konkatenacja jest realizowana przez wykorzystanie list, a więc struktur danych, które dostarczają funkcje do dodawania, usuwania i modyfikowania elementów. W przypadku operatora ++, po lewej stronie musi znajdować się lista, a po prawej dowolna struktura, która może być przekształcona do listy. Dzięki temu dostajemy uniwersalne narzędzie, które możemy wykorzystać w różnych scenariuszach.
+Kontatenacja jest powszechnie używaną metodą w programowaniu. W przeszłości, w starszych językach programowania, konieczne było używanie specjalnych funkcji do łączenia ciągów. Jednak w dzisiejszych językach, takich jak Elixir, konkatenacja jest wbudowanym elementem składni.
 
-## Zobacz również
+Alternatywą dla kontatenacji jest użycie funkcji ```IO.puts```, która może przyjąć wiele argumentów i wyświetlić je w konsoli.
 
-- [Dokumentacja operatora ++](https://hexdocs.pm/elixir/Kernel.html#++,)
-- [Interpolacja w Elixirze](https://elixir-lang.org/getting-started/binaries-strings-and-char-lists.html#string-interpolation)
+W języku Elixir, konkatenacja jest wydajniejszym rozwiązaniem do łączenia ciągów, ponieważ nie tworzy ona nowego obiektu, tylko łączy dwa istniejące.
+
+# Zobacz także
+
+Więcej informacji o kontatenacji w języku Elixir można znaleźć w oficjalnej dokumentacji: https://elixir-lang.org/getting-started/binaries-strings-and-char-lists.html#string-interpolation-and-concatenation
+
+Inne ciekawe artykuły na temat języka Elixir można znaleźć na stronie Medium: https://medium.com/tag/elixir

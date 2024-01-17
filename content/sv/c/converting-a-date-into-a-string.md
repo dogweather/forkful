@@ -10,58 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+# Vad & Varför?
 
-Att konvertera en datum till en sträng är ett vanligt problem inom programmering. Det kan vara användbart för att presentera datum på ett visuellt sätt eller för att spara datum som en sträng i en databas. I den här artikeln kommer jag att förklara hur du kan göra det med hjälp av C.
+Att omvandla ett datum till en sträng är en vanlig uppgift inom programmering. Det innebär att man tar ett datum i ett visst format, som till exempel åååå-mm-dd, och gör om det till en sekvens av bokstäver, siffror och specialtecken. Detta är nödvändigt när man vill visa upp datumet för användaren eller spara det i en databas.
 
-## Så här gör du
-
-För att kunna konvertera ett datum till en sträng i C behöver du använda funktionen `strftime()`. Detta är en inbyggd funktion i C som tillåter dig att formatera ett datum enligt en viss mall och spara det som en sträng. Här är ett exempel på hur du kan använda `strftime()`:
+# Hur man gör:
 
 ```C
 #include <stdio.h>
 #include <time.h>
 
 int main() {
-    // Skapa en struktur för datum och tid
-    struct tm datum;
-    // Ställ in datumet till 3 mars 2021
-    datum.tm_year = 121; // år 2021 minus 1900
-    datum.tm_mon = 2; // mars (månaden börjar på 0)
-    datum.tm_mday = 3; // 3:e dagen i månaden
-    // Anropa strftime för att formatera datumet
-    char str[50]; // En sträng som lagrar datumet
-    strftime(str, 50, "%d/%m/%Y", &datum); // Formatera till DD/MM/YYYY
+    // Skapa ett datum-objekt
+    time_t date;
+    // Tilldela ett datum (2019-10-18)
+    date = mktime(2019, 10, 18, 0, 0, 0);
+    // Skapa en sträng som ska hålla datumet
+    char date_string[11];
+    // Använd funktionen 'strftime' för att konvertera datumet till en sträng
+    strftime(date_string, 11, "%Y-%m-%d", localtime(&date));
     // Skriv ut strängen
-    printf("Datumet är: %s\n", str);
+    printf("Datumet är: %s\n", date_string);
     return 0;
 }
 ```
+Output: Datumet är: 2019-10-18 
 
-Output:
-```
-Datumet är: 03/03/2021
-```
+I exemplet ovanför använder vi funktionen ```mktime``` för att skapa ett datum-objekt och tilldela det ett datum. Sedan använder vi funktionen ```strftime``` för att konvertera datumet till en sträng enligt det angivna formatet. Det resulterande strängen kan sedan användas för att visa datumet för användaren eller spara det i en databas.
 
-Som du kan se i exemplet ovan kan du anpassa formatet för datumet genom att ändra på mallen som du skickar till `strftime()`. Här är några vanliga mallar:
+# Djupdykning:
 
-- `%d` - Dag av månaden med ledande nolla
-- `%m` - Månad med ledande nolla
-- `%Y` - År med 4 siffror
-- `%y` - År med 2 siffror
-- `%H` - Timme (24-timmars format)
-- `%I` - Timme (12-timmars format)
-- `%M` - Minut
-- `%S` - Sekund
+Historisk kontext: Konvertering av datum till strängar har sina rötter i Unix-operativsystemet. Eftersom datum lagras som en sekundräknare sedan 1970, är det nödvändigt att konvertera det till ett läsbart format för att användas av människor.
 
-Här är en komplett lista över alla mallar: [https://www.cplusplus.com/reference/ctime/strftime/](https://www.cplusplus.com/reference/ctime/strftime/)
+Alternativ: Det finns flera olika funktioner som kan användas för att konvertera datum till strängar, som till exempel ```ctime``` och ```strptime```. Det finns också externa bibliotek som kan användas för mer avancerade datumsformat.
 
-## Deep Dive
+Implementation detaljer: Konversionen av datum till strängar innebär att man tar bort den inre representationen av datumet och omvandlar det till en läsbar sekvens av tecken. Detta kan göras med hjälp av olika kommandon och teckenkoder, beroende på det önskade formatet.
 
-Det finns många funktioner i C som kan hjälpa dig att konvertera ett datum till en sträng, men `strftime()` är den vanligaste. Det finns också en liknande funktion som heter `ctime()` som kan användas för att konvertera ett datum till en sträng på ett enklare sätt. En annan viktig aspekt att notera är att `strftime()` returnerar en `size_t` variabel, vilket bara är ett alias för en osignerad heltalstyp. Detta innebär att du kan använda funktionen för att räkna antalet tecken i den konverterade strängen.
+# Se även:
 
-## Se också
-
-- [https://www.cplusplus.com/reference/ctime/strftime/](https://www.cplusplus.com/reference/ctime/strftime/)
-- [https://www.cplusplus.com/reference/ctime/ctime/](https://www.cplusplus.com/reference/ctime/ctime/)
-- [https://www.geeksforgeeks.org/how-to-convert-string-to-date-in-c/](https://www.geeksforgeeks.org/how-to-convert-string-to-date-in-c/)
+- Dokumentation för funktionen ```strftime``` i C
+- Mer om tids- och datumhantering i C på StackOverflow

@@ -10,42 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi?
+## Mitä & Miksi?
+Regular expressionien käyttö tarkoittaa lyhyesti sanottuna tietynlaisten merkkijonojen etsimistä ja manipulointia ohjelmoinnissa. Tämä on erityisen hyödyllistä silloin, kun työskennellään suurten ja monimutkaisten tietomassojen kanssa, sillä regex:ien avulla voidaan nopeasti ja tarkasti löytää haluttuja kappaleita tekstistä. Näin säästytään turhalta manuaaliselta etsimiseltä ja korjailulta.
 
-Jos haluat säästää aikaa ja vaivaa tiedostojen ja tietokantojen käsittelyssä, voit käyttää säännöllisiä lausekkeita. Ne ovat tehokkaita työkaluja, jotka auttavat sinua löytämään ja muokkaamaan tietoja tietorakenteista nopeasti ja yksinkertaisesti.
-
-## Kuinka?
-
-```Fish Shell``` tarjoaa kätevän tavan käyttää säännöllisiä lausekkeita suoraan komentoriviltä. Voit esimerkiksi käyttää ```grep``` komentoa etsimään tiettyä merkkijonoa tiedostoista:
+## Miten:
+Koodin avulla on helpointa havainnollistaa regex:ien käyttöä. Alla on esimerkkejä Fish Shell -komentorivityyppisillä koodiblokeilla.
 
 ```
-grep 'helsinki' kaupungit.txt
+Fish Shell Regular Expression
+
+# Hakee ja tulostaa kaikki sähköpostiosoitteet tekstitiedostosta
+pcregrep -o '\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,6}\b' tiedosto.txt
+
+# Korvaa kaikki välilyönnit tekstistä väliviivalla
+sed 's/ /-/g' tiedosto.txt
 ```
 
-Tämä komento näyttäisi kaikki tiedostot, jotka sisältävät sanan "helsinki". Voit myös käyttää säännöllisiä lausekkeita tiedostojen sisältämien tietojen muokkaamiseen. Esimerkiksi, jos haluat poistaa kaikki numerot sanasta "helsinki", voit käyttää:
+## Syvempi sukellus:
+On hyödyllistä tietää, että regular expressionit ovat olleet käytössä jo pitkään ja ne ovat lähes välttämättömiä ohjelmoinnin maailmassa. On myös olemassa muita vaihtoehtoisia tapoja käsitellä merkkijonoja, kuten esimerkiksi string-metodeilla, mutta regex:it tarjoavat monipuoliset ja tehokkaat työkalut. Fish Shell käyttää PCRE (Perl Compatible Regular Expression) -kirjastoa, joka mahdollistaa monimutkaisempien regex:ien käytön.
 
-```
-sed 's/[0-9]//g' kaupungit.txt > uudet_kaupungit.txt
-```
-
-Tämä korvaisi kaikki numerot tyhjällä merkillä ja tallentaisi muokatun tiedoston "uudet_kaupungit.txt" nimellä. Voit myös käyttää säännöllisiä lausekkeita verrataksesi erilaisia merkkijonoja ja tehdä päätöksiä sen perusteella. Esimerkiksi, jos haluat tarkistaa onko tietty sana tiedostossa, voit käyttää:
-
-```
-if [[ "Helsinki" =~ "helsinki" ]]
-    echo 'Tiedostossa on sana "helsinki".'
-else
-    echo 'Tiedostossa ei ole sanaa "helsinki".'
-end
-```
-
-## Syvällisemmin
-
-Saadaksesi täyden hyödyn irti säännöllisistä lausekkeista, on tärkeää ymmärtää erilaisia merkkejä ja niiden merkityksiä. Esimerkiksi, voit käyttää ```[]``` merkkejä määrittääksesi erilaisia merkkejä, jotka haluat sisällyttää tai jättää pois. ```^``` merkillä voit lisätä ehtoja, jotka rajatun alueen ulkopuolella voivat aiheuttaa erilaisia toimintoja. Lisäksi, voit käyttää erilaisia kuviorakenteita, kuten ```*``` tai ```+```, toistojen määrän määrittämiseen.
-
-Yksi tapa oppia paremmin säännöllisiä lausekkeita on käyttää niitä käytännössä. Voit löytää tarpeeksi harjoitusta käyttämällä erilaisia komentoriviohjelmia, kuten ```grep```, ```sed``` ja ```awk```, jotka kaikki tukevat säännöllisiä lausekkeita.
-
-## Katso myös
-
-- [Fish Shell virallinen dokumentaatio](https://fishshell.com/docs/current)
-- [RegExr](https://regexr.com/), verkossa toimiva säännöllisten lausekkeiden editori
-- [Fun with Regular Expressions](https://jvns.ca/blog/2019/08/27/fun-with-regular-expressions/), artikkeli säännöllisten lausekkeiden käytöstä ja leikittelystä
+## Katso myös:
+- [Fish Shell -dokumentaatio](https://fishshell.com/docs/current/index.html)
+- [Regex-tutoriaali ja -harjoituksia](https://regexone.com/)

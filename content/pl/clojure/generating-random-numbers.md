@@ -10,37 +10,21 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co & Dlaczego? 
+Generowanie losowych liczb to proces, w którym komputer tworzy liczby bez określonego porządku lub wzoru. Programiści często używają generatorów liczb losowych do symulacji, testowania i pseudorandomizacji danych w swoich aplikacjach.
 
-Generowanie losowych liczb jest ważną częścią wielu programów i aplikacji. Pozwala to na symulowanie losowych rezultatów, testowanie funkcji i algorytmów oraz w wielu innych zastosowaniach, w których potrzebne są wartości bez ustalonego wzoru.
-
-## Jak to zrobić
+## Jak wykonać: 
+Możemy użyć funkcji `rand` w Clojure, aby wygenerować pojedynczą losową liczbę typu float z przedziału od 0 (włącznie) do 1 (wyłącznie). Możemy również użyć funkcji `rand-int`, aby wygenerować pojedynczą losową liczbę całkowitą z określonego przedziału, na przykład `(rand-int 10)` wygeneruje liczbę z przedziału od 0 do 9. Aby wygenerować listę losowych liczb, możemy wykorzystać funkcję `repeatedly` w połączeniu z `rand` lub `rand-int`. 
 
 ```Clojure
-; Wykorzystanie funkcji rand z biblioteki clojure.core
-(clojure.core/rand)
-
-; Generowanie pojedynczej losowej liczby w zakresie od 0 do 10
-(rand 10)
-
-; Generowanie listy 10 losowych liczb w zakresie od 0 do 100
-(repeat 10 #(rand 100))
-
-; Generowanie losowego indexu dla listy
-(nth (shuffle ["jabłko" "banan" "ananas" "gruszka"]) (rand 4))
+(rand) ; -> 0.7484451465112938 
+(rand-int 100) ; -> 57
+(doall (repeatedly 5 #(rand-int 50))) ; -> (7 18 34 21 42)
 ```
 
-Sample output:
+## Głębokie Nurty:
+Generowanie losowych liczb ma długą historię, sięgającą XVIII wieku wraz z rozwojem matematyki prawdopodobieństwa. W dzisiejszych czasach istnieje wiele alternatywnych metod generowania losowych liczb, takich jak metody oparte na sprzęcie lub algorytmach kryptograficznych. Implementacja generatorów liczb losowych w Clojure korzysta z generatora Mersenne Twister, który jest szeroko stosowany w branży gier komputerowych. 
 
-6
-(43 92 76 11 25 98 72 64 32 5)
-gruszka
-
-## Głębsza analiza
-
-W Clojure istnieje wiele sposobów na generowanie losowych liczb. Oprócz już przykładowej funkcji rand, istnieją także funkcje rand-int i rand-nth, które pozwalają na generowanie losowych liczb całkowitych oraz losowych elementów z listy. Istnieje również możliwość ustawienia ziarna (seed), dzięki czemu możliwe jest uzyskanie powtarzalnych rezultatów z losowych generacji.
-
-## Zobacz także
-- [Dokumentacja Clojure do funkcji rand](https://clojuredocs.org/clojure.core/rand)
-- [Inne sposoby na generowanie losowych liczb w Clojure](https://stackoverflow.com/questions/38515048/how-to-generate-random-number-in-clojure)
-- [Przydatna aplikacja do testowania funkcji i algorytmów z wykorzystaniem losowych liczb](https://leetcode.com/)
+## Zobacz także: 
+- Dokumentacja Clojure dotycząca generowania liczb losowych: https://clojuredocs.org/clojure.core/rand
+- Oficjalna strona Mersenne Twister: http://www.math.sci.hiroshima-u.ac.jp/~m-mat/MT/emt.html

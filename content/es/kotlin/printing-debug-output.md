@@ -1,7 +1,7 @@
 ---
-title:                "Impresión de salida de depuración"
-html_title:           "Kotlin: Impresión de salida de depuración"
-simple_title:         "Impresión de salida de depuración"
+title:                "Imprimiendo resultados de depuración"
+html_title:           "Kotlin: Imprimiendo resultados de depuración"
+simple_title:         "Imprimiendo resultados de depuración"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Testing and Debugging"
@@ -10,59 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué?
+Qué & Por qué?
 
-A veces, mientras desarrollamos una aplicación en Kotlin, nos encontramos con errores o problemas en nuestro código y es importante poder identificar dónde se está produciendo el error y por qué. En esos casos, la impresión de salida de depuración (debug output) puede ser una herramienta invaluable para ayudarnos a comprender la ejecución de nuestro código y encontrar una solución.
+Imprimir salida de depuración es un proceso común en programación en el que se envían mensajes o datos a la consola para ayudar al desarrollador a entender cómo se está ejecutando un programa y a diagnosticar errores. Los programadores lo hacen para encontrar y corregir problemas en su código de manera eficiente.
 
-## Cómo hacerlo
+Cómo:
 
-La impresión de salida de depuración en Kotlin se logra utilizando la función `println()` o la función `Log.d()` si estás desarrollando una aplicación para Android. Ambas funciones pueden imprimir mensajes de texto o variables en la consola del sistema, lo que nos permite ver la información mientras se ejecuta el código.
-
-```Kotlin
+```Kotlin 
+// Ejemplo básico de imprimir salida de depuración en Kotlin
 val nombre = "Juan"
-println("¡Hola, $nombre!") // salida: ¡Hola, Juan!
-
-val edad = 25
-Log.d("Edad", "$edad años") // salida en consola del sistema: Edad: 25 años
+println("Hola $nombre")
 ```
-
-También podemos utilizar la función `print()` si solo queremos imprimir un mensaje simple en la misma línea.
+Salida:
+```
+Hola Juan
+```
 
 ```Kotlin
-print("Hello")
-print("World") // salida: HelloWorld
+// Otro ejemplo para imprimir el valor de una variable
+val num = 5
+println("El valor actual de 'num' es $num")
+```
+Salida:
+```
+El valor actual de 'num' es 5
 ```
 
-Si queremos imprimir una variable que no sea de tipo `String`, podemos utilizar la función `toString()` para convertirla en una cadena de texto.
+Deep Dive:
 
-```Kotlin
-val numero = 42
-println("El número es: " + numero.toString()) // salida: El número es: 42
-```
+La impresión de salida de depuración ha existido desde los primeros días de la programación. Sin embargo, con la evolución de los lenguajes de programación y las herramientas de depuración, ha habido un cambio hacia el uso de depuradores integrados en lugar de imprimir a la consola. Esto permite a los programadores ver visualmente cómo se ejecuta su código y establecer puntos de interrupción para detener la ejecución en un paso determinado.
 
-Además de imprimir mensajes y variables, también podemos imprimir información de depuración en diferentes niveles utilizando la función `Log`.
+Aunque la impresión de salida de depuración sigue siendo una técnica útil, los programadores también pueden recurrir a la creación de registros de eventos o el uso de otras herramientas de depuración para una mejor visualización y análisis de su código.
 
-```Kotlin
-Log.d("DEBUG", "El valor de la variable es: $variable") // información de depuración
-Log.i("INFORMACIÓN", "Operación completada exitosamente") // información general
-Log.e("ERROR", "No se puede realizar la operación") // error crítico
-```
+Ver también:
 
-También podemos dar formato a nuestros mensajes de salida utilizando la cadena de formato `%`.
-
-```Kotlin
-val numero1 = 5
-val numero1 = 10
-println("La suma de %d y %d es %d", numero1, numero2, numero1 + numero2) // salida: La suma de 5 y 10 es 15
-```
-
-## Más a fondo
-
-Aunque imprimir salida de depuración puede ser útil en diferentes ocasiones, es importante recordar eliminarla una vez que hayamos encontrado y solucionado el error en nuestro código. Dejar mensajes de salida de depuración innecesarios puede afectar el rendimiento de nuestra aplicación.
-
-También es importante tener en cuenta que muchos sistemas tienen sus propias funciones y métodos para imprimir salida de depuración, como `Log` en Android o `NSLog` en iOS. Asegúrate de investigar sobre las herramientas disponibles en el sistema que estés utilizando para imprimir salida de depuración de manera más efectiva.
-
-## Ver También
-
-- [Documentación oficial de Kotlin](https://kotlinlang.org/docs/home.html)
-- [Usando la función Log en Android](https://developer.android.com/reference/android/util/Log)
+- Documentación oficial de Kotlin sobre imprimir salida de depuración: https://kotlinlang.org/docs/reference/inline-classes.html
+- Libro de referencia de Kotlin: https://www.kotlincodes.com/
+- Cómo usar un depurador en Kotlin: https://medium.com/codex/using-debugger-in-kotlin-b18d3bbc1fa3

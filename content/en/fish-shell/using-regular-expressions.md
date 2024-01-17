@@ -10,47 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-Regular expressions are a powerful tool for string manipulation and pattern matching in the Fish Shell. They allow you to search, replace, and extract text in a flexible and efficient manner. By learning how to use regular expressions, you can save time and streamline your coding process.
+Using regular expressions in programming is a way to search and manipulate text using a set of patterns and rules. It allows programmers to quickly find and extract specific data from a large amount of text, making it a powerful tool for tasks such as data validation, text processing, and data scraping. Regular expressions can significantly increase efficiency and accuracy when working with text-based data.
 
-## How To
+## How to:
 
-Using regular expressions in the Fish Shell is simple. You can start by using the `grep` command to search for a specific pattern in a file or command output. For example, let's say we have a file called `names.txt` containing a list of names:
-
-```
-John
-Emily
-Michael
-Jane
-```
-
-We can use regular expressions to search for all names that start with "J" by using the following command:
+Coding with regular expressions in Fish Shell is done using the built-in `string` command. Here are a few examples of how it can be used:
 
 ```
-grep ^J names.txt
+# Match a specific pattern in a string
+string match "word" "This is a sentence with the word hello"
+# Output: hello
 ```
 
-The `^` symbol represents the beginning of a line, so this command will return "John" and "Jane" as results.
-
-To replace text with regular expressions, we can use the `sed` command. For instance, if we want to change all "e" characters to "E" in `names.txt`, we can use the following command:
-
 ```
-sed -i 's/e/E/g' names.txt
+# Find all instances of a pattern in a string
+string match -a "a" "aaaaa"
+# Output: a a a a a
 ```
 
-The `-i` flag ensures that the changes are made directly in the file and the `g` flag makes the replacement global, meaning all instances of "e" will be replaced with "E".
+```
+# Replace a pattern in a string with another string
+string replace "word" "replacement" "This is a sentence with the wrong word"
+# Output: This is a sentence with the wrong replacement
+```
 
-## Deep Dive
+## Deep Dive:
 
-Regular expressions have a wide range of symbols and operators that allow for complex pattern matching. Here are some useful resources to learn more:
+The use of regular expressions can be traced back to the 1950s when mathematician Stephen Cole Kleene introduced the concept in formal language theory. However, it was not until the 1980s that it gained popularity in computer programming.
 
-- [Fish Shell documentation on regular expressions](https://fishshell.com/docs/3.1/cmds/grep.html)
-- [Regular-Expressions.info](https://www.regular-expressions.info/) - an in-depth guide on regular expressions
-- [Regex101](https://regex101.com/) - an online tool to test and learn regular expressions
+Although regular expressions can be written in various languages, using them in Fish Shell allows for a more concise and simple syntax. Additionally, Fish Shell's `string` command is optimized for performance, making it a reliable and efficient option for regular expression tasks.
 
-See Also
+Alternatives to using regular expressions in Fish Shell include using built-in string methods or external packages such as `grep` or `sed`. However, these alternatives may not have the same level of functionality and flexibility as regular expressions.
 
-- [Fish Shell: Getting Started](https://fishshell.com/docs/current/tutorial.html)
-- [Fish Shell: Command Substitution](https://fishshell.com/docs/current/tutorial.html#builtin-command-substitution) - another useful feature in the Fish Shell
-- [Fish Shell: Pipes and Redirections](https://fishshell.com/docs/current/tutorial.html#pipes-and-redirections) - learn how to use pipes and redirections with regular expressions.
+Another interesting aspect of using regular expressions in Fish Shell is the ability to define your own custom aliases and functions. This can help simplify complex regular expressions and make them easier to use in your code.
+
+## See Also:
+
+- [Fish Shell Official Documentation on Regular Expressions](https://fishshell.com/docs/current/commands.html#string)
+- [Regular Expression 101 - Online regex tester and debugger](https://regex101.com/)
+- [Introduction to Regular Expressions - Tutorial by Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)

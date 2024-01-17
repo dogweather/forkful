@@ -1,7 +1,7 @@
 ---
-title:                "csvの取り扱い"
-html_title:           "Gleam: csvの取り扱い"
-simple_title:         "csvの取り扱い"
+title:                "CSVファイルを扱う"
+html_title:           "Gleam: CSVファイルを扱う"
+simple_title:         "CSVファイルを扱う"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Data Formats and Serialization"
@@ -10,41 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##　なぜ
+## CSVとは？
+CSVとは、プログラマーがデータをテキスト形式で保存・交換するためのファイル形式です。各行が列（カラム）に分かれ、データがコンマで区切られています。プログラムでCSVを使う理由は、データを簡単に扱うことができる上に、様々なアプリケーション間でのデータ共有が容易になるからです。
 
-CSVを使用してプログラミングを行うメリットは何でしょうか？
-CSVファイルは、テキスト形式でデータを記録するため、様々なプログラミング言語で簡単に処理することができます。また、構造化されたデータを扱う際にも便利で、データ分析やデータ処理の分野で特に重宝されています。
+## 試してみる：
+CSVファイルをGleamで処理する方法を説明します。まずは、Gleamの標準ライブラリである```csv```モジュールをインポートします。次に、```csv.from_string()```関数を使ってCSV形式のデータを文字列として読み込みます。最後に、文字列に対して必要な処理を行い、データを取り出します。
 
-##　使い方
+```gleam
+import csv
 
-CSVファイルを扱う際には、Gleamプログラムを使用すると便利です。以下のコードブロックを参考に、CSVファイルを読み込み、データを処理する方法を説明します。
+fn main() {
+  let csv_string = "name,age,city\nJohn,30,Tokyo\nEmily,25,New York\n"
 
-```Gleam
-import gleam.csv
+  let csv_data = csv.from_string(csv_string)
 
-csv_file = "my_data.csv"
-data = csv.read(csv_file) // CSVファイルを読み込む
-
-// データを処理する
-for row in data {
-    // カラムごとにデータを取得する
-    let name = row["name"]
-    let age = row["age"]
-    // その他の処理...
+  for row in csv_data do
+    let name = row.get(0)
+    let age = row.get(1)
+    let city = row.get(2)
+    io.println("Name: {}, Age: {}, City: {}", [name, age, city])  // 出力：Name: John, Age: 30, City: Tokyo
+                                                                  // 出力：Name: Emily, Age: 25, City: New York
 }
-
-// データを新しいCSVファイルに書き込む
-csv.write("new_data.csv", data) 
 ```
 
-上記のコードでは、Gleamの `csv` モジュールを使用してCSVファイルを処理しています。`read` 関数でCSVファイルを読み込み、`write` 関数で新しいCSVファイルにデータを書き込むことができます。また、CSVデータは辞書型として取得できるため、必要なデータを簡単に取り出すことができます。
+## 詳しく見てみる：
+CSVが登場したのは1970年代で、表計算ソフトでのデータ取り扱いのために開発されました。その後、インターネットの爆発的な普及に伴い、データのやりとりにおいても重要なフォーマットとなりました。CSV以外にも、ExcelやJSONなどのデータ形式がありますが、CSVはどのアプリケーションでも簡単に扱えるため、非常に人気があります。
 
-##　ディープダイブ
-
-CSVファイルを扱う際には、データのフォーマットに注意する必要があります。例えば、テキストファイルのサイズやデータの種類によって、処理時間が大きく変わることがあります。また、CSVファイルは数値や文字列、日付など様々なデータ形式をサポートしていますが、それぞれの形式に対して異なる方法でデータを処理する必要があります。詳細な情報は、公式ドキュメントを参照してください。
-
-##　参考リンク
-
-- Gleam公式ドキュメント: https://gleam.run/documentation/
-- CSVファイルの作成と編集方法: https://support.office.com/ja-jp/article/CSV-%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%81%AE%E4%BD%9C%E6%88%90%E3%81%A8%E7%B7%A8%E9%9B%86-6d52f010-6c33-45f5-ad4e-a6cc585f06bb
-- データ処理の基礎知識: https://ja.wikipedia.org/wiki/%E3%83%87%E3%83%BC%E3%82%BF%E5%87%A6%E7%90%86
+## 参考文献：
+- [GleamのCSVモジュールドキュメント (英語)](https://gleam.run/modules/csv/)
+- [CSVの歴史 (英語)](https://digitalassetmanagementnews.org/developers/a-brief-history-of-csv/)
+- [CSVとは - Wikipedia (日本語)](https://ja.wikipedia.org/wiki/%E3%83%9D%E3%83%BC%E3%82%BF%E3%83%96%E3%83%AB%E4%BD%8D%E3%81%95%E3%82%8C%E3%81%A6%E3%81%84%E3%82%8B%E3%83%87%E3%83%BC%E3%82%BF%E3%83%99%E3%83%BC%E3%82%B9)

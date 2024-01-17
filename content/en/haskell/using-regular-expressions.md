@@ -10,53 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-If you're a developer or someone who deals with processing text and patterns, you've most likely heard of regular expressions. These powerful tools allow you to quickly search, extract, and manipulate text using a compact and concise syntax.
+Regular expressions, or regex, is a sequence of characters used to define a search pattern. It allows programmers to efficiently search through text and extract specific information. It is commonly used to validate input in web forms, search through large datasets, and transform data. 
 
-## How To
+## How to:
 
-To use regular expressions in Haskell, we first need to import the `Text.Regex.Posix` module. Then, we can start using the functions within it, such as `match` and `subRegex`, to perform various operations on strings. Here's an example of how we can match a specific pattern and extract the matched text:
+Using regular expressions in Haskell is simple and powerful. The `Text.Regex.Posix` module provides functions for working with regex. 
 
-```Haskell
-import Text.Regex.Posix
-
-text = "Hello, my name is John. Nice to meet you."
-
-match "Hello, my name is (.+)." text :: (String, String, String)
--- ("Hello, my name is John.", " John.", "John")
-```
-
-In the above code, we use the `match` function to find all strings that match the given pattern, `"Hello, my name is (.+)."`. By including `(.+)` within parentheses, we are indicating that we want to extract the text that matches this part of the pattern. The `:: (String, String, String)` at the end is specifying the types of the returned values, in order of the match itself, the remaining string after the match, and the extracted text.
-
-Another useful function is `subRegex`, which allows us to replace matched patterns with a specified replacement text. Here's an example of how we can replace all instances of "John" with "Jane":
+To search for a pattern in a string, use the `=~` operator followed by the regex pattern and the string you want to search. For example, to find all email addresses in a string, you can do:
 
 ```Haskell
-text = "Hello, my name is John. Nice to meet you."
+import Text.Regex.Posix ((=~))
 
-subRegex (makeRegex "John") text "Jane" :: String
--- "Hello, my name is Jane. Nice to meet you."
+let text = "My email is john@example.com"
+let pattern = "[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}"
+let matches = text =~ pattern :: Bool
 ```
 
-In this example, we use the `makeRegex` function to create a regular expression from the string "John". Then, we use `subRegex` to replace all occurrences of "John" with "Jane" in the original text.
+The `=~` operator returns a `Bool` value, indicating whether the pattern was found in the string or not. 
 
-## Deep Dive
-
-Regular expressions in Haskell are based on POSIX regular expressions, which means they follow the same syntax and conventions as other programming languages. This also means that you can use your existing knowledge of regular expressions in other languages to work with them in Haskell.
-
-However, one unique feature of regular expressions in Haskell is the use of the `=~` operator. This allows you to easily match a string against a regular expression and return a `Bool` value indicating if there was a match or not. Here's an example:
+To extract specific information from a string, use the `=~~` operator, followed by the string to match against and a `Capture` representing the capture group. For example, to extract the domain name from an email address, you can do:
 
 ```Haskell
-text = "12345"
+import Text.Regex.Posix ((=~))
 
-text =~ "[0-9]+" :: Bool
--- True
+let email = "john@example.com"
+let captureGroup = email =~ "[a-z0-9._%+-]+@([a-z0-9.-]+\\.[a-z]{2,4})"
+let domain = captureGroup :: [String]
 ```
 
-In this example, we use the `=~` operator to match the string "12345" against the regular expression "[0-9]+", which matches any string containing one or more digits. Since the input string contains only digits, the overall result is `True`.
+The `domain` variable will now hold the domain name from the email address. 
 
-## See Also
+## Deep Dive:
 
-- [Haskell.org](https://www.haskell.org/)
-- [Regex tutorial on Wikibooks](https://en.wikibooks.org/wiki/Regular_Expressions/POSIX_Basic_Regular_Expressions)
-- [Official documentation for Text.Regex.Posix](https://hackage.haskell.org/package/regex-posix/docs/Text-Regex-Posix.html)
+Regular expressions have been around since the 1950s and have since been implemented in many programming languages, including Haskell. In addition to the `Text.Regex.Posix` module, Haskell also has the `Text.Regex.PCRE` module for working with Perl Compatible Regular Expressions (PCRE). 
+
+Alternatives to using regular expressions in Haskell include string manipulation functions, such as `splitOn` and `intercalate` from the `Data.List.Split` module, or using the powerful parser combinator libraries like `parsec` and `attoparsec`. 
+
+Regular expressions in Haskell are implemented using automata theory, specifically finite state machines. This allows for efficient matching of patterns, making it a popular choice for data transformation and validation tasks. 
+
+## See Also:
+
+- [HaskellRegex - Regex tutorial for beginners](https://wiki.haskell.org/HaskellRegex)
+- [Real World Haskell - Chapter on regular expressions](http://book.realworldhaskell.org/read/efficient-file-processing-regular-expressions-and-file-name-matching.html)
+- [Hackage - Text.Regex package documentation](https://hackage.haskell.org/package/regex-base)

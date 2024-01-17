@@ -10,56 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué escribir pruebas en Arduino?
+## ¿Qué y por qué?
 
-Escribir pruebas en Arduino es una práctica importante que ayuda a garantizar que nuestro código funcione correctamente en todas las situaciones posibles. Las pruebas nos permiten detectar errores y solucionarlos antes de implementar nuestro código en hardware, lo que ahorra tiempo y frustraciones en el futuro.
+Escribir pruebas es una forma de garantizar que nuestro código funcione correctamente y se comporte según lo esperado. Además, nos permite detectar posibles errores y solucionarlos antes de que nuestro programa se ponga en funcionamiento.
 
-## Cómo hacerlo
+## Cómo:
 
-Antes de comenzar a escribir pruebas, es importante entender la estructura básica de un programa en Arduino. Normalmente, tenemos dos funciones: `setup()` y `loop()`. La función `setup()` se ejecuta una sola vez al principio del programa, mientras que la función `loop()` se ejecuta de forma repetida hasta que el Arduino se apaga.
+Para escribir pruebas en Arduino, podemos utilizar algunas librerías disponibles como "ArduinoUnit" o "UnitTest". También podemos crear nuestras propias pruebas siguiendo los siguientes pasos:
 
-Para crear una prueba, debemos seguir estos pasos:
-
-1. Definir una función para nuestra prueba, por ejemplo `test_led()`.
-2. Dentro de la función, utilizar la función `pinMode()` para configurar un pin como salida.
-3. Utilizar la función `digitalWrite()` para encender o apagar el pin.
-4. Utilizar la función `delay()` para esperar un corto período de tiempo.
-5. Utilizar la función `digitalRead()` para leer el valor del pin y verificar si está en el estado deseado.
-6. Imprimir en la consola serial el resultado de la prueba utilizando `Serial.println()`.
-
-Aquí hay un ejemplo de una prueba que verifica si un LED se enciende y se apaga correctamente:
-
+1. Crear una función de prueba utilizando la palabra clave "void" seguida del nombre de la prueba.
 ```Arduino
-void test_led() {
-  pinMode(LED_PIN, OUTPUT);
-  digitalWrite(LED_PIN, HIGH); // Enciende el LED
-  delay(500); // Espera medio segundo
-  if (digitalRead(LED_PIN) == HIGH) { // Verifica si el LED está encendido
-    Serial.println("Prueba superada"); // Imprime en la consola serial
-  } else {
-    Serial.println("Fallo en la prueba");
-  }
-
-  digitalWrite(LED_PIN, LOW); // Apaga el LED
-  delay(500);
-  if (digitalRead(LED_PIN) == LOW) { // Verifica si el LED está apagado
-    Serial.println("Prueba superada");
-  } else {
-    Serial.println("Fallo en la prueba");
-  }
+void miPrueba(){
+  //código de la prueba
+}
+```
+2. Utilizar la función "assert" para comprobar si nuestra prueba ha sido exitosa.
+```Arduino
+void miPrueba(){
+  assert(3 + 2 == 5);  //si la suma es igual a 5, la prueba es exitosa
+}
+```
+3. Ejecutar la prueba utilizando la función "run" en el "setup" de nuestro código.
+```Arduino
+void setup(){
+  run(miPrueba);  //ejecutamos nuestra prueba
+}
+```
+4. Verificar el resultado en el monitor serie.
+```Arduino
+void setup(){
+  run(miPrueba);  //ejecutamos nuestra prueba
+  Serial.println("Prueba exitosa");  //si pasó la prueba, se mostrará en el monitor
 }
 ```
 
-## Profundizando en las pruebas
+## Deep Dive:
 
-Escribir pruebas es una técnica de programación llamada "pruebas unitarias", que consiste en probar cada unidad de código de forma aislada. Esto nos permite encontrar errores específicos y corregirlos de manera eficiente. También nos promueve a escribir un código más modular y fácil de mantener.
+El uso de pruebas en programación es una técnica muy común que permite asegurar la calidad del código y prevenir errores en el futuro. Entre las alternativas a las librerías mencionadas anteriormente, podemos mencionar "CppUTest" o "Google Test", que ofrecen una amplia gama de funcionalidades adicionales para escribir y ejecutar pruebas.
 
-En Arduino, podemos utilizar la librería `ArduinoUnit` para escribir nuestras pruebas de una manera más organizada. Esta librería proporciona funciones útiles para crear y ejecutar pruebas, así como para verificar resultados y manejar errores.
+En cuanto a la implementación, es importante tener en cuenta que las pruebas deben ser independientes y no afectar al funcionamiento del código principal. Además, se recomienda escribir pruebas para diferentes partes del código, cubriendo la mayor cantidad de casos posibles.
 
-Para profundizar en el tema de las pruebas en Arduino, se recomienda investigar más sobre las pruebas unitarias y la librería `ArduinoUnit`.
+## See Also:
 
-## Ver también
-
-- Documentación oficial de Arduino: https://www.arduino.cc/en/Guide/HomePage
-- Tutoriales de pruebas en Arduino: https://www.arduino.cc/en/Tutorial/BuiltInExamples#basic
-- Librería ArduinoUnit: https://github.com/mmurdoch/arduinounit
+- [Documentación de ArduinoUnit](https://github.com/mmurdoch/arduinounit)
+- [Documentación de UnitTest](http://majenko.co.uk/wiki/creating_unit_tests_for_arduino_projects)
+- [Documentación de CppUTest](https://cpputest.github.io/)
+- [Documentación de Google Test](https://github.com/google/googletest)

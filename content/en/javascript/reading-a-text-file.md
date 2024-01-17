@@ -10,63 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
+Reading a text file is the process of retrieving information from a file that contains written data. Programmers use this technique to access and manipulate data from external sources, such as user input or database information. It allows for dynamic and flexible data handling in applications and can be used for a variety of purposes, from data analysis to file management.
 
-Have you ever come across a text file and wondered how it could be parsed and used in your Javascript code? Look no further! This article will explain the importance of reading a text file and how it can benefit your programming.
+## How to:
+To read a text file in Javascript, we can use the built-in ```readFile``` function from the ```fs``` module. First, we need to import the module using the ```require()``` method:
 
-## How To
-
-To read a text file in Javascript, we will be using the File System module, which provides an API for interacting with the file system in a way modeled on standard POSIX functions.
-
-First, we need to declare the File System module by requiring it in our code:
-
-```
+```Javascript
 const fs = require('fs');
 ```
 
-Next, we will use the `readFile()` method to read the contents of the text file. The `readFile()` method takes in two arguments - the path to the file and the encoding format. For example, if we have a text file named `sample.txt` in the same directory as our code, we can use the following code to read its contents:
+Once we have access to the ```fs``` module, we can make use of the ```readFile``` function to read the contents of a text file. The function takes in two arguments - the file path and a callback function to handle the data. Here's an example of how we can read and log the data from a text file:
 
-```
-fs.readFile('sample.txt', 'utf8', (err, data) => {
-  if (err) throw err;
-  console.log(data);
+```Javascript
+fs.readFile('sample.txt', (err, data) => {
+    if (err) {
+        console.error(err);
+    } else {
+        console.log(data.toString());
+    }
 });
 ```
 
-In the above code, we are using the `utf8` encoding format, which is the most commonly used format for text files. The `readFile()` method will read the contents of the file and store it in the `data` variable. We can then log the contents of the file to the console.
+This code will log the contents of the ```sample.txt``` file to the console. We can also specify a specific encoding, such as ```utf8```, to ensure that the data is returned in a readable format.
 
-Let's say our `sample.txt` file contains the following text:
+## Deep Dive:
+Reading and writing text files has been a fundamental aspect of programming since its early days. Before the implementation of filesystems, data was stored in sequential order in text files, making it easy to read and manipulate with code. However, with the introduction of databases and other data storage solutions, the need to read text files has become less prominent.
 
-```
-Hello world!
-This is a sample text file.
-```
+While Javascript's built-in ```fs``` module is the most common way to read text files, there are other methods such as using third-party libraries or using Node.js's ```readline``` module for reading large files line by line. Reading text files can also be done in other programming languages, with similar functions and methods available.
 
-The output of the above code would be:
-
-```
-Hello world!
-This is a sample text file.
-```
-
-## Deep Dive
-
-Now that we know how to read a text file in Javascript, let's delve into some additional information.
-
-### Synchronous vs Asynchronous
-
-In the above example, we used the asynchronous version of the `readFile()` method, which takes a callback function as an argument. However, there is also a synchronous version of the method called `readFileSync()`. The main difference between the two is that the synchronous version blocks the execution until the file is read, while the asynchronous version does not block the execution and allows the code to continue running while the file is being read.
-
-### Handling Errors
-
-In the `readFile()` method, we used a callback function with an `err` parameter to handle any errors that may occur while reading the file. It is important to handle errors properly in order to avoid any unexpected crashes in our program.
-
-### Additional Resources
-
-There are other methods provided by the File System module for reading text files such as `read()`, `readv()`, and `readSync()`. You can also check out the official documentation for more information and examples on reading text files.
-
-## See Also
-
-- [Official Node.js File System Documentation](https://nodejs.org/api/fs.html)
-- [Reading and Writing Files in Node.js](https://stackabuse.com/reading-and-writing-files-in-node-js/)
-- [Reading and Writing Text Files using Node.js](https://www.geeksforgeeks.org/reading-and-writing-text-files-using-node-js/)
+## See Also:
+- [Node.js Documentation on File System](https://nodejs.org/api/fs.html)
+- [Introduction to JavaScript File Handling](https://www.educative.io/edpresso/how-to-read-and-write-files-in-javascript)

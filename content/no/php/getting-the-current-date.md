@@ -1,7 +1,7 @@
 ---
-title:                "Hente nåværende dato"
-html_title:           "PHP: Hente nåværende dato"
-simple_title:         "Hente nåværende dato"
+title:                "Å få dagens dato"
+html_title:           "PHP: Å få dagens dato"
+simple_title:         "Å få dagens dato"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Dates and Times"
@@ -10,46 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hvorfor
-Å få den nåværende datoen er en viktig del av dataprogrammering. Det tillater programmerere å vise den aktuelle datoen til brukere eller bruke den til å beregne tidsforskjeller for å skape dynamiske funksjoner.
+Hva og hvorfor?
+Det å få datoen er en måte for programmerere å få informasjon om den nåværende datoen. Dette kan være nyttig for å sjekke om en bestemt hendelse har skjedd eller for å planlegge fremtidige operasjoner.
 
-# Hvordan du gjør det
-For å få den nåværende datoen i PHP, kan du bruke funksjonen `date()`. Denne funksjonen tar inn et formatparameter som bestemmer hvordan datoen skal vises. La oss se på noen eksempler:
+Hvordan:
+For å få den nåværende datoen i PHP, kan du bruke funksjonen date (). Dette vil returnere datoen og tidspunktet i et gitt format. Her er et eksempel på hvordan du kan bruke denne funksjonen:
 
-```
+```PHP
 <?php
-// Viser datoen i standardformat
-echo date("d.m.Y"); //Output: 05.09.2021
-
-// Viser datoen i dag/måned/år format
-echo date("j/n/Y"); //Output: 5/9/2021
-
-// Viser datoen med navnet på måneden
-// på norsk
-echo date("j. F Y"); //Output: 5. september 2021
-?>
+echo date("d.m.Y");
 ```
+Dette vil gi følgende utdata: 23.09.2021.
 
-En annen nyttig funksjon for å hente inn den nåværende datoen er `strtotime()`. Denne funksjonen tar inn en tekststreng som angir en dato og konverterer den til et dato-objekt. La oss se på et eksempel:
+Hvis du vil formatere datoen på en annen måte, kan du bruke ulike parametere i date () -funksjonen. For eksempel, hvis du bare ønsker å få måneden, kan du bruke følgende kode:
 
-```
+```PHP
 <?php
-// Konverterer en tekststreng til en dato
-$dato = strtotime("next Sunday");
+echo date("m");
+```
+Dette vil gi den nåværende måneden som utdata, for eksempel 09 for september.
 
-// Viser datoen i dag/måned/år format
-echo date("j/n/Y", $dato); //Output: 12/9/2021
-?>
+Du kan også legge til tekst og symboler i formatet ditt. For eksempel, hvis du ønsker å få datoen på formatet "dd.mm.yyyy", kan du bruke følgende kode:
+
+```PHP
+<?php
+echo date("d.m.Y");
 ```
 
-Det er også mulig å få tak i den nåværende datoen i et bestemt tidsformat ved å bruke `time()`-funksjonen. Denne funksjonen returnerer antall sekunder som har gått siden 1. januar 1970, og kan dermed brukes til å lage timer, minutter og sekunder.
+Dybde på dykk:
+Å få datoen med PHP er enkelt og en vanlig operasjon i programmering. Tidligere, før PHP 4.3, måtte utviklere bruke funksjonene gettimeofday () eller mktime () for å få den nåværende datoen. Men med introduksjonen av date () -funksjonen, ble prosessen enklere og mer effektiv.
 
-# Dykk ned i det
-PHP har et stort utvalg av funksjoner for å håndtere datoer og tid. Det er verdt å ta seg tid til å lære seg de ulike funksjonene og formatene som er tilgjengelige for å få den nåværende datoen. Dette vil være nyttig når du jobber med komplekse prosjekter som krever nøyaktig tidsstyring.
+Det finnes også alternativer til date () -funksjonen, som for eksempel DateTime-klassen som ble introdusert i PHP 5.2. Dette alternativet gir mer fleksibilitet og funksjonalitet for å jobbe med datoer og tider.
 
-Noen av de andre nyttige funksjonene i PHP for å håndtere datoer og tid inkluderer `date_default_timezone_set()` som lar deg sette tidssonen for din applikasjon, og `strtotime()` som kan konvertere en tekststreng til en dato.
+Implementeringsdetaljer om å få datoen i PHP kan variere avhengig av versjonen du bruker. Det er alltid lurt å sjekke PHP-dokumentasjonen for å være sikker på at du bruker den riktige syntaksen og parameterne.
 
-# Se også
-- [PHP Manual - Date/Time Functions](https://www.php.net/manual/en/ref.datetime.php)
-- [W3Schools - PHP Date and Time](https://www.w3schools.com/php/php_date.asp)
-- [TutorialsPoint - PHP Date and Time](https://www.tutorialspoint.com/php/php_date_time.htm)
+Se også:
+- Offisiell PHP-dokumentasjon om date () -funksjonen: https://www.php.net/manual/en/function.date.php
+- Dokumentasjon for DateTime-klassen: https://www.php.net/manual/en/class.datetime.php
+- Mer info om PHP og datoer: https://www.w3schools.com/php/php_date.asp

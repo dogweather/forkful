@@ -10,97 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+# Co i Dlaczego?
 
-Pisanie testów jest ważną i nieodłączną częścią procesu tworzenia oprogramowania. Testy pomagają upewnić się, że nasz kod działa zgodnie z oczekiwaniami oraz zapobiegają wprowadzaniu błędów podczas dalszego rozwoju projektu.
+Pisanie testów w C to proces weryfikacji, czy nasz kod działa zgodnie z oczekiwaniami. Programiści piszą testy, aby upewnić się, że ich program działa poprawnie i aby uniknąć późniejszych błędów.
 
-## Jak To Zrobić
+# Jak to Zrobić:
 
-Pisanie testów w języku C jest prostsze, niż się wydaje. Wystarczy skorzystać z dostępnych bibliotek, takich jak "CUnit" lub "Check", aby utworzyć zestaw testów dla naszego kodu. Poniżej znajduje się przykładowy kod oraz jego wyjście, które pozwolą lepiej zrozumieć proces tworzenia testów.
-
+Przykład prostego testu w C:
 ```C
-#include <stdlib.h>
-#include <stdio.h>
-#include <CUnit/CUnit.h>
-#include <CUnit/Basic.h>
+#include <assert.h>
 
-//Funkcja, którą będziemy testować
-int dodaj(int a, int b){
-    return a + b;
-}
+int main() {
+    int a = 5;
+    int b = 10;
 
-//Funkcja inicjująca testy
-int init_suite(void) {
-   return 0;
-}
+    assert(a + b == 15);
 
-//Funkcja kończąca testy
-int clean_suite(void) {
     return 0;
 }
-
-//Test sprawdzający poprawność działania funkcji dodawania
-void test_dodawania(void) {
-    CU_ASSERT_EQUAL(dodaj(2, 3), 5);
-    CU_ASSERT_EQUAL(dodaj(0, -5), -5);
-}
-
-//Dodanie testów do zestawu
-int main() {
-    CU_pSuite pSuite = NULL;
-    
-    if (CU_initialize_registry() != CUE_SUCCESS) {
-        return CU_get_error();
-    }
-
-    pSuite = CU_add_suite("Suite_testowa", init_suite, clean_suite);
-    if (NULL == pSuite) {
-        CU_cleanup_registry();
-        return CU_get_error();
-    }
-
-    //Dodanie testu do zestawu
-    if (NULL == CU_add_test(pSuite, "test_dodawania", test_dodawania)) {
-        CU_cleanup_registry();
-        return CU_get_error();
-    }
-
-    //Uruchomienie testów
-    CU_basic_set_mode(CU_BRM_VERBOSE);
-    CU_basic_run_tests();
-    printf("\n");
-
-    //Wynik testów
-    CU_cleanup_registry();
-    return CU_get_error();
-}
 ```
-**Wyjście:**
+
+Wyjście:
 ```
-CUNIT: Suite: Suite_testowa
-CUNIT: Test sprzedania
-CUNIT: Teste dodania OK.
-CUNIT: 1 testy z 1 zdanych.
+Program exited successfully.
+```
+Test ten sprawdza, czy wynik sumowania liczb 5 i 10 jest równy 15 i jeśli tak, to program wyświetli komunikat o poprawnej realizacji zadania. W przypadku błędu, program zwróci informację o niepowodzeniu.
 
-KWADRA:  Suite: Suite_testowa
-KWADRA: Test sauda
-KWADRA: Test dodania OK.
-KWADRA: 1000 testów z 1000 zdanych
+# Głębszy Zagajnik:
 
-Wynik: Świetnie! Twój kod działa zgodnie z oczekiwaniami!
+Pisanie testów jest ważnym elementem procesu programowania. Pozwala ono na wcześniejsze wykrycie błędów oraz ułatwia ich poprawę. Alternatywą dla pisania testów jest ręczne testowanie kodu, co jest mniej efektywne i może prowadzić do przegapienia błędów.
 
-## Głębszy Wgląd
-Jedną z najważniejszych rzeczy przy pisaniu testów jest tworzenie testów jednostkowych, które testują pojedyncze funkcje naszego kodu. Testy jednostkowe powinny być napisane w taki sposób, aby pokryć wszystkie możliwe przypadki działania funkcji.
+Przed upowszechnieniem technik testowania, debugowanie kodu było znacznie bardziej czasochłonne i skomplikowane. W dzisiejszych czasach istnieje wiele frameworków i narzędzi, które ułatwiają pisanie i wykonanie testów w C.
 
-Warto również pamiętać, że testy powinny być uruchamiane regularnie, najlepiej przy każdej zmianie w kodzie. Dzięki temu unikniemy niespodzianek w postaci błędów, które mogą pojawić się na późniejszych etapach projektu.
+# Zobacz także:
 
-Podczas pisania testów, warto również korzystać z asserts, które pomagają weryfikować wyjście naszych funkcji oraz CU_FAIL, który pomaga w łatwiejszym debugowaniu kodu.
-
-## Zobacz także
-1. [CUnit User's Guide](http://cunit.sourceforge.net/doc/index.html)
-2. [Using Assertions in C](https://www.cs.umb.edu/~smimarog/simple_c.html)
-3. [Effective Unit Testing in C](https://medium.com/level-up-programming/effective-unit-testing-in-c-b160c541348d)
-4. [Check Unit Testing Framework](https://libcheck.github.io/check/doc/check_html/index.html)
-
-**See Also** 
-1. [Podręcznik użytkownika CUnit](http://
+1. [Tutorial: Jak pisać testy w C](https://www.freecodecamp.org/news/writing-and-running-c-program-in-your-terminal/)
+2. [Dokumentacja frameworka Unity](https://docs.unity3d.com/Manual/UnitTesting.html)
+3. [Inne narzędzia do testowania w C](https://en.wikipedia.org/wiki/List_of_unit_testing_frameworks#C)

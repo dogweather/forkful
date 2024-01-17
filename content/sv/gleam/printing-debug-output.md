@@ -1,7 +1,7 @@
 ---
-title:                "Utskrift av debuggutdata"
-html_title:           "Gleam: Utskrift av debuggutdata"
-simple_title:         "Utskrift av debuggutdata"
+title:                "Utskrift av felsökningsresultat"
+html_title:           "Gleam: Utskrift av felsökningsresultat"
+simple_title:         "Utskrift av felsökningsresultat"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Testing and Debugging"
@@ -10,53 +10,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
+Att skriva ut felsökningsutdata är ett sätt för programmerare att se vad som händer i deras kod under körning. Det är ett användbart verktyg för att hitta och lösa problem.
 
-Att skriva ut debug-utdata är en användbar metod för att felsöka och förbättra koden. Genom att utskriften ger oss information om vad som händer under körning, kan vi hitta och lösa problem snabbare.
-
-## Hur man gör det
-
-Det finns flera sätt att skriva ut debug-utdata i Gleam, beroende på vilken typ av information vi vill ha.
-
-### Utskrift av variablers värden
-
-För att skriva ut värdet av en variabel kan vi använda ```Gleam.Debug.print```-funktionen. Till exempel om vi vill skriva ut värdet av en variabel ```antal```, kan vi göra det på följande sätt:
-
+## Hur gör man:
 ```Gleam
-let antal = 5
-
-Gleam.Debug.print("Variabelns värde är: $(antal)")
+io_debug.print("Hello world")
 ```
 
-Detta kommer att resultera i utskriften "Variabelns värde är: 5". Vi kan också skriva ut flera variabler samtidigt genom att använda flera ```print```-anrop.
+Detta kodexempel ska skriva ut texten "Hello world" i terminalen när programmet körs.
 
-### Utskrift av strängar
+## Djupdykning:
+Att skriva ut felsökningsutdata har funnits länge, i början gjorde programmerare detta genom att använda kommandon som "print" eller "write". Med tiden har det utvecklats till mer sofistikerade metoder som tillåter programmerare att välja vilken typ av data de vill skriva ut.
 
-För att skriva ut en sträng använder vi ```Gleam.Debug.print_string```-funktionen. Om vi till exempel vill skriva ut strängen "Hej!", kan vi göra det så här:
+En alternativ metod att skriva ut felsökningsutdata är att använda en debugger, en programvara som hjälper till att hitta och lösa fel i koden.
 
-```Gleam
-Gleam.Debug.print_string("Hej!")
-```
+I Gleam används funktionen "io_debug.print" för att skriva ut data i terminalen. Det finns också andra funktioner som tillåter mer komplex utdata, som "io_debug.inspect" som visar innehållet i variabler och "io_debug.backtrace" som visar spåret av vilka funktioner som har kallats.
 
-Detta kommer att skriva ut "Hej!" i terminalen.
-
-### Utskrift av typer
-
-Om vi vill skriva ut typen av en variabel, kan vi använda ```Gleam.Debug.print_type```-funktionen. Till exempel om vi vill skriva ut typen av variabeln ```namn```, kan vi göra det med följande kod:
-
-```Gleam
-let namn = "Gleam"
-
-Gleam.Debug.print_type("Variabelns typ är: ", namn)
-```
-
-Detta kommer att skriva ut "Variabelns typ är: String" i terminalen.
-
-## Utforska djupare
-
-Det finns många fler funktioner för att skriva ut debug-utdata i Gleam, som att skriva ut listor, tupler och liknande. Vi kan också använda ```Gleam.Debug.inspect```-funktionen för att få mer detaljerad information om objekt. Utforska gärna dokumentationen för mer information.
-
-## Se även
-
-- [Officiell Gleam-dokumentation för att skriva ut debug-utdata](https://gleam.run/documentation/guides/printing_debug_output)
-- [Gleam-coding examples](https://github.com/gleam-lang/gleam/tree/master/examples)
+## Se även:
+- [Debugging in Gleam](https://gleam.run/book/tour/debugging.html)
+- [Introduction to Debugging](https://www.educative.io/courses/introduction-to-debugging)

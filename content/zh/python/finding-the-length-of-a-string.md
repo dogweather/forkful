@@ -1,7 +1,7 @@
 ---
-title:                "找到字符串的长度"
-html_title:           "Python: 找到字符串的长度"
-simple_title:         "找到字符串的长度"
+title:                "求取字符串的长度"
+html_title:           "Python: 求取字符串的长度"
+simple_title:         "求取字符串的长度"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Strings"
@@ -10,45 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么要查找字符串的长度
+## 什么是字符串长度？为什么程序员需要计算它？
 
-在编程中，查找字符串的长度是一项常见的技术，它可以帮助我们计算字符串的大小、处理文本数据，甚至是验证用户输入的有效性。无论在哪种情况下，知道如何找到字符串的长度都是非常有用的。
+计算一个字符串的长度意味着确定该字符串中包含多少字符。程序员通常需要这种信息来评估字符串的大小、重要性或者它是否符合所需的条件。
 
-## 如何做
+## 如何计算字符串长度？
+
+您可以像这样使用内置的len()函数来计算字符串长度：
 
 ```python
-# 使用内置函数len()获取字符串的长度
-s = "Hello World"
-print(len(s))
-# 输出: 11
+string = "Hello, World!"
+print(len(string)) # output: 13
+```
 
-# 使用循环遍历字符串来计算长度
-s = "Hello World"
-count = 0
-for char in s:
-    count += 1
-print(count)
-# 输出: 11
+字符串的长度也可以通过索引操作符[]来获取，如下所示：
 
-# 使用索引和切片来获取字符串的长度
-s = "Hello World"
-length = len(s[2:7])
-print(length)
-# 输出: 5
+```python
+print(string[2]) # output: l
 ```
 
 ## 深入了解
 
-字符串的长度简单地说就是字符串中字符的数量。在Python中，字符串是一个可迭代的对象，我们可以通过内置函数len()来获取它的长度。另外，我们也可以通过循环遍历字符串的每一个字符，并计算字符的数量来获得字符串的长度。此外，Python中还有许多其他方法来获取字符串的长度，比如使用索引、切片等。无论哪种方法，都可以帮助我们快速准确地获取字符串的长度。
+在过去，计算字符串长度是一个比较复杂的过程，因为程序员必须手动遍历字符串中的每个字符来计算长度。但是，如今的计算机编程语言都包含了内置函数来迅速计算字符串长度。除了Python中的len()函数，另一个常用的函数是sys.getsizeof()，它可以计算任何对象的大小，包括字符串。
+
+另一种获取字符串长度的方法是使用循环来逐个遍历字符串中的字符并计算数量。这种方法可能会比内置函数len()慢，但它可以解决某些特定的编程问题。
 
 ## 参考资料
 
-- [Python文档-字符串方法](https://docs.python.org/3/library/stdtypes.html#string-methods)
-- [Python字符串操作教程](https://realpython.com/lessons/string-operations/)
-- [如何获取字符串的长度](https://www.w3schools.com/python/gloss_python_string_length.asp)
-
-## 参见
-
-- [Python字符串基础教程](https://www.runoob.com/python/python-strings.html)
-- [Python字符串格式化教程](https://www.runoob.com/python/python-string-format.html)
-- [Python常用内置函数](https://www.runoob.com/python/python-built-in-functions.html)
+- [Python内置函数文档](https://docs.python.org/3/library/functions.html#len)
+- [Python sys.getsizeof()函数文档](https://docs.python.org/3/library/sys.html#sys.getsizeof)

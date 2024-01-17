@@ -10,63 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-Creating temporary files is a common task in programming, especially when dealing with large amounts of data or when needing to perform specific tasks temporarily. They can be useful for storing temporary results, caching data, or creating temporary backups.
+Creating a temporary file is a common task in programming, where it involves creating a file that is only needed for a short period of time and will eventually be deleted. Programmers do this to store temporary data or to perform operations on a file without permanently altering it.
 
-## How To
+## How to:
 
-Creating a temporary file in TypeScript is fairly simple. We can use the built-in `fs` library to handle file operations. First, we need to import the library:
-
-```TypeScript
-import * as fs from "fs";
-```
-
-Next, we can use the `writeFile` method to create a temporary file. This method takes in three parameters: the path to the file, the data to be written, and a callback function to handle any errors. For example:
+Creating a temporary file in TypeScript can be done using the `fs` module, which provides the `mktempSync` function. This function takes in a prefix for the file name and returns the path to the newly created temporary file. Here is an example: 
 
 ```TypeScript
-fs.writeFile("./temp.txt", "Hello World!", (err) => {
-  if (err) throw err;
-  console.log("Temporary file created successfully!");
-});
+import * as fs from 'fs';
+
+const prefix = 'mytempfile';
+const tempFilePath = fs.mktempSync(prefix);
 ```
 
-This code creates a temporary file called `temp.txt` in the current directory with the phrase "Hello World!" as its content. We can use the `readFile` method to read the contents of the file:
+The above code will create a temporary file with the name `mytempfileXXXXXX`, where the `X` characters are replaced with a unique string. It will also return the full path to the file, which can be used to perform any necessary operations on it.
 
-```TypeScript
-fs.readFile("./temp.txt", "utf8", (err, data) => {
-  if (err) throw err;
-  console.log(data);
-});
-```
+## Deep Dive:
 
-This will output "Hello World!" in the console. Once we are done using the temporary file, we can use the `unlink` method to delete it:
+Creating temporary files has been a common practice in programming since the early days of computing. It allows for temporary storage of data without worrying about file names and locations conflicting with other files. 
 
-```TypeScript
-fs.unlink("./temp.txt", (err) => {
-  if (err) throw err;
-  console.log("Temporary file deleted!");
-});
-```
+In addition to using the `fs` module, there are also other APIs and libraries that can be used for creating temporary files in TypeScript. For example, the popular library **temp** provides a more flexible and user-friendly interface for creating temporary files.
 
-## Deep Dive
+When creating a temporary file, it is important to consider the security implications. Since these files are not permanent, they can be accessed and modified by other processes on the system. This can be prevented by setting appropriate file permissions and using encryption methods.
 
-One important thing to note when creating temporary files is to make sure they are stored in a temporary directory and not in a critical system directory. In Windows, the `tmp` directory is commonly used for temporary files, while in Linux, the `tmpfs` filesystem can be used for the same purpose.
+## See Also:
 
-Additionally, we can also use the `mkdtemp` method to create a temporary directory instead of a file. This method creates a unique temporary directory with a random name. For example:
-
-```TypeScript
-fs.mkdtemp("./tempfolder", (err, folder) => {
-  if (err) throw err;
-  console.log(`Temporary folder ${folder} created!`);
-});
-```
-
-This will output something like "Temporary folder tempfolder62rsl created!".
-
-Lastly, it's important to properly handle errors when creating temporary files, as they can lead to unexpected behavior in our code. We can use `try-catch` blocks to catch any errors and handle them accordingly.
-
-## See Also
-
-- [Node.js fs Module - w3schools.com](https://www.w3schools.com/nodejs/nodejs_filesystem.asp)
-- [Create a Temporary File in Node.js - stackabuse.com](https://stackabuse.com/create-a-temporary-file-in-node-js/)
+- [Node.js `fs` Module Documentation](https://nodejs.org/dist/latest-v14.x/docs/api/fs.html#fs_fs_mktempsync_prefix_options)
+- [The `temp` Library](https://www.npmjs.com/package/temp)

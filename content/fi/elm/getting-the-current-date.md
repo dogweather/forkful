@@ -1,7 +1,7 @@
 ---
-title:                "Päivämäärän hakeminen"
-html_title:           "Elm: Päivämäärän hakeminen"
-simple_title:         "Päivämäärän hakeminen"
+title:                "Nykyisen päivämäärän hankkiminen"
+html_title:           "Elm: Nykyisen päivämäärän hankkiminen"
+simple_title:         "Nykyisen päivämäärän hankkiminen"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Dates and Times"
@@ -10,38 +10,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi?
+# Mitä & Miksi? 
+Päivämäärän hankkiminen tarkoittaa nykyisen päivämäärän ja ajan saamista ohjelmassa. Ohjelmoijat tekevät tämän usein tiedottaakseen käyttäjille ajankohtaisesta tiedosta tai tallentaakseen sen tietokantaan.
 
-Nykyisen päivämäärän saaminen voi olla hyödyllistä monissa sovelluksissa, kuten tapahtumakalentereissa, muistutussovelluksissa ja ajanhallintatyökaluissa.
-
-## Kuinka tehdä?
+# Miten: 
+Käytä Date.now -toimintoa hankkiaksesi nykyisen päivämäärän. Tulostaminen tapahtuu String.fromDate -funktiolla. Esimerkiksi:
 
 ```Elm
-import Time exposing (Date, Time)
-import Date exposing (today)
-
--- Hae nykyinen päivämäärä
-currentDate : Date
-currentDate =
-    today
-
--- Tulosta päivämäärä konsoliin
-main : Program () Date Never
-main =
-    currentdate
-        |> toString
-        |> Html.text
-        |> Html.program ()
-
+Date.now
+|> String.fromDate 
 ```
 
-**Tulostaa:** "2021-10-25"
+Tulostus näyttää päivämäärän muodossa YYYY-MM-DDThh:mm:ss:ssTZ. Esimerkiksi: 2021-09-15T15:30:00.000Z
 
-## Syvällinen sukellus
+# Syväkellunta: 
+Päivämäärän hankkiminen on tärkeä osa ohjelmointia, sillä se helpottaa ajankohtaisen tiedon jakamista ja tallentamista. Ennen Date.now -funktion keksimistä, ohjelmoijat joutuivat manuaalisesti hankkimaan tiedon käyttöjärjestelmältä tai muilta ulkoisilta lähteiltä. On myös olemassa muita vaihtoehtoisia ratkaisuja, kuten moment.js tai date-fns, mutta Date.now on yksinkertainen ja tehokas tapa hankkia nykyinen päivämäärä.
 
-Nykyisen päivämäärän saamiseen käytetään Elm-ydinkirjaston `Date` ja `Time` moduuleja. `today`-funktio palauttaa nykyisen päivämäärän `Date`-tyyppisenä arvona. Tämä arvo voidaan sitten muuntaa halutunlaiseen muotoon esimerkiksi `toString`-funktion avulla.
-
-## Katso myös
-
-- [Date - Elm Documentation](https://package.elm-lang.org/packages/elm/time/latest/Date)
-- [Time - Elm Documentation](https://package.elm-lang.org/packages/elm/time/latest/Time)
+# Katso myös: 
+- [Date.now Elm Documentation](https://package.elm-lang.org/packages/elm/time/latest/Time#now)
+- [moment.js](https://momentjs.com/)
+- [date-fns](https://date-fns.org/)

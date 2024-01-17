@@ -1,7 +1,7 @@
 ---
-title:                "Maiúsculas em uma string"
-html_title:           "Clojure: Maiúsculas em uma string"
-simple_title:         "Maiúsculas em uma string"
+title:                "Capitalizando uma string"
+html_title:           "Clojure: Capitalizando uma string"
+simple_title:         "Capitalizando uma string"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -10,40 +10,18 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Porque
+## O que & Por quê?
+Capitalizar uma string é simplesmente transformar a primeira letra em maiúscula e o resto em minúsculas. Os programadores geralmente fazem isso para melhorar a aparência de uma string, tornando-a mais legível ou identificar palavras importantes em uma frase.
 
-Se você já se deparou com a tarefa de capitalizar uma string em Clojure, pode ter se perguntado se realmente vale a pena. Afinal, por que alguém perderia tempo fazendo isso? A resposta é simples: a capitalização de strings é uma técnica comum em programação que pode facilitar o trabalho com dados e ajudar a obter resultados mais precisos.
-
-## Como Fazer
-
-Abaixo, você encontrará um exemplo de código que mostra como capitalizar uma string usando a função "capitalize" em Clojure:
-
+## Como fazer:
 ```Clojure
-(def string "exemplo de texto") ;; definindo uma string
-(capitalize string) ;; saída: "Exemplo de texto"
+(clojure.string/capitalize "clojure é incrível") ; retorna "Clojure é incrível"
+(clojure.string/capitalize "capítulo um: introdução") ; retorna "Capítulo um: introdução"
 ```
 
-O código acima é bem simples. Primeiro, definimos uma string como "exemplo de texto". Em seguida, usamos a função "capitalize" para capitalizar a primeira letra de cada palavra na string. O resultado é a string "Exemplo de texto".
+## Profundidade:
+Capitalizar strings tem sido uma prática comum por muito tempo, especialmente em linguagens de programação mais antigas onde as strings eram às vezes limitadas em termos de caracteres. Algumas alternativas incluem usar a função `upper-case` e `lower-case` para transformar todas as letras em maiúsculas ou minúsculas, respectivamente. A implementação por trás da função `capitalize` usa a função `clojure.string/upper-case` para transformar a primeira letra em maiúscula e `clojure.string/lower-case` para o resto das letras em minúsculas.
 
-É importante notar que a função "capitalize" só funciona com strings em letras minúsculas. Se você tentar capitalizar uma string que já está toda em maiúsculas, a função não terá efeito. Além disso, lembre-se de que a função irá apenas capitalizar a primeira letra de cada palavra, não todas as letras. Por exemplo:
-
-```Clojure
-(def string "exemplo DE texto") ;; definindo uma string
-(capitalize string) ;; saída: "Exemplo DE texto"
-```
-
-Por fim, se você estiver trabalhando com uma string que contém acentos ou caracteres especiais, a função "capitalize" pode não funcionar corretamente. Nesses casos, é importante verificar se a string está codificada corretamente antes de tentar capitalizá-la.
-
-## Mergulho Profundo
-
-A função "capitalize" é apenas uma das várias maneiras de capitalizar uma string em Clojure. Existem também outras funções, como "capitalize-first" e "title-case", que podem oferecer resultados diferentes. Além disso, é possível também criar sua própria função personalizada para atender às suas necessidades específicas.
-
-Outro aspecto importante a se considerar é que a capitalização de strings pode ser sensível ao idioma. Por exemplo, se você estiver trabalhando com o idioma português, a função "capitalize" pode não funcionar corretamente com palavras que contêm letras acentuadas. Nesses casos, é recomendado utilizar uma função específica para tratar esses casos, como "capitalize-locales".
-
-Portanto, é sempre bom pesquisar e testar diferentes opções antes de decidir qual método de capitalização é o mais adequado para sua situação.
-
-## Veja Também
-
-- [Documentação oficial Clojure sobre strings](https://clojure.org/guides/strings)
-- [Exemplo de uso da função "capitalize"](https://www.baeldung.com/clojure-capitalize-string)
-- [Artigo explicando as diferenças entre as diferentes funções de capitalização em Clojure](https://www.jakewoods.me/blog/post/Clojure-Capitalization)
+## Veja também:
+- [Documentação oficial do Clojure string module](https://clojure.github.io/clojure/clojure.string-api.html)
+- [Pergunta sobre capitalizar strings no Stack Overflow](https://stackoverflow.com/questions/15601362/most-efficient-way-to-capitalize-a-string-in-clojure)

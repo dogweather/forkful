@@ -10,33 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué utilizar Fish Shell para enviar una solicitud HTTP?
+¿Qué es y por qué enviar una solicitud HTTP?
 
-Hay varias razones por las que uno podría querer enviar una solicitud HTTP utilizando Fish Shell. En primer lugar, Fish Shell es un intérprete de comandos rápido y eficiente que puede ayudar a automatizar tareas repetitivas. Además, al usar Fish Shell, uno puede aprovechar sus funciones integradas para formatear y procesar datos, lo que puede ser útil al trabajar con solicitudes HTTP.
+Enviar una solicitud HTTP es una manera de comunicarse con un servidor y solicitar información, ya sea para obtener datos o realizar una acción. Los programadores lo hacen para integrar sus aplicaciones con otras fuentes de datos o servicios, como una API de una red social o una plataforma de pago en línea.
 
-## Cómo hacerlo
+Cómo hacerlo:
 
-```Fish Shell
-curl -X GET https://example.com
+Fish Shell tiene un comando incorporado llamado "curl" que permite enviar una solicitud HTTP fácilmente. Aquí hay un ejemplo de cómo usarlo para obtener los resultados de una API de búsqueda de libros:
+
+```
+curl https://www.googleapis.com/books/v1/volumes?q=fish+shell
 ```
 
-La forma más sencilla de enviar una solicitud HTTP utilizando Fish Shell es con el comando `curl`. Al especificar la URL de la solicitud, Fish Shell enviará una solicitud GET y devolverá la respuesta del servidor. Puede utilizar varios parámetros con `curl` para personalizar su solicitud, por ejemplo, puede agregar un encabezado utilizando `-H`, incluir datos en el cuerpo de su solicitud con `-d`, o especificar un método HTTP específico con `-X`.
+La respuesta sería un archivo JSON con información sobre libros relacionados con "fish shell".
 
-```Fish Shell
-set -gx response (curl -X POST -d '{"name": "John", "age": 25}' https://example.com/api)
-echo $response
-```
+Información adicional:
 
-Otra forma de enviar una solicitud HTTP utilizando Fish Shell es almacenando la respuesta en una variable y luego imprimirla con `echo`. En el ejemplo anterior, estamos enviando una solicitud POST al servidor con un objeto JSON en el cuerpo y almacenando la respuesta en la variable `$response`. Luego, utilizando `echo`, imprimimos la respuesta en la terminal.
+Enviar solicitudes HTTP ha sido una técnica ampliamente utilizada desde el inicio de internet. Sin embargo, existen alternativas como "wget" o "httpie" que ofrecen más funcionalidad o una sintaxis distinta para enviar solicitudes. Además, es posible personalizar las solicitudes HTTP agregando encabezados o autenticándose con credenciales.
 
-## Inmersión profunda
+¡No dudes en jugar con este comando y explorar las diferentes opciones que ofrece!
 
-Al enviar una solicitud HTTP utilizando Fish Shell, hay varias variables y funciones útiles que pueden ayudar a procesar la solicitud y respuesta. Por ejemplo, la variable especial `status` contiene el código de estado de la solicitud, lo que puede ser útil para verificar si la solicitud fue exitosa o no. Además, puede acceder a la respuesta del servidor utilizando otras variables como `content_type`, `error`, `location`, entre otras.
+Enlaces de interés:
 
-También puede utilizar la función `string` para formatear la respuesta del servidor en diferentes formatos como JSON, XML o CSV. Por ejemplo, si desea obtener solo ciertos datos de la respuesta del servidor, puede utilizar `string` y la bandera `-r` para especificar un formato de salida.
-
-## Ver también
-
-- [Documentación de Fish Shell](https://fishshell.com/docs/current/)
-- [Curl man page](https://curl.se/docs/manpage.html)
-- [Construyendo una API REST utilizando Fish Shell y cURL](https://medium.com/better-programming/building-rest-api-in-the-best-shell-6fdd9cdefb48)
+- Documentación de "curl": https://curl.se/docs/
+- Alternativas a "curl": https://alternativeto.net/software/curl/
+- Tutorial sobre cómo enviar solicitudes HTTP con Fish Shell: https://fishshell.com/blog/2009/sending_http_requests.html

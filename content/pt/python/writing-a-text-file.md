@@ -10,44 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
-Escrever um arquivo de texto é uma tarefa fundamental para qualquer programador Python. Ele permite armazenar informações de forma persistente e acessá-las facilmente a qualquer momento. Além disso, é uma ótima maneira de compartilhar dados com outros usuários ou aplicativos.
+## O que & Porquê?
 
-## Como fazer
-Começar a escrever um arquivo de texto em Python é bem simples. Primeiro, importe o módulo `io` que permitirá a criação e manipulação de arquivos. Em seguida, use a função `open()` para criar um objeto de arquivo e especificar o caminho e o modo de acesso (leitura, gravação, etc.). Veja um exemplo básico abaixo:
+Escrever um arquivo de texto é simplesmente criar um documento que contém texto. Programadores fazem isso para armazenar informações, como configurações, dados de usuário ou até mesmo código.
+
+## Como fazer:
+
+Para escrever um arquivo de texto em Python, usamos a função `open()` que recebe dois argumentos: o nome do arquivo que queremos criar e o modo de abertura, que no nosso caso é 'w' para escrita. Em seguida, usamos o método `write()` para adicionar o conteúdo que queremos ao arquivo e, por fim, fechamos o arquivo usando o método `close()`.
 
 ```Python
-import io
-
-# criar um arquivo de texto chamado "exemplo.txt"
-arquivo = open("exemplo.txt", "w")
-
-# escrever uma linha no arquivo
-arquivo.write("Olá, mundo!")
-
-# fechar o arquivo
+arquivo = open('exemplo.txt', 'w')
+arquivo.write('Este é um exemplo de arquivo de texto.')
 arquivo.close()
 ```
+O código acima cria um arquivo chamado "exemplo.txt" e escreve a frase "Este é um exemplo de arquivo de texto." nele. Você pode verificar o conteúdo do arquivo abrindo-o com um editor de texto.
 
-O código acima irá criar um arquivo chamado "exemplo.txt" e adicionará a frase "Olá, mundo!" dentro dele. Agora, podemos abri-lo com um programa de edição de texto e ver o resultado.
+## Mergulho profundo:
 
-## Aprofundando
-Existem alguns pontos importantes a serem lembrados quando se trata de escrever um arquivo de texto em Python. Primeiro, certifique-se de fechar o arquivo após terminar a escrita. Isso garante que todos os dados sejam armazenados corretamente e que o arquivo não fique bloqueado para outras operações. Além disso, é importante usar o modo `w` (escrita) ao criar o arquivo, caso contrário, o arquivo não será gravável.
+Escrever arquivos de texto é uma tarefa básica em qualquer linguagem de programação. Ela foi inspirada nas antigas máquinas de escrever, onde os caracteres eram impressos em papel. Nas versões mais recentes do Python, podemos usar o gerenciador de contexto `with` para abrir e fechar automaticamente o arquivo, assim não precisamos nos preocupar com o uso do método `close()`.
 
-Outra forma de escrever em um arquivo é usando o método `with` que gerencia automaticamente o fechamento do arquivo para nós. Veja um exemplo abaixo:
+Também podemos usar o modo 'a' para anexar conteúdo a um arquivo existente ou o modo 'r+' para ler e escrever no mesmo arquivo.
 
-```Python
-import io
+## Veja também:
 
-# criar um arquivo de texto chamado "exemplo.txt" usando "with"
-with open("exemplo.txt", "w") as arquivo:
-    # escrever uma linha no arquivo
-    arquivo.write("Olá, mundo!")
-```
+Para mais informações sobre como escrever arquivos de texto em Python, consulte a documentação oficial: https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files
 
-Por fim, vale ressaltar que arquivos de texto podem armazenar diferentes tipos de dados, desde strings até números e até mesmo objetos complexos. Isso torna os arquivos de texto uma ferramenta muito versátil e útil para armazenar e compartilhar dados em um projeto de programação.
-
-## Veja também
-- Documentação oficial do módulo `io`: https://docs.python.org/3/library/io.html
-- Tutorial sobre manipulação de arquivos com Python: https://www.learnpython.org/en/File_IO
-- Mais informações sobre o modo de acesso aos arquivos: https://www.w3schools.com/python/python_file_handling.asp
+Você também pode conferir estes tutoriais para entender melhor como funciona a função `open()` e os modos de abertura: 
+- https://www.geeksforgeeks.org/python-handling-filenames-with-special-characters-in-os-filemethods/
+- https://realpython.com/read-write-files-python/

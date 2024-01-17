@@ -1,7 +1,7 @@
 ---
-title:                "עבודה עם YAML"
-html_title:           "C: עבודה עם YAML"
-simple_title:         "עבודה עם YAML"
+title:                "עבודה עם yaml"
+html_title:           "C: עבודה עם yaml"
+simple_title:         "עבודה עם yaml"
 programming_language: "C"
 category:             "C"
 tag:                  "Data Formats and Serialization"
@@ -10,53 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## למה:
-יכול להיות שאתה נתקלת בקבצי YAML בעבודתך וצריך לעבוד איתם, או שאולי תרצה ליצור קוד שמייצג מידע בפורמט הזה. בכל מקרה, ידע כיצ׳ור ה- YAML יהיה שימושי עבורך.
+מה ולמה?
+עבור מי שלא מכיר, YAML הוא פורמט בינארי להעברת נתונים והגדרת הגדרות. כתיבת קוד בשפת C עם YAML יכולה להקל על איחזור וניהול נתונים באפליקציות, וזה נפוץ בקוד של ווב ואפליקציות ניידות.
 
-## איך לעבוד עם YAML בשפת C:
-ה-YAML הוא לכאורה פורמט קובץ פשוט, אך יש לו מאפיינים ייחודיים שיכולים להפוך אותו לאתגר כאשר מדובר בעיבוד ועיבוד מידע מורכב. הכירו את העולם של YAML בעזרת דוגמאות קוד ופלטים שלהלן:
+איך לעשות:
+המהדר של C כבר מגיע עם ספריית YAML כבר מוכנה לשימוש. כדי להתחיל, צריך רק להצהיר על עבוריות YAML ולקבל משתנה שיכיל את הנתונים שלנו. לפניכן ניתן למשלוח פקודות לקריאת רישומים או ליצור נתונים חדשים.
 
-```c
-// טענת הספריות הדרושות
+```C
 #include <yaml.h>
 
-int main() {
-	// יצירת מבנה לאחסון הנתונים
-	yaml_document_t document;
-	
-	// טעינת הקובץ הקיים
-	yaml_parser_t parser;
-	yaml_parser_initialize(&parser);
-	yaml_parser_set_input_file(&parser, "file.yaml");
-	
-	// קריאת הנתונים מהקובץ והצבתם בסטרים
-	yaml_parser_load(&parser, &document);
-	yaml_node_t *node = yaml_document_get_root_node(&document);
-	
-	// קבלת נתונים מאחת התוכן בעץ
-	yaml_node_t *key = yaml_document_get_node(&document, node->data.mapping.pairs.start->key);
-	char *value = (char*)node->data.mapping.pairs.start->value->data.scalar.value;
-	
-	// יידפוס התוכן למסך
-	printf("מפתח: %s, ערך: %s\n", key->data.scalar.value, value);
-	
-	// קיצור המודול וסגירת היעד
-	yaml_document_delete(&document);
-	yaml_parser_delete(&parser);
-	
-	return 0;
+yaml_parser_t parser;
+yaml_event_t event;
+
+yaml_parser_initialize(&parser);
+FILE *input = fopen("my_data.yaml", "rb");
+
+while (yaml_parser_parse(&parser, &event))
+{
+  // handle events here
 }
+
 ```
 
-הפלט:
-```
-מפתח: name, ערך: John Doe
-```
+דוגמאות לפעולות נוספות ופלט נתונים ניתן למצוא במדריך המפורט של YAML בעמוד הרישמי.
 
-## העמקה:
-ישנם כמה נסיבות בהן ייתכן שהידע על YAML ישמשך כמה עבודה נוספת. לדוגמה, תמיכה ב-YAML נמצאת בשפות תכנות מגוונות כמו גולנג׳ וגיט, וניתן להמיר קבצי YAML לפורמט XML דרך קבלה מעופשת.
+התרגול העמוק:
+YAML נוצר בשנת 2001 כפורמט תקיות לשפה הרפאל, כיום הוא מקבל תמיכה של רבים ומשתמשים כמובן. יכולות נוספות כדוגמת JSON ו XML מאפשרות בחירה בין פורמט לפי הצורך. החזר פעולות ברצף כדי לאפשר ניהול נתונים מכל מקום בקוד.
 
-## ראו גם:
-- [פרויקט ה-YAML הרשמי](https://yaml.org/)
-- [תיעוד C של YAML](https://yaml.org/spec/1.2/spec.html)
-- [טכנולוגיית ה-YAML בוויקיפדיה](https://en.wikipedia.org
+ ראה גם:
+כדי ללמוד עוד על שימושים וגם דוגמאות יעילות לתוכניות C עם YAML, נרצה להמליץ על המדריך הבא:
+- התיעוד הרשמי של YAML
+- הספריה של YAML לשפת C
+- עמוד הוויקי של YAML בוויקיפדיה

@@ -10,45 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co & Po co?
 
-Wysyłanie żądania HTTP jest nieodłączną częścią wielu projektów programistycznych. Za pomocą tego prostego zadania możemy pobierać dane, komunikować się z serwerami i tworzyć dynamiczne aplikacje internetowe.
+Wysyłanie żądań HTTP jest podstawowym sposobem, w jaki programiści komunikują się z siecią. Za pomocą tych żądań można pobierać lub wysyłać dane do internetowych zasobów, takich jak strony internetowe lub API. Jest to niezbędne do tworzenia aplikacji internetowych, które łączą się z serwerami lub innymi zasobami w sieci.
 
-## Jak to zrobić
-
-Wysłanie żądania HTTP w Pythonie jest łatwe przy użyciu biblioteki `requests`. Najpierw musimy ją zainstalować za pomocą `pip install requests`, a następnie zaimportować w naszym kodzie:
+## Jak to zrobić:
 
 ```Python
+# Wykonanie żądania GET za pomocą biblioteki requests
 import requests
-```
 
-Aby wysłać żądanie, musimy określić adres URL, do którego chcemy się połączyć, oraz metodę żądania. Na przykład, jeśli chcemy pobrać stronę internetową, musimy użyć metody `GET`:
+response = requests.get('https://www.example.com')
+
+# Sprawdzenie kodu odpowiedzi
+if response.status_code == 200:
+	# Wyświetlenie pobranej zawartości
+	print(response.text)
+else:
+	print("Błąd podczas pobierania strony")
+```
 
 ```Python
-response = requests.get("https://www.google.com")
+# Wykonanie żądania POST z wykorzystaniem danych w formacie JSON
+import requests
+
+data = {'username': 'John', 'password': '12345'}
+
+response = requests.post('https://www.example.com/login', json=data)
+
+# Sprawdzenie kodu odpowiedzi
+if response.status_code == 200:
+	# Wyświetlenie komunikatu zwrotnego
+	print(response.json()['message'])
+else:
+	print("Błąd podczas logowania")
 ```
 
-Teraz `response` będzie zawierać obiekt odpowiedzi z serwera. Możemy sprawdzić status naszego żądania za pomocą atrybutu `status_code`:
+## Głębszy zanurzenie:
 
-```Python
-print(response.status_code)
-# output: 200
-```
+Wysyłanie żądań HTTP ma swoje początki w protokole HTTP, który został opracowany w latach 80. XX wieku. Alternatywnym podejściem do komunikacji z siecią jest wykorzystanie gniazd sieciowych, jednak żądania HTTP są bardziej wygodne i wszechstronne. Istnieje wiele bibliotek w języku Python, które ułatwiają wysyłanie żądań HTTP, takich jak requests, urllib oraz httplib.
 
-Jeśli chcemy uzyskać zawartość strony, możemy użyć atrybutu `text`:
+## Zobacz również:
 
-```Python
-print(response.text)
-# output: zalany kod HTML strony Google
-```
+Dokumentacja biblioteki requests: https://requests.readthedocs.io/en/master/
 
-## Deep Dive
+Porównanie różnych bibliotek do obsługi żądań HTTP w Pythonie: https://www.pythonforbeginners.com/requests/which-python-http-library-to-use
 
-Podczas wysyłania żądań HTTP istnieje wiele innych opcji, które możemy wykorzystać, takich jak przekazywanie parametrów, nagłówków czy danych formularza. Możemy również przeprowadzać bardziej zaawansowane operacje, jak np. wysyłanie żądania POST lub przesyłanie plików.
-
-Aby dowiedzieć się więcej o możliwościach biblioteki `requests`, warto zapoznać się z jej dokumentacją: https://docs.python-requests.org/en/master/.
-
-## Zobacz także
-
-- Tutorial dotyczący biblioteki `requests`: https://realpython.com/python-requests/
-- Poradnik dotyczący wysyłania żądań HTTP w Pythonie: https://code.tutsplus.com/pl/tutorials/http-in-python-from-begginers--net-30333
+Wprowadzenie do protokołu HTTP: https://developer.mozilla.org/pl/docs/Web/HTTP

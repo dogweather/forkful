@@ -1,7 +1,7 @@
 ---
-title:                "Lese kommandolinjeargumenter"
-html_title:           "Elm: Lese kommandolinjeargumenter"
-simple_title:         "Lese kommandolinjeargumenter"
+title:                "Å lese kommandolinje-argumenter"
+html_title:           "Elm: Å lese kommandolinje-argumenter"
+simple_title:         "Å lese kommandolinje-argumenter"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Files and I/O"
@@ -10,59 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hva & Hvorfor?
+Lesing av kommandolinjeargumenter er en måte for programmerere å få tilgang til informasjon som brukes til å kjøre et program. Dette kan være nyttig for å tilpasse programmet til ulike brukerbehov eller å lese inn data fra en annen kilde.
 
-Det kan være lurt å lære å lese kommandolinjeargumenter når man lærer å programmere i Elm. Dette er fordi mange programmer bruker kommandolinjeargumenter for å motta input fra brukeren og dermed kunne skreddersy programmet til deres behov.
-
-## Hvordan
-
-Det finnes flere måter å lese kommandolinjeargumenter på i Elm, men en av de enkleste og mest intuitive måtene er å bruke "Cmd.map" funksjonen. Dette lar oss definere en funksjon som tar imot argumentene som input og deretter behandler dem slik vi ønsker.
+# Hvordan:
+For å lese kommandolinjeargumenter i Elm, kan du bruke funksjonen "Args" fra "Platform.Cmd" biblioteket. Denne funksjonen tar inn en funksjon som argument, som deretter kan brukes til å behandle og hente informasjon fra argumentene.
 
 ```Elm
-import Platform.Cmd exposing (map)
-import Task exposing (attempt)
+import Platform.Cmd exposing (Args)
 
-type Msg
-    = GotArguments (List String)
-
-main : Program Nil Model Msg
 main =
-    Platform.worker
-        { init = init
-        , update = update
-        , subscriptions = subscriptions
-        }
-
-init : () -> ( Model, Cmd Msg )
-init _ =
-    ( Model, Cmd.map GotArguments Platform.Cmd.arguments )
-
-type alias Model = List String
-
-update : Msg -> Model -> ( Model, Cmd Msg )
-update msg model =
-    case msg of
-        GotArguments arguments ->
-            ( arguments, Cmd.none )
-
-subscriptions : Model -> Sub Msg
-subscriptions model =
-    Sub.none
-
+    Args (\args ->
+        -- Her kan du bruke "args" til å behandle og hente ut informasjon fra argumentene
+        -- For eksempel, hente ut argumentet på indeks 0:
+        Debug.log "Argument 0" (args 0)
+    )
 ```
 
-I kodeeksempelet over bruker vi funksjonen "Platform.Cmd.arguments" for å hente ut en liste med kommandolinjeargumenter. Deretter mapper vi denne listen til vår "GotArguments" melding og behandler den i vår "update" funksjon.
+Eksempel utdata:
+```
+Argument 0: "input.txt"
+```
 
-For å se en fullstendig løsning kan du sjekke ut dette kodeeksempelet: [Kommandolinjeargumenter i Elm](https://ellie-app.com/5wJ65xbYWP3a1)
+# Dypdykk:
+Lesing av kommandolinjeargumenter har vært en vanlig praksis i programmering i lang tid, spesielt i programmeringsspråk som brukes til systemadministrasjon eller skripting. I Elm, som er et funksjonelt programmeringsspråk, er dette også en nyttig teknikk for å oppnå fleksibilitet og reaktivitet i programmer.
 
-## Deep Dive
+Det finnes flere alternativer for å lese kommandolinjeargumenter i Elm, inkludert å bruke "Port" eller "Http" biblioteket. Noen programmerere foretrekker å bruke disse alternativene fordi de gir bedre kontroll og fleksibilitet.
 
-Ved å bruke "Cmd.map" funksjonen kan vi ikke bare hente ut en liste med argumenter, men også spesifisere hvilken type data vi ønsker å hente. For eksempel kan vi bruke "Platform.Cmd.argumentsAs" for å hente ut en liste med tall i stedet for strenger.
+For å implementere lesing av kommandolinjeargumenter, må man ha en grunnleggende forståelse av funksjonelle programmeringskonsepter som funksjoner og lister. Det er også viktig å være klar over forskjeller i implementeringen av kommandolinjeargumenter på forskjellige plattformer.
 
-Det finnes også andre måter å behandle kommandolinjeargumenter på, som for eksempel å bruke en "command-line-args" pakke fra pakkesystemet "Elm Packages".
-
-## Se også
-
-- [Kommandolinjeargumenter i Elm](https://ellie-app.com/5wJ65xbYWP3a1)
-- [Elm pakkesystem](https://guide.elm-lang.org/install/elm.html) 
-- [Pakken "command-line-args" for behandling av kommandolinjeargumenter](https://package.elm-lang.org/packages/the-sett/command-line-args/latest)
+# Se Også:
+- Elm dokumentasjon for "Platform.Cmd" biblioteket: [https://package.elm-lang.org/packages/elm/core/latest/Platform-Cmd](https://package.elm-lang.org/packages/elm/core/latest/Platform-Cmd)
+- Eksempler på å lese kommandolinjeargumenter i Elm: [https://github.com/elm-community/string-extra](https://github.com/elm-community/string-extra)

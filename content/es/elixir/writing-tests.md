@@ -1,7 +1,7 @@
 ---
-title:                "Escribiendo pruebas"
-html_title:           "Elixir: Escribiendo pruebas"
-simple_title:         "Escribiendo pruebas"
+title:                "Escribir pruebas"
+html_title:           "Elixir: Escribir pruebas"
+simple_title:         "Escribir pruebas"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Testing and Debugging"
@@ -10,55 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué escribir pruebas en Elixir?
+## ¿Qué y por qué?
 
-Las pruebas son una parte importante del desarrollo de software, ya que nos permiten asegurarnos de que nuestro código funciona correctamente y mantiene su funcionalidad a medida que se realizan cambios. En Elixir, esto es especialmente importante debido a su naturaleza de lenguaje funcional y la concurrencia que ofrece. Escribir pruebas nos ayuda a tener un código más robusto y confiable.
+Escribir pruebas es una práctica común en la programación Elixir. Se trata de crear pruebas automatizadas para comprobar que nuestro código funciona correctamente. Esto nos ayuda a identificar y corregir errores en nuestro código de manera rápida y eficiente.
 
-## Cómo escribir pruebas en Elixir
+¿Por qué los programadores escriben pruebas? Porque garantiza que nuestro código funcione correctamente ante cualquier cambio en el mismo. Además, también nos ayuda a documentar el comportamiento esperado de nuestro código y a mejorar la calidad del mismo.
 
-Para escribir pruebas en Elixir, utilizamos el módulo `ExUnit`, que viene incluido en la librería estándar del lenguaje. Este módulo nos proporciona funciones y macros que nos permiten definir y ejecutar pruebas de manera sencilla.
+## Cómo hacerlo:
 
-Para comenzar, debemos crear un archivo de pruebas con la extensión `.exs`, por ejemplo, `mi_prueba.exs`. En este archivo, importamos `ExUnit` y luego definimos nuestra prueba utilizando la macro `test`. Dentro de esta macro, utilizamos diferentes assertivas para asegurarnos de que nuestro código se comporte como se espera.
+Para escribir pruebas en Elixir, utilizamos el módulo `ExUnit`. Este módulo nos proporciona todas las herramientas necesarias para crear y ejecutar pruebas en nuestro código. Veamos un ejemplo sencillo de cómo escribir una prueba:
 
-Veamos un ejemplo de cómo probar una función que suma dos números:
-
-```Elixir
-defmodule MiPrueba do
+```elixir
+defmodule Prueba do
   use ExUnit.Case
-  test "suma dos numeros" do    assert sumar(2, 3) == 5  end
+  # Definimos nuestra prueba
+  test "suma de dos números" do
+    assert 2 + 2 == 4
+  end
 end
 ```
 
-En este ejemplo, definimos un módulo de prueba llamado `MiPrueba` y dentro de él, usamos la macro `test` para definir nuestra prueba. Dentro de esta macro, utilizamos `assert` para verificar que la función `sumar` devuelve el resultado esperado.
+En este ejemplo, estamos definiendo una prueba usando el módulo `ExUnit.Case`. Luego, dentro de nuestra prueba, utilizamos la función `assert` para comprobar que la suma de dos números sea igual a 4. Si la prueba falla, Elixir nos mostrará un mensaje de error indicando en qué parte de nuestra prueba se encuentra el problema. Este es solo un ejemplo simple, pero podemos escribir pruebas más complejas para cubrir diferentes escenarios en nuestro código.
 
-Para ejecutar nuestras pruebas, podemos utilizar el comando `mix test` en la terminal y obtener un resultado como el siguiente:
+## Profundizando:
 
-```
-ExUnit.run: 1 failed, 1 passed, 0 skipped
+Escribir pruebas se ha vuelto una práctica común en la programación moderna. Antes, las pruebas se realizaban de forma manual, lo que consumía mucho tiempo y no garantizaba un resultado preciso. Con las pruebas automatizadas, podemos ahorrar tiempo y verificar el correcto funcionamiento de nuestro código en cualquier momento.
 
-Failed tests:
+Existen otras alternativas para escribir pruebas, como por ejemplo el popular módulo `RSpec` en Ruby. Sin embargo, en Elixir el uso de `ExUnit` es la opción más común y recomendada.
 
-  * MiPrueba.suma dos numeros
-    * assert sumar(2, 3) == 5
+Si queremos profundizar aún más en las técnicas de escritura de pruebas en Elixir, podemos investigar sobre temas como "Test Driven Development" (TDD) o "Behavior Driven Development" (BDD). Estos enfoques nos ayudarán a escribir pruebas más específicas y a mejorar nuestra metodología de desarrollo.
 
-Passed tests:
-
-  * MiPrueba.otra prueba
-    * assert "hola" == "hola"
-```
-
-Como se puede ver, nuestra prueba falló porque la función `sumar` no está definida. Pero una vez que la definimos y la ejecutamos nuevamente, obtendremos un resultado exitoso.
-
-## Deep Dive: Más información sobre escribir pruebas en Elixir
-
-Elixir también nos ofrece la posibilidad de utilizar la herramienta `ExCoveralls` para generar un reporte de cobertura de nuestras pruebas. Esto nos permite visualizar qué porcentaje de nuestro código está siendo cubierto por nuestras pruebas, lo cual es fundamental para identificar posibles áreas que necesitan ser probadas con mayor detalle.
-
-También es importante tener en cuenta que, en Elixir, se recomienda escribir pruebas unitarias en lugar de pruebas de integración. Esto se debe a que las pruebas unitarias son más fáciles de mantener y permiten una mayor flexibilidad en el diseño de nuestro código.
-
-Otra buena práctica es escribir pruebas antes de escribir el código en sí, utilizando el enfoque de TDD (Test Driven Development). Esto nos ayuda a pensar en el diseño de nuestro código y en los posibles casos de uso antes de comenzar a implementarlo.
-
-## Ver también / Enlaces útiles
+## Ver también:
 
 - Documentación oficial de ExUnit: https://hexdocs.pm/ex_unit/ExUnit.html
-- Tutorial de Elixir School sobre pruebas en Elixir: https://elixirschool.com/es/lessons/advanced/testing/
-- Repositorio de ExCoveralls: https://github.com/parroty/excoveralls
+
+- Tutorial introductorio a la escritura de pruebas en Elixir: https://elixir-lang.org/getting-started/mix-otp/testing-with-exunit.html
+
+- Manual avanzado de Elixir: https://elixir-lang.org/getting-started/mix-otp/tests-and-docs.html#documentation-guidelines

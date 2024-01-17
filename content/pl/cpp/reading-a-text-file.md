@@ -1,7 +1,7 @@
 ---
-title:                "Odczyt pliku tekstowego"
-html_title:           "C++: Odczyt pliku tekstowego"
-simple_title:         "Odczyt pliku tekstowego"
+title:                "Odczytywanie pliku tekstowego"
+html_title:           "C++: Odczytywanie pliku tekstowego"
+simple_title:         "Odczytywanie pliku tekstowego"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Files and I/O"
@@ -10,79 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
- 
-Czy kiedykolwiek zastanawiałeś się, jak działa odczytywanie plików tekstowych w języku C++? Pisanie programów, które mogą odczytywać dane z plików tekstowych jest niezbędne w wielu projektach programistycznych. W tym artykule przekażemy Ci kilka prostych wskazówek, jak to zrobić w sposób prosty i skuteczny.
- 
-## Jak to zrobić
- 
-Aby odczytać plik tekstowy w języku C++, używamy funkcji `ifstream`, która jest dostępna w bibliotece `fstream`. Najpierw musimy zdefiniować obiekt typu `ifstream` i podać nazwę pliku, który chcemy odczytać. Następnie możemy użyć pętli `while`, aby odczytywać linia po linii, używając funkcji `getline` i wyświetlać je w konsoli. Poniższy przykład pokazuje, jak to zrobić:
- 
+## Co i Dlaczego?
+
+Odczyt pliku tekstowego jest procesem, w którym programista wczytuje zawartość pliku tekstowego do swojego programu. Programiści robią to w celu uzyskania dostępu do danych przechowywanych w pliku i wykorzystania ich w swoim kodzie.
+
+## Jak to zrobić:
+
 ```C++
 #include <iostream>
 #include <fstream>
+
 using namespace std;
- 
+
 int main() {
-    ifstream plik("tekst.txt"); // zdefiniowanie obiektu ifstream z plikiem do odczytu 
-    string linia;
-    
-    while (getline(plik, linia)) { // dopóki są kolejne linie, odczytaj i wyświetl je w konsoli
-        cout << linia << endl;
+
+    // Otwieranie pliku do odczytu
+    ifstream plik("tekst.txt");
+
+    // Sprawdzanie czy plik istnieje
+    if (!plik) {
+        // Obsługa błędu jeśli plik nie istnieje
+        cout << "Nie udalo sie otworzyc pliku!";
+        return 1;
     }
-    
-    plik.close(); // zamknięcie pliku po zakończeniu pracy z nim
+
+    // Wczytywanie danych do zmiennej typu string
+    string linijka;
+    getline(plik, linijka);
+
+    // Wypisanie zawartości pliku na ekranie
+    cout << linijka;
+
+    // Zamykanie pliku
+    plik.close();
+
     return 0;
 }
 ```
- 
-Wyjście dla pliku `tekst.txt`:
-```
-To jest przykładowa linia tekstu.
-To jest kolejna linia tekstu.
-A to jest jeszcze jedna linia tekstu.
-```
- 
-Możemy również użyć funkcji `get` i `put` do odczytywania i zapisywania pojedynczych znaków w pliku. Poniższy przykład pokazuje to na prostym słowniku:
- 
-```C++
-#include <iostream>
-#include <fstream>
-using namespace std;
- 
-int main() {
-    ifstream plik("slownik.txt"); // zdefiniowanie obiektu ifstream z plikiem do odczytu
-    string slowo;
- 
-    cout << "Podaj słowo, aby znaleźć jego definicję: ";
-    cin >> slowo;
-    
-    char definicja[50];
-    int i = 0;
-    
-    while (plik >> definicja[i]) { // dopóki są kolejne znaki, zapisz je w tablicy
-        i++;
-    }
-    
-    cout << slowo << ": " << definicja << endl; // wyświetlenie słowa i jego definicji
-    
-    plik.close(); // zamknięcie pliku po zakończeniu pracy z nim
-    return 0;
-}
-```
- 
-Wyjście dla pliku `slownik.txt`:
-```
-programowanie
-|s|ł|i|c|a| op|ro|g|ra|mo|wa|ni|e
-```
- 
-## Deep Dive
- 
-Funkcja `ifstream` jest jedną z wielu dostępnych w bibliotece `fstream`. Pozwala nam na odczytywanie danych z plików w prosty sposób, jednak istnieją również inne funkcje, takie jak `ofstream` do zapisywania danych do pliku lub `fstream` do jednoczesnego odczytu i zapisu. 
- 
-Ważne jest również, aby pamiętać o otwieraniu i zamykaniu pliku, aby uniknąć niepotrzebnych problemów w przetwarzaniu danych. Istnieje również wiele innych metod odczytywania plików tekstowych, takich jak używanie strumieni lub biblioteki `<sstream>`, ale wykorzystanie funkcji `ifstream` jest najprostszym sposobem dla początkujących programistów.
- 
-## Zobacz również
- 
-- [Dokumentacja funkcji ifstream w języku C++](https://en.cppreference.com/w/cpp/io/basic_if
+
+**Wynik:**
+"Przykładowy tekst w pliku."
+
+## Deep Dive:
+
+Historia odczytu pliku tekstowego sięga początków programowania. Wcześniej, gdy programy były wykonywane na kartach perforowanych, programiści wczytywali dane do swoich programów, wkładając karty do czytników kart. Obecnie, odczyt pliku tekstowego jest jedną z najczęstszych operacji wykonywanych przez programistów, ponieważ pozwala im na pracę z różnymi typami danych przechowywanymi w pliku.
+
+Alternatywą dla odczytu pliku tekstowego może być odczyt pliku binarnego, w którym dane są zapisane w postaci binarnej zamiast tekstowej. Odczyt plików tekstowych jest bardziej czytelny i łatwiejszy w implementacji, dlatego jest częściej stosowany.
+
+Implementacja odczytu pliku tekstowego w języku C++ jest możliwa dzięki zestawowi bibliotek standardowych takich jak ```<fstream>``` i ```<iostream>```, które dostarczają funkcje i metody do wczytywania oraz zamykania pliku.
+
+## Zobacz też:
+
+Dla głębszego zrozumienia odczytywania plików tekstowych w języku C++, warto zapoznać się z dokumentacją biblioteki standardowej ```<fstream>```. Link do dokumentacji: https://en.cppreference.com/w/cpp/header/fstream

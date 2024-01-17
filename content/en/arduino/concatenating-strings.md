@@ -10,54 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-So you've been working on your Arduino project and everything is going smoothly, until you realize you need to combine multiple strings together. But why bother concatenating strings in the first place? Well, sometimes it's necessary to display a message or build a URL with dynamic values. Whatever the reason may be, concatenating strings can come in handy when programming with Arduino.
+Concatenating strings is the process of combining multiple strings together to create a longer string. This is a common practice in programming, as it allows developers to dynamically create strings that may change based on user input or other variables. By using concatenation, programmers can easily create more complex messages or data without having to hard code every single value.
 
-## How To
+## How to:
 
-Concatenating strings in Arduino is a relatively simple task. First, make sure you have the string library included at the top of your code:
-
-```Arduino
-#include <string.h>
-```
-
-Next, declare your strings and assign them values:
+To use concatenation in your Arduino code, you can use the `+` operator to combine strings together. Here is an example:
 
 ```Arduino
-String name = "John";
-String message = "Hello, my name is " + name + "!";
+// Combine "Hello" and "World" into a single string
+String message = "Hello" + "World";
+
+// Print out the resulting string
+Serial.println(message);
+
+// Output: HelloWorld
 ```
 
-Notice how the strings are combined using the `+` operator. Now, if you were to print out the `message` variable, the output would be:
-
-```
-Hello, my name is John!
-```
-
-You can also concatenate integers and other data types by converting them to strings using the `String()` function:
+You can also concatenate variables, numbers, or other data types by converting them to strings using the `String()` function. Here's an example with a variable:
 
 ```Arduino
+// Define a variable
 int age = 25;
-String bio = "I am " + String(age) + " years old.";
+
+// Combine the variable with a string using concatenation
+String message = "I am " + String(age) + " years old.";
+
+// Print out the resulting string
+Serial.println(message);
+
+// Output: I am 25 years old.
 ```
 
-The `bio` variable would now hold the value of:
+## Deep Dive:
 
-```
-I am 25 years old.
-```
+Concatenating strings has been a common practice in programming for a long time. In the past, strings were often stored as character arrays, and concatenating them required extra steps like manipulating pointers. But now, with languages like Arduino, concatenation is made much simpler with the use of the `String` data type and the `+` operator.
 
-## Deep Dive
+There are also alternatives to concatenating strings, such as using formatted `printf()` statements or using string functions like `strcat()` and `sprintf()`. However, for simplicity and ease of use, using concatenation is often the preferred method.
 
-Concatenating strings in Arduino works similarly to how it works in other programming languages like C or Java. The `+` operator is used to combine strings, and the `+=` operator can be used to append strings to an existing variable.
+One thing to note when using concatenation is that it can use a lot of memory, so it's important to be careful when creating very long or complex strings. Additionally, be aware of any potential concatenation errors, such as missing spaces between strings or accidentally combining numbers without converting them to strings first.
 
-However, it's important to note that you should not use the `+` operator repeatedly in a loop to concatenate strings. This can cause memory overflow and your program may crash. Instead, use the `concat()` function to combine strings within a loop.
+## See Also:
 
-Another thing to keep in mind is that strings in Arduino are mutable, meaning you can change their values. This can be useful when you need to update dynamic values in your concatenated string.
-
-## See Also
-
-- [Arduino Official Documentation on Strings](https://www.arduino.cc/reference/en/language/variables/data-types/string/)
-- [Concatenating Strings in C - Tutorialspoint](https://www.tutorialspoint.com/cprogramming/c_strings.htm)
-- [Understanding Memory in Arduino - Adafruit](https://learn.adafruit.com/memories-of-an-arduino/understanding-memory)
+- [Official Arduino String Reference](https://www.arduino.cc/reference/en/language/variables/data-types/string/)
+- [W3Schools String Concatenation Tutorial](https://www.w3schools.com/jsref/jsref_concat_string.asp)
+- [C++ String Concatenation Tips](https://www.techiedelight.com/concatenate-strings-cpp/)

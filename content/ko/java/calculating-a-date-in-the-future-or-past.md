@@ -10,58 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 왜
-우리는 인간처럼 살기 때문에 현실에서는 미래와 과거의 날짜를 계산해야 할 때가 있습니다. 다음에는 자바 프로그래밍을 사용하여 간단한 미래와 과거 날짜 계산 방법을 배워보겠습니다.
+# 무엇 & 왜?
+날짜를 미래나 과거로 계산하는 것은 프로그래머들이 일반적으로 하는 작업입니다. 이 작업의 목적은 특정 날짜를 계산하거나 특정 날짜와 관련된 데이터를 분석하기 위한 것입니다.
 
-## 어떻게
-먼저, 미래 날짜를 계산하는 방법을 알아보겠습니다. ```Java
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
+# 어떻게 하나요?
+자바에서 미래나 과거 날짜를 계산하는 방법을 알아보겠습니다. 먼저 날짜 객체를 생성한 다음, Calendar 클래스를 사용하여 날짜를 세팅합니다. 그 후, add 메서드를 이용하여 특정 기간을 더하거나 빼주면 됩니다. 코드 예시와 출력 결과는 다음과 같습니다.
 
-public class DateCalculator {
-    public static void main(String[] args) {
-        // 미래 날짜를 계산하고 싶은 날짜와 일수를 지정합니다.
-        LocalDate date = LocalDate.of(2021, 10, 10);
-        int daysToAdd = 14;
-
-        // 지정한 날짜에 일수를 더하고 포맷을 지정하여 출력합니다.
-        LocalDate futureDate = date.plusDays(daysToAdd);
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy년 MM월 dd일");
-        System.out.println("미래 날짜: " + futureDate.format(formatter));
-    }
-}
-```
-
-위 코드를 실행하면, 출력 결과는 다음과 같습니다.
-```
-미래 날짜: 2021년 10월 24일
-```
-
-이번에는 과거 날짜를 계산하는 방법을 알아보겠습니다. ```Java
-import java.time.LocalDate;
-import java.time.temporal.ChronoUnit;
+```Java
+import java.util.Calendar;
+import java.util.Date;
 
 public class DateCalculator {
-    public static void main(String[] args) {
-        // 과거 날짜를 계산하고 싶은 날짜와 단위를 지정합니다.
-        LocalDate date = LocalDate.of(2021, 10, 10);
-        long monthsToSubtract = 6;
+  public static void main(String[] args) {
+    // 날짜 객체 생성
+    Calendar calendar = Calendar.getInstance();
+    // 현재 날짜로 세팅
+    Date currentDate = new Date();
+    calendar.setTime(currentDate);
 
-        // 지정한 날짜에서 단위를 뺀 후, 기준 날짜로 포맷을 지정하여 출력합니다.
-        LocalDate pastDate = date.minus(monthsToSubtract, ChronoUnit.MONTHS);
-        System.out.printf("기준 날짜로부터 %d개월 전: %s", monthsToSubtract, pastDate);
-    }
+    // 1년 후 계산
+    calendar.add(Calendar.YEAR, 1);
+    Date oneYearLater = calendar.getTime();
+    System.out.println("1년 후: " + oneYearLater);
+
+    // 2달 전 계산
+    calendar.add(Calendar.MONTH, -2);
+    Date twoMonthsAgo = calendar.getTime();
+    System.out.println("2달 전: " + twoMonthsAgo);
+  }
 }
 ```
-
-출력 결과는 다음과 같습니다.
 ```
-기준 날짜로부터 6개월 전: 2021-04-10
+1년 후: Sun Jun 20 17:08:13 KST 2021
+2달 전: Mon Feb 20 17:08:13 KST 2021
 ```
 
-## 심층 분석
-위의 예시에서는 자바 8에서 추가된 LocalDate 클래스를 활용하여 날짜를 계산하는 방법을 보여주었습니다. 이 클래스는 날짜를 나타내는 객체를 생성하고, 원하는 연산을 수행할 수 있도록 제공되는 메소드를 사용할 수 있습니다. 또한, DateTimeFormatter 클래스를 사용하여 원하는 날짜 형식으로 출력할 수 있습니다.
+# 깊이 파헤치기
+미래나 과거 날짜를 계산하는 방법은 프로그래머들이 필수적으로 알아야 하는 기본적인 작업 중 하나입니다. 과거에는 Date 클래스를 사용하여 날짜를 다루었지만, 이제는 Calendar 클래스를 사용하는 것이 좋습니다. 또한 LocalDate 클래스를 사용할 수도 있습니다. Calendar 클래스는 특정 시점의 날짜를 기준으로 계산을 하기 때문에, 정확한 날짜 계산에는 유용하지만, LocalDate 클래스는 시간대와 시간을 포함하지 않는 단순한 날짜 계산에 적합합니다.
 
-## 더 알아보기
-- [Oracle Java Documentation](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
-- [Java Tutorials - Working with Dates and Times](https://docs.oracle.com/javase/tutorial/datetime/overview/index.html)
+# 참조
+- [Oracle Java 문서: Calendar 클래스](https://docs.oracle.com/javase/8/docs/api/java/util/Calendar.html)
+- [공식 Java Tutorial: 날짜 계산](https://docs.oracle.com/javase/tutorial/datetime/iso/date.html)
+- [Oracle Java 문서: LocalDate 클래스](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)

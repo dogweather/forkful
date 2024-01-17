@@ -10,48 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que escrever um arquivo de texto em Elixir?
+## O que e Por Que?
 
-Escrever um arquivo de texto é útil em muitos cenários, como gerar relatórios, salvar dados importantes ou armazenar informações para uso posterior. Aprender a fazê-lo em Elixir pode ajudar a expandir suas habilidades de programação e a lidar com tarefas comuns de forma eficiente.
+Escrever um arquivo de texto é o processo de criar um arquivo contendo somente texto puro, sem nenhuma formatação especial. Programadores frequentemente escrevem arquivos de texto para armazenar dados simples, como nomes de usuários ou configurações de aplicativos.
 
-## Como Fazer
+## Como Fazer:
 
-Para escrever um arquivo de texto em Elixir, primeiro precisamos abrir um arquivo usando a função `File.open/2` e passar o nome do arquivo e o modo de abertura como argumentos:
+```elixir
+# Abrindo um arquivo para escrita
+arquivo = File.open("meu_arquivo.txt", [:write])
 
-```
-iex> {:ok, file} = File.open("meu_arquivo.txt", [:write])
-{:ok, #PID<0.86.0>}
-```
+# Escrevendo uma linha de texto
+File.write(arquivo, "Olá, mundo!")
 
-Agora podemos usar a função `IO.write/2` para escrever o conteúdo no arquivo aberto anteriormente:
+# Escrevendo múltiplas linhas de texto
+File.write(arquivo, "Primeira linha\nSegunda linha\nTerceira linha")
 
-```
-iex> IO.write(file, "Este é um exemplo de texto que será escrito em um arquivo.")
-:ok
-```
-
-Em seguida, devemos fechar o arquivo usando a função `File.close/1` para salvar as alterações:
-
-```
-iex> File.close(file)
-:ok
+# Fechando o arquivo
+File.close(arquivo)
 ```
 
-Podemos verificar se o arquivo foi criado e se o conteúdo foi escrito corretamente usando a função `File.read/1`:
+## Deep Dive:
 
-```
-iex> File.read("meu_arquivo.txt")
-{:ok, "Este é um exemplo de texto que será escrito em um arquivo."}
-```
+Escrever arquivos de texto é um recurso muito útil e simples em programação, e tem sido usado há décadas. Existem muitas alternativas, com diferentes linguagens e bibliotecas oferecendo maneiras diferentes de escrever arquivos de texto. O Elixir, em particular, possui a função `File.write` que facilita muito esse processo.
 
-## Deep Dive
+## Veja Também:
 
-Ao escrever um arquivo de texto em Elixir, é importante entender o conceito de manipuladores. Manipuladores são funções que são chamadas quando os dados são gravados no arquivo. Eles são passados como argumentos para a função `File.open/2` e podem ser usados para controlar o modo como os dados são gravados no arquivo.
-
-Existem três manipuladores principais que podemos usar ao escrever um arquivo de texto em Elixir: `:raw`, `:line` e `:unicode`. O manipulador `:raw` escreve dados em formato de sequência de bytes, o manipulador `:line` adiciona uma quebra de linha ao final de cada bloco de dados e o manipulador `:unicode` codifica os dados em formato Unicode. É possível usar qualquer um desses manipuladores ou uma combinação deles, dependendo do tipo de dados que estamos escrevendo.
-
-## Veja Também
-
-- [Guia oficial sobre I/O em Elixir](https://hexdocs.pm/elixir/master/IO.html)
-- [Documentação sobre a função File.open/2](https://hexdocs.pm/elixir/File.html#open/2)
-- [Tutorial sobre a manipulação de arquivos em Elixir](https://blog.appsignal.com/2019/08/13/handling-files-in-elixir.html)
+- [Documentação do Elixir sobre a função File.write](https://hexdocs.pm/elixir/File.html#write/2)
+- [Exemplos de escrita de arquivos em Elixir](https://stackoverflow.com/questions/3222970/how-to-write-text-file-using-elixir)

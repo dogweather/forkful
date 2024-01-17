@@ -1,7 +1,7 @@
 ---
-title:                "Wyświetlanie wyników debugowania"
-html_title:           "Elm: Wyświetlanie wyników debugowania"
-simple_title:         "Wyświetlanie wyników debugowania"
+title:                "Drukowanie wyników debugowania"
+html_title:           "Elm: Drukowanie wyników debugowania"
+simple_title:         "Drukowanie wyników debugowania"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Testing and Debugging"
@@ -10,31 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co & Dlaczego?
 
-Czasem podczas pisania kodu trzeba dokonać pewnych zmian lub zrozumieć dlaczego program działa w taki, a nie inny sposób. W takich sytuacjach pomocne może być wypisywanie wyników debugowania.  
+Debugowanie – czyli wyświetlanie informacji o tym, co dzieje się w naszej aplikacji w trakcie jej działania – jest często praktykowane przez programistów, ponieważ ułatwia ono zrozumienie i śledzenie kodu. Jest to szczególnie przydatne w przypadku napotkania błędów lub niespodziewanego zachowania aplikacji.
 
-## Jak to zrobić
+## Jak to zrobić:
 
-Aby wypisać wyniki debugowania w Elm, możemy skorzystać z funkcji `Debug.log`. Ta metoda przyjmuje dwa parametry: string, który będzie mówił nam co chcemy wypisać oraz wartość, którą chcemy zobaczyć. 
-
-```Elm 
-Debug.log "Debugowanie" "Wartość zmiennej to:"
+```elm
+log : String -> a -> a
+log prefix value =
+    (Debug.log prefix value)
+    
+main =
+    let
+        num = 5
+    in
+        log "Value is:" num
 ```
 
-W powyższym przykładzie, po wykonaniu kodu, w konsoli zobaczymy napis "Debugowanie: Wartość zmiennej to:". Możemy także wyświetlać wartości zmiennych, np. `model`:
-
-```Elm
-Debug.log "Model" model
+**Output:**
+```
+"Value is: 5"
 ```
 
-W przypadku bardziej skomplikowanych wartości, możemy wykorzystać funkcję `toString`, aby przekonwertować je na string przed wypisaniem.
+W powyższym przykładzie za pomocą funkcji `log` wyświetlamy wartość zmiennej `num` wraz z podanym prefiksem.
 
-## Deep Dive
+## Głębszy zanurzenie:
 
-Podczas debugowania, dobrze jest uważać, aby nie zostawić funkcji `Debug.log` po zakończeniu pracy nad kodem. Wypisywanie informacji debugowania może znacznie spowolnić działanie programu. Aby temu zapobiec, warto skorzystać z flagi `--optimize`, która będzie pomijać funkcje `Debug.log` w kodzie produkcyjnym, czyli tym wykonywanym po zbudowaniu aplikacji.
+Historia tej praktyki sięga lat 70. ubiegłego wieku, kiedy do debugowania wykorzystywano specjalne urządzenia zwane bug box. Dzisiaj debugowanie jest powszechnie stosowane przez programistów jako narzędzie do rozwiązywania problemów i ułatwiania śledzenia kodu. W Elm możemy również wykorzystać funkcję `Debugger` do bardziej szczegółowego debugowania naszej aplikacji.
 
-## Zobacz także
+Alternatywnym sposobem na wyświetlanie debug output jest funkcja `trace`, która jest podobna do `log` z tym wyjątkiem, że zwraca tylko pusty krotkę `()`.
 
-- [Oficjalna dokumentacja Elm - Debug](https://guide.elm-lang.org/debugging/debug.html)
-- [Debugowanie w Elm - blog post](https://medium.com/@pavelbogomolenko/using-debug-in-elm-d5e0fe254012)
+## Zobacz również:
+
+- [Debugging in Elm Documentation](https://elm-lang.org/docs/debugging)
+- [Debugging with Elm Remote Devtools](https://laravel-news.com/elm-remote-devtools)
+- [Elm Debugger on GitHub](https://github.com/elm-lang/virtual-dom/tree/master/debug)

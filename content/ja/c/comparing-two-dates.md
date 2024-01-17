@@ -1,7 +1,7 @@
 ---
-title:                "二つの日付を比較する"
-html_title:           "C: 二つの日付を比較する"
-simple_title:         "二つの日付を比較する"
+title:                "「2つの日付を比較する」"
+html_title:           "C: 「2つの日付を比較する」"
+simple_title:         "「2つの日付を比較する」"
 programming_language: "C"
 category:             "C"
 tag:                  "Dates and Times"
@@ -10,54 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+## 何をするために：
+日付を比較することは、プログラマーがある日付が他の日付よりも前にあるか後ろにあるかを知るために行う作業です。これは、プログラマーが日付を使ってアプリケーションやゲームを作る際に欠かせないものです。
 
-二つの日付を比較することに関わる理由は、プログラミングで日付を処理する必要がある場合によくあるシナリオです。日付を比較することは、例えばアプリケーションでユーザーが特定の日付を選択した場合に特定のアクションを実行するために必要になるかもしれません。
+## 方法：
+日付を比較するには、```C```コードブロック内で2つの日付を指定し、オペレーターを使用することで比較できます。例えば、以下のコードを使用することで、2つの日付の比較ができます。
 
-## 方法
-
-まず、日付を比較する前に、2つの日付を同じ形式に変換する必要があります。以下のような例を見てみましょう。
-
-```C
-#include <stdio.h>
-#include <time.h>
-
-int main() {
-    // 2つの日付を定義する
-    char date1[] = "01/01/2021";
-    char date2[] = "01/05/2021";
-
-    // 2つの日付をtime構造体に変換する
-    struct tm tm1 = {0};
-    struct tm tm2 = {0};
-    strptime(date1, "%d/%m/%Y", &tm1);
-    strptime(date2, "%d/%m/%Y", &tm2);
-
-    // 比較する
-    if (mktime(&tm1) > mktime(&tm2)) {
-        printf("%s is later than %s\n", date1, date2);
-    } else if (mktime(&tm1) < mktime(&tm2)) {
-        printf("%s is earlier than %s\n", date1, date2);
-    } else {
-        printf("%s is equal to %s\n", date1, date2);
-    }
-    return 0;
+```
+if(date_1 > date_2){
+    printf("日付1は日付2よりも未来です。\n");
+}
+else{
+    printf("日付1は日付2よりも過去です。\n");
 }
 ```
 
-上記のコードは、`strptime()`関数を使用して文字列を日付として認識し、`mktime()`関数を使用して日付を比較します。出力は次のようになります。
+このコードでは、オペレーター```>```を使用して2つの日付を比較し、結果に応じて適切なメッセージを出力します。
 
-```
-01/01/2021 is earlier than 01/05/2021
-```
+## 深堀り：
+日付を比較するための最も一般的な方法は、大きさ比較オペレーター```>```や```<```を使用することです。しかし、この方法では日付の精度が整数型に制限されてしまいます。そのため、日付を正確に比較するには、日付を表す構造体やクラスを使用したり、外部ライブラリを導入したりする必要があります。
 
-## 深堀り
+また、日付を比較する場合には、タイムゾーンや夏時間などの情報も考慮する必要があります。これらの情報は、通常、UTC（協定世界時）を使用して比較することで解決できます。
 
-日付を比較する際に、timezone（タイムゾーン）やleap seconds（閏秒）など、考慮すべきことがあります。C言語の標準ライブラリには、`mktime()`と`difftime()`関数があり、これらはtimezoneやleap secondsを考慮しないため、比較結果にエラーが生じる可能性があります。
+## 関連情報：
+日付を比較するにあたって、さらに詳細な情報や代替手段を知りたい方は、以下のサイトを参考にしてください。
 
-より正確な日付の比較を行うには、外部ライブラリを使用することが推奨されます。例えば、timegmライブラリはtimezoneを考慮せずに日付を比較することができます。
-
-## 参考文献
-
-- [C言語で日付を比較する方法](https://www.tutorialspoint.com/how-to-compare-dates-in-c-programming)
-- [timezoneやleap secondを考慮するための外部ライブラリ](https://stackoverflow.com/questions/2219505/comparing-dates-in-c-without-considering-the-tz-and-daylight-saving-time-bugs)
+- [日付を比較する方法（ウィキペディア）](https://ja.wikipedia.org/wiki/%E6%97%A5%E4%BB%98%E3%81%AE%E6%AF%94%E8%BC%83)
+- [日付および時刻関数（C Standard Library）](https://www3.cs.stonybrook.edu/~cse220/spring14/slides/c80-dates-and-time-c-standard-library.pdf)
+- [C++ Boost.Date_Timeライブラリ](https://theboostcpplibraries.com/boost.date-time)

@@ -1,7 +1,7 @@
 ---
-title:                "Analizando html"
-html_title:           "Swift: Analizando html"
-simple_title:         "Analizando html"
+title:                "Analizando HTML."
+html_title:           "Swift: Analizando HTML."
+simple_title:         "Analizando HTML."
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "HTML and the Web"
@@ -10,34 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué?
+## ¿Qué es y por qué se hace el análisis de HTML?
+El análisis de HTML es el proceso de analizar y extraer información de una página web en formato HTML. Los programadores lo hacen para poder obtener ciertos datos o elementos específicos de una página web y utilizarlos en su código.
 
-Si estás interesado en extraer información de páginas web, entonces el análisis de HTML es una habilidad esencial. Al analizar el código HTML de una página, puedes obtener datos específicos y utilizarlos para diferentes propósitos, como análisis de datos, automatización web o creación de aplicaciones que extraigan información de páginas web.
-
-## Cómo hacerlo
-
-Para analizar HTML en Swift, se utilizan bibliotecas como Kanna o SwiftSoup. Aquí hay un ejemplo sencillo utilizando Kanna para extraer el título de una página web:
+## Cómo hacerlo:
+Para analizar HTML en Swift, primero necesitas importar la librería HTMLKit. Luego, puedes utilizar la función "try HTMLParser.parse(document:)" para analizar un documento HTML y convertirlo en un objeto HTMLDocument que puedes manipular. Por ejemplo:
 
 ```Swift
-import Kanna
+import HTMLKit
 
-if let html = try? HTML(url: URL(string: "https://www.example.com/")!, encoding: .utf8) {
-    for title in html.css("title") {
-        print(title.text)
-    }
+let html = "<body><h1>¡Hola, mundo!</h1></body>"
+
+do {
+    let document = try HTMLParser.parse(document: html)
+    let h1 = document.firstChild(ofTag: "h1")
+    print(h1?.textContent) // Output: ¡Hola, mundo!
+} catch {
+    print("Ha ocurrido un error al analizar el HTML.")
 }
 ```
 
-El resultado sería "Página de ejemplo" si se imprime en la consola. Puedes utilizar otras funciones y selectores para extraer diferentes elementos del código HTML, como enlaces, imágenes o texto.
+## Deep Dive:
+El análisis de HTML ha sido una práctica común en la programación web desde los inicios de la World Wide Web en 1989. Antes de la existencia de librerías como HTMLKit, los desarrolladores tenían que escribir su propio código para analizar HTML, lo cual era un proceso tedioso y propenso a errores.
 
-## Profundizando
+Hoy en día, existen alternativas al análisis de HTML, como el uso de APIs o scraping de datos mediante herramientas de terceros. Sin embargo, el análisis de HTML sigue siendo una forma eficiente y precisa de obtener datos de una página web.
 
-Es importante tener en cuenta que el análisis de HTML no es una tarea sencilla, ya que el código de una página web puede variar significativamente. Es posible que necesites utilizar expresiones regulares o funciones avanzadas para manejar casos específicos. También es importante tener en cuenta que existen diferencias entre el análisis de HTML en un dispositivo iOS y un dispositivo MacOS.
+En términos de implementación, HTMLKit utiliza un modelo de objetos para representar el DOM (Document Object Model) del documento HTML y provee métodos para acceder y manipular estos objetos.
 
-Para obtener más información sobre el análisis de HTML en Swift, puedes consultar la documentación de Kanna y SwiftSoup, así como buscar ejemplos y tutoriales en línea.
-
-## Ver también
-
-- [Documentación de Kanna](https://github.com/tid-kijyun/Kanna)
-- [Documentación de SwiftSoup](https://github.com/scinfu/SwiftSoup)
-- [Tutorial de análisis de HTML en Swift](https://www.raywenderlich.com/707-regular-expressions-in-swift-tutorial-getting-started)
+## Ver también:
+- [Documentación de HTMLKit](https://github.com/vapor-community/HTMLKit)
+- [Tutorial: Extracción de datos de una página web en Swift](https://www.raywenderlich.com/1476148-an-introduction-to-web-scraping-with-vapor-4-and-htmlkit)
+- [APIs vs Scraping: ¿Cuál es la mejor opción para obtener datos de una página web?](https://www.promptcloud.com/blog/apis-vs-web-scraping/)

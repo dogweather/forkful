@@ -10,64 +10,69 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que fazer um pedido HTTP com autenticação básica usando o Arduino
+# O que é e porquê?
 
-Há muitas razões pelas quais alguém pode querer fazer um pedido HTTP com autenticação básica usando o Arduino. Pode ser para acessar dados de uma API segura, ou até mesmo para controlar dispositivos remotos com autenticação.
+Enviar uma solicitação HTTP com autenticação básica é um processo em que o seu código Arduino envia informações para um servidor da web protegido por login e senha. Isso é comumente feito por programadores para acessar dados ou controlar dispositivos remotamente.
 
-## Como fazer um pedido HTTP com autenticação básica usando o Arduino
+# Como fazer:
 
-Fazer um pedido HTTP com autenticação básica usando o Arduino é bastante simples. Siga os passos abaixo para começar:
+Para enviar uma solicitação HTTP com autenticação básica no seu código Arduino, você precisará modificar uma função existente, ```client.print () ```, adicionando informações de autenticação no formato "usuário:senha" antes de enviar a solicitação. Veja abaixo um exemplo de código:
 
-1. Primeiro, precisamos incluir a biblioteca WiFi e a biblioteca HTTPClient no nosso código:
+```Arduino
+#include <Ethernet.h>
+#include <SPI.h>
 
-    ```Arduino
-    #include <WiFi.h>
-    #include <HTTPClient.h>
-    ```
+byte mac[] = { 0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED }; //Endereço MAC do seu Arduino
+char server[] = "www.example.com"; //Endereço do servidor
+int port = 80; //Porta do servidor
 
-2. Em seguida, defina as suas credenciais de autenticação básica:
+EthernetClient client; //Cria um objeto do tipo EthernetClient
 
-    ```Arduino
-    String username = "seu_usuario";
-    String password = "sua_senha";
-    ```
+void setup() {
+  Ethernet.begin(mac); //Inicia a conexão Ethernet
+  Serial.begin(9600); //Inicia a comunicação serial
+  delay(1000); //Aguarda um segundo
+}
 
-3. Em seguida, precisamos nos conectar à rede WiFi usando o `WiFi.begin()` e inserir as credenciais da sua rede. Certifique-se de colocar este código dentro do loop `setup()`:
-
-    ```Arduino
-    void setup() {
-        WiFi.begin("nome_da_sua_rede", "sua_senha");
+void loop() {
+  if (client.connect(server, port)) { //Conecta ao servidor
+    //Envia a solicitação com autenticação básica
+    client.print("GET /path/to/file HTTP/1.1\r\n");
+    client.print("Host: www.example.com\r\n");
+    client.print("Authorization: Basic YWRtaW46cGFzc3dvcmQ=\r\n"); //Substitua pelo seu usuário e senha codificados em base 64
+    client.print("Connection: close\r\n\r\n");
+    
+    //Aguarda a resposta do servidor
+    delay(500);
+    //Imprime a resposta no monitor serial
+    while (client.available()) {
+      char c = client.read();
+      Serial.print(c);
     }
-    ```
+  }
+  else {
+    //Se não conseguir se conectar, exibe uma mensagem de erro
+    Serial.println("Erro ao se conectar ao servidor.");
+  }
+  
+  //Espera alguns segundos antes de enviar a próxima solicitação
+  delay(5000);
+}
 
-4. Depois de se conectar com sucesso à sua rede, podemos fazer nosso pedido HTTP usando o objeto `HTTPClient`. Aqui está um exemplo de envio de um pedido GET para uma URL protegida com autenticação básica:
+```
 
-    ```Arduino
-    HTTPClient http;
-    http.begin("https://exemplo.com/api/dados"); // Insira a URL que deseja acessar
-    http.setAuthorization(username, password); // Insira as suas credenciais
-    int resposta = http.GET(); // Fazemos o pedido GET e armazenamos a resposta em uma variável
-    ```
+A saída no monitor serial mostrará a resposta do servidor, que pode ser um código de sucesso (200) ou erro (401). Lembre-se de substituir o usuário e senha no exemplo acima pela sua própria combinação codificada em base 64.
 
-5. Para verificar se o pedido foi bem-sucedido, podemos imprimir o código de status da resposta e o conteúdo retornado:
+# Mergulho profundo:
 
-    ```Arduino
-    Serial.println(resposta); // Imprime o código de status da resposta
-    Serial.println(http.getString()); // Imprime o conteúdo retornado
-    ```
+Enviar uma solicitação HTTP com autenticação básica é uma técnica comum em programação web e é usada para garantir que apenas usuários autorizados tenham acesso aos dados ou dispositivos remotos. Antes da autenticação básica, a autenticação por cookie era usada, mas isso exigia um servidor que salvasse e gerenciasse os cookies, tornando o processo mais complicado.
 
-E pronto! Agora você está fazendo pedidos HTTP com autenticação básica usando o Arduino.
+Existem alternativas para a autenticação básica, como o uso de tokens de autenticação mais seguros, mas ela ainda é amplamente usada por sua simplicidade e compatibilidade com vários servidores.
 
-## Mais informações sobre enviar um pedido HTTP com autenticação básica
+Ao enviar uma solicitação HTTP com autenticação básica, é importante lembrar de codificar o usuário e senha em base 64. Isso pode ser feito facilmente online com ferramentas gratuitas de codificação em base 64.
 
-Um pedido HTTP com autenticação básica envolve adicionar as credenciais de autenticação ao cabeçalho da sua solicitação. Isso é feito usando o método `setAuthorization()` do objeto `HTTPClient` e fornecendo o nome de usuário e senha como parâmetros.
+# Veja também:
 
-Certifique-se de armazenar suas credenciais de forma segura e evite compartilhá-las publicamente. Caso contrário, suas informações confidenciais podem ser comprometidas.
-
-## Veja também
-
-Aqui estão alguns recursos úteis para obter mais informações sobre como fazer pedidos HTTP com autenticação básica usando o Arduino:
-
-- [Documentação oficial da biblioteca HTTPClient](https://github.com/amcewen/HttpClient)
-- [Tutorial sobre como fazer pedidos HTTP usando o Arduino](https://randomnerdtutorials.com/esp32-http-get-post-arduino/)
-- [Exemplo de código para enviar um pedido GET com autenticação básica no Arduino](https://www.mischianti.org/2020/01/25/get-web-api-json-arduino/)
+- [Documentação oficial da classe EthernetClient](https://www.arduino.cc/en/Reference/EthernetClient)
+- [Tutorial completo de como enviar uma solicitação HTTP com autenticação básica no Arduino](https://www.pubnub.com/blog/arduino-http-with-authentication-example/)
+- [Ferramenta online para codificar em base 64](https://www.base64decode.org/)

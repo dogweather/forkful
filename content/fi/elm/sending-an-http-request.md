@@ -10,38 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä ja miksi?
 
-Miksi haluaisit lähettää HTTP-pyynnön? Ehkä tarvitset tietoa ulkoisesta lähteestä tai haluat lähettää tietoa palvelimelle. Tärkeintä on, että HTTP-pyynnön avulla voit kommunikoida eri järjestelmien ja palveluiden välillä.
+HTTP-pyynnön lähettäminen tarkoittaa tiedon lähettämistä internetin kautta. Tämä on tärkeä osa ohjelmointia, sillä se mahdollistaa tietojen hakemisen ja vastaanottamisen eri palvelimilta verkossa.
 
-## Kuinka
-
-Aloitetaan yksinkertaisella esimerkillä, jossa lähetämme GET-pyynnön GitHubin avoimeen rajapintaan (API) ja tulostamme vastauksen konsoliin.
+## Kuinka tehdä:
 
 ```Elm
 import Http
 
-type Msg = GotResponse ( Result Http.Error String )
-
-getGithubResponse : Cmd Msg
-getGithubResponse =
-  Http.get "https://api.github.com/users/elm/repos" (Http.expectString GotResponse)
-
+Http.send Http.getString "https://example.com/"
+    |> Task.perform (Result.toString "Error getting data") (\response -> 
+        -- Tee jotain vastaukselle
+        )
 ```
 
-Kun suoritat tämän funktion, se laukaisee HTTP-pyynnön Githubin API:sta ja saa vastauksena listan Elm-repositorioista. Tämän jälkeen voimme käsitellä vastauksen esimerkiksi tulostamalla sen konsoliin.
+Esimerkissä käytetään Elm:n `Http`-kirjastoa, joka tarjoaa kätevän tavan lähettää HTTP-pyyntöjä. Pyyntö tehdään `send`-funktiolla ja käytetään `Task.perform`-funktiota käsittelemään vastaus. Vastauksen voi käsitellä haluamallaan tavalla, kuten tallentaa se muuttujaan tai tulostaa se konsolille.
 
-## Syväsukellus
+## Syvällistä tietoa:
 
-HTTP-pyynnön lähettämiseen liittyy useita osia, kuten osoitteiden muodostaminen, muuttujien välittäminen ja vastausten käsittely. On tärkeää, että ymmärrät kaikki nämä osat ennen kuin aloitat HTTP-pyynnön tekemisen.
+HTTP eli Hypertext Transfer Protocol kehitettiin jo 1990-luvulla ja siitä on tullut standardi tiedonsiirrossa internetin kautta. On myös olemassa muita tapoja lähettää ja vastaanottaa tietoa verkossa, kuten WebSockets ja GraphQL, mutta HTTP on yhä yleisimmin käytetty protokolla.
 
-Aluksi meidän tulee tuoda käyttöön Http-nimisestä moduuli. Tämä moduuli tarjoaa meille funktiot lähettämään erilaisia HTTP-pyynnöistä, kuten `get` ja `post`.
+Elm tarjoaa myös muita tapoja lähettää HTTP-pyyntöjä, kuten `Http.post` ja `Http.request`, jotka mahdollistavat tarkemman määrittelyn esimerkiksi headereille ja lomaketiedoille.
 
-Seuraavaksi meidän tulee määrittää `type Msg` -tyyppi, joka määrittelee miten käsittelemme vastauksia. Tässä tapauksessa laitamme `Http.Errorin` ja `Stringin` sisällä `GotResponse` jossa `Http.Error` viittaa mahdollisiin virheisiin, joita voi tapahtua HTTP-pyynnön lähettämisen aikana.
+## Katso myös:
 
-Nyt voimme aloittaa lähettämään pyyntöjä. Ota huomioon, että käyttämämme `Http.get` -funktio hyväksyy kaksi parametria; ensimmäinen on haluttu osoite ja toinen käsittelee vastauksen. Käytämme funktiota `Http.expectString`, joka muodostaa vastauksen `Stringiksi` ja antaa sen parametriksi `GotResponse`-tyyppiseen funktion poikkeustilanteisiin.
-
-## Katso myös
-
-- [HTTP-pyynnön lähetys](https://guide.elm-lang.org/effects/http.html) Elm-käsikirjasta.
-- [Elm-rajapintojen käyttöönotto](http://package.elm-lang.org/packages/elm-lang/http/latest/Http) Elm-paketinhallinnasta.
+- Elm `Http`-kirjaston dokumentaatio: https://package.elm-lang.org/packages/elm/http/latest/
+- HTTP-protokollan historia: https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol#History

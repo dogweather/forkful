@@ -1,7 +1,7 @@
 ---
-title:                "Lesing av kommandolinje-argumenter"
-html_title:           "Elixir: Lesing av kommandolinje-argumenter"
-simple_title:         "Lesing av kommandolinje-argumenter"
+title:                "Lese kommandolinje-argumenter"
+html_title:           "Elixir: Lese kommandolinje-argumenter"
+simple_title:         "Lese kommandolinje-argumenter"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Files and I/O"
@@ -10,46 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hva & Hvorfor?
 
-I denne artikkelen vil vi utforske hvordan man kan lese kommandolinjeargumenter i Elixir og hvorfor det kan være nyttig for utviklere. Kommandolinjeargumenter er definert som informasjon som leveres til et program når det kjøres i et terminalvindu. Dette kan for eksempel være flagg, filnavn eller andre parametere som påvirker hvordan programmet kjører.
+Lesing av kommandolinje-argumenter er en vanlig prosedyre for utviklere, da den tillater dem å lese input fra brukeren uten å avbryte eller stoppe programmet. Dette gjør det mulig å gi interaktivitet til applikasjoner som kjører i en kommandolinje-terminal.
 
-## Hvordan gjøre det
+## Hvordan:
 
-For å lese kommandolinjeargumenter i Elixir, kan man bruke funksjonen `System.argv()` som returnerer en liste med argumentene som ble gitt til programmet ved kjøring. La oss se på et eksempel:
+For å lese kommandolinje-argumenter i Elixir, kan du bruke funksjonen `System.argv/0`. Denne funksjonen returnerer en liste med alle argumentene som er gitt til programmet ved kjøring. Her er et eksempel på hvordan du kan bruke denne funksjonen:
 
 ```Elixir
-# Lag en enkel liste med tall fra 1 til 10
-numbers = 1..10 |> Enum.to_list
-
-# Kjør dette programmet fra terminalen og gi en liste med tall som argumenter
-$ elixir read_args.exs 3, 7, 9
-
-# I din Elixir-fil kan du lese argumentene slik:
 args = System.argv()
-
-# Bruk Enum-modulet for å konvertere argumentene fra strenger til heltall
-input = args |> Enum.map(&String.to_integer/1)
-
-# Bruk input til å filtrere ut tallene som ikke finnes i listen
-filtered_numbers = numbers |> Enum.reject(fn(num) -> !Enum.member?(input, num) end)
-
-# Skriv ut resultatet til terminalen
-IO.puts "De filtrerte tallene er: #{filtered_numbers}"
+IO.puts("Du har gitt følgende argumenter: #{inspect args}")
 ```
+
+Om du kjører dette programmet med kommandolinje-argumenter, for eksempel: `elixir les_argumeter.ex arg1 arg2`, vil resultatet bli:
 
 ```bash
-De filtrerte tallene er: [3, 7, 9]
+Du har gitt følgende argumenter: ["arg1", "arg2"]
 ```
 
-## Dypdykk
+## Dypdykk:
 
-Det finnes en annen måte å lese argumenter på i Elixir ved hjelp av `OptionParser`-modulen som gir mulighet for å definere forskjellige alternativer og flagg som kan brukes ved kjøring av programmet. Dette kan være nyttig for å gi brukeren av programmet mer fleksibilitet og kontroll over hvordan det kjører.
+Å lese kommandolinje-argumenter har vært en viktig del av programmering siden tidlige dager. På den tiden da datamaskiner var store, tunge og dyre, var det vanlig å kjøre programmer gjennom kommandolinjen. Dette gjorde det nødvendig å gi argumenter til programmene på denne måten.
 
-En annen ting å merke seg er at man kan lese både argumenter og miljøvariabler ved hjelp av `System.argv()` og `System.get_env()`-funksjonene.
+I dag har vi mange moderne grensesnitt som gjør kommandolinjen mindre vanlig, men det er fortsatt viktig å kunne lese og behandle input på denne måten i programmering.
 
-## Se også
+Et alternativ til å bruke `System.argv/0` er å bruke et bibliotek som kalles `OptionParser`, som gir mer avanserte funksjoner for å lese og behandle kommandolinje-argumenter.
 
-- [Elixir dokumentasjon: System-modulen](https://hexdocs.pm/elixir/System.html)
-- [Elixir dokumentasjon: OptionParser-modulen](https://hexdocs.pm/elixir/OptionParser.html)
-- [Elixir dokumentasjon: Enum-modulen](https://hexdocs.pm/elixir/Enum.html)
+## Se Også:
+
+- [Dokumentasjon for System.argv/0](https://hexdocs.pm/elixir/System.html#argv/0)
+- [Dokumentasjon for OptionParser](https://hexdocs.pm/elixir/OptionParser.html)

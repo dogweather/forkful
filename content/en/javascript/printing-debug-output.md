@@ -10,61 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-Printing debug output is a useful tool for developers to troubleshoot and understand the inner workings of their code. It allows for visibility into the values of variables and the flow of execution, making it easier to identify and fix any errors.
+Debug output, also known as debugging, is the process of displaying information during the execution of a program to help understand its behavior and track down any issues. It allows programmers to see the current state of the code and identify where errors may be occurring. Debugging is an essential tool for improving the functionality and reliability of code.
 
-## How To
+## How to:
 
-To print debug output in Javascript, you can use the `console.log()` method. This method will output any parameters passed into it to the browser's console. Let's take a look at an example:
+To print debug output in JavaScript, we can use the console.log() function. This function takes in any value or variable and logs it to the console for us to see. Let's take a look at an example:
 
-```Javascript
-let num = 5;
-console.log(num); // outputs 5 to the console
+```javascript
+let num1 = 5;
+let num2 = 10;
+console.log(num1 + num2); // prints 15 to the console
 ```
 
-In this example, we declare a variable `num` and assign it the value of 5. We then use `console.log()` to print the value of `num` to the console.
+In this example, we declare two variables and use the console.log() function to print their sum to the console. This can be especially useful when trying to understand the outcome of certain operations or checking the value of a variable at a specific point in the code.
 
-You can also pass multiple parameters to be logged, separated by commas:
+We can also use the console.time() and console.timeEnd() functions to measure the execution time of a specific portion of our code. Let's look at an example:
 
-```Javascript
-let name = "John";
-let age = 25;
-console.log(name, age); // outputs "John 25" to the console
+```javascript
+console.time("MyLoop");
+for (let i = 0; i < 1000000; i++) {
+  // do some operation
+}
+console.timeEnd("MyLoop"); // prints the time it took to complete the loop to the console
 ```
 
-In addition to logging values, you can also add in descriptive messages to help identify the output:
+## Deep Dive:
 
-```Javascript
-let x = 10;
-console.log("The value of x is:", x); // outputs "The value of x is: 10" to the console
-```
+Debugging has been an important aspect of programming for decades. In the past, programmers would use manual code inspection or print statements to debug their code. But with the introduction of modern debuggers and tools, the process has become more efficient and effective.
 
-This is useful for keeping track of multiple variables and their values while debugging.
+Apart from console.log(), there are other alternatives for printing debug output in JavaScript, such as console.info(), console.warn(), and console.error(). These functions provide different levels of output and can be useful for organizing and prioritizing debug messages.
 
-## Deep Dive
+When using console.log(), we can also format our output by using string templates or passing multiple arguments to the function. This can make our debug messages more descriptive and helpful when trying to identify issues.
 
-In addition to `console.log()`, there are a few other methods that can be used for printing debug output:
+## See Also:
 
-- `console.debug()`: Similar to `console.log()`, but used for less important or supplemental debugging information.
-- `console.warn()`: Outputs a warning message to the console.
-- `console.error()`: Outputs an error message to the console.
-
-You can also use `console.table()` to print out data in a table format, making it easier to read and analyze.
-
-Another useful tip is to use `console.group()` and `console.groupEnd()` to group related outputs and make them more organized. For example:
-
-```Javascript
-console.group("User Info");
-console.log("Name: John");
-console.log("Age: 25");
-console.groupEnd();
-```
-
-This will group the information about the user together in the console, making it easier to distinguish from other logs.
-
-## See Also
-
-- [MDN web docs: console object](https://developer.mozilla.org/en-US/docs/Web/API/console)
-- [The Ultimate Guide to JavaScript Debugging](https://www.freecodecamp.org/news/javascript-debugging-guide/)
-- [Debugging Like a Boss with Browser DevTools](https://blog.logrocket.com/debugging-like-a-boss-with-browser-devtools/)
+- [MDN Web Docs: Debugging JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/debugger)
+- [YouTube: How to Debug JavaScript in Google Chrome](https://www.youtube.com/watch?v=w1sAvv2612M)
+- [dev.to: 5 Console Methods You Didn’t Know Existed](https://dev.to/dcodeyt/5-console-methods-you-didn-t-know-existed-14c0)

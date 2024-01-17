@@ -1,7 +1,7 @@
 ---
-title:                "Überprüfung, ob ein Verzeichnis existiert"
-html_title:           "C#: Überprüfung, ob ein Verzeichnis existiert"
-simple_title:         "Überprüfung, ob ein Verzeichnis existiert"
+title:                "Überprüfen ob ein Verzeichnis existiert"
+html_title:           "C#: Überprüfen ob ein Verzeichnis existiert"
+simple_title:         "Überprüfen ob ein Verzeichnis existiert"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Files and I/O"
@@ -10,43 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was & Warum?
+Das Überprüfen, ob ein Verzeichnis existiert, ist eine gängige Programmieraufgabe, bei der geprüft wird, ob ein bestimmter Ordner auf einem Speicherort vorhanden ist. Es wird häufig von Entwicklern verwendet, um die Anwesenheit von spezifischen Dateien oder Ordnern zu überprüfen, bevor sie mit ihrem Programm fortfahren.
 
-Das Überprüfen, ob ein Verzeichnis existiert, ist ein wichtiger Bestandteil beim Programmieren. Es bietet die Möglichkeit, einen bestimmten Pfad aufzuzeigen und zu überprüfen, ob er vorhanden ist oder nicht. Dies ist besonders nützlich, wenn man beispielsweise Dateien in einem bestimmten Verzeichnis lesen oder schreiben möchte.
-
-## Wie das gemacht wird
-
-Eine Möglichkeit, um zu überprüfen, ob ein Verzeichnis existiert, ist die Verwendung der `Directory.Exists()` Methode in C#. Diese Methode gibt einen booleschen Wert zurück und zeigt somit an, ob das angegebene Verzeichnis vorhanden ist oder nicht.
-
-Beispielcode:
-
+## Wie geht das?
 ```C#
-string path = @"C:\Beispiel\Verzeichnis";
 if (Directory.Exists(path))
 {
-    Console.WriteLine("Das Verzeichnis existiert!");
+    Console.WriteLine("Das Verzeichnis existiert.");
 }
 else
 {
     Console.WriteLine("Das Verzeichnis existiert nicht.");
 }
 ```
+Das obige Beispiel nutzt die statische Methode "Directory.Exists" aus der Klasse "Directory", um zu überprüfen, ob das angegebene Verzeichnis mit dem Pfad "path" existiert. Wenn ja, wird eine Erfolgsmeldung ausgegeben, andernfalls eine Fehlermeldung.
 
-Ausgabe:
+## Tiefentauchen
+Das Überprüfen von Verzeichnissen hat eine lange Geschichte in der Programmierung. In Zeiten, in denen Speicherplatz teurer war und Dateien sorgfältig organisiert werden mussten, war es wichtig zu wissen, ob ein bestimmtes Verzeichnis bereits vorhanden war, um Duplikate zu vermeiden oder bestimmte Aktionen auszuführen. Heutzutage gibt es zwar bessere Methoden, um Dateien und Ordner zu verwalten, aber das Überprüfen von Verzeichnissen ist immer noch eine nützliche und häufig verwendete Funktion.
 
-```
-Das Verzeichnis existiert!
-```
+Es gibt auch alternative Möglichkeiten, um zu überprüfen, ob ein Verzeichnis existiert, wie beispielsweise das Verwenden der Klasse "File", um den spezifischen Pfad zu überprüfen. Die Verwendung der "Directory" Klasse ist jedoch die gängigste und einfachste Methode.
 
-## Tiefer Einblick
-
-Um tiefer in das Thema einzutauchen, ist es wichtig zu verstehen, dass `Directory.Exists()` nicht nur überprüft, ob ein Verzeichnis existiert, sondern auch überprüft, ob der angegebene Pfad ein Verzeichnis ist. Wenn der Pfad auf eine Datei oder einen ungültigen Pfad zeigt, wird die Methode `false` zurückgeben.
-
-Es ist auch wichtig zu beachten, dass diese Methode nur überprüft, ob ein Verzeichnis im lokalen Dateisystem vorhanden ist. Wenn man auf ein Verzeichnis in einem Netzwerk zugreifen möchte, muss man eine andere Methode verwenden, wie z.B. `Path.GetFullPath()` oder `Path.GetDirectoryName()`.
-
-Es ist ratsam, vor dem Zugriff auf ein Verzeichnis immer zu überprüfen, ob es vorhanden ist, um Fehler zu vermeiden und die Benutzerfreundlichkeit zu verbessern.
-
-## Siehe auch
-
-- [Microsoft Dokumentation zu Directory.Exists-Methode](https://docs.microsoft.com/en-us/dotnet/api/system.io.directory.exists)
-- [Stack Overflow Beitrag zum Überprüfen von Netzwerkverzeichnissen in C#](https://stackoverflow.com/questions/953659/how-do-i-check-if-a-directory-exists-in-a-remote-directory)
+## Sieh auch
+- [Microsoft Dokumentation zum Überprüfen von Verzeichnissen in C#](https://docs.microsoft.com/en-us/dotnet/api/system.io.directory.exists?view=netcore-3.1)
+- [Tutorial für Einsteiger zum Arbeiten mit Verzeichnissen in C#](https://www.tutorialspoint.com/csharp/csharp_working_with_directories.htm)
+- [Beispielcode für die Verwendung der "Directory.Exists" Methode](https://www.codegrepper.com/code-examples/csharp/c%23+checking+if+directory+exists)

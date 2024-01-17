@@ -1,7 +1,7 @@
 ---
-title:                "Eine Datum in einen String umwandeln"
-html_title:           "Fish Shell: Eine Datum in einen String umwandeln"
-simple_title:         "Eine Datum in einen String umwandeln"
+title:                "Umwandlung eines Datums in einen String"
+html_title:           "Fish Shell: Umwandlung eines Datums in einen String"
+simple_title:         "Umwandlung eines Datums in einen String"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Dates and Times"
@@ -10,42 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was & Warum?
 
-Wenn du regelmäßig mit Daten arbeitest, wirst du irgendwann die Notwendigkeit haben, ein Datum in eine Zeichenfolge (String) umzuwandeln. Sei es für die Benennung von Dateien oder für die Ausgabe in einem Bericht, die Umwandlung eines Datums in einen String kann sehr hilfreich sein.
+Das Konvertieren von Datumsangaben in Zeichenketten ist ein häufiges Problem, mit dem sich Programmierer konfrontiert sehen. Dabei geht es darum, ein Datum in ein menschenlesbares Format umzuwandeln, das leichter zu verarbeiten ist. Programmierer nutzen dies, um zum Beispiel Benutzerinformationen in einem übersichtlichen Format auszugeben oder um Vergleiche zwischen verschiedenen Datumsangaben anzustellen.
 
-## Wie geht das?
+## Wie geht's?
 
-Das Konvertieren eines Datums in einen String ist mit Fish Shell sehr einfach. Dafür gibt es die Funktion `string`, die das entsprechende Datum in einer benutzerdefinierten Zeichenfolgeformatierung ausgibt.
+Hier sind einige Beispiele dafür, wie man ein Datum in eine Zeichenkette mithilfe von Fish Shell konvertieren kann:
 
-```Fish Shell
-set date (date +%Y-%m-%d)
-string $date +"Der heutige Tag ist %Y-%m-%d"
+```
+Fish Shell  set today (date +"%A, %B %e, %Y")
+Monday, May 3, 2021
 ```
 
-Die obige Funktion speichert das aktuelle Datum in der Variablen `date` und konvertiert es dann in einen String mit dem gewünschten Format. Die Ausgabe würde in diesem Fall wie folgt aussehen: "Der heutige Tag ist 2021-06-03".
+```
+Fish Shell  set time (echo (date +"Today is %A at %l:%M %p"))
+Today is Monday at 9:30 AM
+```
 
-Natürlich kannst du auch andere Formate verwenden, abhängig von deinen spezifischen Anforderungen. Hier sind einige Beispiele, die du ausprobieren kannst:
+```
+Fish Shell  set date (string (date --date="1 month"))
+Thu Jun 3 00:00:00 CEST 2021
+```
 
-- `string $date +"%d.%m.%Y"` (Ausgabe: "03.06.2021")
-- `string $date +"%b, %Y"` (Ausgabe: "Jun, 2021")
-- `string $date +"Heute ist %A"` (Ausgabe: "Heute ist Donnerstag")
+## Tiefere Einblicke
 
-## Tiefergehende Informationen
-
-Um das gewünschte Ergebnis zu erzielen, ist es wichtig, die richtige Formatierung zu verwenden. Im Grunde genommen steht jedem einzelnen Zeichen in deiner Formatierung eine bestimmte Information über das Datum zur Verfügung. Hier sind einige Beispiele für häufig verwendete Zeichen:
-
-- `%Y` - Jahr mit vier Ziffern (z.B. 2021)
-- `%m` - Monat mit führender Null (z.B. 06 für Juni)
-- `%d` - Tag mit führender Null (z.B. 03)
-- `%b` - Monatsname abgekürzt (z.B. Jun)
-- `%B` - Monatsname ausgeschrieben (z.B. Juni)
-- `%a` - Wochentag abgekürzt (z.B. Do)
-- `%A` - Wochentag ausgeschrieben (z.B. Donnerstag)
-
-Eine vollständige Liste aller verfügbaren Zeichen und ihrer Bedeutung findest du in der [Dokumentation von Fish Shell](https://fishshell.com/docs/current/).
+Das Konvertieren von Datumsangaben in Zeichenketten ist keine neue Herausforderung. Es hat seinen Ursprung in der Notwendigkeit, Daten in einem bestimmten Format für die menschliche Lesbarkeit darzustellen. In Fish Shell gibt es auch andere Methoden, um Datumsangaben zu konvertieren, wie beispielsweise mithilfe des ```strftime``` Befehls.
 
 ## Siehe auch
 
-- [Konvertieren von Zeichenfolgen in Daten in Fish Shell](https://fishshell.com/docs/current/commands.html#string-to-date-conversions)
-- [Dokumentation zu Datum und Uhrzeit in Fish Shell](https://fishshell.com/docs/current/commands.html#date-and-time)
+Weitere Informationen zum Konvertieren von Datumsangaben in Zeichenketten mit Fish Shell können unter folgenden Links gefunden werden:
+
+- [Fish Shell Dokumentation](https://fishshell.com/docs/current/index.html)
+- [Tutorial zum Umgang mit Datum und Uhrzeit in Fish Shell](https://janikvonrotz.ch/2016/12/15/manipulate-time-and-date-in-fish-shell/)
+- [Beispiele für die Verwendung von Datumsangaben in Fish Shell Scripts](https://gist.github.com/jasonwryan/3850615)

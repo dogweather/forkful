@@ -10,46 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
+Att skriva en textfil är ett sätt för programmerare att spara och organisera data på ett enkelt och läsbart sätt. Det är särskilt användbart för programmerare som vill lagra information som inte behöver ändras ofta eller som ska användas senare.
 
-Att skriva en textfil kan vara användbart för att spara information eller för att dela med andra. Det är också ett enkelt sätt att öva på din programmeringskunskaper i Rust.
-
-## Så här gör du
-
-För att skriva en textfil i Rust behöver du först importera en modul som heter "fs". Sedan kan du använda funktionen "write" för att skapa en ny fil och skriva in den önskade texten. Se till att sätta rätt filnamn och sökväg när du skapar filen. Här är ett exempel på hur det kan se ut:
-
+## Hur gör man:
 ```Rust
 use std::fs::File;
+use std::io::Write;
 
 fn main() {
-    let mut fil = File::öppna ("min_textfil.txt", "V"). förvänta_sig("Kunde inte öppna filen");
+    // Öppna en textfil för skrivning
+    let mut fil = File::create("min_textfil.txt").expect("Kunde inte skapa textfil");
 
-    filskriva_all("Hej, det här är en textfil skriven i Rust!"). förvänta_sig("Kunde inte skriva till filen");
-}
-
-```
-
-När du kör koden ovan kommer det att skapas en fil med namnet "min_textfil.txt" i samma mapp som ditt Rust-program. Inuti textfilen kommer texten "Hej, det här är en textfil skriven i Rust!" att finnas.
-
-Du kan också använda funktionen "write_all" för att skriva flera rader text till filen. Se till att lägga till "\ n" mellan varje rad så att de skrivs på separata rader.
-
-```Rust
-use std::fs::File;
-
-fn main() {
-    let mut fil = File::öppna ("min_textfil.txt", "V"). förvänta_sig("Kunde inte öppna filen");
-
-    filskriva_all("Det här är rad ett!\nDet här är rad två!"). förvänta_sig("Kunde inte skriva till filen");
+    // Skriv några rader till filen
+    write!(fil, "Hej! Det här är min textfil. \n").expect("Kunde inte skriva till filen");
+    write!(fil, "Hoppas du har en bra dag!").expect("Kunde inte skriva till filen");
 }
 ```
 
-## Djupdykning
+Det här kodexemplet visar hur du skapar och skriver till en textfil i Rust. Vi börjar med att importera `File` och `Write` från standardbiblioteket. Sedan skapar vi en ny fil med `create`-funktionen och lagrar den i en variabel.
 
-När du skriver en textfil i Rust finns det några viktiga saker att komma ihåg. Först och främst måste du använda "mut" när du deklarerar filvariabeln, eftersom vi kommer att ändra filen när vi skriver till den. Det är också viktigt att sätta rätt rättighetstyper ("V" för skrivåtkomst) när du öppnar filen, annars kommer inte koden att fungera. Om du vill läsa från en befintlig fil kan du använda funktionen "read_to_string" istället för "write_all".
+För att skriva till filen använder vi `write!`-makron och anger filen vi vill skriva till och innehållet som ska skrivas. Genom att använda `expect`-metoden blir vi meddelade om något går fel med skrivningen.
 
-Det är också viktigt att hantera eventuella fel som kan uppstå under skrivprocessen. I våra exempel använde vi funktionen "förvänta sig", vilket innebär att om det uppstår ett fel kommer programmet att avslutas och felmeddelandet visas. Men du kan också välja att hantera felet på annat sätt, till exempel med en "match" -sats eller en "if-else" -sats.
+## Djupdykning:
+Historiskt sett, var textfiler en vanlig metod för att lagra data i gamla datorsystem. Numera är de fortfarande användbara för att lagra konfigurationsinställningar, metadata och annan icke-föränderlig information.
 
-## Se också
+Det finns också alternativ för att lagra data i andra format, som databaser eller JSON-filer. Men för vissa fall, som enkel tillfällig data eller enkel konfiguration, kan en textfil vara ett snabbt och lätt sätt att spara och läsa information.
 
-[Filhantering i Rust](https://doc.rust-lang.org/book/ch12-00-an-io-project.html) 
-[Rust-fs-modulen](https://doc.rust-lang.org/std/fs/)
+När man skriver en textfil i Rust används vanligtvis modulen `std::fs` tillsammans med `File`-typen och `Write`-traiten. Det finns också andra funktioner och metoder för att skriva till filen, som `writeln!` som automatiskt lägger till en radbrytning efter varje rad.
+
+## Se även:
+Länkar till andra relevant information om att skriva textfiler i Rust:
+- [Rust Standardbiblioteket - Filhantering](https://doc.rust-lang.org/std/fs/)
+- [Rust dokumentation - I/O-biblioteket](https://doc.rust-lang.org/std/io/)
+- [RustByExample - Fil I/O](https://rustbyexample.com/std_io/file.html)

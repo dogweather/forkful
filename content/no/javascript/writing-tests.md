@@ -1,7 +1,7 @@
 ---
-title:                "Skriving av tester"
-html_title:           "Javascript: Skriving av tester"
-simple_title:         "Skriving av tester"
+title:                "Skriver tester"
+html_title:           "Javascript: Skriver tester"
+simple_title:         "Skriver tester"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Testing and Debugging"
@@ -10,37 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hva & Hvorfor?
 
-Å skrive tester er en viktig del av enhver utviklers arbeid, og det er spesielt viktig i Javascript-verdenen. Tester hjelper deg med å sikre at koden din fungerer som den skal, oppdage feil og forhindre bugs i produksjon. Det kan også spare deg for mye tid og frustrasjon på lang sikt.
+Testskriving er en viktig del av programvareutvikling som hjelper programvareutviklere å sikre at koden fungerer som den skal. Ved å skrive tester, kan utviklere raskt oppdage og løse eventuelle feil eller bugs i koden sin før de blir utgitt til brukere. Dette bidrar til å forbedre kvaliteten på programvaren og øke påliteligheten.
 
-## Hvordan
+## Slik gjør du det:
 
-For å skrive tester i Javascript trenger du et testingrammeverk som Mocha, Jest eller Jasmine. Her er et eksempel på hvordan du kan skrive en enkel test med Jest:
-
-```Javascript 
-// Test av en funksjon som legger sammen to tall
-function addNumbers(a, b) {
-  return a + b;
+```Javascript
+// Eksempel på en test som sjekker om et tall er større enn 10
+function testStørreEnnTi(tall) {
+  if(tall > 10) {
+    console.log("Tallet er større enn 10");
+  }
+  else {
+    console.log("Tallet er mindre enn eller lik 10");
+  }
 }
 
-describe("Legge sammen to tall", () => {
-  test("Sjekker om resultatet er riktig", () => {
-    expect(addNumbers(2, 2)).toBe(4);
-  });
-});
+// Eksempel på bruk av testfunksjonen
+testStørreEnnTi(15);
+// Output: Tallet er større enn 10
 ```
 
-Koden over bruker Jest til å definere en beskrivelse av testen og en forventet utgang. Ved å kjøre testen vil Jest sammenligne den faktiske utgangen med den forventede og indikere om testen har passert eller feilet.
+## Dypdykk:
 
-## Dykk dypere
+Historisk sett ble testing gjort manuelt av programmerere, noe som var tidkrevende og kunne føre til at feil ble oversett. Med innføringen av automatiserte tester, ble testprosessen mye mer effektiv og pålitelig. Alternativer til Javascript-testrammeverk inkluderer Mocha, Jest, og Jasmine. Implementering av tester innebærer å lage flere små tester som dekker forskjellige deler av koden, og disse testsene kan kjøres automatisk ved hjelp av et testrammeverk.
 
-Å skrive komplette og effektive tester krever forståelse av ulike konsepter som mocking, stubbing og assertions. Det er også viktig å forstå de ulike metodene for å skrive tester basert på type koding du gjør, for eksempel funksjonell eller objektorientert programmering.
+## Se også:
 
-Et annet viktig aspekt ved testing er å lære å analysere og tolke testresultatene for å kunne forbedre og optimalisere koden din. Dette kan bidra til å identifisere potensielle feil og forbedre kvaliteten på koden din.
-
-## Se også
-
-- [Jest dokumentasjon](https://jestjs.io/)
-- [Mocha dokumentasjon](https://mochajs.org/)
-- [Jasmine dokumentasjon](https://jasmine.github.io/)
+- [Mocha](https://mochajs.org/)
+- [Jest](https://jestjs.io/)
+- [Jasmine](https://jasmine.github.io/)

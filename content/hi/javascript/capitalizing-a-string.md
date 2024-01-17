@@ -1,7 +1,7 @@
 ---
-title:                "स्ट्रिंग को कैपिटलाइज़ करना"
-html_title:           "Javascript: स्ट्रिंग को कैपिटलाइज़ करना"
-simple_title:         "स्ट्रिंग को कैपिटलाइज़ करना"
+title:                "स्ट्रिंग को कैपिटलाइज करना"
+html_title:           "Javascript: स्ट्रिंग को कैपिटलाइज करना"
+simple_title:         "स्ट्रिंग को कैपिटलाइज करना"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Strings"
@@ -10,32 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
+## क्या और क्यों?
+कोई भी स्ट्रिंग (तार) या शब्द जब हम कैपिटल लेटर्स (मामूली नकशे में लिखे लेटर्स) से बनाते हैं, तो हम उसे कैपिटलाइज़ (मोटे अक्षरों से लिखना) करते हैं। यह देखने में शायद असाधारण लगे, लेकिन प्रोग्रामर्स इसका इस्तेमाल उस शब्द की पहचान बढ़ाने के लिए करते हैं।
 
-कोई व्यक्ति आइटम को आदेश दालने, या उसको सुधारने की ख्वाहिश रख सकता है, जैसे कि टाइपिंग में शब्दों को पढ़ने को आसान बनाने के लिए। यहां हम स्ट्रिंग को capitalize करना सीखेंगे।
-
-## कैसे करें
-
-```Javascript
-let string = "hello world";
-
-// Using built-in methods
-let capitalizedString = string.charAt(0).toUpperCase() + string.slice(1);
-
-console.log(capitalizedString); // Output: Hello world
-
-// Using ES6 spread operator and template literals
-let spreadString = [...string];
-spreadString[0] = spreadString[0].toUpperCase();
-let capitalizedString = spreadString.join("");
-
-console.log(capitalizedString); // Output: Hello world
+## कैसे करें?
 ```
+वादा = "मैं वादा रहूँगा";
+console.log(वादा.toUpperCase()); 
+// आउटपुट: वादा Rहूँगा।
+```
+
+```
+नाम = "रामचंद्र";
+console.log(नाम.charAt(0).toUpperCase() + नाम.slice(1)); 
+// आउटपुट: रामचंद्र।
+```
+
 ## गहराई में जाएं
+कैपिटलाइज़ का इतिहास बहुत ही पुराना है। यह पहले से ही टाइपिकल लेटर्स (आम नकशे वाले अक्षर) चरण का हिस्सा रहा है। इसके अलावा, इसके अन्य कई विकल्प भी हैं, जैसे कि स्ट्रिंग को मामूली अच्छी तरह से कैपिटलाइज़ किया जा सकता है और उसे प्रिंट किया जा सकता है। यह कैसे करें और कोड पर पूरी तरह से निर्भर करता है।
 
-जिन strings के शुरू में स्ट्रिंग को capitalize करने के लिए हम वांछित नतीजा प्राप्त करना चाहते हैं, एक संभवतः स्ट्रिंग क्षेत्र में प्रवेश स्थल की जरूरत होती है। उदाहरण के लिए, यदि हम "javascript is awesome" capitalize करने की कोशिश कर रहे हैं, तो हमारे पास एक स्पेस स्थान होगा जहां हम स्ट्रिंग को capitalize करना चाहते हैं। इस स्पेस को हम स्पेस से बदल सकते हैं, उदाहरण के लिए एक हाइफन या अपवर्तित टिल्ड। इसके अलावा, हम ES6 के साथ स्थिति अधिकारी जैसे कि ``|`` उपयोग कर सकते हैं। इन विभिन्न मेथड्स का उपयोग करते हुए, हम स्ट्रिंग को सीधी और अधिक अंदाज़ी से capitalize कर सकते हैं।
-
-## भी देखें
-
-- [String.prototype.toUpperCase()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase) - MDN डॉक्यूमेंटेशन में आधिकारिक रूप से समर्थित स्ट्रिंग अपरकेसिंग।
-- [ES6 spread operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax) - अतिरिक्त स्प्रेड ऑपरेटरों का उपयोग करके स्ट्रिंग को अलग-अलग इलेमेंट्स में विभाजित किया
+## इससे जुड़ी अन्य स्रोतों के लिंक
+- [W3Schools पर स्ट्रिंग कैपिटलाइज़ फ़ंक्शन का उपयोग कैसे करें](https://www.w3schools.com/jsref/jsref_touppercase.asp)
+- [MDN वेब डेवलपर नेटवर्क के माध्यम से Box के साथ मामूली स्ट्रिंग कैपिटलाइज़ करें](https://developer.mozilla.org/en-US/docs/Web/Javascript/Reference/Global_Objects/String/toUpperCase)
+- [जावास्क्रिप्ट प्रोग्रामिंग भाषा पर कैपिटलाइज़ फंक्शन के महत्व पर एक वीडियो](https://www.youtube.com/watch?v=IOZtNx74Mnw)

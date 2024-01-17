@@ -10,41 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
-Tu veux en savoir plus sur la concaténation de chaînes en Fish Shell, mais tu te demandes peut-être pourquoi ce sujet est important ? Eh bien, la concaténation de chaînes est un élément essentiel en programmation qui te permet de combiner plusieurs chaînes de caractères pour en créer une seule. Cela peut être utile pour afficher des messages personnalisés, traiter des données ou même créer des URLs.
+## Quoi et pourquoi?
 
-## Comment faire
-La syntaxe de base pour la concaténation de chaînes en Fish Shell est la suivante : 
+La concaténation de chaînes de caractères est simplement le fait de joindre plusieurs chaînes ensemble pour en créer une plus longue. Les programmeurs font cela souvent pour simplifier le code et pour créer des chaînes de caractères plus spécifiques pour leurs programmes.
 
-```Fish Shell
-set mon_message "Bonjour, "
-set mon_nom "Jean"
-echo $mon_message$mon_nom
+## Comment faire:
+
+Voici quelques exemples de code en utilisant le Fish Shell pour concaténer des chaînes de caractères :
+
+```
+Fish Shell -c echo "Bonjour " "mon ami!"
 ```
 
-Lorsque tu exécutes ce code, tu verras que le message "Bonjour, Jean" s'affiche dans ta console. Ici, nous utilisons la commande `set` pour définir les valeurs de nos variables, puis nous utilisons le symbole `$` pour accéder à ces valeurs et les concaténer. Tu peux également utiliser des guillemets simples ou doubles pour entourer les chaînes de caractères à concaténer.
+Output: Bonjour mon ami!
 
-Tu peux également concaténer plus de deux chaînes en utilisant cette même méthode. Par exemple : 
-
-```Fish Shell
-set ma_phrase "J'aime " 
-set mon_fruit "la banane"
-set ma_boisson "et l'eau."
-echo $ma_phrase$mon_fruit$ma_boisson
+```
+Fish Shell "* " (seq 1 5)
 ```
 
-Cela affichera "J'aime la banane et l'eau." En utilisant la concaténation, tu peux créer des phrases plus complexes en combinant plusieurs chaînes de caractères.
+Output: 1 2 3 4 5
 
-## Plongée en profondeur
-Maintenant que nous avons vu comment utiliser la concaténation de chaînes en pratique, penchons-nous sur la théorie derrière cette technique. En plus de simplement joindre des chaînes, la concaténation de chaînes peut également être utilisée pour formater du texte. Par exemple, si tu veux créer une date dans un format spécifique, tu peux utiliser la concaténation pour combiner différents éléments et obtenir le résultat désiré.
+## Plongeon en profondeur:
 
-De plus, la concaténation est également utile lorsque tu as besoin de manipuler des données, en les combinant ou en les divisant en plusieurs chaînes. Elle peut également être utilisée pour construire des requêtes de base de données ou des URLs en ajoutant des paramètres dynamiques.
+La concaténation de chaînes existe depuis longtemps dans la programmation, et est également utilisée dans d'autres langages tels que Python et Java. Cependant, certains programmeurs préfèrent utiliser des alternatives telles que les tableaux de chaînes de caractères ou les fonctions pour concaténer des chaînes. Le Shell Fish utilise la commande `echo` pour concaténer des chaînes, mais il existe également d'autres commandes telles que `printf` qui peuvent être utilisées.
 
-## Voir aussi
-Tu as maintenant une meilleure compréhension de la concaténation de chaînes en Fish Shell. Si tu veux continuer à explorer les différentes fonctionnalités de ce langage de script orienté vers l'utilisateur, tu peux consulter les liens suivants :
+## Voir aussi:
 
-- La documentation officielle de la Fish Shell : https://fishshell.com/docs/current/index.html
-- Une liste de trucs et astuces pour optimiser ton utilisation de Fish Shell : https://github.com/jorgebucaran/fish-shell-cookbook
-- Des exemples de scripts Fish Shell pour t'inspirer dans ton apprentissage : https://github.com/fish-shell/fish-shell/tree/master/examples
-
-N'oublie pas de pratiquer et de t'amuser avec la concaténation de chaînes et d'autres fonctionnalités de Fish Shell !
+Pour plus d'informations sur la concaténation de chaînes de caractères dans le Fish Shell, veuillez consulter la documentation officielle : https://fishshell.com/docs/current/cmds/echo.html

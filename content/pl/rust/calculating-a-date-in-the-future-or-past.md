@@ -10,46 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+Co i po co?
 
-Czasem potrzebujemy obliczyć datę w przyszłości lub w przeszłości. Może to być przydatne, gdy chcemy zaplanować wydarzenie lub sprawdzić, które dni tygodnia przypadały na konkretne daty w naszym życiu. W tym artykule pokażemy, jak wykonać takie obliczenia w języku Rust.
+Obliczanie daty w przyszłości lub przeszłości polega na wyznaczaniu daty, która jest pewną liczbę dni, miesięcy lub lat przed lub po aktualnej dacie. Programiści często używają tego typu obliczeń do tworzenia kalendarzy, alarmów, oraz innych funkcji związanych z czasem.
 
-## Jak to zrobić
-
-Do obliczania daty w przyszłości lub w przeszłości w języku Rust wykorzystamy bibliotekę `chrono`, która udostępnia funkcje i typy do pracy z datami i czasem. Aby jej użyć, musimy najpierw dodać odpowiednie zależności w pliku `Cargo.toml` naszego projektu:
+Jak to zrobić:
 
 ```Rust
-[dependencies]
-chrono = "0.4"
+// Tworzymy strukturę reprezentującą datę
+let mut date = NaiveDate::from_ymd(2021, 6, 1);
+
+// Dodajemy 30 dni do aktualnej daty
+date += Duration::days(30);
+
+// Odejmujemy 1 rok od aktualnej daty
+date -= Duration::days(365);
+
+// Wyświetlamy wynik
+println!("{}", date);
 ```
 
-Następnie, w pliku z kodem, importujemy bibliotekę `chrono`:
+Wyjście: 2020-05-02
 
-```Rust
-use chrono::{DateTime, Duration, NaiveDate, Utc};
-```
+Głębszy zanurzenie:
 
-Teraz możemy wykonać obliczenia. Zobaczmy, jak uzyskać datę jutrzejszą (od bieżącego dnia):
+Obliczanie dat w przeszłości i przyszłości było już wykorzystywane od starożytności, szczególnie do ustalenia dokładnych dat wydarzeń i ceremonii. Istnieją również alternatywne sposoby obliczania dat, np. metoda juliańska lub gregoriańska. W programowaniu, popularnym narzędziem do obliczania dat jest biblioteka "chrono" dla języka Rust, która umożliwia wykonywanie różnych operacji na datach.
 
-```Rust
-let dzisiaj = Utc::now().naive_utc().date();
-let jutro = dzisiaj + Duration::days(1);
-println!("{}", jutro); // wypisze datę jutrzejszą w formacie YYYY-MM-DD
-```
+Zobacz także:
 
-Podobnie możemy obliczyć datę w przeszłości, np. sprzed 10 lat:
-
-```Rust
-let dzisiaj = Utc::now().naive_utc().date();
-let dziesiec_lat_temu = dzisiaj - Duration::days(365 * 10);
-println!("{}", dziesiec_lat_temu); // wypisze datę sprzed 10 lat w formacie YYYY-MM-DD
-```
-
-## Wnikliwe spojrzenie
-
-W języku Rust obliczanie dat w przyszłości lub w przeszłości jest bardzo proste dzięki bibliotece `chrono`. Biblioteka ta oferuje również wiele innych przydatnych funkcji, takich jak wykonywanie operacji na czasie czy formatowanie dat. Zachęcamy do zapoznania się z jej dokumentacją, aby poznać więcej możliwości.
-
-## Zobacz też
-
-- Dokumentacja biblioteki `chrono`: https://docs.rs/chrono/0.4.11/chrono/index.html
-- Przykładowy projekt wykorzystujący `chrono`: https://github.com/dylanaraps/chronobreak
+- Dokumentacja biblioteki Chrono: https://docs.rs/chrono/latest/chrono/
+- Wikipedia: https://pl.wikipedia.org/wiki/Kalendarz
+- Inne sposoby obliczania dat: https://sciencing.com/calculate-future-day-7725892.html

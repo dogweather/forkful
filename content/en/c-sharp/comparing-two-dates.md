@@ -10,112 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-Comparing two dates is a common task in many programs or applications. It allows us to determine which date comes first or to check for any overlapping dates. By learning how to compare dates in C#, you can add a useful feature to your code and enhance its functionality.
+Comparing two dates is a common task for programmers where they check if one date is earlier, later, or the same as another date. This allows for efficient and accurate organization of data as well as creating time-based logic in programs.
 
-## How To
-
-Comparing two dates in C# is a straightforward process. The DateTime structure in C# allows us to compare dates using the <, >, ==, and other comparison operators. Below are some examples of how to compare dates in C#.
+## How to:
 
 ```C#
-// Create two DateTime objects with different dates
-DateTime date1 = new DateTime(2021, 1, 1);
-DateTime date2 = new DateTime(2020, 12, 31);
+//Code examples for comparing two dates in C#
 
-// Compare dates using the Greater than operator
-if (date1 > date2) 
-{
-    Console.WriteLine("Date1 is after Date2");
-}
+//Create two DateTime objects to compare
+DateTime date1 = new DateTime(2021, 8, 10);
+DateTime date2 = new DateTime(2021, 8, 15);
+DateTime date3 = new DateTime(2021, 8, 10);
 
-// Compare dates using the Less than operator
-if (date2 < date1) 
-{
-    Console.WriteLine("Date2 is before Date1");
-}
-
-// Compare dates using the Equality operator
-if (date1 == date2)
-{
-    Console.WriteLine("Both dates are equal");
-}
-
-// Compare dates using the Inequality operator
-if (date1 != date2)
-{
-    Console.WriteLine("Both dates are not equal");
-}
-```
-
-Output:
-```
-Date1 is after Date2
-Date2 is before Date1
-Both dates are not equal
-```
-
-Another way to compare dates is by using the DateTime.Compare method. It takes in two DateTime objects and returns an integer value indicating the relationship between the two dates. Below is an example of how to use this method:
-
-```C#
-// Create two DateTime objects with different dates
-DateTime date1 = new DateTime(2021, 1, 1);
-DateTime date2 = new DateTime(2020, 12, 31);
-
-// Compare dates using the DateTime.Compare method
+//Using the DateTime.Compare() method to compare two dates
 int result = DateTime.Compare(date1, date2);
+Console.WriteLine(result);  //Output: -1 (date1 is earlier than date2)
 
-if (result > 0) 
+//Using the < and > operators to compare two dates
+if (date1 < date2)
 {
-    Console.WriteLine("Date1 is after Date2");
-} 
-else if (result < 0) 
-{
-    Console.WriteLine("Date2 is before Date1");
-} 
-else 
-{
-    Console.WriteLine("Both dates are equal");
+    Console.WriteLine("Date1 is earlier than date2."); //Output: Date1 is earlier than date2.
 }
-```
 
-Output:
-```
-Date1 is after Date2
+if (date2 > date3)
+{
+    Console.WriteLine("Date2 is later than date3."); //Output: Date2 is later than date3.
+}
+
+//Using the Equals() method to check if two dates are the same
+if (date1.Equals(date3))
+{
+    Console.WriteLine("Date1 and date3 are the same."); //Output: Date1 and date3 are the same.
+}
+
 ```
 
 ## Deep Dive
 
-When comparing dates, it is essential to consider the time component as well. The DateTime structure in C# contains methods such as Compare, Equals, IsLeapYear, and more to handle date and time comparisons accurately.
+Historically, comparing dates was a complex process where programmers had to convert dates into numerical values to perform comparisons. However, with advancements in programming languages, the process has become much simpler and more efficient.
 
-We can also compare two dates based on specific components like year, month, day, or time. In the following example, we compare two dates based on the month and day only:
+Alternative methods for comparing dates include using the DateTime.Ticks property to get the number of ticks (a unit of time equal to 100 nanoseconds) since January 1, 0001 and comparing them, or using the DateTime.Compare() method with different parameters such as year, month, and day.
 
-```C#
-// Create two DateTime objects with different dates
-DateTime date1 = new DateTime(2021, 6, 30);
-DateTime date2 = new DateTime(2021, 5, 31);
-
-// Compare dates based on month and day only
-if (date1.Month == date2.Month && date1.Day == date2.Day) 
-{
-    Console.WriteLine("Same month and day");
-}
-```
-
-Output:
-```
-Same month and day
-```
-
-It is also essential to consider the culture when comparing dates in C#. The DateTime structure contains a CompareInfo property that allows us to specify a culture when comparing dates with strings. This is important as different cultures may have different date formats.
+When comparing dates, it is important to consider time zones and daylight saving time. This can be done by using the TimeZoneInfo.ConvertTime method to convert the dates to a specific time zone before comparing.
 
 ## See Also
 
-To learn more about comparing dates in C#, check out the following resources:
-
-- [DateTime Structure in C#](https://docs.microsoft.com/en-us/dotnet/api/system.datetime)
-- [Comparing Values in C#](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/comparison-operators)
-- [DateTime.Compare Method in C#](https://docs.microsoft.com/en-us/dotnet/api/system.datetime.compare)
-- [An Overview of Dates and Time in .NET](https://docs.microsoft.com/en-us/dotnet/standard/datetime/overview)
-
-Now that you have learned how to compare dates in C#, you can use this knowledge to improve your code and add more functionality to your programs. Keep exploring and practicing to become a proficient C# programmer. Happy coding!
+- [DateTime.Compare Method (C#)](https://docs.microsoft.com/en-us/dotnet/api/system.datetime.compare)
+- [DateTime.Ticks Property (C#)](https://docs.microsoft.com/en-us/dotnet/api/system.datetime.ticks)
+- [TimeZoneInfo.ConvertTime Method (C#)](https://docs.microsoft.com/en-us/dotnet/api/system.timezoneinfo.converttime)

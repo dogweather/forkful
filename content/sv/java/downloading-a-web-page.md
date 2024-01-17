@@ -10,57 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
+Att ladda ner en webbsida är ett vanligt förfarande för programmerare. Det innebär att man hämtar ned innehållet från en specifik webbadress och sparar det på sin egen dator. Det kan vara användbart för att arkivera eller bearbeta information från en webbsida.
 
-Att ladda ner en webbsida kan vara en användbar funktion när du vill spara en kopia av en sida för senare referens eller när du arbetar med web skrapning och datainsamling.
-
-## Hur man gör det
-
-För att ladda ner en webbsida i Java, kan du använda klassen URL och dess openStream()-metod. Nedan är ett exempel på hur du kan implementera detta:
-
+## Så här gör du:
 ```Java
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.URL;
-
-public class WebPageDownloader {
-
+public class LaddaNedWebbsida {
     public static void main(String[] args) throws IOException {
-
-        // ange webbadress som ska laddas ner
-        String url = "https://www.example.com";
-
-        // skapa en URL-objekt
-        URL myURL = new URL(url);
-
-        // öppna en anslutning till webbadressen och ladda ner innehållet som en BufferedReader
-        BufferedReader in = new BufferedReader(new InputStreamReader(myURL.openStream()));
-
-        // använd en StringBuilder för att lagra innehållet från webbsidan
-        StringBuilder sb = new StringBuilder();
-        String line;
-
-        // läs rad för rad från BufferedReader och lagra i StringBuilder
-        while ((line = in.readLine()) != null) {
-            sb.append(line + "\n");
+        // Ange webbadressen som en sträng
+        String adress = "https://www.example.com";
+        // Skapa en anslutning till webbadressen
+        URL url = new URL(adress);
+        // Öppna en ström för att läsa innehållet
+        BufferedReader in = new BufferedReader(new InputStreamReader(url.openStream()));
+        // Loopa genom varje rad av innehållet och skriv ut det
+        String rad;
+        while ((rad = in.readLine()) != null) {
+           System.out.println(rad);
         }
+        // Stäng strömmen när allt är läst
         in.close();
-
-        // skriv ut innehållet från StringBuilder
-        System.out.println(sb.toString());
-
     }
 }
 ```
+Output:
+```
+<!doctype html>
+<html>
+<head>
+    <title>Example Domain</title>
+...
+```
 
-Detta kommer att skriva ut innehållet från den angivna webbadressen till konsolen. Du kan också välja att spara innehållet till en fil istället för att skriva ut det.
+## Djupdykning:
+Det finns många olika sätt att ladda ner en webbsida på. En vanlig metod är att använda Java-klassen URL för att skapa en anslutning till webbadressen och sedan läsa innehållet rad för rad med BufferedReader. Det finns också andra bibliotek och ramverk, som Apache HttpClient, som kan användas för att ladda ner webbsidor.
 
-## Djupdykning
+Det är också viktigt att tänka på eventuella tillstånd eller begränsningar som kan finnas för nedladdning av webbsidor. Vissa webbplatser kan ha begränsningar för hur ofta man kan hämta innehållet, eller det kan finnas upphovsrättsliga aspekter att ta hänsyn till. Det är alltid bäst att kontrollera med webbplatsens ägare innan man börjar ladda ner deras innehåll.
 
-När du laddar ner en webbsida, kommer du att hämta innehållet som visas på sidan när du besöker den med en webbläsare. Detta inkluderar HTML, CSS, JavaScript och andra användarresurser. Det är också viktigt att notera att vissa webbsidor kan ha anti-skrapa åtgärder som blockerar automatisk nedladdning av sidor. Det är därför viktigt att kontrollera de lagar och regler som gäller för den specifika webbsidan och se till att du har rättigheter att ladda ner dess innehåll.
-
-## Se även
-
-- [Java URL-klassens officiella dokumentation](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/net/URL.html)
-- [Apache HTTP-klient för att ladda ner webbsidor i Java](https://hc.apache.org/httpcomponents-client-ga/tutorial/html/fundamentals.html)
+## Se även:
+- Java URL-klassens dokumentation: https://docs.oracle.com/javase/10/docs/api/java/net/URL.html
+- Apache HttpClient: https://hc.apache.org/httpcomponents-client-ga/index.html

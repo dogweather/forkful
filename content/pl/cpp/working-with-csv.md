@@ -1,7 +1,7 @@
 ---
-title:                "Praca z plikami CSV"
-html_title:           "C++: Praca z plikami CSV"
-simple_title:         "Praca z plikami CSV"
+title:                "Praca z plikami csv"
+html_title:           "C++: Praca z plikami csv"
+simple_title:         "Praca z plikami csv"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Data Formats and Serialization"
@@ -10,56 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i dlaczego?
+Pracowanie z plikami CSV może być częstym zadaniem dla programistów. CSV, czyli plik Wartości Rozdzielane Przecinkami, jest sposobem na przechowywanie danych w formacie tabelarycznym, gdzie każda linijka odpowiada wierszowi, a wartości są rozdzielane przecinkami. Programiści korzystają z CSV, ponieważ jest to prosty i zrozumiały sposób przechowywania danych, co ułatwia późniejszą obróbkę i analizę.
 
-Jeśli pracujesz z dużymi zbiorami danych, prawdopodobnie będziesz często spotykać się z plikami CSV (ang. Comma-Separated Values - Wartości oddzielone przecinkami). Może to być dzieje się to w analizie danych, w programowaniu aplikacji lub w tworzeniu raportów. Dlatego ważne jest, aby poznać podstawy obsługi plików CSV w języku C++, aby uprościć swoją pracę z tym formatem.
-
-## Jak to zrobić
-
-Pierwszym krokiem jest załączenie biblioteki `<fstream>` w pliku nagłówkowym i utworzenie strumienia danych do pliku CSV. Następnie, za pomocą pętli while, można odczytywać plik linia po linii i wpisać go do wektora używając funkcji `getline()`. Przykładowy kod wyglądałby następująco:
-
-```C++
+## Jak to zrobić:
+Aby pracować z plikami CSV w języku C++, potrzebujemy wczytać odpowiednią bibliotekę. Możemy to zrobić w następujący sposób:
+```
+#include <fstream> 
 #include <iostream>
-#include <vector>
-#include <fstream>
-
-int main() {
-    std::ifstream file("dane.csv"); //otwiera strumień do pliku CSV
-    std::string line; //zmienna do przechowywania aktualnie odczytywanej linii
-    std::vector<std::string> data; //wektor do przechowywania danych
-    while(getline(file, line)) { //odczytaj plik linia po linii i wpisz do zmiennej "line"
-        data.push_back(line); //dodaj odczytaną linię do wektora "data"
-    }
-    for(std::string d : data) { //przejdź przez wszystkie elementy wektora "data"
-        std::cout << d << std::endl; //wyświetl dane na ekranie
-    }
-    return 0;
-}
-```
-Przykładowy plik CSV "dane.csv" mógłby wyglądać tak:
-
-```text
-Imię;Nazwisko;Wiek;Email
-Anna;Kowalska;30;anna.kowalska@example.com
-Adam;Nowak;25;adam.nowak@example.com
-Maria;Wiśniewska;35;maria.wisniewska@example.com
+#include <sstream> 
+#include <string> 
+#include <vector> 
 ```
 
-Po uruchomieniu programu otrzymalibyśmy następujące wyjście:
-
-```text
-Imię;Nazwisko;Wiek;Email
-Anna;Kowalska;30;anna.kowalska@example.com
-Adam;Nowak;25;adam.nowak@example.com
-Maria;Wiśniewska;35;maria.wisniewska@example.com
+Następnie, aby wczytać plik CSV, musimy utworzyć zmienną typu ```ifstream``` i przekazać do niej ścieżkę do pliku, który chcemy wczytać. Następnie, używając pętli, możemy odczytać każdą linijkę i przekonwertować jej zawartość do wektora. Spójrzmy na przykład:
 ```
+ifstream plik("dane.csv"); 
 
-## Deep Dive
+string linia; 
+vector<vector<string>> dane; 
+while(getline(plik, linia)) { 
+    stringstream ss(linia); 
+    vector<string> linia_danych; 
 
-Pliki CSV są zwykle prostsze w obsłudze niż inne formaty danych, ponieważ można je czytać w prosty sposób linia po linii. Jednak należy uważać na specjalne znaki, takie jak przecinek czy podwójny cudzysłów, które może występować w wartościach. Innym ważnym aspektem jest poprawne odczytywanie typów danych, takich jak liczby czy daty. W takiej sytuacji można skorzystać z gotowych bibliotek, takich jak "csv-parser".
+    string wartosc; 
+    while(getline(ss, wartosc, ',')) { 
+        linia_danych.push_back(wartosc); 
+    } 
+    dane.push_back(linia_danych); 
+} 
+```
+Teraz możemy wyświetlić dane i przetwarzać je według potrzeb.
 
-## Zobacz także
+## Głębszy zanurzenie:
+Pierwsze implementacje plików CSV pojawiły się w latach 70. w programie VisiCalc, a później zyskały popularność w Excelu. Alternatywą dla CSV są bazy danych, ale pliki te są nadal wykorzystywane przez programistów ze względu na swoją prostotę. W C++ istnieje również wiele bibliotek do pracy z CSV, np. Boost CSV.
 
-- [Biblioteka csv-parser](https://github.com/ben-strasser/fast-cpp-csv-parser)
-- [Praca z plikami CSV w języku C++](https://www.tutorialspoint.com/cplusplus/cpp_files_streams.htm)
-- [Dokumentacja biblioteki fstream (pl)](https://pl.cppreference.com/w/cpp/io/basic_fstream)
+##Zobacz też:
+- Dokumentacja biblioteki Boost CSV: https://www.boost.org/doc/libs/1_51_0/libs/serialization/doc/unsupported.html#csv
+- Poradnik dla początkujących o pracy z plikami CSV w C++: https://thispointer.com/basics-of-boost-c-sqlite-tutorial-insert-values-in-employee-table/
+- Przykładowy plik CSV: https://raw.githubusercontent.com/jdolan/quetoo/master/misc/example.csv

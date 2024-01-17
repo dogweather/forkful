@@ -10,39 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué leer un archivo de texto?
+## ¿Qué y por qué?
+Una parte importante de la programación es la capacidad de leer y procesar archivos de texto. Estos archivos contienen información que es legible tanto para los humanos como para las computadoras, lo que los hace útiles para almacenar datos y configuraciones en programas. Los programadores suelen leer archivos de texto para obtener información o realizar ciertas tareas en sus programas.
 
-Si eres un programador o estás aprendiendo a programar, seguramente en algún momento te enfrentarás a la tarea de leer un archivo de texto. Ya sea para obtener datos, configuraciones o simplemente para realizar una tarea específica, leer un archivo de texto es una habilidad esencial que te permitirá trabajar de manera más eficiente con tu código.
+## ¿Cómo hacerlo?
+En el Fish Shell, existen varias formas de leer un archivo de texto. A continuación, presentamos algunos ejemplos y su resultado:
 
-## Cómo hacerlo en Fish Shell
+#### Leyendo todo el archivo de texto
+Fish Shell nos permite leer todo el contenido de un archivo de texto en una sola línea de código:
 
-Para leer un archivo de texto en Fish Shell, podemos utilizar el comando `cat` seguido del nombre del archivo. Por ejemplo, si queremos leer un archivo llamado `datos.txt`, podemos hacerlo de la siguiente manera:
-
-```Fish Shell
-cat datos.txt
+```
+cat archivo.txt
 ```
 
-Este comando mostrará el contenido del archivo en la terminal. También podemos utilizar el operador `>` para redirigir la salida a otro archivo, creando así una copia del archivo original:
+Esto mostrará todo el contenido del archivo en la terminal.
 
-```Fish Shell
-cat datos.txt > copia.txt
+#### Leyendo un archivo de texto línea por línea
+Si queremos leer un archivo de texto línea por línea, podemos utilizar un bucle while y utilizar el comando "read" para asignar cada línea a una variable:
+
+```
+while read linea
+  set variable $linea
+  echo $variable
+end < archivo.txt
 ```
 
-Si queremos leer únicamente una parte específica del archivo, podemos utilizar el comando `head` para ver las primeras líneas o `tail` para ver las últimas:
+Esto imprimirá cada línea del archivo en la terminal.
 
-```Fish Shell
-head datos.txt    # Muestra las primeras 10 líneas por defecto
-tail datos.txt -n 5   # Muestra las últimas 5 líneas del archivo
-```
+## Profundizando
+La lectura de archivos de texto es una función básica en la programación y ha sido utilizada desde los primeros días de la informática. En otras shells, como Bash, se pueden utilizar comandos como "grep" o "sed" para extraer información de los archivos de texto. Sin embargo, en Fish Shell, suele ser más sencillo y rápido utilizar los comandos integrados "cat" y "read".
 
-## Deep Dive
+Si quisieras leer archivos de texto con un formato más complejo, como CSV, podrías utilizar herramientas adicionales como "awk" o "cut" dentro de la Fish Shell.
 
-Es importante tener en cuenta que cada vez que leemos un archivo de texto en Fish Shell, este se interpreta como una lista de cadenas de caracteres, también conocidas como "strings". Esto significa que no se realizará ninguna conversión de tipos de datos, por lo que tendremos que manejar cualquier tipo de operaciones o formatting manualmente.
-
-Además, Fish Shell ofrece varias herramientas para realizar tareas más avanzadas con archivos de texto, como el comando `sed` para buscar y sustituir texto, o `awk` para procesar y filtrar datos de una manera más detallada.
-
-## Ver también
-
-- [Documentación oficial de Fish Shell](https://fishshell.com/docs/current/index.html)
-- [Tutorial de Fish Shell en español](https://www.atareao.es/tutorial/fish-shell/)
-- [Listado de comandos de Fish Shell](https://fishshell.com/docs/current/commands.html)
+## Se recomienda también
+Si quieres aprender más sobre la lectura de archivos de texto en Fish Shell, puedes revisar la documentación oficial en línea o algunos tutoriales en línea. También puedes explorar otras shells y comparar sus métodos para leer archivos de texto. ¡La práctica hace al maestro!

@@ -10,66 +10,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que usar YAML em programação?
+## O que é & Por que?
 
-Se você está procurando uma maneira fácil de organizar e armazenar dados em seu código, YAML pode ser a solução perfeita para você! Com sua sintaxe simples e legibilidade humana, YAML é amplamente utilizado em diversas linguagens de programação, incluindo a atual versão do Go.
+YAML é uma linguagem de marcação de dados usada em programação para estruturar e organizar dados em arquivos de texto. Programadores usam YAML porque é uma forma simples e legível de armazenar e compartilhar dados, especialmente em aplicações web e sistemas distribuídos.
 
-## Como usar YAML em seu código Go
+## Como fazer:
 
-Usar YAML em seu código Go é bastante simples. Primeiro, é importante ter o pacote "yaml" importado em seu arquivo. Em seguida, podemos criar um struct em Go que corresponda à estrutura de dados desejada em YAML. Por exemplo:
+Para trabalhar com YAML em Go, você precisará importar o pacote "gopkg.in/yaml.v2" em seu código. Aqui está um exemplo básico de como ler e imprimir dados de um arquivo YAML:
 
-```Go
+```
 import (
-	"fmt"
-	"log"
+    "fmt"
+    "io/ioutil"
+    "log"
 
-	"gopkg.in/yaml.v2"
+    "gopkg.in/yaml.v2"
 )
 
-type MalhaDeOnibus struct {
-	Linhas []string `yaml:"linhas"`
-}
-
 func main() {
-	dadosYAML := `
-linhas:
-  - 001: Rio Comprido
-  - 002: Tijuca
-  - 003: Copacabana
-`
-	var malha MalhaDeOnibus
-	err := yaml.Unmarshal([]byte(dadosYAML), &malha)
-	if err != nil {
-		log.Fatal(err)
-	}
-	fmt.Printf("%+v", malha)
+    // lendo o arquivo YAML
+    yamlFile, err := ioutil.ReadFile("dados.yml")
+    if err != nil {
+        log.Fatalf("Não foi possível ler o arquivo YAML: %v", err)
+    }
+
+    // criando uma variável para armazenar os dados
+    var dados map[string]interface{}
+
+    // mapeando os dados YAML na variável
+    err = yaml.Unmarshal(yamlFile, &dados)
+    if err != nil {
+        log.Fatalf("Não foi possível fazer o parsing do arquivo: %v", err)
+    }
+
+    // imprimindo os dados
+    fmt.Println(dados)
 }
 ```
 
-O código acima criará uma estrutura de dados em Go a partir dos dados YAML fornecidos. Como saída, teremos:
+A saída desse código seria algo como:
 
 ```
-{Linhas:[001: Rio Comprido 002: Tijuca 003: Copacabana]}
+map[person:map[age:30 name:John Doe] fruits:[banana apple orange]]
 ```
 
-Agora, podemos acessar facilmente os valores individuais dentro dessa estrutura de dados em nosso código Go. Por exemplo, para obter a primeira linha de ônibus, podemos escrever:
+## Mergulho profundo:
 
-```
-malha.Linhas[0]
-```
+O YAML foi criado em 2001 por Clark Evans e participantes da comunidade de linguagens Perl e Python. Ele foi criado para ser uma alternativa mais legível e amigável ao JSON. Enquanto o YAML pode ser usado para qualquer propósito, ele é mais comumente usado para configuração de aplicativos, gerenciamento de dados e intercâmbio de informações entre sistemas.
 
-## Aprofundando no uso de YAML em Go
+Alternativas ao YAML incluem formatos como JSON, XML e TOML. No entanto, o YAML continua sendo popular por sua sintaxe simples e legibilidade.
 
-Além da estrutura de dados apresentada acima, também é possível trabalhar com YAML em Go de outras maneiras, como:
+Ao trabalhar com YAML em Go, é importante entender a estrutura de dados que ele usa. YAML é baseado em linhas e espaçamento, o que pode causar problemas se a formatação for alterada. É recomendado usar uma ferramenta como "yaml.v2" para evitar erros de formatação e garantir uma estrutura de dados consistente.
 
-- Codificar e decodificar YAML em outros tipos de dados, como mapas ou slices;
-- Trabalhar com a configuração de aplicativos em arquivos YAML;
-- Utilizar tags para mapear diferentes tipos de dados em sua estrutura de dados em Go.
+## Veja também:
 
-Para saber mais sobre todas as opções de uso de YAML em Go, confira a documentação oficial do pacote YAML para Go em [https://gopkg.in/yaml.v2](https://gopkg.in/yaml.v2).
-
-## Veja também
-
-- [Documentação oficial do pacote YAML para Go](https://gopkg.in/yaml.v2)
-- [Tutorial sobre o uso de YAML em Go](https://medium.com/@matheusrodriguesdeoliveira/trabalhando-com-yaml-no-go-321ccf54c7af)
-- [Exemplos práticos de uso de YAML em Go](https://github.com/go-yaml/yaml/tree/master/example)
+- Documentação oficial do pacote "yaml.v2": https://gopkg.in/yaml.v2
+- Tutorial de introdução ao YAML em Go: https://golangbyexample.com/yaml-in-golang/
+- Lista de alternativas ao YAML: https://alternativeto.net/software/yaml/

@@ -10,59 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Qu'est-ce que c'est et pourquoi?
+Vérifier si un répertoire existe est une fonctionnalité importante pour les développeurs PHP. Cette vérification permet de s'assurer qu'un fichier souhaité soit présent avant d'y accéder ou avant de le créer. Cela permet également d'éviter les erreurs et les interruptions de processus lors de l'exécution d'un script.
 
-L'une des tâches les plus courantes en programmation est de vérifier si un certain répertoire existe. Cela peut être utile pour s'assurer que vous avez accès à un certain chemin de fichiers ou pour valider l'existence d'un répertoire avant de lancer une opération.
-
-## Comment faire
-
-Pour vérifier si un répertoire existe en PHP, nous pouvons utiliser la fonction `is_dir()`. Cette fonction prend en argument le chemin du répertoire et renvoie une valeur booléenne `true` si le répertoire existe, et `false` s'il n'existe pas.
+## Comment faire:
+Utiliser la fonction `file_exists()` pour vérifier si un répertoire existe. Voici un exemple de code :
 
 ```PHP
-<?php
-$directory = '/chemin/vers/mon/repertoire';
-if (is_dir($directory)) {
-    echo 'Le répertoire existe !';
-} else {
-    echo 'Le répertoire n\'existe pas.';
+if (file_exists("/chemin/vers/le/répertoire")){
+    echo "Le répertoire existe.";
+} else{
+    echo "Le répertoire n'existe pas.";
 }
 ```
 
-Si vous souhaitez également vérifier si le répertoire est accessible en écriture, vous pouvez utiliser la fonction `is_writable()`, qui renvoie également une valeur booléenne `true` ou `false`.
+La sortie de ce code dépendra du répertoire donné en paramètre. Si le répertoire existe, le message "Le répertoire existe." sera affiché, sinon le message "Le répertoire n'existe pas." sera affiché.
 
-```PHP
-<?php
-if (is_dir($directory)) {
-    if (is_writable($directory)) {
-        echo 'Le répertoire est accessible en écriture.';
-    } else {
-        echo 'Le répertoire n\'est pas accessible en écriture.';
-    }
-} else {
-    echo 'Le répertoire n\'existe pas.';
-}
-```
+## Zoom sur:
+#### Contexte historique:
+La vérification de l'existence d'un répertoire est une fonctionnalité couramment utilisée dans les langages de programmation, y compris en PHP. Elle a été ajoutée dès la première version de PHP et a subi plusieurs améliorations au fil des versions suivantes.
 
-## Exploration approfondie
+#### Alternatives:
+Une alternative à la fonction `file_exists()` est la fonction `is_dir()` qui permet également de vérifier si un répertoire existe. La différence est que `is_dir()` renverra `true` uniquement si le chemin donné est un répertoire.
 
-La fonction `is_dir()` utilise les fonctions système sous-jacentes pour vérifier l'existence du répertoire. Cela signifie que si le répertoire est inaccessible en raison de permissions ou d'autres problèmes, la fonction renverra toujours `false`, même s'il existe réellement.
+#### Détails de l'implémentation:
+La fonction `file_exists()` utilise le cache I-nœud de Linux pour vérifier si un fichier ou un répertoire existe. Si le fichier ou le répertoire est présent dans le cache, la fonction renverra `true` immédiatement. Sinon, elle vérifiera physiquement si le fichier ou le répertoire existe. Ceci permet d'optimiser les performances lors de la vérification de l'existence de plusieurs fichiers ou répertoires.
 
-Pour éviter cela, vous pouvez également utiliser la fonction `file_exists()` qui vérifie non seulement les répertoires, mais aussi les fichiers. Cela peut être utile si vous n'êtes pas certain du type de ressource que vous recherchez.
-
-```PHP
-<?php
-$directory = '/chemin/vers/mon/repertoire';
-if (file_exists($directory)) {
-    echo 'Le répertoire ou fichier existe !';
-} else {
-    echo 'Le répertoire ou fichier n\'existe pas.';
-}
-```
-
-Vous pouvez également utiliser la fonction `glob()` pour rechercher un répertoire ou un ensemble de fichiers correspondant à un modèle donné. Cette fonction renvoie un tableau contenant tous les chemins correspondants, ce qui peut être très utile pour des opérations plus avancées.
-
-## Voir aussi
-
-- La documentation officielle de PHP sur la fonction `is_dir()` : https://www.php.net/manual/fr/function.is-dir.php
-- La documentation officielle de PHP sur la fonction `file_exists()` : https://www.php.net/manual/fr/function.file-exists.php
-- La documentation officielle de PHP sur la fonction `glob()` : https://www.php.net/manual/fr/function.glob.php
+## Voir aussi:
+- Documentation officielle de la fonction `file_exists()`: https://www.php.net/manual/en/function.file-exists.php
+- Documentation officielle de la fonction `is_dir()`: https://www.php.net/manual/en/function.is-dir.php
+- Article sur la gestion des erreurs en PHP: [Gestion des erreurs en PHP: Une introduction pour les débutants](https://www.kernelverse.com/posts/errors-php-beginners/)

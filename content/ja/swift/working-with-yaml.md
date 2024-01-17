@@ -1,7 +1,7 @@
 ---
-title:                "YAMLを使用する"
-html_title:           "Swift: YAMLを使用する"
-simple_title:         "YAMLを使用する"
+title:                "yamlを使用したプログラミングの仕事"
+html_title:           "Swift: yamlを使用したプログラミングの仕事"
+simple_title:         "yamlを使用したプログラミングの仕事"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Data Formats and Serialization"
@@ -10,59 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+## 何 & なぜ？
+YAMLとは、データの構造を定義するためのファイル形式です。プログラマーがYAMLを使用する理由は様々ですが、主な理由は可読性や柔軟性の向上です。また、様々なプログラミング言語で利用できるため、チーム内でのコラボレーションにも役立ちます。
 
-あなたはもうお馴染みのJSONではなく、新しいデータフォーマットであるYAMLを使用する理由は2つあります。第一に、YAMLは人間にとっても読み書きしやすい構造を持っています。そして第二に、SwiftにはYAMLを扱うための便利なライブラリがたくさんあります。
-
-## 使い方
-
-まずはSwiftでYAMLをパースする方法を紹介します。必要なライブラリをインストールしたら、以下のコードを使ってYAMLファイルをパースしましょう。
-
-```Swift
-import YAML
-
+## 方法：
+```Swift 
 let yamlString = """
-name: John
-age: 30
+name: John Smith
+age: 35
+height: 175
 """
 
-do {
-    let data = try YAMLDecoder().decode([String: String].self, from: yamlString)
-    print(data)
-} catch {
-    print(error)
-}
-```
-このコードを実行すると、以下のような結果が得られます。
-
-```
-["name": "John", "age": "30"]
+let decoded = try YAMLEncoder().decode(YAML.self, from: yamlString)
+print(decoded.name) // John Smith
+print(decoded.age) // 35
+print(decoded.height) // 175
 ```
 
-次はYAMLファイルを読み込んでJSONに変換する方法です。そのためには以下のようなコードを使います。
+## 深堀り：
+YAMLは1990年代に開発され、YAML Ain't Markup Languageの略です。他のファイル形式と比べるとシンプルで読みやすい構文を持ち、Web開発や設定ファイルの管理など様々な用途で利用されています。代替としてはJSONやXMLがありますが、YAMLのヒューマンリーダブルな特徴は人気を集めています。また、SwiftにはYAMLの解析や生成を手軽に行うためのライブラリが多数存在します。
 
-```Swift
-import YAML
-
-let yamlUrl = URL(fileURLWithPath: "sample.yaml")
-
-do {
-    let data = try YAMLDecoder().decode([String: Any].self, from: Data(contentsOf: yamlUrl))
-    let jsonData = try JSONSerialization.data(withJSONObject: data, options: .prettyPrinted)
-    let jsonString = String(data: jsonData, encoding: .utf8)
-    print(jsonString)
-} catch {
-    print(error)
-}
-```
-実行すると、YAMLファイルの内容がJSONに変換されて出力されます。これでYAMLを扱うための基本的な知識は身についたと言えます。
-
-## 深堀り
-
-YAMLはJSONと同様にネストされたデータ構造を持つことができますが、シンタックスが少し異なります。また、配列やマップを明示的に書かなくてもYAMLは自動的にそれらを認識することができます。詳細な使い方やフォーマットについては公式のドキュメントを参照することをおすすめします。
-
-## 関連記事
-
-- [Yamsライブラリ公式サイト](https://github.com/jpsim/Yams)
-- [YAMLドキュメント](https://yaml.org/)
-- [YAMLとJSONの比較](https://dzone.com/articles/yaml-vs-json-1)
+## 関連リンク：
+- [YAML公式サイト](https://yaml.org/)
+- [YAML言語仕様書](https://yaml.org/spec/1.2/spec.html)
+- [Swift-YAMLライブラリ](https://github.com/behrang/YamlSwift)

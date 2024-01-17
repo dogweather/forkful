@@ -10,41 +10,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
-Hvis du noen gang har ønsket å legge til en tilfeldighetsfaktor i programmene dine, eller ønsker å lage et spill eller en simulering, så kan det å generere tilfeldige tall være nyttig.
+# Hva & Hvorfor?
+Generering av tilfeldige tall er en viktig del av programmering, spesielt i spillet industrien. Det er en måte for programmerere å lage tilfeldighet og variasjon i sine programmer. Ved å bruke tilfeldige tall, kan programmene bli mer realistiske og interessante for brukerne.
 
-## Hvordan
-Å generere tilfeldige tall i Haskell er enkelt og intuitivt. Du kan bruke "random" funksjonen fra "System.Random" biblioteket. Her er et eksempel på hvordan du kan generere et tilfeldig tall mellom 1 og 10 og skrive det ut til konsollen:
-
-```Haskell
-import System.Random
-
-main = do
-  gen <- getStdGen
-  let (num, _) = randomR (1, 10) gen :: (Int, StdGen)
-  print num
-```
-
-Dette koden bruker standardgeneratoren "getStdGen" for å generere et tilfeldig tall, og "randomR" funksjonen for å lage et tall mellom 1 og 10. Det tilfeldige tallet er deretter lagret i variabelen "num" og skrevet ut ved hjelp av "print" funksjonen.
-
-## Dypdykk
-Haskell bruker en konsept som kalles for "lazy evaluation" som gjør det mulig å skape uendelige lister av tilfeldige tall. Her er et eksempel på en uendelig liste av tilfeldige tall mellom 1 og 100:
+# Hvordan å:
+Her er et enkelt eksempel på hvordan du genererer tilfeldige tall i Haskell:
 
 ```Haskell
+--Importerer pakken for tilfeldige tall
 import System.Random
 
-randomList :: Int -> [Int]
-randomList seed = let gen = mkStdGen seed
-                      num = randomRs (1, 100) gen
-                    in num : randomList seed
+--Funksjon for å generere et tilfeldig tall mellom 1 og 10
+tilfeldigTall :: IO Int
+tilfeldigTall = randomRIO (1,10)
 
+--Kaller funksjonen for å generere et tilfeldig tall
 main = do
-  let numbers = randomList 4
-  print (take 10 numbers)
+  tall <- tilfeldigTall
+  print tall
 ```
 
-I denne koden blir en uendelig liste av tilfeldige tall generert ved hjelp av "mkStdGen" funksjonen og "randomRs" som lager en liste av tilfeldige tall mellom 1 og 100. Denne listen blir deretter begrenset til 10 tall ved hjelp av "take" funksjonen, og skrevet ut til konsollen.
+Eksempel på output:
 
-## Se også
-- [Random Package Documentation](https://hackage.haskell.org/package/random)
-- [Learn You a Haskell: For Great Good!](http://learnyouahaskell.com/)
+```Haskell
+8
+```
+
+Generering av tilfeldige tall kan også kombineres med andre funksjoner, for eksempel å fylle en liste med tilfeldige tall:
+
+```Haskell
+--Funksjon for å generere en liste med tilfeldige tall mellom 1 og 100
+tilfeldigListe :: IO [Int]
+tilfeldigListe = sequence $ replicate 10 (randomRIO (1,100))
+
+--Kaller funksjonen for å generere en liste med tilfeldige tall
+main = do
+  liste <- tilfeldigListe
+  print liste
+```
+
+Eksempel på output:
+
+```Haskell
+[64, 8, 91, 27, 57, 36, 2, 99, 73, 40]
+```
+
+# Dypdykk:
+Tilfeldige tall ble en viktig del av programmering på 1950-tallet, da spill og simuleringer ble utviklet. Før dette måtte tilfeldige tall bli generert manuelt ved hjelp av fysiske metoder som å riste terninger eller bruke kortstokker. I dag brukes tilfeldige tall ikke bare i spill, men også i kryptografi og statistisk analyse av data.
+
+Det finnes ulike algoritmer for å generere tilfeldige tall, hvor noen er mer optimalisert for tilfeldighet enn andre. Haskell bruker en algoritme kalt "Mersenne Twister" som er en av de mest vanlige og pålitelige metodene for å generere tilfeldige tall.
+
+# Se Også:
+Hvis du vil lære mer om generering av tilfeldige tall i Haskell, kan du se på dokumentasjonen for "System.Random" pakken: https://hackage.haskell.org/package/random
+
+Du kan også lese om de ulike tilfeldige tall algoritmene og deres effektivitet her: https://en.wikipedia.org/wiki/List_of_random_number_generators

@@ -1,7 +1,7 @@
 ---
-title:                "HTML:n jäsentäminen."
-html_title:           "Ruby: HTML:n jäsentäminen."
-simple_title:         "HTML:n jäsentäminen."
+title:                "Html-analyysi"
+html_title:           "Ruby: Html-analyysi"
+simple_title:         "Html-analyysi"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "HTML and the Web"
@@ -10,49 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä ja miksi?
+HTML-parseeraus on tärkeä osa ohjelmointia, joka mahdollistaa verkkosivujen sisältämien tietojen keräämisen ja käsittelyn. Käytännön esimerkkinä tästä voisi olla vaikkapa verkkosivun sisältämien tietojen tallentaminen tietokantaan tai tiettyjen tietojen hakeminen sivulta.
 
-HTML-parsettaminen (parsing) on tärkeä osa verkkosovellusten kehitystä. Se mahdollistaa tietojen keräämisen ja käsittelyn verkkosivuilta ja palvelimilta, mikä voi helpottaa esimerkiksi tiedon analysointia ja sisällön automaattista muokkaamista.
-
-## Kuinka
-
-HTML-parsettaminen on helppoa Rubyssa käyttäen Nokogiri-kirjastoa. Ensiksi asenna kirjasto ja vaadittavat alikirjastot:
-
-```
-gem install nokogiri
-gem install open-uri
-```
-
-Sitten voit ladata haluamasi verkkosivun URL-osoitteesta ja tallentaa sen muuttujaan käyttämällä `open-uri`-alikirjastoa:
-
-```
-require 'open-uri'
-url = 'http://www.example.com'
-page = open(url)
-```
-
-Seuraavaksi luo uusi Nokogiri-olio, joka käyttää verkkosivun HTML-koodia:
-
-```
+## Kuinka?
+```Ruby
 require 'nokogiri'
-doc = Nokogiri::HTML(page)
-```
+require 'open-uri'
 
-Nyt voit navigoida HTML-sisällössä käyttämällä CSS-valitsimia ja hakea haluamiasi tietoja:
+# Määritellään muuttuja, johon tallennetaan haluttu verkkosivu osoitteesta
+page = Nokogiri::HTML(URI.open('https://www.example.com'))
 
-```
-doc.css('h1').text # hakee ensimmäisen h1-elementin tekstin verkkosivulta
-doc.css('.link').each do |link| # hakee kaikki class="link" elementit ja tulostaa niiden tekstin
+# Käydään läpi verkkosivun kaikki linkit ja tulostetaan ne näkyviin
+page.css('a').each do |link|
   puts link.text.strip
 end
 ```
+Esimerkkituloste:
+```
+Home
+About Us
+Products
+Contact Us
+```
 
-## Syvällinen sukellus
-
-Nokogiri-kirjasto on erittäin monipuolinen ja tarjoaa monia erilaisia työkaluja HTML-parsettamiseen. Voit esimerkiksi käyttää XPath-valitsimia, mikä mahdollistaa tarkemman tiedonhaun. Lisäksi kirjaston dokumentaatio tarjoaa hyödyllistä tietoa sen käytöstä ja tarjoaa erilaisia esimerkkejä.
+## Syvemmälle
+HTML:n luominen ja käsittely on kehittynyt vuosien saatossa ja nykyään siihen on useita erilaisia tapoja, kuten XML, YAML tai JSON. Nämä kaikki tarjoavat erilaisia etuja ja haittoja verrattuna HTML:ään. HTML-parsereita löytyy myös useita erilaisia, kuten Nokogiri, Hpricot ja Html-Parser.
 
 ## Katso myös
-
-- [Nokogiri - Ruby-kirjasto HTML-parsettamiseen](https://github.com/sparklemotion/nokogiri)
-- [OHM - Ruby DSL tietokantamallinnukseen](https://github.com/soveran/ohm)
-- [Rails-paketti HTML-parsettamiseen](https://github.com/rails/rails-html-sanitizer)
+Tsekkaa lisätietoa Nokogirista: https://nokogiri.org/
+Katso mitä muita vaihtoehtoja on HTML-parsereissa: https://www.ruby-toolbox.com/categories/html_parsing

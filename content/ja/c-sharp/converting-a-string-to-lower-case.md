@@ -10,24 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
-文字列を小文字に変換することについて、なぜ誰かが取り組む必要があるのかを最大2つの文章で説明します。
+## 何をして、なぜそれをするのか？
 
-## 方法
-以下に、文字列を小文字に変換するためのC#のコーディング例とサンプル出力のあるコードブロックを示します。
+文字列を小文字に変換することは、プログラマーにとって非常によく使われる技術です。これは、文字列の大文字や小文字を区別する場合や、文字列の比較を行う場合に役立ちます。また、文字列を小文字化することで、入力データの統一性を保つことができます。
+
+## 方法：
+
+文字列を小文字に変換するには、```ToLower()``` メソッドを使用します。これは、指定された文字列を全て小文字に変換した新しい文字列を返します。以下は、このメソッドを使用したコーディング例です。
 
 ```C#
-// 文字列を小文字に変換する方法
-string name = "JOHN";
-name = name.ToLower();
-Console.WriteLine(name);
-// Output: john
+string str = "Hello World!";
+str = str.ToLower(); // "hello world!" が出力されます。
 ```
 
-## 深堀り
-文字列を小文字に変換するためのより詳細な情報を提供します。文字列は、Unicode文字に基づいてパフォーマントするため、文字列を小文字に変換する方法は多数あります。また、特定のカルチャーに基づいて変換することも可能です。
+## 詳細情報：
 
-## See Also
-- [String.ToLower メソッド (C# リファレンス)](https://docs.microsoft.com/ja-jp/dotnet/api/system.string.tolower?view=netcore-3.1)
-- [Unicodeでの大文字と小文字の概要](https://docs.microsoft.com/ja-jp/windows/win32/intl/unicode-case-mapping)
-- [カルチャー固有の情報を使用するための .NET API](https://docs.microsoft.com/ja-jp/dotnet/core/internationalization/)
+文字列を小文字に変換する方法は、プログラミング言語によって異なります。C#では、この目的には```ToLower()``` メソッドを使用しますが、他の言語では別の方法で実装されている場合もあります。
+
+また、正規表現を使用して文字列を小文字に変換する方法もあります。しかし、この方法は文字列の大量処理時やパフォーマンスを求められる場合には遅いとされています。
+
+## 関連情報：
+
+- C# ```ToLower()``` メソッドのドキュメンテーション：https://docs.microsoft.com/en-us/dotnet/api/system.string.tolower?view=netcore-3.1
+- 正規表現を使用した文字列操作の詳細：https://docs.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-language-quick-reference

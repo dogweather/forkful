@@ -1,7 +1,7 @@
 ---
-title:                "स्टैंडर्ड त्रुटि पर लेखन"
-html_title:           "Swift: स्टैंडर्ड त्रुटि पर लेखन"
-simple_title:         "स्टैंडर्ड त्रुटि पर लेखन"
+title:                "चौथा त्रुटि में लिखना"
+html_title:           "Swift: चौथा त्रुटि में लिखना"
+simple_title:         "चौथा त्रुटि में लिखना"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Files and I/O"
@@ -10,30 +10,17 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों 
+## क्या और क्यों?
+लेखकों क्या स्टैंडर्ड इरर में लिखना है और क्यों लिखते हैं के बारे में दो से तीन वाक्यों में समझाया जाएगा।
 
-अभी हाल ही में, Swift में लिखने वाले कई डेवलपर हाई-लेवल logging एपीआई का उपयोग करते हैं जो उन्हें debugging के लिए मदद करता है। इसमें लिखने के साथ, standard error को लिखने का कोई विस्तारित अवसर नहीं है जो कि एक कामतरता वृध्दि वाली तकनीक है इससे आप अपने प्रोग्राम को आसानी से debug कर सकते हैं।
-
-## कैसे करें 
-
+## कैसे करें?
 ```Swift
-// त्रुटि संदेश को standard error में लिखने का उदाहरण
-print("Error: Unable to perform operation", to: &errorStream)
-
-// समान त्रुटि संदेश जो कि standard output में लिखा हुआ होता है
-print("Error: Unable to perform operation")
-
-// त्रुटि संदेशों को अन्य errors के साथ एकीकृत करने का उदाहरण
-let error = NSError(domain: "com.example.error", code: 500, userInfo: [NSLocalizedDescriptionKey: "Unable to perform operation"])
-print(error, to: &errorStream)
+print("स्टैंडर्ड इरर पर लिखें")
 ```
+उपरोक्त कोड स्निपेट से आप स्टैंडर्ड इरर पर कुछ लिख सकते हैं, जो त्रुटि संदेशों को दिखाने के लिए इस्तेमाल होता है। आप स्टैंडर्ड इरर को विशेषीकरण ('///') या खुदरा से भी लिख सकते हैं।
 
-उपरोक्त उदाहरणों को देखें, हमने `print()` फंक्शन का उपयोग किया है जो कि standard error में लिखने के लिए एक अलग विकल्प प्रदान करता है। इसके अलावा, हमने `NSError` की मदद से अन्य errors को एकीकृत किया है जो कि standard error में लिखा जाएगा।
+## गहराई में जाएं
+स्टैंडर्ड इरर को स्टैंडर्ड आउटपुट के साथ एक तरह का लक्ष्यपूर्ण हिस्सा माना जा सकता है। यह त्रुटि संदेशों को उपयोगकर्ताओं को प्रबंधन करने में मदद करता है। और इसके अलावा आप त्रुटि संदेशों को खोजने, निराकरण करने और सुधार करने में भी स्टैंडर्ड इरर का उपयोग कर सकते हैं। दूसरे विकल्पों में से एक, आप अपने खुद के लिए एक अलग त्रुटि लॉग बना सकते हैं, लेकिन स्टैंडर्ड इरर का उपयोग करना एक ही मानकीकृत और स्वतंत्र उपाय है।
 
-## गहराई में जाएँ 
-
-Standard error के उपयोग को आपके प्रोग्राम को debug करने में बहुत मदद मिल सकती है। इसके अलावा, अगर आपका प्रोग्राम अन्य प्रोग्रामों को कॉल करता है तो आप standard error में errors को लिख सकते हैं जो कि आपको समस्या का पता लगाने में मदद करेंगे।
-
-## देखें भी 
-
-- [Apple Developer Documentation: Using Standard Error and Standard Output](https://developer.apple.com/documentation/swift/formatoutput/using_standard_error_and_standard_output)
+## और भी देखें
+और अधिक जानने के लिए, स्विफ्ट के [दस्तावेज़ीकरण](https://docs.swift.org/swift-book/LanguageGuide/TheBasics.html#ID324) का अनुभव करें। आप इस शिक्षावित्त को भी देख सकते हैं जो स्टैंडर्ड इरर के बारे में डिटेल में समझाव है।

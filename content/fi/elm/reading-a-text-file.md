@@ -1,7 +1,7 @@
 ---
-title:                "Tiedoston lukeminen"
-html_title:           "Elm: Tiedoston lukeminen"
-simple_title:         "Tiedoston lukeminen"
+title:                "Tekstitiedoston lukeminen."
+html_title:           "Elm: Tekstitiedoston lukeminen."
+simple_title:         "Tekstitiedoston lukeminen."
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Files and I/O"
@@ -10,51 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+Mitä & miksi?
+Lukeminen tekstityöstä on tärkeä osa ohjelmointia, sillä se antaa meille mahdollisuuden lukea ja käsitellä tiedostojen sisältöä tietokoneella. Näin voimme luoda sovelluksia, jotka voivat lukea ja tallentaa käyttäjän antamia tietoja.
 
-Lukeminen on välttämätöntä monissa ohjelmointitehtävissä, joten on tärkeää tietää, kuinka lukea tiedostoja tehokkaasti. Elm tarjoaa helpon ja tehokkaan tavan lukea teksti- tai CSV-tiedostoja, mikä tekee siitä erinomaisen kielen käytettäväksi tiedonkäsittelyssä.
-
-## Kuinka
-
+Miten tehdä:
 ```elm
-import File
-import Csv.Decode as Decode
+-- Avataan tiedosto
+file <- File.open "tekstityö.txt"
+-- Luetaan tiedoston sisältö
+contents <- File.read file
+-- Tulostetaan sisältö konsoliin
+Elm.io.print contents
+```
+```
+Tämä koodi avaa tekstityön tiedoston ja lukee sen sisällön. Tulostamalla sisällön konsoliin voimme nähdä, mitä tiedostossa on.
 
-readFile : String -> Task.Task String (List (List String))
-readFile fileName =
-    File.asString fileName
-        |> Task.map Decode.decodeCsv
+Syöte:
+Hei kaikki!
+Tervetuloa lukemaan tekstityötä.
 ```
 
-Koodiesimerkissä käytetään `File`-kirjastoa tekstitiedoston lukemiseen ja `Csv.Decode`-kirjastoa tiedoston sisällön muuntamiseen halutuksi muodoksi. `Task`-tyyppi käytetään tilaa ja virheiden käsittelyä varten.
-
-```elm
-case result of
-    Task.Ok data ->
-        -- Tee jotain data-listan kanssa
-
-    Task.Err error ->
-        -- Käsittele virhe
+Tuloste:
+```
+Hei kaikki!
+Tervetuloa lukemaan tekstityötä.
 ```
 
-Kun tiedosto on luettu, voit käsitellä saatuja tietoja `data`-listan avulla. Jokainen rivi muuttuu omaksi listaksi, joka voi sisältää erilaisia arvoja riippuen tiedoston muodosta. Esimerkiksi jos tiedosto sisältää mittauksia, jokainen rivi voisi sisältää päivämäärän, ajan ja lämpötilan arvot.
+Syventyminen:
+Tiedoston lukeminen on tärkeä osa ohjelmointia, sillä aikaisemmin käytettiin pääasiassa tekstityöihin tallennettuja tietoja, kuten käyttäjien tietoja ja asetustiedostoja. Nykyään on olemassa useita muita tapoja lukea ja tallentaa tietoja, kuten tietokantoja ja pilvipalveluita.
 
-## Syvempi sukellus
+Katso myös:
+- Elm-opas tiedostojen lukemiseen:
+https://guide.elm-lang.org
 
-Oletetaan, että haluamme lukea tiedoston, jossa jokainen rivi sisältää henkilön nimen ja iän välilyönnillä erotettuna. Käytämme tällä kertaa `File.lines`-funktiota, joka palauttaa listan rivejä tiedostosta.
-
-```elm
-lowercaseNames : String -> List (String, Int)
-lowercaseNames fileName =
-    File.lines fileName
-        |> List.map String.words
-        |> List.map (\[ name, age ] -> (String.toLower name, String.toInt age))
-```
-
-Tässä esimerkissä käytettiin `List.map`-funktiota, joka suorittaa annetun muunnoksen jokaiselle listan alkiolle. `String.words`-funktio jakaa annetun merkkijonon välilyöntien kohdalta ja palauttaa listan sanoista.
-
-## Katso myös
-
-- [Elm File -virallinen dokumentaatio](https://guide.elm-lang.org/io/files.html)
-- [Elm CSV -koodiesimerkkejä](https://package.elm-lang.org/packages/elm-community/csv/latest/)
-- [Elm String -kirjaston dokumentaatio](https://package.elm-lang.org/packages/elm/core/latest/String)
+- Virallinen Elm-sivusto:
+https://elm-lang.org

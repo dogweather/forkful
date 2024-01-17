@@ -10,48 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué extraer subcadenas?
+## ¿Qué & Por qué?
+Extraer subcadenas se refiere a obtener una parte específica de una cadena de texto. Los programadores a menudo hacen esto para realizar operaciones en una sección específica de una cadena, como buscar una palabra clave o formatear una fecha.
 
-La extracción de subcadenas es una herramienta útil en la programación de Rust para manejar cadenas de texto. Permite acceder a una parte específica de una cadena, lo que puede ser útil en varias situaciones, como la manipulación de datos o la validación de entradas de usuario.
-
-## Cómo hacerlo
-
-Para extraer una subcadena en Rust, utilizamos el método `get()` en un objeto `String` o `&str`. Luego, especificamos el rango de la subcadena que deseamos obtener utilizando la sintaxis de rebanado (`..`). Por ejemplo:
+## Cómo hacerlo:
+La biblioteca estándar de Rust proporciona varias formas de extraer subcadenas, incluyendo el método `substring()` de la clase `String` y la función `slice()` de la clase `str`. A continuación se muestra un ejemplo de ambas opciones y su salida correspondiente en la consola:
 
 ```Rust
-// Creamos una cadena de texto
-let cadena = "¡Hola, mundo!";
+// Ejemplo usando substring()
+let cadena = "Hola Mundo";
+let subcadena = cadena.substring(5, 10); // obtiene "Mundo"
+println!("{}", subcadena); // imprime "Mundo"
 
-// Extraemos la subcadena que va desde el segundo caracter hasta el final de la cadena.
-let subcadena = cadena.get(1..);
-
-// Imprimimos la subcadena
-println!("{}", subcadena); // Output: "Hola, mundo!"
+// Ejemplo usando slice()
+let cadena = "Hola Mundo";
+let subcadena = &cadena[5..10]; // obtiene "Mundo"
+println!("{}", subcadena); // imprime "Mundo"
 ```
 
-En el ejemplo anterior, usamos `get(1..)` para obtener una subcadena que comienza en el segundo caracter y se extiende hasta el final de la cadena. El primer caracter tiene un índice de 0, por lo que el segundo caracter tiene un índice de 1.
+## Profundizando:
+La extracción de subcadenas ha existido desde los primeros lenguajes de programación, pero ha evolucionado mucho a lo largo de los años. Antes, los programadores tenían que realizar cálculos manuales para determinar los índices de inicio y fin de una subcadena dentro de una cadena. Sin embargo, con el avance de las bibliotecas y funciones de manejo de cadenas, ahora es mucho más fácil y eficiente extraer subcadenas.
 
-También podemos utilizar la sintaxis de rebanado para especificar un rango de índices. Por ejemplo, si queremos extraer los caracteres en la posición 3 y 4 de la cadena, hacemos lo siguiente:
+En términos de alternativas, los programadores también pueden utilizar expresiones regulares para extraer subcadenas en Rust. Sin embargo, esto puede ser más complejo y requiere un mayor conocimiento de las expresiones regulares.
 
-```Rust
-// Creamos una cadena de texto
-let cadena = "¡Hola, mundo!";
+Internamente, Rust utiliza punteros inteligentes para almacenar y manipular cadenas de forma eficiente. Además, los métodos `substring()` y `slice()` utilizan el tipo de dato `Index` de Rust, que permite el acceso a partes específicas de una cadena utilizando la sintaxis de índice. Esto hace que la extracción de subcadenas en Rust sea muy eficiente y fácil de implementar.
 
-// Extraemos la subcadena que va desde el tercer hasta el quinto caracter.
-let subcadena = cadena.get(2..4);
-
-// Imprimimos la subcadena
-println!("{}", subcadena); // Output: "l, "
-```
-
-## Profundizando en la extracción de subcadenas
-
-El método `get()` nos permite extraer subcadenas de forma segura, ya que controla los límites de los índices para evitar errores como desbordamiento o subcadena vacía. Además, también podemos utilizar otros métodos como `slice()` y `get_mut()` para obtener y modificar subcadenas de manera eficiente.
-
-Es importante tener en cuenta que en Rust, las cadenas son UTF-8, lo que significa que cada caracter ocupa un número variable de bytes. Esto puede afectar la forma en que se manejan los índices al extraer subcadenas, por lo que es importante tener en cuenta esta diferencia al trabajar con texto.
-
-## Vea también
-
-- Official Rust documentation on Strings: https://doc.rust-lang.org/std/string/index.html
-- Rust By Example: Strings: https://doc.rust-lang.org/stable/rust-by-example/std/str.html
-- "Rust for Beginners" series on extracting substrings: https://www.youtube.com/watch?v=v-2yFMZXomw&list=PL559kmNvPxSjAIlwBlxxLM9nOF32gThiw
+## Ver también:
+Para aprender más sobre la extracción de subcadenas en Rust, puedes consultar la documentación oficial de Rust en https://doc.rust-lang.org/std/string/struct.String.html#method.substring y https://doc.rust-lang.org/std/primitive.str.html#method.slice. También puedes explorar la biblioteca regex de Rust para ver cómo utilizar expresiones regulares para extraer subcadenas.

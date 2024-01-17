@@ -10,30 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्यों
-क्या आप भी कभी वेब पेज डाउनलोड की आवश्यकता महसूस करते हैं? वेबसाइटों का संदर्भ (reference) महत्वपूर्ण हैं और इन्हें अपने कंप्यूटर पर सुरक्षित रूप से डाउनलोड और संशोधित करना आपको दृश्यमानता (visibility) और सुविधा (convenience) देता है।
+## Kya Aur Kyon?
+Web page download karna hume internet par maujud itni sari jankari ka ek saath access deta hai. Isme hum kisi bhi website ki code, images, videos aur text ko apne device par save kar sakte hai. Programming mein web page download karna ek common task hai, jisse hum apne apps mein internet se data retrieve kar sakte hai.
 
-## कैसे करें
+## Kaise Karein:
+Iss article mein hum Swift programming language mein kaise web page download karte hai uske baare mein jaanenge. Neeche diye gaye code examples aur sample output use karke aapko is process ko samajhne mein aasani hogi.
+
 ```Swift
-let url = URL(string: "https://www.examplewebsite.com/") // वेब पेज का URL
-let request = URLRequest(url: url!) // वेब पेज का अनुरोध बनाएं
-let task = URLSession.shared.dataTask(with: request) { // डेटा को डाउनलोड करें
-    (data, response, error) in
-    if let error = error { // यदि कोई त्रुटि है तो उसकी जांच करें
-        print("त्रुटि: \(error)")
-    } else {
-        if let data = data { // यदि डेटा मौजूद है तो उसे प्रिंट करें
-            print(data)
-        }
+// 1. URL object create karein
+let url = URL(string: "https://www.example.com")
+ 
+// 2. URLSession create karein
+let session = URLSession.shared
+ 
+// 3. URLSessionDataTask create karein
+let dataTask = session.dataTask(with: url!, completionHandler: {
+    data, response, error in
+     
+    // 4. Response check karein
+    guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200, error == nil else {
+        print("Error downloading data.")
+        return
     }
-}
-task.resume() // अनुरोध को शुरू करें
+     
+    // 5. Data decode karein
+    guard let receivedData = data else {
+        print("Error loading data.")
+        return
+    }
+     
+    // 6. Data output karein
+    if let dataString = String(data: receivedData, encoding: .utf8) {
+        print(dataString)
+    }
+})
+ 
+// 7. Task ko resume karein
+dataTask.resume()
 ```
 
-यहां हमने `URLSession` का इस्तेमाल करके डेटा को डाउनलोड करने का तरीका दिखाया है। आप चाहे तो `URLSession` के बजाय `URLSessionConfiguration` का भी प्रयोग कर सकते हैं। अपनी सुविधा के अनुसार कोडिंग करें।
+**Output:** Iss code ka output aapke console mein downloaded web page ki HTML code print karega.
 
-## गहराई में जाएं
-वेब पेज को डाउनलोड करने के लिए सीधी आदेश (direct command) `curl` भी हो सकता है। लेकिन `curl` का उपयोग `URLSession` से करने के मुकाबले कठिन हो सकता है। इसलिए, आपको `URLSession` और `URLSessionConfiguration` का इस्तेमाल सीखना चाहिए। पढ़े [Yalini Ravi की रचनाएं](https://yaliniravi.medium.com/downloading-files-using-swifts-urlsession-and-urlsessionconfiguration-427132956f0d) जो आपको डेटा को डाउनलोड करने में मदद करेंगी।
+## Deep Dive:
+Web page download karna programming mein common task hai kyonki isse hum apne apps mein internet se data retrieve kar sakte hai. Pehle log raw socket programming ka use karte the lekin ab URL loading system provide karta hai, jo easily data retrieve karne mein help karta hai. Swift ke alawa, aap URL loading system ka use Objective-C, Java, Python aur PHP jaise aur bhi languages mein kar sakte hai.
 
-## देखें और होगा अगला (See Also)
-- [Apple के रिकमंदेशं (guidelines) को पढ़ें](https://developer.apple.com/documentation/foundation/urlsession) जो `URLSession` और `URLSessionConfiguration` के ब
+## See Also:
+1. [The Swift Programming Language by Apple](https://docs.swift.org/swift-book/LanguageGuide/TheBasics.html)
+2. [Apple's URL Loading System Guide](https://developer.apple.com/documentation/foundation/url_loading_system)

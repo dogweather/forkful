@@ -10,30 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä ja miksi?
+Luodessaan väliaikaisen tiedoston, ohjelmoijat haluavat tallentaa tilapäisesti tietoja ennen niiden pysyvää tallentamista. Tätä käytetään usein esimerkiksi tiedostojen käsittelyssä tai tietokantojen muokkaamisessa.
 
-Temporary-tiedostojen luominen on tärkeä osa useimpien ohjelmien toimintaa. Niitä käytetään esimerkiksi väliaikaisten tietojen tallentamiseen ja käsittelyyn, jolloin pääohjelma ei muutu liian raskaaksi.
+## Kuinka teet sen:
+```ruby
+require "tempfile"
 
-## Miten
+temp_file = Tempfile.new("temp_file") # luo väliaikaisen tiedoston nimellä "temp_file"
+temp_file.write("This is a temporary file.") # kirjoittaa tiedostoon
+temp_file.rewind # palauttaa tiedoston alkuun
+puts temp_file.read # tulostaa tiedoston sisällön
+temp_file.close # sulkee tiedoston
 
-```Ruby
-file = Tempfile.new("temporary.txt")
-
-file.write("Tämä on väliaikainen tiedosto.")
-puts file.path
-# => /tmp/temporary20191002-12345-26x2i4.txt
-
-file.close
+=> "This is a temporary file."
 ```
 
-Temporary-tiedosto luodaan Tempfile-luokan avulla ja siihen voi kirjoittaa haluamiaan tietoja. Kun tiedosto suljetaan, se tuhotaan automaattisesti ja vapauttaa sitä käyttävän muistin. Tämä tekee temporary-tiedostojen käytöstä turvallista eikä niiden poistamista tarvitse erikseen huolehtia.
+## Syvempi sukellus:
+Väliaikaisten tiedostojen luonti on ollut osa ohjelmointia jo pitkään, ja sitä käytetään edelleen laajasti. Useimmissa tapauksissa väliaikaiset tiedostot tuhotaan automaattisesti niiden käytön jälkeen, mutta joissakin tapauksissa ne voidaan myös tallentaa pysyvästi. On myös muita tapoja tallentaa väliaikaisia tietoja, kuten käyttämällä väliaikaisia muuttujia tai muistialueita.
 
-## Syvällinen sukellus
-
-Temporary-tiedoston luominen tapahtuu ohjelmassa usein käyttämällä operatiivisen järjestelmän omia työkaluja, esimerkiksi C:n "mktemp"-toimintoa. Rubyssa tätä toimintoa ei ole, vaan sen sijaan on Tempfile-luokka, joka huolehtii tiedoston luomisesta ja sen poistamisesta. Voit myös käyttää Tempfile-luokan vaihtoehtoisia luomistoimintoja, kuten `Tempfile.create`.
-
-## Katso myös
-
-- [Tempfile-luokan dokumentaatio](https://ruby-doc.org/stdlib-2.6.3/libdoc/tempfile/rdoc/Tempfile.html)
-- [Temporary-tiedoston käyttö Blueprint-suunnittelumallissa](https://www.oreilly.com/library/view/blueprints-for-high/9781449308024/ch04.html#tmp)
-- [Tilapäistiedostojen hallinta Rubylla](https://blog.dnsimple.com/2011/10/temporary-files-and-directories-with-ruby/)
+## Katso myös:
+- https://ruby-doc.org/stdlib-2.7.1/libdoc/tempfile/rdoc/Tempfile.html
+- https://www.geeksforgeeks.org/ruby-tempfile-class/
+- https://www.rubyguides.com/2018/11/temporary-files-in-ruby/

@@ -10,62 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+## HTTP 요청에 기본 인증을 사용하여 데이터를 전송하는 방법
 
-HTTP 요청에 기본 인증을 사용하는 이유는 해당 요청에 보안을 추가하여 민감한 정보의 전송을 안전하게 보호하기 위해서입니다.
+HTTP 요청을 보내는 것은 PHP 프로그래머에게 중요한 기술입니다. 그 중에서도 기본 인증을 사용하여 요청을 보내는 것은 보안적인 이유로 더욱 중요합니다. 이 기사에서는 HTTP 요청에 기본 인증을 사용하는 방법에 대해 간단히 알아보겠습니다.
 
-## 방법
+## 무엇 & 왜?
 
-PHP로 HTTP 요청을 보낼 때 기본 인증을 사용하는 방법은 간단합니다. 먼저, 요청을 보내려는 URL을 지정하고 `curl_init()` 함수를 사용하여 cURL 세션을 초기화합니다. 그런 다음 `curl_setopt()` 함수를 사용하여 `CURLOPT_HTTPAUTH` 및 `CURLOPT_USERPWD` 옵션을 설정하여 기본 인증을 사용하도록 설정합니다. 아래의 예제 코드와 출력을 참고하세요.
+기본 인증은 HTTP 프로토콜의 한 형식으로서, 클라이언트가 서버로 데이터를 전송할 때 보안을 강화하기 위해 사용됩니다. 이는 전송되는 데이터를 암호화하여 무단 접근을 방지하고, 신분을 증명하여 누군지 확인할 수 있게 합니다. 프로그래머들은 이를 사용하여 송신되는 정보를 보호할 수 있기 때문에 기본 인증을 사용합니다.
 
-```PHP
-<?php
+## 사용 방법:
 
-// 요청을 보낼 URL
-$url = "https://example.com/api";
+```php  
+//기본 인증 정보를 설정  
+$user = 'username';  
+$password = 'password';  
+$credentials = base64_encode($user . ':' . $password);  
 
-// cURL 세션 초기화
-$ch = curl_init();
+//HTTP 헤더에 인증 정보 추가  
+$options = [  
+    'http' => [  
+        'header' => "Authorization: Basic $credentials"  
+    ]  
+];  
 
-// 기본 인증 사용 설정
-curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
-curl_setopt($ch, CURLOPT_USERPWD, "username:password");
+//인증 정보를 포함한 요청 전송  
+$url = 'https://www.example.com/api';  
+$context = stream_context_create($options);  
+$result = file_get_contents($url, false, $context);  
 
-// URL 설정
-curl_setopt($ch, CURLOPT_URL, $url);
-
-// 요청 보내기
-curl_exec($ch);
-
-// 세션 닫기
-curl_close($ch);
-
-?>
+//결과 출력  
+echo $result;  
 ```
 
-**출력:**
+## 더 깊게 알아보기:
 
-```
-HTTP/1.1 200 OK
-Content-Type: application/json
+1. 기본 인증은 HTTP 프로토콜의 일부로서 1996년에 소개되었습니다. 이후에도 여전히 많은 웹 서비스에서 사용되고 있습니다.
+2. 기본 인증 외에도 여러가지 인증 방법이 존재하지만, 표준적인 인증 방법이 아니라서 보안에 취약할 수 있습니다.
+3. PHP의 stream_context_create() 함수를 사용하여 인증 정보를 포함하는 컨텍스트를 생성할 수 있습니다.
 
-{
-    "message": "Hello, world!"
-}
-```
+## 관련 자료:
 
-## 깊이 파고들기
-
-기본 인증은 HTTP 요청에 추가적인 보안을 제공합니다. 이를 사용하여 인증 정보를 암호화하여 전송하고 서버에서는 해당 정보를 확인하여 요청을 인증할 수 있습니다. 또한 기본 인증은 보안 레벨이 낮기 때문에 민감한 정보를 전송할 때는 다른 인증 방식을 고려해야 합니다.
-
-## 더 알아보기
-
-[PHP cURL 공식 문서](https://www.php.net/manual/en/book.curl.php)
-
-[cURL로 HTTP 요청 보내기](https://www.php.net/manual/en/curl.examples.php)
-
-## 참고 자료
-
-[cURL을 이용한 기본 인증 방식으로 HTTP 요청 보내기](https://medium.com/@zackzeele/curl-serve-request-easily-653eb285a6c6)
-
-[PHP에서 기본 인증 사용하기](https://www.geeksforgeeks.org/how-to-use-basic-authentication-in-php/)
+- https://www.php.net/manual/en/function.stream-context-create.php
+- https://www.w3.org/Protocols/rfc2616/rfc2616-sec11.html
+- https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication

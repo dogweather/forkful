@@ -1,7 +1,7 @@
 ---
-title:                "Wyświetlanie wyników debugowania"
-html_title:           "Clojure: Wyświetlanie wyników debugowania"
-simple_title:         "Wyświetlanie wyników debugowania"
+title:                "Wydrukowanie wyników debugowania"
+html_title:           "Clojure: Wydrukowanie wyników debugowania"
+simple_title:         "Wydrukowanie wyników debugowania"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Testing and Debugging"
@@ -10,45 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Czym jest i dlaczego: 
+Wypisywanie danych debugowania to proces wypisywania informacji podczas działania programu w celu lepszej analizy i zrozumienia jego działania. Programiści często używają tej techniki, aby śledzić zmienne, wartości i inne parametry w celu znajdowania błędów i poprawiania ich kodu.
 
-W dzisiejszych czasach, debugowanie jest nieodłącznym elementem procesu tworzenia oprogramowania. Wyświetlanie informacji o działaniu programu może pomóc programistom w identyfikacji i rozwiązywaniu błędów w kodzie. Ten artykuł przedstawia metody wyświetlania informacji debugujących w języku Clojure, aby pomóc w zrozumieniu, dlaczego jest to ważne i jak tego dokonać.
-
-## Jak To Zrobić
-
+## Jak to zrobić:
+Wypiszmy wartość zmiennej ```x``` w naszym programie, używając funkcji ```println```:
 ```Clojure
-;; Użyj funkcji (println), aby wyświetlić tekst lub wartość wyrażenia w konsoli
-(println "Hello World!")
-
-;; Możesz również użyć funkcji (println) do wyświetlania wartości zmiennych
-(def name "John")
-(println "Imię użytkownika to:" name)
-
-;; Użyj funkcji (pr) do wyświetlania sformatowanych informacji lub wyrażeń
-(pr "Suma 2 i 3 to:" (+ 2 3))
-
-;; Aby wyświetlić więcej niż jedną informację na raz, użyj funkcji (println) lub (prn)
-(println "Jesteśmy w funkcji (println)!") (prn "A w (prn)...")
+(def x 10)
+(println x)
+```
+Wyjście powinno wyglądać tak:
+```Clojure
+10
+```
+Możemy również wyświetlić więcej danych, używając formatowania ciągu znaków. Na przykład:
+```Clojure
+(let [name "Jan" age 25]
+  (println (str "Witaj, jestem " name " i mam " age " lat!")))
+```
+Wyjście:
+```Clojure
+Witaj, jestem Jan i mam 25 lat!
+```
+Jeśli potrzebujemy sprawdzić, czy dana funkcja jest wywoływana w naszym programie, możemy wypisać informacje o jej wywołaniu używając funkcji ```timbre/info```. Na przykład:
+```Clojure
+(defn moja-funkcja [parametr]
+  (timbre/info (str "Funkcja moja-funkcja została wywołana z parametrem " parametr))
+  ; kod funkcji
+  )
 ```
 
-Przykładowy output:
+## Głębsze wynurzenia:
+Technika wypisywania danych debugowania jest popularna od dawna, gdy nie istniały jeszcze narzędzia debugowania w IDE. Alternatywnym sposobem może być użycie wbudowanego debuggera w Clojure REPL, który pozwala na interaktywne wykonywanie kodu i debugowanie błędów. Kod do wypisywania danych debugowania jest również przydatny przy testowaniu i monitorowaniu wydajności aplikacji w środowisku produkcyjnym. Implementacja funkcji ```println``` jest prosta, ponieważ jest to jedna z podstawowych funkcji języka Clojure. Można również używać innych funkcji wypisywania danych, takich jak ```print```, ```pr```, ```format``` lub ```str```.
 
-```
-Hello World!
-Imię użytkownika to: John
-Suma 2 i 3 to: 5
-Jesteśmy w funkcji (println)!
-A w (prn)...
-```
-
-## Deep Dive
-
-W języku Clojure istnieje wiele funkcji, które można użyć do drukowania informacji debugujących. Oprócz funkcji (println) i (pr), istnieją także funkcje (pprint), (format), (printf), (print), (eprintln) i (doseq), aby wymienić tylko kilka przykładów. Każda z tych funkcji może być przydatna w różnych sytuacjach, dlatego warto zapoznać się z nimi i zastosować odpowiednią do potrzeb.
-
-Dodatkowo, w celu lepszego wyświetlania informacji debugujących, można także używać bibliotek takich jak clj-logging i tools.logging, które oferują różne funkcje do formatowania i wyświetlania logów.
-
-## Zobacz także
-
-- [Dokumentacja "Clojure spec" dla funkcji (println)](https://clojure.org/reference/repl_and_main#_print_and_friends)
-- [Biblioteka "clj-logging"](https://github.com/bsless/clj-logging)
-- [Biblioteka "tools.logging"](https://github.com/clojure/tools.logging)
+## Zobacz też:
+- [Clojure REPL Debugger](https://clojure.org/guides/repl/debugging)
+- [Jak wykorzystać wypisywanie danych debugowania w Twoim kodzie Clojure](https://www.braveclojure.com/debugging/)
+- [Timbre - biblioteka do wypisywania i logowania w Clojure](https://github.com/ptaoussanis/timbre)

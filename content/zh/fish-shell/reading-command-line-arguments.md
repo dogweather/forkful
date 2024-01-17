@@ -1,7 +1,7 @@
 ---
-title:                "读取命令行参数"
-html_title:           "Fish Shell: 读取命令行参数"
-simple_title:         "读取命令行参数"
+title:                "阅读命令行参数"
+html_title:           "Fish Shell: 阅读命令行参数"
+simple_title:         "阅读命令行参数"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Files and I/O"
@@ -10,56 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
+## 什么？为什么？
 
-如果你对命令行界面有兴趣，那么学习如何读取命令行参数将会成为一项有用的技能。它可以帮助你更高效地使用命令行工具，提升你的工作效率。
+读取命令行参数是指程序在执行时，可以从命令行获取额外的信息。程序员这样做主要是为了让程序更加灵活和可定制。通过读取命令行参数，程序可以根据不同的输入，执行不同的任务，满足不同用户的需求。
 
-## 如何做
+## 怎么做？
 
-要在Fish Shell中读取命令行参数，你可以使用内置的`argv`函数。它会返回一个包含所有命令行参数的列表，包括命令本身。下面是一个示例代码：
+```Fish Shell``` 提供了一个内置的函数 ```argparse```来帮助我们读取命令行参数。下面是一个简单的例子：
 
-```
-Fish Shell Code:
-
-for arg in (argv)
-  echo $arg
-```
-
-假设你输入以下命令：
+**代码：**
 
 ```
-fish myscript.fish hello world
+argparse name -h help-message
 ```
 
-那么输出将会是：
+**输出：**
 
 ```
-hello
-world
+help-message
 ```
 
-你也可以通过`count`函数来获取命令行参数的数量：
+通过上面的代码，我们可以看到，程序会输出我们定义的 `help-message`，这样就可以帮助用户了解到我们的程序需要哪些参数。
 
-```
-Fish Shell Code:
+## 深入了解
 
-echo "Number of arguments: " (count (argv))
-```
+### 历史背景
 
-输出将会是：
+在早期的操作系统中，程序是通过交互式的方式执行的，即用户通过输入指令来操作程序。随着技术的发展，出现了命令行界面，使得用户可以通过命令行来执行程序。而读取命令行参数就是为了更进一步提高程序的灵活性和可定制性。
 
-```
-Number of arguments: 3
-```
+### 其他选择
 
-## 深入探讨
+除了 ```Fish Shell``` 的 ```argparse``` 函数，我们也可以使用其他工具来读取命令行参数，比如 ```getopt```。这些工具都具有类似的功能，但是在使用上可能会稍有差异。
 
-当我们输入命令行命令时，除了命令本身，还可以在命令之后添加一些参数。这些参数可以让我们更灵活地使用命令，比如指定操作的文件或者设定一些选项。通过读取命令行参数，我们可以在脚本中根据不同的参数执行不同的逻辑。
+### 实现细节
 
-除了`argv`函数，Fish Shell还提供了其他一些内置函数来帮助我们读取命令行参数。比如`begin`和`end`函数，它们分别返回第一个和最后一个参数。同时，我们还可以使用`argparse`库来处理命令行参数，它可以帮助我们验证参数格式和值。
+在内部，```Fish Shell``` 的 ```argparse``` 函数通过解析命令行参数后，将其存储为一个关联数组，程序可以通过调用这个数组来读取不同的参数。
 
 ## 参考资料
 
-- [Fish Shell官方文档](https://fishshell.com/docs/current/index.html)
-- [Argparse库文档](https://fishshell.com/docs/current/cmds/argparse.html)
-- [Fish Shell命令行参数教程](https://bhami.com/rosetta.html)
+- [Fish Shell文档](https://fishshell.com/docs/current/cmds/argparse.html)
+- [互动式系统的历史](https://en.wikipedia.org/wiki/Interactive_system)
+- [getopt文档](https://www.gnu.org/software/libc/manual/html_node/Using-Getopt.html)

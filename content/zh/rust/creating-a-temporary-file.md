@@ -10,49 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
+## 什么 & 为什么?
+创建临时文件是在计算机程序中生成一个临时的数据文件，主要用于存储临时数据或进程间通信。程序员通常会使用这种方法来解决数据传输或共享的问题。
 
-创建临时文件是处理文件输入和输出的常用方式。它允许我们快速地在程序运行时创建临时文件来存储数据，而不会影响到我们原本的文件。
-
-## 如何操作
-
-创建临时文件可以使用标准库中的 `tempfile` 模块。首先，我们需要导入 `tempfile::NamedTempFile` 类。然后，使用 `create()` 方法来创建一个临时文件对象。最后，可以使用 `write_all()` 方法来向文件中写入数据。
-
+## 如何:
+下面是在Rust中创建临时文件的代码示例:
 ```Rust
-use tempfile::NamedTempFile;
-let mut temp_file = NamedTempFile::create().unwrap();
-temp_file.write_all(b"Hello, world!").unwrap();
+use std::fs::File;
+use std::io::prelude::*;
+
+fn main() {
+    // 使用目录 /tmp 创建一个临时文件
+    let temp_file = tempfile::Builder::new()
+        .prefix("temp-")
+        .tempfile_in("/tmp")
+        .expect("创建临时文件失败");
+
+    // 将一些数据写入文件
+    let mut file = File::create(temp_file.path()).expect("创建文件失败");
+    file.write_all(b"这是临时文件中的数据").expect("写入数据失败");
+}
 ```
 
-如果需要获取临时文件的路径，可以使用 `path()` 方法。
+上述代码中，我们使用了Rust标准库中的`fs`模块来操作文件，以及`tempfile`外部库来创建临时文件。通过这些代码，我们可以在系统的临时文件夹`/tmp`中创建一个名为`temp-[随机字符]`的临时文件，并将数据写入其中。
 
-```Rust
-let temp_file_path = temp_file.path();
-```
+## 深入探讨:
+在过去，程序员经常使用临时文件来处理数据共享和通信的问题。然而，随着计算机技术的发展，现在也有许多其他的解决方案，如管道、共享内存等。此外，Rust标准库中也有更简单的方法来处理临时数据，如使用`std::fs::temp_dir`函数直接创建临时文件夹。
 
-最后，记得在不再需要临时文件时，使用 `close()` 方法来关闭并删除它。
+具体而言，创建临时文件的实现原理是通过在操作系统中创建一个名为`tmp`的文件夹，并在其中创建一个临时文件。然后，在程序结束时，临时文件会被自动删除，从而保证了系统的整洁性和安全性。
 
-```Rust
-temp_file.close().unwrap();
-```
-
-## 深入了解
-
-创建临时文件时，我们可以指定文件的名称和文件所在的目录。如果没有指定，系统就会使用默认的临时目录来创建文件。可以使用 `new()` 方法来指定文件名和目录路径。
-
-```Rust
-use tempfile::Builder;
-let temp_file = Builder::new()
-    .prefix("prefix")
-    .suffix(".txt")
-    .tempfile()
-    .unwrap();
-```
-
-除了创建临时文件外，`tempfile` 模块还提供了其他实用的功能，比如创建临时目录，将文件重命名等操作。想要更多了解，可以查阅[官方文档](https://docs.rs/tempfile/)。
-
-## 参考链接
-
-- [Rust编程语言](https://www.rust-lang.org/)
-- [临时文件的创建和读写](https://rust-lang-nursery.github.io/rust-cookbook/file/temp.html)
-- [Rust标准库文档-tempfile模块](https://doc.rust-lang.org/std/io/struct.Stdin.html#example)
+## 参考链接:
+- [Rust官方文档](https://doc.rust-lang.org/std/fs/fn.temp_dir.html)
+- [tempfile外部库文档](https://docs.rs/tempfile/3.1.0/tempfile/)

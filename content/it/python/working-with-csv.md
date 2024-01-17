@@ -10,52 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+## Che cos'è e perché?
 
-Se sei un programmatore Python, probabilmente hai sentito parlare dei file CSV. Questi sono semplici file di testo contenenti dati separati da virgole (o altri separatori). Ma perché dovresti lavorare con questi file? Beh, i CSV sono comunemente utilizzati per scrivere dati tabellari come fogli di calcolo o database, quindi capire come lavorare con loro può essere molto utile per una varietà di scopi.
+Lavorare con i file CSV, o "Comma Separated Values", significa manipolare dei dati che sono organizzati in modo tabellare, con ciascun dato separato da una virgola. I programmatori spesso lavorano con CSV poiché è uno dei formati di file più comuni per scambiare dati tra diverse applicazioni.
 
-## Come fare
+## Come fare:
 
-Per prima cosa, dovrai importare il modulo CSV nella tua applicazione Python:
+```python
+import csv
 
-```Python
-import.csv
+# Aprire un file CSV in modalità lettura 
+with open('data.csv', 'r') as file:
+    # Creare un oggetto lettore CSV 
+    reader = csv.reader(file)
+    
+    # Ciclare attraverso ogni riga del file 
+    for row in reader:
+        # Stampare ogni colonna separata da una virgola 
+        print(', '.join(row))
+      
+# Creare un nuovo file CSV in modalità scrittura 
+with open('new_data.csv', 'w') as file:
+    # Creare un oggetto scrittore CSV 
+    writer = csv.writer(file)
+    
+    # Scrivere una riga nel file 
+    writer.writerow(['Nome', 'Cognome', 'Età'])
+    
+    # Scrivere altre righe con una lista di valori 
+    writer.writerows([
+        ['Mario', 'Rossi', 30],
+        ['Giulia', 'Bianchi', 25]
+    ])
 ```
 
-Per aprire un file CSV esistente, puoi utilizzare la funzione "open" con il parametro "r" (lettura). Ad esempio, se il tuo file CSV si chiama "esempio.csv", il codice sarà il seguente:
-
-```Python
-with open('esempio.csv', 'r') as file:
-  reader = csv.reader(file)
-  for row in reader:
-    print(row)
+Output:
 ```
-Questo codice leggerà il file CSV e quindi ne stamperà ogni riga come una lista di valori separati da virgole.
-
-Se vuoi creare un nuovo file CSV, puoi utilizzare la funzione "writer" e specificare il parametro "w" (scrittura). Ad esempio, per creare un nuovo file "output.csv" con alcune righe di dati, puoi usare il seguente codice:
-
-```Python
-with open('output.csv', 'w') as file:
-  writer = csv.writer(file)
-  writer.writerow(['Nome', 'Età', 'Email'])
-  writer.writerow(['Giulia', '25', 'giulia@email.com'])
-  writer.writerow(['Andrea', '32', 'andrea@email.com'])
+Colonna1, Colonna2, Colonna3
+Dato1, Dato2, Dato3
 ```
 
-Questo codice creerà un nuovo file CSV con il nome, l'età e l'email di due persone come righe.
+## Approfondimento:
 
-## Approfondimento
+I file CSV sono stati introdotti per la prima volta negli anni '70 come una semplice soluzione per scambiare dati tra fogli elettronici. Nel corso degli anni, sono diventati uno standard nella comunicazione dei dati tra diverse applicazioni e piattaforme. Esistono anche altri formati di file per i dati tabellari, come il formato Excel XLSX, ma il CSV rimane uno dei più usati.
 
-Ora che hai visto alcuni esempi di base su come lavorare con CSV in Python, ecco alcune informazioni più approfondite che possono esserti utili:
+## Vedi anche:
 
-- Puoi specificare un altro separatore di campi usando il parametro "delimiter" all'interno delle funzioni "reader" e "writer". Ad esempio, se il tuo CSV utilizza il punto e virgola come separatore invece della virgola, puoi impostarlo in questo modo: "csv.reader(file, delimiter=';')"
-
-- Per scrivere e leggere intere strutture di dati come dizionari invece di liste, puoi utilizzare le funzioni "DictReader" e "DictWriter" anziché "reader" e "writer".
-
-- Se incontri errori come "UnicodeDecodeError" quando si lavora con CSV, puoi provare ad utilizzare il parametro "encoding" per specificare il formato dei caratteri del file CSV, ad esempio "utf-8" o "latin-1".
-
-## Vedi anche
-
-- Documentazione Python CSV: https://docs.python.org/3/library/csv.html
-- Tutorial su CSV in Python: https://realpython.com/python-csv/
-- Esempi pratici di CSV: https://www.programiz.com/python-programming/examples/csv
+- [Documentazione ufficiale di Python per il modulo CSV](https://docs.python.org/3/library/csv.html)
+- [Guida introduttiva al lavoro con CSV in Python](https://www.programiz.com/python-programming/csv)

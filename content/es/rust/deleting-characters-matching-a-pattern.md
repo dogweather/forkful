@@ -10,58 +10,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué borrar caracteres que coincidan con un patrón en Rust?
+## ¿Qué y por qué?
+Eliminar caracteres que coinciden con un patrón es una tarea común en la programación. Consiste en eliminar de una cadena de texto los caracteres que cumplan con cierta condición, como por ejemplo, todos los números o todas las vocales. Los programadores realizan esta tarea para limpiar datos o para modificar una cadena de texto según ciertas reglas.
 
-Borrar caracteres que coincidan con un patrón es una tarea común en la programación. Puede ser útil para limpiar datos, validar entradas del usuario o manipular cadenas de caracteres. En Rust, hay varias formas de realizar esta tarea, dependiendo de las necesidades específicas del código.
-
-## Cómo hacerlo
-
-Para eliminar caracteres que coincidan con un patrón en Rust, se puede utilizar la función `replace()` de la librería estándar, que reemplaza todas las ocurrencias de un patrón en una cadena de caracteres por otro valor. Aquí hay un ejemplo de código que elimina todos los espacios en blanco de una cadena:
+## ¿Cómo hacerlo?
+En Rust, podemos usar el método `replace` de la clase `String` para eliminar caracteres que coinciden con un patrón. Veamos un ejemplo de cómo eliminar todos los números de una cadena de texto:
 
 ```Rust
-let string = String::from("Hola mundo!");
-let new_string = string.replace(" ", ""); 
+let texto = "H0l4 m6nd0";
+let nuevo_texto = texto.replace(|c: char| c.is_numeric(), "");
+println!("{}", nuevo_texto);
 
-println!("{}", new_string); // Output: "Holamundo!"
+// Output: Hl md
 ```
 
-En este ejemplo, se crea una variable `string` con una cadena de caracteres y se utiliza la función `replace()` para reemplazar todas las ocurrencias de un espacio en blanco por una cadena vacía, lo que tiene como resultado una nueva cadena sin espacios. 
-
-Otra forma de borrar caracteres que coincidan con un patrón en Rust es utilizando expresiones regulares a través de la librería `regex`. Las expresiones regulares son un lenguaje de patrones que se utilizan para buscar y manipular datos en cadenas de caracteres. Aquí hay un ejemplo de código que utiliza una expresión regular para eliminar todas las vocales de una cadena:
-
-```Rust
-use regex::Regex;
-
-let string = String::from("Hola mundo!");
-let re = Regex::new(r"[aeiou]").unwrap();
-let new_string = re.replace_all(&string, ""); 
-
-println!("{}", new_string); // Output: "Hl mnd!"
-```
-
-En este ejemplo, primero se importa la librería `regex` y se crea una instancia de `Regex` con un patrón que busca todas las vocales. Luego, se utiliza la función `replace_all()` para reemplazar todas las ocurrencias de dicho patrón por una cadena vacía, lo que resulta en una nueva cadena sin vocales.
+En este ejemplo, usamos el método `replace` pasándole como argumento una función que toma cada caracter de la cadena y devuelve `true` si es un número. En ese caso, ese caracter será reemplazado por una cadena vacía, eliminándolo así de la cadena original. El resultado será la cadena "Hl md", sin los números originales.
 
 ## Profundizando
+Este tipo de manipulación de cadenas es una tarea común en la programación, por lo que existen diferentes formas de lograrlo en distintos lenguajes. En Rust, además del método `replace`, también podemos utilizar las funciones `trim`, `trim_start` y `trim_end` para eliminar caracteres de los extremos de una cadena de texto, y la macro `format!` para crear una nueva cadena a partir de una cadena original con ciertas modificaciones.
 
-En Rust, también es posible utilizar el método `chars()` de una cadena de caracteres para iterar sobre cada uno de sus caracteres y eliminar aquellos que coincidan con un patrón determinado. Este enfoque puede ser útil si se requiere un control más preciso sobre los caracteres a eliminar. A continuación, se muestra un ejemplo de código que utiliza este método para borrar todas las letras mayúsculas de una cadena:
-
-```Rust
-let string = String::from("Hola Mundo!");
-let mut new_string = String::new();
-
-for c in string.chars() {
-    if c.is_lowercase() {
-        new_string.push(c);
-    }
-}
-
-println!("{}", new_string); // Output: "ola undo!"
-```
-
-En este ejemplo, primero se crea una cadena de caracteres y se declara una variable mutable `new_string`, que se utilizará para almacenar la nueva cadena sin las letras mayúsculas. Luego, se itera sobre cada uno de los caracteres de la cadena original utilizando el método `chars()` y se verifica si es una letra minúscula a través del método `is_lowercase()`. Si es así, se agrega el caracter a `new_string` utilizando la función `push()`. Al final, se imprime la nueva cadena resultante.
-
-## Ver también 
-
-- Documentación oficial de Rust: https://www.rust-lang.org/es
-- Librería estándar de Rust: https://doc.rust-lang.org/std/index.html
-- Documentación de la librería `regex`: https://docs.rs/regex/
+## Enlaces adicionales
+Si quieres conocer más acerca de cómo trabajar con cadenas de texto en Rust, puedes leer la documentación oficial aquí: https://doc.rust-lang.org/std/string/. Además, aquí hay un artículo interesante sobre cómo manipular cadenas de texto en Rust: https://dev.to/kmamiya/working-with-strings-in-rust-11ho.

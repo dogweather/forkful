@@ -10,71 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co to jest i dlaczego to robimy?
 
-Konkatenacja, czyli łączenie ciągów tekstowych, jest podstawową czynnością w wielu programach. Dzięki temu możesz tworzyć nowe wyrażenia, wyświetlać użytkownikom dynamiczne komunikaty i bardziej elastycznie manipulować tekstem. W artykule tym dowiecie się, jak to zrobić w języku Swift.
+Kiedy piszesz kod, może się zdarzyć, że chcesz połączyć wiele ciągów znaków w jeden. W języku Swift, nazywa się to "konkatenacją" i jest to powszechna praktyka w programowaniu. Używając konkatenacji, możesz łatwo i szybko łączyć różne elementy w jeden łańcuch tekstowy.
 
-## Jak to zrobić
-
-Konkatenacja w Swift jest bardzo prosta. Aby połączyć dwa lub więcej ciągów tekstowych, wystarczy użyć operatora plus (+).
+## Jak to zrobić:
 
 ```Swift
-let greet = "Cześć"
-let name = "Maria"
-let greeting = greet + " " + name
-
-print(greeting)
-// Output: Cześć Maria
+let imie = "Anna"
+let nazwisko = "Kowalska"
+let pelneImie = imie + " " + nazwisko
+print(pelneImie) // wyświetli "Anna Kowalska"
 ```
 
-Możesz także używać operatora plusa z przypisaniem (+=), aby dynamicznie dodawać kolejne fragmenty tekstu.
+Możesz również użyć metody `append` aby dodać ciąg znaków do już istniejącego łańcucha:
 
 ```Swift
-var quote = "Życie jest jak jazda rowerem, żeby utrzymać równowagę, musisz iść do przodu, dodając "
-let moreQuote = "świeżych wyzwań."
-
-// Concatenate with assignment
-quote += moreQuote
-
-print(quote)
-// Output: Życie jest jak jazda rowerem, żeby utrzymać równowagę, musisz iść do przodu, dodając świeżych wyzwań.
+var opis = "Mam "
+let wiek = 25
+opis.append(String(wiek))
+print(opis) // wyświetli "Mam 25"
 ```
 
-Warto również pamiętać, że w języku Swift ciągi tekstowe mogą być łączone bezpośrednio z innymi typami, takimi jak liczby czy znaki.
+## Zagłębienie:
 
-```Swift
-let num1 = 3
-let num2 = 5
-let result = "Suma wynosi: " + String(num1 + num2)
+W językach programowania takich jak C i Java, nie ma wbudowanej funkcjonalności konkatenacji i programiści muszą tworzyć specjalne funkcje, aby osiągnąć ten sam efekt. W Swift, konkatenacja jest wbudowana i może być używana bez dodatkowego kodu. Możesz również użyć operatora `+=` jako skróconej wersji metody `append`.
 
-print(result)
-// Output: Suma wynosi: 8
-```
+Inną opcją jest użycie struktury `Joiner`, która jest dostępna od Swift 4.2. Pozwala ona na bardziej wydajne łączenie wielu ciągów znaków, szczególnie w przypadku dużej ilości danych.
 
-## Głębszy zanurzenie
+Na koniec, warto zwrócić uwagę, że konkatenacja nie jest efektywna w przypadku dużej ilości danych i może powodować problemy wydajnościowe. W takich przypadkach lepiej użyć struktury `StringBuilder` lub `StringBuffer` w językach takich jak Java lub C#, która pozwala na dodawanie danych w sposób bardziej wydajny.
 
-W języku Swift operatory do konkatenacji są wydajne i łatwe w użyciu, jednak warto zwrócić uwagę na pewne szczegóły. Na przykład, jeśli chcesz łączyć duże ilości ciągów tekstowych, lepiej zastosować metodę `append(_:)` dla klasy `String` zamiast używać operatora plusa. Jest to spowodowane tym, że operator plusa tworzy nowy ciąg tekstowy za każdym razem, gdy jest używany, co może spowolnić wykonywanie programu.
+## Zobacz również:
 
-```Swift
-let bigText = "Tekst 1, "
-let text2 = "Tekst 2"
-let result = bigText + text2
-
-// This is not efficient - the whole string is copied each time
-for _ in 1...1000 {
-  result += text2
-}
-
-// This is more efficient as it appends the string without creating a new one each time
-for _ in 1...1000 {
-  result.append(text2)
-}
-```
-
-## Zobacz również
-
-Jeśli jesteś zainteresowany/a nauką języka Swift, zapoznaj się z naszymi innymi artykułami:
-
-- [Tworzenie pętli w języku Swift](https://url.com)
-- [Przetwarzanie danych typu JSON w Swift](https://url.com)
-- [Podstawy deklarowania i używania funkcji w Swift](https://url.com)
+- [Dokumentacja Swift: Konkatenacja i mutowanie łańcuchów znaków](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#ID284)
+- [Porównanie wydajności konkatenacji w różnych językach programowania](https://softwareengineering.stackexchange.com/questions/117848/why-is-string-concatenation-overhead-big)
+- [Dokumentacja Swift: Struktura Joiner](https://developer.apple.com/documentation/swift/joiner)

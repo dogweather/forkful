@@ -1,7 +1,7 @@
 ---
-title:                "htmlの解析"
-html_title:           "Python: htmlの解析"
-simple_title:         "htmlの解析"
+title:                "HTMLのパース"
+html_title:           "Python: HTMLのパース"
+simple_title:         "HTMLのパース"
 programming_language: "Python"
 category:             "Python"
 tag:                  "HTML and the Web"
@@ -10,51 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+何 & なぜ？
 
-HTMLをパースすることの理由は、ウェブスクレイピングにおいて重要なスキルだからです。HTMLは、Webサイト上の情報を取得するのに最も一般的な形式であり、Pythonを使用してデータを収集する際には、HTMLをパースする必要があります。
+HTML解析とは、ウェブページのHTMLコードを分析し、必要な情報を抽出するプロセスです。開発者たちはHTML解析を行うことで、ウェブスクレイピングやウェブデータマイニングなどのタスクを自動化することができます。
 
-## パースの方法
+やり方：
 
-HTMLをパースするには、Beautiful SoupというPythonのライブラリを使用します。まず、Beautiful Soupをインストールします。
-
-```
-pip install beautifulsoup4
-```
-
-次に、以下のコードを使用してWebサイトからHTMLを取得します。
+Pythonの標準ライブラリには、HTMLを解析するための便利なモジュールがあります。例えば、```html.parser```モジュールを使うことで、HTMLのタグや属性を簡単に取得できます。以下に、簡単なコード例を示します。
 
 ```
+# 必要なモジュールをインポートする
+from urllib.request import urlopen
 from bs4 import BeautifulSoup
-import requests
 
-page = requests.get("https://www.example.com")  # WebサイトのURLを入力
-soup = BeautifulSoup(page.text, "html.parser")
+# 解析したいウェブページのURLを指定する
+url = "https://www.example.com"
+
+# ウェブページのHTMLを取得し、BeautifulSoupオブジェクトに変換する
+html = urlopen(url).read()
+soup = BeautifulSoup(html, "html.parser")
+
+# h1タグのテキストを取得する
+title = soup.find("h1").text
+
+# テキストを出力する
+print(title)
 ```
 
-これにより、変数soupにHTMLのコードが格納されます。
-
-次に、データを取得したい要素を特定し、その要素のタグやクラスを指定してデータを抽出します。
-
+出力結果：
 ```
-# タグを指定してデータを取得する例
-title = soup.find("h1").text  # <h1>タグ内のテキストを取得
-
-# クラスを指定してデータを取得する例
-description = soup.find(class_="description").text  # classが"description"の要素内のテキストを取得
+Example Domain
 ```
 
-これにより、必要なデータを取得できます。
+ディープダイブ：
 
-## 詳細を見る
+HTML解析の歴史は、1990年代初頭のWorld Wide Webの登場とともに始まりました。当時、ウェブページは単純なテキストではなく、マークアップ言語であるHTMLで書かれていました。このため、ウェブページの情報を抽出するためには、HTML解析が必要でした。
 
-HTMLのパースについて、さらに詳しく学びたい場合は、以下のリソースを参考にしてください。
+HTML解析には、Python以外にも多くの言語で実装されています。例えば、Javaの「Jsoup」やJavaScriptの「Cheerio」などがあります。しかし、Pythonのライブラリが豊富で使いやすいため、開発者にとってはHTML解析にPythonを選ぶことが一般的です。
 
-- [Beautiful Soup公式ドキュメント](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
-- [PythonでHTMLをパースする方法](https://note.nkmk.me/python-beautiful-soup/)
-- [Pythonを使用してWebスクレイピングする方法](https://marcobonzanini.com/2015/03/02/mining-twitter-data-with-python-part-1/)
+参考リンク：
 
-## 関連リンク
-
-- [Python公式サイト](https://www.python.org/)
-- [Beautiful Soup GitHubリポジトリ](https://github.com/psf/requests)
+- Beautiful Soup documentation: https://www.crummy.com/software/BeautifulSoup/bs4/doc/
+- Jsoup: https://jsoup.org/
+- Cheerio: https://cheerio.js.org/

@@ -1,7 +1,7 @@
 ---
-title:                "Używanie wyrażeń regularnych"
-html_title:           "C++: Używanie wyrażeń regularnych"
-simple_title:         "Używanie wyrażeń regularnych"
+title:                "Używanie wyrażeń regularnych."
+html_title:           "C++: Używanie wyrażeń regularnych."
+simple_title:         "Używanie wyrażeń regularnych."
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -10,46 +10,68 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+# Co i dlaczego?
+Regularne wyrażenia to sposób na wyszukiwanie i manipulowanie tekstami. Programiści używają ich, aby skrócić i ułatwić działanie na tekście.
 
-Regular expressions to bardzo przydatne narzędzie w programowaniu C++. Pozwalają one na wyszukiwanie i manipulowanie tekstem w sposobu niezwykle precyzyjnym i skutecznym. Ich użycie jest niezbędne w wielu przypadkach, np. w walidacji danych wejściowych, przetwarzaniu plików tekstowych, czy tworzeniu wyrażeń logicznych.
+# Jak to zrobić:
+Przykłady kodów i wyniki działania przedstawione zostaną w bloku kodowym ```C++ ... ```
 
-## Jak to zrobić
-
-Aby zacząć używać regular expressions w C++, należy najpierw dołączyć bibliotekę <regex> do swojego kodu. Następnie, używając konstrukcji ```regex pattern("wzorzec");``` możemy utworzyć nasze pierwsze wyrażenie regularne. Aby wyszukać dopasowanie w danym tekście, używamy metody ```regex_search()```. Przykładowy kod wyglądać może następująco:
-
+## Przykład 1:
 ```
 #include <iostream>
 #include <regex>
 using namespace std;
 
-int main() {
-	// tworzenie wyrażenia regularnego
-	regex pattern("ala+[0-9]");
-
-	// tekst, w którym szukamy dopasowań
-	string tekst = "ala123456 trzyma kotka na końcu balustrady.";
-
-	// sprawdzenie, czy występuje dopasowanie
-	if (regex_search(tekst, pattern)){
-		cout << "Tekst zawiera dopasowanie.";
-	}
-	else{
-		cout << "Brak dopasowania.";
-	}
-
-	return 0;
+int main(){
+  string text = "Przykladowy tekst do znalezienia";
+  regex expression("tekst");
+  bool result = regex_search(text, expression);
+  cout << "Czy wyrazenie zostalo znalezione? " << result << endl;
+  return 0;
 }
 ```
+(OUTPUT: Czy wyrazenie zostalo znalezione? 1)
 
-Po uruchomieniu, powyższy kod wyświetli informację o występowaniu dopasowania w tekście.
+## Przykład 2:
+```
+#include <iostream>
+#include <regex>
+using namespace std;
 
-## Głębszy zanurzenie
+int main(){
+  string text = "Jakis inny przykladowy tekst";
+  regex expression("tekst");
+  string result = regex_replace(text, expression, "polecenie");
+  cout << result << endl;
+  return 0;
+}
+```
+(OUTPUT: Jakis inny przykladowy polecenie)
 
-Regular expressions to bardzo potężne narzędzie, ale wymagają one trochę wprawy w użyciu. Obecnie większość edytorów i IDE posiada funkcje automatycznego generowania wyrażeń regularnych, co znacznie ułatwia pracę. Ponadto, warto pamiętać o specjalnych znakach i składni używanych w regular expressions, takich jak np. "*", "?", czy "[]". Dzięki nim możemy precyzyjnie określić poszukiwane ciągi znaków. Regular expressions są również często wykorzystywane w wielu innych językach programowania, więc nauczenie się ich jest przydatne nie tylko w kontekście C++.
+## Przykład 3:
+```
+#include <iostream>
+#include <regex>
+using namespace std;
 
-## Zobacz także
+int main(){
+  string text = "123456789";
+  regex expression("^(\\d{3,4})(\\d{2})(\\d{2})$");
+  smatch matches;
+  regex_match(text, matches, expression);
+  cout << "Wynik:" << endl;
+  for (size_t i = 0; i < matches.size(); ++i) {
+  	cout << "[" << i << "]: " << matches[i] << endl;
+  }
+  return 0;
+}
+```
+(OUTPUT: Wynik: [0]: 123456789 [1]: 1234 [2]: 56 [3]: 89)
 
-- Dokumentacja biblioteki <regex> dla C++: https://en.cppreference.com/w/cpp/regex
-- Przykładowe wyrażenia regularne: https://regex101.com/
-- Wprowadzenie do regular expressions: https://www.regular-expressions.info/
+# Głębsza analiza:
+Pierwsze implementacje regularnych wyrażeń pojawiły się w Unixie w latach 70. Dzisiaj są powszechnie używane we wszystkich językach programowania. Alternatywami dla wyrażeń regularnych są funkcje napisane specjalnie dla manipulacji tekstem lub biblioteki dla konkretnych języków. W C++ wykorzystuje się bibliotekę <regex>, która wprowadziła nowe funkcje udostępniane przez klasę regular_expression.
+
+# Zobacz też:
+- [Regular expressions for beginners](https://www.regular-expressions.info/tutorial.html)
+- [C++ Reference: regex](https://en.cppreference.com/w/cpp/regex)
+- [Regex Tester](https://regex101.com/) (narzędzie online do testowania i weryfikacji wyrażeń regularnych)

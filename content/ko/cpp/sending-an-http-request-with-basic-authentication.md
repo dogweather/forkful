@@ -1,7 +1,7 @@
 ---
-title:                "기본 인증으로 http 요청 보내기"
-html_title:           "C++: 기본 인증으로 http 요청 보내기"
-simple_title:         "기본 인증으로 http 요청 보내기"
+title:                "기본 인증을 사용하여 http 요청 보내기"
+html_title:           "C++: 기본 인증을 사용하여 http 요청 보내기"
+simple_title:         "기본 인증을 사용하여 http 요청 보내기"
 programming_language: "C++"
 category:             "C++"
 tag:                  "HTML and the Web"
@@ -10,65 +10,75 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+# "무엇이며 왜 하는가?"
 
-***HTTP 요청**을 본문에 담고 있는 `Basic Authentication`으로 전송하는 이유는 무엇일까요? 아주 간단합니다. `Basic Authentication`은 *사용자 인증*을 위한 가장 기본적인 방법 중 하나입니다. 즉, 서버와 클라이언트 간의 안전한 커뮤니케이션을 보장하기 위함입니다.
+HTTP 요청을 보낼 때 일반 인증을 사용하는 것은 웹에서 보안을 유지하는 데 중요합니다. 일반 인증은 사용자가 아이디와 비밀번호를 입력하면 서버에 인증 정보를 제공해주는 방식으로, 이를 통해 안전하게 데이터를 주고받을 수 있습니다. 프로그래머들은 이를 사용하여 데이터의 보안과 무결성을 유지할 수 있습니다.
 
-## 하는 법
-
-아래의 예시 코드를 참고하여 `Basic Authentication`으로 `HTTP 요청`을 전송하는 방법을 알아보겠습니다.
+# "하는 방법:"
 
 ```C++
 #include <iostream>
 #include <curl/curl.h>
 
-// 예시 URL
-#define URL "https://www.example.com"
+using namespace std;
 
-// 사용자 이름과 비밀번호
-#define USERNAME "my_username"
-#define PASSWORD "my_password"
+// 인증 정보 구조체
+struct auth {
+  const char *username;
+  const char *password;
+};
+
+// HTTP 요청을 보내는 함수
+int send_http_request(const char *url, struct auth credentials) {
+
+  CURL *curl;
+  CURLcode res;
+
+  curl = curl_easy_init();
+  if (curl) {
+    // URL 설정
+    curl_easy_setopt(curl, CURLOPT_URL, url);
+    // 일반 인증 추가
+    curl_easy_setopt(curl, CURLOPT_USERNAME, credentials.username);
+    curl_easy_setopt(curl, CURLOPT_PASSWORD, credentials.password);
+    // 요청 보내기
+    res = curl_easy_perform(curl);
+    // 성공적으로 요청을 보냈는지 확인
+    if (res != CURLE_OK)
+      cerr << "HTTP 요청 실패: " << curl_easy_strerror(res) << endl;
+    // curl 핸들 닫기
+    curl_easy_cleanup(curl);
+    return 1;
+  }
+  else {
+    cerr << "curl 초기화 실패." << endl;
+    return 0;
+  }
+}
 
 int main() {
-  // libcurl 초기화
-  curl_global_init(CURL_GLOBAL_ALL);
 
-  // 새로운 curl 세션 생성
-  CURL *curl = curl_easy_init();
+  // 보낼 URL
+  const char *url = "https://www.example.com";
+  // 인증 정보 설정
+  struct auth credentials = {"username", "password"};
 
-  // URL 설정
-  curl_easy_setopt(curl, CURLOPT_URL, URL);
-
-  // Basic Authentication 설정
-  curl_easy_setopt(curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
-  curl_easy_setopt(curl, CURLOPT_USERNAME, USERNAME);
-  curl_easy_setopt(curl, CURLOPT_PASSWORD, PASSWORD);
-
-  // 요청 전송
-  CURLcode res = curl_easy_perform(curl);
-  if (res != CURLE_OK) {
-    std::cerr << "Request failed." << std::endl;
-  }
-
-  // curl 세션 종료
-  curl_easy_cleanup(curl);
-
-  // libcurl 해제
-  curl_global_cleanup();
-
+  // HTTP 요청 보내기
+  int result = send_http_request(url, credentials);
   return 0;
 }
 ```
 
-위의 코드를 실행하면 `URL`에 해당하는 웹사이트에 `Basic Authentication`을 포함한 `HTTP 요청`이 전송됩니다.
+## 더 깊이 파보기:
 
-## 깊게 들어가기
+HTTP 요청에 대해 자세히 알아보면, 클라이언트와 서버 간의 통신 방법으로 월드 와이드 웹에서 널리 사용됩니다. 일반 인증은 첫 번째 HTTP 인증 방식으로 1999년에 RFC 2617로 정의되었습니다. 그 후 개발자들은 추가적인 인증 방식을 만들었지만, 일반 인증은 여전히 널리 사용되고 있습니다.
 
-`Basic Authentication`은 `HTTP 요청`의 **Authorization** 헤더를 사용하여 인증 정보를 전송합니다. 즉, 클라이언트가 `Authorization` 헤더를 포함하여 서버에 요청을 보냄으로써 사용자 인증을 요청하고, 서버는 해당 사용자의 인증 정보를 확인한 후 요청을 처리하게 됩니다.
+대체로 다른 인증 방식으로는 다이제스트 인증이 있고, 보안을 더욱 강화한 베어러 인증도 있습니다. 하지만 많은 웹 서비스에서 일반 인증이 표준으로 사용되고 있으며, 애플리케이션에서 일반 인증을 사용하면 성능 저하가 적으므로 더 많이 쓰입니다.
 
-이는 보안 측면에서 안전하지 못한 방법이기 때문에 최근에는 `Basic Authentication` 대신 **OAuth**나 **Token-based Authentication** 등 보다 안전한 방법들이 많이 사용되고 있습니다. 하지만 여전히 몇몇 웹사이트들은 `Basic Authentication`을 사용하고 있기 때문에 알고 있으면 유용할 수 있습니다.
+C++에서 일반 인증을 구현하기 위해 다양한 라이브러리를 사용할 수 있지만, 가장 대표적인 것은 libcurl입니다. libcurl은 다양한 프로토콜을 지원하여 HTTP 요청 뿐만 아니라 다른 요청들도 쉽게 처리할 수 있도록 만들어져 있습니다.
 
-## 참조
+## 관련 소스보기:
 
-* [curl - Basic Authentication](https://curl.haxx.se/libcurl/c/CURLOPT_HTTPAUTH.html)
-* [HTTP Authentication](https://developer.mozilla.org/ko/docs/Web/HTTP/Authentication)
+- [libcurl 공식 페이지](https://curl.haxx.se/libcurl/)
+- [libcurl을 사용한 HTTP 요청 보내기 예제](https://curl.haxx.se/libcurl/c/example.html)
+- [HTTP 인증 방식의 RFC 문서](https://tools.ietf.org/html/rfc2617)

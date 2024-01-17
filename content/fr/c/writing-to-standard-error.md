@@ -1,7 +1,7 @@
 ---
-title:                "Écrire vers l'erreur standard"
-html_title:           "C: Écrire vers l'erreur standard"
-simple_title:         "Écrire vers l'erreur standard"
+title:                "Écrire vers la sortie d'erreur standard"
+html_title:           "C: Écrire vers la sortie d'erreur standard"
+simple_title:         "Écrire vers la sortie d'erreur standard"
 programming_language: "C"
 category:             "C"
 tag:                  "Files and I/O"
@@ -10,40 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Qu'est-ce que c'est et pourquoi le faire?
 
-L'écriture vers l'erreur standard (ou stderr) est un moyen pratique pour afficher des informations importantes sur l'exécution de votre programme sans interrompre la sortie standard (ou stdout). Cela peut être particulièrement utile lorsque vous exécutez votre programme en arrière-plan ou lorsqu'il émet des avertissements ou des erreurs.
+Ecrire vers la sortie standard error est un moyen pour les programmeurs de fournir des messages d'erreurs et des informations de débogage à l'utilisateur lors de l'exécution d'un programme. Cela permet de séparer les messages d'erreurs des messages de sortie normaux et ainsi, de simplifier la compréhension et la résolution des problèmes.
 
-## Comment faire
+## Comment faire:
 
-Pour écrire vers l'erreur standard en C, vous pouvez utiliser la fonction `fprintf()` en utilisant le flux `stderr` comme premier argument. Voici un exemple :
+Voici un exemple de code qui écrit un message d'erreur vers la sortie standard error en utilisant la fonction ```fprintf()```:
 
-```C
+```
 #include <stdio.h>
-  
-int main()
-{
-    int num = 5;
-    fprintf(stderr, "La valeur de num est %d\n", num);
+
+int main() {
+
+    fprintf(stderr, "Erreur: impossible d'ouvrir le fichier.");
     return 0;
 }
 ```
 
-La sortie de ce programme sera :
+Cela produirait la sortie suivante:
 
 ```
-La valeur de num est 5
+Erreur: impossible d'ouvrir le fichier.
 ```
 
-Comme vous pouvez le constater, l'information est affichée sur stderr plutôt que sur stdout.
+## Plongée en profondeur:
 
-## Plongée profonde
+Avant l'utilisation du standard error, les messages d'erreurs étaient souvent mélangés avec la sortie normale du programme, ce qui pouvait rendre la résolution des problèmes plus difficile. L'utilisation de la sortie standard error permet également aux développeurs de rediriger les messages d'erreurs vers un fichier pour un examen ultérieur.
 
-La fonction `fprintf()` est très similaire à la fonction `printf()`, sauf qu'elle prend un deuxième argument pour le flux sur lequel écrire. En utilisant `stderr`, vous vous assurez que votre message sera affiché sur l'erreur standard plutôt que sur la sortie standard.
+Il existe d'autres moyens d'afficher des messages d'erreurs, tels que l'utilisation de la fonction ```perror()``` ou l'émission de codes d'erreurs spécifiques avec la fonction ```exit()```. De plus, il est important de gérer correctement les erreurs pour garantir une bonne expérience utilisateur.
 
-Il est également important de noter que tout comme `printf()`, `fprintf()` prend en compte des spécificateurs de format pour afficher des valeurs de types différents. Par exemple, `%d` est utilisé pour afficher des nombres entiers, tandis que `%s` est utilisé pour afficher des chaînes de caractères.
+L'implémentation de l'écriture vers la sortie standard error peut varier selon le système d'exploitation utilisé.
 
-## Voir aussi
+## Voir aussi:
 
-- [Documentation sur la fonction fprintf() en C](https://www.cplusplus.com/reference/cstdio/fprintf/)
-- [Explication sur les spécificateurs de format en C](https://www.cprogramming.com/tutorial/printf-format-strings.html)
+- [Documentation de la fonction fprintf() en C](https://www.tutorialspoint.com/c_standard_library/c_function_fprintf.htm)
+- [Guide pour la gestion des erreurs en C](https://www.guru99.com/c-error-handling.html)
+- [Plus d'informations sur la redirection de la sortie en C](https://www.tldp.org/LDP/abs/html/io-redirection.html)

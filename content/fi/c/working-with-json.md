@@ -1,7 +1,7 @@
 ---
-title:                "Työskentele jsonin kanssa"
-html_title:           "C: Työskentele jsonin kanssa"
-simple_title:         "Työskentele jsonin kanssa"
+title:                "Työskentely jsonin kanssa"
+html_title:           "C: Työskentely jsonin kanssa"
+simple_title:         "Työskentely jsonin kanssa"
 programming_language: "C"
 category:             "C"
 tag:                  "Data Formats and Serialization"
@@ -10,88 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+# Mitä & Miksi?
 
-JSON (JavaScript Object Notation) on yksi yleisimmistä tietojen siirtomuodoista ohjelmoinnissa. Se on erittäin kätevä tapa siirtää ja tallentaa erilaisia tietotyyppejä, kuten numeroita, merkkijonoja ja objekteja, ja sen käyttö on yleistynyt erityisesti web-sovelluksissa. Tässä artikkelissa käymme läpi, kuinka voit työskennellä JSONin kanssa C-ohjelmointikielellä ja kerromme, miksi se kannattaa.
+JSON (JavaScript Object Notation) on yksinkertainen ja kevyt tapa tallentaa ja jakaa tietoa eri sovellusten välillä. Se on tekstimuotoinen, mikä tekee siitä helpon lukea ja kirjoittaa. JSONia käytetään usein verkkosovelluksissa tiedon siirtämiseen, kuten API-kutsuissa.
 
-## Kuinka
+## Miten:
 
-Alla olevassa esimerkissä näytämme, kuinka voit luoda JSON-muotoisen rakenteen C-koodilla ja tulostaa sen konsoliin käyttämällä `printf()`-funktiota:
-
-```C
-#include <stdio.h>
-#include <stdlib.h>
-#include <json-c/json.h>
-
-int main(){
-  //luo JSON-muotoinen objecti
-  json_object *jobj = json_object_new_object();
-  //lisää numeroarvo objectiin
-  json_object_object_add(jobj, "luku", json_object_new_int(42));
-  //lisää merkkijono objectiin
-  json_object_object_add(jobj, "teksti", json_object_new_string("Hei maailma!"));
-  //tulosta objecti konsoliin
-  printf("JSON-tulostus: %s\n", json_object_to_json_string(jobj));
-  return 0;
-}
-```
-
-Koodin suorituksen jälkeen tulostuu seuraava tulos:
-
-```
-JSON-tulostus: {"luku":42, "teksti":"Hei maailma!"}
-```
-
-Voit myös lukea JSON-tiedostoja ja käsitellä niiden sisältöä C-koodilla käyttäen `json-c` -kirjastoa. Alla olevassa esimerkissä luemme tiedostosta JSON-muotoisen datan ja tulostamme sen konsoliin:
+Hyödyllinen tapa käsitellä JSONia C-ohjelmoinnissa on käyttää JSON-C -kirjastoa. Kirjasto tarjoaa joukon toimintoja, joilla voit muuntaa JSON-muotoista dataa C:n sisäiseen tietorakenteeseen ja takaisin. Alla on yksinkertainen esimerkki JSON-tiedoston lukemisesta ja tulostamisesta C-koodilla.
 
 ```C
 #include <stdio.h>
-#include <stdlib.h>
 #include <json-c/json.h>
 
-int main(){
-  //määritä tiedostonimi
-  char *filename = "tiedosto.json";
-  //avataan tiedosto lukua varten
-  FILE *file = fopen(filename, "r");
-  //lue tiedostosta JSON-data
-  char *json_data = (char*) malloc(sizeof(char) * 100);
-  fread(json_data, 1, 100, file);
-  //muunna data JSON-objectiksi
-  json_object *jobj = json_tokener_parse(json_data);
-  //tulosta objectin sisältö konsoliin
-  printf("JSON-tulostus: %s\n", json_object_to_json_string(jobj));
-  return 0;
+int main()
+{
+    struct json_object *myobj;
+    struct json_object *field;
+    myobj = json_object_from_file("data.json"); // avaa JSON-tiedosto
+    field = json_object_object_get(myobj, "name"); // muuta "nimi" -kenttä C:n tietotyyppiin
+    printf("Tervetuloa %s!\n", json_object_get_string(field)); // tulosta "nimi" -kentän arvo
+    json_object_put(myobj); // vapauta muisti
+    return 0;
 }
 ```
 
-Jos tiedoston sisältö on esimerkiksi seuraava:
+Tulos tulostetaan seuraavasti, kun tiedoston JSON-tiedosto sisältää kentän "name" arvon "Matti":
 
 ```
-{"nimi": "Matti", "ika": 30}
+Tervetuloa Matti!
 ```
 
-Tulostuu seuraava:
+## Syvemmälle:
 
-```
-JSON-tulostus: {"nimi": "Matti", "ika": 30}
-```
+JSON kehitettiin alunperin käytettäväksi JavaScript-sovelluksissa, mutta nykyään sitä käytetään monissa muissakin ohjelmointikielissä, kuten C:ssä. On myös olemassa muita vaihtoehtoisia kirjastoja, kuten yleisesti käytetty cJSON.
 
-## Syväsukellus
+JSON-muoto on helposti luettavissa ja muokattavissa ihmisille, ja se mahdollistaa monimutkaisenkin datan tallentamisen yksinkertaisella rakenteella. JSON-tiedosto sisältää objekteja, joilla on avain-arvo -pareja. Esimerkiksi "name": "Matti" tarkoittaa, että objektilla on avain "name" ja sen arvo on "Matti".
 
-JSONin käyttö C-koodissa on mahdollista käyttämällä `json-c` -kirjastoa, joka sisältää monia hyödyllisiä funktioita JSON-datan käsittelyyn. Kirjastoon pääset tutustumaan tarkemmin esimerkiksi täältä: [https://github.com/json-c/json-c](https://github.com/json-c/json-c).
+## Katso myös:
 
-Tärkein asia, joka kannattaa huomioida käytettäessä JSONia C-koodissa, on varmistaa, että JSON-datan sisältö vastaa odotettua. Esimerkiksi jos odotamme JSON-datan sisältävän tiettyjä avaimia ja arvoja, niitä kannattaa tarkastella käyttäen `json_object_object_get()` -funktiota.
-
-```
-json_object *arvo = json_object_object_get(jobj, "avain");
-if(arvo == NULL) {
-  //arvoa ei löytynyt
-} else {
-  //arvo löytyi
-}
-```
-
-## Katso myös
-
--
+- [JSON-C](https://github.com/json-c/json-c) - Kirjasto JSONin käsittelyyn C-ohjelmoinnissa.
+- [cJSON](https://github.com/DaveGamble/cJSON) - Yleinen JSON-kirjasto C-ohjelmointiin.
+- [JSON.org](https://www.json.org) - JSON:in virallinen verkkosivusto.

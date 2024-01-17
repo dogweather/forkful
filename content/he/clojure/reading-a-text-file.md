@@ -10,46 +10,17 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-עבור לעברית למטה
+## מה ולמה?
+קריאת קובץ טקסט היא פעולה בה תוכנית המחשב קוראת ומציגה את התוכן של קובץ טקסט במבנה מוכר כמו טקסט פשוט או תווים. תכנתנים מעדיפים לקרוא קבצי טקסט, כי הם מכילים מידע יותר מאשר קבצי קוד או תמונות.
 
+## כיצד ל:
+ ```Clojure (with-open [file (-> "sample.txt" io/resource io/file)] (println (slurp file)))``` 
+ראשית, נשתמש בפונקציה שמכילה את הקובץ הרצוי כמשתנה בשם "file". לאחר מכן, נשתמש בפונקציה "slurp" כדי לקרוא את הקובץ ונציג את התוכן שלו בעזרת הפונקציה "println". על ידי השתמשות בבלוק הקוד הנתון, תוכלו לקרוא קבצי טקסט מכל מקום במחשב שלכם.
 
+## חקירה מעמיקה:
+קריאת קבצי טקסט נבראת עם תחילת המחשבות, כאשר מדובר במחשבים ראשונים בשנות החמישים והשישים של המאה הקודמת. לאורך השנים, תוכנתנים בנו שפות תכנות המאפשרות קריאת קבצי טקסט בצורה מתאימה יותר. כיום, קריאת קובץ טקסט נחשבת לפעולה נפוצה וקלה לבצע.
 
-## למה
+ עוד אפשרויות לקרוא קבצי טקסט במחשב כוללות השתמשות בחבילות חיצוניות והשתמשות בתכניות כמו Notepad או TextEdit.
 
-למה לקרוא קובץ טקסט? בעזרת לועזית, קריאת קבצים טקסט מספקת דרך נוחה לקריאה וכתיבה של נתונים מהוקשים על ידי משתמשים אחרים או מכוניות. זה מאפשר יישומי תוכנה לקרוא ולהתכתב עם מסמכי טקסט, ולהמליץ על סעיפים לאחת הסיבות הבסיסיות של Clojure.
-
-## איך לעשות
-
-כעת כשאנחנו יודעים למה נרצה לקרוא קובץ טקסט, בואו נלמד איך לעשות זאת בעזרת Clojure. ראשית, נצטרך לטעון את הספריה של "java.io", כך שנוכל לעבוד עם קבצים. אז, באמצעות הפונקציה "with-open" נפתח את הקובץ וניתן לקרוא את התוכן שלו באמצעות הפונקציה "slurp". כדי לקרוא קובץ מסוים, נשתמש בגדר נתיב הקובץ ונפריד בין כל סעיף על ידי השתמשות בפונקציה "split-lines". הנה משלם קוד לדוגמה:
-
-```Clojure
-(ns my-clojure-project.core
-  (:require [java.io :as io])) ;Improting the "java.io" library
-(defn read-file [file-path]
-  ; Opening the file and reading its content
-  (with-open [file (io/reader file-path)]
-    (slurp file))) ; Returning the content of the file
-(defn split-file [file-content]
-  ; Splitting the file into separate lines
-  (clojure.string/split-lines file-content))
-```
-
-הנה כיצד נראים התוצאות כאשר נקרא ונפצה את התוכן של קובץ טקסט:
-
-```Clojure
-(my-clojure-project.core/read-file "my-text-file.txt")
-;; Output:
-; "Hello, this is my text file.
-; I hope you find it useful!
-; Thanks for reading."
-
-(my-clojure-project.core/split-file (my-clojure-project.core/read-file "my-text-file.txt"))
-;; Output:
-; ["Hello, this is my text file."
-; "I hope you find it useful!"
-; "Thanks for reading."]
-```
-
-## העומק הראשון
-
-אם אתה מתעניין במילות מפתח, שדרוגים או הרחבות ואתה מרגיש כאילו המידע המסופק למעלה אינו די מפרט, ישנם כ
+## ראו גם:
+למידע נוסף על קריאת קבצי טקסט בשפת Clojure, אפשר לקרוא את המסמך הרשמי של Clojure (https://clojure.org/), אשר כולל תיעוד נרחב על הפעולה הנ"ל ועוד טכניקות גבוהות יותר.

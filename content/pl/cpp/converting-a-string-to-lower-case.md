@@ -1,7 +1,7 @@
 ---
-title:                "Zamiana ciągu znaków na małe litery"
-html_title:           "C++: Zamiana ciągu znaków na małe litery"
-simple_title:         "Zamiana ciągu znaków na małe litery"
+title:                "Konwertowanie ciągu znaków na małe litery"
+html_title:           "C++: Konwertowanie ciągu znaków na małe litery"
+simple_title:         "Konwertowanie ciągu znaków na małe litery"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -10,50 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+Co to jest konwersja ciągu znaków na małe litery i dlaczego programiści tego potrzebują?
 
-Konwersja na małe litery jest powszechnie używaną operacją w programowaniu. W języku C++, zmiana wszystkich znaków w ciągu znaków na ich odpowiedniki w postaci małych liter może być niezbędna do łatwego przetwarzania i porównywania danych.
+Konwersja ciągu znaków na małe litery jest procesem zmiany wszystkich liter w ciągu na ich niskie odpowiedniki. Jest to przydatne w programowaniu, ponieważ pozwala na porównywanie i przetwarzanie ciągów znaków w sposób bardziej jednolity. Na przykład, jeśli mamy ciąg "PrzyKłAdoWy CiĄg", to po konwersji na małe litery otrzymamy "przykładowy ciąg", co umożliwi łatwiejsze porównywanie lub przetwarzanie.
 
-## Jak to zrobić
-
-Aby zmienić ciąg znaków na małe litery w C++, należy użyć funkcji `tolower()` z biblioteki `<cctype>`. Przykładowy kod wyglądałby następująco:
+Jak to zrobić:
 
 ```C++
 #include <iostream>
-#include <cctype>
+#include <string>
+#include <locale>
 
-int main() {
-    std::string s = "PRZYKŁADOWY TEKST";
-    for (char& c : s) {
-        c = std::tolower(c); // konwersja każdej litery na małą
-    }
-    std::cout << s; // wyświetlenie wyniku: "przykładowy tekst"
+using namespace std;
+
+int main()
+{
+    string s = "PrzyKłAdoWy CiĄg";
+
+    //konwersja ciągu na małe litery
+    std::locale loc;
+    for (char& c : s)
+        c = std::tolower(c,loc);
+
+    cout << s; //wyświetli "przykładowy ciąg"
+
     return 0;
 }
 ```
 
-Można również użyć funkcji `transform()` z biblioteki `<algorithm>` w połączeniu z funkcją `tolower()`:
+Pogłębione spojrzenie:
 
-```C++
-#include <iostream>
-#include <algorithm>
-#include <cctype>
+Konwersja ciągu na małe litery jest przydatna w programowaniu, ponieważ pozwala na jednolite traktowanie i porównywanie ciągów znaków niezależnie od tego, czy zawierają one litery wielkie czy małe. Jest to szczególnie ważne przy porównywaniu czy sprawdzaniu równości ciągów, ponieważ zestawienie "ABC" z "abc" może dać nieprawidłowy wynik, jeśli nie są one w tej samej wielkości liter.
 
-int main() {
-    std::string s = "PRZYKŁADOWY TEKST";
-    std::transform(s.begin(), s.end(), s.begin(),
-                   [](unsigned char c){ return std::tolower(c); });
-    std::cout << s; // wyświetlenie wyniku: "przykładowy tekst"
-    return 0;
-}
-```
+Alternatywnym sposobem na konwersję ciągu na małe litery jest użycie funkcji transform() z biblioteki <algorithm>. Można także użyć funkcji toupper() do konwersji na wielkie litery.
 
-## Głębsze zagłębienie
+Implementacja konwersji na małe litery jest zależna od sposobu obsługi znaków przez system operacyjny, ponieważ niektóre języki mają różne znaki diakrytyczne, które mogą zostać źle przetłumaczone przez prosty algorytm zamiany liter na ich niskie odpowiedniki.
 
-Ciągi znaków w języku C++ są przechowywane jako tablice typu `char`, dlatego używając funkcji `tolower()` konwertujemy pojedyncze znaki. Dzięki temu możemy uniknąć błędów, które mogłyby się pojawić przy konwersji całego ciągu naraz, gdyż znaki nie są przechowywane w pamięci w kolejności odpowiadającej wyświetleniu ich na ekranie. Dodatkowo, funkcja `tolower()` może zostać wywołana również dla pojedynczych znaków typu `wint_t`, umożliwiając konwersję znaków spoza standardowego zakresu.
+Zobacz także:
 
-## Zobacz także
-
-- [Referencja funkcji `tolower()` w języku C++](https://www.cplusplus.com/reference/cctype/tolower/)
-- [Przykłady użycia funkcji `transform()` w języku C++](https://en.cppreference.com/w/cpp/algorithm/transform)
-- [Wyjaśnienie różnicy między typami `char` i `wint_t` w języku C++](https://stackoverflow.com/questions/19336433/is-wint-t-the-same-as-char-in-c)
+- Przykładowy kod konwersji ciągu na małe litery: https://www.includehelp.com/cpp-programs/c-string-to-lower-case.aspx
+- Dokumentacja funkcji tolower() z biblioteki <cctype>: http://www.cplusplus.com/reference/cctype/tolower/

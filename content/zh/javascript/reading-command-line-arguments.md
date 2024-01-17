@@ -10,52 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-为什么： 为什么要阅读命令行参数 - 最多2句话
---------------------------------------
-命令行参数是一种非常有用的技术，它允许我们在运行程序时传递一些额外的信息。这样，我们可以在不改变程序本身的情况下，根据不同的需求来调整程序的行为。 如果你想要探索这个技术，就让我们一起来看看吧！
+## 什么是命令行参数？为什么程序员会使用它？
 
-### 如何实现
+命令行参数是通过命令行（终端或命令提示符）向程序传递信息的一种方式。程序员会使用命令行参数来向程序提供输入，从而控制和定制程序的行为。它也可以让程序在每次运行时都接收不同的输入，方便程序员测试和调试代码。
 
-在Javascript中，我们可以使用process对象来读取命令行参数。我们可以通过process.argv来获取所有的参数，它是一个字符串数组。第一个参数是node的路径，第二个参数是我们执行的文件的路径。之后的元素都是我们传递的参数。
+## 如何实现：
 
-```Javascript
-// 获取所有命令行参数
-const args = process.argv;
-
-// 获取特定位置的参数
-const paramOne = args[2];
-const paramTwo = args[3];
-
-console.log(paramOne, paramTwo);
+```
+// 命令行参数被保存在process.argv数组中，第一个元素是Node.js的路径，第二个元素是当前执行的脚本文件的路径
+// 接下来的元素是命令行传递的参数
+for (let i = 2; i < process.argv.length; i++) {
+  console.log(process.argv[i]) // 输出每个参数
+}
 ```
 
-假设我们执行 `node app.js hello world`， 那么控制台会打印出 `hello world`。如果我们传递更多的参数，它们也会被打印出来。
-
-### 深入了解
-
-除了使用process.argv来读取命令行参数，还有一些工具可以帮助我们处理更复杂的情况。比如，第三方库yargs可以帮助我们解析命令行参数并将其转换为对象，方便我们使用。
-
-```Javascript
-// 使用yargs来解析命令行参数
-const argv = require('yargs').argv;
-
-// 使用 -- 前缀来传递参数
-// 如 --name 和 --age
-console.log(argv.name, argv.age);
+```
+// 假设运行脚本时传递了两个参数：node script.js hello world
+// output: hello
+// output: world
 ```
 
-但要注意，这些工具都是基于process.argv来实现的。因此，了解如何在原生的Javascript中读取命令行参数还是很重要的。
+## 深入了解：
 
-### 查看更多
+1. 历史背景：在早期的计算机系统中，用户只能通过命令行来与计算机交互，因此命令行参数是必不可少的。随着图形化用户界面的发展，命令行的重要性有所下降，但命令行参数仍被广泛使用。
 
-如果你想要深入学习命令行参数的使用，可以查看以下文档和教程：
+2. 其他方法：除了命令行参数，程序员还可以使用环境变量、配置文件等来传递输入。不同的方法具有不同的优缺点，程序员可以根据自己的需求选择最合适的方式。
 
-- [Node.js process.argv 文档](https://nodejs.org/api/process.html#process_process_argv)
-- [yargs 官方文档](https://www.npmjs.com/package/yargs)
-- [The Net Ninja 的命令行参数教程 (视频)](https://www.youtube.com/watch?v=XdIWmGFAW5w)
+3. 实现细节：更复杂的程序可能会使用第三方库来解析命令行参数，这可以让程序员更轻松地处理各种场景。同时，要注意处理用户输入时的异常情况，比如参数数量不符合预期。
 
-### 参考链接：
+## 相关资源：
 
-- [Node.js process.argv documentation](https://nodejs.org/api/process.html#process_process_argv)
-- [Official yargs documentation](https://www.npmjs.com/package/yargs)
-- [The Net Ninja's command line arguments tutorial (video)](https://www.youtube.com/watch?v=XdIWmGFAW5w)
+- [Node.js官方文档 - 读取命令行参数](https://nodejs.org/api/process.html#process_process_argv)
+- [CMDLine – JavaScript命令行解析模块](https://www.npmjs.com/package/cmdline)

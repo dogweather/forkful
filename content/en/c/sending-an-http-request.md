@@ -10,91 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-Sending HTTP requests is an essential part of developing web applications and services. It allows communication between the client and server, enabling the exchange of data and resources. Understanding how to send HTTP requests is crucial for any programmer working in the web development field.
+Sending an HTTP request is a way for a program to communicate with a server over the internet. This is commonly used in web development to retrieve data or trigger specific actions on a server. Programmers use HTTP requests to access and manipulate data from remote servers, making it a vital tool for creating dynamic web applications.
 
-## How To
+## How to:
 
-Sending an HTTP request in C programming language involves using the sockets library. Here is a simple example of sending a GET request to a website:
+To send an HTTP request in C, we first need to include the `curl.h` library. This will provide us with the necessary functions to make HTTP requests. Let's take a look at an example code:
 
-```C
-#include <stdio.h> 
-#include <sys/socket.h> 
-#include <arpa/inet.h> 
-#include <string.h> 
+```
+#include <stdio.h>
+#include <curl/curl.h>
 
-int main() 
-{ 
-    int socket_fd, valread; 
-    struct sockaddr_in serv_addr; 
-
-    char *request = "GET / HTTP/1.1\r\nHost: www.example.com\r\n\r\n"; 
-    char buffer[1024] = {0}; 
-    
-    //create socket
-    socket_fd = socket(AF_INET, SOCK_STREAM, 0);
-    if (socket_fd < 0) 
-    { 
-        printf("Socket creation error\n"); 
-        return -1; 
-    } 
-
-    //set server address
-    serv_addr.sin_family = AF_INET; 
-    serv_addr.sin_port = htons(80);
-    if(inet_pton(AF_INET, "93.184.216.34", &serv_addr.sin_addr)<=0)  
-    { 
-        printf("Invalid address/ Address not supported\n"); 
-        return -1; 
-    } 
-
-    //connect to server
-    if (connect(socket_fd, (struct sockaddr *)&serv_addr, sizeof(serv_addr)) < 0) 
-    { 
-        printf("Connection failed\n"); 
-        return -1; 
-    } 
-
-    //send request
-    send(socket_fd, request, strlen(request), 0); 
-    printf("Request sent\n"); 
-    
-    //receive response
-    valread = read(socket_fd, buffer, 1024); 
-    printf("%s\n",buffer ); 
-    return 0; 
-} 
+int main(void)
+{
+  CURL *curl;
+  CURLcode res;
+ 
+  curl = curl_easy_init();
+  if(curl) {
+    curl_easy_setopt(curl, CURLOPT_URL, "https://www.example.com");
+    res = curl_easy_perform(curl); 
+    if(res != CURLE_OK)
+      fprintf(stderr, "curl_easy_perform() failed: %s\n",
+              curl_easy_strerror(res));
+    curl_easy_cleanup(curl);
+  }
+  return 0;
+}
 ```
 
-Sample output:
-```
-Request sent
-HTTP/1.1 200 OK
-Accept-Ranges: bytes
-Cache-Control: max-age=604800
-Content-Type: text/html
-Date: Tue, 30 Mar 2021 00:00:00 GMT
-Etag: "3147526947"
-Expires: Tue, 06 Apr 2021 00:00:00 GMT
-Last-Modified: Thu, 17 Oct 2019 07:18:26 GMT
-Server: ECS (dcb/7F81)
-Vary: Accept-Encoding
-X-Cache: HIT
-Content-Length: 1256
-
-<!doctype html>
-<html>
-<head>
-... (HTML code of the website)
-```
+In this example, we are using the `curl_easy_init()` function to initialize a new curl session. Then, we use the `curl_easy_setopt()` function to set the URL of the server we want to make the request to. Finally, we use `curl_easy_perform()` to execute the request. The result of the request will be stored in the `res` variable. 
 
 ## Deep Dive
 
-There are various methods of sending HTTP requests in C, such as using the cURL library or directly implementing the HTTP protocol. The example above uses the sockets library, which provides low-level access to network communication. It is essential to handle errors properly when sending HTTP requests and to ensure the proper formatting of the request headers.
+Sending HTTP requests in C has been made possible by the `libcurl` library. This library was first released in 1997 and is still actively maintained. It provides a high-level API for performing various internet protocols, including HTTP. 
+
+Alternatively, there are other ways to send HTTP requests in C, such as using the `libmicrohttpd` library or implementing the HTTP protocol from scratch. However, `libcurl` is the most widely used and recommended option for sending HTTP requests in C.
+
+Behind the scenes, the `libcurl` library uses the `libmbedcrypto` and `libzlib` libraries for encryption and compression, respectively. This ensures the security and efficiency of the HTTP requests.
 
 ## See Also
 
-- [cURL Library](https://curl.haxx.se/libcurl/)
-- [HTTP Protocol Documentation](https://www.w3.org/Protocols/HTTP/1.1/rfc2616bis/draft-lafon-rfc2616bis-03.html)
-- [Sockets Programming in C](https://www.geeksforgeeks.org/socket-programming-cc/)
+To learn more about sending HTTP requests in C, check out the official `libcurl` documentation: https://curl.se/libcurl/
+To explore other alternatives for sending HTTP requests, you can refer to the `libmicrohttpd` documentation: https://www.gnu.org/software/libmicrohttpd/

@@ -1,7 +1,7 @@
 ---
-title:                "Sända en http-förfrågan"
-html_title:           "C#: Sända en http-förfrågan"
-simple_title:         "Sända en http-förfrågan"
+title:                "Sända en http-begäran"
+html_title:           "C#: Sända en http-begäran"
+simple_title:         "Sända en http-begäran"
 programming_language: "C#"
 category:             "C#"
 tag:                  "HTML and the Web"
@@ -10,38 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad och Varför?
+Att skicka en HTTP-begäran (HTTP request) är en viktig del av programskapande för att interagera med webbserverar och få tillgång till webbsidor, data och andra resurser. Det är ett sätt för programmerare att kommunicera med andra datorer på internet och få svar tillbaka.
 
-Att skicka en HTTP-begäran kan verka som en grundläggande uppgift, men det är en viktig del av nätverksprogrammering. Genom att förstå hur man skickar en HTTP-begäran kan du integrera dina applikationer med externa API:er och webbtjänster.
-
-## Hur man gör det
-
-```C#
-// Skapa en HTTP-begäran
-var request = (HttpWebRequest)WebRequest.Create("http://www.example.com");
-
-// Välj önskat HTTP-verb
-request.Method = "GET";
-
-// Skicka förfrågan och ta emot svar
-var response = (HttpWebResponse)request.GetResponse();
-
-// Läs svarsinnehållet
-using (var streamReader = new StreamReader(response.GetResponseStream()))
+## Hur man gör:
+```
+C# public static async Task Main(string[] args)
 {
-    var result = streamReader.ReadToEnd();
-}
+    // Skapa en HttpClient-instans för att skicka HTTP-begäran
+    HttpClient client = new HttpClient();
 
-// Stäng anslutningen
-response.Close();
+    // Ange den webbadress som begäran ska skickas till
+    string address = "https://www.example.com";
+
+    // Skicka begäran och vänta på svar
+    HttpResponseMessage response = await client.GetAsync(address);
+
+    // Hämta svaret som en sträng
+    string result = await response.Content.ReadAsStringAsync();
+
+    // Skriv ut resultatet
+    Console.WriteLine(result);
+
+    // Kom ihåg att stänga HTTP-klienten för att frigöra resurser
+    client.Dispose();
+}
 ```
 
-## Djupdykning
+Output:
+```
+<html>
+<head>
+<title>Example Domain</title>
+</head>
+<body>
+<h1>Example Domain</h1>
+<p>This domain is for use in illustrative examples in documents. 
+You may use this
+domain in literature without prior coordination or asking for permission.</p>
+<p><a href="https://www.iana.org/domains/example">More information...</a></p>
+</body>
+</html>
+```
 
-När du skickar en HTTP-begäran finns det flera aspekter som är viktiga att ta hänsyn till. Du behöver ange rätt HTTP-verb, välja rätt kodning för data och hantera eventuella fel eller avbrott i förfrågan. Det finns även olika typer av begäran som kan skickas, till exempel GET, POST, PUT och DELETE. Genom att förstå dessa detaljer kan du skriva mer robust och effektiv kod för att kommunicera över nätverket.
+## Deep Dive:
+HTTP-begäran (Hypertext Transfer Protocol Request) har funnits sedan 1991 och är en del av det grundläggande protokollsystemet för internet. Det finns många olika metoder för att skapa och skicka HTTP-begäran, men i C# använder man oftast System.Net.Http.HttpClient-klassen för att hantera kommunikationen. Det finns också alternativ som t.ex. RestSharp eller WebClient som kan användas för att göra HTTP-begäran enklare. Implementationen av att skicka en HTTP-begäran kan vara komplex och det är viktigt att rätt åtgärder vidtas för att säkerställa en säker och pålitlig kommunikation med servern.
 
-## Se även
-
-- [HTTP-begäran i C#](https://docs.microsoft.com/sv-se/dotnet/api/system.net.httpwebrequest?view=netcore-3.1)
-- [Skillnad mellan GET och POST i HTTP](https://www.w3schools.com/tags/ref_httpmethods.asp)
-- [Förståelse för HTTP-statuskoder](https://developer.mozilla.org/sv-SE/docs/Web/HTTP/Status#Vanliga_statuskoder)
+## See Also:
+Läs mer om HTTP-begäran:
+- [HTTP-begäran på MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods)
+- [HTTP-begäran på W3 Schools](https://www.w3schools.com/tags/ref_httpmethods.asp)
+- [HTTP-begäran i C# på C# Corner](https://www.c-sharpcorner.com/article/httpclient-in-C-Sharp/)

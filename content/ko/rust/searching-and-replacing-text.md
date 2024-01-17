@@ -1,7 +1,7 @@
 ---
-title:                "텍스트 검색 및 치환하기"
-html_title:           "Rust: 텍스트 검색 및 치환하기"
-simple_title:         "텍스트 검색 및 치환하기"
+title:                "텍스트 검색 및 대체하기"
+html_title:           "Rust: 텍스트 검색 및 대체하기"
+simple_title:         "텍스트 검색 및 대체하기"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -10,30 +10,15 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
-명확하고 간결한 코드 작성은 모든 프로그래머에게 중요합니다. 그리고 때로는 우리는 텍스트 내에서 특정 패턴을 찾아 다른 패턴으로 바꿔야 할 때가 있습니다. 이를테면, 파일 이름의 형식을 통일하거나 일괄적으로 단어를 변경하는 등의 상황에서 우리는 검색 및 대체 기능이 필요합니다.
+## 무엇 & 왜?
+문자열을 검색하고 바꾸는 것은 프로그래머들이 자주 사용하는 작업입니다. 이것은 특정 문자열을 찾아낸 후 원하는 새 문자열로 바꾸는 것을 말합니다. 이는 작업의 효율성을 높이고 오류를 수정하기 위해 사용됩니다.
 
-## 하우 투
-```Rust
-use std::fs::File;
-use std::io::prelude::*;
+## 방법:
+Rust에서 문자열을 검색하고 바꾸는 방법은 간단합니다. 가장 일반적인 방법은 문자열에서 원하는 패턴을 찾아내는 정규표현식을 사용하는 것입니다. 예를 들어, ```Rust let re = Regex::new("rust"); ```을 사용하여 "Hello, I love Rust!"라는 문자열에서 "Rust"라는 단어를 검색할 수 있습니다. 그런 다음 ```Rust re.replace_all("Hello, I love Rust!", "Python"); ```을 사용하여 "Hello, I love Python!"이라는 새 문자열로 바꿀 수 있습니다.
 
-// 파일 이름 형식을 통일하기 위해 "filename"을 "FILENAME"으로 변경합니다.
-fn replace_filename() {
-    let mut file = File::open("some_file.txt").expect("Failed to open file");
-    let mut contents = String::new();
-    file.read_to_string(&mut contents).expect("Failed to read file");
-    let new_contents = contents.replace("filename", "FILENAME");
-    println!("{}", new_contents);
-}
-```
+## 깊게 파고들기:
+검색하고 바꾸는 작업은 프로그래밍에서 매우 중요합니다. 원하는 결과를 얻기 위해 코드에서 특정 문자열을 찾아내고 바꾸는 것은 매우 유용하기 때문입니다. 또한 많은 언어에서는 정규표현식을 사용하여 문자열을 검색하고 바꾸는 기능을 제공합니다. 다른 언어에서는 문자열 메소드를 활용하여 검색하고 바꾸는 작업을 수행할 수 있습니다.
 
-위 코드는 `some_file.txt` 파일을 열고 그 내용을 읽은 후, `filename`을 `FILENAME`으로 대체한 결과를 출력합니다.
-
-## 딥 다이브
-Rust의 `String` 타입에는 `replace()` 메서드가 있습니다. 이 메서드를 사용하면 텍스트 내의 모든 해당 패턴을 찾아 바꿀 수 있습니다. 또한, `replace()` 메서드는 주어진 텍스트가 없을 때는 아무것도 변경하지 않으므로 안전하게 사용할 수 있습니다. 따라서 우리는 검색 및 대체 작업을 위해 `replace()` 메서드를 유용하게 사용할 수 있습니다.
-
-## See Also
-- [Rust 공식 문서](https://doc.rust-lang.org/std/string/struct.String.html#method.replace) 
-- [Rust Cookbook: Searching and Replacing Text](https://rust-lang-nursery.github.io/rust-cookbook/text/finding.html#search-and-replace) 
-- [Replace text in files with Rust](https://medium.com/@rjmm/rust-for-replacing-text-in-files-it-is-surprisingly-easy-ba343e6c4410)
+## 관련 자료:
+- Rust 정규표현식 공식 문서: https://doc.rust-lang.org/std/str/struct.Regex.html
+- Rust 문자열 메소드 공식 문서: https://doc.rust-lang.org/std/string/struct.String.html

@@ -1,7 +1,7 @@
 ---
-title:                "Téléchargement d'une page web"
-html_title:           "Javascript: Téléchargement d'une page web"
-simple_title:         "Téléchargement d'une page web"
+title:                "Télécharger une page web"
+html_title:           "Javascript: Télécharger une page web"
+simple_title:         "Télécharger une page web"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "HTML and the Web"
@@ -10,33 +10,77 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+# Qu'est-ce que le téléchargement d'une page web et pourquoi les programmeurs le font-ils?
 
-De nos jours, la plupart d'entre nous passent une grande partie de notre temps en ligne, que ce soit pour travailler, étudier ou se divertir. Lorsque nous visitons un site web, nous téléchargeons en réalité une page web sur notre navigateur afin de pouvoir la visualiser et interagir avec elle. La compréhension du processus de téléchargement d'une page web peut donc être utile pour comprendre comment fonctionne internet et comment nous pouvons interagir avec les différents sites que nous visitons.
+Le téléchargement d'une page web est le processus par lequel un navigateur récupère une page web à partir d'un serveur, puis l'affiche sur votre écran. Les programmeurs utilisent souvent cette technique pour accéder à des données dynamiques à partir de sites web et les intégrer dans leurs propres applications.
 
-## Comment Faire
+# Comment faire:
 
-Pour télécharger une page web en utilisant Javascript, nous pouvons utiliser la méthode `fetch()`. Cette méthode effectue une requête HTTP afin de récupérer la réponse du serveur web et nous permet ainsi de télécharger la page web en utilisant le contenu de cette réponse.
+### Télécharger une page web en utilisant Javascript
 
-Par exemple, si nous voulons télécharger la page d'accueil de Wikipedia, nous pouvons utiliser le code suivant dans notre navigateur :
+```Javascript
+// Créez une variable pour stocker l'URL de la page web à télécharger
+var url = "https://www.example.com";
 
+// Utilisez l'objet XMLHttpRequest pour créer une requête HTTP
+var xhr = new XMLHttpRequest();
+
+// Utilisez la méthode open() pour spécifier le type de requête et l'URL à télécharger
+xhr.open("GET", url, true);
+
+// Utilisez la méthode send() pour envoyer la requête
+xhr.send();
+
+// Utilisez la méthode onload pour spécifier une fonction à exécuter lorsque la réponse est reçue
+xhr.onload = function () {
+  // Utilisez la propriété responseText pour accéder au contenu de la page web téléchargée
+  var page = xhr.responseText;
+  console.log(page); // Affiche le contenu de la page dans la console
+}
 ```
-Javascript
-fetch('https://fr.wikipedia.org/')
-.then(response => response.text())
-.then(text => console.log(text));
+
+### Télécharger une page web en utilisant des librairies externes
+
+Il existe également des librairies externes telles que jQuery et axios qui facilitent le processus de téléchargement d'une page web en fournissant des méthodes simplifiées pour effectuer des requêtes HTTP et gérer les réponses.
+
+Voici un exemple en utilisant jQuery:
+
+```Javascript
+// Utilisez la méthode get() pour télécharger une page web
+$.get("https://www.example.com", function(data) {
+  console.log(data); // Affiche le contenu de la page dans la console
+});
 ```
 
-Cela va effectuer une requête HTTP à https://fr.wikipedia.org/ et stocker la réponse dans la variable `text`. Nous pouvons ensuite afficher le contenu de cette variable dans la console de notre navigateur en utilisant la méthode `console.log()`.
+Et voici un exemple en utilisant axios:
 
-## Plongée Profonde
+```Javascript
+// Utilisez la méthode get() pour télécharger une page web
+axios.get("https://www.example.com")
+  .then(function(response) {
+    console.log(response.data); // Affiche le contenu de la page dans la console
+  })
+  .catch(function(error) {
+    console.log(error);
+  });
+```
 
-La méthode `fetch()` utilise une technique appelée "promesses" (promises) pour gérer les requêtes asynchrones. Cela signifie que la méthode renvoie une promesse qui sera résolue plus tard avec le contenu de la réponse. Dans notre exemple, nous utilisons la méthode `then()` pour définir une fonction à exécuter une fois que la promesse est résolue. Dans ce cas, nous utilisons la fonction fléchée `=>` pour spécifier que nous voulons imprimer le contenu de la réponse dans la console.
+# Plongée en profondeur:
 
-En utilisant la méthode `fetch()`, nous pouvons également spécifier différents paramètres pour la requête, tels que la méthode HTTP à utiliser, les en-têtes de la requête, les données à envoyer, etc. De plus, la méthode `fetch()` nous permet de gérer les erreurs en utilisant la méthode `catch()`, qui exécute une fonction en cas d'échec de la promesse.
+### Contexte historique
 
-## Voir Aussi
+Auparavant, le téléchargement de pages web était principalement utilisé pour l'accès à des données statiques telles que des images ou des fichiers CSS. Mais avec les avancées technologiques, le téléchargement de pages web est devenu un moyen commun pour les programmeurs de créer des applications web dynamiques.
 
-- [Documentation officielle sur la méthode `fetch()` en javascript](https://developer.mozilla.org/fr/docs/Web/API/Fetch_API)
-- [Tutoriel sur l'utilisation de `fetch()` pour télécharger une page web en javascript](https://www.taniarascia.com/how-to-use-the-javascript-fetch-api-to-get-data/)
-- [Article expliquant le concept de promesses en javascript](https://www.freecodecamp.org/news/a-simple-guide-to-understanding-javascript-promises-222e834bfabf/)
+### Alternatives
+
+Bien qu'il soit couramment utilisé en programmation web, le téléchargement de pages web n'est pas la seule solution pour accéder à des données sur des sites externes. D'autres alternatives incluent le "web scraping" (l'extraction d'informations à partir de pages web) et l'utilisation d'API (interfaces de programmation d'application) fournies par les sites web eux-mêmes.
+
+### Détails de mise en œuvre
+
+Le téléchargement d'une page web peut être réalisé en utilisant différentes méthodes, mais la plupart d'entre elles impliquent l'utilisation d'une requête HTTP pour récupérer les données. Il est important de vérifier que vous avez le droit de télécharger les données à partir du site web que vous ciblez, car cela peut être considéré comme une violation des conditions d'utilisation ou des droits d'auteur.
+
+# Voir aussi:
+
+- [XMLHttpRequest](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest) sur MDN
+- [jQuery](https://jquery.com/) officiel
+- [axios](https://github.com/axios/axios) sur GitHub

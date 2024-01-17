@@ -1,7 +1,7 @@
 ---
-title:                "Jämföra två datum"
-html_title:           "Kotlin: Jämföra två datum"
-simple_title:         "Jämföra två datum"
+title:                "Jämförelse av två datum"
+html_title:           "Kotlin: Jämförelse av två datum"
+simple_title:         "Jämförelse av två datum"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Dates and Times"
@@ -10,50 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
+Jämföra två datum är en vanligt förekommande uppgift inom programmering. Det handlar helt enkelt om att jämföra två datum för att se vilket som är tidigare eller senare. Detta är något som programmerare ofta behöver göra för att kunna hantera tidsbaserad information på ett effektivt sätt.
 
-Om du någonsin har behövt jämföra två olika datum i ditt kodprojekt, har du kommit till rätt ställe. Att kunna jämföra datum är en vanlig uppgift inom programmering och kan vara användbart för många olika typer av applikationer.
-
-## Så här gör du
-
-Om du vill jämföra två datum i Kotlin finns det flera sätt att göra det, beroende på vad du vill uppnå. Här är några exempel som visar hur man kan använda Kotlin för att jämföra datum:
+## Så här gör du:
+För att jämföra två datum i Kotlin behöver du använda dig av klassen `LocalDate`. För att skapa ett datum använder du kommandot `LocalDate.of(year, month, day)`. Du kan sedan använda metoden `.isBefore()` eller `.isAfter()` för att jämföra två datum. Nedan följer ett exempel på hur detta kan se ut:
 
 ```Kotlin
-// Jämför två datum
-val date1 = LocalDate.of(2021, 10, 1)
-val date2 = LocalDate.of(2021, 9, 15)
-println(date1 > date2) // true, eftersom 1 oktober kommer efter 15 september
+val dateOne = LocalDate.of(2020, 5, 15)
+val dateTwo = LocalDate.of(2020, 5, 20)
 
-// Jämför om två datum är lika
-val date3 = LocalDate.of(2021, 12, 25)
-val date4 = LocalDate.of(2021, 12, 25)
-println(date3 == date4) // true, eftersom båda är 25 december
-
-// Jämför om ett datum kommer före ett annat datum
-val date5 = LocalDate.of(2021, 6, 30)
-val date6 = LocalDate.of(2022, 1, 1)
-println(date5 < date6) // true, eftersom 30 juni kommer före 1 januari
-
-// Jämför datum med tidszoner
-val date7 = ZonedDateTime.of(2021, 8, 1, 12, 0, 0, 0, ZoneId.of("Europe/Stockholm"))
-val date8 = ZonedDateTime.of(2021, 8, 1, 12, 0, 0, 0, ZoneId.of("America/New_York"))
-println(date7 == date8) // true, eftersom båda är 1 augusti klockan 12:00, men med olika tidszoner
+if (dateOne.isBefore(dateTwo)) {
+    println("Datum 1 är tidigare än datum 2")
+} else if (dateOne.isAfter(dateTwo)) {
+    println("Datum 1 är senare än datum 2")
+} else {
+    println("Datumen är lika")
+}
 ```
 
-Som du kan se i exemplen ovan använder vi olika metoder baserade på vilket typ av jämförelse vi vill göra. I det första exemplet använder vi `>` operatören för att jämföra två datum och se om det första datumet kommer efter det andra datumet. I det andra exemplet använder vi `==` operatören för att se om två datum är lika. I det tredje exemplet använder vi `<` operatören för att se om det första datumet kommer före det andra datumet. Slutligen i det fjärde exemplet använder vi `==` operatören för att jämföra två datum med olika tidszoner.
+Det första datumet skapas med hjälp av kommandot `LocalDate.of(2020, 5, 15)` och det andra datumet skapas med kommandot `LocalDate.of(2020, 5, 20)`. Därefter använder vi `if`-satsen för att jämföra de två datumen med metoden `.isBefore()` och `.isAfter()`. Beroende på vilket datum som är tidigare eller senare skrivs ett lämpligt meddelande ut.
 
-## Djupdykning
+## Djupdykning:
+Historiskt sett har det funnits många olika sätt att representera och räkna med datum och tid inom programmering. Ett vanligt problem var att olika länder använde olika datumformat, vilket gjorde det svårt att hantera tidsbaserad information på ett enhetligt sätt. Med tiden började språk som Java och Kotlin använda klassen `LocalDate` för att lösa detta problem.
 
-För de som är intresserade av att gå djupare in i ämnet, finns det flera viktiga saker att notera när man jämför datum i Kotlin:
+En annan metod för att jämföra två datum är att använda `Calendar`-objektet och metoder som `before()` och `after()`. Detta är dock en äldre metod som inte är lika effektiv som att använda sig av klassen `LocalDate`.
 
-- Kotlin använder sig av `Comparable` interfacet för att tillåta jämförelse mellan två objekt av samma typ. Eftersom `LocalDate` och `ZonedDateTime` implementerar detta interface, kan vi enkelt använda jämförelseoperatorerna som vi såg i exemplen ovan.
+När man jämför två datum i Kotlin jämförs datumet på sekundnivå. Det betyder att om två datum har samma år, månad och dag men skiljer sig på sekunderna så anses de fortfarande vara olika datum.
 
-- Om vi vill jämföra om två datum är lika, kan vi också använda metoden `isEqual()` som tillhandahålls av Kotlin. Detta gör samma sak som `==` operatören men är mer explicit och kan vara mer läsbart i vissa fall.
-
-- När vi jämför datum baserade på tidszoner, är det viktigt att förstå att ett datum i en viss tidszon kan vara annorlunda än en annan tidszon. Detta kan leda till skilda resultat vid jämförelse, beroende på vilken tidszon som används.
-
-## Se även
-
-- [Java 8 Date and Time API](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
-- [Kotlin Comparison and Equality](https://kotlinlang.org/docs/comparison.html)
-- [Kotlin Comparable interface](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-comparable/index.html)
+## Se även:
+- [Kotlin Date and Time](https://kotlinlang.org/docs/reference/datetime.html)
+- [Java LocalDate Documentation](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
+- [Comparison & operations on LocalDate objects in Kotlin](https://www.tutorialspoint.com/compare-and-operations-on-localdate-objects-in-kotlin)

@@ -1,7 +1,7 @@
 ---
-title:                "Imprimindo saída de depuração"
-html_title:           "PHP: Imprimindo saída de depuração"
-simple_title:         "Imprimindo saída de depuração"
+title:                "Imprimindo a saída de depuração"
+html_title:           "PHP: Imprimindo a saída de depuração"
+simple_title:         "Imprimindo a saída de depuração"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Testing and Debugging"
@@ -10,56 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+## O que é e por quê?
 
-Você já se deparou com um erro em seu código PHP e não tinha ideia de onde estava o problema? Ou talvez você esteja apenas curioso para ver o que acontece nos bastidores de sua aplicação enquanto ela é executada. Seja qual for o motivo, imprimir saídas de depuração pode ser um recurso valioso para identificar problemas e entender melhor como seu código está funcionando.
+Imprimir saída de depuração (ou "debug output" em inglês) é uma técnica utilizada pelos programadores para visualizar informações relevantes durante a execução de seus códigos. Isso pode ser útil para identificar erros, testar lógicas e entender o fluxo de dados em uma aplicação.
 
-## Como Fazer
+## Como fazer:
 
-A impressão de saídas de depuração em PHP é feita através da função nativa `var_dump()`. Esta função aceita um ou mais argumentos e apresenta uma representação visual de seu valor e tipo. Aqui está um exemplo:
+Usar a função `echo` é a maneira mais simples de imprimir saída de depuração no PHP. Por exemplo:
 
 ```PHP
 $nome = "João";
-$sobrenome = "Silva";
-
-var_dump($nome, $sobrenome);
+echo "Olá, " . $nome . "!"; // Saída: Olá, João!
 ```
 
-Este código produzirá a seguinte saída:
+Outra opção é utilizar a função `print_r` para imprimir valores de arrays de forma mais legível. Por exemplo:
 
 ```PHP
-string(4) "João"
-string(5) "Silva"
-```
-
-Isso mostra que `nome` é uma string com 4 caracteres e `sobrenome` é uma string com 5 caracteres. Você também pode usar a função `print_r()` para imprimir saídas de depuração, que produzirá uma saída mais legível para humanos. Por exemplo:
-
-```PHP
-$numero = 10;
-$array = [1, 2, 3];
-
-print_r($numero);
-print_r($array);
-```
-
-Isso resultará em:
-
-```PHP
-10
+$frutas = array("maçã", "banana", "laranja");
+print_r($frutas);
+/* Saída:
 Array
 (
-    [0] => 1
-    [1] => 2
-    [2] => 3
+    [0] => maçã
+    [1] => banana
+    [2] => laranja
 )
+*/
 ```
 
-## Deep Dive
+Para imprimir informações de forma mais detalhada, podemos utilizar a função `var_dump` que mostra o tipo de dado, tamanho e valor da variável. Por exemplo:
 
-Além de usar as funções `var_dump()` e `print_r()` para imprimir saídas de depuração de forma básica, você também pode personalizar ainda mais a forma como as informações são exibidas. Isso é especialmente útil quando se trabalha com arrays multidimensionais ou objetos. Por exemplo, você pode definir opções para `var_dump()` usando `ini_set()` para controlar a profundidade máxima de exibição de array e a defeinição de recuo para veementes aninhadas. Além disso, você pode usar a função `debug_zval_dump()` para imprimir o uso de memória de cada variável. Experimente com diferentes maneiras de imprimir saídas de depuração e encontre o que funciona melhor para você.
+```PHP
+$idade = 25;
+var_dump($idade); // Saída: int(25)
+```
 
-## Veja Também
+## Profundidade na técnica:
 
-- [Documentação do PHP - Depuração](https://www.php.net/manual/pt_BR/debugger.php)
-- [Debugging in PHP: A Beginner's Guide](https://www.hostinger.com.br/tutoriais/debugging-in-php-guide/) (em inglês)
-- [7 dicas para depurar seu código PHP mais rápido e melhor](https://medium.com/@HerbieHommel/7-dicas-para-depurar-seu-c%C3%B3digo-php-mais-r%C3%A1pido-e-melhor-1b06857615c4) (em inglês)
+A impressão de saída de depuração é uma técnica bastante antiga, utilizada desde os primórdios da programação para auxiliar no processo de desenvolvimento de códigos. Além das funções já mencionadas, existem outras alternativas como `print`, `debug_printbacktrace` e `xdebug`.
+
+Para implementar a impressão de saída de depuração de forma mais eficiente e organizada, é possível criar uma função personalizada para essa finalidade. Dessa forma, podemos utilizar essa função em diferentes partes do código e modificar facilmente a exibição das informações conforme necessário.
+
+## Veja também:
+
+- Documentação oficial do PHP sobre impressão de saída de depuração: https://www.php.net/manual/en/function.print-r.php
+- Artigo sobre como imprimir saída de depuração de forma eficiente: https://laravel-news.com/efficient-debugging-php

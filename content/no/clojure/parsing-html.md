@@ -1,7 +1,7 @@
 ---
-title:                "Å tolke html"
-html_title:           "Clojure: Å tolke html"
-simple_title:         "Å tolke html"
+title:                "Analysering av HTML"
+html_title:           "Clojure: Analysering av HTML"
+simple_title:         "Analysering av HTML"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "HTML and the Web"
@@ -10,77 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hva & Hvorfor?
+Parsing HTML handler om å tolke og ekstrahere data fra HTML-kode. Dette er viktig fordi det er hvordan vi får informasjon til å se ut og fungere som vi ønsker på nettsider.
 
-Parsing av HTML, eller å konvertere HTML-kode til strukturerte data, er en viktig del av webutvikling og dataanalyse. Det lar deg trekke ut informasjon fra nettsider og gjøre den tilgjengelig for behandling i andre programmeringsspråk.
-
-## Hvordan
-
-For å kunne parsere HTML i Clojure, kan du bruke biblioteket "enlive". Først må du importere biblioteket og instruere prosjektet ditt til å bruke det:
+## Slik gjør du:
+```Clojure
+(defn parse-html [html]
+  (if (nil? html)
+    "Tom input"
+    (str "Parsed HTML: " (first (re-seq #"\<[^>]*\>" html)))))
+```
+Dette kodeeksempelet viser en funksjon som tar HTML-kode som input og returnerer en streng med den første taggen som blir funnet. Et eksempel på hvordan koden ville kjøre:
 
 ```Clojure
-(ns minprosjekt.core
- (:require [net.cgrand.enlive-html :refer [html-snippet]])
- (:import (javax.swing.text.html HTMLEditorKit)))
+(parse-html "<h1>Hello world!</h1>")
 ```
-
-Deretter kan du bruke følgende funksjoner for å hente data fra en nettside:
-
+Output:
 ```Clojure
-(def html (html-snippet "<p>Hei, verden!</p>"))
-
-(enlive/html-select html [:p]) ; => [<p>Hei, verden!</p>]
-(enlive/html-text html) ; => "Hei, verden!"
+"Parsed HTML: <h1>"
 ```
 
-Du kan også navigere gjennom flere elementer:
+## Dybdeutdypning:
 
-```Clojure
-(def html (html-snippet "<ul><li>Et</li><li>To</li><li>Tre</li></ul>"))
+### Historisk kontekst:
+Parsing HTML har vært en nødvendighet siden begynnelsen av internett, da det var behov for å tolke og presentere informasjon på en standardisert måte. HTML-standarden har utviklet seg over tid, og parsing-teknikker har måttet tilpasse seg forandringer og utvidelser i standarden.
 
-(enlive/html-select html [:ul :li]) ; => [<li>Et</li> <li>To</li> <li>Tre</li>]
-```
+### Alternativer:
+Det finnes flere forskjellige verktøy og biblioteker for å parse HTML på forskjellige programmeringsspråk. Blant annet finnes det også alternative metoder som bruker DOM-modeller eller CSS-selektorer istedenfor regex for å ekstrahere data.
 
-For å hente ut spesifikke attributter, kan du bruke funksjonen `enlive/html-attr`:
+### Implementasjonsdetaljer:
+I Clojure er det vanlig å bruke regex til å parse HTML, da regex er en effektiv og uttrykksfull måte å finne mønstre i tekst på. Det finnes også spesifikke biblioteker som er laget for å parse HTML i Clojure, som for eksempel Enlive og Hiccup.
 
-```Clojure
-(def html (html-snippet "<a href="https://www.example.com">En lenke</a>"))
-
-(enlive/html-attr html :href) ; => https://www.example.com
-```
-
-## Dypdykk
-
-Enlive-biblioteket lar deg også manipulere og bygge HTML-dokumenter. Du kan for eksempel fjerne eller endre eksisterende elementer, eller legge til nye elementer i dokumentet.
-
-For å fjerne et element, kan du bruke funksjonen `enlive/remove`:
-
-```Clojure
-(def html (html-snippet "<p>Hei, verden!</p>"))
-
-(enlive/remove html [:p]) ; => <p></p>
-```
-
-For å endre et element, kan du bruke funksjonen `enlive/defsnippet`:
-
-```Clojure
-(def html (html-snippet "<h1>En overskrift</h1>"))
-
-(enlive/defsnippet html [:h1] "<h2>En ny overskrift</h2>") ; => <h2>En ny overskrift</h2>
-```
-
-For å legge til et nytt element, kan du bruke funksjonen `enlive/append`:
-
-```Clojure
-(def html (html-snippet "<p>Hei, verden!</p>"))
-
-(enlive/append html [:p] "<span>Velkommen!</span>") ; => <p>Hei, verden! <span>Velkommen!</span></p>
-```
-
-Enlive har også støtte for å hente informasjon fra HTML-tabeller og skjemaer, samt å utnytte CSS-selektorer for mer fleksibel henting av data.
-
-## Se også
-
-- Enlive-dokumentasjon: https://github.com/cgrand/enlive
-- Lær mer om HTML-parsing: https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Introduction
-- Utforsk andre Clojure-biblioteker: https://clojars.org/
+## Se også:
+- Dokumentasjon for Clojure regex: https://clojure.org/guides/learn/regular_syntax
+- Enlive biblioteket for parsing av HTML i Clojure: https://github.com/cgrand/enlive
+- Hiccup biblioteket for generering av HTML i Clojure: https://github.com/weavejester/hiccup

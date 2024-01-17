@@ -1,7 +1,7 @@
 ---
-title:                "Unterstrings extrahieren"
-html_title:           "C#: Unterstrings extrahieren"
-simple_title:         "Unterstrings extrahieren"
+title:                "Unterstränge extrahieren"
+html_title:           "C#: Unterstränge extrahieren"
+simple_title:         "Unterstränge extrahieren"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Strings"
@@ -10,62 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was & Warum?
+Substring-Extraktion ist im Wesentlichen das Herausholen von Teilzeichenfolgen aus einer größeren Zeichenfolge. Programmierer tun dies, um bestimmte Teile von Zeichenfolgen zu isolieren und für verschiedene Zwecke zu verwenden, z.B. zur Datenverarbeitung oder zur Manipulation von Text.
 
-Warum sollte man sich damit beschäftigen, Substrings zu extrahieren? Nun, das Extrahieren von Substrings ist eine nützliche Funktion, um bestimmte Teile von Zeichenketten zu isolieren. Dies kann hilfreich sein, um Daten zu verarbeiten oder bestimmte Muster in Texten zu finden.
-
-## Wie geht man vor?
-
-Um Substrings in C# zu extrahieren, kannst du die "Substring" Methode verwenden. Diese erlaubt es dir, einen Teil einer Zeichenkette basierend auf ihrer Start- und Endposition zu extrahieren.
-
+## Anleitung:
+Um Substrings in C# zu extrahieren, können Sie die Methode "Substring" verwenden. Diese Methode akzeptiert zwei Parameter: den Startindex und die Länge des zu extrahierenden Substrings. Zum Beispiel:
+```C#
+string zeichenfolge = "Hallo Welt!";
+string substr = zeichenfolge.Substring(0,5);
+Console.WriteLine(substr); // Ausgabe: "Hallo"
 ```
-// Beispiel einer Zeichenkette
-string text = "Ich liebe Programmieren!"
+In diesem Beispiel haben wir den Substring von Index 0 bis einschließlich Index 4 extrahiert. Beachten Sie, dass die Indexierung in C# bei 0 beginnt, daher gibt der Startindex den ersten Buchstaben an und die Länge gibt an, wie viele Zeichen extrahiert werden sollen.
 
-// Extrahiere "liebe"
-string substring = text.Substring(3, 5);
-
-// Gib den extrahierten Substring aus
-Console.WriteLine(substring); // Ausgabe: "liebe"
+## Tiefer Einblick:
+Die Methode "Substring" wurde erstmals in C# 1.0 eingeführt und ist seitdem eine sehr nützliche Funktion für Programmierer. Eine alternative Möglichkeit, Substrings in C# zu extrahieren, ist die Verwendung der "Range"-Syntax, die mit C# 8.0 eingeführt wurde. Diese Syntax ermöglicht es, Teilzeichenfolgen mit einer intuitiveren Notation zu extrahieren, z.B.:
+```C#
+var zeichenfolge = "Hallo Welt!";
+var substr = zeichenfolge[0..5];
+Console.WriteLine(substr); // Ausgabe: "Hallo"
 ```
+Hier haben wir dieselbe Extraktion wie im vorherigen Beispiel durchgeführt, aber diesmal mit der neuen "Range"-Syntax. Sie können auch den Endindex statt der Länge angeben, z.B. "0..^6" gibt den Substring von Index 0 bis einschließlich dem 6. letzten Zeichen.
 
-Um bestimmte Muster zu finden, kannst du auch die "IndexOf" Methode zusammen mit der "Substring" Methode verwenden. Diese sucht nach einem bestimmten Zeichen oder einer Zeichenfolge in einer Zeichenkette und gibt die Position des ersten Vorkommens zurück.
-
-```
-// Beispiel einer Zeichenkette
-string text = "C#'s Substring Methode macht Spaß!";
-
-// Finde die Position von "Substring"
-int position = text.IndexOf("Substring");
-
-// Extrahiere den Text ab der gefundenen Position
-string substring = text.Substring(position);
-
-// Gib den extraherten Substring aus
-Console.WriteLine(substring); // Ausgabe: "Substring Methode macht Spaß!"
-```
-
-## Tiefer Einblick
-
-Die "Substring" Methode ist nicht nur auf statische Werte beschränkt, sondern kann auch dynamisch verwendet werden. Du kannst zum Beispiel die Länge des Strings berechnen und diese als Endposition für die "Substring" Methode verwenden, um immer nur den letzten Teil der Zeichenkette zu extrahieren.
-
-```
-// Beispiel einer Zeichenkette
-string text = "Hallo, ich bin ein Text!";
-
-// Bestimme die Länge des Strings
-int length = text.Length; // Ausgabe: 23
-
-// Extrahiere den letzten Teil der Zeichenkette
-string last = text.Substring(length - 5, 5); // Ausgabe: "Text!"
-
-// Gib den extrahierten Substring aus
-Console.WriteLine(last); // Ausgabe: "Text!"
-```
-
-Es gibt auch zusätzliche Optionen innerhalb der "Substring" Methode, wie zum Beispiel die Angabe einer Überlappung, wenn du mehrere Teilstrings aus einer Zeichenkette extrahieren möchtest.
-
-## Siehe auch
-
-- MSDN Dokumentation zur "Substring" Methode: https://docs.microsoft.com/de-de/dotnet/api/system.string.substring
-- Artikel zum Thema "Zeichenketten in C#": https://www.lernmoment.de/csharp-programmieren/zeichenketten-in-csharp/
+## Siehe auch:
+Weitere Informationen zur Methode "Substring" und zur "Range"-Syntax finden Sie in der offiziellen Dokumentation von Microsoft:
+https://docs.microsoft.com/dotnet/api/system.string.substring \newline
+https://docs.microsoft.com/dotnet/api/system.indexing.range

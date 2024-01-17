@@ -1,7 +1,7 @@
 ---
-title:                "Tekstin pirstalointi"
-html_title:           "TypeScript: Tekstin pirstalointi"
-simple_title:         "Tekstin pirstalointi"
+title:                "Alimerkkijonojen erottelu"
+html_title:           "TypeScript: Alimerkkijonojen erottelu"
+simple_title:         "Alimerkkijonojen erottelu"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -10,47 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Miksi
+## Mitä ja miksi?
+Substringien erottaminen tarkoittaa tietyistä merkkijonoista toisten osien poistamista. Ohjelmoijat käyttävät tätä tekniikkaa usein käsitellessään merkkijonoihin liittyviä operaatioita, kuten hakua, käsittelyä ja järjestämistä. Se voi myös auttaa tietojen muotoilussa ja käyttäjän syötteen validoinnissa.
 
-## Miksi joku haluaisi etsiä osamerkkijonoja?
-
-Osamerkkijonojen etsiminen on hyödyllistä, kun halutaan tarkistaa, sisältääkö tietty merkkijono halutun osamerkkijonon tai kun halutaan manipuloida merkkijonoa ja poimia siitä tietyt osat.
-
-## Miten
+## Miten:
+Tässä on muutamia esimerkkejä siitä, miten voit erottaa substringejä TypeScriptissä:
 
 ```TypeScript
-// Alustetaan merkkijono
-let sana: string = "tervetuloa";
+// Erota merkkijonon alkuosa
+const sana = "Hei maailma!";
+const alkuosa = sana.substring(0, 3);
+console.log(alkuosa); // "Hei"
 
-// Haetaan osamerkkijono
-let osa: string = sana.substring(0, 5);
+// Erota merkkijonon loppuosa
+const sana = "Hei maailma!";
+const loppuosa = sana.substring(4);
+console.log(loppuosa); // "maailma"
 
-// Tulostetaan tulos konsoliin
-console.log(osa); // tulostaa "terve"
+// Erota merkkijonosta tietty määrä merkkejä
+const sana = "Hei maailma!";
+const osa = sana.substring(0,8);
+console.log(osa); // "Hei maai"
 ```
 
-Merkkijonon `substring()`-metodi ottaa kaksi parametria: aloitusindeksin ja lopetusindeksin. Ohjelma palauttaa halutun osamerkkijonon aloittaen annetusta aloitusindeksistä ja päättyen ennen lopetusindeksiä. Huomaa, että indeksilaskenta alkaa aina nollasta. 
+## Syvemmälle:
+Substringien erottaminen on ollut osa ohjelmointia jo pitkään ja sitä käytetään edelleen monilla eri ohjelmointikielillä. Monet ohjelmoijat käyttävät myös erilaisia ​​algoritmeja ja funktioita, kuten "slice" tai "substring", jotka toimivat samalla periaatteella.
 
-## Syvempi sukellus
-
-Substringien etsiminen voi olla hyödyllistä myös silloin, kun halutaan suorittaa monimutkaisempia manipulaatioita merkkijonoilla. Esimerkiksi jos halutaan tarkistaa, sisältääkö syötetty luku tietyn lukumäärän numeroita, voidaan käyttää substringiä. Tämä onnistuu helposti esimerkiksi muuntamalla luku merkkijonoksi ja sitten tarkastamalla sen pituutta substring-metodilla.
-
-Seuraavassa esimerkissä käydään läpi merkkijonon `slice()`-metodi, joka toimii samalla tavalla kuin `substring()`, mutta ottaa aloitus- ja lopetusindeksien sijaan aloitusindeksin ja halutun osan pituuden.
-
-```TypeScript
-// Alustetaan merkkijono
-let sana: string = "tervetuloa";
-
-// Haetaan osamerkkijono slice-metodilla
-let osa: string = sana.slice(3, 7);
-
-// Tulostetaan tulos konsoliin
-console.log(osa); // tulostaa "vetu"
-```
-
-Huomaa, että kun käytetään negatiivisia lopetusindeksejä, merkkijonoa etsitään lopusta alkuun. Esimerkiksi jos käytämme `-3` lopetusindeksinä, tulee tulokseksi "loa".
-
-## Katso myös
-
-- [MDN Web Docs - substring()](https://developer.mozilla.org/fi/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
-- [MDN Web Docs - slice()](https://developer.mozilla.org/fi/docs/Web/JavaScript/Reference/Global_Objects/String/slice)
+## Lisätietoa:
+- [MDN web docs - substring](https://developer.mozilla.org/fi/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
+- [W3Schools - JavaScript string slices](https://www.w3schools.com/js/js_string_slices.asp)

@@ -10,64 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-Sending an HTTP request with basic authentication allows you to securely access protected resources on a server. It is commonly used in applications that require user authentication, such as web services or APIs.
+Sending an HTTP request with basic authentication is a way for a programmer to access secure web resources by providing a username and password. This is necessary for websites that require user authentication, such as online banking or social media accounts. By including basic authentication in their code, programmers can automate the process of logging in and accessing these resources, saving time and effort in the long run.
 
-## How To
+## How to:
 
-To send an HTTP request with basic authentication in Haskell, you will need to use the `http-client` and `http-client-tls` packages. First, import them in your code:
+To send an HTTP request with basic authentication in Haskell, we can use the [http-client](https://hackage.haskell.org/package/http-client) library. First, we need to import the necessary modules:
 
 ```Haskell
-import Network.HTTP.Client 
+import Network.HTTP.Client
 import Network.HTTP.Client.TLS
+import Network.HTTP.Types.Status (statusCode)
 ```
 
-Next, create a `Manager` object to handle the HTTP connections:
+Next, we can create a new manager using the `newManager` function from `Network.HTTP.Client.TLS`. This will handle our HTTPS connections. Then, we can use the `parseUrlThrow` function to parse the URL of the resource we want to access. We can set the request method to `GET` and add basic authentication headers using the `applyBasicAuth` function. Finally, we can use `httpLbs` to send the request and receive a response:
 
 ```Haskell
-manager :: IO Manager 
-manager = newManager tlsManagerSettings
+main = do
+  manager <- newManager tlsManagerSettings
+  request <- parseUrlThrow "https://example.com/resource"
+  let requestWithAuth = applyBasicAuth "username" "password" request
+  response <- httpLbs requestWithAuth manager
 ```
 
-Then, construct a `Request` object with the URL of the resource you want to access:
+The `response` variable will contain the response body as well as the status code, which we can access using `responseBody` and `statusCode` respectively.
 
-```Haskell
-req :: Request 
-req = parseRequest_ "https://example.com/protected/resource"
-```
+## Deep Dive:
 
-Now, add the basic authentication credentials to the request:
+In the early days of the internet, basic authentication was widely used to secure web resources. However, it has since been replaced by more secure methods such as OAuth. Nevertheless, basic authentication is still commonly used and is supported by most web browsers and web servers.
 
-```Haskell
-let username = "myusername"
-let password = "mypassword"
-let req' = applyBasicAuth username password req
-```
+There are alternative methods for sending HTTP requests with authentication, such as Digest authentication and OAuth. These methods provide stronger security by encrypting the credentials and using more advanced verification techniques.
 
-Finally, use the `httpLbs` function to send the request and get the response:
+The basic authentication header, which is added to the request in the example above, contains the username and password encoded in Base64 format. This means that the credentials are not encrypted and can be easily decoded, making it less secure compared to other methods.
 
-```Haskell
-response <- httpLbs req' manager
-```
+## See Also:
 
-You can access the response body and status code using the `responseBody` and `responseStatus` functions respectively.
-
-Sample output:
-
-```
-"Hello, you have successfully accessed the protected resource!"
-200
-```
-
-## Deep Dive
-
-Under the hood, the `applyBasicAuth` function adds an `Authorization` header to the request with the format `Basic <encoded_credentials>`. The credentials are encoded using the Base64 encoding scheme, which provides a simple form of encryption.
-
-It is important to note that basic authentication is considered to be one of the least secure methods of authentication, as the credentials are sent in plain text. Therefore, it is recommended to use HTTPS along with basic authentication to ensure secure transmission of the credentials.
-
-## See Also
-
-- [HTTP-Client Package Documentation](https://hackage.haskell.org/package/http-client)
-- [HTTP-Client-TLS Package Documentation](https://hackage.haskell.org/package/http-client-tls)
-- [HTTP Authentication Protocols](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
+- [http-client documentation](https://hackage.haskell.org/package/http-client)
+- [Understanding Basic Authentication](https://www.digitalocean.com/community/tutorials/understanding-basic-authentication-in-the-digest-module-for-apache)
+- [OAuth 2.0 vs Basic Authentication](https://www.oauth.com/oauth2-servers/making-authenticated-requests/basic-vs-bearer/)

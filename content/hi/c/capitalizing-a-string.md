@@ -1,7 +1,7 @@
 ---
-title:                "Language: Hindi Translation: स्ट्रिंग को कैपिटलाइज करना"
-html_title:           "C: Language: Hindi Translation: स्ट्रिंग को कैपिटलाइज करना"
-simple_title:         "Language: Hindi Translation: स्ट्रिंग को कैपिटलाइज करना"
+title:                "स्ट्रिंग को उच्च अक्षरों में लिखें"
+html_title:           "C: स्ट्रिंग को उच्च अक्षरों में लिखें"
+simple_title:         "स्ट्रिंग को उच्च अक्षरों में लिखें"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -10,35 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Kyun
-Aapne shayad suna hoga ki C programming language mein string ko upper case mein tabdil karne ke liye "toupper()" function ka upyog kiya jaata hai. Lekin kya aapko pata hai ki kya ye function sirf ek character ko upper case mein badal sakta hai? Agar aap pure string ko capital letters mein badalna chahte hai toh aapko kya karna hoga? Isiliye hum aapko aaj batayenge ki string ko capital letters mein convert karna kyun zaruri hai aur iske kya fayde hai.
+# क्या और क्यों?
+अगर आप एक प्रोग्रामर हैं तो आपने यह शब्द सुना होगा - 'स्ट्रिंग स्थानांतरित' करना। ये उस प्रक्रिया का नाम है जिसमें हम एक शब्द को पहले से दिए गए शब्दों के रूप में लिखते हैं। प्रोग्रामर इसलिए इसे करते हैं क्योंकि इससे उनके कोड को लिखने और समझने में आसानी होती है। 
 
-## Kaise Karein
-Agar aapko kisi bhi string mein se specific characters ko capital letters mein convert karna hai toh aap "toupper()" function ka istemal kar sakte hai. Is function mein aapko woh character dena hoga jisko aap upper case mein badalna chahte hai. Lekin agar aap pure string ko upper case mein badalna chahte hai toh aapko ek loop mein har character ko upper case mein convert karna hoga. Iske liye hum ek simple code example de rahe hai:
+# कैसे करें:
+आप दिए गए उदाहरणों को देखकर, एक शब्द को कैसे स्थानांतरित किया जाता हैं, ऐसे जान सकते हैं:
 
 ```C
-#include<stdio.h>
-#include<ctype.h>
+#include <stdio.h>
 
 int main() {
-   char str[20] = "hello world";
-   int i;
-
-   for (i = 0; str[i]!='\0'; i++) {
-      str[i] = toupper(str[i]);
-   }
-
-   printf("%s", str);
-   return 0;
+  // नया शब्द
+  char word[] = "hello";
+  
+  // स्ट्रिंग स्थानांतरित करें
+  word[0] = 'H';
+  
+  // परिणाम को मानचित्रित करें
+  printf("%s", word);
+  
+  return 0;
 }
+
+// आउटपुट: Hello
 ```
-Is code mein humne "toupper()" function ka istemal kiya hai jo hume pure string ko upper case mein convert karne mein madad karta hai. Isko compile aur run karne par aapko output "HELLO WORLD" milna chahiye. Is tarah aap kisi bhi string ko upper case mein badal sakte hai.
 
-## Gehri Pariweshik
-Ab hum dekhenge ki string ko capital letters mein convert karna kaise kaam karta hai. Sabse pehle humne ek character array banaya jisme hum "hello world" string store kiye hai. Iske baad humne "for" loop ka upyog kiya hai jisme humne string ke har character ko upper case mein convert kiya hai. Yeh loop ek ek character ko upper case mein badalta hai aur ise string mein store kar deta hai. Is tarah string ke sabhi characters upper case ho jate hai aur aap "printf()" function ka upyog karke output ko dekh sakte hai. Iss tarah aap kisi bhi string ko upper case mein badalkar use aur aasan aur readable bana sakte hai.
+आप ऊपर दिए गए उदाहरण में देख सकते हैं कि कैसे हमने शब्द 'hello' को 'Hello' में स्थानांतरित किया है। पहले हमने `word` नाम के एक चार अक्षरों का नया मान बनाया है और फिर हमने इसमें पहले अक्षर को 'H' में बदल दिया है। शेष अक्षरों को हमने उसी मान के साथ छोड़ दिया है। और फिर हमने `printf` का उपयोग किया है ताकि हम परिणाम को देख सकें।
 
-## See Also
-- [toupper() function in C](https://www.geeksforgeeks.org/c-programming-language-toupper-function/)
-- [Understanding character arrays in C](https://www.programiz.com/c-programming/c-strings)
+# गहराई में जाएं:
+शब्दों को स्थानांतरित करने के लिए कई तरीके हैं। सबसे आम तरीके में हम `char` डेटा टाइप के साथ काम करते हैं। लेकिन कई प्रोग्रामिंग भाषाओं में अन्य विकल्प भी हो सकते हैं। इस तकनीक की शुरुआत साल 1960 में हुई थी जब ALGOL 68 प्रोग्रामिंग भाषा में `string` टाइप शामिल किया गया था। आज भी बहुत सारे ग्राफिक्स डिजाइन और वेब डेवलपमेंट में इसे प्रयोग में लिया जाता है। 
 
-Is article mein humne dekha ki kaise hum string ko capital letters mein convert kar sakte hai. Iska upyog karke aap apne code ko aur bhi behtar aur readable bana sakte hai. Humne aapko C programming language mein string ko capital letters mein convert karne ke liye ek simple aur effective method bataya hai. Hum aasha karte hai ki aapko yeh article pasand aaya hoga aur aap iska upyog apne code mein karke dekhenge. Happy coding!
+# अन्य स्रोत:
+- [शब्द स्थानांतरण को अधिक वस्तुनिष्ठ तरीकों से समझें](https://www.geeksforgeeks.org/string-manipulation-in-cc/): इस लेख में आप अन्य तरीकों से शब्द स्थानांतरण की विस्तारपूर्वक जानकारी प्राप्त कर सकते हैं।
+- [शब्द स्थानांतरण को सीखने के लिए एक स्पष्ट कलेक्शन](https://www.tutorialspoint.com/cprogramming/c_file_io.htm): आप इस वेबसाइट में स्थानांतरित के साथ और भी कई कामों को सीख सकते हैं।

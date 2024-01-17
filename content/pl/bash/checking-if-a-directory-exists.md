@@ -10,44 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co & Dlaczego?
+Sprawdzanie czy istnieje katalog jest procesem, w którym programista sprawdza czy dany katalog istnieje w systemie plików. Jest to ważne, ponieważ pozwala uniknąć błędów w skryptach, które mogą być spowodowane nieistniejącym katalogiem.
 
-Sprawdzanie czy dany katalog istnieje jest ważnym aspektem w programowaniu i skrypcie Bash. Wiele zadań wymaga dostępu do określonych katalogów, a niektóre operacje mogą nawet wywołać błędy, jeśli dany katalog nie istnieje. Dlatego ważne jest, aby wykonywać sprawdzenie istnienia katalogu przed wykonaniem dalszych poleceń.
-
-## Jak to zrobić
-
-Aby sprawdzić czy katalog istnieje w skrypcie Bash, użyjemy polecenia `test` w połączeniu z flagą `-d`, która oznacza "czy istnieje katalog". Przykładowy kod wyglądałby następująco:
-
+## Jak to zrobić:
 ```Bash
-if test -d moj_katalog; then
-  echo "Katalog istnieje!"
+if [ -d <nazwa_katalogu> ]
+then
+    echo "Katalog istnieje."
 else
-  echo "Katalog nie istnieje!"
+    echo "Katalog nie istnieje."
 fi
 ```
+**Opis**:
+W powyższym przykładzie wykorzystywana jest opcja ```-d``` w warunku ```[ ... ]```, która sprawdza czy w systemie plików istnieje dany katalog. Jeśli tak, to wykonywane jest polecenie zamieszczone po słowie kluczowym ```then```, w tym przypadku wyświetlenie informacji o istnieniu katalogu. W przeciwnym wypadku, czyli gdy katalog nie istnieje, wyświetlana jest informacja o jego braku.
+Warto zauważyć, że w powyższym kodzie należy podać pełną ścieżkę do katalogu, np. ```/home/użytkownik/katalog```.
 
-Powyższy kod sprawdzi, czy katalog o nazwie "moj_katalog" istnieje w bieżącym miejscu, w którym znajduje się nasz skrypt. Jeśli tak, wyświetli odpowiedni komunikat, jeśli nie - wyświetli inny.
+## Pogłębione zagadnienia:
+**Historia**: Początkowo, w systemie Unix, nie istniała możliwość sprawdzenia czy katalog istnieje. Dopiero wraz z rozwojem powłoki bash (Bourne Again Shell), pojawiła się opcja ```-d```, dzięki której możemy to łatwo sprawdzić.
 
-Możemy także użyć polecenia `test` w połączeniu z flagą `-e`, która sprawdza istnienie dowolnego pliku lub katalogu. Na przykład:
+**Alternatywy**: Istnieje kilka sposobów, aby sprawdzić czy katalog istnieje. Można wykorzystać różne warunki, takie jak ```-e``` (czy plik / katalog istnieje), ```-f``` (czy jest to plik regularny) lub ```-r``` (czy plik / katalog jest dostępny do odczytu). Jednak opcja ```-d``` jest najbardziej odpowiednia, gdy chcemy sprawdzić czy istnieje właśnie katalog.
 
-```Bash
-if test -e /usr/bin/bash; then
-  echo "Bash jest zainstalowany!"
-else
-  echo "Bash nie jest zainstalowany!"
-fi
-```
+**Szczegóły implementacji**: Dzisiejsze systemy uniksowe (w tym macOS) wykorzystują jądro Linux, które oferuje dużo bardziej efektywny sposób sprawdzania czy katalog istnieje. Wcześniej używane funkcje, takie jak `stat()` lub `access()`, były mniej wydajne i wymagały więcej kodu, aby uzyskać ten sam efekt.
 
-W naszym przykładzie sprawdzamy, czy plik wykonywalny Bash znajduje się w katalogu /usr/bin. Jeśli tak, wyświetlimy odpowiedni komunikat, jeśli nie - wyświetlimy inny.
-
-## Dogłębna analiza
-
-W rzeczywistości, polecenie `test` jest tylko aliasem dla innego polecenia - `[`. Wywołanie `test -d moj_katalog` jest równoznaczne z wywołaniem `[ -d moj_katalog ]`. `test` jest poleceniem wbudowanym w Bash, ale `[` jest zewnętrznym programem znajdującym się w katalogu /bin.
-
-`test` lub `[` przyjmuje wiele flag i opcji, które pozwalają na różne rodzaje testów, nie tylko sprawdzanie istnienia plików i katalogów. Możemy na przykład sprawdzić czy plik jest pusty, czy czytelnik lub wykonywalny, czy jego rozmiar jest większy/mniejszy od określonej wartości, itp. Aby poznać pełną listę wszystkich opcji `test`, wpisz w terminalu `man test`.
-
-## Zobacz również
-
-- [Bash Beginners Guide](https://tldp.org/LDP/Bash-Beginners-Guide/html/chap_07.html)
-- [Sekwencje ucieczki w skrypcie Bash](https://linux.die.net/abs-guide/escape-characters.html)
-- [Podstawowe instrukcje warunkowe w skrypcie Bash](https://linux.die.net/abs-guide/testconstructs.html)
+## Zobacz również:
+- [Dokumentacja Bash](https://www.gnu.org/software/bash/manual/bash.html)
+- [Poradnik Linuxa](https://www.linuxtutorial.org/how-to-check-if-a-directory-exists-in-a-shell-script/)

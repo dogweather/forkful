@@ -10,49 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+# Writing Text Files in Gleam: A How-To Guide
 
-Writing a text file is an essential task for any developer. It allows you to easily store and transfer data, making it a crucial part of many programming projects.
+## What & Why?
+Writing a text file refers to the process of creating a file that contains only text-based data. Programmers use this technique to store information that can be easily read and edited by both humans and machines. It allows for the flexibility of adding and updating data without the need for specialized software.
 
-## How To
+## How to:
+Writing a text file in Gleam is a simple process that can be done using the standard library's `File` module. Below is a basic example of creating and writing data to a text file:
 
-To write a text file in Gleam, the first step is to import the `gleam/io` module. This will give us access to the necessary functions. Here's an example of how you can create and write to a file:
-
-```
-import gleam/io
+```Gleam
+import gleam/file
 
 fn main() {
-  let file = gleam/io.file("my_file.txt")
-  write_to_file(file, "Hello, world!")
+  // Create a new file named "example.txt"
+  let file = file.create("example.txt");
+
+  // Write data to the file
+  file.write("Hello, world!");
+
+  // Close the file when finished
+  file.close()
 }
 ```
 
-In the above code, we first create a file named "my_file.txt" and then write the string "Hello, world!" to it using the `write_to_file` function. This function takes in the file we created and the data we want to write as arguments.
+The output of this code will be a new text file called "example.txt" with the text "Hello, world!" written in it. Gleam also offers functions for appending, reading, and manipulating the data in a text file.
 
-You can also use Gleam's built-in string interpolation to easily write data to a file. Here's an example:
+## Deep Dive:
+Text files have been a fundamental part of programming since its early days. They are a versatile and widely used method for storing data in a human-readable format. In Gleam, there are alternative methods for storing and manipulating data, such as using databases or other data structures within the language.
 
-```
-import gleam/io
+When writing a text file in Gleam, it's important to note that the data is written to the file in its raw form. This means that any formatting, such as line breaks or indentation, must be added explicitly. It's also worth mentioning that Gleam's standard library offers various functions for handling errors and ensuring that the file is properly closed after use.
 
-fn main() {
-  let name = "John"
-  let file = gleam/io.file("hello.txt")
-  write_to_file(file, "Hello, {name}!")
-}
-```
-
-In the above code, we use the `write_to_file` function to write "Hello, John!" to the file "hello.txt". As you can see, using string interpolation makes it much easier to write dynamic data to a file.
-
-## Deep Dive
-
-When writing a text file in Gleam, you have the option to specify the encoding of the file using the `Encoding` type. This is useful if you want to support different character sets, such as UTF-8 or ASCII. By default, Gleam will use UTF-8 encoding.
-
-You can also specify the file mode when creating a file using the `Mode` type. This allows you to control whether the file is opened for reading, writing, or both. By default, Gleam will open the file for reading and writing.
-
-Lastly, you can use the `write_line_to_file` function to write data to a file and automatically add a new line at the end. This is useful if you want to write data to a file in a structured format, such as CSV.
-
-## See Also
-
-- [Gleam documentation on writing files](https://gleam.run/book/tour/files.html)
-- [Official Gleam website](https://gleam.run/)
-- [Gleam on GitHub](https://github.com/gleam-lang/gleam)
+## See Also:
+For further information and examples on writing text files in Gleam, check out these resources:
+- [Gleam Standard Library Documentation](https://gleam.run/documentation/stdlib/file/)
+- [Gleam Official Website](https://gleam.run/)
+- [Gleam GitHub Repository](https://github.com/gleam-lang/gleam)

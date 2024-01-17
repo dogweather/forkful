@@ -1,7 +1,7 @@
 ---
-title:                "Zapisywanie wielkich liter w ciągu znaków"
-html_title:           "PHP: Zapisywanie wielkich liter w ciągu znaków"
-simple_title:         "Zapisywanie wielkich liter w ciągu znaków"
+title:                "Zmienianie litery początkowej w ciągu znaków"
+html_title:           "PHP: Zmienianie litery początkowej w ciągu znaków"
+simple_title:         "Zmienianie litery początkowej w ciągu znaków"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Strings"
@@ -10,31 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i Dlaczego?
 
-Czemu warto wykorzystywać funkcję 'strtoupper' do zamieniania liter na duże litery? Przez wykorzystanie tego prostego narzędzia można szybko i sprawnie zmienić format tekstu do swoich potrzeb. Ponadto, jest to bardzo przydatne przy pracy z tekstami w programowaniu.
+Capitalizowanie (ang. capitalizing) jest procesem zmiany pierwszej litery w słowie na dużą literę. Programiści często to robią, ponieważ jest to standardowa konwencja pisania kodu, co ułatwia czytanie i zrozumienie kodu dla innych programistów.
 
-## Jak to zrobić
+## Jak to zrobić:
 
-Kodowanie w PHP jest bardzo proste i intuicyjne, dlatego też wykorzystanie funkcji 'strtoupper' nie sprawia większych trudności. Wystarczy umieścić kod pomiędzy znacznikami "```PHP" i "```" oraz użyć funkcji w następujący sposób:
+### W PHP:
 
-```PHP
-$name = "programowanie w PHP";
-echo strtoupper($name);
+```php
+$string = "witaj świecie!";
+
+echo ucfirst($string); // Wyświetli: "Witaj świecie!"
+
+echo ucwords($string); // Wyświetli: "Witaj Świecie!"
 ```
 
-W rezultacie otrzymamy: PROGRAMOWANIE W PHP.
+## Głębszy Zanurzenie:
 
-## Głębszy zanurzenie
+### Kontekst Historyczny:
 
-Funkcja 'strtoupper' w PHP służy do zamiany wszystkich liter w podanym ciągu znaków na duże litery. Dzięki temu możemy szybko i bez większego wysiłku zmienić format tekstu, co jest szczególnie przydatne przy tworzeniu raportów, dokumentów czy formularzy.
+W starszych wersjach PHP zmienną globalną ini_ucfirst można było ustawić na true, aby włączyć automatyczne capitalizowanie pierwszej litery. Jednak w aktualnej wersji PHP nie jest to już dostępna opcja.
 
-Funkcja ta jest również bardzo użyteczna przy porównywaniu tekstu, ponieważ zamiana na jeden, ustalony format ułatwia znalezienie identycznych lub podobnych ciągów znaków.
+### Alternatywy:
 
-Innym ciekawym zastosowaniem może być wykorzystanie funkcji 'strtoupper' do zabezpieczenia formularzy na stronie internetowej. W przypadku, gdy wymagane jest wpisanie kodu captcha, zmiana liter na duże znacznie zmniejsza szansę na błędy przy wpisywaniu kodu.
+Istnieje wiele innych funkcji w PHP umożliwiających manipulowanie tekstem, takich jak strtolower(), strtoupper() czy strrev(). Jednakże, jeśli chodzi o capitalizowanie pierwszej litery, najlepszym wyborem są funkcje ucfirst() lub ucwords().
 
-## Zobacz także
+### Szczegóły Implementacji:
 
-- Dokumentacja funkcji 'strtoupper' w PHP: https://www.php.net/manual/en/function.strtoupper.php
-- Przykłady użycia funkcji 'strtoupper': https://www.w3schools.com/php/func_string_strtoupper.asp
-- Poradnik dotyczący tworzenia formularzy z wykorzystaniem funkcji 'strtoupper': https://www.phpzag.com/uppercasing-captcha-code-by-strtoupper-function-in-php/
+Funkcja ucfirst() zmienia pierwszą literę w stringu na dużą, natomiast ucwords() capitalizuje wszystkie pierwsze litery w każdym słowie w stringu. Funkcje te są wywoływane na zmiennej typu string i zwracają nowy string z zmienionymi literami. Obie funkcje są dostępne od PHP w wersji 4.
+
+## Zobacz też:
+
+- Oficjalna dokumentacja PHP dotycząca funkcji ucfirst(): https://www.php.net/manual/en/function.ucfirst.php
+- Oficjalna dokumentacja PHP dotycząca funkcji ucwords(): https://www.php.net/manual/en/function.ucwords.php

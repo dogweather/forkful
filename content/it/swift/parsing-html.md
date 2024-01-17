@@ -1,7 +1,7 @@
 ---
-title:                "Estrazione HTML"
-html_title:           "Swift: Estrazione HTML"
-simple_title:         "Estrazione HTML"
+title:                "Estrazione di html"
+html_title:           "Swift: Estrazione di html"
+simple_title:         "Estrazione di html"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "HTML and the Web"
@@ -10,58 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+## Che cos'è e perché si fa
 
-Se stai sviluppando un'applicazione iOS o macOS che deve interagire con il web, potresti trovarti nella situazione di dover analizzare il codice HTML delle pagine web per accedere ai dati di cui hai bisogno. In questo caso, la funzionalità di parsing HTML diventa essenziale per il tuo progetto.
+Il parsing HTML è il processo di analisi di codice HTML per estrarre informazioni utili dai siti web. I programmatori lo fanno per creare strumenti in grado di elaborare e manipolare i dati HTML in modo più preciso ed efficiente.
 
 ## Come fare
 
-Per prima cosa, assicurati di aver importato il framework Foundation nel tuo progetto per poter utilizzare le classi di supporto per il parsing HTML.
+Ecco un semplice esempio di come analizzare una pagina HTML utilizzando Swift:
 
 ```Swift
-import Foundation
-```
+// importa il framework HTMLString
+import HTMLString 
 
-Quindi, puoi utilizzare il delegato degli oggetti URLSession per ottenere i dati della pagina web in formato Data. Successivamente, utilizza l'oggetto HTMLParser per analizzare il codice HTML e ottenere il contenuto di cui hai bisogno.
-
-```Swift
-// Esempio di utilizzo del delegato URLSession
-let session = URLSession.shared.dataTask(with: URL(string: "https://www.example.com")!) { (data, response, error) in 
-
-    // Utilizzo dell'oggetto HTMLParser
-    let parser = HTMLParser(data: data!)
-    parser.parse { (document, error) in
-        print(document?.body?.text ?? "")
+// definisci una funzione che esegue il parsing della pagina HTML
+func parseHTML() {
+    // scarica la pagina HTML desiderata
+    guard let url = URL(string: "https://www.example.com") else {
+        print("Impossibile scaricare la pagina")
+        return
     }
-}
-session.resume()
-```
-
-Dopo aver ottenuto il contenuto, puoi utilizzare le proprietà e i metodi dell'oggetto HTMLDocument per navigare e ottenere i dati di cui hai bisogno.
-
-```Swift
-// Esempio di utilizzo delle proprietà e dei metodi di HTMLDocument
-if let title = document?.title {
-    print("Titolo della pagina: \(title)")
-}
-if let links = document?.links {
-    print("Lista dei link presenti nella pagina:")
-    for link in links {
-        print("- \(link)")
+    do {
+        // utilizza il metodo .contents() per estrarre il contenuto della pagina
+        let htmlText = try String(contentsOf: url)
+        // crea un oggetto HTMLDocument utilizzando il contenuto della pagina
+        let htmlDocument = try HTMLDocument(string: htmlText)
+        
+        // utilizza il metodo .forEachNode() per scorrere tutti i nodi del documento HTML
+        htmlDocument.forEachNode { node in
+            // se il nodo ha un elemento "a", stampa il suo valore attributo href
+            if let a = node as? HTMLHyperLink {
+                print(a.href)
+            }
+        }
+    } catch {
+        print("Errore durante il parsing HTML")
     }
 }
 ```
+
+Esempio di output: ```https://www.example.com/links```
 
 ## Approfondimento
 
-Il parsing HTML può risultare complesso, soprattutto quando si tratta di pagine con una struttura più complessa o con codice non standard. In questi casi, potrebbe essere utile utilizzare librerie esterne come SwiftSoup o Kanna per semplificare il processo di parsing e ottenere i dati desiderati.
+Il parsing HTML è stato introdotto per la prima volta nel 1986 nell'ambito del progetto SGML (Standard Generalized Markup Language). Una delle alternative più diffuse al parsing HTML è l'utilizzo di librerie come BeautifulSoup o libxml2.
 
-Tuttavia, è importante ricordare che il parsing HTML non è una soluzione ideale per ottenere i dati da una pagina web. Spesso, è preferibile utilizzare un API esposta dal sito stesso o un servizio di scraping professionale per evitare problemi di affidabilità e conformità alle normative di utilizzo dei dati.
+Per implementare il parsing HTML, Swift utilizza il framework HTMLString, che permette di manipolare e analizzare facilmente il codice HTML. Esso fornisce anche una serie di metodi utili per gestire i dati estratti dai siti web.
 
 ## Vedi anche
 
-Per ulteriori informazioni sul parsing HTML con Swift, puoi consultare i seguenti link:
-
-- [Documentazione ufficiale di Apple su Foundation](https://developer.apple.com/documentation/foundation)
-- [Libreria SwiftSoup](https://github.com/scinfu/SwiftSoup)
-- [Libreria Kanna](https://github.com/tid-kijyun/Kanna)
+Per ulteriori informazioni sul parsing HTML in Swift, puoi consultare la documentazione ufficiale del framework HTMLString o il repository GitHub relativo. Inoltre, puoi trovare ulteriori esempi ed esercizi su siti come Ray Wenderlich o Hacking with Swift.

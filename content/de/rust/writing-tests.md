@@ -10,50 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
-Warum sollte man sich überhaupt die Mühe machen, Tests zu schreiben? Es gibt mehrere Gründe dafür:
+## Was & Warum?
 
-- Tests helfen dabei, Bugs frühzeitig zu erkennen und zu beheben, was langfristig viel Zeit und Nerven spart.
-- Durch Tests kann man sich sicherer sein, dass der Code das tut, was er soll, und dass Änderungen keine ungewollten Nebenwirkungen haben.
+Das Verfassen von Tests ist ein wichtiger Bestandteil der Softwareentwicklung. Es beinhaltet das Schreiben von Code, der bestimmte Funktionen oder Teile eines Programms überprüft, um sicherzustellen, dass sie wie erwartet funktionieren. Programmer schreiben Tests, um die Qualität und Zuverlässigkeit ihres Codes zu verbessern und mögliche Fehler zu identifizieren, bevor sie in die Produktionsumgebung gelangen.
 
-## Wie es geht
-Um Tests in Rust zu schreiben, benötigst du das Modul `test` aus dem `std`-Paket. Hier findest du ein einfaches Beispiel:
+## Wie geht's?
+
+Das Schreiben von Tests in Rust ist einfach und effektiv. Hier ist ein einfaches Beispiel:
 
 ```Rust
-// Modul `test` importieren
-use std::test;
-
-// Funktion, die getestet werden soll
-fn multiplizieren(x: i32, y: i32) -> i32 {
-    x * y        
+// Definiere eine Funktion, die zwei Zahlen addiert
+fn sum(x: i32, y: i32) -> i32 {
+    return x + y;
 }
 
-// Tests mit `#[test]`-Attribut markieren
+// Schreibe einen Test zur Überprüfung ob die Funktion korrekt funktioniert
 #[test]
-fn test_multiplizieren() {
-    assert_eq!(multiplizieren(2, 3), 6); // erwartetes Ergebnis angeben
-    assert_eq!(multiplizieren(5, -2), -10);
+fn test_sum() {
+    assert_eq!(sum(2, 3), 5); // Erwartetes Ergebnis: 5
 }
 ```
 
-Die `assert_eq!`-Makros vergleichen das Ergebnis der Funktion mit dem erwarteten Wert und geben eine Fehlermeldung aus, wenn sie nicht übereinstimmen. Der Output sollte in etwa so aussehen:
+Der ```#[test]``` -Attribut sagt dem Rust-Compiler, dass dies ein Test ist, der bei jedem Durchlauf des Codes ausgeführt werden sollte. In diesem Beispiel verwenden wir die Funktion ```assert_eq!```, die das erwartete Ergebnis mit dem tatsächlichen Ergebnis vergleicht und einen Fehler ausgibt, wenn sie nicht übereinstimmen.
 
-```
+Hier ist die Ausgabe, die wir erhalten, wenn wir den Test ausführen:
+
+```bash
 running 1 test
-test test_multiplizieren ... ok
+test test_sum ... ok
 
-test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out
+test result: ok. 1 passed, 0 failed, 0 ignored, 0 measured, 0 filtered out
 ```
 
-Neben `assert_eq!` gibt es noch weitere nützliche Makros, wie zum Beispiel `assert_ne!`, welches auf Ungleichheit überprüft.
+Rust bietet auch weitere nützliche Makros für das Testen, wie z.B. ```assert_ne!``` zum Überprüfen, ob zwei Werte ungleich sind.
 
-## Tiefer tauchen
-Wenn du mehr über das Schreiben von Tests in Rust erfahren möchtest, empfehle ich dir folgende Ressourcen:
+## Tiefer Einblick
 
-- Offizielle Dokumentation zu [Unit-Tests](https://doc.rust-lang.org/rust-by-example/testing/unit_testing.html) und [Tests für Fehlerbehandlung](https://doc.rust-lang.org/rust-by-example/testing/panic.html) in Rust.
-- [Rust Testing Cheat Sheet](https://devhints.io/rust-testing) für eine Übersicht über alle verfügbaren Test-Makros.
-- [The Rust Book](https://doc.rust-lang.org/book/) für eine umfassende Einführung in die Programmiersprache Rust und ihre Features, einschließlich Tests.
+Das Testen von Code ist ein wichtiger Bestandteil der Softwareentwicklung, der schon seit vielen Jahren praktiziert wird. In der Vergangenheit wurden häufig manuelle Tests durchgeführt, bei denen ein Programm von Hand ausgeführt und beobachtet wurde, ob es wie erwartet funktioniert. Dies war jedoch sehr zeitaufwändig und ungenau. Mit der Einführung von automatisierten Tests, wie z.B. in Rust, können Programmierer schnell und effizient sicherstellen, dass ihr Code richtig funktioniert.
+
+Es gibt auch andere Möglichkeiten, Code zu testen, wie z.B. durch die Verwendung von Test-Frameworks oder Continuous Integration. Diese Ansätze bieten zusätzliche Funktionen und Flexibilität, sind aber oft auch komplexer zu implementieren und erfordern mehr Aufwand in der Wartung.
+
+In Rust können Tests auch parallel ausgeführt werden, wodurch die Geschwindigkeit und Effizienz verbessert wird. Dies ist aufgrund der starken Typisierung und strikten Verwendung von Threads in Rust möglich.
 
 ## Siehe auch
-- [The Rust Programming Language](https://www.rust-lang.org/) für offizielle Informationen und Neuigkeiten zu Rust.
-- [Awesome Rust](https://github.com/rust-unofficial/awesome-rust) für eine Liste mit hilfreichen Tools, Libraries und Ressourcen rund um Rust.
+
+- [The Rust Book](https://doc.rust-lang.org/book/ch11-00-testing.html)
+- [Rust by Example](https://doc.rust-lang.org/rust-by-example/testing/unit_testing.html)
+- [Testing in Rust](https://medium.com/@nshntarora/testing-in-rust-d282b5aa9742)

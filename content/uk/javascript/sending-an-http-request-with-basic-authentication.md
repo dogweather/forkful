@@ -1,7 +1,7 @@
 ---
-title:                "Надсилання http-запиту з основною аутентифікацією"
-html_title:           "Javascript: Надсилання http-запиту з основною аутентифікацією"
-simple_title:         "Надсилання http-запиту з основною аутентифікацією"
+title:                "Надсилання http-запиту з основною автентифікацією"
+html_title:           "Javascript: Надсилання http-запиту з основною автентифікацією"
+simple_title:         "Надсилання http-запиту з основною автентифікацією"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "HTML and the Web"
@@ -10,41 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Чому
+## Що і чому?
+Надсилання HTTP-запиту з базовою аутентифікацією - це процес передачі запиту до веб-сервера з додатковими обліковими даними для перевірки ідентифікації користувача. Це може бути необхідно для доступу до певних обмежених ресурсів та забезпечення безпеки.
 
-Посилання HTTP з базовою аутентифікацією - це широко використовуваний спосіб забезпечення безпеки веб-додатків. Використання базової аутентифікації дозволяє передавати дані для аутентифікації в зашифрованому форматі, що дозволяє забезпечити захист від несанкціонованого доступу до важливих даних.
-
-## Як це зробити
-
+## Як це зробити:
 ```Javascript
-// Приклад використання fetch API для відправки запиту HTTP з базовою аутентифікацією
-
-fetch('https://example.com/api/', {
-  method: 'GET',
-  headers: {
-    Authorization: 'Basic ' + btoa(username + ':' + password)
-    // Використання функції btoa для кодування логіна та пароля в форматі base64
-  }
+fetch('https://example.com/api', {
+    headers: {
+        Authorization: 'Basic ' + btoa('username:password')
+    }
 })
-.then(res => res.json())
-.then(data => {
-  console.log(data); // Виведення відповіді сервера у консоль
-})
-.catch(error => {
-  console.log(error); // Виведення помилки, якщо запит не був успішно виконаний
-});
+    .then(response => console.log(response))
+    .catch(error => console.log(error))
 ```
 
-### Вихідні дані:
-```
-{"message": "Дані успішно отримані!"}
-```
+## Глибока пірнятка:
+- Історичний контекст: базова аутентифікація HTTP була першою формою аутентифікації для HTTP-протоколу.
+- Альтернативи: існує багато інших типів аутентифікації для HTTP, таких як OAuth і JWT.
+- Деталі реалізації: для передачі облікових даних у запиті можна використовувати шифрування Base64.
 
-## Глибокий аналіз
-
-Перед тим як відправити запит з базовою аутентифікацією, необхідно знати логін та пароль для доступу до застосунку. Також, важливо перевірити, чи сервер підтримує базову аутентифікацію, вказавши правильне значення для заголовка `Authorization`. Для забезпечення безпеки, рекомендується використовувати HTTPS замість HTTP при виконанні запиту з базовою аутентифікацією.
-
-## Дивись також
-
-- [MDN Web Docs: Fetch API](https://developer.mozilla.org/uk/docs/Web/API/Fetch_API)
-- [MDN Web Docs: base64](https://developer.mozilla.org/uk/docs/Web/API/WindowOrWorkerGlobalScope/btoa)
+## Дивіться також:
+- [MDN - Basic authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#Basic_authentication_scheme)
+- [HTTP Authentication: Basic and Digest Access Authentication (RFC-7617)](https://tools.ietf.org/html/rfc7617)

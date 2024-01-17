@@ -10,42 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##为什么
-临时文件是一个在编程过程中经常会使用到的工具。它可以暂时存储数据，方便在后续的代码中访问和处理，从而提高程序的效率和可读性。如果你正在使用TypeScript来开发项目，那么创建临时文件可以帮助你更好地组织和管理你的代码。
+## 什么是临时文件？为什么程序员要创建临时文件？
 
-##如何创建临时文件
-使用TypeScript中的fs模块可以很方便地创建临时文件。下面是一个简单的示例代码，展示了如何使用fs模块来创建一个临时文件并向其中写入文本内容。
+临时文件是程序员为了存储数据而创建的一个临时文件。程序员通常会在运行过程中需要存储一些临时数据，但是这些数据又不需要保留到程序执行结束。因此，创建临时文件可以帮助程序员在运行过程中临时存储数据，并在程序执行结束后自动删除，避免占用不必要的空间。
 
-```TypeScript
-import * as fs from 'fs';
+## 如何创建临时文件？
 
-// 创建临时文件
-const tempFile = fs.mkstempSync('temp-');
+在TypeScript中，可以使用内置的fs模块来创建临时文件。下面是一个简单的示例代码，演示如何使用fs模块来创建临时文件：
 
-// 向临时文件中写入文本
-fs.writeFileSync(tempFile, '这是一个临时文件。');
+```TypeScript 
+import fs from 'fs';
 
-// 读取临时文件中的文本内容
-const fileContent = fs.readFileSync(tempFile, 'utf-8');
-
-// 打印输出
-console.log('临时文件路径: ', tempFile);
-console.log('临时文件内容: ', fileContent);
+// 创建临时文件 
+fs.mkdtemp('myTempFile-', (err, folder) => {
+  if (err) throw err;
+  console.log(folder); // 输出临时文件夹路径
+});
 ```
 
-输出结果如下：
+输出：myTempFile-ZOhWQs
 
-```
-临时文件路径: temp-DzAtWc
-临时文件内容: 这是一个临时文件。
-```
+## 深入了解
 
-##深入了解
-上述示例中使用的`mkstempSync()`方法会创建一个随机命名的临时文件，并返回其路径。这样可以防止重复文件名的冲突。如果需要指定临时文件的名称，可以使用`mkdtemp()`方法来创建一个随机的临时文件目录，并返回其路径。
+### 历史背景
 
-在创建临时文件后，我们可以使用`writeFileSync()`方法来向文件中写入文本，也可以使用`readFileSync()`方法来读取文件中的内容。使用fs模块的相关方法可以让我们更轻松地操作临时文件，从而提高编程效率和可读性。
+在早期的计算机系统中，临时文件的概念并不常见。数据存储的空间比较有限，程序员必须精确管理内存和存储空间。随着计算机性能的提升和硬件成本的降低，操作系统开始支持临时文件，从而方便程序员进行数据存储。
 
-##更多参考
-- [Node.js fs模块文档](https://nodejs.org/dist/latest-v14.x/docs/api/fs.html)
-- [TypeScript官方文档](https://www.typescriptlang.org/docs)
-- [创建临时文件的其他方法](https://nodejs.org/dist/latest-v14.x/docs/api/fs.html#fs_fs_mkstemp_prefix)
+### 其他选择
+
+除了创建临时文件，程序员还可以选择使用内存来存储临时数据。但是内存存储的数据在程序运行结束后会被清空，不适用于需要长时间保存数据的情况。相比之下，临时文件可以在程序运行过程中保留数据，并在程序执行结束后自动删除，更加方便和灵活。
+
+### 实现细节
+
+在创建临时文件时，程序员可以指定文件名前缀，操作系统会根据该前缀生成一个唯一的随机字符串作为文件名。此外，程序员还可以选择在指定文件名前缀的同时，指定文件的后缀名。这样可以更方便地区分不同类型的临时文件。
+
+## 参考资料
+
+- [Node.js官方文档](https://nodejs.org/dist/latest-v12.x/docs/api/fs.html#fs_fs_mkdtemp_prefix_options_callback)

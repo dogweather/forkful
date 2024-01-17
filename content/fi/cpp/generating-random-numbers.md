@@ -1,7 +1,7 @@
 ---
-title:                "Sattumanvaraisten numeroiden luominen"
-html_title:           "C++: Sattumanvaraisten numeroiden luominen"
-simple_title:         "Sattumanvaraisten numeroiden luominen"
+title:                "Sattumanvaraisten numeroiden tuottaminen"
+html_title:           "C++: Sattumanvaraisten numeroiden tuottaminen"
+simple_title:         "Sattumanvaraisten numeroiden tuottaminen"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Numbers"
@@ -10,56 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mitä & Miksi?
+Satunnaisten numeroiden generointi on tärkeä osa ohjelmointia, jossa luodaan numeroita satunnaisesti tai tiettyjen sääntöjen mukaisesti. Ohjelmoijat tekevät tätä useista syistä, kuten pelien satunnaisuuden luomiseen, salausavaimien luomiseen tai simulointien tekemiseen.
 
-On monia syitä, miksi käyttäjä haluaisi generoida satunnaisia lukuja C++:lla. Satunnaiset numerot ovat hyödyllisiä esimerkiksi pelisuunnittelussa, satunnaisten järjestysten luomisessa ja testaamisessa.
-
-## Kuinka tehdä se
-
-Käytä standardikirjaston `<cstdlib>` kirjastoa, joka sisältää funktion `rand()`, joka generoi satunnaisia lukuja. Ensin tulee kutsua `srand()` funktiota, joka asettaa satunnaislukugeneraattorin siemenen. Sen jälkeen voidaan kutsua `rand()` funktiota ja tulostaa sen palauttamat luvut halutussa muodossa.
+## Miten:
+Esimerkiksi, jos haluat luoda satunnaisen kokonaisluvun välillä 1-10, voit käyttää rand() toimintoa. Katso alla oleva esimerkki:
 
 ```C++
-#include <cstdlib>
 #include <iostream>
+#include <cstdlib>
+#include <ctime>
+
+using namespace std;
 
 int main() {
-  // Asettaa satunnaislukugeneraattorin siemenen.
-  // Parametriksi voidaan antaa esimerkiksi ajanhetki, jotta saataisiin uusia satunnaislukuja joka suorituksella. 
-  srand(time(0));
 
-  // Generoidaan 10 satunnaista kokonaislukua väliltä 1-100 ja tulostetaan ne.
-  for(int i = 0; i < 10; i++) {
-    int random = rand() % 100 + 1; // generoi satunnaisen luvun väliltä 0-99 ja lisää 1 välttääkseen nollan
-    std::cout << random << std::endl;
-  }
+    // alusta satunnaislukujen generoijat
+    srand(time(0));
 
-  return 0;
+    // generoi ja tulosta satunnainen kokonaisluku välillä 1-10
+    int random = rand() % 10 + 1;
+    cout << random;
+
+    return 0;
 }
 ```
 
-Ohjelman tulostus voisi näyttää esimerkiksi tältä:
+Tuloste voi näyttää esimerkiksi seuraavalta: `7`
 
-```
-43
-72
-16
-87
-5
-55
-19
-94
-32
-66
-```
+## Syvemmälle:
+Historiallisesti, satunnaisnumeroita on generoitu fyysisillä laitteilla, kuten nopilla tai arpakuutioilla. Nykyään käytetään usein pseudosatunnaislukugeneraattoreita, jotka perustuvat algoritmeihin ja aloituskohdan arvoon, jota kutsutaan siemeneksi. Lisäksi on olemassa muita tapoja generoida satunnaisia lukuja, kuten käyttämällä fyysisiä olosuhteita, kuten kohinan määrää tietokoneen ympärillä.
 
-## Syvempi sukellus
-
-Satunnaislukugeneraattorit käyttävät algoritmeja generoidakseen "satunnaisen" luvun. Koska koneet eivät pysty tuottamaan täysin satunnaisia lukuja, voidaan vain puhua pseudosatunnaisista luvuista, joiden arvot määräytyvät annettujen algoritmejen perusteella. Siksi tärkeää onkin valita hyvä satunnaislukugeneraattori, joka tuottaa lukuja mahdollisimman tasaisesti ja suoraviivaisesti.
-
-Hyvä tapa parantaa satunnaislukujen laatua on käyttää parempaa satunnaislukugeneraattoria, kuten `mt19937` tai `minstd_rand`. Nämä algoritmit pohjautuvat parempiin laskentakaavoihin ja tuottavat näin ollen "satunnaisempia" lukuja.
-
-## Katso myös
-
-- [C++ Reference - rand()](https://www.cplusplus.com/reference/cstdlib/rand/)
-- [C++ Reference - srand()](https://www.cplusplus.com/reference/cstdlib/srand/)
-- [GeeksforGeeks - Random Numbers in C++](https://www.geeksforgeeks.org/rand-and-srand-in-ccpp/)
+## Katso myös:
+- [rand() -funktio C++:ssa (Cplusplus.com)](http://www.cplusplus.com/reference/cstdlib/rand/)
+- [From Dice to Computers: A Brief History of Random Number Generation (DataGenetics)](https://datagenetics.com/blog/september22012/)
+- [Introduction to Random Number Generators (Medium)](https://medium.com/@whouserandom/introduction-to-random-number-generators-dcecf0d25d34)

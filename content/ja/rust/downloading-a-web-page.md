@@ -10,39 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+## これは何？なんでやるの？
+ウェブページをダウンロードすることは、インターネットからコンピューターに情報を取得することです。プログラマーがこれを行う理由は、ウェブスクレイピングやデータマイニングなど、さまざまなタスクを実行するために必要なデータを収集するためです。
 
-ウェブページをダウンロードする理由はたくさんあります。例えば、特定の情報を手元に保存したい、オフライン環境で閲覧したい、またはプログラミングの演習として使用したいなどが挙げられます。この記事では、Rust言語でウェブページをダウンロードする方法を紹介します。
-
-## 方法
-
-Rustでウェブページをダウンロードするには、まずは必要なクレートをインポートします。例えば、[`reqwest`](https://docs.rs/reqwest/latest/reqwest/)クレートを使うと簡単にウェブページをダウンロードできます。
-
+## 方法：
 ```Rust
-use reqwest::Error; // エラー処理を行うためのクレートをインポート
-use std::fs::File; // ファイル操作をするためのクレートをインポート
-use std::io::copy; // ファイルをコピーするためのクレートをインポート
+use std::io::Read;
+use reqwest::Client;
 
-fn main() -> Result<(), Error>{
-  let response = reqwest::get("https://example.com")?; // ウェブページをダウンロードする
-  let mut output = File::create("index.html")?; // ファイルを作成する
-  copy(&mut response, &mut output)?; // ファイルをコピーする
+fn main() {
+    let mut response = Client::new().get("https://www.example.com").send().unwrap();
+    let mut body = String::new();
+    response.read_to_string(&mut body).unwrap();
 
-  println!("ページをダウンロードしました！");
-  Ok(()) // 処理が成功した場合には、エラーオブジェクトを返さずに`()`を返す
+    println!("Response: {}", response.status());
+    println!("Body: {}", body);
 }
 ```
 
-上の例では、[`get`](https://docs.rs/reqwest/latest/reqwest/struct.Response.html#method.text)メソッドを使用してウェブページをダウンロードし、[`copy`](https://doc.rust-lang.org/std/fs/fn.copy.html)関数を使用してファイルをコピーしています。ダウンロードしたウェブページは`index.html`という名前で保存されます。この方法を応用すれば、ダウンロードしたファイルをパースしたり、ヘッダー情報を取得したりすることもできます。
+出力：
+```
+Response: 200 OK
+Body: <!DOCTYPE html>
+<html>
+<head>
+<title>Example Domain</title>
+...
+```
 
-## ディープダイブ
+## 詳しく見る：
+- ウェブページをダウンロードする前に、エンドポイントにリクエストを送信してレスポンスを受け取る必要があります。今回は、`reqwest`クレートを使用していますが、`curl`や`wget`などの代替ツールもあります。
+- ダウンロードする際には、通常HTTPやHTTPSプロトコルを使用しますが、独自のプロトコルを作成して使用することもできます。
+- ウェブページをダウンロードするというタスクは、ウェブスクレイピングやデータマイニングなど、多くの応用分野で必要とされます。
 
-ウェブページをダウンロードする際には、HTTPリクエストやレスポンスについても知っておく必要があります。[`reqwest`](https://docs.rs/reqwest/latest/reqwest/)クレートでは、[`Request`](https://docs.rs/reqwest/latest/reqwest/struct.Request.html)と[`Response`](https://docs.rs/reqwest/latest/reqwest/struct.Response.html)という構造体を使用してリクエストとレスポンスを処理することができます。また、HTTPリクエスト時には[`Client`](https://docs.rs/reqwest/latest/reqwest/struct.Client.html)構造体を使用して、セッションを作成することができます。
-
-さらに、ウェブページをダウンロードする際にはHTTPSを使用することが推奨されています。[`reqwest`](https://docs.rs/reqwest/latest/reqwest/)クレートでは、[`ClientBuilder`](https://docs.rs/reqwest/latest/reqwest/struct.ClientBuilder.html)を使用してHTTPSエンドポイントを検証することもできます。
-
-## もっと詳しく知りたい
-
-- [`reqwest`クレートドキュメンテーション](https://docs.rs/reqwest/latest/reqwest/)
-- [Rustプログラミング言語公式ウェブサイト](https://www.rust-lang.org/ja)
-- [RustでWebスクレイピングする方法（Qiita）](https://qiita.com/attsun1031/items/9d95a
+## 関連リンク：
+- RustでのHTTPクライアント `reqwest`のドキュメント：https://docs.rs/reqwest/
+- ウェブスクレイピングについての一般的な情報：https://www.crummy.com/software/BeautifulSoup/bs4/doc/

@@ -1,7 +1,7 @@
 ---
-title:                "Umwandeln eines Strings in Kleinbuchstaben"
-html_title:           "Go: Umwandeln eines Strings in Kleinbuchstaben"
-simple_title:         "Umwandeln eines Strings in Kleinbuchstaben"
+title:                "Ein String in Kleinschreibung umwandeln"
+html_title:           "Go: Ein String in Kleinschreibung umwandeln"
+simple_title:         "Ein String in Kleinschreibung umwandeln"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Strings"
@@ -10,13 +10,11 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was & Warum?
+Die Umwandlung von Zeichenketten in Kleinbuchstaben ist ein häufig verwendetes Konzept in der Programmierung. Dabei wird jede Großbuchstabe in der Zeichenkette in einen entsprechenden Kleinbuchstaben umgewandelt. Programmierer tun dies, um sicherzustellen, dass alle Eingaben auf die gleiche Weise behandelt werden und keine Fehler auftreten.
 
-Das Konvertieren eines Strings in Kleinbuchstaben ist eine grundlegende Funktion, die häufig beim Umgang mit Texten verwendet wird. Zum Beispiel kann dies hilfreich sein, um Eingaben des Benutzers einheitlich zu formatieren oder Vergleiche zwischen Wörtern durchzuführen.
-
-## So funktioniert es
-
-Um einen String in Kleinbuchstaben umzuwandeln, verwendet man die Funktion `ToLower()` aus der Standardbibliothek von Go. Sie erwartet einen String als Eingabe und gibt diesen in kleingeschriebener Form zurück.
+## How to:
+In Go ist die Konvertierung einer Zeichenkette in Kleinbuchstaben sehr einfach. Hier ist ein Beispielcode, der eine Eingabeaufforderung ausgibt und die Eingabe in Kleinbuchstaben konvertiert:
 
 ```Go
 package main
@@ -25,33 +23,34 @@ import "fmt"
 import "strings"
 
 func main() {
-  input := "Hallo, WELT!"
-  output := strings.ToLower(input)
-  fmt.Println(output) // Output: hallo, welt!
+    fmt.Print("Gib einen Text ein: ")
+    var input string
+    fmt.Scanln(&input)
+    
+    output := strings.ToLower(input)
+    fmt.Println("Dein Text in Kleinbuchstaben: " + output)
 }
 ```
 
-Man kann auch die Funktion `ToLower()` der `strings` Bibliothek verwenden, um alle Buchstaben in einem String in Kleinbuchstaben umzuwandeln. Diese Funktion ignoriert bereits kleingeschriebene Buchstaben.
+Beispiel Eingabe:
 
 ```Go
-package main
-
-import "fmt"
-
-func main() {
-  input := "Das ist ein PATH"
-  output := strings.ToLowerSpecial(unicode.TurkishCase, input)
-  fmt.Println(output) // Output: das ist ein path
-}
+Gib einen Text ein: GO is Awesome!
 ```
 
-## Tiefere Einblicke
+Beispiel Ausgabe:
 
-Go verwendet das Unicode-Sprachkonstrukt, um Zeichen zu repräsentieren. Dies bedeutet, dass die Funktion `ToLower()` alle Zeichen, die im Unicode-Standard definiert sind, in ihre entsprechenden Kleinbuchstaben umwandelt. Das Ergebnis kann daher je nach verwendeter Sprache unterschiedlich sein.
+```Go
+Dein Text in Kleinbuchstaben: go is awesome!
+```
 
-Es ist auch wichtig zu beachten, dass diese Funktion keine Zeichen in Großbuchstaben oder Sonderzeichen wie Zahlen oder Leerzeichen umwandelt.
+## Deep Dive:
+Die Umwandlung von Zeichenketten in Kleinbuchstaben ist kein neues Konzept und wurde schon seit langer Zeit in verschiedenen Programmiersprachen implementiert. In der Vergangenheit gab es verschiedene Methoden, dies zu erreichen, aber in modernen Programmiersprachen wie Go ist es in der Standardbibliothek enthalten.
 
-## Siehe auch
+Es gibt auch alternative Methoden, um eine Zeichenkette in Kleinbuchstaben umzuwandeln, wie z.B. die Verwendung von regulären Ausdrücken oder manueller Iteration durch jedes Zeichen. In der Regel ist die Verwendung von Standardbibliotheksfunktionen jedoch effizienter und zuverlässiger.
 
-- Offizielle Dokumentation zu `strings.ToLower()` aus der Go-Standardbibliothek: https://golang.org/pkg/strings/#ToLower
-- Weitere Informationen zu Unicode in Go: https://blog.golang.org/strings
+Die Implementierungsdetails der Konvertierung von Zeichenketten in Kleinbuchstaben hängen von der verwendeten Programmiersprache ab. In Go wird die Funktion ```strings.ToLower()``` verwendet, die jeden Buchstaben in der Zeichenkette mit Hilfe der Unicode-Tabelle in den entsprechenden Kleinbuchstaben umwandelt.
+
+## Siehe auch:
+- [Go Strings Package Documentation](https://golang.org/pkg/strings/)
+- [Wikipedia Artikel über Groß- und Kleinschreibung](https://de.wikipedia.org/wiki/Gro%C3%9Fschreibung_und_Kleinschreibung)

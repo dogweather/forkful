@@ -1,7 +1,7 @@
 ---
-title:                "Skapa en temporär fil"
-html_title:           "Swift: Skapa en temporär fil"
-simple_title:         "Skapa en temporär fil"
+title:                "Att skapa en temporär fil"
+html_title:           "Swift: Att skapa en temporär fil"
+simple_title:         "Att skapa en temporär fil"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Files and I/O"
@@ -10,43 +10,21 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
+## Vad & Varför?
+Skapande av en temporär fil är en vanlig handlingsform inom programmering. Det innebär att en fil skapas tillfälligt på datorns hårddisk under körningen av ett program och sedan raderas när den inte längre behövs. Detta används ofta för att hantera data som bara behövs tillfälligt eller för att utföra experimentella tester.
 
-Att skapa en temporär fil är ett vanligt programmeringskoncept som används för att tillfälligt lagra data. Det kan vara användbart i situationer där det är nödvändigt att skapa tillfälliga filer för att utföra specifika uppgifter.
-
-## Hur man gör
-
-Att skapa en temporär fil i Swift är relativt enkelt. Du kan använda följande kod för att skapa en temporär fil i ditt projekt:
-
+## Hur?
 ```Swift
-let tempDir = NSTemporaryDirectory()
-let tempFileURL = NSURL(fileURLWithPath: tempDir).appendingPathComponent("tempFile")!
-FileManager.default.createFile(atPath: tempFileURL.path, contents: nil, attributes: nil)
+let temporaryFile = FileManager.default.temporaryDirectory.appendingPathComponent("myFile.txt")
+let data = "Hello World".data(using: .utf8)
+FileManager.default.createFile(atPath: temporaryFile.path, contents: data, attributes: nil)
 ```
-
-Detta skapar en fil med namnet "tempFile" i din temporära mapp. För att använda filen kan du till exempel skriva data till den eller läsa data från den. När din kod är klar kan du ta bort filen genom att använda följande kod:
-
-```Swift
-try? FileManager.default.removeItem(atPath: tempFileURL.path)
-```
-
-Det är också möjligt att skapa en temporär fil med ett specifikt filnamn och en viss filändelse. Till exempel kan du skapa en temporär fil med namnet "tempData.txt" på följande sätt:
-
-```Swift
-let tempDir = NSTemporaryDirectory()
-let tempFileURL = NSURL(fileURLWithPath: tempDir).appendingPathComponent("tempData.txt")!
-FileManager.default.createFile(atPath: tempFileURL.path, contents: nil, attributes: nil)
-```
+I detta exempel skapar vi en temporär fil med namnet "myFile.txt" i systemets temporära mapp och fyller den med texten "Hello World" i form av en Data-instans. Därefter används FileManager för att skapa filen och innehållet läggs till genom att ange sökvägen till den temporära filen och datan.
 
 ## Djupdykning
-
-När du skapar en temporär fil är det viktigt att tänka på några saker. Först och främst bör du se till att filen skapas i en säker mapp som tillåter skriv- och läsrättigheter. I Swift är NSTemporaryDirectory() en säker mapp som rekommenderas för detta ändamål.
-
-Det är också viktigt att hantera filen ordentligt och ta bort den när den inte längre behövs. Att lämna temporära filer kvar kan leda till platsbrist och säkerhetsrisker på din enhet.
-
-Även om temporära filer kan vara användbara i vissa situationer, bör de undvikas när det är möjligt. Om du behöver tillfälligt lagra data, överväg att använda andra alternativ, som till exempel inminnesbufferten.
+Skapandet av temporära filer har funnits sedan de tidiga dagarna av datorer. Det användes då för att spara tillfälliga data som program behövde för att kunna köra. Alternativ till att skapa en temporär fil är att använda operativsystemets minne för att hålla data, vilket kan vara mer effektivt men kan också vara mer komplicerat att implementera. Skapandet av en temporär fil följer vanligtvis en generell algoritm som består av att välja en unik filnamnstämpel, skapa och öppna filen och sedan använda den för att utföra önskade operationer.
 
 ## Se även
-
-- [NSFileManager dokumentation](https://developer.apple.com/documentation/foundation/filemanager)
-- [Skapa en temporär fil i Swift](https://www.swiftdevcenter.com/create-temporary-files-in-swift/)
+Önskar du läsa mer om skapandet av temporära filer i Swift? Kolla in dessa användbara källor:
+- [Apple Developer Documentation](https://developer.apple.com/documentation/foundation/filemanager/1427163-createfile)
+- [Swift by Sundell blogpost](https://www.swiftbysundell.com/basics/temporary-files/)

@@ -10,26 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Qu'est-ce que c'est et pourquoi le faire?
 
-Vous avez peut-être entendu parler de Javascript, le langage de programmation qui est omniprésent dans le monde du développement web. Mais pourquoi devriez-vous vous intéresser à apprendre ce langage et peut-être même commencer un nouveau projet utilisant Javascript ? Eh bien, pour commencer, c'est un langage extrêmement populaire et connu pour sa facilité d'utilisation et sa polyvalence. Avec Javascript, vous pouvez créer des sites web interactifs, des applications mobiles et même des jeux. En apprendre davantage sur Javascript peut être un excellent moyen de renforcer vos compétences en programmation et d'ouvrir de nouvelles opportunités de carrière.
+Démarrer un nouveau projet en programmation, c'est commencer à travailler sur un nouveau programme ou une nouvelle application. Les programmeurs le font souvent pour créer quelque chose de nouveau et de plus avancé, ou pour résoudre un problème spécifique.
 
-## Comment faire
-
-Pour commencer, vous aurez besoin d'un environnement de développement pour écrire et tester votre code Javascript. Heureusement, il existe plusieurs options gratuites telles que Visual Studio Code, Atom ou Sublime Text. Une fois que vous avez votre environnement de travail en place, voici un exemple de code Javascript de base qui affiche "Bonjour !" dans la console de votre navigateur :
+## Comment faire:
 
 ```Javascript
-console.log("Bonjour !");
+// Créer un nouvel objet
+const nouveauProjet = {
+    nom: "Mon Nouveau Projet",
+    developpeur: "Moi",
+    annee: 2021
+};
+
+// Ajouter une méthode
+nouveauProjet.printInfo = function() {
+    console.log(`Le projet ${this.nom} a été développé par ${this.developpeur} en ${this.annee}.`);
+};
+// Appeler la méthode
+nouveauProjet.printInfo();
 ```
 
-Si vous voulez voir ce code en action, vous pouvez l'ajouter dans un fichier HTML et l'ouvrir dans votre navigateur. Vous devriez voir le message "Bonjour !" s'afficher dans la console de votre navigateur. Maintenant que vous avez les bases, vous pouvez continuer à apprendre davantage de concepts et de syntaxes de Javascript et les appliquer à votre projet.
+Résultat attendu : Le projet Mon Nouveau Projet a été développé par Moi en 2021.
 
-## Plongée en profondeur
+## Plongée en profondeur:
 
-Lorsque vous commencez un nouveau projet en Javascript, il est important de bien planifier et de définir vos objectifs avant de commencer à écrire du code. Vous devriez également vous familiariser avec les bibliothèques et les frameworks les plus populaires tels que React, Angular ou Vue.js, qui peuvent grandement faciliter le développement de votre projet. N'oubliez pas de suivre les bonnes pratiques en matière de codage et de tester régulièrement votre code pour éviter les erreurs.
+Il est important de commencer un nouveau projet avec une planification soignée et une compréhension des différentes technologies disponibles. Les développeurs peuvent choisir d'utiliser différents langages de programmation, frameworks ou bibliothèques pour résoudre le même problème. Faites vos recherches et choisissez la meilleure option pour votre projet spécifique.
 
-## Voir également
+## À lire aussi:
 
-- [Introduction à Javascript sur MDN](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference)
-- [Les meilleurs frameworks Javascript en 2021](https://www.javatpoint.com/best-javascript-frameworks)
-- [Tutoriels en ligne gratuits pour apprendre Javascript](https://www.codecademy.com/learn/introduction-to-javascript)
+- [Guide de démarrage pour les nouveaux projets en JavaScript](lien vers un guide de référence)
+- [Comparaison des différents langages et frameworks pour les nouveaux projets](lien vers une comparaison)
+- [Tutoriels pour les débutants en JavaScript](lien vers des tutoriels)

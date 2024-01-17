@@ -10,36 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-为什么：为了保证代码的质量和可靠性，“测试驱动开发”（TDD）已经成为现代软件开发过程中的重要环节。通过编写测试代码，开发者可以在不断修改和迭代代码的过程中，保证其功能的正确性和稳定性，避免在项目后期出现严重的bug。
+什么是测试？为什么程序员要进行测试？
 
-如何做到：Kotlin提供了便捷的测试框架JUnit来编写测试代码。开发者可以使用“assert”语句来验证代码的输出是否符合预期，同时也可以使用“mock”框架来模拟外部依赖，从而进行更加全面的测试。
+测试是在编写代码时用于检测错误和验证功能的一个重要步骤。通过测试，程序员可以确保他们的代码在各种情况下都能正常运行，并减少出现错误的可能性。
 
-深入探讨：除了基本的单元测试外，Kotlin还支持针对异步操作、网络请求等功能的测试。同时，开发者还可以通过使用Kotlin的协程来简化并发代码的测试过程。
+如何进行测试？
 
-另外，Kotlin还内置了覆盖率工具，可以帮助开发者分析测试的覆盖范围，从而更加全面地验证代码的功能。
+Kotlin语言提供了丰富的测试框架，使得编写测试变得简单而高效。以下是一个简单的示例，展示如何使用框架编写一个基本的测试：
 
-参考链接：
+```
+Kotlinfun sum(a: Int, b: Int): Int {
+    return a + b
+}
 
-[Testing in Kotlin](https://kotlinlang.org/docs/tutorials/testing/)
+Kotlinfun testSum() {
+    assert(sum(2, 3) == 5)
+    println("Test passed!")
+}
+```
 
-[Kotlin test framework - JUnit](https://kotlinlang.org/api/latest/kotlin.test/index.html)
+运行这个测试，如果程序返回的结果和预期的结果一致，就会打印出“Test passed!”，表示测试通过。
 
-[MockK - mocking library for Kotlin](https://mockk.io/)
+深入探讨
 
-[Kotlin coroutines for asynchronous programming and more](https://blog.jetbrains.com/kotlin/2016/12/kotlin-1-1-beta-is-out/#coroutines)
+测试作为软件开发中的一个重要步骤，已经存在了很长一段时间。早期的测试方式主要是人工测试，随着软件规模的增加，这种方式就变得越来越不可行。随着技术的发展，测试框架的出现使得自动化测试成为可能，极大地提高了测试的效率和准确性。
 
-[Kotlin code coverage in IntelliJ IDEA](https://www.jetbrains.com/help/idea/code-coverage.html)
+除了Kotlin提供的测试框架，还有其他的测试框架，比如JUnit、TestNG等，也为程序员提供了不同的选择。程序员可以根据项目的实际情况和个人喜好，选择适合自己的测试框架。
 
-# 参考链接
+代码测试的实现细节也有很多，例如单元测试、集成测试、功能测试等，每种测试都有自己的特点和适用范围。程序员可以根据项目和需求来选择合适的测试方法。
 
-[TestNG - another popular testing framework for Kotlin](https://testng.org/doc/)
+相关资源
 
-[Kotlin testing tools - libraries and plugins available for writing tests](https://kotlinlang.org/docs/testing.html)
-
-# 查看更多
-
-[Kotlin官方文档](https://kotlinlang.org/docs/home.html)
-
-[编写可测试的Kotlin代码](https://dzone.com/articles/writing-testable-kotlin-code)
-
-[测试驱动开发：如何利用测试来改进软件质量](https://blog.csdn.net/u011781521/article/details/79008302)
+- Kotlin官方测试文档：https://kotlinlang.org/docs/tutorials/junit-jupiter.html
+- JUnit框架：https://junit.org/junit5/
+- TestNG框架：https://testng.org/

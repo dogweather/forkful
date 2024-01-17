@@ -1,7 +1,7 @@
 ---
-title:                "Uuden projektin aloittaminen"
-html_title:           "Elixir: Uuden projektin aloittaminen"
-simple_title:         "Uuden projektin aloittaminen"
+title:                "Aloittaen uuden projektin"
+html_title:           "Elixir: Aloittaen uuden projektin"
+simple_title:         "Aloittaen uuden projektin"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Getting Started"
@@ -10,38 +10,16 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mikä & Miksi?
+Aloittaessa uutta projektia, ohjelmoijat luovat uuden sovelluksen, kirjaston tai työkalun. Tämä mahdollistaa heille uuden idean toteuttamisen ja mahdollisesti ratkaisee jonkin ongelman.
 
-On monia syitä, miksi sinun kannattaisi aloittaa uusi projekti Elixir-ohjelmointikielellä. Ensinnäkin Elixir on erittäin tehokas ja skaalautuva, mikä tekee siitä ihanteellisen valinnan monenlaisiin projekteihin. Lisäksi sen syntaksi on yksinkertainen ja helppo omaksua, joten aloittelijanakin on helppo aloittaa Elixir-projektin kanssa.
+## Miten:
+Elixirin avulla uuden projektin luominen on helppoa ja nopeaa. Käytetään komentoa ```mix new nimi```, ja uusi projekti luodaan kyseiseen hakemistoon. Tämän jälkeen ohjelmoijat voivat aloittaa koodaamisen ja lisätä erilaisia toiminnallisuuksia projektiin.
 
-## Miten aloittaa
+## Syvenny Elixir-koodiin:
+Elixir on dynaaminen, funktionaalinen ohjelmointikieli, joka perustuu Erlangiin. Se on suunniteltu skaalautuvaksi ja kestäväksi suurelle dataliikenteelle. Vaihtoehtoisista ohjelmointikielistä, jotka käyttävät Erlang Virtual Machinea, löytyy esimerkiksi Ruby on Rails ja Phoenix Framework.
 
-Jos olet kiinnostunut aloittamaan Elixir-projektin, tässä on muutama askel, joilla pääset alkuun:
-
-```Elixir
-defmodule Projekti do
-  def main do
-    IO.puts "Tervetuloa aloittamaan uusi projekti Elixirillä!"
-  end
-end
-
-Projekti.main()
-```
-
-Tämä yksinkertainen koodinpätkä luo uuden moduulin ja suorittaa sen `main`-funktion, joka tulostaa ruudulle tervetuloviestin. Kokeile muuttaa esimerkiksi `IO.puts` -funktion parametriksi oma viestisi.
-
-Seuraavaksi voit löytää Elixirin viralliselta verkkosivustolta paljon hyödyllistä dokumentaatiota ja oppimateriaaleja aloittelijoille. Lisäksi kannattaa tutustua Elixir-yhteisön aktiiviseen keskustelufoorumiin ja osallistua erilaisiin tapahtumiin, kuten Meetup-ryhmiin.
-
-## Syvemmälle
-
-Ennen kuin aloitat uutta Elixir-projektia, on tärkeää harkita muutamia asioita. Ensinnäkin, minkä tyyppistä projektia haluat luoda? Elixir on monipuolinen ja soveltuu monenlaisiin käyttötarkoituksiin, mutta on hyvä miettiä tarkkaan mitä haluat saavuttaa projektillasi.
-
-Toiseksi, perehdy Elixirin arkkitehtuuriin ja tärkeimpiin ominaisuuksiin, kuten pattern matchingiin, moduuleihin ja prosesseihin. Nämä ovat tärkeitä osia Elixir-ohjelmoinnissa ja niiden ymmärtäminen auttaa sinua luomaan laadukasta koodia.
-
-Lopuksi, muista käyttää Elixirin tarjoamia työkaluja ja kirjastoja hyödyksesi. Ne voivat auttaa sinua säästämään aikaa ja vaivaa projektiisi.
-
-## Katso myös
-
-- [Elixirin virallinen verkkosivusto](https://elixir-lang.org/)
-- [Elixir-yhteisön keskustelufoorumi](https://elixirforum.com/)
-- [Elixir Meetup-ryhmät](https://www.meetup.com/topics/elixir/)
+## Katso myös:
+• Virallinen Elixir-kielen sivusto: https://elixir-lang.org/
+• The Little Elixir & OTP Guidebook – hyvä aloituskirja Elixirille: https://www.manning.com/books/the-little-elixir-and-otp-guidebook
+• Elixir School – ilmainen opetusmateriaali Elixirin oppimiseen: https://elixirschool.com/

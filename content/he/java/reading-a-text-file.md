@@ -10,57 +10,62 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## למה
+כתיבת יישומי תוכנה היא עיסוק מהתובענים שנתנוהו. אחד המשימות הנפוצות שמתבקשות ממנו הוא קריאת קבצי טקסט. מה זה אומר ולמה המתכנתים עושים את זה?
 
-אנשים יכולים להיעניין לקרוא קובץ טקסט מתוך כוונה להתעמק בתכנות בשפת ג'אווה. זה יכול לסייע להם להבין עוד יותר על השפה וכיצד להשתמש בה בצורה יעילה ויצירתית.
+### מה ולמה?
 
-## כיצד לעשות זאת
+קריאת קובץ טקסט היא תהליך שבו התוכנית שלך קוראת ומעבדת מידע מקובץ טקסט. זה יכול להיות טקסט פשוט, כגון מידע ממסמך מילה, או תוכן פורמטים יותר מורכבים כגון נתוני XML או JSON. תפקיד הקורא קובץ הטקסט הוא לקרוא את הנתונים מהקובץ ולהעביר אותם לתוכניתך כך שתוכל לעבוד איתם.
 
-כדי לקרוא קובץ טקסט בשפת ג'אווה, יש לעקוב אחר השלבים הבאים:
+## איך לעשות זאת:
 
-```Java
+כדי לקרוא קובץ טקסט בקוד ג'אבה, צריך להשתמש באובייקט שנקרא "קורא מקובץ" (FileReader) ובאובייקט "קורא תווים" (BufferedReader). בקוד נמצא דוגמא לאיך להשתמש בשני האובייקטים הללו כדי לקרוא קובץ טקסט ולהדפיס את התוכן שלו:
+
+```java
+import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.Scanner;
+import java.io.FileReader;
+import java.io.IOException;
 
-public class TextFileReader {
+public class ReadTextFile {
     public static void main(String[] args) {
+        //פתיחת קובץ טקסט לקריאה
+        File file = new File("myFile.txt");
         
-        // הגדרת משתנה לקובץ הטקסט
-        File file = new File("textfile.txt");
+        //הגדרת אובייקט לקריאת קובץ טקסט
+        BufferedReader reader = null;
         
+        //נסה לקרוא את הקובץ ולהדפיס את התוכן שלו
         try {
-            // יצירת אובייקט לקריאת הקובץ
-            Scanner scanner = new Scanner(file);
+            reader = new BufferedReader(new FileReader(file));
             
-            // קריאת הקובץ עד שהגענו לסוףו
-            while (scanner.hasNextLine()) {
-                // הדפסת השורה הנוכחית
-                System.out.println(scanner.nextLine());
+            String currentLine;
+            
+            //קריאת כל שורה בקובץ והדפסתה
+            while ((currentLine = reader.readLine()) != null) {
+                System.out.println(currentLine);
             }
-            
-            // סגירת הסורק
-            scanner.close();
-        } catch (FileNotFoundException e) {
-            // איפוס השגיאה אם הקובץ לא נמצא
+        } catch (IOException e) {
             e.printStackTrace();
+        } finally {
+            //סגירת הקובץ והמשאבים שלו
+            try {
+                reader.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 }
 ```
 
-פלט עבור הקוד הבא יכיל את כל הנתונים המצויים בקובץ הטקסט:
+### עומק אינו מחובר
 
-```text
-שורה ראשונה
-שורה שנייה
-שורה שלישית
-```
+קריאת קובץ טקסט היא טכניקה נפוצה וחשובה ביצירת תוכניות תוכנה. היא שימושית כאשר נצטרך לעבוד עם קבצים שמכילים מידע סטטי או לקרוא נתונים מפורמטים מסוימים. קריאת קובץ טקסט היא גם חלק מחשוב תופעות כמו יצירת מילון טקסט או מתן תחזוקה לנתונים בקובץ.
 
-## טיול עמוק
+## ראה גם:
 
-כדי לקרוא קובץ טקסט עם יותר מתייחסים לפרטיות כמו גודל הקובץ, הנוכחות של סיווגי התווים ועוד. בנוסף, ניתן גם להשתמש בפונקציות נוספות כגון `hasNext()` ו- `next()`, שמאפשרות לקרוא את הקובץ באופן מתקדם יותר. ניתן למצוא מידע נוסף על השימוש בקובץ טקסט בשפת ג'אווה בכתבות נוספות כמו "כיצד לכתוב לקובץ טקסט בשפת ג'אווה" ו"שימוש בקובץ קיים בשפת ג'אווה".
+כדי ללמוד עוד על קריאת קובץ טקסט בג'אבה ועל האובייקטים המנוונים, נא לעיין במדריכים הבאים:
 
-## ראו גם
-
-- [כיצד לכתוב לקובץ טק
+- [תיעוד רשמי של Java - FileReader](https://docs.oracle.com/javase/8/docs/api/java/io/FileReader.html)
+- [תיעוד רשמי של Java - BufferedReader](https://docs.oracle.com/javase/8/docs/api/java/io/BufferedReader.html)
+- [מדריך קריאה וכתיבת קבצים בג'אבה](https://www.geeksforgeeks.org/different-ways-reading-text-file-java/)

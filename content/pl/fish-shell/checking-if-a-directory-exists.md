@@ -1,7 +1,7 @@
 ---
-title:                "Sprawdzanie, czy istnieje katalog"
-html_title:           "Fish Shell: Sprawdzanie, czy istnieje katalog"
-simple_title:         "Sprawdzanie, czy istnieje katalog"
+title:                "Sprawdzanie istnienia katalogu"
+html_title:           "Fish Shell: Sprawdzanie istnienia katalogu"
+simple_title:         "Sprawdzanie istnienia katalogu"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Files and I/O"
@@ -10,42 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+Czym jest sprawdzanie istnienia katalogu i dlaczego programiści to robią?
 
-Czy kiedykolwiek musiałeś sprawdzić, czy dany katalog istnieje, zanim wykonałeś w nim jakieś operacje? Może jesteś nowym użytkownikiem powłoki Fish i potrzebujesz pomocy ze sprawdzaniem istnienia katalogów? W tym artykule dowiesz się, jak to zrobić i dlaczego jest to ważne.
+Sprawdzanie, czy katalog istnieje, jest podstawowym zadaniem, które programiści wykonują, aby upewnić się, że ich program działa poprawnie. Katalog jest po prostu miejscem, w którym można przechowywać pliki w systemie operacyjnym, dlatego jest ważne, aby móc sprawdzić, czy jest on dostępny i można w nim wykonywać różne operacje.
 
-## Jak to zrobić
+Jak to zrobić w Fish Shell?
 
-Sprawdzenie istnienia katalogu w Fish Shell jest proste i wymaga użycia operatora `test` oraz flagi `-d`. Poniżej przedstawiony jest przykładowy kod, który sprawdza, czy katalog o nazwie "docs" istnieje w bieżącym katalogu:
+Fish Shell jest potężnym narzędziem, które udostępnia nam wiele komend i funkcji, w tym także możliwość sprawdzenia, czy katalog istnieje. Wystarczy użyć kilku prostych poleceń, aby to zrobić. Oto kilka przykładów:
 
-```Fish Shell
-if test -d docs
-    echo "Katalog 'docs' istnieje!"
+```
+Fish Shell: if test -d ~/folder
+  echo "Katalog istnieje"
 else
-    echo "Katalog 'docs' nie istnieje."
+  echo "Katalog nie istnieje"
 end
 ```
 
-Jeśli katalog "docs" istnieje, w konsoli zostanie wyświetlony komunikat "Katalog 'docs' istnieje!". W przeciwnym razie, zostanie wyświetlony komunikat "Katalog 'docs' nie istnieje."
+W tym przykładzie korzystamy z komendy `test`, która służy do sprawdzania warunków w skrypcie shell. Z użyciem opcji `-d` mówimy, że chcemy sprawdzić, czy wskazany katalog istnieje. Wewnątrz instrukcji warunkowej, w zależności od wyniku, wyświetlamy odpowiedni komunikat.
 
-Możesz również przetestować istnienie dowolnego katalogu, podając jego ścieżkę jako argument w flagi `-d`. Na przykład, aby sprawdzić, czy katalog "projekty" istnieje w bieżącym katalogu, użyjemy następującego kodu:
-
-```Fish Shell
-if test -d projects
-    echo "Katalog 'projekty' istnieje!"
+Za pomocą tej samej komendy można także wykonać inne działania, na przykład sprawdzić, czy katalog jest pusty:
+```
+Fish Shell: if test -d ~/folder && test -z (ls -A ~/folder)
+  echo "Katalog jest pusty"
 else
-    echo "Katalog 'projekty' nie istnieje."
+  echo "Katalog nie jest pusty"
 end
 ```
 
-## Deep Dive
+Można także wyświetlić listę plików znajdujących się w katalogu, jeśli istnieje:
+```
+Fish Shell: if test -d ~/folder
+  ls ~/folder
+else
+  echo "Katalog nie istnieje"
+end
+```
 
-Głównym powodem, dlaczego warto sprawdzać istnienie katalogów przed wykonywaniem w nich operacji, jest uniknięcie niepotrzebnych błędów i wyjątków. Jeśli na przykład próbujemy dodać plik do nieistniejącego katalogu, otrzymamy błąd, który może zakłócić działanie naszego programu.
+Głębsze zanurzenie
 
-Sprawdzając istnienie katalogu przed wykonaniem operacji, możemy ochronić nasz kod przed nieprzewidzianymi błędami. Ponadto, przy sprawdzaniu istnienia katalogu, możemy również wykonać dodatkowe operacje, takie jak informowanie użytkownika o istnieniu lub braku katalogu lub przełączenie do innego katalogu, jeśli aktualny katalog nie istnieje.
+Sprawdzanie istnienia katalogu jest powszechną czynnością w programowaniu i używane jest w wielu językach programowania. W wielu systemach operacyjnych istnieje specjalna funkcja lub komenda służąca do tej operacji, jednak w Fish Shell możemy wykorzystać komendę `test`, która jest również bogata w inne opcje i warunki.
 
-## Zobacz też
+Alternatywnie, istnieje także kilka innych sposobów na sprawdzenie, czy katalog istnieje. Można na przykład wykorzystać polecenie `ls`, które po prostu wyświetla zawartość danego katalogu. Jeśli katalog nie istnieje, pojawi się błąd.
 
-- Dokumentacja Fish Shell: https://fishshell.com/docs/current/index.html
-- Poradnik dla początkujących w Fish Shell: https://fishshell.com/docs/current/tutorial.html
-- Kolekcja przydatnych poleceń Fish Shell: https://github.com/fish-shell/fish-shell/blob/master/README.md
+Można także wykorzystać wbudowaną w system funkcję `stat`, która zwraca informacje o danym pliku lub katalogu. Jeśli katalog istnieje, będzie widoczny w wynikach.
+
+Podsumowując, istnieje wiele sposobów na sprawdzenie, czy katalog istnieje w Fish Shell, jednak komenda `test` jest najbardziej przejrzystym i uniwersalnym rozwiązaniem.
+
+Zobacz także
+
+Jeśli chciałbyś dowiedzieć się więcej o Fish Shell i jego funkcjonalności, możesz odwiedzić oficjalną dokumentację na stronie https://fishshell.com/docs oraz zapoznać się z innymi dostępnymi funkcjami i komendami. Możesz także zobaczyć różne przykłady użycia na stronie https://github.com/fish-shell/fish-shell.

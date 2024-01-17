@@ -1,7 +1,7 @@
 ---
-title:                "「Jsonとの作業」"
-html_title:           "Arduino: 「Jsonとの作業」"
-simple_title:         "「Jsonとの作業」"
+title:                "「jsonとの作業」"
+html_title:           "Arduino: 「jsonとの作業」"
+simple_title:         "「jsonとの作業」"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Data Formats and Serialization"
@@ -10,49 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜJSONを使用するのか
-JSONは、複数のセンサーやデバイスからのデータを処理する際に非常に便利です。Arduinoでは、JSONを使用してデバイスからのデータを取得して処理することができます。
+## なにそれ？
+JSONとは、データを構造化するためのフォーマットの一種です。プログラマーがJSONを使用する理由は、コンピューターがやりとりするデータを簡単に扱えるようにするためです。
 
-## 使い方
+## 使い方：
+ArduinoでJSONを扱う方法を説明します。以下のコードブロックを使用して、コーディングの例とサンプル出力を示します。
+
 ```Arduino
-// JSONライブラリのインポート
-#include <ArduinoJson.h>
+#include <ArduinoJson.h> // ArduinoJsonライブラリをインポート
 
-// 受信したJSONデータを保存する変数
-StaticJsonDocument<200> json_data;
+// 変数を定義する
+int sensorReading = 50;
 
-// 受信したデータを変数に保存する関数
-void saveData(String data){
-  // 受信したデータをJSONオブジェクトに変換
-  DeserializationError error = deserializeJson(json_data, data);
-  if (error) {
-    Serial.print("Error: ");
-    Serial.println(error.c_str());
-    return;
-  }
-  // 変数にデータを保存
-  int value = json_data["value"];
-}
+// JSONオブジェクトを作成する
+StaticJsonDocument<200> doc;
 
-void setup(){
-  // シリアル通信の設定
-  Serial.begin(9600);
-}
+// オブジェクトに変数を追加する
+doc["sensor"] = sensorReading;
 
-void loop(){
-  // シリアル通信から受信したデータを保存
-  String data = Serial.readStringUntil('\n');
-  // データを処理する関数を呼び出し
-  saveData(data);
-}
+// JSONオブジェクトをシリアルモニターに出力する
+serializeJson(doc, Serial);
 ```
 
-このコードでは、Serialから受信したJSONデータを変数に保存しています。JSONオブジェクトにデータを変換するために、ArduinoJsonライブラリを使用しています。データを保存した後は、変数を使用してデータを処理することができます。
+サンプル出力は以下のようになります：
 
-## 詳細について
-JSONは、複数のデータ形式をサポートし、インデックスを使用してデータを管理することができます。そのため、複雑なデータの処理や解析を行う際に非常に便利です。また、ArduinoJsonライブラリは、JSONデータをパースするための高速で効率的な方法を提供しています。
+```Arduino
+{"sensor":50}
+```
 
-## 参考リンク
-- [ArduinoJsonライブラリ](https://arduinojson.org/)
-- [ArduinoでJSONを扱う方法](https://www.autonomation.ir/voice/control-your-arduino-with-an-ir-remote-sensor)
-- [ArduinoJsonのドキュメント](https://arduinojson.org/v6/api/jsondocument/)
+## 奥の深さ：
+JSONは、1999年にダグラス・クロックフォードによって作成されました。JSONの代替としては、XMLやCSVがありますが、JSONはよりシンプルかつ読みやすい構文を持っています。JSONの実装には、ArduinoJsonライブラリがあります。
+
+## さらに検討する：
+以下のリンクから、JSONに関するより詳しい情報を見つけることができます。
+
+- ArduinoJsonライブラリのドキュメンテーション：https://arduinojson.org/
+- ダグラス・クロックフォードによるJSONの歴史：https://www.json.org/json-en.html

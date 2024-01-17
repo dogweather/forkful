@@ -1,7 +1,7 @@
 ---
-title:                "基本認証を使用したhttpリクエストの送信"
-html_title:           "Rust: 基本認証を使用したhttpリクエストの送信"
-simple_title:         "基本認証を使用したhttpリクエストの送信"
+title:                "基本認証付きのhttpリクエストの送信"
+html_title:           "Rust: 基本認証付きのhttpリクエストの送信"
+simple_title:         "基本認証付きのhttpリクエストの送信"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "HTML and the Web"
@@ -10,39 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
+## 何 & なぜ？
+HTTPリクエストを基本認証付きで送信するとは、ユーザー名とパスワードを入力してWebサービスにアクセスすることを意味します。プログラマーがこの方法を使用する理由は、安全性を確保し、権限を持つユーザーのみがサービスにアクセスできるようにするためです。
 
-HTTPリクエストを基本認証で送ることに関心があるのか？それは、APIやWebサービスにアクセスする際に必要となるセキュリティ認証の一つであり、プログラマーにとって重要なスキルであるからです。
-
-## 方法
-
-まず、`reqwest`ライブラリを使ってHTTPリクエストを送るための基本的なコードを見てみましょう。
-
+## 方法：
 ```Rust
-use reqwest::Client;
+use reqwest::blocking;
 
-fn main() {
-    // APIエンドポイントのURL
-    let url = "https://example.com/api";
-
-    // HTTPクライアントを作成
-    let client = Client::new();
-
-    // 基本認証を含むリクエストを作成
-    let request = client.get(url)
+fn main() -> Result<(), Box<dyn std::error::Error>> {
+    let client = blocking::Client::new();
+    let res = client
+        .get("https://example.com")
         .basic_auth("username", Some("password"))
-        .send()
-        .unwrap();
+        .send()?;
+    println!("Response Status: {}", res.status());
+    println!("Response Body: {}", res.text()?);
+    Ok(())
 }
 ```
 
-上記の例では、APIエンドポイントのURLを指定し、`Client::new()`でHTTPクライアントを作成します。そして、`.basic_auth()`を使ってユーザー名とパスワードを指定し、`send()`でリクエストを実行します。このコードを実行すると、指定したAPIに基本認証を含むHTTPリクエストが送られます。
+## 深堀り：
+基本認証は、1999年にHTTPの標準仕様の一部として導入されました。代替手段として、OAuthやOpenIDなどの認証プロトコルがあります。基本認証の実装には、認証ヘッダーをHTTPリクエストに追加する必要があります。RustのReqwestライブラリは、この処理を簡単にする便利なメソッドを提供しています。
 
-## ディープダイブ
-
-基本認証にはどのようなメカニズムがあるのか、少し掘り下げてみましょう。基本認証は、HTTPリクエストヘッダーに`Authorization`フィールドを含めることで認証情報をサーバーに送信する方法です。このフィールドには、`Basic`という認証スキームが使用され、ユーザー名とパスワードがBASE64でエンコードされて一緒に送信されます。この認証情報はサーバー側でデコードされ、ユーザー名とパスワードが一致する場合にのみ認証成功となります。
-
-See Also
-
-- [reqwestドキュメント](https://docs.rs/reqwest)
-- [RustでAPIリクエストを送る方法](https://dev.classmethod.jp/server-side/rust-api-request/)
+## 関連サイト：
+- [HTTP Basic認証のドキュメンテーション](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#Basic_authentication_scheme)
+- [RustのReqwestライブラリのドキュメント](https://docs.rs/reqwest)
+- [OAuthやOpenIDについての詳細](https://www.oauth.com/)

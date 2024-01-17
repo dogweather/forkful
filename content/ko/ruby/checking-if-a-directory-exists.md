@@ -1,7 +1,7 @@
 ---
-title:                "디렉토리 존재 여부 확인하기"
-html_title:           "Ruby: 디렉토리 존재 여부 확인하기"
-simple_title:         "디렉토리 존재 여부 확인하기"
+title:                "디렉토리가 존재하는지 확인하기"
+html_title:           "Ruby: 디렉토리가 존재하는지 확인하기"
+simple_title:         "디렉토리가 존재하는지 확인하기"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Files and I/O"
@@ -10,27 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 왜
+## 무엇 & 왜?
 
-파일 또는 디렉토리가 존재하는지 확인하는 것은 프로그래밍에서 매우 유용합니다. 파일 미리 확인은 에러를 방지하고, 코드의 안정성을 높이며, 원하는 파일을 찾는 것을 보장합니다.
+디렉토리가 존재하는지 확인하는 것은 프로그래머들이 자주 하는 작업입니다. 이는 코드에서 파일이나 디렉토리를 찾을 때 유용합니다. 
 
-## 어떻게
+## 방법:
+
+`Dir.exist?` 메소드를 사용하여 디렉토리가 존재하는지 체크할 수 있습니다. `true` 또는 `false` 값을 반환하며, 디렉토리가 존재하면 `true`가 반환됩니다. 예를 들어, 다음과 같이 사용할 수 있습니다.
 
 ```Ruby
-if File.directory?("/Users/username/Documents")
-  puts "디렉토리가 존재합니다."
+if Dir.exist?('my_folder')
+  puts 'my_folder exists!'
 else
-  puts "디렉토리가 존재하지 않습니다."
+  puts 'my_folder does not exist.'
 end
 ```
 
-위의 코드는 해당 디렉토리가 존재하는지 확인하는 간단한 예제입니다. 디렉토리 경로를 수정하고 실행하면 디렉토리가 존재하는지 여부가 출력됩니다.
+위의 코드를 실행하면 존재하는 디렉토리의 경우 `my_folder exists!`가 출력되고, 존재하지 않는 디렉토리의 경우 `my_folder does not exist.`가 출력됩니다.
 
-## 깊이 파헤치기
+## 깊이 파헤치기:
 
-디렉토리 존재 여부를 확인하는 방법에는 몇 가지 다른 방법이 있지만, 대부분의 경우 `File.directory?` 메소드가 가장 효율적입니다. 이 메소드는 해당 경로가 디렉토리인지를 불리언 값으로 반환합니다. `File.exist?` 메소드는 파일 뿐만 아니라 디렉토리 또한 존재하는지 확인합니다. 
+이 메소드는 Ruby 1.9부터 사용할 수 있습니다. 이전 버전의 Ruby에서는 `File.exists?` 메소드를 사용하여 파일 또는 디렉토리의 존재 여부를 확인할 수 있었습니다. 하지만 `Dir.exist?` 메소드는 메소드명 자체가 더 명확하고 직관적이기 때문에 더 선호됩니다.
 
-## 또 다른 링크 더 보기
+`Dir.exist?` 메소드 외에도 `Dir.exist?` 메소드를 포함하는 `FileUtils` 모듈을 사용할 수도 있습니다. `FileUtils` 모듈에는 디렉토리를 생성하거나 삭제하는 등 다양한 유용한 기능들이 포함되어 있습니다.
 
-* Ruby 공식 문서: https://ruby-doc.org/core-3.0.0/File.html#method-c-directory-3F
-* 파일 및 디렉토리 다루기 강좌: https://www.rubyguides.com/2015/05/working-with-files-ruby/
+## 관련 항목:
+
+- [Ruby 문서 - Dir 클래스](https://ruby-doc.org/core-2.6.5/Dir.html)
+- [Ruby 문서 - FileUtils 모듈](https://ruby-doc.org/stdlib-2.6.5/libdoc/fileutils/rdoc/FileUtils.html)

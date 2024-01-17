@@ -1,7 +1,7 @@
 ---
-title:                "Lesing av kommandolinje-argumenter"
-html_title:           "Arduino: Lesing av kommandolinje-argumenter"
-simple_title:         "Lesing av kommandolinje-argumenter"
+title:                "Lesing av kommandolinjeargumenter"
+html_title:           "Arduino: Lesing av kommandolinjeargumenter"
+simple_title:         "Lesing av kommandolinjeargumenter"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Files and I/O"
@@ -10,38 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hva & Hvorfor
+Lesing av kommandolinje-argumenter er en måte for programmerere å hente inn informasjon som er gitt ved kjøretid. Dette kan være nyttig for å tilpasse programmer til forskjellige bruksscenarier, som for eksempel ulike innstillinger eller filer som skal leses. 
 
-Å lese kommandolinjeargumenter i Arduino programmering kan være nyttig for å gjøre ditt program mer fleksibelt og tilpasningsdyktig. Ved å ta inn og bruke kommandolinjeargumenter kan du enkelt endre inngangsparametere og variabler uten å måtte endre koden din.
+## Hvordan gjør man det:
+```Arduino
+void setup() {
+  Serial.begin(9600); // Setter baudrate for seriekommunikasjon
+  while (!Serial) {} // Venter på at serieporten skal bli tilgjengelig
+  if (Serial.available()) { // Sjekker om det finnes data i seriebufferen
+    String input = Serial.readStringUntil('\n'); // Leser seriell data inntil ny linje
+    Serial.print("Du skrev: ");
+    Serial.println(input); // Skriver ut input på seriell monitor
+  }
+}
 
-## Hvordan
-
-For å lese kommandolinjeargumenter i Arduino, kan du bruke funksjonen ```Arduino.parseInt()```. Denne funksjonen leser inn en numerisk verdi fra en streng som er gitt som et argument. Her er et enkelt eksempel på hvordan du kan bruke denne funksjonen:
-
+void loop() {
+  // Tom loop-funksjon, fordi vi ikke gjør noe i kontinuerlig kjøremodus
+}
 ```
-int var = Arduino.parseInt(); // Leser inn en numerisk verdi og lagrer den i variabelen "var"
-Serial.println(var); // Skriver ut den leste verdien til Serial monitor
-```
-
-Dette eksempelet vil lese inn et tall som blir gitt som et kommandolinjeargument når koden kjøres. For eksempel, hvis du bruker ```-123``` som et argument, vil verdien 123 bli skrevet ut til Serial monitor.
-
-## Dypdykk
-
-For mer avansert bruk av kommandolinjeargumenter i Arduino, kan du også lese inn strenger og flere parametere. Dette kan gjøres ved hjelp av funksjonen ```Arduino.readStringUntil()```, som leser inn en streng til et gitt tegn.
-
-```
-String inputString = ""; // Opprett en tom string for å lagre den leste verdien
-char endChar = '\n'; // Sett et tegn som skal være sluttpunktet for den leste strengen
-inputString = Arduino.readStringUntil(endChar); // Leser inn en streng frem til sluttpunktet er nådd
-Serial.println(inputString); // Skriver ut den leste strengen til Serial monitor
+**Eksempel på seriekommando:** ```Arduino
+Du skrev: Hei verden!
 ```
 
-Dette eksempelet vil lese inn en streng som blir gitt som et kommandolinjeargument, frem til sluttpunktet som er satt. Ved å sette ```-``` som begynnelsen på strengen, kan du for eksempel sende inn argumenter som ```-hello```, som vil bli lagret og skrevet ut som "hello" på Serial monitor.
+## Dykk dypere
+Lesing av kommandolinje-argumenter har vært en vanlig programmeringsteknikk siden starten av datamaskinens tid. I dag finnes det flere alternativer for å lese inn data, som for eksempel ved hjelp av grafiske brukergrensesnitt eller konfigurasjonsfiler. 
 
-## Se Også
+Implementasjonen av lesing av kommandolinje-argumenter varierer mellom ulike programmeringsspråk og plattformer. I Arduino, som er basert på C++, kan man bruke funksjonen ```Serial.readStringUntil()``` for å lese data fra serieporten. Det er også viktig å inkludere en sjekk for tilgjengelig data, for å unngå feil ved kjøring. 
 
-For mer informasjon om kommandolinjeargumenter og hvordan du kan bruke dem i Arduino, kan du se disse ressursene:
-
-- [Arduino.parseInt() dokumentasjon](https://www.arduino.cc/reference/no/language/functions/conversion/parseint/)
-- [Arduino.readStringUntil() dokumentasjon](https://www.arduino.cc/reference/no/language/functions/communication/serial/readstringuntil/)
-- [Video tutorial på bruk av kommandolinjeargumenter i Arduino](https://www.youtube.com/watch?v=L62KIb2ruYY)
+## Se også
+- [Offisiell Arduino dokumentasjon for ```Serial.readStringUntil()```](https://www.arduino.cc/reference/en/language/functions/communication/serial/readstringuntil/)
+- [En guide til å lese kommandolinje-argumenter i C++](https://www.cprogramming.com/tutorial/lesson14.html)

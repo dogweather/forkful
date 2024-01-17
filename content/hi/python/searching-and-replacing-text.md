@@ -1,7 +1,7 @@
 ---
-title:                "पाठ को खोजना और प्रतिस्थापन करना"
-html_title:           "Python: पाठ को खोजना और प्रतिस्थापन करना"
-simple_title:         "पाठ को खोजना और प्रतिस्थापन करना"
+title:                "टेक्स्ट को खोजना और बदलना"
+html_title:           "Python: टेक्स्ट को खोजना और बदलना"
+simple_title:         "टेक्स्ट को खोजना और बदलना"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Strings"
@@ -10,42 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## क्या और क्यूँ?
 
-Kya aapne kabhi text ko dhoondhne aur badlne ke liye bahut saare documents ko haath se edit karna pada hai? Yeh bahut time-consuming aur exhausting ho sakta hai. Isiliye, Python mai text searching aur replacing ke feature ka istemal karke aap apne documents ko asaani se edit kar sakte hain.
+तेकस्ट सर्चिंग और रिप्लेसिंग हमारे टेक्स्ट दस्तावेजों में कोई विशेष शब्द या वाक्य को ढूंढने और बदलने की प्रक्रिया है। प्रोग्रामर्स इसे प्रोग्रामिंग में विभिन्न उदाहरणों को सुधारने और सुधार देने के लिए करते हैं।
 
-## How To
+## कैसे करें:
 
 ```Python
-# Sabse pehle, aapko apne document ko open karna hoga.
-file = open('document.txt', 'r')
+# उदाहरण 1: सर्च और रिप्लेस करना
+text = "मैं एक अलग शब्द हूँ।"
+new_text = text.replace("अलग", "नया")
+print(new_text)
+# Output: मैं एक नया शब्द हूँ।
 
-# Fir aapko woh string ya word jo aap replace karna chahte hain, specify karna hoga.
-search_string = "lorem"
-
-# Iske baad, woh string ya word jisse aap replace karna chahte hain, specify karna hoga.
-replace_string = "ipsum"
-
-# Ab hum `search_string` ko `replace_string` se replace karenge.
-document = file.read().replace(search_string, replace_string)
-
-# Humne `document` variable ko update kar liya hai, ab hum usse wapas se file mai save karenge.
-file = open('document.txt', 'w')
-file.write(document)
-file.close()
-
-# Aap dekh sakte hain ke `lorem` ab `ipsum` mai convert ho gaya hai.
+# उदाहरण 2: सारे वस्तुओं को रिप्लेस करें
+text = "प्यारी प्यारी बिल्लियाँ!"
+new_text = text.replace("प्यारी", "खूबसूरत")
+print(new_text)
+# Output: खूबसूरत खूबसूरत बिल्लियाँ!
 ```
-Output: Yeh bahut **saral** hai!
 
-## Deep Dive
+## गहराई में जाएँ:
 
-Aap dekh sakte hain ke humne `replace()` method ko use kar ke kaise text ko replace kiya hai. Yeh method string data type ki built-in method hai aur isse hum string mai se ek specific substring ko dusre substring se replace kar sakte hain.
+सर्चिंग और रिप्लेसिंग की प्रक्रिया को पहली बार 1968 में डॉनाल्ड कन्नथ द्वारा निर्मित सेड (SED) संपादक में दिखाया गया था। आजकल, प्याथन के अलावा अन्य प्रोग्रामिंग भाषाओं में भी सर्चिंग और रिप्लेसिंग के लिए विभिन्न फंक्शन्स और तकनीक हैं। इसके अलावा, आप टेक्स्ट सर्च और रिप्लेस करने के लिए ऑनलाइन टूल्स भी उपयोग कर सकते हैं।
 
-Humne yaha `r` mode ka istemal kiya hai `open()` function mai. Yeh mode file ko read karne ke liye hai. Iske alawa, humne `w` mode ka  istemal kiya hai file ko write karne ke liye. Agar aapne kisi dusri mode ka istemal kiya hai, toh aapko `r` mode se `w` mode mai switch karna hoga.
+## इससे जुड़े स्रोत:
 
-## See Also
-
-- [Python String methods](https://www.w3schools.com/python/python_ref_string.asp)
-- [Python File handling](https://www.geeksforgeeks.org/file-handling-python/)
-- [Regular expressions in Python](https://www.programiz.com/python-programming/regex)
+- [अलग-पलग शब्दों के लिए सर्चिंग और रिप्लेसिंग करें - Real Python आरंभिक श्रेणी](https://realpython.com/search-and-replace/)
+- [पाइथन में स्ट्रिंग ऑपरेशन](https://www.thepythoncode.com/article/string-methods-in-python)
+- [सेड का इतिहास](https://www.gnu.org/software/sed/manual/html_node/A-Brief-History-of-sed.html)

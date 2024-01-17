@@ -1,7 +1,7 @@
 ---
-title:                "एक पाठ फ़ाइल को पढ़ना"
-html_title:           "Fish Shell: एक पाठ फ़ाइल को पढ़ना"
-simple_title:         "एक पाठ फ़ाइल को पढ़ना"
+title:                "एक टेक्स्ट फाइल पढ़ना"
+html_title:           "Fish Shell: एक टेक्स्ट फाइल पढ़ना"
+simple_title:         "एक टेक्स्ट फाइल पढ़ना"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Files and I/O"
@@ -10,34 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Kyun
+## क्या और क्यों?
 
-Agar aap ek programmer hai aur *text file* ko padhna aur usme se data extract karna chahte hai, toh ye article aapke kaam ka ho sakta hai. Yahan hum Fish Shell ke madhyam se text file ko kaise padh sakte hai, iske baare mein jaanenge.
+टेक्स्ट फाइल को पढ़ने का अर्थ है कि हम फाइल को खोलते हैं और उसमें के विषय में जानकारी लेते हैं। ये कोड को समझने हम प्रोग्रामिंग में अहम भूमिका निभाते हैं।
 
-## Kaise Kare
+## कैसे करें:
 
-```Fish Shell``` ke madhyam se text file ko read karne ke liye, pehle ```cat``` command ka use karna hoga. Iske baad aapko *file path* ko specify karna hoga jisme aapki text file stored hai. Ye command aapko text file ka pura content terminal par dikha dega.
-
-```
-cat /path/to/file.txt
-```
-Agar aapko sirf kuch specific data extract karna hai, toh aap ```grep``` command ka use kar sakte hai. Iske liye aapko ```cat``` command ke baad ```|``` (pipe) lagana hoga, phir ```grep``` command aur fir us data ka naam dena hoga jise aap extract karna chahte hai.
+फिश शेल में टेक्स्ट फाइल पढ़ने के लिए `cat` कमांड का इस्तेमाल किया जाता है। निम्नलिखित कोड ब्लॉक में आपको समझाया गया है कि कैसे हम टेक्स्ट फाइल को पढ़ सकते हैं।
 
 ```
-cat /path/to/file.txt | grep data
+fish shell> cat example.txt
+This is a sample text file.
+It contains some text that we can read with the cat command.
 ```
-Is tarah aap text file se specific data extract kar sakte hai.
 
-## Deep Dive
+इस उदाहरण से हमें यह पता चलता है कि टेक्स्ट फाइल में लिखे गए सारे शब्दों को कैसे हम पढ़ सकते हैं।
 
-Fish Shell mein ek badiya feature hai jo hume text file ko direct terminal par read karne ki facility deta hai. Iske liye aapko *file path* ko terminal par drag and drop karna hoga, aur phir enter press karna hoga. Isse aapki text file terminal par automatically open ho jayegi.
+## गहराई में जाएं:
 
-## Dekhna Bhi
+थोड़े धारणा पाने के लिए, आप जानते होंगे कि पीसी पर हम अपने सीखे हुए भाषाओं में कोड लिखते हैं जो की प्रोग्राम्स को संचालित करते हैं। यह टेक्स्ट फाइलों को पढ़ना भी लाजिमी है। दूसरे तरीके जिन्हें हम इस्तेमाल करके टेक्स्ट फाइल पढ़ सकते हैं, जैसे की `less` और `more` भी हमें इसके प्रयोग के विषय में जानकारी प्रदान करते हैं। आपको गहराई में जाने के लिए अपने विकल्‍पों को जानना जरूरी है।
 
-Agar aapko aur advanced text file read karne ke techniques jaanna hai, toh aap ye links check kar sakte hai:
+## इसी से जुड़े हुए लिंक:
 
-1. [Fish Shell official website](https://fishshell.com/)
-2. [Fish Shell tutorial](https://fishshell.com/docs/current/tutorial.html)
-3. [Fish Shell GitHub repository](https://github.com/fish-shell/fish-shell)
-
-Main umeed karta hu ki aapko ye article helpful laga hoga. Happy coding!
+संबंधित स्रोतों के लिए निम्नलिखित लिंक देखें:
+- [Fish Shell के GitHub Repository](https://github.com/fish-shell/fish-shell)
+- [Fish Shell के official documentation](https://fishshell.com/docs/current/)
+- [Learn Shell in Hindi](https://www.guru99.com/shell-scripting-tutorial.html)

@@ -1,7 +1,7 @@
 ---
-title:                "Sammenføyning av strenger"
-html_title:           "Rust: Sammenføyning av strenger"
-simple_title:         "Sammenføyning av strenger"
+title:                "Sammenslåing av strenger"
+html_title:           "Rust: Sammenslåing av strenger"
+simple_title:         "Sammenslåing av strenger"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -10,36 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hva & Hvorfor?
+Sammenføyning av strenger, også kjent som "string concatenation" på engelsk, er en vanlig praksis blant programmerere. Dette innebærer å kombinere to eller flere strenger til en enkelt streng. Dette kan være nyttig for å skape mer dynamiske og tilpassede utdata i programmering.
 
-Å kombinere strenger, eller concat strings på engelsk, er en viktig del av programmering. Det lar deg lage nye, lengre setninger eller variabler ved å kombinere eksisterende strenger.
-
-## Hvordan
-
-```Rust
-fn main() {
-  let navn = "Anna";
-  let yrke = "programmerer";
-  let setning = format!("Hei, jeg heter {} og jeg er en {}!", navn, yrke);
-  println!("{}", setning);
-}
-```
+## Hvordan:
+I Rust kan vi enkelt sammenføye strenger ved hjelp av operatoren `+`. La oss se på et eksempel:
 
 ```Rust
-Output:
-Hei, jeg heter Anna og jeg er en programmerer!
+let navn = "Elin";
+let yrke = "utvikler";
+let setning = navn + " er en " + yrke;
+println!("{}", setning);
 ```
 
-For å kombinere strenger i Rust, bruker vi `format!` makroen. Den tar inn en "template" string, der variabler og termer kan plasseres ved hjelp av `{}`. Disse variablene blir deretter definert utenfor makroen og blir satt inn i template-strengen i samme rekkefølge.
+Dette vil gi oss følgende utput:
 
-## Dykker dypere
+```Rust
+Elin er en utvikler
+```
 
-Rust har også `println!` og `print!` makroer som fungerer på samme måte som `format!`, men i stedet for å returnere en ny string, blir den skrevet ut til konsollen. Det er også mulig å bruke `+` -operatøren for å kombinere to strenger, men denne metoden er mindre effektiv og anbefales ikke for store mengder data.
+Vi kan også bruke `&` operatoren for å sammenføye strenger på en mer effektiv måte. La oss se på et annet eksempel:
 
-En viktig ting å merke seg er at Rust er enten-byttbart når det gjelder å kombinere strenger. Dette betyr at du kan kombinere en snei med en variabel av typen "string" uten å måtte konvertere den første til en streng først.
+```Rust
+let bilmerke = "Tesla";
+let årsmodell = 2021;
+let setning = format!("Jeg kjøpte en {} i {}", bilmerke, årsmodell);
+println!("{}", setning);
+```
 
-## Se også
+Dette vil gi oss følgende utput:
 
-- [Offisiell Rust dokumentasjon om strenger](https://doc.rust-lang.org/std/string/)
-- [Rust By Example: Strings](https://doc.rust-lang.org/rust-by-example/std/str.html)
-- [Rustlings: Strings](https://github.com/rust-lang/rustlings/blob/main/exercises/strings/strings1.rs)
+```Rust
+Jeg kjøpte en Tesla i 2021.
+```
+
+## Dypdykk:
+Siden strenger er uforanderlige i Rust, vil det å sammenføye flere strenger resultere i å lage en ny streng hver gang. Dette kan være ineffektivt og føre til ytelsesproblemer. Alternativt kan vi bruke `String` typen, som kan endres og sammenføyes mer effektivt. Dette kan være spesielt nyttig for større programmer som må håndtere mange strenger.
+
+## Se også:
+- [String concatenation in Rust](https://rust-lang-nursery.github.io/rust-cookbook/data/string.html#concatenation)
+- [Rust Strings](https://doc.rust-lang.org/std/string/index.html)

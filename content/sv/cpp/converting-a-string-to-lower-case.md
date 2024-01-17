@@ -1,7 +1,7 @@
 ---
-title:                "Omvandla en sträng till gemener"
-html_title:           "C++: Omvandla en sträng till gemener"
-simple_title:         "Omvandla en sträng till gemener"
+title:                "Omvandla en sträng till små bokstäver"
+html_title:           "C++: Omvandla en sträng till små bokstäver"
+simple_title:         "Omvandla en sträng till små bokstäver"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -10,26 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
-Att konvertera en sträng till små bokstäver är användbart när du vill standardisera indata eller göra jämförelser mellan strängar oberoende av stora eller små bokstäver.
+## Vad & Varför?
+Konvertering av en sträng till gemener är en grundläggande operation inom programmering som innebär att alla bokstäver i en sträng ändras till små bokstäver. Detta görs vanligtvis för att underlätta jämförelser och sökningar av strängar, eftersom gemener och versaler inte är samma tecken för datorn.
 
-## Hur man gör
-Det finns flera sätt att konvertera en sträng till små bokstäver i C++, men en vanlig metod är att använda standardfunktionen `tolower()` tillsammans med en `for`-loop.
+## Hur man:
+Här är ett exempel på hur man konverterar en sträng till gemener i C++:
 
 ```C++
-string str = "SVENSKA";
-for (int i = 0; i < str.length(); i++) {
-    str[i] = tolower(str[i]);
+#include <iostream>
+#include <algorithm>
+
+using namespace std;
+
+int main() {
+  string str = "HELLO WORLD";
+  transform(str.begin(), str.end(), str.begin(), ::tolower);
+  cout << str; // hej värld
+  return 0;
 }
-cout << str << endl;
 ```
-Output: svenska
+Här använder vi standardfunktionen `transform` tillsammans med `::tolower` för att ändra alla bokstäver i strängen `str` till små bokstäver.
 
-Det finns också bibliotek som erbjuder funktioner för att konvertera strängar till små bokstäver, såsom `<algorithm>` och `<string>`.
+## Djupdykning:
+I äldre versioner av C++, innan standardbiblioteket `algorithm` fanns tillgängligt, användes ofta en loop för att konvertera strängen till gemener. Detta krävde mer kod och ökade risken för fel. Nu med standardfunktionen `transform` ges en mer effektiv och säkrare lösning.
 
-## Deep Dive
-Vid konvertering till små bokstäver finns det vissa saker att tänka på. Till exempel, i vissa språk kan vissa bokstäver ha olika teckenkoder för stora och små bokstäver, och det kan påverka resultatet av konverteringen. Det är också viktigt att veta att konvertering av en sträng till små bokstäver inte förändrar originalet, utan skapar en kopia av strängen med små bokstäver.
+Det finns också andra alternativ för att utföra samma operation, som att använda andra standardfunktioner eller till och med skriva en egen funktion. Det viktiga är att välja den lösning som passar bäst för ens specifika program och behov.
 
-## Se även
-- [C++ Standardbibliotek](https://en.cppreference.com/w/cpp/algorithm)
-- [C++ Strängbibliotek](https://en.cppreference.com/w/cpp/string/basic_string)
+När det gäller implementationen av konverteringen av strängar till gemener är det ofta enkelt och snabbt att utföra. I de flesta fall är det en linjär operation, vilket innebär att det tar lika många steg som antalet bokstäver i strängen.
+
+## Se även:
+Mer om funktionen `transform` och andra standardfunktioner: [C++ Standard Library](https://en.cppreference.com/w/cpp/header/algorithm)
+
+En alternativ lösning med en egen funktion: [Lowercase Function](https://www.geeksforgeeks.org/conversion-whole-string-uppercase-lowercase-using-stl-c/)

@@ -10,52 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
-在编程过程中，有时候我们需要将日期转换成字符串来方便数据的处理，这篇文章将向您介绍如何使用Elixir来完成这一任务。
+## 什么是日期转化字符串？为什么要这么做？
+日期转化字符串是将日期数据转换为字符串格式的操作。程序员通常会这么做是因为字符串可以更容易地存储和处理日期数据，同时也可以使日期数据在不同的系统中更容易传递和显示。
 
-## 如何操作
-首先，我们需要使用`DateTime`模块来获取日期和时间的信息。如下所示，我们可以用`DateTime.now()`来获取当前的日期和时间，并将其赋值给一个变量`date`。
-
-```elixir
-date = DateTime.now()
+## 如何实现：
+```Elixir
+date = ~D[2020-01-01]
+date |> to_string |> IO.inspect
 ```
+输出： "2020-01-01"
 
-接下来，我们可以使用`DateTime`模块中的函数`to_string`来将日期转换成字符串。例如，我们可以将`date`变量中的日期转换成一个完整的时间戳字符串。
-
-```elixir
-timestamp = DateTime.to_string(date, "~c")
-# 2020 24 Dec, 12:00:00.000 AM
+```Elixir
+date = ~D[2020-01-01]
+date |> to_string(format: "{YYYY-MM-dd}") |> IO.inspect
 ```
+输出： "2020-01-01"
 
-我们也可以使用特定的格式来转换日期，比如转换成`YYYY-MM-DD`的格式。
+## 深入探讨：
+日期转化字符串的历史可以追溯到计算机的早期发展，当时的计算机系统并没有直接处理日期数据的能力，因此程序员需要使用字符串来表示日期。现如今，大多数计算机系统都可以直接处理日期数据，但程序员仍然选择将日期转换为字符串来更方便地处理。除了使用```to_string```函数，还可以使用其他函数如```NaiveDateTime.to_iso8601```来实现日期转化字符串。
 
-```elixir
-formatted_date = DateTime.to_string(date, "YYYY-MM-DD")
-# 2020-12-24
-```
-
-## 深入了解
-Elixir中的日期和时间处理十分灵活，可以使用不同的格式和函数来满足不同的需求。除了`to_string`函数，`DateTime`模块还提供了其他方便的函数来进行日期的转换和处理。 例如，`DateTime.from_iso8601`函数可以用来解析ISO 8601格式的日期字符串。
-
-```elixir
-iso_string = "2020-12-24T12:00:00Z"
-iso_date = DateTime.from_iso8601(iso_string)
-# 2020-12-24 12:00:00Z
-```
-
-您也可以使用`DateTime.truncate`函数来将日期时间截断到特定的精度，例如到分钟或秒。
-
-```elixir
-DateTime.truncate(date, :minute)
-# #DateTime<2020-12-24 00:00:00Z>
-DateTime.truncate(date, :second)
-# #DateTime<2020-12-24 00:00:00Z>
-```
-
-## 参考资料
-- [`DateTime`模块文档](https://hexdocs.pm/elixir/DateTime.html)
-- [Elixir日期和时间处理指南](https://elixirschool.com/lessons/basics/date-and-time/)
-
-## 查看也有
-- [Elixir官方文档](https://elixir-lang.org/docs.html)
-- [Elixir中国社区](https://elixir-cn.com/)
+## 参考链接：
+- [Elixir官方文档：Dates](https://hexdocs.pm/elixir/master/Dates.html)
+- [关于日期转化字符串的更多信息](https://www.tutorialspoint.com/elixir/elixir_dates.htm)

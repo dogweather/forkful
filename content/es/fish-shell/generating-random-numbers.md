@@ -10,38 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por qué
-¿Alguna vez has necesitado generar números aleatorios para tus proyectos de programación? Pues, en este artículo te enseñaré cómo hacerlo utilizando el Fish Shell, la versión actual de esta popular línea de comandos.
+¡Hola Amigos!
 
-## Cómo hacerlo
-Es muy sencillo generar números aleatorios en Fish Shell, gracias a su función incorporada `math` que nos permite realizar operaciones matemáticas.
+En este artículo, vamos a hablar sobre una función muy útil en los programas, la generación de números aleatorios. Si eres programador, seguramente has utilizado o al menos has escuchado sobre esta función. ¿Pero sabes realmente qué es y por qué la usamos? ¡Vamos a descubrirlo!
 
-Para generar un número aleatorio entero, podemos utilizar la función `random` seguida de la cantidad de dígitos que queremos obtener. Por ejemplo, si queremos obtener un número de 3 dígitos, escribiríamos en nuestra línea de comandos lo siguiente:
+## ¿Qué y por qué?
 
-```Fish Shell
-random 3 
-```
+Generar números aleatorios es simplemente generar números de manera impredecible. Esto significa que cada vez que ejecutamos nuestro programa, los números que se generan serán diferentes. ¿Por qué hacemos esto? Bueno, hay muchas razones. Por ejemplo, podemos usarlos para generar datos de prueba, crear juegos, algoritmos de encriptación y mucho más. ¡Las posibilidades son infinitas!
 
-El resultado podría ser, por ejemplo, `456`. Como puedes ver, cada vez que ejecutes este comando obtendrás un número aleatorio diferente.
+## Cómo hacerlo:
 
-También podemos generar un número real utilizando el mismo método, pero especificando la cantidad de dígitos decimales que queremos obtener. Por ejemplo:
+En el shell de Fish, podemos generar números aleatorios utilizando la función `rand` seguida del máximo y mínimo de los números que queremos que se generen. Por ejemplo, si queremos generar un número entre 1 y 10, escribiríamos `rand 1 10` y presionaríamos Enter. Cada vez que ejecutamos esa línea, obtendremos un número diferente entre 1 y 10. Aquí hay un ejemplo de código y su salida:
 
 ```Fish Shell
-random 5    # Genera un número real de 5 dígitos.
+$ rand 1 10
+5
+$ rand 1 10
+9
+$ rand 1 10
+3
 ```
 
-De esta forma podríamos obtener, por ejemplo, `8.97456` como resultado.
+También podemos generar múltiples números aleatorios a la vez utilizando la función `seq` junto con `rand`. Por ejemplo, si queremos generar 5 números aleatorios entre 1 y 100, escribiríamos `seq 1 5 | xargs -I{} rand 1 100` y presionaríamos Enter. Aquí hay un ejemplo de código y su salida:
 
-## Deep Dive
-Ahora que ya sabes cómo generar números aleatorios en Fish Shell, es interesante profundizar un poco más en el tema.
+```Fish Shell
+$ seq 1 5 | xargs -I{} rand 1 100
+17
+62
+43
+91
+8
+```
 
-Cuando utilizamos la función `random`, en realidad estamos generando un número pseudo-aleatorio, es decir, no es completamente aleatorio ya que se basa en una semilla que se utiliza para obtener el número. Esta semilla cambia cada vez que iniciamos Fish Shell, lo que nos garantiza una mayor variedad de resultados.
+¡Fácil, ¿verdad?
 
-Además, al especificar la cantidad de dígitos que queremos obtener, debemos tener en cuenta que no podemos exceder el límite de nuestra arquitectura de computador. Por ejemplo, si intentamos generar un número de 20 dígitos en un sistema de 32 bits, nos dará un error ya que supera el límite de representación de números.
+## Deep Dive:
 
-En resumen, la función `random` es una forma rápida y sencilla de generar números aleatorios en Fish Shell, pero es importante tener en cuenta sus limitaciones y cómo funciona en realidad para obtener resultados precisos.
+La generación de números aleatorios ha sido un tema muy discutido y estudiado en la informática. Uno de sus usos más conocidos es en la criptografía, donde se utilizan generadores de números pseudoaleatorios. Estos generadores siguen un algoritmo predefinido para generar una secuencia de números que parecen aleatorios, pero en realidad son determinísticos. Otra alternativa es utilizar fuentes de ruido físico, como el ruido atmosférico, para generar números realmente aleatorios.
 
-## Ver también
-- Documentación oficial de Fish Shell (https://fishshell.com/docs/current/index.html)
-- Otras funciones útiles de Fish Shell (https://www.baeldung.com/linux/fish-shell-commands)
-- Tutorial de programación en Fish Shell (https://www.freecodecamp.org/news/the-fish-shell-tutorial/)
+Pero en el caso de Fish Shell, la función `rand` utiliza un generador pseudoaleatorio basado en la función `rand()` de C. Esta función utiliza el tiempo actual del sistema para calcular un número aleatorio. Por lo tanto, para obtener una mayor variedad de números, es recomendable ejecutar la función `rand` varias veces en un corto periodo de tiempo.
+
+## Ver también:
+
+- [Documentación oficial de la función `rand` en Fish Shell](https://fishshell.com/docs/current/cmds/rand.html)
+- [Artículo sobre generadores de números aleatorios en Wikipedia](https://es.wikipedia.org/wiki/Generador_de_n%C3%BAmeros_aleatorios)
+- [Tutorial sobre la generación de números aleatorios en C](https://www.educative.io/edpresso/generating-random-numbers-in-c)
+
+¡Eso es todo por hoy! Espero que ahora entiendas mejor la generación de números aleatorios y cómo utilizarla en Fish Shell. ¡Hasta la próxima!

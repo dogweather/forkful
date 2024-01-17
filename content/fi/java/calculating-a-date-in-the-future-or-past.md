@@ -1,7 +1,7 @@
 ---
-title:                "Päivämäärän laskeminen tulevaisuudessa tai menneisyydessä"
-html_title:           "Java: Päivämäärän laskeminen tulevaisuudessa tai menneisyydessä"
-simple_title:         "Päivämäärän laskeminen tulevaisuudessa tai menneisyydessä"
+title:                "Määritetään päivämäärä tulevaisuudessa tai menneisyydessä"
+html_title:           "Java: Määritetään päivämäärä tulevaisuudessa tai menneisyydessä"
+simple_title:         "Määritetään päivämäärä tulevaisuudessa tai menneisyydessä"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Dates and Times"
@@ -10,28 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
-Ihmiset usein tarvitsevat laskutoimituksia tulevien tai menneiden päivien laskemiseen Java-ohjelmoinnissa. Tämä voi olla tarpeen esimerkiksi aikataulujen laatimisessa tai tiettyjen päivien välisen aikaeron laskemisessa.
+## Mitä & Miksi?
+Päivämäärän laskeminen tulevaiseen tai menneeseen on tavallinen tehtävä ohjelmoinnissa. Se tarkoittaa tietyn päivämäärän lisäämistä tai vähentämistä tietyn aikamäärän verran. Ohjelmoijat tekevät tätä esimerkiksi pysyvien muistutusten luomiseksi tai tietokantaan tallennettujen päivämäärien käsittelyä varten.
 
-## Kuinka
-Käytä Java-koodia seuraavien esimerkkien avulla laskeaksesi päivämäärän tulevaisuudessa tai menneisyydessä.
-
-```
-// Tulevaisuudessa
-LocalDate tulevaisuus = LocalDate.now().plusDays(7);
-System.out.println(tulevaisuus);
-// Output: 2022-01-07
-
-// Menneisyydessä
-LocalDate menneisyys = LocalDate.now().minusYears(2);
-System.out.println(menneisyys);
-// Output: 2019-01-14
+## Näin teet:
+```Java
+// Esimerkki päivämäärän lisäämisestä 5 päivää eteenpäin
+LocalDate tanaan = LocalDate.now();
+LocalDate viidenPaivanPaasta = tanaan.plusDays(5);
+System.out.println(viidenPaivanPaasta); // 2021-04-20
 ```
 
-## Syväsyventyminen
-Java-ohjelmassa päivien laskeminen tulevaisuuteen tai menneisyyteen voidaan tehdä LocalDate-luokan avulla, joka sisältää monia käteviä metodeja päivämäärien muokkaamiseen. Tulevaisuudessa päiviä voidaan lisätä käyttämällä plusDays (), plusMonths () tai plusYears () -metodeja, kun taas menneisyydessä päivistä voidaan vähentää käyttämällä vastaavia miinus-metodeja. Lisäksi voidaan käyttää myös muita metodeja, kuten withDayOfMonth () tai withYear (), jotka mahdollistavat päivän tai vuoden tarkan asettamisen.
+```Java
+// Esimerkki päivämäärän vähentämisestä 2 kuukautta taaksepäin
+LocalDate tanaan = LocalDate.now();
+LocalDate kaksiKuukauttaTaakse = tanaan.minusMonths(2);
+System.out.println(kaksiKuukauttaTaakse); // 2021-02-20
+```
 
-## Katso myös
-- [Java LocalDate -dokumentaatio](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
-- [Java Date and Time API -opas](https://docs.oracle.com/javase/tutorial/datetime/index.html)
-- [Java 8: n uudet aikapinnatutoriaalit](https://www.baeldung.com/java-8-date-time-intro)
+## Syvällisempi sukellus:
+Päivämäärän laskemisen käyttö on ollut osa ohjelmointia jo pitkään, mutta nykyaikaisilla ohjelmointikielillä, kuten Javalla, siitä on tullut yksinkertaisempaa. On myös muita tapoja käsitellä päivämääriä, kuten käyttämällä kalenteriluokkia tai kolmannen osapuolen kirjastoja.
+
+Päivämäärien laskemiseen käytetään usein päivämääräolioita, jotka sisältävät päivämäärän ja ajan tiedot. Java 8 toi mukanaan uuden LocalDate-luokan, joka mahdollistaa päivämäärän käsittelyn ilman aikatietoja. Tämä helpottaa monia yleisiä päivämäärämanipulaatioita ja on myös suorituskykyisempi kuin vanhemmat kalenteriin perustuvat ratkaisut.
+
+## Katso myös:
+Java 8 LocalDate-dokumentaatio: https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html

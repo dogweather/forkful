@@ -10,41 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
-Es gibt verschiedene Gründe, warum man sich dafür entscheiden könnte, Zeichenfolgen in C# zu löschen, die einem bestimmten Muster entsprechen. Zum Beispiel können Sie möglicherweise unerwünschte Zeichen entfernen, um die Lesbarkeit Ihres Codes zu verbessern oder Daten zu bereinigen, bevor Sie sie verarbeiten.
+## Was & Warum?
 
-## Wie geht's
-Um Zeichenfolgen in C# zu löschen, die einem bestimmten Muster entsprechen, können Sie die `Regex` Klasse verwenden. Diese Klasse bietet Funktionen zum Suchen und Ersetzen von Text basierend auf einem regulären Ausdruck.
- 
-Ein Beispielcode könnte wie folgt aussehen:
+Das Löschen von Zeichen, die zu einem bestimmten Muster passen, bedeutet, dass Programmierer bestimmte Zeichen aus einem Text entfernen, basierend auf einem vordefinierten Muster. Dies kann nützlich sein, um unerwünschte Zeichen aus Strings oder Dateien zu entfernen oder um bestimmte Muster zu erkennen und zu verarbeiten.
+
+## Wie geht's?
 
 ```C#
-// Erstellen Sie eine Instanz der Regex-Klasse und geben Sie das gewünschte Muster an.
-Regex regex = new Regex("[aeiou]");
-
-// Ersetzen Sie alle Vokale in einem Text durch Leerzeichen.
-string text = "Hallo Welt";
-string result = regex.Replace(text, " ");
-
-Console.WriteLine(result);
-// Output: H ll W lt
+// Entfernt alle Leerzeichen aus einem String
+String text = "Hallo Welt!";
+String ohneLeerzeichen = Regex.Replace(text, @"\s+", "");
+Console.WriteLine(ohneLeerzeichen); // Output: HalloWelt!
 ```
-
-Dieses Beispiel zeigt, wie Sie mithilfe des `regex.Replace` -Befehls Zeichenfolgen entfernen können, die dem Muster `[aeiou]` entsprechen.
-
-## Tiefer eintauchen
-Die `Regex` Klasse bietet viele weitere Funktionen, die Sie erkunden können, um Ihre Anforderungen zu erfüllen. Sie können auch eine Vielzahl von Variationen des regulären Ausdrucks ausprobieren, um genau die Zeichenfolgen zu finden, die Sie löschen möchten.
-
-Eine andere Möglichkeit, Zeichenfolgen basierend auf einem regulären Ausdruck zu löschen, ist die Verwendung des `Trim` Befehls. Dieser entfernt alle angegebenen Zeichen am Anfang und Ende einer Zeichenfolge. Sie können also beispielsweise das folgende Codebeispiel verwenden, um alle Leerzeichen am Anfang und Ende eines Textes zu entfernen:
-
+    
 ```C#
-string text = "       Hallo Welt       ";
-string result = text.Trim();
-
-Console.WriteLine(result);
-// Output: "Hallo Welt"
+// Entfernt alle Ziffern aus einem String
+String text = "Ich bin 26 Jahre alt!";
+String ohneZiffern = Regex.Replace(text, @"\d+", "");
+Console.WriteLine(ohneZiffern); // Output: Ich bin Jahre alt!
 ```
+
+## Tiefere Einblicke
+
+Das Löschen von Zeichen, die einem bestimmten Muster entsprechen, wird in der Regel mit regulären Ausdrücken (Regular Expressions) realisiert. Diese werden verwendet, um Muster in Texten zu erkennen und zu manipulieren. Es gibt auch andere Möglichkeiten, Zeichen zu löschen, wie z.B. die Verwendung von Schleifen und Bedingungen, aber reguläre Ausdrücke sind in der Regel die effektivste Methode.
 
 ## Siehe auch
- - [Microsoft Docs - Regex Klasse](https://docs.microsoft.com/de-de/dotnet/api/system.text.regularexpressions.regex?view=netcore-3.1)
- - [Microsoft Docs - Trim Methode](https://docs.microsoft.com/de-de/dotnet/api/system.string.trim?view=netcore-3.1)
+
+- [Regex.Replace Methode (C#)](https://docs.microsoft.com/de-de/dotnet/api/system.text.regularexpressions.regex.replace)
+- [Reguläre Ausdrücke in 10 Minuten erklärt](https://www.mkyong.com/regular-expressions/java-regex-example/)
+- [Reguläre Ausdrücke: Eine kurze Einführung für Programmierer](https://medium.com/@hicraff/regul%C3%A4re-ausdr%C3%BCcke-eine-kurze-einf%C3%BChrung-f%C3%BCr-programmierer-6e731d7779a)

@@ -1,7 +1,7 @@
 ---
-title:                "Eine Zeichenkette großschreiben"
-html_title:           "Gleam: Eine Zeichenkette großschreiben"
-simple_title:         "Eine Zeichenkette großschreiben"
+title:                "Strings großschreiben"
+html_title:           "Gleam: Strings großschreiben"
+simple_title:         "Strings großschreiben"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -10,30 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
-Warum sollte ich mir die Mühe machen, einen String zu verändern und zu großschreiben? Nun, es gibt viele Situationen, in denen es wichtig ist, dass Texte korrekt und einheitlich geschrieben sind. Zum Beispiel, wenn wir eine Benutzerschnittstelle erstellen oder Daten aus einer externen Quelle erhalten, die möglicherweise nicht richtig formatiert ist. Indem wir einen String in Großbuchstaben konvertieren, können wir sicherstellen, dass unser Code einheitlich und lesbar ist.
+Was ist Capitalizing und warum machen Programmierer es?
 
-## Wie geht das?
-Es gibt verschiedene Möglichkeiten, einen String in Gleam zu großzuschreiben. Die einfachste Methode ist die Verwendung der ```String.to_upper``` Funktion, die einen String in Großbuchstaben konvertiert. Zum Beispiel:
+Capitalizing in der Programmierung bedeutet, den ersten Buchstaben eines Strings groß zu schreiben. Das wird oft verwendet, um die Lesbarkeit und das visuelle Erscheinungsbild von Code zu verbessern. Es macht Variablen und Funktionen einfacher zu erkennen und hilft bei der Konsistenz in einem Projekt.
 
-```gleam
-let name = "sophie"
-let name_in_caps = String.to_upper(name)
+Wie geht's?
+
+Eine Möglichkeit, einen String in Gleam zu capitalizen, ist die Verwendung der ```String.capitalize``` Funktion. Diese Funktion nimmt einen String als Argument und gibt eine neue Version des Strings zurück, in dem der erste Buchstabe großgeschrieben ist.
+
+Ein Beispiel für die Verwendung dieser Funktion könnte so aussehen:
+```
+Gleam
+
+pub fn main() {
+  let name = String.capitalize("gleam");
+  debug(name); // Gibt "Gleam" aus
+}
+
 ```
 
-Dies würde ```"SOPHIE"``` als Ergebnis zurückgeben. Wenn wir einen längeren Text haben, können wir auch die ```String.map``` Funktion verwenden, um jeden Buchstaben im String individuell zu verändern. Hier ist ein Beispiel, bei dem wir ```map``` verwenden, um alle Buchstaben in einem String in Großbuchstaben umzuwandeln:
+Es ist auch möglich, die Funktion direkt auf einem String-Literal anzuwenden, wie im folgenden Beispiel:
+```
+Gleam
 
-```gleam
-let text = "Hallo, das ist ein Beispiel!"
-let upper_text = String.map(to_upper, text)
+pub fn main() {
+  let name = "gleam".capitalize();
+  debug(name); // Gibt "Gleam" aus
+}
+
 ```
 
-Das Ergebnis wäre ```"HALLO, DAS IST EIN BEISPIEL!"```. Wir können auch die gleichen Funktionen verwenden, um einen String in Kleinbuchstaben umzuwandeln, indem wir anstelle von ```to_upper``` die ```to_lower``` Funktion benutzen.
+Vertiefung
 
-## Tiefer gehend
-Es ist wichtig zu beachten, dass die ```to_upper``` und ```to_lower``` Funktionen nicht nur für englische Buchstaben funktionieren. Sie funktionieren auch für jegliche Unicode-Zeichen, was bedeutet, dass sie für die meisten Sprachen und Schriftsysteme geeignet sind. Während es einfach erscheinen mag, einen String in Groß- oder Kleinbuchstaben umzuwandeln, ist es wichtig zu wissen, dass es auch zukünftige Entwicklungen geben kann, die diese Funktionen verbessern und erweitern werden.
+Capitalizing hat sich als nützliche Praxis in der Programmierung etabliert, um die Lesbarkeit und Konsistenz des Codes zu verbessern. Es ist auch eine gängige Konvention in vielen Programmiersprachen. Es gibt jedoch Alternativen, wie zum Beispiel das Verwenden von Unterstrichen oder CamelCase, um Variablen und Funktionen zu benennen.
 
-## Siehe auch
-- [Gleam Dokumentation zu Strings](https://gleam.run/book/tour/strings.html)
-- [Tutorial zu String-Manipulation in Gleam](https://dev.to/dzcyb3r/updating-strings-in-gleam-8hj)
-- [Offizielles Gleam Forum](https://github.com/gleam-lang/gleam/discussions)
+In Gleam ist die ```String.capitalize``` Funktion die beste Wahl für das Capitalizing von Strings, da sie effizient und einfach zu verwenden ist. Außerdem unterstützt die Gleam-Standardbibliothek auch Funktionen wie ```String.to_uppercase``` und ```String.to_lowercase```, um den gesamten String in Groß- oder Kleinbuchstaben zu konvertieren.
+
+Siehe auch
+
+Für weitere Informationen über Gleam und seine Funktionen empfehlen wir die offizielle Dokumentation auf der Website: https://gleam.run
+
+Außerdem gibt es eine aktive Community auf Discord, wo du Fragen stellen und mit anderen Gleam-Entwicklern in Kontakt treten kannst: https://discord.gg/QdyXWayb8m

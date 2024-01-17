@@ -10,39 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+## 무엇 & 왜?
 
-새 프로젝트를 시작하는 일에 관여하는 이유는 다양합니다. 이를 통해 새로운 기술을 배우고 스킬을 향상시키는 것뿐만 아니라, 새로운 아이디어를 실현하고 문제를 해결할 수 있는 창의적인 자유를 누릴 수도 있습니다.
+새로운 프로젝트를 시작하는 것은 새로운 소프트웨어를 만드는 것을 의미합니다. 프로그래머들은 새로운 문제를 해결하기 위해 프로젝트를 시작합니다. 새로운 프로젝트를 시작함으로써 새로운 아이디어를 구현하고 새로운 기술을 배우는 기회를 얻을 수 있습니다.
 
-## 어떻게 시작할까요?
+## 방법:
 
-Elm은 함수형 언어이므로, 변수를 정의하고 함수를 만들며 데이터를 처리하는 방법 등에서 F#, Haskell 등과 많이 비슷합니다. 아래의 코드 블록은 Elm 언어로 작성한 간단한 예시입니다.
+Elm을 사용하여 새로운 프로젝트를 시작하는 방법을 알아보겠습니다. 먼저 ```elm init``` 명령어를 사용하여 새로운 프로젝트를 초기화할 수 있습니다. 그런 다음 ```elm make``` 명령어를 사용하여 소스 코드를 컴파일할 수 있습니다. 아래 코드 블록을 참조하여 실제 코드 및 결과물을 확인해보세요.
 
-```elm
-module Main exposing (..)
-
-main : Program () Model Msg
-main =
-    Browser.element
-        { init = init
-        , view = view
-        , update = update
-        , subscriptions = subscriptions
-        }
+```
+Elm init
+```
+```
+Elm make Main.elm
 ```
 
-위의 코드는 `Main` 모듈에서 `Program`을 선언하고, `Browser` 패키지를 사용하여 기본적인 구조를 정의한 것입니다. `init` 함수에서 초기 상태를 정의하고, `view`에서는 사용자에게 보여줄 화면을 구성하며, `update`에서는 사용자의 입력에 따라 상태를 업데이트하며, `subscriptions`에서는 백그라운드에서 발생하는 이벤트를 처리하는 방법을 정의합니다. 또한, 모듈 이름을 선언하는 부분과 함수의 인자에 해당하는 부분 등에서 Haskell과 많이 비슷한 구조를 가지고 있습니다.
+## 깊이 알아보기:
 
-## 깊이있게 알아보기
+Elm은 2012년에 공개된 함수형 언어입니다. 객체 지향 언어와는 다른 패러다임을 가지고 있으며, 높은 수준의 타입 안정성을 제공합니다. Elm 외에도 다른 언어들이 새로운 프로젝트를 시작할 때 사용될 수 있습니다. 예를 들어, React Native는 모바일 앱 개발을 위해 사용될 수 있습니다. 여러분이 선택하는 언어와 플랫폼은 여러분의 개발 스타일과 프로젝트 요구 사항에 따라 다를 수 있습니다.
 
-새로운 프로젝트를 시작하기 위해서는 먼저 Elm 설치가 필요합니다. 이를 위해서는 Node.js와 npm이 설치되어 있어야 합니다. 그리고 Elm 커뮤니티에서 제공하는 [Elm 실습 예제](https://elm-lang.org/examples)를 통해 언어의 기본적인 구문과 기능을 익힐 수 있습니다. 또한, [Elm GitHub 페이지](https://github.com/elm)에서는 다양한 Elm 프로젝트를 찾아볼 수 있으며, 이를 통해 다른 개발자들이 어떻게 Elm을 사용하고 있는지 살펴볼 수 있습니다.
+## 참고자료:
 
-## 더 많은 정보
-
-## 참고 자료
-
-- [Elm Language Official Website](https://elm-lang.org/)
-- [Elm Community Forum](https://discourse.elm-lang.org/)
-- [Real World Elm Examples](https://github.com/rtfeldman/elm-spa-example)
-- [Elm Syntax Tutorial](https://elmprogramming.com/)
-- [Elm in Action](https://www.manning.com/books/elm-in-action)
+- [Elm 공식 홈페이지](https://elm-lang.org/)
+- [React Native 공식 홈페이지](https://reactnative.dev/)

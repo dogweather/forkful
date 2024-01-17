@@ -10,53 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
+什么和为什么：
 
-基本认证是一种通过在HTTP请求中包括用户名和密码来验证用户身份的方式。它可以帮助我们保护敏感数据和资源，以及限制未经授权的访问。
+发送带有基本身份验证的 HTTP 请求是为了允许程序员在网络应用程序中进行用户认证。通过使用用户名和密码来验证身份，基本身份验证确保只有授权用户才能访问受保护的资源。这在保护隐私信息和防止未经授权的访问方面非常重要。
 
-## 如何执行HTTP请求和基本认证
+如何：
 
-首先，我们需要安装`axios`包来处理HTTP请求，可以通过以下命令进行安装：
-
-```
-npm install axios
-```
-
-接下来，我们需要导入`axios`包，并创建一个实例来执行我们的HTTP请求，在代码中添加以下行：
+使用 TypeScript ，发送带有基本身份验证的 HTTP 请求非常简单。首先，您需要导入“http”模块，并使用“request”方法来创建一个请求对象。然后，将所要请求的 URL 和要发送的身份验证信息作为参数传递给该方法。最后，您可以使用“then”方法来处理响应并处理返回的数据。
 
 ```
-const axios = require('axios');
+import { request } from 'http';
 
-const instance = axios.create({
-  baseURL: 'https://example.com', // 替换为你想要发送请求的URL
-  auth: {
-    username: 'username', // 替换为你的用户名
-    password: 'password' // 替换为你的密码
-  }
-});
+const url = 'https://www.example.com/api/test';
+const username = 'user123';
+const password = 'pass456';
+
+request({ url, auth: { username, password } })
+.then(response => {
+  // 处理响应
+  console.log(response);
+})
+.catch(error => {
+  // 处理错误
+  console.log(error);
+})
 ```
 
-现在，我们可以使用`instance`来发送我们的HTTP请求。例如，我们可以发送一个GET请求来获取页面内容，并在控制台输出结果。在代码中，我们可以添加以下行：
+深入探讨：
 
-```
-instance.get('/page')
-  .then(function (response) {
-    console.log(response.data);
-  })
-  .catch(function (error) {
-    console.log(error);
-  });
-```
+基本身份验证是最早的身份验证机制之一，最初用于保护 Web 浏览器和服务器之间的通信。它使用 Base64 编码来加密用户的凭证，因此并不是最安全的身份验证方式。程序员也可以使用其他手段来实现身份验证，例如使用 OAuth 和 JSON Web Tokens (JWTs)。
 
-在上述示例中，我们使用`then`和`catch`方法来处理请求的响应和错误。你可以根据自己的需求来使用不同的HTTP方法（GET、POST、PUT等）以及适当的响应处理。
+欲了解更多关于基本身份验证的实现细节，请参考 RFC 2617。同时，您也可以查询有关更安全的身份验证方法的资料，例如基于令牌的身份验证。
 
-## 深入了解
+相关资源：
 
-在发送HTTP请求时，我们可以通过在请求头中添加`Authorization`字段来实现基本认证。这可以通过将用户名和密码使用Base64编码来创建一个令牌来实现。在上面的例子中，我们使用`auth`选项来通过提供用户名和密码来方便地添加`Authorization`头部。
-
-此外，我们还可以使用`axios`提供的拦截器（interceptors）来进行更多的自定义。使用拦截器，我们可以在每个请求中添加特定的头部，以及在响应时验证和处理错误。你可以通过阅读[axios的官方文档](https://github.com/axios/axios)来了解更多关于拦截器的信息。
-
-## 参考链接
-
-- [axios官方文档](https://github.com/axios/axios)
-- [理解HTTP基本认证](https://www.ibm.com/docs/en/datapower-gateways/2018.4?topic=topics-http-authentication)
+- [RFC 2617](https://tools.ietf.org/html/rfc2617)
+- [使用 TypeScript 发送 HTTP 请求](https://www.typescriptlang.org/docs/handbook/advanced-types.html#generic-object-types)
+- [什么是基于令牌的身份验证？](https://jwt.io/introduction/)

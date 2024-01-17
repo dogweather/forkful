@@ -1,7 +1,7 @@
 ---
-title:                "Vianmääritystulostuksen tulostaminen"
-html_title:           "Rust: Vianmääritystulostuksen tulostaminen"
-simple_title:         "Vianmääritystulostuksen tulostaminen"
+title:                "Tulostetaan debug-lähtöä"
+html_title:           "Rust: Tulostetaan debug-lähtöä"
+simple_title:         "Tulostetaan debug-lähtöä"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Testing and Debugging"
@@ -10,29 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+## Mikä ja miksi?
 
-Rust on tehokas ja turvallinen ohjelmointikieli, joten sitä käytetään usein raskaissa ja turvallisissa sovelluksissa, kuten verkkopalvelimissa ja sulautetuissa järjestelmissä. Debuggaus on tärkeä osa sovellusten kehitystä, jotta voidaan löytää ja korjata mahdollisia virheitä. Siksi on tärkeää ymmärtää, miten tulostaa debug-tietoja Rust-koodissa.
+Painokkaan debug-tulosteen tulostaminen on yksinkertaisesti tapa tarkastella ohjelman suoritustietoja tai virheviestejä. Se on erityisen hyödyllistä, kun yritetään selvittää, miksi ohjelma ei toimi odotetulla tavalla. 
 
-## Miten
+Ohjelmoijat käyttävät painokkaita debug-tulosteita koska se auttaa heitä tunnistamaan ja korjaamaan ohjelman ongelmakohdat. Sillä voidaan selvittää, mikä koodi toimii odotetulla tavalla ja mikä ei. Se on olennainen työkalu ohjelmointikehityksessä.
 
-Rustissa on useita tapoja tulostaa debug-tietoja. Yksinkertaisin tapa on käyttää `println!` -makroa, joka tulostaa annetut arvot konsoliin. Esimerkiksi:
+## Miten?
 
 ```Rust
-let num = 5;
-println!("Luku on: {}", num);
+fn main() {
+    let x = 5;
+    println!("Muuttujan x arvo on {}", x);
+}
 ```
 
-Tämä tulostaa konsoliin "Luku on: 5". `println!` -makron lisäksi voit käyttää myös muita makroja, kuten `dbg!`, `eprintln!` ja `format!`, saadaksesi erilaisia tulostusominaisuuksia. Voit myös käyttää muotoilumerkkejä, kuten `{}` ja `{:#?}`, muokataksesti tulostuksen ulkoasua.
+Tässä esimerkissä painokas debug-tuloste tulostaa "Muuttujan x arvo on 5" ohjelman suorituksen aikana. Tämä auttaa meitä vahvistamaan, että muuttuja x on asetettu oikeaan arvoon.
 
-## Syvemmälle
+## Syväsukellus
 
-Rustin `println!` -makro toimii samalla tavalla kuin C-kielen `printf`-funktio, mutta se on turvallisempi, koska Rust varmistaa, että kaikki annetut arvot vastaavat oikeaa muotoa. Tämä auttaa välttämään muistiongelmia ja muita yleisiä virheitä.
+Debug-tulosteiden käyttö on ollut yleinen ohjelmointikäytäntö jo pitkään. Se on nopea ja helppo tapa selvittää ohjelman suorituksen tiedot ja virheet.
 
-Rustissa voit myös käyttää `Debug` ja `Display` -traitteja mukauttaaksesi tulostusmuotoa tietorakenteille, kuten `struct` ja `enum`. Tämä antaa sinulle enemmän hallintaa siitä, miten haluat näyttää dataa debug-tulosteissa. Voit myös koota useita arvoja yhteen tuplessa ja tulostaa ne kaikki kerralla käyttämällä `dbg!` -makroa.
+Toinen tapa tarkastella ohjelman suoritusta on käyttää debuggaus-työkaluja, kuten GDB (GNU Project Debugger) tai lldb (LLVM Debugger). Nämä työkalut antavat ohjelmoijille mahdollisuuden pysäyttää ohjelman suorituksen tiettyyn kohtaan ja tutkia muuttujien ja koodin tilaa.
+
+Rustissa debug-tulosteiden toteutus perustuu "Debug" traitiin. Tämä antaa ohjelmoijille mahdollisuuden määrittää, miten tietty tyyppi tulostetaan debug-tilassa. Tämä mahdollistaa myös tietojen muotoilun tulostettaviksi tarkoituksiin.
 
 ## Katso myös
 
-- [The Rust Book](https://doc.rust-lang.org/book/)
-- [Rust Debugging Guide](https://docs.rs/crate/debugging-guide/0.1.2)
-- [Rust Pro Tips](https://careers.rust-lang.org/t/rust-pro-tips/139)
+- [Rustin debuggin käyttö](https://doc.rust-lang.org/std/macro.print.html)
+- [Rustin virheenkorjaus ja debuggaus -opas](https://docs.rs/rust/1.54.0/rustc_data_structures/vagueness/debug_info/index.html)

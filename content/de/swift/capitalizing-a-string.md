@@ -10,38 +10,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was & Warum?
 
-Hast du dich jemals gefragt, warum es wichtig ist, Strings in Swift zu versalen? String-Operationen sind ein wichtiger Bestandteil der Programmierung und das Versalen von Strings ist eine einfache Möglichkeit, sie lesbarer zu machen. Es verleiht deinem Code auch eine professionellere und konsistente Ästhetik.
+Beim Capitalizing einer Zeichenkette handelt es sich um die Umwandlung des ersten Buchstabens jedes Wortes in einem Satz in einen Großbuchstaben. Programmierer nutzen diese Funktion, um den Text übersichtlicher zu gestalten und die Lesbarkeit zu erhöhen.
 
-## Wie geht's
-
-Um einen String in Swift zu versalen, kannst du die `uppercased()` Methode verwenden:
+## So geht's:
 
 ```Swift
-let greeting = "hallo welt"
-let capitalizedGreeting = greeting.uppercased()
+let string = "ich gehe gerne spazieren."
+let capitalizedString = string.capitalized
 
-print(capitalizedGreeting) // Ausgabe: HALLO WELT
+print(capitalizedString) // "Ich Gehe Gerne Spazieren."
 ```
 
-Du kannst auch die `capitalized()` Methode verwenden, um nur den ersten Buchstaben eines Strings zu versalen:
+## Tiefpunkt:
 
-```Swift
-let word = "programmierung"
-let capitalizedWord = word.capitalized()
+Das Capitalizing von Strings wird oft als "Title Case" bezeichnet und wurde früher in der Typographie verwendet, um Überschriften hervorzuheben. Neben der Nutzung des `capitalized`-Befehls gibt es auch alternative Methoden, um Strings zu kapitalisieren, wie zum Beispiel die Verwendung von `uppercased` oder die manuelle Manipulation über Schleifen.
 
-print(capitalizedWord) // Ausgabe: Programmierung
-```
+## Siehe auch:
 
-## Tiefergehende Informationen
-
-Es gibt noch weitere Möglichkeiten, Strings in Swift zu versalen. Zum Beispiel kannst du die `capitalized(with:)` Methode verwenden, um spezifische Lokalisierungen für die Großschreibung zu wählen. Du kannst auch den `uppercased()` und `capitalized()` Methoden Attribute wie `.locale` oder `.whitespace` hinzufügen, um deine gewünschte Formatierung zu erreichen.
-
-Es ist auch wichtig zu beachten, dass es in Swift keine `lowercased()` Methode gibt, da Strings standardmäßig in Kleinbuchstaben sind. Stattdessen kannst du die `lowercased()` Methode verwenden, um einen String in Kleinbuchstaben zu verwandeln.
-
-## Siehe auch
-
-- [Apple documentation on capitalizing strings](https://developer.apple.com/documentation/foundation/nsstring/1415464-capitalized)
-- [Hacking with Swift tutorial on capitalizing strings](https://www.hackingwithswift.com/example-code/strings/how-to-capitalize-the-first-letter-of-a-string)
-- [Ray Wenderlich tutorial on manipulating strings in Swift](https://www.raywenderlich.com/7585-beginning-swift-strings)
+[Die Dokumentation des `capitalized`-Kommandos](https://developer.apple.com/documentation/swift/string/2998327-capitalized)

@@ -1,7 +1,7 @@
 ---
-title:                "Arbeiten mit csv"
-html_title:           "C++: Arbeiten mit csv"
-simple_title:         "Arbeiten mit csv"
+title:                "Arbeiten mit CSV"
+html_title:           "C++: Arbeiten mit CSV"
+simple_title:         "Arbeiten mit CSV"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Data Formats and Serialization"
@@ -10,13 +10,17 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+## Was ist CSV und Warum solltest du es nutzen?
 
-CSV, auch bekannt als "comma-separated values", ist ein weit verbreitetes Dateiformat für die Speicherung von tabellarischen Daten. Für Programmierer kann es sehr nützlich sein, mit CSV-Dateien zu arbeiten, um Daten zu analysieren, zu importieren oder zu exportieren. 
+CSV - kurz für Comma-Separated Values - ist ein Dateiformat, das häufig von Programmierern verwendet wird, um strukturierte Daten zu speichern und zu verarbeiten. Es besteht im Wesentlichen aus Textdaten, die in Form von Tabellen organisiert sind und durch Kommata getrennt werden.
+
+Programmierer nutzen CSV, um effizient große Mengen an Daten zu verarbeiten, da es ein einfaches und flexibles Format ist. Es ermöglicht auch die einfache Weitergabe von Daten zwischen verschiedenen Programmen und Plattformen. 
 
 ## Wie funktioniert es?
 
-Um mit CSV-Dateien in C++ zu arbeiten, müssen wir die Standardbibliothek <fstream> verwenden. Diese ermöglicht uns das Lesen und Schreiben von Daten in Dateien. Zunächst müssen wir eine CSV-Datei öffnen und die Daten in ein String-Array einlesen. Hier ist ein Beispielcode:
+Um mit CSV in C++ zu arbeiten, musst du zunächst die "fstream" Bibliothek einbinden. Dann kannst du die Datei mit Hilfe der "ifstream" Klasse öffnen, die dann die Daten in einem Array abspeichert. Du kannst dann mit Schleifen oder verschiedenen Methoden auf die Daten zugreifen und sie bearbeiten.
+
+Ein Beispiel:
 
 ```C++
 #include <iostream>
@@ -24,44 +28,45 @@ Um mit CSV-Dateien in C++ zu arbeiten, müssen wir die Standardbibliothek <fstre
 
 using namespace std;
 
-int main() {
-    // CSV-Datei öffnen
-    ifstream file("beispiel.csv");
+int main()
+{
+    ifstream file("daten.csv"); // Öffne die Datei "daten.csv"
+    string array[3]; // Erstelle ein Array mit 3 Elementen (Zahlen, Text, Text)
     
-    // Daten in Array einlesen
-    string data[3]; // 3 Spalten in der CSV-Datei
-    for(int i = 0; i < 3; i++) {
-        getline(file, data[i], ','); // Daten bis zum Komma lesen
+    for (int i=0; i<3; i++) // Durchlaufe das Array
+    {
+        getline(file, array[i], ','); // Lese die Daten aus der Datei und trenne sie bei jedem Komma
     }
     
-    // Daten ausgeben
-    cout << data[0] << " - " << data[1] << " - " << data[2] << endl;
+    for (int i=0; i<3; i++) // Durchlaufe das Array erneut
+    {
+        cout << array[i] << endl; // Gebe die Daten aus
+    }
+    
+    file.close(); // Schließe die Datei
     
     return 0;
 }
 ```
 
-Die beispiel.csv-Datei könnte zum Beispiel folgende Daten enthalten:
+Output:
 
 ```
-Max,Mustermann,30
-Lisa,Müller,25
+123
+Text1
+Text2
 ```
 
-Die Ausgabe wäre dann:
+## Tiefere Einblicke
 
-```
-Max - Mustermann - 30
-```
+CSV wurde in den 1970er Jahren entwickelt und war lange Zeit das Standardformat für den Austausch von Daten zwischen Tabellenkalkulationsprogrammen. Es ist einfacher als XML oder JSON und wird daher oft für kleinere und weniger komplexe Datensätze verwendet. 
 
-In diesem Beispiel haben wir nur einen Datensatz aus der CSV-Datei gelesen und in einer Ausgabe formatiert. Natürlich können wir auch alle Daten aus der CSV-Datei einlesen und weiterverarbeiten, je nach Bedarf.
+Es gibt auch alternative Formate wie TSV (Tab-Separated Values) oder Delimited-ASCII, die ähnlich funktionieren wie CSV, aber mit anderen Trennzeichen arbeiten.
 
-## Tiefergehende Informationen
+In der C++ Implementierung gibt es verschiedene Methoden, um mit CSV-Daten umzugehen, z.B. das Auslesen von bestimmten Spalten oder das Hinzufügen von neuen Zeilen. Es ist auch möglich, CSV-Daten in strukturiertere Formate, wie z.B. ein Array von benutzerdefinierten Objekten, zu konvertieren.
 
-Beim Lesen von CSV-Dateien ist es wichtig zu beachten, dass die Daten in Textform gespeichert werden, daher müssen wir sie möglicherweise noch in die passenden Datentypen konvertieren. Auch bei der Ausgabe ist es wichtig, das richtige Format zu wählen, um die CSV-Datei korrekt zu speichern. Zudem gibt es viele verschiedene Möglichkeiten, Daten aus CSV-Dateien zu analysieren oder zu bearbeiten, beispielsweise durch die Verwendung von externen Bibliotheken oder dem Einbinden von Regulären Ausdrücken.
+## Weitere Informationen
 
-## Siehe auch
-
-- [Offizielle C++ Dokumentation](https://en.cppreference.com/w/)
-- [Ein Tutorial zu fstream](https://www.learncpp.com/cpp-tutorial/basic-file-io/)
-- [Reguläre Ausdrücke in C++](https://www.geeksforgeeks.org/regular-expressions-in-c-c/)
+- [CSV auf Wikipedia](https://de.wikipedia.org/wiki/CSV_(Dateiformat))
+- [C++ CSV Parser Library](https://github.com/ben-strasser/fast-cpp-csv-parser)
+- [CSV vs. XML vs. JSON](https://www.alfresco.com/blogs/developer/2013/05/28/data-interchange-csv-json-xml/)

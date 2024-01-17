@@ -1,7 +1,7 @@
 ---
-title:                "Schreiben auf den Standardfehler"
-html_title:           "Elixir: Schreiben auf den Standardfehler"
-simple_title:         "Schreiben auf den Standardfehler"
+title:                "Das Schreiben in den Standardfehler"
+html_title:           "Elixir: Das Schreiben in den Standardfehler"
+simple_title:         "Das Schreiben in den Standardfehler"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Files and I/O"
@@ -10,31 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Warum
+# Was & Warum?
 
-Das Schreiben in das Standardfehlerprotokoll, auch bekannt als stderr, ist eine häufige Praxis bei der Programmierung in Elixir. Es ermöglicht Entwicklern, Fehler und Warnungen während der Ausführung ihres Codes zu verfolgen und zu debuggen.
+Schreiben auf den Standardfehler (standard error) ist ein Weg für Programmierer, um Fehler- und Warnungsmeldungen auszugeben. Standardfehler ist ein Kanal, der speziell für das Senden von Ausgaben reserviert ist, die Fehler oder Warnungen enthalten. Dadurch kann der Benutzer unterscheiden, ob die Ausgabe normale Programmausgaben oder tatsächliche Fehlermeldungen sind.
 
-# Wie es geht
-
-Um in Elixir in das Standardfehlerprotokoll zu schreiben, verwenden Sie einfach die Funktion `IO.puts/2` und geben Sie als ersten Parameter `:stderr` an. Zum Beispiel:
+## So geht's:
 
 ```Elixir
-IO.puts(:stderr, "Dies ist eine Fehlermeldung.")
+IO.puts("Normale Ausgabe") # Gibt "Normale Ausgabe" auf den Standardausgang (standard output) aus
+IO.puts(:stderr, "Fehlermeldung") # Gibt "Fehlermeldung" auf den Standardfehler (standard error) aus
+```
+Ausgabe:
+```
+Normale Ausgabe
+Fehlermeldung (in rot oder farbig markiert, je nach Konsole oder Umgebung)
 ```
 
-Dieser Code wird "Dies ist eine Fehlermeldung." in das stderr-Protokoll schreiben. Es ist auch möglich, Variablen in der Fehlermeldung zu interpolieren, indem man sie in geschweifte Klammern einschließt. Zum Beispiel:
+## Tiefere Einblicke:
 
-```Elixir
-IO.puts(:stderr, "Der Wert ist: #{my_variable}.")
-```
+Das Schreiben auf den Standardfehler hat seinen Ursprung im Unix-Betriebssystem und wurde später in anderen Systemen übernommen. Alternativ können Programmierer auch auf den Standardausgang schreiben und die Ausgabe manuell formatieren, um Fehlermeldungen hervorzuheben. In Elixir gibt es auch die Funktion `Logger.error/1`, die zur Ausgabe von Fehlern verwendet werden kann.
 
-Dies würde den Wert der Variablen `my_variable` in die Fehlermeldung einfügen.
+## Siehe auch:
 
-# Tiefes Eintauchen
-
-Das stderr-Protokoll ist besonders nützlich bei der Verwendung von Supervisors in Elixir. Wenn ein Fehler in einem überwachten Prozess auftritt, wird dieser in das stderr-Protokoll geschrieben, was es ermöglicht, den Fehler zu erkennen und zu behandeln. Darüber hinaus können Logging-Frameworks wie `logger` auch auf das stderr-Protokoll zugreifen, um Fehler und Warnungen zu loggen.
-
-# Siehe auch
-
-- Die offizielle Elixir-Dokumentation zu stderr: https://hexdocs.pm/elixir/IO.html#puts/2
-- Ein Tutorial zum Schreiben in das stderr-Protokoll in Elixir: https://www.tutorialspoint.com/elixir/elixir_error_handling.htm
+- Offizielle Elixir-Dokumentation zu IO
+- Stack Overflow-Eintrag zu Standardfehler auf Unix-Systemen

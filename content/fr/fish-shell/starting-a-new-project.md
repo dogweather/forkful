@@ -10,29 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+# Qu'est-ce que c'est et pourquoi le faire ?
 
-Si vous voulez découvrir un nouveau langage de programmation moderne et puissant, alors Fish Shell est fait pour vous ! Avec sa syntaxe simple et son système de complétion automatique, il est parfait pour les débutants et les experts en programmation.
+Démarrer un nouveau projet, c'est simplement commencer à travailler sur un nouveau projet de programmation. Les programmeurs le font souvent lorsqu'ils ont une nouvelle idée pour une application ou un logiciel, ou lorsqu'ils ont besoin de mettre à jour un projet existant.
 
-## Comment faire
+## Comment le faire :
 
-Pour commencer à utiliser Fish Shell, vous devez tout d'abord l'installer sur votre ordinateur. Vous pouvez le faire en téléchargeant les fichiers nécessaires sur le site officiel ou en utilisant un gestionnaire de paquets tel que Homebrew sur macOS ou Chocolatey sur Windows.
-
-Une fois installé, vous pouvez ouvrir un terminal et lancer Fish Shell en utilisant la commande `fish`. Vous remarquerez tout de suite que l'invite de commande a changé pour afficher le symbole `>` au lieu du traditionnel `$`.
+Le shell Fish est un excellent outil pour démarrer un nouveau projet en raison de sa syntaxe simple et de ses nombreuses fonctionnalités pratiques. Voici un exemple de code pour créer un nouveau projet dans Fish Shell :
 
 ```Fish Shell
-> echo "Bonjour le monde !"
-Bonjour le monde !
+mkdir mon_projet
+cd mon_projet
+touch index.html
 ```
 
-Maintenant, vous êtes prêt à commencer à programmer en Fish Shell. Vous pouvez utiliser toutes les commandes Bash que vous connaissez déjà, car Fish Shell est compatible avec Bash. Mais vous devriez également essayer les fonctionnalités spécifiques de Fish Shell, telles que la complétion automatique en tapant la touche `Tab` ou les fonctions intégrées utiles comme `cd` pour naviguer entre les dossiers.
+Cela créera un nouveau dossier pour votre projet, se déplacera dans ce dossier et créera un fichier index.html vide à l'intérieur.
 
-## Plongez plus profondément
+## Plongée en profondeur :
 
-Si vous souhaitez en savoir plus sur Fish Shell et comment démarrer un nouveau projet, vous pouvez consulter la documentation officielle qui contient des exemples de code et des instructions détaillées. Vous pouvez également participer à la communauté Fish Shell sur leur forum et poser vos questions ou partager vos astuces avec d'autres utilisateurs.
+Historiquement, les programmeurs utilisaient des éditeurs de texte pour créer de nouveaux projets, mais Fish Shell facilite grandement ce processus en le rendant plus rapide et plus intuitif. Bien sûr, il existe également d'autres outils et méthodes pour démarrer un nouveau projet, mais Fish Shell offre une expérience particulièrement agréable et efficace.
 
-## Voir aussi
+Pour démarrer un projet plus rapidement, vous pouvez également utiliser des modèles prédéfinis dans Fish Shell. Vous pouvez également personnaliser votre configuration de Fish Shell pour qu'elle soit adaptée à votre style de programmation.
 
-- [Site officiel de Fish Shell](https://fishshell.com/)
-- [Documentation de Fish Shell](https://fishshell.com/docs/current/index.html)
-- [Forum de la communauté Fish Shell](https://github.com/fish-shell/fish-shell/discussions)
+## À voir aussi :
+
+Pour en savoir plus sur les débuts de projet en programmation avec Fish Shell, consultez ces liens utiles :
+
+- [Documentation officielle Fish Shell](https://fishshell.com/docs/current/index.html)
+- [Un tutoriel sur la création de projets avec Fish Shell](https://medium.com/@techtonics/getting-started-with-fish-shell-3697a09a7c6a)
+- [Un aperçu des différents shells de ligne de commande, y compris Fish Shell](https://opensource.com/article/18/6/bash-vs-zsh)

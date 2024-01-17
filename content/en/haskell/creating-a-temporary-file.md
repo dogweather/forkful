@@ -10,42 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-Creating temporary files can be a useful tool for manipulating data or performing calculations without permanently altering the original source files. It allows for temporary storage and retrieval of data in a program, making it a valuable technique in various programming tasks.
+Creating a temporary file is a common task in programming. It involves creating a file that will hold temporary data, useful for tasks such as storing intermediate results, cache files, or temp logs. Programmers use temporary files to improve performance, save memory, and ensure the smooth execution of their code.
 
-## How To
+## How to:
 
-Creating a temporary file in Haskell is a simple process using the `System.IO.Temp` module. To begin, import the module at the top of your file:
+To create a temporary file in Haskell, we can use the `withSystemTempFile` function from the `System.IO.Temp` library. This function takes in two parameters: a file name pattern and a function that will be executed with the temporary file as an argument.
 
-```Haskell
-import System.IO.Temp
+```
+import System.IO.Temp (withSystemTempFile)
+
+withSystemTempFile "temp.txt" $ \tempFile -> do
+  putStrLn ("Created temporary file: " ++ tempFile)
+  writeFile tempFile "This is a temporary file."
+
+-- Output:
+-- Created temporary file: /tmp/temp3618.txt
 ```
 
-Next, use the `withSystemTempFile` function to create a temporary file and perform operations on it. The function takes in two arguments: a string that will be used as a prefix for the temporary file name, and a function that will take in a `FilePath` as a parameter.
+Once the function finishes executing, the temporary file will be automatically deleted. We can also specify a custom directory for the temporary file by using the `withSystemTempDirectory` function.
 
-```Haskell
-withSystemTempFile "temp" $ \fp handle -> do
-    hPutStrLn handle "This is a temporary file!"
-    hClose handle
-```
+## Deep Dive:
 
-In this example, we use "temp" as the prefix and write a line of text to the file before closing it. The `withSystemTempFile` function automatically deletes the temporary file after it is closed, making it ideal for quick and temporary operations.
+Temporary files have been in use since the early days of computing when memory was limited and expensive. They were initially used to store intermediate results of computations to save memory. As technology advanced, temporary files also became useful for implementing features such as caching and logging.
 
-You can also use the `withSystemTempDirectory` function to create a temporary directory instead, following the same syntax using a prefix and a function.
+While temporary files provide a convenient solution for many programming tasks, they do come with some drawbacks. For example, if the program crashes before the file is deleted, it can lead to leftover temporary files that take up space. Additionally, some modern programming languages, like Rust, have implemented alternative solutions such as temporary in-memory buffers that eliminate the need for physical temporary files altogether.
 
-## Deep Dive
+Creating a temporary file involves a few steps behind the scenes. Firstly, a unique file name is generated based on the given pattern. Then, the file is created in the specified directory, and the function is executed with the file as an argument. Once the function finishes, the file is deleted. All these steps are handled by the `withSystemTempFile` function, making it a convenient and easy-to-use solution.
 
-Behind the scenes, the `withSystemTempFile` and `withSystemTempDirectory` functions are using the `createTempFile` and `createTempDirectory` functions respectively.
+## See Also:
 
-The `createTempFile` function takes in a `FilePath` and a string, which will be used as the suffix for the temporary file name. It then creates a new file with a unique name in the system's temporary directory.
-
-Similarly, the `createTempDirectory` function creates a new temporary directory in the system's temporary directory and returns the path to it as a `FilePath`.
-
-Both `createTempFile` and `createTempDirectory` also take in an optional third parameter for the directory to place the temporary file or directory in, by default it uses the system's temporary directory.
-
-## See Also
-
-- [System.IO.Temp documentation]("https://hackage.haskell.org/package/temporary-1.2.1.3/docs/System-IO-Temp.html")
-- [Haskell I/O tutorial]("https://wiki.haskell.org/Introduction_to_IO")
-- [Creating temporary files in other languages]("https://en.wikipedia.org/wiki/Temporary_folder#Creating_temporary_files")
+- [System.IO.Temp library documentation](https://hackage.haskell.org/package/temporary-1.3.0.5/docs/System-IO-Temp.html)
+- [Rust's Tempfile library](https://docs.rs/tempfile/3.1.0/tempfile/)
+- [Temporary files vs in-memory buffers in Rust](https://medium.com/courier-engineering/temporary-files-or-in-memory-buffers-e28d7dcca5f4)

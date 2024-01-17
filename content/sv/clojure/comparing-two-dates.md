@@ -1,7 +1,7 @@
 ---
-title:                "Jämförelse av två datum"
-html_title:           "Clojure: Jämförelse av två datum"
-simple_title:         "Jämförelse av två datum"
+title:                "Jämföring av två datum"
+html_title:           "Clojure: Jämföring av två datum"
+simple_title:         "Jämföring av två datum"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Dates and Times"
@@ -10,32 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Varför
-Att jämföra två datum kan vara användbart i många olika situationer, som att kontrollera om ett evenemang redan har skett, sortera data efter datum eller beräkna hur lång tid det har gått sedan en händelse.
+# Vad och varför?
+När vi programmerar, kan vi behöva jämföra två datum för att utföra olika beräkningar eller för att bestämma om ett datum är före eller efter ett annat. Att jämföra datum är en vanlig uppgift för många programmerare.
 
-## Hur man gör
-Att jämföra två datum i Clojure är enkelt med hjälp av inbyggda funktioner som `time/now` och `time/instant`. Det är viktigt att notera att datumen behöver vara i rätt format för att jämförelsen ska fungera som förväntat.
+# Hur gör man:
+För att jämföra två datum i Clojure, kan vi använda den inbyggda funktionen `clojure.core/compare`. Denna funktion tar två datum som argument och returnerar -1 om det första datumet är tidigare än det andra, 0 om de är lika och 1 om det första datumet är senare än det andra. 
 
-Ett exempel på hur man jämför två datum och bestämmer vilket som är tidigare:
 ```Clojure
-(def datum1 (time/instant)) ; Skapar ett datum med aktuellt datum och tid
-(def datum2 (time/instant "2019-02-01T12:00:00")) ; Skapar ett datum med ett specificerat datum och tid
-
-(if (< datum1 datum2)
-  (println "datum1 är tidigare än datum2")
-  (println "datum2 är tidigare än datum1"))
+(clojure.core/compare "2021-03-15" "2021-03-20") ; returnerar -1
+(clojure.core/compare "2021-03-15" "2021-03-15") ; returnerar 0
+(clojure.core/compare "2021-03-20" "2021-03-15") ; returnerar 1
 ```
 
-Output:
+Vi kan också använda funktionen `java.util.Date` för att konvertera en sträng till ett datumobjekt och sedan jämföra dessa två objekt med `clojure.core/compare`.
+
+```Clojure
+(def date1 (java.util.Date. "2021-03-15"))
+(def date2 (java.util.Date. "2021-03-20"))
+
+(clojure.core/compare date1 date2) ; returnerar -1
 ```
-datum2 är tidigare än datum1
-```
 
-## Djupdykning
-När man jämför två datum i Clojure är det viktigt att förstå hur datumen faktiskt representeras i programmet. I Clojure används den inbyggda datatypen `java.time.Instant` för att hantera datum och tid. Datumen representeras som en tidpunkt i millisekunder sedan 1970-01-01 00:00 UTC. Detta kallas också för "epoch" eller "Unix-time".
+# Öka förståelsen:
+Det finns flera alternativ för att jämföra datum i Clojure, såsom att använda biblioteket `clj-time` eller `java.time` som introducerades i Java 8. Med `clj-time` biblioteket kan vi använda funktionen `clj-time.core/compare` för att jämföra två datum.
 
-En viktig sak att tänka på är att de inbyggda funktionerna `time/now` och `time/instant` returnerar datumen i UTC-tid och inte lokaltid. Detta kan leda till felaktiga jämförelser om man inte tar hänsyn till tidszoner.
+När vi jämför datum i Clojure, är det viktigt att komma ihåg att vi använder Clojures inbyggda funktioner och strukturer för att hantera och manipulera datumobjekt. Det är också värt att notera att `java.time` biblioteket är mer optimerat för prestanda än `clj-time` och bör övervägas vid hantering av stora datamängder.
 
-## Se även
-- [Clojure Time Library](https://github.com/clj-time/clj-time)
-- [Instant documentation](https://docs.oracle.com/javase/8/docs/api/java/time/Instant.html)
+# Se även:
+- [Clojure Dokumentation om Datatyper](https://clojure.org/reference/data_structures)
+- [clj-time biblioteks dokumentation](https://github.com/clj-time/clj-time)
+- [java.time dokumentation](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)

@@ -1,7 +1,7 @@
 ---
-title:                "Iniciando um novo projeto."
-html_title:           "Clojure: Iniciando um novo projeto."
-simple_title:         "Iniciando um novo projeto."
+title:                "Iniciando um novo projeto"
+html_title:           "Clojure: Iniciando um novo projeto"
+simple_title:         "Iniciando um novo projeto"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Getting Started"
@@ -10,32 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+## O que & Por quê?
 
-Se você está procurando uma linguagem de programação moderna e versátil, o Clojure pode ser a escolha certa para você. Com suas características funcionais e orientadas a objetos, ele permite que você crie aplicativos eficientes e escaláveis com facilidade.
+Começar um novo projeto em programação significa iniciar um novo conjunto de código para atingir um objetivo específico. Os programadores geralmente iniciam novos projetos para criar novas soluções para problemas ou para melhorar a funcionalidade existente.
 
-## Como começar
-
-Começar um novo projeto em Clojure é simples. Primeiro, certifique-se de ter o ambiente de desenvolvimento Java instalado em seu computador. Em seguida, baixe e instale o Leiningen, que é um gerenciador de pacotes para projetos Clojure. Depois de configurar essas ferramentas, você está pronto para começar.
+## Como fazer:
 
 ```Clojure
-(defn hello-world []
-  (println "Olá mundo!"))
+(def project "Novo Projeto")
+
+(println "Começando um novo projeto em Clojure")
+(println "Nome do projeto: " project)
 ```
 
-Você pode executar este código no terminal usando o comando `lein run` e ver a saída "Olá mundo!" impressa.
+**Saída:**
+```
+Começando um novo projeto em Clojure
+Nome do projeto: Novo Projeto
+```
 
-## Aprofundando
+## Mergulho Profundo:
 
-Uma das vantagens do Clojure é a sua integração com a plataforma Java. Isso significa que você pode ter acesso a uma grande variedade de bibliotecas Java, o que pode ser útil ao iniciar um novo projeto. Além disso, o Clojure é conhecido por sua sintaxe concisa e expressiva, o que torna a escrita de código muito mais agradável.
+Para entender melhor como começar um novo projeto em Clojure, é importante ter um pouco de contexto histórico sobre a linguagem de programação. Clojure foi criada em 2007 por Rich Hickey e é baseada na linguagem Lisp. Existem outras opções para iniciar novos projetos em Clojure, incluindo o uso de templates e ferramentas de desenvolvimento integrado (IDE). O processo básico de começar um novo projeto em Clojure envolve a criação de um novo arquivo de código fonte e a utilização de funções e estruturas de dados para construir sua solução.
 
-Outra coisa importante a considerar ao iniciar um novo projeto em Clojure é a escolha da estrutura de trabalho. Existem várias opções populares, como o Duct e o Luminus, que fornecem uma estrutura sólida para o desenvolvimento de aplicativos web em Clojure.
+## Veja também:
 
-Para aprender mais sobre Clojure, você pode consultar a documentação oficial ou participar de comunidades online, como o fórum Reddit r/Clojure ou o Slack channel #clojure no Clojurians.
-
-## Veja também
-
-- [Documentação oficial do Clojure](https://clojure.org/guides/getting_started)
-- [Leiningen](https://leiningen.org/)
-- [Duct](https://github.com/duct-framework/duct)
-- [Luminus](https://luminusweb.com/)
+- [Documentação Oficial de Clojure](https://clojure.org/guides/getting_started)
+- [Clojure for the Brave and True](https://www.braveclojure.com/getting-started/)
+- [Einstuerzende Neubauten: Extended Introduction to Clojure (Video)](https://youtu.be/FekKInnfa6o)

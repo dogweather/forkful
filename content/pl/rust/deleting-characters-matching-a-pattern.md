@@ -1,7 +1,7 @@
 ---
-title:                "Usuwanie znaków odpowiadających wzorcowi"
-html_title:           "Rust: Usuwanie znaków odpowiadających wzorcowi"
-simple_title:         "Usuwanie znaków odpowiadających wzorcowi"
+title:                "Usuwanie znaków pasujących do wzorca"
+html_title:           "Rust: Usuwanie znaków pasujących do wzorca"
+simple_title:         "Usuwanie znaków pasujących do wzorca"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -10,28 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+Cześć programiści! W dzisiejszym artykule przyjrzymy się tematowi usuwania znaków pasujących do wzorca w języku Rust. Nauczysz się o co w tym chodzi i dlaczego warto znać ten koncept, a także dowiesz się jak go zaimplementować w kodzie. Bez zbędnego gadania, zaczynajmy!
 
-Usuwanie znaków pasujących do określonego wzorca jest częstym zadaniem podczas pisania programów. Jest to bardzo przydatna umiejętność w programowaniu, ponieważ pozwala na szybkie i skuteczne oczyszczanie danych oraz przetwarzanie ich zgodnie z wymaganiami.
+## Co & Dlaczego? 
 
-## Jak to zrobić
+Usuwanie znaków pasujących do wzorca to po prostu operacja polegająca na usunięciu wszystkich wystąpień określonego wzorca w tekście. Programiści wykorzystują to, aby przetwarzać tekst na potrzeby różnych zadań, takich jak analiza danych lub obróbka stringów.
 
-Aby usunąć znaki pasujące do wzorca w języku Rust, możemy skorzystać z metody `chars()` i funkcji `filter()` na łańcuchu znaków. Wygląda to następująco:
+## Jak to zrobić:
+
+Możesz to zrobić na kilka sposobów w języku Rust. Oto dwa przykładowe podejścia:
 
 ```Rust
-let string = "Przykład tekstu 123";
-let filtered_string: String = string.chars().filter(|c| c.is_alphabetic()).collect();
-println!("String po filtrowaniu: {}", filtered_string);
+// Metoda 1: Używając pętli for
+let text = "Lorem ipsum dolor sit amet";
+let pattern = "o";
+
+for c in text.chars() {
+    if c.to_string() != pattern {
+        print!("{}", c);
+    }
+}
+
+//Output: Lem ipsum dlr sit amet 
 ```
 
-W powyższym przykładzie najpierw tworzymy zmienną `string` zawierającą przykładowy ciąg znaków, a następnie tworzymy nową zmienną `filtered_string`, która będzie przechowywać wynik filtrowania. Wykorzystujemy metodę `chars()` do pobrania każdego pojedynczego znaku z łańcucha `string`, a następnie używamy funkcji `filter()`, która pozwala nam określić warunek, który musi zostać spełniony, aby dany znak został zachowany. W tym przypadku warunek to `is_alphabetic()`, co oznacza, że tylko znaki alfabetyczne będą zachowane. Na koniec wykorzystujemy funkcję `collect()` do zapisania wyników filtrowania do zmiennej `filtered_string` i wyświetlamy ją za pomocą funkcji `println!()`.
+```Rust
+// Metoda 2: Używając biblioteki regex
+use regex::Regex;
 
-## Przyjrzenie się bliżej
+let text = "Lorem ipsum dolor sit amet";
+let re = Regex::new("o").unwrap();
+let result = re.replace_all(&text, "");
 
-W powyższym przykładzie użyliśmy metody `chars()` i funkcji `filter()` w celu usunięcia znaków pasujących do naszego wzorca. Metoda `chars()` pozwala na iterację po łańcuchu znaków, a funkcja `filter()` służy do filtrowania tych znaków. Możemy również użyć innych metod, takich jak `map()`, `fold()` czy `reduce()`, aby przetworzyć nasze dane na inne sposoby. Istnieje wiele różnych możliwości, więc zachęcamy do eksperymentowania i poszukiwania najlepszych rozwiązań dla swoich potrzeb.
+//Output: Lem ipsum dlr sit amet
+```
 
-## Zobacz też
+## Wnikliwe podejście:
 
-- [Dokumentacja języka Rust](https://www.rust-lang.org/)
-- [Kurs programowania w języku Rust](https://www.rust-lang.org/learn)
-- [Przykładowe projekty w języku Rust](https://github.com/rust-lang-ru/awesome-rust-projects)
+Usuwanie znaków pasujących do wzorca jest powszechnie stosowane w programowaniu od dawna, szczególnie w operacjach na tekstach. Bardziej zaawansowanym podejściem jest wykorzystanie bibliotek takich jak regex, które pozwalają na bardziej złożone operacje na wzorcach. Oczywiście, możesz również napisać własną funkcję lub metodę, która będzie spełniać potrzeby twojego projektu. Pamiętaj, żeby unikać modyfikowania oryginalnego tekstu, a zamiast tego zwracać nowy zaktualizowany string.
+
+## Zobacz również:
+
+Jeśli chcesz dowiedzieć się więcej o operacjach na tekstach w języku Rust, koniecznie przejrzyj te źródła:
+
+- [Dokumentacja Rust standard library](https://doc.rust-lang.org/std/index.html)
+- [Poradnik Regex w Rust](https://doc.rust-lang.org/regex/regex/index.html)

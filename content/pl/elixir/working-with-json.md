@@ -10,70 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co & Dlaczego?
 
-Elixir jest bardzo przydatnym językiem programowania, a jego wszechstronność sprawia, że jest użyteczny w różnych dziedzinach. Jedną z jego najważniejszych cech jest bardzo wydajne przetwarzanie formatu JSON. Jeśli jesteś programistą lub dopiero zaczynasz swoją przygodę z programowaniem, poznanie sposobu działania JSON w Elixir może okazać się bardzo wartościowe.
+Praca z JSON jest niezbędnym elementem dla współczesnych programistów. JSON (JavaScript Object Notation) to popularny format danych, który jest wykorzystywany w wielu aplikacjach internetowych i mobilnych. Jest bardzo prosty w użyciu i ma wydajną strukturę, dlatego jest często wybierany jako typ danych do przechowywania i przekazywania informacji.
 
-## Jak to zrobić
+## Jak to zrobić:
 
-Aby pracować z formatem JSON w Elixir, musimy użyć modułu `Jason`, który jest dostępny w standardowej bibliotece Elixira. Najpierw należy go zainstalować za pomocą managera pakietów `mix`:
+Aby pracować z JSON w Elixir, wystarczy użyć wbudowanej biblioteki :jason. Przykładowo, jeśli chcemy przetworzyć JSON w pliku, możemy użyć funkcji File.read i Jason.decode:
 
-```
-mix deps.get
-```
-
-Następnie musimy go zaimportować do naszego kodu:
-
-```
-import Jason
+```Elixir
+json = File.read("dane.json")
+{:ok, parsed_json} = Jason.decode(json)
 ```
 
-Teraz możemy tworzyć obiekty JSON w naszym kodzie. Na przykład, aby utworzyć tablicę z liczbami całkowitymi, możemy użyć:
+Aby przetworzyć JSON z zewnętrznego źródła, na przykład za pomocą API, możemy użyć modułu Httpoison, który umożliwia przekazanie odpowiedzi jako JSON do funkcji Jason.decode.
 
-```
-Jason.encode!([1, 2, 3])
-```
-
-Kiedy uruchomimy ten kod, otrzymamy następujący wynik:
-
-```
-"[1, 2, 3]"
+```Elixir
+response = Httpoison.get("https://api.example.com")
+{:ok, parsed_json} = Jason.decode(response.body)
 ```
 
-Możemy również kodować obiekty JSON zagnieżdżone, na przykład:
+Aby utworzyć własny JSON, można użyć funkcji Jason.encode:
 
-```
-Jason.encode!(%{"imie": "Anna", "miasto": "Warszawa", "hobby": ["programowanie", "podróże"]})
-```
-
-To spowoduje utworzenie następującego obiektu JSON:
-
-```
-"{\"imie\": \"Anna\", \"miasto\": \"Warszawa\", \"hobby\": [\"programowanie\", \"podróże\"]}"
+```Elixir
+my_data = %{"name" => "John", "age" => 25, "city" => "New York"}
+encoded_json = Jason.encode(my_data)
 ```
 
-Aby odczytać dane z obiektu JSON, możemy użyć funkcji `Jason.decode!/1`. Na przykład, jeśli chcemy odczytać wartość pola `miasto` z powyższego obiektu, możemy użyć:
+## Głębsze zanurzenie:
 
-```
-data = Jason.decode!("{\"imie\": \"Anna\", \"miasto\": \"Warszawa\", \"hobby\": [\"programowanie\", \"podróże\"]}")
+Format JSON został stworzony w 2001 roku przez Douglasa Crockforda i jest bardzo popularny wśród programistów JavaScript. W związku z tym, że jest platformowo- i języko-niezależny, jest szeroko stosowany w różnych projektach. Alternatywnie, można użyć innych formatów, takich jak XML lub CSV, jednak JSON oferuje prostszą i bardziej czytelną strukturę.
 
-data["miasto"]
-```
+Biblioteka :jason opiera się na wydajnej bibliotece C, więc jest szybka i niezawodna w przetwarzaniu dużej ilości danych. 
 
-Output:
+## Zobacz także:
 
-```
-"Warszawa"
-```
-
-## Głębszy wykład
-
-Moduł `Jason` oferuje wiele innych przydatnych funkcji do pracy z JSON. Możemy na przykład formatować nasze obiekty JSON, aby były czytelniejsze, używając funkcji `Jason.format!/1`. Możemy również sprawdzić poprawność składniową naszego obiektu JSON za pomocą funkcji `Jason.validate!/1`.
-
-Warto również zauważyć, że Elixir obsługuje rekordy i atomowe klucze w obiektach JSON, co czyni go niezwykle przyjaznym do pracy z różnymi typami danych.
-
-## Zobacz też
-
-- [Dokumentacja Elixir-a](https://hexdocs.pm/elixir/)
-- [Dokumentacja Jason-a](https://hexdocs.pm/jason/api-reference.html)
-- [Blog Elixir Polskie Stowarzyszenie](https://elixir-polska.org/blog/)
+- [Instrukcja obsługi JSON w Elixir](https://elixir-lang.org/getting-started/json.html)
+- [Oficjalna dokumentacja biblioteki :jason](https://hexdocs.pm/jason/Jason.html)
+- [Popularne formaty danych używane w programowaniu](https://www.programiz.com/article/json-xml-csv-data-formats)

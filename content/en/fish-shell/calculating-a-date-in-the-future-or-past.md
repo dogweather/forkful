@@ -10,33 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-Ever had to figure out a date in the future or the past? Maybe you were planning a trip or trying to schedule an event. Either way, manually calculating dates can be time-consuming and prone to errors. With Fish Shell, you can easily automate this process and save yourself some headache.
+## What & Why?
 
-## How To
-Calculating a date in the future or past using Fish Shell is a breeze. Simply follow the steps below:
+Calculating a date in the future or past is the act of determining a date that is a certain number of time units away from a given date. This can be useful for scheduling tasks or events, setting reminders, or simply keeping track of time. Programmers often need to perform this task in their code to automate processes or make their programs more user-friendly.
 
-1. Open your terminal and enter the Fish Shell by typing `fish`.
-2. Use the `date` command followed by the desired date in YYYY-MM-DD format. For example, `date 2021-12-25` will output the date for Christmas in the current year.
-3. To calculate a date in the past, use a negative number after the date. For example, `date 2021-12-25 -1` will output the date from the previous year.
-4. You can also use keywords like `today` or `tomorrow` instead of a specific date. For example, `date tomorrow` will output tomorrow's date.
+## How to:
 
-Below is a sample output of the above commands:
+Fish Shell provides a built-in function called ```date``` that makes it easy to calculate a date in the future or past. Simply enter the following command in your Fish Shell terminal:
 
 ```
-Fish Shell 3.2.2
-Copyright (c) 2015 - 2020 Fish contributors
-
-Date Output:
-2021-12-25
-2020-12-25
-2021-06-08
+date +%F -d "YYYY-MM-DD + X days/weeks/months"
 ```
 
-## Deep Dive
-Behind the scenes, Fish Shell uses the GNU `date` command to calculate dates. It also accepts date formats from other languages, making it a versatile tool for international users. Additionally, you can use flags such as `-d` or `--date` to specify a different starting date or time zone.
+Replace ```YYYY-MM-DD``` with the starting date and ```X days/weeks/months``` with the desired time difference. The output will be the new calculated date in the format of ```YYYY-MM-DD```.
 
-See Also
-- [Fish Shell official website](https://fishshell.com)
-- [GNU date command documentation](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html)
-- [Fish Shell cheat sheet](https://fishshell.com/docs/current/tutorial.html#quick-reference)
+
+To calculate a date in the past, use the following command:
+
+```
+date +%F -d "YYYY-MM-DD - X days/weeks/months"
+```
+
+For example, if you want to know the date 3 weeks from now, the command would be:
+
+```
+date +%F -d "2021-08-20 + 3 weeks"
+```
+
+And the output would be:
+
+```
+2021-09-10
+```
+
+## Deep Dive:
+
+This technique of calculating a date in the future or past has been around since the early days of programming. Before built-in functions like ```date```, programmers would have to write complex algorithms to perform this task. However, with the advancements in technology and programming languages, this task has become much simpler.
+
+There are also alternative methods for calculating a date in the future or past, such as using third-party libraries or using other built-in functions in programming languages like Python. However, using the built-in ```date``` function in Fish Shell is quick and convenient.
+
+The implementation of the ```date``` function in Fish Shell uses a combination of system calls and low-level date manipulation functions from the C programming language. This is why the syntax for the command may seem unfamiliar to some programmers.
+
+## See Also:
+
+- [Fish Shell documentation](https://fishshell.com/docs/current/index.html) for more information on the ```date``` function and other built-in functions.
+- [Python tutorial](https://www.programiz.com/python-programming/datetime) on calculating dates in Python using the datetime library.
+- [C library documentation](https://www.gnu.org/software/libc/manual/html_node/Time-Types.html) for a deeper understanding of date manipulation functions.

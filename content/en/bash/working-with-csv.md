@@ -10,59 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
-CSV (Comma Separated Values) files are a common way to store tabular data, making them widely used in data analysis, database management, and other fields. As Bash is a powerful scripting language that can manipulate files and perform data processing, knowing how to work with CSV using Bash can be a useful skill for various tasks.
+## What & Why?
 
-## How To
-To work with CSV files in Bash, we can use various built-in commands and tools. Let's explore some examples and see the output in action.
+Working with CSV (Comma Separated Values) is a common task for programmers. As the name suggests, it involves dealing with data that is separated by commas, usually in a tabular format. CSV files are commonly used to store and transfer data, making them a popular choice for handling large datasets in a structured manner. With the rise of Big Data and the need for efficient data management, the use of CSV files has become even more prevalent in the programming world.
 
-#### Reading CSV Files
-To read a CSV file in Bash, we can use the `read` command and specify the delimiter (in this case, a comma) using the `-d` flag. For example, if we have a CSV file named "data.csv" with the following content:
-```
-John,Smith,25
-Jane,Doe,30
-Mark,Johnson,45
-```
-We can read and display each line of the file using the following code:
+## How to:
+
+To work with CSV files in Bash, you can use the built-in `csv` tool. This tool provides a set of functions for handling CSV data, such as converting CSV to arrays, extracting specific columns, and sorting data. Here's an example of how to extract the first column from a CSV file:
+
 ```Bash
-while IFS=',' read -r firstName lastName age; do
-    echo "Name: $firstName $lastName, Age: $age"
-done < data.csv
-```
-The `read` command reads each line of the file and assigns the values to the specified variables. The `echo` command then prints the values in the desired format. The `while` loop continues until all lines in the file are read.
-
-The output would be:
-```
-Name: John Smith, Age: 25
-Name: Jane Doe, Age: 30
-Name: Mark Johnson, Age: 45
+csvtool col 1 example.csv 
 ```
 
-#### Writing CSV Files
-To create a new CSV file from scratch, we can use the `printf` command to specify the desired format and `>>` to append the data to the file. For example, let's create a new file named "new_data.csv" with the following content:
-```
-Name,Email
-John, john@email
-Jane, jane@email
-```
-We can use the following code:
+The output would be the first column of data from the file `example.csv`. You can also use the `csvtool sort` command to sort data based on a specific column. Here's an example of how to sort a CSV file based on the second column:
+
 ```Bash
-printf "%s,%s\n" "Mark" "mark@email" >> new_data.csv
-```
-The `%s` specifies the values to be inserted, and the `\n` adds a new line after each entry. The `>>` appends the data to the end of the file. The resulting file would look like this:
-```
-Name,Email
-John, john@email
-Jane, jane@email
-Mark,mark@email
+csvtool sort 2 example.csv 
 ```
 
 ## Deep Dive
-While Bash has built-in commands to work with CSV files, there are also external tools like `csvtool` that offer more advanced features. For example, we can use `csvtool` to convert a CSV file to a JSON file or vice versa. We can also use `awk` to filter or manipulate data in a CSV file.
 
-It's essential to note that Bash has limitations when handling large or complex CSV files. In such cases, using a specialized programming language or tool like Python or R would be more efficient.
+CSV files have been around since the early 1970s and have been a popular choice for storing and transferring data due to their simplicity and compatibility with a wide range of programs. However, CSV files do have some limitations, such as not being able to handle complex data structures. As a result, alternative formats such as JSON and XML have gained popularity in recent years.
 
-See Also
-- [BashGuide on CSV](https://mywiki.wooledge.org/BashGuide/CSV)
-- [Official Bash documentation](https://www.gnu.org/software/bash/manual/html_node/Bash-and-Files.html)
-- [CSV kit tool for working with CSV files](https://csvkit.readthedocs.io/en/latest/)
+Working with CSV files in Bash requires the installation of the `csvtool` package. This package is part of the `debianutils` package and is usually pre-installed in most Linux distributions. `csvtool` is a set of command-line tools that use Unix's philosophy of small, simple, and composable tools to handle CSV data efficiently.
+
+## See Also
+
+- [csvtool man page](https://manpages.debian.org/buster/debianutils/csvtool.1.en.html)
+- [Introduction to CSV](https://www.w3schools.com/python/python_csv.asp)
+- [Alternatives to CSV](https://stackify.com/what-is-the-best-format-for-data-transfer-csv-json-or-xml/)

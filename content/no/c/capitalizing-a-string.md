@@ -10,43 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor?
-I denne artikkelen skal vi se nærmere på hvordan du kan kapitalisere en streng i C-programmering. Dette er en nyttig ferdighet å ha hvis du for eksempel trenger å gjøre en streng i stor bokstav når du skal skrive ut noe, eller hvis du ønsker å sammenligne to strenger og ønsker at de skal være i samme format for å unngå feil.
+## Hva & Hvorfor?
+Å kapitalisere en streng betyr å gjøre den første bokstaven stor, mens resten av bokstavene forblir små. Dette gjøres vanligvis for å følge konvensjoner og standarder i programmeringsspråket, og for å gjøre koden mer leselig for andre utviklere.
 
-## Hvordan gjøre det
-Kapitalisering av en streng i C kan gjøres på flere forskjellige måter. Her er to enkle eksempler:
-
+## Hvordan:
+Eksempel 1:
 ```C
 #include <stdio.h>
 #include <string.h>
-
-int main() {
-    char str[] = "dette er en streng";
-    
-    //Eksempel 1: Bruke en innebygd funksjon
-    printf("%s\n", strupr(str)); //UTGANG: DETTE ER EN STRENG
-    //strupr () er en innebygd funksjon i string.h biblioteket som konverterer en streng til store bokstaver
-    
-    //Eksempel 2: Bruke en løkke
-    for (int i = 0; i < strlen(str); i++) {
-        if (str[i] >= 'a' && str[i] <= 'z') {
-            str[i] -= 32;
-        }
-    }
-    printf("%s\n", str); //UTGANG: DETTE ER EN STRENG
+int main(){
+    char str[] = "hallo verden";
+    // bruker funksjonen toupper for å kapitalisere første bokstav i strengen
+    str[0] = toupper(str[0]);
+    printf("%s", str); // Output: Hallo verden
     return 0;
 }
 ```
 
-Som du kan se, brukte vi en innebygd funksjon strupr () i det første eksempelet, mens vi i det andre eksempelet brukte en løkke og ASCII-koden for å konvertere fra små til store bokstaver.
+Eksempel 2:
+```C
+#include <stdio.h>
+#include <ctype.h>
+int main(){
+    char str[] = "dette er en setning";
+    for(int i=0; i<strlen(str); i++){
+        // bruker funksjonen islower for å sjekke om bokstaven er liten
+        if(islower(str[i])){
+            // bruker funksjonen toupper for å kapitalisere bokstaven
+            str[i] = toupper(str[i]);
+        }
+    }
+    printf("%s", str); // Output: Dette er en setning
+    return 0;
+}
+```
 
-## Dypdykk
-Hvis du vil forstå mer om hvordan strenger blir behandlet og manipulert i C, er det nyttig å vite noen få ting om bruken av nullterminator (\ 0).
+## Dypdykk:
+I eldre versjoner av C var det vanlig å bruke funksjoner som toupper eller toupper_l for å kapitalisere en streng. Men i den nyeste versjonen av C har funksjonen toupper blitt erstattet av isupper for å gjøre koden mer effektiv og brukervennlig.
 
-En streng i C er en sekvens med tegn som er lagret i minnet på en sammenhengende måte. Hver streng har en nullterminator som signaliserer slutten av strengen. Dette betyr at C vil fortsette å lese tegnene i strengen til den når \ 0-tegnet.
+Et alternativ til å bruke en løkke og to funksjoner for å kapitalisere en streng, er å bruke funksjonen strupr, som også finnes i C. Denne funksjonen tar inn en streng og kapitaliserer alle bokstavene i den.
 
-Når du kapitaliserer en streng ved å bruke en løkke, må du huske på å inkludere \ 0-tegnet som ellers vil føre til uønskede resultater. Det er også viktig å merke seg at ASCII-koden for store bokstaver ligger 32 tall over de små bokstavene. Derfor vil vi i det andre eksemplet trekke 32 fra verdien av små bokstaver for å få den tilsvarende store bokstaven.
+Implementeringen av strupr-funksjonen vil variere fra programmeringsspråk til programmeringsspråk, men konseptet er det samme. Den går gjennom hver bokstav i strengen og bruker en innebygd funksjon for å kapitalisere den.
 
-## Se også
-- [C programmeringspråk (Wikipedia)](https://no.wikipedia.org/wiki/C_(programmeringsspr%C3%A5k))
-- [Kapitalisering av en streng i C (GeeksforGeeks)](https://www.geeksforgeeks.org/c-program-sort-string-without-using-string-function/)
+## Se Også:
+- [2 måter å kapitalisere en streng i C](https://www.hackerearth.com/practice/notes/capitalize-first-character-of-string-in-c/)
+- [MarkDown av formell til uformell skriving](https://softwareengineering.stackexchange.com/questions/41614/markdown-for-formal-to-informal-writing)

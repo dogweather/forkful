@@ -1,7 +1,7 @@
 ---
-title:                "Konwertowanie daty na ciąg znaków"
-html_title:           "Swift: Konwertowanie daty na ciąg znaków"
-simple_title:         "Konwertowanie daty na ciąg znaków"
+title:                "Konwertowanie daty na ciąg znaków."
+html_title:           "Swift: Konwertowanie daty na ciąg znaków."
+simple_title:         "Konwertowanie daty na ciąg znaków."
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Dates and Times"
@@ -10,27 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i dlaczego?
+Konwersja daty na string to proces przekształcania wartości daty (np. 31.12.2020) na postać tekstową (np. "31 grudnia 2020"). Programiści często wykonują tę operację w celu wyświetlenia daty w przystępniejszej formie dla użytkownika lub dla zapisania jej w bazie danych.
 
-Konwertowanie daty na ciąg znaków może być niezbędnym krokiem podczas pracy z datami w aplikacjach. Może to być również przydatne przy wyświetlaniu daty w czytelnej formie dla użytkownika.
-
-## Jak to zrobić
+## Jak to zrobić:
+W języku Swift istnieje wbudowany typ danych `Date`, który przechowuje datę i godzinę. Aby przekonwertować tę wartość na string, należy użyć metody `String(describing:)` i podać jako argument datę, którą chcemy przekonwertować. Poniżej znajduje się przykładowy kod wraz z wynikiem:
 
 ```Swift
 let date = Date()
-let formatter = DateFormatter()
-formatter.dateFormat = "dd.MM.yyyy"
-let dateString = formatter.string(from: date)
-print(dateString) // Output: 25.01.2021
+let dateString = String(describing: date)
+print(dateString)
+
+Wynik: "2020-06-15 16:32:41 +0000" 
 ```
 
-W powyższym przykładzie użyliśmy obiektu `Date` do utworzenia daty bieżącej, następnie zdefiniowaliśmy formater dat `DateFormatter` i ustawiliśmy format na `dd.MM.yyyy`, który reprezentuje dzień, miesiąc i rok. Następnie wykorzystaliśmy metodę `string(from: date)` by skonwertować datę na ciąg znaków, który możemy wyświetlić w konsoli.
+Możesz również użyć klasy `DateFormatter` i dostosować format wyjściowy. Na przykład:
 
-## Dogłębne wgląd
+```Swift
+let formatter = DateFormatter()
+formatter.dateFormat = "dd/MM/yyyy"
+let date = Date()
+let dateString = formatter.string(from: date)
+print(dateString)
 
-Konwertowanie daty na ciąg znaków może być nieco bardziej złożone, jeśli chcemy włączyć w to także informacje o czasie. W takim przypadku musimy użyć formatu, który zawiera także informacje o godzinie i minucie, na przykład `"dd.MM.yyyy HH:mm"`. Istnieje wiele różnych formatów dat, które można wykorzystać podczas konwertowania daty na ciąg znaków w zależności od naszych potrzeb. Warto również pamiętać o lokalizacji i ustawieniach regionalnych, ponieważ mogą one mieć wpływ na wyświetlane daty.
+Wynik: "15/06/2020"
+```
 
-## Zobacz także
+## Głębszy Zanurzenie:
+Konwersja daty na string jest powszechnym zadaniem w programowaniu, ponieważ umożliwia wyświetlanie dat w różnych formatach, co jest przydatne dla użytkowników lub jako format danych w bazie. Istnieje również wiele innych metod konwersji daty, takich jak przekształcanie jej w timestamp. W języku Swift możesz również wybrać różne formaty językowe dla dat, dzięki czemu użytkownicy z różnych regionów mogą wyświetlać daty w odpowiednich dla siebie formatach.
 
-- [Dokumentacja Apple: DateFormatter](https://developer.apple.com/documentation/foundation/dateformatter)
-- [Przewodnik po konfiguracji formaterów dat w Swift](https://www.hackingwithswift.com/articles/145/how-to-use-date-and-dateformatter-in-swift)
+## Zobacz również:
+- [Oficjalna dokumentacja Swift na temat klasy Date](https://developer.apple.com/documentation/foundation/date)
+- [Poradnik na temat konwersji daty na string w Swift](https://www.hackingwithswift.com/example-code/system/how-to-convert-dates-and-times-to-a-string-using-dateformatter)
+- [Inne metody formatowania dat w języku Swift](https://www.raywenderlich.com/6742-tutorial-nsformatter-in-detail)

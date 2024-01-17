@@ -1,7 +1,7 @@
 ---
-title:                "Zamiana tekstu na wielkie litery"
-html_title:           "C++: Zamiana tekstu na wielkie litery"
-simple_title:         "Zamiana tekstu na wielkie litery"
+title:                "Zmiana pierwszej litery w ciągu znaków"
+html_title:           "C++: Zmiana pierwszej litery w ciągu znaków"
+simple_title:         "Zmiana pierwszej litery w ciągu znaków"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -10,77 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+Cześć programiści! Dzisiaj porozmawiamy o jednej ważnej funkcji w C++, a mianowicie o "capitalizing a string" (czyli wielkopisanie łańcucha znaków). Zobaczymy, co to takiego i dlaczego warto znać tę funkcję.
 
-Napisanie programu może czasami wymagać zmiany wielkości liter w tekście. Może to być na przykład potrzebne do wyświetlenia nazwy użytkownika w kapitalikach lub do poprawnego sformatowania danych. W tej krótkiej instrukcji dowiesz się, jak w prosty sposób zaimplementować funkcję, która automatycznie zamieni litery w ciągu znaków na wielkie.
+## Co i Dlaczego?
+Wielkopisanie łańcucha znaków to proces zmiany wszystkich liter w danym tekście na wielkie litery. Programiści często używają tej funkcji, aby ułatwić sobie pracę z tekstem, szczególnie gdy chodzi o porównywanie czy dwie zmienne są takie same. Ponadto, wielkopisanie może być użyteczne w sytuacji, gdy chcemy wyświetlić tekst w jednolitym formacie, np. w nagłówkach w aplikacji.
 
-## Jak to zrobić
-
-Zacznijmy od zadeklarowania funkcji, która będzie odpowiedzialna za zmianę wielkości liter w naszym tekście.
-
-```C++
-void capitalize(string& str) {
-    // kod zmieniający wielkość liter w ciągu znaków
-}
+## Jak to zrobić:
+Aby wielkopisać łańcuch znaków w C++, musimy użyć funkcji ```toupper()```, która zamienia małą literę na odpowiadającą jej wielką. Przykładowy kod wyglądałby następująco:
 ```
+#include <iostream>
+#include <string>
+#include <algorithm>
 
-Następnie, musimy przeiterować przez cały ciąg znaków i zmienić wielkość liter za pomocą wbudowanej funkcji `toupper()`. Pamiętaj również o sprawdzeniu, czy ciąg jest już w całości zapisany wielkimi literami, aby uniknąć niepotrzebnych zmian.
+using namespace std;
 
-```C++
-void capitalize(string& str) {
-    for(char& c : str) {
-        c = toupper(c);
-    }
-}
-```
-
-Aby przetestować naszą funkcję, możemy stworzyć prosty program, który przyjmie od użytkownika tekst i wyświetli go w kapitalikach.
-
-```C++
-int main() {
-    string text;
-    cout << "Podaj tekst: ";
-    getline(cin, text);
-
-    capitalize(text);
-    cout << "Tekst z wielkimi literami: " << text << endl;
+int main()
+{
+    string text = "witaj swiecie!";
+    transform(text.begin(), text.end(), text.begin(), ::toupper);
+    cout << text << endl;
 
     return 0;
-}
+} 
 ```
+Wynik wyświetli nam: WITAJ SWIECIE!
 
-Po uruchomieniu programu i wpisaniu tekstu, zostanie on wyświetlony z wielkimi literami.
+## Głębsza dyskusja:
+Wielkopisanie w programowaniu pojawiło się wraz z pojawieniem się języków programowania. W niektórych językach, takich jak Fortran czy COBOL, wielkość liter nie miała znaczenia, a więc taki proces nie był potrzebny. Jednak w językach takich jak C czy C++, wielkość liter ma znaczenie, dlatego też taka funkcja jest ważna. Większość języków programowania posiada wbudowane funkcje do wielkopisania, ale w niektórych przypadkach warto napisać własną wersję, np. gdy chcemy uwzględnić polskie znaki.
 
-```
-Podaj tekst: C++ to fajny język programowania
-Tekst z wielkimi literami: C++ TO FAJNY JĘZYK PROGRAMOWANIA
-```
-
-## Deep Dive
-
-W przypadku, gdy potrzebujemy zmienić wielkość liter jedynie wybranych słów, możemy skorzystać z funkcji `isalpha()` do sprawdzenia, czy dany znak jest literą, co pozwoli nam na precyzyjniejszą kontrolę nad zmianami.
-
-```C++
-void capitalize(string& str) {
-    bool capitalizeNext = true;
-    for(char& c : str) {
-        if(isalpha(c)) {
-            if(capitalizeNext) {
-                c = toupper(c);
-                capitalizeNext = false;
-            } else {
-                c = tolower(c);
-            }
-        } else {
-            capitalizeNext = true;
-        }
-    }
-}
-```
-
-W przypadku tekstu "C++ to fajny język programowania", funkcja wyprodukuje wynik "C++ To Fajny Język Programowania". Zauważ, że kwota "C++" pozostaje niezmieniona, a pozostałe słowa zostają wyświetlone z jedynie pierwszą literą jako wielką.
-
-## Zobacz również
-
-- [Funkcja toupper() w C++](https://www.programiz.com/cpp-programming/library-function/cctype/toupper)
-- [Poradnik o operacjach na ciągach znaków w C++](https://www.tutorialspoint.com/cplusplus/cpp_strings.htm)
+## Zobacz też:
+Jeśli chcesz poznać inne przydatne funkcje związane z obsługą tekstu w C++, warto zajrzeć na stronę: https://en.cppreference.com/w/cpp/string/basic_string. Znajdziesz tam wiele przydatnych informacji, włącznie z wielkopisaniem tekstu.

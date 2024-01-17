@@ -1,7 +1,7 @@
 ---
-title:                "Søking og utskifting av tekst"
-html_title:           "Elixir: Søking og utskifting av tekst"
-simple_title:         "Søking og utskifting av tekst"
+title:                "Søke og erstatte tekst"
+html_title:           "Elixir: Søke og erstatte tekst"
+simple_title:         "Søke og erstatte tekst"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -10,33 +10,20 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hva & Hvorfor?
+Å søke og bytte ut tekst er en vanlig oppgave for programmerere. Dette gjøres for å erstatte en bestemt tekst med en annen i en tekstfil eller kodebase. Det kan være nyttig når du ønsker å gjøre en stor endring i koden din, og det ville være for tidkrevende å gjøre det manuelt.
 
-Å søke og erstatte tekst er en vanlig oppgave når du jobber med programmering eller administrerer dokumenter. Det lar deg raskt og effektivt endre store mengder tekst basert på et gitt mønster.
-
-## Hvordan
-
-Søke og erstatte funksjonalitet er innebygd i Elixir ved hjelp av funksjonen `String.replace/3`. Denne funksjonen tar tre argumenter: den opprinnelige teksten, søkemønsteret og erstatningsstrengen.
-
+## Slik gjør du:
 ```Elixir
-iex> tekst = "Hei! Velkommen til Elixir!"
-iex> String.replace(tekst, "Hei", "Hallo")
-"Hallo! Velkommen til Elixir!"
+tekst = "Hei, verden!"
+ny_tekst = String.replace(text, "verden", "alle sammen")
+IO.puts(ny_tekst)
 ```
+Dette eksempelet demonstrerer hvordan du kan bruke `String.replace` funksjonen i Elixir for å bytte ut en del av en tekststreng med en annen. Output vil være "Hei, alle sammen!"
 
-Søkemønsteret kan også være en regulær uttrykk for mer fleksibel matching. For eksempel, hvis vi vil erstatte alle forekomster av små bokstaver med store bokstaver, kan vi bruke en regulær uttrykk med `~r` notasjon og regex funksjonen `String.upcase/1`.
+## Dykk dypere:
+Søk og bytt ut tekst var en vanlig oppgave i tidligere programmeringsspråk, men Elixir gjør det enklere ved å tilby funksjoner som `String.replace`. Alternativer til å bruke innebygde funksjoner kan være å bruke regulære uttrykk eller å bruke en tekstredigerer. I Elixir, kan du også bruke funksjoner som `String.replace_first` og `String.replace_last` for mer spesifikke behov. Implementeringen av disse funksjonene bruker faktisk regular expressions under panseret.
 
-```Elixir
-iex> tekst = "Dette er en test"
-iex> String.replace(tekst, ~r/[a-z]+/, &String.upcase/1)
-"DETTE ER EN TEST"
-```
-
-## Deep Dive
-
-String.replace-funksjonen i Elixir støtter også søk og erstatting i listen av atomer og lister av atomer. Du kan også bruke funksjonen `String.replace!/3` for å heve en `Regex.MatchError` hvis søkemønsteret ikke finnes i teksten.
-
-## Se Også
-
-- [Elixir String-modulen offisiell dokumentasjon](https://hexdocs.pm/elixir/String.html)
-- [Regulære uttrykk i Elixir](https://elixir-lang.org/getting-started/string-patterns.html)
+## Se også:
+- [Elixir String Modul Dokumentasjon](https://hexdocs.pm/elixir/String.html)
+- [Regex i Elixir](https://elixirschool.com/en/lessons/basics/pattern-matching/#regular-expressions)

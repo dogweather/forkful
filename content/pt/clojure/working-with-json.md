@@ -1,7 +1,7 @@
 ---
-title:                "Trabalhando com JSON"
-html_title:           "Clojure: Trabalhando com JSON"
-simple_title:         "Trabalhando com JSON"
+title:                "Trabalhando com json"
+html_title:           "Clojure: Trabalhando com json"
+simple_title:         "Trabalhando com json"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Data Formats and Serialization"
@@ -10,66 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Por que
+## O que é e porquê?
 
-Trabalhar com JSON (JavaScript Object Notation) é uma habilidade essencial para lidar com dados em aplicativos modernos. Com a popularidade do Clojure, é importante entender como esse idioma pode ser usado para manipular dados estruturados em formato JSON.
+Trabalhar com JSON significa manipular dados no formato de JavaScript Object Notation. Programadores o fazem para compartilhar e armazenar informações de forma estruturada e legível por máquina.
 
-## Como Fazer
+## Como fazer:
 
-Para começar a trabalhar com JSON em Clojure, primeiro precisamos importar o pacote `clojure.data.json`, que fornece funções úteis para manipular e converter dados JSON.
+Usando a biblioteca nativa `clojure.data.json`, é possível converter dados entre formatos de string e tipos de dados do Clojure facilmente:
 
-```clojure
-(ns meu-app.core
-  (:require [clojure.data.json :as json]))
+```Clojure
+(require '[clojure.data.json :refer [read-str write-str]])
+
+;; Convertendo uma string JSON em um mapa:
+(def json "{:nome \"João\", :idade 25}")
+(read-str json)
+;; => {:nome "João", :idade 25}
+
+;; Convertendo um mapa em uma string JSON:
+(def map {:nome "Maria", :idade 30})
+(write-str map)
+;; => "{\"nome\":\"Maria\",\"idade\":30}"
 ```
 
-Para converter dados JSON em uma estrutura de dados Clojure, podemos usar a função `json/read-str`. Por exemplo, podemos converter os dados JSON abaixo em um mapa Clojure:
+Também é possível gerar e manipular dados JSON com a biblioteca `cheshire`:
 
-```clojure
-(def dados "{\"nome\": \"João\", \"idade\": 30}")
-(print (json/read-str dados))
+```Clojure
+(require '[cheshire.core :refer [generate-string parse-string]])
+
+;; Gerando uma string JSON a partir de um mapa:
+(generate-string {:linguagem ["Clojure" "Python" "Java"]})
+;; => "{\"linguagem\":[\"Clojure\",\"Python\",\"Java\"]}"
+
+;; Convertendo uma string JSON em uma sequência:
+(parse-string "[1, 2, 3]")
+;; => [1 2 3]
 ```
 
-A saída seria:
+## Profundidade:
 
-```
-{"nome" "João", "idade" 30}
-```
+JSON foi criado por Douglas Crockford em 2001 e se tornou um formato popular para troca de dados devido à sua simplicidade e legibilidade. Existem outras formas de representar e manipular dados estruturados, como o XML, mas o JSON é amplamente utilizado por sua fácil implementação e interpretação em diversas linguagens de programação.
 
-Além disso, podemos usar a função `json/write-str` para converter uma estrutura de dados Clojure em um formato JSON. Por exemplo, podemos converter o seguinte mapa em uma string JSON:
+## Veja também:
 
-```clojure
-(def mapa {"nome" "Maria", "idade" 25})
-(print (json/write-str mapa))
-```
-
-A saída seria:
-
-```
-{"nome": "Maria", "idade": 25}
-```
-
-Podemos até mesmo converter estruturas de dados aninhadas. Por exemplo, podemos converter a seguinte lista em um formato JSON:
-
-```clojure
-(def lista ["amarelo" "vermelho" "azul"])
-(print (json/write-str lista))
-```
-
-A saída seria:
-
-```
-["amarelo", "vermelho", "azul"]
-```
-
-## Profundidade
-
-Além das funções `json/read-str` e `json/write-str`, o pacote `clojure.data.json` também fornece outras funções úteis para trabalhar com JSON, como `json/read` e `json/write`. Além disso, o pacote possui funções para manipular diferentes tipos de dados em formato JSON, como arrays, objetos e valores.
-
-A documentação do pacote `clojure.data.json` oferece uma visão mais detalhada de todas as funções disponíveis para lidar com JSON em Clojure.
-
-## Veja também
-
-- Documentação do pacote `clojure.data.json`: https://clojure.github.io/data.json/
-- Guia de referência rápida de Clojure para trabalhar com JSON: https://gist.github.com/jrmoran/a7c90a11d7c9d747cd4a55082110e708
-- Exemplos práticos de como trabalhar com JSON em Clojure: https://github.com/matthiasn/clojure-json
+- [Documentação da biblioteca clojure.data.json](https://clojure.github.io/data.json/)
+- [Documentação da biblioteca cheshire](https://github.com/dakrone/cheshire)
+- [Especificação do formato JSON](https://www.json.org/json-pt.html)

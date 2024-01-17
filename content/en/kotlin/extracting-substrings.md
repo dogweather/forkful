@@ -10,41 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Why
-Substring extraction is a common task in programming, especially when dealing with text data. It allows developers to access and manipulate specific parts of a string, making it a powerful tool for data processing and manipulation.
+## What & Why?
+Extracting substrings is the process of retrieving a specific part of a string from a given string. This is often used by programmers to manipulate and work with data more efficiently. By extracting substrings, programmers can easily access and modify particular sections of larger strings without having to modify the entire string.
 
-# How To
+## How to:
+To extract substrings in Kotlin, we can use the `substring()` function which takes in two parameters - the starting index and the ending index. These indices specify the range of characters we want to extract from the original string. Let's look at an example:
 
 ```Kotlin
-// Example string
-val carModel = "Tesla Model S"
-
-// Extracting a substring starting at index 6
-val model = carModel.substring(6)
-
-// Output: Model S
-
-// Extracting a substring from index 0 to 5
-val brand = carModel.substring(0, 5)
-
-// Output: Tesla
-
-// Extracting a substring using ranges
-val number = carModel.substring(6..-1)
-
-// Output: Model S
-
+val original = "Hello, world!"
+val substring = original.substring(7, 12)
+println(substring)
 ```
+Output: `world`
 
-The `substring()` function in Kotlin takes two parameters: the starting index and the ending index. If the ending index is not specified, the function will return a substring starting from the specified index until the end of the string. It can also be used with ranges, as shown in the last example.
+In the above example, the `substring()` function extracted the characters from index 7 to index 12 (not including index 12) from the original string and assigned it to the `substring` variable.
 
-# Deep Dive
+We can also pass in a single argument to the `substring()` function, which specifies the starting index and extracts all characters from that index until the end of the string. Let's see this in action:
 
-There are a few important things to note when working with substring extraction. First, the indexing in Kotlin starts at 0, so the first character in a string has index 0. Additionally, the ending index is non-inclusive, meaning the substring will end at the index before the specified one.
+```Kotlin
+val original = "Kotlin is awesome!"
+val substring = original.substring(7)
+println(substring)
+```
+Output: `is awesome!`
 
-It's also worth noting that substring extraction returns a new string and does not modify the original string. This makes it a safe and non-destructive operation.
+## Deep Dive:
+Extracting substrings is a common operation in programming languages and has been around since the early days of string manipulation. In Kotlin, there are a few alternatives to the `substring()` function such as the `subSequence()` function which returns a `CharSequence` instead of a `String`.
 
-# See Also
+When implementing the `substring()` function, it's important to consider the starting and ending indices carefully. If the starting index is larger than the ending index, the function will throw an `IndexOutOfBoundsException`. Additionally, if the indices are out of range, an `IndexOutOfBoundsException` will also be thrown.
 
-- Kotlin Strings: https://kotlinlang.org/docs/reference/basic-types.html#strings
-- Official Kotlin Documentation: https://kotlinlang.org/docs/home.html
+## See Also:
+- [Kotlin Strings](https://kotlinlang.org/docs/reference/basic-types.html#strings)
+- [Java Substring](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#substring(int,%20int)) (Kotlin is interoperable with Java, so this can also be used)
+- [Subsequence vs substring in Kotlin](https://stackoverflow.com/questions/47279792/subsequence-vs-substring-in-kotlin)

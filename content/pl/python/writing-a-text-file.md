@@ -1,7 +1,7 @@
 ---
-title:                "Tworzenie pliku tekstowego"
-html_title:           "Python: Tworzenie pliku tekstowego"
-simple_title:         "Tworzenie pliku tekstowego"
+title:                "Pisanie pliku tekstowego"
+html_title:           "Python: Pisanie pliku tekstowego"
+simple_title:         "Pisanie pliku tekstowego"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Files and I/O"
@@ -10,50 +10,21 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i dlaczego?
+Zapisywanie pliku tekstowego w języku Python jest jednym z podstawowych zadań, z którymi spotkasz się jako programista. Polega to na zapisaniu tekstu lub innych danych w pliku, który można potem odczytać lub edytować. Jest to niezbędne, gdy chcesz zachować dane na trwałe lub je przetwarzać w dalszym ciągu.
 
-Pisanie pliku tekstowego jest niezwykle przydatne w programowaniu w języku Python. Pozwala ono na zapisywanie danych w sposób trwały i łatwy do odczytania przez komputer.
-
-## Jak to zrobić
-
-Pisanie plików tekstowych w języku Python jest bardzo proste. Wystarczy użyć wbudowanych funkcji do obsługi plików.
-
-Najpierw musimy otworzyć plik w trybie "write" (zapis). Aby to zrobić, użyjmy funkcji `open()` z dwoma argumentami: nazwą pliku oraz trybem "w". Następnie możemy użyć metody `write()` aby napisać zawartość do pliku. Pamiętajmy również o zamknięciu pliku za pomocą metody `close()`.
-
-Przykład:
-
+## Jak to zrobić:
+Kodując przy użyciu języka Python, istnieją różne sposoby zapisania pliku tekstowego. Możesz użyć funkcji wbudowanej `open()` lub modułu `io`. Przykładowy kod wykorzystujący funkcję `open()` wygląda tak:
 ```Python
-# otwieramy plik
-plik = open("moj_plik.txt", "w")
-
-# zapisujemy zawartość do pliku
-plik.write("Witaj wśród Pythonowiczów!")
-
-# zamykamy plik
-plik.close()
+file = open("plik.txt", "w")
+file.write("To jest przykładowy tekst.")
+file.close()
 ```
+W wyniku tego kodu zostanie stworzony plik o nazwie "plik.txt", a w nim pojawi się napis "To jest przykładowy tekst.". Ważne jest, aby na końcu wywołać funkcję `close()`, aby zapisać zmiany i zwolnić zasoby.
 
-## Zagłębienie
+## Głębsze zagadnienia:
+Początki zapisu plików tekstowych sięgają czasów DOS-a, kiedy to programiści tworzyli skrypty w języku Batch. Wtedy również używano funkcji `open()`, jednak niektórych opcji, takich jak kodowanie znaków, nie było. Alternatywą dla funkcji `open()` jest użycie modułu `io`, który oferuje bardziej rozbudowane możliwości. Implementacja zapisu pliku tekstowego opiera się na otwarciu pliku w odpowiednim trybie, zapisaniu danych i zamknięciu pliku. Ważne jest również, aby pamiętać o obsłudze wyjątków, w przypadku gdy operacja zapisu nie powiedzie się.
 
-Możemy również użyć instrukcji `with` do otwarcia i zamknięcia pliku w trochę inny sposób.
-
-Przykład:
-
-```Python
-# otwieramy plik i nadajemy mu nazwę "plik"
-with open("moj_plik.txt", "w") as plik:
-    # możemy wykonać dowolne operacje na pliku pomiędzy tymi instrukcjami
-    plik.write("Witaj wśród Pythonowiczów!")
-
-# plik został automatycznie zamknięty po wyjściu z instrukcji "with"
-```
-
-Jeśli chcemy odczytać zawartość pliku, możemy również użyć funkcji `open()` z argumentem "r" (czytanie) oraz metody `read()` aby odczytać tekst ze wskazanego pliku.
-
-Ostatnią ważną rzeczą o której należy pamiętać, jest ścieżka pliku. Gdy nie podamy pełnej ścieżki, plik zostanie utworzony w bieżącym folderze, gdzie znajduje się nasz skrypt.
-
-## Zobacz również
-
-- Dokumentacja języka Python - https://docs.python.org/pl/3/tutorial/inputoutput.html
-- Szczegółowy poradnik o plikach w Pythonie - https://www.python.pl/poradniki/podcast-files/
-- Przykładowe projekty na GitHubie wykorzystujące pisanie plików w Pythonie - https://github.com/topics/python-file-processing
+## Zobacz też:
+- Dokumentacja Pythona na temat zapisywania danych: https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files
+- Wprowadzenie do manipulacji plikami w języku Python: https://realpython.com/read-write-files-python/

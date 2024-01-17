@@ -10,66 +10,21 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i Dlaczego?
+Pisanie do standardowego wyjścia błędu to jedna z technik używanych przez programistów do obsługi błędów w programach. Jest to odrębne od standardowego wyjścia, gdzie wyświetlane są informacje dla użytkownika. Pisanie do standardowego wyjścia błędu jest ważne, ponieważ pozwala na wyświetlanie szczegółowych informacji o błędach, co ułatwia debugowanie i poprawę programów.
 
-Pisanie do standardowego wyjścia błędu jest niezbędną częścią programowania w Elm. Pozwala nam szybko i efektywnie diagnozować problemy i błędy w naszych aplikacjach. W tym artykule omówimy podstawowe informacje na temat pisania do standardowego wyjścia błędu w Elm oraz pokażemy przykładowe kody.
-
-## Jak to zrobić
-
-Możemy napisać do standardowego wyjścia błędu w Elm za pomocą funkcji `Debug.crash` lub `Debug.fatal`. W obu przypadkach podajemy komunikat, który chcemy wyświetlić w konsoli. Oto przykład użycia `Debug.crash`:
-
+## Jak to Zrobić:
 ```Elm
-import Debug exposing (crash)
-
-age : Int
-age = 25
-
-main =
-  if age < 18 then
-    "Jesteś niepełnoletni!"
-  else if age > 18 && age < 65 then
-    "Jesteś dorosły!"
-  else
-    crash "Jesteś emerytem!"
+writeToStderr : String -> Cmd msg
+writeToStderr str =
+  Task.perform identity identity (Task.succeed (Process.interrupt str))
 ```
-Wynik powyższego kodu będzie wyglądać tak:
+Kod powyżej pokazuje przykładową funkcję w Elm, która służy do pisania do standardowego wyjścia błędu. Funkcja przyjmuje jako argument string, który jest wiadomością o błędzie, a następnie wywołuje odpowiednie zadanie. Przykładowy output dla tej funkcji może wyglądać tak: ```Elm writeToStderr "Błąd: Nie można otworzyć pliku!" ```
 
-```
-crash "Jesteś emerytem!"
-^Jesteś emerytem!
-```
+## Głębszy Wgląd:
+Pisanie do standardowego wyjścia błędu jest często wykorzystywane w programowaniu do obsługi wyjątków i nieoczekiwanych sytuacji. Przede wszystkim, pozwala to na szybkie zlokalizowanie i naprawienie błędów w kodzie. Alternatywą dla pisania do standardowego wyjścia błędu jest używanie logowania, który jest bardziej rozbudowanym narzędziem, ale może być bardziej przydatne w niektórych sytuacjach. Implementacja pisania do standardowego wyjścia błędu jest zazwyczaj dostępna w większości języków programowania.
 
-## Wchodzi głębiej
-
-Możemy także dostosować wyświetlane informacje dodając do wywołania funkcji `Debug.crash` nazwę funkcji, która zawiera błąd oraz informację debugową. Przykładowo:
-
-```Elm
-import Debug exposing (crash)
-
-age : Int
-age = 25
-
-calculatePercentage : Float -> Float -> Float
-calculatePercentage numerator denominator =
-  if denominator == 0 then
-    crash "calculatePercentage" "Denominator cannot be 0."
-  else
-    (numerator / denominator) * 100
-
-main =
-  calculatePercentage 50 0
-```
-
-Wynik:
-
-```
-calculatePercentage "Denominator cannot be 0."
-^calculatePercentage "Denominator cannot be 0."
-```
-
-## Zobacz także
-
-Dla dalszego zgłębienia tematu pisania do standardowego wyjścia błędu w Elm, polecamy zapoznanie się z oficjalną dokumentacją: 
-
-- https://package.elm-lang.org/packages/elm/core/latest/Debug#crash
-- https://package.elm-lang.org/packages/elm/core/latest/Debug#fatal
+## Zobacz także:
+- https://guide.elm-lang.org/error_handling/
+- https://elmprogramming.com/error-handling.html
+- https://www.geeksforgeeks.org/error-handling-in-elm-programming-language/

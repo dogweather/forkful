@@ -1,7 +1,7 @@
 ---
-title:                "文字列のキャピタライズ"
-html_title:           "C: 文字列のキャピタライズ"
-simple_title:         "文字列のキャピタライズ"
+title:                "文字列の大文字化"
+html_title:           "C: 文字列の大文字化"
+simple_title:         "文字列の大文字化"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -10,34 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なぜ
-文字列を大文字化することに興味があるかもしれません。例えば、入力された文字列をすべて大文字に変換してから処理したいときなどがあります。
+下記の「What & Why?」から「See Also」までの記事
 
-## 方法
-文字列を大文字化するためには、標準ライブラリの"string.h"を使用します。
+## What & Why?
+文字列を大文字にするとは、プログラマーが文字列の各文字を大文字に変換することです。プログラマーがこれをする理由は、簡単に言うと、文字列を比較したり、特定の条件に合致するかどうかをチェックするためです。
 
+## How to:
 ```C
-#include <stdio.h>
-#include <string.h>
+// 文字列を大文字に変換する関数
+void to_uppercase(char *str){
 
-int main() {
-  char str[100];
-  printf("文字列を入力してください：");
-  fgets(str, 100, stdin); // 文字列を標準入力から取得
-  for (int i = 0; i < strlen(str); i++) {
-    if (str[i] >= 'a' && str[i] <= 'z') { // 小文字の場合は大文字に変換
-      str[i] = str[i] - 32; // アスキーコードでの変換
+    // 文字列の長さを取得
+    int length = strlen(str);
+
+    // 各文字をチェックし、小文字の場合は大文字に変換
+    for(int i = 0; i < length; i++){
+        if(str[i] >= 'a' && str[i] <= 'z'){
+            str[i] -= 32;
+        }
     }
-  }
-  printf("大文字化された文字列： %s", str); // 出力
-  return 0;
+    
+    // 変換後の文字列を出力
+    printf("変換後の文字列: %s", str);
+}
+
+int main(){
+
+    // 大文字に変換する文字列
+    char str[] = "programming";
+
+    // 変換前の文字列を出力
+    printf("変換前の文字列: %s\n", str);
+
+    // 大文字に変換する関数を呼び出し
+    to_uppercase(str);
+    
+    return 0;
 }
 ```
-プログラムを実行すると、入力した文字列が大文字化されて出力されます。例えば、"hello"と入力した場合は、"HELLO"が出力されます。
+出力：
+変換前の文字列: programming
+変換後の文字列: PROGRAMMING
 
-## ディープダイブ
-文字列を大文字化するプロセスでは、str[i] = str[i] - 32;という処理によって、小文字のアスキーコードが大文字のアスキーコードに変換されています。小文字と大文字のアスキーコードの差は32であるため、この処理によって大文字化が可能になります。また、アスキーコードを使用することで、文字種に依存せずに大文字化ができるようになります。
+## Deep Dive:
+文字列を大文字に変換する機能は、プログラミング言語によって実装方法が異なります。C言語では、文字列を配列として扱い、各文字をASCIIコードを用いて変換することで実現します。この機能は、プログラムが文字列比較や特定の文字列での操作を行う際に大きな役割を果たします。また、C言語以外の言語においても、同様の機能を備えている場合があります。
 
-## See Also
-- [C言語で文字列を操作する方法](https://qiita.com/taptappun/items/235d3dca7b0351bced88)
-- [ASCIIコードとUnicodeの違いについて](https://qiita.com/hmuronaka/items/a5bd88e00c7ada11d152)
+## See Also:
+- [ASCIIコード表](https://ascii.jp/elem/000/000/032/32/)
+- [文字列比較の仕組みについて](https://www.it-collage.jp/programming/programming_basic08.html)

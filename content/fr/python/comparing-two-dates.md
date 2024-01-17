@@ -10,43 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Quoi & Pourquoi?
+Comparer deux dates est un moyen pour les programmeurs de déterminer si deux dates sont les mêmes ou si l'une est antérieure ou ultérieure à l'autre. Cela peut être utile pour trier des données chronologiquement ou pour effectuer des calculs de durée entre deux événements.
 
-Comparer deux dates est une tâche courante en programmation. Cela permet de vérifier si une date est antérieure, postérieure ou égale à une autre, ce qui peut être utile pour des tâches telles que la gestion de plannings ou le tri de données chronologiques.
-
-## Comment faire
-
-Pour comparer deux dates en Python, nous pouvons utiliser le module `datetime`. Tout d'abord, nous devons les convertir en objets datetime à l'aide de la méthode `strptime()` en spécifiant le format de date souhaité. Ensuite, nous pouvons utiliser les opérateurs de comparaison pour déterminer la relation entre les deux dates. Voici un exemple de code :
-
+## Comment faire:
+Voici un exemple de code en Python pour comparer deux dates:
 ```
-# Import du module datetime
-import datetime
+date1 = "2021-05-16"
+date2 = "2021-05-20"
 
-# Définition des dates à comparer
-date1 = "20/06/2021"
-date2 = "15/06/2021"
-
-# Conversion en objets datetime avec le format "%d/%m/%Y"
-date1 = datetime.datetime.strptime(date1, "%d/%m/%Y")
-date2 = datetime.datetime.strptime(date2, "%d/%m/%Y")
-
-# Comparaison
-if date1 > date2:
-    print("Date1 est postérieure à Date2")
+if date1 == date2:
+    print("Les dates sont identiques")
 elif date1 < date2:
-    print("Date1 est antérieure à Date2")
+    print("Date 1 est antérieure à Date 2")
 else:
-    print("Date1 est égale à Date2")
-
-# Output : Date1 est postérieure à Date2
+    print("Date 1 est ultérieure à Date 2")
 ```
 
-## Deep Dive
+Output:
+```
+Date 1 est antérieure à Date 2
+```
 
-Dans Python, les dates sont représentées par des objets de la classe `datetime`. Cette classe possède plusieurs attributs tels que `year`, `month`, `day`, `hour`, `minute` et `second`, qui permettent de manipuler les dates et heures de manière plus détaillée. De plus, le module `datetime` offre également des méthodes pratiques pour effectuer des opérations telles que l'ajout ou la soustraction d'une certaine durée à une date.
+## Plongée Profonde:
+Les programmeurs ont toujours eu besoin de comparer des dates pour diverses tâches, comme trier des événements historiques ou effectuer des calculs de temps. Avant l'invention des ordinateurs, cela était souvent fait à la main en utilisant des calendriers papier. De nos jours, il existe également d'autres moyens de comparer des dates, tels que l'utilisation de modules spécifiques comme "datetime" en Python.
 
-## Voir aussi
-
-- [Documentation du module datetime](https://docs.python.org/fr/3/library/datetime.html)
-- [Tutoriel sur les dates en Python](https://www.tutorialspoint.com/python/time_date.htm)
-- [Guide sur la manipulation de dates en Python](https://realpython.com/python-datetime/)
+## Voir aussi:
+Pour en savoir plus sur la gestion des dates en Python, vous pouvez consulter la documentation officielle sur les modules de temps et de date. Voici le lien pour la version actuelle (Python 3.9.5): https://docs.python.org/fr/3.9/library/time.html

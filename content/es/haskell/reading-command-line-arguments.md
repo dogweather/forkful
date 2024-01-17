@@ -1,7 +1,7 @@
 ---
-title:                "Lectura de argumentos de línea de comandos"
-html_title:           "Haskell: Lectura de argumentos de línea de comandos"
-simple_title:         "Lectura de argumentos de línea de comandos"
+title:                "Leyendo argumentos de línea de comandos"
+html_title:           "Haskell: Leyendo argumentos de línea de comandos"
+simple_title:         "Leyendo argumentos de línea de comandos"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Files and I/O"
@@ -10,81 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué?
+## ¿Qué es y por qué lo hacemos?
 
-Hay muchas razones por las que alguien podría estar interesado en aprender cómo leer argumentos de línea de comando en Haskell. Por ejemplo, puede ser útil para crear programas interactivos que puedan aceptar diferentes entradas del usuario sin necesidad de recompilar el código cada vez. También es una técnica común en la programación de sistemas y aplicaciones de línea de comandos.
+Leer argumentos de línea de comando es una técnica utilizada por los programadores para permitir que sus programas acepten información directamente desde la consola de comandos. Esto es útil para personalizar la ejecución de un programa y para proporcionar una entrada rápida de datos. 
 
-## Cómo
+## Cómo hacerlo:
 
-Para leer argumentos de línea de comando en Haskell, podemos usar la función `getArgs` del módulo `System.Environment` de la biblioteca estándar. Esta función devuelve una lista de cadenas que representan los argumentos pasados en la línea de comando. Tomemos un ejemplo simple:
-
-```Haskell
-import System.Environment
-
-main = do
-  args <- getArgs
-  putStrLn ("Argumentos pasados: " ++ show args)
-```
-
-Si compilamos y ejecutamos este programa con `ghc` y pasamos algunos argumentos en la línea de comando, obtendremos una salida como esta:
-
-```bash
-$ ghc args.hs
-$ ./args uno dos tres
-Argumentos pasados: ["uno", "dos", "tres"]
-```
-
-También podemos acceder a argumentos individuales pasados ​​en la línea de comando usando el operador `!!` y un índice de lista. Por ejemplo, si queremos obtener el segundo argumento pasado, podemos hacerlo de la siguiente manera:
+Para leer argumentos de línea de comando en Haskell, se puede utilizar la función `getArgs` del módulo System.Environment. Esta función devuelve una lista de cadenas (strings) con cada uno de los argumentos pasados al programa. Por ejemplo:
 
 ```Haskell
-import System.Environment
+import System.Environment (getArgs)
 
 main = do
-  args <- getArgs
-  putStrLn ("Segundo argumento: " ++ args !! 1)
+    args <- getArgs
+    putStrLn ("Hola " ++ args !! 0 ++ "!")
 ```
 
-Si ejecutamos este ejemplo con `ghc` y pasamos algunos argumentos, obtendremos una salida como esta:
+Si ejecutamos este programa con `runhaskell Saludar.hs María`, obtendríamos como salida `Hola María!`, ya que `"María"` ha sido pasada como argumento al programa. 
 
-```bash
-$ ghc args.hs
-$ ./args uno dos tres
-Segundo argumento: dos
-```
+## Profundizando:
 
-También podemos tomar argumentos de línea de comando a medida que el programa se está ejecutando, usando la función `getLine` del módulo `System.IO`. Esta función nos permite tomar una entrada del usuario después de que se haya iniciado el programa. Tomemos un ejemplo:
+Leer argumentos de línea de comando es una práctica común en la programación, especialmente en aplicaciones de línea de comandos o en programas que deben aceptar diferentes opciones de configuración. Usualmente, los argumentos se pueden pasar en cualquier orden y también pueden incluir banderas (flags) para especificar ciertas opciones. 
 
-```Haskell
-import System.Environment
-import System.IO
+Otra forma de obtener argumentos de línea de comando en Haskell es utilizando la función `getProgName` del mismo módulo. Esta función devuelve una cadena con el nombre del programa en ejecución. 
 
-main = do
-  putStrLn "Ingrese un argumento:"
-  arg <- getLine
-  args <- getArgs
-  putStrLn ("Argumento ingresado: " ++ arg)
-  putStrLn ("Argumentos pasados: " ++ show args)
-```
+## Enlaces relacionados:
 
-Si compilamos y ejecutamos este programa con `ghc`, obtendremos una salida como esta:
-
-```bash
-$ ghc args.hs
-$ ./args uno dos tres
-Ingrese un argumento:
-Argumento ingresado: cuatro
-Argumentos pasados: ["uno", "dos", "tres"]
-```
-
-## Exploración en profundidad
-
-Leer argumentos de línea de comando en Haskell es una técnica simple pero poderosa que puede ser útil en una variedad de situaciones. Algunas cosas a tener en cuenta:
-
-- Puede ser útil utilizar una lista de patrones cuando se trabajan con argumentos de línea de comando en lugar de un patrón de cadena única. Por ejemplo, en lugar de `putStrLn "Ingrese un argumento:`, podemos utilizar `putStrLn ["[Ingrese]", "[el]", "[argumento:]"]`. Esto nos permitirá manejar diferentes formas de entrada del usuario.
-- Además de `getArgs`, también podemos usar la función `getProgName` del módulo `System.Environment` para obtener el nombre del programa que se está ejecutando.
-- También podemos utilizar la biblioteca `Options.Applicative` para crear opciones y argumentos de línea de comando más complejos y estructurados. Esta biblioteca nos permite definir argumentos opcionales, valores de ayuda y opciones de subcomandos.
-
-## Ver también
-
-- [System.Environment](https://hackage.haskell.org/package/base/docs/System-Environment.html) - Documentación del módulo System.Environment en Hackage.
-- [Options.Applicative](https://hackage.haskell.org/package/optparse-applicative) - Biblioteca de opciones e información de línea de comando.
+- Documentación oficial de la función `getArgs`: https://hackage.haskell.org/package/base-4.14.1.0/docs/System-Environment.html#v:getArgs
+- Ejemplos de programas en Haskell que utilizan argumentos de línea de comando: https://wiki.haskell.org/How_to_write_a_Haskell_program
+- Opciones de compilación en Haskell para trabajar con argumentos de línea de comando: https://hackage.haskell.org/package/base-4.14.1.0/docs/System-Environment.html#v:getArgs

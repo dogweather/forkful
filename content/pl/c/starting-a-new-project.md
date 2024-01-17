@@ -1,7 +1,7 @@
 ---
-title:                "Rozpoczynanie nowego projektu"
-html_title:           "C: Rozpoczynanie nowego projektu"
-simple_title:         "Rozpoczynanie nowego projektu"
+title:                "Rozpoczęcie nowego projektu"
+html_title:           "C: Rozpoczęcie nowego projektu"
+simple_title:         "Rozpoczęcie nowego projektu"
 programming_language: "C"
 category:             "C"
 tag:                  "Getting Started"
@@ -10,38 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co & Dlaczego?
 
-Jeśli jesteś zainteresowany rozwojem umiejętności w programowaniu lub chcesz tworzyć własne projekty, C jest doskonałym językiem do nauki. Jest on powszechnie stosowany w systemach operacyjnych i aplikacjach o wysokiej wydajności, dzięki czemu warto zacząć naukę jego języka programowania.
+Zaczęcie nowego projektu w programowaniu oznacza rozpoczęcie pracy nad nowym kodem lub aplikacją. Programiści często zaczynają nowe projekty, aby rozwiązywać problemy lub stworzyć nowe i lepsze rozwiązania.
 
-## Jak zacząć
+## Jak to zrobić:
 
-Najpierw musisz zainstalować odpowiedni kompilator C dla swojego systemu operacyjnego. Na przykład, jeśli korzystasz z systemu Windows, możesz wybrać dostępny kompilator Mingw lub MSVC. Dobrym wyborem dla systemów Linux lub macOS jest kompilator GCC. Po zainstalowaniu kompilatora, utwórz nowy plik o rozszerzeniu `.c` i wpisz poniższy kod:
-
-```C
-#include <stdio.h>
-
+```c
 int main() {
-
-    printf("Witaj świecie!");
-    return 0;
+  printf("Witaj świecie!");
+  return 0;
 }
 ```
 
-Możesz skompilować ten kod poleceniem `gcc nazwa_pliku.c` i uruchomić wygenerowany plik wykonywalny. Powinieneś zobaczyć w konsoli napis "Witaj świecie!". Gratulacje, właśnie uruchomiłeś swój pierwszy program w C!
+W powyższym przykładzie użyliśmy funkcji `printf` do wyświetlenia napisu "Witaj świecie!" na ekranie. Funkcja ta jest dostępna w bibliotece standardowej języka C i pozwala na wypisanie tekstu na ekranie.
 
-## Deep Dive
+## Wnikliwe Podejście:
 
-Jeśli jesteś zainteresowany bardziej zaawansowanymi aspektami języka C, warto poznać poniższe zagadnienia:
+Zanim podejmiemy się nowego projektu, warto poznać niektóre z dostępnych opcji. Język C jest jednym z najpopularniejszych języków programowania i pozwala na pisanie szybkich i wydajnych programów. Alternatywnie, istnieją inne języki, takie jak C++, który również jest popularnym wyborem dzięki swoim możliwościom obiektowości.
 
-- Struktury danych: w C możesz tworzyć własne struktury danych, np. tablice, listy czy drzewa.
-- Wskaźniki: są to zmienne, które przechowują adresy w pamięci i są niezbędnym narzędziem przy pracy z niektórymi funkcjami języka C.
-- Dynamiczna alokacja pamięci: dzięki niej możesz przydzielać i zwalniać pamięć w trakcie działania programu.
+W języku C, każdy projekt musi zaczynać się od funkcji `main`, która jest punktem wejścia do programu. Możemy też użyć dyrektywy `include` do dołączenia innych plików lub bibliotek do naszego kodu.
 
-Ponadto, warto zapoznać się z dobrymi praktykami programowania w C, takimi jak udzielanie komentarzy, unikanie niebezpiecznych funkcji czy korzystanie z narzędzi do testowania kodu.
+## Zobacz także:
 
-## Zobacz także
-
-- [Oficjalna strona języka C](https://devdocs.io/c/)
-- [Poradnik dla początkujących w języku C](https://www.learn-c.org/)
-- [Książka "The C Programming Language" dla początkujących](https://en.wikipedia.org/wiki/The_C_Programming_Language)
+Jeśli chcesz poznać więcej o rozpoczynaniu nowych projektów w języku C, możesz przeczytać dokumentację lub poszukać tutoriali online. Warto również zapoznać się z innymi opcjami, takimi jak języki C++, Java czy Python, aby wybrać najlepszą opcję dla swojego projektu.

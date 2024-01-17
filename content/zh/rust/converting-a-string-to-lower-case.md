@@ -10,57 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
+------------------------------------------------------------------------
 
-当你在开发使用字符串的程序时，有可能会遇到需要将字符串转换为小写的情况。通过这篇文章，你将学习如何用Rust语言来实现这一功能。
 
-## 如何做
+为什么和如何在Rust中将字符串转换为小写
 
-首先，我们需要导入标准库中的 `str` 模块。
+## 什么是字符串转换为小写？
+在Rust中，小写转换是一种将字符串中的所有字母转换为小写形式的技术。程序员通常会使用这种技术来标准化和比较不同的字符串。
 
+## 为什么程序员要这么做？
+有时候，在比较字符串时，我们不想考虑它们的大小写，而只关心它们的内容。通过将字符串转换为小写，我们可以确保它们具有相同的格式，从而更容易进行比较。此外，小写转换也可以帮助我们标准化输入，从而减少出现错误的可能性。
+
+## 如何进行小写转换
+以下是一个使用Rust语言的示例代码，演示如何将字符串转换为小写：
 ```Rust
-use std::str;
-```
+let name = "John Doe";
+let lowercase_name = name.to_lowercase();
 
-接下来，我们可以使用 `to_lowercase()` 方法来将字符串转换为小写。
+println!("原字符串：{}", name);
+println!("转换后的字符串：{}", lowercase_name);
 
-```Rust
-let example_string = "Hello, World!";
-let lower_case_string = str::to_lowercase(example_string);
-```
-
-下面是完整的代码和输出示例：
-
-```Rust
-use std::str;
-
-fn main() {
-    let example_string = "Hello, World!";
-    let lower_case_string = str::to_lowercase(example_string);
-    
-    println!("{}", lower_case_string);
-}
-```
-
-输出：
-
-```bash
-hello, world!
+// 输出：
+// 原字符串：John Doe
+// 转换后的字符串：john doe
 ```
 
 ## 深入探讨
+1. 历史背景：对于编程语言来说，字符串大小写转换是一项基本功能。它的使用可以追溯到早期的编程语言，如C和Pascal。
+2. 替代方案：除了使用内置的to_lowercase()函数外，还可以使用第三方库来进行字符串转换。例如，strum-legacy库中提供了更多的字符串转换选项。
+3. 实现细节：字符串转换的实现主要依赖于Unicode标准。Rust中的字符串默认使用UTF-8编码，因此在转换过程中会先将字符串转换为UTF-16编码，然后再转换为小写形式。
 
-在 Rust 中，字符串是一个 `String` 类型的变量，它默认是不可变的。因此，我们不能直接修改字符串的大小写，而是需要创建一个新的字符串来存储转换的结果。这就是为什么我们在上面的例子中使用 `str::to_lowercase()` 方法。
-
-此外，`to_lowercase()` 方法并不是仅适用于英文字符，它也可以支持 Unicode 字符集。
-
-## 参考链接
-
-- [Rust官方文档 - str::to_lowercase()](https://doc.rust-lang.org/std/primitive.str.html#method.to_lowercase)
-- [Rust编程语言 - 处理字符串](https://kaisery.github.io/trpl-zh-cn/ch08-02-strings.html)
-- [Rust标准库 - 字符串操作](https://doc.rust-lang.org/std/str/)
-
-## 参考
-
-- [为什么要使用 Rust？初学者指南](https://juejin.im/post/5a068bbc5188255de3435360)
-- [Rust语言入门指南](https://juejin.im/post/5cc978f2f265da03aa34e2a0)
+## 相关资源
+- Rust官方文档：https://www.rust-lang.org/zh-CN/
+- Rust字符串库：https://docs.rs/strum-legacy/0.2.14/strum_legacy/case_transform/
+- Unicode官方文档：https://unicode.org/

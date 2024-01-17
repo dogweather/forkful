@@ -10,50 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Czym jest regulacja wyrażeń regularnych i dlaczego programiści tego używają?
 
-Czy kiedykolwiek natknąłeś się na potrzebę uzyskania bardzo precyzyjnych wzorców podczas przetwarzania tekstu? Regular expressions w Rust to narzędzie, które może Ci w tym pomóc poprzez wykorzystanie wyrażeń regularnych do dopasowywania i manipulowania tekstem.
+Regulacja wyrażeń regularnych jest to proces dopasowywania i manipulacji tekstem na podstawie pewnych ustalonych wzorców lub wzorów. Programiści często używają regulacji wyrażeń regularnych do szybkiego i precyzyjnego przetwarzania tekstu, na przykład przy wyszukiwaniu lub zamianie określonych ciągów w wielu plikach jednocześnie.
 
-## Jak to zrobić?
+## Jak to zrobić:
 
-```Rust
-use regex::Regex;
+W programowaniu w Rust, możemy używać biblioteki standardowej regex do obsługi wyrażeń regularnych. Oto kilka przykładowych kodów używających tej biblioteki:
+
+```
+use regex::Regex; // Importujemy bibliotekę regex
 
 fn main() {
-    let re = Regex::new(r"^\w+@\w+\.\w+$").unwrap(); // Tworzenie wyrażenia regularnego, które dopasowuje poprawny adres email
-    let email = "example@example.com";
-    
-    if re.is_match(email) { // Sprawdzanie, czy podany tekst pasuje do wyrażenia regularnego
-        println!("Adres email jest poprawny!");
-    } else {
-        println!("Nieprawidłowy adres email!");
-    }
+    let re = Regex::new(r"rust").unwrap(); // Tworzymy obiekt wyrażenia regularnego
+    let my_string = "Używam Rust!";
+    assert_eq!(re.is_match(my_string), true); // Sprawdzamy czy wyrażenie pasuje do tekstu
+    let replaced = re.replace_all(my_string, "RUST"); // Zamieniamy wyrażenie na "RUST"
+    assert_eq!(replaced, "Używam RUST!");
 }
 ```
 
-Wyrażenia regularne mogą być również wykorzystywane do ekstrakcji konkretnych informacji lub zastąpienia tekstu:
+Wynikiem wywołania funkcji ```is_match()``` jest wartość logiczna, informująca czy wyrażenie pasuje do tekstu czy nie. A funkcja ```replace_all()``` zamienia wszystkie wystąpienia wyrażenia w tekście na podaną wartość.
 
-```Rust
-use regex::Regex;
+## Wnikliwa analiza
 
-fn main() {
-    let re = Regex::new(r"https?://(www\.)?(\w+\.)+\w+").unwrap(); // Wyrażenie regularne dopasowujące adresy URL
-    let text = "Najlepsze strony do nauki programowania to: https://www.codeacademy.com oraz https://www.udemy.com";
-    
-    let replaced_text = re.replace_all(text, "<URL>"); // Zastępowanie dopasowanych adresów URL tekstem <URL>
-    
-    println!("{}", replaced_text); // Output: Najlepsze strony do nauki programowania to: <URL> oraz <URL>
-}
-```
+Regulacja wyrażeń regularnych została stworzona przez matematyka Stephena Kleena w latach 50. XX wieku. Od tego czasu stała się nieodłączną częścią wielu języków programowania i narzędzi do przetwarzania tekstu. W Rust, obiekt wyrażenia regularnego jest reprezentowany przez typ ```Regex``` i jest wykorzystywany wraz z metodami dostępnymi w bibliotece standardowej regex.
 
-## Głębszy zanurzenie
+Alternatywami dla użycia regulacji wyrażeń regularnych w programowaniu w Rust są np. biblioteki do przetwarzania tekstu, takie jak ```str::replace()``` lub ```str::split()```. Jednak przy bardziej skomplikowanych operacjach na tekście, użycie wyrażeń regularnych może być bardziej wygodne i wydajne.
 
-Wyrażenia regularne w Rust są oparte na bibliotece `regex` i wykorzystują składnię wyrażeń regularnych znaną z innych języków programowania. Istotne jest również wykorzystanie znaków specjalnych, takich jak `^`, `$`, `+` czy `?`, które pozwalają na precyzyjne dopasowywanie tekstów.
-
-Ponadto, w Rust wyrażenia regularne są kompilowane podczas uruchamiania programu, co pozwala na szybkie i wydajne przetwarzanie tekstu. Istnieje również możliwość wykorzystania wyrażeń regularnych wraz z iteratorami, co pozwala na bardzo wydajną manipulację dużymi zbiorami danych.
+W implementacji biblioteki regex w Rust, używane jest deterministyczne automatyczne drzewo składniowe (ang. Deterministic Finite Automaton, DFA) do przetwarzania wyrażeń regularnych. Jest to jedna z najefektywniejszych metod w przetwarzaniu wyrażeń regularnych, co sprawia, że programowanie w Rust jest szybką i wydajną opcją dla tych, którzy chcą korzystać z regulacji wyrażeń regularnych.
 
 ## Zobacz również
 
-- [Dokumentacja biblioteki regex w Rust](https://docs.rs/regex/)
-- [Poradnik na temat wyrażeń regularnych w Rust](https://turreted.com/posts/rust-regular-expressions/)
-- [Przykłady użycia wyrażeń regularnych w programowaniu w Rust](https://medium.com/@CrW468/learning-regexes-through-examples-in-rust-daa05c9a3c29)
+Jeśli chcesz dowiedzieć się więcej o regulacji wyrażeń regularnych w Rust, polecam zapoznać się z oficjalną dokumentacją biblioteki regex: https://docs.rs/regex/. Możesz także przetestować różne wyrażenia regularne na stronie https://regex101.com/, która oferuje interaktywną edycję i sprawdzanie wyrażeń.

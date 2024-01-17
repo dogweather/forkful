@@ -1,7 +1,7 @@
 ---
-title:                "Descargando una página web."
-html_title:           "C++: Descargando una página web."
-simple_title:         "Descargando una página web."
+title:                "Descargando una página web"
+html_title:           "C++: Descargando una página web"
+simple_title:         "Descargando una página web"
 programming_language: "C++"
 category:             "C++"
 tag:                  "HTML and the Web"
@@ -10,55 +10,88 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué?
+## ¿Qué y por qué?
+Descargar una página web es el proceso de obtener el código HTML de una página web y guardarla en tu dispositivo. Los programadores suelen hacer esto para analizar la estructura y el contenido de una página web o para automatizar tareas como la extracción de datos.
 
-Descargar una página web es útil cuando se desea acceder a su contenido sin necesariamente estar conectado a internet, o cuando se desea guardar una copia para leer en el futuro.
-
-## Cómo hacerlo
-
-Para descargar una página web en C++, primero necesitamos incluir la biblioteca `curl` en nuestro código. Esto nos permitirá realizar solicitudes HTTP y, por lo tanto, descargar el contenido de una página web. Aquí hay un ejemplo de código básico:
-
+## Cómo:
+### Ejemplo 1:
 ```C++
 #include <iostream>
 #include <curl/curl.h>
 
 int main() {
-    // Crear un objeto CURL para realizar solicitudes
-    CURL *curl = curl_easy_init();
-    if (curl) {
-        // Establecer la URL de la página web que deseamos descargar
-        curl_easy_setopt(curl, CURLOPT_URL, "https://miwebfavorita.com");
-        // Crear un objeto FILE para guardar el contenido de la página web
-        FILE *file = fopen("pagina_web.html", "wb");
-        // Establecer la opción para escribir el contenido de la página en el archivo
-        curl_easy_setopt(curl, CURLOPT_WRITEDATA, file);
+  CURL *curl;
+  CURLcode res;
 
-        // Realizar solicitud HTTP y guardar el contenido en el archivo
-        CURLcode res = curl_easy_perform(curl);
-
-        // Manejar posibles errores
-        if (res != CURLE_OK) {
-            std::cerr << "Error al descargar la página web: " << curl_easy_strerror(res) << std::endl;
-        }
-
-        // Cerrar objetos y liberar memoria
-        fclose(file);
-        curl_easy_cleanup(curl);
-    }
-
-    return 0;
+  curl = curl_easy_init();
+  if (curl) {
+    curl_easy_setopt(curl, CURLOPT_URL, "https://www.ejemplo.com/");
+    res = curl_easy_perform(curl);
+    curl_easy_cleanup(curl);
+  }
+  return 0;
 }
 ```
+#### Salida:
+```
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ejemplo</title>
+</head>
+<body>
+  <h1>Bienvenidos a Ejemplo</h1>
+  <p>Esta es una página de ejemplo</p>
+</body>
+</html>
+```
 
-Al ejecutar este código, se creará un archivo llamado `pagina_web.html`, que contendrá el código HTML de la página web especificada en la URL. Si deseamos guardar el contenido en un `std::string` en lugar de en un archivo, podemos usar `CURLOPT_WRITEFUNCTION` y `CURLOPT_WRITEHEADER` en lugar de `CURLOPT_WRITEDATA`.
+### Ejemplo 2:
+```C++
+#include <iostream>
+#include <fstream>
+#include <curl/curl.h>
 
-## Profundizando
+static size_t WriteCallback(void *data, size_t size, size_t nmemb, void *userp) {
+  ((std::string*)userp)->append((char*)data, size * nmemb);
+  return size * nmemb;
+}
 
-La función `curl_easy_setopt()` nos permite establecer varias opciones para nuestra solicitud HTTP. Por ejemplo, podemos usar `CURLOPT_FOLLOWLOCATION` para seguir redirecciones y descargar el contenido de la página final. También podemos establecer opciones de autenticación con `CURLOPT_USERNAME` y `CURLOPT_PASSWORD` si la página web requiere credenciales.
+int main() {
+  CURL *curl;
+  CURLcode res;
 
-Para realizar solicitudes más avanzadas, como enviar datos a través de un formulario en una página web, podemos usar `CURLOPT_POST` y `CURLOPT_POSTFIELDS` para enviar datos en el cuerpo de la solicitud.
+  std::string htmlString;
+  curl = curl_easy_init();
+  if (curl) {
+    curl_easy_setopt(curl, CURLOPT_URL, "https://www.ejemplo.com/");
+    curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, WriteCallback);
+    curl_easy_setopt(curl, CURLOPT_WRITEDATA, &htmlString);
+    res = curl_easy_perform(curl);
+    curl_easy_cleanup(curl);
+  }
 
-## Ver también
+  std::ofstream output("html.txt");
+  if (output.is_open()) {
+    output << htmlString;
+    output.close();
+  } else {
+    std::cout << "Error al guardar archivo\n";
+  }
 
-- Documentación oficial de la biblioteca curl: https://curl.haxx.se/libcurl/c/libcurl.html
-- Ejemplos de código de descarga de páginas web en C++: https://curl.haxx.se/libcurl/c/example.html
+  return 0;
+}
+```
+#### Salida:
+El código HTML de la página se guarda en un archivo llamado "html.txt".
+
+## Profundizando:
+El proceso de descarga de páginas web ha cambiado mucho a lo largo de los años. Antes, los programadores lo hacían utilizando sockets y construyendo manualmente las solicitudes y respuestas HTTP. Pero ahora, gracias a librerías como cURL en C++, es mucho más sencillo y eficiente.
+
+Existen otras alternativas a cURL, como usar librerías específicas para descarga de páginas web, pero cURL sigue siendo una de las opciones más populares y robustas.
+
+Para descargar una página web, cURL utiliza el protocolo HTTP para establecer una conexión con el servidor y solicitar el código HTML de la página. Luego, el código devuelto por el servidor es recibido y procesado por cURL.
+
+## Ver también:
+- [Documentación de cURL](https://curl.haxx.se/docs/)
+- [Tutorial de descarga de páginas web en C++ con cURL](https://curl.haxx.se/libcurl/c/example.html)

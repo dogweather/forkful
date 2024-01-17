@@ -1,7 +1,7 @@
 ---
-title:                "패턴과 일치하는 문자 삭제하기"
-html_title:           "TypeScript: 패턴과 일치하는 문자 삭제하기"
-simple_title:         "패턴과 일치하는 문자 삭제하기"
+title:                "패턴과 일치하는 문자 삭제하기."
+html_title:           "TypeScript: 패턴과 일치하는 문자 삭제하기."
+simple_title:         "패턴과 일치하는 문자 삭제하기."
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -10,28 +10,21 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+"## 무엇 & 왜?"
+특정 패턴과 일치하는 문자를 삭제하는 것은, 프로그래머들이 특정 문자들에 대한 조작 또는 필터링을 위해 사용하는 기술입니다. 이를 통해 코드의 가독성을 개선하고, 불필요한 문자를 제거함으로써 프로그램의 성능을 향상시킬 수 있습니다.
 
-문자 일치 패턴을 삭제하는 것에 참여할 이유는 무엇일까요? 일치하는 문자를 삭제하는 것은 특정 텍스트에서 불필요한 정보를 제거하여 작업을 쉽게 하거나, 원하는 결과를 얻기 위해서 일반적으로 사용됩니다.
-
-## 어떻게
-
-일치하는 문자를 삭제하는 방법을 알아보겠습니다. 먼저, `replace()` 메소드를 사용하여 문자열에서 특정 패턴을 삭제할 수 있습니다.
-
-```typescript
-let str = "Hello, world!";
-let result = str.replace(/[aeiou]/gi, "");
-console.log(result); // Hll, wrld!
+"## 어떻게:"
+```TypeScript
+let text = "Hello, World!";
+text = text.replace(/[aeiou]/gi, "");
+console.log(text); // Hll, Wrld!
 ```
+해당 코드는 문자열 "Hello, World!"에서 모음을 삭제하는 예제입니다. 우선, `replace` 함수를 이용하여 해당 문자열에서 `[aeiou]` 패턴과 일치하는 모든 문자들을 빈 문자로 변경합니다. 이후 `console.log` 함수를 통해 변경된 문자열이 출력됩니다.
 
-위의 예제에서는 `replace()` 메소드를 사용하여 `str` 문자열에서 모음을 삭제하였습니다. ".replace()의 첫 번째 매개변수로 전달된 `[aeiou]`는 패턴을 정의하는 정규식입니다. 그리고 두번째 매개변수로 빈 문자열을 전달하여 모음을 삭제하도록 지정하였습니다. 코드 실행 결과, 모음이 삭제된 문자열인 `Hll, wrld!`가 출력됩니다.
+"## 깊이 파헤치기:"
+(1) 문자 삭제 기술은 과거에도 많이 사용되었습니다. 하지만 이제는 더 단순하고 효율적인 방법들이 개발되었습니다. (2) 문자 삭제를 위해 정규표현식이 아닌 `split` 함수와 `join` 함수를 사용하는 방법도 있습니다. (3) 이 기술의 구현 방법은 다양하지만, 대부분의 경우 정규표현식을 활용하여 문자를 삭제하는 것이 가장 간단하고 효율적입니다.
 
-## 깊이 파고들기
-
-문자 일치 패턴을 삭제하는 것은 일상적으로 사용되는 작업입니다. 이 작업을 수행하는 다양한 방법이 있지만, 일관된 결과를 얻기 위해서는 정규식을 적절하게 활용하는 것이 중요합니다. 정규식을 제대로 이해하고 활용한다면, 더욱 다양한 작업을 수행할 수 있으며 보다 유연하게 문자열을 다룰 수 있습니다.
-
-## 관련 자료
-
-- [MDN Web Docs: replace()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
-- [Understanding Regular Expressions in JavaScript](https://code.tutsplus.com/tutorials/understanding-regular-expressions-in-javascript--net-25486) (영문)
-- [Visual Studio Code: Regular Expressions](https://code.visualstudio.com/docs/editor/codebasics#_regular-expressions) (영문)
+"## 또 다른 참고자료:"
+- [정규표현식에 대한 이해](https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Regular_Expressions)
+- [브라우저에서의 문자 삭제 기술](https://www.w3schools.com/jsref/jsref_replace.asp)
+- [ES6 이후 문자 조작 기술 소개](https://www.digitalocean.com/community/tutorials/js-more-string-operations),

@@ -1,7 +1,7 @@
 ---
-title:                "기본 인증으로 http 요청 보내기"
-html_title:           "TypeScript: 기본 인증으로 http 요청 보내기"
-simple_title:         "기본 인증으로 http 요청 보내기"
+title:                "기본 인증과 함께 http 요청 보내기"
+html_title:           "TypeScript: 기본 인증과 함께 http 요청 보내기"
+simple_title:         "기본 인증과 함께 http 요청 보내기"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "HTML and the Web"
@@ -10,38 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 왜
- HTTP 요청을 기본 인증과 함께 보내는 것이 왜 중요할까요? 기본 인증은 사용자명과 비밀번호를 사용하여 보안을 강화하는 간단하고 효과적인 방법입니다. 따라서 중요한 정보를 전송하거나 가져오는 경우에는 항상 기본 인증을 통해 HTTP 요청을 보내는 것이 좋습니다.
+## 무엇이며 왜: 
+HTTP 요청을 기초 인증과 함께 보내는 것은 서버와 클라이언트 간의 암호화된 데이터 통신을 위해 사용됩니다. 프로그래머들은 이를 통해 더 안전한 데이터 교환을 할 수 있습니다.
 
-## 방법
+## 방법: 
 ```TypeScript
-const axios = require('axios');
+import axios from 'axios';
 
-// 기본 인증을 위한 사용자명과 비밀번호 설정
-const username = 'example_username';
-const password = 'example_password';
+const username = 'username';
+const password = 'password';
+const url = 'https://example.com/api';
 
-// 요청을 보내기 전에 인증을 설정
-axios.defaults.auth = {
-  username: username,
-  password: password
-}
-
-// 기본 인증과 함께 GET 요청 보내기
-axios.get('http://www.example.com/api/', {
-  auth: axios.defaults.auth
+axios.get(url, {
+  auth: {
+    username: username,
+    password: password
+  }
 })
-  .then(function (response) {
-    console.log(response.data); // 예상 출력: 요청한 API의 데이터
-  })
-  .catch(function (error) {
-    console.log(error); // 에러가 발생한 경우 출력
-  });
+.then(response => console.log(response.data))
+.catch(error => console.log(error));
 ```
 
-## 딥 다이브
-기본 인증은 요청 시 사용자의 브라우저에 대한 자격증명을 요청하므로 사용자가 사이트에 로그인하여 장기간 사용할 수 있는 사용자명과 비밀번호를 사용하지 않아도됩니다. 이는 보안을 강화하는 데 큰 도움이됩니다. 또한 기본 인증의 경우 인터넷 전송 중에 해당 정보가 암호화되어 전송되므로 더욱 안전합니다.
+위의 코드를 실행하면 인증 정보를 포함한 GET 요청을 보내고 응답 데이터를 콘솔에 출력합니다.
 
-## 더 알아보기
-- [Axios 공식 문서](https://github.com/axios/axios)
-- [MDN Web Docs: HTTP 기본 인증](https://developer.mozilla.org/ko/docs/Web/HTTP/Authentication)
+## 깊게 파고들기:
+기초 인증은 HTTP 프로토콜의 일부로 RFC 2617에 정의되어 있습니다. 이는 인증 정보를 암호화하지 않고 클라이언트에서 서버로 전송하기 때문에 보안 측면에서는 취약할 수 있습니다. 대안으로는 보안 속성을 가지고 있는 OAuth나 OpenID Connect을 사용할 수 있습니다.
+
+서버 측에서는 인증 정보를 검증하기 위해 Base64로 인코딩된 사용자 이름과 비밀번호를 해독하고, 이를 사용하여 사용자를 인증합니다. 인증이 성공적으로 이루어지면 서버는 클라이언트에게 자원에 대한 액세스 권한을 주고, 그렇지 않을 경우 401 Unauthorized 오류를 반환합니다.
+
+## 관련 자료:
+- https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication
+- https://www.ietf.org/rfc/rfc2617.txt

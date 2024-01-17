@@ -10,53 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Quoi et pourquoi?
+La capitalisation d'une chaîne de caractères en informatique consiste à mettre la première lettre de chaque mot en majuscule. Les programmeurs le font pour rendre les données plus lisibles et pour respecter les conventions de codage.
 
-Tu as sûrement déjà eu besoin de capitaliser une chaîne de caractères dans tes scripts Bash. Peut-être pour rendre un texte plus lisible ou pour formater une sortie de commande. Dans cet article, je vais te montrer comment faire cela facilement en utilisant quelques astuces de programmation.
-
-## Comment Faire
-
-La première méthode pour capitaliser une chaîne de caractères consiste à utiliser la commande ```tr```. Voici un exemple de code Bash qui utilise cette méthode :
-
+## Comment faire:
+Voici un exemple de code en Bash pour capitaliser une chaîne de caractères donnée:
 ```Bash
-# Déclarer la chaîne de caractères
-my_string="ceci est un exemple"
-
-# Utiliser la commande tr pour capitaliser
-capitalized_string=$(echo $my_string | tr '[:lower:]' '[:upper:]')
-
-# Afficher la chaîne capitalisée
-echo $capitalized_string 
-
-# Sortie : CECI EST UN EXEMPLE
+string="bonjour à tous"
+capitalizedString="${string^}"
+echo $capitalizedString
 ```
+Résultat: "Bonjour à tous"
 
-Comme tu peux le voir, nous utilisons ici la commande ```echo``` pour envoyer la chaîne de caractères dans le pipeline, puis la commande ```tr``` pour la capitaliser en remplaçant toutes les lettres minuscules par des lettres majuscules.
-
-Une autre méthode consiste à utiliser les paramètres de substitution de Bash. Voici un exemple :
-
+Pour capitaliser chaque mot dans une chaîne de caractères, vous pouvez utiliser la commande suivante:
 ```Bash
-# Déclarer la chaîne de caractères
-my_string="ceci est un exemple"
-
-# Utiliser les paramètres de substitution pour capitaliser
-capitalized_string=${my_string^^}
-
-# Afficher la chaîne capitalisée
-echo $capitalized_string 
-
-# Sortie : CECI EST UN EXEMPLE
+string="bonjour à tous"
+capitalizedString="${string^^}"
+echo $capitalizedString
 ```
+Résultat: "Bonjour À Tous"
 
-Comme tu peux le voir, cette méthode est plus concise car elle n'utilise qu'une seule ligne de code. Les paramètres de substitution ```^^``` signifient "capitaliser toutes les lettres".
+## Plongée en profondeur:
+La capitalisation de chaîne de caractères est souvent utilisée en programmation pour améliorer la lisibilité des données et pour respecter les conventions de codage. Cette pratique peut être retracée à l'utilisation de la ponctuation dans le langage courant pour améliorer la compréhension des phrases.
 
-## Deep Dive
+Une alternative à la capitalisation de chaîne de caractères est l'utilisation de fonctions telles que ```tr``` ou ```awk```, qui permettent de modifier directement la casse des caractères dans une chaîne.
 
-Maintenant que tu sais comment capitaliser une chaîne de caractères, tu pourrais te demander comment fonctionne réellement la commande ```tr```. En fait, cette commande utilise le tableau de caractères ASCII pour effectuer le remplacement des lettres. Tu peux consulter ce tableau pour comprendre comment cela fonctionne en détail.
+La commande «${variable^}» en Bash utilise en fait la fonction système ```toupper()``` pour capitaliser la première lettre de la variable. La version en majuscules complètes utilise la fonction ```toupper()``` avec l'option «-t» pour capitaliser chaque caractère de la chaîne.
 
-De plus, en utilisant les paramètres de substitution, tu peux également effectuer d'autres opérations sur une chaîne de caractères, comme la convertir en majuscules, en minuscules, ou même inverser l'ordre des lettres.
-
-## Voir Aussi
-
-- [Manuel de la commande tr](https://www.man7.org/linux/man-pages/man1/tr.1.html)
-- [Guide de substitution de Bash](https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html)
+## Voir aussi:
+- Documentation officielle de la commande «string manipulation» en Bash: https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html
+- Tutoriel sur l'utilisation de la commande ```tr``` pour capitaliser une chaîne de caractères en Bash: https://www.geeksforgeeks.org/tr-command-in-linux-with-examples/

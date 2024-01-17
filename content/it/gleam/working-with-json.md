@@ -10,43 +10,73 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+## Cosa & Perché?
 
-Se stai cercando un modo semplice e potente per gestire i dati in formato JSON nei tuoi progetti Gleam, sei nel posto giusto! Nel nostro articolo di oggi, ti mostrerò come puoi utilizzare la libreria di Gleam per manipolare facilmente i dati JSON. Che tu sia un principiante o un esperto di programmazione, imparerai sicuramente qualcosa di nuovo e utile.
+Lavorare con JSON è una parte importante dello sviluppo di applicazioni web, poiché è il formato più utilizzato per lo scambio di dati tra il server e il client. JSON, acronimo di JavaScript Object Notation, è un formato leggero e semplice da utilizzare per rappresentare dati strutturati, come oggetti e array, utilizzando una sintassi simile a quella di JavaScript. I programmatori utilizzano JSON per gestire dati dinamici, come dati da un database o informazioni provenienti da una richiesta API.
 
-## Come fare
+## Come fare:
 
-Prima di iniziare, assicurati di avere la libreria di Gleam installata sul tuo sistema. Puoi farlo eseguendo il seguente comando nella directory del tuo progetto:
+Utilizzando Gleam, è possibile gestire dati JSON in modo efficiente e intuitivo. Di seguito sono riportati alcuni esempi di codice per comprenderne il funzionamento.
 
-```Gleam pkg install gleam/json```
+#### Parsing di un file JSON
 
-Una volta installata la libreria, puoi iniziare ad utilizzarla nel tuo codice. Ad esempio, ecco come puoi creare un oggetto JSON vuoto:
+```Gleam
+import gleam/json
+import gleam/nodjson
 
-```Gleam let json = Json.Encode.object([])```
+let json = """
+{
+  "nome": "Mario",
+  "cognome": "Rossi",
+  "età": 30,
+  "interessi": ["musica", "cinema", "sport"]
+}
+"""
 
-Ora che abbiamo il nostro oggetto JSON, possiamo aggiungere dei dati al suo interno. Ad esempio, possiamo aggiungere una chiave "nome" con il valore "Giovanni" in questo modo:
+let result = nodjson.parse(json)
+```
 
-```Gleam let json = Json.Encode.object([("nome", Json.Encode.string("Giovanni"))])```
+Il risultato della funzione `parse` è un tipo specializzato di struct Gleam, `DecodeResult`, che contiene i dati json correttamente parsati o un errore.
 
-Per ottenere il valore della nostra chiave "nome", possiamo fare come segue:
+#### Creazione di un oggetto JSON
 
-```Gleam let name = Json.Decode.field("nome", json) |> Json.Decode.string```
+```Gleam
+import gleam/json
+import gleam/write
 
-Puoi anche convertire facilmente una stringa in JSON usando la funzione `Json.Decode.string`:
+let mario = json.object([
+  "nome" => json.string("Mario"),
+  "cognome" => json.string("Rossi"),
+  "età" => json.int(30),
+  "interessi" => json.array([
+    json.string("musica"),
+    json.string("cinema"),
+    json.string("sport"),
+  ])
+])
 
-```Gleam let json = Json.Decode.string(`{"nome":"Giovanni"}`)```
+write!(mario)
+```
 
-Una volta che hai compreso i fondamenti di come lavorare con i dati JSON in Gleam, puoi esplorare ulteriormente la libreria e tutte le sue funzionalità.
+L'output di questo codice è il seguente:
 
-## Deep Dive
+``` 
+{
+  "nome": "Mario",
+  "cognome": "Rossi",
+  "età": 30,
+  "interessi": ["musica", "cinema", "sport"]
+} 
+```
 
-Se vuoi approfondire ancora di più il tuo apprendimento sulle manipolazioni dei dati JSON in Gleam, ecco alcune risorse utili che potresti consultare:
+## Deep Dive:
 
-- La documentazione ufficiale della libreria JSON di Gleam: https://gleam.run/packages/gleam/json/latest/
-- La guida per principianti su come utilizzare la libreria JSON di Gleam: https://gleam.run/articles/beginners-guide-to-the-json-library/
-- Il repository GitHub della libreria JSON di Gleam, dove puoi esplorare il codice sorgente e contribuire a migliorarla: https://github.com/gleam-lang/json
+JSON è diventato sempre più popolare negli ultimi anni grazie alla sua semplicità ed efficacia, ma non è l'unico formato utilizzato per scambiare dati. Altri formati includono XML e YAML. JSON è stato sviluppato inizialmente per essere utilizzato con JavaScript, ma grazie alla sua sintassi semplice e leggibile, è diventato uno standard per lo scambio di dati anche in altre linguaggi di programmazione.
 
-## Vedi anche
+Gleam utilizza una libreria esterna, `nodjson`, per gestire dati JSON. Questa libreria è basata su [jsone](https://github.com/sile/jsone), scritta in OCaml. Ciò garantisce una rapida e sicura manipolazione dei dati JSON.
 
-- Come leggere e scrivere file JSON in Gleam: https://gleam.run/articles/how-to-read-and-write-json-files-in-gleam/ 
-- Utilizzare la libreria JSON di Gleam con altri framework e librerie, come Phoenix e Postgres: https://gleam.run/articles/how-to-use-the-json-library-with-other-frameworks-and-libraries/
+## Vedi anche:
+
+- [Documentazione Gleam JSON](https://gleam.run/modules/json.html)
+- [Gleam repository su GitHub](https://github.com/gleam-lang/gleam)
+- [The JSON data format](https://www.json.org/json-it.html)

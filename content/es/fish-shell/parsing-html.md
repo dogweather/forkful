@@ -10,41 +10,22 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Por qué deberías aprender a analizar HTML en Fish Shell?
+## ¿Qué es y por qué?
+El parsing de HTML es el proceso de analizar y manipular el código HTML de una página web. Los programadores lo hacen para extraer información específica de una página, como el texto de un artículo o los enlaces de una sidebar, y utilizarla en su propio código.
 
-Hay muchas razones por las que aprender a analizar HTML en Fish Shell puede ser beneficioso. Algunas de ellas son:
-
-- Puede ayudarte a automatizar tareas tediosas y repetitivas en la web, como extraer datos de una página de noticias o de un sitio de compras en línea.
-- Puede mejorar tu capacidad de resolución de problemas y lógica, ya que requiere pensar de manera estructurada y encontrar patrones en el código HTML.
-
-## Cómo hacerlo en Fish Shell
-
-Para analizar HTML en Fish Shell, necesitarás instalar el paquete "html-docs" utilizando el gestor de paquetes "Fisher". Puedes hacerlo utilizando el siguiente comando:
-
-```Fish Shell
-fisher install html-docs
+## ¡Vamos a ello!
+¡Aprender cómo hacer parsing de HTML usando el Fish Shell es muy sencillo! Primero, necesitamos instalar la herramienta "pup" usando la función "set -U" en nuestro archivo config.fish:
 ```
-
-Una vez instalado, puedes utilizar la función "htmlparse" incluida en el paquete para analizar cualquier página web. Por ejemplo, si quieres obtener una lista de los títulos de los artículos en la página de noticias de Fish Shell, puedes hacerlo de la siguiente manera:
-
-```Fish Shell
-htmlparse "https://fishshell.com/news.html" | grep -i "<h2>" | sed 's/<[^>]\+>//g'
+set -U fish_user_paths /usr/local/bin $fish_user_paths
 ```
+Luego, podemos utilizar pup para seleccionar elementos específicos del HTML utilizando selectores CSS:
+```
+curl -s https://www.example.com | pup 'a.attr{href}'
+```
+Este comando nos devolverá una lista de todos los enlaces en la página web con el atributo href. ¡Así de fácil!
 
-Esto buscará en el código HTML de la página y devolverá una lista de los títulos de los artículos, eliminando cualquier etiqueta HTML. También puedes utilizar otras herramientas de Fish Shell, como "awk" o "sed", para manipular aún más los datos obtenidos.
+## Profundizando
+El parsing de HTML ha sido una técnica ampliamente utilizada desde los primeros días de la web. Antes de herramientas como pup, los programadores tenían que escribir su propio código para analizar y extraer datos de páginas web. Aunque existen alternativas como BeautifulSoup en Python, muchos programadores prefieren utilizar el poderoso y simplificado Fish Shell.
 
-## Profundizando en el análisis HTML en Fish Shell
-
-Para entender mejor cómo funciona la función "htmlparse" en Fish Shell, es útil conocer algunos conceptos básicos sobre HTML y cómo se estructura un documento HTML.
-
-HTML es un lenguaje de marcado utilizado para crear páginas web, y está formado por etiquetas que indican la estructura y contenido de un documento. Estas etiquetas pueden contener atributos y valores, y pueden anidarse dentro de otras etiquetas.
-
-La función "htmlparse" de Fish Shell utiliza una herramienta de línea de comandos llamada "xmllint" para analizar el código HTML y convertirlo en formato XML. Luego, utiliza la herramienta "xmlstarlet" para extraer información específica de ese XML, como los valores de las etiquetas.
-
-Al comprender estos conceptos, puedes familiarizarte más con la función "htmlparse" y utilizarla de manera más eficiente para tareas de análisis HTML más complejas.
-
-## Véase también
-
-- Documentación del paquete "html-docs": https://github.com/oh-my-fish/plugin-html-docs
-- Tutorial de Fish Shell: https://fishshell.com/docs/current/tutorial.html
-- Repositorio de Fish Shell en GitHub: https://github.com/fish-shell/fish-shell
+## ¡Echa un vistazo!
+Si quieres profundizar más en el tema del parsing de HTML con Fish Shell, te recomendamos revisar el repositorio de GitHub de pup, donde encontrarás más información y ejemplos de cómo utilizar esta herramienta. ¡Aprenderás a realizar tareas aún más complejas utilizando esta técnica!

@@ -10,71 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Perché
-## Perché dovresti lavorare con YAML
+## Cosa & Perché?
+Lavorare con YAML è un modo per organizzare e gestire dati in un formato leggibile sia per gli esseri umani che per i computer. I programmatori spesso usano YAML per salvare configurazioni o dati strutturati, e per importare e esportare informazioni da e verso un'applicazione.
 
-Se stai scrivendo un'applicazione Ruby che necessita di gestire dati strutturati in formato leggibile sia da computer che da esseri umani, YAML potrebbe essere lo strumento giusto per te. Con YAML puoi creare facilmente file di configurazione, documentazione e altri dati strutturati per la tua applicazione in modo semplice e intuitivo.
-
-# Come fare
-## Esempi di codice e output
-Con la gemma ruby YAML incorporata, è molto facile iniziare a lavorare con questo formato di dati. Basta richiamare il modulo YAML e utilizzare il metodo `load` o `safe_load` per leggere i dati da un file YAML.
+## Come fare:
+I codici seguenti mostrano come lavorare con YAML in Ruby utilizzando la gemma "yaml". Assicurati di avere la gemma installata nel tuo progetto Ruby.
 
 ```Ruby
 require 'yaml'
 
-# Carica i dati da un file YAML
-data = YAML.load(File.read("dati.yaml"))
-
-# Oppure, utilizza safe_load per evitare stringhe malevole
-data = YAML.safe_load(File.read("dati.yaml"))
-
-puts data["nome"]
-puts data["cognome"]
-```
-
-In questo esempio, abbiamo un file YAML `dati.yaml` con il seguente contenuto:
-
-```yaml
-nome: Marco
-cognome: Rossi
-```
-
-E nell'output del codice sopra, otteniamo:
-
-```shell
-Marco
-Rossi
-```
-
-Oltre a leggere i dati da un file, YAML ci permette anche di creare un data structure direttamente nel nostro codice.
-
-```Ruby
-require 'yaml'
-
-# Crea un data structure
-dati = {
-  nome: "Maria",
-  cognome: "Bianchi"
+# Creare un file YAML
+yaml_file = {
+  nome: 'Giulia',
+  cognome: 'Rossi',
+  età: 25
 }
 
-# Utilizza il metodo dump per convertire il data structure in YAML
-puts YAML.dump(dati)
+# Salvare il file YAML
+File.open('dati.yaml', 'w') { |file| file.write(yaml_file.to_yaml) }
+
+# Leggere il file YAML
+leggi_file = YAML.load(File.read('dati.yaml'))
+
+puts leggi_file[:nome] # Output: Giulia
+puts leggi_file[:cognome] # Output: Rossi
+puts leggi_file[:età] # Output: 25
 ```
 
-Questo ci darà un output come questo:
+## Approfondimento:
+YAML (YAML Ain't Markup Language) è un formato di serializzazione di dati creato nel 2001 da Clark Evans e Ingy döt Net. È stato pensato per essere più semplice e leggibile rispetto ad altri formati come XML e JSON. Alcune alternative a YAML sono JSON, CSV e XML. La gemma "yaml" è inclusa nella libreria standard di Ruby, quindi non è necessario installarla separatamente.
 
-```yaml
----
-:nome: Maria
-:cognome: Bianchi
-```
-
-# Approfondimento
-## Approfondisci l'utilizzo di YAML in Ruby
-
-Se vuoi saperne di più su come utilizzare YAML nel tuo codice Ruby, puoi consultare la documentazione ufficiale di YAML e della gemma ruby incorporata. Inoltre, puoi anche esplorare altre gemme che offrono funzionalità aggiuntive per il lavoro con YAML, come ad esempio la gemma `psych`.
-
-# Vedi anche
-- Documentazione ufficiale di YAML: https://yaml.org/spec/
-- Documentazione della gemma ruby YAML: https://ruby-doc.org/stdlib-2.7.1/libdoc/yaml/rdoc/YAML.html
-- Gemma ruby psych: https://rubygems.org/gems/psych/
+## Vedi anche:
+- [Documentazione YAML](https://yaml.org/) per ulteriori informazioni sul formato YAML.
+- [Wiki di Ruby su YAML](https://github.com/ruby/ruby/blob/master/lib/yaml/README) per una documentazione più dettagliata sulla gemma "yaml".

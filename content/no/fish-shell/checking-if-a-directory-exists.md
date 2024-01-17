@@ -1,7 +1,7 @@
 ---
-title:                "Å sjekke om en mappe eksisterer"
-html_title:           "Fish Shell: Å sjekke om en mappe eksisterer"
-simple_title:         "Å sjekke om en mappe eksisterer"
+title:                "Sjekke om en mappe eksisterer"
+html_title:           "Fish Shell: Sjekke om en mappe eksisterer"
+simple_title:         "Sjekke om en mappe eksisterer"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Files and I/O"
@@ -10,34 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hvorfor
-Det er viktig å sjekke om en mappe eksisterer i Fish Shell for å sikre at skriptet ditt kjører ordentlig og unngå feil og avbrudd.
+## Hva & Hvorfor?
+Når utviklere lager programmer, er det viktig å sjekke om en mappe eksisterer før man prøver å jobbe med den. Dette er for å unngå feilmeldinger og problemer som kan oppstå hvis mappen ikke finnes.
 
-# Hvordan 
-For å sjekke om en mappe eksisterer i Fish Shell, kan du bruke kommandoen `test`, etterfulgt av `-d` og navnet på mappen du ønsker å sjekke. Dette vil returnere et svar i form av en boolean, `0` for sant og `1` for usant.
-
-```
-Fish Shell> test -d mappenavn 
-0
-```
-
-Dette betyr at mappen eksisterer og du kan fortsette å kjøre skriptet ditt uten problemer. Hvis svaret er `1`, må du håndtere dette som en feil og sørge for at skriptet ditt håndterer dette scenariet.
-
-# Dypdykk
-Det kan være nyttig å vite hva som skjer under overflaten når du bruker `test -d` kommandoen. Denne kommandoen bruker faktisk en built-in funksjon i Fish Shell kalt `string`, som sjekker om en bestemt streng eksisterer, og i dette tilfellet, sjekker om strengen er en mappe.
-
-En annen måte å sjekke om en mappe eksisterer på, er å bruke `begin` og `end` blokker i Fish Shell.
+## Hvordan:
+For å sjekke om en mappe eksisterer i Fish Shell, kan du bruke kommandoen ```test -d [mappe]```. Denne kommandoen vil returnere sann hvis mappen eksisterer, ellers vil den returnere usann. Her er et eksempel:
 
 ```
-Fish Shell> begin
-    if test -d mappenavn
-        echo "Mappen eksisterer!"
-    end
-end
+Fish Shell $ test -d Documents
+true
 ```
 
-Dette vil kjøre `test -d` kommandoen og deretter utføre en handling, i dette tilfellet å skrive ut en melding, hvis mappen eksisterer.
+```
+Fish Shell $ test -d NonexistentFolder
+false
+```
 
-# Se også
-- [Fish Shell dokumentasjon](https://fishshell.com/docs/current/)
-- [Sjekke om en fil eksisterer i Fish Shell](https://fishshell.com/docs/current/cmds/test.html#test-file-exists)
+## Dypdykk:
+Sjekking av mapper eksisterer ikke bare i Fish Shell, men er en vanlig praksis i ulike programmeringsspråk. Å sjekke om en fil eksisterer, har en lignende syntaks med kommandoen ```test -f [fil]```. Det er også mulig å bruke ```-e``` flagget for å sjekke om både filer og mapper eksisterer.
+
+Det finnes flere alternativer å sjekke om mapper eksisterer, som for eksempel ```[ -d [mappe] ]``` og ```stat -f "%F" [mappe]```. Disse kommandoene har en lignende funksjonalitet, men marginale forskjeller i bruk og resultat.
+
+I Fish Shell er kommandoen ```test``` og flaggene ```-d``` og ```-f``` del av shell syntax, som gjør det enkelt å skrive korte og effektive skript for å sjekke om mapper og filer eksisterer.
+
+## Se også:
+- [Fish Shell dokumentasjon](https://fishshell.com/docs/current/cmds/test.html)
+- [Bash Shell: How to tell if a directory exists?](https://stackoverflow.com/questions/59838/how-to-check-if-a-directory-exists-in-a-shell-script)
+- [The Test Command](https://www.tldp.org/LDP/Bash-Beginners-Guide/html/sect_07_01.html)

@@ -10,34 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+Co to jest czytanie pliku tekstowego i dlaczego programiści to robią?
 
-Dlaczego warto przeczytać plik tekstowy? Oczywiście, czasem potrzebujemy uzyskać informacje z tego pliku, jednak w Gleam możemy to zrobić w łatwy i efektywny sposób, co dowiemy się poniżej.
+Czytanie pliku tekstowego oznacza proces, w którym program komputerowy czyta zawartość pliku tekstowego w celu przetworzenia go na dane czytelników i wykorzystania tych informacji do różnych celów. Programiści często wykonują tę operację, aby móc odczytać dane z zewnętrznych źródeł, takich jak pliki tekstowe, które zawierają informacje wymagane do działania ich programów.
 
-## Jak to zrobić
+Jak to zrobić:
 
 ```Gleam
-import gleam/file
-
-let file = file.read("file.txt")
-
-file
-|> case
-    Ok(contents) -> contents  // Jeśli udało się odczytać plik, zwróć jego zawartość
-    Err(_) -> "Błąd podczas odczytu pliku"  // W przypadku błędu, zwróć informację o błędzie
+let file = File.open("plik.txt", "r")
+match File.read_line(file) {
+  Ok(line) => io.println(line)
+  Error(_err) => io.println("Bład odczytu pliku")
+}
+File.close(file)
 ```
 
-Używając modułu `gleam/file`, możemy wykorzystać funkcję `read`, aby wczytać zawartość pliku tekstowego. Następnie możemy użyć konstrukcji `case` do sprawdzenia, czy operacja się powiodła, i zwrócić odpowiedni wynik.
+W powyższym przykładzie otwieramy plik tekstowy o nazwie "plik.txt" i próbujemy przeczytać pierwszą linię zawartą w pliku. Jeśli operacja się powiedzie, wypisujemy zawartość linii na ekranie. W przypadku wystąpienia błędu, wyświetlamy komunikat o problemie z odczytem pliku. Na koniec zamykamy plik.
 
-Output dla pliku `file.txt` z zawartością `Hello World!`:
+W głębszej analizie:
 
-```
-Ok("Hello World!")
-```
+Operacja czytania pliku tekstowego jest często wykorzystywana przez programistów do przetwarzania danych pobranych z zewnętrznych źródeł, takich jak bazy danych, sieć, czy też pliki lokalne. W przeszłości, czytanie plików tekstowych wymagało szerokiego wykorzystania C i języka niskiego poziomu. Dzięki Gleam, proces ten stał się znacznie prostszy i łatwiejszy w implementacji.
 
-Deep Dive: W przypadku plików z rozszerzeniem `.txt`, funkcja `read` zwraca typ `Result(Ok(String), Error)`, co oznacza, że możemy otrzymać albo wartość typu `Ok` z zawartością pliku, albo wartość typu `Err` z odpowiednim błędem. W przypadku innych typów plików, funkcja `read` może zwrócić typ `Result(Ok(Binary), Error)`, gdzie wartość typu `Ok` zawiera binarną reprezentację pliku.
+Zobacz także:
 
-## Zobacz również
-
-- Dokumentacja modułu `gleam/file`: https://gleam.run/docs/std/file
-- Przykłady użycia funkcji `read`: https://github.com/gleam-lang/gleam/blob/main/examples/file_reader.gleam
+Jeśli chcesz dowiedzieć się więcej o czytaniu plików tekstowych w Gleam, możesz przejrzeć dokumentację języka na stronie gleam.run. Innym ciekawym zasobem może być blog "Gleam tutorial", który prezentuje różne przykłady kodu w języku Gleam, w tym także operacje czytania plików tekstowych.

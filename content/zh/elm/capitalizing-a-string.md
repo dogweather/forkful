@@ -1,7 +1,7 @@
 ---
-title:                "用计算机编程：将字符串变大写"
-html_title:           "Elm: 用计算机编程：将字符串变大写"
-simple_title:         "用计算机编程：将字符串变大写"
+title:                "将字符串大写"
+html_title:           "Elm: 将字符串大写"
+simple_title:         "将字符串大写"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -10,39 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
+# 是什么 & 为什么？
+对一个字符串进行 capitalization 是指将字符串中的首字母变为大写。程序员这样做的原因是为了让字符串更容易阅读，以及符合特定的代码规范。
 
-大多数编程任务中，我们都需要处理字符串。有时候，我们需要将一个字符串中的所有字母都转换成大写或小写。这时，我们就可以使用 Elm 中的一个函数来实现，它就是 `String.toUpper`。
-
-## 如何使用
-
-下面是一个简单的例子，展示了如何使用 `String.toUpper` 函数来将一个字符串转换为大写：
-
+## 如何：
 ```Elm
-import String exposing (toUpper)
+-- 例1：将字符串 "hello world" 进行 capitalization
+String.toUpper "hello world"
 
-upperCaseString : String -> String
-upperCaseString str =
-    toUpper str
+-- 输出： "Hello world"
+```
+```Elm
+-- 例2：将字符串 "elm programming" 进行 capitalization
+String.toUpper "elm programming"
 
-main =
-    upperCaseString "hello world"
+-- 输出： "Elm programming"
 ```
 
-输出：
+## 深入探讨：
+- 历史背景：在早期的程序设计中，大部分程序语言都采用全大写的方式来书写代码和变量名。但是随着编程语言的发展，capitalization 逐渐成为一种编程风格和规范。
+- 替代方法：除了 Elm 中的 `String.toUpper` 函数，也可以使用 `String.toTitle` 函数来进行 capitalization。不过要注意，`toTitle` 函数不仅会将首字母变为大写，还会将字符串中每个单词的首字母都变为大写。
+- 实现细节：在 Elm 中，使用 `String.toUpper` 函数实现 capitalization 的原理是先将字符串转换为单个字符的列表，再对列表中的首字母进行大写转换，最后再将列表转换为字符串。
 
-```
-"HELLO WORLD"
-```
-
-## 深入了解
-
-`String.toUpper` 函数的真正作用是将字符串中的每一个字符都转换为大写形式。这意味着它不仅可以用于单词，也可以用于句子中的所有字母。此外，它还可以处理 Unicode 字符，因此即使是非英语字符也可以转换为大写形式。
-
-`String.toUpper` 函数还有一个兄弟函数 `String.toLower`，它将字符串中的所有字符都转换为小写形式。这两个函数非常有用，并且可以帮助我们在处理字符串时节省大量的代码。
-
-## 请参阅
-
-- [Elm 文档](https://guide.elm-lang.org/)
-- [String 文档](https://package.elm-lang.org/packages/elm-lang/core/latest/String)
-- [Unicode 字符表](https://unicode-table.com/cn/)
+## 参考资料：
+- Elm 的官方文档：https://guide.elm-lang.org/
+- `String.toUpper` 函数的详细说明：https://package.elm-lang.org/packages/elm/core/latest/String#toUpper
+- `String.toTitle` 函数的详细说明：https://package.elm-lang.org/packages/elm/core/latest/String#toTitle

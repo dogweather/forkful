@@ -1,7 +1,7 @@
 ---
-title:                "텍스트 파일 작성하기"
-html_title:           "Elm: 텍스트 파일 작성하기"
-simple_title:         "텍스트 파일 작성하기"
+title:                "텍스트 파일 쓰기"
+html_title:           "Elm: 텍스트 파일 쓰기"
+simple_title:         "텍스트 파일 쓰기"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Files and I/O"
@@ -10,39 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 왜
+## 무엇과 왜?
 
-텍스트 파일을 쓰는 것은 프로그래밍 언어의 기본 기술이며, 데이터 저장과 공유의 가장 일반적인 방법 중 하나입니다.
+텍스트 파일 작성이란 무엇일까요? 단순히 텍스트를 작성하여 파일에 저장하는 것을 의미합니다. 프로그래머들이 이것을 하는 이유는 자신의 코드, 데이터 또는 문서를 파일에 저장하여 나중에 사용하거나 공유하기 위해서입니다.
 
-## 하나씩 배우기
+## 방법:
 
-텍스트 파일을 쓰기 위해선 다음과 같은 단계를 따라야 합니다:
-
-1. 파일을 생성하고 열어 이를 "작성 모드"로 설정합니다.
-2. ```writeString``` 함수를 사용하여 텍스트를 파일에 씁니다.
-3. 파일을 닫고 종료합니다.
-
-예시 코드:
-
-```elm
-import File
-import Task
-
-writeToFile : String -> Task x ()
-writeToFile text =
-    Task.attempt identity <|
-    File.write "myFile.txt" "w" text
-
+```Elm
+-- 파일을 작성하는 함수
+writeFile : String -> String -> Task File.Error ()
+writeFile path content =
+  -- 파일이 존재하지 않을 경우 새로운 파일을 생성합니다.
+  -- 파일이 이미 존재할 경우 덮어씁니다.
+  File.write path content
 ```
 
-출력: myFile.txt 파일에 지정한 텍스트가 쓰여집니다.
+## 깊게 파고들기:
 
-## 깊이 파고들기
+우리가 원하는 파일 형식을 작성하는 일은 프로그래밍에 있어서 매우 중요한 일입니다. 역사적 맥락에서는 텍스트 파일이 단순히 데이터를 저장하는 방식으로만 사용되었지만, 오늘날에는 다양한 형식의 파일을 생성할 수 있습니다. 대안으로는 데이터베이스 또는 클라우드 기반 서비스를 사용하는 것이 있지만, 텍스트 파일 작성이 더 간편하고 효율적인 경우도 있습니다. Elm의 파일 모듈을 사용하여 파일을 작성하는 방법은 매우 간단하고 직관적입니다. 따라서 이를 활용하여 더 나은 코드를 작성할 수 있습니다.
 
-텍스트 파일을 쓰는 것은 실제로는 기본적인 데이터 스트림을 조작하는 것입니다. 이를 통해 우리는 다양한 형식의 데이터를 관리하고 공유할 수 있습니다. 또한 파일을 읽고 쓰는 방법을 이해하면 데이터베이스 시스템의 기본 개념을 이해하는 데 도움이 됩니다.
+## 관련 정보:
 
-## 관련 링크
-
-- [Elm 공식 문서 - 파일 다루기](https://guide.elm-lang.org/io/files.html)
-- [Elm 공식 문서 - Task](https://package.elm-lang.org/packages/elm/core/latest/Task)
-- [W3Schools - 텍스트 파일 쓰기](https://www.w3schools.com/python/python_file_write.asp)
+- Elm 공식 문서: [https://elm-lang.org/](https://elm-lang.org/)
+- 텍스트 파일 작성 예제: [https://guide.elm-lang.org/io/files.html](https://guide.elm-lang.org/io/files.html)

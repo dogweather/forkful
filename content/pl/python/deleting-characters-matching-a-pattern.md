@@ -10,33 +10,22 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Co i dlaczego?
+Usuwanie znaków odpowiadających wzorcowi jest operacją, którą programiści często wykonują podczas przetwarzania tekstu za pomocą języka Python. Polega ona na usunięciu wszystkich wystąpień określonego wzorca z ciągu znaków. Jest to przydatne, gdy chcemy pozbyć się niepożądanych znaków lub zamienić je na inne.
 
-Jeśli pracujesz z dużymi danymi lub tekstami, często możesz być zmuszony do usuwania części tekstu, które pasują do określonego wzoru. Może to być przydatne w celu wyczyszczenia danych lub aby ukryć poufne informacje. W tym artykule dowiesz się, jak usunąć znaki pasujące do wzoru w języku Python.
-
-## Jak To Zrobić
-
-Możesz użyć funkcji `re.sub()` z modułu `re` w celu usunięcia znaków pasujących do wzoru. Poniżej znajduje się przykładowy kod:
-
+## Jak wykonać:
 ```Python
-import re
-
-text = "To jest przykładowy tekst, który wymaga usunięcia niektórych znaków!"
-clean_text = re.sub("[^a-zA-Z0-9 ]", "", text)
-
-print(clean_text)
+# Przykładowe wejście:
+s = "Hello world!"
+pattern = "o"
+# Oczekiwane wyjście:
+Hll wrld!
 ```
 
-W powyższym przykładzie używamy wzorca `[a-zA-Z0-9 ]` aby usunąć wszystkie znaki, które nie są literami, cyframi lub spacją. Możesz dostosować ten wzorzec do swoich potrzeb. Następnie tworzymy nowy ciąg znaków przy użyciu funkcji `re.sub()`, przekazując pierwotny tekst oraz wzorzec. W ten sposób usuniemy wszystkie pasujące znaki i otrzymamy czysty tekst.
+## Głębsze spojrzenie:
+Usuwanie znaków odpowiadających wzorcowi jest powszechną operacją w przetwarzaniu tekstu. Początkowo wykorzystywano do tego celu pętle for lub metody takie jak replace(). Jednak dzięki wyrażeniom regularnym, które są specjalnym typem wzorca, możemy wykonać tę operację szybciej i bardziej wydajnie. Istnieją również inne metody, takie jak list comprehension i funkcja filter(), które umożliwiają usuwanie znaków zgodnych z określonym warunkiem.
 
-## Głębszy Wgląd
+## Zobacz także:
+Artykuł o wyrażeniach regularnych w języku Python: https://realpython.com/regex-python/
 
-W języku Python możesz używać wielu różnych wzorców do wykrywania i usuwania znaków pasujących do określonego wzoru. Na przykład, jeśli chcesz usunąć tylko znaki specjalne, możesz użyć wzoru `[!@#$%^&*(),.?":{}|<>]`. Możesz także użyć wyrażeń regularnych w celu bardziej zaawansowanej manipulacji tekstem.
-
-Funkcja `re.sub()` może również przyjmować funkcję jako argument, co pozwala na bardziej zaawansowane przetwarzanie tekstu. Możesz także użyć modułu `re` do zastępowania znaków pasujących do wzoru przez inny ciąg znaków, a nie tylko usuwać je całkowicie.
-
-## Zobacz Również
-
-- [Dokumentacja modułu `re` w języku Python](https://docs.python.org/3/library/re.html)
-- [Wyrażenia regularne w Pythonie - wideo tutorial](https://www.youtube.com/watch?v=K8L6KVGG-7o)
-- [Tutorial: Jak pracować z wyrażeniami regularnymi w języku Python](https://realpython.com/regex-python/)
+Dokumentacja Pythona dotycząca pracy z tekstem: https://docs.python.org/3/library/string.html

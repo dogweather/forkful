@@ -10,37 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+## Che cos'è e perché
 
-Quando si scrive un codice, può essere utile generare numeri casuali per simulare situazioni o per testare determinate funzioni. Il modo più semplice e veloce per farlo in Fish Shell è utilizzando il comando `fish_random`.
+Generare numeri casuali è un modo per ottenere numeri casuali che possono essere utilizzati nei nostri programmi. È utile per una varietà di scopi, come la generazione di password casuali o il testing di un algoritmo.
 
-## Come Fare
+## Come fare
 
-Per generare un numero casuale tra 0 e 10, basta usare il seguente codice:
+Ecco un semplice esempio di codice su come generare un numero casuale utilizzando il Fish Shell:
 
-```Fish Shell
-set random_number (fish_random 0 10)
-echo $random_number
+```
+Fish Shell -c "echo (random)"
 ```
 
-Il risultato sarà un numero casuale tra 0 e 10, ad esempio `7`.
+Questo stampa un numero casuale tra 0 e 1.
 
-Se si vuole generare più di un numero casuale, ad esempio una lista di 10 numeri tra 1 e 100, si può utilizzare un ciclo for e il comando `math` per generare numeri casuali:
+Se vuoi specificare un intervallo, puoi utilizzare il seguente codice:
 
-```Fish Shell
-for i in (seq 1 10)
-    set random_number (math "(fish_random)" * 100 + 1)
-    echo $random_number
-end
+```
+Fish Shell -c "echo (random % 100)"
 ```
 
-Il comando `math` consente di fare calcoli matematici sul numero generato da `fish_random`, moltiplicando per 100 e aggiungendo 1 per ottenere numeri tra 1 e 100. L'output del codice sopra sarà una lista di 10 numeri casuali, ad esempio `42, 3, 78, 91, 17, 10, 64, 54, 30, 97`.
+Questo genererà un numero casuale tra 0 e 99. Puoi anche specificare un valore minimo e massimo, come ad esempio:
+
+```
+Fish Shell -c "echo (random 1 10)"
+```
+
+Questo genererà un numero casuale tra 1 e 10.
 
 ## Approfondimento
 
-Il comando `fish_random` è basato sull'algoritmo di generazione di numeri casuali di Park-Miller, che è stato dimostrato essere abbastanza efficiente e di buona qualità. Tuttavia, è importante ricordare che i numeri generati non saranno veramente casuali, ma seguono uno schema prevedibile definito dall'algoritmo. Quindi, se si hanno esigenze di sicurezza o si richiede una vera casualità, è meglio utilizzare altri metodi di generazione di numeri come l'uso di hardware specializzato o API di servizi di terze parti.
+La generazione di numeri casuali è stata una sfida per i programmatori fin dagli albori dell'informatica. In passato, i computer utilizzavano metodi matematici per generare numeri casuali, ma questi erano spesso prevedibili e non davvero casuali. Oggi ci sono algoritmi e hardware specializzati (come i generatori di numeri casuali hardware) che ci consentono di generare numeri veramente casuali.
 
-## Vedi Anche
+Invece di utilizzare il comando "random", è anche possibile utilizzare la funzione "math.rand" per generare numeri casuali nel Fish Shell. Tuttavia, questa funzione utilizza un'altra implementazione di generazione di numeri casuali e può essere meno efficiente rispetto al comando "random" in determinate situazioni.
 
-- Documentazione ufficiale di Fish Shell su `fish_random`: https://fishshell.com/docs/current/cmds/random.html
-- Articolo su Park-Miller Random Number Generator: https://en.wikipedia.org/wiki/Lehmer_random_number_generator#Park%E2%80%93Miller_generator
+Per saperne di più sulla generazione di numeri casuali e sui metodi utilizzati dai computer moderni, puoi consultare questo articolo di Wikipedia: https://it.wikipedia.org/wiki/Generatore_di_numeri_casuali
+
+## Vedi anche
+
+Puoi trovare maggiori informazioni sulla generazione di numeri casuali e altre funzionalità del Fish Shell nella documentazione ufficiale: https://fishshell.com/docs/current/
+
+Inoltre, puoi esplorare le varie funzioni e comandi disponibili nella shell tramite il comando "help": https://fishshell.com/docs/current/commands.html#help

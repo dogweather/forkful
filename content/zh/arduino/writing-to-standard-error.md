@@ -1,7 +1,7 @@
 ---
-title:                "输出标准错误"
-html_title:           "Arduino: 输出标准错误"
-simple_title:         "输出标准错误"
+title:                "“写入标准错误”"
+html_title:           "Arduino: “写入标准错误”"
+simple_title:         "“写入标准错误”"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Files and I/O"
@@ -10,27 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
-为什么写入标准错误编程是重要的？因为当我们在编程过程中，难免会遇到各种问题，写入标准错误可以让我们及时发现并修复程序中的错误，提高编程效率。
+# 什么是标准错误？为什么程序员需要它？
 
-## 如何操作
+标准错误是程序员用来调试程序并显示错误消息的一种方法。它允许开发者在程序运行时向终端输出错误消息，而不是程序崩溃或输出无用信息。这样可以帮助程序员快速定位和解决问题，提高程序稳定性和可靠性。
+
+# 如何使用标准错误：
+
+在 Arduino 中，我们可以使用 `Serial` 对象来输出错误消息到终端。下面是一个示例代码：
+
 ```Arduino
-//编程示例
-//将错误信息写入标准错误
-Serial1.print("Error: Sensor not calibrated");
+void setup() {
+  Serial.begin(9600);
+}
+
+void loop() {
+  int num = 10 / 0; // 这里故意写了一个错误的表达式，会导致程序崩溃
+  String errorMessage = "Error: Cannot divide by zero."; // 错误消息
+  Serial.println(errorMessage); // 输出错误消息到终端
+}
 ```
-编程示例输出：
-Error: Sensor not calibrated
 
-## 深入了解
-写入标准错误是一种调试技术，可以让我们实时监测程序中的错误信息，帮助我们更快地发现和修复代码中的问题。在Arduino中，我们可以使用Serial.print()来将错误信息输出到串口，也可以使用Serial1.print()来输出到Serial1串口。需要注意的是，写入标准错误只能在串口监视器或串口终端中查看，无法在程序中直接访问。
+运行上面的代码，你会在终端看到错误消息 `Error: Cannot divide by zero.`。
 
-## 参考链接
-- [使用Serial Monitor调试Arduino项目](https://www.arduino.cn/thread-87963-1-1.html)
-- [Arduino官方文档](https://www.arduino.cc/reference/en/language/functions/communication/serial/print/)
-- [理解编程中的标准输出和标准错误](https://www.itread01.com/content/1500866225.html)
-- [Arduino论坛](https://www.arduino.cn/forum.php)
+# 深入了解：
 
-**参考链接仅供进一步学习和参考，建议结合实际场景进行编程。**
+在编程领域，标准错误是一种常见的调试技术。它可以追溯到 1960 年代的 UNIX 系统，当时它被用来处理程序崩溃时的错误消息。现在，许多编程语言都支持标准错误，例如 C、C++、Java等。
 
-## 相关链接
+作为标准错误的替代品，程序员也可以使用 `Serial.println()` 函数来输出消息。不过，这种方法只能用于调试，而不能输出系统错误消息。因此，使用标准错误可以提供更强大的调试功能。
+
+关于标准错误的实现细节，它实际上是一个单独的输出流，通常是 stderr。程序通过向这个流写入数据来输出错误消息，使用标准错误可以引入一些性能开销，但是这是值得的，因为它可以帮助程序员更好地调试程序。
+
+# 相关阅读：
+
+了解更多关于标准错误的背景和用法，可以参考下面的链接：
+
+- [What is Standard Error? - GeeksforGeeks](https://www.geeksforgeeks.org/what-is-standard-error/)
+- [Standard error (computing) - Wikipedia](https://en.wikipedia.org/wiki/Standard_error_(computing))
+- [Serial.println() - Arduino Reference](https://www.arduino.cc/reference/en/language/functions/communication/serial/println/)

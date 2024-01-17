@@ -10,32 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why 
-Random numbers are an essential part of many computer programs, whether it's for games, simulations, or encryption algorithms. Generating random numbers allows for unpredictability and helps add an element of randomness to programs.
+## What & Why?
+Generating random numbers is the process of producing a sequence of numbers that have no discernible pattern. This can be useful in a variety of programming applications, such as simulations, games, and cryptography. Programmers use random numbers to add unpredictability and variability to their programs.
 
-## How To
-Generating random numbers in C# is simple and can be done using the Random class in the System namespace. Here's a basic example:
+## How to:
+To generate random numbers in C#, you can use the ```Random``` class from the ```System``` namespace. Here's how you can generate a random integer between 1 and 10:
 
 ```C#
-//initialize a new instance of the Random class
-Random rand = new Random(); 
-
-//generate a random integer between 0 and 10
-int randomNumber = rand.Next(0, 11); 
-
-//output the random number
-Console.WriteLine("Random number: " + randomNumber); 
+Random random = new Random();
+int randomNumber = random.Next(1, 11);
 ```
 
-This code creates a Random object and uses the Next() method to generate a random integer between 0 and 10. The result is then printed to the console.
+You can also use the ```NextDouble()``` method to generate a random double between 0.0 and 1.0:
 
-Other useful methods from the Random class include NextDouble(), which generates a random double between 0.0 and 1.0, and NextBytes(), which fills an array with random bytes. It's important to note that the Random class uses a seed value to generate random numbers, so if the same seed is used, the same sequence of random numbers will be generated.
+```C#
+double randomDouble = random.NextDouble();
+```
 
-## Deep Dive
-Behind the scenes, the Random class uses an algorithm called the Linear Congruential Generator (LCG) to generate random numbers. This algorithm uses a mathematical formula to produce a pseudo-random sequence of numbers. It's based on the current system time, and the formula is designed to provide a uniform distribution of numbers.
+If you want to generate a random number within a specific range, you can use some simple math to adjust the output of the ```Next()``` or ```NextDouble()``` methods. For example, to generate a random number between 5 and 10, you can do the following:
 
-It's worth mentioning that the Random class in C# should not be used for cryptographic purposes as it's not cryptographically secure. For encryption algorithms, a cryptographically secure random number generator should be used instead.
+```C#
+int randomNumber = random.Next(5, 11);
+// OR
+double randomDouble = (random.NextDouble() * 5) + 5;
+```
 
-## See Also
-- Microsoft Docs on Random Class: https://docs.microsoft.com/en-us/dotnet/api/system.random?view=net-5.0 
-- C# Random Numbers Tutorial: https://www.c-sharpcorner.com/article/random-number-class-in-C-Sharp/
+## Deep Dive:
+Generating random numbers has been a challenge for programmers for a long time. In the early days of computing, computers were deterministic, meaning they follow a set of logical instructions to produce predictable outputs. This made it difficult to generate truly random numbers. 
+
+In the mid-20th century, mathematicians and computer scientists came up with various algorithms to generate pseudo-random numbers, which are numbers that appear to be random but are actually produced by a deterministic process. These algorithms are used in modern programming languages, including C#.
+
+While the ```Random``` class is the most commonly used method for generating random numbers in C#, there are other alternatives. For example, developers can also use cryptographic random number generators for more secure applications. Additionally, there are third-party libraries available that offer more advanced random number generation capabilities.
+
+The implementation of random number generation in C# is based on the linear congruential generator algorithm, which uses modular arithmetic to generate a sequence of numbers that appear random. This algorithm has its limitations and can eventually lead to predictable patterns, so it's important to use it carefully.
+
+## See Also:
+- [Random numbers in C#](https://docs.microsoft.com/en-us/dotnet/api/system.random)
+- [Pseudo-random numbers](https://en.wikipedia.org/wiki/Pseudorandom_number_generator)
+- [Cryptographic random number generation](https://docs.microsoft.com/en-us/dotnet/api/system.security.cryptography.rngcryptoserviceprovider)
+- [Third-party random number generators for C#](https://www.nuget.org/packages?q=Random+Number+Generator&packageType=Libraries)

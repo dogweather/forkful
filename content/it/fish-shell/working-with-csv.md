@@ -10,39 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
-Se sei un appassionato di gestione dei dati o sei coinvolto in un progetto che richiede la manipolazione dei file CSV, allora il Fish Shell potrebbe essere un'ottima opzione per te. Con la sua sintassi intuitiva e le numerose funzioni, è possibile manipolare e analizzare i dati CSV in modo semplice e efficiente.
+## Cos'è e perché: 
+Lavorare con i file CSV può sembrare noioso, ma in realtà è un'attività molto comune per i programmatori. Le CSV (Comma Separated Values) vengono utilizzate per archiviare e organizzare grandi quantità di dati in formato tabellare.
 
-## Come Usare
-
-Per iniziare a lavorare con file CSV usando Fish Shell, innanzitutto è necessario avere il pacchetto `csvkit` installato sul tuo sistema. Puoi farlo tramite il comando:
-
-```
-fish:~> sudo apt-get install csvkit
-```
-
-Una volta installato, puoi iniziare a manipolare i tuoi file CSV utilizzando una combinazione di comandi e funzioni Fish Shell. Ad esempio, se vuoi selezionare solo alcune colonne dal tuo file CSV, puoi utilizzare il comando `csvcut`:
+## Come fare: 
+Per lavorare con i file CSV in Fish Shell, è possibile utilizzare il comando `fgetcsv`. Questo comando legge un file CSV e restituisce un array di righe, ogni riga è a sua volta un array di valori.
 
 ```
-fish:~> csvcut -c "nome,colore" file.csv
+set rows (fgetcsv file.csv)
+echo $rows[1][2]
 ```
+Questo esempio mostra come accedere al valore della riga 1 nella colonna 2 del file CSV.
 
-Questo comando selezionerà solo le colonne "nome" e "colore" dal tuo file CSV e visualizzerà il risultato sulla shell.
+## Approfondimento: 
+L'uso dei file CSV è diventato molto popolare negli ultimi anni perché sono facili da gestire e possono essere letti da molti tipi di software. In passato, i file CSV venivano utilizzati principalmente per il trasferimento dei dati tra diversi programmi o per l'importazione dei dati da tabelle Excel.
 
-Inoltre, con Fish Shell è possibile anche unire o unificare più file CSV utilizzando il comando `csvjoin`:
+Esistono diversi tipi di file CSV, come ad esempio quelli delimitati da tabulazioni o da altri simboli anziché da virgole. Inoltre, ci sono molti altri formati di file che possono essere utilizzati per organizzare dati tabellari, come ad esempio XML o JSON.
 
-```
-fish:~> csvjoin file1.csv file2.csv
-```
+L'implementazione di Fish Shell per lavorare con i file CSV si basa su una libreria esterna chiamata `libcsv`. Questa libreria fornisce funzioni di lettura e scrittura per i file CSV e viene utilizzata anche da altri programmi come Excel o LibreOffice.
 
-Questo comando unirà i contenuti di `file1.csv` e `file2.csv` e visualizzerà il risultato sulla shell.
-
-## Approfondimento
-
-Fish Shell offre molte altre funzionalità utili per lavorare con file CSV. Ad esempio, puoi modificare il formato dei dati utilizzando il comando `csvformat` o filtrare i dati utilizzando il comando `csvgrep`. Inoltre, puoi anche esportare i dati in formato JSON utilizzando il comando `csvjson`.
-
-Inoltre, puoi trovare un elenco completo dei comandi e delle funzioni disponibili per l'utilizzo con file CSV visitando la documentazione di Fish Shell.
-
-## Vedi Anche
-- [Documentazione di Fish Shell](https://fishshell.com/docs/current/)
-- [Pacchetto csvkit](https://csvkit.readthedocs.io/en/latest/)
+## Vedi anche: 
+- [Manuale di utilizzo di fgetcsv](https://fishshell.com/docs/current/cmds/fgetcsv.html)
+- [Libreria libcsv](https://github.com/npobel/libcsv)
+- [Introduzione ai file CSV](https://support.google.com/docs/answer/40608?co=GENIE.Platform%3DDesktop&hl=it)

@@ -10,38 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+## Cosa & Perché?
 
-Se hai mai lavorato con stringhe di testo, probabilmente avrai incontrato delle situazioni in cui dovevi cercare, scomporre o modificare una parte specifica dei tuoi dati. Qui entrano in gioco le espressioni regolari (o regular expressions in inglese), uno strumento potente per manipolare stringhe di testo in modo efficiente. Se speri di diventare un programmatore Elm esperto, conoscere le espressioni regolari è fondamentale.
+Le regular expression, o espressioni regolari, sono strumenti potenti utilizzati dai programmatori per manipolare e analizzare testi e stringhe di caratteri. Spesso abbreviate come "regex", queste espressioni consentono di cercare e sostituire parti specifiche di un testo utilizzando schemi di ricerca ben definiti. Ciò consente ai programmatori di automatizzare task comuni come la convalida delle informazioni di input o la ricerca di parole specifiche in un documento. Usando le regular expression, è possibile scrivere codice più conciso ed efficiente rispetto ai metodi tradizionali di manipolazione delle stringhe.
 
-## Come fare
+## Come fare:
 
-Le espressioni regolari sono create utilizzando la sintassi ```Elm Regex```. Ad esempio, per cercare una parola specifica all'interno di una stringa, puoi utilizzare il seguente codice:
+Utilizzare regex in Elm è molto semplice. Basta importare il modulo `Regex` e utilizzare la funzione `Regex.find` per cercare una corrispondenza all'interno di una stringa. Ad esempio:
 
-```Elm
-searchResult : Maybe Match
-searchResult =
-    Regex.find (Regex.regex "parola cercata") "Questa è una stringa con la parola cercata all'interno"
 ```
+import Regex
 
-In questo caso, il risultato della ricerca sarà di tipo ```Maybe Match```, che significa che potrebbe o non potrebbe essere presente una corrispondenza per l'espressione regolare all'interno della stringa. Per ottenere la corrispondenza effettiva, si può accedere al valore ```Match``` all'interno della ```Maybe```.
+Regex.find (Regex.regex "elmo") "Elm è un linguaggio di programmazione fantastico!"
+```
+Questo codice ritornerà un valore di tipo `Maybe Regex.Match` che conterrà i dettagli della corrispondenza trovata, se presente. È anche possibile utilizzare la funzione `Regex.replace` per sostituire parti del testo con un'altra stringa, come mostrato nell'esempio seguente:
 
-Esistono molte altre funzioni comuni utili per la ricerca e la manipolazione di stringhe di testo con le espressioni regolari in Elm. Ad esempio, ```Regex.find```, che abbiamo usato sopra, è utile per cercare una corrispondenza specifica all'interno di una stringa. Se invece vuoi sostituire una parte della stringa con un valore diverso, puoi usare ```Regex.replace```.
+```
+import Regex
 
-Una volta che hai imparato le basi, puoi fare delle espressioni regolari sempre più complesse ed elaborate, cercando ad esempio più corrispondenze contemporaneamente utilizzando le parentesi e gli operatori come ```|``` e ```&```.
+Regex.replace (Regex.regex "-") "01-01-2021" (always "/")
+```
+In questo caso, il codice ritornerà la stringa "01/01/2021" dopo aver sostituito il carattere "-" con "/".
 
-## Approfondimento
+## Approfondimento:
 
-Le espressioni regolari possono sembrare complicate all'inizio, ma una volta che hai imparato la loro sintassi e come utilizzarle, possono diventare uno strumento molto utile per risolvere molte problematiche legate alla manipolazione di stringhe di testo. Potrai anche trovare che le espressioni regolari sono supportate in molti altri linguaggi di programmazione, quindi sapere come utilizzarle in Elm ti sarà utile in futuro.
+Le regular expression hanno una lunga storia. Sono state inventate negli anni '50 da Stephen Kleene come strumento per descrivere i linguaggi formali. Negli anni '70, Ken Thompson le ha introdotte nel linguaggio di programmazione Unix, rendendole uno strumento fondamentale per la manipolazione dei testi nei sistemi operativi. Esistono anche alternative come gli algoritmi di ricerca di pattern, ma le regular expression sono ampiamente utilizzate e supportate da molti linguaggi di programmazione, tra cui Elm.
 
-## Se hai bisogno di aiuto
+## Vedi anche:
 
-- La documentazione di Elm su Regex: https://package.elm-lang.org/packages/elm/regex/latest/
-- Un tutorial dettagliato su come utilizzare le espressioni regolari in Elm: https://guide.elm-lang.org/interop/regex.html
-- Un'interfaccia online per testare le tue espressioni regolari: https://elm-lang.org/tools/regex
-- Un video tutorial su come utilizzare le espressioni regolari in Elm: https://www.youtube.com/watch?v=Pibz84dTjr0
-
-## Vedi anche
-
-- La guida ufficiale di Elm: https://guide.elm-lang.org/ 
-- Il sito ufficiale di Elm: https://elm-lang.org/
+- Documentazione Elm Regex: https://package.elm-lang.org/packages/elm/regex/latest/
+- Tutorial Regex su MDN: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions
+- Libreria Java per regular expression: https://docs.oracle.com/javase/tutorial/essential/regex/

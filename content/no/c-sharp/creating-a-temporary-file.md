@@ -10,55 +10,21 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hvorfor
+Hva & Hvorfor? 
+Å opprette en midlertidig fil er en vanlig praksis blant programmerere når du trenger å lagre midlertidig data eller behandle store mengder data. Dette gjøres vanligvis for å optimalisere og effektivisere koden, og for å sikre at den riktige informasjonen blir lagret og behandlet.
 
-Hvorfor ville noen ønske å opprette en midlertidig fil? Ofte er det nyttig å ha midlertidige filer i en applikasjon for å lagre midlertidige data eller mellomresultater. Disse filene kan også brukes til å kommunisere mellom forskjellige deler av applikasjonen.
-
-## Hvordan
-
-For å opprette en midlertidig fil i C#, kan du bruke klassen `System.IO.Path` og `System.IO.File`. Det første du må gjøre er å bestemme hvor filen skal lagres. Dette kan være i brukerens midlertidige mappe ved å bruke `Path.GetTempPath()`.
+Hvordan skrive kode for å opprette en midlertidig fil: 
+For å opprette en midlertidig fil kan du bruke "System.IO.Path.GetTempFileName()" metoden i C#. Denne metoden vil returnere en streng som representerer stien til den midlertidige filen som er laget. Du kan også bruke "System.IO.Path.GetTempPath()" for å få tilgang til mappen som inneholder alle midlertidige filer.
 
 ```C#
-string tempFilePath = Path.GetTempPath();
+string tempFile = System.IO.Path.GetTempFileName();
+Console.WriteLine("Midlertidig filsti: " + tempFile);
 ```
 
-Deretter kan du bruke `Path.Combine()` for å kombinere denne stien med et unikt filnavn for å sikre at filen er unik.
+Deep Dive: 
+Historisk sett har midlertidige filer blitt brukt for å lagre midlertidig data på disken for å frigjøre minne og optimalisere ytelsen til et program. I dag brukes det også til å håndtere store mengder data og for å sikre at ingen kritisk informasjon går tapt i tilfelle programmet krasjer.
 
-```C#
-string tempFileName = Path.GetRandomFileName();
-string tempFilePath = Path.Combine(Path.GetTempPath(), tempFileName);
-```
+Alternativer til å opprette en midlertidig fil inkluderer å opprette en fil i en midlertidig mappe eller å bruke "System.IO.File.CreateTempFile()". Implementasjonsdetaljer om oppretting av midlertidige filer kan variere fra plattform til plattform.
 
-Nå kan du bruke `File.Create()` for å opprette og åpne filen for skriving.
-
-```C#
-using (FileStream fs = File.Create(tempFilePath)) 
-{
-    // Skrive til filen her
-}
-```
-
-Etter at du er ferdig med å bruke filen, må du sørge for å stenge den ved hjelp av `fs.Close()` eller `fs.Dispose()`.
-
-## Deep Dive
-
-Når du bruker midlertidige filer, er det viktig å sørge for at du sletter dem når de ikke lenger er nødvendige. Dette kan gjøres ved å bruke `File.Delete()`-metoden i et `try-catch`-blokk for å håndtere eventuelle unntak.
-
-```C#
-try 
-{
-    File.Delete(tempFilePath);
-}
-catch (Exception e) 
-{
-    // Behandle eventuelle unntak her
-}
-```
-
-Det er også verdt å merke seg at hvis du bruker midlertidige filer til å kommunisere mellom forskjellige deler av applikasjonen, bør du sørge for at filnavnene er unike for å unngå mulige kollisjoner. Dette kan gjøres ved hjelp av et system for å generere tilfeldige filnavn som `Path.GetRandomFileName()` som vist i eksempelet over.
-
-## Se Også
-
-- [MSDN: Opprette og bruke midlertidige filer på riktig måte i .NET] (https://docs.microsoft.com/nb-no/dotnet/standard/io/how-to-create-temporary-files)
-- [C# Path-klasse] (https://docs.microsoft.com/nb-no/dotnet/api/system.io.path)
-- [C# File-klasse] (https://docs.microsoft.com/nb-no/dotnet/api/system.io.file)
+Se også: 
+For mer informasjon om bruk av midlertidige filer i C#, kan du lese mer på Microsofts offisielle dokumentasjonsside for "System.IO.Path.GetTempFileName()": https://docs.microsoft.com/en-us/dotnet/api/system.io.path.gettempfilename

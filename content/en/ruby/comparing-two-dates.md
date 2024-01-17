@@ -10,64 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Why
+## What & Why?
 
-Many programs and applications require the use of dates to function properly. As programmers, it is important to know how to compare two dates in order to validate and manipulate the data accurately. This article will guide you through the process of comparing dates in Ruby.
+Comparing two dates is a way for programmers to determine the difference between two specific dates. This can be useful for tracking time intervals, calculating age, or sorting data chronologically. It also allows for logic-based operations such as determining which date is earlier or later.
 
-## How To
+## How to: 
 
-To compare two dates in Ruby, we can use the `Date` class and its built-in methods. First, we need to create two `Date` objects representing the dates we want to compare.
+To compare two dates in Ruby, we can use the `Date` class which is part of Ruby's standard library. We can create date objects by specifying the year, month, and day using the `.new` method. 
 
-```ruby
-date1 = Date.new(2021, 8, 15)
-date2 = Date.new(2021, 7, 10)
+```
+require 'date'
+
+date1 = Date.new(2021, 3, 13) 
+date2 = Date.new(2020, 5, 1)
 ```
 
-Next, we can use the `==` operator to check if the two dates are equal.
+We can then use the `.jd` (Julian day) method to return the number of days since the creation of the Julian calendar. Once we have the Julian day for both dates, we can subtract one from the other to determine the difference in days.
 
-```ruby
-date1 == date2
-# Output: false
+```
+p date1.jd - date2.jd # 317 days
 ```
 
-We can also use the `<` or `>` operators to compare the dates by their chronological order.
+Alternatively, we can use the `.between?` method to check if a date falls between two other dates. This method takes two dates as arguments and returns a boolean value.
 
-```ruby
-date1 < date2
-# Output: false
-
-date1 > date2
-# Output: true
 ```
+date3 = Date.new(2020, 12, 25)
 
-If we want to check for equality based on a specific aspect of the date, such as the month or day, we can use the `#day`, `#month`, and `#year` methods.
-
-```ruby
-date1.day == date2.day
-# Output: false
-
-date1.month == date2.month
-# Output: false
-
-date1.year == date2.year
-# Output: true
+p date3.between?(date2, date1) # true
 ```
 
 ## Deep Dive
 
-Under the hood, Ruby converts each `Date` object to an integer value representing the number of days since its starting point, which is January 1, 4713 BCE in the Julian calendar. This allows for easy comparison between dates.
+The concept of comparing dates dates back to antiquity when different civilizations used various calendars to track time. The Julian calendar, which was introduced by Julius Caesar in 45 BC, was the first to use the concept of a leap year.
 
-Additionally, the `Date` class includes the `#<=>` method which returns `-1` if the first date is earlier than the second, `0` if they are equal, and `1` if the first date is later than the second.
+In addition to the `Date` class, there are other ways to compare dates in Ruby. The `Time` class also has methods such as `.to_i` (returns the number of seconds since the epoch) and `.strftime` (converts a time object into a specific format) that can be useful for comparison purposes.
 
-```ruby
-date1 <=> date2
-# Output: 1
-```
-
-In the case of time zones, we can use the `DateTime` class to compare dates considering the time zone difference. This class also has the `#<=>` method and works similarly to the `Date` class.
+When comparing dates, it's important to consider time zones and daylight saving time. Ruby's `DateTime` class takes these factors into account and is more appropriate for comparing dates accurately.
 
 ## See Also
 
-- [Ruby Date class documentation](https://ruby-doc.org/stdlib-3.0.2/libdoc/date/rdoc/Date.html)
-- [Ruby DateTime class documentation](https://ruby-doc.org/stdlib-3.0.2/libdoc/date/rdoc/DateTime.html)
-- [Ruby comparison operators](https://ruby-doc.org/core-3.0.1/doc/syntax/precedence_rdoc.html#table-Comparison-Operators)
+- [Ruby documentation on Date class](https://ruby-doc.org/stdlib-3.0.0/libdoc/date/rdoc/Date.html)
+- [Ruby documentation on Time class](https://ruby-doc.org/core-3.0.0/Time.html)
+- [Ruby documentation on DateTime class](https://ruby-doc.org/stdlib-3.0.0/libdoc/date/rdoc/DateTime.html)

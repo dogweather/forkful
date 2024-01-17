@@ -10,82 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+# Co to jest i dlaczego programiści tego potrzebują?
 
-Zastępowanie tekstu jest powszechnym zadaniem podczas programowania. Dzięki tej technice możemy szybko i wygodnie zmienić dużą ilość tekstów w naszym kodzie. Jest to szczególnie przydatne, gdy potrzebujemy dokonać zmiany w wielu miejscach jednocześnie.
+W przeciągu swojej kariery jako programista, często będziesz musiał modyfikować duże ilości tekstu w swoim kodzie. Nie chcesz ręcznie zmieniać każdego wystąpienia danego słowa lub frazy, ponieważ jest to czasochłonne i podatne na błędy. Dlatego programiści korzystają z techniki wyszukiwania i zamiany tekstu, która automatycznie zastępuje określone słowa lub frazy w całym kodzie.
 
-## Jak to zrobić
+# Jak to zrobić?
 
-Aby wykonać zastępowanie tekstu w Pythonie, używamy metody `replace()`. Przyjmuje ona dwa argumenty - pierwszy to tekst, który chcemy zamienić, a drugi to tekst, na który chcemy go zamienić. Przykładowo:
-
-```Python
-text = "Cześć świecie!"
-new_text = text.replace("świecie", "pythonie")
-print(new_text)
-```
-
-Output:
+Możesz użyć metody ```replace()``` w Pythonie, aby zamienić wystąpienia wybranego tekstu na inny. Oto przykładowy kod w języku Python:
 
 ```
-Cześć pythonie!
+text = "To jest przykładowy tekst do zmiany."
+replaced_text = text.replace("przykładowy", "nowy")
+print(replaced_text)
+
+# Output: To jest nowy tekst do zmiany.
 ```
 
-Mogę też użyć tej metody do usuwania tekstu, podając jako drugi argument pusty ciąg znaków:
-
-```Python
-text = "Lorem ipsum dolor sit amet"
-new_text = text.replace("ipsum ", "") # usuwam "ipsum "
-print(new_text)
-```
-
-Output:
+Możesz również wykorzystać wyrażenia regularne, aby precyzyjniej wybrać fragment tekstu do zamiany. Przykładowy kod wykorzystujący moduł ```re``` w Pythonie wyglądałby tak:
 
 ```
-Lorem dolor sit amet
+import re
+
+text = "To jest przykładowy tekst do zmiany, ale tylko niektóre wyrazy."
+replaced_text = re.sub(r"przykładowy|wyrazy", "nowy", text)
+print(replaced_text)
+
+# Output: To jest nowy tekst do zmiany, ale tylko niektóre nowe.
 ```
 
-Możemy również dokonywać zastępowania wielokrotnie. Metoda `replace()` zwraca nowy łańcuch znaków zawierający zmienione teksty, więc możemy po prostu nadpisać naszą zmienną `text`:
+# Pogłębiony przegląd
 
-```Python
-text = "Ala ma kota i lubi czytać książki"
-text = text.replace("Ala", "Adam").replace("kota", "psa").replace("lubi", "nie lubi")
-print(text)
-```
+Wyszukiwanie i zamiana tekstu jest techniką, która jest stosowana od bardzo dawna w programowaniu. Pierwsze komputery używały "kart perforowanych" do wykonywania tych operacji, a obecnie wykorzystujemy specjalne narzędzia w naszych edytorach kodu.
 
-Output:
+Alternatywą dla wyszukiwania i zamiany może być też "refaktoryzacja kodu", czyli zmiana struktury lub układu kodu w celu poprawy jego czytelności lub wydajności. Jednak w przypadku prostych zmian tekstowych, wyszukiwanie i zamiana jest najczęściej używaną metodą.
 
-```
-Adam ma psa i nie czytać książki
-```
+W klasycznej wersji Pythona, metoda ```replace()``` jest bezpieczna, ale nie jest w stanie zastąpić ciągów znaków uwzględniając ich wielkość liter. W takiej sytuacji lepiej jest wykorzystać metodę ```replace()``` z modułem ```re```, która pozwala na dopasowanie i zamianę ciągów znaków niezależnie od ich wielkości.
 
-## Głęboki zanurzenie
+# Zobacz też
 
-Metoda `replace()` działa jedynie na łańcuchach znaków. Jeśli chcemy dokonać zastępowania na innych elementach, takich jak listy czy tuple, musimy użyć pętli i warunków. Na przykład możemy napisać prostą funkcję, która będzie zastępować wszystkie wystąpienia danej liczby w liście:
-
-```Python
-numbers = [2, 5, 2, 1, 2] # lista z liczbami
-to_replace = 2 # liczba, która ma być zastąpiona
-replacement = 0 # liczba, na którą ma być zastąpiona
-
-def replace_numbers(list, to_replace, replacement):
-    for index, value in enumerate(list):
-        if value == to_replace:
-            list[index] = replacement
-    return list
-
-print(replace_numbers(numbers, to_replace, replacement))
-```
-
-Output:
-
-```
-[0, 5, 0, 1, 0]
-```
-
-W ten sposób możemy dokonywać zastępowania w dowolnych typach danych, które można indeksować.
-
-## Zobacz także
-
-- [Dokumentacja metody replace()](https://docs.python.org/3/library/stdtypes.html#str.replace)
-- [Szybkie i wygodne zastępowanie tekstu w Pythonie](https://towardsdatascience.com/easy-and-fast-text-replacement-in-python-3bea19e987be)
-- [Obsługa wyjątków przy zastępowaniu tekstu w Pythonie](https://stackoverflow.com/questions/49455653/how-to-replace-values-which-are-not-in-list-with-nan)
+Jeśli chcesz dowiedzieć się więcej o używaniu wyrażeń regularnych w Pythonie, możesz zapoznać się z dokumentacją do modułu ```re```. Inne przydatne narzędzia do wyszukiwania i zmiany tekstu w kodzie to, na przykład, Narzędzie Wyszukiwania i Zamiany w edytorze kodu PyCharm.

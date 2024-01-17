@@ -1,7 +1,7 @@
 ---
-title:                "Die Länge eines Strings bestimmen"
-html_title:           "Rust: Die Länge eines Strings bestimmen"
-simple_title:         "Die Länge eines Strings bestimmen"
+title:                "Die Länge eines Strings finden"
+html_title:           "Rust: Die Länge eines Strings finden"
+simple_title:         "Die Länge eines Strings finden"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -10,42 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Warum
+# Was & Warum?
 
-Die Länge eines Strings zu finden ist eine grundlegende Aufgabe in der Programmierung, die oft bei der Verarbeitung von Texten benötigt wird. Es ist wichtig zu verstehen, wie dies in Rust funktioniert, um effektive und effiziente Code zu schreiben.
+Die Länge einer Zeichenkette zu finden bedeutet, die Anzahl der Zeichen in einer gegebenen Zeichenkette zu bestimmen. Programmierer tun dies, um Daten zu analysieren, Muster zu erkennen oder um die richtige Größe von Variablen oder Arrays zu bestimmen.
 
-## Wie geht's
+# Wie man es macht:
 
-Die Länge eines Strings in Rust kann mit der `len()` Methode gefunden werden. Die folgende Codezeile zeigt, wie eine Variable `text` erstellt und seine Länge mit `len()` gefunden werden kann:
-
-```Rust
-let text = "Hallo Welt!";
-println!("Die Länge des Strings ist: {}", text.len());
-```
-
-Der Output des obigen Codes wird sein:
-
-`Die Länge des Strings ist: 11`
-
-Die `len()` Methode gibt die Anzahl der UTF-8 kodierten Bytes zurück, die im String enthalten sind. Dies bedeutet, dass auch Sonderzeichen wie Umlaute oder Emoji korrekt gezählt werden.
-
-## Tief tauchen
-
-In Rust wird die Länge eines Strings durch die Anzahl der Bytes gemessen, nicht durch die Anzahl der Zeichen. Dies kann zu unerwarteten Ergebnissen führen, wenn man mit mehrsprachigen Texten arbeitet, da manche Zeichen mehr als ein Byte belegen. Um die tatsächliche Anzahl der Zeichen zu erhalten, kann die `chars()` Methode verwendet werden, die einen Iterator über die Unicode-Codepoints im String zurückgibt. Die Länge kann dann mit dem `count()` Operator gefunden werden, wie in diesem Beispiel gezeigt:
+Um die Länge einer Zeichenkette in Rust zu finden, kann die Funktion `len()` des String-Typs verwendet werden. Diese Funktion gibt die Anzahl der Unicode-Skalare in der Zeichenkette zurück. Das folgende Beispiel zeigt, wie man die Länge einer Zeichenkette namens `my_string` findet:
 
 ```Rust
-let text = "こんにちは 世界!";
-println!("Die Länge des Strings ist: {}", text.chars().count());
+let my_string = "Hallo, Welt!";
+println!("Die Länge meiner Zeichenkette ist {}", my_string.len());
 ```
 
-Der Output dieses Codes wird sein:
+Die Ausgabe wird sein:
 
-`Die Länge des Strings ist: 8`
+```Rust
+Die Länge meiner Zeichenkette ist 12
+```
 
-Wenn man die Anzahl der Zeichen in einem String berechnen muss, ist es daher ratsam, die `chars()` Methode zu verwenden, um genaue Ergebnisse zu erzielen.
+# Tiefere Einblicke:
 
-## Siehe auch
+Die Bestimmung der Länge von Zeichenketten ist eine grundlegende Operation in der Programmierung und wird in vielen Sprachen verwendet. In Rust gibt es keine spezielle Funktion, um die Länge einer Zeichenkette zu finden, da sie in die oben genannte Funktion `len()` des String-Typs integriert ist. Alternativ können Entwickler auch die Funktion `chars()` verwenden, um die Anzahl der Zeichen in einer Zeichenkette zu zählen.
 
-- [Rust-Dokumentation zu Strings](https://doc.rust-lang.org/std/string/index.html)
-- [Tutorial über Strings in Rust](https://doc.rust-lang.org/stable/rust-by-example/std/str.html)
-- [Weitere Informationen über die `len()` Methode](https://doc.rust-lang.org/std/primitive.str.html#method.len)
+Es ist wichtig zu beachten, dass bei der Bestimmung der Länge einer Zeichenkette in Rust jede Unicode-Kombination als ein einzelner Skalar betrachtet wird. Dies kann zu unterschiedlichen Ergebnissen führen als in anderen Sprachen, die auf anderen Codierungen basieren.
+
+# Siehe auch:
+
+- [Rust Dokumentation für `len()`](https://doc.rust-lang.org/std/string/struct.String.html#method.len)
+- [Rust Dokumentation für `chars()`](https://doc.rust-lang.org/std/primitive.str.html#method.chars)

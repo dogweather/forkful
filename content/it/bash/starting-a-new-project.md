@@ -1,7 +1,7 @@
 ---
-title:                "Avviare un nuovo progetto"
-html_title:           "Bash: Avviare un nuovo progetto"
-simple_title:         "Avviare un nuovo progetto"
+title:                "Iniziando un nuovo progetto"
+html_title:           "Bash: Iniziando un nuovo progetto"
+simple_title:         "Iniziando un nuovo progetto"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Getting Started"
@@ -10,45 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Perché
+## Che cos'è e perché?
 
-Hai mai pensato di iniziare un nuovo progetto con Bash? Forse hai voglia di imparare un nuovo linguaggio di programmazione o forse sei semplicemente curioso di sperimentare con uno strumento diverso. In ogni caso, ci sono molti buoni motivi per iniziare un nuovo progetto con Bash!
+Iniziamo con una banalità: quando inizi un nuovo progetto, crei qualcosa di nuovo. Potrebbe essere un'applicazione, un sito web, un programma o qualsiasi altra cosa che abbia un'iniziativa specifica. Perché i programmatori si mettono nei guai di iniziare nuovi progetti? Perché vogliono creare qualcosa che non esiste ancora, qualcosa di innovativo e utile.
 
-## Come fare
+## Come fare:
 
-Per iniziare un nuovo progetto con Bash, puoi seguire questi semplici passaggi:
+Supponiamo che tu voglia creare un programma semplice che stampa un messaggio di benvenuto sul tuo terminale. Ecco come fare in Bash:
 
-1. Assicurati di avere la versione corrente di Bash installata sul tuo computer.
-2. Crea una nuova cartella per il tuo progetto.
-3. Crea un file "script.sh" all'interno della cartella, questo sarà il tuo file di script Bash.
-4. Apri il file "script.sh" con il tuo editor preferito e inizia a scrivere il codice Bash.
-
-Ecco un esempio semplice di codice Bash che stamperà "Ciao mondo!" nella console:
-
-```
+```Bash
 #!/bin/bash
 
-echo "Ciao mondo!"
+echo "Benvenuto!"
 ```
 
-Salva il file e dal terminale naviga nella cartella del tuo progetto. Quindi esegui il file di script Bash usando questo comando:
+Salva il file con estensione .sh e lo esegui con il comando `bash nome_del_file.sh` per vedere l'output "Benvenuto!" stampato sul tuo terminale.
 
-```
-sh script.sh
-```
+## Approfondimento:
 
-E dovresti vedere "Ciao mondo!" stampato nella console.
+Molte persone sono sorprese quando scoprono che Bash è stato sviluppato nel 1989 da Brian Fox e incorporato in GNU Project nel 1993. Originariamente progettato come un'interfaccia di comando per il sistema operativo UNIX, ora è uno dei più popolari shell di comando nei sistemi operativi Linux e macOS. Ci sono anche altre shell di comando come Zsh e Fish, ma Bash rimane la scelta preferita per molti programmatori.
 
-## Approfondimento
+## Vedi anche:
 
-Ora che hai iniziato il tuo primo progetto con Bash, ci sono alcune cose che dovresti tenere a mente mentre continui a lavorare su di esso. Una delle cose più importanti è la sintassi di Bash - assicurati di essere preciso con la punteggiatura e gli operatori.
-
-Inoltre, assicurati di comprendere le diverse funzionalità di Bash, come la gestione dei loop e delle variabili. Ci sono molte risorse online che possono aiutarti a imparare e padroneggiare Bash.
-
-## Vedi anche
-
-- [Bash Guide](https://www.gnu.org/software/bash/manual/)
-- [Bash Programming - Introduction HOW-TO](https://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO.html)
-- [Bash Scripting Tutorial](https://ryanstutorials.net/bash-scripting-tutorial/)
-- [Learn Bash in Y Minutes](https://learnxinyminutes.com/docs/bash/)
-- [Bash Scripting Cheat Sheet](https://devhints.io/bash)
+- [Comandi di base di Bash](https://linuxjourney.com/lesson/bash-basics)
+- [Guida rapida di Bash](https://www.tldp.org/LDP/abs/html/quickref.html)
+- [Bash su Wikipedia](https://it.wikipedia.org/wiki/Bash)
+- [Alternative a Bash](https://github.com/Idnan/bash-guide#alternatives-to-bash)

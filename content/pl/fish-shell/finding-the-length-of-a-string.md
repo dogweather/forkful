@@ -10,26 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Czym jest i dlaczego?
+Znalezienie długości ciągu znaków to częsta czynność w programowaniu. Polega ona na określeniu liczby znaków w danym tekście. Najczęściej wykonuje się ją w celu sprawdzenia poprawności danych lub do przeprowadzenia operacji na tekstach. 
 
-Czy zastanawiałeś się kiedykolwiek, jak możesz znaleźć długość ciągu znaków w Fish Shell? Może chcesz sprawdzić, czy wprowadzona przez użytkownika wartość nie jest za długa lub po prostu chcesz policzyć ilość znaków w swoim tekście. W tym artykule pokażę Ci, jak to zrobić w prosty sposób.
-
-## Jak to zrobić
-
-```Fish Shell
-set string "Przykładowy ciąg znaków"
-echo (string | wc -m)
+## Jak to zrobić:
+Przykładowy kod w języku Fish Shell, który wyświetli długość ciągu znaków:
 ```
-Output:
-`24`
+Fish Shell - Twój tekst | wc -c
+```
+Przykładowy wyjście:
+```
+12
+```
+W tym przypadku "Twój tekst" to tekst, którego długość chcemy sprawdzić.
 
-Powyższy kod wykorzystuje wbudowane polecenie `wc`, które liczy ilość znaków w podanym ciągu lub pliku. Aby uzyskać długość ciągu, należy przekierować go do `wc` za pomocą operatora `|` i wykorzystać flagę `-m`, która oznacza wyświetlenie tylko liczby znaków. Następnie wykorzystujemy polecenie `echo` do wyświetlenia wyniku.
+## Deep Dive:
+Znajdowanie długości ciągu znaków jest bardzo popularne w programowaniu, ponieważ często jest niezbędne do przeprowadzenia różnych operacji. W przeszłości stosowano różne metody na znalezienie długości ciągu znaków, takie jak obliczanie za pomocą iteratora lub pętli. Jednak obecnie większość języków programowania posiada wbudowane funkcje lub metody, które wykonują tę czynność.
 
-## Deep Dive
+Inną możliwością jest użycie polecania `tr -d '\0' | wc -c`, które usuwa znaki nowej linii i spacji z tekstu, a następnie zlicza pozostałe znaki, dając w efekcie długość ciągu znaków.
 
-Jeśli chcesz dowiedzieć się więcej o tym temacie, warto poznać inne flagi dostępne w poleceniu `wc`. Flagi te umożliwiają np. liczenie słów (`-w`) lub linii (`-l`). Możesz również zapoznać się z dodatkowymi opcjami wyświetlania wyników lub różnymi sposobami przekierowania danych do `wc`. Nauka o tych możliwościach może pomóc Ci w lepszym wykorzystaniu tego polecenia w przyszłości.
-
-## Zobacz także
-
-- [Dokumentacja Fish Shell](https://fishshell.com/docs/current/index.html)
-- [Przewodnik po podstawowych poleceniach w Fish Shell](https://devhints.io/fish)
+## Zobacz też:
+- [Artykuł na blogu o obliczaniu długości ciągu znaków w innym języku programowania](https://sampleblog.com/obliczanie-dlugosci-ciagu-znakow)
+- [Dokumentacja Fish Shell](https://fishshell.com/docs/current/)
+- [Github - kod źródłowy Fish Shell](https://github.com/fish-shell/fish-shell)

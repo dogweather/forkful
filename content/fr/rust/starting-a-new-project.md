@@ -10,20 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Qu'est-ce que c'est et pourquoi ?
 
-Si vous êtes un développeur en quête d'une nouvelle aventure, ou si vous cherchez simplement à améliorer vos compétences en programmation, commencer un nouveau projet en Rust peut être une excellente option. Que ce soit pour sa sécurité, son efficacité ou sa syntaxe élégante, Rust offre de nombreuses raisons convaincantes pour se lancer dans cette aventure.
+Lancer un nouveau projet, c'est comme partir à l'aventure dans le monde de la programmation. Les programmeurs le font pour explorer de nouveaux concepts, relever des défis et créer des solutions innovantes.
 
-## Comment faire
+## Comment faire :
 
-Pour commencer un nouveau projet en Rust, vous devez d'abord installer le compilateur Rust et le gestionnaire de paquets Cargo sur votre ordinateur. Une fois installés, vous pouvez créer un nouveau projet en utilisant la commande ```Rust new nom_du_projet```. Vous trouverez un fichier ```Cargo.toml```, où vous pouvez spécifier vos dépendances et les options de compilation pour votre projet. Ensuite, vous pouvez commencer à écrire votre code en utilisant la syntaxe élégante de Rust et tester en utilisant ```Rust run```. Pour un exemple complet, vous pouvez consulter le dépôt GitHub du projet "Exemple de projet en Rust" (lien dans la section "Voir aussi").
+Voici quelques exemples concrets de code Rust pour démarrer un nouveau projet :
 
-## Plongée en profondeur
+```Rust
+fn main() {
+    println!("Bonjour le monde !");
+}
+```
+Sortie : Bonjour le monde !
 
-La création d'un nouveau projet en Rust peut sembler intimidante au début, mais une fois que vous avez compris les bases, il existe de nombreuses ressources en ligne pour vous aider à progresser dans votre apprentissage. Ne soyez pas découragé par les concepts avancés, comme les types de données et la gestion de la mémoire, car ils sont essentiels pour créer des projets solides en Rust. Vous pouvez également rejoindre des communautés en ligne pour apprendre des autres et poser des questions si vous rencontrez des difficultés.
+```Rust
+struct Personne {
+    prenom: String,
+    nom: String,
+    age: usize
+}
 
-## Voir aussi
+fn main() {
+    let personne = Personne {
+        prenom: String::from("Jean"),
+        nom: String::from("Dupont"),
+        age: 30
+    };
+    
+    println!("Salut, je suis {} {}, j'ai {} ans !", personne.prenom, personne.nom, personne.age);
+}
+```
+Sortie : Salut, je suis Jean Dupont, j'ai 30 ans !
 
-- [Site officiel de Rust](https://www.rust-lang.org/fr)
-- [Guide de démarrage rapide en Rust](https://doc.rust-lang.org/book/ch01-00-getting-started.html)
-- [Projet "Exemple de projet en Rust" sur GitHub](https://github.com/example-project/rust)
+## Plongée en profondeur :
+
+Pourquoi commencer un nouveau projet en Rust ? Tout d'abord, Rust est un langage de programmation moderne qui offre une sécurité et une performance élevées. Il est utilisé pour des projets tels que des systèmes d'exploitation, des applications de jeu, et même des logiciels embarqués. De plus, Rust a une communauté active avec beaucoup de ressources et de soutien disponibles. Enfin, si vous êtes familier avec d'autres langages tels que C++, vous remarquerez que Rust a une syntaxe similaire, ce qui peut faciliter l'apprentissage.
+
+Si vous n'êtes pas sûr de vouloir commencer un nouveau projet en Rust, il existe plusieurs alternatives telles que C++, Java et Python. Cependant, comme mentionné précédemment, Rust offre une meilleure sécurité et des performances élevées, ce qui en fait un choix populaire pour les projets à forte intensité de calcul.
+
+Pour commencer un nouveau projet en Rust, vous aurez besoin d'un éditeur de code, du compilateur Rust et d'un gestionnaire de paquets tels que Cargo. Le compilateur Rust s'occupe de convertir votre code en langage machine compréhensible par l'ordinateur, et Cargo vous permet de gérer les dépendances de votre projet. Il existe également de nombreux tutoriels et ressources disponibles pour vous aider à démarrer.
+
+## À voir aussi :
+
+Pour aller plus loin avec Rust, vous pouvez consulter le site officiel (https://www.rust-lang.org/) pour plus d'informations sur le langage et ses utilisations. Vous pouvez également rejoindre la communauté Rust (https://www.rust-lang.org/community) pour échanger avec d'autres programmeurs et apprendre des astuces et bonnes pratiques. Enfin, vous pouvez également consulter des livres, des vidéos et des forums pour en savoir plus sur Rust et continuer à développer vos compétences en programmation. Bon codage !

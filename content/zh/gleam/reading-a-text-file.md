@@ -10,36 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 为什么
+什么是读取文本文件，以及为什么程序员要这样做？
 
-为什么读取文本文件是重要的？文本文件是存储数据的常用格式，它们包含了许多有用的信息，如文本文件中的文本内容，数据库通信和配置文件等。读取文本文件对于理解和处理这些信息至关重要。
+读取文本文件是从计算机上的一个文件中读取文本内容的过程。程序员经常这样做是因为他们需要使用文件中的文本数据来完成各种任务，比如创建报告、分析数据等等。
 
-## 如何进行
+如何进行读取文本文件？
 
-要从文本文件中读取数据，您可以使用下列的示例代码来指导您的操作：
+请参考以下示例代码：
 
 ```Gleam
-// 打开文本文件
-file := File.open("data.txt") 
-// 读取文件内容
-data := File.read(file) 
-// 输出文本内容
-println(data)
-// 关闭文本文件
-File.close(file) 
+import gleam/io
+
+file_content := io.read_file("text_file.txt")
+
+io.print(file_content)
+```
+样例输出：
+
+```
+This is an example text file.
+It contains some text for demonstration purposes.
 ```
 
-上述代码示例将打开名为"data.txt"的文本文件，并将其内容赋值给变量"data"，最后将其打印出来。如果您想要修改文本文件的内容，您只需要将要修改的内容赋值给"data"变量，并使用File.write(file, data)来保存更改后的内容。
+深入了解
 
-## 深入了解
+关于读取文本文件，您可能会想知道一些更底层的细节。历史背景方面，读取文件在早期的编程语言中是一个比较耗时的操作，因为需要使用系统调用。现在的编程语言通常都会提供各种读取文件的函数，使得这一操作更加简单和高效。
 
-您可以在Gleam官方文档中找到有关读取文本文件的更多信息，包括如何处理异常情况和如何更高效地读取大型文件。您也可以使用Gleam的内置函数来更加灵活地读取和处理文本文件。
+除了读取文本文件，还有其他一些方法可以获取文件内容，比如使用网络请求来获取在线文本文件。然而，读取本地文件仍然是最常见的方法，因为它是最简单和可靠的方法，并且对于需要处理大量数据的任务来说也更有效率。
 
-## 参考链接
+相关资源
 
-- [Gleam官方文档](https://gleam.run)
+想要了解更多关于读取文本文件的知识？请查阅以下链接：
 
-## 参见
-
-- [如何在Gleam中写入文本文件？](https://www.example.com/how-to-write-text-files-in-gleam)
-- [Gleam官方论坛](https://forum.gleam.run)
+- [Python 文档：读取和处理文件](https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files)
+- [Java 文档：使用 FileReader 读取文本文件](https://docs.oracle.com/javase/tutorial/essential/io/file.html#reading-files)
+- [Ruby 文档：文件输入输出](https://ruby-doc.org/core-2.2.0/File.html)

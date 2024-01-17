@@ -1,7 +1,7 @@
 ---
-title:                "Lukeminen teksti-tiedostosta"
-html_title:           "Arduino: Lukeminen teksti-tiedostosta"
-simple_title:         "Lukeminen teksti-tiedostosta"
+title:                "Tiedoston lukeminen"
+html_title:           "Arduino: Tiedoston lukeminen"
+simple_title:         "Tiedoston lukeminen"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Files and I/O"
@@ -10,57 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi
+# Mitä & Miksi?
+Lukeminen tekstitiedostosta tarkoittaa tekstin lukemista tietokoneelle tallennetusta tiedostosta. Ohjelmoijat tekevät tätä esimerkiksi tiedon tallentamiseksi ja käsittelyksi.
 
-Arduino on suosittu alusta monien erilaisten projektien toteuttamiseen. Yksi hyödyllinen taito Arduino-ohjelmoinnissa on kyky lukea tekstitiedostoja. Tässä artikkelissa opit miten lukea tekstitiedostoja Arduino-koodilla.
-
-## Miten
+# Kuinka:
+Esimerkiksi tiedostossa "data.txt" on teksti "Hello World!", haluamme lukea tämän tekstin ja tulostaa sen sarjaporttiin.
 
 ```Arduino
-// Avataan tiedosto lukemista varten
-File tiedosto = SD.open("tiedosto.txt");
-
-// Luetaan tiedostosta rivi kerrallaan
-while(tiedosto.available()){
-  Serial.println(tiedosto.readStringUntil('\n'));
+File tiedosto = SD.open("data.txt", FILE_READ);
+if (tiedosto) {
+  while (tiedosto.available()) {
+    Serial.println(tiedosto.read());
+  }
+  tiedosto.close();
 }
 ```
+Tulostamme sarjaporttiin:
 
-Seuraava Arduino-koodi esimerkki näyttää kuinka avata ja lukea tekstitiedosto SD-kortilta. Ensimmäisessä rivissä avataan tiedosto lukemista varten ja tallennetaan se muuttujaan `tiedosto`. Tämän jälkeen `while`-silmukan avulla käydään tiedosto läpi ja `readStringUntil()` -funktiolla luettaan rivi kerrallaan ja tulostetaan se sarjaporttiin `Serial.println()` avulla.
-
-Jos haluat lukea vain tietyn kohdan tiedostosta, voit käyttää `seek()`-funktiota ja määrittää haluamasi aloituspaikan tiedostossa. Tämä on hyödyllistä esimerkiksi jos tekstitiedostossa on tietty otsikko ja haluat aloittaa lukemisen vasta sen jälkeen.
-
-```Arduino
-// Avataan tiedosto lukemista varten
-File tiedosto = SD.open("tiedosto.txt");
-
-// Siirrytään aloituspaikkaan
-tiedosto.seek(10);
-
-// Luetaan tiedostosta
-Serial.println(tiedosto.readString());
+```
+72
+101
+108
+108
+111
+32
+87
+111
+114
+108
+100
+33
 ```
 
-Tässä esimerkissä ensimmäinen rivi avaa tiedoston lukemista varten ja tallentaa sen muuttujaan `tiedosto`. Toisessa rivissä käytetään `seek()`-funktiota ja siirrytään 10 merkin päähän tiedoston alusta. Viimeisessä rivissä luetaan tiedostosta `readString()`-funktiolla.
+# Syvemmälle:
+Tiedostojen lukeminen on ollut tärkeä osa ohjelmointia jo pitkään. Nykyään on olemassa myös muita tapoja lukea tiedostoja, kuten hakukoneita ja web scraping -työkaluja.
 
-## Syvemmälle
-
-Tiedostojen lukeminen Arduino-koodilla vaatii yleensä SD-kortin lisäämistä ja ohjelman uudelleenkäynnistyksen jokaisen lisäyksen jälkeen. Tämä johtuu siitä, että ohjelma tarvitsee syklin uudelleenkäynnistävän `setup()`-funktion suorittamisen ennen kuin se pystyy lukemaan tiedostoja.
-
-Jos haluat lukea tekstitiedostoja ilman SD-korttia, voit käyttää `Serial`-tulostustoimintoa Arduino IDE:ssa. Tällöin voit ohjata tiedoston lukuprosessin suoraan sarjaportin kautta.
-
-```Arduino
-// Luetaan tiedostoa sarjaportin kautta
-while(Serial.available()) {
-  char data = Serial.read();
-  Serial.write(data);
-}
-```
-
-Tässä esimerkissä ohjelma lukee tiedostoa sarjaportin kautta ja kirjoittaa sen takaisin sarjaporttiin. Tätä menetelmää voi käyttää myös tiedoston lukemiseen muista laitteista, kuten tietokoneesta tai matkapuhelimesta.
-
-## Katso myös
-
-- https://www.arduino.cc/en/Reference/File
-- https://www.arduino.cc/reference/en/language/functions/files-io/open/
-- https://create.arduino.cc/projecthub/Arduino_Genuino/sd-card-module-with-arduino-how-to-read-write-with-i-o-4e9264
+# Katso myös:
+- https://www.arduino.cc/en/Reference/SD
+- https://www.arduino.cc/en/Tutorial/ReadASCIIString

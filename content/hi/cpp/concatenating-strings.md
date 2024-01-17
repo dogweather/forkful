@@ -1,7 +1,7 @@
 ---
-title:                "स्ट्रिंग संयोजन करना"
-html_title:           "C++: स्ट्रिंग संयोजन करना"
-simple_title:         "स्ट्रिंग संयोजन करना"
+title:                "स्ट्रिंग्स को जोड़ना"
+html_title:           "C++: स्ट्रिंग्स को जोड़ना"
+simple_title:         "स्ट्रिंग्स को जोड़ना"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -10,42 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Kyon
-Kya aapne kabhi strings ko concatenate kiya hai? Yadi haan, to aapko shayad pata hoga ki yeh ek bahut hi upyogi aur zaruri kaam hai. Concatenating strings ke madhyam se hum ek lamba string bana sakte hai jo dusre strings ko jodkar banta hai. Isse hume alag-alag strings par alag-alag operations karne ki zarurat nahi padti hai.
+बहुत सारे प्रोग्रामर पूरे दिन कंप्यूटर पर व्यवस्थित तरीके से काम करते हैं। वे अपने कोड को आसानी से समझने और संशोधित करने के लिए अलग अलग टेक्निक्स का उपयोग करते हैं। एक ऐसा तकनीक है कंकटनेटिंग स्ट्रिंग्स जिसके बारे में हम आज बात करेंगे और जानेंगे कि इसका प्रोग्रामिंग में क्या उपयोग होता है।
 
-## Kaise Kare
-```
-#include<iostream> 
-using namespace std; 
+## What & Why?
+कंकटनेटिंग स्ट्रिंग्स क्या होता है? कंकटनेटिंग स्ट्रिंग्स एक प्रोग्रामिंग तकनीक है जिसमें हम एक से ज्यादा स्ट्रिंग्स को आपस में जोड़ते हैं। यह प्रोग्रामिंग में उपयोग होता है क्योंकि इससे हम आसानी से एक से ज्यादा डेटा को एक साथ प्रबंधित कर सकते हैं।
+
+## How to:
+```C++
+#include <iostream> 
+using namespace std;
   
 int main() 
-{ 
-    // Sabse pehle hum do strings define karenge 
-    string s1 = "Hello"; 
-    string s2 = "World"; 
-  
-    // Ab hum inhe jodkar ek naya string banayenge 
-    string result = s1 + s2; 
-  
-    // Ab hum result string ko print karenge 
-    cout << result; 
-    // Output: HelloWorld
-  
+{   
+    string sentence1 = "मेरा";
+    string sentence2 = "नाम";
+    string sentence3 = "हिन्दी में है।";    
+    string fullSentence = sentence1 + " " + sentence2 + " " + sentence3;
+    
+    cout << fullSentence << endl;
+    
     return 0; 
 } 
+
+// Output: मेरा नाम हिन्दी में है।
 ```
 
-Is code mein, humne pehle do strings ko define kiya hai. Fir humne inhe concatenation ke operator '+' ka istemaal karke joda hai. Isse ek naya string ban gaya hai jo "HelloWorld" hai. Isse hume result string mein dono strings ko jodkar ek hi statement mei likhna padta hai.
+## Deep Dive:
+कंकटनेटिंग स्ट्रिंग्स का इतिहास क्या है? इस तकनीक की शुरुआत से ही इसका उपयोग स्ट्रिंग्स को मेमोरी में आसानी से स्टोर करने के लिए किया जाता था। इसके अलावा, दूसरे तकनीक जैसे की एरे, स्ट्रक्चर्स और फंक्शन्स का भी इस्तेमाल किया जाता है। इसमें स्ट्रिंग्स को मेमोरी में संग्रहीत करने के लिए कुछ सुनिश्चित किए गए steps होते हैं जिससे प्रोग्राम का और efficient बनाया जा सकता है।
 
-## Gehri Jhanjhod
-Strings ko concatenate karne ke liye C++ mein do tarike hai - '+' operator ka istemaal karna ya phir 'append()' function ka istemaal karna. Dono tarike ka output same hoga lekin unke piche ka process thoda alag hai.
-
-### '+' operator
-Yeh operator strings ko jodta hai aur ek naya string bana deta hai. Isse hum multiple strings ko bhi jod sakte hai. Yadi humne string variables ko concatenate kiya hai to hume naye variable mein result store karna padega kyunki isse pehle variable mei koi change nahi hoga.
-
-### append() function
-Yeh function strings ko jodkar original string mei changes karta hai. Matlab ki isse humme naye variable mei store karne ki zarurat nahi padti hai. Iska syntax is prakar hota hai - ```string_variable.append(another_string)```.
-
-## Dekhein bhi
-- [C++ Strings](https://www.programiz.com/cpp-programming/string)
-- [C++ Operators](https://www.programiz.com/cpp-programming/operators)
+## See Also:
+- [C++ Strings: concat() vs '+' operator](https://www.geeksforgeeks.org/c-strings-concat-vs-operator/)
+- [String Concatenation in C++](https://www.programiz.com/cpp-programming/library-function/cplusplus-string-concat)
+- [Why is string::append faster than operator+?](https://stackoverflow.com/questions/12540381/why-is-stringappend-faster-than-operator)
